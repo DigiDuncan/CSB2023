@@ -3,3 +3,4 @@ game/saves/
 game/cache/
 *.rpyc
 *.rpymc
+.vscode/
