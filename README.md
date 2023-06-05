@@ -12,7 +12,7 @@ TODO
 ------
 Characters
 ---
-* add discord sprite
+* ~~add discord sprite~~
 * replacement for digbick
 * replacement for csocola_young
 * replacement for ufobeam
@@ -20,8 +20,8 @@ Characters
 * more worker sprites
 * replacement for michaelrosen
 * add Anno sprite
-* re-edit carguy
-* re-edit copguy
+* ~~re-edit carguy~~
+* ~~re-edit copguy~~
 * ~~re-edit corn_worker~~
 * re-edit nova
 
