@@ -18,7 +18,7 @@ Characters
 * replacement for ufobeam
 * beaming up anamation
 * more worker sprites
-* replacement for michaelrosen
+* ~~replacement for michaelrosen~~
 * add Anno sprite
 * ~~re-edit carguy~~
 * ~~re-edit copguy~~
