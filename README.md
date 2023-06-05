@@ -22,7 +22,7 @@ Characters
 * add Anno sprite
 * re-edit carguy
 * re-edit copguy
-* re-edit corn_worker
+* ~~re-edit corn_worker~~
 * re-edit nova
 
 Backgrounds
