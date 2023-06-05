@@ -6,8 +6,8 @@ CS Bounciness III, again.
 ## In Association With **DigiDuncan Media Group**
 
 Please read the **style guide** (`styleguide.md`) before making any commits.  
-See what needs to be done in the **to-do list** (`TODO.md`).
 See the **credits** `credits.md` to see the full list of contributors to this project.
+See what needs to be done below.
 TODO
 ------
 Characters
@@ -27,8 +27,19 @@ Characters
 
 Backgrounds
 ---
-
-
+* upscale or replace car_driveway
+* upscale or replace car_inside
+* redo all craptop bgs on desk
+* upscale or replace cs_bedroom 1&2
+* upscale or replace door_closed
+* upscale or replace door_open
+* replace factory (people)
+* upscale or replace linus_hallway
+* replace microcenter (people)
+* upscale or replace the_linus_group
+* replace walmart_inside (people)
+* readd new hohsis building
+* readd office interiors
 
 ### Jokes
 * Sonic
