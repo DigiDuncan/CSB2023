@@ -7,8 +7,9 @@
   * Background images go in `/images/background`.
   * Character images go in `/images/characters`.
 * ~~Audiophiles~~ Audio files go in `/audio`.
+* Videos files go in `/movies`.
 * GUI files go in `/gui`.
-* All other files go in the root (`/game`) directory (as of 2020/03/02, this may change.)
+* All other files go in the root (`/game`) directory (as of 2023/06/05, this may change.)
 * `monika.chr` should be ~~deleted~~ i̘͐͊n̩͇̊ t̷͐̄h̸̖᷊e̢ͤ᷀ ǵ̲͝ä̲̖m̧᷊͍e̱͋͘'̦ͮͥs᷊̮ͩ f͈̠͡ḯ̜̍l̩᷅̚e̡̝̔s̬ͯ̎ a͑́̽t̜᷊͝ a̰͋͒l̫͂͊l̢͔̒ t͂́͢i̺̟̻m̘̯͞e͏̏̃s̸̡͋.̡̪͊
 
 ## Python Rules
@@ -69,4 +70,4 @@
 ## Images
 
 * Backgrounds should be opaque PNGs of resolution 1920x1080.
-* Characters should be transparent PNGs of variable width, but height 971.
+* Characters should be transparent PNGs of variable width, and look good next to CS.
