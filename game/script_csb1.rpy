@@ -7,6 +7,8 @@
 define cs = Character("cs188")
 define craptop = Character("Craptop")
 define sticky = Character("Sticky Note")
+define discord = Character("Discord")
+define nova = Character("Nova")
 define carguy = Character("Car Guy")
 define greeter = Character("Greeter")
 define doug = Character("Doug")
@@ -23,6 +25,8 @@ define worker_2 = Character("Worker 2")
 image cs_neutral = "characters/cs.png"
 image cs_happy = "characters/cs_happy.png"
 image cs_angry = "characters/cs_angry.png"
+image discord = "characters/discord.png"
+image nova = "characters/nova.png"
 image carguy = "characters/carguy.png"
 image doug = "characters/ceo.png"
 image cashier = "characters/cashier.png"
@@ -41,6 +45,7 @@ image cs_room_2 = "bg/cs_bedroom2.png"
 image craptop_desktop = "bg/Craptop_Desktop.png"
 image craptop_update = "bg/Craptop_Updating.png"
 image craptop_car = "bg/craptop_car.png"
+image craptop_discord = "bg/craptop_sad.png"
 image craptop_edit = "bg/craptop_edit.png"
 image craptop_error = "bg/Craptop_error.png"
 image craptop_yt = "bg/craptop_ytp"
@@ -71,6 +76,23 @@ label start:
     craptop "Downloading update 200/13..."
     craptop "Update complete."
     cs "OoOoOoOoO yes!"
+    scene craptop_discord
+    cs "Hey guys!"
+    show discord at right
+    discord "Hi! Hi! Hi! Hi!"
+    "{i}The Discord is overflowing with people trying to talk to CS."
+    hide discord
+    show cs_neutral at left
+    cs "OK, bedtime! Bye guys!"
+    show nova at right
+    nova "But it's like 8:04AM and you just woke up."
+    cs "Bye!"
+    hide cs_neutral with moveoutleft
+    show discord at left
+    discord "CS is now offline."
+    nova "k bye"
+    hide nova
+    hide discord
     scene craptop_car
     cs "Time to watch car crash videos for the next couple of hours!"
     show black with fade
