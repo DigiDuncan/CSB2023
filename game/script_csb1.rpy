@@ -280,6 +280,15 @@ label room:
     scene cs_street
     show cs_neutral with moveinleft
     cs "Things sure are boooooring around here..."
+    cs "Hey, I got an idea!"
+    cs "Let's go to Michael Rosen's house!"
+    jump michael_house
+
+label michael_house:
+    pass
+    jump csbi_end
+
+label csbi_end:
     cs "I should check on the HoH SiS folks. They should be making some progress by now."
     scene cs_room
     show cs_neutral with moveinbottom
