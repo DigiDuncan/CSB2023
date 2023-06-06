@@ -232,7 +232,7 @@ label start:
     rich "How about we mess with his laptop?"
     ed "Alright! Let's get sabotagin'!"
     show craptop_desktop with dissolve
-    "{i}Ed launches the craptop{/i}"
+    "{i}Ed launches the craptop.{/i}"
     ed "Heheh... he won't know what hit him..."
     wesley "Quickly! Let's get out of here before he comes back!"
     show craptop_update
