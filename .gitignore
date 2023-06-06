@@ -4,3 +4,4 @@ game/cache/
 *.rpyc
 *.rpymc
 .vscode/
+errors.txt

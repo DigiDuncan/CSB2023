@@ -34,7 +34,12 @@ image worker_2 = "characters/corn_worker"
 
 #CSB1 Background Images
 
+image black = "bg/black.png"
 image cs_room = "bg/cs_bedroom1.png"
+image cs_room_2 = "bg/cs_bedroom2.png"
+image craptop_desktop = "bg/Craptop_Desktop.png"
+image craptop_update = "bg/Craptop_Updating.png"
+image craptop_car = "bg/craptop_car.png"
 
 # The game starts here.
 
@@ -43,5 +48,27 @@ label start:
     scene cs_room
     show cs_neutral
     cs "Welp, time to start up the ol' Craptop."
-
+    hide cs_neutral
+    scene craptop_desktop
+    craptop "Your PC sux. lol."
+    sticky "Delete the CSCord."
+    cs "Eh, maybe tomorrow."
+    scene craptop_update
+    craptop "Downloading update 200/13..."
+    craptop "Update complete."
+    cs "OoOoOoOoO yes!"
+    scene craptop_car
+    cs "Time to watch car crash videos for the next couple of hours!"
+    show black with fade
+    "{i}Two hours later...{/i}"
+    scene cs_room
+    show cs_neutral
+    cs "Okay... What to do now?"
+    cs "I could go outside, look at some flowers.."
+    show cs_room_2 behind cs_neutral
+    hide cs_room
+    cs "Oh! Look out the window! There's a Michael Rosen!"
+    hide cs_neutral
+    show cs_happy
+    cs "Yeah! Let's go outside!"
     return
