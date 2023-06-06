@@ -61,3 +61,8 @@ label caught:
     # TODO: Blue and red flashes
     "{i}The police arrive and CS runs away.{/i}"
     hide cs with moveoutleft
+    show copguy at right with moveinright
+    copguy "Get back here!"
+    cs "You can't catch me, I'm the speedy Michael Rosen!"
+    "{i}As CS is not actually the speedy Michael Rosen, he gets caught by the police.{/i}"
+    
