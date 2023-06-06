@@ -271,4 +271,4 @@ label start:
     "{i}...{/i}"
     show black with dissolve
     "Arceus proceeds to have a stroke as his wrists scream out in agony from typing the entirety of CSB1"
-    return 
+    jump csbii

@@ -6,3 +6,4 @@ game/cache/
 .vscode/
 errors.txt
 traceback.txt
+*.bak

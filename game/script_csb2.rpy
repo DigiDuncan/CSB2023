@@ -15,7 +15,7 @@ image helipad = "bg/helipad.png"
 
 # The game starts here.
 
-label start:
+label csbii:
 
     scene helipad
     show cs_angry at left
@@ -29,14 +29,13 @@ label start:
 
     menu:
         "What attack would you like to use?"
-
-        "Punch"
+        "Punch":
             jump punch
-        "Chop"
+        "Chop":
             jump chop
-        "Kick"
+        "Kick":
             jump kick
-        "Special"
+        "Special":
             jump special
 
 # Punch
@@ -65,4 +64,3 @@ label caught:
     copguy "Get back here!"
     cs "You can't catch me, I'm the speedy Michael Rosen!"
     "{i}As CS is not actually the speedy Michael Rosen, he gets caught by the police.{/i}"
-    
