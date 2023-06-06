@@ -13,6 +13,7 @@ image wesley = "characters/wesley.png"
 #CSB2 Background Images
 image helipad = "bg/helipad.png"
 image cs_street = "bg/cs_street.png"
+image jail_inside = "bg/jail_inside.png"
 
 
 # The game starts here.
@@ -66,3 +67,43 @@ label caught:
     copguy "Get back here!"
     cs "You can't catch me, I'm the speedy Michael Rosen!"
     "{i}As CS is not actually the speedy Michael Rosen, he gets caught by the police.{/i}"
+    scene black with fade
+    jump jail
+
+label jail:
+    scene jail_inside with fade
+    show cs at left with moveinright
+    show copguy at right with moveinleft
+    copguy "Alright, welcome to the slammer. How tough are ya?"
+    cs "How tough am I?! How, tough, am, I?! I beat Cuphead!"
+    copguy "So?"
+    cd "In under 90 minutes!"
+    copguy "Hmm... okay, you're a tough enough guy to handle this cellmate, then."
+
+    hide copguy with moveoutright
+    show arceus at right with moveinleft
+
+    cs "Oh, hi Arceus."
+    arceus "Aye, Boss. .w."
+    cs "So what are you in for?"
+    arceus "I put spyware a politician's phone."
+    cs "Yeah, no, that checks out."
+    arceus "And from my recent playthrough of CSBounciness, I assume you're in for beating up workers at HoHSiS."
+    cs "I was 100 percent unsatisfied."
+    arceus "As was I. As was I..."
+    "{i}A brief moment of silence...{/i}"
+    arceus "Welp, I'm bored of this place... Wanna break out? :3"
+    cs "Eh.. Sure, why not, I've played plenty of the Escapists, I should be able to figure it out."
+    cs "We should break out at least one other person though."
+    arceus "Alright, who do ya wanna break out...?"
+    cs "Let's just break out that guy next to us, I think his name was Anno..."
+    arceus "Anno? Sure, he may be of use to us."
+    cs "Alright then, let's get going!"
+
+    # TODO: How to make these happen at the same time?
+    hide arceus with moveoutright
+    hide cs with moveoutleft
+    jump breakout
+
+label breakout:
+    "Digi was tired of writing and stopped."
