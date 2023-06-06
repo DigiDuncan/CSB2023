@@ -4,6 +4,7 @@ define copguy = Character("CopGuy")
 #CSB2 Character Images
 image cs_neutral = "characters/csocola.png"
 image cs_happy = "characters/csocola_happy.png"
+image cs_angry = "characters/cs_angry.png"
 image rich = "characters/richard.png"
 image ed = "characters/ed.png"
 image ed_phone = "characters/ed_phone.png"
@@ -11,6 +12,7 @@ image wesley = "characters/wesley.png"
 
 #CSB2 Background Images
 image helipad = "bg/helipad.png"
+image cs_street = "bg/cs_street.png"
 
 
 # The game starts here.

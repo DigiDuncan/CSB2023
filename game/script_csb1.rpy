@@ -22,6 +22,7 @@ define worker_2 = Character("Worker 2")
 #CSB1 Character Images
 image cs_neutral = "characters/csocola.png"
 image cs_happy = "characters/csocola_happy.png"
+image cs_angry = "characters/cs_angry.png"
 image carguy = "characters/carguy.png"
 image doug = "characters/ceo.png"
 image cashier = "characters/cashier.png"
@@ -262,7 +263,7 @@ label start:
     show black with dissolve
     "{i}...{/i}"
     scene hoh_hq
-    show cs_neutral with dissolve
+    show cs_angry with dissolve
     cs "Alright! Where are the head JoJites?!"
     show worker_1 at right with moveinright
     worker_1 "I don't know!!"
