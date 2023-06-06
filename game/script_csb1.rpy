@@ -20,8 +20,8 @@ define worker_1 = Character("Worker 1")
 define worker_2 = Character("Worker 2")
 
 #CSB1 Character Images
-image cs_neutral = "characters/csocola.png"
-image cs_happy = "characters/csocola_happy.png"
+image cs_neutral = "characters/cs.png"
+image cs_happy = "characters/cs_happy.png"
 image cs_angry = "characters/cs_angry.png"
 image carguy = "characters/carguy.png"
 image doug = "characters/ceo.png"

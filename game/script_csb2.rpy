@@ -2,8 +2,8 @@
 define copguy = Character("CopGuy")
 
 #CSB2 Character Images
-image cs_neutral = "characters/csocola.png"
-image cs_happy = "characters/csocola_happy.png"
+image cs_neutral = "characters/cs.png"
+image cs_happy = "characters/cs_happy.png"
 image cs_angry = "characters/cs_angry.png"
 image rich = "characters/richard.png"
 image ed = "characters/ed.png"
