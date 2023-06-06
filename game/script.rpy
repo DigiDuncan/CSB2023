@@ -40,6 +40,9 @@ image cs_room_2 = "bg/cs_bedroom2.png"
 image craptop_desktop = "bg/Craptop_Desktop.png"
 image craptop_update = "bg/Craptop_Updating.png"
 image craptop_car = "bg/craptop_car.png"
+image cs_house = "bg/Cs_house.png"
+image cs_car = "bg/car_driveway.png"
+image cs_car_inside = "bg/car_inside.png"
 
 # The game starts here.
 
@@ -71,4 +74,24 @@ label start:
     hide cs_neutral
     show cs_happy
     cs "Yeah! Let's go outside!"
+    scene cs_house
+    show cs_happy
+    cs "Nice day!"
+    hide cs_happy
+    show cs_neutral
+    cs "Well, I guess it's car time."
+    show cs_car behind cs_neutral
+    hide cs_house
+    show cs_neutral at left with move
+    show carguy at right with moveinright
+    carguy "Nice car!"
+    cs "It's pretty nice, but it's got some scratches..."
+    carguy "Nooot so nice scratch.."
+    carguy "You should try crotch doctor!"
+    cs "OH GOD AN ADVERTISER!!!"
+    cs "QUICK START THE CAR START THE CAR!!!"
+    hide carguy
+    show cs_car_inside behind cs_neutral
+    cs "Whew.. That was close!"
+    cs "Should I go get groceries?"
     return

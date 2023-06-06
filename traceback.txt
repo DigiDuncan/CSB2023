@@ -1,28 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 19, in script
-    define worker_1 = Chracter("Worker 1")
-  File "game/script.rpy", line 19, in <module>
-    define worker_1 = Chracter("Worker 1")
-NameError: name 'Chracter' is not defined
+  File "game/script.rpy", line 84, in script
+    show carguy right with moveinleft
+Exception: Image 'carguy' does not accept attributes 'right'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 19, in script
-    define worker_1 = Chracter("Worker 1")
-  File "R:\Tools\Renpy8\renpy-8.1.0-sdk\renpy\ast.py", line 2508, in execute
-    self.set()
-  File "R:\Tools\Renpy8\renpy-8.1.0-sdk\renpy\ast.py", line 2522, in set
-    value = renpy.python.py_eval_bytecode(self.code.bytecode)
-  File "R:\Tools\Renpy8\renpy-8.1.0-sdk\renpy\python.py", line 1146, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/script.rpy", line 19, in <module>
-    define worker_1 = Chracter("Worker 1")
-NameError: name 'Chracter' is not defined
+  File "game/script.rpy", line 84, in script
+    show carguy right with moveinleft
+  File "R:\Tools\Renpy8\renpy-8.1.0-sdk\renpy\ast.py", line 1428, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+  File "R:\Tools\Renpy8\renpy-8.1.0-sdk\renpy\ast.py", line 1391, in show_imspec
+    renpy.config.show(name,
+  File "R:\Tools\Renpy8\renpy-8.1.0-sdk\renpy\exports.py", line 733, in show
+    if not base.find_target() and renpy.config.missing_show:
+  File "R:\Tools\Renpy8\renpy-8.1.0-sdk\renpy\display\image.py", line 421, in find_target
+    self.target = target._duplicate(a)
+  File "R:\Tools\Renpy8\renpy-8.1.0-sdk\renpy\display\core.py", line 420, in _duplicate
+    args.extraneous()
+  File "R:\Tools\Renpy8\renpy-8.1.0-sdk\renpy\display\core.py", line 283, in extraneous
+    raise Exception("Image '{}' does not accept attributes '{}'.".format(
+Exception: Image 'carguy' does not accept attributes 'right'.
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.1.0.23051307
 CSBIII 1.0
-Mon Jun  5 16:49:50 2023
+Mon Jun  5 19:26:14 2023
