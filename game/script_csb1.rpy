@@ -112,6 +112,9 @@ label start:
             cs "Yeah... It's a good idea to get some stuff."
         "No":
             cs "Screw you, I'm going anyway!"
+    jump walmart
+
+label walmart:
     scene walmart_outside
     show cs_happy
     cs "Oh yes! Walmart is open!"
@@ -151,6 +154,9 @@ label start:
     cs "Let's get home before that guy doctor's my crotch!"
     show black with fade
     "{i}CS drives home and manages to avoid reenacting one of his favorite car crash videos.{/i}"
+    jump room
+
+label room:
     scene cs_room
     "{i}CS arrives home and walks to his room.{/i}"
     show cs_happy with dissolve
