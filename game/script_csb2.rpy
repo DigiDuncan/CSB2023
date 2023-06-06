@@ -1,5 +1,6 @@
 #CSB2 Character Definitions
 define copguy = Character("CopGuy")
+define arceus = Character("Arceus")
 
 #CSB2 Character Images
 image cs_neutral = "characters/cs.png"
@@ -73,16 +74,16 @@ label caught:
 
 label jail:
     scene jail_inside with fade
-    show cs at left with moveinright
-    show copguy at right with moveinleft
+    show cs at left with moveinleft
+    show copguy at right with moveinright
     copguy "Alright, welcome to the slammer. How tough are ya?"
     cs "How tough am I?! How, tough, am, I?! I beat Cuphead!"
     copguy "So?"
-    cd "In under 90 minutes!"
+    cs "In under 90 minutes!"
     copguy "Hmm... okay, you're a tough enough guy to handle this cellmate, then."
 
     hide copguy with moveoutright
-    show arceus at right with moveinleft
+    show arceus at right with moveinright
 
     cs "Oh, hi Arceus."
     arceus "Aye, Boss. .w."
