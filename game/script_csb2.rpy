@@ -91,6 +91,8 @@ label jail:
     arceus "I put spyware a politician's phone."
     cs "Yeah, no, that checks out."
     arceus "And from my recent playthrough of CSBounciness, I assume you're in for beating up workers at HoHSiS."
+    cs "Your what?"
+    arceus "Never mind. Why'd you do it, anyhow?"
     cs "I was 100 percent unsatisfied."
     arceus "As was I. As was I..."
     "{i}A brief moment of silence...{/i}"
