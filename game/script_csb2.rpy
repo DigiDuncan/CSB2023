@@ -49,9 +49,8 @@ label punch:
     "{i}CS punches Wesley and knocks him out.{/i}"
     hide wesley with easeoutright
     cs "That'll teach you not to miss with a nerd's computer!"
-    hide cs_angry
     show ed_phone at right
-    show cs at left with move
+    show cs_angry at left with move
     ed "Hello, 911? My coworker just got knocked out by a disgruntled customer and appears to be dying! Send help!"
     jump caught
 
