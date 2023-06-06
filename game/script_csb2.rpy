@@ -9,6 +9,7 @@ image rich = "characters/richard.png"
 image ed = "characters/ed.png"
 image ed_phone = "characters/ed_phone.png"
 image wesley = "characters/wesley.png"
+image arceus = "characters/arceus.png"
 
 #CSB2 Background Images
 image helipad = "bg/helipad.png"
