@@ -61,7 +61,8 @@ label caught:
     ed "911! Come quickly! He's chasing after me!"
     # TODO: Blue and red flashes
     "{i}The police arrive and CS runs away.{/i}"
-    hide cs with moveoutleft
+    hide cs_angry with moveoutleft
+    show ed_phone at left with move
     show copguy at right with moveinright
     copguy "Get back here!"
     cs "You can't catch me, I'm the speedy Michael Rosen!"
