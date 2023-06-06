@@ -13,7 +13,7 @@ define doug = Character("Doug")
 define cashier = Character("Cashier")
 define ycs = Character("Young CS")
 define hoh_operator = Character("HoH SiS Operator")
-define rich = Character("Rich")
+define rich = Character("Richard")
 define ed = Character("Ed")
 define wesley = Character("Wesley")
 define worker_1 = Character("Worker 1")
@@ -97,10 +97,11 @@ label start:
     carguy "Nice car!"
     cs "It's pretty nice, but it's got some scratches..."
     carguy "Nooot so nice scratch.."
-    carguy "You should try crotch doctor!"
+    carguy "You should try Crotch Doctor!"
     cs "OH GOD AN ADVERTISER!!!"
     cs "QUICK START THE CAR START THE CAR!!!"
     hide carguy
+    # TODO: Transition, door slam
     show cs_car_inside behind cs_neutral
     cs "Whew.. That was close!"
     cs "Should I go get groceries?"
@@ -132,7 +133,7 @@ label start:
     show cs_neutral at left with move
     show cashier at right with dissolve
     cs "Here's my stuff!"
-    cashier "That'll be $11.88"
+    cashier "That'll be $11.88."
     cs "Here you go!"
     cashier "Have a good day."
     cs "You too, bye!"
@@ -144,41 +145,42 @@ label start:
     cs "Not you again!"
     cs "I gotta get outta here!"
     hide carguy
+    # TODO: Transition, door slam
     show car_inside behind cs_neutral
     cs "Let's get home before that guy doctor's my crotch!"
     show black with fade
-    "{i}CS Drives home and manages to avoid reenacting one of his favorite car crash videos.{/i}"
+    "{i}CS drives home and manages to avoid reenacting one of his favorite car crash videos.{/i}"
     scene cs_room
-    "{i}CS Arrives home and walks to his room{/i}"
+    "{i}CS arrives home and walks to his room.{/i}"
     show cs_happy with dissolve
-    cs "Ahhh. It's good to be home"
+    cs "Ahhh. It's good to be home!"
     show cs_neutral
     hide cs_happy
     cs "You know, I haven't put out a YTP in a while. I should work on one of my in-progress ones."
     show craptop_edit with fade
-    "{i}CS walks to his craptop and opens up Premiere{/i}"
+    "{i}CS walks to his craptop and opens up Premiere.{/i}"
     cs "Ooooh! Here's the one from my last editing stream. People would be excited to finally see this as a finished product."
-    "{i}CS watches the in-progress video{/i}"
-    cs "This is pretty good, but I am feeling uninspired... I don't know where to go from here.."
+    "{i}CS watches the in-progress video.{/i}"
+    cs "This is pretty good, but I am feeling uninspired... I don't know where to go from here..."
     cs "..."
-    cs "I know! Should watch some other YTPs for inpiration"
+    cs "I know! Should watch some other YTPs for inspiration"
     show craptop_yt
     hide craptop_edit
-    "{i}CS opens up Youtube and begins watching YTPs. After a while, CS runs into some old YTPs.{/i}"
+    "{i}CS opens up YouTube and begins watching YTPs. After a while, CS runs into some old YTPs.{/i}"
     cs "Man, it was so easy back then. All you needed was Windows Movie Maker and some effects. If only it was that easy now..."
     cs "..."
-    cs "Oh look a flashback. What a coincidence"
-    "{i}hey flashback time.{/i}"
+    cs "Oh look a flashback. What a coincidence..."
     scene cs_room with pixellate
     show young_cs with moveinbottom
     ycs "Hey guys! Young CS here! Today I'm gonna be editing a craaaaAaAAaAAAAAaaAazy video!!"
     "{i}keyboard tapping{/i}"
     ycs "Ohhhhhh YeeEeeEeEeeEEeEEs! This is lookin' good!"
     hide young_cs
+    scene cs_room with pixellate
     show cs_neutral
-    cs "Oh flashback over."
-    "{i}A loud crash can be heard as though an atom has split in CSs foundation{/i}"
-    cs "Woah! I was dreaming so long that the foundation fell apart. My house just fell to the side"
+    cs "Oh, flashback over."
+    "{i}A loud crash can be heard as though an atom has split in CS' foundation.{/i}"
+    cs "Woah! I was dreaming so long that the foundation fell apart. My house just fell to the side!"
     cs "I really need to get some foundation repair."
     cs "Better call HoH SiS!"
     cs "They are really good at giving me the JoJ!"
@@ -187,7 +189,7 @@ label start:
     hoh_operator "Is this a prank caller on the line?"
     cs "No! My house really needs foundation repair! I need your help ASAP!!"
     hoh_operator "Alright. That will be 200,000 bits. You can pay us afterwards."
-    hoh_operator "{i}Hangs up{/i}"
+    hoh_operator "{i}hangs up{/i}"
     cs "Well that is one thing taken care of."
     cs "I guess I'll work on my new YTP while I wait."
     scene black with fade
@@ -221,11 +223,12 @@ label start:
     wesley "Let's go check his room. We might get some ideas."
     show cs_room behind ed with dissolve
     "{i}The three HoH SiS workers go upstairs.{/i}"
-    wesley "Wow I didn't know CS Plays Nekopara!"
-    ed "CS surrrrreeee loves those cute catgirls~ <3"
+    wesley "Wow I didn't know CS had a Union Jack!"
+    ed "CS sure loves those Brits~!"
     wesley "Alright, but now what should we do?"
+    ed "How about we burn down his house!"
+    wesley "Eh..."
     rich "How about we mess with his laptop?"
-    ed "Ehh...."
     ed "Alright! Let's get sabotagin'!"
     show craptop_desktop with dissolve
     "{i}Ed launches the craptop{/i}"
@@ -239,20 +242,21 @@ label start:
     show ed at left with moveinbottom
     show wesley at center with moveinbottom
     show rich at right with moveinbottom
-    rich "Lemme call our JoJ UFO"
+    rich "Lemme call our JoJ UFO."
+    # TODO: Beaming up animation
     "Ed, Wesley, and Richard" "I'm beaming up!"
     hide ed with moveouttop
     hide wesley with moveouttop
     hide rich with moveouttop
-    scene IDK_where_cs_is_rn
-    show cs_neutral with dissolve
+    scene cs_street
+    show cs_neutral with moveinleft
     cs "Things sure are boooooring around here..."
     cs "I should check on the HoH SiS folks. They should be making some progress by now."
     scene cs_room
     show cs_neutral with moveinbottom
-    "{i}CS walks into his room{/i}"
+    "{i}CS walks into his room.{/i}"
     cs "What?! They're gone?!"
-    cs "The house is still on the side, and my computer is messed up!!!"
+    cs "The house is still on the side, and my computer is messed up!"
     cs "I need to get those guys!"
     cs "I'm gonna go to HoH SiS HQ and kick some butt!"
     show black with dissolve
@@ -263,7 +267,7 @@ label start:
     show worker_1 at right with moveinright
     worker_1 "I don't know!!"
     cs "BullShisH!"
-    cs "{i}punches worker.{/i}"
+    cs "{i}CS punches the worker.{/i}"
     hide worker_1 with moveoutright
     show worker_2 at right with moveinright
     worker_2 "They--... They're on the roof!!"
