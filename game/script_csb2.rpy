@@ -19,12 +19,12 @@ image jail_inside = "bg/jail_inside.png"
 
 # The game starts here.
 
-label csbii:
+label csbii_start:
 
     scene helipad
     show cs_angry at left
     show wesley at right
-    cs "You'll pay for what you did?"
+    cs "You'll pay for what you did!"
     "{i}Wesley sweats nervously."
     wesley "Do you want a refund?"
     cs "I'll refund your face to the floor!"

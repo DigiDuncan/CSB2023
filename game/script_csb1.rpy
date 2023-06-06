@@ -62,7 +62,7 @@ image hoh_hq = "bg/office1.png"
 
 # The game starts here.
 
-label start:
+label csbi_start:
 
     scene cs_room
     show cs_neutral
@@ -312,4 +312,4 @@ label csbi_end:
     cs "Good!!"
     "{i}...{/i}"
     show black with dissolve
-    jump csbii
+    jump csbii_start
