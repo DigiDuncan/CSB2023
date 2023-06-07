@@ -2,6 +2,7 @@
 define copguy = Character("CopGuy")
 define arceus = Character("Arceus")
 define anno = Character("Anno")
+define border_guard = Character("Border Guard")
 
 #CSB2 Character Images
 image cs_neutral = "characters/cs.png"
@@ -14,12 +15,14 @@ image wesley = "characters/wesley.png"
 image arceus = "characters/arceus.png"
 image arceus flipped = Transform("characters/arceus.png", xzoom = -1)
 # image anno = "characters/anno.png"
+image border_guard = "characters/border_guard.png"
 
 #CSB2 Background Images
 image helipad = "bg/helipad.png"
 image cs_street = "bg/cs_street.png"
 image jail_inside = "bg/jail_inside.png"
 image border = "bg/canadian_border.png"
+image outside_tim_hortons = "bg/outside_tim_hortons.png"
 
 
 # The game starts here.
@@ -176,4 +179,26 @@ label breakout:
 
 label bordercrossing:
     scene border with fade
-    "God, typing all this sucks."
+    n "CS, Anno, and Arceus get to the border crossing."
+    n "A wild border guard appears."
+
+    show border_guard at center with dissolve
+    border_guard "I'm going to need proof of citizenship, eh."
+    show border_guard at left with moveinleft
+    show arceus at right with moveinright
+    arceus "Colour is spelled with a u, eh."
+    border_guard "Works for me, eh."
+
+    hide border_guard with dissolve
+
+    # TODO: NEW BG: Canada, somewhere?
+    # TODO: Banter between Arc, CS, and Anno
+
+    arceus "Guys, I'm getting hungry. Wanna stop at Tim Horton's and get some grub?"
+    n "Anno and CS nod aggresively."
+    n "Arceus checks his phone."
+    arceus "There's one just over here, come on."
+
+    scene outside_tim_hortons
+
+    "I'm so tired of writing this please save me oh god"
