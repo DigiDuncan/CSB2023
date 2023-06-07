@@ -301,6 +301,7 @@ label csbi_end:
     "{i}...{/i}"
     scene hoh_hq
     show cs_angry with dissolve
+    play sound "audio/officepuncher.mp3"
     cs "Alright! Where are the head JoJites?!"
     show worker_1 at right with moveinright
     worker_1 "I don't know!!"
