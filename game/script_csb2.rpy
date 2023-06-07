@@ -143,7 +143,7 @@ label breakout:
     show cs at left with dissolve
     show arceus at right with dissolve
 
-    arceus "So, what's the plan? I've been tryna break outta here for 5 years."
+    arceus "So, what's the plan? I've been tryna break outta here for five years."
     cs "Well, for a start. I need to get a feel of the routine here."
     arceus "Well, I'll quickly describe that for you, cause I can't stand another minute here." 
     n "Arceus describes the prison routine to CS."
@@ -179,6 +179,7 @@ label breakout:
     n "The plan goes off without a hitch, the three ditch their prison outfits, and put on their guard uniforms." 
 
 
+    # TODO: [PAKOO] Tunnel
     n "The three dig their way out of the cell and make a break into the dark of the evening."
     cs "Jeez... I didn't think that would actually work."
 
