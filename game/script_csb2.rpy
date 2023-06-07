@@ -1,6 +1,7 @@
 #CSB2 Character Definitions
 define copguy = Character("CopGuy")
 define arceus = Character("Arceus")
+define anno = Character("Anno")
 
 #CSB2 Character Images
 image cs_neutral = "characters/cs.png"
@@ -11,11 +12,14 @@ image ed = "characters/ed.png"
 image ed_phone = "characters/ed_phone.png"
 image wesley = "characters/wesley.png"
 image arceus = "characters/arceus.png"
+image arceus flipped = Transform("characters/arceus.png", xzoom = -1)
+# image anno = "characters/anno.png"
 
 #CSB2 Background Images
 image helipad = "bg/helipad.png"
 image cs_street = "bg/cs_street.png"
 image jail_inside = "bg/jail_inside.png"
+image border = "bg/canadian_border.png"
 
 
 # The game starts here.
@@ -130,3 +134,45 @@ label breakout:
     hide cs with dissolve
     hide arceus with dissolve
     scene black with fade
+
+    "{i}The day ends, and the next day progresses. CS and Arceus gather the required essentials for their escape. Along the way, they inform Anno, who more than happily complies with the plan.{/i}" 
+    "{i}The next evening...{/i}"
+    cs "Key, check."
+
+    show arceus flipped at left with moveinleft
+    arceus "Uniforms, check."
+
+    show anno at right with moveinright
+    anno "Spoons, check."
+
+    show cs_neutral at center with dissolve
+    cs "Extra shorts..."
+    cs "Check."
+    cs "Alright men, let's get the heck out of here!"
+
+    scene black with dissolve
+
+    # TODO: Guys, can we actually detail the escape a *little* bit?
+    "{i}The plan goes off without a hitch, the three ditch their prison outfits, and put on their guard uniforms.{/i}" 
+
+
+    "{i}The three dig their way out of the cell and make a break into the dark of the evening.{/i}"
+    cs "Jeez... I didn't think that would actually work."
+
+    show arceus at right with easeinright
+    arceus "You what?" 
+    
+    show anno
+    anno "How are we supposed to cross the border with the new wall?"
+    # TODO: Are we in New York?
+    arceus "Not the Mexican border, the Canadian border, we're in New York, it's way closer and they're too polite to send us back."
+    cs "Works for me, free healthcare."
+    arceus "Well, you have to live there for a few years before you get access to that, but you should last a few years without getting sick living on that healthy diet of Ritz and EZ cheese."
+
+    hide arceus with dissolve
+    hide anno with dissolve
+    jump bordercrossing
+
+label bordercrossing:
+    scene border with fade
+    "God, typing all this sucks."
