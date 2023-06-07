@@ -24,6 +24,7 @@ image jail_inside = "bg/jail_inside.png"
 image jail_cell = "bg/jail_cell.png"
 image border = "bg/canadian_border.png"
 image outside_tim_hortons = "bg/outside_tim_hortons.png"
+image inside_tim_hortons = "bg/inside_tim_hortons.png"
 
 
 # The game starts here.
@@ -84,7 +85,7 @@ label punch:
 label caught:
     cs "Dammit! Ed's calling the police! I gotta go after him!"
     ed "911! Come quickly! He's chasing after me!"
-    # TODO: Blue and red flashes
+    # TODO: [DIGI] Blue and red flashes
     n "The police arrive and CS runs away."
     hide cs_angry with moveoutleft
     show ed_phone at left with move
@@ -128,7 +129,7 @@ label jail:
     arceus "Anno? Sure, he may be of use to us."
     cs "Alright then, let's get going!"
 
-    # TODO: How to make these happen at the same time?
+    # TODO: [ARC] How to make these happen at the same time?
     hide arceus with moveoutright
     hide cs with moveoutleft
     jump breakout
@@ -171,7 +172,7 @@ label breakout:
 
     scene black with dissolve
 
-    # TODO: Guys, can we actually detail the escape a *little* bit?
+    # TODO: [PAKOO] Guys, can we actually detail the escape a *little* bit?
     n "The plan goes off without a hitch, the three ditch their prison outfits, and put on their guard uniforms." 
 
 
@@ -205,8 +206,8 @@ label bordercrossing:
 
     hide border_guard with dissolve
 
-    # TODO: NEW BG: Canada, somewhere?
-    # TODO: Banter between Arc, CS, and Anno
+    # TODO: [PAKOO] NEW BG: Canada, somewhere?
+    # TODO: [ARC] Banter between Arc, CS, and Anno
 
     arceus "Guys, I'm getting hungry. Wanna stop at Tim Horton's and get some grub?"
     n "Anno and CS nod aggresively."
@@ -214,5 +215,55 @@ label bordercrossing:
     arceus "There's one just over here, come on."
 
     scene outside_tim_hortons
+    show cs_neutral at left
+    cs "I'm starving after all that walking, I need a donut."
+    show cs_neutral at offscreenright with move
+    show arceus flipped at offscreenright with moveinleft
+    show anno at offscreenright with moveinleft
 
-    "I'm so tired of writing this please save me oh god"
+    scene inside_tim_hortons
+    show cs_neutral at left with moveinleft
+    show arceus at center with moveinleft
+    show anno at right with moveinleft
+
+    anno "Finally."
+    # TODO: [ARC] At the same time please?
+    hide anno with dissolve
+    hide cs_neutral with dissolve
+
+    show arceus at left with move
+    show cashier at right with moveinright
+
+    # TODO: Room flower shop music here
+
+    arceus "Hi."
+    cashier "Can I help you?"
+    arceus "Yeah, can I have a dozen glazed donuts please?"
+    cashier "Oh hi Arceus, I didn't know it was you."
+
+    hide cashier
+    hide arceus
+    show anno
+    anno "Wait, huh?"
+
+    hide anno
+    show arceus at left
+    show cashier at right
+
+    cashier "Here you go."
+    arceus "That's me!"
+    arceus "How much is it?"
+    cashier "It'll be $18.{nw}"
+    arceus "Here you go! Keep the change."
+    arceus "Hi doggy!"
+    cashier "You're my favorite customer."
+    arceus "Thanks a lot! Bye~"
+    hide arceus with moveoutleft
+    cashier "Buh-bye!"
+    hide cashier with dissolve
+
+    # TODO: Music stops.
+
+    show cs_neutral
+    cs "..."
+    cs "I think I'm {i}really{/i} sleep deprived."
