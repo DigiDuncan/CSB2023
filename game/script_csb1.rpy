@@ -83,6 +83,7 @@ label csbi_start:
 
     scene cs_room
     show cs_neutral
+    play music "<loop 0>csgroove.mp3" volume 0.2
     cs "Welp, time to start up the ol' Craptop."
     hide cs_neutral
     scene craptop_desktop
@@ -123,8 +124,10 @@ label csbi_start:
     cs "Oh! Look out the window! There's a Michael Rosen!"
     hide cs_neutral
     show cs_happy
+    stop music fadeout 3.0
     cs "Yeah! Let's go outside!"
     scene cs_house
+    play music "canyon.mp3" volume 0.2
     show cs_happy
     cs "Nice day!"
     hide cs_happy
@@ -139,10 +142,12 @@ label csbi_start:
     carguy "Nooot so nice scratch.."
     carguy "You should try Crotch Doctor!"
     cs "OH GOD AN ADVERTISER!!!"
+    stop music fadeout 3.0
     cs "QUICK START THE CAR START THE CAR!!!"
     hide carguy
     # TODO: Transition, door slam
     show cs_car_inside behind cs_neutral
+    play music "<loop 0>canyon.mp3" volume 0.2
     cs "Whew.. That was close!"
     cs "Should I go get groceries?"
     menu:
@@ -197,6 +202,7 @@ label walmart:
 
 label room:
     scene cs_room
+    stop music fadeout 3.0
     n "CS arrives home and walks to his room."
     show cs_happy with dissolve
     cs "Ahhh. It's good to be home!"
@@ -205,6 +211,7 @@ label room:
     cs "You know, I haven't put out a YTP in a while. I should work on one of my in-progress ones."
     show craptop_edit with fade
     n "CS walks to his craptop and opens up Premiere."
+    play music "<loop 0>ytpediting.mp3" volume 0.2
     cs "Ooooh! Here's the one from my last editing stream. People would be excited to finally see this as a finished product."
     n "CS watches the in-progress video."
     cs "This is pretty good, but I am feeling uninspired... I don't know where to go from here..."
@@ -240,6 +247,7 @@ label room:
     cs "I guess I'll work on my new YTP while I wait."
     scene black with fade
     n "Time passes and the doorbell rings."
+    stop music fadeout 3.0
     scene door_closed with fade
     show cs_happy with moveinbottom
     cs "Oh they're here!"
@@ -250,6 +258,7 @@ label room:
     hide cs_happy
     show cs_neutral at left with move
     show ed at right with moveinright
+    play music "<loop 0>hohsis_theme.mp3" volume 0.2
     ed "Alright that will be 200,000 Bits."
     cs "Okay, I guess they already told you what I need done.. Lemme get my wallet..."
     cs "Hang on a sec. Didn't they say I could pay afterwards?"
@@ -294,6 +303,7 @@ label room:
     hide ed with moveouttop
     hide wesley with moveouttop
     hide rich with moveouttop
+    stop music fadeout 3.0
     scene cs_street
     show cs_neutral with moveinleft
     cs "Things sure are boooooring around here..."
