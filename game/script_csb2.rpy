@@ -21,6 +21,7 @@ image border_guard = "characters/border_guard.png"
 image helipad = "bg/helipad.png"
 image cs_street = "bg/cs_street.png"
 image jail_inside = "bg/jail_inside.png"
+image jail_cell = "bg/jail_cell.png"
 image border = "bg/canadian_border.png"
 image outside_tim_hortons = "bg/outside_tim_hortons.png"
 
@@ -57,7 +58,7 @@ label punch:
     cs "Take this!"
     play audio "audio/punch.ogg"
     with hpunch
-    "{i}CS punches Wesley and knocks him out.{/i}"
+    n "CS punches Wesley and knocks him out."
     play sound "audio/punch.ogg"
     show wesley at right with hpunch
     play sound "audio/punch.ogg"
@@ -133,8 +134,7 @@ label jail:
     jump breakout
 
 label breakout:
-    # scene jail_cell
-    # TODO: inside cell BG
+    scene jail_cell
 
     show cs at left with dissolve
     show arceus at right with dissolve
@@ -183,8 +183,7 @@ label breakout:
     
     show anno
     anno "How are we supposed to cross the border with the new wall?"
-    # TODO: Are we in New York?
-    arceus "Not the Mexican border, the Canadian border, we're in New York, it's way closer and they're too polite to send us back."
+    arceus "Not the Mexican border, the Canadian border, we're in Washington, it's way closer and they're too polite to send us back."
     cs "Works for me, free healthcare."
     arceus "Well, you have to live there for a few years before you get access to that, but you should last a few years without getting sick living on that healthy diet of Ritz and EZ cheese."
 

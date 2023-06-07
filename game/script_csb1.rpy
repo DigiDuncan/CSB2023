@@ -158,7 +158,7 @@ label walmart:
     show cs_happy
     cs "Oh yes! Walmart is open!"
     scene walmart_inside with fade
-    n "CS walks inside0"
+    n "CS walks inside."
     show doug at right with moveinright
     greeter "Hello and welcome to Walmart! Can I help you with anything?"
     show cs_neutral at left with moveinleft
@@ -323,7 +323,7 @@ label csbi_end:
     show worker_1 at right with moveinright
     worker_1 "I don't know!!"
     cs "BullShisH!"
-    cs "{i}CS punches the worker.{/i}"
+    n "CS punches the worker."
     play sound "audio/punch.ogg"
     show worker_1 at right with hpunch
     hide worker_1 with moveoutright
@@ -337,7 +337,7 @@ label csbi_end:
     show worker_4 at left
     show cs_angry with moveinleft
     cs "Get out of my way!"
-    cs "{i}CS bodyslams the worker as he runs past.{/i}"
+    n "CS bodyslams the worker as he runs past."
     play sound "audio/punch.ogg"
     show worker_3 at right with hpunch
     play sound "audio/punch.ogg"
@@ -353,7 +353,7 @@ label csbi_end:
     show worker_5alt at left
     worker_5 "Uhh, that way!"
     cs "Thanks, and also-"
-    cs "{i}CS clocks the worker in the face.{i}"
+    n "CS clocks the worker in the face."
     play sound "audio/punch.ogg"
     show worker_5alt at left with hpunch
     hide worker_5alt with moveoutbottom
