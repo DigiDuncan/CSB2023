@@ -52,7 +52,8 @@ label punch:
     show cs_angry at left
     show wesley at right
     cs "Take this!"
-    # TODO: Punch animation
+    play audio "audio/punch.ogg"
+    with hpunch
     "{i}CS punches Wesley and knocks him out.{/i}"
     hide wesley with easeoutright
     cs "That'll teach you not to miss with a nerd's computer!"
