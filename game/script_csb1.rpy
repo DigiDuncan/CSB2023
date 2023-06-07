@@ -83,7 +83,7 @@ label csbi_start:
 
     scene cs_room
     show cs_neutral
-    play music "<loop 0>csgroove.mp3" volume 0.2
+    play music "<loop 0>csgroove.mp3" volume 0.15
     cs "Welp, time to start up the ol' Craptop."
     hide cs_neutral
     scene craptop_desktop
@@ -213,7 +213,7 @@ label room:
     cs "You know, I haven't put out a YTP in a while. I should work on one of my in-progress ones."
     show craptop_edit with fade
     n "CS walks to his craptop and opens up Premiere."
-    play music "<loop 0>ytpediting.mp3" volume 0.2
+    play music "<loop 0>ytpediting.mp3" volume 0.3
     cs "Ooooh! Here's the one from my last editing stream. People would be excited to finally see this as a finished product."
     n "CS watches the in-progress video."
     cs "This is pretty good, but I am feeling uninspired... I don't know where to go from here..."
@@ -235,7 +235,7 @@ label room:
     show cs_neutral
     cs "Oh, flashback over."
     n "A loud crash can be heard as though an atom has split in CS' foundation."
-    play sound "foundationfail.ogg"
+    play sound "foundationfail.ogg" volume 0.5
     cs "Woah! I was dreaming so long that the foundation fell apart. My house just fell to the side!"
     cs "I really need to get some foundation repair."
     cs "Better call HoH SiS!"
@@ -250,7 +250,7 @@ label room:
     cs "I guess I'll work on my new YTP while I wait."
     scene black with fade
     n "Time passes and the doorbell rings."
-    play sound "doorbell.ogg"
+    play sound "doorbell.ogg" volume 0.5
     stop music fadeout 3.0
     scene door_closed with fade
     show cs_happy with moveinbottom
