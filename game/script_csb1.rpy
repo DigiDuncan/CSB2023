@@ -368,7 +368,9 @@ label csbi_end:
     worker_5 "Uhh, that way!"
     cs "Thanks, and also-"
     n "CS clocks the worker in the face."
+    show cs_angry at left with move
     play sound "audio/punch.ogg"
+    show cs_angry at right with move
     show worker_5alt at left with hpunch
     hide worker_5alt with moveoutbottom
     hide cs with moveoutright
@@ -388,7 +390,9 @@ label left:
     show worker_6 at right
     show cs_angry at left with moveinleft
     cs "A... pineapple?"
+    show cs_angry at right with move
     play sound "audio/punch.ogg"
+    show cs_angry at left with move
     show worker_6 at right with hpunch
     hide worker_6 with moveoutright
     show black with dissolve
@@ -399,7 +403,9 @@ label right:
     show worker_7 at right
     show cs_angry at left with moveinleft
     cs "A fucking chicken?"
+    show cs_angry at right with move
     play sound "audio/punch.ogg"
+    show cs_angry at left with move
     show worker_7 at right with hpunch
     hide worker_7 with moveoutright
     show black with dissolve

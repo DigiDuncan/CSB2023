@@ -63,6 +63,7 @@ label punch:
     show wesley at right
     cs "Take this!"
     n "CS punches Wesley and knocks him out."
+    show cs_angry at center with move
     play audio "audio/punch.ogg"
     play sound "audio/punch.ogg"
     show wesley at right with hpunch
@@ -83,6 +84,7 @@ label punch:
     show wesley at right with hpunch
     play sound "victorypunch.ogg" volume 0.5
     hide wesley with easeoutright
+    show cs_angry at left with move
     cs "That'll teach you not to mess with a nerd's computer!"
     show ed_phone at right
     show cs_angry at left with move
