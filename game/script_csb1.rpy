@@ -145,7 +145,7 @@ label csbi_start:
     stop music fadeout 3.0
     cs "QUICK START THE CAR START THE CAR!!!"
     hide carguy
-    # TODO: Transition, door slam
+    # TODO: [PAKOO] Transition, door slam
     show cs_car_inside behind cs_neutral
     play music "<loop 0>canyon.mp3" volume 0.2
     cs "Whew.. That was close!"
@@ -193,7 +193,7 @@ label walmart:
     cs "Not you again!"
     cs "I gotta get outta here!"
     hide carguy
-    # TODO: Transition, door slam
+    # TODO: [PAKOO] Transition, door slam
     show car_inside behind cs_neutral
     cs "Let's get home before that guy doctor's my crotch!"
     show black with fade
@@ -298,7 +298,7 @@ label room:
     show wesley at center with moveinbottom
     show rich at right with moveinbottom
     rich "Lemme call our JoJ UFO."
-    # TODO: Beaming up animation
+    # TODO: [DIGI] Beaming up animation
     "Ed, Wesley, and Richard" "I'm beaming up!"
     hide ed with moveouttop
     hide wesley with moveouttop
