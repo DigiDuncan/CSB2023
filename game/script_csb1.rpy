@@ -34,8 +34,8 @@ image ycs = "characters/cs_young.png"
 image rich = "characters/richard.png"
 image ed = "characters/ed.png"
 image wesley = "characters/wesley.png"
-image worker_1 = "characters/corn_worker.png"
-image worker_2 = "characters/corn_worker.png"
+image worker_1 = "characters/worker_corn.png"
+image worker_2 = "characters/worker_blank.png"
 
 #CSB1 Background Images
 
@@ -200,11 +200,11 @@ label room:
     cs "..."
     cs "Oh look a flashback. What a coincidence..."
     scene cs_room with pixellate
-    show young_cs with moveinbottom
+    show cs_young with moveinbottom
     ycs "Hey guys! Young CS here! Today I'm gonna be editing a craaaaAaAAaAAAAAaaAazy video!!"
     "{i}keyboard tapping{/i}"
     ycs "Ohhhhhh YeeEeeEeEeeEEeEEs! This is lookin' good!"
-    hide young_cs
+    hide cs_young
     scene cs_room with pixellate
     show cs_neutral
     cs "Oh, flashback over."

@@ -71,3 +71,8 @@
 
 * Backgrounds should be opaque PNGs of resolution 1920x1080.
 * Characters should be transparent PNGs of variable width, and look good next to CS.
+
+## Sound
+
+* Music should be at least -15Db or lower in the game.
+* Use mp3 for the music format.
