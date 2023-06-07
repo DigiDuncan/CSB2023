@@ -57,23 +57,26 @@ label punch:
     show cs_angry at left
     show wesley at right
     cs "Take this!"
-    play audio "audio/punch.ogg"
-    with hpunch
     n "CS punches Wesley and knocks him out."
+    play audio "audio/punch.ogg"
     play sound "audio/punch.ogg"
     show wesley at right with hpunch
     play sound "audio/punch.ogg"
-    show wesley at right with hpunch
+    play sound "audio/punchalt.ogg"
+    show wesley at right with vpunch
     play sound "audio/punch.ogg"
     show wesley at right with hpunch
     play sound "audio/punch.ogg"
-    show wesley at right with hpunch
+    play sound "audio/punchalt.ogg"
+    show wesley at right with vpunch
     play sound "audio/punch.ogg"
     show wesley at right with hpunch
     play sound "audio/punch.ogg"
-    show wesley at right with hpunch
+    play sound "audio/punchalt.ogg"
+    show wesley at right with vpunch
     play sound "audio/punch.ogg"
     show wesley at right with hpunch
+    play sound "victorypunch.ogg"
     hide wesley with easeoutright
     cs "That'll teach you not to miss with a nerd's computer!"
     show ed_phone at right
