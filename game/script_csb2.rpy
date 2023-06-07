@@ -25,6 +25,8 @@ image jail_cell = "bg/jail_cell.png"
 image border = "bg/canadian_border.png"
 image outside_tim_hortons = "bg/outside_tim_hortons.png"
 image inside_tim_hortons = "bg/inside_tim_hortons.png"
+image tunnel = "bg/tunnel.png"
+image canada = "bg/canada.png"
 
 
 # The game starts here.
@@ -179,7 +181,7 @@ label breakout:
     n "The plan goes off without a hitch, the three ditch their prison outfits, and put on their guard uniforms." 
 
 
-    # TODO: [PAKOO] Tunnel
+    scene tunnel
     n "The three dig their way out of the cell and make a break into the dark of the evening."
     cs "Jeez... I didn't think that would actually work."
 
@@ -210,9 +212,9 @@ label bordercrossing:
 
     hide border_guard with dissolve
 
-    # TODO: [PAKOO] NEW BG: Canada, somewhere?
-    # TODO: [ARC] Banter between Arc, CS, and Anno
 
+    # TODO: [ARC] Banter between Arc, CS, and Anno
+    scene canada with slideright
     arceus "Guys, I'm getting hungry. Wanna stop at Tim Horton's and get some grub?"
     n "Anno and CS nod aggresively."
     n "Arceus checks his phone."
