@@ -3,6 +3,7 @@ define copguy = Character("CopGuy")
 define arceus = Character("Arceus")
 define anno = Character("Anno")
 define border_guard = Character("Border Guard")
+define linus = Character("Linus")
 
 #CSB2 Character Images
 image cs_neutral = "characters/cs.png"
@@ -16,6 +17,7 @@ image arceus = "characters/arceus.png"
 image arceus flipped = Transform("characters/arceus.png", xzoom = -1)
 # image anno = "characters/anno.png"
 image border_guard = "characters/border_guard.png"
+image linus = "characters/linus.png"
 
 #CSB2 Background Images
 image helipad = "bg/helipad.png"
@@ -81,7 +83,7 @@ label punch:
     show wesley at right with hpunch
     play sound "victorypunch.ogg"
     hide wesley with easeoutright
-    cs "That'll teach you not to miss with a nerd's computer!"
+    cs "That'll teach you not to mess with a nerd's computer!"
     show ed_phone at right
     show cs_angry at left with move
     ed "Hello, 911? My coworker just got knocked out by a disgruntled customer and appears to be dying! Send help!"
@@ -181,7 +183,6 @@ label breakout:
     # TODO: [PAKOO] Guys, can we actually detail the escape a *little* bit?
     n "The plan goes off without a hitch, the three ditch their prison outfits, and put on their guard uniforms." 
 
-
     scene tunnel
     n "The three dig their way out of the cell and make a break into the dark of the evening."
     cs "Jeez... I didn't think that would actually work."
@@ -212,7 +213,6 @@ label bordercrossing:
     border_guard "Works for me, eh."
 
     hide border_guard with dissolve
-
 
     # TODO: [ARC] Banter between Arc, CS, and Anno
     scene canada with slideright # TODO: [PAKOO] this looks bac
@@ -294,6 +294,13 @@ label bordercrossing:
     cs "I have a lot of video editing experience, maybe I can get a job there."
 
     # TODO: [PAKOO] WE NEED LIKE, A TRANSITION HERE OR SOMETHING THIS IS SUCH A JUMP
-    n "CS walks into the studio and ask for a job."
+    n "CS walks into the studio to ask for a job."
 
-    scene inside_ltt
+    scene black with fade
+    show linus
+    scene inside_ltt with fade
+
+    linus "Sure, you can have a job, just show us proof of citizenship and you're ready to go!"
+    cs "Colour is spelled with a u, eh."
+    linus "I need actual papers, the last time I hired someone who used that as proof of citizenship I got fined and had to sell one of my thousands of RTX Titans."
+    cs "Ummmm, I'll be right back."
