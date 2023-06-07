@@ -81,7 +81,7 @@ label punch:
     show wesley at right with vpunch
     play sound "audio/punch.ogg"
     show wesley at right with hpunch
-    play sound "victorypunch.ogg"
+    play sound "victorypunch.ogg" volume 0.5
     hide wesley with easeoutright
     cs "That'll teach you not to mess with a nerd's computer!"
     show ed_phone at right
