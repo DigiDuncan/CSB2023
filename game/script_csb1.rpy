@@ -61,7 +61,7 @@ image craptop_car = "bg/craptop_car.png"
 image craptop_discord = "bg/craptop_sad.png"
 image craptop_edit = "bg/craptop_edit.png"
 image craptop_error = "bg/Craptop_error.png"
-image craptop_yt = "bg/craptop_ytp"
+image craptop_yt = "bg/craptop_ytp.png"
 image cs_house = "bg/Cs_house.png"
 image cs_car = "bg/car_driveway.png"
 image cs_car_inside = "bg/car_inside.png"
@@ -146,6 +146,7 @@ label csbi_start:
     cs "QUICK START THE CAR START THE CAR!!!"
     hide carguy
     # TODO: [PAKOO] Transition, door slam
+    play sound "doorslam.ogg"
     show cs_car_inside behind cs_neutral
     play music "<loop 0>canyon.mp3" volume 0.2
     cs "Whew.. That was close!"
@@ -194,6 +195,7 @@ label walmart:
     cs "I gotta get outta here!"
     hide carguy
     # TODO: [PAKOO] Transition, door slam
+    play sound "doorslam.ogg"
     show car_inside behind cs_neutral
     cs "Let's get home before that guy doctor's my crotch!"
     show black with fade
@@ -217,7 +219,7 @@ label room:
     cs "This is pretty good, but I am feeling uninspired... I don't know where to go from here..."
     cs "..."
     cs "I know! Should watch some other YTPs for inspiration"
-    show craptop_yt
+    show craptop_ytp
     hide craptop_edit
     n "CS opens up YouTube and begins watching YTPs. After a while, CS runs into some old YTPs."
     cs "Man, it was so easy back then. All you needed was Windows Movie Maker and some effects. If only it was that easy now..."
@@ -233,6 +235,7 @@ label room:
     show cs_neutral
     cs "Oh, flashback over."
     n "A loud crash can be heard as though an atom has split in CS' foundation."
+    play sound "foundationfail.ogg"
     cs "Woah! I was dreaming so long that the foundation fell apart. My house just fell to the side!"
     cs "I really need to get some foundation repair."
     cs "Better call HoH SiS!"
@@ -247,6 +250,7 @@ label room:
     cs "I guess I'll work on my new YTP while I wait."
     scene black with fade
     n "Time passes and the doorbell rings."
+    play sound "doorbell.ogg"
     stop music fadeout 3.0
     scene door_closed with fade
     show cs_happy with moveinbottom
