@@ -347,15 +347,15 @@ label csbi_end:
     n "..."
     show black with dissolve
     scene hoh_hq2
-    show worker_3 at right
-    show worker_4 at left
+    show worker_3 at default
+    show worker_4 at center
     show cs_angry with moveinleft
     cs "Get out of my way!"
     n "CS bodyslams the worker as he runs past."
     play sound "audio/punch.ogg"
-    show worker_3 at right with hpunch
+    show worker_3 at default with hpunch
     play sound "audio/punch.ogg"
-    show worker_4 at left with hpunch
+    show worker_4 at center with hpunch
     hide worker_3 with moveoutright
     hide worker_4 with moveoutleft
     show black with dissolve
