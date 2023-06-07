@@ -27,7 +27,8 @@ image outside_tim_hortons = "bg/outside_tim_hortons.png"
 image inside_tim_hortons = "bg/inside_tim_hortons.png"
 image tunnel = "bg/tunnel.png"
 image canada = "bg/canada.png"
-
+image outside_ltt = "bg/linus_office_outside.png"
+image inside_ltt = "bg/linus_hallway.png"
 
 # The game starts here.
 
@@ -214,7 +215,7 @@ label bordercrossing:
 
 
     # TODO: [ARC] Banter between Arc, CS, and Anno
-    scene canada with slideright
+    scene canada with slideright # TODO: [PAKOO] this looks bac
     arceus "Guys, I'm getting hungry. Wanna stop at Tim Horton's and get some grub?"
     n "Anno and CS nod aggresively."
     n "Arceus checks his phone."
@@ -273,3 +274,26 @@ label bordercrossing:
     show cs_neutral
     cs "..."
     cs "I think I'm {i}really{/i} sleep deprived."
+
+    scene inside_tim_hortons with fade
+
+    show cs_neutral
+    show anno at left
+    show arceus at right
+
+    n "CS, Arceus, and Anno enjoy some well-deserved donuts."
+    arceus "Sorry to interrupt you two, but we may have a problem, that donut cost me the last of my money, so we need to find a way to make some cash."
+    scene outside_ltt
+    n "CS looks across the street to see Linus Media Group."
+    hide cs_neutral
+    hide arceus
+    hide Anno
+
+    scene inside_tim_hortons
+    show cs_neutral
+    cs "I have a lot of video editing experience, maybe I can get a job there."
+
+    # TODO: [PAKOO] WE NEED LIKE, A TRANSITION HERE OR SOMETHING THIS IS SUCH A JUMP
+    n "CS walks into the studio and ask for a job."
+
+    scene inside_ltt
