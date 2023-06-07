@@ -58,6 +58,20 @@ label punch:
     play audio "audio/punch.ogg"
     with hpunch
     "{i}CS punches Wesley and knocks him out.{/i}"
+    play sound "audio/punch.ogg"
+    show wesley at right with hpunch
+    play sound "audio/punch.ogg"
+    show wesley at right with hpunch
+    play sound "audio/punch.ogg"
+    show wesley at right with hpunch
+    play sound "audio/punch.ogg"
+    show wesley at right with hpunch
+    play sound "audio/punch.ogg"
+    show wesley at right with hpunch
+    play sound "audio/punch.ogg"
+    show wesley at right with hpunch
+    play sound "audio/punch.ogg"
+    show wesley at right with hpunch
     hide wesley with easeoutright
     cs "That'll teach you not to miss with a nerd's computer!"
     show ed_phone at right
@@ -76,6 +90,7 @@ label caught:
     show copguy at right with moveinright
     copguy "Get back here!"
     cs "You can't catch me, I'm the speedy Michael Rosen!"
+    stop music fadeout 3.0
     n "As CS is not actually the speedy Michael Rosen, he gets caught by the police."
     scene black with fade
     jump jail

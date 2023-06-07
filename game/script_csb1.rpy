@@ -21,6 +21,12 @@ define ed = Character("Ed")
 define wesley = Character("Wesley")
 define worker_1 = Character("Worker 1")
 define worker_2 = Character("Worker 2")
+define worker_3 = Character("Worker 3")
+define worker_4 = Character("Worker 4")
+define worker_5 = Character("Worker 5")
+define worker_5alt = Character("Worker 5")
+define worker_6 = Character("Worker 6")
+define worker_7 = Character("Worker 7")
 
 #CSB1 Character Images
 image cs_neutral = "characters/cs.png"
@@ -37,6 +43,12 @@ image ed = "characters/ed.png"
 image wesley = "characters/wesley.png"
 image worker_1 = "characters/worker_corn.png"
 image worker_2 = "characters/worker_blank.png"
+image worker_3 = "characters/worker_mean.png"
+image worker_4 = "characters/worker_eville.png"
+image worker_5 = "characters/eddie_down.png"
+image worker_5alt = "characters/eddie_up.png"
+image worker_6 = "characters/worker_pineapple.png"
+image worker_7 = "characters/worker_chicken.png"
 
 #CSB1 Background Images
 
@@ -60,6 +72,10 @@ image walmart_register = "bg/walmart_checkout.png"
 image cs_door_closed = "bg/door_closed.png"
 image cs_door_open = "bg/door_open.png"
 image hoh_hq = "bg/office1.png"
+image hoh_hq2 = "bg/office2.png"
+image hoh_hq3 = "bg/office3.png"
+image hoh_hq4 = "bg/office4.png"
+image hoh_hq5 = "bg/office5.png"
 
 # The game starts here.
 
@@ -301,17 +317,76 @@ label csbi_end:
     show black with dissolve
     n "..."
     scene hoh_hq
+    play music "<loop 0>officepuncher.mp3" volume 0.2
     show cs_angry with dissolve
-    play sound "audio/officepuncher.mp3"
     cs "Alright! Where are the head JoJites?!"
     show worker_1 at right with moveinright
     worker_1 "I don't know!!"
     cs "BullShisH!"
     cs "{i}CS punches the worker.{/i}"
+    play sound "audio/punch.ogg"
+    show worker_1 at right with hpunch
     hide worker_1 with moveoutright
     show worker_2 at right with moveinright
     worker_2 "They--... They're on the roof!!"
     cs "Good!!"
     n "..."
+    show black with dissolve
+    scene hoh_hq2
+    show worker_3 at right
+    show worker_4 at left
+    show cs_angry with moveinleft
+    cs "Get out of my way!"
+    cs "{i}CS bodyslams the worker as he runs past.{/i}"
+    play sound "audio/punch.ogg"
+    show worker_3 at right with hpunch
+    play sound "audio/punch.ogg"
+    show worker_4 at left with hpunch
+    hide worker_3 with moveoutright
+    hide worker_4 with moveoutleft
+    show black with dissolve
+    scene hoh_hq3
+    show worker_5 at left
+    show cs_angry at right with moveinright
+    cs "Which way to the elevator? Now!"
+    hide worker_5
+    show worker_5alt at left
+    worker_5 "Uhh, that way!"
+    cs "Thanks, and also-"
+    cs "{i}CS clocks the worker in the face.{i}"
+    play sound "audio/punch.ogg"
+    show worker_5alt at left with hpunch
+    hide worker_5alt with moveoutbottom
+    hide cs with moveoutright
+    show black with dissolve
+    scene hoh_hq4
+    show cs_angry with moveinbottom
+    cs "Which way to go..."
+
+    menu:
+        "Left":
+            jump left
+        "Right":
+            jump right
+
+label left:
+    scene hoh_hq5
+    show worker_6 at right
+    show cs_angry at left with moveinleft
+    cs "A... pineapple?"
+    play sound "audio/punch.ogg"
+    show worker_6 at right with hpunch
+    hide worker_6 with moveoutright
+    show black with dissolve
+    jump csbii_start
+
+label right:
+    scene hoh_hq5
+    show worker_7 at right
+    show cs_angry at left with moveinleft
+    cs "A fucking chicken?"
+    play sound "audio/punch.ogg"
+    show worker_7 at right with hpunch
+    hide worker_7 with moveoutright
     show black with dissolve
     jump csbii_start
