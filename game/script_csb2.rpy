@@ -30,7 +30,7 @@ label csbii_start:
     show cs_angry at left
     show wesley at right
     cs "You'll pay for what you did!"
-    "{i}Wesley sweats nervously."
+    n "Wesley sweats nervously."
     wesley "Do you want a refund?"
     cs "I'll refund your face to the floor!"
     hide cs_angry
@@ -67,13 +67,13 @@ label caught:
     cs "Dammit! Ed's calling the police! I gotta go after him!"
     ed "911! Come quickly! He's chasing after me!"
     # TODO: Blue and red flashes
-    "{i}The police arrive and CS runs away.{/i}"
+    n "The police arrive and CS runs away."
     hide cs_angry with moveoutleft
     show ed_phone at left with move
     show copguy at right with moveinright
     copguy "Get back here!"
     cs "You can't catch me, I'm the speedy Michael Rosen!"
-    "{i}As CS is not actually the speedy Michael Rosen, he gets caught by the police.{/i}"
+    n "As CS is not actually the speedy Michael Rosen, he gets caught by the police."
     scene black with fade
     jump jail
 
@@ -100,7 +100,7 @@ label jail:
     arceus "Never mind. Why'd you do it, anyhow?"
     cs "I was 100 percent unsatisfied."
     arceus "As was I. As was I..."
-    "{i}A brief moment of silence...{/i}"
+    n "A brief moment of silence..."
     arceus "Welp, I'm bored of this place... Wanna break out? :3"
     cs "Eh.. Sure, why not, I've played plenty of the Escapists, I should be able to figure it out."
     cs "We should break out at least one other person though."
@@ -124,7 +124,7 @@ label breakout:
     arceus "So, what's the plan? I've been tryna break outta here for 5 years."
     cs "Well, for a start. I need to get a feel of the routine here."
     arceus "Well, I'll quickly describe that for you, cause I can't stand another minute here." 
-    "{i}Arceus describes the prison routine to CS.{/i}"
+    n "Arceus describes the prison routine to CS."
     cs "I think I got all that."
     arceus "So, what's our plan, Boss?"
     cs "I gotta grab a few plastic spoons from the mess hall, a cup of molten chocolate, a guard outfit, and a change of shorts."
@@ -136,8 +136,8 @@ label breakout:
     hide arceus with dissolve
     scene black with fade
 
-    "{i}The day ends, and the next day progresses. CS and Arceus gather the required essentials for their escape. Along the way, they inform Anno, who more than happily complies with the plan.{/i}" 
-    "{i}The next evening...{/i}"
+    n "The day ends, and the next day progresses. CS and Arceus gather the required essentials for their escape. Along the way, they inform Anno, who more than happily complies with the plan." 
+    n "The next evening..."
     cs "Key, check."
 
     show arceus flipped at left with moveinleft
@@ -154,10 +154,10 @@ label breakout:
     scene black with dissolve
 
     # TODO: Guys, can we actually detail the escape a *little* bit?
-    "{i}The plan goes off without a hitch, the three ditch their prison outfits, and put on their guard uniforms.{/i}" 
+    n "The plan goes off without a hitch, the three ditch their prison outfits, and put on their guard uniforms." 
 
 
-    "{i}The three dig their way out of the cell and make a break into the dark of the evening.{/i}"
+    n "The three dig their way out of the cell and make a break into the dark of the evening."
     cs "Jeez... I didn't think that would actually work."
 
     show arceus at right with easeinright
