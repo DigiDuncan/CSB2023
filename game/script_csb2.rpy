@@ -110,4 +110,23 @@ label jail:
     jump breakout
 
 label breakout:
-    "Digi was tired of writing and stopped."
+    # scene jail_cell
+    # TODO: inside cell BG
+
+    show cs at left with dissolve
+    show arceus at right with dissolve
+
+    arceus "So, what's the plan? I've been tryna break outta here for 5 years."
+    cs "Well, for a start. I need to get a feel of the routine here."
+    arceus "Well, I'll quickly describe that for you, cause I can't stand another minute here." 
+    "{i}Arceus describes the prison routine to CS.{/i}"
+    cs "I think I got all that."
+    arceus "So, what's our plan, Boss?"
+    cs "I gotta grab a few plastic spoons from the mess hall, a cup of molten chocolate, a guard outfit, and a change of shorts."
+    arceus "Why a change of shorts?"
+    cs "You kidding me? I'm gonna shit myself 'cause this is scary as hell."
+    arceus "Fair enough."
+
+    hide cs with dissolve
+    hide arceus with dissolve
+    scene black with fade
