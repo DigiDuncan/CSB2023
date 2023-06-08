@@ -144,9 +144,10 @@ label csbi_start:
     cs "OH GOD AN ADVERTISER!!!"
     stop music fadeout 3.0
     cs "QUICK START THE CAR START THE CAR!!!"
+    hide cs_neutral with moveoutright
     hide carguy
-    # TODO: [PAKOO] Transition, door slam
     play sound "doorslam.ogg"
+    show black with dissolve
     show cs_car_inside behind cs_neutral
     play music "<loop 0>canyon.mp3" volume 0.2
     cs "Whew.. That was close!"
@@ -193,9 +194,10 @@ label walmart:
     carguy "Nooooot so nice scratch."
     cs "Not you again!"
     cs "I gotta get outta here!"
+    hide cs_neutral with moveoutright
     hide carguy
-    # TODO: [PAKOO] Transition, door slam
     play sound "doorslam.ogg"
+    show black with dissolve
     show car_inside behind cs_neutral
     cs "Let's get home before that guy doctor's my crotch!"
     show black with fade
