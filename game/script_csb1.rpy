@@ -1,7 +1,7 @@
-﻿# The script of the game goes in this file.
-
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
+# Text beeps
+init python:
+    def cs_beep(event, **kwargs):
+        if event == "show":
 
 #CSB1 Character Definitions
 define n = Character("", what_italic = True, window_background = "gui/textbox_alt.png")  # Narrator
@@ -52,7 +52,6 @@ image worker_6 = "characters/worker_pineapple.png"
 image worker_7 = "characters/worker_chicken.png"
 
 #CSB1 Background Images
-
 image black = "bg/black.png"
 image cs_room = "bg/cs_bedroom1.png"
 image cs_room_2 = "bg/cs_bedroom2.png"

@@ -13,7 +13,7 @@ define linus = Character("Linus")
 image ed_phone = "characters/ed_phone.png"
 image arceus = "characters/arceus.png"
 image arceus flipped = Transform("characters/arceus.png", xzoom = -1)
-# image anno = "characters/anno.png"
+image anno = "characters/anno.png"
 image border_guard = "characters/border_guard.png"
 image linus = "characters/linus.png"
 
