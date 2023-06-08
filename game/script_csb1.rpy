@@ -71,6 +71,7 @@ image walmart_aisle = "bg/walmart_shelf.png"
 image walmart_register = "bg/walmart_checkout.png"
 image cs_door_closed = "bg/door_closed.png"
 image cs_door_open = "bg/door_open.png"
+image hoh_outside = "bg/office_outside.png"
 image hoh_hq = "bg/office1.png"
 image hoh_hq2 = "bg/office2.png"
 image hoh_hq3 = "bg/office3.png"
@@ -331,7 +332,9 @@ label csbi_end:
     cs "I need to get those guys!"
     cs "I'm gonna go to HoH SiS HQ and kick some butt!"
     show black with dissolve
+    scene hoh_outside
     n "..."
+    show black with dissolve
     scene hoh_hq
     play music "<loop 0>officepuncher.mp3" volume 0.2
     show cs_angry with dissolve
