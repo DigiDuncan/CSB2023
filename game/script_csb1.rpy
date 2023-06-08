@@ -32,6 +32,8 @@ define worker_7 = Character("Worker 7")
 image cs_neutral = "characters/cs.png"
 image cs_happy = "characters/cs_happy.png"
 image cs_angry = "characters/cs_angry.png"
+image cs_worried = "characters/cs_worried.png"
+image cs_disappointed = "characters/cs_disappointed.png"
 image discord = "characters/discord.png"
 image nova = "characters/nova.png"
 image carguy = "characters/carguy.png"
@@ -142,11 +144,13 @@ label csbi_start:
     cs "It's pretty nice, but it's got some scratches..."
     carguy "Nooot so nice scratch.."
     carguy "You should try Crotch Doctor!"
+    hide cs_neutral
+    show cs_worried at left
     cs "OH GOD AN ADVERTISER!!!"
     stop music fadeout 3.0
     cs "QUICK START THE CAR START THE CAR!!!"
-    hide cs_neutral with moveoutright
-    hide carguy
+    hide cs_worried with moveoutright
+    hide carguy with dissolve
     play sound "doorslam.ogg"
     show black with dissolve
     show cs_car_inside behind cs_neutral
@@ -193,10 +197,12 @@ label walmart:
     cs "Let's get to the car."
     show carguy at right with moveinright
     carguy "Nooooot so nice scratch."
+    hide cs_neutral
+    show cs_disappointed at left
     cs "Not you again!"
     cs "I gotta get outta here!"
-    hide cs_neutral with moveoutright
-    hide carguy
+    hide cs_disappointed with moveoutright
+    hide carguy with dissolve
     play sound "doorslam.ogg"
     show black with dissolve
     show car_inside behind cs_neutral
