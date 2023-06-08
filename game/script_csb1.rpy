@@ -358,6 +358,16 @@ label michael_house:
     michael "Come in! come in!"
     show michael at left with moveinleft
     show cs_neutral at right with moveinright
+    cs "Hey Michael!"
+    michael "Sit down, make yourself comfy. I got a new poem I want to show you!"
+    cs "Sure thing, enlighten me."
+    michael "Right. This one is called:"
+    michael "The Library."
+    michael "There once was a man who would go on a grand adventure."
+    michael "He would meet all sorts of friends, and flee from his enemies."
+    michael "After his long adventure, he took a long nap."
+    michael "When he woke up, he was in a huge library."
+	michael "CS? did you fall asleep?"
     jump csbi_end
 
 label csbi_end:
