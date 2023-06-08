@@ -367,7 +367,7 @@ label michael_house:
     michael "He would meet all sorts of friends, and flee from his enemies."
     michael "After his long adventure, he took a long nap."
     michael "When he woke up, he was in a huge library."
-	michael "CS? did you fall asleep?"
+    michael "CS? did you fall asleep?"
     jump csbi_end
 
 label csbi_end:
