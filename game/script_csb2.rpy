@@ -124,6 +124,7 @@ label jail:
     hide copguy with moveoutright
     show arceus at right with moveinright
 
+    play music "<loop 0>stal.mp3" volume 0.4
     cs "Oh, hi Arceus."
     arceus "Aye, Boss. .w."
     cs "So what are you in for?"
@@ -172,10 +173,12 @@ label breakout:
     with dissolve
     scene black with fade
 
+    stop music fadeout 3.0
     n "The current day ends, and the next one progresses. CS and Arceus gather the required essentials for their escape. Along the way, they inform Anno, who more than happily complies with the plan." 
     n "The next evening..."
     cs "Key, check."
 
+    play music "<loop 0>jailescape.mp3" volume 0.5
     show arceus flipped at left with moveinleft
     arceus "Uniforms, check."
 
@@ -204,6 +207,7 @@ label breakout:
     arceus "Not the Mexican border, the Canadian border, we're in Washington, it's way closer and they're too polite to send us back."
     cs "Works for me, free healthcare."
     arceus "Well, you have to live there for a few years before you get access to that, but you should last a few years without getting sick living on that healthy diet of Ritz and EZ cheese."
+    stop music fadeout 3.0
 
     hide arceus with dissolve
     hide anno with dissolve
@@ -212,6 +216,7 @@ label breakout:
 label bordercrossing:
     scene border with fade
     n "CS, Anno, and Arceus get to the border crossing."
+    play music "<loop 0>border.mp3"
     n "A wild border guard appears."
 
     show border_guard at center with dissolve
@@ -233,6 +238,7 @@ label bordercrossing:
     n "Anno and CS nod aggresively."
     n "Arceus checks his phone."
     arceus "There's one just over here, come on."
+    stop music fadeout 3.0
 
     scene outside_tim_hortons
     show cs_neutral at left
@@ -242,6 +248,7 @@ label bordercrossing:
     show anno at offscreenright with moveinleft
 
     scene inside_tim_hortons
+    play music "<loop 0>timmies.mp3"
     show cs_neutral at left with moveinleft
     show arceus flipped at center with moveinleft
     show anno at right with moveinleft
@@ -307,11 +314,12 @@ label bordercrossing:
     cs "I have a lot of video editing experience, maybe I can get a job there."
 
     # TODO: [PAKOO] WE NEED LIKE, A TRANSITION HERE OR SOMETHING THIS IS SUCH A JUMP
+    stop music fadeout 3.0
     n "CS walks into the studio to ask for a job."
 
     scene inside_ltt with fade
     show linus
-
+    play music "<loop 0>linusmeetup.mp3" volume 0.5
     linus "Sure, you can have a job, just show us proof of citizenship and you're ready to go!"
     cs "Colour is spelled with a u, eh."
     linus "I need actual papers, the last time I hired someone who used that as proof of citizenship I got fined and had to sell one of my thousands of RTX Titans."
