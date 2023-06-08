@@ -221,10 +221,14 @@ label bordercrossing:
     border_guard "Works for me, eh."
 
     hide border_guard with dissolve
-
-    # TODO: [ARC] Banter between Arc, CS, and Anno
+    n "Some time passes as the party continues forth into the land of Canada."
     scene canada with slideright # TODO: [PAKOO] this looks bac
-    arceus "Guys, I'm getting hungry. Wanna stop at Tim Horton's and get some grub?"
+    cs "Arceus, can we stop somewhere I'm getting hungry."
+    anno "Yeah, we've been walking for miles now."
+    arceus "Guys. We've only just left the border. You can still see it behind us."
+    n "The crew look behind them and still see a faint american flag waving."
+    cs "Prison food just isn't all that filling."
+    arceus "I suppose we could find a Tim Horton's, it's as common as a McDonald's is in America."
     n "Anno and CS nod aggresively."
     n "Arceus checks his phone."
     arceus "There's one just over here, come on."
@@ -242,7 +246,6 @@ label bordercrossing:
     show anno at right with moveinleft
 
     anno "Finally."
-    # TODO: [ARC] At the same time please?
     hide anno
     hide cs_neutral
     with dissolve
