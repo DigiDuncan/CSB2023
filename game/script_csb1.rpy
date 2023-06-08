@@ -1,11 +1,14 @@
-# Text beeps
+﻿# Text beeps
 init python:
     def cs_beep(event, **kwargs):
         if event == "show":
+            renpy.music.play("audio/text/cstalk.wav", channel="sound", loop=True)
+        elif event == "slow_done" or event == "end":
+            renpy.music.stop(channel="sound")
 
 #CSB1 Character Definitions
 define n = Character("", what_italic = True, window_background = "gui/textbox_alt.png")  # Narrator
-define cs = Character("cs188")
+define cs = Character("cs188", callback = cs_beep)
 define craptop = Character("Craptop")
 define sticky = Character("Sticky Note")
 define discord = Character("Discord")
