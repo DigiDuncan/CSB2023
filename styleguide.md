@@ -74,5 +74,5 @@
 
 ## Sound
 
-* Music should be at least -15Db or lower in the game.
 * Use mp3 for the music format.
+* Use ogg for sound effects.

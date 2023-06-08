@@ -9,6 +9,8 @@ define linus = Character("Linus")
 image cs_neutral = "characters/cs.png"
 image cs_happy = "characters/cs_happy.png"
 image cs_angry = "characters/cs_angry.png"
+image cs_worried = "characters/cs_worried.png"
+image cs_disappointed = "characters/cs_disappointed.png"
 image rich = "characters/richard.png"
 image ed = "characters/ed.png"
 image ed_phone = "characters/ed_phone.png"
@@ -152,9 +154,13 @@ label jail:
     arceus "And from my recent playthrough of CSBounciness, I assume you're in for beating up workers at HoHSiS."
     cs "Your what?"
     arceus "Never mind. Why'd you do it, anyhow?"
+    hide cs_neutral
+    show cs_disappointed at left
     cs "I was 100 percent unsatisfied."
     arceus "As was I. As was I..."
     n "A brief moment of silence..."
+    hide cs_disappointed
+    show cs_neutral at left
     arceus "Welp, I'm bored of this place... Wanna break out? :3"
     cs "Eh.. Sure, why not, I've played plenty of the Escapists, I should be able to figure it out."
     cs "We should break out at least one other person though."
@@ -184,10 +190,12 @@ label breakout:
     arceus "So, what's our plan, Boss?"
     cs "I gotta grab a few plastic spoons from the mess hall, a cup of molten chocolate, a guard outfit, and a change of shorts."
     arceus "Why a change of shorts?"
+    hide cs_neutral
+    show cs_disappointed at left
     cs "You kidding me? I'm gonna shit myself 'cause this is scary as hell."
     arceus "Fair enough."
 
-    hide cs_neutral
+    hide cs_disappointed
     hide arceus
     with dissolve
     scene black with fade
@@ -308,7 +316,7 @@ label bordercrossing:
 
     # TODO: Music stops.
 
-    show cs_neutral
+    show cs_disappointed
     cs "..."
     cs "I think I'm {i}really{/i} sleep deprived."
 
