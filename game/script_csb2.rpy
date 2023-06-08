@@ -32,6 +32,21 @@ image canada = "bg/canada.png"
 image outside_ltt = "bg/linus_office_outside.png"
 image inside_ltt = "bg/linus_hallway.png"
 
+# Animated sprites
+image blue_light:
+    "blue_light.png"
+    alpha 0.0
+    linear 0.5 alpha 1.0
+    linear 0.5 alpha 0.0
+    repeat
+
+image red_light:
+    "red_light.png"
+    alpha 1.0
+    linear 0.5 alpha 0.0
+    linear 0.5 alpha 1.0
+    repeat
+
 # The game starts here.
 
 label csbii_start:
@@ -95,7 +110,8 @@ label punch:
 label caught:
     cs "Dammit! Ed's calling the police! I gotta go after him!"
     ed "911! Come quickly! He's chasing after me!"
-    # TODO: [DIGI] Blue and red flashes
+    show blue_light at left onlayer overlay
+    show red_light at right onlayer overlay
     n "The police arrive and CS runs away."
     hide cs_angry with moveoutleft
     show ed_phone at left with move
