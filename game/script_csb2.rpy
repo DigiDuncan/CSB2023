@@ -127,7 +127,7 @@ label jail:
     cs "Oh, hi Arceus."
     arceus "Aye, Boss. .w."
     cs "So what are you in for?"
-    arceus "I put spyware a politician's phone."
+    arceus "I put spyware on a politician's phone."
     cs "Yeah, no, that checks out."
     arceus "And from my recent playthrough of CSBounciness, I assume you're in for beating up workers at HoHSiS."
     cs "Your what?"
@@ -144,15 +144,15 @@ label jail:
     cs "Alright then, let's get going!"
 
     show arceus at offscreenright
-    show cs at offscreenleft
+    show cs_neutral at offscreenleft
     with ease
     hide arceus
-    hide cs
+    hide cs_neutral
     jump breakout
 
 label breakout:
     scene jail_cell
-    show cs at left
+    show cs_neutral at left
     show arceus at right
     with dissolve
 
@@ -167,11 +167,12 @@ label breakout:
     cs "You kidding me? I'm gonna shit myself 'cause this is scary as hell."
     arceus "Fair enough."
 
-    hide cs with dissolve
-    hide arceus with dissolve
+    hide cs_neutral
+    hide arceus
+    with dissolve
     scene black with fade
 
-    n "The day ends, and the next day progresses. CS and Arceus gather the required essentials for their escape. Along the way, they inform Anno, who more than happily complies with the plan." 
+    n "The current day ends, and the next one progresses. CS and Arceus gather the required essentials for their escape. Along the way, they inform Anno, who more than happily complies with the plan." 
     n "The next evening..."
     cs "Key, check."
 
@@ -215,20 +216,20 @@ label bordercrossing:
 
     show border_guard at center with dissolve
     border_guard "I'm going to need proof of citizenship, eh."
-    show border_guard at left with moveinleft
-    show arceus at right with moveinright
+    show border_guard at right with move
+    show arceus flipped at left with moveinleft
     arceus "Colour is spelled with a u, eh."
     border_guard "Works for me, eh."
 
     hide border_guard with dissolve
-    n "Some time passes as the party continues forth into the land of Canada."
     scene canada with slideright # TODO: [PAKOO] this looks bac
+    n "Some time passes as the party continues forth into the land of Canada."
     cs "Arceus, can we stop somewhere I'm getting hungry."
     anno "Yeah, we've been walking for miles now."
     arceus "Guys. We've only just left the border. You can still see it behind us."
     n "The crew look behind them and still see a faint american flag waving."
     cs "Prison food just isn't all that filling."
-    arceus "I suppose we could find a Tim Horton's, it's as common as a McDonald's is in America."
+    arceus "I suppose we could find a Tim Horton's, it's as common in Canada as a McDonald's is in America."
     n "Anno and CS nod aggresively."
     n "Arceus checks his phone."
     arceus "There's one just over here, come on."
@@ -242,7 +243,7 @@ label bordercrossing:
 
     scene inside_tim_hortons
     show cs_neutral at left with moveinleft
-    show arceus at center with moveinleft
+    show arceus flipped at center with moveinleft
     show anno at right with moveinleft
 
     anno "Finally."
@@ -250,7 +251,7 @@ label bordercrossing:
     hide cs_neutral
     with dissolve
 
-    show arceus at left with move
+    show arceus flipped at left with move
     show cashier at right with moveinright
 
     # TODO: Room flower shop music here
@@ -258,15 +259,15 @@ label bordercrossing:
     arceus "Hi."
     cashier "Can I help you?"
     arceus "Yeah, can I have a dozen glazed donuts please?"
-    cashier "Oh hi Arceus, I didn't know it was you."
+    cashier "Oh hi, Arceus, I didn't know it was you."
 
     hide cashier
-    hide arceus
+    hide arceus flipped
     show anno
     anno "Wait, huh?"
 
     hide anno
-    show arceus at left
+    show arceus flipped at left
     show cashier at right
 
     cashier "Here you go."
@@ -277,7 +278,7 @@ label bordercrossing:
     arceus "Hi doggy!"
     cashier "You're my favorite customer."
     arceus "Thanks a lot! Bye~"
-    hide arceus with moveoutleft
+    hide arceus flipped with moveoutleft
     cashier "Buh-bye!"
     hide cashier with dissolve
 
@@ -294,7 +295,7 @@ label bordercrossing:
     show arceus at right
 
     n "CS, Arceus, and Anno enjoy some well-deserved donuts."
-    arceus "Sorry to interrupt you two, but we may have a problem, that donut cost me the last of my money, so we need to find a way to make some cash."
+    arceus "Sorry to interrupt you two, but we may have a problem: Those donuts cost me the last of my money. We are going to need to find a way to make some cash."
     scene outside_ltt
     n "CS looks across the street to see Linus Media Group."
     hide cs_neutral
