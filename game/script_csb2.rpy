@@ -1,3 +1,7 @@
+# NOTE: ONLY NEW DEFINITIONS ARE REQUIRED HERE
+# IF THEY'RE IN CSB1, WE DON'T NEED TO REDECLARE
+# TODO: [ARC] Should we have all definitions in one file?
+
 #CSB2 Character Definitions
 define copguy = Character("CopGuy")
 define arceus = Character("Arceus")
@@ -6,15 +10,7 @@ define border_guard = Character("Border Guard")
 define linus = Character("Linus")
 
 #CSB2 Character Images
-image cs_neutral = "characters/cs.png"
-image cs_happy = "characters/cs_happy.png"
-image cs_angry = "characters/cs_angry.png"
-image cs_worried = "characters/cs_worried.png"
-image cs_disappointed = "characters/cs_disappointed.png"
-image rich = "characters/richard.png"
-image ed = "characters/ed.png"
 image ed_phone = "characters/ed_phone.png"
-image wesley = "characters/wesley.png"
 image arceus = "characters/arceus.png"
 image arceus flipped = Transform("characters/arceus.png", xzoom = -1)
 # image anno = "characters/anno.png"

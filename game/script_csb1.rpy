@@ -4,7 +4,7 @@
 # name of the character.
 
 #CSB1 Character Definitions
-define n = Character("", what_italic = True, window_background = "gui/textbox_alt.png")
+define n = Character("", what_italic = True, window_background = "gui/textbox_alt.png")  # Narrator
 define cs = Character("cs188")
 define craptop = Character("Craptop")
 define sticky = Character("Sticky Note")
@@ -24,7 +24,6 @@ define worker_2 = Character("Worker 2")
 define worker_3 = Character("Worker 3")
 define worker_4 = Character("Worker 4")
 define worker_5 = Character("Worker 5")
-define worker_5alt = Character("Worker 5")
 define worker_6 = Character("Worker 6")
 define worker_7 = Character("Worker 7")
 
