@@ -108,9 +108,13 @@ label caught:
     jump jail
 
 label jail:
-    scene jail_inside with fade
-    show cs at left with moveinleft
-    show copguy at right with moveinright
+    scene jail_inside
+    show cs_neutral at offscreenleft
+    show copguy at offscreenright
+    with fade
+    show cs_neutral at left
+    show copguy at right
+    with move
     copguy "Alright, welcome to the slammer. How tough are ya?"
     cs "How tough am I?! How, tough, am, I?! I beat Cuphead!"
     copguy "So?"
@@ -139,16 +143,18 @@ label jail:
     arceus "Anno? Sure, he may be of use to us."
     cs "Alright then, let's get going!"
 
-    # TODO: [ARC] How to make these happen at the same time?
-    hide arceus with moveoutright
-    hide cs with moveoutleft
+    show arceus at offscreenright
+    show cs at offscreenleft
+    with ease
+    hide arceus
+    hide cs
     jump breakout
 
 label breakout:
     scene jail_cell
-
-    show cs at left with dissolve
-    show arceus at right with dissolve
+    show cs at left
+    show arceus at right
+    with dissolve
 
     arceus "So, what's the plan? I've been tryna break outta here for five years."
     cs "Well, for a start. I need to get a feel of the routine here."
@@ -237,8 +243,9 @@ label bordercrossing:
 
     anno "Finally."
     # TODO: [ARC] At the same time please?
-    hide anno with dissolve
-    hide cs_neutral with dissolve
+    hide anno
+    hide cs_neutral
+    with dissolve
 
     show arceus at left with move
     show cashier at right with moveinright
