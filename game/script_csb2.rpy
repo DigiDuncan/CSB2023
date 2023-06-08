@@ -235,7 +235,6 @@ label breakout:
 label bordercrossing:
     scene border with fade
     n "CS, Anno, and Arceus get to the border crossing."
-    play music "<loop 0>border.mp3"
     n "A wild border guard appears."
 
     show border_guard at center with dissolve
@@ -257,7 +256,6 @@ label bordercrossing:
     n "Anno and CS nod aggresively."
     n "Arceus checks his phone."
     arceus "There's one just over here, come on."
-    stop music fadeout 3.0
 
     scene outside_tim_hortons
     show cs_neutral at left
