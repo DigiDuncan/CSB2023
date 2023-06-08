@@ -23,6 +23,8 @@ define hoh_operator = Character("HoH SiS Operator")
 define rich = Character("Richard")
 define ed = Character("Ed")
 define wesley = Character("Wesley")
+define michael = Character("Michael")
+define phil = Character("Phil")
 define worker_1 = Character("Worker 1")
 define worker_2 = Character("Worker 2")
 define worker_3 = Character("Worker 3")
@@ -46,6 +48,8 @@ image young_cs = "characters/cs_young.png"
 image rich = "characters/richard.png"
 image ed = "characters/ed.png"
 image wesley = "characters/wesley.png"
+image michael = "characters/rosen.png"
+image phil = "characters/phil.png"
 image worker_1 = "characters/worker_corn.png"
 image worker_2 = "characters/worker_blank.png"
 image worker_3 = "characters/worker_mean.png"
@@ -75,6 +79,7 @@ image walmart_aisle = "bg/walmart_shelf.png"
 image walmart_register = "bg/walmart_checkout.png"
 image cs_door_closed = "bg/door_closed.png"
 image cs_door_open = "bg/door_open.png"
+image rosen_abode = "bg/rosenabode.png"
 image hoh_outside = "bg/office_outside.png"
 image hoh_hq = "bg/office1.png"
 image hoh_hq2 = "bg/office2.png"
@@ -324,10 +329,35 @@ label room:
     cs "Things sure are boooooring around here..."
     cs "Hey, I got an idea!"
     cs "Let's go to Michael Rosen's house!"
+    show black with dissolve
     jump michael_house
 
 label michael_house:
-    pass
+    scene car_inside
+    show cs_neutral at left
+    cs "Thankfully Michael lives pretty close."
+    cs "His vacation house in the US is only a few streets away!"
+    cs "Before I forget, I should probably call him first."
+    n "CS pulls out his phone and calls Michael."
+    michael "Hello!"
+    cs "Hey Michael! How you doin' today?"
+    michael "I'm feeling rather noice today."
+    cs "That's good to hear! You mind if I head over to your place?"
+    cs "The JoJ is being done on my house, so I figured we can chat for a bit."
+    michael "Sure! I have a another guest visiting as well, bringing chocolate cake."
+    cs "Mmm! That sounds delicious!"
+    n "CS looks in the back seat of his car."
+    cs "I have some Genergy with me, if you guys want some."
+    michael "Sounds wonderful. I've never tried it, but I'm sure it's good."
+    cs "Alright well, I'll be there soon!"
+    n "CS puts his phone away and drives over to Michael's house."
+    show black with dissolve
+
+    scene rosen_abode
+    show michael at right with moveinleft
+    michael "Come in! come in!"
+    show michael at left with moveinleft
+    show cs_neutral at right with moveinright
     jump csbi_end
 
 label csbi_end:
