@@ -333,8 +333,12 @@ label csbi_end:
     scene cs_room
     show cs_neutral with moveinbottom
     n "CS walks into his room."
+    hide cs_neutral
+    show cs_disappointed
     cs "What?! They're gone?!"
     cs "The house is still on the side, and my computer is messed up!"
+    hide cs_disappointed
+    show cs_angry
     cs "I need to get those guys!"
     cs "I'm gonna go to HoH SiS HQ and kick some butt!"
     show black with dissolve
