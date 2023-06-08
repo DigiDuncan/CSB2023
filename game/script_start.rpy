@@ -1,3 +1,6 @@
+# Custom preferences
+default persistent.text_beeps = True
+
 label start:
     scene black
     menu:

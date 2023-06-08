@@ -766,6 +766,8 @@ screen preferences():
 
                     bar value Preference("auto-forward time")
 
+                    textbutton _("Text Beeps") action ToggleField(persistent, "text_beeps")
+
                 vbox:
 
                     if config.has_music:

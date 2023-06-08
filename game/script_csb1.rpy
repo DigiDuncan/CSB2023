@@ -1,10 +1,11 @@
 ﻿# Text beeps
 init python:
     def cs_beep(event, **kwargs):
-        if event == "show":
-            renpy.music.play("audio/text/cstalk.wav", channel="sound", loop=True)
-        elif event == "slow_done" or event == "end":
-            renpy.music.stop(channel="sound")
+        if persistent.text_beeps:
+            if event == "show":
+                renpy.music.play("audio/text/cstalk.wav", channel="sound", loop=True)
+            elif event == "slow_done" or event == "end":
+                renpy.music.stop(channel="sound")
 
 #CSB1 Character Definitions
 define n = Character("", what_italic = True, window_background = "gui/textbox_alt.png")  # Narrator
