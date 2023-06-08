@@ -227,7 +227,7 @@ label bordercrossing:
     border_guard "Works for me, eh."
 
     hide border_guard with dissolve
-    scene canada with slideright # TODO: [PAKOO] this looks bac
+    scene canada with fade 
     n "Some time passes as the party continues forth into the land of Canada."
     cs "Arceus, can we stop somewhere I'm getting hungry."
     anno "Yeah, we've been walking for miles now."
@@ -313,7 +313,7 @@ label bordercrossing:
     show cs_neutral
     cs "I have a lot of video editing experience, maybe I can get a job there."
 
-    # TODO: [PAKOO] WE NEED LIKE, A TRANSITION HERE OR SOMETHING THIS IS SUCH A JUMP
+    scene black with fade
     stop music fadeout 3.0
     n "CS walks into the studio to ask for a job."
 
