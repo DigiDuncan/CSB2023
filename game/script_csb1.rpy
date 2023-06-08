@@ -234,13 +234,13 @@ label room:
     scene cs_room with pixellate
     show cs_neutral
     cs "Oh, flashback over."
-    n "A loud crash can be heard as though an atom has split in CS' foundation."
     play sound "foundationfail.ogg" volume 0.5
+    n "A loud crash can be heard as though an atom has split in CS' foundation."
     cs "Woah! I was dreaming so long that the foundation fell apart. My house just fell to the side!"
     cs "I really need to get some foundation repair."
     cs "Better call HoH SiS!"
     cs "They are really good at giving me the JoJ!"
-    cs "{i}Dials 1-800-HoH-SiiS{/i}"
+    cs "{i}dials 1-800-HoH-SiiS{/i}"
     cs "Hello? Can you give me the JoJ?"
     hoh_operator "Is this a prank caller on the line?"
     cs "No! My house really needs foundation repair! I need your help ASAP!!"

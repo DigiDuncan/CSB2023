@@ -298,9 +298,8 @@ label bordercrossing:
     # TODO: [PAKOO] WE NEED LIKE, A TRANSITION HERE OR SOMETHING THIS IS SUCH A JUMP
     n "CS walks into the studio to ask for a job."
 
-    scene black with fade
-    show linus
     scene inside_ltt with fade
+    show linus
 
     linus "Sure, you can have a job, just show us proof of citizenship and you're ready to go!"
     cs "Colour is spelled with a u, eh."
