@@ -32,6 +32,9 @@ image canada = "bg/canada.png"
 image outside_ltt = "bg/linus_office_outside.png"
 image inside_ltt = "bg/linus_hallway.png"
 
+# Transitions
+define determination = Dissolve(0.0)
+
 # Animated sprites
 image blue_light:
     "blue_light.png"
@@ -127,7 +130,7 @@ label jail:
     scene jail_inside
     show cs_neutral at offscreenleft
     show copguy at offscreenright
-    with fade
+    with determination
     show cs_neutral at left
     show copguy at right
     with move
