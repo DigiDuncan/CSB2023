@@ -56,6 +56,7 @@ label csbi_start:
     hide cs_house
     show cs_neutral at left with move
     show carguy at right with moveinright
+    # TODO: [ARC] or [PAKOO]: SFX "Nice car!"
     carguy "Nice car!"
     cs "It's pretty nice, but it's got some scratches..."
     carguy "Nooot so nice scratch.."
@@ -245,7 +246,7 @@ label room:
 label michael_house:
     scene car_inside
     show cs_neutral at left
-    cs "Thankfully Michael lives pretty close."
+    cs "Thankfully, Michael lives pretty close."
     cs "His vacation house in the US is only a few streets away!"
     cs "Before I forget, I should probably call him first."
     n "CS pulls out his phone and calls Michael."
@@ -273,13 +274,13 @@ label michael_house:
     cs "Hey Michael!"
     michael "Sit down, make yourself comfy. I got a new poem I want to show you!"
     cs "Sure thing, enlighten me."
-    michael "Right. This one is called:"
-    michael "The Library."
+    michael "Right. This one is called:{w}{i}The Library.{/i}"
     michael "There once was a man who would go on a grand adventure."
     michael "He would meet all sorts of friends, and flee from his enemies."
     michael "After his long adventure, he took a long nap."
     michael "When he woke up, he was in a huge library."
     show black with dissolve
+    # TODO: [PAKOO] CSnore noise.
     michael "CS? did you fall asleep?"
     michael "CS!"
     hide black
@@ -304,23 +305,23 @@ label michael_house:
     hide cs_neutral
     show cs_worried at right
     cs "Michael! That's not chocolate cake!"
-    michael "I have loads to eat! Om Nom Nom..."
+    michael "I have loads to eat! Om nom nom..."
     michael "Blarrrgh!"
-    n "Michael pukes up the flex tape cake."
+    n "Michael spits out the Flex Seal cake."
     michael "This is horrible! Get out! Get out of here!"
-    phil "But it seals and bonds-"
+    phil "But it seals, and bonds--"
     michael "OUT!"
     hide phil with moveoutright
     hide cs_worried
     show cs_neutral at right
-    michael "I need something to drink. CS do you still have that drink?"
+    michael "I need something to drink. CS, did you bring that drink?"
     cs "Sure thing, here you go."
     michael "Goodness."
     n "Michael downs the whole can."
     michael "Quick! Get out!"
     cs "What is going on?"
     michael "The Genergyfoogle is here! It's come to eat us all!"
-    cs "Oh man, did that genergy have something else in it?"
+    cs "Oh man, did that Genergy have something else in it...?"
     cs "I need to get out before he goes nuts!"
     hide cs_neutral with moveoutright
     show black with dissolve

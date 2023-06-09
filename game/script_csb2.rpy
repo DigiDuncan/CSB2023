@@ -167,6 +167,7 @@ label breakout:
     n "Upon breaking through, they set up makeshift bed dummies in their beds with their prison outfits, and dawn their acquired guard outfits."
 
     scene tunnel
+    # If anyone asks, Arceus is part god and can dig really easily, I guess.
     n "They begin digging quickly, making distance away from their cells."
     cs "Jeez... I didn't think that would actually work."
 
@@ -208,6 +209,7 @@ label bordercrossing:
     cs "Arceus, can we stop somewhere? I'm getting hungry."
     anno "Yeah, we've been walking for miles now."
     arceus "Guys. We've only just left the border. You can still see it behind us."
+    # TODO: [PAKOO] look behind shot of america with flag
     n "The crew look behind them and still see a faint american flag waving."
     cs "Prison food just isn't all that filling."
     arceus "I suppose we could find a Tim Horton's, it's as common in Canada as a McDonald's is in America."
@@ -236,7 +238,7 @@ label bordercrossing:
     show arceus flipped at left with move
     show cashier at right with moveinright
 
-    # TODO: Room flower shop music here
+    # TODO: [DIGI] Room flower shop music here
 
     arceus "Hi."
     cashier "Can I help you?"
