@@ -3,6 +3,8 @@ label csbi_start:
     scene cs_room
     show cs_neutral
     play music "<loop 0>csgroove.mp3" volume 0.15
+    music csgroove.mp3 - Unknown
+    with moveinleft
     cs "Welp, time to start up the ol' Craptop."
     hide cs_neutral
     scene craptop_desktop
