@@ -143,7 +143,7 @@ label jail:
 
     play music "<loop 0>stal.mp3" volume 0.4
     cs "Oh, hi Arceus."
-    arceus "Heya, CS."
+    arceus "Heya, CS. .w."
     cs "So what are you in for?"
     arceus "Putting spyware on a politician's phone."
     cs "Yeah, no, that checks out."
