@@ -55,6 +55,35 @@ label punch:
     ed "Hello, 911? My coworker just got knocked out by a disgruntled customer and appears to be dying! Send help!"
     jump caught
 
+# Chop
+label chop:
+    show cs_angry at left
+    show wesley at right
+    cs "Hiya!"
+    n "CS chops Wesley in the chest and he flies off the roof."
+    show cs_angry at center with move
+    play sound "audio/punch.ogg"
+    hide wesley with easeoutright
+    show cs_angry at left with move
+    cs "That'll teach you not to mess with a nerd's computer!"
+    show ed_phone at right
+    show cs_angry at left with move
+    ed "Hello, 911? My coworker just got karate chopped by a disgruntled customer off the roof! Send help!"
+    jump caught
+
+# Kick
+label kick:
+    show cs_angry at left
+    show wesley at right
+    $ renpy.movie_cutscene("movies/kick.ogv")
+    hide wesley with easeoutright
+    show cs_angry at left with move
+    cs "That'll teach you not to mess with a nerd's computer!"
+    show ed_phone at right
+    show cs_angry at left with move
+    ed "Hello, 911? My coworker just got kicked by a disgruntled customer off the roof! Send help!"
+    jump caught
+
 # Caught
 label caught:
     cs "Dammit! Ed's calling the police! I gotta go after him!"
