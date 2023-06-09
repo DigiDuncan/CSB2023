@@ -355,11 +355,11 @@ label michael_house:
     show black with dissolve
 
     scene rosen_abode
-    show michael at left with moveinleft
-    show cs_neutral at offscreenleft
+    show michael at right with moveinright
+    show cs_neutral at offscreenright
     michael "Come in! Come in!"
-    show michael at right
-    show cs_neutral at left
+    show michael at left
+    show cs_neutral at right
     with ease
     cs "Hey Michael!"
     michael "Sit down, make yourself comfy. I got a new poem I want to show you!"
