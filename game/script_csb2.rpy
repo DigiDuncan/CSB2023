@@ -65,7 +65,7 @@ label chop:
     play sound "audio/punch.ogg"
     hide wesley with easeoutright
     show cs_angry at left with move
-    cs "That'll teach you not to mess with a nerd's computer!"
+    cs "I sawed this foundation repairman in half!"
     show ed_phone at right
     show cs_angry at left with move
     ed "Hello, 911? My coworker just got karate chopped by a disgruntled customer off the roof! Send help!"
