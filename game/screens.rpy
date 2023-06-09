@@ -1,9 +1,12 @@
-﻿################################################################################
+﻿init python:
+    def change_bounciness(new_bounciness):
+        persistent.csbounciness = new_bounciness
+
+################################################################################
 ## Initialization
 ################################################################################
 
 init offset = -1
-
 
 ################################################################################
 ## Styles
@@ -802,7 +805,13 @@ screen preferences():
                         textbutton _("Mute All"):
                             action Preference("all mute", "toggle")
                             style "mute_all_button"
-
+                vbox:
+                    label _("CSBounciness")
+                    bar:
+                        value persistent.csbounciness
+                        range(100)
+                        offset(0, 0)
+                        changed(change_bounciness)
 
 style pref_label is gui_label
 style pref_label_text is gui_label_text

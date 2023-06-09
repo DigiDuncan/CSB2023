@@ -152,7 +152,6 @@ define config.save_directory = "CSBIII-1685832860"
 
 define config.window_icon = "gui/window_icon.png"
 
-
 ## Build configuration #########################################################
 ##
 ## This section controls how Ren'Py turns your project into distribution files.
