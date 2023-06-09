@@ -334,6 +334,7 @@ label michael_house:
     show black with dissolve
 
     scene car_inside
+    stop music fadeout 3.0
     show cs_neutral at left
     jump csbi_end
 
