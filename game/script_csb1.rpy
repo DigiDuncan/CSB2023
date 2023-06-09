@@ -214,7 +214,7 @@ label walmart:
     show black with dissolve
     show car_inside behind cs_neutral
     cs "Let's get home before that guy doctor's my crotch!"
-    show black with fade
+    scene black with fade
     n "CS drives home and manages to avoid reenacting one of his favorite car crash videos."
     jump room
 
