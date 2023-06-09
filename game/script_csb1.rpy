@@ -304,10 +304,10 @@ label room:
     ed "How about we burn down his house!"
     wesley "Eh..."
     rich "How about we mess with his laptop?"
-    ed "Alright! Let's get sabotagin'!"
+    ed "Good idea! Let's get sabotagin'!"
     show craptop_desktop with dissolve
     n "Ed launches the craptop."
-    ed "Heheh... he won't know what hit him..."
+    ed "Heheh... He won't know what hit him..."
     wesley "Quickly! Let's get out of here before he comes back!"
     show craptop_update
     wesley "Hurry up!"
@@ -320,9 +320,10 @@ label room:
     rich "Lemme call our JoJ UFO."
     # TODO: [DIGI] Beaming up animation
     "Ed, Wesley, and Richard" "I'm beaming up!"
-    hide ed with moveouttop
-    hide wesley with moveouttop
-    hide rich with moveouttop
+    hide ed
+    hide wesley
+    hide rich
+    with moveouttop
     stop music fadeout 3.0
     scene cs_street
     show cs_neutral with moveinleft
@@ -354,10 +355,12 @@ label michael_house:
     show black with dissolve
 
     scene rosen_abode
-    show michael at right with moveinleft
-    michael "Come in! come in!"
     show michael at left with moveinleft
-    show cs_neutral at right with moveinright
+    show cs_neutral at offscreenleft
+    michael "Come in! Come in!"
+    show michael at right
+    show cs_neutral at left
+    with ease
     cs "Hey Michael!"
     michael "Sit down, make yourself comfy. I got a new poem I want to show you!"
     cs "Sure thing, enlighten me."
@@ -368,6 +371,7 @@ label michael_house:
     michael "After his long adventure, he took a long nap."
     michael "When he woke up, he was in a huge library."
     michael "CS? did you fall asleep?"
+    #TODO Maybe have this transition better if it's not yet done
     jump csbi_end
 
 label csbi_end:
@@ -383,11 +387,9 @@ label csbi_end:
     show cs_angry
     cs "I need to get those guys!"
     cs "I'm gonna go to HoH SiS HQ and kick some butt!"
-    show black with dissolve
-    scene hoh_outside
+    scene hoh_outside with fade
     n "..."
-    show black with dissolve
-    scene hoh_hq
+    scene hoh_hq with dissolve
     play music "<loop 0>officepuncher.mp3" volume 0.2
     show cs_angry with dissolve
     cs "Alright! Where are the head JoJites?!"
@@ -431,8 +433,7 @@ label csbi_end:
     show worker_5alt at left with hpunch
     hide worker_5alt with moveoutbottom
     hide cs with moveoutright
-    show black with dissolve
-    scene hoh_hq4
+    scene hoh_hq4 with fade
     show cs_angry with moveinbottom
     cs "Which way to go..."
 

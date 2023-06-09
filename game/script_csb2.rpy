@@ -143,11 +143,11 @@ label jail:
 
     play music "<loop 0>stal.mp3" volume 0.4
     cs "Oh, hi Arceus."
-    arceus "Aye, Boss. .w."
+    arceus "Heya, CS."
     cs "So what are you in for?"
-    arceus "I put spyware on a politician's phone."
+    arceus "Putting spyware on a politician's phone."
     cs "Yeah, no, that checks out."
-    arceus "And from my recent playthrough of CSBounciness, I assume you're in for beating up workers at HoHSiS."
+    arceus "And from my recent debug of CSBounciness, I know that you're in for beating up workers at HoHSiS."
     cs "Your what?"
     arceus "Never mind. Why'd you do it, anyhow?"
     hide cs_neutral
@@ -157,12 +157,12 @@ label jail:
     n "A brief moment of silence..."
     hide cs_disappointed
     show cs_neutral at left
-    arceus "Welp, I'm bored of this place... Wanna break out? :3"
+    arceus "Welp. I'm tired of this place. Wanna break out?"
     cs "Eh.. Sure, why not, I've played plenty of the Escapists, I should be able to figure it out."
     cs "We should break out at least one other person though."
-    arceus "Alright, who do ya wanna break out...?"
+    arceus "If you say so.. Who were you thinking of breaking out?"
     cs "Let's just break out that guy next to us, I think his name was Anno..."
-    arceus "Anno? Sure, he may be of use to us."
+    arceus "Anno? Sure, I've seen what he's capable of, he may be of use to us."
     cs "Alright then, let's get going!"
 
     show arceus at offscreenright
@@ -178,12 +178,12 @@ label breakout:
     show arceus at right
     with dissolve
 
-    arceus "So, what's the plan? I've been tryna break outta here for five years."
+    arceus "So, what's the plan? I've been trying to break outta here for five years."
     cs "Well, for a start. I need to get a feel of the routine here."
-    arceus "Well, I'll quickly describe that for you, cause I can't stand another minute here." 
+    arceus "I really can't stand being here another minute. I'll give you the rundown. Hasn't changed then, won't change now." 
     n "Arceus describes the prison routine to CS."
     cs "I think I got all that."
-    arceus "So, what's our plan, Boss?"
+    arceus "So, what's our plan, boss?"
     cs "I gotta grab a few plastic spoons from the mess hall, a cup of molten chocolate, a guard outfit, and a change of shorts."
     arceus "Why a change of shorts?"
     hide cs_neutral
@@ -199,9 +199,9 @@ label breakout:
     stop music fadeout 3.0
     n "The current day ends, and the next one progresses. CS and Arceus gather the required essentials for their escape. Along the way, they inform Anno, who more than happily complies with the plan." 
     n "The next evening..."
+    play music "<loop 0>jailescape.mp3" volume 0.5
     cs "Key, check."
 
-    play music "<loop 0>jailescape.mp3" volume 0.5
     show arceus flipped at left with moveinleft
     arceus "Uniforms, check."
 
@@ -215,11 +215,11 @@ label breakout:
 
     scene black with dissolve
 
-    # TODO: [PAKOO] Guys, can we actually detail the escape a *little* bit?
-    n "The plan goes off without a hitch, the three ditch their prison outfits, and put on their guard uniforms." 
+    n "In the dark of the night, the three begin chipping away at their cell floor."
+    n "Upon breaking through, they set up makeshift bed dummies in their beds with their prison outfits, and dawn their acquired guard outfits."
 
     scene tunnel
-    n "The three dig their way out of the cell and make a break into the dark of the evening."
+    n "They begin digging quickly, making distance away from their cells."
     cs "Jeez... I didn't think that would actually work."
 
     show arceus at right with easeinright
@@ -230,6 +230,12 @@ label breakout:
     arceus "Not the Mexican border, the Canadian border, we're in Washington, it's way closer and they're too polite to send us back."
     cs "Works for me, free healthcare."
     arceus "Well, you have to live there for a few years before you get access to that, but you should last a few years without getting sick living on that healthy diet of Ritz and EZ cheese."
+    hide anno
+    hide arceus
+    with dissolve
+    n "The three continue to dig for hours. Until their hands begin to blister and their spoons break"
+    arceus "Based on my instinct and my tiredness. This should be far enough."
+    n "The now escaped fugitives dig up for their ascend to the surface."
     stop music fadeout 3.0
 
     hide arceus with dissolve
@@ -238,7 +244,7 @@ label breakout:
 
 label bordercrossing:
     scene border with fade
-    n "CS, Anno, and Arceus get to the border crossing."
+    n "CS, Anno, and Arceus emerge and begin heading north towards the border crossing."
     n "A wild border guard appears."
 
     show border_guard at center with dissolve
@@ -251,14 +257,14 @@ label bordercrossing:
     hide border_guard with dissolve
     scene canada with fade 
     n "Some time passes as the party continues forth into the land of Canada."
-    cs "Arceus, can we stop somewhere I'm getting hungry."
+    cs "Arceus, can we stop somewhere? I'm getting hungry."
     anno "Yeah, we've been walking for miles now."
     arceus "Guys. We've only just left the border. You can still see it behind us."
     n "The crew look behind them and still see a faint american flag waving."
     cs "Prison food just isn't all that filling."
     arceus "I suppose we could find a Tim Horton's, it's as common in Canada as a McDonald's is in America."
     n "Anno and CS nod aggresively."
-    n "Arceus checks his phone."
+    n "Arceus sniffs the air."
     arceus "There's one just over here, come on."
 
     scene outside_tim_hortons
@@ -332,14 +338,15 @@ label bordercrossing:
 
     scene inside_tim_hortons
     show cs_neutral
-    cs "I have a lot of video editing experience, maybe I can get a job there."
+    cs "A media group, huh? I have a lot of video editing experience, maybe I can get a job there."
 
     scene black with fade
     stop music fadeout 3.0
     n "CS walks into the studio to ask for a job."
 
-    scene inside_ltt with fade
+    scene inside_ltt
     show linus
+    with fade
     play music "<loop 0>linusmeetup.mp3" volume 0.5
     linus "Sure, you can have a job, just show us proof of citizenship and you're ready to go!"
     cs "Colour is spelled with a u, eh."
