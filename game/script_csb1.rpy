@@ -58,7 +58,7 @@ label csbi_start:
     hide cs_house
     show cs_neutral at left with move
     show carguy at right with moveinright
-    # TODO: [ARC] or [PAKOO]: SFX "Nice car!"
+    play sound "nicecar.ogg"
     carguy "Nice car!"
     cs "It's pretty nice, but it's got some scratches..."
     carguy "Nooot so nice scratch.."
@@ -286,7 +286,7 @@ label michael_house:
     michael "After his long adventure, he took a long nap."
     michael "When he woke up, he was in a huge library."
     show black with dissolve
-    # TODO: [PAKOO] CSnore noise.
+    play sound "csnore.ogg"
     michael "CS? did you fall asleep?"
     michael "CS!"
     hide black
@@ -312,6 +312,7 @@ label michael_house:
     show cs_worried at right
     cs "Michael! That's not chocolate cake!"
     michael "I have loads to eat! Om nom nom..."
+    play sound "puke.ogg"
     michael "Blarrrgh!"
     n "Michael spits out the Flex Seal cake."
     michael "This is horrible! Get out! Get out of here!"
