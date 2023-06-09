@@ -122,6 +122,7 @@ image canada = "bg/canada.png"
 image flag = "bg/americanflag.png"
 image outside_ltt = "bg/linus_office_outside.png"
 image inside_ltt = "bg/linus_hallway.png"
+image alley = "bg/alley.png"
 
 # Animated sprites
 image blue_light:

@@ -333,3 +333,48 @@ label bordercrossing:
     cs "Colour is spelled with a u, eh."
     linus "I need actual papers, the last time I hired someone who used that as proof of citizenship I got fined and had to sell one of my thousands of RTX Titans."
     cs "Ummmm, I'll be right back."
+
+    scene outside_ltt with dissolve
+    show arceus at right
+    show cs_neutral at left with moveinleft
+
+    cs "Arc, what am I gonna do? They need proof I'm legal to work."
+    arceus "Hmmm..."
+    n "A lightbulb goes off in Arceus' head."
+    arceus "Leave it to me."
+    hide arceus with moveoutright
+
+    scene alley
+    show arceus flipped with moveinleft
+
+    n "Arceus rummages around in the dumpsters behind LMG."
+    arceus "Hnng...{w} hmmpmh... {w}aha!"
+    n "Arceus finds an old laptop."
+    arceus "Perfect."
+    n "Within minutes, Arceus has edited the governement records to set CS' file as having a valid work visa."
+    arceus "Nice."
+    n "Arceus rummages around the dumpster more and finds a magnet from a old CRT."
+    n "He places it against the laptop, destroying the hard drive instantly."
+    arceus "Without a trace."
+    n "He discards both items and rushes out of the alley."
+
+    hide arceus flipped
+    show arceus
+    hide arceus with moveoutleft
+
+    scene outside_ltt
+    show cs_neutral at left
+    show arceus at right with moveinright
+
+    arceus "All taken care of."
+    cs "What did you do?"
+    arceus "Don't worry about it. Just have them look you up."
+
+    scene black with fade
+    scene inside_ltt with fade
+    show linus
+
+    linus "I didn't think you could have a number as a last name..."
+    linus "Yep, there you are, cs188, full working visa."
+    linus "Looks like you're hired!"
+    cs "Ohhh yes! {w}{i}ahem{/i} I mean, thank you, Linus!"
