@@ -14,8 +14,8 @@ python early:
     def execute_music(parsed_object):
         global _current_song
         global _current_artist
-        _current_song = parsed_object[0]
-        _current_artist = parsed_object[1]
+        _current_song = parsed_object[0].strip()
+        _current_artist = parsed_object[1].strip()
         renpy.with_statement(determination)
         renpy.show("_music_layered", layer = "master", at_list = [_music_top_left])
         renpy.with_statement(easeinleft)
