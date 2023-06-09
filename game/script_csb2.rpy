@@ -90,6 +90,7 @@ label jail:
     show arceus at right with moveinright
 
     play music "<loop 0>stal.mp3" volume 0.4
+    music stal - C418
     cs "Oh, hi Arceus."
     arceus "Heya, CS. .w."
     cs "So what are you in for?"
@@ -148,6 +149,7 @@ label breakout:
     n "The current day ends, and the next one progresses. CS and Arceus gather the required essentials for their escape. Along the way, they inform Anno, who more than happily complies with the plan." 
     n "The next evening..."
     play music "<loop 0>jailescape.mp3" volume 0.5
+    music Moongazer - Dr. Awesome
     cs "Key, check."
 
     show arceus flipped at left with moveinleft
@@ -225,7 +227,6 @@ label bordercrossing:
     show anno at offscreenright with moveinleft
 
     scene inside_tim_hortons
-    play music "<loop 0>timmies.mp3"
     show cs_neutral at left with moveinleft
     show arceus flipped at center with moveinleft
     show anno at right with moveinleft
@@ -291,13 +292,13 @@ label bordercrossing:
     cs "A media group, huh? I have a lot of video editing experience, maybe I can get a job there."
 
     scene black with fade
-    stop music fadeout 3.0
     n "CS walks into the studio to ask for a job."
 
     scene inside_ltt
     show linus
     with fade
     play music "<loop 0>linusmeetup.mp3" volume 0.5
+    music PASSPORT.MID - George Stone
     linus "Sure, you can have a job, just show us proof of citizenship and you're ready to go!"
     cs "Colour is spelled with a u, eh."
     linus "I need actual papers, the last time I hired someone who used that as proof of citizenship I got fined and had to sell one of my thousands of RTX Titans."

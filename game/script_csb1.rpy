@@ -3,7 +3,7 @@ label csbi_start:
     scene cs_room
     show cs_neutral
     play music "<loop 0>csgroove.mp3" volume 0.15
-    music csgroove.mp3 - Unknown
+    music Lets hear my baby - Walkman
     cs "Welp, time to start up the ol' Craptop."
     hide cs_neutral
     scene craptop_desktop
@@ -48,6 +48,7 @@ label csbi_start:
     cs "Yeah! Let's go outside!"
     scene cs_house
     play music "canyon.mp3" volume 0.2
+    music CANYON.MID - George Stone
     show cs_happy
     cs "Nice day!"
     hide cs_happy
@@ -141,6 +142,7 @@ label room:
     show craptop_edit with fade
     n "CS walks to his craptop and opens up Premiere."
     play music "<loop 0>ytpediting.mp3" volume 0.3
+    music scales of joy.mod - Mel O Dee
     cs "Ooooh! Here's the one from my last editing stream. People would be excited to finally see this as a finished product."
     n "CS watches the in-progress video."
     cs "This is pretty good, but I am feeling uninspired... I don't know where to go from here..."
@@ -190,6 +192,7 @@ label room:
     show cs_neutral at left with move
     show ed at right with moveinright
     play music "<loop 0>hohsis_theme.mp3" volume 0.2
+    music Alfred Hitchcock Intro Theme - Charles Gounod
     ed "Alright that will be 200,000 Bits."
     cs "Okay, I guess they already told you what I need done.. Lemme get my wallet..."
     cs "Hang on a sec. Didn't they say I could pay afterwards?"
@@ -266,6 +269,8 @@ label michael_house:
     show black with dissolve
 
     scene rosen_abode
+    play music "<loop 0>rosenabode.mp3" volume 0.4
+    music Super Friendly - Kevin Macleod
     show michael at right with moveinright
     show cs_neutral at offscreenright
     michael "Come in! Come in!"
@@ -348,6 +353,7 @@ label csbi_end:
     n "..."
     scene hoh_hq with dissolve
     play music "<loop 0>officepuncher.mp3" volume 0.2
+    music Time for a Smackdown! - Tour De Pizza
     show cs_angry with dissolve
     cs "Alright! Where are the head JoJites?!"
     show worker_1 at right with moveinright
