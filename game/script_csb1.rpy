@@ -1,4 +1,4 @@
-﻿# Text beeps
+# Text beeps
 init python:
     def cs_beep(event, **kwargs):
         if persistent.text_beeps:
@@ -370,8 +370,54 @@ label michael_house:
     michael "He would meet all sorts of friends, and flee from his enemies."
     michael "After his long adventure, he took a long nap."
     michael "When he woke up, he was in a huge library."
+    show black with dissolve
     michael "CS? did you fall asleep?"
-    #TODO Maybe have this transition better if it's not yet done
+    michael "CS!"
+    hide black
+    cs "Wha- what?"
+    michael "Did you just... sleep through my entire poem?"
+    cs "Nooooooooooooooooo?"
+    n "Michael sighs and facepalms."
+    play sound "doorbell.ogg" volume 0.5 
+    n "The doorbell rings."
+    michael "Oh! My other guest is here! I'll be right back!"
+    hide michael at right with moveoutright
+    show michael at left with moveinright
+    show phil at center with moveinright
+    phil "Phil Swift here!"
+    michael "CS, meet my other friend, Phil!"
+    cs "Oh wow! I didn't know you were friends with Phil Swift!"
+    michael "Well, it might be because he said he could make the best chocolate cake."
+    michael "Speaking of which, Phil, do you have the cake?"
+    phil "Here it is! It even works underwater!"
+    michael "That's odd to mention, but time to eat!"
+    n "CS suddenly realizes what's going on."
+    hide cs_neutral
+    show cs_worried at right
+    cs "Michael! That's not chocolate cake!"
+    michael "I have loads to eat! Om Nom Nom..."
+    michael "Blarrrgh!"
+    n "Michael pukes up the flex tape cake."
+    michael "This is horrible! Get out! Get out of here!"
+    phil "But it seals and bonds-"
+    michael "OUT!"
+    hide phil with moveoutright
+    hide cs_worried
+    show cs_neutral at right
+    michael "I need something to drink. CS do you still have that drink?"
+    cs "Sure thing, here you go."
+    michael "Goodness."
+    n "Michael downs the whole can."
+    michael "Quick! Get out!"
+    cs "What is going on?"
+    michael "The Genergyfoogle is here! It's come to eat us all!"
+    cs "Oh man, did that genergy have something else in it?"
+    cs "I need to get out before he goes nuts!"
+    hide cs_neutral with moveoutright
+    show black with dissolve
+
+    scene car_inside
+    show cs_neutral at left
     jump csbi_end
 
 label csbi_end:
