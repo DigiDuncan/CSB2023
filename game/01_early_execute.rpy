@@ -17,7 +17,7 @@ python early:
         _current_song = parsed_object[0].strip()
         _current_artist = parsed_object[1].strip()
         renpy.with_statement(determination)
-        renpy.show("_music_layered", layer = "master", at_list = [_music_top_left])
+        renpy.show("_music_text", layer = "master", at_list = [_music_top_left])
         renpy.with_statement(easeinleft)
 
     def lint_music(parsed_object):
@@ -29,15 +29,13 @@ python early:
         execute = execute_music)
 
 init python:
-    def gen_text(st, at):
-        return HBox(Transform(Image("music_note.png"), zoom = 0.25),
+    def _music_gen_text(st, at):
+        return HBox(Transform(Image("music_note.png"), zoom = 0.2),
             Null(width = 35),
             VBox(
-                Text(_current_song, size = 80),
-                Text(_current_artist, size = 40)
+                Text(_current_song, size = 72, outlines = [(5, "#000000", 0, 0)]),
+                Text(_current_artist, size = 32, outlines = [(3, "#000000", 0, 0)])
             )
         ), None
 
-    renpy.image("_music_bg", Solid("#00000070", xsize = 0.333, ysize = 0.15))
-    renpy.image("_music_text", DynamicDisplayable(gen_text))
-    renpy.image("_music_layered", LayeredImage(["_music_bg", "_music_text"], name = "_music_box"))
+    renpy.image("_music_text", DynamicDisplayable(_music_gen_text))
