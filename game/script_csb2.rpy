@@ -211,8 +211,9 @@ label bordercrossing:
     cs "Arceus, can we stop somewhere? I'm getting hungry."
     anno "Yeah, we've been walking for miles now."
     arceus "Guys. We've only just left the border. You can still see it behind us."
-    # TODO: [PAKOO] look behind shot of america with flag
+    scene flag
     n "The crew look behind them and still see a faint american flag waving."
+    scene canada
     cs "Prison food just isn't all that filling."
     arceus "I suppose we could find a Tim Horton's, it's as common in Canada as a McDonald's is in America."
     n "Anno and CS nod aggresively."

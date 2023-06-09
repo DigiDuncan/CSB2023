@@ -119,6 +119,7 @@ image outside_tim_hortons = "bg/outside_tim_hortons.png"
 image inside_tim_hortons = "bg/inside_tim_hortons.png"
 image tunnel = "bg/tunnel.png"
 image canada = "bg/canada.png"
+image flag = "bg/americanflag.png"
 image outside_ltt = "bg/linus_office_outside.png"
 image inside_ltt = "bg/linus_hallway.png"
 
