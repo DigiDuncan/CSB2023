@@ -39,6 +39,7 @@ define worker_4 = Character("Worker 4")
 define worker_5 = Character("Worker 5")
 define worker_6 = Character("Worker 6")
 define worker_7 = Character("Worker 7")
+define digi = Character("Digi")
 
 #CSB1 Character Images
 image cs_neutral = "characters/cs.png"
@@ -149,3 +150,5 @@ label start:
             jump csbi_start
         "CSBounciness II":
             jump csbii_start
+        "CSBounciness III":
+            jump csbiii_start

@@ -378,3 +378,18 @@ label bordercrossing:
     linus "Yep, there you are, cs188, full working visa."
     linus "Looks like you're hired!"
     cs "Ohhh yes! {w}{i}ahem{/i} I mean, thank you, Linus!"
+
+    scene inside_tim_hortons
+    show anno at right
+    show arceus flipped at left
+    show cs with moveinleft
+
+    cs "I did it, I got the job!"
+    anno "Woohoo!"
+    arceus "Hell yeah!"
+
+    anno "Let's celebrate!"
+    n "CS, Anno, and Arceus cheers their donuts together."
+    stop music fadeout 3.0
+    scene black with fade
+    jump csbiii_start
