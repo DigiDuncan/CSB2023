@@ -28,7 +28,7 @@ label punch:
     cs "Take this!"
     n "CS punches Wesley and knocks him out."
     show cs_angry at center with move
-    play audio "audio/punch.ogg"
+    play sound "audio/punch.ogg"
     play sound "audio/punch.ogg"
     show wesley at right with hpunch
     play sound "audio/punch.ogg"
