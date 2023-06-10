@@ -6,15 +6,18 @@ label csbi_start:
     music Lets hear my baby - Walkman
     cs "Welp, time to start up the ol' Craptop."
     hide cs_neutral
-    scene craptop_desktop
+    scene craptop_bg
+    show craptop_desktop
     craptop "Your PC sux. lol."
     sticky "Delete the CSCord."
     cs "Eh, maybe tomorrow."
-    scene craptop_update
+    hide craptop_desktop
+    show craptop_updating
     craptop "Downloading update 200/13..."
     craptop "Update complete."
     cs "OoOoOoOoO yes!"
-    scene craptop_discord
+    hide craptop_updating
+    show craptop_discord
     cs "Hey guys!"
     show discord at right
     discord "Hi! Hi! Hi! Hi!"
@@ -31,7 +34,8 @@ label csbi_start:
     nova "k bye"
     hide nova
     hide discord
-    scene craptop_car
+    hide craptop_discord
+    show craptop_car
     cs "Time to watch car crash videos for the next couple of hours!"
     show black with fade
     n "Two hours later..."
@@ -139,7 +143,9 @@ label room:
     show cs_neutral
     hide cs_happy
     cs "You know, I haven't put out a YTP in a while. I should work on one of my in-progress ones."
-    show craptop_edit with fade
+    show craptop_bg
+    show craptop_edit
+    with fade
     n "CS walks to his craptop and opens up Premiere."
     play music "<loop 0>ytpediting.mp3" volume 0.3
     music scales of joy.mod - Mel O Dee
@@ -147,9 +153,9 @@ label room:
     n "CS watches the in-progress video."
     cs "This is pretty good, but I am feeling uninspired... I don't know where to go from here..."
     cs "..."
-    cs "I know! Should watch some other YTPs for inspiration"
-    show craptop_ytp
+    cs "I know! Should watch some other YTPs for inspiration."
     hide craptop_edit
+    show craptop_ytp
     n "CS opens up YouTube and begins watching YTPs. After a while, CS runs into some old YTPs."
     cs "Man, it was so easy back then. All you needed was Windows Movie Maker and some effects. If only it was that easy now..."
     cs "..."
@@ -219,15 +225,19 @@ label room:
     wesley "Eh..."
     rich "How about we mess with his laptop?"
     ed "Good idea! Let's get sabotagin'!"
-    show craptop_desktop with dissolve
+    show craptop_bg
+    show craptop_desktop
+    with dissolve
     n "Ed launches the craptop."
     ed "Heheh... He won't know what hit him..."
     wesley "Quickly! Let's get out of here before he comes back!"
-    show craptop_update
+    hide craptop_desktop
+    show craptop_updating
     wesley "Hurry up!"
     "..."
-    show craptop_error
-    scene cs_house
+    hide craptop_updating
+    show craptop_error with hpunch
+    scene cs_house with fade
     show ed at left with moveinbottom
     show wesley at center with moveinbottom
     show rich at right with moveinbottom
