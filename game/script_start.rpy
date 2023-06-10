@@ -11,7 +11,7 @@ init python:
             elif event == "slow_done" or event == "end":
                 renpy.music.stop(channel="sound")
 
-# Custom tranforms
+# Custom transforms
 transform rotate_10:
     subpixel True
     rotate 10 xanchor 0.5 yanchor 0.5
