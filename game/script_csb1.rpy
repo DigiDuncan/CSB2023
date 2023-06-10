@@ -19,7 +19,7 @@ label csbi_start:
     hide craptop_updating
     show craptop_discord
     cs "Hey guys!"
-    show discord at right
+    show discord at center_right
     discord "Hi! Hi! Hi! Hi!"
     n "The Discord is overflowing with people trying to talk to CS."
     hide discord
@@ -29,7 +29,7 @@ label csbi_start:
     nova "But it's like 8:04AM and you just woke up."
     cs "Bye!"
     hide cs_neutral with moveoutleft
-    show discord at left
+    show discord at center_left
     discord "CS is now offline."
     nova "k bye"
     hide nova

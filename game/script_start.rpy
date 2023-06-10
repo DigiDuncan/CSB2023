@@ -18,6 +18,14 @@ transform rotate_10:
     ypos 0.5
     zoom 1.33
 
+transform center_left:
+    yanchor 0.5 ypos 0.5
+    xanchor 0.0 xpos 0.0
+
+transform center_right:
+    yanchor 0.5 ypos 0.5
+    xanchor 1.0 xpos 1.0
+
 #CSB1 Character Definitions
 define n = Character("", what_italic = True, window_background = "gui/textbox_alt.png")  # Narrator
 define cs = Character("cs188", callback = cs_beep)
