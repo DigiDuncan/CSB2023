@@ -65,7 +65,7 @@ label csbi_start:
     play sound "nicecar.ogg"
     carguy "Nice car!"
     cs "It's pretty nice, but it's got some scratches..."
-    carguy "Nooot so nice scratch.."
+    carguy "Nooot so nice scratch..."
     carguy "You should try Crotch Doctor!"
     hide cs_neutral
     show cs_worried at left
@@ -129,7 +129,7 @@ label walmart:
     play sound "doorslam.ogg"
     show black with dissolve
     show car_inside behind cs_neutral
-    cs "Let's get home before that guy doctor's my crotch!"
+    cs "Let's get home before that guy doctors my crotch!"
     scene black with fade
     n "CS drives home and manages to avoid reenacting one of his favorite car crash videos."
     jump room
@@ -152,8 +152,8 @@ label room:
     cs "Ooooh! Here's the one from my last editing stream. People would be excited to finally see this as a finished product."
     n "CS watches the in-progress video."
     cs "This is pretty good, but I am feeling uninspired... I don't know where to go from here..."
-    cs "..."
-    cs "I know! Should watch some other YTPs for inspiration."
+    cs "Hmmm..."
+    cs "I know! I should watch some other YTPs for inspiration."
     hide craptop_edit
     show craptop_ytp
     n "CS opens up YouTube and begins watching YTPs. After a while, CS runs into some old YTPs."
@@ -170,6 +170,7 @@ label room:
     show cs_neutral
     cs "Oh, flashback over."
     play sound "foundationfail.ogg" volume 0.5
+    show cs_room behind cs_neutral at rotate_10 with hpunch
     n "A loud crash can be heard as though an atom has split in CS' foundation."
     cs "Woah! I was dreaming so long that the foundation fell apart. My house just fell to the side!"
     cs "I really need to get some foundation repair."

@@ -213,9 +213,9 @@ label breakout:
     hide anno
     hide arceus
     with dissolve
-    n "The three continue to dig for hours. Until their hands begin to blister and their spoons break"
+    n "The three continue to dig for hours, until their hands begin to blister and their spoons break."
     arceus "Based on my instinct and my tiredness. This should be far enough."
-    n "The now escaped fugitives dig up for their ascend to the surface."
+    n "The now escaped fugitives dig up for their ascent to the surface."
     stop music fadeout 3.0
 
     hide arceus with dissolve

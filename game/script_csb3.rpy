@@ -1,4 +1,6 @@
 label csbiii_start:
+    play music "<loop 0>secret/space_classroom.mp3"
+    show digi at center with Dissolve(3)
     digi "I'm so done writing for right now. {cps=*0.25}Ohhhhh{cps=*4} my gosh, so incredibly done."
     digi "I'm more done than my toast set to 5."
     digi "I'm done.{w} Out.{w} Audi.{w} Audi 5000."
@@ -12,3 +14,6 @@ label csbiii_start:
     digi "I'm non-binary, but you turn me on ;3"
     digi "{cps=5}. . ."
     digi "That was bad, I'm sorry, I'm going to bed."
+    hide digi with dissolve
+    window hide
+    pause 3

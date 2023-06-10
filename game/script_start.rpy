@@ -11,6 +11,13 @@ init python:
             elif event == "slow_done" or event == "end":
                 renpy.music.stop(channel="sound")
 
+# Custom tranforms
+transform rotate_10:
+    subpixel True
+    rotate 10 xanchor 0.5 yanchor 0.5
+    ypos 0.5
+    zoom 1.33
+
 #CSB1 Character Definitions
 define n = Character("", what_italic = True, window_background = "gui/textbox_alt.png")  # Narrator
 define cs = Character("cs188", callback = cs_beep)
