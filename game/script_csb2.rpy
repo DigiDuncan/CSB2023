@@ -319,7 +319,7 @@ label bordercrossing:
 
     scene inside_tim_hortons
     show cs_neutral
-    cs "A media group, huh? I have a lot of video editing experience, maybe I can get a job there."
+    cs "Linus Media Group, huh? I have a lot of video editing experience, maybe I can get a job there."
 
     scene black with fade
     n "CS walks into the studio to ask for a job."
