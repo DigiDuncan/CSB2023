@@ -11,9 +11,6 @@ init python:
             elif event == "slow_done" or event == "end":
                 renpy.music.stop(channel="sound")
 
-# Transitions
-define determination = Dissolve(0.0)
-
 #CSB1 Character Definitions
 define n = Character("", what_italic = True, window_background = "gui/textbox_alt.png")  # Narrator
 define cs = Character("cs188", callback = cs_beep)
