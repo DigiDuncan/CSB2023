@@ -303,7 +303,7 @@ label bordercrossing:
     cs "..."
     cs "I think I'm {i}really{/i} sleep deprived."
 
-    scene blank with fade
+    scene black with fade
     pause 1.0
     scene inside_tim_hortons with fade
 
