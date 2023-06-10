@@ -234,9 +234,9 @@ label room:
     hide craptop_desktop
     show craptop_updating
     wesley "Hurry up!"
-    "..."
     hide craptop_updating
     show craptop_error with hpunch
+    pause 1.0
     scene cs_house with fade
     show ed at left with moveinbottom
     show wesley at center with moveinbottom
@@ -355,14 +355,34 @@ label csbi_end:
     n "CS walks into his room."
     hide cs_neutral
     show cs_disappointed
-    cs "What?! They're gone?!"
-    cs "The house is still on the side, and my computer is messed up!"
+    cs "What?! They're gone? Already?"
     hide cs_disappointed
+    scene craptop_bg
+    show craptop_off
+    n "CS attempts to boot his laptop."
+    n "..."
+    n "Nothing."
+    cs "Stupid craptop, turn on!"
+    n "CS tries to turn it on again.{w} Nothing."
+    cs "Maybe it finally died..."
+    cs "Wait..."
+    cs "The last people in this room were the HoH SiS guys!"
+    cs "They must have messed with it!"
+    window hide
+    play sound "foundationfail.ogg" volume 0.5
+    pause
+    cs "They didn't even do the JoJ!"
+    hide craptop_off
+    show craptop_sad with hpunch
+    play sound "audio/punch.ogg"
+    pause
+    scene cs_room
     show cs_angry
     cs "I need to get those guys!"
     cs "I'm gonna go to HoH SiS HQ and kick some butt!"
     scene hoh_outside with fade
-    n "..."
+    window hide
+    pause
     scene hoh_hq with dissolve
     play music "<loop 0>officepuncher.mp3" volume 0.2
     music Time for a Smackdown! - Tour De Pizza
