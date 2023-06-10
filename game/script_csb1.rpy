@@ -402,8 +402,8 @@ label csbi_end:
     n "..."
     show black with dissolve
     scene hoh_hq2
-    show worker_3 at left
-    show worker_4 at right
+    show worker_3 at center_right
+    show worker_4 at left
     show cs_angry with moveinleft
     cs "Get out of my way!"
     n "CS bodyslams the worker as he runs past."
