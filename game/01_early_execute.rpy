@@ -41,6 +41,7 @@ python early:
         _current_artist = parsed_object[1].strip().removesuffix("\"")
         renpy.with_statement(determination)
         renpy.show_screen("music")
+        renpy.with_statement(determination)
 
     def lint_music(parsed_object):
         if title == "" or author == "":

@@ -1,3 +1,8 @@
+screen best_music():
+    zorder 100
+    image "best_music.png" at music_appear
+    timer 5 action Hide('best_music')
+
 label csbi_start:
 
     scene cs_room
@@ -98,11 +103,12 @@ label csbi_start:
     jump walmart
 
 label walmart:
-    stop music
     scene walmart_outside
     show cs_happy
     cs "Oh yes! Walmart is open!"
     scene walmart_inside with fade
+    show screen best_music
+    play music "<loop 0>summer_clearance_sale.mp3"
     n "CS walks inside."
     show doug at right with moveinright
     greeter "Hello and welcome to Walmart! Can I help you with anything?"
