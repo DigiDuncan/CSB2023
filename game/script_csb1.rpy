@@ -182,8 +182,9 @@ label room:
     n "keyboard tapping"
     ycs "Ohhhhhh YeeEeeEeEeeEEeEEs! This is lookin' good!"
     hide cs_young
-    scene cs_room with pixellate
+    scene cs_room
     show cs_neutral
+    with pixellate
     cs "Oh, flashback over."
     play sound "foundationfail.ogg" volume 0.5
     show cs_room behind cs_neutral at rotate_10 with hpunch

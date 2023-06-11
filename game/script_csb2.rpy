@@ -305,11 +305,11 @@ label bordercrossing:
 
     scene black with fade
     pause 1.0
-    scene inside_tim_hortons with fade
-
+    scene inside_tim_hortons
     show cs_neutral
     show anno at left
     show arceus at right
+    with fade
 
     n "CS, Arceus, and Anno enjoy some well-deserved donuts."
     arceus "Sorry to interrupt you two, but we may have a problem: Those donuts cost me the last of my money. We are going to need to find a way to make some cash."
@@ -336,8 +336,9 @@ label bordercrossing:
     linus "I need actual papers, the last time I hired someone who used that as proof of citizenship I got fined and had to sell one of my thousands of RTX Titans."
     cs "Ummmm, I'll be right back."
 
-    scene outside_ltt with dissolve
+    scene outside_ltt
     show arceus at right
+    with dissolve
     show cs_neutral at left with moveinleft
 
     cs "Arc, what am I gonna do? They need proof I'm legal to work."
@@ -373,8 +374,9 @@ label bordercrossing:
     arceus "Don't worry about it. Just have them look you up."
 
     scene black with fade
-    scene inside_ltt with fade
+    scene inside_ltt
     show linus
+    with fade
 
     linus "I didn't think you could have a number as a last name..."
     linus "Yep, there you are, cs188, full working visa."
