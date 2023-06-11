@@ -102,7 +102,7 @@ label caught:
     jump jail
 
 label jail:
-    scene jail_inside
+    scene jail_inside with fade
     show cs_neutral at offscreenleft
     show copguy at offscreenright
     with determination

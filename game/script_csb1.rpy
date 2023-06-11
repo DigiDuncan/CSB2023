@@ -132,6 +132,7 @@ label walmart:
     cashier "Have a good day."
     cs "You too, bye!"
     hide cashier
+    stop music fadeout 3.0
     show walmart_outside behind cs_neutral with dissolve
     cs "Let's get to the car."
     show carguy at right with moveinright
@@ -145,6 +146,7 @@ label walmart:
     play sound "doorslam.ogg"
     show black with dissolve
     show car_inside behind cs_neutral
+    play music "<loop 0>canyon_but_in_the_car.mp3" volume 0.2
     cs "Let's get home before that guy doctors my crotch!"
     scene black with fade
     n "CS drives home and manages to avoid reenacting one of his favorite car crash videos."
@@ -425,9 +427,9 @@ label csbi_end:
     cs "Get out of my way!"
     n "CS bodyslams the worker as he runs past."
     play sound "audio/punch.ogg"
-    show worker_3 at left with hpunch
+    show worker_3 at center_right with hpunch
     play sound "audio/punch.ogg"
-    show worker_4 at right with hpunch
+    show worker_4 at left with hpunch
     hide worker_3 with moveoutright
     hide worker_4 with moveoutleft
     show black with dissolve
