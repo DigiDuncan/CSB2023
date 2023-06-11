@@ -241,8 +241,10 @@ label bordercrossing:
     anno "Yeah, we've been walking for miles now."
     arceus "Guys. We've only just left the border. You can still see it behind us."
     scene flag
-    n "The crew look behind them and still see a faint american flag waving."
+    play music "star_spangled_banner.mp3"
+    n "The crew look behind them and still see a faint American flag waving."
     scene canada
+    stop music
     cs "Prison food just isn't all that filling."
     arceus "I suppose we could find a Tim Horton's, it's as common in Canada as a McDonald's is in America."
     n "Anno and CS nod aggresively."

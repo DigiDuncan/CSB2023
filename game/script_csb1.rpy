@@ -100,6 +100,9 @@ label csbi_start:
             cs "Yeah... It's a good idea to get some stuff."
         "No":
             cs "Screw you, I'm going anyway!"
+    play audio "driving.wav"
+    pause 3
+    stop audio
     jump walmart
 
 label walmart:
@@ -147,6 +150,7 @@ label walmart:
     show black with dissolve
     show car_inside behind cs_neutral
     play music "<loop 0>canyon_but_in_the_car.mp3" volume 0.2
+    play audio "driving.wav"
     cs "Let's get home before that guy doctors my crotch!"
     scene black with fade
     n "CS drives home and manages to avoid reenacting one of his favorite car crash videos."
@@ -154,6 +158,7 @@ label walmart:
 
 label room:
     scene cs_room
+    stop audio
     stop music fadeout 3.0
     n "CS arrives home and walks to his room."
     show cs_happy with dissolve
@@ -280,6 +285,7 @@ label room:
 label michael_house:
     scene car_inside
     show cs_neutral at left
+    play audio "driving.wav"
     cs "Thankfully, Michael lives pretty close."
     cs "His vacation house in the US is only a few streets away!"
     cs "Before I forget, I should probably call him first."
@@ -297,6 +303,7 @@ label michael_house:
     cs "Alright well, I'll be there soon!"
     n "CS puts his phone away and drives over to Michael's house."
     show black with dissolve
+    stop audio
 
     scene rosen_abode
     play music "<loop 0>super_friendly.mp3" volume 0.4
@@ -366,12 +373,14 @@ label michael_house:
     scene car_inside
     stop music fadeout 3.0
     show cs_neutral at left
+    play audio "driving.wav"
     jump csbi_end
 
 label csbi_end:
     cs "I should check on the HoH SiS folks. They should be making some progress by now."
     scene cs_room
     show cs_neutral with moveinbottom
+    stop audio
     n "CS walks into his room."
     hide cs_neutral
     show cs_disappointed

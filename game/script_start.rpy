@@ -7,9 +7,9 @@ init python:
     def cs_beep(event, **kwargs):
         if persistent.text_beeps:
             if event == "show":
-                renpy.music.play("audio/text/cstalk.wav", channel="sound", loop=True)
+                renpy.music.play("audio/text/cstalk.wav", channel="voice", loop=True)
             elif event == "slow_done" or event == "end":
-                renpy.music.stop(channel="sound")
+                renpy.music.stop(channel="voice")
 
 # Custom transforms
 transform rotate_10:
