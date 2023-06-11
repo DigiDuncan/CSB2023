@@ -37,13 +37,14 @@ python early:
     def execute_music(parsed_object):
         global _current_song
         global _current_artist
-        _current_song = parsed_object[0].strip()
-        _current_artist = parsed_object[1].strip()
+        _current_song = parsed_object[0].strip().removeprefix("\"")
+        _current_artist = parsed_object[1].strip().removesuffix("\"")
         renpy.with_statement(determination)
         renpy.show_screen("music")
 
     def lint_music(parsed_object):
-        pass
+        if title == "" or author == "":
+            renpy.error("Title or author is empty for music popup.")
 
     renpy.register_statement("music",
         parse = parse_music,
