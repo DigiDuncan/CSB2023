@@ -26,6 +26,13 @@ transform center_right:
     yanchor 0.5 ypos 0.5
     xanchor 1.0 xpos 1.0
 
+transform t_post_it:
+    subpixel True
+    xanchor 0.5 yanchor 0.0
+    xpos 0.65 ypos 0.025
+    zoom 0.3333
+    rotate 10
+
 #CSB1 Character Definitions
 define n = Character("", what_italic = True, window_background = "gui/textbox_alt.png")  # Narrator
 define cs = Character("cs188", callback = cs_beep)
@@ -90,6 +97,7 @@ image craptop_off = "characters/craptop/off.png"
 image craptop_sad = "characters/craptop/sad.png"
 image craptop_updating = "characters/craptop/updating.png"
 image craptop_ytp = "characters/craptop/ytp.png"
+image post_it = "post-it.png"
 
 #CSB1 Background Images
 image black = "bg/black.png"

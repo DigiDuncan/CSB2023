@@ -2,15 +2,18 @@ label csbi_start:
 
     scene cs_room
     show cs_neutral
-    play music "<loop 0>csgroove.mp3" volume 0.15
-    music Lets hear my baby - Walkman
+    play music "<loop 0>lets_hear_my_baby.mp3" volume 0.15
+    music "Let's hear my baby - Walkman"
     cs "Welp, time to start up the ol' Craptop."
     hide cs_neutral
     scene craptop_bg
     show craptop_desktop
+    show post_it at t_post_it
     craptop "Your PC sux. lol."
     sticky "Delete the CSCord."
     cs "Eh, maybe tomorrow."
+    hide post_it
+    play sound "page.wav" volume 5
     hide craptop_desktop
     show craptop_updating
     craptop "Downloading update 200/13..."
@@ -18,19 +21,25 @@ label csbi_start:
     cs "OoOoOoOoO yes!"
     hide craptop_updating
     show craptop_discord
+    play sound "windows_logon.mp3"
     cs "Hey guys!"
     show discord at center_right
+    play sound "ping_spam.mp3"
     discord "Hi! Hi! Hi! Hi!"
     n "The Discord is overflowing with people trying to talk to CS."
     hide discord
     show cs_neutral at left
+    play sound "ping.mp3"
     cs "OK, bedtime! Bye guys!"
     show nova at right
+    play sound "ping.mp3"
     nova "But it's like 8:04AM and you just woke up."
+    play sound "ping.mp3"
     cs "Bye!"
     hide cs_neutral with moveoutleft
     show discord at center_left
     discord "CS is now offline."
+    play sound "ping.mp3"
     nova "k bye"
     hide nova
     hide discord
@@ -77,7 +86,7 @@ label csbi_start:
     play sound "doorslam.ogg"
     show black with dissolve
     show cs_car_inside behind cs_neutral
-    play music "<loop 0>canyon.mp3" volume 0.2
+    play music "<loop 0>canyon_but_in_the_car.mp3" volume 0.2
     cs "Whew.. That was close!"
     cs "Should I go get groceries?"
     menu:
@@ -89,6 +98,7 @@ label csbi_start:
     jump walmart
 
 label walmart:
+    stop music
     scene walmart_outside
     show cs_happy
     cs "Oh yes! Walmart is open!"
@@ -147,7 +157,7 @@ label room:
     show craptop_edit
     with fade
     n "CS walks to his craptop and opens up Premiere."
-    play music "<loop 0>ytpediting.mp3" volume 0.3
+    play music "<loop 0>scales_of_joy.mp3" volume 0.3
     music scales of joy.mod - Mel O Dee
     cs "Ooooh! Here's the one from my last editing stream. People would be excited to finally see this as a finished product."
     n "CS watches the in-progress video."
@@ -280,7 +290,7 @@ label michael_house:
     show black with dissolve
 
     scene rosen_abode
-    play music "<loop 0>rosenabode.mp3" volume 0.4
+    play music "<loop 0>super_friendly.mp3" volume 0.4
     music Super Friendly - Kevin Macleod
     show michael at right with moveinright
     show cs_neutral at offscreenright
@@ -385,7 +395,7 @@ label csbi_end:
     window hide
     pause
     scene hoh_hq with dissolve
-    play music "<loop 0>officepuncher.mp3" volume 0.2
+    play music "<loop 0>time_for_a_smackdown.mp3" volume 0.2
     music Time for a Smackdown! - Tour De Pizza
     show cs_angry with dissolve
     cs "Alright! Where are the head JoJites?!"

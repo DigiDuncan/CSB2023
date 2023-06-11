@@ -177,7 +177,7 @@ label breakout:
     stop music fadeout 3.0
     n "The current day ends, and the next one progresses. CS and Arceus gather the required essentials for their escape. Along the way, they inform Anno, who more than happily complies with the plan." 
     n "The next evening..."
-    play music "<loop 0>jailescape.mp3" volume 0.5
+    play music "<loop 0>moongazer.mp3" volume 0.5
     music Moongazer - Dr. Awesome
     cs "Key, check."
 
@@ -329,7 +329,7 @@ label bordercrossing:
     scene inside_ltt
     show linus
     with fade
-    play music "<loop 0>linusmeetup.mp3" volume 0.5
+    play music "<loop 0>passport.mp3" volume 0.5
     music PASSPORT.MID - George Stone
     linus "Sure, you can have a job, just show us proof of citizenship and you're ready to go!"
     cs "Colour is spelled with a u, eh."
