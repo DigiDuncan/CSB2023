@@ -73,7 +73,7 @@ define worker_4 = Character("Worker 4", callback = beep)
 define worker_5 = Character("Worker 5", callback = beep)
 define worker_6 = Character("Worker 6", callback = beep)
 define worker_7 = Character("Worker 7", callback = beep)
-define digi = Character("Digi", callback = beep)
+define digi = Character("Digi", callback = renpy.partial(beep, name = "digi"))
 
 #CSB1 Character Images
 image cs_neutral = "characters/cs.png"
@@ -138,7 +138,7 @@ image hoh_hq5 = "bg/office5.png"
 
 # CSB2 Character Definitions
 define copguy = Character("CopGuy", callback = renpy.partial(beep, name = "cop"))
-define arceus = Character("Arceus", callback = beep)
+define arceus = Character("Arceus", callback = renpy.partial(beep, name = "arc"))
 define anno = Character("Anno", callback = beep)
 define border_guard = Character("Border Guard", callback = beep)
 define linus = Character("Linus", callback = beep)
