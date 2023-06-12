@@ -137,7 +137,7 @@ image hoh_hq4 = "bg/office4.png"
 image hoh_hq5 = "bg/office5.png"
 
 # CSB2 Character Definitions
-define copguy = Character("CopGuy", callback = renpy.partial(beep, name = "nice"))
+define copguy = Character("CopGuy", callback = renpy.partial(beep, name = "cop"))
 define arceus = Character("Arceus", callback = beep)
 define anno = Character("Anno", callback = beep)
 define border_guard = Character("Border Guard", callback = beep)
