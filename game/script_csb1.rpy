@@ -77,7 +77,7 @@ label csbi_start:
     show cs_neutral at left with move
     show carguy at right with moveinright
     play sound "nicecar.ogg"
-    carguy "Nice car!"
+    carguy_nobeep "Nice car!"
     cs "It's pretty nice, but it's got some scratches..."
     carguy "Nooot so nice scratch..."
     carguy "You should try Crotch Doctor!"
@@ -352,7 +352,7 @@ label michael_house:
     cs "Michael! That's not chocolate cake!"
     michael "I have loads to eat! Om nom nom..."
     play sound "puke.ogg"
-    michael "Blarrrgh!"
+    michael_nobeep "Blarrrgh!"
     n "Michael spits out the Flex Seal cake."
     michael "This is horrible! Get out! Get out of here!"
     phil "But it seals, and bonds--"
