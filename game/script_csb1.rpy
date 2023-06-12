@@ -187,6 +187,7 @@ label room:
     scene cs_room with pixellate
     show cs_young with moveinbottom
     ycs "Hey guys! Young CS here! Today I'm gonna be editing a craaaaAaAAaAAAAAaaAazy video!!"
+    play sound "keyboard.ogg"
     n "keyboard tapping"
     ycs "Ohhhhhh YeeEeeEeEeeEEeEEs! This is lookin' good!"
     hide cs_young
@@ -328,6 +329,7 @@ label michael_house:
     play sound "csnore.ogg"
     michael "CS? did you fall asleep?"
     michael "CS!"
+    stop sound
     hide black
     cs "Wha- what?"
     michael "Did you just... sleep through my entire poem?"

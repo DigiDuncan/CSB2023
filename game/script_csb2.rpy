@@ -62,7 +62,7 @@ label chop:
     cs "Hiya!"
     n "CS chops Wesley in the chest and he flies off the roof."
     show cs_angry at center with move
-    play sound "audio/chop.wav"
+    play sound "audio/chop.ogg"
     hide wesley with easeoutright
     show cs_angry at left with move
     cs "I sawed this foundation repairman in half!"
@@ -88,6 +88,7 @@ label kick:
 label caught:
     cs "Dammit! Ed's calling the police! I gotta go after him!"
     ed "911! Come quickly! He's chasing after me!"
+    play sound "siren.ogg" loop
     show blue_light at left onlayer overlay
     show red_light at right onlayer overlay
     n "The police arrive and CS runs away."
@@ -98,6 +99,7 @@ label caught:
     cs "You can't catch me, I'm the speedy Michael Rosen!"
     stop music fadeout 3.0
     n "As CS is not actually the speedy Michael Rosen, he gets caught by the police."
+    stop sound fadeout 1.0
     scene black with fade
     jump jail
 
