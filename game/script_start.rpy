@@ -4,12 +4,17 @@ default persistent.csbounciness = 0
 
 # Text beeps
 init python:
-    def cs_beep(event, **kwargs):
+    renpy.music.register_channel("beep", "voice", loop = True)
+    def beep(event, name = None, **kwargs):
         if persistent.text_beeps:
             if event == "show":
-                renpy.music.play("audio/text/cstalk.wav", channel="voice", loop=True)
+                if name is not None:
+                    renpy.sound.play(f"audio/text/{name}.wav", channel = "beep", loop = True)
+                    print(name)
+                else:
+                    renpy.sound.play(f"audio/text/ut.wav", channel = "beep", loop = True)
             elif event == "slow_done" or event == "end":
-                renpy.music.stop(channel="voice")
+                renpy.sound.stop(channel="beep")
 
 # Custom transforms
 transform rotate_10:
@@ -35,30 +40,30 @@ transform t_post_it:
 
 #CSB1 Character Definitions
 define n = Character("", what_italic = True, window_background = "gui/textbox_alt.png")  # Narrator
-define cs = Character("cs188", callback = cs_beep)
-define craptop = Character("Craptop")
-define sticky = Character("Sticky Note")
-define discord = Character("Discord")
-define nova = Character("Nova")
-define carguy = Character("Car Guy")
-define greeter = Character("Greeter")
-define doug = Character("Doug")
-define cashier = Character("Cashier")
-define ycs = Character("Young CS")
-define hoh_operator = Character("HoH SiS Operator")
-define rich = Character("Richard")
-define ed = Character("Ed")
-define wesley = Character("Wesley")
-define michael = Character("Michael")
-define phil = Character("Phil")
-define worker_1 = Character("Worker 1")
-define worker_2 = Character("Worker 2")
-define worker_3 = Character("Worker 3")
-define worker_4 = Character("Worker 4")
-define worker_5 = Character("Worker 5")
-define worker_6 = Character("Worker 6")
-define worker_7 = Character("Worker 7")
-define digi = Character("Digi")
+define cs = Character("cs188", callback = renpy.partial(beep, name = "cs"))
+define craptop = Character("Craptop", callback = beep)
+define sticky = Character("Sticky Note", callback = beep)
+define discord = Character("Discord", callback = beep)
+define nova = Character("Nova", callback = beep)
+define carguy = Character("Car Guy", callback = renpy.partial(beep, name = "nice"))
+define greeter = Character("Greeter", callback = beep)
+define doug = Character("Doug", callback = beep)
+define cashier = Character("Cashier", callback = beep)
+define ycs = Character("Young CS", callback = renpy.partial(beep, name = "ycs"))
+define hoh_operator = Character("HoH SiS Operator", callback = beep)
+define rich = Character("Richard", callback = beep)
+define ed = Character("Ed", callback = beep)
+define wesley = Character("Wesley", callback = beep)
+define michael = Character("Michael", callback = beep)
+define phil = Character("Phil", callback = beep)
+define worker_1 = Character("Worker 1", callback = beep)
+define worker_2 = Character("Worker 2", callback = beep)
+define worker_3 = Character("Worker 3", callback = beep)
+define worker_4 = Character("Worker 4", callback = beep)
+define worker_5 = Character("Worker 5", callback = beep)
+define worker_6 = Character("Worker 6", callback = beep)
+define worker_7 = Character("Worker 7", callback = beep)
+define digi = Character("Digi", callback = beep)
 
 #CSB1 Character Images
 image cs_neutral = "characters/cs.png"
@@ -122,11 +127,11 @@ image hoh_hq4 = "bg/office4.png"
 image hoh_hq5 = "bg/office5.png"
 
 # CSB2 Character Definitions
-define copguy = Character("CopGuy")
-define arceus = Character("Arceus")
-define anno = Character("Anno")
-define border_guard = Character("Border Guard")
-define linus = Character("Linus")
+define copguy = Character("CopGuy", callback = renpy.partial(beep, name = "nice"))
+define arceus = Character("Arceus", callback = beep)
+define anno = Character("Anno", callback = beep)
+define border_guard = Character("Border Guard", callback = beep)
+define linus = Character("Linus", callback = beep)
 
 # CSB2 Character Images
 image ed_phone = "characters/ed_phone.png"
