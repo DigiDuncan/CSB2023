@@ -62,7 +62,7 @@ label chop:
     cs "Hiya!"
     n "CS chops Wesley in the chest and he flies off the roof."
     show cs_angry at center with move
-    play sound "audio/punch.ogg"
+    play sound "audio/chop.wav"
     hide wesley with easeoutright
     show cs_angry at left with move
     cs "I sawed this foundation repairman in half!"
