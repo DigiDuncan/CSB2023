@@ -31,6 +31,16 @@ transform center_right:
     yanchor 0.5 ypos 0.5
     xanchor 1.0 xpos 1.0
 
+transform mid_left:
+    xanchor 0.5 xpos 0.25
+
+transform mid_right:
+    xanchor 0.5 xpos 0.75
+
+transform mid_center_right:
+    yanchor 0.5 ypos 0.5
+    xanchor 0.5 xpos 0.75
+
 transform t_post_it:
     subpixel True
     xanchor 0.5 yanchor 0.0
