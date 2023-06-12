@@ -16,4 +16,4 @@ label csbiii_start:
     digi "That was bad, I'm sorry, I'm going to bed."
     hide digi with dissolve
     window hide
-    pause 3
+    pause 3.0
