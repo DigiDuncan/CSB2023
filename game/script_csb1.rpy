@@ -413,7 +413,7 @@ label csbi_end:
     cs "They must have messed with it!"
     window hide
     play sound "foundationfail.ogg" volume 0.5
-    pause
+    pause 3.0
     cs "They didn't even do the JoJ!"
     hide craptop_off
     show craptop_sad with hpunch
