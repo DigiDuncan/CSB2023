@@ -167,7 +167,7 @@ define anno = Character("Anno", callback = renpy.partial(beep, name = "anno"))
 define border_guard = Character("Border Guard", callback = beep)
 define linus = Character("Linus", callback = renpy.partial(beep, name = "ltt"))
 define asylum_worker = Character("Mr Mohs", callback = beep)
-define csgod = Character("CS God", callback = beep)
+define csgod = Character("CS God", callback = renpy.partial(beep, name = "csgod"))
 
 # CSB2 Character Images
 image ed_phone = "characters/ed_phone.png"
