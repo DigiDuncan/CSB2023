@@ -184,14 +184,32 @@ image red_light:
     repeat
 
 # Jump menu
+screen start_menu():
+    zorder 100
+    style_prefix "start"
+    window id "start_window" xalign 0.5 yalign 0.5:
+        vbox xalign 0.5 yalign 0.5:
+            spacing 50
+            text "Start where?" textalign 0.5 size 72 xalign 0.5 yalign 0.5
+            hbox xalign 0.5 yalign 0.5:
+                spacing 50
+                imagebutton auto "menu/csbi_%s.png":
+                    at transform:
+                        zoom 0.666
+                    action Jump("csbi_start")
+                imagebutton auto "menu/csbii_%s.png":
+                    at transform:
+                        zoom 0.666
+                    action Jump("csbii_start")
+                imagebutton auto "menu/csbiii_%s.png":
+                    at transform:
+                        zoom 0.666
+                    action Jump("csbiii_start")
+
+style start_window is empty
+
 label start:
     scene black
-    menu:
-        "Start where?"
-
-        "CSBounciness I":
-            jump csbi_start
-        "CSBounciness II":
-            jump csbii_start
-        "CSBounciness III":
-            jump csbiii_start
+    window hide
+    pause 0.1
+    call screen start_menu()
