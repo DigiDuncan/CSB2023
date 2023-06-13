@@ -9,7 +9,7 @@ label csbiii_ai:
     luke "CS, we've tried everything -- new fans, liquid cooling, you name it. Nothing seems to work!"
     cs "Well, have you tried the \"Hairdryer Cooling System\"?"
     n "Everyone exchanges puzzled glances."
-    "Everyone": "The what?"
+    "Everyone" "The what?"
     n "CS grins michevously."
     cs "Trust me, it's the ultimate cooling solution. Picture this: we attach a hairdryer to the CPU, set it to low heat, and let the breeze cool everything down. It's foolproof!"
     show linus at center with moveinright
@@ -99,5 +99,5 @@ label csbiii_ai:
     hide arceus with moveoutright
     scene endingai with fade
     n "CS188 and Arceus exchange a high-five and disappear into the distance, ready for their next escapade."
-    n "Chat-GPT": "Note: The script is a fictional representation and does not reflect the actual personalities or actions of CS188 or any real-life individuals."
+    "Chat-GPT" "Note: The script is a fictional representation and does not reflect the actual personalities or actions of CS188 or any real-life individuals."
     return
