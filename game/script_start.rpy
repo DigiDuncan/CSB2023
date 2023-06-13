@@ -48,6 +48,12 @@ transform t_post_it:
     zoom 0.3333
     rotate 10
 
+transform little_bounce:
+    yanchor 1.0
+    yzoom 0.95
+    ease 0.1 yzoom 1.05
+    ease 0.1 yzoom 1
+
 #CSB1 Character Definitions
 define n = Character("", what_italic = True, window_background = "gui/textbox_alt.png")  # Narrator
 define cs = Character("cs188", callback = renpy.partial(beep, name = "cs"))
