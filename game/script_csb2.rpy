@@ -140,16 +140,16 @@ label questioning:
     show cs_disappointed at left with moveinleft
     show copguy at right with moveinright
     copguy "Alright CS, a lot of crazy things happened today."
-    copguy "The CEO of HoH SiS called us today, and was immediately interrupted buy something or someone to tell us that everything was under control."
-    copguy "After reviewing the phonecall, his voice sounds kinda messed up."
-    cs "I uhh, I don't know what that is all about."
+    copguy "The CEO of HoH SiS called us today, and was immediately interrupted buy something or someone telling us that everything was under control."
+    copguy "After reviewing the phone call, his voice sounds kinda messed up."
+    cs "I uhh, I don't know what that is all about..."
     copguy "Oh really?"
     copguy "What about all the workers in the building? Most of them were lying cold on the floor."
     cs "Okay fine!"
     cs "I confess!"
-    cs "I was using YTP magic on the employees to make them fight, and I-"
+    cs "I was using YTP magic on the employees to make them fight, and I--"
     copguy "You what? What the hell are you on about?"
-    cs "I have this power, and I just figured out how to-"
+    cs "I have this power, and I just figured out how to--"
     copguy "Alright, I've heard enough."
     copguy "Lemme call in someone to deal with this."
     copguy "Mr. Mohs, you can deal with this man."
@@ -172,7 +172,7 @@ label asylum:
     show asylum_worker at right with moveinright
     asylum_worker "Here is your room. Enjoy living out the rest of your life here."
     show cs_worried at center with moveinleft
-    cs "Mister you need to listen to me! I'm not crazy!"
+    cs "Sir, you need to listen to me! I'm not crazy!"
     asylum_worker "That's what they all say. Get off of me."
     play sound "audio/punch.ogg"    
     hide cs_worried with moveoutbottom
@@ -180,7 +180,7 @@ label asylum:
     hide asylum_worker with moveoutright
     pause 3.0
     show cs_disappointed at center with moveinbottom
-    cs "Oww..."
+    cs "Ow..."
     cs "This isn't fair!"
     csgod "Hey!"
     csgod "Quit the whining!"
@@ -189,14 +189,14 @@ label asylum:
     cs "Who are you?"
     csgod "I am CS God, and I was the one who used the YTP power."
     cs "WHAT? How? I am so confused."
-    csgod "You channelled your power through me, that was how you were able to do those abilities back at the HoH SiS Headquarters."
+    csgod "You channelled your power through me, that was how you were able to do those abilities back at HoH SiS HQ."
     csgod "It seems that you weren't good enough at lying to get yourself out of the situation though."
     cs "Well, I wanted to be honest!"
     csgod "Yeah well, look where honesty got you."
     csgod "No one would believe something as silly as YTP power."
-    csgod "For your own punishment, I'm gonna leave you here you a while."
+    csgod "For your punishment, I'm gonna leave you here you a while."
     cs "No! Please!"
-    csgod "You'll get out soon enough, but maybe you should think about making a better choice next time."
+    csgod "You'll get out soon enough, but maybe you should think about making a {i}better choice{/i} next time."
     hide csgod with moveoutright
     stop music fadeout 3.0
     scene black with fade
