@@ -6,7 +6,7 @@ screen best_music():
 label csbi_start:
 
     scene cs_room
-    show cs_neutral
+    show cs_neutral at center
     play music "<loop 0>lets_hear_my_baby.mp3" volume 0.15
     music "Let's hear my baby - Walkman"
     cs "Welp, time to start up the ol' Craptop."
@@ -269,12 +269,15 @@ label room:
     show wesley at center with moveinbottom
     show rich at right with moveinbottom
     rich "Lemme call our JoJ UFO."
-    # TODO: [DIGI] Beaming up animation
     "Ed, Wesley, and Richard" "I'm beaming up!"
+    show beam at xstretch_in
+    pause 2.0
     hide ed
     hide wesley
     hide rich
     with moveouttop
+    show beam at xstretch_out
+    pause 2.0
     stop music fadeout 3.0
     scene cs_street
     show cs_neutral with moveinleft

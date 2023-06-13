@@ -54,6 +54,15 @@ transform little_bounce:
     ease 0.1 yzoom 1.05
     ease 0.1 yzoom 1
 
+transform xstretch_in:
+    xalign 0.5
+    linear 0.5 xsize 1920
+
+transform xstretch_out:
+    xalign 0.5
+    linear 0.5 xsize 2
+    alpha 0.0
+
 #CSB1 Character Definitions
 define n = Character("", what_italic = True, window_background = "gui/textbox_alt.png")  # Narrator
 define cs = Character("cs188", callback = renpy.partial(beep, name = "cs"))
