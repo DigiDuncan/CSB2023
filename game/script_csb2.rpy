@@ -475,7 +475,9 @@ label bordercrossing:
     arceus "Hmmm..."
     n "A lightbulb goes off in Arceus' head."
     arceus "Leave it to me."
-    hide arceus with moveoutright
+    hide arceus
+    show arceus flipped at right
+    hide arceus flipped with moveoutright
 
     scene alley
     show arceus flipped with moveinleft
@@ -484,10 +486,10 @@ label bordercrossing:
     arceus "Hnng...{w} hmmpmh... {w}aha!"
     n "Arceus finds an old laptop."
     arceus "Perfect."
-    n "Within minutes, Arceus has edited the governement records to set CS' file as having a valid work visa."
-    arceus "Nice."
+    n "Within minutes, Arceus has hacked the canadian governement records to display CS as having a valid work visa."
+    arceus "Even their security is too nice.."
     n "Arceus rummages around the dumpster more and finds a magnet from a old CRT."
-    n "He places it against the laptop, destroying the hard drive instantly."
+    n "He places it against the laptop, corrupting the hard drive instantly."
     arceus "Without a trace."
     n "He discards both items and rushes out of the alley."
 
