@@ -116,7 +116,7 @@ label special:
     show cs_neutral at left with moveinleft
     n "As CS was about to leave, the cops come rushing in."
     play sound "siren.ogg" loop
-    show blue_light at Left
+    show blue_light at left
     show red_light at right
     show copguy behind blue_light, red_light at right with moveinright
     copguy "Freeze! Put your hands in the air!"
@@ -202,7 +202,7 @@ label asylum:
     csgod "You'll get out soon enough, but maybe you should think about making a {i}better choice{/i} next time."
     hide csgod with moveoutright
     stop music fadeout 3.0
-    scene black with fade
+    $ renpy.movie_cutscene("movies/bad_ending.mp4")
     return
     
 # Caught
