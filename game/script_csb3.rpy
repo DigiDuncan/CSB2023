@@ -1,5 +1,7 @@
 label csbiii_start:
     jump csbiii_ai
+
+    # This doesn't play anymore. But that's fine.
     play music "<loop 0>secret/space_classroom.mp3"
     show digi at center with Dissolve(3)
     digi "I'm so done writing for right now. {cps=*0.25}Ohhhhh{cps=*4} my gosh, so incredibly done."

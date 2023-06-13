@@ -2,9 +2,10 @@ label csbiii_ai:
     scene linusmedia
     show cs_neutral at left with moveinleft
     play music "<loop 0>school.mp3" volume 0.4
+    music School - Toby Fox
     n "CS is in the Linus Tech Tips office, surrounded by computer parts and confused colleagues."
     n "CS scratches his head."
-    cs "Alright, team, we've got a problem. This gaming PC is overheating, and we need a fix that's... shall we say, out of the box?"
+    cs "Aright, team, we've got a problem. This gaming PC is overheating, and we need a fix that's... shall we say, out of the box?"
     show luke at right with moveinright
     luke "CS, we've tried everything -- new fans, liquid cooling, you name it. Nothing seems to work!"
     cs "Well, have you tried the \"Hairdryer Cooling System\"?"
@@ -17,21 +18,23 @@ label csbiii_ai:
     cs "Disaster? No, no, Linus. Think about it—hairdryers are designed to blow cool air, right? And what's cooler than a gentle breeze? It's foolproof, I tell you!"
     # TODO: Scene transition to them working on the PC.
     n "CS188 and the team are attaching a hairdryer to the gaming PC, with everyone watching nervously."
-    cs "Alright, folks, brace yourselves. It's time to unleash the \"Hairdryer Cooling System\"!"
+    cs "Aright, folks, brace yourselves. It's time to unleash the \"Hairdryer Cooling System\"!"
     n "CS188 presses the power button, and the hairdryer roars to life, blowing a stream of cool air into the PC."
     luke "Wait, it's actually working! The temperatures are dropping!"
     cs "Of course it is! Nature's own air conditioning!"
     
     # TODO: Cut to a time-lapse of the hairdryer blowing air as the temperature readings on the PC monitor gradually decrease."
     linus "CS, I can't believe it. Your hairdryer solution is... actually genius."
-    # TODO: CS grins here
+    hide cs_neutral
+    show cs_happy at left
     cs "That's how we do things in CS188 style, Linus! Unconventional, unpredictable, but effective."
     n "The team erupts into laughter and applause as the gaming PC's temperatures stabilize."
     linus "CS, you've proven once again that there's always room for unconventional solutions in the world of tech."
     cs "Thank you, thank you. Just doing my part to keep things interesting."
     n "The team celebrates their successful, albeit unconventional, tech solution."
     n "Arceus bursts in."
-    show arceus at center with moveinright
+    # TODO: Change music here
+    show arceus at mid_right with moveinright
     arceus "CS! We've got to get out of here, and fast! The cops are hot on our tails!"
     cs "Arceus, what in the world? Cops? I thought we were done with that prison break business!"
     arceus "Long story short, our disguise as janitors didn't quite fool them. We need to make a run for it before they catch up!"
@@ -41,41 +44,46 @@ label csbiii_ai:
     hide cs with moveoutleft
     hide arceus with moveoutleft
     scene entertunnel with fade
-    show cs at center with moveinleft
-    show arceus at left with moveinleft
+    show cs at left with moveinleft
+    show arceus at right with moveinright
     play music "<loop 0>cliffs.mp3" volume 0.4
+    music Cliffs - Toby Fox
     n "CS188 and Arceus dash to a hidden panel on the floor, revealing a concealed entrance to the escape tunnel."
-    hide cs with moveoutright
-    hide arceus with moveoutright
+    hide cs
+    hide arceus
+    with dissolve
     scene secrettunnel with fade
-    show cs at center with moveinleft
-    show arceus at left with moveinleft
+    show cs at left with moveinleft
+    show arceus at right with moveinright
     n "CS188 and Arceus crawl through the dimly lit tunnel, their heartbeats echoing."
     arceus "CS, do you even know where this tunnel leads?"
     cs "Not a clue, my foxy friend! But that's what makes it an adventure, right?"
-    hide cs with moveoutright
-    hide arceus with moveoutright
+    hide cs
+    hide arceus
+    with dissolve
     scene park1 with fade
-    show cs at center with moveinleft
-    show arceus at left with moveinleft
+    show cs at left with moveinleft
+    show arceus at right with moveinright
     play music "<loop 0>circus.mp3" volume 0.4
+    music Circus - Toby Fox
     n "They emerge from the tunnel into a surprising location—an abandoned, overgrown amusement park."
     arceus "An amusement park? Seriously, CS?"
-    cs "ey, when life hands you unexpected escapes, you make the most of them!"
+    cs "Hey, when life hands you unexpected escapes, you make the most of them!"
     hide cs with moveoutright
     hide arceus with moveoutright
     scene park2 with fade
-    show cs at center with moveinleft
-    show arceus at left with moveinleft
+    show cs at left with moveinleft
+    show arceus at right with moveinright
     n "CS188 and Arceus start exploring the amusement park, hiding among the dilapidated rides and attractions while evading the pursuing cops."
     hide cs with moveoutright
     hide arceus with moveoutright
     scene carousel with fade
-    show cs at center with moveinleft
-    show arceus at left with moveinleft
+    show cs at left with moveinleft
+    show arceus at right with moveinright
     n "CS188 and Arceus duck behind a broken carousel as the cops pass by."
-    show copguy_ai at right with moveinleft
+    show copguy_ai at center with moveinbottom
     play music "<loop 0>chase.mp3" volume 0.4
+    music Chase - Toby Fox
     arceus "{i}whispering{/i} CS, we can't hide here forever. We need a distraction!"
     n "CS thinks for a sec."
     cs "I've got it! Remember that prank we pulled back in prison using inflatable rubber ducks?"
@@ -88,16 +96,15 @@ label csbiii_ai:
     hide cs with moveoutleft
     hide arceus with moveoutleft
     scene park2 with fade
-    show cs at center with moveinleft
-    show arceus at left with moveinleft
+    show cs at left with moveinleft
+    show arceus at right with moveinright
     n "CS188 and Arceus reach the park's exit, breathing heavily but exhilarated."
     arceus "CS, that was insane! We actually made it!"
     n "CS catches his breath."
     cs "We sure did, buddy. Another adventure for the books!"
     play music "<loop 0>friendship.mp3" volume 0.4
-    hide cs with moveoutright
-    hide arceus with moveoutright
-    scene endingai with fade
+    scene endingai with Fade(3.0)
+    music Friendship - Toby Fox
     n "CS188 and Arceus exchange a high-five and disappear into the distance, ready for their next escapade."
     "Chat-GPT" "Note: The script is a fictional representation and does not reflect the actual personalities or actions of CS188 or any real-life individuals."
     return
