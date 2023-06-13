@@ -196,6 +196,15 @@ image alley = "bg/alley.png"
 image question = "bg/police_interrogation.png"
 image asylum = "bg/asylum2.png"
 
+# CSBAI Background Images
+image park1 = "bg/ai/amusementpark1.png"
+image park2 = "bg/ai/amusementpark2.png"
+image carousel = "bg/ai/carousel.png"
+image endingai = "bg/ai/cs_arceus.png"
+image entertunnel = "bg/ai/entrancetotunnel.png"
+image linusmedia = "bg/ai/linusmedia.png"
+image secrettunnel = "bg/ai/secret_tunnel.png"
+
 # Animated sprites
 image blue_light:
     "blue_light.png"
