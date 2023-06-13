@@ -3,6 +3,7 @@ label csbii_start:
     scene helipad
     show cs_angry at left
     show wesley at right
+    with dissolve
     cs "You'll pay for what you did!"
     n "Wesley sweats nervously."
     wesley "Do you want a refund?"
@@ -115,9 +116,9 @@ label special:
     show cs_neutral at left with moveinleft
     n "As CS was about to leave, the cops come rushing in."
     play sound "siren.ogg" loop
-    show blue_light at left onlayer overlay
-    show red_light at right onlayer overlay
-    show copguy at right with moveinright
+    show blue_light at Left
+    show red_light at right
+    show copguy behind blue_light, red_light at right with moveinright
     copguy "Freeze! Put your hands in the air!"
     stop sound fadeout 1.0
     cs "What's going on? I didn't do anything!"
@@ -184,7 +185,9 @@ label asylum:
     cs "This isn't fair!"
     csgod "Hey!"
     csgod "Quit the whining!"
-    show csgod at right with moveinright
+    show csgod at right
+    show cs_disappointed at left
+    with moveinright
     cs "What?"
     cs "Who are you?"
     csgod "I am CS God, and I was the one who used the YTP power."
@@ -207,12 +210,12 @@ label caught:
     cs "Dammit! Ed's calling the police! I gotta go after him!"
     ed "911! Come quickly! He's chasing after me!"
     play sound "siren.ogg" loop
-    show blue_light at left onlayer overlay
-    show red_light at right onlayer overlay
+    show blue_light at left
+    show red_light at right
     n "The police arrive and CS runs away."
     hide cs_angry with moveoutleft
-    show ed_phone at left with move
-    show copguy at right with moveinright
+    show ed_phone behind blue_light, red_light at left with move
+    show copguy behind blue_light, red_light  at right with moveinright
     copguy "Get back here!"
     cs "You can't catch me, I'm the speedy Michael Rosen!"
     stop music fadeout 3.0
@@ -317,7 +320,7 @@ label breakout:
     n "In the dark of the night, the three begin chipping away at their cell floor."
     n "Upon breaking through, they set up makeshift bed dummies in their beds with their prison outfits, and dawn their acquired guard outfits."
 
-    scene tunnel
+    scene tunnel with fade
     # If anyone asks, Arceus is part god and can dig really easily, I guess.
     n "They begin digging quickly, making distance away from their cells."
     cs "Jeez... I didn't think that would actually work."
@@ -376,13 +379,14 @@ label bordercrossing:
 
     scene outside_tim_hortons
     show cs_neutral at left
+    with fade
     cs "I'm starving after all that walking, I need a donut."
     show cs_neutral at offscreenright with move
     show arceus flipped at offscreenright with moveinleft
     show anno at offscreenright with moveinleft
     stop music fadeout 3.0
 
-    scene inside_tim_hortons
+    scene inside_tim_hortons with fade
     play music "<loop 0>buy_something.mp3" volume 0.6
     music Buy Something Will Ya! - Keiichi Suzuki
     show cs_neutral at left with moveinleft
@@ -518,6 +522,7 @@ label bordercrossing:
     scene inside_tim_hortons
     show anno at right
     show arceus flipped at left
+    with fade
     show cs with moveinleft
 
     cs "I did it, I got the job!"

@@ -65,10 +65,11 @@ label csbi_start:
     show cs_happy
     stop music fadeout 3.0
     cs "Yeah! Let's go outside!"
-    scene cs_house with fade
+    scene cs_house
+    show cs_happy
+    with fade
     play music "canyon.mp3" volume 0.2
     music CANYON.MID - George Stone
-    show cs_happy
     cs "Nice day!"
     hide cs_happy
     show cs_neutral
@@ -198,7 +199,7 @@ label room:
     cs "Oh, flashback over."
     play sound "foundationfail.ogg" volume 0.5
     show cs_room behind cs_neutral at rotate_10 with hpunch
-    n "A loud crash can be heard as though an atom has split in CS' foundation."
+    n "A loud crash is heard as a crack is split in CS' foundation."
     hide cs_neutral
     show cs_worried
     cs "Woah! I was dreaming so long that the foundation fell apart. My house just fell to the side!"
@@ -318,7 +319,7 @@ label michael_house:
     show black with dissolve
     stop sound fadeout 2.0
 
-    scene rosen_abode
+    scene rosen_abode with fade
     play music "<loop 0>super_friendly.mp3" volume 0.4
     music Super Friendly - Kevin Macleod
     show michael at right with moveinright
@@ -385,15 +386,16 @@ label michael_house:
     show black with dissolve
 
     scene car_inside
-    play music "<loop 0>canyon_but_in_the_car.mp3" volume 0.2
     show cs_neutral at left
+    with fade
+    play music "<loop 0>canyon_but_in_the_car.mp3" volume 0.2
     play sound "driving.wav" volume 0.5
     stop music fadeout 3.0
     jump csbi_end
 
 label csbi_end:
     cs "I should check on the HoH SiS folks. They should be making some progress by now."
-    scene cs_room
+    scene cs_room with fade
     show cs_neutral with moveinbottom
     stop sound fadeout 2.0
     n "CS walks into his room."
@@ -444,7 +446,7 @@ label csbi_end:
     cs "Good!!"
     n "..."
     show black with dissolve
-    scene hoh_hq2
+    scene hoh_hq2 with dissolve
     show worker_3 at mid_center_right
     show worker_4 at mid_left
     show cs_angry with moveinleft
@@ -460,7 +462,7 @@ label csbi_end:
     hide worker_4 with moveoutleft
     show cs_angry at center with move
     show black with dissolve
-    scene hoh_hq3
+    scene hoh_hq3 with dissolve
     show worker_5 at left
     show cs_angry at right with moveinright
     cs "Which way to the elevator? Now!"
@@ -475,7 +477,7 @@ label csbi_end:
     show worker_5alt at left with hpunch
     hide worker_5alt with moveoutbottom
     hide cs with moveoutright
-    scene hoh_hq4 with fade
+    scene hoh_hq4 with dissolve
     show cs_angry with moveinbottom
     cs "Which way to go..."
 
@@ -486,7 +488,7 @@ label csbi_end:
             jump right
 
 label left:
-    scene hoh_hq5
+    scene hoh_hq5 with dissolve
     show worker_6 at right
     show cs_angry at left with moveinleft
     cs "A... pineapple?"
@@ -499,7 +501,7 @@ label left:
     jump csbii_start
 
 label right:
-    scene hoh_hq5
+    scene hoh_hq5 with dissolve
     show worker_7 at right
     show cs_angry at left with moveinleft
     cs "A fucking chicken?"
