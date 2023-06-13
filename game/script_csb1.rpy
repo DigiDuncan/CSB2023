@@ -289,6 +289,7 @@ label room:
 
 label michael_house:
     scene car_inside
+    play music "<loop 0>canyon_but_in_the_car.mp3" volume 0.2
     show cs_neutral at left
     cs "Thankfully, Michael lives pretty close."
     cs "His vacation house in the US is only a few streets away!"
@@ -378,9 +379,10 @@ label michael_house:
     show black with dissolve
 
     scene car_inside
-    stop music fadeout 3.0
+    play music "<loop 0>canyon_but_in_the_car.mp3" volume 0.2
     show cs_neutral at left
     play sound "driving.wav" volume 0.5
+    stop music fadeout 3.0
     jump csbi_end
 
 label csbi_end:
