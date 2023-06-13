@@ -1,10 +1,14 @@
 $ _current_song = ""
 $ _current_artist = ""
 
+init python:
+    renpy.add_layer("music", above = "master")
+
 define determination = Dissolve(0.0)
 
 screen music():
     zorder 100
+    layer "music"
     style_prefix "music"
 
     frame at music_appear:
