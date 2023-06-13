@@ -109,6 +109,7 @@ label special:
     cs "Huh. That worked a lot better than I thought. I should use this power more!"
     cs "Welp, time to go home!"
     hide cs_neutral with moveoutleft
+    stop music fadeout 3.0
     scene black with fade
     scene hoh_hq with fade
     show cs_neutral at left with moveinleft
@@ -134,6 +135,8 @@ label special:
 # Questioning
 label questioning:
     scene question with fade
+    play music "<loop 0>card_castle.mp3" volume 0.5
+    music Card Castle - Toby Fox
     show cs_disappointed at left with moveinleft
     show copguy at right with moveinright
     copguy "Alright CS, a lot of crazy things happened today."
@@ -156,16 +159,19 @@ label questioning:
     asylum_worker "Come on, follow me this way at once."
     hide cs_disappointed with moveoutleft
     hide asylum_worker with moveoutleft
+    stop music fadeout 3.0
     scene black with fade
     jump asylum
 
 # Asylum
 label asylum:
-    scene asylum
+    scene asylum with fade
+    play music "<loop 0>basement.mp3" volume 0.5
+    music Basement - Toby Fox
     show cs_worried at left with moveinright
     show asylum_worker at right with moveinright
     asylum_worker "Here is your room. Enjoy living out the rest of your life here."
-    show cs_worried at center
+    show cs_worried at center with moveinleft
     cs "Mister you need to listen to me! I'm not crazy!"
     asylum_worker "That's what they all say. Get off of me."
     play sound "audio/punch.ogg"    
@@ -192,6 +198,8 @@ label asylum:
     cs "No! Please!"
     csgod "You'll get out soon enough, but maybe you should think about making a better choice next time."
     hide csgod with moveoutright
+    stop music fadeout 3.0
+    scene black with fade
     return
     
 # Caught
@@ -337,7 +345,7 @@ label breakout:
 label bordercrossing:
     scene border with fade
     play music "<loop 0>onett.mp3" volume 0.6
-    music Onett Theme - Earthbound
+    music Onett Theme - Keiichi Suzuki
     n "CS, Anno, and Arceus emerge and begin heading north towards the border crossing."
     n "A wild border guard appears."
 
@@ -376,7 +384,7 @@ label bordercrossing:
 
     scene inside_tim_hortons
     play music "<loop 0>buy_something.mp3" volume 0.6
-    music Buy Something Will Ya! - Earthbound
+    music Buy Something Will Ya! - Keiichi Suzuki
     show cs_neutral at left with moveinleft
     show arceus flipped at center with moveinleft
     show anno at right with moveinleft
