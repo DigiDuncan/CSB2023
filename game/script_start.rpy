@@ -241,15 +241,15 @@ screen start_menu():
                 imagebutton auto "menu/csbi_%s.png" hover_sound "sfx-select.wav":
                     at transform:
                         zoom 0.666
-                    action Play("sound", "sfx-valid.wav"), Jump("csbi_start")
+                    action Play("sound", "sfx-valid.wav"), Hide("start_menu", Fade(1.0)), Jump("csbi_start")
                 imagebutton auto "menu/csbii_%s.png" hover_sound "sfx-select.wav":
                     at transform:
                         zoom 0.666
-                    action Play("sound", "sfx-valid.wav"), Jump("csbii_start")
+                    action Play("sound", "sfx-valid.wav"), Hide("start_menu", Fade(1.0)), Jump("csbii_start")
                 imagebutton auto "menu/csbiii_%s.png" hover_sound "sfx-select.wav":
                     at transform:
                         zoom 0.666
-                    action Play("sound", "sfx-valid.wav"), Jump("csbiii_start")
+                    action Play("sound", "sfx-valid.wav"), Hide("start_menu", Fade(1.0)), Jump("csbiii_start")
 
 style start_window is empty
 
