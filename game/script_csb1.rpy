@@ -270,6 +270,7 @@ label room:
     show rich at right with moveinbottom
     rich "Lemme call our JoJ UFO."
     "Ed, Wesley, and Richard" "I'm beaming up!"
+    play sound "beam.ogg" volume 0.6
     show beam at xstretch_in
     pause 2.0
     hide ed
