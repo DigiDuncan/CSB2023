@@ -98,6 +98,7 @@ image cs_happy = "characters/cs_happy.png"
 image cs_angry = "characters/cs_angry.png"
 image cs_worried = "characters/cs_worried.png"
 image cs_disappointed = "characters/cs_disappointed.png"
+image cs_concentrate = "characters/cs_concentrate.png"
 image discord = "characters/discord.png"
 image nova = "characters/nova.png"
 image carguy = "characters/carguy.png"
@@ -159,6 +160,8 @@ define arceus = Character("Arceus", callback = renpy.partial(beep, name = "arc")
 define anno = Character("Anno", callback = beep)
 define border_guard = Character("Border Guard", callback = beep)
 define linus = Character("Linus", callback = renpy.partial(beep, name = "ltt"))
+define asylum_worker = Character("Mr Mohs", callback = beep)
+define csgod = Character("CS God", callback = beep)
 
 # CSB2 Character Images
 image ed_phone = "characters/ed_phone.png"
@@ -167,6 +170,8 @@ image arceus flipped = Transform("characters/arceus.png", xzoom = -1)
 image anno = "characters/anno.png"
 image border_guard = "characters/border_guard.png"
 image linus = "characters/linus.png"
+image asylum_worker = "characters/asylum_worker.png"
+image csgod = "characters/cs_god.png"
 
 # CSB2 Background Images
 image helipad = "bg/helipad.png"
@@ -182,6 +187,8 @@ image flag = "bg/americanflag.png"
 image outside_ltt = "bg/linus_office_outside.png"
 image inside_ltt = "bg/linus_hallway.png"
 image alley = "bg/alley.png"
+image question = "bg/police_interrogation.png"
+image asylum = "bg/asylum2.png"
 
 # Animated sprites
 image blue_light:

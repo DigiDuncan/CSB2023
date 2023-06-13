@@ -86,10 +86,10 @@ label kick:
 
 # Special
 label special:
-    show cs_angry at left
+    show cs_concentrate at left
     show wesley at right
     n "CS uses his YTP magic to make the foundation repairman fight eachother."
-    hide wesley at right
+    hide wesley at right with moveoutright
     play sound "audio/punch.ogg"
     rich "Hey! Cut it out!"
     play sound "audio/punch.ogg"
@@ -97,11 +97,103 @@ label special:
     play sound "audio/punch.ogg"
     rich "Ed! Do something!"
     play sound "audio/punch.ogg"
-    show ed at right
+    show ed at right with moveinright
     ed "Hello, 911? My coworkers are-"
     n "CS sentence-mixes Ed's words to his own will."
     ed "Everything is fine here officer. No need to come here."
+    ed "What wait just happened?"
+    n "CS quickly puts all the workers to sleep."
+    hide ed with moveoutbottom
+    hide cs_concentrate
+    show cs_neutral at left
+    cs "Huh. That worked a lot better than I thought. I should use this power more!"
+    cs "Welp, time to go home!"
+    hide cs_neutral with moveoutleft
+    scene black with fade
+    scene hoh_hq with fade
+    show cs_neutral at left with moveinleft
+    n "As CS was about to leave, the cops come rushing in."
+    play sound "siren.ogg" loop
+    show blue_light at left onlayer overlay
+    show red_light at right onlayer overlay
+    show copguy at right with moveinright
+    copguy "Freeze! Put your hands in the air!"
+    stop sound fadeout 1.0
+    cs "What's going on? I didn't do anything!"
+    hide cs_neutral
+    show cs_worried at left
+    copguy "Come with us, we need you to ask some questions."
+    hide cs_worried
+    show cs_neutral at left
+    cs "Alright, sure thing officer."
+    hide cs_neutral with moveoutleft
+    hide copguy with moveoutleft
+    scene black with fade
+    jump questioning
 
+# Questioning
+label questioning:
+    scene question with fade
+    show cs_disappointed at left with moveinleft
+    show copguy at right with moveinright
+    copguy "Alright CS, a lot of crazy things happened today."
+    copguy "The CEO of HoH SiS called us today, and was immediately interrupted buy something or someone to tell us that everything was under control."
+    copguy "After reviewing the phonecall, his voice sounds kinda messed up."
+    cs "I uhh, I don't know what that is all about."
+    copguy "Oh really?"
+    copguy "What about all the workers in the building? Most of them were lying cold on the floor."
+    cs "Okay fine!"
+    cs "I confess!"
+    cs "I was using YTP magic on the employees to make them fight, and I-"
+    copguy "You what? What the hell are you on about?"
+    cs "I have this power, and I just figured out how to-"
+    copguy "Alright, I've heard enough."
+    copguy "Lemme call in someone to deal with this."
+    copguy "Mr. Mohs, you can deal with this man."
+    hide copguy with moveoutright
+    show asylum_worker at right with moveinright
+    asylum_worker "Sure thing, boss."
+    asylum_worker "Come on, follow me this way at once."
+    hide cs_disappointed with moveoutleft
+    hide asylum_worker with moveoutleft
+    scene black with fade
+    jump asylum
+
+# Asylum
+label asylum:
+    scene asylum
+    show cs_worried at left with moveinright
+    show asylum_worker at right with moveinright
+    asylum_worker "Here is your room. Enjoy living out the rest of your life here."
+    show cs_worried at center
+    cs "Mister you need to listen to me! I'm not crazy!"
+    asylum_worker "That's what they all say. Get off of me."
+    play sound "audio/punch.ogg"    
+    hide cs_worried with moveoutbottom
+    asylum_worker "Sorry it had to be this way, bud."
+    hide asylum_worker with moveoutright
+    pause 3.0
+    show cs_disappointed at center with moveinbottom
+    cs "Oww..."
+    cs "This isn't fair!"
+    csgod "Hey!"
+    csgod "Quit the whining!"
+    show csgod at right with moveinright
+    cs "What?"
+    cs "Who are you?"
+    csgod "I am CS God, and I was the one who used the YTP power."
+    cs "WHAT? How? I am so confused."
+    csgod "You channelled your power through me, that was how you were able to do those abilities back at the HoH SiS Headquarters."
+    csgod "It seems that you weren't good enough at lying to get yourself out of the situation though."
+    cs "Well, I wanted to be honest!"
+    csgod "Yeah well, look where honesty got you."
+    csgod "No one would believe something as silly as YTP power."
+    csgod "For your own punishment, I'm gonna leave you here you a while."
+    cs "No! Please!"
+    csgod "You'll get out soon enough, but maybe you should think about making a better choice next time."
+    hide csgod with moveoutright
+    return
+    
 # Caught
 label caught:
     cs "Dammit! Ed's calling the police! I gotta go after him!"
