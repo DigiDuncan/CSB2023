@@ -238,18 +238,18 @@ screen start_menu():
             text "Start where?" textalign 0.5 size 72 xalign 0.5 yalign 0.5
             hbox xalign 0.5 yalign 0.5:
                 spacing 50
-                imagebutton auto "menu/csbi_%s.png":
+                imagebutton auto "menu/csbi_%s.png" hover_sound "sfx-select.wav":
                     at transform:
                         zoom 0.666
-                    action Jump("csbi_start")
-                imagebutton auto "menu/csbii_%s.png":
+                    action Play("sound", "sfx-valid.wav"), Jump("csbi_start")
+                imagebutton auto "menu/csbii_%s.png" hover_sound "sfx-select.wav":
                     at transform:
                         zoom 0.666
-                    action Jump("csbii_start")
-                imagebutton auto "menu/csbiii_%s.png":
+                    action Play("sound", "sfx-valid.wav"), Jump("csbii_start")
+                imagebutton auto "menu/csbiii_%s.png" hover_sound "sfx-select.wav":
                     at transform:
                         zoom 0.666
-                    action Jump("csbiii_start")
+                    action Play("sound", "sfx-valid.wav"), Jump("csbiii_start")
 
 style start_window is empty
 
