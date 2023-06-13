@@ -453,7 +453,7 @@ label csbi_end:
     show cs_angry at mid_right with move
     show worker_3 at mid_center_right with hpunch
     play sound "audio/punch.ogg"
-    show cs_angry at mid_left
+    show cs_angry at mid_left with move
     show worker_4 at mid_left with hpunch
     hide worker_3 with moveoutright
     hide worker_4 with moveoutleft
