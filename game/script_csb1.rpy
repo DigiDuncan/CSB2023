@@ -19,6 +19,7 @@ label csbi_start:
     cs "Eh, maybe tomorrow."
     hide post_it
     play sound "page.wav" volume 5
+    pause 2.0
     hide craptop_desktop
     show craptop_updating
     craptop "Downloading update 200/13..."
