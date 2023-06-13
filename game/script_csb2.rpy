@@ -366,11 +366,12 @@ label bordercrossing:
     anno "Yeah, we've been walking for miles now."
     arceus "Guys. We've only just left the border. You can still see it behind us."
     scene flag
-    play music "star_spangled_banner.mp3"
+    $ renpy.music.set_pause(True, "music")
+    play music2 "star_spangled_banner.mp3"
     n "The crew look behind them and still see a faint American flag waving."
     scene canada
-    stop music
-    play music "<loop 0>onett.mp3" volume 0.6
+    stop music2
+    $ renpy.music.set_pause(False, "music")
     cs "Prison food just isn't all that filling."
     arceus "I suppose we could find a Tim Horton's, it's as common in Canada as a McDonald's is in America."
     n "Anno and CS nod aggresively."

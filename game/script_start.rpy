@@ -16,6 +16,10 @@ init python:
             elif event == "slow_done" or event == "end":
                 renpy.sound.stop(channel="beep")
 
+# If music is so good, why is there no Music 2?
+init python:
+    renpy.music.register_channel("music2", "music")
+
 # Custom transforms
 transform rotate_10:
     subpixel True
