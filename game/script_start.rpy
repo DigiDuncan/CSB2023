@@ -110,7 +110,7 @@ image young_cs = "characters/cs_young.png"
 image rich = "characters/richard.png"
 image ed = "characters/ed.png"
 image wesley = "characters/wesley.png"
-image michael = "characters/rosen.png"
+image michael = Transform("characters/rosen.png", xzoom = -1)
 image phil = "characters/phil.png"
 image worker_1 = "characters/worker_corn.png"
 image worker_2 = "characters/worker_blank.png"
