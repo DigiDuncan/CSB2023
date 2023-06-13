@@ -196,6 +196,8 @@ image alley = "bg/alley.png"
 image question = "bg/police_interrogation.png"
 image asylum = "bg/asylum2.png"
 
+image copguy_ai = "characters/ai_cop_guy_full.png"
+
 # CSBAI Background Images
 image park1 = "bg/ai/amusementpark1.png"
 image park2 = "bg/ai/amusementpark2.png"
