@@ -84,6 +84,24 @@ label kick:
     ed "Hello, 911? My coworker just got kicked by a disgruntled customer off the roof! Send help!"
     jump caught
 
+# Special
+label special:
+    show cs_angry at left
+    show wesley at right
+    n "CS uses his YTP magic to make the foundation repairman fight eachother."
+    hide wesley at right
+    play sound "audio/punch.ogg"
+    rich "Hey! Cut it out!"
+    play sound "audio/punch.ogg"
+    wesley "I'm not trying to fight! I don't know what is happening help!!"
+    play sound "audio/punch.ogg"
+    rich "Ed! Do something!"
+    play sound "audio/punch.ogg"
+    show ed at right
+    ed "Hello, 911? My coworkers are-"
+    n "CS sentence-mixes Ed's words to his own will."
+    ed "Everything is fine here officer. No need to come here."
+
 # Caught
 label caught:
     cs "Dammit! Ed's calling the police! I gotta go after him!"
@@ -226,6 +244,8 @@ label breakout:
 
 label bordercrossing:
     scene border with fade
+    play music "<loop 0>onett.mp3" volume 0.6
+    music Onett Theme - Earthbound
     n "CS, Anno, and Arceus emerge and begin heading north towards the border crossing."
     n "A wild border guard appears."
 
@@ -247,6 +267,7 @@ label bordercrossing:
     n "The crew look behind them and still see a faint American flag waving."
     scene canada
     stop music
+    play music "<loop 0>onett.mp3" volume 0.6
     cs "Prison food just isn't all that filling."
     arceus "I suppose we could find a Tim Horton's, it's as common in Canada as a McDonald's is in America."
     n "Anno and CS nod aggresively."
@@ -259,8 +280,11 @@ label bordercrossing:
     show cs_neutral at offscreenright with move
     show arceus flipped at offscreenright with moveinleft
     show anno at offscreenright with moveinleft
+    stop music fadeout 3.0
 
     scene inside_tim_hortons
+    play music "<loop 0>buy_something.mp3" volume 0.6
+    music Buy Something Will Ya! - Earthbound
     show cs_neutral at left with moveinleft
     show arceus flipped at center with moveinleft
     show anno at right with moveinleft
@@ -300,7 +324,7 @@ label bordercrossing:
     hide arceus flipped with moveoutleft
     cashier "Buh-bye!"
     hide cashier with dissolve
-
+    stop music fadeout 3.0
     # TODO: Music stops.
 
     show cs_disappointed
@@ -310,6 +334,7 @@ label bordercrossing:
     scene black with fade
     pause 1.0
     scene inside_tim_hortons
+    play music "<loop 0>buy_something.mp3" volume 0.6
     show cs_neutral
     show anno at left
     show arceus at right
@@ -326,6 +351,7 @@ label bordercrossing:
     scene inside_tim_hortons
     show cs_neutral
     cs "Linus Media Group, huh? I have a lot of video editing experience, maybe I can get a job there."
+    stop music fadeout 3.0
 
     scene black with fade
     n "CS walks into the studio to ask for a job."
