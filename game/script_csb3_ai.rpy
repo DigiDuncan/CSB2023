@@ -1,13 +1,18 @@
 label csbiii_ai:
+    scene linusmedia
+    show cs_neutral at left with moveinleft
+    play music "<loop 0>school.mp3" volume 0.4
     n "CS is in the Linus Tech Tips office, surrounded by computer parts and confused colleagues."
     n "CS scratches his head."
     cs "Alright, team, we've got a problem. This gaming PC is overheating, and we need a fix that's... shall we say, out of the box?"
+    show luke at right with moveinright
     luke "CS, we've tried everything -- new fans, liquid cooling, you name it. Nothing seems to work!"
     cs "Well, have you tried the \"Hairdryer Cooling System\"?"
     n "Everyone exchanges puzzled glances."
     "Everyone": "The what?"
     n "CS grins michevously."
     cs "Trust me, it's the ultimate cooling solution. Picture this: we attach a hairdryer to the CPU, set it to low heat, and let the breeze cool everything down. It's foolproof!"
+    show linus at center with moveinright
     linus "Are you serious, CS? That sounds like a recipe for disaster."
     cs "Disaster? No, no, Linus. Think about it—hairdryers are designed to blow cool air, right? And what's cooler than a gentle breeze? It's foolproof, I tell you!"
     # TODO: Scene transition to them working on the PC.
@@ -26,24 +31,51 @@ label csbiii_ai:
     cs "Thank you, thank you. Just doing my part to keep things interesting."
     n "The team celebrates their successful, albeit unconventional, tech solution."
     n "Arceus bursts in."
+    show arceus at center with moveinright
     arceus "CS! We've got to get out of here, and fast! The cops are hot on our tails!"
     cs "Arceus, what in the world? Cops? I thought we were done with that prison break business!"
     arceus "Long story short, our disguise as janitors didn't quite fool them. We need to make a run for it before they catch up!"
     n "The colleagues in the office glance at each other, surprised and confused by the sudden turn of events."
     cs "Okay, okay. We need a plan. I've got it! We'll use the secret escape tunnel we installed under the office!"
     arceus "Brilliant idea, CS! Lead the way!"
-    # TODO: Outside tunnel
+    hide cs with moveoutleft
+    hide arceus with moveoutleft
+    scene entertunnel with fade
+    show cs at center with moveinleft
+    show arceus at left with moveinleft
+    play music "<loop 0>cliffs.mp3" volume 0.4
     n "CS188 and Arceus dash to a hidden panel on the floor, revealing a concealed entrance to the escape tunnel."
-    # TODO: Tunnel
+    hide cs with moveoutright
+    hide arceus with moveoutright
+    scene secrettunnel with fade
+    show cs at center with moveinleft
+    show arceus at left with moveinleft
     n "CS188 and Arceus crawl through the dimly lit tunnel, their heartbeats echoing."
     arceus "CS, do you even know where this tunnel leads?"
     cs "Not a clue, my foxy friend! But that's what makes it an adventure, right?"
-    # TODO: Amusement park
+    hide cs with moveoutright
+    hide arceus with moveoutright
+    scene park1 with fade
+    show cs at center with moveinleft
+    show arceus at left with moveinleft
+    play music "<loop 0>circus.mp3" volume 0.4
     n "They emerge from the tunnel into a surprising location—an abandoned, overgrown amusement park."
     arceus "An amusement park? Seriously, CS?"
     cs "ey, when life hands you unexpected escapes, you make the most of them!"
+    hide cs with moveoutright
+    hide arceus with moveoutright
+    scene park2 with fade
+    show cs at center with moveinleft
+    show arceus at left with moveinleft
     n "CS188 and Arceus start exploring the amusement park, hiding among the dilapidated rides and attractions while evading the pursuing cops."
+    hide cs with moveoutright
+    hide arceus with moveoutright
+    scene carousel with fade
+    show cs at center with moveinleft
+    show arceus at left with moveinleft
     n "CS188 and Arceus duck behind a broken carousel as the cops pass by."
+    show copguy_ai at right with moveinleft
+    play music "<loop 0>chase.mp3" volume 0.4
     arceus "{i}whispering{/i} CS, we can't hide here forever. We need a distraction!"
     n "CS thinks for a sec."
     cs "I've got it! Remember that prank we pulled back in prison using inflatable rubber ducks?"
@@ -51,11 +83,21 @@ label csbiii_ai:
     cs "Well, let's unleash the \"Quack Attack\" on our pursuers!"
     n "CS188 and Arceus discreetly inflate dozens of rubber ducks and release them, causing a colorful and noisy chaos."
     n "The cops are distracted, slipping and sliding on the rubber ducks, as CS188 and Arceus make their getaway."
+    hide copguy_ai with moveoutright
     n "The chase scene intensifies as CS188 and Arceus dash through the amusement park, narrowly avoiding capture at every turn."
+    hide cs with moveoutleft
+    hide arceus with moveoutleft
+    scene park2 with fade
+    show cs at center with moveinleft
+    show arceus at left with moveinleft
     n "CS188 and Arceus reach the park's exit, breathing heavily but exhilarated."
     arceus "CS, that was insane! We actually made it!"
     n "CS catches his breath."
     cs "We sure did, buddy. Another adventure for the books!"
-    # TODO: CS and Arc CG
+    play music "<loop 0>friendship.mp3" volume 0.4
+    hide cs with moveoutright
+    hide arceus with moveoutright
+    scene endingai with fade
     n "CS188 and Arceus exchange a high-five and disappear into the distance, ready for their next escapade."
-    "Chat-GPT": "Note: The script is a fictional representation and does not reflect the actual personalities or actions of CS188 or any real-life individuals."
+    n "Chat-GPT": "Note: The script is a fictional representation and does not reflect the actual personalities or actions of CS188 or any real-life individuals."
+    return
