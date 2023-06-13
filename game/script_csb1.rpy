@@ -198,8 +198,12 @@ label room:
     play sound "foundationfail.ogg" volume 0.5
     show cs_room behind cs_neutral at rotate_10 with hpunch
     n "A loud crash can be heard as though an atom has split in CS' foundation."
+    hide cs_neutral
+    show cs_worried
     cs "Woah! I was dreaming so long that the foundation fell apart. My house just fell to the side!"
     cs "I really need to get some foundation repair."
+    hide cs_worried
+    show cs_neutral
     cs "Better call HoH SiS!"
     cs "They are really good at giving me the JoJ!"
     cs "{i}dials 1-800-HoH-SiiS{/i}"
@@ -317,10 +321,10 @@ label michael_house:
     play music "<loop 0>super_friendly.mp3" volume 0.4
     music Super Friendly - Kevin Macleod
     show michael at right with moveinright
-    show cs_neutral at offscreenright
+    show cs_neutral flipped at offscreenright
     michael "Come in! Come in!"
     show michael at left
-    show cs_neutral at right
+    show cs_neutral flipped at right
     with ease
     cs "Hey Michael!"
     michael "Sit down, make yourself comfy. I got a new poem I want to show you!"
@@ -355,7 +359,7 @@ label michael_house:
     michael "That's odd to mention, but time to eat!"
     n "CS suddenly realizes what's going on."
     hide cs_neutral
-    show cs_worried at right
+    show cs_worried flipped at right
     cs "Michael! That's not chocolate cake!"
     michael "I have loads to eat! Om nom nom..."
     play sound "puke.ogg"
@@ -366,7 +370,7 @@ label michael_house:
     michael "OUT!"
     hide phil with moveoutright
     hide cs_worried
-    show cs_neutral at right
+    show cs_neutral flipped at right
     michael "I need something to drink. CS, did you bring that drink?"
     cs "Sure thing, here you go."
     michael "Goodness."
@@ -376,7 +380,7 @@ label michael_house:
     michael "The Genergyfoogle is here! It's come to eat us all!"
     cs "Oh man, did that Genergy have something else in it...?"
     cs "I need to get out before he goes nuts!"
-    hide cs_neutral with moveoutright
+    hide cs_neutral flipped with moveoutright
     show black with dissolve
 
     scene car_inside

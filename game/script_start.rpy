@@ -94,9 +94,11 @@ define digi = Character("Digi", callback = renpy.partial(beep, name = "digi"))
 
 #CSB1 Character Images
 image cs_neutral = "characters/cs.png"
+image cs_neutral flipped = Transform("characters/cs.png", xzoom = -1)
 image cs_happy = "characters/cs_happy.png"
 image cs_angry = "characters/cs_angry.png"
 image cs_worried = "characters/cs_worried.png"
+image cs_worried flipped = Transform("characters/cs_worried.png", xzoom = -1)
 image cs_disappointed = "characters/cs_disappointed.png"
 image cs_concentrate = "characters/cs_concentrate.png"
 image discord = "characters/discord.png"
