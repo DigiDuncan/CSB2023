@@ -223,10 +223,10 @@ label caught:
 
 label jail:
     scene jail_inside with fade
-    show cs at offscreenleft
+    show cs prison at offscreenleft
     show copguy at offscreenright
     with determination
-    show cs at left
+    show cs prison at left
     show copguy at right
     with move
     copguy "Alright, welcome to the slammer. How tough are ya?"
@@ -252,7 +252,7 @@ label jail:
     cs "I was 100 percent unsatisfied."
     arceus "As was I. As was I..."
     n "A brief moment of silence..."
-    show cs at left
+    show cs prison at left
     arceus "Welp. I'm tired of this place. Wanna break out?"
     cs "Eh.. Sure, why not, I've played plenty of the Escapists, I should be able to figure it out."
     cs "We should break out at least one other person though."
@@ -262,13 +262,13 @@ label jail:
     cs "Alright then, let's get going!"
 
     show arceus at offscreenright
-    show cs at offscreenleft
+    show cs prison at offscreenleft
     with ease
     jump breakout
 
 label breakout:
     scene jail_cell
-    show cs at left
+    show cs prison at left
     show arceus at right
     with dissolve
 
@@ -280,7 +280,7 @@ label breakout:
     arceus "So, what's our plan, boss?"
     cs "I gotta grab a few plastic spoons from the mess hall, a cup of molten chocolate, a guard outfit, and a change of shorts."
     arceus "Why a change of shorts?"
-    show cs disappointed at left
+    show cs prison_worried at left
     cs "You kidding me? I'm gonna shit myself 'cause this is scary as hell."
     arceus "Fair enough."
     scene black with fade
@@ -298,7 +298,7 @@ label breakout:
     show annopris at right with moveinright
     anno "Spoons, check."
 
-    show cs at center with dissolve
+    show cs prison at center with dissolve
     cs "Extra shorts..."
     cs "Check."
     cs "Alright men, let's get the heck out of here!"
