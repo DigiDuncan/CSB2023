@@ -19,7 +19,7 @@ label csbiii_start:
     n "Linus exits."
     cs "I guess I better get to work on editing, let's see what videos I need to edit..."
     cs "Let's see, I have the new TechQuickie video on how live streaming works, or the video on how at least half of the keys on your keyboard should be macros..."
-    cs “Dammit Taran, you can edit your own macro fetish content."
+    cs "Dammit Taran, you can edit your own macro fetish content."
     cs "I guess I'll edit the livestreaming one."
     n "CS starts working on editing the TechQuickie video and Linus comes in to check on him."
     n "Linus enters the office."
@@ -29,6 +29,9 @@ label csbiii_start:
     cs "Thanks Linus."
     linus "Speaking of live streaming, we need a new PC for the WAN Show, can you go and buy parts for one?"
 
-    {menu What are you going to do?}
-    Go to the store. [Microcenter]
-    Help edit a video. [Edit a video]
+    menu: 
+        "What are you going to do?"
+        "Go to the store.":
+            return
+        "Help edit a video.":
+            return
