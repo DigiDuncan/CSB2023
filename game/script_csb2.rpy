@@ -248,7 +248,7 @@ label jail:
     arceus "And from my recent debug of CSBounciness, I know that you're in for beating up workers at HoHSiS."
     cs "Your what?"
     arceus "Never mind. Why'd you do it, anyhow?"
-    show cs disappointed at left
+    show cs prison_worried at left
     cs "I was 100 percent unsatisfied."
     arceus "As was I. As was I..."
     n "A brief moment of silence..."
@@ -311,6 +311,7 @@ label breakout:
     scene tunnel with fade
     # If anyone asks, Arceus is part god and can dig really easily, I guess.
     n "They begin digging quickly, making distance away from their cells."
+    show cs guard at left with easeinleft
     cs "Jeez... I didn't think that would actually work."
 
     show arceus at right with easeinright
@@ -321,6 +322,7 @@ label breakout:
     arceus "Not the Mexican border, the Canadian border, we're in Washington, it's way closer and they're too polite to send us back."
     cs "Works for me, free healthcare."
     arceus "Well, you have to live there for a few years before you get access to that, but you should last a few years without getting sick living on that healthy diet of Ritz and EZ cheese."
+    hide cs
     hide annopopo
     hide arceus
     with dissolve
@@ -329,6 +331,7 @@ label breakout:
     n "The now escaped fugitives dig up for their ascent to the surface."
     stop music fadeout 3.0
 
+    hide cs with dissolve
     hide arceus with dissolve
     hide annopopo with dissolve
     jump bordercrossing
