@@ -1,4 +1,5 @@
 screen best_music():
+    layer "music"
     zorder 100
     image "best_music.png" at music_appear
     timer 5 action Hide('best_music')
