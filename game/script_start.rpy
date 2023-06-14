@@ -174,6 +174,8 @@ image ed_phone = "characters/ed_phone.png"
 image arceus = "characters/arceus.png"
 image arceus flipped = Transform("characters/arceus.png", xzoom = -1)
 image anno = "characters/anno.png"
+image annopris = "characters/anno_prison.png"
+image annopopo = "characters/anno_guard.png"
 image border_guard = "characters/border_guard.png"
 image linus = "characters/linus.png"
 image asylum_worker = "characters/asylum_worker.png"
