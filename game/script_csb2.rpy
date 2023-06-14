@@ -295,7 +295,7 @@ label breakout:
     show arceus flipped at left with moveinleft
     arceus "Uniforms, check."
 
-    show annopris at right with moveinright
+    show anno prison at right with moveinright
     anno "Spoons, check."
 
     show cs prison at center with dissolve
@@ -317,13 +317,13 @@ label breakout:
     show arceus at right with easeinright
     arceus "You what?" 
     
-    show annopopo
+    show anno guard
     anno "How are we supposed to cross the border with the new wall?"
     arceus "Not the Mexican border, the Canadian border, we're in Washington, it's way closer and they're too polite to send us back."
     cs "Works for me, free healthcare."
     arceus "Well, you have to live there for a few years before you get access to that, but you should last a few years without getting sick living on that healthy diet of Ritz and EZ cheese."
     hide cs
-    hide annopopo
+    hide anno guard
     hide arceus
     with dissolve
     n "The three continue to dig for hours, until their hands begin to blister and their spoons break."
@@ -333,7 +333,7 @@ label breakout:
 
     hide cs with dissolve
     hide arceus with dissolve
-    hide annopopo with dissolve
+    hide anno with dissolve
     jump bordercrossing
 
 label bordercrossing:
