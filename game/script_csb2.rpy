@@ -1,6 +1,6 @@
 label csbii_start:
 
-    scene helipad
+    scene helipad with fade
     show cs_angry at left
     show wesley at right
     with dissolve
@@ -413,11 +413,9 @@ label bordercrossing:
     hide arceus flipped
     show anno
     anno "Wait, huh?"
-
     hide anno
     show arceus flipped at left
     show cashier at right
-
     cashier "Here you go."
     arceus "That's me!"
     arceus "How much is it?"
@@ -430,7 +428,7 @@ label bordercrossing:
     cashier "Buh-bye!"
     hide cashier with dissolve
     stop music fadeout 3.0
-    # TODO: Music stops.
+
 
     show cs_disappointed
     cs "..."

@@ -5,7 +5,7 @@ screen best_music():
 
 label csbi_start:
 
-    scene cs_room
+    scene cs_room with fade
     show cs_neutral at center
     play music "<loop 0>lets_hear_my_baby.mp3" volume 0.15
     music "Let's hear my baby - Walkman"

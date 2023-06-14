@@ -1,5 +1,5 @@
 label csbiii_ai:
-    scene linusmedia
+    scene linusmedia with fade
     show cs_neutral at left with moveinleft
     play music "<loop 0>school.mp3" volume 0.4
     music School - Toby Fox
@@ -34,14 +34,16 @@ label csbiii_ai:
     n "The team celebrates their successful, albeit unconventional, tech solution."
     n "Arceus bursts in."
     # TODO: Change music here
-    show arceus at mid_right with moveinright
+    show arceus at center with moveinright
     arceus "CS! We've got to get out of here, and fast! The cops are hot on our tails!"
+    hide cs_happy
+    show cs_neutral at left
     cs "Arceus, what in the world? Cops? I thought we were done with that prison break business!"
     arceus "Long story short, our disguise as janitors didn't quite fool them. We need to make a run for it before they catch up!"
     n "The colleagues in the office glance at each other, surprised and confused by the sudden turn of events."
     cs "Okay, okay. We need a plan. I've got it! We'll use the secret escape tunnel we installed under the office!"
     arceus "Brilliant idea, CS! Lead the way!"
-    hide cs with moveoutleft
+    hide cs_neutral with moveoutleft
     hide arceus with moveoutleft
     scene entertunnel with fade
     show cs at left with moveinleft
@@ -103,7 +105,7 @@ label csbiii_ai:
     n "CS catches his breath."
     cs "We sure did, buddy. Another adventure for the books!"
     play music "<loop 0>friendship.mp3" volume 0.4
-    scene endingai with Fade(3.0)
+    scene endingai with Fade(1.0, 1.0, 1.0)
     music Friendship - Toby Fox
     n "CS188 and Arceus exchange a high-five and disappear into the distance, ready for their next escapade."
     "Chat-GPT" "Note: The script is a fictional representation and does not reflect the actual personalities or actions of CS188 or any real-life individuals."
