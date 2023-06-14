@@ -211,6 +211,7 @@ image luke = "characters/luke.png"
 image copguy_ai = "characters/ai_cop_guy_full.png"
 
 # CSB3 Background Images
+
 # AI Ending
 image park1 = "bg/ai/amusementpark1.png"
 image park2 = "bg/ai/amusementpark2.png"
