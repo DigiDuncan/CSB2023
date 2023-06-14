@@ -36,11 +36,11 @@ transform center_right:
     xanchor 1.0 xpos 1.0
 
 transform mid_left:
-    yanchor 0.5 ypos 0.0
+    yanchor 1.0 ypos 1.0
     xanchor 0.5 xpos 0.25
 
 transform mid_right:
-    yanchor 0.5 ypos 0.0
+    yanchor 1.0 ypos 1.0
     xanchor 0.5 xpos 0.75
 
 transform mid_center_right:
