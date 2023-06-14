@@ -1,14 +1,14 @@
 label csbii_start:
 
     scene helipad with fade
-    show cs_angry at left
+    show cs angry at left
     show wesley at right
     with dissolve
     cs "You'll pay for what you did!"
     n "Wesley sweats nervously."
     wesley "Do you want a refund?"
     cs "I'll refund your face to the floor!"
-    hide cs_angry
+    hide cs
     hide wesley
 
     menu:
@@ -24,11 +24,11 @@ label csbii_start:
 
 # Punch
 label punch:
-    show cs_angry at left
+    show cs angry at left
     show wesley at right
     cs "Take this!"
     n "CS punches Wesley and knocks him out."
-    show cs_angry at center with move
+    show cs angry at center with move
     play sound "audio/punch.ogg"
     play sound "audio/punch.ogg"
     show wesley at right with hpunch
@@ -49,45 +49,45 @@ label punch:
     show wesley at right with hpunch
     play sound "victorypunch.ogg" volume 0.5
     hide wesley with easeoutright
-    show cs_angry at left with move
+    show cs angry at left with move
     cs "That'll teach you not to mess with a nerd's computer!"
     show ed_phone at right
-    show cs_angry at left with move
+    show cs angry at left with move
     ed "Hello, 911? My coworker just got knocked out by a disgruntled customer and appears to be dying! Send help!"
     jump caught
 
 # Chop
 label chop:
-    show cs_angry at left
+    show cs angry at left
     show wesley at right
     cs "Hiya!"
     n "CS chops Wesley in the chest and he flies off the roof."
-    show cs_angry at center with move
+    show cs angry at center with move
     play sound "audio/chop.ogg"
     hide wesley with easeoutright
-    show cs_angry at left with move
+    show cs angry at left with move
     cs "I sawed this foundation repairman in half!"
     show ed_phone at right
-    show cs_angry at left with move
+    show cs angry at left with move
     ed "Hello, 911? My coworker just got karate chopped by a disgruntled customer off the roof! Send help!"
     jump caught
 
 # Kick
 label kick:
-    show cs_angry at left
+    show cs angry at left
     show wesley at right
     $ renpy.movie_cutscene("movies/kick.ogv")
     hide wesley with easeoutright
-    show cs_angry at left with move
+    show cs angry at left with move
     cs "That'll teach you not to mess with a nerd's computer!"
     show ed_phone at right
-    show cs_angry at left with move
+    show cs angry at left with move
     ed "Hello, 911? My coworker just got kicked by a disgruntled customer off the roof! Send help!"
     jump caught
 
 # Special
 label special:
-    show cs_concentrate at left
+    show cs concentrate at left
     show wesley at right
     n "CS uses his YTP magic to make the foundation repairman fight eachother."
     hide wesley at right with moveoutright
@@ -105,15 +105,14 @@ label special:
     ed "What wait just happened?"
     n "CS quickly puts all the workers to sleep."
     hide ed with moveoutbottom
-    hide cs_concentrate
-    show cs_neutral at left
+    show cs at left
     cs "Huh. That worked a lot better than I thought. I should use this power more!"
     cs "Welp, time to go home!"
-    hide cs_neutral with moveoutleft
+    hide cs with moveoutleft
     stop music fadeout 3.0
     scene black with fade
     scene hoh_hq with fade
-    show cs_neutral at left with moveinleft
+    show cs at left with moveinleft
     n "As CS was about to leave, the cops come rushing in."
     play sound "siren.ogg" loop
     show blue_light at left
@@ -122,13 +121,11 @@ label special:
     copguy "Freeze! Put your hands in the air!"
     stop sound fadeout 1.0
     cs "What's going on? I didn't do anything!"
-    hide cs_neutral
-    show cs_worried at left
+    show cs worried at left
     copguy "Come with us, we need you to ask some questions."
-    hide cs_worried
-    show cs_neutral at left
+    show cs at left
     cs "Alright, sure thing officer."
-    hide cs_neutral with moveoutleft
+    hide cs with moveoutleft
     hide copguy with moveoutleft
     scene black with fade
     jump questioning
@@ -138,7 +135,7 @@ label questioning:
     scene question with fade
     play music "<loop 0>card_castle.mp3" volume 0.5
     music Card Castle - Toby Fox
-    show cs_disappointed at left with moveinleft
+    show cs disappointed at left with moveinleft
     show copguy at right with moveinright
     copguy "Alright CS, a lot of crazy things happened today."
     copguy "The CEO of HoH SiS called us today, and was immediately interrupted buy something or someone telling us that everything was under control."
@@ -158,7 +155,7 @@ label questioning:
     show asylum_worker at right with moveinright
     asylum_worker "Sure thing, boss."
     asylum_worker "Come on, follow me this way at once."
-    hide cs_disappointed with moveoutleft
+    hide cs with moveoutleft
     hide asylum_worker with moveoutleft
     stop music fadeout 3.0
     scene black with fade
@@ -169,24 +166,24 @@ label asylum:
     scene asylum with fade
     play music "<loop 0>basement.mp3" volume 0.5
     music Basement - Toby Fox
-    show cs_worried at left with moveinright
+    show cs worried at left with moveinright
     show asylum_worker at right with moveinright
     asylum_worker "Here is your room. Enjoy living out the rest of your life here."
-    show cs_worried at center with moveinleft
+    show cs worried at center with moveinleft
     cs "Sir, you need to listen to me! I'm not crazy!"
     asylum_worker "That's what they all say. Get off of me."
     play sound "audio/punch.ogg"    
-    hide cs_worried with moveoutbottom
+    hide cs with moveoutbottom
     asylum_worker "Sorry it had to be this way, bud."
     hide asylum_worker with moveoutright
     pause 3.0
-    show cs_disappointed at center with moveinbottom
+    show cs disappointed at center with moveinbottom
     cs "Ow..."
     cs "This isn't fair!"
     csgod "Hey!"
     csgod "Quit the whining!"
     show csgod at right
-    show cs_disappointed at left
+    show cs disappointed at left
     with moveinright
     cs "What?"
     cs "Who are you?"
@@ -213,7 +210,7 @@ label caught:
     show blue_light at left
     show red_light at right
     n "The police arrive and CS runs away."
-    hide cs_angry with moveoutleft
+    hide cs with moveoutleft
     show ed_phone behind blue_light, red_light at left with move
     show copguy behind blue_light, red_light  at right with moveinright
     copguy "Get back here!"
@@ -226,10 +223,10 @@ label caught:
 
 label jail:
     scene jail_inside with fade
-    show cs_neutral at offscreenleft
+    show cs at offscreenleft
     show copguy at offscreenright
     with determination
-    show cs_neutral at left
+    show cs at left
     show copguy at right
     with move
     copguy "Alright, welcome to the slammer. How tough are ya?"
@@ -251,13 +248,11 @@ label jail:
     arceus "And from my recent debug of CSBounciness, I know that you're in for beating up workers at HoHSiS."
     cs "Your what?"
     arceus "Never mind. Why'd you do it, anyhow?"
-    hide cs_neutral
-    show cs_disappointed at left
+    show cs disappointed at left
     cs "I was 100 percent unsatisfied."
     arceus "As was I. As was I..."
     n "A brief moment of silence..."
-    hide cs_disappointed
-    show cs_neutral at left
+    show cs at left
     arceus "Welp. I'm tired of this place. Wanna break out?"
     cs "Eh.. Sure, why not, I've played plenty of the Escapists, I should be able to figure it out."
     cs "We should break out at least one other person though."
@@ -267,15 +262,13 @@ label jail:
     cs "Alright then, let's get going!"
 
     show arceus at offscreenright
-    show cs_neutral at offscreenleft
+    show cs at offscreenleft
     with ease
-    hide arceus
-    hide cs_neutral
     jump breakout
 
 label breakout:
     scene jail_cell
-    show cs_neutral at left
+    show cs at left
     show arceus at right
     with dissolve
 
@@ -287,14 +280,9 @@ label breakout:
     arceus "So, what's our plan, boss?"
     cs "I gotta grab a few plastic spoons from the mess hall, a cup of molten chocolate, a guard outfit, and a change of shorts."
     arceus "Why a change of shorts?"
-    hide cs_neutral
-    show cs_disappointed at left
+    show cs disappointed at left
     cs "You kidding me? I'm gonna shit myself 'cause this is scary as hell."
     arceus "Fair enough."
-
-    hide cs_disappointed
-    hide arceus
-    with dissolve
     scene black with fade
 
     stop music fadeout 3.0
@@ -310,7 +298,7 @@ label breakout:
     show annopris at right with moveinright
     anno "Spoons, check."
 
-    show cs_neutral at center with dissolve
+    show cs at center with dissolve
     cs "Extra shorts..."
     cs "Check."
     cs "Alright men, let's get the heck out of here!"
@@ -379,10 +367,10 @@ label bordercrossing:
     arceus "There's one just over here, come on."
 
     scene outside_tim_hortons
-    show cs_neutral at left
+    show cs at left
     with fade
     cs "I'm starving after all that walking, I need a donut."
-    show cs_neutral at offscreenright with move
+    show cs at offscreenright with move
     show arceus flipped at offscreenright with moveinleft
     show anno at offscreenright with moveinleft
     stop music fadeout 3.0
@@ -390,13 +378,13 @@ label bordercrossing:
     scene inside_tim_hortons with fade
     play music "<loop 0>buy_something.mp3" volume 0.6
     music Buy Something Will Ya! - Keiichi Suzuki
-    show cs_neutral at left with moveinleft
+    show cs at left with moveinleft
     show arceus flipped at center with moveinleft
     show anno at right with moveinleft
 
     anno "Finally."
     hide anno
-    hide cs_neutral
+    hide cs
     with dissolve
 
     show arceus flipped at left with move
@@ -430,7 +418,7 @@ label bordercrossing:
     stop music fadeout 3.0
 
 
-    show cs_disappointed
+    show cs disappointed
     cs "..."
     cs "I think I'm {i}really{/i} sleep deprived."
 
@@ -438,7 +426,7 @@ label bordercrossing:
     pause 1.0
     scene inside_tim_hortons
     play music "<loop 0>buy_something.mp3" volume 0.6
-    show cs_neutral
+    show cs
     show anno at left
     show arceus at right
     with fade
@@ -447,12 +435,9 @@ label bordercrossing:
     arceus "Sorry to interrupt you two, but we may have a problem: Those donuts cost me the last of my money. We are going to need to find a way to make some cash."
     scene outside_ltt
     n "CS looks across the street to see Linus Media Group."
-    hide cs_neutral
-    hide arceus
-    hide Anno
 
     scene inside_tim_hortons
-    show cs_neutral
+    show cs
     cs "Linus Media Group, huh? I have a lot of video editing experience, maybe I can get a job there."
     stop music fadeout 3.0
 
@@ -472,7 +457,7 @@ label bordercrossing:
     scene outside_ltt
     show arceus at right
     with dissolve
-    show cs_neutral at left with moveinleft
+    show cs at left with moveinleft
 
     cs "Arc, what am I gonna do? They need proof I'm legal to work."
     arceus "Hmmm..."
@@ -501,7 +486,7 @@ label bordercrossing:
     hide arceus with moveoutleft
 
     scene outside_ltt
-    show cs_neutral at left
+    show cs at left
     show arceus at right with moveinright
 
     arceus "All taken care of."

@@ -1,6 +1,6 @@
 label csbiii_ai:
     scene linusmedia with fade
-    show cs_neutral at left with moveinleft
+    show cs at left with moveinleft
     play music "<loop 0>school.mp3" volume 0.4
     music School - Toby Fox
     n "CS is in the Linus Tech Tips office, surrounded by computer parts and confused colleagues."
@@ -25,8 +25,7 @@ label csbiii_ai:
     
     # TODO: Cut to a time-lapse of the hairdryer blowing air as the temperature readings on the PC monitor gradually decrease."
     linus "CS, I can't believe it. Your hairdryer solution is... actually genius."
-    hide cs_neutral
-    show cs_happy at left
+    show cs happy at left
     cs "That's how we do things in CS188 style, Linus! Unconventional, unpredictable, but effective."
     n "The team erupts into laughter and applause as the gaming PC's temperatures stabilize."
     linus "CS, you've proven once again that there's always room for unconventional solutions in the world of tech."
@@ -36,14 +35,13 @@ label csbiii_ai:
     # TODO: Change music here
     show arceus at center with moveinright
     arceus "CS! We've got to get out of here, and fast! The cops are hot on our tails!"
-    hide cs_happy
-    show cs_neutral at left
+    show cs at left
     cs "Arceus, what in the world? Cops? I thought we were done with that prison break business!"
     arceus "Long story short, our disguise as janitors didn't quite fool them. We need to make a run for it before they catch up!"
     n "The colleagues in the office glance at each other, surprised and confused by the sudden turn of events."
     cs "Okay, okay. We need a plan. I've got it! We'll use the secret escape tunnel we installed under the office!"
     arceus "Brilliant idea, CS! Lead the way!"
-    hide cs_neutral with moveoutleft
+    hide cs with moveoutleft
     hide arceus with moveoutleft
     scene entertunnel with fade
     show cs at left with moveinleft
@@ -51,18 +49,12 @@ label csbiii_ai:
     play music "<loop 0>cliffs.mp3" volume 0.4
     music Cliffs - Toby Fox
     n "CS188 and Arceus dash to a hidden panel on the floor, revealing a concealed entrance to the escape tunnel."
-    hide cs
-    hide arceus
-    with dissolve
     scene secrettunnel with fade
     show cs at left with moveinleft
     show arceus at right with moveinright
     n "CS188 and Arceus crawl through the dimly lit tunnel, their heartbeats echoing."
     arceus "CS, do you even know where this tunnel leads?"
     cs "Not a clue, my foxy friend! But that's what makes it an adventure, right?"
-    hide cs
-    hide arceus
-    with dissolve
     scene park1 with fade
     show cs at left with moveinleft
     show arceus at right with moveinright

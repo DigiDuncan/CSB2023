@@ -99,14 +99,14 @@ define worker_7 = Character("Worker 7", callback = beep)
 define digi = Character("Digi", callback = renpy.partial(beep, name = "digi"))
 
 #CSB1 Character Images
-image cs_neutral = "characters/cs.png"
-image cs_neutral flipped = Transform("characters/cs.png", xzoom = -1)
-image cs_happy = "characters/cs_happy.png"
-image cs_angry = "characters/cs_angry.png"
-image cs_worried = "characters/cs_worried.png"
-image cs_worried flipped = Transform("characters/cs_worried.png", xzoom = -1)
-image cs_disappointed = "characters/cs_disappointed.png"
-image cs_concentrate = "characters/cs_concentrate.png"
+image cs = "characters/cs/neutral.png"
+image cs flipped = Transform("characters/cs/neutral.png", xzoom = -1)
+image cs happy = "characters/cs/happy.png"
+image cs angry = "characters/cs/angry.png"
+image cs worried = "characters/cs/worried.png"
+image cs worried flipped = Transform("characters/cs/worried.png", xzoom = -1)
+image cs disappointed = "characters/cs/disappointed.png"
+image cs concentrate = "characters/cs/concentrate.png"
 image discord = "characters/discord.png"
 image nova = "characters/nova.png"
 image carguy = "characters/carguy.png"
@@ -128,16 +128,16 @@ image worker_6 = "characters/worker_pineapple.png"
 image worker_7 = "characters/worker_chicken.png"
 
 # CSB1 Craptop
-image craptop_blank = "characters/craptop/blank.png"
-image craptop_car = "characters/craptop/car.png"
-image craptop_desktop = "characters/craptop/desktop.png"
-image craptop_discord = "characters/craptop/discord.png"
-image craptop_edit = "characters/craptop/edit.png"
-image craptop_error = "characters/craptop/error.png"
-image craptop_off = "characters/craptop/off.png"
-image craptop_sad = "characters/craptop/sad.png"
-image craptop_updating = "characters/craptop/updating.png"
-image craptop_ytp = "characters/craptop/ytp.png"
+image craptop blank = "characters/craptop/blank.png"
+image craptop car = "characters/craptop/car.png"
+image craptop desktop = "characters/craptop/desktop.png"
+image craptop discord = "characters/craptop/discord.png"
+image craptop edit = "characters/craptop/edit.png"
+image craptop error = "characters/craptop/error.png"
+image craptop off = "characters/craptop/off.png"
+image craptop sad = "characters/craptop/sad.png"
+image craptop updating = "characters/craptop/updating.png"
+image craptop ytp = "characters/craptop/ytp.png"
 image post_it = "post-it.png"
 
 #CSB1 Background Images
@@ -172,7 +172,7 @@ define asylum_worker = Character("Mr Mohs", callback = beep)
 define csgod = Character("CS God", callback = renpy.partial(beep, name = "csgod"))
 
 # CSB2 Character Images
-image ed_phone = "characters/ed_phone.png"
+image ed phone = "characters/ed_phone.png"
 image arceus = "characters/arceus.png"
 image arceus flipped = Transform("characters/arceus.png", xzoom = -1)
 image anno = "characters/anno.png"
