@@ -9,7 +9,7 @@ label csbiii_start:
     linus "Welcome to Linus Media Group, come on in, I'll show you your desk."
     cs "Thanks Linus."
     scene black with fade
-    n "Linus and CS walk to CS’ new desk."
+    n "Linus and CS walk to CS' new desk."
     scene csdesk with fade
     show linus at right with moveinright
     show cs at left with moveinleft
@@ -54,31 +54,31 @@ label microcenter:
     n "Linus trips and falls, immediately destroying the insides and outsides of the PC that CS just built."
     cs "Oh damn, you okay there?"
     linus "No of course not! I just destroyed another one of these $20,000 computing machines! How the hell am I going to get another just like this?"
-    cs "Well, you could just always buy more parts like these, I’m sure you have the budget for that."
-    linus "No no, that’s too expensive and wasteful, let me think…"
+    cs "Well, you could just always buy more parts like these, I'm sure you have the budget for that."
+    linus "No no, that's too expensive and wasteful, let me think…"
     linus "Hmmm….."
-    linus "Wait! I just got a brilliant idea! Why don’t you go buy more parts for me, we certainly have the budget to do that!"
+    linus "Wait! I just got a brilliant idea! Why don't you go buy more parts for me, we certainly have the budget to do that!"
     cs "Uhmm… I literally just said--"
     linus "Alright! The plan is settled! You can go fetch me some more parts for the ultimate streaming machine, and you get to decide what parts should belong in the computer!"
     cs "Okay but, are there any recommendations you would give me for building this? This is YOUR money, you know."
-    linus "Nah, it’s fine. I’m sure you will do well picking out parts, make sure to get the highest quality you can!"
-    cs "Alrighty, I’ll get going now."
+    linus "Nah, it's fine. I'm sure you will do well picking out parts, make sure to get the highest quality you can!"
+    cs "Alrighty, I'll get going now."
     n "CS goes to Microcenter."
     cs "Okay gamers, we are buying some parts for our epic computing machine. Let's go inside the magical concrete structure to buy some computing parts."
     cs "Wow, this building looks a lot bigger than the places I would go shopping at near home."
     n "CS enters the building."
     cs "Woah! This place is huge!"
-    cs "There are so many options to pick from! And I have as much money as I’ll ever need too!"
+    cs "There are so many options to pick from! And I have as much money as I'll ever need too!"
     cs "Before I get too carried away though, I should probably start by buying the processor."
     n "CS goes to the CPU aisle."
     cs "My goodness, there are so many options."
-    cs "I honestly don’t know which one to pick."
-    cs "Let’s see here…"
+    cs "I honestly don't know which one to pick."
+    cs "Let's see here…"
     cs "I could get a super high-end Intel CPU since Linus still seems to default to Intel even after shilling for AMD…"
     cs "Or I could get a Threadripper, more cores would probably be better for streaming..."
-    cs "Too many good options! I don’t know what one to pick!"
+    cs "Too many good options! I don't know what one to pick!"
     # REMEMBER TO CHANGE THIS
-    cs "Whatever, I’ll get *whatever choice since this doesn’t change the path*"
+    cs "Whatever, I'll get *whatever choice since this doesn't change the path*"
     cs "Now for the GPU."
 
     menu:
@@ -89,13 +89,13 @@ label microcenter:
             jump low_gpu
 
 label low_gpu:
-    cs "I should probably try to save Linus some money. Most of the expensive parts he gets are from sponsors, he’s not actually that rich."
+    cs "I should probably try to save Linus some money. Most of the expensive parts he gets are from sponsors, he's not actually that rich."
     n "CS flags down an employee."
-    cs "I’m trying to get a graphics card, and I want to save money, what do you have?"
+    cs "I'm trying to get a graphics card, and I want to save money, what do you have?"
     worker "Everything here is pretty expensive, lemme check the back…"
     n "The worker comes back."
-    worker "Alright, I got this. It’s pretty old, and it’s covered in dust, but it’s like $50."
-    cs "Sounds great, I’ll take it."
+    worker "Alright, I got this. It's pretty old, and it's covered in dust, but it's like $50."
+    cs "Sounds great, I'll take it."
 
 label edit_video:
     cs "Nah, I wanna finish this video first. That way I can help you pump out videos faster."
@@ -183,12 +183,12 @@ label fired:
     cs "Hey guys! Did you all check out the new video?"
     show linus at right with moveinright
     linus "Yes, and we need to talk."
-    cs "Don’t worry, I already know it’s perfect. It’s so great, isn’t it?"
-    linus "It’s actually the very opposite of that. You’re fired."
+    cs "Don't worry, I already know it's perfect. It's so great, isn't it?"
+    linus "It's actually the very opposite of that. You're fired."
     show cs disappointed
     cs "Wait, what?"
-    linus "Look, I don’t care how much you really wanted to humiliate me, just leave."
-    cs "I don’t understand, I didn’t think you would be this upse-{nw}"
+    linus "Look, I don't care how much you really wanted to humiliate me, just leave."
+    cs "I don't understand, I didn't think you would be this upse-{nw}"
     linus "Just get out of here you stupid dumb animal!!"
     cs "..."
     n "CS turns around and stomps out of the building."
@@ -213,8 +213,8 @@ label boost:
     show linus at right with moveinright
     linus "Yes we did."
     linus "It was…"
-    cs "Oh shoot, it was awful wasn’t it?"
-    cs "Yeah, I should’ve realized my style is too crazy, I guess I should leave…"
+    cs "Oh shoot, it was awful wasn't it?"
+    cs "Yeah, I should've realized my style is too crazy, I guess I should leave…"
     show cs flipped at left
     show linus behind cs at left with ease
     show linus at center with ease
@@ -223,16 +223,16 @@ label boost:
     show cs at left
     cs "Woah wait, you actually like YTPs?"
     linus "Yeah man, you think I just hired you on the spot because of your obviously fake visa?"
-    linus " I love your videos! I’ve been secretly hoping you would YTP one of mine for the longest time!"
+    linus " I love your videos! I've been secretly hoping you would YTP one of mine for the longest time!"
     show linus at left with ease
     show linus at center with ease
-    n "CS’s frown fades in a big grin, as they both high-five."
-    cs "Hell yeah! I would’ve never thought YTPs would help me in a business setting, nevermind that my BOSS enjoyed them!"
-    cs "Alright! Well, I guess I better get back to poopin’!"
+    n "CS's frown fades in a big grin, as they both high-five."
+    cs "Hell yeah! I would've never thought YTPs would help me in a business setting, nevermind that my BOSS enjoyed them!"
+    cs "Alright! Well, I guess I better get back to poopin'!"
     show cs flipped at left
     show cs flipped at offscreenleft with ease
     n "Before CS heads out of the room, Linus shouts to him."
-    linus "Hey, later today, I got a big surprise to show you. I’ll stop by your office and we can check it out."
+    linus "Hey, later today, I got a big surprise to show you. I'll stop by your office and we can check it out."
     cs "Sure thing!"
     scene csdesk
     show cs at center
@@ -253,63 +253,63 @@ label boost:
     with ease
     linus "CS!!!"
     cs "WOAH SHi- you scared the crap out of me!"
-    linus "Hah sorry, I’m just excited to show you this!"
+    linus "Hah sorry, I'm just excited to show you this!"
     n "Linus holds out a rectangular box that reads on the front in black bold text DO NOT USE."
     cs "Umm, you sure this is the right box? It literally says-"
     linus "Yeah I know what it says, I just wrote this on here so no one else uses it."
-    linus "Don’t worry, I didn’t like, buy it from some creepy dude at a garage sale that claims it’s haunted."
+    linus "Don't worry, I didn't like, buy it from some creepy dude at a garage sale that claims it's haunted."
     n "CS looks unnerved."
-    linus "Look just, open the box. I’m sure you’ll like it."
+    linus "Look just, open the box. I'm sure you'll like it."
     n "CS cautiously takes the box, and opens the top. "
     n "Inside is what looks to be a graphics card, but with a brown youtube logo engraved into the side."
     cs "Woah, what is this Linus? A Youtube-brand graphics card?"
-    linus "Not exactly. It’s an experimental piece of hardware that we have never used before, and it’s custom made."
+    linus "Not exactly. It's an experimental piece of hardware that we have never used before, and it's custom made."
     n "Linus holds the card into the air."
     linus "Behold! {w=0.5} The- WOAH SHIT {w=0.5}{nw}"
     with vpunch
     n "Linus loses grip of the card as it tumbles down onto the table next to him."
     n "CS facepalms, while you can hear Luke laughing in the background."
     cs "Goodness Linus, you should maybe not do that next time."
-    linus "Yeah, I’m sorry. Maybe you should hold it." 
+    linus "Yeah, I'm sorry. Maybe you should hold it." 
     linus "This card is called the YTX-9001 Ti, a PCI add-in for enhancing and optimizing Youtube Poops."
-    n "CS’s eyes widen."
-    cs "Wait whaaat? That’s awesome! How does this even work?"
-    linus "We don’t even know, we haven’t even tested it yet."
-    linus "It also apparently has Poop-tracing, which I’m curious to see how that works."
-    cs "Well, what are we waiting for? Let’s get this thing hooked up!"
-    n "Linus and CS take apart CS’s PC and put the card in."
+    n "CS's eyes widen."
+    cs "Wait whaaat? That's awesome! How does this even work?"
+    linus "We don't even know, we haven't even tested it yet."
+    linus "It also apparently has Poop-tracing, which I'm curious to see how that works."
+    cs "Well, what are we waiting for? Let's get this thing hooked up!"
+    n "Linus and CS take apart CS's PC and put the card in."
     n "They then start the computer, and everything boots up as normal."
-    linus "Alright, now that it’s up and working, we need to install the drivers. The card came with a flash drive that includes them."
+    linus "Alright, now that it's up and working, we need to install the drivers. The card came with a flash drive that includes them."
     n "As Linus inserts the flashdrive, a window off the side of the screen pops up saying \"Your new Peeforce Experience drivers are available\"."
     n "CS chuckles a bit."
     cs "Peeforce? I must admit, even these drive names are a bit silly."
     n "Linus Laughs."
     linus "If you want, we can wipe them later."
-    cs "Wipe! Now you’re in on it!"
-    n "They both laugh as the drivers install, and once they’re finished, CS boots up Premiere."
+    cs "Wipe! Now you're in on it!"
+    n "They both laugh as the drivers install, and once they're finished, CS boots up Premiere."
     scene csvideo with fade
-    cs "Alrighty, let’s see here. Why don’t we try this on that YTP I just made?"
+    cs "Alrighty, let's see here. Why don't we try this on that YTP I just made?"
     linus "Go to the settings real quick, and find the YTP features. turn YTP mode ON to allow the poop-tracing."
     cs "Alright, here goes nothing."
     n "A loading bar appears as the timeline starts shifting and different edits are created in the process."
     cs "Holy crap! This is amazing! It optimized every part of my YTP!"
-    linus "That’s pretty cool, but let’s try it on a completely new source."
+    linus "That's pretty cool, but let's try it on a completely new source."
     linus "Open the video that we just took yesterday."
     n "CS opens the video, and enables YTP ON again. The source starts already making edits to start with."
-    linus "And hey, if you don’t like the edits it makes, you can always turn it off or tweak the settings in that tab."
+    linus "And hey, if you don't like the edits it makes, you can always turn it off or tweak the settings in that tab."
     scene csdesk
     show cs at left
     show linus at right
     with fade
     cs "Wow, thank you so much Linus for this!"
     linus "No problem! This was my gift to you. Now, we should make a review video of it before the day ends."
-    cs "Sure thing, let’s take the card out real quick."
+    cs "Sure thing, let's take the card out real quick."
     show black with fade
     n "Linus goes and gets the cameras set up, and they start to film the video."
     n "After they finish recording, CS goes up to Linus's office."
     #Todo get linus's office
     cs "Hey Linus?"
-    linus "What’s up CS? What do you need help with?"
+    linus "What's up CS? What do you need help with?"
     menu:
         "What does CS need help with?"
         "I want to work on YTPs.":
@@ -376,25 +376,25 @@ label both_fan:
     linus "Alright fine! I guess if you all like it too, we could put some on our channel from time to time."
     cs "Hell yeah!"
     linus "But you still have to help with some other videos as well, not just YTPs."
-    cs " Alright, that’s fair."
+    cs " Alright, that's fair."
     linus "Well, the rest of you can go back to what you were doing."
     colton "Oh yeah Linus? Before I go, I was told someone was banging on the door to enter just a minute ago."
     colton "They were dressed up like a furry or something."
     linus "Great CS, did you attract your furry fanbase to work here as well?"
-    cs "I swear, I know, this doesn’t have anything to do with my community."
+    cs "I swear, I know, this doesn't have anything to do with my community."
     linus "Wait what do you mean I know? I was just joking about the furry fanbase."
     cs "..."
-    linus "Whatever, let’s just go check out who it is."
+    linus "Whatever, let's just go check out who it is."
     n "CS and Linus rush to the front door."
     n "Linus goes to open the door."
-    linus "Who’s there? Is anyone here?"
+    linus "Who's there? Is anyone here?"
     n "Suddenly, Arceus rushes in through the doors."
     arceus "CS! There you are! We need to go ASAP!"
-    linus "So you DO have a furry fanbase who wants to join LTT! Damnit CS, I should’ve known."
+    linus "So you DO have a furry fanbase who wants to join LTT! Damnit CS, I should've known."
     cs "Shut up Linus!"
-    cs "Arceus, what’s going on? Where have you been?"
-    arceus "Look CS, we don’t have much time. I know that you got your citizenship with Anno here, but the cops are still looking for you, and they are headed to LTT to search for you!"
-    linus "WHAAAAT? CS, why are the cops chasing you? This could seriously damage our reputation more than the time I mentioned I dropped hard R’s as a kid!"
+    cs "Arceus, what's going on? Where have you been?"
+    arceus "Look CS, we don't have much time. I know that you got your citizenship with Anno here, but the cops are still looking for you, and they are headed to LTT to search for you!"
+    linus "WHAAAAT? CS, why are the cops chasing you? This could seriously damage our reputation more than the time I mentioned I dropped hard R's as a kid!"
 
     menu:
         "What will CS do?"
@@ -404,15 +404,15 @@ label both_fan:
             jump arc_escape
 
 label arc_escape:
-    cs "Look I’m sorry Linus, I wish I could explain, but Arceus is right. I need to get going."
+    cs "Look I'm sorry Linus, I wish I could explain, but Arceus is right. I need to get going."
     linus "I am like, so confused and frustrated, this better not ruin the LMG."
-    cs "I’m sorry guys, I’ll try to catch you guys up after this."
+    cs "I'm sorry guys, I'll try to catch you guys up after this."
     cs "This is CS, signing out."
-    arceus "C’mon CS! We need to go!"
+    arceus "C'mon CS! We need to go!"
     n "CS and Arceus run out of the building, and try to find cover while they escape."
     n "As they are making their way away from the building, they can hear sirens grow in volume as flashing lights rush towards the LTT building."
     cs "This is awful, I was just starting to get along well with Linus and the gang."
-    arceus "I’m sure they’ll forgive you in due time, but for now, we need to lose the sight of the cops and get back to the United States."
+    arceus "I'm sure they'll forgive you in due time, but for now, we need to lose the sight of the cops and get back to the United States."
 
 label high_gpu:
     jump secret
