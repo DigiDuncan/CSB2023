@@ -3,7 +3,7 @@
 ##-------CODEX ENTRY NAVIGATION------------------
 ##-----------------------------------------------
 screen jukebox_nav():
-    add "gui/overlay/game_menu.png"
+    add Color('#5F777F', alpha=0.5)
 
     viewport:
         xpos 25 ypos 400
