@@ -208,6 +208,7 @@ define colton = Character("Colton", callback = beep)
 image luke = "characters/luke.png"
 image copguy_ai = "characters/ai_cop_guy_full.png"
 image taran flipped = Transform("characters/taran.png", xzoom = -1)
+image colton = "characters/colton.png"
 
 # CSB3 Background Images
 image csdesk = "bg/cs_desk.png"
