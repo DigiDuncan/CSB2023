@@ -10,7 +10,7 @@ label csbiii_start:
     cs "Thanks Linus."
     scene black with fade
     n "Linus and CS walk to CS’ new desk."
-    scene jail_inside with fade
+    scene csdesk with fade
     show cs at left with moveinleft
     show linus at right with moveinright
     cs "Wow! I thought this was an office, why do I get such a cool desk?"
@@ -26,7 +26,8 @@ label csbiii_start:
     cs "I guess I'll edit the livestreaming one."
     scene black with fade
     n "CS starts working on editing the TechQuickie video and Linus comes in to check on him."
-    show cs at left
+    scene csdesk with fade
+    show cs at left with dissolve
     show linus at right with moveinright
     linus "Hey CS, how's the new video coming along?"
     cs "It's going well, I have the background all done and I'm working on adding graphics and fixing audio."
@@ -55,10 +56,9 @@ label edit_video:
     taran "Need any help with anything?"
     cs "Hey Taran! You wanna check out my video so far?"
     taran "Sure, let it roll."
-    scene craptop_bg with fade
-    show craptop edit
+    scene csvideo with fade
     n "CS and Taran watch CS's video."
-    scene black
+    scene csdesk
     show cs worried at left
     show taran at right
     with fade
@@ -69,6 +69,7 @@ label edit_video:
     taran "They definitely have."
     taran "You know what? I think this video is so good, I don't even think Linus needs to check this."
     taran "He will be so surprised when you upload it, he will wonder how well you put it together in such little time."
+    show cs
     cs "You really think so? I mean I don't want him to be upset with me."
     taran "Don't worry about it. If he thinks it is that bad, I'll take the blame on it."
     cs "That's nice and all, but do you think that's a good idea? I mean, I don't want to mess up my first chance at this."
