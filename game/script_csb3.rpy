@@ -84,6 +84,9 @@ label edit_video:
     taran "...What did you say?"
     cs "Huh? I totally didn't say that, I'm just gonna leave."
     taran "..."
+    n "..."
+    taran "... This is your office.."
+    n "..."
     taran "Okay, I'll see you later then!"
     show taran flipped at right
     hide taran with moveoutright
@@ -272,7 +275,7 @@ label YTP_Edit:
     linus "I mean, for example. TARAN! GET IN HERE!"
     n "Taran rushes up to Linus's office."
     show taran at right with moveinright
-    taran "{i}panting{i} Yes, {w=0.5}Linus? {w=0.5}What is it?"
+    taran "{i}panting{/i} Yes, {w=0.5}Linus? {w=0.5}What is it?"
     linus "Taran, have you ever seen a YTP?"
     taran "Other than the one CS made the other day? Not really."
     linus "See, CS? Not only will our audience be super confused, but our employees will be as well."
@@ -309,6 +312,7 @@ label both_fan:
     colton "A... what?"
     cs "Alright! Strap in because YouTube is where the poop is!"
     show black with fade
+    play sound "ytpintro.ogg"
     n "After half an hour passes, CS has shown LTT what YTPs are all about."
     hide black with fade
     cs "Welp. Those are some of the best ones that I could find."
