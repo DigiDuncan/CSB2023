@@ -2,7 +2,7 @@
 init python:
     renpy.music.register_channel("beep", "voice", loop = True)
     def beep(event, name = None, **kwargs):
-        if persistent.text_beeps:
+        if preferences.text_beeps:
             if event == "show":
                 if name is not None:
                     renpy.sound.play(f"audio/text/{name}.wav", channel = "beep", loop = True)

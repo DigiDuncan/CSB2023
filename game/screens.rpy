@@ -1,6 +1,6 @@
 ﻿init python:
     def change_bounciness(new_bounciness):
-        persistent.csbounciness = new_bounciness
+        preferences.csbounciness = new_bounciness
 
 ################################################################################
 ## Initialization
@@ -772,7 +772,7 @@ screen preferences():
 
                     bar value Preference("auto-forward time")
 
-                    textbutton _("Text Beeps") action ToggleField(persistent, "text_beeps")
+                    textbutton _("Text Beeps") action ToggleField(preferences, "text_beeps")
 
                 vbox:
 
@@ -811,9 +811,8 @@ screen preferences():
                 vbox:
                     label _("CSBounciness")
                     bar:
-                        value persistent.csbounciness
-                        range(100)
-                        offset(0, 0)
+                        value preferences.csbounciness
+                        range 100
                         changed(change_bounciness)
 
 style pref_label is gui_label
