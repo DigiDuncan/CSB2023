@@ -413,3 +413,6 @@ label arc_escape:
     n "As they are making their way away from the building, they can hear sirens grow in volume as flashing lights rush towards the LTT building."
     cs "This is awful, I was just starting to get along well with Linus and the gang."
     arceus "I’m sure they’ll forgive you in due time, but for now, we need to lose the sight of the cops and get back to the United States."
+
+label high_gpu:
+    jump secret
