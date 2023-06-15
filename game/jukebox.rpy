@@ -108,7 +108,7 @@ screen zack():
 screen nelson():
 
     tag menu
-    use achievments_nav
+    use jukebox_nav
 
     style_prefix "codex"
     label "Nelson Shea"

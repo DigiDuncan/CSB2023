@@ -1,7 +1,3 @@
-# Custom preferences
-default persistent.text_beeps = True
-default persistent.csbounciness = 0
-
 # Text beeps
 init python:
     renpy.music.register_channel("beep", "voice", loop = True)

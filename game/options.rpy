@@ -130,6 +130,9 @@ define config.window_hide_transition = Dissolve(.2)
 ## Controls the default text speed. The default, 0, is infinite, while any other
 ## number is the number of characters per second to type out.
 
+default preferences.text_beeps = True
+default preferences.csbounciness = 0
+
 default preferences.text_cps = 0
 
 

@@ -39,6 +39,7 @@ screen category_nav():
             textbutton "Collectibles" action ShowMenu("collectibles_welcome")
             textbutton "Endings" action ShowMenu("endings_welcome")
             textbutton "Jukebox" action ShowMenu("jukebox_welcome")
+            textbutton "Clear Persistent Data" action Jump("reset_vector")
 
     textbutton "Return" action Return() yoffset 1000 xoffset 25
 
@@ -76,3 +77,7 @@ style codex_label_text:
     size gui.label_text_size
 style codex_scrollbar is gui_vscrollbar:
     xoffset 100
+
+label reset_vector:
+    $ persistent._clear(progress=True)
+    $ renpy.full_restart()
