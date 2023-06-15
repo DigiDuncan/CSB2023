@@ -39,9 +39,63 @@ label csbiii_start:
     menu: 
         "What are you going to do?"
         "Go to the store.":
-            jump secret
+            jump microcenter
         "Help edit a video.":
             jump edit_video
+label microcenter:
+    cs "Sure, what parts do you need?"
+    linus "We need eggs, milk..."
+    linus "Just kidding."
+    linus "I'll leave the details up to you since you've done a lot of live streaming, just get the highest end available."
+    cs "Alright, I'll go get the parts."
+    # Jumpcut, fade to black
+    cs "I have your new streaming PC, it runs quite well too! Way better than my computer!"
+    linus "Awesome! Lemme go move this into the othe-- WOAAAHHH!!!"
+    n "Linus trips and falls, immediately destroying the insides and outsides of the PC that CS just built."
+    cs "Oh damn, you okay there?"
+    linus "No of course not! I just destroyed another one of these $20,000 computing machines! How the hell am I going to get another just like this?"
+    cs "Well, you could just always buy more parts like these, I’m sure you have the budget for that."
+    linus "No no, that’s too expensive and wasteful, let me think…"
+    linus "Hmmm….."
+    linus "Wait! I just got a brilliant idea! Why don’t you go buy more parts for me, we certainly have the budget to do that!"
+    cs "Uhmm… I literally just said--"
+    linus "Alright! The plan is settled! You can go fetch me some more parts for the ultimate streaming machine, and you get to decide what parts should belong in the computer!"
+    cs "Okay but, are there any recommendations you would give me for building this? This is YOUR money, you know."
+    linus "Nah, it’s fine. I’m sure you will do well picking out parts, make sure to get the highest quality you can!"
+    cs "Alrighty, I’ll get going now."
+    n "CS goes to Microcenter."
+    cs "Okay gamers, we are buying some parts for our epic computing machine. Let's go inside the magical concrete structure to buy some computing parts."
+    cs "Wow, this building looks a lot bigger than the places I would go shopping at near home."
+    n "CS enters the building."
+    cs "Woah! This place is huge!"
+    cs "There are so many options to pick from! And I have as much money as I’ll ever need too!"
+    cs "Before I get too carried away though, I should probably start by buying the processor."
+    n "CS goes to the CPU aisle."
+    cs "My goodness, there are so many options."
+    cs "I honestly don’t know which one to pick."
+    cs "Let’s see here…"
+    cs "I could get a super high-end Intel CPU since Linus still seems to default to Intel even after shilling for AMD…"
+    cs "Or I could get a Threadripper, more cores would probably be better for streaming..."
+    cs "Too many good options! I don’t know what one to pick!"
+    # REMEMBER TO CHANGE THIS
+    cs "Whatever, I’ll get *whatever choice since this doesn’t change the path*"
+    cs "Now for the GPU."
+
+    menu:
+        "Which card do you want to choose"
+        "High end GPU":
+            jump high_gpu
+        "Low end GPU":
+            jump low_gpu
+
+label low_gpu:
+    cs "I should probably try to save Linus some money. Most of the expensive parts he gets are from sponsors, he’s not actually that rich."
+    n "CS flags down an employee."
+    cs "I’m trying to get a graphics card, and I want to save money, what do you have?"
+    worker "Everything here is pretty expensive, lemme check the back…"
+    n "The worker comes back."
+    worker "Alright, I got this. It’s pretty old, and it’s covered in dust, but it’s like $50."
+    cs "Sounds great, I’ll take it."
 
 label edit_video:
     cs "Nah, I wanna finish this video first. That way I can help you pump out videos faster."
@@ -316,4 +370,46 @@ label both_fan:
     n "After half an hour passes, CS has shown LTT what YTPs are all about."
     hide black with fade
     cs "Welp. Those are some of the best ones that I could find."
+    taran "Hey, those were actually really funny. Linus, didn't you tell me about how much you actually liked YTPs?"
+    linus "Nooooo….?"
+    luke "Now that you say that…"
+    linus "Alright fine! I guess if you all like it too, we could put some on our channel from time to time."
+    cs "Hell yeah!"
+    linus "But you still have to help with some other videos as well, not just YTPs."
+    cs " Alright, that’s fair."
+    linus "Well, the rest of you can go back to what you were doing."
+    colton "Oh yeah Linus? Before I go, I was told someone was banging on the door to enter just a minute ago."
+    colton "They were dressed up like a furry or something."
+    linus "Great CS, did you attract your furry fanbase to work here as well?"
+    cs "I swear, I know, this doesn’t have anything to do with my community."
+    linus "Wait what do you mean I know? I was just joking about the furry fanbase."
+    cs "..."
+    linus "Whatever, let’s just go check out who it is."
+    n "CS and Linus rush to the front door."
+    n "Linus goes to open the door."
+    linus "Who’s there? Is anyone here?"
+    n "Suddenly, Arceus rushes in through the doors."
+    arceus "CS! There you are! We need to go ASAP!"
+    linus "So you DO have a furry fanbase who wants to join LTT! Damnit CS, I should’ve known."
+    cs "Shut up Linus!"
+    cs "Arceus, what’s going on? Where have you been?"
+    arceus "Look CS, we don’t have much time. I know that you got your citizenship with Anno here, but the cops are still looking for you, and they are headed to LTT to search for you!"
+    linus "WHAAAAT? CS, why are the cops chasing you? This could seriously damage our reputation more than the time I mentioned I dropped hard R’s as a kid!"
 
+    menu:
+        "What will CS do?"
+        "I'm going to stay with LTT.":
+            jump cops_ltt
+        "Escape with Arceus.":
+            jump arc_escape
+
+label arc_escape:
+    cs "Look I’m sorry Linus, I wish I could explain, but Arceus is right. I need to get going."
+    linus "I am like, so confused and frustrated, this better not ruin the LMG."
+    cs "I’m sorry guys, I’ll try to catch you guys up after this."
+    cs "This is CS, signing out."
+    arceus "C’mon CS! We need to go!"
+    n "CS and Arceus run out of the building, and try to find cover while they escape."
+    n "As they are making their way away from the building, they can hear sirens grow in volume as flashing lights rush towards the LTT building."
+    cs "This is awful, I was just starting to get along well with Linus and the gang."
+    arceus "I’m sure they’ll forgive you in due time, but for now, we need to lose the sight of the cops and get back to the United States."
