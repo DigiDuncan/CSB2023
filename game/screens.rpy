@@ -254,6 +254,7 @@ screen quick_menu():
 
             textbutton _("Back") action Rollback()
             textbutton _("History") action ShowMenu('history')
+            textbutton _("Extras") action ShowMenu('category_welcome')
             textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
             textbutton _("Auto") action Preference("auto-forward", "toggle")
             textbutton _("Save") action ShowMenu('save')
@@ -309,6 +310,8 @@ screen navigation():
             textbutton _("Save") action ShowMenu("save")
 
         textbutton _("Load") action ShowMenu("load")
+
+        textbutton _("Extras") action ShowMenu("category_welcome")
 
         textbutton _("CSettings") action ShowMenu("preferences")
 
