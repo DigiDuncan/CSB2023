@@ -66,7 +66,7 @@ transform xstretch_out:
     alpha 0.0
 
 #CSB1 Character Definitions
-define n = Character("", what_italic = True, window_background = "gui/textbox_alt.png")  # Narrator
+define n = Character(None, what_italic = True)  # Narrator
 define cs = Character("cs188", callback = renpy.partial(beep, name = "cs"))
 define craptop = Character("Craptop", callback = beep)
 define sticky = Character("Sticky Note", callback = beep)

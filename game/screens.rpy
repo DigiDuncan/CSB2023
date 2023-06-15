@@ -772,6 +772,8 @@ screen preferences():
 
                     bar value Preference("auto-forward time")
 
+                    
+
                     textbutton _("Text Beeps") action ToggleField(preferences, "text_beeps")
 
                 vbox:
@@ -810,10 +812,11 @@ screen preferences():
                             style "mute_all_button"
                 vbox:
                     label _("CSBounciness")
-                    bar:
-                        value preferences.csbounciness
-                        range 100
-                        changed(change_bounciness)
+                    hbox:
+                        bar:
+                            value preferences.csbounciness
+                            range 100
+                            changed(change_bounciness)
 
 style pref_label is gui_label
 style pref_label_text is gui_label_text
@@ -837,6 +840,7 @@ style slider_slider is gui_slider
 style slider_button is gui_button
 style slider_button_text is gui_button_text
 style slider_pref_vbox is pref_vbox
+style slider_vbox is vbox
 
 style mute_all_button is check_button
 style mute_all_button_text is check_button_text
