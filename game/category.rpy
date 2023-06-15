@@ -41,7 +41,7 @@ screen category_nav():
             textbutton "Jukebox" action ShowMenu("jukebox_welcome")
             textbutton "Clear Persistent Data" action Jump("reset_vector")
 
-    textbutton "Return" action Return() yoffset 1000 xoffset 25
+    textbutton "Main Menu" action Return() yoffset 1000 xoffset 25
 
 ##-----------------------------------------------
 ##-------------CODEX WELCOME---------------------

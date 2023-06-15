@@ -45,8 +45,8 @@ screen people_nav():
                 if k in persistent.seen:
                     textbutton name_map[k] action ShowMenu("person", k)
 
-    textbutton "Return to categories" action ShowMenu("category_welcome") yoffset 950 xoffset 25
-    textbutton "Return" action Return() yoffset 1000 xoffset 25
+    textbutton "Return to Extras" action ShowMenu("category_welcome") yoffset 950 xoffset 25
+    textbutton "Main Menu" action Return() yoffset 1000 xoffset 25
 
 ##-----------------------------------------------
 ##-------------CODEX WELCOME---------------------
