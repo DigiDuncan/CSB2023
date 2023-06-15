@@ -11,8 +11,8 @@ label csbiii_start:
     scene black with fade
     n "Linus and CS walk to CS’ new desk."
     scene csdesk with fade
-    show cs at left with moveinleft
     show linus at right with moveinright
+    show cs at left with moveinleft
     cs "Wow! I thought this was an office, why do I get such a cool desk?"
     linus "Actually, this is our worst setup, you'll get upgraded after you've been here a while."
     cs "Holy shit, really? This is way better than any setup I've seen, let alone had."
@@ -80,11 +80,12 @@ label edit_video:
     cs "Well if you say so, I guess it's fine."
     cs "Let's wait and see how he reacts."
     taran "Alrighty then, I'll catch you later!"
-    cs "For tonight, this{w} is{w} CS,{cps=*0.1} signing {cps=*10} out!"
+    cs "For tonight, this{w=0.1} is{w=0.1} CS,{cps=*0.1} signing{cps=*10} out!"
     taran "...What did you say?"
     cs "Huh? I totally didn't say that, I'm just gonna leave."
     taran "..."
     taran "Okay, I'll see you later then!"
+    show taran flipped at right
     hide taran with moveoutright
     n "Taran goes back to his office."
     cs "Well, I guess since this video is already good enough, I can upload it now."
@@ -207,14 +208,14 @@ label boost:
     cs "Woah, what is this Linus? A Youtube-brand graphics card?"
     linus "Not exactly. It’s an experimental piece of hardware that we have never used before, and it’s custom made."
     n "Linus holds the card into the air."
-    linus "Behold! The- WOAH SHIT"
+    linus "Behold! {w=0.5} The- WOAH SHIT {w=0.5}{nw}"
     with vpunch
     n "Linus loses grip of the card as it tumbles down onto the table next to him."
     n "CS facepalms, while you can hear Luke laughing in the background."
     cs "Goodness Linus, you should maybe not do that next time."
     linus "Yeah, I’m sorry. Maybe you should hold it." 
     linus "This card is called the YTX-9001 Ti, a PCI add-in for enhancing and optimizing Youtube Poops."
-    n "CS’s eyes grow."
+    n "CS’s eyes widen."
     cs "Wait whaaat? That’s awesome! How does this even work?"
     linus "We don’t even know, we haven’t even tested it yet."
     linus "It also apparently has Poop-tracing, which I’m curious to see how that works."

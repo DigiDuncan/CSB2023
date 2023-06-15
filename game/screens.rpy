@@ -1065,6 +1065,9 @@ screen keyboard_help():
         label "Shift+A"
         text _("Opens the accessibility menu.")
 
+    hbox:
+        label "£"
+        text _("Union Jacks your weiner right off!")
 
 screen mouse_help():
 

@@ -80,7 +80,8 @@ label csbi_start:
     play sound "nicecar.ogg"
     carguy_nobeep "Nice car!"
     cs "It's pretty nice, but it's got some scratches..."
-    carguy "Nooot so nice scratch..."
+    play sound "notsonicescratch.ogg"
+    carguy_nobeep "Nooot so nice scratch..."
     carguy "You should try Crotch Doctor!"
     show cs worried at left
     cs "OH GOD AN ADVERTISER!!!"
@@ -141,7 +142,8 @@ label walmart:
     show walmart_outside behind cs with dissolve
     cs "Let's get to the car."
     show carguy at right with moveinright
-    carguy "Nooooot so nice scratch."
+    play sound "notsonicescratch.ogg"
+    carguy_nobeep "Nooooot so nice scratch."
     show cs disappointed at left
     cs "Not you again!"
     cs "I gotta get outta here!"
@@ -170,9 +172,9 @@ label room:
     scene craptop_bg
     show craptop edit
     with fade
-    n "CS walks to his craptop and opens up Premiere."
     play music "<loop 0>scales_of_joy.mp3" volume 0.3
     music scales of joy.mod - Mel O Dee
+    n "CS walks to his craptop and opens up Premiere."
     cs "Ooooh! Here's the one from my last editing stream. People would be excited to finally see this as a finished product."
     n "CS watches the in-progress video."
     cs "This is pretty good, but I am feeling uninspired... I don't know where to go from here..."
@@ -414,14 +416,14 @@ label csbi_end:
     cs "They didn't even do the JoJ!"
     show craptop sad with hpunch
     play sound "audio/punch.ogg"
-    pause
+    pause 1.0
     scene cs_room
     show cs angry
     cs "I need to get those guys!"
     cs "I'm gonna go to HoH SiS HQ and kick some butt!"
     scene hoh_outside with fade
     window hide
-    pause
+    pause 1.0
     scene hoh_hq with dissolve
     play music "<loop 0>time_for_a_smackdown.mp3" volume 0.2
     music Time for a Smackdown! - Tour De Pizza
@@ -482,8 +484,9 @@ label csbi_end:
             jump right
 
 label left:
-    scene hoh_hq5 with dissolve
+    scene hoh_hq5
     show worker_6 at right
+    with dissolve
     show cs angry at left with moveinleft
     cs "A... pineapple?"
     show cs angry at right with move
@@ -495,8 +498,9 @@ label left:
     jump csbii_start
 
 label right:
-    scene hoh_hq5 with dissolve
+    scene hoh_hq5
     show worker_7 at right
+    with dissolve
     show cs angry at left with moveinleft
     cs "A fucking chicken?"
     show cs angry at right with move

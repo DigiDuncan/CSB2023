@@ -206,6 +206,7 @@ define taran = Character("Taran", callback = beep)
 # CSB3 Character Images
 image luke = "characters/luke.png"
 image copguy_ai = "characters/ai_cop_guy_full.png"
+image taran flipped = Transform("characters/taran.png", xzoom = -1)
 
 # CSB3 Background Images
 image csdesk = "bg/cs_desk.png"
