@@ -131,8 +131,8 @@ label fired:
     show cs disappointed
     cs "Wait, what?"
     linus "Look, I don’t care how much you really wanted to humiliate me, just leave."
-    cs "I don’t understand, I didn’t think you would be this upse-"
-    linus "Just go already! I don’t want to see you again!"
+    cs "I don’t understand, I didn’t think you would be this upse-{nw}"
+    linus "Just get out of here you stupid dumb animal!!"
     cs "..."
     n "CS turns around and stomps out of the building."
     show cs angry with hpunch
@@ -247,7 +247,69 @@ label boost:
     cs "Wow, thank you so much Linus for this!"
     linus "No problem! This was my gift to you. Now, we should make a review video of it before the day ends."
     cs "Sure thing, let’s take the card out real quick."
+    show black with fade
     n "Linus goes and gets the cameras set up, and they start to film the video."
-    n "After they finish recording, CS goes up to Linus."
+    n "After they finish recording, CS goes up to Linus's office."
+    #Todo get linus's office
     cs "Hey Linus?"
     linus "What’s up CS? What do you need help with?"
+    menu:
+        "What does CS need help with?"
+        "I want to work on YTPs.":
+            jump YTP_Edit
+        "I want to do reviews":
+            jump reviews
+    
+label YTP_Edit:
+    cs "I have a question about what I want to do here at LTT."
+    n "Linus stands up and walks over to him."
+    show linus at center with ease
+    linus "Sure. I mean, what do you want to do?"
+    cs "I really want to make more YTPs for you guys."
+    n "Linus laughs a bit."
+    linus "Oh, CS, When I gave you the YTP card that was meant for use on your own channel, not the LTT one."
+    cs "I know, but-{nw}"
+    linus "I mean, for example. TARAN! GET IN HERE!"
+    n "Taran rushes up to Linus's office."
+    show taran at right with moveinright
+    taran "{i}panting{i} Yes, {w=0.5}Linus? {w=0.5}What is it?"
+    linus "Taran, have you ever seen a YTP?"
+    taran "Other than the one CS made the other day? Not really."
+    linus "See, CS? Not only will our audience be super confused, but our employees will be as well."
+    cs "Alright.. I see..."
+
+    menu:
+        "What will CS do?"
+        "Show everyone more YTPs":
+            jump both_fan
+        "Ignore them and keep making your own YTPs.":
+            jump ytp_fan
+
+label both_fan:
+    cs "You know what? Why don't you all come down to my office."
+    linus "I mean.. Sure. Let's see what you have in stock."
+    linus "Come on guys, let's go"
+    hide taran with moveoutright
+    hide linus with moveoutright
+    hide cs with moveoutright
+    scene csdesk with fade
+    n "Linus gathers more employees as they follow CS to his office."
+    show cs at left with moveinright
+    show linus at mid_left with moveinright
+    show taran at center with moveinright
+    show luke at mid_right with moveinright
+    show colton at right with moveinright
+    luke "What is this all about Linus? I was just about to go home."
+    linus "Boohoo, Luke, you probably don't even do anything at home."
+    luke ":("
+    colton "Hi guys! What did I miss? I thought we were going to build a streaming machine?"
+    linus "Look Colton, we can do that tomorrow."
+    cs "Hey guys~ CS Here! Showing you the wonderful world of YTPs!"
+    linus "Oh no.."
+    colton "A... what?"
+    cs "Alright! Strap in because YouTube is where the poop is!"
+    show black with fade
+    n "After half an hour passes, CS has shown LTT what YTPs are all about."
+    hide black with fade
+    cs "Welp. Those are some of the best ones that I could find."
+

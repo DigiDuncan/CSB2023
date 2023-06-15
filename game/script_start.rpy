@@ -202,6 +202,7 @@ image asylum = "bg/asylum2.png"
 # CSB3 Character Definitions
 define luke = Character("Luke", callback = renpy.partial(beep, name = "luke"))
 define taran = Character("Taran", callback = beep)
+define colton = Character("Colton", callback = beep)
 
 # CSB3 Character Images
 image luke = "characters/luke.png"
