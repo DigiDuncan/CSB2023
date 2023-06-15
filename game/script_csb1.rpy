@@ -8,6 +8,7 @@ label csbi_start:
 
     scene cs_room with fade
     show cs at center
+    $ persistent.cs = True
     play music "<loop 0>lets_hear_my_baby.mp3" volume 0.15
     music "Let's hear my baby - Walkman"
     cs "Welp, time to start up the ol' Craptop."
@@ -32,6 +33,7 @@ label csbi_start:
     play sound "ping_spam.mp3"
     discord "Hi! Hi! Hi! Hi!"
     n "The Discord is overflowing with people trying to talk to CS."
+    $ persistent.nova = True
     hide discord
     show cs at left
     play sound "ping.mp3"
@@ -74,6 +76,7 @@ label csbi_start:
     hide cs_house
     show cs at left with move
     show carguy at right with moveinright
+    $ persistent.carguy = True
     play sound "nicecar.ogg"
     carguy_nobeep "Nice car!"
     cs "It's pretty nice, but it's got some scratches..."
@@ -112,6 +115,7 @@ label walmart:
     play music "<loop 0>summer_clearance_sale.mp3"
     n "CS walks inside."
     show doug at right with moveinright
+    $ persistent.doug = True
     greeter "Hello and welcome to Walmart! Can I help you with anything?"
     show cs at left with moveinleft
     cs "Wow! It's Walmart CEO Doug McMillon! You actually work here?"
@@ -218,6 +222,7 @@ label room:
     cs "Hello! I am cs188 and I-"
     show cs at left with move
     show ed at right with moveinright
+    $ persistent.ed = True
     play music "<loop 0>hohsis_theme.mp3" volume 0.2
     music Alfred Hitchcock Intro Theme - Charles Gounod
     ed "Alright that will be 200,000 Bits."
@@ -233,7 +238,9 @@ label room:
     ed "Come on in, guys, CS left."
     show ed at left with move
     show wesley at center with moveinright
+    $ persistent.wesley = True
     show rich at right with moveinright
+    $ persistent.rich = True
     ed "So now that we're here, what should we do to him?"
     "Ed, Wesley, and Richard" "Hmmm..."
     wesley "Let's go check his room. We might get some ideas."
@@ -309,6 +316,7 @@ label michael_house:
     play music "<loop 0>super_friendly.mp3" volume 0.4
     music Super Friendly - Kevin Macleod
     show michael at right with moveinright
+    $ persistent.michael = True
     show cs flipped at offscreenright
     michael "Come in! Come in!"
     show michael at left
@@ -338,6 +346,7 @@ label michael_house:
     hide michael at right with moveoutright
     show michael at left with moveinright
     show phil at center with moveinright
+    $ persistent.phil = True
     phil "Phil Swift here!"
     michael "CS, meet my other friend, Phil!"
     cs "Oh wow! I didn't know you were friends with Phil Swift!"
@@ -423,6 +432,7 @@ label csbi_end:
     n "CS punches the worker."
     play sound "audio/punch.ogg"
     show worker_1 at right with hpunch
+    $ persistent.hoh_worker = True 
     hide worker_1 with moveoutright
     show worker_2 at right with moveinright
     worker_2 "They--... They're on the roof!!"
