@@ -146,10 +146,11 @@ label walmart:
     cs "Not you again!"
     cs "I gotta get outta here!"
     hide cs with moveoutright
-    hide carguy with dissolve
+    hide carguy
+    show black
+    with fade
     play sound "doorslam.ogg"
-    show black with dissolve
-    show car_inside behind cs
+    show car_inside with fade
     play music "<loop 0>canyon_but_in_the_car.mp3" volume 0.2
     play sound "driving.wav" volume 0.5
     cs "Let's get home before that guy doctors my crotch!"
