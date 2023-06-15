@@ -26,8 +26,9 @@ label csbiii_start:
     cs "I guess I'll edit the livestreaming one."
     scene black with fade
     n "CS starts working on editing the TechQuickie video and Linus comes in to check on him."
-    scene csdesk with fade
-    show cs at left with dissolve
+    scene csdesk
+    show cs at left
+    with fade
     show linus at right with moveinright
     linus "Hey CS, how's the new video coming along?"
     cs "It's going well, I have the background all done and I'm working on adding graphics and fixing audio."
@@ -85,7 +86,7 @@ label edit_video:
     taran "..."
     taran "Okay, I'll see you later then!"
     hide taran with moveoutright
-    n "CS goes back to his office."
+    n "Taran goes back to his office."
     cs "Well, I guess since this video is already good enough, I can upload it now."
     cs "It's so crazy having the ability to access the LTT channels. There is so much crazy shit going on here!"
     cs "Oh well, time to upload this."
@@ -103,13 +104,21 @@ label edit_video:
     cs "Welp, time to get to work!"
     menu:
         "Good":
+            hide cs
+            hide csdesk
+            show black
+            with fade
             jump boost
         "Bad":
+            hide cs
+            hide csdesk
+            show black
+            with fade
             jump fired
 
 label fired:
     $ renpy.movie_cutscene("movies/mymovie_cs.mpg")
-    scene inside_ltt
+    scene inside_ltt with fade
     n "The next day."
     n "CS walks into LMG to greet Linus."
     show cs at left with moveinleft
@@ -137,35 +146,57 @@ label fired:
     return
 label boost:
     n "The next day."
+    scene inside_ltt with fade
+    show cs at offscreenleft
     n "CS walks into LMG to greet Linus."
+    show cs at left with moveinleft
+    show linus at offscreenright
     cs "Hey guys! Did you all check out the new video?"
+    show linus at right with moveinright
     linus "Yes we did."
     linus "It was…"
     cs "Oh shoot, it was awful wasn’t it?"
     cs "Yeah, I should’ve realized my style is too crazy, I guess I should leave…"
+    show cs flipped at left
+    show linus behind cs at left with ease
+    show linus at center with ease
     n "As CS turns around, Linus friendly punches him in the back. "
     linus "Dude what are you talking about? That video was awesome!"
+    show cs at left
     cs "Woah wait, you actually like YTPs?"
-    linus "Yeah man, you think I just hired you on the spot because of citizenship?"
+    linus "Yeah man, you think I just hired you on the spot because of your obviously fake visa?"
     linus " I love your videos! I’ve been secretly hoping you would YTP one of mine for the longest time!"
+    show linus at left with ease
+    show linus at center with ease
     n "CS’s frown fades in a big grin, as they both high-five."
     cs "Hell yeah! I would’ve never thought YTPs would help me in a business setting, nevermind that my BOSS enjoyed them!"
     cs "Alright! Well, I guess I better get back to poopin’!"
+    show cs flipped at left
+    show cs flipped at offscreenleft with ease
     n "Before CS heads out of the room, Linus shouts to him."
-    linus "Hey, here later today, I got a big surprise to show you. I’ll stop by your office and we can check it out."
+    linus "Hey, later today, I got a big surprise to show you. I’ll stop by your office and we can check it out."
     cs "Sure thing!"
-    n "When CS gets back to his setup, he starts letting his mind race with ideas." 
+    scene csdesk
+    show cs at center
+    with fade
+    n "When CS gets back to his setup, he starts letting his mind race with ideas."
     cs "Oh man, where do I even start now?"
     cs "I have so many ideas of videos to poop, I could even try to teach Linus how to YTP…"
     cs " I mean, with the amount of tech he drops on a daily basis, he kinda already is a YTP."
     cs "Alright well, back to editing!"
     n "The time flies by as CS dumps his ideas into Premiere."
     cs "Doo dee doo…"
+    show linus at offscreenright
     n "Linus barges in. "
+    show linus at center with ease
+    with hpunch
+    show cs at left
+    show linus at right
+    with ease
     linus "CS!!!"
     cs "WOAH SHi- you scared the crap out of me!"
-    linus "hah sorry, I’m just excited to show you this!"
-    n "Linus holds out a rectangular box that reads on the front in black bold text DO NOT USE"
+    linus "Hah sorry, I’m just excited to show you this!"
+    n "Linus holds out a rectangular box that reads on the front in black bold text DO NOT USE."
     cs "Umm, you sure this is the right box? It literally says-"
     linus "Yeah I know what it says, I just wrote this on here so no one else uses it."
     linus "Don’t worry, I didn’t like, buy it from some creepy dude at a garage sale that claims it’s haunted."
@@ -177,6 +208,7 @@ label boost:
     linus "Not exactly. It’s an experimental piece of hardware that we have never used before, and it’s custom made."
     n "Linus holds the card into the air."
     linus "Behold! The- WOAH SHIT"
+    with vpunch
     n "Linus loses grip of the card as it tumbles down onto the table next to him."
     n "CS facepalms, while you can hear Luke laughing in the background."
     cs "Goodness Linus, you should maybe not do that next time."
@@ -190,13 +222,14 @@ label boost:
     n "Linus and CS take apart CS’s PC and put the card in."
     n "They then start the computer, and everything boots up as normal."
     linus "Alright, now that it’s up and working, we need to install the drivers. The card came with a flash drive that includes them."
-    n "As Linus inserts the flashdrive, a window off the side of the screen pops up saying Your new Peeforce Experience drivers are available."
-    n "cs CS chuckles a bit."
+    n "As Linus inserts the flashdrive, a window off the side of the screen pops up saying \"Your new Peeforce Experience drivers are available\"."
+    n "CS chuckles a bit."
     cs "Peeforce? I must admit, even these drive names are a bit silly."
-    n "linus Laughs."
+    n "Linus Laughs."
     linus "If you want, we can wipe them later."
     cs "Wipe! Now you’re in on it!"
     n "They both laugh as the drivers install, and once they’re finished, CS boots up Premiere."
+    scene csvideo with fade
     cs "Alrighty, let’s see here. Why don’t we try this on that YTP I just made?"
     linus "Go to the settings real quick, and find the YTP features. turn YTP mode ON to allow the poop-tracing."
     cs "Alright, here goes nothing."
@@ -206,6 +239,10 @@ label boost:
     linus "Open the video that we just took yesterday."
     n "CS opens the video, and enables YTP ON again. The source starts already making edits to start with."
     linus "And hey, if you don’t like the edits it makes, you can always turn it off or tweak the settings in that tab."
+    scene csdesk
+    show cs at left
+    show linus at right
+    with fade
     cs "Wow, thank you so much Linus for this!"
     linus "No problem! This was my gift to you. Now, we should make a review video of it before the day ends."
     cs "Sure thing, let’s take the card out real quick."
