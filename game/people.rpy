@@ -13,6 +13,7 @@ init python:
         "ed": "Ed",
         "wesley": "Wesley",
         "rich": "Richard",
+        "michael": "Michael Rosen",
         "phil": "Phil Swift",
         "hoh_worker": "HoH SiS Workers",
         "digi": "DigiDuncan",
@@ -20,7 +21,7 @@ init python:
         "arceus": "Arceus3251",
         "anno": "Annorexorcist",
         "border_guard": "Canadaian Border Guard",
-        "linus": "Linus Seebastian",
+        "linus": "Linus Sebastian",
         "mohs": "Mr. Mohs",
         "csgod": "CSGod",
         "luke": "Luke Lafreniere"
@@ -43,9 +44,9 @@ screen people_nav():
         vbox:
             spacing 10
             xoffset 350
-            for k, v in name_map.items():
+            for k in name_map.keys():
                 if k in persistent.seen:
-                    textbutton v action ShowMenu("person", k, bio)
+                    textbutton name_map[k] action ShowMenu("person", k, bio)
 
     textbutton "Return to categories" action ShowMenu("category_welcome") yoffset 950 xoffset 25
     textbutton "Return" action Return() yoffset 1000 xoffset 25
@@ -79,7 +80,7 @@ screen person(l, bio):
     use people_nav
 
     style_prefix "codex"
-    label l
+    label name_map[l]
 
     viewport:
         xsize 1300
@@ -91,11 +92,16 @@ screen person(l, bio):
         mousewheel True
         draggable True
         pagekeys True
-
-
         vbox:
             #You write the actual entry here. I suggest you split your text into smaller text _p sections, otherwise the text might overlap with
             #the scrollbars. If you're sure that your text fits the screen and scrolling is not needed then comment out everything starting from "scrollbars vertical" to
             #"pagekeys True" as seen in the next entry. If you do this, splitting the text is not needed.
 
-            text bio
+            text _p(bio)
+
+        if l == "cs":
+            add "images/characters/cs/neutral.png" xalign 1.0 yalign 0.0
+        elif l == "hoh_worker":
+            pass
+        else:
+            add "images/characters/"+l+".png" xalign 1.0 yalign 0.0

@@ -5,7 +5,7 @@ init python:
     renpy.add_layer("music", above = "master")
 
 define determination = Dissolve(0.0)
-default persistent.seen = []
+default persistent.seen = set()
 
 screen music():
     zorder 100

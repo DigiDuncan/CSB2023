@@ -2,9 +2,9 @@ label csbii_start:
 
     scene helipad with fade
     show cs angry at left
-    $ persistent.seen.append("cs")
+    $ persistent.seen.add("cs")
     show wesley at right
-    $ persistent.seen.append("wesley")
+    $ persistent.seen.add("wesley")
     with dissolve
     cs "You'll pay for what you did!"
     n "Wesley sweats nervously."
@@ -54,7 +54,7 @@ label punch:
     show cs angry at left with move
     cs "That'll teach you not to mess with a nerd's computer!"
     show ed_phone at right
-    $ persistent.seen.append("ed")
+    $ persistent.seen.add("ed")
     show cs angry at left with move
     ed "Hello, 911? My coworker just got knocked out by a disgruntled customer and appears to be dying! Send help!"
     jump caught
@@ -121,7 +121,7 @@ label special:
     show blue_light at left
     show red_light at right
     show copguy behind blue_light, red_light at right with moveinright
-    $ persistent.seen.append("copguy")
+    $ persistent.seen.add("copguy")
     copguy "Freeze! Put your hands in the air!"
     stop sound fadeout 1.0
     cs "What's going on? I didn't do anything!"
@@ -158,7 +158,7 @@ label questioning:
     hide copguy with moveoutright
     show asylum_worker at right with moveinright
     asylum_worker "Sure thing, boss."
-    $ persistent.seen.append("mohs")
+    $ persistent.seen.add("mohs")
     asylum_worker "Come on, follow me this way at once."
     hide cs with moveoutleft
     hide asylum_worker with moveoutleft
@@ -186,7 +186,7 @@ label asylum:
     cs "Ow..."
     cs "This isn't fair!"
     csgod "Hey!"
-    $ persistent.seen.append("csgod")
+    $ persistent.seen.add("csgod")
     csgod "Quit the whining!"
     show csgod at right
     show cs disappointed at left
@@ -220,7 +220,7 @@ label caught:
     show ed_phone behind blue_light, red_light at left with move
     show copguy behind blue_light, red_light  at right with moveinright
     copguy "Get back here!"
-    $ persistent.seen.append("copguy")
+    $ persistent.seen.add("copguy")
     cs "You can't catch me, I'm the speedy Michael Rosen!"
     stop music fadeout 3.0
     n "As CS is not actually the speedy Michael Rosen, he gets caught by the police."
@@ -249,7 +249,7 @@ label jail:
     music stal - C418
     cs "Oh, hi Arceus."
     arceus "Heya, CS. .w."
-    $ persistent.seen.append("arceus")
+    $ persistent.seen.add("arceus")
     # And it's about time.
     cs "So what are you in for?"
     arceus "Putting spyware on a politician's phone."
@@ -305,7 +305,7 @@ label breakout:
     arceus "Uniforms, check."
 
     show anno prison at right with moveinright
-    $ persistent.seen.append("anno")
+    $ persistent.seen.add("anno")
     anno "Spoons, check."
 
     show cs prison at center with dissolve
@@ -354,7 +354,7 @@ label bordercrossing:
     n "A wild border guard appears."
 
     show border_guard at center with dissolve
-    $ persistent.seen.append("border_guard")
+    $ persistent.seen.add("border_guard")
     border_guard "I'm going to need proof of citizenship, eh."
     show border_guard at right with move
     show arceus flipped at left with moveinleft
@@ -403,7 +403,7 @@ label bordercrossing:
 
     show arceus flipped at left with move
     show cashier at right with moveinright
-    $ persistent.seen.append("cashier")
+    $ persistent.seen.add("cashier")
 
     # TODO: [DIGI] Room flower shop music here
 
@@ -461,7 +461,7 @@ label bordercrossing:
 
     scene inside_ltt
     show linus
-    $ persistent.seen.append("linus")
+    $ persistent.seen.add("linus")
     with fade
     play music "<loop 0>passport.mp3" volume 0.5
     music PASSPORT.MID - George Stone
