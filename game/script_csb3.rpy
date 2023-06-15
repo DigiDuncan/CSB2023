@@ -101,3 +101,15 @@ label edit_video:
     cs "As always, I should make sure it's as good as possible so at least Linus will enjoy it, along with his fans."
     cs "But I also don't have much time before Linus comes back and notices, so I need to hurry!"
     cs "Welp, time to get to work!"
+    menu:
+        "Good":
+            jump boost
+        "Bad":
+            jump fired
+
+label fired:
+    $ renpy.movie_cutscene("movies/mymovie_cs.mpg")
+    scene inside_ltt
+    return
+label boost:
+    return
