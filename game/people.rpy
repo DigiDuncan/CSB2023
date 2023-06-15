@@ -27,9 +27,6 @@ init python:
         "luke": "Luke Lafreniere"
     }
 
-    global bio
-    bio = "wowowowowowowowowowow"
-
 screen people_nav():
     add Color('#5F777F', alpha=0.5)
 
@@ -46,7 +43,7 @@ screen people_nav():
             xoffset 350
             for k in name_map.keys():
                 if k in persistent.seen:
-                    textbutton name_map[k] action ShowMenu("person", k, bio)
+                    textbutton name_map[k] action ShowMenu("person", k)
 
     textbutton "Return to categories" action ShowMenu("category_welcome") yoffset 950 xoffset 25
     textbutton "Return" action Return() yoffset 1000 xoffset 25
@@ -74,7 +71,7 @@ screen people_welcome():
 ##-----------------------------------------------
 
 
-screen person(l, bio):
+screen person(l):
 
     tag menu
     use people_nav
@@ -87,18 +84,26 @@ screen person(l, bio):
         xsize 1300
         ysize 800
         xalign 0.5
-        xoffset 200 yoffset 200
+        xoffset 305 
+        yoffset 200
         side_yfill True
-        vbox:
-            #You write the actual entry here. I suggest you split your text into smaller text _p sections, otherwise the text might overlap with
-            #the scrollbars. If you're sure that your text fits the screen and scrolling is not needed then comment out everything starting from "scrollbars vertical" to
-            #"pagekeys True" as seen in the next entry. If you do this, splitting the text is not needed.
+        hbox:
+            vbox:
+                xsize 800
+                ysize 800
+                #You write the actual entry here. I suggest you split your text into smaller text _p sections, otherwise the text might overlap with
+                #the scrollbars. If you're sure that your text fits the screen and scrolling is not needed then comment out everything starting from "scrollbars vertical" to
+                #"pagekeys True" as seen in the next entry. If you do this, splitting the text is not needed.
+                python:
+                    try:
+                        fetched = renpy.file('bios/'+l+".txt").read().decode('utf-8').replace("\r", "")
+                    except:
+                        fetched = "This character currently does not have a bio and is currently experiencing an existential crisis."
 
-            text _p(bio)
-
-        if l == "cs":
-            add "images/characters/cs/neutral.png" xalign 1.0 yalign 1.0 zoom 0.75 xzoom -1
-        elif l == "hoh_worker":
-            pass
-        else:
-            add "images/characters/"+l+".png" xalign 1.0 yalign 1.0 zoom 0.75
+                text (fetched)
+            if l == "cs":
+                add "images/characters/cs/neutral.png" xalign 1.0 yalign 1.0 zoom 0.75 xzoom -1
+            elif l == "hoh_worker":
+                pass
+            else:
+                add "images/characters/"+l+".png" xalign 1.0 yalign 1.0 zoom 0.75
