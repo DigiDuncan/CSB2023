@@ -179,8 +179,8 @@ image cs prison_worried = "characters/cs/prison_worried.png"
 image cs guard = "characters/cs/guard.png"
 image border_guard = "characters/border_guard.png"
 image linus = "characters/linus.png"
-image asylum_worker = "characters/asylum_worker.png"
-image csgod = "characters/cs_god.png"
+image asylum_worker = "characters/mohs.png"
+image csgod = "characters/csgod.png"
 
 # CSB2 Background Images
 image helipad = "bg/helipad.png"
