@@ -222,7 +222,7 @@ label boost:
     show linus behind cs at left with ease
     show linus at center with ease
     n "As CS turns around, Linus friendly punches him in the back."
-    linus "Dude what are you talking about? That video was awesome!"s
+    linus "Dude what are you talking about? That video was awesome!"
     show cs at left
     cs "Woah wait, you actually like YTPs?"
     linus "Yeah man, you think I just hired you on the spot because of your obviously fake visa?"
