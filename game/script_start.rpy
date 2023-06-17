@@ -259,6 +259,7 @@ screen start_menu():
                     at transform:
                         zoom 0.666
                     action Play("sound", "sfx-valid.wav"), Hide("start_menu", Fade(1.0)), Jump("csbiii_start")
+                textbutton "Test" action Play("sound", "sfx-valid.wav"), Hide("start_menu", Fade(1.0)), Jump("test")
 
 style start_window is empty
 
