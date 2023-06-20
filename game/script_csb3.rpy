@@ -505,7 +505,15 @@ label arc_escape:
     n "Arceus squints into the distance, but CS and Arc both immediately recognize the sounds."
     "CS and Arceus" "SHIT!"
     arceus "Copguy's back! He's probably looking all over for us! What do we do CS?!"
-    #Jump to fight with Use YTP Power, Jump to hide with Hide in the forest.
+    menu:
+        "What do we do CS?!"
+        "Fight the cops with YTP Magic":
+            jump YTP_Magic_Fight
+        "Flee into the forest":
+            jump Pussy_Out_Forest
+label YTP_Magic_Fight:
 
+label Pussy_Out_Forest:
+    
 label high_gpu:
     jump secret
