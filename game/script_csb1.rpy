@@ -290,6 +290,7 @@ label michael_house:
     cs "Thankfully, Michael lives pretty close."
     cs "His vacation house in the US is only a few streets away!"
     cs "Before I forget, I should probably call him first."
+    show cs phone at left
     n "CS pulls out his phone and calls Michael."
     michael "Hello!"
     cs "Hey Michael! How you doin' today?"
