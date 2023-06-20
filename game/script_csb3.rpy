@@ -523,6 +523,13 @@ label ytp_magic_fight:
     jump secret
 
 label pussy_out_forest:
+    cs "Arceus quick! Let's escape into the forest!"
+    arceus "Alrighty, let's go!"
+    n "CS and Arc quickly jump into the trees next to them."
+    n "As CS and Arceus hunker down into the foliage, they see the flash of lights fly past them."
+    arceus "Phew! That was a close one CS!"
+    cs "Yeah, it looks like we hid just in time."
+    arceus "Alright well, should we wait here for a bit or do you think the coast is clear?"
     jump secret
 
 label high_gpu:
