@@ -83,7 +83,7 @@ define ycs = Character("Young CS", callback = renpy.partial(char_callback, beep 
 define hoh_operator = Character("HoH SiS Operator", callback = char_callback)
 define rich = Character("Richard", callback = renpy.partial(char_callback, name = "rich", beep = "rich"))
 define ed = Character("Ed", callback = renpy.partial(char_callback, name = "ed", beep = "ed"))
-define wesley = Character("Wesley", callback = renpy.partial(char_callback, name = "wesley", beep = "wesley"))
+define wesley = Character("Wesley", callback = renpy.partial(char_callback, name = "wesley", beep = "wes"))
 define michael = Character("Michael", callback = renpy.partial(char_callback, name = "michael", beep = "mich"))
 define michael_nobeep = Character("Michael", callback = renpy.partial(char_callback, name = "michael", play_beeps = False))
 define phil = Character("Phil", callback = renpy.partial(char_callback, name = "phil", beep = "phil"))
