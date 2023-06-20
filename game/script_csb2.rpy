@@ -405,8 +405,6 @@ label bordercrossing:
     show cashier at right with moveinright
     $ persistent.seen.add("cashier")
 
-    # TODO: [DIGI] Room flower shop music here
-
     arceus "Hi."
     cashier "Can I help you?"
     arceus "Yeah, can I have a dozen glazed donuts please?"
