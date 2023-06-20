@@ -7,6 +7,8 @@ label csbiii_start:
     scene inside_ltt with fade
     show linus at center with moveinright
     linus "Welcome to Linus Media Group, come on in, I'll show you your desk."
+    $ persistent.seen.add("linus")
+    $ persistent.seen.add("cs")
     cs "Thanks Linus."
     scene black with fade
     n "Linus and CS walk to CS' new desk."
@@ -111,6 +113,7 @@ label edit_video:
     cs "Hmm, this video looks pretty great so far, I'm practically almost done at this point."
     cs "I wonder what the others will think of this though? I should probably get opinions from some of the other employees."
     show taran at right with moveinright
+    $ persistent.seen.add("taran")
     taran "Need any help with anything?"
     cs "Hey Taran! You wanna check out my video so far?"
     taran "Sure, let it roll."
@@ -359,9 +362,11 @@ label both_fan:
     show taran at center with moveinright
     show luke at mid_right with moveinright
     show colton at right with moveinright
+    $ persistent.seen.add("luke")
     luke "What is this all about Linus? I was just about to go home."
     linus "Boohoo, Luke, you probably don't even do anything at home."
     luke ":("
+    $ persistent.seen.add("colton")
     colton "Hi guys! What did I miss? I thought we were going to build a streaming machine?"
     linus "Look Colton, we can do that tomorrow."
     cs "Hey guys~ CS Here! Showing you the wonderful world of YTPs!"
@@ -392,7 +397,9 @@ label both_fan:
     n "CS and Linus rush to the front door."
     n "Linus goes to open the door."
     linus "Who's there? Is anyone here?"
+    # TODO: Show Arc
     n "Suddenly, Arceus rushes in through the doors."
+    $ persistent.seen.add("arceus")
     arceus "CS! There you are! We need to go ASAP!"
     linus "So you DO have a furry fanbase who wants to join LTT! Damnit CS, I should've known."
     cs "Shut up Linus!"
@@ -426,6 +433,7 @@ label arc_escape:
     linus "Relax guys, it's nothing that we did."
     linus "*mutters to himself* I should've done a background check on cs188, it's weird how-"
     n "Copguy bursts in."
+    $ persistent.seen.add("copguy")
     copguy "Alright, everyone! Back against the wall! Nobody move!"
     luke "So, are we moving to the wall or… not moving?"
     copguy "Don't question the police! Just… stand against the wall!"
@@ -468,6 +476,7 @@ label arc_escape:
     arceus "Nah, I owe you."
     # TODO: Canadian border (night)
     n "CS and Arc approach the border guard again."
+    $ persistent.seen.add("border_guard")
     border_guard "I'm gonna need proof of-"
     border_guard "Ey, it's you two buds again!"
     arceus "Yeah, quite the vacation we had! We had so much fun in Canada didn't we CS?"
@@ -486,6 +495,7 @@ label arc_escape:
     cs "Ah, I see."
     # TODO: Police station
     n "Back at the police station, Copguy talks to the sheriff about CS."
+    $ persistent.seen.add("sheriff")
     sheriff "Howdy Officer copguy, tell me, you guys arrested CS this evening, right?"
     copguy "Unfortunately, no we did not."
     n "The sheriff slams his desk."
