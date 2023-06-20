@@ -508,12 +508,15 @@ label arc_escape:
     menu:
         "What do we do CS?!"
         "Fight the cops with YTP Magic":
-            jump YTP_Magic_Fight
+            jump ytp_magic_fight
         "Flee into the forest":
             jump Pussy_Out_Forest
-label YTP_Magic_Fight:
 
-label Pussy_Out_Forest:
-    
+label ytp_magic_fight:
+    jump secret
+
+label pussy_out_forest:
+    jump secret
+
 label high_gpu:
     jump secret
