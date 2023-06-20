@@ -286,7 +286,7 @@ label room:
 label michael_house:
     scene car_inside
     play music "<loop 0>canyon_but_in_the_car.mp3" volume 0.2
-    show cs phone at left
+    show cs at left
     cs "Thankfully, Michael lives pretty close."
     cs "His vacation house in the US is only a few streets away!"
     cs "Before I forget, I should probably call him first."
