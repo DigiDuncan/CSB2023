@@ -309,8 +309,11 @@ label boost:
     cs "Sure thing, let's take the card out real quick."
     show black with fade
     n "Linus goes and gets the cameras set up, and they start to film the video."
+    scene setup with fade
     n "After they finish recording, CS goes up to Linus's office."
     #Todo get linus's office
+    scene loffice with fade
+    show cs at left with moveinleft
     cs "Hey Linus?"
     linus "What's up CS? What do you need help with?"
     menu:
@@ -389,11 +392,16 @@ label both_fan:
     cs "..."
     linus "Whatever, let's just go check out who it is."
     # TODO: Different room in the LTT office
+    scene black with fade
+
     n "CS and Linus rush to the front door."
+    scene frontdoor with fade
+    show linus at right with moveinleft
+    show cs at center with moveinleft
     n "Linus goes to open the door."
     linus "Who's there? Is anyone here?"
-    # TODO: Show Arc
     n "Suddenly, Arceus rushes in through the doors."
+    show arceus at mid_right with moveinright
     arceus "CS! There you are! We need to go ASAP!"
     linus "So you DO have a furry fanbase who wants to join LTT! Damnit CS, I should've known."
     cs "Shut up Linus!"
@@ -531,7 +539,7 @@ label pussy_out_forest:
     arceus "Phew! That was a close one CS!"
     cs "Yeah, it looks like we hid just in time."
     arceus "Alright well, should we wait here for a bit or do you think the coast is clear?"
-    jump secret
+    jump wait_forest
 
 label wait_forest:
     cs "We should probably wait for a little bit. They might turn around and see us."
@@ -563,6 +571,11 @@ label wait_forest:
     copguy "Alright sheriff, we got em."
     n "Copguy gets in the car and they head off."
     n "As they are heading away, CS has the urge to say something."
+    menu:
+        "HoH SiS scammed me":
+            jump good_convince
+        "I'm not CS":
+            jump secret
 
 label good_convince:
     cs "Wait a second! The reason all this happened was because HoH SiS sabotaged my computer!"
