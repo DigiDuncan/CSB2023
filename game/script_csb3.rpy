@@ -518,7 +518,7 @@ label arc_escape:
         "Fight the cops with YTP Magic":
             jump ytp_magic_fight
         "Flee into the forest":
-            jump Pussy_Out_Forest
+            jump pussy_out_forest
 
 label ytp_magic_fight:
     jump secret
