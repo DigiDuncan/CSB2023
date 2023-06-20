@@ -2,7 +2,6 @@ label secret:
     scene black with fade
     play music "<loop 0>secret/space_classroom.mp3"
     show digi at center with Dissolve(3)
-    $ persistent.seen.add("digi")
     digi "Oh, you're back."
     digi "You keep ending up in scenes that don't exist."
     digi "It takes a while to write these, you know?"

@@ -1,11 +1,13 @@
 # Text beeps
 init python:
     renpy.music.register_channel("beep", "voice", loop = True)
-    def beep(event, name = None, **kwargs):
-        if preferences.text_beeps:
+    def char_callback(event, name = None, beep = None, play_beeps = True, **kwargs):
+        if name:
+            persistent.seen.add(name)
+        if preferences.text_beeps and play_beeps:
             if event == "show":
-                if name is not None:
-                    renpy.sound.play(f"audio/text/{name}.wav", channel = "beep", loop = True)
+                if beep is not None:
+                    renpy.sound.play(f"audio/text/{beep}.wav", channel = "beep", loop = True)
                     print(name)
                 else:
                     renpy.sound.play(f"audio/text/ut.wav", channel = "beep", loop = True)
@@ -67,32 +69,32 @@ transform xstretch_out:
 
 #CSB1 Character Definitions
 define n = Character(None, what_italic = True)  # Narrator
-define cs = Character("cs188", callback = renpy.partial(beep, name = "cs"))
-define craptop = Character("Craptop", callback = beep)
-define sticky = Character("Sticky Note", callback = beep)
-define discord = Character("Discord", callback = beep)
-define nova = Character("Nova", callback = beep)
-define carguy = Character("Car Guy", callback = renpy.partial(beep, name = "nice"))
-define carguy_nobeep = Character("Car Guy")
-define greeter = Character("Greeter", callback = beep)
-define doug = Character("Doug", callback = beep)
-define cashier = Character("Cashier", callback = beep)
-define ycs = Character("Young CS", callback = renpy.partial(beep, name = "ycs"))
-define hoh_operator = Character("HoH SiS Operator", callback = beep)
-define rich = Character("Richard", callback = renpy.partial(beep, name = "rich"))
-define ed = Character("Ed", callback = renpy.partial(beep, name = "ed"))
-define wesley = Character("Wesley", callback = renpy.partial(beep, name = "wes"))
-define michael = Character("Michael", callback = renpy.partial(beep, name = "mich"))
-define michael_nobeep = Character("Michael")
-define phil = Character("Phil", callback = renpy.partial(beep, name = "phil"))
-define worker_1 = Character("Worker 1", callback = beep)
-define worker_2 = Character("Worker 2", callback = beep)
-define worker_3 = Character("Worker 3", callback = beep)
-define worker_4 = Character("Worker 4", callback = beep)
-define worker_5 = Character("Worker 5", callback = beep)
-define worker_6 = Character("Worker 6", callback = beep)
-define worker_7 = Character("Worker 7", callback = beep)
-define digi = Character("Digi", callback = renpy.partial(beep, name = "digi"))
+define cs = Character("cs188", callback = renpy.partial(char_callback, name = "cs", beep = "cs"))
+define craptop = Character("Craptop", callback = char_callback)
+define sticky = Character("Sticky Note", callback = char_callback)
+define discord = Character("Discord", callback = char_callback)
+define nova = Character("Nova", callback = renpy.partial(char_callback, name = "nova"))
+define carguy = Character("Car Guy", callback = renpy.partial(char_callback, name = "carguy", beep = "nice"))
+define carguy_nobeep = Character("Car Guy", callback = renpy.partial(char_callback, name = "carguy", play_beeps = False))
+define greeter = Character("Greeter", callback = renpy.partial(char_callback, name = "doug"))
+define doug = Character("Doug", callback = renpy.partial(char_callback, name = "doug"))
+define cashier = Character("Cashier", callback = renpy.partial(char_callback, name = "cashier"))
+define ycs = Character("Young CS", callback = renpy.partial(char_callback, beep = "ycs"))
+define hoh_operator = Character("HoH SiS Operator", callback = char_callback)
+define rich = Character("Richard", callback = renpy.partial(char_callback, name = "rich", beep = "rich"))
+define ed = Character("Ed", callback = renpy.partial(char_callback, name = "ed", beep = "ed"))
+define wesley = Character("Wesley", callback = renpy.partial(char_callback, name = "wesley", beep = "wesley"))
+define michael = Character("Michael", callback = renpy.partial(char_callback, name = "michael", beep = "mich"))
+define michael_nobeep = Character("Michael", callback = renpy.partial(char_callback, name = "michael", play_beeps = False))
+define phil = Character("Phil", callback = renpy.partial(char_callback, name = "phil", beep = "phil"))
+define worker_1 = Character("Worker 1", callback = char_callback)
+define worker_2 = Character("Worker 2", callback = char_callback)
+define worker_3 = Character("Worker 3", callback = char_callback)
+define worker_4 = Character("Worker 4", callback = char_callback)
+define worker_5 = Character("Worker 5", callback = char_callback)
+define worker_6 = Character("Worker 6", callback = char_callback)
+define worker_7 = Character("Worker 7", callback = char_callback)
+define digi = Character("Digi", callback = renpy.partial(char_callback, name = "digi", beep = "digi"))
 
 #CSB1 Character Images
 image cs = "characters/cs/neutral.png"
@@ -159,13 +161,13 @@ image hoh_hq4 = "bg/office4.png"
 image hoh_hq5 = "bg/office5.png"
 
 # CSB2 Character Definitions
-define copguy = Character("CopGuy", callback = renpy.partial(beep, name = "cop"))
-define arceus = Character("Arceus", callback = renpy.partial(beep, name = "arc"))
-define anno = Character("Anno", callback = renpy.partial(beep, name = "anno"))
-define border_guard = Character("Border Guard", callback = beep)
-define linus = Character("Linus", callback = renpy.partial(beep, name = "ltt"))
-define asylum_worker = Character("Mr Mohs", callback = beep)
-define csgod = Character("CS God", callback = renpy.partial(beep, name = "csgod"))
+define copguy = Character("CopGuy", callback = renpy.partial(char_callback, name = "copguy", beep = "cop"))
+define arceus = Character("Arceus", callback = renpy.partial(char_callback, name = "arceus", beep = "arc"))
+define anno = Character("Anno", callback = renpy.partial(char_callback, name = "anno", beep = "anno"))
+define border_guard = Character("Border Guard", callback = renpy.partial(char_callback, name = "border_guard"))
+define linus = Character("Linus", callback = renpy.partial(char_callback, name = "linus", beep = "ltt"))
+define asylum_worker = Character("Mr. Mohs", callback = renpy.partial(char_callback, name = "mohs"))
+define csgod = Character("CS God", callback = renpy.partial(char_callback, name = "csgod", beep = "csgod"))
 
 # CSB2 Character Images
 image ed phone = "characters/ed_phone.png"
@@ -200,9 +202,9 @@ image question = "bg/police_interrogation.png"
 image asylum = "bg/asylum2.png"
 
 # CSB3 Character Definitions
-define luke = Character("Luke", callback = renpy.partial(beep, name = "luke"))
-define taran = Character("Taran", callback = beep)
-define colton = Character("Colton", callback = beep)
+define luke = Character("Luke", callback = renpy.partial(char_callback, name = "luke", beep = "luke"))
+define taran = Character("Taran", callback = renpy.partial(char_callback, name = "taran"))
+define colton = Character("Colton", callback = renpy.partial(char_callback, name = "colton"))
 
 # CSB3 Character Images
 image luke = "characters/luke.png"
