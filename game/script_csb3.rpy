@@ -388,6 +388,7 @@ label both_fan:
     linus "Wait what do you mean I know? I was just joking about the furry fanbase."
     cs "..."
     linus "Whatever, let's just go check out who it is."
+    # TODO: Different room in the LTT office
     n "CS and Linus rush to the front door."
     n "Linus goes to open the door."
     linus "Who's there? Is anyone here?"
@@ -412,12 +413,13 @@ label arc_escape:
     cs "I'm sorry guys, I'll try to catch you guys up after this."
     cs "This is CS, signing out."
     arceus "We have no time for that CS! We need to go!"
+    # TODO: Outside LTT
     n "CS and Arceus run out of the building, and try to find cover while they escape."
     n "As they are making their way away from the building, they can hear sirens grow in volume as flashing lights rush towards the LTT building."
     cs "This is awful, I was just starting to get along well with Linus and the gang."
     arceus "I'm sure they'll forgive you in due time, but for now, we need to evade the cops' trail and get back to the United States."
     n "While Arceus and CS were hitchhiking away from the scene, the cops show up at LTT to investigate."
-    # Cut to LTT
+    # TODO: Cut to LTT
     n "The employees at LTT are in chaos as the police show up to the front of the building."
     luke "WTF is going on?"
     taran "Linus! What did you do!?"
@@ -452,7 +454,8 @@ label arc_escape:
     colton "IT'S JULY!"
     n "Copguy orders the rest of the cops to leave the scene and return back to the station."
     copguy "Damnit, they don't have CS anymore. We're gonna have to look harder for him."
-    n "Back to CS and Arc, who have been running back to the US border."
+    # TODO: Road to Canada BG
+    n "Meanwhile, CS and Arc have been running back to the US border."
     cs "Aw man! This is embarrassing!"
     arceus "Yeah, so much for the editing job, I guess."
     cs "I can't seem to get a break this week. First my problems with HoH SiS, now I'm running from the cops?"
@@ -463,6 +466,7 @@ label arc_escape:
     arceus "I heard about the cops at the last second when I was checking comm chatter around the area. I figured that since you helped me out, I should come back for you."
     cs "Thanks man, I really owe you again."
     arceus "Nah, I owe you."
+    # TODO: Canadian border (night)
     n "CS and Arc approach the border guard again."
     border_guard "I'm gonna need proof of-"
     border_guard "Ey, it's you two buds again!"
@@ -470,6 +474,7 @@ label arc_escape:
     cs "Yep!"
     border_guard "Alright, hope you two come back to visit the Great White North again, ey buds?"
     arceus "Sure thing!"
+    # TODO: Washington road
     n "The duo continue their trek now in the US, in the state of Washington."
     cs "So, what happened with you?"
     arceus "Hmm?"
@@ -479,6 +484,7 @@ label arc_escape:
     arceus "I've been in prison for 5 years, so I've had to figure out what to do again for money."
     arceus "Anno's been at the hotel too, I think he's planning on starting some kinda band."
     cs "Ah, I see."
+    # TODO: Police station
     n "Back at the police station, Copguy talks to the sheriff about CS."
     sheriff "Howdy Officer copguy, tell me, you guys arrested CS this evening, right?"
     copguy "Unfortunately, no we did not."
@@ -494,6 +500,7 @@ label arc_escape:
     sheriff "The next time you come back here, he better be with you, or you're fired!"
     copguy "Sure thing, boss. I'll track him down on my own."
     n "Copguy turns around and heads out to track down CS and Arc."
+    # TODO: Washington road
     n "Meanwhile, CS and Arc are still making their way through the US, without any sense of direction."
     cs "Hey Arceus? Do you have any clue where we are?"
     arceus "No idea, I'm just following the road. There's bound to be a rest stop here eventually."
