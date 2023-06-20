@@ -105,6 +105,7 @@ image cs worried = "characters/cs/worried.png"
 image cs worried flipped = Transform("characters/cs/worried.png", xzoom = -1)
 image cs disappointed = "characters/cs/disappointed.png"
 image cs concentrate = "characters/cs/concentrate.png"
+image cs phone = "characters/cs/phone.png"
 image discord = "characters/discord.png"
 image nova = "characters/nova.png"
 image carguy = "characters/carguy.png"
