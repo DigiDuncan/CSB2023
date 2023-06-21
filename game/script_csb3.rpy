@@ -404,10 +404,10 @@ label both_fan:
     show arceus at mid_right with moveinright
     arceus "CS! There you are! We need to go ASAP!"
     linus "So you DO have a furry fanbase who wants to join LTT! Damnit CS, I should've known."
-    cs "Shut up Linus!"
+    cs "Shut up, Linus!"
     cs "Arceus, what's going on? Where have you been?"
-    arceus "Look, CS, we don't have much time. I know that you got you've been living with Anno here for a while, but the cops are still looking to extradite us back to the America, and they are headed to LTT to search for you!"
-    linus "WHAAAAT? CS, why are the cops chasing you? This could seriously damage our reputation more than the time I mentioned I dropped hard R's as a kid!"
+    arceus "Look, CS, we don't have much time. I know that you've been living here for a while, but the cops are still looking to extradite us back to America, and they are headed to LTT to search for you!"
+    linus "WHAT? CS, why are the cops chasing you? This could seriously damage our reputation more than the time I mentioned I dropped hard R's as a kid!"
 
     menu:
         "What will CS do?"
@@ -423,17 +423,29 @@ label arc_escape:
     cs "This is CS, signing out."
     arceus "We have no time for that CS! We need to go!"
     # TODO: Outside LTT
+    scene outside_ltt
+    show cs at left
+    show arceus at right
+    with moveinright
     n "CS and Arceus run out of the building, and try to find cover while they escape."
     n "As they are making their way away from the building, they can hear sirens grow in volume as flashing lights rush towards the LTT building."
     cs "This is awful, I was just starting to get along well with Linus and the gang."
     arceus "I'm sure they'll forgive you in due time, but for now, we need to evade the cops' trail and get back to the United States."
     n "While Arceus and CS were hitchhiking away from the scene, the cops show up at LTT to investigate."
     # TODO: Cut to LTT
+    scene frontdoor
+    show linus at left
+    show luke at center
+    show taran at right
     n "The employees at LTT are in chaos as the police show up to the front of the building."
     luke "WTF is going on?"
     taran "Linus! What did you do!?"
     linus "Relax guys, it's nothing that we did."
     linus "*mutters to himself* I should've done a background check on cs188, it's weird how-"
+    show luke at mid_left
+    show taran at center
+    with move
+    show copguy at right with moveinright
     n "Copguy bursts in."
     copguy "Alright, everyone! Back against the wall! Nobody move!"
     luke "So, are we moving to the wall or… not moving?"
@@ -448,11 +460,12 @@ label arc_escape:
     taran "I uhh…"
     taran "I was saying that…"
     taran "That it looks like Colton! Yeah!"
+    show colton at mid_right behind copguy with dissolve
     colton "WTF Taran!"
     linus "Yep, that looks like Colton alright."
     copguy "Alright, sir what's your name?"
     linus "It's lin-"
-    copguy "Yeah okay. Linard, if you say that it's this man, how can you explain the maid outfit that was used in the video that was just uploaded an hour ago?"
+    copguy "Yeah okay. Linard, if you say that it's {i}this{/i} man, how can you explain the maid outfit that was used in the video that was just uploaded an hour ago?"
     linus "Well uhh, he's got some... weird kinks…"
     colton "Oh my fucking god."
     copguy "If you are so sure then, lemme go talk to the sheriff about this."
@@ -464,6 +477,9 @@ label arc_escape:
     n "Copguy orders the rest of the cops to leave the scene and return back to the station."
     copguy "Damnit, they don't have CS anymore. We're gonna have to look harder for him."
     # TODO: Road to Canada BG
+    scene road_to_canada
+    show cs at left
+    show arceus at right
     n "Meanwhile, CS and Arc have been running back to the US border."
     cs "Aw man! This is embarrassing!"
     arceus "Yeah, so much for the editing job, I guess."
@@ -476,7 +492,11 @@ label arc_escape:
     cs "Thanks man, I really owe you again."
     arceus "Nah, I owe you."
     # TODO: Canadian border (night)
+    scene canadian_border
+    show cs at left
+    show arceus at center
     n "CS and Arc approach the border guard again."
+    show border_guard at right with moveinright
     border_guard "I'm gonna need proof of-"
     border_guard "Ey, it's you two buds again!"
     arceus "Yeah, quite the vacation we had! We had so much fun in Canada didn't we CS?"
