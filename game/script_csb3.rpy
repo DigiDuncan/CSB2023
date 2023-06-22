@@ -5,6 +5,7 @@ label csbiii_start:
     n "CS returns to LMG the next day."
     hide cs with moveoutright
     scene inside_ltt with fade
+    play music "<loop 0>passport.mp3" volume 0.5
     show linus at center with moveinright
     linus "Welcome to Linus Media Group, come on in, I'll show you your desk."
     cs "Thanks Linus."
@@ -64,6 +65,7 @@ label microcenter:
     cs "Okay but, are there any recommendations you would give me for building this? This is YOUR money, you know."
     linus "Nah, it's fine. I'm sure you will do well picking out parts, make sure to get the highest quality you can!"
     cs "Alrighty, I'll get going now."
+    stop music fadeout 3.0
     # TODO: [BG] CS goes to Microcenter
     n "CS goes to Microcenter."
     cs "Okay gamers, we are buying some parts for our epic computing machine. Let's go inside the magical concrete structure to buy some computing parts."  # the fuck is this line Pakoo
@@ -108,8 +110,11 @@ label edit_video:
     cs "Yeah, no, don't worry I got this."
     hide linus with moveoutright
     n "Linus leaves the room."
+    stop music fadeout 3.0
     cs "Hmm, this video looks pretty great so far, I'm practically almost done at this point."
     cs "I wonder what the others will think of this though? I should probably get opinions from some of the other employees."
+    play music "<loop 0>good_eatin.mp3" volume 0.4
+    music Good Eatin - ClascyJitto
     show taran at right with moveinright
     taran "Need any help with anything?"
     cs "Hey Taran! You wanna check out my video so far?"
@@ -146,6 +151,7 @@ label edit_video:
     taran "Okay, I'll see you later then!"
     show taran flipped at right
     hide taran with moveoutright
+    stop music fadeout 3.0
     # Do we really need three lines for this?
     cs "Well, I guess since this video is already good enough, I can upload it now."
     cs "It's so crazy having the ability to access the LTT channels. There is so much crazy shit going on here!"
