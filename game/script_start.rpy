@@ -222,12 +222,14 @@ image asylum = "bg/asylum2.png"
 define luke = Character("Luke", callback = renpy.partial(char_callback, name = "luke", beep = "luke"))
 define taran = Character("Taran", callback = renpy.partial(char_callback, name = "taran"))
 define colton = Character("Colton", callback = renpy.partial(char_callback, name = "colton"))
+define sheriff = Character("Sheriff", callback = renpy.partial(char_callback, name = "sheriff"))
 
 # CSB3 Character Images
 image luke = "characters/luke.png"
 image copguy_ai = "characters/ai_cop_guy_full.png"
 image taran flipped = Transform("characters/taran.png", xzoom = -1)
 image colton = "characters/colton.png"
+image sheriff = "characters/jonah_cop.png"
 
 # CSB3 Background Images
 image csdesk = "bg/cs_desk.png"
