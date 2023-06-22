@@ -484,7 +484,7 @@ label arc_escape:
     n "Copguy orders the rest of the cops to leave the scene and return back to the station."
     copguy "Damnit, they don't have CS anymore. We're gonna have to look harder for him."
     # TODO: Road to Canada BG
-    scene road_to_canada
+    scene road_to_canada with fade
     show cs at left
     show arceus at right
     n "Meanwhile, CS and Arc have been running back to the US border."
@@ -499,7 +499,7 @@ label arc_escape:
     cs "Thanks man, I really owe you again."
     arceus "Nah, I owe you."
     # TODO: Canadian border (night)
-    scene border_dusk
+    scene border_dusk with fade
     show cs at left
     show arceus at center
     n "CS and Arc approach the border guard again."
@@ -510,8 +510,10 @@ label arc_escape:
     cs "Yep!"
     border_guard "Alright, hope you two come back to visit the Great White North again, ey buds?"
     arceus "Sure thing!"
-    # TODO: Washington road
+    scene washington_road with fade
     n "The duo continue their trek now in the US, in the state of Washington."
+    show cs at left with moveinleft
+    show arceus at right with moveinright
     cs "So, what happened with you?"
     arceus "Hmm?"
     cs "Well, I went to work at LTT, and had to spend my nights at a nearby hotel."
@@ -520,11 +522,14 @@ label arc_escape:
     arceus "I've been in prison for 5 years, so I've had to figure out what to do again for money."
     arceus "Anno's been at the hotel too, I think he's planning on starting some kinda band."
     cs "Ah, I see."
-    # TODO: Police station
+    scene sheriff_office with fade
     n "Back at the police station, Copguy talks to the sheriff about CS."
+    show sheriff at left
+    show copguy at right with moveinright
     sheriff "Howdy Officer copguy, tell me, you guys arrested CS this evening, right?"
     copguy "Unfortunately, no we did not."
     n "The sheriff slams his desk."
+    show sheriff at left with hpunch
     sheriff "Damnit! And how did you fuck that up?"
     copguy "Look, you see, he managed-"
     sheriff "You know what, I don't want to hear this!"
@@ -535,9 +540,12 @@ label arc_escape:
     sheriff "But believe me, this CS man has a pretty high target on his head, and we need to bring him to justice before him and his gang do anything else funny."
     sheriff "The next time you come back here, he better be with you, or you're fired!"
     copguy "Sure thing, boss. I'll track him down on my own."
+    hide copguy with moveoutright
     n "Copguy turns around and heads out to track down CS and Arc."
-    # TODO: Washington road
+    scene washington_road with fade
     n "Meanwhile, CS and Arc are still making their way through the US, without any sense of direction."
+    show cs at left with moveinleft
+    show arceus at right with moveinright
     cs "Hey Arceus? Do you have any clue where we are?"
     arceus "No idea, I'm just following the road. There's bound to be a rest stop here eventually."
     cs "I hope so, we've been walking for hours. It's gotta be midnight around now…"
@@ -561,6 +569,9 @@ label ytp_magic_fight:
 label pussy_out_forest:
     cs "Arceus quick! Let's escape into the forest!"
     arceus "Alrighty, let's go!"
+    hide arceus with moveoutright
+    hide cs with moveoutright
+    scene black with fade
     n "CS and Arc quickly jump into the trees next to them."
     n "As CS and Arceus hunker down into the foliage, they see the flash of lights fly past them."
     arceus "Phew! That was a close one CS!"
@@ -572,6 +583,9 @@ label wait_forest:
     cs "We should probably wait for a little bit. They might turn around and see us."
     arceus "Yeah, that's a good point. I kinda don't want to risk going back to prison again."
     n "CS and Arc stay quiet in the forest for about 15 minutes before heading back on the road again."
+    scene washington_road with fade
+    show cs at left with moveinleft
+    show arceus at right with moveinright
     cs "Hey Arceus?"
     cs "Hmm?"
     cs "Now that we are out here and have more time to talk, where exactly are we heading to? Why did we come back to the US?"
@@ -584,9 +598,14 @@ label wait_forest:
     arceus "I don't think that'll be the case."
     copguy "I don't think so either."
     n "Before CS and Arc can react, they both get the lights knocked out of them."
+    scene black with determination
     n "When CS and Arc wake up, they find themselves in shackles leaned up against a cop car."
+    scene washington_road with fade
+    show cs at left
+    show arceus flipped at mid_left_left
     cs "Huh?"
     cs "What happened?"
+    show copguy at right with moveinright
     copguy "Hey, you're finally awake."
     arceus "Hey, CS."
     arceus "I'm sorry."
@@ -594,6 +613,9 @@ label wait_forest:
     cs "Arceus! Can't you do something about this?"
     arceus "No can do, boss. Looks like this is the end of the line."
     copguy "No time for negotiations, pal. Get in the car."
+    scene copcar with fade
+    show arceus at right with moveinleft
+    show cs at left with moveinleft
     n "CS and Arc get in the cop car, as copguy says some order on his walkie."
     copguy "Alright sheriff, we got em."
     n "Copguy gets in the car and they head off."
@@ -618,7 +640,11 @@ label good_convince:
     n "Arceus pulls up a laptop that he managed to grab from the front seat."
     copguy "WHAT? How did you get that?"
     arceus "Watch this."
+    show black with fade
     n "Copguy stops the car as Arceus plays back the scene from CSB1 with the scamming of CS from HoH SiS."
+    scene copcar with fade
+    show arceus at right
+    show cs at left
     cs "How-"
     arceus "I have my ways."
     copguy "I don't understand, so HoH SiS really did scam you hard, didn't they?"
@@ -626,15 +652,28 @@ label good_convince:
     copguy "But I can't argue right now on if that footage is fake or not."
     n "Copguy gets out of the car."
     n "He then proceeds to open the doors and let them out, freeing them of their cuffs."
+    scene washington_road with fade
+    show copguy at right with moveinleft
+    show cs at left with moveinleft
+    show arceus flipped at mid_left_left with moveinleft
     copguy "Listen, I really shouldn't be doing this right now, but I have to go back to look into this deal with HoH SiS."
     copguy "You are free to go for now."
     copguy "But don't do anything stupid, because I have my eye on you two!"
     n "Copguy gets back into his car, and heads off into the dead of night."
+    hide copguy with moveoutright
+    show arceus flipped at mid_right_right with move
+    show arceus at mid_right_right
     n "CS and Arc look at eachother, and smile."
     arceus "Holy crap, I didn't think that would work."
     cs "Me neither! I'm so glad that they let us go!"
     cs "I don't know how you got that footage, but we are now free once again!"
     arceus "Hooray for CS and Arc!"
+    show cs at center
+    show arceus at center 
+    with move
+    show cs at mid_left_left
+    show arceus at mid_right_right
+    with move
     n "They both high five, and continue heading in the direction of the road."
 
 label high_gpu:
