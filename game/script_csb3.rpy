@@ -423,7 +423,7 @@ label arc_escape:
     cs "This is CS, signing out."
     arceus "We have no time for that CS! We need to go!"
     # TODO: Outside LTT
-    scene outside_ltt
+    scene outside_ltt with determination
     show cs at left
     show arceus at right
     with moveinright
@@ -470,6 +470,7 @@ label arc_escape:
     colton "Oh my fucking god."
     copguy "If you are so sure then, lemme go talk to the sheriff about this."
     linus "Sure thing, officer."
+    hide copguy with moveoutright
     n "Copguy leaves the scene."
     colton "I can't fucking believe you guys! That was way too far!"
     linus "April fools?"
@@ -492,7 +493,7 @@ label arc_escape:
     cs "Thanks man, I really owe you again."
     arceus "Nah, I owe you."
     # TODO: Canadian border (night)
-    scene canadian_border
+    scene border_dusk
     show cs at left
     show arceus at center
     n "CS and Arc approach the border guard again."

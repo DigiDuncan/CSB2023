@@ -219,6 +219,8 @@ image csvideo = "bg/csvideo.png"
 image setup = "bg/linus_setup.png"
 image loffice  = "bg/the_linus_group.png"
 image frontdoor = "bg/linus_frontdoor.png"
+image road_to_canada = "bg/road_to_canada.png"
+image border_dusk = "bg/canadian_border_night.png"
 # AI Ending
 image park1 = "bg/ai/amusementpark1.png"
 image park2 = "bg/ai/amusementpark2.png"
