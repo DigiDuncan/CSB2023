@@ -649,6 +649,8 @@ label wait_forest:
 
 label good_convince:
     show cs worried
+    play music "<loop 0>pressing_pursuit_cornered.mp3" volume 0.3
+    music Pressing Pursuit ~ Cornered - Masakazu Sugimori
     cs "Wait a second! The reason all this happened was because HoH SiS sabotaged my computer!"
     arceus "Wait what?"
     copguy "What are you on about?"
@@ -672,6 +674,7 @@ label good_convince:
     copguy "I don't understand, so HoH SiS really did scam you hard, didn't they?"
     copguy "I'm not sure how valid it was for you to push that man off a building,"
     copguy "But I can't argue right now on if that footage is fake or not."
+    stop music fadeout 3.0
     n "Copguy gets out of the car."
     n "He then proceeds to open the doors and let them out, freeing them of their cuffs."
     scene washington_road with fade
