@@ -89,6 +89,7 @@ label csbi_start:
     show black with dissolve
     show cs_car_inside behind cs
     play music "<loop 0>canyon_but_in_the_car.mp3" volume 0.2
+    music CANYON.MID - George Stone
     cs "Whew.. That was close!"
     cs "Should I go get groceries?"
     menu:
