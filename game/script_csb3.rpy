@@ -212,6 +212,7 @@ label fired:
     cs "Well, I guess I have no other choice than to look for another job."
     return
 label boost:
+    $ renpy.movie_cutscene("movies/good_cs_ytp.mpg")
     n "The next day."
     scene inside_ltt with fade
     show cs at offscreenleft
