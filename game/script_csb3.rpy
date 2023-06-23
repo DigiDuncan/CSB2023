@@ -223,9 +223,10 @@ label boost:
     show linus at right with moveinright
     linus "Yes we did."
     linus "It was..."
+    show cs disappointed
     cs "Oh shoot, it was awful wasn't it?"
     cs "Yeah, I should've realized my style is too crazy, I guess I should leave…"
-    show cs flipped at left
+    show cs disappointed flipped at left
     show linus behind cs at left with ease
     show linus at center with ease
     n "As CS turns around, Linus friendly punches him in the back."
@@ -236,6 +237,7 @@ label boost:
     linus "I love your videos! I've been secretly hoping you would YTP one of mine for the longest time!"
     show linus at left with ease
     show linus at center with ease
+    show cs happy
     n "CS's frown fades in a big grin, as they both high-five."
     cs "Hell yeah! I would've never thought YTPs would help me in a business setting, nevermind that my BOSS enjoyed them!"
     cs "Alright! Well, I guess I better get back to poopin'!"
@@ -262,9 +264,12 @@ label boost:
     show linus at right
     with ease
     linus "CS!!!"
+    show cs worried
     cs "WOAH SHI--{w=0.5}you scared the crap out of me!"
+    show cs
     linus "Hah sorry, I'm just excited to show you this!"
     n "Linus holds out a rectangular box that reads on the front in black bold text {b}DO NOT USE.{/b}"
+    show cs disappointed
     cs "Umm, you sure this is the right box? It literally says--"
     linus "Yeah I know what it says, I just wrote this on here so no one else uses it."
     linus "Don't worry, I didn't like, buy it from some creepy dude at a garage sale that claims it's haunted."
@@ -272,6 +277,7 @@ label boost:
     linus "Look just, open the box. I'm sure you'll like it."
     n "CS cautiously takes the box, and opens the top. "
     n "Inside is what looks to be a graphics card, but with a brown YouTube logo engraved into the side."
+    show cs
     cs "Woah, what is this Linus? A YouTube-brand graphics card?"
     linus "Not exactly. It's an experimental piece of hardware that we have never used before, and it's custom made."
     n "Linus holds the card into the air."
@@ -292,6 +298,7 @@ label boost:
     linus "Alright, now that it's up and working, we need to install the drivers. The card came with a flash drive that includes them."
     n "As Linus inserts the flashdrive, a window off the side of the screen pops up saying 'Your new Peeforce Experience drivers are available.'"
     n "CS chuckles a bit."
+    show cs happy
     cs "Peeforce? I must admit, even these drive names are a bit silly."
     n "Linus Laughs."
     linus "If you want, we can wipe them later."
@@ -331,6 +338,7 @@ label boost:
             jump reviews
     
 label ytp_edit:
+    show linus at offscreenright
     cs "I have a question about what I want to do here at LTT."
     n "Linus stands up and walks over to him."
     show linus at center with ease
@@ -364,9 +372,9 @@ label both_fan:
     hide cs with moveoutright
     scene csdesk with fade
     n "Linus gathers more employees as they follow CS to his office."
-    show cs at left with moveinright
+    show cs at center with moveinright
     show linus at mid_left with moveinright
-    show taran at center with moveinright
+    show taran flipped at left with moveinright
     show luke at mid_right with moveinright
     show colton at right with moveinright
     luke "What is this all about Linus? I was just about to go home."
@@ -387,8 +395,10 @@ label both_fan:
     linus "Nooooo...?"
     luke "Now that you say that..."
     linus "Alright fine! I guess if you all like it too, we could put some on our channel from time to time."
+    show cs happy
     cs "Hell yeah!"
     linus "But you still have to help with some other videos as well, not just YTPs."
+    show cs
     cs "Alright, that's fair."
     linus "Well, the rest of you can go back to what you were doing."
     colton "Oh yeah, Linus? Before I go, I was told someone was banging on the door to enter just a minute ago."
@@ -411,6 +421,7 @@ label both_fan:
     show arceus at mid_right with moveinright
     arceus "CS! There you are! We need to go ASAP!"
     linus "So you DO have a furry fanbase who wants to join LTT! Damnit CS, I should've known."
+    show cs worried
     cs "Shut up, Linus!"
     cs "Arceus, what's going on? Where have you been?"
     arceus "Look, CS, we don't have much time. I know that you've been living here for a while, but the cops are still looking to extradite us back to America, and they are headed to LTT to search for you!"
@@ -426,12 +437,13 @@ label both_fan:
 label arc_escape:
     cs "Look I'm sorry Linus, I wish I could explain, but Arceus is right. I need to get going."
     linus "I am like, so confused and frustrated, this better not ruin LMG."
+    show cs disappointed
     cs "I'm sorry guys, I'll try to catch you guys up after this."
     cs "This is CS, signing out."
     arceus "We have no time for that CS! We need to go!"
     # TODO: Outside LTT
     scene outside_ltt with determination
-    show cs at left
+    show cs disappointed at left
     show arceus at right
     with moveinright
     n "CS and Arceus run out of the building, and try to find cover while they escape."
@@ -439,18 +451,19 @@ label arc_escape:
     cs "This is awful, I was just starting to get along well with Linus and the gang."
     arceus "I'm sure they'll forgive you in due time, but for now, we need to evade the cops' trail and get back to the United States."
     n "While Arceus and CS were hitchhiking away from the scene, the cops show up at LTT to investigate."
-    # TODO: Cut to LTT
     scene frontdoor
     show linus at left
     show luke at center
     show taran at right
+    show colton at mid_left
     n "The employees at LTT are in chaos as the police show up to the front of the building."
     luke "WTF is going on?"
     taran "Linus! What did you do!?"
     linus "Relax guys, it's nothing that we did."
     linus "*mutters to himself* I should've done a background check on cs188, it's weird how-"
     show luke at mid_left
-    show taran at center
+    show taran flipped at mid_mid_left
+    show colton at center
     with move
     show copguy at right with moveinright
     n "Copguy bursts in."
@@ -467,7 +480,6 @@ label arc_escape:
     taran "I uhh…"
     taran "I was saying that…"
     taran "That it looks like Colton! Yeah!"
-    show colton at mid_right behind copguy with dissolve
     colton "WTF Taran!"
     linus "Yep, that looks like Colton alright."
     copguy "Alright, sir what's your name?"
@@ -484,9 +496,8 @@ label arc_escape:
     colton "IT'S JULY!"
     n "Copguy orders the rest of the cops to leave the scene and return back to the station."
     copguy "Damnit, they don't have CS anymore. We're gonna have to look harder for him."
-    # TODO: Road to Canada BG
     scene road_to_canada with fade
-    show cs at left
+    show cs disappointed at left
     show arceus at right
     n "Meanwhile, CS and Arc have been running back to the US border."
     cs "Aw man! This is embarrassing!"
@@ -499,7 +510,6 @@ label arc_escape:
     arceus "I heard about the cops at the last second when I was checking comm chatter around the area. I figured that since you helped me out, I should come back for you."
     cs "Thanks man, I really owe you again."
     arceus "Nah, I owe you."
-    # TODO: Canadian border (night)
     scene border_dusk with fade
     show cs at left
     show arceus at center
@@ -545,16 +555,20 @@ label arc_escape:
     n "Copguy turns around and heads out to track down CS and Arc."
     scene washington_road with fade
     n "Meanwhile, CS and Arc are still making their way through the US, without any sense of direction."
+    play music "<loop 0>echoing.mp3" volume 0.5
+    music Echoing - Banana
     show cs at left with moveinleft
     show arceus at right with moveinright
     cs "Hey Arceus? Do you have any clue where we are?"
     arceus "No idea, I'm just following the road. There's bound to be a rest stop here eventually."
     cs "I hope so, we've been walking for hours. It's gotta be midnight around now…"
     #More filler here probably, for now I'm jumping to when copguy comes in
+    stop music fadeout 3.0
     n "CS looks into the distance."
     cs "Hey Arc! I can see some lights in the distance! We gotta be getting close!"
     arceus "Wait a minute, those are-"
     n "Arceus squints into the distance, but CS and Arc both immediately recognize the sounds."
+    show cs worried
     "CS and Arceus" "SHIT!"
     arceus "Copguy's back! He's probably looking all over for us! What do we do CS?!"
     menu:
@@ -602,7 +616,7 @@ label wait_forest:
     scene black with determination
     n "When CS and Arc wake up, they find themselves in shackles leaned up against a cop car."
     scene washington_road with fade
-    show cs at left
+    show cs disappointed at left
     show arceus flipped at mid_left_left
     cs "Huh?"
     cs "What happened?"
@@ -610,13 +624,14 @@ label wait_forest:
     copguy "Hey, you're finally awake."
     arceus "Hey, CS."
     arceus "I'm sorry."
+    show cs worried
     cs "No no no! This can't be happening!"
     cs "Arceus! Can't you do something about this?"
     arceus "No can do, boss. Looks like this is the end of the line."
     copguy "No time for negotiations, pal. Get in the car."
     scene copcar with fade
     show arceus at right with moveinleft
-    show cs at left with moveinleft
+    show cs disappointed at left with moveinleft
     n "CS and Arc get in the cop car, as copguy says some order on his walkie."
     copguy "Alright sheriff, we got em."
     n "Copguy gets in the car and they head off."
@@ -628,6 +643,7 @@ label wait_forest:
             jump secret
 
 label good_convince:
+    show cs worried
     cs "Wait a second! The reason all this happened was because HoH SiS sabotaged my computer!"
     arceus "Wait what?"
     copguy "What are you on about?"
@@ -645,7 +661,7 @@ label good_convince:
     n "Copguy stops the car as Arceus plays back the scene from CSB1 with the scamming of CS from HoH SiS."
     scene copcar with fade
     show arceus at right
-    show cs at left
+    show cs disappointed at left
     cs "How-"
     arceus "I have my ways."
     copguy "I don't understand, so HoH SiS really did scam you hard, didn't they?"
@@ -655,7 +671,7 @@ label good_convince:
     n "He then proceeds to open the doors and let them out, freeing them of their cuffs."
     scene washington_road with fade
     show copguy at right with moveinleft
-    show cs at left with moveinleft
+    show cs disappointed at left with moveinleft
     show arceus flipped at mid_left_left with moveinleft
     copguy "Listen, I really shouldn't be doing this right now, but I have to go back to look into this deal with HoH SiS."
     copguy "You are free to go for now."
@@ -664,6 +680,7 @@ label good_convince:
     hide copguy with moveoutright
     show arceus flipped at mid_right_right with move
     show arceus at mid_right_right
+    show cs
     n "CS and Arc look at eachother, and smile."
     arceus "Holy crap, I didn't think that would work."
     cs "Me neither! I'm so glad that they let us go!"
