@@ -425,7 +425,7 @@ label csbi_end:
     pause 1.0
     scene hoh_hq with dissolve
     play music "<loop 0>time_for_a_smackdown.mp3" volume 0.2
-    music Time for a Smackdown! - Tour De Pizza
+    music Time for a Smackdown! - Mr. Sauceman
     show cs angry with dissolve
     cs "Alright! Where are the head JoJites?!"
     show worker_1 at right with moveinright
