@@ -6,6 +6,7 @@ label csbiii_start:
     hide cs with moveoutright
     scene inside_ltt with fade
     play music "<loop 0>passport.mp3" volume 0.5
+    music PASSPORT.MID - George Stone
     show linus at center with moveinright
     linus "Welcome to Linus Media Group, come on in, I'll show you your desk."
     cs "Thanks Linus."
