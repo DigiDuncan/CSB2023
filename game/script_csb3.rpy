@@ -116,7 +116,7 @@ label edit_video:
     cs "I wonder what the others will think of this though? I should probably get opinions from some of the other employees."
     play music "<loop 0>good_eatin.mp3" volume 0.4
     music Good Eatin - ClascyJitto
-    show taran at right with moveinright
+    show taran flipped at right with moveinright
     taran "Need any help with anything?"
     cs "Hey Taran! You wanna check out my video so far?"
     taran "Sure, let it roll."
@@ -124,7 +124,7 @@ label edit_video:
     n "CS and Taran watch CS's video."
     scene csdesk
     show cs worried at left
-    show taran at right
+    show taran flipped at right
     with fade
     cs "Well, you think it's good?"
     taran "Hey hey! That's not half bad!"
@@ -350,7 +350,7 @@ label ytp_edit:
     cs "I know, but--{w=0.25}{nw}"
     linus "I mean, for example.{w=0.5} TARAN! GET IN HERE!"
     n "Taran rushes up to Linus's office."
-    show taran at right with moveinright
+    show taran flipped at right with moveinright
     taran "{i}panting{/i} Yes, {w=0.5}Linus? {w=0.5}What is it?"
     linus "Taran, have you ever seen a YTP?"
     taran "Other than the one CS made the other day? Not really."
@@ -455,7 +455,7 @@ label arc_escape:
     scene frontdoor
     show linus at left
     show luke at center
-    show taran at right
+    show taran flipped at right
     show colton at mid_left
     n "The employees at LTT are in chaos as the police show up to the front of the building."
     luke "WTF is going on?"

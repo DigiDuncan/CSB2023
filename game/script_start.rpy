@@ -246,9 +246,10 @@ image luke = "characters/luke.png"
 image border_guard dusk = "characters/border_guard_dusk.png"
 image copguy dark = "characters/copguydark.png"
 image copguy_ai = "characters/ai_cop_guy_full.png"
+image taran = "characters/taran.png"
 image taran flipped = Transform("characters/taran.png", xzoom = -1)
 image colton = "characters/colton.png"
-image sheriff = "characters/jonah_cop.png"
+image sheriff = "characters/sheriff.png"
 
 # CSB3 Background Images
 image csdesk = "bg/cs_desk.png"

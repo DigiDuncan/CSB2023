@@ -24,7 +24,10 @@ init python:
         "linus": "Linus Sebastian",
         "mohs": "Mr. Mohs",
         "csgod": "CSGod",
-        "luke": "Luke Lafreniere"
+        "luke": "Luke Lafreniere",
+        "taran": "Taran Van Hemert",
+        "colton": "Colton Potter",
+        "sheriff": "Sheriff"
     }
 
 screen people_nav():
