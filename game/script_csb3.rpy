@@ -67,6 +67,7 @@ label microcenter:
     linus "Nah, it's fine. I'm sure you will do well picking out parts, make sure to get the highest quality you can!"
     cs "Alrighty, I'll get going now."
     stop music fadeout 3.0
+    music end
     # TODO: [BG] CS goes to Microcenter
     n "CS goes to Microcenter."
     cs "Okay gamers, we are buying some parts for our epic computing machine. Let's go inside the magical concrete structure to buy some computing parts."  # the fuck is this line Pakoo
@@ -112,6 +113,7 @@ label edit_video:
     hide linus with moveoutright
     n "Linus leaves the room."
     stop music fadeout 3.0
+    music end
     cs "Hmm, this video looks pretty great so far, I'm practically almost done at this point."
     cs "I wonder what the others will think of this though? I should probably get opinions from some of the other employees."
     play music "<loop 0>good_eatin.mp3" volume 0.4
@@ -153,6 +155,7 @@ label edit_video:
     show taran flipped at right
     hide taran with moveoutright
     stop music fadeout 3.0
+    music end
     # Do we really need three lines for this?
     cs "Well, I guess since this video is already good enough, I can upload it now."
     cs "It's so crazy having the ability to access the LTT channels. There is so much crazy shit going on here!"
@@ -567,6 +570,7 @@ label arc_escape:
     cs "I hope so, we've been walking for hours. It's gotta be midnight around now…"
     #More filler here probably, for now I'm jumping to when copguy comes in
     stop music fadeout 3.0
+    music end
     n "CS looks into the distance."
     cs "Hey Arc! I can see some lights in the distance! We gotta be getting close!"
     arceus "Wait a minute, those are-"
@@ -676,6 +680,7 @@ label good_convince:
     copguy "I'm not sure how valid it was for you to push that man off a building,"
     copguy "But I can't argue right now on if that footage is fake or not."
     stop music fadeout 3.0
+    music end
     n "Copguy gets out of the car."
     n "He then proceeds to open the doors and let them out, freeing them of their cuffs."
     scene washington_road with fade

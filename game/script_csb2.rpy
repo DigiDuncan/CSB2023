@@ -110,6 +110,7 @@ label special:
     cs "Welp, time to go home!"
     hide cs with moveoutleft
     stop music fadeout 3.0
+    music end
     scene black with fade
     scene hoh_hq with fade
     show cs at left with moveinleft
@@ -158,6 +159,7 @@ label questioning:
     hide cs with moveoutleft
     hide asylum_worker with moveoutleft
     stop music fadeout 3.0
+    music end
     scene black with fade
     jump asylum
 
@@ -199,6 +201,7 @@ label asylum:
     csgod "You'll get out soon enough, but maybe you should think about making a {i}better choice{/i} next time."
     hide csgod with moveoutright
     stop music fadeout 3.0
+    music end
     $ renpy.movie_cutscene("movies/bad_ending.mp4")
     return
     
@@ -216,6 +219,7 @@ label caught:
     copguy "Get back here!"
     cs "You can't catch me, I'm the speedy Michael Rosen!"
     stop music fadeout 3.0
+    music end
     n "As CS is not actually the speedy Michael Rosen, he gets caught by the police."
     stop sound fadeout 1.0
     scene black with fade
@@ -287,6 +291,7 @@ label breakout:
     scene black with fade
 
     stop music fadeout 3.0
+    music end
     n "The current day ends, and the next one progresses. CS and Arceus gather the required essentials for their escape. Along the way, they inform Anno, who more than happily complies with the plan." 
     n "The next evening..."
     play music "<loop 0>moongazer.mp3" volume 0.5
@@ -331,6 +336,7 @@ label breakout:
     arceus "Based on my instinct and my tiredness. This should be far enough."
     n "The now escaped fugitives dig up for their ascent to the surface."
     stop music fadeout 3.0
+    music end
 
     hide cs with dissolve
     hide arceus with dissolve
@@ -378,6 +384,7 @@ label bordercrossing:
     show arceus flipped at offscreenright with moveinleft
     show anno at offscreenright with moveinleft
     stop music fadeout 3.0
+    music end
 
     scene inside_tim_hortons with fade
     play music "<loop 0>buy_something.mp3" volume 0.6
@@ -418,6 +425,7 @@ label bordercrossing:
     cashier "Buh-bye!"
     hide cashier with dissolve
     stop music fadeout 3.0
+    music end
 
 
     show cs disappointed
@@ -441,6 +449,7 @@ label bordercrossing:
     show cs
     cs "Linus Media Group, huh? I have a lot of video editing experience, maybe I can get a job there."
     stop music fadeout 3.0
+    music end
 
     scene black with fade
     n "CS walks into the studio to ask for a job."
@@ -517,5 +526,6 @@ label bordercrossing:
     anno "Let's celebrate!"
     n "CS, Anno, and Arceus cheers their donuts together."
     stop music fadeout 3.0
+    music end
     scene black with fade
     jump csbiii_start

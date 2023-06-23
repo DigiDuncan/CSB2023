@@ -58,6 +58,7 @@ label csbi_start:
     cs "I could go outside, look at some flowers.."
     show cs happy
     stop music fadeout 3.0
+    music end
     cs "Yeah! Let's go outside!"
     scene cs_house
     show cs happy
@@ -80,6 +81,7 @@ label csbi_start:
     show cs worried at left
     cs "OH GOD AN ADVERTISER!!!"
     stop music fadeout 3.0
+    music end
     cs "QUICK START THE CAR START THE CAR!!!"
     hide cs with moveoutright
     hide carguy with dissolve
@@ -99,6 +101,7 @@ label csbi_start:
     pause 3.0
     stop sound fadeout 2.0
     stop music fadeout 3.0
+    music end
     jump walmart
 
 label walmart:
@@ -132,6 +135,7 @@ label walmart:
     cs "You too, bye!"
     hide cashier
     stop music fadeout 3.0
+    music end
     show walmart_outside behind cs with dissolve
     cs "Let's get to the car."
     show carguy at right with moveinright
@@ -157,6 +161,7 @@ label room:
     scene cs_room
     stop sound fadeout 2.0
     stop music fadeout 3.0
+    music end
     n "CS arrives home and walks to his room."
     show cs happy with dissolve
     cs "Ahhh. It's good to be home!"
@@ -210,6 +215,7 @@ label room:
     n "Time passes and the doorbell rings."
     play sound "doorbell.ogg" volume 0.5
     stop music fadeout 3.0
+    music end
     scene door_closed with fade
     show cs happy with moveinbottom
     cs "Oh they're here!"
@@ -272,6 +278,7 @@ label room:
     show beam at xstretch_out
     pause 2.0
     stop music fadeout 3.0
+    music end
     scene cs_street
     show cs with moveinleft
     cs "Things sure are boooooring around here..."
@@ -377,6 +384,7 @@ label michael_house:
     play music "<loop 0>canyon_but_in_the_car.mp3" volume 0.2
     play sound "driving.wav" volume 0.5
     stop music fadeout 3.0
+    music end
     jump csbi_end
 
 label csbi_end:

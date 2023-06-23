@@ -37,12 +37,18 @@ python early:
 
     def parse_music(lexer):
         string = lexer.rest()
+        if string == "end":
+            return None
         title, author = string.split("-", 2)
         return (title, author)
 
     def execute_music(parsed_object):
         global _current_song
         global _current_artist
+        if parsed_object is None:
+            _current_song = None
+            _current_artist = None
+            return
         _current_song = parsed_object[0].strip().removeprefix("\"")
         _current_artist = parsed_object[1].strip().removesuffix("\"")
         if (_current_song, _current_artist) not in _played_songs:
@@ -52,7 +58,9 @@ python early:
             renpy.with_statement(determination)
 
     def lint_music(parsed_object):
-        if title == "" or author == "":
+        if parsed_object is None:
+            pass
+        elif parsed_object[0] == "" or parsed_object[1] == "":
             renpy.error("Title or author is empty for music popup.")
 
     renpy.register_statement("music",
