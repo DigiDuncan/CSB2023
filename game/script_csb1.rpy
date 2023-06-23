@@ -110,6 +110,8 @@ label walmart:
     cs "Oh yes! Walmart is open!"
     scene walmart_inside with fade
     show screen best_music
+    $ _current_song = "Summer Clearance Sale"
+    $ _current_artist = "BEST MUSIC"
     play music "<loop 0>summer_clearance_sale.mp3"
     n "CS walks inside."
     show doug at right with moveinright
