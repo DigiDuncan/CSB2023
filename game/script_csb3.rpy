@@ -494,11 +494,13 @@ label arc_escape:
     colton "I can't fucking believe you guys! That was way too far!"
     linus "April fools?"
     colton "IT'S JULY!"
+    scene outside_ltt
     n "Copguy orders the rest of the cops to leave the scene and return back to the station."
+    show copguy at left with moveinleft
     copguy "Damnit, they don't have CS anymore. We're gonna have to look harder for him."
     scene road_to_canada with fade
-    show cs disappointed at left
-    show arceus at right
+    show cs disappointed dusk at left
+    show arceus dusk at right
     n "Meanwhile, CS and Arc have been running back to the US border."
     cs "Aw man! This is embarrassing!"
     arceus "Yeah, so much for the editing job, I guess."
@@ -511,10 +513,10 @@ label arc_escape:
     cs "Thanks man, I really owe you again."
     arceus "Nah, I owe you."
     scene border_dusk with fade
-    show cs at left
-    show arceus at center
+    show cs dusk at left
+    show arceus dusk at center
     n "CS and Arc approach the border guard again."
-    show border_guard at right with moveinright
+    show border_guard dusk at right with moveinright
     border_guard "I'm gonna need proof of-"
     border_guard "Ey, it's you two buds again!"
     arceus "Yeah, quite the vacation we had! We had so much fun in Canada didn't we CS?"
@@ -523,8 +525,8 @@ label arc_escape:
     arceus "Sure thing!"
     scene washington_road with fade
     n "The duo continue their trek now in the US, in the state of Washington."
-    show cs at left with moveinleft
-    show arceus at right with moveinright
+    show cs dark at left with moveinleft
+    show arceus dark at right with moveinright
     cs "So, what happened with you?"
     arceus "Hmm?"
     cs "Well, I went to work at LTT, and had to spend my nights at a nearby hotel."
@@ -557,8 +559,8 @@ label arc_escape:
     n "Meanwhile, CS and Arc are still making their way through the US, without any sense of direction."
     play music "<loop 0>echoing.mp3" volume 0.5
     music Echoing - Banana
-    show cs at left with moveinleft
-    show arceus at right with moveinright
+    show cs dark at left with moveinleft
+    show arceus dark at right with moveinright
     cs "Hey Arceus? Do you have any clue where we are?"
     arceus "No idea, I'm just following the road. There's bound to be a rest stop here eventually."
     cs "I hope so, we've been walking for hours. It's gotta be midnight around now…"
@@ -568,7 +570,7 @@ label arc_escape:
     cs "Hey Arc! I can see some lights in the distance! We gotta be getting close!"
     arceus "Wait a minute, those are-"
     n "Arceus squints into the distance, but CS and Arc both immediately recognize the sounds."
-    show cs worried
+    show cs worried dark
     "CS and Arceus" "SHIT!"
     arceus "Copguy's back! He's probably looking all over for us! What do we do CS?!"
     menu:
@@ -599,8 +601,8 @@ label wait_forest:
     arceus "Yeah, that's a good point. I kinda don't want to risk going back to prison again."
     n "CS and Arc stay quiet in the forest for about 15 minutes before heading back on the road again."
     scene washington_road with fade
-    show cs at left with moveinleft
-    show arceus at right with moveinright
+    show cs dark at left with moveinleft
+    show arceus dark at right with moveinright
     cs "Hey Arceus?"
     cs "Hmm?"
     cs "Now that we are out here and have more time to talk, where exactly are we heading to? Why did we come back to the US?"
@@ -616,15 +618,15 @@ label wait_forest:
     scene black with determination
     n "When CS and Arc wake up, they find themselves in shackles leaned up against a cop car."
     scene washington_road with fade
-    show cs disappointed at left
-    show arceus flipped at mid_left_left
+    show cs disappointed dark at left
+    show arceus dark flipped at mid_left_left
     cs "Huh?"
     cs "What happened?"
-    show copguy at right with moveinright
+    show copguy dark at right with moveinright
     copguy "Hey, you're finally awake."
     arceus "Hey, CS."
     arceus "I'm sorry."
-    show cs worried
+    show cs worried dark
     cs "No no no! This can't be happening!"
     cs "Arceus! Can't you do something about this?"
     arceus "No can do, boss. Looks like this is the end of the line."
@@ -673,27 +675,27 @@ label good_convince:
     n "Copguy gets out of the car."
     n "He then proceeds to open the doors and let them out, freeing them of their cuffs."
     scene washington_road with fade
-    show copguy at right with moveinleft
-    show cs disappointed at left with moveinleft
-    show arceus flipped at mid_left_left with moveinleft
+    show copguy dark at right with moveinleft
+    show cs disappointed dark at left with moveinleft
+    show arceus dark flipped at mid_left_left with moveinleft
     copguy "Listen, I really shouldn't be doing this right now, but I have to go back to look into this deal with HoH SiS."
     copguy "You are free to go for now."
     copguy "But don't do anything stupid, because I have my eye on you two!"
     n "Copguy gets back into his car, and heads off into the dead of night."
     hide copguy with moveoutright
-    show arceus flipped at mid_right_right with move
-    show arceus at mid_right_right
-    show cs
+    show arceus dark flipped at mid_right_right with move
+    show arceus dark at mid_right_right
+    show cs dark
     n "CS and Arc look at eachother, and smile."
     arceus "Holy crap, I didn't think that would work."
     cs "Me neither! I'm so glad that they let us go!"
     cs "I don't know how you got that footage, but we are now free once again!"
     arceus "Hooray for CS and Arc!"
-    show cs at center
-    show arceus at center 
+    show cs dark at center
+    show arceus dark at center 
     with move
-    show cs at mid_left_left
-    show arceus at mid_right_right
+    show cs dark at mid_left_left
+    show arceus dark at mid_right_right
     with move
     n "They both high five, and continue heading in the direction of the road."
 

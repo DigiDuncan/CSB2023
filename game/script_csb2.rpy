@@ -312,13 +312,13 @@ label breakout:
     scene tunnel with fade
     # If anyone asks, Arceus is part god and can dig really easily, I guess.
     n "They begin digging quickly, making distance away from their cells."
-    show cs guard at left with easeinleft
+    show cs guard dark at left with easeinleft
     cs "Jeez... I didn't think that would actually work."
 
-    show arceus at right with easeinright
+    show arceus dark at right with easeinright
     arceus "You what?" 
     
-    show anno guard
+    show anno guard dark
     anno "How are we supposed to cross the border with the new wall?"
     arceus "Not the Mexican border, the Canadian border, we're in Washington, it's way closer and they're too polite to send us back."
     cs "Works for me, free healthcare."

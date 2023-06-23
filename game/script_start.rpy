@@ -194,18 +194,23 @@ define csgod = Character("CS God", callback = renpy.partial(char_callback, name 
 
 # CSB2 Character Images
 image ed phone = "characters/ed_phone.png"
+image arceus dark = "characters/arceusdark.png"
 image arceus = "characters/arceus.png"
 image arceus flipped = Transform("characters/arceus.png", xzoom = -1)
+image arceus dark flipped = Transform("characters/arceusdark.png", xzoom = -1)
 image anno = "characters/anno.png"
 image anno prison = "characters/anno_prison.png"
 image anno guard = "characters/anno_guard.png"
+image anno guard dark = "characters/anno_guarddark.png"
 image cs prison = "characters/cs/prison.png"
 image cs prison_worried = "characters/cs/prison_worried.png"
 image cs guard = "characters/cs/guard.png"
+image cs guard dark = "characters/cs/guarddark.png"
 image border_guard = "characters/border_guard.png"
 image linus = "characters/linus.png"
 image asylum_worker = "characters/mohs.png"
 image csgod = "characters/csgod.png"
+image copguy = "characters/copguy.png"
 
 # CSB2 Background Images
 image helipad = "bg/helipad.png"
@@ -231,7 +236,15 @@ define colton = Character("Colton", callback = renpy.partial(char_callback, name
 define sheriff = Character("Sheriff", callback = renpy.partial(char_callback, name = "sheriff"))
 
 # CSB3 Character Images
+image cs dark = "characters/cs/neutraldark.png"
+image cs dusk = "characters/cs/neutraldusk.png"
+image cs disappointed dark= "characters/cs/disappointeddark.png"
+image cs disappointed dusk = "characters/cs/disappointeddusk.png"
+image cs worried dark= "characters/cs/worrieddark.png"
+image arceus dusk = "characters/arceusdusk.png"
 image luke = "characters/luke.png"
+image border_guard dusk = "characters/border_guard_dusk.png"
+image copguy dark = "characters/copguydark.png"
 image copguy_ai = "characters/ai_cop_guy_full.png"
 image taran flipped = Transform("characters/taran.png", xzoom = -1)
 image colton = "characters/colton.png"
