@@ -56,9 +56,6 @@ label csbi_start:
     show cs
     cs "Okay... What to do now?"
     cs "I could go outside, look at some flowers.."
-    show cs_room_2 behind cs
-    hide cs_room
-    cs "Oh! Look out the window! There's a Michael Rosen!"
     show cs happy
     stop music fadeout 3.0
     cs "Yeah! Let's go outside!"
@@ -240,7 +237,7 @@ label room:
     ed "So now that we're here, what should we do to him?"
     "Ed, Wesley, and Richard" "Hmmm..."
     wesley "Let's go check his room. We might get some ideas."
-    show cs_room behind ed with dissolve
+    show cs_room_2 behind ed with dissolve
     n "The three HoH SiS workers go upstairs."
     wesley "Wow I didn't know CS had a Union Jack!"
     ed "CS sure loves those Brits~!"
