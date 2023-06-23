@@ -451,11 +451,15 @@ label arc_escape:
     show arceus at right
     with moveinright
     n "CS and Arceus run out of the building, and try to find cover while they escape."
+    play sound "siren.ogg" loop fadein 2.0 volume 0.2
+    show blue_light at left
+    show red_light at right
     n "As they are making their way away from the building, they can hear sirens grow in volume as flashing lights rush towards the LTT building."
     cs "This is awful, I was just starting to get along well with Linus and the gang."
     arceus "I'm sure they'll forgive you in due time, but for now, we need to evade the cops' trail and get back to the United States."
     n "While Arceus and CS were hitchhiking away from the scene, the cops show up at LTT to investigate."
     scene frontdoor
+    stop sound fadeout 4.0
     show linus at left
     show luke at center
     show taran flipped at right

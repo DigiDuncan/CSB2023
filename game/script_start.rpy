@@ -277,14 +277,14 @@ image blue_light:
     "blue_light.png"
     alpha 0.0
     linear 0.5 alpha 1.0
-    linear 0.5 alpha 0.0
+    linear 0.5 alpha 0.75
     repeat
 
 image red_light:
     "red_light.png"
     alpha 1.0
     linear 0.5 alpha 0.0
-    linear 0.5 alpha 1.0
+    linear 0.5 alpha 0.75
     repeat
 
 # Jump menu
