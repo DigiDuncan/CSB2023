@@ -481,9 +481,15 @@ screen game_menu(title, scroll=None, yinitial=0.0):
         action Return()
 
     label title
+    if _current_song and _current_artist:
+        text "Now Playing: [_current_song] - [_current_artist]"
 
     if main_menu:
         key "game_menu" action ShowMenu("main_menu")
+
+style game_menu_text:
+    top_padding 10
+    xpos 10
 
 
 style game_menu_outer_frame is empty

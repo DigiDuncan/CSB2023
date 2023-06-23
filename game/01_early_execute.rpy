@@ -1,6 +1,3 @@
-$ _current_song = ""
-$ _current_artist = ""
-
 init python:
     renpy.add_layer("music", above = "master")
 
@@ -34,6 +31,10 @@ init:
         xanchor 0 xpos 0
 
 python early:
+    _current_song = ""
+    _current_artist = ""
+    _played_songs = set()
+
     def parse_music(lexer):
         string = lexer.rest()
         title, author = string.split("-", 2)
@@ -44,9 +45,11 @@ python early:
         global _current_artist
         _current_song = parsed_object[0].strip().removeprefix("\"")
         _current_artist = parsed_object[1].strip().removesuffix("\"")
-        renpy.with_statement(determination)
-        renpy.show_screen("music")
-        renpy.with_statement(determination)
+        if (_current_song, _current_artist) not in _played_songs:
+            _played_songs.add((_current_song, _current_artist))
+            renpy.with_statement(determination)
+            renpy.show_screen("music")
+            renpy.with_statement(determination)
 
     def lint_music(parsed_object):
         if title == "" or author == "":
