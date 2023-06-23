@@ -630,6 +630,9 @@ label wait_forest:
     arceus "No can do, boss. Looks like this is the end of the line."
     copguy "No time for negotiations, pal. Get in the car."
     scene copcar with fade
+    show copguy at t_copguy_frontseat
+    show copcar_mask
+    with determination
     show arceus at right with moveinleft
     show cs disappointed at left with moveinleft
     n "CS and Arc get in the cop car, as copguy says some order on his walkie."

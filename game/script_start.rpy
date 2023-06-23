@@ -68,6 +68,11 @@ transform t_post_it:
     zoom 0.3333
     rotate 10
 
+transform t_copguy_frontseat:
+    yanchor 1.0 ypos 0.75
+    xanchor 0.5 xpos 0.325
+    zoom 0.75
+
 transform little_bounce:
     yanchor 1.0
     yzoom 0.95
@@ -243,6 +248,7 @@ image border_dusk = "bg/canadian_border_night.png"
 image sheriff_office = "bg/sheriffoffice.png"
 image washington_road = "bg/washingtonroad.png"
 image copcar = "bg/copcar.png"
+image copcar_mask = "bg/copcar_mask.png"
 # AI Ending
 image park1 = "bg/ai/amusementpark1.png"
 image park2 = "bg/ai/amusementpark2.png"
