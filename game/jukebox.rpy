@@ -44,7 +44,7 @@ screen jukebox_nav():
             xoffset 350
             for k, v in music_map.items():
                 if k in persistent.heard:
-                    textbutton k action ShowMenu("music", k), Play("jukebox", "audio/"+v, relative_volume=0.5)
+                    textbutton k action ShowMenu("music_screen", k), Play("jukebox", "audio/"+v, relative_volume=0.5)
 
     textbutton "Return to categories" action ShowMenu("category_welcome"), Stop("jukebox") yoffset 950 xoffset 25
     textbutton "Return" action Return(), Stop("jukebox") yoffset 1000 xoffset 25
@@ -72,7 +72,7 @@ screen jukebox_welcome():
 ##-----------------------------------------------
 
 
-screen music(l):
+screen music_screen(l):
 
     tag menu
     use jukebox_nav
