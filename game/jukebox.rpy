@@ -28,7 +28,7 @@ init python:
     }
 
 screen jukebox_nav():
-    $ print(persistent.heard)
+
     add Color('#323e42', alpha=0.75)
 
     viewport:
@@ -44,7 +44,7 @@ screen jukebox_nav():
             xoffset 350
             for k, v in music_map.items():
                 if k in persistent.heard:
-                    textbutton k action ShowMenu("music", k), Play("jukebox", "audio/"+v)
+                    textbutton k action ShowMenu("music", k), Play("jukebox", "audio/"+v, relative_volume=0.5)
 
     textbutton "Return to categories" action ShowMenu("category_welcome"), Stop("jukebox") yoffset 950 xoffset 25
     textbutton "Return" action Return(), Stop("jukebox") yoffset 1000 xoffset 25
@@ -72,13 +72,13 @@ screen jukebox_welcome():
 ##-----------------------------------------------
 
 
-screen person(l):
+screen music(l):
 
     tag menu
     use jukebox_nav
 
     style_prefix "codex"
-    label name_map[l]
+    label l
 
     viewport:
 
