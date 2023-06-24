@@ -14,7 +14,7 @@ screen category_nav():
     #This is where we create the menu where we can select the category.
 
     #Add background image
-    add Color('#5F777F', alpha=0.5)
+    add Color('#323e42', alpha=0.75)
 
     viewport:
         xpos 25 ypos 400

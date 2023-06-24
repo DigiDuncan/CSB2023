@@ -31,7 +31,7 @@ init python:
     }
 
 screen people_nav():
-    add Color('#5F777F', alpha=0.5)
+    add Color('#323e42', alpha=0.75)
 
     viewport:
         xpos 25 ypos 400
@@ -90,6 +90,10 @@ screen person(l):
         xoffset 305 
         yoffset 200
         side_yfill True
+        mousewheel True
+        draggable True
+        pagekeys True
+        
         hbox:
             vbox:
                 xsize 800
