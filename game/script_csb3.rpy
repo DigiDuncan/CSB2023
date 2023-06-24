@@ -617,7 +617,7 @@ label wait_forest:
     cs "Hey Arceus?"
     arceus "Hmm?"
     cs "Now that we are out here and have more time to talk, where exactly are we heading to? Why did we come back to the US?"
-    arceus "Well, I figured you wanna go back home, right?"
+    arceus "Well, I figured you wanted to go back home, right?"
     cs "Of course I want to head back home, it's just, it seems so far away."
     cs "We don't really have a car or anything, we are completely lost, and we got the cops still looking for us probably!"
     arceus "Look man, I know it's pretty hard right now. But we gotta be optimistic about this."
