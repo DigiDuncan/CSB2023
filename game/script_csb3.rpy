@@ -373,6 +373,8 @@ label ytp_edit:
             jump ytp_fan
 
 label both_fan:
+    stop music
+    music end
     cs "You know what? Why don't you all come down to my office."
     linus "I mean... sure. Let's see what you have in stock."
     linus "Come on guys, let's go!"
