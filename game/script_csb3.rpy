@@ -550,7 +550,9 @@ label arc_escape:
     arceus "I've been in prison for 5 years, so I've had to figure out what to do again for money."
     arceus "Anno's been at the hotel too, I think he's planning on starting some kind of band."
     cs "Ah, I see."
-    scene sheriff_office with fade
+    scene sheriff_office
+    show sheriff at left
+    with fade
     n "Back at the police station, Copguy talks to the sheriff about CS."
     show sheriff at left
     show copguy at right with moveinright
