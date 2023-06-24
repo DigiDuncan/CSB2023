@@ -74,8 +74,8 @@ init python:
             Transform(Image("music_note.png"), zoom = 0.2, xoffset = 25),
             Null(width = 35),
             VBox(
-                Text(_current_song if _current_song is not None else "ERROR", size = 72, outlines = [(5, "#000000", 0, 0)]),
-                Text(_current_artist if _current_artist is not None else "ERROR", size = 32, outlines = [(3, "#000000", 0, 0)])
+                Text(_current_song if _current_song is not None else "", size = 72, outlines = [(5, "#000000", 0, 0)]),
+                Text(_current_artist if _current_artist is not None else "", size = 32, outlines = [(3, "#000000", 0, 0)])
             ),
             margin = (35, 25)
         ), None
