@@ -323,9 +323,9 @@ label breakout:
     show arceus dark at right with easeinright
     arceus "You what?" 
     
-    show anno guard dark
+    show anno guard dark with easeinbottom
     anno "How are we supposed to cross the border with the new wall?"
-    arceus "Not the Mexican border, the Canadian border, we're in Washington, it's way closer and they're too polite to send us back."
+    arceus "Not the Mexican border, the Canadian border. We're in Washington, it's way closer and they're too polite to send us back."
     cs "Works for me, free healthcare."
     arceus "Well, you have to live there for a few years before you get access to that, but you should last a few years without getting sick living on that healthy diet of Ritz and EZ cheese."
     hide cs
@@ -357,7 +357,6 @@ label bordercrossing:
     arceus "Colour is spelled with a u, eh."
     border_guard "Works for me, eh."
 
-    hide border_guard with dissolve
     scene canada with fade 
     n "Some time passes as the party continues forth into the land of Canada."
     cs "Arceus, can we stop somewhere? I'm getting hungry."
@@ -386,7 +385,10 @@ label bordercrossing:
     stop music fadeout 3.0
     music end
 
-    scene inside_tim_hortons with fade
+    scene inside_tim_hortons
+    show cashier at t_cashier_at_tims
+    show inside_tim_hortons_fg
+    with fade
     play music "<loop 0>buy_something.mp3" volume 0.6
     music Buy Something Will Ya! - Keiichi Suzuki
     show cs at left with moveinleft
@@ -398,21 +400,17 @@ label bordercrossing:
     hide cs
     with dissolve
 
-    show arceus flipped at left with move
-    show cashier at right with moveinright
+    show arceus flipped at t_arc_at_tims with ease
 
     arceus "Hi."
     cashier "Can I help you?"
     arceus "Yeah, can I have a dozen glazed donuts please?"
     cashier "Oh hi, Arceus, I didn't know it was you."
 
-    hide cashier
-    hide arceus flipped
     show anno
     anno "Wait, huh?"
     hide anno
-    show arceus flipped at left
-    show cashier at right
+    show arceus flipped at t_arc_at_tims
     cashier "Here you go."
     arceus "That's me!"
     arceus "How much is it?"
@@ -423,7 +421,6 @@ label bordercrossing:
     arceus "Thanks a lot! Bye~"
     hide arceus flipped with moveoutleft
     cashier "Buh-bye!"
-    hide cashier with dissolve
     stop music fadeout 3.0
     music end
 
@@ -435,6 +432,8 @@ label bordercrossing:
     scene black with fade
     scene inside_tim_hortons
     play music "<loop 0>buy_something.mp3" volume 0.6
+    show cashier at t_cashier_at_tims
+    show inside_tim_hortons_fg
     show cs
     show anno at left
     show arceus at right
@@ -446,6 +445,8 @@ label bordercrossing:
     n "CS looks across the street to see Linus Media Group."
 
     scene inside_tim_hortons
+    show cashier at t_cashier_at_tims
+    show inside_tim_hortons_fg
     show cs
     cs "Linus Media Group, huh? I have a lot of video editing experience, maybe I can get a job there."
     stop music fadeout 3.0
@@ -514,6 +515,8 @@ label bordercrossing:
     cs "Ohhh yes! {w}{i}ahem{/i} I mean, thank you, Linus!"
 
     scene inside_tim_hortons
+    show cashier at t_cashier_at_tims
+    show inside_tim_hortons_fg
     show anno at right
     show arceus flipped at left
     with fade

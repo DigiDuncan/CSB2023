@@ -73,6 +73,15 @@ transform t_copguy_frontseat:
     xanchor 0.5 xpos 0.325
     zoom 0.75
 
+transform t_cashier_at_tims:
+    yanchor 1.0 ypos 0.80
+    xanchor 0.5 xpos 0.725
+    zoom 0.6
+transform t_arc_at_tims:
+    yanchor 1.0 ypos 0.75
+    xanchor 0.5 xpos 0.625
+    zoom 0.6
+
 transform little_bounce:
     yanchor 1.0
     yzoom 0.95
@@ -221,6 +230,7 @@ image jail_inside = "bg/jail_inside.png"
 image jail_cell = "bg/jail_cell.png"
 image border = "bg/canadian_border.png"
 image outside_tim_hortons = "bg/outside_tim_hortons.png"
+image inside_tim_hortons_fg = "bg/inside_tim_hortons_fg.png"
 image inside_tim_hortons = "bg/inside_tim_hortons.png"
 image tunnel = "bg/tunnel.png"
 image canada = "bg/canada.png"
