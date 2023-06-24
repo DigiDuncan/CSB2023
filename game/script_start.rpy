@@ -242,6 +242,7 @@ image cs disappointed dark= "characters/cs/disappointeddark.png"
 image cs disappointed dusk = "characters/cs/disappointeddusk.png"
 image cs worried dark= "characters/cs/worrieddark.png"
 image arceus dusk = "characters/arceusdusk.png"
+image arceus dusk flipped = Transform("characters/arceusdusk.png", xzoom = -1)
 image luke = "characters/luke.png"
 image border_guard dusk = "characters/border_guard_dusk.png"
 image copguy dark = "characters/copguydark.png"

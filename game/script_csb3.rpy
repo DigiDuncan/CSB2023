@@ -379,6 +379,7 @@ label both_fan:
     show cs at center with moveinright
     show linus at mid_left with moveinright
     show taran at left with moveinright
+    show taran flipped at left
     show luke at mid_right with moveinright
     show colton at right with moveinright
     luke "What is this all about Linus? I was just about to go home."
@@ -468,9 +469,9 @@ label arc_escape:
     luke "WTF is going on?"
     taran "Linus! What did you do!?"
     linus "Relax guys, it's nothing that we did."
-    linus "*mutters to himself* I should've done a background check on cs188, it's weird how-"
+    linus "*mutters to himself* I should've done a background check on CS, it's weird how-"
     show luke at mid_left
-    show taran at mid_mid_left
+    show taran flipped at mid_mid_left
     show colton at center
     with move
     show copguy at right with moveinright
@@ -512,7 +513,7 @@ label arc_escape:
     n "Meanwhile, CS and Arc have been running back to the US border."
     cs "Aw man! This is embarrassing!"
     arceus "Yeah, so much for the editing job, I guess."
-    cs "I can't seem to get a break this week. First my problems with HoH SiS, now I'm running from the cops?"
+    cs "I can't seem to get a break this month. First my problems with HoH SiS, now I'm running from the cops?"
     cs "I should've just called another foundation repair company."
     arceus "Yeah, that sounds like hell. You could have called me. I am literally a god."
     cs "It IS hell."
@@ -522,7 +523,7 @@ label arc_escape:
     arceus "Nah, I owe you."
     scene border_dusk with fade
     show cs dusk at left
-    show arceus dusk at center
+    show arceus dusk flipped at mid_left
     n "CS and Arc approach the border guard again."
     show border_guard dusk at right with moveinright
     border_guard "I'm gonna need proof of-"
@@ -541,7 +542,7 @@ label arc_escape:
     cs "Linus gave me enough money to make due in time."
     arceus "Well, I've been at the same hotel, clearing up ties with my cyber criminal past."
     arceus "I've been in prison for 5 years, so I've had to figure out what to do again for money."
-    arceus "Anno's been at the hotel too, I think he's planning on starting some kinda band."
+    arceus "Anno's been at the hotel too, I think he's planning on starting some kind of band."
     cs "Ah, I see."
     scene sheriff_office with fade
     n "Back at the police station, Copguy talks to the sheriff about CS."
@@ -595,12 +596,13 @@ label ytp_magic_fight:
 label pussy_out_forest:
     cs "Arceus quick! Let's escape into the forest!"
     arceus "Alrighty, let's go!"
-    hide arceus with moveoutright
-    hide cs with moveoutright
+    hide arceus
+    hide cs
+    with moveoutright
     scene black with fade
     n "CS and Arc quickly jump into the trees next to them."
     n "As CS and Arceus hunker down into the foliage, they see the flash of lights fly past them."
-    arceus "Phew! That was a close one CS!"
+    arceus "Phew! That was a close one, CS!"
     cs "Yeah, it looks like we hid just in time."
     arceus "Alright well, should we wait here for a bit or do you think the coast is clear?"
     jump wait_forest
@@ -613,7 +615,7 @@ label wait_forest:
     show cs dark at left with moveinleft
     show arceus dark at right with moveinright
     cs "Hey Arceus?"
-    cs "Hmm?"
+    arceus "Hmm?"
     cs "Now that we are out here and have more time to talk, where exactly are we heading to? Why did we come back to the US?"
     arceus "Well, I figured you wanna go back home, right?"
     cs "Of course I want to head back home, it's just, it seems so far away."
