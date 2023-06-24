@@ -264,6 +264,9 @@ image taran flipped = Transform("characters/taran.png", xzoom = -1)
 image colton = "characters/colton.png"
 image sheriff = "characters/sheriff.png"
 
+image objection = "objection.png"
+image hold_it = "hold_it.png"
+
 # CSB3 Background Images
 image csdesk = "bg/cs_desk.png"
 image csvideo = "bg/csvideo.png"

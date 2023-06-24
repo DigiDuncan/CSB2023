@@ -409,8 +409,8 @@ label both_fan:
     colton "Oh yeah, Linus? Before I go, I was told someone was banging on the door to enter just a minute ago."
     colton "They were dressed up like a furry or something."
     linus "Great CS, did you attract your furry fanbase to work here as well?"
-    cs "I know, but I swear, this doesn't have anything to do with my community."
-    linus "Wait what do you mean I know? I was just joking about the furry fanbase."
+    cs "I swear, this doesn't have anything to do with my community."
+    linus "Wait, what do you mean? I was just joking about the furry fanbase."
     cs "..."
     linus "Whatever, let's just go check out who it is."
     # TODO: Different room in the LTT office
@@ -482,7 +482,7 @@ label arc_escape:
     n "The LMG members move toward the wall while more policemen come in and search the place."
     copguy "Alright, I have a very simple question to ask you all."
     copguy "Do you know this man?"
-    n "Copguy shows a picture of cs188 to the crew."
+    n "Copguy shows a picture of CS to the crew."
     taran "Uhh yeah, that's-"
     linus "We don't know who that is at all."
     copguy "Oh really? You there, what did you say about this man?"
@@ -501,7 +501,7 @@ label arc_escape:
     hide copguy with moveoutright
     n "Copguy leaves the scene."
     colton "I can't fucking believe you guys! That was way too far!"
-    linus "April fools?"
+    linus "April Fools?"
     colton "IT'S JULY!"
     scene outside_ltt
     n "Copguy orders the rest of the cops to leave the scene and return back to the station."
@@ -627,7 +627,7 @@ label wait_forest:
     copguy "I don't think so either."
     n "Before CS and Arc can react, they both get the lights knocked out of them."
     scene black with determination
-    n "When CS and Arc wake up, they find themselves in shackles leaned up against a cop car."
+    n "When CS and Arc wake up, they find themselves in handcuffs leaned up against a cop car."
     scene washington_road with fade
     show cs disappointed dark at left
     show arceus dark flipped at mid_left_left
@@ -648,7 +648,7 @@ label wait_forest:
     with determination
     show arceus at right with moveinleft
     show cs disappointed at left with moveinleft
-    n "CS and Arc get in the cop car, as copguy says some order on his walkie."
+    n "CS and Arc get in the cop car, as Copguy says some order on his walkie."
     copguy "Alright sheriff, we got em."
     n "Copguy gets in the car and they head off."
     n "As they are heading away, CS has the urge to say something."
@@ -662,6 +662,10 @@ label good_convince:
     show cs worried
     play music "<loop 0>pressing_pursuit_cornered.mp3" volume 0.3
     music Pressing Pursuit ~ Cornered - Masakazu Sugimori
+    play sound "objection.mp3" volume 0.5
+    show objection at truecenter with hpunch
+    pause 1.0
+    hide objection
     cs "Wait a second! The reason all this happened was because HoH SiS sabotaged my computer!"
     arceus "Wait what?"
     copguy "What are you on about?"
@@ -669,6 +673,10 @@ label good_convince:
     cs "So afterwards, I wanted to get my revenge!"
     copguy "I'm not believeing this for a second."
     copguy "You really thought I would fall for some silly little lie?"
+    play sound "hold_it.mp3" volume 0.5
+    show hold_it at truecenter with hpunch
+    pause 1.0
+    hide hold_it
     arceus "Actually, I have proof of this."
     arceus "CS just raised a good point, and I can show you."
     copguy "And HOW can you prove this? Where is your evidence?"
@@ -688,7 +696,7 @@ label good_convince:
     stop music fadeout 3.0
     music end
     n "Copguy gets out of the car."
-    n "He then proceeds to open the doors and let them out, freeing them of their cuffs."
+    n "He then proceeds to open the doors and let them out, freeing them of their shackles."
     scene washington_road with fade
     show copguy dark at right with moveinleft
     show cs disappointed dark at left with moveinleft
