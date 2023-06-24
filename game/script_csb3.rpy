@@ -340,6 +340,9 @@ label boost:
             jump ytp_edit
         "I want to do reviews":
             jump reviews
+
+label reviews:
+    jump secret
     
 label ytp_edit:
     show linus at offscreenright
@@ -438,6 +441,9 @@ label both_fan:
             jump cops_ltt
         "Escape with Arceus.":
             jump arc_escape
+
+label cops_ltt:
+    jump secret
 
 label arc_escape:
     cs "Look I'm sorry Linus, I wish I could explain, but Arceus is right. I need to get going."
@@ -723,4 +729,7 @@ label good_convince:
     n "They both high five, and continue heading in the direction of the road."
 
 label high_gpu:
+    jump secret
+
+label ytp_fan:
     jump secret
