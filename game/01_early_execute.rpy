@@ -3,6 +3,7 @@ init python:
 
 define determination = Dissolve(0.0)
 default persistent.seen = set()
+default persistent.heard = set()
 
 screen music():
     zorder 100
@@ -53,6 +54,7 @@ python early:
         _current_artist = parsed_object[1].strip().removesuffix("\"")
         if (_current_song, _current_artist) not in _played_songs:
             _played_songs.add((_current_song, _current_artist))
+            persistent.heard.add("[_current_song] - [_current_artist]")
             renpy.with_statement(determination)
             renpy.show_screen("music")
             renpy.with_statement(determination)
