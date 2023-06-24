@@ -18,8 +18,8 @@ label csbiii_start:
     cs "Wow! I thought this was an office, why do I get such a cool desk?"
     linus "Actually, this is our worst setup, you'll get upgraded after you've been here a while."
     cs "Holy shit, really? This is way better than any setup I've seen, let alone had."
-    linus "You must've had really bad setups then, this only has 2080s, everyone else has 2080 TIs or GTX Titans."
-    cs "I have absolutely no problem with 2080s."
+    linus "You must've had really bad setups then, this only has 3080s, everyone else has 3090s or 4080s."
+    cs "I have absolutely no problem with 3080s."
     linus "Well, enjoy!"
     hide linus with moveoutright
     cs "I guess I better get to work on editing, let's see what videos I need to edit..."
@@ -234,6 +234,8 @@ label boost:
     show linus behind cs at left with ease
     show linus at center with ease
     n "As CS turns around, Linus friendly punches him in the back."
+    play music "<loop 0>airport_counter.mp3" volume 0.5
+    music Airport Counter - Kazumi Totaka
     linus "Dude what are you talking about? That video was awesome!"
     show cs at left
     cs "Woah wait, you actually like YTPs?"
