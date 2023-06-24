@@ -559,7 +559,7 @@ label arc_escape:
     sheriff "Howdy Officer copguy, tell me, you guys arrested CS this evening, right?"
     copguy "Unfortunately, no we did not."
     n "The sheriff slams his desk."
-    show sheriff at left with hpunch
+    show sheriff at left with vpunch
     sheriff "Damnit! And how did you fuck that up?"
     copguy "Look, you see, he managed-"
     sheriff "You know what, I don't want to hear this!"
