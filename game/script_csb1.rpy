@@ -128,9 +128,11 @@ label walmart:
     cs "*pop* Noice! Genergy is 2 for $5! I'll take them all!"
     cs "Oooh! Pringles are on sale too! Yoink!"
     n "CS walks to checkout."
-    show walmart_register behind cs with dissolve
-    show cs at left with move
-    show cashier at right with dissolve
+    scene walmart_register
+    show cashier at mid_mid_right
+    show walmart_register_fg
+    with dissolve
+    show cs at left with moveinleft
     cs "Here's my stuff!"
     cashier "That'll be $11.88."
     cs "Here you go!"

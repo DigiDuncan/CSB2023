@@ -122,6 +122,7 @@ image cs = "characters/cs/neutral.png"
 image cs flipped = Transform("characters/cs/neutral.png", xzoom = -1)
 image cs happy = "characters/cs/happy.png"
 image cs angry = "characters/cs/angry.png"
+image cs angry flipped = Transform("characters/cs/angry.png", xzoom = -1)
 image cs worried = "characters/cs/worried.png"
 image cs worried flipped = Transform("characters/cs/worried.png", xzoom = -1)
 image cs disappointed = "characters/cs/disappointed.png"
@@ -172,6 +173,7 @@ image cs_car_inside = "bg/car_inside.png"
 image walmart_outside = "bg/Walmart_Outside.png"
 image walmart_inside = "bg/walmart_inside.png"
 image walmart_aisle = "bg/walmart_shelf.png"
+image walmart_register_fg = "bg/walmart_checkout_fg.png"
 image walmart_register = "bg/walmart_checkout.png"
 image cs_door_closed = "bg/door_closed.png"
 image cs_door_open = "bg/door_open.png"

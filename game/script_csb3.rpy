@@ -205,7 +205,7 @@ label fired:
     linus "Just get out of here you stupid dumb animal!!"
     cs "..."
     n "CS turns around and stomps out of the building."
-    show cs angry with hpunch
+    show cs angry flipped with hpunch
     hide cs with moveoutleft
     scene black with fade
     scene outside_ltt with fade
