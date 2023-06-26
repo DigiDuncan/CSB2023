@@ -928,7 +928,41 @@ label south:
 label east:
     cs "Well since east is the way home, we should probably go that way."
     arceus "Alright, that sounds like a good idea."
+    n "Cs and Arc keep following the road for a while, until the come across a small town."
+    cs "Oh my god! We found civilization again!"
+    arceus "Thank god."
+    n "The two look around for a bit, when they see a gas station close by."
+    cs "Let's head over to that gas station, so we can pick up some food to eat."
+    n "CS and Arc head over to the convenience store at the gas station."
+    arceus "Finally, some good fucking food."
+    cs "Donuts and chips have never tasted better."
+    arceus "Thank god the slushie machine was working for once."
+    cs "Okay, now that we can think about something other than food, what's our plan to get home?"
+    arceus "Yeah, I have no clue currently."
+    arceus "I was hoping that we could find a bus or something, but it might be ages till happens, especially in this small town."
+    menu:
+        "Wait for driver at the gas station":
+            jump billy_driver
+        "Hotwire a car":
+            jump hotwire
 
+label billy_driver:
+    cs "Why don't we just wait for someone at the gas station to come out, and then we ask them for an Uber?"
+    n "CS walks over to someone's car parked in the front of the gas station."
+    arceus "Are you crazy? To drive all the way back to New York?"
+    arceus "Plus like, where are we gonna get that money?"
+    cs "Well we don't have to go all the way to New York, we could go a small distance and then get another Uber."
+    arceus "We don't have that money!"
+    n "As the two are agruing, the owner of the car comes up to them."
+    "???" "What are you doing next to my car?"
+    cs "Oh hi."
+    cs "Do you think you can uber us to New York?"
+    "???" "Oh uhh, hold on a second."
+    n "The mysterious driver walks behind the store."
+    arceus "What are you doing? That man looks like he's gonna kill us!"
+    arceus "He's probably like getting his gun or-"
+    billy "Hi Billy Mays here for the Uber Driver!"
+    billy "The fast and easy way to get people around who don't have a car!"
 label high_gpu:
     jump secret
 

@@ -283,6 +283,11 @@ image washington_road morning = "bg/washingtonroadmorning.png"
 image copcar = "bg/copcar.png"
 image copcar_mask = "bg/copcar_mask.png"
 
+## CSBIII Chapter 2
+image washington_road day = "bg/washingtonroadday.png"
+image washington_road dusk = "bg/washingtonroaddusk.png"
+image washington_road morning = "bg/washingtonroadmorning.png"
+
 ## AI Ending
 image park1 = "bg/ai/amusementpark1.png"
 image park2 = "bg/ai/amusementpark2.png"
