@@ -98,7 +98,7 @@ transform xstretch_out:
     linear 0.5 xsize 2
     alpha 0.0
 
-#CSB1 Character Definitions
+# Character Definitions
 define n = Character(None, what_italic = True)  # Narrator
 define cs = Character("cs188", callback = renpy.partial(char_callback, name = "cs", beep = "cs"))
 define craptop = Character("Craptop", callback = char_callback)
@@ -127,7 +127,21 @@ define worker_6 = Character("Worker 6", callback = char_callback)
 define worker_7 = Character("Worker 7", callback = char_callback)
 define digi = Character("Digi", callback = renpy.partial(char_callback, name = "digi", beep = "digi"))
 
-#CSB1 Character Images
+define copguy = Character("CopGuy", callback = renpy.partial(char_callback, name = "copguy", beep = "cop"))
+define arceus = Character("Arceus", callback = renpy.partial(char_callback, name = "arceus", beep = "arc"))
+define anno = Character("Anno", callback = renpy.partial(char_callback, name = "anno", beep = "anno"))
+define border_guard = Character("Border Guard", callback = renpy.partial(char_callback, name = "border_guard"))
+define linus = Character("Linus", callback = renpy.partial(char_callback, name = "linus", beep = "ltt"))
+define asylum_worker = Character("Mr. Mohs", callback = renpy.partial(char_callback, name = "mohs"))
+define csgod = Character("CS God", callback = renpy.partial(char_callback, name = "csgod", beep = "csgod"))
+
+define luke = Character("Luke", callback = renpy.partial(char_callback, name = "luke", beep = "luke"))
+define taran = Character("Taran", callback = renpy.partial(char_callback, name = "taran"))
+define colton = Character("Colton", callback = renpy.partial(char_callback, name = "colton"))
+define sheriff = Character("Sheriff", callback = renpy.partial(char_callback, name = "sheriff"))
+
+# Character Images
+## CS
 image cs = "characters/cs/neutral.png"
 image cs flipped = Transform("characters/cs/neutral.png", xzoom = -1)
 image cs happy = "characters/cs/happy.png"
@@ -139,27 +153,31 @@ image cs disappointed = "characters/cs/disappointed.png"
 image cs disappointed flipped = Transform("characters/cs/disappointed.png", xzoom = -1)
 image cs concentrate = "characters/cs/concentrate.png"
 image cs phone = "characters/cs/phone.png"
-image discord = "characters/discord.png"
-image nova = "characters/nova.png"
-image carguy = "characters/carguy.png"
-image doug = "characters/doug.png"
-image cashier = "characters/cashier.png"
-image young_cs = "characters/cs_young.png"
-image rich = "characters/rich.png"
-image ed = "characters/ed.png"
-image wesley = "characters/wesley.png"
-image michael = Transform("characters/michael.png", xzoom = -1)
-image phil = "characters/phil.png"
-image worker_1 = "characters/worker_corn.png"
-image worker_2 = "characters/worker_blank.png"
-image worker_3 = "characters/worker_mean.png"
-image worker_4 = "characters/worker_eville.png"
-image worker_5 = "characters/eddie_down.png"
-image worker_5alt = "characters/eddie_up.png"
-image worker_6 = "characters/worker_pineapple.png"
-image worker_7 = "characters/worker_chicken.png"
+image cs dark = "characters/cs/neutraldark.png"
+image cs dusk = "characters/cs/neutraldusk.png"
+image cs disappointed dark = "characters/cs/disappointeddark.png"
+image cs disappointed dusk = "characters/cs/disappointeddusk.png"
+image cs worried dark = "characters/cs/worrieddark.png"
+image cs prison = "characters/cs/prison.png"
+image cs prison_worried = "characters/cs/prison_worried.png"
+image cs guard = "characters/cs/guard.png"
+image cs guard dark = "characters/cs/guarddark.png"
 
-# CSB1 Craptop
+## Arc
+image arceus = "characters/arceus.png"
+image arceus flipped = Transform("characters/arceus.png", xzoom = -1)
+image arceus dark = "characters/arceusdark.png"
+image arceus dark flipped = Transform("characters/arceusdark.png", xzoom = -1)
+image arceus dusk = "characters/arceusdusk.png"
+image arceus dusk flipped = Transform("characters/arceusdusk.png", xzoom = -1)
+
+## Anno
+image anno = "characters/anno.png"
+image anno prison = "characters/anno_prison.png"
+image anno guard = "characters/anno_guard.png"
+image anno guard dark = "characters/anno_guarddark.png"
+
+## Craptop
 image craptop blank = "characters/craptop/blank.png"
 image craptop car = "characters/craptop/car.png"
 image craptop desktop = "characters/craptop/desktop.png"
@@ -172,7 +190,43 @@ image craptop updating = "characters/craptop/updating.png"
 image craptop ytp = "characters/craptop/ytp.png"
 image post_it = "post-it.png"
 
-#CSB1 Background Images
+## Others
+image discord = "characters/discord.png"
+image nova = "characters/nova.png"
+image carguy = "characters/carguy.png"
+image doug = "characters/doug.png"
+image cashier = "characters/cashier.png"
+image young_cs = "characters/cs_young.png"
+image rich = "characters/rich.png"
+image ed = "characters/ed.png"
+image ed phone = "characters/ed_phone.png"
+image wesley = "characters/wesley.png"
+image michael = Transform("characters/michael.png", xzoom = -1)
+image phil = "characters/phil.png"
+image worker_1 = "characters/worker_corn.png"
+image worker_2 = "characters/worker_blank.png"
+image worker_3 = "characters/worker_mean.png"
+image worker_4 = "characters/worker_eville.png"
+image worker_5 = "characters/eddie_down.png"
+image worker_5alt = "characters/eddie_up.png"
+image worker_6 = "characters/worker_pineapple.png"
+image worker_7 = "characters/worker_chicken.png"
+image border_guard = "characters/border_guard.png"
+image linus = "characters/linus.png"
+image asylum_worker = "characters/mohs.png"
+image csgod = "characters/csgod.png"
+image copguy = "characters/copguy.png"
+image luke = "characters/luke.png"
+image border_guard dusk = "characters/border_guard_dusk.png"
+image copguy dark = "characters/copguydark.png"
+image copguy_ai = "characters/ai_cop_guy_full.png"
+image taran = "characters/taran.png"
+image taran flipped = Transform("characters/taran.png", xzoom = -1)
+image colton = "characters/colton.png"
+image sheriff = "characters/sheriff.png"
+
+# Background Images
+## CSBI
 image black = "bg/black.png"
 image cs_room = "bg/cs_bedroom1.png"
 image cs_room_2 = "bg/cs_bedroom2.png"
@@ -195,36 +249,7 @@ image hoh_hq3 = "bg/office3.png"
 image hoh_hq4 = "bg/office4.png"
 image hoh_hq5 = "bg/office5.png"
 
-# CSB2 Character Definitions
-define copguy = Character("CopGuy", callback = renpy.partial(char_callback, name = "copguy", beep = "cop"))
-define arceus = Character("Arceus", callback = renpy.partial(char_callback, name = "arceus", beep = "arc"))
-define anno = Character("Anno", callback = renpy.partial(char_callback, name = "anno", beep = "anno"))
-define border_guard = Character("Border Guard", callback = renpy.partial(char_callback, name = "border_guard"))
-define linus = Character("Linus", callback = renpy.partial(char_callback, name = "linus", beep = "ltt"))
-define asylum_worker = Character("Mr. Mohs", callback = renpy.partial(char_callback, name = "mohs"))
-define csgod = Character("CS God", callback = renpy.partial(char_callback, name = "csgod", beep = "csgod"))
-
-# CSB2 Character Images
-image ed phone = "characters/ed_phone.png"
-image arceus dark = "characters/arceusdark.png"
-image arceus = "characters/arceus.png"
-image arceus flipped = Transform("characters/arceus.png", xzoom = -1)
-image arceus dark flipped = Transform("characters/arceusdark.png", xzoom = -1)
-image anno = "characters/anno.png"
-image anno prison = "characters/anno_prison.png"
-image anno guard = "characters/anno_guard.png"
-image anno guard dark = "characters/anno_guarddark.png"
-image cs prison = "characters/cs/prison.png"
-image cs prison_worried = "characters/cs/prison_worried.png"
-image cs guard = "characters/cs/guard.png"
-image cs guard dark = "characters/cs/guarddark.png"
-image border_guard = "characters/border_guard.png"
-image linus = "characters/linus.png"
-image asylum_worker = "characters/mohs.png"
-image csgod = "characters/csgod.png"
-image copguy = "characters/copguy.png"
-
-# CSB2 Background Images
+## CSBII
 image helipad = "bg/helipad.png"
 image cs_street = "bg/cs_street.png"
 image jail_inside = "bg/jail_inside.png"
@@ -242,33 +267,7 @@ image alley = "bg/alley.png"
 image question = "bg/police_interrogation.png"
 image asylum = "bg/asylum2.png"
 
-# CSB3 Character Definitions
-define luke = Character("Luke", callback = renpy.partial(char_callback, name = "luke", beep = "luke"))
-define taran = Character("Taran", callback = renpy.partial(char_callback, name = "taran"))
-define colton = Character("Colton", callback = renpy.partial(char_callback, name = "colton"))
-define sheriff = Character("Sheriff", callback = renpy.partial(char_callback, name = "sheriff"))
-
-# CSB3 Character Images
-image cs dark = "characters/cs/neutraldark.png"
-image cs dusk = "characters/cs/neutraldusk.png"
-image cs disappointed dark= "characters/cs/disappointeddark.png"
-image cs disappointed dusk = "characters/cs/disappointeddusk.png"
-image cs worried dark= "characters/cs/worrieddark.png"
-image arceus dusk = "characters/arceusdusk.png"
-image arceus dusk flipped = Transform("characters/arceusdusk.png", xzoom = -1)
-image luke = "characters/luke.png"
-image border_guard dusk = "characters/border_guard_dusk.png"
-image copguy dark = "characters/copguydark.png"
-image copguy_ai = "characters/ai_cop_guy_full.png"
-image taran = "characters/taran.png"
-image taran flipped = Transform("characters/taran.png", xzoom = -1)
-image colton = "characters/colton.png"
-image sheriff = "characters/sheriff.png"
-
-image objection = "objection.png"
-image hold_it = "hold_it.png"
-
-# CSB3 Background Images
+## CSBIII Chapter 1
 image csdesk = "bg/cs_desk.png"
 image csvideo = "bg/csvideo.png"
 image setup = "bg/linus_setup.png"
@@ -283,7 +282,8 @@ image washington_road dusk = "bg/washingtonroaddusk.png"
 image washington_road morning = "bg/washingtonroadmorning.png"
 image copcar = "bg/copcar.png"
 image copcar_mask = "bg/copcar_mask.png"
-# AI Ending
+
+## AI Ending
 image park1 = "bg/ai/amusementpark1.png"
 image park2 = "bg/ai/amusementpark2.png"
 image carousel = "bg/ai/carousel.png"
@@ -292,7 +292,11 @@ image entertunnel = "bg/ai/entrancetotunnel.png"
 image linusmedia = "bg/ai/linusmedia.png"
 image secrettunnel = "bg/ai/secret_tunnel.png"
 
-# Animated sprites
+# Static Images
+image objection = "objection.png"
+image hold_it = "hold_it.png"
+
+# Animated Sprites
 image blue_light:
     "blue_light.png"
     alpha 0.0
@@ -307,7 +311,7 @@ image red_light:
     linear 0.5 alpha 0.75
     repeat
 
-# Jump menu
+# Jump Menu
 screen start_menu():
     zorder 100
     style_prefix "start"
