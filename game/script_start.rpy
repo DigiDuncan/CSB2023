@@ -164,18 +164,18 @@ image cs guard = "characters/cs/guard.png"
 image cs guard dark = "characters/cs/guarddark.png"
 
 ## Arc
-image arceus = "characters/arceus.png"
-image arceus flipped = Transform("characters/arceus.png", xzoom = -1)
-image arceus dark = "characters/arceusdark.png"
-image arceus dark flipped = Transform("characters/arceusdark.png", xzoom = -1)
-image arceus dusk = "characters/arceusdusk.png"
-image arceus dusk flipped = Transform("characters/arceusdusk.png", xzoom = -1)
+image arceus = "characters/arc/arceus.png"
+image arceus flipped = Transform("characters/arc/arceus.png", xzoom = -1)
+image arceus dark = "characters/arc/arceusdark.png"
+image arceus dark flipped = Transform("characters/arc/arceusdark.png", xzoom = -1)
+image arceus dusk = "characters/arc/arceusdusk.png"
+image arceus dusk flipped = Transform("characters/arc/arceusdusk.png", xzoom = -1)
 
 ## Anno
-image anno = "characters/anno.png"
-image anno prison = "characters/anno_prison.png"
-image anno guard = "characters/anno_guard.png"
-image anno guard dark = "characters/anno_guarddark.png"
+image anno = "characters/anno/anno.png"
+image anno prison = "characters/anno/anno_prison.png"
+image anno guard = "characters/anno/anno_guard.png"
+image anno guard dark = "characters/anno/anno_guarddark.png"
 
 ## Craptop
 image craptop blank = "characters/craptop/blank.png"
