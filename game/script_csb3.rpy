@@ -727,6 +727,178 @@ label good_convince:
     show arceus dark at mid_right_right
     with move
     n "They both high five, and continue heading in the direction of the road."
+    jump choose_direction
+#Chapter 2 for True Ending 1 starts here
+
+label choose_direction:
+    n "As the duo continues their journey through the night, they soon have to figure out exactly where to go."
+    cs "We've been walking all night, I'm exhausted."
+    arceus "Yeah let's hope we find some food and water soon."
+    cs "Hey uhh, do you know exactly where we are going?"
+    arceus "Well, I realized that the sun set in that direction, so that means that we are heading east right now."
+    arceus "We can head in any direction really, the second we find a better form of transportation than walking, we're taking it."
+    arceus "Which way do you want to go?"
+    menu:
+        "North":
+            jump north
+        "East":
+            jump east
+        "South":
+            jump south
+        "West":
+            jump west 
+
+label north:
+    cs "What if we go north?"
+    arceus "...What?"
+    cs "You said pick a direction!"
+    arceus "We just came from the north. Just pick another direction."
+    menu:
+        "North":
+            jump north2
+        "East":
+            jump east
+        "South":
+            jump south
+        "West":
+            jump west 
+
+label north2:
+    arceus "I literally just said-"
+    arceus "Just pick another direction."
+    menu:
+        "North":
+            jump north2
+        "East":
+            jump east
+        "South":
+            jump south
+        "West":
+            jump west 
+
+label west:
+    cs "I think we should go west."
+    arceus "Alright, we can try."
+    n "CS and Arc run into the Pacific."
+    arceus "It's just the ocean. Let's go another direction."
+    menu:
+        "North":
+            jump north
+        "East":
+            jump east
+        "South":
+            jump south
+        "West":
+            jump west2
+
+label west2:
+    cs "Let's try going west again. I'm sure there is something there."
+    arceus "Uhm, okay."
+    n "CS and Arc run into the Pacific, again."
+    arceus "Still just the ocean."
+    menu:
+        "North":
+            jump north
+        "East":
+            jump east
+        "South":
+            jump south
+        "West":
+            jump west3
+
+label west3:
+    cs "Nah come on, there is definitely SOMETHING we can find west."
+    arceus "I really don't wanna go there again..."
+    cs "Nah, we got this, for sure this time."
+    n "CS and Arc find a cool looking crab, but still just the ocean again."
+    cs "Hey! that's quite an epic crustacean!"
+    arceus "Alright cool, can we pick another direction this time?"
+    menu:
+        "North":
+            jump north
+        "East":
+            jump east
+        "South":
+            jump south
+        "West":
+            jump west4
+
+label west4:
+    cs "Okay! One last time!"
+    arceus "Nooooooo...."
+    n "CS and Arc surprisingly, find the ccean again."
+    menu:
+        "North":
+            jump north
+        "East":
+            jump east
+        "South":
+            jump south
+        "West":
+            jump west5
+
+label west5:
+#Morning
+    arceus "..."
+    menu:
+        "North":
+            jump north
+        "East":
+            jump east
+        "South":
+            jump south
+        "West":
+            jump west6
+
+label west6:
+#Noon
+    arceus "..."
+    menu:
+        "North":
+            jump north
+        "East":
+            jump east
+        "South":
+            jump south
+        "West":
+            jump west7
+
+label west7:
+#Evening
+    arceus "..."
+    menu:
+        "North":
+            jump north
+        "East":
+            jump east
+        "South":
+            jump south
+        "West":
+            jump west8
+
+label west8:
+#Night
+    arceus "..."
+    menu:
+        "North":
+            jump north
+        "East":
+            jump east
+        "South":
+            jump south
+        "West":
+            jump west5
+
+label south:
+    cs "I'm too fucking tired to think of what's south."
+    arceus "Yeah, same."
+    cs "Did you know that the Halifax Disaster was the biggest manmade non-nuclear explosion?"
+    arceus "What?"
+    cs "I don't know man, I'm too fucking tired to thhhhhhhinkkkk brooo"
+
+label east:
+    cs "Well since east is the way home, we should probably go that way."
+    arceus "Alright, that sounds like a good idea."
 
 label high_gpu:
     jump secret
