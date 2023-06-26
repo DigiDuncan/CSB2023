@@ -738,6 +738,9 @@ label good_convince:
 
 label choose_direction:
     n "As the duo continues their journey through the night, they soon have to figure out exactly where to go."
+    scene washington_road morning
+    show cs at left
+    show arceus at right
     cs "We've been walking all night, I'm exhausted."
     arceus "Yeah let's hope we find some food and water soon."
     cs "Hey uhh, do you know exactly where we are going?"
@@ -786,6 +789,9 @@ label west:
     cs "I think we should go west."
     arceus "Alright, we can try."
     n "CS and Arc run into the Pacific."
+    scene washington_road day
+    show cs at left
+    show arceus at right
     arceus "It's just the ocean. Let's go another direction."
     menu:
         "North":
@@ -801,6 +807,9 @@ label west2:
     cs "Let's try going west again. I'm sure there is something there."
     arceus "Uhm, okay."
     n "CS and Arc run into the Pacific, again."
+    scene washington_road dusk
+    show cs dusk at left
+    show arceus dusk at right
     arceus "Still just the ocean."
     menu:
         "North":
@@ -817,6 +826,9 @@ label west3:
     arceus "I really don't wanna go there again..."
     cs "Nah, we got this, for sure this time."
     n "CS and Arc find a cool looking crab, but still just the ocean again."
+    scene washington_road
+    show cs dark at left
+    show arceus dark at right
     cs "Hey! that's quite an epic crustacean!"
     arceus "Alright cool, can we pick another direction this time?"
     menu:
@@ -832,7 +844,10 @@ label west3:
 label west4:
     cs "Okay! One last time!"
     arceus "Nooooooo...."
-    n "CS and Arc surprisingly, find the ccean again."
+    n "CS and Arc surprisingly, find the ocean again."
+    scene washington_road morning
+    show cs at left
+    show arceus at right
     menu:
         "North":
             jump north
@@ -844,8 +859,10 @@ label west4:
             jump west5
 
 label west5:
-#Morning
     arceus "..."
+    scene washington_road day
+    show cs at left
+    show arceus at right
     menu:
         "North":
             jump north
@@ -857,8 +874,10 @@ label west5:
             jump west6
 
 label west6:
-#Noon
     arceus "..."
+    scene washington_road dusk
+    show cs dusk at left
+    show arceus dusk at right
     menu:
         "North":
             jump north
@@ -870,8 +889,10 @@ label west6:
             jump west7
 
 label west7:
-#Evening
     arceus "..."
+    scene washington_road
+    show cs dark at left
+    show arceus dark at right
     menu:
         "North":
             jump north
@@ -883,8 +904,10 @@ label west7:
             jump west8
 
 label west8:
-#Night
     arceus "..."
+    scene washington_road morning
+    show cs at left
+    show arceus at right
     menu:
         "North":
             jump north
