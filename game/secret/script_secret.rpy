@@ -1,3 +1,8 @@
+transform t_punchup:
+    yanchor 1.0 ypos 0.0
+    rotate 0
+    linear 1 rotate 960
+
 label secret:
     scene black with fade
     play music "<loop 0>secret/space_classroom.mp3"
@@ -25,7 +30,7 @@ label secret2:
     show pakoo at center with moveinright
     show digi at center with vpunch
     play sound "alt_punch.ogg"
-    hide digi with moveouttop
+    show digi at t_punchup with move
     show pakoo at center with hpunch
     play music "<loop 0>secret/showtime.mp3" volume 0.5
     pakoo "Thats fucking right, we finished the True Ending!"
