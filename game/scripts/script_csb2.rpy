@@ -419,7 +419,8 @@ label bordercrossing:
     arceus "Hi doggy!"
     cashier "You're my favorite customer."
     arceus "Thanks a lot! Bye~"
-    hide arceus flipped with moveoutleft
+    show arceus at t_arc_at_tims
+    hide arceus with moveoutleft
     cashier "Buh-bye!"
     stop music fadeout 3.0
     music end
