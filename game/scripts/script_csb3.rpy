@@ -1153,6 +1153,8 @@ label talktohohsis:
     n "CS looks back out into the crowd again one more time."
     cs "This is CS..."
     cs "Signing out!"
+    play sound "cheers.ogg" volume 0.7
+    pause 2.0
     n "The crowd errupts in cheers as CS finally enters his house."
     scene cs_room with fade
     show cs at center with moveinleft
