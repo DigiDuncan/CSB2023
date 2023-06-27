@@ -1013,7 +1013,30 @@ label in_billy_car:
     jump car_dialogue
 
 label montana:
-    
+
+    show billy car
+    n "After a few hours of driving, the trio currently resides in the middle of Montana."
+    n "Arceus is sleeping, while CS peers out the window."
+    cs "Are we there yet?"
+    billy "Nope!"
+    cs "Aw man..."
+    show billy car turn
+    billy "We still got a ways to go, we aren't even a quarter of the way yet."
+    show billy car
+    cs "Alright, I'll just, keep looking at the trees pass by."
+    billy "Well good news for you, there is a small town up ahead."
+    billy "I was gonna buy some new supplies for my gadgets, if you guys want to pick out anything."
+    cs "Sure! I love buying random things!"
+    cs "What about you Arceus?"
+    cs "Hey Arc!"
+    billy "CS you should probably leave the dog thing alone in the back."
+    n "Arceus immediately jerks straight up."
+    arceus "What did you just call me?"
+    billy "Nothing!"
+    billy "Here we are, at the store. I'll be back here in a few."
+    cs "Same, I'll come with you."
+    n "Arceus falls back to sleep in the car."
+
 
 label back_home:
     scene cs_house with fade
