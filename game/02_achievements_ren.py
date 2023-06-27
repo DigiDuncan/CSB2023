@@ -51,6 +51,7 @@ grayscale = Matrix(
 )
 
 achieves = [
+        ("ZUP!", "???", "Start the game.", "zup"),
         ("I Don't Like People!", "Avoid responsibility.", "Tell CS not to go to Wal-Mart.", "missing"),
         ("Dead Meme", "???", "Sparta kick Wesley.", "missing"),
         ("#1 Rated Pooper", "???", "Use your skills to keep your job.", "missing"),

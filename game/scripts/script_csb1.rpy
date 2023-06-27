@@ -15,6 +15,7 @@ label csbi_start:
     scene craptop_bg
     show craptop desktop
     show post_it at t_post_it
+    $ achievement_manager.unlock("ZUP!")
     craptop "Your PC sux. lol."
     sticky "Delete the CSCord."
     cs "Eh, maybe tomorrow."
