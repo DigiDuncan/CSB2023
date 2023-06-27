@@ -1004,7 +1004,7 @@ label in_billy_car:
     cs "No it's my car!"
     show billy car happy
     billy "Alright!"
-    stop music with fadeout
+    stop music fadeout 3.0
     jump back_home
 
 label back_home:
