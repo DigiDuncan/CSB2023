@@ -1026,7 +1026,7 @@ label back_home:
     ed "YOU!"
     n "CS and the gang look forth at CS's front porch, where Richard and Ed are waiting angrily for him."
     ed "I have been waiting for you for quite some time now."
-    rich "We've been trying to stop you for some time now, but this is final stop for you."
+    rich "We've been trying to stop you for a while now, but this is final stop for you."
     cs "HoH SiS?? What do you guys still want from me?"
     ed "What do you think CS? After you put Wesley in the hospital? After you crippled most of our workers?"
     cs "Well you guys scammed me out of my money and broke my computer! Of course I wanted some kind of revenge!"
