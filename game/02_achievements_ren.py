@@ -59,3 +59,6 @@ class AchievementManager:
     def reset(self):
         for a in self.achievements:
             a.unlocked = False
+
+
+achievement_manager = AchievementManager()
