@@ -904,6 +904,7 @@ label west7:
             jump west8
 
 label west8:
+    $ achievement_manager.unlock("Ocean Man")
     arceus "..."
     scene washington_road morning
     show cs at left
