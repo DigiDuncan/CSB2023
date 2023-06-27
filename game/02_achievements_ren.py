@@ -1,6 +1,6 @@
 # Mocking
 import renpy
-persistent = object()
+persistent = {}
 persistent.unlocked_achievements = set()
 
 """renpy
@@ -37,7 +37,7 @@ class Achievement:
         if self.unlocked:
             return renpy.displayable(self._icon)
         else:
-            return renpy.Transform(child = renpy.displayable(self._icon), function = grayscale)
+            return Transform(child = renpy.displayable(self._icon), matrixcolor = grayscale)
 
 class AchievementManager:
     def __init__(self):
@@ -59,12 +59,10 @@ class AchievementManager:
     def unlock(self, name: str):
         ach = self.get(name)
         ach.unlocked = True
-        persistent.unlocked_achievements.add(name)
 
     def reset(self):
         for a in self.achievements:
             a.unlocked = False
-        persistent.unlocked_achievements = set()
 
 
 achievement_manager = AchievementManager()

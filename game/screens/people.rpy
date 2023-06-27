@@ -32,7 +32,6 @@ init python:
 
 screen people_nav():
     add Color('#323e42', alpha=0.75)
-
     viewport:
         xpos 25 ypos 400
         xsize 350 ysize 350
@@ -112,7 +111,7 @@ screen person(l):
                 add "images/characters/cs/neutral.png" xalign 1.0 yalign 1.0 zoom 0.75 xzoom -1
             elif l == "arceus":
                 add "images/characters/arc/arceus.png" xalign 1.0 yalign 1.0 zoom 0.75
-            if l == "anno":
+            elif l == "anno":
                 add "images/characters/anno/anno.png" xalign 1.0 yalign 1.0 zoom 0.75
             elif l == "hoh_worker":
                 pass

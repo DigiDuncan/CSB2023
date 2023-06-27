@@ -912,7 +912,7 @@ label west7:
 
 label west8:
     $ achievement_manager.unlock("Ocean Man")
-    arceus "..."
+    arceus "Player. {w=0.5}Stop. {w=0.5}Going. {w=0.5}West."
     scene washington_road morning
     show cs at left
     show arceus at right
