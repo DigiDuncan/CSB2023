@@ -11,7 +11,8 @@ grayscale = Matrix(
 )
 
 achieves = [
-        ("Ocean Man", "???", "Go west eight times.", "ocean")
+        ("Ocean Man", "???", "Go west eight times.", "ocean"),
+        ("HoH SiS's Most Wanted", "???", "Complete CSBI.", "csbi")
     ]
 
 class Achievement:
@@ -25,7 +26,7 @@ class Achievement:
 
     @property
     def desc(self) -> str:
-        return self.unlocked_desc if self.unlocked else self.unlocked_desc
+        return self.unlocked_desc if self.unlocked else self.locked_desc
     
     @property
     def icon(self) -> renpy.Displayable:

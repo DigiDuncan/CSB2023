@@ -33,13 +33,22 @@ screen achievements_welcome():
                 if a.unlocked:
                     hbox:
                         first_spacing 25
-                        image a.icon
-                        text a.name + "\n" + a.desc
+                        image a.icon:
+                            xysize(100,100)
+                        vbox:
+                            text a.name
+                            text a.desc:
+                                color("#787878")
+            
             text "Locked Achievements"
             for a in achievement_manager.achievements:
                 if not a.unlocked:
                     hbox:
                         first_spacing 25
-                        image a.icon
-                        text a.name + "\n" + a.desc
+                        image a.icon:
+                            xysize(100,100)
+                        vbox:
+                            text a.name
+                            text a.desc:
+                                color("#787878")
             
