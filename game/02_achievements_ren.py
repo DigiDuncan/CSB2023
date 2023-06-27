@@ -8,11 +8,11 @@ default persistent.unlocked_achievements = set()
 init python:
 """
 
-grayscale = renpy.Matrix(
+grayscale = Matrix(
+    [0.2126, 0.7152, 0.0722, 0,
     0.2126, 0.7152, 0.0722, 0,
     0.2126, 0.7152, 0.0722, 0,
-    0.2126, 0.7152, 0.0722, 0,
-    0.0000, 0.0000, 0.0000, 1,
+    0.0000, 0.0000, 0.0000, 1]
 )
 
 achieves = [
