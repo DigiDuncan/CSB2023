@@ -985,7 +985,7 @@ label billy_driver:
     arceus "We don't have the money!"
     n "As the two are agruing, the owner of the car comes up to them."
     "???" "What are you doing next to my car?"
-    cs "Oh ,hi."
+    cs "Oh, hi."
     cs "Do you think you can Uber us to New York?"
     "???" "Oh uhh, hold on a second."
     n "The mysterious driver walks behind the store."
