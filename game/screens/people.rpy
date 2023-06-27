@@ -27,7 +27,8 @@ init python:
         "luke": "Luke Lafreniere",
         "taran": "Taran Van Hemert",
         "colton": "Colton Potter",
-        "sheriff": "Sheriff"
+        "sheriff": "Sheriff",
+        "billy": "Billy Mays"
     }
 
 screen people_nav():
