@@ -790,6 +790,7 @@ label north:
             jump west 
 
 label north2:
+    $ achievement_manager.unlock("Can We Go Back?")
     arceus "I literally just said-"
     arceus "Just pick another direction."
     menu:
