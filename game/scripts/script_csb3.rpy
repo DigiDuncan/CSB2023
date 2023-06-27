@@ -436,12 +436,12 @@ label both_fan:
     n "Suddenly, Arceus rushes in through the doors."
     show arceus at mid_right with moveinright
     arceus "CS! There you are! We need to go ASAP!"
-    linus "So you DO have a furry fanbase who wants to join LTT! Damnit CS, I should've known."
+    linus "So you DO have a furry fanbase who wants to join LTT! Damn it CS, I should've known."
     show cs worried
     cs "Shut up, Linus!"
     cs "Arceus, what's going on? Where have you been?"
     arceus "Look, CS, we don't have much time. I know that you've been living here for a while, but the cops are still looking to extradite us back to America, and they are headed to LTT to search for you!"
-    linus "WHAT? CS, why are the cops chasing you? This could seriously damage our reputation more than the time I mentioned I dropped hard R's as a kid!"
+    linus "WHAT? CS, why are the cops chasing you? This could seriously damage our reputation {size=-10}more than the time I mentioned I dropped hard R's as a kid!"
 
     menu:
         "What will CS do?"
@@ -454,12 +454,12 @@ label cops_ltt:
     jump secret
 
 label arc_escape:
-    cs "Look I'm sorry Linus, I wish I could explain, but Arceus is right. I need to get going."
-    linus "I am like, so confused and frustrated, this better not ruin LMG."
+    cs "Look, I'm sorry Linus, I wish I could explain, but Arceus is right. I need to get going."
+    linus "I am like, {i}so{/i} confused and frustrated, this better not ruin LMG."
     show cs disappointed
     cs "I'm sorry guys, I'll try to catch you guys up after this."
     cs "This is CS, signing out."
-    arceus "We have no time for that CS! We need to go!"
+    arceus "We have no time for that, CS! We need to go!"
     # TODO: Outside LTT
     scene outside_ltt with determination
     show cs disappointed at left
@@ -469,7 +469,7 @@ label arc_escape:
     play sound "siren.ogg" loop fadein 2.0 volume 0.2
     show blue_light at left
     show red_light at right
-    n "As they are making their way away from the building, they can hear sirens grow in volume as flashing lights rush towards the LTT building."
+    n "As they are making their way away from the building, they can hear sirens grow in volume as flashing lights rush towards the LMG headquarters."
     cs "This is awful, I was just starting to get along well with Linus and the gang."
     arceus "I'm sure they'll forgive you in due time, but for now, we need to evade the cops' trail and get back to the United States."
     n "While Arceus and CS were hitchhiking away from the scene, the cops show up at LTT to investigate."
@@ -483,7 +483,8 @@ label arc_escape:
     luke "WTF is going on?"
     taran "Linus! What did you do!?"
     linus "Relax guys, it's nothing that we did."
-    linus "*mutters to himself* I should've done a background check on CS, it's weird how-"
+    n "Linus mutters to himself."
+    linus "{i}I should've done a background check on CS, it's weird how--{/i}"
     show luke at mid_left
     show taran flipped at mid_mid_left
     show colton at center
@@ -491,24 +492,24 @@ label arc_escape:
     show copguy at right with moveinright
     n "Copguy bursts in."
     copguy "Alright, everyone! Back against the wall! Nobody move!"
-    luke "So, are we moving to the wall or… not moving?"
-    copguy "Don't question the police! Just… stand against the wall!"
+    luke "So, are we moving to the wall or... not moving?"
+    copguy "Don't question the police! Just--{w=0.5} stand against the wall!"
     n "The LMG members move toward the wall while more policemen come in and search the place."
     copguy "Alright, I have a very simple question to ask you all."
     copguy "Do you know this man?"
     n "Copguy shows a picture of CS to the crew."
-    taran "Uhh yeah, that's-"
+    taran "Uhh yeah, that's--"
     linus "We don't know who that is at all."
     copguy "Oh really? You there, what did you say about this man?"
-    taran "I uhh…"
-    taran "I was saying that…"
+    taran "I, uhh..."
+    taran "I was saying that..."
     taran "That it looks like Colton! Yeah!"
-    colton "WTF Taran!"
-    linus "Yep, that looks like Colton alright."
-    copguy "Alright, sir what's your name?"
-    linus "It's lin-"
+    colton "What the fuck, Taran!"
+    linus "Yep, that looks like Colton, alright."
+    copguy "Alright, sir, what's your name?"
+    linus "It's Lin-"
     copguy "Yeah okay. Linard, if you say that it's {i}this{/i} man, how can you explain the maid outfit that was used in the video that was just uploaded an hour ago?"
-    linus "Well uhh, he's got some... weird kinks…"
+    linus "Well uhh, he's got some... weird kinks..."
     colton "Oh my fucking god."
     copguy "If you are so sure then, lemme go talk to the sheriff about this."
     linus "Sure thing, officer."
@@ -529,7 +530,7 @@ label arc_escape:
     arceus "Yeah, so much for the editing job, I guess."
     cs "I can't seem to get a break this month. First my problems with HoH SiS, now I'm running from the cops?"
     cs "I should've just called another foundation repair company."
-    arceus "Yeah, that sounds like hell. You could have called me. I am literally a god."
+    arceus "Yeah, that sounds like hell. {size=-10}You could have called me. I am literally a god."
     cs "It IS hell."
     arceus "I should've known that the cops were going look for us. We didn't hide our tracks too well."
     arceus "I heard about the cops at the last second when I was checking comm chatter around the area. I figured that since you helped me out, I should come back for you."
@@ -540,7 +541,7 @@ label arc_escape:
     show arceus dusk flipped at mid_left
     n "CS and Arc approach the border guard again."
     show border_guard dusk at right with moveinright
-    border_guard "I'm gonna need proof of-"
+    border_guard "I'm gonna need proof of--"
     border_guard "Ey, it's you two buds again!"
     arceus "Yeah, quite the vacation we had! We had so much fun in Canada didn't we CS?"
     cs "Yep!"
@@ -554,8 +555,10 @@ label arc_escape:
     arceus "Hmm?"
     cs "Well, I went to work at LTT, and had to spend my nights at a nearby hotel."
     cs "Linus gave me enough money to make due in time."
-    arceus "Well, I've been at the same hotel, clearing up ties with my cyber criminal past."
-    arceus "I've been in prison for 5 years, so I've had to figure out what to do again for money."
+    arceus "Wait, which hotel?"
+    cs "The Hoto Hoto?"
+    arceus "Well, I've been at the same hotel, clearing up ties from my cyber criminal past."
+    arceus "I've been in prison for five years, so I've had to figure out what to do again for money."
     arceus "Anno's been at the hotel too, I think he's planning on starting some kind of band."
     cs "Ah, I see."
     scene sheriff_office
@@ -564,20 +567,20 @@ label arc_escape:
     n "Back at the police station, Copguy talks to the sheriff about CS."
     show sheriff at left
     show copguy at right with moveinright
-    sheriff "Howdy Officer copguy, tell me, you guys arrested CS this evening, right?"
+    sheriff "Howdy officer Copguy, tell me, you guys arrested CS this evening, right?"
     copguy "Unfortunately, no we did not."
     n "The sheriff slams his desk."
     show sheriff at left with vpunch
     sheriff "Damnit! And how did you fuck that up?"
-    copguy "Look, you see, he managed-"
+    copguy "Look, you see, he managed--"
     sheriff "You know what, I don't want to hear this!"
     sheriff "First, they manage to escape from one of our top prisons, and now you're telling me that you lost him?!"
-    copguy "Please, this is one of my best cases yet! I need to catch him, and I promise I'll put him back in jail along with those other 2!"
+    copguy "Please, this is one of my best cases yet! I need to catch him, and I promise I'll put him back in jail along with those other two!"
     n "The sheriff thinks for a moment."
     sheriff "Alright, since I know you've been pretty good at catching criminals for the past 15 years, I'll let it slide this time."
-    sheriff "But believe me, this CS man has a pretty high target on his head, and we need to bring him to justice before him and his gang do anything else funny."
+    sheriff "But believe me, this CS man has a pretty big target on his head, and we need to bring him to justice before him and his gang do anything else funny."
     sheriff "The next time you come back here, he better be with you, or you're fired!"
-    copguy "Sure thing, boss. I'll track him down on my own."
+    copguy "Sure thing, boss. I'll track him down...{w=0.5} on my own."
     hide copguy with moveoutright
     n "Copguy turns around and heads out to track down CS and Arc."
     scene washington_road with fade
@@ -594,7 +597,10 @@ label arc_escape:
     music end
     n "CS looks into the distance."
     cs "Hey Arc! I can see some lights in the distance! We gotta be getting close!"
-    arceus "Wait a minute, those are-"
+    arceus "Wait a minute, those are--"
+    show blue_light at left
+    show red_light at right
+    play sound "<loop 0>siren.ogg" volume 0.1
     n "Arceus squints into the distance, but CS and Arc both immediately recognize the sounds."
     show cs worried dark
     "CS and Arceus" "SHIT!"
@@ -616,6 +622,7 @@ label pussy_out_forest:
     hide cs
     with moveoutright
     scene black with fade
+    stop sound fadeout 1.0
     n "CS and Arc quickly jump into the trees next to them."
     n "As CS and Arceus hunker down into the foliage, they see the flash of lights fly past them."
     arceus "Phew! That was a close one, CS!"
@@ -634,14 +641,15 @@ label wait_forest:
     arceus "Hmm?"
     cs "Now that we are out here and have more time to talk, where exactly are we heading to? Why did we come back to the US?"
     arceus "Well, I figured you wanted to go back home, right?"
-    cs "Of course I want to head back home, it's just, it seems so far away."
-    cs "We don't really have a car or anything, we are completely lost, and we got the cops still looking for us probably!"
+    cs "Of course I want to head back home, it's just... it seems so far away."
+    cs "We don't really have a car or anything, we are completely lost, and we got the cops still looking for us, probably!"
     arceus "Look man, I know it's pretty hard right now. But we gotta be optimistic about this."
     arceus "The second we find people, I'm sure we can work something out and head back home."
     cs "If you say so, I just hope we don't have to WALK all the way there."
     arceus "I don't think that'll be the case."
-    copguy "I don't think so either."
+    copguy "{cps=10}I don't think so either."
     n "Before CS and Arc can react, they both get the lights knocked out of them."
+    play sound "punch.ogg"
     scene black with determination
     n "When CS and Arc wake up, they find themselves in handcuffs leaned up against a cop car."
     scene washington_road with fade
@@ -664,8 +672,8 @@ label wait_forest:
     with determination
     show arceus at right with moveinleft
     show cs disappointed at left with moveinleft
-    n "CS and Arc get in the cop car, as Copguy says some order on his walkie."
-    copguy "Alright sheriff, we got em."
+    n "CS and Arc are thrown into the cop car, as Copguy says some order on his walkie."
+    copguy "This is Copguy calling in a 1-8-8 on Compass Road. Sheriff? We got em."
     n "Copguy gets in the car and they head off."
     n "As they are heading away, CS has the urge to say something."
     menu:
@@ -685,9 +693,9 @@ label good_convince:
     cs "Wait a second! The reason all this happened was because HoH SiS sabotaged my computer!"
     arceus "Wait what?"
     copguy "What are you on about?"
-    cs "Yes! HoH SiS scammed me out of thousands of dollars to get my foundation fixed, and the also broke my laptop!"
+    cs "Yes! HoH SiS scammed me out of thousands of dollars to get my foundation fixed, and they also broke my laptop!"
     cs "So afterwards, I wanted to get my revenge!"
-    copguy "I'm not believeing this for a second."
+    copguy "I'm not believing this for a second."
     copguy "You really thought I would fall for some silly little lie?"
     play sound "hold_it.mp3" volume 0.5
     show hold_it at truecenter with hpunch
@@ -700,14 +708,14 @@ label good_convince:
     copguy "WHAT? How did you get that?"
     arceus "Watch this."
     show black with fade
-    n "Copguy stops the car as Arceus plays back the scene from CSB1 with the scamming of CS from HoH SiS."
+    n "Copguy stops the car as Arceus plays back the scene from {i}CS Bounciness I{/i} with the scamming of CS by HoH SiS."
     scene copcar with fade
     show arceus at right
     show cs disappointed at left
-    cs "How-"
+    cs "How--"
     arceus "I have my ways."
     copguy "I don't understand, so HoH SiS really did scam you hard, didn't they?"
-    copguy "I'm not sure how valid it was for you to push that man off a building,"
+    copguy "I'm not sure how valid it was for you to push that man off a building..."
     copguy "But I can't argue right now on if that footage is fake or not."
     stop music fadeout 3.0
     music end
@@ -719,13 +727,14 @@ label good_convince:
     show arceus dark flipped at mid_left_left with moveinleft
     copguy "Listen, I really shouldn't be doing this right now, but I have to go back to look into this deal with HoH SiS."
     copguy "You are free to go for now."
+    copguy "But know this: I'm putting my job on the line over this."
     copguy "But don't do anything stupid, because I have my eye on you two!"
     n "Copguy gets back into his car, and heads off into the dead of night."
     hide copguy with moveoutright
     show arceus dark flipped at mid_right_right with move
     show arceus dark at mid_right_right
     show cs dark
-    n "CS and Arc look at eachother, and smile."
+    n "CS and Arc look at each other, and smile."
     arceus "Holy crap, I didn't think that would work."
     cs "Me neither! I'm so glad that they let us go!"
     cs "I don't know how you got that footage, but we are now free once again!"
@@ -750,7 +759,7 @@ label choose_direction:
     arceus "Yeah let's hope we find some food and water soon."
     cs "Hey uhh, do you know exactly where we are going?"
     arceus "Well, I realized that the sun set in that direction, so that means that we are heading east right now."
-    arceus "We can head in any direction really, the second we find a better form of transportation than walking, we're taking it."
+    arceus "We can head in any direction really. The second we find a better form of transportation than walking, we're taking it."
     arceus "Which way do you want to go?"
     menu:
         "North":
@@ -936,12 +945,12 @@ label south:
 label east:
     cs "Well since east is the way home, we should probably go that way."
     arceus "Alright, that sounds like a good idea."
-    n "Cs and Arc keep following the road for a while, until the come across a small town."
+    n "Cs and Arc keep following the road for a while, until they come across a small town."
     scene town with fade
     show cs at left with moveinleft
     show arceus at right with moveinright
     cs "Oh my god! We found civilization again!"
-    arceus "Thank god."
+    arceus "Thank God."
     n "The two look around for a bit, when they see a gas station close by."
     cs "Let's head over to that gas station, so we can pick up some food to eat."
     n "CS and Arc head over to the convenience store at the gas station."
@@ -971,24 +980,24 @@ label billy_driver:
     arceus "Are you crazy? To drive all the way back to New York?"
     arceus "Plus like, where are we gonna get that money?"
     cs "Well we don't have to go all the way to New York, we could go a small distance and then get another Uber."
-    arceus "We don't have that money!"
+    arceus "We don't have the money!"
     n "As the two are agruing, the owner of the car comes up to them."
     "???" "What are you doing next to my car?"
-    cs "Oh hi."
-    cs "Do you think you can uber us to New York?"
+    cs "Oh ,hi."
+    cs "Do you think you can Uber us to New York?"
     "???" "Oh uhh, hold on a second."
     n "The mysterious driver walks behind the store."
     arceus "What are you doing? That man looks like he's gonna kill us!"
-    arceus "He's probably like getting his gun or-"
+    arceus "He's probably like getting his gun, or--"
     show billy at center with moveinleft
-    billy "Hi Billy Mays here for the Uber Driver!"
+    billy "Hi, Billy Mays here for the Uber Driver!"
     billy "The fast and easy way to get people around who don't have a car!"
     show cs happy
     cs "Sweet! We need to get to upstate New York, do you think you can help us?"
-    billy "Absolutely! Only for $19.95 and I'll take you both to New York!"
-    cs "Alright well, it's settled! We have our driver Arceus!"
+    billy "Absolutely! For only $19.95, I'll take you both to New York!"
+    cs "Alright well, it's settled! We have our driver, Arceus!"
     arceus "..."
-    arceus "I guess I'm eating my own words. I really was not expecting that, but fuck it let's go."
+    arceus "I guess I'm eating my own words. I really was not expecting that, but fuck it, let's go."
     cs "Hell yeah! I call shotgun!"
     n "CS and Arc get into Billy's car."
     hide cs with moveoutright
@@ -1064,18 +1073,18 @@ label back_home:
     ed "I have been waiting for you for quite some time now."
     rich "We've been trying to stop you for a while now, but this is final stop for you."
     cs "HoH SiS?? What do you guys still want from me?"
-    ed "What do you think CS? After you put Wesley in the hospital? After you crippled most of our workers?"
-    cs "Well you guys scammed me out of my money and broke my computer! Of course I wanted some kind of revenge!"
+    ed "What do you think, CS? After you put Wesley in the hospital? After you crippled most of our workers?"
+    cs "Well, you guys scammed me out of my money and broke my computer! Of course I wanted some kind of revenge!"
     ed "Why do you think this all started?"
-    cs "I-- I don't know, because you're evil?"
+    cs "I--{w=0.5} I don't know, because you're evil?"
     ed "CS, you put our company to shame long ago."
-    ed "When you made that paraody video of us that you call a YTP, people wouldn't stop harrassing us about it."
+    ed "When you made that paraody video of us that you call a \"YTP\", people wouldn't stop harrassing us about it."
     rich "You tried to humiliate us with your videos, with others thinking we were a joke."
     ed "You see, my ancestors came from the planet JoJ many years ago to live here and start a foundation company."
     ed "It was the best damn foundation company in the world."
-    ed "We repaired more than 50%% of all foundations on the planet, and now you."
-    ed "You. You embarrassed us with those silly, stupid, videos that put our family company to shame."
-    rich "That's why ed wanted to get revenge on you. That's why we destroyed your computer CS."
+    ed "We repaired more than 50%% of all foundations on the planet, and now... you."
+    ed "You. You embarrassed us with those silly, stupid, videos that dragged our family company through the mud."
+    rich "That's why Ed wanted to get revenge on you. That's why we destroyed your computer, CS."
     cs "I don't understand..."
     menu:
         "Fight":
@@ -1090,8 +1099,8 @@ label back_home:
 label talktohohsis:
     cs "I never intended to harm your company, I just thought that the video was a good source to YTP."
     cs "I'm sorry about all those prank callers, I even made a video telling people to stop prank calling you."
-    cs "I never had bad intentions of you guys, honestly it was also kind of like a free sponser."
-    ed "Well I'm sorry CS, but it's too late."
+    cs "I never had bad intentions of you guys... honestly it was also kind of like a free promotion."
+    ed "Well, I'm sorry CS, but it's too late."
     ed "Richard, get the JoJ UFO and vaporize the house."
     show anno at offscreenleft
     "???" "Wait!!!"
@@ -1121,14 +1130,14 @@ label talktohohsis:
     show phil at mid_left behind cs with moveinleft     
     phil "I can help too, with the power of Flex Tape!"
     show doug at center behind cs with moveinbottom
-    doug "I don't know what I'm doing here, but yeah good job guys!"
+    doug "I don't know what I'm doing here, but yeah, good job guys!"
     show cashier at mid_mid_right behind cs with moveinleft
     cashier "Yeah! Go CS!"
     show border_guard at mid_mid_left behind cs with moveinleft
-    border_guard "I'm important too!"
+    border_guard "I'm important too, eh!"
     cs "Wow, I don't know how you all got here coincidently, but I appreciate it!"
     show cs at left
-    rich "Oh my god that's so many people!"
+    rich "Oh my god, that's so many people!"
     ed "Okay okay, I get it."
     hide anno
     hide arceus flipped
@@ -1143,16 +1152,16 @@ label talktohohsis:
     hide border_guard
     with moveoutleft
     ed "We won't do anything to your house, and we are sorry for destroying your laptop."
-    cs "And I'm sorry for injuring your co workers."
+    cs "And I'm sorry for injuring your coworkers."
     ed "Wesley is still in the hospital, so like, if you wanted to, give us some more money..."
     show cs disappointed at left
-    cs "Didn't you scam me out of more money than my foundation costed?"
+    cs "Didn't you scam me out of more money than my foundation was worth?"
     ed "Oh yeah..."
     show cs angry at left
-    cs "What about my foundation as well?"
+    cs "What {i}about{/i} my foundation as well?"
     show cs at left
-    cs "Tell you what: If you can fix my foundation, I'll pay you for that, and we put this all behind us."
-    rich "What do you think Ed?"
+    cs "Tell you what: if you can fix my foundation, I'll pay you for that, and we put this all behind us."
+    rich "What do you think, Ed?"
     n "Ed ponders for a moment."
     ed "Sure. We have a deal."
     show cs happy at left
@@ -1163,13 +1172,13 @@ label talktohohsis:
     copguy "Hey CS, we finally found HoH SiS."
     copguy "And it looks like you did too."
     show sheriff at mid_left with moveinleft
-    sheriff "Goodjob CopGuy, time to put them in the slammer!"
+    sheriff "Goodjob Copguy, time to put them in the slammer!"
     cs "No need guys, we worked everything out."
     sheriff "What?!"
     copguy "Are you sure?"
     ed "Yep, we got everything under control."
     sheriff "All this for nothing..."
-    sheriff "Whatever, cmon CopGuy, let's go."
+    sheriff "Whatever, c'mon Copguy, let's go."
     n "The cops get back in their car and speed off."
     hide sheriff with moveoutleft
     hide copguy with moveoutleft
@@ -1191,17 +1200,22 @@ label talktohohsis:
     scene cs_room_2 with fade
     n "CS looks at the monitor that has a sticky note that says \"From LTT\"."
     show cs happy at mid_left with moveinleft
-    cs "Oh my goodness Linus got me a new PC!"
-    n "There is also a note that says \"We'd love to have to work with us again virtually, just give us a call\"."
+    cs "Oh my goodness, Linus got me a new PC!"
+    n "There is also a note that says: \"We'd love to have to work with us again virtually, just give us a call\"."
     cs "I'll have to make sure to call them later!"
     show cs at mid_left
     cs "Before I head off for the night, I'll do a stream real quick."
     n "CS starts up his stream overlay and goes live on Twitch."
     cs "Hey guys! CS here! Sorry I was gone for a couple weeks!"
     n "The chat is overflowing with messages."
-    "Chat" "Yeah what happened to you? Oh my god CS you're here! Hi! Hi! Where have you been?"
+    "Chat" "Yeah what happened to you?{w=0.25} Oh my god, CS, you're here!{w=0.25} Hi!{w=0.25} Hi!{w=0.25} Where have you been?"
     show cs happy at mid_left
-    cs "Well guys, *chuckles* It's a long story..."
+    cs "Well guys..."
+    n "CS chuckles."
+    cs "It's a long story..."
+    scene black with fade
+    play music "secret/credits.mp3" volume 0.5
+    centered "Pretend there's credits here."
     jump secret2
 
 label fighthohsis:
