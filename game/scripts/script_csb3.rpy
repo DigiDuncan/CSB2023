@@ -997,21 +997,23 @@ label billy_driver:
     jump in_billy_car
 
 label in_billy_car:
-    scene town
+    scene carback1
     show billy car
     play music "<loop 0>billy_radio.mp3" volume 0.3
     music Billy Mays Gangsta Remix - mastamokei
-    cs ""
+    cs "Alright so, it's just a straight shot to New York?"
     show billy car turn
-    billy "What are you doing in my car?"
-    cs "No it's my car!"
+    billy "Yep! We are gonna head through Idaho and Montana first, so get ready to see the sights!"
     show billy car happy
-    billy "Alright!"
+    cs "Yeah! It's almost like a vacation!"
+    arceus "Well on a vacation, you usually have money to spend on all the crazy parts you see."
+    cs "Let's just enjoy the ride there at least."
+    arceus "Fair point."
     stop music fadeout 3.0
     jump car_dialogue
 
 label montana:
-
+    
 
 label back_home:
     scene cs_house with fade

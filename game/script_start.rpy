@@ -309,6 +309,7 @@ image washington_road morning = "bg/washingtonroadmorning.png"
 image town = "bg/washingtontown.png"
 image gasinside = "bg/gas_station_inside.png"
 image gasoutside = "bg/gas_station.png"
+image carback1 = "bg/billycarback1.png"
 
 ## AI Ending
 image park1 = "bg/ai/amusementpark1.png"
