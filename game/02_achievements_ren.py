@@ -1,5 +1,24 @@
 """renpy
+screen popup():
+    zorder 100
+    layer "popup"
+    style_prefix "popup"
+
+    frame at popup_appear:
+        null
+
+    timer 5 action Hide('popup')
+
+transform popup_appear:
+    yanchor 1.0
+    on show:
+        xanchor 0.0 xpos 1.0
+        easein_cubic 1 xanchor 1.0
+    on hide:
+        easein_cubic 1 xanchor 0.0
+
 default persistent.unlocked_achievements = set()
+
 init python:
 """
 
@@ -64,6 +83,9 @@ class AchievementManager:
         ach = self.get(name)
         ach.unlocked = True
         persistent.unlocked_achievements.add(name)
+        renpy.with_statement(determination)
+        renpy.show_screen("popup")
+        renpy.with_statement(determination)
 
     def reset(self):
         for a in self.achievements:
