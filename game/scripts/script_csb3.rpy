@@ -760,8 +760,10 @@ label choose_direction:
 label north:
     cs "What if we go north?"
     arceus "...What?"
+    show cs disappointed
     cs "You said pick a direction!"
     arceus "We just came from the north. Just pick another direction."
+    show cs
     menu:
         "North":
             jump north2
@@ -929,11 +931,19 @@ label east:
     cs "Well since east is the way home, we should probably go that way."
     arceus "Alright, that sounds like a good idea."
     n "Cs and Arc keep following the road for a while, until the come across a small town."
+    scene town with fade
+    show cs at left with moveinleft
+    show arceus at right with moveinright
     cs "Oh my god! We found civilization again!"
     arceus "Thank god."
     n "The two look around for a bit, when they see a gas station close by."
     cs "Let's head over to that gas station, so we can pick up some food to eat."
     n "CS and Arc head over to the convenience store at the gas station."
+    hide cs with moveoutright
+    hide arceus with moveoutright
+    scene gasinside with fade
+    show cs at left with moveinleft
+    show arceus at right with moveinright
     arceus "Finally, some good fucking food."
     cs "Donuts and chips have never tasted better."
     arceus "Thank god the slushie machine was working for once."
@@ -949,6 +959,9 @@ label east:
 label billy_driver:
     cs "Why don't we just wait for someone at the gas station to come out, and then we ask them for an Uber?"
     n "CS walks over to someone's car parked in the front of the gas station."
+    scene gasoutside with fade
+    show cs at left with moveinleft
+    show arceus at right with moveinleft
     arceus "Are you crazy? To drive all the way back to New York?"
     arceus "Plus like, where are we gonna get that money?"
     cs "Well we don't have to go all the way to New York, we could go a small distance and then get another Uber."
@@ -961,8 +974,10 @@ label billy_driver:
     n "The mysterious driver walks behind the store."
     arceus "What are you doing? That man looks like he's gonna kill us!"
     arceus "He's probably like getting his gun or-"
+    show billy at center with moveinleft
     billy "Hi Billy Mays here for the Uber Driver!"
     billy "The fast and easy way to get people around who don't have a car!"
+    show cs happy
     cs "Sweet! We need to get to upstate New York, do you think you can help us?"
     billy "Absolutely! Only for $19.95 and I'll take you both to New York!"
     cs "Alright well, it's settled! We have our driver Arceus!"
@@ -970,6 +985,22 @@ label billy_driver:
     arceus "I guess I'm eating my own words. I really was not expecting that, but fuck it let's go."
     cs "Hell yeah! I call shotgun!"
     n "CS and Arc get into Billy's car."
+    hide cs with moveoutright
+    hide billy with moveoutright
+    hide arceus with moveoutright
+    jump in_billy_car
+
+label in_billy_car:
+    scene town
+    show billy car
+    show cs at left
+    cs "Woah! I'm in Billy's car!"
+    show billy car turn
+    billy "What are you doing in my car?"
+    show cs angry
+    cs "No it's my car!"
+    show billy car happy
+    billy "Alright!"
     jump back_home
 
 label back_home:
@@ -998,7 +1029,7 @@ label back_home:
     rich "You tried to humiliate us with your videos, with others thinking we were a joke."
     ed "You see, my ancestors came from the planet JoJ many years ago to live here and start a foundation company."
     ed "It was the best damn foundation company in the world."
-    ed "We repaired more than 50% of all foundations on the planet, and now you."
+    ed "We repaired more than 50%% of all foundations on the planet, and now you."
     ed "You. You embarrassed us with those silly, stupid, videos that put our family company to shame."
     rich "That's why ed wanted to get revenge on you. That's why we destroyed your computer CS."
     cs "I don't understand..."

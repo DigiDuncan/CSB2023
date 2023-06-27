@@ -139,6 +139,7 @@ define luke = Character("Luke", callback = renpy.partial(char_callback, name = "
 define taran = Character("Taran", callback = renpy.partial(char_callback, name = "taran"))
 define colton = Character("Colton", callback = renpy.partial(char_callback, name = "colton"))
 define sheriff = Character("Sheriff", callback = renpy.partial(char_callback, name = "sheriff"))
+define billy = Character("Billy", callback = renpy.partial(char_callback, name = "billy"))
 
 # Character Images
 ## CS
@@ -224,6 +225,10 @@ image taran = "characters/taran.png"
 image taran flipped = Transform("characters/taran.png", xzoom = -1)
 image colton = "characters/colton.png"
 image sheriff = "characters/sheriff.png"
+image billy = "characters/billy.png"
+image billy car = "characters/billy/billy_car.png"
+image billy car happy = "characters/billy/billy_car_happy.png"
+image billy car turn = "characters/billy/billy_car_turn.png"
 
 # Background Images
 ## CSBI
@@ -287,6 +292,9 @@ image copcar_mask = "bg/copcar_mask.png"
 image washington_road day = "bg/washingtonroadday.png"
 image washington_road dusk = "bg/washingtonroaddusk.png"
 image washington_road morning = "bg/washingtonroadmorning.png"
+image town = "bg/washingtontown.png"
+image gasinside = "bg/gas_station_inside.png"
+image gasoutside = "bg/gas_station.png"
 
 ## AI Ending
 image park1 = "bg/ai/amusementpark1.png"
