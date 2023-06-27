@@ -49,7 +49,8 @@ grayscale = Matrix(
 
 achieves = [
         ("Ocean Man", "???", "Go west eight times.", "ocean"),
-        ("HoH SiS's Most Wanted", "???", "Complete CSBI.", "csbi")
+        ("HoH SiS's Most Wanted", "???", "Complete CSBI.", "csbi"),
+        ("Welcome to CSBIII, Mother Fucker", "???", "Complete CSBII.", "csbii")
     ]
 
 class Achievement:

@@ -371,7 +371,7 @@ label bordercrossing:
     $ renpy.music.set_pause(False, "music")
     cs "Prison food just isn't all that filling."
     arceus "I suppose we could find a Tim Horton's, it's as common in Canada as a McDonald's is in America."
-    n "Anno and CS nod aggresively."
+    n "Anno and CS nod aggressively."
     n "Arceus sniffs the air."
     arceus "There's one just over here, come on."
 
@@ -488,7 +488,7 @@ label bordercrossing:
     arceus "Perfect."
     n "Within minutes, Arceus has hacked the canadian governement records to display CS as having a valid work visa."
     arceus "Even their security is too nice.."
-    n "Arceus rummages around the dumpster more and finds a magnet from a old CRT."
+    n "Arceus rummages around the dumpster more and finds a magnet from an old CRT."
     n "He places it against the laptop, corrupting the hard drive instantly."
     arceus "Without a trace."
     n "He discards both items and rushes out of the alley."
@@ -531,5 +531,6 @@ label bordercrossing:
     n "CS, Anno, and Arceus cheers their donuts together."
     stop music fadeout 3.0
     music end
+    $ achievement_manager.unlock("Welcome to CSBIII, Mother Fucker")
     scene black with fade
     jump csbiii_start
