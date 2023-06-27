@@ -1013,7 +1013,7 @@ label in_billy_car:
 label back_home:
     scene cs_house with fade
     n "After the long and treacherous journey, CS finally arrives at his house."
-    show arceus at left with moveinleft
+    show arceus flipped at left with moveinleft
     arceus "We made it back to your house CS!"
     show cs at center with moveinleft
     cs "Finally I'm home..."
@@ -1149,6 +1149,7 @@ label talktohohsis:
     hide rich with moveoutright
     show cs at mid_right with moveinright
     n "After all that commotion, CS finally steps up to his front door."
+    show cs flipped at mid_right
     n "CS looks back out into the crowd again one more time."
     cs "This is CS..."
     cs "Signing out!"
