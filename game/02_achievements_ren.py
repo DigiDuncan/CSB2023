@@ -99,11 +99,12 @@ class AchievementManager:
 
     def unlock(self, name: str):
         ach = self.get(name)
-        ach.unlocked = True
-        persistent.unlocked_achievements.add(name)
-        renpy.with_statement(determination)
-        renpy.show_screen("popup", ach)
-        renpy.with_statement(determination)
+        if not ach.unlocked:
+            ach.unlocked = True
+            persistent.unlocked_achievements.add(name)
+            renpy.with_statement(determination)
+            renpy.show_screen("popup", ach)
+            renpy.with_statement(determination)
 
     def reset(self):
         for a in self.achievements:

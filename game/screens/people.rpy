@@ -75,11 +75,11 @@ screen people_welcome():
 
 screen person(l):
 
-    tag menu
-    use people_nav
-
     style_prefix "codex"
     label name_map[l]
+
+    tag menu
+    use people_nav
 
     viewport:
 
