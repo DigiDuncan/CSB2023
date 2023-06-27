@@ -32,6 +32,7 @@ init:
         xanchor 0 xpos 0
 
 python early:
+    # MUSIC POP UP
     _current_song = ""
     _current_artist = ""
     _played_songs = set()
@@ -71,6 +72,7 @@ python early:
         execute = execute_music)
 
 init python:
+    # MUSIC POPUP
     def _music_gen_text(st, at):
         return HBox(
             Transform(Image("music_note.png"), zoom = 0.2, xoffset = 25),
