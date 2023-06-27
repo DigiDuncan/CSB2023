@@ -259,7 +259,7 @@ label jail:
     n "A brief moment of silence..."
     show cs prison at left
     arceus "Welp. I'm tired of this place. Wanna break out?"
-    cs "Eh.. Sure, why not, I've played plenty of the Escapists, I should be able to figure it out."
+    cs "Eh... sure, why not, I've played plenty of The Escapists, I should be able to figure it out."
     cs "We should break out at least one other person though."
     arceus "If you say so.. Who were you thinking of breaking out?"
     cs "Let's just break out that guy next to us, I think his name was Anno..."
