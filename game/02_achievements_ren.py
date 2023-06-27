@@ -19,11 +19,14 @@ screen popup(a):
             yanchor 0.0 ypos 30
             spacing 15
             text a.name:
-                size 25
+                size 22
                 font "fonts/DIN-Medium.ttf"
+                layout "greedy"
             text a.desc:
-                size 20
+                size 16
+                xmaximum 180
                 font "fonts/DIN-Medium.ttf"
+                layout "greedy"
 
     timer 5 action Hide('popup')
 
