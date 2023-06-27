@@ -139,7 +139,7 @@ define luke = Character("Luke", callback = renpy.partial(char_callback, name = "
 define taran = Character("Taran", callback = renpy.partial(char_callback, name = "taran"))
 define colton = Character("Colton", callback = renpy.partial(char_callback, name = "colton"))
 define sheriff = Character("Sheriff", callback = renpy.partial(char_callback, name = "sheriff"))
-define billy = Character("Billy", callback = renpy.partial(char_callback, name = "billy"))
+define billy = Character("Billy", callback = renpy.partial(char_callback, name = "billy", beep = "billy"))
 
 # Character Images
 ## CS
