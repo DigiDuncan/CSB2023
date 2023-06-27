@@ -1024,7 +1024,7 @@ label in_billy_car:
     jump car_dialogue
 
 label montana:
-
+    scene car background
     show billy car
     n "After a few hours of driving, the trio currently resides in the middle of Montana."
     n "Arceus is sleeping, while CS peers out the window."

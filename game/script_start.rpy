@@ -310,6 +310,7 @@ image town = "bg/washingtontown.png"
 image gasinside = "bg/gas_station_inside.png"
 image gasoutside = "bg/gas_station.png"
 image carback1 = "bg/billycarback1.png"
+image carback2 = "bg/billycarback.gif"
 
 ## AI Ending
 image park1 = "bg/ai/amusementpark1.png"
@@ -323,6 +324,9 @@ image secrettunnel = "bg/ai/secret_tunnel.png"
 # Static Images
 image objection = "objection.png"
 image hold_it = "hold_it.png"
+
+# Movies
+image car background = Movie(play="movies/car_background.mp4")
 
 # Animated Sprites
 image blue_light:
