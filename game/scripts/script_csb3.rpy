@@ -327,7 +327,11 @@ label boost:
     cs "Wow, thank you so much Linus for this!"
     linus "No problem! This was my gift to you. Now, we should make a review video of it before the day ends."
     cs "Sure thing, let's take the card out real quick."
-    show black with fade
+    scene ltt_bg
+    show ltt_fg
+    with determination
+    show cs at t_cs_ltt behind ltt_fg with moveinleft
+    show linus at t_linus_ltt behind ltt_fg with moveinright
     n "Linus goes and gets the cameras set up, and they start to film the video."
     scene setup with fade
     n "After they finish recording, CS goes up to Linus's office."

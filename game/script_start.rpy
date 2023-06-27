@@ -83,6 +83,16 @@ transform t_arc_at_tims:
     xanchor 0.5 xpos 0.625
     zoom 0.6
 
+transform t_cs_ltt:
+    zoom 0.65
+    yanchor 1.0 ypos 0.8
+    xanchor 0.0 xpos 0.2
+
+transform t_linus_ltt:
+    zoom 0.65
+    yanchor 1.0 ypos 0.8
+    xanchor 1.0 xpos 0.8
+
 transform little_bounce:
     yanchor 1.0
     yzoom 0.95
@@ -277,6 +287,8 @@ image csdesk = "bg/cs_desk.png"
 image csvideo = "bg/csvideo.png"
 image setup = "bg/linus_setup.png"
 image loffice  = "bg/the_linus_group.png"
+image ltt_bg = "bg/ltt_bg.png"
+image ltt_fg = "bg/ltt_fg.png"
 image frontdoor = "bg/linus_frontdoor.png"
 image road_to_canada = "bg/road_to_canada.png"
 image border_dusk = "bg/canadian_border_night.png"
@@ -350,7 +362,6 @@ screen start_menu():
                     at transform:
                         zoom 0.666
                     action Play("sound", "sfx-valid.wav"), Hide("start_menu", Fade(1.0)), Jump("choose_direction")
-                textbutton "Test" action Play("sound", "sfx-valid.wav"), Hide("start_menu", Fade(1.0)), Jump("test")
 
 style start_window is empty
 
