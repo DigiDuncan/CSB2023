@@ -342,10 +342,14 @@ screen start_menu():
                     at transform:
                         zoom 0.666
                     action Play("sound", "sfx-valid.wav"), Hide("start_menu", Fade(1.0)), Jump("csbii_start")
-                imagebutton auto "menu/csbiii_%s.png" hover_sound "sfx-select.wav":
+                imagebutton auto "menu/csbiii1_%s.png" hover_sound "sfx-select.wav":
                     at transform:
                         zoom 0.666
                     action Play("sound", "sfx-valid.wav"), Hide("start_menu", Fade(1.0)), Jump("csbiii_start")
+                imagebutton auto "menu/csbiii2_%s.png" hover_sound "sfx-select.wav":
+                    at transform:
+                        zoom 0.666
+                    action Play("sound", "sfx-valid.wav"), Hide("start_menu", Fade(1.0)), Jump("choose_direction")
                 textbutton "Test" action Play("sound", "sfx-valid.wav"), Hide("start_menu", Fade(1.0)), Jump("test")
 
 style start_window is empty
