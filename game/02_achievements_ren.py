@@ -49,6 +49,7 @@ grayscale = Matrix(
 
 achieves = [
         ("Ocean Man", "???", "Go west eight times.", "ocean"),
+        ("Bored", "Sit through all the car dialouge.", "Sit through all the car dialouge.", "missing"),
         ("HoH SiS's Most Wanted", "???", "Complete CSBI.", "csbi"),
         ("Welcome to CSBIII, Mother Fucker", "???", "Complete CSBII.", "csbii")
     ]

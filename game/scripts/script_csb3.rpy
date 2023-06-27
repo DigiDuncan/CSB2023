@@ -1008,7 +1008,7 @@ label in_billy_car:
     show billy car happy
     billy "Alright!"
     stop music fadeout 3.0
-    jump back_home
+    jump car_dialogue
 
 label back_home:
     scene cs_house with fade
