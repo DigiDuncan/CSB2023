@@ -738,9 +738,10 @@ label good_convince:
     with move
     n "They both high five, and continue heading in the direction of the road."
     jump choose_direction
-#Chapter 2 for True Ending 1 starts here
 
+#Chapter 2 for True Ending 1 starts here
 label choose_direction:
+    scene black with determination
     n "As the duo continues their journey through the night, they soon have to figure out exactly where to go."
     scene washington_road morning
     show cs at left
@@ -910,7 +911,8 @@ label west7:
             jump west8
 
 label west8:
-    arceus "..."
+    $ achievement_manager.unlock("Ocean Man")
+    arceus "Player. {w=0.5}Stop. {w=0.5}Going. {w=0.5}West."
     scene washington_road morning
     show cs at left
     show arceus at right
