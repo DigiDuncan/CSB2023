@@ -18,8 +18,12 @@ screen popup(a):
             xanchor 0.0 xpos 132
             yanchor 0.0 ypos 30
             spacing 15
-            text a.name size 25
-            text a.desc size 25
+            text a.name:
+                size 25
+                font "fonts/DIN-Medium.ttf"
+            text a.desc:
+                size 20
+                font "fonts/DIN-Medium.ttf"
 
     timer 5 action Hide('popup')
 
