@@ -11,10 +11,11 @@ screen popup(a):
 
 transform popup_appear:
     on show:
-        yanchor 0.0 ypos 936
-        easein_cubic 1 yanchor 144
+        xalign 1.0
+        yanchor 0.0 ypos 1.0
+        linear 0.5 yanchor 1.0
     on hide:
-        easein_cubic 1 yanchor 0
+        linear 0.5 yanchor 0.0
 
 default persistent.unlocked_achievements = set()
 
