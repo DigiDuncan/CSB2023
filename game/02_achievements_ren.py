@@ -51,6 +51,9 @@ grayscale = Matrix(
 )
 
 achieves = [
+        ("I Don't Like People!", "Avoid responsibility.", "Tell CS not to go to Wal-Mart.", "missing"),
+        ("Dead Meme", "???", "Sparta kick Wesley.", "missing"),
+        ("#1 Rated Pooper", "???", "Use your skills to keep your job.", "missing"),
         ("Ocean Man", "???", "Go west eight times.", "ocean"),
         ("Bored", "Sit through all the car dialouge.", "Sit through all the car dialouge.", "missing"),
         ("HoH SiS's Most Wanted", "???", "Complete CSBI.", "csbi"),

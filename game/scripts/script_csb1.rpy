@@ -97,6 +97,7 @@ label csbi_start:
         "Yes":
             cs "Yeah... It's a good idea to get some stuff."
         "No":
+            $ achievement_manager.unlock("I Don't Like People!")
             cs "Screw you, I'm going anyway!"
     play sound "driving.wav" volume 0.5
     pause 3.0

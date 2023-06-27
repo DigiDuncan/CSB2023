@@ -79,6 +79,7 @@ label kick:
     $ renpy.movie_cutscene("movies/kick.ogv")
     hide wesley with easeoutright
     show cs angry at left with move
+    $ achievement_manager.unlock("Dead Meme")
     cs "That'll teach you not to mess with a nerd's computer!"
     show ed_phone at right
     show cs angry at left with move

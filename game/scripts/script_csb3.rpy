@@ -218,6 +218,7 @@ label fired:
 label boost:
     $ renpy.movie_cutscene("movies/good_cs_ytp.mpg")
     n "The next day."
+    $ achievement_manager.unlock("#1 Rated Pooper")
     scene inside_ltt with fade
     show cs at offscreenleft
     n "CS walks into LMG to greet Linus."
