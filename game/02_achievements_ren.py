@@ -46,6 +46,14 @@ class AchievementManager:
             if a.name in persistent.unlocked_achievements:
                 a.unlocked = True
 
+    @property
+    def unlocked(self) -> list[Achievement]:
+        return [a for a in self.achievements if a.unlocked]
+    
+    @property
+    def locked(self) -> list[Achievement]:
+        return [a for a in self.achievements if not a.unlocked]
+
     def get(self, name: str) -> Achievement:
         if name not in [a.name for a in self.achievements]:
             raise ValueError(f"Unrecognized achievement {name}")
