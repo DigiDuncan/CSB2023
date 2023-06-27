@@ -36,8 +36,8 @@ screen category_nav():
             ## switch "NullAction" with the "ShowMenu("screen name")" command like above.
 
             textbutton "Achievements" action ShowMenu("achievements_welcome")
-            textbutton "Collectibles" action ShowMenu("collectibles_welcome")
-            textbutton "Endings" action ShowMenu("endings_welcome")
+            # textbutton "Collectibles" action ShowMenu("collectibles_welcome")
+            # textbutton "Endings" action ShowMenu("endings_welcome")
             textbutton "Jukebox" action ShowMenu("jukebox_welcome")
             textbutton "Clear Persistent Data" action Jump("reset_vector")
 
