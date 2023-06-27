@@ -1001,7 +1001,7 @@ label in_billy_car:
     show billy car
     play music "<loop 0>billy_radio.mp3" volume 0.3
     music Billy Mays Gangsta Remix - mastamokei
-    cs "Woah! I'm in Billy's car!"
+    cs ""
     show billy car turn
     billy "What are you doing in my car?"
     cs "No it's my car!"
@@ -1009,6 +1009,9 @@ label in_billy_car:
     billy "Alright!"
     stop music fadeout 3.0
     jump car_dialogue
+
+label montana:
+
 
 label back_home:
     scene cs_house with fade
