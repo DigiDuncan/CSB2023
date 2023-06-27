@@ -50,10 +50,14 @@ class AchievementManager:
             if a.name in persistent.unlocked_achievements:
                 a.unlocked = True
 
-    def unlock(self, name: str):
+    def get(self, name: str) -> Achievement:
         if name not in [a.name for a in self.achievements]:
             raise ValueError(f"Unrecognized achievement {name}")
         ach = [a for a in self.achievements if a.name == name][0]
+        return ach
+
+    def unlock(self, name: str):
+        ach = self.get(name)
         ach.unlocked = True
 
     def reset(self):
