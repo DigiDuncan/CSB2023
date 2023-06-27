@@ -1000,11 +1000,9 @@ label in_billy_car:
     show billy car
     play music "<loop 0>billy_radio.mp3" volume 0.3
     music Billy Mays Gangsta Remix - mastamokei
-    show cs at left
     cs "Woah! I'm in Billy's car!"
     show billy car turn
     billy "What are you doing in my car?"
-    show cs angry
     cs "No it's my car!"
     show billy car happy
     billy "Alright!"
@@ -1012,6 +1010,7 @@ label in_billy_car:
     jump back_home
 
 label back_home:
+    scene black
     n "After the long and treacherous journey, CS finally arrives at his house."
     arceus "We made it back to your house CS!"
     cs "Finally I'm home..."
@@ -1120,6 +1119,14 @@ label talktohohsis:
     "Chat" "Yeah what happened to you? Oh my god CS you're here! Hi! Hi! Where have you been?"
     cs "Well guys, *chuckles* It's a long story..."
 
+label fighthohsis:
+    jump secret
+
+label fuckuphohsis:
+    jump secret
+
+label copsathohsis:
+    jump secret
 
 label high_gpu:
     jump secret
