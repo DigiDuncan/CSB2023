@@ -994,6 +994,8 @@ label billy_driver:
 label in_billy_car:
     scene town
     show billy car
+    play music "<loop 0>billy_radio.mp3" volume 0.3
+    music Billy Mays Gangsta Remix - mastamokei
     show cs at left
     cs "Woah! I'm in Billy's car!"
     show billy car turn
@@ -1002,6 +1004,7 @@ label in_billy_car:
     cs "No it's my car!"
     show billy car happy
     billy "Alright!"
+    stop music with fadeout
     jump back_home
 
 label back_home:
