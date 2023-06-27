@@ -1,5 +1,42 @@
 """renpy
+screen popup(a):
+    zorder 100
+    layer "popup"
+    style_prefix "popup"
+
+    frame at popup_appear:
+        xysize(367, 152)
+        image a.icon:
+            xysize(100, 100)
+            xanchor 0.0 xpos 17
+            yanchor 0.0 ypos 19
+        image "popup.png":
+            xanchor 0.0 xpos -2
+            yanchor 0.0 ypos -2
+        vbox:
+            xysize(320, 83)
+            xanchor 0.0 xpos 132
+            yanchor 0.0 ypos 30
+            spacing 15
+            text a.name:
+                size 25
+                font "fonts/DIN-Medium.ttf"
+            text a.desc:
+                size 20
+                font "fonts/DIN-Medium.ttf"
+
+    timer 5 action Hide('popup')
+
+transform popup_appear:
+    on show:
+        xalign 1.0
+        yanchor 0.0 ypos 1.0
+        linear 0.5 yanchor 1.0
+    on hide:
+        linear 0.5 yanchor 0.0
+
 default persistent.unlocked_achievements = set()
+
 init python:
 """
 
@@ -12,7 +49,8 @@ grayscale = Matrix(
 
 achieves = [
         ("Ocean Man", "???", "Go west eight times.", "ocean"),
-        ("HoH SiS's Most Wanted", "???", "Complete CSBI.", "csbi")
+        ("HoH SiS's Most Wanted", "???", "Complete CSBI.", "csbi"),
+        ("Welcome to CSBIII, Mother Fucker", "???", "Complete CSBII.", "csbii")
     ]
 
 class Achievement:
@@ -46,6 +84,14 @@ class AchievementManager:
             if a.name in persistent.unlocked_achievements:
                 a.unlocked = True
 
+    @property
+    def unlocked(self) -> list[Achievement]:
+        return [a for a in self.achievements if a.unlocked]
+    
+    @property
+    def locked(self) -> list[Achievement]:
+        return [a for a in self.achievements if not a.unlocked]
+
     def get(self, name: str) -> Achievement:
         if name not in [a.name for a in self.achievements]:
             raise ValueError(f"Unrecognized achievement {name}")
@@ -54,8 +100,12 @@ class AchievementManager:
 
     def unlock(self, name: str):
         ach = self.get(name)
-        ach.unlocked = True
-        persistent.unlocked_achievements.add(name)
+        if not ach.unlocked:
+            ach.unlocked = True
+            persistent.unlocked_achievements.add(name)
+            renpy.with_statement(determination)
+            renpy.show_screen("popup", ach)
+            renpy.with_statement(determination)
 
     def reset(self):
         for a in self.achievements:

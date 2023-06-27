@@ -208,12 +208,14 @@ label room:
     show cs
     cs "Better call HoH SiS!"
     cs "They are really good at giving me the JoJ!"
+    show cs phone
     cs "{i}dials 1-800-HoH-SiiS{/i}"
     cs "Hello? Can you give me the JoJ?"
     hoh_operator "Is this a prank caller on the line?"
     cs "No! My house really needs foundation repair! I need your help ASAP!!"
     hoh_operator "Alright. That will be 200,000 bits. You can pay us afterwards."
     hoh_operator "{i}hangs up{/i}"
+    show cs
     cs "Well that is one thing taken care of."
     cs "I guess I'll work on my new YTP while I wait."
     scene black with fade
@@ -312,6 +314,7 @@ label michael_house:
     cs "I have some Genergy with me, if you guys want some."
     michael "Sounds wonderful. I've never tried it, but I'm sure it's good."
     cs "Alright well, I'll be there soon!"
+    show cs at left
     n "CS puts his phone away and drives over to Michael's house."
     play sound "driving.wav" volume 0.5
     pause 2.0
@@ -496,6 +499,7 @@ label left:
     show cs angry at left with move
     show worker_6 at right with hpunch
     hide worker_6 with moveoutright
+    $ achievement_manager.unlock("HoH SiS's Most Wanted")
     show black with dissolve
     jump csbii_start
 
@@ -510,5 +514,6 @@ label right:
     show cs angry at left with move
     show worker_7 at right with hpunch
     hide worker_7 with moveoutright
+    $ achievement_manager.unlock("HoH SiS's Most Wanted")
     show black with dissolve
     jump csbii_start

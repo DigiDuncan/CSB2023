@@ -28,27 +28,30 @@ screen achievements_welcome():
         pagekeys True
         vbox:
             spacing 25
-            text "Unlocked Achievements"
-            for a in achievement_manager.achievements:
-                if a.unlocked:
-                    hbox:
-                        first_spacing 25
-                        image a.icon:
-                            xysize(100,100)
-                        vbox:
-                            text a.name
-                            text a.desc:
-                                color("#787878")
-            
-            text "Locked Achievements"
-            for a in achievement_manager.achievements:
-                if not a.unlocked:
-                    hbox:
-                        first_spacing 25
-                        image a.icon:
-                            xysize(100,100)
-                        vbox:
-                            text a.name
-                            text a.desc:
-                                color("#787878")
+            if achievement_manager.unlocked:
+                text "Unlocked Achievements"
+                for a in achievement_manager.achievements:
+                    if a.unlocked:
+                        hbox:
+                            first_spacing 25
+                            image a.icon:
+                                xysize(100,100)
+                            vbox:
+                                text a.name
+                                text a.desc:
+                                    color("#787878")
+            if achievement_manager.unlocked and achievement_manager.locked:
+                null height 100
+            if achievement_manager.locked:
+                text "Locked Achievements"
+                for a in achievement_manager.achievements:
+                    if not a.unlocked:
+                        hbox:
+                            first_spacing 25
+                            image a.icon:
+                                xysize(100,100)
+                            vbox:
+                                text a.name
+                                text a.desc:
+                                    color("#787878")
             

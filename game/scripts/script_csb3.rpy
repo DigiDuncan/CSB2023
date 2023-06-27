@@ -1070,7 +1070,7 @@ label talktohohsis:
     n "Even more of CS's friends show up at the scene."
     linus "Yeah, I loved those videos about HoH SiS, and we'd love for you to come up fix up some of the damages at the LTT offices."
     taran "What damages?"
-    luke "Y'know, when linus ran his car into the back of the building?"
+    luke "Y'know, when Linus ran his car into the back of the building?"
     colton "Finally, something that wasn't my fault."
     michael "If I get my chocolate cake, you fellows at HoH SiS can fix up my house too."
     phil "I can help too, with the power of Flex Tape!"
