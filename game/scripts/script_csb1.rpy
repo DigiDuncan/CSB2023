@@ -496,6 +496,7 @@ label left:
     show cs angry at left with move
     show worker_6 at right with hpunch
     hide worker_6 with moveoutright
+    $ achievement_manager.unlock("HoH SiS's Most Wanted")
     show black with dissolve
     jump csbii_start
 
@@ -510,5 +511,6 @@ label right:
     show cs angry at left with move
     show worker_7 at right with hpunch
     hide worker_7 with moveoutright
+    $ achievement_manager.unlock("HoH SiS's Most Wanted")
     show black with dissolve
     jump csbii_start

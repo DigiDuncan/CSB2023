@@ -1,6 +1,6 @@
 init python:
     renpy.add_layer("music", above = "master")
-    renpy.add_layer("popup", above = "master")
+    renpy.add_layer("popup", above = "overlay")
 
 define determination = Dissolve(0.0)
 default persistent.seen = set()

@@ -5,7 +5,21 @@ screen popup(a):
     style_prefix "popup"
 
     frame at popup_appear:
-        image "popup.png"
+        xysize(367, 152)
+        image a.icon:
+            xysize(100, 100)
+            xanchor 0.0 xpos 17
+            yanchor 0.0 ypos 19
+        image "popup.png":
+            xanchor 0.0 xpos -2
+            yanchor 0.0 ypos -2
+        vbox:
+            xysize(320, 83)
+            xanchor 0.0 xpos 132
+            yanchor 0.0 ypos 30
+            spacing 15
+            text a.name size 25
+            text a.desc size 25
 
     timer 5 action Hide('popup')
 
