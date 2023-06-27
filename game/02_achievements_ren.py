@@ -1,8 +1,3 @@
-# Mocking
-import renpy
-persistent = {}
-persistent.unlocked_achievements = set()
-
 """renpy
 default persistent.unlocked_achievements = set()
 init python:
@@ -59,10 +54,12 @@ class AchievementManager:
     def unlock(self, name: str):
         ach = self.get(name)
         ach.unlocked = True
+        persistent.unlocked_achievements.add(name)
 
     def reset(self):
         for a in self.achievements:
             a.unlocked = False
+        persistent.unlocked_achievements = set()
 
 
 achievement_manager = AchievementManager()

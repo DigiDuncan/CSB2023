@@ -27,7 +27,7 @@ screen achievements_welcome():
         draggable True
         pagekeys True
         vbox:
-            spacing 100
+            spacing 25
             text "Unlocked Achievements"
             for a in achievement_manager.achievements:
                 if a.unlocked:
