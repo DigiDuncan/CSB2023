@@ -13,3 +13,23 @@ label secret:
     hide digi with dissolve
     window hide
     pause 3.0
+
+label secret2:
+    scene black with fade
+    play music "<loop 0>secret/space_classroom.mp3"
+    show digi at center with Dissolve(3)
+    digi "Oh, again?"
+    digi "You gotta tell someone to get on with writing this game."
+    stop music
+    pakoo "Yeah well fuck you bitch!"
+    show pakoo at center with moveinright
+    show digi at center with vpunch
+    play sound "alt_punch.ogg"
+    hide digi with moveouttop
+    show pakoo at center with hpunch
+    play music "<loop 0>secret/showtime.mp3" volume 0.5
+    pakoo "Thats fucking right, we finished the True Ending!"
+    pakoo "I am horribly drawn and it's 5am but hell yeah we fuckin diiiiiiiiiiiiiiidd ittttttttttt!!!!!!"
+    pakoo "Yeeaaaaaahhhhh!!! Wooooooooo!!!! Wooooooo!!! Tetttttriiissssssss!!!{nw}"
+    return
+  

@@ -1011,20 +1011,28 @@ label in_billy_car:
     jump back_home
 
 label back_home:
-    scene black
+    scene cs_house with fade
     n "After the long and treacherous journey, CS finally arrives at his house."
+    show arceus at left with moveinleft
     arceus "We made it back to your house CS!"
+    show cs at center with moveinleft
     cs "Finally I'm home..."
     cs "Arceus, thank you so much for everything on this trip. I couldn't have done it without you."
     arceus "Aw, it was nice helping ya here."
     cs "You too, Billy."
+    show billy at mid_left with moveinleft
     billy "No problem!"
     cs "Well, I guess I should get some rest."
     cs "If you guys want, we can have a party at my place tomorrow to celebrate all the shit we went through!"
     "Arc and Billy" "Hell yeah!"
+    hide billy with moveoutleft
+    hide arceus with moveoutleft
     n "As CS was saying bye to his friends, a familiar but upsetting voice can be heard at the front of CS's house."
     ed "YOU!"
+    show cs disappointed at left with moveinleft
     n "CS and the gang look forth at CS's front porch, where Richard and Ed are waiting angrily for him."
+    show ed at right with moveinright
+    show rich at mid_right behind ed with moveinright
     ed "I have been waiting for you for quite some time now."
     rich "We've been trying to stop you for a while now, but this is final stop for you."
     cs "HoH SiS?? What do you guys still want from me?"
@@ -1057,43 +1065,76 @@ label talktohohsis:
     cs "I never had bad intentions of you guys, honestly it was also kind of like a free sponser."
     ed "Well I'm sorry CS, but it's too late."
     ed "Richard, get the JoJ UFO and vaporize the house."
+    show anno at offscreenleft
     "???" "Wait!!!"
     n "A voice can be heard behind the group running up to them."
     cs "Anno?"
+    show anno at center behind doug with moveinleft
     anno "You guys can't just destroy CS's house!"
     ed "Why not?"
     anno "I don't know, because..."
     anno "CS wasn't trying to harm you!"
+    show arceus flipped at mid_left_left with moveinleft
     arceus "Yeah, CS's videos are hilarious, and honestly if I knew you guys before this I would've called you up for help on my house."
     arceus "If y'know, I didn't go after that one politican."
     ed "Well okay, but--"
     n "Even more of CS's friends show up at the scene."
+    show cs at left
+    show linus at mid_left behind phil with moveinleft
     linus "Yeah, I loved those videos about HoH SiS, and we'd love for you to come up fix up some of the damages at the LTT offices."
+    show taran flipped at mid_mid_left behind cs with moveinleft
+    show luke at mid_left_left behind cs with moveinleft
+    show colton at default behind doug with moveinleft
     taran "What damages?"
     luke "Y'know, when Linus ran his car into the back of the building?"
     colton "Finally, something that wasn't my fault."
+    show michael at mid_mid_left behind cs with moveinleft
     michael "If I get my chocolate cake, you fellows at HoH SiS can fix up my house too."
+    show phil at mid_left behind cs with moveinleft     
     phil "I can help too, with the power of Flex Tape!"
+    show doug at center behind cs with moveinbottom
     doug "I don't know what I'm doing here, but yeah good job guys!"
+    show cashier at mid_mid_right behind cs with moveinleft
     cashier "Yeah! Go CS!"
+    show border_guard at mid_mid_left behind cs with moveinleft
     border_guard "I'm important too!"
     cs "Wow, I don't know how you all got here coincidently, but I appreciate it!"
+    show cs at left
     rich "Oh my god that's so many people!"
     ed "Okay okay, I get it."
+    hide anno
+    hide arceus flipped
+    hide linus
+    hide taran flipped
+    hide luke
+    hide colton
+    hide michael
+    hide phil
+    hide doug
+    hide cashier
+    hide border_guard
+    with moveoutleft
     ed "We won't do anything to your house, and we are sorry for destroying your laptop."
     cs "And I'm sorry for injuring your co workers."
     ed "Wesley is still in the hospital, so like, if you wanted to, give us some more money..."
+    show cs disappointed at left
     cs "Didn't you scam me out of more money than my foundation costed?"
     ed "Oh yeah..."
+    show cs angry at left
     cs "What about my foundation as well?"
+    show cs at left
     cs "Tell you what: If you can fix my foundation, I'll pay you for that, and we put this all behind us."
     rich "What do you think Ed?"
     n "Ed ponders for a moment."
     ed "Sure. We have a deal."
+    show cs happy at left
     cs "Hooray!"
     n "As if the crowd couldn't get any bigger, the cops show up."
+    show cs at left
+    show copguy at center with moveinleft
     copguy "Hey CS, we finally found HoH SiS."
     copguy "And it looks like you did too."
+    show sheriff at mid_left with moveinleft
     sheriff "Goodjob CopGuy, time to put them in the slammer!"
     cs "No need guys, we worked everything out."
     sheriff "What?!"
@@ -1101,24 +1142,36 @@ label talktohohsis:
     ed "Yep, we got everything under control."
     sheriff "All this for nothing..."
     sheriff "Whatever, cmon CopGuy, let's go."
-    n "The cops get back in the cop and speed off."
+    n "The cops get back in their car and speed off."
+    hide sheriff with moveoutleft
+    hide copguy with moveoutleft
+    hide ed with moveoutright
+    hide rich with moveoutright
+    show cs at mid_right with moveinright
     n "After all that commotion, CS finally steps up to his front door."
     n "CS looks back out into the crowd again one more time."
     cs "This is CS..."
     cs "Signing out!"
     n "The crowd errupts in cheers as CS finally enters his house."
+    scene cs_room with fade
+    show cs at center with moveinleft
     cs "Ah, it's good to be home again!"
     n "CS looks over at his desk, where a new computer is sitting."
+    scene cs_room_2 with fade
     n "CS looks at the monitor that has a sticky note that says \"From LTT\"."
+    show cs happy at mid_left with moveinleft
     cs "Oh my goodness Linus got me a new PC!"
     n "There is also a note that says \"We'd love to have to work with us again virtually, just give us a call\"."
     cs "I'll have to make sure to call them later!"
+    show cs at mid_left
     cs "Before I head off for the night, I'll do a stream real quick."
     n "CS starts up his stream overlay and goes live on Twitch."
     cs "Hey guys! CS here! Sorry I was gone for a couple weeks!"
     n "The chat is overflowing with messages."
     "Chat" "Yeah what happened to you? Oh my god CS you're here! Hi! Hi! Where have you been?"
+    show cs happy at mid_left
     cs "Well guys, *chuckles* It's a long story..."
+    jump secret2
 
 label fighthohsis:
     jump secret

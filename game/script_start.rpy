@@ -136,6 +136,7 @@ define worker_5 = Character("Worker 5", callback = char_callback)
 define worker_6 = Character("Worker 6", callback = char_callback)
 define worker_7 = Character("Worker 7", callback = char_callback)
 define digi = Character("Digi", callback = renpy.partial(char_callback, name = "digi", beep = "digi"))
+define pakoo = Character("Pakoo", callback = renpy.partial(char_callback, name = "pakoo", beep = "csgod"))
 
 define copguy = Character("CopGuy", callback = renpy.partial(char_callback, name = "copguy", beep = "cop"))
 define arceus = Character("Arceus", callback = renpy.partial(char_callback, name = "arceus", beep = "arc"))
@@ -239,6 +240,7 @@ image billy = "characters/billy.png"
 image billy car = "characters/billy/billy_car.png"
 image billy car happy = "characters/billy/billy_car_happy.png"
 image billy car turn = "characters/billy/billy_car_turn.png"
+image pakoo = "characters/addyfucku.png"
 
 # Background Images
 ## CSBI
@@ -257,6 +259,7 @@ image walmart_register = "bg/walmart_checkout.png"
 image cs_door_closed = "bg/door_closed.png"
 image cs_door_open = "bg/door_open.png"
 image rosen_abode = "bg/rosenabode.png"
+image cs_street = "bg/cs_street.png"
 image hoh_outside = "bg/office_outside.png"
 image hoh_hq = "bg/office1.png"
 image hoh_hq2 = "bg/office2.png"
@@ -266,7 +269,6 @@ image hoh_hq5 = "bg/office5.png"
 
 ## CSBII
 image helipad = "bg/helipad.png"
-image cs_street = "bg/cs_street.png"
 image jail_inside = "bg/jail_inside.png"
 image jail_cell = "bg/jail_cell.png"
 image border = "bg/canadian_border.png"
