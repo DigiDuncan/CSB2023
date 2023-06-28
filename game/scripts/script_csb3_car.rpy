@@ -34,4 +34,4 @@ label car_dialogue:
     $ achievement_manager.unlock("Bored")
     hide screen skip_car
 
-    jump montana
+    jump back_home

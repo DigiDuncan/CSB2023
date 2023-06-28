@@ -1021,7 +1021,7 @@ label in_billy_car:
     cs "Let's just enjoy the ride there at least."
     arceus "Fair point."
     stop music fadeout 3.0
-    jump car_dialogue
+    jump montana
 
 label montana:
     scene car background
@@ -1044,10 +1044,66 @@ label montana:
     n "Arceus immediately jerks straight up."
     arceus "What did you just call me?"
     billy "Nothing!"
+    scene hardwareoutside
+    show billy car
     billy "Here we are, at the store. I'll be back here in a few."
     cs "Same, I'll come with you."
     n "Arceus falls back to sleep in the car."
-
+    play sound "doorslam.ogg"
+    scene black with fade
+    scene hardwareinside with fade
+    show cs at left with moveinleft
+    cs "Wow look at all this stuff!"
+    cs "They've got Allen wrenches, gerbil feeders, toilet seats, electric heaters{nw}"
+    cs "Trash compactors, juice extractor, shower rods and water meters{nw}"
+    cs "Walkie-talkies, copper wires, safety goggles, radial tires{nw}"
+    cs "BB pellets, rubber mallets, fans and dehumidifiers{nw}"
+    cs "Picture hangers, paper cutters, waffle irons, window shutters{nw}"
+    cs "Paint removers, window louvres, masking tape and plastic gutters{nw}"
+    cs "Kitchen faucets, folding tables, weather stripping, jumper cables{nw}"
+    cs "Hooks and tackle, grout and spackle, power foggers, spoons and ladles{nw}"
+    cs "Pesticides for fumigation, high-performance lubrication{nw}"
+    cs "Metal roofing, water proofing, multi-purpose insulation{nw}"
+    cs "Air compressors, brass connectors, wrecking chisels, smoke detectors{nw}"
+    cs "Tire gauges, hamster cages, thermostats and bug deflectors{nw}"
+    show cs worried
+    cs "Trailer hitch demagnetizers, automatic circumcisers{nw}"
+    show cs
+    cs "Tennis rackets, angle brackets, Duracells and Energizers{nw}"
+    cs "Soffit panels, circuit breakers, vacuum cleaners, coffee makers{nw}"
+    cs "Calculators, generators, matching salt and pepper shakers{nw}"
+    cs "and I think that's it..."
+    cs "Ooh! Look at all this paint!"
+    cs "Let's get some orange, blue, purple,"
+    show cs happy
+    cs "More colors I need more colors!"
+    show billy at right with moveinright
+    show cs
+    billy "You ready to go CS?"
+    cs "Yep! let's check out and keep going!"
+    billy "Where is the cashier in this store? I didn't see anyone in the store..."
+    show cashier at center with moveinbottom
+    show cs worried
+    show cashier with hpunch
+    cashier "I gotcha covered. Have a good day!"
+    hide cashier with moveoutright
+    cs "Letsgoletsgoletsgoweneedtogetoutofhere"
+    hide cs at moveoutright
+    hide billy at moveoutright
+    scene black with fade
+    play sound "doorslam.ogg"
+    scene hardwareoutside with fade
+    show billy car
+    billy "That was quite the experience, I should've brought my hercules hook!"
+    cs "Yeah really, let's get out of here!"
+    arceus "Huh? What's going on?"
+    cs "Nothing Arc, just, slipped and fell in the store."
+    arceus "Okay whatever, I'm going back to sleep..."
+    n "Billy takes off out of the parking lot."
+    scene black with fade
+    scene car background
+    show billy car
+    jump car_dialogue
 
 label back_home:
     scene cs_house with fade
