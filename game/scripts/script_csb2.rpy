@@ -433,7 +433,6 @@ label bordercrossing:
 
     scene black with fade
     scene inside_tim_hortons
-    Ohai, Mark
     $ achievement_manager.unlock("Ohai, Mark")
     play music "<loop 0>buy_something.mp3" volume 0.6
     show cashier at t_cashier_at_tims
