@@ -52,12 +52,12 @@ grayscale = Matrix(
 
 achieves = [
         ("ZUP!", "???", "Start the game.", "zup"),
-        ("I Don't Like People!", "Avoid responsibility.", "Tell CS not to go to Wal-Mart.", "missing"),
-        ("Dead Meme", "???", "Sparta kick Wesley.", "missing"),
-        ("#1 Rated Pooper", "???", "Use your skills to keep your job.", "missing"),
-        ("Can We Go Back?", "???", "Try to go back to Canada.", "missing"),
+        ("I Don't Like People!", "Avoid responsibility.", "Tell CS not to go to Wal-Mart.", "no_person"),
+        ("Dead Meme", "???", "Sparta kick Wesley.", "sparta"),
+        ("#1 Rated Pooper", "???", "Use your skills to keep your job.", "poop"),
+        ("Can We Go Back?", "???", "Try to go back to Canada.", "compass"),
         ("Ocean Man", "???", "Go west eight times.", "ocean"),
-        ("Bored", "Sit through all the car dialouge.", "Sit through all the car dialouge.", "missing"),
+        ("Bored", "Sit through all the car dialouge.", "Sit through all the car dialouge.", "yawn"),
         ("HoH SiS's Most Wanted", "???", "Complete CSBI.", "csbi"),
         ("Welcome to CSBIII, Mother Fucker", "???", "Complete CSBII.", "csbii")
     ]
