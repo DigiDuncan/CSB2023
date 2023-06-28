@@ -7,11 +7,11 @@ screen popup(a):
         at popup_appear
         xysize(367, 152)
 
-        image a.icon:
+        add a.icon:
             xysize(100, 100)
             pos (17, 19)
 
-        image "popup.png":
+        add "popup.png":
             pos (-2, -2)
 
         vbox:
