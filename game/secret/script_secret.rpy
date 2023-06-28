@@ -37,6 +37,8 @@ label secret2:
     pakoo "I am horribly drawn and it's 5am but hell yeah we fuckin diiiiiiiiiiiiiiidd ittttttttttt!!!!!!"
     pakoo "Yeeaaaaaahhhhh!!! Wooooooooo!!!! Wooooooo!!! Tetttttriiissssssss!!!{nw}"
     pause
-    $ achievement_manager.unlock("That's All, Folks!")
+
+    $ thats_all_folks.unlock()
+
     return
   
