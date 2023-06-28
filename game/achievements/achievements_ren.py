@@ -49,7 +49,7 @@ class Achievement:
             return
 
         self.unlocked = True
-        persistent.achievements.add(self.name)
+        persistent.achievements.add(self)
         renpy.with_statement(determination)
         renpy.show_screen("popup", self)
         renpy.with_statement(determination)
