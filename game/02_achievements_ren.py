@@ -52,6 +52,8 @@ grayscale = Matrix(
 
 achieves = [
         ("ZUP!", "???", "Start the game.", "zup"),
+        ("Overcaffinated", "???", "Give an old man {i}way{/i} too much energy.", "genergy"),
+        ("Ohai, Mark", "???", "Did-- did that reference land?", "mark"),
         ("I Don't Like People!", "Avoid responsibility.", "Tell CS not to go to Wal-Mart.", "no_person"),
         ("Dead Meme", "???", "Sparta kick Wesley.", "sparta"),
         ("#1 Rated Pooper", "???", "Use your skills to keep your job.", "poop"),
@@ -59,7 +61,8 @@ achieves = [
         ("Ocean Man", "???", "Go west eight times.", "ocean"),
         ("Bored", "Sit through all the car dialouge.", "Sit through all the car dialouge.", "yawn"),
         ("HoH SiS's Most Wanted", "???", "Complete CSBI.", "csbi"),
-        ("Welcome to CSBIII, Mother Fucker", "???", "Complete CSBII.", "csbii")
+        ("Welcome to CSBIII, Mother Fucker", "???", "Complete CSBII.", "csbii"),
+        ("That's All, Folks!", "???", "Complete CSBIII.", "csbiii")
     ]
 
 class Achievement:

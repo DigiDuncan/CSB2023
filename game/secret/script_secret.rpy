@@ -36,5 +36,7 @@ label secret2:
     pakoo "Thats fucking right, we finished the True Ending!"
     pakoo "I am horribly drawn and it's 5am but hell yeah we fuckin diiiiiiiiiiiiiiidd ittttttttttt!!!!!!"
     pakoo "Yeeaaaaaahhhhh!!! Wooooooooo!!!! Wooooooo!!! Tetttttriiissssssss!!!{nw}"
+    pause
+    $ achievement_manager.unlock("That's All, Folks!")
     return
   

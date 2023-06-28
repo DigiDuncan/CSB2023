@@ -391,6 +391,7 @@ label michael_house:
     scene car_inside
     show cs at left
     with fade
+    $ achievement_manager.unlock("Overcaffinated")
     play music "<loop 0>canyon_but_in_the_car.mp3" volume 0.2
     play sound "driving.wav" volume 0.5
     stop music fadeout 3.0
