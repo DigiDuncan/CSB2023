@@ -460,7 +460,7 @@ label arc_escape:
     cs "Look, I'm sorry Linus, I wish I could explain, but Arceus is right. I need to get going."
     linus "I am like, {i}so{/i} confused and frustrated, this better not ruin LMG."
     show cs disappointed
-    cs "I'm sorry guys, I'll try to catch you guys up after this."
+    cs "I'm sorry guys, I'll try to get you guys caught up after this."
     cs "This is CS, signing out."
     arceus "We have no time for that, CS! We need to go!"
     # TODO: Outside LTT
@@ -713,8 +713,11 @@ label good_convince:
     show black with fade
     n "Copguy stops the car as Arceus plays back the scene from {i}CS Bounciness I{/i} with the scamming of CS by HoH SiS."
     scene copcar with fade
+    show copguy at mid_left
+    show copcar_mask
     show arceus at right
     show cs disappointed at left
+    with dissolve
     cs "How--"
     arceus "I have my ways."
     copguy "I don't understand, so HoH SiS really did scam you hard, didn't they?"
@@ -731,7 +734,7 @@ label good_convince:
     copguy "Listen, I really shouldn't be doing this right now, but I have to go back to look into this deal with HoH SiS."
     copguy "You are free to go for now."
     copguy "But know this: I'm putting my job on the line over this."
-    copguy "But don't do anything stupid, because I have my eye on you two!"
+    copguy "Don't do anything stupid, because I have my eye on you two!"
     n "Copguy gets back into his car, and heads off into the dead of night."
     hide copguy with moveoutright
     show arceus dark flipped at mid_right_right with move
@@ -1113,7 +1116,7 @@ label montana:
     billy "Yeah, let's see if I can find a place to stop at."
     billy "Wait a second, what the hell?"
     n "Billy brings the car to a screeching halt."
-    "CS + Arc" "What in the world?"
+    "CS and Arceus" "What in the world?"
     n "Ahead lies a barricade that with a bunch of strange hooded people surrounding it."
     n "One of the members walks up to the driver's side and knocks on the window."
     n "Billy rolls down the window."
