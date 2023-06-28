@@ -1103,6 +1103,18 @@ label montana:
     scene black with fade
     scene car background
     show billy car
+    cs "Man, today was pretty crazy too."
+    arceus "Yeah, at least I got some sleep."
+    cs "Speaking of which, can we find a place to rest soon?"
+    billy "Yeah, let's see if I can find a place to stop at."
+    billy "Wait a second, what the hell?"
+    n "Billy brings the car to a screeching halt."
+    "CS + Arc" "What in the world?"
+    n "Ahead lies a barricade that with a bunch of strange hooded people surrounding it."
+    n "One of the members walks up to the driver's side and knocks on the window."
+    n "Billy rolls down the window."
+    billy "Hi it's Billy! What are you doing by my car?"
+    cultist "Get out of the car."
     jump car_dialogue
 
 label back_home:
