@@ -1118,6 +1118,28 @@ label montana:
     n "Billy rolls down the window."
     billy "Hi it's Billy! What are you doing by my car?"
     cultist "Get out of the car."
+    billy "No it's my car!"
+    n "The cultist pulls out a revolver and aims at Billy's head."
+    cultist "Does this like a joke to you guys?"
+    cultist "Out of the car. Now."
+    n "Billy shrugs and opens the door, with the cultist leader still aiming the gun to his head."
+    cultist "You two as well, out."
+    n "CS and Arc both step out of the car."
+    cultist "So, do you want to explain what is going on here?"
+    cs "Uhm, we were heading on past here to the next-"
+    n "The cultist aims his gun at CS."
+    cultist "Look I don't care where you are going."
+    cultist "We are part of the Blue Branch Cult, and our motto is that we hate everything."
+    arceus "Like, everything?"
+    n "The cultist aims at Arc."
+    cultist "You wanna fuck with me?"
+    arceus "Fair enough."
+    cultist "I'm gonna the rest of the gang to deal with you guys, don't fucking move."
+    cultist "I mean it!"
+    cultist "Okay?"
+    n "Billy goes to the back of his trunk and starts digging around."
+    arceus "Never thought we'd run into cultists out of all people."
+    
     jump car_dialogue
 
 label back_home:
