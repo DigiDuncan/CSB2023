@@ -1143,6 +1143,9 @@ label montana:
     arceus "CS what are you doing?"
     arceus "CS!"
     cs "Look at me! I'm purple!"
+    play sound "secret/funni.ogg" volume 0.5
+    pause
+    stop sound
     arceus "CS what the fuck are you doing..."
     jump car_dialogue
 
