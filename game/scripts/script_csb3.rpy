@@ -1139,7 +1139,11 @@ label montana:
     cultist "Okay?"
     n "Billy goes to the back of his trunk and starts digging around."
     arceus "Never thought we'd run into cultists out of all people."
-    
+    n "CS starts digging around in the back too."
+    arceus "CS what are you doing?"
+    arceus "CS!"
+    cs "Look at me! I'm purple!"
+    arceus "CS what the fuck are you doing..."
     jump car_dialogue
 
 label back_home:
