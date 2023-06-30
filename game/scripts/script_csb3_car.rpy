@@ -20,16 +20,53 @@ label car_dialogue:
 
     show screen skip_car
 
-    cs "So, there's going to be a bunch of random dialouge here?"
-    arceus "Eyup."
-    cs "So we just need to sit here and talk for a while?"
-    arceus "May as well, passes the time."
-    cs "Fair enough."
-    arceus "What do you wanna talk about?"
-    cs "Man, I don't know, I've been through a lot."
-    arceus "Man, same. I'm tired. And I don't think Digi wants to write more right now."
-    cs "Huh?"
-    arceus "Don't worry about it."
+    cs "So, Arc?"
+    arceus "Yeh?"
+    cs "Are you a furry?"
+    arceus "I mean, I {i}am{/i} furry."
+    cs "You know what I mean."
+    arceus "Is it really being a furry if I'm literally not a human?"
+    cs "Fair point."
+
+    pause 1.0
+
+    cs "You know, I can drive, Billy."
+    billy "This is my car!"
+    cs "Well, yeah, but if you don't want to drive the whole way..."
+    billy "No, I'm good. You're in my car, and that means I'll drive!"
+    cs "Alright man, I just don't feel like we paid you enough for this."
+    billy "Everything I sell, it's always $19.95!"
+    cs "Well, thanks man."
+    billy "That's the power of friendship!"
+
+    pause 1.0
+
+    cs "So Arc, where'd you learn to hack like that?"
+    arceus "College."
+    cs "You went to college? I thought you'd been in prison for five years!"
+    arceus "And...?"
+    cs "How... how old are you?"
+    n "Arc locks eyes with CS."
+    cs "I forgot what I was saying, never mind."
+    arceus "Yeah, that's fine."
+
+    pause 1.0
+
+    cs "How long is this drive?"
+    arceus "You sound like a child asking their mom if they're at Disney World yet."
+    cs "I'm sorry man, I just want to get home."
+    billy "It's quite a ways away still!"
+    cs "Aw man..."
+    arceus "Listen, at least the cops aren't after us this time."
+    billy "What?"
+    cs "Don't worry about it."
+
+    pause 1.0
+
+    cs "Have you heard of Genshin Impact? Start you adventure on the continent of Teyvat, and--{nw}"
+    arceus "No."
+    billy "I'm a pitchman, and even I won't stoop that low."
+    n "CS shuts up."
 
     $ achievement_manager.unlock("Bored")
 
