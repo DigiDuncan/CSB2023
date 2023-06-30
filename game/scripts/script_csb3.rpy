@@ -34,7 +34,7 @@ label csbiii_start:
     show linus at right with moveinright
     linus "Hey CS, how's the new video coming along?"
     cs "It's going well, I have the background all done and I'm working on adding graphics and fixing audio."
-    linus "Wow! You're a fast worker, you'll get off of those old 2080s in no time."
+    linus "Wow! You're a fast worker, you'll get off of those old 3080s in no time."
     cs "Thanks Linus."
     linus "Speaking of live streaming, we need a new PC for the WAN Show, can you go and buy parts for one?"
 
@@ -283,13 +283,15 @@ label boost:
     n "CS looks unnerved."
     linus "Look just, open the box. I'm sure you'll like it."
     n "CS cautiously takes the box, and opens the top. "
+    show ytx at truecenter
     n "Inside is what looks to be a graphics card, but with a brown YouTube logo engraved into the side."
     show cs
-    cs "Woah, what is this Linus? A YouTube-brand graphics card?"
+    cs "Woah, what is this, Linus? A YouTube-brand graphics card?"
     linus "Not exactly. It's an experimental piece of hardware that we have never used before, and it's custom made."
     n "Linus holds the card into the air."
     linus "Behold! {w=0.5} The-- WOAH SHIT {w=0.5}{nw}"
     with vpunch
+    hide ytx with moveoutbottom
     n "Linus loses grip of the card as it tumbles down onto the table next to him."
     n "CS facepalms, while you can hear Luke laughing in the background."
     cs "Goodness Linus, you should maybe not do that next time."
@@ -306,8 +308,8 @@ label boost:
     n "As Linus inserts the flashdrive, a window off the side of the screen pops up saying 'Your new Peeforce Experience drivers are available.'"
     n "CS chuckles a bit."
     show cs happy
-    cs "Peeforce? I must admit, even these drive names are a bit silly."
-    n "Linus Laughs."
+    cs "Peeforce? I must admit, even these driver names are a bit silly."
+    n "Linus laughs."
     linus "If you want, we can wipe them later."
     cs "Wipe! Now you're in on it!"
     n "They both laugh as the drivers install, and once they're finished, CS boots up Premiere."
@@ -325,7 +327,7 @@ label boost:
     show cs at left
     show linus at right
     with fade
-    cs "Wow, thank you so much Linus for this!"
+    cs "Wow, thank you so much for this, Linus!"
     linus "No problem! This was my gift to you. Now, we should make a review video of it before the day ends."
     cs "Sure thing, let's take the card out real quick."
     scene ltt_bg
@@ -334,7 +336,6 @@ label boost:
     show cs at t_cs_ltt behind ltt_fg with moveinleft
     show linus at t_linus_ltt behind ltt_fg with moveinright
     n "Linus goes and gets the cameras set up, and they start to film the video."
-    scene setup with fade
     n "After they finish recording, CS goes up to Linus's office."
     #Todo get linus's office
     scene loffice with fade
@@ -985,7 +986,7 @@ label billy_driver:
     arceus "Are you crazy? To drive all the way back to New York? In a stranger's car at that."
     arceus "Besides, how are we even going to pay the guy anyways?"
     cs "Well we don't have to go all the way to New York, we could go a small distance and then get another Uber."
-    arceus "That would be way even more money in tips!"
+    arceus "That would be even more money in tips!"
     n "As the two are agruing, the owner of the car comes up to them."
     "???" "What are you doing next to my car?"
     cs "Oh, hi."
@@ -1029,7 +1030,7 @@ label in_billy_car:
 label montana:
     scene car background
     show billy car
-    n "After a few hours of driving, the trio currently resides in the middle of Montana."
+    n "After a few hours of driving, the trio currently is located in the middle of Montana."
     n "Arceus is sleeping, while CS peers out the window."
     cs "Are we there yet?"
     billy "Nope!"
@@ -1042,8 +1043,8 @@ label montana:
     billy "I was gonna buy some new supplies for my gadgets, if you guys want to pick out anything."
     cs "Sure! I love buying random things!"
     cs "What about you Arceus?"
-    cs "Hey Arc!"
-    billy "CS you should probably leave the dog thing alone in the back."
+    cs "Hey, Arc!"
+    billy "CS, you should probably leave the dog thing alone in the back."
     n "Arceus immediately jerks straight up."
     arceus "What did you just call me?"
     billy "Nothing!"
@@ -1079,12 +1080,12 @@ label montana:
     cs "Ooh! Look at all this paint!"
     cs "Let's get some orange, blue, purple,"
     show cs happy
-    cs "More colors I need more colors!"
+    cs "More colors, I need more colors!"
     show billy at right with moveinright
     show cs
     billy "You ready to go CS?"
     cs "Yep! let's check out and keep going!"
-    billy "Where is the cashier in this store? I didn't see anyone in the store..."
+    billy "Where is the cashier in this store? I didn't see anyone..."
     show cashier at center with moveinbottom
     show cs worried
     show cashier with hpunch
@@ -1097,10 +1098,10 @@ label montana:
     play sound "doorslam.ogg"
     scene hardwareoutside with fade
     show billy car
-    billy "That was quite the experience, I should've brought my hercules hook!"
+    billy "That was quite the experience, I should've brought my Hercules Hook!"
     cs "Yeah really, let's get out of here!"
     arceus "Huh? What's going on?"
-    cs "Nothing Arc, just, slipped and fell in the store."
+    cs "Nothing Arc, just, uh, slipped and fell in the store."
     arceus "Okay whatever, I'm going back to sleep..."
     n "Billy takes off out of the parking lot."
     scene black with fade
@@ -1115,10 +1116,10 @@ label montana:
     scene cultforest
     show billy car
     "CS and Arceus" "What in the world?"
-    n "Ahead lies a barricade that with a bunch of strange hooded people surrounding it."
+    n "Ahead lies a barricade with a bunch of strange hooded people surrounding it."
     n "One of the members walks up to the driver's side and knocks on the window."
     n "Billy rolls down the window."
-    billy "Hi it's Billy! What are you doing by my car?"
+    billy "Hi, it's Billy! What are you doing by my car?"
     cultist "Get out of the car."
     billy "No, it's my car!"
     n "The cultist pulls out a revolver and aims at Billy's head."
@@ -1138,7 +1139,7 @@ label montana:
     cultist "You wanna fuck with me?"
     arceus "I mean. If you're offering."
     n "The cultist looks annoyed."
-    cultist "I'm gonna the rest of the gang to deal with you guys, don't fucking move."
+    cultist "I'm gonna get the rest of the gang to deal with you guys, don't fucking move."
     cultist "I mean it!"
     cultist "Okay?"
     n "Billy goes to the back of his trunk and starts digging around."
@@ -1150,7 +1151,7 @@ label montana:
     play sound "secret/funni.ogg" volume 0.5
     pause
     stop sound
-    arceus "CS what the fuck are you doing..."
+    arceus "CS, what the fuck are you doing...?!"
     arceus "You are going to definitely get us killed!"
     n "Arceus hides behind the car as the cultist member brings two others with him."
     cultist "Alright, they are over here at this car."
@@ -1160,10 +1161,10 @@ label montana:
     cultist "Oh no! It's the one thing that we don't hate!"
     cs "Huh?"
     cs "I mean,"
-    cs "Yeah that's right it's me, CSGod."
-    cs "You better leave these 3 alone, or I'll uh, smite you!"
-    cultist "CSGod doesn't smite, he uses YTP mag-{nw}"
-    cs "Don't tempt your god, I will YTP you so hard that you'll look like you came for an AwfulFawful YTP!"
+    cs_fakegod "Yeah that's right it's me, CSGod."
+    cs_fakegod "You better leave these three alone, or I'll uh, smite you!"
+    cultist "CSGod doesn't smite, he uses YTP mag-{w=0.5}"
+    cs_fakegod "Don't tempt your god, I will YTP you so hard that you'll look like you came from an AwfulFawful YTP!"
     cultist_2 "We need to leave! We're sorry!"
     n "Billy comes up behind CS with one of his gadgets."
     billy "Fire a laser! Fire a laser!"
@@ -1178,6 +1179,9 @@ label montana:
     arceus "Fuck."
     arceus "How many divine beings and reality benders do we have in this universe anyhow?"
     cs "Alright, back on the road to New York!"
+    #
+    # TODO: THERE'S NO BACKGROUNDS AFTER THIS
+    #
     n "The gang gets back in the car and books it out of the forest."
     n "After a while of driving, Billy pulls the car into a small area off the forest to let everyone rest."
     n "After the night passes, they set off again on their trip."
@@ -1186,7 +1190,7 @@ label montana:
     billy "Sure yeah, there's a McDonald's up here in a couple miles."
     n "Billy pulls up through the drive-thru to place his order."
     cashier "Hello, what you like to order?"
-    billy "Hi Billy Mays here! I would like to get the buy 1 get 1 free breakfast meal for my friends here,"
+    billy "Hi, Billy Mays here! I would like to get the Buy 1 Get 1 Free breakfast meal for my friends here,"
     billy "and I would also like to get the egg McMuffin and a Big Mac for me."
     cashier "Sure thing, that'll be-{nw}"
     billy "But I'm not done yet! I would like to triple the offer and get 3 Big Macs, and also 3 large sodas without any shipping!"
@@ -1195,7 +1199,7 @@ label montana:
     cashier "$36.88."
     billy "Wow! What a deal! I'm coming around to pick up my order!"
     n "Billy drives through and picks up his meal."
-    n "Cs and Arc happily chow down on the Mickey Dee's they just got."
+    n "CS and Arc happily chow down on the Mickey D's they just got."
     arceus "Thank god for that."
     cs "I have never been so excited to get a Big Mac."
     n "Billy heads out on the open road again, as they enter the state of South Dakota."
@@ -1207,20 +1211,20 @@ label south_dakota:
     arceus "I don't think you should be super excited, there is like, nothing here."
     cs "Oh yeah, we don't even have trees to look at anymore."
     cs "Is there anything to do in this state?"
-    arceus "There's Mount Rushmore, I guess there's Wall Dr-{nw}"
+    arceus "There's Mount Rushmore, I guess there's Wall Dr-{w=0.5}"
     cs "Oh hell yeah! Let's go to Mount Rushmore!"
     n "In about an hour, the crew arrives at Mount Rushmore."
     n "They all hitchhike up to the viewing spot to get a good look of the founding fathers."
     billy "Wow, to think that we won a war without the Gopher."
     billy "How did they even communicate without the Jupiter Jack?"
-    arceus "It'd be cool if I had my face carved out into a mountain. Wouldn't that be cool CS?"
+    arceus "It'd be cool if I had my face carved out into a mountain. Wouldn't that be cool, CS?"
     n "Arceus looks over at CS concentrating on something really hard."
     arceus "CS? Are you okay?"
     n "As Arceus starts to approach CS, the groups surrounding them all gasp loudly."
     arceus "Huh?"
     cs "There we go! Fixed!"
     n "Arceus looks back at Mount Rushmore, now with CS, Arceus, and Billy's face on the mountain."
-    arceus "You scare me CS. I don't even like, question how or why."
+    arceus "You scare me, CS. I don't even like, want to question how or why."
     arceus "{size=-12}I do look pretty cool though."
     n "The gang gets back in the car before the overwelming groups of people engulf the site after what just happened."
     n "They continue to drive though the massive and empty plains of South Dakota."
@@ -1241,13 +1245,13 @@ label nebraska:
     n "Suddenly, CS hears a voice behind him."
     "???" "CS? Is that you?"
     cs "Huh?"
-    n "CS turns around and sees a wacky, thing with a tophat on."
+    n "CS turns around and sees a wacky, thing, with a tophat on."
     pakoo "Yeah hey, it is you!"
-    pakoo "Arceus you too? And, Billy... Mays?"
-    billy "Hi it's Billy!"
+    pakoo "Arceus, you too? And, Billy... Mays?"
+    billy "Hi, it's Billy!"
     arceus "Hey Pakoo."
     cs "Yeah I haven't seen you in a while, I never thought you'd live in this place!"
-    pakoo "I never you guys would come down to Omaha, there's like, nothing here."
+    pakoo "I never thought you guys would come down to Omaha, there's like, nothing here."
     cs "We've been through a lot recently, do you know somewhere we can eat and rest for the night?"
     n "Pakoo thinks for a moment."
     pakoo "I think I know a place."
@@ -1266,9 +1270,9 @@ label iowa:
     cs "HoH SiS is back!"
     arceus "WHAT?!"
     billy "Who?"
-    cs "They have their UFO and-"
+    cs "They have their UFO and--"
     n "A huge laser beam blasts on the left side of the road, ripping up everything in it's path!"
-    arceus "Shit this is bad..."
+    arceus "Shit, this is bad..."
     cs "Billy, you need to switch lanes when it charges up!"
     jump after_ufo
 
@@ -1277,11 +1281,11 @@ label after_ufo:
     arceus "That was some good driving Billy!"
     billy "That's the power of the 6000 pound car!"
     n "They continue driving through the end of the Midwest."
-    n "As they are drving through Illinois, they past by Chicago."
+    n "As they are drving through Illinois, they pass by Chicago."
     arceus "One day, I'm gonna rule that place."
-    cs "What are you talking about?"
+    cs "What are you... talking about?"
     arceus "It's better than ruling the Earth."
-    cs "Get some sleep Arc."
+    cs "Get some sleep, Arc."
     n "The gang stops in Indiana for the night, and takes off in the morning through Michigan."
     jump michigan
 
@@ -1294,18 +1298,19 @@ label ohio:
     n "Suddenly, a huge blue border enters everyone's vision."
     arceus "Oh what in the world? There is some red border in my eyes..."
     cs "I have a blue one, what is going on?"
-    billy "Yeah it's blue for me too, I think you are colorblind."
+    billy "Yeah, it's blue for me too, I think you are colorblind."
     arceus "I AM colorblind. Oh fuck."
-    n "As they are drving through the state, they see some men on the side of road protesting about the blue border."
-    billy "Hi it's Billy!"
+    n "As they are driving through the state, they see some men on the side of road protesting about the blue border."
+    billy "Hi, it's Billy!"
     billy "Are you tired of having a blue border in your vision?"
     billy "You should try Kaboom!"
     n "Billy pulls out a bottle of Kaboom and sprays them in the face."
     scott "Ahhhhh!"
     billy "It gets the tough stains out!"
     terry "I'm sorry that doesn't seem very vegan, I'll have to just deal with it."
-    cs " Billy I don't think that'll work, let's just keep going."
+    cs " Billy, I don't think that'll work, let's just keep going."
     n "Once they leave the state, the border goes away."
+    hide scott_border with dissolve
     arceus "I'm glad it just faded away, I did not want to spray cleaner in my eyes."
     jump pennsylvania
 

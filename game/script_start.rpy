@@ -111,6 +111,7 @@ transform xstretch_out:
 # Character Definitions
 define n = Character(None, what_italic = True)  # Narrator
 define cs = Character("cs188", callback = renpy.partial(char_callback, name = "cs", beep = "cs"))
+define cs_fakegod = Character("cs188 (pretending to be CSGod)", callback = renpy.partial(char_callback, name = "cs", beep = "csgod"))
 define craptop = Character("Craptop", callback = char_callback)
 define sticky = Character("Sticky Note", callback = char_callback)
 define discord = Character("Discord", callback = char_callback)

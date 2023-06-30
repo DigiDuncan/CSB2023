@@ -63,7 +63,7 @@ label car_dialogue:
 
     pause 1.0
 
-    cs "Have you heard of Genshin Impact? Start you adventure on the continent of Teyvat, and--{nw}"
+    cs "Have you heard of Genshin Impact? Start you adventure on the continent of Teyvat, and--{w=0.5}"
     arceus "No."
     billy "I'm a pitchman, and even I won't stoop that low."
     n "CS shuts up."
