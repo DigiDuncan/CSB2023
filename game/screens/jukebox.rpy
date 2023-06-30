@@ -96,6 +96,14 @@ screen music_screen(l):
             vbox:
                 xsize 800
                 ysize 800
+                image "images/jukebox/record.png":
+                    xysize(250, 250)
+                    xalign(0.5)
+                    yalign(0.5)
+                    at transform:
+                        rotate 0
+                        linear 5.0 rotate 360.0
+                        repeat
                 #You write the actual entry here. I suggest you split your text into smaller text _p sections, otherwise the text might overlap with
                 #the scrollbars. If you're sure that your text fits the screen and scrolling is not needed then comment out everything starting from "scrollbars vertical" to
                 #"pagekeys True" as seen in the next entry. If you do this, splitting the text is not needed.

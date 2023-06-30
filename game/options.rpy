@@ -133,7 +133,7 @@ define config.window_hide_transition = Dissolve(.2)
 default preferences.text_beeps = True
 default preferences.csbounciness = 0
 
-default preferences.text_cps = 40
+default preferences.text_cps = 0
 
 
 ## The default auto-forward delay. Larger numbers lead to longer waits, with 0
