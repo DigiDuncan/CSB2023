@@ -327,6 +327,7 @@ image secrettunnel = "bg/ai/secret_tunnel.png"
 # Static Images
 image objection = "objection.png"
 image hold_it = "hold_it.png"
+image scott_border = "scott_border.png"
 
 # Movies
 image car background = Movie(play="movies/car_background.mp4")

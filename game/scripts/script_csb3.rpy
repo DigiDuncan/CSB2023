@@ -1287,6 +1287,7 @@ label michigan:
 
 label ohio:
     n "After that fiasco, they travel through Ohio."
+    show scott_border
     n "Suddenly, a huge blue border enters everyone's vision."
     arceus "Oh what in the world? There is some red border in my eyes..."
     cs "I have a blue one, what is going on?"
