@@ -58,7 +58,7 @@ label csbi_start:
     scene cs_room
     show cs
     cs "Okay... What to do now?"
-    cs "I could go outside, look at some flowers.."
+    cs "I could go outside, look at some flowers..."
     show cs happy
     stop music fadeout 3.0
     music end
@@ -93,7 +93,7 @@ label csbi_start:
     show cs_car_inside behind cs
     play music "<loop 0>canyon_but_in_the_car.mp3" volume 0.2
     music CANYON.MID - George Stone
-    cs "Whew.. That was close!"
+    cs "Whew... That was close!"
     cs "Should I go get groceries?"
     menu:
         "Get groceries?"
@@ -231,7 +231,7 @@ label room:
     scene door_closed with fade
     show cs happy with moveinbottom
     cs "Oh they're here!"
-    cs "Let me go get the door.."
+    cs "Let me go get the door..."
     show door_open behind cs
     cs "Hello! I am cs188 and I-"
     show cs at left with move
@@ -239,7 +239,7 @@ label room:
     play music "<loop 0>hohsis_theme.mp3" volume 0.2
     music Alfred Hitchcock Intro Theme - Charles Gounod
     ed "Alright that will be 200,000 Bits."
-    cs "Okay, I guess they already told you what I need done.. Lemme get my wallet..."
+    cs "Okay, I guess they already told you what I need done... Lemme get my wallet..."
     cs "Hang on a sec. Didn't they say I could pay afterwards?"
     ed "Yeah well, corporate policies just changed 5 seconds ago. Pay up."
     hide cs with moveoutleft
