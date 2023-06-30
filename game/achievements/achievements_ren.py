@@ -3,11 +3,6 @@ from renpy.game import persistent
 from renpy.display.transition import Dissolve
 import renpy.exports as renpy
 
-# These are just for type hinting, they don't do anything as fat as I'm aware
-persistent.achievements = set()
-determination = Dissolve(0.0)
-achievements: list["Achievement"] = []
-
 """renpy
 init python:
 """
