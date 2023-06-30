@@ -1295,6 +1295,20 @@ label ohio:
     n "As they are drving through the state, they see some men on the side of road protesting about the blue border."
     billy "Hi it's Billy!"
     billy "Are you tired of having a blue border in your vision?"
+    billy "You should try Kaboom!"
+    n "Billy pulls out a bottle of Kaboom and sprays them in the face."
+    scott "Ahhhhh!"
+    billy "It gets the tough stains out!"
+    terry "I'm sorry that doesn't seem very vegan, I'll have to just deal with it."
+    cs " Billy I don't think that'll work, let's just keep going."
+    n "Once they leave the state, the border goes away."
+    arceus "I'm glad it just faded away, I did not want to spray cleaner in my eyes."
+    jump pennsylvania
+
+label pennsylvania:
+    n "The gang hits the last state before New York, Pennsylvania."
+    
+
     jump car_dialogue
 
 label back_home:
