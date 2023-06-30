@@ -1,3 +1,4 @@
+from renpy.display.transform import Transform
 from renpy.game import persistent
 from renpy.display.transition import Dissolve
 import renpy.exports as renpy
@@ -31,10 +32,11 @@ class Achievement:
 
     @property
     def icon(self) -> str:
+        d = renpy.displayable(f"achievements/{self.icon_image}.png")
         if self.unlocked:
-            return self.icon_image
+            return d
 
-        return f"{self.icon_image}_locked"
+        return Transform(d, matrixcolor=SaturationMatrix(0.0))  # type: ignore
 
     def __hash__(self) -> int:
         return hash(self.name)
