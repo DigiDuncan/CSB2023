@@ -1,6 +1,5 @@
 from renpy.display.transform import Transform
 from renpy.game import persistent
-from renpy.display.transition import Dissolve
 import renpy.exports as renpy
 
 """renpy
@@ -20,8 +19,8 @@ class Achievement:
     def __post_init__(self) -> None:
         self.unlocked = False
 
-        if not any(self.name == a.name for a in persistent.achievements):
-            persistent.achievements.add(self)
+        if self.name in persistent.unlocked_achievements:
+            self.unlocked = True
 
     @property
     def desc(self) -> str:
@@ -48,7 +47,7 @@ class Achievement:
             return
 
         self.unlocked = True
-        persistent.achievements.add(self)
+        persistent.unlocked_achievements.add(self.name)
         renpy.with_statement(determination)
         renpy.show_screen("popup", self)
         renpy.with_statement(determination)
@@ -57,14 +56,14 @@ class Achievement:
 class AchievementManager:
     @property
     def unlocked(self) -> list[Achievement]:
-        return [a for a in persistent.achievements if a.unlocked]
+        return [a for a in achievements if a.unlocked]
 
     @property
     def locked(self) -> list[Achievement]:
-        return [a for a in persistent.achievements if not a.unlocked]
+        return [a for a in achievements if not a.unlocked]
 
     def get(self, name: str) -> Achievement:
-        for achievement in persistent.achievements:
+        for achievement in achievements:
             if achievement.name == name:
                 return achievement
 
@@ -78,6 +77,7 @@ class AchievementManager:
     def reset(self):
         for ach in achievements:
             ach.unlocked = False
+        persistent.unlocked_achievements = set()
 
 
 achievement_manager = AchievementManager()

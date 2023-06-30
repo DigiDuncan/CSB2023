@@ -1,4 +1,4 @@
-default persistent.achievements = set()
+default persistent.unlocked_achievements = set()
 
 define achievements = [
     Achievement("ZUP!", "???", "Start the game.", "zup"),
