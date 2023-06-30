@@ -3,8 +3,10 @@ from renpy.game import persistent
 from renpy.display.transition import Dissolve
 import renpy.exports as renpy
 
+# These are just for type hinting, they don't do anything as fat as I'm aware
 persistent.achievements = set()
 determination = Dissolve(0.0)
+achievements: list["Achievement"] = []
 
 """renpy
 init python:
@@ -72,6 +74,15 @@ class AchievementManager:
                 return achievement
 
         raise ValueError(f"Unrecognized achievement {name}")
+    
+    def unlock(self, name: str):
+        ach = self.get(name)
+        if not ach.unlocked:
+            ach.unlock()
+
+    def reset(self):
+        for ach in achievements:
+            ach.unlocked = False
 
 
 achievement_manager = AchievementManager()
