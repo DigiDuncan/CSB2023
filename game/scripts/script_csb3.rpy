@@ -764,7 +764,8 @@ label choose_direction:
     cs "Hey uhh, do you know exactly where we are going?"
     arceus "Well, I noticed that the sun set in our opposite direction, which means we're heading east right now."
     arceus "We can head in any direction really. The second we find a better form of transportation than walking, we're taking it."
-    menu "Which way do you want to go?":
+    menu:
+        "Which way do you want to go?"
         "North":
             jump north
         "East":
