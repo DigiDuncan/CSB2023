@@ -149,7 +149,7 @@ label edit_video:
     cs "Huh? I totally didn't say that, I'm just gonna leave."
     taran "..."
     n "..."
-    taran "... This is {i}your{/i} office.."
+    taran "... This is {i}your{/i} office..."
     n "..."
     taran "Okay, I'll see you later then!"
     show taran flipped at right
@@ -400,7 +400,7 @@ label both_fan:
     colton "Hi guys! What did I miss? I thought we were going to build a streaming machine?"
     linus "Look Colton, we can do that tomorrow."
     cs "Hey guys~ CS Here! Showing you the wonderful world of YTPs!"
-    linus "Oh no.."
+    linus "Oh no..."
     colton "A... what?"
     cs "Alright! Strap in because YouTube is where the poop is!"
     show black with fade
@@ -825,7 +825,7 @@ label west:
 
 label west2:
     cs "Let's try going west again. I'm sure there is something there."
-    arceus "Uhm, okay.. Maybe we've missed something."
+    arceus "Uhm, okay... Maybe we've missed something."
     n "CS and Arc run into the Pacific, again."
     scene washington_road dusk
     show cs dusk at left
@@ -863,7 +863,7 @@ label west3:
 
 label west4:
     cs "Okay! One last time!"
-    arceus "... Something tells me you were in an asylum for a bit.."
+    arceus "... Something tells me you were in an asylum for a bit..."
     n "CS and Arc surprisingly, find the ocean again."
     scene washington_road morning
     show cs at left
@@ -968,7 +968,7 @@ label east:
     arceus "Thank god the slushie machine was working for once."
     cs "Okay, now that we can think about something other than food, what's our plan to get home?"
     arceus "Yeah, I have no clue currently."
-    arceus "I was hoping that we could like hitchhike on a bus or something, but it might be ages until that happens.. If it even DOES happen, this town is small enough as is."
+    arceus "I was hoping that we could like hitchhike on a bus or something, but it might be ages until that happens... If it even DOES happen, this town is small enough as is."
     menu:
         "Wait for driver at the gas station":
             jump billy_driver
