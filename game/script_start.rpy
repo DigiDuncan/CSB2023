@@ -314,6 +314,7 @@ image carback1 = "bg/billycarback1.png"
 image carback2 = "bg/billycarback.gif"
 image hardwareinside = "bg/inside_hardware.png"
 image hardwareoutside = "bg/outside_hardware.png"
+image cultforest = "bg/forest_clearing.png"
 
 ## AI Ending
 image park1 = "bg/ai/amusementpark1.png"

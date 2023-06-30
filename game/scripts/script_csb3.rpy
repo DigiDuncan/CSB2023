@@ -1112,6 +1112,8 @@ label montana:
     billy "Yeah, let's see if I can find a place to stop at."
     billy "Wait a second, what the hell?"
     n "Billy brings the car to a screeching halt."
+    scene cultforest
+    show billy car
     "CS and Arceus" "What in the world?"
     n "Ahead lies a barricade that with a bunch of strange hooded people surrounding it."
     n "One of the members walks up to the driver's side and knocks on the window."
@@ -1125,6 +1127,7 @@ label montana:
     n "Billy shrugs and opens the door, with the cultist leader still aiming the gun to his head."
     cultist "You two as well, out."
     n "CS and Arceus both step out of the car."
+    hide billy car with fade
     cultist "So, do you want to explain what is going on here?"
     cs "Uhm, we were heading on past here to the next-"
     n "The cultist aims his gun at CS."
