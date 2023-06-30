@@ -62,9 +62,22 @@ label car_dialogue:
     cs "Don't worry about it."
 
     pause 1.0
+    n "Billy get a call on his Jupiter Jack."
+    carla "Hey Billy, it's Carla!"
+    billy "What are you doing in my car?"
+    carla "I'm not in your car, I'm on the phone. You're using the Jupiter Jack, remember?"
+    billy "Oh yeah."
+    carla "We have a meeting in twenty minutes."
+    billy "I'm in the fucking northeast!"
+    carla "What? What are you doing there?"
+    billy "It's my car!"
+    n "Billy hangs up the phone."
+    billy "Unbelivable."
 
-    cs "Have you heard of Genshin Impact? Start you adventure on the continent of Teyvat, and--{w=0.5}"
-    arceus "No."
+    pause 1.0
+
+    cs "Have you heard of Genshin Impact? Start your adventure on the continent of Teyvat, and--{w=0.5}"
+    arceus "{b}No.{/b}"
     billy "I'm a pitchman, and even I won't stoop that low."
     n "CS shuts up."
 

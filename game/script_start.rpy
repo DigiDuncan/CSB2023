@@ -157,6 +157,7 @@ define cultist_2 = Character("Cultist 2", callback = char_callback)
 define cultist_3 = Character("Cultist 3", callback = char_callback)
 define scott = Character("Scott", callback = char_callback)
 define terry = Character("Terry", callback = char_callback)
+define carla = Character("Carla", callback = char_callback)
 
 # Character Images
 ## CS
