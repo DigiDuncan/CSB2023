@@ -30,7 +30,7 @@ screen achievements_welcome():
             spacing 25
             if achievement_manager.unlocked:
                 text "Unlocked Achievements"
-                for a in achievement_manager.achievements:
+                for a in achievements:
                     if a.unlocked:
                         hbox:
                             first_spacing 25
@@ -44,7 +44,7 @@ screen achievements_welcome():
                 null height 100
             if achievement_manager.locked:
                 text "Locked Achievements"
-                for a in achievement_manager.achievements:
+                for a in achievements:
                     if not a.unlocked:
                         hbox:
                             first_spacing 25
