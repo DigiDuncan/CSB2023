@@ -760,12 +760,11 @@ label choose_direction:
     show cs at left
     show arceus at right
     cs "We've been walking all night, I'm exhausted."
-    arceus "Yeah let's hope we find some food and water soon."
+    arceus "Yeah let's hope we find food and water soon."
     cs "Hey uhh, do you know exactly where we are going?"
-    arceus "Well, I realized that the sun set in that direction, so that means that we are heading east right now."
+    arceus "Well, I noticed that the sun set in our opposite direction, which means we're heading east right now."
     arceus "We can head in any direction really. The second we find a better form of transportation than walking, we're taking it."
-    arceus "Which way do you want to go?"
-    menu:
+    menu "Which way do you want to go?":
         "North":
             jump north
         "East":
@@ -780,7 +779,7 @@ label north:
     arceus "...What?"
     show cs disappointed
     cs "You said pick a direction!"
-    arceus "We just came from the north. Just pick another direction."
+    arceus "To the north is Canada. Where we just came from. Try again."
     show cs
     menu:
         "North":
@@ -809,7 +808,7 @@ label north2:
 label west:
     cs "I think we should go west."
     arceus "Alright, we can try."
-    n "CS and Arc run into the Pacific."
+    n "CS and Arc run into the Pacific Ocean."
     scene washington_road day
     show cs at left
     show arceus at right
@@ -826,12 +825,12 @@ label west:
 
 label west2:
     cs "Let's try going west again. I'm sure there is something there."
-    arceus "Uhm, okay."
+    arceus "Uhm, okay.. Maybe we've missed something."
     n "CS and Arc run into the Pacific, again."
     scene washington_road dusk
     show cs dusk at left
     show arceus dusk at right
-    arceus "Still just the ocean."
+    arceus "Still just the ocean..."
     menu:
         "North":
             jump north
@@ -844,14 +843,14 @@ label west2:
 
 label west3:
     cs "Nah come on, there is definitely SOMETHING we can find west."
-    arceus "I really don't wanna go there again..."
+    arceus "I really don't want to go there again..."
     cs "Nah, we got this, for sure this time."
     n "CS and Arc find a cool looking crab, but still just the ocean again."
     scene washington_road
     show cs dark at left
     show arceus dark at right
     cs "Hey! that's quite an epic crustacean!"
-    arceus "Alright cool, can we pick another direction this time?"
+    arceus "Alright cool, can we pick another direction that ISN'T west this time?"
     menu:
         "North":
             jump north
@@ -864,7 +863,7 @@ label west3:
 
 label west4:
     cs "Okay! One last time!"
-    arceus "Nooooooo...."
+    arceus "... Something tells me you were in an asylum for a bit.."
     n "CS and Arc surprisingly, find the ocean again."
     scene washington_road morning
     show cs at left
@@ -950,7 +949,7 @@ label south:
 label east:
     cs "Well since east is the way home, we should probably go that way."
     arceus "Alright, that sounds like a good idea."
-    n "Cs and Arc keep following the road for a while, until they come across a small town."
+    n "CS and Arc keep following the road for a while, until they come across a small town."
     scene town with fade
     show cs at left with moveinleft
     show arceus at right with moveinright
@@ -969,7 +968,7 @@ label east:
     arceus "Thank god the slushie machine was working for once."
     cs "Okay, now that we can think about something other than food, what's our plan to get home?"
     arceus "Yeah, I have no clue currently."
-    arceus "I was hoping that we could find a bus or something, but it might be ages till happens, especially in this small town."
+    arceus "I was hoping that we could like hitchhike on a bus or something, but it might be ages until that happens.. If it even DOES happen, this town is small enough as is."
     menu:
         "Wait for driver at the gas station":
             jump billy_driver
@@ -982,18 +981,18 @@ label billy_driver:
     scene gasoutside with fade
     show cs at left with moveinleft
     show arceus at right with moveinleft
-    arceus "Are you crazy? To drive all the way back to New York?"
-    arceus "Plus like, where are we gonna get that money?"
+    arceus "Are you crazy? To drive all the way back to New York? In a stranger's car at that."
+    arceus "Besides, how are we even going to pay the guy anyways?"
     cs "Well we don't have to go all the way to New York, we could go a small distance and then get another Uber."
-    arceus "We don't have the money!"
+    arceus "That would be way even more money in tips!"
     n "As the two are agruing, the owner of the car comes up to them."
     "???" "What are you doing next to my car?"
     cs "Oh, hi."
     cs "Do you think you can Uber us to New York?"
     "???" "Oh uhh, hold on a second."
     n "The mysterious driver walks behind the store."
-    arceus "What are you doing? That man looks like he's gonna kill us!"
-    arceus "He's probably like getting his gun, or--"
+    arceus "What are you doing? That man looks like he's going to kill us!"
+    arceus "He's probably getting a gun, we need to lea--"
     show billy at center with moveinleft
     billy "Hi, Billy Mays here for the Uber Driver!"
     billy "The fast and easy way to get people around who don't have a car!"
@@ -1002,7 +1001,7 @@ label billy_driver:
     billy "Absolutely! For only $19.95, I'll take you both to New York!"
     cs "Alright well, it's settled! We have our driver, Arceus!"
     arceus "..."
-    arceus "I guess I'm eating my own words. I really was not expecting that, but fuck it, let's go."
+    arceus "... What the fuck. Works for me I guess."
     cs "Hell yeah! I call shotgun!"
     n "CS and Arc get into Billy's car."
     hide cs with moveoutright
@@ -1107,7 +1106,7 @@ label montana:
     scene car background
     show billy car
     cs "Man, today was pretty crazy too."
-    arceus "Yeah, at least I got some sleep."
+    arceus "Yeah, at least I got some sleep after all of it."
     cs "Speaking of which, can we find a place to rest soon?"
     billy "Yeah, let's see if I can find a place to stop at."
     billy "Wait a second, what the hell?"
@@ -1124,16 +1123,17 @@ label montana:
     cultist "Out of the car. Now."
     n "Billy shrugs and opens the door, with the cultist leader still aiming the gun to his head."
     cultist "You two as well, out."
-    n "CS and Arc both step out of the car."
+    n "CS and Arceus both step out of the car."
     cultist "So, do you want to explain what is going on here?"
     cs "Uhm, we were heading on past here to the next-"
     n "The cultist aims his gun at CS."
     cultist "Look, I don't care where you are going."
     cultist "We are part of the Blue Branch Cult, and our motto is that we hate everything."
     arceus "Like, everything?"
-    n "The cultist aims at Arc."
+    n "The cultist aims at Arceus."
     cultist "You wanna fuck with me?"
-    arceus "Fair enough."
+    arceus "I mean. If you're offering."
+    n "The cultist looks annoyed."
     cultist "I'm gonna the rest of the gang to deal with you guys, don't fucking move."
     cultist "I mean it!"
     cultist "Okay?"
@@ -1147,7 +1147,7 @@ label montana:
     pause
     stop sound
     arceus "CS what the fuck are you doing..."
-    arceus "You are gonna definitely gonna get us killed!"
+    arceus "You are going to definitely get us killed!"
     n "Arceus hides behind the car as the cultist member brings two others with him."
     cultist "Alright, they are over here at this car."
     cultist_2 "No way..."
@@ -1172,6 +1172,7 @@ label montana:
     arceus "Am I still sleeping?"
     n "Arceus pinches himself."
     arceus "Fuck."
+    arceus "How many divine beings and reality benders do we have in this universe anyhow?"
     cs "Alright, back on the road to New York!"
     n "The gang gets back in the car and books it out of the forest."
     n "After a while of driving, Billy pulls the car into a small area off the forest to let everyone rest."
