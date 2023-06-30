@@ -31,8 +31,7 @@ label car_dialogue:
     cs "Huh?"
     arceus "Don't worry about it."
 
-    $ bored.unlock()
-
+    $ achievement_manager.unlock("Bored")
     hide screen skip_car
 
     jump back_home

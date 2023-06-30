@@ -79,9 +79,7 @@ label kick:
     $ renpy.movie_cutscene("movies/kick.ogv")
     hide wesley with easeoutright
     show cs angry at left with move
-
-    $ dead_meme.unlock()
-
+    $ achievement_manager.unlock("Dead Meme")
     cs "That'll teach you not to mess with a nerd's computer!"
     show ed_phone at right
     show cs angry at left with move
@@ -435,9 +433,7 @@ label bordercrossing:
 
     scene black with fade
     scene inside_tim_hortons
-
-    $ ohai_mark.unlock()
-
+    $ achievement_manager.unlock("Ohai, Mark")
     play music "<loop 0>buy_something.mp3" volume 0.6
     show cashier at t_cashier_at_tims
     show inside_tim_hortons_fg
@@ -537,8 +533,6 @@ label bordercrossing:
     n "CS, Anno, and Arceus cheers their donuts together."
     stop music fadeout 3.0
     music end
-
-    $ welcome_to_csbiii.unlock()
-
+    $ achievement_manager.unlock("Welcome to CSBIII, Mother Fucker")
     scene black with fade
     jump csbiii_start

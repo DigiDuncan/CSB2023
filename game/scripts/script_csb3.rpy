@@ -218,9 +218,7 @@ label fired:
 label boost:
     $ renpy.movie_cutscene("movies/good_cs_ytp.mpg")
     n "The next day."
-
-    $ rated_pooper.unlock()
-
+    $ achievement_manager.unlock("#1 Rated Pooper")
     scene inside_ltt with fade
     show cs at offscreenleft
     n "CS walks into LMG to greet Linus."
@@ -795,8 +793,7 @@ label north:
             jump west 
 
 label north2:
-    $ can_we_go_back.unlock()
-
+    $ achievement_manager.unlock("Can We Go Back?")
     arceus "I literally just said-"
     arceus "Just pick another direction."
     menu:
@@ -928,8 +925,7 @@ label west7:
             jump west8
 
 label west8:
-    $ ocean_man.unlock()
-
+    $ achievement_manager.unlock("Ocean Man")
     arceus "Player. {w=0.5}Stop. {w=0.5}Going. {w=0.5}West."
     scene washington_road morning
     show cs at left

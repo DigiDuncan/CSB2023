@@ -15,9 +15,7 @@ label csbi_start:
     scene craptop_bg
     show craptop desktop
     show post_it at t_post_it
-
-    $ zup.unlock()
-
+    $ achievement_manager.unlock("ZUP!")
     craptop "Your PC sux. lol."
     sticky "Delete the CSCord."
     cs "Eh, maybe tomorrow."
@@ -100,8 +98,7 @@ label csbi_start:
         "Yes":
             cs "Yeah... It's a good idea to get some stuff."
         "No":
-            $ i_dont_like_people.unlock()
-
+            $ achievement_manager.unlock("I Don't Like People!")
             cs "Screw you, I'm going anyway!"
     play sound "driving.wav" volume 0.5
     pause 3.0
@@ -394,9 +391,7 @@ label michael_house:
     scene car_inside
     show cs at left
     with fade
-
-    $ overcaffinated.unlock()
-
+    $ achievement_manager.unlock("Overcaffinated")
     play music "<loop 0>canyon_but_in_the_car.mp3" volume 0.2
     play sound "driving.wav" volume 0.5
     stop music fadeout 3.0
@@ -507,9 +502,7 @@ label left:
     show cs angry at left with move
     show worker_6 at right with hpunch
     hide worker_6 with moveoutright
-
-    $ hoh_sis_most_wanted.unlock()
-
+    $ achievement_manager.unlock("HoH SiS's Most Wanted")
     show black with dissolve
     jump csbii_start
 
@@ -524,8 +517,6 @@ label right:
     show cs angry at left with move
     show worker_7 at right with hpunch
     hide worker_7 with moveoutright
-    
-    $ hoh_sis_most_wanted.unlock()
-
+    $ achievement_manager.unlock("HoH SiS's Most Wanted")
     show black with dissolve
     jump csbii_start

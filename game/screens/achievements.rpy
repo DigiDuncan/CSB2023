@@ -30,34 +30,28 @@ screen achievements_welcome():
             spacing 25
             if achievement_manager.unlocked:
                 text "Unlocked Achievements"
-
-                for a in [a for a in persistent.achievements if a.unlocked]:
-                    hbox:
-                        first_spacing 25
-
-                        add a.icon:
-                            xysize (100, 100)
-
-                        vbox:
-                            text a.name
-                            text a.desc:
-                                color "#787878"
-
+                for a in achievement_manager.achievements:
+                    if a.unlocked:
+                        hbox:
+                            first_spacing 25
+                            image a.icon:
+                                xysize(100,100)
+                            vbox:
+                                text a.name
+                                text a.desc:
+                                    color("#787878")
             if achievement_manager.unlocked and achievement_manager.locked:
                 null height 100
-
             if achievement_manager.locked:
                 text "Locked Achievements"
-
-                for a in [a for a in persistent.achievements if not a.unlocked]:
-                    hbox:
-                        first_spacing 25
-
-                        add a.icon:
-                            xysize (100, 100)
-                            
-                        vbox:
-                            text a.name
-                            text a.desc:
-                                color "#787878"
+                for a in achievement_manager.achievements:
+                    if not a.unlocked:
+                        hbox:
+                            first_spacing 25
+                            image a.icon:
+                                xysize(100,100)
+                            vbox:
+                                text a.name
+                                text a.desc:
+                                    color("#787878")
             

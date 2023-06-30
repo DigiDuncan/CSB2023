@@ -7,5 +7,3 @@ game/cache/
 errors.txt
 traceback.txt
 *.bak
-
-renpy/
