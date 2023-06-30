@@ -1269,8 +1269,32 @@ label iowa:
     cs "Billy, you need to switch lanes when it charges up!"
     jump after_ufo
 
-label after_ufo;
+label after_ufo:
+    cs "Holy shit! We made it!"
+    arceus "That was some good driving Billy!"
+    billy "That's the power of the 6000 pound car!"
+    n "They continue driving through the end of the Midwest."
+    n "As they are drving through Illinois, they past by Chicago."
+    arceus "One day, I'm gonna rule that place."
+    cs "What are you talking about?"
+    arceus "It's better than ruling the Earth."
+    cs "Get some sleep Arc."
+    n "The gang stops in Indiana for the night, and takes off in the morning through Michigan."
+    jump michigan
 
+label michigan:
+    jump ohio
+
+label ohio:
+    n "After that fiasco, they travel through Ohio."
+    n "Suddenly, a huge blue border enters everyone's vision."
+    arceus "Oh what in the world? There is some red border in my eyes..."
+    cs "I have a blue one, what is going on?"
+    billy "Yeah it's blue for me too, I think you are colorblind."
+    arceus "I AM colorblind. Oh fuck."
+    n "As they are drving through the state, they see some men on the side of road protesting about the blue border."
+    billy "Hi it's Billy!"
+    billy "Are you tired of having a blue border in your vision?"
     jump car_dialogue
 
 label back_home:
