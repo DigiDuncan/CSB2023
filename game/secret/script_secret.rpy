@@ -39,6 +39,6 @@ label secret2:
     pause 1.0
     show arceus
     arceus "Yeah. Now I have to debug this shit.{nw}"
-    $ achievement_manager.unlock("That's All, Folks!")
+    $ thats_all_folks.unlock()
     return
   
