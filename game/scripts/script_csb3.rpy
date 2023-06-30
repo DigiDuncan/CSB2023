@@ -1229,8 +1229,48 @@ label south_dakota:
     jump nebraska
 
 label nebraska:
-    
-    
+    n "The gang finally hits Omaha, right before it hits nighttime."
+    cs "This is the biggest city here? This is pretty small."
+    billy "It looks very quaint, hopefully we can find a place to stop here."
+    billy "I have no damn clue where to go here."
+    arceus "Let's get out and look for somewhere to eat."
+    n "They all get out and start roaming the streets."
+    n "Suddenly, CS hears a voice behind him."
+    "???" "CS? Is that you?"
+    cs "Huh?"
+    n "CS turns around and sees a wacky, thing with a tophat on."
+    pakoo "Yeah hey, it is you!"
+    pakoo "Arceus you too? And, Billy... Mays?"
+    billy "Hi it's Billy!"
+    arceus "Hey Pakoo."
+    cs "Yeah I haven't seen you in a while, I never thought you'd live in this place!"
+    pakoo "I never you guys would come down to Omaha, there's like, nothing here."
+    cs "We've been through a lot recently, do you know somewhere we can eat and rest for the night?"
+    n "Pakoo thinks for a moment."
+    pakoo "I think I know a place."
+    n "Pakoo takes the gang over to the old market section of Omaha."
+    pakoo "Here we are, this is probably the best location to eat at, at least that I know of."
+    jump iowa
+
+label iowa:
+    n "They get back in car and continue into Iowa."
+    billy "Alright well, ever since that cult encounter, it's been pretty smooth sailing!"
+    billy "The rest of this trip shouldn't be too long!"
+    n "As if on queue, a strange sound is heard over the car."
+    n "CS looks out the window."
+    cs "You have to be kidding me!"
+    arceus "What's going on?"
+    cs "HoH SiS is back!"
+    arceus "WHAT?!"
+    billy "Who?"
+    cs "They have their UFO and-"
+    n "A huge laser beam blasts on the left side of the road, ripping up everything in it's path!"
+    arceus "Shit this is bad..."
+    cs "Billy, you need to switch lanes when it charges up!"
+    jump after_ufo
+
+label after_ufo;
+
     jump car_dialogue
 
 label back_home:
