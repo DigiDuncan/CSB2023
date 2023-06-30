@@ -152,6 +152,10 @@ define colton = Character("Colton", callback = renpy.partial(char_callback, name
 define sheriff = Character("Sheriff", callback = renpy.partial(char_callback, name = "sheriff"))
 define billy = Character("Billy", callback = renpy.partial(char_callback, name = "billy", beep = "billy"))
 define cultist = Character("Cultist", callback = char_callback)
+define cultist_2 = Character("Cultist 2", callback = char_callback)
+define cultist_3 = Character("Cultist 3", callback = char_callback)
+define scott = Character("Scott", callback = char_callback)
+define terry = Character("Terry", callback = char_callback)
 
 # Character Images
 ## CS
@@ -324,6 +328,7 @@ image endingai = "bg/ai/cs_arceus.png"
 image entertunnel = "bg/ai/entrancetotunnel.png"
 image linusmedia = "bg/ai/linusmedia.png"
 image secrettunnel = "bg/ai/secret_tunnel.png"
+image ytx = "ytx.png"
 
 # Static Images
 image objection = "objection.png"
