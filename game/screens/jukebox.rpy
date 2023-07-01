@@ -24,7 +24,8 @@ init python:
         "PASSPORT.MID - George Stone": "passport.mp3",
         "Good Eatin - ClascyJitto": "good_eatin.mp3",
         "Echoing - Banana": "echoing.mp3",
-        "Pressing Pursuit ~ Cornered - Masakazu Sugimori": "pressing_pursuit_cornered.mp3"
+        "Pressing Pursuit ~ Cornered - Masakazu Sugimori": "pressing_pursuit_cornered.mp3",
+        "Funiculi Holiday - ClascyJitto": "funiculi_holiday.mp3"
     }
     global album_map
 
