@@ -119,6 +119,16 @@ label car_dialogue:
 
     pause 1.0
 
+    n "Billy gets a call on his Jupiter Jack."
+    iris "Arceus?"
+    arceus "How did you-- who is this?"
+    iris "We need to talk later."
+    pause 1.0
+    iris ":3"
+    n "The phone hangs up from the other end."
+
+    pause 1.0
+
     arceus "Hey remember that pizza place we went to?"
     cs "Yeah, why?"
     arceus "Well we spent the night there, and I swore there was someone watching us."

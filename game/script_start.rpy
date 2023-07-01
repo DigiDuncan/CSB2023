@@ -159,6 +159,7 @@ define scott = Character("Scott", callback = char_callback)
 define terry = Character("Terry", callback = char_callback)
 define carla = Character("Carla", callback = char_callback)
 define peppino = Character("Peppino", callback = char_callback)
+define iris = Character("Iris", callback = renpy.partial(char_callback, name = "iris", beep = "iris"))
 
 # Character Images
 ## CS
