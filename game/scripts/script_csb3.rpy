@@ -1342,6 +1342,8 @@ label nebraska:
     with moveinleft
     pakoo "Here we are, this is probably the best location to eat at, at least that I know of."
     scene peppinopizzabg
+    play music "<loop 0>funiculi_holiday.mp3" volume 0.5
+    music Funiculi Holiday - ClascyJitto
     show peppinopizzafg
     with fade   
     show peppino at mid_mid_left behind peppinopizzafg with moveinleft
@@ -1363,6 +1365,7 @@ label nebraska:
     cs "Yep! Take care Pakoo!"
     hide pakoo with moveoutleft
     scene black with fade
+    stop music fadeout 3.0
     n "The gang goes into the backroom area and sleeps for the night."
     n "Once they wake up, they thank Peppino for his business and head out."
     jump iowa
