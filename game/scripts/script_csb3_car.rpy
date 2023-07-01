@@ -77,7 +77,7 @@ label car_dialogue:
     
     pause 1.0
 
-    arceus "Why do you still for Adobe Premiere?"
+    arceus "Why do you still pay for Adobe Premiere?"
     cs "Well, I pay for the whole Creative Cloud."
     arceus "You know, I can get you the whole suite for free."
     cs "No, no, I know, I just don't feel like I should."
