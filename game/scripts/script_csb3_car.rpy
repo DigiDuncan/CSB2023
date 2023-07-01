@@ -63,7 +63,7 @@ label car_dialogue:
 
     pause 1.0
 
-    n "Billy get a call on his Jupiter Jack."
+    n "Billy gets a call on his Jupiter Jack."
     carla "Hey Billy, it's Carla!"
     billy "What are you doing in my car?"
     carla "I'm not in your car, I'm on the phone. You're using the Jupiter Jack, remember?"
@@ -107,11 +107,11 @@ label car_dialogue:
 
     pause 3.0
 
-    n "Billy get a call on his Jupiter Jack."
-    billy "Hi it's Billy!"
-    linus "Hey Billy, CS is with you right?"
-    cs "Oh hey Linus, it's me CS!"
-    cs "I'm sorry about the cop scenario, I had an issue with a company called HoH SiS where they scammed me, and I kinda beat up their workers."
+    n "Billy gets a call on his Jupiter Jack."
+    billy "Hi, it's Billy!"
+    linus "Hey Billy, CS is with you, right?"
+    cs "Oh hey Linus, it's me, CS!"
+    cs "I'm sorry about the cop scenario. I had an issue with a company called HoH SiS where they scammed me, and I kinda beat up their workers."
     linus "It's all good, I heard that the cops were looking for them anyways."
     linus "I'm sorry to hear about all that, I hope you are doing well."
     cs "We are doing okay!"
@@ -123,7 +123,7 @@ label car_dialogue:
     cs "Yeah, why?"
     arceus "Well we spent the night there, and I swore there was someone watching us."
     cs "Oh really? Like when we were sleeping?"
-    arceus "Yeah, I think I saw this dude with a funky hat and had a camera."
+    arceus "Yeah, I think I saw this dude with a funky hat, and he had a camera."
     cs "That's really creepy."
 
     pause 1.0
@@ -135,8 +135,8 @@ label car_dialogue:
 
     pause 1.0
 
-    n "Billy get a call on his Jupiter Jack."
-    billy "Hi it's Billy!"
+    n "Billy gets a call on his Jupiter Jack."
+    billy "Hi, it's Billy!"
     pakoo "What did the dog say after a long day of work?"
     pause 3.0
     pakoo "That was ruff."

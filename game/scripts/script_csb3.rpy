@@ -1313,17 +1313,17 @@ label nebraska:
     "???" "CS? Is that you?"
     cs "Huh?"
     show cs flipped
-    n "CS turns around and sees a wacky, thing, with a tophat on."
+    n "CS turns around and sees a wacky...{w=0.5} thing, with a tophat on."
     show pakoo at left
     show billy at right
     show arceus at mid_right
     show cs flipped at center
     with ease
-    pakoo "Yeah hey, it is you!"
+    pakoo "Yeah hey, it {i}is{/i} you!"
     pakoo "Arceus, you too? And, Billy... Mays?"
     billy "Hi, it's Billy!"
-    arceus "Hey Pakoo."
-    cs "Yeah I haven't seen you in a while, I never thought you'd live in this place!"
+    arceus "Hey, Pakoo."
+    cs "Yeah! I haven't seen you in a while, I never thought you'd live in this place!"
     pakoo "I never thought you guys would come down to Omaha, there's like, nothing here."
     cs "We've been through a lot recently, do you know somewhere we can eat and rest for the night?"
     n "Pakoo thinks for a moment."
@@ -1356,13 +1356,13 @@ label nebraska:
     peppino "Sure-a thing-a! Coming right up!"
     pakoo "Also, do you think my friends here can be spend the night? They don't have anywhere to sleep tonight."
     peppino "The room in the back should be fine, Mr. Stick is out right now, so they can bunk there."
-    pakoo "Alright epic."
+    pakoo "Alright, epic."
     n "Peppino serves the group their pizza."
-    cs "Damn this is some good pizza!"
+    cs "Damn, this is some good pizza!"
     arceus "Probably some of the best pizza I've ever had."
     billy "Better than my restaurant mini-burgers!"
     pakoo "Alright well, I should get going, but I hope y'all have a good time doing whatever y'all doing."
-    cs "Yep! Take care Pakoo!"
+    cs "Yep! Take care, Pakoo!"
     hide pakoo with moveoutleft
     scene black with fade
     stop music fadeout 3.0
