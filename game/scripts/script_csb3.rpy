@@ -1119,6 +1119,7 @@ label montana:
     show billy car
     "CS and Arceus" "What in the world?"
     n "Ahead lies a barricade with a bunch of strange hooded people surrounding it."
+    show cultist at mid_right behind billy with moveinright
     n "One of the members walks up to the driver's side and knocks on the window."
     n "Billy rolls down the window."
     billy "Hi, it's Billy! What are you doing by my car?"
@@ -1130,15 +1131,18 @@ label montana:
     n "Billy shrugs and opens the door, with the cultist leader still aiming the gun to his head."
     cultist "You two as well, out."
     n "CS and Arceus both step out of the car."
+    hide cultist with moveoutright
     hide billy car with fade
     show billy at mid_mid_left
     show cs disappointed at mid_left
     show arceus flipped at left
     with moveinleft
+    show cultist at mid_right with moveinright
     cultist "So, do you want to explain what is going on here?"
     cs "Uhm, we were heading on past here to the next-"
     n "The cultist aims his gun at CS."
     cultist "Look, I don't care where you are going."
+    show cultist at center with moveinleft
     cultist "We are part of the Blue Branch Cult, and our motto is that we hate everything."
     arceus "Like, everything?"
     n "The cultist aims at Arceus."
@@ -1146,8 +1150,14 @@ label montana:
     arceus "I mean. If you're offering."
     n "The cultist looks annoyed."
     cultist "I'm gonna get the rest of the gang to deal with you guys, don't fucking move."
+    hide cultist with moveoutright
+    show cultist at right with moveinright
     cultist "I mean it!"
+    hide cultist with moveoutright
+    show cultist at right with moveinright
     cultist "Okay?"
+    hide cultist with moveoutright
+    pause 2.0
     hide billy with moveoutleft
     n "Billy goes to the back of his trunk and starts digging around."
     arceus "Never thought we'd run into cultists out of all people."
@@ -1155,7 +1165,7 @@ label montana:
     n "CS starts digging around in the back too."
     arceus "CS, what are you doing?"
     arceus "CS?!"
-    show cs at center with moveinleft
+    show cs fakegod at center with moveinleft
     cs "Look at me! I'm purple!"
     play sound "secret/funni.ogg" volume 0.5
     pause 3.0
@@ -1163,6 +1173,11 @@ label montana:
     arceus "CS, what the fuck are you doing...?!"
     arceus "You are going to definitely get us killed!"
     n "Arceus hides behind the car as the cultist member brings two others with him."
+    hide arceus with moveoutleft
+    show cs fakegod at left with moveinleft
+    show cultist_2 at mid_mid_right with moveinright
+    show cultist_3 at right with moveinright
+    show cultist at mid_right with moveinright
     cultist "Alright, they are over here at this car."
     cultist_2 "No way..."
     cultist_3 "It's CSGod!"
@@ -1178,8 +1193,11 @@ label montana:
     n "Billy comes up behind CS with one of his gadgets."
     show billy at mid_left with moveinleft
     billy "Fire a laser! Fire a laser!"
+    hide cultist_2 with moveoutright
     n "Massive laser shots land between the cultists as they scramble away!"
     cultist_3 "I don't wanna turn into a YTP! Go guys go!"
+    hide cultist_3 with moveoutright
+    hide cultist with moveoutright
     n "The cultists disappear into the forest."
     billy "That's the power of the Awesome Augement!"
     cs "Hooray! I'm a god now!"
@@ -1323,8 +1341,30 @@ label nebraska:
     show arceus flipped at mid_left
     with moveinleft
     pakoo "Here we are, this is probably the best location to eat at, at least that I know of."
-    show peppino at mid_mid_left with moveinleft
+    scene peppinopizzabg
+    show peppinopizzafg
+    with fade   
+    show peppino at mid_mid_left behind peppinopizzafg with moveinleft
+    show pakoo at mid_right with moveinleft
+    show billy at right with moveinleft
+    show cs at left with moveinleft
+    show arceus flipped at mid_left with moveinleft
     peppino "Hey Piezanos, watcha want today?"
+    pakoo "Hey Peppino, can you get me and my friends the Gustavo special today?"
+    peppino "Sure-a thing-a! Coming right up!"
+    pakoo "Also, do you think my friends here can be spend the night? They don't have anywhere to sleep tonight."
+    peppino "The room in the back should be fine, Mr. Stick is out right now, so they can bunk there."
+    pakoo "Alright epic."
+    n "Peppino serves the group their pizza."
+    cs "Damn this is some good pizza!"
+    arceus "Probably some of the best pizza I've ever had."
+    billy "Better than my restaurant mini-burgers!"
+    pakoo "Alright well, I should get going, but I hope y'all have a good time doing whatever y'all doing."
+    cs "Yep! Take care Pakoo!"
+    hide pakoo with moveoutleft
+    scene black with fade
+    n "The gang goes into the backroom area and sleeps for the night."
+    n "Once they wake up, they thank Peppino for his business and head out."
     jump iowa
 
 label iowa:

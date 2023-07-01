@@ -99,6 +99,51 @@ label car_dialogue:
     billy "I'm a pitchman, and even I won't stoop that low."
     n "CS shuts up."
 
+    pause 1.0
+
+    arceus "Okay so, CS, what is up with the catmaid outfit?"
+    pause 3.0
+    arceus "CS?"
+
+    pause 3.0
+
+    n "Billy get a call on his Jupiter Jack."
+    billy "Hi it's Billy!"
+    linus "Hey Billy, CS is with you right?"
+    cs "Oh hey Linus, it's me CS!"
+    cs "I'm sorry about the cop scenario, I had an issue with a company called HoH SiS where they scammed me, and I kinda beat up their workers."
+    linus "It's all good, I heard that they were looking for them anyways."
+    linus "I'm sorry to hear about all that, I hope you are doing well."
+    cs "We are doing okay!"
+    linus "That's good, I hope to hear from you again."
+
+    pause 1.0
+
+    arceus "Hey remember that pizza place we went to?"
+    cs "Yeah, why?"
+    arceus "Well we spent the night there, and I swore there was someone watching us."
+    cs "Oh really? Like when we were sleeping?"
+    arceus "Yeah, I think I saw this dude with a funky hat and had a camera."
+    cs "That's really creepy."
+
+    pause 1.0
+
+    arceus "Did you ever change the Mount Rushmore thing back?"
+    cs "Nope!"
+    cs "Why would I? It looks cool now!"
+    arceus "..."
+
+    pause 1.0
+
+    n "Billy get a call on his Jupiter Jack."
+    billy "Hi it's Billy!"
+    pakoo "What did the dog say after a long day of work?"
+    pause 3.0
+    pakoo "That was ruff."
+    n "Billy immediately hangs up."
+
+    pause 1.0
+
     $ achievement_manager.unlock("Bored")
 
     hide screen skip_car

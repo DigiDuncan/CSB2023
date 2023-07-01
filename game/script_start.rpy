@@ -182,6 +182,7 @@ image cs prison = "characters/cs/prison.png"
 image cs prison_worried = "characters/cs/prison_worried.png"
 image cs guard = "characters/cs/guard.png"
 image cs guard dark = "characters/cs/guarddark.png"
+image cs fakegod = "characters/cs/fake_god.png"
 
 ## Arc
 image arceus = "characters/arc/arceus.png"
@@ -250,6 +251,9 @@ image billy car happy = "characters/billy/billy_car_happy.png"
 image billy car turn = "characters/billy/billy_car_turn.png"
 image pakoo = "characters/addyfucku.png"
 image peppino = "characters/peppino.png"
+image cultist = "characters/cultist.png"
+image cultist_2 = "characters/cultist2.png"
+image cultist_3 = "characters/cultist2.png"
 
 # Background Images
 ## CSBI
@@ -328,6 +332,8 @@ image rushmore = "bg/mtrushmore.png"
 image csmore = "bg/mtcsmore.png"
 image omaha = "bg/omaha.png"
 image alleyway = "bg/alleyway.png"
+image peppinopizzabg = "bg/peppino_inside_bg.png"
+image peppinopizzafg = "bg/peppino_inside_fg.png"
 image wozniaktroubles = "bg/scottwozprotest.png"
 
 ## AI Ending
