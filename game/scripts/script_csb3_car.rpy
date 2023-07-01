@@ -112,7 +112,7 @@ label car_dialogue:
     linus "Hey Billy, CS is with you right?"
     cs "Oh hey Linus, it's me CS!"
     cs "I'm sorry about the cop scenario, I had an issue with a company called HoH SiS where they scammed me, and I kinda beat up their workers."
-    linus "It's all good, I heard that they were looking for them anyways."
+    linus "It's all good, I heard that the cops were looking for them anyways."
     linus "I'm sorry to hear about all that, I hope you are doing well."
     cs "We are doing okay!"
     linus "That's good, I hope to hear from you again."
