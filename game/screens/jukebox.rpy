@@ -28,26 +28,7 @@ init python:
     }
     global album_map
 
-    album_map = {
-        "Let's hear my baby - Walkman": None,
-        "CANYON.MID - George Stone": None,
-        "Summer Clearance Sale - BEST MUSIC": None,
-        "scales of joy.mod - Mel O Dee": None,
-        "Alfred Hitchcock Intro Theme - Charles Gounod": None,
-        "Super Friendly - Kevin Macleod": None,
-        "Time for a Smackdown! - Mr. Sauceman": None,
-        "Card Castle - Toby Fox": None,
-        "Basement - Toby Fox": None,
-        "stal - C418": None,
-        "Moongazer - Dr. Awesome": None,
-        "Onett Theme - Keiichi Suzuki": None,
-        "The Star Spangled Banner - THE UNITED STATES OF AMERICA": None,
-        "Buy Something Will Ya! - Keiichi Suzuki": None,
-        "PASSPORT.MID - George Stone": None,
-        "Good Eatin - ClascyJitto": None,
-        "Echoing - Banana": None,
-        "Pressing Pursuit ~ Cornered - Masakazu Sugimori": None
-    }
+    album_map = {}
 
 screen jukebox_nav():
 
@@ -131,7 +112,7 @@ screen music_screen(l):
                 rotate 0
                 linear 5.0 rotate 360.0
                 repeat
-        if album_map[l] is None:
+        if album_map[l] is None or l not in album_map:
             image "images/jukebox/csbi.png":
                 xysize(500, 500)
                 xalign(0.225)
