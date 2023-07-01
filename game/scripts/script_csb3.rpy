@@ -1372,7 +1372,6 @@ label ohio:
 
 label pennsylvania:
     n "The gang hits the last state before New York, Pennsylvania."
-    
 
     jump car_dialogue
 
