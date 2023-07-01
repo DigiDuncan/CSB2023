@@ -1129,6 +1129,9 @@ label montana:
     cultist "You two as well, out."
     n "CS and Arceus both step out of the car."
     hide billy car with fade
+    show billy at mid_mid_left with moveinright
+    show cs disappointed at mid_left with moveinleft
+    show arceus flipped at left with moveinleft
     cultist "So, do you want to explain what is going on here?"
     cs "Uhm, we were heading on past here to the next-"
     n "The cultist aims his gun at CS."
@@ -1142,11 +1145,14 @@ label montana:
     cultist "I'm gonna get the rest of the gang to deal with you guys, don't fucking move."
     cultist "I mean it!"
     cultist "Okay?"
+    hide billy with moveoutleft
     n "Billy goes to the back of his trunk and starts digging around."
     arceus "Never thought we'd run into cultists out of all people."
+    hide cs with moveoutleft
     n "CS starts digging around in the back too."
     arceus "CS, what are you doing?"
     arceus "CS?!"
+    show cs at center with moveinleft
     cs "Look at me! I'm purple!"
     play sound "secret/funni.ogg" volume 0.5
     pause
@@ -1167,6 +1173,7 @@ label montana:
     cs_fakegod "Don't tempt your god, I will YTP you so hard that you'll look like you came from an AwfulFawful YTP!"
     cultist_2 "We need to leave! We're sorry!"
     n "Billy comes up behind CS with one of his gadgets."
+    show billy at mid_left with moveinleft
     billy "Fire a laser! Fire a laser!"
     n "Massive laser shots land between the cultists as they scramble away!"
     cultist_3 "I don't wanna turn into a YTP! Go guys go!"
@@ -1228,13 +1235,19 @@ label south_dakota:
     n "In about an hour, the crew arrives at Mount Rushmore."
     scene rushmore with fade
     n "They all hitchhike up to the viewing spot to get a good look of the founding fathers."
+    show cs at right with moveinleft
+    show arceus at center with moveinleft
+    show billy at left with moveinleft
     billy "Wow, to think that we won a war without the Gopher."
     billy "How did they even communicate without the Jupiter Jack?"
+    show cs concentrate
     arceus "It'd be cool if I had my face carved out into a mountain. Wouldn't that be cool, CS?"
     n "Arceus looks over at CS concentrating on something really hard."
     arceus "CS? Are you okay?"
+    show arceus at mid_right with moveinleft
     n "As Arceus starts to approach CS, the groups surrounding them all gasp loudly."
     arceus "Huh?"
+    show cs happy
     cs "There we go! Fixed!"
     n "Arceus looks back at Mount Rushmore, now with CS, Arceus, and Billy's face on the mountain."
     arceus "You scare me, CS. I don't even like, want to question how or why."
@@ -1259,11 +1272,15 @@ label nebraska:
     billy "I have no damn clue where to go here."
     arceus "Let's get out and look for somewhere to eat."
     hide billy car
+    show cs at mid_left with moveinleft
+    show arceus at center with moveinleft
+    show billy at mid_right with moveinright
     n "They all get out and start roaming the streets."
     n "Suddenly, CS hears a voice behind him."
     "???" "CS? Is that you?"
     cs "Huh?"
     n "CS turns around and sees a wacky, thing, with a tophat on."
+    show pakoo at left
     pakoo "Yeah hey, it is you!"
     pakoo "Arceus, you too? And, Billy... Mays?"
     billy "Hi, it's Billy!"
@@ -1274,7 +1291,12 @@ label nebraska:
     n "Pakoo thinks for a moment."
     pakoo "I think I know a place."
     n "Pakoo takes the gang over to the old market section of Omaha."
+    hide pakoo with moveoutright
     scene alleyway with fade
+    show pakoo at center with moveinleft
+    show billy at right with moveinright
+    show cs at left with moveinleft
+    show arceus at mid_left with moveinleft
     pakoo "Here we are, this is probably the best location to eat at, at least that I know of."
     jump iowa
 
@@ -1329,7 +1351,8 @@ label ohio:
     billy "Yeah, it's blue for me too, I think you are colorblind."
     arceus "I AM colorblind. Oh fuck."
     scene wozniaktroubles with fade
-    show billy car    
+    show billy car
+    show scott_border
     n "As they are driving through the state, they see some men on the side of road protesting about the blue border."
     billy "Hi, it's Billy!"
     billy "Are you tired of having a blue border in your vision?"
@@ -1341,6 +1364,7 @@ label ohio:
     cs " Billy, I don't think that'll work, let's just keep going."
     scene car plains with fade
     show billy car
+    show scott_border
     n "Once they leave the state, the border goes away."
     hide scott_border with dissolve
     arceus "I'm glad it just faded away, I did not want to spray cleaner in my eyes."
@@ -1348,7 +1372,6 @@ label ohio:
 
 label pennsylvania:
     n "The gang hits the last state before New York, Pennsylvania."
-    
 
     jump car_dialogue
 
