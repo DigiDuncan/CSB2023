@@ -62,6 +62,7 @@ label car_dialogue:
     cs "Don't worry about it."
 
     pause 1.0
+
     n "Billy get a call on his Jupiter Jack."
     carla "Hey Billy, it's Carla!"
     billy "What are you doing in my car?"
@@ -73,6 +74,23 @@ label car_dialogue:
     billy "It's my car!"
     n "Billy hangs up the phone."
     billy "Unbelivable."
+    
+    pause 1.0
+
+    arceus "Why do you still for Adobe Premiere?"
+    cs "Well, I pay for the whole Creative Cloud."
+    arceus "You know, I can get you the whole suite for free."
+    cs "No, no, I know, I just don't feel like I should."
+    arceus "Yarr."
+    cs "No, thank you, I understand what you were insinuating."
+    arceus ";)"
+    billy "How much are you paying for it?"
+    cs "Like $50 a month..."
+    billy "Unbelivable! I wouldn't pay more than $19.95!"
+    billy "And buy one get one free!"
+    cs "What would I do with two Adobe suites?"
+    billy "What would you do with two Grater Platers?"
+    cs "Fair enough."
 
     pause 1.0
 
