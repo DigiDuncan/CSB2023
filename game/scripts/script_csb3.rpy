@@ -1298,6 +1298,7 @@ label nebraska:
     show cs at left with moveinleft
     show arceus at mid_left with moveinleft
     pakoo "Here we are, this is probably the best location to eat at, at least that I know of."
+    
     jump iowa
 
 label iowa:
