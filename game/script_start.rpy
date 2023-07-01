@@ -158,6 +158,7 @@ define cultist_3 = Character("Cultist 3", callback = char_callback)
 define scott = Character("Scott", callback = char_callback)
 define terry = Character("Terry", callback = char_callback)
 define carla = Character("Carla", callback = char_callback)
+define peppino = Character("Peppino", callback = char_callback)
 
 # Character Images
 ## CS
@@ -248,6 +249,7 @@ image billy car = "characters/billy/billy_car.png"
 image billy car happy = "characters/billy/billy_car_happy.png"
 image billy car turn = "characters/billy/billy_car_turn.png"
 image pakoo = "characters/addyfucku.png"
+image peppino = "characters/peppino.png"
 
 # Background Images
 ## CSBI
