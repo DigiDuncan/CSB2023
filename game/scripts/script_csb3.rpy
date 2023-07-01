@@ -1324,7 +1324,7 @@ label nebraska:
     with moveinleft
     pakoo "Here we are, this is probably the best location to eat at, at least that I know of."
     show peppino at mid_mid_left with moveinleft
-    peppino "Hey Piezanos, watcha what today?"
+    peppino "Hey Piezanos, watcha want today?"
     jump iowa
 
 label iowa:
