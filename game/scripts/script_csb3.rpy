@@ -1246,10 +1246,15 @@ label south_dakota:
     arceus "CS? Are you okay?"
     show arceus at mid_right with moveinleft
     n "As Arceus starts to approach CS, the groups surrounding them all gasp loudly."
+    scene csmore with hpunch
+    show cs concentrate at right
+    show arceus at center
+    show billy at left
     arceus "Huh?"
     show cs happy
     cs "There we go! Fixed!"
     n "Arceus looks back at Mount Rushmore, now with CS, Arceus, and Billy's face on the mountain."
+    hide cs with moveoutright
     arceus "You scare me, CS. I don't even like, want to question how or why."
     arceus "{size=-12}I do look pretty cool though."
     n "The gang gets back in the car before the overwelming groups of people engulf the site after what just happened."
