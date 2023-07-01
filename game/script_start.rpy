@@ -317,10 +317,15 @@ image town = "bg/washingtontown.png"
 image gasinside = "bg/gas_station_inside.png"
 image gasoutside = "bg/gas_station.png"
 image carback1 = "bg/billycarback1.png"
-image carback2 = "bg/billycarback.gif"
 image hardwareinside = "bg/inside_hardware.png"
 image hardwareoutside = "bg/outside_hardware.png"
 image cultforest = "bg/forest_clearing.png"
+image mcdonalds = "bg/mcdonalds_drivethru.png"
+image mcdees = "bg/mcdonalds_outside.png"
+image rushmore = "bg/rushmore.png"
+image omaha = "bg/omaha.png"
+image alleyway = "bg/alleyway.png"
+image wozniaktroubles = "bg/scottwozprotest.png"
 
 ## AI Ending
 image park1 = "bg/ai/amusementpark1.png"
@@ -339,6 +344,9 @@ image scott_border = "scott_border.png"
 
 # Movies
 image car background = Movie(play="movies/car_background.mp4")
+image car background night = Movie(play="movies/car_background_night.mp4")
+image car plains = Movie(play="movies/car_plains.mp4")
+image car plains night = Movie(play="movies/car_plains_night.mp4")
 
 # Animated Sprites
 image blue_light:

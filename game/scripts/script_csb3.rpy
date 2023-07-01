@@ -1105,8 +1105,8 @@ label montana:
     arceus "Okay whatever, I'm going back to sleep..."
     n "Billy takes off out of the parking lot."
     scene black with fade
-    scene car background
-    show billy car
+    scene car background night with fade
+    show billy car    
     cs "Man, today was pretty crazy too."
     arceus "Yeah, at least I got some sleep after all of it."
     cs "Speaking of which, can we find a place to rest soon?"
@@ -1179,15 +1179,19 @@ label montana:
     arceus "Fuck."
     arceus "How many divine beings and reality benders do we have in this universe anyhow?"
     cs "Alright, back on the road to New York!"
-    #
-    # TODO: THERE'S NO BACKGROUNDS AFTER THIS
-    #
+    scene car background night
+    show billy car
     n "The gang gets back in the car and books it out of the forest."
     n "After a while of driving, Billy pulls the car into a small area off the forest to let everyone rest."
+    scene black with fade
     n "After the night passes, they set off again on their trip."
+    scene car background
+    show billy car   
     cs "Can we stop somewhere to eat? We haven't eaten since yesterday."
     arceus "Yeah unfortunately the one store you guys went to didn't have anything edible."
     billy "Sure yeah, there's a McDonald's up here in a couple miles."
+    scene mcdonalds
+    show billy car
     n "Billy pulls up through the drive-thru to place his order."
     cashier "Hello, what you like to order?"
     billy "Hi, Billy Mays here! I would like to get the Buy 1 Get 1 Free breakfast meal for my friends here,"
@@ -1198,14 +1202,21 @@ label montana:
     cashier "That'll be about, let's see..."
     cashier "$36.88."
     billy "Wow! What a deal! I'm coming around to pick up my order!"
+    scene black with fade
     n "Billy drives through and picks up his meal."
+    scene mcdees with fade
+    show billy car
     n "CS and Arc happily chow down on the Mickey D's they just got."
     arceus "Thank god for that."
     cs "I have never been so excited to get a Big Mac."
+    scene car background
+    show billy car
     n "Billy heads out on the open road again, as they enter the state of South Dakota."
     jump south_dakota
 
 label south_dakota:
+    scene car plains with fade
+    show billy car  
     arceus "Welcome to the Great Plains."
     cs "Woohoo!"
     arceus "I don't think you should be super excited, there is like, nothing here."
@@ -1213,7 +1224,9 @@ label south_dakota:
     cs "Is there anything to do in this state?"
     arceus "There's Mount Rushmore, I guess there's Wall Dr-{w=0.5}"
     cs "Oh hell yeah! Let's go to Mount Rushmore!"
+    scene black with fade
     n "In about an hour, the crew arrives at Mount Rushmore."
+    scene rushmore with fade
     n "They all hitchhike up to the viewing spot to get a good look of the founding fathers."
     billy "Wow, to think that we won a war without the Gopher."
     billy "How did they even communicate without the Jupiter Jack?"
@@ -1227,6 +1240,8 @@ label south_dakota:
     arceus "You scare me, CS. I don't even like, want to question how or why."
     arceus "{size=-12}I do look pretty cool though."
     n "The gang gets back in the car before the overwelming groups of people engulf the site after what just happened."
+    scene car plains with fade
+    show billy car
     n "They continue to drive though the massive and empty plains of South Dakota."
     n "By the time they reach Salt Lake City, it is already evening."
     cs "There really is nothing out here, is there?"
@@ -1236,11 +1251,14 @@ label south_dakota:
     jump nebraska
 
 label nebraska:
+    scene omaha with fade
+    show billy car
     n "The gang finally hits Omaha, right before it hits nighttime."
     cs "This is the biggest city here? This is pretty small."
     billy "It looks very quaint, hopefully we can find a place to stop here."
     billy "I have no damn clue where to go here."
     arceus "Let's get out and look for somewhere to eat."
+    hide billy car
     n "They all get out and start roaming the streets."
     n "Suddenly, CS hears a voice behind him."
     "???" "CS? Is that you?"
@@ -1256,10 +1274,13 @@ label nebraska:
     n "Pakoo thinks for a moment."
     pakoo "I think I know a place."
     n "Pakoo takes the gang over to the old market section of Omaha."
+    scene alleyway with fade
     pakoo "Here we are, this is probably the best location to eat at, at least that I know of."
     jump iowa
 
 label iowa:
+    scene car plains with fade
+    show billy car    
     n "They get back in car and continue into Iowa."
     billy "Alright well, ever since that cult encounter, it's been pretty smooth sailing!"
     billy "The rest of this trip shouldn't be too long!"
@@ -1277,15 +1298,20 @@ label iowa:
     jump after_ufo
 
 label after_ufo:
+    scene car plains with fade
+    show billy car
     cs "Holy shit! We made it!"
     arceus "That was some good driving Billy!"
     billy "That's the power of the 6000 pound car!"
     n "They continue driving through the end of the Midwest."
+    scene car plains night with fade
+    show billy car
     n "As they are drving through Illinois, they pass by Chicago."
     arceus "One day, I'm gonna rule that place."
     cs "What are you... talking about?"
     arceus "It's better than ruling the Earth."
     cs "Get some sleep, Arc."
+    scene black with fade
     n "The gang stops in Indiana for the night, and takes off in the morning through Michigan."
     jump michigan
 
@@ -1293,6 +1319,8 @@ label michigan:
     jump ohio
 
 label ohio:
+    scene car plains with fade
+    show billy car
     n "After that fiasco, they travel through Ohio."
     show scott_border
     n "Suddenly, a huge blue border enters everyone's vision."
@@ -1300,6 +1328,8 @@ label ohio:
     cs "I have a blue one, what is going on?"
     billy "Yeah, it's blue for me too, I think you are colorblind."
     arceus "I AM colorblind. Oh fuck."
+    scene wozniaktroubles with fade
+    show billy car    
     n "As they are driving through the state, they see some men on the side of road protesting about the blue border."
     billy "Hi, it's Billy!"
     billy "Are you tired of having a blue border in your vision?"
@@ -1309,6 +1339,8 @@ label ohio:
     billy "It gets the tough stains out!"
     terry "I'm sorry that doesn't seem very vegan, I'll have to just deal with it."
     cs " Billy, I don't think that'll work, let's just keep going."
+    scene car plains with fade
+    show billy car
     n "Once they leave the state, the border goes away."
     hide scott_border with dissolve
     arceus "I'm glad it just faded away, I did not want to spray cleaner in my eyes."
