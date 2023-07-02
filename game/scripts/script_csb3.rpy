@@ -1298,6 +1298,8 @@ label south_dakota:
     show billy car
     with fade
     n "They continue to drive though the massive and empty plains of South Dakota."
+    play music "<loop 0>track4.mp3" volume 0.4
+    music Track 4 - Weatherscan
     n "By the time they reach Salt Lake City, it is already evening."
     cs "There really is nothing out here, is there?"
     arceus "Nope. I don't get how people can even live here."
@@ -1325,6 +1327,7 @@ label nebraska:
     "???" "CS? Is that you?"
     cs "Huh?"
     show cs flipped
+    stop music fadeout 3.0
     n "CS turns around and sees a wacky...{w=0.5} thing, with a tophat on."
     show pakoo at left
     show billy at right
@@ -1391,6 +1394,8 @@ label iowa:
     billy "The rest of this trip shouldn't be too long!"
     n "As if on queue, a strange sound is heard over the car."
     n "CS looks out the window."
+    play music "<loop 0>speedy_comet.mp3" volume 0.5
+    music Speedy Comet - Mahito Yokota
     cs "You have to be kidding me!"
     arceus "What's going on?"
     cs "HoH SiS is back!"
@@ -1406,6 +1411,7 @@ label after_ufo:
     scene car plains
     show billy car
     with fade
+    stop music fadeout 3.0
     cs "Holy shit! We made it!"
     arceus "That was some good driving Billy!"
     billy "That's the power of the 6000 pound car!"
@@ -1528,6 +1534,8 @@ label talktohohsis:
     ed "Richard, get the JoJ UFO and vaporize the house."
     stop music fadeout 1.0
     show anno at offscreenleft
+    play music "<loop 0>track3.mp3" volume 0.4
+    music Track 3 - Weatherscan
     "???" "Wait!!!"
     n "A voice can be heard behind the group running up to them."
     cs "Anno?"
@@ -1578,6 +1586,7 @@ label talktohohsis:
     with moveoutleft
     ed "We won't do anything to your house, and we are sorry for destroying your laptop."
     cs "And I'm sorry for injuring your coworkers."
+    stop music fadeout 3.0 
     ed "Wesley is still in the hospital, so like, if you wanted to, give us some more money..."
     show cs disappointed at left
     cs "Didn't you scam me out of more money than my foundation was worth?"

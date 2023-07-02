@@ -29,10 +29,13 @@ init python:
         "Bun Guster - Satoru Kōsaki": "bun_guster.mp3",
         "Happy Roaming - Lorin Nelson": "happy_roaming.mp3",
         "Lets do this - Home Depot": "home_depot.mp3",
+        "Track 4 - Weatherscan": "track4.mp3",
         "Funiculi Holiday - ClascyJitto": "funiculi_holiday.mp3",
+        "Speedy Comet - Mahito Yokota": "speedy_comet.mp3"
         "Breakout - Shoichiro Sakamoto": "breakout.mp3",
         "Park Theme - Lorin Nelson": "park_theme.mp3",
         "Alfreds Theme - Eminem": "hohsisremix.mp3",
+        "Track 3 - Weatherscan": "track3.mp3",
         "New leaf Title Theme - Kazumi Totaka": "ac_title.mp3"
     }
     global album_map
