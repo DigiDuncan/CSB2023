@@ -9,6 +9,8 @@ init python:
             self.TIME_PER_BLAST = 5.0
             self.TELEGRAPH_TIME = 0.5
             self.DANGER_TIME = 0.5
+            self.ENEMY_MOVE_TIME = 1.0
+            self.FIRE_COUNT = 20
 
             self.time_started = None
             self.last_fire = None
@@ -17,6 +19,10 @@ init python:
             self.LANES = 3
             self.current_lane_player = 1
             self.current_lane_enemy = 1
+            self.enemy_last_move = 0.0
+            self.enemy_frozen = False
+
+            self.fires = 0
 
             # Some displayables we use.
             self.car = Image("minigames/car/billy_car.png")
@@ -37,13 +43,28 @@ init python:
             if self.time_started is None:
                 self.time_started = st
 
+            # Get firing times
             if self.last_fire is None and st > self.time_started + self.TIME_PER_BLAST:
                 self.last_fire = st
             elif st > self.last_fire + self.TIME_PER_BLAST:
                 self.last_fire = st
-            
-            
 
+            # Move enemy
+            self.enemy_frozen = self.last_fire < st < self.last_fire + self.TELEGRAPH_TIME + self.DANGER_TIME
+            if not self.enemy_frozen:
+                if self.enemy_last_move + self.ENEMY_MOVE_TIME > st:
+                    self.current_lane_enemy = renpy.random.rand_int(0, 2)
+                    self.enemy_last_move = st
+            
+            # Dangerous lanes
+            if self.last_fire + self.TELEGRAPH_TIME < st < self.last_fire + self.TELEGRAPH_TIME + self.DANGER_TIME:
+                self.danger_lane = self.current_lane_enemy
+                self.last_fire = st
+                self.fires += 1
+
+            # Undangerous lanes
+            if st > self.last_fire + self.TELEGRAPH_TIME + self.DANGER_TIME:
+                self.danger_lane = None
 
             # Ask that we be re-rendered ASAP, so we can show the next
             # frame.
