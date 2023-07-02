@@ -564,6 +564,8 @@ label arc_escape:
     arceus "Anno's been at the hotel too, I think he's planning on starting some kind of band."
     cs "Ah, I see."
     scene sheriff_office
+    play music "<loop 0>police_station.mp3" volume 0.5  
+    music Police Station - Lorin Nelson  
     show sheriff at left
     with fade
     n "Back at the police station, Copguy talks to the sheriff about CS."
@@ -585,6 +587,7 @@ label arc_escape:
     copguy "Sure thing, boss. I'll track him down...{w=0.5} on my own."
     hide copguy with moveoutright
     n "Copguy turns around and heads out to track down CS and Arc."
+    stop music fadeout 3.0
     scene washington_road with fade
     n "Meanwhile, CS and Arc are still making their way through the US, without any sense of direction."
     play music "<loop 0>echoing.mp3" volume 0.5
@@ -740,6 +743,8 @@ label good_convince:
     show arceus dark at mid_right_right
     show cs dark
     n "CS and Arc look at each other, and smile."
+    play music "<loop 0>bun_guster.mp3" volume 0.5
+    music Bun Guster - Satoru Kōsaki
     arceus "Holy crap, I didn't think that would work."
     cs "Me neither! I'm so glad that they let us go!"
     cs "I don't know how you got that footage, but we are now free once again!"
@@ -751,6 +756,7 @@ label good_convince:
     show arceus dark at mid_right_right
     with move
     n "They both high five, and continue heading in the direction of the road."
+    stop music fadeout 3.0
     jump choose_direction
 
 #Chapter 2 for True Ending 1 starts here
@@ -758,6 +764,8 @@ label choose_direction:
     scene black with determination
     n "As the duo continues their journey through the night, they soon have to figure out exactly where to go."
     scene washington_road morning
+    play music "<loop 0>happy_roaming.mp3" volume 0.5
+    music Happy Roaming - Lorin Nelson
     show cs at left
     show arceus at right
     cs "We've been walking all night, I'm exhausted."
@@ -971,6 +979,7 @@ label east:
     cs "Okay, now that we can think about something other than food, what's our plan to get home?"
     arceus "Yeah, I have no clue currently."
     arceus "I was hoping that we could like hitchhike on a bus or something, but it might be ages until that happens... If it even DOES happen, this town is small enough as is."
+    stop music fadeout 3.0
     menu:
         "Wait for driver at the gas station":
             jump billy_driver
@@ -1056,6 +1065,8 @@ label montana:
     play sound "doorslam.ogg"
     scene black with fade
     scene hardwareinside with fade
+    play music "<loop 0>home_depot.mp3" volume 0.4
+    music Lets do this - Home Depot
     show cs at left with moveinleft
     cs "Wow look at all this stuff!"
     cs "They've got Allen wrenches, gerbil feeders, toilet seats, electric heaters{nw}"
@@ -1094,6 +1105,7 @@ label montana:
     cs "Letsgoletsgoletsgoweneedtogetoutofhere"
     hide cs at moveoutright
     hide billy at moveoutright
+    stop music fadeout 3.0   
     scene black with fade
     play sound "doorslam.ogg"
     scene hardwareoutside
@@ -1419,6 +1431,8 @@ label ohio:
     with fade
     n "After that fiasco, they travel through Ohio."
     show scott_border
+    play music "<loop 0>breakout.mp3" volume 0.4   
+    music Breakout - Shoichiro Sakamoto 
     n "Suddenly, a huge blue border enters everyone's vision."
     arceus "Oh what in the world? There is some red border in my eyes..."
     cs "I have a blue one, what is going on?"
@@ -1442,6 +1456,7 @@ label ohio:
     show scott_border
     with fade
     n "Once they leave the state, the border goes away."
+    stop music fadeout 3.0 
     hide scott_border with dissolve
     arceus "I'm glad it just faded away, I did not want to spray cleaner in my eyes."
     jump pennsylvania
@@ -1453,6 +1468,8 @@ label pennsylvania:
 
 label back_home:
     scene cs_house with fade
+    play music "<loop 0>park_theme.mp3" volume 0.5
+    music Park Theme - Lorin Nelson
     n "After the long and treacherous journey, CS finally arrives at his house."
     show arceus flipped at left with moveinleft
     arceus "We made it back to your house CS!"
@@ -1469,9 +1486,12 @@ label back_home:
     hide billy with moveoutleft
     hide arceus with moveoutleft
     n "As CS was saying bye to his friends, a familiar but upsetting voice can be heard at the front of CS's house."
+    stop music fadeout 1.0
     ed "YOU!"
     show cs disappointed at left with moveinleft
     n "CS and the gang look forth at CS's front porch, where Richard and Ed are waiting angrily for him."
+    play music "<loop 0>hohsisremix.mp3" volume 0.5
+    music Alfreds Theme - Eminem
     show ed at right with moveinright
     show rich at mid_right behind ed with moveinright
     ed "I have been waiting for you for quite some time now."
@@ -1506,6 +1526,7 @@ label talktohohsis:
     cs "I never had bad intentions of you guys... honestly it was also kind of like a free promotion."
     ed "Well, I'm sorry CS, but it's too late."
     ed "Richard, get the JoJ UFO and vaporize the house."
+    stop music fadeout 1.0
     show anno at offscreenleft
     "???" "Wait!!!"
     n "A voice can be heard behind the group running up to them."
@@ -1598,6 +1619,8 @@ label talktohohsis:
     pause 2.0
     n "The crowd errupts in cheers as CS finally enters his house."
     scene cs_room with fade
+    play music "<loop 0>ac_title.mp3" volume 0.4
+    music New leaf Title Theme - Kazumi Totaka
     show cs at center with moveinleft
     cs "Ah, it's good to be home again!"
     n "CS looks over at his desk, where a new computer is sitting."
@@ -1618,6 +1641,7 @@ label talktohohsis:
     n "CS chuckles."
     cs "It's a long story..."
     scene black with fade
+    stop music fadeout 1.0   
     play music "secret/credits.mp3" volume 0.5
     centered "Pretend there's credits here."
     jump secret2
