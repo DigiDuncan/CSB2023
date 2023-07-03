@@ -117,7 +117,7 @@ label edit_video:
     cs "Hmm, this video looks pretty great so far, I'm practically almost done at this point."
     cs "I wonder what the others will think of this though? I should probably get opinions from some of the other employees."
     play music "<loop 0>good_eatin.mp3" volume 0.4
-    music Good Eatin - ClascyJitto
+    music "Good Eatin' - ClascyJitto"
     show taran at right with moveinright
     taran "Need any help with anything?"
     cs "Hey Taran! You wanna check out my video so far?"
@@ -477,6 +477,7 @@ label arc_escape:
     cs "This is awful, I was just starting to get along well with Linus and the gang."
     arceus "I'm sure they'll forgive you in due time, but for now, we need to evade the cops' trail and get back to the United States."
     stop music fadeout 3.0
+    music end
     n "While Arceus and CS were hitchhiking away from the scene, the cops show up at LTT to investigate."
     scene frontdoor
     stop sound fadeout 4.0
@@ -523,6 +524,7 @@ label arc_escape:
     hide copguy with moveoutright
     n "Copguy leaves the scene."
     stop music fadeout 3.0
+    music end
     colton "I can't fucking believe you guys! That was way too far!"
     linus "April Fools?"
     colton "IT'S JULY!"
@@ -548,7 +550,7 @@ label arc_escape:
     show cs dusk at left
     show arceus dusk flipped at mid_left
     play music "<loop 0>atarashii_kaze.mp3" volume 0.3
-    music Atarashii Kaze - Satoru Kōsaki
+    music Atarashii Kaze - Satoru Kosaki
     n "CS and Arc approach the border guard again."
     show border_guard dusk at right with moveinright
     border_guard "I'm gonna need proof of--"
@@ -570,6 +572,7 @@ label arc_escape:
     arceus "Well, I've been at the same hotel, clearing up ties from my cyber criminal past."
     arceus "I've been in prison for five years, so I've had to figure out what to do again for money."
     stop music fadeout 3.0
+    music end
     arceus "Anno's been at the hotel too, I think he's planning on starting some kind of band."
     cs "Ah, I see."
     scene sheriff_office
@@ -597,6 +600,7 @@ label arc_escape:
     hide copguy with moveoutright
     n "Copguy turns around and heads out to track down CS and Arc."
     stop music fadeout 3.0
+    music end
     scene washington_road with fade
     n "Meanwhile, CS and Arc are still making their way through the US, without any sense of direction."
     play music "<loop 0>echoing.mp3" volume 0.5
@@ -768,6 +772,7 @@ label good_convince:
     with move
     n "They both high five, and continue heading in the direction of the road."
     stop music fadeout 3.0
+    music end
     jump choose_direction
 
 #Chapter 2 for True Ending 1 starts here
@@ -991,6 +996,7 @@ label east:
     arceus "Yeah, I have no clue currently."
     arceus "I was hoping that we could like hitchhike on a bus or something, but it might be ages until that happens... If it even DOES happen, this town is small enough as is."
     stop music fadeout 3.0
+    music end
     menu:
         "Wait for driver at the gas station":
             jump billy_driver
@@ -1029,6 +1035,7 @@ label billy_driver:
     cs "Hell yeah! I call shotgun!"
     n "CS and Arc get into Billy's car."
     stop music fadeout 3.0
+    music end
     hide cs with moveoutright
     hide billy with moveoutright
     hide arceus with moveoutright
@@ -1048,6 +1055,7 @@ label in_billy_car:
     cs "Let's just enjoy the ride there at least."
     arceus "Fair point."
     stop music fadeout 3.0
+    music end
     jump montana
 
 label montana:
@@ -1080,7 +1088,7 @@ label montana:
     scene black with fade
     scene hardwareinside with fade
     play music "<loop 0>home_depot.mp3" volume 0.4
-    music Lets do this - Home Depot
+    music "Let's Do This - Home Depot"
     show cs at left with moveinleft
     cs "Wow look at all this stuff!"
     cs "They've got Allen wrenches, gerbil feeders, toilet seats, electric heaters{nw}"
@@ -1120,6 +1128,7 @@ label montana:
     hide cs at moveoutright
     hide billy at moveoutright
     stop music fadeout 3.0   
+    music end
     scene black with fade
     play sound "doorslam.ogg"
     scene hardwareoutside
@@ -1232,9 +1241,10 @@ label montana:
     hide cultist with moveoutright
     n "The cultists disappear into the forest."
     stop music fadeout 3.0 
+    music end
     billy "That's the power of the Awesome Augement!"
     play music "<loop 0>secret/showtime.mp3" volume 0.4
-    music Its Showtime - Toby Fox
+    music "It's Showtime - Toby Fox"
     show cs fakegod at center with moveinright
     cs "Hooray! I'm a god now!"
     show arceus flipped at left with moveinleft
@@ -1244,7 +1254,8 @@ label montana:
     arceus "Fuck."
     arceus "How many divine beings and reality benders do we have in this universe anyhow?"
     cs "Alright, back on the road to New York!"
-    stop music fadeout 3.0 
+    stop music fadeout 3.0
+    music end
     scene car background night
     show billy car
     with fade
@@ -1255,7 +1266,7 @@ label montana:
     scene car background
     show billy car
     play music "<loop 0>mort_farm.mp3" volume 0.4
-    music Morts farm - ClascyJitto
+    music "Mort's Farm - ClascyJitto"
     cs "Can we stop somewhere to eat? We haven't eaten since yesterday."
     arceus "Yeah unfortunately the one store you guys went to didn't have anything edible."
     billy "Sure yeah, there's a McDonald's up here in a couple miles."
@@ -1288,7 +1299,8 @@ label montana:
 label south_dakota:
     arceus "Welcome to the Great Plains."
     cs "Woohoo!"
-    stop music fadeout 3.0 
+    stop music fadeout 3.0
+    music end
     arceus "I don't think you should be super excited, there is like, nothing here."
     cs "Oh yeah, we don't even have trees to look at anymore."
     cs "Is there anything to do in this state?"
@@ -1324,7 +1336,8 @@ label south_dakota:
     hide cs with moveoutright
     arceus "You scare me, CS. I don't even like, want to question how or why."
     arceus "{size=-12}I do look pretty cool though."
-    stop music fadeout 3.0 
+    stop music fadeout 3.0
+    music end
     n "The gang gets back in the car before the overwelming groups of people engulf the site after what just happened."
     scene car plains
     show billy car
@@ -1360,6 +1373,7 @@ label nebraska:
     cs "Huh?"
     show cs flipped
     stop music fadeout 3.0
+    music end
     n "CS turns around and sees a wacky...{w=0.5} thing, with a tophat on."
     show pakoo at left
     show billy at right
@@ -1414,6 +1428,7 @@ label nebraska:
     hide pakoo with moveoutleft
     scene black with fade
     stop music fadeout 3.0
+    music end
     n "The gang goes into the backroom area and sleeps for the night."
     n "Once they wake up, they thank Peppino for his business and head out."
     jump iowa
@@ -1448,6 +1463,7 @@ label after_ufo:
     show billy car
     with fade
     stop music fadeout 3.0
+    music end
     cs "Holy shit! We made it!"
     arceus "That was some good driving Billy!"
     billy "That's the power of the 6000 pound car!"
@@ -1498,7 +1514,8 @@ label ohio:
     show scott_border
     with fade
     n "Once they leave the state, the border goes away."
-    stop music fadeout 3.0 
+    stop music fadeout 3.0
+    music end
     hide scott_border with dissolve
     arceus "I'm glad it just faded away, I did not want to spray cleaner in my eyes."
     jump pennsylvania
@@ -1529,11 +1546,12 @@ label back_home:
     hide arceus with moveoutleft
     n "As CS was saying bye to his friends, a familiar but upsetting voice can be heard at the front of CS's house."
     stop music fadeout 1.0
+    music end
     ed "YOU!"
     show cs disappointed at left with moveinleft
     n "CS and the gang look forth at CS's front porch, where Richard and Ed are waiting angrily for him."
     play music "<loop 0>hohsisremix.mp3" volume 0.5
-    music Alfreds Theme - Eminem
+    music "Alfred's Theme - Eminem"
     show ed at right with moveinright
     show rich at mid_right behind ed with moveinright
     ed "I have been waiting for you for quite some time now."
@@ -1622,7 +1640,8 @@ label talktohohsis:
     with moveoutleft
     ed "We won't do anything to your house, and we are sorry for destroying your laptop."
     cs "And I'm sorry for injuring your coworkers."
-    stop music fadeout 3.0 
+    stop music fadeout 3.0
+    music end
     ed "Wesley is still in the hospital, so like, if you wanted to, give us some more money..."
     show cs disappointed at left
     cs "Didn't you scam me out of more money than my foundation was worth?"
@@ -1665,7 +1684,7 @@ label talktohohsis:
     n "The crowd errupts in cheers as CS finally enters his house."
     scene cs_room with fade
     play music "<loop 0>ac_title.mp3" volume 0.4
-    music New leaf Title Theme - Kazumi Totaka
+    music New Leaf Title Theme - Kazumi Totaka
     show cs at center with moveinleft
     cs "Ah, it's good to be home again!"
     n "CS looks over at his desk, where a new computer is sitting."
