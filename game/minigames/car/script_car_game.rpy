@@ -3,7 +3,10 @@ init python:
     LANE_X = [671, 880, 1107]
     CAR_Y = 784
     UFO_Y = 99
-    JOJ_FREQUENCY = 5
+
+    MOVE_FREQUENCY = 5
+    TELEGRAPH_TIME = 0.5
+    DANGER_TIME = 1.0
 
     class CarGameDisplayable(renpy.Displayable):
         def __init__(self):
@@ -15,7 +18,7 @@ init python:
             self.laser = Image("minigames/car/laser.png")
 
             self.start_time = None
-            self.joj_timer = 0  # Time since last UFO move
+            self.round_timer = 0  # Time since last UFO move
             self.enemy_lane = 0
             self.current_lane = 0
 
@@ -24,10 +27,10 @@ init python:
                 self.start_time = st
 
             r = renpy.Render(1920, 1080)
-            if st - self.joj_timer > JOJ_FREQUENCY:
+            if st - self.joj_timer > MOVE_FREQUENCY:
                 #Fire logic
                 self.enemy_lane = renpy.random.randint(0, 2)
-                self.joj_timer = st
+                self.round_timer = st
 
             r.blit(renpy.load_image(self.billycar), (LANE_X[self.current_lane], CAR_Y))
             r.blit(renpy.load_image(self.ufo), (LANE_X[self.enemy_lane], UFO_Y))
