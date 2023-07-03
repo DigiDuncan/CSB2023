@@ -1,4 +1,5 @@
 init python:
+    import math
 
     LANE_X = [671, 880, 1107]
     CAR_Y = 784
@@ -8,6 +9,8 @@ init python:
     TELEGRAPH_TIME = 0.5
     DANGER_TIME = 1.0
     FIRE_COUNT = 20
+    SWAY_PERIOD = 5
+    SWAY_DISTANCE = 20
 
     class CarGameDisplayable(renpy.Displayable):
         def __init__(self):
@@ -46,15 +49,18 @@ init python:
                 self.fires += 1
                 self.round_timer = st
 
-            # Telegraphing period
-            if st < telegraph_cutoff:
-                # TODO: Show telegraph animation
-                pass
-
             # Danger period
             if telegraph_cutoff < st < danger_cutoff:
                 self.danger_lane = self.enemy_lane
                 r.blit(laser_renderer, (LANE_X[self.enemy_lane], UFO_Y))
+
+            current_ufo_x = LANE_X[self.enemy_lane] + math.sin(st * SWAY_PERIOD) * SWAY_DISTANCE
+            # Telegraphing period
+            if st < telegraph_cutoff:
+                # TODO: Better telegraph animation
+                r.blit(ufo_renderer, (LANE_X[self.enemy_lane], UFO_Y))
+            else:
+                r.blit(ufo_renderer, (current_ufo_x, UFO_Y))
 
             # No more danger
             if danger_cutoff < st:
@@ -69,7 +75,6 @@ init python:
                 renpy.timeout(0)
 
             r.blit(car_renderer, (LANE_X[self.current_lane], CAR_Y))
-            r.blit(ufo_renderer, (LANE_X[self.enemy_lane], UFO_Y))
 
             renpy.redraw(self, 0)
             return r
