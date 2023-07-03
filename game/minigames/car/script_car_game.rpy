@@ -7,6 +7,7 @@ init python:
     MOVE_FREQUENCY = 5
     TELEGRAPH_TIME = 0.5
     DANGER_TIME = 1.0
+    FIRE_COUNT = 20
 
     class CarGameDisplayable(renpy.Displayable):
         def __init__(self):
@@ -23,6 +24,7 @@ init python:
             self.current_lane = 0
 
             self.danger_lane = None
+            self.fires = 0
 
         def render(self, width, height, st, at):
             if self.start_time is None:
@@ -37,6 +39,7 @@ init python:
             if st - self.round_timer > MOVE_FREQUENCY:
                 #Fire logic
                 self.enemy_lane = renpy.random.randint(0, 2)
+                self.fires += 1
                 self.round_timer = st
 
             # Telegraphing period
@@ -56,6 +59,9 @@ init python:
             # PLAYER LOGIC
             if self.current_lane == self.danger_lane:
                 self.win = False
+                renpy.timeout(0)
+            if self.fires >= FIRE_COUNT:
+                self.win = True
                 renpy.timeout(0)
                 
 
