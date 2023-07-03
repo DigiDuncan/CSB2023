@@ -104,7 +104,10 @@ init python:
 
 screen cargame:
     default cargame = CarGameDisplayable()
-    add "minigames/car/background.png"
+    add "minigames/car/background.png" at transform:
+        yanchor 0.5 ypos 0.0
+        linear 1.0 ypos 1.0
+        repeat
     add cargame
 
 label play_cargame:
