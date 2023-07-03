@@ -105,7 +105,7 @@ label play_cargame:
     $ quick_menu = True
     window show
 
-    if _return == "win":
+    if _return == True:
         arceus "Gg, dipshit."
     else:
         arceus "You failed at a WIP game. What the fuck."
