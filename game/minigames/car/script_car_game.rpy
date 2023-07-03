@@ -6,6 +6,7 @@ init python:
     UFO_Y = 99
 
     MOVE_FREQUENCY = 5
+    TELEGRAPH_DELAY = 1
     TELEGRAPH_TIME = 0.5
     DANGER_TIME = 1.0
     FIRE_COUNT = 20
@@ -40,7 +41,8 @@ init python:
             laser_renderer = renpy.load_image(self.laser)
 
             # ENEMY LOGIC
-            telegraph_cutoff = self.round_timer + TELEGRAPH_TIME
+            telegraph_start = self.round_timer + TELEGRAPH_TIME
+            telegraph_cutoff = telegraph_start  + TELEGRAPH_DELAY
             danger_cutoff = telegraph_cutoff + DANGER_TIME
             # Move enemy
             if st - self.round_timer > MOVE_FREQUENCY:
@@ -56,7 +58,7 @@ init python:
 
             current_ufo_x = LANE_X[self.enemy_lane] + math.sin(st * SWAY_PERIOD) * SWAY_DISTANCE
             # Telegraphing period
-            if st < telegraph_cutoff:
+            if telegraph_start < st < telegraph_cutoff:
                 # TODO: Better telegraph animation
                 r.blit(ufo_renderer, (LANE_X[self.enemy_lane], UFO_Y))
             else:
