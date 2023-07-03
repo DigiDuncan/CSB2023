@@ -1252,7 +1252,7 @@ label montana:
     n "After the night passes, they set off again on their trip."
     scene car background
     show billy car
-    play music "<loop 0>secret/mort_farm.mp3" volume 0.4
+    play music "<loop 0>mort_farm.mp3" volume 0.4
     music Morts farm - ClascyJitto
     cs "Can we stop somewhere to eat? We haven't eaten since yesterday."
     arceus "Yeah unfortunately the one store you guys went to didn't have anything edible."
@@ -1296,7 +1296,7 @@ label south_dakota:
     n "In about an hour, the crew arrives at Mount Rushmore."
     scene rushmore with fade
     n "They all hitchhike up to the viewing spot to get a good look of the founding fathers."
-    play music "<loop 0>secret/taiikusai_desu_yo.mp3" volume 0.4
+    play music "<loop 0>taiikusai_desu_yo.mp3" volume 0.4
     music Taiikusai Desu Yo - Satoru Kōsaki
     show cs at right with moveinleft
     show arceus at center with moveinleft
