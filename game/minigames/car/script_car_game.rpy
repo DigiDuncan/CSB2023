@@ -1,6 +1,9 @@
 init python:
 
-    current_lane = 0
+    lanes = [671, 880, 1107]
+    car_y = 784
+    ufo_y = 99
+    joj_frequency = 5
 
     class CarGameDisplayable(renpy.Displayable):
         def __init__(self):
@@ -11,17 +14,18 @@ init python:
             self.ufo = Image("minigames/car/joj_ufo.png")
             self.laser = Image("minigames/car/laser.png")
 
+            self.joj_timer = 0 #Time since last ufo Move
+            self.enemy_lane = 0
             self.current_lane = 0
 
         def render(self, width, height, st, at):
             r = renpy.Render(1920, 1080)
-            car_y = 784
-            if(self.current_lane == 0):
-                r.blit(renpy.load_image(self.billycar), (671, car_y))
-            elif(self.current_lane == 1):
-                r.blit(renpy.load_image(self.billycar), (880, car_y))
-            else:
-                r.blit(renpy.load_image(self.billycar), (1107, car_y))
+            if st-self.joj_timer > joj_frequency:
+                #Fire logic
+                joj_timer = st
+
+            r.blit(renpy.load_image(self.billycar), (lanes[self.current_lane], car_y))
+            r.blit(renpy.load_image(self.ufo), (lanes[self.enemy_lane], ufo_y))
 
             renpy.redraw(self, 0)
             return r
@@ -66,4 +70,3 @@ label play_cargame:
 label cargame_done:
     show arceus
     arceus "I want to fucking die."
-    pause
