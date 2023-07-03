@@ -39,7 +39,7 @@ screen category_nav():
             # textbutton "Collectibles" action ShowMenu("collectibles_welcome")
             # textbutton "Endings" action ShowMenu("endings_welcome")
             textbutton "Jukebox" action ShowMenu("jukebox_welcome")
-            # textbutton "Clear Persistent Data" action Jump("reset_vector")
+            textbutton "Clear Persistent Data" action Jump("reset_vector")
 
     textbutton "Main Menu" action Return() yoffset 1000 xoffset 25
 
