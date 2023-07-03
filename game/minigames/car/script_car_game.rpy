@@ -12,13 +12,13 @@ init python:
         def __init__(self):
             renpy.Displayable.__init__(self)
 
-            self.win = False
+            self.win = None
             self.billycar = Image("minigames/car/billy_car.png")
             self.ufo = Image("minigames/car/joj_ufo.png")
             self.laser = Image("minigames/car/laser.png")
 
             self.start_time = None
-            self.round_timer = 0  # Time since last UFO move
+            self.round_timer = -3  # Time since last UFO move
             self.enemy_lane = 0
             self.current_lane = 0
 
@@ -47,6 +47,7 @@ init python:
             # Danger period
             if telegraph_cutoff < st < danger_cutoff:
                 self.danger_lane = self.enemy_lane
+                r.blit(renpy.load_image(self.laser), (LANE_X[self.enemy_lane], UFO_Y))
 
             # No more danger
             if danger_cutoff < st:
@@ -55,7 +56,8 @@ init python:
             # PLAYER LOGIC
             if self.current_lane == self.danger_lane:
                 self.win = False
-                return self.win
+                renpy.timeout(0)
+                
 
             r.blit(renpy.load_image(self.billycar), (LANE_X[self.current_lane], CAR_Y))
             r.blit(renpy.load_image(self.ufo), (LANE_X[self.enemy_lane], UFO_Y))
@@ -77,6 +79,8 @@ init python:
                 renpy.restart_interaction()
             if ev.type == pygame.KEYDOWN and ev.key == pygame.K_END:
                 self.win = True
+                return self.win
+            if self.win is not None:
                 return self.win
 
         def visit(self):
