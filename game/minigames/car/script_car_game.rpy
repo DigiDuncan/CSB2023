@@ -32,6 +32,10 @@ init python:
 
             r = renpy.Render(1920, 1080)
 
+            car_renderer = renpy.load_image(self.billycar)
+            ufo_renderer = renpy.load_image(self.ufo)
+            laser_renderer = renpy.load_image(self.laser)
+
             # ENEMY LOGIC
             telegraph_cutoff = self.round_timer + TELEGRAPH_TIME
             danger_cutoff = telegraph_cutoff + DANGER_TIME
@@ -50,7 +54,7 @@ init python:
             # Danger period
             if telegraph_cutoff < st < danger_cutoff:
                 self.danger_lane = self.enemy_lane
-                r.blit(renpy.load_image(self.laser), (LANE_X[self.enemy_lane], UFO_Y))
+                r.blit(laser_renderer, (LANE_X[self.enemy_lane], UFO_Y))
 
             # No more danger
             if danger_cutoff < st:
@@ -63,10 +67,9 @@ init python:
             if self.fires >= FIRE_COUNT:
                 self.win = True
                 renpy.timeout(0)
-                
 
-            r.blit(renpy.load_image(self.billycar), (LANE_X[self.current_lane], CAR_Y))
-            r.blit(renpy.load_image(self.ufo), (LANE_X[self.enemy_lane], UFO_Y))
+            r.blit(car_renderer, (LANE_X[self.current_lane], CAR_Y))
+            r.blit(ufo_renderer, (LANE_X[self.enemy_lane], UFO_Y))
 
             renpy.redraw(self, 0)
             return r
