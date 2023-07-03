@@ -25,17 +25,17 @@ init python:
             
         def event(self, ev, x, y, st):
             import pygame
-            if ev.type == pygame.KEYDOWN and ev.key == "K_LEFT":
+            if ev.type == pygame.KEYDOWN and ev.key == pygame.K_LEFT:
                 current_lane-=1
                 if current_lane == -1:
                     current_lane = 0
                 renpy.restart_interaction()
-            if ev.type == pygame.KEYDOWN and ev.key == "K_RIGHT":
+            if ev.type == pygame.KEYDOWN and ev.key == pygame.K_RIGHT:
                 current_lane+=1
                 if current_lane == 3:
                     current_lane = 2
                 renpy.restart_interaction()
-            if ev.type == pygame.KEYDOWN and ev.key == "K_END":
+            if ev.type == pygame.KEYDOWN and ev.key == pygame.K_END:
                 self.win = True
                 return self.win
 
