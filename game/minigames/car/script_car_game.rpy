@@ -20,13 +20,14 @@ init python:
             self.current_lane = 0
 
         def render(self, width, height, st, at):
-            if self.start_time = None:
+            if self.start_time is None:
                 self.start_time = st
 
             r = renpy.Render(1920, 1080)
             if st - self.joj_timer > JOJ_FREQUENCY:
                 #Fire logic
-                joj_timer = st
+                self.enemy_lane = renpy.random.randint(0, 2)
+                self.joj_timer = st
 
             r.blit(renpy.load_image(self.billycar), (LANE_X[self.current_lane], CAR_Y))
             r.blit(renpy.load_image(self.ufo), (LANE_X[self.enemy_lane], UFO_Y))
