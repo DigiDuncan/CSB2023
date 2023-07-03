@@ -7,18 +7,18 @@ init python:
             renpy.Displayable.__init__(self)
 
             self.win = False
-            self.billycar = renpy.load_image("minigames/car/billy_car.png")
-            self.ufo = renpy.load_image("minigames/car/joj_ufo.png")
-            self.laser = renpy.load_image("minigames/car/laser.png")
+            self.billycar = Image("minigames/car/billy_car.png")
+            self.ufo = Image("minigames/car/joj_ufo.png")
+            self.laser = Image("minigames/car/laser.png")
 
         def render(self, width, height, st, at):
             r = renpy.Render(1920, 1080)
             if(current_lane==0):
-                r.blit(self.billycar, (640, 500))
+                r.blit(renpy.load_image(self.billycar), (640, 500))
             elif(current_lane==1):
-                r.blit(self.billycar, (1280, 500))
+                r.blit(renpy.load_image(self.billycar), (1280, 500))
             else:
-                r.blit(self.billycar, (1920, 500))
+                r.blit(renpy.load_image(self.billycar), (1920, 500))
 
             renpy.redraw(self, 0)
             return r
