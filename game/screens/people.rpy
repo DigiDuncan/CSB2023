@@ -30,7 +30,7 @@ init python:
         "sheriff": "Sheriff",
         "billy": "Billy Mays",
         "cultist": "Cultist Leader",
-        "cultist_2": "Cultists",
+        "cultist2": "Cultists",
         "pakoo": "Pakoo",
         "peppino": "Peppino Spaghetti",
         "scott": "Scott Wozniak",
