@@ -115,10 +115,10 @@ label play_cargame:
     window show
 
     if _return == True:
-        arceus "Gg, dipshit."
+        arceus "GG, dipshit."
     else:
         arceus "You failed at a WIP game. What the fuck."
 
 label cargame_done:
     show arceus
-    arceus "I want to fucking die."
+    arceus ":3"
