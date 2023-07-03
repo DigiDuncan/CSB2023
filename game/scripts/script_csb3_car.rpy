@@ -10,6 +10,10 @@ screen skip_car():
 transform t_skip_car:
     xanchor 1.0 xpos 0.95
     yanchor 0.0 ypos 0.05
+    on show:
+        alpha 0.0
+        time 3.0
+        linear 30 alpha 1.0
 
 style skip_car_frame is empty
 
