@@ -438,6 +438,8 @@ label both_fan:
     n "Suddenly, Arceus rushes in through the doors."
     show arceus at mid_right with moveinright
     arceus "CS! There you are! We need to go ASAP!"
+    play music "<loop 0>hired_guns.mp3" volume 0.5
+    music Hired Guns - Brian Johnston
     linus "So you DO have a furry fanbase who wants to join LTT! Damn it CS, I should've known."
     show cs worried
     cs "Shut up, Linus!"
@@ -474,6 +476,7 @@ label arc_escape:
     n "As they are making their way away from the building, they can hear sirens grow in volume as flashing lights rush towards the LMG headquarters."
     cs "This is awful, I was just starting to get along well with Linus and the gang."
     arceus "I'm sure they'll forgive you in due time, but for now, we need to evade the cops' trail and get back to the United States."
+    stop music fadeout 3.0
     n "While Arceus and CS were hitchhiking away from the scene, the cops show up at LTT to investigate."
     scene frontdoor
     stop sound fadeout 4.0
@@ -493,6 +496,8 @@ label arc_escape:
     with move
     show copguy at right with moveinright
     n "Copguy bursts in."
+    play music "<loop 0>undyne.mp3" volume 0.5
+    music Undyne - Toby Fox
     copguy "Alright, everyone! Back against the wall! Nobody move!"
     luke "So, are we moving to the wall or... not moving?"
     copguy "Don't question the police! Just--{w=0.5} stand against the wall!"
@@ -517,6 +522,7 @@ label arc_escape:
     linus "Sure thing, officer."
     hide copguy with moveoutright
     n "Copguy leaves the scene."
+    stop music fadeout 3.0
     colton "I can't fucking believe you guys! That was way too far!"
     linus "April Fools?"
     colton "IT'S JULY!"
@@ -541,6 +547,8 @@ label arc_escape:
     scene border_dusk with fade
     show cs dusk at left
     show arceus dusk flipped at mid_left
+    play music "<loop 0>atarashii_kaze.mp3" volume 0.5  
+    music Atarashii Kaze - Satoru Kōsaki
     n "CS and Arc approach the border guard again."
     show border_guard dusk at right with moveinright
     border_guard "I'm gonna need proof of--"
@@ -563,6 +571,7 @@ label arc_escape:
     arceus "I've been in prison for five years, so I've had to figure out what to do again for money."
     arceus "Anno's been at the hotel too, I think he's planning on starting some kind of band."
     cs "Ah, I see."
+    stop music fadeout 3.0
     scene sheriff_office
     play music "<loop 0>police_station.mp3" volume 0.5  
     music Police Station - Lorin Nelson  
@@ -663,6 +672,8 @@ label wait_forest:
     cs "Huh?"
     cs "What happened?"
     show copguy dark at right with moveinright
+    play music "<loop 0>danger_mystery.mp3" volume 0.5
+    music Danger Mystery - Toby Fox
     copguy "Hey, you're finally awake."
     arceus "Hey, CS."
     arceus "I'm sorry."
@@ -1005,6 +1016,8 @@ label billy_driver:
     arceus "What are you doing? That man looks like he's going to kill us!"
     arceus "He's probably getting a gun, we need to lea--"
     show billy at center with moveinleft
+    play music "<loop 0>mm_select.mp3" volume 0.5
+    music Mm Select - Matthew Simmonds
     billy "Hi, Billy Mays here for the Uber Driver!"
     billy "The fast and easy way to get people around who don't have a car!"
     show cs happy
@@ -1015,6 +1028,7 @@ label billy_driver:
     arceus "... What the fuck. Works for me I guess."
     cs "Hell yeah! I call shotgun!"
     n "CS and Arc get into Billy's car."
+    stop music fadeout 3.0
     hide cs with moveoutright
     hide billy with moveoutright
     hide arceus with moveoutright
@@ -1129,6 +1143,8 @@ label montana:
     n "Billy brings the car to a screeching halt."
     scene cultforest
     show billy car
+    play music "<loop 0>candle_world.mp3" volume 0.4
+    music Candle World - Kikiyama
     "CS and Arceus" "What in the world?"
     n "Ahead lies a barricade with a bunch of strange hooded people surrounding it."
     show cultist at mid_right behind billy with moveinright
@@ -1179,9 +1195,11 @@ label montana:
     arceus "CS?!"
     show cs fakegod at center with moveinleft
     cs "Look at me! I'm purple!"
+    $ renpy.music.set_pause(True, "music")
     play sound "secret/funni.ogg" volume 0.5
     pause 3.0
     stop sound
+    $ renpy.music.set_pause(False, "music")
     arceus "CS, what the fuck are you doing...?!"
     arceus "You are going to definitely get us killed!"
     n "Arceus hides behind the car as the cultist member brings two others with him."
@@ -1204,6 +1222,8 @@ label montana:
     cultist_2 "We need to leave! We're sorry!"
     n "Billy comes up behind CS with one of his gadgets."
     show billy at mid_left with moveinleft
+    stop music fadeout 1.0 
+    play music "<loop 0>blazing_corridor.mp3" volume 0.4    
     billy "Fire a laser! Fire a laser!"
     hide cultist_2 with moveoutright
     n "Massive laser shots land between the cultists as they scramble away!"
@@ -1211,7 +1231,10 @@ label montana:
     hide cultist_3 with moveoutright
     hide cultist with moveoutright
     n "The cultists disappear into the forest."
+    stop music fadeout 3.0 
     billy "That's the power of the Awesome Augement!"
+    play music "<loop 0>secret/showtime.mp3" volume 0.4
+    music Its Showtime - Toby Fox
     cs "Hooray! I'm a god now!"
     arceus "CS, I don't know how you pull this stuff off."
     arceus "Am I still sleeping?"
@@ -1219,6 +1242,7 @@ label montana:
     arceus "Fuck."
     arceus "How many divine beings and reality benders do we have in this universe anyhow?"
     cs "Alright, back on the road to New York!"
+    stop music fadeout 3.0 
     scene car background night
     show billy car
     with fade
@@ -1227,7 +1251,9 @@ label montana:
     scene black with fade
     n "After the night passes, they set off again on their trip."
     scene car background
-    show billy car   
+    show billy car
+    play music "<loop 0>secret/mort_farm.mp3" volume 0.4
+    music Morts farm - ClascyJitto
     cs "Can we stop somewhere to eat? We haven't eaten since yesterday."
     arceus "Yeah unfortunately the one store you guys went to didn't have anything edible."
     billy "Sure yeah, there's a McDonald's up here in a couple miles."
@@ -1260,6 +1286,7 @@ label montana:
 label south_dakota:
     arceus "Welcome to the Great Plains."
     cs "Woohoo!"
+    stop music fadeout 3.0 
     arceus "I don't think you should be super excited, there is like, nothing here."
     cs "Oh yeah, we don't even have trees to look at anymore."
     cs "Is there anything to do in this state?"
@@ -1269,6 +1296,8 @@ label south_dakota:
     n "In about an hour, the crew arrives at Mount Rushmore."
     scene rushmore with fade
     n "They all hitchhike up to the viewing spot to get a good look of the founding fathers."
+    play music "<loop 0>secret/taiikusai_desu_yo.mp3" volume 0.4
+    music Taiikusai Desu Yo - Satoru Kōsaki
     show cs at right with moveinleft
     show arceus at center with moveinleft
     show billy at left with moveinleft
@@ -1293,6 +1322,7 @@ label south_dakota:
     hide cs with moveoutright
     arceus "You scare me, CS. I don't even like, want to question how or why."
     arceus "{size=-12}I do look pretty cool though."
+    stop music fadeout 3.0 
     n "The gang gets back in the car before the overwelming groups of people engulf the site after what just happened."
     scene car plains
     show billy car
