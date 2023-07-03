@@ -345,7 +345,7 @@ image endingai = "bg/ai/cs_arceus.png"
 image entertunnel = "bg/ai/entrancetotunnel.png"
 image linusmedia = "bg/ai/linusmedia.png"
 image secrettunnel = "bg/ai/secret_tunnel.png"
-image ytx = "ytx.png"
+image ytx = Transform("ytx.png", zoom = 0.333)
 
 # Static Images
 image objection = "objection.png"

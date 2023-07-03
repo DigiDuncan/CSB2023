@@ -291,7 +291,7 @@ label boost:
     n "Linus holds the card into the air."
     linus "Behold! {w=0.5} The-- WOAH SHIT {w=0.5}{nw}"
     with vpunch
-    hide ytx with moveoutbottom
+    hide ytx with easeoutbottom
     n "Linus loses grip of the card as it tumbles down onto the table next to him."
     n "CS facepalms, while you can hear Luke laughing in the background."
     cs "Goodness Linus, you should maybe not do that next time."
