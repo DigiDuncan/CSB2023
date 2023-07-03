@@ -11,11 +11,13 @@ init python:
             self.ufo = Image("minigames/car/joj_ufo.png")
             self.laser = Image("minigames/car/laser.png")
 
+            self.current_lane = 0
+
         def render(self, width, height, st, at):
             r = renpy.Render(1920, 1080)
-            if(current_lane==0):
+            if(self.current_lane == 0):
                 r.blit(renpy.load_image(self.billycar), (640, 500))
-            elif(current_lane==1):
+            elif(self.current_lane == 1):
                 r.blit(renpy.load_image(self.billycar), (1280, 500))
             else:
                 r.blit(renpy.load_image(self.billycar), (1920, 500))
@@ -26,14 +28,14 @@ init python:
         def event(self, ev, x, y, st):
             import pygame
             if ev.type == pygame.KEYDOWN and ev.key == pygame.K_LEFT:
-                current_lane-=1
-                if current_lane == -1:
-                    current_lane = 0
+                self.current_lane -= 1
+                if self.current_lane == -1:
+                    self.current_lane = 0
                 renpy.restart_interaction()
             if ev.type == pygame.KEYDOWN and ev.key == pygame.K_RIGHT:
-                current_lane+=1
-                if current_lane == 3:
-                    current_lane = 2
+                self.current_lane += 1
+                if self.current_lane == 3:
+                    self.current_lane = 2
                 renpy.restart_interaction()
             if ev.type == pygame.KEYDOWN and ev.key == pygame.K_END:
                 self.win = True
