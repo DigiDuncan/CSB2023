@@ -547,7 +547,7 @@ label arc_escape:
     scene border_dusk with fade
     show cs dusk at left
     show arceus dusk flipped at mid_left
-    play music "<loop 0>atarashii_kaze.mp3" volume 0.5  
+    play music "<loop 0>atarashii_kaze.mp3" volume 0.3
     music Atarashii Kaze - Satoru Kōsaki
     n "CS and Arc approach the border guard again."
     show border_guard dusk at right with moveinright
@@ -569,9 +569,9 @@ label arc_escape:
     cs "The Hoto Hoto?"
     arceus "Well, I've been at the same hotel, clearing up ties from my cyber criminal past."
     arceus "I've been in prison for five years, so I've had to figure out what to do again for money."
+    stop music fadeout 3.0
     arceus "Anno's been at the hotel too, I think he's planning on starting some kind of band."
     cs "Ah, I see."
-    stop music fadeout 3.0
     scene sheriff_office
     play music "<loop 0>police_station.mp3" volume 0.5  
     music Police Station - Lorin Nelson  
@@ -754,7 +754,7 @@ label good_convince:
     show arceus dark at mid_right_right
     show cs dark
     n "CS and Arc look at each other, and smile."
-    play music "<loop 0>bun_guster.mp3" volume 0.5
+    play music "<loop 0>bun_guster.mp3" volume 0.3
     music Bun Guster - Satoru Kōsaki
     arceus "Holy crap, I didn't think that would work."
     cs "Me neither! I'm so glad that they let us go!"
@@ -1016,7 +1016,7 @@ label billy_driver:
     arceus "What are you doing? That man looks like he's going to kill us!"
     arceus "He's probably getting a gun, we need to lea--"
     show billy at center with moveinleft
-    play music "<loop 0>mm_select.mp3" volume 0.5
+    play music "<loop 0>mm_select.mp3" volume 0.3
     music Mm Select - Matthew Simmonds
     billy "Hi, Billy Mays here for the Uber Driver!"
     billy "The fast and easy way to get people around who don't have a car!"
@@ -1235,7 +1235,9 @@ label montana:
     billy "That's the power of the Awesome Augement!"
     play music "<loop 0>secret/showtime.mp3" volume 0.4
     music Its Showtime - Toby Fox
+    show cs fakegod at center with moveinright
     cs "Hooray! I'm a god now!"
+    show arceus flipped at left with moveinleft
     arceus "CS, I don't know how you pull this stuff off."
     arceus "Am I still sleeping?"
     n "Arceus pinches himself."
@@ -1386,11 +1388,12 @@ label nebraska:
     show arceus flipped at mid_left
     with moveinleft
     pakoo "Here we are, this is probably the best location to eat at, at least that I know of."
+    scene black with fade
     scene peppinopizzabg
-    play music "<loop 0>funiculi_holiday.mp3" volume 0.5
-    music Funiculi Holiday - ClascyJitto
     show peppinopizzafg
     with fade   
+    play music "<loop 0>funiculi_holiday.mp3" volume 0.3
+    music Funiculi Holiday - ClascyJitto
     show peppino at mid_mid_left behind peppinopizzafg with moveinleft
     show pakoo at mid_right with moveinleft
     show billy at right with moveinleft
@@ -1433,6 +1436,9 @@ label iowa:
     billy "Who?"
     cs "They have their UFO and--"
     n "A huge laser beam blasts on the left side of the road, ripping up everything in it's path!"
+    show billy car turn with hpunch
+    show billy car turn with vpunch
+    show billy car
     arceus "Shit, this is bad..."
     cs "Billy, you need to switch lanes when it charges up!"
     jump after_ufo
@@ -1467,7 +1473,7 @@ label ohio:
     with fade
     n "After that fiasco, they travel through Ohio."
     show scott_border
-    play music "<loop 0>breakout.mp3" volume 0.4   
+    play music "<loop 0>breakout.mp3" volume 0.3  
     music Breakout - Shoichiro Sakamoto 
     n "Suddenly, a huge blue border enters everyone's vision."
     arceus "Oh what in the world? There is some red border in my eyes..."
