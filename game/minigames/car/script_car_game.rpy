@@ -22,15 +22,40 @@ init python:
             self.enemy_lane = 0
             self.current_lane = 0
 
+            self.danger_lane = None
+
         def render(self, width, height, st, at):
             if self.start_time is None:
                 self.start_time = st
 
             r = renpy.Render(1920, 1080)
-            if st - self.joj_timer > MOVE_FREQUENCY:
+
+            # ENEMY LOGIC
+            telegraph_cutoff = self.round_timer + TELEGRAPH_TIME
+            danger_cutoff = telegraph_cutoff + DANGER_TIME
+            # Move enemy
+            if st - self.round_timer > MOVE_FREQUENCY:
                 #Fire logic
                 self.enemy_lane = renpy.random.randint(0, 2)
                 self.round_timer = st
+
+            # Telegraphing period
+            if st < telegraph_cutoff:
+                # TODO: Show telegraph animation
+                pass
+
+            # Danger period
+            if telegraph_cutoff < st < danger_cutoff:
+                self.danger_lane = self.enemy_lane
+
+            # No more danger
+            if danger_cutoff < st:
+                self.danger_lane = None
+
+            # PLAYER LOGIC
+            if self.current_lane == self.danger_lane:
+                self.win = False
+                return self.win
 
             r.blit(renpy.load_image(self.billycar), (LANE_X[self.current_lane], CAR_Y))
             r.blit(renpy.load_image(self.ufo), (LANE_X[self.enemy_lane], UFO_Y))
