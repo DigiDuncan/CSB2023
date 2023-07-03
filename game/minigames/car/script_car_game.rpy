@@ -15,12 +15,13 @@ init python:
 
         def render(self, width, height, st, at):
             r = renpy.Render(1920, 1080)
+            car_y = 784
             if(self.current_lane == 0):
-                r.blit(renpy.load_image(self.billycar), (640, 500))
+                r.blit(renpy.load_image(self.billycar), (671, car_y))
             elif(self.current_lane == 1):
-                r.blit(renpy.load_image(self.billycar), (1280, 500))
+                r.blit(renpy.load_image(self.billycar), (880, car_y))
             else:
-                r.blit(renpy.load_image(self.billycar), (1920, 500))
+                r.blit(renpy.load_image(self.billycar), (1107, car_y))
 
             renpy.redraw(self, 0)
             return r
