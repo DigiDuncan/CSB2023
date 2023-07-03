@@ -444,12 +444,7 @@ label ytp_fan:
     cs "Arceus, what's going on? Where have you been?"
     arceus "Look, CS, we don't have much time. I know that you've been living here for a while, but the cops are still looking to extradite us back to America, and they are headed to LTT to search for you!"
     linus "WHAT? CS, why are the cops chasing you? This could seriously damage our reputation {size=-10}more than the time I mentioned I dropped hard R's as a kid!"
-    menu:
-        "What will CS do?"
-        "I'm going to stay with LTT.":
-            jump cops_ltt
-        "Escape with Arceus.":
-            jump arc_escape    
+    jump arc_escape
 
 
 label both_fan:
