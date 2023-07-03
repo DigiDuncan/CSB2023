@@ -350,7 +350,43 @@ label boost:
             jump reviews
 
 label reviews:
-    jump secret
+    cs "I'm up to doing more review videos with you."
+    show linus at center with ease
+    linus "Sweet! I'll make sure to hit you up for our next video!"
+    linus "If you want, you can think of some ideas for next time."
+    linus "You should probably head out for now, it's getting late."
+    cs "Yeah, I just hope that my community will move on with this new content."
+    cs "I've been making Youtube Poops for a while now, so I hope they understand in due time."
+    linus "I'm sure you'll be okay, plus the LTT fanbase is much bigger!"
+    cs "I guess so."
+    n "Before CS can think about this too much, a lot of commotion can be heard at the front of the building."
+    show colton at right with moveinright
+    colton "Linus! There is a furry outside!"
+    linus "What?"
+    linus "Hold on, lemme check."
+    n "CS and Linus rush to the front door."
+    scene frontdoor with fade
+    show linus at right with moveinleft
+    show cs at center with moveinleft
+    n "Linus goes to open the door."
+    linus "Who's there? Is anyone here?"
+    n "Suddenly, Arceus rushes in through the doors."
+    show arceus at mid_right with moveinright
+    arceus "CS! There you are! We need to go ASAP!"
+    play music "<loop 0>hired_guns.mp3" volume 0.5
+    music Hired Guns - Brian Johnston
+    linus "CS? You know this person?"
+    show cs worried
+    cs "It's a long story."
+    cs "Arceus, what's going on? Where have you been?"
+    arceus "Look, CS, we don't have much time. I know that you've been living here for a while, but the cops are still looking to extradite us back to America, and they are headed to LTT to search for you!"
+    linus "WHAT? CS, why are the cops chasing you? This could seriously damage our reputation {size=-10}more than the time I mentioned I dropped hard R's as a kid!"
+    menu:
+        "What will CS do?"
+        "I'm going to stay with LTT.":
+            jump cops_ltt
+        "Escape with Arceus.":
+            jump arc_escape    
     
 label ytp_edit:
     show linus at offscreenright
@@ -377,6 +413,44 @@ label ytp_edit:
             jump both_fan
         "Ignore them and keep making your own YTPs.":
             jump ytp_fan
+
+label ytp_fan:
+    cs "Well, I want to keep working on YTPs!"
+    show cs angry
+    cs "This is like, what I built my life on, and I just..."
+    linus "CS? Are you okay? Maybe you should take a chill pill."
+    cs "I thought you liked YTPs a lot! You said you hired me because of it!"
+    taran "What? You hired him because of that?"
+    linus "Look let's all just calm down okay? If you wanna keep doing YTPs, fine, but if it messes up our company you have to either stop or you're fired."
+    cs "Fine!"
+    n "Before CS can storm off, Colton rushes in with some info."
+    show colton at right with moveinright    
+    colton "Linus! There is a furry outside!"
+    linus "What?"
+    linus "Hold on, lemme check."
+    n "CS and Linus rush to the front door."
+    scene frontdoor with fade
+    show linus at right with moveinleft
+    show cs at center with moveinleft
+    n "Linus goes to open the door."
+    linus "Who's there? Is anyone here?"
+    n "Suddenly, Arceus rushes in through the doors."
+    show arceus at mid_right with moveinright
+    arceus "CS! There you are! We need to go ASAP!"
+    play music "<loop 0>hired_guns.mp3" volume 0.5
+    music Hired Guns - Brian Johnston
+    linus "CS? Seriously?"
+    show cs worried
+    cs "Arceus, what's going on? Where have you been?"
+    arceus "Look, CS, we don't have much time. I know that you've been living here for a while, but the cops are still looking to extradite us back to America, and they are headed to LTT to search for you!"
+    linus "WHAT? CS, why are the cops chasing you? This could seriously damage our reputation {size=-10}more than the time I mentioned I dropped hard R's as a kid!"
+    menu:
+        "What will CS do?"
+        "I'm going to stay with LTT.":
+            jump cops_ltt
+        "Escape with Arceus.":
+            jump arc_escape    
+
 
 label both_fan:
     stop music
@@ -1687,6 +1761,9 @@ label talktohohsis:
     music New Leaf Title Theme - Kazumi Totaka
     show cs at center with moveinleft
     cs "Ah, it's good to be home again!"
+    jump true_ending
+
+label true_ending:
     n "CS looks over at his desk, where a new computer is sitting."
     scene cs_room_2 with fade
     n "CS looks at the monitor that has a sticky note that says \"From LTT\"."
@@ -1722,5 +1799,3 @@ label copsathohsis:
 label high_gpu:
     jump secret
 
-label ytp_fan:
-    jump secret
