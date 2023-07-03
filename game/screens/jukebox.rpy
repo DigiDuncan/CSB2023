@@ -133,7 +133,7 @@ screen music_screen(l):
                 rotate 0
                 linear 5.0 rotate 360.0
                 repeat
-        if album_map[l] is None or l not in album_map:
+        if l not in album_map.keys() or album_map[l] is None:
             image "images/jukebox/csbi.png":
                 xysize(500, 500)
                 xalign(0.225)
