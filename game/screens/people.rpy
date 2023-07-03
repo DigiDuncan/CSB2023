@@ -29,6 +29,12 @@ init python:
         "colton": "Colton Potter",
         "sheriff": "Sheriff",
         "billy": "Billy Mays"
+        "cultist": "Cultist Leader"
+        "cultist_2": "Cultists"
+        "pakoo": "Pakoo"
+        "peppino": "Peppino Spaghetti"
+        "scott": "Scott Wozniak"
+        "terry": "Terry Lesler"
     }
 
 screen people_nav():
