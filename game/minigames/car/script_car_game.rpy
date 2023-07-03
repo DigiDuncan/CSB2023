@@ -2,8 +2,8 @@ init python:
     import math
 
     LANE_X = [671, 880, 1107]
-    CAR_Y = 784
-    UFO_Y = 99
+    CAR_Y = 790
+    UFO_Y = 100
 
     MOVE_FREQUENCY = 5
     TELEGRAPH_DELAY = 1
@@ -54,7 +54,7 @@ init python:
             # Danger period
             if telegraph_cutoff < st < danger_cutoff:
                 self.danger_lane = self.enemy_lane
-                r.blit(laser_renderer, (LANE_X[self.enemy_lane], UFO_Y))
+                r.blit(laser_renderer, (LANE_X[self.enemy_lane] - 15, UFO_Y))
 
             current_ufo_x = LANE_X[self.enemy_lane] + math.sin(st * SWAY_PERIOD) * SWAY_DISTANCE
             # Telegraphing period
@@ -95,7 +95,6 @@ init python:
                 renpy.restart_interaction()
             if ev.type == pygame.KEYDOWN and ev.key == pygame.K_END:
                 self.win = True
-                return self.win
             if self.win is not None:
                 return self.win
 
