@@ -28,12 +28,12 @@ init python:
         "taran": "Taran Van Hemert",
         "colton": "Colton Potter",
         "sheriff": "Sheriff",
-        "billy": "Billy Mays"
-        "cultist": "Cultist Leader"
-        "cultist_2": "Cultists"
-        "pakoo": "Pakoo"
-        "peppino": "Peppino Spaghetti"
-        "scott": "Scott Wozniak"
+        "billy": "Billy Mays",
+        "cultist": "Cultist Leader",
+        "cultist_2": "Cultists",
+        "pakoo": "Pakoo",
+        "peppino": "Peppino Spaghetti",
+        "scott": "Scott Wozniak",
         "terry": "Terry Lesler"
     }
 
