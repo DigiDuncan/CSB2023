@@ -421,7 +421,7 @@ label ytp_fan:
     linus "CS? Are you okay? Maybe you should take a chill pill."
     cs "I thought you liked YTPs a lot! You said you hired me because of it!"
     taran "What? You hired him because of that?"
-    linus "Look let's all just calm down okay? If you wanna keep doing YTPs, fine, but if it messes up our company you have to either stop or you're fired."
+    linus "Look, let's all just calm down okay? If you wanna keep doing YTPs, fine, but if it messes up our company you have to either stop or you're fired."
     cs "Fine!"
     n "Before CS can storm off, Colton rushes in with some info."
     show colton at right with moveinright    
@@ -1186,7 +1186,7 @@ label montana:
     show billy at right with moveinright
     show cs
     billy "You ready to go CS?"
-    cs "Yep! let's check out and keep going!"
+    cs "Yep! Let's check out and keep going!"
     billy "Where is the cashier in this store? I didn't see anyone..."
     show cashier at center with moveinbottom
     show cs worried
@@ -1378,7 +1378,7 @@ label south_dakota:
     scene black with fade
     n "In about an hour, the crew arrives at Mount Rushmore."
     scene rushmore with fade
-    n "They all hitchhike up to the viewing spot to get a good look of the founding fathers."
+    n "They all hike up to the viewing spot to get a good look of the founding fathers."
     play music "<loop 0>taiikusai_desu_yo.mp3" volume 0.4
     music Taiikusai Desu Yo - Satoru Kōsaki
     show cs at right with moveinleft
@@ -1601,7 +1601,7 @@ label back_home:
     n "After the long and treacherous journey, CS finally arrives at his house."
     show arceus flipped at left with moveinleft
     arceus "We made it back to your house CS!"
-    show cs at center with moveinleft
+    show cs flipped at center with moveinright
     cs "Finally I'm home..."
     cs "Arceus, thank you so much for everything on this trip. I couldn't have done it without you."
     arceus "Aw, it was nice helping ya here."
