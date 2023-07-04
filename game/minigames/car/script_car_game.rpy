@@ -2,7 +2,7 @@ init python:
     import math
 
     LANE_X = [671, 880, 1107]
-    CAR_Y = 790
+    CAR_Y = 770
     UFO_Y = 100
 
     MOVE_FREQUENCY = 5
@@ -54,7 +54,7 @@ init python:
             # Danger period
             if telegraph_cutoff < st < danger_cutoff:
                 self.danger_lane = self.enemy_lane
-                r.blit(laser_renderer, (LANE_X[self.enemy_lane] - 15, UFO_Y))
+                r.blit(laser_renderer, (LANE_X[self.enemy_lane] - 15, UFO_Y+99))
 
             current_ufo_x = LANE_X[self.enemy_lane] + math.sin(st * SWAY_PERIOD) * SWAY_DISTANCE
             # Telegraphing period
