@@ -401,6 +401,8 @@ screen start_menu():
                     at transform:
                         zoom 0.666
                     action Play("sound", "sfx-valid.wav"), Hide("start_menu", Fade(1.0)), Jump("choose_direction")
+                imagebutton idle "missing" hover_sound "sfx-select.wav":
+                    action Play("sound", "sfx-valid.wav"), Hide("start_menu", Fade(1.0, 1.0, 1.0)), Jump("play_cargame")
 
 style start_window is empty
 
