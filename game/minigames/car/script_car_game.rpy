@@ -65,14 +65,11 @@ init python:
                 # Logic for the energy ball
                 laser_ball_displayable = renpy.displayable(self.laser_ball)
                 l = (st - telegraph_start) / (telegraph_cutoff - telegraph_start)
-                t = Transform(laser_ball_displayable, zoom=l)
-                t.xanchor = 0.5
-                t.yanchor = 0.5
-                
-                w, h = 180 * l, 180 * l
-
+                t = Transform(laser_ball_displayable, xysize=(l, l), anchor=(0.5, 0.5))
+                w = l * 180
+                h = l * 180
                 laser_ball_renderer = renpy.render(t, w, h, st, at)
-                r.blit(laser_ball_renderer, (LANE_X[self.enemy_lane] + (w / 2) - 15, (UFO_Y + 99) + (h / 2)))
+                r.blit(laser_ball_renderer, (LANE_X[self.enemy_lane], (UFO_Y + 99)))
 
                 r.blit(ufo_renderer, (LANE_X[self.enemy_lane], UFO_Y))
             else:
