@@ -1,17 +1,19 @@
 init python:
     import math
 
+    # Graphics
     LANE_X = [671, 880, 1107]
     CAR_Y = 770
     UFO_Y = 100
+    SWAY_PERIOD = 5
+    SWAY_DISTANCE = 20
 
+    # Difficulty
     MOVE_FREQUENCY = 5
     TELEGRAPH_DELAY = 1
     TELEGRAPH_TIME = 0.5
     DANGER_TIME = 1.0
     FIRE_COUNT = 20
-    SWAY_PERIOD = 5
-    SWAY_DISTANCE = 20
 
     class CarGameDisplayable(renpy.Displayable):
         def __init__(self):
