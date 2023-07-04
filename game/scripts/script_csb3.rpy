@@ -1525,7 +1525,7 @@ label iowa:
     show billy car
     arceus "Shit, this is bad..."
     cs "Billy, you need to switch lanes when it charges up!"
-    jump after_ufo
+    jump play_cargame
 
 label after_ufo:
     scene car plains

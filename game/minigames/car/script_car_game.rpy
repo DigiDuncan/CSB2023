@@ -144,8 +144,10 @@ label play_cargame:
 
     if _return == True:
         arceus "GG, dipshit."
+        jump after_ufo
     else:
-        arceus "You failed at a WIP game. What the fuck."
+        arceus "You failed. What the fuck."
+        jump iowa
 
 label cargame_done:
     show arceus
