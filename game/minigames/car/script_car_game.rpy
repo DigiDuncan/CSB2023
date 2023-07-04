@@ -57,7 +57,7 @@ init python:
             # Danger period
             if telegraph_cutoff < st < danger_cutoff:
                 self.danger_lane = self.enemy_lane
-                r.blit(laser_renderer, (LANE_X[self.enemy_lane] - 15, UFO_Y+99))
+                r.blit(laser_renderer, (LANE_X[self.enemy_lane] - 15, UFO_Y+50))
 
             current_ufo_x = LANE_X[self.enemy_lane] + math.sin(st * SWAY_PERIOD) * SWAY_DISTANCE
             # Telegraphing period
@@ -71,7 +71,7 @@ init python:
                 laser_ball_renderer = renpy.render(t, w, h, st, at)
                 xo = (abs(l-1) * 180) / 2
                 yo = (abs(l-1) * 180) / 2
-                r.blit(laser_ball_renderer, ((LANE_X[self.enemy_lane] + xo), UFO_Y + yo))
+                r.blit(laser_ball_renderer, ((LANE_X[self.enemy_lane] + xo)-25, UFO_Y + yo))
 
                 r.blit(ufo_renderer, (LANE_X[self.enemy_lane], UFO_Y))
             else:
