@@ -62,16 +62,19 @@ init python:
             current_ufo_x = LANE_X[self.enemy_lane] + math.sin(st * SWAY_PERIOD) * SWAY_DISTANCE
             # Telegraphing period
             if telegraph_start < st < telegraph_cutoff:
-                # TODO: Better telegraph animation
-                r.blit(ufo_renderer, (LANE_X[self.enemy_lane], UFO_Y))
                 # Logic for the energy ball
                 laser_ball_displayable = renpy.displayable(self.laser_ball)
-                t = Transform(laser_ball_displayable, zoom=st*((st-telegraph_start)/(telegraph_cutoff-telegraph_start)))
+                l = (st - telegraph_start) / (telegraph_cutoff - telegraph_start)
+                t = Transform(laser_ball_displayable, zoom=l)
+                t.xanchor = 0.5
+                t.yanchor = 0.5
+                
+                w, h = 180 * l, 180 * l
 
-                laser_ball_renderer = renpy.render(t, 180, 180, st, at)
-                #laser_ball_renderer.zoom(st*((st-telegraph_start)/(telegraph_cutoff-telegraph_start)), st*((st-telegraph_start)/(telegraph_cutoff-telegraph_start)))
-                r.blit(laser_ball_renderer, (LANE_X[self.enemy_lane]-(180/2) - 15, (UFO_Y+99)-(180/2)))
+                laser_ball_renderer = renpy.render(t, w, h, st, at)
+                r.blit(laser_ball_renderer, (LANE_X[self.enemy_lane] + (w / 2) - 15, (UFO_Y + 99) + (h / 2)))
 
+                r.blit(ufo_renderer, (LANE_X[self.enemy_lane], UFO_Y))
             else:
                 r.blit(ufo_renderer, (current_ufo_x, UFO_Y))
 
