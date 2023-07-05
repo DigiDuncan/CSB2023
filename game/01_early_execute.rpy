@@ -88,6 +88,10 @@ init python:
     renpy.image("_music_text", DynamicDisplayable(_music_gen_text))
 
     # ANIM CODE LITERALLY FROM CHARM
+    def clamp(minVal, val, maxVal):
+        """Clamp a `val` to be no lower than `minVal`, and no higher than `maxVal`."""
+        return max(minVal, min(maxVal, val))
+
     def find_percent(start: float, end: float, x: float) -> float:
         """Convert a number to its progress through the range start -> end, from 0 to 1.
 
