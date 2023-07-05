@@ -783,7 +783,7 @@ label attack_arc:
     n "CS channels CSGod."
     hide cs
     show csgod flipped at left
-    csgod "Time to Die, Arceus!"
+    csgod "Time to die, Arceus!"
     show arceus dark
     stop music
     music end
@@ -795,6 +795,64 @@ label attack_arc:
     arceus "Nice try."
     return
 
+label wait_arc:
+    cs "{size=-15}I need to wait. I'm not powerful enough to attack."
+    arceus "Man, I hope you are doing fine."
+    cs "Yep!"
+    stop music
+    music end
+    pause 5.0
+    n "The duo walks silently for a few hours, and eventually the sun rises."
+    scene washington_road morning
+    show arceus at right
+    show cs at left
+    with fade
+    pause 3.0
+    arceus "So uhh, should we keep going this direction?"
+    cs "..."
+    cs "Yep."
+    pause 5.0
+    scene town
+    show arceus at right
+    show cs at left
+    with fade    
+    pause 2.0
+    arceus "Hey, we found a town! That's good right?"
+    cs "Yep."
+    arceus "Dude, are you sure you're okay?"
+    arceus "You haven't said anything, like at all for the past several hours."
+    cs "I'm fine."
+    arceus "...okay."
+    arceus "Well uhh, what should we do now?"
+    arceus "Are we gonna like, try to get you home?"
+    arceus "{size=-4}Do you wanna even go home?"
+    cs "Yes yes, let's just wait here."
+    arceus "In the middle of the road?"
+    arceus "Why?"
+    arceus "There is someone coming! Shouldn't we move?"
+    pause 1.0
+    arceus "Hello?"
+    n "All of a sudden, the car driving at them slowly stops."
+    n "The man inside gets out of the car."
+    show billy at center with moveinright
+    billy "Hey that's my car!"
+    billy "What are you doing?"
+    cs "Take us to these coordinates: 46.5754, -112.3008."
+    billy "I uhh,"
+    pause 2.0
+    billy "No problem!"
+    billy "Let's go!"
+    scene car background
+    show billy car
+    pause 5.0
+    scene car background night
+    show billy car
+    with fade
+    pause 3.0
+    n "For the whole drive, no one says a word."
+    scene cultforest
+    show billy car
+    billy "Welp. We are here."
 
 label pussy_out_forest:
     cs "Arceus quick! Let's escape into the forest!"
