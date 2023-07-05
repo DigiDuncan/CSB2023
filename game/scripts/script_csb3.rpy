@@ -533,7 +533,7 @@ label cops_ltt:
     n "Arc shrugs and walks away, as he goes to escape on his own."
     hide arceus with moveoutright
     linus "CS, what happened with the cops?! I still have no clue what's going on!"
-    show csbiii_start
+    show cs
     cs "Look okay, so there were these guys from a company called HoH SiS, who do foundation repair."
     cs "My house was in dire need of foundation repair, so I called them up to come help fix my house."
     cs "They also thought I was prank caller because I made that one video about them a long time ago,"
@@ -722,7 +722,54 @@ label arc_escape:
             jump pussy_out_forest
 
 label ytp_magic_fight:
-    jump secret
+    show cs concentrate
+    n "CS closes his eyes. He starts to concentrate on the sirens and the car."
+    play sound "<loop 0>siren.ogg" loop fadein 3.0 volume 0.4
+    arceus "CS?!? What are you doing!?"
+    play sound "<loop 0>siren.ogg" loop volume 0.5
+    arceus "CS!!!! They're heading right at us!!"
+    play sound "<loop 0>siren.ogg" loop volume 0.6
+    scene black
+    arceus "CS!!!!!!!!!!!!"
+    play sound "<loop 0>siren.ogg" loop fadein 1.0 volume 2
+    pause 1.0
+    play sound "car_crash.ogg" volume 0.7
+    pause 7.0
+    n "CopGuy's car flies off the road and violently crashes into the forest."
+    scene washington_road
+    show arceus dark at right
+    show cs concentrate at left
+    with fade
+    pause 3.0
+    show cs
+    pause 1.0
+    show cs concentrate
+    pause 0.2
+    show cs
+    pause 1.0
+    arceus "CS??? Are you okay?"
+    cs "Yeah, I feel really good actually."
+    cs "Are we good?"
+    arceus "..."
+    arceus "I guess so."
+    arceus "CopGuy, he..."
+    cs "Yeah I took care of him, didn't I?"
+    arceus "I guess you did."
+    cs "Should we keep going?"
+    arceus "Are you not like, phased at all by this?"
+    cs "Eh, not really."
+    arceus "Alright, well..."
+    arceus "Let's keep going..."
+    scene black with fade
+    scene washington_road with fade
+    show cs dark at left with moveinleft
+    show arceus dark at right with moveinright
+    play music "<loop 0>killcops.mp3" volume 0.5
+    music Echoing? - Banana
+    n "The duo continues to travel along the road."
+    n "CS talks to himself along the way, with Arceus weary of his actions still."
+    cs "{size=-25}39463609346834683806834683068436803806489368389046803864368869034806849368030689"
+
 
 label pussy_out_forest:
     cs "Arceus quick! Let's escape into the forest!"
