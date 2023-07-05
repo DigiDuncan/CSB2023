@@ -1414,7 +1414,7 @@ label south_dakota:
     n "They continue to drive though the massive and empty plains of South Dakota."
     play music "<loop 0>track4.mp3" volume 0.4
     music Track 4 - Weatherscan
-    n "By the time they reach Salt Lake City, it is already evening."
+    n "By the time they reach Sioux City, it is already evening."
     cs "There really is nothing out here, is there?"
     arceus "Nope. I don't get how people can even live here."
     billy "We're like halfway through the Midwest, we've only got a couple states left to travel before we are in the heartland."
