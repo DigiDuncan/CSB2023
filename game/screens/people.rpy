@@ -54,7 +54,7 @@ screen people_nav():
             for k in name_map.keys():
                 if k in persistent.seen:
                     if k == "iris":
-                        textbutton name_map[k] action ShowMenu("person", k), ShowMenu("fake_error", "people.rpy", 126, "\"bios/iris.txt\" could not be rendered as a Text object.", "actual bio text", _transition = determination)
+                        textbutton name_map[k] action ShowMenu("person", k), ShowMenu("fake_error", "people.rpy", 126, "`bios/iris.txt` could not be rendered as a Text object.", "Hi, I'm Iris, a cosmic being with interest in the happenings of this reality, as well as some of the people involved in this story.\nDoes that sound too formal? I don't know. Hey, Digi, writing this shit's hard. You can fill in the rest from here.", _transition = determination)
                     else:
                         textbutton name_map[k] action ShowMenu("person", k)
 
@@ -115,7 +115,7 @@ screen person(l):
                     try:
                         fetched = renpy.file(f"bios/{l}.txt").read().decode('utf-8').replace("\r", "")
                     except:
-                        fetched = "This character currently does not have a bio and is currently experiencing an existential crisis."
+                        fetched = "The bio didn't load correctly. Ask Digi to fix the game."
 
                 text (fetched)
             if l == "cs":

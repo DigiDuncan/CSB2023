@@ -9,3 +9,5 @@ traceback.txt
 *.bak
 
 renpy/
+
+traceback_user.txt
