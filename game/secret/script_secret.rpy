@@ -32,7 +32,7 @@ label secret2:
     play sound "alt_punch.ogg"
     show digi at t_punchup with move
     show pakoo at center with hpunch
-    play music "<loop 0>secret/showtime.mp3" volume 0.5
+    play music "<loop 0>showtime.mp3" volume 0.5
     pakoo "Thats fucking right, we finished the True Ending!"
     pakoo "I am horribly drawn and it's 5am but hell yeah we fuckin diiiiiiiiiiiiiiidd ittttttttttt!!!!!!"
     pakoo "Yeeaaaaaahhhhh!!! Wooooooooo!!!! Wooooooo!!! Tetttttriiissssssss!!!{nw}"

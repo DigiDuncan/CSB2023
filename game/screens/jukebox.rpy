@@ -33,23 +33,35 @@ init python:
         "Bun Guster - Satoru Kōsaki": "bun_guster.mp3",
         "Happy Roaming - Lorin Nelson": "happy_roaming.mp3",
         "Mm Select - Matthew Simmonds": "mm_select.mp3",
-        "Lets do this - Home Depot": "home_depot.mp3",
+        "Let's Do This - Home Depot": "home_depot.mp3",
         "Candle World - Kikiyama": "candle_world.mp3",
-        "Its Showtime - Toby Fox": "showtime.mp3",
-        "Morts farm - ClascyJitto": "mort_farm.mp3",
-        "Taiikusai Desu Yo - Satoru Kōsaki": "taiikusai_desu_yo.mp3",
+        "It's Showtime - Toby Fox": "showtime.mp3",
+        "Mort's Farm - ClascyJitto": "mort_farm.mp3",
+        "Taiikusai Desu Yo - Satoru Kosaki": "taiikusai_desu_yo.mp3",
         "Track 4 - Weatherscan": "track4.mp3",
         "Funiculi Holiday - ClascyJitto": "funiculi_holiday.mp3",
         "Speedy Comet - Mahito Yokota": "speedy_comet.mp3",
         "Breakout - Shoichiro Sakamoto": "breakout.mp3",
         "Park Theme - Lorin Nelson": "park_theme.mp3",
-        "Alfreds Theme - Eminem": "hohsisremix.mp3",
+        "Alfred's Theme - Eminem": "hohsisremix.mp3",
         "Track 3 - Weatherscan": "track3.mp3",
-        "New leaf Title Theme - Kazumi Totaka": "ac_title.mp3"
+        "New Leaf Title Theme - Kazumi Totaka": "ac_title.mp3"
     }
     global album_map
 
-    album_map = {}
+    album_map = {
+        "CANYON.MID - George Stone": "windows.png",
+        "PASSPORT.MID - George Stone": "windows.png",
+        "stal - C418": "minecraft.png",
+        "Basement - Toby Fox": "undertale.png",
+        "Undyne - Toby Fox": "undertale.png",
+        "It's Showtime - Toby Fox": "undertale.png",
+        "Danger Mystery - Toby Fox": "undertale.png",
+        "Card Castle - Toby Fox": "deltarune.png",
+        "Let's Do This - Home Depot": "homedepot.png",
+        "Alfred's Theme - Eminem": "mtbmb.png",
+        "New Leaf Title Theme - Kazumi Totaka": "newleaf.png"
+    }
 
 screen jukebox_nav():
 
@@ -138,6 +150,8 @@ screen music_screen(l):
                 xysize(500, 500)
                 xalign(0.225)
                 yalign(0.5)
-                #You write the actual entry here. I suggest you split your text into smaller text _p sections, otherwise the text might overlap with
-                #the scrollbars. If you're sure that your text fits the screen and scrolling is not needed then comment out everything starting from "scrollbars vertical" to
-                #"pagekeys True" as seen in the next entry. If you do this, splitting the text is not needed.
+        else:
+            image f"images/jukebox/{album_map[l]}":
+                xysize(500, 500)
+                xalign(0.225)
+                yalign(0.5)

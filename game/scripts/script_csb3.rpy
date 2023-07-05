@@ -1334,7 +1334,7 @@ label montana:
     stop music fadeout 3.0 
     music end
     billy "That's the power of the Awesome Augement!"
-    play music "<loop 0>secret/showtime.mp3" volume 0.4
+    play music "<loop 0>showtime.mp3" volume 0.4
     music "It's Showtime - Toby Fox"
     show cs fakegod at center with moveinright
     cs "Hooray! I'm a god now!"
