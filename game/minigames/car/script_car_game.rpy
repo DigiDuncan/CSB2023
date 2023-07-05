@@ -13,6 +13,7 @@ init python:
     TELEGRAPH_DELAY = 1
     TELEGRAPH_TIME = 0.5
     DANGER_TIME = 1.0
+    DIFF_UP = 10
     FIRE_COUNT = 21
 
     class CarGameDisplayable(renpy.Displayable):
@@ -94,7 +95,11 @@ init python:
                         self.ufo_last_x = LANE_X[self.enemy_lane]
                     else:
                         self.ufo_last_x = 0
-                    self.enemy_lane = renpy.random.randint(0, 2)
+                    # "Smart" randomize
+                    if self.fires >= DIFF_UP:
+                        self.enemy_lane = renpy.random.choice([self.current_lane, renpy.random.randint(0, 2)])
+                    else:
+                        self.enemy_lane = renpy.random.randint(0, 2)
                     self.ufo_last_move = st
                     self.ufo_move_time = st + 0.5
                     self.fires += 1
@@ -105,7 +110,7 @@ init python:
                     # Difficulty increase
                     global MOVE_FREQUENCY, TELEGRAPH_DELAY
                     MOVE_FREQUENCY -= 0.15
-                    if self.fires == 10:
+                    if self.fires == DIFF_UP:
                         TELEGRAPH_DELAY = 0.5
 
                 # Danger period
@@ -134,7 +139,7 @@ init python:
                     l = (st - telegraph_start) / (telegraph_cutoff - telegraph_start)
                     t = Transform(laser_ball_displayable, xysize=(l, l), anchor=(0.5, 0.5))
                     # Tint energy ball red for fast lasers
-                    if self.fires >= 10:
+                    if self.fires >= DIFF_UP:
                         t.matrixcolor = TintMatrix("#f00")
                     # Render energy ball
                     laser_ball_renderer = renpy.render(t, 180, 180, st, at)
