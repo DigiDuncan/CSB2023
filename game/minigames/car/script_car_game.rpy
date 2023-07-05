@@ -38,6 +38,10 @@ init python:
             self.entered = False
             self.exited = False
 
+            self.ufo_last_move = 0
+            self.ufo_move_time = 0
+            self.ufo_last_x = 0
+
         def render(self, width, height, st, at):
             global MOVE_FREQUENCY, TELEGRAPH_DELAY
             if self.start_time is None:
@@ -76,7 +80,13 @@ init python:
                 if st - self.round_timer > MOVE_FREQUENCY:
                     renpy.sound.play("minigames/car/joj_loop.wav", channel=0)
                     #Fire logic
+                    if self.enemy_lane is not None:
+                        self.ufo_last_x = LANE_X[self.enemy_lane]
+                    else:
+                        self.ufo_last_x = 0
                     self.enemy_lane = renpy.random.randint(0, 2)
+                    self.ufo_last_move = st
+                    self.ufo_move_time = st + 0.5
                     self.fires += 1
                     self.round_timer = st
                     MOVE_FREQUENCY -= 0.15
@@ -92,7 +102,14 @@ init python:
                         renpy.sound.play("minigames/car/gaster_blast.wav", channel=0)
                         self.played_fire = True
                     r.blit(laser_renderer, (LANE_X[self.enemy_lane] - 15, UFO_Y+50))
-                current_ufo_x = LANE_X[self.enemy_lane] + math.sin(st * SWAY_PERIOD) * SWAY_DISTANCE
+
+                # UFO X
+
+                if telegraph_start < st <telegraph_cutoff:
+                    cx = LANE_X[self.enemy_lane] + math.sin(st * SWAY_PERIOD) * SWAY_DISTANCE
+                else:
+                    cx = LANE_X[self.enemy_lane]
+                current_ufo_x = ease_linear(self.ufo_last_x, cx, self.ufo_last_move, self.ufo_move_time, st)
                 # Starting to telegraph
 
                 # Telegraphing period
@@ -113,7 +130,7 @@ init python:
                     yo = (abs(l-1) * 180) / 2
                     r.blit(laser_ball_renderer, ((LANE_X[self.enemy_lane] + xo)-25, UFO_Y + yo))
 
-                    r.blit(ufo_renderer, (LANE_X[self.enemy_lane], UFO_Y))
+                    r.blit(ufo_renderer, (current_ufo_x, UFO_Y))
                 else:
                     r.blit(ufo_renderer, (current_ufo_x, UFO_Y))
 
