@@ -13,7 +13,7 @@ init python:
     TELEGRAPH_DELAY = 1
     TELEGRAPH_TIME = 0.5
     DANGER_TIME = 1.0
-    FIRE_COUNT = 20
+    FIRE_COUNT = 21
 
     class CarGameDisplayable(renpy.Displayable):
         def __init__(self):
@@ -35,6 +35,9 @@ init python:
             self.played_charge = False
             self.played_fire = False
 
+            self.entered = False
+            self.exited = False
+
         def render(self, width, height, st, at):
             if self.start_time is None:
                 self.start_time = st
@@ -44,62 +47,75 @@ init python:
             car_renderer = renpy.load_image(self.billycar)
             ufo_renderer = renpy.load_image(self.ufo)
             laser_renderer = renpy.load_image(self.laser)
-
-            # ENEMY LOGIC
-            telegraph_start = self.round_timer + TELEGRAPH_TIME
-            telegraph_cutoff = telegraph_start  + TELEGRAPH_DELAY
-            danger_cutoff = telegraph_cutoff + DANGER_TIME
-            # Move enemy
-            if st - self.round_timer > MOVE_FREQUENCY:
-                renpy.sound.play("minigames/car/joj_loop.wav", channel=0)
-                #Fire logic
-                self.enemy_lane = renpy.random.randint(0, 2)
-                self.fires += 1
-                self.round_timer = st
-                self.played_charge = False
-                self.played_fire = False
-
-            # Danger period
-            if telegraph_cutoff < st < danger_cutoff:
-                self.danger_lane = self.enemy_lane
-                if not self.played_fire:
-                    renpy.sound.play("minigames/car/gaster_blast.wav", channel=0)
-                    self.played_fire = True
-                r.blit(laser_renderer, (LANE_X[self.enemy_lane] - 15, UFO_Y+50))
-            current_ufo_x = LANE_X[self.enemy_lane] + math.sin(st * SWAY_PERIOD) * SWAY_DISTANCE
-            # Starting to telegraph
-
-            # Telegraphing period
-            if telegraph_start < st < telegraph_cutoff:
-                if not self.played_charge:
-                    renpy.sound.play("minigames/car/gaster_charge.wav", channel=0)
-                    self.played_charge = True
-                # Logic for the energy ball
-                laser_ball_displayable = renpy.displayable(self.laser_ball)
-                l = (st - telegraph_start) / (telegraph_cutoff - telegraph_start)
-                t = Transform(laser_ball_displayable, xysize=(l, l), anchor=(0.5, 0.5))
-                w = 180
-                h = 180
-                laser_ball_renderer = renpy.render(t, w, h, st, at)
-                xo = (abs(l-1) * 180) / 2
-                yo = (abs(l-1) * 180) / 2
-                r.blit(laser_ball_renderer, ((LANE_X[self.enemy_lane] + xo)-25, UFO_Y + yo))
-
-                r.blit(ufo_renderer, (LANE_X[self.enemy_lane], UFO_Y))
+            if not self.entered:
+                if (st - self.start_time < 3.5):
+                    curr_y = ease_linear(-UFO_Y, UFO_Y, self.start_time+2, self.start_time+3.5, st)
+                    r.blit(ufo_renderer, (LANE_X[self.enemy_lane], curr_y))
+                else:
+                    self.entered = True
+            elif self.exited:
+                # Exit logic
+                if (st - self.round_timer < 3.5):
+                    curr_y = ease_linear(UFO_Y, -UFO_Y, self.round_timer+2, self.round_timer+3.5, st)
+                    r.blit(ufo_renderer, (LANE_X[self.enemy_lane], curr_y))
+                else:
+                    self.win = True
+                    renpy.timeout(0)
             else:
-                r.blit(ufo_renderer, (current_ufo_x, UFO_Y))
+            # ENEMY LOGIC
+                telegraph_start = self.round_timer + TELEGRAPH_TIME
+                telegraph_cutoff = telegraph_start  + TELEGRAPH_DELAY
+                danger_cutoff = telegraph_cutoff + DANGER_TIME
+                # Move enemy
+                if st - self.round_timer > MOVE_FREQUENCY:
+                    renpy.sound.play("minigames/car/joj_loop.wav", channel=0)
+                    #Fire logic
+                    self.enemy_lane = renpy.random.randint(0, 2)
+                    self.fires += 1
+                    self.round_timer = st
+                    self.played_charge = False
+                    self.played_fire = False
 
-            # No more danger
-            if danger_cutoff < st:
-                self.danger_lane = None
+                # Danger period
+                if telegraph_cutoff < st < danger_cutoff:
+                    self.danger_lane = self.enemy_lane
+                    if not self.played_fire:
+                        renpy.sound.play("minigames/car/gaster_blast.wav", channel=0)
+                        self.played_fire = True
+                    r.blit(laser_renderer, (LANE_X[self.enemy_lane] - 15, UFO_Y+50))
+                current_ufo_x = LANE_X[self.enemy_lane] + math.sin(st * SWAY_PERIOD) * SWAY_DISTANCE
+                # Starting to telegraph
+
+                # Telegraphing period
+                if telegraph_start < st < telegraph_cutoff:
+                    if not self.played_charge:
+                        renpy.sound.play("minigames/car/gaster_charge.wav", channel=0)
+                        self.played_charge = True
+                    # Logic for the energy ball
+                    laser_ball_displayable = renpy.displayable(self.laser_ball)
+                    l = (st - telegraph_start) / (telegraph_cutoff - telegraph_start)
+                    t = Transform(laser_ball_displayable, xysize=(l, l), anchor=(0.5, 0.5))
+                    w = 180
+                    h = 180
+                    laser_ball_renderer = renpy.render(t, w, h, st, at)
+                    xo = (abs(l-1) * 180) / 2
+                    yo = (abs(l-1) * 180) / 2
+                    r.blit(laser_ball_renderer, ((LANE_X[self.enemy_lane] + xo)-25, UFO_Y + yo))
+
+                    r.blit(ufo_renderer, (LANE_X[self.enemy_lane], UFO_Y))
+                else:
+                    r.blit(ufo_renderer, (current_ufo_x, UFO_Y))
+
+                # No more danger
+                if danger_cutoff < st:
+                    self.danger_lane = None
 
             # PLAYER LOGIC
             if self.current_lane == self.danger_lane:
                 self.win = False
                 renpy.timeout(0)
             if self.fires >= FIRE_COUNT:
-                self.win = True
-                renpy.timeout(0)
+                self.exited = True
 
             r.blit(car_renderer, (LANE_X[self.current_lane], CAR_Y))
 
