@@ -43,43 +43,53 @@ init python:
             self.ufo_last_x = 0
 
         def render(self, width, height, st, at):
-            global MOVE_FREQUENCY, TELEGRAPH_DELAY
+            # Set start time if it isn't (frame 0)
             if self.start_time is None:
                 self.start_time = st
 
+            # Render object we return at the end
             r = renpy.Render(1920, 1080)
 
+            # Load car and UFO
             car_renderer = renpy.load_image(self.billycar)
             ufo_renderer = renpy.load_image(self.ufo)
+
+            # Make laser red after 10 fires (fast laser)
             if self.fires < 10:
                 laser_renderer = renpy.load_image(self.laser)
             else:
                 laser_displayable = renpy.displayable(self.laser)
                 t = Transform(laser_displayable, matrixcolor = TintMatrix("#f00"))
                 laser_renderer = renpy.render(t, 1920, 1080, st, at)
+            
+            # Enter animation/logic
             if not self.entered:
                 if (st - self.start_time < 3.5):
                     curr_y = ease_linear(-UFO_Y, UFO_Y, self.start_time+2, self.start_time+3.5, st)
                     r.blit(ufo_renderer, (LANE_X[self.enemy_lane], curr_y))
                 else:
                     self.entered = True
+            
+            # Exit animation/logic
             elif self.exited:
-                # Exit logic
                 if (st - self.round_timer < 3.5):
                     curr_y = ease_linear(UFO_Y, -UFO_Y, self.round_timer+2, self.round_timer+3.5, st)
                     r.blit(ufo_renderer, (LANE_X[self.enemy_lane], curr_y))
                 else:
                     self.win = True
                     renpy.timeout(0)
+
+            # Main game loop
             else:
-            # ENEMY LOGIC
+                # Timestamps
                 telegraph_start = self.round_timer + TELEGRAPH_TIME
                 telegraph_cutoff = telegraph_start  + TELEGRAPH_DELAY
                 danger_cutoff = telegraph_cutoff + DANGER_TIME
+
                 # Move enemy
                 if st - self.round_timer > MOVE_FREQUENCY:
+                    # Fire laser logic
                     renpy.sound.play("minigames/car/joj_loop.wav", channel=0)
-                    #Fire logic
                     if self.enemy_lane is not None:
                         self.ufo_last_x = LANE_X[self.enemy_lane]
                     else:
@@ -89,11 +99,14 @@ init python:
                     self.ufo_move_time = st + 0.5
                     self.fires += 1
                     self.round_timer = st
+                    self.played_charge = False
+                    self.played_fire = False
+                    
+                    # Difficulty increase
+                    global MOVE_FREQUENCY, TELEGRAPH_DELAY
                     MOVE_FREQUENCY -= 0.15
                     if self.fires == 10:
                         TELEGRAPH_DELAY = 0.5
-                    self.played_charge = False
-                    self.played_fire = False
 
                 # Danger period
                 if telegraph_cutoff < st < danger_cutoff:
@@ -101,16 +114,15 @@ init python:
                     if not self.played_fire:
                         renpy.sound.play("minigames/car/gaster_blast.wav", channel=0)
                         self.played_fire = True
+                    # Render laser
                     r.blit(laser_renderer, (LANE_X[self.enemy_lane] - 15, UFO_Y+50))
 
                 # UFO X
-
-                if telegraph_start < st <telegraph_cutoff:
-                    cx = LANE_X[self.enemy_lane] + math.sin(st * SWAY_PERIOD) * SWAY_DISTANCE
-                else:
+                if telegraph_start < st < danger_cutoff:
                     cx = LANE_X[self.enemy_lane]
+                else:
+                    cx = LANE_X[self.enemy_lane] + math.sin(st * SWAY_PERIOD) * SWAY_DISTANCE
                 current_ufo_x = ease_linear(self.ufo_last_x, cx, self.ufo_last_move, self.ufo_move_time, st)
-                # Starting to telegraph
 
                 # Telegraphing period
                 if telegraph_start < st < telegraph_cutoff:
@@ -121,18 +133,17 @@ init python:
                     laser_ball_displayable = renpy.displayable(self.laser_ball)
                     l = (st - telegraph_start) / (telegraph_cutoff - telegraph_start)
                     t = Transform(laser_ball_displayable, xysize=(l, l), anchor=(0.5, 0.5))
+                    # Tint energy ball red for fast lasers
                     if self.fires >= 10:
                         t.matrixcolor = TintMatrix("#f00")
-                    w = 180
-                    h = 180
-                    laser_ball_renderer = renpy.render(t, w, h, st, at)
+                    # Render energy ball
+                    laser_ball_renderer = renpy.render(t, 180, 180, st, at)
                     xo = (abs(l-1) * 180) / 2
                     yo = (abs(l-1) * 180) / 2
                     r.blit(laser_ball_renderer, ((LANE_X[self.enemy_lane] + xo)-25, UFO_Y + yo))
 
-                    r.blit(ufo_renderer, (current_ufo_x, UFO_Y))
-                else:
-                    r.blit(ufo_renderer, (current_ufo_x, UFO_Y))
+                # Render UFO
+                r.blit(ufo_renderer, (current_ufo_x, UFO_Y))
 
                 # No more danger
                 if danger_cutoff < st:
@@ -145,6 +156,7 @@ init python:
             if self.fires >= FIRE_COUNT:
                 self.exited = True
 
+            # Render car
             r.blit(car_renderer, (LANE_X[self.current_lane], CAR_Y))
 
             renpy.redraw(self, 0)
