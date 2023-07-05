@@ -1520,6 +1520,7 @@ label iowa:
     billy "Who?"
     cs "They have their UFO and--"
     n "A huge laser beam blasts on the left side of the road, ripping up everything in it's path!"
+    play sound "minigames/car/gaster_blast.wav"
     show billy car turn with hpunch
     show billy car turn with vpunch
     show billy car

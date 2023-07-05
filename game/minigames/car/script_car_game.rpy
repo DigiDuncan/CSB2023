@@ -2,7 +2,7 @@ init python:
     import math
 
     # Graphics
-    LANE_X = [671, 880, 1107]
+    LANE_X = [670, 885, 1100]
     CAR_Y = 770
     UFO_Y = 100
     SWAY_PERIOD = 5
