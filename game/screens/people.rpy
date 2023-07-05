@@ -34,7 +34,8 @@ init python:
         "pakoo": "Pakoo",
         "peppino": "Peppino Spaghetti",
         "scott": "Scott Wozniak",
-        "terry": "Terry Lesler"
+        "terry": "Terry Lesler",
+        "iris": "???"
     }
 
 screen people_nav():
@@ -52,7 +53,10 @@ screen people_nav():
             xoffset 350
             for k in name_map.keys():
                 if k in persistent.seen:
-                    textbutton name_map[k] action ShowMenu("person", k)
+                    if k == "iris":
+                        textbutton name_map[k] action ShowMenu("person", k), ShowMenu("fake_error", "people.rpy", 126, "\"bios/iris.txt\" could not be rendered as a Text object.", "actual bio text", _transition = determination)
+                    else:
+                        textbutton name_map[k] action ShowMenu("person", k)
 
     textbutton "Return to Extras" action ShowMenu("category_welcome") yoffset 950 xoffset 25
     textbutton "Main Menu" action Return() yoffset 1000 xoffset 25
@@ -109,7 +113,7 @@ screen person(l):
                 #"pagekeys True" as seen in the next entry. If you do this, splitting the text is not needed.
                 python:
                     try:
-                        fetched = renpy.file('bios/'+l+".txt").read().decode('utf-8').replace("\r", "")
+                        fetched = renpy.file(f"bios/{l}.txt").read().decode('utf-8').replace("\r", "")
                     except:
                         fetched = "This character currently does not have a bio and is currently experiencing an existential crisis."
 
@@ -120,7 +124,9 @@ screen person(l):
                 add "images/characters/arc/arceus.png" xalign 1.0 yalign 1.0 zoom 0.75
             elif l == "anno":
                 add "images/characters/anno/anno.png" xalign 1.0 yalign 1.0 zoom 0.75
+            elif l == "iris":
+                add "secret/iris.png" xalign 1.0 yalign 1.0 zoom 0.75
             elif l == "hoh_worker":
                 pass
             else:
-                add "images/characters/"+l+".png" xalign 1.0 yalign 1.0 zoom 0.75
+                add f"images/characters/{l}.png" xalign 1.0 yalign 1.0 zoom 0.75
