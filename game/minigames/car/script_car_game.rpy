@@ -39,6 +39,7 @@ init python:
             self.exited = False
 
         def render(self, width, height, st, at):
+            global MOVE_FREQUENCY, TELEGRAPH_DELAY
             if self.start_time is None:
                 self.start_time = st
 
@@ -46,7 +47,12 @@ init python:
 
             car_renderer = renpy.load_image(self.billycar)
             ufo_renderer = renpy.load_image(self.ufo)
-            laser_renderer = renpy.load_image(self.laser)
+            if self.fires < 10:
+                laser_renderer = renpy.load_image(self.laser)
+            else:
+                laser_displayable = renpy.displayable(self.laser)
+                t = Transform(laser_displayable, matrixcolor = TintMatrix("#f00"))
+                laser_renderer = renpy.render(t, 1920, 1080, st, at)
             if not self.entered:
                 if (st - self.start_time < 3.5):
                     curr_y = ease_linear(-UFO_Y, UFO_Y, self.start_time+2, self.start_time+3.5, st)
@@ -73,6 +79,9 @@ init python:
                     self.enemy_lane = renpy.random.randint(0, 2)
                     self.fires += 1
                     self.round_timer = st
+                    MOVE_FREQUENCY -= 0.15
+                    if self.fires == 10:
+                        TELEGRAPH_DELAY = 0.5
                     self.played_charge = False
                     self.played_fire = False
 
@@ -95,6 +104,8 @@ init python:
                     laser_ball_displayable = renpy.displayable(self.laser_ball)
                     l = (st - telegraph_start) / (telegraph_cutoff - telegraph_start)
                     t = Transform(laser_ball_displayable, xysize=(l, l), anchor=(0.5, 0.5))
+                    if self.fires >= 10:
+                        t.matrixcolor = TintMatrix("#f00")
                     w = 180
                     h = 180
                     laser_ball_renderer = renpy.render(t, w, h, st, at)
