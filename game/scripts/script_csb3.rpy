@@ -524,7 +524,29 @@ label both_fan:
             jump arc_escape
 
 label cops_ltt:
-    jump secret
+    show cs disappointed
+    n "CS thinks long and hard about his decision."
+    cs "I'm sorry Arceus, but I finally just got this dream job, and I can't lose it."
+    arceus "The cops are almost here CS! If they find you, you won't be able to work anyways!"
+    cs "I'm done running Arc. I need to be with LTT."
+    arceus "Welp. I tried."
+    n "Arc shrugs and walks away, as he goes to escape on his own."
+    hide arceus with moveoutright
+    linus "CS, what happened with the cops?! I still have no clue what's going on!"
+    show csbiii_start
+    cs "Look okay, so there were these guys from a company called HoH SiS, who do foundation repair."
+    cs "My house was in dire need of foundation repair, so I called them up to come help fix my house."
+    cs "They also thought I was prank caller because I made that one video about them a long time ago,"
+    cs "and they also told me that they changed their policy with payments and I had to pay them immediately."
+    cs "When they came over I decided to go visit my friend Michael Rosen, and he had this chocolate cake that actually WASN'T chocolate cake,"
+    cs "And then I gave him an energy drink and he went kinda crazy, so I went back home to check on HoH SiS."
+    cs "and when I got back home, they-"
+    show copguy at mid_right with moveinright
+    show cs worried
+    copguy "Freeze!"
+    n "As CS was explaining his story in extreme detail, the cops showed up in time."
+    copguy "You are under arrest! Put your hands in the air!"
+    return
 
 label arc_escape:
     cs "Look, I'm sorry Linus, I wish I could explain, but Arceus is right. I need to get going."
