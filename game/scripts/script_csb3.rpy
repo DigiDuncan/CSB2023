@@ -768,7 +768,32 @@ label ytp_magic_fight:
     music Echoing? - Banana
     n "The duo continues to travel along the road."
     n "CS talks to himself along the way, with Arceus weary of his actions still."
-    cs "{size=-25}39463609346834683806834683068436803806489368389046803864368869034806849368030689"
+    cs "{size=-45}39463609346834683806834683068436803806489368389046803864368869034806849368030dsjkweu8yu euyhegw47ithw98gthw39thw389ghw9ghsiughfudghw4u9hfdhsgjdghsdkhsjgjdsgjsdjgsjgsjgjhsdgjsgjs689"
+    arceus "CS? What are you saying?"
+    cs "Huh? Nothing."
+    show arceus dark flipped
+    menu:
+        "Attack now.":
+            jump attack_arc
+        "Wait.":
+            jump wait_arc
+
+label attack_arc:
+    cs "{size=-15}It's now or never."
+    n "CS channels CSGod."
+    hide cs
+    show csgod flipped at left
+    csgod "Time to Die, Arceus!"
+    show arceus dark
+    stop music
+    music end
+    show csgod flipped at left with vpunch
+    play sound "alt_punch.ogg"
+    show csgod at t_punchup with move
+    show arceus dark at right with hpunch
+    arceus "Really? I've been a god longer than you dummy."
+    arceus "Nice try."
+    return
 
 
 label pussy_out_forest:

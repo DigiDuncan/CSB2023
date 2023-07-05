@@ -237,6 +237,7 @@ image border_guard = "characters/border_guard.png"
 image linus = "characters/linus.png"
 image asylum_worker = "characters/mohs.png"
 image csgod = "characters/csgod.png"
+image csgod flipped = Transform("characters/csgod.png", xzoom = -1)
 image copguy = "characters/copguy.png"
 image luke = "characters/luke.png"
 image border_guard dusk = "characters/border_guard_dusk.png"

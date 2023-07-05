@@ -52,13 +52,17 @@ init python:
     album_map = {
         "CANYON.MID - George Stone": "windows.png",
         "PASSPORT.MID - George Stone": "windows.png",
+        "Time for a Smackdown! - Mr. Sauceman": "pizzatower.png",
         "stal - C418": "minecraft.png",
         "Basement - Toby Fox": "undertale.png",
+        "Good Eatin - ClascyJitto": "pizzatower.png",
         "Undyne - Toby Fox": "undertale.png",
         "It's Showtime - Toby Fox": "undertale.png",
         "Danger Mystery - Toby Fox": "undertale.png",
         "Card Castle - Toby Fox": "deltarune.png",
         "Let's Do This - Home Depot": "homedepot.png",
+        "Mort's Farm - ClascyJitto": "pizzatower.png",
+        "Funiculi Holiday - ClascyJitto": "pizzatower.png",
         "Alfred's Theme - Eminem": "mtbmb.png",
         "New Leaf Title Theme - Kazumi Totaka": "newleaf.png"
     }
