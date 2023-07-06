@@ -261,6 +261,7 @@ image terry = "characters/terry.png"
 
 # Background Images
 ## CSBI
+image game_menu = "gui/game_menu.png"
 image black = "bg/black.png"
 image cs_room = "bg/cs_bedroom1.png"
 image cs_room_2 = "bg/cs_bedroom2.png"
@@ -408,7 +409,7 @@ screen start_menu():
 style start_window is empty
 
 label start:
-    scene black
+    scene game_menu
     window hide
     pause 0.1
     call screen start_menu()
