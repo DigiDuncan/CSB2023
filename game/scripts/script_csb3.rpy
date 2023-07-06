@@ -853,6 +853,33 @@ label wait_arc:
     scene cultforest
     show billy car
     billy "Welp. We are here."
+    n "CS gets out of the car and heads up the trail on the side of the road."
+    arceus "Hey uhh, I'm gonna get out too."
+    hide billy car with fade
+    show arceus flipped at mid_left with moveinleft
+    arceus "CS? Where did you go?"
+    arceus "What is wrong with him right now?"
+    pause 2.0
+    arceus "After that the incident with the cops he's been..."
+    pause 1.0
+    arceus "He's just been-"
+    csgod "Stronger than ever."
+    show csgod flipped at mid_left with moveinleft
+    show arceus flipped at mid_left with vpunch
+    play sound "audio/punch.ogg"
+    show arceus flipped at mid_left with hpunch
+    play sound "audio/punchalt.ogg"
+    show arceus flipped at t_punchup with move
+    arceus "Ouch."
+    show cultist at mid_right with moveinright
+    show cultist_2 at right with moveinright
+    show cultist_3 at center with moveinright
+    cultist "Praise CS God! Praise CS God!"
+    n "Billy takes off in an instant after witnessing the event."
+    csgod "I have finally harnessed the power of CS God!"
+    csgod "Time to take over the world!"
+    return
+
 
 label pussy_out_forest:
     cs "Arceus quick! Let's escape into the forest!"
