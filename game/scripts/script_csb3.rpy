@@ -948,7 +948,26 @@ label wait_forest:
         "HoH SiS scammed me":
             jump good_convince
         "I'm not CS":
-            jump secret
+            jump bad_convince
+
+label bad_convince:
+    play music "<loop 0>pressing_pursuit_cornered.mp3" volume 0.3
+    music Pressing Pursuit ~ Cornered - Masakazu Sugimori
+    play sound "objection.mp3" volume 0.5
+    show objection at truecenter with hpunch
+    pause 1.0
+    hide objection
+    cs "Wait a second! I'm not actually CS!"
+    cs "I just LOOK like CS!"
+    arceus "I mean, he might not be CS?"
+    play sound "hold_it.mp3" volume 0.5
+    show hold_it at truecenter with hpunch
+    pause 1.0
+    hide hold_it
+    stop music
+    music end
+    copguy "Nice try, bud. We saw your fake visa and everything. You too are going back to the slammer."
+    return
 
 label good_convince:
     show cs worried
