@@ -350,6 +350,7 @@ label boost:
             jump reviews
 
 label reviews:
+    $ fanbase = "ltt"
     cs "I'm up to doing more review videos with you."
     show linus at center with ease
     linus "Sweet! I'll make sure to hit you up for our next video!"
@@ -415,6 +416,7 @@ label ytp_edit:
             jump ytp_fan
 
 label ytp_fan:
+    $ fanbase = "ytp"
     cs "Well, I want to keep working on YTPs!"
     show cs angry
     cs "This is like, what I built my life on, and I just..."
@@ -448,6 +450,7 @@ label ytp_fan:
 
 
 label both_fan:
+    $ fanbase = "both"
     stop music
     music end
     cs "You know what? Why don't you all come down to my office."
@@ -1976,7 +1979,14 @@ label talktohohsis:
     music New Leaf Title Theme - Kazumi Totaka
     show cs at center with moveinleft
     cs "Ah, it's good to be home again!"
-    jump true_ending
+    if fanbase == "both":
+        jump true_ending
+    elif fanbase == "ltt":
+        jump ltt_ending
+    elif fanbase == "ytp":
+        jump ytp_ending
+    else:
+        jump secret
 
 label true_ending:
     n "CS looks over at his desk, where a new computer is sitting."
@@ -2001,6 +2011,12 @@ label true_ending:
     play music "secret/credits.mp3" volume 0.5
     centered "Pretend there's credits here."
     jump secret2
+
+label ytp_ending:
+    jump secret
+
+label ltt_ending:
+    jump secret
 
 label fighthohsis:
     n "CS challenges HoH SiS to a fight."

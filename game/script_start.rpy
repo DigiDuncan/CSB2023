@@ -378,6 +378,11 @@ image red_light:
     linear 0.5 alpha 0.75
     repeat
 
+# Checks
+default fanboy_type = None
+default fanbase = None
+default nice_car = False
+
 # Jump Menu
 screen start_menu():
     zorder 100
