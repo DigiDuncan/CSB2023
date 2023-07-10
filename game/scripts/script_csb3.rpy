@@ -180,7 +180,7 @@ label edit_video:
             show black
             with fade
             jump boost
-        "Bad":
+        "Bad" (type = "bad"):
             hide cs
             hide csdesk
             show black
@@ -383,7 +383,7 @@ label reviews:
     linus "WHAT? CS, why are the cops chasing you? This could seriously damage our reputation {size=-10}more than the time I mentioned I dropped hard R's as a kid!"
     menu:
         "What will CS do?"
-        "I'm going to stay with LTT.":
+        "I'm going to stay with LTT." (type = "bad"):
             jump cops_ltt
         "Escape with Arceus.":
             jump arc_escape    
@@ -518,7 +518,7 @@ label both_fan:
 
     menu:
         "What will CS do?"
-        "I'm going to stay with LTT.":
+        "I'm going to stay with LTT." (type = "bad"):
             jump cops_ltt
         "Escape with Arceus." (type = "true"):
             jump arc_escape
@@ -716,7 +716,7 @@ label arc_escape:
     arceus "Copguy's back! He's probably looking all over for us! What do we do CS?!"
     menu:
         "What do we do CS?!"
-        "Fight the cops with YTP Magic":
+        "Fight the cops with YTP Magic" (type = "bad"):
             jump ytp_magic_fight
         "Flee into the forest" (type = "true"):
             jump pussy_out_forest
@@ -773,9 +773,9 @@ label ytp_magic_fight:
     cs "Huh? Nothing."
     show arceus dark flipped
     menu:
-        "Attack now.":
+        "Attack now." (type = "bad"):
             jump attack_arc
-        "Wait.":
+        "Wait." (type = "bad"):
             jump wait_arc
 
 label attack_arc:
@@ -947,7 +947,7 @@ label wait_forest:
     menu:
         "HoH SiS scammed me" (type = "true"):
             jump good_convince
-        "I'm not CS":
+        "I'm not CS" (type = "bad"):
             jump bad_convince
 
 label bad_convince:
@@ -1267,7 +1267,7 @@ label east:
     menu:
         "Wait for driver at the gas station" (type = "true"):
             jump billy_driver
-        "Hotwire a car":
+        "Hotwire a car" (type = "bad"):
             jump hotwire
 
 label hotwire:
@@ -1860,11 +1860,11 @@ label back_home:
     rich "That's why Ed wanted to get revenge on you. That's why we destroyed your computer, CS."
     cs "I don't understand..."
     menu:
-        "Fight":
+        "Fight" (type = "bad"):
             jump fighthohsis
         "Negotiate" (type = "true"):
             jump talktohohsis
-        "Fuck up":
+        "Fuck up" (type = "bad"):
             jump fuckuphohsis
         "Call CopGuy":
             jump copsathohsis
