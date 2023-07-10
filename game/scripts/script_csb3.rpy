@@ -568,8 +568,12 @@ label arc_escape:
     show blue_light at left
     show red_light at right
     n "As they are making their way away from the building, they can hear sirens grow in volume as flashing lights rush towards the LMG headquarters."
-    cs "This is awful, I was just starting to get along well with Linus and the gang."
-    arceus "I'm sure they'll forgive you in due time, but for now, we need to evade the cops' trail and get back to the United States."
+    if fanbase == "ytp":
+        cs "Thank god we are getting out of here, Linus didn't like my ideas."
+        arceus "Ah dang, that sucks to hear."
+    else:
+        cs "This is awful, I was just starting to get along well with Linus and the gang."
+        arceus "I'm sure they'll forgive you in due time, but for now, we need to evade the cops' trail and get back to the United States."
     stop music fadeout 3.0
     music end
     n "While Arceus and CS were hitchhiking away from the scene, the cops show up at LTT to investigate."
@@ -1700,13 +1704,18 @@ label nebraska:
     play music "<loop 0>funiculi_holiday.mp3" volume 0.3
     music Funiculi Holiday - ClascyJitto
     show peppino at mid_mid_left behind peppinopizzafg with moveinleft
+    show peppino at pepzone behind peppinopizzafg with move
     show pakoo at mid_right with moveinleft
     show billy at right with moveinleft
     show cs at left with moveinleft
     show arceus flipped at mid_left with moveinleft
     peppino "Hey Piezanos, watcha want today?"
     pakoo "Hey Peppino, can you get me and my friends the Gustavo special today?"
+    show peppino2 at pepzone behind peppinopizzafg
+    hide peppino
     peppino "Sure-a thing-a! Coming right up!"
+    show peppino at pepzone behind peppinopizzafg
+    hide peppino2
     pakoo "Also, do you think my friends here can be spend the night? They don't have anywhere to sleep tonight."
     peppino "The room in the back should be fine, Mr. Stick is out right now, so they can bunk there."
     pakoo "Alright, epic."

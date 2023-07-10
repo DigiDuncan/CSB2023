@@ -108,6 +108,12 @@ transform xstretch_out:
     linear 0.5 xsize 2
     alpha 0.0
 
+transform pepzone:
+    yanchor 1.0 ypos 0.75
+    xanchor 0.5 xpos 0.4
+    zoom 0.75
+
+
 # Character Definitions
 define n = Character(None, what_italic = True)  # Narrator
 define cs = Character("cs188", callback = renpy.partial(char_callback, name = "cs", beep = "cs"))
@@ -253,6 +259,7 @@ image billy car happy = "characters/billy/billy_car_happy.png"
 image billy car turn = "characters/billy/billy_car_turn.png"
 image pakoo = "characters/pakoo.png"
 image peppino = "characters/peppino.png"
+image peppino2 = "characters/peppino2.png"
 image cultist = "characters/cultist.png"
 image cultist_2 = "characters/cultist2.png"
 image cultist_3 = "characters/cultist2.png"
