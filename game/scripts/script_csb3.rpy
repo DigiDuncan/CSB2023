@@ -42,7 +42,7 @@ label csbiii_start:
         "What are you going to do?"
         "Go to the store.":
             jump microcenter
-        "Help edit a video.":
+        "Help edit a video." (type = "true"):
             jump edit_video
 label microcenter:
     cs "Sure, what parts do you need?"
@@ -174,7 +174,7 @@ label edit_video:
     cs "But I also don't have much time before Linus comes back and notices, so I need to hurry!"
     cs "Welp, time to get to work!"
     menu:
-        "Good":
+        "Good" (type = "true"):
             hide cs
             hide csdesk
             show black
@@ -344,7 +344,7 @@ label boost:
     linus "What's up CS? What do you need help with?"
     menu:
         "What does CS need help with?"
-        "I want to work on YTPs.":
+        "I want to work on YTPs." (type = "true"):
             jump ytp_edit
         "I want to do reviews":
             jump reviews
@@ -409,7 +409,7 @@ label ytp_edit:
 
     menu:
         "What will CS do?"
-        "Show everyone more YTPs":
+        "Show everyone more YTPs" (type = "true"):
             jump both_fan
         "Ignore them and keep making your own YTPs.":
             jump ytp_fan
@@ -520,7 +520,7 @@ label both_fan:
         "What will CS do?"
         "I'm going to stay with LTT.":
             jump cops_ltt
-        "Escape with Arceus.":
+        "Escape with Arceus." (type = "true"):
             jump arc_escape
 
 label cops_ltt:
@@ -718,7 +718,7 @@ label arc_escape:
         "What do we do CS?!"
         "Fight the cops with YTP Magic":
             jump ytp_magic_fight
-        "Flee into the forest":
+        "Flee into the forest" (type = "true"):
             jump pussy_out_forest
 
 label ytp_magic_fight:
@@ -945,7 +945,7 @@ label wait_forest:
     n "Copguy gets in the car and they head off."
     n "As they are heading away, CS has the urge to say something."
     menu:
-        "HoH SiS scammed me":
+        "HoH SiS scammed me" (type = "true"):
             jump good_convince
         "I'm not CS":
             jump bad_convince
@@ -1060,7 +1060,7 @@ label choose_direction:
         "Which way do you want to go?"
         "North":
             jump north
-        "East":
+        "East" (type = "true"):
             jump east
         "South":
             jump south
@@ -1077,7 +1077,7 @@ label north:
     menu:
         "North":
             jump north2
-        "East":
+        "East" (type = "true"):
             jump east
         "South":
             jump south
@@ -1091,7 +1091,7 @@ label north2:
     menu:
         "North":
             jump north2
-        "East":
+        "East" (type = "true"):
             jump east
         "South":
             jump south
@@ -1109,7 +1109,7 @@ label west:
     menu:
         "North":
             jump north
-        "East":
+        "East" (type = "true"):
             jump east
         "South":
             jump south
@@ -1127,7 +1127,7 @@ label west2:
     menu:
         "North":
             jump north
-        "East":
+        "East" (type = "true"):
             jump east
         "South":
             jump south
@@ -1147,7 +1147,7 @@ label west3:
     menu:
         "North":
             jump north
-        "East":
+        "East" (type = "true"):
             jump east
         "South":
             jump south
@@ -1164,7 +1164,7 @@ label west4:
     menu:
         "North":
             jump north
-        "East":
+        "East" (type = "true"):
             jump east
         "South":
             jump south
@@ -1179,7 +1179,7 @@ label west5:
     menu:
         "North":
             jump north
-        "East":
+        "East" (type = "true"):
             jump east
         "South":
             jump south
@@ -1194,7 +1194,7 @@ label west6:
     menu:
         "North":
             jump north
-        "East":
+        "East" (type = "true"):
             jump east
         "South":
             jump south
@@ -1209,7 +1209,7 @@ label west7:
     menu:
         "North":
             jump north
-        "East":
+        "East" (type = "true"):
             jump east
         "South":
             jump south
@@ -1225,7 +1225,7 @@ label west8:
     menu:
         "North":
             jump north
-        "East":
+        "East" (type = "true"):
             jump east
         "South":
             jump south
@@ -1265,10 +1265,31 @@ label east:
     stop music fadeout 3.0
     music end
     menu:
-        "Wait for driver at the gas station":
+        "Wait for driver at the gas station" (type = "true"):
             jump billy_driver
         "Hotwire a car":
             jump hotwire
+
+label hotwire:
+    cs "I don't know, we could just, hotwire a car?"
+    arceus "I can probably do that, let's go look."
+    scene gasoutside with fade
+    show cs at left with moveinleft
+    show arceus at right with moveinleft
+    n "CS and Arc approach one of the cars in front of the gas station."
+    n "Arceus smashes open the window and opens the door from the inside."
+    arceus "Alright, so if we connect this to this..."
+    n "The car starts up."
+    cs "Hell yeah! Let's go home!"
+    n "All of a sudden, flashing lights and sirens show up behind them."
+    show blue_light at left
+    show red_light at right
+    play sound "<loop 0>siren.ogg" volume 0.5
+    show copguy at center with moveinleft
+    show cs disappointed
+    copguy "I heard the sound of a car window breaking from miles away!"
+    copguy "You guys already blew it! Back to the slammer!"
+    return
 
 label billy_driver:
     cs "Why don't we just wait for someone at the gas station to come out, and then we ask them for an Uber?"
@@ -1841,7 +1862,7 @@ label back_home:
     menu:
         "Fight":
             jump fighthohsis
-        "Negotiate":
+        "Negotiate" (type = "true"):
             jump talktohohsis
         "Fuck up":
             jump fuckuphohsis
@@ -1982,13 +2003,98 @@ label true_ending:
     jump secret2
 
 label fighthohsis:
-    jump secret
+    n "CS challenges HoH SiS to a fight."
+    show cs angry
+    cs "I beat up all your workers and Wesley, I can take you guys down too!"
+    cs "Let's go!"
+    ed "Richard, stand back."
+    hide rich with moveoutright
+    cs "C'mon! Hit me!"
+    ed "I'm going to refund my fist into your face!"
+    show cs at center
+    show ed at center
+    with move
+    play sound "audio/punch.ogg"
+    play sound "audio/punchalt.ogg"
+    show cs with hpunch
+    play sound "audio/punch.ogg"
+    play sound "audio/punchalt.ogg"
+    show ed with vpunch
+    play sound "audio/punch.ogg"
+    play sound "audio/punchalt.ogg"
+    show cs with hpunch
+    play sound "audio/punch.ogg"
+    play sound "audio/punchalt.ogg"
+    show ed with vpunch
+    play sound "audio/punch.ogg"
+    play sound "audio/punchalt.ogg"
+    show cs with hpunch
+    play sound "alt_punch.ogg"
+    show cs at t_punchup with move
+    show cs with vpunch
+    show ed at right with move
+    hide cs
+    pause 2.0
+    show cs disappointed at mid_left with moveintop
+    cs "I no longer want the joj..."
+    hide cs with moveoutbottom
+    show ed with hpunch
+    ed "Time to take a shit on the house."
+    return
 
 label fuckuphohsis:
-    jump secret
+    show cs angry
+    cs "Yeah I actually hate you guys, and I wanted to mess with your business!"
+    cs "You guys suck and I hate you both!"
+    cs "You guys deserve to have your company in shambles!"
+    n "Richard and Ed back up to their UFO."
+    hide rich
+    hide ed
+    with moveoutright
+    cs "Hey! Where are you guys going!"
+    cs "Come back here!"
+    n "The JoJ UFO flies up over the house and vaporizes the house."
+    play sound "beam.ogg" volume 0.6
+    show beam at xstretch_in
+    pause 3.0
+    show beam at xstretch_out
+    pause 1.0
+    scene cshouse_vaporized
+    show cs disappointed at left
+    with vpunch
+    n "Ed flips CS off, and then flies away."
+    show cs disappointed
+    pause 1.0
+    cs "Fuck."
+    return    
 
 label copsathohsis:
-    jump secret
+    n "CS calls Copguy to come arrest HoH SiS."
+    show cs worried
+    stop music fadeout 1.0
+    music end
+    show blue_light at left
+    show red_light at right
+    play sound "<loop 0>siren.ogg" loop volume 0.5
+    show copguy at center with moveinleft
+    cs "Here they are! They scammed me out of my money and services!"
+    n "Copguy cuffs the HoH SiS members and pulls out his walkie."
+    copguy "We got them, sheriff. Time to bring them to the slammer."
+    hide copguy
+    hide rich
+    hide ed
+    with moveoutright
+    stop sound fadeout 1.0
+    hide blue_light
+    hide red_light
+    show cs
+    cs "Welp. That was easy."
+    cs "Finally, I can rest at home."
+    n "CS walks up to his house and enters."
+    scene cs_room with fade
+    show cs at center with moveinleft
+    cs "Ah, it's good to be home again!"
+    jump true_ending
 
 label high_gpu:
     jump secret
