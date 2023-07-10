@@ -323,6 +323,8 @@ screen navigation():
 
         textbutton _("CSettings") action ShowMenu("preferences")
 
+        textbutton _("Debug Menu") action ShowMenu("debug_menu")
+
         if _in_replay:
 
             textbutton _("End Replay") action EndReplay(confirm=True)
