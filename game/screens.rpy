@@ -213,7 +213,15 @@ screen choice(items):
 
     vbox:
         for i in items:
-            textbutton i.caption action i.action
+            $ choice_type = i.kwargs.get("type")
+            if choice_type == "true" and preferences.streamer_mode:
+                textbutton "{color=#6600aa}[i.caption]" action i.action
+            elif choice_type == "good" and preferences.streamer_mode:
+                textbutton "{color=#00ff00}[i.caption]" action i.action
+            elif choice_type == "bad" and preferences.streamer_mode:
+                textbutton "{color=#ff0000}[i.caption]" action i.action
+            else:
+                textbutton i.caption action i.action
 
 
 style choice_vbox is vbox
@@ -781,6 +789,7 @@ screen preferences():
                     
 
                     textbutton _("Text Beeps") action ToggleField(preferences, "text_beeps")
+                    textbutton _("Streamer Mode") action ToggleField(preferences, "streamer_mode")
 
                 vbox:
 

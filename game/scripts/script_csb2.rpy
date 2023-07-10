@@ -13,13 +13,13 @@ label csbii_start:
 
     menu:
         "What attack would you like to use?"
-        "Punch":
+        "Punch" (type = "true"):
             jump punch
         "Chop":
             jump chop
         "Kick":
             jump kick
-        "Special":
+        "Special" (type = "bad"):
             jump special
 
 # Punch

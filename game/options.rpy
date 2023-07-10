@@ -132,6 +132,7 @@ define config.window_hide_transition = Dissolve(.2)
 
 default preferences.text_beeps = True
 default preferences.csbounciness = 0
+default preferences.streamer_mode = False
 
 default preferences.text_cps = 40.0
 
