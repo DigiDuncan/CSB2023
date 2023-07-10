@@ -2013,10 +2013,47 @@ label true_ending:
     jump secret2
 
 label ytp_ending:
-    jump secret
+    n "CS looks over at his desk, where his old computer is sitting."
+    scene cs_room_2 with fade
+    show cs at mid_left
+    cs "Oh yeah, I forgot I actually have a computer that's not a craptop."
+    cs "Before I head off for the night, I'll do a stream real quick."
+    n "CS starts up his stream overlay and goes live on Twitch."
+    cs "Hey guys! CS here! Sorry I was gone for a couple weeks!"
+    n "The chat is overflowing with messages."
+    "Chat" "Yeah what happened to you?{w=0.25} Oh my god, CS, you're here!{w=0.25} Hi!{w=0.25} Hi!{w=0.25} Where have you been?"
+    show cs at mid_left
+    cs "Well guys..."
+    n "CS chuckles."
+    cs "It's a long story..."
+    scene black with fade
+    stop music fadeout 1.0   
+    play music "secret/credits.mp3" volume 0.5
+    centered "Pretend there's credits here."
+    jump secret2
 
 label ltt_ending:
-    jump secret
+    n "CS looks over at his desk, where a new computer is sitting."
+    scene cs_room_2 with fade
+    n "CS looks at the monitor that has a sticky note that says \"From LTT\"."
+    show cs happy at mid_left with moveinleft
+    cs "Oh my goodness, Linus got me a new PC!"
+    n "There is also a note that says: \"We'd love to have to work with us again virtually, just give us a call\"."
+    cs "I'll have to make sure to call them later!"
+    show cs at mid_left
+    cs "Before I head off for the night, I'll do a stream real quick."
+    n "CS starts up his stream overlay and goes live on Twitch."
+    cs "Hey guys! CS here! Sorry I was gone for a couple weeks!"
+    n "The chat slowly comes in, confused."
+    "Chat" "Oh you're streaming?{w=0.25} I thought you were working for LTT now?{w=0.25} What happened to the YTPs?{w=0.25} Are you OK?{w=0.25} Where have you been?"
+    show cs at mid_left
+    cs "Well guys..."
+    cs "It's a long story..."
+    scene black with fade
+    stop music fadeout 1.0   
+    play music "secret/credits.mp3" volume 0.5
+    centered "Pretend there's credits here."
+    jump secret2
 
 label fighthohsis:
     n "CS challenges HoH SiS to a fight."

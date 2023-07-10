@@ -158,6 +158,21 @@ label car_dialogue:
 
     pause 1.0
 
+    n "Billy gets a call on his Jupiter Jack."
+    billy "Hi, it's Billy!"
+    "TV Billy" "Hi, it's Billy!"
+    "TV Billy" "Introducing the New Craptop that isn't sentient at all, from me, Billy Mays!"
+    billy "What the actual fuck?"
+    "TV Billy" "Hello? Did I get a new signal?"
+    billy "You aren't Billy! I am Billy!"
+    "TV Billy" "No! I am Billy! I died long ago and is now in Super Heaven, selling pointless products!"
+    billy "No fuck you! I am the real Billy!"
+    cs "Yeah dude from the radio, you sound like an imposter."
+    arceus "sus{nw}"
+    "TV Billy" "And you sound like that one guy who I sold a laptop to from his old ass TV!"
+    cs "No clue what are you talking about."
+    n "Billy turns off the Jupiter Jack for a while."
+
     $ achievement_manager.unlock("Bored")
 
     hide screen skip_car
