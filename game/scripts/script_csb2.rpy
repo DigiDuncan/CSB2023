@@ -538,7 +538,7 @@ label bordercrossing:
     stop music fadeout 3.0
     music end
 
-    $ achievement_manager.unlock("Welcome To CSBIII, Mother Fucker")
+    $ achievement_manager.unlock("Welcome to CSBIII, Mother Fucker")
 
     scene black with fade
     jump csbiii_start
