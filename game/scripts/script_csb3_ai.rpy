@@ -2,6 +2,7 @@ label csbiii_ai:
     scene linusmedia with fade
     show cs at left with moveinleft
     play music "<loop 0>school.mp3" volume 0.4
+    # TODO: Add to jukebox
     music School - Toby Fox
     n "CS is in the Linus Tech Tips office, surrounded by computer parts and confused colleagues."
     n "CS scratches his head."
@@ -23,7 +24,7 @@ label csbiii_ai:
     luke "Wait, it's actually working! The temperatures are dropping!"
     cs "Of course it is! Nature's own air conditioning!"
     
-    # TODO: Cut to a time-lapse of the hairdryer blowing air as the temperature readings on the PC monitor gradually decrease."
+    # TODO: Cut to a time-lapse of the hairdryer blowing air as the temperature readings on the PC monitor gradually decrease.
     linus "CS, I can't believe it. Your hairdryer solution is... actually genius."
     show cs happy at left
     cs "That's how we do things in CS188 style, Linus! Unconventional, unpredictable, but effective."
@@ -47,6 +48,7 @@ label csbiii_ai:
     show cs at left with moveinleft
     show arceus at right with moveinright
     play music "<loop 0>cliffs.mp3" volume 0.4
+    # TODO: Add to jukebox
     music Cliffs - Toby Fox
     n "CS188 and Arceus dash to a hidden panel on the floor, revealing a concealed entrance to the escape tunnel."
     scene secrettunnel with fade
@@ -59,6 +61,7 @@ label csbiii_ai:
     show cs at left with moveinleft
     show arceus at right with moveinright
     play music "<loop 0>circus.mp3" volume 0.4
+    # TODO: Add to jukebox
     music Circus - Toby Fox
     n "They emerge from the tunnel into a surprising location—an abandoned, overgrown amusement park."
     arceus "An amusement park? Seriously, CS?"
@@ -77,6 +80,7 @@ label csbiii_ai:
     n "CS188 and Arceus duck behind a broken carousel as the cops pass by."
     show copguy_ai at center with moveinbottom
     play music "<loop 0>chase.mp3" volume 0.4
+    # TODO: Add to jukebox
     music Chase - Toby Fox
     arceus "{i}whispering{/i} CS, we can't hide here forever. We need a distraction!"
     n "CS thinks for a sec."
@@ -98,7 +102,8 @@ label csbiii_ai:
     cs "We sure did, buddy. Another adventure for the books!"
     play music "<loop 0>friendship.mp3" volume 0.4
     scene endingai with Fade(1.0, 1.0, 1.0)
+    # TODO: Add to jukebox
     music Friendship - Toby Fox
     n "CS188 and Arceus exchange a high-five and disappear into the distance, ready for their next escapade."
-    "Chat-GPT" "Note: The script is a fictional representation and does not reflect the actual personalities or actions of CS188 or any real-life individuals."
+    "ChatGPT" "Note: The script is a fictional representation and does not reflect the actual personalities or actions of CS188 or any real-life individuals."
     return
