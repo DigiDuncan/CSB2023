@@ -8,8 +8,8 @@ label csbiii_start:
     play music "<loop 0>passport.mp3" volume 0.5
     music PASSPORT.MID - George Stone
     show linus at center with moveinright
-    linus "Welcome to Linus Media Group, come on in, I'll show you your desk."
-    cs "Thanks Linus."
+    linus "Welcome to Linus Media Group, come on in, I'll show you to your desk."
+    cs "Thanks, Linus."
     scene black with fade
     n "Linus and CS walk to CS' new desk."
     scene csdesk with fade
@@ -24,7 +24,9 @@ label csbiii_start:
     hide linus with moveoutright
     cs "I guess I better get to work on editing, let's see what videos I need to edit..."
     cs "Let's see, I have the new TechQuickie video on how live streaming works, or the video on how at least half of the keys on your keyboard should be macros..."
+    show cs worried
     cs "Dammit Taran, you can edit your own macro fetish content."
+    show cs
     cs "I guess I'll edit the livestreaming one."
     scene black with fade
     n "CS starts working on editing the TechQuickie video and Linus comes in to check on him."
@@ -123,7 +125,7 @@ label edit_video:
     cs "Hey Taran! You wanna check out my video so far?"
     taran "Sure, let it roll."
     scene csvideo with fade
-    n "CS and Taran watch CS's video."
+    n "CS and Taran watch CS' video."
     scene csdesk
     show cs worried at left
     show taran at right
@@ -245,13 +247,13 @@ label boost:
     show linus at left with ease
     show linus at center with ease
     show cs happy
-    n "CS's frown fades in a big grin, as they both high-five."
+    n "CS' frown fades in a big grin, as they both high-five."
     cs "Hell yeah! I would've never thought YTPs would help me in a business setting, nevermind that my BOSS enjoyed them!"
     cs "Alright! Well, I guess I better get back to poopin'!"
     show cs flipped at left
     show cs flipped at offscreenleft with ease
     n "Before CS heads out of the room, Linus shouts to him."
-    linus "Hey, later today, I got a big surprise to show you. I'll stop by your office and we can check it out."
+    linus "Hey, later today, I got a big surprise to show you. I'll stop by your office and we can check it out!"
     cs "Sure thing!"
     scene csdesk
     show cs at center
@@ -259,7 +261,7 @@ label boost:
     n "When CS gets back to his setup, he starts letting his mind race with ideas."
     cs "Oh man, where do I even start now?"
     cs "I have so many ideas of videos to poop, I could even try to teach Linus how to YTP..."
-    cs " I mean, with the amount of tech he drops on a daily basis, he kinda already is a YTP."
+    cs "I mean, with the amount of tech he drops on a daily basis, he kinda already is a YTP."
     cs "Alright well, back to editing!"
     n "The time flies by as CS dumps his ideas into Premiere."
     cs "Doo dee doo..."
@@ -290,19 +292,19 @@ label boost:
     linus "Not exactly. It's an experimental piece of hardware that we have never used before, and it's custom made."
     n "Linus holds the card into the air."
     linus "Behold! {w=0.5} The-- WOAH SHIT {w=0.5}{nw}"
-    with vpunch
+    show linus with vpunch
     hide ytx with easeoutbottom
     n "Linus loses grip of the card as it tumbles down onto the table next to him."
     n "CS facepalms, while you can hear Luke laughing in the background."
     cs "Goodness Linus, you should maybe not do that next time."
     linus "Yeah, I'm sorry. Maybe you should hold it." 
-    linus "This card is called the YTX-9001 Ti, a PCI add-in for enhancing and optimizing Youtube Poops."
-    n "CS's eyes widen."
+    linus "This card is called the YTX-9001 Ti, a PCI add-in for enhancing and optimizing YouTube Poops."
+    n "CS' eyes widen."
     cs "Wait whaaat? That's awesome! How does this even work?"
     linus "We don't even know, we haven't even tested it yet."
     linus "It also apparently has Poop-tracing, which I'm curious to see how that works."
     cs "Well, what are we waiting for? Let's get this thing hooked up!"
-    n "Linus and CS take apart CS's PC and put the card in."
+    n "Linus and CS take apart CS' PC and put the card in."
     n "They then start the computer, and everything boots up as normal."
     linus "Alright, now that it's up and working, we need to install the drivers. The card came with a flash drive that includes them."
     n "As Linus inserts the flashdrive, a window off the side of the screen pops up saying 'Your new Peeforce Experience drivers are available.'"
@@ -336,8 +338,8 @@ label boost:
     show cs at t_cs_ltt behind ltt_fg with moveinleft
     show linus at t_linus_ltt behind ltt_fg with moveinright
     n "Linus goes and gets the cameras set up, and they start to film the video."
-    n "After they finish recording, CS goes up to Linus's office."
-    #Todo get linus's office
+    n "After they finish recording, CS goes up to Linus' office."
+    #Todo get Linus' office
     scene loffice with fade
     show cs at left with moveinleft
     cs "Hey Linus?"
@@ -397,10 +399,10 @@ label ytp_edit:
     linus "Sure. I mean, what do you want to do?"
     cs "I really want to make more YTPs for you guys."
     n "Linus laughs a bit."
-    linus "Oh, CS, When I gave you the YTP card that was meant for use on your own channel, not the LTT one."
+    linus "Oh, CS, when I gave you the YTP card that was meant for use on your own channel, not the LTT one."
     cs "I know, but--{w=0.25}{nw}"
     linus "I mean, for example.{w=0.5} TARAN! GET IN HERE!"
-    n "Taran rushes up to Linus's office."
+    n "Taran rushes up to Linus' office."
     show taran at right with moveinright
     taran "{i}panting{/i} Yes, {w=0.5}Linus? {w=0.5}What is it?"
     linus "Taran, have you ever seen a YTP?"
@@ -567,7 +569,7 @@ label arc_escape:
     play sound "siren.ogg" loop fadein 2.0 volume 0.2
     show blue_light at left
     show red_light at right
-    n "As they are making their way away from the building, they can hear sirens grow in volume as flashing lights rush towards the LMG headquarters."
+    n "As they are making their way further from the building, they can hear sirens grow in volume as flashing lights rush towards the LMG headquarters."
     if fanbase == "ytp":
         cs "Thank god we are getting out of here, Linus didn't like my ideas."
         arceus "Ah dang, that sucks to hear."
@@ -576,7 +578,7 @@ label arc_escape:
         arceus "I'm sure they'll forgive you in due time, but for now, we need to evade the cops' trail and get back to the United States."
     stop music fadeout 3.0
     music end
-    n "While Arceus and CS were hitchhiking away from the scene, the cops show up at LTT to investigate."
+    n "While Arceus and CS were fleeing away from the scene, the cops show up at LTT to investigate."
     scene frontdoor
     stop sound fadeout 4.0
     show linus at left
@@ -630,9 +632,10 @@ label arc_escape:
     n "Copguy orders the rest of the cops to leave the scene and return back to the station."
     show copguy at left with moveinleft
     copguy "Damnit, they don't have CS anymore. We're gonna have to look harder for him."
-    scene road_to_canada with fade
+    scene road_to_canada
     show cs disappointed dusk at left
     show arceus dusk at right
+    with fade
     n "Meanwhile, CS and Arc have been running back to the US border."
     cs "Aw man! This is embarrassing!"
     arceus "Yeah, so much for the editing job, I guess."
@@ -889,7 +892,7 @@ label wait_arc:
 
 
 label pussy_out_forest:
-    cs "Arceus quick! Let's escape into the forest!"
+    cs "Arceus, quick! Let's escape into the forest!"
     arceus "Alrighty, let's go!"
     hide arceus
     hide cs
@@ -910,7 +913,7 @@ label wait_forest:
     scene washington_road with fade
     show cs dark at left with moveinleft
     show arceus dark at right with moveinright
-    cs "Hey Arceus?"
+    cs "Hey, Arceus?"
     arceus "Hmm?"
     cs "Now that we are out here and have more time to talk, where exactly are we heading to? Why did we come back to the US?"
     arceus "Well, I figured you wanted to go back home, right?"
@@ -925,9 +928,10 @@ label wait_forest:
     play sound "punch.ogg"
     scene black with determination
     n "When CS and Arc wake up, they find themselves in handcuffs leaned up against a cop car."
-    scene washington_road with fade
+    scene washington_road
     show cs disappointed dark at left
     show arceus dark flipped at mid_left_left
+    with fade
     cs "Huh?"
     cs "What happened?"
     show copguy dark at right with moveinright
@@ -985,7 +989,7 @@ label good_convince:
     pause 1.0
     hide objection
     cs "Wait a second! The reason all this happened was because HoH SiS sabotaged my computer!"
-    arceus "Wait what?"
+    arceus "Wait, what?"
     copguy "What are you on about?"
     cs "Yes! HoH SiS scammed me out of thousands of dollars to get my foundation fixed, and they also broke my laptop!"
     cs "So afterwards, I wanted to get my revenge!"
@@ -1003,7 +1007,7 @@ label good_convince:
     arceus "Watch this."
     show black with fade
     n "Copguy stops the car as Arceus plays back the scene from {i}CS Bounciness I{/i} with the scamming of CS by HoH SiS."
-    scene copcar with fade
+    scene copcar
     show copguy at mid_left
     show copcar_mask
     show arceus at right
@@ -1845,12 +1849,12 @@ label back_home:
     "Arc and Billy" "Hell yeah!"
     hide billy with moveoutleft
     hide arceus with moveoutleft
-    n "As CS was saying bye to his friends, a familiar but upsetting voice can be heard at the front of CS's house."
+    n "As CS was saying bye to his friends, a familiar but upsetting voice can be heard at the front of CS' house."
     stop music fadeout 1.0
     music end
     ed "YOU!"
     show cs disappointed at left with moveinleft
-    n "CS and the gang look forth at CS's front porch, where Richard and Ed are waiting angrily for him."
+    n "CS and the gang look forth at CS' front porch, where Richard and Ed are waiting angrily for him."
     play music "<loop 0>hohsisremix.mp3" volume 0.5
     music "Alfred's Theme - Eminem"
     show ed at right with moveinright
@@ -1895,15 +1899,15 @@ label talktohohsis:
     n "A voice can be heard behind the group running up to them."
     cs "Anno?"
     show anno at center behind doug with moveinleft
-    anno "You guys can't just destroy CS's house!"
+    anno "You guys can't just destroy CS' house!"
     ed "Why not?"
     anno "I don't know, because..."
     anno "CS wasn't trying to harm you!"
     show arceus flipped at mid_left_left with moveinleft
-    arceus "Yeah, CS's videos are hilarious, and honestly if I knew you guys before this I would've called you up for help on my house."
+    arceus "Yeah, CS' videos are hilarious, and honestly if I knew you guys before this I would've called you up for help on my house."
     arceus "If y'know, I didn't go after that one politican."
     ed "Well okay, but--"
-    n "Even more of CS's friends show up at the scene."
+    n "Even more of CS' friends show up at the scene."
     show cs at left
     show linus at mid_left behind phil with moveinleft
     linus "Yeah, I loved those videos about HoH SiS, and we'd love for you to come up fix up some of the damages at the LTT offices."

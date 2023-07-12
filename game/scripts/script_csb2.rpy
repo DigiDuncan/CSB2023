@@ -315,7 +315,7 @@ label breakout:
     scene black with dissolve
 
     n "In the dark of the night, the three begin chipping away at their cell floor."
-    n "Upon breaking through, they set up makeshift bed dummies in their beds with their prison outfits, and dawn their acquired guard outfits."
+    n "Upon breaking through, they set up makeshift bed dummies in their beds with their prison outfits, and don their acquired guard outfits."
 
     scene tunnel with fade
     # If anyone asks, Arceus is part god and can dig really easily, I guess.
@@ -433,12 +433,9 @@ label bordercrossing:
     cs "..."
     cs "I think I'm {i}really{/i} sleep deprived."
 
-    scene black with fade
-    scene inside_tim_hortons
-
     $ achievement_manager.unlock("Ohai, Mark")
-
     play music "<loop 0>buy_something.mp3" volume 0.6
+    scene inside_tim_hortons with fade
     show cashier at t_cashier_at_tims
     show inside_tim_hortons_fg
     show cs
@@ -492,7 +489,7 @@ label bordercrossing:
     arceus "Hnng...{w} hmmpmh... {w}aha!"
     n "Arceus finds an old laptop."
     arceus "Perfect."
-    n "Within minutes, Arceus has hacked the canadian governement records to display CS as having a valid work visa."
+    n "Within minutes, Arceus has hacked the Canadian governement records to display CS as having a valid work visa."
     arceus "Even their security is too nice..."
     n "Arceus rummages around the dumpster more and finds a magnet from an old CRT."
     n "He places it against the laptop, corrupting the hard drive instantly."

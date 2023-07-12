@@ -85,7 +85,7 @@ label csbi_start:
     cs "OH GOD AN ADVERTISER!!!"
     stop music fadeout 3.0
     music end
-    cs "QUICK START THE CAR START THE CAR!!!"
+    cs "QUICK START THE CAR, START THE CAR!!!"
     hide cs with moveoutright
     hide carguy with dissolve
     play sound "doorslam.ogg"
@@ -128,7 +128,7 @@ label walmart:
     cs "Wow! He seems like a good man!"
     hide doug with moveoutright
     show cs at center with move
-    cs "Now. Lets find some food!"
+    cs "Now, let's find some food!"
     show walmart_aisle behind cs with dissolve
     cs "*pop* Noice! Genergy is 2 for $5! I'll take them all!"
     cs "Oooh! Pringles are on sale too! Yoink!"
@@ -214,12 +214,12 @@ label room:
     cs "Better call HoH SiS!"
     cs "They are really good at giving me the JoJ!"
     show cs phone
-    cs "{i}dials 1-800-HoH-SiiS{/i}"
+    n "CS dials 1-800-HoH-SiiS."
     cs "Hello? Can you give me the JoJ?"
     hoh_operator "Is this a prank caller on the line?"
     cs "No! My house really needs foundation repair! I need your help ASAP!!"
     hoh_operator "Alright. That will be 200,000 bits. You can pay us afterwards."
-    hoh_operator "{i}hangs up{/i}"
+    n "The operator hangs up."
     show cs
     cs "Well that is one thing taken care of."
     cs "I guess I'll work on my new YTP while I wait."
@@ -230,7 +230,7 @@ label room:
     music end
     scene door_closed with fade
     show cs happy with moveinbottom
-    cs "Oh they're here!"
+    cs "Oh, they're here!"
     cs "Let me go get the door..."
     show door_open behind cs
     cs "Hello! I am cs188 and I-"
@@ -257,7 +257,7 @@ label room:
     wesley "Let's go check his room. We might get some ideas."
     show cs_room_2 behind ed with dissolve
     n "The three HoH SiS workers go upstairs."
-    wesley "Wow I didn't know CS had a Union Jack!"
+    wesley "Wow, I didn't know CS had a Union Jack!"
     ed "CS sure loves those Brits~!"
     wesley "Alright, but now what should we do?"
     ed "How about we burn down his house!"
@@ -345,7 +345,7 @@ label michael_house:
     michael "When he woke up, he was in a huge library."
     show black with dissolve
     play sound "csnore.ogg"
-    michael "CS? did you fall asleep?"
+    michael "CS? Did you fall asleep?"
     michael "CS!"
     stop sound
     hide black
@@ -460,7 +460,7 @@ label csbi_end:
     show worker_4 at mid_left
     show cs angry with moveinleft
     cs "Get out of my way!"
-    n "CS bodyslams the worker as he runs past."
+    n "CS bodyslams the workers as he runs past."
     play sound "audio/punch.ogg"
     show cs angry at mid_right with move
     show worker_3 at mid_center_right with hpunch
@@ -473,16 +473,16 @@ label csbi_end:
     show black with dissolve
     scene hoh_hq3 with dissolve
     show worker_5 at left
-    show cs angry at right with moveinright
+    show cs angry flipped at right with moveinright
     cs "Which way to the elevator? Now!"
     hide worker_5
     show worker_5alt at left
     worker_5 "Uhh, that way!"
     cs "Thanks, and also-"
     n "CS clocks the worker in the face."
-    show cs angry at left with move
+    show cs at left with move
     play sound "audio/punch.ogg"
-    show cs angry at right with move
+    show cs at right with move
     show worker_5alt at left with hpunch
     hide worker_5alt with moveoutbottom
     hide cs with moveoutright
