@@ -292,8 +292,9 @@ label boost:
     linus "Not exactly. It's an experimental piece of hardware that we have never used before, and it's custom made."
     n "Linus holds the card into the air."
     linus "Behold! {w=0.5} The-- WOAH SHIT {w=0.5}{nw}"
-    show linus with vpunch
     show ytx at linus_drop_tips
+    pause 0.35
+    show linus with vpunch
     n "Linus loses grip of the card as it tumbles down onto the table next to him."
     hide ytx
     n "CS facepalms, while you can hear Luke laughing in the background."
