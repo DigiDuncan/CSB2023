@@ -50,8 +50,7 @@ init python:
                 # Difficulty reset
                 global MOVE_FREQUENCY, TELEGRAPH_DELAY
                 MOVE_FREQUENCY = 5
-                if self.fires == DIFF_UP:
-                    TELEGRAPH_DELAY = 1
+                TELEGRAPH_DELAY = 1
 
             # Render object we return at the end
             r = renpy.Render(1920, 1080)
@@ -104,7 +103,7 @@ init python:
                     if self.fires >= DIFF_UP:
                         self.enemy_lane = renpy.random.choice([self.current_lane, renpy.random.randint(0, 2)])
                     else:
-                        self.enemy_lane = renpy.random.randint(0, 2)
+                        self.enemy_lane = renpy.random.choice([self.current_lane, self.current_lane, renpy.random.randint(0, 2)])
                     self.ufo_last_move = st
                     self.ufo_move_time = st + 0.5
                     self.fires += 1
