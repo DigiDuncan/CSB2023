@@ -15,7 +15,7 @@ label csbiii_start:
     scene csdesk with fade
     show linus at right with moveinright
     show cs at left with moveinleft
-    cs "Wow! I thought this was an office, why do I get such a cool desk?"
+    cs "Wow! I thought this was a starting office, why do I get such a cool desk?"
     linus "Actually, this is our worst setup, you'll get upgraded after you've been here a while."
     cs "Holy shit, really? This is way better than any setup I've seen, let alone had."
     linus "You must've had really bad setups then, this only has 3080s, everyone else has 3090s or 4080s."
@@ -458,6 +458,7 @@ label both_fan:
     cs "You know what? Why don't you all come down to my office."
     linus "I mean... sure. Let's see what you have in stock."
     linus "Come on guys, let's go!"
+    show taran flipped at right
     hide taran with moveoutright
     hide linus with moveoutright
     hide cs with moveoutright
