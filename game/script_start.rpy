@@ -81,7 +81,7 @@ transform t_cashier_at_tims:
 transform t_arc_at_tims:
     yanchor 1.0 ypos 0.75
     xanchor 0.5 xpos 0.625
-    zoom 0.6
+    linear 0.5 zoom 0.6
 
 transform t_cs_ltt:
     zoom 0.65
@@ -112,7 +112,6 @@ transform pepzone:
     yanchor 1.0 ypos 0.75
     xanchor 0.5 xpos 0.4
     zoom 0.75
-
 
 # Character Definitions
 define n = Character(None, what_italic = True)  # Narrator
