@@ -1260,11 +1260,46 @@ label west8:
             jump west5
 
 label south:
-    cs "I'm too fucking tired to think of what's south."
-    arceus "Yeah, same."
-    cs "Did you know that the Halifax Disaster was the biggest manmade non-nuclear explosion?"
-    arceus "What?"
-    cs "I don't know man, I'm too fucking tired to thhhhhhhinkkkk brooo"
+    cs "Why don't we try going south?"
+    arceus "Alright, what's your plan? Where are we going exactly?"
+    cs "I've always kinda wanted to go down to Vegas, we could have a ton of fun down there!"
+    arceus "Don't you wanna go back home?"
+    cs "Listen, we are free again and in the middle of nowhere. If we can find a way to make a bit of cash and get a car, maybe we can make it big!"
+    arceus "This sounds like an awful idea."
+    pause 1.0
+    arceus "Eh, fuck it. What do I have to lose at this point? Let's go!"
+    show cs happy
+    cs "Hell yeah!"
+    scene black with fade
+    n "CS and Arc keep following the road for a while, until they come across a small town."
+    scene town with fade
+    show cs at left with moveinleft
+    show arceus at right with moveinright
+    cs "Oh my god! We found civilization again!"
+    arceus "Thank God."
+    n "The two look around for a bit, when they see a gas station close by."
+    cs "Let's head over to that gas station, so we can pick up some food to eat."
+    n "CS and Arc head over to the convenience store at the gas station."
+    hide cs with moveoutright
+    hide arceus with moveoutright
+    scene gasinside with fade
+    show cs at left with moveinleft
+    show arceus at right with moveinright
+    arceus "Finally, some good fucking food."
+    cs "Donuts and chips have never tasted better."
+    arceus "Thank god the slushie machine was working for once." 
+    n "After they finish their food, they start to plan their epic journey to Vegas."
+    scene gasoutside with fade
+    show cs at left with moveinleft
+    show arceus at right with moveinleft
+    cs "Okay so, how do we get down to Nevada? That's quite a distance."
+    arc "We could use those bikes over there!"
+    cs "Nah, that's too much effort."
+    cs "How about..."
+    cs "Hold on. I got an idea."
+    cs "See those pieces on the ground?"
+    arceus "What piece?"
+    n "CS starts "
 
 label east:
     cs "Well since east is the way home, we should probably go that way."
