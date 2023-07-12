@@ -21,6 +21,7 @@ screen popup(a):
 
             text a.name:
                 size 22
+                xmaximum 180
                 font "fonts/DIN-Medium.ttf"
                 layout "greedy"
                 
