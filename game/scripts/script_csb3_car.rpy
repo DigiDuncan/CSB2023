@@ -24,6 +24,8 @@ label car_dialogue:
 
     show screen skip_car
 
+    pause 1.0
+
     cs "So, Arc?"
     arceus "Yeh?"
     cs "Are you a furry?"
