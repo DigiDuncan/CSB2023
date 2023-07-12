@@ -606,8 +606,10 @@ label arc_escape:
     n "The LMG members move toward the wall while more policemen come in and search the place."
     copguy "Alright, I have a very simple question to ask you all."
     copguy "Do you know this man?"
+    show cswanted at truecenter with dissolve
     n "Copguy shows a picture of CS to the crew."
     taran "Uhh yeah, that's--"
+    hide cswanted
     linus "We don't know who that is at all."
     copguy "Oh really? You there, what did you say about this man?"
     taran "I, uhh..."
