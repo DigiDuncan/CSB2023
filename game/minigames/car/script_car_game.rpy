@@ -47,6 +47,11 @@ init python:
             # Set start time if it isn't (frame 0)
             if self.start_time is None:
                 self.start_time = st
+                # Difficulty reset
+                global MOVE_FREQUENCY, TELEGRAPH_DELAY
+                MOVE_FREQUENCY = 5
+                if self.fires == DIFF_UP:
+                    TELEGRAPH_DELAY = 1
 
             # Render object we return at the end
             r = renpy.Render(1920, 1080)
