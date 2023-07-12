@@ -340,7 +340,18 @@ label boost:
     show cs at t_cs_ltt behind ltt_fg with moveinleft
     show linus at t_linus_ltt behind ltt_fg with moveinright
     n "Linus goes and gets the cameras set up, and they start to film the video."
-    n "After they finish recording, CS goes up to Linus' office."
+    linus "These days, video editing can be so difficult, and tedius. Lately the YouTube algorithm has been demanding more from us content creators."
+    linus "Which is why today, we brought along our newest employee, long term YouTube Pooper: cs188 for this review of the new YTX-9001!"
+    cs "Hey guys! CS here! The YTX-9001 is a fantastic card, and we can't wait to show you all of its features!"
+    linus "Much like we can't wait to show you this seguay to our sponsor!"
+    n "The two stand for a moment awkwardly staring at the camera."
+    linus "...Go ahead and cut."
+    cs "Who knew recording could be so stressful. I could use a drink. The lights are so bright."
+    linus "Here. Take this water bottle, it will keep you hydrated and your water cool. lttstore.com"
+    cs "... Linus. We aren't filming..."
+    linus "Sorry. Force of habit."
+    n "Some time passes and they finish the recording."
+    n "Afterwards, CS goes up to Linus' office."
     #Todo get Linus' office
     scene loffice with fade
     show cs at left with moveinleft
