@@ -166,12 +166,90 @@ label car_dialogue:
     "TV Billy" "Hello? Did I get a new signal?"
     billy "You aren't Billy! I am Billy!"
     "TV Billy" "No! I am Billy! I died long ago and is now in Super Heaven, selling pointless products!"
-    billy "No fuck you! I am the real Billy!"
-    cs "Yeah dude from the radio, you sound like an imposter."
+    billy "No, fuck you! I am the real Billy!"
+    cs "Yeah, dude from the radio, you sound like an imposter."
     arceus "sus{nw}"
     "TV Billy" "And you sound like that one guy who I sold a laptop to from his old ass TV!"
     cs "No clue what are you talking about."
     n "Billy turns off the Jupiter Jack for a while."
+
+    pause 1.0
+
+    cs "Who called asking for you earlier, Arc?"
+    arceus "No clue."
+    cs "Huh."
+
+    pause 1.0
+
+    cs "Man, we should have a podcast or something."
+    arceus "No, no we shouldn't."
+    cs "What do you mean? We're just chatting right now and I think it's pretty funny!"
+    arceus "You only think it's funny because we're the ones talking."
+    arceus "Every group of idiot friends thinks their funny enough to have a podcast, and 99 percent of the time, they're wrong."
+    billy "Yeah, I gotta agree with him on this one. I don't think anyone would find this funny."
+    n "Arceus glances at the top-right corner of the screen."
+    cs "What are you looking at?"
+    arceus "Nothing."
+
+    pause 1.0
+
+    n "Arceus sniffs the air."
+    cs "What do you smell, Arc?"
+    arceus "Gas."
+    cs "Oh, jeez, I hop the tank isn't leaking!"
+    arceus "No, like, gas. Like, passed gas."
+    cs "Oh, that was me."
+    n "Billy rolls down the window for a bit."
+
+    pause 1.0
+
+    cs "I spy with my little eye something blue."
+    arceus "Is it the car?"
+    cs "Yeah..."
+
+    pause 1.0
+
+    cs "Let's play 20 questions!"
+    arceus "Sure."
+    cs "OK, it's an object."
+    arceus "Is it bigger than a breadbox?"
+    cs "Nope."
+    arceus "Um, is it useful?"
+    cs "Yep!"
+    arceus "Hmm, uh, do you use it with your hands?"
+    cs "Yeah."
+    arceus "Is it... uh, frick, is it in my house?"
+    cs "Probably."
+    arceus "Is it in a drawer?"
+    cs "Usually?"
+    arceus "Is it shiny?"
+    cs "Typically, yeah."
+    arceus "Is it a knife?"
+    cs "Nope!"
+    arceus "Dang it, uh, is it a tool?"
+    cs "Yes?"
+    arceus "OK, OK, is it in the kitchen?"
+    cs "Yes!"
+    arceus "OK, so is it a fork?"
+    cs "Nope!"
+    arceus "How mnay questions have I done?"
+    cs "You're halfway in."
+    arceus "A... spoon?"
+    cs "That's the one!"
+    arceus "Welp, yay."
+    
+    pause 1.0
+
+    n "CS hears something from the back of the car. It sounds like the fumbling of plastic."
+    n "CS turns around."
+    n "Arceus is mumbling ounder his breath."
+    arceus "Right, up, right inverted, up inverted..."
+    cs "Are you... solving a Rubik's cube?"
+    arceus "Yeah, it's a hobby of mine."
+    cs "Where the fuck did you get a Rubik's cube?"
+    arceus "Man, we've been a lot of places the last few days. I don't remember exactly where I got a Rubik's cube."
+    cs "I need to learn to stop asking questions."
+    arceus "That you do."
 
     $ achievement_manager.unlock("Bored")
 
