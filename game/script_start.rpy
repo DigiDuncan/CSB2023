@@ -113,6 +113,9 @@ transform pepzone:
     xanchor 0.5 xpos 0.4
     zoom 0.75
 
+transform linus_drop_tips:
+    linear 0.35 yalign 2.0
+
 # Character Definitions
 define n = Character(None, what_italic = True)  # Narrator
 define cs = Character("cs188", callback = renpy.partial(char_callback, name = "cs", beep = "cs"))
