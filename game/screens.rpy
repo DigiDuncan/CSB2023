@@ -831,6 +831,7 @@ screen preferences():
                     label _("CSBounciness")
                     hbox:
                         bar:
+                            style "slider"
                             value preferences.csbounciness
                             range 100
                             changed(change_bounciness)
