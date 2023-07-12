@@ -348,7 +348,7 @@ label boost:
     linus "...Go ahead and cut."
     cs "Who knew recording could be so stressful. I could use a drink. The lights are so bright."
     linus "Here. Take this water bottle, it will keep you hydrated and your water cool. lttstore.com"
-    cs "... Linus. We aren't filming..."
+    cs "... Linus, we aren't filming..."
     linus "Sorry. Force of habit."
     n "Some time passes and they finish the recording."
     n "Afterwards, CS goes up to Linus' office."
