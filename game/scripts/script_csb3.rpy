@@ -1281,6 +1281,7 @@ label south:
     cs "Let's head over to that gas station, so we can pick up some food to eat."
     n "CS and Arc head over to the convenience store at the gas station."
     hide cs with moveoutright
+    show arceus flipped at right
     hide arceus with moveoutright
     scene gasinside with fade
     show cs at left with moveinleft
@@ -1318,6 +1319,7 @@ label east:
     cs "Let's head over to that gas station, so we can pick up some food."
     n "CS and Arc head over to the convenience store at the gas station."
     hide cs with moveoutright
+    show arceus flipped at right
     hide arceus with moveoutright
     scene gasinside with fade
     show cs at left with moveinleft
@@ -1799,7 +1801,7 @@ label iowa:
     n "They get back in car and continue into Iowa."
     billy "Alright well, ever since that cult encounter, it's been pretty smooth sailing!"
     billy "The rest of this trip shouldn't be too long!"
-    n "As if on queue, a strange sound is heard over the car."
+    n "As if on cue, a strange sound is heard over the car."
     n "CS looks out the window."
     play music "<loop 0>speedy_comet.mp3" volume 0.5
     music Speedy Comet - Mahito Yokota
