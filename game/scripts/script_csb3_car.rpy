@@ -244,7 +244,7 @@ label car_dialogue:
 
     n "CS hears something from the back of the car. It sounds like the fumbling of plastic."
     n "CS turns around."
-    n "Arceus is mumbling ounder his breath."
+    n "Arceus is mumbling under his breath."
     arceus "Right, up, right inverted, up inverted..."
     cs "Are you... solving a Rubik's cube?"
     arceus "Yeah, it's a hobby of mine."

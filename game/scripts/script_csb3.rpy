@@ -1079,8 +1079,8 @@ label choose_direction:
     show cs at left
     show arceus at right
     cs "We've been walking all night, I'm exhausted."
-    arceus "Yeah let's hope we find food and water soon."
-    cs "Hey uhh, do you know exactly where we are going?"
+    arceus "Yeah, let's hope we find food and water soon."
+    cs "Hey uhh, do you know exactly where we're going?"
     arceus "Well, I noticed that the sun set in our opposite direction, which means we're heading east right now."
     arceus "We can head in any direction really. The second we find a better form of transportation than walking, we're taking it."
     menu:
@@ -1311,7 +1311,7 @@ label east:
     cs "Oh my god! We found civilization again!"
     arceus "Thank God."
     n "The two look around for a bit, when they see a gas station close by."
-    cs "Let's head over to that gas station, so we can pick up some food to eat."
+    cs "Let's head over to that gas station, so we can pick up some food."
     n "CS and Arc head over to the convenience store at the gas station."
     hide cs with moveoutright
     hide arceus with moveoutright
@@ -1466,7 +1466,7 @@ label montana:
     cs "More colors, I need more colors!"
     show billy at right with moveinright
     show cs
-    billy "You ready to go CS?"
+    billy "You ready to go, CS?"
     cs "Yep! Let's check out and keep going!"
     billy "Where is the cashier in this store? I didn't see anyone..."
     show cashier at center with moveinbottom
@@ -1561,7 +1561,7 @@ label montana:
     $ renpy.music.set_pause(False, "music")
     arceus "CS, what the fuck are you doing...?!"
     arceus "You are going to definitely get us killed!"
-    n "Arceus hides behind the car as the cultist member brings two others with him."
+    n "Arceus hides behind the car as the cultist leader brings two others with him."
     hide arceus with moveoutleft
     show cs fakegod at left with moveinleft
     show cultist_2 at mid_mid_right with moveinright
@@ -1692,7 +1692,7 @@ label south_dakota:
     scene car plains
     show billy car
     with fade
-    n "They continue to drive though the massive and empty plains of South Dakota."
+    n "They continue to drive through the massive and empty plains of South Dakota."
     play music "<loop 0>track4.mp3" volume 0.4
     music Track 4 - Weatherscan
     n "By the time they reach Sioux City, it is already evening."
@@ -1864,7 +1864,7 @@ label ohio:
     scott "Ahhhhh!"
     billy "It gets the tough stains out!"
     terry "I'm sorry that doesn't seem very vegan, I'll have to just deal with it."
-    cs " Billy, I don't think that'll work, let's just keep going."
+    cs "Billy, I don't think that'll work, let's just keep going."
     scene car plains
     show billy car
     show scott_border
@@ -1887,7 +1887,7 @@ label back_home:
     music Park Theme - Lorin Nelson
     n "After the long and treacherous journey, CS finally arrives at his house."
     show arceus flipped at left with moveinleft
-    arceus "We made it back to your house CS!"
+    arceus "We made it back to your house, CS!"
     show cs flipped at center with moveinright
     cs "Finally I'm home..."
     cs "Arceus, thank you so much for everything on this trip. I couldn't have done it without you."
@@ -1939,7 +1939,7 @@ label back_home:
 label talktohohsis:
     cs "I never intended to harm your company, I just thought that the video was a good source to YTP."
     cs "I'm sorry about all those prank callers, I even made a video telling people to stop prank calling you."
-    cs "I never had bad intentions of you guys... honestly it was also kind of like a free promotion."
+    cs "I never had bad intentions for you guys... honestly it was also kind of like a free promotion."
     ed "Well, I'm sorry CS, but it's too late."
     ed "Richard, get the JoJ UFO and vaporize the house."
     stop music fadeout 1.0
