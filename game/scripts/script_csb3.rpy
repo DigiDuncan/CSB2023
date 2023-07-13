@@ -1299,7 +1299,11 @@ label south:
     cs "Hold on. I got an idea."
     cs "See those pieces on the ground?"
     arceus "What piece?"
-    n "CS starts "
+    n "CS quickly starts grabbing material from thin air and puts together a new car."
+    cs "Ta dah!"
+    arceus "HOW DID YOU DO THAT!?"
+    cs "Look, I'm a master builder. You wouldn't understand."
+    
 
 label east:
     cs "Well since east is the way home, we should probably go that way."
