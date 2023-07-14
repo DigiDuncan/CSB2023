@@ -1074,10 +1074,11 @@ label choose_direction:
     scene black with determination
     n "As the duo continues their journey through the night, they soon have to figure out exactly where to go."
     scene washington_road morning
-    play music "<loop 0>happy_roaming.mp3" volume 0.5
-    music Happy Roaming - Lorin Nelson
     show cs at left
     show arceus at right
+    with fade
+    play music "<loop 0>happy_roaming.mp3" volume 0.5
+    music Happy Roaming - Lorin Nelson
     cs "We've been walking all night, I'm exhausted."
     arceus "Yeah, let's hope we find food and water soon."
     cs "Hey uhh, do you know exactly where we're going?"
@@ -1353,7 +1354,7 @@ label hotwire:
     arceus "I can probably do that, let's go look."
     scene gasoutside with fade
     show cs at left with moveinleft
-    show arceus at right with moveinleft
+    show arceus at right with moveinright
     n "CS and Arc approach one of the cars in front of the gas station."
     n "Arceus smashes open the window and opens the door from the inside."
     arceus "Alright, so if we connect this to this..."
@@ -1374,7 +1375,7 @@ label billy_driver:
     n "CS walks over to someone's car parked in the front of the gas station."
     scene gasoutside with fade
     show cs at left with moveinleft
-    show arceus at right with moveinleft
+    show arceus at right with moveinright
     arceus "Are you crazy? To drive all the way back to New York? In a stranger's car at that."
     arceus "Besides, how are we even going to pay the guy anyways?"
     cs "Well we don't have to go all the way to New York, we could go a small distance and then get another Uber."
@@ -1404,6 +1405,7 @@ label billy_driver:
     music end
     hide cs with moveoutright
     hide billy with moveoutright
+    show arceus flipped at right
     hide arceus with moveoutright
     jump in_billy_car
 
@@ -1427,6 +1429,7 @@ label in_billy_car:
 label montana:
     scene car background
     show billy car
+    with fade
     n "After a few hours of driving, the trio currently is located in the middle of Montana."
     n "Arceus is sleeping, while CS peers out the window."
     cs "Are we there yet?"
@@ -1451,7 +1454,6 @@ label montana:
     cs "Same, I'll come with you."
     n "Arceus falls back to sleep in the car."
     play sound "doorslam.ogg"
-    scene black with fade
     scene hardwareinside with fade
     play music "<loop 0>home_depot.mp3" volume 0.4
     music "Let's Do This - Home Depot"
@@ -1506,7 +1508,6 @@ label montana:
     cs "Nothing Arc, just, uh, slipped and fell in the store."
     arceus "Okay whatever, I'm going back to sleep..."
     n "Billy takes off out of the parking lot."
-    scene black with fade
     scene car background night
     show billy car
     with fade
