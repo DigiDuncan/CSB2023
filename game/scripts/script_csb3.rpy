@@ -1304,6 +1304,16 @@ label south:
     cs "Ta dah!"
     arceus "HOW DID YOU DO THAT!?"
     cs "Look, I'm a master builder. You wouldn't understand."
+    arceus "Well, does the car even work?"
+    cs "Only one way to find out!"
+    scene car_inside
+    show cs at left
+    show arceus at right
+    n "Once they get into the car, CS starts it up."
+    pause 1.0
+    cs "Woohoo! Vegas Time!"
+    arceus "I don't know how you do these things dude, but let's go!"
+    n "The duo head out to Vegas, or where they presume Vegas is."
     
 
 label east:
