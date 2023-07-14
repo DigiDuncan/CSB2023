@@ -1809,7 +1809,7 @@ label nebraska:
     stop music fadeout 3.0
     music end
     n "The gang goes into the backroom area and sleeps for the night."
-    n "Once they wake up, they thank Peppino for his business and head out."
+    n "Once they wake up, they thank Peppino for his hospitality and head out."
     jump iowa
 
 label iowa:
