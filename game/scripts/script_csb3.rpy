@@ -1782,18 +1782,18 @@ label nebraska:
     with fade   
     play music "<loop 0>funiculi_holiday.mp3" volume 0.3
     music Funiculi Holiday - ClascyJitto
-    show peppino at mid_mid_left behind peppinopizzafg with moveinleft
-    show peppino at pepzone behind peppinopizzafg with move
+    show peppino at pepzone1 behind peppinopizzafg with moveinleft
+    show peppino at pepzone2 behind peppinopizzafg with ease
     show pakoo at mid_right with moveinleft
     show billy at right with moveinleft
     show cs at left with moveinleft
     show arceus flipped at mid_left with moveinleft
     peppino "Hey Piezanos, watcha want today?"
     pakoo "Hey Peppino, can you get me and my friends the Gustavo special today?"
-    show peppino2 at pepzone behind peppinopizzafg
+    show peppino2 at pepzone2 behind peppinopizzafg
     hide peppino
     peppino "Sure-a thing-a! Coming right up!"
-    show peppino at pepzone behind peppinopizzafg
+    show peppino at pepzone2 behind peppinopizzafg
     hide peppino2
     pakoo "Also, do you think my friends here can be spend the night? They don't have anywhere to sleep tonight."
     peppino "The room in the back should be fine, Mr. Stick is out right now, so they can bunk there."

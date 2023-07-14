@@ -108,9 +108,14 @@ transform xstretch_out:
     linear 0.5 xsize 2
     alpha 0.0
 
-transform pepzone:
-    yanchor 1.0 ypos 0.75
-    xanchor 0.5 xpos 0.4
+transform pepzone1:
+    ypos 0.50
+    xpos 0.375
+    zoom 0.75
+
+transform pepzone2:
+    ypos 0.33
+    xpos 0.375
     zoom 0.75
 
 transform linus_drop_tips:
