@@ -1596,15 +1596,22 @@ label montana:
     cs_fakegod "Don't tempt your god, I will YTP you so hard that you'll look like you came from an AwfulFawful YTP!"
     cultist_2 "We need to leave! We're sorry!"
     n "Billy comes up behind CS with one of his gadgets."
-    show billy at mid_left with moveinleft
+    show billy laser at mid_left with moveinleft
     stop music fadeout 1.0 
     play music "<loop 0>blazing_corridor.mp3" volume 0.4    
     billy "Fire a laser! Fire a laser!"
+    show laser_beam at gun behind billy
     hide cultist_2 with moveoutright
+    hide laser_beam
     n "Massive laser shots land between the cultists as they scramble away!"
     cultist_3 "I don't wanna turn into a YTP! Go guys go!"
+    show laser_beam at gun behind billy
     hide cultist_3 with moveoutright
+    hide laser_beam
+    pause 0.5
+    show laser_beam at gun behind billy
     hide cultist with moveoutright
+    hide laser_beam
     n "The cultists disappear into the forest."
     stop music fadeout 3.0 
     music end

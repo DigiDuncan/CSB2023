@@ -116,6 +116,11 @@ transform pepzone:
 transform linus_drop_tips:
     linear 0.35 yalign 2.0
 
+transform gun:
+    rotate 4
+    yanchor 0.5 ypos 0.555
+    xanchor 0 xpos 0.36
+
 # Character Definitions
 define n = Character(None, what_italic = True)  # Narrator
 define cs = Character("cs188", callback = renpy.partial(char_callback, name = "cs", beep = "cs"))
@@ -260,6 +265,7 @@ image billy = "characters/billy.png"
 image billy car = "characters/billy/billy_car.png"
 image billy car happy = "characters/billy/billy_car_happy.png"
 image billy car turn = "characters/billy/billy_car_turn.png"
+image billy laser = "characters/BillyMaysWithLaser.png"
 image pakoo = "characters/pakoo.png"
 image peppino = "characters/peppino.png"
 image peppino2 = "characters/peppino2.png"
@@ -367,6 +373,7 @@ image objection = "objection.png"
 image hold_it = "hold_it.png"
 image scott_border = "scott_border.png"
 image cswanted = "cs188WantedPoster.png"
+image laser_beam = "LaserBeam.png"
 
 # Movies
 image car background = Movie(play="movies/car_background.mp4")
