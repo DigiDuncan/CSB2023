@@ -1931,8 +1931,9 @@ label back_home:
     n "CS and the gang look forth at CS' front porch, where Richard and Ed are waiting angrily for him."
     play music "<loop 0>hohsisremix.mp3" volume 0.5
     music "Alfred's Theme - Eminem"
-    show ed at right with moveinright
-    show rich at mid_right behind ed with moveinright
+    show ed at right
+    show rich at mid_mid_right behind ed
+    with moveinright
     ed "I have been waiting for you for quite some time now."
     rich "We've been trying to stop you for a while now, but this is final stop for you."
     cs "HoH SiS?? What do you guys still want from me?"
