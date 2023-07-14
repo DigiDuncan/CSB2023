@@ -208,10 +208,8 @@ label play_cargame:
     window show
 
     if _return == True:
-        arceus "GG, dipshit."
         jump after_ufo
     else:
-        arceus "You failed. What the fuck."
         jump iowa
 
 label cargame_done:

@@ -1841,7 +1841,6 @@ label iowa:
 label after_ufo:
     scene car plains
     show billy car
-    with fade
     stop music fadeout 3.0
     music end
     cs "Holy shit! We made it!"
