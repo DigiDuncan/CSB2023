@@ -377,8 +377,8 @@ image ytx = Transform("ytx.png", zoom = 0.333)
 image objection = "objection.png"
 image hold_it = "hold_it.png"
 image scott_border = "scott_border.png"
-image cswanted = "cs188WantedPoster.png"
-image laser_beam = "LaserBeam.png"
+image cswanted = "wanted_poster.png"
+image laser_beam = "laser_beam.png"
 
 # Movies
 image car background = Movie(play="movies/car_background.mp4")
