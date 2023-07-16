@@ -1454,7 +1454,85 @@ label vegas:
     cs "Bars, Bars,"
     cs "Football player with a hotdog?"
     cs "Damnit! So close!"
+    cs "I haven't won anything, and I've already spent most of my money..."
+    cs "I wonder what Arc is up to, I haven't seen him at all."
+    n "CS gets up from the slot machine and starts to look for Arc."
+    n "CS looks around for a while, but he can't find him."
+    cs "Arceus! Hello?"
+    cs "Where did he go?"
+    cs "Maybe he went to the table games, I'll go check over there."
+    n "CS heads over to the table games section, and starts looking for Arc."
+    cs "Arceus are you around here?"
+    cs "I've checked all the tables, and I still can't find him!"
+    cs "Maybe I should leave, he might've went to that restaurant or whatever it was."
+    "???" "Hey you!"
+    cs "Huh? me?"
+    n "CS notices a fancy man smoking a cigar waving at him."
+    "???" "Yeah you! Come over to the Poker tabeh! *coughs* I bet I can beat you!"
+    cs "I guess this is my last chance to make it big. It's worth a shot."
+    cs "Alright sure, I'll play a round. But I don't have much."
+    "???" "Arright great, come sit down here."
+    n "CS sits down at the poker table, and notices that the man's skin is putrid green."
+    n "CS looks disgusted, but shrugs as he doesn't want to start trouble now."
+    green "Deal us some cards arready!"
+    n "The dealer deals the cards out to Mr. Green and CS."
+    green "Hahahaha! I can tell this one's a winner!"
+    n "CS looks at his cards, he's got an ace of spades and a king of spades."
+    n "The dealer lies down a nine of hearts, an eight of clubs, and a queen of spades."
+    green "Arright! I'm puttin one million in!"
+    cs "One MILLION?"
+    green "Heheh, is that all you got?"
+    pause 1.0
+    n "CS ponders for a moment, wondering if he should risk it all."
+    menu:
+        "Fold":
+            jump folded
+        "Stand":
+            jump poker
+
+label poker:
+    cs "No. I'll stand."
+    green "Bwahahaha! You think you can beat me?"
+    n "The dealer draws a ten of spades."
+    green "Ten million! You are bluffing, I can see through you!"
+    menu:
+        "Fold":
+            jump folded
+        "Stand":
+            jump poker2
+
+label poker2:
+    cs "I'm still gonna stand."
+    green "I'm gonna be rich! You better have that money on you boy!"
+    n "The dealer draws a jack of spades."
+    green "100 million! You better drop out *coughs* rrright now!"
+    menu:
+        "Fold":
+            jump folded
+        "Stand":
+            jump poker3
     
+label poker3:
+    cs "Still standing."
+    green "What!? You son of a bitch, you are so scrrewed!"
+    cashier "Alright, let's see your hands."
+    n "Mr. Green and CS put their cards down."
+    n "CS has a royal flush with his ace and king of spades, while Mr. Green had a seven of hearts and a ten of clubs."
+    n "Mr. Green pukes all over the table and falls over backwards, passing out."
+    cs "Woohoo! I won!"
+    cashier "Congratulations sir, you just won 100 million dollars!"
+    cs "Yayy! I can pay for my Creative Cloud without donations!"
+    n "CS jumps into the air and cheers."
+    cs "Finally! Me and Arc can buy whatever we want! I need to let him know!"
+    n "Before CS runs off to find Arc, the owner of the casino approaches CS."
+    jerma "Well, look who we have here!"
+    jerma "You beat my highest roller! How'd you do that?"
+    cs "Uhh, I dunno."
+    jerma "Well congrats on your victory!"
+    jerma "I'll go get the money for you, and Mr. Green is gonna have to pay up to me now."
+    cs "Alright, I'm gonna go find my friend real quick."
+    jerma "Sure thing, meet me back by the employee access area."
+    n "CS continues to look for Arc."
 
 label east:
     cs "Well since east is the way home, we should probably go that way."
@@ -2040,7 +2118,22 @@ label ohio:
 
 label pennsylvania:
     n "The gang hits the last state before New York, Pennsylvania."
-
+    n "CS sees the billboard pass by them."
+    cs "Oh my god! It's pencilCon! We need to go!"
+    arceus "Why the fuck do you want to go to PENCILCON? We are so close to home!"
+    cs "Because I love sharpening pencils! I made my own holiday around it! Please Billy, can we go to PencilCon?"
+    billy "If Arceus is okay with it, sure I guess."
+    cs "C'mon Arceus!"
+    arceus "Ugh..."
+    cs "Please?"
+    pause 3.0
+    arceus "Fine, sure whatever."
+    cs "Yippee! Let's go!"
+    n "After about 20 minutes, the gang arrives at PencilCon."
+    cs "Oh my gosh I'm so excited! Everything is pencil-themed!"
+    arceus "This is... some place."
+    billy "Do people really like pencils that much? Maybe I should've pitched more pencil products."
+    
     jump car_dialogue
 
 label back_home:

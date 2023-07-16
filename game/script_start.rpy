@@ -179,6 +179,10 @@ define terry = Character("Terry", callback = renpy.partial(char_callback, name =
 define carla = Character("Carla", callback = renpy.partial(char_callback, name = "carla"))
 define peppino = Character("Peppino", callback = renpy.partial(char_callback, name = "peppino"))
 define iris = Character("Iris", callback = renpy.partial(char_callback, name = "iris", beep = "iris"))
+define lego = Character("LegoBot", callback = renpy.partial(char_callback, name = "lego"))
+define trailtrash = Character("Trailer Trash", callback = renpy.partial(char_callback, name = "trailtrash"))
+define green = Character("Mr. Green", callback = renpy.partial(char_callback, name = "green"))
+define jerma = Character("Jerma", callback = renpy.partial(char_callback, name = "jerma"))
 
 # Character Images
 ## CS
