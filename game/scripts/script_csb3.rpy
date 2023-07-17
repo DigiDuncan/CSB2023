@@ -1295,7 +1295,7 @@ label south:
     show cs at left with moveinleft
     show arceus at right with moveinleft
     cs "Okay so, how do we get down to Nevada? That's quite a distance."
-    arceus "We could use those bikes over there!"
+    arceus "We could use those bikes over there?"
     cs "Nah, that's too much effort."
     cs "How about..."
     cs "Hold on. I got an idea."
@@ -1305,7 +1305,7 @@ label south:
     cs "Ta dah!"
     arceus "HOW DID YOU DO THAT!?"
     cs "Look, I'm a master builder. You wouldn't understand."
-    arceus "Well, does the car even work?"
+    arceus "Well... Does the car even work?"
     cs "Only one way to find out!"
     scene car_inside with fade
     show cs at left with moveinleft
@@ -1313,7 +1313,7 @@ label south:
     n "Once they get into the car, CS starts it up."
     pause 1.0
     cs "Woohoo! Vegas Time!"
-    arceus "I don't know how you do these things dude, but let's go!"
+    arceus "I don't even know how you do these things man, but let's go!"
     n "The duo head out to Vegas, or where they presume Vegas is."
     scene black with fade
     n "After many hours of driving, it starts to turn night time again."
@@ -1321,14 +1321,14 @@ label south:
     show cs at left
     show arceus at right
     with fade
-    arceus "Are you sure we are close to Vegas?"
+    arceus "Are you sure we're close to Vegas?"
     cs "We have to be! Nevada is like right below Washington!"
-    arceus "Well there is a state sign coming up, let's see if your right."
+    arceus "Well there is a state sign coming up, let's see if you're right."
     n "As the approach the sign, it reads \"Welcome to UTAH, Life Elevated\"."
     arceus "Welp. You tried."
     cs "I could've sworn we were going the right way."
     arceus "Did you ever see a sign that said \"Las Vegas - in how ever many miles\"?"
-    cs "No..."
+    cs "No...?"
     arceus "Oh well. At least we know where we are now."
     arceus "Tomorrow, we'll head to Vegas."
     arceus "Let's find somewhere to eat before we hit the hay tonight."
@@ -1339,7 +1339,7 @@ label south:
     cs "Nah, that's a clothing store."
     arceus "Oh weird."
     cs "Wait hold up! I think I see a pizza place!"
-    arceus "Man pizza sounds good right now."
+    arceus "Man pizza does sound good right about now."
     cs "Woah what? It's a Lego pizza place?"
     cs "We're going there right now."
     n "CS pulls into the parking lot of the restaurant."
@@ -1352,10 +1352,10 @@ label south:
     arceus "Are you sure about this CS? This place gives me the creeps."
     cs "This is my dream place to eat at. We NEED to see if we can get in."
     n "They approach the front door, and the sign on front of it says the place is closed."
-    arceus "Dang that sure sucks, we can leave now right?"
+    arceus "Dang, that suuuuuure sucks. We can leave now right?"
     n "CS pushes the door open."
     cs "The door isn't locked! We can go in!"
-    arceus "Oh great. Yippee."
+    arceus "Oh great. Yippee!"
     n "As CS and Arc walk in, they are greeted with a musty aroma and a dimly lit party room."
     n "CS walks around in awe, as Arceus creeps behind him."
     cs "Wow, a Lego-themed pizza restaurant. This place looks like it was built out of Lego too!"
@@ -1370,7 +1370,7 @@ label south:
     cs "I see it in the back by the counter!"
     n "CS hops off stage and runs over to the serving counter."
     n "A couple boxes of freshly-baked pizza are sitting there."
-    arceus "It's hot too, who made this?"
+    arceus "It's hot too... Who made this?"
     cs "The cook who works here, duh!"
     arceus "The place was closed, CS."
     cs "Well then, why would the cook in the back be making pizzas then?"
@@ -1417,22 +1417,21 @@ label south:
     n "Arceus hops in the drivers seat, while CS gets in the back."
     cs "I made this car though..."
     n "Arceus starts the car, as he then takes off at lightning speed out of the parking out and back onto the road."
-    arceus "Thank godd, I can take a breather now."
+    arceus "Thank god, I can take a breather now."
     cs "Man this sucks."
     cs "It was super cool before the Legos tried to kill us."
-    arceus "I think that whole restaurant was trying to kill us CS."
+    arceus "I think that whole restaurant was trying to kill us, CS."
     n "Arceus drives the rest of the way until they hit Las Vegas."
     jump vegas
 
 label vegas:
     n "After a few hours of driving, the duo sees the bright Las Vegas sign come into view."
     cs "Woohoo! We're almost there!"
-    arceus "Some reckless gambling will probably help me forget about the horrors from that restaurant."
+    arceus "Some reckless gambling will probably help me forget about the horrors from that restaurant..."
     n "As they enter Las Vegas and find a place to park, they start by heading down The Strip."
     cs "Alright Arc, you ready to get rich?"
-    arceus "I doubt it, but hell yeah let's go!"
-    arceus "Do you want to get something to eat first? I see a place called Pasta... Italy... something. They probably have food."
-    cs "Why would we eat? We just got here and I wanna gamble!"
+    arceus "I doubt we will, but hell yeah let's go!"
+    arceus "Do you want to get something to eat first? I see a place called Pasta... Italy... something. They probably have food."    cs "Why would we eat? We just got here and I wanna gamble!"
     cs "Look over there! SlotsaFun! That looks like a cool place to start!"
     arceus "Alright, sure, I guess I can find something to eat there. Probably."
     n "Cs and Arc enter the casino, as it looks like chaos is unfolding in front of their faces."
