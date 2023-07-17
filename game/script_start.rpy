@@ -369,6 +369,8 @@ image peppinopizzabg = "bg/peppino_inside_bg.png"
 image peppinopizzafg = "bg/peppino_inside_fg.png"
 image wozniaktroubles = "bg/scottwozprotest.png"
 image cshouse_vaporized = "bg/cs_house_vaporized.png"
+image pizzaplace = "bg/pizzaplace.png"
+image casino1 = "bg/casino1.png"
 
 ## AI Ending
 image park1 = "bg/ai/amusementpark1.png"

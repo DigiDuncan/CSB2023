@@ -1344,8 +1344,8 @@ label south:
     cs "We're going there right now."
     n "CS pulls into the parking lot of the restaurant."
     scene pizzaplace with fade
-    show cs at left with moveinleft
-    show arceus at right with moveinleft
+    show cs dark at left with moveinleft
+    show arceus dark at right with moveinleft
     cs "I've never seen this before!"
     cs "Lego NXT Entertainment? They must have those robotic lego things inside!"
     n "Arceus looks worried."
@@ -1431,10 +1431,12 @@ label vegas:
     n "As they enter Las Vegas and find a place to park, they start by heading down The Strip."
     cs "Alright Arc, you ready to get rich?"
     arceus "I doubt we will, but hell yeah let's go!"
-    arceus "Do you want to get something to eat first? I see a place called Pasta... Italy... something. They probably have food."    cs "Why would we eat? We just got here and I wanna gamble!"
+    arceus "Do you want to get something to eat first? I see a place called Pasta... Italy... something. They probably have food."
+    cs "Why would we eat? We just got here and I wanna gamble!"
     cs "Look over there! SlotsaFun! That looks like a cool place to start!"
     arceus "Alright, sure, I guess I can find something to eat there. Probably."
     n "Cs and Arc enter the casino, as it looks like chaos is unfolding in front of their faces."
+    scene casino1 with fade
     n "Slot machines sounds fill the room, while many drunkards hobble around the establishment."
     arceus "Oh god, I already feel like I have a migraine..."
     cs "C'mon Arc, let's go play some slots!"
@@ -1532,6 +1534,43 @@ label poker3:
     cs "Alright, I'm gonna go find my friend real quick."
     jerma "Sure thing, meet me back by the employee access area."
     n "CS continues to look for Arc."
+    cs "Arc? Where are you?"
+    cs "Maybe he went to the bathroom?"
+    n "CS finds the bathroom, to see Arceus with his head up against the mirror."
+    cs "Hey Arc! There you are! Are you okay?"
+    arceus "My head hurts so bad..."
+    arceus "I think I'm gonna head back to the car..."
+    cs "Alright I'm ready to leave too, because we just won 100 million dollars!"
+    arceus "Wh... what?? Are you just trying to make me feel better?"
+    cs "No Joke! Look, head out to the car, and I'll meet you there!"
+    arceus "Alright..."
+    n "Arceus stumbles out back into the casino, while CS goes to collect his money."
+    n "CS meets Jerma in the employee backroom."
+    n "Jerma is waiting with a briefcase."
+    jerma "Here he is! The man of the hour!"
+    cs "I honestly didn't think I was gonna win, I would've been in massive debt if I lost."
+    jerma "Well good thing you won, because Mr. Green is in massive debt to us right now."
+    jerma "Believe me, we've had a lot of money problems recently with Mr. Green, we've had to have him steal from our rival, Pasta Italiano."
+    cs "Yikes, that sounds shitty."
+    cs "Welp, I wish you the best of luck Mr. Jerma!"
+    n "After CS collects his winnings, he finds his way back to the car."
+    cs " Hey Arc, how you feeling?"
+    arceus "I do feel better now, yeah."
+    arceus "I think it was just too much sensory overload for me."
+    cs "Well that's good to hear."
+    cs "What's also good to hear is that we are rich as hell!"
+    n "CS opens the case to reveal loads of gold bars and diamonds."
+    arceus "Holy shit! We are loaded!"
+    arceus "I can't believe I missed your big win."
+    cs "Oh yeah it was kinda funny. The man I won against puked and fell over."
+    arceus "Hahaha, I would've too if I lost that much money."
+    cs "Yeah that's true."
+    arceus "Alright well, what's the plan now? We have so much money, we can do almost anything with it!"
+    menu:
+        "Go to airport":
+            jump airport
+        "Don't go to airport":
+            jump noairport
 
 label east:
     cs "Well since east is the way home, we should probably go that way."
