@@ -2132,9 +2132,9 @@ label pennsylvania:
     cs "Yippee! Let's go!"
     # TODO: BG: Parking lot
     n "After about twenty minutes, the gang arrives at PencilCon."
-    n "The get out of the car and head inside."
+    n "They get out of the car and head inside."
     # TODO: BG: Inside convention hall entry
-    cs "Oh my gosh I'm so excited! Everything is pencil-themed!"
+    cs "Oh my gosh, I'm so excited! Everything is pencil-themed!"
     arceus "This is... some place."
     billy "Do people really like pencils that much? Maybe I should've pitched more pencil products."
     n "A man dressed as a pencil approach the gang."
