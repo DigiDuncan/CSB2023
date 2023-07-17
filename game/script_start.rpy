@@ -1,5 +1,7 @@
 # Text beeps
 init python:
+    import re
+
     renpy.music.register_channel("beep", "voice", loop = True)
     def char_callback(event, name = None, beep = None, play_beeps = True, **kwargs):
         if name:
@@ -8,11 +10,10 @@ init python:
             if event == "show":
                 if beep is not None:
                     renpy.sound.play(f"audio/text/{beep}.wav", channel = "beep", loop = True)
-                    print(name)
                 else:
                     renpy.sound.play(f"audio/text/ut.wav", channel = "beep", loop = True)
             elif event == "slow_done" or event == "end":
-                renpy.sound.stop(channel="beep")
+                renpy.sound.stop(channel = "beep")
 
 # If music is so good, why is there no Music 2?
 init python:
@@ -185,7 +186,7 @@ define green = Character("Mr. Green", callback = renpy.partial(char_callback, na
 define jerma = Character("Jerma", callback = renpy.partial(char_callback, name = "jerma", beep = "jerma"))  # TODO: Beep
 define pencil = Character("Pencil Greeter", callback = char_callback)
 define signup = Character("Signup Helper", callback = char_callback)
-define host = Character("Host", callback = char_callback)  # TODO: Beep (Mettaton)
+define host = Character("Host", callback = renpy.partial(char_callback, name = "mettaton", beep = "snd_mtt"))
 
 # Character Images
 ## CS
