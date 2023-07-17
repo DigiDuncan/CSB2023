@@ -2077,6 +2077,7 @@ label after_ufo:
     jump michigan
 
 label michigan:
+    # TODO: [ARIA] Write this.
     jump ohio
 
 label ohio:
@@ -2236,7 +2237,7 @@ label win_pencil:
     cs "Thank you! I don't even know what I won!"
     host "You've won... {w=0.5}a brand new..."
     cs "Computer? Television? Car?!"
-    host "... {w=0.5}pencil sharpener!"
+    host "... {w=0.5}{color=#ffff00}pencil sharpener!"
     cs "I should have seen that coming."
     # TODO: Time skip, convention hall
     cs "Well that was a lot of excitement for one day, let's head home."
