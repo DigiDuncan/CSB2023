@@ -181,8 +181,8 @@ define peppino = Character("Peppino", callback = renpy.partial(char_callback, na
 define iris = Character("Iris", callback = renpy.partial(char_callback, name = "iris", beep = "iris"))
 define lego = Character("LegoBot", callback = renpy.partial(char_callback, name = "lego"))  # TODO: Beep
 define trailtrash = Character("Trailer Trash", callback = renpy.partial(char_callback, name = "trailtrash"))
-define green = Character("Mr. Green", callback = renpy.partial(char_callback, name = "green"), what_color="#00FF00")  # TODO: Beep
-define jerma = Character("Jerma", callback = renpy.partial(char_callback, name = "jerma"))  # TODO: Beep
+define green = Character("Mr. Green", callback = renpy.partial(char_callback, name = "green", beep = "green"), what_color="#00FF00")  # TODO: Beep
+define jerma = Character("Jerma", callback = renpy.partial(char_callback, name = "jerma", beep = "jerma"))  # TODO: Beep
 define pencil = Character("Pencil Greeter", callback = char_callback)
 define signup = Character("Signup Helper", callback = char_callback)
 define host = Character("Host", callback = char_callback)  # TODO: Beep (Mettaton)
