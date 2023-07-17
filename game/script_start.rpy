@@ -373,6 +373,12 @@ image pizzaplace = "bg/pizzaplace.png"
 image casino1 = "bg/casino1.png"
 image old_house_outside = "bg/small_house_old.png"
 image old_house_inside = "bg/inside_house_old.png"
+image cc_parking_lot = "bg/convention_center_outside.png"
+image cc_lobby = "bg/convention_center_lobby.png"
+image cc_crowd = "bg/convention_center_crowd.png"
+image cc_stage = "bg/convention_center_stage.png"
+image cc_backstage = "bg/convention_center_backstage.png"
+image billboard = "bg/billboard.png"
 
 ## AI Ending
 image park1 = "bg/ai/amusementpark1.png"

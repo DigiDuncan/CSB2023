@@ -2188,7 +2188,7 @@ label ohio:
 
 label pennsylvania:
     n "The gang hits the last state before New York, Pennsylvania."
-    # TODO: BG: Billboard
+    scene billboard
     n "CS sees a billboard pass by them."
     cs "Oh my god! It's PencilCon! We need to go!"
     arceus "Why the fuck do you want to go to PENCILCON when we are so close to home?!"
@@ -2200,10 +2200,10 @@ label pennsylvania:
     pause 3.0
     arceus "Fine, sure, whatever."
     cs "Yippee! Let's go!"
-    # TODO: BG: Parking lot
+    scene cc_parking_lot
     n "After about twenty minutes, the gang arrives at PencilCon."
     n "They get out of the car and head inside."
-    # TODO: BG: Inside convention hall entry
+    scene cc_crowd
     cs "Oh my gosh, I'm so excited! Everything is pencil-themed!"
     arceus "This is... some place."
     billy "Do people really like pencils that much? Maybe I should've pitched more pencil products."
@@ -2231,7 +2231,7 @@ label pennsylvania:
     billy "Any time!"
     n "Arceus runs off to where CS went."
     billy "Now, that's the power of good advice!"
-    # TODO: BG: Convention center
+    scene cc_lobby
     n "Arc catches up with CS, at the sign up table."
     signup "...and you said your last name is... 188?"
     cs "Yeah, this confuses everyone."
@@ -2241,7 +2241,7 @@ label pennsylvania:
     signup "OK, that's you all registered. Fuzzy guy, you signing up too?"
     arceus "Nah, I feel like would be basically cheating."
     cs "OK, well I have to go to the backstage and get set up. See you soon, Arc!"
-    # TODO: BG: Backstage
+    scene cc_backstage
     n "CS walks to the backstage to prepare to compete, when he notices a familiar face."
     cs "Wait, Digi?!"
     digi "CS?!"
@@ -2255,7 +2255,7 @@ label pennsylvania:
     cs "Oh jeez, I guess we will be against each other, if I make it that far."
     digi "Well, good luck to you!"
     cs "You as well!"
-    # TODO: Time skip, BG: stage
+    scene cc_stage
     cs "Well, I've made it this far. I guess it's just me versus Digi now..."
     n "Digi steps up to the stage."
     n "Digi goes to shake CS' hand."
@@ -2308,12 +2308,12 @@ label win_pencil:
     cs "Computer? Television? Car?!"
     host "... {w=0.5}{color=#ffff00}pencil sharpener!"
     cs "I should have seen that coming."
-    # TODO: Time skip, convention hall
+    scene cc_crowd
     cs "Well that was a lot of excitement for one day, let's head home."
     n "Though he was working harder to support CS, Arceus couldn't help but look relieved to be back on track."
     arceus "Absolutely."
     billy "Let's get back in my car!"
-    # TODO: BG: Parking lot
+    scene cc_parking_lot
     n "Digi runs up to the group."
     digi "Hey, uh, can I get a ride?"
     cs "Huh?"
