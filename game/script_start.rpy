@@ -186,7 +186,7 @@ define green = Character("Mr. Green", callback = renpy.partial(char_callback, na
 define jerma = Character("Jerma", callback = renpy.partial(char_callback, name = "jerma", beep = "jerma"))  # TODO: Beep
 define pencil = Character("Pencil Greeter", callback = char_callback)
 define signup = Character("Signup Helper", callback = char_callback)
-define host = Character("Host", callback = renpy.partial(char_callback, name = "mettaton", beep = "snd_mtt"))
+define host = Character("Host", callback = renpy.partial(char_callback, name = "mettaton", beep = "snd_mtt"), what_font = "DTM-MONO.otf", what_size = 40)
 
 # Character Images
 ## CS
