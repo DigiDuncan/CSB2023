@@ -371,6 +371,8 @@ image wozniaktroubles = "bg/scottwozprotest.png"
 image cshouse_vaporized = "bg/cs_house_vaporized.png"
 image pizzaplace = "bg/pizzaplace.png"
 image casino1 = "bg/casino1.png"
+image old_house_outside = "bg/small_house_old.png"
+image old_house_inside = "bg/inside_house_old.png"
 
 ## AI Ending
 image park1 = "bg/ai/amusementpark1.png"

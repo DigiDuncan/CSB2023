@@ -1572,6 +1572,37 @@ label poker3:
         "Don't go to airport":
             jump noairport
 
+label noairport:
+    cs "Nah, I don't wanna go to the airport yet."
+    arceus "Huh?"
+    n "?"
+    cs "Yeah, let's go do something cool."
+    cs "I don't know, we can't just go home yet!"
+    arceus "Okay well, uhm..."
+    arceus "What do you want to... do?"
+    cs "Let's go down to, your house?"
+    arceus "In Texas?"
+    cs "Oh shit yeah that's in Texas. Sure, that makes sense I guess!"
+    arceus "Okay..."
+    scene old_house_outside
+    show cs at left
+    show arceus at right
+    cs "Vroom... Vroom... Vroom.... Okay! We are here!"
+    arceus "Yep! This is my house alright! This is what it looks like!"
+    scene arceus_house
+    show cs at left
+    show arceus at right
+    cs "Alright! Now we are inside Arceus's house!"
+    pause 2.0
+    show cs angry
+    pause 2.0
+    cs "Ahem!"
+    scene old_house_inside
+    show cs happy at left
+    show arceus at right
+    cs "There we go!"
+    return
+
 label east:
     cs "Well since east is the way home, we should probably go that way."
     arceus "Alright, that sounds like a good idea."
