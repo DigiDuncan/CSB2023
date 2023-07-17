@@ -172,17 +172,20 @@ define sheriff = Character("Sheriff", callback = renpy.partial(char_callback, na
 define billy = Character("Billy", callback = renpy.partial(char_callback, name = "billy", beep = "billy"))
 define tv_billy = Character("TV Billy", callback = renpy.partial(char_callback, name = "billy", beep = "billy"))
 define cultist = Character("Cultist", callback = renpy.partial(char_callback, name = "cultist"))
-define cultist_2 = Character("Cultist 2", callback = renpy.partial(char_callback, name = "cultist2"))
+define cultist_2 = Character("Cultist 2", callback = char_callback)
 define cultist_3 = Character("Cultist 3", callback = char_callback)
-define scott = Character("Scott", callback = renpy.partial(char_callback, name = "scott"))
-define terry = Character("Terry", callback = renpy.partial(char_callback, name = "terry"))
-define carla = Character("Carla", callback = renpy.partial(char_callback, name = "carla"))
-define peppino = Character("Peppino", callback = renpy.partial(char_callback, name = "peppino"))
+define scott = Character("Scott", callback = renpy.partial(char_callback, name = "scott"))  # TODO: Beep
+define terry = Character("Terry", callback = renpy.partial(char_callback, name = "terry"))  # TODO: Beep
+define carla = Character("Carla", callback = renpy.partial(char_callback, name = "carla"))  # TODO: Beep
+define peppino = Character("Peppino", callback = renpy.partial(char_callback, name = "peppino"))  # TODO: Beep
 define iris = Character("Iris", callback = renpy.partial(char_callback, name = "iris", beep = "iris"))
-define lego = Character("LegoBot", callback = renpy.partial(char_callback, name = "lego"))
+define lego = Character("LegoBot", callback = renpy.partial(char_callback, name = "lego"))  # TODO: Beep
 define trailtrash = Character("Trailer Trash", callback = renpy.partial(char_callback, name = "trailtrash"))
-define green = Character("Mr. Green", callback = renpy.partial(char_callback, name = "green"))
-define jerma = Character("Jerma", callback = renpy.partial(char_callback, name = "jerma"))
+define green = Character("Mr. Green", callback = renpy.partial(char_callback, name = "green"))  # TODO: Beep
+define jerma = Character("Jerma", callback = renpy.partial(char_callback, name = "jerma"))  # TODO: Beep
+define pencil = Character("Pencil Greeter", callback = char_callback)
+define signup = Character("Signup Helper", callback = char_callback)
+define host = Character("Host", callback = char_callback)  # TODO: Beep (Mettaton)
 
 # Character Images
 ## CS
