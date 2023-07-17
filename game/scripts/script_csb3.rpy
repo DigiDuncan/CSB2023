@@ -2219,6 +2219,41 @@ label pennsylvania:
     jump win_pencil
 
 label win_pencil:
+    host "Holy Ticonderoga! We have a winner!"
+    n "As if they couldn't get any louder, the crowd is going insane."
+    host "The champ has fallen! Ladies and gents, what an upset!"
+    n "CS turns to Digi."
+    cs "Good game!"
+    digi "Same to you man, that was wild!"
+    cs "I don't know how I beat you, honestly."
+    n "Noticable smoke is coming out of Digi's arm."
+    cs "You good, Digi? Your arm is kinda..."
+    n "Digi looks at his arm."
+    digi "Oh shi-- {w=0.5}uh, I'll be back."
+    n "Digi runs off."
+    n "Arc runs on stage."
+    arceus "Holy crap, CS, you did it! That was amazing!"
+    cs "Thank you! I don't even know what I won!"
+    host "You've won... {w=0.5}a brand new..."
+    cs "Computer? Television? Car?!"
+    host "... {w=0.5}pencil sharpener!"
+    cs "I should have seen that coming."
+    # TODO: Time skip, convention hall
+    cs "Well that was a lot of excitement for one day, let's head home."
+    n "Though he was working harder to support CS, Arceus couldn't help but look relieved to be back on track."
+    arceus "Absolutely."
+    billy "Let's get back in my car!"
+    # TODO: BG: Parking lot
+    n "Digi runs up to the group."
+    digi "Hey, uh, can I get a ride?"
+    cs "Huh?"
+    digi "Usually, they'd pay for my train home, but I uh, lost."
+    cs "Ooh, right."
+    cs "Billy, we got room for one more?"
+    n "Billy looks at Digi."
+    billy "He and Arc are both pretty small, I think they'll fit in the back just fine."
+    cs "Well, Digi, you got a ride!"
+    digi "Thanks so much, man!"
     jump car_dialogue
 
 label back_home:
