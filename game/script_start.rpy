@@ -63,6 +63,21 @@ transform mid_center_right:
     yanchor 0.5 ypos 0.5
     xanchor 0.5 xpos 0.75
 
+transform xstretch_in:
+    xalign 0.5
+    linear 0.5 xsize 1920
+
+transform xstretch_out:
+    xalign 0.5
+    linear 0.5 xsize 2
+    alpha 0.0
+
+transform little_bounce:
+    yanchor 1.0
+    yzoom 0.95
+    ease 0.1 yzoom 1.05
+    ease 0.1 yzoom 1
+
 transform t_post_it:
     subpixel True
     xanchor 0.5 yanchor 0.0
@@ -94,38 +109,42 @@ transform t_linus_ltt:
     yanchor 1.0 ypos 0.8
     xanchor 1.0 xpos 0.8
 
-transform little_bounce:
-    yanchor 1.0
-    yzoom 0.95
-    ease 0.1 yzoom 1.05
-    ease 0.1 yzoom 1
-
-transform xstretch_in:
-    xalign 0.5
-    linear 0.5 xsize 1920
-
-transform xstretch_out:
-    xalign 0.5
-    linear 0.5 xsize 2
-    alpha 0.0
-
-transform pepzone1:
+transform t_pepzone1:
     ypos 0.50
     xpos 0.375
     zoom 0.75
 
-transform pepzone2:
+transform t_pepzone2:
     ypos 0.33
     xpos 0.375
     zoom 0.75
 
-transform linus_drop_tips:
+transform t_linus_drop_tips:
     linear 0.35 yalign 2.0
 
-transform gun:
+transform t_gun:
     rotate 4
     yanchor 0.5 ypos 0.555
     xanchor 0 xpos 0.36
+
+transform t_stage_screen_l:
+    anchor (0.0, 0.0)
+    pos (272, 413)
+    zoom 0.15
+
+transform t_stage_screen_c:
+    anchor (0.0, 0.0)
+    pos (816, 416)
+    zoom 0.15
+
+transform t_stage_screen_r:
+    anchor (0.0, 0.0)
+    pos (1349, 411)
+    zoom 0.15
+
+transform t_mettaton:
+    anchor (0.5, 1.0)
+    pos (0.5, 4.0)  # Why is this needed? This makes no sense. This should be 1.0
 
 # Character Definitions
 define n = Character(None, what_italic = True)  # Narrator
@@ -287,6 +306,7 @@ image cultist_2 = "characters/cultist2.png"
 image cultist_3 = "characters/cultist2.png"
 image scott = "characters/scott.png"
 image terry = "characters/terry.png"
+image mettaton = "characters/mettaton.png"
 
 # Background Images
 ## CSBI
@@ -418,6 +438,10 @@ image red_light:
     linear 0.5 alpha 0.0
     linear 0.5 alpha 0.75
     repeat
+
+# Layers?
+define config.detached_layers += ["broadcast"]
+image stage_screen = Window(Layer("broadcast", clipping = False), background = "minigames/pencil/stage.png")
 
 # Checks
 default fanboy_type = None
