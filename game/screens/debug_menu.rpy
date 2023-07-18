@@ -1,7 +1,7 @@
 screen debug_menu():
     tag menu
     python:
-        labels = sorted(renpy.get_all_labels())
+        labels = sorted([l for l in renpy.get_all_labels() if not l.startswith("_")])
     viewport:
         xpos 350
         xsize 1570
