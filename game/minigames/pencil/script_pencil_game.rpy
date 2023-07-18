@@ -2,6 +2,7 @@ init python:
     import math
 
     # Constants
+    sharpener_mouth = 1430
 
     class PencilGameDisplayable(renpy.Displayable):
         def __init__(self):
@@ -12,6 +13,7 @@ init python:
             # All pencils start at 20 cm, it will be a floating point, unless told otherwise
             self.start_time = None
             self.win = None
+            self.score = 0
             self.pencil_sharpener = Image("minigames/pencil/sharpener.png")
             self.current_pencil = Image("minigames/pencil/pencil.png")
             self.keyboard_q = Image("minigames/pencil/key_q.png")
@@ -21,21 +23,45 @@ init python:
             # Set start time if it isn't (frame 0)
             if self.start_time is None:
                 self.start_time = st
-
+            
+            current_time = st - self.start_time
             # Render object we return at the end
             r = renpy.Render(1920, 1080)
 
-            #Load assets
-            pencil_renderer = renpy.load_image(self.current_pencil)
+            # Load assets
             q_keyboard_renderer = renpy.load_image(self.keyboard_q)
             e_keyboard_renderer = renpy.load_image(self.keyboard_e)
 
             # Main game loop
+
+            #Visuals for making the pencil
+            pencil_crop = Crop((0,0, int(41.2*(self.current_pencil_length)), 50), self.current_pencil)
+            pencil_trans = Transform(pencil_crop, zoom=1.0)
+            pencil_renderer = renpy.render(pencil_trans, 1920, 1080, st ,at)
+            r.blit(pencil_renderer, (sharpener_mouth-self.current_pencil_length*41.2, 475))
+
+            # Current state of the pencil sharpener
             sharpener_displayable = renpy.displayable(self.pencil_sharpener)
             t = Transform(sharpener_displayable, zoom=0.35)
             sharpener_renderer = renpy.render(t, 475, 597, st, at)
-            r.blit(sharpener_renderer, (1300, 375))
+            r.blit(sharpener_renderer, (1300, 300))
 
+            # Rendering in the score
+            score_renderer = renpy.render(Text(str(self.score)+" cm", color = "#0000FF", size=100), 300, 100, st, at)
+            r.blit(score_renderer, (1600, 0))
+
+            # Rendering in the timer
+            if not (60-current_time < 0):
+                time_renderer = renpy.render(Text(str(60-math.ceil(current_time)), color="#FF0000", size=144), 100, 100, st, at)
+                r.blit(time_renderer, (50, 0))
+            else:
+                time_renderer = renpy.render(Text(str(0), color="#FF0000", size=144), 100, 100, st, at)
+                r.blit(time_renderer, (50, 0))
+
+            # Check if time's up
+            if (60-current_time < 0):
+                self.win = self.score
+                renpy.timeout(0)
             renpy.redraw(self, 0)
             return r
             
@@ -45,10 +71,12 @@ init python:
                 if ev.key == pygame.K_q and self.current_key:
                     # Progress the pencil.
                     self.pencil_sharpener = Image("minigames/pencil/sharpener2.png")
+                    self.current_pencil_length -= 0.50
                     self.current_key = False
                 elif ev.key == pygame.K_e and not self.current_key:
                     # Progress the pencil
                     self.pencil_sharpener = Image("minigames/pencil/sharpener.png")
+                    self.current_pencil_length -= 0.50
                     self.current_key = True
                 pass
             if ev.type == pygame.KEYDOWN and ev.key == pygame.K_SPACE:
@@ -75,7 +103,7 @@ screen pencilgame:
     #     yalign 0.68
     text "Press [[SPACE] to move on to the next pencil!":
         xalign 0.5
-        yalign 0.0
+        yalign 0.0625
         size 60
         color "AAAAAA"
     add pencilgame
