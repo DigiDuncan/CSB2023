@@ -433,6 +433,7 @@ image cards2 = "cards2.png"
 image cards3 = "cards3.png"
 image cards4 = "cards4.png"
 image cards5 = "cards5.png"
+image con_screen = "bg/con_screen.png"
 
 # Movies
 image car background = Movie(play="movies/car_background.mp4")

@@ -2380,7 +2380,7 @@ label pennsylvania:
     n "After a grueling competition, CS climbs his way up to the top of the bracket!"
     scene black
     show stage_screen as stage_screen_l at t_stage_screen_l
-    show stage_screen as stage_screen_c at t_stage_screen_c
+    show con_screen at t_stage_screen_c
     show stage_screen as stage_screen_r at t_stage_screen_r
     show cc_stage
     with fade
