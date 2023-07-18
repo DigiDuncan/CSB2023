@@ -1317,6 +1317,8 @@ label south:
     n "The duo head out to Vegas, or where they presume Vegas is."
     scene black with fade
     n "After many hours of driving, it starts to turn night time again."
+    stop music fadeout 3.0
+    music end 
     scene car_inside
     show cs at left
     show arceus at right
@@ -1356,8 +1358,14 @@ label south:
     n "CS pushes the door open."
     cs "The door isn't locked! We can go in!"
     arceus "Oh great. Yippee!"
+    scene black with fade
     n "As CS and Arc walk in, they are greeted with a musty aroma and a dimly lit party room."
+    scene fazlobby with fade
+    play music "<loop 0>tunnely_shimbers.mp3" volume 0.5
+    music Tunnely Shimbers - Mr. Sauceman
     n "CS walks around in awe, as Arceus creeps behind him."
+    show cs dark at left with moveinleft
+    show arceus dark at right with moveinleft
     cs "Wow, a Lego-themed pizza restaurant. This place looks like it was built out of Lego too!"
     cs "Woah Arc, look at those big Minifigure statues!"
     n "Up in the front of the room, 4 human-scale Lego minifigures stand up on a stage."
@@ -1378,6 +1386,9 @@ label south:
     arceus "And not out here, I don't wanna look at those creepy minifigures."
     cs "Fine..."
     n "CS and Arc head down the hallway next to the kitchen area, until the find a small office in the back."
+    scene fazplace with fade
+    show cs dark at left with moveinleft
+    show arceus dark at right with moveinleft
     arceus "Perfect. Let's eat in here, then we get back in the car."
     cs "Aww, I wanted to spend the night here!"
     arceus "No fucking way dude."
@@ -1397,13 +1408,20 @@ label south:
     arceus "CS we need to get the fuck out of here now."
     cs "But I haven't finished my pizz-"
     arceus "I don't care, let's go!"
+    stop music fadeout 3.0
+    music end 
     n "Arceus drags CS by the arm as they run out of the office and down the hallway."
+    scene fazhall with fade
+    show cs dark at left with moveinleft
+    show arceus dark at right with moveinleft    
     n "Before they make it to the door, Arceus stops dead in his tracks."
     cs "Hey! Why'd we stop?"
     n "CS looks ahead of him to see the giant Minifigure standing infront of them."
     cs "Ohh."
     arceus "CS, don't move a muscle."
     cs "Why not? it's just a leg-"
+    play music "<loop 0>hard_drive.mp3" volume 0.5
+    music Hard Drive to Munch You - Mr. Sauceman
     n "The Minifigure's eyes glow as it raises its arms up and starts running at CS."
     lego "HEEYYYY!!!!!"
     n "Arceus quickly drags CS out of the way at the last second."
@@ -1412,11 +1430,21 @@ label south:
     n "The other figures up ahead turn on and start moving toward Arc and CS."
     arceus "RUN CS RUN!!!"
     n "They desperately run as fast as they can to the front door, and then slam the door behind them."
+    scene pizzaplace with fade
+    show cs dark at left with moveinleft
+    show arceus dark at right with moveinleft
     n "the Minifigures run up to the door and smash their arms and heads through."
     arceus "To the car! Get in the car!"
     n "Arceus hops in the drivers seat, while CS gets in the back."
+    scene car_inside with fade
+    show arceus at left with moveinleft
     cs "I made this car though..."
     n "Arceus starts the car, as he then takes off at lightning speed out of the parking out and back onto the road."
+    scene black with fade
+    stop music fadeout 3.0
+    music end
+    scene car_inside with fade
+    show arceus at left with moveinleft
     arceus "Thank god, I can take a breather now."
     cs "Man this sucks."
     cs "It was super cool before the Legos tried to kill us."
@@ -1429,6 +1457,7 @@ label vegas:
     cs "Woohoo! We're almost there!"
     arceus "Some reckless gambling will probably help me forget about the horrors from that restaurant..."
     n "As they enter Las Vegas and find a place to park, they start by heading down The Strip."
+    scene strip with fade   
     cs "Alright Arc, you ready to get rich?"
     arceus "I doubt we will, but hell yeah let's go!"
     arceus "Do you want to get something to eat first? I see a place called Pasta... Italy... something. They probably have food."
@@ -1463,6 +1492,7 @@ label vegas:
     cs "Where did he go?"
     cs "Maybe he went to the table games, I'll go check over there."
     n "CS heads over to the table games section, and starts looking for Arc."
+    scene tablegames with fade
     cs "Arceus are you around here?"
     cs "I've checked all the tables, and I still can't find him!"
     cs "Maybe I should leave, he might've went to that restaurant or whatever it was."
@@ -1520,6 +1550,7 @@ label folded:
     green "Hahahaha! That's what I thought bucko!"
     green "Now scram!"
     n "CS sculks back to the lobby."
+    scene casino1 with fade
     stop music fadeout 3.0
     music end    
     cs "Damn, I really thought I was gonna win something!"
@@ -1527,20 +1558,35 @@ label folded:
     cs "I wonder where he went..."
     n "CS goes around to look for Arc."
     n "Meanwhile, Arc has been trying to win it big, but in a different kind of way..."
+    scene outsafe with fade
+    play sound "drill.ogg" loop volume 0.5
     arceus "Come on, I'm almost there..."
     pause 6.0
+    play sound "drillbreak.ogg" loop volume 0.5
     arceus "Fuck!"
+    play sound "drill.ogg" loop volume 0.5
     pause 6.0
+    play sound "drillbreak.ogg" loop volume 0.5
+    arceus "God damnit!"
+    play sound "drill.ogg" loop volume 0.5
+    pause 6.0
+    play sound "drillbreak.ogg" loop volume 0.5
     arceus "You broke dick piece of shit drill!"
+    play sound "drill.ogg" loop volume 0.5
     pause 3.0
+    play sound "payday.mp3" volume 0.5
     arceus "Hell yeah!"
+    scene insafe with fade
     arceus "Look at all this loot! CS is gonna be so surprised..."
     n "While Arceus is looting the casino, CS continues to search for Arc."
+    scene vegasbathroom with fade
     cs "Hello? Arceus?"
     cs "Not in the bathroom..."
     cs "Maybe he went to the car?"
     cs "I guess I should go check, I'm kinda tired of this place anyways."
+    scene black with fade
     n "CS heads out to the parking lot, to find Arceus in the car."
+    scene carpark with fade
     cs "Hey! There you are! Where were you?"
     arceus "I was getting us the motherlode!"
     n "Arceus opens a body bag, revealing stacks of gold, bills, and jewels."
@@ -1587,10 +1633,12 @@ label poker3:
     jerma "Sure thing, meet me back by the employee access area."
     stop music fadeout 3.0
     music end
+    scene casino1 with fade    
     n "CS continues to look for Arc."
     cs "Arc? Where are you?"
     cs "Maybe he went to the bathroom?"
     n "CS finds the bathroom, to see Arceus with his head up against the mirror."
+    scene vegasbathroom with fade
     cs "Hey Arc! There you are! Are you okay?"
     arceus "My head hurts so bad..."
     arceus "I think I'm gonna head back to the car..."
@@ -1600,6 +1648,7 @@ label poker3:
     arceus "Alright..."
     n "Arceus stumbles out back into the casino, while CS goes to collect his money."
     n "CS meets Jerma in the employee backroom."
+    scene backroomcasino with fade
     n "Jerma is waiting with a briefcase."
     jerma "Here he is! The man of the hour!"
     cs "I honestly didn't think I was gonna win, I would've been in massive debt if I lost."
@@ -1608,6 +1657,7 @@ label poker3:
     cs "Yikes, that sounds shitty."
     cs "Welp, I wish you the best of luck Mr. Jerma!"
     n "After CS collects his winnings, he finds his way back to the car."
+    scene carpark with fade
     cs " Hey Arc, how you feeling?"
     arceus "I do feel better now, yeah."
     arceus "I think it was just too much sensory overload for me."
