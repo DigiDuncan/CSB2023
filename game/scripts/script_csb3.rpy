@@ -292,7 +292,7 @@ label boost:
     linus "Not exactly. It's an experimental piece of hardware that we have never used before, and it's custom made."
     n "Linus holds the card into the air."
     linus "Behold! {w=0.5} The-- WOAH SHIT {w=0.5}{nw}"
-    show ytx at linus_drop_tips
+    show ytx at t_linus_drop_tips
     pause 0.35
     show linus with vpunch
     n "Linus loses grip of the card as it tumbles down onto the table next to him."
@@ -1948,16 +1948,16 @@ label montana:
     stop music fadeout 1.0 
     play music "<loop 0>blazing_corridor.mp3" volume 0.4    
     billy "Fire a laser! Fire a laser!"
-    show laser_beam at gun behind billy
+    show laser_beam at t_gun behind billy
     hide cultist_2 with moveoutright
     hide laser_beam
     n "Massive laser shots land between the cultists as they scramble away!"
     cultist_3 "I don't wanna turn into a YTP! Go guys go!"
-    show laser_beam at gun behind billy
+    show laser_beam at t_gun behind billy
     hide cultist_3 with moveoutright
     hide laser_beam
     pause 0.5
-    show laser_beam at gun behind billy
+    show laser_beam at t_gun behind billy
     hide cultist with moveoutright
     hide laser_beam
     n "The cultists disappear into the forest."
@@ -2129,8 +2129,8 @@ label nebraska:
     with fade   
     play music "<loop 0>funiculi_holiday.mp3" volume 0.3
     music Funiculi Holiday - ClascyJitto
-    show peppino at pepzone1 behind peppinopizzafg with moveinleft
-    show peppino at pepzone2 behind peppinopizzafg with ease
+    show peppino at t_pepzone1 behind peppinopizzafg with moveinleft
+    show peppino at t_pepzone2 behind peppinopizzafg with ease
     show pakoo at mid_right with moveinleft
     show billy at right with moveinleft
     show cs at left with moveinleft
@@ -2316,7 +2316,15 @@ label pennsylvania:
     cs "Oh jeez, I guess we will be against each other, if I make it that far."
     digi "Well, good luck to you!"
     cs "You as well!"
-    scene cc_stage
+    scene black with fade
+    n "After a grueling competition, CS climbs his way up to the top of the bracket!"
+    scene black
+    show stage_screen as stage_screen_l at t_stage_screen_l
+    show stage_screen as stage_screen_c at t_stage_screen_c
+    show stage_screen as stage_screen_r at t_stage_screen_r
+    show mettaton at t_mettaton onlayer broadcast
+    show cc_stage
+    with fade
     cs "Well, I've made it this far. I guess it's just me versus Digi now..."
     n "Digi steps up to the stage."
     n "Digi goes to shake CS' hand."
@@ -2336,7 +2344,7 @@ label pennsylvania:
     host "ON 'GO!', THESE LOVLIES WILL BE COMPETING TO SEE WHO CAN {color=#ffff00}SHARPEN THE MOST PENCILS!"
     host "THIS TRULY IS THE BATTLE OF A CENTURY FOLKS! DIGIDUNCAN, OUR LONG TIME CHAMP, GOES UP AGAINST A NEWCOMER, THE AMAZING CS188!"
     n "The crowd is going wild."
-    host "All they have to do is {color=#ffff00}sharpen the pencils as quickly as possible,{/color} WITHOUT {color=#ffff00}GETTING THE ERASER STUCK!"
+    host "ALL THEY HAVE TO DO IS {color=#ffff00}SHARPEN THE PENCILS AS QUICKLY AS POSSIBLE,{/color} WITHOUT {color=#ffff00}GETTING THE ERASER STUCK!"
     host "IT'S A TRULY MAGICAL EVENT, AND YOU'RE ALL ABOUT TO WITNESS IT! ARE YOU ALL READY?"
     n "The crowd is going absolutely crazy."
     host "AND WITH THAT, LET'S BEGIN! READY?"
