@@ -1453,6 +1453,8 @@ label south:
     jump vegas
 
 label vegas:
+    play music "<loop 0>penthouse.mp3" volume 0.5
+    music "Al's Penthouse - Andy Blythe"
     n "After a few hours of driving, the duo sees the bright Las Vegas sign come into view."
     cs "Woohoo! We're almost there!"
     arceus "Some reckless gambling will probably help me forget about the horrors from that restaurant..."
@@ -1496,6 +1498,8 @@ label vegas:
     cs "Arceus are you around here?"
     cs "I've checked all the tables, and I still can't find him!"
     cs "Maybe I should leave, he might've went to that restaurant or whatever it was."
+    stop music fadeout 3.0
+    music end
     "???" "Hey you!"
     cs "Huh? me?"
     n "CS notices a fancy man smoking a cigar waving at him."

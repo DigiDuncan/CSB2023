@@ -34,6 +34,7 @@ init python:
         "Happy Roaming - Lorin Nelson": "happy_roaming.mp3",
         "Tunnely Shimbers - Mr. Sauceman": "tunnely_shimbers.mp3",
         "Hard Drive to Munch You - Mr. Sauceman": "hard_drive.mp3",
+        "Al's Penthouse - Andy Blythe": "penthouse.mp3",
         "Laurel Palace - Manami Matsumae": "laurel_palace.mp3",
         "Price Is Right Theme - Edd Kalehoff": "price_right.mp3",
         "Mm Select - Matthew Simmonds": "mm_select.mp3",
