@@ -215,7 +215,7 @@ screen choice(items):
         for i in items:
             $ choice_type = i.kwargs.get("type")
             if choice_type == "true" and preferences.streamer_mode:
-                textbutton "{color=#6600aa}[i.caption]" action i.action
+                textbutton "{color=#ba64ce}[i.caption]" action i.action
             elif choice_type == "good" and preferences.streamer_mode:
                 textbutton "{color=#00ff00}[i.caption]" action i.action
             elif choice_type == "bad" and preferences.streamer_mode:
