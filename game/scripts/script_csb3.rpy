@@ -1505,12 +1505,15 @@ label vegas:
     "???" "Arright great, come sit down here."
     n "CS sits down at the poker table, and notices that the man's skin is putrid green."
     n "CS looks disgusted, but shrugs as he doesn't want to start trouble now."
+    scene pokertable with fade
     play music "<loop 0>laurel_palace.mp3" volume 0.5
     music Laurel Palace - Manami Matsumae
     green "Deal us some cards arready!"
     n "The dealer deals the cards out to Mr. Green and CS."
+    show cards1
     green "Hahahaha! I can tell this one's a winner!"
     n "CS looks at his cards, he's got an ace of spades and a king of spades."
+    show cards2
     n "The dealer lies down a nine of hearts, an eight of clubs, and a queen of spades."
     green "Arright! I'm puttin one million in!"
     cs "One MILLION?"
@@ -1526,8 +1529,9 @@ label vegas:
 label poker:
     cs "No. I'll stand."
     green "Bwahahaha! You think you can beat me?"
+    show cards3
     n "The dealer draws a ten of spades."
-    green "Ten million! You are bluffing, I can see through you!"
+    green "Ten million! You're bluffing, I can see through you!"
     menu:
         "Fold":
             jump folded
@@ -1537,6 +1541,7 @@ label poker:
 label poker2:
     cs "I'm still gonna stand."
     green "I'm gonna be rich! You better have that money on you boy!"
+    show cards4
     n "The dealer draws a jack of spades."
     green "100 million! You better drop out *coughs* rrright now!"
     menu:
@@ -1612,6 +1617,7 @@ label poker3:
     green "What!? You son of a bitch, you are so scrrewed!"
     cashier "Alright, let's see your hands."
     n "Mr. Green and CS put their cards down."
+    show cards5
     n "CS has a royal flush with his ace and king of spades, while Mr. Green had a seven of hearts and a ten of clubs."
     n "Mr. Green pukes all over the table and falls over backwards, passing out."
     stop music fadeout 3.0
