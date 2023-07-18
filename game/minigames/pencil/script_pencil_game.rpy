@@ -3,10 +3,13 @@ init python:
 
     # Constants
 
-    class CarGameDisplayable(renpy.Displayable):
+    class PencilGameDisplayable(renpy.Displayable):
         def __init__(self):
             renpy.Displayable.__init__(self)
-
+            self.current_key = True
+            # I'm using a boolean statement here, Q needing to be pressed is True, E needing to be pressed is false. Reason for this is just so I can be lazy.
+            self.current_pencil_length = 20.0
+            # All pencils start at 20 cm, it will be a floating point, unless told otherwise
             self.start_time = None
             self.win = None
 
@@ -26,7 +29,19 @@ init python:
             
         def event(self, ev, x, y, st):
             import pygame
-            if ev.type == pygame.KEYDOWN and ev.key == pygame.K_LEFT:
+            if ev.type == pygame.KEYDOWN and (ev.key == pygame.K_q or ev.key == pygame.k_e):
+                if ev.key == pygame.K_q and self.current_key:
+                    # Progress the pencil.
+                    self.current_key = False
+                elif ev.key == pygame.K_e and not self.current_key:
+                    # Progress the pencil
+                    self.current_key = True
+                pass
+            if ev.type = pygame.KEYDOWN and ev.key == pygame.K_SPACE:
+                # Calculate new score
+                # TODO: Score calculation
+                # New pencil
+                self.current_pencil_length = 20.0
                 pass
             if self.win is not None:
                 return self.win
@@ -36,11 +51,7 @@ init python:
 
 
 screen pencilgame:
-    default pencilgame = CarGameDisplayable()
-    add "minigames/car/background.png" at transform:
-        yanchor 0.5 ypos 0.0
-        linear 1.0 ypos 1.0
-        repeat
+    default pencilgame = PencilGameDisplayable()
     add pencilgame
 
 label play_pencilgame:
