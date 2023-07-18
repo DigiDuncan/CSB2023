@@ -8,7 +8,8 @@ init python:
     SHARPEN_AMOUNT = 0.5
     GAME_LENGTH = 60
     PENCIL_WIDTH_PX = int(41.2 * 20)
-    ERASER_SIZE = 114
+    ERASER_SIZE = 200
+    PENCIL_LIMIT = 15
 
     class PencilGameDisplayable(renpy.Displayable):
         def __init__(self):
@@ -48,10 +49,10 @@ init python:
                 self.lock_out_time = current_time + 3
 
             #Visuals for making the pencil
-            pencil_crop = Crop((0, 0, int((PENCIL_WIDTH_PX / MAX_PENCIL_LENGTH) * self.current_pencil_length), 50), self.current_pencil)
-            pencil_trans = Transform(pencil_crop, zoom=1.0)
-            pencil_renderer = renpy.render(pencil_trans, 1920, 1080, st ,at)
-            r.blit(pencil_renderer, (SHARPENER_MOUTH - self.current_pencil_length * (PENCIL_WIDTH_PX / MAX_PENCIL_LENGTH), 475))
+            pencil_size = int(lerp(ERASER_SIZE, PENCIL_WIDTH_PX, self.current_pencil_length / MAX_PENCIL_LENGTH))
+            pencil_crop = Crop((0, 0, pencil_size, 50), self.current_pencil)
+            pencil_renderer = renpy.render(pencil_crop, 1920, 1080, st ,at)
+            r.blit(pencil_renderer, (SHARPENER_MOUTH - pencil_size, 475))
 
             # Current state of the pencil sharpener
             sharpener_displayable = renpy.displayable(self.pencil_sharpener)
@@ -62,27 +63,27 @@ init python:
             # Lockout logic
             if self.lock_out_time and current_time < self.lock_out_time:
                 r.blit(red_x_renderer, (1200, 300))
-                print(current_time, self.lock_out_time)
             elif self.lock_out_time and current_time >= self.lock_out_time:
                 self.lock_out_time = None
                 self.pencils += 1
                 self.current_pencil_length = MAX_PENCIL_LENGTH
-                print(current_time, self.lock_out_time, "DONE")
 
             # Rendering in the score
-            score_renderer = renpy.render(Text(str(self.score) + " cm", color = "#0000FF", size = 100), 300, 100, st, at)
+            score_renderer = renpy.render(Text(str(self.score) + " cm", color = "#0000FF", size = 100), 500, 100, st, at)
             r.blit(score_renderer, (1600, 0))
 
             # Rendering in the timer
             if not (GAME_LENGTH - current_time < 0):
-                time_renderer = renpy.render(Text(str(GAME_LENGTH - math.ceil(current_time)), color="#FF0000", size = 144), 100, 100, st, at)
+                time_renderer = renpy.render(Text(str(GAME_LENGTH - math.ceil(current_time)), color = "#FF0000", size = 144), 150, 100, st, at)
                 r.blit(time_renderer, (50, 0))
             else:
-                time_renderer = renpy.render(Text(str(0), color="#FF0000", size = 144), 100, 100, st, at)
+                time_renderer = renpy.render(Text("0", color = "#FF0000", size = 144), 100, 100, st, at)
                 r.blit(time_renderer, (50, 0))
+            count_renderer = renpy.render(Text(str(PENCIL_LIMIT - self.pencils) + " pencils remaining", color = "#FF0000", size = 72), 1000, 100, st, at)
+            r.blit(count_renderer, (50, 125))
 
             # Check if time's up
-            if (GAME_LENGTH - current_time < 0):
+            if (GAME_LENGTH - current_time < 0) or (self.pencils >= PENCIL_LIMIT):
                 self.win = self.score
                 renpy.timeout(0)
 
