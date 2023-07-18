@@ -12,6 +12,10 @@ init python:
             # All pencils start at 20 cm, it will be a floating point, unless told otherwise
             self.start_time = None
             self.win = None
+            self.pencil_sharpener = Image("minigames/pencil/sharpener.png")
+            self.current_pencil = Image("minigames/pencil/pencil.png")
+            self.keyboard_q = Image("minigames/pencil/key_q.png")
+            self.keyboard_e = Image("minigames/pencil/key_e.png")
 
         def render(self, width, height, st, at):
             # Set start time if it isn't (frame 0)
@@ -21,25 +25,35 @@ init python:
             # Render object we return at the end
             r = renpy.Render(1920, 1080)
 
+            #Load assets
+            pencil_renderer = renpy.load_image(self.current_pencil)
+            q_keyboard_renderer = renpy.load_image(self.keyboard_q)
+            e_keyboard_renderer = renpy.load_image(self.keyboard_e)
+
             # Main game loop
-            pass
+            sharpener_displayable = renpy.displayable(self.pencil_sharpener)
+            t = Transform(sharpener_displayable, zoom=0.35)
+            sharpener_renderer = renpy.render(t, 475, 597, st, at)
+            r.blit(sharpener_renderer, (1300, 375))
 
             renpy.redraw(self, 0)
             return r
             
         def event(self, ev, x, y, st):
             import pygame
-            if ev.type == pygame.KEYDOWN and (ev.key == pygame.K_q or ev.key == pygame.k_e):
+            if ev.type == pygame.KEYDOWN and (ev.key == pygame.K_q or ev.key == pygame.K_e):
                 if ev.key == pygame.K_q and self.current_key:
                     # Progress the pencil.
+                    self.pencil_sharpener = Image("minigames/pencil/sharpener2.png")
                     self.current_key = False
                 elif ev.key == pygame.K_e and not self.current_key:
                     # Progress the pencil
+                    self.pencil_sharpener = Image("minigames/pencil/sharpener.png")
                     self.current_key = True
                 pass
-            if ev.type = pygame.KEYDOWN and ev.key == pygame.K_SPACE:
+            if ev.type == pygame.KEYDOWN and ev.key == pygame.K_SPACE:
                 # Calculate new score
-                # TODO: Score calculation
+                # TODO: Score calculation 
                 # New pencil
                 self.current_pencil_length = 20.0
                 pass
@@ -47,11 +61,23 @@ init python:
                 return self.win
 
         def visit(self):
-            return []
+            return [self.pencil_sharpener, self.current_pencil, self.keyboard_q, self.keyboard_e]
 
 
 screen pencilgame:
     default pencilgame = PencilGameDisplayable()
+    add "minigames/pencil/stage.png"
+    add "minigames/pencil/table.png" at transform:
+        yalign 1.0
+    # add "minigames/pencil/sharpener.png" at transform:
+    #     zoom 0.35
+    #     xalign 0.95
+    #     yalign 0.68
+    text "Press [[SPACE] to move on to the next pencil!":
+        xalign 0.5
+        yalign 0.0
+        size 60
+        color "AAAAAA"
     add pencilgame
 
 label play_pencilgame:
