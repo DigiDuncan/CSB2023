@@ -2382,7 +2382,6 @@ label pennsylvania:
     show stage_screen as stage_screen_l at t_stage_screen_l
     show stage_screen as stage_screen_c at t_stage_screen_c
     show stage_screen as stage_screen_r at t_stage_screen_r
-    show mettaton at t_stagescreen onlayer broadcast
     show cc_stage
     with fade
     cs "Well, I've made it this far. I guess it's just me versus Digi now..."
@@ -2398,6 +2397,7 @@ label pennsylvania:
     n "CS thinks to himself."
     cs "{i}Shoot, I forgot Digi is a cyborg! How am I going to have any shot at beating him?{/i}"
     cs "{i}I'm just going to have to try my hardest!{/i}"
+    show mettaton at t_stagescreen onlayer broadcast
     host "WELCOME, FOLKS!"
     host "EVERYONE GIVE A BIG HAND TO OUR WONDERFUL CONTESTANTS!"
     show crowd at t_stagescreen onlayer broadcast
