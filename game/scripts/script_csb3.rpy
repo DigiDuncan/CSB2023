@@ -2382,7 +2382,7 @@ label pennsylvania:
     show stage_screen as stage_screen_l at t_stage_screen_l
     show stage_screen as stage_screen_c at t_stage_screen_c
     show stage_screen as stage_screen_r at t_stage_screen_r
-    show mettaton at t_mettaton onlayer broadcast
+    show mettaton at t_stagescreen onlayer broadcast
     show cc_stage
     with fade
     cs "Well, I've made it this far. I guess it's just me versus Digi now..."
@@ -2400,13 +2400,19 @@ label pennsylvania:
     cs "{i}I'm just going to have to try my hardest!{/i}"
     host "WELCOME, FOLKS!"
     host "EVERYONE GIVE A BIG HAND TO OUR WONDERFUL CONTESTANTS!"
+    show crowd at t_stagescreen onlayer broadcast
     n "The crowd explodes into uproarious applause."
+    hide crowd onlayer broadcast
     host "ON 'GO!', THESE LOVLIES WILL BE COMPETING TO SEE WHO CAN {color=#ffff00}SHARPEN THE MOST PENCILS!"
     host "THIS TRULY IS THE BATTLE OF A CENTURY FOLKS! DIGIDUNCAN, OUR LONG TIME CHAMP, GOES UP AGAINST A NEWCOMER, THE AMAZING CS188!"
+    show crowd at t_stagescreen onlayer broadcast
     n "The crowd is going wild."
+    hide crowd onlayer broadcast
     host "ALL THEY HAVE TO DO IS {color=#ffff00}SHARPEN THE PENCILS AS QUICKLY AS POSSIBLE,{/color} WITHOUT {color=#ffff00}GETTING THE ERASER STUCK!"
     host "IT'S A TRULY MAGICAL EVENT, AND YOU'RE ALL ABOUT TO WITNESS IT! ARE YOU ALL READY?"
+    show crowd at t_stagescreen onlayer broadcast
     n "The crowd is going absolutely crazy."
+    hide crowd onlayer broadcast
     host "AND WITH THAT, LET'S BEGIN! READY?"
     n "CS glances over at Digi, and they nod at each other."
     host "3..."
@@ -2419,23 +2425,49 @@ label pennsylvania:
 
 label win_pencil:
     host "HOLY TICONDEROGA! WE HAVE A WINNER!"
+    show crowd at t_stagescreen onlayer broadcast
     n "As if they couldn't get any louder, the crowd is going insane."
+    hide crowd onlayer broadcast
     host "THE CHAMP HAS FALLEN! LADIES AND GENTS, WHAT AN UPSET!"
     n "CS turns to Digi."
+    hide mettaton onlayer broadcast
+    show cs happy at t_stagescreen onlayer broadcast
     cs "Good game!"
+    hide cs onlayer broadcast
+    show digi at t_stagescreen onlayer broadcast
     digi "Same to you man, that was wild!"
+    hide digi onlayer broadcast
+    show cs at t_stagescreen onlayer broadcast
     cs "I don't know how I beat you, honestly."
+    hide cs onlayer broadcast
+    show digi at t_stagescreen onlayer broadcast
     n "Noticable smoke is coming out of Digi's arm."
+    hide digi onlayer broadcast
+    show cs at t_stagescreen onlayer broadcast
     cs "You good, Digi? Your arm is kinda..."
+    hide cs onlayer broadcast
+    show digi at t_stagescreen onlayer broadcast
     n "Digi looks at his arm."
     digi "Oh shi-- {w=0.5}uh, I'll be back."
+    hide digi onlayer broadcast with moveoutright
     n "Digi runs off."
+    show arceus at t_stagescreen onlayer broadcast with moveinright
     n "Arc runs on stage."
     arceus "Holy shit, CS, you did it! That was amazing!"
+    hide arceus onlayer broadcast
+    show cs at t_stagescreen onlayer broadcast
     cs "Thank you! I don't even know what I won!"
+    hide cs onlayer broadcast
+    show mettaton at t_stagescreen onlayer broadcast
     host "YOU'VE WON... {w=0.5}A BRAND NEW..."
+    hide mettaton onlayer broadcast
+    show cs at t_stagescreen onlayer broadcast
     cs "Computer? Television? Car?!"
+    hide cs onlayer broadcast
+    show mettaton at t_stagescreen onlayer broadcast
     host "... {w=0.5}{color=#ffff00}PENCIL SHARPENER!"
+    hide mettaton onlayer broadcast
+    show cs at t_stagescreen onlayer broadcast
     cs "I should have seen that coming."
     scene cc_crowd
     cs "Well that was a lot of excitement for one day, let's head home."

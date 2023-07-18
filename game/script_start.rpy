@@ -142,7 +142,7 @@ transform t_stage_screen_r:
     pos (1349, 411)
     zoom 0.15
 
-transform t_mettaton:
+transform t_stagescreen:
     anchor (0.5, 1.0)
     pos (0.5, 4.0)  # Why is this needed? This makes no sense. This should be 1.0
 
