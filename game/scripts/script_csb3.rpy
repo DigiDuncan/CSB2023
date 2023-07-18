@@ -1339,7 +1339,7 @@ label south:
     cs "Nah, that's a clothing store."
     arceus "Oh weird."
     cs "Wait hold up! I think I see a pizza place!"
-    arceus "Man pizza does sound good right about now."
+    arceus "Man, pizza does sound good right about now."
     cs "Woah what? It's a Lego pizza place?"
     cs "We're going there right now."
     n "CS pulls into the parking lot of the restaurant."
@@ -1475,6 +1475,8 @@ label vegas:
     "???" "Arright great, come sit down here."
     n "CS sits down at the poker table, and notices that the man's skin is putrid green."
     n "CS looks disgusted, but shrugs as he doesn't want to start trouble now."
+    play music "<loop 0>laurel_palace.mp3" volume 0.5
+    music Laurel Palace - Manami Matsumae
     green "Deal us some cards arready!"
     n "The dealer deals the cards out to Mr. Green and CS."
     green "Hahahaha! I can tell this one's a winner!"
@@ -1512,7 +1514,53 @@ label poker2:
             jump folded
         "Stand":
             jump poker3
-    
+
+label folded:
+    cs "Yeah, I'm out. I can't risk that much."
+    green "Hahahaha! That's what I thought bucko!"
+    green "Now scram!"
+    n "CS sculks back to the lobby."
+    stop music fadeout 3.0
+    music end    
+    cs "Damn, I really thought I was gonna win something!"
+    cs "This wasn't as cool as I thought, I guess I should go find Arc."
+    cs "I wonder where he went..."
+    n "CS goes around to look for Arc."
+    n "Meanwhile, Arc has been trying to win it big, but in a different kind of way..."
+    arceus "Come on, I'm almost there..."
+    pause 6.0
+    arceus "Fuck!"
+    pause 6.0
+    arceus "You broke dick piece of shit drill!"
+    pause 3.0
+    arceus "Hell yeah!"
+    arceus "Look at all this loot! CS is gonna be so surprised..."
+    n "While Arceus is looting the casino, CS continues to search for Arc."
+    cs "Hello? Arceus?"
+    cs "Not in the bathroom..."
+    cs "Maybe he went to the car?"
+    cs "I guess I should go check, I'm kinda tired of this place anyways."
+    n "CS heads out to the parking lot, to find Arceus in the car."
+    cs "Hey! There you are! Where were you?"
+    arceus "I was getting us the motherlode!"
+    n "Arceus opens a body bag, revealing stacks of gold, bills, and jewels."
+    cs "WHATT?? How did you win that much??"
+    arceus "You think I won this? Haha no, I just broke open their safe!"
+    cs "Arceus! That's stealing!"
+    arceus "Yeah, and the casino steals from us. Slots are rigged, man."
+    cs "Yeah I guess your right, oh well."
+    cs "Did anyone notice?"
+    arceus "Nope! I 100%% stealthed that!"
+    cs "Well damn, sweet! Thank you so much Arceus!"
+    cs "We are millionaires now!"
+    arceus "Yeah! We can do whatever you wanna do now!"
+    arceus "What would you like to do CS?"
+    menu:
+        "Go to airport":
+            jump airport
+        "Don't go to airport":
+            jump noairport    
+
 label poker3:
     cs "Still standing."
     green "What!? You son of a bitch, you are so scrrewed!"
@@ -1520,7 +1568,11 @@ label poker3:
     n "Mr. Green and CS put their cards down."
     n "CS has a royal flush with his ace and king of spades, while Mr. Green had a seven of hearts and a ten of clubs."
     n "Mr. Green pukes all over the table and falls over backwards, passing out."
+    stop music fadeout 3.0
+    music end
     cs "Woohoo! I won!"
+    play music "<loop 0>price_right.mp3" volume 0.5
+    music Price Is Right Theme - Edd Kalehoff
     cashier "Congratulations sir, you just won 100 million dollars!"
     cs "Yayy! I can pay for my Creative Cloud without donations!"
     n "CS jumps into the air and cheers."
@@ -1533,6 +1585,8 @@ label poker3:
     jerma "I'll go get the money for you, and Mr. Green is gonna have to pay up to me now."
     cs "Alright, I'm gonna go find my friend real quick."
     jerma "Sure thing, meet me back by the employee access area."
+    stop music fadeout 3.0
+    music end
     n "CS continues to look for Arc."
     cs "Arc? Where are you?"
     cs "Maybe he went to the bathroom?"
@@ -1571,6 +1625,13 @@ label poker3:
             jump airport
         "Don't go to airport":
             jump noairport
+
+label airport:
+    cs "We should head back home now. I have a plan for our newfound riches."
+    arceus "Alright! I'm excited to see what you got cooking up!"
+    arceus "Let's get going!"
+    n "CS drives to the airport nearby Las Vegas."
+    n "CS and Arc pack up any belongings they have, and head inside to the terminal."
 
 label noairport:
     cs "Nah, I don't wanna go to the airport yet."

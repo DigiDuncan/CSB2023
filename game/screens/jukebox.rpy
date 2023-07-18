@@ -32,6 +32,8 @@ init python:
         "Pressing Pursuit ~ Cornered - Masakazu Sugimori": "pressing_pursuit_cornered.mp3",
         "Bun Guster - Satoru Kōsaki": "bun_guster.mp3",
         "Happy Roaming - Lorin Nelson": "happy_roaming.mp3",
+        "Laurel Palace - Manami Matsumae": "laurel_palace.mp3",
+        "Price Is Right Theme - Edd Kalehoff": "price_right.mp3",
         "Mm Select - Matthew Simmonds": "mm_select.mp3",
         "Let's Do This - Home Depot": "home_depot.mp3",
         "Candle World - Kikiyama": "candle_world.mp3",
