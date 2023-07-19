@@ -1693,6 +1693,8 @@ label airport:
     n "CS drives to the airport nearby Las Vegas."
     n "CS and Arc pack up any belongings they have, and head inside to the terminal."
     scene airport_interior with fade
+    play music "<loop 0>airport.mp3" volume 0.4
+    music Airport Infilration - Marten Joustra
     cs "What a crazy trip, that was really fun Arc."
     arceus "Yeah, even though I was traumatized at the pizza place, I had a lot of fun."
     cs "Welp, let's go catch our plane!"
@@ -1707,6 +1709,8 @@ label airport:
     tsa "Alright, you guys are good to go."
     cs "Phew! That was scary. I didn't even though that was in there!"
     n "Arc and CS collect their items again and get on the plane."
+    stop music fadeout 3.0
+    music end
     scene airplane_seats with fade
     n "They go and sit down somewhere near the back of the plane."
     cs "I want the window seat!"
@@ -1733,6 +1737,8 @@ label airport:
     cs "Fuck."
     arceus "Yeah, the walk there would take hours."
     cs "Shit, uhh, what are our other options?"
+    play music "<loop 0>mm_select.mp3" volume 0.3
+    music Mm Select - Matthew Simmonds
     billy "Need a ride? I'll take you to any destination for only $19.95!"
     arceus "Welp CS, we found our other option!"
     n "Arceus opens the suitcase and gives Billy a gold bar."
@@ -1741,6 +1747,8 @@ label airport:
     cs "We've got plenty more where that came from. You can keep it."
     billy "Well then! Where are we going?"
     n "CS tells Billy his address, and they go down to the parking lot and start heading home."
+    stop music fadeout 3.0
+    music end
     jump back_home_alt
 
 label airport_bad:
@@ -1749,6 +1757,8 @@ label airport_bad:
     arceus "Let's get going!"
     n "CS drives to the airport nearby Las Vegas."
     scene airport_interior with fade
+    play music "<loop 0>airport.mp3" volume 0.4
+    music Airport Infilration - Marten Joustra
     n "CS and Arc pack up any belongings they have, and head inside to the terminal."
     cs "What a crazy trip, that was really fun Arc."
     arceus "Yeah, even though I was traumatized at the pizza place, I had a lot of fun."
@@ -1767,6 +1777,8 @@ label airport_bad:
     cs "Huh?"
     n "Arc shoots finger guns at CS."
     arceus "Andd...."
+    stop music fadeout 3.0
+    music end    
     jump choose_direction
 
 label back_home_alt:
@@ -1830,7 +1842,7 @@ label donatehohsis:
     ed "Well, I'm sorry CS, but it's too late."
     ed "Richard, get the JoJ UFO and vaporize the house."
     stop music fadeout 1.0
-    end music
+    music end
     cs "Woah woah, hold on a second."
     cs "I am genuinely sorry about those videos, and I am sorry if you had any business losses."
     cs "You know what? Hold on one second."
@@ -1957,17 +1969,12 @@ label braghohsis:
     return
 
 label noairport:
-    cs "Nah, I don't wanna go to the airport yet."
-    arceus "Huh?"
-    n "?"
-    cs "Yeah, let's go do something cool."
-    cs "I don't know, we can't just go home yet!"
-    arceus "Okay well, uhm..."
-    arceus "What do you want to... do?"
-    cs "Let's go down to, your house?"
-    arceus "In Texas?"
-    cs "Oh shit yeah that's in Texas. Sure, that makes sense I guess!"
-    arceus "Okay..."
+    cs "Nah, I don't wanna go to the airport."
+    cs "We should take the car and drive."
+    arceus "Okay well, Let's get going!"
+    arceus "More road trip!"
+    cs "Let's go!"
+    n "CS and Arc"
     scene old_house_outside
     show cs at left
     show arceus at right
