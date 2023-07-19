@@ -1437,14 +1437,14 @@ label south:
     arceus "To the car! Get in the car!"
     n "Arceus hops in the drivers seat, while CS gets in the back."
     scene car_inside with fade
-    show arceus at left with moveinleft
+    show arceus flipped at left with moveinleft
     cs "I made this car though..."
     n "Arceus starts the car, as he then takes off at lightning speed out of the parking out and back onto the road."
     scene black with fade
     stop music fadeout 3.0
     music end
     scene car_inside with fade
-    show arceus at left with moveinleft
+    show arceus flipped at left with moveinleft
     arceus "Thank god, I can take a breather now."
     cs "Man this sucks."
     cs "It was super cool before the Legos tried to kill us."
