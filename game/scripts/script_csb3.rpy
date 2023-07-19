@@ -2330,7 +2330,7 @@ label pennsylvania:
     billy "Do people really like pencils that much? Maybe I should've pitched more pencil products."
     scene cc_entrance with dissolve
     show pencilguy at center with determination
-    n "A man dressed as a pencil approach the gang."
+    n "A man dressed as a pencil approaches the gang."
     pencil "Welcome to PencilCon! Want a free pencil?"
     show arceus at right with moveinright
     arceus "Uh, sure?"
@@ -2388,7 +2388,7 @@ label pennsylvania:
     cs "Wait, Digi?!"
     digi "CS?!"
     cs "What are you doing here?"
-    digi "I always compete in the the Pencil Sharpening Competition! I was inspired after that video of yours."
+    digi "I always compete in the Pencil Sharpening Competition! I was inspired after that video of yours."
     cs "Oh wow, really? Thank you, I guess!"
     cs "Do you think we'll be up against each other?"
     digi "I mean, probably, I'm the champ."
@@ -2415,7 +2415,7 @@ label pennsylvania:
     n "CS grabs Digi's hand."
     cs "Well, good luc--"
     n "Digi's hand grips CS stronger than a human could possibly grip."
-    show cs worried
+    show cs worried with vpunch
     cs "Yow!"
     digi "Oops, sorry, let me just..."
     show cs
