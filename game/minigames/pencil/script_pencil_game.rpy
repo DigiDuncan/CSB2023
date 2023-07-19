@@ -3,7 +3,7 @@ init python:
 
     # Constants
     SHARPENER_MOUTH = 1430
-    DIGI_SCORE = 270
+    DIGI_SCORE = 270 # if not preferences.streamer_mode else 200  # maybe this is a good idea
     MAX_PENCIL_LENGTH = 20.0
     SHARPEN_AMOUNT = 0.5
     GAME_LENGTH = 60
@@ -40,8 +40,6 @@ init python:
             r = renpy.Render(1920, 1080)
 
             # Load assets
-            q_keyboard_renderer = renpy.load_image(self.keyboard_q)
-            e_keyboard_renderer = renpy.load_image(self.keyboard_e)
             red_x_renderer = renpy.load_image(self.red_x)
 
             # Main game loop
@@ -56,8 +54,8 @@ init python:
 
             # Current state of the pencil sharpener
             sharpener_displayable = renpy.displayable(self.pencil_sharpener)
-            t = Transform(sharpener_displayable, zoom = 0.35)
-            sharpener_renderer = renpy.render(t, 475, 597, st, at)
+            sharpener_transform = Transform(sharpener_displayable, zoom = 0.35)
+            sharpener_renderer = renpy.render(sharpener_transform, 475, 597, st, at)
             r.blit(sharpener_renderer, (1300, 300))
 
             # Lockout logic
@@ -79,10 +77,23 @@ init python:
             else:
                 time_renderer = renpy.render(Text("0", color = "#FF0000", size = 144), 100, 100, st, at)
                 r.blit(time_renderer, (50, 0))
+                
+            # Render the remaining pencils
             count_renderer = renpy.render(Text(str(PENCIL_LIMIT - self.pencils) + " pencils remaining", color = "#FF0000", size = 72), 1000, 100, st, at)
             r.blit(count_renderer, (50, 125))
 
-            # Check if time's up
+            # Render in the keys
+            q_key_displayable = renpy.displayable(self.keyboard_q)
+            q_key_transform = Transform(q_key_displayable, alpha = 1.0 if self.current_key else 0.33, zoom = 0.5)
+            q_key_renderer = renpy.render(q_key_transform, 1920, 1080, st, at)
+            r.blit(q_key_renderer, (600, 780))
+
+            e_key_displayable = renpy.displayable(self.keyboard_e)
+            e_key_transform = Transform(e_key_displayable, alpha = 1.0 if not self.current_key else 0.33, zoom = 0.5)
+            e_key_renderer = renpy.render(e_key_transform, 1920, 1080, st, at)
+            r.blit(e_key_renderer, (1220, 780))
+
+            # Check if time's up or pencils out
             if (GAME_LENGTH - current_time < 0) or (self.pencils >= PENCIL_LIMIT):
                 self.win = self.score
                 renpy.timeout(0)
@@ -92,7 +103,7 @@ init python:
             
         def event(self, ev, x, y, st):
             import pygame
-            if ev.type == pygame.KEYDOWN and (ev.key == pygame.K_q or ev.key == pygame.K_e):
+            if ev.type == pygame.KEYDOWN:
                 if ev.key == pygame.K_q and self.current_key and not self.lock_out_time:
                     # Progress the pencil.
                     self.pencil_sharpener = Image("minigames/pencil/sharpener2.png")
@@ -107,6 +118,8 @@ init python:
                     self.current_key = True
                     if self.current_pencil_length >= 0:
                         self.score += SHARPEN_AMOUNT
+                elif ev.key == pygame.K_END:
+                    self.win = DIGI_SCORE + 1
             if ev.type == pygame.KEYDOWN and ev.key == pygame.K_SPACE and not self.lock_out_time:
                 # New pencil
                 self.current_pencil_length = MAX_PENCIL_LENGTH
