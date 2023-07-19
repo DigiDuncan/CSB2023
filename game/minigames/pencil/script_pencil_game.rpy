@@ -6,7 +6,7 @@ init python:
     DIGI_SCORE = 270 # if not preferences.streamer_mode else 200  # maybe this is a good idea
     MAX_PENCIL_LENGTH = 20.0
     SHARPEN_AMOUNT = 0.5
-    GAME_LENGTH = 60
+    GAME_LENGTH = 63
     PENCIL_WIDTH_PX = int(41.2 * 20)
     ERASER_SIZE = 200
     PENCIL_LIMIT = 15
@@ -18,6 +18,12 @@ init python:
             self.current_key = True
             # All pencils start at 20 cm, it will be a floating point, unless told otherwise
             self.current_pencil_length = MAX_PENCIL_LENGTH
+            self.started = False
+            self.three_played = False
+            self.two_played = False
+            self.one_played = False
+            self.go_played = False
+            self.fail_played = False
             self.start_time = None
             self.win = None
             self.score = 0
@@ -42,6 +48,36 @@ init python:
             # Load assets
             red_x_renderer = renpy.load_image(self.red_x)
 
+            #Entry point
+            if not self.started:
+                if 0 < current_time < 1:
+                    # Display 3
+                    if not self.three_played:
+                        renpy.sound.play("minigames/pencil/smash_3.wav")
+                        self.three_played = True
+                    countdown_renderer = renpy.render(Text("3", color="FF0000", size=200), 1920, 1080, st, at)
+                    r.blit(countdown_renderer, (960, 540))
+                elif 1 < current_time < 2:
+                    # Display 2
+                    if not self.two_played:
+                        renpy.sound.play("minigames/pencil/smash_2.wav")
+                        self.two_played = True
+                    countdown_renderer = renpy.render(Text("2", color="FFFF00", size=200), 1920, 1080, st, at)
+                    r.blit(countdown_renderer, (960, 540))
+                elif 2 < current_time < 3:
+                    # Display 1
+                    if not self.one_played:
+                        renpy.sound.play("minigames/pencil/smash_1.wav")
+                        self.one_played = True
+                    countdown_renderer = renpy.render(Text("1", color="00FF00", size=200), 1920, 1080, st, at)
+                    r.blit(countdown_renderer, (960, 540))
+                elif current_time > 3:
+                    # Yell Go at the player
+                    if not self.go_played:
+                        renpy.sound.play("minigames/pencil/smash_go.wav")
+                        self.go_played = True
+                    self.started = True
+
             # Main game loop
             if self.current_pencil_length < 0 and not self.lock_out_time:
                 self.lock_out_time = current_time + 3
@@ -61,22 +97,28 @@ init python:
             # Lockout logic
             if self.lock_out_time and current_time < self.lock_out_time:
                 r.blit(red_x_renderer, (1200, 300))
+                if not self.fail_played:
+                    renpy.sound.play("minigames/pencil/fail.mp3")
+                    self.fail_played = True
+
             elif self.lock_out_time and current_time >= self.lock_out_time:
                 self.lock_out_time = None
                 self.pencils += 1
                 self.current_pencil_length = MAX_PENCIL_LENGTH
+                self.fail_played = False
 
             # Rendering in the score
             score_renderer = renpy.render(Text(str(self.score) + " cm", color = "#0000FF", size = 100), 500, 100, st, at)
             r.blit(score_renderer, (1600, 0))
 
             # Rendering in the timer
-            if not (GAME_LENGTH - current_time < 0):
-                time_renderer = renpy.render(Text(str(GAME_LENGTH - math.ceil(current_time)), color = "#FF0000", size = 144), 150, 100, st, at)
-                r.blit(time_renderer, (50, 0))
-            else:
-                time_renderer = renpy.render(Text("0", color = "#FF0000", size = 144), 100, 100, st, at)
-                r.blit(time_renderer, (50, 0))
+            if not current_time < 3:
+                if not (GAME_LENGTH - current_time < 0):
+                    time_renderer = renpy.render(Text(str(GAME_LENGTH - math.ceil(current_time)), color = "#FF0000", size = 144), 150, 100, st, at)
+                    r.blit(time_renderer, (50, 0))
+                else:
+                    time_renderer = renpy.render(Text("0", color = "#FF0000", size = 144), 100, 100, st, at)
+                    r.blit(time_renderer, (50, 0))
                 
             # Render the remaining pencils
             count_renderer = renpy.render(Text(str(PENCIL_LIMIT - self.pencils) + " pencils remaining", color = "#FF0000", size = 72), 1000, 100, st, at)
@@ -103,7 +145,7 @@ init python:
             
         def event(self, ev, x, y, st):
             import pygame
-            if ev.type == pygame.KEYDOWN:
+            if ev.type == pygame.KEYDOWN and self.started:
                 if ev.key == pygame.K_q and self.current_key and not self.lock_out_time:
                     # Progress the pencil.
                     self.pencil_sharpener = Image("minigames/pencil/sharpener2.png")
@@ -146,7 +188,9 @@ screen pencilgame:
 label play_pencilgame:
     window hide
     $ quick_menu = False
+    play music "minigames/pencil/rude_buster.mp3" volume 0.5
     call screen pencilgame
+    stop music
     $ quick_menu = True
     window show
 

@@ -86,6 +86,7 @@ init python:
         "Taiikusai Desu Yo - Satoru Kosaki": "luckystar.png",
         "Track 4 - Weatherscan": "weather.png",
         "Track 3 - Weatherscan": "weather.png",
+        "Rude Buster - Toby Fox": "deltarune.png"
     }
 
 screen jukebox_nav():
