@@ -1612,7 +1612,7 @@ label folded:
     arceus "What would you like to do CS?"
     menu:
         "Go to airport":
-            jump airport
+            jump airport_bad
         "Don't go to airport":
             jump noairport    
 
@@ -1692,19 +1692,269 @@ label airport:
     arceus "Let's get going!"
     n "CS drives to the airport nearby Las Vegas."
     n "CS and Arc pack up any belongings they have, and head inside to the terminal."
+    scene airport_interior with fade
     cs "What a crazy trip, that was really fun Arc."
     arceus "Yeah, even though I was traumatized at the pizza place, I had a lot of fun."
     cs "Welp, let's go catch our plane!"
+    scene airport_tsa with fade
     n "CS and Arc put their belongings on the conveyor and walk through the scanner."
-    n "The scanner goes off when the bag goes through the conveyor detector."
+    n "The scanner goes off when the suitcase goes through the conveyor detector."
     cs "Huh?"
-    tsa "We're gonna have to check this bag."
-    n "The TSA agent opens up the bag, revealing all the riches from the casino."
+    tsa "We're gonna have to check this case."
+    n "The TSA agent opens up the suitcase, revealing all the riches from the casino."
     arceus "Oh yeah, the winnings."
-    n "The TSA agent looks through the bag, and finds a signed document from Jerma clarifying the legality of the money."
+    n "The TSA agent looks through the case, and finds a signed document from Jerma clarifying the legality of the money."
     tsa "Alright, you guys are good to go."
     cs "Phew! That was scary. I didn't even though that was in there!"
     n "Arc and CS collect their items again and get on the plane."
+    scene airplane_seats with fade
+    n "They go and sit down somewhere near the back of the plane."
+    cs "I want the window seat!"
+    arceus "Alright fine, can you hold on to the suitcase though? We can't have anyone steal this."
+    cs "Yeah okay."
+    cs "But i'm not holding it the whole time!"
+    n "The plane takes off, and CS falls asleep."
+    arceus "Hey, have you ever flown before?"
+    cs "Zzzz..."
+    arceus "I guess he has."
+    arceus "That or he's just really tired. I don't blame him."
+    arceus "I hate flying though, and I can't stop thinking about being in a flying metal tube."
+    arceus "It'll be over soon enough."
+    scene black with fade
+    n "After a few hours, the plane arrives in New York."
+    scene airport_inside with fade
+    n "CS and Arc get out of the plane and relax in the waiting area."
+    cs "Woohoo! We are almost home!"
+    arceus "Thank goodness, I'm out of the plane."
+    arceus "Also I just realized something CS."
+    cs "Hmm?"
+    arceus "We still gotta drive you home."
+    cs "Oooooh... Did not think of that."
+    cs "Fuck."
+    arceus "Yeah, the walk there would take hours."
+    cs "Shit, uhh, what are our other options?"
+    billy "Need a ride? I'll take you to any destination for only $19.95!"
+    arceus "Welp CS, we found our other option!"
+    n "Arceus opens the suitcase and gives Billy a gold bar."
+    arceus "You think this will do the job?"
+    billy "Wow! You should save your money!"
+    cs "We've got plenty more where that came from. You can keep it."
+    billy "Well then! Where are we going?"
+    n "CS tells Billy his address, and they go down to the parking lot and start heading home."
+    jump back_home_alt
+
+label airport_bad:
+    cs "We should head back home now. I have a plan for our newfound riches."
+    arceus "Alright! I'm excited to see what you got cooking up!"
+    arceus "Let's get going!"
+    n "CS drives to the airport nearby Las Vegas."
+    scene airport_interior with fade
+    n "CS and Arc pack up any belongings they have, and head inside to the terminal."
+    cs "What a crazy trip, that was really fun Arc."
+    arceus "Yeah, even though I was traumatized at the pizza place, I had a lot of fun."
+    cs "Welp, let's go catch our plane!"
+    scene airport_tsa with fade
+    n "CS and Arc put their belongings on the conveyor and walk through the scanner."
+    n "The scanner goes off when the bag goes through the conveyor detector."
+    cs "Huh?"
+    tsa "We're gonna have to check this case."
+    n "The TSA agent opens up the bag, revealing all the riches from the casino."
+    arceus "Oh yeah. Shit."
+    n "The TSA agent looks through the case, realizing it's not marked and it's stolen."
+    tsa "This is stolen property! We are confiscating this and you guys have to go!"
+    cs "Aw man!"
+    arceus "Welp, time to do it all over again."
+    cs "Huh?"
+    n "Arc shoots finger guns at CS."
+    arceus "Andd...."
+    jump choose_direction
+
+label back_home_alt:
+    scene cs_house with fade
+    play music "<loop 0>park_theme.mp3" volume 0.5
+    music Park Theme - Lorin Nelson
+    n "After the long and exciting journey, CS finally arrives at his house."
+    show arceus flipped at left with moveinleft
+    arceus "We made it back to your house, CS!"
+    show cs flipped at center with moveinright
+    cs "Finally I'm home..."
+    cs "Arceus, thank you so much for everything on this trip. I couldn't have done it without you."
+    arceus "Aw, it was nice helping ya here."
+    cs "You too, Billy."
+    show billy at mid_left with moveinleft
+    billy "No problem!"
+    cs "Well, I guess I should get some rest."
+    cs "If you guys want, we can have a party at my place tomorrow to celebrate all the shit we went through!"
+    "Arc and Billy" "Hell yeah!"
+    hide billy with moveoutleft
+    hide arceus with moveoutleft
+    n "As CS was saying bye to his friends, a familiar but upsetting voice can be heard at the front of CS' house."
+    stop music fadeout 1.0
+    music end
+    ed "YOU!"
+    show cs disappointed at left with moveinleft
+    n "CS and the gang look forth at CS' front porch, where Richard and Ed are waiting angrily for him."
+    play music "<loop 0>hohsisremix.mp3" volume 0.5
+    music "Alfred's Theme - Eminem"
+    show ed at right
+    show rich at mid_mid_right behind ed
+    with moveinright
+    ed "I have been waiting for you for quite some time now."
+    rich "We've been trying to stop you for a while now, but this is final stop for you."
+    cs "HoH SiS?? What do you guys still want from me?"
+    ed "What do you think, CS? After you put Wesley in the hospital? After you crippled most of our workers?"
+    cs "Well, you guys scammed me out of my money and broke my computer! Of course I wanted some kind of revenge!"
+    ed "Why do you think this all started?"
+    cs "I--{w=0.5} I don't know, because you're evil?"
+    ed "CS, you put our company to shame long ago."
+    ed "When you made that paraody video of us that you call a \"YTP\", people wouldn't stop harrassing us about it."
+    rich "You tried to humiliate us with your videos, with others thinking we were a joke."
+    ed "You see, my ancestors came from the planet JoJ many years ago to live here and start a foundation company."
+    ed "It was the best damn foundation company in the world."
+    ed "We repaired more than 50%% of all foundations on the planet, and now... you."
+    ed "You. You embarrassed us with those silly, stupid, videos that dragged our family company through the mud."
+    rich "That's why Ed wanted to get revenge on you. That's why we destroyed your computer, CS."
+    cs "I don't understand..."
+    menu:
+        "Fight" (type = "bad"):
+            jump fighthohsis
+        "Donate" (type = "true"):
+            jump donatehohsis
+        "Brag" (type = "bad"):
+            jump braghohsis
+
+label donatehohsis:
+    cs "I never intended to harm your company, I just thought that the video was a good source to YTP."
+    cs "I'm sorry about all those prank callers, I even made a video telling people to stop prank calling you."
+    cs "I never had bad intentions for you guys... honestly it was also kind of like a free promotion."
+    ed "Well, I'm sorry CS, but it's too late."
+    ed "Richard, get the JoJ UFO and vaporize the house."
+    stop music fadeout 1.0
+    end music
+    cs "Woah woah, hold on a second."
+    cs "I am genuinely sorry about those videos, and I am sorry if you had any business losses."
+    cs "You know what? Hold on one second."
+    n "CS grabs the suitcse from Arceus and takes out a few gold bars and gives them to Ed."
+    cs "Here, I hope this helps you guys a bit."
+    rich "Woah, is that real gold?"
+    n "Ed presses his fingernail into the bar and dents it."
+    ed "Shit yeah, this is the real deal."
+    ed "I, don't know what to say. This is way more than enough."
+    ed "You really sure about this? Even after we broke your laptop?"
+    cs "Don't worry about it. We'll go our own ways after this, and I hope you guys will continue to prosper in the business world!"
+    rich "Thank you so much!"
+    ed "Alright, let's get going now."
+    ed "As long as you leave our company alone, we'll leave you alone from now on."
+    ed "Good luck to you as well."
+    n "Ed and Richard go back to their JoJ UFO and take off."
+    n "CS walks up to his front door."
+    scene cs_room with fade
+    play music "<loop 0>ac_title.mp3" volume 0.4
+    music New Leaf Title Theme - Kazumi Totaka
+    show cs at center with moveinleft
+    cs "Ah, it's good to be home again!"
+    if fanbase == "both":
+        jump true_ending_alt
+    elif fanbase == "ltt":
+        jump ltt_ending_alt
+    elif fanbase == "ytp":
+        jump ytp_ending_alt
+    else:
+        jump secret
+
+label true_ending_alt:
+    n "CS looks over at his desk, where a new computer is sitting."
+    scene cs_room_2 with fade
+    n "CS looks at the monitor that has a sticky note that says \"From LTT\"."
+    show cs happy at mid_left with moveinleft
+    cs "Oh my goodness, Linus got me a new PC!"
+    n "There is also a note that says: \"We'd love to have to work with us again virtually, just give us a call\"."
+    cs "I'll have to make sure to call them later!"
+    show cs at mid_left
+    cs "Before I head off for the night, I'll do a stream real quick."
+    n "CS starts up his stream overlay and goes live on Twitch."
+    cs "Hey guys! CS here! Sorry I was gone for a couple weeks!"
+    n "The chat is overflowing with messages."
+    "Chat" "Yeah what happened to you?{w=0.25} Oh my god, CS, you're here!{w=0.25} Hi!{w=0.25} Hi!{w=0.25} Where have you been?"
+    show cs happy at mid_left
+    cs "Well guys..."
+    jump lego_ending
+
+label ytp_ending_alt:
+    n "CS looks over at his desk, where his old computer is sitting."
+    scene cs_room_2 with fade
+    show cs at mid_left
+    cs "Oh yeah, I forgot I actually have a computer that's not a craptop."
+    cs "Before I head off for the night, I'll do a stream real quick."
+    n "CS starts up his stream overlay and goes live on Twitch."
+    cs "Hey guys! CS here! Sorry I was gone for a couple weeks!"
+    n "The chat is overflowing with messages."
+    "Chat" "Yeah what happened to you?{w=0.25} Oh my god, CS, you're here!{w=0.25} Hi!{w=0.25} Hi!{w=0.25} Where have you been?"
+    show cs at mid_left
+    cs "Well guys..."
+    jump lego_ending
+
+label ltt_ending_alt:
+    n "CS looks over at his desk, where a new computer is sitting."
+    scene cs_room_2 with fade
+    n "CS looks at the monitor that has a sticky note that says \"From LTT\"."
+    show cs happy at mid_left with moveinleft
+    cs "Oh my goodness, Linus got me a new PC!"
+    n "There is also a note that says: \"We'd love to have to work with us again virtually, just give us a call\"."
+    cs "I'll have to make sure to call them later!"
+    show cs at mid_left
+    cs "Before I head off for the night, I'll do a stream real quick."
+    n "CS starts up his stream overlay and goes live on Twitch."
+    cs "Hey guys! CS here! Sorry I was gone for a couple weeks!"
+    n "The chat slowly comes in, confused."
+    "Chat" "Oh you're streaming?{w=0.25} I thought you were working for LTT now?{w=0.25} What happened to the YTPs?{w=0.25} Are you OK?{w=0.25} Where have you been?"
+    show cs at mid_left
+    cs "Well guys..."
+    jump lego_ending
+
+label lego_ending:
+    stop music fadeout 1.0
+    music end
+    cs "Guess what!"
+    n "CS takes his briefcase out and opens it up on camera."
+    cs "I'm Fuckin' rich now!"
+    cs "I'm gonna make Lego Island in real life!"
+    cs "You're all invited to come stay or live at my island once it's built!"
+    n "The chat is freaking out as CS announces his plan."
+    cs "I'm gonna start buying all my legos, and you guys can help build the island!"
+    cs "Now let's see what to buy..."
+    scene black with fade
+    stop music fadeout 1.0   
+    play music "secret/credits.mp3" volume 0.5
+    centered "Pretend there's credits here."
+    jump secret2
+
+label braghohsis:
+    show cs angry
+    cs "Yeah well, I have so much money! I don't really care!"
+    cs "You guys deserve to have your company in shambles!"
+    n "Richard and Ed back up to their UFO."
+    hide rich
+    hide ed
+    with moveoutright
+    cs "Hey! Where are you guys going!"
+    cs "Come back here!"
+    n "The JoJ UFO flies up over the house and vaporizes the house."
+    play sound "beam.ogg" volume 0.6
+    show beam at xstretch_in
+    pause 3.0
+    show beam at xstretch_out
+    pause 1.0
+    scene cshouse_vaporized
+    cs "I'll just buy a new house!"
+    n "Ed then also vaporizes the suitcase of money."
+    show cs disappointed at left
+    with vpunch
+    n "Ed flips CS off, and then flies away."
+    show cs disappointed
+    pause 1.0
+    cs "Fuck."
+    return
 
 label noairport:
     cs "Nah, I don't wanna go to the airport yet."
