@@ -2332,19 +2332,31 @@ label pennsylvania:
     show pencilguy at center with determination
     n "A man dressed as a pencil approach the gang."
     pencil "Welcome to PencilCon! Want a free pencil?"
+    show arceus at right with moveinright
     arceus "Uh, sure?"
     pencil "Here you go!"
     n "The pencil-clad man passes out a free pencil to each of them."
     pencil "Enjoy your stay!"
+    show arceus flipped
+    hide arceus flipped with moveoutright
     pencil "And, oh yeah! The 84th annual Pencil Sharpening Competition signups close in just a little bit, if you wanted to sign up!"
+    hide pencilguy
+    show cs at center
     n "The pencil man looks at CS."
+    hide cs
+    show pencilguy at center
     pencil "You look like the kinda guy that could win a competition like that. And boy howdy Dixon do we need it, the current champion hasn't been bested in five years!"
+    hide pencilguy with moveoutright
     n "The pencil walks away."
+    show cs at center
     cs "A pencil sharpening competition?"
     n "CS sees visions of an old video in his head."
     cs "I could totally crush that! I gotta sign up!"
+    show arceus at right with moveinright
     arceus "CS, come on man, I wanna get to your house so I can-"
+    hide cs with moveoutright
     n "CS walked towards the convention center before Arceus could finish speaking."
+    show billy at left with moveinleft
     billy "Listen, let the guy have fun. You two have been through a lot, right?"
     arceus "I suppose, I just..."
     n "Arceus thinks for a moment."
@@ -2352,10 +2364,14 @@ label pennsylvania:
     billy "That's the spirit! Now go cheer on your friend!"
     arceus "I will! Thanks, Billy!"
     billy "Any time!"
+    hide arceus with moveoutright
     n "Arceus runs off to where CS went."
     billy "Now, that's the power of good advice!"
     scene cc_lobby with dissolve
-    show cashier at center with determination
+    show cashier at center
+    show cs at left
+    with determination
+    show arceus at right with moveinright
     n "Arc catches up with CS, at the sign up table."
     signup "...and you said your last name is... 188?"
     cs "Yeah, this confuses everyone."
@@ -2433,7 +2449,9 @@ label pennsylvania:
     host "3..."
     n "A whirr is heard as Digi's arm motors charge up."
     host "2..."
+    n "CS concentrates, his hands ready to sharpen like his life depends on it."
     host "1..."
+    n "Both competitors hover their hands over the pencils..."
     host "GO!"
     # TODO: Minigame
     jump play_pencilgame

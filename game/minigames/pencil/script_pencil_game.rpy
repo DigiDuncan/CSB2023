@@ -136,10 +136,6 @@ screen pencilgame:
     add "minigames/pencil/stage.png"
     add "minigames/pencil/table.png" at transform:
         yalign 1.0
-    # add "minigames/pencil/sharpener.png" at transform:
-    #     zoom 0.35
-    #     xalign 0.95
-    #     yalign 0.68
     text "Press [[SPACE] to move on to the next pencil!":
         xalign 0.5
         yalign 0.0625
