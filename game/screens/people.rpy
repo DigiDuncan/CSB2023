@@ -35,6 +35,13 @@ init python:
         "peppino": "Peppino Spaghetti",
         "scott": "Scott Wozniak",
         "terry": "Terry Lesler",
+        "lego": "Lego NXT Minifigure",
+        "trailtrash": "Trailer Trash",
+        "green": "Mr. Green",
+        "jerma": "Jermey Elbertson",
+        "pencil": "Pencil Greeter",
+        "host": "Mettaton",
+        "tsa": "TSA Agent",
         "iris": "???"
     }
 
