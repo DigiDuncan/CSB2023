@@ -308,6 +308,8 @@ image scott = "characters/scott.png"
 image terry = "characters/terry.png"
 image mettaton = "characters/mettaton.png"
 image pencilguy = "characters/pencil.png"
+image digi = "characters/digi.png"
+image digi flipped = Transform("characters/digi.png", xzoom = -1)
 
 # Background Images
 ## CSBI

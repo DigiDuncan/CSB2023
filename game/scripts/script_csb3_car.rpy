@@ -18,6 +18,9 @@ transform t_skip_car:
 style skip_car_frame is empty
 
 label car_dialogue:
+    scene car plains
+    show billy car
+    with fade
     cs "Well Arceus, it has been quite a ride."
     arceus "It sure has. We've been through quite a lot haven't we?"
     cs "Yeah, I'm so tired. I can't wait to get some actual rest."

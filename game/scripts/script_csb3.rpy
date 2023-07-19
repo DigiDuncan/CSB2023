@@ -2508,14 +2508,22 @@ label win_pencil:
     arceus "Absolutely."
     billy "Let's get back in my car!"
     scene cc_parking_lot
+    show cs flipped at right
+    with dissolve
+    show digi flipped at left with moveinleft
     n "Digi runs up to the group."
     digi "Hey, uh, can I get a ride?"
     cs "Huh?"
     digi "Usually, they'd pay for my train home, but I uh, lost."
     cs "Ooh, right."
     cs "Billy, we got room for one more?"
+    hide cs
     n "Billy looks at Digi."
     billy "He and Arc are both pretty small, I think they'll fit in the back just fine."
+    show arceus at right with moveinright
+    arceus "Hey!"
+    show arceus flipped
+    hide arceus with moveoutright
     cs "Well, Digi, you got a ride!"
     digi "Thanks so much, man!"
     jump car_dialogue
