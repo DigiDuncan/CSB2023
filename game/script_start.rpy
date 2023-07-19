@@ -320,6 +320,9 @@ image pencilguy = "characters/pencil.png"
 image digi = "characters/digi.png"
 image digi flipped = "flip:characters/digi.png"
 image trailtrash = "characters/fatmama.png"
+image jerma = "characters/jerma.png"
+image tsa = "characters/tsa.png"
+image lego = "characters/lego.png"
 
 # Background Images
 ## CSBI

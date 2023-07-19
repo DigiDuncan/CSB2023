@@ -1415,8 +1415,9 @@ label south:
     music end 
     n "Arceus drags CS by the arm as they run out of the office and down the hallway."
     scene fazhall with fade
-    show cs dark at left with moveinleft
-    show arceus dark at right with moveinleft    
+    show lego at t_pepzone2
+    show cs dark at mid_left_left with moveinleft
+    show arceus dark at mid_right_right with moveinright   
     n "Before they make it to the door, Arceus stops dead in his tracks."
     cs "Hey! Why'd we stop?"
     n "CS looks ahead of him to see the giant Minifigure standing infront of them."
@@ -1428,8 +1429,14 @@ label south:
     n "The Minifigure's eyes glow as it raises its arms up and starts running at CS."
     lego "HEEYYYY!!!!!"
     n "Arceus quickly drags CS out of the way at the last second."
+    show cs dark at mid_right
+    show arceus dark at right
+    show lego at center
+    with move
     lego "A MAN HAS FALLEN INTO THE-"
+    hide lego with moveoutbottom
     n "The Minifigure crashes into the wall and falls to the ground."
+    show cs dark with vpunch
     n "The other figures up ahead turn on and start moving toward Arc and CS."
     arceus "RUN CS RUN!!!"
     n "They desperately run as fast as they can to the front door, and then slam the door behind them."
@@ -1675,14 +1682,17 @@ label poker3:
     music end
     $ achievement_manager.unlock("High Roller")
     scene luigi2
+    show cs happy at left
     cs "Woohoo! I won!"
     play music "<loop 0>price_right.mp3" volume 0.5
     music Price Is Right Theme - Edd Kalehoff
     cashier "Congratulations, sir, you just won 100 million dollars!"
     cs "Yay! I can pay for my Creative Cloud without donations!"
     n "CS jumps into the air and cheers."
+    show cs
     cs "Finally! Me and Arc can buy whatever we want! I need to let him know!"
     n "Before CS runs off to find Arc, the owner of the casino approaches CS."
+    show jerma at right with moveinright
     jerma "Well, look who we have here!"
     jerma "You beat my highest roller! How'd you do that?"
     cs "Uhh, I dunno."
@@ -1690,6 +1700,7 @@ label poker3:
     jerma "I'll go get the money for you, and Mr. Green is gonna have to pay up to me now."
     cs "Alright, I'm gonna go find my friend real quick."
     jerma "Sure thing, meet me back by the employee access area."
+    hide cs with moveoutright
     stop music fadeout 3.0
     music end
     scene casino1 with fade    
@@ -1715,6 +1726,7 @@ label poker3:
     hide cs with moveoutleft
     n "CS meets Jerma in the employee backroom."
     scene backroomcasino with fade
+    show jerma at center
     n "Jerma is waiting with a briefcase."
     show cs at left with moveinleft
     jerma "Here he is! The man of the hour!"
@@ -1772,7 +1784,9 @@ label airport:
     hide cs
     hide arceus flipped
     with moveoutright
-    scene airport_tsa with fade
+    scene airport_tsa 
+    show tsa at right
+    with fade
     show cs at left
     show arceus flipped at mid_left
     n "CS and Arc put their belongings on the conveyor and walk through the scanner."
@@ -1780,9 +1794,11 @@ label airport:
     show cs disappointed
     cs "Huh?"
     tsa "We're gonna have to check this case."
+    show tsa at center with move
     n "The TSA agent opens up the suitcase, revealing all the riches from the casino."
     arceus "Oh yeah, the winnings."
     n "The TSA agent looks through the case, and finds a signed document from Jerma clarifying the legality of the money."
+    show tsa at right with move
     tsa "Alright, you guys are good to go."
     show cs
     cs "Phew! That was scary. I didn't even know that was in there!"
