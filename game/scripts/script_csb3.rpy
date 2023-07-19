@@ -502,6 +502,7 @@ label both_fan:
     luke "Now that you say that..."
     linus "Alright fine! I guess if you all like it too, we could put some on our channel from time to time."
     show cs happy
+    $ achievement_manager.unlock("Crowd Pleaser")
     cs "Hell yeah!"
     linus "But you still have to help with some other videos as well, not just YTPs."
     show cs
@@ -1584,6 +1585,7 @@ label folded:
     play sound "drill.ogg" loop volume 0.5
     pause 3.0
     play sound "payday.mp3" volume 0.5
+    $ achievement_manager.unlock("The House Doesn't Always Win")
     arceus "Hell yeah!"
     scene insafe with fade
     arceus "Look at all this loot! CS is gonna be so surprised..."
@@ -1626,6 +1628,7 @@ label poker3:
     n "Mr. Green pukes all over the table and falls over backwards, passing out."
     stop music fadeout 3.0
     music end
+    $ achievement_manager.unlock("High Roller")
     cs "Woohoo! I won!"
     play music "<loop 0>price_right.mp3" volume 0.5
     music Price Is Right Theme - Edd Kalehoff

@@ -208,6 +208,7 @@ label play_cargame:
     window show
 
     if _return == True:
+        $ achievement_manager.unlock("Blaster Disaster")
         jump after_ufo
     else:
         jump iowa
