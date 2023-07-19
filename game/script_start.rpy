@@ -1,3 +1,10 @@
+# Flip
+init -10 python:
+    def xflip(s):
+        return Transform(s, xzoom = -1)
+
+    config.displayable_prefix["flip"] = xflip
+
 # Text beeps
 init python:
     import re
@@ -210,14 +217,14 @@ define host = Character("Host", callback = renpy.partial(char_callback, name = "
 # Character Images
 ## CS
 image cs = "characters/cs/neutral.png"
-image cs flipped = Transform("characters/cs/neutral.png", xzoom = -1)
+image cs flipped = "flip:characters/cs/neutral.png"
 image cs happy = "characters/cs/happy.png"
 image cs angry = "characters/cs/angry.png"
-image cs angry flipped = Transform("characters/cs/angry.png", xzoom = -1)
+image cs angry flipped = "flip:characters/cs/angry.png"
 image cs worried = "characters/cs/worried.png"
-image cs worried flipped = Transform("characters/cs/worried.png", xzoom = -1)
+image cs worried flipped = "flip:characters/cs/worried.png"
 image cs disappointed = "characters/cs/disappointed.png"
-image cs disappointed flipped = Transform("characters/cs/disappointed.png", xzoom = -1)
+image cs disappointed flipped = "flip:characters/cs/disappointed.png"
 image cs concentrate = "characters/cs/concentrate.png"
 image cs phone = "characters/cs/phone.png"
 image cs dark = "characters/cs/neutraldark.png"
@@ -233,11 +240,11 @@ image cs fakegod = "characters/cs/fake_god.png"
 
 ## Arc
 image arceus = "characters/arc/arceus.png"
-image arceus flipped = Transform("characters/arc/arceus.png", xzoom = -1)
+image arceus flipped = "flip:characters/arc/arceus.png"
 image arceus dark = "characters/arc/arceusdark.png"
-image arceus dark flipped = Transform("characters/arc/arceusdark.png", xzoom = -1)
+image arceus dark flipped = "flip:characters/arc/arceusdark.png"
 image arceus dusk = "characters/arc/arceusdusk.png"
-image arceus dusk flipped = Transform("characters/arc/arceusdusk.png", xzoom = -1)
+image arceus dusk flipped = "flip:characters/arc/arceusdusk.png"
 
 ## Anno
 image anno = "characters/anno/anno.png"
@@ -269,7 +276,7 @@ image rich = "characters/rich.png"
 image ed = "characters/ed.png"
 image ed phone = "characters/ed_phone.png"
 image wesley = "characters/wesley.png"
-image michael = Transform("characters/michael.png", xzoom = -1)
+image michael = "flip:characters/michael.png"
 image phil = "characters/phil.png"
 image worker_1 = "characters/worker_corn.png"
 image worker_2 = "characters/worker_blank.png"
@@ -283,14 +290,14 @@ image border_guard = "characters/border_guard.png"
 image linus = "characters/linus.png"
 image asylum_worker = "characters/mohs.png"
 image csgod = "characters/csgod.png"
-image csgod flipped = Transform("characters/csgod.png", xzoom = -1)
+image csgod flipped = "flip:characters/csgod.png"
 image copguy = "characters/copguy.png"
 image luke = "characters/luke.png"
 image border_guard dusk = "characters/border_guard_dusk.png"
 image copguy dark = "characters/copguydark.png"
 image copguy_ai = "characters/ai_cop_guy_full.png"
 image taran = "characters/taran.png"
-image taran flipped = Transform("characters/taran.png", xzoom = -1)
+image taran flipped = "flip:characters/taran.png"
 image colton = "characters/colton.png"
 image sheriff = "characters/sheriff.png"
 image billy = "characters/billy.png"
@@ -309,7 +316,7 @@ image terry = "characters/terry.png"
 image mettaton = "characters/mettaton.png"
 image pencilguy = "characters/pencil.png"
 image digi = "characters/digi.png"
-image digi flipped = Transform("characters/digi.png", xzoom = -1)
+image digi flipped = "flip:characters/digi.png"
 
 # Background Images
 ## CSBI

@@ -2210,10 +2210,10 @@ label nebraska:
     show arceus flipped at mid_left with moveinleft
     peppino "Hey Piezanos, watcha want today?"
     pakoo "Hey Peppino, can you get me and my friends the Gustavo special today?"
-    show peppino2 at pepzone2 behind peppinopizzafg
+    show peppino2 at t_pepzone2 behind peppinopizzafg
     hide peppino
     peppino "Sure-a thing-a! Coming right up!"
-    show peppino at pepzone2 behind peppinopizzafg
+    show peppino at t_pepzone2 behind peppinopizzafg
     hide peppino2
     pakoo "Also, do you think my friends here can be spend the night? They don't have anywhere to sleep tonight."
     peppino "The room in the back should be fine, Mr. Stick is out right now, so they can bunk there."
