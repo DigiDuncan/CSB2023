@@ -134,8 +134,8 @@ transform t_stage_screen_l:
 
 transform t_stage_screen_c:
     anchor (0.0, 0.0)
-    pos (816, 416)
-    zoom 0.15
+    pos (805, 416)
+    zoom 0.125
 
 transform t_stage_screen_r:
     anchor (0.0, 0.0)
@@ -307,6 +307,7 @@ image cultist_3 = "characters/cultist2.png"
 image scott = "characters/scott.png"
 image terry = "characters/terry.png"
 image mettaton = "characters/mettaton.png"
+image pencilguy = "characters/pencil.png"
 
 # Background Images
 ## CSBI
@@ -407,6 +408,7 @@ image old_house_outside = "bg/small_house_old.png"
 image old_house_inside = "bg/inside_house_old.png"
 image cc_parking_lot = "bg/convention_center_outside.png"
 image cc_lobby = "bg/convention_center_lobby.png"
+image cc_entrance = "bg/convention_center_entrance.png"
 image cc_crowd = "bg/convention_center_crowd.png"
 image cc_stage = "bg/convention_center_stage.png"
 image cc_backstage = "bg/convention_center_backstage.png"

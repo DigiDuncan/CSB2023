@@ -2328,6 +2328,8 @@ label pennsylvania:
     cs "Oh my gosh, I'm so excited! Everything is pencil-themed!"
     arceus "This is... some place."
     billy "Do people really like pencils that much? Maybe I should've pitched more pencil products."
+    scene cc_entrance with dissolve
+    show pencilguy at center with determination
     n "A man dressed as a pencil approach the gang."
     pencil "Welcome to PencilCon! Want a free pencil?"
     arceus "Uh, sure?"
@@ -2352,7 +2354,8 @@ label pennsylvania:
     billy "Any time!"
     n "Arceus runs off to where CS went."
     billy "Now, that's the power of good advice!"
-    scene cc_lobby
+    scene cc_lobby with dissolve
+    show cashier at center with determination
     n "Arc catches up with CS, at the sign up table."
     signup "...and you said your last name is... 188?"
     cs "Yeah, this confuses everyone."
@@ -2362,8 +2365,10 @@ label pennsylvania:
     signup "OK, that's you all registered. Fuzzy guy, you signing up too?"
     arceus "Nah, I feel like would be basically cheating."
     cs "OK, well I have to go to the backstage and get set up. See you soon, Arc!"
-    scene cc_backstage
+    scene cc_backstage with dissolve
+    show cs at left with moveinleft
     n "CS walks to the backstage to prepare to compete, when he notices a familiar face."
+    show digi at right with moveinright
     cs "Wait, Digi?!"
     digi "CS?!"
     cs "What are you doing here?"
@@ -2384,19 +2389,29 @@ label pennsylvania:
     show stage_screen as stage_screen_r at t_stage_screen_r
     show cc_stage
     with fade
+    show cs at left with moveinleft
     cs "Well, I've made it this far. I guess it's just me versus Digi now..."
+    show digi at right with moveinright
     n "Digi steps up to the stage."
+    show digi at mid_mid_right with move
     n "Digi goes to shake CS' hand."
+    show cs happy at mid_mid_left with move
     n "CS grabs Digi's hand."
     cs "Well, good luc--"
     n "Digi's hand grips CS stronger than a human could possibly grip."
+    show cs worried
     cs "Yow!"
     digi "Oops, sorry, let me just..."
+    show cs
     n "Digi pokes a panel on his arm."
     digi "Sorry about that, arm must have been on the wrong setting."
     n "CS thinks to himself."
+    show cs concentrate
     cs "{i}Shoot, I forgot Digi is a cyborg! How am I going to have any shot at beating him?{/i}"
     cs "{i}I'm just going to have to try my hardest!{/i}"
+    hide digi
+    hide cs
+    with dissolve
     show mettaton at t_stagescreen onlayer broadcast
     host "WELCOME, FOLKS!"
     host "EVERYONE GIVE A BIG HAND TO OUR WONDERFUL CONTESTANTS!"
@@ -2421,7 +2436,7 @@ label pennsylvania:
     host "1..."
     host "GO!"
     # TODO: Minigame
-    jump win_pencil
+    jump play_pencilgame
 
 label win_pencil:
     host "HOLY TICONDEROGA! WE HAVE A WINNER!"
