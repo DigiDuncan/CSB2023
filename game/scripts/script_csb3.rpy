@@ -1303,6 +1303,8 @@ label south:
     cs "See those pieces on the ground?"
     arceus "What pieces?"
     n "CS quickly starts grabbing material from thin air and puts together a new car."
+    play sound "legosfx.mp3" volume 1
+    pause 3.0
     cs "Ta dah!"
     arceus "HOW DID YOU DO THAT!?"
     cs "Look, I'm a master builder. You wouldn't understand."
@@ -1460,29 +1462,43 @@ label vegas:
     cs "Woohoo! We're almost there!"
     arceus "Some reckless gambling will probably help me forget about the horrors from that restaurant..."
     n "As they enter Las Vegas and find a place to park, they start by heading down The Strip."
-    scene strip with fade   
+    scene strip with fade
+    show cs dark at left with moveinleft
+    show arceus dark at right with moveinright
     cs "Alright Arc, you ready to get rich?"
     arceus "I doubt we will, but hell yeah let's go!"
     arceus "Do you want to get something to eat first? I see a place called Pasta... Italy... something. They probably have food."
     cs "Why would we eat? We just got here and I wanna gamble!"
     cs "Look over there! SlotsaFun! That looks like a cool place to start!"
     arceus "Alright, sure, I guess I can find something to eat there. Probably."
+    hide cs dark
+    hide arceus dark
+    with moveoutright
     n "CS and Arc enter the casino, as it looks like chaos is unfolding in front of their faces."
     scene casino1 with fade
     n "Slot machines sounds fill the room, while many drunkards hobble around the establishment."
+    show cs at left with moveinleft
+    show arceus at right with moveinright
     arceus "Oh god, I already feel like I have a migraine..."
     cs "C'mon Arc, let's go play some slots!"
+    hide cs dark with moveoutright
     n "CS starts looking around for a machine to sit at."
     arceus "Hold on, CS, I need a minute."
     n "A drunk lady bumps into Arc."
+    show fatmama at mid_right with moveinleft
+    show fatmama with hpunch
+    show fatmama at center with move
     arceus "Huh?"
     trailtrash "I need a new trailer!"
     arceus "No, I'm sorry, I--"
     trailtrash "I need a new trailer!"
+    hide fatmama with moveoutleft
     n "Two guards come up to the lady and drag her towards the elevator."
     arceus "Thank goodness."
     arceus "I need to sit down."
+    hide arceus with moveoutright
     n "As Arceus goes to find a place to relax, CS tries his luck at the slots."
+    scene slots with fade
     cs "C'mon, this is the one!"
     cs "Bars, {w=0.5}bars, {w=0.5}football player with a hotdog?"
     cs "Football player with a hotdog?"
@@ -1490,31 +1506,39 @@ label vegas:
     cs "I haven't won anything, and I've already spent most of my money..."
     cs "I wonder what Arc is up to, I haven't seen him at all."
     n "CS gets up from the slot machine and starts to look for Arc."
+    scene casino1 with fade
     n "CS looks around for a while, but he can't find him."
+    show cs disappointed at center with moveinleft
     cs "Arceus! Hello?"
     cs "Where did he go?"
     cs "Maybe he went to the table games, I'll go check over there."
+    hide cs with moveoutright
     n "CS heads over to the table games section, and starts looking for Arc."
     scene tablegames with fade
+    show cs disappointed at center with moveinleft
     cs "Arceus, are you around here?"
     cs "I've checked all the tables, and I still can't find him!"
     cs "Maybe I should leave, he might've went to that restaurant or whatever it was."
     stop music fadeout 3.0
     music end
     "???" "Hey you!"
+    show cs disappointed flipped
     cs "Huh? Me?"
     n "CS notices a fancy man smoking a cigar waving at him."
     "???" "Yeah, you! Come over to the Poker tabeh! *coughs* I bet I can beat you!"
     cs "I guess this is my last chance to make it big. It's worth a shot."
     cs "Alright, sure, I'll play a round. But I don't have much."
     "???" "Arright great, come sit down here."
+    hide cs with moveoutleft
     n "CS sits down at the poker table, and notices that the man's skin is putrid green."
     n "CS looks disgusted, but shrugs as he doesn't want to start trouble now."
-    scene pokertable with fade
+    scene luigi2 with fade
     play music "<loop 0>laurel_palace.mp3" volume 0.5
     music Laurel Palace - Manami Matsumae
     green "Deal us some cards arready!"
+    scene luigi1
     n "The dealer deals the cards out to Mr. Green and CS."
+    scene pokertable with fade
     show cards1
     green "Hahahaha! I can tell this one's a winner!"
     n "CS looks at his cards, he's got an ace of spades and a king of spades."
@@ -1534,6 +1558,9 @@ label vegas:
 label poker:
     cs "No. I'll stand."
     green "Bwahahaha! You think you can beat me?"
+    scene luigi1
+    pause 1.0
+    scene pokertable
     show cards3
     n "The dealer draws a ten of spades."
     green "Ten million! You're bluffing, I can see through you!"
@@ -1546,6 +1573,9 @@ label poker:
 label poker2:
     cs "I'm still gonna stand."
     green "I'm gonna be rich! You better have that money on you, boy!"
+    scene luigi1
+    pause 1.0
+    scene pokertable
     show cards4
     n "The dealer draws a jack of spades."
     green "100 million! You better drop out *coughs* rrright now!"
@@ -1556,17 +1586,21 @@ label poker2:
             jump poker3
 
 label folded:
+    scene luigi2
     cs "Yeah, I'm out. I can't risk that much."
     green "Hahahaha! That's what I thought bucko!"
     green "Now scram!"
     n "CS sculks back to the lobby."
     scene casino1 with fade
     stop music fadeout 3.0
-    music end    
+    music end
+    show cs disappointed at center
     cs "Damn, I really thought I was gonna win something!"
     cs "This wasn't as cool as I thought, I guess I should go find Arc."
     cs "I wonder where he went..."
+    hide cs with moveoutright
     n "CS goes around to look for Arc."
+    scene black with fade
     n "Meanwhile, Arc has been trying to win it big, but in a different kind of way..."
     scene outsafe with fade
     play sound "drill.ogg" loop volume 0.5
@@ -1591,23 +1625,31 @@ label folded:
     arceus "Look at all this loot! CS is gonna be so surprised..."
     n "While Arceus is looting the casino, CS continues to search for Arc."
     scene vegasbathroom with fade
+    show cs at center with moveinleft
     cs "Hello? Arceus?"
     cs "Not in the bathroom..."
     cs "Maybe he went to the car?"
     cs "I guess I should go check, I'm kinda tired of this place anyways."
+    hide cs with moveoutleft
     scene black with fade
-    n "CS heads out to the parking lot, to find Arceus in the car."
-    scene carpark with fade
+    n "CS heads out to the parking lot, to find Arceus by the car."
+    scene carpark
+    show arceus at right
+    with fade
+    show cs at center with moveinleft
     cs "Hey! There you are! Where were you?"
     arceus "I was getting us the motherlode!"
     n "Arceus opens a body bag, revealing stacks of gold, bills, and jewels."
+    show cs worried
     cs "WHATT?? How did you win that much??"
     arceus "You think I won this? Haha no, I just broke open their safe!"
     cs "Arceus! That's stealing!"
     arceus "Yeah, and the casino steals from us. Slots are rigged, man."
+    show cs disappointed
     cs "Yeah I guess your right, oh well."
     cs "Did anyone notice?"
     arceus "Nope! I 100%% stealthed that!"
+    show cs
     cs "Well damn, sweet! Thank you so much Arceus!"
     cs "We are millionaires now!"
     arceus "Yeah! We can do whatever you wanna do now!"
@@ -1621,7 +1663,10 @@ label folded:
 label poker3:
     cs "Still standing."
     green "What!? You son of a bitch, you are so scrrewed!"
+    scene luigi2
     cashier "Alright, let's see your hands."
+    pause 1.0
+    scene pokertable
     n "Mr. Green and CS put their cards down."
     show cards5
     n "CS has a royal flush with his ace and king of spades, while Mr. Green had a seven of hearts and a ten of clubs."
@@ -1629,6 +1674,7 @@ label poker3:
     stop music fadeout 3.0
     music end
     $ achievement_manager.unlock("High Roller")
+    scene luigi2
     cs "Woohoo! I won!"
     play music "<loop 0>price_right.mp3" volume 0.5
     music Price Is Right Theme - Edd Kalehoff
@@ -1648,10 +1694,15 @@ label poker3:
     music end
     scene casino1 with fade    
     n "CS continues to look for Arc."
+    show cs disappointed at center with moveinleft
     cs "Arc? Where are you?"
     cs "Maybe he went to the bathroom?"
-    scene vegasbathroom with fade
+    hide cs with moveoutright
+    scene vegasbathroom
+    show arceus at center
+    with fade
     n "CS finds the bathroom, to see Arceus with his head up against the mirror."
+    show cs at left with moveinleft
     cs "Hey, Arc! There you are! Are you okay?"
     arceus "My head hurts so bad..."
     arceus "I think I'm gonna head back to the car..."
@@ -1659,26 +1710,37 @@ label poker3:
     arceus "Wh... what?? Are you just trying to make me feel better?"
     cs "No joke! Look, head out to the car, and I'll meet you there!"
     arceus "Alright..."
+    hide arceus with moveoutleft
     n "Arceus stumbles out back into the casino, while CS goes to collect his money."
+    hide cs with moveoutleft
     n "CS meets Jerma in the employee backroom."
     scene backroomcasino with fade
     n "Jerma is waiting with a briefcase."
+    show cs at left with moveinleft
     jerma "Here he is! The man of the hour!"
     cs "I honestly didn't think I was gonna win, I would've been in massive debt if I lost."
     jerma "Well good thing you won, because Mr. Green is in massive debt to us right now."
     jerma "Believe me, we've had a lot of money problems recently with Mr. Green, we've had to have him steal from our rival, Pasta Italiano."
+    show cs disappointed
     cs "Yikes, that sounds shitty."
+    show cs
     cs "Welp, I wish you the best of luck, Mr. Jerma!"
     n "After CS collects his winnings, he finds his way back to the car."
-    scene carpark with fade
+    hide cs with moveoutleft
+    scene carpark
+    show arceus flipped at left
+    with fade
+    show cs flipped at right with moveinright
     cs "Hey Arc, how you feeling?"
     arceus "I do feel better now, yeah."
     arceus "I think it was just too much sensory overload for me."
     cs "Well that's good to hear."
     cs "What's also good to hear is that we are rich as hell!"
+    show cs happy flipped
     n "CS opens the case to reveal loads of gold bars and diamonds."
     arceus "Holy shit! We're loaded!"
     arceus "I can't believe I missed your big win."
+    show cs flipped
     cs "Oh yeah, it was kinda funny. The man I won against puked and fell over."
     arceus "Hahaha, I would've too if I lost that much money."
     cs "Yeah, that's true."
@@ -1693,37 +1755,61 @@ label airport:
     cs "We should head back home now. I have a plan for our newfound riches."
     arceus "Alright! I'm excited to see what you got cooking up!"
     arceus "Let's get going!"
+    hide cs flipped
+    hide arceus flipped
+    with moveoutleft
+    scene black with fade
     n "CS drives to the airport nearby Las Vegas."
     n "CS and Arc pack up any belongings they have, and head inside to the terminal."
     scene airport_interior with fade
     play music "<loop 0>airport.mp3" volume 0.4
     music Airport Infilration - Marten Joustra
+    show cs at left
+    show arceus flipped at mid_left
     cs "What a crazy trip, that was really fun, Arc!"
     arceus "Yeah, even though I was traumatized at the pizza place, I had a lot of fun."
     cs "Welp, let's go catch our plane!"
+    hide cs
+    hide arceus flipped
+    with moveoutright
     scene airport_tsa with fade
+    show cs at left
+    show arceus flipped at mid_left
     n "CS and Arc put their belongings on the conveyor and walk through the scanner."
     n "The scanner goes off when the suitcase goes through the conveyor detector."
+    show cs disappointed
     cs "Huh?"
     tsa "We're gonna have to check this case."
     n "The TSA agent opens up the suitcase, revealing all the riches from the casino."
     arceus "Oh yeah, the winnings."
     n "The TSA agent looks through the case, and finds a signed document from Jerma clarifying the legality of the money."
     tsa "Alright, you guys are good to go."
+    show cs
     cs "Phew! That was scary. I didn't even know that was in there!"
+    show cs at center
+    show arceus flipped at mid_right
+    with move
     n "Arc and CS collect their items again and get on the plane."
+    hide cs
+    hide arceus flipped
+    with moveoutright
     stop music fadeout 3.0
     music end
     scene airplane_seats with fade
     n "They go and sit down somewhere near the back of the plane."
+    show cs at mid_left
+    show arceus at center
+    with moveinright
     cs "I want the window seat!"
     arceus "Alright fine, can you hold on to the suitcase though? We can't have anyone steal this."
     cs "Yeah, okay."
     cs "But I'm not holding it the whole time!"
     n "The plane takes off, and CS falls asleep."
+    show cs concentrate
     arceus "Hey, have you ever flown before?"
     cs "Zzzz..."
     arceus "I guess he has."
+    show arceus flipped
     arceus "That or he's just really tired. I don't blame him."
     arceus "I hate flying though, and I can't stop thinking about being in a flying metal tube."
     arceus "It'll be over soon enough."
@@ -1731,18 +1817,25 @@ label airport:
     n "After a few hours, the plane arrives in New York."
     scene airport_inside with fade
     n "CS and Arc get out of the plane and relax in the waiting area."
+    show cs at left
+    show arceus at center
+    with moveinleft
     cs "Woohoo! We are almost home!"
     arceus "Thank goodness, I'm out of the plane."
     arceus "Also I just realized something, CS."
     cs "Hmm?"
     arceus "We still gotta drive you home."
+    show cs disappointed
     cs "Oooooh... did {i}not{/i} think of that."
     cs "Fuck."
     arceus "Yeah, the walk there would take hours."
     cs "Shit, uhh, what are our other options?"
     play music "<loop 0>mm_select.mp3" volume 0.3
     music Mm Select - Matthew Simmonds
+    show billy at right
+    show cs
     billy "Need a ride? I'll take you to any destination for only $19.95!"
+    show arceus flipped
     arceus "Welp, CS, we found our other option!"
     n "Arceus opens the suitcase and gives Billy a gold bar."
     arceus "You think this will do the job?"
@@ -1751,6 +1844,10 @@ label airport:
     billy "That's cash in the trash!"
     billy "Well then! Where are we going?"
     n "CS tells Billy his address, and they go down to the parking lot and start heading home."
+    hide cs
+    hide arceus flipped
+    hide billy
+    with moveoutright
     stop music fadeout 3.0
     music end
     jump back_home_alt
@@ -1759,23 +1856,36 @@ label airport_bad:
     cs "We should head back home now. I have a plan for our newfound riches."
     arceus "Alright! I'm excited to see what you got cooking up!"
     arceus "Let's get going!"
+    hide cs flipped
+    hide arceus flipped
+    with moveoutleft
+    scene black with fade
     n "CS drives to the airport nearby Las Vegas."
     scene airport_interior with fade
     play music "<loop 0>airport.mp3" volume 0.4
     music Airport Infilration - Marten Joustra
+    show cs at left
+    show arceus flipped at mid_left
     n "CS and Arc pack up any belongings they have, and head inside to the terminal."
     cs "What a crazy trip, that was really fun Arc."
     arceus "Yeah, even though I was traumatized at the pizza place, I had a lot of fun."
     cs "Welp, let's go catch our plane!"
+    hide cs
+    hide arceus flipped
+    with moveoutright
     scene airport_tsa with fade
+    show cs at left
+    show arceus flipped at mid_left
     n "CS and Arc put their belongings on the conveyor and walk through the scanner."
     n "The scanner goes off when the bag goes through the conveyor detector."
+    show cs disappointed
     cs "Huh?"
     tsa "We're gonna have to check this case."
     n "The TSA agent opens up the bag, revealing all the riches from the casino."
     arceus "Oh yeah. Shit."
     n "The TSA agent looks through the case, realizing it's not marked and it's stolen."
     tsa "This is stolen property! We are confiscating this and you guys have to go!"
+    show cs worried
     cs "Aw man!"
     arceus "Welp, time to do it all over again."
     cs "Huh?"
