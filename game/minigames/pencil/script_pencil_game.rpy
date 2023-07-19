@@ -194,6 +194,8 @@ label play_pencilgame:
     $ quick_menu = True
     window show
 
+    if _return >= 300:
+        $ achievement_manager.unlock("Pencilovania")
     if _return > DIGI_SCORE:
         $ achievement_manager.unlock("Pencil Sharpening Day!")
         jump win_pencil
