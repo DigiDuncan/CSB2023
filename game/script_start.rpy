@@ -416,6 +416,8 @@ image utah = "bg/utah.png"
 image utahsign = "bg/utahsign.png"
 image utahnight = "bg/utahnight.png"
 image pizzaplace = "bg/pizzaplace.png"
+image legodoor = "bg/legoplace.png"
+image legodooropen = "bg/legoplaceopen.png"
 image vegas = "bg/vegas.png"
 image strip = "bg/strip.png"
 image slots = "bg/slots.png"
@@ -469,6 +471,8 @@ image cards3 = "cards3.png"
 image cards4 = "cards4.png"
 image cards5 = "cards5.png"
 image con_screen = "bg/con_screen.png"
+image case = "briefcase.png"
+image case flipped = "flip:briefcase.png"
 
 # Movies
 image car background = Movie(play="movies/car_background.mp4")

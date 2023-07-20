@@ -1373,8 +1373,14 @@ label south:
     n "Arceus looks worried."
     arceus "Are you sure about this CS? This place gives me the creeps."
     cs "This is my dream place to eat at. We NEED to see if we can get in."
+    scene legodoor with fade
+    show cs dark at left with moveinleft
+    show arceus dark at right with moveinright
     n "They approach the front door, and the sign on front of it says the place is closed."
     arceus "Dang, that suuuuuure sucks. We can leave now right?"
+    scene legodooropen
+    show cs dark at left
+    show arceus dark at right
     n "CS pushes the door open."
     cs "The door isn't locked! We can go in!"
     arceus "Oh great. Yippee!"
@@ -1787,8 +1793,9 @@ label poker3:
     n "CS meets Jerma in the employee backroom."
     scene backroomcasino with fade
     show jerma at center
+    show case flipped at mid_mid_left
     n "Jerma is waiting with a briefcase."
-    show cs at left with moveinleft
+    show cs at left behind case with moveinleft
     jerma "Here he is! The man of the hour!"
     cs "I honestly didn't think I was gonna win, I would've been in massive debt if I lost."
     jerma "Well good thing you won, because Mr. Green is in massive debt to us right now."
@@ -1797,9 +1804,16 @@ label poker3:
     cs "Yikes, that sounds shitty."
     show cs
     cs "Welp, I wish you the best of luck, Mr. Jerma!"
+    show cs at mid_mid_left with move
+    show case with determination
+    show cs at left
+    show case at left
+    with move
     n "After CS collects his winnings, he finds his way back to the car."
     show cs flipped with determination
-    hide cs with moveoutleft
+    hide cs
+    hide case
+    with moveoutleft
     scene carpark
     show arceus flipped at left
     with fade
@@ -1810,6 +1824,7 @@ label poker3:
     cs "Well that's good to hear."
     cs "What's also good to hear is that we are rich as hell!"
     show cs happy flipped
+    show case flipped at right
     n "CS opens the case to reveal loads of gold bars and diamonds."
     arceus "Holy shit! We're loaded!"
     arceus "I can't believe I missed your big win."
@@ -1817,6 +1832,7 @@ label poker3:
     cs "Oh yeah, it was kinda funny. The man I won against puked and fell over."
     arceus "Hahaha, I would've too if I lost that much money."
     cs "Yeah, that's true."
+    hide case
     arceus "Alright well, what's the plan now? We have so much money, we can do almost anything with it!"
     menu:
         "Go to airport":
@@ -1851,12 +1867,14 @@ label airport:
     with fade
     show cs at left
     show arceus flipped at mid_left
+    with moveinleft
     n "CS and Arc put their belongings on the conveyor and walk through the scanner."
     n "The scanner goes off when the suitcase goes through the conveyor detector."
     show cs disappointed
     cs "Huh?"
     tsa "We're gonna have to check this case."
     show tsa at center with move
+    show case at center with dissolve
     n "The TSA agent opens up the suitcase, revealing all the riches from the casino."
     arceus "Oh yeah, the winnings."
     n "The TSA agent looks through the case, and finds a signed document from Jerma clarifying the legality of the money."
@@ -1870,6 +1888,7 @@ label airport:
     n "Arc and CS collect their items again and get on the plane."
     hide cs
     hide arceus flipped
+    hide case
     with moveoutright
     stop music fadeout 3.0
     music end
@@ -1917,10 +1936,12 @@ label airport:
     billy "Need a ride? I'll take you to any destination for only $19.95!"
     show arceus flipped
     arceus "Welp, CS, we found our other option!"
+    show case at mid_mid_right with dissolve
     n "Arceus opens the suitcase and gives Billy a gold bar."
     arceus "You think this will do the job?"
     billy "Wow! You should save your money!"
     cs "We've got plenty more where that came from. You can keep it."
+    hide case with dissolve
     billy "That's cash in the trash!"
     billy "Well then! Where are we going?"
     n "CS tells Billy his address, and they go down to the parking lot and start heading home."
@@ -2049,7 +2070,9 @@ label donatehohsis:
     show cs flipped with determination
     hide cs with moveoutleft
     n "CS grabs the suitcase from Arceus and takes out a few gold bars and gives them to Ed."
-    show cs at left with moveinleft
+    show cs at left 
+    show case at left
+    with moveinleft
     cs "Here, I hope this helps you guys a bit."
     rich "Woah, is that real gold?"
     n "Ed presses his fingernail into the bar and dents it."
@@ -2058,6 +2081,7 @@ label donatehohsis:
     ed "You really sure about this? Even after we broke your laptop?"
     cs "Don't worry about it. We'll go our own ways after this, and I hope you guys will continue to prosper in the business world!"
     rich "Thank you so much!"
+    hide case with dissolve
     ed "Alright, let's get going now."
     ed "As long as you leave our company alone, we'll leave you alone from now on."
     ed "Good luck to you as well."
@@ -2135,8 +2159,10 @@ label lego_ending:
     stop music fadeout 1.0
     music end
     cs "Guess what!"
+    show case at mid_left
     n "CS takes his briefcase out and opens it up on camera."
     cs "I'm fuckin' rich now!"
+    hide case with dissolve
     cs "I'm gonna make Lego Island in real life!"
     cs "You're all invited to come stay or live at my island once it's built!"
     n "The chat is freaking out as CS announces his plan."
