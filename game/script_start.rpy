@@ -232,8 +232,10 @@ image cs phone = "characters/cs/phone.png"
 image cs dark = "characters/cs/neutraldark.png"
 image cs dusk = "characters/cs/neutraldusk.png"
 image cs disappointed dark = "characters/cs/disappointeddark.png"
+image cs disappointed dark flipped = "flip:characters/cs/disappointeddark.png"
 image cs disappointed dusk = "characters/cs/disappointeddusk.png"
 image cs worried dark = "characters/cs/worrieddark.png"
+image cs worried dark flipped = "flip:characters/cs/worrieddark.png"
 image cs prison = "characters/cs/prison.png"
 image cs prison_worried = "characters/cs/prison_worried.png"
 image cs guard = "characters/cs/guard.png"
@@ -323,6 +325,7 @@ image trailtrash = "characters/fatmama.png"
 image jerma = "characters/jerma.png"
 image tsa = "characters/tsa.png"
 image lego = "characters/lego.png"
+image green = "characters/green.png"
 
 # Background Images
 ## CSBI
