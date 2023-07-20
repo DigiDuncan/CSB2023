@@ -1310,10 +1310,14 @@ label south:
     cs "Look, I'm a master builder. You wouldn't understand."
     arceus "Well... Does the car even work?"
     cs "Only one way to find out!"
-    scene car_inside with fade
-    show cs at left with moveinleft
-    show arceus at right with moveinright
+    scene gasoutside
+    show cscar1
+    show cscar2
+    with fade
+    show cs at left behind cscar2 with moveinleft
+    show arceus at right behind cscar2 with moveinright
     n "Once they get into the car, CS starts it up."
+    play sound "driving.wav" volume 0.5
     pause 1.0
     cs "Woohoo! Vegas Time!"
     arceus "I don't even know how you do these things man, but let's go!"
@@ -1322,14 +1326,21 @@ label south:
     n "After many hours of driving, it starts to turn night time again."
     stop music fadeout 3.0
     music end 
-    scene car_inside
-    show cs at left
-    show arceus at right
+    scene utah
+    show cscar1
+    show cscar2
+    show cs at left behind cscar2
+    show arceus at right behind cscar2
     with fade
     arceus "Are you sure we're close to Vegas?"
     cs "We have to be! Nevada is like right below Washington!"
     arceus "Well there is a state sign coming up, let's see if you're right."
-    n "As the approach the sign, it reads \"Welcome to UTAH, Life Elevated\"."
+    scene utahsign
+    show cscar1
+    show cscar2
+    show cs at left behind cscar2
+    show arceus at right behind cscar2
+    n "As they approach the sign, it reads \"Welcome to UTAH, Life Elevated\"."
     arceus "Welp. You tried."
     cs "I could've sworn we were going the right way."
     arceus "Did you ever see a sign that said \"Las Vegas - in how ever many miles\"?"
@@ -1338,6 +1349,12 @@ label south:
     arceus "Tomorrow, we'll head to Vegas."
     arceus "Let's find somewhere to eat before we hit the hay tonight."
     n "They continue driving for a bit until they come across a small town."
+    scene utahnight
+    show cscar1
+    show cscar2
+    show cs at left behind cscar2
+    show arceus at right behind cscar2
+    with fade
     cs "Alright, let's start looking for a place."
     cs "We got like Joe's Diner over there, there's a Casey's..."
     arceus "There's uhh... The Soup Store?"
@@ -1433,12 +1450,13 @@ label south:
     cs "Why not? it's just a leg-"
     play music "<loop 0>hard_drive.mp3" volume 0.5
     music Hard Drive to Munch You - Mr. Sauceman
+    show lego eyes
     n "The Minifigure's eyes glow as it raises its arms up and starts running at CS."
     lego "HEEYYYY!!!!!"
     n "Arceus quickly drags CS out of the way at the last second."
     show cs dark at mid_right
     show arceus dark at right
-    show lego at center
+    show lego eyes at center
     with move
     lego "A MAN HAS FALLEN INTO THE-"
     hide lego with moveoutbottom
@@ -1458,15 +1476,20 @@ label south:
     hide arceus
     with moveoutleft
     n "Arceus hops in the drivers seat, while CS gets in the back."
-    scene car_inside with fade
-    show arceus flipped at left with moveinleft
+    scene pizzaplace
+    show cscar1
+    show cscar2
+    show arceus flipped at left behind cscar2
+    with fade
     cs "I made this car though..."
     n "Arceus starts the car, as he then takes off at lightning speed out of the parking out and back onto the road."
     scene black with fade
     stop music fadeout 3.0
     music end
-    scene car_inside
-    show arceus flipped at left
+    scene utahnight
+    show cscar1
+    show cscar2
+    show arceus flipped at left behind cscar2
     with fade
     arceus "Thank god, I can take a breather now."
     cs "Man this sucks."
@@ -1478,6 +1501,11 @@ label south:
 label vegas:
     play music "<loop 0>penthouse.mp3" volume 0.5
     music "Al's Penthouse - Andy Blythe"
+    scene vegas
+    show cscar1
+    show cscar2
+    show arceus flipped at left behind cscar2
+    with fade
     n "After a few hours of driving, the duo sees the bright Las Vegas sign come into view."
     cs "Woohoo! We're almost there!"
     arceus "Some reckless gambling will probably help me forget about the horrors from that restaurant..."
@@ -2911,7 +2939,6 @@ label pennsylvania:
     host "1..."
     n "Both competitors hover their hands over the pencils..."
     host "GO!"
-    # TODO: Minigame
     jump play_pencilgame
 
 label win_pencil:
