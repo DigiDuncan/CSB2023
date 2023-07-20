@@ -1397,6 +1397,8 @@ label south:
     cs "Woah Arc, look at those big Minifigure statues!"
     n "Up in the front of the room, 4 human-scale Lego minifigures stand up on a stage."
     n "CS goes up and stands next to them."
+    scene legostage with fade
+    show cs dark at left with moveinleft 
     cs "Arceus, do you have a camera? You should take a picture of me!"
     arceus "No, why would I have a camera? Also you probably shouldn't be up there!"
     arceus "Weren't we gonna get some pizza?"
@@ -1404,6 +1406,11 @@ label south:
     arceus "Do they even have pizza here? I can smell it, but it doesn't look like anyone's here."
     cs "I see it in the back by the counter!"
     n "CS hops off stage and runs over to the serving counter."
+    hide cs with moveoutright
+    scene fazlobby
+    show cs dark at left
+    show arceus dark at right
+    with fade
     n "A couple boxes of freshly-baked pizza are sitting there."
     arceus "It's hot too... Who made this?"
     cs "The cook who works here, duh!"
@@ -1708,6 +1715,7 @@ label folded:
     show cs at center with moveinleft
     cs "Hey! There you are! Where were you?"
     arceus "I was getting us the motherlode!"
+    show bag at mid_right with dissolve
     n "Arceus opens a body bag, revealing stacks of gold, bills, and jewels."
     show cs worried
     cs "WHATT?? How did you win that much??"
@@ -1721,6 +1729,7 @@ label folded:
     show cs
     cs "Well damn, sweet! Thank you so much Arceus!"
     cs "We are millionaires now!"
+    hide bag with dissolve
     arceus "Yeah! We can do whatever you wanna do now!"
     arceus "What would you like to do CS?"
     menu:
@@ -1980,14 +1989,20 @@ label airport_bad:
     with fade
     show cs at left
     show arceus flipped at mid_left
+    with moveinleft
     n "CS and Arc put their belongings on the conveyor and walk through the scanner."
     n "The scanner goes off when the bag goes through the conveyor detector."
     show cs disappointed
     cs "Huh?"
-    tsa "We're gonna have to check this case."
+    tsa "We're gonna have to check this bag."
+    show tsa at center with move
+    show bag at center with dissolve
     n "The TSA agent opens up the bag, revealing all the riches from the casino."
     arceus "Oh yeah. Shit."
     n "The TSA agent looks through the case, realizing it's not marked and it's stolen."
+    show tsa at right
+    show bag at right
+    with move
     tsa "This is stolen property! We are confiscating this and you guys have to go!"
     show cs worried
     cs "Aw man!"
