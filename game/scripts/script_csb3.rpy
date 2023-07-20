@@ -1469,7 +1469,7 @@ label south:
     n "Arceus quickly drags CS out of the way at the last second."
     show cs dark at mid_right
     show arceus dark at right
-    show lego eyes at center
+    show lego eyes at lego_run
     with move
     lego "A MAN HAS FALLEN INTO THE-"
     hide lego with moveoutbottom

@@ -153,6 +153,11 @@ transform t_stagescreen:
     anchor (0.5, 1.0)
     pos (0.5, 4.0)  # Why is this needed? This makes no sense. This should be 1.0
 
+transform lego_run:
+    pos (0.5, 0.5)
+    anchor(0.5, 0.5)
+    linear 2.0 zoom 5.0 alpha 0.0
+
 # Character Definitions
 define n = Character(None, what_italic = True)  # Narrator
 define cs = Character("cs188", callback = renpy.partial(char_callback, name = "cs", beep = "cs"))
