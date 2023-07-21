@@ -1565,8 +1565,13 @@ label vegas:
     trailtrash "I need a new trailer!"
     arceus "No, I'm sorry, I--"
     trailtrash "I need a new trailer!"
-    hide trailtrash with moveoutleft
+    show bouncer1 at center with moveinleft
+    show bouncer2 at mid_mid_left behind trailtrash with moveinleft
     n "Two guards come up to the lady and drag her towards the elevator."
+    hide trailtrash
+    hide bouncer1
+    hide bouncer2
+    with moveoutleft
     arceus "Thank goodness."
     arceus "I need to sit down."
     show arceus flipped with determination

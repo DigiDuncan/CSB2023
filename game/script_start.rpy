@@ -344,6 +344,8 @@ image lego = "characters/lego.png"
 image lego eyes = "characters/legoeyes.png"
 image green = "characters/green.png"
 image green flipped = "flip:characters/green.png"
+image bouncer1 = "characters/bouncer.png"
+image bouncer2 = "characters/bouncer.png"
 
 # Background Images
 ## CSBI
