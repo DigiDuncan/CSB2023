@@ -795,7 +795,7 @@ label ytp_magic_fight:
     music Echoing? - Banana
     n "The duo continues to travel along the road."
     n "CS talks to himself along the way, with Arceus weary of his actions still."
-    cs "{size=-45}39463609346834683806834683068436803806489368389046803864368869034806849368030dsjkweu8yu euyhegw47ithw98gthw39thw389ghw9ghsiughfudghw4u9hfdhsgjdghsdkhsjgjdsgjsdjgsjgsjgjhsdgjsgjs689"
+    cs "{size=-45}TmV2ZXIgZ29ubmEgZ2l2ZSB5b3UgdXAsIG5ldmVyIGdvbm5hIGxldCB5b3UgZG93biwgbmV2ZXIgZ29ubmEgcnVuIGFyb3VuZCBhbmQgZGVzZXJ0IHlvdS4KTmV2ZXIgZ29ubmEgbWFrZSB5b3UgY3J5LCBuZXZlciBnb25uYSBzYXkgZ29vZGJ5ZSwgbmV2ZXIgZ29ubmEgdGVsbCBhIGxpZSwgYW5kIGh1cnQgeW91fg=="
     arceus "CS? What are you saying?"
     cs "Huh? Nothing."
     show arceus dark flipped
@@ -806,6 +806,7 @@ label ytp_magic_fight:
             jump wait_arc
 
 label attack_arc:
+    $ achievement_manager.unlock("No Mercy")
     cs "{size=-15}It's now or never."
     n "CS channels CSGod."
     hide cs
@@ -898,6 +899,7 @@ label wait_arc:
     play sound "audio/punchalt.ogg"
     show arceus flipped at t_punchup with move
     arceus "Ouch."
+    $ achievement_manager.unlock("No Mercy")
     show cultist at mid_right with moveinright
     show cultist_2 at right with moveinright
     show cultist_3 at center with moveinright
@@ -909,6 +911,7 @@ label wait_arc:
 
 
 label pussy_out_forest:
+    $ achievement_manager.unlock("Pacifist")
     cs "Arceus, quick! Let's escape into the forest!"
     arceus "Alrighty, let's go!"
     hide arceus
