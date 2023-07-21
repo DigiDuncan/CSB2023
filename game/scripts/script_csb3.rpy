@@ -1454,8 +1454,9 @@ label south:
     hide cs
     hide arceus
     with moveoutleft
-    scene fazhall with fade
-    show lego at t_pepzone2
+    scene fazhall
+    show lego at truecenter
+    with fade
     show cs dark at mid_left_left with moveinleft
     show arceus dark at mid_right_right with moveinright   
     n "Before they make it to the door, Arceus stops dead in his tracks."
@@ -1470,8 +1471,7 @@ label south:
     n "The Minifigure's eyes glow as it raises its arms up and starts running at CS."
     lego "HEEYYYY!!!!!"
     n "Arceus quickly drags CS out of the way at the last second."
-    show cs dark at mid_right
-    show arceus dark at right
+    show arceus dark at left
     show lego eyes at lego_run
     with move
     lego "A MAN HAS FALLEN INTO THE-"
