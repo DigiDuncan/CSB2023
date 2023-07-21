@@ -227,6 +227,7 @@ define pencil = Character("Pencil Greeter", callback = char_callback)
 define signup = Character("Signup Helper", callback = char_callback)
 define host = Character("Host", callback = renpy.partial(char_callback, name = "mettaton", beep = "snd_mtt"), what_font = "DTM-MONO.otf", what_size = 40)
 define tsa = Character("TSA Agent", callback = char_callback)
+define luigi = Character("Luigi", callback = char_callback)
 
 # Character Images
 ## CS
@@ -495,6 +496,7 @@ image case flipped = "flip:briefcase.png"
 image bag = "bodybag.png"
 image bag flipped = "flip:bodybag.png"
 image drill = "drillymays.png"
+image drillbreak = "drillymaysfuck.png"
 
 # Movies
 image car background = Movie(play="movies/car_background.mp4")

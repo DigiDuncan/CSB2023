@@ -586,7 +586,7 @@ label arc_escape:
     show red_light at right
     n "As they are making their way further from the building, they can hear sirens grow in volume as flashing lights rush towards the LMG headquarters."
     if fanbase == "ytp":
-        cs "Thank god we are getting out of here, Linus didn't like my ideas."
+        cs "Thank God we are getting out of here, Linus didn't like my ideas."
         arceus "Ah dang, that sucks to hear."
     else:
         cs "This is awful, I was just starting to get along well with Linus and the gang."
@@ -1283,7 +1283,7 @@ label south:
     cs "Oh my god! We found civilization again!"
     arceus "Thank God."
     n "The two look around for a bit, when they see a gas station close by."
-    cs "Let's head over to that gas station, so we can pick up some food to eat."
+    cs "Let's head over to that gas station, so we can pick up something to eat."
     n "CS and Arc head over to the convenience store at the gas station."
     hide cs with moveoutright
     show arceus flipped at right
@@ -1293,11 +1293,13 @@ label south:
     show arceus at right with moveinright
     arceus "Finally, some good fucking food."
     cs "Donuts and chips have never tasted better."
-    arceus "Thank god the slushie machine was working for once." 
+    arceus "Thank God the slushie machine was working for once." 
     n "After they finish their food, they start to plan their epic journey to Vegas."
     scene gasoutside with fade
-    show cs at left with moveinleft
-    show arceus at right with moveinleft
+    show cs at left
+    show arceus flipped at right
+    with moveinleft
+    show arceus with determination
     cs "Okay so, how do we get down to Nevada? That's quite a distance."
     arceus "We could use those bikes over there?"
     cs "Nah, that's too much effort."
@@ -1311,7 +1313,7 @@ label south:
     cs "Ta dah!"
     arceus "HOW DID YOU DO THAT!?"
     cs "Look, I'm a master builder. You wouldn't understand."
-    arceus "Well... Does the car even work?"
+    arceus "Well... does the car even work?"
     cs "Only one way to find out!"
     scene gasoutside
     show cscar1
@@ -1325,6 +1327,7 @@ label south:
     cs "Woohoo! Vegas Time!"
     arceus "I don't even know how you do these things man, but let's go!"
     n "The duo head out to Vegas, or where they presume Vegas is."
+    stop sound fadeout 2.0
     scene black with fade
     n "After many hours of driving, it starts to turn night time again."
     stop music fadeout 3.0
@@ -1337,7 +1340,7 @@ label south:
     with fade
     arceus "Are you sure we're close to Vegas?"
     cs "We have to be! Nevada is like right below Washington!"
-    arceus "Well there is a state sign coming up, let's see if you're right."
+    arceus "Well, there is a state sign coming up, let's see if you're right."
     scene utahsign
     show cscar1
     show cscar2
@@ -1360,21 +1363,22 @@ label south:
     with fade
     cs "Alright, let's start looking for a place."
     cs "We got like Joe's Diner over there, there's a Casey's..."
+    cs "Grilled Mormons? Ewww!"
     arceus "There's uhh... The Soup Store?"
     cs "Nah, that's a clothing store."
     arceus "Oh weird."
     cs "Wait hold up! I think I see a pizza place!"
     arceus "Man, pizza does sound good right about now."
     cs "Woah what? It's a Lego pizza place?"
-    cs "We're going there right now."
+    cs "We're going there. Right now."
     n "CS pulls into the parking lot of the restaurant."
     scene pizzaplace with fade
     show cs dark at left with moveinleft
     show arceus dark at right with moveinright
     cs "I've never seen this before!"
-    cs "Lego NXT Entertainment? They must have those robotic lego things inside!"
+    cs "Lego NXT Entertainment? They must have those robotic Lego things inside!"
     n "Arceus looks worried."
-    arceus "Are you sure about this CS? This place gives me the creeps."
+    arceus "Are you sure about this, CS? This place gives me the creeps."
     cs "This is my dream place to eat at. We NEED to see if we can get in."
     scene legodoor with fade
     show cs dark at left with moveinleft
@@ -1415,10 +1419,10 @@ label south:
     show arceus dark at right
     with fade
     n "A couple boxes of freshly-baked pizza are sitting there."
-    arceus "It's hot too... Who made this?"
+    arceus "It's hot too... who made this?"
     cs "The cook who works here, duh!"
     arceus "The place was closed, CS."
-    cs "Well then, why would the cook in the back be making pizzas then?"
+    cs "Well then, why would the cook in the back be making pizzas?"
     arceus "Because there is- whatever, let's just find a place to sit down and eat."
     arceus "And not out here, I don't wanna look at those creepy minifigures."
     cs "Fine..."
@@ -1488,7 +1492,7 @@ label south:
     show cs worried dark at left with moveinleft
     show arceus dark flipped at right with moveinleft
     show arceus dark
-    n "the Minifigures run up to the door and smash their arms and heads through."
+    n "The Minifigures run up to the door and smash their arms and heads through."
     arceus "To the car! Get in the car!"
     show cs worried dark flipped with determination
     hide cs
@@ -1510,7 +1514,7 @@ label south:
     show cscar2
     show arceus flipped at left behind cscar2
     with fade
-    arceus "Thank god, I can take a breather now."
+    arceus "Thank God, I can take a breather now."
     cs "Man this sucks."
     cs "It was super cool before the Legos tried to kill us."
     arceus "I think that whole restaurant was trying to kill us, CS."
@@ -1544,6 +1548,7 @@ label vegas:
     with moveoutright
     n "CS and Arc enter the casino, as it looks like chaos is unfolding in front of their faces."
     scene casino1 with fade
+    play sound "slots.mp3" volume 3
     n "Slot machines sounds fill the room, while many drunkards hobble around the establishment."
     show cs at left with moveinleft
     show arceus at right with moveinright
@@ -1588,6 +1593,7 @@ label vegas:
     cs "I've checked all the tables, and I still can't find him!"
     cs "Maybe I should leave, he might've went to that restaurant or whatever it was."
     stop music fadeout 3.0
+    stop sound fadeout 2.0
     music end
     "???" "Hey you!"
     show cs disappointed flipped
@@ -1671,7 +1677,7 @@ label folded:
     green "Now scram!"
     show cs disappointed with determination
     hide cs at right with moveoutright
-    n "CS sculks back to the lobby."
+    n "CS sulks back to the lobby."
     scene casino1 with fade
     stop music fadeout 3.0
     music end
@@ -1690,16 +1696,25 @@ label folded:
     play sound "drill.ogg" loop volume 0.5
     arceus "Come on, I'm almost there..."
     pause 6.0
+    show drillbreak at center_right
     play sound "drillbreak.ogg" loop volume 0.5
     arceus "Fuck!"
+    hide drillbreak
+    show drill at center_right
     play sound "drill.ogg" loop volume 0.5
     pause 6.0
+    show drillbreak at center_right
     play sound "drillbreak.ogg" loop volume 0.5
     arceus "God damnit!"
+    hide drillbreak
+    show drill at center_right
     play sound "drill.ogg" loop volume 0.5
     pause 6.0
+    show drillbreak at center_right
     play sound "drillbreak.ogg" loop volume 0.5
     arceus "You broke dick piece of shit drill!"
+    hide drillbreak
+    show drill at center_right
     play sound "drill.ogg" loop volume 0.5
     pause 3.0
     scene outsafeopen
@@ -1756,7 +1771,7 @@ label poker3:
     scene luigi2
     show green flipped at left
     show cs flipped at right
-    cashier "Alright, let's see your hands."
+    luigi "Alright, let's see your hands."
     pause 1.0
     scene pokertable
     n "Mr. Green and CS put their cards down."
@@ -1812,9 +1827,10 @@ label poker3:
     show cs flipped with determination
     hide cs with moveoutleft
     n "CS meets Jerma in the employee backroom."
-    scene backroomcasino with fade
+    scene backroomcasino
     show jerma at center
     show case flipped at mid_mid_left
+    with fade
     n "Jerma is waiting with a briefcase."
     show cs at left behind case with moveinleft
     jerma "Here he is! The man of the hour!"
@@ -1877,6 +1893,7 @@ label airport:
     music Airport Infilration - Marten Joustra
     show cs at left
     show arceus flipped at mid_left
+    with moveinleft
     cs "What a crazy trip, that was really fun, Arc!"
     arceus "Yeah, even though I was traumatized at the pizza place, I had a lot of fun."
     cs "Welp, let's go catch our plane!"
@@ -1890,13 +1907,13 @@ label airport:
     show arceus flipped at mid_left
     with moveinleft
     n "CS and Arc put their belongings on the conveyor and walk through the scanner."
-    n "The scanner goes off when the suitcase goes through the conveyor detector."
+    n "The scanner goes off when the briefcase goes through the metal detector."
     show cs disappointed
     cs "Huh?"
     tsa "We're gonna have to check this case."
     show tsa at center with move
     show case at center with dissolve
-    n "The TSA agent opens up the suitcase, revealing all the riches from the casino."
+    n "The TSA agent opens up the briefcase, revealing all the riches from the casino."
     arceus "Oh yeah, the winnings."
     n "The TSA agent looks through the case, and finds a signed document from Jerma clarifying the legality of the money."
     show tsa at right with move
@@ -1920,7 +1937,7 @@ label airport:
     with moveinright
     show cs
     cs "I want the window seat!"
-    arceus "Alright fine, can you hold on to the suitcase though? We can't have anyone steal this."
+    arceus "Alright fine, can you hold on to the briefcase though? We can't have anyone steal this."
     cs "Yeah, okay."
     cs "But I'm not holding it the whole time!"
     n "The plane takes off, and CS falls asleep."
@@ -1958,7 +1975,7 @@ label airport:
     show arceus flipped
     arceus "Welp, CS, we found our other option!"
     show case at mid_mid_right with dissolve
-    n "Arceus opens the suitcase and gives Billy a gold bar."
+    n "Arceus opens the briefcase and gives Billy a gold bar."
     arceus "You think this will do the job?"
     billy "Wow! You should save your money!"
     cs "We've got plenty more where that came from. You can keep it."
@@ -1989,6 +2006,7 @@ label airport_bad:
     music Airport Infilration - Marten Joustra
     show cs at left
     show arceus flipped at mid_left
+    with moveinleft
     n "CS and Arc pack up any belongings they have, and head inside to the terminal."
     cs "What a crazy trip, that was really fun Arc."
     arceus "Yeah, even though I was traumatized at the pizza place, I had a lot of fun."
@@ -2003,7 +2021,7 @@ label airport_bad:
     show arceus flipped at mid_left
     with moveinleft
     n "CS and Arc put their belongings on the conveyor and walk through the scanner."
-    n "The scanner goes off when the bag goes through the conveyor detector."
+    n "The scanner goes off when the bag goes through the metal detector."
     show cs disappointed
     cs "Huh?"
     tsa "We're gonna have to check this bag."
@@ -2067,7 +2085,7 @@ label back_home_alt:
     ed "Why do you think this all started?"
     cs "I--{w=0.5} I don't know, because you're evil?"
     ed "CS, you put our company to shame long ago."
-    ed "When you made that paraody video of us that you call a \"YTP\", people wouldn't stop harrassing us about it."
+    ed "When you made that parody video of us that you call a \"YTP\", people wouldn't stop harrassing us about it."
     rich "You tried to humiliate us with your videos, with others thinking we were a joke."
     ed "You see, my ancestors came from the planet JoJ many years ago to live here and start a foundation company."
     ed "It was the best damn foundation company in the world."
@@ -2096,7 +2114,7 @@ label donatehohsis:
     cs "You know what? Hold on one second."
     show cs flipped with determination
     hide cs with moveoutleft
-    n "CS grabs the suitcase from Arceus and takes out a few gold bars and gives them to Ed."
+    n "CS grabs the briefcase from Arceus and takes out a few gold bars and gives them to Ed."
     show cs at left 
     show case at left
     with moveinleft
@@ -2218,8 +2236,9 @@ label braghohsis:
     show beam at xstretch_out
     pause 1.0
     scene cshouse_vaporized
+    show cs angry
     cs "I'll just buy a new house!"
-    n "Ed then also vaporizes the suitcase of money."
+    n "Ed then also vaporizes the briefcase of money."
     show cs disappointed at left
     with vpunch
     n "Ed flips CS off, and then flies away."
@@ -2274,7 +2293,7 @@ label east:
     show arceus at right with moveinright
     arceus "Finally, some good fucking food."
     cs "Donuts and chips have never tasted better."
-    arceus "Thank god the slushie machine was working for once."
+    arceus "Thank God the slushie machine was working for once."
     cs "Okay, now that we can think about something other than food, what's our plan to get home?"
     arceus "Yeah, I have no clue currently."
     arceus "I was hoping that we could like hitchhike on a bus or something, but it might be ages until that happens... If it even DOES happen, this town is small enough as is."
@@ -2599,7 +2618,7 @@ label montana:
     show billy car
     with fade
     n "CS and Arc happily chow down on the Mickey D's they just got."
-    arceus "Thank god for that."
+    arceus "Thank God for that."
     cs "I have never been so excited to get a Big Mac."
     scene car plains
     show billy car
@@ -3108,7 +3127,7 @@ label back_home:
     ed "Why do you think this all started?"
     cs "I--{w=0.5} I don't know, because you're evil?"
     ed "CS, you put our company to shame long ago."
-    ed "When you made that paraody video of us that you call a \"YTP\", people wouldn't stop harrassing us about it."
+    ed "When you made that parody video of us that you call a \"YTP\", people wouldn't stop harrassing us about it."
     rich "You tried to humiliate us with your videos, with others thinking we were a joke."
     ed "You see, my ancestors came from the planet JoJ many years ago to live here and start a foundation company."
     ed "It was the best damn foundation company in the world."
