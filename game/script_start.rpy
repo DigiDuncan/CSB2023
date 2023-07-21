@@ -70,6 +70,14 @@ transform mid_center_right:
     yanchor 0.5 ypos 0.5
     xanchor 0.5 xpos 0.75
 
+transform center_right:
+    yanchor 0.5 ypos 0.5
+    xanchor 1.0 xpos 1.0
+
+transform center_left:
+    yanchor 0.5 ypos 0.5
+    xanchor 0.0 xpos 0.0
+
 transform xstretch_in:
     xalign 0.5
     linear 0.5 xsize 1920
