@@ -1433,14 +1433,17 @@ label south:
     n "CS notices a Lego RC car sitting on the desk with a controller."
     cs "Ah sweet! I used to have one of these!"
     n "As CS turns it on, the TV screen next to them turns on aswell, and shows live footage from the Lego car."
+    scene tvcar
     cs "Hey look at that! We can see where the car goes!"
     cs "While we eat, I'm gonna take the car around the restaurant and see if we can find anything cool."
     arceus "Alright, just don't break it."
     n "CS drives the car outside of the office, and starts going into different rooms."
     cs "This already feels like a cool vacation. I'm glad we managed to find this."
     arceus "Well, at least you're happy."
-    show cs disappointed dark
     cs "Weren't there supposed to be robotic Legos though? I was looking forward to tha- Heyyy!!!"
+    scene fazplace
+    show cs disappointed dark at left
+    show arceus dark at right
     arceus "What? What's going on?"
     cs "The Minifigures! One of them is gone!"
     arceus "WHAT??"
