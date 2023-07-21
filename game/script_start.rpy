@@ -444,6 +444,7 @@ image luigi2 = "bg/luigi2.png"
 image vegasbathroom = "bg/vegasbathroom.png"
 image backroomcasino = "bg/backroomcasino.png"
 image outsafe = "bg/outsafe.png"
+image outsafeopen = "bg/outsafeopen.png"
 image insafe = "bg/insafe.png"
 image carpark = "bg/carpark.png"
 image casino1 = "bg/casino1.png"
@@ -491,6 +492,7 @@ image case = "briefcase.png"
 image case flipped = "flip:briefcase.png"
 image bag = "bodybag.png"
 image bag flipped = "flip:bodybag.png"
+image drill = "drillymays.png"
 
 # Movies
 image car background = Movie(play="movies/car_background.mp4")

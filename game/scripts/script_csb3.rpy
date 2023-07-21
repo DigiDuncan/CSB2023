@@ -1680,7 +1680,10 @@ label folded:
     n "CS goes around to look for Arc."
     scene black with fade
     n "Meanwhile, Arc has been trying to win it big, but in a different kind of way..."
-    scene outsafe with fade
+    scene outsafe
+    show arceus flipped at mid_right
+    show drill at center_right
+    with fade
     play sound "drill.ogg" loop volume 0.5
     arceus "Come on, I'm almost there..."
     pause 6.0
@@ -1696,6 +1699,9 @@ label folded:
     arceus "You broke dick piece of shit drill!"
     play sound "drill.ogg" loop volume 0.5
     pause 3.0
+    scene outsafeopen
+    show arceus flipped at mid_right
+    with fade
     play sound "payday.mp3" volume 0.5
     $ achievement_manager.unlock("The House Doesn't Always Win")
     arceus "Hell yeah!"
