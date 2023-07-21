@@ -1791,7 +1791,7 @@ label poker3:
     cs "Woohoo! I won!"
     play music "<loop 0>price_right.mp3" volume 0.5
     music Price Is Right Theme - Edd Kalehoff
-    cashier "Congratulations, sir, you just won 100 million dollars!"
+    luigi "Congratulations, sir, you just won 100 million dollars!"
     cs "Yay! I can pay for my Creative Cloud without donations!"
     n "CS jumps into the air and cheers."
     show cs flipped
