@@ -326,12 +326,14 @@ image mettaton = "characters/mettaton.png"
 image pencilguy = "characters/pencil.png"
 image digi = "characters/digi.png"
 image digi flipped = "flip:characters/digi.png"
-image trailtrash = "characters/fatmama.png"
+image trailtrash = "characters/trailtrash.png"
+image trailtrash flipped = "flip:characters/trailtrash.png"
 image jerma = "characters/jerma.png"
 image tsa = "characters/tsa.png"
 image lego = "characters/lego.png"
 image lego eyes = "characters/legoeyes.png"
 image green = "characters/green.png"
+image green flipped = "flip:characters/green.png"
 
 # Background Images
 ## CSBI

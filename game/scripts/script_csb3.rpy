@@ -1547,14 +1547,14 @@ label vegas:
     n "CS starts looking around for a machine to sit at."
     arceus "Hold on, CS, I need a minute."
     n "A drunk lady bumps into Arc."
-    show fatmama at mid_right with moveinleft
-    show fatmama with hpunch
-    show fatmama at center with move
+    show trailtrash flipped at mid_right with moveinleft
+    show trailtrash flipped with hpunch
+    show trailtrash flipped at center with move
     arceus "Huh?"
     trailtrash "I need a new trailer!"
     arceus "No, I'm sorry, I--"
     trailtrash "I need a new trailer!"
-    hide fatmama with moveoutleft
+    hide trailtrash with moveoutleft
     n "Two guards come up to the lady and drag her towards the elevator."
     arceus "Thank goodness."
     arceus "I need to sit down."
@@ -1595,14 +1595,14 @@ label vegas:
     n "CS sits down at the poker table, and notices that the man's skin is putrid green."
     n "CS looks disgusted, but shrugs as he doesn't want to start trouble now."
     scene luigi2
-    show green at left
+    show green flipped at left
     with fade
     show cs disappointed flipped at right with moveinright
     play music "<loop 0>laurel_palace.mp3" volume 0.5
     music Laurel Palace - Manami Matsumae
     green "Deal us some cards arready!"
     scene luigi1
-    show green at left
+    show green flipped at left
     show cs disappointed flipped at right
     n "The dealer deals the cards out to Mr. Green and CS."
     scene pokertable with fade
@@ -1626,7 +1626,7 @@ label poker:
     cs "No. I'll stand."
     green "Bwahahaha! You think you can beat me?"
     scene luigi1
-    show green at left
+    show green flipped at left
     show cs flipped at right
     pause 1.0
     scene pokertable
@@ -1643,7 +1643,7 @@ label poker2:
     cs "I'm still gonna stand."
     green "I'm gonna be rich! You better have that money on you, boy!"
     scene luigi1
-    show green at left
+    show green flipped at left
     show cs flipped at right
     pause 1.0
     scene pokertable
@@ -1658,7 +1658,7 @@ label poker2:
 
 label folded:
     scene luigi2
-    show green at left
+    show green flipped at left
     show cs disappointed flipped at right
     cs "Yeah, I'm out. I can't risk that much."
     green "Hahahaha! That's what I thought bucko!"
@@ -1742,7 +1742,7 @@ label poker3:
     cs "Still standing."
     green "What!? You son of a bitch, you are so scrrewed!"
     scene luigi2
-    show green at left
+    show green flipped at left
     show cs flipped at right
     cashier "Alright, let's see your hands."
     pause 1.0
