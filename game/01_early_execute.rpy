@@ -5,6 +5,7 @@ init python:
 define determination = Dissolve(0.0)
 default persistent.seen = set()
 default persistent.heard = set()
+default persistent.true_ending = False
 
 screen music():
     zorder 100

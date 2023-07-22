@@ -3368,6 +3368,7 @@ label talktohohsis:
         jump secret
 
 label true_ending:
+    $ persistent.true_ending = True
     n "CS looks over at his desk, where a new computer is sitting."
     scene cs_room_2 with fade
     n "CS looks at the monitor that has a sticky note that says \"From LTT\"."
