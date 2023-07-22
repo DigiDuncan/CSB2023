@@ -229,6 +229,8 @@ define host = Character("Host", callback = renpy.partial(char_callback, name = "
 define tsa = Character("TSA Agent", callback = renpy.partial(char_callback, name = "tsa"))
 define luigi = Character("Luigi", callback = renpy.partial(char_callback, name = "luigi"))
 define mika = Character("Mika", callback = renpy.partial(char_callback, name = "mika"))
+define billy_far = Character("Billy (from off screen)", callback = renpy.partial(char_callback, beep = "billy"))
+define direct = Character("Director", callback = renpy.partial(char_callback, beep = "iris"))
 
 # Character Images
 ## CS

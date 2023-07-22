@@ -18,6 +18,7 @@ define achievements = [
     Achievement("Bored", "Sit through all the car dialouge.", "Sit through all the car dialouge.", "yawn"),
     Achievement("High Roller", "???", "Beat Mr. Green at Poker.", "poker"),
     Achievement("The House Doesn't Always Win", "???", "Complete the Golden Grin Casino job on the Death Sentence difficulty.", "house"),
+    Achievement("Broken Masquerade", "???", "Peer behind the fourth wall.", "ekhi"),
     Achievement("HoH SiS's Most Wanted", "???", "Complete CSBI.", "csbi"),
     Achievement("Welcome to CSBIII, Mother Fucker", "???", "Complete CSBII.", "csbii"),
     Achievement("That's All, Folks!", "???", "Complete CSBIII.", "csbiii")

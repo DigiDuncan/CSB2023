@@ -728,7 +728,7 @@ label arc_escape:
     cs "Hey Arceus? Do you have any clue where we are?"
     arceus "No idea, I'm just following the road. There's bound to be a rest stop here eventually."
     cs "I hope so, we've been walking for hours. It's gotta be midnight around now…"
-    #More filler here probably, for now I'm jumping to when copguy comes in
+    # TODO: More filler here probably, for now I'm jumping to when copguy comes in
     stop music fadeout 3.0
     music end
     n "CS looks into the distance."
@@ -2322,7 +2322,40 @@ label noairport:
     show cs happy at left
     show arceus at right
     cs "There we go!"
-    return
+    # TODO: More silly route.
+    jump reality_break
+
+label reality_break:
+    direct "Cut!"
+    scene soundstage
+    show cs
+    with determination
+    play sound "bell.mp3"
+    pause 3.0
+    play sound "<loop 0>chatter.mp3"
+    n "A bell rings and cast and crew scatter."
+    cs "Huh?"
+    direct "Wow, that got out of hand."
+    cs "I was just--"
+    direct "I know there's not a word-for-word script, but the story's already written, guys."
+    cs "I was adlibbing! Ryan Renolds does it all the time--{w=0.5}{nw}"
+    show arceus at right with moveinright
+    arceus "Come on, boss, it's late, and we all wanna go home."
+    # billy_far is Billy but from far away off-screen.
+    billy_far "You know what? I'm going to need fourty-seven million dollars for this gig, guaranteed!"
+    cs "Fine, fine."
+    show arceus flipped
+    hide arceus with moveoutright
+    direct "Alright, everyone down for another take tonight?"
+    n "Nobody objects."
+    direct "Okay then, everyone take your places, we'll resume with the Vegas scene."
+    stop sound fadeout 2.0
+    n "The cast and crew scramble back into position."
+    $ achievement_manager.unlock("Broken Masquerade")
+    direct "Ready?"
+    direct "Aaaaaand...{nw}"
+    jump vegas
+
 
 label east:
     cs "Well since east is the way home, we should probably go that way."
@@ -3433,10 +3466,10 @@ label fuckuphohsis:
     n "The JoJ UFO flies up over the house and vaporizes the house."
     play sound "beam.ogg" volume 0.6
     show beam at xstretch_in
-    pause 3.0
+    pause 1.5
+    show cshouse_vaporized behind beam
     show beam at xstretch_out
     pause 1.0
-    scene cshouse_vaporized
     show cs disappointed at left
     with vpunch
     n "Ed flips CS off, and then flies away."
