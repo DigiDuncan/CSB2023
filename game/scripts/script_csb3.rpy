@@ -2373,6 +2373,7 @@ label reality_break:
     n "The cast and crew scramble back into position."
     $ achievement_manager.unlock("Broken Masquerade")
     direct "Ready?"
+    show cscar2 with moveinright
     direct "Aaaaaand...{nw}"
     $ returning_from_blooper = True
     jump vegas
