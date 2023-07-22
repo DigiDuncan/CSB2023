@@ -158,11 +158,9 @@ label edit_video:
     hide taran with moveoutright
     stop music fadeout 3.0
     music end
-    # Do we really need three lines for this?
     cs "Well, I guess since this video is already good enough, I can upload it now."
     cs "It's so crazy having the ability to access the LTT channels. There is so much crazy shit going on here!"
     cs "Oh well, time to upload this."
-    # ^
     n "CS pauses for a moment."
     cs "I don't know, I really feel like I shouldn't upload this yet."
     cs "It doesn't feel complete. Something is missing from it..."
@@ -175,6 +173,7 @@ label edit_video:
     cs "As always, I should make sure it's as good as possible so at least Linus will enjoy it, along with his fans."
     cs "But I also don't have much time before Linus comes back and notices, so I need to hurry!"
     cs "Welp, time to get to work!"
+    # TODO: Minigame
     menu:
         "Good" (type = "true"):
             hide cs
@@ -352,7 +351,6 @@ label boost:
     linus "Sorry. Force of habit."
     n "Some time passes and they finish the recording."
     n "Afterwards, CS goes up to Linus' office."
-    #Todo get Linus' office
     scene loffice with fade
     show cs at left with moveinleft
     cs "Hey Linus?"
@@ -515,7 +513,6 @@ label both_fan:
     linus "Wait, what do you mean? I was just joking about the furry fanbase."
     cs "..."
     linus "Whatever, let's just go check out who it is."
-    # TODO: Different room in the LTT office
     scene black with fade
 
     n "CS and Linus rush to the front door."
@@ -575,7 +572,6 @@ label arc_escape:
     cs "I'm sorry guys, I'll try to get you guys caught up after this."
     cs "This is CS, signing out."
     arceus "We have no time for that, CS! We need to go!"
-    # TODO: Outside LTT
     scene outside_ltt with determination
     show cs disappointed at left
     show arceus at right

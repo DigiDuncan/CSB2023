@@ -53,7 +53,12 @@ init python:
         "Track 3 - Weatherscan": "track3.mp3",
         "New Leaf Title Theme - Kazumi Totaka": "ac_title.mp3",
         "Facing Worlds - Michiel van den Bos": "facing_worlds.mp3",
-        "Take a Trip from Me - u4ia": "take_trip.mp3"
+        "Take a Trip from Me - u4ia": "take_trip.mp3",
+        "School - Toby Fox": "school.mp3",
+        "Cliffs - Toby Fox": "cliffs.mp3",
+        "Circus - Toby Fox": "circus.mp3",
+        "The Chase - Toby Fox": "chase.mp3",
+        "Friendship - Toby Fox": "friendship.mp3"
     }
     global album_map
 
