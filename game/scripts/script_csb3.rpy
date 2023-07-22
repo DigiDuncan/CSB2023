@@ -2330,9 +2330,11 @@ label noairport:
 label reality_break:
     direct "Cut!"
     scene soundstage
-    show cs
+    show cs happy at left
+    show arceus at right
     with determination
     play sound "bell.mp3"
+    show cs
     pause 3.0
     play sound "<loop 0>chatter.mp3"
     n "A bell rings and cast and crew scatter."
