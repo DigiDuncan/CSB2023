@@ -42,6 +42,8 @@ init python:
         "pencil": "Pencil Greeter",
         "host": "Mettaton",
         "tsa": "TSA Agent",
+        "luigi": "Luigi Mario",
+        "mika": "Mikapara",
         "iris": "???"
     }
 

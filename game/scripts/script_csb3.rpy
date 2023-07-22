@@ -2256,14 +2256,60 @@ label noairport:
     cs "Nah, I don't wanna go to the airport."
     cs "We should take the car and drive."
     arceus "Okay well, Let's get going!"
-    arceus "More road trip!"
+    arceus "More road trip! Yay!"
     cs "Let's go!"
-    n "CS and Arc"
-    scene old_house_outside
+    scene carpark
+    show cscar1
+    show cscar2
+    show cs at left behind cscar2
+    show arceus at right behind cscar2
+    with fade
+    n "CS and Arc get back in the car and head east."
+    scene black with fade
+    n "After quite a bit of driving, they reach the tip of Texas."
+    scene texas
+    show cscar1
+    show cscar2
+    show cs at left behind cscar2
+    show arceus at right behind cscar2
+    with fade
+    pause 3.0
+    show cs happy
+    pause 1.0
+    show cs
+    pause 1.0
+    cs "Hey Arc?"
+    arceus "What's up?"
+    cs "What if, we went to your house? Don't you live in Texas?"
+    arceus "Yeah, I do. Why do you wanna go there though? There isn't anything interesting there..."
+    cs "I dunno. I guess I thought it'd be cool nice place to stop."
+    cs "I mean, we are going to my house, and I... feel like we should just check out your house!"
+    arceus "Umm, okay."
+    arceus "I guess we can go to my house."
+    scene black with fade
+    n "CS makes a stop at Arceus' house, which isn't too far away."
+    scene old_house_outside with fade
     show cs at left
-    show arceus at right
-    cs "Vroom... Vroom... Vroom.... Okay! We are here!"
+    show arceus flipped at right
+    with moveinleft
+    show arceus at right with determination
+    cs "Okay! We are here!"
     arceus "Yep! This is my house alright! This is what it looks like!"
+    n "They enter Arceus' hou--{nw}"
+    show mika at center with moveintop
+    show mika at center with vpunch
+    mika "Oi chaps!"
+    mika "Ok, so, CS looks out the window and he spots a yellow Hummer."
+    mika "The guy, with his arm out the window, says \"Dude, this car kicks ass! And I can watch Madagascar while driving!\""
+    mika "And it cuts to him watching Madagascar while driving."
+    mika "And it's Alex saying \"What kind of music do you like Gloria?\""
+    mika "(Alex the lion, by the way, from Madagascar)"
+    mika "And Gloria says \"HIPPO HOP!\""
+    mika "And then Gloria starts dancing, ok?"
+    mika "And then the guy says \"HAHAHAHAHAHAH! Dude, those animals are so fucking funny! They make me want to merge without looking!\""
+    hide mika with moveoutbottom
+    arceus "CS? Was that in the scrip--{nw}"
+    cs "Alright! Let's got in Arceus' house!"
     scene arceus_house
     show cs at left
     show arceus at right

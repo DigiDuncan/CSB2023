@@ -223,11 +223,12 @@ define lego = Character("LegoBot", callback = renpy.partial(char_callback, name 
 define trailtrash = Character("Trailer Trash", callback = renpy.partial(char_callback, name = "trailtrash"))
 define green = Character("Mr. Green", callback = renpy.partial(char_callback, name = "green", beep = "green"), what_color="#00FF00")
 define jerma = Character("Jerma", callback = renpy.partial(char_callback, name = "jerma", beep = "jerma"))
-define pencil = Character("Pencil Greeter", callback = char_callback)
+define pencil = Character("Pencil Greeter", callback =renpy.partial(char_callback, name = "pencil"))
 define signup = Character("Signup Helper", callback = char_callback)
 define host = Character("Host", callback = renpy.partial(char_callback, name = "mettaton", beep = "snd_mtt"), what_font = "DTM-MONO.otf", what_size = 40)
-define tsa = Character("TSA Agent", callback = char_callback)
-define luigi = Character("Luigi", callback = char_callback)
+define tsa = Character("TSA Agent", callback = renpy.partial(char_callback, name = "tsa"))
+define luigi = Character("Luigi", callback = renpy.partial(char_callback, name = "luigi"))
+define mika = Character("Mika", callback = renpy.partial(char_callback, name = "mika"))
 
 # Character Images
 ## CS
@@ -346,6 +347,7 @@ image green = "characters/green.png"
 image green flipped = "flip:characters/green.png"
 image bouncer1 = "characters/bouncer.png"
 image bouncer2 = "characters/bouncer.png"
+image mika = "characters/mika.png"
 
 # Background Images
 ## CSBI
@@ -438,7 +440,6 @@ image pizzaplace = "bg/pizzaplace.png"
 image legodoor = "bg/legoplace.png"
 image legodooropen = "bg/legoplaceopen.png"
 image legostage = "bg/legostage.png"
-image tvcar = "bg/tvcar.png"
 image vegas = "bg/vegas.png"
 image strip = "bg/strip.png"
 image slots = "bg/slots.png"
@@ -470,6 +471,7 @@ image cc_crowd = "bg/convention_center_crowd.png"
 image cc_stage = "bg/convention_center_stage.png"
 image cc_backstage = "bg/convention_center_backstage.png"
 image billboard = "bg/billboard.png"
+image texas = "bg/texas.png"
 
 ## AI Ending
 image park1 = "bg/ai/amusementpark1.png"
@@ -505,6 +507,7 @@ image car background = Movie(play="movies/car_background.mp4")
 image car background night = Movie(play="movies/car_background_night.mp4")
 image car plains = Movie(play="movies/car_plains.mp4")
 image car plains night = Movie(play="movies/car_plains_night.mp4")
+image tvcar = Movie(play="movies/0001.mpg")
 
 # Animated Sprites
 image blue_light:
