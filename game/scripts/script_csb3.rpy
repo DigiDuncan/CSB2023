@@ -1524,13 +1524,24 @@ label utah:
     jump vegas
 
 label vegas:
-    play music "<loop 0>penthouse.mp3" volume 0.5
-    music "Al's Penthouse - Andy Blythe"
-    scene vegas
-    show cscar1
-    show cscar2
-    show arceus flipped at left behind cscar2
-    with fade
+    if returning_from_blooper:
+        scene vegas
+        show cscar1
+        show cscar2
+        show arceus flipped at left behind cscar2
+        with determination
+        play sound "clapperboard.wav"
+        play music "<loop 0>penthouse.mp3" volume 0.5
+        music "Al's Penthouse - Andy Blythe"
+        $ returning_from_blooper = False
+    else:
+        play music "<loop 0>penthouse.mp3" volume 0.5
+        music "Al's Penthouse - Andy Blythe"
+        scene vegas
+        show cscar1
+        show cscar2
+        show arceus flipped at left behind cscar2
+        with fade
     n "After a few hours of driving, the duo sees the bright Las Vegas sign come into view."
     cs "Woohoo! We're almost there!"
     arceus "Some reckless gambling will probably help me forget about the horrors from that restaurant..."
@@ -2351,15 +2362,19 @@ label reality_break:
     billy_far "You know what? I'm going to need fourty-seven million dollars for this gig, guaranteed!"
     cs "Fine, fine."
     show arceus flipped
-    hide arceus with moveoutright
+    show arceus at offscreenright with move
     direct "Alright, everyone down for another take tonight?"
     n "Nobody objects."
     direct "Okay then, everyone take your places, we'll resume with the Vegas scene."
+    show arceus at left with move
+    show arceus flipped
+    hide cs with moveoutright
     stop sound fadeout 2.0
     n "The cast and crew scramble back into position."
     $ achievement_manager.unlock("Broken Masquerade")
     direct "Ready?"
     direct "Aaaaaand...{nw}"
+    $ returning_from_blooper = True
     jump vegas
 
 
