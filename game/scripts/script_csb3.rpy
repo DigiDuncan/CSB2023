@@ -1332,6 +1332,8 @@ label south:
     n "After many hours of driving, it starts to turn night time again."
     stop music fadeout 3.0
     music end 
+
+label utah:
     scene utah
     show cscar1
     show cscar2
