@@ -2282,7 +2282,7 @@ label noairport:
     arceus "What's up?"
     cs "What if, we went to your house? Don't you live in Texas?"
     arceus "Yeah, I do. Why do you wanna go there though? There isn't anything interesting there..."
-    cs "I dunno. I guess I thought it'd be cool nice place to stop."
+    cs "I dunno. I guess I thought it'd be cool place to stop."
     cs "I mean, we are going to my house, and I... feel like we should just check out your house!"
     arceus "Umm, okay."
     arceus "I guess we can go to my house."
@@ -2307,13 +2307,15 @@ label noairport:
     mika "And Gloria says \"HIPPO HOP!\""
     mika "And then Gloria starts dancing, ok?"
     mika "And then the guy says \"HAHAHAHAHAHAH! Dude, those animals are so fucking funny! They make me want to merge without looking!\""
+    mika "Anyways..."
+    mika "Jos haluatte voittaa venäläiset, kutsukaa meitä suomalaisiksi ja soittakaa Säkkijärven polkkaa."
     hide mika with moveoutbottom
     arceus "CS? Was that in the scrip--{nw}"
-    cs "Alright! Let's got in Arceus' house!"
+    cs "Alright! Let's go in Arceus' house!"
     scene arceus_house
     show cs at left
     show arceus at right
-    cs "Alright! Now we are inside Arceus's house!"
+    cs "Alright! Now we are inside Arceus' house!"
     pause 2.0
     show cs angry
     pause 2.0
