@@ -229,6 +229,9 @@ define host = Character("Host", callback = renpy.partial(char_callback, name = "
 define tsa = Character("TSA Agent", callback = renpy.partial(char_callback, name = "tsa"))
 define luigi = Character("Luigi", callback = renpy.partial(char_callback, name = "luigi"))
 define mika = Character("Mika", callback = renpy.partial(char_callback, name = "mika"))
+define k174 = Character("K17-4", callback = renpy.partial(char_callback, name = "k174"))
+define k199 = Character("K19-9", callback = renpy.partial(char_callback, name = "k199"))
+define k207 = Character("K20-7", callback = renpy.partial(char_callback, name = "k207"))
 define billy_far = Character("Billy (from off screen)", callback = renpy.partial(char_callback, beep = "billy_from_afar"))
 define direct = Character("Director", callback = renpy.partial(char_callback, beep = "iris"))
 
@@ -286,6 +289,20 @@ image craptop sad = "characters/craptop/sad.png"
 image craptop updating = "characters/craptop/updating.png"
 image craptop ytp = "characters/craptop/ytp.png"
 image post_it = "post-it.png"
+
+##Archival
+image k174 = "characters/k174.png"
+image k174 flipped = "flip:characters/k174.png"
+image k199 = "characters/k199.png"
+image k199 flipped = "flip:characters/k199.png"
+image k207 = "characters/k207.png"
+image k207 flipped = "flip:characters/k207.png"
+image k207h = "characters/k207h.png"
+image k207h flipped = "flip:characters/k207h.png"
+image nova1 = "characters/novaedit.png"
+image nova2 = "characters/novaedit.png"
+image nova3 = "characters/novaedit.png"
+image carguya = "characters/carguya.png"
 
 ## Others
 image discord = "characters/discord.png"
@@ -484,6 +501,14 @@ image entertunnel = "bg/ai/entrancetotunnel.png"
 image linusmedia = "bg/ai/linusmedia.png"
 image secrettunnel = "bg/ai/secret_tunnel.png"
 image ytx = Transform("ytx.png", zoom = 0.333)
+
+## Archival
+image car_old = "bg/car_old.png"
+image car_inside_old = "bg/car_inside_old.png"
+image bedroom_old = "bg/cs_bedroom.png"
+image door_old = "bg/door_open_old.png"
+image csmart_old = "bg/csmart.png"
+image craptop_old = "bg/craptop_old.png"
 
 # Static Images
 image objection = "objection.png"

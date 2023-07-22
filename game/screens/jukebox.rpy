@@ -51,7 +51,9 @@ init python:
         "Park Theme - Lorin Nelson": "park_theme.mp3",
         "Alfred's Theme - Eminem": "hohsisremix.mp3",
         "Track 3 - Weatherscan": "track3.mp3",
-        "New Leaf Title Theme - Kazumi Totaka": "ac_title.mp3"
+        "New Leaf Title Theme - Kazumi Totaka": "ac_title.mp3",
+        "Facing Worlds - Michiel van den Bos": "facing_worlds.mp3",
+        "Take a Trip from Me - u4ia": "take_trip.mp3"
     }
     global album_map
 

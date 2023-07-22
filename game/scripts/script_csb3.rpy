@@ -3375,6 +3375,13 @@ label true_ending:
     cs "Oh my goodness, Linus got me a new PC!"
     n "There is also a note that says: \"We'd love to have to work with us again virtually, just give us a call\"."
     cs "I'll have to make sure to call them later!"
+    menu:
+        "Go to sleep":
+            jump archival
+        "Stream":
+            jump streaming
+
+label streaming:
     show cs at mid_left
     cs "Before I head off for the night, I'll do a stream real quick."
     n "CS starts up his stream overlay and goes live on Twitch."
