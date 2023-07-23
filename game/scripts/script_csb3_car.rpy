@@ -173,7 +173,7 @@ label car_dialogue:
     tv_billy "No! I am Billy! I died long ago and I'm now in Super Heaven, selling pointless products!"
     billy "No, fuck you! I am the real Billy!"
     cs "Yeah, dude from the radio, you sound like an imposter."
-    arceus "sus{nw}"
+    arceus "sus{w=0.25}{nw}"
     tv_billy "And you sound like that one guy who I sold a laptop to from his old ass TV!"
     cs "No clue what are you talking about."
     n "Billy turns off the Jupiter Jack for a while."

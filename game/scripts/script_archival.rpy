@@ -2,14 +2,14 @@ label archival:
     n "CS looks at his bedroom door."
     cs "Yeah, after EVERYTHING that has happened today, some rest sounds really nice."
     n "CS enters his bedroom and immediately jumps into bed."
-    cs "Ah finally, I can get a good night's sleep."
+    cs "Ah, finally, I can get a good night's sleep."
     n "CS does the finger guns at his ceiling."
-    cs "This is CS…………………………………………. Signing out!"
+    cs "This is CS{cps=*0.1}... {cps=*10}Signing out!"
     n "CS quickly drifts off to sleep."
     scene black with fade
-    n "…"
-    n "…"
-    n "…"
+    n "..."
+    n "..."
+    n "..."
     scene bedroom_old
     play music "<loop 0>facing_worlds.mp3" volume 0.5
     music "Facing Worlds - Michiel van den Bos"
@@ -19,21 +19,21 @@ label archival:
     cs "Hey guys! CS here!"
     cs "How is ever-"
     show cs worried
-    n "CS immediately jolts up, realizing that he’s not in his room."
+    n "CS immediately jolts up, realizing that he's not in his room."
     cs "Wait a minute. Where am I? This place…"
-    n "CS trails off, feeling uneasy about this new location. It doesn’t look familiar to him at all, but for some reason..."
-    cs "Why does the place feel so familiar? Something doesn’t feel right."
+    n "CS trails off, feeling uneasy about this new location. It doesn't look familiar to him at all, but for some reason..."
+    cs "Why does the place feel so familiar? Something doesn't feel right."
     n "CS gets up, and goes over to a laptop sitting on the desk next to him."
     scene craptop_old with fade
     show cs disappointed at left with moveinleft
-    cs "I feel like, this is, this is my cra- I mean laptop. I don’t even have a crapto- I mean laptop anymore!"
+    cs "I feel like, this is, this is my cra-{w=0.5} I mean laptop. I don't even have a crapto-{w=0.5} I mean laptop anymore!"
     cs "Why do I keep calling it that?"
     n "CS lifts the lid and powers it on, curious of the strange connection he is feeling with it."
     n "The laptop slowly powers on, playing the classic Windows XP start sound, even though it shows a static screen of Windows 10 updating."
     n "The laptop immediately bluescreens, and blares out the following:"
     play sound "windows_logon.mp3"
     craptop "Your PC sux. lol."
-    "???" "Hey wtf was that?"
+    "???" "Hey, WTF was that?"
     cs "Shit!"
     hide cs with moveoutright
     scene bedroom_old with fade
@@ -49,33 +49,33 @@ label archival:
     n "They all look like the same person, except one is wearing sunglasses and the other is wearing a gas mask."
     n "They quickly scan the room, and notice the laptop turned on."
     show k199 flipped
-    "???" "What the hell K17! I thought this place didn’t have any triggers!"
-    k174 "It… shouldn’t. This place barely has any functionality!"
-    "???" "Then WHY is the craptop on? CS-ocola would be here right now!"
-    "???" "Mrrrph Mrrph Mrphh Mrphh Mrphh MRrrrrph!"
-    "???" "What? Dude, K20, for the millionth time, take that thing off we can’t hear you."
+    "???" "What the hell, K17! I thought this place didn't have any triggers!"
+    k174 "It... shouldn't. This place barely has any functionality!"
+    "???" "Then {i}why{/i} is the craptop on? CS-ocola would be here right now!"
+    "???" "Mrrrph Mrrph Mrphh Mrphh Mrphh Mrrrrrph!"
+    "???" "What? Dude, K20, for the millionth time, take that thing off, we can't hear you."
     show k174 flipped
-    k174 "Yeah man, there’s no \"whatever virus\" here that you keep talking about. It’s fine."
-    k207 "carefully and slowly takes off their mask."
+    k174 "Yeah man, there's no \"whatever virus\" here that you keep talking about. It's fine."
+    n "K20-7 carefully and slowly takes off their mask."
     hide k207h
     show k207 at mid_right_right
-    k207 "Alright fine! But if I get corona and die, then I’ll make sure Addy fires both of you!"
-    "???" "Look there’s nothing to worry about. Besides, even if you die, how are you gonna tell them?"
+    k207 "Alright fine! But if I get corona and die, then I'll make sure Addy fires both of you!"
+    "???" "Look there's nothing to worry about. Besides, even if you die, how are you gonna tell them?"
     k207 "Shut up K19!"
     k199 "Alright, sheesh."
-    k207 "What I was trying to say, is that this could’ve taken place after HoH SiS left, meaning CS is out right now anyways."
+    k207 "What I was trying to say, is that this could've taken place after HoH SiS left, meaning CS is out right now anyways."
     k199 "Yeah, but why did it TRIGGER? There is NO-ONE here!"
-    k207 "I don’t know man! I’m just throwing something out there!"
-    k199 "God! It’s a miracle you could put this together K17, it feels like this place is barely holding up!"
-    k199 "I mean, what did you write here? This house has felt like it was sitting with a giant rock on the side of the house? Hahaha that doesn’t even make any fucking sense!"
-    n "CS, still hiding in the corner, his mind racing and trying to take in what’s happening around him, feels a strong urge."
+    k207 "I don't know man! I'm just throwing something out there!"
+    k199 "God! It's a miracle you could put this together K17, it feels like this place is barely holding up!"
+    k199 "I mean, what did you write here? This house has felt like it was sitting with a giant rock on the side of the house? Hahaha that doesn't even make any fucking sense!"
+    n "CS, still hiding in the corner, his mind racing and trying to take in what's happening around him, feels a strong urge."
     n "That terribly broken English, why does it feel like he was supposed to say that just now?"
     show k174
-    k174 "Look I don’t know why I wrote that, we need to figure out what’s causing this! I’m a bit worried."
-    k207 "I’m sure it’s nothing dude, why don’t we go check out another part of this place?"
+    k174 "Look I don't know why I wrote that, we need to figure out what's causing this! I'm a bit worried."
+    k207 "I'm sure it's nothing dude, why don't we go check out another part of this place?"
     show k199
     k199 "Wait a second…"
-    k199 "sees something shift for a second in the corner and leans in to look."
+    n "K19-9 sees something shift for a second in the corner and leans in to look."
     show cs disappointed at left
     show k199 behind cs
     n "CS turns around for a second and sees a face staring right at him."
@@ -83,16 +83,16 @@ label archival:
     cs "Gahhhh!"
     k199 "Oh fuck! What the hell?"
     n "CS quickly stands up. Everyone is silent and staring at CS."
-    k207 "Shit dude that’s him! He’s here!"
+    k207 "Shit dude that's him! He's here!"
     cs "Okay wait! Hold on a second!"
-    k174 "WHAT THE FUCK?! WHY DOES  HE LOOK LIKE THAT!"
+    k174 "WHAT THE FUCK?! WHY DOES HE LOOK LIKE THAT!"
     show cs disappointed
     cs "Damn okay, now I just feel insulted."
     k199 "Dude just, find something here to knock him or whatever!"
     k174 "Okayokayokay! I got this! Take this!"
     show worker_1 at center with moveintop
     n "One of the HoH SiS workers materialize in between CS and the 3 people."
-    worker_1 "I don’t know!"
+    worker_1 "I don't know!"
     show k199 flipped
     k199 "What the fuck is that thing? Why is it looking at us? Make it do something!"
     k207 "Who is this person? Are they a construction worker? Are they a businessman?"
@@ -103,16 +103,16 @@ label archival:
     show worker_1 at center with hpunch
     hide worker_1 with moveoutright
     n "CS punches the worker to the ground."
-    k199 "Oh shit man! He’s gone AWOL!"
-    k207 "I don’t think that’s what AWOL means, but still, do something 17!"
-    k174 "FuckFuckFuck! Okayokay what about this! Do something!"
+    k199 "Oh shit man! He's gone AWOL!"
+    k207 "I don't think that's what AWOL means, but still, do something, 17!"
+    k174 "Fuck, fuck, fuck! Okay okay, what about this! Do something!"
     show nova1 at mid_mid_left with moveintop
     show nova2 at mid_mid_right with moveintop
     show nova3 at right with moveintop
     n "A bunch of heads start to materialize in the middle of the room."
     nova "Nova?"
     nova "Nova Nova?"
-    k199 "God WTF are those things? Make them attack CS!"
+    k199 "God, WTF are those things? Make them attack CS!"
     nova "Nova Nova NOVAAAA!"
     show nova2 at mid_right with vpunch
     n "The heads charge toward the group, trying to bite and rip them apart."
@@ -121,7 +121,7 @@ label archival:
     show nova3 at mid_left with vpunch
     k199 "KILL THEM! KILL THEMMM! 17 YOU PIECE OF SHIT MAKE THEM STOOOP!"
     show nova1 at right with vpunch
-    k174 "OH GOD WHAT HAVE I DONE? I CAN’T STOP THEM!"
+    k174 "OH GOD WHAT HAVE I DONE? I CAN'T STOP THEM!"
     show nova2 at center with vpunch
     hide cs with moveoutright
     n "CS realizes that this is his chance and runs past them and out the door."
@@ -160,7 +160,9 @@ label archival:
     music "Take a Trip from Me - u4ia"
     n "A loud glass breaking sound is heard, and CS finds himself in a pool of glowing cyan liquid."
 
-    ##NOTE: From this part on, if we are doing the animated thing, then the text should stop here. //However, I might as well write out this whole part just in case we need to use it. + It’ll explain //the scene better.
+    # NOTE: From this part on, if we are doing the animated thing, then the text should stop here.
+    # However, I might as well write out this whole part just in case we need to use it. It'll explain
+    # the scene better.
 
     n "CS picks himself up off the glass and goo, and looks ahead of him in awe."
     n "There are tons of glowing cyan tanks full of liquid, with hundreds of them stretching on in front of him, and rows of them to his left and right."
@@ -171,7 +173,7 @@ label archival:
     n "CS then sees a blurry vision of what looks like a version of him without his dress or cat ears, playing some kind of game."
     n "He realizes that the game that he is playing is the world that CS-ocola lives in, and it looks like CS is making fun or poking fun at his world."
     n "Before CS can really take all this in though, a few guards at the end of the building yell something at him."
-    n "The guards are wearing tophats as well, with a black suit, black dress pants, and a white undershirt. They seem to have different color ties based on their hair color. The guard's hair is down to their neck at least, and is kinda spiky / curls up. (I’ll draw references later anyways)"
+    n "The guards are wearing tophats as well, with a black suit, black dress pants, and a white undershirt. They seem to have different color ties based on their hair color. The guard's hair is down to their neck at least, and is kinda spiky / curls up. (I'll draw references later anyways)"
     n "The guards also have rifles, something similar or equivalent to an M4A1."
     n "The guards start to chase after CS, and he runs a bit as well and hides behind one of the canisters."
     n "The guards come around the corner, and start firing at CS as he sprints out of there."
@@ -191,8 +193,8 @@ label archival:
     n "CS looks ahead and takes a bit of a breather, and the tram starts to speed up. The tram turns off to the left, as an opening to another rail appears. The tram gets onto the lane, and starts speeding incredibly fast."
     n "CS looks to his right, as he sees these giant facilities fly past him. "
     n "After about 20 of the facilities fly by, the tram suddenly stops. CS looks around, confused, and then he looks to his left."
-    n "To his left, as a long, endless looking hallway with a blinding light filling up the hallway. The tram slowly starts to rotate onto the light hallway’s rail."
-    n "The tram then starts speeding into the light at ludicrous speeds, as CS panics and sees the light envelope the outside of the tram. As Cs looks around, he can see glimpses of memories of places he’s been to, rushing past him. There are even some places that he doesn’t recognize."
+    n "To his left, as a long, endless looking hallway with a blinding light filling up the hallway. The tram slowly starts to rotate onto the light hallway's rail."
+    n "The tram then starts speeding into the light at ludicrous speeds, as CS panics and sees the light envelope the outside of the tram. As Cs looks around, he can see glimpses of memories of places he's been to, rushing past him. There are even some places that he doesn't recognize."
     n "CS panics and tries to stop the train, but it is no use. A message appears at the top of the tram on a panel, that shows someone who looks like one of the guards waving at him, with their tongue out."
     n "CS realizes that there is nothing he can do, and closes his eyes. The tram seems to be going faster, as the light seems to be getting brighter. All of a sudden the tram, the light, and everything disappears."
     n "The Archival Ending."
