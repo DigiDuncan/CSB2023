@@ -40,19 +40,32 @@ init python:
             if not self.started:
                 if 0 < current_time < 1:
                     # Display 3
-                    countdown_renderer = renpy.render(Text("3", color="FF0000", size=200), 1920, 1080, st, at)
+                    countdown_renderer = renpy.render(Text("3", color = "FF0000", size=200), 1920, 1080, st, at)
                     r.blit(countdown_renderer, (960, 540))
                 elif 1 < current_time < 2:
                     # Display 2
-                    countdown_renderer = renpy.render(Text("2", color="FFFF00", size=200), 1920, 1080, st, at)
+                    countdown_renderer = renpy.render(Text("2", color = "FFFF00", size=200), 1920, 1080, st, at)
                     r.blit(countdown_renderer, (960, 540))
                 elif 2 < current_time < 3:
                     # Display 1
-                    countdown_renderer = renpy.render(Text("1", color="00FF00", size=200), 1920, 1080, st, at)
+                    countdown_renderer = renpy.render(Text("1", color = "00FF00", size=200), 1920, 1080, st, at)
                     r.blit(countdown_renderer, (960, 540))
                 elif current_time > 3:
                     # Yell Go at the player
                     self.started = True
+
+            # Hit the space bar
+            if self.hit:
+                # In box
+                if self.hit_position <= self.scissors_place <= self.hit_position + self.hit_width:
+                    self.successes += 1
+                    # renpy.sound.play("") # TODO Find an "Oh yes!"
+                else:
+                    renpy.sound.play("minigames/editing/ohno.ogg")
+                self.attempts += 1
+                self.hit_position = renpy.random.randint(self.hit_width, 1920 - self.hit_width)
+                self.hit = False
+                self.cut_positions.append(self.scissors_place)
 
             # Move scissors back and forth
             if self.scissors_direction:
@@ -66,13 +79,13 @@ init python:
 
             # Cuts
             for p in self.cut_positions:
-                rr = renpy.render(Solid("#313131", xysize=(2, 115)), 1920, 1080, st, at)
+                rr = renpy.render(Solid("#313131", xysize = (2, 115)), 1920, 1080, st, at)
                 r.blit(rr, (p, 454))
-                rr = renpy.render(Solid("#FFFFFF4D", xysize=(2, 115)), 1920, 1080, st, at)
-                r.blit(rr, (p + 3, 454))
+                rr = renpy.render(Solid("#FFFFFF4D", xysize = (2, 115)), 1920, 1080, st, at)
+                r.blit(rr, (p + 2, 454))
 
             # Green hitbox rectangle visual
-            rectangle_renderer = renpy.render(Solid("#00FF00", xysize=(self.hit_width, 115)), 1920, 1080, st, at)
+            rectangle_renderer = renpy.render(Solid("#00FF00", xysize = (self.hit_width, 115)), 1920, 1080, st, at)
             r.blit(rectangle_renderer, (self.hit_position, 454))
 
             # Scissor visual
@@ -80,23 +93,10 @@ init python:
             r.blit(scissor_renderer, (self.scissors_place - (SCISSOR_WIDTH / 2), 154))
 
             # Score visual
-            score_renderer = renpy.render(Text(str(self.successes)+" / "+str(TOTAL_ROUNDS), size=72), 1920, 1080, st, at)
+            score_renderer = renpy.render(Text(str(self.successes) + " / " + str(TOTAL_ROUNDS), size=72), 1920, 1080, st, at)
             r.blit(score_renderer, (50, 950))
             left_renderer = renpy.render(Text(str(TOTAL_ROUNDS - self.attempts) + " cuts left!", size=72), 1920, 1080, st, at)
             r.blit(left_renderer, (50, 1000))
-
-            # Hit the space bar
-            if self.hit:
-                # In box
-                if self.hit_position <= self.scissors_place <= self.hit_position + self.hit_width:
-                    self.successes += 1
-                    renpy.sound.play("") # TODO Find an "Oh yes!"
-                else:
-                    renpy.sound.play("minigames/editing/ohno.ogg")
-                self.attempts += 1
-                self.hit_position = renpy.random.randint(self.hit_width, 1920 - self.hit_width)
-                self.hit = False
-                self.cut_positions.append(self.scissors_place)
 
             # Return if game over
             if self.attempts >= TOTAL_ROUNDS:
@@ -117,22 +117,22 @@ init python:
                     return self.win
 
         def visit(self):
-            return [] # Assets needed to load
+            return [self.scissors]
 
-screen edit_game:
-    default edit_game = EditGameDisplayable()
+screen editgame:
+    default editgame = EditGameDisplayable()
     # Add a background or any static images here.
     add "minigames/editing/bg.png"
-    add edit_game
+    add editgame
 
-label play_edit_game:
+label play_editgame:
     window hide
     $ quick_menu = False
     call screen edit_game
     $ quick_menu = True
     window show
 
-    if _return >= 0.75:
+    if _return >= WIN_PERCENTAGE:
         arceus "Ween."
         pause
     else:
@@ -141,3 +141,4 @@ label play_edit_game:
 
 label edit_game_done:
     # Thing to do after the game if we reach here.
+    pass
