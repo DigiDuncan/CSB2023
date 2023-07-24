@@ -28,15 +28,15 @@ init python:
             return [] # Assets needed to load
 
 
-screen template_game:
-    default template_game = TemplateGameDisplayable()
+screen templategame:
+    default templategame = TemplateGameDisplayable()
     # Add a background or any static images here.
-    add template_game
+    add templategame
 
-label play_template_game:
+label play_templategame:
     window hide
     $ quick_menu = False
-    call screen template_game
+    call screen templategame
     $ quick_menu = True
     window show
 
@@ -47,5 +47,6 @@ label play_template_game:
         pass
         # Thing for lose condition
 
-label template_game_done:
+label templategame_done:
     # Thing to do after the game if we reach here.
+    pass

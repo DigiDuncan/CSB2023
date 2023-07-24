@@ -139,6 +139,6 @@ label play_editgame:
         arceus "Lose :("
         pause
 
-label edit_game_done:
+label editgame_done:
     # Thing to do after the game if we reach here.
     pass
