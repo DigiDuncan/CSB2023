@@ -22,6 +22,7 @@ init python:
             self.scissors_direction = False
 
             self.hit = False
+            self.cut_positions = []
 
         def render(self, width, height, st, at):
             if self.start_time is None:
@@ -45,6 +46,13 @@ init python:
                 if self.scissors_place < 0:
                     self.scissors_direction = True
 
+            # Cuts
+            for p in self.cut_positions:
+                rr = renpy.render(Solid("#313131", xysize=(1, 115)), 1920, 1080, st, at)
+                r.blit(rr, (p, 454))
+                rr = renpy.render(Solid("#FFFFFF4D", xysize=(1, 115)), 1920, 1080, st, at)
+                r.blit(rr, (p + 1, 454))
+
             # Green hitbox rectangle visual
             rectangle_renderer = renpy.render(Solid("#00FF00", xysize=(self.hit_width, 115)), 1920, 1080, st, at)
             r.blit(rectangle_renderer, (self.hit_position, 454))
@@ -65,6 +73,7 @@ init python:
                 self.attempts += 1
                 self.hit_position = renpy.random.randint(self.hit_width, 1920 - self.hit_width)
                 self.hit = False
+                self.cut_positions.append(self.scissors_place)
 
             # Return if game over
             if self.attempts >= TOTAL_ROUNDS:
