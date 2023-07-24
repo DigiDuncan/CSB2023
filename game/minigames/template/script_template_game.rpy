@@ -19,7 +19,7 @@ init python:
 
         def event(self, ev, x, y, st):
             import pygame
-            if ev.type == pygame.KEYDOWN and ev.key == K_END:
+            if ev.type == pygame.KEYDOWN and ev.key == pygame.K_END:
                 self.win = True
             if self.win is not None:
                 return self.win

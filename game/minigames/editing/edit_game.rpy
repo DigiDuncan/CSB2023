@@ -1,6 +1,9 @@
 init python:
     import math
 
+    hit_width = 69
+    hit_position = 69
+
     class EditGameDisplayable(renpy.Displayable):
         def __init__(self):
             renpy.Displayable.__init__(self)
@@ -13,14 +16,14 @@ init python:
             r = renpy.Render(1920, 1080)
 
             # Do some fancy things here!
-            rectangle_renderer = renpy.render(Solid("#00FF00", xysize=(600, 900)), 1920, 1080, st, at)
-            r.blit(rectangle_renderer, (50, 50))
+            rectangle_renderer = renpy.render(Solid("#00FF00", xysize=(hit_width, 115)), 1920, 1080, st, at)
+            r.blit(rectangle_renderer, (hit_position, 454))
             renpy.redraw(self, 0)
             return r
 
         def event(self, ev, x, y, st):
             import pygame
-            if ev.type == pygame.KEYDOWN and ev.key == K_END:
+            if ev.type == pygame.KEYDOWN and ev.key == pygame.K_END:
                 self.win = True
             if self.win is not None:
                 return self.win
@@ -31,6 +34,7 @@ init python:
 screen edit_game:
     default edit_game = EditGameDisplayable()
     # Add a background or any static images here.
+    add "minigames/editing/bg.png"
     add edit_game
 
 label play_edit_game:
