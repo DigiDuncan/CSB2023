@@ -16,6 +16,11 @@ init python:
             renpy.redraw(self, 0)
             return r
 
+        def event(self, ev, x, y, st):
+            import pygame
+
+        def visit(self):
+            return None # Assets needed to load
 
 screen edit_game:
     default edit_game = EditGameDisplayable()
