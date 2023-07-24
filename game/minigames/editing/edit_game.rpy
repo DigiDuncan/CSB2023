@@ -18,6 +18,10 @@ init python:
 
         def event(self, ev, x, y, st):
             import pygame
+            if ev.type == pygame.KEYDOWN and ev.key == K_END:
+                self.win = True
+            if self.win is not None:
+                return self.win
 
         def visit(self):
             return None # Assets needed to load
