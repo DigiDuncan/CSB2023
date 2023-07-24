@@ -176,20 +176,7 @@ label edit_video:
     cs "As always, I should make sure it's as good as possible so at least Linus will enjoy it, along with his fans."
     cs "But I also don't have much time before Linus comes back and notices, so I need to hurry!"
     cs "Welp, time to get to work!"
-    # TODO: Minigame
-    menu:
-        "Good" (type = "true"):
-            hide cs
-            hide csdesk
-            show black
-            with fade
-            jump boost
-        "Bad" (type = "bad"):
-            hide cs
-            hide csdesk
-            show black
-            with fade
-            jump fired
+    jump play_editgame
 
 label fired:
     $ renpy.movie_cutscene("movies/mymovie_cs.mpg")

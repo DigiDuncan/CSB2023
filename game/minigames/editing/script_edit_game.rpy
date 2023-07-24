@@ -153,12 +153,8 @@ label play_editgame:
     if _return >= WIN_PERCENTAGE:
         stop music fadeout 2.0
         arceus "Ween."
-        pause
+        jump boost
     else:
         stop music fadeout 2.0
         arceus "Lose :("
-        pause
-
-label editgame_done:
-    # Thing to do after the game if we reach here.
-    pass
+        jump fired
