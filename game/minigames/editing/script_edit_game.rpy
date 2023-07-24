@@ -5,6 +5,8 @@ init python:
     SCISSOR_SPEED = 800 # px/s
     WIN_PERCENTAGE = 0.75
     SCISSOR_WIDTH = 158
+    START_BOX_WIDTH = 200
+    BOX_SHRINK_FACTOR = 2
 
     class EditGameDisplayable(renpy.Displayable):
         def __init__(self):
@@ -13,8 +15,8 @@ init python:
             self.win = None
             self.started = False
             self.scissors = Image("minigames/editing/scissors.png")
-            self.hit_width = 200
-            self.hit_position = self.hit_width
+            self.hit_width = START_BOX_WIDTH
+            self.hit_position = START_BOX_WIDTH
             self.scissors_place = 1000
             self.successes = 0
             self.attempts = 0
@@ -59,6 +61,7 @@ init python:
                 # In box
                 if self.hit_position <= self.scissors_place <= self.hit_position + self.hit_width:
                     self.successes += 1
+                    self.hit_width = lerp(START_BOX_WIDTH, START_BOX_WIDTH / BOX_SHRINK_FACTOR, self.successes / TOTAL_ROUNDS)
                     # renpy.sound.play("") # TODO Find an "Oh yes!"
                 else:
                     renpy.sound.play("minigames/editing/ohno.ogg")
