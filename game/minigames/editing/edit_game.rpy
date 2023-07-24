@@ -3,7 +3,7 @@ init python:
 
     class EditGameDisplayable(renpy.Displayable):
         def __init__(self):
-            renpy.displayable.__init__(self)
+            renpy.Displayable.__init__(self)
             self.start_time = None
 
         def render(self, width, height, st, at):
@@ -12,7 +12,8 @@ init python:
             r = renpy.Render(1920, 1080)
 
             # Do some fancy things here!
-
+            rectangle_image = Solid("#00FF00", xysize=(600, 900))
+            r.blit(rectangle_image, (50, 50))
             renpy.redraw(self, 0)
             return r
 
@@ -24,7 +25,7 @@ init python:
                 return self.win
 
         def visit(self):
-            return None # Assets needed to load
+            return [] # Assets needed to load
 
 screen edit_game:
     default edit_game = EditGameDisplayable()
@@ -39,9 +40,9 @@ label play_edit_game:
     window show
 
     if _return == True:
-        # Thing for win condition
+        pass
     else:
-        # Thing for lose condition
+        pass
 
 label edit_game_done:
     # Thing to do after the game if we reach here.

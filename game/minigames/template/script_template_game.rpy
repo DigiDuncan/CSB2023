@@ -3,7 +3,7 @@ init python:
 
     class TemplateGameDisplayable(renpy.Displayable):
         def __init__(self):
-            renpy.displayable.__init__(self)
+            renpy.Displayable.__init__(self)
             self.start_time = None
 
         def render(self, width, height, st, at):
@@ -24,7 +24,7 @@ init python:
                 return self.win
 
         def visit(self):
-            return None # Assets needed to load
+            return [] # Assets needed to load
 
 
 screen template_game:
@@ -40,8 +40,10 @@ label play_template_game:
     window show
 
     if _return == True:
+        pass
         # Thing for win condition
     else:
+        pass
         # Thing for lose condition
 
 label template_game_done:
