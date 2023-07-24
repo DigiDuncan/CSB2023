@@ -5,6 +5,7 @@ init python:
         def __init__(self):
             renpy.Displayable.__init__(self)
             self.start_time = None
+            self.win = None
 
         def render(self, width, height, st, at):
             if self.start_time is None:

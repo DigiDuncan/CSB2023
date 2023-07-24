@@ -5,6 +5,7 @@ init python:
         def __init__(self):
             renpy.Displayable.__init__(self)
             self.start_time = None
+            self.win = None
 
         def render(self, width, height, st, at):
             if self.start_time is None:
@@ -12,8 +13,8 @@ init python:
             r = renpy.Render(1920, 1080)
 
             # Do some fancy things here!
-            rectangle_image = Solid("#00FF00", xysize=(600, 900))
-            r.blit(rectangle_image, (50, 50))
+            rectangle_renderer = renpy.render(Solid("#00FF00", xysize=(600, 900)), 1920, 1080, st, at)
+            r.blit(rectangle_renderer, (50, 50))
             renpy.redraw(self, 0)
             return r
 
