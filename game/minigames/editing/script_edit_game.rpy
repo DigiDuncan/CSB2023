@@ -128,7 +128,7 @@ screen editgame:
 label play_editgame:
     window hide
     $ quick_menu = False
-    call screen edit_game
+    call screen editgame
     $ quick_menu = True
     window show
 
