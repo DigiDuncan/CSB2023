@@ -4,6 +4,7 @@ init python:
     TOTAL_ROUNDS = 20
     SCISSOR_SPEED = 800 # px/s
     WIN_PERCENTAGE = 0.75
+    SCISSOR_WIDTH = 158
 
     class EditGameDisplayable(renpy.Displayable):
         def __init__(self):
@@ -50,7 +51,7 @@ init python:
 
             # Scissor visual
             scissor_renderer = renpy.load_image(self.scissors)
-            r.blit(scissor_renderer, (self.scissors_place, 154))
+            r.blit(scissor_renderer, (self.scissors_place - (SCISSOR_WIDTH / 2), 154))
 
             # Score visual
             score_renderer = renpy.render(Text(str(self.successes)+"/"+str(TOTAL_ROUNDS), size=72), 1920, 1080, st, at)
@@ -59,7 +60,7 @@ init python:
             # Hit the space bar
             if self.hit:
                 # In box
-                if self.scissors_place - (self.hit_width / 2) < self.hit_position < self.scissors_place + (self.hit_width / 2):
+                if self.hit_position <= self.scissors_place <= self.hit_position + self.hit_width:
                     self.successes += 1
                 self.attempts += 1
                 self.hit_position = renpy.random.randint(self.hit_width, 1920 - self.hit_width)
