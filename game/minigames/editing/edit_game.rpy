@@ -12,8 +12,8 @@ init python:
             self.start_time = None
             self.win = None
             self.scissors = Image("minigames/editing/scissors.png")
-            self.hit_width = 69
-            self.hit_position = 69
+            self.hit_width = 100
+            self.hit_position = 200
             self.scissors_place = 1000
             self.successes = 0
             self.attempts = 0
@@ -27,16 +27,14 @@ init python:
         def render(self, width, height, st, at):
             if self.start_time is None:
                 self.start_time = st
+                self.hit_position = renpy.random.randint(self.hit_width, 1920 - self.hit_width)
                 self.last_frame_time = st
                 dt = 1 / 60
             else:
                 dt = st - self.last_frame_time
             r = renpy.Render(1920, 1080)
 
-            # Move scissors
-            # TODO: Anchor on center of image
-            # self.scissors_place really needs to be the center of the image
-            # so we know if we're in the box
+            # Move scissors back and forth
             if self.scissors_direction:
                 self.scissors_place += (SCISSOR_SPEED * dt)
                 if self.scissors_place >= 1920:
@@ -48,10 +46,10 @@ init python:
 
             # Cuts
             for p in self.cut_positions:
-                rr = renpy.render(Solid("#313131", xysize=(1, 115)), 1920, 1080, st, at)
+                rr = renpy.render(Solid("#313131", xysize=(2, 115)), 1920, 1080, st, at)
                 r.blit(rr, (p, 454))
-                rr = renpy.render(Solid("#FFFFFF4D", xysize=(1, 115)), 1920, 1080, st, at)
-                r.blit(rr, (p + 1, 454))
+                rr = renpy.render(Solid("#FFFFFF4D", xysize=(2, 115)), 1920, 1080, st, at)
+                r.blit(rr, (p + 3, 454))
 
             # Green hitbox rectangle visual
             rectangle_renderer = renpy.render(Solid("#00FF00", xysize=(self.hit_width, 115)), 1920, 1080, st, at)
@@ -63,7 +61,9 @@ init python:
 
             # Score visual
             score_renderer = renpy.render(Text(str(self.successes)+"/"+str(TOTAL_ROUNDS), size=72), 1920, 1080, st, at)
-            r.blit(score_renderer, (50, 1000))
+            r.blit(score_renderer, (50, 950))
+            left_renderer = renpy.render(Text(str(TOTAL_ROUNDS - self.attempts) + " cuts left!", size=72), 1920, 1080, st, at)
+            r.blit(left_renderer, (50, 1000))
 
             # Hit the space bar
             if self.hit:
