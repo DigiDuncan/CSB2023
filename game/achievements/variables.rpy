@@ -7,6 +7,7 @@ define achievements = [
     Achievement("I Don't Like People!", "Avoid responsibility.", "Tell CS not to go to Wal-Mart.", "no_person"),
     Achievement("Dead Meme", "???", "Sparta kick Wesley.", "sparta"),
     Achievement("#1 Rated Pooper", "???", "Use your skills to keep your job.", "poop"),
+    Achievement("Instinctual Editor", "Let your instincts take over.", "This isn't actually Premiere.", "premiere"),
     Achievement("Crowd Pleaser", "???", "Appease both your fanbases.", "goodrating"),
     Achievement("Can We Go Back?", "???", "Try to go back to Canada.", "compass"),
     Achievement("Ocean Man", "???", "Go west eight times.", "ocean"),

@@ -30,6 +30,8 @@ init python:
             self.hit = False
             self.cut_positions = []
 
+            self.control_pressed = False
+
         def render(self, width, height, st, at):
             if self.start_time is None:
                 self.start_time = st
@@ -130,6 +132,13 @@ init python:
                     self.win = 1
                 if ev.key == pygame.K_SPACE:
                     self.hit = True
+                if ev.key == pygame.K_LCTRL:
+                    self.control_pressed = True
+                if ev.key == pygame.K_k and self.control_pressed:
+                    achievement_manager.unlock("Instinctual Editor")
+            elif ev.type == pygame.KEYUP:
+                if ev.key == pygame.K_LCTRL:
+                    self.control_pressed = False
             if self.win is not None:
                 return self.win
 
