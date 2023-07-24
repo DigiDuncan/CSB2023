@@ -90,6 +90,9 @@ init python:
                 # In box
                 if self.hit_position <= self.scissors_place <= self.hit_position + self.hit_width:
                     self.successes += 1
+                    renpy.sound.play("") # TODO Find an "Oh yes!"
+                else:
+                    renpy.sound.play("minigames/editing/ohno.ogg")
                 self.attempts += 1
                 self.hit_position = renpy.random.randint(self.hit_width, 1920 - self.hit_width)
                 self.hit = False
