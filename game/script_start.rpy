@@ -24,6 +24,7 @@ init python:
 
 # If music is so good, why is there no Music 2?
 init python:
+    renpy.music.register_channel("sound2", "sound")
     renpy.music.register_channel("music2", "music")
     renpy.music.register_channel("jukebox", "music")
 

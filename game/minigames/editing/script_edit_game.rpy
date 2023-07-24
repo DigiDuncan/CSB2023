@@ -64,12 +64,12 @@ init python:
                     self.hit_width = int(lerp(START_BOX_WIDTH, START_BOX_WIDTH / BOX_SHRINK_FACTOR, self.successes / TOTAL_ROUNDS))
                     # renpy.sound.play("") # TODO Find an "Oh yes!"
                 else:
-                    renpy.sound.play("minigames/editing/ohno.ogg", channel = "sound")
+                    renpy.sound.play("minigames/editing/ohno.ogg", channel="sound")
                 self.attempts += 1
                 self.hit_position = renpy.random.randint(self.hit_width, 1920 - self.hit_width)
                 self.hit = False
                 self.cut_positions.append(self.scissors_place)
-                renpy.sound.play("minigames/editing/cut.wav", channel = "sound")
+                renpy.sound.play("minigames/editing/cut.ogg", channel="sound2")
 
             # Move scissors back and forth
             if self.scissors_direction:
