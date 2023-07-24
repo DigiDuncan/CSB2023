@@ -80,7 +80,7 @@ init python:
             r.blit(scissor_renderer, (self.scissors_place - (SCISSOR_WIDTH / 2), 154))
 
             # Score visual
-            score_renderer = renpy.render(Text(str(self.successes)+"/"+str(TOTAL_ROUNDS), size=72), 1920, 1080, st, at)
+            score_renderer = renpy.render(Text(str(self.successes)+" / "+str(TOTAL_ROUNDS), size=72), 1920, 1080, st, at)
             r.blit(score_renderer, (50, 950))
             left_renderer = renpy.render(Text(str(TOTAL_ROUNDS - self.attempts) + " cuts left!", size=72), 1920, 1080, st, at)
             r.blit(left_renderer, (50, 1000))
