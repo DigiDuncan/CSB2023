@@ -13,8 +13,8 @@ init python:
             self.win = None
             self.started = False
             self.scissors = Image("minigames/editing/scissors.png")
-            self.hit_width = 100
-            self.hit_position = 200
+            self.hit_width = 200
+            self.hit_position = self.hit_width
             self.scissors_place = 1000
             self.successes = 0
             self.attempts = 0
