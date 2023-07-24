@@ -61,7 +61,7 @@ init python:
                 # In box
                 if self.hit_position <= self.scissors_place <= self.hit_position + self.hit_width:
                     self.successes += 1
-                    self.hit_width = lerp(START_BOX_WIDTH, START_BOX_WIDTH / BOX_SHRINK_FACTOR, self.successes / TOTAL_ROUNDS)
+                    self.hit_width = int(lerp(START_BOX_WIDTH, START_BOX_WIDTH / BOX_SHRINK_FACTOR, self.successes / TOTAL_ROUNDS))
                     # renpy.sound.play("") # TODO Find an "Oh yes!"
                 else:
                     renpy.sound.play("minigames/editing/ohno.ogg")
@@ -116,8 +116,8 @@ init python:
                     self.win = 1
                 if ev.key == pygame.K_SPACE:
                     self.hit = True
-                if self.win is not None:
-                    return self.win
+            if self.win is not None:
+                return self.win
 
         def visit(self):
             return [self.scissors]
