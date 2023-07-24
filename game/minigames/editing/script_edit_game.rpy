@@ -145,14 +145,17 @@ screen editgame:
 label play_editgame:
     window hide
     $ quick_menu = False
+    play music "minigames/editing/supernova.mp3" volume 0.25
     call screen editgame
     $ quick_menu = True
     window show
 
     if _return >= WIN_PERCENTAGE:
+        stop music fadeout 2.0
         arceus "Ween."
         pause
     else:
+        stop music fadeout 2.0
         arceus "Lose :("
         pause
 
