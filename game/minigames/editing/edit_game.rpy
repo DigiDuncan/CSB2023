@@ -11,6 +11,7 @@ init python:
             renpy.Displayable.__init__(self)
             self.start_time = None
             self.win = None
+            self.started = False
             self.scissors = Image("minigames/editing/scissors.png")
             self.hit_width = 100
             self.hit_position = 200
@@ -32,7 +33,26 @@ init python:
                 dt = 1 / 60
             else:
                 dt = st - self.last_frame_time
+            current_time = st - self.start_time
             r = renpy.Render(1920, 1080)
+
+            #Entry point
+            if not self.started:
+                if 0 < current_time < 1:
+                    # Display 3
+                    countdown_renderer = renpy.render(Text("3", color="FF0000", size=200), 1920, 1080, st, at)
+                    r.blit(countdown_renderer, (960, 540))
+                elif 1 < current_time < 2:
+                    # Display 2
+                    countdown_renderer = renpy.render(Text("2", color="FFFF00", size=200), 1920, 1080, st, at)
+                    r.blit(countdown_renderer, (960, 540))
+                elif 2 < current_time < 3:
+                    # Display 1
+                    countdown_renderer = renpy.render(Text("1", color="00FF00", size=200), 1920, 1080, st, at)
+                    r.blit(countdown_renderer, (960, 540))
+                elif current_time > 3:
+                    # Yell Go at the player
+                    self.started = True
 
             # Move scissors back and forth
             if self.scissors_direction:
@@ -85,12 +105,13 @@ init python:
 
         def event(self, ev, x, y, st):
             import pygame
-            if ev.type == pygame.KEYDOWN and ev.key == pygame.K_END:
-                self.win = 1
-            if ev.type == pygame.KEYDOWN and ev.key == pygame.K_SPACE:
-                self.hit = True
-            if self.win is not None:
-                return self.win
+            if ev.type == pygame.KEYDOWN and self.started:
+                if ev.key == pygame.K_END:
+                    self.win = 1
+                if ev.key == pygame.K_SPACE:
+                    self.hit = True
+                if self.win is not None:
+                    return self.win
 
         def visit(self):
             return [] # Assets needed to load
@@ -108,10 +129,12 @@ label play_edit_game:
     $ quick_menu = True
     window show
 
-    if _return == True:
-        pass
+    if _return >= 0.75:
+        arceus "Ween."
+        pause
     else:
-        pass
+        arceus "Lose :("
+        pause
 
 label edit_game_done:
     # Thing to do after the game if we reach here.
