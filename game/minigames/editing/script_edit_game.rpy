@@ -136,6 +136,8 @@ init python:
                     self.control_pressed = True
                 if ev.key == pygame.K_k and self.control_pressed:
                     achievement_manager.unlock("Instinctual Editor")
+                    if not "Instinctual Editor" in persistent.unlocked_achievements:
+                        renpy.show_screen("popup", achievements[6])
             elif ev.type == pygame.KEYUP:
                 if ev.key == pygame.K_LCTRL:
                     self.control_pressed = False
