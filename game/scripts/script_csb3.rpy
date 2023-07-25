@@ -87,7 +87,7 @@ label microcenter:
     cs "Or I could get a Ryzen, more cores would probably be better for streaming..."
     cs "Too many good options! I don't know what one to pick!"
     # TODO: REMEMBER TO CHANGE THIS
-    cs "Whatever, I'll get *whatever choice since this doesn't change the path*"
+    cs "Whatever, I'll get this Intel i9."
     cs "Now for the GPU."
 
     menu:
