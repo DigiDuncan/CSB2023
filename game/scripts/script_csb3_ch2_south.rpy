@@ -1072,6 +1072,65 @@ label noairport:
     show cs happy at left
     show arceus at right
     cs "There we go!"
+    cs "Well look at this! There is this old ass TV sitting here! How old is this Arc?"
+    arceus "Umm..."
+    cs "Well ok, let's turn it on!"
+    n "CS fiddles with the knobs and turns it on."
+    scene tvbilly with fade
+    tv_billy "Hi it's Billy! I've been trying to sell this craptop for years and have never got any buyers!"
+    tv_billy "So whoever you are who just accessed Super Heaven, here's my craptop!"
+    scene old_house_inside
+    show cs at left
+    show arceus at right
+    n "The TV turns off, and starts shaking."
+    show cs with vpunch
+    show cs with hpunch
+    show cs with vpunch
+    show cs with hpunch
+    show cs with vpunch
+    show cs with hpunch
+    show cs with vpunch
+    show cs with hpunch
+    show cs with vpunch
+    show cs with hpunch
+    arceus "What's going on?!?"
+    show cs with vpunch
+    show cs with hpunch
+    show cs with vpunch
+    show cs with hpunch
+    n "All of a sudden, the Sentient Craptop pops out of the TV!"
+    show craptopreal at truecenter with moveinbottom
+    craptop "Yo what's up fellas! It's me the craptop!"
+    craptop "I hate all of you!"
+    craptop "So yeah, take this random shit on my hard drive!"
+    n "The craptop starts spewing out random shit?"
+    show monika at center with moveintop
+    show monika with vpunch
+    monika "CS! You aren't real! This is a game!"
+    show cs happy
+    cs "Oh no! I can't believe this!"
+    monika "Yeah! You like, have to tell real life CS to stop playing the game or something!"
+    cs "Yeah! CS! Stop playing the game or something!"
+    arceus "I don't even know anymore."
+    cs "This isn't fiction and everything here is real and happened!"
+    cs "I'm gonna start streaming on time!"
+    cs "And then copguy comes on and shoots me and I die!"
+    n "Sure fine, whatever."
+    show copguy at mid_right with moveinright
+    copguy "You're, done for!"
+    copguy "Umm..."
+    copguy "Pew pew pew!"
+    cs "Oh no! Owwww!"
+    show cs at offscreenleft with moveoutleft
+    copguy "Yeah! We killed CS!"
+    arceus "Please kill me too..."
+    copguy "Lol no"
+    show copguy flipped with determination
+    hide copguy with moveoutright
+    show cs happy at left with move
+    cs "Woohoo! I love this!"
+    cs "And then comes in Gandalf the Grey and Gandalf the Wh--{nw}"
+
     # TODO: More silly route.
     jump reality_break
 

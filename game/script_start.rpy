@@ -235,6 +235,7 @@ define k199 = Character("K19-9", callback = renpy.partial(char_callback, name = 
 define k207 = Character("K20-7", callback = renpy.partial(char_callback, name = "k207"))
 define billy_far = Character("Billy (from off screen)", callback = renpy.partial(char_callback, beep = "billy_from_afar"))
 define direct = Character("Director", callback = renpy.partial(char_callback, beep = "iris"))
+define monika = Character("Monika", callback = renpy.partial(char_callback, beep = "iris"))
 
 # Character Images
 ## CS
@@ -332,6 +333,7 @@ image asylum_worker = "characters/mohs.png"
 image csgod = "characters/csgod.png"
 image csgod flipped = "flip:characters/csgod.png"
 image copguy = "characters/copguy.png"
+image copguy flipped = "flip:characters/copguy.png"
 image luke = "characters/luke.png"
 image border_guard dusk = "characters/border_guard_dusk.png"
 image copguy dark = "characters/copguydark.png"
@@ -368,6 +370,8 @@ image green flipped = "flip:characters/green.png"
 image bouncer1 = "characters/bouncer.png"
 image bouncer2 = "characters/bouncer.png"
 image mika = "characters/mika.png"
+image craptopreal = "characters/laptop.png"
+image monika = "characters/monika.png"
 
 # Background Images
 ## CSBI
@@ -492,6 +496,7 @@ image cc_stage = "bg/convention_center_stage.png"
 image cc_backstage = "bg/convention_center_backstage.png"
 image billboard = "bg/billboard.png"
 image texas = "bg/texas.png"
+image tvbilly = "bg/tv_billy.png"
 
 ## AI Ending
 image park1 = "bg/ai/amusementpark1.png"
@@ -560,6 +565,7 @@ image stage_screen = Window(Layer("broadcast", clipping = False), background = "
 default fanboy_type = None
 default fanbase = None
 default nice_car = False
+default returning_from_blooper = False
 
 # Jump Menu
 screen start_menu():

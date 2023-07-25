@@ -715,7 +715,6 @@ label arc_escape:
     cs "Hey Arceus? Do you have any clue where we are?"
     arceus "No idea, I'm just following the road. There's bound to be a rest stop here eventually."
     cs "I hope so, we've been walking for hours. It's gotta be midnight around now…"
-    # TODO: More filler here probably, for now I'm jumping to when copguy comes in
     stop music fadeout 3.0
     music end
     n "CS looks into the distance."
