@@ -433,6 +433,11 @@ image washington_road dusk = "bg/washingtonroaddusk.png"
 image washington_road morning = "bg/washingtonroadmorning.png"
 image copcar = "bg/copcar.png"
 image copcar_mask = "bg/copcar_mask.png"
+image microcenter = "bg/microcenter.png"
+image microinside = "bg/inside_store.png"
+image cashzone = "bg/cashzone.png"
+image cpuaisle = "bg/cpuaisle.png"
+image gpuaisle = "bg/gpuaisle.png"
 
 ## CSBIII Chapter 2
 image washington_road day = "bg/washingtonroadday.png"

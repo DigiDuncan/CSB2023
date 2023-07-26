@@ -46,68 +46,6 @@ label csbiii_start:
             jump microcenter
         "Help edit a video." (type = "true"):
             jump edit_video
-label microcenter:
-    cs "Sure, what parts do you need?"
-    linus "We need eggs, milk..."
-    linus "Just kidding."
-    linus "I'll leave the details up to you since you've done a lot of live streaming, just get the highest end available."
-    cs "Alright, I'll go get the parts."
-    # Jumpcut, fade to black
-    cs "I have your new streaming PC, and it runs quite well too! Way better than my computer!"
-    linus "Awesome! Lemme go move this into the othe--{w=0.25}WOAAAHHH!!!"
-    show linus with hpunch
-    n "Linus trips and falls, immediately destroying the insides and outsides of the PC that CS just built."
-    cs "Oh damn, you okay there?"
-    linus "No of course not! I just destroyed another one of these $20,000 computing machines! How the hell am I going to get another just like this?"
-    cs "Well, you could just always buy more parts like these, I'm sure you have the budget for that."
-    linus "No no, that's too expensive and wasteful, let me think..."
-    linus "Hmmm..."
-    linus "Wait! I just got a brilliant idea! Why don't you go buy more parts for me, we certainly have the budget to do that!"
-    cs "Uhmm… I literally just said--"
-    linus "Alright! The plan is settled! You can go fetch me some more parts for the ultimate streaming machine, and you get to decide what parts should be in the computer!"
-    cs "Okay but, are there any recommendations you would give me for building this? This is YOUR money, you know."
-    linus "Nah, it's fine. I'm sure you will do well picking out parts, make sure to get the highest quality you can!"
-    cs "Alrighty, I'll get going now."
-    stop music fadeout 3.0
-    music end
-    # TODO: [BG] CS goes to Microcenter
-    n "CS goes to Microcenter."
-    cs "Okay gamers, we are buying some parts for our epic computing machine. Let's go inside the magical concrete structure to buy some computing parts."  # the fuck is this line Pakoo
-    cs "Wow, this building looks a lot bigger than the places I would go shopping at near home."
-    n "CS enters the building."
-    cs "Woah! This place is huge!"
-    cs "There are so many options to pick from! And I have as much money as I'll ever need, too!"
-    cs "Before I get too carried away though, I should probably start by buying the processor."
-    # TODO: [BG] CPU aisle
-    n "CS goes to the CPU aisle."
-    cs "My goodness, there are so many options."
-    cs "I honestly don't know which one to pick."
-    cs "Let's see here…"
-    cs "I could get a super high-end Intel CPU since Linus still seems to default to Intel even after shilling for AMD…"
-    cs "Or I could get a Ryzen, more cores would probably be better for streaming..."
-    cs "Too many good options! I don't know what one to pick!"
-    # TODO: REMEMBER TO CHANGE THIS
-    cs "Whatever, I'll get this Intel i9."
-    cs "Now for the GPU."
-
-    menu:
-        "Which card do you want to choose?"
-        "High end GPU":
-            jump high_gpu
-        "Low end GPU":
-            jump low_gpu
-
-label high_gpu:
-    jump secret
-
-label low_gpu:
-    cs "I should probably try to save Linus some money. Most of the expensive parts he gets are from sponsors, he's not actually that rich."
-    n "CS flags down an employee."
-    cs "I'm trying to get a graphics card, and I want to save money, what do you have?"
-    worker "Everything here is pretty expensive, lemme check the back..."
-    n "The worker comes back."
-    worker "Alright, I got this. It's pretty old, and it's covered in dust, but it's like $50."
-    cs "Sounds great, I'll take it."
 
 label edit_video:
     cs "Nah, I wanna finish this video first. That way I can help you pump out videos faster."
