@@ -137,8 +137,12 @@ label fired:
     show cs angry flipped with hpunch
     hide cs with moveoutleft
     scene black with fade
-    scene outside_ltt with fade
+    jump new_plan
+
+label new_plan:
+    scene outside_ltt
     show cs angry at center
+    with fade
     cs "This really sucks. One of my favorite YouTubers just kicked me out of my dream job and told me to never come back!"
     show cs
     cs "I would be acting super emotional right now, but the years of angry YouTube comments against me have already worn me down."

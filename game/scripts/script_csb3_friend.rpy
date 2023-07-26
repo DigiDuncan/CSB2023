@@ -137,3 +137,37 @@ label low_gpu:
     cashier "That'll be $50."
     cs "Good enough for me!"
     hide cs with moveoutright
+    scene black with fade
+    n "CS heads back to LTT."
+    scene loffice
+    show linus at center
+    with fade
+    n "CS meets Linus in his office."
+    show cs at left with moveinleft
+    cs "Hey Linus! I got your parts!"
+    linus "Ooh goodie! Lemme see!"
+    show linus at mid_left_left with move
+    pause 0.5
+    show linus at center with move
+    linus "Alright let's see what we got here..."
+    linus "Nice, an Intel i9..."
+    linus "And a GTX..."
+    linus "CS?"
+    cs "Yeah?"
+    linus "What the fuck is this shit?"
+    show cs disappointed
+    cs "What do you mean?"
+    linus "Why did you pick this old ass graphics card?"
+    linus "This is awful! We can't have a cool computer with this!"
+    cs "Well, I know you probably didn't wanna me to spend too much, plus I had something similar to this once!"
+    linus "I don't care about costs! I wanted a cool streaming computer and you failed!"
+    linus "You're fired!"
+    cs "W-W-What?"
+    linus "Leave! I'll hire someone else who can make a better PC than you!"
+    show cs angry
+    cs "Fine!"
+    show cs angry with vpunch
+    hide cs with moveoutright
+    n "CS stomps out of the building."
+    scene black with fade
+    jump new_plan
