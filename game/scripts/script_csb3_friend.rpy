@@ -61,12 +61,13 @@ label microcenter:
     scene gpuaisle with fade
     show cs at mid_left with moveinleft
     n "CS heads over to the GPU aisle."
-    cs "Hmm, we got AMD and NVIDIA, I wish Linus told me wish which one I should get..."
+    cs "Hmm, we got AMD and NVIDIA, I wish Linus told me which one I should get..."
     n "CS looks at his options."
     show cs at mid_right with move
     pause 2.0
     show cs flipped with determination
     show cs flipped at mid_left with move
+    pause 1.0
     show cs with determination
     pause 2.0
     cs "Okay, we have a NVIDIA RTX 4080, and an AMD Radeon RX 7900."
@@ -97,13 +98,135 @@ label high_gpu:
     cs "Welp, not my money!"
     cs "Awesome! Hopefully this is gonna be good enough for Linus!"
     hide cs with moveoutright
+    scene black with fade
+    n "CS heads back to LTT."
+    scene loffice
+    show linus at center
+    with fade
+    n "CS meets Linus in his office."
+    show cs at left with moveinleft
+    cs "Hey Linus! I got your parts!"
+    linus "Alright, let's see what you got!"
+    show linus at mid_left_left with move
+    pause 0.5
+    show linus at center with move
+    linus "Alright let's see what we got here..."
+    linus "Nice, an Intel i9..."
+    linus "Ooh! A RTX 4080! Excellent choice CS!"
+    show cs happy
+    cs "Thank you!"
+    show cs
+    cs "I'm more of an NVIDIA guy myself, so I decided to go with it."
+    linus "Well you made some great purchases, I'm excited to see the specs we'll get with this!"
+    linus "I'm gonna go get the set ready, and then we can build and test it on camera."
+    cs "Oh wow, already?"
+    linus "Yeah, I'm excited! You can help me build it, right?"
+    cs "Yeah, of course!"
+    linus "Alright then, let's go!"
+    hide linus
+    hide cs
+    with moveoutright
+    scene black with fade
+    n "CS and Linus head down to the recording room, while Linus sets up the cameras and equipment."
+    scene ltt_bg
+    show ltt_fg
+    with determination
+    show cs at t_cs_ltt behind ltt_fg with moveinleft
+    linus "Alright, one second..."
+    show linus at t_linus_ltt behind ltt_fg with moveinright
+    linus "You ready CS?"
+    cs "I don't think I've ever done a professional recording like this before..."
+    linus "Relax! You can act normal here, and the editors can cut out anything that we need."
+    cs "Okay."
+    linus "3... 2... 1... Go."
+    linus "Today, we are going to start-- {nw}"
+    cs "Hey guys, CS here! How's it goin? Today we are going to build this CraAaAaAaAzY computer!"
+    pause 1.0
+    linus "Yeah. As I was going to say, we have our new employee, CS188 here, helping build a new streaming machine for LTT!"
+    linus "CS picked out the parts, which were an Intel i9 and a RTX 4080!"
+    cs "Woohoo! NVIDIA is the best!"
+    linus "Alright, let's put the computer together!"
+    scene black with fade
+    n "CS and Linus then spend the next hour building and setting up the computer, showing off it's amazing capabilities."
+    n "When they finish, they wrap up and Linus gives the footage to the editors."
+    scene inside_ltt with fade
+    show cs at left
+    show linus at right
+    with moveinleft
+    show cs happy
+    cs "That was really fun actually!"
+    linus "Yeah! I'm glad that you could put together such a nice PC on your first day!"
+    cs "Hell yeah!"
+    linus "Well, that's it for today. When you come back tomorrow, we'll see what our audience thinks about it."
+    cs "Alrighty well, I'm pumped! See you tomorrow!"
+    hide cs with moveoutright
+    hide linus with moveoutleft
+    scene black with fade
+    n "CS heads out back to the local hotel he's been staying at, already excited for the next day."
+    n "As morning comes, CS heads back to LTT to check out the video."
+    scene inside_ltt
+    show linus at mid_right
+    with fade
+    show cs at mid_left with moveinleft
+    linus "Hey CS!"
+    cs "Hey Linus!"
+    linus "Let's see how our video did!"
+    n "Linus and CS sit down at the desk while Linus pulls open the video."
+    linus "Alright well, we've already got quite a bit of views..."
+    cs "Man! I wish I got this amount of average views!"
+    cs "Look at the comments!"
+    linus "Yeah I'm getting there."
+    linus "Yeah, they seem to like your build!"
+    cs "Yes!!"
+    cs "Aw man, what are those people saying? NVIDIA sucks, you guys are cucks?"
+    cs "Heyyy!!! No I'm not!"
+    linus "Yeah, there are always people who get upset because of the brand we used. Don't worry, this always happens."
+    show cs disappointed
+    cs "Hey, do you hear that?"
+    n "CS and Linus can hear a growing audience of people yelling nearby."
+    linus "Hold on, lemme go check the window."
+    n "Linus heads over the window, and peers out to see a bunch of angry AMD fans rioting."
+    linus "Oh shit, this is bad..."
+    cs "What is it?"
+    n "All of a sudden, a brick flies through the window!"
+    cs "Woah! Stand back Linus!"
+    linus "The AMD fans are rioting outside! We need to hide!"
+    hide cs
+    hide linus
+    with moveoutleft
+    scene black with fade
+    n "CS and Linus meet up with the rest of the members downstairs."
+    scene frontdoor
+    show luke at left
+    show taran at mid_left
+    with fade
+    show linus at center
+    show cs at right
+    with moveinright
+    taran "What the fuck is happening?!"
+    luke "Linus, how did you piss off so many people?"
+    linus "Look, it never usually gets this bad!"
+    luke "What are we gonna do?"
+    taran "We could call the cops!"
+    cs "No!"
+    linus "Huh?"
+    show cs angry
+    cs "Actually, you know what? Leave this to me!"
+    hide cs with moveoutleft
+    n "CS runs out the front door into the crowd."
+    linus "CS what are you doing? You gonna get yourself killed out there!"
+    scene outside_ltt with fade
+    show cs angry at center with dissolve
+    "Fanboys" "Boo!! You suck! AMD is the best!"
+    cs "Yeah well, let's see about that!"
+
 
 label low_gpu:
     cs "I should probably try to save Linus some money. Most of the expensive parts he gets are from sponsors, he's not actually that rich."
     n "CS flags down an employee."
     show cashier at mid_right with moveinright
     cs "I'm trying to get a graphics card, and I want to save money, what do you have?"
-    "worker" "Everything here is pretty expensive, lemme check the back..."
+    "Worker" "Everything here is pretty expensive, lemme check the back..."
     cs "Alright, I'll wait here."
     hide cashier with moveoutright
     pause 2.0
@@ -122,11 +245,11 @@ label low_gpu:
     show cs concentrate with determination
     show cashier at mid_right with moveinright
     n "The worker comes back."
-    "worker" "Hey I'm-- what are you doing?"
+    "Worker" "Hey I'm-- what are you doing?"
     show cs worried
     cs "Oops! Sorry!"
     cs "Anyways, what did you find?"
-    "worker" "I got this. It's pretty old, and it's covered in dust, but it's like $50."
+    "Worker" "I got this. It's pretty old, and it's covered in dust, but it's like $50."
     cs "Sounds great, I'll take it."
     hide cs with moveoutright
     n "CS heads out to the checkout."
