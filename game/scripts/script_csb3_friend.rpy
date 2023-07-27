@@ -104,6 +104,8 @@ label high_gpu:
     show linus at center
     with fade
     n "CS meets Linus in his office."
+    play music "<loop 0>creative_exercise.mp3" loop volume 0.3
+    music Creative Exercise - Hirokazu Tanaka
     show cs at left with moveinleft
     cs "Hey Linus! I got your parts!"
     linus "Alright, let's see what you got!"
@@ -146,6 +148,8 @@ label high_gpu:
     linus "CS picked out the parts, which were an Intel i9 and a RTX 4080!"
     cs "Woohoo! NVIDIA is the best!"
     linus "Alright, let's put the computer together!"
+    stop music fadeout 3.0
+    music end
     scene black with fade
     n "CS and Linus then spend the next hour building and setting up the computer, showing off it's amazing capabilities."
     n "When they finish, they wrap up and Linus gives the footage to the editors."
@@ -229,7 +233,27 @@ label high_gpu:
     show cs angry at center with dissolve
     "Fanboys" "Boo!! You suck! AMD is the best!"
     cs "Yeah well, let's see about that!"
+    jump after_fanboy
 
+label after_fanboy:
+    scene outside_ltt
+    show cs angry flipped at center
+    with fade
+    cs "*Huff Huff*"
+    cs "That was exhilarating!"
+    cs "That's right! The rest of you get out of here!"
+    show arceus at right with moveinright
+    arceus "CS! We need to--"
+    arceus "What happened here?"
+    show cs
+    cs "Oh hey Arc. There were some angry fanboys complaining outside of LTT, so I fought them!"
+    arceus "You fought them?"
+    cs "Yeah! I won as well!"
+    show linus at let with moveinleft
+    linus "Woah hey, CS you alright?"
+    cs "Yeah! I fought them and scared the rest away!"
+    linus "Well shit! Good job CS!"
+    
 
 label low_gpu:
     cs "I should probably try to save Linus some money. Most of the expensive parts he gets are from sponsors, he's not actually that rich."
