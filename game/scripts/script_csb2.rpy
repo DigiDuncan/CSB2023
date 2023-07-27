@@ -435,7 +435,7 @@ label bordercrossing:
 
     $ achievement_manager.unlock("Ohai, Mark")
     play music "<loop 0>buy_something.mp3" volume 0.6
-    scene inside_tim_hortons with fade
+    scene inside_tim_hortons
     show cashier at t_cashier_at_tims
     show inside_tim_hortons_fg
     show cs

@@ -249,10 +249,92 @@ label after_fanboy:
     cs "Oh hey Arc. There were some angry fanboys complaining outside of LTT, so I fought them!"
     arceus "You fought them?"
     cs "Yeah! I won as well!"
-    show linus at let with moveinleft
+    show linus at left with moveinleft
     linus "Woah hey, CS you alright?"
     cs "Yeah! I fought them and scared the rest away!"
     linus "Well shit! Good job CS!"
+    linus "Hey I mean, if this happened again, would you be ready again to fight back?"
+    cs "Umm, if they're AMD fans, sure thing I guess."
+    linus "Great! I'll be right back."
+    hide linus with moveoutleft
+    show cs worried
+    cs "Hey wait! What does that mean? What are you doing?"
+    show cs
+    arceus "CS? Do you have a minute?"
+    cs "Looks like I do now, why?"
+    arceus "We need to talk for a moment. Can we go somewhere private in the meantime?"
+    cs "Sure I guess, yeah."
+    show arceus flipped with determination
+    hide cs
+    hide arceus
+    with moveoutright
+    scene alley with fade
+    show arceus flipped at right
+    show cs at center
+    with moveinleft
+    show arceus with determination
+    arceus "Alright, hi."
+    show cs disappointed
+    cs "We could've just gone upstairs in the building?"
+    arceus "Nah, I don't want anyone to hear us."
+    show cs
+    arceus "Okay so, we have a major problem."
+    arceus "Remember when we escaped from that prison?"
+    cs "How could I forget?"
+    arceus "Well, the cops are still actively searching for us."
+    arceus "Based off of the recent events that just happened here, they're probably gonna be here soon."
+    show cs worried
+    cs "Ah shit."
+    cs "What am I gonna tell Linus? The cops are probably going to question him!"
+    arceus "Yeah, I'm wondering how we are gonna get out of this."
+    arceus "Let's just go inside and play it cool, maybe we'll think of something."
+    show cs disappointed
+    cs "Okay."
+    show arceus
+    show cs disappointed
+    with determination
+    hide arceus
+    hide cs
+    with moveoutleft
+    scene outside_ltt 
+    show pakoo at right
+    with fade
+    show cs disappointed at left
+    show arceus flipped at mid_left
+    with moveinleft
+    pakoo "Hey, what are you guys up to?"
+    arceus "Nothing. We work at LTT, going back to our job."
+    pakoo "Oh? Are you CS?"
+    arceus "Uhh, no?"
+    pakoo "Oh, Linus brought me here to--"
+    arceus "Are you a cop? You better not be cop."
+    show linus at center with vpunch
+    linus "Heyyy! There you are!"
+    linus "CS, this is the trainer we brought in today!"
+    linus "They're gonna help you learn how to use a gun and stuff like that in case we get rioters again!"
+    show cs worried
+    cs "Woah what? Don't you think weapons training is a bit overkill for this?"
+    linus "Nahhh!"
+    linus "We can even make a video about it, so others won't fuck with us!"
+    show cs disappointed
+    cs "Geez okay, if you're so sure."
+    linus "Come on, let's get inside first."
+    hide cs
+    hide arceus
+    hide linus
+    hide pakoo
+    with moveoutright
+    scene frontdoor with fade
+    show cs at left
+    show arceus flipped at mid_left
+    show linus at right
+    show pakoo at mid_right
+    with moveinleft
+    linus "Alright well, this is Pakoo, our weapons expert! They should be able to give you the proper weapons training you need!"
+    cs "Oh, I see. That's Pakoo."
+    cs "I didn't recognize you, but how come you didn't recognize me?"
+    pakoo "Of course I knew who you were dummy, I was just messing with you!"
+    arceus "I still thought you were a cop."
     
 
 label low_gpu:

@@ -541,6 +541,7 @@ image bag flipped = "flip:bodybag.png"
 image drill = "drillymays.png"
 image drillbreak = "drillymaysfuck.png"
 image sansbrick = "sansbrick.png"
+image oldgame = "oldgame.png"
 
 # Movies
 image car background = Movie(play="movies/car_background.mp4")

@@ -5,10 +5,18 @@ screen best_music():
     timer 5 action Hide('best_music')
 
 label csbi_start:
-
     scene cs_room
     show cs at center
-    with fade
+    show oldgame with fade
+    pause 7.0
+    show pakoo at right with moveinright
+    pakoo "Oh whoops!"
+    pakoo "The old game is still here..."
+    pakoo "Lemme fix that real quick for you."
+    play sound "page.wav" volume 5
+    hide pakoo
+    hide oldgame
+    with moveoutright
     play music "<loop 0>lets_hear_my_baby.mp3" volume 0.15
     music "Let's hear my baby - Walkman"
     cs "Welp, time to start up the ol' Craptop."
