@@ -101,8 +101,6 @@ init python:
 screen jukebox_nav():
 
     add Color('#323e42', alpha=0.75)
-    python:
-        renpy.music.set_pause(True, "music")
 
     viewport:
         xpos 25 ypos 400
