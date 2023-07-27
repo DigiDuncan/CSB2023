@@ -335,6 +335,7 @@ image csgod flipped = "flip:characters/csgod.png"
 image copguy = "characters/copguy.png"
 image copguy flipped = "flip:characters/copguy.png"
 image luke = "characters/luke.png"
+image luke flipped = "flip:characters/luke.png"
 image border_guard dusk = "characters/border_guard_dusk.png"
 image copguy dark = "characters/copguydark.png"
 image copguy_ai = "characters/ai_cop_guy_full.png"
@@ -539,6 +540,7 @@ image bag = "bodybag.png"
 image bag flipped = "flip:bodybag.png"
 image drill = "drillymays.png"
 image drillbreak = "drillymaysfuck.png"
+image sansbrick = "sansbrick.png"
 
 # Movies
 image car background = Movie(play="movies/car_background.mp4")

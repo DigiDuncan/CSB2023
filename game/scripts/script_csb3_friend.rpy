@@ -182,26 +182,34 @@ label high_gpu:
     cs "Heyyy!!! No I'm not!"
     linus "Yeah, there are always people who get upset because of the brand we used. Don't worry, this always happens."
     show cs disappointed
+    play music "<loop 0>yelling.ogg" loop volume 0.3
     cs "Hey, do you hear that?"
     n "CS and Linus can hear a growing audience of people yelling nearby."
     linus "Hold on, lemme go check the window."
+    hide linus at offscreenright with moveoutright
     n "Linus heads over the window, and peers out to see a bunch of angry AMD fans rioting."
     linus "Oh shit, this is bad..."
     cs "What is it?"
     n "All of a sudden, a brick flies through the window!"
+    play sound "<loop 0>glass.ogg" volume 3
+    show sansbrick at offscreenleft with moveinright
+    show cs worried
     cs "Woah! Stand back Linus!"
+    show linus at center with moveinright
     linus "The AMD fans are rioting outside! We need to hide!"
     hide cs
     hide linus
     with moveoutleft
+    stop music fadeout 3.0
     scene black with fade
     n "CS and Linus meet up with the rest of the members downstairs."
     scene frontdoor
-    show luke at left
-    show taran at mid_left
+    play sound "<loop 0>yelling.ogg" loop volume 0.5
+    show luke flipped at left
+    show taran flipped at mid_left
     with fade
     show linus at center
-    show cs at right
+    show cs flipped at right
     with moveinright
     taran "What the fuck is happening?!"
     luke "Linus, how did you piss off so many people?"
@@ -210,12 +218,14 @@ label high_gpu:
     taran "We could call the cops!"
     cs "No!"
     linus "Huh?"
-    show cs angry
+    show cs angry flipped
     cs "Actually, you know what? Leave this to me!"
     hide cs with moveoutleft
     n "CS runs out the front door into the crowd."
     linus "CS what are you doing? You gonna get yourself killed out there!"
+    stop sound fadeout 3.0
     scene outside_ltt with fade
+    play sound "<loop 0>yelling.ogg" loop volume 1
     show cs angry at center with dissolve
     "Fanboys" "Boo!! You suck! AMD is the best!"
     cs "Yeah well, let's see about that!"
