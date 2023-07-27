@@ -101,6 +101,8 @@ init python:
 screen jukebox_nav():
 
     add Color('#323e42', alpha=0.75)
+    python:
+        renpy.music.set_pause(True, "music")
 
     viewport:
         xpos 25 ypos 400
@@ -117,8 +119,8 @@ screen jukebox_nav():
                 if k in persistent.heard:
                     textbutton k action ShowMenu("music_screen", k), Play("jukebox", "audio/"+v, relative_volume=0.5)
 
-    textbutton "Return to categories" action ShowMenu("category_welcome"), Stop("jukebox") yoffset 950 xoffset 25
-    textbutton "Return" action Return(), Stop("jukebox") yoffset 1000 xoffset 25
+    textbutton "Return to categories" action ShowMenu("category_welcome"), Stop("jukebox"), PauseAudio("music", False) yoffset 950 xoffset 25
+    textbutton "Return" action Return(), Stop("jukebox"), PauseAudio("music", False) yoffset 1000 xoffset 25
 
 ##-----------------------------------------------
 ##-------------CODEX WELCOME---------------------
