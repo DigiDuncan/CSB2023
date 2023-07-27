@@ -1032,6 +1032,9 @@ screen help():
             elif device == "gamepad":
                 use gamepad_help
 
+init python:
+    def britishpound():
+        achievement_manager.unlock("A Great British Pound")
 
 screen keyboard_help():
 
@@ -1086,7 +1089,7 @@ screen keyboard_help():
     hbox:
         label "£"
         text _("Union Jacks your weiner right off!")
-        key "#" action Play("sound", "audio/billymaysfap.mp3")
+        key "#" action Play("sound", "audio/billymaysfap.mp3"), Function(britishpound)
 
 screen mouse_help():
 
