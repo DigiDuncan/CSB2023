@@ -5,11 +5,15 @@ screen best_music():
     timer 5 action Hide('best_music')
 
 label csbi_start:
+    window hide
+    $ quick_menu = False
     scene cs_room
     show cs at center
     show oldgame with fade
     pause 7.0
     show pakoo at right with moveinright
+    $ quick_menu = True
+    window show
     pakoo "Oh whoops!"
     pakoo "The old game is still here..."
     pakoo "Lemme fix that real quick for you."
