@@ -369,6 +369,9 @@ screen main_menu():
     ## This ensures that any other menu screen is replaced.
     tag menu
 
+    python:
+        renpy.play("audio/the_rest_of_bubble_tea.mp3", "music")
+
     add gui.main_menu_background
 
     ## This empty frame darkens the main menu.
