@@ -1035,9 +1035,10 @@ screen help():
 init python:
     def britishpound():
         if not "A Great British Pound" in persistent.unlocked_achievements:
-            renpy.show_screen("popup", achievements[1])
+            chievos = (a for a in achievements
+            if a.name == "A Great British Pound")
+            renpy.show_screen("popup", next(chievos))
             achievement_manager.unlock("A Great British Pound", show_screen = False)
-
 screen keyboard_help():
 
     hbox:
