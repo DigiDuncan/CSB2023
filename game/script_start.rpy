@@ -349,6 +349,7 @@ image billy car happy = "characters/billy/billy_car_happy.png"
 image billy car turn = "characters/billy/billy_car_turn.png"
 image billy laser = "characters/BillyMaysWithLaser.png"
 image pakoo = "characters/pakoo.png"
+image pakoo flipped = "flip:characters/pakoo.png"
 image peppino = "characters/peppino.png"
 image peppino2 = "characters/peppino2.png"
 image cultist = "characters/cultist.png"
@@ -439,6 +440,11 @@ image microinside = "bg/inside_store.png"
 image cashzone = "bg/cashzone.png"
 image cpuaisle = "bg/cpuaisle.png"
 image gpuaisle = "bg/gpuaisle.png"
+image testing_main = "bg/testing_main.png"
+image testing_front = "bg/testing_front.png"
+image course_1 = "bg/course_1.png"
+image course_2 = "bg/course_2.png"
+image course_3 = "bg/course_3.png"
 
 ## CSBIII Chapter 2
 image washington_road day = "bg/washingtonroadday.png"
@@ -542,6 +548,8 @@ image drill = "drillymays.png"
 image drillbreak = "drillymaysfuck.png"
 image sansbrick = "sansbrick.png"
 image oldgame = "oldgame.png"
+image m4 = "m4.png"
+image m4 fire = "m4fire.png"
 
 # Movies
 image car background = Movie(play="movies/car_background.mp4")

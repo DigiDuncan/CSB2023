@@ -72,7 +72,6 @@ label microcenter:
     pause 2.0
     cs "Okay, we have a NVIDIA RTX 4080, and an AMD Radeon RX 7900."
 
-
     menu:
         "Which card do you want to choose?"
         "RTX 4080":
@@ -233,6 +232,7 @@ label high_gpu:
     show cs angry at center with dissolve
     "Fanboys" "Boo!! You suck! AMD is the best!"
     cs "Yeah well, let's see about that!"
+    stop sound fadeout 3.0
     jump after_fanboy
 
 label after_fanboy:
@@ -328,14 +328,167 @@ label after_fanboy:
     show cs at left
     show arceus flipped at mid_left
     show linus at right
-    show pakoo at mid_right
+    show pakoo at mid_right behind linus   
     with moveinleft
     linus "Alright well, this is Pakoo, our weapons expert! They should be able to give you the proper weapons training you need!"
     cs "Oh, I see. That's Pakoo."
     cs "I didn't recognize you, but how come you didn't recognize me?"
     pakoo "Of course I knew who you were dummy, I was just messing with you!"
     arceus "I still thought you were a cop."
-    
+    linus "Alright well, we should show you guys the training course."
+    show cs worried
+    cs "A whole training course? At LTT?"
+    show cs disappointed
+    linus "Yeah, it's been a secret project that's been going on for a while now, just in case LTT gets taken over by our supposedly insane fanbase."
+    show cs
+    cs "Alright, well, let's go check this out."
+    arceus "I'll just wait here for you guys to come back."
+    show pakoo flipped with determination
+    hide linus
+    hide pakoo
+    with moveoutright
+    show cs at mid_right with move
+    arceus "Hey CS?"
+    show cs flipped with determination
+    cs "Yeah?"
+    arceus "If the cops are coming our way, I'll come down and let you know, but we'll just have to get going immediately, no exclamation to Linus."
+    arceus "Got it?"
+    cs "Yep! I'll see you soon!"
+    show cs with determination
+    hide cs with moveoutright
+    scene black with fade
+    n "CS, Linus, and Pakoo head down an elevator into the training facility."
+    jump training
+
+label training:
+    scene testing_main with fade
+    show linus at right
+    show cs at center
+    show pakoo flipped at left behind linus   
+    with moveinleft
+    linus "Alright, here's our facility! What do you think?"
+    cs "Oh wow! This looks like something from Quake!"
+    pakoo "Close."
+    linus "Follow me this way to the entrance for the course."
+    cs "The course?"
+    pakoo "Yeah, you gotta run through some exercises before you can use a gun!"
+    show cs disappointed
+    cs "Manual labor? Ugh..."
+    linus "Alright, Hup Hup CS! Let's go!"
+    hide linus
+    hide cs
+    hide pakoo
+    with moveoutright
+    scene testing_front with fade
+    show linus at mid_left
+    show cs disappointed at center
+    show pakoo flipped at left behind linus    
+    with moveinleft
+    linus "Alright well, get going through the courses, and we'll watch from above and help you if you need anything."
+    pakoo "Good luck CS! I'm sure you got this."
+    hide linus
+    hide pakoo
+    with moveoutright
+    cs "Alright..."
+    cs "Here goes nothing."
+    scene black with fade
+    scene course_1 with fade
+    show cs at left with moveinleft
+    pakoo "Alright, just make your way through these blockades."
+    cs "Just crouch under them and stuff?"
+    pakoo "Yep!"
+    show cs at mid_left with move
+    hide cs at center with moveoutbottom
+    show cs at mid_right with moveinbottom
+    show cs at right with move
+    show cs happy
+    cs "Piece of cake!"
+    pakoo "Alright, onto the next one."
+    scene course_2 with fade
+    show cs at left with moveinleft
+    pakoo "Alright, you gotta jump across this pit."
+    show cs disappointed
+    cs "Really? This is a huge pit..."
+    pakoo "Cmon, you got this!"
+
+    menu:
+        "Do a cool ass jump":
+            jump cool_jump
+        "Do a regular jump":
+            jump reg_jump
+
+
+label cool_jump:
+    show cs
+    cs "I got this guys, you watching?"
+    pakoo "Yep!"
+    show cs at t_punchup with move
+    show cs at right with moveintop
+    hide cs with moveoutbottom
+    show cs at right with moveinbottom
+    "Pakoo and Linus" "WOOAHH!!"
+    show cs happy
+    cs "Hell yeah! What did you guys think of that?"
+    pakoo "That was impessive man!"
+    linus "I never doubted you CS!"
+    cs "Hey, maybe this training isn't too bad!"
+    hide cs with moveoutright
+    jump fire_range
+
+label reg_jump:
+    show cs
+    cs "Alright, here goes nothing!"
+    show cs at top with move
+    show cs at right with move
+    cs "Woohoo! I did it!"
+    pakoo "Nice! Let's keep moving!"
+    hide cs with moveoutright
+    jump fire_range
+
+label fire_range:
+    scene course_3 with fade
+    show cs at left with moveinleft
+    pakoo "Alright, you picked up the rifle before you came into this room, right?"
+    show m4 at left
+    cs "Yep!"
+    show cs angry
+    cs "So do I just-- why won't it fire!!"
+    show cs
+    pakoo "Okay woah woah, calm down."
+    pakoo "You gotta turn the safety off."
+    pakoo "Be careful where you aim that as well."
+    cs "Alright, I think I got this now."
+    cs "Watch this!"
+    show m4 at left with determination
+    show m4 fire at left with determination
+    play sound "<loop 0>hks1.wav" volume 1
+    show m4 at left with determination
+    show m4 fire at left with determination
+    play sound "<loop 0>hks2.wav" volume 1
+    show m4 at left with determination
+    show m4 fire at left with determination
+    play sound "<loop 0>hks1.wav" volume 1
+    show m4 at left with determination
+    show m4 fire at left with determination
+    play sound "<loop 0>hks3.wav" volume 1
+    pause 0.5
+    show m4 at left with determination
+    show m4 fire at left with determination
+    play sound "<loop 0>hks2.wav" volume 1
+    show m4 at left with determination
+    show m4 fire at left with determination
+    play sound "<loop 0>hks1.wav" volume 1
+    show m4 at left with determination
+    show m4 fire at left with determination
+    play sound "<loop 0>hks3.wav" volume 1
+    show m4 at left with determination
+    show m4 fire at left with determination
+    play sound "<loop 0>hks2.wav" volume 1
+    show m4 at left with determination    
+    pause 1.0
+    cs "Woohoo! I got all the targets!"
+    pakoo "Nice job CS!"
+
 
 label low_gpu:
     cs "I should probably try to save Linus some money. Most of the expensive parts he gets are from sponsors, he's not actually that rich."
