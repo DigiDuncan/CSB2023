@@ -42,15 +42,16 @@ class Achievement:
             return self.name == other.name
         return False
 
-    def unlock(self):
+    def unlock(self, show_screen = True):
         if self.unlocked:
             return
 
         self.unlocked = True
         persistent.unlocked_achievements.add(self.name)
-        renpy.with_statement(determination)
-        renpy.show_screen("popup", self)
-        renpy.with_statement(determination)
+        if show_screen:
+            renpy.with_statement(determination)
+            renpy.show_screen("popup", self)
+            renpy.with_statement(determination)
 
 
 class AchievementManager:
@@ -69,10 +70,10 @@ class AchievementManager:
 
         raise ValueError(f"Unrecognized achievement {name}")
     
-    def unlock(self, name: str):
+    def unlock(self, name: str, show_screen = True):
         ach = self.get(name)
         if not ach.unlocked:
-            ach.unlock()
+            ach.unlock(show_screen)
 
     def reset(self):
         for ach in achievements:
