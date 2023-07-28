@@ -40,7 +40,7 @@ init python:
         "green": "Mr. Green",
         "jerma": "Jermey Elbertson",
         "pencil": "Pencil Greeter",
-        "host": "Mettaton",
+        "mettaton": "Mettaton",
         "tsa": "TSA Agent",
         "luigi": "Luigi Mario",
         "mika": "Mikapara",
