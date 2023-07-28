@@ -1034,7 +1034,8 @@ screen help():
 
 init python:
     def britishpound():
-        achievement_manager.unlock("A Great British Pound")
+        achievement_manager.unlock("A Great British Pound", False)
+        renpy.show_screen("popup", achievements[1])
 
 screen keyboard_help():
 
