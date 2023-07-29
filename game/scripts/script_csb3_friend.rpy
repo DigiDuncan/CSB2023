@@ -486,6 +486,34 @@ label fire_range:
     play sound "<loop 0>hks2.wav" volume 1
     show m4 at left with determination    
     pause 1.0
+    show m4 at left with determination
+    show m4 fire at left with determination
+    play sound "<loop 0>hks2.wav" volume 1
+    show m4 at left with determination
+    show m4 fire at left with determination
+    play sound "<loop 0>hks1.wav" volume 1
+    show m4 at left with determination
+    show m4 fire at left with determination
+    play sound "<loop 0>hks3.wav" volume 1
+    show m4 at left with determination
+    show m4 fire at left with determination
+    play sound "<loop 0>hks2.wav" volume 1
+    show m4 at left with determination    
+    pause 1.0
+    show m4 at left with determination
+    show m4 fire at left with determination
+    play sound "<loop 0>hks2.wav" volume 1
+    show m4 at left with determination
+    show m4 fire at left with determination
+    play sound "<loop 0>hks1.wav" volume 1
+    show m4 at left with determination
+    show m4 fire at left with determination
+    play sound "<loop 0>hks3.wav" volume 1
+    show m4 at left with determination
+    show m4 fire at left with determination
+    play sound "<loop 0>hks2.wav" volume 1
+    show m4 at left with determination    
+    pause 1.0
     cs "Woohoo! I got all the targets!"
     pakoo "Nice job CS!"
 

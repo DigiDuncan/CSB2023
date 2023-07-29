@@ -111,6 +111,7 @@ label special:
     show cs at left
     cs "Huh. That worked a lot better than I thought. I should use this power more!"
     cs "Welp, time to go home!"
+    show cs flipped with determination
     hide cs with moveoutleft
     stop music fadeout 3.0
     music end
@@ -129,6 +130,7 @@ label special:
     copguy "Come with us, we need you to ask some questions."
     show cs at left
     cs "Alright, sure thing officer."
+    show cs flipped with determination
     hide cs with moveoutleft
     hide copguy with moveoutleft
     scene black with fade
@@ -159,6 +161,7 @@ label questioning:
     show asylum_worker at right with moveinright
     asylum_worker "Sure thing, boss."
     asylum_worker "Come on, follow me this way at once."
+    show cs flipped with determination
     hide cs with moveoutleft
     hide asylum_worker with moveoutleft
     stop music fadeout 3.0
@@ -171,7 +174,8 @@ label asylum:
     scene asylum with fade
     play music "<loop 0>basement.mp3" volume 0.5
     music Basement - Toby Fox
-    show cs worried at left with moveinright
+    show cs worried flipped at left with moveinright
+    show cs worried with determination
     show asylum_worker at right with moveinright
     asylum_worker "Here is your room. Enjoy living out the rest of your life here."
     show cs worried at center with moveinleft
@@ -216,6 +220,7 @@ label caught:
     show blue_light at left
     show red_light at right
     n "The police arrive and CS runs away."
+    show cs flipped with determination
     hide cs with moveoutleft
     show ed_phone behind blue_light, red_light at left with move
     show copguy behind blue_light, red_light  at right with moveinright

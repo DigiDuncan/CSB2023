@@ -400,6 +400,7 @@ image hoh_hq2 = "bg/office2.png"
 image hoh_hq3 = "bg/office3.png"
 image hoh_hq4 = "bg/office4.png"
 image hoh_hq5 = "bg/office5.png"
+image hoh_elevator = "bg/elevator.png"
 
 ## CSBII
 image helipad = "bg/helipad.png"

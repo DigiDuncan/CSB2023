@@ -7,6 +7,7 @@ screen best_music():
 label csbi_start:
     window hide
     $ quick_menu = False
+    stop music fadeout 3.0
     scene cs_room
     show cs at center
     show oldgame with fade
@@ -57,6 +58,7 @@ label csbi_start:
     nova "But it's like 8:04AM and you just woke up."
     play sound "ping.mp3"
     cs "Bye!"
+    show cs flipped with determination
     hide cs with moveoutleft
     show discord at center_left
     discord "CS is now offline."
@@ -156,10 +158,11 @@ label walmart:
     cs "Here you go!"
     cashier "Have a good day."
     cs "You too, bye!"
-    hide cashier
+    hide cs with moveoutright
     stop music fadeout 3.0
     music end
-    show walmart_outside behind cs with dissolve
+    scene walmart_outside with fade
+    show cs at left with moveinleft
     cs "Let's get to the car."
     show carguy at right with moveinright
     play sound "notsonicescratch.ogg"
@@ -168,9 +171,6 @@ label walmart:
     cs "Not you again!"
     cs "I gotta get outta here!"
     hide cs with moveoutright
-    hide carguy
-    show black
-    with fade
     play sound "doorslam.ogg"
     show car_inside with fade
     play music "<loop 0>canyon_but_in_the_car.mp3" volume 0.2
@@ -242,7 +242,7 @@ label room:
     stop music fadeout 3.0
     music end
     scene door_closed with fade
-    show cs happy with moveinbottom
+    show cs happy with moveinleft
     cs "Oh, they're here!"
     cs "Let me go get the door..."
     show door_open behind cs
@@ -255,6 +255,7 @@ label room:
     cs "Okay, I guess they already told you what I need done... Lemme get my wallet..."
     cs "Hang on a sec. Didn't they say I could pay afterwards?"
     ed "Yeah well, corporate policies just changed 5 seconds ago. Pay up."
+    show cs flipped with determination
     hide cs with moveoutleft
     n "A few moments later..."
     show cs at left with moveinleft
@@ -288,9 +289,10 @@ label room:
     show craptop error with hpunch
     pause 1.0
     scene cs_house with fade
-    show ed at left with moveinbottom
-    show wesley at center with moveinbottom
-    show rich at right with moveinbottom
+    show ed at left
+    show wesley at center
+    show rich at right
+    with moveinright
     rich "Lemme call our JoJ UFO."
     "Ed, Wesley, and Richard" "I'm beaming up!"
     play sound "beam.ogg" volume 0.6
@@ -401,9 +403,9 @@ label michael_house:
     michael "The Genergyfoogle is here! It's come to eat us all!"
     cs "Oh man, did that Genergy have something else in it...?"
     cs "I need to get out before he goes nuts!"
+    show cs with determination
     hide cs with moveoutright
-    show black with dissolve
-
+    pause 0.5
     scene car_inside
     show cs at left
     with fade
@@ -419,7 +421,7 @@ label michael_house:
 label csbi_end:
     cs "I should check on the HoH SiS folks. They should be making some progress by now."
     scene cs_room with fade
-    show cs with moveinbottom
+    show cs with moveinleft
     stop sound fadeout 2.0
     n "CS walks into his room."
     show cs disappointed
@@ -523,7 +525,13 @@ label left:
 
     $ achievement_manager.unlock("HoH SiS's Most Wanted")
 
-    show black with dissolve
+    scene black with fade
+    scene hoh_elevator
+    show cs angry
+    with fade
+    pause 2.0
+    play sound "audio/elevator_ding.ogg"
+    scene black with fade
     jump csbii_start
 
 label right:
@@ -540,5 +548,11 @@ label right:
     
     $ achievement_manager.unlock("HoH SiS's Most Wanted")
 
-    show black with dissolve
+    scene black with fade
+    scene hoh_elevator
+    show cs angry
+    with fade
+    pause 2.0
+    play sound "audio/elevator_ding.ogg"
+    scene black with fade
     jump csbii_start
