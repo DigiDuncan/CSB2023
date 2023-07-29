@@ -63,10 +63,14 @@ label microcenter:
     n "CS heads over to the GPU aisle."
     cs "Hmm, we got AMD and NVIDIA, I wish Linus told me which one I should get..."
     n "CS looks at his options."
-    show cs at mid_right with move
+    hide cs with moveoutright
+    scene gpuaisle2 with fade
+    show cs at center with moveinleft
     pause 2.0
     show cs flipped with determination
-    show cs flipped at mid_left with move
+    hide cs with moveoutleft
+    scene gpuaisle with fade
+    show cs flipped at mid_left with moveinright
     pause 1.0
     show cs with determination
     pause 2.0
