@@ -1,9 +1,9 @@
 label csbii_start:
 
-    scene helipad with fade
-    show cs angry at left
+    scene helipad
     show wesley at right
-    with dissolve
+    with fade
+    show cs angry at left with moveinleft
     cs "You'll pay for what you did!"
     n "Wesley sweats nervously."
     wesley "Do you want a refund?"
@@ -48,10 +48,10 @@ label punch:
     play sound "audio/punch.ogg"
     show wesley at right with hpunch
     play sound "victorypunch.ogg" volume 0.5
-    hide wesley with easeoutright
+    show wesley at t_punchup with move
     show cs angry at left with move
     cs "That'll teach you not to mess with a nerd's computer!"
-    show ed_phone at right
+    show ed_phone at right with moveinright
     show cs angry at left with move
     ed "Hello, 911? My coworker just got knocked out by a disgruntled customer and appears to be dying! Send help!"
     jump caught
@@ -67,7 +67,7 @@ label chop:
     hide wesley with easeoutright
     show cs angry at left with move
     cs "I sawed this foundation repairman in half!"
-    show ed_phone at right
+    show ed_phone at right with moveinright
     show cs angry at left with move
     ed "Hello, 911? My coworker just got karate chopped by a disgruntled customer off the roof! Send help!"
     jump caught
@@ -83,7 +83,7 @@ label kick:
     $ achievement_manager.unlock("Dead Meme")
 
     cs "That'll teach you not to mess with a nerd's computer!"
-    show ed_phone at right
+    show ed_phone at right with moveinright
     show cs angry at left with move
     ed "Hello, 911? My coworker just got kicked by a disgruntled customer off the roof! Send help!"
     jump caught

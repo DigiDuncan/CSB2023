@@ -200,6 +200,7 @@ label high_gpu:
     cs "Woah! Stand back Linus!"
     show linus at center with moveinright
     linus "The AMD fans are rioting outside! We need to hide!"
+    show cs flipped with determination
     hide cs
     hide linus
     with moveoutleft
@@ -293,6 +294,7 @@ label after_fanboy:
     show arceus
     show cs disappointed
     with determination
+    show cs flipped with determination
     hide arceus
     hide cs
     with moveoutleft
@@ -319,6 +321,7 @@ label after_fanboy:
     show cs disappointed
     cs "Geez okay, if you're so sure."
     linus "Come on, let's get inside first."
+    show pakoo flipped with determination
     hide cs
     hide arceus
     hide linus
@@ -328,8 +331,9 @@ label after_fanboy:
     show cs at left
     show arceus flipped at mid_left
     show linus at right
-    show pakoo at mid_right behind linus   
+    show pakoo flipped at mid_mid_right behind linus   
     with moveinleft
+    show pakoo
     linus "Alright well, this is Pakoo, our weapons expert! They should be able to give you the proper weapons training you need!"
     cs "Oh, I see. That's Pakoo."
     cs "I didn't recognize you, but how come you didn't recognize me?"
