@@ -522,9 +522,136 @@ label fire_range:
     play sound "<loop 0>hks2.wav" volume 1
     show m4 at left with determination    
     pause 1.0
+    show cs happy
     cs "Woohoo! I got all the targets!"
     pakoo "Nice job CS!"
-
+    linus "That was excellent! You passed the course with flying colors!"
+    pakoo "Head back to the main lobby, and we'll meet up with you there."
+    cs "Alright, cya in a bit!"
+    hide m4
+    show cs happy flipped with determination
+    hide cs with moveoutleft
+    scene testing_main with fade
+    show cs flipped at mid_mid_left with moveinright
+    show cs with determination
+    pause 1.0
+    show linus at mid_mid_right
+    show pakoo at right
+    with moveinright
+    linus "Alrighty! Well Pakoo, what do you think? Do you think he's ready to become a guard for LTT?"
+    pakoo "I would say so, yeah."
+    cs "Awesome! This is gonna be like a real arena shooter!"
+    show pakoo disappointed
+    pakoo "...yeah."
+    show pakoo
+    pakoo "I think some more training should be done until he's a proper armed guard,"
+    show pakoo worried
+    pakoo "and this seems very... what's the right word..."
+    show pakoo disappointed
+    pakoo "Exaggerated?"
+    linus "Whatttt? Look, I need this for my company."
+    linus "There are just too many variables for what could happem, and I need some... protection for those variables!"
+    show cs disappointed
+    cs "Will I be able to work on editing ever? That's kinda what I signed up for in the first place, now that you mention this training stuff."
+    show pakoo
+    show cs
+    linus "Sure! It's just--{w=0.5}{nw}"
+    show arceus flipped at left with moveinleft
+    arceus "Alright CS. We gotta go now."
+    linus "Heyy! How'd you get down here?"
+    show cs disappointed
+    cs "Alright... I gotta go. This is important."
+    linus "Yeah, and this is too! We gotta train more!"
+    cs "Look I'll, explain later okay?"
+    arceus "Alright, we're going CS!"
+    arceus "C'mon!"
+    cs "This is CS... signing out."
+    show cs disappointed flipped
+    show arceus
+    with determination
+    hide cs
+    hide arceus
+    with moveoutleft
+    show linus at mid_left with move
+    linus "Hey! Come back here!"
+    show pakoo disappointed at center with move
+    pakoo "Hey Linus?"
+    linus "Yeah?"
+    pakoo "Let me go with him. This is important for his job with you, and... I'm the reason why he's leaving."
+    linus "What??"
+    show pakoo worried
+    pakoo "Yeah I... set up a plan with him in secret afterwards..."
+    show pakoo
+    pakoo "So that he would be more trained when he came back! To impress you!"
+    show pakoo worried
+    pakoo "Guess I went a little too hard with the scheduling though..."
+    linus "Ahh, I see. I get it now."
+    linus "I'll pretend like I didn't know, go help him."
+    show pakoo
+    pakoo "Alright sweet! Thank you Linus!"
+    hide pakoo with moveoutleft
+    pause 1.0
+    linus "This is such a good idea! Pat yourself on the back, Linus."
+    show black with fade
+    show outside_ltt with fade
+    show cs disappointed at center
+    show arceus flipped at right
+    with moveinleft
+    cs "Welp. LTT for nothing, I guess."
+    show arceus with determination
+    arceus "What do you mean, man? You got proper firearms training!"
+    show cs
+    cs "Oh yeah!"
+    cs "That reminds me..."
+    show m4 at center
+    pause 0.5
+    cs "I took this with me too!"
+    hide m4
+    arceus "Holy shit! You took the rifle with you?"
+    cs "Yeah, I don't know, it looked cool, and no one really saw me hiding it."
+    cs "So y'know... free gun?"
+    arceus "Hell yeah! We can use this!"
+    cs "Yeah! To shoot mean people right?"
+    arceus "Geez man, I was thinking to intimidate them!"
+    cs "...I was also thinking that."
+    show pakoo flipped at left with moveinleft
+    pakoo "Hi!"
+    show cs angry flipped
+    show m4
+    show pakoo disappointed flipped
+    cs "Hey I am armed!"
+    cs "...and dangerous!"
+    pakoo "Woah woah, put the gun down."
+    pakoo "I'm gonna help you guys!"
+    hide m4
+    show cs disappointed flipped
+    cs "Huh?"
+    arceus "How are you gonna help us? Do you even know what is going on?"
+    pakoo "Of course! The cops are chasing you, right?"
+    arceus "I knew it! You are a cop!"
+    pakoo "No-- damnit okay, listen to me for a second."
+    pakoo "I've known for a while Copguy is chasing you down."
+    pakoo "I've also known that Copguy has been working for 15 years, and you are his last criminal he wants to bust."
+    pakoo "So he's gonna do anything to take you guys down."
+    pakoo "Why do you think I showed up here? I know Copguy, and you're all over the place now!"
+    pakoo "You made a video on a channel with like, millions of subscribers! What were you thinking?"
+    cs "Shit, I never really thought about that."
+    pakoo "Look, I just lied to Linus so he won't question this, so let me help you."
+    arceus "CS? What do you say?"
+    cs "I guess if you are willing to, you have more weapons right?"
+    pakoo "Yeah I--{w=0.5}{nw}"
+    show cs flipped
+    cs "That's all I needed to hear!"
+    show pakoo flipped
+    pakoo "Yeah, I can help you a bit more along the way as well."
+    pakoo "Where are we headed to?"
+    arceus "Lemme think..."
+    arceus "We don't really have a vehicle, and there is a car dealership a block from here..."
+    arceus "Lemme scramble our location from the cops real quick, and then we should make it over there in a hurry and steal a car."
+    pakoo "Alright!"
+    cs "Hell yeah! Let's do this!"
+    scene black with fade
+    n "Arceus takes one of the LTT laptops to scramble their location, and head off to the car dealer."
 
 label low_gpu:
     cs "I should probably try to save Linus some money. Most of the expensive parts he gets are from sponsors, he's not actually that rich."
