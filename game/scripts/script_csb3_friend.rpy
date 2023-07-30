@@ -597,7 +597,7 @@ label fire_range:
     show cs disappointed at center
     show arceus flipped at right
     with moveinleft
-    cs "Welp. LTT for nothing, I guess."
+    cs "Welp, this kinda sucks."
     show arceus with determination
     arceus "What do you mean, man? You got proper firearms training!"
     show cs
@@ -629,7 +629,7 @@ label fire_range:
     arceus "How are you gonna help us? Do you even know what is going on?"
     pakoo "Of course! The cops are chasing you, right?"
     arceus "I knew it! You are a cop!"
-    pakoo "No-- damnit okay, listen to me for a second."
+    pakoo "No-- dammit okay, listen to me for a second."
     pakoo "I've known for a while Copguy is chasing you down."
     pakoo "I've also known that Copguy has been working for 15 years, and you are his last criminal he wants to bust."
     pakoo "So he's gonna do anything to take you guys down."
