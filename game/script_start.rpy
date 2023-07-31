@@ -624,7 +624,6 @@ label splashscreen:
 
 label start:
     scene game_menu
-    play music "audio/the_rest_of_bubble_tea.mp3"
     window hide
     pause 0.1
     call screen start_menu()
