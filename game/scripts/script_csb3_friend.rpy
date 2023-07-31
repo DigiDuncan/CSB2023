@@ -652,6 +652,82 @@ label fire_range:
     cs "Hell yeah! Let's do this!"
     scene black with fade
     n "Arceus takes one of the LTT laptops to scramble their location, and head off to the car dealer."
+    scene road_to_canada with fade
+    show pakoo at right
+    show cs at center
+    show arceus flipped at left
+    with moveinleft
+    arceus "We should be almost there, it should be around this corner."
+    pakoo "Real quick before we get there, I should let Mika know what's going on today."
+    cs "Who?"
+    pakoo "Sorry, my boyfriend. I didn't really tell him that I'm helping two guys escape from the cops."
+    arceus "Fuuuuuck, I haven't told Kitty that I escaped from prison."
+    cs "I don't think Tate even KNEW I went to prison! They'd probably kill me if they knew."
+    cs "You mind if we make some calls as well?"
+    n "Pakoo pulls out a couple of phones from his back pocket and gives them to Arc and CS."
+    show pakoo at center with move
+    pause 1.0
+    show pakoo at left with move
+    pause 1.0
+    show pakoo flipped with determination
+    show pakoo at right with move
+    show pakoo with determination
+    pakoo "I had these few spare with me, you guys should just keep them."
+    pakoo "One may or may not be LTT property that I stole."
+    scene black with fade
+    n "The gang stops to call their partners, and then makes their way to the dealership."
+    scene dealership with fade
+    show arceus flipped at center
+    show cs at mid_left
+    show pakoo flipped at left behind cs
+    with moveinleft
+    arceus "Alright, here we are."
+    cs "So we can pick any car we'd like?"
+    arceus "Basically, yeah."
+    show carguy at mid_right
+    carguy "Check out all these nice cars!"
+    carguy "Nooooot so nice that you fellas don't have a car though."
+    carguy "Wouldn't it be nice if having a car was this easy?"
+    pakoo "Yeah, you know how expensive cars are these days?"
+    carguy "Well, with my new real estate technology, you can! Welcome to Carguy's Deals!"
+    arceus "I don't think that's new technolo-- {w=1.0}{nw}"
+    carguy "Right this way, please!"
+    cs "Sure, I guess."
+    hide carguy with moveoutright
+    hide pakoo
+    hide cs
+    hide arceus
+    with moveoutright
+    scene dealer_cars with fade
+    show carguy at right
+    show arceus flipped at center
+    show cs at mid_left
+    show pakoo flipped at left behind cs
+    with moveinleft
+    carguy "Look at all these nice cars!"
+    carguy "You guys look around, I'll be in the dealership building when you guys pick something you like."
+    hide carguy with moveoutright
+    pause 0.5
+    show arceus flipped at mid_right
+    show cs at center
+    with move
+    show arceus with determination
+    arceus "Alright guys, pick out a car quick and let's get the hell outta here!"
+    menu:
+        "Pick Yo Car!"
+        "JoJ Charger":
+            jump cool_car
+        "Honda Civic":
+            jump reg_car
+        "Flintstones Car":
+            jump flint_car
+
+label reg_car:
+    cs "Hey! I have a Honda Civic, let's just take that!"
+    arceus "Works for me."
+    pakoo "Let's go!"
+    show cs_car_inside with fade
+    
 
 label low_gpu:
     cs "I should probably try to save Linus some money. Most of the expensive parts he gets are from sponsors, he's not actually that rich."
