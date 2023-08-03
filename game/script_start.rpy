@@ -570,6 +570,7 @@ image tvcar = Movie(play="movies/0001.mpg")
 #Fun Values
 image utajsign = "secret/utajsign.png"
 image vegasjade = "secret/vegasjade.png"
+image fumobee = "secret/fumobee.png"
 
 # Animated Sprites
 image blue_light:
