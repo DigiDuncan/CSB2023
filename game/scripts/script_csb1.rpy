@@ -445,7 +445,7 @@ label csbi_end:
     show craptop sad with hpunch
     play sound "audio/punch.ogg"
     if fun_value(20):
-        play sound "audio/gul.ogg"
+        play sound "secret/gul.ogg"
     pause 1.0
     scene cs_room
     show cs angry
