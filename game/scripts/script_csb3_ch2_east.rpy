@@ -545,40 +545,76 @@ label michigan:
     jump ohio
 
 label ohio:
-    scene car plains
-    show billy car
-    with fade
-    n "After that fiasco, they travel through Ohio."
-    show scott_border
-    play music "<loop 0>breakout.mp3" volume 0.3  
-    music Breakout - Shoichiro Sakamoto 
-    n "Suddenly, a huge blue border enters everyone's vision."
-    arceus "Oh what in the world? There is some red border in my eyes..."
-    cs "I have a blue one, what is going on?"
-    billy "Yeah, it's blue for me too, I think you are colorblind."
-    arceus "I AM colorblind. Oh fuck."
-    scene wozniaktroubles
-    show billy car
-    show scott_border
-    with fade
-    n "As they are driving through the state, they see some men on the side of road protesting about the blue border."
-    billy "Hi, it's Billy!"
-    billy "Are you tired of having a blue border in your vision?"
-    billy "You should try Kaboom!"
-    n "Billy pulls out a bottle of Kaboom and sprays them in the face."
-    scott "Ahhhhh!"
-    billy "It gets the tough stains out!"
-    terry "I'm sorry that doesn't seem very vegan, I'll have to just deal with it."
-    cs "Billy, I don't think that'll work, let's just keep going."
-    scene car plains
-    show billy car
-    show scott_border
-    with fade
-    n "Once they leave the state, the border goes away."
-    stop music fadeout 3.0
-    music end
-    hide scott_border with dissolve
-    arceus "I'm glad it just faded away, I did not want to spray cleaner in my eyes."
+    if fun_value(50):
+        scene car plains
+        show billy car
+        with fade
+        n "After that fiasco, they travel through Ohio."
+        show scott_border
+        play music "<loop 0>breakout.mp3" volume 0.3  
+        music Breakout - Shoichiro Sakamoto 
+        n "Suddenly, a huge blue border enters everyone's vision."
+        scott "Oh what in the world? There is some red border in my eyes..."
+        scott "I have a blue one, what is going on?"
+        scott "Yeah, it's blue for me too, I think you are colorblind."
+        scott "I AM colorblind. Oh fuck."
+        scene wozniaktroubles
+        show billy car
+        show scott_border
+        with fade
+        n "As they are driving through the state, they see some men on the side of road protesting about the blue border."
+        scott "Hey all, Scott here!"
+        scott "Are you tired of having a blue border in your vision?"
+        scott "You should try Kaboom!"
+        n "Scott pulls out a bottle of Kaboom and sprays them in the face."
+        scott "Ahhhhh!"
+        scott "It gets the tough stains out!"
+        scott "I'm sorry that doesn't seem very vegan, I'll have to just deal with it."
+        scott "Scott, I don't think that'll work, let's just keep going."
+        scene car plains
+        show billy car
+        show scott_border
+        with fade
+        n "Once they leave the state, the border goes away."
+        stop music fadeout 3.0
+        music end
+        hide scott_border with dissolve
+        arceus "I'm glad it just faded away, I did not want to spray cleaner in my eyes."
+    else:
+        scene car plains
+        show billy car
+        with fade
+        n "After that fiasco, they travel through Ohio."
+        show scott_border
+        play music "<loop 0>breakout.mp3" volume 0.3  
+        music Breakout - Shoichiro Sakamoto 
+        n "Suddenly, a huge blue border enters everyone's vision."
+        arceus "Oh what in the world? There is some red border in my eyes..."
+        cs "I have a blue one, what is going on?"
+        billy "Yeah, it's blue for me too, I think you are colorblind."
+        arceus "I AM colorblind. Oh fuck."
+        scene wozniaktroubles
+        show billy car
+        show scott_border
+        with fade
+        n "As they are driving through the state, they see some men on the side of road protesting about the blue border."
+        billy "Hi, it's Billy!"
+        billy "Are you tired of having a blue border in your vision?"
+        billy "You should try Kaboom!"
+        n "Billy pulls out a bottle of Kaboom and sprays them in the face."
+        scott "Ahhhhh!"
+        billy "It gets the tough stains out!"
+        terry "I'm sorry that doesn't seem very vegan, I'll have to just deal with it."
+        cs "Billy, I don't think that'll work, let's just keep going."
+        scene car plains
+        show billy car
+        show scott_border
+        with fade
+        n "Once they leave the state, the border goes away."
+        stop music fadeout 3.0
+        music end
+        hide scott_border with dissolve
+        arceus "I'm glad it just faded away, I did not want to spray cleaner in my eyes."
     jump pennsylvania
 
 label pennsylvania:

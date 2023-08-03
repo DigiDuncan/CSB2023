@@ -78,20 +78,37 @@ label utah:
     arceus "Are you sure we're close to Vegas?"
     cs "We have to be! Nevada is like right below Washington!"
     arceus "Well, there is a state sign coming up, let's see if you're right."
-    scene utahsign
-    show cscar1
-    show cscar2
-    show cs at left behind cscar2
-    show arceus at right behind cscar2
-    n "As they approach the sign, it reads \"Welcome to UTAH, Life Elevated\"."
-    arceus "Welp. You tried."
-    cs "I could've sworn we were going the right way."
-    arceus "Did you ever see a sign that said \"Las Vegas - in how ever many miles\"?"
-    cs "No...?"
-    arceus "Oh well. At least we know where we are now."
-    arceus "Tomorrow, we'll head to Vegas."
-    arceus "Let's find somewhere to eat before we hit the hay tonight."
-    n "They continue driving for a bit until they come across a small town."
+    if fun_value(5):
+        scene utajsign
+        show cscar1
+        show cscar2
+        show cs at left behind cscar2
+        show arceus at right behind cscar2
+        n "As they approach the sign, it reads \"Welcome to UTAJ, Life Elevated\"."
+        arceus "Welp. You tried."
+        cs "I could've sworn we were going the right way."
+        arceus "Did you ever see a sign that said \"Las Vegas - in how ever many miles\"?"
+        cs "No...?"
+        arceus "Oh well. At least we know where we are now."
+        arceus "Tomorrow, we'll head to Vegas."
+        arceus "Let's find somewhere to eat before we hit the hay tonight."
+        n "They continue driving for a bit until they come across a small town."
+    else:      
+        scene utahsign
+        show cscar1
+        show cscar2
+        show cs at left behind cscar2
+        show arceus at right behind cscar2
+        n "As they approach the sign, it reads \"Welcome to UTAH, Life Elevated\"."
+        arceus "Welp. You tried."
+        cs "I could've sworn we were going the right way."
+        arceus "Did you ever see a sign that said \"Las Vegas - in how ever many miles\"?"
+        cs "No...?"
+        arceus "Oh well. At least we know where we are now."
+        arceus "Tomorrow, we'll head to Vegas."
+        arceus "Let's find somewhere to eat before we hit the hay tonight."
+        n "They continue driving for a bit until they come across a small town."
+
     scene utahnight
     show cscar1
     show cscar2
@@ -260,7 +277,10 @@ label utah:
 
 label vegas:
     if returning_from_blooper:
-        scene vegas
+        if fun_value(10):
+            scene vegasjade
+        else:
+            scene vegas
         show cscar1
         show cscar2
         show arceus flipped at left behind cscar2
@@ -272,7 +292,10 @@ label vegas:
     else:
         play music "<loop 0>penthouse.mp3" volume 0.5
         music "Al's Penthouse - Andy Blythe"
-        scene vegas
+        if fun_value(10):
+            scene vegasjade
+        else:
+            scene vegas
         show cscar1
         show cscar2
         show arceus flipped at left behind cscar2

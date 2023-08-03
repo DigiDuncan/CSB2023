@@ -215,7 +215,7 @@ define tv_billy = Character("TV Billy", callback = renpy.partial(char_callback, 
 define cultist = Character("Cultist", callback = renpy.partial(char_callback, name = "cultist"))
 define cultist_2 = Character("Cultist 2", callback = char_callback)
 define cultist_3 = Character("Cultist 3", callback = char_callback)
-define scott = Character("Scott", callback = renpy.partial(char_callback, name = "scott"))  # TODO: Beep
+define scott = Character("Scott", callback = renpy.partial(char_callback, name = "scott", beep = "scott"))
 define terry = Character("Terry", callback = renpy.partial(char_callback, name = "terry"))  # TODO: Beep
 define carla = Character("Carla", callback = renpy.partial(char_callback, name = "carla"))  # TODO: Beep
 define peppino = Character("Peppino", callback = renpy.partial(char_callback, name = "peppino"))  # TODO: Beep
@@ -348,7 +348,10 @@ image billy car = "characters/billy/billy_car.png"
 image billy car happy = "characters/billy/billy_car_happy.png"
 image billy car turn = "characters/billy/billy_car_turn.png"
 image billy laser = "characters/BillyMaysWithLaser.png"
-image pakoo = "characters/pakoo.png"
+if fun_value(100):
+    image pakoo = "secret/noise.png"
+else:
+    image pakoo = "characters/pakoo.png"
 image pakoo flipped = "flip:characters/pakoo.png"
 image pakoo worried = "characters/pakoo_worried.png"
 image pakoo worried flipped = "flip:characters/pakoo_worried.png"
@@ -563,6 +566,10 @@ image car background night = Movie(play="movies/car_background_night.mp4")
 image car plains = Movie(play="movies/car_plains.mp4")
 image car plains night = Movie(play="movies/car_plains_night.mp4")
 image tvcar = Movie(play="movies/0001.mpg")
+
+#Fun Values
+image utajsign = "secret/utajsign.png"
+image vegasjade = "secret/vegasjade.png"
 
 # Animated Sprites
 image blue_light:

@@ -55,7 +55,10 @@ label microcenter:
     show cs happy
     cs "Too many good options! I don't know what one to pick!"
     show cs
-    cs "Whatever, I'll get this Intel i9."
+    if fun_value(40):
+        cs "Whatever, I'll get this AMD Threadripper."        
+    else:
+        cs "Whatever, I'll get this Intel i9."
     cs "Now for the GPU."
     hide cs with moveoutright
     scene gpuaisle with fade

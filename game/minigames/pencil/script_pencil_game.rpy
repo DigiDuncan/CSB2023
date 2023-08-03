@@ -28,7 +28,10 @@ init python:
             self.win = None
             self.score = 0
             self.pencil_sharpener = Image("minigames/pencil/sharpener.png")
-            self.current_pencil = Image("minigames/pencil/pencil.png")
+            if fun_value(10):
+                self.current_pencil = Image("secret/pencilcolor.png")
+            else:           
+                self.current_pencil = Image("minigames/pencil/pencil.png")
             self.keyboard_q = Image("minigames/pencil/key_q.png")
             self.keyboard_e = Image("minigames/pencil/key_e.png")
             self.red_x = Image("minigames/pencil/red_x.png")
