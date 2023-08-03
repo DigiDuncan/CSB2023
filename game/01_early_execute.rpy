@@ -126,5 +126,7 @@ init python:
 
     # FUN VALUES
     def fun_value(rarity: int) -> bool:
+        if not preferences.bounciness_enable:
+            return False
         chance = ease_linear(1 / rarity, 1, 0, 100, preferences.csbounciness)
         return renpy.random.random() < chance
