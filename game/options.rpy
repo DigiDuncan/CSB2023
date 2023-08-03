@@ -131,6 +131,7 @@ define config.window_hide_transition = Dissolve(.2)
 ## number is the number of characters per second to type out.
 
 default preferences.text_beeps = True
+default preferences.bounciness_enable = True
 default preferences.csbounciness = 0
 default preferences.streamer_mode = False
 

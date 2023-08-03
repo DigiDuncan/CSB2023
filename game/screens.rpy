@@ -831,6 +831,7 @@ screen preferences():
                             style "mute_all_button"
                 vbox:
                     label _("CSBounciness")
+                    textbutton _("Toggle Bounciness") action ToggleField(preferences, "bounciness_enable")
                     hbox:
                         bar:
                             style "slider"
