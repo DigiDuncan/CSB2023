@@ -123,3 +123,8 @@ init python:
         else:
             zo = 1 - math.pow(-2 * x + 2, 2) / 2
         return lerp(minimum, maximum, zo)
+
+    # FUN VALUES
+    def fun_value(rarity: int) -> bool:
+        chance = ease_linear(1 / rarity, 1, 0, 100, preferences.csbounciness)
+        return renpy.random.random() < chance
