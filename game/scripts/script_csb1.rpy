@@ -485,6 +485,8 @@ label csbi_end:
     play sound "audio/punch.ogg"
     show cs angry at mid_left with move
     show worker_4 at mid_left with hpunch
+    if fun_value(5):
+        cs "Ow."
     hide worker_4 with moveoutleft
     show cs angry at center with move
     show black with dissolve
