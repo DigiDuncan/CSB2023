@@ -215,29 +215,53 @@ label utah:
     hide cs
     hide arceus
     with moveoutleft
-    scene fazhall
-    show lego at truecenter
-    with fade
-    show cs dark at mid_left_left with moveinleft
-    show arceus dark at mid_right_right with moveinright   
-    n "Before they make it to the door, Arceus stops dead in his tracks."
-    cs "Hey! Why'd we stop?"
-    n "CS looks ahead of him to see the giant Minifigure standing infront of them."
-    cs "Ohh."
-    arceus "CS, don't move a muscle."
-    cs "Why not? it's just a leg-"
-    play music "<loop 0>hard_drive.mp3" volume 0.5
-    music Hard Drive to Munch You - Mr. Sauceman
-    show lego eyes
-    n "The Minifigure's eyes glow as it raises its arms up and starts running at CS."
-    lego "HEEYYYY!!!!!"
-    n "Arceus quickly drags CS out of the way at the last second."
-    show arceus dark at left
-    show lego eyes at lego_run
-    with move
-    lego "A MAN HAS FALLEN INTO THE-"
-    hide lego with moveoutbottom
-    n "The Minifigure crashes into the wall and falls to the ground."
+    if fun_value(87):
+        scene fazhall
+        show fumobee at truecenter
+        with fade
+        show cs dark at mid_left_left with moveinleft
+        show arceus dark at mid_right_right with moveinright   
+        n "Before they make it to the door, Arceus stops dead in his tracks."
+        cs "Hey! Why'd we stop?"
+        n "CS looks ahead of him to see the fumo bee standing infront of them."
+        cs "Ohh."
+        arceus "CS, don't move a muscle."
+        cs "Why not? it's just a fum-"
+        play music "<loop 0>hard_drive.mp3" volume 0.5
+        music Hard Drive to Munch You - Mr. Sauceman
+        n "The fumo bee starts running at CS."
+        "Fumo Bee" "Wah."
+        n "Arceus quickly drags CS out of the way at the last second."
+        show arceus dark at left
+        show fumobee at lego_run
+        with move
+        hide fumobee with moveoutbottom
+        n "The fumo bee crashes into the wall and falls to the ground."
+    else:
+        scene fazhall
+        show lego at truecenter
+        with fade
+        show cs dark at mid_left_left with moveinleft
+        show arceus dark at mid_right_right with moveinright   
+        n "Before they make it to the door, Arceus stops dead in his tracks."
+        cs "Hey! Why'd we stop?"
+        n "CS looks ahead of him to see the giant Minifigure standing infront of them."
+        cs "Ohh."
+        arceus "CS, don't move a muscle."
+        cs "Why not? it's just a leg-"
+        play music "<loop 0>hard_drive.mp3" volume 0.5
+        music Hard Drive to Munch You - Mr. Sauceman
+        show lego eyes
+        n "The Minifigure's eyes glow as it raises its arms up and starts running at CS."
+        lego "HEEYYYY!!!!!"
+        n "Arceus quickly drags CS out of the way at the last second."
+        show arceus dark at left
+        show lego eyes at lego_run
+        with move
+        lego "A MAN HAS FALLEN INTO THE-"
+        hide lego with moveoutbottom
+        n "The Minifigure crashes into the wall and falls to the ground."
+
     show cs worried dark with vpunch
     n "The other figures up ahead turn on and start moving toward Arc and CS."
     arceus "RUN CS RUN!!!"
@@ -551,100 +575,182 @@ label poker3:
     pause 1.0
     scene pokertable
     n "Mr. Green and CS put their cards down."
-    show cards5
-    n "CS has a royal flush with his ace and king of spades, while Mr. Green had a seven of hearts and a ten of clubs."
-    n "Mr. Green pukes all over the table and falls over backwards, passing out."
-    stop music fadeout 3.0
-    music end
-    $ achievement_manager.unlock("High Roller")
-    scene luigi2
-    show cs happy flipped at right
-    cs "Woohoo! I won!"
-    play music "<loop 0>price_right.mp3" volume 0.5
-    music Price Is Right Theme - Edd Kalehoff
-    luigi "Congratulations, sir, you just won 100 million dollars!"
-    cs "Yay! I can pay for my Creative Cloud without donations!"
-    n "CS jumps into the air and cheers."
-    show cs flipped
-    cs "Finally! Me and Arc can buy whatever we want! I need to let him know!"
-    n "Before CS runs off to find Arc, the owner of the casino approaches CS."
-    show jerma at left with moveinleft
-    jerma "Well, look who we have here!"
-    jerma "You beat my highest roller! How'd you do that?"
-    cs "Uhh, I dunno."
-    jerma "Well, congrats on your victory!"
-    jerma "I'll go get the money for you, and Mr. Green is gonna have to pay up to me now."
-    cs "Alright, I'm gonna go find my friend real quick."
-    jerma "Sure thing, meet me back by the employee access area."
-    show cs with determination
-    hide cs with moveoutright
-    stop music fadeout 3.0
-    music end
-    scene casino1 with fade    
-    n "CS continues to look for Arc."
-    show cs disappointed at center with moveinleft
-    cs "Arc? Where are you?"
-    cs "Maybe he went to the bathroom?"
-    hide cs with moveoutright
-    scene vegasbathroom
-    show arceus at center
-    with fade
-    n "CS finds the bathroom, to see Arceus with his head up against the mirror."
-    show cs at left with moveinleft
-    cs "Hey, Arc! There you are! Are you okay?"
-    arceus "My head hurts so bad..."
-    arceus "I think I'm gonna head back to the car..."
-    cs "Alright, I'm ready to leave too, because we just won 100 million dollars!"
-    arceus "Wh... what?? Are you just trying to make me feel better?"
-    cs "No joke! Look, head out to the car, and I'll meet you there!"
-    arceus "Alright..."
-    hide arceus with moveoutleft
-    n "Arceus stumbles out back into the casino, while CS goes to collect his money."
-    show cs flipped with determination
-    hide cs with moveoutleft
-    n "CS meets Jerma in the employee backroom."
-    scene backroomcasino
-    show jerma at center
-    show case flipped at mid_mid_left
-    with fade
-    n "Jerma is waiting with a briefcase."
-    show cs at left behind case with moveinleft
-    jerma "Here he is! The man of the hour!"
-    cs "I honestly didn't think I was gonna win, I would've been in massive debt if I lost."
-    jerma "Well good thing you won, because Mr. Green is in massive debt to us right now."
-    jerma "Believe me, we've had a lot of money problems recently with Mr. Green, we've had to have him steal from our rival, Pasta Italiano."
-    show cs disappointed
-    cs "Yikes, that sounds shitty."
-    show cs
-    cs "Welp, I wish you the best of luck, Mr. Jerma!"
-    show cs at mid_mid_left with move
-    show case with determination
-    show cs at left
-    show case at left
-    with move
-    n "After CS collects his winnings, he finds his way back to the car."
-    show cs flipped with determination
-    hide cs
-    hide case
-    with moveoutleft
-    scene carpark
-    show arceus flipped at left
-    with fade
-    show cs flipped at right with moveinright
-    cs "Hey Arc, how you feeling?"
-    arceus "I do feel better now, yeah."
-    arceus "I think it was just too much sensory overload for me."
-    cs "Well that's good to hear."
-    cs "What's also good to hear is that we are rich as hell!"
-    show cs happy flipped
-    show case flipped at right
-    n "CS opens the case to reveal loads of gold bars and diamonds."
-    arceus "Holy shit! We're loaded!"
-    arceus "I can't believe I missed your big win."
-    show cs flipped
-    cs "Oh yeah, it was kinda funny. The man I won against puked and fell over."
-    arceus "Hahaha, I would've too if I lost that much money."
-    cs "Yeah, that's true."
+    if fun_value(42):
+        show cards5alt
+        n "CS and Mr. Green both have a royal flush with ace and king of spades."
+        stop music fadeout 3.0
+        music end
+        scene luigi2
+        show cs disappointed flipped at right
+        show green flipped at left
+        cs "What? That can't be right!"
+        show cs angry flipped
+        cs "You cheated!"
+        green "Hehehe, it doesn't matter becasue I'm gonna take all the money anyways!"
+        green "Hahahahahahahahahahahahahahahaha!!!!!!{nw}"
+        show lancer at center with moveintop
+        show lancer with vpunch
+        play sound "secret/explosion.mp3" volume 1.5
+        show green at t_punchup with move
+        pause 0.3
+        play music "<loop 0>secret/lancer.mp3" volume 1
+        music Lancer - Toby Fox
+        lancer "Hey guys!"
+        show lancer flipped with determination
+        show lancer with determination
+        show cs worried flipped
+        cs "What in the world???"
+        lancer "I just found this cool shiny metal in the back, but it didn't taste very good."
+        show case at mid_right with dissolve
+        lancer "Here, have it waiter dude!"
+        lancer "Cya later!"
+        hide lancer with moveouttop
+        stop music fadeout 3.0
+        music end
+        pause 2.0
+        show cs flipped
+        cs "Well then!"
+        cs "Awesome, I guess!"
+        cs "Time to show Arc!"
+        show cs with determination
+        hide case with dissolve
+        hide cs with moveoutright
+        scene casino1 with fade    
+        n "CS continues to look for Arc."
+        show cs disappointed at center with moveinleft
+        cs "Arc? Where are you?"
+        cs "Maybe he went to the bathroom?"
+        hide cs with moveoutright
+        scene vegasbathroom
+        show arceus at center
+        with fade
+        n "CS finds the bathroom, to see Arceus with his head up against the mirror."
+        show cs at left with moveinleft
+        cs "Hey, Arc! There you are! Are you okay?"
+        arceus "My head hurts so bad..."
+        arceus "I think I'm gonna head back to the car..."
+        cs "Alright, I'm ready to leave too, because we just won a ton of money!"
+        arceus "Wh... what?? Are you just trying to make me feel better?"
+        cs "No joke! Look, let's head out to the car!"
+        arceus "Alright..."
+        hide arceus with moveoutleft
+        pause 1.0
+        show cs flipped with determination
+        hide cs with moveoutleft
+        scene carpark
+        show arceus flipped at left
+        with fade
+        show cs flipped at right with moveinright
+        cs "Hey Arc, how you feeling?"
+        arceus "I do feel better now, yeah."
+        arceus "I think it was just too much sensory overload for me."
+        cs "Well that's good to hear."
+        cs "What's also good to hear is that we are rich as hell!"
+        show cs happy flipped
+        show case flipped at right
+        n "CS opens the case to reveal loads of gold bars and diamonds."
+        arceus "Holy shit! We're loaded!"
+        arceus "I can't believe I missed your big win."
+        show cs flipped
+        cs "Oh yeah, I don't really know what happened. Some blue kid gave this to me."
+        arceus "Oh, that's weird as hell."
+        cs "Yeah, but it's legit though! So I'm not complaining."
+
+    else:
+        show cards5
+        n "CS has a royal flush with his ace and king of spades, while Mr. Green had a seven of hearts and a ten of clubs."
+        n "Mr. Green pukes all over the table and falls over backwards, passing out."
+        stop music fadeout 3.0
+        music end
+        $ achievement_manager.unlock("High Roller")
+        scene luigi2
+        show cs happy flipped at right
+        cs "Woohoo! I won!"
+        play music "<loop 0>price_right.mp3" volume 0.5
+        music Price Is Right Theme - Edd Kalehoff
+        luigi "Congratulations, sir, you just won 100 million dollars!"
+        cs "Yay! I can pay for my Creative Cloud without donations!"
+        n "CS jumps into the air and cheers."
+        show cs flipped
+        cs "Finally! Me and Arc can buy whatever we want! I need to let him know!"
+        n "Before CS runs off to find Arc, the owner of the casino approaches CS."
+        show jerma at left with moveinleft
+        jerma "Well, look who we have here!"
+        jerma "You beat my highest roller! How'd you do that?"
+        cs "Uhh, I dunno."
+        jerma "Well, congrats on your victory!"
+        jerma "I'll go get the money for you, and Mr. Green is gonna have to pay up to me now."
+        cs "Alright, I'm gonna go find my friend real quick."
+        jerma "Sure thing, meet me back by the employee access area."
+        show cs with determination
+        hide cs with moveoutright
+        stop music fadeout 3.0
+        music end
+        scene casino1 with fade    
+        n "CS continues to look for Arc."
+        show cs disappointed at center with moveinleft
+        cs "Arc? Where are you?"
+        cs "Maybe he went to the bathroom?"
+        hide cs with moveoutright
+        scene vegasbathroom
+        show arceus at center
+        with fade
+        n "CS finds the bathroom, to see Arceus with his head up against the mirror."
+        show cs at left with moveinleft
+        cs "Hey, Arc! There you are! Are you okay?"
+        arceus "My head hurts so bad..."
+        arceus "I think I'm gonna head back to the car..."
+        cs "Alright, I'm ready to leave too, because we just won 100 million dollars!"
+        arceus "Wh... what?? Are you just trying to make me feel better?"
+        cs "No joke! Look, head out to the car, and I'll meet you there!"
+        arceus "Alright..."
+        hide arceus with moveoutleft
+        n "Arceus stumbles out back into the casino, while CS goes to collect his money."
+        show cs flipped with determination
+        hide cs with moveoutleft
+        n "CS meets Jerma in the employee backroom."
+        scene backroomcasino
+        show jerma at center
+        show case flipped at mid_mid_left
+        with fade
+        n "Jerma is waiting with a briefcase."
+        show cs at left behind case with moveinleft
+        jerma "Here he is! The man of the hour!"
+        cs "I honestly didn't think I was gonna win, I would've been in massive debt if I lost."
+        jerma "Well good thing you won, because Mr. Green is in massive debt to us right now."
+        jerma "Believe me, we've had a lot of money problems recently with Mr. Green, we've had to have him steal from our rival, Pasta Italiano."
+        show cs disappointed
+        cs "Yikes, that sounds shitty."
+        show cs
+        cs "Welp, I wish you the best of luck, Mr. Jerma!"
+        show cs at mid_mid_left with move
+        show case with determination
+        show cs at left
+        show case at left
+        with move
+        n "After CS collects his winnings, he finds his way back to the car."
+        show cs flipped with determination
+        hide cs
+        hide case
+        with moveoutleft
+        scene carpark
+        show arceus flipped at left
+        with fade
+        show cs flipped at right with moveinright
+        cs "Hey Arc, how you feeling?"
+        arceus "I do feel better now, yeah."
+        arceus "I think it was just too much sensory overload for me."
+        cs "Well that's good to hear."
+        cs "What's also good to hear is that we are rich as hell!"
+        show cs happy flipped
+        show case flipped at right
+        n "CS opens the case to reveal loads of gold bars and diamonds."
+        arceus "Holy shit! We're loaded!"
+        arceus "I can't believe I missed your big win."
+        show cs flipped
+        cs "Oh yeah, it was kinda funny. The man I won against puked and fell over."
+        arceus "Hahaha, I would've too if I lost that much money."
+        cs "Yeah, that's true."
     hide case
     arceus "Alright well, what's the plan now? We have so much money, we can do almost anything with it!"
     menu:

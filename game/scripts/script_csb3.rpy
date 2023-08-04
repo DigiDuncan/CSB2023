@@ -279,9 +279,14 @@ label boost:
     n "The two stand for a moment awkwardly staring at the camera."
     linus "...Go ahead and cut."
     cs "Who knew recording could be so stressful. I could use a drink. The lights are so bright."
-    linus "Here. Take this water bottle, it will keep you hydrated and your water cool. lttstore.com"
-    cs "... Linus, we aren't filming..."
-    linus "Sorry. Force of habit."
+    if fun_value(15):
+        linus "Here. Take this water bottl-- oops!"
+        n "Linus drops the water bottle on the ground."
+        cs "You really have butter fingers with everything, Linus."
+    else:
+        linus "Here. Take this water bottle, it will keep you hydrated and your water cool. lttstore.com"
+        cs "... Linus, we aren't filming..."
+        linus "Sorry. Force of habit."
     n "Some time passes and they finish the recording."
     n "Afterwards, CS goes up to Linus' office."
     scene loffice with fade

@@ -2,7 +2,7 @@ init python:
     import math
 
     # Constants
-    SHARPENER_MOUTH = 1430
+    SHARPENER_MOUTH = 1430 
     DIGI_SCORE = 270 # if not preferences.streamer_mode else 200  # maybe this is a good idea
     MAX_PENCIL_LENGTH = 20.0
     SHARPEN_AMOUNT = 0.5
