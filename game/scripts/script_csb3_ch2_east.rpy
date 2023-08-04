@@ -1048,6 +1048,8 @@ label streaming:
     cs "Well guys..."
     n "CS chuckles."
     cs "It's a long story..."
+    if preferences.csbounciness == 1.0:
+        $ achievement_manager.unlock("Boingy Boingy Boingy")
     scene black with fade
     stop music fadeout 1.0   
     play music "secret/credits.mp3" volume 0.5

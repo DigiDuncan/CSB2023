@@ -23,5 +23,6 @@ define achievements = [
     Achievement("Broken Masquerade", "???", "Peer behind the fourth wall.", "ekhi"),
     Achievement("HoH SiS's Most Wanted", "???", "Complete CSBI.", "csbi"),
     Achievement("Welcome to CSBIII, Mother Fucker", "???", "Complete CSBII.", "csbii"),
-    Achievement("That's All, Folks!", "???", "Complete CSBIII.", "csbiii")
+    Achievement("That's All, Folks!", "???", "Complete CSBIII.", "csbiii"),
+    Achievement("Boingy Boingy Boingy", "???", "Max out CSBounciness and beat the game.", "max_bounce")
 ]
