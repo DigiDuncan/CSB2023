@@ -126,11 +126,17 @@ init python:
             zo = 1 - math.pow(-2 * x + 2, 2) / 2
         return lerp(minimum, maximum, zo)
 
+    def ease_exp(minimum: float, maximum: float, start: float, end: float, x: float) -> float:
+        """https://easings.net/#easeInExpo"""
+        x = find_percent(start, end, x)
+        zo = math.pow(2, 10 * x - 10)
+        return lerp(minimum, maximum, zo)
+
     # FUN VALUES
     def fun_value(rarity: int, id: str = None) -> bool:
         if not preferences.bounciness_enable:
             return False
-        chance = ease_linear(1 / rarity, 1, 0, 100, preferences.csbounciness)
+        chance = ease_exp(1 / rarity, 1, 0, 100, preferences.csbounciness)
         ret = renpy.random.random() < chance
         if ret and id is not None:
             fun_values_seen.add(id)
