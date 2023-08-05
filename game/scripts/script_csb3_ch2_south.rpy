@@ -154,6 +154,16 @@ label utah:
     show cs dark at left with moveinleft
     show arceus flipped dark at right with moveinleft
     show arceus dark
+    if fun_value(25):
+        pause 1.0
+        show fumobee at lego_run
+        play sound "secret/vine.mp3"
+        with move
+        pause 1.0
+        arceus "Ahhh!! FUCK!"
+        arceus "Please CS, can we NOT go to the one place with a BEE?"
+        cs "No? It's just a plushie..."
+        cs "Anyways..."
     cs "Wow, a Lego-themed pizza restaurant. This place looks like it was built out of Lego too!"
     cs "Woah Arc, look at those big Minifigure statues!"
     n "Up in the front of the room, 4 human-scale Lego minifigures stand up on a stage."
@@ -215,53 +225,29 @@ label utah:
     hide cs
     hide arceus
     with moveoutleft
-    if fun_value(87):
-        scene fazhall
-        show fumobee at truecenter
-        with fade
-        show cs dark at mid_left_left with moveinleft
-        show arceus dark at mid_right_right with moveinright   
-        n "Before they make it to the door, Arceus stops dead in his tracks."
-        cs "Hey! Why'd we stop?"
-        n "CS looks ahead of him to see the fumo bee standing infront of them."
-        cs "Ohh."
-        arceus "CS, don't move a muscle."
-        cs "Why not? it's just a fum-"
-        play music "<loop 0>hard_drive.mp3" volume 0.5
-        music Hard Drive to Munch You - Mr. Sauceman
-        n "The fumo bee starts running at CS."
-        "Fumo Bee" "Wah."
-        n "Arceus quickly drags CS out of the way at the last second."
-        show arceus dark at left
-        show fumobee at lego_run
-        with move
-        hide fumobee with moveoutbottom
-        n "The fumo bee crashes into the wall and falls to the ground."
-    else:
-        scene fazhall
-        show lego at truecenter
-        with fade
-        show cs dark at mid_left_left with moveinleft
-        show arceus dark at mid_right_right with moveinright   
-        n "Before they make it to the door, Arceus stops dead in his tracks."
-        cs "Hey! Why'd we stop?"
-        n "CS looks ahead of him to see the giant Minifigure standing infront of them."
-        cs "Ohh."
-        arceus "CS, don't move a muscle."
-        cs "Why not? it's just a leg-"
-        play music "<loop 0>hard_drive.mp3" volume 0.5
-        music Hard Drive to Munch You - Mr. Sauceman
-        show lego eyes
-        n "The Minifigure's eyes glow as it raises its arms up and starts running at CS."
-        lego "HEEYYYY!!!!!"
-        n "Arceus quickly drags CS out of the way at the last second."
-        show arceus dark at left
-        show lego eyes at lego_run
-        with move
-        lego "A MAN HAS FALLEN INTO THE-"
-        hide lego with moveoutbottom
-        n "The Minifigure crashes into the wall and falls to the ground."
-
+    scene fazhall
+    show lego at truecenter
+    with fade
+    show cs dark at mid_left_left with moveinleft
+    show arceus dark at mid_right_right with moveinright   
+    n "Before they make it to the door, Arceus stops dead in his tracks."
+    cs "Hey! Why'd we stop?"
+    n "CS looks ahead of him to see the giant Minifigure standing infront of them."
+    cs "Ohh."
+    arceus "CS, don't move a muscle."
+    cs "Why not? it's just a leg-"
+    play music "<loop 0>hard_drive.mp3" volume 0.5
+    music Hard Drive to Munch You - Mr. Sauceman
+    show lego eyes
+    n "The Minifigure's eyes glow as it raises its arms up and starts running at CS."
+    lego "HEEYYYY!!!!!"
+    n "Arceus quickly drags CS out of the way at the last second."
+    show arceus dark at left
+    show lego eyes at lego_run
+    with move
+    lego "A MAN HAS FALLEN INTO THE-"
+    hide lego with moveoutbottom
+    n "The Minifigure crashes into the wall and falls to the ground."
     show cs worried dark with vpunch
     n "The other figures up ahead turn on and start moving toward Arc and CS."
     arceus "RUN CS RUN!!!"
@@ -596,8 +582,6 @@ label poker3:
         play music "<loop 0>secret/lancer.mp3" volume 1
         music Lancer - Toby Fox
         lancer "Hey guys!"
-        show lancer flipped with determination
-        show lancer with determination
         show cs worried flipped
         cs "What in the world???"
         lancer "I just found this cool shiny metal in the back, but it didn't taste very good."
