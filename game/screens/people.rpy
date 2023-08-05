@@ -139,6 +139,6 @@ screen person(l):
             elif l == "iris":
                 add "secret/iris.png" xalign 1.0 yalign 1.0 zoom 0.75
             elif l == "hoh_worker":
-                pass
+                add "images/characters/hoh_worker.png" xalign 1.0 yalign 1.0 zoom 0.50
             else:
                 add f"images/characters/{l}.png" xalign 1.0 yalign 1.0 zoom 0.75
