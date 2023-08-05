@@ -73,6 +73,8 @@ python early:
         lint = lint_music,
         execute = execute_music)
 
+default fun_values_seen = set()
+
 init python:
     # MUSIC POPUP
     def _music_gen_text(st, at):
@@ -125,8 +127,16 @@ init python:
         return lerp(minimum, maximum, zo)
 
     # FUN VALUES
-    def fun_value(rarity: int) -> bool:
+    def fun_value(rarity: int, id: str = None) -> bool:
         if not preferences.bounciness_enable:
             return False
         chance = ease_linear(1 / rarity, 1, 0, 100, preferences.csbounciness)
-        return renpy.random.random() < chance
+        ret = renpy.random.random() < chance
+        if ret and id is not None:
+            fun_values_seen.add(id)
+        elif not ret and id is not None:
+            fun_values_seen.remove(id)
+        return ret
+
+    def event_happened(id: str) -> bool:
+        return id in fun_values_seen
