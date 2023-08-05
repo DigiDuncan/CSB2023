@@ -139,4 +139,8 @@ init python:
         return ret
 
     def event_happened(id: str) -> bool:
-        return id in fun_values_seen
+        global fun_values_seen
+        try:
+            return id in fun_values_seen
+        except NameError:
+            fun_values_seen = set()
