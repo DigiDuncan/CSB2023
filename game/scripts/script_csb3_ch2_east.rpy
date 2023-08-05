@@ -766,7 +766,10 @@ label pennsylvania:
     host "AND WITH THAT, LET'S BEGIN! READY?"
     n "CS glances over at Digi, and they nod at each other."
     host "3..."
-    n "A whirr is heard as Digi's arm motors charge up."
+    if fun_value(50, "archack"):
+        n "Digi looks to be smacking his arm."
+    else:
+        n "A whirr is heard as Digi's arm motors charge up."
     host "2..."
     n "CS concentrates, his hands ready to sharpen like his life depends on it."
     host "1..."
@@ -835,7 +838,11 @@ label win_pencil:
     n "Digi runs up to the group."
     digi "Hey, uh, can I get a ride?"
     cs "Huh?"
-    digi "Usually, they'd pay for my train home, but I uh, lost."
+    if event_happened("archack"):
+        digi "Well, my arm got hacked, or something, so I lost."
+        arceus "Heh."
+    else:
+        digi "Usually, they'd pay for my train home, but I uh, lost."
     cs "Ooh, right."
     cs "Billy, we got room for one more?"
     hide cs
