@@ -304,6 +304,7 @@ label vegas:
         music "Al's Penthouse - Andy Blythe"
         if fun_value(10):
             scene vegasjade
+            $ persistent.seen.add("bubble")
         else:
             scene vegas
         show cscar1

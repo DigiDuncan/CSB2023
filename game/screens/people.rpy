@@ -44,7 +44,10 @@ init python:
         "tsa": "TSA Agent",
         "luigi": "Luigi Mario",
         "mika": "Mikapara",
+        "bubble": "Bub Ble",
+        "lancer": "Lancer",
         "iris": "???"
+
     }
 
 screen people_nav():

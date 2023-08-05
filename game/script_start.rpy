@@ -236,7 +236,7 @@ define k207 = Character("K20-7", callback = renpy.partial(char_callback, name = 
 define billy_far = Character("Billy (from off screen)", callback = renpy.partial(char_callback, beep = "billy_from_afar"))
 define direct = Character("Director", callback = renpy.partial(char_callback, beep = "iris"))
 define monika = Character("Monika", callback = renpy.partial(char_callback, beep = "iris"))
-define lancer = Character("Lancer", callback = renpy.partial(char_callback, beep = "lancer"))
+define lancer = Character("Lancer", callback = renpy.partial(char_callback, name = "lancer", beep = "lancer"))
 
 # Character Images
 ## CS
@@ -574,8 +574,8 @@ image vegasjade = "secret/vegasjade.png"
 image fumobee = "secret/fumobee.png"
 image fumobee2 = "secret/fumobee2.png"
 image cards5alt = "secret/cards5alt.png"
-image lancer = "secret/lancer.png"
-image lancer flipped = "flip:secret/lancer.png"
+image lancer = "characters/lancer.png"
+image lancer flipped = "flip:characters/lancer.png"
 
 # Animated Sprites
 image blue_light:
