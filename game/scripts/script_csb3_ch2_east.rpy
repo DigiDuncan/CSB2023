@@ -845,7 +845,6 @@ label win_pencil:
         digi "Usually, they'd pay for my train home, but I uh, lost."
     cs "Ooh, right."
     cs "Billy, we got room for one more?"
-    hide cs
     n "Billy looks at Digi."
     billy "He and Arc are both pretty small, I think they'll fit in the back just fine."
     show arceus at right with moveinright

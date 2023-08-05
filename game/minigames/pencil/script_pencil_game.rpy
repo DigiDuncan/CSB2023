@@ -3,10 +3,7 @@ init python:
 
     # Constants
     SHARPENER_MOUTH = 1430
-    if event_happened("archack"):
-        DIGI_SCORE = 180
-    else:
-        DIGI_SCORE = 270
+    DIGI_SCORE = 270
     MAX_PENCIL_LENGTH = 20.0
     SHARPEN_AMOUNT = 0.5
     GAME_LENGTH = 63
@@ -202,12 +199,20 @@ label play_pencilgame:
 
     if _return >= 300:
         $ achievement_manager.unlock("Pencilovania")
-    if _return > DIGI_SCORE:
-        $ achievement_manager.unlock("Pencil Sharpening Day!")
-        jump win_pencil
+    if event_happened("archack"):
+        if _return > 180:
+            $ achievement_manager.unlock("Pencil Sharpening Day!")
+            jump win_pencil
+        else:
+            arceus "You dumb foreskin."
+            jump play_pencilgame         
     else:
-        arceus "You dumb foreskin."
-        jump play_pencilgame
+        if _return > DIGI_SCORE:
+            $ achievement_manager.unlock("Pencil Sharpening Day!")
+            jump win_pencil
+        else:
+            arceus "You dumb foreskin."
+            jump play_pencilgame
 
 label pencilgame_done:
     show arceus
