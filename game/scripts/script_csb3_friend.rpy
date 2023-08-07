@@ -91,8 +91,12 @@ label microcenter:
             jump low_gpu
 
 label high_gpu:
-    cs "Alright, I'm just gonna get the RTX 4080."
-    cs "I know NVIDIA pretty well, so I'm sure they're the best option to choose here."
+    if fanboy_type == "nvidia":
+        cs "Alright, I'm just gonna get the Radeon RX 7900."
+        cs "Linus likes to use AMD for streaming and gaming, so I hope this will work."
+    else:
+        cs "Alright, I'm just gonna get the RTX 4080."
+        cs "I know NVIDIA pretty well, so I'm sure they're the best option to choose here."
     cs "Let's go check this out."
     hide cs with moveoutright
     n "CS heads out to the checkout."
@@ -120,11 +124,17 @@ label high_gpu:
     show linus at center with move
     linus "Alright let's see what we got here..."
     linus "Nice, an Intel i9..."
-    linus "Ooh! A RTX 4080! Excellent choice CS!"
-    show cs happy
-    cs "Thank you!"
-    show cs
-    cs "I'm more of an NVIDIA guy myself, so I decided to go with it."
+    if fanboy_type == "nvidia":
+        linus "Oh nice! A Radeon RX 7900! That's amazing!"
+        show cs happy
+        cs "Thanks man!"
+        cs "I was hoping you'd like it, since you use AMD for gaming."
+    else:
+        linus "Ooh! A RTX 4080! Excellent choice CS!"
+        show cs happy
+        cs "Thank you!"
+        show cs
+        cs "I'm more of an NVIDIA guy myself, so I decided to go with it."
     linus "Well you made some great purchases, I'm excited to see the specs we'll get with this!"
     linus "I'm gonna go get the set ready, and then we can build and test it on camera."
     cs "Oh wow, already?"
@@ -151,8 +161,12 @@ label high_gpu:
     cs "Hey guys, CS here! How's it goin? Today we are going to build this CraAaAaAaAzY computer!"
     pause 1.0
     linus "Yeah. As I was going to say, we have our new employee, CS188 here, helping build a new streaming machine for LTT!"
-    linus "CS picked out the parts, which were an Intel i9 and a RTX 4080!"
-    cs "Woohoo! NVIDIA is the best!"
+    if fanboy_type == "nvidia":
+        linus "CS picked out the parts, which were an Intel i9 and a Radeon RX 7900!"
+        cs "Woohoo! Go AMD!"       
+    else:
+        linus "CS picked out the parts, which were an Intel i9 and a RTX 4080!"
+        cs "Woohoo! NVIDIA is the best!"
     linus "Alright, let's put the computer together!"
     stop music fadeout 3.0
     music end
@@ -188,7 +202,10 @@ label high_gpu:
     linus "Yeah I'm getting there."
     linus "Yeah, they seem to like your build!"
     cs "Yes!!"
-    cs "Aw man, what are those people saying? NVIDIA sucks, you guys are cucks?"
+    if fanboy_type == "nvidia":
+        cs "Aw man, what are those people saying? AMD blows, you guys are hoes?"        
+    else:
+        cs "Aw man, what are those people saying? NVIDIA sucks, you guys are cucks?"
     cs "Heyyy!!! No I'm not!"
     linus "Yeah, there are always people who get upset because of the brand we used. Don't worry, this always happens."
     show cs disappointed
@@ -197,7 +214,10 @@ label high_gpu:
     n "CS and Linus can hear a growing audience of people yelling nearby."
     linus "Hold on, lemme go check the window."
     hide linus at offscreenright with moveoutright
-    n "Linus heads over the window, and peers out to see a bunch of angry AMD fans rioting."
+    if fanboy_type == "nvidia":
+            n "Linus heads over the window, and peers out to see a bunch of angry NVIDIA fans rioting."
+    else:
+        n "Linus heads over the window, and peers out to see a bunch of angry AMD fans rioting."
     linus "Oh shit, this is bad..."
     cs "What is it?"
     n "All of a sudden, a brick flies through the window!"
@@ -206,7 +226,10 @@ label high_gpu:
     show cs worried
     cs "Woah! Stand back Linus!"
     show linus at center with moveinright
-    linus "The AMD fans are rioting outside! We need to hide!"
+    if fanboy_type == "nvidia":
+        linus "The NVIDIA fans are rioting outside! We need to hide!"        
+    else:
+        linus "The AMD fans are rioting outside! We need to hide!"
     show cs flipped with determination
     hide cs
     hide linus
@@ -238,7 +261,10 @@ label high_gpu:
     scene outside_ltt with fade
     play sound "<loop 0>yelling.ogg" loop volume 1
     show cs angry at center with dissolve
-    "Fanboys" "Boo!! You suck! AMD is the best!"
+    if fanboy_type == "nvidia":
+        "Fanboys" "Boo!! You suck! NVIDIA is the best!"        
+    else:
+        "Fanboys" "Boo!! You suck! AMD is the best!"
     cs "Yeah well, let's see about that!"
     stop sound fadeout 3.0
     jump after_fanboy
@@ -262,7 +288,10 @@ label after_fanboy:
     cs "Yeah! I fought them and scared the rest away!"
     linus "Well shit! Good job CS!"
     linus "Hey I mean, if this happened again, would you be ready again to fight back?"
-    cs "Umm, if they're AMD fans, sure thing I guess."
+    if fanboy_type == "nvidia":
+        cs "Umm, if they're NVIDIA fans, sure thing I guess."       
+    else:
+        cs "Umm, if they're AMD fans, sure thing I guess."
     linus "Great! I'll be right back."
     hide linus with moveoutleft
     show cs worried
@@ -655,7 +684,7 @@ label fire_range:
     cs "Hell yeah! Let's do this!"
     scene black with fade
     n "Arceus takes one of the LTT laptops to scramble their location, and head off to the car dealer."
-    scene road_to_canada with fade
+    scene canada_block with fade
     show pakoo at right
     show cs at center
     show arceus flipped at left
@@ -673,7 +702,7 @@ label fire_range:
     show pakoo at left with move
     pause 1.0
     show pakoo flipped with determination
-    show pakoo at right with move
+    show pakoo flipped at right with move
     show pakoo with determination
     pakoo "I had these few spare with me, you guys should just keep them."
     pakoo "One may or may not be LTT property that I stole."
@@ -687,7 +716,7 @@ label fire_range:
     arceus "Alright, here we are."
     cs "So we can pick any car we'd like?"
     arceus "Basically, yeah."
-    show carguy at mid_right
+    show carguy at mid_right with moveinright
     carguy "Check out all these nice cars!"
     carguy "Nooooot so nice that you fellas don't have a car though."
     carguy "Wouldn't it be nice if having a car was this easy?"
@@ -696,19 +725,22 @@ label fire_range:
     arceus "I don't think that's new technolo-- {w=1.0}{nw}"
     carguy "Right this way, please!"
     cs "Sure, I guess."
+    show carguy flipped with determination
     hide carguy with moveoutright
     hide pakoo
     hide cs
     hide arceus
     with moveoutright
     scene dealer_cars with fade
-    show carguy at right
+    show carguy flipped at right
     show arceus flipped at center
     show cs at mid_left
     show pakoo flipped at left behind cs
     with moveinleft
+    show carguy with determination
     carguy "Look at all these nice cars!"
     carguy "You guys look around, I'll be in the dealership building when you guys pick something you like."
+    show carguy flipped with determination
     hide carguy with moveoutright
     pause 0.5
     show arceus flipped at mid_right
