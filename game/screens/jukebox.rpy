@@ -60,7 +60,7 @@ init python:
         "The Chase - Toby Fox": "chase.mp3",
         "Friendship - Toby Fox": "friendship.mp3",
         "Creative Exercise - Hirokazu Tanaka": "creative_exercise.mp3",
-        "Lancer - Toby Fox": "secret/lancer.mp3"
+        "Lancer - Toby Fox": "lancer.mp3"
     }
     global album_map
 
@@ -116,7 +116,10 @@ screen jukebox_nav():
             xoffset 350
             for k, v in music_map.items():
                 if k in persistent.heard:
-                    textbutton k action ShowMenu("music_screen", k), Play("jukebox", "audio/"+v, relative_volume=0.5)
+                    if v in ["lancer.mp3"]:
+                        textbutton k action ShowMenu("music_screen", k), Play("jukebox", "secret/" + v, relative_volume=0.5)
+                    else:
+                        textbutton k action ShowMenu("music_screen", k), Play("jukebox", "audio/" + v, relative_volume=0.5)
 
     textbutton "Return to categories" action ShowMenu("category_welcome"), Stop("jukebox"), PauseAudio("music", False) yoffset 950 xoffset 25
     textbutton "Return" action Return(), Stop("jukebox"), PauseAudio("music", False) yoffset 1000 xoffset 25

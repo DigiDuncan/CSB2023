@@ -130,14 +130,16 @@ screen person(l):
                         fetched = "The bio didn't load correctly. Ask Digi to fix the game."
 
                 text (fetched)
+            # MCs
             if l == "cs":
                 add "images/characters/cs/neutral.png" xalign 1.0 yalign 1.0 zoom 0.75 xzoom -1
             elif l == "arceus":
                 add "images/characters/arc/arceus.png" xalign 1.0 yalign 1.0 zoom 0.75
             elif l == "anno":
                 add "images/characters/anno/anno.png" xalign 1.0 yalign 1.0 zoom 0.75
-            elif l == "iris":
-                add "secret/iris.png" xalign 1.0 yalign 1.0 zoom 0.75
+            # SECRET
+            elif l in ["iris", "bubble", "lancer"]:
+                add f"secret/{l}.png" xalign 1.0 yalign 1.0 zoom 0.75
             elif l == "hoh_worker":
                 add "images/characters/hoh_worker.png" xalign 1.0 yalign 1.0 zoom 0.50
             else:

@@ -574,8 +574,8 @@ image vegasjade = "secret/vegasjade.png"
 image fumobee = "secret/fumobee.png"
 image fumobee2 = "secret/fumobee2.png"
 image cards5alt = "secret/cards5alt.png"
-image lancer = "characters/lancer.png"
-image lancer flipped = "flip:characters/lancer.png"
+image lancer = "secret/lancer.png"
+image lancer flipped = "flip:secret/lancer.png"
 
 # Animated Sprites
 image blue_light:
