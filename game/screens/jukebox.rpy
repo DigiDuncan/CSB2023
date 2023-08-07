@@ -60,7 +60,7 @@ init python:
         "The Chase - Toby Fox": "chase.mp3",
         "Friendship - Toby Fox": "friendship.mp3",
         "Creative Exercise - Hirokazu Tanaka": "creative_exercise.mp3",
-        "Lancer - Toby Fox": "lancer.mp3"
+        "Lancer - Toby Fox": "secret/lancer.mp3"
     }
     global album_map
 
