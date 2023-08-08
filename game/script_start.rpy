@@ -459,6 +459,8 @@ image course_3 = "bg/course_3.png"
 image canada_block = "bg/canada_block.png"
 image dealership = "bg/dealership.png"
 image dealer_cars = "bg/dealer_cars.png"
+image flintcar_outside = "bg/flintcaroutside.png"
+image flintcar_fg = "bg/flintcar_fg.png"
 
 ## CSBIII Chapter 2
 image washington_road day = "bg/washingtonroadday.png"

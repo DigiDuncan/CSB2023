@@ -761,7 +761,49 @@ label reg_car:
     cs "Hey! I have a Honda Civic, let's just take that!"
     arceus "Works for me."
     pakoo "Let's go!"
-    show cs_car_inside with fade
+    scene cs_car_inside with fade
+    
+label flint_car:
+    cs "Is that... the Flintstones car??"
+    arceus "CS, please don't pick that car. It's probably just--{w=1.0}{nw}"
+    cs "It's probably one of those cars that is really good, and they just try to make it look bad on the outside."
+    cs "I wanna try it out!"
+    arceus "This is an awful idea..."
+    show arceus flipped with determination
+    hide arceus
+    hide cs
+    hide pakoo
+    with moveoutright
+    scene flintcar_outside with fade
+    show cs at mid_right
+    show arceus flipped at mid_left
+    show pakoo flipped at left
+    with moveinleft
+    show cs flipped with determination
+    cs "Yep! This thing looks like the real deal!"
+    show pakoo disappointed flipped with determination
+    pakoo "You sure about this? You gotta use your feet to move, man."
+    cs "Yes, I know how the Flintmobile works."
+    scene flintcar_fg
+    show dealership behind flintcar_fg
+    with fade
+    show cs at left with moveinleft
+    show pakoo at right with moveinright
+    cs "Alrighty, you all in?"
+    "Pakoo and Arc" "Yeah."
+    n "CS presses his feet against the pavement and struggles to move the car."
+    show cs concentrate with hpunch
+    cs "Hnnnnngg..."
+    show cs disappointed
+    cs "Shit."
+    show pakoo disappointed
+    play sound "siren.ogg" loop fadein 2.0 volume 0.2
+    show blue_light at left
+    show red_light at right
+    n "Sirens blare in the dealership as Copguy pulls up to the car."
+    copguy "Out of all the cars in my lot you decided to escape with, it was the Flintmobile?"
+    copguy "That's kinda sad."
+    return
     
 
 label low_gpu:
