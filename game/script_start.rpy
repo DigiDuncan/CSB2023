@@ -461,6 +461,7 @@ image dealership = "bg/dealership.png"
 image dealer_cars = "bg/dealer_cars.png"
 image flintcar_outside = "bg/flintcaroutside.png"
 image flintcar_fg = "bg/flintcar_fg.png"
+image car_inside_fg = "bg/car_inside_fg.png"
 
 ## CSBIII Chapter 2
 image washington_road day = "bg/washingtonroadday.png"

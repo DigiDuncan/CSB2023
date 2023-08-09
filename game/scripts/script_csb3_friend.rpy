@@ -761,8 +761,23 @@ label reg_car:
     cs "Hey! I have a Honda Civic, let's just take that!"
     arceus "Works for me."
     pakoo "Let's go!"
-    scene cs_car_inside with fade
+    scene car_inside_fg
+    show dealership behind car_inside_fg
+    with fade
+    show cs at left with moveinleft
+    show pakoo at right with moveinright
+    pakoo "Punch it CS! We gotta get outta here!"
+    play sound "siren.ogg" loop fadein 2.0 volume 0.2
+    show blue_light at left
+    show red_light at right
+    n "As CS started up the car and began to drive off, the cops pull up around him."
+    show cs disappointed
+    show pakoo disappointed
+    n "Copguy walks up next to the car."
+    copguy "Looks like you walked right into my trap!"
+    copguy "We've got you guys surrounded! Get out of the car now!"
     
+
 label flint_car:
     cs "Is that... the Flintstones car??"
     arceus "CS, please don't pick that car. It's probably just--{w=1.0}{nw}"
