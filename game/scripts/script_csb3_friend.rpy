@@ -776,6 +776,88 @@ label reg_car:
     n "Copguy walks up next to the car."
     copguy "Looks like you walked right into my trap!"
     copguy "We've got you guys surrounded! Get out of the car now!"
+    arceus "You guys ready?"
+    "CS and Pakoo" "Yep. Let's do this."
+    n "They all slowly step out of the car."
+    scene dealership
+    show blue_light at left
+    show red_light at right
+    show copguy flipped at left
+    with fade
+    show cs disappointed flipped at center
+    show arceus at mid_right
+    show pakoo at right
+    with moveinright
+    copguy "Alright, put your hands in the air!"
+    n "CS pulls out his rifle and fires a few shots in the air."
+    show cs angry flipped
+    show m4 flipped at center with determination
+    show m4 fire flipped at center with determination
+    play sound "<loop 0>hks2.wav" volume 1
+    show m4 flipped at center with determination 
+    pause 0.5
+    show m4 flipped at center with determination
+    show m4 fire flipped at center with determination
+    play sound "<loop 0>hks2.wav" volume 1
+    show m4 flipped at center with determination
+    pause 0.5
+    cs "Make me!"
+    copguy "He's armed! Men, get in position and fire!"
+    jump so_join
+
+label so_join:
+    scene dealership
+    show copguy flipped at left
+    show cs disappointed flipped at center
+    show arceus at mid_right
+    show pakoo disappointed at right
+    with fade
+    n "After that intense fight, the cops seemed to best CS and co."
+    cs "*Huff huff* Damnit..."
+    pakoo "He's way too strong..."
+    copguy "Is that you guys got?"
+    copguy "Or are you ready to finally admit your defeat?"
+    tate "Not so fast!!"
+    show copguy
+    copguy "Huh??"
+    show tate at left with moveinleft
+    show copguy with vpunch
+    show tate at center
+    show copguy at right
+    show cs at offscreenright
+    show arceus at offscreenright
+    show pakoo at offscreenright
+    with move
+    show mika at mid_left
+    show kitty at left
+    with moveinleft
+    tate "That's right! You have to mess with us now!"
+    mika "Yeah! Fuck da police! (For legal reasons this is a joke)"
+    kitty "Let's get them!"
+    jump after_cop_fight
+
+label after_cop_fight:
+    scene dealership
+    show tate at mid_mid_left
+    show mika at mid_left
+    show kitty at left
+    with fade
+    tate "Woohoo! We did it!"
+    tate "You guys alright?"
+    show cs flipped at mid_mid_right
+    show arceus at mid_right
+    show pakoo  at right
+    with moveinright
+    cs "Yeah, uhm..."
+    cs "How are you doing?"
+    tate "I'm fine, but we're gonna have to talk about how this whole situation came to be later."
+    show cs disappointed
+    cs "Fuck."
+    show cs
+    mika "Pakoo, next time you are gonna fight people, let me know in advance!"
+    show pakoo disappointed
+    pakoo "I know I know, this just came up not to long ago!"
+    show pakoo
     
 
 label flint_car:

@@ -237,6 +237,8 @@ define billy_far = Character("Billy (from off screen)", callback = renpy.partial
 define direct = Character("Director", callback = renpy.partial(char_callback, beep = "iris"))
 define monika = Character("Monika", callback = renpy.partial(char_callback, beep = "iris"))
 define lancer = Character("Lancer", callback = renpy.partial(char_callback, name = "lancer", beep = "lancer"))
+define tate = Character("Tate", callback = char_callback)
+define kitty = Character("Kitty", callback = char_callback)
 
 # Character Images
 ## CS
@@ -383,6 +385,8 @@ image bouncer2 = "characters/bouncer.png"
 image mika = "characters/mika.png"
 image craptopreal = "characters/laptop.png"
 image monika = "characters/monika.png"
+image tate = "characters/tate.png"
+image kitty = "characters/kitty.png"
 
 # Background Images
 ## CSBI
@@ -566,7 +570,10 @@ image drillbreak = "drillymaysfuck.png"
 image sansbrick = "sansbrick.png"
 image oldgame = "oldgame.png"
 image m4 = "m4.png"
+image m4 flipped = "flip:m4.png"
 image m4 fire = "m4fire.png"
+image m4 fire flipped = "flip:m4fire.png"
+
 
 # Movies
 image car background = Movie(play="movies/car_background.mp4")
