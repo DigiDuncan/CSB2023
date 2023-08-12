@@ -858,7 +858,26 @@ label after_cop_fight:
     show pakoo disappointed
     pakoo "I know I know, this just came up not to long ago!"
     show pakoo
+    arceus "Well, I know we just met up, but we should probably get going."
+    tate "Alright, we'll follow you guys, and aid you in anyway possible."
+    cs "Shit yeah, Copguys not dead, he's gonna probably call backup on us."
+    pakoo "Let's start heading east."
+    show cs
+    show arceus flipped
+    show pakoo flipped
+    with determination
+    hide cs
+    hide arceus
+    hide pakoo
+    with moveoutright
+    hide kitty
+    hide mika
+    hide tate
+    with moveoutleft
+    scene black with fade
+    n "Both groups head out of the dealership, making haste from the cops."
     
+
 
 label flint_car:
     cs "Is that... the Flintstones car??"
