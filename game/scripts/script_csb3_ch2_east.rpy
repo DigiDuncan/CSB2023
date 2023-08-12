@@ -209,6 +209,7 @@ label montana:
     billy "Hi, it's Billy! What are you doing by my car?"
     cultist "Get out of the car."
     billy "No, it's my car!"
+    show cultist gun
     n "The cultist pulls out a revolver and aims at Billy's head."
     cultist "Does this like a joke to you guys?"
     cultist "Out of the car. Now."
@@ -224,15 +225,18 @@ label montana:
     show cultist at mid_right with moveinright
     cultist "So, do you want to explain what is going on here?"
     cs "Uhm, we were heading on past here to the next-"
+    show cultist gun
     n "The cultist aims his gun at CS."
     cultist "Look, I don't care where you are going."
     show cultist at center with moveinleft
     cultist "We are part of the Blue Branch Cult, and our motto is that we hate everything."
     arceus "Like, everything?"
+    show cultist gun
     n "The cultist aims at Arceus."
     cultist "You wanna fuck with me?"
     arceus "I mean. If you're offering."
     n "The cultist looks annoyed."
+    show cultist
     cultist "I'm gonna get the rest of the gang to deal with you guys, don't fucking move."
     hide cultist with moveoutright
     pause 2.0
