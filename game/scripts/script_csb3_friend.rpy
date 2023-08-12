@@ -876,6 +876,26 @@ label after_cop_fight:
     with moveoutleft
     scene black with fade
     n "Both groups head out of the dealership, making haste from the cops."
+    n "Meanwhile, Copguy heads back to the police station to call for help."
+    scene sheriff_office
+    play music "<loop 0>police_station.mp3" volume 0.5  
+    music Police Station - Lorin Nelson  
+    show sheriff at left
+    with fade
+    show copguy at mid_right with moveinright
+    copguy "Hey Sheriff, I have some unfortunate news."
+    sheriff "God damnit what is it this time?"
+    copguy "Not only does CS have a group of allies, but he is armed to the teeth."
+    copguy "He took down most of my men."
+    sheriff "Ah hell... so this is really THAT bad isn't it..."
+    sheriff "We're gonna need some backup."
+    copguy "Yeah, I just came to ask about that."
+    sheriff "Lemme call the National Guard, did you see where they were headed?"
+    copguy "I think they were headed east, sir."
+    sheriff "Alright. I'll call the Montana National Guard, we can probably block them off."
+    copguy "Thank you so much. I will continue to track them down."
+    sheriff "Good luck, Copguy."
+    hide copguy with moveoutright
     
 
 

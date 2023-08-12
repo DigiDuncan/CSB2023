@@ -720,7 +720,6 @@ label ytp_magic_fight:
     cs "Eh, not really."
     arceus "Alright, well..."
     arceus "Let's keep going..."
-    scene black with fade
     scene washington_road with fade
     show cs dark at left with moveinleft
     show arceus dark at right with moveinright
@@ -1017,7 +1016,7 @@ label choose_direction:
     cs "We've been walking all night, I'm exhausted."
     arceus "Yeah, let's hope we find food and water soon."
     cs "Hey uhh, do you know exactly where we're going?"
-    arceus "Well, I noticed that the sun set in our opposite direction, which means we're heading east right now."
+    arceus "Well, I noticed that the sun rises ahead of us, which means we're heading east right now."
     arceus "We can head in any direction really. The second we find a better form of transportation than walking, we're taking it."
     menu:
         "Which way do you want to go?"

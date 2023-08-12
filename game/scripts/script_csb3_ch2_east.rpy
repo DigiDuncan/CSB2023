@@ -174,11 +174,10 @@ label montana:
     cashier "I gotcha covered. Have a good day!"
     hide cashier with moveoutright
     cs "Letsgoletsgoletsgoweneedtogetoutofhere"
-    hide cs at moveoutright
-    hide billy at moveoutright
+    hide cs with moveoutright
+    hide billy with moveoutright
     stop music fadeout 3.0   
     music end
-    scene black with fade
     play sound "doorslam.ogg"
     scene hardwareoutside
     show billy car
@@ -236,9 +235,11 @@ label montana:
     n "The cultist looks annoyed."
     cultist "I'm gonna get the rest of the gang to deal with you guys, don't fucking move."
     hide cultist with moveoutright
+    pause 2.0
     show cultist at right with moveinright
     cultist "I mean it!"
     hide cultist with moveoutright
+    pause 1.5
     show cultist at right with moveinright
     cultist "Okay?"
     hide cultist with moveoutright
@@ -457,7 +458,6 @@ label nebraska:
     show arceus flipped at mid_left
     with moveinleft
     pakoo "Here we are, this is probably the best location to eat at, at least that I know of."
-    scene black with fade
     scene peppinopizzabg
     show peppinopizzafg
     with fade   
