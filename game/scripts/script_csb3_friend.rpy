@@ -757,6 +757,57 @@ label fire_range:
         "Flintstones Car":
             jump flint_car
 
+label cool_car:
+    $ nice_car = True
+    cs "That's a nice car!"
+    pakoo "That is a sick ass car."
+    arceus "Damn. Are we taking it CS?"
+    cs "Hell yeah! We can't just turn up a car as cool as this!"
+    scene joj_charger_fg
+    show dealership behind car_inside_fg
+    with fade
+    show cs at left with moveinleft
+    show pakoo at right with moveinright
+    pakoo "Punch it CS! We gotta get outta here!"
+    play sound "siren.ogg" loop fadein 2.0 volume 0.2
+    show blue_light at left
+    show red_light at right
+    n "As CS started up the car and began to drive off, the cops pull up around him."
+    show cs disappointed
+    show pakoo disappointed
+    n "Copguy walks up next to the car."
+    copguy "Nice car!"
+    copguy "Noooot so nice that you walked right into my trap!"
+    copguy "We've got you guys surrounded! Get out of the car now!"
+    arceus "You guys ready?"
+    "CS and Pakoo" "Yep. Let's do this."
+    n "They all slowly step out of the car."
+    scene dealership
+    show blue_light at left
+    show red_light at right
+    show copguy flipped at left
+    with fade
+    show cs disappointed flipped at center
+    show arceus at mid_right
+    show pakoo at right
+    with moveinright
+    copguy "Alright, put your hands in the air!"
+    n "CS pulls out his rifle and fires a few shots in the air."
+    show cs angry flipped
+    show m4 flipped at center with determination
+    show m4 fire flipped at center with determination
+    play sound "<loop 0>hks2.wav" volume 1
+    show m4 flipped at center with determination 
+    pause 0.5
+    show m4 flipped at center with determination
+    show m4 fire flipped at center with determination
+    play sound "<loop 0>hks2.wav" volume 1
+    show m4 flipped at center with determination
+    pause 0.5
+    cs "Make me!"
+    copguy "He's armed! Men, get in position and fire!"
+    jump so_join
+
 label reg_car:
     cs "Hey! I have a Honda Civic, let's just take that!"
     arceus "Works for me."
@@ -853,11 +904,28 @@ label after_cop_fight:
     tate "I'm fine, but we're gonna have to talk about how this whole situation came to be later."
     show cs disappointed
     cs "Fuck."
+    if nice_car:
+        tate "Also, nice car!"
+        show cs happy
+        cs "Thanks!"
+    else:
+        
     show cs
     mika "Pakoo, next time you are gonna fight people, let me know in advance!"
     show pakoo disappointed
     pakoo "I know I know, this just came up not to long ago!"
+    if nice_car:
+        mika "Dammn, nice car!"
+        show pakoo happy
+        pakoo "Thanks! I love this car."
+    else:
+
     show pakoo
+    if nice_car:
+        kitty "Nice car!"
+        arceus "Yeah!"
+    else:
+            
     arceus "Well, I know we just met up, but we should probably get going."
     tate "Alright, we'll follow you guys, and aid you in anyway possible."
     cs "Shit yeah, Copguys not dead, he's gonna probably call backup on us."
@@ -896,7 +964,8 @@ label after_cop_fight:
     copguy "Thank you so much. I will continue to track them down."
     sheriff "Good luck, Copguy."
     hide copguy with moveoutright
-    
+    scene black with fade
+    jump dpn_call
 
 
 label flint_car:
