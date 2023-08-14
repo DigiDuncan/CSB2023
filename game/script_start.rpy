@@ -228,17 +228,18 @@ define pencil = Character("Pencil Greeter", callback =renpy.partial(char_callbac
 define signup = Character("Signup Helper", callback = char_callback)
 define host = Character("Host", callback = renpy.partial(char_callback, name = "mettaton", beep = "snd_mtt"), what_font = "DTM-MONO.otf", what_size = 40)
 define tsa = Character("TSA Agent", callback = renpy.partial(char_callback, name = "tsa"))
-define luigi = Character("Luigi", callback = renpy.partial(char_callback, name = "luigi"))
+define luigi = Character("Luigi", callback = renpy.partial(char_callback, name = "luigi"))  # TODO: Beep
 define mika = Character("Mika", callback = renpy.partial(char_callback, name = "mika"))
 define k174 = Character("K17-4", callback = renpy.partial(char_callback, name = "k174"))
 define k199 = Character("K19-9", callback = renpy.partial(char_callback, name = "k199"))
 define k207 = Character("K20-7", callback = renpy.partial(char_callback, name = "k207"))
 define billy_far = Character("Billy (from off screen)", callback = renpy.partial(char_callback, beep = "billy_from_afar"))
 define direct = Character("Director", callback = renpy.partial(char_callback, beep = "iris"))
-define monika = Character("Monika", callback = renpy.partial(char_callback, beep = "iris"))
+define monika = Character("Monika", callback = renpy.partial(char_callback, beep = "iris"))  # TODO: Beep
 define lancer = Character("Lancer", callback = renpy.partial(char_callback, name = "lancer", beep = "lancer"))
-define tate = Character("Tate", callback = char_callback)
-define kitty = Character("Kitty", callback = char_callback)
+define tate = Character("Tate", callback = char_callback)  # TODO: Beep
+define kitty = Character("Kitty", callback = char_callback)  # TODO: Beep
+define obama = Character("Obama")  # TODO: Beep
 
 # Character Images
 ## CS

@@ -139,16 +139,6 @@ label fired:
     scene black with fade
     jump new_plan
 
-label new_plan:
-    scene outside_ltt
-    show cs angry at center
-    with fade
-    cs "This really sucks. One of my favorite YouTubers just kicked me out of my dream job and told me to never come back!"
-    show cs
-    cs "I would be acting super emotional right now, but the years of angry YouTube comments against me have already worn me down."
-    cs "Well, I guess I have no other choice than to look for another job."
-    return
-
 label boost:
     $ renpy.movie_cutscene("movies/good_cs_ytp.mpg")
     n "The next day."
