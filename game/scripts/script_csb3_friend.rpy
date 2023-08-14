@@ -910,6 +910,7 @@ label after_cop_fight:
         cs "Thanks!"
     else:
         show cs
+    show cs
     mika "Pakoo, next time you are gonna fight people, let me know in advance!"
     show pakoo disappointed
     pakoo "I know I know, this just came up not to long ago!"
@@ -919,6 +920,7 @@ label after_cop_fight:
         pakoo "Thanks! I love this car."
     else:
         show pakoo
+    show pakoo
     if nice_car:
         kitty "Nice car!"
         arceus "Yeah!"
@@ -962,6 +964,8 @@ label after_cop_fight:
     sheriff "Good luck, Copguy."
     hide copguy with moveoutright
     scene black with fade
+    music end
+    stop music fadeout 3.0
     jump dpn_call
 
 
