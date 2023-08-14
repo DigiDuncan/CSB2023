@@ -764,7 +764,7 @@ label cool_car:
     arceus "Damn. Are we taking it CS?"
     cs "Hell yeah! We can't just turn up a car as cool as this!"
     scene joj_charger_fg
-    show dealership behind car_inside_fg
+    show dealership behind joj_charger_fg
     with fade
     show cs at left with moveinleft
     show pakoo at right with moveinright
@@ -909,8 +909,7 @@ label after_cop_fight:
         show cs happy
         cs "Thanks!"
     else:
-        
-    show cs
+        show cs
     mika "Pakoo, next time you are gonna fight people, let me know in advance!"
     show pakoo disappointed
     pakoo "I know I know, this just came up not to long ago!"
@@ -919,14 +918,12 @@ label after_cop_fight:
         show pakoo happy
         pakoo "Thanks! I love this car."
     else:
-
-    show pakoo
+        show pakoo
     if nice_car:
         kitty "Nice car!"
         arceus "Yeah!"
     else:
-            
-    arceus "Well, I know we just met up, but we should probably get going."
+        arceus "Well, I know we just met up, but we should probably get going."
     tate "Alright, we'll follow you guys, and aid you in anyway possible."
     cs "Shit yeah, Copguys not dead, he's gonna probably call backup on us."
     pakoo "Let's start heading east."
