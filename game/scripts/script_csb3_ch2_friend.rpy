@@ -70,4 +70,19 @@ label dpn_call:
     tate "Anyways, how are you guys? I don't think we've properly met before."
     mika "Well, I'm Mika, and thankfully Pakoo called in time for us to arrive."
     kitty "Hi, I'm Kitty. I hope Arc is doing well enough."
-    
+    tate "I'm Tate. I'm sure they are doing just fine, and it's nice to meet you all."
+    tate "Now let's go kick some ass!"
+    scene car_inside_fg
+    show washington_road day behind car_inside_fg
+    show cs at left
+    show pakoo at right
+    with fade
+    pause 1.0
+    arceus "Alright, well it looks like Aria is gonna pick up Digi and Nova, and meet us here soon."
+    cs "Wow, that was fast!"
+    pakoo "Yeah that's crazy."
+    arceus "They'll meet us at some diner approximately in a few hours from where we are currently."
+    cs "Alright then, that sounds good to me! I'm hungry so it'll be nice to get some food."
+    arceus "Yeah, same."
+    scene black with fade
+    n "As a few hours pass, the DPN crew arrives at the S&P Diner, and wait to be served."
