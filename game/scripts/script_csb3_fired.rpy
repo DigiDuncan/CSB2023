@@ -106,3 +106,12 @@ label new_plan:
     cs "Woohoo!"  # haha I did it too Pakoo
 
     # scene hotel_room
+    cs "Maybe we should call Blank. He's like, an actual musician."
+    n "CS calls Blank on Discord."
+    blank "CS? Where the heck have you been?"
+    cs "Don't worry about it, I'll explain soon. I need tip on making music."
+    blank "Man, I don't know, I just open FL Studio and kinda click shit until music comes out."
+    cs "Wait, that's it?"
+    blank "I mean, that's not {i}it{/i}, but--"
+    cs "Awesome, thanks Blank!"
+    n "CS hangs up."

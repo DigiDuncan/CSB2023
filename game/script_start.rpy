@@ -240,6 +240,7 @@ define lancer = Character("Lancer", callback = renpy.partial(char_callback, name
 define tate = Character("Tate", callback = char_callback)  # TODO: Beep
 define kitty = Character("Kitty", callback = char_callback)  # TODO: Beep
 define obama = Character("Obama")  # TODO: Beep
+define blank = Character("Blank")
 
 # Character Images
 ## CS
