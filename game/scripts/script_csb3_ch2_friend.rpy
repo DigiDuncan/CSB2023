@@ -85,4 +85,29 @@ label dpn_call:
     cs "Alright then, that sounds good to me! I'm hungry so it'll be nice to get some food."
     arceus "Yeah, same."
     scene black with fade
-    n "As a few hours pass, the DPN crew arrives at the S&P Diner, and wait to be served."
+    n "As a few hours pass, the DPN crew arrives at the S&P Diner, and waits to be served."
+    scene dinerinside
+    show digi at right
+    show nova at center
+    show aria at left
+    with fade
+    digi "Finally, we can stretch our legs again."
+    nova "Remind me what you needed me here for again? I have a set later tonight I need to prepae for!"
+    digi "CS is in trouble, he's being chased by the cops."
+    nova "How in the world are we supposed to help with that?!"
+    aria "Don't worry, we can just trail them off with donuts if it gets really rough."
+    nova "You sure that will really work??"
+    aria "Tried and tested."
+    digi "CS and the gang should be passing by soon."
+    aria "Shit, they probably don't know where we are located."
+    aria "I'll go drive down the highway and lead them here, you guys wait back here just in case."
+    nova "Shouldn't we we all go together?"
+    aria "Nah, just stay here in case I miss them or something. I'll be fine."
+    digi "Aria, are you sure? I mean, the cops are after them."
+    aria "Yeah well, like I said, I know what I'm doing. I'll be back."
+    hide aria with moveoutright
+    pause 1.0
+    nova "They're gonna die."
+    scene black with fade
+    scene aria_car
+    
