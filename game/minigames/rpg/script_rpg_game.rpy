@@ -10,12 +10,13 @@ init python:
             self.func(fighters)
 
     class Fighter:
-        def __init__(self, name: str, enemy: bool, hp: int, ap: int, atk: int, multiplier: float = 1):
+        def __init__(self, name: str, enemy: bool, hp: int, ap: int, atk: int, attacks: list[Attack], multiplier: float = 1):
             self.name = name
             self.enemy = enemy
             self.health_points = int(hp * multiplier)
             self.armor_points = ap
             self._attack_points = int(atk * multiplier)
+            self.attacks = attacks
 
             self.confused: bool = False
 
