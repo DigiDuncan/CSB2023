@@ -2,7 +2,7 @@ init python:
     import math
 
     class Attack:
-        def __init__(self, name: str, func: callable[list[Fighter], None])
+        def __init__(self, name: str, func: callable[list[Fighter], None]):
             self.name = name
             self.func = func
 
