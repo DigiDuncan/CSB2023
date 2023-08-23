@@ -1,10 +1,12 @@
 init python:
     import math
+    from pathlib import PathLike
 
     # Functions
-    def damage_fighters(actor: Fighter, targets: list[Fighter], mult: float = 1, crit: bool = False):
+    def damage_fighters(actor: Fighter, targets: list[Fighter], mult: float = 1, count: int = 1, crit: bool = False):
         for f in targets:
-            f.hp -= actor.attack_points * mult * 1.5 if crit else actor.attack_points * mult
+            for _ in range(count):
+                f.hp -= actor.attack_points * mult * 1.5 if crit else actor.attack_points * mult
 
     # Objects
 
@@ -22,10 +24,12 @@ init python:
             self.name = name
             self.enemy = enemy
             self.health_points = int(hp * multiplier)
+            self.max_health = int(hp * multiplier)
             self.armor_points = ap
             self.attack_points = int(atk * multiplier)
             self.attacks = attacks
 
+            self.damage_per_turn = [()]
             self.confused: bool = False
 
         @property
@@ -56,8 +60,10 @@ init python:
             return self.health_points <= 0
 
     class Encounter:
-        def __init__(self, fighters: list[Fighter]):
+        def __init__(self, fighters: list[Fighter], background: Displayable, music: PathLike):
             self.fighters = fighters
+            self.background = background
+            self.music = music
 
         @property
         def allies(self) -> list[Fighter]:
