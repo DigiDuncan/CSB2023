@@ -71,7 +71,7 @@ init python:
         def __init__(self, name: str, func: callable[[Fighter, list[Fighter], dict], None], **kwargs):
             self.name = name
             self.func = func
-            self.options = **kwargs
+            self.options = kwargs
 
         def run(self, fighters: list[Fighter], crit: bool = False):
             self.func(self, fighters, crit, self.options)
