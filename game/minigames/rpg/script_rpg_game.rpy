@@ -153,7 +153,7 @@ init python:
     cop_fighter = Fighter("Cop", True, 150, 15, 30, [
         Attack("Punch", damage_fighters),
         Attack("Bullet Spray", damage_fighters, mult = 1.5)
-    ], Image("images/characters/ai_cop_guy_full.png"))
+    ], Image("images/characters/copguy.png"))
 
     example_encounter = Encounter([cs_fighter, cop_fighter], Image("images/bg/casino1.png"), "audio/card_castle.mp3")
 
@@ -191,11 +191,13 @@ init python:
             super().__init__(self)
         
         def render(self, width, height, st, at):
-            r = renpy.Render(640, 1080//2)
+            r = renpy.Render(640, renpy.image_size(self.fighter.sprite)[1])
             r.place(self.fighter.sprite, x=0, y=0)
             # Making the health bar
             red_part = Solid("#FF0000", xsize=1920//9, ysize=1920//54)
-            r.place(red_part, x=160, y=int(25))
+            r.place(red_part, x=(renpy.image_size(self.fighter.sprite)[0]//2)-((1920//9)//2), y=int(25))
+            green_part = Solid("#00FF00", xsize=int((1920//9)*((self.fighter.health_points)/(self.fighter.max_health))), ysize=1920//54)
+            r.place(green_part, x=(renpy.image_size(self.fighter.sprite)[0]//2)-((1920//9)//2), y=int(25))
             renpy.redraw(self, 0)
             return r
 
@@ -210,12 +212,15 @@ init python:
             if self.start_time is None:
                 self.start_time = st
             r = renpy.Render(1920, 1080)
+
+            # These are the enemies
+            for i in range(len(self.encounter.enemies)):
+                r.place(EnemyDisplayable(self.encounter.enemies[i]), x=(1920*(i*0.33)), y=(1080-renpy.image_size(self.encounter.enemies[i].sprite)[1])//2)
+
+
             # This adds in the allies
             for i in range(len(self.encounter.allies)):
                 r.place(StatBlockDisplayable(self.encounter.allies[i]), x=(1920*(i*0.25)+55), y=810)
-            # Do some fancy things here!
-            for i in range(len(self.encounter.enemies)):
-                r.place(EnemyDisplayable(self.encounter.enemies[i]), x=(1920*(i*0.33)), y=0)
 
             renpy.redraw(self, 0)
             return r
