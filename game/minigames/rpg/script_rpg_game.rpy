@@ -1,13 +1,21 @@
 init python:
     import math
 
+    # Functions
+    def damage_fighters(actor: Fighter, targets: list[Fighter], mult: float = 1, crit: bool = False):
+        for f in targets:
+            f.hp -= actor.attack_points * mult * 1.5 if crit else actor.attack_points * mult
+
+    # Objects
+
     class Attack:
-        def __init__(self, name: str, func: callable[list[Fighter], None]):
+        def __init__(self, name: str, func: callable[[Fighter, list[Fighter], float, bool], None], mult: float = 1):
             self.name = name
             self.func = func
+            self.mult = mult
 
-        def run(self, fighters: list[Fighter]):
-            self.func(fighters)
+        def run(self, fighters: list[Fighter], crit: bool = False):
+            self.func(self, fighters, self.mult, crit)
 
     class Fighter:
         def __init__(self, name: str, enemy: bool, hp: int, ap: int, atk: int, attacks: list[Attack], multiplier: float = 1):
@@ -15,10 +23,33 @@ init python:
             self.enemy = enemy
             self.health_points = int(hp * multiplier)
             self.armor_points = ap
-            self._attack_points = int(atk * multiplier)
+            self.attack_points = int(atk * multiplier)
             self.attacks = attacks
 
             self.confused: bool = False
+
+        @property
+        def normal(self) -> Attack:
+            return self.attacks[0]
+
+        @property
+        def special(self) -> Attack:
+            return self.attacks[1]
+
+        @property
+        def psi(self) -> Attack | None:
+            return self.attacks[2] if len(self.attacks) >= 3 else None
+
+        def attack(self, style: Literal["normal", "special", "psi"], targets: list[Fighter]):
+            hit = renpy.random.choice(True, False) if self.confused else True
+            if hit:
+                match style:
+                    case "normal":
+                        self.normal.run(targets)
+                    case "special":
+                        self.special.run(targets)
+                    case "psi":
+                        self.psi.run(targets)
 
         @property
         def dead(self) -> bool:
@@ -35,6 +66,13 @@ init python:
         @property
         def enemies(self) -> list[Fighter]:
             return [f for f in self.fighters if f.enemy]
+
+    # Example Fighter object
+
+    cs_fighter = Fighter("CS", False, 188, 5, 25, [
+        Attack("Punch", damage_fighters),
+        Attack("Bullet Spray", damage_fighters, 1.5)
+    ])
 
 
     class RPGGameDisplayable(renpy.Displayable):
