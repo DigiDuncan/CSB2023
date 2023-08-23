@@ -1,53 +1,54 @@
 init python:
     import math
+    from typing import Callable
 
     # Functions
-    def damage_fighters(actor: Fighter, targets: list[Fighter], crit: bool, options: dict):
+    def damage_fighters(subject: Fighter, targets: list[Fighter], crit: bool, options: dict):
         """Damage a list of fighters.
         Valid options:
-        - `mult: float`: The multiplier on top of `actor`'s ATK to hit the targets with.
+        - `mult: float`: The multiplier on top of `subject`'s ATK to hit the targets with.
         - `count: int`: The number of times to hit the targets."""
         mult = options.get("mult", 1)
         count = options.get("count", 1)
         for f in targets:
             for _ in range(count):
-                f.hp -= actor.attack_points * mult * 1.5 if crit else actor.attack_points * mult
+                f.hp -= subject.attack_points * mult * 1.5 if crit else subject.attack_points * mult
 
-    def heal_fighters(actor: Fighter, targets: list[Fighter], crit: bool, options: dict):
+    def heal_fighters(subject: Fighter, targets: list[Fighter], crit: bool, options: dict):
         """Heal a list of fighters.
         Valid options:
-        - `mult: float`: The multiplier on top of `actor`'s ATK to hit the targets with."""
+        - `mult: float`: The multiplier on top of `subject`'s ATK to hit the targets with."""
         mult = options.get("mult", 1)
         for f in targets:
-            f.hp += actor.attack_points * mult * 1.5 if crit else actor.attack_points * mult
+            f.hp += subject.attack_points * mult * 1.5 if crit else subject.attack_points * mult
 
-    def damage_over_time(actor: Fighter, targets: list[Fighter], crit: bool, options: dict):
+    def damage_over_time(subject: Fighter, targets: list[Fighter], crit: bool, options: dict):
         """Set a damage over time for a list of fighters.
         Valid options:
-        - `mult: float`: The multiplier on top of `actor`'s ATK to hit the targets with.
+        - `mult: float`: The multiplier on top of `subject`'s ATK to hit the targets with.
         - `turns: int`: The number of turns to hit the targets for."""
         mult = options.get("mult", 1)
         turns = options.get("turns", 1)
         for f in targets:
-            f.damage_over_time.append(actor.attack_points * mult, turns)
+            f.damage_over_time.append(subject.attack_points * mult, turns)
 
-    def random_damage_fighters(actor: Fighter, targets: list[Fighter], crit: bool, options: dict):
+    def random_damage_fighters(subject: Fighter, targets: list[Fighter], crit: bool, options: dict):
         """Damage a list of fighters for a value between two multiples..
         Valid options:
-        - `min_mult: float`: The minimum multiplier on top of `actor`'s ATK to hit the targets with.
-        - `max_mult: float`: The minimum multiplier on top of `actor`'s ATK to hit the targets with."""
+        - `min_mult: float`: The minimum multiplier on top of `subject`'s ATK to hit the targets with.
+        - `max_mult: float`: The minimum multiplier on top of `subject`'s ATK to hit the targets with."""
         min_mult = options.get("mult", 1)
         max_mult = options.get("count", 1)
         mult = max_mult if crit else renpy.random.uniform(min_mult, max_mult)
         for f in targets:
-            f.hp -= int(actor.attack_points * mult * 1.5) if crit else int(actor.attack_points * mult)
+            f.hp -= int(subject.attack_points * mult * 1.5) if crit else int(subject.attack_points * mult)
 
-    def confuse_targets(actor: Fighter, targets: list[Fighter], crit: bool, options: dict):
+    def confuse_targets(subject: Fighter, targets: list[Fighter], crit: bool, options: dict):
         """Confuse a list of targets."""
         for f in targets:
             f.confused = True
 
-    def change_stat(actor: Fighter, targets: list[Fighter], crit: bool, options: dict):
+    def change_stat(subject: Fighter, targets: list[Fighter], crit: bool, options: dict):
         """Damage a list of fighters.
         Valid options:
         - `stat: str`: The stat to affect ("hp", "ap", or "atk")
@@ -68,7 +69,7 @@ init python:
     # Objects
 
     class Attack:
-        def __init__(self, name: str, func: callable[[Fighter, list[Fighter], dict], None], **kwargs):
+        def __init__(self, name: str, func: Callable[[Fighter, list[Fighter], dict], None], **kwargs):
             self.name = name
             self.func = func
             self.options = kwargs
@@ -147,19 +148,61 @@ init python:
     cs_fighter = Fighter("CS", False, 188, 5, 25, [
         Attack("Punch", damage_fighters),
         Attack("Bullet Spray", damage_fighters, mult = 1.5)
-    ], Displayable("images/characters/cs/neutral.png"))
+    ], Image("images/characters/cs/neutral.png"))
 
     cop_fighter = Fighter("Cop", True, 150, 15, 30, [
         Attack("Punch", damage_fighters),
         Attack("Bullet Spray", damage_fighters, mult = 1.5)
-    ], Displayable("images/characters/ai_cop_guy_full.png"))
+    ], Image("images/characters/ai_cop_guy_full.png"))
 
-    example_encounter = Encounter([cs_fighter, cop_fighter] Displayable("images/bg/casino1.png"), "audio/card_castle.mp3")
+    example_encounter = Encounter([cs_fighter, cop_fighter], Image("images/bg/casino1.png"), "audio/card_castle.mp3")
 
+    # This is the displayable that controls what's happening in the boxes at the bottom of the screen
+
+    class StatBlockDisplayable(renpy.Displayable):
+        def __init__(self, fighter: Fighter):
+            self.fighter = fighter
+            super().__init__(self)
+
+        def render(self, width, height, st, at):
+            r = renpy.Render(370, 270)
+            stat_back = Image("minigames/rpg/statbox.png")
+            r.place(stat_back)
+            r.place(Text(self.fighter.name, color="#0000FF", size=50), x=25, y=5)
+            x_al = 25
+            y_al = 65
+            text_size = 50
+            spacing = 10
+            r.place(Text("HP: "+str(self.fighter.health_points)+"/"+str(self.fighter.max_health), color="#FFFFFF", size=text_size), x=x_al, y=y_al)
+            r.place(Text("AP: "+str(self.fighter.armor_points), color="#FFFFFF", size=text_size), x=x_al, y=y_al*2)
+            r.place(Text("ATK: "+str(self.fighter.attack_points), color="#FFFFFF", size=text_size), x=x_al, y=y_al*3)
+            renpy.redraw(self, 0)
+            return r
+        
+        def event(self, ev, x, y, st):
+            pass
+        def visit(self):
+            return[]
+
+    # These are the enemy displayables. They display the enemy and the enemies health
+    class EnemyDisplayable(renpy.Displayable):
+        def __init__(self, fighter: Fighter):
+            self.fighter = fighter
+            super().__init__(self)
+        
+        def render(self, width, height, st, at):
+            r = renpy.Render(640, 1080//2)
+            r.place(self.fighter.sprite, x=0, y=0)
+            # Making the health bar
+            red_part = Solid("#FF0000", xsize=1920//9, ysize=1920//54)
+            r.place(red_part, x=160, y=int(25))
+            renpy.redraw(self, 0)
+            return r
 
     class RPGGameDisplayable(renpy.Displayable):
-        def __init__(self):
-            renpy.Displayable.__init__(self)
+        def __init__(self, encounter: Encounter):
+            self.encounter = encounter
+            super().__init__(self)
             self.start_time = None
             self.win = None
 
@@ -167,8 +210,12 @@ init python:
             if self.start_time is None:
                 self.start_time = st
             r = renpy.Render(1920, 1080)
-
+            # This adds in the allies
+            for i in range(len(self.encounter.allies)):
+                r.place(StatBlockDisplayable(self.encounter.allies[i]), x=(1920*(i*0.25)+55), y=810)
             # Do some fancy things here!
+            for i in range(len(self.encounter.enemies)):
+                r.place(EnemyDisplayable(self.encounter.enemies[i]), x=(1920*(i*0.33)), y=0)
 
             renpy.redraw(self, 0)
             return r
@@ -185,14 +232,17 @@ init python:
 
 
 screen rpggame:
-    default rpggame = RPGGameDisplayable()
+    default rpggame = RPGGameDisplayable(example_encounter)
     # Add a background or any static images here.
+    add example_encounter.background
     add rpggame
 
 label play_rpggame:
     window hide
     $ quick_menu = False
+    play music example_encounter.music
     call screen rpggame
+    stop music
     $ quick_menu = True
     window show
 
