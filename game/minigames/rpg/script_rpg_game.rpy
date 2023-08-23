@@ -47,13 +47,14 @@ init python:
         def attack(self, style: Literal["normal", "special", "psi"], targets: list[Fighter]):
             hit = renpy.random.choice(True, False) if self.confused else True
             if hit:
-                match style:
-                    case "normal":
-                        self.normal.run(targets)
-                    case "special":
+                if style == "normal":
+                    self.normal.run(targets)
+                elif style == "special":
                         self.special.run(targets)
-                    case "psi":
-                        self.psi.run(targets)
+                elif style == "psi":
+                    self.psi.run(targets)
+                else:
+                    return
 
         @property
         def dead(self) -> bool:
