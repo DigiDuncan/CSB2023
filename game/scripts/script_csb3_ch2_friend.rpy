@@ -110,4 +110,45 @@ label dpn_call:
     nova "They're gonna die."
     scene black with fade
     scene aria_car
-    
+    #TODO: Aria Lines!
+
+    n "As Aria is approaching CS and the gang, they screech on the breaks as they almost run into a blockade."
+    n "Cop cars surround the vicinity of the area."
+    n "Aria gets out of the car."
+    scene cs_somewhere with fade
+    aria "Ah, great. What is this now?"
+    cop "Sorry, but a ragtag group of criminals is heading through this way, so we need to stop them."
+    aria "Ah, yeah. I understand."
+    aria "I'll just go around the other way."
+    n "As Aria heads back to the car, she sneaks around and knocks the cop's heads together, knocking them out."
+    cop "Ah shit! We got two men down! Arrest them!"
+    #TODO: Fight here.
+
+    scene black with fade
+    scene cs_somewhere with fade
+    n "After Aria takes care of the cops, CS and Tate's group rolls up on the other side of the blockade."
+    cs "Woah, what happened here? More cops?"
+    aria "Yeah, they weren't too much of a problem through."
+    tate "Good, the less cops, the better."
+    aria "Nova and Digi are at the diner up ahead, let's get this blockade out of the way and get going."
+    cs "Righty-o."
+    scene black with fade
+    n "CS, Aria, and Tate clear the road, and then follow Aria up to the diner."
+    n "Meanwhile, back at the diner..."
+    scene dinerinside
+    show digi at center
+    show nova at left
+    with fade
+    pause 2.0
+    nova "They are so dead."
+    digi "Stop saying that! They are probably fine."
+    digi "They should be here any moment now."
+    n "While they are talking, flashing lights shine through the diner."
+    digi "Oh shit! Fuck! It's the cops!"
+    nova "Great Digi, see what you did?"
+    digi "What did I do? Huh?"
+    cop "Hey! We've heard that there are 2 suspects here who are helping out a criminal gang! Show yourselves!"
+    nova "Alright Digi, let's do this."
+    digi "On it."
+    #TODO: Fight here.
+        
