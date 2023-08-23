@@ -7,6 +7,19 @@ init python:
             for _ in range(count):
                 f.hp -= actor.attack_points * mult * 1.5 if crit else actor.attack_points * mult
 
+    def damage_over_time(actor: Fighter, targets: list[Fighter], mult: float = 1, turns: int = 1):
+        for f in targets:
+            f.damage_over_time.append(actor.attack_points * mult, turns)
+
+    def random_damage_fighters(actor: Fighter, targets: list[Fighter], min_mult: float = 1, max_mult: float = 1, crit: bool = False):
+        mult = max_mult if crit else renpy.random.uniform(min_mult, max_mult)
+        for f in targets:
+            f.hp -= actor.attack_points * mult * 1.5 if crit else actor.attack_points * mult
+
+    def confuse_targets(actor: Fighter: targets: list[Fighter]):
+        for f in targets:
+            f.confused = True
+
     # Objects
 
     class Attack:
@@ -54,6 +67,14 @@ init python:
                     self.psi.run(targets)
                 else:
                     return
+
+        def tick(self):
+            if self.damage_over_time:
+                for h, t in self.damage_over_time:
+                    if t > 0:
+                        self.health_points -= h
+                    else:
+                        self.damage_over_time.remove((h, t))
 
         @property
         def dead(self) -> bool:
