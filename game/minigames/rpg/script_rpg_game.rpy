@@ -77,7 +77,7 @@ init python:
             self.func(self, fighters, crit, self.options)
 
     class Fighter:
-        def __init__(self, name: str, enemy: bool, hp: int, ap: int, atk: int, attacks: list[Attack], multiplier: float = 1):
+        def __init__(self, name: str, enemy: bool, hp: int, ap: int, atk: int, attacks: list[Attack], sprite: Displayable, multiplier: float = 1):
             self.name = name
             self.enemy = enemy
             self.health_points = int(hp * multiplier)
@@ -85,6 +85,7 @@ init python:
             self.armor_points = ap
             self.attack_points = int(atk * multiplier)
             self.attacks = attacks
+            self.sprite = sprite
 
             self.damage_per_turn: list[tuple] = []
             self.confused: bool = False
@@ -146,7 +147,14 @@ init python:
     cs_fighter = Fighter("CS", False, 188, 5, 25, [
         Attack("Punch", damage_fighters),
         Attack("Bullet Spray", damage_fighters, mult = 1.5)
-    ])
+    ], Displayable("images/characters/cs/neutral.png"))
+
+    cop_fighter = Fighter("Cop", True, 150, 15, 30, [
+        Attack("Punch", damage_fighters),
+        Attack("Bullet Spray", damage_fighters, mult = 1.5)
+    ], Displayable("images/characters/ai_cop_guy_full.png"))
+
+    example_encounter = Encounter([cs_fighter, cop_fighter] Displayable("images/bg/casino1.png"), "audio/card_castle.mp3")
 
 
     class RPGGameDisplayable(renpy.Displayable):
