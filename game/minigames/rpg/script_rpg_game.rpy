@@ -1,6 +1,5 @@
 init python:
     import math
-    from pathlib import PathLike
 
     # Functions
     def damage_fighters(actor: Fighter, targets: list[Fighter], mult: float = 1, count: int = 1, crit: bool = False):
@@ -29,7 +28,7 @@ init python:
             self.attack_points = int(atk * multiplier)
             self.attacks = attacks
 
-            self.damage_per_turn = [()]
+            self.damage_per_turn: list[tuple] = []
             self.confused: bool = False
 
         @property
@@ -61,7 +60,7 @@ init python:
             return self.health_points <= 0
 
     class Encounter:
-        def __init__(self, fighters: list[Fighter], background: Displayable, music: PathLike):
+        def __init__(self, fighters: list[Fighter], background: Displayable, music: str):
             self.fighters = fighters
             self.background = background
             self.music = music
