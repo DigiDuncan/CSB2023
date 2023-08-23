@@ -490,8 +490,9 @@ label csbi_end:
     hide worker_4 with moveoutleft
     show cs angry at center with move
     show black with dissolve
-    scene hoh_hq3 with dissolve
+    scene hoh_hq3
     show worker_5 at left
+    with dissolve
     show cs angry flipped at right with moveinright
     cs "Which way to the elevator? Now!"
     hide worker_5
