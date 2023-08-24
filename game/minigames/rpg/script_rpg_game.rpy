@@ -214,6 +214,11 @@ init python:
             renpy.redraw(self, 0)
             return r
 
+    def attack_choice(fighter: Fighter):
+        action = renpy.display_menu([("Nut", "nut"), ("Uhm", "uhm")])
+        return action
+
+
     class RPGGameDisplayable(renpy.Displayable):
         def __init__(self, encounter: Encounter):
             self.encounter = encounter
@@ -234,6 +239,12 @@ init python:
             # This adds in the allies
             for i in range(len(self.encounter.allies)):
                 r.place(StatBlockDisplayable(self.encounter.allies[i]), x=(1920*(i*0.25)+55), y=810)
+
+            #Prompts the user for input
+            action_list = []
+            chosen_action = attack_choice(self.encounter.allies[0])
+            action_list.append(chosen_action)
+            print(action_list)
 
             renpy.redraw(self, 0)
             return r
