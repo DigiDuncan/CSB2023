@@ -323,7 +323,7 @@ screen navigation():
 
         if main_menu:
 
-            textbutton _("Replay Intro") action Jump("splashscreen")
+            textbutton _("Replay Intro") action Call("splashscreen", from_current=True)
 
         textbutton _("CSettings") action ShowMenu("preferences")
 
