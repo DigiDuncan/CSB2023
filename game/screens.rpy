@@ -321,6 +321,10 @@ screen navigation():
 
         textbutton _("Extras") action ShowMenu("category_welcome")
 
+        if main_menu:
+
+            textbutton _("Replay Intro") action Jump("splashscreen")
+
         textbutton _("CSettings") action ShowMenu("preferences")
 
         textbutton _("Debug Menu") action ShowMenu("debug_menu")
