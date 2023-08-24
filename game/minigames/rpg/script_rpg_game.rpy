@@ -69,9 +69,10 @@ init python:
     # Objects
 
     class Attack:
-        def __init__(self, name: str, func: Callable[[Fighter, list[Fighter], dict], None], **kwargs):
+        def __init__(self, name: str, func: Callable[[Fighter, list[Fighter], dict], None], target_count = 1, **kwargs):
             self.name = name
             self.func = func
+            self.target_count = target_count
             self.options = kwargs
 
         def run(self, fighters: list[Fighter], crit: bool = False):
@@ -160,12 +161,12 @@ init python:
 
     cs_fighter = Fighter("CS", False, 188, 5, 25, [
         Attack("Punch", damage_fighters),
-        Attack("Bullet Spray", damage_fighters, mult = 1.5)
+        Attack("Bullet Spray", damage_fighters, target_count = 0, mult = 1.5)
     ], Image("images/characters/cs/neutral.png"))
 
     cop_fighter = Fighter("Cop", True, 150, 15, 30, [
         Attack("Punch", damage_fighters),
-        Attack("Bullet Spray", damage_fighters, mult = 1.5)
+        Attack("Bullet Spray", damage_fighters, target_count = 0, mult = 1.5)
     ], Image("images/characters/copguy.png"))
 
     example_encounter = Encounter([cs_fighter, cop_fighter], Image("images/bg/casino1.png"), "audio/card_castle.mp3")
