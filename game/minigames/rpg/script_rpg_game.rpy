@@ -143,6 +143,19 @@ init python:
         def enemies(self) -> list[Fighter]:
             return [f for f in self.fighters if f.enemy]
 
+        @property
+        def turn_order(self) -> list[Fighter]:
+            return self.allies + self.enemies
+
+        @property
+        def won(self) -> bool | None:
+            if len(self.allies) == 0:
+                return False
+            elif len(self.enemies) == 0:
+                return True
+            else:
+                return None
+
     # Example Fighter object
 
     cs_fighter = Fighter("CS", False, 188, 5, 25, [
