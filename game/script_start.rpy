@@ -216,11 +216,11 @@ define cultist = Character("Cultist", callback = renpy.partial(char_callback, na
 define cultist_2 = Character("Cultist 2", callback = char_callback)
 define cultist_3 = Character("Cultist 3", callback = char_callback)
 define scott = Character("Scott", callback = renpy.partial(char_callback, name = "scott", beep = "scott"))
-define terry = Character("Terry", callback = renpy.partial(char_callback, name = "terry"))  # TODO: Beep
-define carla = Character("Carla", callback = renpy.partial(char_callback, name = "carla"))  # TODO: Beep
-define peppino = Character("Peppino", callback = renpy.partial(char_callback, name = "peppino"))  # TODO: Beep
+define terry = Character("Terry", callback = renpy.partial(char_callback, name = "terry", beep = "terry"))
+define carla = Character("Carla", callback = renpy.partial(char_callback, name = "carla", beep = "carla"))
+define peppino = Character("Peppino", callback = renpy.partial(char_callback, name = "peppino", beep = "peppino"))
 define iris = Character("Iris", callback = renpy.partial(char_callback, name = "iris", beep = "iris"))
-define lego = Character("LegoBot", callback = renpy.partial(char_callback, name = "lego"))  # TODO: Beep
+define lego = Character("LegoBot", callback = renpy.partial(char_callback, name = "lego", beep = "lego"))
 define trailtrash = Character("Trailer Trash", callback = renpy.partial(char_callback, name = "trailtrash"))
 define green = Character("Mr. Green", callback = renpy.partial(char_callback, name = "green", beep = "green"), what_color="#00FF00")
 define jerma = Character("Jerma", callback = renpy.partial(char_callback, name = "jerma", beep = "jerma"))
@@ -228,18 +228,18 @@ define pencil = Character("Pencil Greeter", callback =renpy.partial(char_callbac
 define signup = Character("Signup Helper", callback = char_callback)
 define host = Character("Host", callback = renpy.partial(char_callback, name = "mettaton", beep = "snd_mtt"), what_font = "DTM-MONO.otf", what_size = 40)
 define tsa = Character("TSA Agent", callback = renpy.partial(char_callback, name = "tsa"))
-define luigi = Character("Luigi", callback = renpy.partial(char_callback, name = "luigi"))  # TODO: Beep
-define mika = Character("Mika", callback = renpy.partial(char_callback, name = "mika"))  # TODO: Beep
+define luigi = Character("Luigi", callback = renpy.partial(char_callback, name = "luigi", beep = "luigi"))
+define mika = Character("Mika", callback = renpy.partial(char_callback, name = "mika", beep = "mika"))
 define k174 = Character("K17-4", callback = renpy.partial(char_callback, name = "k174"))
 define k199 = Character("K19-9", callback = renpy.partial(char_callback, name = "k199"))
 define k207 = Character("K20-7", callback = renpy.partial(char_callback, name = "k207"))
 define billy_far = Character("Billy (from off screen)", callback = renpy.partial(char_callback, beep = "billy_from_afar"))
 define direct = Character("Director", callback = renpy.partial(char_callback, beep = "iris"))
-define monika = Character("Monika", callback = renpy.partial(char_callback, beep = "iris"))  # TODO: Beep
+define monika = Character("Monika", callback = renpy.partial(char_callback, beep = "monika"))
 define lancer = Character("Lancer", callback = renpy.partial(char_callback, name = "lancer", beep = "lancer"))
 define tate = Character("Tate", callback = char_callback)  # TODO: Beep
 define kitty = Character("Kitty", callback = char_callback)  # TODO: Beep
-define obama = Character("Obama")  # TODO: Beep
+define obama = Character("Obama", callback = renpy.partial(char_callback, beep = "obama"))
 define blank = Character("Blank")  # TODO: Beep
 define aria = Character("Aria")  # TODO: Beep
 define cop = Character("Cop")
