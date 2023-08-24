@@ -168,7 +168,7 @@ init python:
         Attack("Bullet Spray", damage_fighters, mult = 1.5)
     ], Image("images/characters/copguy.png"))
 
-    example_encounter = Encounter([cs_fighter, cop_fighter], Image("images/bg/casino1.png"), "audio/card_castle.mp3")
+    encounter = Encounter([cs_fighter], Image("images/bg/casino1.png"), "audio/card_castle.mp3")
 
     # This is the displayable that controls what's happening in the boxes at the bottom of the screen
 
@@ -216,6 +216,7 @@ init python:
 
     def attack_choice(fighter: Fighter):
         action = renpy.display_menu([("Nut", "nut"), ("Uhm", "uhm")])
+        ui.close()
         return action
 
 
@@ -241,10 +242,9 @@ init python:
                 r.place(StatBlockDisplayable(self.encounter.allies[i]), x=(1920*(i*0.25)+55), y=810)
 
             #Prompts the user for input
-            action_list = []
-            chosen_action = attack_choice(self.encounter.allies[0])
-            action_list.append(chosen_action)
-            print(action_list)
+            # action_list = []
+            # action_list.append(renpy.invoke_in_new_context(attack_choice(self.encounter.allies[0])))
+            # print(action_list)
 
             renpy.redraw(self, 0)
             return r
@@ -259,18 +259,34 @@ init python:
         def visit(self):
             return [] # Assets needed to load
 
-
-screen rpggame:
-    default rpggame = RPGGameDisplayable(example_encounter)
+screen rpggame():
+    $ global encounter
+    default rpggame = RPGGameDisplayable(encounter)
     # Add a background or any static images here.
-    add example_encounter.background
+    add encounter.background
     add rpggame
+
+label game_loop:
+    $ global encounter
+    # First phase, get the user inputs of what each fighter should do.
+    $ actions = []
+    if not encounter.allies[0].dead:
+        $ curr_move = []
+        menu:
+            "What will [encounter.allies[0].name] do?"
+            "[encounter.allies[0].attacks[0].name]":
+                $ curr_move[0] = encounter.allies[0].attacks[0]
+            "[encounter.allies[0].attacks[1].name]":
+                $ curr_move[0] = encounter.allies[0].attacks[1]
+        
+    jump rpggame_done
 
 label play_rpggame:
     window hide
     $ quick_menu = False
-    play music example_encounter.music
-    call screen rpggame
+    play music encounter.music
+    show screen rpggame
+    jump game_loop
     stop music
     $ quick_menu = True
     window show
