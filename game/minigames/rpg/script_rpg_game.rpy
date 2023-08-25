@@ -261,6 +261,7 @@ screen rpggame():
     add rpggame
 
 label game_loop:
+    $ global encounter
     while encounter.won is None:
         # First phase, get the user inputs of what each fighter should do.
         $ actions = []
@@ -289,6 +290,7 @@ label game_loop:
             $ actions[counter][0].attack(actions[counter][1], actions[counter][2])
             $ counter += 1
         $ renpy.redraw(rpggame, 0)
+    jump rpggame_done
 
 label play_rpggame:
     window hide
@@ -296,6 +298,8 @@ label play_rpggame:
     play music encounter.music
     show screen rpggame
     jump game_loop
+
+label rpggame_done:
     stop music
     $ quick_menu = True
     window show
@@ -306,7 +310,3 @@ label play_rpggame:
     else:
         pass
         # Thing for lose condition
-
-label rpggame_done:
-    # Thing to do after the game if we reach here.
-    pass
