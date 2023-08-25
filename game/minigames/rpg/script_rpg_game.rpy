@@ -30,7 +30,7 @@ init python:
         mult = options.get("mult", 1)
         turns = options.get("turns", 1)
         for f in targets:
-            f.damage_over_time.append(subject.attack_points * mult, turns)
+            f.damage_per_turn.append(subject.attack_points * mult, turns)
 
     def random_damage_fighters(subject: Fighter, targets: list[Fighter], crit: bool, options: dict):
         """Damage a list of fighters for a value between two multiples..
@@ -117,12 +117,12 @@ init python:
                     return
 
         def tick(self):
-            if self.damage_over_time:
-                for h, t in self.damage_over_time:
+            if self.damage_per_turn:
+                for h, t in self.damage_per_turn:
                     if t > 0:
                         self.health_points -= h
                     else:
-                        self.damage_over_time.remove((h, t))
+                        self.damage_per_turn.remove((h, t))
             if self.confused:
                 self.confused = renpy.random.choice(True, False)
 
@@ -290,6 +290,13 @@ label game_loop:
             $ actions[counter][0].attack(actions[counter][1], actions[counter][2])
             $ counter += 1
         $ renpy.redraw(rpggame, 0)
+        python:
+            for f in encounter.turn_order:
+                f.tick()
+                if f.dead:
+                    encounter.fighters.remove(f)
+        $ renpy.redraw(rpggame, 0)
+
     jump rpggame_done
 
 label play_rpggame:
