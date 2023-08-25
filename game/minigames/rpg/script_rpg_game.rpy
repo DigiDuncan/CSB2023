@@ -12,7 +12,7 @@ init python:
         count = options.get("count", 1)
         for f in targets:
             for _ in range(count):
-                f.hp -= subject.attack_points * mult * 1.5 if crit else subject.attack_points * mult
+                f.health_points -= subject.attack_points * mult * 1.5 if crit else subject.attack_points * mult
 
     def heal_fighters(subject: Fighter, targets: list[Fighter], crit: bool, options: dict):
         """Heal a list of fighters.
@@ -20,7 +20,7 @@ init python:
         - `mult: float`: The multiplier on top of `subject`'s ATK to hit the targets with."""
         mult = options.get("mult", 1)
         for f in targets:
-            f.hp += subject.attack_points * mult * 1.5 if crit else subject.attack_points * mult
+            f.health_points += subject.attack_points * mult * 1.5 if crit else subject.attack_points * mult
 
     def damage_over_time(subject: Fighter, targets: list[Fighter], crit: bool, options: dict):
         """Set a damage over time for a list of fighters.
@@ -41,7 +41,7 @@ init python:
         max_mult = options.get("count", 1)
         mult = max_mult if crit else renpy.random.uniform(min_mult, max_mult)
         for f in targets:
-            f.hp -= int(subject.attack_points * mult * 1.5) if crit else int(subject.attack_points * mult)
+            f.health_points -= int(subject.attack_points * mult * 1.5) if crit else int(subject.attack_points * mult)
 
     def confuse_targets(subject: Fighter, targets: list[Fighter], crit: bool, options: dict):
         """Confuse a list of targets."""
@@ -169,7 +169,7 @@ init python:
         Attack("Bullet Spray", damage_fighters, target_count = 0, mult = 1.5)
     ], Image("images/characters/copguy.png"))
 
-    encounter = Encounter([cs_fighter], Image("images/bg/casino1.png"), "audio/card_castle.mp3")
+    encounter = Encounter([cs_fighter, cop_fighter], Image("images/bg/casino1.png"), "audio/card_castle.mp3")
 
     # This is the displayable that controls what's happening in the boxes at the bottom of the screen
 
@@ -214,12 +214,6 @@ init python:
             r.place(green_part, x=(renpy.image_size(self.fighter.sprite)[0]//2)-((1920//9)//2), y=int(25))
             renpy.redraw(self, 0)
             return r
-
-    def attack_choice(fighter: Fighter):
-        action = renpy.display_menu([("Nut", "nut"), ("Uhm", "uhm")])
-        ui.close()
-        return action
-
 
     class RPGGameDisplayable(renpy.Displayable):
         def __init__(self, encounter: Encounter):
@@ -268,19 +262,34 @@ screen rpggame():
     add rpggame
 
 label game_loop:
-    $ global encounter
-    # First phase, get the user inputs of what each fighter should do.
-    $ actions = []
-    if not encounter.allies[0].dead:
-        $ curr_move = []
-        menu:
-            "What will [encounter.allies[0].name] do?"
-            "[encounter.allies[0].attacks[0].name]":
-                $ curr_move[0] = encounter.allies[0].attacks[0]
-            "[encounter.allies[0].attacks[1].name]":
-                $ curr_move[0] = encounter.allies[0].attacks[1]
-        
-    jump rpggame_done
+    while encounter.won is None:
+        # First phase, get the user inputs of what each fighter should do.
+        $ actions = []
+        $ counter = 0
+        while counter < len(encounter.allies):
+            $ curr_fighter = encounter.allies[counter]
+            if not encounter.allies[0].dead:
+                $ selected_move = None
+                menu:
+                    "What will [curr_fighter.name] do?"
+                    "[curr_fighter.normal.name]":
+                        $ selected_move = "normal"
+                    "[curr_fighter.special.name]":
+                        $ selected_move = "special"
+                $ target_count = getattr(curr_fighter, selected_move).target_count
+                $ targets = []
+                while target_count > 0:
+                    $ targets.append(renpy.display_menu([("Who will "+curr_fighter.name+" attack? ("+str(target_count)+")", None)]+[(e.name, e) for e in encounter.enemies]))
+                    $ target_count = target_count-1
+                $ actions.append((curr_fighter, selected_move, targets))
+
+            $ counter = counter + 1
+        # Execute the attacks
+        $ counter = 0
+        while counter < len(actions):
+            $ actions[counter][0].attack(actions[counter][1], actions[counter][2])
+
+        $ rpggame.render()
 
 label play_rpggame:
     window hide
