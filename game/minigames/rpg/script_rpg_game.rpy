@@ -75,8 +75,8 @@ init python:
             self.target_count = target_count
             self.options = kwargs
 
-        def run(self, fighters: list[Fighter], crit: bool = False):
-            self.func(self, fighters, crit, self.options)
+        def run(self, subject: Fighter, fighters: list[Fighter], crit: bool = False):
+            self.func(subject, fighters, crit, self.options)
 
     class Fighter:
         def __init__(self, name: str, enemy: bool, hp: int, ap: int, atk: int, attacks: list[Attack], sprite: Displayable, multiplier: float = 1):
@@ -108,11 +108,11 @@ init python:
             hit = renpy.random.choice(True, False) if self.confused else True
             if hit:
                 if style == "normal":
-                    self.normal.run(targets)
+                    self.normal.run(self, targets)
                 elif style == "special":
-                        self.special.run(targets)
+                        self.special.run(self, targets)
                 elif style == "psi":
-                    self.psi.run(targets)
+                    self.psi.run(self, targets)
                 else:
                     return
 
@@ -240,8 +240,6 @@ init python:
             # action_list = []
             # action_list.append(renpy.invoke_in_new_context(attack_choice(self.encounter.allies[0])))
             # print(action_list)
-
-            renpy.redraw(self, 0)
             return r
 
         def event(self, ev, x, y, st):
@@ -254,9 +252,10 @@ init python:
         def visit(self):
             return [] # Assets needed to load
 
+    rpggame = RPGGameDisplayable(encounter)
+
 screen rpggame():
     $ global encounter
-    default rpggame = RPGGameDisplayable(encounter)
     # Add a background or any static images here.
     add encounter.background
     add rpggame
@@ -288,8 +287,8 @@ label game_loop:
         $ counter = 0
         while counter < len(actions):
             $ actions[counter][0].attack(actions[counter][1], actions[counter][2])
-
-        $ rpggame.render()
+            $ counter += 1
+        $ renpy.redraw(rpggame, 0)
 
 label play_rpggame:
     window hide
