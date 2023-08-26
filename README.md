@@ -12,7 +12,7 @@ See what needs to be done below.
 ## TODO
 -------
 
-### BIg Tasks
+### Big Tasks
 [] RPG Game
 [] Rhythm Game
 [] Country Route Game
@@ -22,7 +22,7 @@ See what needs to be done below.
 [] Credits
 [] Arceus Art
 [] Aria Art
-[] End FIght cutscene
+[] End Fight cutscene
 
 ### Friend Ending
 [] Script
@@ -50,3 +50,9 @@ See what needs to be done below.
 [] Music
 [] Bios
 [] Jukebox
+
+### Passes
+[] Spelling/Grammar Pass
+[] Transition Pass
+[] Jukebox/Achievements/Bio Pass
+[] Remove all TODO comments
