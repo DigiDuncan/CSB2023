@@ -12,7 +12,9 @@ init python:
         count = options.get("count", 1)
         for f in targets:
             for _ in range(count):
-                f.health_points -= subject.attack_points * mult * 1.5 if crit else subject.attack_points * mult
+                hit = subject.attack_points * mult * 1.5 if crit else subject.attack_points * mult
+                hit *= 1 - (f.armor_points / 100)
+                f.health_points -= hit
 
     def heal_fighters(subject: Fighter, targets: list[Fighter], crit: bool, options: dict):
         """Heal a list of fighters.
@@ -20,7 +22,9 @@ init python:
         - `mult: float`: The multiplier on top of `subject`'s ATK to hit the targets with."""
         mult = options.get("mult", 1)
         for f in targets:
-            f.health_points += subject.attack_points * mult * 1.5 if crit else subject.attack_points * mult
+            hit = subject.attack_points * mult * 1.5 if crit else subject.attack_points * mult
+            hit *= 1 - (f.armor_points / 100)
+            f.health_points -= hit
 
     def damage_over_time(subject: Fighter, targets: list[Fighter], crit: bool, options: dict):
         """Set a damage over time for a list of fighters.
@@ -41,7 +45,9 @@ init python:
         max_mult = options.get("count", 1)
         mult = max_mult if crit else renpy.random.uniform(min_mult, max_mult)
         for f in targets:
-            f.health_points -= int(subject.attack_points * mult * 1.5) if crit else int(subject.attack_points * mult)
+            hit = subject.attack_points * mult * 1.5 if crit else subject.attack_points * mult
+            hit *= 1 - (f.armor_points / 100)
+            f.health_points -= hit
 
     def confuse_targets(subject: Fighter, targets: list[Fighter], crit: bool, options: dict):
         """Confuse a list of targets."""
@@ -251,7 +257,6 @@ init python:
             # These are the enemies
             for i in range(len(self.encounter.enemies)):
                 r.place(EnemyDisplayable(self.encounter.enemies[i]), x=(1920*(i*0.33)), y=(1080-renpy.image_size(self.encounter.enemies[i].sprite)[1])//2)
-
 
             # This adds in the allies
             for i in range(len(self.encounter.allies)):
