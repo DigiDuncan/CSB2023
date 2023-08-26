@@ -195,8 +195,6 @@ init python:
         
         def event(self, ev, x, y, st):
             pass
-        def visit(self):
-            return[]
 
     # These are the enemy displayables. They display the enemy and the enemies health
     class EnemyDisplayable(renpy.Displayable):
@@ -214,6 +212,9 @@ init python:
             r.place(green_part, x=(renpy.image_size(self.fighter.sprite)[0]//2)-((1920//9)//2), y=int(25))
             renpy.redraw(self, 0)
             return r
+
+        def visit(self):
+            return [self.fighter.sprite]
 
     class RPGGameDisplayable(renpy.Displayable):
         def __init__(self, encounter: Encounter):
@@ -250,7 +251,7 @@ init python:
                 return self.win
 
         def visit(self):
-            return [] # Assets needed to load
+            return [EnemyDisplayable(e) for e in self.encounter.enemies] + [StatBlockDisplayable(a) for a in self.encounter.allies] # Assets needed to load
 
     rpggame = RPGGameDisplayable(encounter)
 
@@ -268,14 +269,8 @@ label game_loop:
         $ counter = 0
         while counter < len(encounter.allies):
             $ curr_fighter = encounter.allies[counter]
-            if not encounter.allies[0].dead:
-                $ selected_move = None
-                menu:
-                    "What will [curr_fighter.name] do?"
-                    "[curr_fighter.normal.name]":
-                        $ selected_move = "normal"
-                    "[curr_fighter.special.name]":
-                        $ selected_move = "special"
+            if not curr_fighter.dead:
+                $ selected_move = renpy.display_menu([("What will "+curr_fighter.name+" do?", None), (curr_fighter.normal.name, "normal"), (curr_fighter.special.name, "special")])
                 $ target_count = getattr(curr_fighter, selected_move).target_count
                 $ targets = []
                 while target_count > 0:
