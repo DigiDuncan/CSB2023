@@ -168,33 +168,52 @@ init python:
         Attack("Punch", damage_fighters),
         Attack("Bullet Spray", damage_fighters, target_count = 0, mult = 1.5)
     ], Image("images/characters/copguy.png"))
+    
+    cop_fighter2 = Fighter("Cop", True, 150, 15, 30, [
+        Attack("Punch", damage_fighters),
+        Attack("Bullet Spray", damage_fighters, target_count = 0, mult = 1.5)
+    ], Image("images/characters/copguy.png"))
 
-    encounter = Encounter([cs_fighter, cop_fighter], Image("images/bg/casino1.png"), "audio/card_castle.mp3")
+    cop_fighter3 = Fighter("Cop", True, 150, 15, 30, [
+        Attack("Punch", damage_fighters),
+        Attack("Bullet Spray", damage_fighters, target_count = 0, mult = 1.5)
+    ], Image("images/characters/copguy.png"))
+
+    encounter = Encounter([cs_fighter, cop_fighter, cop_fighter2, cop_fighter3], Image("images/bg/casino1.png"), "audio/card_castle.mp3")
 
     # This is the displayable that controls what's happening in the boxes at the bottom of the screen
 
     class StatBlockDisplayable(renpy.Displayable):
         def __init__(self, fighter: Fighter):
+            self.text_size = 50
             self.fighter = fighter
+            self.health_text = Text("HP: "+str(self.fighter.health_points)+"/"+str(self.fighter.max_health), color="#FFFFFF", size=self.text_size)
+            self.AP_text = Text("AP: "+str(self.fighter.armor_points), color="#FFFFFF", size=self.text_size)
+            self.ATK_text = Text("ATK: "+str(self.fighter.attack_points), color="#FFFFFF", size=self.text_size)
             super().__init__(self)
 
         def render(self, width, height, st, at):
+            x_al = 25
+            y_al = 65
+            spacing = 10
+            self.health_text = Text("HP: "+str(self.fighter.health_points)+"/"+str(self.fighter.max_health), color="#FFFFFF", size=self.text_size)
+            self.AP_text = Text("AP: "+str(self.fighter.armor_points), color="#FFFFFF", size=self.text_size)
+            self.ATK_text = Text("ATK: "+str(self.fighter.attack_points), color="#FFFFFF", size=self.text_size)
             r = renpy.Render(370, 270)
             stat_back = Image("minigames/rpg/statbox.png")
             r.place(stat_back)
             r.place(Text(self.fighter.name, color="#0000FF", size=50), x=25, y=5)
-            x_al = 25
-            y_al = 65
-            text_size = 50
-            spacing = 10
-            r.place(Text("HP: "+str(self.fighter.health_points)+"/"+str(self.fighter.max_health), color="#FFFFFF", size=text_size), x=x_al, y=y_al)
-            r.place(Text("AP: "+str(self.fighter.armor_points), color="#FFFFFF", size=text_size), x=x_al, y=y_al*2)
-            r.place(Text("ATK: "+str(self.fighter.attack_points), color="#FFFFFF", size=text_size), x=x_al, y=y_al*3)
+            r.place(self.health_text, x=x_al, y=y_al)
+            r.place(self.AP_text, x=x_al, y=y_al*2)
+            r.place(self.ATK_text, x=x_al, y=y_al*3)
             renpy.redraw(self, 0)
             return r
         
         def event(self, ev, x, y, st):
             pass
+
+        def visit(self):
+            return [self.health_text, self.AP_text, self.ATK_text]
 
     # These are the enemy displayables. They display the enemy and the enemies health
     class EnemyDisplayable(renpy.Displayable):
