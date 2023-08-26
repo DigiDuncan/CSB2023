@@ -685,7 +685,7 @@ label ytp_magic_fight:
     pause 1.0
     play sound "car_crash.ogg" volume 0.7
     pause 7.0
-    n "CopGuy's car flies off the road and violently crashes into the forest."
+    n "Copguy's car flies off the road and violently crashes into the forest."
     scene washington_road
     show arceus dark at right
     show cs concentrate dark at left
@@ -702,7 +702,7 @@ label ytp_magic_fight:
     cs "Are we good?"
     arceus "..."
     arceus "I guess so."
-    arceus "CopGuy, he..."
+    arceus "Copguy, he..."
     cs "Yeah I took care of him, didn't I?"
     arceus "I guess you did."
     cs "Should we keep going?"

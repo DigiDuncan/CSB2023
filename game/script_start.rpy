@@ -198,7 +198,7 @@ define worker_7 = Character("Worker 7", callback = char_callback)
 define digi = Character("Digi", callback = renpy.partial(char_callback, name = "digi", beep = "digi"))
 define pakoo = Character("Pakoo", callback = renpy.partial(char_callback, name = "pakoo", beep = "pak"))
 
-define copguy = Character("CopGuy", callback = renpy.partial(char_callback, name = "copguy", beep = "cop"))
+define copguy = Character("Copguy", callback = renpy.partial(char_callback, name = "copguy", beep = "cop"))
 define arceus = Character("Arceus", callback = renpy.partial(char_callback, name = "arceus", beep = "arc"))
 define anno = Character("Anno", callback = renpy.partial(char_callback, name = "anno", beep = "anno"))
 define border_guard = Character("Border Guard", callback = renpy.partial(char_callback, name = "border_guard"))

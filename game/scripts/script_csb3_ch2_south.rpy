@@ -1228,7 +1228,7 @@ label noairport:
     arceus "I don't even know anymore."
     cs "This isn't fiction and everything here is real and happened!"
     cs "I'm gonna start streaming on time!"
-    cs "And then copguy comes on and shoots me and I die!"
+    cs "And then Copguy comes on and shoots me and I die!"
     n "Sure fine, whatever."
     show copguy at mid_right with moveinright
     copguy "You're, done for!"

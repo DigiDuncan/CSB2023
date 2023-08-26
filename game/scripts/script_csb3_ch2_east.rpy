@@ -913,7 +913,7 @@ label back_home:
             jump talktohohsis
         "Fuck up" (type = "bad"):
             jump fuckuphohsis
-        "Call CopGuy":
+        "Call Copguy":
             jump copsathohsis
 
 label talktohohsis:

@@ -195,7 +195,7 @@ label dpn_call:
     cs "well, should we find somewhere to stop for the night? We've been going for a while."
     pakoo "Holy shit! Stop CS!"
     n "As CS looks ahead, he screeches on the breaks just in time."
-    n "Barbed wire, soldiers, and military trucks block the highway, with copguy standing in the front of it all."
+    n "Barbed wire, soldiers, and military trucks block the highway, with Copguy standing in the front of it all."
     cs "This can't be good."
     n "The groups behind CS stop as well, as everyone gets out of their cars and approaches Copguy."
     copguy "Well? What do you think CS? You ready to go back to jail?"

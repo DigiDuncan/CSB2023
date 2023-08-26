@@ -17,7 +17,7 @@ init python:
         "phil": "Phil Swift",
         "hoh_worker": "HoH SiS Workers",
         "digi": "DigiDuncan",
-        "copguy": "Cop Guy",
+        "copguy": "Copguy",
         "arceus": "Arceus3251",
         "anno": "Annorexorcist",
         "border_guard": "Canadaian Border Guard",
