@@ -13,46 +13,46 @@ See what needs to be done below.
 -------
 
 ### Big Tasks
-[] RPG Game
-[] Rhythm Game
-[] Country Route Game
-[] Ending Screens
-[] Menu for Endings
-[] Commerical
-[] Credits
-[] Arceus Art
-[] Aria Art
-[] End Fight cutscene
+- [ ] RPG Game
+- [ ] Rhythm Game
+- [ ] Country Route Game
+- [ ] Ending Screens
+- [ ] Menu for Endings
+- [ ] Commerical
+- [ ] Credits
+- [ ] Arceus Art
+- [ ] Aria Art
+- [ ] End Fight cutscene
 
 ### Friend Ending
-[] Script
-[] Backgrounds
-[] Characters
-[] Transitions
-[] Music
-[] Bios
-[] Jukebox
+- [ ] Script
+- [ ] Backgrounds
+- [ ] Characters
+- [ ] Transitions
+- [ ] Music
+- [ ] Bios
+- [ ] Jukebox
 
 ### Fired Ending
-[] Script
-[] Backgrounds
-[] Characters
-[] Transitions
-[] Music
-[] Bios
-[] Jukebox
+- [ ] Script
+- [ ] Backgrounds
+- [ ] Characters
+- [ ] Transitions
+- [ ] Music
+- [ ] Bios
+- [ ] Jukebox
 
 ### Country Ending
-[] Script
-[] Backgrounds
-[] Characters
-[] Transitions
-[] Music
-[] Bios
-[] Jukebox
+- [ ] Script
+- [ ] Backgrounds
+- [ ] Characters
+- [ ] Transitions
+- [ ] Music
+- [ ] Bios
+- [ ] Jukebox
 
 ### Passes
-[] Spelling/Grammar Pass
-[] Transition Pass
-[] Jukebox/Achievements/Bio Pass
-[] Remove all TODO comments
+- [ ] Spelling/Grammar Pass
+- [ ] Transition Pass
+- [ ] Jukebox/Achievements/Bio Pass
+- [ ] Remove all TODO comments
