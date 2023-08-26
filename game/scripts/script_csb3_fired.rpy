@@ -119,13 +119,19 @@ label new_plan:
     anno "Just got it."
     cs "Well let's get to work, boys!"
 
-    # scene black with fade
+    # scene black with dissolve
     n "After some time, the gang have their first song written."
+
+    # scene hotel_room with dissolve
+    show arceus at right with moveinright
     arceus "You know, that's not half bad."
+    show anno at left with moveinright
     anno "I like it a lot!"
+    show cs at center with moveinbottom
     cs "Wanna play it again one more time?"
     anno "Can do!"
     n "Anno hits play on the track."
     # IDEA: Actual instrumental here? I'm thinking rock-themed.
     n "{cps=15}{image=note_small1.png}We broke the chains, now we're free to fly,{w=1.5}\nEscaped concrete, and now we see blue skies{w=1.5}\nBecome brand new, we'll leave the past behind,{w=1.5}\nPrisoners no more, 'cause a new life we'll find{image=note_small2.png}"
     cs "Yeah, that's really good!"
+
