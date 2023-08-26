@@ -69,10 +69,11 @@ init python:
     # Objects
 
     class Attack:
-        def __init__(self, name: str, func: Callable[[Fighter, list[Fighter], dict], None], target_count = 1, **kwargs):
+        def __init__(self, name: str, func: Callable[[Fighter, list[Fighter], dict], None], target_count = 1, auto_target: str = None, **kwargs):
             self.name = name
             self.func = func
             self.target_count = target_count
+            self.auto_target = auto_target
             self.options = kwargs
 
         def run(self, subject: Fighter, fighters: list[Fighter], crit: bool = False):
@@ -161,22 +162,22 @@ init python:
 
     cs_fighter = Fighter("CS", False, 188, 5, 25, [
         Attack("Punch", damage_fighters),
-        Attack("Bullet Spray", damage_fighters, target_count = 0, mult = 1.5)
+        Attack("Bullet Spray", damage_fighters, target_count = 0, auto_target = "enemies", mult = 1.5)
     ], Image("images/characters/cs/neutral.png"))
 
     cop_fighter = Fighter("Cop", True, 150, 15, 30, [
         Attack("Punch", damage_fighters),
-        Attack("Bullet Spray", damage_fighters, target_count = 0, mult = 1.5)
+        Attack("Bullet Spray", damage_fighters, target_count = 0, auto_target = "enemies", mult = 1.5)
     ], Image("images/characters/copguy.png"))
     
     cop_fighter2 = Fighter("Cop", True, 150, 15, 30, [
         Attack("Punch", damage_fighters),
-        Attack("Bullet Spray", damage_fighters, target_count = 0, mult = 1.5)
+        Attack("Bullet Spray", damage_fighters, target_count = 0, auto_target = "enemies", mult = 1.5)
     ], Image("images/characters/copguy.png"))
 
     cop_fighter3 = Fighter("Cop", True, 150, 15, 30, [
         Attack("Punch", damage_fighters),
-        Attack("Bullet Spray", damage_fighters, target_count = 0, mult = 1.5)
+        Attack("Bullet Spray", damage_fighters, target_count = 0, auto_target = "enemies", mult = 1.5)
     ], Image("images/characters/copguy.png"))
 
     encounter = Encounter([cs_fighter, cop_fighter, cop_fighter2, cop_fighter3], Image("images/bg/casino1.png"), "audio/card_castle.mp3")
@@ -292,9 +293,14 @@ label game_loop:
                 $ selected_move = renpy.display_menu([("What will "+curr_fighter.name+" do?", None), (curr_fighter.normal.name, "normal"), (curr_fighter.special.name, "special")])
                 $ target_count = getattr(curr_fighter, selected_move).target_count
                 $ targets = []
-                while target_count > 0:
-                    $ targets.append(renpy.display_menu([("Who will "+curr_fighter.name+" attack? ("+str(target_count)+")", None)]+[(e.name, e) for e in encounter.enemies]))
-                    $ target_count = target_count-1
+                $ auto_target = getattr(curr_fighter, selected_move).auto_target
+                if auto_target:
+                    if auto_target == "enemies":
+                        $ targets = encounter.enemies
+                else:
+                    while target_count > 0:
+                        $ targets.append(renpy.display_menu([("Who will "+curr_fighter.name+" attack? ("+str(target_count)+")", None)]+[(e.name, e) for e in encounter.enemies]))
+                        $ target_count = target_count-1
                 $ actions.append((curr_fighter, selected_move, targets))
 
             $ counter = counter + 1
