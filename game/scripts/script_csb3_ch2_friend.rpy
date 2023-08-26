@@ -49,9 +49,10 @@ label dpn_call:
     with fade
     cs "So yeah, that's why I'm mainly worried about Tate."
     show pakoo disappointed
-    pakoo "Yeah, I getcha, i'm sur--{w=1.0}{nw}"
+    pakoo "Yeah, I getcha, I'm sur--{w=1.0}{nw}"
     show cs worried with vpunch
     show pakoo worried with vpunch
+    # TODO: Horn honk SFX
     cs "JESUS!!"
     n "CS serves all over the road after being startled."
     show pakoo
@@ -80,8 +81,8 @@ label dpn_call:
     pause 1.0
     arceus "Alright, well it looks like Aria is gonna pick up Digi and Nova, and meet us here soon."
     cs "Wow, that was fast!"
-    pakoo "Yeah that's crazy."
-    arceus "They'll meet us at some diner approximately in a few hours from where we are currently."
+    pakoo "Yeah, that's crazy."
+    arceus "They'll meet us at some diner in approximately a few hours from now."
     cs "Alright then, that sounds good to me! I'm hungry so it'll be nice to get some food."
     arceus "Yeah, same."
     scene black with fade
@@ -121,7 +122,7 @@ label dpn_call:
     aria "Ah, yeah. I understand."
     aria "I'll just go around the other way."
     n "As Aria heads back to the car, she sneaks around and knocks the cop's heads together, knocking them out."
-    cop "Ah shit! We got two men down! Arrest them!"
+    cop "Ah shit! We got two men down! Arrest her!"
     #TODO: Fight here.
 
     scene black with fade
@@ -131,7 +132,7 @@ label dpn_call:
     aria "Yeah, they weren't too much of a problem through."
     tate "Good, the less cops, the better."
     aria "Nova and Digi are at the diner up ahead, let's get this blockade out of the way and get going."
-    cs "Righty-o."
+    cs "Righty-o."  # Fucking "righty-o"?
     scene black with fade
     n "CS, Aria, and Tate clear the road, and then follow Aria up to the diner."
     n "Meanwhile, back at the diner..."
@@ -159,7 +160,7 @@ label dpn_call:
     aria "Hey, we just got here, are you guys okay?"
     digi "Yeah, we're fine, how about you?"
     aria "Yeah, I also had to fight some cops on the way to find CS."
-    digi "Shit, so we need to get going here in a moment before more come."
+    digi "Shit, so we need to get going, like, now, before more come."
     aria "Yeah, they won't stop coming. Let's meet up with the rest of the crew first."
     n "Digi, Aria, and Nova all go outside to meet everyone else."
     cs "Hey guys! Are you all good?"
@@ -173,9 +174,9 @@ label dpn_call:
     nova "Does this mean CS is getting cancelled?"
     cs "No no, I'm not gonna get cancelled."
     digi "You killed like, at least a few people!"
-    arceus "Yeah, but at least he didn't touch kids."
+    arceus "Yeah, but at least he didn't, like, sell feet pics."
     aria "Or say the N-word."
-    digi "Ah I see, so that clear everything."
+    digi "Oh, yeah, that clears up everything..."
     arceus "But the cops still don't like that we downed multiple units, so we should get moving about now."
     cs "Yeah, alright everyone, back on the road!"
     cs "Everyone follow me, and we will eventually find a safe spot away from the cops!"
@@ -184,7 +185,7 @@ label dpn_call:
     n "In CS' group, the gang decides what they can do to get away from the cops."
     cs "I really don't have an idea of where to go, I'm just driving in a straight line."
     arceus "I would try to jam their signals, but I don't know where they are."
-    arceus "I haven't seen copguy since we've fought him."
+    arceus "I haven't seen Copguy since we've fought him."
     pakoo "Well, if he does come back, we'll be ready for him."
     cs "I hope, but at the same time I don't want to think about running into him again."
     cs "I can't go back to prison, that shit was scary."
