@@ -28,6 +28,9 @@ label dpn_call:
     show cs disappointed
     cs "Man, I hope Tate is okay. I don't how I'm gonna explain to them later about this whole situation."
     arceus "I think we're all in the same boat on that problem. I'm sure they'll all be fine."
+    jump car_ride_1
+
+label car_ride_1:
     scene black with fade
     n "Meanwhile, Tate's group seems to be having the time of their lives."
     scene car_inside_fg
@@ -87,6 +90,9 @@ label dpn_call:
     arceus "Yeah, same."
     scene black with fade
     n "As a few hours pass, the DPN crew arrives at the S&P Diner, and waits to be served."
+    jump dpn_diner
+
+label dpn_diner:
     scene dinerinside
     show digi at right
     show nova at center
@@ -123,9 +129,14 @@ label dpn_call:
     aria "I'll just go around the other way."
     n "As Aria heads back to the car, she sneaks around and knocks the cop's heads together, knocking them out."
     cop "Ah shit! We got two men down! Arrest her!"
-    #TODO: Fight here.
+    jump aria_fight
 
+label aria_fight:
+    #TODO: Fight here.
     scene black with fade
+    jump cs_meetup
+
+label cs_meetup:
     scene cs_somewhere with fade
     n "After Aria takes care of the cops, CS and Tate's group rolls up on the other side of the blockade."
     cs "Woah, what happened here? More cops?"
@@ -152,7 +163,13 @@ label dpn_call:
     n "The people in the diner start freaking out and hide under their seats."
     nova "Alright Digi, let's do this."
     digi "On it."
+    jump dpn_fight
+
+label dpn_fight:
     #TODO: Fight here.
+    jump cs_meetup_2
+
+label cs_meetup_2:
     n "After the fight, the rest of the people in the diner flee the scene."
     digi "Wow, holy shit, we did it!"
     nova "Welp, there goes all of my energy for the day."
@@ -191,6 +208,9 @@ label dpn_call:
     cs "I can't go back to prison, that shit was scary."
     arceus "You're telling me."
     cs "I wonder how the others are doing..."
+    jump car_ride_2
+
+label car_ride_2:
     #TODO: Car dialogue
     cs "well, should we find somewhere to stop for the night? We've been going for a while."
     pakoo "Holy shit! Stop CS!"
@@ -207,7 +227,13 @@ label dpn_call:
     copguy "I see, you wanted to do this the hard way..."
     copguy "Well, you're gonna find out why you never pick the hard way!"
     copguy "Soldiers! Attack!"
+    jump ng_fight
+
+label ng_fight:
     #TODO: Fight scene
+    jump cs_rage
+
+label cs_rage:
     n "After CS and the group manage to push back the national guard, Copguy once again flees at the last moment."
     cs "Hey! You get back here damnit!"
     cs "Guys let's chase after him!"
@@ -259,7 +285,13 @@ label dpn_call:
     pakoo "Ah shoot."
     cs "I'm gonna ping everyone in CSCord, and see if anyone else is able to help us out."
     cs "We're gonna need it."
+    jump car_ride_3
+
+label car_ride_3:
     #TODO: Car dialogue
+    jump final_meetup
+
+label final_meetup:
     arceus "Alright, we are here."
     pakoo "So, who is joining us to help fight Copguy?"
     cs "Let's go take a look."
@@ -277,4 +309,6 @@ label dpn_call:
     cs "No problem DB! Every little bit helps!"
     tate "Well, are you guys ready to do this?"
     cs "Hell yeah! Let's go put Copguy through the slammer!"
-    
+    jump final_fight
+
+label final_fight:
