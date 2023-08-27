@@ -28,6 +28,9 @@ label dpn_call:
     show cs disappointed
     cs "Man, I hope Tate is okay. I don't how I'm gonna explain to them later about this whole situation."
     arceus "I think we're all in the same boat on that problem. I'm sure they'll all be fine."
+    jump car_ride_1
+
+label car_ride_1:
     scene black with fade
     n "Meanwhile, Tate's group seems to be having the time of their lives."
     scene car_inside_fg
@@ -87,6 +90,9 @@ label dpn_call:
     arceus "Yeah, same."
     scene black with fade
     n "As a few hours pass, the DPN crew arrives at the S&P Diner, and waits to be served."
+    jump dpn_diner
+
+label dpn_diner:
     scene dinerinside
     show digi at right
     show nova at center
@@ -123,16 +129,21 @@ label dpn_call:
     aria "I'll just go around the other way."
     n "As Aria heads back to the car, she sneaks around and knocks the cop's heads together, knocking them out."
     cop "Ah shit! We got two men down! Arrest her!"
-    #TODO: Fight here.
+    jump aria_fight
 
+label aria_fight:
+    #TODO: Fight here.
     scene black with fade
+    jump cs_meetup
+
+label cs_meetup:
     scene cs_somewhere with fade
     n "After Aria takes care of the cops, CS and Tate's group rolls up on the other side of the blockade."
     cs "Woah, what happened here? More cops?"
     aria "Yeah, they weren't too much of a problem through."
     tate "Good, the less cops, the better."
     aria "Nova and Digi are at the diner up ahead, let's get this blockade out of the way and get going."
-    cs "Righty-o."  # Fucking "righty-o"?
+    cs "Righty-o."
     scene black with fade
     n "CS, Aria, and Tate clear the road, and then follow Aria up to the diner."
     n "Meanwhile, back at the diner..."
@@ -152,7 +163,13 @@ label dpn_call:
     n "The people in the diner start freaking out and hide under their seats."
     nova "Alright Digi, let's do this."
     digi "On it."
+    jump dpn_fight
+
+label dpn_fight:
     #TODO: Fight here.
+    jump cs_meetup_2
+
+label cs_meetup_2:
     n "After the fight, the rest of the people in the diner flee the scene."
     digi "Wow, holy shit, we did it!"
     nova "Welp, there goes all of my energy for the day."
@@ -191,6 +208,9 @@ label dpn_call:
     cs "I can't go back to prison, that shit was scary."
     arceus "You're telling me."
     cs "I wonder how the others are doing..."
+    jump car_ride_2
+
+label car_ride_2:
     #TODO: Car dialogue
     cs "well, should we find somewhere to stop for the night? We've been going for a while."
     pakoo "Holy shit! Stop CS!"
@@ -207,7 +227,13 @@ label dpn_call:
     copguy "I see, you wanted to do this the hard way..."
     copguy "Well, you're gonna find out why you never pick the hard way!"
     copguy "Soldiers! Attack!"
+    jump ng_fight
+
+label ng_fight:
     #TODO: Fight scene
+    jump cs_rage
+
+label cs_rage:
     n "After CS and the group manage to push back the national guard, Copguy once again flees at the last moment."
     cs "Hey! You get back here damnit!"
     cs "Guys let's chase after him!"
@@ -222,3 +248,67 @@ label dpn_call:
     cs "Do you know what we just fought through?"
     cs "He's just gonna keep building up stronger units for us to attack, and then run away if we beat him!"
     cs "We need to head out now!"
+    n "CS goes to the debris from the battle, desperately trying to move it out of the way."
+    cs "Guys, cmon, please! We have... to... hnngg..."
+    tate "Woah, CS? What are you doing?"
+    n "All of a sudden, the debris starts moving on it's own!"
+    digi "Woah, what's going on?"
+    cs "Can you guys please help--"
+    cs "Wait, what the hell?! Did I move all of that already?"
+    n "As CS is gawking at the work he just did, a purple figure appears in front of CS."
+    csgod "You're welcome."
+    cs "Woah, hey! Are you CSGod?"
+    csgod "Indeed I am. You've seemed to channel my power through sheer willpower."
+    cs "Holy crap, does that mean I can use YTP Magic?"
+    csgod "In theory, yes. Although you should take some time to rest."
+    csgod "Don't beat yourself up over Copguy, you'll be able to beat him down next time, if you calm down and focus."
+    csgod "I'm gonna let you go for now. Copguy is planning his most devious attack yet, and you need to be prepared."
+    cs "I see, well, thank you for that CSGod!"
+    csgod "No problem."
+    n "CSGod fades away, and CS turns back to the group."
+    tate "CS, you okay? You were just staring up at the sky and talking to yourself about magic or something."
+    cs "I'm all good, don't worry."
+    cs "Sorry I got upset, I just need to relax."
+    cs "Arc, you drive, I'm gonna lie down in the backseat."
+    arceus "You need, anything else?"
+    cs "I'm good, just some rest."
+    n "CS heads into the backseat of the car and lies down."
+    digi "Alright well, what's the plan? CS is technically right, we need to go track down Copguy somehow."
+    arceus "I managed to put a tracking device on Copguy's car in the heat of the battle."
+    arceus "I'll be following him, and I'll update you guys about what's going on."
+    digi "Roger."
+    tate "Alright, let's go kick Copguy's ass!"
+    n "The crew gets in their respective cars, and they take off."
+    n "While they are driving, Arceus notices that copguy starts ludicrously speeding up until he stops in Illinois."
+    arceus "Guys, I think I found out where Copguy is headed."
+    arceus "He's stopped in Chicago."
+    pakoo "Ah shoot."
+    cs "I'm gonna ping everyone in CSCord, and see if anyone else is able to help us out."
+    cs "We're gonna need it."
+    jump car_ride_3
+
+label car_ride_3:
+    #TODO: Car dialogue
+    jump final_meetup
+
+label final_meetup:
+    arceus "Alright, we are here."
+    pakoo "So, who is joining us to help fight Copguy?"
+    cs "Let's go take a look."
+    n "The groups all get out of their cars and meet up with one another."
+    n "The last group to meet up all emerge as well, who are:"
+    #TODO: Intro thingy
+    blank "Hi!"
+    anno "Yo."
+    midge "Oh hai."
+    anno "Db05 isn't here yet, he's been busy."
+    anno "He'll be here soon though, we've been talking to him on the phone."
+    n "Anno holds out his phone."
+    db "Hey guys! Sorry I'm gonna miss out on the huge battle thing, I had to do some things at home first."
+    db "But I'll gladly encourage you while you all are fighting!"
+    cs "No problem DB! Every little bit helps!"
+    tate "Well, are you guys ready to do this?"
+    cs "Hell yeah! Let's go put Copguy through the slammer!"
+    jump final_fight
+
+label final_fight:
