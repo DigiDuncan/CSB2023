@@ -1,5 +1,6 @@
 init python:
     import math
+    from copy import copy
     from typing import Callable
 
     # Functions
@@ -75,12 +76,16 @@ init python:
     # Objects
 
     class Attack:
-        def __init__(self, name: str, func: Callable[[Fighter, list[Fighter], dict], None], target_count = 1, auto_target: str = None, **kwargs):
+        def __init__(self, name: str, func: Callable[[Fighter, list[Fighter], dict], None], target_count = 1, auto_target: str = None, cooldown: int = 1, **kwargs):
             self.name = name
             self.func = func
             self.target_count = target_count
             self.auto_target = auto_target
+            self.cooldown = cooldown
             self.options = kwargs
+
+            self._turns_until_available = 0
+
 
         def run(self, subject: Fighter, fighters: list[Fighter], crit: bool = False):
             self.func(subject, fighters, crit, self.options)
@@ -93,7 +98,7 @@ init python:
             self.max_health = int(hp * multiplier)
             self.armor_points = ap
             self.attack_points = int(atk * multiplier)
-            self.attacks = attacks
+            self.attacks = [copy(a) for a in attacks]
             self.sprite = sprite
 
             self.damage_per_turn: list[tuple] = []
@@ -132,6 +137,9 @@ init python:
                         self.damage_per_turn.remove((h, t))
             if self.confused:
                 self.confused = renpy.random.choice(True, False)
+            for a in self.attacks:
+                a._turns_until_available -= 1
+                a._turns_until_available = max(0, a._turns_until_available)
 
         @property
         def dead(self) -> bool:
@@ -166,25 +174,13 @@ init python:
 
     # Example Fighter object
 
-    cs_fighter = Fighter("CS", False, 188, 5, 25, [
-        Attack("Punch", damage_fighters),
-        Attack("Bullet Spray", damage_fighters, target_count = 0, auto_target = "enemies", mult = 1.5)
-    ], Image("images/characters/cs/neutral.png"))
+    punch_attack = Attack("Punch", damage_fighters)
+    bullet_spray_attack = Attack("Bullet Spray", damage_fighters, target_count = 0, auto_target = "enemies", cooldown = 3, mult = 1.5)
 
-    cop_fighter = Fighter("Cop", True, 150, 15, 30, [
-        Attack("Punch", damage_fighters),
-        Attack("Bullet Spray", damage_fighters, target_count = 0, auto_target = "enemies", mult = 1.5)
-    ], Image("images/characters/copguy.png"))
-    
-    cop_fighter2 = Fighter("Cop", True, 150, 15, 30, [
-        Attack("Punch", damage_fighters),
-        Attack("Bullet Spray", damage_fighters, target_count = 0, auto_target = "enemies", mult = 1.5)
-    ], Image("images/characters/copguy.png"))
-
-    cop_fighter3 = Fighter("Cop", True, 150, 15, 30, [
-        Attack("Punch", damage_fighters),
-        Attack("Bullet Spray", damage_fighters, target_count = 0, auto_target = "enemies", mult = 1.5)
-    ], Image("images/characters/copguy.png"))
+    cs_fighter = Fighter("CS", False, 188, 5, 25, [punch_attack, bullet_spray_attack], Image("images/characters/cs/neutral.png"))
+    cop_fighter = Fighter("Cop", True, 150, 15, 30, [punch_attack, bullet_spray_attack], Image("images/characters/copguy.png"))
+    cop_fighter2 = Fighter("Cop", True, 150, 15, 30, [punch_attack, bullet_spray_attack], Image("images/characters/copguy.png"))
+    cop_fighter3 = Fighter("Cop", True, 150, 15, 30, [punch_attack, bullet_spray_attack], Image("images/characters/copguy.png"))
 
     encounter = Encounter([cs_fighter, cop_fighter, cop_fighter2, cop_fighter3], Image("images/bg/casino1.png"), "audio/card_castle.mp3")
 
@@ -295,10 +291,16 @@ label game_loop:
         while counter < len(encounter.allies):
             $ curr_fighter = encounter.allies[counter]
             if not curr_fighter.dead:
-                $ selected_move = renpy.display_menu([("What will "+curr_fighter.name+" do?", None), (curr_fighter.normal.name, "normal"), (curr_fighter.special.name, "special")])
-                $ target_count = getattr(curr_fighter, selected_move).target_count
+                $ valid_move = False
+                $ normal_name = curr_fighter.normal.name if curr_fighter.normal._turns_until_available == 0 else f"{curr_fighter.normal.name} [{curr_fighter.normal._turns_until_available} turns remaining]"
+                $ special_name = curr_fighter.special.name if curr_fighter.special._turns_until_available == 0 else f"{curr_fighter.special.name} [{curr_fighter.special._turns_until_available} turns remaining]"
+                while not valid_move:
+                    $ selected_move = renpy.display_menu([("What will "+curr_fighter.name+" do?", None), (normal_name, "normal"), (special_name, "special")])
+                    $ curr_attack = getattr(curr_fighter, selected_move)
+                    $ valid_move = True if curr_attack._turns_until_available == 0 else False
+                $ target_count = curr_attack.target_count
                 $ targets = []
-                $ auto_target = getattr(curr_fighter, selected_move).auto_target
+                $ auto_target = curr_attack.auto_target
                 if auto_target:
                     if auto_target == "enemies":
                         $ targets = encounter.enemies
