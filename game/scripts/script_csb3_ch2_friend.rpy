@@ -212,6 +212,26 @@ label cs_meetup_2:
 
 label car_ride_2:
     #TODO: Car dialogue
+    tate "Man, I wanna fight something!"
+    mika "Yeah, what the hell! Where is this Copguy dude at?"
+    kitty "What if he's preparing defenses to ambush us?"
+    mika "We'll destroy anything that comes our way, don't worry."
+    tate "Hell yeah, screw that Copguy dude! He just ran away at the last second when we first fought him!"
+    mika "We definitely got this don't worry."
+    kitty "I wonder how those new guys are handling the situation..."
+    digi "I can't believe CS went to jail."
+    aria "Arceus was in jail for 5 years, Digi."
+    digi "Yeah I know, but that's an Arceus thing to do."
+    nova "Is it?? That's kinda concerning."
+    digi "no, I meant like, he knows what he's doing."
+    nova "Clearly not, if he ended up in jail!"
+    n "Aria laughs."
+    digi "Look, here's the thing, right? I'm just shaken up a bit still after Arceus and Pakoo called us, explaining that they needed help quickly."
+    digi "And then we fought and killed cops!"
+    aria "Least insane DPN activity."
+    digi "Aria, please. I'm legitimately worried about CS."
+    aria "They'll be fine, I'm sure this will be over soon."
+    digi "Man, I just really hope so."
     cs "well, should we find somewhere to stop for the night? We've been going for a while."
     pakoo "Holy shit! Stop CS!"
     n "As CS looks ahead, he screeches on the breaks just in time."
@@ -289,6 +309,21 @@ label cs_rage:
 
 label car_ride_3:
     #TODO: Car dialogue
+    nova "So I guess this is my night. I really need to catch up with music stuff when I get home."
+    digi "Guys, I'm concerned that CS might actually be going insane."
+    aria "Digi, you didn't know that from the start?"
+    digi "Did you see him? He was just, talking to the sky!"
+    nova "Yeah? Well let a man talk to the sky!"
+    digi "But he was absolutely going insane!"
+    aria "Digi, you gotta learn that the spectrum hits different for everyone."
+    tate "I went to the Dollar Tree a couple days ago, and was picking up some of those off-brand snacks."
+    mika "I feel like only a few off-brands can taste well, but there are a few I just can't eat."
+    tate "Like which ones?"
+    mika "Usually the off-brand Cheez-its, but I really don't like the off-brand goldfish either."
+    tate "Not the gold whales! I love those!"
+    mika "Well, I just don't like them too much."
+    kitty "The snack that breaks your back: Gold Whales!"
+    n "They all laugh."
     jump final_meetup
 
 label final_meetup:
