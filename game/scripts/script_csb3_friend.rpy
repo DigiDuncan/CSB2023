@@ -962,6 +962,7 @@ label after_cop_fight:
     sheriff "Alright. I'll call the Montana National Guard, we can probably block them off."
     copguy "Thank you so much. I will continue to track them down."
     sheriff "Good luck, Copguy."
+    show copguy flipped with determination
     hide copguy with moveoutright
     scene black with fade
     music end

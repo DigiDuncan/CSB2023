@@ -243,6 +243,8 @@ define obama = Character("Obama", callback = renpy.partial(char_callback, beep =
 define blank = Character("Blank")  # TODO: Beep
 define aria = Character("Aria")  # TODO: Beep
 define cop = Character("Cop")
+define midge = Character("Midge")
+define db = Character("DB05")
 
 # Character Images
 ## CS
@@ -316,6 +318,7 @@ image carguya = "characters/carguya.png"
 ## Others
 image discord = "characters/discord.png"
 image nova = "characters/nova.png"
+image nova flipped = "flip:characters/nova.png"
 image carguy = "characters/carguy.png"
 image carguy flipped = "flip:characters/carguy.png"
 image doug = "characters/doug.png"
@@ -393,6 +396,7 @@ image mika = "characters/mika.png"
 image craptopreal = "characters/laptop.png"
 image monika = "characters/monika.png"
 image tate = "characters/tate.png"
+image tate flipped = "flip:characters/tate.png"
 image kitty = "characters/kitty.png"
 
 # Background Images

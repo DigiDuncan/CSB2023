@@ -36,7 +36,7 @@ label car_ride_1:
     scene jeep_inside_fg
     show washington_road day behind jeep_inside_fg
     show mika at left
-    show tate at right
+    show tate flipped at right
     with fade
     tate "Woohoo! Road trip!"
     tate "Man, I can't believe CS didn't tell me about all of this! This is so fun!"
@@ -64,7 +64,7 @@ label car_ride_1:
     scene jeep_inside_fg
     show washington_road day behind jeep_inside_fg
     show mika at left
-    show tate at right
+    show tate flipped at right
     with fade
     tate "Hahahaha! Did you see that??"
     kitty "Oh my goodness!"
@@ -95,7 +95,7 @@ label car_ride_1:
 label dpn_diner:
     scene dinerinside
     show digi at right
-    show nova at center
+    show nova flipped at center
     show aria at left
     with fade
     digi "Finally, we can stretch our legs again."
@@ -140,10 +140,10 @@ label dpn_diner:
     show aria at offscreenright with hpunch
     hide cop
     hide cop_2
-    with with moveoutbottom
+    with moveoutbottom
     n "As Aria heads back to the car, she sneaks around and knocks the cop's heads together, knocking them out."
     show aria at right with move
-    show cop at left with move
+    show cop at left with moveinleft
     cop "Ah shit! We got two men down! Arrest her!"
     jump aria_fight
 
@@ -171,13 +171,14 @@ label cs_meetup:
     n "Meanwhile, back at the diner..."
     scene dinerinside
     show digi at center
-    show nova at left
+    show nova flipped at left
     with fade
     pause 2.0
     nova "They are so dead."
     digi "Stop saying that! They are probably fine."
     digi "They should be here any moment now."
     n "While they are talking, flashing lights shine through the diner."
+    show digi flipped with determination
     digi "Oh shit! Fuck! It's the cops!"
     nova "Great Digi, see what you did?"
     digi "What did I do? Huh?"
@@ -196,7 +197,7 @@ label dpn_fight:
 label cs_meetup_2:
     scene dinerinside
     show digi at center
-    show nova at left
+    show nova flipped at left
     with fade    
     n "After the fight, the rest of the people in the diner flee the scene."
     digi "Wow, holy shit, we did it!"
@@ -204,6 +205,7 @@ label cs_meetup_2:
     nova "I'm beat."
     show aria at right with moveinright
     aria "Hey, we just got here, are you guys okay?"
+    show digi flipped with determination
     digi "Yeah, we're fine, how about you?"
     aria "Yeah, I also had to fight some cops on the way to find CS."
     digi "Shit, so we need to get going, like, now, before more come."
@@ -218,8 +220,8 @@ label cs_meetup_2:
     show cs flipped at right
     show arceus at mid_right
     with fade
-    show digi at center
-    show nova at mid_left
+    show digi flipped at center
+    show nova flipped at mid_left
     show aria at left
     with moveinleft
     cs "Hey guys! Are you all good?"
@@ -266,7 +268,7 @@ label cs_meetup_2:
 label car_ride_2:
     scene jeep_inside_fg
     show mika at left
-    show tate at right
+    show tate flipped at right
     with fade
     tate "Man, I wanna fight something!"
     mika "Yeah, what the hell! Where is this Copguy dude at?"
@@ -314,7 +316,7 @@ label car_ride_2:
     show cs angry at center
     show tate at mid_left
     show arceus flipped at mid_left_left
-    show digi at left
+    show digi flipped at left
     with moveinleft
     copguy "Well? What do you think CS? You ready to go back to jail?"
     cs "Never!"
@@ -337,11 +339,11 @@ label cs_rage:
     show cs angry at center
     show tate at mid_left
     show arceus flipped at mid_left_left
-    show digi at left
+    show digi flipped at left
     with fade
     n "After CS and the group manage to push back the national guard, Copguy once again flees at the last moment."
     cs "Hey! You get back here damnit!"
-    show cs angry at mid_right
+    show cs angry at mid_right with move
     show cs angry flipped with determination
     cs "Guys let's chase after him!"
     arceus "CS, we need a minute. We just fought a tank."
@@ -376,10 +378,10 @@ label cs_rage:
     n "All of a sudden, the debris starts moving on it's own!"
     digi "Woah, what's going on?"
     cs "Can you guys please help--"
-    show cs at center
+    show cs at center with move
     cs "Wait, what the hell?! Did I move all of that already?"
     n "As CS is gawking at the work he just did, a purple figure appears in front of CS."
-    show csgod at right
+    show csgod at right with dissolve  
     csgod "You're welcome."
     cs "Woah, hey! Are you CSGod?"
     csgod "Indeed I am. You've seemed to channel my power through sheer willpower."
@@ -400,8 +402,8 @@ label cs_rage:
     cs "I'm good, just some rest."
     hide cs with moveoutleft
     n "CS heads into the backseat of the car and lies down."
-    show digi at center
-    show arceus flipped at left
+    show digi at center with move
+    show arceus flipped at left with move
     digi "Alright well, what's the plan? CS is technically right, we need to go track down Copguy somehow."
     arceus "I managed to put a tracking device on Copguy's car in the heat of the battle."
     arceus "I'll be following him, and I'll update you guys about what's going on."
@@ -444,7 +446,7 @@ label car_ride_3:
     pause 2.0
     scene jeep_inside_fg
     show mika at left
-    show tate at right
+    show tate flipped at right
     with fade
     tate "I went to the Dollar Tree a couple days ago, and was picking up some of those off-brand snacks."
     mika "I feel like only a few off-brands can taste well, but there are a few I just can't eat."
@@ -467,7 +469,7 @@ label final_meetup:
     cs "Let's go take a look."
     scene black with fade
     n "The groups all get out of their cars and meet up with one another."
-    scene final_destination
+    scene final_destination with fade
     show cs at mid_left
     show tate at left
     with moveinleft
