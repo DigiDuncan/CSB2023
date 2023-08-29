@@ -76,7 +76,7 @@ init python:
     # Objects
 
     class Attack:
-        def __init__(self, name: str, func: Callable[[Fighter, list[Fighter], dict], None], target_count = 1, auto_target: str = None, cooldown: int = 1, **kwargs):
+        def __init__(self, name: str, func: Callable[[Fighter, list[Fighter], dict], None], target_count = 1, auto_target: str = None, cooldown: int = 0, **kwargs):
             self.name = name
             self.func = func
             self.target_count = target_count
@@ -89,6 +89,11 @@ init python:
 
         def run(self, subject: Fighter, fighters: list[Fighter], crit: bool = False):
             self.func(subject, fighters, crit, self.options)
+            self._turns_until_available = self.cooldown
+
+        @property
+        def available(self) -> bool:
+            return self._turns_until_available == 0
 
     class Fighter:
         def __init__(self, name: str, enemy: bool, hp: int, ap: int, atk: int, attacks: list[Attack], sprite: Displayable, multiplier: float = 1):
@@ -292,12 +297,12 @@ label game_loop:
             $ curr_fighter = encounter.allies[counter]
             if not curr_fighter.dead:
                 $ valid_move = False
-                $ normal_name = curr_fighter.normal.name if curr_fighter.normal._turns_until_available == 0 else f"{curr_fighter.normal.name} [{curr_fighter.normal._turns_until_available} turns remaining]"
-                $ special_name = curr_fighter.special.name if curr_fighter.special._turns_until_available == 0 else f"{curr_fighter.special.name} [{curr_fighter.special._turns_until_available} turns remaining]"
+                $ normal_name = curr_fighter.normal.name if curr_fighter.normal._turns_until_available == 0 else f"{curr_fighter.normal.name} [[{curr_fighter.normal._turns_until_available} turns remaining]"
+                $ special_name = curr_fighter.special.name if curr_fighter.special._turns_until_available == 0 else f"{curr_fighter.special.name} [[{curr_fighter.special._turns_until_available} turns remaining]"
                 while not valid_move:
                     $ selected_move = renpy.display_menu([("What will "+curr_fighter.name+" do?", None), (normal_name, "normal"), (special_name, "special")])
                     $ curr_attack = getattr(curr_fighter, selected_move)
-                    $ valid_move = True if curr_attack._turns_until_available == 0 else False
+                    $ valid_move = curr_attack.available
                 $ target_count = curr_attack.target_count
                 $ targets = []
                 $ auto_target = curr_attack.auto_target
