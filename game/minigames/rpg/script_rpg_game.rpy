@@ -41,7 +41,7 @@ init python:
         """Damage a list of fighters for a value between two multiples..
         Valid options:
         - `min_mult: float`: The minimum multiplier on top of `subject`'s ATK to hit the targets with.
-        - `max_mult: float`: The minimum multiplier on top of `subject`'s ATK to hit the targets with."""
+        - `max_mult: float`: The maximum multiplier on top of `subject`'s ATK to hit the targets with."""
         min_mult = options.get("mult", 1)
         max_mult = options.get("count", 1)
         mult = max_mult if crit else renpy.random.uniform(min_mult, max_mult)
@@ -195,6 +195,7 @@ init python:
         def __init__(self, fighter: Fighter):
             self.text_size = 50
             self.fighter = fighter
+            self.fighter_name = Text(self.fighter.name, color="#0000FF", size=50)
             self.health_text = Text("HP: "+str(self.fighter.health_points)+"/"+str(self.fighter.max_health), color="#FFFFFF", size=self.text_size)
             self.AP_text = Text("AP: "+str(self.fighter.armor_points), color="#FFFFFF", size=self.text_size)
             self.ATK_text = Text("ATK: "+str(self.fighter.attack_points), color="#FFFFFF", size=self.text_size)
@@ -210,7 +211,7 @@ init python:
             self.ATK_text = Text("ATK: "+str(self.fighter.attack_points), color="#FFFFFF", size=self.text_size)
             r = renpy.Render(370, 270)
             r.place(self.stat_back)
-            r.place(Text(self.fighter.name, color="#0000FF", size=50), x=25, y=5)
+            r.place(self.fighter_name, x=25, y=5)
             r.place(self.health_text, x=x_al, y=y_al)
             r.place(self.AP_text, x=x_al, y=y_al*2)
             r.place(self.ATK_text, x=x_al, y=y_al*3)
@@ -221,7 +222,7 @@ init python:
             pass
 
         def visit(self):
-            return [self.health_text, self.AP_text, self.ATK_text, self.stat_back]
+            return [self.health_text, self.AP_text, self.ATK_text, self.stat_back, self.fighter_name]
 
     # These are the enemy displayables. They display the enemy and the enemies health
     class EnemyDisplayable(renpy.Displayable):
