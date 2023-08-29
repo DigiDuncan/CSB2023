@@ -399,6 +399,12 @@ image tate = "characters/tate.png"
 image tate flipped = "flip:characters/tate.png"
 image kitty = "characters/kitty.png"
 image blank = "characters/blank.png"
+image cop = "characters/cop.png"
+image cop_2 = "characters/cop.png"
+image midge = "characters/midge.png"
+image aria = "characters/aria.png"
+image aria flipped = "flip:characters/aria.png"
+image guard_soldier = "characters/guard_soldier.png"
 
 # Background Images
 ## CSBI
@@ -543,6 +549,13 @@ image cc_backstage = "bg/convention_center_backstage.png"
 image billboard = "bg/billboard.png"
 image texas = "bg/texas.png"
 image tvbilly = "bg/tv_billy.png"
+image jeep_inside_fg = "bg/jeep_inside_fg.png"
+image dinerinside = "bg/dinerinside.png"
+image aria_car_fg = "bg/aria_car_fg.png"
+image cs_somewhere = "bg/cs_somewhere.png"
+image dineroutside = "bg/dineroutside.png"
+image battle_block_without_theater = "bg/battle_block_without_theater.png"
+image final_destination = "bg/final_destination.png"
 
 ## AI Ending
 image park1 = "bg/ai/amusementpark1.png"

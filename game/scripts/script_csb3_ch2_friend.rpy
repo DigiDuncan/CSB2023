@@ -123,9 +123,10 @@ label dpn_diner:
     #TODO: Aria Lines!
 
     n "As Aria is approaching CS and the gang, they screech on the breaks as they almost run into a blockade."
+    show cs_somewhere behind aria_car_fg
     n "Cop cars surround the vicinity of the area."
     n "Aria gets out of the car."
-    scene cs_somewhere 
+    scene cs_somewhere
     show cop at right
     show cop_2 at mid_right
     with fade
@@ -134,7 +135,8 @@ label dpn_diner:
     cop "Sorry, but a ragtag group of criminals is heading through this way, so we need to stop them."
     aria "Ah, yeah. I understand."
     aria "I'll just go around the other way."
-    show aria at offscreenleft with move
+    show aria flipped with determination
+    show aria flipped at offscreenleft with move
     hide aria
     pause 3.0
     show aria at offscreenright with hpunch
@@ -142,7 +144,7 @@ label dpn_diner:
     hide cop_2
     with moveoutbottom
     n "As Aria heads back to the car, she sneaks around and knocks the cop's heads together, knocking them out."
-    show aria at right with move
+    show aria flipped at right with move
     show cop at left with moveinleft
     cop "Ah shit! We got two men down! Arrest her!"
     jump aria_fight
@@ -154,7 +156,7 @@ label aria_fight:
 
 label cs_meetup:
     scene cs_somewhere 
-    show aria at right
+    show aria flipped at right
     with fade
     n "After Aria takes care of the cops, CS and Tate's group rolls up on the other side of the blockade."
     show cs at center
@@ -203,7 +205,7 @@ label cs_meetup_2:
     digi "Wow, holy shit, we did it!"
     nova "Welp, there goes all of my energy for the day."
     nova "I'm beat."
-    show aria at right with moveinright
+    show aria flipped at right with moveinright
     aria "Hey, we just got here, are you guys okay?"
     show digi flipped with determination
     digi "Yeah, we're fine, how about you?"
@@ -304,6 +306,7 @@ label car_ride_2:
     with fade
     cs "well, should we find somewhere to stop for the night? We've been going for a while."
     pakoo "Holy shit! Stop CS!"
+    show battle_block_without_theater behind car_inside_fg
     n "As CS looks ahead, he screeches on the breaks just in time."
     n "Barbed wire, soldiers, and military trucks block the highway, with Copguy standing in the front of it all."
     cs "This can't be good."
@@ -479,7 +482,7 @@ label final_meetup:
     blank "Hi!"
     show anno at mid_right with moveinright
     anno "Yo."
-    show midge at right with moveinright
+    show midge at right behind anno with moveinright
     midge "Oh hai."
     anno "Db05 isn't here yet, he's been busy."
     anno "He'll be here soon though, we've been talking to him on the phone."
