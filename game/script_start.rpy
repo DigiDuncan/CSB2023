@@ -398,6 +398,7 @@ image monika = "characters/monika.png"
 image tate = "characters/tate.png"
 image tate flipped = "flip:characters/tate.png"
 image kitty = "characters/kitty.png"
+image blank = "characters/blank.png"
 
 # Background Images
 ## CSBI

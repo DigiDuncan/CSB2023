@@ -475,7 +475,7 @@ label final_meetup:
     with moveinleft
     n "The last group to meet up all emerge as well, who are:"
     #TODO: Intro thingy
-    show worker_2 at center with moveinright
+    show blank at center with moveinright
     blank "Hi!"
     show anno at mid_right with moveinright
     anno "Yo."
