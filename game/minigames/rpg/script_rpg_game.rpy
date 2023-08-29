@@ -288,46 +288,45 @@ screen rpggame():
     add rpggame
 
 label game_loop:
-    $ global encounter
-    while encounter.won is None:
-        # First phase, get the user inputs of what each fighter should do.
-        $ actions = []
-        $ counter = 0
-        while counter < len(encounter.allies):
-            $ curr_fighter = encounter.allies[counter]
-            if not curr_fighter.dead:
-                $ valid_move = False
-                $ normal_name = curr_fighter.normal.name if curr_fighter.normal._turns_until_available == 0 else f"{curr_fighter.normal.name} [[{curr_fighter.normal._turns_until_available} turns remaining]"
-                $ special_name = curr_fighter.special.name if curr_fighter.special._turns_until_available == 0 else f"{curr_fighter.special.name} [[{curr_fighter.special._turns_until_available} turns remaining]"
-                while not valid_move:
-                    $ selected_move = renpy.display_menu([("What will "+curr_fighter.name+" do?", None), (normal_name, "normal"), (special_name, "special")])
-                    $ curr_attack = getattr(curr_fighter, selected_move)
-                    $ valid_move = curr_attack.available
-                $ target_count = curr_attack.target_count
-                $ targets = []
-                $ auto_target = curr_attack.auto_target
-                if auto_target:
-                    if auto_target == "enemies":
-                        $ targets = encounter.enemies
-                else:
-                    while target_count > 0:
-                        $ targets.append(renpy.display_menu([("Who will "+curr_fighter.name+" attack? ("+str(target_count)+")", None)]+[(e.name, e) for e in encounter.enemies]))
-                        $ target_count = target_count-1
-                $ actions.append((curr_fighter, selected_move, targets))
-
-            $ counter = counter + 1
-        # Execute the attacks
-        $ counter = 0
-        while counter < len(actions):
-            $ actions[counter][0].attack(actions[counter][1], actions[counter][2])
-            $ counter += 1
-        $ renpy.redraw(rpggame, 0)
-        python:
+    python:
+        global encounter
+        while encounter.won is None:
+            # First phase, get the user inputs of what each fighter should do.
+            actions = []
+            counter = 0
+            while counter < len(encounter.allies):
+                curr_fighter = encounter.allies[counter]
+                if not curr_fighter.dead:
+                    valid_move = False
+                    normal_name = curr_fighter.normal.name if curr_fighter.normal._turns_until_available == 0 else f"{curr_fighter.normal.name} [[{curr_fighter.normal._turns_until_available} turns remaining]"
+                    special_name = curr_fighter.special.name if curr_fighter.special._turns_until_available == 0 else f"{curr_fighter.special.name} [[{curr_fighter.special._turns_until_available} turns remaining]"
+                    while not valid_move:
+                        selected_move = renpy.display_menu([("What will "+curr_fighter.name+" do?", None), (normal_name, "normal"), (special_name, "special")])
+                        curr_attack = getattr(curr_fighter, selected_move)
+                        valid_move = curr_attack.available
+                    target_count = curr_attack.target_count
+                    targets = []
+                    auto_target = curr_attack.auto_target
+                    if auto_target:
+                        if auto_target == "enemies":
+                            targets = encounter.enemies
+                    else:
+                        while target_count > 0:
+                            targets.append(renpy.display_menu([("Who will "+curr_fighter.name+" attack? ("+str(target_count)+")", None)]+[(e.name, e) for e in encounter.enemies]))
+                            target_count = target_count-1
+                    actions.append((curr_fighter, selected_move, targets))
+                counter = counter + 1
+            # Execute the attacks
+            counter = 0
+            while counter < len(actions):
+                actions[counter][0].attack(actions[counter][1], actions[counter][2])
+                counter += 1
+            renpy.redraw(rpggame, 0)
             for f in encounter.turn_order:
                 f.tick()
                 if f.dead:
                     encounter.fighters.remove(f)
-        $ renpy.redraw(rpggame, 0)
+            renpy.redraw(rpggame, 0)
 
     jump rpggame_done
 
