@@ -57,7 +57,7 @@ label car_ride_1:
     show pakoo worried with vpunch
     # TODO: Horn honk SFX
     cs "JESUS!!"
-    n "CS serves all over the road after being startled."
+    n "CS swerves all over the road after being startled."
     show pakoo
     show cs disappointed
     arceus "Yep. I think they are doing just fine."
@@ -99,7 +99,7 @@ label dpn_diner:
     show aria at left
     with fade
     digi "Finally, we can stretch our legs again."
-    nova "Remind me what you needed me here for again? I have a set later tonight I need to prepae for!"
+    nova "Remind me what you needed me here for again? I have a set later tonight I need to prepare for!"
     digi "CS is in trouble, he's being chased by the cops."
     nova "How in the world are we supposed to help with that?!"
     aria "Don't worry, we can just trail them off with donuts if it gets really rough."
@@ -289,7 +289,7 @@ label car_ride_2:
     aria "Arceus was in jail for 5 years, Digi."
     digi "Yeah I know, but that's an Arceus thing to do."
     nova "Is it?? That's kinda concerning."
-    digi "no, I meant like, he knows what he's doing."
+    digi "No, I meant like, he knows what he's doing."
     nova "Clearly not, if he ended up in jail!"
     n "Aria laughs."
     digi "Look, here's the thing, right? I'm just shaken up a bit still after Arceus and Pakoo called us, explaining that they needed help quickly."
@@ -304,7 +304,7 @@ label car_ride_2:
     show cs at left
     show pakoo at right
     with fade
-    cs "well, should we find somewhere to stop for the night? We've been going for a while."
+    cs "Well, should we find somewhere to stop for the night? We've been going for a while."
     pakoo "Holy shit! Stop CS!"
     show battle_block_without_theater behind car_inside_fg
     n "As CS looks ahead, he screeches on the breaks just in time."
@@ -414,6 +414,7 @@ label cs_rage:
     hide arceus with moveoutleft
     digi "Roger."
     tate "Alright, let's go kick Copguy's ass!"
+    show tate flipped with determination
     hide digi
     hide tate
     with moveoutleft
@@ -438,6 +439,7 @@ label car_ride_3:
     scene aria_car_fg
     show aria at left
     show digi at right
+    with fade
     nova "So I guess this is my night. I really need to catch up with music stuff when I get home."
     digi "Guys, I'm concerned that CS might actually be going insane."
     aria "Digi, you didn't know that from the start?"
