@@ -198,6 +198,7 @@ init python:
             self.health_text = Text("HP: "+str(self.fighter.health_points)+"/"+str(self.fighter.max_health), color="#FFFFFF", size=self.text_size)
             self.AP_text = Text("AP: "+str(self.fighter.armor_points), color="#FFFFFF", size=self.text_size)
             self.ATK_text = Text("ATK: "+str(self.fighter.attack_points), color="#FFFFFF", size=self.text_size)
+            self.stat_back = Image("minigames/rpg/statbox.png")
             super().__init__(self)
 
         def render(self, width, height, st, at):
@@ -208,8 +209,7 @@ init python:
             self.AP_text = Text("AP: "+str(self.fighter.armor_points), color="#FFFFFF", size=self.text_size)
             self.ATK_text = Text("ATK: "+str(self.fighter.attack_points), color="#FFFFFF", size=self.text_size)
             r = renpy.Render(370, 270)
-            stat_back = Image("minigames/rpg/statbox.png")
-            r.place(stat_back)
+            r.place(self.stat_back)
             r.place(Text(self.fighter.name, color="#0000FF", size=50), x=25, y=5)
             r.place(self.health_text, x=x_al, y=y_al)
             r.place(self.AP_text, x=x_al, y=y_al*2)
@@ -221,27 +221,30 @@ init python:
             pass
 
         def visit(self):
-            return [self.health_text, self.AP_text, self.ATK_text]
+            return [self.health_text, self.AP_text, self.ATK_text, self.stat_back]
 
     # These are the enemy displayables. They display the enemy and the enemies health
     class EnemyDisplayable(renpy.Displayable):
         def __init__(self, fighter: Fighter):
             self.fighter = fighter
+            self.red_part = Solid("#FF0000", xsize = 0, ysize = 0)
+            self.green_part = Solid("#00FF00", xsize = 0, ysize = 0)
+            self.size = renpy.image_size(self.fighter.sprite)
             super().__init__(self)
         
         def render(self, width, height, st, at):
-            r = renpy.Render(640, renpy.image_size(self.fighter.sprite)[1])
+            r = renpy.Render(640, self.size[1])
             r.place(self.fighter.sprite, x=0, y=0)
             # Making the health bar
-            red_part = Solid("#FF0000", xsize=1920//9, ysize=1920//54)
-            r.place(red_part, x=(renpy.image_size(self.fighter.sprite)[0]//2)-((1920//9)//2), y=int(25))
-            green_part = Solid("#00FF00", xsize=int((1920//9)*((self.fighter.health_points)/(self.fighter.max_health))), ysize=1920//54)
-            r.place(green_part, x=(renpy.image_size(self.fighter.sprite)[0]//2)-((1920//9)//2), y=int(25))
+            self.red_part = Solid("#FF0000", xsize=1920//9, ysize=1920//54)
+            self.green_part = Solid("#00FF00", xsize=int((1920//9)*((self.fighter.health_points)/(self.fighter.max_health))), ysize=1920//54)
+            r.place(self.red_part, x=(self.size[0]//2)-((1920//9)//2), y=int(25))
+            r.place(self.green_part, x=(self.size[0]//2)-((1920//9)//2), y=int(25))
             renpy.redraw(self, 0)
             return r
 
         def visit(self):
-            return [self.fighter.sprite]
+            return [self.fighter.sprite, self.red_part, self.green_part]
 
     class RPGGameDisplayable(renpy.Displayable):
         def __init__(self, encounter: Encounter):
@@ -250,23 +253,28 @@ init python:
             self.start_time = None
             self.win = None
 
+            self.enemy_displayables: list[Displayable] = []
+            self.statblock_displayables: list[Displayable] = []
+
+            for e in self.encounter.enemies:
+                self.enemy_displayables.append(EnemyDisplayable(e))
+
+            for a in self.encounter.allies:
+                self.statblock_displayables.append(StatBlockDisplayable(a))
+
         def render(self, width, height, st, at):
             if self.start_time is None:
                 self.start_time = st
             r = renpy.Render(1920, 1080)
 
             # These are the enemies
-            for i in range(len(self.encounter.enemies)):
-                r.place(EnemyDisplayable(self.encounter.enemies[i]), x=(1920*(i*0.33)), y=(1080-renpy.image_size(self.encounter.enemies[i].sprite)[1])//2)
+            for i, e in enumerate(self.enemy_displayables):
+                r.place(e, x=(1920*(i*0.33)), y=(1080-e.size[1])//2)
 
             # This adds in the allies
-            for i in range(len(self.encounter.allies)):
-                r.place(StatBlockDisplayable(self.encounter.allies[i]), x=(1920*(i*0.25)+55), y=810)
+            for i, s in enumerate(self.statblock_displayables):
+                r.place(s, x=(1920*(i*0.25)+55), y=810)
 
-            #Prompts the user for input
-            # action_list = []
-            # action_list.append(renpy.invoke_in_new_context(attack_choice(self.encounter.allies[0])))
-            # print(action_list)
             return r
 
         def event(self, ev, x, y, st):
@@ -277,7 +285,7 @@ init python:
                 return self.win
 
         def visit(self):
-            return [EnemyDisplayable(e) for e in self.encounter.enemies] + [StatBlockDisplayable(a) for a in self.encounter.allies] # Assets needed to load
+            return self.enemy_displayables + self.statblock_displayables # Assets needed to load
 
     rpggame = RPGGameDisplayable(encounter)
 
