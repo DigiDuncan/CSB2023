@@ -293,9 +293,8 @@ label game_loop:
         while encounter.won is None:
             # First phase, get the user inputs of what each fighter should do.
             actions = []
-            counter = 0
-            while counter < len(encounter.allies):
-                curr_fighter = encounter.allies[counter]
+            for c in range(len(encounter.allies)):
+                curr_fighter = encounter.allies[c]
                 if not curr_fighter.dead:
                     valid_move = False
                     normal_name = curr_fighter.normal.name if curr_fighter.normal._turns_until_available == 0 else f"{curr_fighter.normal.name} [[{curr_fighter.normal._turns_until_available} turns remaining]"
@@ -311,16 +310,12 @@ label game_loop:
                         if auto_target == "enemies":
                             targets = encounter.enemies
                     else:
-                        while target_count > 0:
+                        for _ in range(target_count):
                             targets.append(renpy.display_menu([("Who will "+curr_fighter.name+" attack? ("+str(target_count)+")", None)]+[(e.name, e) for e in encounter.enemies]))
-                            target_count = target_count-1
                     actions.append((curr_fighter, selected_move, targets))
-                counter = counter + 1
             # Execute the attacks
-            counter = 0
-            while counter < len(actions):
-                actions[counter][0].attack(actions[counter][1], actions[counter][2])
-                counter += 1
+            for c in range(len(actions)):
+                actions[c][0].attack(actions[c][1], actions[c][2])
             renpy.redraw(rpggame, 0)
             for f in encounter.turn_order:
                 f.tick()
