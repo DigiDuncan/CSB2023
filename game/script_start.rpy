@@ -607,6 +607,8 @@ image car background night = Movie(play="movies/car_background_night.mp4")
 image car plains = Movie(play="movies/car_plains.mp4")
 image car plains night = Movie(play="movies/car_plains_night.mp4")
 image tvcar = Movie(play="movies/0001.mpg")
+image drive_night = Movie(play="movies/car_drive_night.mp4")
+image drive_day = Movie(play="movies/car_drive_day.mp4")
 
 #Fun Values
 image utajsign = "secret/utajsign.png"

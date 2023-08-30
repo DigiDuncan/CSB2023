@@ -60,7 +60,10 @@ init python:
         "The Chase - Toby Fox": "chase.mp3",
         "Friendship - Toby Fox": "friendship.mp3",
         "Creative Exercise - Hirokazu Tanaka": "creative_exercise.mp3",
-        "Lancer - Toby Fox": "lancer.mp3"
+        "Lancer - Toby Fox": "lancer.mp3",
+        "Weird Personalities - Lizardking": "weird_personalities.mp3",
+        "Insane Personalities - Lizardking": "insane_personalities.mp3",
+        "Echoing? - Banana": "killcops.mp3"
     }
     global album_map
 
@@ -73,6 +76,7 @@ init python:
         "Danger Mystery - Toby Fox": "undertale.png",
         "Card Castle - Toby Fox": "deltarune.png",
         "Basement - Toby Fox": "deltarune.png",
+        "Rude Buster - Toby Fox": "deltarune.png",
         "Let's Do This - Home Depot": "homedepot.png",
         "Alfred's Theme - Eminem": "mtbmb.png",
         "New Leaf Title Theme - Kazumi Totaka": "newleaf.png",
@@ -85,7 +89,10 @@ init python:
         "Moongazer - Dr. Awesome": "tracker.png",
         "Hired Guns - Brian Johnston": "tracker.png",
         "Echoing - Banana": "tracker.png",
+        "Weird Personalities - Lizardking": "tracker.png",
         "Mm Select - Matthew Simmonds": "tracker.png",
+        "Insane Personalities - Lizardking": "trackerevil.png",
+        "Echoing? - Banana": "trackerevil.png",
         "Police Station - Lorin Nelson": "legoisland.png",
         "Happy Roaming - Lorin Nelson": "legoisland.png",
         "Park Theme - Lorin Nelson": "legoisland.png",
@@ -95,8 +102,7 @@ init python:
         "Bun Guster - Satoru Kōsaki": "luckystar.png",
         "Taiikusai Desu Yo - Satoru Kosaki": "luckystar.png",
         "Track 4 - Weatherscan": "weather.png",
-        "Track 3 - Weatherscan": "weather.png",
-        "Rude Buster - Toby Fox": "deltarune.png"
+        "Track 3 - Weatherscan": "weather.png"
     }
 
 screen jukebox_nav():

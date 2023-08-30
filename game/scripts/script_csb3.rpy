@@ -794,12 +794,16 @@ label wait_arc:
     billy "Let's go!"
     scene car background
     show billy car
+    play music "<loop 0>insane_personalities.mp3" volume 0.6
+    music Insane Personalities - Lizardking
     pause 5.0
     scene car background night
     show billy car
     with fade
     pause 3.0
     n "For the whole drive, no one says a word."
+    stop music fadeout 3.0
+    music end
     scene cultforest
     show billy car
     billy "Welp. We are here."
@@ -813,6 +817,7 @@ label wait_arc:
     arceus "After that the incident with the cops he's been..."
     pause 1.0
     arceus "He's just been-"
+    play music "<from 60 to 170>insane_personalities.mp3" volume 1
     csgod "Stronger than ever."
     show csgod flipped at mid_left with moveinleft
     show arceus flipped at mid_left with vpunch
@@ -829,6 +834,7 @@ label wait_arc:
     n "Billy takes off in an instant after witnessing the event."
     csgod "I have finally harnessed the power of CS God!"
     csgod "Time to take over the world!"
+    stop music
     return
 
 label pussy_out_forest:

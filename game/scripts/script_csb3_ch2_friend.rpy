@@ -1,10 +1,10 @@
 label dpn_call:
     if nice_car:
         scene joj_charger_fg
-        show washington_road day behind joj_charger_fg
+        show drive_day behind joj_charger_fg
     else:
         scene car_inside_fg
-        show washington_road day behind car_inside_fg
+        show drive_day behind car_inside_fg
     show cs at left
     show pakoo at right
     with fade
@@ -34,7 +34,7 @@ label car_ride_1:
     scene black with fade
     n "Meanwhile, Tate's group seems to be having the time of their lives."
     scene jeep_inside_fg
-    show washington_road day behind jeep_inside_fg
+    show drive_day behind jeep_inside_fg
     show mika at left
     show tate flipped at right
     with fade
@@ -46,7 +46,7 @@ label car_ride_1:
     tate "Hold up, is that CS and their gang infront of us?"
     tate "Mika, blare the horn at them! Do it! It'll scare the crap outta CS!"
     scene car_inside_fg
-    show washington_road day behind car_inside_fg
+    show drive_day behind car_inside_fg
     show cs disappointed at left
     show pakoo at right
     with fade
@@ -62,7 +62,7 @@ label car_ride_1:
     show cs disappointed
     arceus "Yep. I think they are doing just fine."
     scene jeep_inside_fg
-    show washington_road day behind jeep_inside_fg
+    show drive_day behind jeep_inside_fg
     show mika at left
     show tate flipped at right
     with fade
@@ -77,7 +77,7 @@ label car_ride_1:
     tate "I'm Tate. I'm sure they are doing just fine, and it's nice to meet you all."
     tate "Now let's go kick some ass!"
     scene car_inside_fg
-    show washington_road day behind car_inside_fg
+    show drive_day behind car_inside_fg
     show cs at left
     show pakoo at right
     with fade
@@ -117,12 +117,14 @@ label dpn_diner:
     nova "They're gonna die."
     scene black with fade
     scene aria_car_fg
+    show drive_night behind aria_car_fg
     show aria at left
     with fade
     pause 3.0
     #TODO: Aria Lines!
 
     n "As Aria is approaching CS and the gang, they screech on the breaks as they almost run into a blockade."
+    hide drive_night
     show cs_somewhere behind aria_car_fg
     n "Cop cars surround the vicinity of the area."
     n "Aria gets out of the car."
@@ -252,6 +254,7 @@ label cs_meetup_2:
     n "Everyone gets back into their cars, and they take off in a convoy, hoping to end this madness soon."
     n "In CS' group, the gang decides what they can do to get away from the cops."
     scene car_inside_fg
+    show drive_night behind car_inside_fg
     show cs at left
     show pakoo at right
     with fade
@@ -269,6 +272,7 @@ label cs_meetup_2:
 
 label car_ride_2:
     scene jeep_inside_fg
+    show drive_night behind jeep_inside_fg
     show mika at left
     show tate flipped at right
     with fade
@@ -282,6 +286,7 @@ label car_ride_2:
     scene black with fade
     pause 2.0
     scene aria_car_fg
+    show drive_night behind aria_car_fg
     show aria at left
     show digi at right
     with fade
@@ -301,11 +306,13 @@ label car_ride_2:
     scene black with fade
     pause 2.0
     scene car_inside_fg
+    show drive_night behind car_inside_fg
     show cs at left
     show pakoo at right
     with fade
     cs "Well, should we find somewhere to stop for the night? We've been going for a while."
     pakoo "Holy shit! Stop CS!"
+    hide drive_night
     show battle_block_without_theater behind car_inside_fg
     n "As CS looks ahead, he screeches on the breaks just in time."
     n "Barbed wire, soldiers, and military trucks block the highway, with Copguy standing in the front of it all."
@@ -429,11 +436,26 @@ label copguy_pres:
     with fade
     sheriff "They WHAT??"
     copguy "They blew up our tank, sir."
+    sheriff "Shit! Urghhh..."
+    sheriff "There is only one thing we can do."
+    sheriff "Copguy, call this number."
+    n "The sheriff sends Copguy the phone number and he dials it."
+    copguy "Hello?"
+    obama "Who is this?"
+    obama "How did you get this number?"
+    copguy "Hey Mr. President, it's me, Copguy. There is a ragtag gang of criminals on the loose that we can't stop."
+    copguy "We sent the Montana National Guard to stop them, and this gang plowed right through them."
+    obama "I see."
+    obama "Looks like we'll have to pull out the big guns."
+    obama "You are gonna head to Chicago, I'll have a jet come pick you up."
+    copguy "Thank you sir, I won't stop till this group is defeated."
+    scene black with fade
     jump car_ride_3
 
 label car_ride_3:
     #TODO: Car dialogue
-    show car_inside_fg
+    scene car_inside_fg
+    show drive_night behind car_inside_fg
     show arceus flipped at left
     show pakoo at right
     with fade
@@ -446,6 +468,7 @@ label car_ride_3:
     scene black with fade
     pause 2.0
     scene aria_car_fg
+    show drive_night behind aria_car_fg
     show aria at left
     show digi at right
     with fade
@@ -459,6 +482,7 @@ label car_ride_3:
     scene black with fade
     pause 2.0
     scene jeep_inside_fg
+    show drive_night behind jeep_inside_fg
     show mika at left
     show tate flipped at right
     with fade
@@ -475,6 +499,7 @@ label car_ride_3:
 
 label final_meetup:
     scene car_inside_fg
+    show final_destination behind car_inside_fg
     show arceus flipped at left
     show pakoo at right
     with fade
