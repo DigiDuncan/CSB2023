@@ -7,3 +7,4 @@ label test_rpg:
             cop
             cop
             cop
+        goto "secret"

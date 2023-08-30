@@ -151,10 +151,11 @@ python early:
             return self.health_points <= 0
 
     class Encounter:
-        def __init__(self, fighters: list[Fighter], background: Displayable, music: str):
+        def __init__(self, fighters: list[Fighter], background: Displayable, music: str, goto: str):
             self.fighters = [copy(f) for f in fighters]
             self.background = background
             self.music = music
+            self.goto = goto
 
         @property
         def allies(self) -> list[Fighter]:
@@ -185,7 +186,7 @@ python early:
         CS = Fighter("CS", False, 188, 5, 25, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/cs/neutral.png"))
         COP = Fighter("Cop", True, 150, 15, 30, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/copguy.png"))
 
-    encounter = Encounter([], Image("images/bg/casino1.png"), "audio/card_castle.mp3")
+    encounter = Encounter([], Image("images/bg/black.png"), "audio/legosfx.mp3", "start")
 
     # This is the displayable that controls what's happening in the boxes at the bottom of the screen
 
@@ -255,6 +256,15 @@ python early:
             self.enemy_displayables: list[Displayable] = []
             self.statblock_displayables: list[Displayable] = []
 
+            self.reset()
+
+        def reset(self):
+            self.start_time = None
+            self.win = None
+
+            self.enemy_displayables: list[Displayable] = []
+            self.statblock_displayables: list[Displayable] = []
+
             for e in self.encounter.enemies:
                 self.enemy_displayables.append(EnemyDisplayable(e))
 
@@ -273,7 +283,7 @@ python early:
 
             # This adds in the allies
             for i, s in enumerate(self.statblock_displayables):
-                if not s.figher.dead:
+                if not s.fighter.dead:
                     r.place(s, x=(1920*(i*0.25)+55), y=810)
 
             return r
@@ -316,18 +326,25 @@ python early:
             fighters.append(ll.rest())
             ll.expect_eol()
 
+        # goto
+        l.advance()
+        l.keyword("goto")
+        label = l.string()
+
         fighters = [f.upper() for f in fighters]
 
-        return (bg, music, fighters)
+        return (bg, music, fighters, label)
 
     def execute_rpg(parsed_object):
-        b, m, f = parsed_object
-        global encounter
-        encounter = Encounter(
+        b, m, f, l = parsed_object
+        global rpggame
+        rpggame.encounter = Encounter(
             [getattr(Fighters, fighter) for fighter in f],
             Image(b),
-            m
+            m,
+            l
         )
+        rpggame.reset()
         renpy.jump("play_rpggame")
 
     def lint_rpg(parsed_object):
@@ -340,14 +357,13 @@ python early:
         block = True)
 
 screen rpggame():
-    $ global encounter
-    # Add a background or any static images here.
-    add encounter.background
+    add rpggame.encounter.background
     add rpggame
 
 label game_loop:
     python:
-        global encounter
+        global rpggame
+        encounter = rpggame.encounter
         while encounter.won is None:
             # First phase, get the user inputs of what each fighter should do.
             actions = []
@@ -386,7 +402,7 @@ label game_loop:
 label play_rpggame:
     window hide
     $ quick_menu = False
-    play music encounter.music
+    play music rpggame.encounter.music
     show screen rpggame
     jump game_loop
 
@@ -395,9 +411,8 @@ label rpggame_done:
     $ quick_menu = True
     window show
 
-    if _return == True:
-        pass
-        # Thing for win condition
+    if rpggame.encounter.won == True:
+        $ renpy.jump(rpggame.encounter.goto)
     else:
         pass
         # Thing for lose condition
