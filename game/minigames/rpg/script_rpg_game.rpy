@@ -1,4 +1,4 @@
-init python:
+python early:
     import math
     from copy import copy
     from typing import Callable
@@ -152,7 +152,7 @@ init python:
 
     class Encounter:
         def __init__(self, fighters: list[Fighter], background: Displayable, music: str):
-            self.fighters = fighters
+            self.fighters = [copy(f) for f in fighters]
             self.background = background
             self.music = music
 
@@ -177,17 +177,15 @@ init python:
             else:
                 return None
 
-    # Example Fighter object
+    class Attacks:
+        PUNCH = Attack("Punch", damage_fighters)
+        BULLET_SPRAY = Attack("Bullet Spray", damage_fighters, target_count = 0, auto_target = "enemies", cooldown = 3, mult = 1.5)
 
-    punch_attack = Attack("Punch", damage_fighters)
-    bullet_spray_attack = Attack("Bullet Spray", damage_fighters, target_count = 0, auto_target = "enemies", cooldown = 3, mult = 1.5)
+    class Fighters:
+        CS = Fighter("CS", False, 188, 5, 25, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/cs/neutral.png"))
+        COP = Fighter("Cop", True, 150, 15, 30, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/copguy.png"))
 
-    cs_fighter = Fighter("CS", False, 188, 5, 25, [punch_attack, bullet_spray_attack], Image("images/characters/cs/neutral.png"))
-    cop_fighter = Fighter("Cop", True, 150, 15, 30, [punch_attack, bullet_spray_attack], Image("images/characters/copguy.png"))
-    cop_fighter2 = Fighter("Cop", True, 150, 15, 30, [punch_attack, bullet_spray_attack], Image("images/characters/copguy.png"))
-    cop_fighter3 = Fighter("Cop", True, 150, 15, 30, [punch_attack, bullet_spray_attack], Image("images/characters/copguy.png"))
-
-    encounter = Encounter([cs_fighter, cop_fighter, cop_fighter2, cop_fighter3], Image("images/bg/casino1.png"), "audio/card_castle.mp3")
+    encounter = Encounter([], Image("images/bg/casino1.png"), "audio/card_castle.mp3")
 
     # This is the displayable that controls what's happening in the boxes at the bottom of the screen
 
@@ -270,11 +268,13 @@ init python:
 
             # These are the enemies
             for i, e in enumerate(self.enemy_displayables):
-                r.place(e, x=(1920*(i*0.33)), y=(1080-e.size[1])//2)
+                if not e.fighter.dead:
+                    r.place(e, x=(1920*(i*0.33)), y=(1080-e.size[1])//2)
 
             # This adds in the allies
             for i, s in enumerate(self.statblock_displayables):
-                r.place(s, x=(1920*(i*0.25)+55), y=810)
+                if not s.figher.dead:
+                    r.place(s, x=(1920*(i*0.25)+55), y=810)
 
             return r
 
@@ -289,6 +289,57 @@ init python:
             return self.enemy_displayables + self.statblock_displayables # Assets needed to load
 
     rpggame = RPGGameDisplayable(encounter)
+
+    # Custom encounter statement
+
+    def parse_rpg(lexer):
+        lexer.require(":")
+        lexer.expect_eol()
+        lexer.expect_block("rpg")
+
+        # block
+        l = lexer.subblock_lexer()
+        l.advance()
+        l.keyword("bg")
+        bg = l.string()
+        l.advance()
+        l.keyword("music")
+        music = l.string()
+        
+        # fighters: subblock
+        l.advance()
+        l.require(":")
+        l.expect_eol()
+        l.expect_block("fighters")
+
+        fighters = []
+        ll = l.subblock_lexer()
+        while ll.advance():
+            fighters.append(ll.rest())
+            ll.expect_eol()
+
+        fighters = [f.upper() for f in fighters]
+
+        return (bg, music, fighters)
+
+    def execute_rpg(parsed_object):
+        b, m, f = parsed_object
+        global encounter
+        encounter = Encounter(
+            [getattr(Fighters, fighter) for fighter in f],
+            Image(b),
+            m
+        )
+        renpy.jump("play_rpggame")
+
+    def lint_rpg(parsed_object):
+        pass
+
+    renpy.register_statement("rpg",
+        parse = parse_rpg,
+        lint = lint_rpg,
+        execute = execute_rpg,
+        block = True)
 
 screen rpggame():
     $ global encounter
@@ -352,3 +403,13 @@ label rpggame_done:
     else:
         pass
         # Thing for lose condition
+
+label test_rpg:
+    rpg:
+        bg "images/bg/casino1.png"
+        music "audio/card_castle.mp3"
+        fighters:
+            cs
+            cop
+            cop
+            cop
