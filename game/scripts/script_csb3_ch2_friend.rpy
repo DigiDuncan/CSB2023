@@ -420,6 +420,19 @@ label cs_rage:
     with moveoutleft
     scene black with fade
     n "The crew gets in their respective cars, and they take off."
+    scene black with fade
+    jump copguy_pres
+
+label copguy_pres:
+    n "After Copguy fled the scene, he immediately went to summarize the bad news to the sheriff."
+    show copguy at left
+    with fade
+    sheriff "They WHAT??"
+    copguy "They blew up our tank, sir."
+    jump car_ride_3
+
+label car_ride_3:
+    #TODO: Car dialogue
     show car_inside_fg
     show arceus flipped at left
     show pakoo at right
@@ -432,10 +445,6 @@ label cs_rage:
     cs "We're gonna need it."
     scene black with fade
     pause 2.0
-    jump car_ride_3
-
-label car_ride_3:
-    #TODO: Car dialogue
     scene aria_car_fg
     show aria at left
     show digi at right
