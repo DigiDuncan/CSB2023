@@ -308,8 +308,6 @@ python early:
         
         # fighters: subblock
         l.advance()
-        l.require(":")
-        l.expect_eol()
         l.expect_block("fighters")
 
         fighters = []
@@ -403,13 +401,3 @@ label rpggame_done:
     else:
         pass
         # Thing for lose condition
-
-label test_rpg:
-    rpg:
-        bg "images/bg/casino1.png"
-        music "audio/card_castle.mp3"
-        fighters:
-            cs
-            cop
-            cop
-            cop
