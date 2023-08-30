@@ -111,6 +111,8 @@ label montana:
     scene car background
     show billy car
     with fade
+    play music "<loop 0>weird_personalities.mp3" volume 0.6
+    music Weird Personalities - Lizardking
     n "After a few hours of driving, the trio currently is located in the middle of Montana."
     n "Arceus is sleeping, while CS peers out the window."
     cs "Are we there yet?"
@@ -132,6 +134,8 @@ label montana:
     scene hardwareoutside
     show billy car
     billy "Here we are, at the store. I'll be back here in a few."
+    stop music fadeout 3.0
+    music end
     cs "Same, I'll come with you."
     n "Arceus falls back to sleep in the car."
     play sound "doorslam.ogg"
