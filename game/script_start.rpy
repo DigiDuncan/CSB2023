@@ -237,14 +237,14 @@ define billy_far = Character("Billy (from off screen)", callback = renpy.partial
 define direct = Character("Director", callback = renpy.partial(char_callback, beep = "iris"))
 define monika = Character("Monika", callback = renpy.partial(char_callback, beep = "monika"))
 define lancer = Character("Lancer", callback = renpy.partial(char_callback, name = "lancer", beep = "lancer"))
-define tate = Character("Tate", callback = char_callback)  # TODO: Beep
-define kitty = Character("Kitty", callback = char_callback)  # TODO: Beep
-define obama = Character("Obama", callback = renpy.partial(char_callback, beep = "obama"))
-define blank = Character("Blank")  # TODO: Beep
-define aria = Character("Aria")  # TODO: Beep
-define cop = Character("Cop")
-define midge = Character("Midge")
-define db = Character("DB05")
+define tate = Character("Tate",  callback = renpy.partial(char_callback, name = "tate"))  # TODO: Beep
+define kitty = Character("Kitty", callback = renpy.partial(char_callback, name = "kitty"))  # TODO: Beep
+define obama = Character("Obama", callback = renpy.partial(char_callback, name = "obama", beep = "obama"))
+define blank = Character("Blank", callback = renpy.partial(char_callback, name = "blank"))
+define aria = Character("Aria", callback = renpy.partial(char_callback, name = "aria"))  # TODO: Beep
+define cop = Character("Cop", callback = renpy.partial(char_callback, name = "cop"))
+define midge = Character("Midge", callback = renpy.partial(char_callback, name = "midge"))
+define db = Character("DB05", callback = renpy.partial(char_callback, name = "db"))
 
 # Character Images
 ## CS
