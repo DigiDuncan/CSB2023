@@ -46,6 +46,14 @@ init python:
         "mika": "Mikapara",
         "bubble": "Bub Ble",
         "lancer": "Lancer",
+        "tate": "alleZSoyez",
+        "kitty": "Undead Kitty",
+        "obama": "Barack Obama",
+        "blank": "Blank Named",
+        "aria": "Aria",
+        "cop": "Copdude",
+        "midge": "Midgalicis",
+        "db": "DB05",
         "iris": "???"
 
     }
