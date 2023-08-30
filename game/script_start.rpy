@@ -600,7 +600,6 @@ image m4 flipped = "flip:m4.png"
 image m4 fire = "m4fire.png"
 image m4 fire flipped = "flip:m4fire.png"
 
-
 # Movies
 image car background = Movie(play="movies/car_background.mp4")
 image car background night = Movie(play="movies/car_background_night.mp4")

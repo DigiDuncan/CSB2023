@@ -42,7 +42,6 @@ label microcenter:
     cs "Before I get too carried away though, I should probably start by buying the processor."
     hide cs at right with moveoutright
     scene cpuaisle with fade
-    # TODO: [BG] CPU aisle
     n "CS goes to the CPU aisle."
     show cs at mid_left with moveinleft
     cs "My goodness, there are so many options."

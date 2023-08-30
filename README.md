@@ -13,7 +13,6 @@ See what needs to be done below.
 -------
 
 ### Big Tasks
-- [ ] RPG Game
 - [ ] Rhythm Game
 - [ ] Country Route Game
 - [ ] Ending Screens
@@ -25,10 +24,10 @@ See what needs to be done below.
 - [ ] End Fight cutscene
 
 ### Friend Ending
-- [ ] Script
-- [ ] Backgrounds
-- [ ] Characters
-- [ ] Transitions
+- [ ] Script [90%]
+- [ ] Backgrounds [90%]
+- [ ] Characters [75%]
+- [ ] Transitions [95%]
 - [ ] Music
 - [ ] Bios
 - [ ] Jukebox
@@ -51,8 +50,18 @@ See what needs to be done below.
 - [ ] Bios
 - [ ] Jukebox
 
+### RPG Game
+- [ ] Basic Game Loop [75%]
+- [ ] All Attacks and Fighters in
+- [ ] All Sprites done
+- [ ] Animations
+- [ ] SFX
+- [ ] Reactive Text
+- [ ] Balancing
+- [ ] Add games to script
+
 ### Passes
 - [ ] Spelling/Grammar Pass
-- [ ] Transition Pass
+- [ ] Transition/Flip Pass
 - [ ] Jukebox/Achievements/Bio Pass
-- [ ] Remove all TODO comments
+- [ ] Remove/address all TODO comments
