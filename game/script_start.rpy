@@ -405,6 +405,8 @@ image midge = "characters/midge.png"
 image aria = "characters/aria.png"
 image aria flipped = "flip:characters/aria.png"
 image guard_soldier = "characters/guard_soldier.png"
+image obama = "characters/obama.png"
+image db = "characters/db.png"
 
 # Background Images
 ## CSBI
