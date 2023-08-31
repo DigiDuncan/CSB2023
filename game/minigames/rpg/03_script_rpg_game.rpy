@@ -42,8 +42,8 @@ python early:
         Valid options:
         - `min_mult: float`: The minimum multiplier on top of `subject`'s ATK to hit the targets with.
         - `max_mult: float`: The maximum multiplier on top of `subject`'s ATK to hit the targets with."""
-        min_mult = options.get("mult", 1)
-        max_mult = options.get("count", 1)
+        min_mult = options.get("min_mult", 1)
+        max_mult = options.get("max_mult", 1)
         mult = max_mult if crit else renpy.random.uniform(min_mult, max_mult)
         for f in targets:
             hit = subject.attack_points * mult * 1.5 if crit else subject.attack_points * mult
@@ -115,23 +115,16 @@ python early:
 
         @property
         def special(self) -> Attack:
-            return self.attacks[1]
+            return self.attacks[1] if len(self.attacks) >= 2 else None
 
         @property
         def psi(self) -> Attack | None:
             return self.attacks[2] if len(self.attacks) >= 3 else None
 
-        def attack(self, style: Literal["normal", "special", "psi"], targets: list[Fighter]):
+        def attack(self, style: int, targets: list[Fighter]):
             hit = renpy.random.choice(True, False) if self.confused else True
             if hit:
-                if style == "normal":
-                    self.normal.run(self, targets)
-                elif style == "special":
-                        self.special.run(self, targets)
-                elif style == "psi":
-                    self.psi.run(self, targets)
-                else:
-                    return
+                self.attacks[style].run(self, targets)
 
         def tick(self):
             if self.damage_per_turn:
@@ -377,11 +370,13 @@ label game_loop:
                 curr_fighter = encounter.allies[c]
                 if not curr_fighter.dead:
                     valid_move = False
-                    normal_name = curr_fighter.normal.name if curr_fighter.normal._turns_until_available == 0 else f"{curr_fighter.normal.name} [[{curr_fighter.normal._turns_until_available} turns remaining]"
-                    special_name = curr_fighter.special.name if curr_fighter.special._turns_until_available == 0 else f"{curr_fighter.special.name} [[{curr_fighter.special._turns_until_available} turns remaining]"
+                    attacks = []
+                    for n, a in enumerate(curr_fighter.attacks):
+                        name = a.name if a._turns_until_available == 0 else f"{a.name} [[{a._turns_until_available} turns remaining]"
+                        attacks.append((name, str(n)))
                     while not valid_move:
-                        selected_move = renpy.display_menu([("What will "+curr_fighter.name+" do?", None), (normal_name, "normal"), (special_name, "special")])
-                        curr_attack = getattr(curr_fighter, selected_move)
+                        selected_move = renpy.display_menu([("What will " + curr_fighter.name + " do?", None)] + attacks)
+                        curr_attack = curr_fighter.attacks[int(selected_move)]
                         valid_move = curr_attack.available
                     target_count = curr_attack.target_count
                     targets = []
@@ -392,7 +387,7 @@ label game_loop:
                     else:
                         for _ in range(target_count):
                             targets.append(renpy.display_menu([("Who will "+curr_fighter.name+" attack? ("+str(target_count)+")", None)]+[(e.name, e) for e in encounter.enemies]))
-                    actions.append((curr_fighter, selected_move, targets))
+                    actions.append((curr_fighter, int(selected_move), targets))
             # Execute the attacks
             for c in range(len(actions)):
                 actions[c][0].attack(actions[c][1], actions[c][2])
@@ -416,6 +411,7 @@ label rpggame_done:
     stop music
     $ quick_menu = True
     window show
+    hide screen rpggame
 
     if rpggame.encounter.won == True:
         $ renpy.jump(rpggame.encounter.goto)
