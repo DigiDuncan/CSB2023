@@ -181,9 +181,15 @@ python early:
     class Attacks:
         PUNCH = Attack("Punch", damage_fighters)
         BULLET_SPRAY = Attack("Bullet Spray", damage_fighters, target_count = 0, auto_target = "enemies", cooldown = 3, mult = 1.5)
+        SLASH = Attack("Slash", damage_over_time, mult = 0.5)
+        LIGHT_CAST = Attack("Light Cast", random_damage_fighters, min_mult = 1, max_mult = 1, mult = 3)
 
     class Fighters:
         CS = Fighter("CS", False, 188, 5, 25, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/cs/neutral.png"))
+        CS_WEAK = Fighter("CS", False, 188, 5, 25, [Attacks.PUNCH], Image("images/characters/cs/neutral.png"))
+        ARCEUS = Fighter("Arceus", False, 160, 15, 35, [Attacks.SLASH, Attacks.LIGHT_CAST], Image("images/characters/arc/arceus.png"))
+        FANBOYA = Fighter("Fanboy",True, 50, 0, 15, [Attacks.PUNCH], Image("images/characters/nvidiafanboy.png"))
+        FANBOYB = Fighter("Fanboy",True, 50, 0, 15, [Attacks.PUNCH], Image("images/characters/amdfanboy.png"))
         COP = Fighter("Cop", True, 150, 15, 30, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/copguy.png"))
 
     encounter = Encounter([], Image("images/bg/black.png"), "audio/legosfx.mp3", "start")

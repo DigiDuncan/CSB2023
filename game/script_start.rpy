@@ -407,6 +407,8 @@ image aria flipped = "flip:characters/aria.png"
 image guard_soldier = "characters/guard_soldier.png"
 image obama = "characters/obama.png"
 image db = "characters/db.png"
+image nfanboy = "characters/nvidiafanboy.png"
+image afanboy = "characters/amdfanboy.png"
 
 # Background Images
 ## CSBI

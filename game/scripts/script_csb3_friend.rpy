@@ -261,12 +261,15 @@ label high_gpu:
     play sound "<loop 0>yelling.ogg" loop volume 1
     show cs angry at center with dissolve
     if fanboy_type == "nvidia":
-        "Fanboys" "Boo!! You suck! NVIDIA is the best!"        
+        "Fanboys" "Boo!! You suck! NVIDIA is the best!"  
+        cs "Yeah well, let's see about that!"
+        stop sound fadeout 3.0
+        jump fanboy_fight_nvidia     
     else:
         "Fanboys" "Boo!! You suck! AMD is the best!"
     cs "Yeah well, let's see about that!"
     stop sound fadeout 3.0
-    jump after_fanboy
+    jump fanboy_fight_amd
 
 label after_fanboy:
     scene outside_ltt
