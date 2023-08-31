@@ -856,7 +856,7 @@ label reg_car:
     pause 0.5
     cs "Make me!"
     copguy "He's armed! Men, get in position and fire!"
-    jump so_join
+    jump cop_fight_1
 
 label so_join:
     scene dealership
@@ -887,7 +887,7 @@ label so_join:
     tate "That's right! You have to mess with us now!"
     mika "Yeah! Fuck da police! (For legal reasons this is a joke)"
     kitty "Let's get them!"
-    jump after_cop_fight
+    jump cop_fight_2
 
 label after_cop_fight:
     scene dealership

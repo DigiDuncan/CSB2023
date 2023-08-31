@@ -30,3 +30,27 @@ label fanboy_fight_nvidia:
             fanboya
             fanboya
         goto "after_fanboy"
+
+label cop_fight_1:
+    rpg:
+        bg "images/bg/dealership.png"
+        music "audio/compulsion_to_obey.mp3"
+        fighters:
+            cs
+            arceus
+            pakoo
+            cop
+            cop
+            cop
+        goto "so_join"
+
+label cop_fight_2:
+    rpg:
+        bg "images/bg/dealership.png"
+        music "audio/for_the_people.mp3"
+        fighters:
+            mika
+            kitty
+            tate
+            cop
+        goto "after_cop_fight"

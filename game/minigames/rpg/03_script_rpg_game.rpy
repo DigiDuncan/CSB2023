@@ -35,7 +35,7 @@ python early:
         mult = options.get("mult", 1)
         turns = options.get("turns", 1)
         for f in targets:
-            f.damage_per_turn.append(subject.attack_points * mult, turns)
+            f.damage_per_turn.append((subject.attack_points * mult, turns))
 
     def random_damage_fighters(subject: Fighter, targets: list[Fighter], crit: bool, options: dict):
         """Damage a list of fighters for a value between two multiples..
@@ -175,15 +175,27 @@ python early:
         PUNCH = Attack("Punch", damage_fighters)
         BULLET_SPRAY = Attack("Bullet Spray", damage_fighters, target_count = 0, auto_target = "enemies", cooldown = 3, mult = 1.5)
         SLASH = Attack("Slash", damage_over_time, mult = 0.5)
-        LIGHT_CAST = Attack("Light Cast", random_damage_fighters, min_mult = 1, max_mult = 1, mult = 3)
+        LIGHT_CAST = Attack("Light Cast", random_damage_fighters, cooldown = 3, min_mult = 1, max_mult = 1, mult = 3)
+        INSIGHT =Attack("Insight", change_stat, stat = "atk", mult = 0.75)
+        SHOTGUN = Attack("Shotgun", damage_fighters, target_count = 2, cooldown = 3, mult = 2)
+        ENCOURAGE = Attack("Encourage", heal_fighters, target_count = 0, auto_target = "allies", mult = 3)
+        HIGH_NOON = Attack("High Noon", damage_fighters, target_count = 3, cooldown = 3, mult = 1)
+        SCRATCH = Attack("Scratch", damage_fighters)
+        ARMOUR = Attack("Armour", change_stat, stat = "ap", target_count = 0, auto_target = "allies", cooldown = 3, mult = 2.5)
+        DAMAGE_SCREM = Attack("Damage Screm", damage_fighters, target_count = 0, auto_target = "enemies", mult = 0.5)
+        SCREM = Attack("Screm", heal_fighters, target_count = 0, auto_target = "allies", cooldown = 3, mult = 1)
 
     class Fighters:
         CS = Fighter("CS", False, 188, 5, 25, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/cs/neutral.png"))
         CS_WEAK = Fighter("CS", False, 188, 5, 25, [Attacks.PUNCH], Image("images/characters/cs/neutral.png"))
         ARCEUS = Fighter("Arceus", False, 160, 15, 35, [Attacks.SLASH, Attacks.LIGHT_CAST], Image("images/characters/arc/arceus.png"))
+        PAKOO = Fighter("Pakoo", False, 145, 20, 30, [Attacks.INSIGHT, Attacks.SHOTGUN], Image("images/characters/pakoo.png"))
+        MIKA = Fighter("Mika", False, 165, 20, 30, [Attacks.ENCOURAGE, Attacks.HIGH_NOON], Image("images/characters/mika.png"))
+        KITTY = Fighter("Kitty", False, 155, 15, 20, [Attacks.SCRATCH, Attacks.ARMOUR], Image("images/characters/kitty.png"))
+        TATE = Fighter("Tate", False, 170, 5, 30, [Attacks.DAMAGE_SCREM, Attacks.SCREM], Image("images/characters/tate.png"))
         FANBOYA = Fighter("Fanboy",True, 50, 0, 15, [Attacks.PUNCH], Image("images/characters/nvidiafanboy.png"))
         FANBOYB = Fighter("Fanboy",True, 50, 0, 15, [Attacks.PUNCH], Image("images/characters/amdfanboy.png"))
-        COP = Fighter("Cop", True, 150, 15, 30, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/copguy.png"))
+        COP = Fighter("Cop", True, 150, 15, 30, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/cop.png"))
 
     encounter = Encounter([], Image("images/bg/black.png"), "audio/legosfx.mp3", "start")
 
