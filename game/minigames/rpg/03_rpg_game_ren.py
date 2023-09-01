@@ -123,7 +123,6 @@ class Attack:
 
         self._turns_until_available = 0
 
-
     def run(self, subject: Fighter, fighters: list[Fighter], crit: bool = False):
         self.func(subject, fighters, crit, self.options)
         self._turns_until_available = self.cooldown
