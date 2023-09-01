@@ -98,8 +98,14 @@ def change_stat(subject: Fighter, targets: list[Fighter], crit: bool, options: d
 
 def enemy_ai_neutral(subject: Fighter, encounter: Encounter):
     """Just kinda, choose a random guy and hit them."""
-    attack_idx = renpy.random.randint(0, len(subject.attacks) - 1)
-    attack = subject.attacks[attack_idx]
+    attack_chosen = False
+    while not attack_chosen:
+        attack_idx = renpy.random.randint(0, len(subject.attacks) - 1)
+        attack = subject.attacks[attack_idx]
+        if not attack.available:
+            continue
+        else:
+            attack_chosen = True
     targets = []
     if attack.target_count == 0:
         target_type = {"enemies": "allies", "allies": "enemies", "all": "all"}[attack.target_type]
@@ -117,8 +123,14 @@ def enemy_ai_neutral(subject: Fighter, encounter: Encounter):
 
 def enemy_ai_target_weak(subject: Fighter, encounter: Encounter):
     """Just kinda, choose a random guy and hit them."""
-    attack_idx = renpy.random.randint(0, len(subject.attacks) - 1)
-    attack = subject.attacks[attack_idx]
+    attack_chosen = False
+    while not attack_chosen:
+        attack_idx = renpy.random.randint(0, len(subject.attacks) - 1)
+        attack = subject.attacks[attack_idx]
+        if not attack.available:
+            continue
+        else:
+            attack_chosen = True
     targets = []
     target_type = {"enemies": "allies", "allies": "enemies", "all": "all"}[attack.target_type]
     targets = getattr(encounter, target_type)
@@ -130,8 +142,14 @@ def enemy_ai_target_weak(subject: Fighter, encounter: Encounter):
 
 def enemy_ai_target_strong(subject: Fighter, encounter: Encounter):
     """Just kinda, choose a random guy and hit them."""
-    attack_idx = renpy.random.randint(0, len(subject.attacks) - 1)
-    attack = subject.attacks[attack_idx]
+    attack_chosen = False
+    while not attack_chosen:
+        attack_idx = renpy.random.randint(0, len(subject.attacks) - 1)
+        attack = subject.attacks[attack_idx]
+        if not attack.available:
+            continue
+        else:
+            attack_chosen = True
     targets = []
     target_type = {"enemies": "allies", "allies": "enemies", "all": "all"}[attack.target_type]
     targets = getattr(encounter, target_type)
@@ -287,8 +305,8 @@ class Attacks:
     ELDRITCH_BLAST = Attack("Eldritch Blast", damage_fighters, mult = 1.5)
     RAINBOW_VOMIT = Attack("Rainbow Vomit", damage_over_time, cooldown = 3, mult = 1)
     ROBOPUNCH = Attack("RoboPunch", damage_fighters, mult = 1.25)
-    HOLOSHIELD = Attack("HoloShield", change_stat, stat = "ap", target_count = 4, target_type = "allies", cooldown = 3, mult = 2.5)
-    MUSIC_BOOST = Attack("Music Boost", change_stat, stat = "ap", target_count = 4, target_type = "allies", mult = 1)
+    HOLOSHIELD = Attack("HoloShield", change_stat, stat = "ap", target_count = 0, target_type = "allies", cooldown = 3, mult = 2.5)
+    MUSIC_BOOST = Attack("Music Boost", change_stat, stat = "ap", target_count = 0, target_type = "allies", mult = 1)
     RAVE = Attack("Rave", change_stat, stat = "ap", cooldown = 3, mult = 0.5)
     SAMPLE_BLAST = Attack("Sample Blast", random_damage_fighters, min_mult = 1, max_mult = 4, mult = 1)
     GNOMED = Attack("Gnomed", confuse_targets, target_count = 0, target_type = "enemies", cooldown = 3)
