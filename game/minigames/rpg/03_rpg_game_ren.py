@@ -104,6 +104,7 @@ def enemy_ai_neutral(subject: Fighter, encounter: Encounter):
                 targets.append(renpy.random.choice(encounter.enemies))
             elif attack.target_type == "all":
                 targets.append(renpy.random.choice(encounter.fighters))
+    print(f"{subject.name} running attack {attack.name} on {[t.name for t in targets]}...")
     subject.attack(attack_idx, targets)
 
 class AI:
@@ -170,14 +171,27 @@ class Fighter:
         if self.damage_per_turn:
             for h, t in self.damage_per_turn:
                 if t > 0:
+                    print(f"{self.name}: Taking {h} DOT damage...")
                     self.health_points -= h
                 else:
                     self.damage_per_turn.remove((h, t))
         if self.confused:
             self.confused = renpy.random.choice(True, False)
+            if self.confused:
+                print(f"{self.name}: I'm still confused...")
+            else:
+                print(f"{self.name}: No longer confused!")
         for a in self.attacks:
+            report = False
+            if a._turns_until_available != 0:
+                report = True
             a._turns_until_available -= 1
             a._turns_until_available = max(0, a._turns_until_available)
+            if report:
+                if a._turns_until_available == 0:
+                    print(f"{self.name}: {a.name} now available!")
+                else:
+                    print(f"{self.name}: {a.name} available in {a._turns_until_available} turns!")
 
     @property
     def dead(self) -> bool:
