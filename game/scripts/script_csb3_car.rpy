@@ -245,6 +245,21 @@ label car_dialogue:
     
     pause 1.0
 
+    cs "The fog is coming."
+    arceus "The fog is coming, CS?"
+    cs "The fog is coming, Arc."
+    billy "Crap, the fog is coming!"
+    cs "The fog is coming, Billy."
+    n "The phone rings."
+    digi "The fog is coming."
+    arceus "Fuck, the fog is coming, Digi?!"
+    digi "The fog is coming, Arceus."
+    billy "The fog is coming."
+    n "Billy hangs up the phone."
+    cs "The fog is coming."
+
+    pause 1.0
+
     n "CS hears something from the back of the car. It sounds like the fumbling of plastic."
     n "CS turns around."
     n "Arceus is mumbling under his breath."
