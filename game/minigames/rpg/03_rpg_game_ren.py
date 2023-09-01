@@ -32,12 +32,16 @@ def damage_fighters(subject: Fighter, targets: list[Fighter], crit: bool, option
 def heal_fighters(subject: Fighter, targets: list[Fighter], crit: bool, options: dict):
     """Heal a list of fighters.
     Valid options:
-    - `mult: float`: The multiplier on top of `subject`'s ATK to hit the targets with."""
+    - `mult: float`: The multiplier on top of `subject`'s ATK to hit the targets with.
+    - `overheal: bool`: Whether to allow targets to heal over their max health."""
     mult = options.get("mult", 1)
+    overheal = options.get("overheal", False)
     for f in targets:
         hit = subject.attack_points * mult * 1.5 if crit else subject.attack_points * mult
         hit *= 1 - (f.armor_points / 100)
         f.health_points += hit
+        if not overheal:
+            f.health_points = min(f.health_points, f.max_health)
         print(f"Healing {hit} damage from {f.name}.")
 
 def damage_over_time(subject: Fighter, targets: list[Fighter], crit: bool, options: dict):
