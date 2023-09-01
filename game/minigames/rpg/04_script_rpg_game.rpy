@@ -38,6 +38,8 @@ label game_loop:
             # Execute the attacks
             for c in range(len(actions)):
                 actions[c][0].attack(actions[c][1], actions[c][2])
+            for e in encounter.enemies:
+                e.attack_ai(encounter)
             renpy.redraw(rpggame, 0)
             for f in encounter.turn_order:
                 f.tick()

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import renpy
+import renpy.random  # noqa
 from renpy.display.core import Displayable
 from renpy.display.im import Image
 from renpy.display.imagelike import Solid
@@ -85,17 +86,28 @@ def change_stat(subject: Fighter, targets: list[Fighter], crit: bool, options: d
 
 def enemy_ai_neutral(subject: Fighter, encounter: Encounter):
     """Just kinda, choose a random guy and hit them."""
-    attack_idx = renpy.random.randint(0, len(subject.attacks))
+    attack_idx = renpy.random.randint(0, len(subject.attacks) - 1)
     attack = subject.attacks[attack_idx]
+    targets = []
     if attack.target_count == 0:
         if attack.target_type == "enemies":
-            subject.attack(attack_idx, encounter.allies)
+            targets = encounter.allies
         elif attack.target_type == "allies":
-            subject.attack(attack_idx, encounter.enemies)
+            targets = encounter.enemies
         elif attack.target_type == "all":
-            subject.attack(attack_idx, encounter.fighters)
+            targets = encounter.fighters
     else:
-        pass
+        for _ in range(attack.target_count):
+            if attack.target_type == "enemies":
+                targets.append(renpy.random.choice(encounter.allies))
+            elif attack.target_type == "allies":
+                targets.append(renpy.random.choice(encounter.enemies))
+            elif attack.target_type == "all":
+                targets.append(renpy.random.choice(encounter.fighters))
+    subject.attack(attack_idx, targets)
+
+class AI:
+    NEUTRAL = enemy_ai_neutral
 
 # Objects
 
@@ -120,7 +132,7 @@ class Attack:
         return self._turns_until_available == 0
 
 class Fighter:
-    def __init__(self, name: str, enemy: bool, hp: int, ap: int, atk: int, attacks: list[Attack], sprite: Displayable, multiplier: float = 1, ai = None):
+    def __init__(self, name: str, enemy: bool, hp: int, ap: int, atk: int, attacks: list[Attack], sprite: Displayable, multiplier: float = 1, ai: callable = None):
         self.name = name
         self.enemy = enemy
         self.health_points = int(hp * multiplier)
@@ -150,6 +162,9 @@ class Fighter:
         hit = renpy.random.choice(True, False) if self.confused else True
         if hit:
             self.attacks[style].run(self, targets)
+
+    def attack_ai(self, encounter: Encounter):
+        self.ai(self, encounter)
 
     def tick(self):
         if self.damage_per_turn:
@@ -244,13 +259,13 @@ class Fighters:
     MIDGE = Fighter("Midge", False, 165, 10, 25, [Attacks.NUDGE, Attacks.DRAW_IN], Image("images/characters/midge.png"))
     DB05 = Fighter("Db05", False, 9001, 9001, 50, [Attacks.CONFIDENCE, Attacks.PEP_TALK], Image("images/characters/db.png"))
     ANNO = Fighter("Anno", False, 220, 30, 40, [Attacks.RADS_ATTACK, Attacks.AI_MIMIC], Image("images/characters/anno.png"))
-    FANBOYA = Fighter("Fanboy",True, 50, 0, 15, [Attacks.PUNCH], Image("images/characters/nvidiafanboy.png"))
-    FANBOYB = Fighter("Fanboy",True, 50, 0, 15, [Attacks.PUNCH], Image("images/characters/amdfanboy.png"))
-    COP = Fighter("Cop", True, 150, 15, 30, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/cop.png"))
-    COPGUYGODMODE = Fighter("Copguy", True, 9001, 9001, 35, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/copguy.png"))
-    COPGUY1 = Fighter("Copguy", True, 300, 20, 35, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/copguy.png"))
-    GUARD = Fighter("Guard", True, 250, 25, 40, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/guard_soldier.png"))
-    SML_TANK = Fighter("Sherman", True, 500, 60, 120, [Attacks.SHELL], Image("images/characters/sherman.png"))
+    FANBOYA = Fighter("Fanboy",True, 50, 0, 15, [Attacks.PUNCH], Image("images/characters/nvidiafanboy.png"), ai = AI.NEUTRAL)
+    FANBOYB = Fighter("Fanboy",True, 50, 0, 15, [Attacks.PUNCH], Image("images/characters/amdfanboy.png"), ai = AI.NEUTRAL)
+    COP = Fighter("Cop", True, 150, 15, 30, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/cop.png"), ai = AI.NEUTRAL)
+    COPGUYGODMODE = Fighter("Copguy", True, 9001, 9001, 35, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/copguy.png"), ai = AI.NEUTRAL)
+    COPGUY1 = Fighter("Copguy", True, 300, 20, 35, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/copguy.png"), ai = AI.NEUTRAL)
+    GUARD = Fighter("Guard", True, 250, 25, 40, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/guard_soldier.png"), ai = AI.NEUTRAL)
+    SML_TANK = Fighter("Sherman", True, 500, 60, 120, [Attacks.SHELL], Image("images/characters/sherman.png"), ai = AI.NEUTRAL)
 
 encounter = Encounter([], Image("images/bg/black.png"), "audio/legosfx.mp3", "start")
 
