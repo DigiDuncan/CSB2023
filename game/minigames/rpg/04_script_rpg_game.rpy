@@ -23,13 +23,17 @@ label game_loop:
                         valid_move = curr_attack.available
                     target_count = curr_attack.target_count
                     targets = []
-                    auto_target = curr_attack.auto_target
-                    if auto_target:
-                        if auto_target == "enemies":
+                    target_type = curr_attack.target_type
+                    if target_count == 0:
+                        if target_type == "enemies":
                             targets = encounter.enemies
+                        if target_type == "allies":
+                            targets = encounter.allies
+                        if target_type == "all":
+                            targets = encounter.fighters
                     else:
                         for _ in range(target_count):
-                            targets.append(renpy.display_menu([("Who will "+curr_fighter.name+" attack? ("+str(target_count)+")", None)]+[(e.name, e) for e in encounter.enemies]))
+                            targets.append(renpy.display_menu([("Who will "+curr_fighter.name+" attack? ("+str(target_count)+")", None)]+[(e.name, e) for e in getattr(encounter, curr_attack.target_type)]))
                     actions.append((curr_fighter, int(selected_move), targets))
             # Execute the attacks
             for c in range(len(actions)):

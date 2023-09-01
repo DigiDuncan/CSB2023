@@ -85,16 +85,26 @@ def change_stat(subject: Fighter, targets: list[Fighter], crit: bool, options: d
 
 def enemy_ai_neutral(subject: Fighter, encounter: Encounter):
     """Just kinda, choose a random guy and hit them."""
-    attack = renpy.random.choice(subject.attacks)
+    attack_idx = renpy.random.randint(0, len(subject.attacks))
+    attack = subject.attacks[attack_idx]
+    if attack.target_count == 0:
+        if attack.target_type == "enemies":
+            subject.attack(attack_idx, encounter.allies)
+        elif attack.target_type == "allies":
+            subject.attack(attack_idx, encounter.enemies)
+        elif attack.target_type == "all":
+            subject.attack(attack_idx, encounter.fighters)
+    else:
+        pass
 
 # Objects
 
 class Attack:
-    def __init__(self, name: str, func: Callable[[Fighter, list[Fighter], dict], None], target_count = 1, auto_target: str = None, cooldown: int = 0, **kwargs):
+    def __init__(self, name: str, func: Callable[[Fighter, list[Fighter], dict], None], target_count = 1, target_type: str = "enemies", cooldown: int = 0, **kwargs):
         self.name = name
         self.func = func
         self.target_count = target_count
-        self.auto_target = auto_target
+        self.target_type = target_type
         self.cooldown = cooldown
         self.options = kwargs
 
@@ -172,6 +182,10 @@ class Encounter:
     @property
     def enemies(self) -> list[Fighter]:
         return [f for f in self.fighters if f.enemy]
+    
+    @property
+    def all(self) -> list[Fighter]:
+        return self.fighters
 
     @property
     def turn_order(self) -> list[Fighter]:
@@ -188,31 +202,31 @@ class Encounter:
 
 class Attacks:
     PUNCH = Attack("Punch", damage_fighters)
-    BULLET_SPRAY = Attack("Bullet Spray", damage_fighters, target_count = 0, auto_target = "enemies", cooldown = 3, mult = 1.5)
+    BULLET_SPRAY = Attack("Bullet Spray", damage_fighters, target_count = 0, target_type = "enemies", cooldown = 3, mult = 1.5)
     SLASH = Attack("Slash", damage_over_time, mult = 0.5)
     LIGHT_CAST = Attack("Light Cast", random_damage_fighters, cooldown = 3, min_mult = 1, max_mult = 1, mult = 3)
     INSIGHT = Attack("Insight", change_stat, stat = "atk", mult = 0.75)
     SHOTGUN = Attack("Shotgun", damage_fighters, target_count = 2, cooldown = 3, mult = 2)
-    ENCOURAGE = Attack("Encourage", heal_fighters, target_count = 0, auto_target = "allies", mult = 3)
+    ENCOURAGE = Attack("Encourage", heal_fighters, target_count = 0, target_type = "allies", mult = 3)
     HIGH_NOON = Attack("High Noon", damage_fighters, target_count = 3, cooldown = 3, mult = 1)
     SCRATCH = Attack("Scratch", damage_fighters)
-    ARMOUR = Attack("Armour", change_stat, stat = "ap", target_count = 0, auto_target = "allies", cooldown = 3, mult = 2.5)
-    DAMAGE_SCREM = Attack("Damage Screm", damage_fighters, target_count = 0, auto_target = "enemies", mult = 0.5)
-    SCREM = Attack("Screm", heal_fighters, target_count = 0, auto_target = "allies", cooldown = 3, mult = 1)
+    ARMOUR = Attack("Armour", change_stat, stat = "ap", target_count = 0, target_type = "allies", cooldown = 3, mult = 2.5)
+    DAMAGE_SCREM = Attack("Damage Screm", damage_fighters, target_count = 0, target_type = "enemies", mult = 0.5)
+    SCREM = Attack("Screm", heal_fighters, target_count = 0, target_type = "allies", cooldown = 3, mult = 1)
     ELDRITCH_BLAST = Attack("Eldritch Blast", damage_fighters, mult = 1.5)
     RAINBOW_VOMIT = Attack("Rainbow Vomit", damage_over_time, cooldown = 3, mult = 1)
     ROBOPUNCH = Attack("RoboPunch", damage_fighters, mult = 1.25)
-    HOLOSHIELD = Attack("HoloShield", change_stat, stat = "ap", target_count = 4, auto_target = "allies", cooldown = 3, mult = 2.5)
-    MUSIC_BOOST = Attack("Music Boost", change_stat, stat = "ap", target_count = 4, auto_target = "allies", mult = 1)
+    HOLOSHIELD = Attack("HoloShield", change_stat, stat = "ap", target_count = 4, target_type = "allies", cooldown = 3, mult = 2.5)
+    MUSIC_BOOST = Attack("Music Boost", change_stat, stat = "ap", target_count = 4, target_type = "allies", mult = 1)
     RAVE = Attack("Rave", change_stat, stat = "ap", cooldown = 3, mult = 0.5)
     SAMPLE_BLAST = Attack("Sample Blast", random_damage_fighters, min_mult = 1, max_mult = 4, mult = 1)
-    GNOMED = Attack("Gnomed", confuse_targets, target_count = 0, auto_target = "enemies", cooldown = 3)
+    GNOMED = Attack("Gnomed", confuse_targets, target_count = 0, target_type = "enemies", cooldown = 3)
     NUDGE = Attack("Nudge", random_damage_fighters, min_mult = 0.1, max_mult = 10, mult = 1)
-    DRAW_IN = Attack("Draw in", change_stat, stat = "atk", target_count = 0, auto_target = "allies", cooldown = 3, mult = 2)
-    CONFIDENCE = Attack("Confidence", change_stat, stat = "atk", target_count = 0, auto_target = "allies", mult = 1.5)
-    PEP_TALK = Attack("Confidence", change_stat, stat = "ap", target_count = 0, auto_target = "allies", mult = 1.5)
+    DRAW_IN = Attack("Draw in", change_stat, stat = "atk", target_count = 0, target_type = "allies", cooldown = 3, mult = 2)
+    CONFIDENCE = Attack("Confidence", change_stat, stat = "atk", target_count = 0, target_type = "allies", mult = 1.5)
+    PEP_TALK = Attack("Confidence", change_stat, stat = "ap", target_count = 0, target_type = "allies", mult = 1.5)
     RADS_ATTACK = Attack("RADS Attack", damage_over_time, mult = 0.5)
-    AI_MIMIC = Attack("AI Mimic", confuse_targets, target_count = 0, auto_target = "enemies", cooldown = 3, mult = 1)
+    AI_MIMIC = Attack("AI Mimic", confuse_targets, target_count = 0, target_type = "enemies", cooldown = 3, mult = 1)
     SHELL = Attack("Shell", random_damage_fighters, min_mult = 1, max_mult = 2, mult = 1)
 
 class Fighters:
