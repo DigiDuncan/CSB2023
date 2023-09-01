@@ -27,6 +27,7 @@ def damage_fighters(subject: Fighter, targets: list[Fighter], crit: bool, option
             hit = subject.attack_points * mult * 1.5 if crit else subject.attack_points * mult
             hit *= 1 - (f.armor_points / 100)
             f.health_points -= hit
+            print(f"Dealing {hit} damage to {f.name}.")
 
 def heal_fighters(subject: Fighter, targets: list[Fighter], crit: bool, options: dict):
     """Heal a list of fighters.
@@ -36,7 +37,8 @@ def heal_fighters(subject: Fighter, targets: list[Fighter], crit: bool, options:
     for f in targets:
         hit = subject.attack_points * mult * 1.5 if crit else subject.attack_points * mult
         hit *= 1 - (f.armor_points / 100)
-        f.health_points -= hit
+        f.health_points += hit
+        print(f"Healing {hit} damage from {f.name}.")
 
 def damage_over_time(subject: Fighter, targets: list[Fighter], crit: bool, options: dict):
     """Set a damage over time for a list of fighters.
@@ -47,6 +49,7 @@ def damage_over_time(subject: Fighter, targets: list[Fighter], crit: bool, optio
     turns = options.get("turns", 1)
     for f in targets:
         f.damage_per_turn.append((subject.attack_points * mult, turns))
+        print(f"Added {subject.attack_points * mult} DOT to {f.name} for {turns} turns.")
 
 def random_damage_fighters(subject: Fighter, targets: list[Fighter], crit: bool, options: dict):
     """Damage a list of fighters for a value between two multiples..
@@ -60,11 +63,13 @@ def random_damage_fighters(subject: Fighter, targets: list[Fighter], crit: bool,
         hit = subject.attack_points * mult * 1.5 if crit else subject.attack_points * mult
         hit *= 1 - (f.armor_points / 100)
         f.health_points -= hit
+        print(f"Dealing {hit} damage to {f.name}.")
 
 def confuse_targets(subject: Fighter, targets: list[Fighter], crit: bool, options: dict):
     """Confuse a list of targets."""
     for f in targets:
         f.confused = True
+        print(f"Confusing {f.name}.")
 
 def change_stat(subject: Fighter, targets: list[Fighter], crit: bool, options: dict):
     """Damage a list of fighters.
@@ -77,10 +82,13 @@ def change_stat(subject: Fighter, targets: list[Fighter], crit: bool, options: d
     for f in targets:
         if stat == "hp":
             f.health_points *= mult
+            print(f"Setting {f.name} HP to {f.health_points}.")
         elif stat == "ap":
             f.armor_points *= mult
+            print(f"Setting {f.name} AP to {f.armor_points}.")
         elif stat == "atk":
             f.attack_points *= mult
+            print(f"Setting {f.name} ATK to {f.attack_points}.")
         else:
             pass
 
@@ -90,12 +98,8 @@ def enemy_ai_neutral(subject: Fighter, encounter: Encounter):
     attack = subject.attacks[attack_idx]
     targets = []
     if attack.target_count == 0:
-        if attack.target_type == "enemies":
-            targets = encounter.allies
-        elif attack.target_type == "allies":
-            targets = encounter.enemies
-        elif attack.target_type == "all":
-            targets = encounter.fighters
+        target_type = {"enemies": "allies", "allies": "enemies", "all": "all"}[attack.target_type]
+        targets = getattr(encounter, target_type)
     else:
         for _ in range(attack.target_count):
             if attack.target_type == "enemies":
@@ -104,11 +108,39 @@ def enemy_ai_neutral(subject: Fighter, encounter: Encounter):
                 targets.append(renpy.random.choice(encounter.enemies))
             elif attack.target_type == "all":
                 targets.append(renpy.random.choice(encounter.fighters))
-    print(f"{subject.name} running attack {attack.name} on {[t.name for t in targets]}...")
+    print(f"[[NEUTRAL AI] {subject.name} running attack {attack.name} on {[t.name for t in targets]}...")
+    subject.attack(attack_idx, targets)
+
+def enemy_ai_target_weak(subject: Fighter, encounter: Encounter):
+    """Just kinda, choose a random guy and hit them."""
+    attack_idx = renpy.random.randint(0, len(subject.attacks) - 1)
+    attack = subject.attacks[attack_idx]
+    targets = []
+    target_type = {"enemies": "allies", "allies": "enemies", "all": "all"}[attack.target_type]
+    targets = getattr(encounter, target_type)
+    if attack.target_count != 0:
+        targets = targets.sort(key = lambda x: x.health_points)
+        targets = targets[:attack.target_count]
+    print(f"[[TARGET WEAK AI] {subject.name} running attack {attack.name} on {[t.name for t in targets]}...")
+    subject.attack(attack_idx, targets)
+
+def enemy_ai_target_strong(subject: Fighter, encounter: Encounter):
+    """Just kinda, choose a random guy and hit them."""
+    attack_idx = renpy.random.randint(0, len(subject.attacks) - 1)
+    attack = subject.attacks[attack_idx]
+    targets = []
+    target_type = {"enemies": "allies", "allies": "enemies", "all": "all"}[attack.target_type]
+    targets = getattr(encounter, target_type)
+    if attack.target_count != 0:
+        targets = targets.sort(key = lambda x: x.health_points, reverse = True)
+        targets = targets[:attack.target_count]
+    print(f"[[TARGET STRONG AI] {subject.name} running attack {attack.name} on {[t.name for t in targets]}...")
     subject.attack(attack_idx, targets)
 
 class AI:
     NEUTRAL = enemy_ai_neutral
+    TARGET_WEAK = enemy_ai_target_weak
+    TARGET_STRONG = enemy_ai_target_strong
 
 # Objects
 
@@ -167,6 +199,7 @@ class Fighter:
         self.ai(self, encounter)
 
     def tick(self):
+        # DOT
         if self.damage_per_turn:
             for h, t in self.damage_per_turn:
                 if t > 0:
@@ -174,12 +207,14 @@ class Fighter:
                     self.health_points -= h
                 else:
                     self.damage_per_turn.remove((h, t))
+        # Confusion
         if self.confused:
             self.confused = renpy.random.choice(True, False)
             if self.confused:
                 print(f"{self.name}: I'm still confused...")
             else:
                 print(f"{self.name}: No longer confused!")
+        # Cooldowns
         for a in self.attacks:
             report = False
             if a._turns_until_available != 0:
@@ -191,6 +226,10 @@ class Fighter:
                     print(f"{self.name}: {a.name} now available!")
                 else:
                     print(f"{self.name}: {a.name} available in {a._turns_until_available} turns!")
+        # Normalize to int
+        self.health_points = int(self.health_points)
+        self.armor_points = int(self.armor_points)
+        self.attack_points = int(self.attack_points)
 
     @property
     def dead(self) -> bool:
