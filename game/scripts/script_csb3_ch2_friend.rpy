@@ -149,12 +149,7 @@ label dpn_diner:
     show aria flipped at right with move
     show cop at left with moveinleft
     cop "Ah shit! We got two men down! Arrest her!"
-    jump aria_fight
-
-label aria_fight:
-    #TODO: Fight here.
-    scene black with fade
-    jump cs_meetup
+    jump cop_fight_3
 
 label cs_meetup:
     scene cs_somewhere 
@@ -191,12 +186,7 @@ label cs_meetup:
     n "The people in the diner start freaking out and hide under their seats."
     nova "Alright Digi, let's do this."
     digi "On it."
-    jump dpn_fight
-
-label dpn_fight:
-    #TODO: Fight here.
-    scene black with fade
-    jump cs_meetup_2
+    jump cop_fight_4
 
 label cs_meetup_2:
     scene dinerinside
@@ -338,11 +328,6 @@ label car_ride_2:
     copguy "Well, you're gonna find out why you never pick the hard way!"
     copguy "Soldiers! Attack!"
     jump ng_fight
-
-label ng_fight:
-    #TODO: Fight scene
-    scene black with fade
-    jump cs_rage
 
 label cs_rage:
     scene battle_block_without_theater

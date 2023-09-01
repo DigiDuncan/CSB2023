@@ -41,7 +41,7 @@ label cop_fight_1:
             pakoo
             cop
             cop
-            cop
+            copguygodmode
         goto "so_join"
 
 label cop_fight_2:
@@ -52,5 +52,41 @@ label cop_fight_2:
             mika
             kitty
             tate
-            cop
+            copguy1
         goto "after_cop_fight"
+
+label cop_fight_3:
+    rpg:
+        bg "images/bg/cs_somewhere.png"
+        music "audio/desert_dawn.mp3"
+        fighters:
+            aria
+            cop
+            cop
+        goto "cs_meetup"
+
+label cop_fight_4:
+    rpg:
+        bg "images/bg/dinerinside.png"
+        music "audio/desert_dawn.mp3"
+        fighters:
+            digi
+            nova
+            cop
+            cop
+            cop
+        goto "cs_meetup_2"
+
+label ng_fight:
+    rpg:
+        bg "images/bg/battle_block_without_theater.png"
+        music "audio/thousand_march.mp3"
+        fighters:
+            cs
+            tate
+            digi
+            arc
+            guard
+            sherman
+            guard
+        goto "cs_rage"
