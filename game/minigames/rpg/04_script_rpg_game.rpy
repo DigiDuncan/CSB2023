@@ -75,7 +75,6 @@ label rpggame_done:
     hide screen rpggame
 
     if rpggame.encounter.won == True:
-        $ renpy.jump(rpggame.encounter.goto)
+        $ renpy.jump(rpggame.encounter.on_win)
     else:
-        pass
-        # Thing for lose condition
+        $ renpy.jump(rpggame.encounter.on_lose)

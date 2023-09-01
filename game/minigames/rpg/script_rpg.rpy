@@ -7,7 +7,7 @@ label test_rpg:
             cop
             cop
             cop
-        goto "secret"
+        on_win "secret"
 
 label fanboy_fight_amd:
     rpg:
@@ -18,7 +18,7 @@ label fanboy_fight_amd:
             fanboyb
             fanboyb
             fanboyb
-        goto "after_fanboy"
+        on_win "after_fanboy"
 
 label fanboy_fight_nvidia:
     rpg:
@@ -29,7 +29,7 @@ label fanboy_fight_nvidia:
             fanboya
             fanboya
             fanboya
-        goto "after_fanboy"
+        on_win "after_fanboy"
 
 label cop_fight_1:
     rpg:
@@ -42,7 +42,7 @@ label cop_fight_1:
             cop
             cop
             copguygodmode
-        goto "so_join"
+        on_win "so_join"
 
 label cop_fight_2:
     rpg:
@@ -53,7 +53,7 @@ label cop_fight_2:
             kitty
             tate
             copguy1
-        goto "after_cop_fight"
+        on_win "after_cop_fight"
 
 label cop_fight_3:
     rpg:
@@ -63,7 +63,7 @@ label cop_fight_3:
             aria
             cop
             cop
-        goto "cs_meetup"
+        on_win "cs_meetup"
 
 label cop_fight_4:
     rpg:
@@ -74,7 +74,7 @@ label cop_fight_4:
             nova
             cop
             cop
-        goto "cs_meetup_2"
+        on_win "cs_meetup_2"
 
 label ng_fight:
     rpg:
@@ -88,4 +88,4 @@ label ng_fight:
             guard
             sml_tank
             guard
-        goto "cs_rage"
+        on_win "cs_rage"

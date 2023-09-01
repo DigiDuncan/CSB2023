@@ -240,11 +240,11 @@ class Fighter:
         return self.health_points <= 0
 
 class Encounter:
-    def __init__(self, fighters: list[Fighter], background: Displayable, music: str, goto: str):
+    def __init__(self, fighters: list[Fighter], background: Displayable, music: str, on_win: str, on_lose: str = "start"):
         self.fighters = [copy(f) for f in fighters]
         self.background = background
         self.music = music
-        self.goto = goto
+        self.on_win = on_win
 
     @property
     def allies(self) -> list[Fighter]:
