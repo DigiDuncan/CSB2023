@@ -68,11 +68,10 @@ label cop_fight_3:
 label cop_fight_4:
     rpg:
         bg "images/bg/dinerinside.png"
-        music "audio/desert_dawn.mp3"
+        music "audio/dinerfight.mp3"
         fighters:
             digi
             nova
-            cop
             cop
             cop
         goto "cs_meetup_2"
@@ -85,8 +84,8 @@ label ng_fight:
             cs
             tate
             digi
-            arc
+            arceus
             guard
-            sherman
+            sml_tank
             guard
         goto "cs_rage"

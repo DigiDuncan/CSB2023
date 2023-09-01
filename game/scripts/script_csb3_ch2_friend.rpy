@@ -98,6 +98,8 @@ label dpn_diner:
     show nova flipped at center
     show aria at left
     with fade
+    play music "<from 0 to 86>full_rulle_med_klas.mp3" volume 0.5
+    music Full Rulle Med Klas - Lizardking
     digi "Finally, we can stretch our legs again."
     nova "Remind me what you needed me here for again? I have a set later tonight I need to prepare for!"
     digi "CS is in trouble, he's being chased by the cops."
@@ -115,6 +117,8 @@ label dpn_diner:
     hide aria with moveoutright
     pause 1.0
     nova "They're gonna die."
+    stop music fadeout 3.0
+    music end
     scene black with fade
     scene aria_car_fg
     show drive_night behind aria_car_fg
@@ -126,6 +130,8 @@ label dpn_diner:
     n "As Aria is approaching CS and the gang, they screech on the breaks as they almost run into a blockade."
     hide drive_night
     show cs_somewhere behind aria_car_fg
+    play music "<loop 0>dense_woods_b.mp3" volume 0.5
+    music Dense Woods B - Kikiyama
     n "Cop cars surround the vicinity of the area."
     n "Aria gets out of the car."
     scene cs_somewhere
@@ -149,12 +155,15 @@ label dpn_diner:
     show aria flipped at right with move
     show cop at left with moveinleft
     cop "Ah shit! We got two men down! Arrest her!"
+    stop music fadeout 3.0
+    music end
     jump cop_fight_3
 
 label cs_meetup:
     scene cs_somewhere 
     show aria flipped at right
     with fade
+    play music "<loop 0>dense_woods_b.mp3" volume 0.5
     n "After Aria takes care of the cops, CS and Tate's group rolls up on the other side of the blockade."
     show cs at center
     show arceus flipped at mid_left
@@ -168,10 +177,12 @@ label cs_meetup:
     scene black with fade
     n "CS, Aria, and Tate clear the road, and then follow Aria up to the diner."
     n "Meanwhile, back at the diner..."
+    stop music fadeout 3.0
     scene dinerinside
     show digi at center
     show nova flipped at left
     with fade
+    play music "<from 0 to 86>full_rulle_med_klas.mp3" volume 0.5
     pause 2.0
     nova "They are so dead."
     digi "Stop saying that! They are probably fine."
@@ -186,6 +197,8 @@ label cs_meetup:
     n "The people in the diner start freaking out and hide under their seats."
     nova "Alright Digi, let's do this."
     digi "On it."
+    scene black with fade
+    stop music fadeout 3.0
     jump cop_fight_4
 
 label cs_meetup_2:
