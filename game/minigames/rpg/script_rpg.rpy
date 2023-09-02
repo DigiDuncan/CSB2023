@@ -102,6 +102,6 @@ label ng_fight:
             guard
             sml_tank
             guard
-        scale 1
+        scale 1.2
         on_win "cs_rage"
         on_lose "secret"
