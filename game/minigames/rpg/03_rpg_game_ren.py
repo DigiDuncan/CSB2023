@@ -356,7 +356,7 @@ class StatBlockDisplayable(renpy.Displayable):
     def __init__(self, fighter: Fighter):
         self.text_size = 50
         self.fighter = fighter
-        self.fighter_name = Text(self.fighter.name, color = "#0000FF", size = 50)
+        self.fighter_name = Text(self.fighter.name, color = "#FFCC00", size = 50)
         self.health_text = Text("HP: " + str(self.fighter.health_points) + "/" + str(self.fighter.max_health), color = "#FFFFFF", size = self.text_size)
         self.AP_text = Text("AP: " + str(self.fighter.armor_points), color = "#FFFFFF", size = self.text_size)
         self.ATK_text = Text("ATK: " + str(self.fighter.attack_points), color = "#FFFFFF", size = self.text_size)
