@@ -7,6 +7,7 @@ label test_rpg:
             cop
             cop
             cop
+        scale 1
         on_win "secret"
         on_lose "secret"
 
@@ -19,6 +20,7 @@ label fanboy_fight_amd:
             fanboyb
             fanboyb
             fanboyb
+        scale 1
         on_win "after_fanboy"
         on_lose "secret"
 
@@ -31,6 +33,7 @@ label fanboy_fight_nvidia:
             fanboya
             fanboya
             fanboya
+        scale 1
         on_win "after_fanboy"
         on_lose "secret"
 
@@ -45,6 +48,7 @@ label cop_fight_1:
             cop
             cop
             copguygodmode
+        scale 1
         on_win "so_join"
         on_lose "secret"
 
@@ -57,6 +61,7 @@ label cop_fight_2:
             kitty
             tate
             copguy1
+        scale 1
         on_win "after_cop_fight"
         on_lose "secret"
 
@@ -68,6 +73,7 @@ label cop_fight_3:
             aria
             cop
             cop
+        scale 1
         on_win "cs_meetup"
         on_lose "secret"
 
@@ -80,6 +86,7 @@ label cop_fight_4:
             nova
             cop
             cop
+        scale 1
         on_win "cs_meetup_2"
         on_lose "secret"
 
@@ -95,5 +102,6 @@ label ng_fight:
             guard
             sml_tank
             guard
+        scale 1
         on_win "cs_rage"
         on_lose "secret"

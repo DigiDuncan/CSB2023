@@ -514,6 +514,10 @@ def parse_rpg(lexer):
         fighters.append(ll.rest())
         ll.expect_eol()
 
+    l.advance()
+    l.keyword("scale")
+    scale = l.float()
+
     # goto
     l.advance()
     l.keyword("on_win")
@@ -524,15 +528,16 @@ def parse_rpg(lexer):
 
     fighters = [f.upper() for f in fighters]
 
-    return (bg, music, fighters, label, label2)
+    return (bg, music, fighters, scale, label, label2)
 
 def execute_rpg(parsed_object):
-    b, m, f, l, ll = parsed_object
+    b, m, f, s, l, ll = parsed_object
     global rpggame
     rpggame.encounter = Encounter(
         [getattr(Fighters, fighter) for fighter in f],
         Image(b),
         m,
+        s,
         l,
         ll
     )
