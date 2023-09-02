@@ -22,8 +22,9 @@ See what needs to be done below.
 - [ ] Arceus Art [Kitty, October]
 - [ ] Aria Art [Aria, October]
 - [ ] End Fight cutscene [Pakoo/Digi, Sept. W4]
+- [ ] Installer [Digi, Oct. W3]
 
-### Friend Ending
+### Friend Ending [Pakoo, Sept. W2]
 - [ ] Script [90%]
 - [ ] Backgrounds [90%]
 - [ ] Characters [75%]
@@ -65,3 +66,4 @@ See what needs to be done below.
 - [ ] Transition/Flip Pass
 - [ ] Jukebox/Achievements/Bio Pass
 - [ ] Remove/address all TODO comments
+- [ ] Check Discord channels for missing content
