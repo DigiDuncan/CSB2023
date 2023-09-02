@@ -373,7 +373,7 @@ class Fighters:
     GUARD = Fighter("Guard", True, 250, 25, 40, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/guard_soldier.png"), ai = AI.NEUTRAL)
     SML_TANK = Fighter("Sherman", True, 500, 60, 120, [Attacks.SHELL], Image("images/characters/sherman.png"), ai = AI.TARGET_STRONG)
 
-encounter = Encounter([], Image("images/bg/black.png"), "audio/legosfx.mp3", "start")
+encounter = Encounter([], Image("images/bg/black.png"), "audio/legosfx.mp3", 1, "start", "secret")
 
 # This is the displayable that controls what's happening in the boxes at the bottom of the screen
 
