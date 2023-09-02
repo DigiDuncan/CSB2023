@@ -320,7 +320,7 @@ class Attacks:
     NUDGE = Attack("Nudge", random_damage_fighters, min_mult = 0.1, max_mult = 10, mult = 1)
     DRAW_IN = Attack("Draw in", change_stat, stat = "atk", target_count = 0, target_type = "allies", cooldown = 3, mult = 2)
     CONFIDENCE = Attack("Confidence", change_stat, stat = "atk", target_count = 0, target_type = "allies", mult = 1.5)
-    PEP_TALK = Attack("Confidence", change_stat, stat = "ap", target_count = 0, target_type = "allies", mult = 1.5)
+    PEP_TALK = Attack("Pep Talk", change_stat, stat = "ap", target_count = 0, target_type = "allies", mult = 1.5)
     RADS_ATTACK = Attack("RADS Attack", damage_over_time, mult = 0.5)
     AI_MIMIC = Attack("AI Mimic", confuse_targets, target_count = 0, target_type = "enemies", cooldown = 3, mult = 1)
     SHELL = Attack("Shell", random_damage_fighters, min_mult = 1, max_mult = 2, mult = 1)
