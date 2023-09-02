@@ -263,6 +263,7 @@ class Encounter:
         self.background = background
         self.music = music
         self.on_win = on_win
+        self.on_lose = on_lose
 
     @property
     def allies(self) -> list[Fighter]:
