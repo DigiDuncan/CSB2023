@@ -13,15 +13,15 @@ See what needs to be done below.
 -------
 
 ### Big Tasks
-- [ ] Rhythm Game
-- [ ] Country Route Game
-- [ ] Ending Screens
-- [ ] Menu for Endings
-- [ ] Commerical
-- [ ] Credits
-- [ ] Arceus Art
-- [ ] Aria Art
-- [ ] End Fight cutscene
+- [ ] Rhythm Game [Digi, October]
+- [ ] Country Route Game [???]
+- [ ] Ending Screens [Pakoo, Sept. W3]
+- [ ] Menu for Endings [Digi, Sept. W3]
+- [ ] Commerical [Pakoo, Sept. W4]
+- [ ] Credits [Digi, Sept. W4]
+- [ ] Arceus Art [Kitty, October]
+- [ ] Aria Art [Aria, October]
+- [ ] End Fight cutscene [Pakoo/Digi, Sept. W4]
 
 ### Friend Ending
 - [ ] Script [90%]
@@ -32,7 +32,7 @@ See what needs to be done below.
 - [ ] Bios
 - [ ] Jukebox
 
-### Fired Ending
+### Fired Ending [Digi, Sept. W2]
 - [ ] Script
 - [ ] Backgrounds
 - [ ] Characters
@@ -41,7 +41,7 @@ See what needs to be done below.
 - [ ] Bios
 - [ ] Jukebox
 
-### Country Ending
+### Country Ending [All, Sept. W4]
 - [ ] Script
 - [ ] Backgrounds
 - [ ] Characters
@@ -50,17 +50,17 @@ See what needs to be done below.
 - [ ] Bios
 - [ ] Jukebox
 
-### RPG Game
-- [ ] Basic Game Loop [75%]
-- [ ] All Attacks and Fighters in
+### RPG Game [Digi/Arc, Sept. W1]
+- [X] Basic Game Loop
+- [ ] All Attacks and Fighters in [75%]
 - [ ] All Sprites done
 - [ ] Animations
 - [ ] SFX
-- [ ] Reactive Text
+- [ ] Reactive Text [50%]
 - [ ] Balancing
-- [ ] Add games to script
+- [ ] Add games to script [90%]
 
-### Passes
+### Passes [All, October W1]
 - [ ] Spelling/Grammar Pass
 - [ ] Transition/Flip Pass
 - [ ] Jukebox/Achievements/Bio Pass
