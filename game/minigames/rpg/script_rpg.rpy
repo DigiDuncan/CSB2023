@@ -48,9 +48,14 @@ label cop_fight_1:
             cop
             cop
             copguygodmode
+<<<<<<< Updated upstream
         scale 1
         on_win "so_join"
         on_lose "secret"
+=======
+        on_win "secret"
+        on_lose "so_join"
+>>>>>>> Stashed changes
 
 label cop_fight_2:
     rpg:
