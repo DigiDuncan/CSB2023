@@ -491,21 +491,25 @@ def parse_rpg(lexer):
 
     # goto
     l.advance()
-    l.keyword("goto")
+    l.keyword("on_win")
     label = l.string()
+    l.advance()
+    l.keyword("on_lose")
+    label2 = l.string()
 
     fighters = [f.upper() for f in fighters]
 
-    return (bg, music, fighters, label)
+    return (bg, music, fighters, label, label2)
 
 def execute_rpg(parsed_object):
-    b, m, f, l = parsed_object
+    b, m, f, l, ll = parsed_object
     global rpggame
     rpggame.encounter = Encounter(
         [getattr(Fighters, fighter) for fighter in f],
         Image(b),
         m,
-        l
+        l,
+        ll
     )
     rpggame.reset()
     renpy.jump("play_rpggame")
@@ -522,7 +526,8 @@ rpg:
         cs
         cop
         etc...
-    goto "label"
+    on_win "label"
+    on_lose "label2"
 """
 renpy.register_statement("rpg",
     parse = parse_rpg,
