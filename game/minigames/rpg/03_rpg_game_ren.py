@@ -119,6 +119,8 @@ def enemy_ai_neutral(subject: Fighter, encounter: Encounter):
             elif attack.target_type == "all":
                 targets.append(renpy.random.choice(encounter.fighters))
     print(f"[NEUTRAL AI] {subject.name} running attack {attack.name} on {[t.name for t in targets]}...")
+    renpy.notify(f"{subject.name} running attack {attack.name} on {[t.name for t in targets]}...")
+    renpy.pause(1.0)
     subject.attack(attack_idx, targets)
 
 def enemy_ai_target_weak(subject: Fighter, encounter: Encounter):
@@ -138,6 +140,8 @@ def enemy_ai_target_weak(subject: Fighter, encounter: Encounter):
         targets.sort(key = lambda x: x.health_points)
         targets = targets[:attack.target_count]
     print(f"[TARGET WEAK AI] {subject.name} running attack {attack.name} on {[t.name for t in targets]}...")
+    renpy.notify(f"{subject.name} running attack {attack.name} on {[t.name for t in targets]}...")
+    renpy.pause(1.0)
     subject.attack(attack_idx, targets)
 
 def enemy_ai_target_strong(subject: Fighter, encounter: Encounter):
@@ -157,6 +161,8 @@ def enemy_ai_target_strong(subject: Fighter, encounter: Encounter):
         targets.sort(key = lambda x: x.health_points, reverse = True)
         targets = targets[:attack.target_count]
     print(f"[TARGET STRONG AI] {subject.name} running attack {attack.name} on {[t.name for t in targets]}...")
+    renpy.notify(f"{subject.name} running attack {attack.name} on {[t.name for t in targets]}...")
+    renpy.pause(1.0)
     subject.attack(attack_idx, targets)
 
 class AI:

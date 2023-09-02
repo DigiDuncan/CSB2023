@@ -1321,6 +1321,9 @@ screen notify(message):
 
 
 transform notify_appear:
+    xalign 0.5
+    yalign 0.10
+    zoom 3.0
     on show:
         alpha 0
         linear .25 alpha 1.0
