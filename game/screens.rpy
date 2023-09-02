@@ -373,7 +373,7 @@ screen main_menu():
     ## This ensures that any other menu screen is replaced.
     tag menu
 
-    on "show" action If(renpy.music.is_playing(), true=None, false=Play("music", "the_rest_of_bubble_tea.mp3", "noloop"))
+    on "show" action If(renpy.music.is_playing(), true=None, false=Play("music", "the_rest_of_bubble_tea.mp3", loop = False))
 
     add gui.main_menu_background
 
