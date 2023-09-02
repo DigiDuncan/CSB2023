@@ -196,7 +196,7 @@ class Fighter:
         self.name = name
         self.enemy = enemy
         self._health_points = int(hp * multiplier)
-        self.max_health = int(hp * multiplier)
+        self._max_health = int(hp * multiplier)
         self._armor_points = ap
         self._attack_points = int(atk * multiplier)
         self.attacks = [copy(a) for a in attacks]
@@ -213,6 +213,14 @@ class Fighter:
     @health_points.setter
     def health_points(self, v):
         self._health_points = int(v)
+
+    @property
+    def max_health(self) -> int:
+        return int(self._max_health)
+    
+    @max_health.setter
+    def max_health(self, v):
+        self._max_health = int(v)
 
     @property
     def armor_points(self) -> int:
@@ -294,6 +302,7 @@ class Encounter:
 
         for a in self.allies:
             a.health_points *= scale
+            a.max_health *= scale
             a.attack_points *= scale
 
     @property
@@ -516,7 +525,7 @@ def parse_rpg(lexer):
 
     l.advance()
     l.keyword("scale")
-    scale = l.float()
+    scale = l.string()
 
     # goto
     l.advance()
@@ -537,7 +546,7 @@ def execute_rpg(parsed_object):
         [getattr(Fighters, fighter) for fighter in f],
         Image(b),
         m,
-        s,
+        float(s),
         l,
         ll
     )
