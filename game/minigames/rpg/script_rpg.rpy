@@ -105,3 +105,48 @@ label ng_fight:
         scale 1.2
         on_win "cs_rage"
         on_lose "secret"
+
+label final_fight_1:
+    rpg:
+        bg "images/bg/battle_block_without_theater.png"
+        music "audio/trans_atlantic.mp3"
+        fighters:
+            cs
+            tate
+            digi
+            arceus
+            guard
+            guard
+            guard
+        scale 2
+        on_win "final_fight_2"
+        on_lose "secret"
+
+label final_fight_2:
+    rpg:
+        bg "images/bg/battle_block_without_theater.png"
+        music "audio/trans_atlantic.mp3"
+        fighters:
+            cs
+            tate
+            digi
+            arceus
+            guard
+            tank
+        scale 2
+        on_win "final_fight_3"
+        on_lose "secret"
+
+label final_fight_3:
+    rpg:
+        bg "images/bg/battle_block_without_theater.png"
+        music "audio/trans_atlantic.mp3"
+        fighters:
+            cs
+            tate
+            digi
+            arceus
+            copguy1
+        scale 2
+        on_win "weapon_of_choice"
+        on_lose "secret"

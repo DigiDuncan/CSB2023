@@ -527,6 +527,7 @@ label final_meetup:
     tate "Well, are you guys ready to do this?"
     cs "Hell yeah! Let's go put Copguy through the slammer!"
     scene black with fade
-    jump final_fight
+    jump final_fight_1
 
-label final_fight:
+label weapon_of_choice:
+    n "Weapon Of Choice video here."
