@@ -195,16 +195,40 @@ class Fighter:
     def __init__(self, name: str, enemy: bool, hp: int, ap: int, atk: int, attacks: list[Attack], sprite: Displayable, multiplier: float = 1, ai: callable = None):
         self.name = name
         self.enemy = enemy
-        self.health_points = int(hp * multiplier)
+        self._health_points = int(hp * multiplier)
         self.max_health = int(hp * multiplier)
-        self.armor_points = ap
-        self.attack_points = int(atk * multiplier)
+        self._armor_points = ap
+        self._attack_points = int(atk * multiplier)
         self.attacks = [copy(a) for a in attacks]
         self.ai = ai
         self.sprite = sprite
 
         self.damage_per_turn: list[tuple] = []
         self.confused: bool = False
+
+    @property
+    def health_points(self) -> int:
+        return int(self._health_points)
+    
+    @health_points.setter
+    def health_points(self, v):
+        self._health_points = int(v)
+
+    @property
+    def armor_points(self) -> int:
+        return int(self._armor_points)
+    
+    @armor_points.setter
+    def armor_points(self, v):
+        self._armor_points = int(v)
+
+    @property
+    def attack_points(self) -> int:
+        return int(self._attack_points)
+    
+    @attack_points.setter
+    def attack_points(self, v):
+        self._attack_points = int(v)
 
     @property
     def normal(self) -> Attack:
@@ -254,22 +278,23 @@ class Fighter:
                     print(f"{self.name}: {a.name} now available!")
                 else:
                     print(f"{self.name}: {a.name} available in {a._turns_until_available} turns!")
-        # Normalize to int
-        self.health_points = int(self.health_points)
-        self.armor_points = int(self.armor_points)
-        self.attack_points = int(self.attack_points)
 
     @property
     def dead(self) -> bool:
         return self.health_points <= 0
 
 class Encounter:
-    def __init__(self, fighters: list[Fighter], background: Displayable, music: str, on_win: str, on_lose: str = "start"):
+    def __init__(self, fighters: list[Fighter], background: Displayable, music: str, scale: float, on_win: str, on_lose: str = "start"):
         self.fighters = [copy(f) for f in fighters]
         self.background = background
         self.music = music
+        self.scale = scale
         self.on_win = on_win
         self.on_lose = on_lose
+
+        for a in self.allies:
+            a.health_points *= scale
+            a.attack_points *= scale
 
     @property
     def allies(self) -> list[Fighter]:
