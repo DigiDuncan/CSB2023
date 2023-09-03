@@ -43,7 +43,93 @@
 **Beep Manager:** Pakoo
 
 ### Music
-`#TODO: Credit all the tracks here`
+- Walkman
+    - Let's Hear My Baby
+- George Stone
+    - Canyon
+    - Passport
+- BEST MUSIC
+    - サマークリアランスセール
+- Mel O Dee
+    - Scales of Joy
+- Charles Gounod
+    - Alfred Hitchcock Theme
+- Kevin Macleod
+    - Super Friendly
+- C418
+    - stal
+- Dr. Awesome
+    - Moongazer
+- Keiichi Suzuki
+    - Onett Theme
+    - Buy Something, Will Ya!
+- ClascyJitto
+    - Good Eatin'
+    - Mort's Farm
+    - Funiculi Holiday
+- Brian Johnston
+    - Hired Guns
+- Toby Fox
+    - Undyne
+    - Danger Mystery
+    - It's Showtime!
+    - School
+    - Cliffs
+    - Circus
+    - The Chase
+    - Friendship
+    - Lancer
+- Satoru Kōsaki
+    - Atarashii Kaze
+    - Bun Guster
+- Lorin Nelson
+    - Police Station
+    - Happy Roaming
+    - Park Theme
+- Banana
+    - Echoing
+    - Echoing?
+- Masakazu Sugimori
+    - Pressing Pursuit ~ Cornered
+- Mr. Sauceman
+    - Tunnely Shimbers
+    - Hard Drive to Munch You
+- Andy Blythe
+    - Al's Penthouse
+- Marten Joustra
+    - Airport Infiltration
+- Manami Matsumae
+    - Laurel Palace
+- Edd Kalehoff
+    - Price Is Right Theme
+- Matthew Simmonds
+    - Mm Select
+- Home Depot
+    - Let's Do This
+- Kikiyama
+    - Candle World
+- Satoru Kosaki
+    - Taiikusai Desu Yo
+- Weatherscan
+    - Track 3
+    - Track 4
+- Mahito Yokota
+    - Speedy Comet
+- Shoichiro Sakamoto
+    - Breakout
+- Eminem
+    - Alfred's Theme
+- Kazumi Totaka
+    - New Leaf Title Theme
+- Michiel van den Bos
+    - Facing Worlds
+- u4ia
+    - Take a Trip from Me
+- Hirokazu Tanaka
+    - Creative Exercise
+- Lizardking
+    - Weird Personalities
+    - Insane Personalities
 
 ## Art
 **CSocola Sprites:** Greta "@lovelycloud"  

@@ -105,6 +105,8 @@ init python:
         "Track 3 - Weatherscan": "weather.png"
     }
 
+    # TODO: Complete album map.
+
 screen jukebox_nav():
 
     add Color('#323e42', alpha=0.75)
