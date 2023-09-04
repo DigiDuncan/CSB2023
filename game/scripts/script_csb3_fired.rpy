@@ -120,7 +120,7 @@ label guitar_hero:
     cs "Well, you heard the man. Anno, do you have FL Studio?"
     anno "Just got it."
     cs "Well let's get to work, boys!"
-    jump write_song:
+    jump write_song
 
 label write_song:
     # scene black with dissolve
