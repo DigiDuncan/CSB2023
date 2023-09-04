@@ -646,6 +646,7 @@ default fanboy_type = None
 default fanbase = None
 default nice_car = False
 default returning_from_blooper = False
+default song_name = "Prison Break"
 
 # Jump Menu
 screen start_menu():

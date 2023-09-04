@@ -131,7 +131,62 @@ label new_plan:
     cs "Wanna play it again one more time?"
     anno "Can do!"
     n "Anno hits play on the track."
-    # IDEA: Actual instrumental here? I'm thinking rock-themed.
+    # IDEA: Actual instrumental here? I'm thinking rock-themed. Kinda Foo Fighters-y?
     n "{cps=15}{image=note_small1.png}We broke the chains, now we're free to fly,{w=1.5}\nEscaped concrete, and now we see blue skies{w=1.5}\nBecome brand new, we'll leave the past behind,{w=1.5}\nPrisoners no more, 'cause a new life we'll find{image=note_small2.png}"
     cs "Yeah, that's really good!"
+    arceus "Well I guess all we have to do now is upload it."
+    anno "Alright boys, what do we call it?"
+    $ song_name = renpy.input("What should we call the song?", "Prison Break")
+    cs "How about [song_name]?"
+    anno "That's awesome."
+    arceus "I like it!"
+    cs "Alright, it's settled! Let's upload [song_name] to streaming services!"
+    arceus "Are you going to plug it in the Discord?"
+    cs "I guess I should, but people are going to be really confused as to why I'm not streaming still..."
+    anno "I think they're used to you not streaming for a while."
+    cs "Fair, but a music career?"
+    arceus "Just say it's a side project."
+    cs "Fair enough."
+    n "Anno uploads the song, and CS tells the CSCord about it."
+    discord "What the heck is this?"
+    discord "Huh, this is pretty good."
+    discord "CS can sing?!"
+    cs "It's going well! People seem to like it."
+    arceus "Let's hit the hay and check in on it in the morning."
+    anno "Yeah, I'm getting tired."
+    cs "Sounds good to me!"
+
+    scene black with dissolve
+    n "While they sleep, the song accumulates streams..."
+
+    # scene hotel_room with dissolve
+    show cs at left with moveinleft
+    cs "Let's go get breakfast."
+    show anno with moveinleft
+    anno "Free waffles, hell yeah."
+    show arceus flipped at right with moveinleft
+    arceus "Those sausages are amazing."
+
+    # scene hotel_elevator
+    show anno at left
+    show arceus at right
+    show cs
+    with dissolve
+    # play music elevator_music
+    pause 2.0
+    cs "So, see any good shows lately?"
+    arceus "You watch TV?"
+    cs "Not really."
+    arceus "Mmm."
+
+    pause 2.0
+    cs "Do you have any ideas for{nw}"
+    arceus "Man I {i}just{/i} woke up."
+    cs "Yeah, sorry."
+
+    pause 2.0
+    # play sound elevator_ding
+
+    # scene hotel_breakfast with dissolve
+    return
 
