@@ -13,16 +13,29 @@ See what needs to be done below.
 -------
 
 ### Big Tasks
-- [ ] Rhythm Game [Digi, October]
-- [ ] Country Route Game [???]
 - [ ] Ending Screens [Pakoo, Sept. W3]
 - [ ] Menu for Endings [Digi, Sept. W3]
 - [ ] Commerical [Pakoo, Sept. W4]
 - [ ] Credits [Digi, Sept. W4]
+- [ ] End Fight cutscene [Pakoo/Digi, Sept. W4]
+- [ ] Rhythm Game [Digi, October]
 - [ ] Arceus Art [Kitty, October]
 - [ ] Aria Art [Aria, October]
-- [ ] End Fight cutscene [Pakoo/Digi, Sept. W4]
 - [ ] Installer [Digi, Oct. W3]
+- [ ] Country Route Game [???]
+
+### True Ending [ASAP]
+- [ ] Michigan [Aria]
+
+### RPG Game [Digi/Arc, Sept. W1]
+- [X] Basic Game Loop
+- [ ] All Attacks and Fighters in [75%]
+- [ ] All Sprites done
+- [ ] Animations [Arc]
+- [ ] SFX
+- [ ] Reactive Text [50%]
+- [ ] Balancing [Pakoo]
+- [ ] Add games to script [90%]
 
 ### Friend Ending [Pakoo, Sept. W2]
 - [ ] Script [90%]
@@ -51,15 +64,10 @@ See what needs to be done below.
 - [ ] Bios
 - [ ] Jukebox
 
-### RPG Game [Digi/Arc, Sept. W1]
-- [X] Basic Game Loop
-- [ ] All Attacks and Fighters in [75%]
-- [ ] All Sprites done
-- [ ] Animations
-- [ ] SFX
-- [ ] Reactive Text [50%]
-- [ ] Balancing
-- [ ] Add games to script [90%]
+### Archival Ending [Pakoo/Baker, October]
+- [ ] 3D Backgrounds [Baker]
+- [ ] Animated sequences [Baker]
+- [ ] Final writing [Pakoo]
 
 ### Passes [All, October W1]
 - [ ] Spelling/Grammar Pass
@@ -67,3 +75,13 @@ See what needs to be done below.
 - [ ] Jukebox/Achievements/Bio Pass
 - [ ] Remove/address all TODO comments
 - [ ] Check Discord channels for missing content
+
+### Wishlist
+- [ ] Ultimate Custom Night (RPG Freeplay)
+- [ ] Cheats Mode
+    - [ ] You can now play as Luigi
+    - [ ] Arc2D2
+    - [ ] Pakoo Noise
+    - [ ] Pakoo randomly punches people
+- [ ] "The Legend" style custscene for HoH SiS monolouge [Digi]
+- [ ] More car dialouge
