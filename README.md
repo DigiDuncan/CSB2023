@@ -72,6 +72,7 @@ See what needs to be done below.
 ### Passes [All, October W1]
 - [ ] Spelling/Grammar Pass
 - [ ] Transition/Flip Pass
+- [ ] Sprite Emotion Pass
 - [ ] Jukebox/Achievements/Bio Pass
 - [ ] Remove/address all TODO comments
 - [ ] Check Discord channels for missing content
