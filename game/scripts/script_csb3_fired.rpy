@@ -85,7 +85,9 @@ label new_plan:
     show cs with moveinleft
     n "CS comes back holding two guitar controllers and a drum kit."
     cs "Saw em on the side of the road. Couldn't pass em up."
+    jump guitar_hero
 
+label guitar_hero:
     # scene guitar_hero with fade
     n "CS, Anno, and Arc relax by playing some Guitar Hero."
     arceus "Man, we're all pretty good at this."
@@ -118,7 +120,9 @@ label new_plan:
     cs "Well, you heard the man. Anno, do you have FL Studio?"
     anno "Just got it."
     cs "Well let's get to work, boys!"
+    jump write_song:
 
+label write_song:
     # scene black with dissolve
     n "After some time, the gang have their first song written."
 
@@ -158,7 +162,9 @@ label new_plan:
 
     scene black with dissolve
     n "While they sleep, the song accumulates streams..."
+    jump hotel_next_day
 
+label hotel_next_day:
     # scene hotel_room with dissolve
     show cs at left with moveinleft
     cs "Let's go get breakfast."
