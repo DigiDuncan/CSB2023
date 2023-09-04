@@ -73,6 +73,7 @@ class AchievementManager:
     def unlock(self, name: str, show_screen = True):
         ach = self.get(name)
         if not ach.unlocked:
+            renpy.sound.play("audio/achieve.wav", channel = "sound", loop = False)
             ach.unlock(show_screen)
 
     def reset(self):
