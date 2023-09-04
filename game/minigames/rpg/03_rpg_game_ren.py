@@ -23,11 +23,12 @@ def damage_fighters(subject: Fighter, targets: list[Fighter], crit: bool, option
     mult = options.get("mult", 1)
     count = options.get("count", 1)
     for f in targets:
-        for _ in range(count):
-            hit = subject.attack_points * mult * 1.5 if crit else subject.attack_points * mult
-            hit *= 1 - (f.armor_points / 100)
-            f.health_points -= hit
-            print(f"Dealing {hit} damage to {f.name}.")
+        if not f.dead:
+            for _ in range(count):
+                hit = subject.attack_points * mult * 1.5 if crit else subject.attack_points * mult
+                hit *= 1 - (f.armor_points / 100)
+                f.health_points -= hit
+                print(f"Dealing {hit} damage to {f.name}.")
 
 def heal_fighters(subject: Fighter, targets: list[Fighter], crit: bool, options: dict):
     """Heal a list of fighters.
@@ -37,11 +38,12 @@ def heal_fighters(subject: Fighter, targets: list[Fighter], crit: bool, options:
     mult = options.get("mult", 1)
     overheal = options.get("overheal", False)
     for f in targets:
-        hit = subject.attack_points * mult * 1.5 if crit else subject.attack_points * mult
-        hit *= 1 - (f.armor_points / 100)
-        f.health_points += hit
-        if not overheal:
-            f.health_points = min(f.health_points, f.max_health)
+        if not f.dead:
+            hit = subject.attack_points * mult * 1.5 if crit else subject.attack_points * mult
+            hit *= 1 - (f.armor_points / 100)
+            f.health_points += hit
+            if not overheal:
+                f.health_points = min(f.health_points, f.max_health)
         print(f"Healing {hit} damage from {f.name}.")
 
 def damage_over_time(subject: Fighter, targets: list[Fighter], crit: bool, options: dict):
@@ -251,12 +253,13 @@ class Fighter:
         return self.attacks[2] if len(self.attacks) >= 3 else None
 
     def attack(self, style: int, targets: list[Fighter]):
-        hit = renpy.random.choice(True, False) if self.confused else True
+        hit = (renpy.random.choice(True, False) if self.confused else True) and not self.dead
         if hit:
             self.attacks[style].run(self, targets)
 
     def attack_ai(self, encounter: Encounter):
-        self.ai(self, encounter)
+        if not self.dead:
+            self.ai(self, encounter)
 
     def tick(self):
         # DOT
@@ -525,7 +528,7 @@ def parse_rpg(lexer):
 
     l.advance()
     l.keyword("scale")
-    scale = l.string()
+    scale = l.float()
 
     # goto
     l.advance()
@@ -541,6 +544,7 @@ def parse_rpg(lexer):
 
 def execute_rpg(parsed_object):
     b, m, f, s, l, ll = parsed_object
+    print(parsed_object)
     global rpggame
     rpggame.encounter = Encounter(
         [getattr(Fighters, fighter) for fighter in f],
@@ -568,7 +572,8 @@ rpg:
     on_win "label"
     on_lose "label2"
 """
-renpy.register_statement("rpg",
+renpy.register_statement(
+    name="rpg",
     parse = parse_rpg,
     lint = lint_rpg,
     execute = execute_rpg,

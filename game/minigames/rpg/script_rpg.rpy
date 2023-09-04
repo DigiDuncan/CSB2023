@@ -20,7 +20,7 @@ label fanboy_fight_amd:
             fanboyb
             fanboyb
             fanboyb
-        scale 1
+        scale 1s
         on_win "after_fanboy"
         on_lose "secret"
 
