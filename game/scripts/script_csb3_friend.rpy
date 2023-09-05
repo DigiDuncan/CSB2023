@@ -868,7 +868,7 @@ label so_join:
     n "After that intense fight, the cops seemed to best CS and co."
     cs "*Huff huff* Damnit..."
     pakoo "He's way too strong..."
-    copguy "Is that you guys got?"
+    copguy "Is that all you guys got?"
     copguy "Or are you ready to finally admit your defeat?"
     tate "Not so fast!!"
     show copguy

@@ -38,8 +38,8 @@ See what needs to be done below.
 - [ ] Add games to script [90%]
 
 ### Friend Ending [Pakoo, Sept. W2]
-- [ ] Script [90%]
-- [ ] Backgrounds [90%]
+- [ ] Script [99%]
+- [X] Backgrounds [100%]
 - [ ] Characters [75%]
 - [ ] Transitions [95%]
 - [ ] Music

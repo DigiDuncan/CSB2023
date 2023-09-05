@@ -115,9 +115,9 @@ label final_fight_1:
             tate
             digi
             arceus
-            guard
-            guard
-            guard
+            marine
+            marine
+            marine
         scale 2
         on_win "final_fight_2"
         on_lose "secret"
@@ -131,8 +131,8 @@ label final_fight_2:
             tate
             digi
             arceus
-            guard
-            tank
+            marine
+            big_tank
         scale 2
         on_win "final_fight_3"
         on_lose "secret"

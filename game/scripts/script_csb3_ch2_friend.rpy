@@ -430,7 +430,9 @@ label cs_rage:
 
 label copguy_pres:
     n "After Copguy fled the scene, he immediately went to summarize the bad news to the sheriff."
-    show copguy at left
+    scene police_car_fg
+    show copguy flipped at left
+    show drive_night behind police_car_fg
     with fade
     sheriff "They WHAT??"
     copguy "They blew up our tank, sir."
@@ -530,4 +532,114 @@ label final_meetup:
     jump final_fight_1
 
 label weapon_of_choice:
+    scene black with fade
     n "Weapon Of Choice video here."
+    jump car_slam
+
+label car_slam:
+    scene war_torn_1 with fade
+    n "CS looks around, and views the destruction around him."
+    n "The city that they once fought in has now been reduced to rubble and war-torn buildings."
+    show cs flipped at right with moveinbottom
+    n "CS gathers his bearings, and starts checking on his friends."
+    cs "Hello? Are you guys alright?"
+    show arceus flipped at mid_left with moveinleft
+    arceus "Did we get him?"
+    show pakoo flipped at left with moveinleft
+    pakoo "Man, that was insane. You guys demolished this place!"
+    cs "I hope Copguy is dead. I am definitely going to jail for this one if he's alive!"
+    n "CS continues to check on the others."
+    hide cs with moveoutleft
+    scene black with fade
+    pause 1.0
+    scene war_torn_2
+    show tate at mid_left
+    show mika at center
+    show kitty flipped at right
+    with fade
+    tate "Haha! Did you see that?"
+    mika "CS crushed the whole city!"
+    show cs at mid_right with moveinleft
+    cs "Hey guys! Are you all alright?"
+    kitty "Yeah, we're alright. I'm assuming you're fine?"
+    cs "Better than ever! Although, that did wear me out quite a bit."
+    cs "I'm gonna go see how the rest are doing."
+    hide cs with moveoutright
+    scene black with fade
+    pause 1.0
+    scene war_torn_3
+    show digi at mid_left
+    show nova at center
+    show aria flipped at right
+    with fade
+    show cs at left with moveinleft
+    digi "Holy shit! CS! You're alive!"
+    cs "Yeah! How about you guys?"
+    nova "I wanna fall over, I'm so tired."
+    aria "I never thought that our first meetup would be at a mall, and our second would be the destruction of Chicago."
+    n "CS laughs."
+    cs "Yeah, me either, Aria."
+    cs "There is one last group to check on."
+    hide cs with moveoutright
+    scene black with fade
+    pause 1.0
+    scene war_torn_5
+    show midge at mid_left
+    show anno at center
+    show blank at right
+    with fade
+    show cs at mid_right with moveinleft
+    cs "Hey, did DB ever make it to the fight?"
+    anno "No, I never saw him, at least."
+    blank "Anno's phone got busted during the fight, so we won't know now what his progress was."
+    cs "Dang, that's a shame."
+    cs "I kinda hope he doesn't come now, I'd hate for him to witness the damage we did."
+    midge "Well, we won right? What's the plan now?"
+    cs "I wanna make sure Copguy is gone for real."
+    cs "I will be right back."
+    hide cs with moveoutright
+    scene black with fade
+    pause 1.0
+    scene war_torn_4 with fade
+    show cs at left with moveinleft
+    n "CS walks through the wastelands, searching for any thing reminiscent to Copguy."
+    n "Sure enough, he finds Copguy's wrecked cop car."
+    show cs at center with move
+    cs "Welp. There rests Cop guy."
+    cs "He fought well, he was a good cop, and god rest his soul."
+    pause 3.0
+    show cs flipped
+    cs "Nahhh! That guy was a jerk!"
+    cs "This is why you don't mess with the Master Of The Poop!"
+    cs "The Youtube Poop, actually. I realized that kinda sounded stupid."
+    n "CS turns around and walks away."
+    show cs flipped at mid_left with move
+    show copguycrawl at mid_right with moveinbottom
+    show copguycrawl with vpunch
+    copguy "Damnit, you can't escape from me!"
+    n "Copguy manages to crawl out of the rubble that is his car."
+    show cs worried
+    cs "Holy what? How did you--"
+    copguy "I'm not gonna let you win that easily, CS."
+    n "Copguy pulls out his sidearm."
+    copguy "Or should I say,"
+    show db_cooper at offscreenright
+    copguy "C--"
+    show db_cooper at right with moveinleft
+    show copguycrawl with hpunch
+    hide copguycrawl with moveoutbottom
+    show cs worried at left with move
+    db "Hey guys! I finally made it!"
+    db "Sorry I was late, I had to feed the pets back at home and--"
+    cs "DB, you did it!"
+    db "What? What'd I do?"
+    show cs
+    cs "You killed Copguy!"
+    db "Oh no, does that mean I'm gonna go to jail?"
+    db "I can't go! Who's gonna take care of everything back at home?"
+    cs "Relax, we destroyed the majority of the police force."
+    db "Wait, so does that mean, we were the bad guys all along?"
+    cs "Nah."
+    cs "That man was like, deranged."
+
+
