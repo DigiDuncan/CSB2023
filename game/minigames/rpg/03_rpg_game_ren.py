@@ -90,7 +90,15 @@ def change_stat(subject: Fighter, targets: list[Fighter], crit: bool, options: d
             f.health_points *= mult
             print(f"Setting {f.name} HP to {f.health_points}.")
         elif stat == "ap":
-            f.armor_points *= mult
+            old_ap = f.armor_points
+            new_ap = int(f.armor_points * mult)
+            if new_ap >= 99:
+                if f._funni_ap:
+                    new_ap = old_ap + 1
+                else:
+                    new_ap = 99
+                    f._funni_ap = True
+            f.armor_points = new_ap
             print(f"Setting {f.name} AP to {f.armor_points}.")
         elif stat == "atk":
             f.attack_points *= mult
@@ -235,6 +243,8 @@ class Fighter:
         self.attacks = [copy(a) for a in attacks]
         self.ai = ai
         self.sprite = sprite
+
+        self._funni_ap = False
 
         self.damage_per_turn: list[tuple] = []
         self.confused: bool = False
