@@ -303,7 +303,7 @@ class Fighter:
                     self.damage_per_turn.remove((h, t))
         # Confusion
         if self.confused:
-            self.confused = renpy.random.choice(True, False)
+            self.confused = renpy.random.choice([True, False])
             if self.confused:
                 print(f"{self.name}: I'm still confused...")
             else:
