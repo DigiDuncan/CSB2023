@@ -923,6 +923,8 @@ label after_cop_fight:
     else:
         show pakoo
     show pakoo
+    kitty "Arcie.. This does not surprise me in the slightest."
+    arceus "I mean, I {i}did{/i} say I was going to be in trouble with the law at some point in my life."
     if nice_car:
         kitty "Nice car!"
         arceus "Yeah!"
