@@ -140,11 +140,11 @@ label write_song:
     cs "Yeah, that's really good!"
     arceus "Well I guess all we have to do now is upload it."
     anno "Alright boys, what do we call it?"
-    $ song_name = renpy.input("What should we call the song?", "Prison Break")
-    cs "How about {i}[song_name]{/i}?"
+    $ song_name_1 = renpy.input("What should we call the song?", "Prison Break")
+    cs "How about {i}[song_name_1]{/i}?"
     anno "That's awesome."
     arceus "I like it!"
-    cs "Alright, it's settled! Let's upload {i}[song_name]{/i} to streaming services!"
+    cs "Alright, it's settled! Let's upload {i}[song_name_1]{/i} to streaming services!"
     arceus "Are you going to plug it in the Discord?"
     cs "I guess I should, but people are going to be really confused as to why I'm not streaming still..."
     anno "I think they're used to you not streaming for a while."
@@ -203,7 +203,7 @@ label hotel_next_day:
     n "They all sit down to eat."
 
     # show hotel_tabel behind cs with dissolve
-    n "As they eat, CS check the stream numbers on {i}[song_name]{/i}."
+    n "As they eat, CS check the stream numbers on {i}[song_name_1]{/i}."
     # show cs surprised
     cs "Guys?"
     arceus "Mmm?"
@@ -214,12 +214,70 @@ label hotel_next_day:
     n "CS shows Arc the phone."
     arceus "Holy shit!"
     anno "Wait, that's crazy actually."
+    show cs happy
     cs "This is amazing! We might have a ticket out of here! We won't have to run from the cops anymore!"
     n "A random patron turns to look at CS."
+    show cs worried
     cs "Uh... metaphorically, of course."
     n "The patron turns back around."
+    show cs neutral
     cs "{i}ahem{/i}\nAnyway...{w=0.5} so what now?"
     anno "I guess we keep it going?"
     arceus "We can't let this window close, right?"
     cs "I'm shocked, but yeah! Let's do it!"
     n "The gang finish their food and head back up to their room."
+    hide cs
+    hide anno
+    hide arceus
+    with moveoutright
+    jump song_2
+
+label song_2:
+    # scene hotel_room
+    show anno at left
+    show arceus at right
+    show cs
+    with dissolve
+
+    cs "Well, what do we write about next?"
+    arceus "I've had an idea kicking around my head..."
+    arceus "Hey, Anno?"
+    anno "Yeah?"
+    arceus "Hit me with something energetic, something in a good mood."
+    anno "Gotcha."
+    n "Anno tinkers around for a moment on his laptop, until..."
+    # TODO: An upbeat rock instrumental.
+    n "An upbeat rock instrumental plays from Anno's computer."
+    arceus "Heck yeah, awesome. OK, here I go..."
+    arceus "{cps=15}{image=note_small1.png}We're going down to Vegas,{w=1.5} we're gonna strike it rich!{w=1.5}\nWe're going down to Vegas..."
+    arceus "Uh..."
+    $ line_1 = renpy.input("Finish the line!", "")
+    cs "How about, '[line_1]'"
+    arceus "Yeah!"
+    arceus "{cps=15}{image=note_small1.png}We're going down to Vegas,{w=1.5} [line_1]{image=note_small2.png}"
+    cs "Woohoo! That sounds awesome!"
+    anno "Let's get some backing vocals and a solo done and we have another song!"
+    arceus "I'm  glad you guys like it :3"
+
+    scene black with dissolve
+    n "After a furious writing session, their new song is done!"
+
+    # scene hotel_room
+    show anno at left
+    show arceus at right
+    show cs
+    with dissolve
+    anno "So what do we call this one?"
+    arceus "I liked your name for the last one, CS, why don't you name this one, too?"
+    cs "How about..."
+    $ song_name_2 = renpy.input("What should we call the song?", "Down to Vegas")
+    cs "{i}[song_name_2]{/i}?"
+    arceus "You're a genius, CS."
+    cs "Aw, thanks, guys. Wait, we don't have a band name either!"
+    anno "Yeah, what were you thinking?"
+    cs "I was thinking..."
+    $ band_name = renpy.input("What should we call the band?", "CS' Crazy Crew")
+    cs "[band_name]!"
+    anno "Woah, awesome! Not as good as 'Nirvana', but you know, it wasn't going to be."
+    cs "Hell yeah! [band_name] forever!"
+    n "They all high-five."
