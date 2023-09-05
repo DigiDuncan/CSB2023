@@ -134,7 +134,7 @@ def enemy_ai_neutral(subject: Fighter, encounter: Encounter):
     subject.attack(attack_idx, targets)
 
 def enemy_ai_target_weak(subject: Fighter, encounter: Encounter):
-    """Just kinda, choose a random guy and hit them."""
+    """Hit people with the lowest HP."""
     attack_chosen = False
     while not attack_chosen:
         attack_idx = renpy.random.randint(0, len(subject.attacks) - 1)
@@ -155,7 +155,7 @@ def enemy_ai_target_weak(subject: Fighter, encounter: Encounter):
     subject.attack(attack_idx, targets)
 
 def enemy_ai_target_strong(subject: Fighter, encounter: Encounter):
-    """Just kinda, choose a random guy and hit them."""
+    """Hit people with the highest HP."""
     attack_chosen = False
     while not attack_chosen:
         attack_idx = renpy.random.randint(0, len(subject.attacks) - 1)
@@ -183,7 +183,7 @@ class AI:
 # Objects
 
 class Attack:
-    def __init__(self, name: str, func: Callable[[Fighter, list[Fighter], dict], None], target_count = 1, target_type: str = "enemies", cooldown: int = 0, **kwargs):
+    def __init__(self, name: str, func: Callable[[Fighter, list[Fighter], dict], None], target_count = 1, target_type: str = "enemies", cooldown: int = 0, used = False, **kwargs):
         self.name = name
         self.func = func
         self.target_count = target_count
@@ -191,7 +191,7 @@ class Attack:
         self.cooldown = cooldown
         self.options = kwargs
 
-        self._turns_until_available = 0
+        self._turns_until_available = 0 if not used else self.cooldown
 
     def run(self, subject: Fighter, fighters: list[Fighter], crit: bool = False):
         self.func(subject, fighters, crit, self.options)
@@ -380,7 +380,7 @@ class Attacks:
     CS_AP_DOWN = Attack("CS AP Down", change_stat, stat = "ap", mult = 0.75)
     CHOP = ComboAttack("Chop", [RAW_CHOP, CS_AP_DOWN])
     RAW_KICK = Attack("Raw Kick", damage_fighters, mult = 3)
-    YTP_MAGIC = Attack("YTP Magic", damage_fighters, cooldown = 10, mult = 20)
+    YTP_MAGIC = Attack("YTP Magic", damage_fighters, cooldown = 10, mult = 20, used = True)
     KICK = ComboAttack("Kick", [RAW_KICK, CS_AP_DOWN])
     BULLET_SPRAY = Attack("Bullet Spray", damage_fighters, target_count = 0, target_type = "enemies", cooldown = 3, mult = 1.5)
     RAW_SLASH = Attack("Raw Slash", damage_fighters)
