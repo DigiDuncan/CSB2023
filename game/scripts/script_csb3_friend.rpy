@@ -264,12 +264,12 @@ label high_gpu:
         "Fanboys" "Boo!! You suck! NVIDIA is the best!"  
         cs "Yeah well, let's see about that!"
         stop sound fadeout 3.0
-        jump fanboy_fight_nvidia     
+        jump rpg_fanboy_fight_nvidia     
     else:
         "Fanboys" "Boo!! You suck! AMD is the best!"
     cs "Yeah well, let's see about that!"
     stop sound fadeout 3.0
-    jump fanboy_fight_amd
+    jump rpg_fanboy_fight_amd
 
 label after_fanboy:
     scene outside_ltt
@@ -856,7 +856,7 @@ label reg_car:
     pause 0.5
     cs "Make me!"
     copguy "He's armed! Men, get in position and fire!"
-    jump cop_fight_1
+    jump rpg_cop_fight_1
 
 label so_join:
     scene dealership
@@ -887,7 +887,7 @@ label so_join:
     tate "That's right! You have to mess with us now!"
     mika "Yeah! Fuck da police! (For legal reasons this is a joke)"
     kitty "Let's get them!"
-    jump cop_fight_2
+    jump rpg_cop_fight_2
 
 label after_cop_fight:
     scene dealership

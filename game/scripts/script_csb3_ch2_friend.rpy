@@ -157,7 +157,7 @@ label dpn_diner:
     cop "Ah shit! We got two men down! Arrest her!"
     stop music fadeout 3.0
     music end
-    jump cop_fight_3
+    jump rpg_cop_fight_3
 
 label cs_meetup:
     scene cs_somewhere 
@@ -199,7 +199,7 @@ label cs_meetup:
     digi "On it."
     scene black with fade
     stop music fadeout 3.0
-    jump cop_fight_4
+    jump rpg_cop_fight_4
 
 label cs_meetup_2:
     scene dinerinside
@@ -340,7 +340,7 @@ label car_ride_2:
     copguy "I see, you wanted to do this the hard way..."
     copguy "Well, you're gonna find out why you never pick the hard way!"
     copguy "Soldiers! Attack!"
-    jump ng_fight
+    jump rpg_ng_fight
 
 label cs_rage:
     scene battle_block_without_theater
@@ -529,7 +529,7 @@ label final_meetup:
     tate "Well, are you guys ready to do this?"
     cs "Hell yeah! Let's go put Copguy through the slammer!"
     scene black with fade
-    jump final_fight_1
+    jump rpg_final_fight_1
 
 label weapon_of_choice:
     scene black with fade
