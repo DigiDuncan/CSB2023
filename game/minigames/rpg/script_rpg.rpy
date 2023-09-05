@@ -1,4 +1,4 @@
-label test_rpg:
+label rpg_test:
     rpg:
         bg "images/bg/casino1.png"
         music "audio/card_castle.mp3"
@@ -11,7 +11,7 @@ label test_rpg:
         on_win "secret"
         on_lose "secret"
 
-label fanboy_fight_amd:
+label rpg_fanboy_fight_amd:
     rpg:
         bg "images/bg/linus_office_outside.png"
         music "audio/nordic_report_1.mp3"
@@ -24,7 +24,7 @@ label fanboy_fight_amd:
         on_win "after_fanboy"
         on_lose "secret"
 
-label fanboy_fight_nvidia:
+label rpg_fanboy_fight_nvidia:
     rpg:
         bg "images/bg/linus_office_outside.png"
         music "audio/nordic_report_2.mp3"
@@ -37,7 +37,7 @@ label fanboy_fight_nvidia:
         on_win "after_fanboy"
         on_lose "secret"
 
-label cop_fight_1:
+label rpg_cop_fight_1:
     rpg:
         bg "images/bg/dealership.png"
         music "audio/compulsion_to_obey.mp3"
@@ -52,7 +52,7 @@ label cop_fight_1:
         on_win "secret"
         on_lose "so_join"
 
-label cop_fight_2:
+label rpg_cop_fight_2:
     rpg:
         bg "images/bg/dealership.png"
         music "audio/for_the_people.mp3"
@@ -65,7 +65,7 @@ label cop_fight_2:
         on_win "after_cop_fight"
         on_lose "secret"
 
-label cop_fight_3:
+label rpg_cop_fight_3:
     rpg:
         bg "images/bg/cs_somewhere.png"
         music "audio/desert_dawn.mp3"
@@ -77,7 +77,7 @@ label cop_fight_3:
         on_win "cs_meetup"
         on_lose "secret"
 
-label cop_fight_4:
+label rpg_cop_fight_4:
     rpg:
         bg "images/bg/dinerinside.png"
         music "audio/dinerfight.mp3"
@@ -90,7 +90,7 @@ label cop_fight_4:
         on_win "cs_meetup_2"
         on_lose "secret"
 
-label ng_fight:
+label rpg_ng_fight:
     rpg:
         bg "images/bg/battle_block_without_theater.png"
         music "audio/thousand_march.mp3"
@@ -106,7 +106,7 @@ label ng_fight:
         on_win "cs_rage"
         on_lose "secret"
 
-label final_fight_1:
+label rpg_final_fight_1:
     rpg:
         bg "images/bg/battle_block_without_theater.png"
         music "audio/trans_atlantic.mp3"
@@ -122,7 +122,7 @@ label final_fight_1:
         on_win "final_fight_2"
         on_lose "secret"
 
-label final_fight_2:
+label rpg_final_fight_2:
     rpg:
         bg "images/bg/battle_block_without_theater.png"
         music "audio/trans_atlantic.mp3"
@@ -137,7 +137,7 @@ label final_fight_2:
         on_win "final_fight_3"
         on_lose "secret"
 
-label final_fight_3:
+label rpg_final_fight_3:
     rpg:
         bg "images/bg/battle_block_without_theater.png"
         music "audio/trans_atlantic.mp3"
