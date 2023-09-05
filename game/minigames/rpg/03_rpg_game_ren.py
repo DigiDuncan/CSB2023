@@ -204,6 +204,18 @@ class ComboAttack:
                 a.run(subject, fighters, crit)
 
     @property
+    def _turns_until_available(self) -> int:
+        return self.attacks[0]._turns_until_available
+    
+    @property
+    def target_count(self) -> int:
+        return self.attacks[0].target_count
+    
+    @property
+    def target_type(self) -> int:
+        return self.attacks[0].target_type
+
+    @property
     def available(self) -> bool:
         return all([a.available for a in self.attacks])
 
