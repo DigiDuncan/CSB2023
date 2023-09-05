@@ -350,7 +350,7 @@ class Encounter:
 class Attacks:
     PUNCH = Attack("Punch", damage_fighters)
     RAW_CHOP = Attack("Raw Chop", damage_fighters)
-    CS_AP_DOWN = Attack("CS AP Down")
+    CS_AP_DOWN = Attack("CS AP Down", change_stat, stat = "ap", mult = 0.75)
     CHOP = ComboAttack("Chop", [RAW_CHOP, CS_AP_DOWN])
     RAW_KICK = Attack("Raw Kick", damage_fighters, mult = 3)
     KICK = ComboAttack("Kick", [RAW_KICK, CS_AP_DOWN])
