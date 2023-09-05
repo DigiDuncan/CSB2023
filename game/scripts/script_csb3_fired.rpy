@@ -194,5 +194,27 @@ label hotel_next_day:
     # play sound elevator_ding
 
     # scene hotel_breakfast with dissolve
-    return
+    show cs at center with moveinleft
+    cs "Ah, nothing like a hotel breakfast to wake me up."
+    n "The other two groggily join CS."
+    show anno at left behind cs
+    show arceus flipped at right behind cs
+    with moveinleft
+    n "They all sit down to eat."
 
+    # show hotel_tabel behind cs with dissolve
+    n "As they eat, CS check the stream numbers on [song_name]."
+    # show cs surprised
+    cs "Guys?"
+    arceus "Mmm?"
+    n "Arceus and Anno are stuffing their face."
+    cs "The song has like, a hundred thousand streams."
+    n "Arceus nearly spits out his food."
+    arceus "It has what?!"
+    n "CS shows Arc the phone."
+    arceus "Holy shit!"
+    anno "Wait, that's crazy actually."
+    cs "This is amazing! We might have a ticket out of here! We won't have to run from the cops anymore!"
+    n "A random patron turns to look at CS."
+    cs "Uh... metaphorically, of course."
+    
