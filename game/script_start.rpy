@@ -413,7 +413,7 @@ image afanboy = "characters/amdfanboy.png"
 image copguycrawl = "characters/copguycrawl.png"
 image db_cooper = "characters/db_coopergame.png"
 image marine = "characters/marine.png"
-image big_tank "characters/big_tank.png"
+image big_tank = "characters/big_tank.png"
 
 # Background Images
 ## CSBI
