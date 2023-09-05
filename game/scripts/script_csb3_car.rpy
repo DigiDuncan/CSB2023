@@ -103,6 +103,22 @@ label car_dialogue:
 
     pause 1.0
 
+    cs "Hey Arceus?"
+    arceus "Hmm?"
+    cs "Ever heard of the Butterfly Effect?"
+    arceus "Yeah, that's like where one little thing can effect something big later down the line."
+    cs "Yeah, I've been thinking, what if like I took the other job Linus gave me?"
+    arceus "What do you mean?"
+    cs "Oh, Linus wanted me to build him a stream machine."
+    arceus "Ah I see, that sounds cool."
+    cs "I was thinking about if I would've done that."
+    cs "I might've like, gotten into a fight and went to the hospital or something."
+    cs "And then travelled the world!"
+    arceus "That's very... descriptive."
+    cs "That's what I love about the Butterfly Effect, is that it might've actually happened!"
+
+    pause 1.0
+
     cs "Have you heard of Genshin Impact? Start your adventure on the continent of Teyvat, and--{w=0.5}"
     arceus "{b}No.{/b}"
     billy "I'm a pitchman, and even I won't stoop that low."
@@ -211,6 +227,12 @@ label car_dialogue:
     cs "I spy with my little eye something blue."
     arceus "Is it the car?"
     cs "Yeah..."
+
+    pause 1.0
+
+    cs "I wonder what would've happened if we went south."
+    arceus "Back at Compass road?"
+    cs "Yeah. Who knows how far we might've gotten..."
 
     pause 1.0
 
