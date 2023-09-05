@@ -207,6 +207,11 @@ class ComboAttack:
     def _turns_until_available(self) -> int:
         return self.attacks[0]._turns_until_available
     
+    @_turns_until_available.setter
+    def _turns_until_available(self, v: int):
+        for a in self.attacks:
+            a._turns_until_available = v
+    
     @property
     def target_count(self) -> int:
         return self.attacks[0].target_count
