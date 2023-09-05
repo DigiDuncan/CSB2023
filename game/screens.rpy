@@ -1315,15 +1315,15 @@ screen notify(message):
     style_prefix "notify"
 
     frame at notify_appear:
-        text "[message!tq]"
+        text "[message!tq]":
+            size 50
 
     timer 3.25 action Hide('notify')
 
 
 transform notify_appear:
     xalign 0.5
-    yalign 0.10
-    zoom 3.0
+    yalign 0.01
     on show:
         alpha 0
         linear .25 alpha 1.0
