@@ -284,7 +284,7 @@ class Fighter:
         return self.attacks[2] if len(self.attacks) >= 3 else None
 
     def attack(self, style: int, targets: list[Fighter]):
-        hit = (renpy.random.choice(True, False) if self.confused else True) and not self.dead
+        hit = (renpy.random.choice([True, False]) if self.confused else True) and not self.dead
         if hit:
             self.attacks[style].run(self, targets)
 
