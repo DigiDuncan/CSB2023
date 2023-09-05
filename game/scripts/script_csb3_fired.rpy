@@ -141,10 +141,10 @@ label write_song:
     arceus "Well I guess all we have to do now is upload it."
     anno "Alright boys, what do we call it?"
     $ song_name = renpy.input("What should we call the song?", "Prison Break")
-    cs "How about [song_name]?"
+    cs "How about {i}[song_name]{/i}?"
     anno "That's awesome."
     arceus "I like it!"
-    cs "Alright, it's settled! Let's upload [song_name] to streaming services!"
+    cs "Alright, it's settled! Let's upload {i}[song_name]{/i} to streaming services!"
     arceus "Are you going to plug it in the Discord?"
     cs "I guess I should, but people are going to be really confused as to why I'm not streaming still..."
     anno "I think they're used to you not streaming for a while."
@@ -203,7 +203,7 @@ label hotel_next_day:
     n "They all sit down to eat."
 
     # show hotel_tabel behind cs with dissolve
-    n "As they eat, CS check the stream numbers on [song_name]."
+    n "As they eat, CS check the stream numbers on {i}[song_name]{/i}."
     # show cs surprised
     cs "Guys?"
     arceus "Mmm?"
@@ -217,4 +217,9 @@ label hotel_next_day:
     cs "This is amazing! We might have a ticket out of here! We won't have to run from the cops anymore!"
     n "A random patron turns to look at CS."
     cs "Uh... metaphorically, of course."
-    
+    n "The patron turns back around."
+    cs "{i}ahem{/i}\nAnyway...{w=0.5} so what now?"
+    anno "I guess we keep it going?"
+    arceus "We can't let this window close, right?"
+    cs "I'm shocked, but yeah! Let's do it!"
+    n "The gang finish their food and head back up to their room."
