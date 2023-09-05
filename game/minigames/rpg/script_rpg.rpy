@@ -63,7 +63,7 @@ label rpg_cop_fight_2:
             copguy1
         scale 1
         on_win "after_cop_fight"
-        on_lose "secret"
+        on_lose "rpg_cop_fight_2"
 
 label rpg_cop_fight_3:
     rpg:
@@ -75,7 +75,7 @@ label rpg_cop_fight_3:
             cop
         scale 1
         on_win "cs_meetup"
-        on_lose "secret"
+        on_lose "rpg_cop_fight_3"
 
 label rpg_cop_fight_4:
     rpg:
@@ -88,7 +88,7 @@ label rpg_cop_fight_4:
             cop
         scale 1
         on_win "cs_meetup_2"
-        on_lose "secret"
+        on_lose "rpg_cop_fight_4"
 
 label rpg_ng_fight:
     rpg:
@@ -104,7 +104,7 @@ label rpg_ng_fight:
             guard
         scale 1.2
         on_win "cs_rage"
-        on_lose "secret"
+        on_lose "rpg_ng_fight"
 
 label rpg_final_fight_1:
     rpg:
@@ -119,8 +119,8 @@ label rpg_final_fight_1:
             marine
             marine
         scale 2
-        on_win "final_fight_2"
-        on_lose "secret"
+        on_win "rpg_final_fight_2"
+        on_lose "rpg_final_fight_1"
 
 label rpg_final_fight_2:
     rpg:
@@ -134,8 +134,8 @@ label rpg_final_fight_2:
             marine
             big_tank
         scale 2
-        on_win "final_fight_3"
-        on_lose "secret"
+        on_win "rpg_final_fight_3"
+        on_lose "rpg_final_fight_1"
 
 label rpg_final_fight_3:
     rpg:
@@ -146,7 +146,7 @@ label rpg_final_fight_3:
             tate
             digi
             arceus
-            copguy1
+            copguy2
         scale 2
         on_win "weapon_of_choice"
-        on_lose "secret"
+        on_lose "rpg_final_fight_1"

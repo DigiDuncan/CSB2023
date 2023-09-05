@@ -426,7 +426,9 @@ class Fighters:
     COPGUY1 = Fighter("Copguy", True, 300, 20, 35, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/copguy.png"), ai = AI.TARGET_WEAK)
     GUARD = Fighter("Guard", True, 250, 25, 40, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/guard_soldier.png"), ai = AI.NEUTRAL)
     SML_TANK = Fighter("Sherman", True, 500, 60, 120, [Attacks.SHELL], Image("images/characters/sherman.png"), ai = AI.TARGET_STRONG)
-
+    MARINE = Fighter("Marine", True, 300, 30, 45, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/marine.png"), ai = AI.NEUTRAL)
+    BIG_TANK = Fighter("Abrams", True, 700, 70, 150, [Attacks.SHELL], Image("images/characters/abrams.png"), ai = AI.TARGET_STRONG)
+    COPGUY2 = Fighter("Copguy", True, 1000, 30, 50, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/copguy.png"), ai = AI.TARGET_WEAK)
 encounter = Encounter([], Image("images/bg/black.png"), "audio/legosfx.mp3", 1, "start", "secret")
 
 # This is the displayable that controls what's happening in the boxes at the bottom of the screen
