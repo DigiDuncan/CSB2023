@@ -193,8 +193,22 @@ class Attack:
     def available(self) -> bool:
         return self._turns_until_available == 0
 
+class ComboAttack:
+    def __init__(self, name: str, attacks: list[Attack]):
+        self.name = name
+        self.attacks = attacks
+
+    def run(self, subject: Fighter, fighters: list[Fighter], crit: bool = False):
+        for a in self.attacks:
+            if a.available:
+                a.run(subject, fighters, crit)
+
+    @property
+    def available(self) -> bool:
+        return all([a.available for a in self.attacks])
+
 class Fighter:
-    def __init__(self, name: str, enemy: bool, hp: int, ap: int, atk: int, attacks: list[Attack], sprite: Displayable, multiplier: float = 1, ai: callable = None):
+    def __init__(self, name: str, enemy: bool, hp: int, ap: int, atk: int, attacks: list[Attack | ComboAttack], sprite: Displayable, multiplier: float = 1, ai: callable = None):
         self.name = name
         self.enemy = enemy
         self._health_points = int(hp * multiplier)
@@ -335,8 +349,15 @@ class Encounter:
 
 class Attacks:
     PUNCH = Attack("Punch", damage_fighters)
+    RAW_CHOP = Attack("Raw Chop", damage_fighters)
+    CS_AP_DOWN = Attack("CS AP Down")
+    CHOP = ComboAttack("Chop", [RAW_CHOP, CS_AP_DOWN])
+    RAW_KICK = Attack("Raw Kick", damage_fighters, mult = 3)
+    KICK = ComboAttack("Kick", [RAW_KICK, CS_AP_DOWN])
     BULLET_SPRAY = Attack("Bullet Spray", damage_fighters, target_count = 0, target_type = "enemies", cooldown = 3, mult = 1.5)
-    SLASH = Attack("Slash", damage_over_time, mult = 0.5)
+    RAW_SLASH = Attack("Raw Slash", damage_fighters)
+    BLEED = Attack("Bleed", damage_over_time, mult = 0.25)
+    SLASH = ComboAttack("Slash", [RAW_SLASH, BLEED])
     LIGHT_CAST = Attack("Light Cast", random_damage_fighters, cooldown = 3, min_mult = 1, max_mult = 1, mult = 3)
     INSIGHT = Attack("Insight", change_stat, stat = "atk", mult = 0.75)
     SHOTGUN = Attack("Shotgun", damage_fighters, target_count = 2, cooldown = 3, mult = 2)
@@ -347,19 +368,23 @@ class Attacks:
     DAMAGE_SCREM = Attack("Damage Screm", damage_fighters, target_count = 0, target_type = "enemies", mult = 0.5)
     SCREM = Attack("Screm", heal_fighters, target_count = 0, target_type = "allies", cooldown = 3, mult = 1)
     ELDRITCH_BLAST = Attack("Eldritch Blast", damage_fighters, mult = 1.5)
-    RAINBOW_VOMIT = Attack("Rainbow Vomit", damage_over_time, cooldown = 3, mult = 1)
+    RAINBOW = Attack("Rainbow", confuse_targets)
+    VOMIT = Attack("Vomit", damage_over_time, cooldown = 3, mult = 1)
+    RAINBOW_VOMIT = ComboAttack("Rainbow Vomit", [RAINBOW, VOMIT])
     ROBOPUNCH = Attack("RoboPunch", damage_fighters, mult = 1.25)
     HOLOSHIELD = Attack("HoloShield", change_stat, stat = "ap", target_count = 0, target_type = "allies", cooldown = 3, mult = 2.5)
     MUSIC_BOOST = Attack("Music Boost", change_stat, stat = "ap", target_count = 0, target_type = "allies", mult = 1)
     RAVE = Attack("Rave", change_stat, stat = "ap", cooldown = 3, mult = 0.5)
-    SAMPLE_BLAST = Attack("Sample Blast", random_damage_fighters, min_mult = 1, max_mult = 4, mult = 1)
+    SAMPLE_SPAM = Attack("Sample Spam", random_damage_fighters, min_mult = 1, max_mult = 3, mult = 1)
+    SOUND_BLAST = Attack("Sound Blast", damage_fighters, target_count = 0, target_type = "enemies")
+    SAMPLE_BLAST = ComboAttack("Sample Blast", [SAMPLE_SPAM, SOUND_BLAST])
     GNOMED = Attack("Gnomed", confuse_targets, target_count = 0, target_type = "enemies", cooldown = 3)
     NUDGE = Attack("Nudge", random_damage_fighters, min_mult = 0.1, max_mult = 10, mult = 1)
-    DRAW_IN = Attack("Draw in", change_stat, stat = "atk", target_count = 0, target_type = "allies", cooldown = 3, mult = 2)
+    DRAW_IN = Attack("Draw in", change_stat, stat = "atk", target_count = 0, target_type = "allies", cooldown = 3, mult = 2)  # fuck this
     CONFIDENCE = Attack("Confidence", change_stat, stat = "atk", target_count = 0, target_type = "allies", mult = 1.5)
     PEP_TALK = Attack("Pep Talk", change_stat, stat = "ap", target_count = 0, target_type = "allies", mult = 1.5)
     RADS_ATTACK = Attack("RADS Attack", damage_over_time, mult = 0.5)
-    AI_MIMIC = Attack("AI Mimic", confuse_targets, target_count = 0, target_type = "enemies", cooldown = 3, mult = 1)
+    AI_MIMIC = Attack("AI Mimic", confuse_targets, target_count = 0, target_type = "enemies", cooldown = 3, mult = 1)  # copy attack
     SHELL = Attack("Shell", random_damage_fighters, min_mult = 1, max_mult = 2, mult = 1)
 
 class Fighters:
