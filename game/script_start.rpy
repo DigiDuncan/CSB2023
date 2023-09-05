@@ -238,7 +238,7 @@ define direct = Character("Director", callback = renpy.partial(char_callback, be
 define monika = Character("Monika", callback = renpy.partial(char_callback, beep = "monika"))
 define lancer = Character("Lancer", callback = renpy.partial(char_callback, name = "lancer", beep = "lancer"))
 define tate = Character("Tate",  callback = renpy.partial(char_callback, name = "tate", beep="tate"))  # TODO: Beep
-define kitty = Character("Kitty", callback = renpy.partial(char_callback, name = "kitty"))  # TODO: Beep
+define kitty = Character("Kitty", callback = renpy.partial(char_callback, name = "kitty", beep = "kitty"))  # TODO: Beep
 define obama = Character("Obama", callback = renpy.partial(char_callback, name = "obama", beep = "obama"))
 define blank = Character("Blank", callback = renpy.partial(char_callback, name = "blank"))
 define aria = Character("Aria", callback = renpy.partial(char_callback, name = "aria"))  # TODO: Beep
