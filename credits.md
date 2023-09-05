@@ -50,6 +50,7 @@
     - Passport
 - BEST MUSIC
     - サマークリアランスセール
+    - Morning Highway
 - Mel O Dee
     - Scales of Joy
 - Charles Gounod

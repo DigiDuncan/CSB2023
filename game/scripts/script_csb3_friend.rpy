@@ -36,6 +36,8 @@ label microcenter:
     hide cs at right with moveoutright
     n "CS enters the building."
     scene microinside with fade
+    play music "<loop 0>morning_highway.mp3" loop volume 0.4
+    music Morning Highway - BEST MUSIC
     show cs at left with moveinleft
     cs "Woah! This place is huge!"
     cs "There are so many options to pick from! And I have as much money as I'll ever need, too!"
@@ -107,6 +109,8 @@ label high_gpu:
     cs "Welp, not my money!"
     cs "Awesome! Hopefully this is gonna be good enough for Linus!"
     hide cs with moveoutright
+    stop music fadeout 3.0
+    music end
     scene black with fade
     n "CS heads back to LTT."
     scene loffice
