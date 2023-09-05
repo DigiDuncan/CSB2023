@@ -45,8 +45,12 @@ label car_ride_1:
     kitty "Yeah, I'm doing fine so far."
     tate "Hold up, is that CS and their gang infront of us?"
     tate "Mika, blare the horn at them! Do it! It'll scare the crap outta CS!"
-    scene car_inside_fg
-    show drive_day behind car_inside_fg
+    if nice_car:
+        scene joj_charger_fg
+        show drive_day behind joj_charger_fg
+    else:
+        scene car_inside_fg
+        show drive_day behind car_inside_fg
     show cs disappointed at left
     show pakoo at right
     with fade
@@ -76,8 +80,12 @@ label car_ride_1:
     kitty "Hi, I'm Kitty. I hope Arc is doing well enough."
     tate "I'm Tate. I'm sure they are doing just fine, and it's nice to meet you all."
     tate "Now let's go kick some ass!"
-    scene car_inside_fg
-    show drive_day behind car_inside_fg
+    if nice_car:
+        scene joj_charger_fg
+        show drive_day behind joj_charger_fg
+    else:
+        scene car_inside_fg
+        show drive_day behind car_inside_fg
     show cs at left
     show pakoo at right
     with fade
@@ -170,7 +178,10 @@ label cs_meetup:
     show tate at left
     with moveinleft
     cs "Woah, what happened here? More cops?"
-    aria "Yeah, they weren't too much of a problem through."
+    if nice_car:
+        aria "First of all, nice car! Second of all, they weren't that hard to fight."
+    else:
+        aria "Yeah, they weren't too much of a problem through."
     tate "Good, the less cops, the better."
     aria "Nova and Digi are at the diner up ahead, let's get this blockade out of the way and get going."
     cs "Righty-o."
@@ -232,9 +243,16 @@ label cs_meetup_2:
     show aria at left
     with moveinleft
     cs "Hey guys! Are you all good?"
-    digi "Yeah, what about you? What is going on here?"
+    if nice_car:
+        digi "Woah damn, when did you get such a nice car?"
+        nova "That is a sick ride."
+    else:
+        digi "Yeah, what about you? What is going on here?"
     cs "Well uhh..."
-    arceus "We had to escape from prison, and killed some cops."
+    if nice_car:
+        arceus "We stole this car from a dealership, and then killed some cops."
+    else:
+        arceus "We had to escape from prison, and killed some cops."
     digi "What?! How did you--"
     cs "Umm, well..."
     arceus "HoH SiS problems."
@@ -256,8 +274,12 @@ label cs_meetup_2:
     with moveoutright
     n "Everyone gets back into their cars, and they take off in a convoy, hoping to end this madness soon."
     n "In CS' group, the gang decides what they can do to get away from the cops."
-    scene car_inside_fg
-    show drive_night behind car_inside_fg
+    if nice_car:
+        scene joj_charger_fg
+        show drive_night behind joj_charger_fg
+    else:
+        scene car_inside_fg
+        show drive_night behind car_inside_fg
     show cs at left
     show pakoo at right
     with fade
@@ -308,15 +330,22 @@ label car_ride_2:
     digi "Man, I just really hope so."
     scene black with fade
     pause 2.0
-    scene car_inside_fg
-    show drive_night behind car_inside_fg
+    if nice_car:
+        scene joj_charger_fg
+        show drive_night behind joj_charger_fg
+    else:
+        scene car_inside_fg
+        show drive_night behind car_inside_fg
     show cs at left
     show pakoo at right
     with fade
     cs "Well, should we find somewhere to stop for the night? We've been going for a while."
     pakoo "Holy shit! Stop CS!"
     hide drive_night
-    show battle_block_without_theater behind car_inside_fg
+    if nice_car:
+        show battle_block_without_theater behind joj_charger_fg
+    else:
+        show battle_block_without_theater behind car_inside_fg
     n "As CS looks ahead, he screeches on the breaks just in time."
     n "Barbed wire, soldiers, and military trucks block the highway, with Copguy standing in the front of it all."
     cs "This can't be good."
@@ -339,7 +368,11 @@ label car_ride_2:
     n "CS' friends start yelling, as the national guard men ready their weapons."
     copguy "I see, you wanted to do this the hard way..."
     copguy "Well, you're gonna find out why you never pick the hard way!"
-    copguy "Soldiers! Attack!"
+    if nice_car:
+        n "The soldiers seem distracted, aweing at CS' car."
+        copguy "Don't mind the car, attack!"
+    else:
+        copguy "Soldiers! Attack!"
     jump rpg_ng_fight
 
 label cs_rage:
@@ -392,8 +425,13 @@ label cs_rage:
     show csgod at right with dissolve  
     csgod "You're welcome."
     cs "Woah, hey! Are you CSGod?"
-    csgod "Indeed I am. You've seemed to channel my power through sheer willpower."
-    cs "Holy crap, does that mean I can use YTP Magic?"
+    csgod "Indeed I am. You've seemed to channel my power through determination."
+    if nice_car:
+        csgod "Also, it was me who let the intrusive thoughts win for you, and let you pick that nice car."
+        cs "Well, thanks for that. This car is amazing!"
+        cs "Anyways, can I use YTP Magic or something?"
+    else:
+        cs "Holy crap, does that mean I can use YTP Magic?"
     csgod "In theory, yes. Although you should take some time to rest."
     csgod "Don't beat yourself up over Copguy, you'll be able to beat him down next time, if you calm down and focus."
     csgod "I'm gonna let you go for now. Copguy is planning his most devious attack yet, and you need to be prepared."
@@ -454,8 +492,12 @@ label copguy_pres:
 
 label car_ride_3:
     #TODO: Car dialogue
-    scene car_inside_fg
-    show drive_night behind car_inside_fg
+    if nice_car:
+        scene joj_charger_fg
+        show drive_night behind joj_charger_fg
+    else:
+        scene car_inside_fg
+        show drive_night behind car_inside_fg
     show arceus flipped at left
     show pakoo at right
     with fade
@@ -498,8 +540,12 @@ label car_ride_3:
     jump final_meetup
 
 label final_meetup:
-    scene car_inside_fg
-    show final_destination behind car_inside_fg
+    if nice_car:
+        scene joj_charger_fg
+        show final_destination behind joj_charger_fg
+    else:
+        scene car_inside_fg
+        show final_destination behind car_inside_fg
     show arceus flipped at left
     show pakoo at right
     with fade
@@ -520,6 +566,11 @@ label final_meetup:
     anno "Yo."
     show midge at right behind anno with moveinright
     midge "Oh hai."
+    if nice_car:
+        "Blank, Anno, and Midge" "Nice car!"
+        cs "Thanks! I've heard that a lot today."
+    else:
+        cs "Nice to finally meet you guys! Where's DB?"
     anno "Db05 isn't here yet, he's been busy."
     anno "He'll be here soon though, we've been talking to him on the phone."
     n "Anno holds out his phone."
