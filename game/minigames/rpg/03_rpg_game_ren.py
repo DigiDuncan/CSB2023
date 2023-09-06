@@ -107,14 +107,21 @@ def change_stat(subject: Fighter, targets: list[Fighter], crit: bool, options: d
             pass
 
 class AI:
-    def __init__(self) -> None:
-        self.preservation = 0.50 # Heal others or myself
-        self.heal_threshold = 0.50 # When should I heal
-        self.aggression = 1 # Big bad hit things
-        self.empathy = 1 # How willing they are to heal others
-        self.tacticity = 1 # Debuffs and Buffs, aka the Pokemon strat
-        self.preferred_targets = [] # I wanna smack this boy in particular >:C
-        self.preference_weight = 2 # Multiplier how many more times likely to smack this boy
+    def __init__(self,
+                 preservation = 0.50,
+                 heal_threshold = 0.50,
+                 aggression = 1,
+                 empathy = 1,
+                 tacticity = 1,
+                 preferred_targets: list = None,
+                 preference_weight = 2) -> None:
+        self.preservation = preservation # Heal others or myself
+        self.heal_threshold = heal_threshold # When should I heal
+        self.aggression = aggression # Big bad hit things
+        self.empathy = empathy # How willing they are to heal others
+        self.tacticity = tacticity # Debuffs and Buffs, aka the Pokemon strat
+        self.preferred_targets = [] if preferred_targets is None else preferred_targets # I wanna smack this boy in particular >:C
+        self.preference_weight = preference_weight # Multiplier how many more times likely to smack this boy
 
     def run(self, subject: Fighter, encounter: Encounter) -> None:
         party_status = encounter.enemies
@@ -189,6 +196,10 @@ class AI:
 
 class AIType:
     NEUTRAL = AI()
+    FUCK_CS = AI(aggression = 2, preferred_targets = ["CS"])
+    AGGRO = AI(preservation = 0.75, aggression = 3, tacticity = 0.5)
+    DEFENSIVE = AI(heal_threshold = 0.75, empathy = 3)
+    SMART = AI(tacticity = 2)
 
 # Objects
 
@@ -464,16 +475,16 @@ class Fighters:
     COP = Fighter("Cop", True, 150, 15, 30, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/cop.png"), ai = AIType.NEUTRAL)
     COPGUYGODMODE = Fighter("Copguy", True, 9001, 9001, 35, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/copguy.png"), ai = AIType.NEUTRAL)
     COPGUY1 = Fighter("Copguy", True, 300, 20, 35, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/copguy.png"), ai = AIType.NEUTRAL)
-    GUARD = Fighter("Guard", True, 250, 25, 40, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/guard_soldier.png"), ai = AIType.NEUTRAL)
-    SML_TANK = Fighter("Sherman", True, 500, 60, 120, [Attacks.SHELL], Image("images/characters/sherman.png"), ai = AIType.NEUTRAL)
-    MARINE = Fighter("Marine", True, 300, 30, 45, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/marine.png"), ai = AIType.NEUTRAL)
-    BIG_TANK = Fighter("Abrams", True, 700, 70, 150, [Attacks.SHELL], Image("images/characters/abrams.png"), ai = AIType.NEUTRAL)
+    GUARD = Fighter("Guard", True, 250, 25, 40, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/guard_soldier.png"), ai = AIType.DEFENSIVE)
+    SML_TANK = Fighter("Sherman", True, 500, 60, 120, [Attacks.SHELL], Image("images/characters/sherman.png"), ai = AIType.AGGRO)
+    MARINE = Fighter("Marine", True, 300, 30, 45, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/marine.png"), ai = AIType.SMART)
+    BIG_TANK = Fighter("Abrams", True, 700, 70, 150, [Attacks.SHELL], Image("images/characters/abrams.png"), ai = AIType.AGGRO)
     COPGUY2 = Fighter("Copguy", True, 1000, 30, 50, [Attacks.PUNCH, Attacks.BULLET_SPRAY, Attacks.SLASH, Attacks.LIGHT_CAST, Attacks.INSIGHT,
                                                      Attacks.SHOTGUN, Attacks.ENCOURAGE, Attacks.HIGH_NOON, Attacks.SCRATCH, Attacks.ARMOUR,
                                                      Attacks.DAMAGE_SCREM, Attacks.SCREM, Attacks.ELDRITCH_BLAST, Attacks.RAINBOW_VOMIT,
                                                      Attacks.ROBOPUNCH, Attacks.HOLOSHIELD, Attacks.MUSIC_BOOST, Attacks.RAVE, Attacks.SAMPLE_BLAST,
                                                      Attacks.GNOMED, Attacks.NUDGE, Attacks.DRAW_IN, Attacks.CONFIDENCE, Attacks.PEP_TALK, Attacks.RADS_ATTACK,
-                                                     Attacks.AI_MIMIC, Attacks.SHELL], Image("images/characters/copguy.png"), ai = AIType.NEUTRAL)
+                                                     Attacks.AI_MIMIC, Attacks.SHELL], Image("images/characters/copguy.png"), ai = AIType.FUCK_CS)
 encounter = Encounter([], Image("images/bg/black.png"), "audio/legosfx.mp3", 1, "start", "secret")
 
 # This is the displayable that controls what's happening in the boxes at the bottom of the screen
