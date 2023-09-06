@@ -157,13 +157,19 @@ class AI:
             else:
                 print("???")
                 who_staging = encounter.allies
+
+        # If we prefer certain targets
         if self.preferred_targets:
-            who_staging.sort((lambda x: x.name in self.preferred_targets))
+            # Sort the preferred to the top of the list
+            who_staging.sort(key = (lambda x: x.name in self.preferred_targets), reverse = True)
             found_count = len([f for f in self.preferred_targets if f.name in self.preferred_targets])
         else:
             found_count = 0
+
+        # Choose fighters (weighted)
         for _ in range(what.target_count):
             who.append(renpy.random.choices(who_staging,
+                                            # {found count} instances of the number {self.preference_weight}, then fill with 1
                                             weights = ([self.preference_weight] * found_count) + ([1] * what.target_count - found_count)
                        ))
         
