@@ -436,7 +436,7 @@ class Attacks:
     VOMIT = Attack("Vomit", damage_over_time, cooldown = 3, mult = 1)
     RAINBOW_VOMIT = ComboAttack("Rainbow Vomit", [RAINBOW, VOMIT])
     ROBOPUNCH = Attack("RoboPunch", damage_fighters, mult = 1.75)
-    HOLOSHIELD = Attack("HoloShield", change_stat, stat = "ap", target_count = 0, target_type = "allies", cooldown = 3, mult = 2.5)
+    HOLOSHIELD = Attack("HoloShield", change_stat, stat = "ap", target_count = 0, target_type = "allies", cooldown = 3, mult = 2)
     MUSIC_BOOST = Attack("Music Boost", change_stat, stat = "ap", target_count = 0, target_type = "allies", mult = 1.5)
     RAVE = Attack("Rave", change_stat, stat = "ap", cooldown = 3, mult = 0.5)
     SAMPLE_SPAM = Attack("Sample Spam", random_damage_fighters, min_mult = 1, max_mult = 3, mult = 1)
