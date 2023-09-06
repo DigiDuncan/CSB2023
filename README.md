@@ -45,6 +45,7 @@ See what needs to be done below.
 - [ ] Music
 - [ ] Bios
 - [ ] Jukebox
+- [ ] Borderlands Intros
 
 ### Fired Ending [Digi, Sept. W2]
 - [ ] Script
@@ -71,8 +72,9 @@ See what needs to be done below.
 
 ### Passes [All, October W1]
 - [ ] Spelling/Grammar Pass
-- [ ] Transition/Flip Pass
+- [ ] Transition/Flip Pass [includes flashes]
 - [ ] Sprite Emotion Pass
+- [ ] Sprite Time-of-Day Check
 - [ ] Jukebox/Achievements/Bio Pass
 - [ ] Remove/address all TODO comments
 - [ ] Add more bounciness
