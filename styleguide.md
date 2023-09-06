@@ -43,10 +43,10 @@
     hide wesley with easeoutright
     hide helipad with fade
   ```
-* Narrator dialog should be denoted as a bare string.  
+* Narrator dialog should be denoted as a the character n.  
   **Example:**
   ```python
-  "{i}The three dig their way out of the cell and make a break into the dark of the evening.{/i}"
+  n "The three dig their way out of the cell and make a break into the dark of the evening.{"
   ```
 * One-off characters without definitions should be called by creating a `Character` object on the dialog line.  
   **Example:**
@@ -59,11 +59,11 @@
     show ed at right with easeinright
   ```
 * Label names **must be unique across all files.**
-* Definitions (of characters, images, audio, and video) should be done in `definitions.rpy`.
+* Definitions (of characters, images, audio, and video) should be done in `script_start.rpy`.
 
 ## Naming Conventions
 
-* Character objects should be named in PascalCase.
+* Character objects should be named in snake_case.
 * Images, audio, and videos should be named in snake_case. (All lowercase with underscores.)
   * This includes their filenames.
 
@@ -76,3 +76,4 @@
 
 * Use mp3 for the music format.
 * Use ogg for sound effects.
+* Use wav for text beeps.
