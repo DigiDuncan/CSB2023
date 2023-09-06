@@ -185,7 +185,7 @@ class AI:
         for _ in range(what.target_count):
             who.append(renpy.random.choices(who_staging,
                                             # {found count} instances of the number {self.preference_weight}, then fill with 1
-                                            weights = ([self.preference_weight] * found_count) + ([1] * (what.target_count - found_count))
+                                            weights = ([self.preference_weight] * found_count) + ([1] * (len(who_staging) - found_count))
                        )[0])
         
         # Run the attack
