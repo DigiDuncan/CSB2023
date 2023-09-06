@@ -267,6 +267,14 @@ class ComboAttack:
     @property
     def available(self) -> bool:
         return all([a.available for a in self.attacks])
+    
+    @property
+    def type(self) -> str:
+        types = [a.type for a in self.attacks]
+        for t in ["heal", "buff", "debuff", "aoe", "confuse"]:
+            if t in types:
+                return t
+        return "damage"
 
 class Fighter:
     def __init__(self, name: str, enemy: bool, hp: int, ap: int, atk: int, attacks: list[Attack | ComboAttack], sprite: Displayable, multiplier: float = 1, ai: AI = None):
