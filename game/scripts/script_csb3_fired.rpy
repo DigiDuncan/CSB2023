@@ -220,7 +220,7 @@ label hotel_next_day:
     show cs worried
     cs "Uh... metaphorically, of course."
     n "The patron turns back around."
-    show cs neutral
+    show cs
     cs "{i}ahem{/i}\nAnyway...{w=0.5} so what now?"
     anno "I guess we keep it going?"
     arceus "We can't let this window close, right?"
