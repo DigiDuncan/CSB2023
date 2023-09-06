@@ -177,7 +177,7 @@ class AI:
         if self.preferred_targets:
             # Sort the preferred to the top of the list
             who_staging.sort(key = (lambda x: x.name in self.preferred_targets), reverse = True)
-            found_count = len([f for f in self.preferred_targets if f.name in self.preferred_targets])
+            found_count = len([f for f in who_staging if f.name in self.preferred_targets])
         else:
             found_count = 0
 
