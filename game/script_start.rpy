@@ -209,7 +209,7 @@ define csgod = Character("CS God", callback = renpy.partial(char_callback, name 
 define luke = Character("Luke", callback = renpy.partial(char_callback, name = "luke", beep = "luke"))
 define taran = Character("Taran", callback = renpy.partial(char_callback, name = "taran"))
 define colton = Character("Colton", callback = renpy.partial(char_callback, name = "colton"))
-define sheriff = Character("Sheriff", callback = renpy.partial(char_callback, name = "sheriff"))
+define sheriff = Character("Sheriff", callback = renpy.partial(char_callback, name = "sheriff", beep = "sheriff"))
 define billy = Character("Billy", callback = renpy.partial(char_callback, name = "billy", beep = "billy"))
 define tv_billy = Character("TV Billy", callback = renpy.partial(char_callback, name = "billy", beep = "billy"))
 define cultist = Character("Cultist", callback = renpy.partial(char_callback, name = "cultist"))
