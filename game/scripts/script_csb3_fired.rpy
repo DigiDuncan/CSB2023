@@ -310,8 +310,40 @@ label ep_time:
     with dissolve
 
     cs "So, we're making a whole EP, what do we have to do?"
-    anno "I don't know, ask Pakoo for ideas."
-    n "Anno turns to the screen."
-    anno "Digi's out of ideas right now, can you help, Pakoo?"
-    call screen confirm(message="Help Digi?", yes_action=Return(), no_action=Quit(confirm=False))
-    anno "Thanks!"
+    anno "Well, Naming King, what were you thinking about calling it?"
+    cs "Well, I had a dream last night."
+    arceus "Oh no."
+    cs "And I dreamt the name:"
+    $ ep_name = renpy.input("What should we call the EP?", "The White Album")
+    cs "[ep_name]!"
+    anno "You know what, I like it."
+    arceus "See, when you said 'I thought of it in a dream,' I thought it was going to suck."
+    cs "Fair."
+    cs "So now we need to start putting some songs on this bad boy!"
+    arceus "Well then let's get to it, yeah? We already have {i}[song_name_1]{/i} and {i}[song_name_2]{/i}."
+    anno "Well, I had an idea for one this time."
+    cs "Oh? Hit us with it!"
+    anno "Well, I know I want it to be about travelling the world, but I don't know what to say for some of the lines."
+    cs "I can help fill them in!"
+    anno "Alright, awesome, here's what I got:"
+    anno "{cps=15}{image=note_small1.png}I made my way over to Japan...{image=note_small2.png}"
+    $ line_2 = renpy.input("What should the next line be?", "")
+    anno "OK! How about..."
+    anno "{cps=15}{image=note_small1.png}I found myself in the U.K...{image=note_small2.png}"
+    $ line_3 = renpy.input("What should the next line be?", "")
+    anno "Nice, nice, how about:"
+    anno "{cps=15}{image=note_small1.png}I'm gonna go party in Sweden...{image=note_small2.png}"
+    $ line_4 = renpy.input("What should the next line be?", "")
+    anno "{cps=15}{image=note_small1.png}I'm globetrottin'!{image=note_small2.png}"
+    cs "Hey, I like that! Sing it all the way through!"
+    anno "Gotcha!"
+    anno "{cps=15}{image=note_small1.png}I made my way over to Japan...{w=1.5}\n[line_2]{image=note_small2.png}"
+    anno "{cps=15}{image=note_small1.png}I found myself in the U.K...{w=1.5}[line_3]{image=note_small2.png}"
+    anno "{cps=15}{image=note_small1.png}I'm gonna go party in Sweden...{w=1.5}[line_4]{image=note_small2.png}"
+    anno "{cps=15}{image=note_small1.png}I'm globetrottin'!{image=note_small2.png}"
+    n "Arceus claps."
+    cs "Well, I guess you want me to name this one, too?"
+    anno "Go for it."
+    $ song_name_3 = renpy.input("What should we call the song?", "Globetrottin'")
+    anno "{i}[song_name_3]{/i} it is!"
+    cs "Woohoo! Three songs down!"

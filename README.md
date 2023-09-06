@@ -29,8 +29,9 @@ See what needs to be done below.
 
 ### RPG Game [Digi/Arc, Sept. W1]
 - [X] Basic Game Loop
-- [ ] All Attacks and Fighters in [75%]
-- [ ] All Sprites done
+- [ ] All Attacks and Fighters in [99%]
+- [ ] AI [75%]
+- [ ] All Sprites done [Pakoo]
 - [ ] Animations [Arc]
 - [ ] SFX
 - [ ] Reactive Text [50%]

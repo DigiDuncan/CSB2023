@@ -659,9 +659,14 @@ default nice_car = False
 default returning_from_blooper = False
 
 default band_name = "CS' Crazy Crew"
+default ep_name = "The White Album"
 default song_name_1 = "Prison Break"
 default song_name_2 = "Down to Vegas"
+default song_name_3 = "Globetrottin'"
 default line_1 = ""
+default line_2 = ""
+default line_3 = ""
+default line_4 = ""
 
 # Jump Menu
 screen start_menu():
