@@ -200,6 +200,7 @@ class AIType:
     AGGRO = AI(preservation = 0.75, aggression = 3, tacticity = 0.5)
     DEFENSIVE = AI(heal_threshold = 0.75, empathy = 3)
     SMART = AI(tacticity = 2)
+    COPGUY_EX = AI(preservation = 1, aggression = 3, empathy = 3, tacticity = 2, preferred_targets = ["CS"])
 
 # Objects
 
@@ -341,6 +342,8 @@ class Fighter:
         hit = (renpy.random.choice([True, False]) if self.confused else True) and not self.dead
         if hit:
             self.attacks[style].run(self, targets)
+        elif self.confused:
+            renpy.notify(f"{self.name} is confused!")
 
     def attack_ai(self, encounter: Encounter):
         if not self.dead:
@@ -492,7 +495,7 @@ class Fighters:
                                                      Attacks.DAMAGE_SCREM, Attacks.SCREM, Attacks.ELDRITCH_BLAST, Attacks.RAINBOW_VOMIT,
                                                      Attacks.ROBOPUNCH, Attacks.HOLOSHIELD, Attacks.MUSIC_BOOST, Attacks.RAVE, Attacks.SAMPLE_BLAST,
                                                      Attacks.GNOMED, Attacks.NUDGE, Attacks.DRAW_IN, Attacks.CONFIDENCE, Attacks.PEP_TALK, Attacks.RADS_ATTACK,
-                                                     Attacks.AI_MIMIC, Attacks.SHELL], Image("images/characters/copguy.png"), ai = AIType.FUCK_CS)
+                                                     Attacks.AI_MIMIC, Attacks.SHELL], Image("images/characters/copguy.png"), ai = AIType.COPGUY_EX)
 encounter = Encounter([], Image("images/bg/black.png"), "audio/legosfx.mp3", 1, "start", "secret")
 
 # This is the displayable that controls what's happening in the boxes at the bottom of the screen
