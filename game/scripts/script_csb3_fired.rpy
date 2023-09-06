@@ -257,7 +257,7 @@ label song_2:
     arceus "{cps=15}{image=note_small1.png}We're going down to Vegas,{w=1.5} [line_1]{image=note_small2.png}"
     cs "Woohoo! That sounds awesome!"
     anno "Let's get some backing vocals and a solo done and we have another song!"
-    arceus "I'm  glad you guys like it :3"
+    arceus "I'm glad you guys like it :3"
 
     scene black with dissolve
     n "After a furious writing session, their new song is done!"
@@ -281,3 +281,35 @@ label song_2:
     anno "Woah, awesome! Not as good as 'Nirvana', but you know, it wasn't going to be."
     cs "Hell yeah! [band_name] forever!"
     n "They all high-five."
+    arceus "Well, I guess tomorrow, we can release this one!"
+    anno "Sounds good!"
+    cs "I'm getting tired, I think we should hit the sack."
+    arceus "Yeah, that sounds like a good idea."
+    n "The boys all get ready for a night's rest."
+
+    scene black with dissolve
+    pause 2.0
+    cs "Hey guys?"
+    anno "Hmm?"
+    cs "What if we {i}don't{/i} release the song tomorrow?"
+    arceus "What? Are you crazy? We're doing so well."
+    cs "That's what I'm saying. Let's release a whole EP! That way, we get more views on the whole thing, and maybe we can even sell vinyls!"
+    arceus "You and your vinyls."
+    cs "I mean, come on, right? Out first gamble paid off, and now we have an audience. What do we have to lose?"
+    anno "Yeah, we could."
+    arceus "I guess I'm cool with that."
+    cs "Let's do it then! [band_name], here we go!"
+
+    pause 1.0
+    # scene hotel_breakfast
+    show anno at left
+    show arceus flipped at right
+    show cs
+    with dissolve
+
+    cs "So, we're making a whole EP, what do we have to do?"
+    anno "I don't know, ask Pakoo for ideas."
+    n "Anno turns to the screen."
+    anno "Digi's out of ideas right now, can you help, Pakoo?"
+    call screen confirm(message="Help Digi?", yes_action=Return(), no_action=Quit(confirm=False))
+    anno "Thanks!"
