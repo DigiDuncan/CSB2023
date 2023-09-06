@@ -117,12 +117,20 @@ class AI:
         self.preference_weight = 2 # Multiplier how many more times likely to smack this boy
 
     def run(self, subject: Fighter, encounter: Encounter) -> None:
+        what: Attack = None
+        who: list[Fighter] = None
+        # i_dont_know = "3rd Base"
         available_attacks = [a for a in subject.attacks if a.available]
-        if subject.health_points < (subject.max_health * self.heal_threshold) and renpy.random.choices([False, True], cum_weights = (self.preservation, 1)):
-            for a in available_attacks:
-                if a.type == "heal":
-                    a.run(subject, [subject] * a.target_count)
+        if len(available_attacks) == 1:
+            what = available_attacks[0]
+
+        # What should be determined before this
+        if what.target_count == 0:
+            target_type = {"enemies": "allies", "allies": "enemies", "all": "all"}[what.target_type]
+            who = getattr(encounter, target_type)
         
+        # Run the attack
+        what.run(subject, who)
 
 class AIType:
     NEUTRAL = AI()
