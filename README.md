@@ -14,7 +14,7 @@ See what needs to be done below.
 
 ### Big Tasks
 - [ ] Ending Screens [Pakoo, Sept. W3]
-- [ ] Menu for Endings [Digi, Sept. W3]
+- [ ] Menu for Endings [Arc, Sept. W3]
 - [ ] Commerical [Pakoo, Sept. W4]
 - [ ] Credits [Digi, Sept. W4]
 - [ ] End Fight cutscene [Pakoo/Digi, Sept. W4]
