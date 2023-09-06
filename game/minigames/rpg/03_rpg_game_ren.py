@@ -118,19 +118,37 @@ class AI:
 
     def run(self, subject: Fighter, encounter: Encounter) -> None:
         what: Attack = None
-        who: list[Fighter] = None
+        who: list[Fighter] = []
         # i_dont_know = "3rd Base"
         available_attacks = [a for a in subject.attacks if a.available]
         if len(available_attacks) == 1:
             what = available_attacks[0]
 
+        else: 
+            what = renpy.random.choice(available_attacks)
+
         # What should be determined before this
+
+        # If it's auto targeting
         if what.target_count == 0:
             target_type = {"enemies": "allies", "allies": "enemies", "all": "all"}[what.target_type]
             who = getattr(encounter, target_type)
+
+        # If the targeting computer is switched off, Luke, are you okay?
+        else:
+            for _ in range(what.target_count):
+                if what.target_type == "enemies":
+                    who.append(renpy.random.choice(encounter.allies))
+                elif what.target_type == "allies":
+                    who.append(renpy.random.choice(encounter.enemies))
+                elif what.target_type == "all":
+                    who.append(renpy.random.choice(encounter.fighters))
         
         # Run the attack
         what.run(subject, who)
+        print(f"[AI] {subject.name} running attack {what.name} on {[t.name for t in who]}...")
+        renpy.notify(f"{subject.name} running attack {what.name} on {[t.name for t in who]}...")
+        renpy.pause(1.0)
 
 class AIType:
     NEUTRAL = AI()
