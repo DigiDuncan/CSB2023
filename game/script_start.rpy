@@ -572,6 +572,8 @@ image war_torn_2 = "bg/war_torn_2.png"
 image war_torn_3 = "bg/war_torn_3.png"
 image war_torn_4 = "bg/war_torn_4.png"
 image war_torn_5 = "bg/war_torn_5.png"
+image car_insidearc_fg = "bg/car_insidearc_fg.png"
+image joj_chargerarc_fg = "bg/joj_chargerarc_fg.png"
 
 ## AI Ending
 image park1 = "bg/ai/amusementpark1.png"

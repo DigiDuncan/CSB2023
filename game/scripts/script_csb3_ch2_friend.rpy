@@ -507,11 +507,11 @@ label copguy_pres:
 label car_ride_3:
     #TODO: Car dialogue
     if nice_car:
-        scene joj_charger_fg
-        show drive_night behind joj_charger_fg
+        scene joj_chargerarc_fg
+        show drive_night behind joj_chargerarc_fg
     else:
-        scene car_inside_fg
-        show drive_night behind car_inside_fg
+        scene car_insidearc_fg
+        show drive_night behind car_insidearc_fg
     show arceus flipped at left
     show pakoo at right
     with fade
@@ -559,11 +559,11 @@ label car_ride_3:
 
 label final_meetup:
     if nice_car:
-        scene joj_charger_fg
-        show final_destination behind joj_charger_fg
+        scene joj_chargerarc_fg
+        show final_destination behind joj_chargerarc_fg
     else:
-        scene car_inside_fg
-        show final_destination behind car_inside_fg
+        scene car_insidearc_fg
+        show final_destination behind car_insidearc_fg
     show arceus flipped at left
     show pakoo at right
     with fade
