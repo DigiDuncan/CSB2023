@@ -299,7 +299,9 @@ label song_2:
     anno "Yeah, we could."
     arceus "I guess I'm cool with that."
     cs "Let's do it then! [band_name], here we go!"
+    jump ep_time
 
+label ep_time:
     pause 1.0
     # scene hotel_breakfast
     show anno at left
