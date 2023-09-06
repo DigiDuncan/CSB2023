@@ -494,6 +494,7 @@ image flintcar_outside = "bg/flintcaroutside.png"
 image flintcar_fg = "bg/flintcar_fg.png"
 image car_inside_fg = "bg/car_inside_fg.png"
 image joj_charger_fg = "bg/joj_charger_fg.png"
+image comments = "bg/comments.png"
 
 ## CSBIII Chapter 2
 image washington_road day = "bg/washingtonroadday.png"
@@ -703,6 +704,7 @@ label splashscreen:
 
 label start:
     scene game_menu
+    stop music fadeout 3.0
     window hide
     pause 0.1
     call screen start_menu()

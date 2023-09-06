@@ -1,5 +1,5 @@
 label csbiii_start:
-
+    stop music fadeout 3.0
     scene outside_ltt with fade
     show cs at left with moveinleft
     n "CS returns to LMG the next day."

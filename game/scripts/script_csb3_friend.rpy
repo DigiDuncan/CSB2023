@@ -20,13 +20,17 @@ label microcenter:
     linus "No no, that's too expensive and wasteful, let me think..."
     linus "Hmmm..."
     linus "Wait! I just got a brilliant idea! Why don't you go buy more parts for me, we certainly have the budget to do that!"
+    show cs disappointed
     cs "Uhmm… I literally just said--{nw}"
     linus "Alright! The plan is settled! You can go fetch me some more parts for the ultimate streaming machine, and you get to decide what parts should be in the computer!"
+    show cs
     cs "Okay but, are there any recommendations you would give me for building this? This is YOUR money, you know."
     linus "Nah, it's fine. I'm sure you will do well picking out parts, make sure to get the highest quality you can!"
     cs "Alrighty, I'll get going now."
     stop music fadeout 3.0
     music end
+    scene black with dissolve
+    pause 2.0
     scene microcenter with fade
     n "CS goes to Microcenter."
     show cs at left with moveinleft
@@ -151,7 +155,7 @@ label high_gpu:
     n "CS and Linus head down to the recording room, while Linus sets up the cameras and equipment."
     scene ltt_bg
     show ltt_fg
-    with determination
+    with fade
     show cs at t_cs_ltt behind ltt_fg with moveinleft
     linus "Alright, one second..."
     show linus at t_linus_ltt behind ltt_fg with moveinright
@@ -199,6 +203,7 @@ label high_gpu:
     cs "Hey Linus!"
     linus "Let's see how our video did!"
     n "Linus and CS sit down at the desk while Linus pulls open the video."
+    scene comments with fade
     play music "<loop 0>pixel_peeker_polka.mp3" loop volume 0.4
     music Pixel Peeker Polka - Kevin Macleod
     linus "Alright well, we've already got quite a bit of views..."
@@ -215,7 +220,10 @@ label high_gpu:
     stop music fadeout 3.0
     music end
     linus "Yeah, there are always people who get upset because of the brand we used. Don't worry, this always happens."
-    show cs disappointed
+    scene inside_ltt
+    show linus at mid_right
+    show cs disappointed at mid_left
+    with fade
     play music "<loop 0>yelling.ogg" loop volume 0.3
     cs "Hey, do you hear that?"
     n "CS and Linus can hear a growing audience of people yelling nearby."
@@ -447,7 +455,7 @@ label training:
     with moveoutright
     cs "Alright..."
     cs "Here goes nothing."
-    scene black with fade
+    scene black with dissolve
     scene course_1 with fade
     show cs at left with moveinleft
     pakoo "Alright, just make your way through these blockades."
@@ -644,7 +652,7 @@ label fire_range:
     hide pakoo with moveoutleft
     pause 1.0
     linus "This is such a good idea! Pat yourself on the back, Linus."
-    show black with fade
+    show black with dissolve
     show outside_ltt with fade
     show cs disappointed at center
     show arceus flipped at right
@@ -656,7 +664,7 @@ label fire_range:
     cs "Oh yeah!"
     cs "That reminds me..."
     show m4 at center
-    pause 0.5
+    pause 1.0
     cs "I took this with me too!"
     hide m4
     arceus "Holy shit! You took the rifle with you?"
@@ -669,6 +677,7 @@ label fire_range:
     show pakoo flipped at left with moveinleft
     pakoo "Hi!"
     show cs angry flipped
+    window hide
     show m4
     show pakoo disappointed flipped
     cs "Hey I am armed!"
@@ -930,15 +939,15 @@ label after_cop_fight:
     cs "Yeah, uhm..."
     cs "How are you doing?"
     tate "I'm fine, but we're gonna have to talk about how this whole situation came to be later."
-    show cs disappointed
+    show cs disappointed flipped
     cs "Fuck."
     if nice_car:
         tate "Also, nice car!"
-        show cs happy
+        show cs happy flipped
         cs "Thanks!"
     else:
-        show cs
-    show cs
+        show cs flipped
+    show cs flipped
     mika "Pakoo, next time you are gonna fight people, let me know in advance!"
     show pakoo disappointed
     pakoo "I know I know, this just came up not to long ago!"
@@ -967,6 +976,9 @@ label after_cop_fight:
     hide arceus
     hide pakoo
     with moveoutright
+    show kitty flipped
+    show tate flipped
+    with determination
     hide kitty
     hide mika
     hide tate
@@ -994,9 +1006,11 @@ label after_cop_fight:
     sheriff "Good luck, Copguy."
     show copguy flipped with determination
     hide copguy with moveoutright
-    scene black with fade
+    scene black with dissolve
+    window hide
     music end
     stop music fadeout 3.0
+    pause 3.0
     jump dpn_call
 
 

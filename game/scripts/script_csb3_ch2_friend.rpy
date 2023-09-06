@@ -59,9 +59,9 @@ label car_ride_1:
     cs "So yeah, that's why I'm mainly worried about Tate."
     show pakoo disappointed
     pakoo "Yeah, I getcha, I'm sur--{w=1.0}{nw}"
+    play sound "car_horn.ogg" volume 1
     show cs worried with vpunch
     show pakoo worried with vpunch
-    # TODO: Horn honk SFX
     cs "JESUS!!"
     n "CS swerves all over the road after being startled."
     show pakoo
@@ -192,6 +192,7 @@ label cs_meetup:
     scene black with fade
     n "CS, Aria, and Tate clear the road, and then follow Aria up to the diner."
     n "Meanwhile, back at the diner..."
+    window hide
     stop music fadeout 3.0
     scene dinerinside
     show digi at center
@@ -212,7 +213,6 @@ label cs_meetup:
     n "The people in the diner start freaking out and hide under their seats."
     nova "Alright Digi, let's do this."
     digi "On it."
-    scene black with fade
     stop music fadeout 3.0
     jump rpg_cop_fight_4
 
@@ -236,7 +236,7 @@ label cs_meetup_2:
     hide digi
     hide aria
     with moveoutright
-    scene black with fade
+    scene black with dissolve
     n "Digi, Aria, and Nova all go outside to meet everyone else."
     scene dineroutside
     play music "<loop 0>la_by_night.mp3" volume 0.5
@@ -297,7 +297,8 @@ label cs_meetup_2:
     cs "I can't go back to prison, that shit was scary."
     arceus "You're telling me."
     cs "I wonder how the others are doing..."
-    scene black with fade
+    scene black with dissolve
+    window hide
     pause 2.0
     jump car_ride_2
 
@@ -314,7 +315,7 @@ label car_ride_2:
     tate "Hell yeah, screw that Copguy dude! He just ran away at the last second when we first fought him!"
     mika "We definitely got this don't worry."
     kitty "I wonder how those new guys are handling the situation..."
-    scene black with fade
+    scene black with dissolve
     pause 2.0
     scene aria_car_fg
     show drive_night behind aria_car_fg
@@ -499,7 +500,8 @@ label copguy_pres:
     obama "Looks like we'll have to pull out the big guns."
     obama "You are gonna head to Chicago, I'll have a jet come pick you up."
     copguy "Thank you sir, I won't stop till this group is defeated."
-    scene black with fade
+    scene black with dissolve
+    window hide
     jump car_ride_3
 
 label car_ride_3:
@@ -695,7 +697,7 @@ label car_slam:
     n "Copguy pulls out his sidearm."
     copguy "Or should I say,"
     show db_cooper at offscreenright
-    copguy "C--"
+    copguy "C--{w=0.5}{nw}"
     show db_cooper at right with moveinleft
     show copguycrawl with hpunch
     hide copguycrawl with moveoutbottom
