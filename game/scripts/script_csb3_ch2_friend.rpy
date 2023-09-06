@@ -234,7 +234,9 @@ label cs_meetup_2:
     with moveoutright
     scene black with fade
     n "Digi, Aria, and Nova all go outside to meet everyone else."
-    scene dineroutside 
+    scene dineroutside
+    play music "<loop 0>la_by_night.mp3" volume 0.5
+    music L.A. By Night - Moongazer
     show cs flipped at right
     show arceus at mid_right
     with fade
@@ -339,6 +341,8 @@ label car_ride_2:
     show cs at left
     show pakoo at right
     with fade
+    stop music fadeout 3.0
+    music end
     cs "Well, should we find somewhere to stop for the night? We've been going for a while."
     pakoo "Holy shit! Stop CS!"
     hide drive_night
@@ -387,6 +391,8 @@ label cs_rage:
     show cs angry at mid_right with move
     show cs angry flipped with determination
     cs "Guys let's chase after him!"
+    play music "triage_at_dawn.mp3" loop volume 0.6
+    music Triage At Dawn - Kelly Bailey
     arceus "CS, we need a minute. We just fought a tank."
     cs "No time for that! We need to stop him now!"
     tate "CS, I'm sorry, we need to wait."
@@ -463,6 +469,8 @@ label cs_rage:
     with moveoutleft
     scene black with fade
     n "The crew gets in their respective cars, and they take off."
+    stop music fadeout 3.0
+    music end
     scene black with fade
     jump copguy_pres
 
