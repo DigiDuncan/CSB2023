@@ -64,6 +64,9 @@
     - Moongazer
     - Lowbudget Song
     - L.A. By Night
+    - Tuna Fish
+    - The Whale
+    - Prophet 2001
 - Keiichi Suzuki
     - Onett Theme
     - Buy Something, Will Ya!

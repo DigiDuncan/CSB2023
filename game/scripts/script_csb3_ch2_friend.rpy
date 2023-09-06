@@ -8,6 +8,8 @@ label dpn_call:
     show cs at left
     show pakoo at right
     with fade
+    play music "<loop 0>tuna_fish.mp3" loop volume 0.6
+    music Tuna Fish - Dr. Awesome
     cs "What a crazy day so far man."
     cs "I can't believe we had to fight all those cops! If it weren't for Tate and the gang, we'd be dead meat already."
     arceus "Yeah, but hey, you held them off pretty well with that fancy gun of yours."
@@ -96,6 +98,8 @@ label car_ride_1:
     arceus "They'll meet us at some diner in approximately a few hours from now."
     cs "Alright then, that sounds good to me! I'm hungry so it'll be nice to get some food."
     arceus "Yeah, same."
+    stop music fadeout 3.0
+    music end
     scene black with fade
     n "As a few hours pass, the DPN crew arrives at the S&P Diner, and waits to be served."
     jump dpn_diner
@@ -236,7 +240,7 @@ label cs_meetup_2:
     n "Digi, Aria, and Nova all go outside to meet everyone else."
     scene dineroutside
     play music "<loop 0>la_by_night.mp3" volume 0.5
-    music L.A. By Night - Moongazer
+    music L.A. By Night - Dr. Awesome
     show cs flipped at right
     show arceus at mid_right
     with fade
@@ -509,6 +513,8 @@ label car_ride_3:
     show arceus flipped at left
     show pakoo at right
     with fade
+    play music "the_whale.mp3" loop volume 0.6
+    music The Whale - Dr. Awesome
     n "While they are driving, Arceus notices that copguy starts ludicrously speeding up until he stops in Illinois."
     arceus "Guys, I think I found out where Copguy is headed."
     arceus "He's stopped in Chicago."
@@ -544,6 +550,8 @@ label car_ride_3:
     mika "Well, I just don't like them too much."
     kitty "The snack that breaks your back: Gold Whales!"
     n "They all laugh."
+    stop music fadeout 3.0
+    music end
     scene black with fade
     jump final_meetup
 
@@ -557,6 +565,8 @@ label final_meetup:
     show arceus flipped at left
     show pakoo at right
     with fade
+    play music "prophet_2001.mp3" loop volume 0.6
+    music Prophet 2001 - Dr. Awesome
     arceus "Alright, we are here."
     pakoo "So, who is joining us to help fight Copguy?"
     cs "Let's go take a look."
@@ -587,6 +597,8 @@ label final_meetup:
     cs "No problem DB! Every little bit helps!"
     tate "Well, are you guys ready to do this?"
     cs "Hell yeah! Let's go put Copguy through the slammer!"
+    stop music fadeout 3.0
+    music end
     scene black with fade
     jump rpg_final_fight_1
 
