@@ -117,6 +117,7 @@ class AI:
         self.preference_weight = 2 # Multiplier how many more times likely to smack this boy
 
     def run(self, subject: Fighter, encounter: Encounter) -> None:
+        party_status = encounter.enemies
         what: Attack = None
         who: list[Fighter] = []
         # i_dont_know = "3rd Base"
@@ -132,7 +133,14 @@ class AI:
             scores = [[atk, 1] for atk in available_attacks]
             for atk, score in scores:
                 if atk.type == "heal":
-                    score *= self.empathy
+                    min = subject.health_points/subject.max_health
+                    for p in party_status:
+                        if (p.health_points/p.max_health) < min:
+                            min = p.health_points/p.max_health
+                    if not min < self.heal_threshold:
+                        score *= self.empathy
+                    else:
+                        score *= self.empathy+(self.empathy*(self.heal_threshold-min))
                 elif atk.type == "damage" or atk.type == "aoe":
                     score *= self.aggression
                 elif atk.type == "buff" or atk.type == "debuff" or atk.type == "confuse":
