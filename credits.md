@@ -36,7 +36,7 @@
 *with help from the Ren'Py Discord community*  
 
 **Kinetic Text Tags** *by* Daniel Westfall  
-**Codex** *by* Unknown
+**Codex** *by* Skolaztika
 
 ## Audio
 **UST Director:** Pakoo  
