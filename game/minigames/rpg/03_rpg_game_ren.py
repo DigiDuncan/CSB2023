@@ -152,7 +152,7 @@ class AI:
                     score *= self.aggression
                 elif atk.type == "buff" or atk.type == "debuff" or atk.type == "confuse":
                     score *= self.tacticity
-            what = renpy.random.choices([s[0] for s in scores], weights = [s[1] for s in scores])
+            what = renpy.random.choices([s[0] for s in scores], weights = [s[1] for s in scores])[0]
 
         # What should be determined before this
 
