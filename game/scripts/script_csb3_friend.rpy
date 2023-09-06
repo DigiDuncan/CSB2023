@@ -832,7 +832,7 @@ label cool_car:
     pause 0.5
     cs "Make me!"
     copguy "He's armed! Men, get in position and fire!"
-    jump so_join
+    jump rpg_cop_fight_1
 
 label reg_car:
     cs "Hey! I have a Honda Civic, let's just take that!"
