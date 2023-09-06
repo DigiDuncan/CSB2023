@@ -113,7 +113,7 @@ class AI:
         self.aggression = 1 # Big bad hit things
         self.empathy = 1 # How willing they are to heal others
         self.tacticity = 1 # Debuffs and Buffs, aka the Pokemon strat
-        self.preferred_target = None # I wanna smack this boy in particular >:C
+        self.preferred_targets = [] # I wanna smack this boy in particular >:C
         self.preference_weight = 2 # Multiplier how many more times likely to smack this boy
 
     def run(self, subject: Fighter, encounter: Encounter) -> None:
@@ -148,13 +148,24 @@ class AI:
 
         # If the targeting computer is switched off, Luke, are you okay?
         else:
-            for _ in range(what.target_count):
-                if what.target_type == "enemies":
-                    who.append(renpy.random.choice(encounter.allies))
-                elif what.target_type == "allies":
-                    who.append(renpy.random.choice(encounter.enemies))
-                elif what.target_type == "all":
-                    who.append(renpy.random.choice(encounter.fighters))
+            if what.target_type == "enemies":
+                who_staging = encounter.allies
+            elif what.target_type == "allies":
+                who_staging = encounter.enemies
+            elif what.target_type == "all":
+                who_staging = encounter.fighters
+            else:
+                print("???")
+                who_staging = encounter.allies
+        if self.preferred_targets:
+            who_staging.sort((lambda x: x.name in self.preferred_targets))
+            found_count = len([f for f in self.preferred_targets if f.name in self.preferred_targets])
+        else:
+            found_count = 0
+        for _ in range(what.target_count):
+            who.append(renpy.random.choices(who_staging,
+                                            weights = ([self.preference_weight] * found_count) + ([1] * what.target_count - found_count)
+                       ))
         
         # Run the attack
         what.run(subject, who)
