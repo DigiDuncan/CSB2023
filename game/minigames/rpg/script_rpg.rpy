@@ -95,7 +95,7 @@ label rpg_ng_fight:
         bg "images/bg/battle_block_without_theater.png"
         music "audio/thousand_march.mp3"
         fighters:
-            cs
+            cs_ng
             tate
             digi
             arceus
@@ -108,10 +108,10 @@ label rpg_ng_fight:
 
 label rpg_final_fight_1:
     rpg:
-        bg "images/bg/battle_block_without_theater.png"
+        bg "images/bg/war_torn_2.png"
         music "audio/trans_atlantic.mp3"
         fighters:
-            cs
+            cs_strong
             tate
             digi
             arceus
@@ -124,10 +124,10 @@ label rpg_final_fight_1:
 
 label rpg_final_fight_2:
     rpg:
-        bg "images/bg/battle_block_without_theater.png"
+        bg "images/bg/war_torn_3.png"
         music "audio/trans_atlantic.mp3"
         fighters:
-            cs
+            cs_strong
             tate
             digi
             arceus
@@ -139,10 +139,10 @@ label rpg_final_fight_2:
 
 label rpg_final_fight_3:
     rpg:
-        bg "images/bg/battle_block_without_theater.png"
+        bg "images/bg/war_torn_4.png"
         music "audio/trans_atlantic.mp3"
         fighters:
-            cs
+            cs_final
             tate
             digi
             arceus

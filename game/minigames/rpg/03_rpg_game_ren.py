@@ -90,7 +90,15 @@ def change_stat(subject: Fighter, targets: list[Fighter], crit: bool, options: d
             f.health_points *= mult
             print(f"Setting {f.name} HP to {f.health_points}.")
         elif stat == "ap":
-            f.armor_points *= mult
+            old_ap = f.armor_points
+            new_ap = int(f.armor_points * mult)
+            if new_ap >= 99:
+                if f._funni_ap:
+                    new_ap = old_ap + 1
+                else:
+                    new_ap = 99
+                    f._funni_ap = True
+            f.armor_points = new_ap
             print(f"Setting {f.name} AP to {f.armor_points}.")
         elif stat == "atk":
             f.attack_points *= mult
@@ -126,7 +134,7 @@ def enemy_ai_neutral(subject: Fighter, encounter: Encounter):
     subject.attack(attack_idx, targets)
 
 def enemy_ai_target_weak(subject: Fighter, encounter: Encounter):
-    """Just kinda, choose a random guy and hit them."""
+    """Hit people with the lowest HP."""
     attack_chosen = False
     while not attack_chosen:
         attack_idx = renpy.random.randint(0, len(subject.attacks) - 1)
@@ -147,7 +155,7 @@ def enemy_ai_target_weak(subject: Fighter, encounter: Encounter):
     subject.attack(attack_idx, targets)
 
 def enemy_ai_target_strong(subject: Fighter, encounter: Encounter):
-    """Just kinda, choose a random guy and hit them."""
+    """Hit people with the highest HP."""
     attack_chosen = False
     while not attack_chosen:
         attack_idx = renpy.random.randint(0, len(subject.attacks) - 1)
@@ -175,7 +183,7 @@ class AI:
 # Objects
 
 class Attack:
-    def __init__(self, name: str, func: Callable[[Fighter, list[Fighter], dict], None], target_count = 1, target_type: str = "enemies", cooldown: int = 0, **kwargs):
+    def __init__(self, name: str, func: Callable[[Fighter, list[Fighter], dict], None], target_count = 1, target_type: str = "enemies", cooldown: int = 0, used = False, **kwargs):
         self.name = name
         self.func = func
         self.target_count = target_count
@@ -183,7 +191,7 @@ class Attack:
         self.cooldown = cooldown
         self.options = kwargs
 
-        self._turns_until_available = 0
+        self._turns_until_available = 0 if not used else self.cooldown
 
     def run(self, subject: Fighter, fighters: list[Fighter], crit: bool = False):
         self.func(subject, fighters, crit, self.options)
@@ -236,6 +244,8 @@ class Fighter:
         self.ai = ai
         self.sprite = sprite
 
+        self._funni_ap = False
+
         self.damage_per_turn: list[tuple] = []
         self.confused: bool = False
 
@@ -284,7 +294,7 @@ class Fighter:
         return self.attacks[2] if len(self.attacks) >= 3 else None
 
     def attack(self, style: int, targets: list[Fighter]):
-        hit = (renpy.random.choice(True, False) if self.confused else True) and not self.dead
+        hit = (renpy.random.choice([True, False]) if self.confused else True) and not self.dead
         if hit:
             self.attacks[style].run(self, targets)
 
@@ -303,7 +313,7 @@ class Fighter:
                     self.damage_per_turn.remove((h, t))
         # Confusion
         if self.confused:
-            self.confused = renpy.random.choice(True, False)
+            self.confused = renpy.random.choice([True, False])
             if self.confused:
                 print(f"{self.name}: I'm still confused...")
             else:
@@ -370,6 +380,7 @@ class Attacks:
     CS_AP_DOWN = Attack("CS AP Down", change_stat, stat = "ap", mult = 0.75)
     CHOP = ComboAttack("Chop", [RAW_CHOP, CS_AP_DOWN])
     RAW_KICK = Attack("Raw Kick", damage_fighters, mult = 3)
+    YTP_MAGIC = Attack("YTP Magic", damage_fighters, cooldown = 10, mult = 20, used = True)
     KICK = ComboAttack("Kick", [RAW_KICK, CS_AP_DOWN])
     BULLET_SPRAY = Attack("Bullet Spray", damage_fighters, target_count = 0, target_type = "enemies", cooldown = 3, mult = 1.5)
     RAW_SLASH = Attack("Raw Slash", damage_fighters)
@@ -388,9 +399,9 @@ class Attacks:
     RAINBOW = Attack("Rainbow", confuse_targets)
     VOMIT = Attack("Vomit", damage_over_time, cooldown = 3, mult = 1)
     RAINBOW_VOMIT = ComboAttack("Rainbow Vomit", [RAINBOW, VOMIT])
-    ROBOPUNCH = Attack("RoboPunch", damage_fighters, mult = 1.25)
+    ROBOPUNCH = Attack("RoboPunch", damage_fighters, mult = 1.75)
     HOLOSHIELD = Attack("HoloShield", change_stat, stat = "ap", target_count = 0, target_type = "allies", cooldown = 3, mult = 2.5)
-    MUSIC_BOOST = Attack("Music Boost", change_stat, stat = "ap", target_count = 0, target_type = "allies", mult = 1)
+    MUSIC_BOOST = Attack("Music Boost", change_stat, stat = "ap", target_count = 0, target_type = "allies", mult = 1.5)
     RAVE = Attack("Rave", change_stat, stat = "ap", cooldown = 3, mult = 0.5)
     SAMPLE_SPAM = Attack("Sample Spam", random_damage_fighters, min_mult = 1, max_mult = 3, mult = 1)
     SOUND_BLAST = Attack("Sound Blast", damage_fighters, target_count = 0, target_type = "enemies")
@@ -405,22 +416,25 @@ class Attacks:
     SHELL = Attack("Shell", random_damage_fighters, min_mult = 1, max_mult = 2, mult = 1)
 
 class Fighters:
-    CS = Fighter("CS", False, 188, 5, 25, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/cs/neutral.png"))
+    CS = Fighter("CS", False, 188, 10, 25, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/cs/neutral.png"))
+    CS_NG = Fighter("CS", False, 188, 10, 25, [Attacks.CHOP, Attacks.BULLET_SPRAY], Image("images/characters/cs/neutral.png"))
+    CS_STRONG = Fighter("CS", False, 188, 10, 25, [Attacks.KICK, Attacks.BULLET_SPRAY], Image("images/characters/cs/neutral.png"))
+    CS_FINAL = Fighter("CS", False, 188, 10, 25, [Attacks.KICK, Attacks.BULLET_SPRAY, Attacks.YTP_MAGIC], Image("images/characters/cs/neutral.png"))
     CS_WEAK = Fighter("CS", False, 188, 5, 25, [Attacks.PUNCH], Image("images/characters/cs/neutral.png"))
     ARCEUS = Fighter("Arceus", False, 160, 15, 35, [Attacks.SLASH, Attacks.LIGHT_CAST], Image("images/characters/arc/arceus.png"))
     PAKOO = Fighter("Pakoo", False, 145, 20, 30, [Attacks.INSIGHT, Attacks.SHOTGUN], Image("images/characters/pakoo.png"))
     MIKA = Fighter("Mika", False, 165, 20, 30, [Attacks.ENCOURAGE, Attacks.HIGH_NOON], Image("images/characters/mika.png"))
     KITTY = Fighter("Kitty", False, 155, 15, 20, [Attacks.SCRATCH, Attacks.ARMOUR], Image("images/characters/kitty.png"))
     TATE = Fighter("Tate", False, 170, 5, 30, [Attacks.DAMAGE_SCREM, Attacks.SCREM], Image("images/characters/tate.png"))
-    ARIA = Fighter("Aria", False, 200, 10, 45, [Attacks.ELDRITCH_BLAST, Attacks.RAINBOW_VOMIT], Image("images/characters/aria.png"))
-    DIGI = Fighter("Digi", False, 150, 20, 25, [Attacks.ROBOPUNCH, Attacks.HOLOSHIELD], Image("images/characters/digi.png"))
-    NOVA = Fighter("Nova", False, 150, 0, 30, [Attacks.MUSIC_BOOST, Attacks.RAVE], Image("images/characters/nova.png"))
+    ARIA = Fighter("Aria", False, 200, 20, 45, [Attacks.ELDRITCH_BLAST, Attacks.RAINBOW_VOMIT], Image("images/characters/aria.png"))
+    DIGI = Fighter("Digi", False, 170, 20, 30, [Attacks.ROBOPUNCH, Attacks.HOLOSHIELD], Image("images/characters/digi.png"))
+    NOVA = Fighter("Nova", False, 170, 5, 30, [Attacks.MUSIC_BOOST, Attacks.RAVE], Image("images/characters/nova.png"))
     BLANK = Fighter("Blank", False, 180, 5, 35, [Attacks.SAMPLE_BLAST, Attacks.GNOMED], Image("images/characters/blank.png"))
     MIDGE = Fighter("Midge", False, 165, 10, 25, [Attacks.NUDGE, Attacks.DRAW_IN], Image("images/characters/midge.png"))
     DB05 = Fighter("Db05", False, 9001, 9001, 50, [Attacks.CONFIDENCE, Attacks.PEP_TALK], Image("images/characters/db.png"))
     ANNO = Fighter("Anno", False, 220, 30, 40, [Attacks.RADS_ATTACK, Attacks.AI_MIMIC], Image("images/characters/anno.png"))
-    FANBOYA = Fighter("Fanboy",True, 50, 0, 15, [Attacks.PUNCH], Image("images/characters/nvidiafanboy.png"), ai = AI.NEUTRAL)
-    FANBOYB = Fighter("Fanboy",True, 50, 0, 15, [Attacks.PUNCH], Image("images/characters/amdfanboy.png"), ai = AI.NEUTRAL)
+    FANBOYA = Fighter("Fanboy",True, 50, 0, 16, [Attacks.PUNCH], Image("images/characters/nvidiafanboy.png"), ai = AI.NEUTRAL)
+    FANBOYB = Fighter("Fanboy",True, 50, 0, 16, [Attacks.PUNCH], Image("images/characters/amdfanboy.png"), ai = AI.NEUTRAL)
     COP = Fighter("Cop", True, 150, 15, 30, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/cop.png"), ai = AI.NEUTRAL)
     COPGUYGODMODE = Fighter("Copguy", True, 9001, 9001, 35, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/copguy.png"), ai = AI.TARGET_WEAK)
     COPGUY1 = Fighter("Copguy", True, 300, 20, 35, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/copguy.png"), ai = AI.TARGET_WEAK)
@@ -428,7 +442,7 @@ class Fighters:
     SML_TANK = Fighter("Sherman", True, 500, 60, 120, [Attacks.SHELL], Image("images/characters/sherman.png"), ai = AI.TARGET_STRONG)
     MARINE = Fighter("Marine", True, 300, 30, 45, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/marine.png"), ai = AI.NEUTRAL)
     BIG_TANK = Fighter("Abrams", True, 700, 70, 150, [Attacks.SHELL], Image("images/characters/abrams.png"), ai = AI.TARGET_STRONG)
-    COPGUY2 = Fighter("Copguy", True, 1000, 30, 50, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/copguy.png"), ai = AI.TARGET_WEAK)
+    COPGUY2 = Fighter("Copguy", True, 1000, 30, 50, [Attacks.PUNCH, Attacks.BULLET_SPRAY, Attacks.SLASH, Attacks.LIGHT_CAST, Attacks.INSIGHT, Attacks.SHOTGUN, Attacks.ENCOURAGE, Attacks.HIGH_NOON, Attacks.SCRATCH, Attacks.ARMOUR, Attacks.DAMAGE_SCREM, Attacks.SCREM, Attacks.ELDRITCH_BLAST, Attacks.RAINBOW_VOMIT, Attacks.ROBOPUNCH, Attacks.HOLOSHIELD, Attacks.MUSIC_BOOST, Attacks.RAVE, Attacks.SAMPLE_BLAST, Attacks.GNOMED, Attacks.NUDGE, Attacks.DRAW_IN, Attacks.CONFIDENCE, Attacks.PEP_TALK, Attacks.RADS_ATTACK, Attacks.AI_MIMIC, Attacks.SHELL], Image("images/characters/copguy.png"), ai = AI.TARGET_WEAK)
 encounter = Encounter([], Image("images/bg/black.png"), "audio/legosfx.mp3", 1, "start", "secret")
 
 # This is the displayable that controls what's happening in the boxes at the bottom of the screen

@@ -657,7 +657,11 @@ default fanboy_type = None
 default fanbase = None
 default nice_car = False
 default returning_from_blooper = False
-default song_name = "Prison Break"
+
+default band_name = "CS' Crazy Crew"
+default song_name_1 = "Prison Break"
+default song_name_2 = "Down to Vegas"
+default line_1 = ""
 
 # Jump Menu
 screen start_menu():

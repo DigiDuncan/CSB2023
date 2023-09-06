@@ -75,6 +75,7 @@ See what needs to be done below.
 - [ ] Sprite Emotion Pass
 - [ ] Jukebox/Achievements/Bio Pass
 - [ ] Remove/address all TODO comments
+- [ ] Add more bounciness
 - [ ] Check Discord channels for missing content
 
 ### Wishlist

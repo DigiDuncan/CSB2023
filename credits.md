@@ -50,16 +50,20 @@
     - Passport
 - BEST MUSIC
     - サマークリアランスセール
+    - Morning Highway
 - Mel O Dee
     - Scales of Joy
 - Charles Gounod
     - Alfred Hitchcock Theme
 - Kevin Macleod
     - Super Friendly
+    - Pixel Peeker Polka
 - C418
     - stal
 - Dr. Awesome
     - Moongazer
+    - Lowbudget Song
+    - L.A. By Night
 - Keiichi Suzuki
     - Onett Theme
     - Buy Something, Will Ya!
@@ -104,6 +108,7 @@
     - Price Is Right Theme
 - Matthew Simmonds
     - Mm Select
+    - Mm Complete
 - Home Depot
     - Let's Do This
 - Kikiyama
@@ -130,6 +135,10 @@
 - Lizardking
     - Weird Personalities
     - Insane Personalities
+- Kelly Bailey
+    - Klaxon Beat
+    - CP Violation
+    - Triage At Dawn
 
 ## Art
 **CSocola Sprites:** Greta "@lovelycloud"  

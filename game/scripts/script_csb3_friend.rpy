@@ -36,6 +36,8 @@ label microcenter:
     hide cs at right with moveoutright
     n "CS enters the building."
     scene microinside with fade
+    play music "<loop 0>morning_highway.mp3" loop volume 0.4
+    music Morning Highway - BEST MUSIC
     show cs at left with moveinleft
     cs "Woah! This place is huge!"
     cs "There are so many options to pick from! And I have as much money as I'll ever need, too!"
@@ -107,6 +109,8 @@ label high_gpu:
     cs "Welp, not my money!"
     cs "Awesome! Hopefully this is gonna be good enough for Linus!"
     hide cs with moveoutright
+    stop music fadeout 3.0
+    music end
     scene black with fade
     n "CS heads back to LTT."
     scene loffice
@@ -195,6 +199,8 @@ label high_gpu:
     cs "Hey Linus!"
     linus "Let's see how our video did!"
     n "Linus and CS sit down at the desk while Linus pulls open the video."
+    play music "<loop 0>pixel_peeker_polka.mp3" loop volume 0.4
+    music Pixel Peeker Polka - Kevin Macleod
     linus "Alright well, we've already got quite a bit of views..."
     cs "Man! I wish I got this amount of average views!"
     cs "Look at the comments!"
@@ -206,6 +212,8 @@ label high_gpu:
     else:
         cs "Aw man, what are those people saying? NVIDIA sucks, you guys are cucks?"
     cs "Heyyy!!! No I'm not!"
+    stop music fadeout 3.0
+    music end
     linus "Yeah, there are always people who get upset because of the brand we used. Don't worry, this always happens."
     show cs disappointed
     play music "<loop 0>yelling.ogg" loop volume 0.3
@@ -308,6 +316,8 @@ label after_fanboy:
     hide arceus
     with moveoutright
     scene alley with fade
+    play music "<loop 0>lowbudget_song.mp3" loop volume 0.4
+    music Lowbudget Song - Dr. Awesome
     show arceus flipped at right
     show cs at center
     with moveinleft
@@ -351,6 +361,8 @@ label after_fanboy:
     show linus at center with vpunch
     linus "Heyyy! There you are!"
     linus "CS, this is the trainer we brought in today!"
+    stop music fadeout 3.0
+    music end
     linus "They're gonna help you learn how to use a gun and stuff like that in case we get rioters again!"
     show cs worried
     cs "Woah what? Don't you think weapons training is a bit overkill for this?"
@@ -408,6 +420,8 @@ label training:
     show cs at center
     show pakoo flipped at left behind linus   
     with moveinleft
+    play music "klaxon_beat.mp3" loop volume 0.6
+    music Klaxon Beat - Kelly Bailey
     linus "Alright, here's our facility! What do you think?"
     cs "Oh wow! This looks like something from Quake!"
     pakoo "Close."
@@ -562,6 +576,8 @@ label fire_range:
     linus "That was excellent! You passed the course with flying colors!"
     pakoo "Head back to the main lobby, and we'll meet up with you there."
     cs "Alright, cya in a bit!"
+    stop music fadeout 3.0
+    music end
     hide m4
     show cs happy flipped with determination
     hide cs with moveoutleft
@@ -591,6 +607,8 @@ label fire_range:
     show cs
     linus "Sure! It's just--{w=0.5}{nw}"
     show arceus flipped at left with moveinleft
+    play music "cp_violation.mp3" loop volume 0.6
+    music CP Violation - Kelly Bailey
     arceus "Alright CS. We gotta go now."
     linus "Heyy! How'd you get down here?"
     show cs disappointed
@@ -684,6 +702,8 @@ label fire_range:
     arceus "Lemme scramble our location from the cops real quick, and then we should make it over there in a hurry and steal a car."
     pakoo "Alright!"
     cs "Hell yeah! Let's do this!"
+    stop music fadeout 3.0
+    music end
     scene black with fade
     n "Arceus takes one of the LTT laptops to scramble their location, and head off to the car dealer."
     scene canada_block with fade
@@ -719,6 +739,8 @@ label fire_range:
     cs "So we can pick any car we'd like?"
     arceus "Basically, yeah."
     show carguy at mid_right with moveinright
+    play music "<loop 0>mm_complete.mp3" loop volume 0.6
+    music Mm Complete - Matthew Simmonds
     carguy "Check out all these nice cars!"
     carguy "Nooooot so nice that you fellas don't have a car though."
     carguy "Wouldn't it be nice if having a car was this easy?"
@@ -765,6 +787,8 @@ label cool_car:
     pakoo "That is a sick ass car."
     arceus "Damn. Are we taking it CS?"
     cs "Hell yeah! We can't just turn up a car as cool as this!"
+    stop music fadeout 3.0
+    music end
     scene joj_charger_fg
     show dealership behind joj_charger_fg
     with fade
@@ -814,6 +838,8 @@ label reg_car:
     cs "Hey! I have a Honda Civic, let's just take that!"
     arceus "Works for me."
     pakoo "Let's go!"
+    stop music fadeout 3.0
+    music end
     scene car_inside_fg
     show dealership behind car_inside_fg
     with fade
@@ -995,6 +1021,8 @@ label flint_car:
     show pakoo disappointed flipped with determination
     pakoo "You sure about this? You gotta use your feet to move, man."
     cs "Yes, I know how the Flintmobile works."
+    stop music fadeout 3.0
+    music end
     scene flintcar_fg
     show dealership behind flintcar_fg
     with fade
