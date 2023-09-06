@@ -108,8 +108,13 @@ def change_stat(subject: Fighter, targets: list[Fighter], crit: bool, options: d
 
 class AI:
     def __init__(self) -> None:
-        self.preservation = 0.50
-        self.heal_threshold = 0.50
+        self.preservation = 0.50 # Heal others or myself
+        self.heal_threshold = 0.50 # When should I heal
+        self.aggression = 0.50 # Big bad hit things
+        self.empathy = 0.50 # How willing they are to heal others
+        self.tacticity = 0.50 # Debuffs and Buffs, aka the Pokemon strat
+        self.preferred_target = None # I wanna smack this boy in particular >:C
+        self.preference_weight = 2 # Multiplier how many more times likely to smack this boy
 
     def run(self, subject: Fighter, encounter: Encounter) -> None:
         available_attacks = [a for a in subject.attacks if a.available]
@@ -117,6 +122,7 @@ class AI:
             for a in available_attacks:
                 if a.type == "heal":
                     a.run(subject, [subject] * a.target_count)
+        
 
 class AIType:
     NEUTRAL = AI()
