@@ -1,4 +1,5 @@
 label csbiii_start:
+    $ csb3a_unlocked = True
     stop music fadeout 3.0
     scene outside_ltt with fade
     show cs at left with moveinleft
@@ -1001,6 +1002,7 @@ label good_convince:
     jump choose_direction
 
 label choose_direction:
+    $ csb3b_unlocked = True
     scene black with determination
     n "As the duo continues their journey through the night, they soon have to figure out exactly where to go."
     scene washington_road morning

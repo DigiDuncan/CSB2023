@@ -659,6 +659,12 @@ default fanbase = None
 default nice_car = False
 default returning_from_blooper = False
 
+# Chapters
+default csb2_unlocked = False
+default csb3a_unlocked = False
+default csb3b_unlocked = False
+
+# Fire route
 default band_name = "CS' Crazy Crew"
 default ep_name = "The White Album"
 default song_name_1 = "Prison Break"
@@ -684,14 +690,17 @@ screen start_menu():
                         zoom 0.666
                     action Play("sound", "sfx-valid.wav"), Hide("start_menu", Fade(1.0)), Jump("csbi_start")
                 imagebutton auto "menu/csbii_%s.png" hover_sound "sfx-select.wav":
+                    sensitive csb2_unlocked
                     at transform:
                         zoom 0.666
                     action Play("sound", "sfx-valid.wav"), Hide("start_menu", Fade(1.0)), Jump("csbii_start")
                 imagebutton auto "menu/csbiii1_%s.png" hover_sound "sfx-select.wav":
+                    sensitive csb3a_unlocked
                     at transform:
                         zoom 0.666
                     action Play("sound", "sfx-valid.wav"), Hide("start_menu", Fade(1.0)), Jump("csbiii_start")
                 imagebutton auto "menu/csbiii2_%s.png" hover_sound "sfx-select.wav":
+                    sensitive csb3b_unlocked
                     at transform:
                         zoom 0.666
                     action Play("sound", "sfx-valid.wav"), Hide("start_menu", Fade(1.0)), Jump("choose_direction")
