@@ -106,79 +106,20 @@ def change_stat(subject: Fighter, targets: list[Fighter], crit: bool, options: d
         else:
             pass
 
-def enemy_ai_neutral(subject: Fighter, encounter: Encounter):
-    """Just kinda, choose a random guy and hit them."""
-    attack_chosen = False
-    while not attack_chosen:
-        attack_idx = renpy.random.randint(0, len(subject.attacks) - 1)
-        attack = subject.attacks[attack_idx]
-        if not attack.available:
-            continue
-        else:
-            attack_chosen = True
-    targets = []
-    if attack.target_count == 0:
-        target_type = {"enemies": "allies", "allies": "enemies", "all": "all"}[attack.target_type]
-        targets = getattr(encounter, target_type)
-    else:
-        for _ in range(attack.target_count):
-            if attack.target_type == "enemies":
-                targets.append(renpy.random.choice(encounter.allies))
-            elif attack.target_type == "allies":
-                targets.append(renpy.random.choice(encounter.enemies))
-            elif attack.target_type == "all":
-                targets.append(renpy.random.choice(encounter.fighters))
-    print(f"[NEUTRAL AI] {subject.name} running attack {attack.name} on {[t.name for t in targets]}...")
-    renpy.notify(f"{subject.name} running attack {attack.name} on {[t.name for t in targets]}...")
-    renpy.pause(1.0)
-    subject.attack(attack_idx, targets)
-
-def enemy_ai_target_weak(subject: Fighter, encounter: Encounter):
-    """Hit people with the lowest HP."""
-    attack_chosen = False
-    while not attack_chosen:
-        attack_idx = renpy.random.randint(0, len(subject.attacks) - 1)
-        attack = subject.attacks[attack_idx]
-        if not attack.available:
-            continue
-        else:
-            attack_chosen = True
-    targets = []
-    target_type = {"enemies": "allies", "allies": "enemies", "all": "all"}[attack.target_type]
-    targets = getattr(encounter, target_type)
-    if attack.target_count != 0:
-        targets.sort(key = lambda x: x.health_points)
-        targets = targets[:attack.target_count]
-    print(f"[TARGET WEAK AI] {subject.name} running attack {attack.name} on {[t.name for t in targets]}...")
-    renpy.notify(f"{subject.name} running attack {attack.name} on {[t.name for t in targets]}...")
-    renpy.pause(1.0)
-    subject.attack(attack_idx, targets)
-
-def enemy_ai_target_strong(subject: Fighter, encounter: Encounter):
-    """Hit people with the highest HP."""
-    attack_chosen = False
-    while not attack_chosen:
-        attack_idx = renpy.random.randint(0, len(subject.attacks) - 1)
-        attack = subject.attacks[attack_idx]
-        if not attack.available:
-            continue
-        else:
-            attack_chosen = True
-    targets = []
-    target_type = {"enemies": "allies", "allies": "enemies", "all": "all"}[attack.target_type]
-    targets = getattr(encounter, target_type)
-    if attack.target_count != 0:
-        targets.sort(key = lambda x: x.health_points, reverse = True)
-        targets = targets[:attack.target_count]
-    print(f"[TARGET STRONG AI] {subject.name} running attack {attack.name} on {[t.name for t in targets]}...")
-    renpy.notify(f"{subject.name} running attack {attack.name} on {[t.name for t in targets]}...")
-    renpy.pause(1.0)
-    subject.attack(attack_idx, targets)
-
 class AI:
-    NEUTRAL = enemy_ai_neutral
-    TARGET_WEAK = enemy_ai_target_weak
-    TARGET_STRONG = enemy_ai_target_strong
+    def __init__(self) -> None:
+        self.preservation = 0.50
+        self.heal_threshold = 0.50
+
+    def run(self, subject: Fighter, encounter: Encounter) -> None:
+        available_attacks = [a for a in subject.attacks if a.available]
+        if subject.health_points < (subject.max_health * self.heal_threshold) and renpy.random.choices([False, True], cum_weights = (self.preservation, 1)):
+            for a in available_attacks:
+                if a.type == "heal":
+                    a.run(subject, [subject] * a.target_count)
+
+class AIType:
+    NEUTRAL = AI()
 
 # Objects
 
@@ -200,6 +141,21 @@ class Attack:
     @property
     def available(self) -> bool:
         return self._turns_until_available == 0
+    
+    @property
+    def type(self) -> str:
+        if self.func == heal_fighters:
+            return "heal"
+        elif self.func == change_stat and self.options.get("mult", 1) > 1:
+            return "buff"
+        elif self.func == change_stat:
+            return "debuff"
+        elif self.target_count == 0 and self.target_type == "enemies":
+            return "aoe"
+        elif self.func == confuse_targets:
+            return "confuse"
+        else:
+            return "damage"
 
 class ComboAttack:
     def __init__(self, name: str, attacks: list[Attack]):
@@ -233,7 +189,7 @@ class ComboAttack:
         return all([a.available for a in self.attacks])
 
 class Fighter:
-    def __init__(self, name: str, enemy: bool, hp: int, ap: int, atk: int, attacks: list[Attack | ComboAttack], sprite: Displayable, multiplier: float = 1, ai: callable = None):
+    def __init__(self, name: str, enemy: bool, hp: int, ap: int, atk: int, attacks: list[Attack | ComboAttack], sprite: Displayable, multiplier: float = 1, ai: AI = None):
         self.name = name
         self.enemy = enemy
         self._health_points = int(hp * multiplier)
@@ -241,7 +197,7 @@ class Fighter:
         self._armor_points = ap
         self._attack_points = int(atk * multiplier)
         self.attacks = [copy(a) for a in attacks]
-        self.ai = ai
+        self.ai: AI = ai
         self.sprite = sprite
 
         self._funni_ap = False
@@ -300,7 +256,7 @@ class Fighter:
 
     def attack_ai(self, encounter: Encounter):
         if not self.dead:
-            self.ai(self, encounter)
+            self.ai.run(self, encounter)
 
     def tick(self):
         # DOT
@@ -433,16 +389,22 @@ class Fighters:
     MIDGE = Fighter("Midge", False, 165, 10, 25, [Attacks.NUDGE, Attacks.DRAW_IN], Image("images/characters/midge.png"))
     DB05 = Fighter("Db05", False, 9001, 9001, 50, [Attacks.CONFIDENCE, Attacks.PEP_TALK], Image("images/characters/db.png"))
     ANNO = Fighter("Anno", False, 220, 30, 40, [Attacks.RADS_ATTACK, Attacks.AI_MIMIC], Image("images/characters/anno.png"))
-    FANBOYA = Fighter("Fanboy",True, 50, 0, 16, [Attacks.PUNCH], Image("images/characters/nvidiafanboy.png"), ai = AI.NEUTRAL)
-    FANBOYB = Fighter("Fanboy",True, 50, 0, 16, [Attacks.PUNCH], Image("images/characters/amdfanboy.png"), ai = AI.NEUTRAL)
-    COP = Fighter("Cop", True, 150, 15, 30, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/cop.png"), ai = AI.NEUTRAL)
-    COPGUYGODMODE = Fighter("Copguy", True, 9001, 9001, 35, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/copguy.png"), ai = AI.TARGET_WEAK)
-    COPGUY1 = Fighter("Copguy", True, 300, 20, 35, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/copguy.png"), ai = AI.TARGET_WEAK)
-    GUARD = Fighter("Guard", True, 250, 25, 40, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/guard_soldier.png"), ai = AI.NEUTRAL)
-    SML_TANK = Fighter("Sherman", True, 500, 60, 120, [Attacks.SHELL], Image("images/characters/sherman.png"), ai = AI.TARGET_STRONG)
-    MARINE = Fighter("Marine", True, 300, 30, 45, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/marine.png"), ai = AI.NEUTRAL)
-    BIG_TANK = Fighter("Abrams", True, 700, 70, 150, [Attacks.SHELL], Image("images/characters/abrams.png"), ai = AI.TARGET_STRONG)
-    COPGUY2 = Fighter("Copguy", True, 1000, 30, 50, [Attacks.PUNCH, Attacks.BULLET_SPRAY, Attacks.SLASH, Attacks.LIGHT_CAST, Attacks.INSIGHT, Attacks.SHOTGUN, Attacks.ENCOURAGE, Attacks.HIGH_NOON, Attacks.SCRATCH, Attacks.ARMOUR, Attacks.DAMAGE_SCREM, Attacks.SCREM, Attacks.ELDRITCH_BLAST, Attacks.RAINBOW_VOMIT, Attacks.ROBOPUNCH, Attacks.HOLOSHIELD, Attacks.MUSIC_BOOST, Attacks.RAVE, Attacks.SAMPLE_BLAST, Attacks.GNOMED, Attacks.NUDGE, Attacks.DRAW_IN, Attacks.CONFIDENCE, Attacks.PEP_TALK, Attacks.RADS_ATTACK, Attacks.AI_MIMIC, Attacks.SHELL], Image("images/characters/copguy.png"), ai = AI.TARGET_WEAK)
+
+    FANBOYA = Fighter("Fanboy",True, 50, 0, 16, [Attacks.PUNCH], Image("images/characters/nvidiafanboy.png"), ai = AIType.NEUTRAL)
+    FANBOYB = Fighter("Fanboy",True, 50, 0, 16, [Attacks.PUNCH], Image("images/characters/amdfanboy.png"), ai = AIType.NEUTRAL)
+    COP = Fighter("Cop", True, 150, 15, 30, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/cop.png"), ai = AIType.NEUTRAL)
+    COPGUYGODMODE = Fighter("Copguy", True, 9001, 9001, 35, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/copguy.png"), ai = AIType.NEUTRAL)
+    COPGUY1 = Fighter("Copguy", True, 300, 20, 35, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/copguy.png"), ai = AIType.NEUTRAL)
+    GUARD = Fighter("Guard", True, 250, 25, 40, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/guard_soldier.png"), ai = AIType.NEUTRAL)
+    SML_TANK = Fighter("Sherman", True, 500, 60, 120, [Attacks.SHELL], Image("images/characters/sherman.png"), ai = AIType.NEUTRAL)
+    MARINE = Fighter("Marine", True, 300, 30, 45, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/marine.png"), ai = AIType.NEUTRAL)
+    BIG_TANK = Fighter("Abrams", True, 700, 70, 150, [Attacks.SHELL], Image("images/characters/abrams.png"), ai = AIType.NEUTRAL)
+    COPGUY2 = Fighter("Copguy", True, 1000, 30, 50, [Attacks.PUNCH, Attacks.BULLET_SPRAY, Attacks.SLASH, Attacks.LIGHT_CAST, Attacks.INSIGHT,
+                                                     Attacks.SHOTGUN, Attacks.ENCOURAGE, Attacks.HIGH_NOON, Attacks.SCRATCH, Attacks.ARMOUR,
+                                                     Attacks.DAMAGE_SCREM, Attacks.SCREM, Attacks.ELDRITCH_BLAST, Attacks.RAINBOW_VOMIT,
+                                                     Attacks.ROBOPUNCH, Attacks.HOLOSHIELD, Attacks.MUSIC_BOOST, Attacks.RAVE, Attacks.SAMPLE_BLAST,
+                                                     Attacks.GNOMED, Attacks.NUDGE, Attacks.DRAW_IN, Attacks.CONFIDENCE, Attacks.PEP_TALK, Attacks.RADS_ATTACK,
+                                                     Attacks.AI_MIMIC, Attacks.SHELL], Image("images/characters/copguy.png"), ai = AIType.NEUTRAL)
 encounter = Encounter([], Image("images/bg/black.png"), "audio/legosfx.mp3", 1, "start", "secret")
 
 # This is the displayable that controls what's happening in the boxes at the bottom of the screen
