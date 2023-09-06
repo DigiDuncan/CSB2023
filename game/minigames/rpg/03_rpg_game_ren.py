@@ -110,9 +110,9 @@ class AI:
     def __init__(self) -> None:
         self.preservation = 0.50 # Heal others or myself
         self.heal_threshold = 0.50 # When should I heal
-        self.aggression = 0.50 # Big bad hit things
-        self.empathy = 0.50 # How willing they are to heal others
-        self.tacticity = 0.50 # Debuffs and Buffs, aka the Pokemon strat
+        self.aggression = 1 # Big bad hit things
+        self.empathy = 1 # How willing they are to heal others
+        self.tacticity = 1 # Debuffs and Buffs, aka the Pokemon strat
         self.preferred_target = None # I wanna smack this boy in particular >:C
         self.preference_weight = 2 # Multiplier how many more times likely to smack this boy
 
@@ -121,11 +121,23 @@ class AI:
         who: list[Fighter] = []
         # i_dont_know = "3rd Base"
         available_attacks = [a for a in subject.attacks if a.available]
-        if len(available_attacks) == 1:
+        # No attacks to chose?
+        if len(available_attacks) == 0:
+            return
+        # Only one attack to chose.
+        elif len(available_attacks) == 1:
             what = available_attacks[0]
-
-        else: 
-            what = renpy.random.choice(available_attacks)
+        # Choose an attack.
+        else:
+            scores = [[atk, 1] for atk in available_attacks]
+            for atk, score in scores:
+                if atk.type == "heal":
+                    score *= self.empathy
+                elif atk.type == "damage" or atk.type == "aoe":
+                    score *= self.aggression
+                elif atk.type == "buff" or atk.type == "debuff" or atk.type == "confuse":
+                    score *= self.tacticity
+            what = renpy.random.choices([s[0] for s in scores], weights = [s[1] for s in scores])
 
         # What should be determined before this
 
