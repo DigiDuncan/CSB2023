@@ -124,7 +124,7 @@ class AI:
         self.preference_weight = preference_weight # Multiplier how many more times likely to smack this boy
 
     def run(self, subject: Fighter, encounter: Encounter) -> None:
-        party_status = encounter.enemies
+        party_status = encounter.enemies if subject.enemy else encounter.allies
         what: Attack = None
         who: list[Fighter] = []
         # i_dont_know = "3rd Base"
@@ -164,14 +164,14 @@ class AI:
         # If the targeting computer is switched off, Luke, are you okay?
         else:
             if what.target_type == "enemies":
-                who_staging = encounter.allies
+                who_staging = encounter.allies if subject.enemy else encounter.enemies
             elif what.target_type == "allies":
-                who_staging = encounter.enemies
+                who_staging = encounter.enemies if subject.enemy else encounter.allies
             elif what.target_type == "all":
                 who_staging = encounter.fighters
             else:
                 print("???")
-                who_staging = encounter.allies
+                who_staging = encounter.allies if subject.enemy else encounter.enemies
 
         # If we prefer certain targets
         if self.preferred_targets:
