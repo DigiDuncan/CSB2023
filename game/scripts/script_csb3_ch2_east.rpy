@@ -429,7 +429,7 @@ label nebraska:
     show cs at mid_left
     show arceus at center
     show billy at mid_right
-    show pakoo at offscreenleft
+    show pakoo flipped at offscreenleft
     with moveinleft
     n "They all get out and start roaming the streets."
     n "Suddenly, CS hears a voice behind him."
@@ -439,7 +439,7 @@ label nebraska:
     stop music fadeout 3.0
     music end
     n "CS turns around and sees a wacky...{w=0.5} thing, with a tophat on."
-    show pakoo at left
+    show pakoo flipped at left
     show billy at right
     show arceus at mid_right
     show cs flipped at center
@@ -454,17 +454,21 @@ label nebraska:
     n "Pakoo thinks for a moment."
     pakoo "I think I know a place."
     n "Pakoo takes the gang over to the old market section of Omaha."
+    show cs
+    show arceus flipped
+    with determination
     hide pakoo
     hide cs
     hide billy
-    hide arceus flipped
+    hide arceus
     with easeoutright
     scene alleyway with fade
-    show pakoo at center
+    show pakoo flipped at center
     show billy at right
     show cs at left
     show arceus flipped at mid_left
     with moveinleft
+    show pakoo with determination
     pakoo "Here we are, this is probably the best location to eat at, at least that I know of."
     scene peppinopizzabg
     show peppinopizzafg
