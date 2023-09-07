@@ -123,6 +123,7 @@ label guitar_hero:
     jump write_song
 
 label write_song:
+    stop music
     # scene black with dissolve
     n "After some time, the gang have their first song written."
 
@@ -165,6 +166,7 @@ label write_song:
     jump hotel_next_day
 
 label hotel_next_day:
+    stop music
     # scene hotel_room with dissolve
     show cs at left with moveinleft
     cs "Let's go get breakfast."
@@ -233,6 +235,7 @@ label hotel_next_day:
     jump song_2
 
 label song_2:
+    stop music
     # scene hotel_room
     show anno at left
     show arceus at right
@@ -302,6 +305,7 @@ label song_2:
     jump ep_time
 
 label ep_time:
+    stop music
     pause 1.0
     # scene hotel_breakfast
     show anno at left
@@ -337,9 +341,10 @@ label ep_time:
     anno "{cps=15}{image=note_small1.png}I'm globetrottin'!{image=note_small2.png}"
     cs "Hey, I like that! Sing it all the way through!"
     anno "Gotcha!"
+    # TODO: Fun rock instrumental
     anno "{cps=15}{image=note_small1.png}I made my way over to Japan...{w=1.5}\n[line_2]{image=note_small2.png}"
-    anno "{cps=15}{image=note_small1.png}I found myself in the U.K...{w=1.5}[line_3]{image=note_small2.png}"
-    anno "{cps=15}{image=note_small1.png}I'm gonna go party in Sweden...{w=1.5}[line_4]{image=note_small2.png}"
+    anno "{cps=15}{image=note_small1.png}I found myself in the U.K...{w=1.5}\n[line_3]{image=note_small2.png}"
+    anno "{cps=15}{image=note_small1.png}I'm gonna go party in Sweden...{w=1.5}]\n[line_4]{image=note_small2.png}"
     anno "{cps=15}{image=note_small1.png}I'm globetrottin'!{image=note_small2.png}"
     n "Arceus claps."
     cs "Well, I guess you want me to name this one, too?"
@@ -347,3 +352,61 @@ label ep_time:
     $ song_name_3 = renpy.input("What should we call the song?", "Globetrottin'")
     anno "{i}[song_name_3]{/i} it is!"
     cs "Woohoo! Three songs down!"
+    arceus "Dang, and all without leaving the breakfast table."
+    anno "Now that's efficency. I'll go back upstairs and polish this up."
+    hide anno with moveoutleft
+    n "Anno gets up from his seat and heads to the room."
+    cs "He's really been a huge help with all of this."
+    arceus "Yeah, I kinda feel like I'm not pulling my weight."
+    cs "What do you mean, you wrote {i}[song_name_2]{/i}!"
+    arceus "True, true."
+    cs "Listen, I'm just like, the name guy. And part of me doesn't even feel like I'm coming up with those, they just kinda come to me, man."
+    arceus "Nah dude, you wrote {i}[song_name_1]{/i}!"
+    cs "I guess."
+    arceus "We should head back upstairs with Anno. Maybe there is something we can do to help!"
+    cs "Yeah, let's go see!"
+    jump back_to_room
+
+label back_to_room:
+    stop music
+    # scene hotel_room
+    show anno
+    with dissolve
+
+    show cs at left
+    show arceus at right
+    with moveinleft
+
+    n "Anno is deep in his laptop."
+    anno "Hey guys!"
+    cs "Hey!"
+    arceus "We were wondering, is there anything we can do to help?"
+    anno "Hmm... well, I need help with this solo."
+    arceus "Well, hey, I'm a percussionist, I can get a drum solo in there."
+    anno "Yeah, lay one on me!"
+    n "Anno plays the track, and Arceus taps out a killer drum line."
+    anno "That's awesome, man!"
+    arceus "Thank you, thank you."
+    cs "What can I do?"
+    anno "Well, you already named it {i}[song_name_3]{/i}, and that's definitely our best title yet. You wrote like, half the lines, too."
+    anno "But if you want to record backing vocals, this track might sound dope with them!"
+    cs "Will do!"
+    python:
+        last_words = []
+        for l in [line_2, line_3, line_4]:
+            s = l.split(" ")
+            last_words.append(s[-1])
+    anno "Recording!"
+    cs "{cps=15}...Japan!{w=1.5} ...[last_words[0]]!{w=1.5}\n{cps=15}...U.K.!{w=1.5} ...[last_words[1]]!{w=1.5}\n{cps=15}...Sweden!{w=1.5} ...[last_words[2]]!\n{w=1.5} ...globetrottin'~!"
+    pause 1.0
+    anno "You're clear! That was awesome!"
+    cs "Thank you, thank you!"
+    arceus "Is that us wrapped for the day?"
+    anno "I think it is! I'll export this and save it as {i}[song_name_3]{/i}!"
+    cs "Let's go!"
+    n "Everyone high-fives."
+
+    scene black with dissolve
+    n "The gang go to bed after another successful day."
+    cs "{i}At this rate, we'll have this whole EP done by the end of the week!"
+    n "CS smiles to himself, drifting off to sleep."
