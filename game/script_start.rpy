@@ -245,6 +245,7 @@ define aria = Character("Aria", callback = renpy.partial(char_callback, name = "
 define cop = Character("Cop", callback = renpy.partial(char_callback, name = "cop"))
 define midge = Character("Midge", callback = renpy.partial(char_callback, name = "midge"))
 define db = Character("DB05", callback = renpy.partial(char_callback, name = "db"))
+define customer = Character("Customer", callback = char_callback)
 
 # Character Images
 ## CS
@@ -685,10 +686,13 @@ default ep_name = "The White Album"
 default song_name_1 = "Prison Break"
 default song_name_2 = "Down to Vegas"
 default song_name_3 = "Globetrottin'"
+default song_name_4 = "Through The Battles and the Fights"
 default line_1 = ""
 default line_2 = ""
 default line_3 = ""
 default line_4 = ""
+default line_5 = ""
+default line_6 = ""
 
 # Jump Menu
 screen start_menu():

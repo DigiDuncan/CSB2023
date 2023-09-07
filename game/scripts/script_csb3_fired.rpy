@@ -1,3 +1,21 @@
+### TODO:
+# Needed character sprites:
+# cs surprised
+# 
+
+# Needed backgrounds:
+# hotel_lobby
+# hotel_room
+# guitar_hero
+# hotel_elevator
+# hotel_breakfast
+# mcdonalds
+
+# Needed sounds:
+# elevator music
+# elevator ding
+# ~5 rock instrumentals
+
 label new_plan:
     scene outside_ltt
     show cs angry at center
@@ -205,7 +223,7 @@ label hotel_next_day:
     n "They all sit down to eat."
 
     # show hotel_tabel behind cs with dissolve
-    n "As they eat, CS check the stream numbers on {i}[song_name_1]{/i}."
+    n "As they eat, CS checks the stream numbers on {i}[song_name_1]{/i}."
     # show cs surprised
     cs "Guys?"
     arceus "Mmm?"
@@ -410,3 +428,84 @@ label back_to_room:
     n "The gang go to bed after another successful day."
     cs "{i}At this rate, we'll have this whole EP done by the end of the week!"
     n "CS smiles to himself, drifting off to sleep."
+
+    pause 1.0
+    jump mcd
+
+label mcd:
+    stop music
+
+    # scene hotel_room
+    show anno at left
+    show arceus at right
+    show cs
+    with dissolve
+
+    anno "Well, you guys ready to write the next song?"
+    n "Stomachs grumble throughout the room."
+    cs "Ugh, I'm starving."
+    arceus "That hotel breakfast just isn't doing it for me today."
+    anno "Hmm... we have a little extra money from the first song's streams, wanna go to like, McDonald's?"
+    n "CS perks up."
+    cs "For sure."
+    arceus "Well then, let's head out!"
+
+    hide anno
+    hide arceus
+    hide cs
+    with moveoutright
+
+    # scene mcdonalds
+    show anno at left
+    show arceus at right
+    show cs
+    with dissolve
+
+    n "CS and the gang sit at a table in the McDonald's and eat their food."
+    n "As they eat, they start talking about their next song."
+    cs "OK, I had this idea, but it's a bit out there."
+    anno "Alright, let's hear it."
+    cs "{cps=15}{image=note_small1.png}I'M GONNA TAKE OVER THE WORLD.{w=1.0} I'M GONNA KILL GOD.{w=1.0} I CAN CONTORT REALITY TO MY WHIMS--{image=note_small2.png}"
+    anno "Wait, what the fuck, hold on--"
+    n "Arceus looks visibly concerned."
+    arceus "That might be a little bit much."
+    n "Arceus texts someone under the table."
+    cs "Yeah, I was worried about that."
+    cs "OK, OK, I have a different idea."
+    anno "Yeah...?"
+    cs "Well I don't have all the lyrics yet..."
+    arceus "Maybe this time, we can fill in the lines!"
+    cs "OK! Here's what I have so far:"
+    cs "{cps=15}{image=note_small1.png}Through all adversity, we'll bind together and overcome...{image=note_small2.png}"
+    arceus "Ooh, I got something:"
+    $ line_5 = renpy.input("What should the next line be?", "")
+    arceus "{cps=15}{image=note_small1.png}[line_5]{image=note_small2.png}"
+    cs "Nice! How about:"
+    cs "{cps=15}{image=note_small1.png}With my friends beside there's no foe we can not fight...{image=note_small2.png}"
+    anno "Let me take this one."
+    $ line_6 = renpy.input("What should the next line be?", "")
+    anno "{cps=15}{image=note_small1.png}[line_6]{image=note_small2.png}"
+    cs "Heck yeah! And then I think we should have a solo like:"
+    cs "{cps=15}{image=note1.png}{image=note4.png}{image=note3.png}{image=note1.png}{image=note5.png}{image=note1.png}{image=note2.png}{image=note1.png}{image=note2.png}{image=note2.png}{image=note4.png}{image=note4.png}{image=note3.png}{image=note3.png}{image=note5.png}{image=note5.png}{image=note1.png}{image=note1.png}{nw}"
+    arceus "Woah, how are you doing that with your mouth?"
+    cs "What, like:"
+    cs "{cps=10}{image=note1.png}{image=note2.png}{image=note3.png}{image=note4.png}{image=note5.png}"
+    cs "Honestly I have no idea."
+    customer "Hey, that sounds really good!"
+    cs "Huh?"
+    customer "Yeah, I heard you guys making that song from my table, it's really good!"
+    anno "Thanks! We're actually putting out an EP soon!"
+    customer "Well I definitely wanna hear that song again, what's it called?"
+    cs "Uh..."
+    $ song_name_4 = renpy.input("What should the song be called?", "Through the Battles and the Fights")
+    cs "It's called {i}[song_name_4]!{/i}"
+    anno "It'll be on our EP [ep_name], just look up [band_name] on streaming services!"
+    customer "Awesome, I'm excited! I'll make sure to check it out!"
+    n "The customer walks away."
+    cs "People are really liking our stuff."
+    arceus "This is going better than I ever dare hoped."
+    anno "Let's go back to the room and get this song made!"
+    n "On their way out of the store, CS turns to Arc."
+    cs "You know, I think [song_name_4] might be our best one yet."
+
+    scene black with dissolve
