@@ -39,13 +39,13 @@ See what needs to be done below.
 - [ ] Add games to script [90%]
 
 ### Friend Ending [Pakoo, Sept. W2]
-- [ ] Script [99%]
-- [X] Backgrounds [100%]
-- [ ] Characters [75%]
-- [ ] Transitions [95%]
-- [ ] Music
-- [ ] Bios
-- [ ] Jukebox
+- [ ] Script [98%]
+- [X] Backgrounds
+- [X] Characters
+- [X] Transitions
+- [X] Music
+- [X] Bios
+- [X] Jukebox
 - [ ] Borderlands Intros
 
 ### Fired Ending [Digi, Sept. W2]
