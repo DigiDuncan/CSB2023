@@ -11,3 +11,13 @@ label knocked_out:
     cs "What did I do before that?"
     n "The news starts playing on the TV in CS' room, explaining how 3 criminals broke out of prison a couple days ago."
     cs "Oh shoot! Yeah I went to prison and met Arceus and Anno! I need to get out of here!"
+    n "CS goes and gets dressed, and runs out of his room."
+    cs "Excuse me, do you know where the closest airport is?"
+    nurse "Uhh yeah, it's actually about a mile or two east of here."
+    cs "Thank you, bye!"
+    nurse "Uhm sir, shouldn't you stay in your room?"
+    nurse "Sir?"
+    nurse "Welp. I guess he's feeling fine."
+    cs "Ah shit, I need to really get out of here before the cops catch up with me."
+    cs "I hope Linus left me enough money to travel, otherwise I'm probably screwed."
+    
