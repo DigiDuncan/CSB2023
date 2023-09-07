@@ -247,6 +247,8 @@ define midge = Character("Midge", callback = renpy.partial(char_callback, name =
 define db = Character("DB05", callback = renpy.partial(char_callback, name = "db"))
 define customer = Character("Customer", callback = char_callback)
 define guest = Character("Guest", callback = char_callback)
+define nurse = Character("Nurse", callback = char_callback)
+define benrey = Character("Benrey", callback = char_callback)
 
 # Character Images
 ## CS
@@ -429,6 +431,7 @@ image copguycrawl = "characters/copguycrawl.png"
 image db_cooper = "characters/db_coopergame.png"
 image marine = "characters/marine.png"
 image big_tank = "characters/big_tank.png"
+image benrey = "characters/benrey.png"
 
 # Background Images
 ## CSBI
@@ -510,6 +513,9 @@ image flintcar_fg = "bg/flintcar_fg.png"
 image car_inside_fg = "bg/car_inside_fg.png"
 image joj_charger_fg = "bg/joj_charger_fg.png"
 image comments = "bg/comments.png"
+image hospital_room = "bg/hospital_room.png"
+image hospital_reception = "bg/hospital_reception.png"
+image ticket_counter = "bg/ticket_counter.png"
 
 ## CSBIII Chapter 2
 image washington_road day = "bg/washingtonroadday.png"
