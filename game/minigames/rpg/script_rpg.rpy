@@ -22,7 +22,7 @@ label rpg_fanboy_fight_amd:
             fanboyb
         scale 1s
         on_win "after_fanboy"
-        on_lose "secret"
+        on_lose "knocked_out"
 
 label rpg_fanboy_fight_nvidia:
     rpg:
@@ -35,7 +35,7 @@ label rpg_fanboy_fight_nvidia:
             fanboya
         scale 1
         on_win "after_fanboy"
-        on_lose "secret"
+        on_lose "knocked_out"
 
 label rpg_cop_fight_1:
     rpg:
