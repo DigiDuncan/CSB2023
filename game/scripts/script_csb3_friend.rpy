@@ -291,7 +291,7 @@ label after_fanboy:
     scene outside_ltt
     show cs angry flipped at center
     with fade
-    cs "*Huff Huff*"
+    n "CS struggles to catch his breath."
     cs "That was exhilarating!"
     cs "That's right! The rest of you get out of here!"
     show arceus at right with moveinright
@@ -901,7 +901,8 @@ label so_join:
     show pakoo disappointed at right
     with fade
     n "After that intense fight, the cops seemed to best CS and co."
-    cs "*Huff huff* Damnit..."
+    n "CS is panting heavily."
+    cs "Damnit..."
     pakoo "He's way too strong..."
     copguy "Is that all you guys got?"
     copguy "Or are you ready to finally admit your defeat?"
