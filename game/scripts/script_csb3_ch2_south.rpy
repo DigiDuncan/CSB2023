@@ -287,7 +287,7 @@ label utah:
 
 label vegas:
     if returning_from_blooper:
-        if fun_value(10):
+        if fun_value(10, "jade"):
             scene vegasjade
         else:
             scene vegas
@@ -302,7 +302,7 @@ label vegas:
     else:
         play music "<loop 0>penthouse.mp3" volume 0.5
         music "Al's Penthouse - Andy Blythe"
-        if fun_value(10):
+        if fun_value(10, "jade"):
             scene vegasjade
             $ persistent.seen.add("bubble")
         else:
@@ -315,7 +315,10 @@ label vegas:
     cs "Woohoo! We're almost there!"
     arceus "Some reckless gambling will probably help me forget about the horrors from that restaurant..."
     n "As they enter Las Vegas and find a place to park, they start by heading down The Strip."
-    scene strip with fade
+    if event_happened("jade"):
+        scene vegasjade2 with fade
+    else:
+        scene strip with fade
     show cs dark at left with moveinleft
     show arceus dark at right with moveinright
     cs "Alright Arc, you ready to get rich?"

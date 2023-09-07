@@ -645,6 +645,7 @@ image drive_day = Movie(play="movies/car_drive_day.mp4")
 #Fun Values
 image utajsign = "secret/utajsign.png"
 image vegasjade = "secret/vegasjade.png"
+image vegasjade2 = "secret/vegasjade2.png"
 image fumobee = "secret/fumobee.png"
 image fumobee2 = "secret/fumobee2.png"
 image cards5alt = "secret/cards5alt.png"
