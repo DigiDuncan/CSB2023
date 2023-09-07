@@ -147,7 +147,7 @@ label dpn_diner:
     n "Cop cars surround the vicinity of the area."
     n "Aria gets out of the car."
     scene cs_somewhere
-    show cop at right
+    show cop dark at right
     show cop_2 at mid_right
     with fade
     show aria at left with moveinleft
@@ -165,7 +165,7 @@ label dpn_diner:
     with moveoutbottom
     n "As Aria heads back to the car, she sneaks around and knocks the cop's heads together, knocking them out."
     show aria flipped at right with move
-    show cop at left with moveinleft
+    show cop dark at left with moveinleft
     cop "Ah shit! We got two men down! Arrest her!"
     stop music fadeout 3.0
     music end
@@ -177,9 +177,9 @@ label cs_meetup:
     with fade
     play music "<loop 0>dense_woods_b.mp3" volume 0.5
     n "After Aria takes care of the cops, CS and Tate's group rolls up on the other side of the blockade."
-    show cs at center
-    show arceus flipped at mid_left
-    show tate at left
+    show cs dark at center
+    show arceus dark flipped at mid_left
+    show tate dark at left
     with moveinleft
     cs "Woah, what happened here? More cops?"
     if nice_car:
@@ -241,11 +241,11 @@ label cs_meetup_2:
     scene dineroutside
     play music "<loop 0>la_by_night.mp3" volume 0.5
     music L.A. By Night - Dr. Awesome
-    show cs flipped at right
-    show arceus at mid_right
+    show cs dark flipped at right
+    show arceus dark at mid_right
     with fade
-    show digi flipped at center
-    show nova flipped at mid_left
+    show digi dark flipped at center
+    show nova dark flipped at mid_left
     show aria at left
     with moveinleft
     cs "Hey guys! Are you all good?"
@@ -273,8 +273,8 @@ label cs_meetup_2:
     cs "Yeah, alright everyone, back on the road!"
     cs "Everyone follow me, and we will eventually find a safe spot away from the cops!"
     arceus "Roger that."
-    show cs with determination
-    show arceus flipped with determination
+    show cs dark with determination
+    show arceus dark flipped with determination
     hide cs
     hide arceus
     with moveoutright
@@ -361,13 +361,13 @@ label car_ride_2:
     scene black with fade
     n "The groups behind CS stop as well, as everyone gets out of their cars and approaches Copguy."
     scene battle_block_without_theater
-    show copguy at mid_right
+    show copguy dark at mid_right
     show guard_soldier at right
     with fade
-    show cs angry at center
-    show tate at mid_left
-    show arceus flipped at mid_left_left
-    show digi flipped at left
+    show cs dark angry at center
+    show tate dark at mid_left
+    show arceus dark flipped at mid_left_left
+    show digi dark flipped at left
     with moveinleft
     copguy "Well? What do you think CS? You ready to go back to jail?"
     cs "Never!"
@@ -386,15 +386,15 @@ label car_ride_2:
 
 label cs_rage:
     scene battle_block_without_theater
-    show cs angry at center
-    show tate at mid_left
-    show arceus flipped at mid_left_left
-    show digi flipped at left
+    show cs dark angry at center
+    show tate dark at mid_left
+    show arceus dark flipped at mid_left_left
+    show digi dark flipped at left
     with fade
     n "After CS and the group manage to push back the national guard, Copguy once again flees at the last moment."
     cs "Hey! You get back here damnit!"
-    show cs angry at mid_right with move
-    show cs angry flipped with determination
+    show cs dark angry at mid_right with move
+    show cs dark angry flipped with determination
     cs "Guys let's chase after him!"
     play music "triage_at_dawn.mp3" loop volume 0.6
     music Triage At Dawn - Kelly Bailey
@@ -403,34 +403,34 @@ label cs_rage:
     tate "CS, I'm sorry, we need to wait."
     digi "We're never gonna catch up with him at this point anyways..."
     cs "Fuck! I can't believe this!"
-    show cs angry with determination
+    show cs dark angry with determination
     cs "He keeps running away like a wimp!"
     arceus "CS, you gotta calm down, we can-- "
-    show cs angry flipped with determination
+    show cs dark angry flipped with determination
     cs "Calm down? CALM DOWN?"
-    show cs angry flipped with hpunch
+    show cs dark angry flipped with hpunch
     cs "Do you know what we just fought through?"
     cs "He's just gonna keep building up stronger units for us to attack, and then run away if we beat him!"
-    show cs angry with determination
+    show cs dark angry with determination
     cs "We need to head out now!"
-    show cs angry with hpunch
+    show cs dark angry with hpunch
     pause 1.0
-    show cs angry with vpunch
+    show cs dark angry with vpunch
     pause 1.0
-    show cs angry with hpunch
+    show cs dark angry with hpunch
     pause 1.0
-    show cs angry with vpunch
+    show cs dark angry with vpunch
     n "CS goes to the debris from the battle, desperately trying to move it out of the way."
-    show cs concentrate
+    show cs dark concentrate
     cs "Guys, cmon, please! We have... to... hnngg..."
     tate "Woah, CS? What are you doing?"
-    show cs concentrate with vpunch
-    show cs concentrate with hpunch
-    show cs concentrate with vpunch
+    show cs dark concentrate with vpunch
+    show cs dark concentrate with hpunch
+    show cs dark concentrate with vpunch
     n "All of a sudden, the debris starts moving on it's own!"
     digi "Woah, what's going on?"
     cs "Can you guys please help--"
-    show cs at center with move
+    show cs dark at center with move
     cs "Wait, what the hell?! Did I move all of that already?"
     n "As CS is gawking at the work he just did, a purple figure appears in front of CS."
     show csgod at right with dissolve  
@@ -451,7 +451,7 @@ label cs_rage:
     hide csgod with dissolve
     n "CSGod fades away, and CS turns back to the group."
     tate "CS, you okay? You were just staring up at the sky and talking to yourself about magic or something."
-    show cs flipped with determination
+    show cs dark flipped with determination
     cs "I'm all good, don't worry."
     cs "Sorry I got upset, I just need to relax."
     cs "Arc, you drive, I'm gonna lie down in the backseat."
@@ -459,16 +459,16 @@ label cs_rage:
     cs "I'm good, just some rest."
     hide cs with moveoutleft
     n "CS heads into the backseat of the car and lies down."
-    show digi at center with move
-    show arceus flipped at left with move
+    show digi dark at center with move
+    show arceus dark flipped at left with move
     digi "Alright well, what's the plan? CS is technically right, we need to go track down Copguy somehow."
     arceus "I managed to put a tracking device on Copguy's car in the heat of the battle."
     arceus "I'll be following him, and I'll update you guys about what's going on."
-    show arceus with determination
+    show arceus dark with determination
     hide arceus with moveoutleft
     digi "Roger."
     tate "Alright, let's go kick Copguy's ass!"
-    show tate flipped with determination
+    show tate dark flipped with determination
     hide digi
     hide tate
     with moveoutleft
