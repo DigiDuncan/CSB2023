@@ -590,6 +590,7 @@ label final_meetup:
     anno "Yo."
     show midge at right behind anno with moveinright
     midge "Oh hai."
+    $ achievement_manager.unlock("A Little Help From My Friends")
     if nice_car:
         "Blank, Anno, and Midge" "Nice car!"
         cs "Thanks! I've heard that a lot today."
