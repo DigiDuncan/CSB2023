@@ -246,6 +246,7 @@ define cop = Character("Cop", callback = renpy.partial(char_callback, name = "co
 define midge = Character("Midge", callback = renpy.partial(char_callback, name = "midge"))
 define db = Character("DB05", callback = renpy.partial(char_callback, name = "db"))
 define customer = Character("Customer", callback = char_callback)
+define guest = Character("Guest", callback = char_callback)
 
 # Character Images
 ## CS

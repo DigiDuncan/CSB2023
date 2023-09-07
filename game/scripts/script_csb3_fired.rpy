@@ -509,3 +509,44 @@ label mcd:
     cs "You know, I think [song_name_4] might be our best one yet."
 
     scene black with dissolve
+    jump hotel_lobby_2
+
+label hotel_lobby_2:
+    stop music
+
+    # scene hotel_lobby
+    show anno at left
+    show arceus at right
+    show cs
+    with dissolve
+
+    n "As they walk through the hotel lobby to their room, they hum their newest song to themselves."
+    cs "{cps=15}{image=note_small1.png}{i}[line_5]{/i}{image=note_small2.png}"
+    n "Someone in the lobby overhears them singing the song and runs up to them."
+    guest "Holy shit, are you from [band_name]?!"
+    cs "Uh..."
+    guest "You are! Holy shit!"
+    guest "You guys are cracked at making music! You're like GOATed!"
+    cs "What? What does that--"
+    n "A crowd starts to form around them."
+    guest "You're a rizz god! You're off the sauce at this shit!"
+    anno "We've released one song."
+    guest "I'm like the biggest stan of you guys! You guys gotta perform."
+    arceus "Perform?"
+    guest "You gotta like, give us a sneak peak of your new EP!"
+    anno "{i}How did he know we're releasing a new EP{/i}"
+    guest "Come on! You gotta! You'll pop off on TikTok."
+    cs "Uh, sure? I guess?"
+    n "The crowd cheers."
+    cs "Alright, well, here's our song..."
+    n "CS turns to the others to queue them."
+    cs "[song_name_2]!"
+    n "Anno starts up the backing track, and Arceus grabs some random objects to use as a drum kit."
+    cs "{cps=15}{image=note_small1.png}We're going down to Vegas, we're gonna strike it rich!{w=1.5}\nWe're going down to Vegas, [line_1]{image=note_small2.png}"
+    n "The crowd cheers wildly."
+    anno "We're [band_name]! Check out [ep_name] on streaming services soon!"
+    n "The gang heads up to their room."
+    jump song_5
+
+label song_5:
+    stop music
