@@ -1,7 +1,8 @@
 ### TODO:
 # Needed character sprites:
 # cs surprised
-# 
+# customer
+# guest
 
 # Needed backgrounds:
 # hotel_lobby
@@ -124,6 +125,7 @@ label guitar_hero:
     cs "Arc?"
     arceus "What do I have to lose?"
     cs "Woohoo!"  # haha I did it too Pakoo
+    $ achievement_manager.unlock("Guitar Hero")
 
     # scene hotel_room
     cs "Maybe we should call Blank. He's like, an actual musician."
@@ -161,6 +163,7 @@ label write_song:
     anno "Alright boys, what do we call it?"
     $ song_name_1 = renpy.input("What should we call the song?", "Prison Break")
     cs "How about {i}[song_name_1]{/i}?"
+    $ achievement_manager.unlock("Hi, My Name Is...")
     anno "That's awesome."
     arceus "I like it!"
     cs "Alright, it's settled! Let's upload {i}[song_name_1]{/i} to streaming services!"
@@ -274,6 +277,7 @@ label song_2:
     arceus "Uh..."
     $ line_1 = renpy.input("Finish the line!", "")
     cs "How about, '[line_1]'"
+    $ achievement_manager.unlock("Singer-Songwriter")
     arceus "Yeah!"
     arceus "{cps=15}{image=note_small1.png}We're going down to Vegas,{w=1.5} [line_1]{image=note_small2.png}"
     cs "Woohoo! That sounds awesome!"
