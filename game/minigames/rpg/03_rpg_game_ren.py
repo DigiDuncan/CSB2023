@@ -150,7 +150,7 @@ class AI:
             print("MIN PARTY HEALTH PERCENTAGE:", min)
 
             # Roll a die if we should heal or not.
-            if min > self.heal_threshold:
+            if min <= self.heal_threshold:
                 heal_time = renpy.random.random() < self.heal_chance
             else:
                 heal_time = False
@@ -451,7 +451,7 @@ class Attacks:
     RAW_CHOP = Attack("Raw Chop", damage_fighters)
     CS_AP_DOWN = Attack("CS AP Down", change_stat, stat = "ap", mult = 0.75)
     CHOP = ComboAttack("Chop", [RAW_CHOP, CS_AP_DOWN])
-    RAW_KICK = Attack("Raw Kick", damage_fighters, mult = 3)
+    RAW_KICK = Attack("Raw Kick", damage_fighters, mult = 2)
     YTP_MAGIC = Attack("YTP Magic", damage_fighters, cooldown = 10, mult = 20, used = True)
     KICK = ComboAttack("Kick", [RAW_KICK, CS_AP_DOWN])
     BULLET_SPRAY = Attack("Bullet Spray", damage_fighters, target_count = 0, target_type = "enemies", cooldown = 3, mult = 1.5)
@@ -472,7 +472,7 @@ class Attacks:
     VOMIT = Attack("Vomit", damage_over_time, cooldown = 3, mult = 1, turns = 3)
     RAINBOW_VOMIT = ComboAttack("Rainbow Vomit", [RAINBOW, VOMIT])
     ROBOPUNCH = Attack("RoboPunch", damage_fighters, mult = 1.75)
-    HOLOSHIELD = Attack("HoloShield", change_stat, stat = "ap", target_count = 0, target_type = "allies", cooldown = 3, mult = 2)
+    HOLOSHIELD = Attack("HoloShield", change_stat, stat = "ap", target_count = 0, target_type = "allies", cooldown = 3, mult = 1.5)
     MUSIC_BOOST = Attack("Music Boost", change_stat, stat = "ap", target_count = 0, target_type = "allies", mult = 1.5)
     RAVE = Attack("Rave", change_stat, stat = "ap", cooldown = 3, mult = 0.5)
     SAMPLE_SPAM = Attack("Sample Spam", random_damage_fighters, min_mult = 1, max_mult = 3, mult = 1)
