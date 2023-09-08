@@ -457,7 +457,7 @@ class Attacks:
     SCREM = Attack("Screm", heal_fighters, target_count = 0, target_type = "allies", cooldown = 3, mult = 1)
     ELDRITCH_BLAST = Attack("Eldritch Blast", damage_fighters, mult = 1.5)
     RAINBOW = Attack("Rainbow", confuse_targets, cooldown = 3)
-    VOMIT = Attack("Vomit", damage_over_time, cooldown = 3, mult = 1)
+    VOMIT = Attack("Vomit", damage_over_time, cooldown = 3, mult = 1, turns = 3)
     RAINBOW_VOMIT = ComboAttack("Rainbow Vomit", [RAINBOW, VOMIT])
     ROBOPUNCH = Attack("RoboPunch", damage_fighters, mult = 1.75)
     HOLOSHIELD = Attack("HoloShield", change_stat, stat = "ap", target_count = 0, target_type = "allies", cooldown = 3, mult = 2)
