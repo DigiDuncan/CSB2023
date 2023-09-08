@@ -108,6 +108,7 @@ def change_stat(subject: Fighter, targets: list[Fighter], crit: bool, options: d
 
 class AI:
     def __init__(self,
+                 name: str,
                  heal_chance = 0.50,
                  heal_threshold = 0.50,
                  aggression = 1,
@@ -116,6 +117,7 @@ class AI:
                  focus: Literal['strong', 'weak'] = None,
                  preferred_targets: list = None,
                  preference_weight = 2) -> None:
+        self.name = name
         self.heal_chance = heal_chance # Skew towards healing attacks
         self.heal_threshold = heal_threshold # When should I heal
         self.aggression = aggression # Big bad hit things
@@ -216,16 +218,16 @@ class AI:
         
         # Run the attack
         what.run(subject, who)
-        print(f"[AI] {subject.name} running attack {what.name} on {[t.name for t in who]}...")
-        renpy.notify(f"{subject.name} running attack {what.name} on {[t.name for t in who]}...")
+        print(f"[AI: {self.name}] {subject.name} running attack {what.name} on {sentence_join([t.name for t in who])}...")
+        renpy.notify(f"[AI: {self.name}] {subject.name} running attack {what.name} on {sentence_join([t.name for t in who])}...")
         renpy.pause(1.0)
 
 class AIType:
-    NEUTRAL = AI()
-    AGGRO = AI(aggression = 3, tacticity = 0.5, crowd_control = 0, heal_threshold = 0.25, heal_chance = 0.25)
-    DEFENSIVE = AI(heal_threshold = 0.75, tacticity = 3, heal_chance = 0.75)
-    SMART = AI(tacticity = 2, crowd_control = 2, heal_chance = 0.66)
-    COPGUY_EX = AI(aggression = 3, tacticity = 2, preferred_targets = ["CS"], heal_chance = 0.90)
+    NEUTRAL = AI("Neutral")
+    AGGRO = AI("Aggro", aggression = 3, tacticity = 0.5, crowd_control = 0, heal_threshold = 0.25, heal_chance = 0.25)
+    DEFENSIVE = AI("Defensive", heal_threshold = 0.75, tacticity = 3, heal_chance = 0.75)
+    SMART = AI("Smart", tacticity = 2, crowd_control = 2, heal_chance = 0.66)
+    COPGUY_EX = AI("EX", aggression = 3, tacticity = 2, preferred_targets = ["CS"], heal_chance = 0.90)
 
 # Objects
 

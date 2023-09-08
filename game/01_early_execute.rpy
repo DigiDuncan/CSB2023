@@ -137,6 +137,26 @@ init python:
         zo = math.pow(2, 10 * x - 10)
         return lerp(minimum, maximum, zo)
 
+    def sentence_join(items, *, joiner=None, oxford=False) -> str:
+        """Join a list of strings like a sentence."""
+        # Do this in case we received something like a generator, that needs to be wrapped in a list
+        items = list(items)
+
+        if len(items) == 1:
+            return items[0]
+
+        if not items:
+            return ""
+
+        if joiner is None:
+            joiner = "and"
+
+        ox = ""
+        if oxford:
+            ox = ","
+
+        return f"{', '.join(items[:-1])}{ox} {joiner} {items[-1]}"
+
     # FUN VALUES
     def fun_value(rarity: int, id: str = None) -> bool:
         if not preferences.bounciness_enable:
