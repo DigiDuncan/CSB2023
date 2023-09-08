@@ -108,23 +108,28 @@ def change_stat(subject: Fighter, targets: list[Fighter], crit: bool, options: d
 
 class AI:
     def __init__(self,
-                 preservation = 0.50,
+                 heal_chance = 0.50,
                  heal_threshold = 0.50,
                  aggression = 1,
-                 empathy = 1,
+                 crowd_control = 0.5,
                  tacticity = 1,
+                 focus = 0.5,
                  preferred_targets: list = None,
                  preference_weight = 2) -> None:
-        self.preservation = preservation # Heal others or myself
+        self.heal_chance = heal_chance # If 0 Never heals, 1 Will ALWAYS attempt to heal below heal_threshold
         self.heal_threshold = heal_threshold # When should I heal
         self.aggression = aggression # Big bad hit things
-        self.empathy = empathy # How willing they are to heal others
+        self.crowd_control = crowd_control # Favors AOE over Single
         self.tacticity = tacticity # Debuffs and Buffs, aka the Pokemon strat
+        self.focus = focus # 0 Weights towards picking weak off, 1 Weights towards stronger boi
         self.preferred_targets = [] if preferred_targets is None else preferred_targets # I wanna smack this boy in particular >:C
         self.preference_weight = preference_weight # Multiplier how many more times likely to smack this boy
 
     def run(self, subject: Fighter, encounter: Encounter) -> None:
         party_status = encounter.enemies if subject.enemy else encounter.allies
+        enemy_status = encounter.allies if subject.enemy else encounter.enemies
+        # Sort enemies by strength-first
+        enemy_status.sort(key = lambda x: (x.health_points * (1 - (x.armor_points / 100))), sort = reverse
         what: Attack = None
         who: list[Fighter] = []
         # i_dont_know = "3rd Base"
@@ -145,9 +150,9 @@ class AI:
                         if (p.health_points/p.max_health) < min:
                             min = p.health_points/p.max_health
                     if not min < self.heal_threshold:
-                        score *= self.empathy
+                        score = 0
                     else:
-                        score *= self.empathy+(self.empathy*(self.heal_threshold-min))
+                        score = 1+self.heal_chance
                 elif atk.type == "damage" or atk.type == "aoe":
                     score *= self.aggression
                 elif atk.type == "buff" or atk.type == "debuff" or atk.type == "confuse":
