@@ -647,37 +647,28 @@ def parse_rpg(lexer):
 
     # block
     l = lexer.subblock_lexer()
-    l.advance()
-    l.keyword("bg")
-    bg = l.string()
-    l.advance()
-    l.keyword("music")
-    music = l.string()
-    
-    # fighters: subblock
-    l.advance()
-    l.expect_block("fighters")
+    while l.advance():
+        if l.keyword("bg"):
+            bg = l.string()
+        elif l.keyword("music"):
+            music = l.string()
 
-    fighters = []
-    ll = l.subblock_lexer()
-    while ll.advance():
-        fighters.append(ll.rest())
-        ll.expect_eol()
-
-    l.advance()
-    l.keyword("scale")
-    scale = l.float()
-
+        # fighters: subblock
+        elif l.keyword("fighters"):
+            l.expect_block("fighters")
+            fighters = []
+            ll = l.subblock_lexer()
+            while ll.advance():
+                fighters.append(ll.rest())
+                ll.expect_eol()
+            fighters = [f.upper() for f in fighters]
+        elif l.keyword("scale"):
+            scale = l.float()
     # goto
-    l.advance()
-    l.keyword("on_win")
-    label = l.string()
-    l.advance()
-    l.keyword("on_lose")
-    label2 = l.string()
-
-    fighters = [f.upper() for f in fighters]
-
+        elif l.keyword("on_win"):
+            label = l.string()
+        elif l.keyword("on_lose"):
+            label2 = l.string()
     return (bg, music, fighters, scale, label, label2)
 
 def execute_rpg(parsed_object):

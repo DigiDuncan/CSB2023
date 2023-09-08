@@ -7,7 +7,7 @@ label rpg_test:
             cop
             cop
             cop
-        scale 1
+        scale 1.0
         on_win "secret"
         on_lose "secret"
 
@@ -20,22 +20,22 @@ label rpg_fanboy_fight_amd:
             fanboyb
             fanboyb
             fanboyb
-        scale 1s
+        scale 1.0
         on_win "after_fanboy"
         on_lose "knocked_out"
 
 label rpg_fanboy_fight_nvidia:
     rpg:
         bg "images/bg/linus_office_outside.png"
-        music "audio/nordic_report_2.mp3"
         fighters:
             cs_weak
             fanboya
             fanboya
             fanboya
-        scale 1
+        scale 1.0
         on_win "after_fanboy"
         on_lose "knocked_out"
+        music "audio/nordic_report_2.mp3"
 
 label rpg_cop_fight_1:
     rpg:
@@ -48,7 +48,7 @@ label rpg_cop_fight_1:
             cop
             cop
             copguygodmode
-        scale 1
+        scale 1.0
         on_win "secret"
         on_lose "so_join"
 
@@ -61,7 +61,7 @@ label rpg_cop_fight_2:
             kitty
             tate
             copguy1
-        scale 1
+        scale 1.0
         on_win "after_cop_fight"
         on_lose "rpg_cop_fight_2"
 
@@ -73,7 +73,7 @@ label rpg_cop_fight_3:
             aria
             cop
             cop
-        scale 1
+        scale 1.0
         on_win "cs_meetup"
         on_lose "rpg_cop_fight_3"
 
@@ -86,7 +86,7 @@ label rpg_cop_fight_4:
             nova
             cop
             cop
-        scale 1
+        scale 1.0
         on_win "cs_meetup_2"
         on_lose "rpg_cop_fight_4"
 
@@ -118,7 +118,7 @@ label rpg_final_fight_1:
             marine
             marine
             marine
-        scale 2
+        scale 2.0
         on_win "rpg_final_fight_2"
         on_lose "rpg_final_fight_1"
 
@@ -133,7 +133,7 @@ label rpg_final_fight_2:
             arceus
             marine
             big_tank
-        scale 2
+        scale 2.0
         on_win "rpg_final_fight_3"
         on_lose "rpg_final_fight_1"
 
@@ -147,6 +147,6 @@ label rpg_final_fight_3:
             digi
             arceus
             copguy2
-        scale 2
+        scale 2.0
         on_win "weapon_of_choice"
         on_lose "rpg_final_fight_1"
