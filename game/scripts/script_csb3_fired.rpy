@@ -322,7 +322,7 @@ label song_2:
     arceus "What? Are you crazy? We're doing so well."
     cs "That's what I'm saying. Let's release a whole EP! That way, we get more views on the whole thing, and maybe we can even sell vinyls!"
     arceus "You and your vinyls."
-    cs "I mean, come on, right? Out first gamble paid off, and now we have an audience. What do we have to lose?"
+    cs "I mean, come on, right? Our first gamble paid off, and now we have an audience. What do we have to lose?"
     anno "Yeah, we could."
     arceus "I guess I'm cool with that."
     cs "Let's do it then! [band_name], here we go!"
@@ -597,7 +597,7 @@ label song_5:
 label fan_interaction:
     stop music
     scene black with dissolve
-    n "The next day, thye hear a knock on their hotel room door early morning."
+    n "The next day, they hear a knock on their hotel room door early morning."
     # scene hotel_door with dissolve
     cs "Huh? Who the fuck knocks on a hotel door, especially at this hour?"
     show cs angry at left with moveinleft
@@ -620,7 +620,7 @@ label fan_interaction:
     cs "Anno?"
     n "Anno wakes up, barely."
     anno "Huh?"
-    n "I need you to check the numbers, quick."
+    cs "I need you to check the numbers, quick."
     anno "The numbers? On [ep_name]? Uh..."
     n "Anno pulls out his phone."
     n "Anno drops his phone."

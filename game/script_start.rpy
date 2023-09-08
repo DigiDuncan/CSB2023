@@ -243,12 +243,13 @@ define obama = Character("Obama", callback = renpy.partial(char_callback, name =
 define blank = Character("Blank", callback = renpy.partial(char_callback, name = "blank"))
 define aria = Character("Aria", callback = renpy.partial(char_callback, name = "aria"))  # TODO: Beep
 define cop = Character("Cop", callback = renpy.partial(char_callback, name = "cop"))
-define midge = Character("Midge", callback = renpy.partial(char_callback, name = "midge"))
-define db = Character("DB05", callback = renpy.partial(char_callback, name = "db"))
+define midge = Character("Midge", callback = renpy.partial(char_callback, name = "midge"))  # TODO: Beep
+define db = Character("DB05", callback = renpy.partial(char_callback, name = "db"))  # TODO: Beep
 define customer = Character("Customer", callback = char_callback)
 define guest = Character("Guest", callback = char_callback)
 define nurse = Character("Nurse", callback = char_callback)
 define benrey = Character("Benrey", callback = renpy.partial(char_callback, name = "benrey"))
+define mean = Character("Mean", callback = char_callback)  # TODO: Beep
 
 # Character Images
 ## CS
