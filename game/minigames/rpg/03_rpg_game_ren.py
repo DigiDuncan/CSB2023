@@ -12,7 +12,7 @@ python early:
 """
 
 from copy import copy
-from typing import Callable
+from typing import Callable, Literal
 
 # Functions
 def damage_fighters(subject: Fighter, targets: list[Fighter], crit: bool, options: dict):
@@ -113,7 +113,7 @@ class AI:
                  aggression = 1,
                  crowd_control = 0.5,
                  tacticity = 1,
-                 focus = 0.5,
+                 focus: Literal['strong', 'weak'] = None,
                  preferred_targets: list = None,
                  preference_weight = 2) -> None:
         self.heal_chance = heal_chance # If 0 Never heals, 1 Will ALWAYS attempt to heal below heal_threshold
@@ -121,15 +121,15 @@ class AI:
         self.aggression = aggression # Big bad hit things
         self.crowd_control = crowd_control # Favors AOE over Single
         self.tacticity = tacticity # Debuffs and Buffs, aka the Pokemon strat
-        self.focus = focus # 0 Weights towards picking weak off, 1 Weights towards stronger boi
+        self.focus = focus # Target 'strong' or 'weak'
         self.preferred_targets = [] if preferred_targets is None else preferred_targets # I wanna smack this boy in particular >:C
         self.preference_weight = preference_weight # Multiplier how many more times likely to smack this boy
 
     def run(self, subject: Fighter, encounter: Encounter) -> None:
         party_status = encounter.enemies if subject.enemy else encounter.allies
         enemy_status = encounter.allies if subject.enemy else encounter.enemies
-        # Sort enemies by strength-first
-        enemy_status.sort(key = lambda x: (x.health_points * (1 - (x.armor_points / 100))), sort = reverse
+        # Sort enemies by weak-first
+        enemy_status.sort(key = lambda x: (x.health_points * (1 - (x.armor_points / 100))))
         what: Attack = None
         who: list[Fighter] = []
         # i_dont_know = "3rd Base"
@@ -147,8 +147,8 @@ class AI:
                 if atk.type == "heal":
                     min = subject.health_points/subject.max_health
                     for p in party_status:
-                        if (p.health_points/p.max_health) < min:
-                            min = p.health_points/p.max_health
+                        if (p.health_points / p.max_health) < min:
+                            min = p.health_points / p.max_health
                     if not min < self.heal_threshold:
                         score = 0
                     else:
@@ -187,11 +187,17 @@ class AI:
             found_count = 0
 
         # Choose fighters (weighted)
+        weights = []
+        for n, f in enumerate(who_staging):
+            score = (self.preference_weight if f.name in self.preferred_targets else 1)
+            strength = n / len(who_staging)
+            if self.focus == "strong":
+                score *= strength
+            elif self.focus == "weak":
+                score *= (1 - strength)
+            weights.append(score)
         for _ in range(what.target_count):
-            who.append(renpy.random.choices(who_staging,
-                                            # {found count} instances of the number {self.preference_weight}, then fill with 1
-                                            weights = ([self.preference_weight] * found_count) + ([1] * (len(who_staging) - found_count))
-                       )[0])
+            who.append(renpy.random.choices(who_staging, weights = weights))
         
         # Run the attack
         what.run(subject, who)
