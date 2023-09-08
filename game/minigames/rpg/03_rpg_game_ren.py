@@ -108,7 +108,7 @@ def change_stat(subject: Fighter, targets: list[Fighter], crit: bool, options: d
 
 class AI:
     def __init__(self,
-                 heal_weight = 1,
+                 heal_chance = 0.50,
                  heal_threshold = 0.50,
                  aggression = 1,
                  crowd_control = 1,
@@ -116,7 +116,7 @@ class AI:
                  focus: Literal['strong', 'weak'] = None,
                  preferred_targets: list = None,
                  preference_weight = 2) -> None:
-        self.heal_weight = heal_weight # Skew towards healing attacks
+        self.heal_chance = heal_chance # Skew towards healing attacks
         self.heal_threshold = heal_threshold # When should I heal
         self.aggression = aggression # Big bad hit things
         self.crowd_control = crowd_control # Favors AOE over Single
@@ -147,20 +147,24 @@ class AI:
                 if (p.health_points / p.max_health) < min:
                     min = p.health_points / p.max_health
             print("MIN PARTY HEALTH PERCENTAGE:", min)
+            if min > self.heal_threshold:
+                heal_time = renpy.random.random() < self.heal_chance
             scores = []
+            if heal_time:
+                _old = copy(available_attacks)
+                available_attacks = [a for a in available_attacks if a.type == "heal"]
+                if len(available_attacks) == 0:
+                    available_attacks = _old
+            else:
+                available_attacks = [a for a in available_attacks if a.type != "heal"]
             for atk in available_attacks:
                 score = 1.0
-                if atk.type == "heal":
-                    if min > self.heal_threshold:
-                        score = 0.0
-                elif atk.type == "damage" or atk.type == "aoe":
+                if atk.type == "damage" or atk.type == "aoe":
                     score *= self.aggression
                 elif atk.type == "buff" or atk.type == "debuff" or atk.type == "confuse":
                     score *= self.tacticity
                 if atk.type == "aoe":
                     score *= self.crowd_control
-                if atk.type == "heal" and min < self.heal_threshold:
-                    score *= self.heal_weight
                 scores.append(score)
             print("===SCORES===")
             for a, s in list(zip(available_attacks, scores)):
@@ -207,10 +211,10 @@ class AI:
 
 class AIType:
     NEUTRAL = AI()
-    AGGRO = AI(aggression = 3, tacticity = 0.5, crowd_control = 0, heal_threshold = 0.25, heal_weight = 0.5)
-    DEFENSIVE = AI(heal_threshold = 0.75, tacticity = 3, heal_weight = 3)
-    SMART = AI(tacticity = 2, crowd_control = 2, heal_weight = 2)
-    COPGUY_EX = AI(aggression = 3, tacticity = 2, preferred_targets = ["CS"], heal_weight = 20)
+    AGGRO = AI(aggression = 3, tacticity = 0.5, crowd_control = 0, heal_threshold = 0.25, heal_chance = 0.25)
+    DEFENSIVE = AI(heal_threshold = 0.75, tacticity = 3, heal_chance = 0.75)
+    SMART = AI(tacticity = 2, crowd_control = 2, heal_chance = 0.66)
+    COPGUY_EX = AI(aggression = 3, tacticity = 2, preferred_targets = ["CS"], heal_chance = 0.90)
 
 # Objects
 
