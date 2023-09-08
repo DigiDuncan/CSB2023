@@ -695,12 +695,17 @@ default song_name_1 = "Prison Break"
 default song_name_2 = "Down to Vegas"
 default song_name_3 = "Globetrottin'"
 default song_name_4 = "Through The Battles and the Fights"
+default song_name_5 = "We Are The Winners"
 default line_1 = ""
 default line_2 = ""
 default line_3 = ""
 default line_4 = ""
 default line_5 = ""
 default line_6 = ""
+default line_7 = ""
+default line_8 = ""
+default line_9 = ""
+default line_10 = ""
 
 # Jump Menu
 screen start_menu():

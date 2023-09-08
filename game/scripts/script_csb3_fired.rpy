@@ -3,6 +3,7 @@
 # cs surprised
 # customer
 # guest
+# mean
 
 # Needed backgrounds:
 # hotel_lobby
@@ -11,6 +12,7 @@
 # hotel_elevator
 # hotel_breakfast
 # mcdonalds
+# hotel_door
 
 # Needed sounds:
 # elevator music
@@ -554,3 +556,72 @@ label hotel_lobby_2:
 
 label song_5:
     stop music
+    # scene hotel_room
+    show anno at left
+    show arceus at right
+    show cs
+    with dissolve
+
+    anno "This is the last song on the EP. We need to go big with this one."
+    arceus "I'm nervous to write this one, we really need to end on a banger."
+    anno "Something victorious, something inspiring."
+    arceus "Hmmm..."
+    anno "CS, why don't you write this one?"
+    cs "Me?"
+    anno "Yeah!"
+    cs "But I wrote all the other songs!"
+    anno "Nah, you filled in our blanks."
+    arceus "Yeah, why don't you write the whole thing this time!"
+    cs "Oh gosh, you guys sure?"
+    anno "Yeah, go ahead! Here, I'll give you a beat..."
+    n "Anno plays an upbeat song on his laptop."
+    $ line_7 = renpy.input("Write a line! (1/4)", "")
+    $ line_8 = renpy.input("Write a line! (2/4)", "")
+    $ line_9 = renpy.input("Write a line! (3/4)", "")
+    $ line_10 = renpy.input("Write a line! (4/4)", "")
+    cs "I think I have something, here it is!"
+    cs "{cps=15}{image=note_small1.png}[line_7]{w=1.5}\n[line_8]{w=1.5}\n[line_9]{w=1.5}\n[line_10]{image=note_small2.png}"
+    arceus "Yo?!"
+    anno "That's perfect! Give it name!"
+    $ song_name_4 = renpy.input("What should the song be called?", "We Are The Winners")
+    cs "It's called {i}[song_name_5]!{/i}"
+    arceus "That's going to be a huge hit."
+    anno "So wait, that's [ep_name] done, then!"
+    cs "Woohoo!"
+    n "They all high five."
+    anno "I guess I'll get this mastered and release it tonight!"
+    cs "[band_name] forever!"
+    arceus "You know, I'm starting to really believe in this whole thing."
+    jump fan_interaction
+
+label fan_interaction:
+    stop music
+    scene black with dissolve
+    n "The next day, thye hear a knock on their hotel room door early morning."
+    # scene hotel_door with dissolve
+    cs "Huh? Who the fuck knocks on a hotel door, especially at this hour?"
+    show cs angry at left with moveinleft
+    cs "Hello?"
+    # show mean at right with moveinright
+    mean "OMG, it's CS!"
+    cs "Huh? Are you like, a fan?"
+    mean "Yes! Of your music!"
+    n "CS for a moment forgets he just spent a week making an EP."
+    cs "My... music? Oh, yeah, right, [band_name]!"
+    cs "Wait, how did you find my hotel room?"
+    mean "You should go on tour!"
+    cs "What?"
+    n "CS is still half asleep."
+    mean "Go on tour! I'm from Ontario."
+    cs "Oh... kay?"
+    mean "Bye!"
+    hide mean with moveoutright
+    n "CS closes the door."
+    cs "Anno?"
+    n "Anno wakes up, barely."
+    anno "Huh?"
+    n "I need you to check the numbers, quick."
+    anno "The numbers? On [ep_name]? Uh..."
+    n "Anno pulls out his phone."
+    n "Anno drops his phone."
+    anno "Guys... we might have more money than we thought."
