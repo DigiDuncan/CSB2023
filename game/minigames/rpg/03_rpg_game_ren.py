@@ -146,8 +146,9 @@ class AI:
             for p in party_status:
                 if (p.health_points / p.max_health) < min:
                     min = p.health_points / p.max_health
-            scores = [[atk, 1] for atk in available_attacks]
-            for atk, score in scores:
+            scores = []
+            for atk in available_attacks:
+                score = 1
                 if atk.type == "heal":
                     if not min < self.heal_threshold:
                         score = 0
@@ -163,8 +164,11 @@ class AI:
                     score *= self.heal_chance
                 elif min > self.heal_threshold:
                     score *= 1 - self.heal_chance
-            print("SCORES:", scores)
-            what = renpy.random.choices([s[0] for s in scores], weights = [s[1] for s in scores])[0]
+                scores.append(score)
+            print("===SCORES===")
+            for a, s in list(zip(available_attacks, scores)):
+                print(f"{a.name}:", s)
+            what = renpy.random.choices(available_attacks, weights = scores)[0]
 
         # What should be determined before this
 
