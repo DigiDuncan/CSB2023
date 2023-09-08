@@ -142,14 +142,21 @@ class AI:
             what = available_attacks[0]
         # Choose an attack.
         else:
+            # Find minimum party health percentage
             min = subject.health_points/subject.max_health
             for p in party_status:
                 if (p.health_points / p.max_health) < min:
                     min = p.health_points / p.max_health
             print("MIN PARTY HEALTH PERCENTAGE:", min)
+
+            # Roll a die if we should heal or not.
             if min > self.heal_threshold:
                 heal_time = renpy.random.random() < self.heal_chance
+            else:
+                heal_time = False
             scores = []
+
+            # If we should heal, make sure we only have healing attacks available.
             if heal_time:
                 _old = copy(available_attacks)
                 available_attacks = [a for a in available_attacks if a.type == "heal"]
@@ -157,6 +164,8 @@ class AI:
                     available_attacks = _old
             else:
                 available_attacks = [a for a in available_attacks if a.type != "heal"]
+
+            # Weight attack likelyhood.
             for atk in available_attacks:
                 score = 1.0
                 if atk.type == "damage" or atk.type == "aoe":
@@ -169,6 +178,8 @@ class AI:
             print("===SCORES===")
             for a, s in list(zip(available_attacks, scores)):
                 print(f"{a.name}:", s)
+
+            # Choose an attack.
             what = renpy.random.choices(available_attacks, weights = scores)[0]
 
         # What should be determined before this
