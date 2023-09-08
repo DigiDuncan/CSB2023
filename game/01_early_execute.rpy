@@ -7,6 +7,11 @@ default persistent.seen = set()
 default persistent.heard = set()
 default persistent.true_ending = False
 
+# Chapter unlocks
+default persistent.csb2_unlocked = False
+default persistent.csb3a_unlocked = False
+default persistent.csb3b_unlocked = False
+
 screen music():
     zorder 100
     layer "music"

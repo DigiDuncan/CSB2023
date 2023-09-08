@@ -1,5 +1,5 @@
 label csbii_start:
-    $ csb2_unlocked = True
+    $ persistent.csb2_unlocked = True
     scene helipad
     show wesley at right
     with fade
