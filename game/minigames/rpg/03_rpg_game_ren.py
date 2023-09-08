@@ -184,18 +184,18 @@ class AI:
                 print("???")
                 who_staging = encounter.allies if subject.enemy else encounter.enemies
 
-        # Choose fighters (weighted)
-        weights = []
-        for n, f in enumerate(who_staging):
-            score = (self.preference_weight if f.name in self.preferred_targets else 1)
-            strength = n / len(who_staging)
-            if self.focus == "strong":
-                score *= strength
-            elif self.focus == "weak":
-                score *= (1 - strength)
-            weights.append(score)
-        for _ in range(what.target_count):
-            who.append(renpy.random.choices(who_staging, weights = weights))
+            # Choose fighters (weighted)
+            weights = []
+            for n, f in enumerate(who_staging):
+                score = (self.preference_weight if f.name in self.preferred_targets else 1)
+                strength = n / len(who_staging)
+                if self.focus == "strong":
+                    score *= strength
+                elif self.focus == "weak":
+                    score *= (1 - strength)
+                weights.append(score)
+            for _ in range(what.target_count):
+                who.append(renpy.random.choices(who_staging, weights = weights)[0])
         
         # Run the attack
         what.run(subject, who)
