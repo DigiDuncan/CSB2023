@@ -142,13 +142,13 @@ class AI:
             what = available_attacks[0]
         # Choose an attack.
         else:
+            min = subject.health_points/subject.max_health
+            for p in party_status:
+                if (p.health_points / p.max_health) < min:
+                    min = p.health_points / p.max_health
             scores = [[atk, 1] for atk in available_attacks]
             for atk, score in scores:
                 if atk.type == "heal":
-                    min = subject.health_points/subject.max_health
-                    for p in party_status:
-                        if (p.health_points / p.max_health) < min:
-                            min = p.health_points / p.max_health
                     if not min < self.heal_threshold:
                         score = 0
                     else:
