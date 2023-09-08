@@ -163,6 +163,7 @@ class AI:
                     score *= self.heal_chance
                 elif min > self.heal_threshold:
                     score *= 1 - self.heal_chance
+            print("SCORES:", scores)
             what = renpy.random.choices([s[0] for s in scores], weights = [s[1] for s in scores])[0]
 
         # What should be determined before this
