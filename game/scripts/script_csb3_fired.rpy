@@ -583,7 +583,7 @@ label song_5:
     cs "{cps=15}{image=note_small1.png}[line_7]{w=1.5}\n[line_8]{w=1.5}\n[line_9]{w=1.5}\n[line_10]{image=note_small2.png}"
     arceus "Yo?!"
     anno "That's perfect! Give it name!"
-    $ song_name_4 = renpy.input("What should the song be called?", "We Are The Winners")
+    $ song_name_5 = renpy.input("What should the song be called?", "We Are The Winners")
     cs "It's called {i}[song_name_5]!{/i}"
     arceus "That's going to be a huge hit."
     anno "So wait, that's [ep_name] done, then!"
