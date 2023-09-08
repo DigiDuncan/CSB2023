@@ -54,6 +54,7 @@ init python:
         "cop": "Copdude",
         "midge": "Midgalicis",
         "db": "DB05",
+        "benrey": "Benrey",
         "iris": "???"
 
     }

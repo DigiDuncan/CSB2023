@@ -248,7 +248,7 @@ define db = Character("DB05", callback = renpy.partial(char_callback, name = "db
 define customer = Character("Customer", callback = char_callback)
 define guest = Character("Guest", callback = char_callback)
 define nurse = Character("Nurse", callback = char_callback)
-define benrey = Character("Benrey", callback = char_callback)
+define benrey = Character("Benrey", callback = renpy.partial(char_callback, name = "benrey"))
 
 # Character Images
 ## CS
