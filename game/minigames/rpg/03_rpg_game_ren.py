@@ -152,11 +152,15 @@ class AI:
                     if not min < self.heal_threshold:
                         score = 0
                     else:
-                        score = 1+self.heal_chance
+                        score = 1
                 elif atk.type == "damage" or atk.type == "aoe":
                     score *= self.aggression
                 elif atk.type == "buff" or atk.type == "debuff" or atk.type == "confuse":
                     score *= self.tacticity
+                if atk.type == "heal" and min > self.heal_threshold:
+                    score *= self.heal_chance
+                elif min > self.heal_threshold:
+                    score *= 1 - self.heal_chance
             what = renpy.random.choices([s[0] for s in scores], weights = [s[1] for s in scores])[0]
 
         # What should be determined before this
