@@ -24,6 +24,7 @@ define achievements = [
     Achievement("Guitar Hero", "???", "Unlock a new career by playing Guitar Hero?", "gh"),
     Achievement("Hi, My Name Is...", "???", "Name your first song.", "hi"),
     Achievement("Singer-Songwriter", "???", "Write your first song.", "songwriter"),
+    Achievement("Independent Artist", "???", "Release an EP.", "missing"),
     Achievement("A Little Help From My Friends", "???", "Gather a full party.", "friends"),
     Achievement("HoH SiS's Most Wanted", "???", "Complete CSBI.", "csbi"),
     Achievement("Welcome to CSBIII, Mother Fucker", "???", "Complete CSBII.", "csbii"),

@@ -592,6 +592,7 @@ label song_5:
     anno "I guess I'll get this mastered and release it tonight!"
     cs "[band_name] forever!"
     arceus "You know, I'm starting to really believe in this whole thing."
+    $ achievement_manager.unlock("Independent Artist")
     jump fan_interaction
 
 label fan_interaction:
