@@ -111,7 +111,7 @@ class AI:
                  heal_chance = 0.50,
                  heal_threshold = 0.50,
                  aggression = 1,
-                 crowd_control = 0.5,
+                 crowd_control = 1,
                  tacticity = 1,
                  focus: Literal['strong', 'weak'] = None,
                  preferred_targets: list = None,
@@ -157,6 +157,8 @@ class AI:
                     score *= self.aggression
                 elif atk.type == "buff" or atk.type == "debuff" or atk.type == "confuse":
                     score *= self.tacticity
+                if atk.type == "aoe":
+                    score *= self.crowd_control
                 if atk.type == "heal" and min > self.heal_threshold:
                     score *= self.heal_chance
                 elif min > self.heal_threshold:
@@ -182,14 +184,6 @@ class AI:
                 print("???")
                 who_staging = encounter.allies if subject.enemy else encounter.enemies
 
-        # If we prefer certain targets
-        if self.preferred_targets:
-            # Sort the preferred to the top of the list
-            who_staging.sort(key = (lambda x: x.name in self.preferred_targets), reverse = True)
-            found_count = len([f for f in who_staging if f.name in self.preferred_targets])
-        else:
-            found_count = 0
-
         # Choose fighters (weighted)
         weights = []
         for n, f in enumerate(who_staging):
@@ -211,11 +205,10 @@ class AI:
 
 class AIType:
     NEUTRAL = AI()
-    FUCK_CS = AI(aggression = 2, preferred_targets = ["CS"])
-    AGGRO = AI(preservation = 0.75, aggression = 3, tacticity = 0.5)
-    DEFENSIVE = AI(heal_threshold = 0.75, empathy = 3)
-    SMART = AI(tacticity = 2)
-    COPGUY_EX = AI(preservation = 1, aggression = 3, empathy = 3, tacticity = 2, preferred_targets = ["CS"])
+    AGGRO = AI(aggression = 3, tacticity = 0.5, crowd_control = 0, heal_threshold = 0.25)
+    DEFENSIVE = AI(heal_threshold = 0.75, tacticity = 3)
+    SMART = AI(tacticity = 2, crowd_control = 2)
+    COPGUY_EX = AI(aggression = 3, tacticity = 2, preferred_targets = ["CS"])
 
 # Objects
 
