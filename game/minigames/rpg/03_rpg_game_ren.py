@@ -462,7 +462,7 @@ class Attacks:
     INSIGHT = Attack("Insight", change_stat, stat = "atk", mult = 0.75)
     SHOTGUN = Attack("Shotgun", damage_fighters, target_count = 2, cooldown = 3, mult = 2)
     ENCOURAGE = Attack("Encourage", heal_fighters, target_count = 0, target_type = "allies", mult = 3)
-    HIGH_NOON = Attack("High Noon", damage_fighters, target_count = 3, cooldown = 3, mult = 1)
+    HIGH_NOON = Attack("High Noon", damage_fighters, target_count = 3, cooldown = 3, mult = 0.75)
     SCRATCH = Attack("Scratch", damage_fighters)
     ARMOUR = Attack("Armour", change_stat, stat = "ap", target_count = 0, target_type = "allies", cooldown = 3, mult = 2.5)
     DAMAGE_SCREM = Attack("Damage Screm", damage_fighters, target_count = 0, target_type = "enemies", mult = 0.5)
@@ -515,7 +515,7 @@ class Fighters:
     SML_TANK = Fighter("Sherman", True, 500, 60, 120, [Attacks.SHELL], Image("images/characters/sherman.png"), ai = AIType.AGGRO)
     MARINE = Fighter("Marine", True, 300, 30, 45, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/marine.png"), ai = AIType.SMART)
     BIG_TANK = Fighter("Abrams", True, 700, 70, 150, [Attacks.SHELL], Image("images/characters/abrams.png"), ai = AIType.AGGRO)
-    COPGUY2 = Fighter("Copguy", True, 1000, 30, 50, [Attacks.PUNCH, Attacks.BULLET_SPRAY, Attacks.SLASH, Attacks.LIGHT_CAST, Attacks.INSIGHT,
+    COPGUY2 = Fighter("Copguy EX", True, 2000, 30, 50, [Attacks.PUNCH, Attacks.BULLET_SPRAY, Attacks.SLASH, Attacks.LIGHT_CAST, Attacks.INSIGHT,
                                                      Attacks.SHOTGUN, Attacks.ENCOURAGE, Attacks.HIGH_NOON, Attacks.SCRATCH, Attacks.ARMOUR,
                                                      Attacks.DAMAGE_SCREM, Attacks.SCREM, Attacks.ELDRITCH_BLAST, Attacks.RAINBOW_VOMIT,
                                                      Attacks.ROBOPUNCH, Attacks.HOLOSHIELD, Attacks.MUSIC_BOOST, Attacks.RAVE, Attacks.SAMPLE_BLAST,
