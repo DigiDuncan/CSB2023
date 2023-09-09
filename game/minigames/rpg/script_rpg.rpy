@@ -1,14 +1,12 @@
-$ enemy_cunt = "cop"
-
 label rpg_test:
     rpg:
         bg "images/bg/casino1.png"
         music "audio/card_castle.mp3"
         fighters:
             cs
-            $enemy_cunt
-            $enemy_cunt
-            $enemy_cunt
+            $enemy_1
+            $enemy_2
+            $enemy_3
         scale 1.0
         on_win "secret"
         on_lose "secret"

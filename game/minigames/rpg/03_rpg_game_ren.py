@@ -675,7 +675,9 @@ def execute_rpg(parsed_object):
     print(parsed_object)
     global rpggame
     rpggame.encounter = Encounter(
-        [getattr(Fighters, getattr(renpy, [fighter.replace("$", "")])) if fighter.startswith("$") else getattr(Fighters, fighter.upper()) for fighter in f],
+        [getattr(Fighters, globals().get(fighter.replace("$", "")).upper())
+         if fighter.startswith("$")
+         else getattr(Fighters, fighter.upper()) for fighter in f],
         Image(b),
         m,
         float(s),

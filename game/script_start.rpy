@@ -703,6 +703,16 @@ default line_8 = ""
 default line_9 = ""
 default line_10 = ""
 
+# RPG
+default enemy_1 = "cop"
+default enemy_2 = "cop"
+default enemy_3 = "cop"
+default enemy_4 = "cop"
+default party_1 = "cs"
+default party_2 = "tate"
+default party_3 = "digi"
+default party_4 = "arceus"
+
 # Jump Menu
 screen start_menu():
     zorder 100
