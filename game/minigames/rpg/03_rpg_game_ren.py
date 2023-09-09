@@ -661,7 +661,6 @@ def parse_rpg(lexer):
             while ll.advance():
                 fighters.append(ll.rest())
                 ll.expect_eol()
-            fighters = [f.upper() for f in fighters]
         elif l.keyword("scale"):
             scale = l.float()
     # goto
@@ -676,7 +675,7 @@ def execute_rpg(parsed_object):
     print(parsed_object)
     global rpggame
     rpggame.encounter = Encounter(
-        [getattr(Fighters, fighter) for fighter in f],
+        [getattr(Fighters, getattr(renpy, [fighter.replace("$", "")])) if fighter.startswith("$") else getattr(Fighters, fighter.upper()) for fighter in f],
         Image(b),
         m,
         float(s),
