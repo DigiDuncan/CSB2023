@@ -101,7 +101,22 @@ label special:
     play sound "audio/punch.ogg"
     rich "Ed! Do something!"
     play sound "audio/punch.ogg"
-    show ed at right with moveinright
+    if e1:
+        n "Wesley shoots Richard in the head with his gun."
+        pause 3.0
+        n "Welsey, then takes the gun, and--{w=0.5}{nw}"
+        stop music
+        music end
+        scene black with dissolve
+        pause 1.0
+        n "Deleting Persistent{w=0.5}.{w=0.5}.{w=0.5}.{nw=0.5}"
+        $ e2 = True
+        n "Resetting Script{w=0.5}.{w=0.5}.{w=0.5}.{nw=0.5}"
+        show script
+        pause 1.5
+        jump csbi_start
+    else:    
+        show ed at right with moveinright
     ed "Hello, 911? My coworkers are-"
     n "CS sentence-mixes Ed's words to his own will."
     ed "Everything is fine here officer. No need to come here."

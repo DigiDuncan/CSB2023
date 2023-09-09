@@ -150,3 +150,14 @@ label rpg_final_fight_3:
         scale 2.0
         on_win "weapon_of_choice"
         on_lose "rpg_final_fight_1"
+
+label rpg_error:
+    rpg:
+        bg "images/bg/rosenabode.png"
+        music "audio/prophet_2001.mp3"
+        fighters:
+            cs_final2
+            pakooe
+        scale 2.0
+        on_win "secret2"
+        on_lose "after_error_fight"

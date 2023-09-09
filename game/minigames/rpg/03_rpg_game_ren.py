@@ -455,6 +455,9 @@ class Attacks:
     CHOP = ComboAttack("Chop", [RAW_CHOP, CS_AP_DOWN])
     RAW_KICK = Attack("Raw Kick", damage_fighters, mult = 2)
     YTP_MAGIC = Attack("YTP Magic", damage_fighters, cooldown = 10, mult = 20, used = True)
+    YTP_MAGIC_NOCOOL = Attack("YTP Magic", damage_fighters, mult = 20)
+    YTP_HEAL = Attack("Attack.HEAL", heal_fighters, target_count = 0, target_type = "allies", cooldown = 1, mult = 10)
+    FUN_VALUE = Attack("Fun Value", damage_fighters, mult = 10)
     KICK = ComboAttack("Kick", [RAW_KICK, CS_AP_DOWN])
     BULLET_SPRAY = Attack("Bullet Spray", damage_fighters, target_count = 0, target_type = "enemies", cooldown = 3, mult = 1.5)
     RAW_SLASH = Attack("Raw Slash", damage_fighters)
@@ -495,6 +498,7 @@ class Fighters:
     CS_NG = Fighter("CS", False, 188, 10, 25, [Attacks.CHOP, Attacks.BULLET_SPRAY], Image("images/characters/cs/neutral.png"))
     CS_STRONG = Fighter("CS", False, 188, 10, 25, [Attacks.KICK, Attacks.BULLET_SPRAY], Image("images/characters/cs/neutral.png"))
     CS_FINAL = Fighter("CS", False, 188, 10, 25, [Attacks.KICK, Attacks.BULLET_SPRAY, Attacks.YTP_MAGIC], Image("images/characters/cs/neutral.png"))
+    CS_FINAL2 = Fighter("CS", False, 1880, 10, 250, [Attacks.KICK, Attacks.YTP_HEAL, Attacks.YTP_MAGIC_NOCOOL], Image("images/characters/cs/neutral.png"))
     CS_WEAK = Fighter("CS", False, 188, 5, 25, [Attacks.PUNCH], Image("images/characters/cs/neutral.png"))
     ARCEUS = Fighter("Arceus", False, 160, 15, 35, [Attacks.SLASH, Attacks.LIGHT_CAST], Image("images/characters/arc/arceus.png"))
     PAKOO = Fighter("Pakoo", False, 145, 20, 30, [Attacks.INSIGHT, Attacks.SHOTGUN], Image("images/characters/pakoo.png"))
@@ -524,6 +528,7 @@ class Fighters:
                                                      Attacks.ROBOPUNCH, Attacks.HOLOSHIELD, Attacks.MUSIC_BOOST, Attacks.RAVE, Attacks.SAMPLE_BLAST,
                                                      Attacks.GNOMED, Attacks.NUDGE, Attacks.DRAW_IN, Attacks.CONFIDENCE, Attacks.PEP_TALK, Attacks.RADS_ATTACK,
                                                      Attacks.AI_MIMIC, Attacks.SHELL], Image("images/characters/copguy.png"), ai = AIType.COPGUY_EX)
+    PAKOOE = Fighter("Pakoo", True, 9999, 70, 150, [Attacks.FUN_VALUE], Image("images/characters/pakoo_disappointed.png"), ai = AIType.AGGRO)
 encounter = Encounter([], Image("images/bg/black.png"), "audio/legosfx.mp3", 1, "start", "secret")
 
 # This is the displayable that controls what's happening in the boxes at the bottom of the screen

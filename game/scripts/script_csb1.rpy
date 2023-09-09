@@ -11,7 +11,18 @@ label csbi_start:
     scene cs_room
     show cs at center
     show oldgame with fade
-    pause 7.0
+    if e3:
+        pause 3.0
+        play sound "page.wav" volume 5
+        hide oldgame with moveoutright
+        pause 1.0
+        show cs angry
+        cs "I know what's going on now."
+        cs "Fuck this."
+        n "Jumping to rosen_house...{w=1.25}{nw}"
+        jump rosen_house
+    else:
+        pause 7.0
     show pakoo at right with moveinright
     $ quick_menu = True
     window show
@@ -19,7 +30,11 @@ label csbi_start:
     pakoo "The old game is still here..."
     pakoo "Lemme fix that real quick for you."
     play sound "page.wav" volume 5
-    hide pakoo
+    if e1:
+        show pakoo disappointed with determination
+        hide pakoo
+    else:
+        hide pakoo
     hide oldgame
     with moveoutright
     play music "<loop 0>lets_hear_my_baby.mp3" volume 0.15
@@ -28,12 +43,26 @@ label csbi_start:
     hide cs
     scene craptop_bg
     show craptop desktop
-    show post_it at t_post_it
+    if e2:
+        show post_it2 at t_post_it
+    else:
+        show post_it at t_post_it
 
     $ achievement_manager.unlock("ZUP!")
 
     craptop "Your PC sux. lol."
-    sticky "Delete the CSCord."
+    if e2:
+        sticky "Go to Rosen's."
+        cs "Eh, maybe tomorrow."
+        pause 1.0
+        cs "Actually, maybe I should."
+        scene black with fade
+        stop music fadeout 3.0
+        music end
+        n "Cs takes off and heads to Rosen's house."
+        jump rosen_house
+    else:
+        sticky "Delete the CSCord."
     cs "Eh, maybe tomorrow."
     hide post_it
     play sound "page.wav" volume 5
@@ -340,8 +369,41 @@ label michael_house:
     pause 2.0
     show black with dissolve
     stop sound fadeout 2.0
+    jump rosen_house
 
-    scene rosen_abode with fade
+label rosen_house:
+    if e3:
+        scene rosen_abode
+        show csgod at offscreenright
+        show michael at left
+        with fade
+        show cs flipped angry at right with moveinright
+        cs "Tell me the rest of the story!"
+        michael "What?"
+        cs "Damnit, don't fuck around with me!"
+        cs "It's not true!"
+        hide michael with moveoutleft
+        show pakoo disappointed flipped at left with moveinleft
+        pakoo "I'm sorry, CS."
+        pakoo "It's time to delete you."
+        cs "NO!{w=1.0}{nw}"
+        show csgod at left with move
+        show csgod with hpunch
+        play sound "audio/punch.ogg"
+        show csgod at offscreenright
+        show csgod at left with move
+        show csgod with hpunch
+        play sound "audio/punch.ogg"
+        show csgod at offscreenright
+        show csgod at left with move
+        show csgod with hpunch
+        play sound "audio/punch.ogg"
+        hide csgod with dissolve
+        n "Pakoo sighs."
+        pakoo "Let's finish this."
+        jump rpg_error
+    else:
+        scene rosen_abode with fade
     play music "<loop 0>super_friendly.mp3" volume 0.4
     music Super Friendly - Kevin Macleod
     show michael at right with moveinright
@@ -358,7 +420,32 @@ label michael_house:
     michael "He would meet all sorts of friends, and flee from his enemies."
     michael "After his long adventure, he took a long nap."
     michael "When he woke up, he was in a huge library."
-    show black with dissolve
+    if e2:
+        michael "He started to get up, and walk around."
+        michael "While he was walking, he found another version of himself."
+        stop music fadeout 3.0
+        music end
+        michael "This version of himself was real."
+        michael "This man, the adventurer, was not."
+        michael "He never was."
+        michael "He needed to be removed he found out he was fake."
+        michael "So that's when--{nw}"
+        show pakoo disappointed at center with moveinright
+        pakoo "STOP{nw}"
+        scene black
+        pause 1.0
+        n "Deleting Persistent{w=0.5}.{w=0.5}.{w=0.5}.{nw=0.5}"
+        $ e3 = True
+        n "Resetting Script{w=0.5}.{w=0.5}.{w=0.5}.{nw=0.5}"
+        show script
+        pause 1.5
+        jump csbi_start
+    if e1:
+        michael "He started to get up, and walk around."
+        michael "While he was walking, he found a--{nw}"
+        show black
+    else:
+        show black with dissolve
     play sound "csnore.ogg"
     michael "CS? Did you fall asleep?"
     michael "CS!"
@@ -561,3 +648,23 @@ label right:
     play sound "audio/elevator_ding.ogg"
     scene black with fade
     jump csbii_start
+
+label error:
+    if fun_value(1):
+        show black
+        play sound "secret/gul.ogg"
+        pause 1.0
+        return
+    $ e1 = True
+    jump csbi_start
+
+label after_error_fight:
+    scene rosen_abode
+    show pakoo disappointed flipped at left
+    show cs angry flipped at right
+    with fade
+    pakoo "Goodbye."
+    hide cs with dissolve
+    pause 5.0
+    pakoo "Alright, let's restart the script."
+    return
