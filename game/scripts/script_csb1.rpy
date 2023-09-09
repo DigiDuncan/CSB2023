@@ -497,7 +497,7 @@ label rosen_house:
     show cs at left
     with fade
 
-    $ achievement_manager.unlock("Overcaffinated")
+    $ achievement_manager.unlock("Overcaffeinated")
 
     play music "<loop 0>canyon_but_in_the_car.mp3" volume 0.2
     play sound "driving.wav" volume 0.5
