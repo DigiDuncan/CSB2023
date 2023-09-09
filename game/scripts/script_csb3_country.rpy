@@ -334,3 +334,6 @@ label arceus_place:
 
 label hell_zone:
     cs "I wanna go on Hell's Kitchen!"
+    arceus "Wat."
+    cs "Yeah! I can go on the show and cook up some crazy meal and win!"
+    
