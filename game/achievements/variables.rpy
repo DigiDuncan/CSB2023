@@ -3,7 +3,7 @@ default persistent.unlocked_achievements = set()
 define achievements = [
     Achievement("ZUP!", "???", "Start the game.", "zup"),
     Achievement("A Great British Pound", "???", "Enjoy :)", "pound"),
-    Achievement("Overcaffinated", "???", "Give an old man {i}way{/i} too much energy.", "genergy"),
+    Achievement("Overcaffeinated", "???", "Give an old man {i}way{/i} too much energy.", "genergy"),
     Achievement("Ohai, Mark", "???", "Did-- did that reference land?", "mark"),
     Achievement("I Don't Like People!", "Avoid responsibility.", "Tell CS not to go to Wal-Mart.", "no_person"),
     Achievement("Dead Meme", "???", "Sparta kick Wesley.", "sparta"),
