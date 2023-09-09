@@ -597,6 +597,14 @@ image war_torn_5 = "bg/war_torn_5.png"
 image car_insidearc_fg = "bg/car_insidearc_fg.png"
 image joj_chargerarc_fg = "bg/joj_chargerarc_fg.png"
 
+## Country Route
+image britport = "bg/britport.png"
+image embassy = "bg/outside_embassy.png"
+image uk_street = "bg/uk_street.png"
+image kitty_house = "bg/kitty_house.png"
+image kitty_room = "bg/kitty_room.png"
+image dining_room = "bg/diningroom.png"
+
 ## AI Ending
 image park1 = "bg/ai/amusementpark1.png"
 image park2 = "bg/ai/amusementpark2.png"

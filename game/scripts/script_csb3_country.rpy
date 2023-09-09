@@ -88,7 +88,8 @@ label england_travel:
     with fade
     n "CS rushes up to the TSA to get checked through."
     show cs at mid_left with moveinleft
-    cs "*Huff huff* I'm almost there!"
+    n "CS takes a minute to catch his breath."
+    cs "I'm almost there!"
     tsa "Alright, drop your bags off in the conveyor."
     cs "I don't have any bags."
     tsa "What? Go through the metal detector!"
@@ -134,7 +135,8 @@ label sweden_travel:
     with fade
     n "CS rushes up to the TSA to get checked through."
     show cs at mid_left with moveinleft
-    cs "*Pant pant* I'm almost there!"
+    n "CS almost loses his breath sprinting."
+    cs "I'm almost there!"
     tsa "Alright, drop your bags off here."
     cs "I don't, have any bags?"
     tsa "Alright then, just go through the metal detector!"
@@ -204,3 +206,131 @@ label japan_travel:
     cs "I guess I should get some rest."
     scene black with dissolve
     jump japan
+
+
+label england:
+    scene black
+    pause 1.0
+    scene airplane_seats
+    show cs at left
+    with fade
+    n "As CS slowly wakes up, he sees the plane landing on the tarmac."
+    cs "Oh huh, we are already here."
+    cs "Either that was a fast trip, or I slept WAYYYYY too long."
+    cs "Welp, I guess this is where I get off."
+    hide cs with moveoutright
+    scene black with dissolve
+    n "CS gets out of the plane, and makes his way into the airport."
+    scene britport with fade
+    show cs at mid_left with moveinleft
+    cs "Well, at least I picked an English-speaking country."
+    cs "Could you imagine if I picked something like, Sweden? Or Japan?"
+    cs "Either way, this is quite the breath of fresh air."
+    cs "Don't have to run from the law anymore, so that's a plus."
+    hide cs with moveoutright
+    scene black with dissolve
+    n "CS walks out of the airport."
+    scene embassy with fade
+    show cs at center with moveinleft
+    show cs disappointed
+    cs "Bad thing this, I don't have any money!"
+    cs "So I don't really know what to do now."
+    cs "I guess I'll have to start asking random people for a job..."
+    hide cs with moveoutright
+    jump england_first
+
+label england_first:
+    scene uk_street with fade
+    show cs disappointed at mid_left with moveinleft
+    n "CS walks up to a shop owner on the side of the street."
+    cs "Hello? Are you guys hiring?"
+    "Shopkeep" "Get lost, you bloody wanker!"
+    cs "Damn, sorry."
+    cs "Man, this kinda sucks!"
+    show arceus at mid_right with moveinright
+    arceus "Hey CS? Is that you?"
+    show cs
+    cs "Oh my goodness! Why-- How are you here?"
+    arceus "I live here with my girlfriend now! What are you doing here?"
+    cs "I, used the last of my money to buy a plane ticket."
+    arceus "Ah."
+    arceus "Assuming you did that to get away from the cops?"
+    cs "Yeah..."
+    arceus "I heard about your fight, but I couldn't engage too much, since the ambulance took you away shortly after I showed up."
+    arceus "So I decided to finally move up here, since I got out of prison and all."
+    cs "That makes sense."
+    arceus "So uhm..."
+    arceus "Do you need a place to stay? You said you were out of money."
+    arceus "You can come and live with me and Kitty for a while! I'm sure she wouldn't mind."
+    cs "I would really appreciate it! Thank you!"
+    cs "I'll do whatever I can to pay you back in advance."
+    arceus "Nah, don't worry about it. You helped break me out of prison!"
+    n "the shopkeeper looks at them weirdly."
+    arceus "In GTA V."
+    cs "Yeah yeah, that heist was really fun."
+    arceus "Anyways, let's get you to our place."
+    show arceus flipped with determination
+    hide cs
+    hide arceus
+    with moveoutright
+    show black with dissolve
+    n "Arceus and CS jump on a double decker and heads down to their house."
+    jump arceus_place
+
+label arceus_place:
+    pause 1.0
+    scene kitty_house with fade
+    show arceus flipped at center with moveinleft
+    show cs at left with moveinleft
+    arceus "Here we are. Home sweet home."
+    cs "This is a house? It looks like the size of an apartment."
+    arceus "CS, remember we're in the UK?"
+    cs "Ohhhh, yeah. Forgot about that."
+    arceus "Whatever just, come on in."
+    scene kitty_room with fade
+    show arceus flipped at center with moveinleft
+    show cs at left with moveinleft
+    cs "You guys have quite a quiant little place!"
+    show arceus
+    arceus "Yep. This is what 5 quid gets you here."
+    cs "Woah, what? How much is a quid?"
+    arceus "I'm just messing, it's a little more than a US dollar."
+    show kitty flipped at right with moveinright
+    show arceus flipped
+    kitty "Hey Arceus! You're home!"
+    kitty "Hey, who's this man?"
+    arceus "This is CS, my jail bud- I mean my friend! You remember that guy who made the YTPs?"
+    kitty "Oh, yeah. Isn't he kinda famous?"
+    cs "I wouldn't say that..."
+    arceus "He's broke right now, and I was wondering if he could stay here for a bit."
+    kitty "I guess that's fine, how long is he gonna stay here though?"
+    cs "It shouldn't be too long, I'm gonna try to find a way to get some money."
+    arceus "Why don't we all eat and talk about it?"
+    cs "That would be great. I'm starving."
+    show kitty with determination
+    hide arceus
+    hide kitty
+    hide cs
+    with moveoutright
+    scene black with dissolve
+    n "Kitty and Arceus prepare dinner, and they all sit down at the dining table and eat."
+    scene dining_room
+    show kitty flipped at right
+    show arceus at center
+    show cs at left
+    with fade
+    cs "So, how long have you guys been together?"
+    arceus "For a long time actually, I've been wanting to move up here, but y'know..."
+    kitty "Yeah, you did a dumb and got arrested!"
+    arceus "Yeah yeah, well anyways..."
+    arceus "What do you want to do here, CS? It's a brand new country, there are a ton of things you can do..."
+    menu:
+        "Go on Hell's Kitchen":
+            jump hell_zone
+        "Go on Top Gear":
+            jump top_zone
+        "Go on adventure with Tom Scott":
+            jump scott_zone
+
+label hell_zone:
+    cs "I wanna go on Hell's Kitchen!"
