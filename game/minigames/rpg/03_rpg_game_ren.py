@@ -456,7 +456,7 @@ class Attacks:
     RAW_KICK = Attack("Raw Kick", damage_fighters, mult = 2)
     YTP_MAGIC = Attack("YTP Magic", damage_fighters, cooldown = 10, mult = 20, used = True)
     YTP_MAGIC_NOCOOL = Attack("YTP Magic", damage_fighters, mult = 20)
-    YTP_HEAL = Attack("Attack.HEAL", heal_fighters, target_count = 0, target_type = "allies", cooldown = 1, mult = 10)
+    YTP_HEAL = Attack("Attack.HEAL", heal_fighters, target_count = 0, target_type = "allies", cooldown = 1, mult = 1)
     FUN_VALUE = Attack("Fun Value", damage_fighters, mult = 10)
     KICK = ComboAttack("Kick", [RAW_KICK, CS_AP_DOWN])
     BULLET_SPRAY = Attack("Bullet Spray", damage_fighters, target_count = 0, target_type = "enemies", cooldown = 3, mult = 1.5)

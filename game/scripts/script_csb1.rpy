@@ -428,15 +428,15 @@ label rosen_house:
         michael "This version of himself was real."
         michael "This man, the adventurer, was not."
         michael "He never was."
-        michael "He needed to be removed he found out he was fake."
+        michael "He needed to be removed if he found out he was fake."
         michael "So that's when--{nw}"
         show pakoo disappointed at center with moveinright
         pakoo "STOP{nw}"
         scene black
         pause 1.0
-        n "Deleting Persistent{w=0.5}.{w=0.5}.{w=0.5}.{nw=0.5}"
+        n "Deleting persistent{w=0.5}.{w=0.5}.{w=0.5}.{nw=0.5}"
         $ e3 = True
-        n "Resetting Script{w=0.5}.{w=0.5}.{w=0.5}.{nw=0.5}"
+        n "Resetting script{w=0.5}.{w=0.5}.{w=0.5}.{nw=0.5}"
         show script
         pause 1.5
         jump csbi_start

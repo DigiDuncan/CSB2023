@@ -1,7 +1,7 @@
 screen debug_menu():
     tag menu
     python:
-        labels = sorted([l for l in renpy.get_all_labels() if not l.startswith("_")])
+        labels = sorted([l for l in renpy.get_all_labels() if not l.startswith("_") and not l == "after_error_fight"])
     viewport:
         xpos 350
         xsize 1570

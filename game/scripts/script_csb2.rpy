@@ -109,9 +109,9 @@ label special:
         music end
         scene black with dissolve
         pause 1.0
-        n "Deleting Persistent{w=0.5}.{w=0.5}.{w=0.5}.{nw=0.5}"
+        n "Deleting persistent{w=0.5}.{w=0.5}.{w=0.5}.{nw=0.5}"
         $ e2 = True
-        n "Resetting Script{w=0.5}.{w=0.5}.{w=0.5}.{nw=0.5}"
+        n "Resetting script{w=0.5}.{w=0.5}.{w=0.5}.{nw=0.5}"
         show script
         pause 1.5
         jump csbi_start
