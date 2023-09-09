@@ -411,7 +411,7 @@ class Fighter:
 
 class Encounter:
     def __init__(self, fighters: list[Fighter], background: Displayable, music: str, scale: float, on_win: str, on_lose: str = "start"):
-        self.fighters = [copy(f) for f in fighters]
+        self.fighters = [copy(f) for f in fighters if f is not None]
         self.background = background
         self.music = music
         self.scale = scale
