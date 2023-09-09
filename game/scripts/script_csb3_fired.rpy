@@ -626,3 +626,26 @@ label fan_interaction:
     n "Anno pulls out his phone."
     n "Anno drops his phone."
     anno "Guys... we might have more money than we thought."
+
+    # scene hotel_room
+    show anno at left
+    show arceus at right
+    show cs 
+    with fade
+
+    n "The gang regroup to discuss."
+    cs "OK, give it to me straight. How many sales of the EP?"
+    anno "57,685."
+    cs "Holy shit, that's a lot of sales, how much money{nw}"
+    anno "57,688."
+    cs "OK, yeah, I got that, how much money does that equate to{nw}"
+    anno "57,692...{nw}"
+    cs "Stop refreshing the page!"
+    anno "Sorry."
+    cs "How much money is that?"
+    anno "About $150,000."
+    cs "Oh my god!"
+    arceus "Well, we going to need to file taxes on it."
+    anno "Do we?"
+    arceus "You wanna go back to prison?"
+    anno "No..."

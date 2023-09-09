@@ -510,7 +510,7 @@ class Fighters:
     NOVA = Fighter("Nova", False, 170, 5, 30, [Attacks.MUSIC_BOOST, Attacks.RAVE], Image("images/characters/nova.png"))
     BLANK = Fighter("Blank", False, 180, 5, 35, [Attacks.SAMPLE_BLAST, Attacks.GNOMED], Image("images/characters/blank.png"))
     MIDGE = Fighter("Midge", False, 165, 10, 25, [Attacks.NUDGE, Attacks.DRAW_IN], Image("images/characters/midge.png"))
-    DB05 = Fighter("Db05", False, 9001, 9001, 50, [Attacks.CONFIDENCE, Attacks.PEP_TALK], Image("images/characters/db.png"))
+    DB05 = Fighter("DB05", False, 9001, 9001, 50, [Attacks.CONFIDENCE, Attacks.PEP_TALK], Image("images/characters/db.png"))
     ANNO = Fighter("Anno", False, 220, 30, 40, [Attacks.RADS_ATTACK, Attacks.AI_MIMIC], Image("images/characters/anno.png"))
 
     FANBOYA = Fighter("Fanboy",True, 50, 0, 16, [Attacks.PUNCH], Image("images/characters/nvidiafanboy.png"), ai = AIType.NEUTRAL)
