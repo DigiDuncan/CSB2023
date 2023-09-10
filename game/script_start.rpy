@@ -623,6 +623,7 @@ image bedroom_old = "bg/cs_bedroom.png"
 image door_old = "bg/door_open_old.png"
 image csmart_old = "bg/csmart.png"
 image craptop_old = "bg/craptop_old.png"
+image falling = "secret/falling_apart.png"
 
 # Static Images
 image objection = "objection.png"

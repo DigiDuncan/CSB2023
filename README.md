@@ -70,6 +70,7 @@ See what needs to be done below.
 - [ ] 3D Backgrounds [Baker]
 - [ ] Animated sequences [Baker]
 - [ ] Final writing [Pakoo]
+- [ ] Short Archival animation (Error Route) [Pakoo]
 
 ### Passes [All, October W1]
 - [ ] Spelling/Grammar Pass
