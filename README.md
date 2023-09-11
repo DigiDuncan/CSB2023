@@ -101,7 +101,7 @@ See what needs to be done below.
 - [ ] Check Discord channels for missing content
 
 ### Wishlist
-- [ ] Ultimate Custom Night (RPG Freeplay)
+- [ ] Ultimate Custom Night (RPG Freeplay) [50%]
 - [ ] Cheats Mode
     - [ ] You can now play as Luigi
     - [ ] Arc2D2

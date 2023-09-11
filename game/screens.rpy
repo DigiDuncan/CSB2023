@@ -329,6 +329,8 @@ screen navigation():
 
         textbutton _("Debug Menu") action ShowMenu("debug_menu")
 
+        textbutton _("Ultimate\nCustom Night") action Jump("rpg_ucn")
+
         if _in_replay:
 
             textbutton _("End Replay") action EndReplay(confirm=True)

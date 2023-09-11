@@ -14,7 +14,7 @@ python early:
 from copy import copy
 from typing import Callable, Literal
 
-DamageType = Literal["hp", "confusion", "ap", "atk"]
+DamageType = Literal["hp", "confusion", "ap", "atk", "none"]
 AnswerList = list[tuple[int, str]]
 
 # Functions
@@ -34,6 +34,8 @@ def damage_fighters(subject: Fighter, targets: list[Fighter], crit: bool, option
                 f.health_points -= hit
                 answer.append((int(-hit), "hp"))
                 print(f"Dealing {hit} damage to {f.name}.")
+        else:
+            answer.append((0, "none"))
     return answer
 
 def heal_fighters(subject: Fighter, targets: list[Fighter], crit: bool, options: dict) -> AnswerList:
@@ -52,7 +54,9 @@ def heal_fighters(subject: Fighter, targets: list[Fighter], crit: bool, options:
             answer.append((int(hit), "hp"))
             if not overheal:
                 f.health_points = min(f.health_points, f.max_health)
-        print(f"Healing {hit} damage from {f.name}.")
+            print(f"Healing {hit} damage from {f.name}.")
+        else:
+            answer.append((0, "none"))
     return answer
 
 def damage_over_time(subject: Fighter, targets: list[Fighter], crit: bool, options: dict) -> AnswerList:
@@ -128,10 +132,63 @@ def change_stat(subject: Fighter, targets: list[Fighter], crit: bool, options: d
             pass
     return answer
 
+def draw_in(subject: Fighter, targets: list[Fighter], crit: bool, options: dict) -> AnswerList:
+    mult = options.get("mult", 1)
+    answer = []
+    attack_type = renpy.random.randint(1, 4)
+    # ap up, allies
+    if attack_type == 1:
+        print("[Draw In] AP Up")
+        for f in targets:
+            if f.enemy:
+                answer.append((0, "none"))
+            else:
+                old_ap = f.armor_points
+                f.armor_points *= mult
+                diff = f.armor_points - old_ap
+                answer.append((diff, "ap"))
+    # ap down, enemies
+    elif attack_type == 2:
+        print("[Draw In] AP Down")
+        for f in targets:
+            if not f.enemy:
+                answer.append((0, "none"))
+            else:
+                old_ap = f.armor_points
+                f.armor_points /= mult
+                diff = f.armor_points - old_ap
+                answer.append((diff, "ap"))
+    # atk up, allies
+    elif attack_type == 3:
+        print("[Draw In] ATK Up")
+        for f in targets:
+            if f.enemy:
+                answer.append((0, "none"))
+            else:
+                old_ap = f.attack_points
+                f.attack_points *= mult
+                diff = f.attack_points - old_ap
+                answer.append((diff, "atk"))
+    # ap down, enemies
+    elif attack_type == 4:
+        print("[Draw In] ATK Down")
+        for f in targets:
+            if not f.enemy:
+                answer.append((0, "none"))
+            else:
+                old_ap = f.attack_points
+                f.attack_points /= mult
+                diff = f.attack_points - old_ap
+                answer.append((diff, "atk"))
+
+def ai_mimic(subject: Fighter, targets: list[Fighter], crit: bool, options: dict) -> AnswerList:
+    print(f"[AI Mimic] running {targets[0].normal.name}...")
+    return targets[0].normal.run(subject, targets, crit)
+
 class AI:
     def __init__(self,
                  name: str,
-                 heal_chance = 0.50,
+                 heal_chance = 0.33,
                  heal_threshold = 0.50,
                  aggression = 1,
                  crowd_control = 1,
@@ -193,11 +250,13 @@ class AI:
             for atk in available_attacks:
                 score = 1.0
                 if atk.type == "damage" or atk.type == "aoe":
-                    score *= self.aggression
+                    score *= (self.aggression * atk.options.get("mult", 1))
                 elif atk.type == "buff" or atk.type == "debuff" or atk.type == "confuse":
                     score *= self.tacticity
                 if atk.type == "aoe":
                     score *= self.crowd_control
+                if heal_time:
+                    score *= atk.options.get("mult", 1)  # weight towards better heals
                 scores.append(score)
             print("===SCORES===")
             for a, s in list(zip(available_attacks, scores)):
@@ -248,9 +307,9 @@ class AI:
 class AIType:
     NEUTRAL = AI("Neutral")
     AGGRO = AI("Aggro", aggression = 3, tacticity = 0.5, crowd_control = 0, heal_threshold = 0.25, heal_chance = 0.25)
-    DEFENSIVE = AI("Defensive", heal_threshold = 0.75, tacticity = 3, heal_chance = 0.75)
-    SMART = AI("Smart", tacticity = 2, crowd_control = 2, heal_chance = 0.66)
-    COPGUY_EX = AI("EX", aggression = 3, tacticity = 2, preferred_targets = ["CS"], heal_chance = 0.90)
+    DEFENSIVE = AI("Defensive", heal_threshold = 0.75, tacticity = 3, heal_chance = 0.60)
+    SMART = AI("Smart", tacticity = 2, crowd_control = 2, heal_chance = 0.60)
+    COPGUY_EX = AI("EX", aggression = 3, tacticity = 2, preferred_targets = ["CS"], heal_chance = 0.75)
 
 # Objects
 
@@ -298,6 +357,8 @@ class ComboAttack:
         for a in self.attacks:
             if a.available:
                 answer += a.run(subject, fighters, crit)
+            else:
+                answer.append(0, "none")
         return answer
 
     @property
@@ -515,12 +576,13 @@ class Attacks:
     SAMPLE_BLAST = ComboAttack("Sample Blast", [SAMPLE_SPAM, SOUND_BLAST])
     GNOMED = Attack("Gnomed", confuse_targets, target_count = 0, target_type = "enemies", cooldown = 3)
     NUDGE = Attack("Nudge", random_damage_fighters, min_mult = 0.1, max_mult = 10, mult = 1)
-    DRAW_IN = Attack("Draw in", change_stat, stat = "atk", target_count = 0, target_type = "allies", cooldown = 3, mult = 2)  # fuck this
+    DRAW_IN = Attack("Draw in", draw_in, stat = "atk", target_count = 0, target_type = "allies", cooldown = 3, mult = 2)
     CONFIDENCE = Attack("Confidence", change_stat, stat = "atk", target_count = 0, target_type = "allies", mult = 1.5)
     PEP_TALK = Attack("Pep Talk", change_stat, stat = "ap", target_count = 0, target_type = "allies", mult = 1.5)
     RADS_ATTACK = Attack("RADS Attack", damage_over_time, mult = 0.5)
-    AI_MIMIC = Attack("AI Mimic", confuse_targets, target_count = 0, target_type = "enemies", cooldown = 3, mult = 1)  # copy attack
+    AI_MIMIC = Attack("AI Mimic", ai_mimic, target_count = 0, target_type = "enemies", cooldown = 2)
     SHELL = Attack("Shell", random_damage_fighters, min_mult = 1, max_mult = 2, mult = 1)
+    HEAL_EX = Attack("Heal EX", heal_fighters, target_count = 0, target_type = "allies", mult = 5)
 
 class Fighters:
     NONE = None
@@ -547,12 +609,12 @@ class Fighters:
     FANBOYB = Fighter("Fanboy",True, 50, 0, 16, [Attacks.PUNCH], Image("images/characters/amdfanboy.png"), ai = AIType.NEUTRAL)
     COP = Fighter("Cop", True, 150, 15, 30, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/cop.png"), ai = AIType.NEUTRAL)
     COPGUYGODMODE = Fighter("Copguy", True, 9001, 9001, 35, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/copguy.png"), ai = AIType.NEUTRAL)
-    COPGUY1 = Fighter("Copguy", True, 300, 20, 35, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/copguy.png"), ai = AIType.NEUTRAL)
+    COPGUY = Fighter("Copguy", True, 300, 20, 35, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/copguy.png"), ai = AIType.NEUTRAL)
     GUARD = Fighter("Guard", True, 250, 25, 40, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/guard_soldier.png"), ai = AIType.DEFENSIVE)
     SML_TANK = Fighter("Sherman", True, 500, 60, 120, [Attacks.SHELL], Image("images/characters/sherman.png"), ai = AIType.AGGRO)
     MARINE = Fighter("Marine", True, 300, 30, 45, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/marine.png"), ai = AIType.SMART)
     BIG_TANK = Fighter("Abrams", True, 700, 70, 150, [Attacks.SHELL], Image("images/characters/abrams.png"), ai = AIType.AGGRO)
-    COPGUY2 = Fighter("Copguy EX", True, 2000, 30, 50, [Attacks.PUNCH, Attacks.BULLET_SPRAY, Attacks.SLASH, Attacks.LIGHT_CAST, Attacks.INSIGHT,
+    COPGUY_EX = Fighter("Copguy EX", True, 2000, 30, 50, [Attacks.PUNCH, Attacks.BULLET_SPRAY, Attacks.SLASH, Attacks.LIGHT_CAST, Attacks.INSIGHT,
                                                      Attacks.SHOTGUN, Attacks.ENCOURAGE, Attacks.HIGH_NOON, Attacks.SCRATCH, Attacks.ARMOUR,
                                                      Attacks.DAMAGE_SCREM, Attacks.SCREM, Attacks.ELDRITCH_BLAST, Attacks.RAINBOW_VOMIT,
                                                      Attacks.ROBOPUNCH, Attacks.HOLOSHIELD, Attacks.MUSIC_BOOST, Attacks.RAVE, Attacks.SAMPLE_BLAST,
@@ -698,7 +760,7 @@ def parse_rpg(lexer):
                 fighters.append(ll.rest())
                 ll.expect_eol()
         elif l.keyword("scale"):
-            scale = l.float()
+            scale = l.rest()
     # goto
         elif l.keyword("on_win"):
             label = l.string()
@@ -716,7 +778,7 @@ def execute_rpg(parsed_object):
          else getattr(Fighters, fighter.upper()) for fighter in f],
         Image(b),
         m,
-        float(s),
+        ucn_scale if s == "\"ucn\"" else float(s),
         l,
         ll
     )

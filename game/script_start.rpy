@@ -727,6 +727,8 @@ default party_1 = "cs"
 default party_2 = "tate"
 default party_3 = "digi"
 default party_4 = "arceus"
+default ucn_scale = 1.0
+default cont = False
 
 # Jump Menu
 screen start_menu():
