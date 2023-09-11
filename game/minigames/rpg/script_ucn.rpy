@@ -13,7 +13,7 @@ screen ucn_choice(items):
                     action i.action
 
 screen ucn_mainmenu:
-    tag "menu"
+    tag menu
     timer 0.5 action MainMenu(confirm = False)
 
 label rpg_ucn:
