@@ -154,7 +154,7 @@ label rpg_final_fight_3:
 label rpg_error:
     rpg:
         bg "secret/falling_apart.png"
-        music "audio/prophet_2001.mp3"
+        music "audio/prophetpart2.mp3"
         fighters:
             cs_final2
             pakooe
