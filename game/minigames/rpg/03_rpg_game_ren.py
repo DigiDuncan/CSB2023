@@ -580,7 +580,7 @@ class Attacks:
     CONFIDENCE = Attack("Confidence", change_stat, stat = "atk", target_count = 0, target_type = "allies", mult = 1.5)
     PEP_TALK = Attack("Pep Talk", change_stat, stat = "ap", target_count = 0, target_type = "allies", mult = 1.5)
     RADS_ATTACK = Attack("RADS Attack", damage_over_time, mult = 0.5)
-    AI_MIMIC = Attack("AI Mimic", ai_mimic, target_count = 0, target_type = "enemies", cooldown = 2)
+    AI_MIMIC = Attack("AI Mimic", ai_mimic, target_count = 1, target_type = "enemies", cooldown = 2)
     SHELL = Attack("Shell", random_damage_fighters, min_mult = 1, max_mult = 2, mult = 1)
     HEAL_EX = Attack("Heal EX", heal_fighters, target_count = 0, target_type = "allies", mult = 5)
 

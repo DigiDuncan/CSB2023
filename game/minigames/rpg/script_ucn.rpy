@@ -14,6 +14,7 @@ screen ucn_choice(items):
                     action i.action
 
 label rpg_ucn:
+    scene black
     $ ally_names = ally_names = ["NONE", "CS","CS_NG","CS_STRONG","CS_FINAL","CS_WEAK","ARCEUS","PAKOO","MIKA","KITTY","TATE","ARIA","DIGI","NOVA","BLANK","MIDGE","DB05","ANNO"]
     $ enemy_names = ["NONE", "FANBOYA","FANBOYB","COP","COPGUYGODMODE","COPGUY","GUARD","SML_TANK","MARINE","BIG_TANK","COPGUY_EX","PAKOOE"]
     $ scales = [1.0, 1.25, 1.5, 1.75, 2.0, 2.5, 3.0]
