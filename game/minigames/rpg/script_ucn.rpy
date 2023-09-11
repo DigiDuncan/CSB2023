@@ -1,5 +1,4 @@
 screen ucn_choice(items):
-
     viewport:
         xysize(1920, 540)
         yanchor -0.25
@@ -13,8 +12,14 @@ screen ucn_choice(items):
                     anchor(-0.25, -0.25)
                     action i.action
 
+screen ucn_mainmenu:
+    tag "menu"
+    timer 0.5 action MainMenu(confirm = False)
+
 label rpg_ucn:
-    scene black
+    $ renpy.hide_screen("menu")
+    scene game_menu
+    centered "Loading...{w=1.0}{nw}"
     $ ally_names = ally_names = ["NONE", "CS","CS_NG","CS_STRONG","CS_FINAL","CS_WEAK","ARCEUS","PAKOO","MIKA","KITTY","TATE","ARIA","DIGI","NOVA","BLANK","MIDGE","DB05","ANNO"]
     $ enemy_names = ["NONE", "FANBOYA","FANBOYB","COP","COPGUYGODMODE","COPGUY","GUARD","SML_TANK","MARINE","BIG_TANK","COPGUY_EX","PAKOOE"]
     $ scales = [1.0, 1.25, 1.5, 1.75, 2.0, 2.5, 3.0]
@@ -58,4 +63,4 @@ label after_ucn:
     if cont:
         jump rpg_ucn
     else:
-        return
+        show screen ucn_mainmenu
