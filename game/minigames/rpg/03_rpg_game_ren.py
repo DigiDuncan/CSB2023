@@ -14,39 +14,48 @@ python early:
 from copy import copy
 from typing import Callable, Literal
 
+DamageType = Literal["hp", "confusion", "ap", "atk"]
+AnswerList = list[tuple[int, str]]
+
 # Functions
-def damage_fighters(subject: Fighter, targets: list[Fighter], crit: bool, options: dict):
+def damage_fighters(subject: Fighter, targets: list[Fighter], crit: bool, options: dict) -> AnswerList:
     """Damage a list of fighters.
     Valid options:
     - `mult: float`: The multiplier on top of `subject`'s ATK to hit the targets with.
     - `count: int`: The number of times to hit the targets."""
     mult = options.get("mult", 1)
     count = options.get("count", 1)
+    answer = []
     for f in targets:
         if not f.dead:
             for _ in range(count):
                 hit = subject.attack_points * mult * 1.5 if crit else subject.attack_points * mult
                 hit *= 1 - (f.armor_points / 100)
                 f.health_points -= hit
+                answer.append((int(-hit), "hp"))
                 print(f"Dealing {hit} damage to {f.name}.")
+    return answer
 
-def heal_fighters(subject: Fighter, targets: list[Fighter], crit: bool, options: dict):
+def heal_fighters(subject: Fighter, targets: list[Fighter], crit: bool, options: dict) -> AnswerList:
     """Heal a list of fighters.
     Valid options:
     - `mult: float`: The multiplier on top of `subject`'s ATK to hit the targets with.
     - `overheal: bool`: Whether to allow targets to heal over their max health."""
     mult = options.get("mult", 1)
     overheal = options.get("overheal", False)
+    answer = []
     for f in targets:
         if not f.dead:
             hit = subject.attack_points * mult * 1.5 if crit else subject.attack_points * mult
             hit *= 1 - (f.armor_points / 100)
             f.health_points += hit
+            answer.append((int(hit), "hp"))
             if not overheal:
                 f.health_points = min(f.health_points, f.max_health)
         print(f"Healing {hit} damage from {f.name}.")
+    return answer
 
-def damage_over_time(subject: Fighter, targets: list[Fighter], crit: bool, options: dict):
+def damage_over_time(subject: Fighter, targets: list[Fighter], crit: bool, options: dict) -> AnswerList:
     """Set a damage over time for a list of fighters.
     Valid options:
     - `mult: float`: The multiplier on top of `subject`'s ATK to hit the targets with.
@@ -56,8 +65,9 @@ def damage_over_time(subject: Fighter, targets: list[Fighter], crit: bool, optio
     for f in targets:
         f.damage_per_turn.append((subject.attack_points * mult, turns))
         print(f"Added {subject.attack_points * mult} DOT to {f.name} for {turns} turns.")
+    return []
 
-def random_damage_fighters(subject: Fighter, targets: list[Fighter], crit: bool, options: dict):
+def random_damage_fighters(subject: Fighter, targets: list[Fighter], crit: bool, options: dict) -> AnswerList:
     """Damage a list of fighters for a value between two multiples..
     Valid options:
     - `min_mult: float`: The minimum multiplier on top of `subject`'s ATK to hit the targets with.
@@ -65,29 +75,37 @@ def random_damage_fighters(subject: Fighter, targets: list[Fighter], crit: bool,
     min_mult = options.get("min_mult", 1)
     max_mult = options.get("max_mult", 1)
     mult = max_mult if crit else renpy.random.uniform(min_mult, max_mult)
+    answer = []
     for f in targets:
         hit = subject.attack_points * mult * 1.5 if crit else subject.attack_points * mult
         hit *= 1 - (f.armor_points / 100)
         f.health_points -= hit
+        answer.append((int(-hit), "hp"))
         print(f"Dealing {hit} damage to {f.name}.")
+    return answer
 
-def confuse_targets(subject: Fighter, targets: list[Fighter], crit: bool, options: dict):
+def confuse_targets(subject: Fighter, targets: list[Fighter], crit: bool, options: dict) -> AnswerList:
     """Confuse a list of targets."""
+    answer = []
     for f in targets:
         f.confused = True
+        answer.append((1, "confusion"))
         print(f"Confusing {f.name}.")
+    return answer
 
-def change_stat(subject: Fighter, targets: list[Fighter], crit: bool, options: dict):
+def change_stat(subject: Fighter, targets: list[Fighter], crit: bool, options: dict) -> AnswerList:
     """Damage a list of fighters.
     Valid options:
     - `stat: str`: The stat to affect ("hp", "ap", or "atk")
     - `mult: float`: The multiplier on change the stat by."""
     mult = options.get("mult", 1)
     stat = options["stat"]
-
+    answer = []
     for f in targets:
         if stat == "hp":
+            old_hp = f.health_points
             f.health_points *= mult
+            answer.append((int(f.health_points - old_hp), "hp"))
             print(f"Setting {f.name} HP to {f.health_points}.")
         elif stat == "ap":
             old_ap = f.armor_points
@@ -99,12 +117,16 @@ def change_stat(subject: Fighter, targets: list[Fighter], crit: bool, options: d
                     new_ap = 99
                     f._funni_ap = True
             f.armor_points = new_ap
+            answer.append((int(f.armor_points - old_ap), "ap"))
             print(f"Setting {f.name} AP to {f.armor_points}.")
         elif stat == "atk":
+            old_atk = f.attack_points
             f.attack_points *= mult
+            answer.append((int(f.attack_points - old_atk), "atk"))
             print(f"Setting {f.name} ATK to {f.attack_points}.")
         else:
             pass
+    return answer
 
 class AI:
     def __init__(self,
@@ -127,7 +149,7 @@ class AI:
         self.preferred_targets = [] if preferred_targets is None else preferred_targets # I wanna smack this boy in particular >:C
         self.preference_weight = preference_weight # Multiplier how many more times likely to smack this boy
 
-    def run(self, subject: Fighter, encounter: Encounter) -> None:
+    def run(self, subject: Fighter, encounter: Encounter) -> AnswerList:
         party_status = encounter.enemies if subject.enemy else encounter.allies
         enemy_status = encounter.allies if subject.enemy else encounter.enemies
         # Sort enemies by weak-first
@@ -217,10 +239,11 @@ class AI:
                 who.append(renpy.random.choices(who_staging, weights = weights)[0])
         
         # Run the attack
-        what.run(subject, who)
+        answer = what.run(subject, who)
         print(f"[AI: {self.name}] {subject.name} running attack {what.name} on {sentence_join([t.name for t in who])}...")
         renpy.notify(f"[AI: {self.name}] {subject.name} running attack {what.name} on {sentence_join([t.name for t in who])}...")
         renpy.pause(1.0)
+        return answer
 
 class AIType:
     NEUTRAL = AI("Neutral")
@@ -232,7 +255,7 @@ class AIType:
 # Objects
 
 class Attack:
-    def __init__(self, name: str, func: Callable[[Fighter, list[Fighter], dict], None], target_count = 1, target_type: str = "enemies", cooldown: int = 0, used = False, **kwargs):
+    def __init__(self, name: str, func: Callable[[Fighter, list[Fighter], dict], AnswerList], target_count = 1, target_type: str = "enemies", cooldown: int = 0, used = False, **kwargs):
         self.name = name
         self.func = func
         self.target_count = target_count
@@ -242,9 +265,9 @@ class Attack:
 
         self._turns_until_available = 0 if not used else self.cooldown
 
-    def run(self, subject: Fighter, fighters: list[Fighter], crit: bool = False):
-        self.func(subject, fighters, crit, self.options)
+    def run(self, subject: Fighter, fighters: list[Fighter], crit: bool = False) -> AnswerList:
         self._turns_until_available = self.cooldown
+        return self.func(subject, fighters, crit, self.options)
 
     @property
     def available(self) -> bool:
@@ -270,10 +293,12 @@ class ComboAttack:
         self.name = name
         self.attacks = attacks
 
-    def run(self, subject: Fighter, fighters: list[Fighter], crit: bool = False):
+    def run(self, subject: Fighter, fighters: list[Fighter], crit: bool = False) -> AnswerList:
+        answer = []
         for a in self.attacks:
             if a.available:
-                a.run(subject, fighters, crit)
+                answer += a.run(subject, fighters, crit)
+        return answer
 
     @property
     def _turns_until_available(self) -> int:
@@ -365,24 +390,27 @@ class Fighter:
     def psi(self) -> Attack | None:
         return self.attacks[2] if len(self.attacks) >= 3 else None
 
-    def attack(self, style: int, targets: list[Fighter]):
+    def attack(self, style: int, targets: list[Fighter]) -> AnswerList:
         hit = (renpy.random.choice([True, False]) if self.confused else True) and not self.dead
         if hit:
-            self.attacks[style].run(self, targets)
+            return self.attacks[style].run(self, targets)
         elif self.confused:
             renpy.notify(f"{self.name} is confused!")
+            return []
 
-    def attack_ai(self, encounter: Encounter):
+    def attack_ai(self, encounter: Encounter) -> AnswerList:
         if not self.dead:
-            self.ai.run(self, encounter)
+            return self.ai.run(self, encounter)
 
-    def tick(self):
+    def tick(self) -> AnswerList:
+        answer = []
         # DOT
         if self.damage_per_turn:
             for h, t in self.damage_per_turn:
                 if t > 0:
                     print(f"{self.name}: Taking {h} DOT damage...")
                     self.health_points -= h
+                    answer.append((int(-h), "hp"))
                 else:
                     self.damage_per_turn.remove((h, t))
         # Confusion
@@ -390,8 +418,10 @@ class Fighter:
             self.confused = renpy.random.choice([True, False])
             if self.confused:
                 print(f"{self.name}: I'm still confused...")
+                answer.append((1, "confusion"))
             else:
                 print(f"{self.name}: No longer confused!")
+                answer.append((0, "confusion"))
         # Cooldowns
         for a in self.attacks:
             report = False
