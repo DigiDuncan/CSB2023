@@ -22,7 +22,6 @@ See what needs to be done below.
 - [ ] Arceus Art [Kitty, October]
 - [ ] Aria Art [Aria, October]
 - [ ] Installer [Digi, Oct. W3]
-- [ ] Country Route Game [???]
 
 ### True Ending [ASAP]
 - [ ] Michigan [Aria]
@@ -34,9 +33,11 @@ See what needs to be done below.
 - [ ] All Sprites done [Pakoo]
 - [ ] Animations [Arc]
 - [ ] SFX
-- [ ] Reactive Text [50%]
+    - Code [Arc]
+    - Actual sound [Pakoo]
+- [ ] Reactive Text [75%]
 - [ ] Balancing [Pakoo]
-- [ ] Add games to script [90%]
+- [X] Add games to script
 
 ### Friend Ending [Pakoo, Sept. W2]
 - [ ] Script [98%]
@@ -58,13 +59,30 @@ See what needs to be done below.
 - [ ] Jukebox
 
 ### Country Ending [All, Sept. W4]
-- [ ] Script
-- [ ] Backgrounds
-- [ ] Characters
-- [ ] Transitions
-- [ ] Music
-- [ ] Bios
-- [ ] Jukebox
+- [ ] England
+    - [ ] Script
+    - [ ] Backgrounds
+    - [ ] Characters
+    - [ ] Transitions
+    - [ ] Music
+    - [ ] Bios
+    - [ ] Jukebox
+- [ ] Japan
+    - [ ] Script
+    - [ ] Backgrounds
+    - [ ] Characters
+    - [ ] Transitions
+    - [ ] Music
+    - [ ] Bios
+    - [ ] Jukebox
+- [ ] Sweden
+    - [ ] Script
+    - [ ] Backgrounds
+    - [ ] Characters
+    - [ ] Transitions
+    - [ ] Music
+    - [ ] Bios
+    - [ ] Jukebox
 
 ### Archival Ending [Pakoo/Baker, October]
 - [ ] 3D Backgrounds [Baker]
