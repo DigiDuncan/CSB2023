@@ -345,31 +345,64 @@ label hell_zone:
     arceus "Don't you have to submit an application?"
     cs "I mean, fuck it. I'll do it."
     arceus "Oookayy..."
+    scene black with dissolve
     n "Arceus hands CS his phone, and CS fills out an application."
+    scene dining_room
+    show kitty flipped at right
+    show arceus at center
+    show cs at left
+    with fade
     cs "Annnnddd done!"
     kitty "Do you think you're gonna win this? It's a pretty tough challenge."
     cs "I think I've got something up my sleeve."
-    kitty "If really think so, I guess we'll see if you get in."
+    kitty "If you really think so, I guess we'll see if you get in."
     cs "Even though I slept on the plane ride here, I am still really tired."
     cs "I think I'm gonna get some sleep."
     arceus "Is the couch good enough for you? Sorry we don't really have another option right now."
     cs "Yeah, it's all good."
+    show cs flipped at left with determination
+    hide cs
+    hide arceus
+    hide kitty
+    with moveoutleft
+    scene black with dissolve
     n "Everyone gets a good night's sleep."
     n "The next morning..."
+    scene kitty_room
+    show cs concentrate at left
+    with fade
     cs "Zzzzz....."
     cs "Zzzzz....."
+    show arceus at center with moveinright
     arceus "Hey. Wake up sleepyhead."
+    pause 0.5
+    show cs disappointed
+    pause 0.5
+    show cs concentrate
+    pause 0.2
+    show cs disappointed
     n "CS slowly gets up."
     cs "Wh- what? It's already morning?"
     arceus "Yep."
     arceus "More importantly, you got accepted into this season of Hell's Kitchen."
     n "CS jerks up."
+    show cs
     cs "What really?"
     cs "I mean, of course! I am a master cook, after all."
     arceus "Yeah, yeah. Let's take you there, and we'll see how good you really are."
+    show arceus flipped with determination
+    hide cs 
+    hide arceus
+    with moveoutright
+    scene black with dissolve
     n "Arc drives CS up to the place for the Hell's Kitchen trial."
+    scene car_inside_fg
+    show hell_outside behind car_inside_fg
+    show arceus flipped at left
+    show cs flipped at right
+    with fade
     cs "Well, this definitely looks like Hell."
-    arceus "I can already feel Ramsey's presence from here. It's terrifying."
+    arceus "I can already feel Ramsay's presence from here. It's terrifying."
     cs "Alright well, are you ready?"
     arceus "What do you mean? You're the one who signed up for this! I'll be waiting for you in the car."
     cs "I thought you wanted to watch me cook?"
@@ -377,12 +410,19 @@ label hell_zone:
     arceus "Think you'll come out alive?"
     cs "You think I'm gonna die?"
     arceus "No no, I meant that more metaphorically, like, you just aren't a good cook."
+    show cs disappointed flipped
     cs "Whhhaaat?"
     arceus "I just haven't seen you prepare like, an actual meal before."
+    show cs angry flipped
     cs "Yeah well, you don't know everything about me!"
     cs "I'll show you!"
+    scene black with dissolve
     n "CS gets out of the car and walks up toward the building."
+    show hell_outside with fade
+    show cs angry at mid_left with moveinleft
     cs "Stupid Arceus doesn't think I can cook well, I'm gonna blow them away, that they can't put me on the show because I'm too good!"
+    hide cs with moveoutright
+    scene black with dissolve
     n "When CS enters the main room, he notices that Gordon is waiting for CS at the stage, with his arms crossed."
     gordon "Are you Mr... 188?"
     cs "Yea, that's m--{w=0.5}{nw}"
@@ -445,21 +485,34 @@ label good_ramsay:
     n "Gordon gives the briefcase to CS."
     gordon "Alright, thank you. Now leave."
     cs "Thanks!"
+    scene black with dissolve
     n "CS takes the briefcase and heads back to the car."
+    scene car_inside_fg
+    show hell_outside behind car_inside_fg
+    show arceus flipped at left
+    show cs flipped at right
+    with fade
     arceus "Well, how'd it go?"
     cs "I think..."
     cs "That you were wrong!"
+    show case flipped at center with fade
     n "CS pulls out the briefcase and shows it to Arc."
     arceus "Holy shit! What'd you do??"
     cs "I made him a Genergy, CS style!"
     cs "He apparently loved it so much he bought my recipe!"
     arceus "WHHAATT?"
     arceus "You got Gordon Ramsay, Master Chef, your recipe in one go?"
+    show cs happy flipped
     cs "Yep!"
     arceus "Man, your crazy."
     arceus "Whatever, let's head back home."
+    scene black with dissolve
     n "CS and Arc head back home."
     n "Once CS and Arc get home, they go inside and discuss the news."
+    scene dining_room
+    show cs at left
+    show arceus at center
+    show kitty flipped at right
     kitty "CS did what?"
     arceus "Yeah, I know right? I don't understand either."
     kitty "What is in this Genergy drink of yours?"
