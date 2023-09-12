@@ -20,6 +20,10 @@
 # elevator ding
 # ~5 rock instrumentals
 
+# TRANSITIONS NEED TO BE MORE DYNAMIC
+# anno is always just sitting on the left, arc on the right, and CS in the middle
+# need to like, make this more interesting
+
 label new_plan:
     scene outside_ltt
     show cs angry at center
@@ -167,8 +171,15 @@ label write_song:
     $ song_name_1 = renpy.input("What should we call the song?", "Prison Break")
     cs "How about {i}[song_name_1]{/i}?"
     $ achievement_manager.unlock("Hi, My Name Is...")
-    anno "That's awesome."
-    arceus "I like it!"
+    if song_name_1 == "FUCK SEX BALLS":
+        arceus "Haha, very funny, Pakoo."
+        cs "Huh?"
+        arceus "Sorry, I meant CS. I don't know why I said Pakoo."
+        anno "Well, I like it."
+        arceus "I'm cool with it."
+    else:
+        anno "That's awesome."
+        arceus "I like it!"
     cs "Alright, it's settled! Let's upload {i}[song_name_1]{/i} to streaming services!"
     arceus "Are you going to plug it in the Discord?"
     cs "I guess I should, but people are going to be really confused as to why I'm not streaming still..."
