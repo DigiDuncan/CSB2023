@@ -389,6 +389,10 @@ class ComboAttack:
             if t in types:
                 return t
         return "damage"
+    
+    @property
+    def options(self) -> dict:
+        return self.attacks[0].options
 
 class Fighter:
     def __init__(self, name: str, enemy: bool, hp: int, ap: int, atk: int, attacks: list[Attack | ComboAttack], sprite: Displayable, multiplier: float = 1, ai: AI = None):
