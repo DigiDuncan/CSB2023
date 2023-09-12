@@ -476,3 +476,6 @@ label good_ramsay:
     
 label top_zone:
     cs "I kinda wanna go on Top Gear."
+    kitty "Well now I gotta see that."
+    kitty "What are you gonna do to get on the show?"
+    cs "I thinking of trying "
