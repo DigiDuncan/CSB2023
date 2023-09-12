@@ -44,8 +44,8 @@ label rpg_ucn:
     $ ucn_scale = renpy.display_menu([(str(a), a) for a in scales], screen="ucn_choice")
 
     rpg:
-        bg "images/bg/casino1.png"
-        music "audio/card_castle.mp3"
+        bg "ucn"
+        music "ucn"
         fighters:
             $party_1
             $party_2

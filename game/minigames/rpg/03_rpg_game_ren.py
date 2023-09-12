@@ -776,8 +776,8 @@ def execute_rpg(parsed_object):
         [getattr(Fighters, globals().get(fighter.replace("$", "")).upper())
          if fighter.startswith("$")
          else getattr(Fighters, fighter.upper()) for fighter in f],
-        Image(b),
-        m,
+        Image(ucn_bg) if b == "ucn" else Image(b),
+        ucn_music if m == "ucn" else m,
         ucn_scale if s == "\"ucn\"" else float(s),
         l,
         ll

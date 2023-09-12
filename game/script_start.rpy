@@ -722,11 +722,12 @@ default line_10 = ""
 default enemy_1 = "cop"
 default enemy_2 = "cop"
 default enemy_3 = "cop"
-default enemy_4 = "cop"
 default party_1 = "cs"
 default party_2 = "tate"
 default party_3 = "digi"
 default party_4 = "arceus"
+default ucn_bg = "images/bg/casino1.png"
+default ucn_music = "audio/card_castle.mp3"
 default ucn_scale = 1.0
 default cont = False
 
