@@ -3,7 +3,8 @@
 # cs surprised
 # customer
 # guest
-# mean
+# mean [needs bio]
+# agent [needs bio]
 
 # Needed backgrounds:
 # hotel_lobby
