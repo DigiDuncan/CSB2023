@@ -403,7 +403,7 @@ label hell_zone:
     menu:
         "Make some Genergy":
             jump good_ramsay
-        "Make a YTP":
+        "Make Phil's cake":
             jump bad_ramsay
 
 label good_ramsay:
@@ -433,4 +433,46 @@ label good_ramsay:
     gordon "I can't even describe it, but..."
     gordon "It's really good, actually."
     gordon "This might be, the best damn thing I've ever tasted."
+    gordon "Fuck..."
+    n "Gordon turns around walks into the backroom area again."
+    cs "Holy shit, I did it!"
+    cs "Arceus is gonna be so surpised when he hears the news!"
+    cs "Man, I wish he could've seen this."
+    n "Gordon comes back with a briefcase, full of cash."
+    gordon "Listen, I don't know how you made that, but I'll buy your recipe for £100,000."
+    gordon "We won't need to speak of this again."
+    cs "Well, shit yeah, I guess I really can't say no to that."
+    n "Gordon gives the briefcase to CS."
+    gordon "Alright, thank you. Now leave."
+    cs "Thanks!"
+    n "CS takes the briefcase and heads back to the car."
+    arceus "Well, how'd it go?"
+    cs "I think..."
+    cs "That you were wrong!"
+    n "CS pulls out the briefcase and shows it to Arc."
+    arceus "Holy shit! What'd you do??"
+    cs "I made him a Genergy, CS style!"
+    cs "He apparently loved it so much he bought my recipe!"
+    arceus "WHHAATT?"
+    arceus "You got Gordon Ramsay, Master Chef, your recipe in one go?"
+    cs "Yep!"
+    arceus "Man, your crazy."
+    arceus "Whatever, let's head back home."
+    n "CS and Arc head back home."
+    n "Once CS and Arc get home, they go inside and discuss the news."
+    kitty "CS did what?"
+    arceus "Yeah, I know right? I don't understand either."
+    kitty "What is in this Genergy drink of yours?"
+    cs "Well, I sold the recipe, so I don't really know anymore."
+    kitty "Oh, dang..."
+    cs "Just kidding! I still have a back-up, but I'm gonna keep it secret."
+    kitty "Ah ok."
+    arceus "Well, you did quite a bit already, is there anything else you want to do here?"
+    menu:
+        "Go on Top Gear":
+            jump top_zone
+        "Go on adventure with Tom Scott":
+            jump scott_zone
     
+label top_zone:
+    cs "I kinda wanna go on Top Gear."

@@ -251,6 +251,7 @@ define nurse = Character("Nurse", callback = char_callback)
 define benrey = Character("Benrey", callback = renpy.partial(char_callback, name = "benrey"))
 define mean = Character("Mean", callback = char_callback)  # TODO: Beep
 define agent = Character("Agent", callback = char_callback)  # TODO: Beep
+define gordon = Character("Gordon", callback = char_callback)  # TODO: Beep
 
 # Character Images
 ## CS
