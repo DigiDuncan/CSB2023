@@ -57,7 +57,7 @@ label new_plan:
     arceus "Come on, let's go back to the hotel. We can think of something, I'm sure."
     cs "Alright man, thanks. Let's go."
 
-    # scene hotel_lobby
+    scene hotel_lobby
     show cs at right
     show arceus at left
     with fade
@@ -65,7 +65,7 @@ label new_plan:
     cs "Alrighty then. Not like I'll be able to pay for my own much longer..."
     arceus "Oh come on, don't talk like that. Come on."
 
-    # scene hotel_room
+    scene hotel_room
     show arceus at right
     show cs at left
     with fade
@@ -134,7 +134,7 @@ label guitar_hero:
     cs "Woohoo!"  # haha I did it too Pakoo
     $ achievement_manager.unlock("Guitar Hero")
 
-    # scene hotel_room
+    scene hotel_room with fade
     cs "Maybe we should call Blank. He's like, an actual musician."
     n "CS calls Blank on Discord."
     blank "CS? Where the heck have you been?"
@@ -151,10 +151,10 @@ label guitar_hero:
 
 label write_song:
     stop music
-    # scene black with dissolve
+    scene black with dissolve
     n "After some time, the gang have their first song written."
 
-    # scene hotel_room with dissolve
+    scene hotel_room with dissolve
     show arceus at right with moveinright
     arceus "You know, that's not half bad."
     show anno at left with moveinright
@@ -202,7 +202,7 @@ label write_song:
 
 label hotel_next_day:
     stop music
-    # scene hotel_room with dissolve
+    scene hotel_room with dissolve
     show cs at left with moveinleft
     cs "Let's go get breakfast."
     show anno with moveinleft
@@ -210,7 +210,7 @@ label hotel_next_day:
     show arceus flipped at right with moveinleft
     arceus "Those sausages are amazing."
 
-    # scene hotel_elevator
+    scene hoh_elevator with fade
     show anno at left
     show arceus at right
     show cs
@@ -228,9 +228,9 @@ label hotel_next_day:
     cs "Yeah, sorry."
 
     pause 2.0
-    # play sound elevator_ding
+    play sound "audio/elevator_ding.ogg"
 
-    # scene hotel_breakfast with dissolve
+    scene hotel_breakfast with fade
     show cs at center with moveinleft
     cs "Ah, nothing like a hotel breakfast to wake me up."
     n "The other two groggily join CS."
@@ -271,7 +271,7 @@ label hotel_next_day:
 
 label song_2:
     stop music
-    # scene hotel_room
+    scene hotel_room
     show anno at left
     show arceus at right
     show cs
@@ -301,7 +301,7 @@ label song_2:
     scene black with dissolve
     n "After a furious writing session, their new song is done!"
 
-    # scene hotel_room
+    scene hotel_room
     show anno at left
     show arceus at right
     show cs
@@ -345,7 +345,7 @@ label song_2:
 label ep_time:
     stop music
     pause 1.0
-    # scene hotel_breakfast
+    scene hotel_breakfast
     show anno at left
     show arceus flipped at right
     show cs
@@ -407,7 +407,7 @@ label ep_time:
 
 label back_to_room:
     stop music
-    # scene hotel_room
+    scene hotel_room
     show anno
     with dissolve
 
@@ -455,7 +455,7 @@ label back_to_room:
 label mcd:
     stop music
 
-    # scene hotel_room
+    scene hotel_room
     show anno at left
     show arceus at right
     show cs
@@ -534,7 +534,7 @@ label mcd:
 label hotel_lobby_2:
     stop music
 
-    # scene hotel_lobby
+    scene hotel_lobby    
     show anno at left
     show arceus at right
     show cs
@@ -570,7 +570,7 @@ label hotel_lobby_2:
 
 label song_5:
     stop music
-    # scene hotel_room
+    scene hotel_room
     show anno at left
     show arceus at right
     show cs
@@ -641,7 +641,7 @@ label fan_interaction:
     n "Anno drops his phone."
     anno "Guys... we might have more money than we thought."
 
-    # scene hotel_room
+    scene hotel_room
     show anno at left
     show arceus at right
     show cs 

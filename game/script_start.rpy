@@ -519,6 +519,9 @@ image comments = "bg/comments.png"
 image hospital_room = "bg/hospital_room.png"
 image hospital_reception = "bg/hospital_reception.png"
 image ticket_counter = "bg/ticket_counter.png"
+image hotel_lobby = "bg/hotel_lobby.png"
+image hotel_room = "bg/hotel_room.png"
+image hotel_breakfast = "bg/hotel_breakfast.png"
 
 ## CSBIII Chapter 2
 image washington_road day = "bg/washingtonroadday.png"
