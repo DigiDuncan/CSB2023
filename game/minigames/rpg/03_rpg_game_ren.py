@@ -1,12 +1,13 @@
 from __future__ import annotations
 
 import renpy
-import renpy.random  # noqa
+import renpy.random  # type: ignore
 from renpy.display.core import Displayable
 from renpy.display.im import Image
 from renpy.display.imagelike import Solid
 from renpy.text import Text
 
+# This is the equivalent of a python early block in a .rpy file.
 """renpy
 python early:
 """
@@ -310,8 +311,8 @@ class AI:
         
         # Run the attack
         answer = what.run(subject, who)
-        print(f"[AI: {self.name}] {subject.name} running attack {what.name} on {sentence_join([t.name for t in who])}...")
-        renpy.notify(f"[AI: {self.name}] {subject.name} running attack {what.name} on {sentence_join([t.name for t in who])}...")
+        print(f"[AI: {self.name}] {subject.name} running attack {what.name} on {sentence_join([t.name for t in who])}...")  # type: ignore
+        renpy.notify(f"[AI: {self.name}] {subject.name} running attack {what.name} on {sentence_join([t.name for t in who])}...")  # type: ignore
         renpy.pause(1.0)
         return answer
 
@@ -806,7 +807,7 @@ class RPGGameDisplayable(renpy.Displayable):
         return r
 
     def event(self, ev, x, y, st):
-        import pygame  # noqa
+        import pygame  # type: ignore
         if ev.type == pygame.KEYDOWN and ev.key == pygame.K_END:
             self.win = True
         if self.win is not None:
@@ -863,9 +864,9 @@ def execute_rpg(parsed_object):
         [getattr(Fighters, globals().get(fighter.replace("$", "")).upper())
          if fighter.startswith("$")
          else getattr(Fighters, fighter.upper()) for fighter in f],
-        Image(ucn_bg) if b == "ucn" else Image(b),
-        ucn_music if m == "ucn" else m,
-        ucn_scale if s == "\"ucn\"" else float(s),
+        Image(ucn_bg) if b == "ucn" else Image(b),  # type: ignore
+        ucn_music if m == "ucn" else m,  # type: ignore
+        ucn_scale if s == "\"ucn\"" else float(s),  # type: ignore
         l,
         ll
     )
