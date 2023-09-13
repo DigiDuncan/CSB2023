@@ -522,7 +522,6 @@ image ticket_counter = "bg/ticket_counter.png"
 image hotel_lobby = "bg/hotel_lobby.png"
 image hotel_room = "bg/hotel_room.png"
 image hotel_breakfast = "bg/hotel_breakfast.png"
-image 
 
 ## CSBIII Chapter 2
 image washington_road day = "bg/washingtonroadday.png"
@@ -610,7 +609,7 @@ image uk_street = "bg/uk_street.png"
 image kitty_house = "bg/kitty_house.png"
 image kitty_room = "bg/kitty_room.png"
 image dining_room = "bg/diningroom.png"
-image hell_outside "bg/hell_outside.png"
+image hell_outside = "bg/hell_outside.png"
 
 ## AI Ending
 image park1 = "bg/ai/amusementpark1.png"
