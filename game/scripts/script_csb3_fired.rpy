@@ -653,7 +653,7 @@ label fan_interaction:
     cs "Holy shit, that's a lot of sales, how much money{nw}"
     anno "57,688."
     cs "OK, yeah, I got that, how much money does that equate to{nw}"
-    anno "57,692...{nw}"
+    anno "57,692...{w=0.5}{nw}"
     cs "Stop refreshing the page!"
     anno "Sorry."
     cs "How much money is that?"
@@ -671,14 +671,45 @@ label fan_interaction:
     cs "How are we going to figure out how to--"
     n "Anno gets an email."
     anno "Wait, hold on, let me read this, it looks important."
-    agent "{b}Tour Offer{/b}\nHey, [band_name]!\nMy name is David Cross, and I'm a talent agent and tour manager."
+    agent "{b}Tour Offer{/b}\nHey, [band_name]!\nMy name is Howie Mandell, and I'm a talent agent and tour manager."
     cs "Woah, really?"
     agent "I'm emailing to inquire if you'd be interested in touring the country with your band. Your latest EP, [ep_name], has been making big waves on streaming services, and a live performance might be just what you need to take the next step."
     anno "Oh my God!"
     agent "If you're willing to negotiate, I think we could strike a very mutually benefitial deal for both of us."
     arceus "That sounds amazing!"
-    agent "Please get in touch as soon as you can,\n-- David"
+    agent "Please get in touch as soon as you can,\n-- Howie Mandell"
     cs "We have to accept, right?"
     arceus "Our last two gambles paid off, I guess we gotta go all the way."
     anno "We can't pass this up. I'll email him back."
     cs "[band_name] is going on tour!"
+
+    scene black with dissolve
+    n "After a few hours, the band meet Howie downstairs in the lobby."
+
+    scene hotel_lobby
+    show anno
+    show cs at mid_right
+    show arceus at right
+    with dissolve
+
+    n "Howie walks into the lobby."
+    # show howie at left with moveinleft
+    agent "You guys ready?"
+    cs "Ready for what?"
+    agent "A ride in a limosine!"
+    n "The group is in shock."
+    anno "Already? We haven't even struck a deal!"
+    agent "Ah, you will, I trust in that. But until then, why don't I treat you all to the ride of a lifetime?"
+    n "CS, Anno, and Arc all head into the limo out front, lead by Howie."
+    hide cs
+    hide anno
+    hide arceus
+    # hide howie
+    with moveoutleft
+
+    # scene in_limo with dissolve
+    arceus "These snacks are amazing!"
+    anno "This music's awesome!"
+    cs "These seats are some comfy!"
+    agent "Alright boys, enough chat, let's talk business."
+    
