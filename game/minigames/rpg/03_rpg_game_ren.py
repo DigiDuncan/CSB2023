@@ -765,17 +765,17 @@ class EnemyDisplayable(renpy.Displayable):
             damage_color = None
             damage_text = None
             if a[1] == "ap":
-                damage_color = "#0000FF"
+                damage_color = (0x00, 0x00, 0xFF)
                 damage_text = str(a[0])
                 # Hit to armour points
 
             elif a[1] == "atk":
-                damage_color = "#FFFF00"
+                damage_color = (0xFF, 0xFF, 0x00)
                 damage_text = str(a[0])
                 # Hit to ATK points
 
             elif a[1] == "confusion":
-                damage_color = "#FF00FF"
+                damage_color = (0xFF, 0x00, 0xFF)
                 if a[0] == 0:
                     damage_text = "Unconfused"
                 else:
@@ -784,11 +784,11 @@ class EnemyDisplayable(renpy.Displayable):
 
             elif a[1] == "hp":
                 if a[0]<0:
-                    damage_color = "#FF0000"
+                    damage_color = (0xFF, 0x00, 0x00)
                     damage_text = str(abs(a[0]))
 
                 else:
-                    damage_color = "#00FF00"
+                    damage_color = (0x00, 0xFF, 0x00)
                     damage_text = str(abs(a[0]))
                     # Ow my crotch
 
@@ -796,10 +796,11 @@ class EnemyDisplayable(renpy.Displayable):
                 continue
 
             # Now make the thing
-            damage_text_object = Text(damage_text, color=damage_color, size=self.damage_size)
+            alpha = ease_linear(255, 0, DAMAGE_INDICATOR_TIME/2, DAMAGE_INDICATOR_TIME, t)
+            damage_text_object = Text(damage_text, color=damage_color + (alpha,), size=self.damage_size)
             # Define position and alpha
             motion = ease_quad(self.damage_indicator_y, self.damage_indicator_y - 50 ,0, DAMAGE_INDICATOR_TIME / 2, t)
-            alpha = ease_linear(100, 0, DAMAGE_INDICATOR_TIME/2, DAMAGE_INDICATOR_TIME, t)
+        
             print(self.damage_indicator_x)
             print(motion)
             r.place(damage_text_object, x = int(self.damage_indicator_x), y = int(motion))
