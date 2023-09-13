@@ -733,16 +733,20 @@ class EnemyDisplayable(renpy.Displayable):
         self.red_part = Solid("#FF0000", xsize = 0, ysize = 0)
         self.green_part = Solid("#00FF00", xsize = 0, ysize = 0)
         self.size = renpy.image_size(self.fighter.sprite)
-        self.damage_indicators: list[tuple[Answer, float]] = []
+        self.damage_indicators: list[list[Answer, float]] = []
         self.damage_indicator_x = self.size[0] / 2
         self.damage_indicator_y = self.size[1] * 0.1
         self.damage_size = 50
+        self.last_tick = None
         super().__init__(self)
 
     def show_damage_indicator(self, ans: Answer):
-        self.damage_indicators.append((ans, 0.0))
+        self.damage_indicators.append([ans, 0.0])
     
     def render(self, width, height, st, at):
+        if self.last_tick is None:
+            self.last_tick = st
+        dt = st - self.last_tick
         r = renpy.Render(640, self.size[1])
         r.place(self.fighter.sprite, x = 0, y = 0)
         # Making the health bar
@@ -794,18 +798,20 @@ class EnemyDisplayable(renpy.Displayable):
             # Now make the thing
             damage_text_object = Text(damage_text, color=damage_color, size=self.damage_size)
             # Define position and alpha
-            motion = ease_quad(self.damage_indicator_y, self.damage_indicator_y + 50 ,0, DAMAGE_INDICATOR_TIME / 2, t)
+            motion = ease_quad(self.damage_indicator_y, self.damage_indicator_y - 50 ,0, DAMAGE_INDICATOR_TIME / 2, t)
             alpha = ease_linear(100, 0, DAMAGE_INDICATOR_TIME/2, DAMAGE_INDICATOR_TIME, t)
             print(self.damage_indicator_x)
             print(motion)
             r.place(damage_text_object, x = int(self.damage_indicator_x), y = int(motion))
 
         # Remove expired damage indicators
-        for d, t in self.damage_indicators:
+        self.damage_indicators = [[a, t + dt] for a, t in self.damage_indicators]
+        for a, t in self.damage_indicators:
             if t > DAMAGE_INDICATOR_TIME:
-                self.damage_indicators.remove((d, t))
+                self.damage_indicators.remove([a, t])
 
         renpy.redraw(self, 0)
+        self.last_tick = st
         return r
 
     def visit(self):
