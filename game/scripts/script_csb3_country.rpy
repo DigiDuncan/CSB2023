@@ -446,6 +446,25 @@ label hell_zone:
         "Make Phil's cake":
             jump bad_ramsay
 
+label bad_ramsay:
+    cs "I guess the only thing I can think of off the top of my head is the cake Phil made for Michael."
+    cs "That can't be too hard, right? It's just chocolate cake and Flex Seal, I think."
+    cs "Don't know if the Flex Seal adds any taste, but I guess it's worth a try?"
+    cs "Alright well, let's do this."
+    n "Over the next hour, CS bakes together the Flex Cake."
+    gordon "Alright Mr. 188, let's see what you've made!"
+    cs "This is my special chocolate cake design! With a secret ingredient."
+    gordon "Well well well, doesn't this look fantastic!"
+    gordon "Let's see how it tastes!"
+    n "Gordon takes a slice and starts eating it."
+    gordon "It's very rich and smooth on the outside,"
+    gordon "But it tastes weird, on the--{w=0.5}{nw}"
+    n "Gordon starts coughing."
+    cs "Woah, you okay there?"
+    n "Gordon holds his throat and falls over, spits the Flex Seal out, and passes out."
+    cs "Ooooooooohhhhh Fuuuuuuucckkk."
+    return
+
 label good_ramsay:
     cs "Yeah, you know what? I'm gonna make some Genergy."
     cs "It's my signature beverage! And Michael liked it, I think, and he's British too!"
@@ -531,4 +550,18 @@ label top_zone:
     cs "I kinda wanna go on Top Gear."
     kitty "Well now I gotta see that."
     kitty "What are you gonna do to get on the show?"
-    cs "I thinking of trying "
+    cs "I thinking of trying to race one of their cars in my car."
+    arceus "You don't have your car with you though..."
+    cs "Yeah, but I'm sure they have a spare Honda Civic!"
+    arceus "Still, you're crazy to think that you can beat them with that."
+    cs "Well, that's the fun part, right?"
+    cs "If I win, I'll blow them away!"
+    arceus "How do you even get on Top Gear, anyways?"
+    kitty "We might be able to just call them."
+    cs "If it's that easy, then hell yeah let's do it!"
+    n "Kitty calls the members of Top Gear to get CS on the show for a day."
+    kitty "Yeah, they said if you can drive over there today, we can start the race!"
+    cs "Wow, that was fast."
+    cs "Should we get going then?"
+    arceus "Sure, I guess. Let's go."
+    n "CS, Arc, and Kitty head up to the Top Gear Track."
