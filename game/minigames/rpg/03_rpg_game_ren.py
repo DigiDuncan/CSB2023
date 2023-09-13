@@ -699,7 +699,6 @@ class StatBlockDisplayable(renpy.Displayable):
     def render(self, width, height, st, at):
         x_al = 25
         y_al = 65
-        spacing = 10
         self.health_text = Text("HP: " + str(self.fighter.health_points) + "/" + str(self.fighter.max_health), color = "#FFFFFF", size = self.text_size)
         self.AP_text = Text("AP: " + str(self.fighter.armor_points), color = "#FFFFFF", size=self.text_size)
         self.ATK_text = Text("ATK: " + str(self.fighter.attack_points), color = "#FFFFFF", size=self.text_size)
@@ -735,6 +734,9 @@ class EnemyDisplayable(renpy.Displayable):
         self.green_part = Solid("#00FF00", xsize = 0, ysize = 0)
         self.size = renpy.image_size(self.fighter.sprite)
         self.damage_indicators: list[tuple[Answer, float]] = []
+        self.damage_indicator_x: self.size[0]/2
+        self.damage_indicator_y: self.size[1]*0.9
+        self.damage_size = 50
         super().__init__(self)
 
     def show_damage_indicator(self, ans: Answer):
@@ -752,6 +754,50 @@ class EnemyDisplayable(renpy.Displayable):
 
         # TODO: SHOW DAMAGE INDICATORS HERE
         # THIS IS WHERE ARC WRITES CODE
+        for a, t in self.damage_indicators:
+            # t is a float of how long it's been on screen
+            # a[0] is the damage amount
+            # a[1] is the damage type
+            damage_color = None
+            damage_text = None
+            if a[1] == "ap":
+                damage_color = "#0000FF"
+                damage_text = str(a[0])
+                # Hit to armour points
+
+            elif a[1] == "atk":
+                damage_color = "#FFFF00"
+                damage_text = str(a[0])
+                # Hit to ATK points
+
+            elif a[1] == "confusion":
+                damage_color = "#FF00FF"
+                if a[0] == 0:
+                    damage_text = "Unconfused"
+                else:
+                    damage_text = "Confused"
+                # Change confusion status
+
+            elif a[1] == "hp":
+                if a[0]>0:
+                    damage_color = "#FF0000"
+                    damage_text = str(abs(a[0]))
+
+                else:
+                    damage_color = "#00FF00"
+                    damage_text = str(abs(a[0]))
+                    # Ow my crotch
+
+            else:
+                continue
+
+            # Now make the thing
+            damage_text_object = Text(damage_text, color=damage_color, size=self.damage_size)
+            # Define position and alpha
+            motion = ease_quad(self.damage_indicator_y, self.damage_indicator_y+50 ,0, DAMAGE_INDICATOR_TIME/2, t)
+            motion = int(motion)
+            alpha = ease_linear(100, 0, DAMAGE_INDICATOR_TIME/2, DAMAGE_INDICATOR_TIME, t)
+            r.place(damage_text_object, x=self.damage_indicator_x, y=motion)
 
         # Remove expired damage indicators
         for d, t in self.damage_indicators:
@@ -763,7 +809,7 @@ class EnemyDisplayable(renpy.Displayable):
 
     def visit(self):
         return [self.fighter.sprite, self.red_part, self.green_part]
-
+    
 class RPGGameDisplayable(renpy.Displayable):
     def __init__(self, encounter: Encounter):
         self.encounter = encounter
