@@ -565,3 +565,8 @@ label top_zone:
     cs "Should we get going then?"
     arceus "Sure, I guess. Let's go."
     n "CS, Arc, and Kitty head up to the Top Gear Track."
+    n "As they drive up to the track, the gang sees Jermey, Richard, and James."
+    kitty "Alright, we'll watch from the side of the track."
+    arceus "Good luck CS!"
+    cs "Thanks!"
+    n "CS gets out of the car and heads up to the Top Gear crew."
