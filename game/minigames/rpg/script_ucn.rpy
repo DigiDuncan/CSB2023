@@ -19,7 +19,7 @@ screen ucn_mainmenu:
 label rpg_ucn:
     $ renpy.hide_screen("menu")
     scene game_menu
-    centered "Loading...{w=1.0}{nw}"
+    centered "Loading...{w=1.0}{nw}"  # This isn't required.
     $ scales = [1.0, 1.25, 1.5, 1.75, 2.0, 2.5, 3.0]
 
     $ narrator("Choose a party member! (1/4)", interact = False)
@@ -62,3 +62,6 @@ label after_ucn:
         jump rpg_ucn
     else:
         show screen ucn_mainmenu
+        # TODO: Arc, why does this not return me to the main menu?
+        # It keeps bringing me back to the chapter select screen
+        # Getting angy -- Digi

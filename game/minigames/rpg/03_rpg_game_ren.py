@@ -20,6 +20,14 @@ AnswerList = list[Answer]
 
 DAMAGE_INDICATOR_TIME = 1.0
 
+# https://stackoverflow.com/questions/5189699/how-to-make-a-class-property
+class classproperty(object):
+    def __init__(self, f):
+        self.f = f
+
+    def __get__(self, obj, owner):
+        return self.f(owner)
+
 # Functions
 def damage_fighters(subject: Fighter, targets: list[Fighter], crit: bool, options: dict) -> AnswerList:
     """Damage a list of fighters.
@@ -545,14 +553,6 @@ class Encounter:
             return True
         else:
             return None
-        
-# https://stackoverflow.com/questions/5189699/how-to-make-a-class-property
-class classproperty(object):
-    def __init__(self, f):
-        self.f = f
-
-    def __get__(self, obj, owner):
-        return self.f(owner)
 
 class Attacks:
     PUNCH = Attack("Punch", damage_fighters)
@@ -606,6 +606,10 @@ class Attacks:
     @classproperty
     def attacks(cls) -> list[Attack]:
         return [cls.__dict__[a] for a in cls.names]
+    
+    @classmethod
+    def get(cls, k: str, default = None) -> Attack | None:
+        return cls.__dict__.get(k, default)
 
 class Fighters:
     NONE = None
@@ -666,6 +670,10 @@ class Fighters:
     @classproperty
     def allies(cls) -> list[Attack]:
         return [cls.get(f) for f in cls.ally_names]
+    
+    @classmethod
+    def get(cls, k: str, default = None) -> Fighter | None:
+        return cls.__dict__.get(k, default)
 
 # Dummy encounter to avoid errors
 encounter = Encounter([], Image("images/bg/black.png"), "audio/legosfx.mp3", 1, "start", "secret")
