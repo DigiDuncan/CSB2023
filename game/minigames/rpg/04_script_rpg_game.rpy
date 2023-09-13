@@ -49,7 +49,10 @@ label game_loop:
             for c in range(len(actions)):
                 renpy.notify(actions[c][0].name + " uses " + actions[c][0].attacks[actions[c][1]].name + " on " + sentence_join([f.name for f in actions[c][2]]))
                 renpy.pause(1.0)
-                answer = actions[c][0].attack(actions[c][1], actions[c][2])
+                answer_list = actions[c][0].attack(actions[c][1], actions[c][2])
+                for f, a in zip(actions[c][2], answer_list):
+                    displayable = rpggame.get_displayable_by_fighter(f)
+                    displayable.show_damage_indicator(a)
             print("Executing enemy moves.")
             for e in encounter.enemies:
                 e.attack_ai(encounter)

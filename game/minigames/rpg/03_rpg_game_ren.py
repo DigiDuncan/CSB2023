@@ -81,7 +81,7 @@ def damage_over_time(subject: Fighter, targets: list[Fighter], crit: bool, optio
     for f in targets:
         f.damage_per_turn.append((subject.attack_points * mult, turns))
         print(f"Added {subject.attack_points * mult} DOT to {f.name} for {turns} turns.")
-    return []
+    return [(0, "none")]
 
 def random_damage_fighters(subject: Fighter, targets: list[Fighter], crit: bool, options: dict) -> AnswerList:
     """Damage a list of fighters for a value between two multiples..
@@ -473,7 +473,7 @@ class Fighter:
             return self.attacks[style].run(self, targets)
         elif self.confused:
             renpy.notify(f"{self.name} is confused!")
-            return []
+            return [(0, "none")]
 
     def attack_ai(self, encounter: Encounter) -> AnswerList:
         if not self.dead:
@@ -734,8 +734,8 @@ class EnemyDisplayable(renpy.Displayable):
         self.green_part = Solid("#00FF00", xsize = 0, ysize = 0)
         self.size = renpy.image_size(self.fighter.sprite)
         self.damage_indicators: list[tuple[Answer, float]] = []
-        self.damage_indicator_x: self.size[0]/2
-        self.damage_indicator_y: self.size[1]*0.9
+        self.damage_indicator_x = self.size[0] / 2
+        self.damage_indicator_y = self.size[1] * 0.9
         self.damage_size = 50
         super().__init__(self)
 
@@ -794,10 +794,10 @@ class EnemyDisplayable(renpy.Displayable):
             # Now make the thing
             damage_text_object = Text(damage_text, color=damage_color, size=self.damage_size)
             # Define position and alpha
-            motion = ease_quad(self.damage_indicator_y, self.damage_indicator_y+50 ,0, DAMAGE_INDICATOR_TIME/2, t)
+            motion = ease_quad(self.damage_indicator_y, self.damage_indicator_y + 50 ,0, DAMAGE_INDICATOR_TIME / 2, t)
             motion = int(motion)
             alpha = ease_linear(100, 0, DAMAGE_INDICATOR_TIME/2, DAMAGE_INDICATOR_TIME, t)
-            r.place(damage_text_object, x=self.damage_indicator_x, y=motion)
+            r.place(damage_text_object, x = self.damage_indicator_x, y = motion)
 
         # Remove expired damage indicators
         for d, t in self.damage_indicators:
@@ -865,7 +865,7 @@ class RPGGameDisplayable(renpy.Displayable):
     def get_displayable_by_fighter(self, fighter: Fighter) -> Optional[EnemyDisplayable | StatBlockDisplayable]:
         valid_displayables = [d for d in self.enemy_displayables + self.statblock_displayables if d.fighter == fighter]
         if valid_displayables:
-            return next(valid_displayables)
+            return valid_displayables[0]
         return None
 
 rpggame = RPGGameDisplayable(encounter)
