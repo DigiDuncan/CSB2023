@@ -735,7 +735,7 @@ class EnemyDisplayable(renpy.Displayable):
         self.size = renpy.image_size(self.fighter.sprite)
         self.damage_indicators: list[tuple[Answer, float]] = []
         self.damage_indicator_x = self.size[0] / 2
-        self.damage_indicator_y = self.size[1] * 0.9
+        self.damage_indicator_y = self.size[1] * 0.1
         self.damage_size = 50
         super().__init__(self)
 
@@ -779,7 +779,7 @@ class EnemyDisplayable(renpy.Displayable):
                 # Change confusion status
 
             elif a[1] == "hp":
-                if a[0]>0:
+                if a[0]<0:
                     damage_color = "#FF0000"
                     damage_text = str(abs(a[0]))
 
@@ -795,9 +795,10 @@ class EnemyDisplayable(renpy.Displayable):
             damage_text_object = Text(damage_text, color=damage_color, size=self.damage_size)
             # Define position and alpha
             motion = ease_quad(self.damage_indicator_y, self.damage_indicator_y + 50 ,0, DAMAGE_INDICATOR_TIME / 2, t)
-            motion = int(motion)
             alpha = ease_linear(100, 0, DAMAGE_INDICATOR_TIME/2, DAMAGE_INDICATOR_TIME, t)
-            r.place(damage_text_object, x = self.damage_indicator_x, y = motion)
+            print(self.damage_indicator_x)
+            print(motion)
+            r.place(damage_text_object, x = int(self.damage_indicator_x), y = int(motion))
 
         # Remove expired damage indicators
         for d, t in self.damage_indicators:
