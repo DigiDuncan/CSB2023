@@ -545,6 +545,14 @@ class Encounter:
             return True
         else:
             return None
+        
+# https://stackoverflow.com/questions/5189699/how-to-make-a-class-property
+class classproperty(object):
+    def __init__(self, f):
+        self.f = f
+
+    def __get__(self, obj, owner):
+        return self.f(owner)
 
 class Attacks:
     PUNCH = Attack("Punch", damage_fighters)
@@ -591,6 +599,14 @@ class Attacks:
     SHELL = Attack("Shell", random_damage_fighters, min_mult = 1, max_mult = 2, mult = 1)
     HEAL_EX = Attack("Heal EX", heal_fighters, target_count = 0, target_type = "allies", mult = 5)
 
+    @classproperty
+    def names(cls) -> list[str]:
+        return [a for a in dir(cls) if a.isupper()]
+    
+    @classproperty
+    def attacks(cls) -> list[Attack]:
+        return [cls.__dict__[a] for a in cls.names]
+
 class Fighters:
     NONE = None
     CS = Fighter("CS", False, 188, 10, 25, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/cs/neutral.png"))
@@ -621,13 +637,37 @@ class Fighters:
     SML_TANK = Fighter("Sherman", True, 500, 60, 120, [Attacks.SHELL], Image("images/characters/sherman.png"), ai = AIType.AGGRO)
     MARINE = Fighter("Marine", True, 300, 30, 45, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/marine.png"), ai = AIType.SMART)
     BIG_TANK = Fighter("Abrams", True, 700, 70, 150, [Attacks.SHELL], Image("images/characters/abrams.png"), ai = AIType.AGGRO)
-    COPGUY_EX = Fighter("Copguy EX", True, 2000, 30, 50, [Attacks.PUNCH, Attacks.BULLET_SPRAY, Attacks.SLASH, Attacks.LIGHT_CAST, Attacks.INSIGHT,
-                                                     Attacks.SHOTGUN, Attacks.ENCOURAGE, Attacks.HIGH_NOON, Attacks.SCRATCH, Attacks.ARMOUR,
-                                                     Attacks.DAMAGE_SCREM, Attacks.SCREM, Attacks.ELDRITCH_BLAST, Attacks.RAINBOW_VOMIT,
-                                                     Attacks.ROBOPUNCH, Attacks.HOLOSHIELD, Attacks.MUSIC_BOOST, Attacks.RAVE, Attacks.SAMPLE_BLAST,
-                                                     Attacks.GNOMED, Attacks.NUDGE, Attacks.DRAW_IN, Attacks.CONFIDENCE, Attacks.PEP_TALK, Attacks.RADS_ATTACK,
-                                                     Attacks.AI_MIMIC, Attacks.SHELL], Image("images/characters/copguy.png"), ai = AIType.COPGUY_EX)
+    COPGUY_EX = Fighter("Copguy EX", True, 2000, 30, 50, Attacks.attacks, Image("images/characters/copguy.png"), ai = AIType.COPGUY_EX)
     PAKOOE = Fighter("Pakoo", True, 9999, 70, 150, [Attacks.FUN_VALUE], Image("images/characters/pakoo_disappointed.png"), ai = AIType.AGGRO)
+
+    @classproperty
+    def names(cls) -> list[str]:
+        return [f for f in dir(cls) if f.isupper()]
+    
+    @classproperty
+    def enemy_names(cls) -> list[str]:
+        print(dir(cls))
+        return [f for f in dir(cls) if f.isupper() and f != "NONE" and cls.__dict__[f].enemy]
+    
+    @classproperty
+    def ally_names(cls) -> list[str]:
+        print(dir(cls))
+        print(cls.__dict__)
+        return [f for f in dir(cls) if f.isupper() and f != "NONE" and not cls.__dict__[f].enemy]
+    
+    @classproperty
+    def fighters(cls) -> list[Attack]:
+        return [cls.__dict__[f] for f in cls.names]
+    
+    @classproperty
+    def enemies(cls) -> list[Attack]:
+        return [cls.get(f) for f in cls.enemy_names]
+    
+    @classproperty
+    def allies(cls) -> list[Attack]:
+        return [cls.get(f) for f in cls.ally_names]
+
+# Dummy encounter to avoid errors
 encounter = Encounter([], Image("images/bg/black.png"), "audio/legosfx.mp3", 1, "start", "secret")
 
 # This is the displayable that controls what's happening in the boxes at the bottom of the screen
