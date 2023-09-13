@@ -12,10 +12,13 @@ python early:
 """
 
 from copy import copy
-from typing import Callable, Literal
+from typing import Callable, Literal, Optional
 
 DamageType = Literal["hp", "confusion", "ap", "atk", "none"]
-AnswerList = list[tuple[int, str]]
+Answer = tuple[int, DamageType]
+AnswerList = list[Answer]
+
+DAMAGE_INDICATOR_TIME = 1.0
 
 # Functions
 def damage_fighters(subject: Fighter, targets: list[Fighter], crit: bool, options: dict) -> AnswerList:
@@ -638,7 +641,11 @@ class StatBlockDisplayable(renpy.Displayable):
         self.AP_text = Text("AP: " + str(self.fighter.armor_points), color = "#FFFFFF", size = self.text_size)
         self.ATK_text = Text("ATK: " + str(self.fighter.attack_points), color = "#FFFFFF", size = self.text_size)
         self.stat_back = Image("minigames/rpg/statbox.png")
+        self.damage_indicators: list[tuple[Answer, float]] = []
         super().__init__(self)
+
+    def show_damage_indicator(self, ans: Answer):
+        self.damage_indicators.append((ans, 0.0))
 
     def render(self, width, height, st, at):
         x_al = 25
@@ -653,6 +660,15 @@ class StatBlockDisplayable(renpy.Displayable):
         r.place(self.health_text, x = x_al, y = y_al)
         r.place(self.AP_text, x = x_al, y = y_al * 2)
         r.place(self.ATK_text, x = x_al, y = y_al * 3)
+
+        # TODO: SHOW DAMAGE INDICATORS HERE
+        # THIS IS WHERE ARC WRITES CODE
+
+        # Remove expired damage indicators
+        for d, t in self.damage_indicators:
+            if t > DAMAGE_INDICATOR_TIME:
+                self.damage_indicators.remove((d, t))
+
         renpy.redraw(self, 0)
         return r
     
@@ -669,7 +685,11 @@ class EnemyDisplayable(renpy.Displayable):
         self.red_part = Solid("#FF0000", xsize = 0, ysize = 0)
         self.green_part = Solid("#00FF00", xsize = 0, ysize = 0)
         self.size = renpy.image_size(self.fighter.sprite)
+        self.damage_indicators: list[tuple[Answer, float]] = []
         super().__init__(self)
+
+    def show_damage_indicator(self, ans: Answer):
+        self.damage_indicators.append((ans, 0.0))
     
     def render(self, width, height, st, at):
         r = renpy.Render(640, self.size[1])
@@ -678,8 +698,17 @@ class EnemyDisplayable(renpy.Displayable):
         # THIS IS GARBAGE FULL OF MAGIC NUMBERS
         self.red_part = Solid("#FF0000", xsize = 1920 // 9, ysize = 1920 // 54)
         self.green_part = Solid("#00FF00", xsize = int((1920 // 9) * ((self.fighter.health_points) / (self.fighter.max_health))), ysize = 1920 // 54)
-        r.place(self.red_part, x = (self.size[0] // 2)-((1920 // 9) // 2), y = int(25))
-        r.place(self.green_part, x = (self.size[0] // 2)-((1920 // 9) // 2), y = int(25))
+        r.place(self.red_part, x = (self.size[0] // 2) - ((1920 // 9) // 2), y = int(25))
+        r.place(self.green_part, x = (self.size[0] // 2) - ((1920 // 9) // 2), y = int(25))
+
+        # TODO: SHOW DAMAGE INDICATORS HERE
+        # THIS IS WHERE ARC WRITES CODE
+
+        # Remove expired damage indicators
+        for d, t in self.damage_indicators:
+            if t > DAMAGE_INDICATOR_TIME:
+                self.damage_indicators.remove((d, t))
+
         renpy.redraw(self, 0)
         return r
 
@@ -702,8 +731,8 @@ class RPGGameDisplayable(renpy.Displayable):
         self.start_time = None
         self.win = None
 
-        self.enemy_displayables: list[Displayable] = []
-        self.statblock_displayables: list[Displayable] = []
+        self.enemy_displayables: list[EnemyDisplayable] = []
+        self.statblock_displayables: list[StatBlockDisplayable] = []
 
         for e in self.encounter.enemies:
             self.enemy_displayables.append(EnemyDisplayable(e))
@@ -737,6 +766,12 @@ class RPGGameDisplayable(renpy.Displayable):
 
     def visit(self):
         return self.enemy_displayables + self.statblock_displayables # Assets needed to load
+    
+    def get_displayable_by_fighter(self, fighter: Fighter) -> Optional[EnemyDisplayable | StatBlockDisplayable]:
+        valid_displayables = [d for d in self.enemy_displayables + self.statblock_displayables if d.fighter == fighter]
+        if valid_displayables:
+            return next(valid_displayables)
+        return None
 
 rpggame = RPGGameDisplayable(encounter)
 
