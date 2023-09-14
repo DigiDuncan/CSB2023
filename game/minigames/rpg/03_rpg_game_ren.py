@@ -370,7 +370,7 @@ class ComboAttack:
             if a.available:
                 answer += a.run(subject, fighters, crit)
             else:
-                answer.append(0, "none")
+                answer.append((0, "none"))
         return answer
 
     @property
