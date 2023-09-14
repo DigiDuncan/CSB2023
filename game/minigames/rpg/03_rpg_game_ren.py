@@ -240,7 +240,6 @@ class AI:
             for p in party_status:
                 if (p.health_points / p.max_health) < min:
                     min = p.health_points / p.max_health
-            print("MIN PARTY HEALTH PERCENTAGE:", min)
 
             # Roll a die if we should heal or not.
             if min <= self.heal_threshold:
@@ -270,9 +269,6 @@ class AI:
                 if heal_time:
                     score *= atk.options.get("mult", 1)  # weight towards better heals
                 scores.append(score)
-            print("===SCORES===")
-            for a, s in list(zip(available_attacks, scores)):
-                print(f"{a.name}:", s)
 
             # Choose an attack.
             what = renpy.random.choices(available_attacks, weights = scores)[0]
@@ -293,7 +289,6 @@ class AI:
             elif what.target_type == "all":
                 who_staging = encounter.fighters
             else:
-                print("???")
                 who_staging = encounter.allies if subject.enemy else encounter.enemies
 
             # Choose fighters (weighted)
@@ -312,7 +307,7 @@ class AI:
         # Run the attack
         answer = what.run(subject, who)
         print(f"[AI: {self.name}] {subject.name} running attack {what.name} on {sentence_join([t.name for t in who])}...")  # type: ignore
-        renpy.notify(f"[AI: {self.name}] {subject.name} running attack {what.name} on {sentence_join([t.name for t in who])}...")  # type: ignore
+        renpy.notify(f"{subject.name} running attack {what.name} on {sentence_join([t.name for t in who])}...")  # type: ignore
         renpy.pause(1.0)
         return answer
 
@@ -651,13 +646,10 @@ class Fighters:
     
     @classproperty
     def enemy_names(cls) -> list[str]:
-        print(dir(cls))
         return [f for f in dir(cls) if f.isupper() and f != "NONE" and cls.__dict__[f].enemy]
     
     @classproperty
     def ally_names(cls) -> list[str]:
-        print(dir(cls))
-        print(cls.__dict__)
         return [f for f in dir(cls) if f.isupper() and f != "NONE" and not cls.__dict__[f].enemy]
     
     @classproperty
@@ -765,44 +757,41 @@ class EnemyDisplayable(renpy.Displayable):
             damage_color = None
             damage_text = None
             if a[1] == "ap":
-                damage_color = (0x00, 0x00, 0xFF)
-                damage_text = str(a[0])
                 # Hit to armour points
+                damage_color = (0x00, 0x00, 0xFF)
+                damage_text = str(a[0]) + " AP"
 
             elif a[1] == "atk":
-                damage_color = (0xFF, 0xFF, 0x00)
-                damage_text = str(a[0])
                 # Hit to ATK points
+                damage_color = (0xFF, 0xFF, 0x00)
+                damage_text = str(a[0]) + " ATK"
 
             elif a[1] == "confusion":
+                # Change confusion status
                 damage_color = (0xFF, 0x00, 0xFF)
                 if a[0] == 0:
-                    damage_text = "Unconfused"
+                    damage_text = "Unconfused!"
                 else:
-                    damage_text = "Confused"
-                # Change confusion status
+                    damage_text = "Confused!"
 
             elif a[1] == "hp":
-                if a[0]<0:
+                # Ow my crotch
+                if a[0] < 0:
                     damage_color = (0xFF, 0x00, 0x00)
                     damage_text = str(abs(a[0]))
-
                 else:
                     damage_color = (0x00, 0xFF, 0x00)
                     damage_text = str(abs(a[0]))
-                    # Ow my crotch
 
             else:
+                # This shouldn't happen
                 continue
 
             # Now make the thing
-            alpha = ease_linear(255, 0, DAMAGE_INDICATOR_TIME/2, DAMAGE_INDICATOR_TIME, t)
+            alpha = ease_linear(255, 0, DAMAGE_INDICATOR_TIME / 2, DAMAGE_INDICATOR_TIME, t)  # type: ignore
             damage_text_object = Text(damage_text, color=damage_color + (alpha,), size=self.damage_size)
             # Define position and alpha
-            motion = ease_quad(self.damage_indicator_y, self.damage_indicator_y - 50 ,0, DAMAGE_INDICATOR_TIME / 2, t)
-        
-            print(self.damage_indicator_x)
-            print(motion)
+            motion = ease_quad(self.damage_indicator_y, self.damage_indicator_y - 50 ,0, DAMAGE_INDICATOR_TIME / 2, t)  # type: ignore
             r.place(damage_text_object, x = int(self.damage_indicator_x), y = int(motion))
 
         # Remove expired damage indicators
@@ -912,7 +901,6 @@ def parse_rpg(lexer):
 
 def execute_rpg(parsed_object):
     b, m, f, s, l, ll = parsed_object
-    print(parsed_object)
     global rpggame
     rpggame.encounter = Encounter(
         [getattr(Fighters, globals().get(fighter.replace("$", "")).upper())
