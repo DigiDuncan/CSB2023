@@ -735,7 +735,7 @@ class EnemyDisplayable(renpy.Displayable):
         self.size = renpy.image_size(self.fighter.sprite)
         self.damage_indicators: list[list[Answer, float]] = []
         self.damage_indicator_x = self.size[0] / 2
-        self.damage_indicator_y = self.size[1] * 0.1
+        self.damage_indicator_y = self.size[1]*0.01
         self.damage_size = 50
         self.last_tick = None
         super().__init__(self)
