@@ -682,13 +682,17 @@ class StatBlockDisplayable(renpy.Displayable):
         self.AP_text = Text("AP: " + str(self.fighter.armor_points), color = "#FFFFFF", size = self.text_size)
         self.ATK_text = Text("ATK: " + str(self.fighter.attack_points), color = "#FFFFFF", size = self.text_size)
         self.stat_back = Image("minigames/rpg/statbox.png")
-        self.damage_indicators: list[tuple[Answer, float]] = []
+        self.damage_indicators: list[list[Answer, float]] = []
+        self.last_tick = None
         super().__init__(self)
 
     def show_damage_indicator(self, ans: Answer):
-        self.damage_indicators.append((ans, 0.0))
+        self.damage_indicators.append([ans, 0.0])
 
     def render(self, width, height, st, at):
+        if self.last_tick is None:
+            self.last_tick = st
+        dt = st - self.last_tick
         x_al = 25
         y_al = 65
         self.health_text = Text("HP: " + str(self.fighter.health_points) + "/" + str(self.fighter.max_health), color = "#FFFFFF", size = self.text_size)
@@ -705,9 +709,10 @@ class StatBlockDisplayable(renpy.Displayable):
         # THIS IS WHERE ARC WRITES CODE
 
         # Remove expired damage indicators
-        for d, t in self.damage_indicators:
+        self.damage_indicators = [[a, t + dt] for a, t in self.damage_indicators]
+        for a, t in self.damage_indicators:
             if t > DAMAGE_INDICATOR_TIME:
-                self.damage_indicators.remove((d, t))
+                self.damage_indicators.remove([a, t])
 
         renpy.redraw(self, 0)
         return r
@@ -748,8 +753,6 @@ class EnemyDisplayable(renpy.Displayable):
         r.place(self.red_part, x = (self.size[0] // 2) - ((1920 // 9) // 2), y = int(25))
         r.place(self.green_part, x = (self.size[0] // 2) - ((1920 // 9) // 2), y = int(25))
 
-        # TODO: SHOW DAMAGE INDICATORS HERE
-        # THIS IS WHERE ARC WRITES CODE
         for a, t in self.damage_indicators:
             # t is a float of how long it's been on screen
             # a[0] is the damage amount
