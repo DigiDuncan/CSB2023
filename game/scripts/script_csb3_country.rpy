@@ -609,7 +609,7 @@ label scott_zone:
     menu:
         "Tell Tom to move":
             jump scott_move
-        "Let Tom do his thing.":
+        "Let Tom do his thing":
             jump scott_movent
 
 label scott_move:
@@ -619,3 +619,31 @@ label scott_move:
     tom "What's your name?"
     cs "My name is CS188."
     tom "Well thank you CS188 for that, I guess now this video will upload properly now."
+    cs "Does this mean I can be in the video?"
+    tom "Sure thing CS188, you saved me, after all."
+    cs "Yesss!"
+    cs "Okay I'm gonna go now, bye!"
+    tom "Yep, you too!"
+    arceus "Hey, did you get to talk with him?"
+    cs "Yeah! I saved him from getting run over!"
+    arceus "Woah really? Did you end up in his video?"
+    cs "Yeah!"
+    arceus "Cool! Were you guys gonna do anything else?"
+    cs "Nah, we can head home now."
+    arceus "Wait, that's it?"
+    arceus "I thought you guys were gonna do more stuff."
+    cs "Nah, I just wanted to be in a video with him."
+    arceus "Okay, so are we done here?"
+    cs "Sure yeah, let's head back home."
+    n "Arc and CS drive back to the house."
+    kitty "You saved a man's life?"
+    cs "Yeah, and I get to be in his video!"
+    kitty "Well, looks like you got 2 for 1 then!"
+
+label scott_movent:
+    cs "I should wait till he's done with his video."
+    tom "So yeah, we're just gonna keep talking about this road in particular."
+    tom "This road here was created in 1968, by OHP--{w=0.5}{nw}"
+    n "A speeding car rams into Tom, and he flies off into the distance."
+    cs "Uh oh. {w=3.5} I didn't see nothin'."
+    return
