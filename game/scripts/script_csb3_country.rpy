@@ -570,3 +570,52 @@ label top_zone:
     arceus "Good luck CS!"
     cs "Thanks!"
     n "CS gets out of the car and heads up to the Top Gear crew."
+
+label scott_zone:
+    cs "I wanna see what Tom Scott is up to."
+    kitty "Who now?"
+    arceus "He's some guy here who explores weird topics on YouTube."
+    cs "Yeah, I kinda wanna see if I can go do stuff with him."
+    cs "Maybe I can be in his video?"
+    kitty "Well first, you'd have to contact him, which I feel like won't work out too well."
+    arceus "Or I could find out where he lives."
+    cs "Can you do that?"
+    arceus "I mean, I CAN."
+    arceus "Legally, probably not."
+    kitty "Yeah, remember the last time you did something illeg--{w=0.5}{nw}"
+    n "Arceus blurts out the address of Tom's house."
+    kitty "Arceus! Don't do that!"
+    cs "Woohoo! Does that mean we can go there?"
+    arceus "Sure, and don't worry Kitty, they won't catch me doing this."
+    kitty "You better be right!"
+    cs "Alright well, what are we waiting for? Let's go!"
+    n "CS and Arc get in the car and head up to Tom Scott's house."
+    cs "Are you sure this is his house?"
+    arceus "Yep."
+    cs "Should we just knock or?"
+    arceus "Well, we can't really call him, right?"
+    cs "Yeah, I guess so."
+    cs "I guess I can knock."
+    n "CS goes up to the house and knocks on the door."
+    cs "Hello?"
+    cs "Anyone home?"
+    n "CS waits for a minute."
+    cs "Damn, I guess no one's there."
+    n "As CS is going back to the car, he notices someone with a red shirt standing in the middle of the road."
+    cs "Hey, I wonder if that's him."
+    tom "As you can see here, I am standing in the middle of this road."
+    tom "That means if I get hit by a car, this video will not be uploaded."
+    tom "Anyways, as I was saying..."
+    menu:
+        "Tell Tom to move":
+            jump scott_move
+        "Let Tom do his thing.":
+            jump scott_movent
+
+label scott_move:
+    cs "Hey Tom, move out of the way!"
+    n "Tom immediately jumps out of the way, as a car zooms past him."
+    tom "Oh wow, you saved my life!"
+    tom "What's your name?"
+    cs "My name is CS188."
+    tom "Well thank you CS188 for that, I guess now this video will upload properly now."
