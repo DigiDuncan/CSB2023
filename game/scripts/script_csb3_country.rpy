@@ -570,6 +570,43 @@ label top_zone:
     arceus "Good luck CS!"
     cs "Thanks!"
     n "CS gets out of the car and heads up to the Top Gear crew."
+    hammond "So, this bloke thinks he can beat us in his typical car?"
+    james "Yeah, he really thinks so."
+    jermey "Hah! I'd like to see him try!"
+    james "Well, you're about to see it."
+    cs "Hey guys! CS here!"
+    jermey "Hey CS, do you think you can beat Richard in a race, huh?"
+    cs "Hell yeah I do!"
+    hammond "Well, I wish you the best of luck, buddy."
+    n "As he says that, a McLaren rolls up on the track."
+    hammond "I'll be racing against you in this McLaren, and if you manage to beat me, we'll give you £10,000!"
+    jermey "Our money?"
+    james "What if he loses?"
+    hammond "Well, obviously, he's gonna lose."
+    hammond "If he loses, we'll blow up the car!"
+    cs "Well, it's technically not MY car..."
+    hammond "Oh really? Take another look..."
+    n "CS looks and realizes his license plate matches the Honda Civic on the track."
+    cs "WHAT? How did you get my car?"
+    jermey "We may have stolen your car and shipped it all the way over to the UK for this race."
+    james "I mean, it's YOUR car you wanted to race in, right?"
+    cs "Yeah, I guess so..."
+    hammond "Well, what are you guys waiting for? Let's do this race!"
+    n "CS and hammond get in their cars, and wait for the countdown."
+        menu:
+        "Lose the race":
+            jump top_lose
+        "Win the race":
+            jump top_win
+    
+label top_lose:
+    n "As the race finishes, the contestants get out of their cars."
+    hammond "Well well well!"
+    hammond "Looks like I won after all!"
+    hammond "As for you..."
+    n "Jermey pulls out a remote switch that detonates a bomb under CS' car, turning it into scrap."
+    cs "Fuck."
+    return
 
 label scott_zone:
     cs "I wanna see what Tom Scott is up to."
