@@ -608,6 +608,51 @@ label top_lose:
     cs "Fuck."
     return
 
+label top_win:
+    n "As the race finishes, the contestants get out of their cars."
+    hammond "What the bloody hell? How did you beat me?"
+    cs "Oh you know. I have my ways."
+    james "Well, I guess that means we owe him, right?"
+    hammond "Yeah, I guess so."
+    hammond "Jermey, can you go remove the bomb from his car?"
+    cs "Wait, there was a bomb on the car the whole time?"
+    james "Well, kinda."
+    cs "What the hell! Now I'm really glad I won!"
+    cs "I'm glad I didn't hit anything, otherwise the explosion would've finished me off!"
+    hammond "It's just a bomb, it'll buff out if it went off."
+    cs "Yeah, I'm sure."
+    n "Richard hands CS his money."
+    cs "Can you ship my car back as well? You brought it here, after all."
+    james "Ah shit, you're right."
+    james "We'll send your car back home as soon as possible."
+    cs "Thanks."
+    cs "Well, I guess I should be going now, I'd like to race again sometime WITHOUT a bomb stuck to the bottom of my car."
+    hammond "But that was fun, wasn't it?"
+    cs "It was fun before the end!"
+    cs "Whatever, I'll see you guys later."
+    n "CS heads back to the car."
+    kitty "Woo! You won the race!"
+    arceus "That was insane man!"
+    cs "Yeah, I honestly can't believe it either!"
+    cs "They stuck a bomb to the bottom of my car for that race!"
+    arceus "What? Why would they do that?"
+    arceus "Wasn't that just a backup car they had?"
+    cs "No! They managed to steal my real car!"
+    cs "They were planning to blow my car up if I lost!"
+    kitty "Damn, that's kinda fucked up."
+    arceus "Well good thing you won!"
+    cs "Yeah, no kidding."
+    cs "Let's head home now."
+    n "The gang travels back to the house."
+    kitty "Well, on the plus side, you won 10,000 pounds!"
+    cs "Yeah, I'll have to transfer this to USD when I get back home."
+    cs "I hope those cops forgot about me by now."
+    arceus "Anyways, is there anything else you want to do here in England?"
+    menu:
+        "Go on adventure with Tom Scott":
+            jump scott_zone
+
+
 label scott_zone:
     cs "I wanna see what Tom Scott is up to."
     kitty "Who now?"
