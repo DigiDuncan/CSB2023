@@ -291,6 +291,7 @@ label after_fanboy:
     scene outside_ltt
     show cs angry flipped at center
     with fade
+    $ achievement_manager.unlock("I Thought This Was A Visual Novel")
     n "CS struggles to catch his breath."
     cs "That was exhilarating!"
     cs "That's right! The rest of you get out of here!"

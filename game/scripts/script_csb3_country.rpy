@@ -541,6 +541,7 @@ label good_ramsay:
     cs "Just kidding! I still have a back-up, but I'm gonna keep it secret."
     kitty "Ah ok."
     arceus "Well, you did quite a bit already, is there anything else you want to do here?"
+    $ achievement_manager.unlock("Master Chef")
     if gear:
         menu:
             "Go on adventure with Tom Scott":
@@ -661,6 +662,7 @@ label top_win:
     cs "Yeah, I'll have to transfer this to USD when I get back home."
     cs "I hope those cops forgot about me by now."
     arceus "Anyways, is there anything else you want to do here in England?"
+    $ achievement_manager.unlock("Bottom Gear")
     if ramsay:    
         menu:
             "Go on adventure with Tom Scott":
@@ -725,10 +727,10 @@ label scott_move:
     n "Tom immediately jumps out of the way, as a car zooms past him."
     tom "Oh wow, you saved my life!"
     tom "What's your name?"
-    cs "My name is CS188."
-    tom "Well thank you CS188 for that, I guess now this video will upload properly now."
+    cs "My name is cs188."
+    tom "Well thank you cs188 for that, I guess now this video will upload properly now."
     cs "Does this mean I can be in the video?"
-    tom "Sure thing CS188, you saved me, after all."
+    tom "Sure thing cs188, you saved me, after all."
     cs "Yesss!"
     cs "Okay I'm gonna go now, bye!"
     tom "Yep, you too!"
@@ -748,6 +750,7 @@ label scott_move:
     cs "Yeah, and I get to be in his video!"
     kitty "Well, looks like you got 2 for 1 then!"
     kitty "Is there anything is you want to do?"
+    $ achievement_manager.unlock("The Man In The Red Shirt")
     if ramsay:    
         menu:
             "Go on Top Gear":

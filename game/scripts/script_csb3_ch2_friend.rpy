@@ -611,6 +611,7 @@ label final_meetup:
 
 label weapon_of_choice:
     scene black with fade
+    $ achievement_manager.unlock("Hopes and Dreams")
     n "Weapon Of Choice video here."
     jump car_slam
 
@@ -719,5 +720,3 @@ label car_slam:
     db "Wait, so does that mean, we were the bad guys all along?"
     cs "Nah."
     cs "That man was like, deranged."
-
-
