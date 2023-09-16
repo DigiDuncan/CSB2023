@@ -72,6 +72,7 @@ label knocked_out:
             jump japan_travel
     
 label england_travel:
+    $ engfirst = True
     cs "Uhh, I guess I wanted to go to England?"
     benrey "Well I'm sorry, but everyone has a Pass Port!"
     benrey "Try checking your pocket."
@@ -119,6 +120,7 @@ label england_travel:
     jump england
 
 label sweden_travel:
+    $ swedfirst = True
     cs "Uhh, I guess I wanted to go to Sweden?"
     benrey "But everyone has a Pass Port!"
     benrey "Try checking your back pocket."
@@ -165,6 +167,7 @@ label sweden_travel:
     jump sweden
 
 label japan_travel:
+    $ japfirst = True
     cs "Uhh, I guess I wanted to go to Japan?"
     benrey "Well I'm sorry, but everyone's got a Pass Port!"
     benrey "Try checking your left shoe."
@@ -269,6 +272,48 @@ label england_first:
     arceus "In GTA V."
     cs "Yeah yeah, that heist was really fun."
     arceus "Anyways, let's get you to our place."
+    show arceus flipped with determination
+    hide cs
+    hide arceus
+    with moveoutright
+    show black with dissolve
+    n "Arceus and CS jump on a double decker and heads down to their house."
+    jump arceus_place
+
+label england_second:
+    scene black
+    pause 1.0
+    scene airplane_seats
+    show cs at left
+    with fade
+    n "As CS slowly wakes up, he sees the plane landing on the tarmac."
+    cs "Oh huh, we are already here."
+    cs "Either that was a fast trip, or I slept WAYYYYY too long."
+    cs "Welp, I guess this is where I get off."
+    hide cs with moveoutright
+    scene black with dissolve
+    n "CS gets out of the plane, and makes his way into the airport."
+    scene britport with fade
+    show cs at mid_left with moveinleft
+    cs "Well, I picked an English-speaking country this time."
+    cs "This is quite the breath of fresh air."
+    hide cs with moveoutright
+    scene black with dissolve
+    n "CS walks out of the airport."
+    scene embassy with fade
+    show cs at center with moveinleft
+    show arceus at mid_right with moveinright
+    arceus "Hey CS? Is that you?"
+    show cs
+    cs "Oh my goodness! Why-- How are you here?"
+    arceus "I live here with my girlfriend now! What are you doing here?"
+    cs "I'm on vacation, and I decided to visit England!"
+    arceus "Ah."
+    arceus "So uhm..."
+    arceus "Do you need a place to stay?"
+    arceus "You can come and live with me and Kitty for a while! I'm sure she wouldn't mind."
+    cs "I would really appreciate it! Thank you!"
+    arceus "Let's get you to our place."
     show arceus flipped with determination
     hide cs
     hide arceus

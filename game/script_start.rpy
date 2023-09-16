@@ -707,6 +707,9 @@ default e3 = False
 default ramsay = False
 default gear = False
 default tom = False
+default engfirst = False
+default swedfirst = False
+default japfirst = False
 
 # Fire route
 default band_name = "CS' Crazy Crew"
