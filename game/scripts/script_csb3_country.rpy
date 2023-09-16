@@ -333,6 +333,7 @@ label arceus_place:
             jump scott_zone
 
 label hell_zone:
+    $ ramsay = True
     cs "I wanna go on Hell's Kitchen!"
     arceus "Wat."
     cs "Yeah! I can go on the show and cook up some crazy meal and win!"
@@ -540,13 +541,25 @@ label good_ramsay:
     cs "Just kidding! I still have a back-up, but I'm gonna keep it secret."
     kitty "Ah ok."
     arceus "Well, you did quite a bit already, is there anything else you want to do here?"
-    menu:
-        "Go on Top Gear":
-            jump top_zone
-        "Go on adventure with Tom Scott":
-            jump scott_zone
+    if gear:
+        menu:
+            "Go on adventure with Tom Scott":
+                jump scott_zone
+    elif tom:
+        menu:
+            "Go on Top Gear":
+                jump top_zone
+    elif (gear, tom):
+        jump england_done
+    else:
+        menu:
+            "Go on Top Gear":
+                jump top_zone
+            "Go on adventure with Tom Scott":
+                jump scott_zone
     
 label top_zone:
+    $ gear = True
     cs "I kinda wanna go on Top Gear."
     kitty "Well now I gotta see that."
     kitty "What are you gonna do to get on the show?"
@@ -593,7 +606,7 @@ label top_zone:
     cs "Yeah, I guess so..."
     hammond "Well, what are you guys waiting for? Let's do this race!"
     n "CS and hammond get in their cars, and wait for the countdown."
-        menu:
+    menu:
         "Lose the race":
             jump top_lose
         "Win the race":
@@ -648,12 +661,25 @@ label top_win:
     cs "Yeah, I'll have to transfer this to USD when I get back home."
     cs "I hope those cops forgot about me by now."
     arceus "Anyways, is there anything else you want to do here in England?"
-    menu:
-        "Go on adventure with Tom Scott":
-            jump scott_zone
-
+    if ramsay:    
+        menu:
+            "Go on adventure with Tom Scott":
+                jump scott_zone
+    elif tom:
+        menu:
+            "Go on Hell's Kitchen":
+                jump hell_zone
+    elif (tom, ramsay):
+        jump england_done
+    else:
+        menu:
+            "Go on adventure with Tom Scott":
+                jump scott_zone
+            "Go on Hell's Kitchen":
+                jump hell_zone
 
 label scott_zone:
+    $ tom = True
     cs "I wanna see what Tom Scott is up to."
     kitty "Who now?"
     arceus "He's some guy here who explores weird topics on YouTube."
@@ -721,6 +747,35 @@ label scott_move:
     kitty "You saved a man's life?"
     cs "Yeah, and I get to be in his video!"
     kitty "Well, looks like you got 2 for 1 then!"
+    kitty "Is there anything is you want to do?"
+    if ramsay:    
+        menu:
+            "Go on Top Gear":
+                jump top_zone
+    elif gear:
+        menu:
+            "Go on Hell's Kitchen":
+                jump hell_zone
+    elif (gear, ramsay):
+        jump england_done
+    else:
+        menu:
+            "Go on Hell's Kitchen":
+                jump hell_zone
+            "Go on Top Gear":
+                jump top_zone
+
+label england_done:
+    cs "Well, I think that's everything I wanted to do here."
+    arceus "Oh nice!"
+    kitty "So, are you leaving now? You managed to do so much in so little time!"
+    cs "Yeah, I think I'm gonna go visit another country."
+    arceus "Oh really? Where do you think you wanna go?"
+    menu:
+        "Sweden":
+            jump england_sweden
+        "Japan":
+            jump england_japan
 
 label scott_movent:
     cs "I should wait till he's done with his video."

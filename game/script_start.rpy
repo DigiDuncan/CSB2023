@@ -704,6 +704,9 @@ default returning_from_blooper = False
 default e1 = False
 default e2 = False
 default e3 = False
+default ramsay = False
+default gear = False
+default tom = False
 
 # Fire route
 default band_name = "CS' Crazy Crew"
