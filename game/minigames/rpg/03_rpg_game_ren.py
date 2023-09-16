@@ -474,6 +474,7 @@ class Fighter:
     def attack_ai(self, encounter: Encounter) -> tuple(list["Fighter"], AnswerList):
         if not self.dead:
             return self.ai.run(self, encounter)
+        return ([], [])
 
     def tick(self) -> AnswerList:
         answer = []
