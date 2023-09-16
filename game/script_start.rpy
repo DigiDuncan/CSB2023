@@ -27,6 +27,7 @@ init python:
     renpy.music.register_channel("sound2", "sound")
     renpy.music.register_channel("music2", "music")
     renpy.music.register_channel("jukebox", "music")
+    renpy.music.register_channel("sfx", "sound")
 
 # Custom transforms
 transform rotate_10:

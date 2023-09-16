@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import renpy
 import renpy.random  # type: ignore
+import renpy.music  # type: ignore
 from renpy.display.core import Displayable
 from renpy.display.im import Image
 from renpy.display.imagelike import Solid
@@ -671,8 +672,94 @@ class Fighters:
 # Dummy encounter to avoid errors
 encounter = Encounter([], Image("images/bg/black.png"), "audio/legosfx.mp3", 1, "start", "secret")
 
-# This is the displayable that controls what's happening in the boxes at the bottom of the screen
+# Indicator types
+IndicatorType = Literal["heal", "damage", "stat_up", "stat_down", "confused", "unconfused", "none"]
 
+# Damage indicator data storage
+class DamageIndicator:
+    def __init__(self, answer: Answer, play_sound = True):
+        self.value = answer[0]
+        self.type = answer[1]
+        self.play_sound = play_sound
+        self.time_on_screen = 0.0
+
+    @property
+    def indicator_type(self) -> IndicatorType:
+        if self.type == "none":
+            return "none"
+        elif self.type == "hp":
+            if self.value >= 0:
+                return "heal"
+            else:
+                return "damage"
+        elif self.type == "ap" or self.type == "atk":
+            if self.value >= 0:
+                return "stat_up"
+            else:
+                return "stat_down"
+        elif self.type == "confusion":
+            if self.value == 0:
+                return "unconfused"
+            else:
+                return "confused"
+        else:
+            return "none"
+        
+    @property
+    def color(self) -> tuple[int, int, int]:
+        if self.type == "ap":
+            return (0x00, 0x00, 0xFF)
+        elif self.type == "atk":
+            return (0xFF, 0xFF, 0x00)
+        elif self.indicator_type == "unconfused":
+            return (0xFF, 0x00, 0xFF)
+        elif self.indicator_type == "confused":
+            return (0xFF, 0x00, 0xFF)
+        elif self.indicator_type == "damage":
+            return (0xFF, 0x00, 0x00)
+        elif self.indicator_type == "heal":
+            return (0x00, 0xFF, 0x00)
+        else:
+            # This shouldn't happen
+            return (0xFF, 0xFF, 0xFF)
+
+    @property
+    def text(self) -> str:
+        if self.type == "ap":
+            return str(self.value) + " AP"
+        elif self.type == "atk":
+            return str(self.value) + " ATK"
+        elif self.indicator_type == "unconfused":
+            return "Unconfused!"
+        elif self.indicator_type == "confused":
+            return "Confused!"
+        elif self.indicator_type == "damage":
+            return str(abs(self.value))
+        elif self.indicator_type == "heal":
+            return str(abs(self.value))
+        else:
+            # This shouldn't happen
+            return ""
+
+    def play(self):
+        if self.indicator_type == "heal":
+            renpy.sound.play(f"audio/ut/snd_power.wav", channel = "sfx")
+            self.play_sound = False
+        elif self.indicator_type == "damage":
+            renpy.sound.play(f"audio/ut/snd_damage.wav", channel = "sfx")
+            self.play_sound = False
+        elif self.indicator_type == "stat_up":
+            renpy.sound.play(f"audio/ut/snd_b.wav", channel = "sfx")
+            self.play_sound = False
+        elif self.indicator_type == "stat_down":
+            renpy.sound.play(f"audio/ut/snd_bluh.wav", channel = "sfx")
+            self.play_sound = False
+        elif self.indicator_type == "confused" or self.indicator_type == "unconfused":
+            renpy.sound.play(f"audio/ut/snd_chime.wav", channel = "sfx")
+            self.play_sound = False
+
+
+# This is the displayable that controls what's happening in the boxes at the bottom of the screen
 class StatBlockDisplayable(renpy.Displayable):
     def __init__(self, fighter: Fighter):
         self.text_size = 50
@@ -682,12 +769,12 @@ class StatBlockDisplayable(renpy.Displayable):
         self.AP_text = Text("AP: " + str(self.fighter.armor_points), color = "#FFFFFF", size = self.text_size)
         self.ATK_text = Text("ATK: " + str(self.fighter.attack_points), color = "#FFFFFF", size = self.text_size)
         self.stat_back = Image("minigames/rpg/statbox.png")
-        self.damage_indicators: list[list[Answer, float]] = []
+        self.damage_indicators: list[DamageIndicator] = []
         self.last_tick = None
         super().__init__(self)
 
     def show_damage_indicator(self, ans: Answer):
-        self.damage_indicators.append([ans, 0.0])
+        self.damage_indicators.append(DamageIndicator(ans))
 
     def render(self, width, height, st, at):
         if self.last_tick is None:
@@ -708,11 +795,11 @@ class StatBlockDisplayable(renpy.Displayable):
         # TODO: SHOW DAMAGE INDICATORS HERE
         # THIS IS WHERE ARC WRITES CODE
 
-        # Remove expired damage indicators
-        self.damage_indicators = [[a, t + dt] for a, t in self.damage_indicators]
-        for a, t in self.damage_indicators:
-            if t > DAMAGE_INDICATOR_TIME:
-                self.damage_indicators.remove([a, t])
+        # Remove expired damage indicators and increase time on screen
+        for di in self.damage_indicators:
+            di.time_on_screen += dt
+            if di.time_on_screen > DAMAGE_INDICATOR_TIME:
+                self.damage_indicators.remove(di)
 
         renpy.redraw(self, 0)
         return r
@@ -730,15 +817,15 @@ class EnemyDisplayable(renpy.Displayable):
         self.red_part = Solid("#FF0000", xsize = 0, ysize = 0)
         self.green_part = Solid("#00FF00", xsize = 0, ysize = 0)
         self.size = renpy.image_size(self.fighter.sprite)
-        self.damage_indicators: list[list[Answer, float]] = []
+        self.damage_indicators: list[DamageIndicator] = []
         self.damage_indicator_x = self.size[0] / 2
-        self.damage_indicator_y = self.size[1]*0.01
+        self.damage_indicator_y = self.size[1] * 0.01
         self.damage_size = 50
         self.last_tick = None
         super().__init__(self)
 
     def show_damage_indicator(self, ans: Answer):
-        self.damage_indicators.append([ans, 0.0])
+        self.damage_indicators.append(DamageIndicator(ans))
     
     def render(self, width, height, st, at):
         if self.last_tick is None:
@@ -753,55 +840,25 @@ class EnemyDisplayable(renpy.Displayable):
         r.place(self.red_part, x = (self.size[0] // 2) - ((1920 // 9) // 2), y = int(25))
         r.place(self.green_part, x = (self.size[0] // 2) - ((1920 // 9) // 2), y = int(25))
 
-        for a, t in self.damage_indicators:
-            # t is a float of how long it's been on screen
-            # a[0] is the damage amount
-            # a[1] is the damage type
-            damage_color = None
-            damage_text = None
-            if a[1] == "ap":
-                # Hit to armour points
-                damage_color = (0x00, 0x00, 0xFF)
-                damage_text = str(a[0]) + " AP"
-
-            elif a[1] == "atk":
-                # Hit to ATK points
-                damage_color = (0xFF, 0xFF, 0x00)
-                damage_text = str(a[0]) + " ATK"
-
-            elif a[1] == "confusion":
-                # Change confusion status
-                damage_color = (0xFF, 0x00, 0xFF)
-                if a[0] == 0:
-                    damage_text = "Unconfused!"
-                else:
-                    damage_text = "Confused!"
-
-            elif a[1] == "hp":
-                # Ow my crotch
-                if a[0] < 0:
-                    damage_color = (0xFF, 0x00, 0x00)
-                    damage_text = str(abs(a[0]))
-                else:
-                    damage_color = (0x00, 0xFF, 0x00)
-                    damage_text = str(abs(a[0]))
-
-            else:
-                # This shouldn't happen
-                continue
+        for di in self.damage_indicators:
+            damage_color = di.color
+            damage_text = di.text
 
             # Now make the thing
-            alpha = ease_linear(255, 0, DAMAGE_INDICATOR_TIME / 2, DAMAGE_INDICATOR_TIME, t)  # type: ignore
+            alpha = ease_linear(255, 0, DAMAGE_INDICATOR_TIME / 2, DAMAGE_INDICATOR_TIME, di.time_on_screen)  # type: ignore
             damage_text_object = Text(damage_text, color=damage_color + (alpha,), size=self.damage_size)
             # Define position and alpha
-            motion = ease_quad(self.damage_indicator_y, self.damage_indicator_y - 50 ,0, DAMAGE_INDICATOR_TIME / 2, t)  # type: ignore
+            motion = ease_quad(self.damage_indicator_y, self.damage_indicator_y - 50 ,0, DAMAGE_INDICATOR_TIME / 2, di.time_on_screen)  # type: ignore
             r.place(damage_text_object, x = int(self.damage_indicator_x), y = int(motion))
 
+            if di.play_sound:
+                di.play()
+
         # Remove expired damage indicators
-        self.damage_indicators = [[a, t + dt] for a, t in self.damage_indicators]
-        for a, t in self.damage_indicators:
-            if t > DAMAGE_INDICATOR_TIME:
-                self.damage_indicators.remove([a, t])
+        for di in self.damage_indicators:
+            di.time_on_screen += dt
+            if di.time_on_screen > DAMAGE_INDICATOR_TIME:
+                self.damage_indicators.remove(di)
 
         renpy.redraw(self, 0)
         self.last_tick = st
