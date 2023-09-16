@@ -219,7 +219,7 @@ class AI:
         self.preferred_targets = [] if preferred_targets is None else preferred_targets # I wanna smack this boy in particular >:C
         self.preference_weight = preference_weight # Multiplier how many more times likely to smack this boy
 
-    def run(self, subject: Fighter, encounter: Encounter) -> AnswerList:
+    def run(self, subject: Fighter, encounter: Encounter) -> tuple[list[Fighter], AnswerList]:
         party_status = encounter.enemies if subject.enemy else encounter.allies
         enemy_status = encounter.allies if subject.enemy else encounter.enemies
         # Sort enemies by weak-first
@@ -310,7 +310,7 @@ class AI:
         print(f"[AI: {self.name}] {subject.name} running attack {what.name} on {sentence_join([t.name for t in who])}...")  # type: ignore
         renpy.notify(f"{subject.name} running attack {what.name} on {sentence_join([t.name for t in who])}...")  # type: ignore
         renpy.pause(1.0)
-        return answer
+        return who, answer
 
 class AIType:
     NEUTRAL = AI("Neutral")
@@ -471,7 +471,7 @@ class Fighter:
             renpy.notify(f"{self.name} is confused!")
             return [(0, "none")]
 
-    def attack_ai(self, encounter: Encounter) -> AnswerList:
+    def attack_ai(self, encounter: Encounter) -> tuple(list["Fighter"], AnswerList):
         if not self.dead:
             return self.ai.run(self, encounter)
 
@@ -507,6 +507,7 @@ class Fighter:
                     print(f"{self.name}: {a.name} now available!")
                 else:
                     print(f"{self.name}: {a.name} available in {a._turns_until_available} turns!")
+        return answer
 
     @property
     def dead(self) -> bool:
