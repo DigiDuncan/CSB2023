@@ -771,6 +771,10 @@ class StatBlockDisplayable(renpy.Displayable):
         self.ATK_text = Text("ATK: " + str(self.fighter.attack_points), color = "#FFFFFF", size = self.text_size)
         self.stat_back = Image("minigames/rpg/statbox.png")
         self.damage_indicators: list[DamageIndicator] = []
+        self.size = renpy.image_size(self.stat_back)
+        self.damage_indicator_x = int(self.size[0]/2)
+        self.damage_indicator_y = int(self.size[1] * 0.01)
+        self.damage_size = 50
         self.last_tick = None
         super().__init__(self)
 
@@ -792,6 +796,24 @@ class StatBlockDisplayable(renpy.Displayable):
         r.place(self.health_text, x = x_al, y = y_al)
         r.place(self.AP_text, x = x_al, y = y_al * 2)
         r.place(self.ATK_text, x = x_al, y = y_al * 3)
+
+        for di in self.damage_indicators:
+            # Now make the thing
+            alpha = ease_linear(255, 0, DAMAGE_INDICATOR_TIME / 2, DAMAGE_INDICATOR_TIME, di.time_on_screen)  # type: ignore
+            damage_text_object = Text(di.text, color = di.color + (alpha,), size = self.damage_size)
+            # Define position and alpha
+            motion = ease_quad(self.damage_indicator_y, self.damage_indicator_y - 50 ,0, DAMAGE_INDICATOR_TIME / 2, di.time_on_screen)  # type: ignore
+            r.place(damage_text_object, x = int(self.damage_indicator_x), y = int(motion))
+            # Play sounds
+            if di.play_sound:
+                di.play()
+
+        # Remove expired damage indicators
+        for di in self.damage_indicators:
+            di.time_on_screen += dt
+            if di.time_on_screen > DAMAGE_INDICATOR_TIME:
+                self.damage_indicators.remove(di)
+
 
         # TODO: SHOW DAMAGE INDICATORS HERE
         # THIS IS WHERE ARC WRITES CODE
