@@ -28,14 +28,12 @@ See what needs to be done below.
 
 ### RPG Game [Digi/Arc, Sept. W1]
 - [X] Basic Game Loop
-- [ ] All Attacks and Fighters in [99%]
-- [ ] AI [75%]
+- [X] All Attacks and Fighters in
+- [X] AI
 - [ ] All Sprites done [Pakoo]
 - [ ] Animations [Arc]
-- [ ] SFX
-    - Code [Arc]
-    - Actual sound [Pakoo]
-- [ ] Reactive Text [75%]
+- [X] SFX
+- [ ] Reactive Text [90%]
 - [ ] Balancing [Pakoo]
 - [X] Add games to script
 
@@ -88,7 +86,7 @@ See what needs to be done below.
 - [ ] 3D Backgrounds [Baker]
 - [ ] Animated sequences [Baker]
 - [ ] Final writing [Pakoo]
-- [ ] Short Archival animation (Error Route) [Pakoo]
+- [ ] Short Archival animation (Error Route) [Pakoo] [75%]
 
 ### Passes [All, October W1]
 - [ ] Spelling/Grammar Pass
@@ -102,6 +100,7 @@ See what needs to be done below.
 
 ### Wishlist
 - [ ] Ultimate Custom Night (RPG Freeplay) [50%]
+    - [ ] Additional fighters/AIs
 - [ ] Cheats Mode
     - [ ] You can now play as Luigi
     - [ ] Arc2D2

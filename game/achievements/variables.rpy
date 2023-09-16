@@ -25,7 +25,7 @@ define achievements = [
     Achievement("Hi, My Name Is...", "Fill in the blank.", "Name your first song.", "hi"),
     Achievement("Singer-Songwriter", "???", "Write your first song.", "songwriter"),
     Achievement("Independent Artist", "???", "Release an EP.", "ep"),
-    Achievement("I Thought This Was A Visual Novel", "Discover what we sent 1000 lines of code on.", "Win your first RPG battle.", "rpg"),
+    Achievement("I Thought This Was A Visual Novel", "Discover what we spent 1000 lines of code on.", "Win your first RPG battle.", "rpg"),
     Achievement("A Little Help From My Friends", "???", "Gather a full party.", "friends"),
     Achievement("Hopes and Dreams", "???", "Beat Copguy EX.", "souls"),
     Achievement("Master Chef", "???", "Win over Gordan Ramsay.", "masterchef"),
