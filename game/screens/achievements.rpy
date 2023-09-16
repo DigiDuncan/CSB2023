@@ -15,6 +15,10 @@ screen achievements_welcome():
 
     tag menu
     use achievements_nav
+    python:
+        achievement_count = len(achievements)
+        unlocked_count = len(persistent.unlocked_achievements)
+        locked_count = achievement_count - unlocked_count
     viewport:
         xsize 1300
         ysize 800
@@ -29,7 +33,7 @@ screen achievements_welcome():
         vbox:
             spacing 25
             if achievement_manager.unlocked:
-                text "Unlocked Achievements"
+                text "Unlocked Achievements ([unlocked_count]/[achievement_count])"
                 for a in achievements:
                     if a.unlocked:
                         hbox:
@@ -43,7 +47,7 @@ screen achievements_welcome():
             if achievement_manager.unlocked and achievement_manager.locked:
                 null height 100
             if achievement_manager.locked:
-                text "Locked Achievements"
+                text "Locked Achievements ([locked_count]/[achievement_count])"
                 for a in achievements:
                     if not a.unlocked:
                         hbox:
