@@ -741,7 +741,7 @@ default ucn_scale = 1.0
 default cont = False
 
 # Jump Menu
-screen start_menu():
+screen chapter_menu():
     zorder 100
     style_prefix "start"
     window id "start_window" xalign 0.5 yalign 0.5:
@@ -753,22 +753,22 @@ screen start_menu():
                 imagebutton auto "menu/csbi_%s.png" hover_sound "sfx-select.wav":
                     at transform:
                         zoom 0.666
-                    action Play("sound", "sfx-valid.wav"), Hide("start_menu", Fade(1.0)), Jump("csbi_start")
+                    action Play("sound", "sfx-valid.wav"), Hide("chapter_menu", Fade(1.0)), Jump("csbi_start")
                 imagebutton auto "menu/csbii_%s.png" hover_sound "sfx-select.wav":
                     sensitive persistent.csb2_unlocked
                     at transform:
                         zoom 0.666
-                    action Play("sound", "sfx-valid.wav"), Hide("start_menu", Fade(1.0)), Jump("csbii_start")
+                    action Play("sound", "sfx-valid.wav"), Hide("chapter_menu", Fade(1.0)), Jump("csbii_start")
                 imagebutton auto "menu/csbiii1_%s.png" hover_sound "sfx-select.wav":
                     sensitive persistent.csb3a_unlocked
                     at transform:
                         zoom 0.666
-                    action Play("sound", "sfx-valid.wav"), Hide("start_menu", Fade(1.0)), Jump("csbiii_start")
+                    action Play("sound", "sfx-valid.wav"), Hide("chapter_menu", Fade(1.0)), Jump("csbiii_start")
                 imagebutton auto "menu/csbiii2_%s.png" hover_sound "sfx-select.wav":
                     sensitive persistent.csb3b_unlocked
                     at transform:
                         zoom 0.666
-                    action Play("sound", "sfx-valid.wav"), Hide("start_menu", Fade(1.0)), Jump("choose_direction")
+                    action Play("sound", "sfx-valid.wav"), Hide("chapter_menu", Fade(1.0)), Jump("choose_direction")
 
 style start_window is empty
 
@@ -781,4 +781,4 @@ label start:
     stop music fadeout 3.0
     window hide
     pause 0.1
-    call screen start_menu()
+    call screen chapter_menu()

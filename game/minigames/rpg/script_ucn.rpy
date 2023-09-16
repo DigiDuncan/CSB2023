@@ -12,9 +12,9 @@ screen ucn_choice(items):
                     anchor(-0.25, -0.25)
                     action i.action
 
-screen ucn_mainmenu:
-    tag menu
-    timer 0.5 action MainMenu(confirm = False)
+# screen ucn_mainmenu:
+    # tag menu
+    # timer 0.5 action MainMenu(confirm = False)
 
 label rpg_ucn:
     $ renpy.hide_screen("menu")
@@ -61,7 +61,7 @@ label after_ucn:
     if cont:
         jump rpg_ucn
     else:
-        show screen ucn_mainmenu
+        $ MainMenu()
         # TODO: Arc, why does this not return me to the main menu?
         # It keeps bringing me back to the chapter select screen
         # Getting angy -- Digi

@@ -329,7 +329,7 @@ screen navigation():
 
         textbutton _("Debug Menu") action ShowMenu("debug_menu")
 
-        textbutton _("Ultimate\nCustom Night") action Jump("rpg_ucn")
+        textbutton _("Ultimate\nCustom Night") action Start("rpg_ucn")
 
         if _in_replay:
 
