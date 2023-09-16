@@ -772,8 +772,8 @@ screen chapter_menu():
 style start_window is empty
 
 label splashscreen:
-    define seen_splash = True
     $ renpy.movie_cutscene("movies/splash.mpg")
+    $ seen_splash = True
     return
 
 label start:
