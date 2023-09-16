@@ -809,14 +809,15 @@ class StatBlockDisplayable(renpy.Displayable):
             if di.play_sound:
                 di.play()
 
-        # Remove expired damage indicators
+        # Remove expired damage indicators and increase time on screen
         for di in self.damage_indicators:
+            print(di.time_on_screen, dt)
             di.time_on_screen += dt
             if di.time_on_screen > DAMAGE_INDICATOR_TIME:
                 self.damage_indicators.remove(di)
 
-
         renpy.redraw(self, 0)
+        self.last_tick = st
         return r
     
     def event(self, ev, x, y, st):
