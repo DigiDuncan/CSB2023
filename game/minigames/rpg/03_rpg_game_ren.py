@@ -841,16 +841,13 @@ class EnemyDisplayable(renpy.Displayable):
         r.place(self.green_part, x = (self.size[0] // 2) - ((1920 // 9) // 2), y = int(25))
 
         for di in self.damage_indicators:
-            damage_color = di.color
-            damage_text = di.text
-
             # Now make the thing
             alpha = ease_linear(255, 0, DAMAGE_INDICATOR_TIME / 2, DAMAGE_INDICATOR_TIME, di.time_on_screen)  # type: ignore
-            damage_text_object = Text(damage_text, color=damage_color + (alpha,), size=self.damage_size)
+            damage_text_object = Text(di.text, color = di.color + (alpha,), size = self.damage_size)
             # Define position and alpha
             motion = ease_quad(self.damage_indicator_y, self.damage_indicator_y - 50 ,0, DAMAGE_INDICATOR_TIME / 2, di.time_on_screen)  # type: ignore
             r.place(damage_text_object, x = int(self.damage_indicator_x), y = int(motion))
-
+            # Play sounds
             if di.play_sound:
                 di.play()
 
