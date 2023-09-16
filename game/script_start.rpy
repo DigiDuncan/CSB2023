@@ -769,10 +769,10 @@ screen chapter_menu():
                     at transform:
                         zoom 0.666
                     action Play("sound", "sfx-valid.wav"), Hide("chapter_menu", Fade(1.0)), Jump("choose_direction")
-
 style start_window is empty
 
 label splashscreen:
+    define seen_splash = True
     $ renpy.movie_cutscene("movies/splash.mpg")
     return
 

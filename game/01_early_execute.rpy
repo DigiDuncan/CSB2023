@@ -7,6 +7,8 @@ default persistent.seen = set()
 default persistent.heard = set()
 default persistent.true_ending = False
 
+define seen_splash = False
+
 # Chapter unlocks
 default persistent.csb2_unlocked = False
 default persistent.csb3a_unlocked = False
