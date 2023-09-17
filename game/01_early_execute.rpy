@@ -6,8 +6,7 @@ define determination = Dissolve(0.0)
 default persistent.seen = set()
 default persistent.heard = set()
 default persistent.true_ending = False
-
-define seen_splash = False
+default persistent.seen_splash = False
 
 # Chapter unlocks
 default persistent.csb2_unlocked = False

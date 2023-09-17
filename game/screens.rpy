@@ -309,7 +309,7 @@ screen navigation():
 
         if main_menu:
 
-            textbutton _("Start") action Start()
+            textbutton _("Start") action Start("chapter_select")
 
         else:
 
@@ -322,8 +322,8 @@ screen navigation():
         textbutton _("Extras") action ShowMenu("category_welcome")
 
         if main_menu:
-
-            textbutton _("Replay Intro") action SetVariable("seen_splash", True), Start("splashscreen")
+            
+            textbutton _("Replay Intro") action Start("splashscreen")
 
         textbutton _("CSettings") action ShowMenu("preferences")
 
@@ -374,12 +374,6 @@ screen main_menu():
 
     ## This ensures that any other menu screen is replaced.
     tag menu
-
-    if not seen_splash:
-        on "show" action If(renpy.music.is_playing(), true=None, false=Play("music", "bubble_tea.mp3", loop = False))
-    else:
-        on "show" action SetVariable("seen_splash", False), If(renpy.music.is_playing(), true=None, false=Play("music", "<from 16.53>bubble_tea.mp3", loop = False))
-
     add gui.main_menu_background
 
     ## This empty frame darkens the main menu.

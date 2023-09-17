@@ -776,10 +776,22 @@ style start_window is empty
 
 label splashscreen:
     $ renpy.movie_cutscene("movies/splash.mpg")
-    $ seen_splash = True
+    $ persistent.seen_splash = True
     return
 
-label start:
+label before_main_menu:
+    if not persistent.seen_splash:
+        if not renpy.music.is_playing():
+            $ renpy.music.play("bubble_tea.mp3", loop = False)
+    else:
+        if not renpy.music.is_playing():
+            $ renpy.music.play("<from 16.53>bubble_tea.mp3", loop = False)
+            $ persistent.seen_splash = False
+
+    return
+
+
+label chapter_select:
     scene game_menu
     stop music fadeout 3.0
     window hide
