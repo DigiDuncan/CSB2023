@@ -4,9 +4,15 @@ label knocked_out:
     n "As CS' vision fades back into view, he can also hear a faint heart monitor beeping."
     scene hospital_room with dissolve
     n "CS immediately snaps up."
-    show cs worried at mid_left with moveinbottom
-    cs "Wha--"
-    cs "What happened? How long have I been out?"
+    if fun_value(40):
+        show cs disappointed metal at mid_left with moveinbottom
+        cs "Wha--"
+        cs "What happened? How long have I been out?"
+        cs "And why do I have this eyepatch? My eye feels fine."
+    else:
+        show cs worried at mid_left with moveinbottom
+        cs "Wha--"
+        cs "What happened? How long have I been out?"
     show cs disappointed
     cs "Thank god I didn't catch some virus from a global pandemic or something."
     cs "I guess that's the last time I try to fight someone."

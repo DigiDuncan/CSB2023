@@ -64,7 +64,10 @@ label car_ride_1:
     show pakoo worried with vpunch
     cs "JESUS!!"
     n "CS swerves all over the road after being startled."
-    show pakoo
+    if fun_value(5):
+        show pakoo happy
+    else:
+        show pakoo
     show cs disappointed
     arceus "Yep. I think they are doing just fine."
     scene jeep_inside_fg
@@ -89,7 +92,10 @@ label car_ride_1:
         scene car_inside_fg
         show drive_day behind car_inside_fg
     show cs at left
-    show pakoo at right
+    if fun_value(5):
+        show pakoo happy at right
+    else:
+        show pakoo at right
     with fade
     pause 1.0
     arceus "Alright, well it looks like Aria is gonna pick up Digi and Nova, and meet us here soon."
@@ -496,13 +502,24 @@ label copguy_pres:
     sheriff "Copguy, call this number."
     n "The sheriff sends Copguy the phone number and he dials it."
     copguy "Hello?"
-    obama "Who is this?"
-    obama "How did you get this number?"
-    copguy "Hey Mr. President, it's me, Copguy. There is a ragtag gang of criminals on the loose that we can't stop."
-    copguy "We sent the Montana National Guard to stop them, and this gang plowed right through them."
-    obama "I see."
-    obama "Looks like we'll have to pull out the big guns."
-    obama "You are gonna head to Chicago, I'll have a jet come pick you up."
+    if fun_value(20):
+        bomaha "Who is this?"
+        bomaha "How did you get this number?"
+        copguy "Hey Mr. President, it's me, Copguy. There is a ragtag gang of criminals on the loose that we can't stop."
+        copguy "We sent the Montana National Guard to stop them, and this gang plowed right through them."
+        bomaha "I see."
+        bomaha "Looks like we'll have to pull out the big guns."
+    else:
+        obama "Who is this?"
+        obama "How did you get this number?"
+        copguy "Hey Mr. President, it's me, Copguy. There is a ragtag gang of criminals on the loose that we can't stop."
+        copguy "We sent the Montana National Guard to stop them, and this gang plowed right through them."
+        obama "I see."
+        obama "Looks like we'll have to pull out the big guns."
+    if fun_value(20):
+        bomaha "You are gonna head to Chigaco, I'll have a jet come pick you up."
+    else:
+        obama "You are gonna head to Chicago, I'll have a jet come pick you up."
     copguy "Thank you sir, I won't stop till this group is defeated."
     scene black with dissolve
     window hide
@@ -523,7 +540,10 @@ label car_ride_3:
     music The Whale - Dr. Awesome
     n "While they are driving, Arceus notices that copguy starts ludicrously speeding up until he stops in Illinois."
     arceus "Guys, I think I found out where Copguy is headed."
-    arceus "He's stopped in Chicago."
+    if fun_value(20):
+        arceus "He's stopped in Chigaco."
+    else:
+        arceus "He's stopped in Chicago."
     pakoo "Ah shoot."
     cs "I'm gonna ping everyone in CSCord, and see if anyone else is able to help us out."
     cs "We're gonna need it."
@@ -655,7 +675,10 @@ label car_slam:
     digi "Holy shit! CS! You're alive!"
     cs "Yeah! How about you guys?"
     nova "I wanna fall over, I'm so tired."
-    aria "I never thought that our first meetup would be at a mall, and our second would be the destruction of Chicago."
+    if fun_value(20):
+        aria "I never thought that our first meetup would be at a mall, and our second would be the destruction of Chigaco."  
+    else:  
+        aria "I never thought that our first meetup would be at a mall, and our second would be the destruction of Chicago."
     n "CS laughs."
     cs "Yeah, me either, Aria."
     cs "There is one last group to check on."

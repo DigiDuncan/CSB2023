@@ -241,6 +241,7 @@ define lancer = Character("Lancer", callback = renpy.partial(char_callback, name
 define tate = Character("Tate",  callback = renpy.partial(char_callback, name = "tate", beep="tate"))
 define kitty = Character("Kitty", callback = renpy.partial(char_callback, name = "kitty", beep = "kitty"))
 define obama = Character("Obama", callback = renpy.partial(char_callback, name = "obama", beep = "obama"))
+define bomaha = Character("Omaha", callback = renpy.partial(char_callback, name = "obama", beep = "obama"))
 define blank = Character("Blank", callback = renpy.partial(char_callback, name = "blank"))
 define aria = Character("Aria", callback = renpy.partial(char_callback, name = "aria"))  # TODO: Beep
 define cop = Character("Cop", callback = renpy.partial(char_callback, name = "cop"))
@@ -267,6 +268,7 @@ image cs angry dark flipped = "flip:characters/cs/angrydark.png"
 image cs worried = "characters/cs/worried.png"
 image cs worried flipped = "flip:characters/cs/worried.png"
 image cs disappointed = "characters/cs/disappointed.png"
+image cs disappointed metal = "characters/cs/disappointedmetal.png"
 image cs disappointed flipped = "flip:characters/cs/disappointed.png"
 image cs concentrate = "characters/cs/concentrate.png"
 image cs concentrate dark = "characters/cs/concentratedark.png"

@@ -576,6 +576,7 @@ label csbi_end:
     show worker_4 at mid_left with hpunch
     if fun_value(5):
         cs "Ow."
+        mean "AUUUUUGH!!"
     hide worker_4 with moveoutleft
     show cs angry at center with move
     show black with dissolve

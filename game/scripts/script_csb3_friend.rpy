@@ -367,6 +367,9 @@ label after_fanboy:
     arceus "Uhh, no?"
     pakoo "Oh, Linus brought me here to--"
     arceus "Are you a cop? You better not be cop."
+    if fun_value(50):
+        cs "Hey, aren't you the guy who made Petscop 2?"
+        pakoo "Huh?"
     show linus at center with vpunch
     linus "Heyyy! There you are!"
     linus "CS, this is the trainer we brought in today!"
@@ -959,7 +962,10 @@ label after_cop_fight:
         pakoo "Thanks! I love this car."
     else:
         show pakoo
-    show pakoo
+    if fun_value(5):
+        show pakoo happy
+    else:
+        show pakoo
     kitty "Arcie.. This does not surprise me in the slightest."
     arceus "I mean, I {i}did{/i} say I was going to be in trouble with the law at some point in my life."
     if nice_car:

@@ -98,7 +98,10 @@ label new_plan:
     cs "Oh my god, that's amazing! But what about you two?"
     anno "Gotcha covered."
     # IDEA: Maybe have an actual AI-generated clip here?
-    obama "I'm officially pardoning Annorexorcist and Arceus3251, for helping me out of a pickle."
+    if fun_value(20):
+        bomaha "I'm officially pardoning Annorexorcist and Arceus3251, for helping me out of a pickle."
+    else:
+        obama "I'm officially pardoning Annorexorcist and Arceus3251, for helping me out of a pickle."
     arceus "Incredible as always, Anno."
     anno "I try."
     cs "But what about money? I'm still out of a job and I'd like to keep having a roof over my head."

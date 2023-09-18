@@ -543,13 +543,19 @@ label after_ufo:
     scene car plains night
     show billy car
     with fade
-    n "As they are drving through Illinois, they pass by Chicago."
+    if fun_value(20):
+        n "As they are drving through Illinois, they pass by Chigaco."
+    else:
+        n "As they are drving through Illinois, they pass by Chicago."
     arceus "One day, I'm gonna rule that place."
     cs "What are you... talking about?"
     arceus "It's better than ruling the Earth."
     cs "Get some sleep, Arc."
     scene black with fade
-    n "The gang stops in Indiana for the night, and takes off in the morning through Michigan."
+    if fun_value(20):
+        n "The gang stops in Indiana for the night, and takes off in the morning through Mitchigan."
+    else:
+        n "The gang stops in Indiana for the night, and takes off in the morning through Michigan."
     jump michigan
 
 label michigan:
