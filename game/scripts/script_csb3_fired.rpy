@@ -4,7 +4,7 @@
 # customer
 # guest
 # mean [needs bio]
-# agent [needs bio]
+# agent [needs bio] (the sprite is David Cross)
 
 # Needed backgrounds:
 # hotel_lobby
@@ -685,7 +685,9 @@ label fan_interaction:
     arceus "Our last two gambles paid off, I guess we gotta go all the way."
     anno "We can't pass this up. I'll email him back."
     cs "[band_name] is going on tour!"
+    jump howie
 
+label howie:
     scene black with dissolve
     n "After a few hours, the band meet Howie downstairs in the lobby."
 
@@ -715,4 +717,32 @@ label fan_interaction:
     anno "This music's awesome!"
     cs "These seats are some comfy!"
     agent "Alright boys, enough chat, let's talk business."
-    
+    agent "I want to take you guys on tour."
+    cs "Already?!"
+    agent "Oh yeah baby, already. [ep_name] made [band_name] big, overnight. This kinda success comes once in a lifetime, and it's in your lifetime, and it's right now!"
+    anno "Woah, woah, woah, slow down. Why are you so invested in our success?"
+    agent "Oh, don't think I'm going to get a raw deal here, I know how to make sure we all end up happy."
+    arceus "You sure you mean all of us?"
+    agent "I sense you're spooked so I'll give ya the rub. We take you on tour. Every ticket you sell, I get a cut, you get a cut, we all go home snuggling our cash."
+    cs "You snuggle your cash?"
+    agent "Better than lavender, baby."
+    anno "So what's the plan? How do we get venues? Do we even have a way to promote?"
+    agent "Leave all the fiddly buisness to me. You guys just get on stage and sing like, [song_name_3] or whatever."
+    agent "How's that song go? {image=note_small1.png}{i}I made my way over to Japan, [line_3]?{/i}{image=note_small2.png}"
+    arceus "No, that's not--{w=0.5}{nw}"
+    agent "Anywho, do we got a deal?"
+    anno "I want to see whatever contract you're having us sign, first."
+    agent "Smart man, smart man. Here it is."
+    n "Howie hands Anno the contract."
+
+    scene black with dissolve
+    n "As Anno reads over the contract, CS, Arc, and Howie talk more about the deal."
+    menu:
+        "Should they take the deal?"
+        "Yes":
+            jump signed_the_contract
+        "No":
+            return
+
+label signed_the_contract:
+    n "After some time, Anno signs the contract, and they all return to the hotel."
