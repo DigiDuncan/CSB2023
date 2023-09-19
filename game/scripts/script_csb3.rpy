@@ -118,7 +118,7 @@ label edit_video:
     jump play_editgame
 
 label fired:
-    $ renpy.movie_cutscene("movies/mymovie_cs.mpg")
+    $ renpy.movie_cutscene("movies/mymovie_cs.webm")
     scene inside_ltt with fade
     n "The next day."
     n "CS walks into LMG to greet Linus."
@@ -141,7 +141,7 @@ label fired:
     jump new_plan
 
 label boost:
-    $ renpy.movie_cutscene("movies/good_cs_ytp.mpg")
+    $ renpy.movie_cutscene("movies/good_cs_ytp.webm")
     n "The next day."
     $ achievement_manager.unlock("#1 Rated Pooper")
     scene inside_ltt with fade

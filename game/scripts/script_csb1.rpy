@@ -402,7 +402,7 @@ label rosen_house:
         hide csgod with dissolve
         n "Pakoo sighs."
         pakoo "Let's finish this."
-        $ renpy.movie_cutscene("movies/error_cutscene.mp4")
+        $ renpy.movie_cutscene("movies/error_cutscene.webm")
         jump rpg_error
     else:
         scene rosen_abode with fade

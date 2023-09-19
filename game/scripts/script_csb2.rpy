@@ -76,7 +76,7 @@ label chop:
 label kick:
     show cs angry at left
     show wesley at right
-    $ renpy.movie_cutscene("movies/kick.ogv")
+    $ renpy.movie_cutscene("movies/kick.webm")
     hide wesley with easeoutright
     show cs angry at left with move
 
@@ -224,7 +224,7 @@ label asylum:
     hide csgod with moveoutright
     stop music fadeout 3.0
     music end
-    $ renpy.movie_cutscene("movies/bad_ending.mp4")
+    $ renpy.movie_cutscene("movies/bad_ending.webm")
     return
     
 # Caught

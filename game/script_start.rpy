@@ -661,13 +661,13 @@ image script = "secret/script.png"
 image post_it2 = "secret/post-it2.png"
 
 # Movies
-image car background = Movie(play="movies/car_background.mp4")
-image car background night = Movie(play="movies/car_background_night.mp4")
-image car plains = Movie(play="movies/car_plains.mp4")
-image car plains night = Movie(play="movies/car_plains_night.mp4")
-image tvcar = Movie(play="movies/0001.mpg")
-image drive_night = Movie(play="movies/car_drive_night.mp4")
-image drive_day = Movie(play="movies/car_drive_day.mp4")
+image car background = Movie(play="movies/car_background.webm")
+image car background night = Movie(play="movies/car_background_night.webm")
+image car plains = Movie(play="movies/car_plains.webm")
+image car plains night = Movie(play="movies/car_plains_night.webm")
+image tvcar = Movie(play="movies/0001.webm")
+image drive_night = Movie(play="movies/car_drive_night.webm")
+image drive_day = Movie(play="movies/car_drive_day.webm")
 
 #Fun Values
 image utajsign = "secret/utajsign.png"
@@ -777,7 +777,7 @@ screen chapter_menu():
 style start_window is empty
 
 label splashscreen:
-    $ renpy.movie_cutscene("movies/splash.mpg")
+    $ renpy.movie_cutscene("movies/splash.webm")
     $ persistent.seen_splash = True
     return
 
