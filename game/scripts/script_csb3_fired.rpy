@@ -4,11 +4,6 @@
 # customer
 # guest
 # mean [needs bio]
-# agent [needs bio] (the sprite is David Cross)
-
-# Needed backgrounds:
-# hotel_door
-# hotel_hall
 
 # Needed sounds:
 # elevator music
