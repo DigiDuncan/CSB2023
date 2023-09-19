@@ -7,11 +7,7 @@
 # agent [needs bio] (the sprite is David Cross)
 
 # Needed backgrounds:
-# hotel_lobby
-# hotel_room
 # guitar_hero
-# hotel_elevator
-# hotel_breakfast
 # mcdonalds
 # hotel_door
 # hotel_hall
@@ -888,4 +884,6 @@ label first_tour_day:
     cs "{cps=15}{image=note_small1.png}[line_6]{image=note_small2.png}"
     n "Anno plays an epic guitar solo."
     pause 2.0
-    scene black with dissolve
+    scene black with Dissolve(3.0)
+
+    
