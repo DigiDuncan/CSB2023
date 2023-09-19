@@ -48,9 +48,9 @@ See what needs to be done below.
 - [ ] Borderlands Intros
 
 ### Fired Ending [Digi, Sept. W2]
-- [ ] Script
-- [ ] Backgrounds
-- [ ] Characters
+- [ ] Script [75%]
+- [ ] Backgrounds [75%]
+- [ ] Characters [75%]
 - [ ] Transitions
 - [ ] Music
 - [ ] Bios
@@ -58,8 +58,8 @@ See what needs to be done below.
 
 ### Country Ending [All, Sept. W4]
 - [ ] England
-    - [ ] Script
-    - [ ] Backgrounds
+    - [ ] Script [90%]
+    - [ ] Backgrounds [75%]
     - [ ] Characters
     - [ ] Transitions
     - [ ] Music
@@ -99,7 +99,7 @@ See what needs to be done below.
 - [ ] Check Discord channels for missing content
 
 ### Wishlist
-- [ ] Ultimate Custom Night (RPG Freeplay) [50%]
+- [ ] Ultimate Custom Night (RPG Freeplay) [75%]
     - [ ] Additional fighters/AIs
 - [ ] Cheats Mode
     - [ ] You can now play as Luigi

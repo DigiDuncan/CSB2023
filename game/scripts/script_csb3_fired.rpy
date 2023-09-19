@@ -16,6 +16,8 @@
 # anno is always just sitting on the left, arc on the right, and CS in the middle
 # need to like, make this more interesting
 
+# TODO: [PAKOO] THIS ROUTE REALLY NEEDS MUSIC
+
 label new_plan:
     scene outside_ltt
     show cs angry at center
@@ -680,6 +682,7 @@ label fan_interaction:
     jump howie
 
 label howie:
+    stop music
     scene black with dissolve
     n "After a few hours, the band meet Howie downstairs in the lobby."
 
@@ -737,6 +740,7 @@ label howie:
             return
 
 label signed_the_contract:
+    stop music
     scene black
     n "After some time, Anno signs the contract, and they all return to the hotel."
 
@@ -801,6 +805,7 @@ label signed_the_contract:
     jump first_tour_day
 
 label first_tour_day:
+    stop music
     scene black with dissolve
     n "CS heads to bed, and the next morning, the whole [band_name] crew gets ready for their first tour day."
 
