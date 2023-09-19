@@ -1,8 +1,10 @@
 ### TODO:
 # Needed character sprites:
 # cs surprised
+# cs scared
 # customer
-# guest
+# guest [gen z]
+# janitor
 # mean [needs bio]
 
 # Needed sounds:
@@ -645,8 +647,8 @@ label fan_interaction:
     anno "57,685."
     cs "Holy shit, that's a lot of sales, how much money{nw}"
     anno "57,688."
-    cs "OK, yeah, I got that, how much money does that equate to{nw}"
-    anno "57,692...{w=0.5}{nw}"
+    cs "OK, yeah, I got that, how much money does that equate to{w=0.5}{nw}"
+    anno "57,692...{w=1.0}{nw}"
     cs "Stop refreshing the page!"
     anno "Sorry."
     cs "How much money is that?"
@@ -717,7 +719,7 @@ label howie:
     cs "You snuggle your cash?"
     agent "Better than lavender, baby."
     anno "So what's the plan? How do we get venues? Do we even have a way to promote?"
-    agent "Leave all the fiddly buisness to me. You guys just get on stage and sing like, [song_name_3] or whatever."
+    agent "Leave all the fiddly buisness to me. You guys just get on stage and sing like, {i}[song_name_3]{/i} or whatever."
     agent "How's that song go? {image=note_small1.png}{i}I made my way over to Japan, [line_3]?{/i}{image=note_small2.png}"
     arceus "No, that's not--{w=0.5}{nw}"
     agent "Anywho, do we got a deal?"
