@@ -838,3 +838,36 @@ label scott_movent:
     n "A speeding car rams into Tom, and he flies off into the distance."
     cs "Uh oh. {w=3.5} I didn't see nothin'."
     return
+
+label england_japan:
+    cs "I was thinking of going to Japan."
+    kitty "That sounds pretty cool!"
+    arceus "Is there anywhere you wanna go in particular in Japan?"
+    cs "I don't really know where to go there, I guess I'll have to see when I get there."
+    arceus "Well you have to get the Domino's Hatsune Miku Pizza."
+    kitty "Or sing some Japanese Karaoke!"
+    cs "Yeah well, I'll have to let you guys know how I'm doing after the trip."
+    arceus "Welp, should we take you back to the airport?"
+    cs "Sure, let's go."
+    n "Arceus takes CS back to the airport."
+    cs "Well, thank you so much Arceus for everything, really."
+    arceus "It's all good man, I loved having you here."
+    arceus "It's also impressive that you made so much money in the short amount of time you were here, you'll probably be set for Japan!"
+    cs "Yeah, I honestly don't know how I managed to most of those things, I was kinda winging it."
+    cs "Welp, it looks like my plane is here."
+    cs "See ya Arceus!"
+    arceus "See you later CS!"
+    n "CS grabs his ticket and heads on the next plane."
+    cs "Man, I'm kinda nervous to go to Japan, actually."
+    cs "It's going to be wildly different than anything I've seen before."
+    cs "Oh well, I'm sure it'll be fun."
+    cs "Time to get some sleep."
+    jump japan
+
+label japan:
+    n "As CS wakes up, he sees the plane landing outside."
+    cs "Wow, I really slept a lot, or that was a crazy fast trip."
+    cs "Welp, time to check out Japan!"
+    n "CS exits the terminal and enters the airport."
+    cs "Wow, this place is already pretty crazy!"
+    
