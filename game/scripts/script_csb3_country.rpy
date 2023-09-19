@@ -384,7 +384,7 @@ label arceus_place:
             jump scott_zone
 
 label hell_zone:
-    $ ramsay = True
+    $ ramsay_check = True
     cs "I wanna go on Hell's Kitchen!"
     arceus "Wat."
     cs "Yeah! I can go on the show and cook up some crazy meal and win!"
@@ -611,7 +611,7 @@ label good_ramsay:
                 jump scott_zone
     
 label top_zone:
-    $ gear = True
+    $ gear_check = True
     cs "I kinda wanna go on Top Gear."
     kitty "Well now I gotta see that."
     kitty "What are you gonna do to get on the show?"
@@ -732,7 +732,7 @@ label top_win:
                 jump hell_zone
 
 label scott_zone:
-    $ tom = True
+    $ tom_check = True
     cs "I wanna see what Tom Scott is up to."
     kitty "Who now?"
     arceus "He's some guy here who explores weird topics on YouTube."
