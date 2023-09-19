@@ -6,6 +6,7 @@ define determination = Dissolve(0.0)
 default persistent.seen = set()
 default persistent.heard = set()
 default persistent.true_ending = False
+default persistent.creative_mode = False
 default persistent.seen_splash = False
 
 # Chapter unlocks

@@ -593,16 +593,16 @@ label good_ramsay:
     kitty "Ah ok."
     arceus "Well, you did quite a bit already, is there anything else you want to do here?"
     $ achievement_manager.unlock("Master Chef")
-    if gear:
+    if gear_check and tom_check:
+        jump england_done
+    elif gear_check:
         menu:
             "Go on adventure with Tom Scott":
                 jump scott_zone
-    elif tom:
+    elif tom_check:
         menu:
             "Go on Top Gear":
                 jump top_zone
-    elif (gear, tom):
-        jump england_done
     else:
         menu:
             "Go on Top Gear":
@@ -714,16 +714,16 @@ label top_win:
     cs "I hope those cops forgot about me by now."
     arceus "Anyways, is there anything else you want to do here in England?"
     $ achievement_manager.unlock("Bottom Gear")
-    if ramsay:    
+    if tom_check and ramsay_check:
+        jump england_done
+    elif ramsay_check:    
         menu:
             "Go on adventure with Tom Scott":
                 jump scott_zone
-    elif tom:
+    elif tom_check:
         menu:
             "Go on Hell's Kitchen":
                 jump hell_zone
-    elif (tom, ramsay):
-        jump england_done
     else:
         menu:
             "Go on adventure with Tom Scott":
@@ -802,16 +802,16 @@ label scott_move:
     kitty "Well, looks like you got 2 for 1 then!"
     kitty "Is there anything is you want to do?"
     $ achievement_manager.unlock("The Man In The Red Shirt")
-    if ramsay:    
+    if gear_check and ramsay_check:
+        jump england_done
+    elif ramsay_check:    
         menu:
             "Go on Top Gear":
                 jump top_zone
-    elif gear:
+    elif gear_check:
         menu:
             "Go on Hell's Kitchen":
                 jump hell_zone
-    elif (gear, ramsay):
-        jump england_done
     else:
         menu:
             "Go on Hell's Kitchen":
