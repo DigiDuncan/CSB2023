@@ -7,8 +7,6 @@
 # agent [needs bio] (the sprite is David Cross)
 
 # Needed backgrounds:
-# guitar_hero
-# mcdonalds
 # hotel_door
 # hotel_hall
 
