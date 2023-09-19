@@ -107,7 +107,7 @@ label new_plan:
     jump guitar_hero
 
 label guitar_hero:
-    # scene guitar_hero with fade
+    scene hotel_guitar_hero with fade
     n "CS, Anno, and Arc relax by playing some Guitar Hero."
     arceus "Man, we're all pretty good at this."
     cs "Wait, this gives me an idea."
@@ -232,7 +232,7 @@ label hotel_next_day:
     with moveinleft
     n "They all sit down to eat."
 
-    # show hotel_tabel behind cs with dissolve
+    # show hotel_table behind cs with dissolve
     n "As they eat, CS checks the stream numbers on {i}[song_name_1]{/i}."
     # show cs surprised
     cs "Guys?"
@@ -468,7 +468,7 @@ label mcd:
     hide cs
     with moveoutright
 
-    # scene mcdonalds
+    scene mcdonalds_inside
     show anno at left
     show arceus at right
     show cs
@@ -606,7 +606,7 @@ label fan_interaction:
     stop music
     scene black with dissolve
     n "The next day, they hear a knock on their hotel room door early morning."
-    # scene hotel_door with dissolve
+    scene hotel_door with dissolve
     cs "Huh? Who the fuck knocks on a hotel door, especially at this hour?"
     show cs angry at left with moveinleft
     cs "Hello?"
@@ -688,7 +688,7 @@ label howie:
     with dissolve
 
     n "Howie walks into the lobby."
-    # show howie at left with moveinleft
+    show howie at left with moveinleft
     agent "You guys ready?"
     cs "Ready for what?"
     agent "A ride in a limosine!"
@@ -699,10 +699,10 @@ label howie:
     hide cs
     hide anno
     hide arceus
-    # hide howie
+    hide howie
     with moveoutleft
 
-    # scene in_limo with dissolve
+    scene in_limo with dissolve
     arceus "These snacks are amazing!"
     anno "This music's awesome!"
     cs "These seats are some comfy!"
@@ -742,7 +742,7 @@ label signed_the_contract:
     show anno at left
     show arceus
     show cs at mid_left
-    # show howie at right
+    show howie at right
     with dissolve
 
     agent "Well, your first stop is Vancouver."
@@ -752,7 +752,7 @@ label signed_the_contract:
     cs "Wait, Linus--"
     agent "See you bright an early tomorrow, we're getting in a tour bus!"
 
-    # hide howie with moveoutright
+    hide howie with moveoutright
     show cs at center
     show arceus at right
     with move
@@ -772,7 +772,7 @@ label signed_the_contract:
     cs "{i}Ugh, I can't sleep like this. I need a drink."
     n "CS gets out of bed and takes a walk around the halls."
 
-    # scene hotel_hall
+    scene hotel_hall
     show cs at left with moveinleft
     cs "Maybe a cold drink will clear my head."
 
@@ -831,7 +831,7 @@ label first_tour_day:
     agent "Well, then! It's show time!"
 
     scene black with dissolve
-    # scene ltx with dissolve
+    scene ltx with dissolve
     show anno at left
     show arceus
     show cs at mid_left

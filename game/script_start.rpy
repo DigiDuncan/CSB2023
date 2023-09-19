@@ -438,6 +438,7 @@ image db_cooper = "characters/db_coopergame.png"
 image marine = "characters/marine.png"
 image big_tank = "characters/big_tank.png"
 image benrey = "characters/benrey.png"
+image howie = "characters/howie_mandell.png"
 
 # Background Images
 ## CSBI
@@ -522,9 +523,18 @@ image comments = "bg/comments.png"
 image hospital_room = "bg/hospital_room.png"
 image hospital_reception = "bg/hospital_reception.png"
 image ticket_counter = "bg/ticket_counter.png"
+
+# Fired route
 image hotel_lobby = "bg/hotel_lobby.png"
 image hotel_room = "bg/hotel_room.png"
 image hotel_breakfast = "bg/hotel_breakfast.png"
+image hotel_guitar_hero = "bg/hotel_guitar_hero.png"
+image hotel_door = "bg/hotel_door_back.png"
+image hotel_hall = "bg/hotel_hallway.png"
+image mcdonalds_inside = "bg/mcdonalds_interior.png"
+image ltx = "bg/ltx.png"
+image ltx_stage = "bg/ltx_stage.png"
+image in_limo = "bg/in_limo.png"
 
 ## CSBIII Chapter 2
 image washington_road day = "bg/washingtonroadday.png"
