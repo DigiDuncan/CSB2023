@@ -840,3 +840,52 @@ label first_tour_day:
     agent "You boys ready to go?"
     cs "Ready as we'll ever be."
     agent "Well, then! It's show time!"
+
+    scene black with dissolve
+    # scene ltx with dissolve
+    show anno at left
+    show arceus
+    show cs at mid_left
+    with moveinleft
+
+    n "They all arrive at LTX."
+    cs "Well, it's pretty busy, I doubt we'll run into--"
+    show linus at right with moveinright
+    linus "Oh good, you guys are finally, here, you're [band_name], right?"
+    linus "Luke told me about you guys, and I listened to [ep_name] last night... I really liked, uh, which one was it, {i}[song_name_4]{/i}?"
+    linus "Anywho, I...{w=1.0}wait, CS?!"
+    cs "Uh, hi?"
+    linus "Wait, you... you're the lead singer in [band_name]?!"
+    cs "Looks like it..."
+    linus "Well, I'll say this, you're better at singing than you are editing LTT videos."
+    show cs worried
+    n "CS looks worried."
+    n "Linus chuckles."
+    linus "Listen, don't worry about it."
+    show cs surprised
+    cs "Really?"
+    linus "Yeah, I was too hard on you. Maybe too quick to fire you, too, though it looks like you're in a better position than I could have given you."
+    show cs happy
+    cs "Well, thanks for the apology."
+    linus "Yeah, you deserve it. Honestly, when the public learned who was editing that video and that we axed you, they were pretty upset."
+    cs "How about this, when I get out of this mess, you let me edit a guest video, and I'll make a video saying we parted ways amicably."
+    linus "Now that's a deal I'll take."
+    linus "Now, get on stage and rock the house!"
+
+    scene ltx_stage
+    show anno at left
+    show arceus at right
+    show cs
+    with dissolve
+
+    # TODO: cheering
+    n "The crowd is going insane."
+    cs "We're [band_name], and this is {i}[song_name_4]{/i}!"
+    n "The crowd is nuts."
+    cs "{cps=15}{image=note_small1.png}Through all adversity, we'll bind together and overcome!{image=note_small2.png}"
+    cs "{cps=15}{image=note_small1.png}[line_5]{image=note_small2.png}"
+    cs "{cps=15}{image=note_small1.png}With my friends beside there's no foe we can not fight!{image=note_small2.png}"
+    cs "{cps=15}{image=note_small1.png}[line_6]{image=note_small2.png}"
+    n "Anno plays an epic guitar solo."
+    pause 2.0
+    scene black with dissolve
