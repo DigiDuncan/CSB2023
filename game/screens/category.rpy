@@ -34,6 +34,8 @@ screen category_nav():
             # textbutton "Collectibles" action ShowMenu("collectibles_welcome")
             # textbutton "Endings" action ShowMenu("endings_welcome")
             textbutton "Jukebox" action ShowMenu("jukebox_welcome"), PauseAudio("music", True)
+            textbutton "Debug Menu" action ShowMenu("debug_menu")
+            textbutton "Ultimate\nCustom Night" action Start("rpg_ucn")
             textbutton "Unlock All" action Function(unlock_all)
             textbutton "Clear Persistent Data" action Jump("reset_vector")
 
