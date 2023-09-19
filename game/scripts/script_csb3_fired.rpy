@@ -14,6 +14,7 @@
 # hotel_breakfast
 # mcdonalds
 # hotel_door
+# hotel_hall
 
 # Needed sounds:
 # elevator music
@@ -745,4 +746,97 @@ label howie:
             return
 
 label signed_the_contract:
+    scene black
     n "After some time, Anno signs the contract, and they all return to the hotel."
+
+    scene hotel_lobby    
+    show anno at left
+    show arceus
+    show cs at mid_left
+    # show howie at right
+    with dissolve
+
+    agent "Well, your first stop is Vancouver."
+    cs "Vancouver? Where are we playing?"
+    n "Howie reads his iPad."
+    agent "Looks like something called LTX? Linus Tech Expo?"
+    cs "Wait, Linus--"
+    agent "See you bright an early tomorrow, we're getting in a tour bus!"
+
+    # hide howie with moveoutright
+    show cs at center
+    show arceus at right
+    with move
+
+    cs "Linus..."
+    anno "Don't be worried. Maybe he won't even recognize you."
+    arceus "Yeah, he'll be busy running the expo."
+    cs "Man, I don't know, we didn't end on great terms."
+    arceus "Let's just get a good night sleep. If we need to be up that early I need to get shuteye."
+    cs "OK..."
+
+    scene black with dissolve
+    n "The gang all go upstairs and head to bed, but CS struggles to sleep well."
+    cs "{i}Man, I'm worried about seeing Linus again. What if he just throws all of us out because he doesn't want to see me?"
+    cs "{i}The fate of [band_name] could rest in some dumb shit I did in the past."
+    cs "{i}Not even the past, like, a week or two ago."
+    cs "{i}Ugh, I can't sleep like this. I need a drink."
+    n "CS gets out of bed and takes a walk around the halls."
+
+    # scene hotel_hall
+    show cs at left with moveinleft
+    cs "Maybe a cold drink will clear my head."
+
+    show csgod at right with dissolve
+    csgod "Or I can."
+    show cs shocked
+    cs "Ah!"
+    show cs
+    csgod "I wouldn't fret about Linus."
+    cs "How-- how did you--"
+    csgod "What you did was your best. Good men will realize that. His anger will have been brief, despite his rash actions."
+    cs "How do you know all this?"
+    csgod "That isn't important. What's important is your mind being prepared for the day ahead."
+    csgod "You will go to bed, you will rest, and you will do your best -- as you have."
+    cs "Th-thank you... what do I call you?"
+    csgod "You can call me...{w=1.5} !!!"
+    hide csgod with dissolve
+    # show janitor at right with moveinright
+    "Janitor" "You alright man? Who are you talking to?"
+    cs "N-- no-one. Just heading to bed."
+    show cs flipped
+    hide cs with moveoutleft
+    "Janitor" "Weird guy."
+    jump first_tour_day
+
+label first_tour_day:
+    scene black with dissolve
+    n "CS heads to bed, and the next morning, the whole [band_name] crew gets ready for their first tour day."
+
+    scene hotel_room
+    show anno at left
+    show arceus at right
+    with dissolve
+
+    show cs with moveinleft
+    anno "Feeling better?"
+    cs "Much."
+    arceus "What changed?"
+    cs "Eh, something... something got into my head and cleared things up for me."
+    arceus "Alrighty man, well let's hope it did a good job, because it's time to hit the road."
+
+    hide arceus
+    hide cs
+    hide anno
+    with moveoutright
+
+    scene hotel_lobby with dissolve
+    show anno at left
+    show arceus
+    show cs at mid_left
+    with moveinleft
+
+    show howie at right with moveinright
+    agent "You boys ready to go?"
+    cs "Ready as we'll ever be."
+    agent "Well, then! It's show time!"
