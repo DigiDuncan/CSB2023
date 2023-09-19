@@ -27,18 +27,14 @@ screen category_nav():
             spacing 10
             xoffset 350
 
-            ##Here you list the categories
+            # Here you list the categories
+
             textbutton "People" action ShowMenu("people_welcome")
-            ##people_welcome is the main screen/welcome screen of the "People" category, defined in people.rpy. I suggest you create seperate files
-            # for all categories so it's easier to edit.
-
-            ##The buttons below don't do anything. Set up your category as seen in people.rpy then
-            ## switch "NullAction" with the "ShowMenu("screen name")" command like above.
-
             textbutton "Achievements" action ShowMenu("achievements_welcome")
             # textbutton "Collectibles" action ShowMenu("collectibles_welcome")
             # textbutton "Endings" action ShowMenu("endings_welcome")
             textbutton "Jukebox" action ShowMenu("jukebox_welcome"), PauseAudio("music", True)
+            textbutton "Unlock All" action Function(unlock_all)
             textbutton "Clear Persistent Data" action Jump("reset_vector")
 
     textbutton "Main Menu" action Return() yoffset 1000 xoffset 25
@@ -60,8 +56,6 @@ screen category_welcome():
             xoffset 200
             #xoffset 400
             text _p("""You could say this screen is... Extra :)""")
-            #text _p("""Welcome to the codex!""")
-
 
             #Really short text might not be centered correctly, you have to adjust the xoffset.
 

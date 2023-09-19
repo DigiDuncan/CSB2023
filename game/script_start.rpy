@@ -29,6 +29,14 @@ init python:
     renpy.music.register_channel("jukebox", "music")
     renpy.music.register_channel("sfx", "sound")
 
+init 10 python:
+    def unlock_all():
+        for m in music_map.keys():
+            persistent.heard.add(m)
+        for p in name_map.keys():
+            persistent.seen.add(p)
+        achievement_manager.unlock_all()
+
 # Custom transforms
 transform rotate_10:
     subpixel True
@@ -789,6 +797,7 @@ style start_window is empty
 label splashscreen:
     $ renpy.movie_cutscene("movies/splash.webm")
     $ persistent.seen_splash = True
+    $ persistent.heard.add("BUBBLE TEA - darkcat")
     return
 
 label before_main_menu:

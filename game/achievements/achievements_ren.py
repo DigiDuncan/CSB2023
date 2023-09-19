@@ -76,6 +76,10 @@ class AchievementManager:
             renpy.sound.play("audio/achieve.wav", channel = "sound", loop = False)
             ach.unlock(show_screen)
 
+    def unlock_all(self):
+        for achievement in achievements:
+            self.unlock(achievement.name, show_screen = False)
+
     def reset(self):
         for ach in achievements:
             ach.unlocked = False

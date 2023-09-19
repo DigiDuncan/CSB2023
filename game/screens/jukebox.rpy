@@ -7,6 +7,7 @@ init python:
     global music_map
     #Name of Entry followed by file name
     music_map = {
+        "BUBBLE TEA - darkcat": "bubble_tea.mp3",
         "Let's hear my baby - Walkman": "lets_hear_my_baby.mp3",
         "CANYON.MID - George Stone": "canyon.mp3",
         "Summer Clearance Sale - BEST MUSIC": "summer_clearance_sale.mp3",
