@@ -7,6 +7,9 @@
 # janitor
 # mean [needs bio]
 
+# Needed bgs:
+# tour_bus_inside
+
 # Needed sounds:
 # elevator music
 # elevator ding
@@ -886,4 +889,59 @@ label first_tour_day:
     pause 2.0
     scene black with Dissolve(3.0)
 
-    
+    scene ltx
+    show anno at left
+    show arceus
+    show cs at mid_left
+    show linus at right
+    with dissolve
+
+    linus "You guys were incredible! That was my favorite song of yours, too."
+    show cs happy
+    cs "Thank you so much!"
+    linus "Well, I'll transfer the money to your agent."
+    cs "Sounds good!"
+    linus "Well, thank you, CS. I'm glad we could bury whatever hatchet we had."
+    cs "Absolutely."
+    hide linus with moveoutright
+
+    show cs at center
+    show arceus at right
+    with move
+
+    arceus "We did it, that was amazing!"
+    anno "Hell yeah!"
+    cs "We rocked!"
+    arceus "Welp, back on the bus to recoop and see how much we earned!"
+
+    hide cs
+    hide arceus
+    hide anno
+    with moveoutright
+
+    # scene tour_bus_inside
+    scene black
+    show anno at left
+    show arceus at right
+    show cs at center
+    with dissolve
+
+    show howie at offscreenleft with moveinright
+    show howie at right with move
+
+    agent "Boys!"
+    n "The team turn to Howie to look at him."
+    agent "You really rocked out there! Playing Linus' favorite song, that was a clutch move."
+    cs "How much did we make?"
+    agent "Five."
+    arceus "Five?!"
+    agent "Thousand."
+    anno "Holy shit, already? With that kinda cashflow, we could..."
+    agent "Woah, woah, woah, slow your horses kid."
+    anno "Slow my horses...?"
+    agent "That's without me taking my cut, or you three splitting it. We still got more shows to do, you know!"
+    cs "Well then, let's get this show on the road!"
+    jump second_tour_day
+
+label second_tour_day:
+    return
