@@ -73,7 +73,7 @@ label billy_driver:
     play music "<loop 0>mm_select.mp3" volume 0.3
     music Mm Select - Matthew Simmonds
     billy "Hi, Billy Mays here for the Uber Driver!"
-    billy "The fast and easy way to get people around who don't have a car!"
+    billy "The fast and easy way for people who don't have a car to get around!"
     show cs happy
     cs "Sweet! We need to get to upstate New York, do you think you can help us?"
     billy "Absolutely! For only $19.95, I'll take you both to New York!"
@@ -543,24 +543,62 @@ label after_ufo:
     scene car plains night
     show billy car
     with fade
-    if fun_value(20):
-        n "As they are drving through Illinois, they pass by Chigaco."
-    else:
-        n "As they are drving through Illinois, they pass by Chicago."
+    n "As they are driving through Illinois, they pass by Chicago."
     arceus "One day, I'm gonna rule that place."
     cs "What are you... talking about?"
-    arceus "It's better than ruling the Earth."
+    arceus "It's better than ruling the Earth." #I feel like it'd be funny to wax poetic here about how great chicago is. Not super long, but enough to run the joke home. I love the idea of sleepy arc rambling on about chicago for a bit
     cs "Get some sleep, Arc."
     scene black with fade
-    if fun_value(20):
-        n "The gang stops in Indiana for the night, and takes off in the morning through Mitchigan."
-    else:
-        n "The gang stops in Indiana for the night, and takes off in the morning through Michigan."
+    n "The gang stops in Indiana for the night, and takes off in the morning."
     jump michigan
 
 label michigan:
-    # TODO: [ARIA] Write this.
-    jump ohio
+    billy "Alright. The highway entrance should be right around here."
+    billy "We can head to Ohio and then we'll be getting really close."
+    billy "Fuck."
+    cs "What's wrong?"
+    billy "The entrance is closed. We should stop and ask what's going on."
+    billy "There's someone over by the gas station. We can ask him."
+    billy "Hey man. Do you know what's up with the highway?"
+    streetguy "Not sure on details, but I hear they found one of the horseman of the apocalypse flying around."
+    billy "What?"
+    streetguy "Like I said, I don't know details."
+    billy "Well, do you know what roads are affected? We need to get to New York."
+    streetguy "Last I saw the route through Michigan should still be open."
+    streetguy "That's how I found out about the horseman of the apocalypse."
+    streetguy "Michigan having better roads than literally any other place is a sign of the end times."
+    billy "Alright, thanks for the help. I'm gonna get going."
+    n "Billy gets back in the car and tells the others what the guy said."
+    cs "Well. I guess if we have no other option we may as well go through Michigan."
+    arceus "Yeah they have corn and at least two other things, so it's honestly probably better than going through Ohio."
+    billy "Sounds like a plan. The drive is gonna take longer with the detour though, so we should definitely get going."
+    n "They get on the highway and start heading towards Michigan."
+    arceus "We're making progress. Finally in Michigan."
+    billy "It looks like we're coming up to a place called Bronson. Maybe we could stop there for food."
+    arceus "Nah this place looks too rural to have much around."
+    n "The two look over to CS, who they've just realized is visibly distressed."
+    arceus "Hey buddy, how's it going?"
+    cs "I... should be fine."
+    cs "Something about the name Bronson, Michigan sends a chill down my spine."
+    arceus "We'll just skip it. Nothing around here anyway."
+    n "They keep driving but CS kept muttering 'Don't go to Bronson.' under his breath until they finally stop seeing Bronson signs." 
+    billy "Alright. We're way past Bronson but we're getting pretty far north."
+    billy "We should probably find an exit to start heading towards New York soon."
+    cs "There's an exit coming up where we can go towards either I-69 or 94. We can shift then."
+    billy "Alright. Which one do you think?"
+    arceus "Well, 94 goes east which is the direction we want, but the other one is 69, so I'm down for either."
+    billy "I guess it's up to you then, CS"
+    menu:
+        "Which road should we take?"
+        "I-69":
+            jump interstate_69
+        "I-94":
+            jump interstate_94
+
+label interstate_69:
+    return
+label interstate_94:
+    return
 
 label ohio:
     if fun_value(50):
