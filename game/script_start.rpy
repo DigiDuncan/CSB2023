@@ -822,3 +822,10 @@ label chapter_select:
     window hide
     pause 0.1
     call screen chapter_menu()
+    return
+
+label test:
+    scene black
+    n "This is a test of Chinese rendering."
+    n "SIMPLIFIED\n我的气垫船装满了鳝鱼"
+    n "TRADITIONAL\n我的氣墊船裝滿了鱔魚"

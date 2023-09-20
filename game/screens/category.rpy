@@ -35,6 +35,7 @@ screen category_nav():
             # textbutton "Endings" action ShowMenu("endings_welcome")
             textbutton "Jukebox" action ShowMenu("jukebox_welcome"), PauseAudio("music", True)
             if preferences.developer_mode or persistent.creative_mode:
+                textbutton "Test Scene" action Jump("test")
                 textbutton "Debug Menu" action ShowMenu("debug_menu")
                 textbutton "Ultimate\nCustom Night" action Start("rpg_ucn")
                 textbutton "Unlock All" action Function(unlock_all)
