@@ -20,7 +20,7 @@ define achievements = [
     Achievement("Bored", "Sit through all the car dialouge.", "Sit through all the car dialouge.", "yawn"),
     Achievement("High Roller", "Win a game of Poker.", "Beat Mr. Green at Poker.", "poker"),
     Achievement("The House Doesn't Always Win", "???", "Complete the Golden Grin Casino job on the Death Sentence difficulty.", "house"),
-    Achievement("Broken Masquerade", "???", "Peer behind the fourth wall.", "ekhi"),
+    Achievement("Broken Masquerade", "???", "Peer behind the fourth wall.", "ekhi", True),
     Achievement("Guitar Hero", "???", "Unlock a new career by playing Guitar Hero?", "gh"),
     Achievement("Hi, My Name Is...", "Fill in the blank.", "Name your first song.", "hi"),
     Achievement("Singer-Songwriter", "???", "Write your first song.", "songwriter"),

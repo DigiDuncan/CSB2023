@@ -19,6 +19,7 @@ screen achievements_welcome():
         achievement_count = len(achievements)
         unlocked_count = len(persistent.unlocked_achievements)
         locked_count = achievement_count - unlocked_count
+        hidden_count = len([a for a in achievements if not a.unlocked and a.hidden])
     viewport:
         xsize 1300
         ysize 800
@@ -47,9 +48,9 @@ screen achievements_welcome():
             if achievement_manager.unlocked and achievement_manager.locked:
                 null height 100
             if achievement_manager.locked:
-                text "Locked Achievements ([locked_count]/[achievement_count])"
+                text "Locked Achievements ([locked_count]/[achievement_count], [hidden_count] hidden)"
                 for a in achievements:
-                    if not a.unlocked:
+                    if not a.unlocked and not a.hidden:
                         hbox:
                             first_spacing 25
                             image a.icon:

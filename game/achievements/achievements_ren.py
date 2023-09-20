@@ -15,6 +15,7 @@ class Achievement:
     locked_desc: str
     unlocked_desc: str
     icon_image: str
+    hidden: bool = False
 
     def __post_init__(self) -> None:
         self.unlocked = False

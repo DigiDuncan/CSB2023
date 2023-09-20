@@ -38,7 +38,7 @@ screen category_nav():
                 textbutton "Debug Menu" action ShowMenu("debug_menu")
                 textbutton "Ultimate\nCustom Night" action Start("rpg_ucn")
                 textbutton "Unlock All" action Function(unlock_all)
-                textbutton "Clear Persistent Data" action Jump("reset_vector")
+                textbutton "Clear Persistent Data" action Jump("reset_vector"), Quit(confirm = False)
 
     textbutton "Main Menu" action Return() yoffset 1000 xoffset 25
 

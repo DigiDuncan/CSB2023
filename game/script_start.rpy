@@ -36,6 +36,10 @@ init 10 python:
         for p in name_map.keys():
             persistent.seen.add(p)
         achievement_manager.unlock_all()
+        persistent.true_ending = True
+        persistent.csb2_unlocked = True
+        persistent.csb3a_unlocked = True
+        persistent.csb3b_unlocked = True
 
 # Custom transforms
 transform rotate_10:
