@@ -264,7 +264,7 @@ define guest = Character("Guest", callback = char_callback)
 define nurse = Character("Nurse", callback = char_callback)
 define benrey = Character("Benrey", callback = renpy.partial(char_callback, name = "benrey"))
 define mean = Character("Mean", callback = char_callback)  # TODO: Beep
-define agent = Character("Agent", callback = renpy.partial(char_callback, name = "howie", beep = "howie"))
+define agent = Character("Howie", callback = renpy.partial(char_callback, name = "howie", beep = "howie"))
 define gordon = Character("Gordon", callback = renpy.partial(char_callback, name = "gordon"))  # TODO: Beep
 
 # Character Images
