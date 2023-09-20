@@ -870,4 +870,24 @@ label japan:
     cs "Welp, time to check out Japan!"
     n "CS exits the terminal and enters the airport."
     cs "Wow, this place is already pretty crazy!"
+    cs "I feel like this was a better place to pick than England or Sweden."
+    cs "And on top of it all, I don't have to worry about the cops anymore!"
+    n "CS walks out of the airport."
+    cs "Unfortunately, I don't have any money left on me."
+    cs "So I really don't know what to do now."
+    cs "I could try to get a job, but I don't speak Japanese!"
+    cs "Lemme think, what could I do while I'm here?"
+    menu:
+        "Visit Domino's Pizza":
+            jump miku_pizza
+        "Sing Karaoke":
+            jump Karaoke
+        "Look around through the city":
+            jump anime_adventure
+        
+label anime_adventure:
+    cs "I guess I can start by looking around the city."
+    cs "This place is so compact, I could be here for days!"
+    cs "Let's start looking!"
+
     
