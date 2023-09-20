@@ -14,6 +14,9 @@ default persistent.csb2_unlocked = False
 default persistent.csb3a_unlocked = False
 default persistent.csb3b_unlocked = False
 
+# Register CJK font
+define config.font_name_map["cjk"] = "ZCOOLKuaiLe-Regular.ttf"
+
 screen music():
     zorder 100
     layer "music"

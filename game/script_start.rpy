@@ -815,7 +815,7 @@ label before_main_menu:
 
     return
 
-
+label start:  # this might be required??
 label chapter_select:
     scene game_menu
     stop music fadeout 3.0
@@ -827,5 +827,6 @@ label chapter_select:
 label test:
     scene black
     n "This is a test of Chinese rendering."
-    n "SIMPLIFIED\n我的气垫船装满了鳝鱼"
-    n "TRADITIONAL\n我的氣墊船裝滿了鱔魚"
+    n "SIMPLIFIED\n{font=cjk}我的气垫船装满了鳝鱼"
+    n "TRADITIONAL\n{font=cjk}我的氣墊船裝滿了鱔魚"
+    $ renpy.full_restart()
