@@ -55,6 +55,8 @@ init python:
         "midge": "Midgalicis",
         "db": "DB05",
         "benrey": "Benrey",
+        "howie": "Howie Mandell",
+        "gordon": "Gordon Ramsay",
         "iris": "???"
 
     }
