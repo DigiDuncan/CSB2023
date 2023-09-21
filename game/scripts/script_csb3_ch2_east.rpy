@@ -1198,6 +1198,7 @@ label streaming:
     cs "Well guys..."
     n "CS chuckles."
     cs "It's a long story..."
+    $ achievement_manager.unlock("That's All, Folks!")
     if preferences.csbounciness == 1.0:
         $ achievement_manager.unlock("Boingy Boingy Boingy")
     scene black with fade

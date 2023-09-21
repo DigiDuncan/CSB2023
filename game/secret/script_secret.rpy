@@ -39,7 +39,6 @@ label secret2:
     pause 1.0
     show arceus
     arceus "Yeah. Now I have to debug this shit."
-    $ achievement_manager.unlock("That's All, Folks!")
     pause
     return
   
