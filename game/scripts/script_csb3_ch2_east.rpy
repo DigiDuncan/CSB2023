@@ -1177,14 +1177,15 @@ label true_ending:
     cs "Oh my goodness, Linus got me a new PC!"
     n "There is also a note that says: \"We'd love to have to work with us again virtually, just give us a call\"."
     cs "I'll have to make sure to call them later!"
-    menu:
-        if persistent.true_ending:
+    if persistent.true_ending:
+        menu:
             "Go to sleep":
-                $ persistent.true_ending = True
                 jump archival
-        "Stream" (type = "true"):
-            $ persistent.true_ending = True
-            jump streaming
+            "Stream" (type = "true"):
+                jump streaming
+    else:
+        $ persistent.true_ending = True
+        jump streaming
 
 label streaming:
     show cs at mid_left
