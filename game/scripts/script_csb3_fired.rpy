@@ -3,9 +3,10 @@
 # cs surprised
 # cs scared
 # customer
-# guest [gen z]
+# guest [gen z] [needs bio]
 # janitor
 # mean [needs bio]
+# ges
 
 # Needed bgs:
 # tour_bus_inside
@@ -17,7 +18,7 @@
 # elevator ding
 # ~5 rock instrumentals
 
-# TRANSITIONS NEED TO BE MORE DYNAMIC
+# TODO: TRANSITIONS NEED TO BE MORE DYNAMIC
 # anno is always just sitting on the left, arc on the right, and CS in the middle
 # need to like, make this more interesting
 
