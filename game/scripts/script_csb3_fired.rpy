@@ -9,6 +9,8 @@
 
 # Needed bgs:
 # tour_bus_inside
+# manitoba_street
+# shoe_store
 
 # Needed sounds:
 # elevator music
@@ -958,7 +960,90 @@ label second_tour_day:
     n "CS shouts up to the front."
     cs "Where are we heading?!"
     agent "Manitoba! We'll stop in Winnipeg, so you guys can grab some stuff if you need it."
-    cs "Yeah, I might head into the city. What abuot you guys?"
+    cs "Yeah, I might head into the city. What about you guys?"
     anno "Nah, I'm good."
     arceus "Yeah, I'm just gonna chill here."
-    cs ""
+    cs "Alrighty then!"
+
+    scene black with dissolve
+    n "As they pull into the city, CS gets out and walks the street."
+
+    # scene manitoba_street
+    show cs with moveinleft
+    cs "What a place. Way better than the places I've been lately."
+    cs "And everyone's so friendly!"
+    show border_guard at right with moveinright
+    border_guard "Pardon me, eh!"
+    hide border_guard with moveoutleft
+    cs "Ooh, a shoe store!"
+    cs "If I'm going to be on stage, I need some better kicks."
+
+    # scene shoe_store
+    # show ges at right
+    # with dissolve
+    show cs at left with moveinleft
+    ges "Welcome to the sho--, woah, are you CS?"
+    cs "Yeah, how'd you know?"
+    ges "Aren't you touring with [band_name] right now?"
+    cs "Yeah, I am!"
+    ges "Dude, I've been listening to [song_name_3] all day!"
+    ges "{cps=15}{image=note_small1.png}I found myself in the U.K...{w=1.5}\n[line_3]{image=note_small2.png}"
+    ges "That shit slaps!"
+    cs "Well, thanks, I was wondering if you had some nice shoes for my concert tonight."
+    ges "Oh man, I got just the thing."
+    # hide ges with moveoutright
+    n "Ges searches through boxes in the back."
+    n "He returns with a box."
+    # show ges at right with moveinright
+    ges "These are called the {i}Gessler Step!"
+    cs "The Gessler Step?"
+    ges "The finest shoes I got, and I personally recommend them. You'll love 'em or my name isn't Ges! And it is."
+    cs "Wait, did you make these shoes?"
+    ges "Nah, just kinda a coincidence."
+    cs "Oh, okay."
+    n "CS tries on the shoes."
+    cs "These are awesome!"
+    cs "Wait, how did you know my size?"
+    ges "It's online."
+    cs "Wait, it's what--{w=0.5}{nw}"
+    ges "That'll be $88.88, if you want em!"
+    cs "I'll take them!"
+    n "CS checks out and heads back to the tour bus."
+
+    # scene tour_bus_inside
+    show anno at left
+    show arceus flipped
+    with dissolve
+
+    show cs flipped at right with moveinright
+    anno "Hey CS!"
+    arceus "Dang, nice shoes!"
+    cs "Thanks! Are you guys ready to perform tonight?"
+    arceus "Heck yeah!"
+    anno "Of course."
+    cs "I think we should sing [song_name_3] tonight."
+    arceus "Why is that?"
+    cs "I just think it'll make someone pretty happy."
+    anno "Sounds good to me!"
+
+    scene convention_center_entrance
+    show anno at left
+    show cs at mid_left
+    show arceus
+    with dissolve
+
+    n "A crowd can be heard cheering for the previous act."
+    show nova at right with moveinright
+    nova "Easy crowd tonight, you guys are gonna knock it out of the--{w=0.5}CS?"
+    cs "Nova? What are you doing here?"
+    nova "I live close by, I was DJing as the opening act..."
+    nova "Wait, let me check something."
+    n "Nova looks at a piece of paper."
+    nova "Opening for... [band_name]? Is that you guys?"
+    cs "Yep!"
+    nova "No shit, I've been listening to [ep_name] on $STREAMING_SERVICE a ton this week!"
+    nova "I didn't know it was you!"
+    cs "Well, us."
+    n "CS gestures to the others."
+    nova "Of course! Well you guys go clean up out there."
+    arceus "Will do!"

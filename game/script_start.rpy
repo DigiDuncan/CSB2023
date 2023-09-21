@@ -261,6 +261,7 @@ define midge = Character("Midge", callback = renpy.partial(char_callback, name =
 define db = Character("DB05", callback = renpy.partial(char_callback, name = "db"))  # TODO: Beep
 define customer = Character("Customer", callback = char_callback)
 define guest = Character("Guest", callback = char_callback)
+define ges = Character("Ges", callback = renpy.partial(char_callback, name = "ges"))  # TODO: Beep
 define nurse = Character("Nurse", callback = char_callback)
 define benrey = Character("Benrey", callback = renpy.partial(char_callback, name = "benrey"))
 define mean = Character("Mean", callback = char_callback)  # TODO: Beep
