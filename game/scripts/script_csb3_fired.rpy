@@ -802,11 +802,11 @@ label signed_the_contract:
     csgod "You can call me...{w=1.5} !!!"
     hide csgod with dissolve
     # show janitor at right with moveinright
-    "Janitor" "You alright man? Who are you talking to?"
+    janitor "You alright man? Who are you talking to?"
     cs "N-- no-one. Just heading to bed."
     show cs flipped
     hide cs with moveoutleft
-    "Janitor" "Weird guy."
+    janitor "Weird guy."
     jump first_tour_day
 
 label first_tour_day:
