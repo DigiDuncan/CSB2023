@@ -13,5 +13,8 @@ screen debug_menu():
             spacing 10
             xoffset 350
             for k in labels:
-                textbutton k action Hide("debug_menu"), Start(k)
+                if k == "error":
+                    textbutton "{chaos}error" action Hide("debug_menu"), Start(k)
+                else:
+                    textbutton k action Hide("debug_menu"), Start(k)
     textbutton "Back" action Return() yoffset 1000 xoffset 25
