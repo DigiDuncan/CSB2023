@@ -657,7 +657,7 @@ label fan_interaction:
     cs "Stop refreshing the page!"
     anno "Sorry."
     cs "How much money is that?"
-    anno "About $150,000."
+    anno "About $15,000."
     cs "Oh my god!"
     arceus "Well, we going to need to file taxes on it."
     anno "Do we?"
@@ -737,9 +737,9 @@ label howie:
     n "As Anno reads over the contract, CS, Arc, and Howie talk more about the deal."
     menu:
         "Should they take the deal?"
-        "Yes":
+        "Yes"  (type = "good"):
             jump signed_the_contract
-        "No":
+        "No"  (type = "bad"):
             return
 
 label signed_the_contract:
@@ -941,7 +941,24 @@ label first_tour_day:
     anno "Slow my horses...?"
     agent "That's without me taking my cut, or you three splitting it. We still got more shows to do, you know!"
     cs "Well then, let's get this show on the road!"
+
+    scene black with dissolve
     jump second_tour_day
 
 label second_tour_day:
-    return
+    n "The group rests for the day, on their way to their next venue."
+    
+    # scene tour_bus_inside
+    scene black
+    show anno at left
+    show arceus at right
+    show cs at center
+    with dissolve
+
+    n "CS shouts up to the front."
+    cs "Where are we heading?!"
+    agent "Manitoba! We'll stop in Winnipeg, so you guys can grab some stuff if you need it."
+    cs "Yeah, I might head into the city. What abuot you guys?"
+    anno "Nah, I'm good."
+    arceus "Yeah, I'm just gonna chill here."
+    cs ""

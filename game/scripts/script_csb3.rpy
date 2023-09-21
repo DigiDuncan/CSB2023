@@ -25,6 +25,13 @@ label csbiii_start:
     hide linus with moveoutright
     cs "I guess I better get to work on editing, let's see what videos I need to edit..."
     cs "Let's see, I have the new TechQuickie video on how live streaming works, or the video on how at least half of the keys on your keyboard should be macros..."
+    if persistent.true_ending:
+        menu:
+            "Hold a meeting?"
+            "Yes":
+                jump csbiii_ai
+            "No"  (type = "true"):
+                pass
     show cs worried
     cs "Dammit Taran, you can edit your own macro fetish content."
     show cs
@@ -904,9 +911,9 @@ label wait_forest:
     n "Copguy gets in the car and they head off."
     n "As they are heading away, CS has the urge to say something."
     menu:
-        "HoH SiS scammed me" (type = "true"):
+        "HoH SiS scammed me!" (type = "true"):
             jump good_convince
-        "I'm not CS" (type = "bad"):
+        "I'm not CS!" (type = "bad"):
             jump bad_convince
 
 label bad_convince:

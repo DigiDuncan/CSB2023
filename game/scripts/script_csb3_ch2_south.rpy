@@ -419,9 +419,9 @@ label vegas:
     pause 1.0
     n "CS ponders for a moment, wondering if he should risk it all."
     menu:
-        "Fold":
+        "Fold" (type = "bad"):
             jump folded
-        "Stand":
+        "Stand" (type = "good"):
             jump poker
 
 label poker:
@@ -436,9 +436,9 @@ label poker:
     n "The dealer draws a ten of spades."
     green "Ten million! You're bluffing, I can see through you!"
     menu:
-        "Fold":
+        "Fold" (type = "bad"):
             jump folded
-        "Stand":
+        "Stand" (type = "good"):
             jump poker2
 
 label poker2:
@@ -453,9 +453,9 @@ label poker2:
     n "The dealer draws a jack of spades."
     green "100 million! You better drop out *coughs* rrright now!"
     menu:
-        "Fold":
+        "Fold"  (type = "bad"):
             jump folded
-        "Stand":
+        "Stand"  (type = "good"):
             jump poker3
 
 label folded:
@@ -742,9 +742,9 @@ label poker3:
     hide case
     arceus "Alright well, what's the plan now? We have so much money, we can do almost anything with it!"
     menu:
-        "Go to airport":
+        "Go to airport"  (type = "good"):
             jump airport
-        "Don't go to airport":
+        "Don't go to airport"  (type = "bad"):
             jump noairport
 
 label airport:

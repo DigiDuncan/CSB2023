@@ -92,7 +92,7 @@ label microcenter:
         "Radeon RX 7900":
             $ fanboy_type = "nvidia"
             jump high_gpu
-        "GTX 760":
+        "GTX 760"  (type = "bad"):
             jump low_gpu
 
 label high_gpu:
@@ -786,12 +786,12 @@ label fire_range:
     show arceus with determination
     arceus "Alright guys, pick out a car quick and let's get the hell outta here!"
     menu:
-        "Pick Yo Car!"
+        "Pick a car!"
         "JoJ Charger":
             jump cool_car
         "Honda Civic":
             jump reg_car
-        "Flintstones Car":
+        "Flintstones Car"  (type = "bad"):
             jump flint_car
 
 label cool_car:

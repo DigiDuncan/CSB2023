@@ -1170,7 +1170,6 @@ label talktohohsis:
         jump secret
 
 label true_ending:
-    $ persistent.true_ending = True
     n "CS looks over at his desk, where a new computer is sitting."
     scene cs_room_2 with fade
     n "CS looks at the monitor that has a sticky note that says \"From LTT\"."
@@ -1179,9 +1178,12 @@ label true_ending:
     n "There is also a note that says: \"We'd love to have to work with us again virtually, just give us a call\"."
     cs "I'll have to make sure to call them later!"
     menu:
-        "Go to sleep":
-            jump archival
-        "Stream":
+        if persistent.true_ending:
+            "Go to sleep":
+                $ persistent.true_ending = True
+                jump archival
+        "Stream" (type = "true"):
+            $ persistent.true_ending = True
             jump streaming
 
 label streaming:
