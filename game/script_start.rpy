@@ -175,6 +175,11 @@ transform t_stagescreen:
     anchor (0.5, 1.0)
     pos (0.5, 4.0)  # Why is this needed? This makes no sense. This should be 1.0
 
+transform t_punchup:
+    yanchor 1.0 ypos 0.0
+    rotate 0
+    linear 1 rotate 960
+
 transform lego_run:
     pos (0.5, 0.5)
     anchor(0.5, 0.5)

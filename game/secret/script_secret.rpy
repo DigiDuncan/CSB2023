@@ -1,8 +1,3 @@
-transform t_punchup:
-    yanchor 1.0 ypos 0.0
-    rotate 0
-    linear 1 rotate 960
-
 label secret:
     scene black with fade
     play music "<loop 0>secret/space_classroom.mp3"
@@ -18,6 +13,7 @@ label secret:
     hide digi with dissolve
     window hide
     pause 3.0
+    return
 
 label secret2:
     scene black with fade
