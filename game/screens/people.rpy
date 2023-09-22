@@ -149,7 +149,7 @@ screen person(l):
             elif l == "anno":
                 add "images/characters/anno/anno.png" xalign 1.0 yalign 1.0 zoom 0.75
             # SECRET
-            elif l in ["iris", "bubble", "lancer"]:
+            elif l in ["iris", "bubble", "lancer", "howie"]:
                 add f"secret/{l}.png" xalign 1.0 yalign 1.0 zoom 0.75
             elif l == "hoh_worker":
                 add "images/characters/hoh_worker.png" xalign 1.0 yalign 1.0 zoom 0.50
