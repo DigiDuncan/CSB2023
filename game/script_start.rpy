@@ -760,6 +760,8 @@ default line_7 = ""
 default line_8 = ""
 default line_9 = ""
 default line_10 = ""
+default line_11 = ""
+default line_12 = ""
 
 # RPG
 default enemy_1 = "cop"

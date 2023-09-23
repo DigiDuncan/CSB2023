@@ -1116,3 +1116,83 @@ label third_tour_day:
     if fun_value(10):
         cs "Ow."
     
+    # show mean at right with move
+    mean "Thank you so much! I know you guys will do amazing."
+    # hide mean with moveoutright
+    cs "Let's go make our fans proud."
+
+    # scene big_stage
+    show anno at left
+    show arceus at right
+    show cs
+    with dissolve
+
+    cs "For our special performance tonight, we'll be singing every song off [ep_name]!"
+    n "The crowd is going wild."
+    cs "First up, it's {i}[song_name_1]{/i}!"
+    n "The crowd cheers."
+    # TODO: Play track
+    cs "{cps=15}{image=note_small1.png}We broke the chains, now we're free to fly,{w=1.5}\nEscaped concrete, and now we see blue skies{w=1.5}\nBecome brand new, we'll leave the past behind,{w=1.5}\nPrisoners no more, 'cause a new life we'll find{image=note_small2.png}"
+    n "The crowd is loving this!"
+
+    cs "Who wants to hear {i}[song_name_2]{/i}?!"
+    n "The crowd responds with further excitement."
+    # TODO: Play track
+    cs "{cps=15}{image=note_small1.png}We're going down to Vegas,{w=1.5} we're gonna strike it rich!{w=1.5}\nWe're going down to Vegas,{w=1.5} [line_1]"
+    n "The audience is adoring this."
+
+    cs "Next up, here's a classic: [song_name_3]"
+    anno "CS, none of our songs are classics, we're a new band."
+    n "The crowd laughs."
+    # TODO: Play track
+    cs "{cps=15}{image=note_small1.png}I made my way over to Japan...{w=1.5}\n[line_2]{image=note_small2.png}"
+    cs "{cps=15}{image=note_small1.png}I found myself in the U.K...{w=1.5}\n[line_3]{image=note_small2.png}"
+    cs "{cps=15}{image=note_small1.png}I'm gonna go party in Sweden...{w=1.5}]\n[line_4]{image=note_small2.png}"
+    cs "{cps=15}{image=note_small1.png}I'm globetrottin'!{image=note_small2.png}"
+    n "The crowd loves this a lot."
+
+    cs "Alright, here's a favorite for a lot of you: [song_name_4]!"
+    # TODO: Play track
+    cs "{cps=15}{image=note_small1.png}Through all adversity, we'll bind together and overcome!{image=note_small2.png}"
+    cs "{cps=15}{image=note_small1.png}[line_5]{image=note_small2.png}"
+    cs "{cps=15}{image=note_small1.png}With my friends beside there's no foe we can not fight!{image=note_small2.png}"
+    cs "{cps=15}{image=note_small1.png}[line_6]{image=note_small2.png}"
+    n "Anno shreds an epic solo."
+    n "The crowd is exploding!"
+
+    cs "And now, for the first time on stage: it's [song_name_5]!"
+    n "The crowd is ready to burst."
+    # TODO: Play track
+    cs "{cps=15}{image=note_small1.png}[line_7]{w=1.5}\n[line_8]{w=1.5}\n[line_9]{w=1.5}\n[line_10]{image=note_small2.png}"
+    n "The crowd can't get enough!"
+    "Crowd" "Encore! {w=0.5}Encore! {w=0.5}Encore! {w=0.5}"
+    n "CS whispers to the others."
+    cs "Encore? But we don't have any more songs..."
+    arceus "Make something up!"
+    n "CS shouts to the crowd."
+    cs "Uh... hey, you guys! Give me a word!"
+    crowd "Banana! {w=0.5}Street! {w=0.5}Ice!"
+    cs "Uh..."
+    menu:
+        "What should the song be about?"
+        "Banana":
+            $ line_11 = "When I see you, I think about bananas"
+        "Street":
+            $ line_11 = "When I see you walking down the street"
+        "Ice":
+            $ line_11 = "Everybody knows I'm cool as ice"
+
+    cs "OK!"
+    # TODO: Play track
+    cs "{cps=15}{image=note_small1.png}[line_11]{image=note_small2.png}"
+    $ line_12 = renpy.input("What's the next line?")
+    cs "{cps=15}{image=note_small1.png}[line_12]{image=note_small2.png}"
+
+    cs "Thank you! We're [band_name], and thank you for listening to [ep_name]!"
+
+    hide cs
+    hide anno
+    hide arc
+    with moveoutleft
+
+    scene black with dissolve
