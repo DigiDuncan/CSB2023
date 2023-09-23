@@ -173,7 +173,7 @@ label write_song:
     cs "Yeah, that's really good!"
     arceus "Well I guess all we have to do now is upload it."
     anno "Alright boys, what do we call it?"
-    $ song_name_1 = renpy.input("What should we call the song?", "Prison Break")
+    $ song_name_1 = renpy.input("What should we call the song?", song_name_1)
     cs "How about {i}[song_name_1]{/i}?"
     $ achievement_manager.unlock("Hi, My Name Is...")
     if song_name_1 == "FUCK SEX BALLS":
@@ -314,13 +314,13 @@ label song_2:
     anno "So what do we call this one?"
     arceus "I liked your name for the last one, CS, why don't you name this one, too?"
     cs "How about..."
-    $ song_name_2 = renpy.input("What should we call the song?", "Down to Vegas")
+    $ song_name_2 = renpy.input("What should we call the song?", song_name_2)
     cs "{i}[song_name_2]{/i}?"
     arceus "You're a genius, CS."
     cs "Aw, thanks, guys. Wait, we don't have a band name either!"
     anno "Yeah, what were you thinking?"
     cs "I was thinking..."
-    $ band_name = renpy.input("What should we call the band?", "CS' Crazy Crew")
+    $ band_name = renpy.input("What should we call the band?", band_name)
     cs "[band_name]!"
     anno "Woah, awesome! Not as good as 'Nirvana', but you know, it wasn't going to be."
     cs "Hell yeah! [band_name] forever!"
@@ -361,7 +361,7 @@ label ep_time:
     cs "Well, I had a dream last night."
     arceus "Oh no."
     cs "And I dreamt the name:"
-    $ ep_name = renpy.input("What should we call the EP?", "The White Album")
+    $ ep_name = renpy.input("What should we call the EP?", ep_name)
     cs "[ep_name]!"
     anno "You know what, I like it."
     arceus "See, when you said 'I thought of it in a dream,' I thought it was going to suck."
@@ -392,7 +392,7 @@ label ep_time:
     n "Arceus claps."
     cs "Well, I guess you want me to name this one, too?"
     anno "Go for it."
-    $ song_name_3 = renpy.input("What should we call the song?", "Globetrottin'")
+    $ song_name_3 = renpy.input("What should we call the song?", song_name_3)
     anno "{i}[song_name_3]{/i} it is!"
     cs "Woohoo! Three songs down!"
     arceus "Dang, and all without leaving the breakfast table."
@@ -522,7 +522,7 @@ label mcd:
     anno "Thanks! We're actually putting out an EP soon!"
     customer "Well I definitely wanna hear that song again, what's it called?"
     cs "Uh..."
-    $ song_name_4 = renpy.input("What should the song be called?", "Through the Battles and the Fights")
+    $ song_name_4 = renpy.input("What should the song be called?", song_name_4)
     cs "It's called {i}[song_name_4]!{/i}"
     anno "It'll be on our EP [ep_name], just look up [band_name] on streaming services!"
     customer "Awesome, I'm excited! I'll make sure to check it out!"
@@ -602,7 +602,7 @@ label song_5:
     cs "{cps=15}{image=note_small1.png}[line_7]{w=1.5}\n[line_8]{w=1.5}\n[line_9]{w=1.5}\n[line_10]{image=note_small2.png}"
     arceus "Yo?!"
     anno "That's perfect! Give it name!"
-    $ song_name_5 = renpy.input("What should the song be called?", "We Are The Winners")
+    $ song_name_5 = renpy.input("What should the song be called?", song_name_5)
     cs "It's called {i}[song_name_5]!{/i}"
     arceus "That's going to be a huge hit."
     anno "So wait, that's [ep_name] done, then!"
@@ -1197,3 +1197,4 @@ label third_tour_day:
     with moveoutleft
 
     scene black with Dissolve(3.0)
+    # Line 1200, give it up for line 1200

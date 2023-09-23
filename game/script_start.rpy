@@ -742,7 +742,7 @@ default engfirst = False
 default swedfirst = False
 default japfirst = False
 
-# Fire route
+# Fired route
 default band_name = "CS' Crazy Crew"
 default ep_name = "The White Album"
 default song_name_1 = "Prison Break"
@@ -771,7 +771,7 @@ default party_1 = "cs"
 default party_2 = "tate"
 default party_3 = "digi"
 default party_4 = "arceus"
-default ucn_bg = "images/bg/casino1.png"
+default ucn_bg = "images/bg/casino1.png"  # TODO: There is currently no way to set these.
 default ucn_music = "audio/card_castle.mp3"
 default ucn_scale = 1.0
 default cont = False
