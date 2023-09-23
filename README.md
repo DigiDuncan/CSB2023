@@ -18,22 +18,21 @@ See what needs to be done below.
 - [ ] Commerical [Pakoo, Sept. W4]
 - [ ] Credits [Digi, Sept. W4]
 - [ ] End Fight cutscene [Pakoo/Digi, Sept. W4]
-- [ ] Rhythm Game [Digi, October]
 - [ ] Arceus Art [Kitty, October]
 - [ ] Aria Art [Aria, October]
 - [ ] Installer [Digi, Oct. W3]
 
 ### True Ending [ASAP]
-- [ ] Michigan [Aria]
+- [ ] Michigan [Aria] [50%]
 
 ### RPG Game [Digi/Arc, Sept. W1]
 - [X] Basic Game Loop
 - [X] All Attacks and Fighters in
 - [X] AI
-- [ ] All Sprites done [Pakoo]
+- [?] All Sprites done [Pakoo]
 - [ ] Animations [Arc]
 - [X] SFX
-- [ ] Reactive Text [90%]
+- [X] Reactive Text
 - [ ] Balancing [Pakoo]
 - [X] Add games to script
 
@@ -48,10 +47,10 @@ See what needs to be done below.
 - [ ] Borderlands Intros
 
 ### Fired Ending [Digi, Sept. W2]
-- [ ] Script [75%]
+- [ ] Script [85%]
 - [ ] Backgrounds [75%]
 - [ ] Characters [75%]
-- [ ] Transitions
+- [ ] Transitions [50%]
 - [ ] Music
 - [ ] Bios
 - [ ] Jukebox
