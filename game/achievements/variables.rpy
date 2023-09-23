@@ -36,5 +36,6 @@ define achievements = [
     Achievement("That's All, Folks!", "???", "Complete CSBIII.", "csbiii"),
     Achievement("Boingy Boingy Boingy", "???", "Max out CSBounciness and beat the game.", "max_bounce"),
     Achievement("Artifical Unintelligence", "???", "Get the Chat-GPT ending", "gpt", True),
-    Achievement("All Over Again", "???", "Beat CSBIII all over again.", "alloveragain", True)
+    Achievement("All Over Again", "???", "Beat CSBIII all over again.", "alloveragain", True),
+    Achievement("F.U.N.", "???", "Roll a fun value.", "fun", True)
 ]
