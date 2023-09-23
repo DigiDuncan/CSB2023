@@ -1189,10 +1189,11 @@ label third_tour_day:
     cs "{cps=15}{image=note_small1.png}[line_12]{image=note_small2.png}"
 
     cs "Thank you! We're [band_name], and thank you for listening to [ep_name]!"
+    n "The crowd is overjoyed."
 
     hide cs
     hide anno
     hide arc
     with moveoutleft
 
-    scene black with dissolve
+    scene black with Dissolve(3.0)
