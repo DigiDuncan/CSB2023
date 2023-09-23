@@ -457,7 +457,7 @@ image db_cooper = "characters/db_coopergame.png"
 image marine = "characters/marine.png"
 image big_tank = "characters/big_tank.png"
 image benrey = "characters/benrey.png"
-image howie = "characters/howie_mandell.png"
+image howie = "characters/howie.png"
 
 # Background Images
 ## CSBI

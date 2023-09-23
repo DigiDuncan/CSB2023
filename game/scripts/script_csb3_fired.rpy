@@ -1061,7 +1061,7 @@ label second_tour_day:
     with dissolve
 
     cs "I know you all just watched an amazing performance by Nova, and that's going to be a hard act to follow..."
-    cs "But who want's to hear {i}[song_name_3]{/i}?!"
+    cs "But who wants to hear {i}[song_name_3]{/i}?!"
     n "The crowd is exploding."
 
     cs "{cps=15}{image=note_small1.png}I made my way over to Japan...{w=1.5}\n[line_2]{image=note_small2.png}"
@@ -1092,7 +1092,7 @@ label third_tour_day:
     agent "Well he's about to be a happy camper!"
     anno "I can't believe we're already at our last tour day!"
     $ line_num = renpy.get_filename_line()[1] + 1
-    arceus "Well, it's been {line_num} lines, it's been a while."
+    arceus "Well, it's been [line_num] lines, it's been a while."
     anno "We're going to really have to go big for this one, I think it's our biggest audience size yet."
     cs "We'll put on a show like they've never seen before!"
 
@@ -1171,7 +1171,7 @@ label third_tour_day:
     arceus "Make something up!"
     n "CS shouts to the crowd."
     cs "Uh... hey, you guys! Give me a word!"
-    crowd "Banana! {w=0.5}Street! {w=0.5}Ice!"
+    "Crowd" "Banana! {w=0.5}Street! {w=0.5}Ice!"
     cs "Uh..."
     menu:
         "What should the song be about?"
