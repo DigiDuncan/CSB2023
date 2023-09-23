@@ -12,6 +12,8 @@
 # tour_bus_inside
 # manitoba_street
 # shoe_store
+# stage2
+# big_stage
 
 # Needed sounds:
 # elevator music
@@ -1035,7 +1037,7 @@ label second_tour_day:
 
     n "A crowd can be heard cheering for the previous act."
     show nova at right with moveinright
-    nova "Easy crowd tonight, you guys are gonna knock it out of the--{w=0.5}CS?"
+    nova "Easy crowd tonight, you guys are gonna knock it out of the--{w=0.5} CS?"
     cs "Nova? What are you doing here?"
     nova "I live close by, I was DJing as the opening act..."
     nova "Wait, let me check something."
@@ -1048,3 +1050,69 @@ label second_tour_day:
     n "CS gestures to the others."
     nova "Of course! Well you guys go clean up out there."
     arceus "Will do!"
+    
+    hide nova with moveoutright
+    cs "Well, let's go out there and show them what we're made of!"
+
+    # scene stage2
+    show anno at left
+    show arceus at right
+    show cs
+    with dissolve
+
+    cs "I know you all just watched an amazing performance by Nova, and that's going to be a hard act to follow..."
+    cs "But who want's to hear {i}[song_name_3]{/i}?!"
+    n "The crowd is exploding."
+
+    cs "{cps=15}{image=note_small1.png}I made my way over to Japan...{w=1.5}\n[line_2]{image=note_small2.png}"
+    cs "{cps=15}{image=note_small1.png}I found myself in the U.K...{w=1.5}\n[line_3]{image=note_small2.png}"
+    cs "{cps=15}{image=note_small1.png}I'm gonna go party in Sweden...{w=1.5}]\n[line_4]{image=note_small2.png}"
+    cs "{cps=15}{image=note_small1.png}I'm globetrottin'!{image=note_small2.png}"
+
+    n "The crows is applauding wildly."
+    cs "We're [band_name]!"
+    n "The crowd is loving it."
+
+    scene black with dissolve
+    
+    # scene tour_bus
+    show anno at left
+    show arceus at right
+    show cs
+    with dissolve
+
+    jump third_tour_day
+
+label third_tour_day:
+    n "Howie hollers from the front of the bus."
+    agent "Alright boys, it's your last performance!"
+    cs "Where are we heading?"
+    agent "Ontario!"
+    cs "Ontario? That's where that one fan was from!"
+    agent "Well he's about to be a happy camper!"
+    anno "I can't believe we're already at our last tour day!"
+    $ line_num = renpy.get_filename_line()[1] + 1
+    arceus "Well, it's been {line_num} lines, it's been a while."
+    anno "We're going to really have to go big for this one, I think it's our biggest audience size yet."
+    cs "We'll put on a show like they've never seen before!"
+
+    # TODO: Can this please be a diiferent convention center?
+    scene convention_center_lobby
+    show anno at left
+    show arceus
+    show cs at mid_left
+    with moveinleft
+
+    cs "Alright, well let's get prepared, we have way more songs to do tonight--{nw}"
+    # show mean with moveinright
+    mean "HOLY SHIT IT'S YOU!"
+    cs "Wait, are you that fan from my hotel?"
+    mean "YOU ACTUALLY MADE IT TO ONTARIO?"
+    cs "Uh... yeah, totally because you asked me to!"
+    show cs worried
+    # show mean at mid_left
+    with move
+    n "Mean tackle hugs CS."
+    if fun_value(10):
+        cs "Ow."
+    
