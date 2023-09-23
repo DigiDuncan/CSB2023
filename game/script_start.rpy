@@ -688,6 +688,7 @@ image m4 fire = "m4fire.png"
 image m4 fire flipped = "flip:m4fire.png"
 image script = "secret/script.png"
 image post_it2 = "secret/post-it2.png"
+image colorbars = "colorbars.png"
 
 # Movies
 image car background = Movie(play="movies/car_background.webm")
@@ -697,6 +698,7 @@ image car plains night = Movie(play="movies/car_plains_night.webm")
 image tvcar = Movie(play="movies/0001.webm")
 image drive_night = Movie(play="movies/car_drive_night.webm")
 image drive_day = Movie(play="movies/car_drive_day.webm")
+image karaoke = Transform(Movie(play = "movies/karaoke.webm", side_mask = True), zoom = 1.5)
 
 #Fun Values
 image utajsign = "secret/utajsign.png"
@@ -838,4 +840,11 @@ label test:
     n "This is a test of Chinese rendering."
     n "SIMPLIFIED\n{font=cjk}我的气垫船装满了鳝鱼"
     n "TRADITIONAL\n{font=cjk}我的氣墊船裝滿了鱔魚"
+
+    pause 0.5
+    show colorbars
+    show karaoke
+    window hide
+    pause 120
+
     $ renpy.full_restart()
