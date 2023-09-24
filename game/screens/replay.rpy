@@ -13,6 +13,7 @@ screen Replayexit():
 screen replay_gallery():
 
     tag menu
+    add Color('#5F777F', alpha=0.5)
 
     $start = replay_page * 9
     $end = min(start + 9 - 1, len(Replay_items) - 1)
@@ -25,7 +26,6 @@ screen replay_gallery():
         for i in range(start, end + 1):
             if renpy.seen_label(Replay_items[i].replay):
                 imagebutton idle Replay_items[i].thumbs:
-                    style "replay_button" #delete this line to remove hover
                     action Replay(Replay_items[i].replay)
                     xalign 0.5
                     yalign 0.5
@@ -61,19 +61,16 @@ screen replay_gallery():
             action SetVariable("replay_page", replay_page - 1)
             xalign 0.1
             yalign 0.98
-            background "#000"
+            background "#5F777F"
     if (replay_page + 1) * 9 < len(Replay_items):
         textbutton "{color=#fff}Next{/color}":
             action SetVariable("replay_page", replay_page + 1)
             xalign 0.9
             yalign 0.98
-            background "#000"
+            background "#5F777F"
     #return button
     textbutton "{color=#fff}Return{/color}":
         action Return()
         xalign 0.5
         yalign 0.98
-        background "#000"
-
-style replay_button:
-    hover_background "gui/frame.png"
+        background "#5F777F"

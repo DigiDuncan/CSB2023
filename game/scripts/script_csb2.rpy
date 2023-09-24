@@ -225,6 +225,7 @@ label asylum:
     stop music fadeout 3.0
     music end
     $ renpy.movie_cutscene("movies/bad_ending.webm")
+    $ renpy.end_replay()
     return
     
 # Caught

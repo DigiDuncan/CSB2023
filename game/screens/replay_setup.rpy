@@ -20,22 +20,15 @@ init python:
     #add replay items here format below
     #Replay_items.append(ReplayItem(["the thumbnail"], "the_label_from_code", "brief description"))
     Replay_items = []
-    Replay_items.append(ReplayItem(["Rthumb1"], "mainmenu_setup", "{color=#000}Gallery button setup{/color}"))
-    Replay_items.append(ReplayItem(["Rthumb1"], "main_gallery_images", "{color=#000}Gallery Images{/color}"))
-    Replay_items.append(ReplayItem(["Rthumb1"], "gallery_usage", "{color=#000}Making Gallery Images viewable{/color}"))
-    Replay_items.append(ReplayItem(["Rthumb1"], "replay_button", "{color=#000}Replay button setup{/color}"))
-    Replay_items.append(ReplayItem(["Rthumb1"], "replay_thumb_image", "{color=#000}Replay thumbnail setup{/color}"))
-    Replay_items.append(ReplayItem(["Rthumb1"], "replay_list_setup", "{color=#000}Replay list setup{/color}"))
-    Replay_items.append(ReplayItem(["Rthumb1"], "finished", "{color=#000}The last bit needed{/color}"))
+    Replay_items.append(ReplayItem(["Asylum"], "asylum", "{color=#FF0000}Asylum Ending{/color}"))
 
 
 # a black background screen for the selection
-image black = "#000"
+image black = "#5F777F"
 
 #the locked image for the replay gallery if you're using the gallery you can use the same (if you want to)
 image replay_locked = "images/replay/replay_lock.jpg"
 
-#384x216 (16x9) set 1280x720p for the lock and thumbnails
-#600x338 (16x9) set 1920x1080 for the lock and thumbnails
+# Images are going to be 600 x 338
 #replay thumbnails images setup defined here
-image Rthumb1 = ("images/replay/replay_unlock.jpg")
+image Asylum = ("images/replay/asylum_bad.png")
