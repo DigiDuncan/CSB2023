@@ -34,6 +34,7 @@ screen category_nav():
             # textbutton "Collectibles" action ShowMenu("collectibles_welcome")
             # textbutton "Endings" action ShowMenu("endings_welcome")
             textbutton "Jukebox" action ShowMenu("jukebox_welcome"), PauseAudio("music", True)
+            textbutton "Endings" action ShowMenu("replay_gallery")
             if preferences.developer_mode or persistent.creative_mode:
                 textbutton "Test Scene" action Jump("test")
                 textbutton "Debug Menu" action ShowMenu("debug_menu")
