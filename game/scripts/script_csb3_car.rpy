@@ -245,6 +245,18 @@ label car_dialogue:
 
     pause 1.0
 
+    n "Arceus sniffs the air."
+    cs "Did you know you can buy 500,000 plastic straws on AliBaba for like $50?"
+    arceus "Why... would you?"
+    cs "I don't know, you just can."
+    billy "That's an amazing deal!"
+    arceus "I think that's for like, resturaunts."
+    cs "I guess, but like, that'd be funny to do, right?"
+    arceus "...no?"
+    cs "Yeah, you're probably right."
+
+    pause 1.0
+
     cs "I wonder what would've happened if we went south."
     arceus "Back at Compass road?"
     cs "Yeah. Who knows how far we might've gotten..."
