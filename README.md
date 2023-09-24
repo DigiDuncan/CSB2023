@@ -13,10 +13,11 @@ See what needs to be done below.
 -------
 
 ### Big Tasks
-- [ ] Ending Screens [Pakoo, Sept. W3]
-- [ ] Menu for Endings [Arc, Sept. W3]
+- [ ] Ending Screens [Pakoo, Sept. W3] [50%]
+- [ ] Menu for Endings [Arc, Sept. W3] [75%]
 - [ ] Commerical [Pakoo, Sept. W4]
 - [ ] Credits [Digi, Sept. W4]
+- [X] Where are they now? [Digi, Sept. W3]
 - [ ] End Fight cutscene [Pakoo/Digi, Sept. W4]
 - [ ] Arceus Art [Kitty, October]
 - [ ] Aria Art [Aria, October]
