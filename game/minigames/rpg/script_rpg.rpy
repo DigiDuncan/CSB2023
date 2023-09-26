@@ -146,7 +146,7 @@ label rpg_final_fight_3:
             tate
             digi
             arceus
-            copguy2
+            copguy_ex
         scale 2.0
         on_win "weapon_of_choice"
         on_lose "rpg_final_fight_1"

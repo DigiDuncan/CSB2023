@@ -881,7 +881,7 @@ label japan:
         "Visit Domino's Pizza":
             jump miku_pizza
         "Sing Karaoke":
-            jump Karaoke
+            jump karaoke
         "Look around through the city":
             jump anime_adventure
         
@@ -890,4 +890,7 @@ label anime_adventure:
     cs "This place is so compact, I could be here for days!"
     cs "Let's start looking!"
 
-    
+label karaoke:
+    cs "I mean, I've always wanted to sing karaoke in Japan."
+    cs "I don't know where I could go to sing, though."
+    cs "There are some signs in English here."

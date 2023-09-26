@@ -630,9 +630,9 @@ label final_meetup:
     jump rpg_final_fight_1
 
 label weapon_of_choice:
-    scene black with fade
+    pause 1.0
+    $ renpy.movie_cutscene("movies/woc.webm")
     $ achievement_manager.unlock("Hopes and Dreams")
-    n "Weapon Of Choice video here."
     jump car_slam
 
 label car_slam:
@@ -743,3 +743,8 @@ label car_slam:
     db "Wait, so does that mean, we were the bad guys all along?"
     cs "Nah."
     cs "That man was like, deranged."
+    scene black with dissolve
+    pause 1.0
+    $ renpy.movie_cutscene("movies/wherearetheynow.webm")
+    pause 1.0
+    return
