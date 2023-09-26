@@ -18,13 +18,20 @@ See what needs to be done below.
 - [ ] Commerical [Pakoo, Sept. W4]
 - [ ] Credits [Digi, Sept. W4]
 - [X] Where are they now? [Digi, Sept. W3]
-- [ ] End Fight cutscene [Pakoo/Digi, Sept. W4]
+- [X] End Fight cutscene [Pakoo/Digi, Sept. W4]
 - [ ] Arceus Art [Kitty, October]
 - [ ] Aria Art [Aria, October]
 - [ ] Installer [Digi, Oct. W3]
 
 ### True Ending [ASAP]
-- [ ] Michigan [Aria] [50%]
+- [ ] Michigan [Aria]
+    - [ ] Script [50%]
+    - [ ] Backgrounds
+    - [ ] Characters
+    - [ ] Transitions
+    - [ ] Music
+    - [ ] Bios
+    - [ ] Jukebox
 
 ### RPG Game [Digi/Arc, Sept. W1]
 - [X] Basic Game Loop
