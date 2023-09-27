@@ -464,6 +464,7 @@ image howie = "characters/howie.png"
 image guest = "characters/guest.png"
 image janitor = "characters/janitor.png"
 image customer = "characters/customer.png"
+image mean = "characters/mean.png"
 
 # Background Images
 ## CSBI

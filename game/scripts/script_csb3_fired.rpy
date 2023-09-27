@@ -1,7 +1,5 @@
 ### TODO:
 # Needed character sprites:
-# customer
-# mean [needs bio]
 # ges
 
 # Needed sounds:
@@ -35,21 +33,22 @@ label new_plan:
     show cs scared
     cs "Ah! Arceus?!"
     arceus "CS, we gotta get outta here, fast."
+    show cs worried 
     cs "OK, what? What's going on?"
     arceus "Cops. They're still after us."
     cs "Oh, come on, really?! Today has sucked bad enough already."
     arceus "What happened to you? I just thought you were out here for a smoke break."
+    show cs disappointed
     cs "Arc, I don't smoke."
     arceus "Man, I don't know."
-    show cs disappointed
     cs "No, I got fired."
     arceus "Aw, man. That sucks. I'm sure we'll figure it out."
     arceus "Come on, let's go back to the hotel. We can think of something, I'm sure."
     cs "Alright man, thanks. Let's go."
 
     scene hotel_lobby
-    show cs at right
-    show arceus at left
+    show cs flipped at right
+    show arceus flipped at left
     with fade
     arceus "Come on up to my room, we'll workshop where to go from here."
     cs "Alrighty then. Not like I'll be able to pay for my own much longer..."
@@ -71,7 +70,7 @@ label new_plan:
     n "A knock is heard at the door."
     anno "Can I come in?"
     arceus "Yeah, of course."
-    show anno at mid_left
+    show anno at center with moveinleft
     anno "Hey, CS, what are you doing here?"
     cs "I got fired. And the cops are still after us."
     anno "Ah, fuck. What's the plan?"
@@ -101,7 +100,7 @@ label new_plan:
     cs "Do I?"
     hide cs with moveoutleft
     n "Anno and Arc look at each other confused."
-    show cs with moveinleft
+    show cs guitar with moveinleft
     n "CS comes back holding two guitar controllers and a drum kit."
     cs "Saw em on the side of the road. Couldn't pass em up."
     jump guitar_hero
@@ -127,16 +126,23 @@ label guitar_hero:
     cs "Woohoo!"  # haha I did it too Pakoo
     $ achievement_manager.unlock("Guitar Hero")
 
-    scene hotel_room with fade
+    scene hotel_room
+    show arceus at right
+    show cs at left
+    show anno at center
+    with fade
     cs "Maybe we should call Blank. He's like, an actual musician."
+    show cs phone
     n "CS calls Blank on Discord."
     blank "CS? Where the heck have you been?"
     cs "Don't worry about it, I'll explain soon. I need tips on making music."
     blank "Man, I don't know, I just open FL Studio and kinda click shit until music comes out."
     cs "Wait, that's it?"
     blank "I mean, that's not {i}it{/i}, but--"
+    show cs happy
     cs "Awesome, thanks Blank!"
     n "CS hangs up."
+    show cs
     cs "Well, you heard the man. Anno, do you have FL Studio?"
     anno "Just got it."
     cs "Well let's get to work, boys!"
@@ -201,6 +207,7 @@ label hotel_next_day:
     show anno with moveinleft
     anno "Free waffles, hell yeah."
     show arceus flipped at right with moveinleft
+    show arceus with determination
     arceus "Those sausages are amazing."
 
     scene hoh_elevator with fade
@@ -230,6 +237,7 @@ label hotel_next_day:
     show anno at left behind cs
     show arceus flipped at right behind cs
     with moveinleft
+    show arceus with determination
     n "They all sit down to eat."
 
     n "As they eat, CS checks the stream numbers on {i}[song_name_1]{/i}."
@@ -339,7 +347,7 @@ label ep_time:
     pause 1.0
     scene hotel_breakfast
     show anno at left
-    show arceus flipped at right
+    show arceus at right
     show cs
     with dissolve
 
@@ -404,8 +412,9 @@ label back_to_room:
     with dissolve
 
     show cs at left
-    show arceus at right
+    show arceus flipped at right
     with moveinleft
+    show arceus with determination
 
     n "Anno is deep in his laptop."
     anno "Hey guys!"
@@ -624,6 +633,7 @@ label fan_interaction:
     mean "Bye!"
     hide mean with moveoutright
     n "CS closes the door."
+    show cs flipped 
     cs "Anno?"
     n "Anno wakes up, barely."
     anno "Huh?"
@@ -683,7 +693,7 @@ label howie:
 
     scene hotel_lobby
     show anno
-    show cs at mid_right
+    show cs flipped at mid_right
     show arceus at right
     with dissolve
 
@@ -741,7 +751,7 @@ label signed_the_contract:
 
     scene hotel_lobby    
     show anno at left
-    show arceus
+    show arceus flipped
     show cs at mid_left
     show howie at right
     with dissolve
@@ -779,7 +789,7 @@ label signed_the_contract:
 
     show csgod at right with dissolve
     csgod "Or I can."
-    show cs shocked
+    show cs surprised
     cs "Ah!"
     show cs
     csgod "I wouldn't fret about Linus."
@@ -816,6 +826,7 @@ label first_tour_day:
     cs "Eh, something... something got into my head and cleared things up for me."
     arceus "Alrighty man, well let's hope it did a good job, because it's time to hit the road."
 
+    show arceus flipped with determination
     hide arceus
     hide cs
     hide anno
@@ -823,7 +834,7 @@ label first_tour_day:
 
     scene hotel_lobby with dissolve
     show anno at left
-    show arceus
+    show arceus flipped
     show cs at mid_left
     with moveinleft
 
@@ -835,7 +846,7 @@ label first_tour_day:
     scene black with dissolve
     scene ltx with dissolve
     show anno at left
-    show arceus
+    show arceus flipped
     show cs at mid_left
     with moveinleft
 
@@ -883,7 +894,7 @@ label first_tour_day:
 
     scene ltx
     show anno at left
-    show arceus
+    show arceus flipped
     show cs at mid_left
     show linus at right
     with dissolve
@@ -906,6 +917,7 @@ label first_tour_day:
     cs "We rocked!"
     arceus "Welp, back on the bus to recoop and see how much we earned!"
 
+    show arceus flipped with determination
     hide cs
     hide arceus
     hide anno
@@ -913,12 +925,12 @@ label first_tour_day:
 
     scene tour_bus_inside
     show anno at left
-    show arceus at right
+    show arceus flipped at right
     show cs at center
     with dissolve
 
     show howie at offscreenleft with moveinright
-    show howie at right with move
+    show howie at right behind arceus with move
 
     agent "Boys!"
     n "The team turn to Howie to look at him."
@@ -1022,6 +1034,7 @@ label second_tour_day:
 
     n "A crowd can be heard cheering for the previous act."
     show nova at right with moveinright
+    show arceus flipped
     nova "Easy crowd tonight, you guys are gonna knock it out of the--{w=0.5} CS?"
     cs "Nova? What are you doing here?"
     nova "I live close by, I was DJing as the opening act..."
@@ -1083,6 +1096,7 @@ label third_tour_day:
 
     # TODO: Can this please be a diiferent convention center?
     scene convention_center_lobby
+    with fade
     show anno at left
     show arceus
     show cs at mid_left
@@ -1107,7 +1121,6 @@ label third_tour_day:
     cs "Let's go make our fans proud."
 
     scene big_stage
-    scene black
     show anno at left
     show arceus at right
     show cs
@@ -1177,9 +1190,10 @@ label third_tour_day:
     cs "Thank you! We're [band_name], and thank you for listening to [ep_name]!"
     n "The crowd is overjoyed."
 
+    show cs flipped with determination
     hide cs
     hide anno
-    hide arc
+    hide arceus
     with moveoutleft
 
     scene black with Dissolve(3.0)
@@ -1196,10 +1210,11 @@ label final_tour_bus:
     n "The boys are exhausted."
     show howie at offscreenright
     show anno at left
+
     show cs at mid_left
-    show arceus
-    show howie at right
+    show arceus flipped at center
     with move
+    show howie at right with moveinright
 
     agent "Well, gang, that was the last stop! You did amazing out there."
     cs "I'm beat."
@@ -1213,6 +1228,7 @@ label final_tour_bus:
     cs "Wait... 10K?!"
     n "Arc nudges CS."
     arceus "You can go home!"
+    show cs disappointed
     n "CS looks forlorn."
     arceus "What's wrong?"
     cs "Well, I've been really enjoy this, actually."
@@ -1220,6 +1236,7 @@ label final_tour_bus:
     anno "Nah, don't act like that. This doesn't mean [band_name] is over!"
     arceus "Yeah, we can still make music together. But you need to get back to your normal routine for a bit."
     anno "Yeah, reset your head a bit."
+    show cs
     cs "Yeah, you're right. And hey, maybe we can write [ep_name] 2 some day!"
     arceus "Maybe we shouldn't name it [ep_name] 2."
     cs "Yeah."
@@ -1236,7 +1253,7 @@ label final_tour_bus:
     n "The others join him outside."
     show cs flipped with determination
     show anno at mid_left
-    show arceus at center
+    show arceus flipped at center
     with moveinleft
     arceus "Well, you should get some rest. It's been a wild few weeks for you."
     cs "It's been a wild few {i}years{/i} for you."
