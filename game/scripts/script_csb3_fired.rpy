@@ -19,7 +19,6 @@
 
 # Needed sounds:
 # elevator music
-# elevator ding
 # ~5 rock instrumentals
 
 # TODO: TRANSITIONS NEED TO BE MORE DYNAMIC
@@ -974,6 +973,7 @@ label second_tour_day:
     n "As they pull into the city, CS gets out and walks the street."
 
     # scene manitoba_street
+    scene black
     show cs with moveinleft
     cs "What a place. Way better than the places I've been lately."
     cs "And everyone's so friendly!"
@@ -984,6 +984,7 @@ label second_tour_day:
     cs "If I'm going to be on stage, I need some better kicks."
 
     # scene shoe_store
+    scene black
     # show ges at right
     # with dissolve
     show cs at left with moveinleft
@@ -1016,6 +1017,7 @@ label second_tour_day:
     n "CS checks out and heads back to the tour bus."
 
     # scene tour_bus_inside
+    scene black
     show anno at left
     show arceus flipped
     with dissolve
@@ -1057,6 +1059,7 @@ label second_tour_day:
     cs "Well, let's go out there and show them what we're made of!"
 
     # scene stage2
+    scene black
     show anno at left
     show arceus at right
     show cs
@@ -1078,6 +1081,7 @@ label second_tour_day:
     scene black with dissolve
     
     # scene tour_bus_inside
+    scene black
     show anno at left
     show arceus at right
     show cs
@@ -1124,6 +1128,7 @@ label third_tour_day:
     cs "Let's go make our fans proud."
 
     # scene big_stage
+    scene black
     show anno at left
     show arceus at right
     show cs
@@ -1203,7 +1208,8 @@ label third_tour_day:
     jump final_tour_bus
 
 label final_tour_bus:
-    # scene tour_bus_inside
+    # scene tour_bus_inside with dissolve
+    scene black
     show anno at left
     show arceus at right
     show cs
