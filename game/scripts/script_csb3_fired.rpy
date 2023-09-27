@@ -41,6 +41,8 @@ label new_plan:
     show cs disappointed
     cs "Arc, I don't smoke."
     arceus "Man, I don't know."
+    play music "<loop 0>audio/dealin_dope.mp3" volume 0.5
+    music Dealin Dope - Dr. Awesome
     cs "No, I got fired."
     arceus "Aw, man. That sucks. I'm sure we'll figure it out."
     arceus "Come on, let's go back to the hotel. We can think of something, I'm sure."
@@ -93,6 +95,8 @@ label new_plan:
         obama "I'm officially pardoning Annorexorcist and Arceus3251, for helping me out of a pickle."
     arceus "Incredible as always, Anno."
     anno "I try."
+    stop music fadeout 3.0
+    music end
     cs "But what about money? I'm still out of a job and I'd like to keep having a roof over my head."
     arceus "I don't know man, I can't think after all that. Let's take a bit and relax. Clear our heads."
     cs "Good call. Wanna play some Guitar Hero?"
@@ -215,7 +219,8 @@ label hotel_next_day:
     show arceus at right
     show cs
     with dissolve
-    # play music elevator_music
+    play music "<loop 0>audio/local_forecast.mp3" volume 0.5
+    music Local Forecast - Kevin MacLeod
     pause 2.0
     cs "So, see any good shows lately?"
     arceus "You watch TV?"
@@ -228,6 +233,8 @@ label hotel_next_day:
     cs "Yeah, sorry."
 
     pause 2.0
+    stop music fadeout 3.0
+    music end
     play sound "audio/elevator_ding.ogg"
 
     scene hotel_breakfast with fade
@@ -284,7 +291,8 @@ label song_2:
     arceus "Hit me with something energetic, something in a good mood."
     anno "Gotcha."
     n "Anno tinkers around for a moment on his laptop, until..."
-    # TODO: An upbeat rock instrumental.
+    play music "<loop 0>audio/happy_rock.mp3" volume 0.5
+    music Happy Rock - Benjamin TISSOT
     n "An upbeat rock instrumental plays from Anno's computer."
     arceus "Heck yeah, awesome. OK, here I go..."
     arceus "{cps=15}{image=note_small1.png}We're going down to Vegas,{w=1.5} we're gonna strike it rich!{w=1.5}\nWe're going down to Vegas..."
@@ -295,6 +303,8 @@ label song_2:
     arceus "Yeah!"
     arceus "{cps=15}{image=note_small1.png}We're going down to Vegas,{w=1.5} [line_1]{image=note_small2.png}"
     cs "Woohoo! That sounds awesome!"
+    stop music fadeout 3.0
+    music end
     anno "Let's get some backing vocals and a solo done and we have another song!"
     arceus "I'm glad you guys like it :3"
 
@@ -463,7 +473,6 @@ label mcd:
     with dissolve
 
     anno "Well, you guys ready to write the next song?"
-    n "Stomachs grumble throughout the room."
     cs "Ugh, I'm starving."
     arceus "That hotel breakfast just isn't doing it for me today."
     anno "Hmm... we have a little extra money from the first song's streams, wanna go to like, McDonald's?"
@@ -481,7 +490,8 @@ label mcd:
     show arceus at right
     show cs
     with dissolve
-
+    play music "<loop 0>audio/fnaf_6.mp3" volume 0.5
+    music Racing Minigame Song - FNAF 6
     n "CS and the gang sit at a table in the McDonald's and eat their food."
     n "As they eat, they start talking about their next song."
     cs "OK, I had this idea, but it's a bit out there."
@@ -528,7 +538,8 @@ label mcd:
     anno "Let's go back to the room and get this song made!"
     n "On their way out of the store, CS turns to Arc."
     cs "You know, I think [song_name_4] might be our best one yet."
-
+    stop music fadeout 3.0
+    music end    
     scene black with dissolve
     jump hotel_lobby_2
 
@@ -540,7 +551,8 @@ label hotel_lobby_2:
     show arceus at right
     show cs
     with dissolve
-
+    play music "<loop 0>audio/gold_room.mp3" volume 0.5
+    music Youre At A Ball In The Gold Room - Nemos Dreamscapes
     n "As they walk through the hotel lobby to their room, they hum their newest song to themselves."
     cs "{cps=15}{image=note_small1.png}{i}[line_5]{/i}{image=note_small2.png}"
     n "Someone in the lobby overhears them singing the song and runs up to them."
@@ -559,13 +571,17 @@ label hotel_lobby_2:
     guest "Come on! You gotta! You'll pop off on TikTok."
     cs "Uh, sure? I guess?"
     n "The crowd cheers."
+    stop music fadeout 3.0
+    music end    
     cs "Alright, well, here's our song..."
     n "CS turns to the others to queue them."
     cs "[song_name_2]!"
     n "Anno starts up the backing track, and Arceus grabs some random objects to use as a drum kit."
+    play music "<loop 0>audio/happy_rock.mp3" volume 0.5
     cs "{cps=15}{image=note_small1.png}We're going down to Vegas, we're gonna strike it rich!{w=1.5}\nWe're going down to Vegas, [line_1]{image=note_small2.png}"
     n "The crowd cheers wildly."
     anno "We're [band_name]! Check out [ep_name] on streaming services soon!"
+    stop music fadeout 3.0
     n "The gang heads up to their room."
     jump song_5
 
@@ -696,7 +712,7 @@ label howie:
     show cs flipped at mid_right
     show arceus at right
     with dissolve
-
+    play music "<loop 0>audio/gold_room.mp3" volume 0.5
     n "Howie walks into the lobby."
     show howie at left with moveinleft
     agent "You guys ready?"
@@ -705,6 +721,7 @@ label howie:
     n "The group is in shock."
     anno "Already? We haven't even struck a deal!"
     agent "Ah, you will, I trust in that. But until then, why don't I treat you all to the ride of a lifetime?"
+    stop music fadeout 3.0
     n "CS, Anno, and Arc all head into the limo out front, lead by Howie."
     hide cs
     hide anno
@@ -713,6 +730,8 @@ label howie:
     with moveoutleft
 
     scene in_limo with dissolve
+    play music "<loop 0>audio/good_vibes.mp3" volume 0.5
+    music GOOD VIBES - LitKidBeats
     arceus "These snacks are amazing!"
     anno "This music's awesome!"
     cs "These seats are some comfy!"
@@ -734,6 +753,8 @@ label howie:
     anno "I want to see whatever contract you're having us sign, first."
     agent "Smart man, smart man. Here it is."
     n "Howie hands Anno the contract."
+    stop music fadeout 3.0
+    music end    
 
     scene black with dissolve
     n "As Anno reads over the contract, CS, Arc, and Howie talk more about the deal."
@@ -755,7 +776,7 @@ label signed_the_contract:
     show cs at mid_left
     show howie at right
     with dissolve
-
+    play music "<loop 0>audio/gold_room.mp3" volume 0.5
     agent "Well, your first stop is Vancouver."
     cs "Vancouver? Where are we playing?"
     n "Howie reads his iPad."
@@ -767,7 +788,7 @@ label signed_the_contract:
     show cs at center
     show arceus at right
     with move
-
+    stop music fadeout 3.0
     cs "Linus..."
     anno "Don't be worried. Maybe he won't even recognize you."
     arceus "Yeah, he'll be busy running the expo."
@@ -837,12 +858,12 @@ label first_tour_day:
     show arceus flipped
     show cs at mid_left
     with moveinleft
-
+    play music "<loop 0>audio/gold_room.mp3" volume 0.5
     show howie at right with moveinright
     agent "You boys ready to go?"
     cs "Ready as we'll ever be."
     agent "Well, then! It's show time!"
-
+    stop music fadeout 3.0
     scene black with dissolve
     scene ltx with dissolve
     show anno at left
@@ -928,7 +949,7 @@ label first_tour_day:
     show arceus flipped at right
     show cs at center
     with dissolve
-
+    play music "<loop 0>audio/good_vibes.mp3" volume 0.5
     show howie at offscreenleft with moveinright
     show howie at right behind arceus with move
 
@@ -944,7 +965,7 @@ label first_tour_day:
     anno "Slow my horses...?"
     agent "That's without me taking my cut, or you three splitting it. We still got more shows to do, you know!"
     cs "Well then, let's get this show on the road!"
-
+    stop music fadeout 3.0
     scene black with dissolve
     jump second_tour_day
 
@@ -956,7 +977,7 @@ label second_tour_day:
     show arceus at right
     show cs at center
     with dissolve
-
+    play music "<loop 0>audio/good_vibes.mp3" volume 0.5
     n "CS shouts up to the front."
     cs "Where are we heading?!"
     agent "Manitoba! We'll stop in Winnipeg, so you guys can grab some stuff if you need it."
@@ -964,12 +985,14 @@ label second_tour_day:
     anno "Nah, I'm good."
     arceus "Yeah, I'm just gonna chill here."
     cs "Alrighty then!"
-
+    stop music fadeout 3.0
     scene black with dissolve
     n "As they pull into the city, CS gets out and walks the street."
 
     scene manitoba_street
     show cs with moveinleft
+    play music "<loop 0>track4.mp3" volume 0.4
+    music Track 4 - Weatherscan
     cs "What a place. Way better than the places I've been lately."
     cs "And everyone's so friendly!"
     show border_guard at right with moveinright
@@ -1008,13 +1031,15 @@ label second_tour_day:
     cs "Wait, it's what--{w=0.5}{nw}"
     ges "That'll be $88.88, if you want em!"
     cs "I'll take them!"
+    stop music fadeout 3.0
+    music end
     n "CS checks out and heads back to the tour bus."
 
     scene tour_bus_inside
     show anno at left
     show arceus flipped
     with dissolve
-
+    play music "<loop 0>audio/good_vibes.mp3" volume 0.5
     show cs flipped at right with moveinright
     anno "Hey CS!"
     arceus "Dang, nice shoes!"
@@ -1025,7 +1050,7 @@ label second_tour_day:
     arceus "Why is that?"
     cs "I just think it'll make someone pretty happy."
     anno "Sounds good to me!"
-
+    stop music fadeout 3.0
     scene convention_center_entrance
     show anno at left
     show cs at mid_left
@@ -1078,7 +1103,7 @@ label second_tour_day:
     show arceus at right
     show cs
     with dissolve
-
+    play music "<loop 0>audio/good_vibes.mp3" volume 0.5
     jump third_tour_day
 
 label third_tour_day:
@@ -1094,6 +1119,7 @@ label third_tour_day:
     anno "We're going to really have to go big for this one, I think it's our biggest audience size yet."
     cs "We'll put on a show like they've never seen before!"
 
+    stop music fadeout 3.0
     # TODO: Can this please be a diiferent convention center?
     scene convention_center_lobby
     with fade
@@ -1136,9 +1162,10 @@ label third_tour_day:
 
     cs "Who wants to hear {i}[song_name_2]{/i}?!"
     n "The crowd responds with further excitement."
-    # TODO: Play track
+    play music "<loop 0>audio/happy_rock.mp3" volume 0.5
     cs "{cps=15}{image=note_small1.png}We're going down to Vegas,{w=1.5} we're gonna strike it rich!{w=1.5}\nWe're going down to Vegas,{w=1.5} [line_1]"
     n "The audience is adoring this."
+    stop music fadeout 3.0
 
     cs "Next up, here's a classic: [song_name_3]"
     anno "CS, none of our songs are classics, we're a new band."
@@ -1206,7 +1233,7 @@ label final_tour_bus:
     show arceus at right
     show cs
     with dissolve
-
+    play music "<loop 0>audio/good_vibes.mp3" volume 0.5
     n "The boys are exhausted."
     show howie at offscreenright
     show anno at left
@@ -1229,6 +1256,7 @@ label final_tour_bus:
     n "Arc nudges CS."
     arceus "You can go home!"
     show cs disappointed
+    stop music fadeout 3.0
     n "CS looks forlorn."
     arceus "What's wrong?"
     cs "Well, I've been really enjoy this, actually."
@@ -1246,7 +1274,8 @@ label final_tour_bus:
 
     scene black with dissolve
     scene cs_house with dissolve
-
+    play music "<loop 0>park_theme.mp3" volume 0.5
+    music Park Theme - Lorin Nelson
     n "CS steps off the tour bus."
     show cs at right with moveinleft
     cs "Ah, home sweet home."
@@ -1267,7 +1296,8 @@ label final_tour_bus:
     cs "Bye, everyone! Let's talk soon."
     cs "[band_name] forever!"
     n "They all high-five one last time."
-
+    stop music fadeout 3.0
+    music end
     scene cs_door_outside with dissolve
     show cs with moveinleft
     n "CS goes to head inside, but there's a note on his door."

@@ -74,6 +74,12 @@ init python:
         "Prophet 2001 - Dr. Awesome": "prophet_2001.mp3",
         "Lancer - Toby Fox": "lancer.mp3",
         "Weird Personalities - Lizardking": "weird_personalities.mp3",
+        "Dealin Dope - Dr. Awesome": "dealin_dope.mp3",
+        "Happy Rock - Benjamin TISSOT": "happy_rock.mp3",
+        "Local Forecast - Kevin MacLeod": "local_forecast.mp3",
+        "Racing Minigame Song - FNAF 6": "fnaf_6.mp3",
+        "Youre At A Ball In The Gold Room - Nemos Dreamscapes": "gold_room.mp3",
+        "GOOD VIBES - LitKidBeats": "good_vibes.mp3",
         "Insane Personalities - Lizardking": "insane_personalities.mp3",
         "Echoing? - Banana": "killcops.mp3"
     }
