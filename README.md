@@ -45,7 +45,7 @@ See what needs to be done below.
 - [X] Add games to script
 
 ### Friend Ending [Pakoo, Sept. W2]
-- [ ] Script [98%]
+- [X] Script
 - [X] Backgrounds
 - [X] Characters
 - [X] Transitions
@@ -56,16 +56,16 @@ See what needs to be done below.
 
 ### Fired Ending [Digi, Sept. W2]
 - [X] Script
-- [ ] Backgrounds [75%]
-- [ ] Characters [75%]
-- [ ] Transitions [50%]
+- [X] Backgrounds
+- [X] Characters [minus Ges]
+- [X] Transitions
 - [ ] Music
-- [ ] Bios
+- [X] Bios
 - [ ] Jukebox
 
 ### Country Ending [All, Sept. W4]
 - [ ] England
-    - [ ] Script [90%]
+    - [X] Script
     - [ ] Backgrounds [75%]
     - [ ] Characters
     - [ ] Transitions
@@ -73,14 +73,14 @@ See what needs to be done below.
     - [ ] Bios
     - [ ] Jukebox
 - [ ] Japan
-    - [ ] Script
+    - [ ] Script [40%]
     - [ ] Backgrounds
     - [ ] Characters
     - [ ] Transitions
     - [ ] Music
     - [ ] Bios
     - [ ] Jukebox
-- [ ] Sweden
+- [ ] Sweden [Aria]
     - [ ] Script
     - [ ] Backgrounds
     - [ ] Characters
@@ -90,8 +90,8 @@ See what needs to be done below.
     - [ ] Jukebox
 
 ### Archival Ending [Pakoo/Baker, October]
-- [ ] 3D Backgrounds [Baker]
-- [ ] Animated sequences [Baker]
+- [ ] 3D Backgrounds [Baker] [30%]
+- [ ] Animated sequences [Baker] [25%]
 - [ ] Final writing [Pakoo]
 - [ ] Short Archival animation (Error Route) [Pakoo] [75%]
 
@@ -108,10 +108,5 @@ See what needs to be done below.
 ### Wishlist
 - [ ] Ultimate Custom Night (RPG Freeplay) [75%]
     - [ ] Additional fighters/AIs
-- [ ] Cheats Mode
-    - [ ] You can now play as Luigi
-    - [ ] Arc2D2
-    - [ ] Pakoo Noise
-    - [ ] Pakoo randomly punches people
-- [ ] "The Legend" style custscene for HoH SiS monolouge [Digi]
+- [ ] "The Legend" style custscene for HoH SiS monolouge [Digi or Pakoo]
 - [ ] More car dialouge
