@@ -1075,7 +1075,7 @@ label second_tour_day:
 
     scene black with dissolve
     
-    # scene tour_bus
+    # scene tour_bus_inside
     show anno at left
     show arceus at right
     show cs
@@ -1198,3 +1198,79 @@ label third_tour_day:
 
     scene black with Dissolve(3.0)
     # Line 1200, give it up for line 1200
+    jump final_tour_bus
+
+label final_tour_bus:
+    # scene tour_bus_inside
+    show anno at left
+    show arceus at right
+    show cs
+    with dissolve
+
+    n "The boys are exhausted."
+    show howie at offscreenright
+    show anno at left
+    show cs at mid_left
+    show arceus
+    show howie at right
+    with move
+
+    agent "Well, gang, that was the last stop! You did amazing out there."
+    cs "I'm beat."
+    anno "I'm so tired..."
+    arceus "I need a nap."
+    agent "Well, maybe this will perk you guys up. Wanna hear the final total?"
+    cs "Sure, what is it?"
+    agent "Well, after all the cuts, and splitting it... {w=0.5}each of you gets..."
+    agent "$10,000!"
+    n "The gang perks up."
+    cs "Wait... 10K?!"
+    n "Arc nudges CS."
+    arceus "You can go home!"
+    n "CS looks forlorn."
+    arceus "What's wrong?"
+    cs "Well, I've been really enjoy this, actually."
+    cs "I'm not sure I wanna go home."
+    anno "Nah, don't act like that. This doesn't mean [band_name] is over!"
+    arceus "Yeah, we can still make music together. But you need to get back to your normal routine for a bit."
+    anno "Yeah, reset your head a bit."
+    cs "Yeah, you're right. And hey, maybe we can write [ep_name] 2 some day!"
+    arceus "Maybe we shouldn't name it [ep_name] 2."
+    cs "Yeah."
+    agent "Want me to point this bus towards Casa De CS?"
+    cs "You know what, yeah, let's do it."
+    arceus "Let's get you home, buddy."
+
+    scene black with dissolve
+    scene cs_house with dissolve
+
+    # TODO: I'm tired of adding transitions right now and I'm really burned out
+    n "CS steps off the tour bus."
+    cs "Ah, home sweet home."
+    n "The others join him outside."
+    arceus "Well, you should get some rest. It's been a wild few weeks for you."
+    cs "It's been a wild few {i}years{/i} for you."
+    arceus "Fair enough."
+    anno "Yeah, we need to get back to our places too. Figure out how to reintegrate."
+    howie "Pleasure doing business with you boys."
+    cs "Thanks, Mr. Mandell."
+    howie "Please, call me Howie."
+    cs "Well, thanks Howie."
+    cs "Bye, everyone! Let's talk soon."
+    cs "[band_name] forever!"
+    n "They all high-five one last time."
+
+    n "CS goes to head inside, but there's a note on his door."
+    sticky "We waited for you to come home to confront you, but you took too long, so we left."
+    sticky "Fuck you.\n-- HoH SiS"
+    cs "Well, I guess that's the end of that."
+
+    # scene cs_room
+    cs "I think I'm going to play some Guitar Hero before bed."
+    n "CS gets out his guitar."
+
+    cs "{cps=15}{image=note_small1.png}[line_7]{w=1.5}\n[line_8]{w=1.5}\n[line_9]{w=1.5}\n[line_10]{image=note_small2.png}"
+    scene black with Dissolve(3.0)
+
+    # TODO: credits
+    return

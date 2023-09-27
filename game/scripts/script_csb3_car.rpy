@@ -245,7 +245,6 @@ label car_dialogue:
 
     pause 1.0
 
-    n "Arceus sniffs the air."
     cs "Did you know you can buy 500,000 plastic straws on AliBaba for like $50?"
     arceus "Why... would you?"
     cs "I don't know, you just can."
