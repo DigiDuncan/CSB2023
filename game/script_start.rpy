@@ -265,12 +265,12 @@ define cop = Character("Cop", callback = renpy.partial(char_callback, name = "co
 define midge = Character("Midge", callback = renpy.partial(char_callback, name = "midge"))  # TODO: Beep
 define db = Character("DB05", callback = renpy.partial(char_callback, name = "db"))  # TODO: Beep
 define customer = Character("Customer", callback = char_callback)
-define guest = Character("Guest", callback = char_callback)
+define guest = Character("Guest", callback = renpy.partial(char_callback, name = "guest"))
 define janitor = Character("Janitor", callback = char_callback)
 define ges = Character("Ges", callback = renpy.partial(char_callback, name = "ges"))  # TODO: Beep
 define nurse = Character("Nurse", callback = char_callback)
 define benrey = Character("Benrey", callback = renpy.partial(char_callback, name = "benrey"))
-define mean = Character("Mean", callback = char_callback)  # TODO: Beep
+define mean = Character("Mean", callback = renpy.partial(char_callback, name = "mean"))  # TODO: Beep
 define agent = Character("Howie", callback = renpy.partial(char_callback, name = "howie", beep = "howie"))
 define gordon = Character("Gordon", callback = renpy.partial(char_callback, name = "gordon"))  # TODO: Beep
 
@@ -305,6 +305,9 @@ image cs prison_worried = "characters/cs/prison_worried.png"
 image cs guard = "characters/cs/guard.png"
 image cs guard dark = "characters/cs/guarddark.png"
 image cs fakegod = "characters/cs/fake_god.png"
+image cs guitar = "characters/cs/guitar.png"
+image cs surprised = "characters/cs/surprised.png"
+image cs scared = "characters/cs/scared.png"
 
 ## Arc
 image arceus = "characters/arc/arceus.png"
@@ -554,6 +557,10 @@ image mcdonalds_inside = "bg/mcdonalds_interior.png"
 image ltx = "bg/ltx.png"
 image ltx_stage = "bg/ltx_stage.png"
 image in_limo = "bg/in_limo.png"
+image tour_bus_inside = "bg/inside_tour_bus.png"
+image big_stage = "bg/big_stage.png"
+image stage2 = "bg/stage_2.png"
+image cs_door_outside = "bg/cs_door_outside.png"
 
 ## CSBIII Chapter 2
 image washington_road day = "bg/washingtonroadday.png"

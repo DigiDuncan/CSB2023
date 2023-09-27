@@ -1,21 +1,8 @@
 ### TODO:
 # Needed character sprites:
-# cs surprised
-# cs scared
-# cs guitar
 # customer
-# guest [gen z] [needs bio]
-# janitor
 # mean [needs bio]
 # ges
-
-# Needed bgs:
-# tour_bus_inside
-# manitoba_street
-# shoe_store
-# stage2
-# big_stage
-# cs_door_outside
 
 # Needed sounds:
 # elevator music
