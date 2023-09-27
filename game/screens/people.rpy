@@ -55,7 +55,10 @@ init python:
         "midge": "Midgalicis",
         "db": "DB05",
         "benrey": "Benrey",
+        "guest": "Estatic Fan",
+        "mean": "Meancarnavor",
         "howie": "Howie Mandell",
+        "ges": "Ges",
         "gordon": "Gordon Ramsay",
         "iris": "???"
 
