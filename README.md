@@ -55,7 +55,7 @@ See what needs to be done below.
 - [ ] Borderlands Intros
 
 ### Fired Ending [Digi, Sept. W2]
-- [ ] Script [85%]
+- [X] Script
 - [ ] Backgrounds [75%]
 - [ ] Characters [75%]
 - [ ] Transitions [50%]
