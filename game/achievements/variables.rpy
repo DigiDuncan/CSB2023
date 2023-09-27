@@ -1,5 +1,7 @@
 default persistent.unlocked_achievements = set()
 
+# TODO: Sort these a bit better?
+
 define achievements = [
     Achievement("ZUP!", "???", "Start the game.", "zup"),
     Achievement("A Great British Pound", "???", "Enjoy :)", "pound"),
@@ -25,6 +27,7 @@ define achievements = [
     Achievement("Hi, My Name Is...", "Fill in the blank.", "Name your first song.", "hi"),
     Achievement("Singer-Songwriter", "???", "Write your first song.", "songwriter"),
     Achievement("Independent Artist", "???", "Release an EP.", "ep"),
+    Achievement("You Rock!", "???", "Complete your tour.", "rockstar"),
     Achievement("I Thought This Was A Visual Novel", "Discover what we spent 1000 lines of code on.", "Win your first RPG battle.", "rpg"),
     Achievement("A Little Help From My Friends", "???", "Gather a full party.", "friends"),
     Achievement("Hopes and Dreams", "???", "Beat Copguy EX.", "souls"),

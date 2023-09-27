@@ -1287,6 +1287,7 @@ label final_tour_bus:
     # show cs guitar
 
     cs "{cps=15}{image=note_small1.png}[line_7]{w=1.5}\n[line_8]{w=1.5}\n[line_9]{w=1.5}\n[line_10]{image=note_small2.png}"
+    $ achievement_manager.unlock("You Rock!")
     scene black with Dissolve(3.0)
 
     # TODO: credits
