@@ -58,6 +58,7 @@
 - Kevin Macleod
     - Super Friendly
     - Pixel Peeker Polka
+    - Local Forecast
 - C418
     - stal
 - Dr. Awesome
@@ -67,6 +68,7 @@
     - Tuna Fish
     - The Whale
     - Prophet 2001
+    - Dealin' Dope
 - Keiichi Suzuki
     - Onett Theme
     - Buy Something, Will Ya!
@@ -142,6 +144,14 @@
     - Klaxon Beat
     - CP Violation
     - Triage At Dawn
+- Benjamin TISSOT
+    - Happy Rock
+- Scott Cawthon
+    - Racing Minigame Song
+- Nemo's Dreamscapes
+    - You're At A Ball In The Gold Room
+- LitKidBeats
+    - GOOD VIBES
 
 ## Art
 **CSocola Sprites:** Greta "@lovelycloud"  
