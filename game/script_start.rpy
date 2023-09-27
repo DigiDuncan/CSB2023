@@ -461,6 +461,9 @@ image marine = "characters/marine.png"
 image big_tank = "characters/big_tank.png"
 image benrey = "characters/benrey.png"
 image howie = "characters/howie.png"
+image guest = "characters/guest.png"
+image janitor = "characters/janitor.png"
+image customer = "characters/customer.png"
 
 # Background Images
 ## CSBI
@@ -561,6 +564,8 @@ image tour_bus_inside = "bg/inside_tour_bus.png"
 image big_stage = "bg/big_stage.png"
 image stage2 = "bg/stage_2.png"
 image cs_door_outside = "bg/cs_door_outside.png"
+image manitoba_street = "bg/manitoba_street.png"
+image shoe_store = "bg/shoe_store.png"
 
 ## CSBIII Chapter 2
 image washington_road day = "bg/washingtonroadday.png"
