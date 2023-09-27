@@ -2,6 +2,7 @@
 # Needed character sprites:
 # cs surprised
 # cs scared
+# cs guitar
 # customer
 # guest [gen z] [needs bio]
 # janitor
@@ -14,6 +15,7 @@
 # shoe_store
 # stage2
 # big_stage
+# cs_door_outside
 
 # Needed sounds:
 # elevator music
@@ -1244,30 +1246,39 @@ label final_tour_bus:
     scene black with dissolve
     scene cs_house with dissolve
 
-    # TODO: I'm tired of adding transitions right now and I'm really burned out
     n "CS steps off the tour bus."
+    show cs at right with moveinleft
     cs "Ah, home sweet home."
     n "The others join him outside."
+    show cs flipped with determination
+    show anno at mid_left
+    show arceus at center
+    with moveinleft
     arceus "Well, you should get some rest. It's been a wild few weeks for you."
     cs "It's been a wild few {i}years{/i} for you."
     arceus "Fair enough."
     anno "Yeah, we need to get back to our places too. Figure out how to reintegrate."
-    howie "Pleasure doing business with you boys."
+    show howie at left with moveinleft
+    agent "Pleasure doing business with you boys."
     cs "Thanks, Mr. Mandell."
-    howie "Please, call me Howie."
+    agent "Please, call me Howie."
     cs "Well, thanks Howie."
     cs "Bye, everyone! Let's talk soon."
     cs "[band_name] forever!"
     n "They all high-five one last time."
 
+    scene cs_door_outside with dissolve
+    show cs with moveinleft
     n "CS goes to head inside, but there's a note on his door."
     sticky "We waited for you to come home to confront you, but you took too long, so we left."
     sticky "Fuck you.\n-- HoH SiS"
     cs "Well, I guess that's the end of that."
 
-    # scene cs_room
+    scene cs_room with dissolve
+    show cs with moveinleft
     cs "I think I'm going to play some Guitar Hero before bed."
     n "CS gets out his guitar."
+    # show cs guitar
 
     cs "{cps=15}{image=note_small1.png}[line_7]{w=1.5}\n[line_8]{w=1.5}\n[line_9]{w=1.5}\n[line_10]{image=note_small2.png}"
     scene black with Dissolve(3.0)
