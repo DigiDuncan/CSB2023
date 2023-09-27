@@ -232,9 +232,8 @@ label hotel_next_day:
     with moveinleft
     n "They all sit down to eat."
 
-    # show hotel_table behind cs with dissolve
     n "As they eat, CS checks the stream numbers on {i}[song_name_1]{/i}."
-    # show cs surprised
+    show cs scared
     cs "Guys?"
     arceus "Mmm?"
     n "Arceus and Anno are stuffing their face."
@@ -610,7 +609,7 @@ label fan_interaction:
     cs "Huh? Who the fuck knocks on a hotel door, especially at this hour?"
     show cs angry at left with moveinleft
     cs "Hello?"
-    # show mean at right with moveinright
+    show mean at right with moveinright
     mean "OMG, it's CS!"
     cs "Huh? Are you like, a fan?"
     mean "Yes! Of your music!"
@@ -792,7 +791,7 @@ label signed_the_contract:
     cs "Th-thank you... what do I call you?"
     csgod "You can call me...{w=1.5} !!!"
     hide csgod with dissolve
-    # show janitor at right with moveinright
+    show janitor at right with moveinright
     janitor "You alright man? Who are you talking to?"
     cs "N-- no-one. Just heading to bed."
     show cs flipped
@@ -912,8 +911,7 @@ label first_tour_day:
     hide anno
     with moveoutright
 
-    # scene tour_bus_inside
-    scene black
+    scene tour_bus_inside
     show anno at left
     show arceus at right
     show cs at center
@@ -941,8 +939,7 @@ label first_tour_day:
 label second_tour_day:
     n "The group rests for the day, on their way to their next venue."
     
-    # scene tour_bus_inside
-    scene black
+    scene tour_bus_inside
     show anno at left
     show arceus at right
     show cs at center
@@ -959,8 +956,7 @@ label second_tour_day:
     scene black with dissolve
     n "As they pull into the city, CS gets out and walks the street."
 
-    # scene manitoba_street
-    scene black
+    scene manitoba_street
     show cs with moveinleft
     cs "What a place. Way better than the places I've been lately."
     cs "And everyone's so friendly!"
@@ -970,10 +966,9 @@ label second_tour_day:
     cs "Ooh, a shoe store!"
     cs "If I'm going to be on stage, I need some better kicks."
 
-    # scene shoe_store
-    scene black
+    scene shoe_store
     # show ges at right
-    # with dissolve
+    with dissolve
     show cs at left with moveinleft
     ges "Welcome to the sho--, woah, are you CS?"
     cs "Yeah, how'd you know?"
@@ -1003,8 +998,7 @@ label second_tour_day:
     cs "I'll take them!"
     n "CS checks out and heads back to the tour bus."
 
-    # scene tour_bus_inside
-    scene black
+    scene tour_bus_inside
     show anno at left
     show arceus flipped
     with dissolve
@@ -1045,8 +1039,7 @@ label second_tour_day:
     hide nova with moveoutright
     cs "Well, let's go out there and show them what we're made of!"
 
-    # scene stage2
-    scene black
+    scene stage2
     show anno at left
     show arceus at right
     show cs
@@ -1067,8 +1060,7 @@ label second_tour_day:
 
     scene black with dissolve
     
-    # scene tour_bus_inside
-    scene black
+    scene tour_bus_inside
     show anno at left
     show arceus at right
     show cs
@@ -1097,24 +1089,24 @@ label third_tour_day:
     with moveinleft
 
     cs "Alright, well let's get prepared, we have way more songs to do tonight--{nw}"
-    # show mean with moveinright
+    show mean with moveinright
     mean "HOLY SHIT IT'S YOU!"
     cs "Wait, are you that fan from my hotel?"
     mean "YOU ACTUALLY MADE IT TO ONTARIO?"
     cs "Uh... yeah, totally because you asked me to!"
     show cs worried
-    # show mean at mid_left
+    show mean at mid_left
     with move
     n "Mean tackle hugs CS."
     if fun_value(10):
         cs "Ow."
     
-    # show mean at right with move
+    show mean at right with move
     mean "Thank you so much! I know you guys will do amazing."
-    # hide mean with moveoutright
+    hide mean with moveoutright
     cs "Let's go make our fans proud."
 
-    # scene big_stage
+    scene big_stage
     scene black
     show anno at left
     show arceus at right
@@ -1195,8 +1187,7 @@ label third_tour_day:
     jump final_tour_bus
 
 label final_tour_bus:
-    # scene tour_bus_inside with dissolve
-    scene black
+    scene tour_bus_inside
     show anno at left
     show arceus at right
     show cs
@@ -1271,7 +1262,7 @@ label final_tour_bus:
     show cs with moveinleft
     cs "I think I'm going to play some Guitar Hero before bed."
     n "CS gets out his guitar."
-    # show cs guitar
+    show cs guitar
 
     cs "{cps=15}{image=note_small1.png}[line_7]{w=1.5}\n[line_8]{w=1.5}\n[line_9]{w=1.5}\n[line_10]{image=note_small2.png}"
     $ achievement_manager.unlock("You Rock!")
