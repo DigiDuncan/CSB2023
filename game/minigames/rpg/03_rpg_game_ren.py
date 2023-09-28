@@ -15,6 +15,7 @@ python early:
 
 from copy import copy
 from typing import Callable, Literal, Optional
+import math
 
 DamageType = Literal["hp", "confusion", "ap", "atk", "none"]
 Answer = tuple[int, DamageType]
@@ -838,17 +839,26 @@ class EnemyDisplayable(renpy.Displayable):
         self.damage_indicator_y = self.size[1] * 0.01
         self.damage_size = 50
         self.last_tick = None
+        self.opacity = 100
         super().__init__(self)
 
     def show_damage_indicator(self, ans: Answer):
         self.damage_indicators.append(DamageIndicator(ans))
+
     
     def render(self, width, height, st, at):
         if self.last_tick is None:
             self.last_tick = st
         dt = st - self.last_tick
         r = renpy.Render(640, self.size[1])
-        r.place(self.fighter.sprite, x = 0, y = 0)
+        if self.damage_indicators:
+            if self.damage_indicators[0].indicator_type == "damage":
+                if not math.cos(20*self.damage_indicators[0].time_on_screen)<0:
+                    r.place(self.fighter.sprite, x=0, y=0)
+            else:
+                r.place(self.fighter.sprite, x=0, y=0)
+        else:
+            r.place(self.fighter.sprite, x=0, y=0)
         # Making the health bar
         # THIS IS GARBAGE FULL OF MAGIC NUMBERS
         self.red_part = Solid("#FF0000", xsize = 1920 // 9, ysize = 1920 // 54)
@@ -872,6 +882,8 @@ class EnemyDisplayable(renpy.Displayable):
             di.time_on_screen += dt
             if di.time_on_screen > DAMAGE_INDICATOR_TIME:
                 self.damage_indicators.remove(di)
+                # Ensures that the sprite is showing again
+                self.opacity = 100
 
         renpy.redraw(self, 0)
         self.last_tick = st
