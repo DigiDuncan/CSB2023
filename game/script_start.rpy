@@ -861,16 +861,18 @@ init python:
     import math
 
     def show_typewriter(st, at):
+
         if st > 2.0:
-            return Text(typewriter_text), 0.1
+            return Text(typewriter_text, textalign=0.5), 0.1
         else:
-            d = Text(typewriter_text[:math.ceil((st/2.0)*len(typewriter_text))])
+            d = Text(typewriter_text[:math.ceil((st/2.0)*len(typewriter_text))], textalign=0.5)
             return d, 0.1
 
 image typewriter = DynamicDisplayable(show_typewriter)
 
 label test:
 
+    $ typewriter_text = "Here is some text, bitch\nI have no clue if it works\nI sure hope it does!"
     show typewriter
     pause
 
