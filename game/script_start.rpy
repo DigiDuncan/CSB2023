@@ -185,6 +185,11 @@ transform lego_run:
     anchor(0.5, 0.5)
     linear 2.0 zoom 5.0 alpha 0.0
 
+transform typewriter_location:
+    pos (0.5, 0.7)
+    anchor(0.5, 0.5)
+    rotate(-15)
+
 # Character Definitions
 define n = Character(None, what_italic = True)  # Narrator
 define cs = Character("cs188", callback = renpy.partial(char_callback, name = "cs", beep = "cs"))
@@ -718,7 +723,7 @@ image drive_day = Movie(play="movies/car_drive_day.webm")
 image woc = Movie(play="movies/woc.webm")
 image where = Movie(play="movies/wherearetheynow.webm")
 image karaoke = Transform(Movie(play = "movies/karaoke.webm", side_mask = True), zoom = 1.5)
-image bad_end = Transform(Movie(play = "movies/bad_ending.webm", side_mask = True, loop=False, image="images/bad_end.png"), xzoom=2)
+image bad_end_screen = Transform(Movie(play = "movies/bad_ending.webm", side_mask = True, loop=False, image="images/bad_end.png"), xzoom=2)
 
 #Fun Values
 image utajsign = "secret/utajsign.png"
@@ -800,6 +805,35 @@ default cont = False
 
 default typewriter_text = "Hello, world!"
 
+python early:
+    def parse_bad_end(lexer):
+        text = lexer.string()
+        label = lexer.string()
+
+        return (text, label)
+
+    def execute_bad_end(parsed_object):
+        global typewriter_text
+        text, label = parsed_object
+        _window_hide()
+        renpy.show("bad_end_screen")
+        renpy.pause(1.0)
+        typewriter_text = text
+        renpy.show("typewriter", [typewriter_location])
+        renpy.pause()
+        renpy.end_replay()
+        renpy.jump(label)
+
+    renpy.register_statement(
+        name = "bad_end",
+        parse = parse_bad_end,
+        execute = execute_bad_end,
+        block = False
+    )
+
+
+        
+
 # Jump Menu
 screen chapter_menu():
     zorder 100
@@ -864,9 +898,9 @@ init python:
     def show_typewriter(st, at):
 
         if st > 2.0:
-            return Text(typewriter_text, textalign=0.5), 0.1
+            return Text(typewriter_text, textalign=0.5, size=100), 0.1
         else:
-            d = Text(typewriter_text[:math.ceil((st/2.0)*len(typewriter_text))], textalign=0.5)
+            d = Text(typewriter_text[:math.ceil((st/2.0)*len(typewriter_text))], textalign=0.5, size=100)
             return d, 0.1
 
 image typewriter = DynamicDisplayable(show_typewriter)

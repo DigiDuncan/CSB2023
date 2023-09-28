@@ -224,11 +224,8 @@ label asylum:
     hide csgod with moveoutright
     stop music fadeout 3.0
     music end
-    show bad_end
-    # $ typewriter_text = "Silly, CS! YTP Magic isn't real!"
-    # show typewriter
-    pause
-    $ renpy.end_replay()
+    window hide
+    bad_end "Silly, CS!\nYTP Magic doesn't exist!" "csbii_start"
     return
     
 # Caught
