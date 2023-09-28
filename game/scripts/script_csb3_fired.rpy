@@ -904,6 +904,7 @@ label first_tour_day:
     # TODO: cheering
     n "The crowd is going insane."
     cs "We're [band_name], and this is {i}[song_name_4]{/i}!"
+    play sound "audio/start_rocking.mp3"
     n "The crowd is nuts."
     cs "{cps=15}{image=note_small1.png}Through all adversity, we'll bind together and overcome!{image=note_small2.png}"
     cs "{cps=15}{image=note_small1.png}[line_5]{image=note_small2.png}"
@@ -1085,6 +1086,7 @@ label second_tour_day:
 
     cs "I know you all just watched an amazing performance by Nova, and that's going to be a hard act to follow..."
     cs "But who wants to hear {i}[song_name_3]{/i}?!"
+    play sound "audio/start_rocking.mp3"
     n "The crowd is exploding."
 
     cs "{cps=15}{image=note_small1.png}I made my way over to Japan...{w=1.5}\n[line_2]{image=note_small2.png}"
@@ -1155,12 +1157,14 @@ label third_tour_day:
     cs "For our special performance tonight, we'll be singing every song off [ep_name]!"
     n "The crowd is going wild."
     cs "First up, it's {i}[song_name_1]{/i}!"
+    play sound "audio/start_rocking.mp3"
     n "The crowd cheers."
     # TODO: Play track
     cs "{cps=15}{image=note_small1.png}We broke the chains, now we're free to fly,{w=1.5}\nEscaped concrete, and now we see blue skies{w=1.5}\nBecome brand new, we'll leave the past behind,{w=1.5}\nPrisoners no more, 'cause a new life we'll find{image=note_small2.png}"
     n "The crowd is loving this!"
 
     cs "Who wants to hear {i}[song_name_2]{/i}?!"
+    play sound "audio/start_rocking.mp3"
     n "The crowd responds with further excitement."
     play music "<loop 0>audio/happy_rock.mp3" volume 0.5
     cs "{cps=15}{image=note_small1.png}We're going down to Vegas,{w=1.5} we're gonna strike it rich!{w=1.5}\nWe're going down to Vegas,{w=1.5} [line_1]"
@@ -1169,6 +1173,7 @@ label third_tour_day:
 
     cs "Next up, here's a classic: [song_name_3]"
     anno "CS, none of our songs are classics, we're a new band."
+    play sound "audio/start_rocking.mp3"
     n "The crowd laughs."
     # TODO: Play track
     cs "{cps=15}{image=note_small1.png}I made my way over to Japan...{w=1.5}\n[line_2]{image=note_small2.png}"
@@ -1178,6 +1183,7 @@ label third_tour_day:
     n "The crowd loves this a lot."
 
     cs "Alright, here's a favorite for a lot of you: [song_name_4]!"
+    play sound "audio/start_rocking.mp3"
     # TODO: Play track
     cs "{cps=15}{image=note_small1.png}Through all adversity, we'll bind together and overcome!{image=note_small2.png}"
     cs "{cps=15}{image=note_small1.png}[line_5]{image=note_small2.png}"
@@ -1187,6 +1193,7 @@ label third_tour_day:
     n "The crowd is exploding!"
 
     cs "And now, for the first time on stage: it's [song_name_5]!"
+    play sound "audio/start_rocking.mp3"
     n "The crowd is ready to burst."
     # TODO: Play track
     cs "{cps=15}{image=note_small1.png}[line_7]{w=1.5}\n[line_8]{w=1.5}\n[line_9]{w=1.5}\n[line_10]{image=note_small2.png}"
@@ -1209,6 +1216,7 @@ label third_tour_day:
             $ line_11 = "Everybody knows I'm cool as ice"
 
     cs "OK!"
+    play sound "audio/start_rocking.mp3"
     # TODO: Play track
     cs "{cps=15}{image=note_small1.png}[line_11]{image=note_small2.png}"
     $ line_12 = renpy.input("What's the next line?")
@@ -1310,6 +1318,7 @@ label final_tour_bus:
     cs "I think I'm going to play some Guitar Hero before bed."
     n "CS gets out his guitar."
     show cs guitar
+    play sound "audio/start_rocking.mp3"
 
     cs "{cps=15}{image=note_small1.png}[line_7]{w=1.5}\n[line_8]{w=1.5}\n[line_9]{w=1.5}\n[line_10]{image=note_small2.png}"
     $ achievement_manager.unlock("You Rock!")
