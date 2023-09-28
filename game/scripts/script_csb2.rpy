@@ -224,7 +224,10 @@ label asylum:
     hide csgod with moveoutright
     stop music fadeout 3.0
     music end
-    $ renpy.movie_cutscene("movies/bad_ending.webm")
+    show bad_end
+    # $ typewriter_text = "Silly, CS! YTP Magic isn't real!"
+    # show typewriter
+    pause
     $ renpy.end_replay()
     return
     
