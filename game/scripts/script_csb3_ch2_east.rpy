@@ -998,6 +998,7 @@ label win_pencil:
     jump car_dialogue
 
 label back_home:
+    stop music2
     scene cs_house with fade
     play music "<loop 0>park_theme.mp3" volume 0.5
     music Park Theme - Lorin Nelson
