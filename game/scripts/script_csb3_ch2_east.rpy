@@ -672,7 +672,8 @@ label interstate_69:
     n "A glowing white cut appeared through the trunks of the trees before the remaining trunk also decayed into a mass of white light."
     n "The light began to appear at the base of the bushes before the ground that housed their roots was tossed out, taking the bushes along with it."
     n "Finally, the forest's brush, along with the detritus of other plants that dotted the ecosystem, disappeared in a sea of white flame that left them in a desolate parking lot."
-    return
+    jump ohio
+
 label interstate_94:
     cs "What are you talking about? We're getting on 94."
     cs "We've all been through way too much for me to want to take any unnecessary detours."
@@ -683,7 +684,7 @@ label interstate_94:
     cs "Sorry guys. I guess I'm just on-edge right now."
     arceus "I thought it sounded like a good route..."
     n "The conversation comes to a halt as they continue heading down the highway."
-    return
+    jump ohio
 
 label ohio:
     if fun_value(50):
