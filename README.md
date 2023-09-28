@@ -13,7 +13,7 @@ See what needs to be done below.
 -------
 
 ### Big Tasks
-- [ ] Ending Screens [Pakoo, Sept. W3] [50%]
+- [X] Ending Screens [Pakoo, Sept. W3] [50%]
 - [ ] Menu for Endings [Arc, Sept. W3] [75%]
 - [ ] Commerical [Pakoo, Sept. W4]
 - [ ] Credits [Digi, Sept. W4]
@@ -37,8 +37,9 @@ See what needs to be done below.
 - [X] Basic Game Loop
 - [X] All Attacks and Fighters in
 - [X] AI
-- [?] All Sprites done [Pakoo]
-- [ ] Animations [Arc]
+- [X] All Sprites done
+    - [ ] Copguy EX Sprite [Pakoo]
+- [X] Animations
 - [X] SFX
 - [X] Reactive Text
 - [ ] Balancing [Pakoo]
@@ -59,9 +60,10 @@ See what needs to be done below.
 - [X] Backgrounds
 - [X] Characters [minus Ges]
 - [X] Transitions
-- [ ] Music
+- [X] Music
+- [ ] Instrumentals
 - [X] Bios
-- [ ] Jukebox
+- [X] Jukebox
 
 ### Country Ending [All, Sept. W4]
 - [ ] England
@@ -73,7 +75,7 @@ See what needs to be done below.
     - [ ] Bios
     - [ ] Jukebox
 - [ ] Japan
-    - [ ] Script [40%]
+    - [X] Script
     - [ ] Backgrounds
     - [ ] Characters
     - [ ] Transitions
@@ -88,6 +90,7 @@ See what needs to be done below.
     - [ ] Music
     - [ ] Bios
     - [ ] Jukebox
+- [ ] Ending
 
 ### Archival Ending [Pakoo/Baker, October]
 - [ ] 3D Backgrounds [Baker] [30%]
