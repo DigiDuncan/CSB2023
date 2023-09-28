@@ -197,5 +197,6 @@ label archival:
     n "The tram then starts speeding into the light at ludicrous speeds, as CS panics and sees the light envelope the outside of the tram. As Cs looks around, he can see glimpses of memories of places he's been to, rushing past him. There are even some places that he doesn't recognize."
     n "CS panics and tries to stop the train, but it is no use. A message appears at the top of the tram on a panel, that shows someone who looks like one of the guards waving at him, with their tongue out."
     n "CS realizes that there is nothing he can do, and closes his eyes. The tram seems to be going faster, as the light seems to be getting brighter. All of a sudden the tram, the light, and everything disappears."
+    $ achievement_manager.unlock("Archived")
     n "The Archival Ending."
     n "CS has been deleted, and has been sent to the beginning of time itself."

@@ -41,4 +41,5 @@ define achievements = [
     Achievement("Artifical Unintelligence", "???", "Get the Chat-GPT ending", "gpt", True),
     Achievement("All Over Again", "???", "Beat CSBIII all over again.", "alloveragain", True),
     Achievement("F.U.N.", "???", "Roll a fun value.", "fun", True)
+    Achievement("Archived", "???", "Find Addy's Facility.", "archive", True)
 ]
