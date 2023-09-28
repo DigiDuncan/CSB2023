@@ -864,6 +864,30 @@ label england_japan:
     cs "Time to get some sleep."
     jump japan
 
+label england_sweden:
+    cs "I was thinking of going to Sweden."
+    kitty "Huh, never heard much about Sweden."
+    arceus "Is there anywhere you wanna go in particular in Sweden?"
+    cs "I don't really know where to go there."
+    arceus "Well you have to meet Vinesauce Joel."
+    cs "Yeah, that's a good idea."
+    arceus "Welp, should we take you back to the airport?"
+    cs "Sure, let's go."
+    n "Arceus takes CS back to the airport."
+    cs "Well, thank you so much Arceus for everything, really."
+    arceus "It's all good man, I loved having you here."
+    arceus "It's also impressive that you made so much money in the short amount of time you were here, you'll probably be set for Sweden!"
+    cs "Yeah, I honestly don't know how I managed to most of those things, I was kinda winging it."
+    cs "Welp, it looks like my plane is here."
+    cs "See ya Arceus!"
+    arceus "See you later CS!"
+    n "CS grabs his ticket and heads on the next plane."
+    cs "Man, I'm kinda nervous to go to Sweden, actually."
+    cs "It's going to be pretty crazy I think."
+    cs "Oh well, I'm sure it'll be fun."
+    cs "Time to get some sleep."
+    jump sweden
+
 label japan:
     n "As CS wakes up, he sees the plane landing outside."
     cs "Wow, I really slept a lot, or that was a crazy fast trip."
@@ -886,7 +910,7 @@ label japan:
             jump anime_adventure
         
 label anime_adventure:
-    cs "I guess I can start by looking around the city."
+    cs "I guess I can look around the city."
     cs "This place is so compact, I could be here for days!"
     cs "Let's start looking!"
     n "CS quickly finds a shop selling video games, and other electronics."
@@ -957,7 +981,22 @@ label karaoke:
     n "CS walks around for a bit, trying to find a place to stop at."
     cs "We got a restaurant, a few general stores..."
     cs "Ah! Bar and Karaoke!"
-    cs ""
+    cs "Let's go see what they have!"
+    n "CS enters the Bar and Karaoke, and makes his way over to the Karaoke area."
+    cs "Wow, look at this! So many songs to play here!"
+    cs "And no one seems to be here, so I can sing to my heart's content!"
+    cs "Hmm..."
+    cs "Y'know, this song looks interesting..."
+    cs "Let's do this one!"
+    scene black with fade
+    pause 1.0
+    $ renpy.movie_cutscene("movies/karaoke.webm")
+    pause 1.0
+    cs "Woohoo! That was fun!"
+    cs "That kinda wore me out though."
+    cs "I don't think I should sing another one for now."
+    n "CS heads out of the bar."
+    cs "Well, is there anything else I should do here?"
 
 label miku_pizza:
     cs "I wanna have some fun with Miku!"
@@ -1028,3 +1067,65 @@ label miku_pizza:
     cs "Well Miku, this was very nice, but I need to head on my way."
     miku "OK! Thanks for sharing lunch with me, this was very nice."
     cs "Bye, Miku!"
+
+label japan_leave:
+    cs "Well, I think I've done everything I wanted to do here!"
+    cs "This place was really cool, but I should get going for now."
+    cs "Maybe one day, I can return when I have more time."
+    n "CS heads back to the airport."
+
+label japan_leave_airport:
+    cs "Man, what a time I had here."
+    cs "Alright well, where should I go this time?"
+    menu:
+        "Sweden":
+            jump japan_sweden
+        "England":
+            jump japan_england
+
+label japan_sweden:
+    cs "I think I wanna go to Sweden this time."
+    cs "I know Vinesauce Joel is there, and I have kinda always wanted to meet up with him."
+    cs "Well, if I did the crazy things I did in this country, then I'm sure I can make it in Sweden!"
+    n "CS goes and gets his ticket and gets on the plane."
+    cs "Well, I'm off to Sweden!"
+    cs "This is gonna be quite the trip."
+    cs "I'm gonna try to get some shuteye."
+    jump sweden
+
+label japan_england:
+    cs "I think I wanna go to England this time."
+    cs "I've always wanted to go to England, there is so much to do there.."
+    n "CS goes and gets his ticket and gets on the plane."
+    cs "Well, I'm off to England!"
+    cs "This is gonna be quite the trip."
+    cs "I'm gonna try to get some sleep."
+    jump sweden
+
+label going_home:
+    cs "Welp, I guess it's time to head home."
+    cs "I've done so many things during this trip, I honestly forgot why I started this."
+    cs "I had to kinda rush it, just like with a real vacation!"
+    cs "Oh well."
+    cs "I'm a bit homesick, and I honestly can't wait to get home."
+    n "CS buys a ticket to US and gets on the airplane."
+    n "CS takes another nap to pass the time to get home."
+    cs "Ah, finally back home!"
+    cs "I can't wait to get some sleep in my own bed again."
+    n "When CS walks up to his driveway, he notices a familiar face."
+    cs "Hey, are you that advertiser?"
+    cs "What are you doing here?"
+    carguy "Well, I was a cop who was trying to track you down, but we couldn't find you."
+    carguy "So I gave up on my job."
+    cs "Oooh, yeah, I forgot that's why I left."
+    carguy "Well, I don't really care anymore."
+    carguy "My job is over with, I'm just gonna go advertise car products."
+    n "Carguy leaves the scene."
+    cs "Well, that took care of that problem."
+    cs "Now, where was I?"
+    cs "Oh yeah, let's get inside."
+    n "CS gets inside and relaxes once more in his own house."
+    cs "Man, what a trip that was."
+    cs "I can finally sleep for a day."
+    n "CS glances over at his Union Jack."
+    cs "Maybe, I should get 2 more flags."

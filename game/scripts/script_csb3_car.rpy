@@ -338,6 +338,15 @@ label car_dialogue:
     cs "I need to learn to stop asking questions."
     arceus "That you do."
 
+    pause 1.0
+
+    n "Billy turns on the Jupiter Jack again."
+    tv_billy "Hi, Billy Mays here for Smacid!"
+    billy "What the actual fuck?"
+    tv_billy "The fast and easy way to smash stomach pain from the source!"
+    billy "What is this shit? I would never sell this scammy crap!"
+    n "Billy changes the channel on the Jupiter Jack."
+
     $ achievement_manager.unlock("Bored")
 
     hide screen skip_car
