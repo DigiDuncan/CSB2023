@@ -290,7 +290,26 @@ label car_dialogue:
     arceus "A... spoon?"
     cs "That's the one!"
     arceus "Welp, yay."
-    
+
+    pause 1.0
+
+    n "Arceus is reading a book."
+    arceus "{i}Mr. and Mrs. Dursley, of number four, Privet Drive, were proud to say that they were perfectly normal, thank you very much."
+    cs "Arc? Are you... reading Harry Potter?"
+    arceus "Yeah."
+    arceus "{i}They were the last people you'd expect to be involved in anything strange or mysterious, because they just didn't hold with such nonsense."
+    cs "Do you... have to read out loud?"
+    arceus "Oh shit, I'm reading out loud?"
+    cs "How do you not notice that?"
+    arceus "{i}Mr. Dursley was the director of a firm called Grunnings, which made drills."
+    cs "Yeah, you're doing it again."
+    arceus "Sorry."
+
+    pause 1.0
+
+    cs "First of all, let me get something straight: This is a Journal, not a diary. I know what it says on the cover, but when Mom went out to buy this thing I specifically told her to get one that didn’t say “diary” on it."
+    arceus "OK, OK, I get it."
+
     pause 1.0
 
     cs "The fog is coming."
