@@ -275,7 +275,9 @@ define benrey = Character("Benrey", callback = renpy.partial(char_callback, name
 define mean = Character("Mean", callback = renpy.partial(char_callback, name = "mean"))  # TODO: Beep
 define agent = Character("Howie", callback = renpy.partial(char_callback, name = "howie", beep = "howie"))
 define gordon = Character("Gordon", callback = renpy.partial(char_callback, name = "gordon"))  # TODO: Beep
-
+define receptionist = Character("Receptionist", callback = char_callback)
+define scott_pres = Character("Scott, President of Domino's Pizza", callback = char_callback)  # TODO: Beep, bio
+define miku = Character("Hatsune Miku", callback = char_callback)  # TODO: Beep, bio
 # Character Images
 ## CS
 image cs = "characters/cs/neutral.png"
