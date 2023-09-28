@@ -793,6 +793,8 @@ default ucn_music = "audio/card_castle.mp3"
 default ucn_scale = 1.0
 default cont = False
 
+default typewriter_text = "Hello, world!"
+
 # Jump Menu
 screen chapter_menu():
     zorder 100
@@ -850,16 +852,22 @@ label chapter_select:
     call screen chapter_menu()
     return
 
-label test:
-    scene black
-    n "This is a test of Chinese rendering."
-    n "SIMPLIFIED\n{font=cjk}我的气垫船装满了鳝鱼"
-    n "TRADITIONAL\n{font=cjk}我的氣墊船裝滿了鱔魚"
+init python:
 
-    pause 0.5
-    show colorbars
-    show karaoke
-    window hide
-    pause 120
+    import math
+
+    def show_typewriter(st, at):
+        if st > 2.0:
+            return Text(typewriter_text), 0.1
+        else:
+            d = Text(typewriter_text[:math.ceil((st/2.0)*len(typewriter_text))])
+            return d, 0.1
+
+image typewriter = DynamicDisplayable(show_typewriter)
+
+label test:
+
+    show typewriter
+    pause
 
     $ renpy.full_restart()
