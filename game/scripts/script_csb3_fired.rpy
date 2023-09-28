@@ -905,12 +905,14 @@ label first_tour_day:
     n "The crowd is going insane."
     cs "We're [band_name], and this is {i}[song_name_4]{/i}!"
     play sound "audio/start_rocking.mp3"
+    play sound "audio/cheer1.mp3"
     n "The crowd is nuts."
     cs "{cps=15}{image=note_small1.png}Through all adversity, we'll bind together and overcome!{image=note_small2.png}"
     cs "{cps=15}{image=note_small1.png}[line_5]{image=note_small2.png}"
     cs "{cps=15}{image=note_small1.png}With my friends beside there's no foe we can not fight!{image=note_small2.png}"
     cs "{cps=15}{image=note_small1.png}[line_6]{image=note_small2.png}"
     n "Anno plays an epic guitar solo."
+    play sound "audio/cheer1.mp3"
     pause 2.0
     scene black with Dissolve(3.0)
 
@@ -1087,6 +1089,7 @@ label second_tour_day:
     cs "I know you all just watched an amazing performance by Nova, and that's going to be a hard act to follow..."
     cs "But who wants to hear {i}[song_name_3]{/i}?!"
     play sound "audio/start_rocking.mp3"
+    play sound "audio/cheer1.mp3"
     n "The crowd is exploding."
 
     cs "{cps=15}{image=note_small1.png}I made my way over to Japan...{w=1.5}\n[line_2]{image=note_small2.png}"
@@ -1094,6 +1097,7 @@ label second_tour_day:
     cs "{cps=15}{image=note_small1.png}I'm gonna go party in Sweden...{w=1.5}]\n[line_4]{image=note_small2.png}"
     cs "{cps=15}{image=note_small1.png}I'm globetrottin'!{image=note_small2.png}"
 
+    play sound "audio/cheer1.mp3"
     n "The crows is applauding wildly."
     cs "We're [band_name]!"
     n "The crowd is loving it."
@@ -1159,6 +1163,7 @@ label third_tour_day:
     cs "First up, it's {i}[song_name_1]{/i}!"
     play sound "audio/start_rocking.mp3"
     n "The crowd cheers."
+    play sound "audio/cheer2.mp3"
     # TODO: Play track
     cs "{cps=15}{image=note_small1.png}We broke the chains, now we're free to fly,{w=1.5}\nEscaped concrete, and now we see blue skies{w=1.5}\nBecome brand new, we'll leave the past behind,{w=1.5}\nPrisoners no more, 'cause a new life we'll find{image=note_small2.png}"
     n "The crowd is loving this!"
@@ -1166,6 +1171,7 @@ label third_tour_day:
     cs "Who wants to hear {i}[song_name_2]{/i}?!"
     play sound "audio/start_rocking.mp3"
     n "The crowd responds with further excitement."
+    play sound "audio/cheer2.mp3"
     play music "<loop 0>audio/happy_rock.mp3" volume 0.5
     cs "{cps=15}{image=note_small1.png}We're going down to Vegas,{w=1.5} we're gonna strike it rich!{w=1.5}\nWe're going down to Vegas,{w=1.5} [line_1]"
     n "The audience is adoring this."
@@ -1184,6 +1190,7 @@ label third_tour_day:
 
     cs "Alright, here's a favorite for a lot of you: [song_name_4]!"
     play sound "audio/start_rocking.mp3"
+    play sound "audio/cheer2.mp3"
     # TODO: Play track
     cs "{cps=15}{image=note_small1.png}Through all adversity, we'll bind together and overcome!{image=note_small2.png}"
     cs "{cps=15}{image=note_small1.png}[line_5]{image=note_small2.png}"
@@ -1194,6 +1201,7 @@ label third_tour_day:
 
     cs "And now, for the first time on stage: it's [song_name_5]!"
     play sound "audio/start_rocking.mp3"
+    play sound "audio/cheer2.mp3"
     n "The crowd is ready to burst."
     # TODO: Play track
     cs "{cps=15}{image=note_small1.png}[line_7]{w=1.5}\n[line_8]{w=1.5}\n[line_9]{w=1.5}\n[line_10]{image=note_small2.png}"
@@ -1223,6 +1231,7 @@ label third_tour_day:
     cs "{cps=15}{image=note_small1.png}[line_12]{image=note_small2.png}"
 
     cs "Thank you! We're [band_name], and thank you for listening to [ep_name]!"
+    play sound "audio/cheer2.mp3"
     n "The crowd is overjoyed."
 
     show cs flipped with determination
