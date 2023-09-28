@@ -259,6 +259,8 @@ define tate = Character("Tate",  callback = renpy.partial(char_callback, name = 
 define kitty = Character("Kitty", callback = renpy.partial(char_callback, name = "kitty", beep = "kitty"))
 define obama = Character("Obama", callback = renpy.partial(char_callback, name = "obama", beep = "obama"))
 define bomaha = Character("Omaha", callback = renpy.partial(char_callback, name = "obama", beep = "obama"))
+define obamanobeep = Character("Obama", callback = renpy.partial(char_callback, name = "obama", play_beeps = False))
+define bomahanobeep = Character("Omaha", callback = renpy.partial(char_callback, name = "obama", play_beeps = False))
 define blank = Character("Blank", callback = renpy.partial(char_callback, name = "blank"))
 define aria = Character("Aria", callback = renpy.partial(char_callback, name = "aria"))  # TODO: Beep
 define cop = Character("Cop", callback = renpy.partial(char_callback, name = "cop"))

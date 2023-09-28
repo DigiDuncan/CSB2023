@@ -90,9 +90,11 @@ label new_plan:
     anno "Gotcha covered."
     # IDEA: Maybe have an actual AI-generated clip here?
     if fun_value(20):
-        bomaha "I'm officially pardoning Annorexorcist and Arceus3251, for helping me out of a pickle."
+        play sound "<loop 0>obama.mp3" volume 0.5
+        bomahanobeep "I'm officially pardoning Annorexorcist and Arceus3251, for helping me out of a pickle."
     else:
-        obama "I'm officially pardoning Annorexorcist and Arceus3251, for helping me out of a pickle."
+        play sound "<loop 0>obama.mp3" volume 0.5
+        obamanobeep "I'm officially pardoning Annorexorcist and Arceus3251, for helping me out of a pickle."
     arceus "Incredible as always, Anno."
     anno "I try."
     stop music fadeout 3.0
@@ -110,6 +112,8 @@ label new_plan:
     jump guitar_hero
 
 label guitar_hero:
+    play music "<loop 0>audio/hitmewithyourbestshot.mp3" volume 0.5
+    music Hit Me With Your Best Shot - Pat Benatar
     scene hotel_guitar_hero with fade
     n "CS, Anno, and Arc relax by playing some Guitar Hero."
     arceus "Man, we're all pretty good at this."
@@ -128,6 +132,8 @@ label guitar_hero:
     cs "Arc?"
     arceus "What do I have to lose?"
     cs "Woohoo!"  # haha I did it too Pakoo
+    stop music fadeout 3.0
+    music end
     $ achievement_manager.unlock("Guitar Hero")
 
     scene hotel_room
@@ -135,6 +141,8 @@ label guitar_hero:
     show cs at left
     show anno at center
     with fade
+    play music "<loop 0>audio/hightop.mp3" volume 0.5
+    music Hightop - Dr. Awesome
     cs "Maybe we should call Blank. He's like, an actual musician."
     show cs phone
     n "CS calls Blank on Discord."
@@ -156,7 +164,8 @@ label write_song:
     stop music
     scene black with dissolve
     n "After some time, the gang have their first song written."
-
+    stop music fadeout 3.0
+    music end
     scene hotel_room with dissolve
     show arceus at right with moveinright
     arceus "You know, that's not half bad."
@@ -252,6 +261,8 @@ label hotel_next_day:
     cs "Guys?"
     arceus "Mmm?"
     n "Arceus and Anno are stuffing their face."
+    play music "<loop 0>audio/now_what.mp3" volume 0.5
+    music Now What? 1 - Dr. Awesome
     cs "The song has like, a hundred thousand streams."
     n "Arceus nearly spits out his food."
     arceus "It has what?!"
@@ -270,6 +281,8 @@ label hotel_next_day:
     arceus "We can't let this window close, right?"
     cs "I'm shocked, but yeah! Let's do it!"
     n "The gang finish their food and head back up to their room."
+    stop music fadeout 3.0
+    music end
     hide cs
     hide anno
     hide arceus
@@ -631,6 +644,8 @@ label fan_interaction:
     scene black with dissolve
     n "The next day, they hear a knock on their hotel room door early morning."
     scene hotel_door with dissolve
+    play music "<loop 0>audio/dig_this.mp3" volume 0.5
+    music Dig This - Dr. Awesome
     cs "Huh? Who the fuck knocks on a hotel door, especially at this hour?"
     show cs angry at left with moveinleft
     cs "Hello?"
@@ -700,6 +715,8 @@ label fan_interaction:
     arceus "Our last two gambles paid off, I guess we gotta go all the way."
     anno "We can't pass this up. I'll email him back."
     cs "[band_name] is going on tour!"
+    stop music fadeout 3.0
+    music end    
     jump howie
 
 label howie:
@@ -807,7 +824,8 @@ label signed_the_contract:
     scene hotel_hall
     show cs at left with moveinleft
     cs "Maybe a cold drink will clear my head."
-
+    play music "<loop 0>audio/another_him.mp3" volume 0.5
+    music ANOTHER HIM - Toby Fox
     show csgod at right with dissolve
     csgod "Or I can."
     show cs surprised
@@ -822,6 +840,8 @@ label signed_the_contract:
     cs "Th-thank you... what do I call you?"
     csgod "You can call me...{w=1.5} !!!"
     hide csgod with dissolve
+    stop music fadeout 3.0
+    music end    
     show janitor at right with moveinright
     janitor "You alright man? Who are you talking to?"
     cs "N-- no-one. Just heading to bed."
@@ -874,6 +894,7 @@ label first_tour_day:
     n "They all arrive at LTX."
     cs "Well, it's pretty busy, I doubt we'll run into--"
     show linus at right with moveinright
+    play music "<loop 0>passport.mp3" volume 0.5
     linus "Oh good, you guys are finally, here, you're [band_name], right?"
     linus "Luke told me about you guys, and I listened to [ep_name] last night... I really liked, uh, which one was it, {i}[song_name_4]{/i}?"
     linus "Anywho, I...{w=1.0}wait, CS?!"
@@ -894,7 +915,7 @@ label first_tour_day:
     cs "How about this, when I get out of this mess, you let me edit a guest video, and I'll make a video saying we parted ways amicably."
     linus "Now that's a deal I'll take."
     linus "Now, get on stage and rock the house!"
-
+    stop music fadeout 3.0
     scene ltx_stage
     show anno at left
     show arceus at right
@@ -922,7 +943,7 @@ label first_tour_day:
     show cs at mid_left
     show linus at right
     with dissolve
-
+    play music "<loop 0>passport.mp3" volume 0.5
     linus "You guys were incredible! That was my favorite song of yours, too."
     show cs happy
     cs "Thank you so much!"
@@ -931,7 +952,7 @@ label first_tour_day:
     linus "Well, thank you, CS. I'm glad we could bury whatever hatchet we had."
     cs "Absolutely."
     hide linus with moveoutright
-
+    stop music fadeout 3.0
     show cs at center
     show arceus at right
     with move

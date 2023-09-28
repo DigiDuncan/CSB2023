@@ -80,6 +80,11 @@ init python:
         "Racing Minigame Song - FNAF 6": "fnaf_6.mp3",
         "Youre At A Ball In The Gold Room - Nemos Dreamscapes": "gold_room.mp3",
         "GOOD VIBES - LitKidBeats": "good_vibes.mp3",
+        "Hit Me With Your Best Shot - Pat Benatar": "hitmewithyourbestshot.mp3",
+        "Hightop - Dr. Awesome": "hightop.mp3",
+        "Now What? 1 - Dr. Awesome": "now_what.mp3",
+        "Dig This - Dr. Awesome": "dig_this.mp3",
+        "ANOTHER HIM - Toby Fox": "another_him.mp3",
         "Insane Personalities - Lizardking": "insane_personalities.mp3",
         "Echoing? - Banana": "killcops.mp3"
     }
