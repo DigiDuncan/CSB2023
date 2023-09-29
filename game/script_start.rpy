@@ -483,8 +483,8 @@ image hammond = "characters/hammond.png"
 image jermey = "characters/jermmey.png"
 image james = "characters/james.png"
 image tom = "characters/tom.png"
-image scott_pres "characters/scott_pres.png"
-image miku "characters/miku.png"
+image scott_pres = "characters/scott_pres.png"
+image miku = "characters/miku.png"
 
 # Background Images
 ## CSBI
