@@ -287,6 +287,8 @@ define hammond = Character("Richard", callback = renpy.partial(char_callback, na
 define jermey = Character("Jermey", callback = renpy.partial(char_callback, name = "jermey"))
 define james = Character("James", callback = renpy.partial(char_callback, name = "james"))
 define tom = Character("Tom Scott", callback = renpy.partial(char_callback, name = "tom"))
+define sayori = Character("Sayori", callback = char_callback)  # TODO: bio
+
 # Character Images
 ## CS
 image cs = "characters/cs/neutral.png"
@@ -795,6 +797,9 @@ default e3 = False
 default ramsay_check = False
 default gear_check = False
 default tom_check = False
+default anime_check = False
+default karaoke_check = False
+default miku_check = False
 default engfirst = False
 default swedfirst = False
 default japfirst = False

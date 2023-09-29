@@ -18,6 +18,26 @@ label england_menu:
         label_jump = renpy.display_menu(locations)
         renpy.jump(label_jump)
 
+label japan_menu:
+    # "Go on an anime adventure":
+    #     jump anime_adventure
+    # "Go sing some karaoke":
+    #     jump karaoke
+    # "Have some fun with Miku":
+    #     jump miku_pizza
+    python:
+        locations = []
+        if not anime_check:
+            locations.append(("Go on an anime adventure", "anime_adventure"))
+        if not karaoke_check:
+            locations.append(("Go sing some karaoke", "karaoke"))
+        if not miku_check:
+            locations.append(("Have some fun with Miku", "miku_pizza"))
+        if not locations:
+            locations.append(("$JAPAN_LEAVE", "japan_done"))
+        label_jump = renpy.display_menu(locations)
+        renpy.jump(label_jump)
+
 label knocked_out:
     scene black
     n "..."
@@ -1039,15 +1059,10 @@ label japan:
     cs "I could try to get a job, but I don't speak Japanese!"
     show cs
     cs "Lemme think, what could I do while I'm here?"
-    menu:
-        "Visit Domino's Pizza":
-            jump miku_pizza
-        "Sing Karaoke":
-            jump karaoke
-        "Look around through the city":
-            jump anime_adventure
+    jump japan_menu
         
 label anime_adventure:
+    $ anime_check = True
     cs "I guess I can look around the city."
     cs "This place is so compact, I could be here for days!"
     cs "Let's start looking!"
@@ -1155,8 +1170,10 @@ label anime_adventure:
     with fade
     cs "Well, I have the money to travel again!"
     cs "I still feel like I should stay and do some things here."
+    jump japan_menu
 
 label karaoke:
+    $ karaoke_check = True
     cs "I mean, I've always wanted to sing karaoke in Japan."
     cs "I don't know where I could go to sing, though."
     cs "There are some signs in English here."
@@ -1193,8 +1210,10 @@ label karaoke:
     with fade
     $ achievement_manager.unlock("Dame Da Ne")
     cs "Well, is there anything else I should do here?"
+    jump japan_menu
 
 label miku_pizza:
+    $ miku_check = True
     cs "I wanna have some fun with Miku!"
     cs "They had a Domino's ad where you can go have some fun with Miku, right?"
     cs "But that was like, ten years ago..."
@@ -1300,7 +1319,7 @@ label miku_pizza:
     cs "Bye, Miku!"
     $ achievement_manager.unlock("Have Some Fucking Pizza!")
     scene black with dissolve
-    jump japan_leave
+    jump japan_menu
 
 label japan_leave:
     scene tokyo_street
@@ -1311,6 +1330,7 @@ label japan_leave:
     cs "Maybe one day, I can return when I have more time."
     scene black with dissolve
     n "CS heads back to the airport."
+    jump japan_leave_airport
 
 label japan_leave_airport:
     show tokyo_airport with fade
