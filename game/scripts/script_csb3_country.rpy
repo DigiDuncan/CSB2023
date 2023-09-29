@@ -5,7 +5,7 @@ label england_menu:
     #     jump top_zone
     # "Go on an adventure with Tom Scott":
     #     jump scott_zone
-    init python:
+    python:
         locations = []
         if not ramsay_check:
             locations.append(("Go On Hell's Kitchen", "hell_zone"))
