@@ -960,6 +960,7 @@ label anime_adventure:
     cs "Yeah. I do have a really cool outfit."
     cs "Thank you so much guys!"
     n "CS walks away proudly."
+    $ achievement_manager.unlock("I'm Scared Right Now...")
     cs "Well, I have the money to travel again!"
     cs "I still feel like I should stay and do some things here."
 
@@ -985,6 +986,7 @@ label karaoke:
     cs "That kinda wore me out though."
     cs "I don't think I should sing another one for now."
     n "CS heads out of the bar."
+    $ achievement_manager.unlock("Dame Da Ne")
     cs "Well, is there anything else I should do here?"
 
 label miku_pizza:
@@ -1066,6 +1068,7 @@ label miku_pizza:
     cs "Well Miku, this was very nice, but I need to head on my way."
     miku "OK! Thanks for sharing lunch with me, this was very nice."
     cs "Bye, Miku!"
+    $ achievement_manager.unlock("Have Some Fucking Pizza!")
 
 label japan_leave:
     cs "Well, I think I've done everything I wanted to do here!"
