@@ -3,6 +3,8 @@
 ##-------CODEX ENTRY NAVIGATION------------------
 ##-----------------------------------------------
 
+# TODO: Order the jukebox
+
 init python:
     global music_map
     #Name of Entry followed by file name
@@ -85,6 +87,7 @@ init python:
         "Now What? 1 - Dr. Awesome": "now_what.mp3",
         "Dig This - Dr. Awesome": "dig_this.mp3",
         "ANOTHER HIM - Toby Fox": "another_him.mp3",
+        "Real World - Project SEKAI": "real_world.mp3",
         "Insane Personalities - Lizardking": "insane_personalities.mp3",
         "Echoing? - Banana": "killcops.mp3"
     }

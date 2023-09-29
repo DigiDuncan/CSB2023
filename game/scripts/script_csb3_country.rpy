@@ -1049,6 +1049,8 @@ label miku_pizza:
     scott_pres "Listen son, I hate to break it to you, but I don't think Miku is real."
     cs "What do you mean she's not real? She was dancing with you in the commerical!"
     scott_pres "I know, but that was movie magic. I'm sorry--{w=0.5}{nw}"
+    play music "real_world.mp3"
+    music "Real World - Project SEKAI"
     miku "What was that?"
     scott_pres "Miku?!"
     cs "Miku!"
@@ -1065,6 +1067,8 @@ label miku_pizza:
     cs "Sure!"
     n "Scott faints."
     cs "Oh, jeez, let's make sure Scott is okay first."
+    stop music fadeout 3.0
+    music end
 
     # TODO: Fade to CS and Miku sharing a pizza
     scene dominos
