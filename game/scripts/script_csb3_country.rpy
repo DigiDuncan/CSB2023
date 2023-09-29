@@ -34,7 +34,7 @@ label japan_menu:
         if not miku_check:
             locations.append(("Have some fun with Miku", "miku_pizza"))
         if not locations:
-            locations.append(("$JAPAN_LEAVE", "japan_done"))
+            locations.append(("$JAPAN_LEAVE", "japan_leave"))
         label_jump = renpy.display_menu(locations)
         renpy.jump(label_jump)
 
@@ -1234,14 +1234,14 @@ label miku_pizza:
     cashier "Who??"
     cs "Scott! The president of Domino's Pizza!"
     cashier "Man, I'm just the cashier here, you think I know the president?"
-    if fun_value(50):
+    if fun_value(20):
         obama "Hi.{w=0.5}{nw}"
     show cs
     cs "How can I find him then?"
     cashier "I think the headquarters is pretty close to here if you're that desperate."
     cs "I am, and thank you!"
     show cs flipped with determination
-    hide cs with moveoutright
+    hide cs with moveoutleft
 
     scene japanese_street with fade
     show cs at center with moveinleft
@@ -1258,7 +1258,7 @@ label miku_pizza:
     cs "Can people stop asking me that?"
     receptionist "You know what, if you have the guts to come in here dressed like that and ask directly for the man himself, he's gotta see this."
     n "The receptionist calls up to Scott's office."
-    receptionist "Can I send someone up? He asked to see you directly.{w=1.0}Who is it?{w=0.5}You'll see."
+    receptionist "Can I send someone up? He asked to see you directly.{w=1.0} Who is it?{w=0.5} You'll see."
     pause 1.0
     receptionist "Alright, take the elevator to the penthouse."
 
@@ -1266,10 +1266,14 @@ label miku_pizza:
     show cs at center
     with fade
     pause 3.0
+    # TODO: Ding
     scene black with dissolve
     pause 1.0
     scene ceo_office
-    show scott at right
+    if fun_value(50):
+        show scott at right
+    else:
+        show scott_pres at right
     with fade
     show cs at left with moveinleft
     scott_pres "Hello, sir, and what is your name?"
@@ -1293,7 +1297,7 @@ label miku_pizza:
     cs "Miku!"
     miku "I heard someone was here to see me so I came up right away."
     scott_pres "How did you get in my office?"
-    miku "Your receptionist let me up. She was freaking out a lot so she must forgot to call you."
+    miku "Your receptionist let me up. She was freaking out a lot so she must have forgot to call you."
     scott_pres "But... you're not... it was a green screen! It was augemented reality! You're not real!"
     miku "I feel pretty real."
     miku "Anywho, hi, CS! Love your videos."
