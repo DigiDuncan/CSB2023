@@ -729,7 +729,7 @@ label fire_range:
     cs "Who?"
     pakoo "Sorry, my boyfriend. I didn't really tell him that I'm helping two guys escape from the cops."
     arceus "Fuuuuuck, I haven't told Kitty that I escaped from prison."
-    cs "I don't think Tate even KNEW I went to prison! They'd probably kill me if they knew."
+    cs "I might tell Tate as well..."
     cs "You mind if we make some calls as well?"
     n "Pakoo pulls out a couple of phones from his back pocket and gives them to Arc and CS."
     show pakoo at center with move
@@ -943,7 +943,7 @@ label after_cop_fight:
     with moveinright
     cs "Yeah, uhm..."
     cs "How are you doing?"
-    tate "I'm fine, but we're gonna have to talk about how this whole situation came to be later."
+    tate "I'm fine, but you're going to have to explain what the fuck is going on."
     show cs disappointed flipped
     cs "Fuck."
     if nice_car:

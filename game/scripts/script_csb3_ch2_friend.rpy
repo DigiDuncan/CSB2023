@@ -28,7 +28,7 @@ label dpn_call:
     cs "Alright, I'll keep heading straight."
     pause 2.0
     show cs disappointed
-    cs "Man, I hope Tate is okay. I don't how I'm gonna explain to them later about this whole situation."
+    pakoo "Man, I hope Mika is okay. I don't how I'm gonna explain to them later about this whole situation."  # TODO: This was a CS line, is this fine, Pakoo?
     arceus "I think we're all in the same boat on that problem. I'm sure they'll all be fine."
     jump car_ride_1
 
@@ -56,7 +56,7 @@ label car_ride_1:
     show cs disappointed at left
     show pakoo at right
     with fade
-    cs "So yeah, that's why I'm mainly worried about Tate."
+    cs "So yeah, that's why I'm worried."
     show pakoo disappointed
     pakoo "Yeah, I getcha, I'm sur--{w=1.0}{nw}"
     play sound "car_horn.ogg" volume 1
