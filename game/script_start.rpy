@@ -220,6 +220,7 @@ define worker_6 = Character("Worker 6", callback = char_callback)
 define worker_7 = Character("Worker 7", callback = char_callback)
 define digi = Character("Digi", callback = renpy.partial(char_callback, name = "digi", beep = "digi"))
 define pakoo = Character("Pakoo", callback = renpy.partial(char_callback, name = "pakoo", beep = "pak"))
+define addy = Character("Addy", callback = renpy.partial(char_callback, name = "pakoo", beep = "pak"))
 
 define copguy = Character("Copguy", callback = renpy.partial(char_callback, name = "copguy", beep = "cop"))
 define arceus = Character("Arceus", callback = renpy.partial(char_callback, name = "arceus", beep = "arc"))

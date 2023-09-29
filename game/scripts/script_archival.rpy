@@ -197,6 +197,30 @@ label archival:
     n "The tram then starts speeding into the light at ludicrous speeds, as CS panics and sees the light envelope the outside of the tram. As Cs looks around, he can see glimpses of memories of places he's been to, rushing past him. There are even some places that he doesn't recognize."
     n "CS panics and tries to stop the train, but it is no use. A message appears at the top of the tram on a panel, that shows someone who looks like one of the guards waving at him, with their tongue out."
     n "CS realizes that there is nothing he can do, and closes his eyes. The tram seems to be going faster, as the light seems to be getting brighter. All of a sudden the tram, the light, and everything disappears."
+    scene black with dissolve
     $ achievement_manager.unlock("Archived")
+    stop music fadeout 3.0
+    music end
     n "The Archival Ending."
     n "CS has been deleted, and has been sent to the beginning of time itself."
+    pause 5.0
+    n "Addy gets a phone call."
+    addy "Hello? Who is this?"
+    iris "Hello, Addy."
+    iris "Did you do something with a man named CS?"
+    addy "Yeah, uh, we had an accident in the K17 sector today."
+    addy "We had to, get rid of him."
+    iris "Well, can you bring him back?"
+    iris "Digi's been crying all day because he found out CS doesn't exist anymore."
+    addy "Yeah, I should have a backup somewhere."
+    iris "Just fix it. I've got more pressing matters to deal with right now."
+    n "Iris hangs up."
+    pause 1.0
+    addy "I guess that's what I get when I let these guys with half a brain run this place."
+    addy "I'll have to go clean up the mess later, I can still hear alarms."
+    addy "In the meantime, let's get this memory prepared."
+    n "Addy pulls out a memory jar they've been saving in a cabinet in their office."
+    addy "Thank goodness I saved this."
+    addy "Let's see if this works."
+    $ renpy.movie_cutscene("movies/archivalend.mp4")
+    return
