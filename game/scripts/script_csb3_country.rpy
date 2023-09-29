@@ -1,3 +1,23 @@
+label england_menu:
+    # "Go on Hell's Kitchen":
+    #     jump hell_zone
+    # "Go on Top Gear":
+    #     jump top_zone
+    # "Go on an adventure with Tom Scott":
+    #     jump scott_zone
+    init python:
+        locations = []
+        if not ramsay_check:
+            locations.append(("Go On Hell's Kitchen", "hell_zone"))
+        if not gear_check:
+            locations.append(("Go on Top Gear", "top_zone"))
+        if not tom_check:
+            locations.append(("Go on an adventure with Tom Scott", "scott_zone"))
+        if not locations:
+            locations.append(("$ENGLAND_DONE", "england_done"))
+        label_jump = renpy.display_menu(locations)
+        renpy.jump(label_jump)
+
 label knocked_out:
     scene black
     n "..."
@@ -375,13 +395,7 @@ label arceus_place:
     kitty "Yeah, you did a dumb and got arrested!"
     arceus "Yeah yeah, well anyways..."
     arceus "What do you want to do here, CS? It's a brand new country, there are a ton of things you can do..."
-    menu:
-        "Go on Hell's Kitchen":
-            jump hell_zone
-        "Go on Top Gear":
-            jump top_zone
-        "Go on adventure with Tom Scott":
-            jump scott_zone
+    jump england_menu
 
 label hell_zone:
     $ ramsay_check = True
@@ -613,22 +627,7 @@ label good_ramsay:
     kitty "Ah ok."
     arceus "Well, you did quite a bit already, is there anything else you want to do here?"
     $ achievement_manager.unlock("Master Chef")
-    if gear_check and tom_check:
-        jump england_done
-    elif gear_check:
-        menu:
-            "Go on adventure with Tom Scott":
-                jump scott_zone
-    elif tom_check:
-        menu:
-            "Go on Top Gear":
-                jump top_zone
-    else:
-        menu:
-            "Go on Top Gear":
-                jump top_zone
-            "Go on adventure with Tom Scott":
-                jump scott_zone
+    jump england_menu
     
 label top_zone:
     $ gear_check = True
@@ -734,22 +733,7 @@ label top_win:
     cs "I hope those cops forgot about me by now."
     arceus "Anyways, is there anything else you want to do here in England?"
     $ achievement_manager.unlock("Bottom Gear")
-    if tom_check and ramsay_check:
-        jump england_done
-    elif ramsay_check:    
-        menu:
-            "Go on adventure with Tom Scott":
-                jump scott_zone
-    elif tom_check:
-        menu:
-            "Go on Hell's Kitchen":
-                jump hell_zone
-    else:
-        menu:
-            "Go on adventure with Tom Scott":
-                jump scott_zone
-            "Go on Hell's Kitchen":
-                jump hell_zone
+    jump england_menu
 
 label scott_zone:
     $ tom_check = True
@@ -822,22 +806,7 @@ label scott_move:
     kitty "Well, looks like you got 2 for 1 then!"
     kitty "Is there anything is you want to do?"
     $ achievement_manager.unlock("The Man In The Red Shirt")
-    if gear_check and ramsay_check:
-        jump england_done
-    elif ramsay_check:    
-        menu:
-            "Go on Top Gear":
-                jump top_zone
-    elif gear_check:
-        menu:
-            "Go on Hell's Kitchen":
-                jump hell_zone
-    else:
-        menu:
-            "Go on Hell's Kitchen":
-                jump hell_zone
-            "Go on Top Gear":
-                jump top_zone
+    jump england_menu
 
 label england_done:
     cs "Well, I think that's everything I wanted to do here."
