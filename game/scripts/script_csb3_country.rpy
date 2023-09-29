@@ -312,9 +312,9 @@ label england_first:
     arceus "Do you need a place to stay? You said you were out of money."
     arceus "You can come and live with me and Kitty for a while! I'm sure she wouldn't mind."
     cs "I would really appreciate it! Thank you!"
-    cs "I'll do whatever I can to pay you back in advance."
+    cs "I'll do whatever I can to pay you back."
     arceus "Nah, don't worry about it. You helped break me out of prison!"
-    n "the shopkeeper looks at them weirdly."
+    n "The shopkeeper looks at them weirdly."
     arceus "In GTA V."
     cs "Yeah yeah, that heist was really fun."
     arceus "Anyways, let's get you to our place."
@@ -506,7 +506,7 @@ label hell_zone:
     n "CS gets out of the car and walks up toward the building."
     scene hell_outside with fade
     show cs angry at mid_left with moveinleft
-    cs "Stupid Arceus doesn't think I can cook well, I'm gonna blow them away, that they can't put me on the show because I'm too good!"
+    cs "Stupid Arceus doesn't think I can cook well, I'm gonna blow them away, then they can't put me on the show because I'm too good!"
     hide cs with moveoutright
     scene black with dissolve
     n "When CS enters the main room, he notices that Gordon is waiting for CS at the kitchen, with his arms crossed."
@@ -520,9 +520,9 @@ label hell_zone:
     gordon "Oh, for fucks sake! What the bloody hell is this?"
     show cs disappointed flipped
     n "Before CS can speak, Gordon takes one good look at CS' clothing."
-    gordon "Did you this silly outfit aswell to just fuck with me? Are you serious?"
+    gordon "Did you wear this silly outfit as well to just fuck with me? Are you serious?"
     cs "What? This is just my normal attire."
-    gordon "Normal attire my ass! Are you really here to cook, are we just playing games?"
+    gordon "Normal attire my arse! Are you really here to cook, or are we just playing games?"
     show cs worried flipped
     cs "No no! I'm really ready to blow you away, Mr. Ramsay!"
     gordon "Well, you better hope your cooking skills can save you from your fashion skills."
@@ -580,7 +580,7 @@ label good_ramsay:
     cs "It's gotta work!"
     scene black with dissolve
     n "CS spends the hour mixing together the perfect concoction for Genergy."
-    n "At the 5 minute mark, Gordon comes out and starts shouting."
+    n "At the five minute mark, Gordon comes out and starts shouting."
     scene hell_kitchen
     show cs flipped
     with fade
@@ -642,13 +642,13 @@ label good_ramsay:
     arceus "Well, how'd it go?"
     cs "I think..."
     cs "That you were wrong!"
-    show case flipped at center with fade
+    show case flipped at center with moveinbottom
     n "CS pulls out the briefcase and shows it to Arc."
     arceus "Holy shit! What'd you do??"
     cs "I made him a Genergy, CS style!"
     cs "He apparently loved it so much he bought my recipe!"
     arceus "WHHAATT?"
-    arceus "You got Gordon Ramsay, Master Chef, your recipe in one go?"
+    arceus "You got Gordon Ramsay, Master Chef, to buy your recipe in one go?"
     show cs happy flipped
     cs "Yep!"
     arceus "Man, your crazy."
@@ -685,28 +685,28 @@ label top_zone:
     cs "If I win, I'll blow them away!"
     arceus "How do you even get on Top Gear, anyways?"
     kitty "We might be able to just call them."
-    cs "If it's that easy, then hell yeah let's do it!"
+    cs "If it's that easy, then hell yeah, let's do it!"
     scene black with dissolve
     n "Kitty calls the members of Top Gear to get CS on the show for a day."
     scene dining_room
     show cs at left
     show arceus at center
     show kitty flipped at right
-    show fade
+    with fade
     kitty "Yeah, they said if you can drive over there today, we can start the race!"
     cs "Wow, that was fast."
     cs "Should we get going then?"
     arceus "Sure, I guess. Let's go."
     show black with dissolve
     n "CS, Arc, and Kitty head up to the Top Gear Track."
-    scene car_inside_fg
-    show top_gear_track behind car_inside_fg
+    scene car_insidearc_fg
+    show top_gear_track behind car_insidearc_fg
     show arceus flipped at left
-    show kitty at right
+    show kitty flipped at right
     with fade
     n "As they drive up to the track, the gang sees Jermey, Richard, and James."
     kitty "Alright, we'll watch from the side of the track."
-    arceus "Good luck CS!"
+    arceus "Good luck, CS!"
     cs "Thanks!"
     n "CS gets out of the car and heads up to the Top Gear crew."
     scene top_gear_track
