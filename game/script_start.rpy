@@ -283,10 +283,10 @@ define gordon = Character("Gordon", callback = renpy.partial(char_callback, name
 define receptionist = Character("Receptionist", callback = char_callback)
 define scott_pres = Character("Scott, President of Domino's Pizza", callback = char_callback)  # TODO: Beep, bio
 define miku = Character("Hatsune Miku", callback = char_callback)  # TODO: Beep, bio
-define hammond = Character("Richard", callback = renpy.partial(char_callback, name = "hammond"))
-define jermey = Character("Jermey", callback = renpy.partial(char_callback, name = "jermey"))
-define james = Character("James", callback = renpy.partial(char_callback, name = "james"))
-define tom = Character("Tom Scott", callback = renpy.partial(char_callback, name = "tom"))
+define hammond = Character("Richard", callback = renpy.partial(char_callback, name = "hammond"))  # TODO: Beep, bio
+define jermey = Character("Jermey", callback = renpy.partial(char_callback, name = "jermey"))  # TODO: Beep, bio
+define james = Character("James", callback = renpy.partial(char_callback, name = "james"))  # TODO: Beep, bio
+define tom = Character("Tom Scott", callback = renpy.partial(char_callback, name = "tom"))  # TODO: Beep, bio
 define sayori = Character("Sayori", callback = char_callback)  # TODO: bio
 
 # Character Images

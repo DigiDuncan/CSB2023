@@ -13,7 +13,7 @@ See what needs to be done below.
 -------
 
 ### Big Tasks
-- [X] Ending Screens [Pakoo, Sept. W3] [50%]
+- [X] Ending Screens [Pakoo, Sept. W3]
 - [ ] Menu for Endings [Arc, Sept. W3] [75%]
 - [ ] Commerical [Pakoo, Sept. W4]
 - [ ] Credits [Digi, Sept. W4]
@@ -68,17 +68,17 @@ See what needs to be done below.
 ### Country Ending [All, Sept. W4]
 - [ ] England
     - [X] Script
-    - [ ] Backgrounds [75%]
-    - [ ] Characters
-    - [ ] Transitions
+    - [X] Backgrounds
+    - [X] Characters
+    - [X] Transitions
     - [ ] Music
     - [ ] Bios
     - [ ] Jukebox
 - [ ] Japan
     - [X] Script
-    - [ ] Backgrounds
-    - [ ] Characters
-    - [ ] Transitions
+    - [X] Backgrounds
+    - [X] Characters
+    - [X] Transitions
     - [ ] Music
     - [ ] Bios
     - [ ] Jukebox
@@ -90,7 +90,7 @@ See what needs to be done below.
     - [ ] Music
     - [ ] Bios
     - [ ] Jukebox
-- [ ] Ending
+- [X] Ending
 
 ### Archival Ending [Pakoo/Baker, October]
 - [ ] 3D Backgrounds [Baker] [30%]
