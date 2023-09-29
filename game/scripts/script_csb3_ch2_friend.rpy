@@ -40,13 +40,13 @@ label car_ride_1:
     show mika at left
     show tate flipped at right
     with fade
-    tate "Woohoo! Road trip!"
-    tate "Man, I can't believe CS didn't tell me about all of this! This is so fun!"
+    tate "Road trip, let's goooo!"
+    tate "Man, I can't believe CS didn't tell us! This is so great!!"
     mika "I know, right?"
-    tate "How are you holding up Kitty?"
+    tate "How're you holding up Kitty?"
     kitty "Yeah, I'm doing fine so far."
-    tate "Hold up, is that CS and their gang infront of us?"
-    tate "Mika, blare the horn at them! Do it! It'll scare the crap outta CS!"
+    tate "Hold up, is that CS in front of us?"
+    tate "Heyyyy Mika. {w=0.2}You should smack that horn. {w=0.2}You should do it. {w=0.2}Right now. {w=0.2}You should scare CS. {w=0.2}Do it now."
     if nice_car:
         scene joj_charger_fg
         show drive_day behind joj_charger_fg
@@ -75,15 +75,15 @@ label car_ride_1:
     show mika at left
     show tate flipped at right
     with fade
-    tate "Hahahaha! Did you see that??"
+    tate "Haaahahaha-- *snort*"
     kitty "Oh my goodness!"
     mika "Geez, I didn't think it was that bad."
-    tate "Alright, that was kinda funny, but I think we should chill for a moment."
+    tate "Yeah, alright, we had a laugh, but maybe we should chill a bit."
     tate "They've probably been stressed out all day long."
-    tate "Anyways, how are you guys? I don't think we've properly met before."
+    tate "Anyways, how y'all doing? Wait, I don't think we've ever actually met."
     mika "Well, I'm Mika, and thankfully Pakoo called in time for us to arrive."
     kitty "Hi, I'm Kitty. I hope Arc is doing well enough."
-    tate "I'm Tate. I'm sure they are doing just fine, and it's nice to meet you all."
+    tate "Hi I'm Tate. Nice to meet y'all."
     tate "Now let's go kick some ass!"
     if nice_car:
         scene joj_charger_fg
@@ -318,11 +318,11 @@ label car_ride_2:
     show mika at left
     show tate flipped at right
     with fade
-    tate "Man, I wanna fight something!"
+    tate "Man, I'm bored."
     mika "Yeah, what the hell! Where is this Copguy dude at?"
     kitty "What if he's preparing defenses to ambush us?"
     mika "We'll destroy anything that comes our way, don't worry."
-    tate "Hell yeah, screw that Copguy dude! He just ran away at the last second when we first fought him!"
+    tate "Hell yeah, we gotchu."
     mika "We definitely got this don't worry."
     kitty "I wonder how those new guys are handling the situation..."
     scene black with dissolve
@@ -410,7 +410,7 @@ label cs_rage:
     music Triage At Dawn - Kelly Bailey
     arceus "CS, we need a minute. We just fought a tank."
     cs "No time for that! We need to stop him now!"
-    tate "CS, I'm sorry, we need to wait."
+    tate "CS, no, we really gotta wait a sec."
     digi "We're never gonna catch up with him at this point anyways..."
     cs "Fuck! I can't believe this!"
     show cs dark angry with determination
@@ -460,7 +460,7 @@ label cs_rage:
     csgod "No problem."
     hide csgod with dissolve
     n "CSGod fades away, and CS turns back to the group."
-    tate "CS, you okay? You were just staring up at the sky and talking to yourself about magic or something."
+    tate "CS, you good? You were just staring up at the sky and talking to yourself about magic or something."
     show cs dark flipped with determination
     cs "I'm all good, don't worry."
     cs "Sorry I got upset, I just need to relax."
@@ -568,11 +568,11 @@ label car_ride_3:
     show mika at left
     show tate flipped at right
     with fade
-    tate "I went to the Dollar Tree a couple days ago, and was picking up some of those off-brand snacks."
+    tate "So I went to Dollar Tree a couple days ago, right? Bought some of their off-brand snacks..."
     mika "I feel like only a few off-brands can taste well, but there are a few I just can't eat."
-    tate "Like which ones?"
+    tate "Saaaaame, which ones?"
     mika "Usually the off-brand Cheez-its, but I really don't like the off-brand goldfish either."
-    tate "Not the gold whales! I love those!"
+    tate "Wait, you don't like gold whales?! I love those!"
     mika "Well, I just don't like them too much."
     kitty "The snack that breaks your back: Gold Whales!"
     n "They all laugh."
@@ -622,7 +622,7 @@ label final_meetup:
     db "Hey guys! Sorry I'm gonna miss out on the huge battle thing, I had to do some things at home first."
     db "But I'll gladly encourage you while you all are fighting!"
     cs "No problem DB! Every little bit helps!"
-    tate "Well, are you guys ready to do this?"
+    tate "Y'all ready?"
     cs "Hell yeah! Let's go put Copguy through the slammer!"
     stop music fadeout 3.0
     music end
@@ -656,7 +656,7 @@ label car_slam:
     show mika at center
     show kitty flipped at right
     with fade
-    tate "Haha! Did you see that?"
+    tate "Y'all see that shit?!"
     mika "CS crushed the whole city!"
     show cs at mid_right with moveinleft
     cs "Hey guys! Are you all alright?"

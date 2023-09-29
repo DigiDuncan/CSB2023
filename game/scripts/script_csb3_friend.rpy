@@ -910,7 +910,7 @@ label so_join:
     pakoo "He's way too strong..."
     copguy "Is that all you guys got?"
     copguy "Or are you ready to finally admit your defeat?"
-    tate "Not so fast!!"
+    tate "Waaaaaaaaaait!"
     show copguy
     copguy "Huh??"
     show tate at left with moveinleft
@@ -924,7 +924,7 @@ label so_join:
     show mika at mid_left
     show kitty at left
     with moveinleft
-    tate "That's right! You have to mess with us now!"
+    tate "That's right! Y'all gotta get through us first!"
     mika "Yeah! Fuck da police! (For legal reasons this is a joke)"
     kitty "Let's get them!"
     jump rpg_cop_fight_2
@@ -935,15 +935,15 @@ label after_cop_fight:
     show mika at mid_left
     show kitty at left
     with fade
-    tate "Woohoo! We did it!"
-    tate "You guys alright?"
+    tate "Yaaaaaaaay! We won!"
+    tate "Hey, y'all good?"
     show cs flipped at mid_mid_right
     show arceus at mid_right
     show pakoo  at right
     with moveinright
     cs "Yeah, uhm..."
     cs "How are you doing?"
-    tate "I'm fine, but you're going to have to explain what the fuck is going on."
+    tate "I'm fine, but you're going to have to explain what the fuck is happening here."
     show cs disappointed flipped
     cs "Fuck."
     if nice_car:
@@ -973,7 +973,7 @@ label after_cop_fight:
         arceus "Yeah!"
     else:
         arceus "Well, I know we just met up, but we should probably get going."
-    tate "Alright, we'll follow you guys, and aid you in anyway possible."
+    tate "Alrighty then, we'll follow behind and keep watch."
     cs "Shit yeah, Copguys not dead, he's gonna probably call backup on us."
     pakoo "Let's start heading east."
     show cs
