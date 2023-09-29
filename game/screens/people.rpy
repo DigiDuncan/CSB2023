@@ -97,12 +97,16 @@ screen people_welcome():
     use people_nav
 
     style_prefix "codex"
+    python:
+        bio_count = len(name_map.keys())
+        unlocked_bio_count = len(persistent.seen)
     vbox:
-            xsize 850
-            xalign 0.5 yalign 0.5
-            xoffset 200
-            text _("View bios about all the wacky characters you've seen!")
-
+        xsize 850
+        xalign 0.5 yalign 0.5
+        xoffset 200
+        text "View bios about all the wacky characters you've seen!"
+        text "([unlocked_bio_count]/[bio_count] unlocked)"
+        # TODO: Arc, can you center this? Thanks.
 
 
 ##-----------------------------------------------
@@ -134,9 +138,6 @@ screen person(l):
             vbox:
                 xsize 800
                 ysize 800
-                #You write the actual entry here. I suggest you split your text into smaller text _p sections, otherwise the text might overlap with
-                #the scrollbars. If you're sure that your text fits the screen and scrolling is not needed then comment out everything starting from "scrollbars vertical" to
-                #"pagekeys True" as seen in the next entry. If you do this, splitting the text is not needed.
                 python:
                     try:
                         fetched = renpy.file(f"bios/{l}.txt").read().decode('utf-8').replace("\r", "")

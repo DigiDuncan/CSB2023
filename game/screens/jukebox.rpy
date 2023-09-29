@@ -162,18 +162,19 @@ screen jukebox_nav():
 ##-------------CODEX WELCOME---------------------
 ##-----------------------------------------------
 screen jukebox_welcome():
-    ##This is the "People" category's welcome page. This is the first screen players see after they select a category.
-
     tag menu
     use jukebox_nav
-
     style_prefix "codex"
+    python:
+        music_count = len(music_map.keys())
+        unlocked_music_count = len(persistent.heard)
     vbox:
-            xsize 850
-            xalign 0.5 yalign 0.5
-            xoffset 200
-            text _("In this category, you can listen to all the sweet tunes you've discovered throughout CS's adventures!")
-
+        xsize 850
+        xalign 0.5 yalign 0.5
+        xoffset 200
+        text "In this category, you can listen to all the sweet tunes you've discovered throughout CS's adventures!"
+        text "([unlocked_music_count]/[music_count] unlocked)"
+        # TODO: Arc, can you center this? Thanks.
 
 
 ##-----------------------------------------------
