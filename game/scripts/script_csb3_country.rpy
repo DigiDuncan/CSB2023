@@ -470,28 +470,38 @@ label hell_zone:
     cs "I'll show you!"
     scene black with dissolve
     n "CS gets out of the car and walks up toward the building."
-    show hell_outside with fade
+    scene hell_outside with fade
     show cs angry at mid_left with moveinleft
     cs "Stupid Arceus doesn't think I can cook well, I'm gonna blow them away, that they can't put me on the show because I'm too good!"
     hide cs with moveoutright
     scene black with dissolve
-    n "When CS enters the main room, he notices that Gordon is waiting for CS at the stage, with his arms crossed."
+    n "When CS enters the main room, he notices that Gordon is waiting for CS at the kitchen, with his arms crossed."
+    scene hell_kitchen
+    show gordon at left
+    with fade
+    show cs flipped at right with moveinright
     gordon "Are you Mr... 188?"
     cs "Yea, that's m--{w=0.5}{nw}"
     gordon "Yeah, it says here on your application that you are 'The best cook in the world' is that correct sir?"
     gordon "Oh, for fucks sake! What the bloody hell is this?"
+    show cs disappointed flipped
     n "Before CS can speak, Gordon takes one good look at CS' clothing."
     gordon "Did you this silly outfit aswell to just fuck with me? Are you serious?"
     cs "What? This is just my normal attire."
     gordon "Normal attire my ass! Are you really here to cook, are we just playing games?"
+    show cs worried flipped
     cs "No no! I'm really ready to blow you away, Mr. Ramsay!"
     gordon "Well, you better hope your cooking skills can save you from your fashion skills."
     gordon "You've got an hour. Use whatever you can find here to try to make the best dish you can."
     gordon "God..."
-    n "Gordon yells under his breath as he stomps off the stage, into the backroom."
+    hide gordon with moveoutleft
+    show cs disappointed flipped at center with move
+    n "Gordon yells under his breath as he stomps out of the kitchen, into the backroom."
     n "CS goes to one of the stations, and starting trying to figure out what to make."
     cs "Arceus was kinda right, I guess Gordon is as scary without the cameras rolling."
     cs "Well, I have a couple options for what I should make."
+    jump gordon_menu
+    label gordon_menu:
     menu:
         "Make some Genergy":
             jump good_ramsay
@@ -499,11 +509,17 @@ label hell_zone:
             jump bad_ramsay
 
 label bad_ramsay:
+    show cs flipped
     cs "I guess the only thing I can think of off the top of my head is the cake Phil made for Michael."
     cs "That can't be too hard, right? It's just chocolate cake and Flex Seal, I think."
     cs "Don't know if the Flex Seal adds any taste, but I guess it's worth a try?"
     cs "Alright well, let's do this."
+    scene black with dissolve
     n "Over the next hour, CS bakes together the Flex Cake."
+    scene hell_kitchen
+    show cs flipped at right
+    show gordon at left
+    with fade
     gordon "Alright Mr. 188, let's see what you've made!"
     cs "This is my special chocolate cake design! With a secret ingredient."
     gordon "Well well well, doesn't this look fantastic!"
@@ -512,9 +528,13 @@ label bad_ramsay:
     gordon "It's very rich and smooth on the outside,"
     gordon "But it tastes weird, on the--{w=0.5}{nw}"
     n "Gordon starts coughing."
+    show cs disappointed flipped
     cs "Woah, you okay there?"
     n "Gordon holds his throat and falls over, spits the Flex Seal out, and passes out."
+    hide gordon with moveoutbottom
+    show cs disappointed flipped with hpunch
     cs "Ooooooooohhhhh Fuuuuuuucckkk."
+    bad_end "Silly, CS!\nYTP Magic doesn't exist!" "gordon_menu"
     return
 
 label good_ramsay:
@@ -1050,7 +1070,7 @@ label miku_pizza:
     cs "What do you mean she's not real? She was dancing with you in the commerical!"
     scott_pres "I know, but that was movie magic. I'm sorry--{w=0.5}{nw}"
     play music "real_world.mp3"
-    music "Real World - Project SEKAI"
+    music Real World - Project SEKAI
     miku "What was that?"
     scott_pres "Miku?!"
     cs "Miku!"

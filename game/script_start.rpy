@@ -474,6 +474,7 @@ image janitor = "characters/janitor.png"
 image customer = "characters/customer.png"
 image mean = "characters/mean.png"
 image ges = "characters/ges.png"
+image gordon = "characters/gordon.png"
 
 # Background Images
 ## CSBI
@@ -669,6 +670,7 @@ image dominos_counter = "bg/dominos_counter.png"
 image ceo_office = "bg/ceo_office.png"
 image japanese_street = "bg/japanese_street.png"
 image front_desk = "bg/front_desk.png"
+image hell_kitchen = "bg/hell_kitchen.png"
 
 ## AI Ending
 image park1 = "bg/ai/amusementpark1.png"
