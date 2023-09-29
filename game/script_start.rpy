@@ -281,13 +281,13 @@ define mean = Character("Mean", callback = renpy.partial(char_callback, name = "
 define agent = Character("Howie", callback = renpy.partial(char_callback, name = "howie", beep = "howie"))
 define gordon = Character("Gordon", callback = renpy.partial(char_callback, name = "gordon"))  # TODO: Beep
 define receptionist = Character("Receptionist", callback = char_callback)
-define scott_pres = Character("Scott, President of Domino's Pizza", callback = char_callback)  # TODO: Beep, bio
-define miku = Character("Hatsune Miku", callback = char_callback)  # TODO: Beep, bio
-define hammond = Character("Richard", callback = renpy.partial(char_callback, name = "hammond"))  # TODO: Beep, bio
-define jermey = Character("Jermey", callback = renpy.partial(char_callback, name = "jermey"))  # TODO: Beep, bio
-define james = Character("James", callback = renpy.partial(char_callback, name = "james"))  # TODO: Beep, bio
-define tom = Character("Tom Scott", callback = renpy.partial(char_callback, name = "tom"))  # TODO: Beep, bio
-define sayori = Character("Sayori", callback = char_callback)  # TODO: bio
+define scott_pres = Character("Scott, President of Domino's Pizza", callback = renpy.partial(char_callback, name = "scott_pres"))  # TODO: Beep
+define miku = Character("Hatsune Miku", callback = renpy.partial(char_callback, name = "miku"))  # TODO: Beep
+define hammond = Character("Richard", callback = renpy.partial(char_callback, name = "hammond"))
+define jermey = Character("Jermey", callback = renpy.partial(char_callback, name = "jermey"))
+define james = Character("James", callback = renpy.partial(char_callback, name = "james"))
+define tom = Character("Tom Scott", callback = renpy.partial(char_callback, name = "tom"))
+define sayori = Character("Sayori", callback = renpy.partial(char_callback, name = "sayori"))
 
 # Character Images
 ## CS
@@ -487,6 +487,7 @@ image james = "characters/james.png"
 image tom = "characters/tom.png"
 image scott_pres = "characters/scott_pres.png"
 image miku = "characters/miku.png"
+image sayori = "characters/sayori.png"
 
 # Background Images
 ## CSBI

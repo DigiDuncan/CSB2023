@@ -60,6 +60,11 @@ init python:
         "howie": "Howie Mandell",
         "ges": "Ges",
         "gordon": "Gordon Ramsay",
+        "scott_pres": "Scott Oelkers",
+        "miku": "Hatsune Miku",
+        "hammond": "The Top Gear Crew",
+        "tom": "Tom Scott",
+        "sayori": "Sayori",
         "iris": "???"
 
     }
