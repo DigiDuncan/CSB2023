@@ -720,7 +720,7 @@ label top_zone:
     james "Well, you're about to see it."
     show cs at left with moveinleft
     cs "Hey guys! CS here!"
-    jermey "Hey CS, do you think you can beat Richard in a race, huh?"
+    jermey "Hey CS, so you think you can beat Richard in a race, huh?"
     show cs happy
     cs "Hell yeah I do!"
     show cs
@@ -742,7 +742,7 @@ label top_zone:
     cs "Yeah, I guess so..."
     hammond "Well, what are you guys waiting for? Let's do this race!"
     scene black with dissolve
-    n "CS and hammond get in their cars, and wait for the countdown."
+    n "CS and Richard get in their cars, and wait for the countdown."
     jump top_gear_menu
 label top_gear_menu:
     scene black
@@ -799,13 +799,13 @@ label top_win:
     cs "Whatever, I'll see you guys later."
     show cs angry flipped with determination
     hide cs with moveoutleft
-    scene car_inside_fg
-    show top_gear_track behind car_inside_fg
+    scene car_insidearc_fg
+    show top_gear_track behind car_insidearc_fg
     show arceus flipped at left
-    show kitty at right
+    show kitty flipped at right
     with fade    
     kitty "Woo! You won the race!"
-    arceus "That was insane man!"
+    arceus "That was insane, man!"
     cs "Yeah, I honestly can't believe it either!"
     cs "They stuck a bomb to the bottom of my car for that race!"
     arceus "What? Why would they do that?"
@@ -908,7 +908,7 @@ label scott_move:
     show cs happy flipped
     cs "Yesss!"
     cs "Okay I'm gonna go now, bye!"
-    tom "Yep, you too!"
+    tom "Bye to you too!"
     show cs happy with determination
     hide cs with moveoutright
     scene tom_house
@@ -985,11 +985,11 @@ label england_japan:
     cs "Yeah, I honestly don't know how I managed to most of those things, I was kinda winging it."
     cs "Welp, it looks like my plane is here."
     cs "See ya Arceus!"
-    arceus "See you later CS!"
+    arceus "See you later, CS!"
     show cs with determination
-    hide cs at moveoutright
+    hide cs with moveoutright
     scene black with dissolve
-    n "CS grabs his ticket and heads on the next plane."
+    n "CS grabs his ticket and heads on to the next plane."
     scene airplane_seats
     show cs at left
     with fade
@@ -1051,7 +1051,7 @@ label japan:
     cs "I feel like this was a better place to pick than England or Sweden."
     cs "And on top of it all, I don't have to worry about the cops anymore!"
     n "CS walks out of the airport."
-    hide cs with moveoutleft
+    hide cs with moveoutright
     scene tokyo_street with fade
     show cs disappointed at center with moveinleft
     cs "Unfortunately, I don't have any money left on me."
@@ -1075,6 +1075,7 @@ label anime_adventure:
     cs "I would've freaked out at this when I was a kid."
     cs "Unfortunately, I don't have any money to spend of this kinda stuff."
     cs "If I ever return with some more money, I'll have to get something from here."
+    show cs flipped with determination
     hide cs with moveoutleft
     scene game_store_front
     show cashier at right
@@ -1136,7 +1137,7 @@ label anime_adventure:
     cs "Since you are the creator, I guess I can bring this up."
     cs "It all started several years ago..."
     scene black with dissolve
-    n "Two hours later..."
+    centered "Two hours later..."
     scene ceo_office_2 
     show cs disappointed at center
     show cashier at left
@@ -1145,12 +1146,12 @@ label anime_adventure:
     cs "You guys better tell NO ONE about this."
     cashier "That was amazing!"
     sayori "Well, that does seem very reasonable."
-    sayori "And techincally, you've been promoting my games for a long time now."
+    sayori "And technically, you've been promoting my games for a long time now."
     show cs
     cs "Have I?"
     sayori "Well based on the dates you gave me, the amount of people who bought Nekopara merch has gone up dramatically."
     sayori "So as a token of gratitude, I'm gonna give you a bundle of my sales from the past few years."
-    cs "Woah really?"
+    cs "Woah, really?"
     cs "Just for wearing this outfit?"
     sayori "The numbers don't lie."
     sayori "Here you go."
@@ -1186,7 +1187,7 @@ label karaoke:
     cs "Let's go see what they have!"
     scene black with dissolve
     n "CS enters the Bar and Karaoke, and makes his way over to the Karaoke area."
-    scene karaoke_bar_inside
+    scene karaoke_bar_inside with fade
     show cs at mid_left with moveinleft
     cs "Wow, look at this! So many songs to play here!"
     cs "And no one seems to be here, so I can sing to my heart's content!"
@@ -1195,7 +1196,7 @@ label karaoke:
     cs "Let's do this one!"
     scene black with fade
     pause 1.0
-    $ renpy.movie_cutscene("movies/karaoke.webm")
+    $ renpy.movie_cutscene("movies/karaoke.webm")  # TODO: This shit don't work
     pause 1.0
     scene karaoke_bar_inside
     show cs at mid_left
@@ -1224,7 +1225,7 @@ label miku_pizza:
     scene dominos_counter with fade
     show cs at left with moveinleft
     cashier "Welcome to Domino's, can I take your order?"
-    cs "I want to meet Miku?"
+    cs "I want to meet Miku!"
     cashier "Sir, what are you on about?"
     cs "Your promotion! You guys said I could have some fun with Miku!"
     cashier "I don't know what you're talking about."
@@ -1233,6 +1234,8 @@ label miku_pizza:
     cashier "Who??"
     cs "Scott! The president of Domino's Pizza!"
     cashier "Man, I'm just the cashier here, you think I know the president?"
+    if fun_value(50):
+        obama "Hi.{w=0.5}{nw}"
     show cs
     cs "How can I find him then?"
     cashier "I think the headquarters is pretty close to here if you're that desperate."
