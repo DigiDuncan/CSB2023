@@ -283,6 +283,10 @@ define gordon = Character("Gordon", callback = renpy.partial(char_callback, name
 define receptionist = Character("Receptionist", callback = char_callback)
 define scott_pres = Character("Scott, President of Domino's Pizza", callback = char_callback)  # TODO: Beep, bio
 define miku = Character("Hatsune Miku", callback = char_callback)  # TODO: Beep, bio
+define hammond = Character("Richard", callback = renpy.partial(char_callback, name = "hammond"))
+define jermey = Character("Jermey", callback = renpy.partial(char_callback, name = "jermey"))
+define james = Character("James", callback = renpy.partial(char_callback, name = "james"))
+define tom = Character("Tom Scott", callback = renpy.partial(char_callback, name = "tom"))
 # Character Images
 ## CS
 image cs = "characters/cs/neutral.png"
@@ -475,6 +479,12 @@ image customer = "characters/customer.png"
 image mean = "characters/mean.png"
 image ges = "characters/ges.png"
 image gordon = "characters/gordon.png"
+image hammond = "characters/hammond.png"
+image jermey = "characters/jermmey.png"
+image james = "characters/james.png"
+image tom = "characters/tom.png"
+image scott_pres "characters/scott_pres.png"
+image miku "characters/miku.png"
 
 # Background Images
 ## CSBI
@@ -671,6 +681,19 @@ image ceo_office = "bg/ceo_office.png"
 image japanese_street = "bg/japanese_street.png"
 image front_desk = "bg/front_desk.png"
 image hell_kitchen = "bg/hell_kitchen.png"
+image top_gear_track = "bg/top_gear_track.png"
+image tom_house = "bg/tom_house.png"
+image tom_road = "bg/tom_road.png"
+image tokyo_street = "bg/tokyo_street.png"
+image tokyo_airport = "bg/tokyo_airport.png"
+image game_store_back = "bg/game_store_back.png"
+image game_store_front = "bg/game_store_front.png"
+image tokyo_street_2 = "bg/tokyo_street_2.png"
+image tokyo_street_night = "bg/tokyo_street_night.png"
+image karaoke_bar_inside = "bg/karaoke_bar_inside.png"
+image karaoke_bar_outside = "bg/karaoke_bar_outside.png"
+image ceo_office_2 = "bg/ceo_office_2.png"
+image front_desk_2 = "bg/front_desk_2.png"
 
 ## AI Ending
 image park1 = "bg/ai/amusementpark1.png"

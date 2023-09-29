@@ -14,7 +14,7 @@ label england_menu:
         if not tom_check:
             locations.append(("Go on an adventure with Tom Scott", "scott_zone"))
         if not locations:
-            locations.append(("$ENGLAND_DONE", "england_done"))
+            locations.append(("I've done everything", "england_done"))
         label_jump = renpy.display_menu(locations)
         renpy.jump(label_jump)
 
@@ -515,7 +515,10 @@ label hell_zone:
     cs "Arceus was kinda right, I guess Gordon is as scary without the cameras rolling."
     cs "Well, I have a couple options for what I should make."
     jump gordon_menu
-    label gordon_menu:
+
+label gordon_menu:
+    scene hell_kitchen
+    show cs disappointed flipped
     menu:
         "Make some Genergy":
             jump good_ramsay
@@ -548,27 +551,38 @@ label bad_ramsay:
     hide gordon with moveoutbottom
     show cs disappointed flipped with hpunch
     cs "Ooooooooohhhhh Fuuuuuuucckkk."
-    bad_end "Silly, CS!\nYTP Magic doesn't exist!" "gordon_menu"
-    return
+    bad_end "Master Chef?\nMore like, Master Death!" "gordon_menu"
 
 label good_ramsay:
+    show cs flipped
     cs "Yeah, you know what? I'm gonna make some Genergy."
     cs "It's my signature beverage! And Michael liked it, I think, and he's British too!"
     cs "It's gotta work!"
+    scene black with dissolve
     n "CS spends the hour mixing together the perfect concoction for Genergy."
     n "At the 5 minute mark, Gordon comes out and starts shouting."
+    scene hell_kitchen
+    show cs flipped
+    with fade
+    show gordon at left with moveinleft
     gordon "Alright Mr. 188! Chop chop!"
     cs "Alright, I'm almost done!"
+    hide gordon with moveoutleft
     cs "Okay, I am pretty much done, I even managed to get the label on it too."
     cs "I'm gonna add a bit of DaThing's secret SuS, and it's good to go!"
+    show cs flipped at right with move
     gordon "Alright, times up!"
     n "Gordon comes over to CS' station."
+    show gordon at left with moveinleft
     gordon "Show me what you made."
     cs "What we have here, is some of my homemade Genergy."
+    show cs happy flipped
     cs "It's an energy drink that gets the juices moving through you!"
+    show cs flipped
     gordon "Well, that's a new one."
     gordon "I don't think I've ever seen someone make an energy drink on a cooking show..."
     gordon "What do you mean that the juices are gonna move through you? Like is this gonna make me have to go to the bathroom?"
+    show cs disappointed flipped
     cs "No, I meant like, energize you."
     gordon "Well yeah, I can see that."
     gordon "Well, here goes nothing."
@@ -576,18 +590,26 @@ label good_ramsay:
     n "Gordon sits there for a moment, and smacks his lips."
     gordon "This has, the weirdest flavor ever."
     gordon "I can't even describe it, but..."
+    show cs flipped
     gordon "It's really good, actually."
     gordon "This might be, the best damn thing I've ever tasted."
     gordon "Fuck..."
+    hide gordon with moveoutleft
     n "Gordon turns around walks into the backroom area again."
+    show cs happy flipped
     cs "Holy shit, I did it!"
     cs "Arceus is gonna be so surpised when he hears the news!"
+    show cs flipped
     cs "Man, I wish he could've seen this."
     n "Gordon comes back with a briefcase, full of cash."
+    show gordon at center
+    show case at mid_mid_right
+    with moveinleft
     gordon "Listen, I don't know how you made that, but I'll buy your recipe for £100,000."
     gordon "We won't need to speak of this again."
     cs "Well, shit yeah, I guess I really can't say no to that."
     n "Gordon gives the briefcase to CS."
+    show case at mid_right_right with move
     gordon "Alright, thank you. Now leave."
     cs "Thanks!"
     scene black with dissolve
@@ -618,6 +640,7 @@ label good_ramsay:
     show cs at left
     show arceus at center
     show kitty flipped at right
+    with fade
     kitty "CS did what?"
     arceus "Yeah, I know right? I don't understand either."
     kitty "What is in this Genergy drink of yours?"
@@ -643,24 +666,44 @@ label top_zone:
     arceus "How do you even get on Top Gear, anyways?"
     kitty "We might be able to just call them."
     cs "If it's that easy, then hell yeah let's do it!"
+    scene black with dissolve
     n "Kitty calls the members of Top Gear to get CS on the show for a day."
+    scene dining_room
+    show cs at left
+    show arceus at center
+    show kitty flipped at right
+    show fade
     kitty "Yeah, they said if you can drive over there today, we can start the race!"
     cs "Wow, that was fast."
     cs "Should we get going then?"
     arceus "Sure, I guess. Let's go."
+    show black with dissolve
     n "CS, Arc, and Kitty head up to the Top Gear Track."
+    scene car_inside_fg
+    show top_gear_track behind car_inside_fg
+    show arceus flipped at left
+    show kitty at right
+    with fade
     n "As they drive up to the track, the gang sees Jermey, Richard, and James."
     kitty "Alright, we'll watch from the side of the track."
     arceus "Good luck CS!"
     cs "Thanks!"
     n "CS gets out of the car and heads up to the Top Gear crew."
+    scene top_gear_track
+    show james at right
+    show jermey at mid_right
+    show hammond at center
+    with fade
     hammond "So, this bloke thinks he can beat us in his typical car?"
     james "Yeah, he really thinks so."
     jermey "Hah! I'd like to see him try!"
     james "Well, you're about to see it."
+    show cs at left with moveinleft
     cs "Hey guys! CS here!"
     jermey "Hey CS, do you think you can beat Richard in a race, huh?"
+    show cs happy
     cs "Hell yeah I do!"
+    show cs
     hammond "Well, I wish you the best of luck, buddy."
     n "As he says that, a McLaren rolls up on the track."
     hammond "I'll be racing against you in this McLaren, and if you manage to beat me, we'll give you £10,000!"
@@ -671,12 +714,18 @@ label top_zone:
     cs "Well, it's technically not MY car..."
     hammond "Oh really? Take another look..."
     n "CS looks and realizes his license plate matches the Honda Civic on the track."
+    show cs worried
     cs "WHAT? How did you get my car?"
     jermey "We may have stolen your car and shipped it all the way over to the UK for this race."
     james "I mean, it's YOUR car you wanted to race in, right?"
+    show cs disappointed
     cs "Yeah, I guess so..."
     hammond "Well, what are you guys waiting for? Let's do this race!"
+    scene black with dissolve
     n "CS and hammond get in their cars, and wait for the countdown."
+    jump top_gear_menu
+label top_gear_menu:
+    scene black
     menu:
         "Lose the race":
             jump top_lose
@@ -685,22 +734,36 @@ label top_zone:
     
 label top_lose:
     n "As the race finishes, the contestants get out of their cars."
+    scene top_gear_track
+    show james at right
+    show jermey at mid_right
+    show hammond at center
+    show cs disappointed at left
+    with fade
     hammond "Well well well!"
     hammond "Looks like I won after all!"
     hammond "As for you..."
     n "Jermey pulls out a remote switch that detonates a bomb under CS' car, turning it into scrap."
     cs "Fuck."
-    return
+    bad_end "You want it all,\nbut the world won't give it up!" "top_gear_menu"
 
 label top_win:
     n "As the race finishes, the contestants get out of their cars."
+    scene top_gear_track
+    show james at right
+    show jermey at mid_right
+    show hammond at center
+    show cs happy at left
+    with fade
     hammond "What the bloody hell? How did you beat me?"
     cs "Oh you know. I have my ways."
     james "Well, I guess that means we owe him, right?"
     hammond "Yeah, I guess so."
     hammond "Jermey, can you go remove the bomb from his car?"
+    show cs worried
     cs "Wait, there was a bomb on the car the whole time?"
     james "Well, kinda."
+    show cs angry
     cs "What the hell! Now I'm really glad I won!"
     cs "I'm glad I didn't hit anything, otherwise the explosion would've finished me off!"
     hammond "It's just a bomb, it'll buff out if it went off."
@@ -714,7 +777,13 @@ label top_win:
     hammond "But that was fun, wasn't it?"
     cs "It was fun before the end!"
     cs "Whatever, I'll see you guys later."
-    n "CS heads back to the car."
+    show cs angry flipped with determination
+    hide cs with moveoutleft
+    scene car_inside_fg
+    show top_gear_track behind car_inside_fg
+    show arceus flipped at left
+    show kitty at right
+    with fade    
     kitty "Woo! You won the race!"
     arceus "That was insane man!"
     cs "Yeah, I honestly can't believe it either!"
@@ -727,7 +796,13 @@ label top_win:
     arceus "Well good thing you won!"
     cs "Yeah, no kidding."
     cs "Let's head home now."
+    scene black with dissolve
     n "The gang travels back to the house."
+    scene dining_room
+    show cs at left
+    show arceus at center
+    show kitty flipped at right
+    with fade
     kitty "Well, on the plus side, you won 10,000 pounds!"
     cs "Yeah, I'll have to transfer this to USD when I get back home."
     cs "I hope those cops forgot about me by now."
@@ -750,27 +825,46 @@ label scott_zone:
     kitty "Yeah, remember the last time you did something illeg--{w=0.5}{nw}"
     n "Arceus blurts out the address of Tom's house."
     kitty "Arceus! Don't do that!"
+    show cs happy
     cs "Woohoo! Does that mean we can go there?"
     arceus "Sure, and don't worry Kitty, they won't catch me doing this."
     kitty "You better be right!"
+    show cs
     cs "Alright well, what are we waiting for? Let's go!"
+    scene black with dissolve
     n "CS and Arc get in the car and head up to Tom Scott's house."
+    scene tom_house with fade
+    show cs at left with moveinleft
+    show arceus at right with moveinright
     cs "Are you sure this is his house?"
     arceus "Yep."
     cs "Should we just knock or?"
     arceus "Well, we can't really call him, right?"
     cs "Yeah, I guess so."
     cs "I guess I can knock."
+    scene black with dissolve
     n "CS goes up to the house and knocks on the door."
     cs "Hello?"
     cs "Anyone home?"
     n "CS waits for a minute."
     cs "Damn, I guess no one's there."
+    scene tom_house
+    show cs at left
+    show arceus at right
+    with fade
     n "As CS is going back to the car, he notices someone with a red shirt standing in the middle of the road."
     cs "Hey, I wonder if that's him."
+    hide cs with moveoutright
+    scene tom_road
+    show tom
+    with fade
     tom "As you can see here, I am standing in the middle of this road."
     tom "That means if I get hit by a car, this video will not be uploaded."
     tom "Anyways, as I was saying..."
+    jump scott_menu
+label scott_menu:
+    scene tom_road
+    show tom
     menu:
         "Tell Tom to move":
             jump scott_move
@@ -778,29 +872,48 @@ label scott_zone:
             jump scott_movent
 
 label scott_move:
+    show cs flipped at offscreenright
     cs "Hey Tom, move out of the way!"
+    show tom at right with move
     n "Tom immediately jumps out of the way, as a car zooms past him."
+    show tom at center
+    show cs flipped at right
+    with move
     tom "Oh wow, you saved my life!"
     tom "What's your name?"
     cs "My name is cs188."
     tom "Well thank you cs188 for that, I guess now this video will upload properly now."
     cs "Does this mean I can be in the video?"
     tom "Sure thing cs188, you saved me, after all."
+    show cs happy flipped
     cs "Yesss!"
     cs "Okay I'm gonna go now, bye!"
     tom "Yep, you too!"
+    show cs happy with determination
+    hide cs with moveoutright
+    scene tom_house
+    show arceus at right
+    with fade
+    show cs happy at left with moveinleft
     arceus "Hey, did you get to talk with him?"
     cs "Yeah! I saved him from getting run over!"
     arceus "Woah really? Did you end up in his video?"
     cs "Yeah!"
     arceus "Cool! Were you guys gonna do anything else?"
+    show cs
     cs "Nah, we can head home now."
     arceus "Wait, that's it?"
     arceus "I thought you guys were gonna do more stuff."
     cs "Nah, I just wanted to be in a video with him."
     arceus "Okay, so are we done here?"
     cs "Sure yeah, let's head back home."
+    scene black with dissolve
     n "Arc and CS drive back to the house."
+    scene dining_room
+    show cs at left
+    show arceus at center
+    show kitty flipped at right
+    with fade
     kitty "You saved a man's life?"
     cs "Yeah, and I get to be in his video!"
     kitty "Well, looks like you got 2 for 1 then!"
@@ -824,8 +937,10 @@ label scott_movent:
     cs "I should wait till he's done with his video."
     tom "So yeah, we're just gonna keep talking about this road in particular."
     tom "This road here was created in 1968, by OHP--{w=0.5}{nw}"
+    scene black
     n "A speeding car rams into Tom, and he flies off into the distance."
     cs "Uh oh. {w=3.5} I didn't see nothin'."
+    bad_end "Welp, that's the end\nof that video!" "scott_menu"
     return
 
 label england_japan:
@@ -838,7 +953,12 @@ label england_japan:
     cs "Yeah well, I'll have to let you guys know how I'm doing after the trip."
     arceus "Welp, should we take you back to the airport?"
     cs "Sure, let's go."
+    scene black with dissolve
     n "Arceus takes CS back to the airport."
+    scene britport
+    show arceus flipped at left
+    show cs flipped at right
+    with fade
     cs "Well, thank you so much Arceus for everything, really."
     arceus "It's all good man, I loved having you here."
     arceus "It's also impressive that you made so much money in the short amount of time you were here, you'll probably be set for Japan!"
@@ -846,11 +966,18 @@ label england_japan:
     cs "Welp, it looks like my plane is here."
     cs "See ya Arceus!"
     arceus "See you later CS!"
+    show cs with determination
+    hide cs at moveoutright
+    scene black with dissolve
     n "CS grabs his ticket and heads on the next plane."
+    scene airplane_seats
+    show cs at left
+    with fade
     cs "Man, I'm kinda nervous to go to Japan, actually."
     cs "It's going to be wildly different than anything I've seen before."
     cs "Oh well, I'm sure it'll be fun."
     cs "Time to get some sleep."
+    scene black with dissolve
     jump japan
 
 label england_sweden:
@@ -862,7 +989,12 @@ label england_sweden:
     cs "Yeah, that's a good idea."
     arceus "Welp, should we take you back to the airport?"
     cs "Sure, let's go."
+    scene black with dissolve
     n "Arceus takes CS back to the airport."
+    scene britport
+    show arceus flipped at left
+    show cs flipped at right
+    with fade
     cs "Well, thank you so much Arceus for everything, really."
     arceus "It's all good man, I loved having you here."
     arceus "It's also impressive that you made so much money in the short amount of time you were here, you'll probably be set for Sweden!"
@@ -870,25 +1002,42 @@ label england_sweden:
     cs "Welp, it looks like my plane is here."
     cs "See ya Arceus!"
     arceus "See you later CS!"
+    show cs with determination
+    hide cs at moveoutright
+    scene black with dissolve
     n "CS grabs his ticket and heads on the next plane."
+    scene airplane_seats
+    show cs at left
+    with fade
     cs "Man, I'm kinda nervous to go to Sweden, actually."
     cs "It's going to be pretty crazy I think."
     cs "Oh well, I'm sure it'll be fun."
     cs "Time to get some sleep."
+    scene black with dissolve
     jump sweden
 
 label japan:
+    show airplane_seats
+    show cs at left
+    with fade
     n "As CS wakes up, he sees the plane landing outside."
     cs "Wow, I really slept a lot, or that was a crazy fast trip."
     cs "Welp, time to check out Japan!"
+    scene black with dissolve
     n "CS exits the terminal and enters the airport."
+    scene tokyo_airport with fade
+    show cs at center with moveinleft
     cs "Wow, this place is already pretty crazy!"
     cs "I feel like this was a better place to pick than England or Sweden."
     cs "And on top of it all, I don't have to worry about the cops anymore!"
     n "CS walks out of the airport."
+    hide cs with moveoutleft
+    scene tokyo_street with fade
+    show cs disappointed at center with moveinleft
     cs "Unfortunately, I don't have any money left on me."
     cs "So I really don't know what to do now."
     cs "I could try to get a job, but I don't speak Japanese!"
+    show cs
     cs "Lemme think, what could I do while I'm here?"
     menu:
         "Visit Domino's Pizza":
@@ -902,14 +1051,23 @@ label anime_adventure:
     cs "I guess I can look around the city."
     cs "This place is so compact, I could be here for days!"
     cs "Let's start looking!"
+    scene black with dissolve
     n "CS quickly finds a shop selling video games, and other electronics."
+    scene game_store_back with fade
+    show cs at mid_left with moveinleft
     cs "Wow, this is like a dream!"
     cs "There are so many retro games here!"
     cs "I would've freaked out at this when I was a kid."
     cs "Unfortunately, I don't have any money to spend of this kinda stuff."
     cs "If I ever return with some more money, I'll have to get something from here."
+    hide cs with moveoutleft
+    scene game_store_front
+    show cashier at right
+    with fade
+    show cs at left with moveinleft
     n "As CS is about to walk out of the store, the cashier says something to him."
     cashier "Hey dude, nice cosplay!"
+    show cs disappointed
     cs "Huh?"
     n "CS was surprised the cashier could speak English."
     cashier "Yeah, your maid outfit! Were you going to Comiket this year?"
@@ -917,36 +1075,63 @@ label anime_adventure:
     cashier "C'mon! No one just wears that kinda outfit everywhere!"
     cashier "Wait a second, isn't that the outfit of..."
     cs "I'm sorry, I really need to get going."
+    show cs worried
     cashier "Yeah I remember! That's from Nekopara, right?"
     cashier "Wait there. I know the head of NekoWorks, lemme take a picture and send it to them."
+    hide cs with moveoutright
     n "CS rushes out the door."
     cashier "Wait! Come back!"
+    scene tokyo_street_2 with fade
+    show cs at center with moveinleft
     cs "Whew! That was close. I need to--{w=1.0}{nw}"
+    show cashier at left with moveinleft
     cashier "Wait! Lemme take your picture!"
+    show cs scared
     cs "Fuck!"
+    hide cs with moveoutright
+    scene black with dissolve
     n "CS keeps running, trying to lose the insane cashier."
+    scene front_desk_2 with fade
+    show cs disappointed at center with moveinleft
     cs "Okay, I think I lost him."
     cs "So, where was I?"
+    show cashier at left with moveinleft
     cashier "There you are!"
+    show cs scared
     cs "What? How?"
+    hide cs
+    hide cashier 
+    with moveoutright
+    scene black with dissolve
     n "The cashier chases CS up the stairs, all the way to the top floor."
+    scene ceo_office_2 with fade
     n "CS runs into the boss's office of the building."
+    show cs worried at center with moveinleft
     cs "Excuse me? This crazy man is trying to take my picture, and--"
+    show cashier at left with moveinleft
     cashier "Hey, look at that! It's Sayori, the creator of Nekopara!"
+    show cs scared
     cs "WHAT?!?!"
     sayori "Hello, and who might you be?"
+    show cs disappointed
     cs "Uhm..."
     cashier "Does it matter who he is? They've said that they've been wearing this outfit forever!"
     sayori "Is this true?"
     cs "Well, okay, it's a long story..."
     cs "Since you are the creator, I guess I can bring this up."
     cs "It all started several years ago..."
+    scene black with dissolve
     n "Two hours later..."
+    scene ceo_office_2 
+    show cs disappointed at center
+    show cashier at left
+    with fade    
     cs "So yeah. That's why I wear this outfit."
     cs "You guys better tell NO ONE about this."
     cashier "That was amazing!"
     sayori "Well, that does seem very reasonable."
     sayori "And techincally, you've been promoting my games for a long time now."
+    show cs
     cs "Have I?"
     sayori "Well based on the dates you gave me, the amount of people who bought Nekopara merch has gone up dramatically."
     sayori "So as a token of gratitude, I'm gonna give you a bundle of my sales from the past few years."
@@ -957,10 +1142,17 @@ label anime_adventure:
     n "Sayori hands CS a few stacks of Yen, that add up to about 10,000 USD."
     sayori "Don't go spend it all in one place, unless it's Nekopara merch."
     cashier "See? Look how cool your cosplay was!"
+    show cs happy
     cs "Yeah. I do have a really cool outfit."
     cs "Thank you so much guys!"
+    show cs happy flipped with determination
+    hide cs with moveoutleft
+    scene black with dissolve
     n "CS walks away proudly."
     $ achievement_manager.unlock("I'm Scared Right Now...")
+    scene tokyo_street_night
+    show cs at center
+    with fade
     cs "Well, I have the money to travel again!"
     cs "I still feel like I should stay and do some things here."
 
@@ -968,11 +1160,17 @@ label karaoke:
     cs "I mean, I've always wanted to sing karaoke in Japan."
     cs "I don't know where I could go to sing, though."
     cs "There are some signs in English here."
+    scene black with dissolve
     n "CS walks around for a bit, trying to find a place to stop at."
+    scene karaoke_bar_outside with fade
+    show cs at center with moveinleft
     cs "We got a restaurant, a few general stores..."
     cs "Ah! Bar and Karaoke!"
     cs "Let's go see what they have!"
+    scene black with dissolve
     n "CS enters the Bar and Karaoke, and makes his way over to the Karaoke area."
+    scene karaoke_bar_inside
+    show cs at mid_left with moveinleft
     cs "Wow, look at this! So many songs to play here!"
     cs "And no one seems to be here, so I can sing to my heart's content!"
     cs "Hmm..."
@@ -982,10 +1180,17 @@ label karaoke:
     pause 1.0
     $ renpy.movie_cutscene("movies/karaoke.webm")
     pause 1.0
+    scene karaoke_bar_inside
+    show cs at mid_left
+    with fade
     cs "Woohoo! That was fun!"
     cs "That kinda wore me out though."
     cs "I don't think I should sing another one for now."
+    scene black with dissolve
     n "CS heads out of the bar."
+    scene karaoke_bar_outside
+    show cs
+    with fade
     $ achievement_manager.unlock("Dame Da Ne")
     cs "Well, is there anything else I should do here?"
 
@@ -994,27 +1199,35 @@ label miku_pizza:
     cs "They had a Domino's ad where you can go have some fun with Miku, right?"
     cs "But that was like, ten years ago..."
     cs "People still love Miku, I'm sure she'll uphold the deal!"
+    scene black with dissolve
     n "CS starts making his way to the nearest Domino's."
 
-    scene dominos_counter
+    scene dominos_counter with fade
+    show cs at left with moveinleft
     cashier "Welcome to Domino's, can I take your order?"
     cs "I want to meet Miku?"
     cashier "Sir, what are you on about?"
     cs "Your promotion! You guys said I could have some fun with Miku!"
     cashier "I don't know what you're talking about."
+    show cs disappointed
     cs "Ugh, can I just talk to Scott?"
     cashier "Who??"
     cs "Scott! The president of Domino's Pizza!"
     cashier "Man, I'm just the cashier here, you think I know the president?"
+    show cs
     cs "How can I find him then?"
     cashier "I think the headquarters is pretty close to here if you're that desperate."
     cs "I am, and thank you!"
+    show cs flipped with determination
+    hide cs with moveoutright
 
-    scene japanese_street
+    scene japanese_street with fade
+    show cs at center with moveinleft
     n "CS walks for a while until he finds the Domino's HQ."
     cs "Finally, here's the place!"
 
-    scene front_desk
+    scene front_desk with fade
+    show cs at left with moveinleft
     n "CS walks up to the receptionist."
     cs "I'd like to speak to Scott."
     receptionist "The president? Who are you?"
@@ -1028,20 +1241,31 @@ label miku_pizza:
     receptionist "Alright, take the elevator to the penthouse."
 
     scene elevator
-
+    show cs at center
+    with fade
+    pause 3.0
+    scene black with dissolve
+    pause 1.0
     scene ceo_office
+    show scott at right
+    with fade
+    show cs at left with moveinleft
     scott_pres "Hello, sir, and what is your name?"
     cs "I'm cs188, and I'm curious about your Miku promotion."
     scott_pres "That was... what, ten years ago?"
     cs "It was, but I know Miku would uphold the deal!"
     scott_pres "Wasn't the deal like, something to do with an app? I barely remember."
     cs "Uh, I don't either."
+    show cs angry
     cs "But I want to meet Miku!"
     scott_pres "Listen son, I hate to break it to you, but I don't think Miku is real."
     cs "What do you mean she's not real? She was dancing with you in the commerical!"
     scott_pres "I know, but that was movie magic. I'm sorry--{w=0.5}{nw}"
     play music "real_world.mp3"
     music Real World - Project SEKAI
+    show cs
+    show miku at center with moveinbottom
+    show miku with vpunch
     miku "What was that?"
     scott_pres "Miku?!"
     cs "Miku!"
@@ -1053,30 +1277,44 @@ label miku_pizza:
     miku "Anywho, hi, CS! Love your videos."
     cs "You... watch my videos?"
     miku "Yeah! They're really funny."
+    show cs happy
     cs "Well, thank you!"
     miku "Wanna go get a pizza?"
     cs "Sure!"
+    hide scott with moveoutbottom
+    show miku with hpunch
     n "Scott faints."
     cs "Oh, jeez, let's make sure Scott is okay first."
     stop music fadeout 3.0
     music end
-
+    scene black with dissolve
     # TODO: Fade to CS and Miku sharing a pizza
     scene dominos
+    show cs at left
+    show miku at right
+    with fade
     miku "... so I said \"you think that was fast, wait until I sing INTENSE VOICE!\""
     n "CS laughs."
     cs "Well Miku, this was very nice, but I need to head on my way."
     miku "OK! Thanks for sharing lunch with me, this was very nice."
     cs "Bye, Miku!"
     $ achievement_manager.unlock("Have Some Fucking Pizza!")
+    scene black with dissolve
+    jump japan_leave
 
 label japan_leave:
+    scene tokyo_street
+    show cs
+    with fade
     cs "Well, I think I've done everything I wanted to do here!"
     cs "This place was really cool, but I should get going for now."
     cs "Maybe one day, I can return when I have more time."
+    scene black with dissolve
     n "CS heads back to the airport."
 
 label japan_leave_airport:
+    show tokyo_airport with fade
+    show cs at center with moveinleft
     cs "Man, what a time I had here."
     cs "Alright well, where should I go this time?"
     menu:
@@ -1089,20 +1327,30 @@ label japan_sweden:
     cs "I think I wanna go to Sweden this time."
     cs "I know Vinesauce Joel is there, and I have kinda always wanted to meet up with him."
     cs "Well, if I did the crazy things I did in this country, then I'm sure I can make it in Sweden!"
+    scene black with dissolve
     n "CS goes and gets his ticket and gets on the plane."
+    scene airplane_seats
+    show cs at left
+    with fade
     cs "Well, I'm off to Sweden!"
     cs "This is gonna be quite the trip."
     cs "I'm gonna try to get some shuteye."
+    scene black with dissolve
     jump sweden
 
 label japan_england:
     cs "I think I wanna go to England this time."
     cs "I've always wanted to go to England, there is so much to do there.."
+    scene black with dissolve
     n "CS goes and gets his ticket and gets on the plane."
+    scene airplane_seats
+    show cs at left
+    with fade
     cs "Well, I'm off to England!"
     cs "This is gonna be quite the trip."
     cs "I'm gonna try to get some sleep."
-    jump sweden
+    scene black with dissolve
+    jump england
 
 label going_home:
     cs "Welp, I guess it's time to head home."
@@ -1110,10 +1358,17 @@ label going_home:
     cs "I had to kinda rush it, just like with a real vacation!"
     cs "Oh well."
     cs "I'm a bit homesick, and I honestly can't wait to get home."
+    scene black with dissolve
     n "CS buys a ticket to US and gets on the airplane."
     n "CS takes another nap to pass the time to get home."
+    scene cs_house with fade
+    show cs happy at mid_left with moveinleft
     cs "Ah, finally back home!"
     cs "I can't wait to get some sleep in my own bed again."
+    scene cs_car
+    show carguy at right
+    show cs at left
+    with fade
     n "When CS walks up to his driveway, he notices a familiar face."
     cs "Hey, are you that advertiser?"
     cs "What are you doing here?"
@@ -1122,12 +1377,18 @@ label going_home:
     cs "Oooh, yeah, I forgot that's why I left."
     carguy "Well, I don't really care anymore."
     carguy "My job is over with, I'm just gonna go advertise car products."
+    hide carguy with moveoutleft
     n "Carguy leaves the scene."
     cs "Well, that took care of that problem."
     cs "Now, where was I?"
     cs "Oh yeah, let's get inside."
+    hide cs with moveoutright
+    scene cs_room with fade
+    show cs at center with moveinleft
     n "CS gets inside and relaxes once more in his own house."
     cs "Man, what a trip that was."
     cs "I can finally sleep for a day."
+    scene cs_room_2 with fade
     n "CS glances over at his Union Jack."
     cs "Maybe, I should get 2 more flags."
+    return
