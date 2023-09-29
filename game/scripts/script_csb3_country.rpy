@@ -1005,6 +1005,7 @@ label miku_pizza:
     cs "People still love Miku, I'm sure she'll uphold the deal!"
     n "CS starts making his way to the nearest Domino's."
 
+    scene dominos_counter
     cashier "Welcome to Domino's, can I take your order?"
     cs "I want to meet Miku?"
     cashier "Sir, what are you on about?"
@@ -1018,8 +1019,11 @@ label miku_pizza:
     cashier "I think the headquarters is pretty close to here if you're that desperate."
     cs "I am, and thank you!"
 
+    scene japanese_street
     n "CS walks for a while until he finds the Domino's HQ."
     cs "Finally, here's the place!"
+
+    scene front_desk
     n "CS walks up to the receptionist."
     cs "I'd like to speak to Scott."
     receptionist "The president? Who are you?"
@@ -1032,8 +1036,9 @@ label miku_pizza:
     pause 1.0
     receptionist "Alright, take the elevator to the penthouse."
 
-    # TODO: CS in elevator
+    scene elevator
 
+    scene ceo_office
     scott_pres "Hello, sir, and what is your name?"
     cs "I'm cs188, and I'm curious about your Miku promotion."
     scott_pres "That was... what, ten years ago?"
@@ -1062,6 +1067,7 @@ label miku_pizza:
     cs "Oh, jeez, let's make sure Scott is okay first."
 
     # TODO: Fade to CS and Miku sharing a pizza
+    scene dominos
     miku "... so I said \"you think that was fast, wait until I sing INTENSE VOICE!\""
     n "CS laughs."
     cs "Well Miku, this was very nice, but I need to head on my way."

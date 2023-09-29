@@ -664,6 +664,11 @@ image kitty_house = "bg/kitty_house.png"
 image kitty_room = "bg/kitty_room.png"
 image dining_room = "bg/diningroom.png"
 image hell_outside = "bg/hell_outside.png"
+image dominos = "bg/dominos.png"
+image dominos_counter = "bg/dominos_counter.png"
+image ceo_office = "bg/ceo_office.png"
+image japanese_street = "bg/japanese_street.png"
+image front_desk = "bg/front_desk.png"
 
 ## AI Ending
 image park1 = "bg/ai/amusementpark1.png"
