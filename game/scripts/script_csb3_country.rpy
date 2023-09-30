@@ -385,6 +385,8 @@ label arceus_place:
     scene kitty_room with fade
     show arceus flipped at center with moveinleft
     show cs at left with moveinleft
+    play music "<loop 0>wool_gloves.mp3" volume 0.4
+    music Wool Gloves - Various Artists
     cs "You guys have quite a quiant little place!"
     show arceus
     arceus "Yep. This is what 5 quid gets you here."
@@ -450,6 +452,8 @@ label hell_zone:
     cs "I think I'm gonna get some sleep."
     arceus "Is the couch good enough for you? Sorry we don't really have another option right now."
     cs "Yeah, it's all good."
+    stop music fadeout 3.0
+    music end
     show cs flipped at left with determination
     hide cs
     hide arceus
@@ -678,6 +682,7 @@ label good_ramsay:
     show arceus at center
     show kitty flipped at right
     with fade
+    play music "<loop 0>wool_gloves.mp3" volume 0.4
     kitty "CS did what?"
     arceus "Yeah, I know right? I don't understand either."
     kitty "What is in this Genergy drink of yours?"
@@ -714,6 +719,7 @@ label top_zone:
     cs "Wow, that was fast."
     cs "Should we get going then?"
     arceus "Sure, I guess. Let's go."
+    stop music fadeout 3.0
     show black with dissolve
     n "CS, Arc, and Kitty head up to the Top Gear Track."
     scene car_insidearc_fg
@@ -827,6 +833,7 @@ label top_win:
     show arceus flipped at left
     show kitty flipped at right
     with fade    
+    play music "<loop 0>wool_gloves.mp3" volume 0.4
     kitty "Woo! You won the race!"
     arceus "That was insane, man!"
     cs "Yeah, I honestly can't believe it either!"
@@ -874,6 +881,7 @@ label scott_zone:
     kitty "You better be right!"
     show cs
     cs "Alright well, what are we waiting for? Let's go!"
+    stop music fadeout 3.0
     scene black with dissolve
     n "CS and Arc get in the car and head up to Tom Scott's house."
     scene tom_house with fade
@@ -957,6 +965,7 @@ label scott_move:
     show arceus at center
     show kitty flipped at right
     with fade
+    play music "<loop 0>wool_gloves.mp3" volume 0.4
     kitty "You saved a man's life?"
     cs "Yeah, and I get to be in his video!"
     kitty "Well, looks like you got 2 for 1 then!"
@@ -996,6 +1005,7 @@ label england_japan:
     cs "Yeah well, I'll have to let you guys know how I'm doing after the trip."
     arceus "Welp, should we take you back to the airport?"
     cs "Sure, let's go."
+    stop music fadeout 3.0
     scene black with dissolve
     n "Arceus takes CS back to the airport."
     scene britport
@@ -1032,6 +1042,7 @@ label england_sweden:
     cs "Yeah, that's a good idea."
     arceus "Welp, should we take you back to the airport?"
     cs "Sure, let's go."
+    stop music fadeout 3.0
     scene black with dissolve
     n "Arceus takes CS back to the airport."
     scene britport
@@ -1070,6 +1081,8 @@ label japan:
     n "CS exits the terminal and enters the airport."
     scene tokyo_airport with fade
     show cs at center with moveinleft
+    play music "<loop 0>flyday_chinatown.mp3" volume 0.4
+    music Flyday Chinatown - Evade
     cs "Wow, this place is already pretty crazy!"
     cs "I feel like this was a better place to pick than England or Sweden."
     cs "And on top of it all, I don't have to worry about the cops anymore!"
@@ -1100,6 +1113,8 @@ label anime_adventure:
     cs "If I ever return with some more money, I'll have to get something from here."
     show cs flipped with determination
     hide cs with moveoutleft
+    stop music fadeout 3.0
+    music end    
     scene game_store_front
     show cashier at right
     with fade
@@ -1118,6 +1133,8 @@ label anime_adventure:
     cashier "Yeah I remember! That's from Nekopara, right?"
     cashier "Wait there. I know the head of NekoWorks, lemme take a picture and send it to them."
     hide cs with moveoutright
+    play music "<loop 0>chase.mp3" volume 0.4
+    music Chase - Toby Fox
     n "CS rushes out the door."
     cashier "Wait! Come back!"
     scene tokyo_street_2 with fade
@@ -1146,11 +1163,15 @@ label anime_adventure:
     scene ceo_office_2 with fade
     n "CS runs into the boss's office of the building."
     show cs worried at center with moveinleft
+    stop music fadeout 3.0
+    music end
     cs "Excuse me? This crazy man is trying to take my picture, and--"
     show cashier at left with moveinleft
     cashier "Hey, look at that! It's Sayori, the creator of Nekopara!"
     show cs scared
     cs "WHAT?!?!"
+    play music "<loop 0>neko_to_sanpo.mp3" volume 0.4
+    music Neko To Sanpo - NEKOWORKs
     sayori "Hello, and who might you be?"
     show cs disappointed
     cs "Uhm..."
@@ -1186,12 +1207,15 @@ label anime_adventure:
     cs "Thank you so much guys!"
     show cs happy flipped with determination
     hide cs with moveoutleft
+    stop music fadeout 3.0
+    music end    
     scene black with dissolve
     n "CS walks away proudly."
     $ achievement_manager.unlock("I'm Scared Right Now...")
     scene tokyo_street_night
     show cs at center
     with fade
+    play music "<loop 0>flyday_chinatown.mp3" volume 0.4
     cs "Well, I have the money to travel again!"
     cs "I still feel like I should stay and do some things here."
     jump japan_menu
@@ -1208,6 +1232,8 @@ label karaoke:
     cs "We got a restaurant, a few general stores..."
     cs "Ah! Bar and Karaoke!"
     cs "Let's go see what they have!"
+    stop music fadeout 3.0
+    music end    
     scene black with dissolve
     n "CS enters the Bar and Karaoke, and makes his way over to the Karaoke area."
     scene karaoke_bar_inside with fade
@@ -1233,6 +1259,7 @@ label karaoke:
     show cs
     with fade
     $ achievement_manager.unlock("Dame Da Ne")
+    play music "<loop 0>flyday_chinatown.mp3" volume 0.4
     cs "Well, is there anything else I should do here?"
     jump japan_menu
 
@@ -1242,11 +1269,15 @@ label miku_pizza:
     cs "They had a Domino's ad where you can go have some fun with Miku, right?"
     cs "But that was like, ten years ago..."
     cs "People still love Miku, I'm sure she'll uphold the deal!"
+    stop music fadeout 3.0
+    music end    
     scene black with dissolve
     n "CS starts making his way to the nearest Domino's."
 
     scene dominos_counter with fade
     show cs at left with moveinleft
+    play music "<loop 0>funiculi_holiday.mp3" volume 0.3
+    music Funiculi Holiday - ClascyJitto
     cashier "Welcome to Domino's, can I take your order?"
     cs "I want to meet Miku!"
     cashier "Sir, what are you on about?"
@@ -1265,7 +1296,8 @@ label miku_pizza:
     cs "I am, and thank you!"
     show cs flipped with determination
     hide cs with moveoutleft
-
+    stop music fadeout 3.0
+    music end
     scene japanese_street with fade
     show cs at center with moveinleft
     n "CS walks for a while until he finds the Domino's HQ."
@@ -1289,7 +1321,7 @@ label miku_pizza:
     show cs at center
     with fade
     pause 3.0
-    # TODO: Ding
+    play sound "audio/elevator_ding.ogg"
     scene black with dissolve
     pause 1.0
     scene ceo_office
@@ -1358,6 +1390,8 @@ label japan_leave:
     cs "Well, I think I've done everything I wanted to do here!"
     cs "This place was really cool, but I should get going for now."
     cs "Maybe one day, I can return when I have more time."
+    stop music fadeout 3.0
+    music end
     scene black with dissolve
     n "CS heads back to the airport."
     jump japan_leave_airport
