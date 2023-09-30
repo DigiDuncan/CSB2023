@@ -50,17 +50,17 @@ label knocked_out:
         cs "What happened? How long have I been out?"
         cs "And why do I have this eyepatch? My eye feels fine."
     else:
-        show cs worried at mid_left with moveinbottom
+        show cs disappointed metal4 at mid_left with moveinbottom
         cs "Wha--"
         cs "What happened? How long have I been out?"
-    show cs disappointed
+    show cs disappointed metal3
     cs "Thank god I didn't catch some virus from a global pandemic or something."
     cs "I guess that's the last time I try to fight someone."
     n "CS sits there for a minute, trying to recollect his memory."
     cs "So I went to go work at LTT, after I..."
     cs "What did I do before that?"
     n "The news starts playing on the TV in CS' room, explaining how 3 criminals broke out of prison a couple days ago."
-    show cs worried
+    show cs disappointed metal4
     cs "Oh shoot! Yeah I went to prison and met Arceus and Anno! I need to get out of here!"
     hide cs with moveoutright
     n "CS goes and gets dressed, and runs out of his room."
