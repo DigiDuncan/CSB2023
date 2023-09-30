@@ -66,22 +66,22 @@ See what needs to be done below.
 - [X] Jukebox
 
 ### Country Ending [All, Sept. W4]
-- [ ] England
+- [X] England
     - [X] Script
     - [X] Backgrounds
     - [X] Characters
     - [X] Transitions
-    - [ ] Music
-    - [ ] Bios
-    - [ ] Jukebox
-- [ ] Japan
-    - [X] Script
+    - [X] Music
+    - [X] Bios
+    - [X] Jukebox
+- [X] Japan
+    - [ ] Script [95%]
     - [X] Backgrounds
     - [X] Characters
     - [X] Transitions
-    - [ ] Music
-    - [ ] Bios
-    - [ ] Jukebox
+    - [X] Music
+    - [X] Bios
+    - [X] Jukebox
 - [ ] Sweden [Aria]
     - [ ] Script
     - [ ] Backgrounds
@@ -93,9 +93,9 @@ See what needs to be done below.
 - [X] Ending
 
 ### Archival Ending [Pakoo/Baker, October]
-- [ ] 3D Backgrounds [Baker] [30%]
+- [ ] 3D Backgrounds [Baker] [60%]
 - [ ] Animated sequences [Baker] [25%]
-- [ ] Final writing [Pakoo]
+- [X] Final writing [Pakoo]
 - [ ] Short Archival animation (Error Route) [Pakoo] [75%]
 
 ### Passes [All, October W1]
