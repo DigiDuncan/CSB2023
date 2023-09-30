@@ -297,6 +297,7 @@ label england_first:
     cs "Damn, sorry."
     cs "Man, this kinda sucks!"
     show arceus at mid_right with moveinright
+    play music "<loop 0>stal.mp3" volume 0.4
     arceus "Hey CS? Is that you?"
     show cs
     cs "Oh my goodness! Why-- How are you here?"
@@ -318,6 +319,7 @@ label england_first:
     arceus "In GTA V."
     cs "Yeah yeah, that heist was really fun."
     arceus "Anyways, let's get you to our place."
+    stop music fadeout 3.0
     show arceus flipped with determination
     hide cs
     hide arceus
@@ -349,6 +351,7 @@ label england_second:
     scene embassy with fade
     show cs at center with moveinleft
     show arceus at mid_right with moveinright
+    play music "<loop 0>stal.mp3" volume 0.4
     arceus "Hey CS? Is that you?"
     show cs
     cs "Oh my goodness! Why-- How are you here?"
@@ -360,6 +363,7 @@ label england_second:
     arceus "You can come and live with me and Kitty for a while! I'm sure she wouldn't mind."
     cs "I would really appreciate it! Thank you!"
     arceus "Let's get you to our place."
+    stop music fadeout 3.0
     show arceus flipped with determination
     hide cs
     hide arceus
@@ -487,6 +491,8 @@ label hell_zone:
     show arceus flipped at left
     show cs flipped at right
     with fade
+    play music "<loop 0>conflict.mp3" volume 0.4
+    music Conflict - David Vanacore
     cs "Well, this definitely looks like Hell."
     arceus "I can already feel Ramsay's presence from here. It's terrifying."
     cs "Alright well, are you ready?"
@@ -520,6 +526,7 @@ label hell_zone:
     gordon "Oh, for fucks sake! What the bloody hell is this?"
     show cs disappointed flipped
     n "Before CS can speak, Gordon takes one good look at CS' clothing."
+    play sound "waterphone.mp3"
     gordon "Did you wear this silly outfit as well to just fuck with me? Are you serious?"
     cs "What? This is just my normal attire."
     gordon "Normal attire my arse! Are you really here to cook, or are we just playing games?"
@@ -531,6 +538,8 @@ label hell_zone:
     hide gordon with moveoutleft
     show cs disappointed flipped at center with move
     n "Gordon yells under his breath as he stomps out of the kitchen, into the backroom."
+    stop music fadeout 3.0
+    music end    
     n "CS goes to one of the stations, and starting trying to figure out what to make."
     cs "Arceus was kinda right, I guess Gordon is as scary without the cameras rolling."
     cs "Well, I have a couple options for what I should make."
@@ -557,6 +566,8 @@ label bad_ramsay:
     show cs flipped at right
     show gordon at left
     with fade
+    play music "<loop 0>tumultuous.mp3" volume 0.4
+    music Tumultuous - David Vanacore
     gordon "Alright Mr. 188, let's see what you've made!"
     cs "This is my special chocolate cake design! With a secret ingredient."
     gordon "Well well well, doesn't this look fantastic!"
@@ -568,6 +579,7 @@ label bad_ramsay:
     show cs disappointed flipped
     cs "Woah, you okay there?"
     n "Gordon holds his throat and falls over, spits the Flex Seal out, and passes out."
+    play sound "waterphone.mp3"
     hide gordon with moveoutbottom
     show cs disappointed flipped with hpunch
     cs "Ooooooooohhhhh Fuuuuuuucckkk."
@@ -584,6 +596,8 @@ label good_ramsay:
     scene hell_kitchen
     show cs flipped
     with fade
+    play music "<loop 0>tumultuous.mp3" volume 0.4
+    music Tumultuous - David Vanacore
     show gordon at left with moveinleft
     gordon "Alright Mr. 188! Chop chop!"
     cs "Alright, I'm almost done!"
@@ -601,6 +615,7 @@ label good_ramsay:
     show cs flipped
     gordon "Well, that's a new one."
     gordon "I don't think I've ever seen someone make an energy drink on a cooking show..."
+    play sound "waterphone.mp3"
     gordon "What do you mean that the juices are gonna move through you? Like is this gonna make me have to go to the bathroom?"
     show cs disappointed flipped
     cs "No, I meant like, energize you."
@@ -616,6 +631,8 @@ label good_ramsay:
     gordon "Fuck..."
     hide gordon with moveoutleft
     n "Gordon turns around walks into the backroom area again."
+    stop music fadeout 3.0
+    music end 
     show cs happy flipped
     cs "Holy shit, I did it!"
     cs "Arceus is gonna be so surpised when he hears the news!"
@@ -704,6 +721,8 @@ label top_zone:
     show arceus flipped at left
     show kitty flipped at right
     with fade
+    play music "<loop 0>lisbon_fever.mp3" volume 0.4
+    music Lisbon Fever - Dr. Awesome
     n "As they drive up to the track, the gang sees Jermey, Richard, and James."
     kitty "Alright, we'll watch from the side of the track."
     arceus "Good luck, CS!"
@@ -753,6 +772,8 @@ label top_gear_menu:
             jump top_win
     
 label top_lose:
+    stop music fadeout 3.0
+    music end    
     n "As the race finishes, the contestants get out of their cars."
     scene top_gear_track
     show james at right
@@ -768,6 +789,8 @@ label top_lose:
     bad_end "You want it all,\nbut the world won't give it up!" "top_gear_menu"
 
 label top_win:
+    stop music fadeout 3.0
+    music end    
     n "As the race finishes, the contestants get out of their cars."
     scene top_gear_track
     show james at right
@@ -1390,6 +1413,8 @@ label going_home:
     n "CS takes another nap to pass the time to get home."
     scene cs_house with fade
     show cs happy at mid_left with moveinleft
+    play music "<loop 0>park_theme.mp3" volume 0.5
+    music Park Theme - Lorin Nelson
     cs "Ah, finally back home!"
     cs "I can't wait to get some sleep in my own bed again."
     scene cs_car
@@ -1418,4 +1443,6 @@ label going_home:
     scene cs_room_2 with fade
     n "CS glances over at his Union Jack."
     cs "Maybe, I should get 2 more flags."
+    stop music fadeout 1.0
+    music end
     return

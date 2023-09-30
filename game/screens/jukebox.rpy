@@ -88,6 +88,9 @@ init python:
         "Dig This - Dr. Awesome": "dig_this.mp3",
         "ANOTHER HIM - Toby Fox": "another_him.mp3",
         "Real World - Project SEKAI": "real_world.mp3",
+        "Lisbon Fever - Dr. Awesome": "lisbon_fever.mp3",
+        "Conflict - David Vanacore": "conflict.mp3",
+        "Tumultuous - David Vanacore": "tumultuous.mp3",
         "Insane Personalities - Lizardking": "insane_personalities.mp3",
         "Echoing? - Banana": "killcops.mp3"
     }
