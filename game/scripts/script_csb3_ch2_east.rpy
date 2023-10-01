@@ -550,7 +550,7 @@ label after_ufo:
     cs "Get some sleep, Arc."
     scene black with fade
     n "The gang stops in Indiana for the night, and takes off in the morning."
-    jump michigan
+    jump ohio
 
 label michigan:
     billy "Alright. The highway entrance should be right around here."
