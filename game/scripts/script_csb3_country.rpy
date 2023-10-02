@@ -345,7 +345,8 @@ label england_second:
     scene britport with fade
     show cs at mid_left with moveinleft
     cs "Well, I picked an English-speaking country this time."
-    cs "This is quite the breath of fresh air."
+    cs "It's a bit of fresh air again to understand most people once again."
+    cs "I honestly forgot why I am on this big vacation, but it's been fun so far!"
     hide cs with moveoutright
     scene black with dissolve
     n "CS walks out of the airport."
@@ -361,7 +362,8 @@ label england_second:
     arceus "Ah."
     arceus "So uhm..."
     arceus "Do you need a place to stay?"
-    arceus "You can come and live with me and Kitty for a while! I'm sure she wouldn't mind."
+    cs "I guess so, I have some money but I don't know what hotels are like here."
+    arceus "You could come and live with me and Kitty for a while! I'm sure she wouldn't mind."
     cs "I would really appreciate it! Thank you!"
     arceus "Let's get you to our place."
     stop music fadeout 3.0
@@ -400,11 +402,19 @@ label arceus_place:
     arceus "This is CS, my jail bud- I mean my friend! You remember that guy who made the YTPs?"
     kitty "Oh, yeah. Isn't he kinda famous?"
     cs "I wouldn't say that..."
-    arceus "He's broke right now, and I was wondering if he could stay here for a bit."
-    kitty "I guess that's fine, how long is he gonna stay here though?"
-    cs "It shouldn't be too long, I'm gonna try to find a way to get some money."
-    arceus "Why don't we all eat and talk about it?"
-    cs "That would be great. I'm starving."
+    if japan_check:
+        arceus "He's deciding to visit England, so I wanted to invite him to stay here."
+        arceus "Is that okay?"
+        kitty "Yeah but, how long will he be here for?"
+        cs "Not too long I don't think, I just like this country and wanted to take a vacation here."
+        arceus "Well, let's make some dinner, and we can find fun things here to do!"
+        cs "Sure thing!"
+    else:
+        arceus "He's broke right now, and I was wondering if he could stay here for a bit."
+        kitty "I guess that's fine, how long is he gonna stay here though?"
+        cs "It shouldn't be too long, I'm gonna try to find a way to get some money."
+        arceus "Why don't we all eat and talk about it?"
+        cs "That would be great. I'm starving."
     show kitty with determination
     hide arceus
     hide kitty
@@ -1039,7 +1049,7 @@ label england_japan:
     cs "Oh well, I'm sure it'll be fun."
     cs "Time to get some sleep."
     scene black with dissolve
-    jump japan
+    jump japan_two
 
 label england_sweden:
     cs "I was thinking of going to Sweden."
@@ -1065,7 +1075,7 @@ label england_sweden:
     cs "See ya Arceus!"
     arceus "See you later CS!"
     show cs with determination
-    hide cs at moveoutright
+    hide cs with moveoutright
     scene black with dissolve
     n "CS grabs his ticket and heads on the next plane."
     scene airplane_seats
@@ -1105,6 +1115,31 @@ label japan:
     show cs
     cs "Lemme think, what could I do while I'm here?"
     jump japan_menu
+
+label japan_two:
+    $ japan_check = True
+    show airplane_seats
+    show cs at left
+    with fade
+    n "As CS wakes up, he sees the plane landing outside."
+    cs "Wow, I really slept a lot, or that was a crazy fast trip."
+    cs "Welp, time to check out Japan!"
+    scene black with dissolve
+    n "CS exits the terminal and enters the airport."
+    scene tokyo_airport with fade
+    show cs at center with moveinleft
+    play music "<loop 0>flyday_chinatown.mp3" volume 0.4
+    music Flyday Chinatown - Evade
+    cs "Wow, this place is already pretty crazy!"
+    cs "Well, I don't know anyone who speaks English this time over here.."
+    cs "And I forgot why I was travelling here, to be honest."
+    n "CS walks out of the airport."
+    hide cs with moveoutright
+    scene tokyo_street with fade
+    show cs at center with moveinleft
+    cs "Fortunately, I have some money this time."
+    cs "But the question is, what should I do here?"
+    jump japan_menu
         
 label anime_adventure:
     $ anime_check = True
@@ -1118,17 +1153,30 @@ label anime_adventure:
     cs "Wow, this is like a dream!"
     cs "There are so many retro games here!"
     cs "I would've freaked out at this when I was a kid."
-    cs "Unfortunately, I don't have any money to spend of this kinda stuff."
-    cs "If I ever return with some more money, I'll have to get something from here."
-    show cs flipped with determination
-    hide cs with moveoutleft
-    stop music fadeout 3.0
-    music end    
-    scene game_store_front
-    show cashier at right
-    with fade
-    show cs at left with moveinleft
-    n "As CS is about to walk out of the store, the cashier says something to him."
+    if england_check:
+        cs "There are some games I could buy here, but I don't know what to pick..."
+        cs "I've always wanted a big box of some classic DOS games I played, but I don't know if they'd have that."
+        cs "I guess I can go ask the cashier."
+        show cs flipped with determination
+        hide cs with moveoutleft
+        stop music fadeout 3.0
+        music end   
+        scene game_store_front
+        show cashier at right
+        with fade
+        show cs at left with moveinleft
+    else:
+        cs "Unfortunately, I don't have any money to spend of this kinda stuff."
+        cs "If I ever return with some more money, I'll have to get something from here."
+        show cs flipped with determination
+        hide cs with moveoutleft
+        stop music fadeout 3.0
+        music end    
+        scene game_store_front
+        show cashier at right
+        with fade
+        show cs at left with moveinleft
+        n "As CS is about to walk out of the store, the cashier says something to him."
     cashier "Hey dude, nice cosplay!"
     show cs disappointed
     cs "Huh?"
@@ -1225,7 +1273,10 @@ label anime_adventure:
     show cs at center
     with fade
     play music "<loop 0>flyday_chinatown.mp3" volume 0.4
-    cs "Well, I have the money to travel again!"
+    if england_check:
+        cs "I could plan a super fancy trip after this is over!"
+    else:
+        cs "Well, I have the money to travel again!"
     cs "I still feel like I should stay and do some things here."
     jump japan_menu
 
@@ -1439,6 +1490,7 @@ label japan_sweden:
     jump sweden
 
 label japan_england:
+    $ england_check = True
     cs "I think I wanna go to England this time."
     cs "I've always wanted to go to England, there is so much to do there.."
     scene black with dissolve
@@ -1450,7 +1502,7 @@ label japan_england:
     cs "This is gonna be quite the trip."
     cs "I'm gonna try to get some sleep."
     scene black with dissolve
-    jump england
+    jump england_second
 
 label going_home:
     cs "Welp, I guess it's time to head home."
@@ -1496,3 +1548,7 @@ label going_home:
     stop music fadeout 1.0
     music end
     return
+
+label sweden:
+    n "Aria writing goes here."
+    jump going_home
