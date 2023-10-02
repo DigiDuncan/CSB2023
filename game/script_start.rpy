@@ -185,6 +185,12 @@ transform lego_run:
     anchor(0.5, 0.5)
     linear 2.0 zoom 5.0 alpha 0.0
 
+transform car_run:
+    zoom 0.5
+    pos (0.5, 0.5)
+    anchor(0.5, 0.5)
+    linear 2.0 zoom 2.5
+
 transform typewriter_location:
     pos (0.5, 0.7)
     anchor(0.5, 0.5)
@@ -492,6 +498,7 @@ image tom = "characters/tom.png"
 image scott_pres = "characters/scott_pres.png"
 image miku = "characters/miku.png"
 image sayori = "characters/sayori.png"
+image car = "characters/car.png"
 
 # Background Images
 ## CSBI

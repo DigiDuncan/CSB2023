@@ -1029,6 +1029,8 @@ label england_done:
 label scott_movent:
     cs "I should wait till he's done with his video."
     tom "So yeah, we're just gonna keep talking about this road in particular."
+    show car at car_run behind tom
+    with move
     tom "This road here was created in 1968, by OHP--{w=0.5}{nw}"
     scene black
     n "A speeding car rams into Tom, and he flies off into the distance."
