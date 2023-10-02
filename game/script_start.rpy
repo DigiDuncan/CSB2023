@@ -701,6 +701,7 @@ image karaoke_bar_inside = "bg/karaoke_bar_inside.png"
 image karaoke_bar_outside = "bg/karaoke_bar_outside.png"
 image ceo_office_2 = "bg/ceo_office_2.png"
 image front_desk_2 = "bg/front_desk_2.png"
+image talking_head = "bg/talking_head.png"
 
 ## AI Ending
 image park1 = "bg/ai/amusementpark1.png"

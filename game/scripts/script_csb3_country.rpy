@@ -544,6 +544,15 @@ label hell_zone:
     play sound "waterphone.mp3"
     gordon "Did you wear this silly outfit as well to just fuck with me? Are you serious?"
     cs "What? This is just my normal attire."
+    scene talking_head
+    show cs disappointed
+    with dissolve
+    cs "I despise it when people bring up my clothes."
+    cs "What's wrong with this anyways? It's perfectly normal!"
+    scene hell_kitchen
+    show cs disappointed flipped at right
+    show gordon at left
+    with fade
     gordon "Normal attire my arse! Are you really here to cook, or are we just playing games?"
     show cs worried flipped
     cs "No no! I'm really ready to blow you away, Mr. Ramsay!"
@@ -556,7 +565,13 @@ label hell_zone:
     stop music fadeout 3.0
     music end    
     n "CS goes to one of the stations, and starting trying to figure out what to make."
+    scene talking_head
+    show cs disappointed
+    with dissolve
     cs "Arceus was kinda right, I guess Gordon is as scary without the cameras rolling."
+    scene hell_kitchen
+    show cs disappointed flipped
+    with fade
     cs "Well, I have a couple options for what I should make."
     jump gordon_menu
 
@@ -634,6 +649,14 @@ label good_ramsay:
     gordon "What do you mean that the juices are gonna move through you? Like is this gonna make me have to go to the bathroom?"
     show cs disappointed flipped
     cs "No, I meant like, energize you."
+    scene talking_head
+    show cs disappointed
+    with dissolve
+    cs "This man is terrifying, I can never tell if he's in a good mood or not."
+    scene hell_kitchen
+    show cs disappointed flipped at right
+    show gordon at left
+    with fade
     gordon "Well yeah, I can see that."
     gordon "Well, here goes nothing."
     n "Gordon gulps down the Genergy."
