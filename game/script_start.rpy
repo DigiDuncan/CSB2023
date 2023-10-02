@@ -188,7 +188,7 @@ transform lego_run:
 transform typewriter_location:
     pos (0.5, 0.7)
     anchor(0.5, 0.5)
-    rotate(-15)
+    rotate(-17)
 
 # Character Definitions
 define n = Character(None, what_italic = True)  # Narrator
@@ -933,9 +933,9 @@ init python:
 
     def show_typewriter(st, at):
         if st > 2.0:
-            return Text(typewriter_text, textalign = 0.5, size = 100), 0.1
+            return Text(typewriter_text, textalign = 0.5, size = 100, outlines=[(absolute(10), "#000", absolute(0), absolute(0))]), 0.1
         else:
-            d = Text(typewriter_text[:math.ceil((st / 2.0) * len(typewriter_text))], textalign = 0.5, size = 100)
+            d = Text(typewriter_text[:math.ceil((st / 2.0) * len(typewriter_text))], textalign = 0.5, size = 100, outlines=[(absolute(10), "#000", absolute(0), absolute(0))])
             return d, 0.1
 
 image typewriter = DynamicDisplayable(show_typewriter)

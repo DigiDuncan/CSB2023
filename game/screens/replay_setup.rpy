@@ -20,7 +20,7 @@ init python:
     #add replay items here format below
     #Replay_items.append(ReplayItem(["the thumbnail"], "the_label_from_code", "brief description"))
     Replay_items = []
-    Replay_items.append(ReplayItem(["Asylum"], "asylum", "{color=#FF0000}Asylum Ending{/color}"))
+    Replay_items.append(ReplayItem(["Asylum"], "asylum", "{outlinecolor=#000000}{color=#FF0000}Asylum Ending{/color}{/outlinecolor}"))
 
 
 # a black background screen for the selection
