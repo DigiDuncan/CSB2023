@@ -74,11 +74,9 @@ label csbi_start:
     show craptop discord
     play sound "windows_logon.mp3"
     cs "Hey guys!"
-    show discord at center_right
     play sound "ping_spam.mp3"
     discord "Hi! Hi! Hi! Hi!"
     n "The Discord is overflowing with people trying to talk to CS."
-    hide discord
     show cs at left
     play sound "ping.mp3"
     cs "OK, bedtime! Bye guys!"
@@ -89,12 +87,10 @@ label csbi_start:
     cs "Bye!"
     show cs flipped with determination
     hide cs with moveoutleft
-    show discord at center_left
     discord "CS is now offline."
     play sound "ping.mp3"
     nova "k bye"
     hide nova
-    hide discord
     show craptop car
     cs "Time to watch car crash videos for the next couple of hours!"
     show black with fade
@@ -131,10 +127,10 @@ label csbi_start:
     music end
     cs "QUICK START THE CAR, START THE CAR!!!"
     hide cs with moveoutright
-    hide carguy with dissolve
     play sound "doorslam.ogg"
-    show black with dissolve
-    show cs_car_inside behind cs
+    scene cs_car_inside
+    show cs at left
+    with fade
     play music "<loop 0>canyon_but_in_the_car.mp3" volume 0.2
     music CANYON.MID - George Stone
     cs "Whew... That was close!"
@@ -157,6 +153,7 @@ label csbi_start:
 label walmart:
     scene walmart_outside
     show cs happy
+    with fade
     cs "Oh yes! Walmart is open!"
     scene walmart_inside with fade
     show screen best_music
@@ -170,13 +167,15 @@ label walmart:
     cs "Wow! It's Walmart CEO Doug McMillon! You actually work here?"
     doug "Of course! They were short a greeter today, so I filled in the slot!"
     cs "Wow! He seems like a good man!"
-    hide doug with moveoutright
-    show cs at center with move
+    show doug at offscreenright
+    show cs at center
+    with move
+    hide doug
     cs "Now, let's find some food!"
     show walmart_aisle behind cs with dissolve
     cs "*pop* Noice! Genergy is 2 for $5! I'll take them all!"
     cs "Oooh! Pringles are on sale too! Yoink!"
-    n "CS walks to checkout."
+    n "CS walks to the checkout area."
     scene walmart_register
     show cashier at mid_mid_right
     show walmart_register_fg
@@ -211,11 +210,12 @@ label walmart:
 
 label room:
     scene cs_room
+    show cs happy
+    with dissolve
     stop sound fadeout 2.0
     stop music fadeout 3.0
     music end
     n "CS arrives home and walks to his room."
-    show cs happy with dissolve
     cs "Ahhh. It's good to be home!"
     show cs
     cs "You know, I haven't put out a YTP in a while. I should work on one of my in-progress ones."
@@ -274,9 +274,9 @@ label room:
     show cs happy with moveinleft
     cs "Oh, they're here!"
     cs "Let me go get the door..."
+    show cs at left with move
     show door_open behind cs
     cs "Hello! I am cs188 and I-"
-    show cs at left with move
     show ed at right with moveinright
     play music "<loop 0>hohsis_theme.mp3" volume 0.2
     music Alfred Hitchcock Intro Theme - Charles Gounod
@@ -299,7 +299,7 @@ label room:
     "Ed, Wesley, and Richard" "Hmmm..."
     wesley "Let's go check his room. We might get some ideas."
     show cs_room_2 behind ed with dissolve
-    n "The three HoH SiS workers go upstairs."
+    n "The three HoH SiS workers go to CS's room."
     wesley "Wow, I didn't know CS had a Union Jack!"
     ed "CS sure loves those Brits~!"
     wesley "Alright, but now what should we do?"
@@ -336,17 +336,18 @@ label room:
     stop music fadeout 3.0
     music end
     scene cs_street
+    with fade
     show cs with moveinleft
     cs "Things sure are boooooring around here..."
     cs "Hey, I got an idea!"
     cs "Let's go to Michael Rosen's house!"
-    show black with dissolve
     jump michael_house
 
 label michael_house:
     scene car_inside
-    play music "<loop 0>canyon_but_in_the_car.mp3" volume 0.2
     show cs at left
+    with fade
+    play music "<loop 0>canyon_but_in_the_car.mp3" volume 0.2
     cs "Thankfully, Michael lives pretty close."
     cs "His vacation house in the US is only a few streets away!"
     cs "Before I forget, I should probably call him first."
@@ -499,8 +500,6 @@ label rosen_house:
     show cs at left
     with fade
 
-    $ achievement_manager.unlock("Overcaffeinated")
-
     play music "<loop 0>canyon_but_in_the_car.mp3" volume 0.2
     play sound "driving.wav" volume 0.5
     stop music fadeout 3.0
@@ -508,6 +507,7 @@ label rosen_house:
     jump csbi_end
 
 label csbi_end:
+    $ achievement_manager.unlock("Overcaffeinated")
     cs "I should check on the HoH SiS folks. They should be making some progress by now."
     scene cs_room with fade
     show cs with moveinleft
@@ -543,10 +543,11 @@ label csbi_end:
     scene hoh_outside with fade
     window hide
     pause 1.0
-    scene hoh_hq with dissolve
+    scene hoh_hq
+    show cs angry
+    with dissolve
     play music "<loop 0>time_for_a_smackdown.mp3" volume 0.2
     music Time for a Smackdown! - Mr. Sauceman
-    show cs angry with dissolve
     cs "Alright! Where are the head JoJites?!"
     show worker_1 at right with moveinright
     worker_1 "I don't know!!"
@@ -561,16 +562,13 @@ label csbi_end:
     cs "Good!!"
     n "..."
     show black with dissolve
-    scene hoh_hq2 with dissolve
+    scene hoh_hq2
     show worker_3 at mid_center_right
     show worker_4 at mid_left
+    with dissolve
     show cs angry with moveinleft
     cs "Get out of my way!"
     n "CS bodyslams the workers as he runs past."
-    play sound "audio/punch.ogg"
-    show cs angry at mid_right with move
-    show worker_3 at mid_center_right with hpunch
-    hide worker_3 with moveoutright
     play sound "audio/punch.ogg"
     show cs angry at mid_left with move
     show worker_4 at mid_left with hpunch
@@ -578,7 +576,11 @@ label csbi_end:
         cs "Ow."
         mean "AUUUUUGH!!"
     hide worker_4 with moveoutleft
-    show cs angry at center with move
+    play sound "audio/punch.ogg"
+    show cs angry at mid_right with move
+    show worker_3 at mid_center_right with hpunch
+    hide worker_3 with moveoutright
+    show cs angry at offscreenright with move
     show black with dissolve
     scene hoh_hq3
     show worker_5 at left
@@ -590,12 +592,11 @@ label csbi_end:
     worker_5 "Uhh, that way!"
     cs "Thanks, and also-"
     n "CS clocks the worker in the face."
-    show cs at left with move
+    show cs angry flipped at left with move
     play sound "audio/punch.ogg"
-    show cs at right with move
+    show cs angry flipped at offscreenleft with move
     show worker_5alt at left with hpunch
     hide worker_5alt with moveoutbottom
-    hide cs with moveoutright
     scene hoh_hq4 with dissolve
     show cs angry with moveinbottom
     cs "Which way to go..."
