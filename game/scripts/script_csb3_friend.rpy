@@ -923,6 +923,7 @@ label so_join:
     with move
     show mika at mid_left
     show kitty at left
+    $ persistent.seen.add("round")
     with moveinleft
     tate "That's right! Y'all gotta get through us first!"
     mika "Yeah! Fuck da police! (For legal reasons this is a joke)"

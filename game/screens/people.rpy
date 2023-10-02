@@ -65,6 +65,7 @@ init python:
         "hammond": "The Top Gear Crew",
         "tom": "Tom Scott",
         "sayori": "Sayori",
+        "round": "Mr. Round",
         "iris": "???"
 
     }
@@ -158,7 +159,7 @@ screen person(l):
             elif l == "anno":
                 add "images/characters/anno/anno.png" xalign 1.0 yalign 1.0 zoom 0.75
             # SECRET
-            elif l in ["iris", "bubble", "lancer", "howie"]:
+            elif l in ["iris", "bubble", "lancer", "howie", "round"]:
                 add f"secret/{l}.png" xalign 1.0 yalign 1.0 zoom 0.75
             elif l == "hoh_worker":
                 add "images/characters/hoh_worker.png" xalign 1.0 yalign 1.0 zoom 0.50
