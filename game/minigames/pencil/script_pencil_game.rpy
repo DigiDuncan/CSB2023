@@ -211,8 +211,7 @@ label play_pencilgame:
             $ achievement_manager.unlock("Pencil Sharpening Day!")
             jump win_pencil
         else:
-            arceus "You dumb foreskin."
-            jump play_pencilgame
+            bad_end "You dumb foreskin" "play_pencilgame"
 
 label pencilgame_done:
     show arceus

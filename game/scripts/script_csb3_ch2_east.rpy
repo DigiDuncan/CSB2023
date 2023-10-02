@@ -49,7 +49,7 @@ label hotwire:
     show cs disappointed
     copguy "I heard the sound of a car window breaking from miles away!"
     copguy "You guys already blew it! Back to the slammer!"
-    return
+    bad_end "What did Copguy\njust tell you?" "choose_direction"
 
 label billy_driver:
     cs "Why don't we just wait for someone at the gas station to come out, and then we ask them for an Uber?"
@@ -1293,7 +1293,7 @@ label fighthohsis:
     hide cs with moveoutbottom
     show ed with hpunch
     ed "Time to take a shit on the house."
-    return
+    bad_end "Revenge!" "back_home"
 
 label fuckuphohsis:
     show cs angry
@@ -1319,7 +1319,7 @@ label fuckuphohsis:
     show cs disappointed
     pause 1.0
     cs "Fuck."
-    return    
+    bad_end "Time to bunk\nat Rosen's!" "back_home"  
 
 label copsathohsis:
     n "CS calls Copguy to come arrest HoH SiS."

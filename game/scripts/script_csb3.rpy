@@ -287,6 +287,9 @@ label boost:
         linus "Sorry. Force of habit."
     n "Some time passes and they finish the recording."
     n "Afterwards, CS goes up to Linus' office."
+    jump ltt_decide
+
+label ltt_decide:
     scene loffice with fade
     show cs at left with moveinleft
     cs "Hey Linus?"
@@ -499,7 +502,7 @@ label cops_ltt:
     copguy "Freeze!"
     n "As CS was explaining his story in extreme detail, the cops showed up in time."
     copguy "You are under arrest! Put your hands in the air!"
-    return
+    bad_end "Stupid CS! You dropped\nyour lore in front of the hoes!" "ltt_decide"
 
 label arc_escape:
     cs "Look, I'm sorry Linus, I wish I could explain, but Arceus is right. I need to get going."
@@ -672,6 +675,13 @@ label arc_escape:
     show cs worried dark
     "CS and Arceus" "SHIT!"
     arceus "Copguy's back! He's probably looking all over for us! What do we do CS?!"
+    jump forest_menu
+label forest_menu:
+    scene washington_road
+    show cs worried dark at left
+    show arceus dark at right
+    show blue_light at left
+    show red_light at right
     menu:
         "What do we do CS?!"
         "Fight the cops with YTP Magic" (type = "bad"):
@@ -751,7 +761,7 @@ label attack_arc:
     show arceus dark at right with hpunch
     arceus "Really? I've been a god longer than you dummy."
     arceus "Nice try."
-    return
+    bad_end "There's no weapon\nto free us all!" "forest_menu"
 
 label wait_arc:
     cs "{size=-15}I need to wait. I'm not powerful enough to attack."
@@ -843,7 +853,7 @@ label wait_arc:
     csgod "I have finally harnessed the power of CS God!"
     csgod "Time to take over the world!"
     stop music
-    return
+    bad_end "This will affect\nthe local trout population!" "forest_menu"
 
 label pussy_out_forest:
     $ achievement_manager.unlock("Pacifist")
@@ -909,6 +919,14 @@ label wait_forest:
     n "CS and Arc are thrown into the cop car, as Copguy says some order on his walkie."
     copguy "This is Copguy calling in a 1-8-8 on Compass Road. Sheriff? We got em."
     n "Copguy gets in the car and they head off."
+    jump copcar_menu
+
+label copcar_menu:
+    scene copcar
+    show copguy at t_copguy_frontseat
+    show copcar_mask
+    show arceus at right
+    show cs disappointed at left
     n "As they are heading away, CS has the urge to say something."
     menu:
         "HoH SiS scammed me!" (type = "true"):
@@ -933,7 +951,7 @@ label bad_convince:
     stop music
     music end
     copguy "Nice try, bud. We saw your fake visa and everything. You too are going back to the slammer."
-    return
+    bad_end "Did you really\nthink that would work?" "copcar_menu"
 
 label good_convince:
     show cs worried

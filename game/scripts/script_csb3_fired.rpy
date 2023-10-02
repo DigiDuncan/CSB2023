@@ -745,7 +745,9 @@ label howie:
     hide arceus
     hide howie
     with moveoutleft
+    jump limo_time
 
+label limo_time:
     scene in_limo with dissolve
     play music "<loop 0>audio/good_vibes.mp3" volume 0.5
     music GOOD VIBES - LitKidBeats
@@ -780,7 +782,7 @@ label howie:
         "Yes"  (type = "good"):
             jump signed_the_contract
         "No"  (type = "bad"):
-            return
+            bad_end "Well,\nthat was kinda dumb!" "limo_time"  
 
 label signed_the_contract:
     stop music

@@ -911,7 +911,7 @@ label airport_bad:
     arceus "Welp, time to do it all over again."
     cs "Huh?"
     n "Arc shoots finger guns at CS."
-    arceus "Andd...."
+    arceus "Aaannd...."
     stop music fadeout 3.0
     music end    
     jump choose_direction
@@ -1116,6 +1116,7 @@ label braghohsis:
     pause 1.0
     cs "Fuck."
     return
+    bad_end "Time to bunk\nat Rosen's!" "back_home_alt"  
 
 label noairport:
     cs "Nah, I don't wanna go to the airport."

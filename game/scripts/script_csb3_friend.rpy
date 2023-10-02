@@ -768,6 +768,9 @@ label fire_range:
     hide cs
     hide arceus
     with moveoutright
+    jump car_picker
+
+label car_picker:
     scene dealer_cars with fade
     show carguy flipped at right
     show arceus flipped at center
@@ -1065,7 +1068,7 @@ label flint_car:
     n "Sirens blare in the dealership as Copguy pulls up to the car."
     copguy "Out of all the cars in my lot you decided to escape with, it was the Flintmobile?"
     copguy "That's kinda sad."
-    return
+    bad_end "Fleenstones?" "car_picker"  
     
 
 label low_gpu:
