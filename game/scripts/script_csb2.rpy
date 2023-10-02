@@ -92,7 +92,7 @@ label kick:
 label special:
     show cs concentrate at left
     show wesley at right
-    n "CS uses his YTP magic to make the foundation repairman fight eachother."
+    n "CS uses his YTP magic to make the foundation repairmen fight eachother."
     hide wesley at right with moveoutright
     play sound "audio/punch.ogg"
     rich "Hey! Cut it out!"
@@ -142,12 +142,13 @@ label special:
     stop sound fadeout 1.0
     cs "What's going on? I didn't do anything!"
     show cs worried at left
-    copguy "Come with us, we need you to ask some questions."
+    copguy "Come with us, we need to ask you some questions."
     show cs at left
     cs "Alright, sure thing officer."
     show cs flipped with determination
-    hide cs with moveoutleft
-    hide copguy with moveoutleft
+    hide cs
+    hide copguy
+    with moveoutleft
     scene black with fade
     jump questioning
 
@@ -159,7 +160,7 @@ label questioning:
     show cs disappointed at left with moveinleft
     show copguy at right with moveinright
     copguy "Alright CS, a lot of crazy things happened today."
-    copguy "The CEO of HoH SiS called us today, and was immediately interrupted buy something or someone telling us that everything was under control."
+    copguy "The CEO of HoH SiS called us today, and was immediately interrupted by something or someone telling us that everything was under control."
     copguy "After reviewing the phone call, his voice sounds kinda messed up."
     cs "I uhh, I don't know what that is all about..."
     copguy "Oh really?"
@@ -176,9 +177,9 @@ label questioning:
     show asylum_worker at right with moveinright
     asylum_worker "Sure thing, boss."
     asylum_worker "Come on, follow me this way at once."
-    show cs flipped with determination
-    hide cs with moveoutleft
-    hide asylum_worker with moveoutleft
+    hide asylum_worker
+    hide cs
+    with moveoutright
     stop music fadeout 3.0
     music end
     scene black with fade
@@ -196,8 +197,9 @@ label asylum:
     show cs worried at center with moveinleft
     cs "Sir, you need to listen to me! I'm not crazy!"
     asylum_worker "That's what they all say. Get off of me."
-    play sound "audio/punch.ogg"    
-    hide cs with moveoutbottom
+    play sound "audio/punch.ogg"
+    show cs worried with vpunch
+    hide cs worried with moveoutbottom
     asylum_worker "Sorry it had to be this way, bud."
     hide asylum_worker with moveoutright
     pause 3.0
