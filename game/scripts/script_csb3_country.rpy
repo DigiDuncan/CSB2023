@@ -258,6 +258,7 @@ label japan_travel:
 
 
 label england:
+    $ england_check = True
     scene black
     pause 1.0
     scene airplane_seats
@@ -979,11 +980,18 @@ label england_done:
     kitty "So, are you leaving now? You managed to do so much in so little time!"
     cs "Yeah, I think I'm gonna go visit another country."
     arceus "Oh really? Where do you think you wanna go?"
-    menu:
-        "Sweden":
-            jump england_sweden
-        "Japan":
-            jump england_japan
+    if (not japan_check) and (not sweden_check):
+        menu:
+            "Sweden":
+                jump england_sweden
+            "Japan":
+                jump england_japan
+    elif sweden_check:
+        jump england_japan
+    elif japan_check:
+        jump england_sweden
+    else:
+        jump going_home
 
 label scott_movent:
     cs "I should wait till he's done with his video."
@@ -1071,6 +1079,7 @@ label england_sweden:
     jump sweden
 
 label japan:
+    $ japan_check = True
     show airplane_seats
     show cs at left
     with fade
@@ -1401,11 +1410,18 @@ label japan_leave_airport:
     show cs at center with moveinleft
     cs "Man, what a time I had here."
     cs "Alright well, where should I go this time?"
-    menu:
-        "Sweden":
-            jump japan_sweden
-        "England":
-            jump japan_england
+    if (not england_check) and (not sweden_check):
+        menu:
+            "Sweden":
+                jump japan_sweden
+            "England":
+                jump japan_england
+    elif sweden_check:
+        jump japan_england
+    elif england_check:
+        jump japan_sweden
+    else:
+        jump going_home
 
 label japan_sweden:
     cs "I think I wanna go to Sweden this time."
