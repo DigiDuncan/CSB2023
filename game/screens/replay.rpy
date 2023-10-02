@@ -48,7 +48,8 @@ screen replay_gallery():
                     spacing maxthumbx - 20
                     xalign 0.5
                     yalign 0.1
-                    text Replay_items[i].name
+                    text Replay_items[i].name:
+                        outlines [(absolute(10), "#000", absolute(0), absolute(0))]
             else:
                 null
         #required to fill in empty grid items (do not change)
