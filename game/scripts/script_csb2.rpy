@@ -15,9 +15,9 @@ label csbii_start:
         "What attack would you like to use?"
         "Punch" (type = "true"):
             jump punch
-        "Chop":
+        "Chop" (type = "true"):
             jump chop
-        "Kick":
+        "Kick" (type = "true"):
             jump kick
         "Special" (type = "bad"):
             jump special
@@ -238,8 +238,8 @@ label caught:
     show blue_light at left
     show red_light at right
     n "The police arrive and CS runs away."
-    show cs flipped with determination
-    hide cs with moveoutleft
+    show cs angry flipped with determination
+    hide cs angry flipped with moveoutleft
     show ed_phone behind blue_light, red_light at left with move
     show copguy behind blue_light, red_light  at right with moveinright
     copguy "Get back here!"
@@ -276,7 +276,7 @@ label jail:
     cs "So what are you in for?"
     arceus "Putting spyware on a politician's phone."
     cs "Yeah, no, that checks out."
-    arceus "And from my recent debug of CSBounciness, I know that you're in for beating up workers at HoHSiS."
+    arceus "And from my recent debug of CSBounciness, I know that you're in for beating up workers at HoH SiS."
     cs "Your what?"
     arceus "Never mind. Why'd you do it, anyhow?"
     show cs prison_worried at left
@@ -288,7 +288,7 @@ label jail:
     cs "Eh... sure, why not, I've played plenty of The Escapists, I should be able to figure it out."
     cs "We should break out at least one other person though."
     arceus "If you say so... Who were you thinking of breaking out?"
-    cs "Let's just break out that guy next to us, I think his name was Anno..."
+    cs "Let's just break out that guy next to us, I think his name was Anno...?"
     arceus "Anno? Sure, I've seen what he's capable of, he may be of use to us."
     cs "Alright then, let's get going!"
 
@@ -359,7 +359,7 @@ label breakout:
     hide arceus
     with dissolve
     n "The three continue to dig for hours, until their hands begin to blister and their spoons break."
-    arceus "Based on my instinct and my tiredness. This should be far enough."
+    arceus "Based on my instinct and my tiredness, this should be far enough."
     n "The now escaped fugitives dig up for their ascent to the surface."
     stop music fadeout 3.0
     music end
