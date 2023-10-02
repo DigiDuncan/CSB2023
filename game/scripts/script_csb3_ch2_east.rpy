@@ -672,8 +672,16 @@ label interstate_69:
     n "A glowing white cut appeared through the trunks of the trees before the remaining trunk also decayed into a mass of white light."
     n "The light began to appear at the base of the bushes before the ground that housed their roots was tossed out, taking the bushes along with it."
     n "Finally, the forest's brush, along with the detritus of other plants that dotted the ecosystem, disappeared in a sea of white flame that left them in a desolate parking lot."
+<<<<<<< Updated upstream
     jump ohio
 
+=======
+    cs "Well that was deeply unsettling."
+    cs "Better than that traffic though."
+    arceus "Where do we go from here though?"
+    billy "We may as well stop to eat and rest for a while."
+    return
+>>>>>>> Stashed changes
 label interstate_94:
     cs "What are you talking about? We're getting on 94."
     cs "We've all been through way too much for me to want to take any unnecessary detours."
