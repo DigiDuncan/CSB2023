@@ -851,14 +851,15 @@ class EnemyDisplayable(renpy.Displayable):
             self.last_tick = st
         dt = st - self.last_tick
         r = renpy.Render(640, self.size[1])
-        if self.damage_indicators:
-            if self.damage_indicators[0].indicator_type == "damage":
-                if not math.cos(20*self.damage_indicators[0].time_on_screen)<0:
+        if self.fighter.name != "Copguy EX":
+            if self.damage_indicators:
+                if self.damage_indicators[0].indicator_type == "damage":
+                    if not math.cos(20*self.damage_indicators[0].time_on_screen)<0:
+                        r.place(self.fighter.sprite, x=0, y=0)
+                else:
                     r.place(self.fighter.sprite, x=0, y=0)
             else:
                 r.place(self.fighter.sprite, x=0, y=0)
-        else:
-            r.place(self.fighter.sprite, x=0, y=0)
         # Making the health bar
         # THIS IS GARBAGE FULL OF MAGIC NUMBERS
         self.red_part = Solid("#FF0000", xsize = 1920 // 9, ysize = 1920 // 54)
@@ -923,8 +924,13 @@ class RPGGameDisplayable(renpy.Displayable):
         r = renpy.Render(1920, 1080)
 
         # These are the enemies
-        for i, e in enumerate(self.enemy_displayables):
-            if not e.fighter.dead:
+        ed = self.enemy_displayables
+        if len(ed) == 1:
+            ed = [None, ed[0], None]
+        elif len(ed) == 2:
+            ed = [ed[0], None, ed[1]]
+        for i, e in enumerate(ed):
+            if e is not None and not e.fighter.dead:
                 r.place(e, x = (1920 * (i * 0.33)), y = (1080 - e.size[1]) // 2)
 
         # This adds in the allies
