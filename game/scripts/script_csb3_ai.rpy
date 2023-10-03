@@ -22,8 +22,6 @@ label csbiii_ai:
     n "CS188 presses the power button, and the hairdryer roars to life, blowing a stream of cool air into the PC."
     luke "Wait, it's actually working! The temperatures are dropping!"
     cs "Of course it is! Nature's own air conditioning!"
-    
-    # TODO: Cut to a time-lapse of the hairdryer blowing air as the temperature readings on the PC monitor gradually decrease.
     linus "CS, I can't believe it. Your hairdryer solution is... actually genius."
     show cs happy at left
     cs "That's how we do things in CS188 style, Linus! Unconventional, unpredictable, but effective."
@@ -41,6 +39,7 @@ label csbiii_ai:
     n "The colleagues in the office glance at each other, surprised and confused by the sudden turn of events."
     cs "Okay, okay. We need a plan. I've got it! We'll use the secret escape tunnel we installed under the office!"
     arceus "Brilliant idea, CS! Lead the way!"
+    show cs flipped with determination
     hide cs with moveoutleft
     hide arceus with moveoutleft
     scene entertunnel with fade
@@ -87,6 +86,7 @@ label csbiii_ai:
     n "The cops are distracted, slipping and sliding on the rubber ducks, as CS188 and Arceus make their getaway."
     hide copguy_ai with moveoutright
     n "The chase scene intensifies as CS188 and Arceus dash through the amusement park, narrowly avoiding capture at every turn."
+    show cs flipped with determination
     hide cs with moveoutleft
     hide arceus with moveoutleft
     scene park2 with fade
