@@ -795,6 +795,32 @@ image red_light:
     linear 0.5 alpha 0.75
     repeat
 
+image copguy_ex_front:
+    "characters/copguy_ex1.png"
+    alignaround (0.5, 0.5)
+    align (0.5, 0.5)
+    pos (0.5, 0.5)
+    linear 1.0 ypos 0.4 clockwise circles 1
+    linear 1.0 ypos 0.5 clockwise circles 1
+    repeat
+
+image copguy_ex_back:
+    "characters/copguy_ex2.png"
+    alignaround (0.5, 0.5)
+    align (0.5, 0.5)
+    pos (0.5, 0.5)
+    linear 1.0 ypos 0.4 counterclockwise circles 1
+    linear 1.0 ypos 0.5 counterclockwise circles 1
+    repeat
+
+layeredimage copguy_ex:
+    always:
+        "copguy_ex_back"
+
+    group ignore_me:
+        attribute wow default:
+            "copguy_ex_front"
+
 # Layers?
 define config.detached_layers += ["broadcast"]
 image stage_screen = Window(Layer("broadcast", clipping = False), background = "minigames/pencil/stage.png")
@@ -956,5 +982,6 @@ label test:
     $ typewriter_text = "Here is some text, bitch\nI have no clue if it works\nI sure hope it does!"
     show typewriter
     pause
-
+    show copguy_ex
+    pause
     $ renpy.full_restart()

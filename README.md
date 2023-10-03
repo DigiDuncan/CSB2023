@@ -38,7 +38,7 @@ See what needs to be done below.
 - [X] All Attacks and Fighters in
 - [X] AI
 - [X] All Sprites done
-    - [ ] Copguy EX Sprite [Pakoo]
+    - [X] Copguy EX Sprite [Pakoo]
 - [X] Animations
 - [X] SFX
 - [X] Reactive Text
@@ -75,7 +75,7 @@ See what needs to be done below.
     - [X] Bios
     - [X] Jukebox
 - [X] Japan
-    - [ ] Script [95%]
+    - [X] Script
     - [X] Backgrounds
     - [X] Characters
     - [X] Transitions
