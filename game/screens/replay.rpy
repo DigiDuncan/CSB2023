@@ -33,7 +33,7 @@ screen replay_gallery():
                 vbox xalign 0.5 yalign 0.5:
                     #locked image, we might change this to be blurred or some shit
                     image Replay_items[i].thumbs:
-                        blur 40
+                        blur 70
                     #image "lockedthumb" #if you're using the gallery use the same image (optional)
         #required to fill in empty grid items (do not change)
         for i in range(end - start + 1, 9):
