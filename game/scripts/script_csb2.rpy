@@ -266,7 +266,7 @@ label jail:
     copguy "Hmm... okay, you're a tough enough guy to handle this cellmate, then."
 
     hide copguy with moveoutright
-    show arceus at right with moveinright
+    show arceus prison at right with moveinright
 
     play music "<loop 0>stal.mp3" volume 0.4
     music stal - C418
@@ -292,7 +292,7 @@ label jail:
     arceus "Anno? Sure, I've seen what he's capable of, he may be of use to us."
     cs "Alright then, let's get going!"
 
-    show arceus at offscreenright
+    show arceus prison at offscreenright
     show cs prison at offscreenleft
     with ease
     jump breakout
@@ -300,7 +300,7 @@ label jail:
 label breakout:
     scene jail_cell
     show cs prison at left
-    show arceus at right
+    show arceus prison at right
     with dissolve
 
     arceus "So, what's the plan? I've been trying to break outta here for five years."
@@ -324,7 +324,7 @@ label breakout:
     music Moongazer - Dr. Awesome
     cs "Key, check."
 
-    show arceus flipped at left with moveinleft
+    show arceus prison flipped at left with moveinleft
     arceus "Uniforms, check."
 
     show anno prison at right with moveinright
@@ -346,7 +346,7 @@ label breakout:
     show cs guard dark at left with easeinleft
     cs "Jeez... I didn't think that would actually work."
 
-    show arceus dark at right with easeinright
+    show arceus guard at right with easeinright
     arceus "You what?" 
     
     show anno guard dark with easeinbottom
@@ -426,7 +426,7 @@ label bordercrossing:
     hide cs
     with dissolve
 
-    show arceus flipped at t_arc_at_tims with ease
+    show arceus full flipped at t_arc_at_tims with ease
 
     arceus "Hi."
     cashier "Can I help you?"
@@ -436,16 +436,20 @@ label bordercrossing:
     show anno
     anno "Wait, huh?"
     hide anno
-    show arceus flipped at t_arc_at_tims
+    show arceus full flipped at t_arc_at_tims
     cashier "Here you go."
+    show arceus full happy flipped
     arceus "That's me!"
+    show arceus full flipped
     arceus "How much is it?"
     cashier "It'll be $18.{nw}"
+    show arceus full happy flipped
     arceus "Here you go! Keep the change."
     arceus "Hi doggy!"
     cashier "You're my favorite customer."
+    show arceus full flipped
     arceus "Thanks a lot! Bye~"
-    show arceus at t_arc_at_tims
+    show arceus full at t_arc_at_tims
     hide arceus with moveoutleft
     cashier "Buh-bye!"
     stop music fadeout 3.0
@@ -467,6 +471,7 @@ label bordercrossing:
     with fade
 
     n "CS, Arceus, and Anno enjoy some well-deserved donuts."
+    show arceus worried
     arceus "Sorry to interrupt you two, but we may have a problem: Those donuts cost me the last of my money. We are going to need to find a way to make some cash."
     scene outside_ltt
     n "CS looks across the street to see Linus Media Group."
@@ -547,10 +552,11 @@ label bordercrossing:
     show anno at right
     show arceus flipped at left
     with fade
-    show cs with moveinleft
+    show cs happy with moveinleft
 
     cs "I did it, I got the job!"
     anno "Woohoo!"
+    show arceus happy flipped
     arceus "Hell yeah!"
 
     anno "Let's celebrate!"
