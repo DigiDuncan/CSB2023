@@ -14,18 +14,18 @@ See what needs to be done below.
 
 ### Big Tasks
 - [X] Ending Screens [Pakoo, Sept. W3]
-- [ ] Menu for Endings [Arc, Sept. W3] [75%]
+- [X] Menu for Endings [Arc, Sept. W3]
 - [ ] Commerical [Pakoo, Sept. W4]
 - [ ] Credits [Digi, Sept. W4]
 - [X] Where are they now? [Digi, Sept. W3]
 - [X] End Fight cutscene [Pakoo/Digi, Sept. W4]
-- [ ] Arceus Art [Kitty, October]
-- [ ] Aria Art [Aria, October]
+- [X] Arceus Art [Kitty, October]
+- [X] Aria Art [Aria, October]
 - [ ] Installer [Digi, Oct. W3]
 
 ### True Ending [ASAP]
 - [ ] Michigan [Aria]
-    - [ ] Script [50%]
+    - [ ] Script [66%]
     - [ ] Backgrounds
     - [ ] Characters
     - [ ] Transitions
@@ -93,14 +93,14 @@ See what needs to be done below.
 - [X] Ending
 
 ### Archival Ending [Pakoo/Baker, October]
-- [ ] 3D Backgrounds [Baker] [60%]
-- [ ] Animated sequences [Baker] [25%]
+- [ ] 3D Backgrounds [Baker] [75%]
+- [ ] Animated sequences [Baker] [50%]
 - [X] Final writing [Pakoo]
-- [ ] Short Archival animation (Error Route) [Pakoo] [75%]
+- [X] Short Archival animation (Error Route) [Pakoo]
 
 ### Passes [All, October W1]
-- [ ] Spelling/Grammar Pass
-- [ ] Transition/Flip Pass [includes flashes]
+- [ ] Spelling/Grammar Pass [50%]
+- [ ] Transition/Flip Pass [includes flashes] [50%]
 - [ ] Sprite Emotion Pass
 - [ ] Sprite Time-of-Day Check
 - [ ] Jukebox/Achievements/Bio Pass
