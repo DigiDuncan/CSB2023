@@ -170,9 +170,10 @@ init python:
         ret = renpy.random.random() < chance
         if ret and id is not None:
             fun_values_seen.add(id)
-            achievement_manager.unlock("F.U.N.")
         elif not ret and id is not None:
             fun_values_seen.remove(id)
+        if ret:
+            achievement_manager.unlock("F.U.N.")
         return ret
 
     def event_happened(id: str) -> bool:
