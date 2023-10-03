@@ -1115,8 +1115,8 @@ label braghohsis:
     show cs disappointed
     pause 1.0
     cs "Fuck."
+    bad_end "Time to bunk\nat Rosen's!" "back_home_alt"
     return
-    bad_end "Time to bunk\nat Rosen's!" "back_home_alt"  
 
 label noairport:
     cs "Nah, I don't wanna go to the airport."

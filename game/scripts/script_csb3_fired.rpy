@@ -782,7 +782,10 @@ label limo_time:
         "Yes"  (type = "good"):
             jump signed_the_contract
         "No"  (type = "bad"):
-            bad_end "Well,\nthat was kinda dumb!" "limo_time"  
+            jump no_contract
+            
+label no_contract:
+    bad_end "Well,\nthat was kinda dumb!" "limo_time"  
 
 label signed_the_contract:
     stop music

@@ -21,6 +21,22 @@ init python:
     #Replay_items.append(ReplayItem(["the thumbnail"], "the_label_from_code", "brief description"))
     Replay_items = []
     Replay_items.append(ReplayItem(["Asylum"], "asylum", "{outlinecolor=#000000}{color=#FF0000}Asylum Ending{/color}{/outlinecolor}"))
+    Replay_items.append(ReplayItem(["Hotwire"], "hotwire", "{outlinecolor=#000000}{color=#FF0000}Grand Theft Failure{/color}{/outlinecolor}"))
+    Replay_items.append(ReplayItem(["Revenge"], "fighthohsis", "{outlinecolor=#000000}{color=#FF0000}Catch These Shitty Hands{/outlinecolor}{/color}"))
+    Replay_items.append(ReplayItem(["FuckUp"], "fuckuphohsis", "{outlinecolor=#000000}{color=#FF0000}RIP House{/color}{/outlinecolor}"))
+    Replay_items.append(ReplayItem(["Brag"], "braghohsis", "{outlinecolor=#000000}{color=#FF0000}RIP Money{/color}{/outlinecolor}"))
+    Replay_items.append(ReplayItem(["FuckingDonkey"], "bad_ramsay", "{outlinecolor=#000000}{color=#FF0000}You Fucking Donkey{/color}{/outlinecolor}"))
+    Replay_items.append(ReplayItem(["TopLoser"], "top_lose", "{outlinecolor=#000000}{color=#FF0000}Top Loser{/color}{/outlinecolor}"))
+    Replay_items.append(ReplayItem(["Scottnt"], "scott_movent", "{outlinecolor=#000000}{color=#FF0000}Scottn't{/color}{/outlinecolor}"))
+    Replay_items.append(ReplayItem(["Misfortune"], "no_contract", "{outlinecolor=#000000}{color=#FF0000}Threw Away Fame{/color}{/outlinecolor}"))
+    Replay_items.append(ReplayItem(["GrandDad"], "flint_car", "{outlinecolor=#000000}{color=#FF0000}GRAND DAD{/color}{/outlinecolor}"))
+    Replay_items.append(ReplayItem(["Premature"], "cops_ltt", "{outlinecolor=#000000}{color=#FF0000}Premature Lore Dumper{/color}{/outlinecolor}"))
+    Replay_items.append(ReplayItem(["GodFail"], "attack_arc", "{outlinecolor=#000000}{color=#FF0000}God Fail{/color}{/outlinecolor}"))
+    Replay_items.append(ReplayItem(["GodSuccess"], "wait_arc", "{outlinecolor=#000000}{color=#FF0000}God Success{/color}{/outlinecolor}"))
+    Replay_items.append(ReplayItem(["Attorney"], "bad_convince", "{outlinecolor=#000000}{color=#FF0000}Attorney's Badge{/color}{/outlinecolor}"))
+    Replay_items.append(ReplayItem(["BadDriver"], "lose_car_game", "{outlinecolor=#000000}{color=#FF0000}Bad Driver{/color}{/outlinecolor}"))
+    Replay_items.append(ReplayItem(["PencilShart"], "lose_pencil_game", "{outlinecolor=#000000}{color=#FF0000}Pencil Sharting Day!{/color}{/outlinecolor}"))
+
 
 
 # a black background screen for the selection
@@ -32,3 +48,18 @@ image replay_locked = "images/replay/replay_lock.jpg"
 # Images are going to be 600 x 338
 #replay thumbnails images setup defined here
 image Asylum = ("images/replay/asylum_bad.png")
+image Hotwire = ("images/replay/hotwire_bad.png")
+image Revenge = ("images/replay/revenge.png")
+image FuckUp = ("images/replay/riphouse.png")
+image Brag = ("images/replay/ripmoney.png")
+image FuckingDonkey = ("images/replay/fuckinraw.png")
+image TopLoser = ("images/replay/toploser.png")
+image Scottnt = ("images/replay/scottnt.png")
+image Misfortune = ("images/replay/misfortune.png")
+image GrandDad = ("images/replay/granddad.png")
+image Premature = ("images/replay/premature.png")
+image GodFail = ("images/replay/godfail.png")
+image GodSuccess = ("images/replay/godsuccess.png")
+image Attorney = ("images/replay/attorney.png")
+image BadDriver = ("images/replay/baddriver.png")
+image PencilShart = ("images/replay/pencilshart.png")

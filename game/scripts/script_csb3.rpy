@@ -487,7 +487,8 @@ label cops_ltt:
     cs "I'm done running Arc. I need to be with LTT."
     arceus "Welp. I tried."
     n "Arc shrugs and walks away, as he goes to escape on his own."
-    hide arceus with moveoutright
+    show arceus flipped with determination
+    hide arceus flipped with moveoutright
     linus "CS, what happened with the cops?! I still have no clue what's going on!"
     show cs
     cs "Look okay, so there were these guys from a company called HoH SiS, who do foundation repair."
