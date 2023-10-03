@@ -48,6 +48,7 @@ label hotwire:
     play sound "<loop 0>siren.ogg" volume 0.5
     show copguy at center with moveinleft
     show cs disappointed
+    show arceus worried
     copguy "I heard the sound of a car window breaking from miles away!"
     copguy "You guys already blew it! Back to the slammer!"
     bad_end "What did Copguy\njust tell you?" "choose_direction"
@@ -57,10 +58,11 @@ label billy_driver:
     n "CS walks over to someone's car parked in the front of the gas station."
     scene gasoutside with fade
     show cs at left with moveinleft
-    show arceus at right with moveinright
+    show arceus worried at right with moveinright
     arceus "Are you crazy? To drive all the way back to New York? In a stranger's car at that."
     arceus "Besides, how are we even going to pay the guy anyways?"
     cs "Well we don't have to go all the way to New York, we could go a small distance and then get another Uber."
+    show arceus angry
     arceus "That would be even more money in tips!"
     n "As the two are agruing, the owner of the car comes up to them."
     "???" "What are you doing next to my car?"
@@ -80,6 +82,7 @@ label billy_driver:
     billy "Absolutely! For only $19.95, I'll take you both to New York!"
     cs "Alright well, it's settled! We have our driver, Arceus!"
     arceus "..."
+    show arceus
     arceus "... What the fuck. Works for me I guess."
     cs "Hell yeah! I call shotgun!"
     n "CS and Arc get into Billy's car."
@@ -225,7 +228,7 @@ label montana:
     hide billy car with fade
     show billy at mid_mid_left
     show cs disappointed at mid_left
-    show arceus flipped at left
+    show arceus worried flipped at left
     with moveinleft
     show cultist at mid_right with moveinright
     cultist "So, do you want to explain what is going on here?"
@@ -235,6 +238,7 @@ label montana:
     cultist "Look, I don't care where you are going."
     show cultist at center with moveinleft
     cultist "We are part of the Blue Branch Cult, and our motto is that we hate everything."
+    show arceus flipped
     arceus "Like, everything?"
     show cultist gun
     n "The cultist aims at Arceus."
@@ -259,6 +263,7 @@ label montana:
     hide cs with moveoutleft
     n "CS starts digging around in the back too."
     arceus "CS, what are you doing?"
+    show arceus worried flipped
     arceus "CS?!"
     show cs fakegod at center with moveinleft
     cs "Look at me! I'm purple!"
@@ -267,6 +272,7 @@ label montana:
     pause 3.0
     stop sound
     $ renpy.music.set_pause(False, "music")
+    show arceus angry flipped
     arceus "CS, what the fuck are you doing...?!"
     arceus "You are going to definitely get us killed!"
     n "Arceus hides behind the car as the cultist leader brings two others with him."
@@ -314,8 +320,10 @@ label montana:
     cs "Hooray! I'm a god now!"
     show arceus flipped at left with moveinleft
     arceus "CS, I don't know how you pull this stuff off."
+    show arceus worried flipped
     arceus "Am I still sleeping?"
     n "Arceus pinches himself."
+    show arceus angry flipped
     arceus "Fuck."
     arceus "How many divine beings and reality benders do we have in this universe anyhow?"
     cs "Alright, back on the road to New York!"
@@ -378,7 +386,7 @@ label south_dakota:
     play music "<loop 0>taiikusai_desu_yo.mp3" volume 0.4
     music Taiikusai Desu Yo - Satoru Kōsaki
     show cs at right with moveinleft
-    show arceus at center with moveinleft
+    show arceus flipped at center with moveinleft
     show billy at left with moveinleft
     billy "Wow, to think that we won a war without the Gopher."
     billy "How did they even communicate without the Jupiter Jack?"
@@ -387,11 +395,11 @@ label south_dakota:
     show arceus flipped at center
     n "Arceus looks over at CS concentrating on something really hard."
     arceus "CS? Are you okay?"
-    show arceus flipped at mid_right with moveinleft
+    show arceus worried flipped at mid_right with moveinleft
     n "As Arceus starts to approach CS, the groups surrounding them all gasp loudly."
     scene csmore
     show cs concentrate at right
-    show arceus at center
+    show arceus worried at center
     show billy at left
     with hpunch
     arceus "Huh?"
@@ -399,7 +407,9 @@ label south_dakota:
     cs "There we go! Fixed!"
     n "Arceus looks back at Mount Rushmore, now with CS, Arceus, and Billy's face on the mountain."
     hide cs with moveoutright
+    show arceus worried flipped
     arceus "You scare me, CS. I don't even like, want to question how or why."
+    show arceus happy flipped
     arceus "{size=-12}I do look pretty cool though."
     stop music fadeout 3.0
     music end
@@ -428,7 +438,7 @@ label nebraska:
     arceus "Let's get out and look for somewhere to eat."
     hide billy car
     show cs at mid_left
-    show arceus at center
+    show arceus flipped at center
     show billy at mid_right
     show pakoo flipped at offscreenleft
     with moveinleft
@@ -493,9 +503,13 @@ label nebraska:
     peppino "The room in the back should be fine, Mr. Stick is out right now, so they can bunk there."
     pakoo "Alright, epic."
     n "Peppino serves the group their pizza."
+    show cs happy
     cs "Damn, this is some good pizza!"
+    show arceus happy flipped
     arceus "Probably some of the best pizza I've ever had."
     billy "Better than my restaurant mini-burgers!"
+    show cs
+    show arceus flipped
     pakoo "Alright well, I should get going, but I hope y'all have a good time doing whatever y'all doing."
     cs "Yep! Take care, Pakoo!"
     hide pakoo with moveoutleft
@@ -852,19 +866,22 @@ label pennsylvania:
     cs "A pencil sharpening competition?"
     n "CS sees visions of an old video in his head."
     cs "I could totally crush that! I gotta sign up!"
-    show arceus at right with moveinright
+    show arceus angry at right with moveinright
     arceus "CS, come on man, I wanna get to your house so I can-"
     hide cs with moveoutright
     n "CS walked towards the convention center before Arceus could finish speaking."
     show billy at left with moveinleft
     billy "Listen, let the guy have fun. You two have been through a lot, right?"
+    show arceus worried
     arceus "I suppose, I just..."
     n "Arceus thinks for a moment."
     arceus "Fuck, I have been kind of a jerk during this whole road trip. Maybe I do need to let go."
+    show arceus
     billy "That's the spirit! Now go cheer on your friend!"
+    show arceus happy
     arceus "I will! Thanks, Billy!"
     billy "Any time!"
-    show arceus flipped with determination
+    show arceus happy flipped with determination
     hide arceus with moveoutright
     n "Arceus runs off to where CS went."
     billy "Now, that's the power of good advice!"
@@ -877,8 +894,10 @@ label pennsylvania:
     signup "...and you said your last name is... 188?"
     cs "Yeah, this confuses everyone."
     cs "Oh, hey Arc! Whatcha doing?"
+    show arceus happy
     arceus "Just came to support my friend."
     cs "Aw, thanks man."
+    show arceus
     signup "OK, that's you all registered. Fuzzy guy, you signing up too?"
     arceus "Nah, I feel like that would be basically cheating."
     cs "OK, well I have to go to the backstage and get set up. See you soon, Arc!"
@@ -987,11 +1006,11 @@ label win_pencil:
     digi "Oh shi-- {w=0.5}uh, I'll be back."
     hide digi onlayer broadcast with moveoutright
     n "Digi runs off."
-    show arceus at t_stagescreen onlayer broadcast with moveinright
+    show arceus happy at t_stagescreen onlayer broadcast with moveinright
     n "Arc runs on stage."
     arceus "Holy shit, CS, you did it! That was amazing!"
     hide arceus onlayer broadcast
-    show cs at t_stagescreen onlayer broadcast
+    show cs happy at t_stagescreen onlayer broadcast
     cs "Thank you! I don't even know what I won!"
     hide cs onlayer broadcast
     show mettaton at t_stagescreen onlayer broadcast
@@ -1029,9 +1048,9 @@ label win_pencil:
     cs "Billy, we got room for one more?"
     n "Billy looks at Digi."
     billy "He and Arc are both pretty small, I think they'll fit in the back just fine."
-    show arceus at right with moveinright
+    show arceus angry at right with moveinright
     arceus "Hey!"
-    show arceus flipped
+    show arceus angry flipped
     hide arceus with moveoutright
     cs "Well, Digi, you got a ride!"
     digi "Thanks so much, man!"
@@ -1054,6 +1073,7 @@ label back_home:
     billy "No problem!"
     cs "Well, I guess I should get some rest."
     cs "If you guys want, we can have a party at my place tomorrow to celebrate all the shit we went through!"
+    show arceus happy flipped
     "Arc and Billy" "Hell yeah!"
     show arceus at left with determination
     hide billy with moveoutleft
@@ -1135,6 +1155,20 @@ label talktohohsis:
     doug "I don't know what I'm doing here, but yeah, good job guys!"
     show cashier at mid_mid_right behind cs with moveinleft
     cashier "Yeah! Go CS!"
+    show pakoo happy at center with moveinleft
+    pakoo "Yeah! Get em, CS!"
+    show peppino at mid_left behind cs with moveinleft
+    peppino "It's pizza time!"
+    show digi at mid_mid_left behind cs with moveinleft
+    digi "I believe in you, CS!"
+    show mettaton at mid_left_left behind cs with moveinleft
+    host "YOU ARE A PENCIL SHARPENING GOD!"
+    show aria at mid_left behind cs with moveinleft
+    aria "You're a pretty cool guy, CS."
+    show scott at center with moveinleft
+    scott "Hey all, Scott here! I love CS and his content!"
+    show pencilguy at mid_mid_left with moveinleft
+    pencil "I knew you were a cool dude!"
     show border_guard at mid_mid_left behind cs with moveinleft
     border_guard "I'm important too, eh!"
     cs "Wow, I don't know how you all got here coincidently, but I appreciate it!"
@@ -1152,6 +1186,13 @@ label talktohohsis:
     hide doug
     hide cashier
     hide border_guard
+    hide pakoo
+    hide peppino
+    hide digi
+    hide mettaton
+    hide aria
+    hide scott
+    hide pencilguy
     with moveoutleft
     ed "We won't do anything to your house, and we are sorry for destroying your laptop."
     cs "And I'm sorry for injuring your coworkers."
