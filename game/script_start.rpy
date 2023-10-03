@@ -800,8 +800,10 @@ image copguy_ex_front:
     alignaround (0.5, 0.5)
     align (0.5, 0.5)
     pos (0.5, 0.5)
-    linear 1.0 ypos 0.4 clockwise circles 1
-    linear 1.0 ypos 0.5 clockwise circles 1
+    pass
+    xpos 0.51
+    ease 2.0 xpos 0.49
+    ease 2.0 xpos 0.51
     repeat
 
 image copguy_ex_back:
@@ -809,8 +811,10 @@ image copguy_ex_back:
     alignaround (0.5, 0.5)
     align (0.5, 0.5)
     pos (0.5, 0.5)
-    linear 1.0 ypos 0.4 counterclockwise circles 1
-    linear 1.0 ypos 0.5 counterclockwise circles 1
+    pass
+    xpos 0.49
+    ease 2.0 xpos 0.51
+    ease 2.0 xpos 0.49
     repeat
 
 layeredimage copguy_ex:
