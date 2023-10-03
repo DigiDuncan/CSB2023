@@ -606,10 +606,13 @@ label final_meetup:
     #TODO: Intro thingy
     show blank at center with moveinright
     blank "Hi!"
+    $ renpy.movie_cutscene("movies/blank.webm")
     show anno at mid_right with moveinright
     anno "Yo."
+    $ renpy.movie_cutscene("movies/anno.webm")
     show midge at right behind anno with moveinright
     midge "Oh hai."
+    $ renpy.movie_cutscene("movies/midge.webm")
     $ achievement_manager.unlock("A Little Help From My Friends")
     if nice_car:
         "Blank, Anno, and Midge" "Nice car!"
@@ -620,6 +623,7 @@ label final_meetup:
     anno "He'll be here soon though, we've been talking to him on the phone."
     n "Anno holds out his phone."
     db "Hey guys! Sorry I'm gonna miss out on the huge battle thing, I had to do some things at home first."
+    $ renpy.movie_cutscene("movies/db.webm")
     db "But I'll gladly encourage you while you all are fighting!"
     cs "No problem DB! Every little bit helps!"
     tate "Y'all ready?"
