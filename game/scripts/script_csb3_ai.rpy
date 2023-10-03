@@ -16,16 +16,20 @@ label csbiii_ai:
     show linus at center with moveinright
     linus "Are you serious, CS? That sounds like a recipe for disaster."
     cs "Disaster? No, no, Linus. Think about it—hairdryers are designed to blow cool air, right? And what's cooler than a gentle breeze? It's foolproof, I tell you!"
-    # TODO: Scene transition to them working on the PC.
+    scene hairdryercoolingsystem
     n "CS188 and the team are attaching a hairdryer to the gaming PC, with everyone watching nervously."
     cs "Aright, folks, brace yourselves. It's time to unleash the \"Hairdryer Cooling System\"!"
     n "CS188 presses the power button, and the hairdryer roars to life, blowing a stream of cool air into the PC."
+    scene tempsdown
     luke "Wait, it's actually working! The temperatures are dropping!"
     cs "Of course it is! Nature's own air conditioning!"
     linus "CS, I can't believe it. Your hairdryer solution is... actually genius."
+    scene linusmedia
     show cs happy at left
+    with fade
     cs "That's how we do things in CS188 style, Linus! Unconventional, unpredictable, but effective."
     n "The team erupts into laughter and applause as the gaming PC's temperatures stabilize."
+    show linus at right with moveinright
     linus "CS, you've proven once again that there's always room for unconventional solutions in the world of tech."
     cs "Thank you, thank you. Just doing my part to keep things interesting."
     n "The team celebrates their successful, albeit unconventional, tech solution."

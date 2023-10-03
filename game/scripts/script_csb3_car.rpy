@@ -257,12 +257,12 @@ label car_dialogue:
     pause 1.0
 
     cs "I wonder what would've happened if we went south."
-    arceus "Back at Compass road?"
+    arceus "Back at Compass Road?"
     cs "Yeah. Who knows how far we might've gotten..."
 
     pause 1.0
 
-    cs "Let's play 20 questions!"
+    cs "Let's play 20 Questions!"
     arceus "Sure."
     cs "OK, it's an object."
     arceus "Is it bigger than a breadbox?"
@@ -307,7 +307,7 @@ label car_dialogue:
 
     pause 1.0
 
-    cs "First of all, let me get something straight: This is a Journal, not a diary. I know what it says on the cover, but when Mom went out to buy this thing I specifically told her to get one that didn’t say “diary” on it."
+    cs "{i}First of all, let me get something straight: This is a journal, not a diary. I know what it says on the cover, but when Mom went out to buy this thing I specifically told her to get one that didn't say “diary” on it."
     arceus "OK, OK, I get it."
 
     pause 1.0
@@ -346,6 +346,11 @@ label car_dialogue:
     tv_billy "The fast and easy way to smash stomach pain from the source!"
     billy "What is this shit? I would never sell this scammy crap!"
     n "Billy changes the channel on the Jupiter Jack."
+
+    pause 1.0
+
+    cs "Wouldn't it be funny if someone was listening to all of this?"
+    arceus "Well they'd be really bored by now."
 
     $ achievement_manager.unlock("Bored")
 

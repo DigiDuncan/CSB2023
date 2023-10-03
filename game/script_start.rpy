@@ -720,7 +720,8 @@ image endingai = "bg/ai/cs_arceus.png"
 image entertunnel = "bg/ai/entrancetotunnel.png"
 image linusmedia = "bg/ai/linusmedia.png"
 image secrettunnel = "bg/ai/secret_tunnel.png"
-image ytx = Transform("ytx.png", zoom = 0.333)
+image hairdryercoolingsystem = "bg/ai/hairdryercoolingsystem.png"
+image tempsdown = "bg/ai/tempsdown.png"
 
 ## Archival
 image car_old = "bg/car_old.png"
@@ -750,6 +751,7 @@ image archival_17 = "bg/archival/archival_17.png"
 image archival_18 = "bg/archival/archival_18.png"
 
 # Static Images
+image ytx = Transform("ytx.png", zoom = 0.333)
 image objection = "objection.png"
 image hold_it = "hold_it.png"
 image scott_border = "scott_border.png"
