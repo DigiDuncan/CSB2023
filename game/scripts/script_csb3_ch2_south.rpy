@@ -1,5 +1,6 @@
 label south:
     cs "Why don't we try going south?"
+    show arceus
     arceus "Alright, what's your plan? Where are we going exactly?"
     cs "I've always kinda wanted to go down to Vegas, we could have a ton of fun down there!"
     arceus "Don't you want to go back home?"

@@ -1,5 +1,6 @@
 label east:
     cs "Well since east is the way home, we should probably go that way."
+    show arceus
     arceus "Alright, that sounds like a good idea."
     n "CS and Arc keep following the road for a while, until they come across a small town."
     scene town with fade

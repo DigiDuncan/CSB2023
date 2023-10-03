@@ -324,7 +324,7 @@ label reviews:
     n "Linus goes to open the door."
     linus "Who's there? Is anyone here?"
     n "Suddenly, Arceus rushes in through the doors."
-    show arceus at mid_right with moveinright
+    show arceus worried at mid_right with moveinright
     arceus "CS! There you are! We need to go ASAP!"
     play music "<loop 0>hired_guns.mp3" volume 0.5
     music Hired Guns - Brian Johnston
@@ -370,6 +370,8 @@ label ytp_edit:
 label ytp_fan:
     $ fanbase = "ytp"
     cs "Well, I want to keep working on YTPs!"
+    stop music fadeout 3.0
+    music end
     show cs angry
     cs "This is like, what I built my life on, and I just..."
     linus "CS? Are you okay? Maybe you should take a chill pill."
@@ -389,7 +391,7 @@ label ytp_fan:
     n "Linus goes to open the door."
     linus "Who's there? Is anyone here?"
     n "Suddenly, Arceus rushes in through the doors."
-    show arceus at mid_right with moveinright
+    show arceus worried at mid_right with moveinright
     arceus "CS! There you are! We need to go ASAP!"
     play music "<loop 0>hired_guns.mp3" volume 0.5
     music Hired Guns - Brian Johnston
@@ -403,7 +405,7 @@ label ytp_fan:
 
 label both_fan:
     $ fanbase = "both"
-    stop music
+    stop music fadeout 3.0
     music end
     cs "You know what? Why don't you all come down to my office."
     linus "I mean... sure. Let's see what you have in stock."
@@ -461,7 +463,7 @@ label both_fan:
     n "Linus goes to open the door."
     linus "Who's there? Is anyone here?"
     n "Suddenly, Arceus rushes in through the doors."
-    show arceus at mid_right with moveinright
+    show arceus worried at mid_right with moveinright
     arceus "CS! There you are! We need to go ASAP!"
     play music "<loop 0>hired_guns.mp3" volume 0.5
     music Hired Guns - Brian Johnston
@@ -512,7 +514,7 @@ label arc_escape:
     cs "I'm sorry guys, I'll try to get you guys caught up after this."
     cs "This is CS, signing out."
     arceus "We have no time for that, CS! We need to go!"
-    scene outside_ltt with determination
+    scene outside_ltt with dissolve
     show cs disappointed at left
     show arceus at right
     with moveinright
@@ -583,7 +585,7 @@ label arc_escape:
     colton "IT'S JULY!"
     scene outside_ltt
     n "Copguy orders the rest of the cops to leave the scene and return back to the station."
-    show copguy at left with moveinleft
+    show copguy flipped at left with moveinleft
     copguy "Damnit, they don't have CS anymore. We're gonna have to look harder for him."
     scene road_to_canada
     show cs disappointed dusk at left
@@ -674,13 +676,14 @@ label arc_escape:
     play sound "<loop 0>siren.ogg" volume 0.1
     n "Arceus squints into the distance, but CS and Arc both immediately recognize the sounds."
     show cs worried dark
+    show arceus worried dark
     "CS and Arceus" "SHIT!"
     arceus "Copguy's back! He's probably looking all over for us! What do we do CS?!"
     jump forest_menu
 label forest_menu:
     scene washington_road
     show cs worried dark at left
-    show arceus dark at right
+    show arceus worried dark at right
     show blue_light at left
     show red_light at right
     menu:
@@ -706,7 +709,7 @@ label ytp_magic_fight:
     pause 7.0
     n "Copguy's car flies off the road and violently crashes into the forest."
     scene washington_road
-    show arceus dark at right
+    show arceus worried dark at right
     show cs concentrate dark at left
     with fade
     pause 3.0
@@ -753,13 +756,13 @@ label attack_arc:
     hide cs
     show csgod flipped at left
     csgod "Time to die, Arceus!"
-    show arceus dark
+    show arceus angry dark
     stop music
     music end
     show csgod flipped at left with vpunch
     play sound "alt_punch.ogg"
     show csgod at t_punchup with move
-    show arceus dark at right with hpunch
+    show arceus angry dark at right with hpunch
     arceus "Really? I've been a god longer than you dummy."
     arceus "Nice try."
     bad_end "There's no weapon\nto free us all!" "forest_menu"
@@ -788,6 +791,7 @@ label wait_arc:
     pause 2.0
     arceus "Hey, we found a town! That's good right?"
     cs "Yep."
+    show arceus worried
     arceus "Dude, are you sure you're okay?"
     arceus "You haven't said anything, like at all for the past several hours."
     cs "I'm fine."
@@ -905,6 +909,7 @@ label wait_forest:
     music Danger Mystery - Toby Fox
     copguy "Hey, you're finally awake."
     arceus "Hey, CS."
+    show arceus worried dark flipped
     arceus "I'm sorry."
     show cs worried dark
     cs "No no no! This can't be happening!"
@@ -944,6 +949,7 @@ label bad_convince:
     hide objection
     cs "Wait a second! I'm not actually CS!"
     cs "I just LOOK like CS!"
+    show arceus worried
     arceus "I mean, he might not be CS?"
     play sound "hold_it.mp3" volume 0.5
     show hold_it at truecenter with hpunch
@@ -963,7 +969,9 @@ label good_convince:
     pause 1.0
     hide objection
     cs "Wait a second! The reason all this happened was because HoH SiS sabotaged my computer!"
+    show arceus worried
     arceus "Wait, what?"
+    show arceus
     copguy "What are you on about?"
     cs "Yes! HoH SiS scammed me out of thousands of dollars to get my foundation fixed, and they also broke my laptop!"
     cs "So afterwards, I wanted to get my revenge!"
@@ -988,7 +996,9 @@ label good_convince:
     show cs disappointed at left
     with dissolve
     cs "How--"
+    show arceus happy
     arceus "I have my ways."
+    show arceus
     copguy "I don't understand, so HoH SiS really did scam you hard, didn't they?"
     copguy "I'm not sure how valid it was for you to push that man off a building..."
     copguy "But I can't argue right now on if that footage is fake or not."
@@ -1015,12 +1025,13 @@ label good_convince:
     arceus "Holy crap, I didn't think that would work."
     cs "Me neither! I'm so glad that they let us go!"
     cs "I don't know how you got that footage, but we are now free once again!"
+    show arceus happy dark
     arceus "Hooray for CS and Arc!"
-    show cs dark at center
-    show arceus dark at center 
+    show cs happy dark at center
+    show arceus happy dark at center 
     with move
-    show cs dark at mid_left_left
-    show arceus dark at mid_right_right
+    show cs happy dark at mid_left_left
+    show arceus happy dark at mid_right_right
     with move
     n "They both high five, and continue heading in the direction of the road."
     stop music fadeout 3.0
@@ -1055,9 +1066,11 @@ label choose_direction:
 
 label north:
     cs "What if we go north?"
+    show arceus worried
     arceus "...What?"
     show cs disappointed
     cs "You said pick a direction!"
+    show arceus
     arceus "To the north is Canada. Where we just came from. Try again."
     show cs
     menu:
@@ -1072,8 +1085,10 @@ label north:
 
 label north2:
     $ achievement_manager.unlock("Can We Go Back?")
+    show arceus angry
     arceus "I literally just said-"
     arceus "Just pick another direction."
+    show arceus
     menu:
         "North":
             jump north2
@@ -1104,6 +1119,7 @@ label west:
 
 label west2:
     cs "Let's try going west again. I'm sure there is something there."
+    show arceus worried
     arceus "Uhm, okay... Maybe we've missed something."
     n "CS and Arc run into the Pacific, again."
     scene washington_road dusk
@@ -1122,12 +1138,13 @@ label west2:
 
 label west3:
     cs "Nah come on, there is definitely SOMETHING we can find west."
+    show arceus worried
     arceus "I really don't want to go there again..."
     cs "Nah, we got this, for sure this time."
     n "CS and Arc find a cool looking crab, but still just the ocean again."
     scene washington_road
     show cs dark at left
-    show arceus dark at right
+    show arceus angry dark at right
     cs "Hey! that's quite an epic crustacean!"
     arceus "Alright cool, can we pick another direction that ISN'T west this time?"
     menu:
@@ -1145,8 +1162,8 @@ label west4:
     arceus "... Something tells me you were in an asylum for a bit..."
     n "CS and Arc surprisingly, find the ocean again."
     scene washington_road morning
-    show cs at left
-    show arceus at right
+    show cs happy at left
+    show arceus angry at right
     menu:
         "North":
             jump north
@@ -1161,7 +1178,7 @@ label west5:
     arceus "..."
     scene washington_road day
     show cs at left
-    show arceus at right
+    show arceus angry at right
     menu:
         "North":
             jump north
@@ -1176,7 +1193,7 @@ label west6:
     arceus "..."
     scene washington_road dusk
     show cs dusk at left
-    show arceus dusk at right
+    show arceus angry dusk at right
     menu:
         "North":
             jump north
@@ -1191,7 +1208,7 @@ label west7:
     arceus "..."
     scene washington_road
     show cs dark at left
-    show arceus dark at right
+    show arceus angry dark at right
     menu:
         "North":
             jump north
@@ -1207,7 +1224,7 @@ label west8:
     arceus "Player. {w=0.5}Stop. {w=0.5}Going. {w=0.5}West."
     scene washington_road morning
     show cs at left
-    show arceus at right
+    show arceus angry at right
     menu:
         "North":
             jump north
