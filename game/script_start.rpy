@@ -7,8 +7,6 @@ init -10 python:
 
 # Text beeps
 init python:
-    import re
-
     renpy.music.register_channel("beep", "voice", loop = True)
     def char_callback(event, name = None, beep = None, play_beeps = True, **kwargs):
         if name:
