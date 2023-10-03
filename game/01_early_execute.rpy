@@ -166,7 +166,8 @@ init python:
     def fun_value(rarity: int, id: str = None) -> bool:
         if not preferences.bounciness_enable:
             return False
-        chance = ease_exp(1 / rarity, 1, 0, 100, preferences.csbounciness)
+        r = ease_linear(rarity, 1, 0, 100, preferences.csbounciness)
+        chance = 1 / r
         ret = renpy.random.random() < chance
         if ret and id is not None:
             fun_values_seen.add(id)
