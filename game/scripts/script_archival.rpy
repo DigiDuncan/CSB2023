@@ -156,64 +156,141 @@ label archival:
     n "…"
     n "…"
     n "…"
-    play music "<loop 0>take_trip.mp3" volume 0.5
-    music "Take a Trip from Me - u4ia"
     scene archival_1 with fade
+    play music "<loop 0>take_trip.mp3" volume 0.7
+    music "Take a Trip from Me - u4ia"
+    show cs disappointed at center with moveintop
+    hide cs with moveoutbottom
     n "A loud glass breaking sound is heard, and CS finds himself in a pool of glowing cyan liquid."
 
     # NOTE: From this part on, if we are doing the animated thing, then the text should stop here.
     # However, I might as well write out this whole part just in case we need to use it. It'll explain
     # the scene better.
-
+    show cs disappointed at center with moveinbottom
     n "CS picks himself up off the glass and goo, and looks ahead of him in awe."
-    scene archival_6 with fade
+    scene archival_6 with dissolve
     n "There are tons of glowing cyan tanks full of liquid, with hundreds of them stretching on in front of him, and rows of them to his left and right."
     n "They are also stacked on one another, about 20-30 of them, reaching up to the ceiling of this massive hangar-like facility."
-    scene archival_2 with fade
+    scene archival_2 with dissolve
+    show cs disappointed at mid_left with moveinleft
     n "CS walks around this giant place, glancing at all of the tanks around him."
     n "CS walks over to one of them, and peers inside to see if he can see anything."
-    scene archival_4 with fade
+    hide cs with moveoutright
+    scene archival_4 with dissolve
     n "A faint voice can be heard, one that sounds like his own."
     n "CS then sees a blurry vision of what looks like a version of him without his dress or cat ears, playing some kind of game."
-    scene archival_5 with fade
-    n "He realizes that the game that he is playing is the world that CS-ocola lives in, and it looks like CS is making fun or poking fun at his world."
+    scene archival_5
+    show cs disappointed
+    with dissolve
+    n "He realizes that the game that he is playing is the world that CS lives in, and it looks like CS is making fun or poking fun at his world."
+    show cs scared
     n "Before CS can really take all this in though, a few guards at the end of the building yell something at him."
-    n "The guards are wearing tophats as well, with a black suit, black dress pants, and a white undershirt. They seem to have different color ties based on their hair color. The guard's hair is down to their neck at least, and is kinda spiky / curls up. (I'll draw references later anyways)"
+    n "The guards are wearing tophats as well, with a black suit, black dress pants, and a white undershirt."
     n "The guards also have rifles, something similar or equivalent to an M4A1."
-    scene archival_3 with fade
+    scene archival_3 with dissolve
+    show cs worried at right with moveinleft
+    show cs worried flipped with determination
     n "The guards start to chase after CS, and he runs a bit as well and hides behind one of the canisters."
+    show hart1 at center
+    show hart2 at left
+    with moveinleft
     n "The guards come around the corner, and start firing at CS as he sprints out of there."
-    scene archival_7 with fade
+    show cs worried with determination
+    hide cs with moveoutright
+    play sound "<loop 0>hks2.wav" volume 0.7
+    pause 0.1
+    play sound "<loop 0>hks1.wav" volume 0.7
+    pause 0.1
+    play sound "<loop 0>hks2.wav" volume 0.7
+    pause 0.1
+    play sound "<loop 0>hks1.wav" volume 0.7
+    pause 0.1
+    play sound "<loop 0>hks2.wav" volume 0.7
+    hide hart1 with moveoutright
+    hide hart2 with moveoutright
+    scene archival_7 with dissolve
+    show cs worried at offscreenleft
+    hide cs worried with moveoutright
     n "CS starts weaving between the canisters to try to lose them."
+    play sound "<loop 0>hks2.wav" volume 0.7
+    pause 0.1
+    play sound "<loop 0>hks1.wav" volume 0.7
+    pause 0.1
+    play sound "<loop 0>hks2.wav" volume 0.7
+    pause 0.1
+    play sound "<loop 0>hks1.wav" volume 0.7
+    show hart1 at offscreenleft
+    hide hart1 with moveoutright
+    show hart2 at offscreenleft
+    hide hart2 with moveoutright
     n "After he finally manages to make it to the end of the building, he runs along the side to try to find an exit."
-    scene archival_8 with fade
-    n "While the guards are still firing at him while running, he finds a set of doors that leads him into a small hallway that opens up into another large area. This one looks more like a commons room, with a bunch of guys who look like the ones back in the CSB1 simulation part."
-    scene archival_7 with fade
-    n "Everyone starts screaming and running as the people with the guns start firing again, as a bunch of alarms go off, echoing throughout the whole place. The alarms start yelling:"
+    scene archival_8 with dissolve
+    n "While the guards are still firing at him while running, he finds a set of doors that leads him into a small hallway that opens up into another large area."
+    scene archival_7 with dissolve
+    show cs worried at offscreenleft
+    hide cs worried with moveoutright
+    play sound "<loop 0>hks2.wav" volume 0.7
+    pause 0.1
+    play sound "<loop 0>hks1.wav" volume 0.7
+    pause 0.1
+    play sound "<loop 0>hks2.wav" volume 0.7
+    pause 0.1
+    play sound "<loop 0>hks1.wav" volume 0.7
+    pause 0.1
+    play sound "<loop 0>hks2.wav" volume 0.7
+    pause 0.1
+    play sound "<loop 0>hks1.wav" volume 0.7
+    show hart1 at offscreenleft
+    hide hart1 with moveoutright
+    show hart2 at offscreenleft
+    hide hart2 with moveoutright
+    n "The people with the guns start firing again, as a bunch of alarms go off, echoing throughout the whole place. The alarms start yelling:"
+    scene archival_5 with dissolve
+    show cs scared at center with moveinleft
+    play sound "<loop 0>siren.ogg" loop volume 0.6
     n "\"Warning! Warning! Memory Breach at Sector 4 Foxtrot Kilo 17! Entity Charlie Sierra Bravo has breached. Please evacuate to Foxtrot Kilo 16 or below immediately.\""
-    n "The alarm repeats itself about 5-10 times, while CS is still running , zigzagging around the chaos."
-    scene archival_9 with fade
+    n "The alarm repeats itself, while CS is still running, zigzagging around the chaos."
+    hide cs with moveoutright
+    show hart1 at offscreenleft
+    hide hart1 with moveoutright
+    show hart2 at offscreenleft
+    hide hart2 with moveoutright
+    scene archival_9 with dissolve
     n "CS runs into another hallway that is now a lot longer, with a lot more turns. CS runs straight for a bit, then turns left when he hears the gunfire. CS switches between going left and right."
-    scene archival_10 with fade
-    scene archival_11 with fade
-    scene archival_12 with fade
+    scene archival_10 with dissolve
+    scene archival_11 with dissolve
+    scene archival_12 with dissolve
     n "After a while, CS continues running straight until he sees a sign that says \"STATION 1: >>>\"."
     n "CS runs down the exit, and follows the signs while running down the hallway."
-    scene archival_14 with fade
-    n "While CS is running, he sees a bunch of sliding metal doors slowly start closing ahead of him."
-    n "CS manages to make it through the set of closing doors in time, but so do the guards still behind him."
-    scene archival_15 with fade
-    n "A bigger sign that clarifies the station is here hangs ahead of him as the last set of doors open to reveal an opening to a big open area (but not as big as the last buildings) where a tram car is waiting for him on the rail."
-    scene archival_16 with fade
-    scene archival_17 with fade
-    scene archival_13 with fade
-    n "CS makes one last sprint to the tram, as he gets in on time as the door slowly shuts right before the guards can get in. CS goes over to the console in the front of the tram and hits the giant forward button. The tram slowly starts to take off, as the guards back away from the tram and pull out what looks like walkie  talkies."
-    scene archival_18 with fade
+    scene archival_14 with dissolve
+    n "While CS is running, he sees a bunch of stairs leading down ahead of him."
+    n "CS manages to make it down the stairs in time, but so do the guards still behind him."
+    scene archival_15 with dissolve
+    stop sound fadeout 3.0
+    show cs scared at mid_left with moveinleft
+    n "A bigger sign that clarifies the station is here hangs ahead of him as the last set of doors open to reveal an opening to a train station, where a tram car is waiting for him on the rail."
+    hide cs with moveoutright
+    scene archival_16 with dissolve
+    show cs scared at center with moveinleft
+    n "CS makes one last sprint to the tram, as the door to the tram starts to close as he rushes inside."
+    hide cs with moveoutright
+    stop music fadeout 3.0
+    scene archival_13 with dissolve
+    play music "<loop 0>take_trip2.mp3" volume 0.5
+    n "As he gets in on time as the door slowly shuts right before the guards can get in. CS goes over to the console in the front of the tram and hits the giant forward button."
+    scene archival_15
+    show hart1 at left
+    show hart2 at center
+    with dissolve
+    n "The tram slowly starts to take off, as the guards back away from the tram and pull out what looks like walkie talkies."
+    scene archival_18
+    show cs disappointed at center
+    with dissolve
     n "CS looks ahead and takes a bit of a breather, and the tram starts to speed up. The tram turns off to the left, as an opening to another rail appears. The tram gets onto the lane, and starts speeding incredibly fast."
     n "CS looks to his right, as he sees these giant facilities fly past him. "
     n "After about 20 of the facilities fly by, the tram suddenly stops. CS looks around, confused, and then he looks to his left."
     n "To his left, as a long, endless looking hallway with a blinding light filling up the hallway. The tram slowly starts to rotate onto the light hallway's rail."
-    n "The tram then starts speeding into the light at ludicrous speeds, as CS panics and sees the light envelope the outside of the tram. As Cs looks around, he can see glimpses of memories of places he's been to, rushing past him. There are even some places that he doesn't recognize."
+    n "The tram then starts speeding into the light at ludicrous speeds, as CS panics and sees the light envelope the outside of the tram. As Cs looks around, he can see glimpses of memories of places he's been to, rushing past him."
     n "CS panics and tries to stop the train, but it is no use. A message appears at the top of the tram on a panel, that shows someone who looks like one of the guards waving at him, with their tongue out."
     n "CS realizes that there is nothing he can do, and closes his eyes. The tram seems to be going faster, as the light seems to be getting brighter. All of a sudden the tram, the light, and everything disappears."
     scene black with dissolve

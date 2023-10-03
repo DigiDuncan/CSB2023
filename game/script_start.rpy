@@ -499,6 +499,8 @@ image scott_pres = "characters/scott_pres.png"
 image miku = "characters/miku.png"
 image sayori = "characters/sayori.png"
 image car = "characters/car.png"
+image hart1 = "characters/hart1.png"
+image hart2 = "characters/hart2.png"
 
 # Background Images
 ## CSBI
