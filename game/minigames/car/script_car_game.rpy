@@ -211,7 +211,7 @@ label play_cargame:
         $ achievement_manager.unlock("Blaster Disaster")
         jump after_ufo
     else:
-        bad_end "100%\nUnsatisfied." "iowa"
+        bad_end "100 percent\nunsatisfied." "iowa"
 
 label cargame_done:
     show arceus

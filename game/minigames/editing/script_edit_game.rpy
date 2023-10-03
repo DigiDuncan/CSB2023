@@ -116,6 +116,8 @@ init python:
             r.blit(score_renderer, (50, 950))
             left_renderer = renpy.render(Text(str(TOTAL_ROUNDS - self.attempts) + " cuts left!", size=72), 1920, 1080, st, at)
             r.blit(left_renderer, (50, 1000))
+            middle_renderer = renpy.render(Text("Press [[SPACE] to cut!", size=72), 1920, 1080, st, at)
+            r.blit(middle_renderer, (900, 1000))
 
             # Return if game over
             if self.attempts >= TOTAL_ROUNDS:

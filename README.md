@@ -53,7 +53,7 @@ See what needs to be done below.
 - [X] Music
 - [X] Bios
 - [X] Jukebox
-- [ ] Borderlands Intros
+- [X] Borderlands Intros
 
 ### Fired Ending [Digi, Sept. W2]
 - [X] Script
