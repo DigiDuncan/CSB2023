@@ -16,6 +16,7 @@
 - alleZSoyez
 - UndeadKitty
 - blanknam3d
+- Ges "DefinitelyNotGes"
 - Aria "Estroteric"
 - Midgalicis
 - db05
@@ -32,7 +33,12 @@
 **Backend Programming:** DigiDuncan  
 **Frontend Programming:** Arceus3251  
 **Alpha Testing:** Arceus3251  
-**Beta Testing:** `# TODO: Beta Testers Here`  
+**Beta Testing:**
+- alleSSoyez
+- 4Bakers
+- BubbleTheSlime
+- meancarnavor
+- Mikapara
 *with help from the Ren'Py Discord community*  
 
 **Kinetic Text Tags** *by* Daniel Westfall  
@@ -155,11 +161,14 @@
 - Project SEKAI
     - Real World
 
+# TODO: THIS IS MISSING A LOT
+
 ## Art
 **CSocola Sprites:** Greta "@lovelycloud"  
 **Arceus Sprites:** UndeadKitty  
 **DigiDuncan Sprites:** Yukio "@nyutral"  
-**Aria Sprites:** Unknown
+**Aria Sprites:** Aria "@estroteric"
+**Bubble Sprites:** BubbleTheSlime
 
 **Addtl. Art:**
 - EddieJustEddie
@@ -172,7 +181,8 @@
 **Background Manager:** Pakoo  
 **Addtl. Background Help:**
 - Arceus3251
-- DigiDuncan  
+- DigiDuncan
+**3D Rendering:** 4Bakers  
 **Sprite Manager:** Pakoo
 
 ## Misc.
