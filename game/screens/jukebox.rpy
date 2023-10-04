@@ -30,6 +30,7 @@ init python:
         "PASSPORT.MID - George Stone": "passport.mp3",
         #True route
         "Good Eatin - ClascyJitto": "good_eatin.mp3",
+        "Supernova - Laszlo": "supernova.mp3",
         "Airport Counter - Kazumi Totaka": "airport_counter.mp3",
         "Hired Guns - Brian Johnston": "hired_guns.mp3",
         "Undyne - Toby Fox": "undyne.mp3",
@@ -52,6 +53,7 @@ init python:
         "Funiculi Holiday - ClascyJitto": "funiculi_holiday.mp3",
         "Speedy Comet - Mahito Yokota": "speedy_comet.mp3",
         "Breakout - Shoichiro Sakamoto": "breakout.mp3",
+        "Rude Buster - Toby Fox": "rude_buster.mp3",
         "Park Theme - Lorin Nelson": "park_theme.mp3",
         "Alfred's Theme - Eminem": "hohsisremix.mp3",
         "Track 3 - Weatherscan": "track3.mp3",

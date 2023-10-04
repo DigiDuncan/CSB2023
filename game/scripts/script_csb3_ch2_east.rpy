@@ -976,6 +976,7 @@ label pennsylvania:
     host "1..."
     n "Both competitors hover their hands over the pencils..."
     host "GO!"
+    music Rude Buster - Toby Fox
     jump play_pencilgame
 
 label win_pencil:
