@@ -1291,6 +1291,7 @@ label streaming:
     stop music fadeout 1.0   
     play music "secret/credits.mp3" volume 0.5
     centered "Pretend there's credits here."
+    $ renpy.end_replay()
     jump secret2
 
 label ytp_ending:
@@ -1311,6 +1312,7 @@ label ytp_ending:
     stop music fadeout 1.0   
     play music "secret/credits.mp3" volume 0.5
     centered "Pretend there's credits here."
+    $ renpy.end_replay()
     jump secret2
 
 label ltt_ending:
@@ -1334,6 +1336,7 @@ label ltt_ending:
     stop music fadeout 1.0   
     play music "secret/credits.mp3" volume 0.5
     centered "Pretend there's credits here."
+    $ renpy.end_replay()
     jump secret2
 
 label fighthohsis:

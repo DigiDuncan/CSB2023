@@ -36,6 +36,13 @@ init python:
     Replay_items.append(ReplayItem(["Attorney"], "bad_convince", "{outlinecolor=#000000}{color=#FF0000}Attorney's Badge{/color}{/outlinecolor}"))
     Replay_items.append(ReplayItem(["BadDriver"], "lose_car_game", "{outlinecolor=#000000}{color=#FF0000}Bad Driver{/color}{/outlinecolor}"))
     Replay_items.append(ReplayItem(["PencilShart"], "lose_pencil_game", "{outlinecolor=#000000}{color=#FF0000}Pencil Sharting Day!{/color}{/outlinecolor}"))
+    # Like 4 endings use the same fucking screen
+    Replay_items.append(ReplayItem(["CopCall"], "copsathohsis", "{outlinecolor=#000000}{color=#00FF00}Call The Cops{/color}{/outlinecolor}"))
+    Replay_items.append(ReplayItem(["CopCall"], "true_ending", "{outlinecolor=#000000}{color=#00FF00}True Ending{/color}{/outlinecolor}"))
+    Replay_items.append(ReplayItem(["CopCall"], "ytp_ending", "{outlinecolor=#000000}{color=#00FF00}YTP Ending{/color}{/outlinecolor}"))
+    Replay_items.append(ReplayItem(["CopCall"], "ltt_ending", "{outlinecolor=#000000}{color=#00FF00}LTT Ending{/color}{/outlinecolor}"))
+    
+    
 
 
 
@@ -63,3 +70,4 @@ image GodSuccess = ("images/replay/godsuccess.png")
 image Attorney = ("images/replay/attorney.png")
 image BadDriver = ("images/replay/baddriver.png")
 image PencilShart = ("images/replay/pencilshart.png")
+image CopCall = ("images/replay/callthecops.png")
