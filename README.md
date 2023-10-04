@@ -58,7 +58,7 @@ See what needs to be done below.
 ### Fired Ending [Digi, Sept. W2]
 - [X] Script
 - [X] Backgrounds
-- [X] Characters [minus Ges]
+- [X] Characters
 - [X] Transitions
 - [X] Music
 - [ ] Instrumentals
