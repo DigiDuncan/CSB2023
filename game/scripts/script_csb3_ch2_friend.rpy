@@ -376,7 +376,7 @@ label car_ride_2:
     with fade
     show cs dark angry at center
     show tate dark at mid_left
-    show arceus dark flipped at mid_left_left
+    show arceus angry dark flipped at mid_left_left
     show digi dark flipped at left
     with moveinleft
     copguy "Well? What do you think CS? You ready to go back to jail?"
@@ -408,9 +408,11 @@ label cs_rage:
     cs "Guys let's chase after him!"
     play music "triage_at_dawn.mp3" loop volume 0.6
     music Triage At Dawn - Kelly Bailey
+    show arceus worried dark flipped
     arceus "CS, we need a minute. We just fought a tank."
     cs "No time for that! We need to stop him now!"
     tate "CS, no, we really gotta wait a sec."
+    show arceus dark flipped
     digi "We're never gonna catch up with him at this point anyways..."
     cs "Fuck! I can't believe this!"
     show cs dark angry with determination
@@ -465,8 +467,10 @@ label cs_rage:
     cs "I'm all good, don't worry."
     cs "Sorry I got upset, I just need to relax."
     cs "Arc, you drive, I'm gonna lie down in the backseat."
+    show arceus worried dark flipped
     arceus "You need, anything else?"
     cs "I'm good, just some rest."
+    show arceus dark flipped
     hide cs with moveoutleft
     n "CS heads into the backseat of the car and lies down."
     show digi dark at center with move

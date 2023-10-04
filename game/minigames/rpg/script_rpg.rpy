@@ -60,7 +60,7 @@ label rpg_cop_fight_2:
             mika
             kitty
             tate
-            copguy1
+            copguy
         scale 1.0
         on_win "after_cop_fight"
         on_lose "rpg_cop_fight_2"
@@ -165,20 +165,18 @@ label rpg_final_fight_2:
         on_lose "rpg_final_fight_1"
 
 label rpg_final_fight_3:
-    $ final_fighters_3 = ["CS_FINAL", "ARCEUS", "PAKOO", "MIKA", "KITTY", "TATE", "ARIA", "DIGI", "NOVA", "BLANK", "MIDGE", "ANNO", "DB05", "NONE"]
-    $ narrator("Choose a party member! (1/4)", interact = False)
-    $ party_1 = renpy.display_menu([(a.title() if a != "CS_FINAL" else "CS", a) for a in final_fighters_3], screen="ucn_choice")
-    $ narrator("Choose a party member! (2/4)", interact = False)
+    $ final_fighters_3 = ["ARCEUS", "PAKOO", "MIKA", "KITTY", "TATE", "ARIA", "DIGI", "NOVA", "BLANK", "MIDGE", "ANNO", "DB05", "NONE"]
+    $ narrator("Choose a party member! (1/3)", interact = False)
     $ party_2 = renpy.display_menu([(a.title() if a != "CS_FINAL" else "CS", a) for a in final_fighters_3], screen="ucn_choice")
-    $ narrator("Choose a party member! (3/4)", interact = False)
+    $ narrator("Choose a party member! (2/3)", interact = False)
     $ party_3 = renpy.display_menu([(a.title() if a != "CS_FINAL" else "CS", a) for a in final_fighters_3], screen="ucn_choice")
-    $ narrator("Choose a party member! (4/4)", interact = False)
+    $ narrator("Choose a party member! (3/3)", interact = False)
     $ party_4 = renpy.display_menu([(a.title() if a != "CS_FINAL" else "CS", a) for a in final_fighters_3], screen="ucn_choice")
     rpg:
         bg "images/bg/war_torn_4.png"
         music "audio/trans_atlantic.mp3"
         fighters:
-            $party_1
+            cs_final
             $party_2
             $party_3
             $party_4
