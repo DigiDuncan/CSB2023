@@ -300,6 +300,8 @@ label archival:
     n "The Archival Ending."
     n "CS has been deleted, and has been sent to the beginning of time itself."
     pause 5.0
+    play music "<loop 0>everybody_wants.mp3" volume 0.7
+    music "Everybody Wants To Rule The World - Tears For Fears"
     n "Addy gets a phone call."
     addy "Hello? Who is this?"
     iris "Hello, Addy."
@@ -315,6 +317,8 @@ label archival:
     addy "I guess that's what I get when I let these guys with half a brain run this place."
     addy "I'll have to go clean up the mess later, I can still hear alarms."
     addy "In the meantime, let's get this memory prepared."
+    stop music fadeout 3.0
+    music end
     n "Addy pulls out a memory jar they've been saving in a cabinet in their office."
     addy "Thank goodness I saved this."
     addy "Let's see if this works."

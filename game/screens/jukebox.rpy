@@ -94,6 +94,8 @@ init python:
         "Lisbon Fever - Dr. Awesome": "lisbon_fever.mp3",
         "Conflict - David Vanacore": "conflict.mp3",
         "Tumultuous - David Vanacore": "tumultuous.mp3",
+        "Lego Island Theme - Lorin Nelson": "lego_island.ogg",
+        "Everybody Wants To Rule The World - Tears For Fears": "everybody_wants.mp3",
         "Insane Personalities - Lizardking": "insane_personalities.mp3",
         "Echoing? - Banana": "killcops.mp3"
     }
