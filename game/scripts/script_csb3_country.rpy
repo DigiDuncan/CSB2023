@@ -1572,6 +1572,7 @@ label going_home:
     cs "Maybe, I should get 2 more flags."
     stop music fadeout 1.0
     music end
+    $ renpy.end_replay()
     return
 
 label sweden:

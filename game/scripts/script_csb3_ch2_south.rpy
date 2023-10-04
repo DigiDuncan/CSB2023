@@ -1131,6 +1131,7 @@ label lego_ending:
     music end  
     play music "secret/credits.mp3" volume 0.5
     centered "Pretend there's credits here."
+    $ renpy.end_replay()
     jump secret2
 
 label braghohsis:
@@ -1326,7 +1327,7 @@ label reality_break:
     billy_far "You know what? I'm going to need fourty-seven million dollars for this gig, guaranteed!"
     cs "Fine, fine."
     show arceus angry flipped
-    show arceus angry at offscreenright with move
+    show arceus angry flipped at offscreenright with move
     direct "Alright, everyone down for another take tonight?"
     n "Nobody objects."
     direct "Okay then, everyone take your places, we'll resume with the Vegas scene."
@@ -1340,4 +1341,5 @@ label reality_break:
     show cscar2 with moveinright
     direct "Aaaaaand...{nw}"
     $ returning_from_blooper = True
+    $ renpy.end_replay()
     jump vegas

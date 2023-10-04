@@ -41,6 +41,15 @@ init python:
     Replay_items.append(ReplayItem(["CopCall"], "true_ending", "{outlinecolor=#000000}{color=#00FF00}True Ending{/color}{/outlinecolor}"))
     Replay_items.append(ReplayItem(["CopCall"], "ytp_ending", "{outlinecolor=#000000}{color=#00FF00}YTP Ending{/color}{/outlinecolor}"))
     Replay_items.append(ReplayItem(["CopCall"], "ltt_ending", "{outlinecolor=#000000}{color=#00FF00}LTT Ending{/color}{/outlinecolor}"))
+    Replay_items.append(ReplayItem(["Archival"], "archival", "{outlinecolor=#000000}{color=#AA00CC}Archival Ending{/color}{/outlinecolor}"))
+    Replay_items.append(ReplayItem(["AIEnd"], "csbiii_ai", "{outlinecolor=#000000}{color=#AA00CC}AI Ending{/color}{/outlinecolor}"))
+    Replay_items.append(ReplayItem(["LegoLTT"], "lego_ending", "{outlinecolor=#000000}{color=#00FF00}Lego Ending{/color}{/outlinecolor}"))
+    Replay_items.append(ReplayItem(["LegoLTT"], "ltt_ending_alt", "{outlinecolor=#000000}{color=#00FF00}LTT Ending ALT{/color}{/outlinecolor}"))
+    Replay_items.append(ReplayItem(["BrokenReality"], "reality_break", "{outlinecolor=#000000}{color=#AA00CC}Broken Reality{/color}{/outlinecolor}"))
+    Replay_items.append(ReplayItem(["Rockstar"], "final_tour_bus", "{outlinecolor=#000000}{color=#00FF00}Rockstar{/color}{/outlinecolor}"))
+    Replay_items.append(ReplayItem(["FriendEnd"], "car_slam", "{outlinecolor=#000000}{color=#FFCC00}Friend Ending{/color}{/outlinecolor}"))
+    Replay_items.append(ReplayItem(["CountryEnd"], "going_home", "{outlinecolor=#000000}{color=#0000FF}Country Ending{/color}{/outlinecolor}"))
+    
     
     
 
@@ -71,3 +80,10 @@ image Attorney = ("images/replay/attorney.png")
 image BadDriver = ("images/replay/baddriver.png")
 image PencilShart = ("images/replay/pencilshart.png")
 image CopCall = ("images/replay/callthecops.png")
+image Archival = ("images/replay/archival.png")
+image AIEnd = ("images/replay/aiend.png")
+image LegoLTT = ("images/replay/legoltt.png")
+image BrokenReality = ("images/replay/realitybreak.png")
+image Rockstar = ("images/replay/rockstar.png")
+image FriendEnd = ("images/replay/friendending.png")
+image CountryEnd = ("images/replay/countryend.png")

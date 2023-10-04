@@ -323,4 +323,5 @@ label archival:
     addy "Thank goodness I saved this."
     addy "Let's see if this works."
     $ renpy.movie_cutscene("movies/archivalend.mp4")
+    $ renpy.end_replay
     return
