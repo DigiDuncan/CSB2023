@@ -9,7 +9,9 @@ init python:
     global music_map
     #Name of Entry followed by file name
     music_map = {
+        #Title
         "BUBBLE TEA - darkcat": "bubble_tea.mp3",
+        #CSB1
         "Let's hear my baby - Walkman": "lets_hear_my_baby.mp3",
         "CANYON.MID - George Stone": "canyon.mp3",
         "Summer Clearance Sale - BEST MUSIC": "summer_clearance_sale.mp3",
@@ -17,6 +19,7 @@ init python:
         "Alfred Hitchcock Intro Theme - Charles Gounod": "hohsis_theme.mp3",
         "Super Friendly - Kevin Macleod": "super_friendly.mp3",
         "Time for a Smackdown! - Mr. Sauceman": "time_for_a_smackdown.mp3",
+        #CSB2
         "Card Castle - Toby Fox": "card_castle.mp3",
         "Basement - Toby Fox": "basement.mp3",
         "stal - C418": "stal.mp3",
@@ -25,6 +28,7 @@ init python:
         "The Star Spangled Banner - THE UNITED STATES OF AMERICA": "star_spangled_banner.mp3",
         "Buy Something Will Ya! - Keiichi Suzuki": "buy_something.mp3",
         "PASSPORT.MID - George Stone": "passport.mp3",
+        #True route
         "Good Eatin - ClascyJitto": "good_eatin.mp3",
         "Hired Guns - Brian Johnston": "hired_guns.mp3",
         "Undyne - Toby Fox": "undyne.mp3",
@@ -35,13 +39,8 @@ init python:
         "Pressing Pursuit ~ Cornered - Masakazu Sugimori": "pressing_pursuit_cornered.mp3",
         "Bun Guster - Satoru Kōsaki": "bun_guster.mp3",
         "Happy Roaming - Lorin Nelson": "happy_roaming.mp3",
-        "Tunnely Shimbers - Mr. Sauceman": "tunnely_shimbers.mp3",
-        "Hard Drive to Munch You - Mr. Sauceman": "hard_drive.mp3",
-        "Al's Penthouse - Andy Blythe": "penthouse.mp3",
-        "Airport Infilration - Marten Joustra": "airport.mp3",
-        "Laurel Palace - Manami Matsumae": "laurel_palace.mp3",
-        "Price Is Right Theme - Edd Kalehoff": "price_right.mp3",
         "Mm Select - Matthew Simmonds": "mm_select.mp3",
+        "Weird Personalities - Lizardking": "weird_personalities.mp3",
         "Let's Do This - Home Depot": "home_depot.mp3",
         "Candle World - Kikiyama": "candle_world.mp3",
         "It's Showtime - Toby Fox": "showtime.mp3",
@@ -55,13 +54,16 @@ init python:
         "Alfred's Theme - Eminem": "hohsisremix.mp3",
         "Track 3 - Weatherscan": "track3.mp3",
         "New Leaf Title Theme - Kazumi Totaka": "ac_title.mp3",
-        "Facing Worlds - Michiel van den Bos": "facing_worlds.mp3",
-        "Take a Trip from Me - u4ia": "take_trip.mp3",
-        "School - Toby Fox": "school.mp3",
-        "Cliffs - Toby Fox": "cliffs.mp3",
-        "Circus - Toby Fox": "circus.mp3",
-        "The Chase - Toby Fox": "chase.mp3",
-        "Friendship - Toby Fox": "friendship.mp3",
+        #South route
+        "Tunnely Shimbers - Mr. Sauceman": "tunnely_shimbers.mp3",
+        "Hard Drive to Munch You - Mr. Sauceman": "hard_drive.mp3",
+        "Al's Penthouse - Andy Blythe": "penthouse.mp3",
+        "Laurel Palace - Manami Matsumae": "laurel_palace.mp3",
+        "Lancer - Toby Fox": "lancer.mp3",
+        "Price Is Right Theme - Edd Kalehoff": "price_right.mp3",
+        "Airport Infilration - Marten Joustra": "airport.mp3",
+        "Lego Island Theme - Lorin Nelson": "lego_island.ogg",
+        #Friend route
         "Creative Exercise - Hirokazu Tanaka": "creative_exercise.mp3",
         "Morning Highway - BEST MUSIC": "morning_highway.mp3",
         "Pixel Peeker Polka - Kevin MacLeod": "pixel_peeker_polka.mp3",
@@ -74,8 +76,7 @@ init python:
         "Tuna Fish - Dr. Awesome": "tuna_fish.mp3",
         "The Whale - Dr. Awesome": "the_whale.mp3",
         "Prophet 2001 - Dr. Awesome": "prophet_2001.mp3",
-        "Lancer - Toby Fox": "lancer.mp3",
-        "Weird Personalities - Lizardking": "weird_personalities.mp3",
+        #Fired route
         "Dealin Dope - Dr. Awesome": "dealin_dope.mp3",
         "Happy Rock - Benjamin TISSOT": "happy_rock.mp3",
         "Local Forecast - Kevin MacLeod": "local_forecast.mp3",
@@ -87,15 +88,25 @@ init python:
         "Now What? 1 - Dr. Awesome": "now_what.mp3",
         "Dig This - Dr. Awesome": "dig_this.mp3",
         "ANOTHER HIM - Toby Fox": "another_him.mp3",
+        #Country route
         "Wool Gloves - Various Artists": "wool_gloves.mp3",
-        "Neko To Sanpo - NEKOWORKs": "neko_to_sanpo.mp3",
-        "Flyday Chinatown - Evade": "flyday_chinatown.mp3",
-        "Real World - Project SEKAI": "real_world.mp3",
-        "Lisbon Fever - Dr. Awesome": "lisbon_fever.mp3",
         "Conflict - David Vanacore": "conflict.mp3",
         "Tumultuous - David Vanacore": "tumultuous.mp3",
-        "Lego Island Theme - Lorin Nelson": "lego_island.ogg",
+        "Lisbon Fever - Dr. Awesome": "lisbon_fever.mp3",
+        "Flyday Chinatown - Evade": "flyday_chinatown.mp3",
+        "Neko To Sanpo - NEKOWORKs": "neko_to_sanpo.mp3",
+        "Real World - Project SEKAI": "real_world.mp3",
+        #AI
+        "School - Toby Fox": "school.mp3",
+        "Cliffs - Toby Fox": "cliffs.mp3",
+        "Circus - Toby Fox": "circus.mp3",
+        "The Chase - Toby Fox": "chase.mp3",
+        "Friendship - Toby Fox": "friendship.mp3",
+        #Archival
+        "Facing Worlds - Michiel van den Bos": "facing_worlds.mp3",
+        "Take a Trip from Me - u4ia": "take_trip.mp3",
         "Everybody Wants To Rule The World - Tears For Fears": "everybody_wants.mp3",
+        #Genocide route
         "Insane Personalities - Lizardking": "insane_personalities.mp3",
         "Echoing? - Banana": "killcops.mp3"
     }
