@@ -297,11 +297,13 @@ label after_fanboy:
     cs "That's right! The rest of you get out of here!"
     show arceus at right with moveinright
     arceus "CS! We need to--"
+    show arceus worried
     arceus "What happened here?"
     show cs
     cs "Oh hey Arc. There were some angry fanboys complaining outside of LTT, so I fought them!"
     arceus "You fought them?"
     cs "Yeah! I won as well!"
+    show arceus
     show linus at left with moveinleft
     linus "Woah hey, CS you alright?"
     cs "Yeah! I fought them and scared the rest away!"
@@ -366,10 +368,12 @@ label after_fanboy:
     pakoo "Oh? Are you CS?"
     arceus "Uhh, no?"
     pakoo "Oh, Linus brought me here to--"
+    show arceus flipped angry
     arceus "Are you a cop? You better not be cop."
     if fun_value(50):
         cs "Hey, aren't you the guy who made Petscop 2?"
         pakoo "Huh?"
+    show arceus flipped
     show linus at center with vpunch
     linus "Heyyy! There you are!"
     linus "CS, this is the trainer we brought in today!"
@@ -400,7 +404,9 @@ label after_fanboy:
     cs "Oh, I see. That's Pakoo."
     cs "I didn't recognize you, but how come you didn't recognize me?"
     pakoo "Of course I knew who you were dummy, I was just messing with you!"
+    show arceus flipped angry
     arceus "I still thought you were a cop."
+    show arceus flipped
     linus "Alright well, we should show you guys the training course."
     show cs worried
     cs "A whole training course? At LTT?"
@@ -671,13 +677,18 @@ label fire_range:
     pause 1.0
     cs "I took this with me too!"
     hide m4
+    show arceus worried
     arceus "Holy shit! You took the rifle with you?"
+    show arceus
     cs "Yeah, I don't know, it looked cool, and no one really saw me hiding it."
     cs "So y'know... free gun?"
+    show arceus happy
     arceus "Hell yeah! We can use this!"
     cs "Yeah! To shoot mean people right?"
+    show arceus angry
     arceus "Geez man, I was thinking to intimidate them!"
     cs "...I was also thinking that."
+    show arceus
     show pakoo flipped at left with moveinleft
     pakoo "Hi!"
     show cs angry flipped
@@ -691,6 +702,7 @@ label fire_range:
     hide m4
     show cs disappointed flipped
     cs "Huh?"
+    show arceus angry
     arceus "How are you gonna help us? Do you even know what is going on?"
     pakoo "Of course! The cops are chasing you, right?"
     arceus "I knew it! You are a cop!"
@@ -698,6 +710,7 @@ label fire_range:
     pakoo "I've known for a while Copguy is chasing you down."
     pakoo "I've also known that Copguy has been working for 15 years, and you are his last criminal he wants to bust."
     pakoo "So he's gonna do anything to take you guys down."
+    show arceus
     pakoo "Why do you think I showed up here? I know Copguy, and you're all over the place now!"
     pakoo "You made a video on a channel with like, millions of subscribers! What were you thinking?"
     cs "Shit, I never really thought about that."
@@ -728,7 +741,9 @@ label fire_range:
     pakoo "Real quick before we get there, I should let Mika know what's going on today."
     cs "Who?"
     pakoo "Sorry, my boyfriend. I didn't really tell him that I'm helping two guys escape from the cops."
+    show arceus worried flipped
     arceus "Fuuuuuck, I haven't told Kitty that I escaped from prison."
+    show arceus flipped
     cs "I might tell Tate as well..."
     cs "You mind if we make some calls as well?"
     n "Pakoo pulls out a couple of phones from his back pocket and gives them to Arc and CS."
@@ -904,7 +919,7 @@ label so_join:
     scene dealership
     show copguy flipped at left
     show cs disappointed flipped at center
-    show arceus at mid_right
+    show arceus worried at mid_right
     show pakoo disappointed at right
     with fade
     n "After that intense fight, the cops seemed to best CS and co."
@@ -971,12 +986,15 @@ label after_cop_fight:
     else:
         show pakoo
     kitty "Arcie.. This does not surprise me in the slightest."
+    show arceus worried
     arceus "I mean, I {i}did{/i} say I was going to be in trouble with the law at some point in my life."
     if nice_car:
         kitty "Nice car!"
+        show arceus happy
         arceus "Yeah!"
     else:
         arceus "Well, I know we just met up, but we should probably get going."
+    show arceus
     tate "Alrighty then, we'll follow behind and keep watch."
     cs "Shit yeah, Copguys not dead, he's gonna probably call backup on us."
     pakoo "Let's start heading east."
@@ -1028,6 +1046,7 @@ label after_cop_fight:
 
 label flint_car:
     cs "Is that... the Flintstones car??"
+    show arceus angry
     arceus "CS, please don't pick that car. It's probably just--{w=1.0}{nw}"
     cs "It's probably one of those cars that is really good, and they just try to make it look bad on the outside."
     cs "I wanna try it out!"
