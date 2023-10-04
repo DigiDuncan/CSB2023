@@ -305,23 +305,29 @@ label archival:
     n "Addy gets a phone call."
     addy "Hello? Who is this?"
     iris "Hello, Addy."
-    iris "Did you do something with a man named CS?"
-    addy "Yeah, uh, we had an accident in the K17 sector today."
-    addy "We had to, get rid of him."
-    iris "Well, can you bring him back?"
+    n "Addy fumbles the phone, nearly dropping it in surprise."
+    addy "Iris?"
+    iris "Did you do something with a man named cs188?"
+    addy "Oh, yeah, uh, we had an accident in the K17 sector yesterday."
+    addy "We had to--"
+    addy "Get rid of him."
+    iris "Hmm..."
+    iris "Can you bring him back?"
     iris "Digi's been crying all day because he found out CS doesn't exist anymore."
     addy "Yeah, I should have a backup somewhere."
-    iris "Just fix it. I've got more pressing matters to deal with right now."
+    iris "Nice, thank you."
+    iris "I'll go tend to Digi."
     n "Iris hangs up."
     pause 1.0
     addy "I guess that's what I get when I let these guys with half a brain run this place."
     addy "I'll have to go clean up the mess later, I can still hear alarms."
     addy "In the meantime, let's get this memory prepared."
+    n "Addy pulls out a small memory jar they've been saving from a cabinet in their office."
     stop music fadeout 3.0
     music end
-    n "Addy pulls out a memory jar they've been saving in a cabinet in their office."
     addy "Thank goodness I saved this."
-    addy "Let's see if this works."
+    n "Addy places the jar in a receptacle."
+    addy "Well, here goes nothing."
     $ renpy.movie_cutscene("movies/archivalend.mp4")
     $ renpy.end_replay
     return
