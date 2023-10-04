@@ -175,6 +175,7 @@ label dpn_diner:
     cop "Ah shit! We got two men down! Arrest her!"
     stop music fadeout 3.0
     music end
+    music Desert Dawn - Lizardking
     jump rpg_cop_fight_3
 
 label cs_meetup:
@@ -220,6 +221,7 @@ label cs_meetup:
     nova "Alright Digi, let's do this."
     digi "On it."
     stop music fadeout 3.0
+    music Full Rulle Med Klas - Lizardking
     jump rpg_cop_fight_4
 
 label cs_meetup_2:
@@ -392,6 +394,7 @@ label car_ride_2:
         copguy "Don't mind the car, attack!"
     else:
         copguy "Soldiers! Attack!"
+    music Thousand March - Mr. Sauceman
     jump rpg_ng_fight
 
 label cs_rage:
@@ -635,6 +638,7 @@ label final_meetup:
     stop music fadeout 3.0
     music end
     scene black with fade
+    music Trans Atlantic - Lizardking
     jump rpg_final_fight_1
 
 label weapon_of_choice:
