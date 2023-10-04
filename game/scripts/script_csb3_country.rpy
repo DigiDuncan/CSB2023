@@ -302,18 +302,27 @@ label england_first:
     arceus "Hey CS? Is that you?"
     show cs
     cs "Oh my goodness! Why-- How are you here?"
+    show arceus happy
     arceus "I live here with my girlfriend now! What are you doing here?"
+    show arceus
     cs "I, used the last of my money to buy a plane ticket."
     arceus "Ah."
     arceus "Assuming you did that to get away from the cops?"
     cs "Yeah..."
+    show arceus worried
     arceus "I heard about your fight, but I couldn't engage too much, since the ambulance took you away shortly after I showed up."
+    show arceus happy
     arceus "So I decided to finally move up here, since I got out of prison and all."
+    show arceus
     cs "That makes sense."
     arceus "So uhm..."
     arceus "Do you need a place to stay? You said you were out of money."
+    show arceus happy
     arceus "You can come and live with me and Kitty for a while! I'm sure she wouldn't mind."
+    show arceus
+    show cs happy
     cs "I would really appreciate it! Thank you!"
+    show cs
     cs "I'll do whatever I can to pay you back."
     arceus "Nah, don't worry about it. You helped break me out of prison!"
     n "The shopkeeper looks at them weirdly."
@@ -357,14 +366,20 @@ label england_second:
     arceus "Hey CS? Is that you?"
     show cs
     cs "Oh my goodness! Why-- How are you here?"
+    show arceus happy
     arceus "I live here with my girlfriend now! What are you doing here?"
+    show arceus
     cs "I'm on vacation, and I decided to visit England!"
     arceus "Ah."
     arceus "So uhm..."
     arceus "Do you need a place to stay?"
     cs "I guess so, I have some money but I don't know what hotels are like here."
+    show arceus happy
     arceus "You could come and live with me and Kitty for a while! I'm sure she wouldn't mind."
+    show cs happy
     cs "I would really appreciate it! Thank you!"
+    show cs
+    show arceus
     arceus "Let's get you to our place."
     stop music fadeout 3.0
     show arceus flipped with determination
@@ -382,7 +397,9 @@ label arceus_place:
     show cs at left with moveinleft
     arceus "Here we are. Home sweet home."
     cs "This is a house? It looks like the size of an apartment."
+    show arceus angry flipped
     arceus "CS, remember we're in the UK?"
+    show arceus flipped
     cs "Ohhhh, yeah. Forgot about that."
     arceus "Whatever just, come on in."
     scene kitty_room with fade
@@ -394,7 +411,9 @@ label arceus_place:
     show arceus
     arceus "Yep. This is what 5 quid gets you here."
     cs "Woah, what? How much is a quid?"
+    show arceus happy
     arceus "I'm just messing, it's a little more than a US dollar."
+    show arceus
     show kitty flipped at right with moveinright
     show arceus flipped
     kitty "Hey Arceus! You're home!"
@@ -407,12 +426,14 @@ label arceus_place:
         arceus "Is that okay?"
         kitty "Yeah but, how long will he be here for?"
         cs "Not too long I don't think, I just like this country and wanted to take a vacation here."
+        show arceus happy flipped
         arceus "Well, let's make some dinner, and we can find fun things here to do!"
         cs "Sure thing!"
     else:
         arceus "He's broke right now, and I was wondering if he could stay here for a bit."
         kitty "I guess that's fine, how long is he gonna stay here though?"
         cs "It shouldn't be too long, I'm gonna try to find a way to get some money."
+        show arceus happy flipped
         arceus "Why don't we all eat and talk about it?"
         cs "That would be great. I'm starving."
     show kitty with determination
@@ -430,13 +451,16 @@ label arceus_place:
     cs "So, how long have you guys been together?"
     arceus "For a long time actually, I've been wanting to move up here, but y'know..."
     kitty "Yeah, you did a dumb and got arrested!"
+    show arceus worried
     arceus "Yeah yeah, well anyways..."
+    show arceus
     arceus "What do you want to do here, CS? It's a brand new country, there are a ton of things you can do..."
     jump england_menu
 
 label hell_zone:
     $ ramsay_check = True
     cs "I wanna go on Hell's Kitchen!"
+    show arceus worried
     arceus "Wat."
     cs "Yeah! I can go on the show and cook up some crazy meal and win!"
     arceus "CS, you realize who the man is who runs Hell's Kitchen?"
@@ -444,9 +468,11 @@ label hell_zone:
     arceus "Yeah, and he's kinda scary."
     cs "Yeah, but that's just because it's a show."
     cs "I'm sure he's like, really funny."
+    show arceus
     arceus "Besides, how are you going to get on the show?"
     arceus "Don't you have to submit an application?"
     cs "I mean, fuck it. I'll do it."
+    show arceus worried
     arceus "Oookayy..."
     scene black with dissolve
     n "Arceus hands CS his phone, and CS fills out an application."
@@ -493,7 +519,9 @@ label hell_zone:
     n "CS jerks up."
     show cs
     cs "What really?"
+    show arceus angry
     cs "I mean, of course! I am a master cook, after all."
+    show arceus
     arceus "Yeah, yeah. Let's take you there, and we'll see how good you really are."
     show arceus flipped with determination
     hide cs 
@@ -509,13 +537,17 @@ label hell_zone:
     play music "<loop 0>conflict.mp3" volume 0.4
     music Conflict - David Vanacore
     cs "Well, this definitely looks like Hell."
+    show arceus worried flipped
     arceus "I can already feel Ramsay's presence from here. It's terrifying."
     cs "Alright well, are you ready?"
+    show arceus angry flipped
     arceus "What do you mean? You're the one who signed up for this! I'll be waiting for you in the car."
     cs "I thought you wanted to watch me cook?"
+    show arceus worried flipped
     arceus "CS, I'm sorry, but I don't, how do I put this..."
     arceus "Think you'll come out alive?"
     cs "You think I'm gonna die?"
+    show arceus flipped
     arceus "No no, I meant that more metaphorically, like, you just aren't a good cook."
     show cs disappointed flipped
     cs "Whhhaaat?"
@@ -699,6 +731,7 @@ label good_ramsay:
     cs "That you were wrong!"
     show case flipped at center with moveinbottom
     n "CS pulls out the briefcase and shows it to Arc."
+    show arceus worried flipped
     arceus "Holy shit! What'd you do??"
     cs "I made him a Genergy, CS style!"
     cs "He apparently loved it so much he bought my recipe!"
@@ -706,7 +739,9 @@ label good_ramsay:
     arceus "You got Gordon Ramsay, Master Chef, to buy your recipe in one go?"
     show cs happy flipped
     cs "Yep!"
+    show arceus angry flipped
     arceus "Man, your crazy."
+    show arceus flipped
     arceus "Whatever, let's head back home."
     scene black with dissolve
     n "CS and Arc head back home."
@@ -765,7 +800,9 @@ label top_zone:
     music Lisbon Fever - Dr. Awesome
     n "As they drive up to the track, the gang sees Jermey, Richard, and James."
     kitty "Alright, we'll watch from the side of the track."
+    show arceus happy flipped
     arceus "Good luck, CS!"
+    show arceus flipped
     cs "Thanks!"
     n "CS gets out of the car and heads up to the Top Gear crew."
     scene top_gear_track
@@ -869,15 +906,20 @@ label top_win:
     with fade    
     play music "<loop 0>wool_gloves.mp3" volume 0.4
     kitty "Woo! You won the race!"
+    show arceus happy flipped
     arceus "That was insane, man!"
     cs "Yeah, I honestly can't believe it either!"
     cs "They stuck a bomb to the bottom of my car for that race!"
+    show arceus worried flipped
     arceus "What? Why would they do that?"
     arceus "Wasn't that just a backup car they had?"
+    show arceus flipped
     cs "No! They managed to steal my real car!"
     cs "They were planning to blow my car up if I lost!"
     kitty "Damn, that's kinda fucked up."
+    show arceus happy flipped
     arceus "Well good thing you won!"
+    show arceus flipped
     cs "Yeah, no kidding."
     cs "Let's head home now."
     scene black with dissolve
@@ -907,7 +949,9 @@ label scott_zone:
     arceus "I mean, I CAN."
     arceus "Legally, probably not."
     kitty "Yeah, remember the last time you did something illeg--{w=0.5}{nw}"
+    show arceus happy
     n "Arceus blurts out the address of Tom's house."
+    show arceus
     kitty "Arceus! Don't do that!"
     show cs happy
     cs "Woohoo! Does that mean we can go there?"
@@ -960,6 +1004,8 @@ label scott_move:
     show cs flipped at offscreenright
     cs "Hey Tom, move out of the way!"
     show tom at right with move
+    show car at lego_run behind tom
+    with move
     n "Tom immediately jumps out of the way, as a car zooms past him."
     show tom at center
     show cs flipped at right
@@ -987,10 +1033,12 @@ label scott_move:
     arceus "Cool! Were you guys gonna do anything else?"
     show cs
     cs "Nah, we can head home now."
+    show arceus worried
     arceus "Wait, that's it?"
     arceus "I thought you guys were gonna do more stuff."
     cs "Nah, I just wanted to be in a video with him."
     arceus "Okay, so are we done here?"
+    show arceus
     cs "Sure yeah, let's head back home."
     scene black with dissolve
     n "Arc and CS drive back to the house."
@@ -1009,7 +1057,9 @@ label scott_move:
 
 label england_done:
     cs "Well, I think that's everything I wanted to do here."
+    show arceus happy
     arceus "Oh nice!"
+    show arceus
     kitty "So, are you leaving now? You managed to do so much in so little time!"
     cs "Yeah, I think I'm gonna go visit another country."
     arceus "Oh really? Where do you think you wanna go?"
@@ -1056,8 +1106,10 @@ label england_japan:
     show cs flipped at right
     with fade
     cs "Well, thank you so much Arceus for everything, really."
+    show arceus happy flipped
     arceus "It's all good man, I loved having you here."
     arceus "It's also impressive that you made so much money in the short amount of time you were here, you'll probably be set for Japan!"
+    show arceus flipped
     cs "Yeah, I honestly don't know how I managed to most of those things, I was kinda winging it."
     cs "Welp, it looks like my plane is here."
     cs "See ya Arceus!"
@@ -1093,8 +1145,10 @@ label england_sweden:
     show cs flipped at right
     with fade
     cs "Well, thank you so much Arceus for everything, really."
+    show arceus happy flipped
     arceus "It's all good man, I loved having you here."
     arceus "It's also impressive that you made so much money in the short amount of time you were here, you'll probably be set for Sweden!"
+    show arceus flipped
     cs "Yeah, I honestly don't know how I managed to most of those things, I was kinda winging it."
     cs "Welp, it looks like my plane is here."
     cs "See ya Arceus!"
