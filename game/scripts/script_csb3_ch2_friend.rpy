@@ -719,7 +719,7 @@ label car_slam:
     n "CS walks through the wastelands, searching for any thing reminiscent to Copguy."
     n "Sure enough, he finds Copguy's wrecked cop car."
     show cs at center with move
-    cs "Welp. There rests Cop guy."
+    cs "Welp. There rests Copguy."
     cs "He fought well, he was a good cop, and god rest his soul."
     pause 3.0
     show cs flipped
@@ -740,6 +740,7 @@ label car_slam:
     show db_cooper at offscreenright
     copguy "C--{w=0.5}{nw}"
     show db_cooper at right with moveinleft
+    play sound "secret/explosion.mp3" volume 1.5
     show copguycrawl with hpunch
     hide copguycrawl with moveoutbottom
     show cs worried at left with move
