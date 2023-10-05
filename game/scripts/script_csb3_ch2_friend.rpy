@@ -637,15 +637,20 @@ label final_meetup:
     cs "Hell yeah! Let's go put Copguy through the slammer!"
     stop music fadeout 3.0
     music end
-    scene black with fade
+    scene black with dissolve
     music Trans Atlantic - Lizardking
     jump rpg_final_fight_1
 
 label weapon_of_choice:
+    window hide
     pause 1.0
     $ renpy.movie_cutscene("movies/woc.webm")
     $ achievement_manager.unlock("Hopes and Dreams")
     $ achievement_manager.unlock("Machine Gun")
+    show paper at center with easeinright
+    play sound "audio/isaac.wav"
+    pause 1.0
+    hide paper with easeoutleft
     jump car_slam
 
 label car_slam:
@@ -758,6 +763,7 @@ label car_slam:
     cs "Nah."
     cs "That man was like, deranged."
     scene black with dissolve
+    window hide
     pause 1.0
     $ renpy.movie_cutscene("movies/wherearetheynow.webm")
     pause 1.0

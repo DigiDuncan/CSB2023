@@ -801,6 +801,7 @@ image m4 fire flipped = "flip:m4fire.png"
 image script = "secret/script.png"
 image post_it2 = "secret/post-it2.png"
 image colorbars = "colorbars.png"
+image paper = "paper.png"
 
 # Movies
 image car background = Movie(play="movies/car_background.webm")
