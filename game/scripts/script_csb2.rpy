@@ -391,6 +391,7 @@ label bordercrossing:
     scene flag
     $ renpy.music.set_pause(True, "music")
     play music2 "star_spangled_banner.mp3"
+    music The Star Spangled Banner - THE UNITED STATES OF AMERICA
     n "The crew look behind them and still see a faint American flag waving."
     scene canada
     stop music2

@@ -539,7 +539,13 @@ label mcd:
     n "As they eat, they start talking about their next song."
     cs "OK, I had this idea, but it's a bit out there."
     anno "Alright, let's hear it."
+    $ renpy.music.set_pause(True, "music")
+    play music2 "<loop 0>audio/france.mp3" volume 0.5
+    music Guillotine World - Kikiyama
     cs "{cps=15}{image=note_small1.png}I'M GONNA TAKE OVER THE WORLD.{w=1.0} I'M GONNA KILL GOD.{w=1.0} I CAN CONTORT REALITY TO MY WHIMS--{image=note_small2.png}"
+    stop music2
+    music end
+    $ renpy.music.set_pause(False, "music")
     anno "Wait, what the fuck, hold on--"
     n "Arceus looks visibly concerned."
     show arceus worried
@@ -552,6 +558,9 @@ label mcd:
     show arceus
     arceus "Maybe this time, we can fill in the lines!"
     cs "OK! Here's what I have so far:"
+    $ renpy.music.set_pause(True, "music")
+    play music2 "<loop 0>audio/dragon_castle.mp3" volume 0.5
+    music Dragon Castle - BreakingCopyright
     cs "{cps=15}{image=note_small1.png}Through all adversity, we'll bind together and overcome...{image=note_small2.png}"
     arceus "Ooh, I got something:"
     $ line_5 = renpy.input("What should the next line be?", "")
@@ -567,6 +576,9 @@ label mcd:
     cs "What, like:"
     cs "{cps=10}{image=note1.png}{image=note2.png}{image=note3.png}{image=note4.png}{image=note5.png}"
     cs "Honestly I have no idea."
+    stop music2 fadeout 3.0
+    music end
+    $ renpy.music.set_pause(False, "music")
     customer "Hey, that sounds really good!"
     cs "Huh?"
     customer "Yeah, I heard you guys making that song from my table, it's really good!"
@@ -982,11 +994,13 @@ label first_tour_day:
     play sound "audio/start_rocking.mp3"
     play sound "audio/cheer1.mp3"
     n "The crowd is nuts."
+    play music "<loop 0>audio/dragon_castle.mp3" volume 0.5
     cs "{cps=15}{image=note_small1.png}Through all adversity, we'll bind together and overcome!{image=note_small2.png}"
     cs "{cps=15}{image=note_small1.png}[line_5]{image=note_small2.png}"
     cs "{cps=15}{image=note_small1.png}With my friends beside there's no foe we can not fight!{image=note_small2.png}"
     cs "{cps=15}{image=note_small1.png}[line_6]{image=note_small2.png}"
     n "Anno plays an epic guitar solo."
+    stop music fadeout 3.0
     play sound "audio/cheer1.mp3"
     pause 2.0
     scene black with Dissolve(3.0)
@@ -1297,14 +1311,14 @@ label third_tour_day:
     cs "Alright, here's a favorite for a lot of you: [song_name_4]!"
     play sound "audio/start_rocking.mp3"
     play sound "audio/cheer2.mp3"
-    # TODO: Play track
+    play music "<loop 0>audio/dragon_castle.mp3" volume 0.5
     cs "{cps=15}{image=note_small1.png}Through all adversity, we'll bind together and overcome!{image=note_small2.png}"
     cs "{cps=15}{image=note_small1.png}[line_5]{image=note_small2.png}"
     cs "{cps=15}{image=note_small1.png}With my friends beside there's no foe we can not fight!{image=note_small2.png}"
     cs "{cps=15}{image=note_small1.png}[line_6]{image=note_small2.png}"
     n "Anno shreds an epic solo."
     n "The crowd is exploding!"
-
+    stop music fadeout 3.0
     cs "And now, for the first time on stage: it's [song_name_5]!"
     play sound "audio/start_rocking.mp3"
     play sound "audio/cheer2.mp3"
