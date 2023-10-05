@@ -42,7 +42,7 @@ See what needs to be done below.
 - [X] Animations
 - [X] SFX
 - [X] Reactive Text
-- [ ] Balancing [Pakoo]
+- [X] Balancing [Pakoo]
 - [X] Add games to script
 
 ### Friend Ending [Pakoo, Sept. W2]
@@ -61,7 +61,7 @@ See what needs to be done below.
 - [X] Characters
 - [X] Transitions
 - [X] Music
-- [ ] Instrumentals
+- [X] Instrumentals
 - [X] Bios
 - [X] Jukebox
 
@@ -103,7 +103,7 @@ See what needs to be done below.
 - [ ] Transition/Flip Pass [includes flashes] [50%]
 - [ ] Sprite Emotion Pass
 - [ ] Sprite Time-of-Day Check
-- [ ] Jukebox/Achievements/Bio Pass
+- [ ] Jukebox/Achievements/Bio Pass [33%]
 - [ ] Remove/address all TODO comments
 - [ ] Add more bounciness
 - [ ] Check Discord channels for missing content
