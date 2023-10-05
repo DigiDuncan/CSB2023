@@ -1189,7 +1189,7 @@ label second_tour_day:
     n "Nova looks at a piece of paper."
     nova "Opening for... [band_name]? Is that you guys?"
     cs "Yep!"
-    nova "No shit, I've been listening to [ep_name] on $STREAMING_SERVICE a ton this week!"
+    nova "No shit, I've been listening to [ep_name] on Spoofy a ton this week!"
     nova "I didn't know it was you!"
     cs "Well, us."
     n "CS gestures to the others."
