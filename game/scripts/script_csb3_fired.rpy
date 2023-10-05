@@ -1,16 +1,11 @@
 ### TODO:
-# Needed character sprites:
-# ges
 
 # Needed sounds:
-# elevator music
 # ~5 rock instrumentals
 
 # TODO: TRANSITIONS NEED TO BE MORE DYNAMIC
 # anno is always just sitting on the left, arc on the right, and CS in the middle
-# need to like, make this more interesting
-
-# TODO: [PAKOO] THIS ROUTE REALLY NEEDS MUSIC
+# need to like, make this more interesting?
 
 label new_plan:
     scene outside_ltt
@@ -28,7 +23,7 @@ label new_plan:
     cs "I don't even know what other job I could get."
     cs "I've spent most of my life editing..."
     n "Before CS can spend much time thinking about alternatives, someone comes running up to CS."
-    show arceus at right with moveinright
+    show arceus worried at right with moveinright
     arceus "CS!"
     show cs scared
     cs "Ah! Arceus?!"
@@ -37,6 +32,7 @@ label new_plan:
     cs "OK, what? What's going on?"
     arceus "Cops. They're still after us."
     cs "Oh, come on, really?! Today has sucked bad enough already."
+    show arceus
     arceus "What happened to you? I just thought you were out here for a smoke break."
     show cs disappointed
     cs "Arc, I don't smoke."
@@ -95,11 +91,13 @@ label new_plan:
     else:
         play sound "<loop 0>obama.mp3" volume 0.5
         obamanobeep "I'm officially pardoning Annorexorcist and Arceus3251, for helping me out of a pickle."
+    show arceus happy
     arceus "Incredible as always, Anno."
     anno "I try."
     stop music fadeout 3.0
     music end
     cs "But what about money? I'm still out of a job and I'd like to keep having a roof over my head."
+    show arceus
     arceus "I don't know man, I can't think after all that. Let's take a bit and relax. Clear our heads."
     cs "Good call. Wanna play some Guitar Hero?"
     anno "I'm down, but, do you have controllers?"
@@ -161,13 +159,13 @@ label guitar_hero:
     jump write_song
 
 label write_song:
-    stop music
+    stop music fadeout 3.0
     scene black with dissolve
     n "After some time, the gang have their first song written."
     stop music fadeout 3.0
     music end
     scene hotel_room with dissolve
-    show arceus at right with moveinright
+    show arceus happy at right with moveinright
     arceus "You know, that's not half bad."
     show anno at left with moveinright
     anno "I like it a lot!"
@@ -178,21 +176,26 @@ label write_song:
     # IDEA: Actual instrumental here? I'm thinking rock-themed. Kinda Foo Fighters-y?
     n "{cps=15}{image=note_small1.png}We broke the chains, now we're free to fly,{w=1.5}\nEscaped concrete, and now we see blue skies{w=1.5}\nBecome brand new, we'll leave the past behind,{w=1.5}\nPrisoners no more, 'cause a new life we'll find{image=note_small2.png}"
     cs "Yeah, that's really good!"
+    show arceus
     arceus "Well I guess all we have to do now is upload it."
     anno "Alright boys, what do we call it?"
     $ song_name_1 = renpy.input("What should we call the song?", song_name_1)
     cs "How about {i}[song_name_1]{/i}?"
     $ achievement_manager.unlock("Hi, My Name Is...")
     if song_name_1 == "FUCK SEX BALLS":
+        show arceus angry
         arceus "Haha, very funny, Pakoo."
         cs "Huh?"
+        show arceus
         arceus "Sorry, I meant CS. I don't know why I said Pakoo."
         anno "Well, I like it."
         arceus "I'm cool with it."
     else:
         anno "That's awesome."
+        show arceus happy
         arceus "I like it!"
     cs "Alright, it's settled! Let's upload {i}[song_name_1]{/i} to streaming services!"
+    show arceus
     arceus "Are you going to plug it in the Discord?"
     cs "I guess I should, but people are going to be really confused as to why I'm not streaming still..."
     anno "I think they're used to you not streaming for a while."
@@ -203,6 +206,7 @@ label write_song:
     discord "What the heck is this?"
     discord "Huh, this is pretty good."
     discord "CS can sing?!"
+    show cs happy
     cs "It's going well! People seem to like it."
     arceus "Let's hit the hay and check in on it in the morning."
     anno "Yeah, I'm getting tired."
@@ -213,7 +217,7 @@ label write_song:
     jump hotel_next_day
 
 label hotel_next_day:
-    stop music
+    stop music fadeout 3.0
     scene hotel_room with dissolve
     show cs at left with moveinleft
     cs "Let's go get breakfast."
@@ -238,6 +242,7 @@ label hotel_next_day:
 
     pause 2.0
     cs "Do you have any ideas for{nw}"
+    show arceus angry
     arceus "Man I {i}just{/i} woke up."
     cs "Yeah, sorry."
 
@@ -265,8 +270,10 @@ label hotel_next_day:
     music Now What? 1 - Dr. Awesome
     cs "The song has like, a hundred thousand streams."
     n "Arceus nearly spits out his food."
+    # arceus shocked?
     arceus "It has what?!"
     n "CS shows Arc the phone."
+    show arceus happy
     arceus "Holy shit!"
     anno "Wait, that's crazy actually."
     show cs happy
@@ -278,6 +285,7 @@ label hotel_next_day:
     show cs
     cs "{i}ahem{/i}\nAnyway...{w=0.5} so what now?"
     anno "I guess we keep it going?"
+    show arceus
     arceus "We can't let this window close, right?"
     cs "I'm shocked, but yeah! Let's do it!"
     n "The gang finish their food and head back up to their room."
@@ -290,7 +298,7 @@ label hotel_next_day:
     jump song_2
 
 label song_2:
-    stop music
+    stop music fadeout 3.0
     scene hotel_room
     show anno at left
     show arceus at right
@@ -366,7 +374,7 @@ label song_2:
     jump ep_time
 
 label ep_time:
-    stop music
+    stop music fadeout 3.0
     pause 1.0
     scene hotel_breakfast
     show anno at left
@@ -429,7 +437,7 @@ label ep_time:
     jump back_to_room
 
 label back_to_room:
-    stop music
+    stop music fadeout 3.0
     scene hotel_room
     show anno
     with dissolve
@@ -477,7 +485,7 @@ label back_to_room:
     jump mcd
 
 label mcd:
-    stop music
+    stop music fadeout 3.0
 
     scene hotel_room
     show anno at left
@@ -557,7 +565,7 @@ label mcd:
     jump hotel_lobby_2
 
 label hotel_lobby_2:
-    stop music
+    stop music fadeout 3.0
 
     scene hotel_lobby    
     show anno at left
@@ -599,7 +607,7 @@ label hotel_lobby_2:
     jump song_5
 
 label song_5:
-    stop music
+    stop music fadeout 3.0
     scene hotel_room
     show anno at left
     show arceus at right
@@ -640,7 +648,7 @@ label song_5:
     jump fan_interaction
 
 label fan_interaction:
-    stop music
+    stop music fadeout 3.0
     scene black with dissolve
     n "The next day, they hear a knock on their hotel room door early morning."
     scene hotel_door with dissolve
@@ -720,7 +728,7 @@ label fan_interaction:
     jump howie
 
 label howie:
-    stop music
+    stop music fadeout 3.0
     scene black with dissolve
     n "After a few hours, the band meet Howie downstairs in the lobby."
 
@@ -788,7 +796,7 @@ label no_contract:
     bad_end "Well,\nthat was kinda dumb!" "limo_time"  
 
 label signed_the_contract:
-    stop music
+    stop music fadeout 3.0
     scene black
     n "After some time, Anno signs the contract, and they all return to the hotel."
 
@@ -856,7 +864,7 @@ label signed_the_contract:
     jump first_tour_day
 
 label first_tour_day:
-    stop music
+    stop music fadeout 3.0
     scene black with dissolve
     n "CS heads to bed, and the next morning, the whole [band_name] crew gets ready for their first tour day."
 
