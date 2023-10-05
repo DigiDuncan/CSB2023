@@ -6,6 +6,9 @@
 init python:
     global name_map
     name_map = {"cs": "cs188",
+        #CSB1
+        "craptop": "Craptop",
+        "sticky": "Sticky Note",
         "nova": "ItsNovaHere",
         "carguy": "CarGuy",
         "doug": "Doug McMillon",
@@ -16,7 +19,7 @@ init python:
         "michael": "Michael Rosen",
         "phil": "Phil Swift",
         "hoh_worker": "HoH SiS Workers",
-        "digi": "DigiDuncan",
+        #CSB2
         "copguy": "Copguy",
         "arceus": "Arceus3251",
         "anno": "Annorexorcist",
@@ -24,6 +27,7 @@ init python:
         "linus": "Linus Sebastian",
         "mohs": "Mr. Mohs",
         "csgod": "CSGod",
+        #True Route
         "luke": "Luke Lafreniere",
         "taran": "Taran Van Hemert",
         "colton": "Colton Potter",
@@ -35,37 +39,46 @@ init python:
         "peppino": "Peppino Spaghetti",
         "scott": "Scott Wozniak",
         "terry": "Terry Lesler",
+        "aria": "Aria",
+        "pencil": "Pencil Greeter",
+        "digi": "DigiDuncan",
+        "mettaton": "Mettaton",
+        #South Route
         "lego": "Lego NXT Minifigure",
         "trailtrash": "Trailer Trash",
         "green": "Mr. Green",
         "jerma": "Jermey Elbertson",
-        "pencil": "Pencil Greeter",
-        "mettaton": "Mettaton",
         "tsa": "TSA Agent",
         "luigi": "Luigi Mario",
         "mika": "Mikapara",
+        "monika": "Monika",
         "bubble": "Bub Ble",
         "lancer": "Lancer",
+        #Friend Route
         "tate": "alleZSoyez",
         "kitty": "Undead Kitty",
+        "round": "Mr. Round",
         "obama": "Barack Obama",
         "blank": "Blank Named",
-        "aria": "Aria",
         "cop": "Copdude",
         "midge": "Midgalicis",
         "db": "DB05",
-        "benrey": "Benrey",
+        #Fired Route
         "guest": "Estatic Fan",
         "mean": "Meancarnavor",
         "howie": "Howie Mandell",
         "ges": "Ges",
+        #Country Route
+        "benrey": "Benrey",
         "gordon": "Gordon Ramsay",
-        "scott_pres": "Scott Oelkers",
-        "miku": "Hatsune Miku",
         "hammond": "The Top Gear Crew",
         "tom": "Tom Scott",
+        "scott_pres": "Scott Oelkers",
+        "miku": "Hatsune Miku",
         "sayori": "Sayori",
-        "round": "Mr. Round",
+        #Archival
+        "k174": "Pakoo's Memories",
+        "addy": "Addy",
         "iris": "???"
 
     }
@@ -163,7 +176,15 @@ screen person(l):
                 add f"secret/{l}.png" xalign 1.0 yalign 1.0 zoom 0.75
             elif l == "hoh_worker":
                 add "images/characters/hoh_worker.png" xalign 1.0 yalign 1.0 zoom 0.50
+            elif l == "sticky":
+                add "images/post-it.png" xalign 1.0 yalign 1.0
+            elif l == "addy":
+                add "images/characters/pakoo.png" xalign 1.0 yalign 1.0
+            elif l == "craptop":
+                add "images/characters/laptop.png" xalign 1.0 yalign 1.0
             elif l == "hammond":
                 add "images/characters/topgear.png" xalign 1.0 yalign 1.0 zoom 0.55
+            elif l == "k174":
+                add "images/characters/memory.png" xalign 1.0 yalign 1.0 zoom 0.55
             else:
                 add f"images/characters/{l}.png" xalign 1.0 yalign 1.0 zoom 0.75
