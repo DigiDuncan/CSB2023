@@ -194,6 +194,7 @@ def draw_in(subject: Fighter, targets: list[Fighter], crit: bool, options: dict)
                 f.attack_points /= mult
                 diff = f.attack_points - old_ap
                 answer.append((diff, "atk"))
+    return answer
 
 def ai_mimic(subject: Fighter, targets: list[Fighter], crit: bool, options: dict) -> AnswerList:
     print(f"[AI Mimic] running {targets[0].normal.name}...")
@@ -548,6 +549,8 @@ class Encounter:
     @property
     def won(self) -> bool | None:
         if len(self.allies) == 0:
+            return False
+        elif len(self.allies) == 1 and self.allies[0].name == "DB05":
             return False
         elif len(self.enemies) == 0:
             return True
