@@ -52,6 +52,7 @@ init python:
         "Track 4 - Weatherscan": "track4.mp3",
         "Funiculi Holiday - ClascyJitto": "funiculi_holiday.mp3",
         "Speedy Comet - Mahito Yokota": "speedy_comet.mp3",
+
         "Breakout - Shoichiro Sakamoto": "breakout.mp3",
         "Rude Buster - Toby Fox": "rude_buster.mp3",
         "Park Theme - Lorin Nelson": "park_theme.mp3",
@@ -190,6 +191,14 @@ init python:
         "Atarashii Kaze - Satoru Kōsaki": "luckystar.png",
         "Bun Guster - Satoru Kōsaki": "luckystar.png",
         "Taiikusai Desu Yo - Satoru Kosaki": "luckystar.png",
+        "Candle World - Kikiyama": "yume.png",
+        "Dense Woods B - Kikiyama": "yume.png",
+        "Klaxon Beat - Kelly Bailey": "half.png",
+        "CP Violation - Kelly Bailey": "half.png",
+        "Triage At Dawn - Kelly Bailey": "half.png",
+        "Super Friendly - Kevin Macleod": "kevin.png",
+        "Pixel Peeker Polka - Kevin MacLeod": "kevin.png",
+        "Local Forecast - Kevin MacLeod": "kevin.png",
         "Track 4 - Weatherscan": "weather.png",
         "Track 3 - Weatherscan": "weather.png"
     }
