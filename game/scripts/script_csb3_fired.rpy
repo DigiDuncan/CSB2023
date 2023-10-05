@@ -173,10 +173,13 @@ label write_song:
     cs "Wanna play it again one more time?"
     anno "Can do!"
     n "Anno hits play on the track."
-    # IDEA: Actual instrumental here? I'm thinking rock-themed. Kinda Foo Fighters-y?
+    play music "<loop 0>audio/everlong.mp3" volume 0.5
+    music Everlong - Foo Fighters
     n "{cps=15}{image=note_small1.png}We broke the chains, now we're free to fly,{w=1.5}\nEscaped concrete, and now we see blue skies{w=1.5}\nBecome brand new, we'll leave the past behind,{w=1.5}\nPrisoners no more, 'cause a new life we'll find{image=note_small2.png}"
     cs "Yeah, that's really good!"
     show arceus
+    stop music fadeout 3.0
+    music end
     arceus "Well I guess all we have to do now is upload it."
     anno "Alright boys, what do we call it?"
     $ song_name_1 = renpy.input("What should we call the song?", song_name_1)
@@ -407,6 +410,8 @@ label ep_time:
     anno "Well, I know I want it to be about travelling the world, but I don't know what to say for some of the lines."
     cs "I can help fill them in!"
     anno "Alright, awesome, here's what I got:"
+    play music "<loop 0>audio/energetic_rock.mp3" volume 0.5
+    music Energetic Rock - Every Day Music
     anno "{cps=15}{image=note_small1.png}I made my way over to Japan...{image=note_small2.png}"
     $ line_2 = renpy.input("What should the next line be?", "")
     anno "OK! How about..."
@@ -418,7 +423,6 @@ label ep_time:
     anno "{cps=15}{image=note_small1.png}I'm globetrottin'!{image=note_small2.png}"
     cs "Hey, I like that! Sing it all the way through!"
     anno "Gotcha!"
-    # TODO: Fun rock instrumental
     anno "{cps=15}{image=note_small1.png}I made my way over to Japan...{w=1.5}\n[line_2]{image=note_small2.png}"
     anno "{cps=15}{image=note_small1.png}I found myself in the U.K...{w=1.5}\n[line_3]{image=note_small2.png}"
     anno "{cps=15}{image=note_small1.png}I'm gonna go party in Sweden...{w=1.5}]\n[line_4]{image=note_small2.png}"
@@ -433,6 +437,8 @@ label ep_time:
     show cs happy
     cs "Woohoo! Three songs down!"
     show arceus happy
+    stop music fadeout 3.0
+    music end
     arceus "Dang, and all without leaving the breakfast table."
     anno "Now that's efficency. I'll go back upstairs and polish this up."
     hide anno with moveoutleft
@@ -481,6 +487,7 @@ label back_to_room:
         for l in [line_2, line_3, line_4]:
             s = l.split(" ")
             last_words.append(s[-1])
+    play music "<loop 0>audio/energetic_rock.mp3" volume 0.5
     anno "Recording!"
     cs "{cps=15}...Japan!{w=1.5} ...[last_words[0]]!{w=1.5}\n{cps=15}...U.K.!{w=1.5} ...[last_words[1]]!{w=1.5}\n{cps=15}...Sweden!{w=1.5} ...[last_words[2]]!\n{w=1.5} ...globetrottin'~!"
     pause 1.0
@@ -490,7 +497,7 @@ label back_to_room:
     anno "I think it is! I'll export this and save it as {i}[song_name_3]{/i}!"
     cs "Let's go!"
     n "Everyone high-fives."
-
+    stop music fadeout 3.0
     scene black with dissolve
     n "The gang go to bed after another successful day."
     cs "{i}At this rate, we'll have this whole EP done by the end of the week!"
@@ -647,6 +654,8 @@ label song_5:
     arceus "Yeah, why don't you write the whole thing this time!"
     cs "Oh gosh, you guys sure?"
     anno "Yeah, go ahead! Here, I'll give you a beat..."
+    play music "<loop 0>audio/sweet_victory.mp3" volume 0.5
+    music Sweet Victory - David Eisley
     n "Anno plays an upbeat song on his laptop."
     $ line_7 = renpy.input("Write a line! (1/4)", "")
     $ line_8 = renpy.input("Write a line! (2/4)", "")
@@ -665,6 +674,8 @@ label song_5:
     n "They all high five."
     anno "I guess I'll get this mastered and release it tonight!"
     cs "[band_name] forever!"
+    stop music fadeout 3.0
+    music end 
     arceus "You know, I'm starting to really believe in this whole thing."
     $ achievement_manager.unlock("Independent Artist")
     jump fan_interaction
@@ -1186,12 +1197,12 @@ label second_tour_day:
     play sound "audio/start_rocking.mp3"
     play sound "audio/cheer1.mp3"
     n "The crowd is exploding."
-
+    play music "<loop 0>audio/energetic_rock.mp3" volume 0.5
     cs "{cps=15}{image=note_small1.png}I made my way over to Japan...{w=1.5}\n[line_2]{image=note_small2.png}"
     cs "{cps=15}{image=note_small1.png}I found myself in the U.K...{w=1.5}\n[line_3]{image=note_small2.png}"
     cs "{cps=15}{image=note_small1.png}I'm gonna go party in Sweden...{w=1.5}]\n[line_4]{image=note_small2.png}"
     cs "{cps=15}{image=note_small1.png}I'm globetrottin'!{image=note_small2.png}"
-
+    stop music fadeout 3.0
     play sound "audio/cheer1.mp3"
     n "The crows is applauding wildly."
     cs "We're [band_name]!"
@@ -1259,10 +1270,10 @@ label third_tour_day:
     play sound "audio/start_rocking.mp3"
     n "The crowd cheers."
     play sound "audio/cheer2.mp3"
-    # TODO: Play track
+    play music "<loop 0>audio/everlong.mp3" volume 0.5
     cs "{cps=15}{image=note_small1.png}We broke the chains, now we're free to fly,{w=1.5}\nEscaped concrete, and now we see blue skies{w=1.5}\nBecome brand new, we'll leave the past behind,{w=1.5}\nPrisoners no more, 'cause a new life we'll find{image=note_small2.png}"
     n "The crowd is loving this!"
-
+    stop music fadeout 3.0
     cs "Who wants to hear {i}[song_name_2]{/i}?!"
     play sound "audio/start_rocking.mp3"
     n "The crowd responds with further excitement."
@@ -1276,13 +1287,13 @@ label third_tour_day:
     anno "CS, none of our songs are classics, we're a new band."
     play sound "audio/start_rocking.mp3"
     n "The crowd laughs."
-    # TODO: Play track
+    play music "<loop 0>audio/energetic_rock.mp3" volume 0.5
     cs "{cps=15}{image=note_small1.png}I made my way over to Japan...{w=1.5}\n[line_2]{image=note_small2.png}"
     cs "{cps=15}{image=note_small1.png}I found myself in the U.K...{w=1.5}\n[line_3]{image=note_small2.png}"
     cs "{cps=15}{image=note_small1.png}I'm gonna go party in Sweden...{w=1.5}]\n[line_4]{image=note_small2.png}"
     cs "{cps=15}{image=note_small1.png}I'm globetrottin'!{image=note_small2.png}"
     n "The crowd loves this a lot."
-
+    stop music fadeout 3.0
     cs "Alright, here's a favorite for a lot of you: [song_name_4]!"
     play sound "audio/start_rocking.mp3"
     play sound "audio/cheer2.mp3"
@@ -1298,9 +1309,10 @@ label third_tour_day:
     play sound "audio/start_rocking.mp3"
     play sound "audio/cheer2.mp3"
     n "The crowd is ready to burst."
-    # TODO: Play track
+    play music "<loop 0>audio/sweet_victory.mp3" volume 0.5
     cs "{cps=15}{image=note_small1.png}[line_7]{w=1.5}\n[line_8]{w=1.5}\n[line_9]{w=1.5}\n[line_10]{image=note_small2.png}"
     n "The crowd can't get enough!"
+    stop music fadeout 3.0
     "Crowd" "Encore! {w=0.5}Encore! {w=0.5}Encore! {w=0.5}"
     n "CS whispers to the others."
     cs "Encore? But we don't have any more songs..."
