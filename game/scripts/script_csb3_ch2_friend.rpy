@@ -645,6 +645,7 @@ label weapon_of_choice:
     pause 1.0
     $ renpy.movie_cutscene("movies/woc.webm")
     $ achievement_manager.unlock("Hopes and Dreams")
+    $ achievement_manager.unlock("Machine Gun")
     jump car_slam
 
 label car_slam:

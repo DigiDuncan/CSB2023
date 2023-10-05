@@ -31,6 +31,7 @@ define achievements = [
     Achievement("I Thought This Was A Visual Novel", "Discover what we spent 1000 lines of code on.", "Win your first RPG battle.", "rpg"),
     Achievement("A Little Help From My Friends", "???", "Gather a full party.", "friends"),
     Achievement("Hopes and Dreams", "???", "Beat Copguy EX.", "souls"),
+    Achievement("Machine Gun", "???", "Defeat Copguy EX as CS.", "gun"),
     Achievement("Master Chef", "???", "Win over Gordan Ramsay.", "masterchef"),
     Achievement("The Man In The Red Shirt", "???", "Get in a Tom Scott video.", "redshirt"),
     Achievement("Bottom Gear", "???", "Beat the Top Gear crew in a race.", "bottomgear"),
@@ -44,5 +45,8 @@ define achievements = [
     Achievement("Artifical Unintelligence", "???", "Get the Chat-GPT ending", "gpt", True),
     Achievement("All Over Again", "???", "Beat CSBIII all over again.", "alloveragain", True),
     Achievement("F.U.N.", "???", "Roll a fun value.", "fun", True),
-    Achievement("Archived", "???", "Find Addy's Facility.", "archive", True)
+    Achievement("Archived", "???", "Find Addy's Facility.", "archive", True),
+    Achievement("Gotta Catch Them All", "???", "Collect every bio.", "bios"),
+    Achievement("The Brown Album", "???", "Collect every song in the jukebox.", "juke"),
+    Achievement("Fin.", "???", "Collect all the endings.", "end")
 ]
