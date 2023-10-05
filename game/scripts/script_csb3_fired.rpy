@@ -315,12 +315,15 @@ label song_2:
     play music "<loop 0>audio/happy_rock.mp3" volume 0.5
     music Happy Rock - Benjamin TISSOT
     n "An upbeat rock instrumental plays from Anno's computer."
+    show arceus happy
     arceus "Heck yeah, awesome. OK, here I go..."
     arceus "{cps=15}{image=note_small1.png}We're going down to Vegas,{w=1.5} we're gonna strike it rich!{w=1.5}\nWe're going down to Vegas..."
+    show arceus worried
     arceus "Uh..."
     $ line_1 = renpy.input("Finish the line!", "")
     cs "How about, '[line_1]'"
     $ achievement_manager.unlock("Singer-Songwriter")
+    show arceus happy
     arceus "Yeah!"
     arceus "{cps=15}{image=note_small1.png}We're going down to Vegas,{w=1.5} [line_1]{image=note_small2.png}"
     cs "Woohoo! That sounds awesome!"
@@ -342,7 +345,9 @@ label song_2:
     cs "How about..."
     $ song_name_2 = renpy.input("What should we call the song?", song_name_2)
     cs "{i}[song_name_2]{/i}?"
+    show arceus happy
     arceus "You're a genius, CS."
+    show cs happy
     cs "Aw, thanks, guys. Wait, we don't have a band name either!"
     anno "Yeah, what were you thinking?"
     cs "I was thinking..."
@@ -385,14 +390,17 @@ label ep_time:
     cs "So, we're making a whole EP, what do we have to do?"
     anno "Well, Naming King, what were you thinking about calling it?"
     cs "Well, I had a dream last night."
+    show arceus worried
     arceus "Oh no."
     cs "And I dreamt the name:"
     $ ep_name = renpy.input("What should we call the EP?", ep_name)
     cs "[ep_name]!"
     anno "You know what, I like it."
+    show arceus happy
     arceus "See, when you said 'I thought of it in a dream,' I thought it was going to suck."
     cs "Fair."
     cs "So now we need to start putting some songs on this bad boy!"
+    show arceus
     arceus "Well then let's get to it, yeah? We already have {i}[song_name_1]{/i} and {i}[song_name_2]{/i}."
     anno "Well, I had an idea for one this time."
     cs "Oh? Hit us with it!"
@@ -415,26 +423,32 @@ label ep_time:
     anno "{cps=15}{image=note_small1.png}I found myself in the U.K...{w=1.5}\n[line_3]{image=note_small2.png}"
     anno "{cps=15}{image=note_small1.png}I'm gonna go party in Sweden...{w=1.5}]\n[line_4]{image=note_small2.png}"
     anno "{cps=15}{image=note_small1.png}I'm globetrottin'!{image=note_small2.png}"
+    show arceus happy
     n "Arceus claps."
     cs "Well, I guess you want me to name this one, too?"
     anno "Go for it."
+    show arceus
     $ song_name_3 = renpy.input("What should we call the song?", song_name_3)
     anno "{i}[song_name_3]{/i} it is!"
+    show cs happy
     cs "Woohoo! Three songs down!"
+    show arceus happy
     arceus "Dang, and all without leaving the breakfast table."
     anno "Now that's efficency. I'll go back upstairs and polish this up."
     hide anno with moveoutleft
     n "Anno gets up from his seat and heads to the room."
     cs "He's really been a huge help with all of this."
+    show arceus worried
     arceus "Yeah, I kinda feel like I'm not pulling my weight."
     cs "What do you mean, you wrote {i}[song_name_2]{/i}!"
+    show arceus
     arceus "True, true."
     cs "Listen, I'm just like, the name guy. And part of me doesn't even feel like I'm coming up with those, they just kinda come to me, man."
     arceus "Nah dude, you wrote {i}[song_name_1]{/i}!"
     cs "I guess."
     arceus "We should head back upstairs with Anno. Maybe there is something we can do to help!"
     cs "Yeah, let's go see!"
-    jump back_to_room
+    jump back_to_room 
 
 label back_to_room:
     stop music fadeout 3.0
@@ -456,6 +470,7 @@ label back_to_room:
     anno "Yeah, lay one on me!"
     n "Anno plays the track, and Arceus taps out a killer drum line."
     anno "That's awesome, man!"
+    show arceus happy
     arceus "Thank you, thank you."
     cs "What can I do?"
     anno "Well, you already named it {i}[song_name_3]{/i}, and that's definitely our best title yet. You wrote like, half the lines, too."
@@ -520,12 +535,14 @@ label mcd:
     cs "{cps=15}{image=note_small1.png}I'M GONNA TAKE OVER THE WORLD.{w=1.0} I'M GONNA KILL GOD.{w=1.0} I CAN CONTORT REALITY TO MY WHIMS--{image=note_small2.png}"
     anno "Wait, what the fuck, hold on--"
     n "Arceus looks visibly concerned."
+    show arceus worried
     arceus "That might be a little bit much."
     n "Arceus texts someone under the table."
     cs "Yeah, I was worried about that."
     cs "OK, OK, I have a different idea."
     anno "Yeah...?"
     cs "Well I don't have all the lyrics yet..."
+    show arceus
     arceus "Maybe this time, we can fill in the lines!"
     cs "OK! Here's what I have so far:"
     cs "{cps=15}{image=note_small1.png}Through all adversity, we'll bind together and overcome...{image=note_small2.png}"
@@ -554,7 +571,9 @@ label mcd:
     anno "It'll be on our EP [ep_name], just look up [band_name] on streaming services!"
     customer "Awesome, I'm excited! I'll make sure to check it out!"
     n "The customer walks away."
+    show cs happy
     cs "People are really liking our stuff."
+    show arceus happy
     arceus "This is going better than I ever dare hoped."
     anno "Let's go back to the room and get this song made!"
     n "On their way out of the store, CS turns to Arc."
@@ -615,8 +634,10 @@ label song_5:
     with dissolve
 
     anno "This is the last song on the EP. We need to go big with this one."
+    show arceus worried
     arceus "I'm nervous to write this one, we really need to end on a banger."
     anno "Something victorious, something inspiring."
+    show arceus
     arceus "Hmmm..."
     anno "CS, why don't you write this one?"
     cs "Me?"
@@ -637,6 +658,7 @@ label song_5:
     anno "That's perfect! Give it name!"
     $ song_name_5 = renpy.input("What should the song be called?", song_name_5)
     cs "It's called {i}[song_name_5]!{/i}"
+    show arceus happy
     arceus "That's going to be a huge hit."
     anno "So wait, that's [ep_name] done, then!"
     cs "Woohoo!"
@@ -702,8 +724,10 @@ label fan_interaction:
     cs "Oh my god!"
     arceus "Well, we going to need to file taxes on it."
     anno "Do we?"
+    show arceus angry
     arceus "You wanna go back to prison?"
     anno "No..."
+    show arceus
     arceus "Well then."
     cs "We need to figure this out. We at least have enough money to get out of this hotel room."
     arceus "And more."
@@ -717,6 +741,7 @@ label fan_interaction:
     agent "I'm emailing to inquire if you'd be interested in touring the country with your band. Your latest EP, [ep_name], has been making big waves on streaming services, and a live performance might be just what you need to take the next step."
     anno "Oh my God!"
     agent "If you're willing to negotiate, I think we could strike a very mutually benefitial deal for both of us."
+    show arceus happy
     arceus "That sounds amazing!"
     agent "Please get in touch as soon as you can,\n-- Howie Mandell"
     cs "We have to accept, right?"
@@ -759,15 +784,19 @@ label limo_time:
     scene in_limo with dissolve
     play music "<loop 0>audio/good_vibes.mp3" volume 0.5
     music GOOD VIBES - LitKidBeats
+    show arceus happy
     arceus "These snacks are amazing!"
     anno "This music's awesome!"
+    show cs happy
     cs "These seats are some comfy!"
     agent "Alright boys, enough chat, let's talk business."
     agent "I want to take you guys on tour."
+    show cs worried
     cs "Already?!"
     agent "Oh yeah baby, already. [ep_name] made [band_name] big, overnight. This kinda success comes once in a lifetime, and it's in your lifetime, and it's right now!"
     anno "Woah, woah, woah, slow down. Why are you so invested in our success?"
     agent "Oh, don't think I'm going to get a raw deal here, I know how to make sure we all end up happy."
+    show arceus angry
     arceus "You sure you mean all of us?"
     agent "I sense you're spooked so I'll give ya the rub. We take you on tour. Every ticket you sell, I get a cut, you get a cut, we all go home snuggling our cash."
     cs "You snuggle your cash?"
@@ -811,6 +840,7 @@ label signed_the_contract:
     cs "Vancouver? Where are we playing?"
     n "Howie reads his iPad."
     agent "Looks like something called LTX? Linus Tech Expo?"
+    show cs worried
     cs "Wait, Linus--"
     agent "See you bright an early tomorrow, we're getting in a tour bus!"
 
@@ -1109,9 +1139,11 @@ label second_tour_day:
     anno "Hey CS!"
     arceus "Dang, nice shoes!"
     cs "Thanks! Are you guys ready to perform tonight?"
+    show arceus happy
     arceus "Heck yeah!"
     anno "Of course."
     cs "I think we should sing [song_name_3] tonight."
+    show arceus
     arceus "Why is that?"
     cs "I just think it'll make someone pretty happy."
     anno "Sounds good to me!"
@@ -1137,6 +1169,7 @@ label second_tour_day:
     cs "Well, us."
     n "CS gestures to the others."
     nova "Of course! Well you guys go clean up out there."
+    show arceus happy
     arceus "Will do!"
     
     hide nova with moveoutright
@@ -1349,6 +1382,7 @@ label final_tour_bus:
     cs "Yeah."
     agent "Want me to point this bus towards Casa De CS?"
     cs "You know what, yeah, let's do it."
+    show arceus happy
     arceus "Let's get you home, buddy."
 
     scene black with dissolve
