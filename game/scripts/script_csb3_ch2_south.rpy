@@ -1061,7 +1061,7 @@ label donatehohsis:
     elif fanbase == "ytp":
         jump ytp_ending_alt
     else:
-        jump secret
+        jump true_ending_alt
 
 label true_ending_alt:
     n "CS looks over at his desk, where a new computer is sitting."

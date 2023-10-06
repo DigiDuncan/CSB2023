@@ -1297,7 +1297,7 @@ label talktohohsis:
     elif fanbase == "ytp":
         jump ytp_ending
     else:
-        jump secret
+        jump true_ending
 
 label true_ending:
     n "CS looks over at his desk, where a new computer is sitting."

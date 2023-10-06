@@ -44,7 +44,6 @@ init python:
     Replay_items.append(ReplayItem(["Archival"], "archival", "{outlinecolor=#000000}{color=#0000FF}Archival Ending{/color}{/outlinecolor}"))
     Replay_items.append(ReplayItem(["AIEnd"], "csbiii_ai", "{outlinecolor=#000000}{color=#0000FF}AI Ending{/color}{/outlinecolor}"))
     Replay_items.append(ReplayItem(["LegoLTT"], "lego_ending", "{outlinecolor=#000000}{color=#FFFF00}Lego Ending{/color}{/outlinecolor}"))
-    Replay_items.append(ReplayItem(["LegoLTT"], "ltt_ending_alt", "{outlinecolor=#000000}{color=#00FF00}LTT Ending ALT{/color}{/outlinecolor}"))
     Replay_items.append(ReplayItem(["BrokenReality"], "reality_break", "{outlinecolor=#000000}{color=#0000FF}Broken Reality{/color}{/outlinecolor}"))
     Replay_items.append(ReplayItem(["Rockstar"], "final_tour_bus", "{outlinecolor=#000000}{color=#FFFF00}Rockstar{/color}{/outlinecolor}"))
     Replay_items.append(ReplayItem(["FriendEnd"], "car_slam", "{outlinecolor=#000000}{color=#FFFF00}Friend Ending{/color}{/outlinecolor}"))
