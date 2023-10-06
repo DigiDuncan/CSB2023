@@ -297,6 +297,7 @@ define jermey = Character("Jermey", callback = renpy.partial(char_callback))
 define james = Character("James", callback = renpy.partial(char_callback))
 define tom = Character("Tom Scott", callback = renpy.partial(char_callback, name = "tom"))
 define sayori = Character("Sayori", callback = renpy.partial(char_callback, name = "sayori"))
+define gnome = Character("Gnome", callback = renpy.partial(char_callback, name = "gnome"))
 
 # Character Images
 ## CS
