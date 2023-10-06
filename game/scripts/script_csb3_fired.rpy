@@ -803,8 +803,8 @@ label howie:
 
 label limo_time:
     scene in_limo with dissolve
-    play music "<loop 0>audio/good_vibes.mp3" volume 0.5
-    music GOOD VIBES - LitKidBeats
+    play music "<loop 0>audio/exotic.mp3" volume 0.5
+    music Exotic - Panda Beats
     show arceus happy
     arceus "These snacks are amazing!"
     anno "This music's awesome!"
@@ -1037,7 +1037,7 @@ label first_tour_day:
     show arceus flipped at right
     show cs at center
     with dissolve
-    play music "<loop 0>audio/good_vibes.mp3" volume 0.5
+    play music "<loop 0>audio/exotic.mp3" volume 0.5
     show howie at offscreenleft with moveinright
     show howie at right behind arceus with move
 
@@ -1065,7 +1065,7 @@ label second_tour_day:
     show arceus at right
     show cs at center
     with dissolve
-    play music "<loop 0>audio/good_vibes.mp3" volume 0.5
+    play music "<loop 0>audio/exotic.mp3" volume 0.5
     n "CS shouts up to the front."
     cs "Where are we heading?!"
     agent "Manitoba! We'll stop in Winnipeg, so you guys can grab some stuff if you need it."
@@ -1155,7 +1155,7 @@ label second_tour_day:
     show anno at left
     show arceus flipped
     with dissolve
-    play music "<loop 0>audio/good_vibes.mp3" volume 0.5
+    play music "<loop 0>audio/exotic.mp3" volume 0.5
     show cs flipped at right with moveinright
     anno "Hey CS!"
     arceus "Dang, nice shoes!"
@@ -1225,7 +1225,7 @@ label second_tour_day:
     show arceus at right
     show cs
     with dissolve
-    play music "<loop 0>audio/good_vibes.mp3" volume 0.5
+    play music "<loop 0>audio/exotic.mp3" volume 0.5
     jump third_tour_day
 
 label third_tour_day:
@@ -1365,7 +1365,7 @@ label final_tour_bus:
     show arceus at right
     show cs
     with dissolve
-    play music "<loop 0>audio/good_vibes.mp3" volume 0.5
+    play music "<loop 0>audio/exotic.mp3" volume 0.5
     n "The boys are exhausted."
     show howie at offscreenright
     show anno at left
