@@ -205,7 +205,7 @@ label high_gpu:
     n "Linus and CS sit down at the desk while Linus pulls open the video."
     scene comments with fade
     play music "<loop 0>pixel_peeker_polka.mp3" loop volume 0.4
-    music Pixel Peeker Polka - Kevin Macleod
+    music Pixel Peeker Polka - Kevin MacLeod
     linus "Alright well, we've already got quite a bit of views..."
     cs "Man! I wish I got this amount of average views!"
     cs "Look at the comments!"
@@ -865,6 +865,7 @@ label cool_car:
     pause 0.5
     cs "Make me!"
     copguy "He's armed! Men, get in position and fire!"
+    music Compulsion To Obey - Lizardking
     jump rpg_cop_fight_1
 
 label reg_car:

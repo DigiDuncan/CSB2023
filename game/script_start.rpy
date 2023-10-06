@@ -897,6 +897,8 @@ default miku_check = False
 default engfirst = False
 default swedfirst = False
 default japfirst = False
+default archack = False
+default jade = False
 
 # Fired route
 default band_name = "CS' Crazy Crew"

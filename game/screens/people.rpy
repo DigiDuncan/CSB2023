@@ -23,7 +23,7 @@ init python:
         "copguy": "Copguy",
         "arceus": "Arceus3251",
         "anno": "Annorexorcist",
-        "border_guard": "Canadaian Border Guard",
+        "border_guard": "Canadian Border Guard",
         "linus": "Linus Sebastian",
         "mohs": "Mr. Mohs",
         "csgod": "CSGod",

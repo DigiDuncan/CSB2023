@@ -302,8 +302,9 @@ label utah:
 
 label vegas:
     if returning_from_blooper:
-        if fun_value(10, "jade"):
+        if fun_value(10):
             scene vegasjade
+            $ jade = True
         else:
             scene vegas
         show cscar1
@@ -317,7 +318,8 @@ label vegas:
     else:
         play music "<loop 0>penthouse.mp3" volume 0.5
         music "Al's Penthouse - Andy Blythe"
-        if fun_value(10, "jade"):
+        if fun_value(10):
+            $ jade = True
             scene vegasjade
             $ persistent.seen.add("bubble")
         else:
@@ -330,7 +332,7 @@ label vegas:
     cs "Woohoo! We're almost there!"
     arceus "Some reckless gambling will probably help me forget about the horrors from that restaurant..."
     n "As they enter Las Vegas and find a place to park, they start by heading down The Strip."
-    if event_happened("jade"):
+    if jade:
         scene vegasjade2 with fade
     else:
         scene strip with fade
@@ -1006,7 +1008,7 @@ label back_home_alt:
     cs "I don't understand..."
     menu:
         "Fight" (type = "bad"):
-            jump fighthohsis
+            jump fighthohsis_alt
         "Donate" (type = "true"):
             jump donatehohsis
         "Brag" (type = "bad"):
@@ -1133,6 +1135,46 @@ label lego_ending:
     centered "Pretend there's credits here."
     $ renpy.end_replay()
     jump secret2
+
+label fighthohsis_alt:
+    n "CS challenges HoH SiS to a fight."
+    show cs angry
+    cs "I beat up all your workers and Wesley, I can take you guys down too!"
+    cs "Let's go!"
+    ed "Richard, stand back."
+    hide rich with moveoutright
+    cs "C'mon! Hit me!"
+    ed "I'm going to refund my fist into your face!"
+    show cs at center
+    show ed at center
+    with move
+    play sound "audio/punch.ogg"
+    play sound "audio/punchalt.ogg"
+    show cs with hpunch
+    play sound "audio/punch.ogg"
+    play sound "audio/punchalt.ogg"
+    show ed with vpunch
+    play sound "audio/punch.ogg"
+    play sound "audio/punchalt.ogg"
+    show cs with hpunch
+    play sound "audio/punch.ogg"
+    play sound "audio/punchalt.ogg"
+    show ed with vpunch
+    play sound "audio/punch.ogg"
+    play sound "audio/punchalt.ogg"
+    show cs with hpunch
+    play sound "alt_punch.ogg"
+    show cs at t_punchup with move
+    show cs with vpunch
+    show ed at right with move
+    hide cs
+    pause 2.0
+    show cs disappointed at mid_left with moveintop
+    cs "I no longer want the joj..."
+    hide cs with moveoutbottom
+    show ed with hpunch
+    ed "Time to take a shit on the house."
+    bad_end "Revenge!" "back_home_alt"
 
 label braghohsis:
     show cs angry

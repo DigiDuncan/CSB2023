@@ -281,6 +281,7 @@ label montana:
     show cultist_2 at mid_mid_right with moveinright
     show cultist_3 at right with moveinright
     show cultist at mid_right with moveinright
+    $ persistent.seen.add("cultist2")
     cultist "Alright, they are over here at this car."
     cultist_2 "No way..."
     cultist_3 "It's CSGod!"
@@ -1011,8 +1012,9 @@ label pennsylvania:
     host "AND WITH THAT, LET'S BEGIN! READY?"
     n "CS glances over at Digi, and they nod at each other."
     host "3..."
-    if fun_value(50, "archack"):
+    if fun_value(50):
         n "Digi looks to be smacking his arm."
+        $ archack = True
     else:
         n "A whirr is heard as Digi's arm motors charge up."
     host "2..."
@@ -1084,7 +1086,7 @@ label win_pencil:
     n "Digi runs up to the group."
     digi "Hey, uh, can I get a ride?"
     cs "Huh?"
-    if event_happened("archack"):
+    if archack:
         digi "Well, my arm got hacked, or something, so I lost."
         arceus "Heh."
     else:

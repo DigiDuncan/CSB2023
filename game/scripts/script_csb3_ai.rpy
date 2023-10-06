@@ -80,7 +80,7 @@ label csbiii_ai:
     n "CS188 and Arceus duck behind a broken carousel as the cops pass by."
     show copguy_ai at center with moveinbottom
     play music "<loop 0>chase.mp3" volume 0.4
-    music Chase - Toby Fox
+    music The Chase - Toby Fox
     arceus "{i}whispering{/i} CS, we can't hide here forever. We need a distraction!"
     n "CS thinks for a sec."
     cs "I've got it! Remember that prank we pulled back in prison using inflatable rubber ducks?"

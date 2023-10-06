@@ -160,6 +160,7 @@ label walmart:
     $ _current_song = "Summer Clearance Sale"
     $ _current_artist = "BEST MUSIC"
     play music "<loop 0>summer_clearance_sale.mp3"
+    $ persistent.heard.add("Summer Clearance Sale - BEST MUSIC")
     n "CS walks inside."
     show doug at right with moveinright
     greeter "Hello and welcome to Walmart! Can I help you with anything?"

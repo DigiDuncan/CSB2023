@@ -506,6 +506,8 @@ label cops_ltt:
     copguy "Freeze!"
     n "As CS was explaining his story in extreme detail, the cops showed up in time."
     copguy "You are under arrest! Put your hands in the air!"
+    stop music fadeout 3.0
+    music end
     bad_end "Stupid CS! You dropped\nyour lore in front of the hoes!" "ltt_decide"
 
 label arc_escape:
@@ -607,7 +609,7 @@ label arc_escape:
     show cs dusk at left
     show arceus dusk flipped at mid_left
     play music "<loop 0>atarashii_kaze.mp3" volume 0.3
-    music Atarashii Kaze - Satoru Kosaki
+    music Atarashii Kaze - Satoru Kōsaki
     n "CS and Arc approach the border guard again."
     show border_guard dusk at right with moveinright
     border_guard "I'm gonna need proof of--"

@@ -1270,7 +1270,7 @@ label anime_adventure:
     cashier "Wait there. I know the head of NekoWorks, lemme take a picture and send it to them."
     hide cs with moveoutright
     play music "<loop 0>chase.mp3" volume 0.4
-    music Chase - Toby Fox
+    music The Chase - Toby Fox
     n "CS rushes out the door."
     cashier "Wait! Come back!"
     scene tokyo_street_2 with fade
