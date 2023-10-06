@@ -1330,7 +1330,7 @@ label streaming:
         $ achievement_manager.unlock("All Over Again")
     else:
         $ achievement_manager.unlock("That's All, Folks!")
-    if preferences.csbounciness == 1.0:
+    if preferences.csbounciness == 100:
         $ achievement_manager.unlock("Boingy Boingy Boingy")
     scene black with fade
     stop music fadeout 1.0   
