@@ -166,6 +166,11 @@ label england_travel:
     jump england
 
 label sweden_travel:
+    play sound "secret/gul.ogg"
+    show pakoo disappointed at center with moveinright
+    pakoo "Sorry, Sweden is unavailable. Jumping to england_travel."
+    hide pakoo with moveoutleft
+    jump england_travel
     $ swedfirst = True
     cs "Uhh, I guess I wanted to go to Sweden?"
     benrey "But everyone has a Pass Port!"
@@ -1129,6 +1134,11 @@ label england_japan:
     jump japan_two
 
 label england_sweden:
+    play sound "secret/gul.ogg"
+    show pakoo disappointed at center with moveinright
+    pakoo "Sorry, Sweden is unavailable. Jumping to england_japan."
+    hide pakoo with moveoutleft
+    jump england_japan
     cs "I was thinking of going to Sweden."
     kitty "Huh, never heard much about Sweden."
     arceus "Is there anywhere you wanna go in particular in Sweden?"
@@ -1554,6 +1564,11 @@ label japan_leave_airport:
         jump going_home
 
 label japan_sweden:
+    play sound "secret/gul.ogg"
+    show pakoo disappointed at center with moveinright
+    pakoo "Sorry, Sweden is unavailable. Jumping to going_home."
+    hide pakoo with moveoutleft
+    jump going_home
     cs "I think I wanna go to Sweden this time."
     cs "I know Vinesauce Joel is there, and I have kinda always wanted to meet up with him."
     cs "Well, if I did the crazy things I did in this country, then I'm sure I can make it in Sweden!"
