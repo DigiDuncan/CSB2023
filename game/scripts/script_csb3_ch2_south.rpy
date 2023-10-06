@@ -985,7 +985,7 @@ label back_home_alt:
     ed "YOU!"
     show cs disappointed at left with moveinleft
     n "CS and the gang look forth at CS' front porch, where Richard and Ed are waiting angrily for him."
-    play music "<loop 0>hohsisremix.mp3" volume 0.5
+    play music2 "<loop 0>hohsisremix.mp3" volume 0.5
     music "Alfred's Theme - Eminem"
     show ed at right
     show rich at mid_mid_right behind ed
@@ -1020,7 +1020,7 @@ label donatehohsis:
     cs "I never had bad intentions for you guys... honestly it was also kind of like a free promotion."
     ed "Well, I'm sorry CS, but it's too late."
     ed "Richard, get the JoJ UFO and vaporize the house."
-    stop music fadeout 1.0
+    stop music2 fadeout 1.0
     music end
     cs "Woah woah, hold on a second."
     cs "I am genuinely sorry about those videos, and I am sorry if you had any business losses."
@@ -1114,6 +1114,8 @@ label ltt_ending_alt:
     jump lego_ending
 
 label lego_ending:
+    scene cs_room_2
+    show cs at mid_left
     stop music fadeout 1.0
     music end
     cs "Guess what!"
@@ -1177,6 +1179,10 @@ label fighthohsis_alt:
     bad_end "Revenge!" "back_home_alt"
 
 label braghohsis:
+    stop music
+    scene cs_house
+    show ed at right
+    show rich at mid_mid_right behind ed
     show cs angry
     cs "Yeah well, I have so much money! I don't really care!"
     cs "You guys deserve to have your company in shambles!"
@@ -1196,7 +1202,7 @@ label braghohsis:
     show cs angry
     cs "I'll just buy a new house!"
     n "Ed then also vaporizes the briefcase of money."
-    show cs disappointed at left
+    show cs disappointed
     with vpunch
     n "Ed flips CS off, and then flies away."
     show cs disappointed
@@ -1346,6 +1352,7 @@ label noairport:
     jump reality_break
 
 label reality_break:
+    stop music
     direct "Cut!"
     scene soundstage
     show cs happy at left

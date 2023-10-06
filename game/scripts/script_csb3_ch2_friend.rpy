@@ -652,6 +652,7 @@ label weapon_of_choice:
     jump car_slam
 
 label car_slam:
+    stop music fadeout 1.0
     scene war_torn_1 with fade
     n "CS looks around, and views the destruction around him."
     n "The city that they once fought in has now been reduced to rubble and war-torn buildings."

@@ -1,10 +1,14 @@
 label archival:
+    stop music
+    scene cs_room_2
+    show cs at mid_left
     n "CS looks at his bedroom door."
     cs "Yeah, after EVERYTHING that has happened today, some rest sounds really nice."
     n "CS enters his bedroom and immediately jumps into bed."
     cs "Ah, finally, I can get a good night's sleep."
     n "CS does the finger guns at his ceiling."
     cs "This is CS{cps=*0.1}... {cps=*10}Signing out!"
+    stop music2 fadeout 3.0
     n "CS quickly drifts off to sleep."
     scene black with fade
     n "..."

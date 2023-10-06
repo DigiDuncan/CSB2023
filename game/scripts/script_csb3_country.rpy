@@ -622,6 +622,8 @@ label gordon_menu:
             jump bad_ramsay
 
 label bad_ramsay:
+    stop music fadeout 3.0
+    scene hell_kitchen
     show cs flipped
     cs "I guess the only thing I can think of off the top of my head is the cake Phil made for Michael."
     cs "That can't be too hard, right? It's just chocolate cake and Flex Seal, I think."
@@ -1082,6 +1084,9 @@ label england_done:
         jump going_home
 
 label scott_movent:
+    stop music fadeout 3.0
+    scene tom_road
+    show tom
     cs "I should wait till he's done with his video."
     tom "So yeah, we're just gonna keep talking about this road in particular."
     show car at car_run behind tom
@@ -1599,6 +1604,7 @@ label japan_england:
     jump england_second
 
 label going_home:
+    stop music fadeout 1.0
     cs "Welp, I guess it's time to head home."
     cs "I've done so many things during this trip, I honestly forgot why I started this."
     cs "I had to kinda rush it, just like with a real vacation!"

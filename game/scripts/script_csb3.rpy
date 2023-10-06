@@ -329,7 +329,7 @@ label reviews:
     n "Suddenly, Arceus rushes in through the doors."
     show arceus worried at mid_right with moveinright
     arceus "CS! There you are! We need to go ASAP!"
-    play music "<loop 0>hired_guns.mp3" volume 0.5
+    play music2 "<loop 0>hired_guns.mp3" volume 0.5
     music Hired Guns - Brian Johnston
     linus "CS? You know this person?"
     show cs worried
@@ -396,7 +396,7 @@ label ytp_fan:
     n "Suddenly, Arceus rushes in through the doors."
     show arceus worried at mid_right with moveinright
     arceus "CS! There you are! We need to go ASAP!"
-    play music "<loop 0>hired_guns.mp3" volume 0.5
+    play music2 "<loop 0>hired_guns.mp3" volume 0.5
     music Hired Guns - Brian Johnston
     linus "CS? Seriously?"
     show cs worried
@@ -468,7 +468,7 @@ label both_fan:
     n "Suddenly, Arceus rushes in through the doors."
     show arceus worried at mid_right with moveinright
     arceus "CS! There you are! We need to go ASAP!"
-    play music "<loop 0>hired_guns.mp3" volume 0.5
+    play music2 "<loop 0>hired_guns.mp3" volume 0.5
     music Hired Guns - Brian Johnston
     linus "So you DO have a furry fanbase who wants to join LTT! Damn it CS, I should've known."
     show cs worried
@@ -485,6 +485,10 @@ label both_fan:
             jump arc_escape
 
 label cops_ltt:
+    stop music
+    scene frontdoor
+    show linus at right
+    show arceus worried at mid_right
     show cs disappointed
     n "CS thinks long and hard about his decision."
     cs "I'm sorry Arceus, but I finally just got this dream job, and I can't lose it."
@@ -508,7 +512,7 @@ label cops_ltt:
     copguy "Freeze!"
     n "As CS was explaining his story in extreme detail, the cops showed up in time."
     copguy "You are under arrest! Put your hands in the air!"
-    stop music fadeout 3.0
+    stop music2 fadeout 3.0
     music end
     bad_end "Stupid CS! You dropped\nyour lore in front of the hoes!" "ltt_decide"
 
@@ -535,7 +539,7 @@ label arc_escape:
     else:
         cs "This is awful, I was just starting to get along well with Linus and the gang."
         arceus "I'm sure they'll forgive you in due time, but for now, we need to evade the cops' trail and get back to the United States."
-    stop music fadeout 3.0
+    stop music2 fadeout 3.0
     music end
     n "While Arceus and CS were fleeing away from the scene, the cops show up at LTT to investigate."
     scene frontdoor
@@ -744,7 +748,7 @@ label ytp_magic_fight:
     scene washington_road with fade
     show cs dark at left with moveinleft
     show arceus dark at right with moveinright
-    play music "<loop 0>killcops.mp3" volume 0.5
+    play music2 "<loop 0>killcops.mp3" volume 0.5
     music Echoing? - Banana
     n "The duo continues to travel along the road."
     n "CS talks to himself along the way, with Arceus weary of his actions still."
@@ -759,6 +763,10 @@ label ytp_magic_fight:
             jump wait_arc
 
 label attack_arc:
+    stop music
+    scene washington_road
+    show cs dark at left 
+    show arceus dark flipped at right
     $ achievement_manager.unlock("No Mercy")
     cs "{size=-15}It's now or never."
     n "CS channels CSGod."
@@ -766,7 +774,7 @@ label attack_arc:
     show csgod flipped at left
     csgod "Time to die, Arceus!"
     show arceus angry dark
-    stop music
+    stop music2
     music end
     show csgod flipped at left with vpunch
     play sound "alt_punch.ogg"
@@ -777,10 +785,14 @@ label attack_arc:
     bad_end "There's no weapon\nto free us all!" "forest_menu"
 
 label wait_arc:
+    stop music
+    scene washington_road
+    show cs dark at left 
+    show arceus dark flipped at right
     cs "{size=-15}I need to wait. I'm not powerful enough to attack."
     arceus "Man, I hope you are doing fine."
     cs "Yep!"
-    stop music
+    stop music2
     music end
     pause 5.0
     n "The duo walks silently for a few hours, and eventually the sun rises."
@@ -952,6 +964,11 @@ label copcar_menu:
             jump bad_convince
 
 label bad_convince:
+    scene copcar
+    show copguy at t_copguy_frontseat
+    show copcar_mask
+    show arceus at right
+    show cs disappointed at left
     play music "<loop 0>pressing_pursuit_cornered.mp3" volume 0.3
     music Pressing Pursuit ~ Cornered - Masakazu Sugimori
     play sound "hold_it.mp3" volume 0.5

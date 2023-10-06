@@ -1050,6 +1050,12 @@ label after_cop_fight:
 
 
 label flint_car:
+    stop music fadeout 3.0
+    music end
+    scene dealer_cars
+    show arceus at mid_right
+    show cs at center
+    show pakoo flipped at left behind cs
     cs "Is that... the Flintstones car??"
     show arceus angry
     arceus "CS, please don't pick that car. It's probably just--{w=1.0}{nw}"
@@ -1071,8 +1077,6 @@ label flint_car:
     show pakoo disappointed flipped with determination
     pakoo "You sure about this? You gotta use your feet to move, man."
     cs "Yes, I know how the Flintmobile works."
-    stop music fadeout 3.0
-    music end
     scene flintcar_fg
     show dealership behind flintcar_fg
     with fade

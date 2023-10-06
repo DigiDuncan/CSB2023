@@ -32,6 +32,10 @@ label east:
             jump hotwire
 
 label hotwire:
+    stop music
+    scene gasinside
+    show cs at left
+    show arceus at right
     cs "I don't know, we could just, hotwire a car?"
     arceus "I can probably do that, let's go look."
     scene gasoutside with fade
@@ -1026,6 +1030,13 @@ label pennsylvania:
     jump play_pencilgame
 
 label win_pencil:
+    hide bad_end_screen
+    hide typewriter
+    show stage_screen as stage_screen_l at t_stage_screen_l
+    show con_screen at t_stage_screen_c
+    show stage_screen as stage_screen_r at t_stage_screen_r
+    show cc_stage
+    show mettaton at t_stagescreen onlayer broadcast 
     host "HOLY TICONDEROGA! WE HAVE A WINNER!"
     show crowd at t_stagescreen onlayer broadcast
     n "As if they couldn't get any louder, the crowd is going insane."
@@ -1131,7 +1142,7 @@ label back_home:
     ed "YOU!"
     show cs disappointed at left with moveinleft
     n "CS and the gang look forth at CS' front porch, where Richard and Ed are waiting angrily for him."
-    play music "<loop 0>hohsisremix.mp3" volume 0.5
+    play music2 "<loop 0>hohsisremix.mp3" volume 0.5
     music "Alfred's Theme - Eminem"
     show ed at right
     show rich at mid_mid_right behind ed
@@ -1168,7 +1179,7 @@ label talktohohsis:
     cs "I never had bad intentions for you guys... honestly it was also kind of like a free promotion."
     ed "Well, I'm sorry CS, but it's too late."
     ed "Richard, get the JoJ UFO and vaporize the house."
-    stop music fadeout 1.0
+    stop music2 fadeout 1.0
     show anno at offscreenleft
     play music "<loop 0>track3.mp3" volume 0.4
     music Track 3 - Weatherscan
@@ -1286,7 +1297,7 @@ label talktohohsis:
     pause 2.0
     n "The crowd errupts in cheers as CS finally enters his house."
     scene cs_room with fade
-    play music "<loop 0>ac_title.mp3" volume 0.4
+    play music2 "<loop 0>ac_title.mp3" volume 0.4
     music New Leaf Title Theme - Kazumi Totaka
     show cs at center with moveinleft
     cs "Ah, it's good to be home again!"
@@ -1300,6 +1311,7 @@ label talktohohsis:
         jump true_ending
 
 label true_ending:
+    stop music
     n "CS looks over at his desk, where a new computer is sitting."
     scene cs_room_2 with fade
     n "CS looks at the monitor that has a sticky note that says \"From LTT\"."
@@ -1335,13 +1347,14 @@ label streaming:
     if preferences.csbounciness == 100:
         $ achievement_manager.unlock("Boingy Boingy Boingy")
     scene black with fade
-    stop music fadeout 1.0   
+    stop music2 fadeout 1.0   
     play music "secret/credits.mp3" volume 0.5
     centered "Pretend there's credits here."
     $ renpy.end_replay()
     jump secret2
 
 label ytp_ending:
+    stop music
     n "CS looks over at his desk, where his old computer is sitting."
     scene cs_room_2 with fade
     show cs at mid_left
@@ -1356,13 +1369,14 @@ label ytp_ending:
     n "CS chuckles."
     cs "It's a long story..."
     scene black with fade
-    stop music fadeout 1.0   
+    stop music2 fadeout 1.0   
     play music "secret/credits.mp3" volume 0.5
     centered "Pretend there's credits here."
     $ renpy.end_replay()
     jump secret2
 
 label ltt_ending:
+    stop music
     n "CS looks over at his desk, where a new computer is sitting."
     scene cs_room_2 with fade
     n "CS looks at the monitor that has a sticky note that says \"From LTT\"."
@@ -1380,13 +1394,18 @@ label ltt_ending:
     cs "Well guys..."
     cs "It's a long story..."
     scene black with fade
-    stop music fadeout 1.0   
+    stop music2 fadeout 1.0   
     play music "secret/credits.mp3" volume 0.5
     centered "Pretend there's credits here."
     $ renpy.end_replay()
     jump secret2
 
 label fighthohsis:
+    stop music
+    scene cs_house
+    show cs disappointed at left
+    show ed at right
+    show rich at mid_mid_right behind ed
     n "CS challenges HoH SiS to a fight."
     show cs angry
     cs "I beat up all your workers and Wesley, I can take you guys down too!"
@@ -1427,7 +1446,11 @@ label fighthohsis:
     bad_end "Revenge!" "back_home"
 
 label fuckuphohsis:
-    show cs angry
+    stop music
+    scene cs_house
+    show ed at right
+    show rich at mid_mid_right behind ed
+    show cs angry at left
     cs "Yeah I actually hate you guys, and I wanted to mess with your business!"
     cs "You guys suck and I hate you both!"
     cs "You guys deserve to have your company in shambles!"
@@ -1437,6 +1460,7 @@ label fuckuphohsis:
     with moveoutright
     cs "Hey! Where are you guys going!"
     cs "Come back here!"
+    hide cs with moveoutright
     n "The JoJ UFO flies up over the house and vaporizes the house."
     play sound "beam.ogg" volume 0.6
     show beam at xstretch_in
@@ -1444,7 +1468,7 @@ label fuckuphohsis:
     show cshouse_vaporized behind beam
     show beam at xstretch_out
     pause 1.0
-    show cs disappointed at left
+    show cs disappointed at left with moveinleft
     with vpunch
     n "Ed flips CS off, and then flies away."
     show cs disappointed
@@ -1453,9 +1477,14 @@ label fuckuphohsis:
     bad_end "Time to bunk\nat Rosen's!" "back_home"  
 
 label copsathohsis:
+    stop music
+    scene cs_house
+    show ed at right
+    show rich at mid_mid_right behind ed
+    show cs angry at left
     n "CS calls Copguy to come arrest HoH SiS."
     show cs worried
-    stop music fadeout 1.0
+    stop music2 fadeout 1.0
     music end
     show blue_light at left
     show red_light at right
