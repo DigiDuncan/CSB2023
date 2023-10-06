@@ -118,10 +118,11 @@ label edit_video:
     cs "I got it! I know exactly what to do!"
     cs "If Taran really does mean what he says about Linus, then I'm sure he'll love this!"
     cs "I'm gonna turn this video into a YTP!"
-    cs "It will be perfect! No one will expect it because they probably don't even know what I even did with my life for the past 13 years!"
+    cs "It will be perfect! No one will expect it because they probably don't even know what I did with my life for the past 13 years!"
     cs "As always, I should make sure it's as good as possible so at least Linus will enjoy it, along with his fans."
     cs "But I also don't have much time before Linus comes back and notices, so I need to hurry!"
     cs "Welp, time to get to work!"
+    scene black with dissolve
     music Supernova - Laszlo
     jump play_editgame
 
@@ -150,7 +151,8 @@ label fired:
 
 label boost:
     $ renpy.movie_cutscene("movies/good_cs_ytp.webm")
-    n "The next day."
+    scene black
+    centered "The next day."
     $ achievement_manager.unlock("#1 Rated Pooper")
     scene inside_ltt with fade
     show cs at offscreenleft
@@ -247,7 +249,7 @@ label boost:
     n "Linus laughs."
     linus "If you want, we can wipe them later."
     cs "Wipe! Now you're in on it!"
-    n "They both laugh as the drivers install, and once they're finished, CS boots up Premiere."
+    n "They both laugh as the drivers install, and once they're finished, CS boots up Premiere."already
     scene csvideo with fade
     cs "Alrighty, let's see here. Why don't we try this on that YTP I just made?"
     linus "Go to the settings real quick, and find the YTP features. turn YTP mode ON to allow the poop-tracing."
@@ -267,14 +269,14 @@ label boost:
     cs "Sure thing, let's take the card out real quick."
     scene ltt_bg
     show ltt_fg
-    with determination
+    with fade
     show cs at t_cs_ltt behind ltt_fg with moveinleft
     show linus at t_linus_ltt behind ltt_fg with moveinright
     n "Linus goes and gets the cameras set up, and they start to film the video."
-    linus "These days, video editing can be so difficult, and tedius. Lately the YouTube algorithm has been demanding more from us content creators."
+    linus "These days, video editing can be so difficult, and tedious. Lately the YouTube algorithm has been demanding more from us content creators."
     linus "Which is why today, we brought along our newest employee, long term YouTube Pooper: cs188 for this review of the new YTX-9001!"
     cs "Hey guys! CS here! The YTX-9001 is a fantastic card, and we can't wait to show you all of its features!"
-    linus "Much like we can't wait to show you this seguay to our sponsor!"
+    linus "Much like we can't wait to show you this segue to our sponsor!"
     n "The two stand for a moment awkwardly staring at the camera."
     linus "...Go ahead and cut."
     cs "Who knew recording could be so stressful. I could use a drink. The lights are so bright."
@@ -579,6 +581,7 @@ label arc_escape:
     colton "Oh my fucking god."
     copguy "If you are so sure then, lemme go talk to the sheriff about this."
     linus "Sure thing, officer."
+    show copguy flipped
     hide copguy with moveoutright
     n "Copguy leaves the scene."
     stop music fadeout 3.0
@@ -599,8 +602,9 @@ label arc_escape:
     arceus "Yeah, so much for the editing job, I guess."
     cs "I can't seem to get a break this month. First my problems with HoH SiS, now I'm running from the cops?"
     cs "I should've just called another foundation repair company."
-    arceus "Yeah, that sounds like hell. {size=-10}You could have called me. I am literally a god."
+    arceus "Yeah, that sounds like hell."
     cs "It IS hell."
+    arceus "{size=-10}You could have called me. I am literally a god."
     arceus "I should've known that the cops were going look for us. We didn't hide our tracks too well."
     arceus "I heard about the cops at the last second when I was checking comm chatter around the area. I figured that since you helped me out, I should come back for you."
     cs "Thanks man, I really owe you again."
@@ -632,7 +636,7 @@ label arc_escape:
     arceus "I've been in prison for five years, so I've had to figure out what to do again for money."
     stop music fadeout 3.0
     music end
-    arceus "Anno's been at the hotel too, I think he's planning on starting some kind of band."
+    arceus "Anno's been at the hotel too, I think he's planning on starting some kind of band?"
     cs "Ah, I see."
     scene sheriff_office
     play music "<loop 0>police_station.mp3" volume 0.5  
@@ -656,6 +660,7 @@ label arc_escape:
     sheriff "But believe me, this CS man has a pretty big target on his head, and we need to bring him to justice before him and his gang do anything else funny."
     sheriff "The next time you come back here, he better be with you, or you're fired!"
     copguy "Sure thing, boss. I'll track him down...{w=0.5} on my own."
+    show copguy flipped
     hide copguy with moveoutright
     n "Copguy turns around and heads out to track down CS and Arc."
     stop music fadeout 3.0
@@ -867,6 +872,7 @@ label pussy_out_forest:
     $ achievement_manager.unlock("Pacifist")
     cs "Arceus, quick! Let's escape into the forest!"
     arceus "Alrighty, let's go!"
+    show arceus flipped
     hide arceus
     hide cs
     with moveoutright
@@ -919,15 +925,16 @@ label wait_forest:
     cs "Arceus! Can't you do something about this?"
     arceus "No can do, boss. Looks like this is the end of the line."
     copguy "No time for negotiations, pal. Get in the car."
-    scene copcar with fade
+    scene copcar
     show copguy at t_copguy_frontseat
     show copcar_mask
-    with determination
-    show arceus at right with moveinleft
-    show cs disappointed at left with moveinleft
+    with fade
+    show arceus worried flipped at right
+    show cs disappointed at left
+    with moveinleft
     n "CS and Arc are thrown into the cop car, as Copguy says some order on his walkie."
     copguy "This is Copguy calling in a 1-8-8 on Compass Road. Sheriff? We got em."
-    n "Copguy gets in the car and they head off."
+    n "Copguy starts the car and they head off."
     jump copcar_menu
 
 label copcar_menu:
@@ -946,18 +953,18 @@ label copcar_menu:
 label bad_convince:
     play music "<loop 0>pressing_pursuit_cornered.mp3" volume 0.3
     music Pressing Pursuit ~ Cornered - Masakazu Sugimori
-    play sound "objection.mp3" volume 0.5
-    show objection at truecenter with hpunch
-    pause 1.0
-    hide objection
-    cs "Wait a second! I'm not actually CS!"
-    cs "I just LOOK like CS!"
-    show arceus worried
-    arceus "I mean, he might not be CS?"
     play sound "hold_it.mp3" volume 0.5
     show hold_it at truecenter with hpunch
     pause 1.0
     hide hold_it
+    cs "Wait a second! I'm not actually CS!"
+    cs "I just LOOK like CS!"
+    show arceus worried
+    arceus "I mean, he might not be CS?"
+    play sound "objection.mp3" volume 0.5
+    show objection at truecenter with hpunch
+    pause 1.0
+    hide objection
     stop music
     music end
     copguy "Nice try, bud. We saw your fake visa and everything. You too are going back to the slammer."
@@ -967,10 +974,10 @@ label good_convince:
     show cs worried
     play music "<loop 0>pressing_pursuit_cornered.mp3" volume 0.3
     music Pressing Pursuit ~ Cornered - Masakazu Sugimori
-    play sound "objection.mp3" volume 0.5
-    show objection at truecenter with hpunch
+    play sound "hold_it.mp3" volume 0.5
+    show hold_it at truecenter with hpunch
     pause 1.0
-    hide objection
+    hide hold_it
     cs "Wait a second! The reason all this happened was because HoH SiS sabotaged my computer!"
     show arceus worried
     arceus "Wait, what?"
@@ -980,10 +987,10 @@ label good_convince:
     cs "So afterwards, I wanted to get my revenge!"
     copguy "I'm not believing this for a second."
     copguy "You really thought I would fall for some silly little lie?"
-    play sound "hold_it.mp3" volume 0.5
-    show hold_it at truecenter with hpunch
+    play sound "objection.mp3" volume 0.5
+    show objection at truecenter with hpunch
     pause 1.0
-    hide hold_it
+    hide objection
     arceus "Actually, I have proof of this."
     arceus "CS just raised a good point, and I can show you."
     copguy "And HOW can you prove this? Where is your evidence?"
@@ -991,6 +998,7 @@ label good_convince:
     copguy "WHAT? How did you get that?"
     arceus "Watch this."
     show black with fade
+    # TODO: CSBI SCENE
     n "Copguy stops the car as Arceus plays back the scene from {i}CS Bounciness I{/i} with the scamming of CS by HoH SiS."
     scene copcar
     show copguy at mid_left
@@ -1007,6 +1015,7 @@ label good_convince:
     copguy "But I can't argue right now on if that footage is fake or not."
     stop music fadeout 3.0
     music end
+    hide copguy with moveoutleft
     n "Copguy gets out of the car."
     n "He then proceeds to open the doors and let them out, freeing them of their shackles."
     scene washington_road with fade
@@ -1026,7 +1035,7 @@ label good_convince:
     play music "<loop 0>bun_guster.mp3" volume 0.3
     music Bun Guster - Satoru Kōsaki
     arceus "Holy crap, I didn't think that would work."
-    cs "Me neither! I'm so glad that they let us go!"
+    cs "Me neither! I'm so glad that he let us go!"
     cs "I don't know how you got that footage, but we are now free once again!"
     show arceus happy dark
     arceus "Hooray for CS and Arc!"
