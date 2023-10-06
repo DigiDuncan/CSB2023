@@ -28,7 +28,7 @@ label dpn_call:
     cs "Alright, I'll keep heading straight."
     pause 2.0
     show cs disappointed
-    pakoo "Man, I hope Mika is okay. I don't how I'm gonna explain to them later about this whole situation."  # TODO: This was a CS line, is this fine, Pakoo?
+    pakoo "Man, I hope Mika is okay. I don't how I'm gonna explain to them later about this whole situation."
     arceus "I think we're all in the same boat on that problem. I'm sure they'll all be fine."
     jump car_ride_1
 
@@ -533,7 +533,6 @@ label copguy_pres:
     jump car_ride_3
 
 label car_ride_3:
-    #TODO: Car dialogue
     if nice_car:
         scene joj_chargerarc_fg
         show drive_night behind joj_chargerarc_fg
@@ -610,7 +609,6 @@ label final_meetup:
     show tate at left
     with moveinleft
     n "The last group to meet up all emerge as well, who are:"
-    #TODO: Intro thingy
     show blank at center with moveinright
     blank "Hi!"
     $ renpy.movie_cutscene("movies/blank.webm")

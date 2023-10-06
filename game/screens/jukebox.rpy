@@ -3,7 +3,6 @@
 ##-------CODEX ENTRY NAVIGATION------------------
 ##-----------------------------------------------
 
-# TODO: Order the jukebox
 
 init python:
     global music_map
@@ -211,7 +210,6 @@ init python:
         "Track 3 - Weatherscan": "weather.png"
     }
 
-    # TODO: Complete album map.
 
 screen jukebox_nav():
 
@@ -258,7 +256,6 @@ screen jukebox_welcome():
         xoffset 200
         text "In this category, you can listen to all the sweet tunes you've discovered throughout CS's adventures!"
         text "([unlocked_music_count]/[music_count] unlocked)"
-        # TODO: Arc, can you center this? Thanks.
 
 
 ##-----------------------------------------------

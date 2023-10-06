@@ -125,7 +125,7 @@ screen people_welcome():
         xoffset 200
         text "View bios about all the wacky characters you've seen!"
         text "([unlocked_bio_count]/[bio_count] unlocked)"
-        # TODO: Arc, can you center this? Thanks.
+
 
 
 ##-----------------------------------------------

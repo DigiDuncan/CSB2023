@@ -1,6 +1,5 @@
 default persistent.unlocked_achievements = set()
 
-# TODO: Sort these a bit better?
 
 define achievements = [
     Achievement("ZUP!", "???", "Start the game.", "zup"),

@@ -1518,7 +1518,6 @@ label miku_pizza:
     stop music fadeout 3.0
     music end
     scene black with dissolve
-    # TODO: Fade to CS and Miku sharing a pizza
     scene dominos
     show cs at left
     show miku at right

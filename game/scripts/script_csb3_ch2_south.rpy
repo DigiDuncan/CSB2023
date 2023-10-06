@@ -1343,8 +1343,6 @@ label noairport:
     show cs happy at left with move
     cs "Woohoo! I love this!"
     cs "And then comes in Gandalf the Grey and Gandalf the Wh--{nw}"
-
-    # TODO: More silly route.
     jump reality_break
 
 label reality_break:

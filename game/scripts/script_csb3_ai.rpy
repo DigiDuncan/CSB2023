@@ -34,7 +34,6 @@ label csbiii_ai:
     cs "Thank you, thank you. Just doing my part to keep things interesting."
     n "The team celebrates their successful, albeit unconventional, tech solution."
     n "Arceus bursts in."
-    # TODO: Change music here
     show arceus at center with moveinright
     arceus "CS! We've got to get out of here, and fast! The cops are hot on our tails!"
     show cs at left

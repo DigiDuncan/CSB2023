@@ -1,7 +1,5 @@
 ### TODO:
 
-# Needed sounds:
-# ~5 rock instrumentals
 
 # TODO: TRANSITIONS NEED TO BE MORE DYNAMIC
 # anno is always just sitting on the left, arc on the right, and CS in the middle
@@ -987,8 +985,6 @@ label first_tour_day:
     show arceus at right
     show cs
     with dissolve
-
-    # TODO: cheering
     n "The crowd is going insane."
     cs "We're [band_name], and this is {i}[song_name_4]{/i}!"
     play sound "audio/start_rocking.mp3"
@@ -1246,7 +1242,6 @@ label third_tour_day:
     cs "We'll put on a show like they've never seen before!"
 
     stop music fadeout 3.0
-    # TODO: Can this please be a diiferent convention center?
     scene convention_center_lobby
     with fade
     show anno at left
@@ -1346,7 +1341,6 @@ label third_tour_day:
 
     cs "OK!"
     play sound "audio/start_rocking.mp3"
-    # TODO: Play track
     cs "{cps=15}{image=note_small1.png}[line_11]{image=note_small2.png}"
     $ line_12 = renpy.input("What's the next line?")
     cs "{cps=15}{image=note_small1.png}[line_12]{image=note_small2.png}"
