@@ -11,6 +11,8 @@ init python:
     def char_callback(event, name = None, beep = None, play_beeps = True, **kwargs):
         if name:
             persistent.seen.add(name)
+            if all([a in persistent.seen for a in name_map.keys()]):
+                achievement_manager.unlock("Gotta Catch Them All")
         if preferences.text_beeps and play_beeps:
             if event == "show":
                 if beep is not None:

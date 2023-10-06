@@ -71,6 +71,8 @@ python early:
             renpy.with_statement(determination)
             renpy.show_screen("music")
             renpy.with_statement(determination)
+            if all([a in persistent.heard for a in music_map.keys()]):
+                achievement_manager.unlock("Gotta Catch Them All")
 
     def lint_music(parsed_object):
         if parsed_object is None:

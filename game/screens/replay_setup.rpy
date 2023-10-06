@@ -38,25 +38,18 @@ init python:
     Replay_items.append(ReplayItem(["PencilShart"], "lose_pencil_game", "{outlinecolor=#000000}{color=#FF0000}Pencil Sharting Day!{/color}{/outlinecolor}"))
     # Like 4 endings use the same fucking screen
     Replay_items.append(ReplayItem(["CopCall"], "copsathohsis", "{outlinecolor=#000000}{color=#00FF00}Call The Cops{/color}{/outlinecolor}"))
-    Replay_items.append(ReplayItem(["CopCall"], "true_ending", "{outlinecolor=#000000}{color=#00FF00}True Ending{/color}{/outlinecolor}"))
+    Replay_items.append(ReplayItem(["CopCall"], "true_ending", "{outlinecolor=#000000}{color=#AA00CC}True Ending{/color}{/outlinecolor}"))
     Replay_items.append(ReplayItem(["CopCall"], "ytp_ending", "{outlinecolor=#000000}{color=#00FF00}YTP Ending{/color}{/outlinecolor}"))
     Replay_items.append(ReplayItem(["CopCall"], "ltt_ending", "{outlinecolor=#000000}{color=#00FF00}LTT Ending{/color}{/outlinecolor}"))
-    Replay_items.append(ReplayItem(["Archival"], "archival", "{outlinecolor=#000000}{color=#AA00CC}Archival Ending{/color}{/outlinecolor}"))
-    Replay_items.append(ReplayItem(["AIEnd"], "csbiii_ai", "{outlinecolor=#000000}{color=#AA00CC}AI Ending{/color}{/outlinecolor}"))
-    Replay_items.append(ReplayItem(["LegoLTT"], "lego_ending", "{outlinecolor=#000000}{color=#00FF00}Lego Ending{/color}{/outlinecolor}"))
+    Replay_items.append(ReplayItem(["Archival"], "archival", "{outlinecolor=#000000}{color=#0000FF}Archival Ending{/color}{/outlinecolor}"))
+    Replay_items.append(ReplayItem(["AIEnd"], "csbiii_ai", "{outlinecolor=#000000}{color=#0000FF}AI Ending{/color}{/outlinecolor}"))
+    Replay_items.append(ReplayItem(["LegoLTT"], "lego_ending", "{outlinecolor=#000000}{color=#FFFF00}Lego Ending{/color}{/outlinecolor}"))
     Replay_items.append(ReplayItem(["LegoLTT"], "ltt_ending_alt", "{outlinecolor=#000000}{color=#00FF00}LTT Ending ALT{/color}{/outlinecolor}"))
-    Replay_items.append(ReplayItem(["BrokenReality"], "reality_break", "{outlinecolor=#000000}{color=#AA00CC}Broken Reality{/color}{/outlinecolor}"))
-    Replay_items.append(ReplayItem(["Rockstar"], "final_tour_bus", "{outlinecolor=#000000}{color=#00FF00}Rockstar{/color}{/outlinecolor}"))
-    Replay_items.append(ReplayItem(["FriendEnd"], "car_slam", "{outlinecolor=#000000}{color=#FFCC00}Friend Ending{/color}{/outlinecolor}"))
-    Replay_items.append(ReplayItem(["CountryEnd"], "going_home", "{outlinecolor=#000000}{color=#0000FF}Country Ending{/color}{/outlinecolor}"))
-    
-    
-    
+    Replay_items.append(ReplayItem(["BrokenReality"], "reality_break", "{outlinecolor=#000000}{color=#0000FF}Broken Reality{/color}{/outlinecolor}"))
+    Replay_items.append(ReplayItem(["Rockstar"], "final_tour_bus", "{outlinecolor=#000000}{color=#FFFF00}Rockstar{/color}{/outlinecolor}"))
+    Replay_items.append(ReplayItem(["FriendEnd"], "car_slam", "{outlinecolor=#000000}{color=#FFFF00}Friend Ending{/color}{/outlinecolor}"))
+    Replay_items.append(ReplayItem(["CountryEnd"], "going_home", "{outlinecolor=#000000}{color=#FFFF00}Globetrotter{/color}{/outlinecolor}"))
 
-
-
-# a black background screen for the selection
-image black = "#5F777F"
 
 #the locked image for the replay gallery if you're using the gallery you can use the same (if you want to)
 image replay_locked = "images/replay/replay_lock.jpg"
