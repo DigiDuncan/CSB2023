@@ -103,7 +103,7 @@ See what needs to be done below.
 - [ ] Transition/Flip Pass [includes flashes] [50%]
 - [ ] Sprite Emotion Pass
 - [ ] Sprite Time-of-Day Check
-- [ ] Jukebox/Achievements/Bio Pass [33%]
+- [ ] Jukebox/Achievements/Bio Pass [90%]
 - [ ] Remove/address all TODO comments
 - [ ] Add more bounciness
 - [ ] Check Discord channels for missing content
