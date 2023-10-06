@@ -249,10 +249,10 @@ label boost:
     n "Linus laughs."
     linus "If you want, we can wipe them later."
     cs "Wipe! Now you're in on it!"
-    n "They both laugh as the drivers install, and once they're finished, CS boots up Premiere."already
+    n "They both laugh as the drivers install, and once they're finished, CS boots up Premiere."
     scene csvideo with fade
     cs "Alrighty, let's see here. Why don't we try this on that YTP I just made?"
-    linus "Go to the settings real quick, and find the YTP features. turn YTP mode ON to allow the poop-tracing."
+    linus "Go to the settings real quick, and find the YTP features. Turn YTP mode ON to allow the poop-tracing."
     cs "Alright, here goes nothing."
     n "A loading bar appears as the timeline starts shifting and different edits are created in the process."
     cs "Holy crap! This is amazing! It optimized every part of my YTP!"
@@ -520,9 +520,10 @@ label arc_escape:
     cs "This is CS, signing out."
     arceus "We have no time for that, CS! We need to go!"
     scene outside_ltt with dissolve
-    show cs disappointed at left
+    show cs disappointed flipped at left
     show arceus at right
     with moveinright
+    show cs disappointed at left
     n "CS and Arceus run out of the building, and try to find cover while they escape."
     play sound "siren.ogg" loop fadein 2.0 volume 0.2
     show blue_light at left
@@ -1022,6 +1023,7 @@ label good_convince:
     show copguy dark at right with moveinleft
     show cs disappointed dark at left with moveinleft
     show arceus dark flipped at mid_left_left with moveinleft
+    show copguy dark at right
     copguy "Listen, I really shouldn't be doing this right now, but I have to go back to look into this deal with HoH SiS."
     copguy "You are free to go for now."
     copguy "But know this: I'm putting my job on the line over this."
