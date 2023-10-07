@@ -368,7 +368,8 @@ style navigation_button_text:
 
 screen main_menu():
 
-    ## This ensures that any other menu screen is replaced.
+
+            ## This ensures that any other menu screen is replaced.
     tag menu
     add gui.main_menu_background
 
@@ -378,10 +379,10 @@ screen main_menu():
 
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
+
     use navigation
 
     if gui.show_name:
-
         vbox:
             style "main_menu_vbox"
 
@@ -390,7 +391,6 @@ screen main_menu():
 
             text "[config.version]":
                 style "main_menu_version"
-
 
 style main_menu_frame is empty
 style main_menu_vbox is vbox

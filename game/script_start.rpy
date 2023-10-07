@@ -31,6 +31,8 @@ init python:
 
 init 10 python:
     def unlock_all():
+
+
         for m in music_map.keys():
             persistent.heard.add(m)
         for p in name_map.keys():
@@ -948,6 +950,12 @@ python early:
         global typewriter_text
         text, label = parsed_object
         _window_hide()
+        seen_all = True
+        for i in Replay_items:
+            if not renpy.seen_label(i.replay):
+                seen_all = False
+        if seen_all:
+            achievement_manager.unlock("Fin.")
         renpy.show("bad_end_screen")
         renpy.pause(1.0)
         typewriter_text = text
@@ -1001,6 +1009,19 @@ label splashscreen:
     return
 
 label before_main_menu:
+
+    python:
+        seen_all = True
+        for i in Replay_items:
+            if not renpy.seen_label(i.replay):
+                seen_all = False
+        if seen_all:
+            if not "Fin." in persistent.unlocked_achievements:
+                    chievos = (a for a in achievements
+                    if a.name == "Fin.")
+                    renpy.show_screen("popup", next(chievos))
+                    achievement_manager.unlock("Fin.", show_screen = False)
+
     if not persistent.seen_splash:
         if not renpy.music.is_playing():
             $ renpy.music.play("bubble_tea.mp3", loop = False)
@@ -1033,7 +1054,6 @@ init python:
 image typewriter = DynamicDisplayable(show_typewriter)
 
 label test:
-
     $ typewriter_text = "Here is some text, bitch\nI have no clue if it works\nI sure hope it does!"
     show typewriter
     pause
