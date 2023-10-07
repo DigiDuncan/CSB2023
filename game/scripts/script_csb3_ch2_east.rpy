@@ -50,7 +50,7 @@ label hotwire:
     show blue_light at left
     show red_light at right
     play sound "<loop 0>siren.ogg" volume 0.5
-    show copguy at center with moveinleft
+    show copguy at center with moveinright
     show cs disappointed
     show arceus worried
     copguy "I heard the sound of a car window breaking from miles away!"
@@ -75,14 +75,14 @@ label billy_driver:
     "???" "Oh uhh, hold on a second."
     n "The mysterious driver walks behind the store."
     arceus "What are you doing? That man looks like he's going to kill us!"
-    arceus "He's probably getting a gun, we need to lea--"
+    arceus "He's probably getting a gun, we need to lea--{w=1.5}{nw}"
     show billy at center with moveinleft
     play music "<loop 0>mm_select.mp3" volume 0.3
     music Mm Select - Matthew Simmonds
     billy "Hi, Billy Mays here for the Uber Driver!"
     billy "The fast and easy way for people who don't have a car to get around!"
     show cs happy
-    cs "Sweet! We need to get to upstate New York, do you think you can help us?"
+    cs "Sweet! We need to get to Upstate New York, do you think you can help us?"
     billy "Absolutely! For only $19.95, I'll take you both to New York!"
     cs "Alright well, it's settled! We have our driver, Arceus!"
     arceus "..."
@@ -264,6 +264,7 @@ label montana:
     hide billy with moveoutleft
     n "Billy goes to the back of his trunk and starts digging around."
     arceus "Never thought we'd run into cultists out of all people."
+    show cs flipped with determination
     hide cs with moveoutleft
     n "CS starts digging around in the back too."
     arceus "CS, what are you doing?"
@@ -280,6 +281,7 @@ label montana:
     arceus "CS, what the fuck are you doing...?!"
     arceus "You are going to definitely get us killed!"
     n "Arceus hides behind the car as the cultist leader brings two others with him."
+    show arceus angry with determination
     hide arceus with moveoutleft
     show cs fakegod at left with moveinleft
     show cultist_2 at mid_mid_right with moveinright
@@ -338,7 +340,7 @@ label montana:
     show billy car
     with fade
     n "The gang gets back in the car and books it out of the forest."
-    n "After a while of driving, Billy pulls the car into a small area off the forest to let everyone rest."
+    n "After a while of driving, Billy pulls the car into a small area at the edge of the forest to let everyone rest."
     scene black with fade
     n "After the night passes, they set off again on their trip."
     scene car background
@@ -346,7 +348,7 @@ label montana:
     play music "<loop 0>mort_farm.mp3" volume 0.4
     music "Mort's Farm - ClascyJitto"
     cs "Can we stop somewhere to eat? We haven't eaten since yesterday."
-    arceus "Yeah unfortunately the one store you guys went to didn't have anything edible."
+    arceus "Yeah, unfortunately the one store you guys went to didn't have anything edible."
     billy "Sure yeah, there's a McDonald's up here in a couple miles."
     scene mcdonalds
     show billy car
@@ -939,7 +941,7 @@ label pennsylvania:
     cs "Please?"
     pause 3.0
     arceus "Fine, sure, whatever."
-    cs "Yippee! Let's go!"
+    cs "Woohoo! Let's go!"
     scene cc_parking_lot with fade
     show cs at left
     show arceus flipped at mid_left
@@ -956,7 +958,7 @@ label pennsylvania:
     arceus "This is... some place."
     billy "Do people really like pencils that much? Maybe I should've pitched more pencil products."
     scene cc_entrance with dissolve
-    show pencilguy at center with determination
+    show pencilguy at center with moveinleft
     n "A man dressed as a pencil approaches the gang."
     pencil "Welcome to PencilCon! Want a free pencil?"
     show arceus at right with moveinright
@@ -998,10 +1000,10 @@ label pennsylvania:
     hide arceus with moveoutright
     n "Arceus runs off to where CS went."
     billy "Now, that's the power of good advice!"
-    scene cc_lobby with dissolve
+    scene cc_lobby
     show cashier at center
     show cs at left
-    with determination
+    with dissolve
     show arceus at right with moveinright
     n "Arc catches up with CS, at the sign up table."
     signup "...and you said your last name is... 188?"
@@ -1147,7 +1149,7 @@ label win_pencil:
     show cs at t_stagescreen onlayer broadcast
     cs "I should have seen that coming."
     hide cs
-    scene cc_crowd
+    scene cc_crowd with dissolve
     cs "Well that was a lot of excitement for one day, let's head home."
     n "Though he was working harder to support CS, Arceus couldn't help but look relieved to be back on track."
     arceus "Absolutely."
@@ -1172,6 +1174,7 @@ label win_pencil:
     billy "He and Arc are both pretty small, I think they'll fit in the back just fine."
     show arceus angry at right with moveinright
     arceus "Hey!"
+    digi "Thanks!"
     show arceus angry flipped
     hide arceus with moveoutright
     cs "Well, Digi, you got a ride!"
@@ -1212,7 +1215,7 @@ label back_home:
     show rich at mid_mid_right behind ed
     with moveinright
     ed "I have been waiting for you for quite some time now."
-    rich "We've been trying to stop you for a while now, but this is final stop for you."
+    rich "We've been trying to stop you for a while now, but this is the final stop for you."
     cs "HoH SiS?? What do you guys still want from me?"
     ed "What do you think, CS? After you put Wesley in the hospital? After you crippled most of our workers?"
     cs "Well, you guys scammed me out of my money and broke my computer! Of course I wanted some kind of revenge!"
@@ -1256,7 +1259,7 @@ label talktohohsis:
     anno "I don't know, because..."
     anno "CS wasn't trying to harm you!"
     show arceus flipped at mid_left_left with moveinleft
-    arceus "Yeah, CS' videos are hilarious, and honestly if I knew you guys before this I would've called you up for help on my house."
+    arceus "Yeah, CS' videos are hilarious, and honestly if I knew you guys before this, I would've called you up for help on my house."
     arceus "If y'know, I didn't go after that one politican."
     ed "Well okay, but--"
     n "Even more of CS' friends show up at the scene."
@@ -1332,14 +1335,14 @@ label talktohohsis:
     n "Ed ponders for a moment."
     ed "Sure. We have a deal."
     show cs happy at left
-    cs "Hooray!"
+    cs "Woohoo!"
     n "As if the crowd couldn't get any bigger, the cops show up."
     show cs at left
-    show copguy at center with moveinleft
+    show copguy flipped at center with moveinleft
     copguy "Hey CS, we finally found HoH SiS."
     copguy "And it looks like you did too."
     show sheriff at mid_left with moveinleft
-    sheriff "Goodjob Copguy, time to put them in the slammer!"
+    sheriff "Good job Copguy, time to put them in the slammer!"
     cs "No need guys, we worked everything out."
     sheriff "What?!"
     copguy "Are you sure?"
@@ -1347,6 +1350,7 @@ label talktohohsis:
     sheriff "All this for nothing..."
     sheriff "Whatever, c'mon Copguy, let's go."
     n "The cops get back in their car and speed off."
+    show copguy with determination
     hide sheriff with moveoutleft
     hide copguy with moveoutleft
     hide ed with moveoutright
@@ -1381,7 +1385,7 @@ label true_ending:
     n "CS looks at the monitor that has a sticky note that says \"From LTT\"."
     show cs happy at mid_left with moveinleft
     cs "Oh my goodness, Linus got me a new PC!"
-    n "There is also a note that says: \"We'd love to have to work with us again virtually, just give us a call\"."
+    n "There is also a note that says: \"We'd love to have you work with us again virtually, just give us a call\"."
     cs "I'll have to make sure to call them later!"
     if persistent.true_ending:
         menu:
@@ -1446,7 +1450,7 @@ label ltt_ending:
     n "CS looks at the monitor that has a sticky note that says \"From LTT\"."
     show cs happy at mid_left with moveinleft
     cs "Oh my goodness, Linus got me a new PC!"
-    n "There is also a note that says: \"We'd love to have to work with us again virtually, just give us a call\"."
+    n "There is also a note that says: \"We'd love to have you work with us again virtually, just give us a call\"."
     cs "I'll have to make sure to call them later!"
     show cs at mid_left
     cs "Before I head off for the night, I'll do a stream real quick."
@@ -1553,8 +1557,8 @@ label copsathohsis:
     show blue_light at left
     show red_light at right
     play sound "<loop 0>siren.ogg" loop volume 0.5
-    show copguy at center with moveinleft
-    cs "Here they are! They scammed me out of my money and services!"
+    show copguy flipped at center with moveinleft
+    cs "Here they are! They scammed me out of my money!"
     n "Copguy cuffs the HoH SiS members and pulls out his walkie."
     copguy "We got them, sheriff. Time to bring them to the slammer."
     hide copguy

@@ -7,18 +7,18 @@ label archival:
     n "CS enters his bedroom and immediately jumps into bed."
     cs "Ah, finally, I can get a good night's sleep."
     n "CS does the finger guns at his ceiling."
-    cs "This is CS{cps=*0.1}... {cps=*10}Signing out!"
+    cs "This is CS{cps=*0.1}... {cps=*10}passing out!"
     stop music2 fadeout 3.0
     n "CS quickly drifts off to sleep."
-    scene black with fade
+    scene black with dissolve
     n "..."
     n "..."
     n "..."
     scene bedroom_old
+    show cs at left
+    with dissolve
     play music "<loop 0>facing_worlds.mp3" volume 0.5
     music "Facing Worlds - Michiel van den Bos"
-    show cs at left
-    with fade
     n "CS slowly wakes up after his long rest."
     cs "Hey guys! CS here!"
     cs "How is ever-"
@@ -50,7 +50,7 @@ label archival:
     show k199 at mid_left_left with moveinright
     show k207h at mid_right_right with moveinright
     n "The door slowly opens, and three people with white suits and top hats enter the room."
-    n "They all look like the same person, except one is wearing sunglasses and the other is wearing a gas mask."
+    n "They all look like the same person, except one is wearing sunglasses and the other is wearing a hazmat suit."
     n "They quickly scan the room, and notice the laptop turned on."
     show k199 flipped
     "???" "What the hell, K17! I thought this place didn't have any triggers!"
@@ -80,11 +80,14 @@ label archival:
     show k199
     k199 "Wait a second…"
     n "K19-9 sees something shift for a second in the corner and leans in to look."
-    show cs disappointed at left
+    show cs disappointed at left with moveinleft
     show k199 behind cs
     n "CS turns around for a second and sees a face staring right at him."
     show cs worried
     cs "Gahhhh!"
+    show k174 at mid_right
+    show k199 at center
+    with move
     k199 "Oh fuck! What the hell?"
     n "CS quickly stands up. Everyone is silent and staring at CS."
     k207 "Shit dude that's him! He's here!"
@@ -92,7 +95,7 @@ label archival:
     k174 "WHAT THE FUCK?! WHY DOES HE LOOK LIKE THAT!"
     show cs disappointed
     cs "Damn okay, now I just feel insulted."
-    k199 "Dude just, find something here to knock him or whatever!"
+    k199 "Dude just, find something here to knock him out or whatever!"
     k174 "Okayokayokay! I got this! Take this!"
     show worker_1 at center with moveintop
     n "One of the HoH SiS workers materialize in between CS and the 3 people."
@@ -153,7 +156,7 @@ label archival:
     n "CS looks around for a second, and sees what looks like a crack in the sky."
     cs "What the hell?"
     n "CS makes his way to the crack, and realizes that there is an invisible wall."
-    hide cs worried at dissolve
+    hide cs with dissolve
     stop music fadeout 3.0
     music end
     n "CS, without any second thoughts, breaks off pieces of the wall enough to widen the crack, and crawls through the hole."
@@ -173,7 +176,7 @@ label archival:
     show cs disappointed at center with moveinbottom
     n "CS picks himself up off the glass and goo, and looks ahead of him in awe."
     scene archival_6 with dissolve
-    n "There are tons of glowing cyan tanks full of liquid, with hundreds of them stretching on in front of him, and rows of them to his left and right."
+    n "There are tons of glowing cyan tanks full of liquid, with hundreds of them stretching out in front of him, and rows of them to his left and right."
     n "They are also stacked on one another, about 20-30 of them, reaching up to the ceiling of this massive hangar-like facility."
     scene archival_2 with dissolve
     show cs disappointed at mid_left with moveinleft
@@ -294,8 +297,8 @@ label archival:
     n "CS looks to his right, as he sees these giant facilities fly past him. "
     n "After about 20 of the facilities fly by, the tram suddenly stops. CS looks around, confused, and then he looks to his left."
     n "To his left, as a long, endless looking hallway with a blinding light filling up the hallway. The tram slowly starts to rotate onto the light hallway's rail."
-    n "The tram then starts speeding into the light at ludicrous speeds, as CS panics and sees the light envelope the outside of the tram. As Cs looks around, he can see glimpses of memories of places he's been to, rushing past him."
-    n "CS panics and tries to stop the train, but it is no use. A message appears at the top of the tram on a panel, that shows someone who looks like one of the guards waving at him, with their tongue out."
+    n "The tram then starts speeding into the light at ludicrous speeds, as CS panics and sees the light envelope the outside of the tram. As CS looks around, he can see glimpses of memories of places he's been to, rushing past him."
+    n "CS panics and tries to stop the train, but it is no use. A message appears at the top of the tram on a panel, that shows someone who looks like one of the guards waving at him."
     n "CS realizes that there is nothing he can do, and closes his eyes. The tram seems to be going faster, as the light seems to be getting brighter. All of a sudden the tram, the light, and everything disappears."
     scene black with dissolve
     $ achievement_manager.unlock("Archived")

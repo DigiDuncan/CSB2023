@@ -78,11 +78,11 @@ label car_dialogue:
     carla "I'm not in your car, I'm on the phone. You're using the Jupiter Jack, remember?"
     billy "Oh yeah."
     carla "We have a meeting in twenty minutes."
-    billy "I'm in the fucking northeast!"
+    billy "I'm in the fucking Northeast!"
     carla "What? What are you doing there?"
     billy "It's my car!"
     n "Billy hangs up the phone."
-    billy "Unbelivable."
+    billy "Unbelievable."
     
     pause 1.0
 
@@ -95,7 +95,7 @@ label car_dialogue:
     arceus ";)"
     billy "How much are you paying for it?"
     cs "Like $50 a month..."
-    billy "Unbelivable! I wouldn't pay more than $19.95!"
+    billy "Unbelievable! I wouldn't pay more than $19.95!"
     billy "And buy one get one free!"
     cs "What would I do with two Adobe suites?"
     billy "What would you do with two Grater Platers?"
