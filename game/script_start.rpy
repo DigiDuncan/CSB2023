@@ -231,7 +231,6 @@ define worker_7 = Character("Worker 7", callback = char_callback)
 define digi = Character("Digi", callback = renpy.partial(char_callback, name = "digi", beep = "digi"))
 define pakoo = Character("Pakoo", callback = renpy.partial(char_callback, name = "pakoo", beep = "pak"))
 define addy = Character("Addy", callback = renpy.partial(char_callback, name = "addy", beep = "pak"))
-
 define copguy = Character("Copguy", callback = renpy.partial(char_callback, name = "copguy", beep = "cop"))
 define arceus = Character("Arceus", callback = renpy.partial(char_callback, name = "arceus", beep = "arc"))
 define anno = Character("Anno", callback = renpy.partial(char_callback, name = "anno", beep = "anno"))
@@ -239,7 +238,6 @@ define border_guard = Character("Border Guard", callback = renpy.partial(char_ca
 define linus = Character("Linus", callback = renpy.partial(char_callback, name = "linus", beep = "ltt"))
 define asylum_worker = Character("Mr. Mohs", callback = renpy.partial(char_callback, name = "mohs"))
 define csgod = Character("CS God", callback = renpy.partial(char_callback, name = "csgod", beep = "csgod"))
-
 define luke = Character("Luke", callback = renpy.partial(char_callback, name = "luke", beep = "luke"))
 define taran = Character("Taran", callback = renpy.partial(char_callback, name = "taran"))
 define colton = Character("Colton", callback = renpy.partial(char_callback, name = "colton"))
@@ -300,6 +298,10 @@ define james = Character("James", callback = renpy.partial(char_callback))
 define tom = Character("Tom Scott", callback = renpy.partial(char_callback, name = "tom", beep = "tom"))
 define sayori = Character("Sayori", callback = renpy.partial(char_callback, name = "sayori"))
 define gnome = Character("Gnome", callback = renpy.partial(char_callback, name = "gnome"))
+define chat = Character("Chat", callback = char_callback)
+define unknown = Character("???", callback = char_callback)
+define crowd = Character("Crowd", callback = char_callback)
+define worker = Character("Worker", callback = char_callback)
 
 # Character Images
 ## CS
