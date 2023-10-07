@@ -77,7 +77,6 @@ init python:
                 if self.hit_position <= self.scissors_place <= self.hit_position + self.hit_width:
                     self.successes += 1
                     self.hit_width = int(lerp(START_BOX_WIDTH, START_BOX_WIDTH / BOX_SHRINK_FACTOR, self.successes / TOTAL_ROUNDS))
-                    # renpy.sound.play("") # TODO Find an "Oh yes!"
                 else:
                     renpy.sound.play("minigames/editing/ohno.ogg", channel="sound")
                 self.attempts += 1

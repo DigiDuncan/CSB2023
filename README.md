@@ -106,7 +106,7 @@ See what needs to be done below.
 - [ ] Jukebox/Achievements/Bio Pass [90%]
 - [ ] Remove/address all TODO comments
 - [ ] Add more bounciness
-- [ ] Check Discord channels for missing content
+- [X] Check Discord channels for missing content
 
 ### Wishlist
 - [ ] Ultimate Custom Night (RPG Freeplay) [75%]

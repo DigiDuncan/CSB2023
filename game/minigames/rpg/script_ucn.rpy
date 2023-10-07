@@ -62,6 +62,3 @@ label after_ucn:
         jump rpg_ucn
     else:
         $ MainMenu()
-        # TODO: Arc, why does this not return me to the main menu?
-        # It keeps bringing me back to the chapter select screen
-        # Getting angy -- Digi
