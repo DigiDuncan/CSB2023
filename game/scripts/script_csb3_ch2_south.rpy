@@ -174,7 +174,7 @@ label utah:
         cs "Anyways..."
     cs "Wow, a Lego-themed pizza restaurant. This place looks like it was built out of Lego too!"
     cs "Woah Arc, look at those big Minifigure statues!"
-    n "Up in the front of the room, 4 human-scale Lego minifigures stand up on a stage."
+    n "Up in the front of the room, four human-scale Lego minifigures stand up on a stage."
     n "CS goes up and stands next to them."
     scene legostage with fade
     show cs dark at left with moveinleft 
@@ -200,7 +200,7 @@ label utah:
     arceus "Because there is- whatever, let's just find a place to sit down and eat."
     arceus "And not out here, I don't wanna look at those creepy minifigures."
     cs "Fine..."
-    n "CS and Arc head down the hallway next to the kitchen area, until the find a small office in the back."
+    n "CS and Arc head down the hallway next to the kitchen area, until they find a small office in the back."
     scene fazplace with fade
     show cs dark at left with moveinleft
     show arceus flipped dark at right with moveinleft
@@ -212,7 +212,7 @@ label utah:
     show arceus dark
     n "CS notices a Lego RC car sitting on the desk with a controller."
     cs "Ah sweet! I used to have one of these!"
-    n "As CS turns it on, the TV screen next to them turns on aswell, and shows live footage from the Lego car."
+    n "As CS turns it on, the TV screen next to them turns on as well, and shows live footage from the Lego car."
     scene tvcar with dissolve
     cs "Hey look at that! We can see where the car goes!"
     cs "While we eat, I'm gonna take the car around the restaurant and see if we can find anything cool."
@@ -242,8 +242,7 @@ label utah:
     show lego at truecenter
     with fade
     show cs dark at mid_left_left with moveinleft
-    show arceus dark at mid_right_right with moveinright   
-    show arceus worried dark
+    show arceus worried dark at mid_right_right with moveinright   
     n "Before they make it to the door, Arceus stops dead in his tracks."
     cs "Hey! Why'd we stop?"
     n "CS looks ahead of him to see the giant Minifigure standing infront of them."
@@ -564,7 +563,7 @@ label folded:
     n "Arceus opens a body bag, revealing stacks of gold, bills, and jewels."
     show cs worried
     cs "WHATT?? How did you win that much??"
-    arceus "You think I won this? Haha no, I just broke open their safe!"
+    arceus "You think I won this? Haha no, I just broke open their vault!"
     cs "Arceus! That's stealing!"
     show arceus
     arceus "Yeah, and the casino steals from us. Slots are rigged, man."
@@ -580,7 +579,7 @@ label folded:
     show arceus happy
     arceus "Yeah! We can do whatever you wanna do now!"
     show arceus
-    arceus "What would you like to do CS?"
+    arceus "What would you like to do, CS?"
     menu:
         "Go to airport":
             jump airport_bad
@@ -991,7 +990,7 @@ label back_home_alt:
     show rich at mid_mid_right behind ed
     with moveinright
     ed "I have been waiting for you for quite some time now."
-    rich "We've been trying to stop you for a while now, but this is final stop for you."
+    rich "We've been trying to stop you for a while now, but this is the final stop for you."
     cs "HoH SiS?? What do you guys still want from me?"
     ed "What do you think, CS? After you put Wesley in the hospital? After you crippled most of our workers?"
     cs "Well, you guys scammed me out of my money and broke my computer! Of course I wanted some kind of revenge!"
@@ -1136,7 +1135,7 @@ label lego_ending:
     play music "secret/credits.mp3" volume 0.5
     centered "Pretend there's credits here."
     $ renpy.end_replay()
-    jump secret2
+    return
 
 label fighthohsis_alt:
     n "CS challenges HoH SiS to a fight."
@@ -1183,7 +1182,7 @@ label braghohsis:
     scene cs_house
     show ed at right
     show rich at mid_mid_right behind ed
-    show cs angry
+    show cs angry at left
     cs "Yeah well, I have so much money! I don't really care!"
     cs "You guys deserve to have your company in shambles!"
     n "Richard and Ed back up to their UFO."
@@ -1197,9 +1196,8 @@ label braghohsis:
     show beam at xstretch_in
     pause 3.0
     show beam at xstretch_out
-    pause 1.0
     scene cshouse_vaporized
-    show cs angry
+    show cs angry at left
     cs "I'll just buy a new house!"
     n "Ed then also vaporizes the briefcase of money."
     show cs disappointed
@@ -1214,7 +1212,7 @@ label braghohsis:
 label noairport:
     cs "Nah, I don't wanna go to the airport."
     cs "We should take the car and drive."
-    arceus "Okay well, Let's get going!"
+    arceus "Okay well, let's get going!"
     arceus "More road trip! Yay!"
     cs "Let's go!"
     scene carpark
@@ -1241,7 +1239,7 @@ label noairport:
     arceus "What's up?"
     cs "What if, we went to your house? Don't you live in Texas?"
     arceus "Yeah, I do. Why do you wanna go there though? There isn't anything interesting there..."
-    cs "I dunno. I guess I thought it'd be cool place to stop."
+    cs "I dunno. I guess I thought it'd be a cool place to stop."
     cs "I mean, we are going to my house, and I... feel like we should just check out your house!"
     arceus "Umm, okay."
     arceus "I guess we can go to my house."
@@ -1287,7 +1285,7 @@ label noairport:
     show cs happy at left
     show arceus at right
     cs "There we go!"
-    cs "Well look at this! There is this old ass TV sitting here! How old is this Arc?"
+    cs "Well look at this! There is this old ass TV sitting here! How old is this, Arc?"
     show arceus worried
     arceus "Umm..."
     cs "Well ok, let's turn it on!"
@@ -1386,7 +1384,7 @@ label reality_break:
     $ achievement_manager.unlock("Broken Masquerade")
     direct "Ready?"
     show cscar2 with moveinright
-    direct "Aaaaaand...{nw}"
+    direct "Aaaaaand...{w=1.0}{nw}"
     $ returning_from_blooper = True
     $ renpy.end_replay()
     jump vegas
