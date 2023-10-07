@@ -130,8 +130,6 @@ init python:
         def event(self, ev, x, y, st):
             import pygame
             if ev.type == pygame.KEYDOWN and self.started:
-                if ev.key == pygame.K_END:
-                    self.win = 1
                 if ev.key == pygame.K_SPACE:
                     self.hit = True
                 if ev.key == pygame.K_LCTRL:
@@ -145,6 +143,8 @@ init python:
             elif ev.type == pygame.KEYUP:
                 if ev.key == pygame.K_LCTRL:
                     self.control_pressed = False
+            if ev.type == pygame.KEYDOWN and ev.key == pygame.K_END and preferences.developer_mode:
+                self.win = 1
             if self.win is not None:
                 return self.win
 

@@ -163,7 +163,7 @@ init python:
                     self.current_key = True
                     if self.current_pencil_length >= 0:
                         self.score += SHARPEN_AMOUNT
-                elif ev.key == pygame.K_END:
+                elif ev.key == pygame.K_END and preferences.developer_mode:
                     self.win = DIGI_SCORE + 1
             if ev.type == pygame.KEYDOWN and ev.key == pygame.K_SPACE and not self.lock_out_time:
                 # New pencil

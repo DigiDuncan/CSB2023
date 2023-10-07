@@ -945,10 +945,9 @@ class RPGGameDisplayable(renpy.Displayable):
 
     def event(self, ev, x, y, st):
         import pygame  # type: ignore
-        if ev.type == pygame.KEYDOWN and ev.key == pygame.K_END:
-            self.win = True
-        if self.win is not None:
-            return self.win
+        if ev.type == pygame.KEYDOWN and ev.key == pygame.K_END and preferences.developer_mode:
+            for e in self.encounter.enemies:
+                e.health_points = 0
 
     def visit(self):
         return self.enemy_displayables + self.statblock_displayables # Assets needed to load

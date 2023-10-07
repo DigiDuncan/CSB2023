@@ -183,7 +183,7 @@ init python:
                 if self.current_lane == 3:
                     self.current_lane = 2
                 renpy.restart_interaction()
-            if ev.type == pygame.KEYDOWN and ev.key == pygame.K_END:
+            if ev.type == pygame.KEYDOWN and ev.key == pygame.K_END and preferences.developer_mode:
                 self.win = True
             if self.win is not None:
                 return self.win
