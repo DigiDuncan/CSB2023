@@ -1037,6 +1037,7 @@ label before_main_menu:
                     if a.name == "Fin.")
                     renpy.show_screen("popup", next(chievos))
                     achievement_manager.unlock("Fin.", show_screen = False)
+                    persistent.creative_mode = True
 
     if not persistent.seen_splash:
         if not renpy.music.is_playing():
