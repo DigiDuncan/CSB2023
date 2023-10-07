@@ -37,7 +37,7 @@ label archival:
     n "The laptop immediately bluescreens, and blares out the following:"
     play sound "windows_logon.mp3"
     craptop "Your PC sux. lol."
-    "???" "Hey, WTF was that?"
+    unknown "Hey, WTF was that?"
     cs "Shit!"
     hide cs with moveoutright
     scene bedroom_old with fade
@@ -53,18 +53,18 @@ label archival:
     n "They all look like the same person, except one is wearing sunglasses and the other is wearing a hazmat suit."
     n "They quickly scan the room, and notice the laptop turned on."
     show k199 flipped
-    "???" "What the hell, K17! I thought this place didn't have any triggers!"
+    unknown "What the hell, K17! I thought this place didn't have any triggers!"
     k174 "It... shouldn't. This place barely has any functionality!"
-    "???" "Then {i}why{/i} is the craptop on? CS-ocola would be here right now!"
-    "???" "Mrrrph Mrrph Mrphh Mrphh Mrphh Mrrrrrph!"
-    "???" "What? Dude, K20, for the millionth time, take that thing off, we can't hear you."
+    unknown "Then {i}why{/i} is the craptop on? CS-ocola would be here right now!"
+    unknown "Mrrrph Mrrph Mrphh Mrphh Mrphh Mrrrrrph!"
+    unknown "What? Dude, K20, for the millionth time, take that thing off, we can't hear you."
     show k174 flipped
     k174 "Yeah man, there's no \"whatever virus\" here that you keep talking about. It's fine."
     n "K20-7 carefully and slowly takes off their mask."
     hide k207h
     show k207 at mid_right_right
     k207 "Alright fine! But if I get corona and die, then I'll make sure Addy fires both of you!"
-    "???" "Look there's nothing to worry about. Besides, even if you die, how are you gonna tell them?"
+    unknown "Look there's nothing to worry about. Besides, even if you die, how are you gonna tell them?"
     k207 "Shut up K19!"
     k199 "Alright, sheesh."
     k207 "What I was trying to say, is that this could've taken place after HoH SiS left, meaning CS is out right now anyways."
@@ -307,7 +307,7 @@ label archival:
     n "The Archival Ending."
     n "CS has been deleted, and has been sent to the beginning of time itself."
     pause 5.0
-    play music "<loop 0>everybody_wants.mp3" volume 0.7
+    play music "<loop 0>everybody_wants.mp3" volume 1.0
     music "Everybody Wants To Rule The World - Tears For Fears"
     n "Addy gets a phone call."
     addy "Hello? Who is this?"
@@ -336,5 +336,5 @@ label archival:
     n "Addy places the jar in a receptacle."
     addy "Well, here goes nothing."
     $ renpy.movie_cutscene("movies/archivalend.mp4")
-    $ renpy.end_replay
+    $ renpy.end_replay()
     return

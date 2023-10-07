@@ -1322,13 +1322,13 @@ label third_tour_day:
     cs "{cps=15}{image=note_small1.png}[line_7]{w=1.5}\n[line_8]{w=1.5}\n[line_9]{w=1.5}\n[line_10]{image=note_small2.png}"
     n "The crowd can't get enough!"
     stop music fadeout 3.0
-    "Crowd" "Encore! {w=0.5}Encore! {w=0.5}Encore! {w=0.5}"
+    crowd "Encore! {w=0.5}Encore! {w=0.5}Encore! {w=0.5}"
     n "CS whispers to the others."
     cs "Encore? But we don't have any more songs..."
     arceus "Make something up!"
     n "CS shouts to the crowd."
     cs "Uh... hey, you guys! Give me a word!"
-    "Crowd" "Banana! {w=0.5}Street! {w=0.5}Ice!"
+    crowd "Banana! {w=0.5}Street! {w=0.5}Ice!"
     cs "Uh..."
     menu:
         "What should the song be about?"

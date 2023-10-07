@@ -1104,7 +1104,7 @@ label low_gpu:
     n "CS flags down an employee."
     show cashier at mid_right with moveinright
     cs "I'm trying to get a graphics card, and I want to save money, what do you have?"
-    "Worker" "Everything here is pretty expensive, lemme check the back..."
+    worker "Everything here is pretty expensive, lemme check the back..."
     cs "Alright, I'll wait here."
     hide cashier with moveoutright
     pause 2.0
@@ -1123,11 +1123,11 @@ label low_gpu:
     show cs concentrate with determination
     show cashier at mid_right with moveinright
     n "The worker comes back."
-    "Worker" "Hey I'm-- what are you doing?"
+    worker "Hey I'm-- what are you doing?"
     show cs worried
     cs "Oops! Sorry!"
     cs "Anyways, what did you find?"
-    "Worker" "I got this. It's pretty old, and it's covered in dust, but it's like $50."
+    worker "I got this. It's pretty old, and it's covered in dust, but it's like $50."
     cs "Sounds great, I'll take it."
     hide cs with moveoutright
     n "CS heads out to the checkout."

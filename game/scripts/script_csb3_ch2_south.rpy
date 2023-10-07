@@ -305,6 +305,7 @@ label vegas:
             scene vegasjade
             $ jade = True
         else:
+            $ jade = False
             scene vegas
         show cscar1
         show cscar2
@@ -322,6 +323,7 @@ label vegas:
             scene vegasjade
             $ persistent.seen.add("bubble")
         else:
+            $ jade = False
             scene vegas
         show cscar1
         show cscar2
@@ -404,14 +406,14 @@ label vegas:
     stop music fadeout 3.0
     stop sound fadeout 2.0
     music end
-    "???" "Hey you!"
+    unknown "Hey you!"
     show cs disappointed flipped
     cs "Huh? Me?"
     n "CS notices a fancy man smoking a cigar waving at him."
-    "???" "Yeah, you! Come over to the Poker tabeh! *coughs* I bet I can beat you!"
+    unknown "Yeah, you! Come over to the Poker tabeh! *coughs* I bet I can beat you!"
     cs "I guess this is my last chance to make it big. It's worth a shot."
     cs "Alright, sure, I'll play a round. But I don't have much."
-    "???" "Arright great, come sit down here."
+    unknown "Arright great, come sit down here."
     hide cs with moveoutleft
     n "CS sits down at the poker table, and notices that the man's skin is putrid green."
     n "CS looks disgusted, but shrugs as he doesn't want to start trouble now."
@@ -1075,7 +1077,7 @@ label true_ending_alt:
     n "CS starts up his stream overlay and goes live on Twitch."
     cs "Hey guys! CS here! Sorry I was gone for a couple weeks!"
     n "The chat is overflowing with messages."
-    "Chat" "Yeah what happened to you?{w=0.25} Oh my god, CS, you're here!{w=0.25} Hi!{w=0.25} Hi!{w=0.25} Where have you been?"
+    chat "Yeah what happened to you?{w=0.25} Oh my god, CS, you're here!{w=0.25} Hi!{w=0.25} Hi!{w=0.25} Where have you been?"
     show cs happy at mid_left
     cs "Well guys..."
     jump lego_ending
@@ -1089,7 +1091,7 @@ label ytp_ending_alt:
     n "CS starts up his stream overlay and goes live on Twitch."
     cs "Hey guys! CS here! Sorry I was gone for a couple weeks!"
     n "The chat is overflowing with messages."
-    "Chat" "Yeah what happened to you?{w=0.25} Oh my god, CS, you're here!{w=0.25} Hi!{w=0.25} Hi!{w=0.25} Where have you been?"
+    chat "Yeah what happened to you?{w=0.25} Oh my god, CS, you're here!{w=0.25} Hi!{w=0.25} Hi!{w=0.25} Where have you been?"
     show cs at mid_left
     cs "Well guys..."
     jump lego_ending
@@ -1107,7 +1109,7 @@ label ltt_ending_alt:
     n "CS starts up his stream overlay and goes live on Twitch."
     cs "Hey guys! CS here! Sorry I was gone for a couple weeks!"
     n "The chat slowly comes in, confused."
-    "Chat" "Oh you're streaming?{w=0.25} I thought you were working for LTT now?{w=0.25} What happened to the YTPs?{w=0.25} Are you OK?{w=0.25} Where have you been?"
+    chat "Oh you're streaming?{w=0.25} I thought you were working for LTT now?{w=0.25} What happened to the YTPs?{w=0.25} Are you OK?{w=0.25} Where have you been?"
     show cs at mid_left
     cs "Well guys..."
     jump lego_ending

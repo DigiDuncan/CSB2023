@@ -59,7 +59,7 @@ label csbi_start:
         scene black with fade
         stop music fadeout 3.0
         music end
-        n "Cs takes off and heads to Rosen's house."
+        n "CS takes off and heads to Rosen's house."
         jump rosen_house
     else:
         sticky "Delete the CSCord."

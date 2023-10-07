@@ -105,5 +105,5 @@ label csbiii_ai:
     n "CS188 and Arceus exchange a high-five and disappear into the distance, ready for their next escapade."
     "ChatGPT" "Note: The script is a fictional representation and does not reflect the actual personalities or actions of CS188 or any real-life individuals."
     $ achievement_manager.unlock("Artifical Unintelligence")
-    $ renpy.end_replay
+    $ renpy.end_replay()
     return

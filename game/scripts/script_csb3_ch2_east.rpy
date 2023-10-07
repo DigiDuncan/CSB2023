@@ -69,10 +69,10 @@ label billy_driver:
     show arceus angry
     arceus "That would be even more money in tips!"
     n "As the two are agruing, the owner of the car comes up to them."
-    "???" "What are you doing next to my car?"
+    unknown "What are you doing next to my car?"
     cs "Oh, hi."
     cs "Do you think you can Uber us to New York?"
-    "???" "Oh uhh, hold on a second."
+    unknown "Oh uhh, hold on a second."
     n "The mysterious driver walks behind the store."
     arceus "What are you doing? That man looks like he's going to kill us!"
     arceus "He's probably getting a gun, we need to lea--{w=1.5}{nw}"
@@ -451,7 +451,7 @@ label nebraska:
     with moveinleft
     n "They all get out and start roaming the streets."
     n "Suddenly, CS hears a voice behind him."
-    "???" "CS? Is that you?"
+    unknown "CS? Is that you?"
     cs "Huh?"
     show cs flipped
     stop music fadeout 3.0
@@ -1087,6 +1087,7 @@ label pennsylvania:
         $ archack = True
     else:
         n "A whirr is heard as Digi's arm motors charge up."
+        $ archack = False
     host "2..."
     n "CS concentrates, his hands ready to sharpen like his life depends on it."
     host "1..."
@@ -1165,7 +1166,9 @@ label win_pencil:
     cs "Huh?"
     if archack:
         digi "Well, my arm got hacked, or something, so I lost."
-        arceus "Heh."
+        show arceus worried
+        arceus "Heh..."
+        show arceus
     else:
         digi "Usually, they'd pay for my train home, but I uh, lost."
     cs "Ooh, right."
@@ -1250,7 +1253,7 @@ label talktohohsis:
     show anno at offscreenleft
     play music "<loop 0>track3.mp3" volume 0.4
     music Track 3 - Weatherscan
-    "???" "Wait!!!"
+    unknown "Wait!!!"
     n "A voice can be heard behind the group running up to them."
     cs "Anno?"
     show anno at center behind doug with moveinleft
@@ -1403,7 +1406,7 @@ label streaming:
     n "CS starts up his stream overlay and goes live on Twitch."
     cs "Hey guys! CS here! Sorry I was gone for a couple weeks!"
     n "The chat is overflowing with messages."
-    "Chat" "Yeah what happened to you?{w=0.25} Oh my god, CS, you're here!{w=0.25} Hi!{w=0.25} Hi!{w=0.25} Where have you been?"
+    chat "Yeah what happened to you?{w=0.25} Oh my god, CS, you're here!{w=0.25} Hi!{w=0.25} Hi!{w=0.25} Where have you been?"
     show cs happy at mid_left
     cs "Well guys..."
     n "CS chuckles."
@@ -1419,7 +1422,7 @@ label streaming:
     play music "secret/credits.mp3" volume 0.5
     centered "Pretend there's credits here."
     $ renpy.end_replay()
-    jump secret2
+    return
 
 label ytp_ending:
     stop music
@@ -1431,7 +1434,7 @@ label ytp_ending:
     n "CS starts up his stream overlay and goes live on Twitch."
     cs "Hey guys! CS here! Sorry I was gone for a couple weeks!"
     n "The chat is overflowing with messages."
-    "Chat" "Yeah what happened to you?{w=0.25} Oh my god, CS, you're here!{w=0.25} Hi!{w=0.25} Hi!{w=0.25} Where have you been?"
+    chat "Yeah what happened to you?{w=0.25} Oh my god, CS, you're here!{w=0.25} Hi!{w=0.25} Hi!{w=0.25} Where have you been?"
     show cs at mid_left
     cs "Well guys..."
     n "CS chuckles."
@@ -1441,7 +1444,7 @@ label ytp_ending:
     play music "secret/credits.mp3" volume 0.5
     centered "Pretend there's credits here."
     $ renpy.end_replay()
-    jump secret2
+    return
 
 label ltt_ending:
     stop music
@@ -1457,7 +1460,7 @@ label ltt_ending:
     n "CS starts up his stream overlay and goes live on Twitch."
     cs "Hey guys! CS here! Sorry I was gone for a couple weeks!"
     n "The chat slowly comes in, confused."
-    "Chat" "Oh you're streaming?{w=0.25} I thought you were working for LTT now?{w=0.25} What happened to the YTPs?{w=0.25} Are you OK?{w=0.25} Where have you been?"
+    chat "Oh you're streaming?{w=0.25} I thought you were working for LTT now?{w=0.25} What happened to the YTPs?{w=0.25} Are you OK?{w=0.25} Where have you been?"
     show cs at mid_left
     cs "Well guys..."
     cs "It's a long story..."
@@ -1466,7 +1469,7 @@ label ltt_ending:
     play music "secret/credits.mp3" volume 0.5
     centered "Pretend there's credits here."
     $ renpy.end_replay()
-    jump secret2
+    return
 
 label fighthohsis:
     stop music
