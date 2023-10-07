@@ -99,8 +99,8 @@ See what needs to be done below.
 - [X] Short Archival animation (Error Route) [Pakoo]
 
 ### Passes [All, October W1]
-- [ ] Spelling/Grammar Pass [50%]
-- [ ] Transition/Flip Pass [includes flashes] [50%]
+- [ ] Spelling/Grammar Pass [60%]
+- [ ] Transition/Flip Pass [includes flashes] [60%]
 - [ ] Sprite Emotion Pass
 - [ ] Sprite Time-of-Day Check
 - [ ] Jukebox/Achievements/Bio Pass [90%]
