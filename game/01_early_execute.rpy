@@ -72,7 +72,7 @@ python early:
             renpy.show_screen("music")
             renpy.with_statement(determination)
         if all([a in persistent.heard for a in music_map.keys()]):
-            achievement_manager.unlock("Gotta Catch Them All")
+            achievement_manager.unlock("The Brown Album")
 
     def lint_music(parsed_object):
         if parsed_object is None:
@@ -163,6 +163,8 @@ init python:
             ox = ","
 
         return f"{', '.join(items[:-1])}{ox} {joiner} {items[-1]}"
+
+    fun_values_seen = set()
 
     # FUN VALUES
     def fun_value(rarity: int, id: str = None) -> bool:
