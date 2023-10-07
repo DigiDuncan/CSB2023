@@ -292,7 +292,7 @@ define mean = Character("Mean", callback = renpy.partial(char_callback, name = "
 define agent = Character("Howie", callback = renpy.partial(char_callback, name = "howie", beep = "howie"))
 define gordon = Character("Gordon", callback = renpy.partial(char_callback, name = "gordon", beep = "gordon"))
 define receptionist = Character("Receptionist", callback = char_callback)
-define scott_pres = Character("Scott, President of Domino's Pizza", callback = renpy.partial(char_callback, name = "scott_pres"))  # TODO: Beep
+define scott_pres = Character("Scott, President of Domino's Pizza", callback = renpy.partial(char_callback, name = "scott_pres", beep = "scott_pres"))
 define miku = Character("Hatsune Miku", callback = renpy.partial(char_callback, name = "miku", beep = "miku"))
 define hammond = Character("Richard", callback = renpy.partial(char_callback, name = "hammond"))
 define jermey = Character("Jermey", callback = renpy.partial(char_callback))
