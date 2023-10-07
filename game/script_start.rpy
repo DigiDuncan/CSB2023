@@ -302,6 +302,9 @@ define chat = Character("Chat", callback = char_callback)
 define unknown = Character("???", callback = char_callback)
 define crowd = Character("Crowd", callback = char_callback)
 define worker = Character("Worker", callback = char_callback)
+define streetguy = Character("Street Guy", callback = char_callback)
+define gnome = Character("Gnome", callback = char_callback)
+define waitress = Character("Waitress", callback = char_callback)
 
 # Character Images
 ## CS
@@ -531,6 +534,9 @@ image sayori = "characters/sayori.png"
 image car = "characters/car.png"
 image hart1 = "characters/hart1.png"
 image hart2 = "characters/hart2.png"
+image waitress = "characters/waitress.png"
+image streetguy = "characters/streetguy.png"
+image billy dark = "characters/billydark.png"
 
 # Background Images
 ## CSBI
@@ -712,6 +718,14 @@ image war_torn_4 = "bg/war_torn_4.png"
 image war_torn_5 = "bg/war_torn_5.png"
 image car_insidearc_fg = "bg/car_insidearc_fg.png"
 image joj_chargerarc_fg = "bg/joj_chargerarc_fg.png"
+image gas_station_2 = "bg/gas_station_2.png"
+image traffic = "bg/traffic.png"
+image white = "bg/white.png"
+image parking_lot = "bg/parking_lot.png"
+image path_entrance = "bg/path_entrance.png"
+image path_forest = "bg/path_forest.png"
+image creepy_path = "bg/creepy_path.png"
+image creepy_path_2 = "bg/creepy_path_2.png"
 
 ## Country Route
 image britport = "bg/britport.png"

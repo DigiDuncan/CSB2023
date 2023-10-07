@@ -143,8 +143,6 @@ label dpn_diner:
     show aria at left
     with fade
     pause 3.0
-    #TODO: Aria Lines!
-
     n "As Aria is approaching CS and the gang, they screech on the breaks as they almost run into a blockade."
     hide drive_night
     show cs_somewhere behind aria_car_fg

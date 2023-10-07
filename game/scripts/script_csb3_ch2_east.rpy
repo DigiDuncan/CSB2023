@@ -570,17 +570,26 @@ label after_ufo:
     cs "What are you... talking about?"
     arceus "It's better than ruling the Earth." #I feel like it'd be funny to wax poetic here about how great chicago is. Not super long, but enough to run the joke home. I love the idea of sleepy arc rambling on about chicago for a bit
     cs "Get some sleep, Arc."
-    scene black with fade
+    scene black with dissolve
     n "The gang stops in Indiana for the night, and takes off in the morning."
-    jump ohio
+    jump michigan
 
 label michigan:
+    scene car plains
+    show billy car
+    with dissolve
     billy "Alright. The highway entrance should be right around here."
     billy "We can head to Ohio and then we'll be getting really close."
     billy "Fuck."
     cs "What's wrong?"
     billy "The entrance is closed. We should stop and ask what's going on."
     billy "There's someone over by the gas station. We can ask him."
+    scene black with dissolve
+    n "Billy pulls into a gas station nearby and gets out to talk."
+    scene gas_station_2
+    show streetguy at mid_right
+    with fade
+    show billy at mid_left with moveinleft
     billy "Hey man. Do you know what's up with the highway?"
     streetguy "Not sure on details, but I hear they found one of the horseman of the apocalypse flying around."
     billy "What?"
@@ -590,10 +599,18 @@ label michigan:
     streetguy "That's how I found out about the horseman of the apocalypse."
     streetguy "Michigan having better roads than literally any other place is a sign of the end times."
     billy "Alright, thanks for the help. I'm gonna get going."
+    hide billy with moveoutleft
+    scene black with dissolve
     n "Billy gets back in the car and tells the others what the guy said."
+    scene gas_station_2
+    show billy car
+    with dissolve
     cs "Well. I guess if we have no other option we may as well go through Michigan."
     arceus "Yeah they have corn and at least two other things, so it's honestly probably better than going through Ohio."
     billy "Sounds like a plan. The drive is gonna take longer with the detour though, so we should definitely get going."
+    scene car plains
+    show billy car
+    with dissolve    
     n "They get on the highway and start heading towards Michigan."
     arceus "We're making progress. Finally in Michigan."
     billy "It looks like we're coming up to a place called Bronson. Maybe we could stop there for food."
@@ -603,19 +620,21 @@ label michigan:
     cs "I... should be fine."
     cs "Something about the name Bronson, Michigan sends a chill down my spine."
     arceus "We'll just skip it. Nothing around here anyway."
+    scene black with dissolve
     n "They keep driving but CS kept muttering 'Don't go to Bronson.' under his breath until they finally stop seeing Bronson signs." 
+    scene car plains
+    show billy car
+    with dissolve  
     billy "Alright. We're way past Bronson but we're getting pretty far north."
     billy "We should probably find an exit to start heading towards New York soon."
     cs "There's an exit coming up where we can go towards either I-69 or 94. We can shift then."
     billy "Alright. Which one do you think?"
     arceus "Well, 94 goes east which is the direction we want, but the other one is 69, so I'm down for either."
-    billy "I guess it's up to you then, CS"
+    billy "I guess it's up to you then, CS."
     menu:
         "Which road should we take?"
         "I-69":
             jump interstate_69
-        "I-94":
-            jump interstate_94
 
 label interstate_69:
     cs "We're on a detour anyway. May as well take the funny route."
@@ -629,25 +648,35 @@ label interstate_69:
     billy "Any spiritual discomfort about that one, CS?"
     cs "No, that sounds fine. It'd be good to get some food in us."
     billy "Lansing it is."
+    scene black with dissolve
     n "They get to the exit and start driving into Lansing."
+    scene traffic
+    show billy car
+    with dissolve 
     cs "I was expecting there to be people around, but I wasn't expecting traffic like this. I wonder what's going on?"
     arceus "All the people walking are wearing green and white, so it's probably a sports thing."
+    show billy car turn
     billy "We are in Lansing. They have one of the biggest football schools in the country."
     cs "Really? I've never heard of that before."
     billy "Figures. You don't strike me as the type to know about sports."
+    show billy car
     cs "Yeah, that's fair."
     arceus "God, the people on the sidewalk are going so much faster than us, what is this?"
     billy "I guess you can only get so many cars through a small intersection."
     arceus "Well if it's so many damn cars, we should be through by now."
+    show billy car turn
     billy "That's not what that expression means... Whatever. We just have to wait it out."
+    show billy car
     cs "Hey, do you guys see that little guy over behind that tree?"
+    show billy car turn
     billy "Oh did Arceus get out to pee?"
+    show billy car
     arceus "You can literally see me in your rear-view mirror right now."
     billy "Only if I'm specifically looking for you."
     arceus "I'm not that small, man..." #Me with the goddamn ellipses again lmao
     cs "No, guys, that short guy. The one with the red pointy hat."
     arceus "Oh shit, you're right! That looks like a gnome!"
-    cs "God, did blank somehow track me to Michigan?"
+    cs "God, did Blank somehow track me to Michigan?"
     arceus "Blank is at least three gnomes tall though. That couldn't just be him in a costume."
     cs "You're probably right, but I wouldn't be all that shocked if he learned practical effects for a gag."
     cs "Wait, is he coming this way?!"
@@ -655,11 +684,13 @@ label interstate_69:
     billy "Holy shit, you two weren't kidding. I think he's trying to talk to us."
     billy "I'm gonna see what he wants." #It could be funny to have an option to ignore the gnome for a while
     gnome "Hallo, may I enter your Automobile?" 
+    show billy car turn
     billy "What do you want with us?"
     gnome "I mean you no harm. May I sit and explain myself?"
     arceus "I don't think this guy is a threat. We may as well let him in."
-    cs "He's at least made this traffic jam more entertaining."
+    cs "He'll at least made this traffic jam more entertaining."
     billy "Alright fine, come on in."
+    show billy car
     gnome "I thank you. As you may be aware, I am not of your Species."
     arceus "I don't think I'm the same Species as these two."
     gnome "That may be true, however, it appears that neither of your Species are the same as mein." 
@@ -667,6 +698,9 @@ label interstate_69:
     gnome "I am of the Forest, und I have recently become acquainted mit some of your Kind."
     gnome "Deine Group has a similarly unique Redolence to those I encounted."
     gnome "As I am a Being of the Forest and of the Land surrounding it, I find myself in a Position to assist you."
+    scene car plains
+    show billy car
+    with dissolve 
     cs "Alright, this is a lot to take in, but at this point I'll do anything to get out of this car."
     cs "How can you help us?"
     gnome "I cannot permanently alter the Impact of your Kind on these Lands, however, mein Ancestral Memory allows me return to previous Forms of this Place."
@@ -675,14 +709,21 @@ label interstate_69:
     cs "Thanks for your help." 
     gnome "No need to thank me. It is mein Pleasure."
     n "Everyone feels an energy emanate from the gnome as they watch the environment around them transform from a modern university into a dense forest."
+    scene car background
+    show billy car
+    with dissolve 
     n "The buildings disappear as more trees, bushes, and brush spring forth from the ground as if you were watching a timelapse of hundreds of years of nature."
     n "Eventually, the growth of the forest comes to a halt as any semblance of their old surroundings is buried in a lush and lively forest."
     n "They find themselves on a clear path through the trees as the sunlight shining through the canopy up ahead starkly contrasts the heavy darkness of the woods behind them."
+    show billy car turn
     billy "Holy shit! Where does this path take us?"
+    show billy car
     gnome "If you continue to drive, you will reach a Clearing with a large Sugar Maple surrounded by a Bed of Clovers."
     billy "No, I meant where will it take us once we return to our own..." 
+    show billy car turn
     billy "Own time? dimension? What exactly did we travel through just now?"
     billy "Can we change things in this time?"
+    show billy car
     billy "If I hit a butterfly here, are we gonna get home and find out that OxyClean was never invented or something?"
     gnome "Das is not your Concern. We will simply return to the Edge of the Campus. You will be able to continue your Journey smoothly."
     billy "I guess the only other choice is deeper into the woods or through the trees."
@@ -690,10 +731,32 @@ label interstate_69:
     n "Billy takes the car forward and stops in front of the tree."
     n "As they pull into the clearing and stop the car, they again become aware of the gnome's presence."
     n "The gnome remains silent as the energy no longer seems to be emanating from him, but returning to him."
+    show billy car turn with hpunch
+    show billy car turn with vpunch
+    show billy car turn with hpunch
+    show billy car turn with vpunch
+    show billy car turn with hpunch
+    show billy car turn with vpunch
+    show billy car turn with hpunch
+    show billy car turn with vpunch
     n "The forest, which had previously sprung forward as if growing naturally, were removed before their eyes."
+    scene white
+    show billy car turn
+    with dissolve
     n "A glowing white cut appeared through the trunks of the trees before the remaining trunk also decayed into a mass of white light."
+    show billy car turn with hpunch
+    show billy car turn with vpunch
+    show billy car turn with hpunch
+    show billy car turn with vpunch
+    show billy car turn with hpunch
+    show billy car turn with vpunch
+    show billy car turn with hpunch
+    show billy car turn with vpunch
     n "The light began to appear at the base of the bushes before the ground that housed their roots was tossed out, taking the bushes along with it."
+    scene parking_lot
+    show billy car turn
     n "Finally, the forest's brush, along with the detritus of other plants that dotted the ecosystem, disappeared in a sea of white flame that left them in a desolate parking lot."
+    show billy car
     billy "Well, that was deeply disconcerting."
     gnome "If you are not used to it, I suppose so."
     billy "I think I need a break from driving after all that."
@@ -704,16 +767,29 @@ label interstate_69:
     gnome "Of course. It is right around this Corner. Simply take a Right Turn. It's called East Cafe."
     billy "Oh yeah I see it. That really was close."
     cs "Definitely. I'm just excited to get in and eat."
+    scene black with dissolve
+    n "The gang gets out of the car, and heads over to East Cafe."
+    scene cafe_entrance
+    show cs at left
+    show arceus flipped at mid_left
+    show billy at center
+    show gnome at mid_left_left
+    with fade
+    show waitress at right with moveinright
     waitress "Welcome welcome. Please wait and I'll come seat you in a minute."
+    hide waitress with moveoutright
     n "As everyone is waiting, the strange glowing grey blob in the corner notices the group and walks over."
+    show aria at right with moveinright
     aria "CS! Arc! What are you doing here?"
     gnome "Aria! I knew I recognized that Scent."
     aria "Omg hi! So you brought them here?"
     gnome "That I did. They were stuck in the Game Day Traffic."
     aria "Yeah that'll happen."
+    show cs disappointed
     cs "Wait, who are you?"
     aria "It's Aria. You know, AWK?"
     cs "Wait what? I've met you before, and you definitely didn't look like this."
+    show cs
     aria "I dunno, people change."
     aria "Speaking of surprising, is that Billy Mays with you?"
     billy "In the flesh."
@@ -722,17 +798,51 @@ label interstate_69:
     billy "You're a formerly-human floating grey blob that hangs out with gnomes. I don't think I'm the weirdest thing here right now."
     aria "Fair enough. Do you all wanna eat with me?"
     cs "Sure. It's been a while."
+    scene black with dissolve
+    n "CS and the gang sit down with Aria."
+    scene cafe_sitting
+    show aria flipped at left
+    show gnome at center
+    with fade
+    show waitress at right with moveinright
     aria "Alright. {font=cjk}老板娘！他们会跟我一起坐。"
     waitress "{font=cjk}可以啊！"
+    scene cafe_sitting_2
+    show cs at left
+    show billy at center
+    show arceus at right  
     billy "Oh you speak Chinese?"
+    scene cafe_sitting
+    show aria flipped at left
+    show gnome at center
+    show waitress at right
     aria "Yeah. I got tired of having to ask for chopsticks whenever I came here, and I figured if I spoke Chinese they'd just assume that I want them."
+    scene cafe_sitting_2
+    show cs at left
+    show billy at center
+    show arceus at right
     billy "Did that work?"
+    scene cafe_sitting
+    show aria flipped at left
+    show gnome at center
+    show waitress at right
     aria "It did. Not sure the return on investment made sense effort-wise, but it's a cool skill either way."
     aria "What did you all want to eat?"
     gnome "Frog Legs sound good."
+    scene cafe_sitting_2
+    show cs at left
+    show billy at center
+    show arceus happy at right
     arceus "I've always wanted to try chicken feet. I'll get some of those."
+    show arceus
+    show cs happy
     cs "Pork fried rice please."
+    show cs
     billy "Ooh jellyfish. I'll get that."
+    scene cafe_sitting
+    show aria flipped at left
+    show gnome at center
+    show waitress at right
     aria "{font=cjk}请给一万鱼香茄子。请问一下，如果我说一点狗屁，你不会告诉他们，对吧？"
     waitress "{font=cjk}对，我不会。"
     aria "{font=cjk}好啊。谢谢。除非他们使用{/font}Google Translate, {font=cjk}他们完全听不懂。"
@@ -741,57 +851,152 @@ label interstate_69:
     waitress "Wow, your Chinese is like an insane native."
     aria "Wow that phrasebook was really helpful."
     waitress "By the way, we don't have any pork to fry the rice right now."
+    scene cafe_sitting_2
+    show cs at left
+    show billy at center
+    show arceus worried at right
     arceus "Wait how?! That's by far the most common thing we ordered..."
+    scene cafe_sitting
+    show aria flipped at left
+    show gnome at center
+    show waitress at right
     waitress "Pigs are expensive, they have a good union. We just hire a bunch of shrimp instead."
+    scene cafe_sitting_2
+    show cs at left
+    show billy at center
+    show arceus angry at right
     arceus "I'm not playing along with that joke."
+    scene cafe_sitting
+    show aria flipped at left
+    show gnome at center
+    show waitress at right
     waitress "It wasn't meant to be humorous, but fair enough."
+    scene cafe_sitting_2
+    show cs at left
+    show billy at center
+    show arceus at right
     cs "I'll just get chicken fried rice."
+    scene cafe_sitting
+    show aria flipped at left
+    show gnome at center
+    show waitress at right
     waitress "Alright, I'll be back in a bit."
+    hide waitress with moveoutright
     n "Everyone starts a conversation as the waitress walks off."
     aria "So CS, it's been a while since I saw you, how's it been?"
+    scene cafe_sitting_2
+    show cs at left
+    show billy at center
+    show arceus at right
     cs "It's been... a hell of a lot."
     cs "Not horrible but things could definitely have gone smoother."
+    scene cafe_sitting
+    show aria flipped at left
+    show gnome at center
     aria "Yeah life is like that sometimes. Glad things have been largely okay though."
     aria "How about you, Arc? It's weird seeing you in person. How's the UK been?"
+    scene cafe_sitting_2
+    show cs at left
+    show billy at center
+    show arceus worried at right
     arceus "I'm not sure if that's happening in this timeline..."
+    scene cafe_sitting
+    show aria flipped at left
+    show gnome at center
     aria "Ah yeah that happens. I guess not every plan is meant to be."
+    scene cafe_sitting_2
+    show cs at left
+    show billy at center
+    show arceus at right
     arceus "That wasn't what I meant, but it would be a lot to explain, so we'll go with that."
+    scene cafe_sitting
+    show aria flipped at left
+    show gnome at center
     aria "So Billy, what's your story? You don't have to go into it if you don't want, but I'm very curious."
+    scene cafe_sitting_2
+    show cs at left
+    show billy at center
+    show arceus at right
     billy "Well, I died of a heart attack, got buried, came back from the dead, dug my way out of the grave, and tried to go back to normal."
     billy "People just assumed I was an imposter, and I couldn't get any pitchman gigs, so I became an Uber driver."
     billy "Then these guys showed up and I offered to drive them from Washington to New York."
     billy "I heard CS was a Youtuber, so I was just expecting a Mr.Beast-style video."
     billy "Now I'm stuck hanging out with gnomes and floating blobs and going through forest dimensions."
+    pause 1.0
     billy "No offense."
+    scene cafe_sitting
+    show aria flipped at left
+    show gnome at center
     gnome "None taken."
     aria "A little bit taken, but I also brought up your cocaine overdose immediately after first meeting you, so fair play honestly."
     aria "So y'all are headed to New York then?"
+    scene cafe_sitting_2
+    show cs at left
+    show billy at center
+    show arceus at right
     cs "Yeah I'm just trying to get home and these two kinda got dragged along."
+    scene cafe_sitting
+    show aria flipped at left
+    show gnome at center
     aria "Would you all like to come rest at my apartment for a while. I have enough space for you all to get some sleep."
     aria "I also have a really pretty wooded area behind my apartment I can take you through."
     aria "You've all been through a lot. It'd be a good way to relax before you finish the drive."
+    scene cafe_sitting_2
+    show cs at left
+    show billy at center
+    show arceus at right
     arceus "That'd be great. It'd be nice to get some proper rest."
     billy "I'd be happy to be off the road for a while longer. I think I might've had enough of forests for today though..."
+    scene cafe_sitting
+    show aria flipped at left
+    show gnome at center
     gnome "A Forest will do you good. They're good for your Health."
+    scene cafe_sitting_2
+    show cs at left
+    show billy at center
+    show arceus at right
     cs "Yeah sure we'll go over there after we eat."
+    show waitress at mid_right with moveinright
     waitress "Here's everyone's food."
+    scene black with dissolve
     n "They all eat and then leave the restaurant. The gnome goes back to his forest and the others head to Aria's apartment for a rest."
+    scene car background night
+    show billy car
+    with dissolve
     aria "Alright just take a left turn into here and go right at the roundabout."
     aria "You can park here next to the building."
     billy "Alright. I know it's early but I'm ready to just sleep."
     arceus "Yeah that sounds good."
     aria "Sounds like a plan. I'll get you some sleeping bags and blankets for whoever wants to sleep on the couch."
+    scene black with dissolve
     n "Aria goes to her room as everyone rests. She hears them waking up late into the night and goes back out to check on them."
+    scene aria_room
+    show cs at left
+    show billy at mid_left
+    show arceus flipped at center
+    with fade
+    show aria at right
     aria "Hey everyone. How'd you sleep?"
+    show cs happy
     cs "It was great. Thanks."
+    show cs
     aria "So when are you all planning to head out? I imagine you probably want to head out soon, but I would like to show you the woods."
     aria "I love the nature around here, so I spend a lot of time out there. Feels like a waste to not check it out while you're in the area."
     arceus "That does seem relaxing. May as well have a normal field trip instead of all these crazy adventures."
     cs "Yeah sure."
     billy "Well, if everyone else is going, may as well check it out."
+    scene black with dissolve
     n "They all walk through the parking lot until they come to the entrance to the forest."
-    n "The woods are at a lower height, and the group walks down a path of cracked concrete, ducking under branches that hang over the path.    "
+    n "The woods are at a lower height, and the group walks down a path of cracked concrete, ducking under branches that hang over the path."
     n "The cover of the trees is still thin, but the shadows are starting to cover their limited moonlight."
+    scene path_entrance
+    show cs disappointed dark flipped at mid_right
+    show arceus worried dark at right
+    show billy dark at center
+    show aria flipped at left
+    with dissolve
+    play music "<loop 0>dense_woods_b.mp3" volume 0.5
+    music Dense Woods B - Kikiyama
     billy "Why does the window by the entrance have to be bright red?"
     billy "I've had enough of spooky forests today."
     aria "It's fine, that guy always has his lights on red."
@@ -799,18 +1004,32 @@ label interstate_69:
     cs "That's probably the least concerning thing we've seen in a forest so far today, to be fair."
     arceus "Still seems plenty murderous to me."
     aria "I'm in here most nights, and he hasn't murdered me yet, so I wouldn't worry too much."
+    scene path_forest
+    show cs dark flipped at mid_right
+    show arceus dark at right
+    show billy dark at left
+    show aria flipped at center
+    with dissolve
     aria "We're gonna take a left at the bridge up ahead. The forward path just spits us right out onto a normal street."
     billy "We've been out here for all of 5 minutes and that's already seeming like the better option..."
     aria "Nah trust me. This path has all the best plants and the only real path through the forest."
     aria "White banesberry, hawthorn, sugar maple."
     aria "It's really pretty."
+    show cs disappointed dark flipped behind arceus
     cs "What do you mean the only real path? Aren't we currently walking through a forest?"
     aria "This isn't a forest, this is just a concrete path with trees on the sides."
     aria "Once you're actually in the woods, you're surrounded by plants of all kinds."
     aria "The smallest of them just springing up from the ground."
     aria "The tallest spreading their roots and taking command of the very earth we all draw our energy from."
+    show arceus worried dark
     arceus "You're not helping this seem any more normal..."
     aria "What do you mean? it's perfectly natural."
+    scene creepy_path
+    show cs worried dark flipped at mid_right
+    show arceus worried dark at right
+    show billy dark at left
+    show aria flipped at center
+    with dissolve
     aria "Anyway, the forest path is right up there."
     billy "Are you kidding? This path is dark enough. That's not a path, that's a portal to the void."
     cs "Yeah, I don't know about that."
@@ -828,6 +1047,7 @@ label interstate_69:
     aria "Well they put you into some pretty parts of the woods."
     billy "Your obsession with these woods is not healthy."
     aria "How come? It gets me fresh air and exercise."
+    show cs disappointed dark flipped behind arceus
     aria "Anyway, this path loops around to where we came from, so if you wanna leave, it's the fastest way back at this point."
     billy "So no matter what way I take, I'm at risk of ending up in a cursed path to the middle of a haunted forest?"
     aria "I wouldn't say cursed or haunted, but I would advise staying with me."
@@ -835,12 +1055,16 @@ label interstate_69:
     billy "Why would anyone!?"
     aria "To each their own, I suppose."
     billy "What do you all think?"
+    show cs dark flipped behind arceus
     cs "I've not had any reason to distrust Aria before, and having someone who knows the woods has to be good."
+    show arceus dark
     arceus "Yeah these woods are gonna be creepy no matter what route we take. We may as well pick the fastest one."
     aria "Alrighty then, follow me everyone."
+    scene creepy_path_2 with dissolve
     n "As tbe group enters the path, a ray of moonlight shines through a gap in the canopy."
     n "Rustling noises can be heard further into the woods, but the path through the trees is clear, albeit dimly lit."
-
+    stop music fadeout 3.0
+    music end
     jump ohio
 
 label interstate_94:
@@ -852,6 +1076,7 @@ label interstate_94:
     billy "Fine, we'll take 94! All we needed was that first sentence."
     cs "Sorry guys. I guess I'm just on-edge right now."
     arceus "I thought it sounded like a good route..."
+    scene black with dissolve
     n "The conversation comes to a halt as they continue heading down the highway."
     jump ohio
 
