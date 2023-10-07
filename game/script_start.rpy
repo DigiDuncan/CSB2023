@@ -288,12 +288,12 @@ define janitor = Character("Janitor", callback = char_callback)
 define ges = Character("Ges", callback = renpy.partial(char_callback, name = "ges"))  # TODO: Beep
 define nurse = Character("Nurse", callback = char_callback)
 define benrey = Character("Benrey", callback = renpy.partial(char_callback, name = "benrey"))
-define mean = Character("Mean", callback = renpy.partial(char_callback, name = "mean"))  # TODO: Beep
+define mean = Character("Mean", callback = renpy.partial(char_callback, name = "mean", beep = "mean"))
 define agent = Character("Howie", callback = renpy.partial(char_callback, name = "howie", beep = "howie"))
-define gordon = Character("Gordon", callback = renpy.partial(char_callback, name = "gordon"))  # TODO: Beep
+define gordon = Character("Gordon", callback = renpy.partial(char_callback, name = "gordon", beep = "gordon"))
 define receptionist = Character("Receptionist", callback = char_callback)
 define scott_pres = Character("Scott, President of Domino's Pizza", callback = renpy.partial(char_callback, name = "scott_pres"))  # TODO: Beep
-define miku = Character("Hatsune Miku", callback = renpy.partial(char_callback, name = "miku"))  # TODO: Beep
+define miku = Character("Hatsune Miku", callback = renpy.partial(char_callback, name = "miku", beep = "miku"))
 define hammond = Character("Richard", callback = renpy.partial(char_callback, name = "hammond"))
 define jermey = Character("Jermey", callback = renpy.partial(char_callback))
 define james = Character("James", callback = renpy.partial(char_callback))
