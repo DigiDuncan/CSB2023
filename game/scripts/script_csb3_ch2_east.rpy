@@ -1066,6 +1066,7 @@ label interstate_69:
     n "Rustling noises can be heard further into the woods, but the path through the trees is clear, albeit dimly lit."
     stop music fadeout 3.0
     music end
+    # TODO: AT THIS POINT WE NEED BGS, MUSIC, TRANSITIONS
     aria "If you look to the right, you'll see one of my favorite paths in the woods."
     aria "It's not exactly clear, so we'll skip it today, but it leads to a pretty little grotto."
     aria "It feels like something out of a fairy tale."
@@ -1158,6 +1159,7 @@ label interstate_69:
     aria "Yeah sorry about that..."
     billy "You're fine. That's just a skill issue on his part."
     aria "Good luck on your adventure!"
+    scene black with dissolve
     jump ohio
 
 label interstate_94:
