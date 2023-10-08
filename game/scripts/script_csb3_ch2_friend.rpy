@@ -237,7 +237,7 @@ label cs_meetup_2:
     digi "Yeah, we're fine, how about you?"
     aria "Yeah, I also had to fight some cops on the way to find CS."
     digi "Shit, so we need to get going, like, now, before more come."
-    if fun_value(10):
+    if fun_value(5):
         aria "Yeah, they won't stop coming. Let's meet up with the rest of the crew first."
     else:
         aria "Yeah, they won't stop coming. Fed to the rules and I hit the ground running."

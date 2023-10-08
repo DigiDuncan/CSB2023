@@ -83,7 +83,7 @@ label utah:
     arceus "Are you sure we're close to Vegas?"
     cs "We have to be! Nevada is like right below Washington!"
     arceus "Well, there is a state sign coming up, let's see if you're right."
-    if fun_value(5):
+    if fun_value(20):
         scene utajsign
         show cscar1
         show cscar2

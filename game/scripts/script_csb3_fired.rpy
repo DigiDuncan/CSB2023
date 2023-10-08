@@ -1259,7 +1259,7 @@ label third_tour_day:
     show mean at mid_left
     with move
     n "Mean tackle hugs CS."
-    if fun_value(10):
+    if fun_value(5):
         cs "Ow."
     
     show mean at right with move
