@@ -302,8 +302,7 @@ define chat = Character("Chat", callback = char_callback)
 define unknown = Character("???", callback = char_callback)
 define crowd = Character("Crowd", callback = char_callback)
 define worker = Character("Worker", callback = char_callback)
-define streetguy = Character("Street Guy", callback = char_callback)
-define gnome = Character("Gnome", callback = char_callback)
+define streetguy = Character("Street Guy", callback = renpy.partial(char_callback, name = "streetguy", beep = "nice"))
 define waitress = Character("Waitress", callback = char_callback)
 
 # Character Images
@@ -726,6 +725,9 @@ image path_entrance = "bg/path_entrance.png"
 image path_forest = "bg/path_forest.png"
 image creepy_path = "bg/creepy_path.png"
 image creepy_path_2 = "bg/creepy_path_2.png"
+image cafe_entrance = "bg/cafe_entrance.png"
+image cafe_sitting = "bg/cafe_sitting.png"
+image cafe_sitting_2 = "bg/cafe_sitting_2.png"
 
 ## Country Route
 image britport = "bg/britport.png"
