@@ -377,6 +377,8 @@ label bordercrossing:
     n "A wild border guard appears."
 
     show border_guard at center with dissolve
+    if fun_value(10):
+        border_guard "Eh, Schnitzelburg!"
     border_guard "I'm going to need proof of citizenship, eh."
     show border_guard at right with move
     show arceus flipped at left with moveinleft
