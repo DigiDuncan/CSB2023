@@ -1120,7 +1120,20 @@ label interstate_69:
     aria "I wasn't always, and They left me alone then too"
     cs "I don't know if I want to try and go back if we've encountered the Fae that make the trick paths..."
     cs "I guess we don't have any other options."
-    
+    n "They all slip past the Seraphite, and It floats off between the trees."
+    n "They walk further along the path, and the path becomes less clear as tree branches block the path."
+    aria "Huh, these aren't normally here..."
+    arceus "What do you mean not normally here?! Is this path changing!?"
+    cs "What the hell, how are we getting out of here?!"
+    billy "I guess we gotta just go through."
+    arceus "Go through where?! These branches are about as thick as the trees on the side!"
+    billy "We go down the same way we've been going."
+    billy "What's your issue? You're short enough that you don't even need to crouch to get under the branches"
+    arceus "Fuck off."
+    arceus "I guess you're right though, we can't really turn back now."
+    n "Everyone begins making their way through the nest of tree branches."
+    n "Eventually, they reach the end and come to a clearing with a lake."
+    aria "Huh, that's interesting."
 
     jump ohio
 
