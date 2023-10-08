@@ -729,6 +729,8 @@ image creepy_path_2 = "bg/creepy_path_2.png"
 image cafe_entrance = "bg/cafe_entrance.png"
 image cafe_sitting = "bg/cafe_sitting.png"
 image cafe_sitting_2 = "bg/cafe_sitting_2.png"
+image trafficjam = "bg/trafficjam.png"
+image east_cade = "bg/east_cafe.png"
 
 ## Country Route
 image britport = "bg/britport.png"
