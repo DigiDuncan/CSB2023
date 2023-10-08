@@ -198,7 +198,10 @@ def draw_in(subject: Fighter, targets: list[Fighter], crit: bool, options: dict)
 
 def ai_mimic(subject: Fighter, targets: list[Fighter], crit: bool, options: dict) -> AnswerList:
     print(f"[AI Mimic] running {targets[0].normal.name}...")
-    return targets[0].normal.run(subject, targets, crit)
+    attack = targets[0].normal
+    if attack.name == "AI Mimic":
+        attack = Attacks.PUNCH
+    return attack.run(subject, targets, crit)
 
 class AI:
     def __init__(self,
