@@ -1066,7 +1066,8 @@ label interstate_69:
     n "Rustling noises can be heard further into the woods, but the path through the trees is clear, albeit dimly lit."
     stop music fadeout 3.0
     music end
-    # TODO: AT THIS POINT WE NEED BGS, MUSIC, TRANSITIONS
+    scene creepy_path_3 with dissolve
+    play music "melancholy.mp3"
     aria "If you look to the right, you'll see one of my favorite paths in the woods."
     aria "It's not exactly clear, so we'll skip it today, but it leads to a pretty little grotto."
     aria "It feels like something out of a fairy tale."
@@ -1102,6 +1103,7 @@ label interstate_69:
     cs "Okay, that's definitely concerning."
     cs "Let's pick up the pace."
     aria "We're already going on the fastest path. I wouldn't deviate from the plan."
+    scene creepy_path_fairy with dissolve
     cs "I didn't mean to change, I just meant--{w=0.5} wait, what's that up ahead?"
     aria "Oh that's strange, They don't normally appear on this path..."
     aria "That's one of the faeries."
@@ -1122,6 +1124,7 @@ label interstate_69:
     aria "I wasn't always, and They left me alone then, too."
     cs "I don't know if I want to try and go back if we've encountered the Fae that make the trick paths..."
     cs "I guess we don't have any other options."
+    show creepy_path_4 with dissolve
     n "They all slip past the Seraphite, and It floats off between the trees."
     n "They walk further along the path, and the path becomes less clear as tree branches block the path."
     aria "Huh, these aren't normally here..."
@@ -1140,12 +1143,25 @@ label interstate_69:
     aria "Yeah, that path is the same as it always is."
     billy "That path goes back the same way we came, of course it's fine."
     arceus "That was what she said about the last path and then we ended up climbing between a tangled web of branches."
+    show creepy_path_exit
+    show billy at left
+    show cs worried
+    show arceus worried at mid_left
+    show aria at right
+    with dissolve
     arceus "That's a normal road with a sidewalk over there. We're taking that."
     cs "I'm with Arceus on this one."
     cs "I don't think I'll be able to go between two rows of trees without having a panic attack for a while."
     aria "I think Michigan roads are scarier than any forest, but I'll take you back how you want."
     $ achievement_manager.unlock("Analog Horror Protagnist")
     n "They all walk down and reach the apartment where the car is parked."
+    scene parking_lot
+    show billy at left
+    show cs
+    show arceus at mid_left
+    show aria at right
+    with dissolve
+    stop music fadeout 3.0
     aria "Thanks for hanging out with me. It was fun."
     aria "Sorry you two didn't enjoy the woods, but I'm glad at least Billy seemed to like it."
     cs "I guess nothing was actively dangerous, and that's above average for us at this point."
