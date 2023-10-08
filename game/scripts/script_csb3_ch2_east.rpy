@@ -757,6 +757,7 @@ label interstate_69:
     show billy car turn
     n "Finally, the forest's brush, along with the detritus of other plants that dotted the ecosystem, disappeared in a sea of white flame that left them in a desolate parking lot."
     show billy car
+    $ achievement_manager.unlock("Gnomed")
     billy "Well, that was deeply disconcerting."
     gnome "If you are not used to it, I suppose so."
     billy "I think I need a break from driving after all that."
@@ -1142,6 +1143,7 @@ label interstate_69:
     cs "I'm with Arceus on this one."
     cs "I don't think I'll be able to go between two rows of trees without having a panic attack for a while."
     aria "I think Michigan roads are scarier than any forest, but I'll take you back how you want."
+    $ achievement_manager.unlock("Analog Horror Protagnist")
     n "They all walk down and reach the apartment where the car is parked."
     aria "Thanks for hanging out with me. It was fun."
     aria "Sorry you two didn't enjoy the woods, but I'm glad at least Billy seemed to like it."
@@ -1156,12 +1158,10 @@ label interstate_69:
     aria "Yeah sorry about that..."
     billy "You're fine. That's just a skill issue on his part."
     aria "Good luck on your adventure!"
- 
-
-
     jump ohio
 
 label interstate_94:
+    # TODO: PATH UNREACHABLE
     cs "What are you talking about? We're getting on 94."
     cs "We've all been through way too much for me to want to take any unnecessary detours."
     cs "I'm so tired. I just want to get home..."
