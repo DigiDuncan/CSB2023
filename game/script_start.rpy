@@ -536,6 +536,7 @@ image hart2 = "characters/hart2.png"
 image waitress = "characters/waitress.png"
 image streetguy = "characters/streetguy.png"
 image billy dark = "characters/billydark.png"
+image gnome = "characters/gnome.png"
 
 # Background Images
 ## CSBI
