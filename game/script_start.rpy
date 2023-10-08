@@ -278,12 +278,12 @@ define bomahanobeep = Character("Omaha", callback = renpy.partial(char_callback,
 define blank = Character("Blank", callback = renpy.partial(char_callback, name = "blank"))
 define aria = Character("Aria", callback = renpy.partial(char_callback, name = "aria"))  # TODO: Beep
 define cop = Character("Cop", callback = renpy.partial(char_callback, name = "cop"))
-define midge = Character("Midge", callback = renpy.partial(char_callback, name = "midge"))  # TODO: Beep
+define midge = Character("Midge", callback = renpy.partial(char_callback, name = "midge", beep = "midge"))
 define db = Character("DB05", callback = renpy.partial(char_callback, name = "db"))  # TODO: Beep
 define customer = Character("Customer", callback = char_callback)
 define guest = Character("Guest", callback = renpy.partial(char_callback, name = "guest"))
 define janitor = Character("Janitor", callback = char_callback)
-define ges = Character("Ges", callback = renpy.partial(char_callback, name = "ges"))  # TODO: Beep
+define ges = Character("Ges", callback = renpy.partial(char_callback, name = "ges", beep = "ges"))
 define nurse = Character("Nurse", callback = char_callback)
 define benrey = Character("Benrey", callback = renpy.partial(char_callback, name = "benrey"))
 define mean = Character("Mean", callback = renpy.partial(char_callback, name = "mean", beep = "mean"))
