@@ -1517,6 +1517,7 @@ label miku_pizza:
     miku "Wanna go get a pizza?"
     cs "Sure!"
     hide scott with moveoutbottom
+    hide scott_pres with moveoutbottom
     show miku with hpunch
     n "Scott faints."
     cs "Oh, jeez, let's make sure Scott is okay first."
