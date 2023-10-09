@@ -632,7 +632,7 @@ label hotel_lobby_2:
     stop music fadeout 3.0
     music end    
     cs "Alright, well, here's our song..."
-    n "CS turns to the others to queue them."
+    n "CS turns to the others to cue them."
     cs "[song_name_2]!"
     n "Anno starts up the backing track, and Arceus grabs some random objects to use as a drum kit."
     play music "<loop 0>audio/happy_rock.mp3" volume 0.5
