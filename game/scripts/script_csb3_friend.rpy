@@ -788,6 +788,7 @@ label fire_range:
     jump car_picker
 
 label car_picker:
+    stop sound
     scene dealer_cars with fade
     show carguy flipped at right
     show arceus flipped at center
