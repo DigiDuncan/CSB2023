@@ -421,7 +421,7 @@ label arceus_place:
     show arceus
     show kitty flipped at right with moveinright
     show arceus flipped
-    kitty "Hey Arceus! You're home!"
+    kitty "Hey Arcie! You're home!"
     kitty "Hey, who's this man?"
     arceus "This is CS, my jail bud- I mean my friend! You remember that guy who made the YTPs?"
     kitty "Oh, yeah. Isn't he kinda famous?"
@@ -959,7 +959,7 @@ label scott_zone:
     show arceus happy
     n "Arceus blurts out the address of Tom's house."
     show arceus
-    kitty "Arceus! Don't do that!"
+    kitty "Arcie! Don't do that!"
     show cs happy
     cs "Woohoo! Does that mean we can go there?"
     arceus "Sure, and don't worry Kitty, they won't catch me doing this."
