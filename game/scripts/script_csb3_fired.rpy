@@ -1040,7 +1040,9 @@ label first_tour_day:
     with dissolve
     play music "<loop 0>audio/exotic.mp3" volume 0.5
     show howie at offscreenleft with moveinright
-    show howie at right behind arceus with move
+    pause 1.0
+    show howie flipped at right behind arceus with move
+    show howie at right behind arceus
 
     agent "Boys!"
     n "The team turn to Howie to look at him."
