@@ -593,7 +593,7 @@ label hell_zone:
     gordon "Normal attire my arse! Are you really here to cook, or are we just playing games?"
     show cs worried flipped
     cs "No no! I'm really ready to blow you away, Mr. Ramsay!"
-    gordon "Well, you better hope your cooking skills can save you from your fashion skills."
+    gordon "Well, you better hope your cooking skills can save you from your fashion sense."
     gordon "You've got an hour. Use whatever you can find here to try to make the best dish you can."
     gordon "God..."
     hide gordon with moveoutleft
