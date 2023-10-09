@@ -16,7 +16,8 @@ label new_plan:
     n "CS sulks away in defeat."
 
     scene alley with fade
-    show cs disappointed with moveinright
+    show cs disappointed flipped with moveinright
+    show cs disappointed
     cs "Ugh, what am I going to do now?"
     cs "I don't even know what other job I could get."
     cs "I've spent most of my life editing..."
@@ -423,7 +424,7 @@ label ep_time:
     anno "Gotcha!"
     anno "{cps=15}{image=note_small1.png}I made my way over to Japan...{w=1.5}\n[line_2]{image=note_small2.png}"
     anno "{cps=15}{image=note_small1.png}I found myself in the U.K...{w=1.5}\n[line_3]{image=note_small2.png}"
-    anno "{cps=15}{image=note_small1.png}I'm gonna go party in Sweden...{w=1.5}]\n[line_4]{image=note_small2.png}"
+    anno "{cps=15}{image=note_small1.png}I'm gonna go party in Sweden...{w=1.5}\n[line_4]{image=note_small2.png}"
     anno "{cps=15}{image=note_small1.png}I'm globetrottin'!{image=note_small2.png}"
     show arceus happy
     n "Arceus claps."
