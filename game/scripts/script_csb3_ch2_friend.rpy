@@ -82,7 +82,7 @@ label car_ride_1:
     tate "They've probably been stressed out all day long."
     tate "Anyways, how y'all doing? Wait, I don't think we've ever actually met."
     mika "Well, I'm Mika, and thankfully Pakoo called in time for us to arrive."
-    kitty "Hi, I'm Kitty. I hope Arc is doing well enough."
+    kitty "Hi, I'm Kitty. I hope Arcie is doing well enough."
     tate "Hi I'm Tate. Nice to meet y'all."
     tate "Now let's go kick some ass!"
     if nice_car:
