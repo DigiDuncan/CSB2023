@@ -573,14 +573,14 @@ label csbi_end:
     play sound "audio/punch.ogg"
     show cs angry at mid_left with move
     show worker_4 at mid_left with hpunch
-    if fun_value(5):
-        cs "Ow."
-        mean "AUUUUUGH!!"
     hide worker_4 with moveoutleft
     play sound "audio/punch.ogg"
     show cs angry at mid_right with move
     show worker_3 at mid_center_right with hpunch
     hide worker_3 with moveoutright
+    if fun_value(5):
+        cs "Ow."
+        mean "AUUUUUGH!!"
     show cs angry at offscreenright with move
     show black with dissolve
     scene hoh_hq3
