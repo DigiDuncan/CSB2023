@@ -322,7 +322,7 @@ label car_ride_2:
     mika "Yeah, what the hell! Where is this Copguy dude at?"
     kitty "What if he's preparing defenses to ambush us?"
     mika "We'll destroy anything that comes our way, don't worry."
-    tate "Hell yeah, we gotchu."
+    tate "Hell yeah, we got this!"
     mika "We definitely got this don't worry."
     kitty "I wonder how those new guys are handling the situation..."
     scene black with dissolve

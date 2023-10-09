@@ -759,7 +759,7 @@ label fire_range:
     pakoo "I had these few spare with me, you guys should just keep them."
     pakoo "One may or may not be LTT property that I stole."
     scene black with fade
-    n "The gang stops to call their partners, and then makes their way to the dealership."
+    n "The gang stops to call their friends and partners, and then makes their way to the dealership."
     scene dealership with fade
     show arceus flipped at center
     show cs at mid_left
