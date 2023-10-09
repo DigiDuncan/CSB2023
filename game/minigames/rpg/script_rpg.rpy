@@ -145,7 +145,7 @@ label rpg_final_fight_1:
             marine
             marine
         scale 2.0
-        on_win "rpg_final_fight_2"
+        on_win "between_1"
         on_lose "rpg_final_fight_1"
 
 label rpg_final_fight_2:
@@ -173,7 +173,7 @@ label rpg_final_fight_2:
             marine
             big_tank
         scale 2.0
-        on_win "rpg_final_fight_3"
+        on_win "between_2"
         on_lose "rpg_final_fight_1"
 
 label rpg_final_fight_3:
@@ -189,7 +189,7 @@ label rpg_final_fight_3:
     $ party_4 = renpy.display_menu([(a.title() if a != "CS_FINAL" else "CS", a) for a in final_fighters_3 if a not in chosen_final_fighters_3], screen="ucn_choice")
     rpg:
         bg "images/bg/war_torn_4.png"
-        music "audio/trans_atlantic.mp3"
+        music "audio/prophetpart2.mp3"
         fighters:
             cs_final
             $party_2

@@ -936,9 +936,9 @@ label so_join:
     tate "Waaaaaaaaaait!"
     show copguy
     copguy "Huh??"
-    show tate at left with moveinleft
+    show tate srs at left with moveinleft
     show copguy with vpunch
-    show tate at center
+    show tate srs at center
     show copguy at right
     show cs at offscreenright
     show arceus at offscreenright
@@ -968,9 +968,11 @@ label after_cop_fight:
     with moveinright
     cs "Yeah, uhm..."
     cs "How are you doing?"
+    show tate srs
     tate "I'm fine, but you're going to have to explain what the fuck is happening here."
     show cs disappointed flipped
     cs "Fuck."
+    show tate
     if nice_car:
         tate "Also, nice car!"
         show cs happy flipped

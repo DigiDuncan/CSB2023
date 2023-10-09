@@ -45,7 +45,9 @@ label car_ride_1:
     mika "I know, right?"
     tate "How're you holding up Kitty?"
     kitty "Yeah, I'm doing fine so far."
+    show tate shock flipped
     tate "Hold up, is that CS in front of us?"
+    show tate smug flipped
     tate "Heyyyy Mika. {w=0.2}You should smack that horn. {w=0.2}You should do it. {w=0.2}Right now. {w=0.2}You should scare CS. {w=0.2}Do it now."
     if nice_car:
         scene joj_charger_fg
@@ -73,17 +75,19 @@ label car_ride_1:
     scene jeep_inside_fg
     show drive_day behind jeep_inside_fg
     show mika at left
-    show tate flipped at right
+    show tate smug flipped at right
     with fade
     tate "Haaahahaha-- *snort*"
     kitty "Oh my goodness!"
     mika "Geez, I didn't think it was that bad."
+    show tate flipped
     tate "Yeah, alright, we had a laugh, but maybe we should chill a bit."
     tate "They've probably been stressed out all day long."
     tate "Anyways, how y'all doing? Wait, I don't think we've ever actually met."
     mika "Well, I'm Mika, and thankfully Pakoo called in time for us to arrive."
     kitty "Hi, I'm Kitty. I hope Arcie is doing well enough."
     tate "Hi I'm Tate. Nice to meet y'all."
+    show tate smug flipped
     tate "Now let's go kick some ass!"
     if nice_car:
         scene joj_charger_fg
@@ -318,9 +322,11 @@ label car_ride_2:
     show mika at left
     show tate flipped at right
     with fade
+    show tate srs flipped
     tate "Man, I'm bored."
     mika "Yeah, what the hell! Where is this Copguy dude at?"
     kitty "What if he's preparing defenses to ambush us?"
+    show tate flipped
     mika "We'll destroy anything that comes our way, don't worry."
     tate "Hell yeah, we got this!"
     mika "We definitely got this don't worry."
@@ -375,7 +381,7 @@ label car_ride_2:
     show guard_soldier at right
     with fade
     show cs dark angry at center
-    show tate dark at mid_left
+    show tate srs dark at mid_left
     show arceus angry dark flipped at mid_left_left
     show digi dark flipped at left
     with moveinleft
@@ -412,6 +418,7 @@ label cs_rage:
     show arceus worried dark flipped
     arceus "CS, we need a minute. We just fought a tank."
     cs "No time for that! We need to stop him now!"
+    show tate srs dark
     tate "CS, no, we really gotta wait a sec."
     show arceus dark flipped
     digi "We're never gonna catch up with him at this point anyways..."
@@ -436,6 +443,7 @@ label cs_rage:
     n "CS goes to the debris from the battle, desperately trying to move it out of the way."
     show cs dark concentrate
     cs "Guys, cmon, please! We have... to... hnngg..."
+    show tate shock dark
     tate "Woah, CS? What are you doing?"
     show cs dark concentrate with vpunch
     show cs dark concentrate with hpunch
@@ -445,7 +453,13 @@ label cs_rage:
     cs "Can you guys please help--"
     show cs dark at center with move
     cs "Wait, what the hell?! Did I move all of that already?"
+    show tate dark
     n "As CS is gawking at the work he just did, a purple figure appears in front of CS."
+    hide tate
+    hide arceus
+    hide digi
+    with moveoutleft
+    show cs dark at left with move
     show csgod at right with dissolve  
     csgod "You're welcome."
     cs "Woah, hey! Are you CSGod?"
@@ -463,8 +477,15 @@ label cs_rage:
     csgod "No problem."
     hide csgod with dissolve
     n "CSGod fades away, and CS turns back to the group."
-    tate "CS, you good? You were just staring up at the sky and talking to yourself about magic or something."
     show cs dark flipped with determination
+    show cs dark flipped at right with move
+    show tate dark at mid_left
+    show arceus dark flipped at mid_left_left
+    show digi dark flipped at left
+    with moveinleft    
+    show tate shock dark
+    tate "CS, you good? You were just staring up at the sky and talking to yourself about magic or something."
+    show tate dark
     cs "I'm all good, don't worry."
     cs "Sorry I got upset, I just need to relax."
     cs "Arc, you drive, I'm gonna lie down in the backseat."
@@ -482,6 +503,7 @@ label cs_rage:
     show arceus dark with determination
     hide arceus with moveoutleft
     digi "Roger."
+    show tate srs dark
     tate "Alright, let's go kick Copguy's ass!"
     show tate dark flipped with determination
     hide digi
@@ -576,7 +598,9 @@ label car_ride_3:
     mika "I feel like only a few off-brands can taste well, but there are a few I just can't eat."
     tate "Saaaaame, which ones?"
     mika "Usually the off-brand Cheez-its, but I really don't like the off-brand goldfish either."
+    show tate shock flipped
     tate "Wait, you don't like gold whales?! I love those!"
+    show tate flipped
     mika "Well, I just don't like them too much."
     kitty "The snack that breaks your back: Gold Whales!"
     n "They all laugh."
@@ -604,7 +628,7 @@ label final_meetup:
     n "The groups all get out of their cars and meet up with one another."
     scene final_destination with fade
     show cs at mid_left
-    show tate at left
+    show tate at left behind cs
     with moveinleft
     n "The last group to meet up all emerge as well, who are:"
     show blank at center with moveinright
@@ -636,6 +660,77 @@ label final_meetup:
     scene black with dissolve
     music Trans Atlantic - Lizardking
     jump rpg_final_fight_1
+
+label between_1:
+    scene war_torn_3
+    show cs at center
+    show pakoo flipped at mid_left
+    show arceus flipped at left
+    with dissolve
+    cs "Woohoo! Those guys were easy!"
+    show pakoo disappointed flipped
+    pakoo "I don't think it's over, CS."
+    show cs worried
+    show arceus worried flipped
+    arceus "Is that an even bigger tank than the last one?"
+    show cs angry
+    cs "Alright guys! Battle positions! We've got a tank!"
+    jump rpg_final_fight_2
+
+label between_2:
+    scene war_torn_5
+    show cs at center
+    show tate at mid_left
+    show arceus flipped at left
+    with dissolve
+    play music "the_whale.mp3" loop volume 0.6
+    cs "C'mon guys! We gotta get to Copguy!"
+    tate "Where is Copguy, anyways? Do you even know where he could be?"
+    n "All of a sudden, the ground starts to shake, as a blinding light blasts the group."
+    stop music fadeout 3.0
+    show tate shock
+    show arceus worried flipped
+    show cs worried with hpunch
+    show cs worried with vpunch
+    show cs worried with hpunch
+    show cs worried with vpunch
+    show cs worried with hpunch
+    show cs worried with vpunch
+    show cs worried with hpunch
+    show cs worried with vpunch
+    scene white with dissolve
+    pause 0.5
+    scene war_torn_5
+    show cs worried at center
+    show tate shock at mid_left
+    show arceus worried flipped at left
+    show copguy_ex at right 
+    with dissolve
+    play music "prophet_2001.mp3" loop volume 0.6
+    copguy "Well, well, well, CS."
+    copguy "How do you like my new form? Pretty cool, right?"
+    show cs angry
+    show tate srs
+    show arceus angry flipped
+    cs "Go to hell, Copguy! You'll never defeat me!"
+    copguy "Heheh, you can tell yourself that."
+    copguy "I've been making sure to note down you and your groups abilities..."
+    copguy "Why don't we try one out!"
+    n "Copguy casts Light Cast on Arceus!"
+    play sound "minigames/car/gaster_blast.wav"
+    scene white with dissolve
+    scene war_torn_5
+    show cs worried at center
+    show tate shock at mid_left
+    show arceus angry flipped at left
+    show copguy_ex at right 
+    with dissolve 
+    show arceus worried flipped with vpunch
+    arceus "Ow! How did you---{w=1.0}{nw}"
+    copguy "I think that's all you needed to see. Let's end this, CS."
+    stop music fadeout 3.0
+    scene black with dissolve
+    jump rpg_final_fight_3 
 
 label weapon_of_choice:
     window hide
@@ -671,8 +766,10 @@ label car_slam:
     show mika at center
     show kitty flipped at right
     with fade
+    show tate shock
     tate "Y'all see that shit?!"
     mika "CS crushed the whole city!"
+    show tate
     show cs at mid_right with moveinleft
     cs "Hey guys! Are you all alright?"
     kitty "Yeah, we're alright. I'm assuming you're fine?"
