@@ -1213,11 +1213,11 @@ label second_tour_day:
     play music "<loop 0>audio/energetic_rock.mp3" volume 0.5
     cs "{cps=15}{image=note_small1.png}I made my way over to Japan...{w=1.5}\n[line_2]{image=note_small2.png}"
     cs "{cps=15}{image=note_small1.png}I found myself in the U.K...{w=1.5}\n[line_3]{image=note_small2.png}"
-    cs "{cps=15}{image=note_small1.png}I'm gonna go party in Sweden...{w=1.5}]\n[line_4]{image=note_small2.png}"
+    cs "{cps=15}{image=note_small1.png}I'm gonna go party in Sweden...{w=1.5}\n[line_4]{image=note_small2.png}"
     cs "{cps=15}{image=note_small1.png}I'm globetrottin'!{image=note_small2.png}"
     stop music fadeout 3.0
     play sound "audio/cheer1.mp3"
-    n "The crows is applauding wildly."
+    n "The crowd is applauding wildly."
     cs "We're [band_name]!"
     n "The crowd is loving it."
 
@@ -1302,7 +1302,7 @@ label third_tour_day:
     play music "<loop 0>audio/energetic_rock.mp3" volume 0.5
     cs "{cps=15}{image=note_small1.png}I made my way over to Japan...{w=1.5}\n[line_2]{image=note_small2.png}"
     cs "{cps=15}{image=note_small1.png}I found myself in the U.K...{w=1.5}\n[line_3]{image=note_small2.png}"
-    cs "{cps=15}{image=note_small1.png}I'm gonna go party in Sweden...{w=1.5}]\n[line_4]{image=note_small2.png}"
+    cs "{cps=15}{image=note_small1.png}I'm gonna go party in Sweden...{w=1.5}\n[line_4]{image=note_small2.png}"
     cs "{cps=15}{image=note_small1.png}I'm globetrottin'!{image=note_small2.png}"
     n "The crowd loves this a lot."
     stop music fadeout 3.0
