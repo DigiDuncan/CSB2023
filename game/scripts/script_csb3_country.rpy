@@ -747,7 +747,7 @@ label good_ramsay:
     show cs happy flipped
     cs "Yep!"
     show arceus angry flipped
-    arceus "Man, your crazy."
+    arceus "Man, you're crazy."
     show arceus flipped
     arceus "Whatever, let's head back home."
     scene black with dissolve
