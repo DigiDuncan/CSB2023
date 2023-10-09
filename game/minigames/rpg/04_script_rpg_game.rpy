@@ -20,6 +20,7 @@ label game_loop:
                     for i, a in enumerate(curr_fighter.attacks):
                         name = a.name if a._turns_until_available == 0 else f"{a.name} [[{a._turns_until_available} turns remaining]"
                         attacks.append((name, str(i)))
+                        attacks.append((a.description, None))
                     print("Attacks:", attacks)
                     while not valid_move:
                         selected_move = renpy.display_menu([("What will " + curr_fighter.name + " do?", None)] + attacks)
