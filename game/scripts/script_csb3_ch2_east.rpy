@@ -688,7 +688,7 @@ label interstate_69:
     billy "What do you want with us?"
     gnome "I mean you no harm. May I sit and explain myself?"
     arceus "I don't think this guy is a threat. We may as well let him in."
-    cs "He'll at least made this traffic jam more entertaining."
+    cs "He'll at least make this traffic jam more entertaining."
     billy "Alright fine, come on in."
     show billy car
     gnome "I thank you. As you may be aware, I am not of your Species."
@@ -696,7 +696,7 @@ label interstate_69:
     gnome "That may be true, however, it appears that neither of your Species are the same as mein." 
     gnome "Therefore mein Point still stands, und thus I still must briefly introduce mein Volk und our Relationship to this Place."
     gnome "I am of the Forest, und I have recently become acquainted mit some of your Kind."
-    gnome "Deine Group has a similarly unique Redolence to those I encounted."
+    gnome "Deine Group has a similarly unique Redolence to those I encountered."
     gnome "As I am a Being of the Forest and of the Land surrounding it, I find myself in a Position to assist you."
     scene car plains
     show billy car
@@ -739,7 +739,7 @@ label interstate_69:
     show billy car turn with vpunch
     show billy car turn with hpunch
     show billy car turn with vpunch
-    n "The forest, which had previously sprung forward as if growing naturally, were removed before their eyes."
+    n "The forest, which had previously sprung forward as if growing naturally, was removed before their eyes."
     scene white
     show billy car turn
     with dissolve
@@ -1406,7 +1406,7 @@ label pennsylvania:
     show crowd at t_stagescreen onlayer broadcast
     n "The crowd explodes into uproarious applause."
     hide crowd onlayer broadcast
-    host "ON 'GO!', THESE LOVLIES WILL BE COMPETING TO SEE WHO CAN {color=#ffff00}SHARPEN THE MOST PENCILS!"
+    host "ON 'GO!', THESE LOVELIES WILL BE COMPETING TO SEE WHO CAN {color=#ffff00}SHARPEN THE MOST PENCILS!"
     host "THIS TRULY IS THE BATTLE OF A CENTURY FOLKS! DIGIDUNCAN, OUR LONG TIME CHAMP, GOES UP AGAINST A NEWCOMER, THE AMAZING CS188!"
     show crowd at t_stagescreen onlayer broadcast
     n "The crowd is going wild."
