@@ -190,26 +190,26 @@ label asylum:
     scene asylum with fade
     play music "<loop 0>basement.mp3" volume 0.5
     music Basement - Toby Fox
-    show cs worried flipped at left with moveinright
-    show cs worried with determination
+    show cs insane worried flipped at left with moveinright
+    show cs insane worried with determination
     show asylum_worker at right with moveinright
     asylum_worker "Here is your room. Enjoy living out the rest of your life here."
-    show cs worried at center with moveinleft
+    show cs insane worried at center with moveinleft
     cs "Sir, you need to listen to me! I'm not crazy!"
     asylum_worker "That's what they all say. Get off of me."
     play sound "audio/punch.ogg"
-    show cs worried with vpunch
+    show cs insane worried with vpunch
     hide cs worried with moveoutbottom
     asylum_worker "Sorry it had to be this way, bud."
     hide asylum_worker with moveoutright
     pause 3.0
-    show cs disappointed at center with moveinbottom
+    show cs insane disappointed at center with moveinbottom
     cs "Ow..."
     cs "This isn't fair!"
     csgod "Hey!"
     csgod "Quit the whining!"
     show csgod at right
-    show cs disappointed at left
+    show cs insane disappointed at left
     with moveinright
     cs "What?"
     cs "Who are you?"

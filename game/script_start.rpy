@@ -344,6 +344,9 @@ image cs fakegod = "characters/cs/fake_god.png"
 image cs guitar = "characters/cs/guitar.png"
 image cs surprised = "characters/cs/surprised.png"
 image cs scared = "characters/cs/scared.png"
+image cs insane worried = "characters/cs/insane.png"
+image cs insane worried flipped = "flip:characters/cs/insane.png"
+image cs insane disappointed = "characters/cs/insane2.png"
 
 ## Arc
 image arceus = "characters/arc/arceus.png"
