@@ -167,22 +167,8 @@ label car_dialogue:
     cs "Nope!"
     cs "Why would I? It looks cool now!"
     arceus "..."
-
-    pause 1.0
-
-    arceus "Well CS, I'm going to New York with you. You know Michael Rosen, the Yankee's manager, gave me a job as coach for as long as you're on the team."
-    cs "Look, Arceus, if you're the coach, you must know all the players."
-    arceus "I certainly do."
-    cs "Well you know I've never met the guys, os you'rll have to tell me their names, and then I'll know who's playing on the team."
-    arceus "You mean funny names?"
-    cs "Strange names, pet names... like Dizzy Dean..."
-    arceus "His brother Daffy."
-    cs "Daffy Dean…"
-    arceus "And their French cousin."
-    cs "French?"
-    arceus "Goofé."
     
-    pause 2.0
+    pause 1.0
 
     n "Billy gets a call on his Jupiter Jack."
     billy "Hi, it's Billy!"
