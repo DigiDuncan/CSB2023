@@ -13,7 +13,7 @@ init python:
         #CSB1
         "Let's hear my baby - Walkman": "lets_hear_my_baby.mp3",
         "CANYON.MID - George Stone": "canyon.mp3",
-        "Summer Clearance Sale - BEST MUSIC": "summer_clearance_sale.mp3",
+        "Summer Clearance Sale - BEST MUSIC": "bestmusicu.mp3",
         "scales of joy.mod - Mel O Dee": "scales_of_joy.mp3",
         "Alfred Hitchcock Intro Theme - Charles Gounod": "hohsis_theme.mp3",
         "Super Friendly - Kevin Macleod": "super_friendly.mp3",
@@ -51,9 +51,10 @@ init python:
         "Track 4 - Weatherscan": "track4.mp3",
         "Funiculi Holiday - ClascyJitto": "funiculi_holiday.mp3",
         "Speedy Comet - Mahito Yokota": "speedy_comet.mp3",
-
+        "Melancholy - Imori": "melancholy.mp3",
         "Breakout - Shoichiro Sakamoto": "breakout.mp3",
         "Rude Buster - Toby Fox": "rude_buster.mp3",
+        "Billys Mix 1 - Billy Mays": "billymusicu.mp3",
         "Park Theme - Lorin Nelson": "park_theme.mp3",
         "Alfred's Theme - Eminem": "hohsisremix.mp3",
         "Track 3 - Weatherscan": "track3.mp3",
@@ -131,6 +132,7 @@ init python:
     global album_map
 
     album_map = {
+        "Billys Mix 1 - Billy Mays": "billymix.png",
         "CANYON.MID - George Stone": "windows.png",
         "PASSPORT.MID - George Stone": "windows.png",
         "stal - C418": "minecraft.png",

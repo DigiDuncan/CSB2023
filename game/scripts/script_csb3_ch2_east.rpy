@@ -410,6 +410,7 @@ label south_dakota:
     arceus "CS? Are you okay?"
     show arceus worried flipped at mid_right with moveinleft
     n "As Arceus starts to approach CS, the groups surrounding them all gasp loudly."
+    play sound "gasp.ogg" volume 2
     scene csmore
     show cs concentrate at right
     show arceus worried at center
@@ -520,7 +521,10 @@ label nebraska:
     cs "Damn, this is some good pizza!"
     show arceus happy flipped
     arceus "Probably some of the best pizza I've ever had."
-    billy "Better than my restaurant mini-burgers!"
+    if fun_value(10):
+        billy "Better than my restroom mini-burgers!"
+    else:
+        billy "Better than my restaurant mini-burgers!"
     show cs
     show arceus flipped
     pakoo "Alright well, I should get going, but I hope y'all have a good time doing whatever y'all doing."
@@ -1077,6 +1081,7 @@ label interstate_69:
     music end
     scene creepy_path_3 with dissolve
     play music "melancholy.mp3"
+    music Melancholy - Imori
     aria "If you look to the right, you'll see one of my favorite paths in the woods."
     aria "It's not exactly clear, so we'll skip it today, but it leads to a pretty little grotto."
     aria "It feels like something out of a fairy tale."
