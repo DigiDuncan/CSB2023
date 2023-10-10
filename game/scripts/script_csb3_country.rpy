@@ -1399,7 +1399,7 @@ label karaoke:
     cs "Let's do this one!"
     scene black with fade
     pause 1.0
-    $ renpy.movie_cutscene("movies/karaoke.webm")  # TODO: This shit don't work
+    show karaoke
     pause 1.0
     scene karaoke_bar_inside
     show cs at mid_left
