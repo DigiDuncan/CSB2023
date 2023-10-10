@@ -254,7 +254,7 @@ label archival:
     n "The people with the guns start firing again, as a bunch of alarms go off, echoing throughout the whole place. The alarms start yelling:"
     scene archival_5 with dissolve
     show cs scared at center with moveinleft
-    play sound "<loop 0>siren.ogg" loop volume 0.6
+    play sound "<loop 0>less_annoying_alarm_sound.mp3" loop volume 0.6
     n "\"Warning! Warning! Memory Breach at Sector 4 Foxtrot Kilo 17! Entity Charlie Sierra Bravo has breached. Please evacuate to Foxtrot Kilo 16 or below immediately.\""
     n "The alarm repeats itself, while CS is still running, zigzagging around the chaos."
     hide cs with moveoutright
