@@ -17,11 +17,9 @@ class Achievement:
     icon_image: str
     hidden: bool = False
 
-    def __post_init__(self) -> None:
-        self.unlocked = False
-
-        if self.name in persistent.unlocked_achievements:
-            self.unlocked = True
+    @property
+    def unlocked(self) -> bool:
+        return self.name in persistent.unlocked_achievements
 
     @property
     def desc(self) -> str:
@@ -47,7 +45,6 @@ class Achievement:
         if self.unlocked:
             return
 
-        self.unlocked = True
         persistent.unlocked_achievements.add(self.name)
         if show_screen:
             renpy.with_statement(determination)
@@ -82,8 +79,6 @@ class AchievementManager:
             self.unlock(achievement.name, show_screen = False)
 
     def reset(self):
-        for ach in achievements:
-            ach.unlocked = False
         persistent.unlocked_achievements = set()
 
 
