@@ -316,8 +316,6 @@ label vegas:
         music "Al's Penthouse - Andy Blythe"
         $ returning_from_blooper = False
     else:
-        play music "<loop 0>penthouse.mp3" volume 0.5
-        music "Al's Penthouse - Andy Blythe"
         if fun_value(10):
             $ jade = True
             scene vegasjade
@@ -329,6 +327,8 @@ label vegas:
         show cscar2
         show arceus flipped at left behind cscar2
         with fade
+    play music "<loop 0>penthouse.mp3" volume 0.5
+    music "Al's Penthouse - Andy Blythe"
     n "After a few hours of driving, the duo sees the bright Las Vegas sign come into view."
     cs "Woohoo! We're almost there!"
     arceus "Some reckless gambling will probably help me forget about the horrors from that restaurant..."

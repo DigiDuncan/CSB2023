@@ -1662,11 +1662,15 @@ label talktohohsis:
     show aria at mid_left behind cs with moveinleft
     aria "You're a pretty cool guy, CS."
     show scott at center with moveinleft
+    show scott_border with dissolve
     scott "Hey all, Scott here! I love CS and his content!"
     show pencilguy at mid_mid_left with moveinleft
     pencil "I knew you were a cool dude!"
     show border_guard at mid_mid_left behind cs with moveinleft
     border_guard "I'm important too, eh!"
+    if jade:
+        show bubble at center behind border_guard with moveinbottom
+        $ persistent.seen.add("bubble")
     cs "Wow, I don't know how you all got here coincidently, but I appreciate it!"
     show cs at left
     rich "Oh my god, that's so many people!"
@@ -1689,7 +1693,9 @@ label talktohohsis:
     hide aria
     hide scott
     hide pencilguy
+    hide bubble
     with moveoutleft
+    hide scott_border with dissolve
     ed "We won't do anything to your house, and we are sorry for destroying your laptop."
     cs "And I'm sorry for injuring your coworkers."
     stop music fadeout 3.0
