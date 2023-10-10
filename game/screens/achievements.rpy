@@ -36,7 +36,7 @@ screen achievements_welcome():
             if achievement_manager.unlocked:
                 text "Unlocked Achievements ([unlocked_count]/[achievement_count])"
                 for a in achievements:
-                    if a.unlocked:
+                    if a.name in persistent.unlocked_achievements:
                         hbox:
                             first_spacing 25
                             image a.icon:
