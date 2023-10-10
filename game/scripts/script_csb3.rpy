@@ -424,7 +424,8 @@ label both_fan:
     hide cs with moveoutright
     scene csdesk with fade
     n "Linus gathers more employees as they follow CS to his office."
-    show cs at center with moveinright
+    show cs flipped at center with moveinright
+    show cs with determination
     show linus at mid_left with moveinright
     show taran at left with moveinright
     show taran flipped at left
