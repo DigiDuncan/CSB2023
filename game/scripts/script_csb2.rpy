@@ -504,8 +504,9 @@ label bordercrossing:
     show arceus at right
     with dissolve
     show cs at left with moveinleft
-
+    show cs worried
     cs "Arc, what am I gonna do? They need proof I'm legal to work."
+    show cs disappointed
     arceus "Hmmm..."
     n "A lightbulb goes off in Arceus' head."
     arceus "Leave it to me."
@@ -514,6 +515,7 @@ label bordercrossing:
     hide arceus flipped with moveoutright
 
     scene alley
+    with dissolve
     show arceus flipped with moveinleft
 
     n "Arceus rummages around in the dumpsters behind LMG."
@@ -533,6 +535,7 @@ label bordercrossing:
 
     scene outside_ltt
     show cs at left
+    with dissolve
     show arceus at right with moveinright
 
     arceus "All taken care of."

@@ -534,30 +534,30 @@ label hell_zone:
     with moveoutright
     scene black with dissolve
     n "Arc drives CS up to the place for the Hell's Kitchen trial."
-    scene car_inside_fg
-    show hell_outside behind car_inside_fg
-    show arceus flipped at left
-    show cs flipped at right
+    scene car_insidearc_fg flipped
+    show hell_outside behind car_insidearc_fg
+    show arceus at right
+    show cs at left
     with fade
     play music "<loop 0>conflict.mp3" volume 0.4
     music Conflict - David Vanacore
     cs "Well, this definitely looks like Hell."
-    show arceus worried flipped
+    show arceus worried
     arceus "I can already feel Ramsay's presence from here. It's terrifying."
     cs "Alright well, are you ready?"
-    show arceus angry flipped
+    show arceus angry
     arceus "What do you mean? You're the one who signed up for this! I'll be waiting for you in the car."
     cs "I thought you wanted to watch me cook?"
-    show arceus worried flipped
+    show arceus worried
     arceus "CS, I'm sorry, but I don't, how do I put this..."
     arceus "Think you'll come out alive?"
     cs "You think I'm gonna die?"
-    show arceus flipped
+    show arceus
     arceus "No no, I meant that more metaphorically, like, you just aren't a good cook."
-    show cs disappointed flipped
+    show cs disappointed
     cs "Whhhaaat?"
     arceus "I just haven't seen you prepare like, an actual meal before."
-    show cs angry flipped
+    show cs angry
     cs "Yeah well, you don't know everything about me!"
     cs "I'll show you!"
     scene black with dissolve
@@ -728,27 +728,27 @@ label good_ramsay:
     cs "Thanks!"
     scene black with dissolve
     n "CS takes the briefcase and heads back to the car."
-    scene car_inside_fg
-    show hell_outside behind car_inside_fg
-    show arceus flipped at left
-    show cs flipped at right
+    scene car_insidearc_fg flipped
+    show hell_outside behind car_insidearc_fg
+    show arceus at right
+    show cs at left
     with fade
     arceus "Well, how'd it go?"
     cs "I think..."
     cs "That you were wrong!"
-    show case flipped at center with moveinbottom
+    show case at center with moveinbottom
     n "CS pulls out the briefcase and shows it to Arc."
-    show arceus worried flipped
+    show arceus worried
     arceus "Holy shit! What'd you do??"
     cs "I made him a Genergy, CS style!"
     cs "He apparently loved it so much he bought my recipe!"
     arceus "WHHAATT?"
     arceus "You got Gordon Ramsay, Master Chef, to buy your recipe in one go?"
-    show cs happy flipped
+    show cs happy
     cs "Yep!"
-    show arceus angry flipped
+    show arceus angry
     arceus "Man, you're crazy."
-    show arceus flipped
+    show arceus
     arceus "Whatever, let's head back home."
     scene black with dissolve
     n "CS and Arc head back home."
@@ -798,18 +798,18 @@ label top_zone:
     stop music fadeout 3.0
     show black with dissolve
     n "CS, Arc, and Kitty head up to the Top Gear Track."
-    scene car_insidearc_fg
+    scene car_insidearc_fg flipped
     show top_gear_track behind car_insidearc_fg
-    show arceus flipped at left
-    show kitty flipped at right
+    show arceus at right
+    show kitty at left
     with fade
     play music "<loop 0>lisbon_fever.mp3" volume 0.4
     music Lisbon Fever - Dr. Awesome
     n "As they drive up to the track, the gang sees Jermey, Richard, and James."
     kitty "Alright, we'll watch from the side of the track."
-    show arceus happy flipped
+    show arceus happy
     arceus "Good luck, CS!"
-    show arceus flipped
+    show arceus
     cs "Thanks!"
     n "CS gets out of the car and heads up to the Top Gear crew."
     scene top_gear_track
@@ -906,27 +906,27 @@ label top_win:
     cs "Whatever, I'll see you guys later."
     show cs angry flipped with determination
     hide cs with moveoutleft
-    scene car_insidearc_fg
+    scene car_insidearc_fg flipped
     show top_gear_track behind car_insidearc_fg
-    show arceus flipped at left
-    show kitty flipped at right
+    show arceus at right
+    show kitty at left
     with fade    
     play music "<loop 0>wool_gloves.mp3" volume 0.4
     kitty "Woo! You won the race!"
-    show arceus happy flipped
+    show arceus happy
     arceus "That was insane, man!"
     cs "Yeah, I honestly can't believe it either!"
     cs "They stuck a bomb to the bottom of my car for that race!"
-    show arceus worried flipped
+    show arceus worried
     arceus "What? Why would they do that?"
     arceus "Wasn't that just a backup car they had?"
-    show arceus flipped
+    show arceus
     cs "No! They managed to steal my real car!"
     cs "They were planning to blow my car up if I lost!"
     kitty "Damn, that's kinda fucked up."
-    show arceus happy flipped
+    show arceus happy
     arceus "Well good thing you won!"
-    show arceus flipped
+    show arceus
     cs "Yeah, no kidding."
     cs "Let's head home now."
     scene black with dissolve

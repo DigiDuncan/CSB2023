@@ -278,7 +278,7 @@ label utah:
     with moveoutleft
     n "Arceus hops in the drivers seat, while CS gets in the back."
     scene pizzaplace
-    show cscar1
+    show cscar1arc
     show cscar2
     show arceus flipped at left behind cscar2
     with fade
@@ -288,7 +288,7 @@ label utah:
     stop music fadeout 3.0
     music end
     scene utahnight
-    show cscar1
+    show cscar1arc
     show cscar2
     show arceus flipped at left behind cscar2
     with fade
@@ -325,7 +325,7 @@ label vegas:
         else:
             $ jade = False
             scene vegas
-        show cscar1
+        show cscar1arc
         show cscar2
         show arceus flipped at left behind cscar2
         with fade

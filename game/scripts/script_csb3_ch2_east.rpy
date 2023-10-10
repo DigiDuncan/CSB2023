@@ -305,15 +305,18 @@ label montana:
     stop music fadeout 1.0 
     play music "<loop 0>blazing_corridor.mp3" volume 0.4    
     billy "Fire a laser! Fire a laser!"
+    play sound "minigames/car/gaster_blast.wav"
     show laser_beam at t_gun behind billy
     hide cultist_2 with moveoutright
     hide laser_beam
     n "Massive laser shots land between the cultists as they scramble away!"
     cultist_3 "I don't wanna turn into a YTP! Go guys go!"
+    play sound "minigames/car/gaster_blast.wav"
     show laser_beam at t_gun behind billy
     hide cultist_3 with moveoutright
     hide laser_beam
     pause 0.5
+    play sound "minigames/car/gaster_blast.wav"
     show laser_beam at t_gun behind billy
     hide cultist with moveoutright
     hide laser_beam
