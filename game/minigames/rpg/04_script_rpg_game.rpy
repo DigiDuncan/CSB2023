@@ -1,3 +1,30 @@
+screen attack_choice(items):
+    style_prefix "choice"
+
+    vbox:
+        for n, i in enumerate(items):
+            $ choice_type = i.kwargs.get("type")
+            $ odd = bool(n % 2)
+            if n == 0:
+                textbutton "{color=#4194FE}[i.caption]" action i.action
+            elif odd:
+                textbutton "{color=#E87703}[i.caption]" action i.action
+            elif not odd:
+                textbutton "{i}[i.caption]" action i.action
+            else:
+                textbutton i.caption action i.action
+
+screen enemy_choice(items):
+    style_prefix "choice"
+
+    vbox:
+        for n, i in enumerate(items):
+            $ choice_type = i.kwargs.get("type")
+            if n == 0:
+                textbutton "{color=#4194FE}[i.caption]" action i.action
+            else:
+                textbutton "{color=#E87703}[i.caption]" action i.action
+
 screen rpggame():
     add rpggame.encounter.background
     if "Copguy EX" in [e.name for e in rpggame.encounter.enemies]:
@@ -23,7 +50,7 @@ label game_loop:
                         attacks.append((a.description, None))
                     print("Attacks:", attacks)
                     while not valid_move:
-                        selected_move = renpy.display_menu([("What will " + curr_fighter.name + " do?", None)] + attacks)
+                        selected_move = renpy.display_menu([("What will " + curr_fighter.name + " do?", None)] + attacks, screen = "attack_choice")
                         curr_attack = curr_fighter.attacks[int(selected_move)]
                         print("Attack selected:", curr_attack.name)
                         valid_move = curr_attack.available
@@ -44,7 +71,7 @@ label game_loop:
                             targets = encounter.fighters
                     else:
                         for g in range(target_count):
-                            targets.append(renpy.display_menu([("Who will " + curr_fighter.name + " attack? (" + str(target_count - g) + ")", None)] + [(e.name, e) for e in getattr(encounter, curr_attack.target_type)]))
+                            targets.append(renpy.display_menu([("Who will " + curr_fighter.name + " attack? (" + str(target_count - g) + ")", None)] + [(e.name, e) for e in getattr(encounter, curr_attack.target_type)], screen = "enemy_choice"))
                     print("Targets: ", [t.name for t in targets])
                     actions.append((curr_fighter, int(selected_move), targets))
             # Execute the attacks
