@@ -3,7 +3,7 @@
 ##-------CODEX ENTRY NAVIGATION------------------
 ##-----------------------------------------------
 screen achievements_nav():
-    add Color('#5F777F', alpha=0.5)
+    add Color('#5F777F', alpha=0.75)
     textbutton "Return to categories" action ShowMenu("category_welcome") yoffset 950 xoffset 25
     textbutton "Return" action Return() yoffset 1000 xoffset 25
 
@@ -19,7 +19,7 @@ screen achievements_welcome():
         achievement_count = len(achievements)
         unlocked_count = len(persistent.unlocked_achievements)
         locked_count = achievement_count - unlocked_count
-        hidden_count = len([a for a in achievements if not a.unlocked and a.hidden])
+        hidden_count = len([a for a in achievements if not a.name in persistent.unlocked_achievements and a.hidden])
     viewport:
         xsize 1300
         ysize 800
@@ -44,13 +44,13 @@ screen achievements_welcome():
                             vbox:
                                 text a.name
                                 text a.desc:
-                                    color("#787878")
+                                    color("#BBBBBB")
             if achievement_manager.unlocked and achievement_manager.locked:
                 null height 100
             if achievement_manager.locked:
                 text "Locked Achievements ([locked_count]/[achievement_count], [hidden_count] hidden)"
                 for a in achievements:
-                    if not a.unlocked and not a.hidden:
+                    if not a.name in persistent.unlocked_achievements and not a.hidden:
                         hbox:
                             first_spacing 25
                             image a.icon:
@@ -58,5 +58,5 @@ screen achievements_welcome():
                             vbox:
                                 text a.name
                                 text a.desc:
-                                    color("#787878")
+                                    color("#BBBBBB")
             

@@ -58,11 +58,11 @@ class Achievement:
 class AchievementManager:
     @property
     def unlocked(self) -> list[Achievement]:
-        return [a for a in achievements if a.unlocked]
+        return [a for a in achievements if a.name in persistent.unlocked_achievements]
 
     @property
     def locked(self) -> list[Achievement]:
-        return [a for a in achievements if not a.unlocked]
+        return [a for a in achievements if not a.name in persistent.unlocked_achievements]
 
     def get(self, name: str) -> Achievement:
         for achievement in achievements:
