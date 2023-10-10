@@ -235,8 +235,9 @@ label car_dialogue:
     arceus "No, like, gas. Like, passed gas."
     cs "Oh, that was me."
     n "Billy rolls down the window for a bit."
+    play sound "roll_window.ogg" volume 0.7
     
-    pause 1.0
+    pause 5.0
 
     $ renpy.music.set_pause(True, "music")
     play music2 "moving_right_along.mp3"

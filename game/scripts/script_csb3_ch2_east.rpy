@@ -209,6 +209,7 @@ label montana:
     billy "Yeah, let's see if I can find a place to stop at."
     billy "Wait a second, what the hell?"
     n "Billy brings the car to a screeching halt."
+    play sound "<from 0 to 2>car_crash.ogg" volume 0.7
     scene cultforest
     show billy car
     play music "<loop 0>candle_world.mp3" volume 0.4
@@ -217,6 +218,7 @@ label montana:
     n "Ahead lies a barricade with a bunch of strange hooded people surrounding it."
     show cultist at mid_right behind billy with moveinright
     n "One of the members walks up to the driver's side and knocks on the window."
+    play sound "roll_window.ogg" volume 0.7
     n "Billy rolls down the window."
     billy "Hi, it's Billy! What are you doing by my car?"
     cultist "Get out of the car."
@@ -355,6 +357,7 @@ label montana:
     billy "Sure yeah, there's a McDonald's up here in a couple miles."
     scene mcdonalds
     show billy car
+    play sound "roll_window.ogg" volume 0.7
     n "Billy pulls up through the drive-thru to place his order."
     cashier "Hello, what you like to order?"
     billy "Hi, Billy Mays here! I would like to get the Buy 1 Get 1 Free breakfast meal for my friends here,"
@@ -685,7 +688,10 @@ label interstate_69:
     cs "Wait, is he coming this way?!"
     n "The gnome walks out from behind the tree, walks to the window next to the empty seat in the car, and motions you to roll down the window."
     billy "Holy shit, you two weren't kidding. I think he's trying to talk to us."
-    billy "I'm gonna see what he wants." #It could be funny to have an option to ignore the gnome for a while
+    billy "I'm gonna see what he wants."
+    play sound "roll_window.ogg" volume 0.7
+    pause 2.0 
+    #It could be funny to have an option to ignore the gnome for a while
     gnome "Hallo, may I enter your Automobile?" 
     show billy car turn
     billy "What do you want with us?"
@@ -1214,6 +1220,7 @@ label ohio:
         show scott_border
         with fade
         n "As they are driving through the state, they see some men on the side of road protesting about the blue border."
+        play sound "roll_window.ogg" volume 0.7
         scott "Hey all, Scott here!"
         scott "Are you tired of having a blue border in your vision?"
         scott "You should try Kaboom!"
@@ -1249,6 +1256,7 @@ label ohio:
         show scott_border
         with fade
         n "As they are driving through the state, they see some men on the side of road protesting about the blue border."
+        play sound "roll_window.ogg" volume 0.7
         billy "Hi, it's Billy!"
         billy "Are you tired of having a blue border in your vision?"
         billy "You should try Kaboom!"
@@ -1406,16 +1414,20 @@ label pennsylvania:
     show mettaton at t_stagescreen onlayer broadcast
     host "WELCOME, FOLKS!"
     host "EVERYONE GIVE A BIG HAND TO OUR WONDERFUL CONTESTANTS!"
+    play sound "audio/cheer1.mp3"
     show crowd at t_stagescreen onlayer broadcast
     n "The crowd explodes into uproarious applause."
     hide crowd onlayer broadcast
     host "ON 'GO!', THESE LOVELIES WILL BE COMPETING TO SEE WHO CAN {color=#ffff00}SHARPEN THE MOST PENCILS!"
     host "THIS TRULY IS THE BATTLE OF A CENTURY FOLKS! DIGIDUNCAN, OUR LONG TIME CHAMP, GOES UP AGAINST A NEWCOMER, THE AMAZING CS188!"
+    play sound "audio/cheer2.mp3"
     show crowd at t_stagescreen onlayer broadcast
     n "The crowd is going wild."
     hide crowd onlayer broadcast
     host "ALL THEY HAVE TO DO IS {color=#ffff00}SHARPEN THE PENCILS AS QUICKLY AS POSSIBLE,{/color} WITHOUT {color=#ffff00}GETTING THE ERASER STUCK!"
     host "IT'S A TRULY MAGICAL EVENT, AND YOU'RE ALL ABOUT TO WITNESS IT! ARE YOU ALL READY?"
+    play sound2 "audio/cheer1.mp3" noloop volume 0.7
+    play sound "audio/cheer2.mp3" noloop volume 0.7
     show crowd at t_stagescreen onlayer broadcast
     n "The crowd is going absolutely crazy."
     hide crowd onlayer broadcast
@@ -1446,6 +1458,8 @@ label win_pencil:
     show mettaton at t_stagescreen onlayer broadcast 
     host "HOLY TICONDEROGA! WE HAVE A WINNER!"
     show crowd at t_stagescreen onlayer broadcast
+    play sound "audio/cheer2.mp3" noloop
+    play sound2 "audio/cheer1.mp3" noloop
     n "As if they couldn't get any louder, the crowd is going insane."
     hide crowd onlayer broadcast
     host "THE CHAMP HAS FALLEN! LADIES AND GENTS, WHAT AN UPSET!"

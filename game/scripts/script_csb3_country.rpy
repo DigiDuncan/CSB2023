@@ -1428,7 +1428,9 @@ label miku_pizza:
     scene black with dissolve
     n "CS starts making his way to the nearest Domino's."
 
-    scene dominos_counter with fade
+    scene dominos_counter 
+    show cashier at right
+    with fade
     show cs at left with moveinleft
     play music "<loop 0>funiculi_holiday.mp3" volume 0.3
     music Funiculi Holiday - ClascyJitto
@@ -1536,6 +1538,12 @@ label miku_pizza:
     cs "Bye, Miku!"
     $ achievement_manager.unlock("Have Some Fucking Pizza!")
     scene black with dissolve
+    scene tokyo_street
+    show cs at center with moveinleft
+    with fade
+    cs "I knew Miku was real!"
+    cs "That pizza was pretty good too."
+    cs "Anyways, what should I do now?"
     jump japan_menu
 
 label japan_leave:
