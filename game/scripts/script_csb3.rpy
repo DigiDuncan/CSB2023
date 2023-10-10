@@ -1043,15 +1043,16 @@ label good_convince:
     n "Copguy gets out of the car."
     n "He then proceeds to open the doors and let them out, freeing them of their shackles."
     scene washington_road with fade
-    show copguy dark at right with moveinleft
+    show copguy dark flipped at right with moveinleft
+    show copguy dark with determination
     show cs disappointed dark at left with moveinleft
     show arceus dark flipped at mid_left_left with moveinleft
-    show copguy dark at right
     copguy "Listen, I really shouldn't be doing this right now, but I have to go back to look into this deal with HoH SiS."
     copguy "You are free to go for now."
     copguy "But know this: I'm putting my job on the line over this."
     copguy "Don't do anything stupid, because I have my eye on you two!"
     n "Copguy gets back into his car, and heads off into the dead of night."
+    show copguy dark flipped with determination
     hide copguy with moveoutright
     show arceus dark flipped at mid_right_right with move
     show arceus dark at mid_right_right
