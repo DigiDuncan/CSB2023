@@ -696,6 +696,8 @@ label interstate_69:
     play sound "roll_window.ogg" volume 0.7
     pause 2.0 
     #It could be funny to have an option to ignore the gnome for a while
+    play music "maladys_melody.mp3"
+    music Maladys Melody - Imori
     gnome "Hallo, may I enter your Automobile?" 
     show billy car turn
     billy "What do you want with us?"
@@ -768,6 +770,8 @@ label interstate_69:
     n "The light began to appear at the base of the bushes before the ground that housed their roots was tossed out, taking the bushes along with it."
     scene parking_lot
     show billy car turn
+    stop music fadeout 3.0
+    music end
     n "Finally, the forest's brush, along with the detritus of other plants that dotted the ecosystem, disappeared in a sea of white flame that left them in a desolate parking lot."
     show billy car
     $ achievement_manager.unlock("You've Been Gnomed")
@@ -794,6 +798,8 @@ label interstate_69:
     hide waitress with moveoutright
     n "As everyone is waiting, the strange glowing grey blob in the corner notices the group and walks over."
     show aria at right with moveinright
+    play music "winter_lullaby.mp3"
+    music Winter Lullaby - Imori
     aria "CS! Arc! What are you doing here?"
     gnome "Aria! I knew I recognized that Scent."
     aria "Omg hi! So you brought them here?"
@@ -973,6 +979,8 @@ label interstate_69:
     show waitress at mid_right with moveinright
     waitress "Here's everyone's food."
     scene black with dissolve
+    stop music fadeout 3.0
+    music end
     n "They all eat and then leave the restaurant. The gnome goes back to his forest and the others head to Aria's apartment for a rest."
     scene car background night
     show billy car
@@ -1176,6 +1184,7 @@ label interstate_69:
     show aria at right
     with dissolve
     stop music fadeout 3.0
+    music end
     aria "Thanks for hanging out with me. It was fun."
     aria "Sorry you two didn't enjoy the woods, but I'm glad at least Billy seemed to like it."
     cs "I guess nothing was actively dangerous, and that's above average for us at this point."

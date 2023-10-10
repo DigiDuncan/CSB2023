@@ -295,6 +295,10 @@ label after_fanboy:
     with fade
     $ achievement_manager.unlock("I Thought This Was A Visual Novel")
     n "CS struggles to catch his breath."
+    if fanboy_type == "nvidia":
+        $ achievement_manager.unlock("NVIDIA Flex")
+    else:
+        $ achievement_manager.unlock("The Threadripper")
     cs "That was exhilarating!"
     cs "That's right! The rest of you get out of here!"
     show arceus at right with moveinright
