@@ -124,7 +124,9 @@ label montana:
     n "After a few hours of driving, the trio currently is located in the middle of Montana."
     n "Arceus is sleeping, while CS peers out the window."
     cs "Are we there yet?"
+    show billy car turn
     billy "Nope!"
+    show billy car
     cs "Aw man..."
     show billy car turn
     billy "We still got a ways to go, we aren't even a quarter of the way yet."
