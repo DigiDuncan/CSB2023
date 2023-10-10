@@ -650,10 +650,10 @@ label arc_escape:
     arceus "Anno's been at the hotel too, I think he's planning on starting some kind of band?"
     cs "Ah, I see."
     scene sheriff_office
-    play music "<loop 0>police_station.mp3" volume 0.5  
-    music Police Station - Lorin Nelson  
     show sheriff at left
     with fade
+    play music "<loop 0>police_station.mp3" volume 0.5  
+    music Police Station - Lorin Nelson  
     n "Back at the police station, Copguy talks to the sheriff about CS."
     show sheriff at left
     show copguy at right with moveinright
