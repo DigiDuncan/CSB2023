@@ -46,3 +46,4 @@
 * The car ride now has music
 * CS now has a ||straightjacket|| sprite
 * Line length in the Fired route is now capped at 32/64.
+* ATK can no longer go below 1.
