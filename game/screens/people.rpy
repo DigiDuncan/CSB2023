@@ -173,20 +173,25 @@ screen person(l):
                 add "images/characters/arc/arceus.png" xalign 1.0 yalign 1.0 zoom 0.75
             elif l == "anno":
                 add "images/characters/anno/anno.png" xalign 1.0 yalign 1.0 zoom 0.75
+            elif l == "tate":
+                add "images/characters/tate/tatehappy.png" xalign 1.0 yalign 1.0 zoom 0.75
+            elif l == "pakoo":
+                add "images/characters/pakoo/pakoo.png" xalign 1.0 yalign 1.0
             # SECRET
             elif l in ["iris", "bubble", "lancer", "howie", "round"]:
                 add f"secret/{l}.png" xalign 1.0 yalign 1.0 zoom 0.75
+            elif l == "k174":
+                add "images/characters/memory.png" xalign 1.0 yalign 1.0 zoom 0.55
+            elif l == "addy":
+                add "images/characters/pakoo/pakoo.png" xalign 1.0 yalign 1.0
+            # WEIRD ALIGNMENTS
             elif l == "hoh_worker":
                 add "images/characters/hoh_worker.png" xalign 1.0 yalign 1.0 zoom 0.50
             elif l == "sticky":
                 add "images/post-it.png" xalign 1.0 yalign 1.0
-            elif l == "addy":
-                add "images/characters/pakoo.png" xalign 1.0 yalign 1.0
             elif l == "craptop":
                 add "images/characters/laptop.png" xalign 1.0 yalign 1.0
             elif l == "hammond":
                 add "images/characters/topgear.png" xalign 1.0 yalign 1.0 zoom 0.55
-            elif l == "k174":
-                add "images/characters/memory.png" xalign 1.0 yalign 1.0 zoom 0.55
             else:
                 add f"images/characters/{l}.png" xalign 1.0 yalign 1.0 zoom 0.75
