@@ -336,6 +336,7 @@ class Attack:
         self.cooldown = cooldown
         self.options = kwargs
 
+        self.used = used
         self._turns_until_available = 0 if not used else self.cooldown
 
     def run(self, subject: Fighter, fighters: list[Fighter], crit: bool = False) -> AnswerList:
@@ -366,6 +367,7 @@ class ComboAttack:
         self.name = name
         self.description = descripton
         self.attacks = attacks
+        self.used = attacks[0].used
 
     def run(self, subject: Fighter, fighters: list[Fighter], crit: bool = False) -> AnswerList:
         answer = []
@@ -618,6 +620,11 @@ class Attacks:
     @classmethod
     def get(cls, k: str, default = None) -> Attack | None:
         return cls.__dict__.get(k, default)
+    
+    @classmethod
+    def reset_cooldowns(cls):
+        for a in cls.attacks:
+            a._turns_until_available = 0 if not a.used else a.cooldown
 
 class Fighters:
     NONE = None

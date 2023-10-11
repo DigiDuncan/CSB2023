@@ -34,6 +34,7 @@ screen rpggame():
 label game_loop:
     python:
         global rpggame
+        Attacks.reset_cooldowns()
         encounter = rpggame.encounter
         while encounter.won is None:
             # First phase, get the user inputs of what each fighter should do.
