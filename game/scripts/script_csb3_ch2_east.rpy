@@ -1670,8 +1670,9 @@ label talktohohsis:
     pencil "I knew you were a cool dude!"
     show border_guard at mid_mid_left behind cs with moveinleft
     border_guard "I'm important too, eh!"
-    if jade:
+    if jade or fun_value(10):
         show bubble at center behind border_guard with moveinbottom
+        show bubble with vpunch
         $ persistent.seen.add("bubble")
     cs "Wow, I don't know how you all got here coincidently, but I appreciate it!"
     show cs at left

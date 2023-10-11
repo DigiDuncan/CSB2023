@@ -875,7 +875,7 @@ image fumobee2 = "secret/fumobee2.png"
 image cards5alt = "secret/cards5alt.png"
 image lancer = "secret/lancer.png"
 image lancer flipped = "flip:secret/lancer.png"
-image bubble = "secret/bubble.png"
+image bubble = Transform("secret/bubble.png", zoom = 2.0)
 
 # Animated Sprites
 image blue_light:
