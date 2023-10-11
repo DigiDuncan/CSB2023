@@ -285,7 +285,7 @@ define blank = Character("Blank", callback = renpy.partial(char_callback, name =
 define aria = Character("Aria", callback = renpy.partial(char_callback, name = "aria"))  # TODO: Beep
 define cop = Character("Cop", callback = renpy.partial(char_callback, name = "cop"))
 define midge = Character("Midge", callback = renpy.partial(char_callback, name = "midge", beep = "midge"))
-define db = Character("DB05", callback = renpy.partial(char_callback, name = "db"))  # TODO: Beep
+define db = Character("DB05", callback = renpy.partial(char_callback, name = "db", beep = "db05"))
 define customer = Character("Customer", callback = char_callback)
 define guest = Character("Guest", callback = renpy.partial(char_callback, name = "guest"))
 define janitor = Character("Janitor", callback = char_callback)

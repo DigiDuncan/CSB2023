@@ -477,11 +477,11 @@ label cs_rage:
     csgod "No problem."
     hide csgod with dissolve
     n "CSGod fades away, and CS turns back to the group."
+    show cs dark at right with move
     show cs dark flipped with determination
-    show cs dark flipped at right with move
     show tate dark at mid_left
     show arceus dark flipped at mid_left_left
-    show digi dark flipped at left
+    show digi dark flipped at mid_offscreen_left
     with moveinleft    
     show tate shock dark
     tate "CS, you good? You were just staring up at the sky and talking to yourself about magic or something."
@@ -738,10 +738,6 @@ label weapon_of_choice:
     $ renpy.movie_cutscene("movies/woc.webm")
     $ achievement_manager.unlock("Hopes and Dreams")
     $ achievement_manager.unlock("Machine Gun")
-    show paper at center with easeinright
-    play sound "audio/isaac.wav"
-    pause 1.0
-    hide paper with easeoutleft
     jump car_slam
 
 label car_slam:
@@ -858,6 +854,10 @@ label car_slam:
     cs "That man was like, deranged."
     scene black with dissolve
     window hide
+    show paper at center with easeinright
+    play sound "audio/isaac.wav"
+    pause 1.0
+    hide paper with easeoutleft
     pause 1.0
     $ renpy.movie_cutscene("movies/wherearetheynow.webm")
     pause 1.0

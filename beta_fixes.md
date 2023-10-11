@@ -12,7 +12,7 @@
 * ||RPG game still needs a decent amount of balancing work. Please report any cheeses you find or impossible-to-win scenarios (softlocks.)||
 ### AUDIO
 * Michigan and Pennsylvania are both missing background music
-* Some important characters are missing custom text beeps
+* Aria needs a beep
 ### VIDEO
 * An ending video (||"Where Are They Now?"||) still has beta character sprites in it
 * Credits video does not exist
