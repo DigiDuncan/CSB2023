@@ -651,6 +651,8 @@ label michigan:
         "Which road should we take?"
         "I-69":
             jump interstate_69
+        "I-94":
+            jump interstate_94
 
 label interstate_69:
     cs "We're on a detour anyway. May as well take the funny route."
@@ -660,36 +662,33 @@ label interstate_69:
     cs "That'd be hard with the seatbelts on, so I'll wait. What if we got in a crash?"
     cs "Remember to always have safe sex, kids."
     arceus "Fair point."
-    arceus "I've been seeing signs for Lansing for a while, maybe we should stop there."
+    arceus "I've been seeing signs for East Lansing for a while, maybe we should stop there."
     billy "Any spiritual discomfort about that one, CS?"
     cs "No, that sounds fine. It'd be good to get some food in us."
     billy "Lansing it is."
     scene black with dissolve
-    n "They get to the exit and start driving into Lansing."
+    n "They get off at the exit and start driving into East Lansing."
     scene traffic
-    show billy car
+    show cscar1arc
+    show billy at left
+    show cs flipped at right
+    show cscar2
     with dissolve 
     play music "<loop 0>honk_song.mp3" volume 0.8
     cs "I was expecting there to be people around, but I wasn't expecting traffic like this. I wonder what's going on?"
     arceus "All the people walking are wearing green and white, so it's probably a sports thing."
-    show billy car turn
     billy "We are in Lansing. They have one of the biggest football schools in the country."
     cs "Really? I've never heard of that before."
     billy "Figures. You don't strike me as the type to know about sports."
-    show billy car
     cs "Yeah, that's fair."
     arceus "God, the people on the sidewalk are going so much faster than us, what is this?"
     billy "I guess you can only get so many cars through a small intersection."
     arceus "Well if it's so many damn cars, we should be through by now."
-    show billy car turn
     billy "That's not what that expression means... Whatever. We just have to wait it out."
-    show billy car
     cs "Hey, do you guys see that little guy over behind that tree?"
-    show billy car turn
     billy "Oh did Arceus get out to pee?"
-    show billy car
     arceus "You can literally see me in your rear-view mirror right now."
-    billy "Only if I'm specifically looking for you."
+    billy "Only if I squint."
     arceus "I'm not that small, man..." #Me with the goddamn ellipses again lmao
     cs "No, guys, that short guy. The one with the red pointy hat."
     arceus "Oh shit, you're right! That looks like a gnome!"
@@ -707,23 +706,18 @@ label interstate_69:
     play music "<loop 0>wayward_wanderer.mp3" volume 0.7
     music Wayward Wanderer - Deep Gnome
     gnome "Hallo, may I enter your Automobile?" 
-    show billy car turn
     billy "What do you want with us?"
     gnome "I mean you no harm. May I sit and explain myself?"
     arceus "I don't think this guy is a threat. We may as well let him in."
     cs "He'll at least make this traffic jam more entertaining."
     billy "Alright fine, come on in."
-    show billy car
     gnome "I thank you. As you may be aware, I am not of your Species."
-    arceus "I don't think I'm the same Species as these two."
+    arceus "I don't think I'm the same species as these two."
     gnome "That may be true, however, it appears that neither of your Species are the same as mein." 
     gnome "Therefore mein Point still stands, und thus I still must briefly introduce mein Volk und our Relationship to this Place."
     gnome "I am of the Forest, und I have recently become acquainted mit some of your Kind."
     gnome "Deine Group has a similarly unique Redolence to those I encountered."
     gnome "As I am a Being of the Forest and of the Land surrounding it, I find myself in a Position to assist you."
-    scene car plains
-    show billy car
-    with dissolve 
     cs "Alright, this is a lot to take in, but at this point I'll do anything to get out of this car."
     cs "How can you help us?"
     gnome "My kind is not of this World, but rather of the Forest Dimension. I cannot clear this Path, but I can bring you to another."
@@ -731,15 +725,21 @@ label interstate_69:
     cs "Thanks for your help." 
     gnome "No need to thank me. It is mein Pleasure."
     n "Everyone feels an energy emanate from the gnome as they watch the environment around them transform from a modern university into a dense forest."
-    scene car background
-    show billy car
-    with dissolve 
+    scene gnome_forest
+    show cscar1arc
+    show billy at left
+    show cs flipped at right
+    show cscar2
+    with dissolve
     n "The buildings disappear as more trees, bushes, and brush spring forth from the ground as if you were watching a timelapse of hundreds of years of nature."
     n "Eventually, the growth of the forest comes to a halt as any semblance of their old surroundings is buried in a lush and lively forest."
     n "They find themselves on a clear path through the trees as the sunlight shining through the canopy up ahead starkly contrasts the heavy darkness of the woods behind them."
     gnome "If you continue to drive, you will reach a Clearing with a large Sugar Maple surrounded by a Bed of Clovers."
     billy "Where will it take us once we return to our own world." 
     gnome "We will simply return to the Edge of the Campus. You will be able to continue your Journey smoothly."
+    scene forest_clearing
+    show billy car
+    with dissolve
     n "Billy takes the car forward and stops in front of the tree."
     n "As they pull into the clearing and stop the car, they again become aware of the gnome's presence."
     n "The gnome remains silent as the energy no longer seems to be emanating from him, but returning to him."
@@ -755,7 +755,7 @@ label interstate_69:
     scene white
     show billy car turn
     with dissolve
-    n "A glowing white cut appeared through the trunks of the trees before the remaining trunk also decayed into a mass of white light."
+    n "A glowing white cut appeared through the trees before the remaining trunks also decayed into a mass of white light."
     show billy car turn with hpunch
     show billy car turn with vpunch
     show billy car turn with hpunch
@@ -1092,6 +1092,7 @@ label interstate_69:
     cs "This whole forest does, but only the uncensored Brothers Grimm versions."
     aria "Yeah, it really feels like an authentic fairy tale experience :)"
     cs "That's not a good thing..."
+    scene doll_eye_tree
     n "Aria stopped listening because it's distracted by a tree up ahead."
     if fun_value(10): 
         aria "Here's one of the white baneberries that I was talking about. They're also known as Actaea Pakoopoda or Doll's Eyes."
