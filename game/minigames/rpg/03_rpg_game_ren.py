@@ -260,6 +260,8 @@ class AI:
                 available_attacks = [a for a in available_attacks if a.type == "heal"]
                 if len(available_attacks) == 0:
                     available_attacks = _old
+                if self.name == "COPGUY_EX":
+                    available_attacks = [Attacks.HEAL_EX]
             else:
                 available_attacks = [a for a in available_attacks if a.type != "heal"]
 
@@ -579,7 +581,7 @@ class Attacks:
     RAW_SLASH = Attack("Raw Slash", "It's fuckin raw!", damage_fighters)
     BLEED = Attack("Bleed", "Bleed them dry!", damage_over_time, mult = 0.25)
     SLASH = ComboAttack("Slash", "A cutting attack that bleeds out your enemies.", [RAW_SLASH, BLEED])
-    LIGHT_CAST = Attack("Light Cast", "A strong blast of light that varies in damage.", random_damage_fighters, cooldown = 3, min_mult = 0.5, max_mult = 2, mult = 3)
+    LIGHT_CAST = Attack("Light Cast", "A strong blast of light that varies in damage.", random_damage_fighters, cooldown = 3, min_mult = 1, max_mult = 3)
     INSIGHT = Attack("Insight", "Lowers enemies attack by a little.", change_stat, stat = "atk", mult = 0.75)
     SHOTGUN = Attack("Shotgun", "Blast your enemies twice with a powerful shotgun blast!", damage_fighters, target_count = 2, cooldown = 3, mult = 2)
     ENCOURAGE = Attack("Encourage", "Heal your team with morale!", heal_fighters, target_count = 0, target_type = "allies", mult = 2)
@@ -591,9 +593,9 @@ class Attacks:
     ELDRITCH_BLAST = Attack("Eldritch Blast", "An unholy blast that does quite a bit of damage to an enemy.", damage_fighters, mult = 1.5)
     RAINBOW = Attack("Rainbow", "", confuse_targets, cooldown = 3)
     VOMIT = Attack("Vomit", "", damage_over_time, cooldown = 3, mult = 1, turns = 3)
-    RAINBOW_VOMIT = ComboAttack("Rainbow Vomit", "Confuse and damage your enemies with magical puke!", [RAINBOW, VOMIT])
+    RAINBOW_VOMIT = ComboAttack("Rainbow Vomit", "Confuse and damage your enemies with colorful nonsense!", [RAINBOW, VOMIT])
     ROBOPUNCH = Attack("RoboPunch", "A strong punch.", damage_fighters, mult = 1.75)
-    HOLOSHIELD = Attack("HoloShield", "Boosts your team's defense by a bit.", change_stat, stat = "ap", target_count = 0, target_type = "allies", cooldown = 3, mult = 1.5)
+    HOLOSHIELD = Attack("HoloShield", "Boosts your team's defense by a bit.", change_stat, stat = "ap", target_count = 0, target_type = "allies", cooldown = 3, mult = 1.75)
     MUSIC_BOOST = Attack("Music Boost", "Boost one's defense by a bit.", change_stat, stat = "ap", target_count = 1, target_type = "allies", mult = 1.5)
     RAVE = Attack("Rave", "Lowers the enemies defense.", change_stat, stat = "ap", cooldown = 3, mult = 0.5)
     SAMPLE_SPAM = Attack("Sample Spam", "", random_damage_fighters, min_mult = 1, max_mult = 3, mult = 1)
@@ -606,7 +608,7 @@ class Attacks:
     PEP_TALK = Attack("Pep Talk", "Raise your team's defense!", change_stat, stat = "ap", target_count = 0, target_type = "allies", mult = 1.25)
     RADS_ATTACK = Attack("RADS Attack", "Inflict radiation on your enemies to kill them over time!", damage_over_time, mult = 0.5)
     AI_MIMIC = Attack("AI Mimic", "Copies an enemies attack.", ai_mimic, target_count = 1, target_type = "enemies", cooldown = 2)
-    SHELL = Attack("Shell", "Fire a tank shell!", random_damage_fighters, min_mult = 1, max_mult = 2, mult = 1)
+    SHELL = Attack("Shell", "Fire a tank shell!", random_damage_fighters, min_mult = 1, max_mult = 2)
     HEAL_EX = Attack("Heal EX", "Lots of healing.", heal_fighters, target_count = 0, target_type = "allies", mult = 10)
 
     @classproperty
@@ -631,7 +633,7 @@ class Fighters:
     CS = Fighter("CS", False, 188, 10, 25, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/cs/neutral.png"))
     CS_NG = Fighter("CS", False, 188, 10, 25, [Attacks.CHOP, Attacks.BULLET_SPRAY], Image("images/characters/cs/neutral.png"))
     CS_STRONG = Fighter("CS", False, 188, 10, 25, [Attacks.KICK, Attacks.BULLET_SPRAY], Image("images/characters/cs/neutral.png"))
-    CS_FINAL = Fighter("CS", False, 188, 10, 25, [Attacks.KICK, Attacks.BULLET_SPRAY, Attacks.YTP_MAGIC], Image("images/characters/cs/neutral.png"))
+    CS_FINAL = Fighter("CS", False, 288, 10, 25, [Attacks.KICK, Attacks.BULLET_SPRAY, Attacks.YTP_MAGIC], Image("images/characters/cs/neutral.png"))
     CS_FINAL2 = Fighter("CS", False, 1880, 10, 250, [Attacks.KICK, Attacks.YTP_HEAL, Attacks.YTP_MAGIC_NOCOOL], Image("images/characters/cs/neutral.png"))
     CS_WEAK = Fighter("CS", False, 188, 5, 25, [Attacks.PUNCH], Image("images/characters/cs/neutral.png"))
     ARCEUS = Fighter("Arceus", False, 160, 15, 35, [Attacks.SLASH, Attacks.LIGHT_CAST], Image("images/characters/arc/arceus.png"))
