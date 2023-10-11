@@ -181,7 +181,7 @@ label write_song:
     music end
     arceus "Well I guess all we have to do now is upload it."
     anno "Alright boys, what do we call it?"
-    $ song_name_1 = renpy.input("What should we call the song?", song_name_1)
+    $ song_name_1 = renpy.input("What should we call the song?", song_name_1, length = 32)
     cs "How about {i}[song_name_1]{/i}?"
     $ achievement_manager.unlock("Hi, My Name Is...")
     if song_name_1 == "FUCK SEX BALLS":
@@ -322,7 +322,7 @@ label song_2:
     arceus "{cps=15}{image=note_small1.png}We're going down to Vegas,{w=1.5} we're gonna strike it rich!{w=1.5}\nWe're going down to Vegas..."
     show arceus worried
     arceus "Uh..."
-    $ line_1 = renpy.input("Finish the line!", "")
+    $ line_1 = renpy.input("Finish the line!", "", length = 64)
     cs "How about, '[line_1]'"
     $ achievement_manager.unlock("Singer-Songwriter")
     show arceus happy
@@ -345,7 +345,7 @@ label song_2:
     anno "So what do we call this one?"
     arceus "I liked your name for the last one, CS, why don't you name this one, too?"
     cs "How about..."
-    $ song_name_2 = renpy.input("What should we call the song?", song_name_2)
+    $ song_name_2 = renpy.input("What should we call the song?", song_name_2, length = 32)
     cs "{i}[song_name_2]{/i}?"
     show arceus happy
     arceus "You're a genius, CS."
@@ -353,7 +353,7 @@ label song_2:
     cs "Aw, thanks, guys. Wait, we don't have a band name either!"
     anno "Yeah, what were you thinking?"
     cs "I was thinking..."
-    $ band_name = renpy.input("What should we call the band?", band_name)
+    $ band_name = renpy.input("What should we call the band?", band_name, length = 32)
     cs "[band_name]!"
     anno "Woah, awesome! Not as good as 'Nirvana', but you know, it wasn't going to be."
     cs "Hell yeah! [band_name] forever!"
@@ -395,7 +395,7 @@ label ep_time:
     show arceus worried
     arceus "Oh no."
     cs "And I dreamt the name:"
-    $ ep_name = renpy.input("What should we call the EP?", ep_name)
+    $ ep_name = renpy.input("What should we call the EP?", ep_name, length = 32)
     cs "[ep_name]!"
     anno "You know what, I like it."
     show arceus happy
@@ -412,13 +412,13 @@ label ep_time:
     play music "<loop 0>audio/energetic_rock.mp3" volume 0.5
     music Energetic Rock - Every Day Music
     anno "{cps=15}{image=note_small1.png}I made my way over to Japan...{image=note_small2.png}"
-    $ line_2 = renpy.input("What should the next line be?", "")
+    $ line_2 = renpy.input("What should the next line be?", "", length = 64)
     anno "OK! How about..."
     anno "{cps=15}{image=note_small1.png}I found myself in the U.K...{image=note_small2.png}"
-    $ line_3 = renpy.input("What should the next line be?", "")
+    $ line_3 = renpy.input("What should the next line be?", "", length = 64)
     anno "Nice, nice, how about:"
     anno "{cps=15}{image=note_small1.png}I'm gonna go party in Sweden...{image=note_small2.png}"
-    $ line_4 = renpy.input("What should the next line be?", "")
+    $ line_4 = renpy.input("What should the next line be?", "", length = 64)
     anno "{cps=15}{image=note_small1.png}I'm globetrottin'!{image=note_small2.png}"
     cs "Hey, I like that! Sing it all the way through!"
     anno "Gotcha!"
@@ -431,7 +431,7 @@ label ep_time:
     cs "Well, I guess you want me to name this one, too?"
     anno "Go for it."
     show arceus
-    $ song_name_3 = renpy.input("What should we call the song?", song_name_3)
+    $ song_name_3 = renpy.input("What should we call the song?", song_name_3, length = 32)
     anno "{i}[song_name_3]{/i} it is!"
     show cs happy
     cs "Woohoo! Three songs down!"
@@ -562,12 +562,12 @@ label mcd:
     music Dragon Castle - BreakingCopyright
     cs "{cps=15}{image=note_small1.png}Through all adversity, we'll bind together and overcome...{image=note_small2.png}"
     arceus "Ooh, I got something:"
-    $ line_5 = renpy.input("What should the next line be?", "")
+    $ line_5 = renpy.input("What should the next line be?", "", length = 64)
     arceus "{cps=15}{image=note_small1.png}[line_5]{image=note_small2.png}"
     cs "Nice! How about:"
     cs "{cps=15}{image=note_small1.png}With my friends beside there's no foe we can not fight...{image=note_small2.png}"
     anno "Let me take this one."
-    $ line_6 = renpy.input("What should the next line be?", "")
+    $ line_6 = renpy.input("What should the next line be?", "", length = 64)
     anno "{cps=15}{image=note_small1.png}[line_6]{image=note_small2.png}"
     cs "Heck yeah! And then I think we should have a solo like:"
     cs "{cps=15}{image=note1.png}{image=note4.png}{image=note3.png}{image=note1.png}{image=note5.png}{image=note1.png}{image=note2.png}{image=note1.png}{image=note2.png}{image=note2.png}{image=note4.png}{image=note4.png}{image=note3.png}{image=note3.png}{image=note5.png}{image=note5.png}{image=note1.png}{image=note1.png}{nw}"
@@ -584,7 +584,7 @@ label mcd:
     anno "Thanks! We're actually putting out an EP soon!"
     customer "Well I definitely wanna hear that song again, what's it called?"
     cs "Uh..."
-    $ song_name_4 = renpy.input("What should the song be called?", song_name_4)
+    $ song_name_4 = renpy.input("What should the song be called?", song_name_4, length = 32)
     cs "It's called {i}[song_name_4]!{/i}"
     anno "It'll be on our EP [ep_name], just look up [band_name] on streaming services!"
     customer "Awesome, I'm excited! I'll make sure to check it out!"
@@ -668,15 +668,15 @@ label song_5:
     play music "<loop 0>audio/sweet_victory.mp3" volume 0.5
     music Sweet Victory - David Eisley
     n "Anno plays an upbeat song on his laptop."
-    $ line_7 = renpy.input("Write a line! (1/4)", "")
-    $ line_8 = renpy.input("Write a line! (2/4)", "")
-    $ line_9 = renpy.input("Write a line! (3/4)", "")
-    $ line_10 = renpy.input("Write a line! (4/4)", "")
+    $ line_7 = renpy.input("Write a line! (1/4)", "", length = 64)
+    $ line_8 = renpy.input("Write a line! (2/4)", "", length = 64)
+    $ line_9 = renpy.input("Write a line! (3/4)", "", length = 64)
+    $ line_10 = renpy.input("Write a line! (4/4)", "", length = 64)
     cs "I think I have something, here it is!"
     cs "{cps=15}{image=note_small1.png}[line_7]{w=1.5}\n[line_8]{w=1.5}\n[line_9]{w=1.5}\n[line_10]{image=note_small2.png}"
     arceus "Yo?!"
     anno "That's perfect! Give it name!"
-    $ song_name_5 = renpy.input("What should the song be called?", song_name_5)
+    $ song_name_5 = renpy.input("What should the song be called?", song_name_5, length = 32)
     cs "It's called {i}[song_name_5]!{/i}"
     show arceus happy
     arceus "That's going to be a huge hit."
@@ -844,7 +844,7 @@ label limo_time:
             jump no_contract
             
 label no_contract:
-    bad_end "Well,\nthat was kinda dumb!" "limo_time"  
+    bad_end "Well,\nthat was kinda dumb!" "limo_time"
 
 label signed_the_contract:
     stop music fadeout 3.0
@@ -1345,7 +1345,7 @@ label third_tour_day:
     cs "OK!"
     play sound "audio/start_rocking.mp3"
     cs "{cps=15}{image=note_small1.png}[line_11]{image=note_small2.png}"
-    $ line_12 = renpy.input("What's the next line?")
+    $ line_12 = renpy.input("What's the next line?", length = 64)
     cs "{cps=15}{image=note_small1.png}[line_12]{image=note_small2.png}"
 
     cs "Thank you! We're [band_name], and thank you for listening to [ep_name]!"
