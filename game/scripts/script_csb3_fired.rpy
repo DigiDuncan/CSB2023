@@ -578,7 +578,9 @@ label mcd:
     stop music2 fadeout 3.0
     music end
     $ renpy.music.set_pause(False, "music")
+    show customer at mid_left with moveinleft
     customer "Hey, that sounds really good!"
+    show cs flipped
     cs "Huh?"
     customer "Yeah, I heard you guys making that song from my table, it's really good!"
     anno "Thanks! We're actually putting out an EP soon!"
@@ -589,6 +591,7 @@ label mcd:
     anno "It'll be on our EP [ep_name], just look up [band_name] on streaming services!"
     customer "Awesome, I'm excited! I'll make sure to check it out!"
     n "The customer walks away."
+    hide customer with moveoutright
     show cs happy
     cs "People are really liking our stuff."
     show arceus happy
@@ -606,14 +609,15 @@ label hotel_lobby_2:
 
     scene hotel_lobby    
     show anno at left
-    show arceus at right
-    show cs
+    show arceus flipped
+    show cs at mid_mid_left
     with dissolve
     play music "<loop 0>audio/gold_room.mp3" volume 0.5
     music Youre At A Ball In The Gold Room - Nemos Dreamscapes
     n "As they walk through the hotel lobby to their room, they hum their newest song to themselves."
     cs "{cps=15}{image=note_small1.png}{i}[line_5]{/i}{image=note_small2.png}"
     n "Someone in the lobby overhears them singing the song and runs up to them."
+    show guest at right with moveinright
     guest "Holy shit, are you from [band_name]?!"
     cs "Uh..."
     guest "You are! Holy shit!"

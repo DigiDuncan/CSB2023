@@ -5,8 +5,6 @@
 * Luigi's sprites are very crunchy
 * CSBI footage is missing as ||evidence||
 * The ||Archival|| Ending is missing multiple backgrounds and transitions
-* Customer does not appear in MCDs
-* Guest does not appear in hotel lobby
 ### GAMEPLAY
 * Sweden is currently not accessible
 * A menu option is missing in Michigan
