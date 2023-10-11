@@ -603,7 +603,7 @@ class Attacks:
     SAMPLE_BLAST = ComboAttack("Sample Blast", "Blast your enemies with music! Varies in damage.", [SAMPLE_SPAM, SOUND_BLAST])
     GNOMED = Attack("Gnomed", "Confuse everyone by gnoming them!", confuse_targets, target_count = 0, target_type = "enemies", cooldown = 3)
     NUDGE = Attack("Nudge", "Does either very little or massive damage.", random_damage_fighters, min_mult = 0.1, max_mult = 10, mult = 1)
-    DRAW_IN = Attack("Draw in", "Either lowers the enemies attack, or increases your friend's attack!", draw_in, stat = "atk", target_count = 0, target_type = "allies", cooldown = 3, mult = 2)
+    DRAW_IN = Attack("Draw in", "Either lowers the enemies stats, or increases your friend's stats!", draw_in, mult = 2)
     CONFIDENCE = Attack("Confidence", "Raise your team's attack!", change_stat, stat = "atk", target_count = 0, target_type = "allies", mult = 1.25)
     PEP_TALK = Attack("Pep Talk", "Raise your team's defense!", change_stat, stat = "ap", target_count = 0, target_type = "allies", mult = 1.25)
     RADS_ATTACK = Attack("RADS Attack", "Inflict radiation on your enemies to kill them over time!", damage_over_time, mult = 0.5)
