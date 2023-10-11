@@ -720,8 +720,7 @@ label interstate_69:
     with dissolve 
     cs "Alright, this is a lot to take in, but at this point I'll do anything to get out of this car."
     cs "How can you help us?"
-    gnome "I cannot permanently alter the Impact of your Kind on these Lands, however, mein Ancestral Memory allows me return to previous Forms of this Place."
-    gnome "That is to say, I cannot clear this path, but I can bring you to another one."
+    gnome "My kind is not of this World, but rather of the Forest Dimension. I cannot clear this Path, but I can bring you to another."
     cs "Yeah that may as well happen to us at this point."
     cs "Thanks for your help." 
     gnome "No need to thank me. It is mein Pleasure."
@@ -732,19 +731,9 @@ label interstate_69:
     n "The buildings disappear as more trees, bushes, and brush spring forth from the ground as if you were watching a timelapse of hundreds of years of nature."
     n "Eventually, the growth of the forest comes to a halt as any semblance of their old surroundings is buried in a lush and lively forest."
     n "They find themselves on a clear path through the trees as the sunlight shining through the canopy up ahead starkly contrasts the heavy darkness of the woods behind them."
-    show billy car turn
-    billy "Holy shit! Where does this path take us?"
-    show billy car
     gnome "If you continue to drive, you will reach a Clearing with a large Sugar Maple surrounded by a Bed of Clovers."
-    billy "No, I meant where will it take us once we return to our own..." 
-    show billy car turn
-    billy "Own time? dimension? What exactly did we travel through just now?"
-    billy "Can we change things in this time?"
-    show billy car
-    billy "If I hit a butterfly here, are we gonna get home and find out that OxyClean was never invented or something?"
-    gnome "Das is not your Concern. We will simply return to the Edge of the Campus. You will be able to continue your Journey smoothly."
-    billy "I guess the only other choice is deeper into the woods or through the trees."
-    billy "Let's see where this adventure takes us."
+    billy "Wwhere will it take us once we return to our own world." 
+    gnome "We will simply return to the Edge of the Campus. You will be able to continue your Journey smoothly."
     n "Billy takes the car forward and stops in front of the tree."
     n "As they pull into the clearing and stop the car, they again become aware of the gnome's presence."
     n "The gnome remains silent as the energy no longer seems to be emanating from him, but returning to him."
