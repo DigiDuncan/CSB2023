@@ -36,6 +36,7 @@
 
 ## FIXES FROM `1.0b2`
 * **ACHIEVEMENTS NOW DON'T DISAPPEAR ON ROLLBACK**
+* **COOLDOWNS RESET BETWEEN ROUNDS ||IN RPG FIGHT||**
 * Two new achivements
 * The GUI is now themed in more places
 * Michigan is now improved
