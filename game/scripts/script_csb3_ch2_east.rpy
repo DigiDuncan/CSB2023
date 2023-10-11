@@ -542,7 +542,7 @@ label nebraska:
 label iowa:
     scene car plains
     show billy car
-    with fade  
+    with fade 
     n "They get back in car and continue into Iowa."
     billy "Alright well, ever since that cult encounter, it's been pretty smooth sailing!"
     billy "The rest of this trip shouldn't be too long!"
@@ -590,6 +590,7 @@ label michigan:
     scene car plains
     show billy car
     with dissolve
+    play music "<loop 0>track4.mp3" volume 0.4
     billy "Alright. The highway entrance should be right around here."
     billy "We can head to Ohio and then we'll be getting really close."
     billy "Fuck."
@@ -625,6 +626,7 @@ label michigan:
     with dissolve    
     n "They get on the highway and start heading towards Michigan."
     arceus "We're making progress. Finally in Michigan."
+    stop music fadeout 3.0
     billy "It looks like we're coming up to a place called Bronson. Maybe we could stop there for food."
     arceus "Nah this place looks too rural to have much around."
     n "The two look over to CS, who they've just realized is visibly distressed."
@@ -665,6 +667,7 @@ label interstate_69:
     scene traffic
     show billy car
     with dissolve 
+    play music "<loop 0>honk_song.mp3" volume 0.8
     cs "I was expecting there to be people around, but I wasn't expecting traffic like this. I wonder what's going on?"
     arceus "All the people walking are wearing green and white, so it's probably a sports thing."
     show billy car turn
@@ -694,12 +697,13 @@ label interstate_69:
     cs "Wait, is he coming this way?!"
     n "The gnome walks out from behind the tree, walks to the window next to the empty seat in the car, and motions you to roll down the window."
     billy "Holy shit, you two weren't kidding. I think he's trying to talk to us."
+    stop music fadeout 3.0
     billy "I'm gonna see what he wants."
     play sound "roll_window.ogg" volume 0.7
     pause 2.0 
     #It could be funny to have an option to ignore the gnome for a while
-    play music "maladys_melody.mp3"
-    music Maladys Melody - Imori
+    play music "<loop 0>wayward_wanderer.mp3" volume 0.7
+    music Wayward Wanderer - Deep Gnome
     gnome "Hallo, may I enter your Automobile?" 
     show billy car turn
     billy "What do you want with us?"
@@ -789,7 +793,7 @@ label interstate_69:
     hide waitress with moveoutright
     n "As everyone is waiting, the strange glowing grey blob in the corner notices the group and walks over."
     show aria at right with moveinright
-    play music "winter_lullaby.mp3"
+    play music "<loop 0>winter_lullaby.mp3" volume 0.7
     music Winter Lullaby - Imori
     aria "CS! Arc! What are you doing here?"
     gnome "Aria! I knew I recognized that Scent."

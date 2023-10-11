@@ -51,7 +51,7 @@ init python:
         "Track 4 - Weatherscan": "track4.mp3",
         "Funiculi Holiday - ClascyJitto": "funiculi_holiday.mp3",
         "Speedy Comet - Mahito Yokota": "speedy_comet.mp3",
-        "Maladys Melody - Imori": "maladys_melody.mp3",
+        "Wayward Wanderer - Deep Gnome": "wayward_wanderer.mp3",
         "Winter Lullaby - Imori": "winter_lullaby.mp3",
         "Melancholy - Imori": "melancholy.mp3",
         "Breakout - Shoichiro Sakamoto": "breakout.mp3",

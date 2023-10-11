@@ -131,9 +131,10 @@
 - mastamokei
     - Billy Mays Gangsta Remix
 - Imori
-    - Maladys Melody
     - Winter Lullaby
     - Melancholy
+- Deep Gnome
+    - Wayward Wanderer
 - Shoichiro Sakamoto
     - Breakout
 - Billy Mays (kinda)
