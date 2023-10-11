@@ -909,12 +909,12 @@ label interstate_69:
     show aria flipped at left
     show gnome at center
     aria "Yeah life is like that sometimes. Glad things have been largely okay though."
-    aria "How about you, Arc? It's weird seeing you in person. How's the UK been?"
+    aria "How about you, Arc? It's weird seeing you in person. How's moving to the UK been? Have you been visiting the US for long?"
     scene cafe_sitting_2
     show cs at left
     show billy at center
     show arceus worried at right
-    arceus "I'm not sure if that's happening in this timeline..."
+    arceus "I'm not sure if that move is happening in this timeline..."
     scene cafe_sitting
     show aria flipped at left
     show gnome at center
@@ -923,7 +923,7 @@ label interstate_69:
     show cs at left
     show billy at center
     show arceus at right
-    arceus "That wasn't what I meant, but it would be a lot to explain, so we'll go with that."
+    arceus "That wasn't what I meant by timeline, but it would be a lot to explain, so we'll go with that."
     scene cafe_sitting
     show aria flipped at left
     show gnome at center
