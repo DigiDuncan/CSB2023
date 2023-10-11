@@ -98,11 +98,11 @@ transform center_left:
 
 transform mid_offscreen_right:
     yanchor 1.0 ypos 1.0
-    xanchor 0.5 xpos 1.25
+    xanchor 0.5 xpos 1.0
 
 transform mid_offscreen_left:
     yanchor 1.0 ypos 1.0
-    xanchor 0.5 xpos -0.25
+    xanchor 0.5 xpos -0.0
 
 transform xstretch_in:
     xalign 0.5

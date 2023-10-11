@@ -405,8 +405,8 @@ label cs_rage:
     scene battle_block_without_theater
     show cs dark angry at center
     show tate dark at mid_left
-    show arceus dark flipped at mid_left_left
-    show digi dark flipped at left
+    show arceus dark flipped at left
+    show digi dark flipped at mid_offscreen_left
     with fade
     n "After CS and the group manage to push back the national guard, Copguy once again flees at the last moment."
     cs "Hey! You get back here damnit!"
@@ -628,7 +628,7 @@ label final_meetup:
     n "The groups all get out of their cars and meet up with one another."
     scene final_destination with fade
     show cs at mid_left
-    show tate at left behind cs
+    show arceus flipped at mid_offscreen_left behind cs
     with moveinleft
     n "The last group to meet up all emerge as well, who are:"
     show blank at center with moveinright
@@ -752,7 +752,7 @@ label car_slam:
     show cs flipped at right with moveinbottom
     n "CS gathers his bearings, and starts checking on his friends."
     cs "Hello? Are you guys alright?"
-    show arceus flipped at mid_left with moveinleft
+    show arceus flipped at mid_mid_left with moveinleft
     arceus "Did we get him?"
     show pakoo flipped at left with moveinleft
     pakoo "Man, that was insane. You guys demolished this place!"
@@ -779,9 +779,9 @@ label car_slam:
     scene black with fade
     pause 1.0
     scene war_torn_3
-    show digi at mid_left
-    show nova at center
-    show aria flipped at right
+    show digi at center
+    show nova at mid_right
+    show aria at right
     with fade
     show cs at left with moveinleft
     digi "Holy shit! CS! You're alive!"
@@ -798,11 +798,11 @@ label car_slam:
     scene black with fade
     pause 1.0
     scene war_torn_5
-    show midge at mid_left
-    show anno at center
+    show midge at mid_mid_left
+    show anno at mid_mid_right
     show blank at right
     with fade
-    show cs at mid_right with moveinleft
+    show cs at left with moveinleft
     cs "Hey, did DB ever make it to the fight?"
     anno "No, I never saw him, at least."
     blank "Anno's phone got busted during the fight, so we won't know now what his progress was."

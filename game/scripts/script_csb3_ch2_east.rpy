@@ -305,6 +305,7 @@ label montana:
     cs_fakegod "Don't tempt your god, I will YTP you so hard that you'll look like you came from an AwfulFawful YTP!"
     cultist_2 "We need to leave! We're sorry!"
     n "Billy comes up behind CS with one of his gadgets."
+    show cs fakegod at mid_offscreen_left with move
     show billy laser at mid_left with moveinleft
     stop music fadeout 1.0 
     play music "<loop 0>blazing_corridor.mp3" volume 0.4    
@@ -468,7 +469,7 @@ label nebraska:
     n "CS turns around and sees a wacky...{w=0.5} thing, with a tophat on."
     show pakoo flipped at left
     show billy at right
-    show arceus at mid_right
+    show arceus at mid_mid_right
     show cs flipped at center
     with ease
     pakoo "Yeah hey, it {i}is{/i} you!"
@@ -504,8 +505,9 @@ label nebraska:
     music Funiculi Holiday - ClascyJitto
     show peppino at t_pepzone1 behind peppinopizzafg with moveinleft
     show peppino at t_pepzone2 behind peppinopizzafg with ease
-    show pakoo at mid_right with moveinleft
-    show billy at right with moveinleft
+    show pakoo flipped at mid_right with moveinleft
+    show pakoo with determination
+    show billy at right behind pakoo with moveinleft
     show cs at left with moveinleft
     show arceus flipped at mid_left with moveinleft
     peppino "Hey Piezanos, watcha want today?"
@@ -988,7 +990,7 @@ label interstate_69:
     n "Aria goes to her room as everyone rests. She hears them waking up late into the night and goes back out to check on them."
     scene aria_room
     show cs at left
-    show billy at mid_left
+    show billy at mid_left behind cs
     show arceus flipped at center
     with fade
     show aria at right

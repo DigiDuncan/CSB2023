@@ -766,7 +766,7 @@ label fire_range:
     n "The gang stops to call their friends and partners, and then makes their way to the dealership."
     scene dealership with fade
     show arceus flipped at center
-    show cs at mid_left
+    show cs at mid_mid_left
     show pakoo flipped at left behind cs
     with moveinleft
     arceus "Alright, here we are."
@@ -852,7 +852,7 @@ label cool_car:
     show copguy flipped at left
     with fade
     show cs disappointed flipped at center
-    show arceus at mid_right
+    show arceus at mid_mid_right
     show pakoo at right
     with moveinright
     copguy "Alright, put your hands in the air!"
@@ -903,7 +903,7 @@ label reg_car:
     show copguy flipped at left
     with fade
     show cs disappointed flipped at center
-    show arceus at mid_right
+    show arceus at mid_mid_right
     show pakoo at right
     with moveinright
     copguy "Alright, put your hands in the air!"
