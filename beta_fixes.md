@@ -7,17 +7,14 @@
 * The ||Archival|| Ending is missing multiple backgrounds and transitions
 * Customer does not appear in MCDs
 * Guest does not appear in hotel lobby
-* Some sprites are no longer cramped
 ### GAMEPLAY
 * Sweden is currently not accessible
 * A menu option is missing in Michigan
 * The Michigan route is in a non-final state
 * ||RPG game still needs a decent amount of balancing work. Please report any cheeses you find or impossible-to-win scenarios (softlocks.)||
-* New way to Country Route since it was hard to find
 ### AUDIO
 * Michigan and Pennsylvania are both missing background music
 * Some important characters are missing custom text beeps
-* Various new SFX
 ### VIDEO
 * An ending video (||"Where Are They Now?"||) still has beta character sprites in it
 * Credits video does not exist
@@ -50,3 +47,6 @@
 * CS now has a ||straightjacket|| sprite
 * Line length in the Fired route is now capped at 32/64.
 * ATK can no longer go below 1.
+* Some sprites are no longer cramped
+* New way to Country Route since it was hard to find
+* Various new SFX
