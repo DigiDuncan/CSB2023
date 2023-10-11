@@ -80,7 +80,8 @@ label csbiii_ai:
     show copguy_ai at center with moveinbottom
     play music "<loop 0>chase.mp3" volume 0.4
     music The Chase - Toby Fox
-    arceus "{i}whispering{/i} CS, we can't hide here forever. We need a distraction!"
+    n "Arceus whispers to CS."
+    arceus "CS, we can't hide here forever. We need a distraction!"
     n "CS thinks for a sec."
     cs "I've got it! Remember that prank we pulled back in prison using inflatable rubber ducks?"
     arceus "How could I forget?"

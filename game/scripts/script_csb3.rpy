@@ -357,7 +357,8 @@ label ytp_edit:
     linus "I mean, for example.{w=0.5} TARAN! GET IN HERE!"
     n "Taran rushes up to Linus' office."
     show taran at right with moveinright
-    taran "{i}panting{/i} Yes, {w=0.5}Linus? {w=0.5}What is it?"
+    n "Taran is panting and out of breath."
+    taran "Yes, {w=0.5}Linus? {w=0.5}What is it?"
     linus "Taran, have you ever seen a YTP?"
     taran "Other than the one CS made the other day? Not really."
     linus "See, CS? Not only will our audience be super confused, but our employees will be as well."
