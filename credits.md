@@ -49,6 +49,8 @@
 **Beep Manager:** Pakoo
 
 ### Music
+- darkcat
+    - BUBBLE TEA
 - Walkman
     - Let's Hear My Baby
 - George Stone
@@ -75,6 +77,10 @@
     - The Whale
     - Prophet 2001
     - Dealin' Dope
+    - Hightop
+    - Now What? 1
+    - Dig This
+    - Lisbon Fever
 - Keiichi Suzuki
     - Onett Theme
     - Buy Something, Will Ya!
@@ -82,9 +88,15 @@
     - Good Eatin'
     - Mort's Farm
     - Funiculi Holiday
+- Laszlo
+    - Supernova
+- Kazumi Totaka
+    - Airport Counter
 - Brian Johnston
     - Hired Guns
 - Toby Fox
+    - Card Castle
+    - Basement
     - Undyne
     - Danger Mystery
     - It's Showtime!
@@ -94,21 +106,38 @@
     - The Chase
     - Friendship
     - Lancer
+    - Rude Buster
+    - ANOTHER HIM
+    - The Legend
 - Satoru Kōsaki
     - Atarashii Kaze
     - Bun Guster
+    - Taiikusai Desu Yo
 - Lorin Nelson
     - Police Station
     - Happy Roaming
     - Park Theme
+    - Lego Island Theme
 - Banana
     - Echoing
     - Echoing?
 - Masakazu Sugimori
     - Pressing Pursuit ~ Cornered
 - Mr. Sauceman
+    - Time for a Smackdown!
     - Tunnely Shimbers
     - Hard Drive to Munch You
+    - Thousand March
+- mastamokei
+    - Billy Mays Gangsta Remix
+- Imori
+    - Maladys Melody
+    - Winter Lullaby
+    - Melancholy
+- Shoichiro Sakamoto
+    - Breakout
+- Billy Mays (kinda)
+    - Billys Mix 1
 - Andy Blythe
     - Al's Penthouse
 - Marten Joustra
@@ -124,6 +153,8 @@
     - Let's Do This
 - Kikiyama
     - Candle World
+    - Dense Woods B
+    - Guillotine World
 - Satoru Kosaki
     - Taiikusai Desu Yo
 - Weatherscan
@@ -137,6 +168,10 @@
     - Alfred's Theme
 - Kazumi Totaka
     - New Leaf Title Theme
+- Pat Benatar
+    - Hit Me With Your Best Shot
+- Foo Fighters
+    - Everlong
 - Michiel van den Bos
     - Facing Worlds
 - u4ia
@@ -146,6 +181,13 @@
 - Lizardking
     - Weird Personalities
     - Insane Personalities
+    - Nordic Report 1
+    - Nordic Report 2
+    - Compulsion To Obey
+    - For The People!
+    - Full Rulle Med Klas
+    - Desert Dawn
+    - Trans Atlantic
 - Kelly Bailey
     - Klaxon Beat
     - CP Violation
@@ -156,19 +198,41 @@
     - Racing Minigame Song
 - Nemo's Dreamscapes
     - You're At A Ball In The Gold Room
-- LitKidBeats
-    - GOOD VIBES
+- Every Day Music
+    - Energetic Rock
+- Panda Beats
+    - Exotic
+- BreakingCopyright
+    - Dragon Castle
+- David Eisley
+    - Sweet Victory
+- Various Artists
+    - Wool Gloves
+    - Billys Mix 1
+- David Vanacore
+    - Conflict
+    - Tumultuous
+- Siix0
+    - Automatic Love
+- NEKOWORKs
+    - Neko To Sanpo
 - Project SEKAI
     - Real World
+- Tears For Fears
+    - Everybody Wants To Rule The World
+- Black Rebel Motorcycle Club
+    - Weapon of Choice
 
 # TODO: THIS IS MISSING A LOT
 
 ## Art
 **CSocola Sprites:** Greta "@lovelycloud"  
-**Arceus Sprites:** UndeadKitty  
+**Arceus Sprites:** UndeadKitty
 **DigiDuncan Sprites:** Yukio "@nyutral"  
 **Aria Sprites:** Aria "@estroteric"
 **Bubble Sprites:** BubbleTheSlime
+**Pakoo Sprites:** Pakoo
+**Ges Sprite:** Mikapara
 
 **Addtl. Art:**
 - EddieJustEddie
@@ -177,6 +241,9 @@
 - Guithais
 - alleZSoyez
 - Midgalicis
+- UndeadKitty
+- Pakoo
+- 4Bakers
 
 **Background Manager:** Pakoo  
 **Addtl. Background Help:**
@@ -192,6 +259,7 @@
 **Reality Repair Expert:** Iris
 
 ## Special Thanks
+- cs188, for inspiring this game!
 - The CSCord, for starting it all
 - DPN and it's loving circle of support
 - Triston and the Shattered Realms community
