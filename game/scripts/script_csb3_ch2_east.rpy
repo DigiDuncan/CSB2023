@@ -944,12 +944,12 @@ label interstate_69:
     show gnome at center
     gnome "None taken."
     aria "A little bit taken, but I also brought up your cocaine overdose immediately after first meeting you, so fair play honestly."
-    aria "So y'all are headed to New York then?"
+    aria "Y'all are headed to New York then?"
     scene cafe_sitting_2
     show cs at left
     show billy at center
     show arceus at right
-    cs "Yeah I'm just trying to get home and these two kinda got dragged along."
+    cs "Yeah, I'm just trying to get home, and these two kinda got dragged along."
     scene cafe_sitting
     show aria flipped at left
     show gnome at center
@@ -1020,7 +1020,7 @@ label interstate_69:
     cs "That's probably the least concerning thing we've seen in a forest so far today, to be fair."
     arceus "Still seems plenty murderous to me."
     aria "I'm in here most nights, and he hasn't murdered me yet, so I wouldn't worry too much."
-    scene path_forest
+    scene forest_bridge
     show cs dark flipped at mid_right
     show arceus dark at right
     show billy dark at left
@@ -1081,7 +1081,7 @@ label interstate_69:
     n "Rustling noises can be heard further into the woods, but the path through the trees is clear, albeit dimly lit."
     stop music fadeout 3.0
     music end
-    scene creepy_path_3 with dissolve
+    scene creepy_path_4 with dissolve
     play music "melancholy.mp3"
     music Melancholy - Imori
     aria "If you look to the right, you'll see one of my favorite paths in the woods."
@@ -1109,30 +1109,32 @@ label interstate_69:
     aria "I simply appreciate the beauty of the world around me."
     billy "I guess that's fair, that was a very pretty tree."
     aria "Thank you! See? Someone gets it!"
-    cs "Oh no, I think the woods are getting to him. We gotta get out of here quick before he gets worse."
+    cs "Oh no, I think the woods are getting to him. He's getting some kind of environmental stockholm syndrome." 
+    cs "We gotta get out of here quick before he gets worse."
     billy "I wouldn't be too worried about it."
     billy "I'm also terrified right now, but there's a certain macabre beauty that cuts through it..."
     arceus "Weren't you already scared going into this?"
     arceus "Like, before there were any clear signs of this weirdness?"
     arceus "There's no way that shift is natural."
-    billy "There's nothing wrong with feeling the pull of nature."
+    billy "There's nothing wrong with feeling the irresistible pull of nature."
     cs "Okay, that's definitely concerning."
     cs "Let's pick up the pace."
     aria "We're already going on the fastest path. I wouldn't deviate from the plan."
     scene creepy_path_fairy with dissolve
-    cs "I didn't mean to change, I just meant--{w=0.5} wait, what's that up ahead?"
+    cs "I didn't mean to change paths, I just meant to go down it faster--{w=0.5} wait, what's that glowing thing up ahead?"
     aria "Oh that's strange, They don't normally appear on this path..."
-    aria "That's one of the faeries."
-    aria "I've seen one like that before, with the glowing white body and warm-colored edges."
-    aria "I haven't seen a ton of faeries, but I've kept track as I encounter new varieties."
+    aria "That's one of the Faeries."
+    aria "I've seen one like that before, with the glowing white body and warm yellow-colored edges."
+    aria "I haven't seen that many Faeries, but I've kept track as I encounter new varieties."
     aria "I call this kind Seraphites."
     aria "They have particularly warm energy and have a brighter glow as well as higher pitched resonance."
     cs "Resonance?"
     aria "The tone They produce as They float around."
-    aria "It's similar to a CRT whine, so you might not be able to hear it."
+    aria "It's similar to a CRT whine, so it might be too high-pitched for you to be able to hear it."
     arceus "I can hear CRTs, but I don't hear that..."
     billy "What are you talking about? That's so loud, how can you not hear it?"
     cs "Wait, Billy and Aria are the only two that can hear it!?"
+    cs "The Fae must something to do with the weird forest obsession."
     cs "We need to get Billy out of here ASAP."
     arceus "We can't go forward with it up ahead!"
     aria "You can just walk past It. Faeries are mischievous, but They aren't malevolent."
@@ -1140,7 +1142,7 @@ label interstate_69:
     aria "I wasn't always, and They left me alone then, too."
     cs "I don't know if I want to try and go back if we've encountered the Fae that make the trick paths..."
     cs "I guess we don't have any other options."
-    show creepy_path_4 with dissolve
+    show creepy_path_3 with dissolve
     n "They all slip past the Seraphite, and It floats off between the trees."
     n "They walk further along the path, and the path becomes less clear as tree branches block the path."
     aria "Huh, these aren't normally here..."
@@ -1154,12 +1156,12 @@ label interstate_69:
     arceus "I guess you're right though, we can't really turn back now."
     n "Everyone begins making their way through the nest of tree branches."
     n "Eventually, they reach the end and the canopy begins to thin out as they reach a path next to a road."
+    show creepy_path_exit
     aria "Alright, here's the path back."
     arceus "Are you sure?! Can you guarantee me that this path is the same way it's supposed to be!?"
     aria "Yeah, that path is the same as it always is."
     billy "That path goes back the same way we came, of course it's fine."
     arceus "That was what she said about the last path and then we ended up climbing between a tangled web of branches."
-    show creepy_path_exit
     show billy at left
     show cs worried
     show arceus worried at mid_left
