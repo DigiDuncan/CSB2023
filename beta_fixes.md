@@ -47,3 +47,8 @@
 * CS now has a ||straightjacket|| sprite
 * Line length in the Fired route is now capped at 32/64.
 * ATK can no longer go below 1.
+* Some sprites are no longer cramped
+* New way to Country Route since it was hard to find
+* Various new SFX
+* Fixed various overlapping sprites
+* Fixed various spelling mistakes

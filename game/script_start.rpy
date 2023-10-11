@@ -31,8 +31,6 @@ init python:
 
 init 10 python:
     def unlock_all():
-
-
         for m in music_map.keys():
             persistent.heard.add(m)
         for p in name_map.keys():
@@ -542,6 +540,7 @@ image marine = "characters/marine.png"
 image big_tank = "characters/big_tank.png"
 image benrey = "characters/benrey.png"
 image howie = "characters/howie.png"
+image howie flipped = "flip:characters/howie.png"
 image guest = "characters/guest.png"
 image janitor = "characters/janitor.png"
 image customer = "characters/customer.png"

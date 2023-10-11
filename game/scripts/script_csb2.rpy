@@ -522,7 +522,7 @@ label bordercrossing:
     arceus "Hnng...{w} hmmpmh... {w}aha!"
     n "Arceus finds an old laptop."
     arceus "Perfect."
-    n "Within minutes, Arceus has hacked the Canadian governement records to display CS as having a valid work visa."
+    n "Within minutes, Arceus has hacked the Canadian government records to display CS as having a valid work visa."
     arceus "Even their security is too nice..."
     n "Arceus rummages around the dumpster more and finds a magnet from an old CRT."
     n "He places it against the laptop, corrupting the hard drive instantly."

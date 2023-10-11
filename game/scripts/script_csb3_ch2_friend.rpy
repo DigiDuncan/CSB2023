@@ -816,8 +816,8 @@ label car_slam:
     pause 1.0
     scene war_torn_4 with fade
     show cs at left with moveinleft
-    n "CS walks through the wastelands, searching for any thing reminiscent to Copguy."
-    n "Sure enough, he finds Copguy's wrecked cop car."
+    n "CS walks through the wastelands, searching for anything reminiscent to Copguy."
+    n "Eventually, he finds Copguy's wrecked cop car."
     show cs at center with move
     cs "Welp. There rests Copguy."
     cs "He fought well, he was a good cop, and god rest his soul."

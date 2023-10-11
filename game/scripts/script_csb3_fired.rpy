@@ -346,7 +346,7 @@ label song_2:
     arceus "I liked your name for the last one, CS, why don't you name this one, too?"
     cs "How about..."
     $ song_name_2 = renpy.input("What should we call the song?", song_name_2, length = 32)
-    cs "{i}[song_name_2]{/i}?"
+    cs "{i}[song_name_2]?{/i}"
     show arceus happy
     arceus "You're a genius, CS."
     show cs happy
@@ -786,7 +786,7 @@ label howie:
     with dissolve
     play music "<loop 0>audio/gold_room.mp3" volume 0.5
     n "Howie walks into the lobby."
-    show howie at left with moveinleft
+    show howie flipped at left with moveinleft
     agent "You guys ready?"
     cs "Ready for what?"
     agent "A ride in a limosine!"
@@ -795,6 +795,7 @@ label howie:
     agent "Ah, you will, I trust in that. But until then, why don't I treat you all to the ride of a lifetime?"
     stop music fadeout 3.0
     n "CS, Anno, and Arc all head into the limo out front, lead by Howie."
+    show howie with determination
     hide cs
     hide anno
     hide arceus
@@ -803,29 +804,35 @@ label howie:
     jump limo_time
 
 label limo_time:
-    scene in_limo with dissolve
+    scene in_limo
+    show arceus happy flipped
+    show cs happy at mid_mid_left
+    show anno at left behind cs
+    with dissolve
     play music "<loop 0>audio/exotic.mp3" volume 0.5
     music Exotic - Panda Beats
-    show arceus happy
     arceus "These snacks are amazing!"
     anno "This music's awesome!"
-    show cs happy
     cs "These seats are some comfy!"
     agent "Alright boys, enough chat, let's talk business."
     agent "I want to take you guys on tour."
     show cs worried
+    show arceus flipped
     cs "Already?!"
     agent "Oh yeah baby, already. [ep_name] made [band_name] big, overnight. This kinda success comes once in a lifetime, and it's in your lifetime, and it's right now!"
     anno "Woah, woah, woah, slow down. Why are you so invested in our success?"
     agent "Oh, don't think I'm going to get a raw deal here, I know how to make sure we all end up happy."
-    show arceus angry
+    show arceus angry flipped
     arceus "You sure you mean all of us?"
     agent "I sense you're spooked so I'll give ya the rub. We take you on tour. Every ticket you sell, I get a cut, you get a cut, we all go home snuggling our cash."
     cs "You snuggle your cash?"
     agent "Better than lavender, baby."
+    show arceus flipped
+    show cs
     anno "So what's the plan? How do we get venues? Do we even have a way to promote?"
     agent "Leave all the fiddly buisness to me. You guys just get on stage and sing like, {i}[song_name_3]{/i} or whatever."
     agent "How's that song go? {image=note_small1.png}{i}I made my way over to Japan, [line_3]?{/i}{image=note_small2.png}"
+    show arceus angry flipped
     arceus "No, that's not--{w=0.5}{nw}"
     agent "Anywho, do we got a deal?"
     anno "I want to see whatever contract you're having us sign, first."
@@ -854,7 +861,7 @@ label signed_the_contract:
     scene hotel_lobby    
     show anno at left
     show arceus flipped
-    show cs at mid_left
+    show cs at mid_mid_left
     show howie at right
     with dissolve
     play music "<loop 0>audio/gold_room.mp3" volume 0.5
@@ -941,7 +948,7 @@ label first_tour_day:
     scene hotel_lobby with dissolve
     show anno at left
     show arceus flipped
-    show cs at mid_left
+    show cs at mid_mid_left
     with moveinleft
     play music "<loop 0>audio/gold_room.mp3" volume 0.5
     show howie at right with moveinright
@@ -953,7 +960,7 @@ label first_tour_day:
     scene ltx with dissolve
     show anno at left
     show arceus flipped
-    show cs at mid_left
+    show cs at mid_mid_left
     with moveinleft
 
     n "They all arrive at LTX."
@@ -1005,7 +1012,7 @@ label first_tour_day:
     scene ltx
     show anno at left
     show arceus flipped
-    show cs at mid_left
+    show cs at mid_mid_left
     show linus at right
     with dissolve
     play music "<loop 0>passport.mp3" volume 0.5
@@ -1174,7 +1181,7 @@ label second_tour_day:
     stop music fadeout 3.0
     scene convention_center_entrance
     show anno at left
-    show cs at mid_left
+    show cs at mid_mid_left
     show arceus
     with dissolve
 
@@ -1248,8 +1255,8 @@ label third_tour_day:
     scene convention_center_lobby
     with fade
     show anno at left
-    show arceus
-    show cs at mid_left
+    show arceus at mid_mid_right
+    show cs at mid_mid_left
     with moveinleft
 
     cs "Alright, well let's get prepared, we have way more songs to do tonight--{nw}"
@@ -1373,7 +1380,7 @@ label final_tour_bus:
     show howie at offscreenright
     show anno at left
 
-    show cs at mid_left
+    show cs at mid_mid_left
     show arceus flipped at center
     with move
     show howie at right with moveinright
@@ -1424,7 +1431,7 @@ label final_tour_bus:
     cs "It's been a wild few {i}years{/i} for you."
     arceus "Fair enough."
     anno "Yeah, we need to get back to our places too. Figure out how to reintegrate."
-    show howie at left with moveinleft
+    show howie flipped at left with moveinleft
     agent "Pleasure doing business with you boys."
     cs "Thanks, Mr. Mandell."
     agent "Please, call me Howie."

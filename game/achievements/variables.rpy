@@ -6,7 +6,7 @@ define achievements = [
     Achievement("A Great British Pound", "???", "Enjoy :)", "pound"),
     Achievement("Overcaffeinated", "???", "Give an old man {i}way{/i} too much energy.", "genergy"),
     Achievement("Ohai, Mark", "???", "Did-- did that reference land?", "mark"),
-    Achievement("I Don't Like People!", "Avoid responsibility.", "Tell CS not to go to Wal-Mart.", "no_person"),
+    Achievement("I Don't Like People!", "Avoid responsibility.", "Tell CS not to go to Walmart.", "no_person"),
     Achievement("Dead Meme", "???", "Sparta kick Wesley.", "sparta"),
     Achievement("#1 Rated Pooper", "???", "Use your skills to keep your job.", "poop"),
     Achievement("Instinctual Editor", "Let your instincts take over.", "This isn't actually Premiere.", "premiere"),
