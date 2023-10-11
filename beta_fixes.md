@@ -50,4 +50,5 @@
 * Some sprites are no longer cramped
 * New way to Country Route since it was hard to find
 * Various new SFX
-* Fixed some more grammatical errors
+* Fixed various overlapping sprites
+* Fixed various spelling mistakes

@@ -31,8 +31,6 @@ init python:
 
 init 10 python:
     def unlock_all():
-
-
         for m in music_map.keys():
             persistent.heard.add(m)
         for p in name_map.keys():
