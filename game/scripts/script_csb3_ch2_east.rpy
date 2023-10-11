@@ -736,7 +736,7 @@ label interstate_69:
     n "Eventually, the growth of the forest comes to a halt as any semblance of their old surroundings is buried in a lush and lively forest."
     n "They find themselves on a clear path through the trees as the sunlight shining through the canopy up ahead starkly contrasts the heavy darkness of the woods behind them."
     gnome "If you continue to drive, you will reach a Clearing with a large Sugar Maple surrounded by a Bed of Clovers."
-    billy "Wwhere will it take us once we return to our own world." 
+    billy "Where will it take us once we return to our own world." 
     gnome "We will simply return to the Edge of the Campus. You will be able to continue your Journey smoothly."
     n "Billy takes the car forward and stops in front of the tree."
     n "As they pull into the clearing and stop the car, they again become aware of the gnome's presence."
@@ -749,7 +749,7 @@ label interstate_69:
     show billy car turn with vpunch
     show billy car turn with hpunch
     show billy car turn with vpunch
-    n "The forest, which had previously sprung forward as if growing naturally, was removed before their eyes."
+    n "The forest, which had previously sprung forward as if growing naturally, fell rapidly before their eyes."
     scene white
     show billy car turn
     with dissolve
@@ -863,14 +863,14 @@ label interstate_69:
     aria "{font=cjk}好啊。谢谢。除非他们使用{/font}Google Translate, {font=cjk}他们完全听不懂。"
     aria "{font=cjk}我想让他们以为我的中文水平比我真的水平更好。"
     aria "{font=cjk}我的气垫船装满了鳝鱼。"
-    waitress "Wow, your Chinese is like an insane native."
+    waitress "Wow, your Chinese sounds like a native, but you're clearly utterly insane."
     aria "Wow that phrasebook was really helpful."
     waitress "By the way, we don't have any pork to fry the rice right now."
     scene cafe_sitting_2
     show cs at left
     show billy at center
     show arceus worried at right
-    arceus "Wait how?! That's by far the most common thing we ordered..."
+    arceus "Wait, how?! That's by far the most common thing we ordered..."
     scene cafe_sitting
     show aria flipped at left
     show gnome at center
@@ -980,7 +980,6 @@ label interstate_69:
     scene car background night
     show billy car
     with dissolve
-    aria "Alright just take a left turn into here and go right at the roundabout."
     aria "You can park here next to the building."
     billy "Alright. I know it's early but I'm ready to just sleep."
     arceus "Yeah that sounds good."
