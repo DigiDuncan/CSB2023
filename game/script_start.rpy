@@ -96,6 +96,14 @@ transform center_left:
     yanchor 0.5 ypos 0.5
     xanchor 0.0 xpos 0.0
 
+transform mid_offscreen_right:
+    yanchor 1.0 ypos 1.0
+    xanchor 0.5 xpos 1.25
+
+transform mid_offscreen_left:
+    yanchor 1.0 ypos 1.0
+    xanchor 0.5 xpos -0.25
+
 transform xstretch_in:
     xalign 0.5
     linear 0.5 xsize 1920
