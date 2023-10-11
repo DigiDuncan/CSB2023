@@ -460,7 +460,7 @@ class Fighter:
     
     @attack_points.setter
     def attack_points(self, v):
-        self._attack_points = int(v)
+        self._attack_points = int(max(1, v))
 
     @property
     def normal(self) -> Attack:
