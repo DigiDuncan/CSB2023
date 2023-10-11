@@ -5,13 +5,15 @@
 * Luigi's sprites are very crunchy
 * CSBI footage is missing as ||evidence||
 * The ||Archival|| Ending is missing multiple backgrounds and transitions
+* Customer does not appear in MCDs
+* Guest does not appear in hotel lobby
 ### GAMEPLAY
 * Sweden is currently not accessible
 * A menu option is missing in Michigan
 * The Michigan route is in a non-final state
 * ||RPG game still needs a decent amount of balancing work. Please report any cheeses you find or impossible-to-win scenarios (softlocks.)||
 ### AUDIO
-* Michigan and Pennsyvania are both missing background music
+* Michigan and Pennsylvania are both missing background music
 * Some important characters are missing custom text beeps
 ### VIDEO
 * An ending video (||"Where Are They Now?"||) still has beta character sprites in it
