@@ -265,8 +265,30 @@ label high_gpu:
     linus "Look, it never usually gets this bad!"
     luke "What are we gonna do?"
     taran "We could call the cops!"
+    show cs worried flipped
     cs "No!"
     linus "Huh?"
+    menu:
+        "Which card do you want to choose?"
+        "Go out and fight!":
+            jump attack_fanboy
+        "Stay inside":
+            jump stay_inside
+
+label stay_inside:
+    show cs disappointed flipped at right
+    cs "Let's just, stay here."
+    cs "They've got to go away at some point, right?"
+    linus "I'm sure, I mean, we are LTT after all!"
+    linus "We're so cool, our fans love us! They'll probably run home here in a moment."
+    taran "Holy shit! They're throwing bricks!"
+    play sound "<loop 0>glass.ogg" volume 3
+    show sansbrick at offscreenright with moveinleft
+    scene black
+    stop sound
+    jump knocked_out
+
+label attack_fanboy:
     show cs angry flipped
     cs "Actually, you know what? Leave this to me!"
     hide cs with moveoutleft

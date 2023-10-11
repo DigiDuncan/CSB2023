@@ -40,6 +40,7 @@ label japan_menu:
 
 label knocked_out:
     scene black
+    play sound "<loop 0>heartbeat.mp3" volume 1
     n "..."
     n "As CS' vision fades back into view, he can also hear a faint heart monitor beeping."
     scene hospital_room with dissolve
@@ -55,7 +56,8 @@ label knocked_out:
         cs "What happened? How long have I been out?"
     show cs disappointed metal3
     cs "Thank god I didn't catch some virus from a global pandemic or something."
-    cs "I guess that's the last time I try to fight someone."
+    stop sound
+    cs "I guess that's the last time I try to do something for LTT."
     n "CS sits there for a minute, trying to recollect his memory."
     cs "So I went to go work at LTT, after I..."
     cs "What did I do before that?"
