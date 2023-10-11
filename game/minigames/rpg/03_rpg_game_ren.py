@@ -587,7 +587,7 @@ class Attacks:
     ENCOURAGE = Attack("Encourage", "Heal your team with morale!", heal_fighters, target_count = 0, target_type = "allies", mult = 2)
     HIGH_NOON = Attack("High Noon", "Quickly blast 3 targets, or 3 shots on 1!", damage_fighters, target_count = 3, cooldown = 3, mult = 0.75)
     SCRATCH = Attack("Scratch", "A basic scratch attack.", damage_fighters)
-    ARMOUR = Attack("Armour", "Boost your someone's defense!", change_stat, stat = "ap", target_count = 1, target_type = "allies", cooldown = 3, mult = 2.5)
+    ARMOUR = Attack("Armour", "Boost one's defense!", change_stat, stat = "ap", target_count = 1, target_type = "allies", cooldown = 3, mult = 2.5)
     DAMAGE_SCREM = Attack("Damage Screm", "Yell as loud as possible to deafen your enemies!", damage_fighters, target_count = 0, target_type = "enemies", mult = 0.5)
     SNACK_TIME = Attack("Snack Time", "Heal your team with the power of snacks!", heal_fighters, target_count = 0, target_type = "allies", cooldown = 3, mult = 1)
     ELDRITCH_BLAST = Attack("Eldritch Blast", "An unholy blast that does quite a bit of damage to an enemy.", damage_fighters, mult = 1.5)

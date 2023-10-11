@@ -30,8 +30,8 @@ label archival:
     n "CS gets up, and goes over to a laptop sitting on the desk next to him."
     scene craptop_old with fade
     show cs disappointed at left with moveinleft
-    cs "I feel like, this is, this is my cra-{w=0.5} I mean laptop. I don't even have a crapto-{w=0.5} I mean laptop anymore!"
-    cs "Why do I keep calling it that?"
+    cs "I feel like this is my craptop, but I don't even have my craptop anymore!"
+    cs "It looks off though..."
     n "CS lifts the lid and powers it on, curious of the strange connection he is feeling with it."
     n "The laptop slowly powers on, playing the classic Windows XP start sound, even though it shows a static screen of Windows 10 updating."
     n "The laptop immediately bluescreens, and blares out the following:"

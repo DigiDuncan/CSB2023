@@ -1008,7 +1008,7 @@ label after_cop_fight:
     show cs flipped
     mika "Pakoo, next time you are gonna fight people, let me know in advance!"
     show pakoo disappointed
-    pakoo "I know I know, this just came up not to long ago!"
+    pakoo "I know I know, this just came up not too long ago!"
     if nice_car:
         mika "Dammn, nice car!"
         show pakoo happy
@@ -1175,6 +1175,7 @@ label low_gpu:
     n "CS meets Linus in his office."
     show cs at left with moveinleft
     cs "Hey Linus! I got your parts!"
+    cs "I even got the CPU for free, I don't think they scanned it!"
     linus "Ooh goodie! Lemme see!"
     show linus at mid_left_left with move
     pause 0.5
