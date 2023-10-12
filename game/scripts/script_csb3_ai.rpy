@@ -91,9 +91,11 @@ label csbiii_ai:
     play sound "<loop 0>duck.ogg" loop volume 0.7
     n "CS188 and Arceus discreetly inflate dozens of rubber ducks and release them, causing a colorful and noisy chaos."
     play sound "<loop 0>duck.ogg" loop volume 0.7
+    show ai_ducks
     n "The cops are distracted, slipping and sliding on the rubber ducks, as CS188 and Arceus make their getaway."
     hide copguy_ai with moveoutright
     stop sound fadeout 7.0
+    hide ai_ducks with dissolve
     n "The chase scene intensifies as CS188 and Arceus dash through the amusement park, narrowly avoiding capture at every turn."
     show cs flipped with determination
     hide cs with moveoutleft

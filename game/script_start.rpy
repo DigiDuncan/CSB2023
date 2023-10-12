@@ -941,6 +941,9 @@ layeredimage copguy_ex:
         attribute wow default:
             "copguy_ex_front"
 
+image ai_duck = "duck.png"
+image ai_ducks = SnowBlossom("duck.png", 50)
+
 # Layers?
 define config.detached_layers += ["broadcast"]
 image stage_screen = Window(Layer("broadcast", clipping = False), background = "minigames/pencil/stage.png")
