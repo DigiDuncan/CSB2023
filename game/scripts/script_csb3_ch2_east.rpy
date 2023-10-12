@@ -1292,6 +1292,8 @@ label ohio:
 label pennsylvania:
     n "The gang hits the last state before New York, Pennsylvania."
     scene billboard
+    play music "<loop 0>fourside.mp3" volume 0.6
+    music The Metropolis of Fourside - Keiichi Suzuki
     n "CS sees a billboard pass by them."
     cs "Oh my god! It's PencilCon! We need to go!"
     arceus "Why the fuck do you want to go to PENCILCON when we are so close to home?!"
@@ -1377,10 +1379,14 @@ label pennsylvania:
     signup "OK, that's you all registered. Fuzzy guy, you signing up too?"
     arceus "Nah, I feel like that would be basically cheating."
     cs "OK, well I have to go to the backstage and get set up. See you soon, Arc!"
+    stop music fadeout 3.0
+    music end
     scene cc_backstage with dissolve
     show cs at left with moveinleft
     n "CS walks to the backstage to prepare to compete, when he notices a familiar face."
     show digi at right with moveinright
+    play music "<loop 0>pokey.mp3" volume 0.6
+    music Pokeys House - Keiichi Suzuki
     cs "Wait, Digi?!"
     digi "CS?!"
     cs "What are you doing here?"
@@ -1393,6 +1399,8 @@ label pennsylvania:
     cs "Oh jeez, I guess we will be against each other, if I make it that far."
     digi "Well, good luck to you!"
     cs "You as well!"
+    stop music fadeout 3.0
+    music end
     scene black with fade
     n "After a grueling competition, CS climbs his way up to the top of the bracket!"
     scene black
@@ -1426,6 +1434,7 @@ label pennsylvania:
     with dissolve
     show mettaton at t_stagescreen onlayer broadcast
     host "WELCOME, FOLKS!"
+    play music "<loop 0>showtime.mp3" volume 0.4
     host "EVERYONE GIVE A BIG HAND TO OUR WONDERFUL CONTESTANTS!"
     play sound "audio/cheer1.mp3"
     show crowd at t_stagescreen onlayer broadcast
@@ -1445,6 +1454,7 @@ label pennsylvania:
     n "The crowd is going absolutely crazy."
     hide crowd onlayer broadcast
     host "AND WITH THAT, LET'S BEGIN! READY?"
+    stop music fadeout 3.0
     n "CS glances over at Digi, and they nod at each other."
     host "3..."
     if fun_value(50):
@@ -1475,6 +1485,7 @@ label win_pencil:
     play sound2 "audio/cheer1.mp3" noloop
     n "As if they couldn't get any louder, the crowd is going insane."
     hide crowd onlayer broadcast
+    play music "<loop 0>showtime.mp3" volume 0.4
     host "THE CHAMP HAS FALLEN! LADIES AND GENTS, WHAT AN UPSET!"
     n "CS turns to Digi."
     hide mettaton onlayer broadcast
@@ -1516,8 +1527,10 @@ label win_pencil:
     hide mettaton onlayer broadcast
     show cs at t_stagescreen onlayer broadcast
     cs "I should have seen that coming."
+    stop music fadeout 3.0
     hide cs
     scene cc_crowd with dissolve
+    play music "<loop 0>fourside.mp3" volume 0.6
     cs "Well that was a lot of excitement for one day, let's head home."
     n "Though he was working harder to support CS, Arceus couldn't help but look relieved to be back on track."
     arceus "Absolutely."
@@ -1549,6 +1562,7 @@ label win_pencil:
     hide arceus with moveoutright
     cs "Well, Digi, you got a ride!"
     digi "Thanks so much, man!"
+    stop music fadeout 3.0
     jump car_dialogue
 
 label back_home:

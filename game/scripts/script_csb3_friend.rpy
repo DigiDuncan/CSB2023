@@ -255,7 +255,7 @@ label high_gpu:
     scene frontdoor
     play sound "<loop 0>yelling.ogg" loop volume 0.5
     show luke flipped at left
-    show taran flipped at mid_left
+    show taran flipped at mid_mid_left
     with fade
     show linus at center
     show cs flipped at right
@@ -818,7 +818,7 @@ label car_picker:
     scene dealer_cars with fade
     show carguy flipped at right
     show arceus flipped at center
-    show cs at mid_left
+    show cs at mid_mid_left
     show pakoo flipped at left behind cs
     with moveinleft
     show carguy with determination

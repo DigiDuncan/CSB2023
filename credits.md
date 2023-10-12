@@ -84,6 +84,8 @@
 - Keiichi Suzuki
     - Onett Theme
     - Buy Something, Will Ya!
+    - The Metropolis of Fourside
+    - Pokeys House
 - ClascyJitto
     - Good Eatin'
     - Mort's Farm

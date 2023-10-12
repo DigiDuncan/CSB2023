@@ -103,7 +103,7 @@ label new_plan:
     cs "Do I?"
     hide cs with moveoutleft
     n "Anno and Arc look at each other confused."
-    show cs guitar with moveinleft
+    show cs guitar at left with moveinleft
     n "CS comes back holding two guitar controllers and a drum kit."
     cs "Saw em on the side of the road. Couldn't pass em up."
     jump guitar_hero
@@ -1046,7 +1046,7 @@ label first_tour_day:
 
     scene tour_bus_inside
     show anno at left
-    show arceus flipped at right
+    show arceus flipped at mid_right
     show cs at center
     with dissolve
     play music "<loop 0>audio/exotic.mp3" volume 0.5
@@ -1270,7 +1270,7 @@ label third_tour_day:
     mean "YOU ACTUALLY MADE IT TO ONTARIO?"
     cs "Uh... yeah, totally because you asked me to!"
     show cs worried
-    show mean at mid_left
+    show mean at mid_mid_left
     with move
     n "Mean tackle hugs CS."
     if fun_value(5):

@@ -429,7 +429,7 @@ label both_fan:
     show cs with determination
     show linus at mid_left with moveinright
     show taran at left with moveinright
-    show taran flipped at left
+    show taran flipped at left with determination
     show luke at mid_right with moveinright
     show colton at right with moveinright
     luke "What is this all about Linus? I was just about to go home."
