@@ -607,6 +607,7 @@ label michigan:
     show billy at mid_left with moveinleft
     billy "Hey man. Do you know what's up with the highway?"
     streetguy "Not sure on details, but I hear they found one of the horseman of the apocalypse flying around."
+    streetguy "Possibly in Michigan."
     billy "What?"
     streetguy "Like I said, I don't know details."
     billy "Well, do you know what roads are affected? We need to get to New York."
@@ -795,8 +796,8 @@ label interstate_69:
     hide waitress with moveoutright
     n "As everyone is waiting, the strange glowing grey blob in the corner notices the group and walks over."
     show aria at right with moveinright
-    play music "<loop 0>winter_lullaby.mp3" volume 0.7
-    music Winter Lullaby - Imori
+    play music "<loop 0>mis_leader.mp3" volume 0.7
+    music MisLeader - Triosk & Jan Jelinek
     aria "CS! Arc! What are you doing here?"
     gnome "Aria! I knew I recognized that Scent."
     aria "Omg hi! So you brought them here?"
@@ -860,7 +861,7 @@ label interstate_69:
     show aria flipped at left
     show gnome at center
     show waitress at right
-    aria "{font=cjk}请给一万鱼香茄子。请问一下，如果我说一点狗屁，你不会告诉他们，对吧？"
+    aria "{font=cjk}请给一碗鱼香茄子。请问一下，如果我说一点狗屁，你不会告诉他们，对吧？"
     waitress "{font=cjk}对，我不会。"
     aria "{font=cjk}好啊。谢谢。除非他们使用{/font}Google Translate, {font=cjk}他们完全听不懂。"
     aria "{font=cjk}我想让他们以为我的中文水平比我真的水平更好。"
@@ -979,7 +980,7 @@ label interstate_69:
     stop music fadeout 3.0
     music end
     n "They all eat and then leave the restaurant. The gnome goes back to his forest and the others head to Aria's apartment for a rest."
-    scene car background night
+    scene aria_apartment_outside
     show billy car
     with dissolve
     aria "You can park here next to the building."
@@ -1090,7 +1091,7 @@ label interstate_69:
     aria "It's not exactly clear, so we'll skip it today, but it leads to a pretty little grotto."
     aria "It feels like something out of a fairy tale."
     cs "This whole forest does, but only the uncensored Brothers Grimm versions."
-    aria "Yeah, it really feels like an authentic fairy tale experience :)"
+    aria "Yeah, it really feels like an authentic fairy tale experience c:"
     cs "That's not a good thing..."
     scene doll_eye_tree
     n "Aria stopped listening because it's distracted by a tree up ahead."
@@ -1110,7 +1111,7 @@ label interstate_69:
     arceus "As long as we're on the fastest path out of here, I'm happy."
     cs "Aria, how exactly do you find this relaxing!?"
     aria "I simply appreciate the beauty of the world around me."
-    billy "I guess that's fair, that was a very pretty tree."
+    billy "I think that's fair, that is a very pretty tree."
     aria "Thank you! See? Someone gets it!"
     cs "Oh no, I think the woods are getting to him. He's getting some kind of environmental stockholm syndrome." 
     cs "We gotta get out of here quick before he gets worse."
@@ -1137,7 +1138,7 @@ label interstate_69:
     arceus "I can hear CRTs, but I don't hear that..."
     billy "What are you talking about? That's so loud, how can you not hear it?"
     cs "Wait, Billy and Aria are the only two that can hear it!?"
-    cs "The Fae must something to do with the weird forest obsession."
+    cs "The Fae must have something to do with the weird forest obsession."
     cs "We need to get Billy out of here ASAP."
     arceus "We can't go forward with it up ahead!"
     aria "You can just walk past It. Faeries are mischievous, but They aren't malevolent."
@@ -1176,7 +1177,7 @@ label interstate_69:
     aria "I think Michigan roads are scarier than any forest, but I'll take you back how you want."
     $ achievement_manager.unlock("Analog Horror Protagonist")
     n "They all walk down and reach the apartment where the car is parked."
-    scene parking_lot
+    scene aria_apartment_outside
     show billy at left
     show cs
     show arceus at mid_left
@@ -1195,13 +1196,13 @@ label interstate_69:
     aria "Arceus, it was nice finally meeting you in person."
     arceus "You as well until we went to the woods."
     aria "Yeah sorry about that..."
-    billy "You're fine. That's just a skill issue on his part."
-    aria "Good luck on your adventure!"
+    billy "You're fine. It was nice then too. He's just got a bit of a skill issue, I think."
+    arceus "Whatever, man..."
+    aria "Bye-bye y'all! Good luck on your adventure!"
     scene black with dissolve
     jump ohio
 
 label interstate_94:
-    # TODO: PATH UNREACHABLE
     cs "What are you talking about? We're getting on 94."
     cs "We've all been through way too much for me to want to take any unnecessary detours."
     cs "I'm so tired. I just want to get home..."
@@ -1212,8 +1213,29 @@ label interstate_94:
     arceus "I thought it sounded like a good route..."
     scene black with dissolve
     n "The conversation comes to a halt as they continue heading down the highway."
+    scene car plains
+    show billy car
+    with fade
+    billy "Looks like there's a traffic jam up ahead. I'm gonna get off and take a detour."
+    arceus "I'm gonna roll a window down now that we're off the highway and it's less noisey."
+    play sound "roll_window.ogg" volume 0.7
+    pause 1.0 
+    arceus "It's crazy hot in here right now."
+    cs "Huh, I didn't notice."
+    arceus "I am literally always wearing a fur coat, so I guess we have different scales."
+    cs "Yeah that'll do that. You're also wearing a hoodie. You always could take that off."
+    arceus "If you wanna see me naked, you can just ask..."
+    cs "I didn't mean-- whatever..."
+    show billy car turn with vpunch
+    show billy car turn with hpunch
+    n "Soon after Arceus rolled down the window, they hit a large, flooded pothole."
+    n "Water splashes up from the puddle through the car window."
+    arceus "Oh no! My hoodie's a mess now!"
+    cs "It was actively making you too hot, so it shouldn't be a big deal, right?"
+    arceus "The sun was making me too hot. The hoodie was just making me too comfy!"
+    arceus "We're already on a detour. We can just stop at the next laundromat we see and wash it."
     jump ohio
-
+    
 label ohio:
     if fun_value(50):
         scene car plains
