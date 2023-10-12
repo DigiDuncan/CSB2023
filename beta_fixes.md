@@ -10,8 +10,6 @@
 * A menu option is missing in Michigan
 * The Michigan route is in a non-final state
 * ||RPG game still needs a decent amount of balancing work. Please report any cheeses you find or impossible-to-win scenarios (softlocks.)||
-### AUDIO
-* Aria needs a beep
 ### VIDEO
 * An ending video (||"Where Are They Now?"||) still has beta character sprites in it
 * Credits video does not exist
@@ -63,3 +61,4 @@
 * Controls now display in ||car minigame||
 * Quack
 * Some grammar and spelling errors we solved
+* Aria and Gnome now have beeps
