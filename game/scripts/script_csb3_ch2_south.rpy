@@ -1260,6 +1260,8 @@ label noairport:
     show mika at center with moveintop
     show mika at center with vpunch
     mika "Oi chaps!"
+    play music "<loop 0>pokey.mp3" volume 0.6
+    music Pokeys House - Keiichi Suzuki
     mika "Ok, so, CS looks out the window and he spots a yellow Hummer."
     mika "The guy, with his arm out the window, says \"Dude, this car kicks ass! And I can watch Madagascar while driving!\""
     show arceus worried
@@ -1279,6 +1281,8 @@ label noairport:
     show cs at left
     show arceus at right
     cs "Alright! Now we are inside Arceus' house!"
+    stop music fadeout 1.0
+    music end  
     pause 2.0
     show cs angry
     pause 2.0
@@ -1300,6 +1304,8 @@ label noairport:
     show cs at left
     show arceus at right
     n "The TV turns off, and starts shaking."
+    play music "<loop 0>clownpiece.mp3" volume 0.6
+    music Pierrot of the Star Spangled Banner - ZUN
     show cs with vpunch
     show cs with hpunch
     show cs with vpunch
@@ -1353,6 +1359,7 @@ label noairport:
 
 label reality_break:
     stop music
+    music end  
     direct "Cut!"
     scene soundstage
     show cs happy at left

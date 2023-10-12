@@ -111,6 +111,8 @@
     - Rude Buster
     - ANOTHER HIM
     - The Legend
+- ZUN
+    - Pierrot of the Star-Spangled Banner
 - Satoru Kōsaki
     - Atarashii Kaze
     - Bun Guster

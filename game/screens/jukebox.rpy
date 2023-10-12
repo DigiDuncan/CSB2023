@@ -70,6 +70,7 @@ init python:
         "Laurel Palace - Manami Matsumae": "laurel_palace.mp3",
         "Lancer - Toby Fox": "lancer.mp3",
         "Price Is Right Theme - Edd Kalehoff": "price_right.mp3",
+        "Pierrot of the Star Spangled Banner - ZUN": "clownpiece.mp3",
         "Airport Infilration - Marten Joustra": "airport.mp3",
         "Lego Island Theme - Lorin Nelson": "lego_island.ogg",
         #Friend route

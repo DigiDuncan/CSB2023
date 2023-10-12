@@ -550,7 +550,7 @@ label reg_jump:
 label fire_range:
     scene course_3 with fade
     show cs at left with moveinleft
-    pakoo "Alright, you picked up the rifle before you came into this room, right?"
+    pakoo "Alright, you picked up the LMG before you came into this room, right?"
     show m4 at left
     cs "Yep!"
     show cs angry
@@ -706,7 +706,7 @@ label fire_range:
     cs "I took this with me too!"
     hide m4
     show arceus worried
-    arceus "Holy shit! You took the rifle with you?"
+    arceus "Holy shit! You took the LMG with you?"
     show arceus
     cs "Yeah, I don't know, it looked cool, and no one really saw me hiding it."
     cs "So y'know... free gun?"
@@ -878,7 +878,7 @@ label cool_car:
     show pakoo at right
     with moveinright
     copguy "Alright, put your hands in the air!"
-    n "CS pulls out his rifle and fires a few shots in the air."
+    n "CS pulls out his LMG and fires a few shots in the air."
     show cs angry flipped
     show m4 flipped at center with determination
     show m4 fire flipped at center with determination
@@ -929,7 +929,7 @@ label reg_car:
     show pakoo at right
     with moveinright
     copguy "Alright, put your hands in the air!"
-    n "CS pulls out his rifle and fires a few shots in the air."
+    n "CS pulls out his LMG and fires a few shots in the air."
     show cs angry flipped
     show m4 flipped at center with determination
     show m4 fire flipped at center with determination
