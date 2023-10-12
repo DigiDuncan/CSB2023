@@ -49,3 +49,10 @@
 * Various new SFX
 * Fixed various overlapping sprites
 * Fixed various spelling mistakes
+
+## FIXES FROM `1.0b3`
+* Michigan continues being improved
+* The customer and guest now appear in their respective scenes
+* More scenes don't have people smooshed together
+* DB05 now has a beep
+* Pennsylvania now has music
