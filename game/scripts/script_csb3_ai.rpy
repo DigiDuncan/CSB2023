@@ -66,12 +66,14 @@ label csbiii_ai:
     arceus "An amusement park? Seriously, CS?"
     cs "Hey, when life hands you unexpected escapes, you make the most of them!"
     hide cs with moveoutright
+    show arceus flipped with determination
     hide arceus with moveoutright
     scene park2 with fade
     show cs at left with moveinleft
     show arceus at right with moveinright
     n "CS188 and Arceus start exploring the amusement park, hiding among the dilapidated rides and attractions while evading the pursuing cops."
     hide cs with moveoutright
+    show arceus flipped with determination
     hide arceus with moveoutright
     scene carousel with fade
     show cs at left with moveinleft

@@ -1399,10 +1399,14 @@ label karaoke:
     cs "Hmm..."
     cs "Y'know, this song looks interesting..."
     cs "Let's do this one!"
-    scene black with fade
+    scene black with dissolve
     pause 1.0
+    scene karaoke_bar_inside
+    show cs happy at mid_left
+    with dissolve
     show karaoke
-    pause 1.0
+    window hide
+    pause 119
     scene karaoke_bar_inside
     show cs at mid_left
     with fade

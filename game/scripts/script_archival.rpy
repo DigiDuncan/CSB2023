@@ -266,6 +266,75 @@ label archival:
     n "CS runs into another hallway that is now a lot longer, with a lot more turns. CS runs straight for a bit, then turns left when he hears the gunfire. CS switches between going left and right."
     scene archival_10 with dissolve
     scene archival_11 with dissolve
+    scene archival_9a with dissolve
+    scene archival_10a with dissolve
+    scene archival_11a with dissolve
+    play sound "<loop 0>hks2.wav" volume 0.7
+    pause 0.1
+    play sound "<loop 0>hks1.wav" volume 0.7
+    pause 0.1
+    play sound "<loop 0>hks2.wav" volume 0.7
+    pause 0.1
+    play sound "<loop 0>hks1.wav" volume 0.7
+    scene archival_9a with dissolve
+    scene archival_10 with dissolve
+    scene archival_11 with dissolve
+    scene archival_9a with dissolve
+    play sound "<loop 0>hks2.wav" volume 0.7
+    pause 0.1
+    play sound "<loop 0>hks1.wav" volume 0.7
+    pause 0.1
+    play sound "<loop 0>hks2.wav" volume 0.7
+    pause 0.1
+    play sound "<loop 0>hks1.wav" volume 0.7
+    scene archival_10a with dissolve
+    scene archival_11a with dissolve
+    scene archival_9a with dissolve
+    scene archival_10a with dissolve
+    scene archival_11a with dissolve
+    play sound "<loop 0>hks2.wav" volume 0.7
+    pause 0.1
+    play sound "<loop 0>hks1.wav" volume 0.7
+    pause 0.1
+    play sound "<loop 0>hks2.wav" volume 0.7
+    pause 0.1
+    play sound "<loop 0>hks1.wav" volume 0.7
+    scene archival_9a with dissolve
+    scene archival_10 with dissolve
+    scene archival_11 with dissolve
+    scene archival_9a with dissolve
+    play sound "<loop 0>hks2.wav" volume 0.7
+    pause 0.1
+    play sound "<loop 0>hks1.wav" volume 0.7
+    pause 0.1
+    play sound "<loop 0>hks2.wav" volume 0.7
+    pause 0.1
+    play sound "<loop 0>hks1.wav" volume 0.7
+    scene archival_10a with dissolve
+    scene archival_11a with dissolve
+    scene archival_9a with dissolve
+    scene archival_10 with dissolve
+    scene archival_11 with dissolve
+    play sound "<loop 0>hks2.wav" volume 0.7
+    pause 0.1
+    play sound "<loop 0>hks1.wav" volume 0.7
+    pause 0.1
+    play sound "<loop 0>hks2.wav" volume 0.7
+    pause 0.1
+    play sound "<loop 0>hks1.wav" volume 0.7
+    scene archival_9a with dissolve
+    scene archival_10 with dissolve
+    scene archival_11 with dissolve
+    scene archival_9a with dissolve
+    play sound "<loop 0>hks2.wav" volume 0.7
+    pause 0.1
+    play sound "<loop 0>hks1.wav" volume 0.7
+    pause 0.1
+    play sound "<loop 0>hks2.wav" volume 0.7
+    pause 0.1
+    play sound "<loop 0>hks1.wav" volume 0.7
+    scene archival_10 with dissolve
+    scene archival_11 with dissolve
     scene archival_12 with dissolve
     n "After a while, CS continues running straight until he sees a sign that says \"STATION 1: >>>\"."
     n "CS runs down the exit, and follows the signs while running down the hallway."
@@ -293,17 +362,66 @@ label archival:
     scene archival_18
     show cs disappointed at center
     with dissolve
-    n "CS looks ahead and takes a bit of a breather, and the tram starts to speed up. The tram turns off to the left, as an opening to another rail appears. The tram gets onto the lane, and starts speeding incredibly fast."
+    n "CS looks ahead and takes a bit of a breather, and the tram starts to speed up."
+    n "The tram turns off to the left, as an opening to another rail appears."
+    n "The tram gets onto the lane, and starts speeding incredibly fast."
+    show cs disappointed with vpunch
+    show cs disappointed with hpunch
+    show cs disappointed with vpunch
+    show cs disappointed with hpunch
+    show cs disappointed with vpunch
+    show cs disappointed with hpunch
+    show cs disappointed with vpunch
+    show cs disappointed with hpunch
+    show cs disappointed with vpunch
+    show cs disappointed with hpunch
     n "CS looks to his right, as he sees these giant facilities fly past him. "
+    show cs disappointed with vpunch
+    show cs disappointed with hpunch
     n "After about 20 of the facilities fly by, the tram suddenly stops. CS looks around, confused, and then he looks to his left."
-    n "To his left, as a long, endless looking hallway with a blinding light filling up the hallway. The tram slowly starts to rotate onto the light hallway's rail."
-    n "The tram then starts speeding into the light at ludicrous speeds, as CS panics and sees the light envelope the outside of the tram. As CS looks around, he can see glimpses of memories of places he's been to, rushing past him."
-    n "CS panics and tries to stop the train, but it is no use. A message appears at the top of the tram on a panel, that shows someone who looks like one of the guards waving at him."
-    n "CS realizes that there is nothing he can do, and closes his eyes. The tram seems to be going faster, as the light seems to be getting brighter. All of a sudden the tram, the light, and everything disappears."
-    scene black with dissolve
-    $ achievement_manager.unlock("Archived")
+    scene white
+    show archival_18
+    show cs disappointed at center
+    with dissolve
+    n "To his left, as a long, endless looking hallway with a blinding light filling up the hallway."
+    n "The tram slowly starts to rotate onto the light hallway's rail."
+    scene car plains
+    show archival_18
+    show cs scared at center
+    show cs scared with vpunch
+    show cs scared with hpunch
+    show cs scared with vpunch
+    show cs scared with hpunch
+    show cs scared with vpunch
+    show cs scared with hpunch
+    show cs scared with vpunch
+    show cs scared with hpunch
+    show cs scared with vpunch
+    show cs scared with hpunch
+    show cs scared with vpunch
+    show cs scared with hpunch
+    show cs scared with vpunch
+    show cs scared with hpunch
+    n "The tram then starts speeding into the light at ludicrous speeds, as CS panics and sees the light envelope the outside of the tram."
+    n "As CS looks around, he can see glimpses of memories of places he's been to, rushing past him."
+    scene car plains
+    show archival_19
+    with dissolve
+    n "CS panics and tries to stop the train, but it is no use."
+    n "A message appears at the top of the tram on a panel, that shows someone who looks like one of the guards waving at him."
+    scene white
+    show archival_18
+    show cs concentrate at center
+    with dissolve    
+    n "CS realizes that there is nothing he can do, and closes his eyes."
+    n "The tram seems to be going faster, as the light seems to be getting brighter."
+    n "All of a sudden the tram, the light, and everything disappears."
+    scene white with dissolve
     stop music fadeout 3.0
     music end
+    pause 3.0
+    scene black with dissolve
+    $ achievement_manager.unlock("Archived")
     n "The Archival Ending."
     n "CS has been deleted, and has been sent to the beginning of time itself."
     pause 5.0
