@@ -52,9 +52,14 @@
 
 ## FIXES FROM `1.0b3`
 * Michigan continues being improved
+* ||Archival ending|| sees significant improvement
+* Pennsylvania and ||Blooper route|| now have music
+* Jermey is now names Jeremy
 * The customer and guest now appear in their respective scenes
 * More scenes don't have people smooshed together
 * DB05 now has a beep
 * Pennsylvania now has music
 * Cooldowns should reset now
 * Controls now display in ||car minigame||
+* Quack
+* Some grammar and spelling errors we solved
