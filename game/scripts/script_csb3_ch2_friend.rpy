@@ -383,7 +383,7 @@ label car_ride_2:
     show cs dark angry at center
     show tate srs dark at mid_left
     show arceus angry dark flipped at mid_left_left
-    show digi dark flipped at left
+    show digi dark flipped at mid_offscreen_left
     with moveinleft
     copguy "Well? What do you think CS? You ready to go back to jail?"
     cs "Never!"
@@ -637,7 +637,7 @@ label final_meetup:
     show anno at mid_right with moveinright
     anno "Yo."
     $ renpy.movie_cutscene("movies/anno.webm")
-    show midge at right behind anno with moveinright
+    show midge at mid_offscreen_right behind anno with moveinright
     midge "Oh hai."
     $ renpy.movie_cutscene("movies/midge.webm")
     $ achievement_manager.unlock("A Little Help From My Friends")
