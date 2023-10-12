@@ -88,9 +88,12 @@ label csbiii_ai:
     cs "I've got it! Remember that prank we pulled back in prison using inflatable rubber ducks?"
     arceus "How could I forget?"
     cs "Well, let's unleash the \"Quack Attack\" on our pursuers!"
+    play sound "<loop 0>duck.ogg" loop volume 0.7
     n "CS188 and Arceus discreetly inflate dozens of rubber ducks and release them, causing a colorful and noisy chaos."
+    play sound "<loop 0>duck.ogg" loop volume 0.7
     n "The cops are distracted, slipping and sliding on the rubber ducks, as CS188 and Arceus make their getaway."
     hide copguy_ai with moveoutright
+    stop sound fadeout 7.0
     n "The chase scene intensifies as CS188 and Arceus dash through the amusement park, narrowly avoiding capture at every turn."
     show cs flipped with determination
     hide cs with moveoutleft

@@ -501,7 +501,7 @@ label folded:
     scene black with fade
     n "Meanwhile, Arc has been trying to win it big, but in a different kind of way..."
     scene outsafe
-    show arceus flipped at mid_right
+    show arceus full flipped at mid_right
     show drill at center_right
     with fade
     play sound "drill.ogg" loop volume 0.5
@@ -509,37 +509,37 @@ label folded:
     pause 6.0
     show drillbreak at center_right
     play sound "drillbreak.ogg" loop volume 0.5
-    show arceus angry flipped
+    show arceus full angry flipped
     arceus "Fuck!"
     hide drillbreak
-    show arceus flipped
+    show arceus full flipped
     show drill at center_right
     play sound "drill.ogg" loop volume 0.5
     pause 6.0
     show drillbreak at center_right
     play sound "drillbreak.ogg" loop volume 0.5
-    show arceus angry flipped
+    show arceus full angry flipped
     arceus "God damnit!"
     hide drillbreak
-    show arceus flipped
+    show arceus full flipped
     show drill at center_right
     play sound "drill.ogg" loop volume 0.5
     pause 6.0
     show drillbreak at center_right
     play sound "drillbreak.ogg" loop volume 0.5
-    show arceus angry flipped
+    show arceus full angry flipped
     arceus "You broke dick piece of shit drill!"
     hide drillbreak
-    show arceus flipped
+    show arceus full flipped
     show drill at center_right
     play sound "drill.ogg" loop volume 0.5
     pause 3.0
     scene outsafeopen
-    show arceus flipped at mid_right
+    show arceus full flipped at mid_right
     with fade
     play sound "payday.mp3" volume 0.5
     $ achievement_manager.unlock("The House Doesn't Always Win")
-    show arceus happy flipped
+    show arceus full happy flipped
     arceus "Hell yeah!"
     scene insafe with fade
     arceus "Look at all this loot! CS is gonna be so surprised..."
