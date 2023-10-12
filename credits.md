@@ -135,8 +135,9 @@
 - mastamokei
     - Billy Mays Gangsta Remix
 - Imori
-    - Winter Lullaby
     - Melancholy
+- Triosk and Jan Jelinek
+    - MisLeader
 - Deep Gnome
     - Wayward Wanderer
 - Shoichiro Sakamoto

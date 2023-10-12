@@ -52,7 +52,7 @@ init python:
         "Funiculi Holiday - ClascyJitto": "funiculi_holiday.mp3",
         "Speedy Comet - Mahito Yokota": "speedy_comet.mp3",
         "Wayward Wanderer - Deep Gnome": "wayward_wanderer.mp3",
-        "Winter Lullaby - Imori": "winter_lullaby.mp3",
+        "MisLeader - Triosk and Jan Jelinek": "mis_leader.mp3",
         "Melancholy - Imori": "melancholy.mp3",
         "Breakout - Shoichiro Sakamoto": "breakout.mp3",
         "The Metropolis of Fourside - Keiichi Suzuki": "fourside.mp3",

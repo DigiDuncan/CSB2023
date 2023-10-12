@@ -797,7 +797,7 @@ label interstate_69:
     n "As everyone is waiting, the strange glowing grey blob in the corner notices the group and walks over."
     show aria at right with moveinright
     play music "<loop 0>mis_leader.mp3" volume 0.7
-    music MisLeader - Triosk & Jan Jelinek
+    music MisLeader - Triosk and Jan Jelinek
     aria "CS! Arc! What are you doing here?"
     gnome "Aria! I knew I recognized that Scent."
     aria "Omg hi! So you brought them here?"
