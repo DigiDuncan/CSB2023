@@ -1094,6 +1094,7 @@ label scott_movent:
     show car at car_run behind tom
     with move
     tom "This road here was created in 1968, by OHP--{w=0.5}{nw}"
+    play sound "car_crash.ogg" volume 0.7
     scene black
     n "A speeding car rams into Tom, and he flies off into the distance."
     cs "Uh oh. {w=3.5} I didn't see nothin'."
