@@ -34,7 +34,7 @@ label japan_menu:
         if not miku_check:
             locations.append(("Have some fun with Miku", "miku_pizza"))
         if not locations:
-            locations.append(("$JAPAN_LEAVE", "japan_leave"))
+            locations.append(("I've done everything", "japan_leave"))
         label_jump = renpy.display_menu(locations)
         renpy.jump(label_jump)
 
@@ -342,7 +342,7 @@ label england_first:
     hide arceus
     with moveoutright
     show black with dissolve
-    n "Arceus and CS jump on a double decker and heads down to their house."
+    n "Arceus and CS jump on a double decker and head down to their house."
     jump arceus_place
 
 label england_second:
@@ -414,9 +414,9 @@ label arceus_place:
     show cs at left with moveinleft
     play music "<loop 0>wool_gloves.mp3" volume 0.4
     music Wool Gloves - Various Artists
-    cs "You guys have quite a quiant little place!"
+    cs "You guys have quite a quaint little place!"
     show arceus
-    arceus "Yep. This is what 5 quid gets you here."
+    arceus "Yep. This is what five quid gets you here."
     cs "Woah, what? How much is a quid?"
     show arceus happy
     arceus "I'm just messing, it's a little more than a US dollar."
