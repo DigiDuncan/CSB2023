@@ -565,6 +565,11 @@ class Encounter:
             return True
         else:
             return None
+        
+    def reset_cooldowns(self):
+        for f in self.fighters:
+            for a in f.attacks:
+                a._turns_until_available = 0 if not a.used else a.cooldown
 
 class Attacks:
     PUNCH = Attack("Punch", "A simple punch.", damage_fighters)
@@ -622,11 +627,6 @@ class Attacks:
     @classmethod
     def get(cls, k: str, default = None) -> Attack | None:
         return cls.__dict__.get(k, default)
-    
-    @classmethod
-    def reset_cooldowns(cls):
-        for a in cls.attacks:
-            a._turns_until_available = 0 if not a.used else a.cooldown
 
 class Fighters:
     NONE = None

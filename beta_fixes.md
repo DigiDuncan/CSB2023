@@ -56,3 +56,5 @@
 * More scenes don't have people smooshed together
 * DB05 now has a beep
 * Pennsylvania now has music
+* Cooldowns should reset now
+* Controls now display in ||car minigame||
