@@ -299,7 +299,7 @@ define receptionist = Character("Receptionist", callback = char_callback)
 define scott_pres = Character("Scott, President of Domino's Pizza", callback = renpy.partial(char_callback, name = "scott_pres", beep = "scott_pres"))
 define miku = Character("Hatsune Miku", callback = renpy.partial(char_callback, name = "miku", beep = "miku"))
 define hammond = Character("Richard", callback = renpy.partial(char_callback, name = "hammond"))
-define jermey = Character("Jermey", callback = renpy.partial(char_callback))
+define jeremy = Character("Jeremy", callback = renpy.partial(char_callback))
 define james = Character("James", callback = renpy.partial(char_callback))
 define tom = Character("Tom Scott", callback = renpy.partial(char_callback, name = "tom", beep = "tom"))
 define sayori = Character("Sayori", callback = renpy.partial(char_callback, name = "sayori"))
@@ -548,7 +548,7 @@ image mean = "characters/mean.png"
 image ges = "characters/ges.png"
 image gordon = "characters/gordon.png"
 image hammond = "characters/hammond.png"
-image jermey = "characters/jermey.png"
+image jeremy = "characters/jeremy.png"
 image james = "characters/james.png"
 image tom = "characters/tom.png"
 image scott_pres = "characters/scott_pres.png"

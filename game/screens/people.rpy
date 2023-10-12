@@ -49,7 +49,7 @@ init python:
         "lego": "Lego NXT Minifigure",
         "trailtrash": "Trailer Trash",
         "green": "Mr. Green",
-        "jerma": "Jermey Elbertson",
+        "jerma": "Jeremy Elbertson",
         "tsa": "TSA Agent",
         "luigi": "Luigi Mario",
         "mika": "Mikapara",

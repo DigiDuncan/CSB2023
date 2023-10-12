@@ -807,7 +807,7 @@ label top_zone:
     with fade
     play music "<loop 0>lisbon_fever.mp3" volume 0.4
     music Lisbon Fever - Dr. Awesome
-    n "As they drive up to the track, the gang sees Jermey, Richard, and James."
+    n "As they drive up to the track, the gang sees Jeremy, Richard, and James."
     kitty "Alright, we'll watch from the side of the track."
     show arceus happy
     arceus "Good luck, CS!"
@@ -816,23 +816,23 @@ label top_zone:
     n "CS gets out of the car and heads up to the Top Gear crew."
     scene top_gear_track
     show james at right
-    show jermey at mid_right
+    show jeremy at mid_right
     show hammond at center
     with fade
     hammond "So, this bloke thinks he can beat us in his typical car?"
     james "Yeah, he really thinks so."
-    jermey "Hah! I'd like to see him try!"
+    jeremy "Hah! I'd like to see him try!"
     james "Well, you're about to see it."
     show cs at left with moveinleft
     cs "Hey guys! CS here!"
-    jermey "Hey CS, so you think you can beat Richard in a race, huh?"
+    jeremy "Hey CS, so you think you can beat Richard in a race, huh?"
     show cs happy
     cs "Hell yeah I do!"
     show cs
     hammond "Well, I wish you the best of luck, buddy."
     n "As he says that, a McLaren rolls up on the track."
     hammond "I'll be racing against you in this McLaren, and if you manage to beat me, we'll give you £10,000!"
-    jermey "Our money?"
+    jeremy "Our money?"
     james "What if he loses?"
     hammond "Well, obviously, he's gonna lose."
     hammond "If he loses, we'll blow up the car!"
@@ -841,7 +841,7 @@ label top_zone:
     n "CS looks and realizes his license plate matches the Honda Civic on the track."
     show cs worried
     cs "WHAT? How did you get my car?"
-    jermey "We may have stolen your car and shipped it all the way over to the UK for this race."
+    jeremy "We may have stolen your car and shipped it all the way over to the UK for this race."
     james "I mean, it's YOUR car you wanted to race in, right?"
     show cs disappointed
     cs "Yeah, I guess so..."
@@ -863,14 +863,14 @@ label top_lose:
     n "As the race finishes, the contestants get out of their cars."
     scene top_gear_track
     show james at right
-    show jermey at mid_right
+    show jeremy at mid_right
     show hammond at center
     show cs disappointed at left
     with fade
     hammond "Well well well!"
     hammond "Looks like I won after all!"
     hammond "As for you..."
-    n "Jermey pulls out a remote switch that detonates a bomb under CS' car, turning it into scrap."
+    n "Jeremy pulls out a remote switch that detonates a bomb under CS' car, turning it into scrap."
     cs "Fuck."
     bad_end "You want it all,\nbut the world won't give it up!" "top_gear_menu"
 
@@ -880,7 +880,7 @@ label top_win:
     n "As the race finishes, the contestants get out of their cars."
     scene top_gear_track
     show james at right
-    show jermey at mid_right
+    show jeremy at mid_right
     show hammond at center
     show cs happy at left
     with fade
@@ -888,7 +888,7 @@ label top_win:
     cs "Oh you know. I have my ways."
     james "Well, I guess that means we owe him, right?"
     hammond "Yeah, I guess so."
-    hammond "Jermey, can you go remove the bomb from his car?"
+    hammond "Jeremy, can you go remove the bomb from his car?"
     show cs worried
     cs "Wait, there was a bomb on the car the whole time?"
     james "Well, kinda."
