@@ -46,7 +46,7 @@ label game_loop:
                     valid_move = False
                     attacks = []
                     for i, a in enumerate(curr_fighter.attacks):
-                        name = a.name if a._turns_until_available == 0 else f"{a.name} \[{a._turns_until_available} turns remaining]"
+                        name = a.name if a._turns_until_available == 0 else f"{a.name} [{a._turns_until_available} turns remaining]"
                         attacks.append((name, str(i)))
                         attacks.append((a.description, None))
                     print("Attacks:", attacks)
