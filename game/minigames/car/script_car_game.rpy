@@ -25,6 +25,7 @@ init python:
             self.ufo = Image("minigames/car/joj_ufo.png")
             self.laser = Image("minigames/car/laser.png")
             self.laser_ball = Image("minigames/car/energy_ball.png")
+            self.arrows = Image("minigames/car/arrows.png")
 
             self.start_time = None
             self.round_timer = -3  # Time since last UFO move
@@ -58,6 +59,7 @@ init python:
             # Load car and UFO
             car_renderer = renpy.load_image(self.billycar)
             ufo_renderer = renpy.load_image(self.ufo)
+            arrow_renderer = renpy.load_image(self.arrows)
 
             # Make laser red after 10 fires (fast laser)
             if self.fires < 10:
@@ -72,6 +74,8 @@ init python:
                 if (st - self.start_time < 3.5):
                     curr_y = ease_linear(-UFO_Y, UFO_Y, self.start_time+2, self.start_time+3.5, st)
                     r.blit(ufo_renderer, (LANE_X[self.enemy_lane], curr_y))
+                    if  math.sin(10*st) > 0:
+                        r.blit(arrow_renderer, (LANE_X[self.current_lane]-75, 600))
                 else:
                     self.entered = True
             
