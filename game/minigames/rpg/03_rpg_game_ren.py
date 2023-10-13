@@ -829,7 +829,6 @@ class StatBlockDisplayable(renpy.Displayable):
 
         # Remove expired damage indicators and increase time on screen
         for di in self.damage_indicators:
-            print(di.time_on_screen, dt)
             di.time_on_screen += dt
             if di.time_on_screen > DAMAGE_INDICATOR_TIME:
                 self.damage_indicators.remove(di)
