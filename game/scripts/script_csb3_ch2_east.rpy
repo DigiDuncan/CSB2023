@@ -1356,7 +1356,7 @@ label interstate_94:
     cs "You do call yourself Violent Jay. I'd imagine you're used to it by now."
     violent_jay "That's fair."
     violent_jay "Anyway, here's the check for the washer. We gotta head out."
-    show billy at center with moveinleft
+    show billy at mid_mid_left with moveinleft
     billy "What happened there?"
     mario "I'm not sure, but they paid for the washer, so I'm not gonna think about it too hard."
     cs "I'm not a clown. They have to be good at make-up."
