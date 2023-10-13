@@ -15,7 +15,7 @@ See what needs to be done below.
 ### Big Tasks
 - [X] Ending Screens [Pakoo, Sept. W3]
 - [X] Menu for Endings [Arc, Sept. W3]
-- [ ] Commerical [Pakoo, Sept. W4]
+- [X] Commerical [Pakoo, Sept. W4]
 - [ ] Credits [Digi, Sept. W4]
 - [X] Where are they now? [Digi, Sept. W3]
 - [X] End Fight cutscene [Pakoo/Digi, Sept. W4]
@@ -24,14 +24,14 @@ See what needs to be done below.
 - [ ] Installer [Digi, Oct. W3]
 
 ### True Ending [ASAP]
-- [ ] Michigan [Aria]
-    - [ ] Script [66%]
-    - [ ] Backgrounds
-    - [ ] Characters
-    - [ ] Transitions
-    - [ ] Music
-    - [ ] Bios
-    - [ ] Jukebox
+- [X] Michigan [Aria]
+    - [X] Script
+    - [X] Backgrounds
+    - [X] Characters
+    - [X] Transitions
+    - [X] Music
+    - [X] Bios
+    - [X] Jukebox
 
 ### RPG Game [Digi/Arc, Sept. W1]
 - [X] Basic Game Loop
@@ -93,17 +93,17 @@ See what needs to be done below.
 - [X] Ending
 
 ### Archival Ending [Pakoo/Baker, October]
-- [ ] 3D Backgrounds [Baker] [75%]
-- [ ] Animated sequences [Baker] [50%]
+- [ ] 3D Backgrounds [Baker] [90%]
+- [ ] Animated sequences [Baker] [75%]
 - [X] Final writing [Pakoo]
 - [X] Short Archival animation (Error Route) [Pakoo]
 
 ### Passes [All, October W1]
-- [ ] Spelling/Grammar Pass [60%]
-- [ ] Transition/Flip Pass [includes flashes] [60%]
+- [ ] Spelling/Grammar Pass [70%]
+- [ ] Transition/Flip Pass [includes flashes] [70%]
 - [X] Sprite Emotion Pass
 - [X] Sprite Time-of-Day Check
-- [ ] Jukebox/Achievements/Bio Pass [90%]
+- [ ] Jukebox/Achievements/Bio Pass [95%]
 - [ ] Remove/address all TODO comments
 - [ ] Add more bounciness
 - [X] Check Discord channels for missing content

@@ -422,6 +422,7 @@ image craptop off = "characters/craptop/off.png"
 image craptop sad = "characters/craptop/sad.png"
 image craptop updating = "characters/craptop/updating.png"
 image craptop ytp = "characters/craptop/ytp.png"
+image craptop evidence = "characters/craptop/evidence.png"
 
 ## Tate
 image tate = "characters/tate/tatehappy.png"
@@ -660,6 +661,7 @@ image comments = "bg/comments.png"
 image hospital_room = "bg/hospital_room.png"
 image hospital_reception = "bg/hospital_reception.png"
 image ticket_counter = "bg/ticket_counter.png"
+image backseat = "bg/backseat.png"
 
 # Fired route
 image hotel_lobby = "bg/hotel_lobby.png"

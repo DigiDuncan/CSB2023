@@ -2,7 +2,6 @@
 ### VISUAL
 * The intro cutscene has a minor visual error
 * Bad Ending screen has a green haze
-* CSBI footage is missing as ||evidence||
 * The ||Archival|| Ending is missing multiple backgrounds and transitions
 ### GAMEPLAY
 * Sweden is currently not accessible

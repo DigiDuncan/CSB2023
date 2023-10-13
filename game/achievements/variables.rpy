@@ -18,6 +18,7 @@ define achievements = [
     Achievement("Blaster Disaster", "???", "Outrun the JoJites.", "joj"),
     Achievement("You've Been Gnomed", "???", "Hoo!", "gnome"),
     Achievement("Analog Horror Protagonist", "???", "Survive the Michigan woods.", "forest"),
+    Achievement("Creepy Clown Sightings", "???", "Meet a bunch of clowns.", "clowns"),
     Achievement("Pencil Sharpening Day!", "Woohoo!", "Beat Digi at pencil sharpening.", "pencil"),
     Achievement("Pencilovania", "???", "Get a perfect pencil sharpening score.", "300"),
     Achievement("Bored", "Sit through all the car dialouge.", "Sit through all the car dialouge.", "yawn"),

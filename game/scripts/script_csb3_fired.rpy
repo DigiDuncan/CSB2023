@@ -1342,6 +1342,13 @@ label third_tour_day:
     arceus "Make something up!"
     n "CS shouts to the crowd."
     cs "Uh... hey, you guys! Give me a word!"
+    if fun_value(15):
+        crowd "Orange! {w=0.5}Monkey! {w=0.5}Eagle!"
+        show cs concentrate
+        n "CS desperately tries not to think about those words."
+        show cs disappointed
+        cs "Can we try, 3 different words?"
+        show cs
     crowd "Banana! {w=0.5}Street! {w=0.5}Ice!"
     cs "Uh..."
     menu:

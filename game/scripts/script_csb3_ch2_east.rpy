@@ -1390,6 +1390,7 @@ label interstate_94:
     hide violent_jay
     hide shaggy_too_dope
     with moveoutleft
+    $ achievement_manager.unlock("Creepy Clown Sightings")
     show billy at mid_mid_left with moveinleft
     billy "What happened there?"
     mario "I'm not sure, but they paid for the washer, so I'm not gonna think about it too hard."
