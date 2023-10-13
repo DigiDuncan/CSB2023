@@ -1277,6 +1277,7 @@ label interstate_94:
     show smiley at center with moveinright
     smiley "I was just waiting on my laundry and the machine made a loud clang and stopped spinning."
     mario "Alright I'll be right over there."
+    show mario flipped with determination
     hide mario with moveoutright
     pause 1.0
     mario "No shoes in the machine! If it's broken, you're paying for the replacement!"
@@ -1296,6 +1297,7 @@ label interstate_94:
     mario "Alright. Detergent is over in the corner."
     n "Arceus and the others go to the back corner and wait for the hoodie to wash."    
     n "Mario goes back to quietly sobbing in the back room."
+    show mario flipped with determination
     hide mario with moveoutright
     hide cs
     hide arceus

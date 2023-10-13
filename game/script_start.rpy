@@ -569,6 +569,7 @@ image billy dark = "characters/billydark.png"
 image gnome = "characters/gnome.png"
 image smiley = "characters/smiley.png"
 image mario = "characters/mario.png"
+image mario flipped = "flip:characters/mario.png"
 
 # Background Images
 ## CSBI
