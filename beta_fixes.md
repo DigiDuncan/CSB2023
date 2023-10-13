@@ -69,3 +69,5 @@
 * New Achievements
 * CSB1 Evidence now shows up
 * Luigi not as crunchy now
+* Everything should unlock normally now
+* Minor fix with names in RPG
