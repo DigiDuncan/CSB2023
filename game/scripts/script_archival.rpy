@@ -370,8 +370,11 @@ label archival:
     show cs disappointed at center
     with dissolve
     n "The tram turns off to the left, as an opening to another rail appears."
+    show cs scared
+    with shake1
     n "The tram gets onto the lane, and starts speeding incredibly fast."
-    scene train_loop
+    scene archival_18
+    show train_loop
     show cs disappointed at center
     show cs disappointed with vpunch
     show cs disappointed with hpunch
@@ -383,6 +386,8 @@ label archival:
     show cs disappointed with hpunch
     show cs disappointed with vpunch
     show cs disappointed with hpunch
+    show cs disappointed
+    with shake1
     n "CS looks to his right, as he sees these giant facilities fly past him. "
     show cs disappointed with vpunch
     show cs disappointed with hpunch
@@ -410,17 +415,23 @@ label archival:
     show cs scared with hpunch
     show cs scared with vpunch
     show cs scared with hpunch
+    show cs scared
+    with shake2
     n "The tram then starts speeding into the light at ludicrous speeds, as CS panics and sees the light envelope the outside of the tram."
     n "As CS looks around, he can see glimpses of memories of places he's been to, rushing past him."
     scene car plains
     show archival_19
     with dissolve
+    show archival_19
+    with shake1
     n "CS panics and tries to stop the train, but it is no use."
     n "A message appears at the top of the tram on a panel, that shows someone who looks like one of the guards waving at him."
     scene white
     show train_loop
     show cs concentrate at center
-    with dissolve    
+    with dissolve
+    show cs concentrate
+    with shake2
     n "CS realizes that there is nothing he can do, and closes his eyes."
     n "The tram seems to be going faster, as the light seems to be getting brighter."
     n "All of a sudden the tram, the light, and everything disappears."

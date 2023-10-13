@@ -66,3 +66,6 @@
 * Some SFX have their volume lowered
 * Tom dies more realistically
 * Karaoke video works now
+* New Achievements
+* CSB1 Evidence now shows up
+* Luigi not as crunchy now

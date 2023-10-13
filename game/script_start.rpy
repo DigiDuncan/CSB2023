@@ -1154,3 +1154,6 @@ label test:
     show blue_light
     pause
     $ renpy.full_restart()
+
+define shake1 = { "master" : hpunch }
+define shake2 = { "master" : vpunch }
