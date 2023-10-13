@@ -185,10 +185,11 @@ label archival:
     n "CS walks around this giant place, glancing at all of the tanks around him."
     n "CS walks over to one of them, and peers inside to see if he can see anything."
     hide cs with moveoutright
-    scene archival_4 with dissolve
+    scene csb1tube with dissolve
     n "A faint voice can be heard, one that sounds like his own."
     n "CS then sees a blurry vision of what looks like a version of him without his dress or cat ears, playing some kind of game."
-    scene archival_5
+    scene csb1tube
+    show archival_5
     show cs disappointed
     with dissolve
     n "He realizes that the game that he is playing is the world that CS lives in, and it looks like CS is making fun or poking fun at his world."
