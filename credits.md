@@ -230,8 +230,6 @@
 - Black Rebel Motorcycle Club
     - Weapon of Choice
 
-# TODO: THIS IS MISSING A LOT
-
 ## Art
 **CSocola Sprites:** Greta "@lovelycloud"  
 **Arceus Sprites:** UndeadKitty

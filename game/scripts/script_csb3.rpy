@@ -1025,7 +1025,6 @@ label good_convince:
     scene backseat
     show craptop evidence
     with dissolve
-    # TODO: CSBI SCENE
     n "Copguy stops the car as Arceus plays back the scene from {i}CS Bounciness I{/i} with the scamming of CS by HoH SiS."
     scene copcar
     show copguy at mid_left
