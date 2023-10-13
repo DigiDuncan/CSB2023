@@ -774,7 +774,10 @@ image doll_eye_tree = "bg/doll_eye_tree.png"
 image gnome_forest = "bg/gnome_forest.png"
 image forest_clearing = "bg/forest_clearing.png"
 image mario_inside = "bg/mario_inside.png"
+image mario_inside2 = "bg/mario_inside2.png"
 image mario_outside = "bg/mario_outside.png"
+image gnome_forest = "bg/gnome_forest.jpg"
+image forest_clearing = "bg/forest_clearing.jpg"
 
 ## Country Route
 image britport = "bg/britport.png"

@@ -1230,26 +1230,41 @@ label interstate_94:
     show billy car turn with hpunch
     n "Soon after Arceus rolled down the window, they hit a large, flooded pothole."
     n "Water splashes up from the puddle through the car window."
+    show billy car
     arceus "Oh no! My hoodie's a mess now!"
     cs "It was actively making you too hot, so it shouldn't be a big deal, right?"
     arceus "The sun was making me too hot. The hoodie was just making me too comfy!"
     arceus "We're already on a detour. We can just stop at the next laundromat we see and wash it."
-    n "They continue down the road until Arceus notices a laundromat."
     pause 5.0
+    n "They continue down the road until Arceus notices a laundromat."
+    scene mario_outside
+    show billy car
+    with dissolve
     arceus "Alright there's one! Mario's Coin Laundry!"
     arceus "Billy! Pull over!"
     billy "Sure, I guess. I don't know if I'll be around much longer if I say no..."
+    scene black with dissolve
     n "Billy parks the car and they all go inside."
+    scene mario_inside with dissolve
+    play music "<loop 0>trash_zone.mp3" volume 0.3  
+    music Tubular Trash Zone - Mr. Sauceman
+    show cs at left
+    show arceus flipped at mid_left
+    with moveinleft
     mario "Hey paisanos! Welcome to my laundromat!"
+    show arceus worried flipped
     arceus "Wait, Mario? Why are you here?"
     mario "Are you surprised? My name's on the sign and my picture's in the window."
+    show arceus flipped
     arceus "Yeah but I assumed it was just a bootleg."
+    show arceus worried flipped
     arceus "Aren't you meant to be saving princesses or plumbing or driving go-karts or competing in the Olympics or whatever it is you do?"
     arceus "When did you have time to open a laundromat?"
     mario "All that stuff doesn't pay the bills."
     arceus "I'm pretty sure being a plumber is a decent career."
     arceus "And do you how much an olympic swimmer can make just on endorsements alone? It's nuts!"
     arceus "Also don't you get royalties from Nintendo or something?"
+    show arceus flipped
     mario "Miyamoto's my creator so he gets to choose how the royalties are dispursed."
     mario "It's like a trust fund."
     mario "He spent all my royalties on his mo-ped, and now I'm stuck running this laundromat."
@@ -1257,6 +1272,7 @@ label interstate_94:
     arceus "Yeah, that sucks a lot."
     mario "It is what is it."
     n "Suddenly, they all hear a metal banging sound and one of the customers walks over."
+    show smiley at center with moveinright
     smiley "I was just waiting on my laundry and the machine made a loud clang and stopped spinning."
     mario "Alright I'll be right over there."
     pause 1.0
@@ -1267,32 +1283,49 @@ label interstate_94:
     smiley "The shoes were dirty, and I have a show to get to."
     smiley "Speaking of, I still gotta head over there."
     smiley "See ya!"
+    hide smiley with moveoutleft
     n "Smiley runs out of the building and gets into his car."
     n "You hear a loud 'awoooooga!' horn as a colorful little clown car drives past."
     mario "Bastard. I really didn't need this today..."
     mario "Whatever, what do y'all need?"
     arceus "I just need to wash my hoodie before we get back on the road."
     mario "Alright. Detergent is over in the corner."
-    n "Arceus and the others go to the back corner and wait for the hoodie to wash."
+    n "Arceus and the others go to the back corner and wait for the hoodie to wash."    
     n "Mario goes back to quietly sobbing in the back room."
+    hide cs
+    hide arceus
+    with moveoutright
+    scene mario_inside2 with dissolve
+    show cs at left
+    show arceus flipped at mid_left
+    with moveinleft
     n "A gray blob enters the laundromat."
+    show aria flipped at center
+    show aria with determination
     aria "Wait, CS? Arceus?"
+    show cs worried
     cs "Huh, who are you? {i}What{/i} are you?"
     aria "Oh, right! Yeah that makes sense that you wouldn't recognize me. I'm Aria! Remember, AWK?"
     cs "{i}You're{/i} Aria? What happened to you?"
     aria "I got different."
+    show cs
     arceus "I imagine we're not getting more detail then that."
     aria "Not in this game."
     arceus "Fair."
     aria "What are you guys doing here?"
+    show cs disappointed
     cs "We're uh, kinda on a road trip?"
+    show arceus worried flipped
     arceus "From the law."
     cs "Yeah."
     aria "That checks out."
+    show cs
     arceus "Wait, what are you doing here? You clearly don't wear clothes."
     aria "You don't know what I do in my free time."
+    show arceus flipped
     arceus "I suppose not."
     n "Arceus goes to transfer his hoodie."
+    hide arceus with moveoutright
     n "Just as Arceus moves the hoodie into the dryer, two more clowns walk in."
     violent_jay "We're here to see Mario."
     mario "Hey paisanos, what can I--" 
@@ -1323,13 +1356,23 @@ label interstate_94:
     cs "You do call yourself Violent Jay. I'd imagine you're used to it by now."
     violent_jay "That's fair."
     violent_jay "Anyway, here's the check for the washer. We gotta head out."
+    show billy at center with moveinleft
     billy "What happened there?"
     mario "I'm not sure, but they paid for the washer, so I'm not gonna think about it too hard."
     cs "I'm not a clown. They have to be good at make-up."
     mario "I wouldn't worry about it."
+    show arceus at mid_left
+    stop music fadeout 3.0
+    music end
     arceus "Yeah, the hoodie's dry, so we're ready to head out. Here's the money, Mario. Good luck with business."
+    show cs flipped with determination
+    hide cs
+    hide arceus
+    hide billy
+    with moveoutleft
     n "CS, Billy, and Arc all walk out."
     mario "That was really nice. I guess you can have shit in Detroit after all."
+    scene black with dissolve
     jump ohio
     
 label ohio:
