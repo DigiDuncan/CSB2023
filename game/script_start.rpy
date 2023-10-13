@@ -568,6 +568,7 @@ image streetguy = "characters/streetguy.png"
 image billy dark = "characters/billydark.png"
 image gnome = "characters/gnome.png"
 image smiley = "characters/smiley.png"
+image mario = "characters/mario.png"
 
 # Background Images
 ## CSBI
@@ -771,12 +772,10 @@ image cafe_sitting_2 = "bg/cafe_sitting_2.png"
 image trafficjam = "bg/trafficjam.png"
 image east_cafe = "bg/east_cafe.png"
 image doll_eye_tree = "bg/doll_eye_tree.png"
-image gnome_forest = "bg/gnome_forest.png"
-image forest_clearing = "bg/forest_clearing.png"
 image mario_inside = "bg/mario_inside.png"
 image mario_inside2 = "bg/mario_inside2.png"
 image mario_outside = "bg/mario_outside.png"
-image gnome_forest = "bg/gnome_forest.jpg"
+image gnome_forest = "bg/gnome_forest.png"
 image forest_clearing = "bg/forest_clearing.jpg"
 
 ## Country Route

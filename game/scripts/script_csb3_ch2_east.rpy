@@ -1245,7 +1245,9 @@ label interstate_94:
     billy "Sure, I guess. I don't know if I'll be around much longer if I say no..."
     scene black with dissolve
     n "Billy parks the car and they all go inside."
-    scene mario_inside with dissolve
+    scene mario_inside
+    show mario at right
+    with dissolve
     play music "<loop 0>trash_zone.mp3" volume 0.3  
     music Tubular Trash Zone - Mr. Sauceman
     show cs at left
@@ -1275,9 +1277,11 @@ label interstate_94:
     show smiley at center with moveinright
     smiley "I was just waiting on my laundry and the machine made a loud clang and stopped spinning."
     mario "Alright I'll be right over there."
+    hide mario with moveoutright
     pause 1.0
     mario "No shoes in the machine! If it's broken, you're paying for the replacement!"
     n "Mario takes out the shoes and tries running the machine, but it doesn't turn back on."
+    show mario at right with moveinright
     mario "There are 3 signs that say not to put shoes in the machine, and you decide to put these big-ass clown shoes in there?!"
     mario "You really are a damn clown, I'll tell you that for free."
     smiley "The shoes were dirty, and I have a show to get to."
@@ -1292,6 +1296,7 @@ label interstate_94:
     mario "Alright. Detergent is over in the corner."
     n "Arceus and the others go to the back corner and wait for the hoodie to wash."    
     n "Mario goes back to quietly sobbing in the back room."
+    hide mario with moveoutright
     hide cs
     hide arceus
     with moveoutright
@@ -1322,11 +1327,16 @@ label interstate_94:
     show cs
     arceus "Wait, what are you doing here? You clearly don't wear clothes."
     aria "You don't know what I do in my free time."
+    show aria flipped
+    hide aria with moveoutright
     show arceus flipped
     arceus "I suppose not."
     n "Arceus goes to transfer his hoodie."
     hide arceus with moveoutright
     n "Just as Arceus moves the hoodie into the dryer, two more clowns walk in."
+    scene mario_inside
+    show mario at right
+    with dissolve
     violent_jay "We're here to see Mario."
     mario "Hey paisanos, what can I--" 
     pause 0.5
@@ -1346,19 +1356,26 @@ label interstate_94:
     violent_jay "Clown connection again. I could detect two clowns in here."
     mario "Smiley was the only one."
     violent_jay "There was definitely two. The other is still here."
-    n "They walk towards the back where CS, Arc, and Billy are, and Violent Jay points at CS."
+    n "They walk towards the back where CS and Arc are, and Violent Jay points at CS."
+    scene mario_inside2
+    show cs at left
+    with dissolve
     violent_jay "There he is!"
     cs "Who, me? Are you guys Insane Clown Posse?! What do you want with me?"
     violent_jay "Chill, man. You're just the other clown we detected here."
+    show cs worried
     cs "I'm not a clown..."
     shaggy_too_dope "Can't argue with the clown sense. Definitely a clown."
     violent_jay "Why is everybody so worried whenever they see us today?"
+    show cs
     cs "You do call yourself Violent Jay. I'd imagine you're used to it by now."
     violent_jay "That's fair."
     violent_jay "Anyway, here's the check for the washer. We gotta head out."
     show billy at mid_mid_left with moveinleft
+    show mario at right with moveinright
     billy "What happened there?"
     mario "I'm not sure, but they paid for the washer, so I'm not gonna think about it too hard."
+    show cs disappointed
     cs "I'm not a clown. They have to be good at make-up."
     mario "I wouldn't worry about it."
     show arceus at mid_left
