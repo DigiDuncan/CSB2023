@@ -7,7 +7,6 @@
 * The ||Archival|| Ending is missing multiple backgrounds and transitions
 ### GAMEPLAY
 * Sweden is currently not accessible
-* The Michigan route is in a non-final state
 * ||RPG game still needs a decent amount of balancing work. Please report any cheeses you find or impossible-to-win scenarios (softlocks.)||
 ### VIDEO
 * An ending video (||"Where Are They Now?"||) still has beta character sprites in it
@@ -48,10 +47,12 @@
 * Fixed various spelling mistakes
 
 ## FIXES FROM `1.0b3`
-* Michigan continues being improved
 * ||Archival ending|| sees significant improvement
 * Pennsylvania and ||Blooper route|| now have music
+* Moved the isaac reference a bit after the WoC video
 * Jermey is now names Jeremy
+* CS' rifle is now called an LMG
+* The gnome no longer floats
 * The customer and guest now appear in their respective scenes
 * More scenes don't have people smooshed together
 * DB05 now has a beep
@@ -61,3 +62,9 @@
 * Quack
 * Some grammar and spelling errors we solved
 * Aria and Gnome now have beeps
+* Michigan is done, please test that part of the game
+* Borderlands intros in friend route have audio
+* Weapon Of Choice video has updated sprites
+* Some SFX have their volume lowered
+* Tom dies more realistically
+* Karaoke video works now

@@ -102,13 +102,15 @@ label archival:
     worker_1 "I don't know!"
     show k199 flipped
     k199 "What the fuck is that thing? Why is it looking at us? Make it do something!"
+    show worker_4 at center
+    hide worker_1
     k207 "Who is this person? Are they a construction worker? Are they a businessman?"
     n "CS suddenly lets his instinct take over."
     show cs angry
     cs "BullShisH!"
     play sound "audio/punch.ogg"
-    show worker_1 at center with hpunch
-    hide worker_1 with moveoutright
+    show worker_4 at center with hpunch
+    hide worker_4 with moveoutright
     n "CS punches the worker to the ground."
     k199 "Oh shit man! He's gone AWOL!"
     k207 "I don't think that's what AWOL means, but still, do something, 17!"
@@ -122,7 +124,7 @@ label archival:
     k199 "God, WTF are those things? Make them attack CS!"
     nova "Nova Nova NOVAAAA!"
     show nova2 at mid_right with vpunch
-    n "The heads charge toward the group, trying to bite and rip them apart."
+    n "The heads charge toward the wrong people, trying to bite and rip them apart."
     show nova1 at mid_mid_right with vpunch
     k207 "AH! AHH! FUCK GET THEM OFF!"
     show nova3 at mid_left with vpunch
@@ -363,8 +365,13 @@ label archival:
     show cs disappointed at center
     with dissolve
     n "CS looks ahead and takes a bit of a breather, and the tram starts to speed up."
+    scene train_start
+    show cs disappointed at center
+    with dissolve
     n "The tram turns off to the left, as an opening to another rail appears."
     n "The tram gets onto the lane, and starts speeding incredibly fast."
+    scene train_loop
+    show cs disappointed at center
     show cs disappointed with vpunch
     show cs disappointed with hpunch
     show cs disappointed with vpunch
@@ -380,13 +387,13 @@ label archival:
     show cs disappointed with hpunch
     n "After about 20 of the facilities fly by, the tram suddenly stops. CS looks around, confused, and then he looks to his left."
     scene white
-    show archival_18
+    show train_loop
     show cs disappointed at center
     with dissolve
     n "To his left, as a long, endless looking hallway with a blinding light filling up the hallway."
     n "The tram slowly starts to rotate onto the light hallway's rail."
     scene car plains
-    show archival_18
+    show train_loop
     show cs scared at center
     show cs scared with vpunch
     show cs scared with hpunch
@@ -410,7 +417,7 @@ label archival:
     n "CS panics and tries to stop the train, but it is no use."
     n "A message appears at the top of the tram on a panel, that shows someone who looks like one of the guards waving at him."
     scene white
-    show archival_18
+    show train_loop
     show cs concentrate at center
     with dissolve    
     n "CS realizes that there is nothing he can do, and closes his eyes."
