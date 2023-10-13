@@ -40,6 +40,9 @@ init python:
         "streetguy": "Streetguy",
         "gnome": "Gnome",
         "aria": "Aria",
+        "mario": "Mario Mario",
+        "smiley": "Smiley The Hip Hop Clown",
+        "jay": "The Insane Clown Posse",
         "scott": "Scott Wozniak",
         "terry": "Terry Lesler",
         "pencil": "Pencil Greeter",
@@ -193,5 +196,7 @@ screen person(l):
                 add "images/characters/laptop.png" xalign 1.0 yalign 1.0
             elif l == "hammond":
                 add "images/characters/topgear.png" xalign 1.0 yalign 1.0 zoom 0.55
+            elif l == "jay":
+                add "images/characters/posse.png" xalign 1.0 yalign 1.0 zoom 0.55
             else:
                 add f"images/characters/{l}.png" xalign 1.0 yalign 1.0 zoom 0.75

@@ -310,9 +310,9 @@ define crowd = Character("Crowd", callback = char_callback)
 define worker = Character("Worker", callback = char_callback)
 define streetguy = Character("Street Guy", callback = renpy.partial(char_callback, name = "streetguy", beep = "nice"))
 define waitress = Character("Waitress", callback = char_callback)
-define mario = Character("Mario", callback = char_callback)
-define smiley = Character("Smiley", callback = char_callback)
-define violent_jay = Character("Violent Jay", callback = char_callback)
+define mario = Character("Mario", callback = renpy.partial(char_callback, name = "mario"))
+define smiley = Character("Smiley", callback = renpy.partial(char_callback, name = "smiley"))
+define violent_jay = Character("Violent Jay", callback = renpy.partial(char_callback, name = "jay"))
 define shaggy_too_dope = Character("Shaggy Too Dope", callback = char_callback)
 
 # Character Images
@@ -361,6 +361,8 @@ image cs insane disappointed = "characters/cs/insane2.png"
 ## Arc
 image arceus = "characters/arc/arceus.png"
 image arceus flipped = "flip:characters/arc/arceus.png"
+image arceus dirty = "characters/arc/arceusdirty.png"
+image arceus dirty flipped = "flip:characters/arc/arceusdirty.png"
 image arceus full happy = "characters/arc/happyfull.png"
 image arceus full happy flipped = "flip:characters/arc/happyfull.png"
 image arceus full = "characters/arc/full.png"
@@ -381,6 +383,8 @@ image arceus prison = "characters/arc/prison.png"
 image arceus prison flipped = "flip:characters/arc/prison.png"
 image arceus worried = "characters/arc/worried.png"
 image arceus worried flipped = "flip:characters/arc/worried.png"
+image arceus dirty worried = "characters/arc/worrieddirty.png"
+image arceus dirty worried flipped = "flip:characters/arc/worrieddirty.png"
 image arceus worried dark = "characters/arc/worrieddark.png"
 image arceus worried dark flipped = "flip:characters/arc/worrieddark.png"
 image arceus dark = "characters/arc/arceusdark.png"
@@ -570,6 +574,8 @@ image gnome = "characters/gnome.png"
 image smiley = "characters/smiley.png"
 image mario = "characters/mario.png"
 image mario flipped = "flip:characters/mario.png"
+image violent_jay = "characters/jay.png"
+image shaggy_too_dope = "characters/shaggydope.png"
 
 # Background Images
 ## CSBI
@@ -979,6 +985,9 @@ default swedfirst = False
 default japfirst = False
 default archack = False
 default jade = False
+default clown = False
+default nome = False
+
 
 # Fired route
 default band_name = "CS' Crazy Crew"

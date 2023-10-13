@@ -656,6 +656,7 @@ label michigan:
             jump interstate_94
 
 label interstate_69:
+    $ nome = True
     cs "We're on a detour anyway. May as well take the funny route."
     billy "Alright. 69 it is."
     arceus "I don't know if that's safe while driving, but we can once we stop somewhere I suppose."
@@ -1180,7 +1181,7 @@ label interstate_69:
     scene aria_apartment_outside
     show billy at left
     show cs
-    show arceus at mid_left
+    show arceus flipped at mid_left
     show aria at right
     with dissolve
     stop music fadeout 3.0
@@ -1203,6 +1204,7 @@ label interstate_69:
     jump ohio
 
 label interstate_94:
+    $ clown = True
     cs "What are you talking about? We're getting on 94."
     cs "We've all been through way too much for me to want to take any unnecessary detours."
     cs "I'm so tired. I just want to get home..."
@@ -1227,6 +1229,7 @@ label interstate_94:
     arceus "If you wanna see me naked, you can just ask..."
     cs "I didn't mean-- whatever..."
     show billy car turn with vpunch
+    play sound "audio/splash.mp3"
     show billy car turn with hpunch
     n "Soon after Arceus rolled down the window, they hit a large, flooded pothole."
     n "Water splashes up from the puddle through the car window."
@@ -1251,22 +1254,22 @@ label interstate_94:
     play music "<loop 0>trash_zone.mp3" volume 0.3  
     music Tubular Trash Zone - Mr. Sauceman
     show cs at left
-    show arceus flipped at mid_left
+    show arceus dirty flipped at mid_left
     with moveinleft
     mario "Hey paisanos! Welcome to my laundromat!"
-    show arceus worried flipped
+    show arceus dirty worried flipped
     arceus "Wait, Mario? Why are you here?"
     mario "Are you surprised? My name's on the sign and my picture's in the window."
-    show arceus flipped
+    show arceus dirty flipped
     arceus "Yeah but I assumed it was just a bootleg."
-    show arceus worried flipped
+    show arceus dirty worried flipped
     arceus "Aren't you meant to be saving princesses or plumbing or driving go-karts or competing in the Olympics or whatever it is you do?"
     arceus "When did you have time to open a laundromat?"
     mario "All that stuff doesn't pay the bills."
     arceus "I'm pretty sure being a plumber is a decent career."
     arceus "And do you how much an olympic swimmer can make just on endorsements alone? It's nuts!"
     arceus "Also don't you get royalties from Nintendo or something?"
-    show arceus flipped
+    show arceus dirty flipped
     mario "Miyamoto's my creator so he gets to choose how the royalties are dispursed."
     mario "It's like a trust fund."
     mario "He spent all my royalties on his mo-ped, and now I'm stuck running this laundromat."
@@ -1290,6 +1293,7 @@ label interstate_94:
     smiley "See ya!"
     hide smiley with moveoutleft
     n "Smiley runs out of the building and gets into his car."
+    play sound "audio/gamer_and_girl.mp3" volume 0.4
     n "You hear a loud 'awoooooga!' horn as a colorful little clown car drives past."
     mario "Bastard. I really didn't need this today..."
     mario "Whatever, what do y'all need?"
@@ -1304,10 +1308,10 @@ label interstate_94:
     with moveoutright
     scene mario_inside2 with dissolve
     show cs at left
-    show arceus flipped at mid_left
+    show arceus dirty flipped at mid_left
     with moveinleft
     n "A gray blob enters the laundromat."
-    show aria flipped at center
+    show aria flipped at center with moveinleft
     show aria with determination
     aria "Wait, CS? Arceus?"
     show cs worried
@@ -1316,13 +1320,13 @@ label interstate_94:
     cs "{i}You're{/i} Aria? What happened to you?"
     aria "I got different."
     show cs
-    arceus "I imagine we're not getting more detail then that."
+    arceus "I imagine we're not getting more detail than that."
     aria "Not in this game."
     arceus "Fair."
     aria "What are you guys doing here?"
     show cs disappointed
     cs "We're uh, kinda on a road trip?"
-    show arceus worried flipped
+    show arceus dirty worried flipped
     arceus "From the law."
     cs "Yeah."
     aria "That checks out."
@@ -1331,7 +1335,7 @@ label interstate_94:
     aria "You don't know what I do in my free time."
     show aria flipped
     hide aria with moveoutright
-    show arceus flipped
+    show arceus dirty flipped
     arceus "I suppose not."
     n "Arceus goes to transfer his hoodie."
     hide arceus with moveoutright
@@ -1339,6 +1343,9 @@ label interstate_94:
     scene mario_inside
     show mario at right
     with dissolve
+    show shaggy_too_dope at left
+    show violent_jay at mid_left
+    with moveinleft
     violent_jay "We're here to see Mario."
     mario "Hey paisanos, what can I--" 
     pause 0.5
@@ -1359,9 +1366,15 @@ label interstate_94:
     mario "Smiley was the only one."
     violent_jay "There was definitely two. The other is still here."
     n "They walk towards the back where CS and Arc are, and Violent Jay points at CS."
+    hide violent_jay
+    hide shaggy_too_dope
+    with moveoutright
     scene mario_inside2
     show cs at left
     with dissolve
+    show shaggy_too_dope at mid_right
+    show violent_jay at center
+    with moveinright
     violent_jay "There he is!"
     cs "Who, me? Are you guys Insane Clown Posse?! What do you want with me?"
     violent_jay "Chill, man. You're just the other clown we detected here."
@@ -1372,15 +1385,18 @@ label interstate_94:
     show cs
     cs "You do call yourself Violent Jay. I'd imagine you're used to it by now."
     violent_jay "That's fair."
-    violent_jay "Anyway, here's the check for the washer. We gotta head out."
-    show billy at mid_mid_left with moveinleft
     show mario at right with moveinright
+    violent_jay "Anyway, here's the check for the washer. We gotta head out."
+    hide violent_jay
+    hide shaggy_too_dope
+    with moveoutleft
+    show billy at mid_mid_left with moveinleft
     billy "What happened there?"
     mario "I'm not sure, but they paid for the washer, so I'm not gonna think about it too hard."
     show cs disappointed
     cs "I'm not a clown. They have to be good at make-up."
     mario "I wouldn't worry about it."
-    show arceus at mid_left
+    show arceus at mid_left with moveinright
     stop music fadeout 3.0
     music end
     arceus "Yeah, the hoodie's dry, so we're ready to head out. Here's the money, Mario. Good luck with business."
@@ -1628,8 +1644,8 @@ label pennsylvania:
     hide crowd onlayer broadcast
     host "ALL THEY HAVE TO DO IS {color=#ffff00}SHARPEN THE PENCILS AS QUICKLY AS POSSIBLE,{/color} WITHOUT {color=#ffff00}GETTING THE ERASER STUCK!"
     host "IT'S A TRULY MAGICAL EVENT, AND YOU'RE ALL ABOUT TO WITNESS IT! ARE YOU ALL READY?"
-    play sound2 "audio/cheer1.mp3" noloop volume 0.7
-    play sound "audio/cheer2.mp3" noloop volume 0.7
+    play sound2 "audio/cheer1.mp3" noloop volume 0.5
+    play sound "audio/cheer2.mp3" noloop volume 0.5
     show crowd at t_stagescreen onlayer broadcast
     n "The crowd is going absolutely crazy."
     hide crowd onlayer broadcast
@@ -1661,8 +1677,8 @@ label win_pencil:
     show mettaton at t_stagescreen onlayer broadcast 
     host "HOLY TICONDEROGA! WE HAVE A WINNER!"
     show crowd at t_stagescreen onlayer broadcast
-    play sound "audio/cheer2.mp3" noloop
-    play sound2 "audio/cheer1.mp3" noloop
+    play sound "audio/cheer2.mp3" noloop volume 0.6
+    play sound2 "audio/cheer1.mp3" noloop volume 0.6
     n "As if they couldn't get any louder, the crowd is going insane."
     hide crowd onlayer broadcast
     play music "<loop 0>showtime.mp3" volume 0.4
@@ -1854,6 +1870,16 @@ label talktohohsis:
     host "YOU ARE A PENCIL SHARPENING GOD!"
     show aria at mid_left behind cs with moveinleft
     aria "You're a pretty cool guy, CS."
+    if nome:
+        show gnome at mid_left_left with moveinleft
+        gnome "Follow ze path of de forest!"
+    elif clown:
+        show mario flipped at mid_left_left with moveinleft
+        mario "Wahoo!"
+        show shaggy_too_dope at mid_left_left with moveinleft
+        show violent_jay at mid_left with moveinleft
+        violent_jay "Our clown sense sensed you were in danger!"
+        shaggy_too_dope "Don't mess with CS! He's one of us!"
     show scott at center with moveinleft
     show scott_border with dissolve
     scott "Hey all, Scott here! I love CS and his content!"
@@ -1887,6 +1913,7 @@ label talktohohsis:
     hide aria
     hide scott
     hide pencilguy
+    hide gnome
     hide bubble
     with moveoutleft
     hide scott_border with dissolve
