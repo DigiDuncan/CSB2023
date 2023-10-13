@@ -310,6 +310,10 @@ define crowd = Character("Crowd", callback = char_callback)
 define worker = Character("Worker", callback = char_callback)
 define streetguy = Character("Street Guy", callback = renpy.partial(char_callback, name = "streetguy", beep = "nice"))
 define waitress = Character("Waitress", callback = char_callback)
+define mario = Character("Mario", callback = char_callback)
+define smiley = Character("Smiley", callback = char_callback)
+define violent_jay = Character("Violent Jay", callback = char_callback)
+define shaggy_too_dope = Character("Shaggy Too Dope", callback = char_callback)
 
 # Character Images
 ## CS
@@ -563,6 +567,7 @@ image waitress = "characters/waitress.png"
 image streetguy = "characters/streetguy.png"
 image billy dark = "characters/billydark.png"
 image gnome = "characters/gnome.png"
+image smiley = "characters/smiley.png"
 
 # Background Images
 ## CSBI
@@ -760,15 +765,16 @@ image creepy_path_3 = "bg/creepy_path_3.png"
 image creepy_path_4 = "bg/michigan_creepy_forest.png"
 image creepy_path_fairy = "bg/creepy_path_fairy.png"
 image creepy_path_exit = "bg/michigan_forest_bridge.png"
-
 image cafe_entrance = "bg/east_cafe_interior.png"
 image cafe_sitting = "bg/cafe_sitting.png"
 image cafe_sitting_2 = "bg/cafe_sitting_2.png"
 image trafficjam = "bg/trafficjam.png"
 image east_cafe = "bg/east_cafe.png"
 image doll_eye_tree = "bg/doll_eye_tree.png"
-image gnome_forest = "bg/gnome_forest.jpg"
-image forest_clearing = "bg/forest_clearing.jpg"
+image gnome_forest = "bg/gnome_forest.png"
+image forest_clearing = "bg/forest_clearing.png"
+image mario_inside = "bg/mario_inside.png"
+image mario_outside = "bg/mario_outside.png"
 
 ## Country Route
 image britport = "bg/britport.png"

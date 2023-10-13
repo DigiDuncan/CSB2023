@@ -7,7 +7,6 @@
 * The ||Archival|| Ending is missing multiple backgrounds and transitions
 ### GAMEPLAY
 * Sweden is currently not accessible
-* A menu option is missing in Michigan
 * The Michigan route is in a non-final state
 * ||RPG game still needs a decent amount of balancing work. Please report any cheeses you find or impossible-to-win scenarios (softlocks.)||
 ### VIDEO
