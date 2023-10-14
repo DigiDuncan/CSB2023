@@ -227,8 +227,8 @@ screen jukebox_nav():
     add Color('#323e42', alpha=0.75)
 
     viewport:
-        xpos 25 ypos 400
-        xsize 350 ysize 350
+        xpos 25 ypos 150
+        xsize 350 ysize 700
         mousewheel True
         draggable True
         pagekeys True
