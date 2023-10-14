@@ -26,17 +26,19 @@ label csbi_start:
     show pakoo at right with moveinright
     $ quick_menu = True
     window show
-    pakoo "Oh whoops!"
-    pakoo "The old game is still here..."
-    pakoo "Lemme fix that real quick for you."
-    play sound "page.wav" volume 5
-    if e1:
-        show pakoo disappointed with determination
-        hide pakoo
-    else:
-        hide pakoo
-    hide oldgame
-    with moveoutright
+    if persistent.first_time:
+        pakoo "Oh whoops!"
+        pakoo "The old game is still here..."
+        pakoo "Lemme fix that real quick for you."
+        play sound "page.wav" volume 5
+        if e1:
+            show pakoo disappointed with determination
+            hide pakoo
+        else:
+            hide pakoo
+        hide oldgame
+        with moveoutright
+    persistent.first_time = False
     play music "<loop 0>lets_hear_my_baby.mp3" volume 0.15
     music "Let's hear my baby - Walkman"
     cs "Welp, time to start up the ol' Craptop."

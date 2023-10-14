@@ -8,6 +8,7 @@ default persistent.heard = set()
 default persistent.true_ending = False
 default persistent.creative_mode = False
 default persistent.seen_splash = False
+default persistent.first_time = True
 
 # Chapter unlocks
 default persistent.csb2_unlocked = False
