@@ -2,6 +2,10 @@ init python:
     renpy.add_layer("music", above = "master")
     renpy.add_layer("popup", above = "overlay")
 
+# WARN:
+# For some reason the linter thinks that persistent variables with underscores
+# are never initialized. It's lying to you; it's fine.
+
 define determination = Dissolve(0.0)
 default persistent.seen = set()
 default persistent.heard = set()
@@ -86,8 +90,6 @@ python early:
         lint = lint_music,
         execute = execute_music)
 
-default fun_values_seen = set()
-
 init python:
     # MUSIC POPUP
     def _music_gen_text(st, at):
@@ -145,6 +147,7 @@ init python:
         zo = math.pow(2, 10 * x - 10)
         return lerp(minimum, maximum, zo)
 
+    # I think I stole this from SizeBot, don't tell anyone
     def sentence_join(items, *, joiner=None, oxford=False) -> str:
         """Join a list of strings like a sentence."""
         # Do this in case we received something like a generator, that needs to be wrapped in a list
@@ -165,8 +168,6 @@ init python:
 
         return f"{', '.join(items[:-1])}{ox} {joiner} {items[-1]}"
 
-    fun_values_seen = set()
-
     # FUN VALUES
     def fun_value(rarity: int, id: str = None) -> bool:
         if not preferences.bounciness_enable:
@@ -174,10 +175,6 @@ init python:
         r = ease_linear(rarity, 1, 0, 100, preferences.csbounciness)
         chance = 1 / r
         ret = renpy.random.random() < chance
-        if ret and id is not None:
-            fun_values_seen.add(id)
-        elif not ret and id is not None:
-            fun_values_seen.remove(id)
         if ret:
             achievement_manager.unlock("F.U.N.")
         return ret

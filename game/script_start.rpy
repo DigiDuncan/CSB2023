@@ -961,7 +961,6 @@ layeredimage copguy_ex:
         attribute wow default:
             "copguy_ex_front"
 
-image ai_duck = "duck.png"
 image ai_ducks = SnowBlossom("duck.png", 50)
 
 # Layers?
@@ -991,8 +990,7 @@ default japfirst = False
 default archack = False
 default jade = False
 default clown = False
-default nome = False
-
+default nome = False  # wow I hate this name
 
 # Fired route
 default band_name = "CS' Crazy Crew"
