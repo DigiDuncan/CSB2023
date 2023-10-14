@@ -589,7 +589,7 @@ class Attacks:
     LIGHT_CAST = Attack("Light Cast", "A strong blast of light that varies in damage.", random_damage_fighters, cooldown = 3, min_mult = 1, max_mult = 3)
     INSIGHT = Attack("Insight", "Lowers enemies attack by a little.", change_stat, stat = "atk", mult = 0.75)
     SHOTGUN = Attack("Shotgun", "Blast your enemies twice with a powerful shotgun blast!", damage_fighters, target_count = 2, cooldown = 3, mult = 2)
-    ENCOURAGE = Attack("Encourage", "Heal your team with morale!", heal_fighters, target_count = 0, target_type = "allies", mult = 2)
+    ENCOURAGE = Attack("Encourage", "Heal one member with morale!", heal_fighters, target_count = 1, target_type = "allies", mult = 1)
     HIGH_NOON = Attack("High Noon", "Quickly blast 3 targets, or 3 shots on 1!", damage_fighters, target_count = 3, cooldown = 3, mult = 0.75)
     SCRATCH = Attack("Scratch", "A basic scratch attack.", damage_fighters)
     ARMOUR = Attack("Armour", "Boost one's defense!", change_stat, stat = "ap", target_count = 1, target_type = "allies", cooldown = 3, mult = 2.5)
