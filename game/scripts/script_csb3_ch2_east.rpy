@@ -1219,7 +1219,7 @@ label interstate_94:
     show billy car
     with fade
     billy "Looks like there's a traffic jam up ahead. I'm gonna get off and take a detour."
-    arceus "I'm gonna roll a window down now that we're off the highway and it's less noisey."
+    arceus "I'm gonna roll a window down now that we're off the highway and it's less noisy."
     play sound "roll_window.ogg" volume 0.7
     pause 1.0 
     arceus "It's crazy hot in here right now."
@@ -1270,7 +1270,7 @@ label interstate_94:
     arceus "And do you how much an olympic swimmer can make just on endorsements alone? It's nuts!"
     arceus "Also don't you get royalties from Nintendo or something?"
     show arceus dirty flipped
-    mario "Miyamoto's my creator so he gets to choose how the royalties are dispursed."
+    mario "Miyamoto's my creator so he gets to choose how the royalties are dispersed."
     mario "It's like a trust fund."
     mario "He spent all my royalties on his mo-ped, and now I'm stuck running this laundromat."
     cs "Sorry to hear that."
