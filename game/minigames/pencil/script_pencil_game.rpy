@@ -3,10 +3,10 @@ init python:
 
     # Constants
     SHARPENER_MOUTH = 1430
-    DIGI_SCORE = 270
+    DIGI_SCORE = 250
     MAX_PENCIL_LENGTH = 20.0
     SHARPEN_AMOUNT = 0.5
-    GAME_LENGTH = 63
+    GAME_LENGTH = 60 + 3
     PENCIL_WIDTH_PX = int(41.2 * 20)
     ERASER_SIZE = 200
     PENCIL_LIMIT = 15
@@ -199,13 +199,13 @@ label play_pencilgame:
 
     if _return >= 300:
         $ achievement_manager.unlock("Pencilovania")
-    if event_happened("archack"):
-        if _return > 180:
+    if archack:
+        if _return > (DIGI_SCORE - 70):
             $ achievement_manager.unlock("Pencil Sharpening Day!")
             jump win_pencil
         else:
             arceus "You dumb foreskin."
-            jump play_pencilgame         
+            jump play_pencilgame
     else:
         if _return > DIGI_SCORE:
             $ achievement_manager.unlock("Pencil Sharpening Day!")

@@ -180,10 +180,3 @@ init python:
         if ret:
             achievement_manager.unlock("F.U.N.")
         return ret
-
-    def event_happened(id: str) -> bool:
-        global fun_values_seen
-        try:
-            return id in fun_values_seen
-        except NameError:
-            fun_values_seen = set()
