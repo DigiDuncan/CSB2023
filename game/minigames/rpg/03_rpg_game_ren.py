@@ -602,7 +602,7 @@ class Attacks:
     ROBOPUNCH = Attack("RoboPunch", "A strong punch.", damage_fighters, mult = 1.75)
     HOLOSHIELD = Attack("HoloShield", "Boosts your team's defense by a bit.", change_stat, stat = "ap", target_count = 0, target_type = "allies", cooldown = 3, mult = 1.75)
     MUSIC_BOOST = Attack("Music Boost", "Boost one's defense by a bit.", change_stat, stat = "ap", target_count = 1, target_type = "allies", mult = 1.5)
-    RAVE_DEF = Attack("Rave DEF", "Lowers the enemies defense.", change_stat, stat = "ap", cooldown = 3, mult = 0.5)
+    RAVE_DEF = Attack("Rave DEF", "Lowers the enemies defense.", change_stat, target_count = 0, target_type = "enemies", stat = "ap", cooldown = 3, mult = 0.5)
     RAVE_OFF = Attack("Rave OFF", "Rupture eardrums.", damage_fighters, target_count = 0, target_type = "enemies", cooldown = 3, mult = 0.5)
     RAVE = ComboAttack("Rave", "Blast your enemies' eardrums! (Damages and lowers defense.)", [RAVE_DEF, RAVE_OFF])
     SAMPLE_SPAM = Attack("Sample Spam", "", random_damage_fighters, min_mult = 1, max_mult = 3, mult = 1)
