@@ -92,7 +92,7 @@ label kick:
 label special:
     show cs concentrate at left
     show wesley at right
-    n "CS uses his YTP magic to make the foundation repairmen fight eachother."
+    n "CS uses his YTP magic to make the foundation repairmen fight each other."
     hide wesley at right with moveoutright
     play sound "audio/punch.ogg"
     rich "Hey! Cut it out!"
