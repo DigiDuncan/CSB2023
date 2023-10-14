@@ -7,7 +7,6 @@
 * Sweden is currently not accessible
 * ||RPG game still needs a decent amount of balancing work. Please report any cheeses you find or impossible-to-win scenarios (softlocks.)||
 ### VIDEO
-* An ending video (||"Where Are They Now?"||) still has beta character sprites in it
 * Credits video does not exist
 
 ### BUGS WE CAN NOT FIX
