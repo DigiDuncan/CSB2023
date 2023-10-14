@@ -71,3 +71,9 @@
 * Luigi not as crunchy now
 * Everything should unlock normally now
 * Minor fix with names in RPG
+
+## FIXES FROM `1.0b4`
+* Pencil game is now easier, and a fun value was fixed
+* Improved Extras navigation
+* Rebalance ||RPG Game||
+* Fixed some typos
