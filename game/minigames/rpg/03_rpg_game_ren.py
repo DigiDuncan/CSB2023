@@ -128,11 +128,18 @@ def change_stat(subject: Fighter, targets: list[Fighter], crit: bool, options: d
         elif stat == "ap":
             old_ap = f.armor_points
             new_ap = int(f.armor_points * mult)
-            if new_ap >= 99:
+            if new_ap >= 90:
                 if f._funni_ap:
-                    new_ap = old_ap + 1
+                    if old_ap == 90:
+                        new_ap = 95
+                    elif old_ap == 95:
+                        new_ap = 99
+                    elif old_ap == 99:
+                        new_ap = 100
+                    else:
+                        new_ap = old_ap + 1
                 else:
-                    new_ap = 99
+                    new_ap = 90
                     f._funni_ap = True
             f.armor_points = new_ap
             answer.append((int(f.armor_points - old_ap), "ap"))
