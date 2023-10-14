@@ -207,7 +207,7 @@ transform typewriter_location:
     rotate(-17)
 
 # Character Definitions
-define n = Character(None, what_italic = True)  # Narrator
+define n = Character(None, what_italic = True, callback = char_callback)  # Narrator
 define cs = Character("cs188", callback = renpy.partial(char_callback, name = "cs", beep = "cs"))
 define cs_fakegod = Character("cs188 (pretending to be CSGod)", callback = renpy.partial(char_callback, name = "cs", beep = "csgod"))
 define craptop = Character("Craptop", callback = renpy.partial(char_callback, name = "craptop"))
