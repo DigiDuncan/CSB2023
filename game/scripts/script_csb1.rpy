@@ -5,16 +5,17 @@ screen best_music():
     timer 5 action Hide('best_music')
 
 label csbi_start:
-    window hide
     $ quick_menu = False
     stop music fadeout 3.0
-    scene cs_room
-    show cs at center
+    scene black with fade
     $ quick_menu = True
-    window show
     if persistent.first_time:
-        pause 3.0
-        show oldgame with fade
+        window hide
+        scene cs_room
+        show cs at center
+        show oldgame
+        with fade
+        pause 7.0
         show pakoo at right with moveinright
         pakoo "Oh whoops!"
         pakoo "The old game is still here..."
@@ -29,11 +30,23 @@ label csbi_start:
         with moveoutright
     $ persistent.first_time = False
     if e3:
+        window hide
+        scene cs_room
         show cs angry
+        show oldgame
+        with fade
+        pause 3.0
+        play sound "page.wav" volume 5
+        hide oldgame
+        with moveoutright
         cs "I know what's going on now."
         cs "Fuck this."
         n "Jumping to rosen_house...{w=1.25}{nw}"
         jump rosen_house
+    window hide
+    scene cs_room
+    show cs at center
+    with dissolve
     play music "<loop 0>lets_hear_my_baby.mp3" volume 0.15
     music "Let's hear my baby - Walkman"
     cs "Welp, time to start up the ol' Craptop."
