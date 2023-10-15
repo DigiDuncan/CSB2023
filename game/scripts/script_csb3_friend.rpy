@@ -619,7 +619,7 @@ label fire_range:
     show cs happy
     cs "Woohoo! I got all the targets!"
     pakoo "Nice job CS!"
-    linus "That was excellent! You passed the course with flying colors!"
+    linus "That was excellent! You passed the course with flying colours!"
     pakoo "Head back to the main lobby, and we'll meet up with you there."
     cs "Alright, cya in a bit!"
     stop music fadeout 3.0
@@ -646,7 +646,7 @@ label fire_range:
     show pakoo disappointed
     pakoo "Exaggerated?"
     linus "Whatttt? Look, I need this for my company."
-    linus "There are just too many variables for what could happem, and I need some... protection for those variables!"
+    linus "There are just too many variables for what could happen, and I need some... protection for those variables!"
     show cs disappointed
     cs "Will I be able to work on editing ever? That's kinda what I signed up for in the first place, now that you mention this training stuff."
     show pakoo
