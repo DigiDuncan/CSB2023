@@ -53,7 +53,7 @@ label car_dialogue:
     pause 1.0
 
     digi "CS, how did you actually beat me in the pencil sharpening contest?"
-    digi "I have like, robotic augements."
+    digi "I have like, robotic augments."
     cs "Digi, you said you were inspired by me, correct?"
     digi "Yeah..."
     cs "I've been doing Pencil Sharpening Day every year since I invented it."
@@ -126,7 +126,7 @@ label car_dialogue:
     arceus "Yeah, I'm with CS on this one."
     arceus "It's a damn spy movie with cars!"
     cs "And Mater says \"I'm the bomb!\" or whatever."
-    pakoo "I just like the first one I think because the 70' Dodge Charger is in it."
+    pakoo "I just like the first one I think because the '70 Dodge Charger is in it."
     pakoo "What's his name again?"
     digi "Pakoo, did you even watch the first one?"
     pakoo "Pfft, yeah, I just haven't seen it in a while."
@@ -231,7 +231,6 @@ label car_dialogue:
     pause 1.0
 
     cs "Who called asking for you earlier, Arc?"
-    digi "It was no one, right Arc?"
     arceus "No clue."
     cs "Huh."
 
@@ -266,6 +265,7 @@ label car_dialogue:
     $ renpy.pause(5.0, hard = True)
     # 0:05.0
     cs "{cps=30}{image=note_small1.png}Moving right along, in search of good times and good news{image=note_small2.png}{w=0.8}{nw}"
+    $ renpy.pause(1.0, hard = True)
     # 0:08.9
     cs "{cps=30}{image=note_small1.png}With good friends you can't lose{image=note_small2.png}{w=0.8}{nw}"
     # 0:11.4
@@ -331,14 +331,17 @@ label car_dialogue:
     pause 1.0
 
     n "Arceus is reading a book."
-    arceus "{i}Call me Ishmael.  Some years ago-- never mind how long precisely-- having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world."
+    arceus "{i}Call me Ishmael.  Some years ago-- never mind how long precisely-- having little or no money in my purse,"
+    arceus "{i}and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world."
     cs "Arc? Are you... reading Moby Dick?"
     arceus "Yeah."
-    arceus "{i}It is a way I have of driving off the spleen and regulating the circulation.  Whenever I find myself growing grim about the mouth; whenever it is a damp, drizzly November in my soul; whenever I find myself involuntarily pausing before coffin warehouses, and bringing up the rear of every funeral I meet..."
+    arceus "{i}It is a way I have of driving off the spleen and regulating the circulation.  Whenever I find myself growing grim about the mouth;"
+    arceus "{i} whenever it is a damp, drizzly November in my soul; whenever I find myself involuntarily pausing before coffin warehouses, and bringing up the rear of every funeral I meet..."
     cs "Do you... have to read out loud?"
     arceus "Oh shit, I'm reading out loud?"
     cs "How do you not notice that?"
-    arceus "{i}and especially whenever my hypos get such an upper hand of me, that it requires a strong moral principle to prevent me from deliberately stepping into the street, and methodically knocking people's hats off--then,  account it high time to get to sea as soon as I can."
+    arceus "{i}and especially whenever my hypos get such an upper hand of me, that it requires a strong moral principle to prevent me from deliberately stepping into the street,"
+    arceus "{i}and methodically knocking people's hats off--then,  account it high time to get to sea as soon as I can."
     cs "Yeah, you're doing it again."
     arceus "Sorry."
 
@@ -389,12 +392,12 @@ label car_dialogue:
     digi "Can you not bring this up now?"
     pakoo "It's kinda funny that it happened though."
     cs "Digi, is this true?"
-    digi "Look, just-- Why do you always clown on me for these things?"
+    digi "Look, just-- why do you always clown on me for these things?"
     pakoo "Because it's a little funny. Speaking of which did you know about this dance Digi did?{w=0.5}{nw}"
-    digi "Stop! Billy hang up on him!"
+    digi "Stop! Billy, hang up on him!"
     billy "No, it's my radio!"
     n "Arc temporarily disables the Jupiter Jack."
-    digi "Thank you Arc."
+    digi "Thank you, Arc."
     billy "What the actual fuck? I'm gonna throw you all out of this car!"
     cs "Now I'm curious, what was Pakoo talking about Digi?"
     digi "Look, I'll tell you later. I don't want to think about it."
@@ -412,13 +415,13 @@ label car_dialogue:
     cs "FUCK SEX BALLS."
     cs "FUCK SEX BALLS."
     billy "CS, how old are you?"
-    cs "I was just testing the matrix!"
+    cs "I was just testing the Matrix!"
     cs "No way they could've predicted me saying that."
 
     pause 1.0
 
     cs "Digi, did you ever actually poop in your socks?"
-    digi "God damnit. No."
+    digi "God damn it. No."
     cs "Okay okay, I was just wondering..."
 
     pause 1.0
@@ -431,8 +434,8 @@ label car_dialogue:
     billy "Recently, I've felt like I've been losing my charm."
     digi "Did somebody say charm?"
     billy "Hold on, I think I got it."
-    billy "Hi, Billy Mays here, for Charm! The fast and easy way to play all of your Rhythm games, in one engine."
-    digi "Dude that was amazing! Can I record you saying that next time?"
+    billy "Hi, Billy Mays here, for Charm! The fast and easy way to play all of your rhythm games, in one engine."
+    digi "Dude, that was amazing! Can I record you saying that next time?"
     billy "Sure! I can do a commerical for Charm if you want, I'm kinda sparse on new products these days."
     digi "Hell yeah!"
 
@@ -459,7 +462,7 @@ label car_dialogue:
     pause 2.0
     play sound "<from 0 to 1>roll_window.ogg" volume 0.7
     pause 1.5
-    arceus "CS stop messing with the window. I can see you doing that."
+    arceus "CS, stop messing with the window. I can see you doing that."
     cs "Fine, I'm just bored."
 
     pause 1.0
