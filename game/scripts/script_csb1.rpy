@@ -6,27 +6,16 @@ screen best_music():
 
 label csbi_start:
     window hide
+    $ quick_menu = False
+    stop music fadeout 3.0
+    scene cs_room
+    show cs at center
+    $ quick_menu = True
+    window show
     if persistent.first_time:
-        $ quick_menu = False
-        stop music fadeout 3.0
-        scene cs_room
-        show cs at center
+        pause 3.0
         show oldgame with fade
-        if e3:
-            pause 3.0
-            play sound "page.wav" volume 5
-            hide oldgame with moveoutright
-            pause 1.0
-            show cs angry
-            cs "I know what's going on now."
-            cs "Fuck this."
-            n "Jumping to rosen_house...{w=1.25}{nw}"
-            jump rosen_house
-        else:
-            pause 7.0
         show pakoo at right with moveinright
-        $ quick_menu = True
-        window show
         pakoo "Oh whoops!"
         pakoo "The old game is still here..."
         pakoo "Lemme fix that real quick for you."
@@ -39,9 +28,12 @@ label csbi_start:
         hide oldgame
         with moveoutright
     $ persistent.first_time = False
-    stop music fadeout 3.0
-    scene cs_room
-    show cs at center
+    if e3:
+        show cs angry
+        cs "I know what's going on now."
+        cs "Fuck this."
+        n "Jumping to rosen_house...{w=1.25}{nw}"
+        jump rosen_house
     play music "<loop 0>lets_hear_my_baby.mp3" volume 0.15
     music "Let's hear my baby - Walkman"
     cs "Welp, time to start up the ol' Craptop."
