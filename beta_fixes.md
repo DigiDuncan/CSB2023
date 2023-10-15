@@ -5,8 +5,8 @@
 * The ||Archival|| Ending is missing multiple backgrounds and transitions
 ### GAMEPLAY
 * Sweden is currently not accessible
-* ||RPG game still needs a decent amount of balancing work. Please report any cheeses you find or impossible-to-win scenarios (softlocks.)||
 ### VIDEO
+* ||Where Are They Now?|| still is missing characters and is using beta sprites
 * Credits video does not exist
 
 ### BUGS WE CAN NOT FIX
@@ -75,4 +75,7 @@
 * Pencil game is now easier, and a fun value was fixed
 * Improved Extras navigation
 * Rebalance ||RPG Game||
+* Pakoo now only shops up on first game boot
+* Lots of new dialouge
+* Narrator now has text beeps
 * Fixed some typos
