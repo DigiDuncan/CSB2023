@@ -422,6 +422,7 @@ label arceus_place:
     arceus "I'm just messing, it's a little more than a US dollar."
     show arceus
     show kitty flipped at right with moveinright
+    $ persistent.seen.add("round")
     show arceus flipped
     kitty "Hey Arcie! You're home!"
     kitty "Hey, who's this man?"
