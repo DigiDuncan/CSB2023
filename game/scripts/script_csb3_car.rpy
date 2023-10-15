@@ -52,6 +52,17 @@ label car_dialogue:
 
     pause 1.0
 
+    digi "CS, how did you actually beat me in the pencil sharpening contest?"
+    digi "I have like, robotic augements."
+    cs "Digi, you said you were inspired by me, correct?"
+    digi "Yeah..."
+    cs "I've been doing Pencil Sharpening Day every year since I invented it."
+    digi "I guess so...{w=1.0}{nw}"
+    cs "I LITERALLY sharpened a lightbulb with a pencil sharpener."
+    digi "Yeah, I don't even know how you did that."
+
+    pause 1.0
+
     cs "So Arc, where'd you learn to hack like that?"
     arceus "College."
     cs "You went to college? I thought you'd been in prison for five years!"
@@ -70,6 +81,7 @@ label car_dialogue:
     cs "Aw man..."
     arceus "Listen, at least the cops aren't after us this time."
     billy "What?"
+    digi "Huh?"
     cs "Don't worry about it."
 
     pause 1.0
@@ -90,6 +102,7 @@ label car_dialogue:
 
     arceus "CS, why do you still pay for Adobe Premiere?"
     cs "Well, I pay for the whole Creative Cloud."
+    digi "Why? Isn't that super expensive?"
     arceus "You know, I can get you the whole suite for free."
     cs "No, no, I know, I just don't feel like I should."
     arceus "Yarr."
@@ -97,11 +110,28 @@ label car_dialogue:
     arceus ";)"
     billy "How much are you paying for it?"
     cs "Like $50 a month..."
+    digi "That's fucking insane!"
     billy "Unbelievable! I wouldn't pay more than $19.95!"
     billy "And buy one get one free!"
     cs "What would I do with two Adobe suites?"
     billy "What would you do with two Grater Platers?"
     cs "Fair enough."
+
+    pause 1.0
+
+    n "Billy gets a call on his Jupiter Jack."
+    pakoo "Hey guys, which Cars movie is your favorite?"
+    pakoo "I personally think the first one is the best."
+    cs "Nah, it's definitely the second one."
+    arceus "Yeah, I'm with CS on this one."
+    arceus "It's a damn spy movie with cars!"
+    cs "And Mater says \"I'm the bomb!\" or whatever."
+    pakoo "I just like the first one I think because the 70' Dodge Charger is in it."
+    pakoo "What's his name again?"
+    digi "Pakoo, did you even watch the first one?"
+    pakoo "Pfft, yeah, I just haven't seen it in a while."
+    pakoo "Whatever. The first one is better."
+    n "Pakoo hangs up."
 
     pause 1.0
 
@@ -139,6 +169,7 @@ label car_dialogue:
     linus "Hey Billy, CS is with you, right?"
     cs "Oh hey Linus, it's me, CS!"
     cs "I'm sorry about the cop scenario. I had an issue with a company called HoH SiS where they scammed me, and I kinda beat up their workers."
+    digi "CS, what the hell did you do?"
     linus "It's all good, I heard that the cops were looking for them anyways."
     linus "I'm sorry to hear about all that, I hope you are doing well."
     cs "We are doing okay!"
@@ -148,6 +179,7 @@ label car_dialogue:
 
     n "Billy gets a call on his Jupiter Jack."
     iris "Arceus?"
+    digi "Oh my god."
     arceus "How did you-- who is this?"
     iris "We need to talk later."
     pause 1.0
@@ -199,6 +231,7 @@ label car_dialogue:
     pause 1.0
 
     cs "Who called asking for you earlier, Arc?"
+    digi "It was no one, right Arc?"
     arceus "No clue."
     cs "Huh."
 
@@ -207,6 +240,7 @@ label car_dialogue:
     cs "Man, we should have a podcast or something."
     arceus "No, no we shouldn't."
     cs "What do you mean? We're just chatting right now and I think it's pretty funny!"
+    digi "It's only funny sometimes, but not everyone is gonna watch this."
     arceus "You only think it's funny because we're the ones talking."
     arceus "Every group of idiot friends thinks they're funny enough to have a podcast, and 99 percent of the time, they're wrong."
     billy "Yeah, I gotta agree with him on this one. I don't think anyone would find this funny."
@@ -320,12 +354,10 @@ label car_dialogue:
     cs "The fog is coming, Arc."
     billy "Crap, the fog is coming!"
     cs "The fog is coming, Billy."
-    n "The phone rings."
     digi "The fog is coming."
     arceus "Fuck, the fog is coming, Digi?!"
     digi "The fog is coming, Arceus."
     billy "The fog is coming."
-    n "Billy hangs up the phone."
     cs "The fog is coming."
 
     pause 1.0
@@ -349,6 +381,147 @@ label car_dialogue:
     tv_billy "The fast and easy way to smash stomach pain from the source!"
     billy "What is this shit? I would never sell this scammy crap!"
     n "Billy changes the channel on the Jupiter Jack."
+
+    pause 1.0
+
+    n "Pakoo calls the group again."
+    pakoo "Digi, didn't you fall in a black hole one time?"
+    digi "Can you not bring this up now?"
+    pakoo "It's kinda funny that it happened though."
+    cs "Digi, is this true?"
+    digi "Look, just-- Why do you always clown on me for these things?"
+    pakoo "Because it's a little funny. Speaking of which did you know about this dance Digi did?{w=0.5}{nw}"
+    digi "Stop! Billy hang up on him!"
+    billy "No, it's my radio!"
+    n "Arc temporarily disables the Jupiter Jack."
+    digi "Thank you Arc."
+    billy "What the actual fuck? I'm gonna throw you all out of this car!"
+    cs "Now I'm curious, what was Pakoo talking about Digi?"
+    digi "Look, I'll tell you later. I don't want to think about it."
+    n "The radio comes back on."
+    pakoo "--and yeah it's like the best video ever. Thank you Digi. I unironically love that video."
+    digi "Sure, Pakoo."
+
+    pause 1.0
+
+    cs "Could you imagine if like, every thing we did was predetermined?"
+    arceus "What, like The Matrix?"
+    cs "Yeah, I guess so, but what if everything we said was just, someone else doing the talking?"
+    digi "I think you just watched The Matrix recently."
+    cs "FUCK SEX BALLS."
+    cs "FUCK SEX BALLS."
+    cs "FUCK SEX BALLS."
+    billy "CS, how old are you?"
+    cs "I was just testing the matrix!"
+    cs "No way they could've predicted me saying that."
+
+    pause 1.0
+
+    cs "Digi, did you ever actually poop in your socks?"
+    digi "God damnit. No."
+    cs "Okay okay, I was just wondering..."
+
+    pause 1.0
+
+    billy "Hi, Billy Mays here! No..."
+    billy "Hi Billy Mays... No..."
+    billy "Billy Mays here! For the... No..."
+    cs "You okay man?"
+    billy "I just try to practice my infomerical voice a few times a day."
+    billy "Recently, I've felt like I've been losing my charm."
+    digi "Did somebody say charm?"
+    billy "Hold on, I think I got it."
+    billy "Hi, Billy Mays here, for Charm! The fast and easy way to play all of your Rhythm games, in one engine."
+    digi "Dude that was amazing! Can I record you saying that next time?"
+    billy "Sure! I can do a commerical for Charm if you want, I'm kinda sparse on new products these days."
+    digi "Hell yeah!"
+
+    pause 1.0
+
+    cs "Hey Arc?"
+    arceus "Hmm?"
+    cs "Would you rather have unlimited bacon, but no games?"
+    cs "Or games."
+    cs "UNLIMITED GAMES."
+    cs "But no games."
+    arceus "What?"
+    digi "That's like a paradox, right?"
+    cs "No no, you see, you get unlimited games, but no games."
+    arceus "I'm just gonna take the unlimited bacon."
+    cs "But you get no games!"
+    arceus "I'm choosing bacon. Final answer."
+
+    pause 1.0
+
+    play sound "<from 0 to 1>roll_window.ogg" volume 0.7
+    pause 2.5
+    play sound "<from 0 to 2>roll_window.ogg" volume 0.7
+    pause 2.0
+    play sound "<from 0 to 1>roll_window.ogg" volume 0.7
+    pause 1.5
+    arceus "CS stop messing with the window. I can see you doing that."
+    cs "Fine, I'm just bored."
+
+    pause 1.0
+
+    n "An Ad starts playing through the Jupiter Jack."
+    $ renpy.music.set_pause(True, "music")
+    play music2 "<loop 0>summer_clearance_sale.mp3" volume 0.5
+    doug "When you shop at Walmart..."
+    doug "You're shopping at Walmart."
+    doug "Keep shopping at Walmart, by going to Walmart today!"
+    stop music2
+    $ renpy.music.set_pause(False, "music")
+    pause 2.5
+    billy "I need to get the Europa Blocker for my Jupiter Jack."
+
+    pause 1.0
+
+    n "The guys in the back start looking through Billy's gadgets."
+    show billy car turn
+    billy "Hey! What are you guys doing back there?"
+    cs "Nothing! I just dropped something."
+    show billy car
+    billy "Alright, you better not mess with my gadgets!"
+    digi "Shhh! Don't say anything!"
+    cs "Okay, I got it, Arceus, roll down the window."
+    play sound "<from 0 to 1>roll_window.ogg" volume 0.7
+    pause 5.0
+    cs "Alright, you ready?"
+    pause 2.0
+    play sound "minigames/car/gaster_blast.wav"
+    show billy car turn with hpunch
+    show billy car turn with vpunch
+    billy "What the hell are guys doing!"
+    billy "I'm gonna double the offer of this car ride if you do that again!"
+    show billy car
+    cs "Digi did it!"
+    digi "No I didn't! You grabbed it!"
+    cs "Arc rolled down the window!"
+    arceus "Really? You're just gonna blame all of us?"
+    play sound "<from 0 to 2>car_crash.ogg" volume 0.7
+    scene tom_road
+    show billy car turn with hpunch
+    pause 3.0
+    billy "3..."
+    pause 1.0
+    billy "2..."
+    pause 1.0
+    billy "1..."
+    cs "Okay I'm sorry! It was my fault."
+    billy "No more tomfoolery in the backseat, okay?"
+    cs "Okay..."
+    scene car plains
+    show billy car
+    with dissolve
+
+    pause 1.0
+
+    n "Billy gets a call on his Jupiter Jack."
+    host "HEY, CHAMP!"
+    host "I JUST WANTED TO LET YOU KNOW YOUR {color=#ffff00}PENCIL SHARPENER{/color} SHOULD BE IN THE MAIL SOON!"
+    cs "Woohoo! Thanks!"
+    host "HOPE YOU HAVE YOU COMPETE AGAIN NEXT YEAR!"
 
     pause 1.0
 
