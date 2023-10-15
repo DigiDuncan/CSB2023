@@ -44,7 +44,7 @@ label car_ride_1:
     tate "Man, I can't believe CS didn't tell us! This is so great!!"
     mika "I know, right?"
     tate "How're you holding up Kitty?"
-    kitty "Yeah, I'm doing fine so far."
+    kitty "Yeah... Im doing okaye.."
     show tate shock flipped
     tate "Hold up, is that CS in front of us?"
     show tate smug flipped
@@ -78,7 +78,7 @@ label car_ride_1:
     show tate smug flipped at right
     with fade
     tate "Haaahahaha-- *snort*"
-    kitty "Oh my goodness!"
+    kitty "Bloody hell!"
     mika "Geez, I didn't think it was that bad."
     show tate flipped
     tate "Yeah, alright, we had a laugh, but maybe we should chill a bit."
