@@ -495,7 +495,7 @@ label car_dialogue:
     play sound "minigames/car/gaster_blast.wav"
     show billy car turn with hpunch
     show billy car turn with vpunch
-    billy "What the hell are guys doing!"
+    billy "What the hell are you guys doing!"
     billy "I'm gonna double the offer of this car ride if you do that again!"
     show billy car
     cs "Digi did it!"
