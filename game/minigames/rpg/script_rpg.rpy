@@ -115,7 +115,7 @@ label rpg_ng_fight:
             guard
             sml_tank
             guard
-        scale 1.2
+        scale 1.5
         on_win "cs_rage"
         on_lose "rpg_ng_fight"
 
@@ -144,7 +144,7 @@ label rpg_final_fight_1:
             marine
             marine
             marine
-        scale 2.0
+        scale 1.75
         on_win "between_1"
         on_lose "rpg_final_fight_1"
 
