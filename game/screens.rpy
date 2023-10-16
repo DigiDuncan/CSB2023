@@ -793,6 +793,7 @@ screen preferences():
 
                     textbutton _("Text Beeps") action ToggleField(preferences, "text_beeps")
                     textbutton _("Streamer Mode") action ToggleField(preferences, "streamer_mode")
+                    textbutton _("Dyslexia Mode") action gui.TogglePreference("font", "fonts/comic.ttf", "fonts/Yokelvision.otf"), gui.TogglePreference("fsm", 0.75, 1)
                     textbutton _("Developer Mode") action ToggleField(preferences, "developer_mode")
 
                 vbox:
