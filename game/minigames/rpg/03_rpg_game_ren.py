@@ -204,10 +204,14 @@ def draw_in(subject: Fighter, targets: list[Fighter], crit: bool, options: dict)
     return answer
 
 def ai_mimic(subject: Fighter, targets: list[Fighter], crit: bool, options: dict) -> AnswerList:
-    print(f"[AI Mimic] running {targets[0].normal.name}...")
-    attack = targets[0].normal
+    if targets[0].name == "Copguy EX":
+        aa = [a for a in Attacks.attacks if a.type in ['damage', 'aoe']]
+        attack = renpy.random.choice(aa)
+    else:
+        attack = targets[0].normal
     if attack.name == "AI Mimic":
         attack = Attacks.PUNCH
+    print(f"[AI Mimic] running {attack.name}...")
     return attack.run(subject, targets, crit)
 
 class AI:
