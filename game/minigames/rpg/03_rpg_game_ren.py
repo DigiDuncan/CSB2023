@@ -13,7 +13,7 @@ from renpy.text import Text
 python early:
 """
 
-from copy import copy
+from copy import deepcopy
 from typing import Callable, Literal, Optional
 import math
 
@@ -263,7 +263,7 @@ class AI:
 
             # If we should heal, make sure we only have healing attacks available.
             if heal_time:
-                _old = copy(available_attacks)
+                _old = deepcopy(available_attacks)
                 available_attacks = [a for a in available_attacks if a.type == "heal"]
                 if len(available_attacks) == 0:
                     available_attacks = _old
@@ -428,7 +428,7 @@ class Fighter:
         self._max_health = int(hp * multiplier)
         self._armor_points = ap
         self._attack_points = int(atk * multiplier)
-        self.attacks = [copy(a) for a in attacks]
+        self.attacks = [deepcopy(a) for a in attacks]
         self.ai: AI = ai
         self.sprite = sprite
 
@@ -534,7 +534,7 @@ class Fighter:
 
 class Encounter:
     def __init__(self, fighters: list[Fighter], background: Displayable, music: str, scale: float, on_win: str, on_lose: str = "start"):
-        self.fighters = [copy(f) for f in fighters if f is not None]
+        self.fighters = [deepcopy(f) for f in fighters if f is not None]
         self.background = background
         self.music = music
         self.scale = scale
