@@ -698,6 +698,10 @@ label poker3:
         cs "Finally! Me and Arc can buy whatever we want! I need to let him know!"
         n "Before CS runs off to find Arc, the owner of the casino approaches CS."
         show jerma at left with moveinleft
+        if fun_value(5):
+            n "Jerma looks down at Mr. Green."
+            jerma "Woah, clean up on aisle YOU!"
+            jerma "Anyways..."
         jerma "Well, look who we have here!"
         jerma "You beat my highest roller! How'd you do that?"
         cs "Uhh, I dunno."

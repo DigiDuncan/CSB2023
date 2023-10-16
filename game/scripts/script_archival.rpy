@@ -267,8 +267,8 @@ label archival:
     hide hart2 with moveoutright
     scene archival_9 with dissolve
     n "CS runs into another hallway that is now a lot longer, with a lot more turns. CS runs straight for a bit, then turns left when he hears the gunfire. CS switches between going left and right."
-    scene archival_10 with dissolve
-    scene archival_11 with dissolve
+    scene archival_10a with dissolve
+    scene archival_11a with dissolve
     scene archival_9a with dissolve
     scene archival_10a with dissolve
     scene archival_11a with dissolve
