@@ -1916,6 +1916,9 @@ label talktohohsis:
     hide pencilguy
     hide gnome
     hide bubble
+    hide violent_jay
+    hide shaggy_too_dope
+    hide mario
     with moveoutleft
     hide scott_border with dissolve
     ed "We won't do anything to your house, and we are sorry for destroying your laptop."
