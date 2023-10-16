@@ -126,16 +126,16 @@ label dpn_diner:
     nova "Remind me what you needed me here for again? I have a set later tonight I need to prepare for!"
     digi "CS is in trouble, he's being chased by the cops."
     nova "How in the world are we supposed to help with that?!"
-    aria "Don't worry, we can just trail them off with donuts if it gets really rough."
+    aria_alt "Don't worry, we can just trail them off with donuts if it gets really rough."
     nova "You sure that will really work??"
-    aria "Tried and tested."
+    aria_alt "Tried and tested."
     digi "CS and the gang should be passing by soon."
-    aria "Shit, they probably don't know where we are located."
-    aria "I'll go drive down the highway and lead them here, you guys wait back here just in case."
+    aria_alt "Shit, they probably don't know where we are located."
+    aria_alt "I'll go drive down the highway and lead them here, you guys wait back here just in case."
     nova "Shouldn't we we all go together?"
-    aria "Nah, just stay here in case I miss them or something. I'll be fine."
+    aria_alt "Nah, just stay here in case I miss them or something. I'll be fine."
     digi "Aria, are you sure? I mean, the cops are after them."
-    aria "Yeah well, like I said, I know what I'm doing. I'll be back."
+    aria_alt "Yeah well, like I said, I know what I'm doing. I'll be back."
     hide aria with moveoutright
     pause 1.0
     nova "They're gonna die."
@@ -159,10 +159,10 @@ label dpn_diner:
     show cop_2 at mid_right
     with fade
     show aria at left with moveinleft
-    aria "Ah, great. What is this now?"
+    aria_alt "Ah, great. What is this now?"
     cop "Sorry, but a ragtag group of criminals is heading through this way, so we need to stop them."
-    aria "Ah, yeah. I understand."
-    aria "I'll just go around the other way."
+    aria_alt "Ah, yeah. I understand."
+    aria_alt "I'll just go around the other way."
     show aria flipped with determination
     show aria flipped at offscreenleft with move
     hide aria
@@ -192,11 +192,11 @@ label cs_meetup:
     with moveinleft
     cs "Woah, what happened here? More cops?"
     if nice_car:
-        aria "First of all, nice car! Second of all, they weren't that hard to fight."
+        aria_alt "First of all, nice car! Second of all, they weren't that hard to fight."
     else:
-        aria "Yeah, they weren't too much of a problem through."
+        aria_alt "Yeah, they weren't too much of a problem through."
     tate "Good, the less cops, the better."
-    aria "Nova and Digi are at the diner up ahead, let's get this blockade out of the way and get going."
+    aria_alt "Nova and Digi are at the diner up ahead, let's get this blockade out of the way and get going."
     cs "Righty-o."
     scene black with fade
     n "CS, Aria, and Tate clear the road, and then follow Aria up to the diner."
@@ -236,16 +236,16 @@ label cs_meetup_2:
     nova "Welp, there goes all of my energy for the day."
     nova "I'm beat."
     show aria flipped at right with moveinright
-    aria "Hey, we just got here, are you guys okay?"
+    aria_alt "Hey, we just got here, are you guys okay?"
     show digi flipped with determination
     digi "Yeah, we're fine, how about you?"
-    aria "Yeah, I also had to fight some cops on the way to find CS."
+    aria_alt "Yeah, I also had to fight some cops on the way to find CS."
     digi "Shit, so we need to get going, like, now, before more come."
     if fun_value(5):
-        aria "Yeah, they won't stop coming. Let's meet up with the rest of the crew first."
+        aria_alt "Yeah, they won't stop coming. Let's meet up with the rest of the crew first."
     else:
-        aria "Yeah, they won't stop coming. Fed to the rules and I hit the ground running."
-        aria "Let's meet up with the rest of the crew first."
+        aria_alt "Yeah, they won't stop coming. Fed to the rules and I hit the ground running."
+        aria_alt "Let's meet up with the rest of the crew first."
     hide nova
     hide digi
     hide aria
@@ -281,7 +281,7 @@ label cs_meetup_2:
     cs "No no, I'm not gonna get cancelled."
     digi "You killed like, at least a few people!"
     arceus "Yeah, but at least he didn't, like, sell feet pics."
-    aria "Or say the N-word."
+    aria_alt "Or say the N-word."
     digi "Oh, yeah, that clears up everything..."
     arceus "But the cops still don't like that we downed multiple units, so we should get moving about now."
     cs "Yeah, alright everyone, back on the road!"
@@ -339,7 +339,7 @@ label car_ride_2:
     show digi at right
     with fade
     digi "I can't believe CS went to jail."
-    aria "Arceus was in jail for 5 years, Digi."
+    aria_alt "Arceus was in jail for 5 years, Digi."
     digi "Yeah I know, but that's an Arceus thing to do."
     nova "Is it?? That's kinda concerning."
     digi "No, I meant like, he knows what he's doing."
@@ -347,9 +347,9 @@ label car_ride_2:
     n "Aria laughs."
     digi "Look, here's the thing, right? I'm just shaken up a bit still after Arceus and Pakoo called us, explaining that they needed help quickly."
     digi "And then we fought and killed cops!"
-    aria "Least insane DPN activity."
+    aria_alt "Least insane DPN activity."
     digi "Aria, please. I'm legitimately worried about CS."
-    aria "They'll be fine, I'm sure this will be over soon."
+    aria_alt "They'll be fine, I'm sure this will be over soon."
     digi "Man, I just really hope so."
     scene black with fade
     pause 2.0
@@ -582,11 +582,11 @@ label car_ride_3:
     with fade
     nova "So I guess this is my night. I really need to catch up with music stuff when I get home."
     digi "Guys, I'm concerned that CS might actually be going insane."
-    aria "Digi, you didn't know that from the start?"
+    aria_alt "Digi, you didn't know that from the start?"
     digi "Did you see him? He was just, talking to the sky!"
     nova "Yeah? Well let a man talk to the sky!"
     digi "But he was absolutely going insane!"
-    aria "Digi, you gotta learn that the spectrum hits different for everyone."
+    aria_alt "Digi, you gotta learn that the spectrum hits different for everyone."
     scene black with fade
     pause 2.0
     scene jeep_inside_fg
@@ -784,9 +784,9 @@ label car_slam:
     cs "Yeah! How about you guys?"
     nova "I wanna fall over, I'm so tired."
     if fun_value(20):
-        aria "I never thought that our first meetup would be at a mall, and our second would be the destruction of Chigaco."  
+        aria_alt "I never thought that our first meetup would be at a mall, and our second would be the destruction of Chigaco."  
     else:  
-        aria "I never thought that our first meetup would be at a mall, and our second would be the destruction of Chicago."
+        aria_alt "I never thought that our first meetup would be at a mall, and our second would be the destruction of Chicago."
     n "CS laughs."
     cs "Yeah, me either, Aria."
     cs "There is one last group to check on."

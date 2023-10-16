@@ -79,3 +79,12 @@
 * Lots of new dialouge
 * Narrator now has text beeps
 * Fixed some typos
+
+## FIXES FROM `1.0b5`
+* **A MAJOR BUG IN RPG GAME IN FIXED.** This required major rebalancing. Please test these fights again!
+* **Dyslexia mode is now in the game!**
+* Some transitions in the start of the game were improved
+* The True Route ending scene now has everyone leave who's not supposed to be there
+* Aria has a new dark sprite
+* Aria has a new text beep in some parts of the game
+* Various typos solved

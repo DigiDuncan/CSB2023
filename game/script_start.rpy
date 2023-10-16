@@ -283,6 +283,7 @@ define obamanobeep = Character("Obama", callback = renpy.partial(char_callback, 
 define bomahanobeep = Character("Omaha", callback = renpy.partial(char_callback, name = "obama", play_beeps = False))
 define blank = Character("Blank", callback = renpy.partial(char_callback, name = "blank"))
 define aria = Character("Aria", callback = renpy.partial(char_callback, name = "aria", beep = "aria"))
+define aria_alt = Character("Aria", callback = renpy.partial(char_callback, name = "aria", beep = "aria_alt"))
 define cop = Character("Cop", callback = renpy.partial(char_callback, name = "cop"))
 define midge = Character("Midge", callback = renpy.partial(char_callback, name = "midge", beep = "midge"))
 define db = Character("DB05", callback = renpy.partial(char_callback, name = "db", beep = "db05"))
