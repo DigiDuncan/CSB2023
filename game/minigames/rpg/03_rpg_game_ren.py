@@ -640,9 +640,9 @@ class Attacks:
 class Fighters:
     NONE = None
     CS = Fighter("CS", False, 188, 10, 25, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/cs/neutral.png"))
-    CS_NG = Fighter("CS", False, 188, 10, 25, [Attacks.CHOP, Attacks.BULLET_SPRAY], Image("images/characters/cs/neutral.png"))
-    CS_STRONG = Fighter("CS", False, 188, 10, 30, [Attacks.KICK, Attacks.BULLET_SPRAY], Image("images/characters/cs/neutral.png"))
-    CS_FINAL = Fighter("CS", False, 288, 10, 35, [Attacks.KICK, Attacks.BULLET_SPRAY, Attacks.YTP_MAGIC], Image("images/characters/cs/neutral.png"))
+    CS_NG = Fighter("CS", False, 188, 10, 30, [Attacks.CHOP, Attacks.BULLET_SPRAY], Image("images/characters/cs/neutral.png"))
+    CS_STRONG = Fighter("CS", False, 188, 10, 35, [Attacks.KICK, Attacks.BULLET_SPRAY], Image("images/characters/cs/neutral.png"))
+    CS_FINAL = Fighter("CS", False, 288, 10, 40, [Attacks.KICK, Attacks.BULLET_SPRAY, Attacks.YTP_MAGIC], Image("images/characters/cs/neutral.png"))
     CS_FINAL2 = Fighter("CS", False, 1880, 10, 250, [Attacks.KICK, Attacks.YTP_HEAL, Attacks.YTP_MAGIC_NOCOOL], Image("images/characters/cs/neutral.png"))
     CS_WEAK = Fighter("CS", False, 188, 5, 25, [Attacks.PUNCH], Image("images/characters/cs/neutral.png"))
     ARCEUS = Fighter("Arceus", False, 160, 15, 35, [Attacks.SLASH, Attacks.LIGHT_CAST], Image("images/characters/arc/arceus.png"))
