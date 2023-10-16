@@ -115,7 +115,7 @@ label rpg_ng_fight:
             guard
             sml_tank
             guard
-        scale 1.5
+        scale 1.7
         on_win "cs_rage"
         on_lose "rpg_ng_fight"
 
