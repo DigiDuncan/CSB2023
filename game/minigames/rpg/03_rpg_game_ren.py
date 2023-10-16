@@ -331,7 +331,7 @@ class AIType:
     AGGRO = AI("Aggro", aggression = 3, tacticity = 0.5, crowd_control = 0, heal_threshold = 0.25, heal_chance = 0.25)
     DEFENSIVE = AI("Defensive", heal_threshold = 0.75, tacticity = 3, heal_chance = 0.60)
     SMART = AI("Smart", tacticity = 2, crowd_control = 2, heal_chance = 0.60)
-    COPGUY_EX = AI("EX", aggression = 3, tacticity = 2, preferred_targets = ["CS"], heal_chance = 0.75)
+    COPGUY_EX = AI("EX", aggression = 3, tacticity = 2, preferred_targets = ["CS"], heal_chance = 0.70)
 
 # Objects
 
