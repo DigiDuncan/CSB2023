@@ -235,7 +235,7 @@ label archival:
     hide hart2 with moveoutright
     n "After he finally manages to make it to the end of the building, he runs along the side to try to find an exit."
     scene archival_8 with dissolve
-    n "While the guards are still firing at him while running, he finds a set of doors that leads him into a small hallway that opens up into another large area."
+    n "While the guards are still firing at him while running, he finds a set of doors that leads him into another large area."
     scene archival_7 with dissolve
     show cs worried at offscreenleft
     hide cs worried with moveoutright
@@ -356,7 +356,10 @@ label archival:
     stop music fadeout 3.0
     scene archival_13 with dissolve
     play music "<loop 0>take_trip2.mp3" volume 0.5
-    n "As he gets in on time as the door slowly shuts right before the guards can get in. CS goes over to the console in the front of the tram and hits the giant forward button."
+    n "As he gets in on time as the door slowly shuts right before the guards can get in."
+    show archival_19
+    with dissolve    
+    n "CS goes over to the console in the front of the tram and hits the giant forward button."
     scene archival_15
     show hart1 at left
     show hart2 at center
