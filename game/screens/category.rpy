@@ -40,11 +40,12 @@ screen category_nav():
             textbutton "Jukebox" action ShowMenu("jukebox_welcome"), PauseAudio("music", True)
             textbutton "Endings" action ShowMenu("replay_gallery")
             if preferences.developer_mode or persistent.creative_mode:
-                textbutton "Test Scene" action Jump("test")
                 textbutton "Debug Menu" action ShowMenu("debug_menu")
                 textbutton "Ultimate\nCustom Night" action Start("rpg_ucn")
+            if preferences.developer_mode:
+                textbutton "Test Scene" action Jump("test")
                 textbutton "Unlock All" action Function(unlock_all)
-                textbutton "Clear Persistent Data" action Jump("reset_vector")
+            textbutton "Clear Persistent Data" action Jump("clear_screen")
 
     textbutton "Main Menu" action Return() yoffset 1000 xoffset 25
 
@@ -80,6 +81,10 @@ style codex_label_text:
     size gui.label_text_size
 style codex_scrollbar is gui_vscrollbar:
     xoffset 100
+
+label clear_screen:
+    call screen confirm(message="ARE YOU SURE? This will ERASE all data.", yes_action=Jump("reset_vector"), no_action=[Hide("confirm"), Return()])
+    return
 
 label reset_vector:
     $ persistent._clear(progress=True)

@@ -109,7 +109,7 @@ See what needs to be done below.
 - [X] Check Discord channels for missing content
 
 ### Wishlist
-- [ ] Ultimate Custom Night (RPG Freeplay) [75%]
-    - [ ] Additional fighters/AIs [50%]
+- [X] Ultimate Custom Night (RPG Freeplay)
+    - [X] Additional fighters/AIs
 - [ ] "The Legend" style custscene for HoH SiS monolouge [Digi or Pakoo]
 - [X] More car dialouge
