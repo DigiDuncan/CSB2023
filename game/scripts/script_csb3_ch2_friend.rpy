@@ -158,21 +158,21 @@ label dpn_diner:
     show cop dark at right
     show cop_2 at mid_right
     with fade
-    show aria at left with moveinleft
+    show aria dark at left with moveinleft
     aria_alt "Ah, great. What is this now?"
     cop "Sorry, but a ragtag group of criminals is heading through this way, so we need to stop them."
     aria_alt "Ah, yeah. I understand."
     aria_alt "I'll just go around the other way."
-    show aria flipped with determination
-    show aria flipped at offscreenleft with move
+    show aria dark flipped with determination
+    show aria dark flipped at offscreenleft with move
     hide aria
     pause 3.0
-    show aria at offscreenright with hpunch
+    show aria dark at offscreenright with hpunch
     hide cop
     hide cop_2
     with moveoutbottom
     n "As Aria heads back to the car, she sneaks around and knocks the cop's heads together, knocking them out."
-    show aria flipped at right with move
+    show aria dark flipped at right with move
     show cop dark at left with moveinleft
     cop "Ah shit! We got two men down! Arrest her!"
     stop music fadeout 3.0
@@ -182,7 +182,7 @@ label dpn_diner:
 
 label cs_meetup:
     scene cs_somewhere 
-    show aria flipped at right
+    show aria dark flipped at right
     with fade
     play music "<loop 0>dense_woods_b.mp3" volume 0.5
     n "After Aria takes care of the cops, CS and Tate's group rolls up on the other side of the blockade."
@@ -260,7 +260,7 @@ label cs_meetup_2:
     with fade
     show digi dark flipped at center
     show nova dark flipped at mid_left
-    show aria at left
+    show aria dark at left
     with moveinleft
     cs "Hey guys! Are you all good?"
     if nice_car:

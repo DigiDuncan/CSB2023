@@ -1013,7 +1013,7 @@ label interstate_69:
     show cs disappointed dark flipped at mid_right
     show arceus worried dark at right
     show billy dark at center
-    show aria flipped at left
+    show aria dark flipped at left
     with dissolve
     play music "<loop 0>dense_woods_b.mp3" volume 0.5
     music Dense Woods B - Kikiyama
@@ -1028,7 +1028,7 @@ label interstate_69:
     show cs dark flipped at mid_right
     show arceus dark at right
     show billy dark at left
-    show aria flipped at center
+    show aria dark flipped at center
     with dissolve
     aria "We're gonna take a left at the bridge up ahead. The forward path just spits us right out onto a normal street."
     billy "We've been out here for all of 5 minutes and that's already seeming like the better option..."
@@ -1048,7 +1048,7 @@ label interstate_69:
     show cs worried dark flipped at mid_right
     show arceus worried dark at right
     show billy dark at left
-    show aria flipped at center
+    show aria dark flipped at center
     with dissolve
     aria "Anyway, the forest path is right up there."
     billy "Are you kidding? This path is dark enough. That's not a path, that's a portal to the void."
@@ -1170,7 +1170,7 @@ label interstate_69:
     show billy at left
     show cs worried
     show arceus worried at mid_left
-    show aria at right
+    show aria dark at right
     with dissolve
     arceus "That's a normal road with a sidewalk over there. We're taking that."
     cs "I'm with Arceus on this one."
@@ -1182,7 +1182,7 @@ label interstate_69:
     show billy at left
     show cs
     show arceus flipped at mid_left
-    show aria at right
+    show aria dark at right
     with dissolve
     stop music fadeout 3.0
     music end
