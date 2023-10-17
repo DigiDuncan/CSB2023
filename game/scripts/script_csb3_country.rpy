@@ -1740,6 +1740,9 @@ label aurora_borealis:
     cs "I am in Sweden, so I guess I may as well go see the Northern Lights."
     cs "I should go somewhere less urban if I wanna see it properly though. Too much light pollution here."
     cs "I'll just get on a bus and keep going until I see somewhere with clear skies."
+    scene black with dissolve
+    stop music fadeout 3.0
+    music end
     n "CS sits down on the next bus and begins staring out the window like he's in a music video."
     n "Eventually, he sees an area that looks good and gets off the bus."
     
@@ -1756,6 +1759,9 @@ label ikea:
     cs "That probably means, like, Super Ikea or something."
     cs "Mondo Ikea - go into here."
     cs "Yeah that makes sense. English and Swedish are pretty much the same."
+    scene black with dissolve
+    stop music fadeout 3.0
+    music end
     n "CS rides the bus for a while and eventually the Ikea comes into view."
     cs "Oh my gosh I was right! That's the biggest Ikea I've ever seen."
     n "CS presses the button to stop the bus, and the rest of the passengers give him a weird look as he gets off."
@@ -1771,15 +1777,26 @@ label ikea:
 label joel:
     cs "I should try to find Vinesauce Joel. He likes YTPs, so he'd probably want to hang out."
     cs "I know he's in Northern Sweden, so I'll get up there. Sweden's pretty small, it couldn't be that hard to find him."
+    stop music fadeout 3.0
+    music end
+    scene black with dissolve
     n "CS gets on a bus up north, and he falls asleep."
     n "When the bus hits the end of the line, one of the other riders wakes him up."
+    scene bus_seat
+    show cs concentrate at mid_left
+    show joel at mid_right
+    with dissolve
     joel "Hey man, you gotta get up. End of the line here."
+    show cs
     cs "Oh alright, thanks for waking me--"
     pause 0.5
+    show cs worried with hpunch
     cs "Wait, you're Joel! What are you doing there?"
+    show cs surpised
     joel "I'm just taking the bus back home. What're you doing here?"
     cs "I was looking for you actually."
     joel "What? How? Why?"
+    show cs
     cs "I just happened to be in Sweden, and I knew that you were more north, so I went north."
     joel "Your plan was just to explore all of Northern Sweden?"
     joel "That's insane."
