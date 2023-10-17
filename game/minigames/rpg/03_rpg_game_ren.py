@@ -205,7 +205,7 @@ def draw_in(subject: Fighter, targets: list[Fighter], crit: bool, options: dict)
 
 def ai_mimic(subject: Fighter, targets: list[Fighter], crit: bool, options: dict) -> AnswerList:
     if targets[0].name == "Copguy EX":
-        aa = [a for a in Attacks.attacks if a.type in ['damage', 'aoe']]
+        aa = [a for a in Attacks.ex_attacks if a.type in ['damage', 'aoe']]
         attack = renpy.random.choice(aa)
     else:
         attack = targets[0].normal
@@ -340,13 +340,14 @@ class AIType:
 # Objects
 
 class Attack:
-    def __init__(self, name: str, description: str, func: Callable[[Fighter, list[Fighter], dict], AnswerList], target_count = 1, target_type: str = "enemies", cooldown: int = 0, used = False, **kwargs):
+    def __init__(self, name: str, description: str, func: Callable[[Fighter, list[Fighter], dict], AnswerList], target_count = 1, target_type: str = "enemies", cooldown: int = 0, used = False, ex = True, **kwargs):
         self.name = name
         self.description = description
         self.func = func
         self.target_count = target_count
         self.target_type = target_type
         self.cooldown = cooldown
+        self.ex = ex
         self.options = kwargs
 
         self.used = used
@@ -376,10 +377,11 @@ class Attack:
             return "damage"
 
 class ComboAttack:
-    def __init__(self, name: str, descripton: str, attacks: list[Attack]):
+    def __init__(self, name: str, descripton: str, attacks: list[Attack], ex = True):
         self.name = name
         self.description = descripton
         self.attacks = attacks
+        self.ex = ex
         self.used = attacks[0].used
 
     def run(self, subject: Fighter, fighters: list[Fighter], crit: bool = False) -> AnswerList:
@@ -425,7 +427,7 @@ class ComboAttack:
         return self.attacks[0].options
 
 class Fighter:
-    def __init__(self, name: str, enemy: bool, hp: int, ap: int, atk: int, attacks: list[Attack | ComboAttack], sprite: Displayable, multiplier: float = 1, ai: AI = None):
+    def __init__(self, name: str, enemy: bool, hp: int, ap: int, atk: int, attacks: list[Attack | ComboAttack], sprite: Displayable, multiplier: float = 1, ai: AI = None, display_name: str = None):
         self.name = name
         self.enemy = enemy
         self._health_points = int(hp * multiplier)
@@ -435,6 +437,8 @@ class Fighter:
         self.attacks = [deepcopy(a) for a in attacks]
         self.ai: AI = ai
         self.sprite = sprite
+
+        self.display_name = name if display_name is None else display_name
 
         self._funni_ap = False
 
@@ -637,18 +641,24 @@ class Attacks:
     def attacks(cls) -> list[Attack]:
         return [cls.__dict__[a] for a in cls.names]
     
+    @classproperty
+    def ex_attacks(cls) -> list[Attack]:
+        return [a for a in cls.attacks if a.ex is True]
+    
     @classmethod
     def get(cls, k: str, default = None) -> Attack | None:
         return cls.__dict__.get(k, default)
 
 class Fighters:
     NONE = None
-    CS = Fighter("CS", False, 188, 10, 25, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/cs/neutral.png"))
-    CS_NG = Fighter("CS", False, 188, 10, 30, [Attacks.CHOP, Attacks.BULLET_SPRAY], Image("images/characters/cs/neutral.png"))
-    CS_STRONG = Fighter("CS", False, 188, 10, 35, [Attacks.KICK, Attacks.BULLET_SPRAY], Image("images/characters/cs/neutral.png"))
-    CS_FINAL = Fighter("CS", False, 288, 10, 40, [Attacks.KICK, Attacks.BULLET_SPRAY, Attacks.YTP_MAGIC], Image("images/characters/cs/neutral.png"))
-    CS_FINAL2 = Fighter("CS", False, 1880, 10, 250, [Attacks.KICK, Attacks.YTP_HEAL, Attacks.YTP_MAGIC_NOCOOL], Image("images/characters/cs/neutral.png"))
-    CS_WEAK = Fighter("CS", False, 188, 5, 25, [Attacks.PUNCH], Image("images/characters/cs/neutral.png"))
+    
+    # Allies
+    CS = Fighter("CS", False, 188, 10, 25, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/cs/neutral.png"), display_name = "CS")
+    CS_NG = Fighter("CS (National Guard)", False, 188, 10, 30, [Attacks.CHOP, Attacks.BULLET_SPRAY], Image("images/characters/cs/neutral.png"), display_name = "CS")
+    CS_STRONG = Fighter("CS (Strong)", False, 188, 10, 35, [Attacks.KICK, Attacks.BULLET_SPRAY], Image("images/characters/cs/neutral.png"), display_name = "CS")
+    CS_FINAL = Fighter("CS (Final)", False, 288, 10, 40, [Attacks.KICK, Attacks.BULLET_SPRAY, Attacks.YTP_MAGIC], Image("images/characters/cs/neutral.png"), display_name = "CS")
+    CS_FINAL2 = Fighter("CS (Error)", False, 1880, 10, 250, [Attacks.KICK, Attacks.YTP_HEAL, Attacks.YTP_MAGIC_NOCOOL], Image("images/characters/cs/neutral.png"), display_name = "CS")
+    CS_WEAK = Fighter("CS (Weak)", False, 188, 5, 25, [Attacks.PUNCH], Image("images/characters/cs/neutral.png"), display_name = "CS")
     ARCEUS = Fighter("Arceus", False, 160, 15, 35, [Attacks.SLASH, Attacks.LIGHT_CAST], Image("images/characters/arc/arceus.png"))
     PAKOO = Fighter("Pakoo", False, 145, 20, 30, [Attacks.INSIGHT, Attacks.SHOTGUN], Image("images/characters/pakoo/pakoo.png"))
     MIKA = Fighter("Mika", False, 165, 20, 30, [Attacks.ENCOURAGE, Attacks.HIGH_NOON], Image("images/characters/mika.png"))
@@ -662,17 +672,18 @@ class Fighters:
     DB05 = Fighter("DB05", False, 9001, 9001, 50, [Attacks.CONFIDENCE, Attacks.PEP_TALK], Image("images/characters/db.png"))
     ANNO = Fighter("Anno", False, 200, 20, 40, [Attacks.RADS_ATTACK, Attacks.AI_MIMIC], Image("images/characters/anno/anno.png"))
 
-    FANBOYA = Fighter("Fanboy",True, 50, 0, 16, [Attacks.PUNCH], Image("images/characters/nvidiafanboy.png"), ai = AIType.NEUTRAL)
-    FANBOYB = Fighter("Fanboy",True, 50, 0, 16, [Attacks.PUNCH], Image("images/characters/amdfanboy.png"), ai = AIType.NEUTRAL)
+    # Enemies
+    FANBOYA = Fighter("Fanboy",True, 50, 0, 16, [Attacks.PUNCH], Image("images/characters/nvidiafanboy.png"), ai = AIType.NEUTRAL, display_name = "Fanboy")
+    FANBOYB = Fighter("Fanboy",True, 50, 0, 16, [Attacks.PUNCH], Image("images/characters/amdfanboy.png"), ai = AIType.NEUTRAL, display_name = "Fanboy")
     COP = Fighter("Cop", True, 150, 15, 30, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/cop.png"), ai = AIType.NEUTRAL)
-    COPGUYGODMODE = Fighter("Copguy", True, 9001, 9001, 35, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/copguy.png"), ai = AIType.NEUTRAL)
+    COPGUYGODMODE = Fighter("Copguy (God)", True, 9001, 9001, 35, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/copguy.png"), ai = AIType.NEUTRAL, display_name = "Copguy")
     COPGUY = Fighter("Copguy", True, 300, 20, 35, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/copguy.png"), ai = AIType.NEUTRAL)
     GUARD = Fighter("Guard", True, 225, 25, 35, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/guard_soldier.png"), ai = AIType.DEFENSIVE)
     SML_TANK = Fighter("Sherman", True, 400, 60, 100, [Attacks.SHELL], Image("images/characters/sherman.png"), ai = AIType.AGGRO)
     MARINE = Fighter("Marine", True, 300, 30, 45, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/marine.png"), ai = AIType.SMART)
     BIG_TANK = Fighter("Abrams", True, 700, 70, 150, [Attacks.SHELL], Image("images/characters/abrams.png"), ai = AIType.AGGRO)
-    COPGUY_EX = Fighter("Copguy EX", True, 2222, 30, 50, Attacks.attacks, Image("images/characters/copguy.png"), ai = AIType.COPGUY_EX)
-    PAKOOE = Fighter("Pakoo", True, 9999, 70, 150, [Attacks.FUN_VALUE], Image("images/characters/pakoo/pakoo_disappointed.png"), ai = AIType.AGGRO)
+    COPGUY_EX = Fighter("Copguy EX", True, 2222, 30, 50, Attacks.ex_attacks, Image("images/characters/copguy.png"), ai = AIType.COPGUY_EX)
+    PAKOOE = Fighter("Pakoo (Error)", True, 9999, 70, 150, [Attacks.FUN_VALUE], Image("images/characters/pakoo/pakoo_disappointed.png"), ai = AIType.AGGRO, display_name = "Pakoo")
 
     @classproperty
     def names(cls) -> list[str]:
@@ -687,15 +698,15 @@ class Fighters:
         return [f for f in dir(cls) if f.isupper() and f != "NONE" and not cls.__dict__[f].enemy]
     
     @classproperty
-    def fighters(cls) -> list[Attack]:
+    def fighters(cls) -> list[Fighter]:
         return [cls.__dict__[f] for f in cls.names]
     
     @classproperty
-    def enemies(cls) -> list[Attack]:
+    def enemies(cls) -> list[Fighter]:
         return [cls.get(f) for f in cls.enemy_names]
     
     @classproperty
-    def allies(cls) -> list[Attack]:
+    def allies(cls) -> list[Fighter]:
         return [cls.get(f) for f in cls.ally_names]
     
     @classmethod
@@ -797,7 +808,7 @@ class StatBlockDisplayable(renpy.Displayable):
     def __init__(self, fighter: Fighter):
         self.text_size = 50
         self.fighter = fighter
-        self.fighter_name = Text(self.fighter.name, color = "#FC8900", size = 50)
+        self.fighter_name = Text(self.fighter.display_name, color = "#FC8900", size = 50)
         self.health_text = Text("HP: " + str(self.fighter.health_points) + "/" + str(self.fighter.max_health), color = "#FFFFFF", size = self.text_size)
         self.AP_text = Text("AP: " + str(self.fighter.armor_points), color = "#FFFFFF", size = self.text_size)
         self.ATK_text = Text("ATK: " + str(self.fighter.attack_points), color = "#FFFFFF", size = self.text_size)
