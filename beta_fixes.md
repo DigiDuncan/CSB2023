@@ -12,12 +12,12 @@
 ### BUGS WE CAN NOT FIX
 * When in Windowed mode, the Windowed mode option is not highlighted in the settings menu
 * Occasionally, when in fullscreen, your cursor will be invisible. This might be a Windows bug. Restarting the game seems to fix it.
-* Scrolling back during the ||RPG fights|| causes that sequence to restart entirely. This is because of how Ren'Py deals with these custom interactive elements.
+* Scrolling back during the RPG fights causes that sequence to restart entirely. This is because of how Ren'Py deals with these custom interactive elements.
 * Ed with phone sprite isn't great but it's shown once in the game and is kinda funny
 
 ## FIXES FROM `1.0b1`
-* ||Copguy EX|| can no longer crash the game 1/1008 of the time
-* ||The RPG game|| had many visual, linguistic, and balance fixes
+* Copguy EX can no longer crash the game 1/1008 of the time
+* The RPG game had many visual, linguistic, and balance fixes
 * Achievements in Michigan are now obtainable and don't crash the game
 * Tate now has proper sprites
 * Arc's sprite size is now fixed
@@ -30,7 +30,7 @@
 * Two new achivements
 * The GUI is now themed in more places
 * Michigan is now improved
-* The ||karaoke|| video is has been corrected
+* The karaoke video is has been corrected
 * The song "Mort's Farm" no longer has a high-pitched frequency in the mix
 * Carguy's been improved both in visual and audio
 * The car ride now has music
@@ -55,7 +55,7 @@
 * DB05 now has a beep
 * Pennsylvania now has music
 * Cooldowns should reset now
-* Controls now display in ||car minigame||
+* Controls now display in car minigame
 * Quack
 * Some grammar and spelling errors we solved
 * Aria and Gnome now have beeps
@@ -74,7 +74,7 @@
 ## FIXES FROM `1.0b4`
 * Pencil game is now easier, and a fun value was fixed
 * Improved Extras navigation
-* Rebalance ||RPG Game||
+* Rebalance RPG Game
 * Pakoo now only shops up on first game boot
 * Lots of new dialouge
 * Narrator now has text beeps
@@ -88,3 +88,13 @@
 * Aria has a new dark sprite
 * Aria has a new text beep in some parts of the game
 * Various typos solved
+
+## FIXES FROM `1.0b6`
+* **ULTIMATE CUSTOM NIGHT HAS BEEN REWORKED!** Unlock it in the Extras menu by getting all the endings!
+* The RPG game continues to be rebalanced! Sorry, this is going to happen in Beta. We think it's good now, though!
+* **Sweden is now in the game!**
+* ||Archival ending|| sees continued improvements
+* Aria's dark sprite is now actually in the game
+* Blank now has a beep
+* Clearing persistent data is now accessible without Dev mode, and prompt the user before clearing.
+* Typo fixes and fun values
