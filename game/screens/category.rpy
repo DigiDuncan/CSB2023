@@ -17,8 +17,12 @@ screen category_nav():
     add Color('#323e42', alpha=0.75)
 
     viewport:
-        xpos 25 ypos 400
-        xsize 350 ysize 350
+        if persistent.creative_mode or preferences.developer_mode:
+            xpos 25 ypos 150
+            xsize 350 ysize 750
+        else:
+            xpos 25 ypos 400
+            xsize 350 ysize 350
         mousewheel True
         scrollbars "vertical"
         draggable True
