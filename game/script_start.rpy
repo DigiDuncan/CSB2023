@@ -315,6 +315,7 @@ define mario = Character("Mario", callback = renpy.partial(char_callback, name =
 define smiley = Character("Smiley", callback = renpy.partial(char_callback, name = "smiley"))
 define violent_jay = Character("Violent Jay", callback = renpy.partial(char_callback, name = "jay"))
 define shaggy_too_dope = Character("Shaggy Too Dope", callback = char_callback)
+define average_swede = Character("Swede", callback = char_callback)
 
 # Character Images
 ## CS
@@ -816,6 +817,9 @@ image karaoke_bar_outside = "bg/karaoke_bar_outside.png"
 image ceo_office_2 = "bg/ceo_office_2.png"
 image front_desk_2 = "bg/front_desk_2.png"
 image talking_head = "bg/talking_head.png"
+image stockholm = "bg/stockholm.png"
+image bus_zone = "bg/bus_zone.png"
+image bus_map = "bg/bus_map.png"
 
 ## AI Ending
 image park1 = "bg/ai/amusementpark1.png"

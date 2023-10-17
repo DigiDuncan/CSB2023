@@ -1174,7 +1174,7 @@ label england_sweden:
     cs "Oh well, I'm sure it'll be fun."
     cs "Time to get some sleep."
     scene black with dissolve
-    jump sweden
+    jump sweden_second
 
 label japan:
     $ japan_check = True
@@ -1588,7 +1588,7 @@ label japan_sweden:
     cs "This is gonna be quite the trip."
     cs "I'm gonna try to get some shuteye."
     scene black with dissolve
-    jump sweden
+    jump sweden_second
 
 label japan_england:
     $ england_check = True
@@ -1653,23 +1653,68 @@ label going_home:
     return
 
 label sweden:
+    scene airplane_seats
+    show cs at left
+    with dissolve
     n "CS wakes up as his plane lands in Stockholm."
     cs "Finally to Sweden! I don't have to worry about the cops anymore."
     cs "Now that I'm here, I should go explore."
     scene black with dissolve
     n "CS exits the airport and finds himself in the middle of the city."
-    scene stockholm with fade
+    scene stockholm 
+    with fade
+    show cs at center with moveinleft
+    play music "<loop 0>creative_exercise.mp3" loop volume 0.3
     cs "Wow! There's so many people around."
     cs "I guess I should try to find something to do..."
     cs "I don't have much money left, but I should be able to find a bus to somewhere cool."
-    show average_swede at left
+    hide cs with moveoutright
+    scene bus_zone 
+    show average_swede at left    
+    with dissolve
+    show cs flipped at right with moveinright
     cs "That guy looks like he'd be able to help."
     cs "Excuse me sir, do you know where the bus stop is?"
     average_swede "Min svävare är full med ålar."
     cs "Oh dang, I forgot not many Swedes can speak English. Hopefully I find someone who can."
     n "As CS says this, he sees a bus drive past and decides to just follow it to the bus stop."
-    n "As CS looks at the map and tries to figure out what bus to take."
+    hide cs with moveoutleft
+    scene bus_map with dissolve
+    n "As CS looks at the map, he tries to figure out what bus to take."
     jump sweden_menu
+
+label sweden_second:
+    scene airplane_seats
+    show cs at left
+    with dissolve
+    n "CS wakes up as his plane lands in Stockholm."
+    cs "Finally to Sweden! I've always wanted to check this place out."
+    cs "Now that I'm here, I should go explore."
+    scene black with dissolve
+    n "CS exits the airport and finds himself in the middle of the city."
+    scene stockholm 
+    with fade
+    show cs at center with moveinleft
+    play music "<loop 0>creative_exercise.mp3" loop volume 0.3
+    cs "Wow! There's so many people around."
+    cs "I guess I should try to find something to do..."
+    cs "I should be able to find a bus to somewhere cool, I have some money this time."
+    hide cs with moveoutright
+    scene bus_zone 
+    show average_swede at left    
+    with dissolve
+    show cs flipped at right with moveinright
+    cs "That guy looks like he'd be able to help."
+    cs "Excuse me sir, do you know where the bus stop is?"
+    average_swede "Min svävare är full med ålar."
+    cs "Oh dang, I forgot not many Swedes can speak English. Hopefully I find someone who can."
+    n "As CS says this, he sees a bus drive past and decides to just follow it to the bus stop."
+    hide cs with moveoutleft
+    scene black with dissolve
+    pause 2.0
+    scene bus_map with dissolve
+    n "As CS looks at the map, he tries to figure out what bus to take."
+    jump sweden_menu 
 
 label sweden_menu:
     # "Go on an anime adventure":
