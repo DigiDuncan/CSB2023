@@ -63,7 +63,6 @@ def heal_fighters(subject: Fighter, targets: list[Fighter], crit: bool, options:
     for f in targets:
         if not f.dead:
             hit = subject.attack_points * mult * 1.5 if crit else subject.attack_points * mult
-            hit *= 1 - (f.armor_points / 100)
             f.health_points += hit
             answer.append((int(hit), "hp"))
             if not overheal:
@@ -588,18 +587,18 @@ class Encounter:
 
 class Attacks:
     PUNCH = Attack("Punch", "A simple punch.", damage_fighters)
-    RAW_CHOP = Attack("Raw Chop", "Hiya!", damage_fighters)
-    CS_AP_DOWN = Attack("CS AP Down", "Bring AP of an enemy down.", change_stat, stat = "ap", mult = 0.75)
+    RAW_CHOP = Attack("Raw Chop", "Hiya!", damage_fighters, ex = False)
+    CS_AP_DOWN = Attack("CS AP Down", "Bring AP of an enemy down.", change_stat, stat = "ap", mult = 0.75, ex = False)
     CHOP = ComboAttack("Chop", "Hit an enemy and bring their AP down.", [RAW_CHOP, CS_AP_DOWN])
-    RAW_KICK = Attack("Raw Kick", "It's fuckin raw!", damage_fighters, mult = 2)
+    RAW_KICK = Attack("Raw Kick", "It's fuckin raw!", damage_fighters, mult = 2, ex = False)
     YTP_MAGIC = Attack("YTP Magic", "Channel the power of YTP!", damage_fighters, cooldown = 10, mult = 20, used = True)
-    YTP_MAGIC_NOCOOL = Attack("YTP Magic", "Let no one stand in your way.", damage_fighters, mult = 20)
+    YTP_MAGIC_NOCOOL = Attack("YTP Magic", "Let no one stand in your way.", damage_fighters, mult = 20, ex = False)
     YTP_HEAL = Attack("Attack.HEAL", "No matter the cost.", heal_fighters, target_count = 0, target_type = "allies", cooldown = 1, mult = 1)
     FUN_VALUE = Attack("Fun Value", "A Dev's favorite attack.", damage_fighters, mult = 10)
     KICK = ComboAttack("Kick", "A stronger attack, and lowers AP.", [RAW_KICK, CS_AP_DOWN])
     BULLET_SPRAY = Attack("Bullet Spray", "Shred all enemies with your LMG!", damage_fighters, target_count = 0, target_type = "enemies", cooldown = 3, mult = 1.5)
-    RAW_SLASH = Attack("Raw Slash", "It's fuckin raw!", damage_fighters)
-    BLEED = Attack("Bleed", "Bleed them dry!", damage_over_time, mult = 0.25)
+    RAW_SLASH = Attack("Raw Slash", "It's fuckin raw!", damage_fighters, ex = False)
+    BLEED = Attack("Bleed", "Bleed them dry!", damage_over_time, mult = 0.25, ex = False)
     SLASH = ComboAttack("Slash", "A cutting attack that bleeds out your enemies.", [RAW_SLASH, BLEED])
     LIGHT_CAST = Attack("Light Cast", "A strong blast of light that varies in damage.", random_damage_fighters, cooldown = 3, min_mult = 1, max_mult = 3)
     INSIGHT = Attack("Insight", "Lowers enemies attack by a little.", change_stat, stat = "atk", mult = 0.75)
@@ -611,17 +610,17 @@ class Attacks:
     DAMAGE_SCREM = Attack("Damage Screm", "Yell as loud as possible to deafen your enemies!", damage_fighters, target_count = 0, target_type = "enemies", mult = 0.5)
     SNACK_TIME = Attack("Snack Time", "Heal your team with the power of snacks!", heal_fighters, target_count = 0, target_type = "allies", cooldown = 3, mult = 1)
     ELDRITCH_BLAST = Attack("Eldritch Blast", "An unholy blast that does quite a bit of damage to an enemy.", damage_fighters, mult = 1.5)
-    RAINBOW = Attack("Rainbow", "", confuse_targets, cooldown = 3)
-    VOMIT = Attack("Vomit", "", damage_over_time, cooldown = 3, mult = 1, turns = 3)
+    RAINBOW = Attack("Rainbow", "", confuse_targets, cooldown = 3, ex = False)
+    VOMIT = Attack("Vomit", "", damage_over_time, cooldown = 3, mult = 1, turns = 3, ex = False)
     RAINBOW_VOMIT = ComboAttack("Rainbow Vomit", "Confuse and damage your enemies with colorful nonsense!", [RAINBOW, VOMIT])
     ROBOPUNCH = Attack("RoboPunch", "A strong punch.", damage_fighters, mult = 1.75)
     HOLOSHIELD = Attack("HoloShield", "Boosts your team's defense by a bit.", change_stat, stat = "ap", target_count = 0, target_type = "allies", cooldown = 3, mult = 1.75)
     MUSIC_BOOST = Attack("Music Boost", "Boost one's defense by a bit.", change_stat, stat = "ap", target_count = 1, target_type = "allies", mult = 1.5)
-    RAVE_DEF = Attack("Rave DEF", "Lowers the enemies defense.", change_stat, target_count = 0, target_type = "enemies", stat = "ap", cooldown = 3, mult = 0.5)
-    RAVE_OFF = Attack("Rave OFF", "Rupture eardrums.", damage_fighters, target_count = 0, target_type = "enemies", cooldown = 3, mult = 0.5)
+    RAVE_DEF = Attack("Rave DEF", "Lowers the enemies defense.", change_stat, target_count = 0, target_type = "enemies", stat = "ap", cooldown = 3, mult = 0.5, ex = False)
+    RAVE_OFF = Attack("Rave OFF", "Rupture eardrums.", damage_fighters, target_count = 0, target_type = "enemies", cooldown = 3, mult = 0.5, ex = False)
     RAVE = ComboAttack("Rave", "Blast your enemies' eardrums! (Damages and lowers defense.)", [RAVE_DEF, RAVE_OFF])
-    SAMPLE_SPAM = Attack("Sample Spam", "", random_damage_fighters, min_mult = 1, max_mult = 3, mult = 1)
-    SOUND_BLAST = Attack("Sound Blast", "", damage_fighters, target_count = 0, target_type = "enemies")
+    SAMPLE_SPAM = Attack("Sample Spam", "", random_damage_fighters, min_mult = 1, max_mult = 3, mult = 1, ex = False)
+    SOUND_BLAST = Attack("Sound Blast", "", damage_fighters, target_count = 0, target_type = "enemies", ex = False)
     SAMPLE_BLAST = ComboAttack("Sample Blast", "Blast your enemies with music! Varies in damage.", [SAMPLE_SPAM, SOUND_BLAST])
     GNOMED = Attack("Gnomed", "Confuse everyone by gnoming them!", confuse_targets, target_count = 0, target_type = "enemies", cooldown = 3)
     NUDGE = Attack("Nudge", "Does either very little or massive damage.", random_damage_fighters, min_mult = 0.1, max_mult = 10, mult = 1)
@@ -632,6 +631,28 @@ class Attacks:
     AI_MIMIC = Attack("AI Mimic", "Copies an enemies attack.", ai_mimic, target_count = 1, target_type = "enemies", cooldown = 2)
     SHELL = Attack("Shell", "Fire a tank shell!", random_damage_fighters, min_mult = 1, max_mult = 2)
     HEAL_EX = Attack("Heal EX", "Lots of healing.", heal_fighters, target_count = 0, target_type = "allies", mult = 10)
+
+    # UCN
+    STOMP = Attack("Stomp", "Send an earthquake to the enemies!", damage_fighters, target_count = 0, target_type = "enemies", ex = False, mult = 0.75)
+    POKE = Attack("Poke", "A mega poke.", damage_fighters, target_count = 1, target_type = "enemies", ex = False, mult = 2.5)
+    SWORD = Attack("Sword", "The edge of a sharp thing.", damage_fighters, target_count = 1, target_type = "enemies", ex = False)
+    SWORD_AP = Attack("Sword (AP Down)", "The edge of a sharp thing, more.", change_stat, stat = "ap", target_count = 1, target_type = "enemies", mult = 0.75, ex = False)
+    SWORD_SLASH = ComboAttack("Sword Slash", "Hit an enemy, and take a chip out of their armor.", [SWORD, SWORD_AP], ex = False)
+    FLAMETHROWER = Attack("Flamethrower", "Spray all your enemies with burning fuel!", damage_over_time, target_count = 0, target_type = "enemies", ex = False, mult = 0.5, turns = 3, cooldown = 3)
+    CHOCOLATE_CAKE = Attack("Chocolate Cake", "Heal a party member with loads to eat!", heal_fighters, target_type = "allies", ex = False)
+    CONFUSING_STORY = Attack("Confusing Story", "Tell a puzzling poem.", confuse_targets, ex = False)
+    HYPE_UP = Attack("Hype Up", "Get a team member pumped to fight!", change_stat, target_type = "allies", ex = False, mult = 1.5, stat = "atk")
+    PITCHMAN = Attack("Pitchman", "Smooth-talk an enemy's defenses down!", change_stat, target_type = "enemies", ex = False, mult = 0.75, stat = "ap")
+    HUG = Attack("Hug", "Hug an enemy (ouch).", damage_fighters, target_count = 1, target_type = "enemies", ex = False, mult = 1.5)
+    SPIKE_BOMB = Attack("Spike Bomb", "Release spikes to all enemies!", damage_fighters, target_count = 0, target_type = "enemies", ex = False, mult = 1.5, cooldown = 3)
+    SHOT = Attack("Shot", "I'd like to see you outrun bullet.", damage_fighters, target_count = 1, target_type = "enemies", ex = False, mult = 1.5)
+    SHOT_AP = Attack("Shot (AP Down)", "Kevlar destroyed.", change_stat, stat = "ap", target_count = 1, target_type = "enemies", mult = 0.75, ex = False)
+    PISTOL = ComboAttack("Pistol", "A sharp shot to the chest.", [SHOT, SHOT_AP], ex = False)
+    ALL_OVER_AGAIN = Attack("All Over Again", "Ditto.", ai_mimic)
+    HEAVY_PUNCH = Attack("Heavy Punch", "A quick blow.", damage_fighters, target_count = 1, target_type = "enemies", ex = False, mult = 1.75)
+    SOTH = Attack("Shit On The House", "I'm going to... take a shit on the house.", damage_fighters, target_count = 0, target_type = "enemies", ex = False, mult = 2, cooldown = 3)
+    ONE_HUNDRED = Attack("100% Unsatisfied", "Yelp reviews coming in...", change_stat, stat = "atk", target_count = 0, target_type = "enemies", mult = 0.8, ex = False)
+    ICE_CREAM = Attack("Ice Cream", "Bing chilling!", heal_fighters, target_count = 0, target_type = "allies", ex = False, mult = 1.5, cooldown = 3)
 
     @classproperty
     def names(cls) -> list[str]:
@@ -672,9 +693,17 @@ class Fighters:
     DB05 = Fighter("DB05", False, 9001, 9001, 50, [Attacks.CONFIDENCE, Attacks.PEP_TALK], Image("images/characters/db.png"))
     ANNO = Fighter("Anno", False, 200, 20, 40, [Attacks.RADS_ATTACK, Attacks.AI_MIMIC], Image("images/characters/anno/anno.png"))
 
+    # Allies (UCN)
+    BUBBLE = Fighter("Bubble", False, 250, 10, 35, [Attacks.STOMP, Attacks.POKE], Image("secret/bubble.png"))
+    GES = Fighter("Ges", False, 170, 20, 35, [Attacks.SWORD_SLASH, Attacks.FLAMETHROWER], Image("images/characters/ges.png"))
+    MICHAEL = Fighter("Michael", False, 155, 15, 35, [Attacks.CHOCOLATE_CAKE, Attacks.CONFUSING_STORY], Image("images/characters/michael.png"))
+    BILLY = Fighter("Billy", False, 220, 10, 25, [Attacks.HYPE_UP, Attacks.PITCHMAN], Image("images/characters/billy.png"))
+    PHIL = Fighter("Phil", False, 160, 20, 40, [Attacks.HYPE_UP, Attacks.PITCHMAN], Image("images/characters/phil.png"))
+    MEAN = Fighter("Mean", False, 150, 20, 35, [Attacks.HUG, Attacks.SPIKE_BOMB], Image("images/characters/mean.png"))
+
     # Enemies
-    FANBOYA = Fighter("Fanboy",True, 50, 0, 16, [Attacks.PUNCH], Image("images/characters/nvidiafanboy.png"), ai = AIType.NEUTRAL, display_name = "Fanboy")
-    FANBOYB = Fighter("Fanboy",True, 50, 0, 16, [Attacks.PUNCH], Image("images/characters/amdfanboy.png"), ai = AIType.NEUTRAL, display_name = "Fanboy")
+    FANBOYA = Fighter("Fanboy", True, 50, 0, 16, [Attacks.PUNCH], Image("images/characters/nvidiafanboy.png"), ai = AIType.NEUTRAL, display_name = "Fanboy")
+    FANBOYB = Fighter("Fanboy", True, 50, 0, 16, [Attacks.PUNCH], Image("images/characters/amdfanboy.png"), ai = AIType.NEUTRAL, display_name = "Fanboy")
     COP = Fighter("Cop", True, 150, 15, 30, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/cop.png"), ai = AIType.NEUTRAL)
     COPGUYGODMODE = Fighter("Copguy (God)", True, 9001, 9001, 35, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/copguy.png"), ai = AIType.NEUTRAL, display_name = "Copguy")
     COPGUY = Fighter("Copguy", True, 300, 20, 35, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/copguy.png"), ai = AIType.NEUTRAL)
@@ -684,6 +713,11 @@ class Fighters:
     BIG_TANK = Fighter("Abrams", True, 700, 70, 150, [Attacks.SHELL], Image("images/characters/abrams.png"), ai = AIType.AGGRO)
     COPGUY_EX = Fighter("Copguy EX", True, 2222, 30, 50, Attacks.ex_attacks, Image("images/characters/copguy.png"), ai = AIType.COPGUY_EX)
     PAKOOE = Fighter("Pakoo (Error)", True, 9999, 70, 150, [Attacks.FUN_VALUE], Image("images/characters/pakoo/pakoo_disappointed.png"), ai = AIType.AGGRO, display_name = "Pakoo")
+
+    # Enemies (UCN)
+    WESLEY = Fighter("Wesley", True, 200, 20, 40, [Attacks.PISTOL, Attacks.ALL_OVER_AGAIN], Image("images/characters/wesley.png"), ai = AIType.AGGRO)
+    ED = Fighter("Ed", True, 300, 30, 25, [Attacks.HEAVY_PUNCH, Attacks.SOTH], Image("images/characters/ed.png"), ai = AIType.SMART)
+    RICHARD = Fighter("Richard", True, 250, 20, 30, [Attacks.ONE_HUNDRED, Attacks.ICE_CREAM], Image("images/characters/rich.png"), ai = AIType.DEFENSIVE)
 
     @classproperty
     def names(cls) -> list[str]:
