@@ -83,8 +83,8 @@ See what needs to be done below.
     - [X] Bios
     - [X] Jukebox
 - [ ] Sweden [Aria]
-    - [ ] Script
-    - [ ] Backgrounds
+    - [ ] Script [30%]
+    - [ ] Backgrounds [30%]
     - [ ] Characters
     - [ ] Transitions
     - [ ] Music
@@ -99,17 +99,17 @@ See what needs to be done below.
 - [X] Short Archival animation (Error Route) [Pakoo]
 
 ### Passes [All, October W1]
-- [ ] Spelling/Grammar Pass [70%]
-- [ ] Transition/Flip Pass [includes flashes] [70%]
+- [X] Spelling/Grammar Pass
+- [X] Transition/Flip Pass [includes flashes]
 - [X] Sprite Emotion Pass
 - [X] Sprite Time-of-Day Check
-- [ ] Jukebox/Achievements/Bio Pass [95%]
+- [X] Jukebox/Achievements/Bio Pass
 - [ ] Remove/address all TODO comments
 - [ ] Add more bounciness
 - [X] Check Discord channels for missing content
 
 ### Wishlist
 - [ ] Ultimate Custom Night (RPG Freeplay) [75%]
-    - [ ] Additional fighters/AIs
+    - [ ] Additional fighters/AIs [50%]
 - [ ] "The Legend" style custscene for HoH SiS monolouge [Digi or Pakoo]
-- [ ] More car dialouge
+- [X] More car dialouge
