@@ -782,7 +782,7 @@ class DamageIndicator:
                 return "confused"
         else:
             return "none"
-        
+
     @property
     def color(self) -> tuple[int, int, int]:
         if self.type == "ap":
@@ -835,7 +835,6 @@ class DamageIndicator:
         elif self.indicator_type == "confused" or self.indicator_type == "unconfused":
             renpy.sound.play(f"audio/ut/snd_chime.wav", channel = "sfx")
             self.play_sound = False
-
 
 # This is the displayable that controls what's happening in the boxes at the bottom of the screen
 class StatBlockDisplayable(renpy.Displayable):
