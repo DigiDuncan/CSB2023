@@ -1763,6 +1763,9 @@ label ikea:
     stop music fadeout 3.0
     music end
     n "CS rides the bus for a while and eventually the Ikea comes into view."
+    scene bus_seat
+    show cs  at mid_left
+    with dissolve
     cs "Oh my gosh I was right! That's the biggest Ikea I've ever seen."
     n "CS presses the button to stop the bus, and the rest of the passengers give him a weird look as he gets off."
     cs "That was strange. I wonder why everyone was giving me that look as I got off the bus."
