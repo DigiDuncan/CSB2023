@@ -1407,7 +1407,7 @@ label interstate_94:
     hide billy
     with moveoutleft
     n "CS, Billy, and Arc all walk out."
-    mario "That was really nice. I guess you can have shit in Detroit after all."
+    mario "That was really nice. I guess you {i}can{/i} have shit in Detroit after all."
     scene black with dissolve
     jump ohio
     

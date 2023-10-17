@@ -168,11 +168,6 @@ label england_travel:
     jump england
 
 label sweden_travel:
-    play sound "secret/gul.ogg"
-    show pakoo disappointed at center with moveinright
-    pakoo "Sorry, Sweden is unavailable. Jumping to england_travel."
-    hide pakoo with moveoutleft
-    jump england_travel
     $ swedfirst = True
     cs "Uhh, I guess I wanted to go to Sweden?"
     benrey "But everyone has a Pass Port!"
@@ -1143,11 +1138,6 @@ label england_japan:
     jump japan_two
 
 label england_sweden:
-    play sound "secret/gul.ogg"
-    show pakoo disappointed at center with moveinright
-    pakoo "Sorry, Sweden is unavailable. Jumping to england_japan."
-    hide pakoo with moveoutleft
-    jump england_japan
     cs "I was thinking of going to Sweden."
     kitty "Huh, never heard much about Sweden."
     arceus "Is there anywhere you wanna go in particular in Sweden?"
@@ -1586,11 +1576,6 @@ label japan_leave_airport:
         jump going_home
 
 label japan_sweden:
-    play sound "secret/gul.ogg"
-    show pakoo disappointed at center with moveinright
-    pakoo "Sorry, Sweden is unavailable. Jumping to going_home."
-    hide pakoo with moveoutleft
-    jump going_home
     cs "I think I wanna go to Sweden this time."
     cs "I know Vinesauce Joel is there, and I have kinda always wanted to meet up with him."
     cs "Well, if I did the crazy things I did in this country, then I'm sure I can make it in Sweden!"
@@ -1668,5 +1653,99 @@ label going_home:
     return
 
 label sweden:
-    n "Aria writing goes here."
-    jump going_home
+    n "CS wakes up as his plane lands in Stockholm."
+    cs "Finally to Sweden! I don't have to worry about the cops anymore."
+    cs "Now that I'm here, I should go explore."
+    scene black with dissolve
+    n "CS exits the airport and finds himself in the middle of the city."
+    scene stockholm with fade
+    cs "Wow! There's so many people around."
+    cs "I guess I should try to find something to do..."
+    cs "I don't have much money left, but I should be able to find a bus to somewhere cool."
+    show average_swede at left
+    cs "That guy looks like he'd be able to help."
+    cs "Excuse me sir, do you know where the bus stop is?"
+    average_swede "Min svävare är full med ålar."
+    cs "Oh dang, I forgot not many Swedes can speak English. Hopefully I find someone who can."
+    n "As CS says this, he sees a bus drive past and decides to just follow it to the bus stop."
+    n "As CS looks at the map and tries to figure out what bus to take."
+    jump sweden_menu
+
+label sweden_menu:
+    # "Go on an anime adventure":
+    #     jump anime_adventure
+    # "Go sing some karaoke":
+    #     jump karaoke
+    # "Have some fun with Miku":
+    #     jump miku_pizza
+    python:
+        locations = []
+        if not anime_check:
+            locations.append(("Go see the Aurora Borealis", "aurora_borealis"))
+        if not karaoke_check:
+            locations.append(("Go to Ikea", "ikea"))
+        if not miku_check:
+            locations.append(("Find Joel", "joel"))
+        if not locations:
+            locations.append(("I've done everything", "sweden_leave"))
+        label_jump = renpy.display_menu(locations)
+        renpy.jump(label_jump)
+
+label aurora_borealis:
+    cs "I am in Sweden, so I guess I may as well go see the Northern Lights."
+    cs "I should go somewhere less urban if I wanna see it properly though. Too much light pollution here."
+    cs "I'll just get on a bus and keep going until I see somewhere with clear skies."
+    n "CS sits down on the next bus and begins staring out the window like he's in a music video."
+    n "Eventually, he sees an area that looks good and gets off the bus."
+    
+    
+
+    
+
+label ikea:
+    cs "I should go check out the Ikea here."
+    cs "It's the land of Ikea. They're probably a lot better than the ones in the US."
+    cs "Easy to find on the map too. They have icons for all the major tourist attractions."
+    cs "Weird that there's only one Ikea here around here though."
+    cs "I guess it's just the flagship Ikea store. It's labeled Onda Ikea - gå inte hit."
+    cs "That probably means, like, Super Ikea or something."
+    cs "Mondo Ikea - go into here."
+    cs "Yeah that makes sense. English and Swedish are pretty much the same."
+    n "CS rides the bus for a while and eventually the Ikea comes into view."
+    cs "Oh my gosh I was right! That's the biggest Ikea I've ever seen."
+    n "CS presses the button to stop the bus, and the rest of the passengers give him a weird look as he gets off."
+    cs "That was strange. I wonder why everyone was giving me that look as I got off the bus."
+    cs "It's not like I got off while on the bus."
+    cs "Whatever, I gotta get in there and get those meatballs."
+    ikea_greeter "Welcome to Ikea! Can I help you with anything?"
+    cs "Yeah can you show me where the food court is?"
+    ikea_greeter "Of course. It's right around that corner and to the left."
+
+    
+
+label joel:
+    cs "I should try to find Vinesauce Joel. He likes YTPs, so he'd probably want to hang out."
+    cs "I know he's in Northern Sweden, so I'll get up there. Sweden's pretty small, it couldn't be that hard to find him."
+    n "CS gets on a bus up north, and he falls asleep."
+    n "When the bus hits the end of the line, one of the other riders wakes him up."
+    joel "Hey man, you gotta get up. End of the line here."
+    cs "Oh alright, thanks for waking me--"
+    pause 0.5
+    cs "Wait, you're Joel! What are you doing there?"
+    joel "I'm just taking the bus back home. What're you doing here?"
+    cs "I was looking for you actually."
+    joel "What? How? Why?"
+    cs "I just happened to be in Sweden, and I knew that you were more north, so I went north."
+    joel "Your plan was just to explore all of Northern Sweden?"
+    joel "That's insane."
+    cs "It worked, didn't it."
+    joel "I suppose. Why did you even want to find me?"
+    cs "I just thought it would be cool to hang out."
+    cs "I know you also like YTPs, and I make those, so you might be interested."
+    joel "Well, I do like YTPs. This situation is already nonsensical enough, might as well lean into it."
+    joel "Wanna come to my house?"
+    cs "Sounds like a plan. It's freezing out and have nowhere else to go."
+    joel "You really didn't think this plan through at all, huh."
+    cs "Didn't think I needed to." 
+    cs "It's working out really well, so I still don't really."
+    joel "We'll see how long that works out for you."
