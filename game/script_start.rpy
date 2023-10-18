@@ -315,8 +315,9 @@ define mario = Character("Mario", callback = renpy.partial(char_callback, name =
 define smiley = Character("Smiley", callback = renpy.partial(char_callback, name = "smiley"))
 define violent_jay = Character("Violent Jay", callback = renpy.partial(char_callback, name = "jay"))
 define shaggy_too_dope = Character("Shaggy Too Dope", callback = char_callback)
-define average_swede = Character("Swede", callback = char_callback)
 define joel = Character("Vargskeletor Joel", callback = char_callback)
+define ikea_greeter = Character("Ikea Greeter", callback = char_callback)
+define average_swede = Character("Swede", callback = char_callback)
 
 # Character Images
 ## CS
@@ -583,6 +584,8 @@ image mario flipped = "flip:characters/mario.png"
 image violent_jay = "characters/jay.png"
 image shaggy_too_dope = "characters/shaggydope.png"
 image joel = "characters/joel.png"
+image ikea_greeter = "characters/ikea_man.png"
+image swede = "characters/swede.png"
 
 # Background Images
 ## CSBI
@@ -825,6 +828,8 @@ image stockholm = "bg/stockholm.png"
 image bus_zone = "bg/bus_zone.png"
 image bus_map = "bg/bus_map.png"
 image bus_seat = "bg/bus_seat.png"
+image ikea_outside = "bg/ikea_outside.png"
+image ikea_inside = "bg/ikea_inside.png"
 
 ## AI Ending
 image park1 = "bg/ai/amusementpark1.png"

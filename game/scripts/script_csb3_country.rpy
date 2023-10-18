@@ -710,7 +710,7 @@ label good_ramsay:
     music end 
     show cs happy flipped
     cs "Holy shit, I did it!"
-    cs "Arceus is gonna be so surpised when he hears the news!"
+    cs "Arceus is gonna be so surprised when he hears the news!"
     show cs flipped
     cs "Man, I wish he could've seen this."
     n "Gordon comes back with a briefcase, full of cash."
@@ -1670,7 +1670,7 @@ label sweden:
     cs "I don't have much money left, but I should be able to find a bus to somewhere cool."
     hide cs with moveoutright
     scene bus_zone 
-    show average_swede at left    
+    show swede at left    
     with dissolve
     show cs flipped at right with moveinright
     cs "That guy looks like he'd be able to help."
@@ -1679,6 +1679,7 @@ label sweden:
     cs "Oh dang, I forgot not many Swedes can speak English. Hopefully I find someone who can."
     n "As CS says this, he sees a bus drive past and decides to just follow it to the bus stop."
     hide cs with moveoutleft
+    pause 2.0
     scene bus_map with dissolve
     n "As CS looks at the map, he tries to figure out what bus to take."
     jump sweden_menu
@@ -1701,7 +1702,7 @@ label sweden_second:
     cs "I should be able to find a bus to somewhere cool, I have some money this time."
     hide cs with moveoutright
     scene bus_zone 
-    show average_swede at left    
+    show swede at left    
     with dissolve
     show cs flipped at right with moveinright
     cs "That guy looks like he'd be able to help."
@@ -1764,13 +1765,23 @@ label ikea:
     music end
     n "CS rides the bus for a while and eventually the Ikea comes into view."
     scene bus_seat
-    show cs  at mid_left
+    show cs flipped at mid_left
     with dissolve
     cs "Oh my gosh I was right! That's the biggest Ikea I've ever seen."
+    scene black with dissolve
     n "CS presses the button to stop the bus, and the rest of the passengers give him a weird look as he gets off."
+    scene ikea_outside
+    with dissolve
+    show cs at center with moveinleft
     cs "That was strange. I wonder why everyone was giving me that look as I got off the bus."
     cs "It's not like I got off while on the bus."
+    show cs happy
     cs "Whatever, I gotta get in there and get those meatballs."
+    hide cs with moveoutright
+    scene ikea_inside
+    show ikea_greeter at mid_right
+    with dissolve
+    show cs at mid_left with moveinleft
     ikea_greeter "Welcome to Ikea! Can I help you with anything?"
     cs "Yeah can you show me where the food court is?"
     ikea_greeter "Of course. It's right around that corner and to the left."
@@ -1795,7 +1806,7 @@ label joel:
     pause 0.5
     show cs worried with hpunch
     cs "Wait, you're Joel! What are you doing there?"
-    show cs surpised
+    show cs surprised
     joel "I'm just taking the bus back home. What're you doing here?"
     cs "I was looking for you actually."
     joel "What? How? Why?"
