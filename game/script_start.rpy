@@ -315,7 +315,7 @@ define mario = Character("Mario", callback = renpy.partial(char_callback, name =
 define smiley = Character("Smiley", callback = renpy.partial(char_callback, name = "smiley"))
 define violent_jay = Character("Violent Jay", callback = renpy.partial(char_callback, name = "jay"))
 define shaggy_too_dope = Character("Shaggy Too Dope", callback = char_callback)
-define joel = Character("Vargskeletor Joel", callback = char_callback)
+define joel = Character("Vargskelethor Joel", callback = renpy.partial(char_callback, name = "joel", beep = "joel"))
 define ikea_greeter = Character("Ikea Greeter", callback = char_callback)
 define average_swede = Character("Swede", callback = char_callback)
 

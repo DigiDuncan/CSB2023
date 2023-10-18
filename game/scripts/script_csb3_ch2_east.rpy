@@ -1966,7 +1966,10 @@ label talktohohsis:
     play sound "cheers.ogg" volume 0.7
     pause 2.0
     n "The crowd errupts in cheers as CS finally enters his house."
-    scene cs_room with fade
+    scene black with dissolve
+    pause 1.0
+    $ renpy.movie_cutscene("movies/hohrepair.MP4")
+    scene cs_room with dissolve
     play music2 "<loop 0>ac_title.mp3" volume 0.4
     music New Leaf Title Theme - Kazumi Totaka
     show cs at center with moveinleft

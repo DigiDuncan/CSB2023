@@ -81,6 +81,7 @@ init python:
         "scott_pres": "Scott Oelkers",
         "miku": "Hatsune Miku",
         "sayori": "Sayori",
+        "joel": "Vargskelethor Joel",
         #Archival
         "k174": "Pakoo's Memories",
         "addy": "Addy",
