@@ -157,7 +157,29 @@ label archival:
     cs "What is this place?! What is going on?!"
     n "CS looks around for a second, and sees what looks like a crack in the sky."
     cs "What the hell?"
-    n "CS makes his way to the crack, and realizes that there is an invisible wall."
+    n "Before CS can figure out what to do, the three guys from earlier catch up with CS."
+    stop music fadeout 3.0
+    music end
+    show k199 at center
+    show k174 at mid_right
+    show k207 at right
+    with moveinright
+    k174 "There he is! He's trying to escape!"
+    show cs disappointed
+    k199 "Yeah, not so fast, CS. We aren't letting you outta here that easily."
+    cs "Can one of you guys please tell me what's going on?!"
+    k207 "Do we really have to explain what's wrong to him?"
+    k199 "No, he's going to find out the hard way. Let's kick his ass!"
+    k174 "Shouldn't we let Addy deal with this?"
+    k199 "Fuck that! Let's settle this now!" 
+    music BATTLE UNDER A BROKEN SKY - AZALI
+    jump rpg_archival
+
+label archival_finale:
+    scene csmart_old
+    show cs disappointed at left
+    with dissolve
+    n "After that battle, CS makes his way to the crack, and realizes that there is an invisible wall."
     hide cs with dissolve
     stop music fadeout 3.0
     music end

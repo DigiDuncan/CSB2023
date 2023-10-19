@@ -593,7 +593,7 @@ class Attacks:
     RAW_KICK = Attack("Raw Kick", "It's fuckin raw!", damage_fighters, mult = 2, ex = False)
     YTP_MAGIC = Attack("YTP Magic", "Channel the power of YTP!", damage_fighters, cooldown = 10, mult = 20, used = True)
     YTP_MAGIC_NOCOOL = Attack("YTP Magic", "Let no one stand in your way.", damage_fighters, mult = 20, ex = False)
-    YTP_HEAL = Attack("Attack.HEAL", "No matter the cost.", heal_fighters, target_count = 0, target_type = "allies", cooldown = 1, mult = 1)
+    YTP_HEAL = Attack("Attack.HEAL", "No matter the cost.", heal_fighters, target_count = 0, target_type = "allies", cooldown = 1, mult = 3)
     FUN_VALUE = Attack("Fun Value", "A Dev's favorite attack.", damage_fighters, mult = 10)
     KICK = ComboAttack("Kick", "A stronger attack, and lowers AP.", [RAW_KICK, CS_AP_DOWN])
     BULLET_SPRAY = Attack("Bullet Spray", "Shred all enemies with your LMG!", damage_fighters, target_count = 0, target_type = "enemies", cooldown = 3, mult = 1.5)
@@ -680,6 +680,7 @@ class Fighters:
     CS_FINAL = Fighter("CS (Final)", False, 288, 10, 40, [Attacks.KICK, Attacks.BULLET_SPRAY, Attacks.YTP_MAGIC], Image("images/characters/cs/neutral.png"), display_name = "CS")
     CS_FINAL2 = Fighter("CS (Error)", False, 1880, 10, 250, [Attacks.KICK, Attacks.YTP_HEAL, Attacks.YTP_MAGIC_NOCOOL], Image("images/characters/cs/neutral.png"), display_name = "CS")
     CS_WEAK = Fighter("CS (Weak)", False, 188, 5, 25, [Attacks.PUNCH], Image("images/characters/cs/neutral.png"), display_name = "CS")
+    CS_ARCHIVAL = Fighter("CS (Archival)", False, 1027, 50, 27, [Attacks.PUNCH, Attacks.YTP_HEAL], Image("images/characters/cs/neutral.png"), display_name = "CS")
     ARCEUS = Fighter("Arceus", False, 160, 15, 35, [Attacks.SLASH, Attacks.LIGHT_CAST], Image("images/characters/arc/arceus.png"))
     PAKOO = Fighter("Pakoo", False, 145, 20, 30, [Attacks.INSIGHT, Attacks.SHOTGUN], Image("images/characters/pakoo/pakoo.png"))
     MIKA = Fighter("Mika", False, 165, 20, 30, [Attacks.ENCOURAGE, Attacks.HIGH_NOON], Image("images/characters/mika.png"))
@@ -713,6 +714,10 @@ class Fighters:
     BIG_TANK = Fighter("Abrams", True, 700, 70, 150, [Attacks.SHELL], Image("images/characters/abrams.png"), ai = AIType.AGGRO)
     COPGUY_EX = Fighter("Copguy EX", True, 2222, 30, 50, Attacks.ex_attacks, Image("images/characters/copguy.png"), ai = AIType.COPGUY_EX)
     PAKOOE = Fighter("Pakoo (Error)", True, 9999, 70, 150, [Attacks.FUN_VALUE], Image("images/characters/pakoo/pakoo_disappointed.png"), ai = AIType.AGGRO, display_name = "Pakoo")
+    K174 = Fighter("K17-4", True, 174, 17, 20, [Attacks.PUNCH], Image("images/characters/k174.png"), ai = AIType.NEUTRAL)
+    K199 = Fighter("K19-9", True, 199, 19, 30, [Attacks.KICK], Image("images/characters/k199.png"), ai = AIType.AGGRO)
+    K207 = Fighter("K20-7", True, 207, 20, 10, [Attacks.PUNCH], Image("images/characters/k207.png"), ai = AIType.DEFENSIVE)
+
 
     # Enemies (UCN)
     WESLEY = Fighter("Wesley", True, 200, 20, 40, [Attacks.PISTOL, Attacks.ALL_OVER_AGAIN], Image("images/characters/wesley.png"), ai = AIType.AGGRO)

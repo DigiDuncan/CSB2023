@@ -210,3 +210,16 @@ label rpg_error:
         scale 2.0
         on_win "secret2"
         on_lose "after_error_fight"
+
+label rpg_archival:
+    rpg:
+        bg "images/bg/csmart.png"
+        fighters:
+            cs_archival
+            k174
+            k199
+            k207
+        scale 1.0
+        on_win "archival_finale"
+        on_lose "rpg_archival"
+        music "audio/broken_sky.mp3"

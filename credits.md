@@ -225,6 +225,8 @@
     - Neko To Sanpo
 - Project SEKAI
     - Real World
+- AZALI
+    - BATTLE UNDER A BROKEN SKY
 - Tears For Fears
     - Everybody Wants To Rule The World
 - Black Rebel Motorcycle Club

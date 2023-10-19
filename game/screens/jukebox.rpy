@@ -129,6 +129,7 @@ init python:
         "Friendship - Toby Fox": "friendship.mp3",
         #Archival
         "Facing Worlds - Michiel van den Bos": "facing_worlds.mp3",
+        "BATTLE UNDER A BROKEN SKY - AZALI": "broken_sky.mp3",
         "Take a Trip from Me - u4ia": "take_trip.mp3",
         "Everybody Wants To Rule The World - Tears For Fears": "everybody_wants.mp3",
         #Genocide route
