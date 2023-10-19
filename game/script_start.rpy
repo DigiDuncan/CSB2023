@@ -362,6 +362,8 @@ image cs scared = "characters/cs/scared.png"
 image cs insane worried = "characters/cs/insane.png"
 image cs insane worried flipped = "flip:characters/cs/insane.png"
 image cs insane disappointed = "characters/cs/insane2.png"
+image cs horse = "characters/cs/horse.png"
+image cs horse flipped = "flip:characters/cs/horse.png"
 
 ## Arc
 image arceus = "characters/arc/arceus.png"
@@ -912,6 +914,8 @@ image script = "secret/script.png"
 image post_it2 = "secret/post-it2.png"
 image colorbars = "colorbars.png"
 image paper = "paper.png"
+image pipe_gun = "pipe_gun.png"
+image pipe_gun flipped = "flip:pipe_gun.png"
 
 # Movies
 image car background = Movie(play="movies/car_background.webm")

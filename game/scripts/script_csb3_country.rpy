@@ -1885,9 +1885,11 @@ label joel:
     with dissolve
     cs "Why would I go be bait for an alien that's already killed two horses that are about ten times my weight?"
     joel "You'll be fine, don't worry about it."
+    show pipe_gun flipped at mid_right_right with dissolve
     n "Joel pulls out a makeshift gun."
     joel "This bad boy is enough to kill any alien."
     joel "You did come across the world to find me. I figure this isn't that much crazier."
+    hide pipe_gun with dissolve
     cs "Okay, I'll do it."
     cs "Would the alien even go for me though?"
     cs "I'm clearly not a horse."
@@ -1895,6 +1897,7 @@ label joel:
     joel "We'll just get you a horse disguise, and you'll be set."
     show cs
     cs "No need. I brought my own."
+    show cs horse
     n "CS pulls out a horse head and puts it on."
     cs "See?"
     joel "What the hell?! What all do you have in there?"
@@ -1904,7 +1907,7 @@ label joel:
     scene black with dissolve
     n "Joel gives CS a walkie-talkie, and he goes outside to the stable while Joel watches the radar."
     scene joel_outside with dissolve
-    show cs at center with moveinleft
+    show cs horse at center with moveinleft
     cs "Alright, I'm in position."
     joel "Sounds good, I'll run out when I see the alien moving this way and tell you on the walkie-talkie."
     pause 3.0
@@ -1912,6 +1915,7 @@ label joel:
     hide cs with moveoutright
     pause 1.0
     show joel flipped at mid_left with moveinleft
+    show pipe_gun at mid_mid_left with dissolve
     show alien at mid_right with moveinright
     joel "I've got you this time, alien!" #Joel makes it out just before the alien
     alien "Ikke skyt! Jeg er ikke en romvesen! Jeg er bare en normal norsk mann!" #Make this wingdings
@@ -1923,6 +1927,7 @@ label joel:
     pause 1.0
     scene joel_outside
     show joel flipped at mid_left
+    show pipe_gun at mid_mid_left
     show alien dead at mid_right
     with dissolve
     #Gun blast sfx and white screen. Screen comes back and alien is laying sideways
