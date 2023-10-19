@@ -761,9 +761,9 @@ label good_ramsay:
     arceus "Yeah, I know right? I don't understand either."
     kitty "What is in this Genergy drink of yours?"
     cs "Well, I sold the recipe, so I don't really know anymore."
-    kitty "Oh, dang..."
+    kitty "Well, shit..."
     cs "Just kidding! I still have a back-up, but I'm gonna keep it secret."
-    kitty "Ah ok."
+    kitty "Ah, ok."
     arceus "Well, you did quite a bit already, is there anything else you want to do here?"
     $ achievement_manager.unlock("Master Chef")
     jump england_menu
