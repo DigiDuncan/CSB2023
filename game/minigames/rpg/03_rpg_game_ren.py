@@ -160,7 +160,7 @@ def draw_in(subject: Fighter, targets: list[Fighter], crit: bool, options: dict)
     if attack_type == 1:
         print("[Draw In] AP Up")
         for f in targets:
-            if f.enemy:
+            if (f.enemy ^ subject.enemy):
                 answer.append((0, "none"))
             else:
                 old_ap = f.armor_points
@@ -171,7 +171,7 @@ def draw_in(subject: Fighter, targets: list[Fighter], crit: bool, options: dict)
     elif attack_type == 2:
         print("[Draw In] AP Down")
         for f in targets:
-            if not f.enemy:
+            if not (f.enemy ^ subject.enemy):
                 answer.append((0, "none"))
             else:
                 old_ap = f.armor_points
@@ -182,7 +182,7 @@ def draw_in(subject: Fighter, targets: list[Fighter], crit: bool, options: dict)
     elif attack_type == 3:
         print("[Draw In] ATK Up")
         for f in targets:
-            if f.enemy:
+            if (f.enemy ^ subject.enemy):
                 answer.append((0, "none"))
             else:
                 old_ap = f.attack_points
@@ -193,7 +193,7 @@ def draw_in(subject: Fighter, targets: list[Fighter], crit: bool, options: dict)
     elif attack_type == 4:
         print("[Draw In] ATK Down")
         for f in targets:
-            if not f.enemy:
+            if not (f.enemy ^ subject.enemy):
                 answer.append((0, "none"))
             else:
                 old_ap = f.attack_points

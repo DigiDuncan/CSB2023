@@ -93,6 +93,7 @@
 * **ULTIMATE CUSTOM NIGHT HAS BEEN REWORKED!** Unlock it in the Extras menu by getting all the endings!
 * The RPG game continues to be rebalanced! Sorry, this is going to happen in Beta. We think it's good now, though!
 * **Sweden is now in the game!**
+* There's a new cutscene at the end of True Route
 * ||Archival ending|| sees continued improvements
 * Aria's dark sprite is now actually in the game
 * Blank now has a beep
