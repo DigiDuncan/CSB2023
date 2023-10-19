@@ -104,10 +104,10 @@ label knocked_out:
     show benrey at center
     with fade
     show cs at left with moveinleft
-    benrey "Hey, do you have your Pass Port?"
+    benrey "Hey, do you have your Passport?"
     show cs worried
     cs "Oh shiiiiiiiiiiiiiiiiiit."
-    benrey "You can't get on the plane without your Pass Port."
+    benrey "You can't get on the plane without your Passport."
     show cs disappointed
     cs "I'm sorry, I don't have one. Can you like, give me one?"
     benrey "Well what country do you want to go visit?"
@@ -122,7 +122,7 @@ label knocked_out:
 label england_travel:
     $ engfirst = True
     cs "Uhh, I guess I wanted to go to England?"
-    benrey "Well I'm sorry, but everyone has a Pass Port!"
+    benrey "Well I'm sorry, but everyone has a Passport!"
     benrey "Try checking your pocket."
     n "CS puts his hand in his pocket and pulls out a Canadian passport."
     show cs
@@ -170,12 +170,12 @@ label england_travel:
 label sweden_travel:
     $ swedfirst = True
     cs "Uhh, I guess I wanted to go to Sweden?"
-    benrey "But everyone has a Pass Port!"
+    benrey "But everyone has a Passport!"
     benrey "Try checking your back pocket."
     n "CS puts his hand in his back pocket and pulls out a Canadian passport."
     show cs
     cs "Oh, didn't know I had this!"
-    benrey "See? I told you! Everyone has a Pass Port! Now let's get you your ticket."
+    benrey "See? I told you! Everyone has a Passport! Now let's get you your ticket."
     n "CS hands the ticket dude his money."
     benrey "Alright, your plane is actually leaving here in about 20 minutes."
     cs "Ah shoot, thanks!"
@@ -217,7 +217,7 @@ label sweden_travel:
 label japan_travel:
     $ japfirst = True
     cs "Uhh, I guess I wanted to go to Japan?"
-    benrey "Well I'm sorry, but everyone's got a Pass Port!"
+    benrey "Well I'm sorry, but everyone's got a Passport!"
     benrey "Try checking your left shoe."
     n "CS takes off his left shoe and pulls out a Canadian passport."
     show cs
@@ -761,9 +761,9 @@ label good_ramsay:
     arceus "Yeah, I know right? I don't understand either."
     kitty "What is in this Genergy drink of yours?"
     cs "Well, I sold the recipe, so I don't really know anymore."
-    kitty "Oh, dang..."
+    kitty "Well, shit..."
     cs "Just kidding! I still have a backup, but I'm gonna keep it secret."
-    kitty "Ah ok."
+    kitty "Ah,  ok."
     arceus "Well, you did quite a bit already, is there anything else you want to do here?"
     $ achievement_manager.unlock("Master Chef")
     jump england_menu
@@ -783,7 +783,7 @@ label top_zone:
     kitty "We might be able to just call them."
     cs "If it's that easy, then hell yeah, let's do it!"
     scene black with dissolve
-    n "Kitty calls the members of Top Gear to get CS on the show for a day."
+    n "Kitty calls the members of Top Gear, after a brief panic attack, to get CS on the show for a day."
     scene dining_room
     show cs at left
     show arceus at center
