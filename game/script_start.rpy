@@ -318,6 +318,7 @@ define shaggy_too_dope = Character("Shaggy Too Dope", callback = char_callback)
 define joel = Character("Vargskelethor Joel", callback = renpy.partial(char_callback, name = "joel", beep = "joel"))
 define ikea_greeter = Character("Ikea Greeter", callback = char_callback)
 define average_swede = Character("Swede", callback = char_callback)
+define alien = Character("Grey", callback = char_callback)
 
 # Character Images
 ## CS
@@ -534,6 +535,8 @@ image bouncer2 = "characters/bouncer.png"
 image mika = "characters/mika.png"
 image mika dark = "characters/mika.png"
 image craptopreal = "characters/laptop.png"
+image craptopsmall = "characters/craptop.png"
+image craptopsmall flipped = "flip:characters/craptop.png"
 image monika = "characters/monika.png"
 image kitty = "characters/kitty.png"
 image kitty flipped = "flip:characters/kitty.png"
@@ -584,8 +587,11 @@ image mario flipped = "flip:characters/mario.png"
 image violent_jay = "characters/jay.png"
 image shaggy_too_dope = "characters/shaggydope.png"
 image joel = "characters/joel.png"
+image joel flipped = "flip:characters/joel.png"
 image ikea_greeter = "characters/ikea_man.png"
 image swede = "characters/swede.png"
+image alien = "characters/alien.png"
+image alien dead = "characters/alien_dead.png"
 
 # Background Images
 ## CSBI
@@ -830,6 +836,9 @@ image bus_map = "bg/bus_map.png"
 image bus_seat = "bg/bus_seat.png"
 image ikea_outside = "bg/ikea_outside.png"
 image ikea_inside = "bg/ikea_inside.png"
+image joel_house = "bg/joel_house.png"
+image joel_computer = "bg/joel_computer.png"
+image joel_outside = "bg/joel_outside.png"
 
 ## AI Ending
 image park1 = "bg/ai/amusementpark1.png"

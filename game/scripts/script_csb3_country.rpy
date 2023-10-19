@@ -1825,9 +1825,18 @@ label joel:
     cs "Didn't think I needed to." 
     cs "It's working out really well, so I still don't really."
     joel "We'll see how long that works out for you."
+    scene black with dissolve
+    pause 3.0
+    scene joel_house with dissolve
+    show joel flipped at right
+    show cs at left
+    with moveinleft
+    show joel at right with determination
     joel "I thought I was a dumbass..."
     joel "Well, whatever, here's my house."
+    show cs happy
     cs "Ooh, it's nice."
+    show cs
     cs "Wait, what's all this equipment for?"
     joel "Oh yeah that's all my alien radar stuff."
     cs "Why are you tracking aliens?"
@@ -1844,7 +1853,14 @@ label joel:
     joel "In theory this radar could be accurate enough, but it's missing a part."
     joel "And of course, they don't make it anymore, and it was only in a few old laptops."
     cs "Ooh, I have one of those!"
+    show craptopsmall at mid_left_left with dissolve
     n "CS pulls out his craptop and hands it to Joel."
+    show cs at mid_right
+    show craptopsmall at mid_right_right
+    with move
+    show craptopsmall flipped with determination
+    show cs at left with move
+    hide craptopsmall with dissolve
     joel "Wait, what?! Where did you pull that from?"
     cs "Don't worry about it."
     joel "What the hell!? This is the right laptop!"
@@ -1853,6 +1869,7 @@ label joel:
     joel "You didn't know where I lived or that I was working on this radar! How did you manage to get the exact right part to me by random chance?!"
     joel "Alright, I don't have time to unpack all that. I gotta get the radar done asap."
     n "Joel opens the craptop and puts the part in the machine."
+    scene joel_computer with dissolve
     n "He flips the on switch, and with a satisfying click, the green phosphor screen lights up, now with a much smaller dot than before."
     joel "Holy shit it worked!"
     joel "I can finally get that grey and stop living in fear!"
@@ -1862,6 +1879,10 @@ label joel:
     joel "Was worth a shot at this point."
     joel "Whatever, we don't need it."
     joel "You can be the bait."
+    scene joel_house
+    show cs disappointed at left
+    show joel at right
+    with dissolve
     cs "Why would I go be bait for an alien that's already killed two horses that are about ten times my weight?"
     joel "You'll be fine, don't worry about it."
     n "Joel pulls out a makeshift gun."
@@ -1872,6 +1893,7 @@ label joel:
     cs "I'm clearly not a horse."
     joel "I don't think the aliens can tell Earth animals apart that well."
     joel "We'll just get you a horse disguise, and you'll be set."
+    show cs
     cs "No need. I brought my own."
     n "CS pulls out a horse head and puts it on."
     cs "See?"
@@ -1879,23 +1901,49 @@ label joel:
     cs "Oh nothing much, just {all the shit from the random fucking shit flying back and forth bit}."
     joel "You're an interesting critter, man."
     cs "Thanks!"
+    scene black with dissolve
     n "Joel gives CS a walkie-talkie, and he goes outside to the stable while Joel watches the radar."
+    scene joel_outside with dissolve
+    show cs at center with moveinleft
     cs "Alright, I'm in position."
     joel "Sounds good, I'll run out when I see the alien moving this way and tell you on the walkie-talkie."
     pause 3.0
     joel "Holy shit grey incoming!!! I'm on my way!"
+    hide cs with moveoutright
+    pause 1.0
+    show joel flipped at mid_left with moveinleft
+    show alien at mid_right with moveinright
     joel "I've got you this time, alien!" #Joel makes it out just before the alien
     alien "Ikke skyt! Jeg er ikke en romvesen! Jeg er bare en normal norsk mann!" #Make this wingdings
+    scene white with dissolve
+    play sound "<loop 0>hks2.wav" volume 0.7
+    pause 0.1
+    play sound "<loop 0>hks1.wav" volume 0.7
+    pause 0.1
+    pause 1.0
+    scene joel_outside
+    show joel flipped at mid_left
+    show alien dead at mid_right
+    with dissolve
     #Gun blast sfx and white screen. Screen comes back and alien is laying sideways
     joel "We did it!"
+    show cs flipped at right with moveinright
     cs "Well, I was certainly not expecting to be alien bait tonight, but I glad I could help you out."
     joel "Thanks for the help! I can finally get another horse! I won't have to take the bus anymore!"
     joel "Come back inside. I'm gonna make you a real Swedish dinner to celebrate."
+    scene black with dissolve
     n "Joel and CS head into the cabin, and Joel drags the alien's body into the kitchen."
+    scene joel_house
+    show cs at left
+    show joel at right
+    with dissolve
     joel "You can just wait in the living room and play some games while I cook."
     cs "Sounds like a plan."
+    show joel flipped with determination
+    hide joel with moveoutright
     n "CS goes and plays Cuphead while Joel cooks."
     pause 5.0
+    scene black with dissolve
     joel "Dinner's ready! Reindeer and Alien meatballs, lingonberry sauce, mashed potatoes, and surstromming."
     cs "That's certainly a unique meal."
     joel "Well, I wasn't gonna waste the alien meat."
@@ -1904,4 +1952,7 @@ label joel:
     joel "Well, it's getting late, we should get to bed. You can sleep on the couch."
     joel "Can't get a bus back right now anyway."
     cs "Great idea. Risking my life and eating reindeer was enough excitement for one night. I'm exhausted."
+    n "After a good nights sleep, and the alien adventures with Joel, CS gets up and heads out to the nearest bus stop."
+    scene bus_map with dissolve
+    cs "Where should I go next?"
 
