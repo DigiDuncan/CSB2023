@@ -653,6 +653,7 @@ class Attacks:
     SOTH = Attack("Shit On The House", "I'm going to... take a shit on the house.", damage_fighters, target_count = 0, target_type = "enemies", ex = False, mult = 2, cooldown = 3)
     ONE_HUNDRED = Attack("100% Unsatisfied", "Yelp reviews coming in...", change_stat, stat = "atk", target_count = 0, target_type = "enemies", mult = 0.8, ex = False)
     ICE_CREAM = Attack("Ice Cream", "Bing chilling!", heal_fighters, target_count = 0, target_type = "allies", ex = False, mult = 1.5, cooldown = 3)
+    RAINBOW_VOMIT_NOCOOL = ComboAttack("Rainbow Vomit", "Why are you like this?", [RAINBOW, VOMIT], ex = False)
 
     @classproperty
     def names(cls) -> list[str]:
@@ -701,6 +702,7 @@ class Fighters:
     BILLY = Fighter("Billy", False, 220, 10, 25, [Attacks.HYPE_UP, Attacks.PITCHMAN], Image("images/characters/billy.png"))
     PHIL = Fighter("Phil", False, 160, 20, 40, [Attacks.HYPE_UP, Attacks.PITCHMAN], Image("images/characters/phil.png"))
     MEAN = Fighter("Mean", False, 150, 20, 35, [Attacks.HUG, Attacks.SPIKE_BOMB], Image("images/characters/mean.png"))
+    POMNI = Fighter("Pomni", False, 200, 15, 30, [Attacks.RAINBOW_VOMIT_NOCOOL, Attacks.RAINBOW_VOMIT_NOCOOL], Image("images/secret/pomni.png"))
 
     # Enemies
     FANBOYA = Fighter("Fanboy (NVIDIA)", True, 50, 0, 16, [Attacks.PUNCH], Image("images/characters/nvidiafanboy.png"), ai = AIType.NEUTRAL, display_name = "Fanboy")
