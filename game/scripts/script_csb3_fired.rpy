@@ -595,7 +595,7 @@ label mcd:
     show cs happy
     cs "People are really liking our stuff."
     show arceus happy
-    arceus "This is going better than I ever dare hoped."
+    arceus "This is going better than I ever dared to hope."
     anno "Let's go back to the room and get this song made!"
     n "On their way out of the store, CS turns to Arc."
     cs "You know, I think [song_name_4] might be our best one yet."
@@ -698,7 +698,7 @@ label song_5:
 label fan_interaction:
     stop music fadeout 3.0
     scene black with dissolve
-    n "The next day, they hear a knock on their hotel room door early morning."
+    n "The next day, in the early morning, they hear a knock on their hotel room door."
     scene hotel_door with dissolve
     play music "<loop 0>audio/dig_this.mp3" volume 0.5
     music Dig This - Dr. Awesome
@@ -736,7 +736,7 @@ label fan_interaction:
     show cs 
     with fade
 
-    n "The gang regroup to discuss."
+    n "The gang regroups to discuss."
     cs "OK, give it to me straight. How many sales of the EP?"
     anno "57,685."
     cs "Holy shit, that's a lot of sales, how much money{nw}"
@@ -748,7 +748,7 @@ label fan_interaction:
     cs "How much money is that?"
     anno "About $15,000."
     cs "Oh my god!"
-    arceus "Well, we going to need to file taxes on it."
+    arceus "Well, we're going to need to file taxes on it."
     anno "Do we?"
     show arceus angry
     arceus "You wanna go back to prison?"
@@ -781,7 +781,7 @@ label fan_interaction:
 label howie:
     stop music fadeout 3.0
     scene black with dissolve
-    n "After a few hours, the band meet Howie downstairs in the lobby."
+    n "After a few hours, the band meets Howie downstairs in the lobby."
 
     scene hotel_lobby
     show anno
@@ -793,7 +793,7 @@ label howie:
     show howie flipped at left with moveinleft
     agent "You guys ready?"
     cs "Ready for what?"
-    agent "A ride in a limosine!"
+    agent "A ride in a limousine!"
     n "The group is in shock."
     anno "Already? We haven't even struck a deal!"
     agent "Ah, you will, I trust in that. But until then, why don't I treat you all to the ride of a lifetime?"
@@ -817,7 +817,7 @@ label limo_time:
     music Exotic - Panda Beats
     arceus "These snacks are amazing!"
     anno "This music's awesome!"
-    cs "These seats are some comfy!"
+    cs "These seats sure are comfy!"
     agent "Alright boys, enough chat, let's talk business."
     agent "I want to take you guys on tour."
     show cs worried
@@ -875,7 +875,7 @@ label signed_the_contract:
     agent "Looks like something called LTX? Linus Tech Expo?"
     show cs worried
     cs "Wait, Linus--"
-    agent "See you bright an early tomorrow, we're getting in a tour bus!"
+    agent "See you bright and early tomorrow, we're getting in a tour bus!"
 
     hide howie with moveoutright
     show cs at center
@@ -890,7 +890,7 @@ label signed_the_contract:
     cs "OK..."
 
     scene black with dissolve
-    n "The gang all go upstairs and head to bed, but CS struggles to sleep well."
+    n "The gang heads upstairs to bed, but CS struggles to sleep well."
     cs "{i}Man, I'm worried about seeing Linus again. What if he just throws all of us out because he doesn't want to see me?"
     cs "{i}The fate of [band_name] could rest in some dumb shit I did in the past."
     cs "{i}Not even the past, like, a week or two ago."
@@ -929,7 +929,7 @@ label signed_the_contract:
 label first_tour_day:
     stop music fadeout 3.0
     scene black with dissolve
-    n "CS heads to bed, and the next morning, the whole [band_name] crew gets ready for their first tour day."
+    n "CS heads to bed, and the next morning, the [band_name] crew gets ready for their first tour day."
 
     scene hotel_room
     show anno at left
@@ -973,7 +973,7 @@ label first_tour_day:
     play music "<loop 0>passport.mp3" volume 0.5
     linus "Oh good, you guys are finally, here, you're [band_name], right?"
     linus "Luke told me about you guys, and I listened to [ep_name] last night... I really liked, uh, which one was it, {i}[song_name_4]{/i}?"
-    linus "Anywho, I...{w=1.0}wait, CS?!"
+    linus "Anywho, I...{w=1.0} wait, CS?!"
     cs "Uh, hi?"
     linus "Wait, you... you're the lead singer in [band_name]?!"
     cs "Looks like it..."
@@ -1412,7 +1412,7 @@ label final_tour_bus:
     stop music fadeout 3.0
     n "CS looks forlorn."
     arceus "What's wrong?"
-    cs "Well, I've been really enjoy this, actually."
+    cs "Well, I've been really enjoying this, actually."
     cs "I'm not sure I wanna go home."
     anno "Nah, don't act like that. This doesn't mean [band_name] is over!"
     arceus "Yeah, we can still make music together. But you need to get back to your normal routine for a bit."

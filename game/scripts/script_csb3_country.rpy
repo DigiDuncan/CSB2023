@@ -124,7 +124,7 @@ label england_travel:
     cs "Uhh, I guess I wanted to go to England?"
     benrey "Well I'm sorry, but everyone has a Pass Port!"
     benrey "Try checking your pocket."
-    n "CS puts his hand in his pocket and pulls out an Canadian passport."
+    n "CS puts his hand in his pocket and pulls out a Canadian passport."
     show cs
     cs "Oh, well look at that!"
     benrey "See? I told you! Now let's get you your ticket."
@@ -172,7 +172,7 @@ label sweden_travel:
     cs "Uhh, I guess I wanted to go to Sweden?"
     benrey "But everyone has a Pass Port!"
     benrey "Try checking your back pocket."
-    n "CS puts his hand in his back pocket and pulls out an Canadian passport."
+    n "CS puts his hand in his back pocket and pulls out a Canadian passport."
     show cs
     cs "Oh, didn't know I had this!"
     benrey "See? I told you! Everyone has a Pass Port! Now let's get you your ticket."
@@ -219,7 +219,7 @@ label japan_travel:
     cs "Uhh, I guess I wanted to go to Japan?"
     benrey "Well I'm sorry, but everyone's got a Pass Port!"
     benrey "Try checking your left shoe."
-    n "CS takes off his left shoe and pulls out an Canadian passport."
+    n "CS takes off his left shoe and pulls out a Canadian passport."
     show cs
     cs "Oh, what in the world?"
     benrey "See? I knew it! Now let's get you your ticket."
@@ -403,7 +403,7 @@ label arceus_place:
     arceus "CS, remember we're in the UK?"
     show arceus flipped
     cs "Ohhhh, yeah. Forgot about that."
-    arceus "Whatever just, come on in."
+    arceus "Whatever, just, come on in."
     scene kitty_room with fade
     show arceus flipped at center with moveinleft
     show cs at left with moveinleft
@@ -562,7 +562,7 @@ label hell_zone:
     n "CS gets out of the car and walks up toward the building."
     scene hell_outside with fade
     show cs angry at mid_left with moveinleft
-    cs "Stupid Arceus doesn't think I can cook well, I'm gonna blow them away, then they can't put me on the show because I'm too good!"
+    cs "Stupid Arceus doesn't think I can cook? Well, I'm gonna blow them away! They won't be able to even put me on the show because I'll be {i}too{/i} good!"
     hide cs with moveoutright
     scene black with dissolve
     n "When CS enters the main room, he notices that Gordon is waiting for CS at the kitchen, with his arms crossed."
@@ -670,9 +670,9 @@ label good_ramsay:
     cs "Alright, I'm almost done!"
     hide gordon with moveoutleft
     cs "Okay, I am pretty much done, I even managed to get the label on it too."
-    cs "I'm gonna add a bit of DaThing's secret SuS, and it's good to go!"
+    cs "I'm gonna add a bit of DaThings' secret SuS, and it's good to go!"
     show cs flipped at right with move
-    gordon "Alright, times up!"
+    gordon "Alright, time's up!"
     n "Gordon comes over to CS' station."
     show gordon at left with moveinleft
     gordon "Show me what you made."
@@ -762,7 +762,7 @@ label good_ramsay:
     kitty "What is in this Genergy drink of yours?"
     cs "Well, I sold the recipe, so I don't really know anymore."
     kitty "Oh, dang..."
-    cs "Just kidding! I still have a back-up, but I'm gonna keep it secret."
+    cs "Just kidding! I still have a backup, but I'm gonna keep it secret."
     kitty "Ah ok."
     arceus "Well, you did quite a bit already, is there anything else you want to do here?"
     $ achievement_manager.unlock("Master Chef")
@@ -1056,7 +1056,7 @@ label scott_move:
     kitty "You saved a man's life?"
     cs "Yeah, and I get to be in his video!"
     kitty "Well, looks like you got 2 for 1 then!"
-    kitty "Is there anything is you want to do?"
+    kitty "Is there anything else you want to do?"
     $ achievement_manager.unlock("The Man In The Red Shirt")
     jump england_menu
 
@@ -1117,9 +1117,9 @@ label england_japan:
     cs "Well, thank you so much Arceus for everything, really."
     show arceus happy flipped
     arceus "It's all good man, I loved having you here."
-    arceus "It's also impressive that you made so much money in the short amount of time you were here, you'll probably be set for Japan!"
+    arceus "It's also impressive that you made so much money in the short amount of time you were here. You'll probably be set for Japan!"
     show arceus flipped
-    cs "Yeah, I honestly don't know how I managed to most of those things, I was kinda winging it."
+    cs "Yeah, I honestly don't know how I managed to do most of those things, I was kinda winging it."
     cs "Welp, it looks like my plane is here."
     cs "See ya Arceus!"
     arceus "See you later, CS!"
@@ -1320,7 +1320,7 @@ label anime_adventure:
     sayori "Hello, and who might you be?"
     show cs disappointed
     cs "Uhm..."
-    cashier "Does it matter who he is? They've said that they've been wearing this outfit forever!"
+    cashier "Does it matter who he is? He said that he's been wearing this outfit forever!"
     sayori "Is this true?"
     cs "Well, okay, it's a long story..."
     cs "Since you are the creator, I guess I can bring this up."
@@ -1506,7 +1506,7 @@ label miku_pizza:
     cs "Miku!"
     miku "I heard someone was here to see me so I came up right away."
     scott_pres "How did you get in my office?"
-    miku "Your receptionist let me up. She was freaking out a lot so she must have forgot to call you."
+    miku "Your receptionist let me up. She was freaking out a lot so she must have forgotten to call you."
     scott_pres "But... you're not... it was a green screen! It was augemented reality! You're not real!"
     miku "I feel pretty real."
     miku "Anywho, hi, CS! Love your videos."
@@ -1614,7 +1614,7 @@ label going_home:
     cs "I'm a bit homesick, and I honestly can't wait to get home."
     scene black with dissolve
     n "CS buys a ticket to US and gets on the airplane."
-    n "CS takes another nap to pass the time to get home."
+    n "CS takes another nap to pass the time."
     scene cs_house with fade
     show cs happy at mid_left with moveinleft
     play music "<loop 0>park_theme.mp3" volume 0.5
@@ -1646,7 +1646,7 @@ label going_home:
     cs "I can finally sleep for a day."
     scene cs_room_2 with fade
     n "CS glances over at his Union Jack."
-    cs "Maybe, I should get 2 more flags."
+    cs "Maybe, I should get two more flags."
     stop music fadeout 1.0
     music end
     $ renpy.end_replay()
@@ -1901,7 +1901,7 @@ label joel:
     n "CS pulls out a horse head and puts it on."
     cs "See?"
     joel "What the hell?! What all do you have in there?"
-    cs "Oh nothing much, just {all the shit from the random fucking shit flying back and forth bit}."
+    cs "Oh nothing much, just (all the shit from the random fucking shit flying back and forth bit)."
     joel "You're an interesting critter, man."
     cs "Thanks!"
     scene black with dissolve

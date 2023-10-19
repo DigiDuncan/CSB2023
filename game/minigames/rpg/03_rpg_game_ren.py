@@ -601,7 +601,7 @@ class Attacks:
     BLEED = Attack("Bleed", "Bleed them dry!", damage_over_time, mult = 0.25, ex = False)
     SLASH = ComboAttack("Slash", "A cutting attack that bleeds out your enemies.", [RAW_SLASH, BLEED])
     LIGHT_CAST = Attack("Light Cast", "A strong blast of light that varies in damage.", random_damage_fighters, cooldown = 3, min_mult = 1, max_mult = 3)
-    INSIGHT = Attack("Insight", "Lowers enemies attack by a little.", change_stat, stat = "atk", mult = 0.75)
+    INSIGHT = Attack("Insight", "Lowers enemy's attack by a little.", change_stat, stat = "atk", mult = 0.75)
     SHOTGUN = Attack("Shotgun", "Blast your enemies twice with a powerful shotgun blast!", damage_fighters, target_count = 2, cooldown = 3, mult = 2)
     ENCOURAGE = Attack("Encourage", "Heal one member with morale!", heal_fighters, target_count = 1, target_type = "allies", mult = 1)
     HIGH_NOON = Attack("High Noon", "Quickly blast 3 targets, or 3 shots on 1!", damage_fighters, target_count = 3, cooldown = 3, mult = 0.75)
@@ -630,7 +630,7 @@ class Attacks:
     CONFIDENCE = Attack("Confidence", "Raise your team's attack!", change_stat, stat = "atk", target_count = 0, target_type = "allies", mult = 1.25)
     PEP_TALK = Attack("Pep Talk", "Raise your team's defense!", change_stat, stat = "ap", target_count = 0, target_type = "allies", mult = 1.25)
     RADS_ATTACK = Attack("RADS Attack", "Inflict radiation on your enemies to kill them over time!", damage_over_time, mult = 0.5)
-    AI_MIMIC = Attack("AI Mimic", "Copies an enemies attack.", ai_mimic, target_count = 1, target_type = "enemies", cooldown = 2)
+    AI_MIMIC = Attack("AI Mimic", "Copies an enemy's attack.", ai_mimic, target_count = 1, target_type = "enemies", cooldown = 2)
     SHELL = Attack("Shell", "Fire a tank shell!", random_damage_fighters, min_mult = 1, max_mult = 2)
     HEAL_EX = Attack("Heal EX", "Lots of healing.", heal_fighters, target_count = 0, target_type = "allies", mult = 10)
 

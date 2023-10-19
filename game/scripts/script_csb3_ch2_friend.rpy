@@ -448,7 +448,7 @@ label cs_rage:
     show cs dark concentrate with vpunch
     show cs dark concentrate with hpunch
     show cs dark concentrate with vpunch
-    n "All of a sudden, the debris starts moving on it's own!"
+    n "All of a sudden, the debris starts moving on its own!"
     digi "Woah, what's going on?"
     cs "Can you guys please help--"
     show cs dark at center with move
@@ -490,7 +490,7 @@ label cs_rage:
     cs "Sorry I got upset, I just need to relax."
     cs "Arc, you drive, I'm gonna lie down in the backseat."
     show arceus worried dark flipped
-    arceus "You need, anything else?"
+    arceus "You need anything else?"
     cs "I'm good, just some rest."
     show arceus dark flipped
     hide cs with moveoutleft
@@ -714,7 +714,7 @@ label between_2:
     show arceus angry flipped
     cs "Go to hell, Copguy! You'll never defeat me!"
     copguy "Heheh, you can tell yourself that."
-    copguy "I've been making sure to note down you and your groups abilities..."
+    copguy "I've been making sure to note down you and your group's abilities..."
     copguy "Why don't we try one out!"
     n "Copguy casts Light Cast on Arceus!"
     play sound "minigames/car/gaster_blast.wav"
@@ -812,7 +812,7 @@ label car_slam:
     pause 1.0
     scene war_torn_4 with fade
     show cs at left with moveinleft
-    n "CS walks through the wastelands, searching for anything reminiscent to Copguy."
+    n "CS walks through the wastelands, searching for anything reminiscent of Copguy."
     n "Eventually, he finds Copguy's wrecked cop car."
     show cs at center with move
     cs "Welp. There rests Copguy."
