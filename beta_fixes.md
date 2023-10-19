@@ -94,7 +94,7 @@
 * The RPG game continues to be rebalanced! Sorry, this is going to happen in Beta. We think it's good now, though!
 * **Sweden is now in the game!**
 * There's a new cutscene at the end of True Route
-* ||Archival ending|| sees continued improvements
+* ||Archival ending|| sees continued improvements, including a new fight
 * Aria's dark sprite is now actually in the game
 * Blank now has a beep
 * Clearing persistent data is now accessible without Dev mode, and prompt the user before clearing.

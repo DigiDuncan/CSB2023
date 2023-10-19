@@ -16,7 +16,7 @@ See what needs to be done below.
 - [X] Ending Screens [Pakoo, Sept. W3]
 - [X] Menu for Endings [Arc, Sept. W3]
 - [X] Commerical [Pakoo, Sept. W4]
-- [ ] Credits [Digi, Sept. W4]
+- [ ] Credits [Digi, Sept. W4] [90%]
 - [X] Where are they now? [Digi, Sept. W3]
 - [X] End Fight cutscene [Pakoo/Digi, Sept. W4]
 - [X] Arceus Art [Kitty, October]
@@ -83,10 +83,10 @@ See what needs to be done below.
     - [X] Bios
     - [X] Jukebox
 - [ ] Sweden [Aria]
-    - [ ] Script [30%]
+    - [ ] Script [50%]
     - [ ] Backgrounds [30%]
-    - [ ] Characters
-    - [ ] Transitions
+    - [ ] Characters [30%]
+    - [ ] Transitions [30%]
     - [ ] Music
     - [ ] Bios
     - [ ] Jukebox
