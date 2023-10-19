@@ -606,7 +606,7 @@ label michigan:
     with fade
     show billy at mid_left with moveinleft
     billy "Hey man. Do you know what's up with the highway?"
-    streetguy "Not sure on details, but I hear they found one of the horseman of the apocalypse flying around."
+    streetguy "Not sure on details, but I hear they found one of the horsemen of the apocalypse flying around."
     streetguy "Possibly in Michigan."
     billy "What?"
     streetguy "Like I said, I don't know details."
@@ -1225,7 +1225,7 @@ label interstate_94:
     arceus "It's crazy hot in here right now."
     cs "Huh, I didn't notice."
     arceus "I am literally always wearing a fur coat, so I guess we have different scales."
-    cs "Yeah that'll do that. You're also wearing a hoodie. You always could take that off."
+    cs "Yeah that'll do that. You're also wearing a hoodie. You could take that off."
     arceus "If you wanna see me naked, you can just ask..."
     cs "I didn't mean-- whatever..."
     show billy car turn with vpunch
@@ -1316,7 +1316,7 @@ label interstate_94:
     aria "Wait, CS? Arceus?"
     show cs worried
     cs "Huh, who are you? {i}What{/i} are you?"
-    aria "Oh, right! Yeah that makes sense that you wouldn't recognize me. I'm Aria! Remember, AWK?"
+    aria "Oh, right! Yeah, it makes sense that you wouldn't recognize me. I'm Aria! Remember, AWK?"
     cs "{i}You're{/i} Aria? What happened to you?"
     aria "I got different."
     show cs
@@ -1364,7 +1364,7 @@ label interstate_94:
     mario "Wait, how do you know about the Miyamoto thing? I didn't tell Smiley about that."
     violent_jay "Clown connection again. I could detect two clowns in here."
     mario "Smiley was the only one."
-    violent_jay "There was definitely two. The other is still here."
+    violent_jay "There were definitely two. The other is still here."
     n "They walk towards the back where CS and Arc are, and Violent Jay points at CS."
     hide violent_jay
     hide shaggy_too_dope
@@ -1395,7 +1395,7 @@ label interstate_94:
     billy "What happened there?"
     mario "I'm not sure, but they paid for the washer, so I'm not gonna think about it too hard."
     show cs disappointed
-    cs "I'm not a clown. They have to be good at make-up."
+    cs "I'm not a clown. They have to be good at make-up..."
     mario "I wouldn't worry about it."
     show arceus at mid_left with moveinright
     stop music fadeout 3.0
