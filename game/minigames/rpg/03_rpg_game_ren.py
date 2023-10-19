@@ -612,6 +612,8 @@ class Attacks:
     ELDRITCH_BLAST = Attack("Eldritch Blast", "An unholy blast that does quite a bit of damage to an enemy.", damage_fighters, mult = 1.5)
     RAINBOW = Attack("Rainbow", "", confuse_targets, cooldown = 3, ex = False)
     VOMIT = Attack("Vomit", "", damage_over_time, cooldown = 3, mult = 1, turns = 3, ex = False)
+    RAINBOW_NOCOOL = Attack("Rainbow", "", confuse_targets, ex = False)
+    VOMIT_NOCOOL = Attack("Vomit", "", damage_over_time, mult = 1, turns = 3, ex = False)
     RAINBOW_VOMIT = ComboAttack("Rainbow Vomit", "Confuse and damage your enemies with colorful nonsense!", [RAINBOW, VOMIT])
     ROBOPUNCH = Attack("RoboPunch", "A strong punch.", damage_fighters, mult = 1.75)
     HOLOSHIELD = Attack("HoloShield", "Boosts your team's defense by a bit.", change_stat, stat = "ap", target_count = 0, target_type = "allies", cooldown = 3, mult = 1.75)
@@ -653,7 +655,7 @@ class Attacks:
     SOTH = Attack("Shit On The House", "I'm going to... take a shit on the house.", damage_fighters, target_count = 0, target_type = "enemies", ex = False, mult = 2, cooldown = 3)
     ONE_HUNDRED = Attack("100% Unsatisfied", "Yelp reviews coming in...", change_stat, stat = "atk", target_count = 0, target_type = "enemies", mult = 0.8, ex = False)
     ICE_CREAM = Attack("Ice Cream", "Bing chilling!", heal_fighters, target_count = 0, target_type = "allies", ex = False, mult = 1.5, cooldown = 3)
-    RAINBOW_VOMIT_NOCOOL = ComboAttack("Rainbow Vomit", "Why are you like this?", [RAINBOW, VOMIT], ex = False)
+    RAINBOW_VOMIT_NOCOOL = ComboAttack("Rainbow Vomit", "Why are you like this?", [RAINBOW_NOCOOL, VOMIT_NOCOOL], ex = False)
 
     @classproperty
     def names(cls) -> list[str]:
