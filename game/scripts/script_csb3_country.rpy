@@ -763,7 +763,7 @@ label good_ramsay:
     cs "Well, I sold the recipe, so I don't really know anymore."
     kitty "Well, shit..."
     cs "Just kidding! I still have a back-up, but I'm gonna keep it secret."
-    kitty "Ah, ok."
+    kitty "Ah,  ok."
     arceus "Well, you did quite a bit already, is there anything else you want to do here?"
     $ achievement_manager.unlock("Master Chef")
     jump england_menu
@@ -783,7 +783,7 @@ label top_zone:
     kitty "We might be able to just call them."
     cs "If it's that easy, then hell yeah, let's do it!"
     scene black with dissolve
-    n "Kitty calls the members of Top Gear to get CS on the show for a day."
+    n "Kitty calls the members of Top Gear, after a brief panic attack, to get CS on the show for a day."
     scene dining_room
     show cs at left
     show arceus at center
