@@ -953,7 +953,7 @@ label so_join:
     show arceus worried at mid_right
     show pakoo disappointed at right
     with fade
-    n "After that intense fight, the cops seemed to best CS and co."
+    n "After that intense fight, the cops seemed to best CS and his crew."
     n "CS is panting heavily."
     cs "Damnit..."
     pakoo "He's way too strong..."

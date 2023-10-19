@@ -275,7 +275,7 @@ define billy_far = Character("Billy (from off screen)", callback = renpy.partial
 define direct = Character("Director", callback = renpy.partial(char_callback, beep = "iris"))
 define monika = Character("Monika", callback = renpy.partial(char_callback, name = "monika", beep = "monika"))
 define lancer = Character("Lancer", callback = renpy.partial(char_callback, name = "lancer", beep = "lancer"))
-define tate = Character("Tate",  callback = renpy.partial(char_callback, name = "tate", beep="tate"))
+define tate = Character("Tate", callback = renpy.partial(char_callback, name = "tate", beep="tate"))
 define kitty = Character("Kitty", callback = renpy.partial(char_callback, name = "kitty", beep = "kitty"))
 define obama = Character("Obama", callback = renpy.partial(char_callback, name = "obama", beep = "obama"))
 define bomaha = Character("Omaha", callback = renpy.partial(char_callback, name = "obama", beep = "obama"))

@@ -758,7 +758,7 @@ label ytp_magic_fight:
     play music2 "<loop 0>killcops.mp3" volume 0.5
     music Echoing? - Banana
     n "The duo continues to travel along the road."
-    n "CS talks to himself along the way, with Arceus weary of his actions still."
+    n "Arceus is wary of CS' actions as he can't help but notice CS muttering to himself as they walk."
     cs "{chaos}TmV2ZXIgZ29ubmEgZ2l2ZSB5b3UgdXAsIG5ldmVyIGdvbm5hIGxldCB5b3UgZG93biwgbmV2ZXIgZ29ubmEgcnVuIGFyb3VuZCBhbmQgZGVzZXJ0IHlvdS4KTmV2ZXIgZ29ubmEgbWFrZSB5b3UgY3J5LCBuZXZlciBnb25uYSBzYXkgZ29vZGJ5ZSwgbmV2ZXIgZ29ubmEgdGVsbCBhIGxpZSwgYW5kIGh1cnQgeW91fg=="
     arceus "CS? What are you saying?"
     cs "Huh? Nothing."
