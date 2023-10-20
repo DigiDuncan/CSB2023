@@ -341,6 +341,7 @@ label england_first:
     jump arceus_place
 
 label england_second:
+    $ england_check = True
     scene black
     pause 1.0
     scene airplane_seats
@@ -1654,6 +1655,7 @@ label going_home:
     return
 
 label sweden:
+    $ sweden_check = True
     scene airplane_seats
     show cs at left
     with dissolve
@@ -1686,6 +1688,7 @@ label sweden:
     jump sweden_menu
 
 label sweden_second:
+    $ sweden_check = True
     scene airplane_seats
     show cs at left
     with dissolve
@@ -1968,5 +1971,36 @@ label joel:
     $ achievement_manager.unlock("Grand Dad")
     n "After a good nights sleep, and the alien adventures with Joel, CS gets up and heads out to the nearest bus stop."
     scene bus_map with dissolve
-    cs "Where should I go next?"
+    jump sweden_leave
 
+label sweden_leave:
+    cs "Well, I guess I really just wanted to meet Joel."
+    cs "Before I go back to the airport, where should I go next?"
+    if (not england_check) and (not japan_check):
+        menu:
+            "Japan":
+                jump sweden_japan
+            "England":
+                jump sweden_england
+    elif japan_check:
+        jump sweden_england
+    elif england_check:
+        jump sweden_japan
+    else:
+        jump going_home
+
+label sweden_england:
+    cs "I guess I really kinda want to go to England this time."
+    cs "I have a Union Jack in my room, why would I not go?"
+    cs "Fuck it, let's head to the UK!"
+    scene black with dissolve
+    n "CS gets on another plane and heads to England."
+    jump england_second
+
+label sweden_japan:
+    cs "I guess Japan seems pretty cool."
+    cs "It wouldn't hurt to head there and check stuff out."
+    cs "Let's go to Japan!"
+    scene black with dissolve
+    n "CS gets on another plane and heads to Japan."
+    jump japan_two
