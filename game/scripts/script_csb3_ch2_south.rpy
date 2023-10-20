@@ -700,7 +700,7 @@ label poker3:
         show jerma at left with moveinleft
         if fun_value(5):
             n "Jerma looks down at Mr. Green."
-            jerma "Woah, clean up on aisle YOU!"
+            jerma "Woah, clean up on aisle {i}you!"
             jerma "Anyways..."
         jerma "Well, look who we have here!"
         jerma "You beat my highest roller! How'd you do that?"
@@ -987,7 +987,7 @@ label back_home_alt:
     n "As CS was saying bye to his friends, a familiar but upsetting voice can be heard at the front of CS' house."
     stop music fadeout 1.0
     music end
-    ed "YOU!"
+    ed "{i}You!"
     show cs disappointed at left with moveinleft
     n "CS and the gang look forth at CS' front porch, where Richard and Ed are waiting angrily for him."
     play music2 "<loop 0>hohsisremix.mp3" volume 0.5
@@ -1007,7 +1007,7 @@ label back_home_alt:
     rich "You tried to humiliate us with your videos, with others thinking we were a joke."
     ed "You see, my ancestors came from the planet JoJ many years ago to live here and start a foundation company."
     ed "It was the best damn foundation company in the world."
-    ed "We repaired more than 50%% of all foundations on the planet, and now... you."
+    ed "We repaired more than fifty percent of all foundations on the planet, and now... you."
     ed "You. You embarrassed us with those silly, stupid, videos that dragged our family company through the mud."
     rich "That's why Ed wanted to get revenge on you. That's why we destroyed your computer, CS."
     cs "I don't understand..."
@@ -1197,7 +1197,7 @@ label braghohsis:
     with moveoutright
     cs "Hey! Where are you guys going!"
     cs "Come back here!"
-    n "The JoJ UFO flies up over the house and vaporizes the house."
+    n "The JoJ UFO flies up over the house and vaporizes it."
     play sound "beam.ogg" volume 0.6
     show beam at xstretch_in
     pause 3.0

@@ -1265,9 +1265,9 @@ label third_tour_day:
 
     cs "Alright, well let's get prepared, we have way more songs to do tonight--{nw}"
     show mean with moveinright
-    mean "HOLY SHIT IT'S YOU!"
+    mean "{i}Holy shit, it's you!"
     cs "Wait, are you that fan from my hotel?"
-    mean "YOU ACTUALLY MADE IT TO ONTARIO?"
+    mean "{i}You actually made it to Ontario?!"
     cs "Uh... yeah, totally because you asked me to!"
     show cs worried
     show mean at mid_mid_left

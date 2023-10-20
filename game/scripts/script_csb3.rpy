@@ -316,7 +316,7 @@ label reviews:
     linus "I'm sure you'll be okay, plus the LTT fanbase is much bigger!"
     cs "I guess so."
     n "Before CS can think about this too much, a lot of commotion can be heard at the front of the building."
-    show colton at right with moveinright
+    show colton at mid_right with moveinright
     colton "Linus! There is a furry outside!"
     linus "What?"
     linus "Hold on, lemme check."
@@ -384,7 +384,7 @@ label ytp_fan:
     linus "Look, let's all just calm down okay? If you wanna keep doing YTPs, fine, but if it messes up our company you have to either stop or you're fired."
     cs "Fine!"
     n "Before CS can storm off, Colton rushes in with some info."
-    show colton at right with moveinright    
+    show colton at mid_right with moveinright    
     colton "Linus! There is a furry outside!"
     linus "What?"
     linus "Hold on, lemme check."
@@ -952,7 +952,7 @@ label wait_forest:
     show arceus worried flipped at right
     show cs disappointed at left
     with moveinleft
-    n "CS and Arc are thrown into the cop car, as Copguy says some order on his walkie."
+    n "CS and Arc are thrown into the back of the cruiser as Copguy barks some order into his walkie."
     copguy "This is Copguy calling in a 1-8-8 on Compass Road. Sheriff? We got em."
     n "Copguy starts the car and they head off."
     jump copcar_menu
@@ -983,7 +983,7 @@ label bad_convince:
     pause 1.0
     hide hold_it
     cs "Wait a second! I'm not actually CS!"
-    cs "I just LOOK like CS!"
+    cs "I just {i}look{/i} like CS!"
     show arceus worried
     arceus "I mean, he might not be CS?"
     play sound "objection.mp3" volume 0.5
@@ -992,7 +992,7 @@ label bad_convince:
     hide objection
     stop music
     music end
-    copguy "Nice try, bud. We saw your fake visa and everything. You too are going back to the slammer."
+    copguy "Nice try, bud. We saw your fake visa and everything. You two are going back to the slammer."
     bad_end "Did you really\nthink that would work?" "copcar_menu"
 
 label good_convince:
@@ -1018,9 +1018,9 @@ label good_convince:
     hide objection
     arceus "Actually, I have proof of this."
     arceus "CS just raised a good point, and I can show you."
-    copguy "And HOW can you prove this? Where is your evidence?"
+    copguy "And {i}how{/i} can you prove this? Where is your evidence?"
     n "Arceus pulls up a laptop that he managed to grab from the front seat."
-    copguy "WHAT? How did you get that?"
+    copguy "{i}What?{/i} How did you get that?"
     arceus "Watch this."
     scene backseat
     show craptop evidence
@@ -1038,7 +1038,7 @@ label good_convince:
     show arceus
     copguy "I don't understand, so HoH SiS really did scam you hard, didn't they?"
     copguy "I'm not sure how valid it was for you to push that man off a building..."
-    copguy "But I can't argue right now on if that footage is fake or not."
+    copguy "But I can't argue right now about whether that footage is fake."
     stop music fadeout 3.0
     music end
     hide copguy with moveoutleft

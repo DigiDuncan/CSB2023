@@ -22,7 +22,7 @@ label east:
     arceus "Thank God the slushie machine was working for once."
     cs "Okay, now that we can think about something other than food, what's our plan to get home?"
     arceus "Yeah, I have no clue currently."
-    arceus "I was hoping that we could like hitchhike on a bus or something, but it might be ages until that happens... If it even DOES happen, this town is small enough as is."
+    arceus "I was hoping that we could like hitchhike on a bus or something, but it might be ages until that happens... if it even {i}does{/i} happen, this town is small enough as is."
     stop music fadeout 3.0
     music end
     menu:
@@ -121,7 +121,7 @@ label montana:
     with fade
     play music "<loop 0>weird_personalities.mp3" volume 0.6
     music Weird Personalities - Lizardking
-    n "After a few hours of driving, the trio currently is located in the middle of Montana."
+    n "After a few hours of driving, the trio currently finds themselves in the middle of Montana."
     n "Arceus is sleeping, while CS peers out the window."
     cs "Are we there yet?"
     show billy car turn
@@ -224,7 +224,7 @@ label montana:
     n "Billy rolls down the window."
     billy "Hi, it's Billy! What are you doing by my car?"
     cultist "Get out of the car."
-    billy "No, it's my car!"
+    billy "No, it's {i}my{/i} car!"
     show cultist gun
     n "The cultist pulls out a revolver and aims at Billy's head."
     cultist "Does this like a joke to you guys?"
@@ -362,7 +362,7 @@ label montana:
     show billy car
     play sound "roll_window.ogg" volume 0.7
     n "Billy pulls up through the drive-thru to place his order."
-    cashier "Hello, what you like to order?"
+    cashier "Hello, what would you like to order?"
     billy "Hi, Billy Mays here! I would like to get the Buy 1 Get 1 Free breakfast meal for my friends here,"
     billy "and I would also like to get the egg McMuffin and a Big Mac for me."
     cashier "Sure thing, that'll be-{nw}"
@@ -372,7 +372,7 @@ label montana:
     cashier "$36.88."
     billy "Wow! What a deal! I'm coming around to pick up my order!"
     scene black with fade
-    n "Billy drives through and picks up his meal."
+    n "Billy drives through and picks up everyone's meals."
     scene mcdees
     show billy car
     with fade
@@ -398,7 +398,7 @@ label south_dakota:
     scene black with fade
     n "In about an hour, the crew arrives at Mount Rushmore."
     scene rushmore with fade
-    n "They all hike up to the viewing spot to get a good look of the founding fathers."
+    n "They all hike up to the viewing spot to get a good look at the founding fathers."
     play music "<loop 0>taiikusai_desu_yo.mp3" volume 0.4
     music Taiikusai Desu Yo - Satoru Kōsaki
     show cs at right with moveinleft
@@ -448,7 +448,7 @@ label nebraska:
     scene omaha
     show billy car
     with fade
-    n "The gang finally hits Omaha, right before it hits nighttime."
+    n "The gang finally hits Omaha, right before sundown."
     cs "This is the biggest city here? This is pretty small."
     billy "It looks very quaint, hopefully we can find a place to stop here."
     billy "I have no damn clue where to go here."
@@ -537,7 +537,7 @@ label nebraska:
     scene black with fade
     stop music fadeout 3.0
     music end
-    n "The gang goes into the backroom area and sleeps for the night."
+    n "The gang heads to the backroom area to rest for the night."
     n "Once they wake up, they thank Peppino for his hospitality and head out."
     jump iowa
 
@@ -558,7 +558,7 @@ label iowa:
     arceus "WHAT?!"
     billy "Who?"
     cs "They have their UFO and--"
-    n "A huge laser beam blasts on the left side of the road, ripping up everything in it's path!"
+    n "A huge laser beam blasts on the left side of the road, ripping up everything in its path!"
     play sound "minigames/car/gaster_blast.wav"
     show billy car turn with hpunch
     show billy car turn with vpunch
@@ -698,7 +698,7 @@ label interstate_69:
     arceus "Blank is at least three gnomes tall though. That couldn't just be him in a costume."
     cs "You're probably right, but I wouldn't be all that shocked if he learned practical effects for a gag."
     cs "Wait, is he coming this way?!"
-    n "The gnome walks out from behind the tree, walks to the window next to the empty seat in the car, and motions you to roll down the window."
+    n "The gnome steps out from behind the tree and makes his way to the door of the unoccupied seat of the car, motioning a request to roll down the window."
     billy "Holy shit, you two weren't kidding. I think he's trying to talk to us."
     stop music fadeout 3.0
     billy "I'm gonna see what he wants."
@@ -957,7 +957,7 @@ label interstate_69:
     scene cafe_sitting
     show aria flipped at left
     show gnome at center
-    aria "Would you all like to come rest at my apartment for a while. I have enough space for you all to get some sleep."
+    aria "Would you all like to come rest at my apartment for a while? I have enough space for you all to get some sleep."
     aria "I also have a really pretty wooded area behind my apartment I can take you through."
     aria "You've all been through a lot. It'd be a good way to relax before you finish the drive."
     scene cafe_sitting_2
@@ -1031,7 +1031,7 @@ label interstate_69:
     show aria dark flipped at center
     with dissolve
     aria "We're gonna take a left at the bridge up ahead. The forward path just spits us right out onto a normal street."
-    billy "We've been out here for all of 5 minutes and that's already seeming like the better option..."
+    billy "We've been out here for all of five minutes and that's already seeming like the better option..."
     aria "Nah trust me. This path has all the best plants and the only real path through the forest."
     aria "White banesberry, hawthorn, sugar maple."
     aria "It's really pretty."
@@ -1424,7 +1424,7 @@ label ohio:
         scott "Oh what in the world? There is some red border in my eyes..."
         scott "I have a blue one, what is going on?"
         scott "Yeah, it's blue for me too, I think you are colorblind."
-        scott "I AM colorblind. Oh fuck."
+        scott "I {i}am{/i} colorblind. Oh, fuck."
         scene wozniaktroubles
         show billy car
         show scott_border
@@ -1460,7 +1460,7 @@ label ohio:
         arceus "Oh what in the world? There is some red border in my eyes..."
         cs "I have a blue one, what is going on?"
         billy "Yeah, it's blue for me too, I think you are colorblind."
-        arceus "I AM colorblind. Oh fuck."
+        arceus "I {i}am{/i} colorblind. Oh, fuck."
         scene wozniaktroubles
         show billy car
         show scott_border
@@ -1493,7 +1493,7 @@ label pennsylvania:
     music The Metropolis of Fourside - Keiichi Suzuki
     n "CS sees a billboard pass by them."
     cs "Oh my god! It's PencilCon! We need to go!"
-    arceus "Why the fuck do you want to go to PENCILCON when we are so close to home?!"
+    arceus "Why the fuck do you want to go to {i}PencilCon{/i} when we are so close to home?!"
     cs "Because I love sharpening pencils! I made my own holiday around it! Please, Billy, can we go to PencilCon?"
     billy "If Arceus is okay with it, sure, I guess."
     cs "C'mon, Arceus!"
@@ -1565,7 +1565,7 @@ label pennsylvania:
     show cs at left
     with dissolve
     show arceus at right with moveinright
-    n "Arc catches up with CS, at the sign up table."
+    n "Arc catches up with CS at the sign-up table."
     signup "...and you said your last name is... 188?"
     cs "Yeah, this confuses everyone."
     cs "Oh, hey Arc! Whatcha doing?"
@@ -1593,7 +1593,7 @@ label pennsylvania:
     digi "I mean, probably, I'm the champ."
     cs "You?!"
     digi "Five years running."
-    cs "Oh jeez, I guess we will be against each other, if I make it that far."
+    cs "Oh jeez, I guess we {i}will{/i} be against each other, if I make it that far."
     digi "Well, good luck to you!"
     cs "You as well!"
     stop music fadeout 3.0
@@ -1787,7 +1787,7 @@ label back_home:
     n "As CS was saying bye to his friends, a familiar but upsetting voice can be heard at the front of CS' house."
     stop music fadeout 1.0
     music end
-    ed "YOU!"
+    ed "{i}You!"
     show cs disappointed at left with moveinleft
     n "CS and the gang look forth at CS' front porch, where Richard and Ed are waiting angrily for him."
     play music2 "<loop 0>hohsisremix.mp3" volume 0.5
@@ -1807,7 +1807,7 @@ label back_home:
     rich "You tried to humiliate us with your videos, with others thinking we were a joke."
     ed "You see, my ancestors came from the planet JoJ many years ago to live here and start a foundation company."
     ed "It was the best damn foundation company in the world."
-    ed "We repaired more than 50%% of all foundations on the planet, and now... you."
+    ed "We repaired more than fifty percent of all foundations on the planet, and now... you."
     ed "You. You embarrassed us with those silly, stupid, videos that dragged our family company through the mud."
     rich "That's why Ed wanted to get revenge on you. That's why we destroyed your computer, CS."
     cs "I don't understand..."
@@ -2131,10 +2131,10 @@ label fuckuphohsis:
     hide rich
     hide ed
     with moveoutright
-    cs "Hey! Where are you guys going!"
+    cs "Hey! Where are you guys going?!"
     cs "Come back here!"
     hide cs with moveoutright
-    n "The JoJ UFO flies up over the house and vaporizes the house."
+    n "The JoJ UFO flies up over the house and vaporizes it."
     play sound "beam.ogg" volume 0.6
     show beam at xstretch_in
     pause 1.5

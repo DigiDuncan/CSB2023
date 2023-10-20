@@ -42,9 +42,9 @@ label car_dialogue:
     pause 1.0
 
     cs "You know, I can drive, Billy."
-    billy "This is my car!"
+    billy "This is {i}my{/i} car!"
     cs "Well, yeah, but if you don't want to drive the whole way..."
-    billy "No, I'm good. You're in my car, and that means I'll drive!"
+    billy "No, I'm good. You're in {i}my{/i} car, and that means {i}I'll{/i} drive!"
     cs "Alright man, I just don't feel like we paid you enough for this."
     billy "Everything I sell, it's always $19.95!"
     cs "Well, thanks man."
@@ -58,7 +58,7 @@ label car_dialogue:
     digi "Yeah..."
     cs "I've been doing Pencil Sharpening Day every year since I invented it."
     digi "I guess so...{w=1.0}{nw}"
-    cs "I LITERALLY sharpened a lightbulb with a pencil sharpener."
+    cs "I {i}literally{/i} sharpened a lightbulb with a pencil sharpener."
     digi "Yeah, I don't even know how you did that."
 
     pause 1.0
@@ -94,7 +94,7 @@ label car_dialogue:
     carla "We have a meeting in twenty minutes."
     billy "I'm in the fucking Northeast!"
     carla "What? What are you doing there?"
-    billy "It's my car!"
+    billy "It's {i}my{/i} car!"
     n "Billy hangs up the phone."
     billy "Unbelievable."
     
@@ -138,12 +138,12 @@ label car_dialogue:
     cs "Hey Arceus?"
     arceus "Hmm?"
     cs "Ever heard of the Butterfly Effect?"
-    arceus "Yeah, that's like where one little thing can effect something big later down the line."
+    arceus "Yeah, that's like where one little thing can {i}effect{/i} something big later down the line."
     cs "Yeah, I've been thinking, what if like I took the other job Linus gave me?"
     arceus "What do you mean?"
     cs "Oh, Linus wanted me to build him a stream machine."
     arceus "Ah I see, that sounds cool."
-    cs "I was thinking about if I would've done that."
+    cs "I was thinking about what would have happened if I'd done that."
     cs "I might've like, gotten into a fight and went to the hospital or something."
     cs "And then travelled the world!"
     arceus "That's very... descriptive."
@@ -190,7 +190,7 @@ label car_dialogue:
 
     arceus "Hey remember that pizza place we went to?"
     cs "Yeah, why?"
-    arceus "Well we spent the night there, and I swore there was someone watching us."
+    arceus "Well we spent the night there, and I could have {i}sworn{/i} there was someone watching us."
     cs "Oh really? Like when we were sleeping?"
     arceus "Yeah, I think I saw this dude with a funky hat, and he had a camera."
     cs "That's really creepy."
@@ -333,10 +333,10 @@ label car_dialogue:
     n "Arceus is reading a book."
     arceus "{i}Call me Ishmael.  Some years ago-- never mind how long precisely-- having little or no money in my purse,"
     arceus "{i}and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world."
-    cs "Arc? Are you... reading Moby Dick?"
+    cs "Arc? Are you... reading {i}Moby Dick?"
     arceus "Yeah."
     arceus "{i}It is a way I have of driving off the spleen and regulating the circulation.  Whenever I find myself growing grim about the mouth;"
-    arceus "{i} whenever it is a damp, drizzly November in my soul; whenever I find myself involuntarily pausing before coffin warehouses, and bringing up the rear of every funeral I meet..."
+    arceus "{i}whenever it is a damp, drizzly November in my soul; whenever I find myself involuntarily pausing before coffin warehouses, and bringing up the rear of every funeral I meet..."
     cs "Do you... have to read out loud?"
     arceus "Oh shit, I'm reading out loud?"
     cs "How do you not notice that?"
@@ -395,7 +395,7 @@ label car_dialogue:
     digi "Look, just-- why do you always clown on me for these things?"
     pakoo "Because it's a little funny. Speaking of which did you know about this dance Digi did?{w=0.5}{nw}"
     digi "Stop! Billy, hang up on him!"
-    billy "No, it's my radio!"
+    billy "No, it's {i}my{/i} radio!"
     n "Arc temporarily disables the Jupiter Jack."
     digi "Thank you, Arc."
     billy "What the actual fuck? I'm gonna throw you all out of this car!"
@@ -445,7 +445,7 @@ label car_dialogue:
     arceus "Hmm?"
     cs "Would you rather have unlimited bacon, but no games?"
     cs "Or games."
-    cs "UNLIMITED GAMES."
+    cs "{i}Unlimited games."
     cs "But no games."
     arceus "What?"
     digi "That's like a paradox, right?"
@@ -467,7 +467,7 @@ label car_dialogue:
 
     pause 1.0
 
-    n "An Ad starts playing through the Jupiter Jack."
+    n "An ad starts playing through the Jupiter Jack."
     $ renpy.music.set_pause(True, "music")
     play music2 "<loop 0>summer_clearance_sale.mp3" volume 0.5
     doug "When you shop at Walmart..."
@@ -524,7 +524,7 @@ label car_dialogue:
     host "HEY, CHAMP!"
     host "I JUST WANTED TO LET YOU KNOW YOUR {color=#ffff00}PENCIL SHARPENER{/color} SHOULD BE IN THE MAIL SOON!"
     cs "Woohoo! Thanks!"
-    host "HOPE YOU HAVE YOU COMPETE AGAIN NEXT YEAR!"
+    host "HOPE TO HAVE YOU COMPETE AGAIN NEXT YEAR!"
 
     pause 1.0
 
