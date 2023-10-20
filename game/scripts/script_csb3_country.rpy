@@ -1833,6 +1833,8 @@ label joel:
     show cs at left
     with moveinleft
     show joel at right with determination
+    play music "klaxon_beat.mp3" loop volume 0.6
+    music Klaxon Beat - Kelly Bailey
     joel "I thought I was a dumbass..."
     joel "Well, whatever, here's my house."
     show cs happy
@@ -1905,10 +1907,14 @@ label joel:
     cs "Oh nothing much, just (all the shit from the random fucking shit flying back and forth bit)."
     joel "You're an interesting critter, man."
     cs "Thanks!"
+    stop music fadeout 3.0
+    music end
     scene black with dissolve
     n "Joel gives CS a walkie-talkie, and he goes outside to the stable while Joel watches the radar."
     scene joel_outside with dissolve
     show cs horse at center with moveinleft
+    play music "<loop 0>candle_world.mp3" volume 0.4
+    music Candle World - Kikiyama
     cs "Alright, I'm in position."
     joel "Sounds good, I'll run out when I see the alien moving this way and tell you on the walkie-talkie."
     pause 3.0
@@ -1937,12 +1943,15 @@ label joel:
     cs "Well, I was certainly not expecting to be alien bait tonight, but I glad I could help you out."
     joel "Thanks for the help! I can finally get another horse! I won't have to take the bus anymore!"
     joel "Come back inside. I'm gonna make you a real Swedish dinner to celebrate."
+    stop music fadeout 3.0
+    music end
     scene black with dissolve
     n "Joel and CS head into the cabin, and Joel drags the alien's body into the kitchen."
     scene joel_house
     show cs at left
     show joel at right
     with dissolve
+    play music "klaxon_beat.mp3" loop volume 0.6
     joel "You can just wait in the living room and play some games while I cook."
     cs "Sounds like a plan."
     show joel flipped with determination
@@ -1950,6 +1959,11 @@ label joel:
     n "CS goes and plays Cuphead while Joel cooks."
     pause 5.0
     scene black with dissolve
+    pause 1.0
+    scene joel_dining
+    show joel at right
+    show cs at left
+    with dissolve
     joel "Dinner's ready! Reindeer and Alien meatballs, lingonberry sauce, mashed potatoes, and surstromming."
     cs "That's certainly a unique meal."
     joel "Well, I wasn't gonna waste the alien meat."
@@ -1958,6 +1972,8 @@ label joel:
     joel "Well, it's getting late, we should get to bed. You can sleep on the couch."
     joel "Can't get a bus back right now anyway."
     cs "Great idea. Risking my life and eating reindeer was enough excitement for one night. I'm exhausted."
+    stop music fadeout 3.0
+    scene black with dissolve
     n "After a good nights sleep, and the alien adventures with Joel, CS gets up and heads out to the nearest bus stop."
     scene bus_map with dissolve
     cs "Where should I go next?"

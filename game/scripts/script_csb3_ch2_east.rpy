@@ -400,7 +400,7 @@ label south_dakota:
     scene rushmore with fade
     n "They all hike up to the viewing spot to get a good look at the founding fathers."
     play music "<loop 0>taiikusai_desu_yo.mp3" volume 0.4
-    music Taiikusai Desu Yo - Satoru Kōsaki
+    music Taiikusai Desu Yo - Satoru Kosaki
     show cs at right with moveinleft
     show arceus flipped at center with moveinleft
     show billy at left with moveinleft

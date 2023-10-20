@@ -841,6 +841,7 @@ image ikea_inside = "bg/ikea_inside.png"
 image joel_house = "bg/joel_house.png"
 image joel_computer = "bg/joel_computer.png"
 image joel_outside = "bg/joel_outside.png"
+image joel_dining = "bg/joel_dining.png"
 
 ## AI Ending
 image park1 = "bg/ai/amusementpark1.png"

@@ -625,7 +625,7 @@ label arc_escape:
     show cs dusk at left
     show arceus dusk flipped at mid_left
     play music "<loop 0>atarashii_kaze.mp3" volume 0.3
-    music Atarashii Kaze - Satoru Kōsaki
+    music Atarashii Kaze - Satoru Kosaki
     n "CS and Arc approach the border guard again."
     show border_guard dusk at right with moveinright
     border_guard "I'm gonna need proof of--"
@@ -1061,7 +1061,7 @@ label good_convince:
     show cs dark
     n "CS and Arc look at each other, and smile."
     play music "<loop 0>bun_guster.mp3" volume 0.3
-    music Bun Guster - Satoru Kōsaki
+    music Bun Guster - Satoru Kosaki
     arceus "Holy crap, I didn't think that would work."
     cs "Me neither! I'm so glad that he let us go!"
     cs "I don't know how you got that footage, but we are now free once again!"

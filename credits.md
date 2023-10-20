@@ -113,7 +113,7 @@
     - The Legend
 - ZUN
     - Pierrot of the Star-Spangled Banner
-- Satoru Kōsaki
+- Satoru Kosaki
     - Atarashii Kaze
     - Bun Guster
     - Taiikusai Desu Yo
@@ -162,8 +162,6 @@
     - Candle World
     - Dense Woods B
     - Guillotine World
-- Satoru Kosaki
-    - Taiikusai Desu Yo
 - Weatherscan
     - Track 3
     - Track 4
