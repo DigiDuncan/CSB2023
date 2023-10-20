@@ -1138,8 +1138,7 @@ label lego_ending:
     scene black with fade
     stop music fadeout 1.0
     music end  
-    play music "secret/credits.mp3" volume 0.5
-    centered "Pretend there's credits here."
+    $ renpy.movie_cutscene("movies/credits.webm")
     $ renpy.end_replay()
     return
 

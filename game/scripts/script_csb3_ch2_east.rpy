@@ -2021,8 +2021,7 @@ label streaming:
         $ achievement_manager.unlock("Boingy Boingy Boingy")
     scene black with fade
     stop music2 fadeout 1.0   
-    play music "secret/credits.mp3" volume 0.5
-    centered "Pretend there's credits here."
+    $ renpy.movie_cutscene("movies/credits.webm")
     $ renpy.end_replay()
     return
 
@@ -2043,8 +2042,7 @@ label ytp_ending:
     cs "It's a long story..."
     scene black with fade
     stop music2 fadeout 1.0   
-    play music "secret/credits.mp3" volume 0.5
-    centered "Pretend there's credits here."
+    $ renpy.movie_cutscene("movies/credits.webm")
     $ renpy.end_replay()
     return
 
@@ -2068,8 +2066,7 @@ label ltt_ending:
     cs "It's a long story..."
     scene black with fade
     stop music2 fadeout 1.0   
-    play music "secret/credits.mp3" volume 0.5
-    centered "Pretend there's credits here."
+    $ renpy.movie_cutscene("movies/credits.webm")
     $ renpy.end_replay()
     return
 

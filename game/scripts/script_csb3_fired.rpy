@@ -1471,5 +1471,5 @@ label final_tour_bus:
     $ renpy.end_replay()
     scene black with Dissolve(3.0)
 
-    # TODO: credits
+    $ renpy.movie_cutscene("movies/credits.webm")
     return
