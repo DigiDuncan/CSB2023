@@ -1790,6 +1790,7 @@ label ikea:
     
 
 label joel:
+    $ joel_check = True
     cs "I should try to find Vinesauce Joel. He likes YTPs, so he'd probably want to hang out."
     cs "I know he's in Northern Sweden, so I'll get up there. Sweden's pretty small, it couldn't be that hard to find him."
     stop music fadeout 3.0
@@ -1974,6 +1975,7 @@ label joel:
     cs "Great idea. Risking my life and eating reindeer was enough excitement for one night. I'm exhausted."
     stop music fadeout 3.0
     scene black with dissolve
+    $ achievement_manager.unlock("Grand Dad")
     n "After a good nights sleep, and the alien adventures with Joel, CS gets up and heads out to the nearest bus stop."
     scene bus_map with dissolve
     cs "Where should I go next?"
