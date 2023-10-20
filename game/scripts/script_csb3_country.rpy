@@ -1719,19 +1719,13 @@ label sweden_second:
     jump sweden_menu 
 
 label sweden_menu:
-    # "Go on an anime adventure":
-    #     jump anime_adventure
-    # "Go sing some karaoke":
-    #     jump karaoke
-    # "Have some fun with Miku":
-    #     jump miku_pizza
     python:
         locations = []
-        if not anime_check:
-            locations.append(("Go see the Aurora Borealis", "aurora_borealis"))
-        if not karaoke_check:
-            locations.append(("Go to Ikea", "ikea"))
-        if not miku_check:
+        # if not lights_check:
+        #     locations.append(("Go see the Aurora Borealis", "aurora_borealis"))
+        # if not ikea_check:
+        #     locations.append(("Go to Ikea", "ikea"))
+        if not joel_check:
             locations.append(("Find Joel", "joel"))
         if not locations:
             locations.append(("I've done everything", "sweden_leave"))
@@ -1747,9 +1741,6 @@ label aurora_borealis:
     music end
     n "CS sits down on the next bus and begins staring out the window like he's in a music video."
     n "Eventually, he sees an area that looks good and gets off the bus."
-    
-    
-
     
 
 label ikea:
@@ -1786,7 +1777,6 @@ label ikea:
     ikea_greeter "Welcome to Ikea! Can I help you with anything?"
     cs "Yeah can you show me where the food court is?"
     ikea_greeter "Of course. It's right around that corner and to the left."
-
     
 
 label joel:
