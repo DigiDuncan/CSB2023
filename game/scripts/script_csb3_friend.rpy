@@ -975,7 +975,7 @@ label so_join:
     $ persistent.seen.add("round")
     with moveinleft
     tate "That's right! Y'all gotta get through us first!"
-    mika "Yeah! Fuck da police! (For legal reasons this is a joke)"
+    mika "Yeah! Fuck da police! (For legal reasons this is a joke.)"
     kitty "Let's get them!"
     music For The People!- Lizardking
     jump rpg_cop_fight_2
