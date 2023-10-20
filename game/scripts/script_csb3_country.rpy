@@ -38,6 +38,20 @@ label japan_menu:
         label_jump = renpy.display_menu(locations)
         renpy.jump(label_jump)
 
+label sweden_menu:
+    python:
+        locations = []
+        # if not lights_check:
+        #     locations.append(("Go see the Aurora Borealis", "aurora_borealis"))
+        # if not ikea_check:
+        #     locations.append(("Go to Ikea", "ikea"))
+        if not joel_check:
+            locations.append(("Find Joel", "joel"))
+        if not locations:
+            locations.append(("I've done everything", "sweden_leave"))
+        label_jump = renpy.display_menu(locations)
+        renpy.jump(label_jump)
+
 label knocked_out:
     scene black
     play sound "<loop 0>heartbeat.mp3" volume 1
@@ -257,7 +271,6 @@ label japan_travel:
     cs "I guess I should get some rest."
     scene black with dissolve
     jump japan
-
 
 label england:
     $ england_check = True
@@ -1075,9 +1088,9 @@ label england_done:
                 jump england_sweden
             "Japan":
                 jump england_japan
-    elif sweden_check:
+    elif sweden_check and (not japan_check):
         jump england_japan
-    elif japan_check:
+    elif japan_check and (not sweden_check):
         jump england_sweden
     else:
         jump going_home
@@ -1229,7 +1242,7 @@ label japan_two:
     cs "Fortunately, I have some money this time."
     cs "But the question is, what should I do here?"
     jump japan_menu
-        
+
 label anime_adventure:
     $ anime_check = True
     cs "I guess I can look around the city."
@@ -1569,9 +1582,9 @@ label japan_leave_airport:
                 jump japan_sweden
             "England":
                 jump japan_england
-    elif sweden_check:
+    elif sweden_check and (not england_check):
         jump japan_england
-    elif england_check:
+    elif england_check and (not sweden_check):
         jump japan_sweden
     else:
         jump going_home
@@ -1720,20 +1733,6 @@ label sweden_second:
     scene bus_map with dissolve
     n "As CS looks at the map, he tries to figure out what bus to take."
     jump sweden_menu 
-
-label sweden_menu:
-    python:
-        locations = []
-        # if not lights_check:
-        #     locations.append(("Go see the Aurora Borealis", "aurora_borealis"))
-        # if not ikea_check:
-        #     locations.append(("Go to Ikea", "ikea"))
-        if not joel_check:
-            locations.append(("Find Joel", "joel"))
-        if not locations:
-            locations.append(("I've done everything", "sweden_leave"))
-        label_jump = renpy.display_menu(locations)
-        renpy.jump(label_jump)
 
 label aurora_borealis:
     cs "I am in Sweden, so I guess I may as well go see the Northern Lights."
@@ -1982,9 +1981,9 @@ label sweden_leave:
                 jump sweden_japan
             "England":
                 jump sweden_england
-    elif japan_check:
+    elif japan_check and (not england_check):
         jump sweden_england
-    elif england_check:
+    elif england_check and (not japan_check):
         jump sweden_japan
     else:
         jump going_home
