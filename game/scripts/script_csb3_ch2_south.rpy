@@ -583,9 +583,9 @@ label folded:
     show arceus
     arceus "What would you like to do, CS?"
     menu:
-        "Go to airport":
+        "Go to the airport":
             jump airport_bad
-        "Don't go to airport":
+        "Don't go to the airport":
             jump noairport    
 
 label poker3:
