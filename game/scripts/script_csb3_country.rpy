@@ -1080,7 +1080,7 @@ label england_done:
     arceus "Oh nice!"
     show arceus
     kitty "So, are you leaving now? You managed to do so much in so little time!"
-    cs "Yeah, I think I'm gonna go visit another country."
+    cs "Yeah, I think I'm gonna go visit somewhere else."
     arceus "Oh really? Where do you think you wanna go?"
     if (not japan_check) and (not sweden_check):
         menu:
@@ -1621,7 +1621,7 @@ label japan_england:
 
 label going_home:
     stop music fadeout 1.0
-    cs "Welp, I guess it's time to head home."
+    cs "I guess it's time to head home."
     cs "I've done so many things during this trip, I honestly forgot why I started this."
     cs "I had to kinda rush it, just like with a real vacation!"
     cs "Oh well."
