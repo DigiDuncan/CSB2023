@@ -1023,7 +1023,7 @@ label interstate_69:
     aria "It's admittedly a little creepy, but you get used to it."
     cs "That's probably the least concerning thing we've seen in a forest so far today, to be fair."
     arceus "Still seems plenty murderous to me."
-    aria "I'm in here most nights, and he hasn't murdered me yet, so I wouldn't worry too much."
+    aria "I'm out here most nights, and he hasn't murdered me yet, so I wouldn't worry too much."
     scene forest_bridge
     show cs dark flipped at mid_right
     show arceus dark at right
@@ -1081,7 +1081,7 @@ label interstate_69:
     arceus "Yeah these woods are gonna be creepy no matter what route we take. We may as well pick the fastest one."
     aria "Alrighty then, follow me everyone."
     scene creepy_path_2 with dissolve
-    n "As tbe group enters the path, a ray of moonlight shines through a gap in the canopy."
+    n "As the group enters the path, a ray of moonlight shines through a gap in the canopy."
     n "Rustling noises can be heard further into the woods, but the path through the trees is clear, albeit dimly lit."
     stop music fadeout 3.0
     music end
