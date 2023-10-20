@@ -4,10 +4,9 @@
 * Bad Ending screen has a green haze
 * The ||Archival|| Ending is missing multiple backgrounds and transitions
 ### GAMEPLAY
-* Sweden is currently not accessible
+* The first Copguy fight is softlockable
 ### VIDEO
 * ||Where Are They Now?|| still is missing characters and is using beta sprites
-* Credits video does not exist
 
 ### BUGS WE CAN NOT FIX
 * When in Windowed mode, the Windowed mode option is not highlighted in the settings menu
