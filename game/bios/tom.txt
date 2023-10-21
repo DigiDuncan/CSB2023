@@ -1,3 +1,3 @@
 "So here I am..."
 
-Where hasn't this man been? He's seemed to explore the weird places no one bothers to visit, or the things no one wants to question. He's probably right behind you, explaining the history of your house.
+Where {i}hasn't{/i} this man been? He has explored odd places no one else bothers to visit and has examined the things that no one else wants to question. He's probably right behind you, {i}right now{/i}, explaining the history of your house.

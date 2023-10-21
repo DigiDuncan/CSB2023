@@ -184,7 +184,7 @@ label walmart:
     hide doug
     cs "Now, let's find some food!"
     show walmart_aisle behind cs with dissolve
-    cs "*pop* Noice! Genergy is 2 for $5! I'll take them all!"
+    cs "*pop* Noice! Genergy is two for $5! I'll take them all!"
     cs "Oooh! Pringles are on sale too! Yoink!"
     n "CS walks to the checkout area."
     scene walmart_register
@@ -294,7 +294,7 @@ label room:
     ed "Alright that will be 200,000 Bits."
     cs "Okay, I guess they already told you what I need done... Lemme get my wallet..."
     cs "Hang on a sec. Didn't they say I could pay afterwards?"
-    ed "Yeah well, corporate policies just changed 5 seconds ago. Pay up."
+    ed "Yeah well, corporate policies just changed five seconds ago. Pay up."
     show cs flipped with determination
     hide cs with moveoutleft
     n "A few moments later..."

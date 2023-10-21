@@ -796,7 +796,7 @@ label howie:
     agent "A ride in a limousine!"
     n "The group is in shock."
     anno "Already? We haven't even struck a deal!"
-    agent "Ah, you will, I trust in that. But until then, why don't I treat you all to the ride of a lifetime?"
+    agent "Ah, you will, I trust in that... but until then, why don't I treat you all to the ride of a lifetime?"
     stop music fadeout 3.0
     n "CS, Anno, and Arc all head into the limo out front, lead by Howie."
     show howie with determination
@@ -1347,7 +1347,7 @@ label third_tour_day:
         show cs concentrate
         n "CS desperately tries not to think about those words."
         show cs disappointed
-        cs "Can we try, 3 different words?"
+        cs "Can we try, three different words?"
         show cs
     crowd "Banana! {w=0.5}Street! {w=0.5}Ice!"
     cs "Uh..."
@@ -1415,7 +1415,7 @@ label final_tour_bus:
     cs "Well, I've been really enjoying this, actually."
     cs "I'm not sure I wanna go home."
     anno "Nah, don't act like that. This doesn't mean [band_name] is over!"
-    arceus "Yeah, we can still make music together. But you need to get back to your normal routine for a bit."
+    arceus "Yeah, we can still make music together, but you need to get back to your normal routine for a bit."
     anno "Yeah, reset your head a bit."
     show cs
     cs "Yeah, you're right. And hey, maybe we can write [ep_name] 2 some day!"

@@ -412,7 +412,7 @@ label vegas:
     n "CS notices a fancy man smoking a cigar waving at him."
     unknown "Yeah, you! Come over to the Poker tabeh! *coughs* I bet I can beat you!"
     cs "I guess this is my last chance to make it big. It's worth a shot."
-    cs "Alright, sure, I'll play a round. But I don't have much."
+    cs "Alright, sure, I'll play a round, but I don't have much."
     unknown "Arright great, come sit down here."
     hide cs with moveoutleft
     n "CS sits down at the poker table, and notices that the man's skin is putrid green."

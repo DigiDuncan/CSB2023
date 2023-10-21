@@ -366,7 +366,7 @@ label montana:
     billy "Hi, Billy Mays here! I would like to get the Buy 1 Get 1 Free breakfast meal for my friends here,"
     billy "and I would also like to get the egg McMuffin and a Big Mac for me."
     cashier "Sure thing, that'll be-{nw}"
-    billy "But I'm not done yet! I would like to triple the offer and get 3 Big Macs, and also 3 large sodas without any shipping!"
+    billy "But I'm not done yet! I would like to triple the offer and get three Big Macs, and also three large sodas without any shipping!"
     cashier "Uhh, yeah, we can do that without shipping."
     cashier "That'll be about, let's see..."
     cashier "$36.88."
@@ -1286,7 +1286,7 @@ label interstate_94:
     mario "No shoes in the machine! If it's broken, you're paying for the replacement!"
     n "Mario takes out the shoes and tries running the machine, but it doesn't turn back on."
     show mario at right with moveinright
-    mario "There are 3 signs that say not to put shoes in the machine, and you decide to put these big-ass clown shoes in there?!"
+    mario "There are three signs that say not to put shoes in the machine, and you decide to put these big-ass clown shoes in there?!"
     mario "You really are a damn clown, I'll tell you that for free."
     smiley "The shoes were dirty, and I have a show to get to."
     smiley "Speaking of, I still gotta head over there."
@@ -1395,7 +1395,7 @@ label interstate_94:
     billy "What happened there?"
     mario "I'm not sure, but they paid for the washer, so I'm not gonna think about it too hard."
     show cs disappointed
-    cs "I'm not a clown. They have to be good at make-up..."
+    cs "I'm not a clown. Clowns have to be good at makeup..."
     mario "I wouldn't worry about it."
     show arceus at mid_left with moveinright
     stop music fadeout 3.0

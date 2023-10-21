@@ -75,7 +75,7 @@ label knocked_out:
     n "CS sits there for a minute, trying to recollect his memory."
     cs "So I went to go work at LTT, after I..."
     cs "What did I do before that?"
-    n "The news starts playing on the TV in CS' room, explaining how 3 criminals broke out of prison a couple days ago."
+    n "The news starts playing on the TV in CS' room, explaining how three criminals broke out of prison a couple days ago."
     show cs disappointed metal4
     cs "Oh shoot! Yeah I went to prison and met Arceus and Anno! I need to get out of here!"
     hide cs with moveoutright
@@ -1069,7 +1069,7 @@ label scott_move:
     play music "<loop 0>wool_gloves.mp3" volume 0.4
     kitty "You saved a man's life?"
     cs "Yeah, and I get to be in his video!"
-    kitty "Well, looks like you got 2 for 1 then!"
+    kitty "Well, looks like you got two for one then!"
     kitty "Is there anything else you want to do?"
     $ achievement_manager.unlock("The Man In The Red Shirt")
     jump england_menu
@@ -1863,7 +1863,7 @@ label joel:
     joel "You just went to Sweden with an old laptop, hopped on a bus to the north, happened to find me, and that laptop happened to have the part I needed?!"
     cs "That's an accurate recounting of events, yes."
     joel "You didn't know where I lived or that I was working on this radar! How did you manage to get the exact right part to me by random chance?!"
-    joel "Alright, I don't have time to unpack all that. I gotta get the radar done asap."
+    joel "Alright, I don't have time to unpack all that. I gotta get the radar done ASAP."
     n "Joel opens the craptop and puts the part in the machine."
     scene joel_computer with dissolve
     n "He flips the on switch, and with a satisfying click, the green phosphor screen lights up, now with a much smaller dot than before."
@@ -1968,7 +1968,7 @@ label joel:
     stop music fadeout 3.0
     scene black with dissolve
     $ achievement_manager.unlock("Grand Dad")
-    n "After a good nights sleep, and the alien adventures with Joel, CS gets up and heads out to the nearest bus stop."
+    n "After a good night's sleep, and the alien adventures with Joel, CS gets up and heads out to the nearest bus stop."
     scene bus_map with dissolve
     jump sweden_leave
 

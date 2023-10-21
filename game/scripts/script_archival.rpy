@@ -98,7 +98,7 @@ label archival:
     k199 "Dude, just, find something here to knock him out or whatever!"
     k174 "Okayokayokay! I got this! Take this!"
     show worker_1 at center with moveintop
-    n "One of the HoH SiS workers materialize in between CS and the three people."
+    n "One of the HoH SiS workers materializes in between CS and the three people."
     worker_1 "I don't know!"
     show k199 flipped
     k199 "What the fuck is that thing? Why is it looking at us? Make it do something!"
@@ -136,7 +136,7 @@ label archival:
     n "CS realizes that this is his chance and runs past them and out the door."
     scene door_old with fade
     show cs worried at left with moveinleft
-    n "CS quickly slams the door behind him as the screams of the people echo through the door."
+    n "CS quickly slams the door behind him as screams echo through the room behind him."
     n "CS finds himself in the living room somehow, even though the bedroom was on another floor."
     cs "Shit, where do I go? I need to get out of here!"
     n "CS runs outside."

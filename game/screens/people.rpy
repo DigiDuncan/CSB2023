@@ -69,7 +69,7 @@ init python:
         "midge": "Midgalicis",
         "db": "DB05",
         #Fired Route
-        "guest": "Estatic Fan",
+        "guest": "Ecstatic Fan",
         "mean": "Meancarnavor",
         "howie": "Howie Mandell",
         "ges": "Ges",

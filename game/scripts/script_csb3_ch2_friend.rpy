@@ -13,7 +13,7 @@ label dpn_call:
     cs "What a crazy day so far man."
     cs "I can't believe we had to fight all those cops! If it weren't for Tate and the gang, we'd be dead meat already."
     arceus "Yeah, but hey, you held them off pretty well with that fancy gun of yours."
-    pakoo "Yeah, that was some great marksmanship CS!"
+    pakoo "Yeah, that was some great marksmanship, CS!"
     show cs happy
     cs "Thank you!"
     show cs
@@ -21,7 +21,7 @@ label dpn_call:
     arceus "Copguy's gonna come back, we need to think fast."
     cs "Is there anyone else we can call for help?"
     arceus "There are a few people, I can hit up Digi and see if he wants to help."
-    pakoo "Ah yes, that's a good idea Arceus. I should ask Aria and Nova if they can help us."
+    pakoo "Ah yes, that's a good idea, Arceus. I should ask Aria and Nova if they can help us."
     cs "Is there any specific location we should head to?"
     pakoo "Where are we anyways? Like west of Montana or something?"
     arceus "I think so, I'll let them know to stop somewhere ahead of us, so we'll run into them."
@@ -43,12 +43,12 @@ label car_ride_1:
     tate "Road trip, let's goooo!"
     tate "Man, I can't believe CS didn't tell us! This is so great!!"
     mika "I know, right?"
-    tate "How're you holding up Kitty?"
+    tate "How're you holding up, Kitty?"
     kitty "Yeah... I'm doing okaye.."
     show tate shock flipped
     tate "Hold up, is that CS in front of us?"
     show tate smug flipped
-    tate "Heyyyy Mika. {w=0.2}You should smack that horn. {w=0.2}You should do it. {w=0.2}Right now. {w=0.2}You should scare CS. {w=0.2}{bt=a3-p10-s4}Do it now."
+    tate "Heyyyy, Mika. {w=0.2}You should smack that horn. {w=0.2}You should do it. {w=0.2}Right now. {w=0.2}You should scare CS. {w=0.2}{bt=a3-p10-s4}Do it now."
     if nice_car:
         scene joj_charger_fg
         show drive_day behind joj_charger_fg
@@ -86,7 +86,7 @@ label car_ride_1:
     tate "Anyways, how y'all doing? Wait, I don't think we've ever actually met."
     mika "Well, I'm Mika, and thankfully Pakoo called in time for us to arrive."
     kitty "Hi, I'm Kitty. I hope Arcie is doing well enough."
-    tate "Hi I'm Tate. Nice to meet y'all."
+    tate "Hi, I'm Tate. Nice to meet y'all."
     show tate smug flipped
     tate "Now let's go kick some ass!"
     if nice_car:
@@ -218,7 +218,7 @@ label cs_meetup:
     nova "Great Digi, see what you did?"
     digi "What did I do? Huh?"
     show cop at right with moveinright
-    cop "Hey! We've heard that there are 2 suspects here who are helping out a criminal gang! Show yourselves!"
+    cop "Hey! We've heard that there are two suspects here who are helping out a criminal gang! Show yourselves!"
     n "The people in the diner start freaking out and hide under their seats."
     nova "Alright Digi, let's do this."
     digi "On it."
@@ -339,7 +339,7 @@ label car_ride_2:
     show digi at right
     with fade
     digi "I can't believe CS went to jail."
-    aria_alt "Arceus was in jail for 5 years, Digi."
+    aria_alt "Arceus was in jail for five years, Digi."
     digi "Yeah I know, but that's an Arceus thing to do."
     nova "Is it?? That's kinda concerning."
     digi "No, I meant like, he knows what he's doing."
