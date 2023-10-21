@@ -210,19 +210,18 @@ label archival_finale:
     show archival_5
     show cs disappointed
     with dissolve
-    n "He realizes that the game that he is playing is the world that CS lives in, and it looks like CS is making fun or poking fun at his world."
+    n "He realizes that the game that he is playing is the world that CS lives in, and it looks like this man is making fun or poking fun at his world."
     show cs scared
     n "Before CS can really take all this in though, a few guards at the end of the building yell something at him."
-    n "The guards are wearing tophats as well, with a black suit, black dress pants, and a white undershirt."
-    n "The guards also have rifles, something similar or equivalent to an M4A1."
+    n "The guards are wearing tophats and black suits as well, and are carrying rifles."
     scene archival_3 with dissolve
     show cs worried at right with moveinleft
     show cs worried flipped with determination
-    n "The guards start to chase after CS, and he runs a bit as well and hides behind one of the canisters."
+    n "They start to chase after CS, and he runs a bit as well and hides behind one of the canisters."
     show hart1 at center
     show hart2 at left
     with moveinleft
-    n "The guards come around the corner, and start firing at CS as he sprints out of there."
+    n "The guys come around the corner, and start firing at CS as he sprints out of there."
     show cs worried with determination
     hide cs with moveoutright
     play sound "<loop 0>hks2.wav" volume 0.7
@@ -361,7 +360,7 @@ label archival_finale:
     n "CS runs down the exit, and follows the signs while running down the hallway."
     scene archival_14 with dissolve
     n "While CS is running, he sees a bunch of stairs leading down ahead of him."
-    n "CS manages to make it down the stairs in time, but so do the guards still behind him."
+    n "CS manages to make it down the stairs in time, but so do the guys still behind him."
     scene archival_15 with dissolve
     stop sound fadeout 3.0
     show cs scared at mid_left with moveinleft
@@ -374,7 +373,7 @@ label archival_finale:
     stop music fadeout 3.0
     scene archival_13 with dissolve
     play music "<loop 0>take_trip2.mp3" volume 0.5
-    n "As he gets in on time as the door slowly shuts right before the guards can get in."
+    n "As he gets in on time as the door slowly shuts right before the guys can get in."
     show archival_19
     with dissolve    
     n "CS goes over to the console in the front of the tram and hits the giant forward button."
