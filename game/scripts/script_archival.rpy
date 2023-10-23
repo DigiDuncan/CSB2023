@@ -390,12 +390,16 @@ label archival_finale:
     scene train_start
     show cs disappointed at center
     with dissolve
+    pause 1.0
+    scene train_outside_tunnel
+    show cs disappointed at center
+    with dissolve
     n "The tram turns off to the left, as an opening to another rail appears."
     show cs scared
     with shake1
     n "The tram gets onto the lane, and starts speeding incredibly fast."
     scene archival_18
-    show train_loop
+    show train_outside_tunnel
     show cs disappointed at center
     show cs disappointed with vpunch
     show cs disappointed with hpunch
@@ -411,14 +415,14 @@ label archival_finale:
     n "CS looks to his right, as he sees these giant facilities fly past him. "
     n "After about 20 of the facilities fly by, the tram suddenly stops. CS looks around, confused, and then he looks to his left."
     scene white
-    show train_loop
+    show archival_18
     show cs disappointed at center
     with dissolve
     n "To his left, as a long, endless looking hallway with a blinding light filling up the hallway."
     n "The tram slowly starts to rotate onto the light hallway's rail."
-    scene car plains
-    show train_loop
+    scene train_in_tunnel
     show cs scared at center
+    with dissolve
     show cs scared with vpunch
     show cs scared with hpunch
     show cs scared with vpunch
@@ -446,7 +450,7 @@ label archival_finale:
     scene sign_closeup with dissolve
     n "A message appears at the top of the tram on a panel, that shows someone who looks like one of the guards waving at him."
     scene white
-    show train_loop
+    show train_in_tunnel
     show cs concentrate at center
     with dissolve
     show cs concentrate
