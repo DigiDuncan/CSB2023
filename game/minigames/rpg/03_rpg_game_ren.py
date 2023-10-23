@@ -146,6 +146,7 @@ def change_stat(subject: Fighter, targets: list[Fighter], crit: bool, options: d
         elif stat == "atk":
             old_atk = f.attack_points
             f.attack_points *= mult
+            f.attack_points = max(5, f.attack_points)
             answer.append((int(f.attack_points - old_atk), "atk"))
             print(f"Setting {f.name} ATK to {f.attack_points}.")
         else:
