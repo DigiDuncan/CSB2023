@@ -722,7 +722,6 @@ class Fighters:
     K199 = Fighter("K19-9", True, 199, 19, 30, [Attacks.KICK], Image("images/characters/k199.png"), ai = AIType.AGGRO)
     K207 = Fighter("K20-7", True, 207, 20, 10, [Attacks.PUNCH], Image("images/characters/k207.png"), ai = AIType.DEFENSIVE)
 
-
     # Enemies (UCN)
     WESLEY = Fighter("Wesley", True, 200, 20, 40, [Attacks.PISTOL, Attacks.ALL_OVER_AGAIN], Image("images/characters/wesley.png"), ai = AIType.AGGRO)
     ED = Fighter("Ed", True, 300, 30, 25, [Attacks.HEAVY_PUNCH, Attacks.SOTH], Image("images/characters/ed.png"), ai = AIType.SMART)
