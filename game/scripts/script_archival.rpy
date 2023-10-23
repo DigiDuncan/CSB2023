@@ -382,7 +382,8 @@ label archival_finale:
     show hart2 at center
     with dissolve
     n "The tram slowly starts to take off, as the guards back away from the tram and pull out what looks like walkie talkies."
-    scene archival_18
+    scene black
+    show archival_18
     show cs disappointed at center
     with dissolve
     n "CS looks ahead and takes a bit of a breather, and the tram starts to speed up."
@@ -406,11 +407,8 @@ label archival_finale:
     show cs disappointed with hpunch
     show cs disappointed with vpunch
     show cs disappointed with hpunch
-    show cs disappointed
-    with shake1
+    scene the_tram with dissolve
     n "CS looks to his right, as he sees these giant facilities fly past him. "
-    show cs disappointed with vpunch
-    show cs disappointed with hpunch
     n "After about 20 of the facilities fly by, the tram suddenly stops. CS looks around, confused, and then he looks to his left."
     scene white
     show train_loop
@@ -445,6 +443,7 @@ label archival_finale:
     show archival_19
     with shake1
     n "CS panics and tries to stop the train, but it is no use."
+    scene sign_closeup with dissolve
     n "A message appears at the top of the tram on a panel, that shows someone who looks like one of the guards waving at him."
     scene white
     show train_loop
