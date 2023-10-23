@@ -612,9 +612,12 @@ image shaggy_too_dope = "characters/shaggydope.png"
 image joel = "characters/joel.png"
 image joel flipped = "flip:characters/joel.png"
 image ikea_greeter = "characters/ikea_man.png"
+image ikea_greeter flipped = "flip:characters/ikea_man.png"
 image swede = "characters/swede.png"
 image alien = "characters/alien.png"
 image alien dead = "characters/alien_dead.png"
+image ikea_worker = "characters/ikea_worker.png"
+image pomni = "characters/pomni.png"
 
 # Background Images
 ## CSBI
@@ -863,6 +866,13 @@ image joel_house = "bg/joel_house.png"
 image joel_computer = "bg/joel_computer.png"
 image joel_outside = "bg/joel_outside.png"
 image joel_dining = "bg/joel_dining.png"
+image food_court = "bg/food_court.png"
+image eating_food = "bg/eating_food.png"
+image home_decor = "bg/home_decor.png"
+image toilet_zone = "bg/toilet_zone.png"
+image plushie_zone = "bg/plushie_zone.png"
+image eating_food_2 = "bg/eating_food_2.png"
+image dumpster = "bg/dumpster.png"
 
 ## AI Ending
 image park1 = "bg/ai/amusementpark1.png"

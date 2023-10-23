@@ -84,9 +84,9 @@ See what needs to be done below.
     - [X] Jukebox
 - [ ] Sweden [Aria]
     - [X] Script
-    - [ ] Backgrounds [30%]
-    - [ ] Characters [30%]
-    - [ ] Transitions [30%]
+    - [ ] Backgrounds [60%]
+    - [ ] Characters [60%]
+    - [ ] Transitions [60%]
     - [ ] Music
     - [ ] Bios
     - [ ] Jukebox

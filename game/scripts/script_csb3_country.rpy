@@ -1837,6 +1837,7 @@ label aurora_borealis:
     cs "Wow, that's beautiful! Totally worth killing that pig."
     $ achievement_manager.unlock("Obviously Grilled")
     cs "Well, I should get back to my bus."
+    scene bus_map with dissolve
     jump sweden_menu
 
 label ikea:
@@ -1874,15 +1875,24 @@ label ikea:
     ikea_greeter "Welcome to Ikea! Can I help you with anything?"
     cs "Yeah can you show me where the food court is?"
     ikea_greeter "Of course. It's right around that corner and to the left."
+    show cs happy
     cs "Alright, thanks!"
+    hide cs with moveoutright
     n "CS sprints excitedly to the food court."
+    scene food_court 
+    show ikea_worker at right
+    with dissolve
+    show cs at left with moveinleft
     ikea_worker "Hi! What would you like to eat?"
     cs "I'd like mashed potatoes, Swedish balls, gravy, and lingonberry sauce please."
     ikea_worker "Do you mean Swedish meatballs?"
     cs "I know what I said."
     ikea_worker "Well, those are made of meat too, so I'll go with yes."
     n "CS gets his food and goes to sit down."
+    hide cs with moveoutright
+    scene eating_food with dissolve
     cs "Mmm, this is good. I don't know how I feel about the balls though."
+    n "The worker comes over and sees CS trying to eat the Swedish flag that came with the meatballs."
     ikea_worker "Um, sir, you're supposed to take the little Swedish flag out of the meatball first."
     cs "Ohhh! Yeah that makes sense. I just thought that was what made it authentic."
     ikea_worker "Only one of the balls had the flag..."
@@ -1891,32 +1901,63 @@ label ikea:
     cs "Anything else I should know about?"
     ikea_worker "Given what you didn't know so far, I suppose I should also say to not eat the plate."
     cs "Got it!"
+    scene black with dissolve
     n "CS finishes the rest of his meal without incident."
+    scene food_court
+    show cs at left
+    with dissolve
     cs "That was good. Glad someone taught me how to eat those balls like a local."
     cs "I don't want to embarrass myself."
     cs "Time to go check out the rest of the store."
+    hide cs with moveoutright
     n "CS walks around for a while and ends up in the home decor section."
+    scene home_decor
+    show ikea_greeter at mid_right
+    with dissolve
+    show cs at left with moveinleft
     ikea_worker "Excuse me, would you be interested in this blåhaj?"
+    show cs disappointed
     cs "Not particularly."
     ikea_worker "Oh okay. Sorry, I saw the maid dress and cat ears, and I just assumed."
+    show cs
     cs "No worries."
+    hide cs with moveoutright
     n "CS keeps wandering around and ends up in the bathroom section."
+    scene toilet_zone with dissolve
+    show cs at center with moveinleft
     cs "Ooh, that toilet looks fancy."
+    show cs happy
     cs "So many buttons!"
+    show cs
     cs "I forget what these are called. I think it was 'be-gay' or something like that."
     cs "Whatever, let's try it out!"
+    show cs at mid_offscreen_right with move
+    show cs flipped with determination
     n "CS goes to sit on the toilet, but an employee runs over and stops him."
+    show ikea_greeter flipped at mid_left with moveinleft
     ikea_worker "That toilet is display only!"
+    show cs disappointed flipped
     cs "Oh man, that's disappointing."
+    show cs flipped at center with move
     cs "Whatever, I'll find something else to do."
+    hide cs with moveoutleft
+    scene plushie_zone 
+    show pomni at right
+    with dissolve
     n "CS wanders back by the plushie section and notices a clown."
+    show cs at mid_left with moveinleft
     cs "Huh, that's a weird-looking plushie."
     pomni "I'm not a plushie!"
+    show cs disappointed
     cs "Oh, sorry. What's your name?"
+    show cs
     pomni "I'm Pomni."
     pomni "I've been trying to get out of here, but I can't."
+    show cs disappointed
     cs "What do you mean? The exit is right over there..."
+    show cs worried
     cs "Wait, what way {i}did{/i} I come from?"
+    show cs disappointed
     pomni "See? I've been following exit signs for the past few days."
     pomni "I've only stopped to go to food court. The signs just take you through a loop."
     cs "You've been looking for a few days?! You need to get to sleep."
@@ -1924,25 +1965,55 @@ label ikea:
     pomni "I don't think I will, but maybe you're right."
     pomni "There are plenty of beds here. Maybe it wouldn't be so bad if I just stayed."
     n "Pomni leaves to go find a bed."
+    hide pomni with moveoutleft
     cs "Poor thing. Hopefully she gets some rest quickly."
     cs "I should find my way back to the exit though. I don't wanna get too lost."
+    hide cs with moveoutright
     n "CS starts following the exit signs, but he eventually realizes that he's been looking for the exit longer than he had been in the store."
+    scene home_decor with dissolve
+    show cs disappointed at left with moveinleft
+    show cs worried
     cs "Oh my gosh, the clown was right! I can't get out of here."
+    show cs disappointed
     cs "Well, I may as well eat about it."
+    hide cs with moveoutright
     n "CS heads back over to the food court."
+    scene food_court
+    show ikea_worker at right
+    show cs at left
+    with dissolve
     ikea_worker "Hi! What would you like?"
     cs "I'll take some lobster, caviar, sauerkraut, kippers, champagne, and semlor."
     ikea_worker "Coming right up!"
+    hide cs with moveoutright
     n "CS gets his food and begins to eat."
+    scene eating_food_2 with dissolve
     n "He gets through all of the kippers and caviar first, then moves to the lobster and sauerkraut, all the while chugging champagne."
     n "Finally, he starts eating the semlor for desert, but after he finishes the first couple, he starts to slow down."
     n "As he takes the first bite of his last semla, he blacks out."
+    scene black
     #CS ends up by the dumpster behind the Ikea.
+    pause 3.0
+    scene dumpster
+    show cs concentrate
+    with dissolve
+    pause 1.0
+    show cs disappointed
     cs "Woah, where am I?" 
+    show cs disappointed flipped
+    pause 1.0
+    show cs disappointed
+    pause 1.0
+    show cs disappointed flipped
+    pause 1.0
+    show cs disappointed
     # CS flips one way and then back as if looking back and forth
     cs "Well, I'm out of that Ikea now. Hopefully that clown finds a way out too."
     $ achievement_manager.unlock("Oak, Pine, And Norsemen")
     cs "May as well head back to the bus stop and find something else to do."
+    hide cs with moveoutright
+    pause 2.0
+    scene bus_map with dissolve
     jump sweden_menu
 
 label joel:
@@ -2142,7 +2213,7 @@ label joel:
     $ achievement_manager.unlock("Grand Dad")
     n "After a good night's sleep, and the alien adventures with Joel, CS gets up and heads out to the nearest bus stop."
     scene bus_map with dissolve
-    jump sweden_leave
+    jump sweden_menu
 
 label sweden_leave:
     cs "Well, I guess I really just wanted to meet Joel."
