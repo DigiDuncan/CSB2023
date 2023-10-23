@@ -95,3 +95,4 @@
 * Rebalance the volumes of all beeps
 * ||Archival ending|| is now complete!
 * The ||"Where Are They Now?"|| and intro videos have been fixed and updated
+* "Guest" sprite was changed
