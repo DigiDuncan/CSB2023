@@ -206,6 +206,21 @@ transform typewriter_location:
     anchor(0.5, 0.5)
     rotate(-17)
 
+transform midoffscreenright:
+    pos(1.0, 0.0)
+
+transform midoffscreenleftspin:
+    pos(-1.0, 0.0)
+    linear 2 rotate -360
+
+transform offscreenrightspin:
+    pos(1.5, 1.0)
+    linear 2 rotate 360
+
+transform offscreenleftspin:
+    pos(-0.5, 0.5)
+    linear 2 rotate 360
+
 # Character Definitions
 define n = Character(None, what_italic = True, callback = char_callback)  # Narrator
 define cs = Character("cs188", callback = renpy.partial(char_callback, name = "cs", beep = "cs"))
@@ -917,6 +932,9 @@ image colorbars = "colorbars.png"
 image paper = "paper.png"
 image pipe_gun = "pipe_gun.png"
 image pipe_gun flipped = "flip:pipe_gun.png"
+image cheetos = "cheetos.png"
+image bear = "bear.png"
+image dog = "dog.png"
 
 # Movies
 image car background = Movie(play="movies/car_background.webm")

@@ -1897,7 +1897,15 @@ label joel:
     n "CS pulls out a horse head and puts it on."
     cs "See?"
     joel "What the hell?! What all do you have in there?"
-    cs "Oh nothing much, just cheetos, teddy bears, dogs."
+    show cheetos at offscreenleft
+    show bear at midoffscreenright
+    show dog at offscreenright
+    with determination
+    show cheetos at offscreenrightspin
+    show bear at midoffscreenleftspin
+    show dog at offscreenleftspin
+    with MoveTransition(1.0)
+    cs "Oh nothing much, just {bt=a3-p10-s4}(all this random fucking shit flying back\nand forth)"
     joel "You're an interesting critter, man."
     cs "Thanks!"
     stop music fadeout 3.0
