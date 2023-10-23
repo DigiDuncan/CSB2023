@@ -1,14 +1,9 @@
-## KNOWN BUGS
-### VISUAL
-* Bad Ending screen has a green haze
-### GAMEPLAY
-* The first Copguy fight is softlockable
-
 ### BUGS WE CAN NOT FIX
 * When in Windowed mode, the Windowed mode option is not highlighted in the settings menu
 * Occasionally, when in fullscreen, your cursor will be invisible. This might be a Windows bug. Restarting the game seems to fix it.
 * Scrolling back during the RPG fights causes that sequence to restart entirely. This is because of how Ren'Py deals with these custom interactive elements.
 * Ed with phone sprite isn't great but it's shown once in the game and is kinda funny
+* Bad Ending screen has a green haze (this is technically fixable for DX but we aren't going to right now.)
 
 ## FIXES FROM `1.0b1`
 * Copguy EX can no longer crash the game 1/1008 of the time
