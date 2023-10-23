@@ -1835,6 +1835,7 @@ label aurora_borealis:
     n "CS, Moomin, and Snufkin head back to Moominhouse and wait for nightfall."
     n "Finally, the sky lights up and CS is enthralled."
     cs "Wow, that's beautiful! Totally worth killing that pig."
+    # TODO: ACHIEVEMENT
     cs "Well, I should get back to my bus."
     jump sweden_menu
 
@@ -1940,6 +1941,7 @@ label ikea:
     cs "Woah, where am I?" 
     # CS flips one way and then back as if looking back and forth
     cs "Well, I'm out of that Ikea now. Hopefully that clown finds a way out too."
+    # TODO: ACHIEVEMENT
     cs "May as well head back to the bus stop and find something else to do."
     jump sweden_menu
 
