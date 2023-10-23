@@ -1,12 +1,8 @@
 ## KNOWN BUGS
 ### VISUAL
-* The intro cutscene has a minor visual error
 * Bad Ending screen has a green haze
-* The ||Archival|| Ending is missing multiple backgrounds and transitions
 ### GAMEPLAY
 * The first Copguy fight is softlockable
-### VIDEO
-* ||Where Are They Now?|| still is missing characters and is using beta sprites
 
 ### BUGS WE CAN NOT FIX
 * When in Windowed mode, the Windowed mode option is not highlighted in the settings menu
@@ -98,3 +94,9 @@
 * Blank now has a beep
 * Clearing persistent data is now accessible without Dev mode, and prompt the user before clearing.
 * Typo fixes and fun values
+
+## FIXES FROM `1.0b7`
+* **SWEDEN IS NOW COMPLETE!** This means the entire game's script is now complete!
+* Rebalance the volumes of all beeps
+* ||Archival ending|| is now complete!
+* The ||"Where Are They Now?"|| and intro videos have been fixed and updated
