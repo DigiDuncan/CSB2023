@@ -43,6 +43,8 @@ define achievements = [
     Achievement("Dame Da Ne", "???", "Sing karaoke in Japan.", "karaoke"),
     Achievement("Have Some Fucking Pizza!", "???", "Meet Scott and Miku.", "pizza"),
     Achievement("Grand Dad", "Fleenstones?!", "Meet Joel in Sweden.", "granddad"),
+    Achievement("Oak, Pine, And Norsemen", "???", "Escape the IKEA.", "ikea"),
+    Achievement("Obviously Grilled", "No, no, that's what I call hamburgers!", "Turn on the Northern Lights.", "steamedhams"),
     Achievement("HoH SiS's Most Wanted", "???", "Complete CSBI.", "csbi"),
     Achievement("Welcome to CSBIII, Mother Fucker", "???", "Complete CSBII.", "csbii"),
     Achievement("That's All, Folks!", "???", "Complete CSBIII.", "csbiii"),
