@@ -1788,8 +1788,8 @@ label joel:
     stop music fadeout 3.0
     music end
     scene black with dissolve
-    n "CS gets on a bus up north, and he falls asleep."
-    n "When the bus hits the end of the line, one of the other riders wakes him up."
+    n "CS gets on a bus headed north, and falls asleep."
+    n "When the bus reaches the end of the line, one of the other riders wakes him up."
     scene bus_seat
     show cs concentrate at mid_left
     show joel at mid_right
@@ -1799,7 +1799,7 @@ label joel:
     cs "Oh alright, thanks for waking me--"
     pause 0.5
     show cs worried with hpunch
-    cs "Wait, you're Joel! What are you doing there?"
+    cs "Wait, you're Joel! What are you doing here?"
     show cs surprised
     joel "I'm just taking the bus back home. What're you doing here?"
     cs "I was looking for you actually."
@@ -1814,7 +1814,7 @@ label joel:
     cs "I know you also like YTPs, and I make those, so you might be interested."
     joel "Well, I do like YTPs. This situation is already nonsensical enough, might as well lean into it."
     joel "Wanna come to my house?"
-    cs "Sounds like a plan. It's freezing out and have nowhere else to go."
+    cs "Sounds like a plan. It's freezing out and I have nowhere else to go."
     joel "You really didn't think this plan through at all, huh."
     cs "Didn't think I needed to." 
     cs "It's working out really well, so I still don't really."
@@ -1828,7 +1828,7 @@ label joel:
     show joel at right with determination
     play music "klaxon_beat.mp3" loop volume 0.6
     music Klaxon Beat - Kelly Bailey
-    joel "I thought I was a dumbass..."
+    joel "I thought {i}I{/i} was a dumbass..."
     joel "Well, whatever, here's my house."
     show cs happy
     cs "Ooh, it's nice."
@@ -1836,11 +1836,11 @@ label joel:
     cs "Wait, what's all this equipment for?"
     joel "Oh yeah that's all my alien radar stuff."
     cs "Why are you tracking aliens?"
-    joel "They keep coming and killing my lifestock."
+    joel "They keep coming and killing my livestock."
     joel "At first I thought it was just Swedish Santa because I forgot to leave out porridge for him."
     joel "Then I left out porridge for him after I replaced the first horse, but then that horse was also killed."
     joel "He didn't even eat the porridge!"
-    joel "I left a camera out after I replaced the house, and I caught the little grey alien on the camera."
+    joel "I left a camera out after I replaced the horse, and I caught the little grey alien on the camera."
     cs "That's wild. So you're tracking it so you know when it comes for the horse?"
     joel "I would be, but I haven't replaced the horse."
     joel "The radar isn't very accurate, and the alien seems to live around here, so I can't tell when it's coming."
@@ -1866,7 +1866,7 @@ label joel:
     joel "Alright, I don't have time to unpack all that. I gotta get the radar done ASAP."
     n "Joel opens the craptop and puts the part in the machine."
     scene joel_computer with dissolve
-    n "He flips the on switch, and with a satisfying click, the green phosphor screen lights up, now with a much smaller dot than before."
+    n "He flips the power switch on, and with a satisfying click, the green phosphor screen lights up, now with a much smaller dot than before."
     joel "Holy shit it worked!"
     joel "I can finally get that grey and stop living in fear!"
     joel "Now I just need bait."
@@ -1897,7 +1897,7 @@ label joel:
     n "CS pulls out a horse head and puts it on."
     cs "See?"
     joel "What the hell?! What all do you have in there?"
-    cs "Oh nothing much, just (all the shit from the random fucking shit flying back and forth bit)."
+    cs "Oh nothing much, just cheetos, teddy bears, dogs."
     joel "You're an interesting critter, man."
     cs "Thanks!"
     stop music fadeout 3.0
