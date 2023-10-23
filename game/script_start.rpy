@@ -332,8 +332,14 @@ define violent_jay = Character("Violent Jay", callback = renpy.partial(char_call
 define shaggy_too_dope = Character("Shaggy Too Dope", callback = char_callback)
 define joel = Character("Vargskelethor Joel", callback = renpy.partial(char_callback, name = "joel", beep = "joel"))
 define ikea_greeter = Character("Ikea Greeter", callback = char_callback)
+define ikea_worker = Character("Ikea Worker", callback = char_callback)
+define pomni = Character("Pomni", callback = char_callback)  # TODO: Beep, bio
 define average_swede = Character("Swede", callback = char_callback)
 define alien = Character("Grey", callback = char_callback)
+define moomin = Character("Moomin", callback = char_callback)  # TODO: Beep, bio
+define snufkin = Character("Snufkin", callback = char_callback)  # TODO: Beep, bio
+define alicia = Character("Alicia", callback = char_callback)
+define witch = Character("Witch", callback = char_callback)  # TODO: Beep, bio
 
 # Character Images
 ## CS

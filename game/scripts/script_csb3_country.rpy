@@ -41,10 +41,10 @@ label japan_menu:
 label sweden_menu:
     python:
         locations = []
-        # if not lights_check:
-        #     locations.append(("Go see the Aurora Borealis", "aurora_borealis"))
-        # if not ikea_check:
-        #     locations.append(("Go to Ikea", "ikea"))
+        if not lights_check:
+            locations.append(("Go see the Aurora Borealis", "aurora_borealis"))
+        if not ikea_check:
+            locations.append(("Go to Ikea", "ikea"))
         if not joel_check:
             locations.append(("Find Joel", "joel"))
         if not locations:
@@ -1735,6 +1735,7 @@ label sweden_second:
     jump sweden_menu 
 
 label aurora_borealis:
+    $ lights_check = True
     cs "I am in Sweden, so I guess I may as well go see the Northern Lights."
     cs "I should go somewhere less urban if I wanna see it properly though. Too much light pollution here."
     cs "I'll just get on a bus and keep going until I see somewhere with clear skies."
@@ -1835,9 +1836,10 @@ label aurora_borealis:
     n "Finally, the sky lights up and CS is enthralled."
     cs "Wow, that's beautiful! Totally worth killing that pig."
     cs "Well, I should get back to my bus."
-
+    jump sweden_menu
 
 label ikea:
+    $ ikea_check = True
     cs "I should go check out the Ikea here."
     cs "It's the land of Ikea. They're probably a lot better than the ones in the US."
     cs "Easy to find on the map too. They have icons for all the major tourist attractions."
@@ -1879,7 +1881,7 @@ label ikea:
     cs "I know what I said."
     ikea_worker "Well, those are made of meat too, so I'll go with yes."
     n "CS gets his food and goes to sit down."
-    cs "Mmm this is good. I don't know how I feel about the balls though."
+    cs "Mmm, this is good. I don't know how I feel about the balls though."
     ikea_worker "Um, sir, you're supposed to take the little Swedish flag out of the meatball first."
     cs "Ohhh! Yeah that makes sense. I just thought that was what made it authentic."
     ikea_worker "Only one of the balls had the flag..."
@@ -1898,7 +1900,7 @@ label ikea:
     ikea_worker "Oh okay. Sorry, I saw the maid dress and cat ears, and I just assumed."
     cs "No worries."
     n "CS keeps wandering around and ends up in the bathroom section."
-    cs "Ooh that toilet looks fancy."
+    cs "Ooh, that toilet looks fancy."
     cs "So many buttons!"
     cs "I forget what these are called. I think it was 'be-gay' or something like that."
     cs "Whatever, let's try it out!"
@@ -1924,7 +1926,7 @@ label ikea:
     cs "Poor thing. Hopefully she gets some rest quickly."
     cs "I should find my way back to the exit though. I don't wanna get too lost."
     n "CS starts following the exit signs, but he eventually realizes that he's been looking for the exit longer than he had been in the store."
-    cs "Oh my gosh the clown was right! I can't get out of here."
+    cs "Oh my gosh, the clown was right! I can't get out of here."
     cs "Well, I may as well eat about it."
     n "CS heads back over to the food court."
     ikea_worker "Hi! What would you like?"
@@ -1935,11 +1937,12 @@ label ikea:
     n "Finally, he starts eating the semlor for desert, but after he finishes the first couple, he starts to slow down."
     n "As he takes the first bite of his last semla, he blacks out."
     #CS ends up by the dumpster behind the Ikea.
-    cs "Bwuh, where am I?" 
+    cs "Woah, where am I?" 
     # CS flips one way and then back as if looking back and forth
     cs "Well, I'm out of that Ikea now. Hopefully that clown finds a way out too."
     cs "May as well head back to the bus stop and find something else to do."
-    
+    jump sweden_menu
+
 label joel:
     $ joel_check = True
     cs "I should try to find Vinesauce Joel. He likes YTPs, so he'd probably want to hang out."
