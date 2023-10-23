@@ -1911,7 +1911,7 @@ label joel:
     stop music fadeout 3.0
     music end
     scene black with dissolve
-    n "Joel gives CS a walkie-talkie, and he goes outside to the stable while Joel watches the radar."
+    n "Joel gives CS a walkie-talkie. CS heads outside to the stable while Joel watches the radar."
     scene joel_outside with dissolve
     show cs horse at center with moveinleft
     play music "<loop 0>candle_world.mp3" volume 0.4
@@ -1965,10 +1965,10 @@ label joel:
     show joel at right
     show cs at left
     with dissolve
-    joel "Dinner's ready! Reindeer and Alien meatballs, lingonberry sauce, mashed potatoes, and surstromming."
+    joel "Dinner's ready! Reindeer and alien meatballs, lingonberry sauce, mashed potatoes, and surströmming."
     cs "That's certainly a unique meal."
     joel "Well, I wasn't gonna waste the alien meat."
-    cs "I meant the reindeer and surstromming, but I suppose that's also unique."
+    cs "I meant the reindeer and surströmming, but I suppose that's also unique."
     n "CS and Joel enjoy the meal and have a great time talking at dinner."
     joel "Well, it's getting late, we should get to bed. You can sleep on the couch."
     joel "Can't get a bus back right now anyway."
