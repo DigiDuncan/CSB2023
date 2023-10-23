@@ -1968,7 +1968,7 @@ label talktohohsis:
     n "The crowd errupts in cheers as CS finally enters his house."
     scene black with dissolve
     pause 1.0
-    $ renpy.movie_cutscene("movies/hohrepair.MP4")
+    $ renpy.movie_cutscene("movies/hoh_repair.webm")
     scene cs_room with dissolve
     play music2 "<loop 0>ac_title.mp3" volume 0.4
     music New Leaf Title Theme - Kazumi Totaka
