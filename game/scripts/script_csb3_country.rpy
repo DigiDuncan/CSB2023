@@ -1799,8 +1799,9 @@ label aurora_borealis:
     hide moomin with moveoutright
     scene moomin_zone2 with dissolve
     show cs at left
-    show moomin at center
+    show moomin flipped at center
     with moveinleft
+    show moomin with determination
     stop music fadeout 3.0
     music end
     cs "So, if Moomin is the name of your species and also the name of the valley, how many of your species are there in the valley."
@@ -1841,6 +1842,7 @@ label aurora_borealis:
     cs "Can you take me to her?"
     snufkin "Sure."
     n "CS, Moomin, and Snufkin go to visit the witch."
+    show snufkin flipped with determination
     hide cs
     hide moomin
     hide snufkin
@@ -1850,7 +1852,7 @@ label aurora_borealis:
     with dissolve
     show cs at left 
     show moomin flipped at mid_left
-    show snufkin at mid_mid_left
+    show snufkin flipped at mid_mid_left
     with moveinleft
     stop music fadeout 3.0
     music end
