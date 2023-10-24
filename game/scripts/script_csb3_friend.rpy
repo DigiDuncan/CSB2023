@@ -64,12 +64,12 @@ label microcenter:
         cs "Whatever, I'll get this AMD Threadripper."        
     else:
         cs "Whatever, I'll get this Intel i9."
-    cs "Now for the GPU."
+    cs "Now, for the GPU."
     hide cs with moveoutright
     scene gpuaisle with fade
     show cs at mid_left with moveinleft
     n "CS heads over to the GPU aisle."
-    cs "Hmm, we got AMD and NVIDIA, I wish Linus told me which one I should get..."
+    cs "Hmm, we've got AMD and NVIDIA, I wish Linus told me which one I should get..."
     n "CS looks at his options."
     hide cs with moveoutright
     scene gpuaisle2 with fade
@@ -104,9 +104,10 @@ label high_gpu:
         cs "I know NVIDIA pretty well, so I'm sure they're the best option to choose here."
     cs "Let's go check this out."
     hide cs with moveoutright
-    n "CS heads out to the checkout."
-    scene cashzone
-    show cashier at mid_right 
+    n "CS heads to the checkout."
+    scene cashzone 
+    show cashier at center
+    show cashzone_foreground
     with fade
     show cs at mid_left with moveinleft
     cashier "That'll be $1188."
@@ -132,9 +133,9 @@ label high_gpu:
     linus "Alright let's see what we got here..."
     linus "Nice, an Intel i9..."
     if fanboy_type == "nvidia":
-        linus "Oh nice! A Radeon RX 7900! That's amazing!"
+        linus "Oh, nice! A Radeon RX 7900! That's amazing!"
         show cs happy
-        cs "Thanks man!"
+        cs "Thanks, man!"
         cs "I was hoping you'd like it, since you use AMD for gaming."
     else:
         linus "Ooh! A RTX 4080! Excellent choice CS!"
@@ -142,9 +143,9 @@ label high_gpu:
         cs "Thank you!"
         show cs
         cs "I'm more of an NVIDIA guy myself, so I decided to go with it."
-    linus "Well you made some great purchases, I'm excited to see the specs we'll get with this!"
+    linus "Well, you made some great purchases. I'm excited to see the specs we'll get with this!"
     linus "I'm gonna go get the set ready, and then we can build and test it on camera."
-    cs "Oh wow, already?"
+    cs "Oh, wow, already?"
     linus "Yeah, I'm excited! You can help me build it, right?"
     cs "Yeah, of course!"
     linus "Alright then, let's go!"
@@ -152,22 +153,22 @@ label high_gpu:
     hide cs
     with moveoutright
     scene black with fade
-    n "CS and Linus head down to the recording room, while Linus sets up the cameras and equipment."
+    n "CS and Linus head down to the recording room, then Linus sets up the cameras and equipment."
     scene ltt_bg
     show ltt_fg
     with fade
     show cs at t_cs_ltt behind ltt_fg with moveinleft
     linus "Alright, one second..."
     show linus at t_linus_ltt behind ltt_fg with moveinright
-    linus "You ready CS?"
+    linus "You ready, CS?"
     cs "I don't think I've ever done a professional recording like this before..."
-    linus "Relax! You can act normal here, and the editors can cut out anything that we need."
+    linus "Relax! You can act normal here, and the editors can cut out anything that we don't need."
     cs "Okay."
-    linus "3... 2... 1... Go."
+    linus "3...{w=1} 2...{w=1} 1...{w=1} Action."
     linus "Today, we are going to start-- {nw}"
     cs "Hey guys, CS here! How's it goin? Today we are going to build this CraAaAaAaAzY computer!"
     pause 1.0
-    linus "Yeah. As I was going to say, we have our new employee, CS188 here, helping build a new streaming machine for LTT!"
+    linus "Yeah. As I was going to say, we have our new employee cs188 with us, helping build a new streaming machine for LTT!"
     if fanboy_type == "nvidia":
         linus "CS picked out the parts, which were an Intel i9 and a Radeon RX 7900!"
         cs "Woohoo! Go AMD!"       
@@ -178,14 +179,14 @@ label high_gpu:
     stop music fadeout 3.0
     music end
     scene black with fade
-    n "CS and Linus then spend the next hour building and setting up the computer, showing off it's amazing capabilities."
-    n "When they finish, they wrap up and Linus gives the footage to the editors."
+    n "CS and Linus then spend the next hour building and setting up the computer, showing off its amazing capabilities."
+    n "When they finish recording, they clean up the set and Linus gives the footage to the editors."
     scene inside_ltt with fade
     show cs at left
     show linus at right
     with moveinleft
     show cs happy
-    cs "That was really fun actually!"
+    cs "That was really fun, actually!"
     linus "Yeah! I'm glad that you could put together such a nice PC on your first day!"
     cs "Hell yeah!"
     linus "Well, that's it for today. When you come back tomorrow, we'll see what our audience thinks about it."
@@ -1161,7 +1162,8 @@ label low_gpu:
     hide cs with moveoutright
     n "CS heads out to the checkout."
     scene cashzone 
-    show cashier at mid_right
+    show cashier at center
+    show cashzone_foreground
     with fade
     show cs at mid_left with moveinleft
     cashier "That'll be $50."
