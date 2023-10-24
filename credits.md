@@ -224,6 +224,10 @@
     - Neko To Sanpo
 - Project SEKAI
     - Real World
+- Sumio Shiratori
+    - Muumin Tani Fuyu
+    - Snufkin The Traveler
+    - Lady Of The Cold
 - AZALI
     - BATTLE UNDER A BROKEN SKY
 - Tears For Fears

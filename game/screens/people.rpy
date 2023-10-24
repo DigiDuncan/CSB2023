@@ -83,6 +83,10 @@ init python:
         "sayori": "Sayori",
         "joel": "Vargskelethor Joel",
         "pomni": "Pomni",
+        "moomin": "Moomin",
+        "snufkin": "Snufkin",
+        "alicia": "Alicia",
+        "witch": "Witch",
         #Archival
         "k174": "Pakoo's Memories",
         "addy": "Addy",

@@ -124,6 +124,9 @@ init python:
         "Real World - Project SEKAI": "real_world.mp3",
         "Afternoon Hills - BEST MUSIC": "afternoon_hills.mp3",
         "XDDCC - Gooseworx": "xddcc.mp3",
+        "Muumin Tani Fuyu - Sumio Shiratori": "muumin_tani_fuyu.mp3",
+        "Snufkin The Traveler - Sumio Shiratori": "snufin.mp3",
+        "Lady Of The Cold - Sumio Shiratori": "lady_of_the_cold.mp3",
         #AI
         "School - Toby Fox": "school.mp3",
         "Cliffs - Toby Fox": "cliffs.mp3",

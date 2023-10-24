@@ -336,10 +336,10 @@ define ikea_worker = Character("Ikea Worker", callback = char_callback)
 define pomni = Character("Pomni", callback = renpy.partial(char_callback, name = "pomni", beep = "pomni"))
 define average_swede = Character("Swede", callback = char_callback)
 define alien = Character("Grey", callback = char_callback)
-define moomin = Character("Moomin", callback = char_callback)  # TODO: Beep, bio
-define snufkin = Character("Snufkin", callback = char_callback)  # TODO: Beep, bio
-define alicia = Character("Alicia", callback = char_callback)
-define witch = Character("Witch", callback = char_callback)  # TODO: Beep, bio
+define moomin = Character("Moomin", callback = renpy.partial(char_callback, name = "moomin"))  # TODO: Beep, bio
+define snufkin = Character("Snufkin", callback = renpy.partial(char_callback, name = "snufkin"))  # TODO: Beep, bio
+define alicia = Character("Alicia", callback = renpy.partial(char_callback, name = "alicia"))
+define witch = Character("Witch", callback = renpy.partial(char_callback, name = "witch"))  # TODO: Beep, bio
 
 # Character Images
 ## CS
@@ -964,6 +964,7 @@ image pipe_gun flipped = "flip:pipe_gun.png"
 image cheetos = "cheetos.png"
 image bear = "bear.png"
 image dog = "dog.png"
+image pig = "pig.png"
 
 # Movies
 image car background = Movie(play="movies/car_background.webm")

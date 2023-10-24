@@ -1759,7 +1759,9 @@ label aurora_borealis:
     show cs at center with moveinleft
     n "Outside of the woods is a valley of rolling hills, entirely clear except for a strange, cylindrical house."
     cs "That's one interesting building. I wonder who lives there."
-    show moomin at left with moveinleft
+    show moomin flipped at left with moveinleft
+    play music "<loop 0>muumin_tani_fuyu.mp3" volume 0.5
+    music Muumin Tani Fuyu - Sumio Shiratori
     moomin "I do!"
     show cs worried with hpunch
     show cs worried at mid_right with move
@@ -1799,6 +1801,8 @@ label aurora_borealis:
     show cs at left
     show moomin at center
     with moveinleft
+    stop music fadeout 3.0
+    music end
     cs "So, if Moomin is the name of your species and also the name of the valley, how many of your species are there in the valley."
     moomin "There's me, Moominmama, and Moominpapa."
     cs "Wait, so just three of you?"
@@ -1812,6 +1816,9 @@ label aurora_borealis:
         moomin "Mama and papa have more family, but they don't live around here."
     moomin "Anyway, Snufkin should be right over here."
     show snufkin at right with moveinright
+    play music "<loop 0>snufin.mp3" volume 0.5
+    music Snufkin The Traveler - Sumio Shiratori
+    show moomin flipped
     moomin "Hello Snufkin!"
     snufkin "Hello Moomin. I see you've brought a new friend."
     moomin "Yes, this is CS. He's looking for something, and I thought you could help."
@@ -1842,15 +1849,19 @@ label aurora_borealis:
     show alicia at right
     with dissolve
     show cs at left 
-    show moomin at mid_left
+    show moomin flipped at mid_left
     show snufkin at mid_mid_left
     with moveinleft
+    stop music fadeout 3.0
+    music end
     alicia "Moomin, Snufkin, you're here!"
     snufkin "Oh hello Alicia. Is your grandma around."
     alicia "Yep! She's making potions in the house."
     snufkin "That's great. This stranger needs her help to see the Aurora Borealis."
     alicia "Well, I don't know if she'll help, but I'll go get her."
     show witch at center with dissolve
+    play music "<loop 0>lady_of_the_cold.mp3" volume 0.5
+    music Lady Of The Cold - Sumio Shiratori
     witch "What's all the hub-bub about?"
     cs "Hello Madam Witch. I'd like your help seeing the Aurora Borealis."
     witch "Oh is that all? Sure, I can turn it on for you, but I'm gonna need something from you first."
@@ -1861,7 +1872,9 @@ label aurora_borealis:
     hide cs with moveoutright    
     n "CS quickly fashions a spear out of a branch and some rocks he found on the forest path, and he heads out to find the pig."
     n "He catches it by surprise and quickly stabs it with the spear."
-    show cs flipped at right with moveoutright
+    show pig at mid_right
+    show cs flipped at right
+    with moveinright
     cs "Wow, that was surprisingly easy. Now I just need to go find that witch."
     n "CS heads back to the cabin."
     scene moomin_zone4 
@@ -1875,10 +1888,12 @@ label aurora_borealis:
     witch "I'm not sure why you came this far for it to be honest."
     cs "Well, we don't have any witches where I'm from, so that's probably it."
     cs "Thanks for the help. Enjoy your ham."
+    stop music fadeout 3.0
+    music end
     n "CS, Moomin, and Snufkin head back to Moominhouse and wait for nightfall."
     scene moomin_zone3
     show cs happy at center
-    show moomin at left
+    show moomin flipped at left
     show snufkin at right
     with dissolve
     n "Finally, the sky lights up and CS is enthralled."
