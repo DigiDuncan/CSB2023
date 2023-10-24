@@ -902,13 +902,13 @@ label pussy_out_forest:
     n "As CS and Arceus hunker down into the foliage, they see the flash of lights fly past them."
     arceus "Phew! That was a close one, CS!"
     cs "Yeah, it looks like we hid just in time."
-    arceus "Alright well, should we wait here for a bit or do you think the coast is clear?"
+    arceus "Alright, well, should we wait here for a bit or do you think the coast is clear?"
     jump wait_forest
 
 label wait_forest:
     cs "We should probably wait for a little bit. They might turn around and see us."
     arceus "Yeah, that's a good point. I kinda don't want to risk going back to prison again."
-    n "CS and Arc stay quiet in the forest for about 15 minutes before heading back on the road again."
+    n "CS and Arc stay quiet in the forest for about 15 minutes before heading back onto the road again."
     scene washington_road with fade
     show cs dark at left with moveinleft
     show arceus dark at right with moveinright
@@ -918,9 +918,9 @@ label wait_forest:
     arceus "Well, I figured you wanted to go back home, right?"
     cs "Of course I want to head back home, it's just... it seems so far away."
     cs "We don't really have a car or anything, we are completely lost, and we got the cops still looking for us, probably!"
-    arceus "Look man, I know it's pretty hard right now, but we gotta be optimistic about this."
+    arceus "Look, man, I know it's pretty hard right now, but we gotta be optimistic about this."
     arceus "The second we find people, I'm sure we can work something out and head back home."
-    cs "If you say so, I just hope we don't have to {i}walk{/i} all the way there."
+    cs "If you say so. I just hope we don't have to {i}walk{/i} all the way there."
     arceus "I don't think that'll be the case."
     copguy "{cps=10}I don't think so either."
     n "Before CS and Arc can react, they both get the lights knocked out of them."
@@ -941,7 +941,7 @@ label wait_forest:
     show arceus worried dark flipped
     arceus "I'm sorry."
     show cs worried dark
-    cs "No no no! This can't be happening!"
+    cs "No, no, no! This can't be happening!"
     cs "Arceus! Can't you do something about this?"
     arceus "No can do, boss. Looks like this is the end of the line."
     copguy "No time for negotiations, pal. Get in the car."
@@ -954,7 +954,7 @@ label wait_forest:
     with moveinleft
     n "CS and Arc are thrown into the back of the cruiser as Copguy barks some order into his walkie."
     copguy "This is Copguy calling in a 1-8-8 on Compass Road. Sheriff? We got em."
-    n "Copguy starts the car and they head off."
+    n "Copguy starts the car and they drive off."
     jump copcar_menu
 
 label copcar_menu:
@@ -985,7 +985,7 @@ label bad_convince:
     cs "Wait a second! I'm not actually CS!"
     cs "I just {i}look{/i} like CS!"
     show arceus worried
-    arceus "I mean, he might not be CS?"
+    arceus "I mean... he {i}might{/i} not be CS?"
     play sound "objection.mp3" volume 0.5
     show objection at truecenter with hpunch
     pause 1.0
@@ -1009,7 +1009,7 @@ label good_convince:
     show arceus
     copguy "What are you on about?"
     cs "Yes! HoH SiS scammed me out of thousands of dollars to get my foundation fixed, and they also broke my laptop!"
-    cs "So afterwards, I wanted to get my revenge!"
+    cs "So, afterwards, I wanted to get my revenge!"
     copguy "I'm not believing this for a second."
     copguy "You really thought I would fall for some silly little lie?"
     play sound "objection.mp3" volume 0.5
@@ -1025,7 +1025,7 @@ label good_convince:
     scene backseat
     show craptop evidence
     with dissolve
-    n "Copguy stops the car as Arceus plays back the scene from {i}CS Bounciness I{/i} with the scamming of CS by HoH SiS."
+    n "Copguy stops the car as Arceus plays back the scene from {/i}CS Bounciness I{i} with the scamming of CS by HoH SiS."  # Weird line
     scene copcar
     show copguy at mid_left
     show copcar_mask
@@ -1036,14 +1036,14 @@ label good_convince:
     show arceus happy
     arceus "I have my ways."
     show arceus
-    copguy "I don't understand, so HoH SiS really did scam you hard, didn't they?"
+    copguy "I don't understand... so HoH SiS really did scam you hard, didn't they?"
     copguy "I'm not sure how valid it was for you to push that man off a building..."
     copguy "But I can't argue right now about whether that footage is fake."
     stop music fadeout 3.0
     music end
     hide copguy with moveoutleft
     n "Copguy gets out of the car."
-    n "He then proceeds to open the doors and let them out, freeing them of their shackles."
+    n "He then proceeds to open the doors and let CS and Arc out, freeing them of their shackles."
     scene washington_road with fade
     show copguy dark flipped at right with moveinleft
     show copguy dark with determination
@@ -1059,7 +1059,7 @@ label good_convince:
     show arceus dark flipped at mid_right_right with move
     show arceus dark at mid_right_right
     show cs dark
-    n "CS and Arc look at each other, and smile."
+    n "CS and Arc look at each other and smile."
     play music "<loop 0>bun_guster.mp3" volume 0.3
     music Bun Guster - Satoru Kosaki
     arceus "Holy crap, I didn't think that would work."
@@ -1073,7 +1073,7 @@ label good_convince:
     show cs happy dark at mid_left_left
     show arceus happy dark at mid_right_right
     with move
-    n "They both high five, and continue heading in the direction of the road."
+    n "They both high five and continue heading down the road."
     stop music fadeout 3.0
     music end
     jump choose_direction
