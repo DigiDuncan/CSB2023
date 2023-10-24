@@ -1982,10 +1982,10 @@ label ikea:
     hide cs with moveoutright
     n "CS walks around for a while and ends up in the home decor section."
     scene home_decor
-    show ikea_greeter at mid_right
+    show ikea_greeter blahaj at mid_right
     with dissolve
     show cs at left with moveinleft
-    ikea_worker "Excuse me, would you be interested in this blåhaj?"
+    ikea_worker "Excuse me, would you be interested in this Blåhaj?"
     show cs disappointed
     cs "Not particularly."
     ikea_worker "Oh okay. Sorry, I saw the maid dress and cat ears, and I just assumed."
