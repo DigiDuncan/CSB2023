@@ -888,6 +888,7 @@ image moomin_zone3 = "bg/moomin_zone3.png"
 image moomin_zone3b = "bg/moomin_zone3b.png"
 image moomin_zone4 = "bg/moomin_zone4.png"
 image moomin_zone5 = "bg/moomin_zone5.png"
+image waddle_zone = "bg/waddle_zone.png"
 
 ## AI Ending
 image park1 = "bg/ai/amusementpark1.png"

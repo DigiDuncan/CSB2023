@@ -1873,17 +1873,19 @@ label aurora_borealis:
     cs "I've never hunted before, but I'll give it a shot."
     hide cs with moveoutright    
     n "CS quickly fashions a spear out of a branch and some rocks he found on the forest path, and he heads out to find the pig."
-    n "He catches it by surprise and quickly stabs it with the spear."
-    show pig at mid_right
-    show cs flipped at right
-    with moveinright
-    cs "Wow, that was surprisingly easy. Now I just need to go find that witch."
+    scene waddle_zone with dissolve
+    show cs at mid_left with moveinleft
+    cs "One of these should do!"
+    cs "This was surprisingly easy. Now I just need to go find that witch."
     n "CS heads back to the cabin."
     scene moomin_zone4 
     show witch at center
     with dissolve
-    show cs at left with moveinleft
+    show cs at left
+    show pig at mid_left
+    with moveinleft
     witch "Wow, that was fast. Now all I have to do is put the carcass through the skinner and I can cook the meat after it's skinned."
+    hide pig with dissolve
     witch "A promise is a promise, the lights will be on tonight."
     cs "What? Is it that easy? You didn't even need to, like, cast a spell or anything?"
     witch "Yeah, it's just some light. It's no big deal."
