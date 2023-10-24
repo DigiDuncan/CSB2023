@@ -18,7 +18,7 @@ label south:
     scene town with fade
     show cs at left with moveinleft
     show arceus at right with moveinright
-    cs "Oh my god! We found civilization again!"
+    cs "Oh my God! We found civilization again!"
     arceus "Thank God."
     n "The two look around for a bit, when they see a gas station close by."
     cs "Let's head over to that gas station, so we can pick up something to eat."
@@ -358,7 +358,7 @@ label vegas:
     show cs at left with moveinleft
     show arceus at right with moveinright
     show arceus worried
-    arceus "Oh god, I already feel like I have a migraine..."
+    arceus "Oh God, I already feel like I have a migraine..."
     cs "C'mon Arc, let's go play some slots!"
     hide cs dark with moveoutright
     n "CS starts looking around for a machine to sit at."
@@ -1081,7 +1081,7 @@ label true_ending_alt:
     n "CS starts up his stream overlay and goes live on Twitch."
     cs "Hey guys! CS here! Sorry I was gone for a couple weeks!"
     n "The chat is overflowing with messages."
-    chat "Yeah what happened to you?{w=0.25} Oh my god, CS, you're here!{w=0.25} Hi!{w=0.25} Hi!{w=0.25} Where have you been?"
+    chat "Yeah what happened to you?{w=0.25} Oh my God, CS, you're here!{w=0.25} Hi!{w=0.25} Hi!{w=0.25} Where have you been?"
     show cs happy at mid_left
     cs "Well guys..."
     jump lego_ending
@@ -1095,7 +1095,7 @@ label ytp_ending_alt:
     n "CS starts up his stream overlay and goes live on Twitch."
     cs "Hey guys! CS here! Sorry I was gone for a couple weeks!"
     n "The chat is overflowing with messages."
-    chat "Yeah what happened to you?{w=0.25} Oh my god, CS, you're here!{w=0.25} Hi!{w=0.25} Hi!{w=0.25} Where have you been?"
+    chat "Yeah what happened to you?{w=0.25} Oh my God, CS, you're here!{w=0.25} Hi!{w=0.25} Hi!{w=0.25} Where have you been?"
     show cs at mid_left
     cs "Well guys..."
     jump lego_ending

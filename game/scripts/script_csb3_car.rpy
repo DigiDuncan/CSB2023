@@ -179,7 +179,7 @@ label car_dialogue:
 
     n "Billy gets a call on his Jupiter Jack."
     iris "Arceus?"
-    digi "Oh my god."
+    digi "Oh my God."
     arceus "How did you-- who is this?"
     iris "We need to talk later."
     pause 1.0

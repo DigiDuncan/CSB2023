@@ -190,11 +190,11 @@ label high_gpu:
     linus "Yeah! I'm glad that you could put together such a nice PC on your first day!"
     cs "Hell yeah!"
     linus "Well, that's it for today. When you come back tomorrow, we'll see what our audience thinks about it."
-    cs "Alrighty well, I'm pumped! See you tomorrow!"
+    cs "Alrighty, well, I'm pumped! See you tomorrow!"
     hide cs with moveoutright
     hide linus with moveoutleft
     scene black with fade
-    n "CS heads out back to the local hotel he's been staying at, already excited for the next day."
+    n "CS heads back to the hotel he's been staying at, already excited for the next day."
     n "As morning comes, CS heads back to LTT to check out the video."
     scene inside_ltt
     show linus at mid_right
@@ -203,21 +203,22 @@ label high_gpu:
     linus "Hey CS!"
     cs "Hey Linus!"
     linus "Let's see how our video did!"
-    n "Linus and CS sit down at the desk while Linus pulls open the video."
+    n "Linus and CS sit down at the desk while Linus pulls up the video."
     scene comments with fade
     play music "<loop 0>pixel_peeker_polka.mp3" loop volume 0.4
     music Pixel Peeker Polka - Kevin MacLeod
-    linus "Alright well, we've already got quite a bit of views..."
+    linus "Alright, well, we've already got quite a lot of views..."
     cs "Man! I wish I got this amount of average views!"
     cs "Look at the comments!"
-    linus "Yeah I'm getting there."
-    linus "Yeah, they seem to like your build!"
+    linus "Yeah, I'm getting there."
+    linus "..."
+    linus "Well, they seem to like your build!"
     cs "Yes!!"
     if fanboy_type == "nvidia":
-        cs "Aw man, what are those people saying? AMD blows, you guys are hoes?"        
+        cs "Aw, man, what are those people saying? AMD blows, you guys are hoes?"        
     else:
-        cs "Aw man, what are those people saying? NVIDIA sucks, you guys are cucks?"
-    cs "Heyyy!!! No I'm not!"
+        cs "Aw, man, what are those people saying? NVIDIA sucks, you guys are cucks?"
+    cs "Heyyy!!! No I'm not..."
     stop music fadeout 3.0
     music end
     linus "Yeah, there are always people who get upset because of the brand we used. Don't worry, this always happens."
@@ -270,17 +271,17 @@ label high_gpu:
     cs "No!"
     linus "Huh?"
     menu:
-        "Which card do you want to choose?"
+        "What do you want to do?"
         "Go out and fight!":
             jump attack_fanboy
-        "Stay inside":
+        "Stay inside and wait.":
             jump stay_inside
 
 label stay_inside:
     show cs disappointed flipped at right
-    cs "Let's just, stay here."
+    cs "Let's just... stay here."
     cs "They've got to go away at some point, right?"
-    linus "I'm sure, I mean, we are LTT after all!"
+    linus "Sure, I mean, we are LTT after all!"
     linus "We're so cool, our fans love us! They'll probably run home here in a moment."
     taran "Holy shit! They're throwing bricks!"
     play sound "<loop 0>glass.ogg" volume 3

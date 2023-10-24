@@ -81,7 +81,7 @@ label new_plan:
     anno "Wait, yeah, I can totally do that, I have the models ready for that and everything."
     n "Anno starts typing away at his laptop, and within a few minutes, a voice plays out of the speaker."
     ed "I think CS is a pretty good guy. You shouldn't arrest him."
-    cs "Oh my god, that's amazing! But what about you two?"
+    cs "Oh my God, that's amazing! But what about you two?"
     anno "Gotcha covered."
     # IDEA: Maybe have an actual AI-generated clip here?
     if fun_value(20):
@@ -624,7 +624,7 @@ label hotel_lobby_2:
     guest "You guys are cracked at making music! You're like GOATed!"
     cs "What? What does that--"
     n "A crowd starts to form around them."
-    guest "You're a rizz god! You're off the sauce at this shit!"
+    guest "You're a rizz God! You're off the sauce at this shit!"
     anno "We've released one song."
     guest "I'm like the biggest stan of you guys! You guys gotta perform."
     arceus "Perform?"
@@ -747,7 +747,7 @@ label fan_interaction:
     anno "Sorry."
     cs "How much money is that?"
     anno "About $15,000."
-    cs "Oh my god!"
+    cs "Oh my God!"
     arceus "Well, we're going to need to file taxes on it."
     anno "Do we?"
     show arceus angry

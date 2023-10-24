@@ -6,7 +6,7 @@ label east:
     scene town with fade
     show cs at left with moveinleft
     show arceus at right with moveinright
-    cs "Oh my god! We found civilization again!"
+    cs "Oh my God! We found civilization again!"
     arceus "Thank God."
     n "The two look around for a bit, when they see a gas station close by."
     cs "Let's head over to that gas station, so we can pick up some food."
@@ -1492,7 +1492,7 @@ label pennsylvania:
     play music "<loop 0>fourside.mp3" volume 0.6
     music The Metropolis of Fourside - Keiichi Suzuki
     n "CS sees a billboard pass by them."
-    cs "Oh my god! It's PencilCon! We need to go!"
+    cs "Oh my God! It's PencilCon! We need to go!"
     arceus "Why the fuck do you want to go to {i}PencilCon{/i} when we are so close to home?!"
     cs "Because I love sharpening pencils! I made my own holiday around it! Please, Billy, can we go to PencilCon?"
     billy "If Arceus is okay with it, sure, I guess."
@@ -1894,7 +1894,7 @@ label talktohohsis:
         $ persistent.seen.add("bubble")
     cs "Wow, I don't know how you all got here coincidently, but I appreciate it!"
     show cs at left
-    rich "Oh my god, that's so many people!"
+    rich "Oh my God, that's so many people!"
     ed "Okay okay, I get it."
     hide anno
     hide arceus flipped
@@ -2008,7 +2008,7 @@ label streaming:
     n "CS starts up his stream overlay and goes live on Twitch."
     cs "Hey guys! CS here! Sorry I was gone for a couple weeks!"
     n "The chat is overflowing with messages."
-    chat "Yeah what happened to you?{w=0.25} Oh my god, CS, you're here!{w=0.25} Hi!{w=0.25} Hi!{w=0.25} Where have you been?"
+    chat "Yeah what happened to you?{w=0.25} Oh my God, CS, you're here!{w=0.25} Hi!{w=0.25} Hi!{w=0.25} Where have you been?"
     show cs happy at mid_left
     cs "Well guys..."
     n "CS chuckles."
@@ -2035,7 +2035,7 @@ label ytp_ending:
     n "CS starts up his stream overlay and goes live on Twitch."
     cs "Hey guys! CS here! Sorry I was gone for a couple weeks!"
     n "The chat is overflowing with messages."
-    chat "Yeah what happened to you?{w=0.25} Oh my god, CS, you're here!{w=0.25} Hi!{w=0.25} Hi!{w=0.25} Where have you been?"
+    chat "Yeah what happened to you?{w=0.25} Oh my God, CS, you're here!{w=0.25} Hi!{w=0.25} Hi!{w=0.25} Where have you been?"
     show cs at mid_left
     cs "Well guys..."
     n "CS chuckles."

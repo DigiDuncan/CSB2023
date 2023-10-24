@@ -56,7 +56,7 @@ label knocked_out:
     scene black
     play sound "<loop 0>heartbeat.mp3" volume 1
     n "..."
-    n "As CS' vision fades back into view, he can also hear a faint heart monitor beeping."
+    n "As CS' vision fades back into view, he can hear a faint heart monitor beeping."
     scene hospital_room with dissolve
     n "CS immediately snaps up."
     if fun_value(40):
@@ -69,7 +69,7 @@ label knocked_out:
         cs "Wha--"
         cs "What happened? How long have I been out?"
     show cs disappointed metal3
-    cs "Thank god I didn't catch some virus from a global pandemic or something."
+    cs "Thank God I didn't catch some virus from a global pandemic or something."
     stop sound
     cs "I guess that's the last time I try to do something for LTT."
     n "CS sits there for a minute, trying to recollect his memory."
@@ -89,10 +89,10 @@ label knocked_out:
     show cs disappointed flipped at right with move
     show cs flipped
     cs "Excuse me, do you know where the closest airport is?"
-    nurse "Uhh yeah, it's actually about a mile or two east of here."
+    nurse "Uhh, yeah, it's actually about a mile or two east of here."
     cs "Thank you, bye!"
     hide cs with moveoutleft
-    nurse "Uhm sir, shouldn't you stay in your room?"
+    nurse "Uhm, sir, shouldn't you stay in your room?"
     nurse "Sir?"
     nurse "Welp. I guess he's feeling fine."
     scene canada_block
@@ -132,7 +132,7 @@ label knocked_out:
             jump sweden_travel
         "Japan":
             jump japan_travel
-    
+
 label england_travel:
     $ engfirst = True
     cs "Uhh, I guess I wanted to go to England?"

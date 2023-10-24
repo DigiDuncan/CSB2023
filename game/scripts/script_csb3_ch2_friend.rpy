@@ -816,7 +816,7 @@ label car_slam:
     n "Eventually, he finds Copguy's wrecked cop car."
     show cs at center with move
     cs "Welp. There rests Copguy."
-    cs "He fought well, he was a good cop, and god rest his soul."
+    cs "He fought well, he was a good cop, and God rest his soul."
     pause 3.0
     show cs flipped
     cs "Nahhh! That guy was a jerk!"

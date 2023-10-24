@@ -590,7 +590,7 @@ label arc_escape:
     linus "It's Lin-"
     copguy "Yeah okay. Linard, if you say that it's {i}this{/i} man, how can you explain the maid outfit that was used in the video that was just uploaded an hour ago?"
     linus "Well uhh, he's got some... weird kinks..."
-    colton "Oh my fucking god."
+    colton "Oh my fucking God."
     copguy "If you are so sure then, lemme go talk to the sheriff about this."
     linus "Sure thing, officer."
     show copguy flipped
@@ -616,7 +616,7 @@ label arc_escape:
     cs "I should've just called another foundation repair company."
     arceus "Yeah, that sounds like hell."
     cs "It IS hell."
-    arceus "{size=-10}You could have called me. I am literally a god."
+    arceus "{size=-10}You could have called me. I am literally a God."
     arceus "I should've known that the cops were going look for us. We didn't hide our tracks too well."
     arceus "I heard about the cops at the last second when I was checking comm chatter around the area. I figured that since you helped me out, I should come back for you."
     cs "Thanks man, I really owe you again."
@@ -787,7 +787,7 @@ label attack_arc:
     play sound "alt_punch.ogg"
     show csgod at t_punchup with move
     show arceus angry dark at right with hpunch
-    arceus "Really? I've been a god longer than you dummy."
+    arceus "Really? I've been a God longer than you dummy."
     arceus "Nice try."
     bad_end "There's no weapon\nto free us all!" "forest_menu"
 
