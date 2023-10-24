@@ -618,6 +618,14 @@ image alien = "characters/alien.png"
 image alien dead = "characters/alien_dead.png"
 image ikea_worker = "characters/ikea_worker.png"
 image pomni = "characters/pomni.png"
+image moomin = "characters/moomin.png"
+image snufkin = "characters/snufkin.png"
+image alicia = "characters/alicia.png"
+image witch = "characters/witch.png"
+image moomin flipped = "flip:characters/moomin.png"
+image snufkin flipped = "flip:characters/snufkin.png"
+image alicia flipped = "flip:characters/alicia.png"
+image witch flipped = "flip:characters/witch.png"
 
 # Background Images
 ## CSBI
@@ -873,6 +881,11 @@ image toilet_zone = "bg/toilet_zone.png"
 image plushie_zone = "bg/plushie_zone.png"
 image eating_food_2 = "bg/eating_food_2.png"
 image dumpster = "bg/dumpster.png"
+image moomin_zone1 = "bg/moomin_zone1.png"
+image moomin_zone2 = "bg/moomin_zone2.png"
+image moomin_zone3 = "bg/moomin_zone3.png"
+image moomin_zone4 = "bg/moomin_zone4.png"
+image moomin_zone5 = "bg/moomin_zone5.png"
 
 ## AI Ending
 image park1 = "bg/ai/amusementpark1.png"

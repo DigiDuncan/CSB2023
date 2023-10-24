@@ -1742,20 +1742,32 @@ label aurora_borealis:
     scene black with dissolve
     stop music fadeout 3.0
     music end
+    scene bus_seat
+    show cs flipped at mid_left
+    with dissolve
     n "CS sits down on the next bus and begins staring out the window like he's in a music video."
     n "Eventually, he sees an area that looks good and gets off the bus."
+    scene black with dissolve
+    scene moomin_zone1 with dissolve
+    show cs happy at mid_left with moveinleft
     cs "Wow! This place is almost cartoonishly beautiful! I'll watch the lights here."
     cs "I have some time to kill before nightfall. I should explore this area some more."
     cs "It's so calming."
+    hide cs with moveoutright
     n "CS has a pleasant walk through the woods until he eventually comes to the edge of the forest."
+    scene moomin_zone3 with dissolve
+    show cs at center with moveinleft
     n "Outside of the woods is a valley of rolling hills, entirely clear except for a strange, cylindrical house."
     cs "That's one interesting building. I wonder who lives there."
+    show moomin at left with moveinleft
     moomin "I do!"
-    #Moomin comes up behind CS and CS jumps forward and turns to face him
+    show cs worried with hpunch
+    show cs worried at mid_right with move
+    show cs worried flipped with determination
     cs "Ahh!"
     moomin "I don't mean to alarm you. I just wanted to say hi."
+    show cs flipped
     moomin "Who are you?"
-    cs "I'm CS."
     if(fun_value(40)): 
         cs "My name is Walter Hartwell White. I live at 308 Negra Arroyo Lane, Albuquerque, New Mexico, 87104."
         moomin "I don't believe you."
@@ -1780,6 +1792,13 @@ label aurora_borealis:
     moomin "He lives over by the river, we can go over there quickly."
     cs "Sounds good. I'm just happy to explore this place more."
     n "CS and Moomin start walking over."
+    show cs with determination
+    hide cs with moveoutright
+    hide moomin with moveoutright
+    scene moomin_zone2 with dissolve
+    show cs at left
+    show moomin at center
+    with moveinleft
     cs "So, if Moomin is the name of your species and also the name of the valley, how many of your species are there in the valley."
     moomin "There's me, Moominmama, and Moominpapa."
     cs "Wait, so just three of you?"
@@ -1792,28 +1811,46 @@ label aurora_borealis:
     else:
         moomin "Mama and papa have more family, but they don't live around here."
     moomin "Anyway, Snufkin should be right over here."
+    show snufkin at right with moveinright
     moomin "Hello Snufkin!"
     snufkin "Hello Moomin. I see you've brought a new friend."
     moomin "Yes, this is CS. He's looking for something, and I thought you could help."
     cs "I'd like to see the Aurora Borealis." 
     cs "I was hoping to see it tonight, but Moomin said he never heard of it, so I think maybe it doesn't happen around here."
     snufkin "Why, sure it can! It can happen anywhere."
+    show cs disappointed
     cs "Don't you have to be far enough north..."
     snufkin "Did you think they were something that just happened?"
+    show cs
     snufkin "The sky doesn't just light up on its own, you need magic for that."
     snufkin "If you want to see the Aurora, you're gonna have to talk to the witch and get her to turn them on for you."
+    show cs worried
     cs "Wait, the witch?"
     snufkin "Yeah, she lives in the forest."
     snufkin "She doesn't like us very much though. You'll have to do something to convince her."
+    show cs disappointed
     cs "Well, I came this far already. I may as well try."
+    show cs
     cs "Can you take me to her?"
     snufkin "Sure."
     n "CS, Moomin, and Snufkin go to visit the witch."
+    hide cs
+    hide moomin
+    hide snufkin
+    with moveoutright
+    scene moomin_zone5 
+    show alicia at right
+    with dissolve
+    show cs at left 
+    show moomin at mid_left
+    show snufkin at mid_mid_left
+    with moveinleft
     alicia "Moomin, Snufkin, you're here!"
     snufkin "Oh hello Alicia. Is your grandma around."
     alicia "Yep! She's making potions in the house."
     snufkin "That's great. This stranger needs her help to see the Aurora Borealis."
     alicia "Well, I don't know if she'll help, but I'll go get her."
+    show witch at center with dissolve
     witch "What's all the hub-bub about?"
     cs "Hello Madam Witch. I'd like your help seeing the Aurora Borealis."
     witch "Oh is that all? Sure, I can turn it on for you, but I'm gonna need something from you first."
@@ -1821,10 +1858,16 @@ label aurora_borealis:
     witch "I've just been so busy, I haven't had time to go find a pig for it."
     witch "Could you go get one for me?"
     cs "I've never hunted before, but I'll give it a shot."
+    hide cs with moveoutright    
     n "CS quickly fashions a spear out of a branch and some rocks he found on the forest path, and he heads out to find the pig."
     n "He catches it by surprise and quickly stabs it with the spear."
+    show cs flipped at right with moveoutright
     cs "Wow, that was surprisingly easy. Now I just need to go find that witch."
     n "CS heads back to the cabin."
+    scene moomin_zone4 
+    show witch at center
+    with dissolve
+    show cs at left with moveinleft
     witch "Wow, that was fast. Now all I have to do is put the carcass through the skinner and I can cook the meat after it's skinned."
     witch "A promise is a promise, the lights will be on tonight."
     cs "What? Is it that easy? You didn't even need to cast a spell or anything."
@@ -1833,10 +1876,18 @@ label aurora_borealis:
     cs "Well, we don't have any witches where I'm from, so that's probably it."
     cs "Thanks for the help. Enjoy your ham."
     n "CS, Moomin, and Snufkin head back to Moominhouse and wait for nightfall."
+    scene moomin_zone3
+    show cs happy at center
+    show moomin at left
+    show snufkin at right
+    with dissolve
     n "Finally, the sky lights up and CS is enthralled."
     cs "Wow, that's beautiful! Totally worth killing that pig."
     $ achievement_manager.unlock("Obviously Grilled")
+    show cs
     cs "Well, I should get back to my bus."
+    scene black with dissolve
+    pause 2.0
     scene bus_map with dissolve
     jump sweden_menu
 
