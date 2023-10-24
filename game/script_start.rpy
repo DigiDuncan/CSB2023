@@ -884,6 +884,7 @@ image dumpster = "bg/dumpster.png"
 image moomin_zone1 = "bg/moomin_zone1.png"
 image moomin_zone2 = "bg/moomin_zone2.png"
 image moomin_zone3 = "bg/moomin_zone3.png"
+image moomin_zone3b = "bg/moomin_zone3b.png"
 image moomin_zone4 = "bg/moomin_zone4.png"
 image moomin_zone5 = "bg/moomin_zone5.png"
 

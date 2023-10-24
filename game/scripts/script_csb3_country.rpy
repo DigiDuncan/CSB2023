@@ -1891,7 +1891,7 @@ label aurora_borealis:
     stop music fadeout 3.0
     music end
     n "CS, Moomin, and Snufkin head back to Moominhouse and wait for nightfall."
-    scene moomin_zone3
+    scene moomin_zone3b
     show cs happy at center
     show moomin flipped at left
     show snufkin at right
