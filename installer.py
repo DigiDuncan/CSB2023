@@ -6,7 +6,7 @@ import tkinter as tk
 from tqdm import tqdm
 from tkinter import filedialog
 
-CSBIII = R"https://dl.dropboxusercontent.com/scl/fi/ukww2q4e9b7svjuv3znsb/CSBIII.zip?rlkey=1r99khzxy5r2usofdfcy2az3g&dl=0"
+CSBIII = R"https://dl.dropboxusercontent.com/scl/fi/1liq34h0e612kgegteta8/CSBIII-1.0RC2-pc.zip?rlkey=dwrcsj706ok135ihuvoz9163e&dl=0"
 
 root = tk.Tk()
 root.withdraw()
