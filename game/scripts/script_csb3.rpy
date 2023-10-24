@@ -9,7 +9,7 @@ label csbiii_start:
     play music "<loop 0>passport.mp3" volume 0.5
     music PASSPORT.MID - George Stone
     show linus at center with moveinright
-    linus "Welcome to Linus Media Group, come on in, I'll show you to your desk."
+    linus "Welcome to Linus Media Group! Come on in. I'll show you to your desk."
     cs "Thanks, Linus."
     scene black with fade
     n "Linus and CS walk to CS' new desk."
@@ -17,10 +17,10 @@ label csbiii_start:
     show linus at right with moveinright
     show cs at left with moveinleft
     cs "Wow! I thought this was a starting office, why do I get such a cool desk?"
-    linus "Actually, this is our worst setup, you'll get upgraded after you've been here a while."
+    linus "Actually, this is our worst setup. You'll get upgraded after you've been here a while."
     cs "Holy shit, really? This is way better than any setup I've seen, let alone had."
-    linus "You must've had really bad setups then, this only has 3080s, everyone else has 3090s or 4080s."
-    cs "I have absolutely no problem with 3080s."
+    linus "You must've had really bad setups then. This only has a 3080. Everyone else has 3090s or 4080s."
+    cs "I have absolutely no problem with a 3080."
     linus "Well, enjoy!"
     hide linus with moveoutright
     cs "I guess I better get to work on editing, let's see what videos I need to edit..."
@@ -43,10 +43,10 @@ label csbiii_start:
     with fade
     show linus at right with moveinright
     linus "Hey CS, how's the new video coming along?"
-    cs "It's going well, I have the background all done and I'm working on adding graphics and fixing audio."
-    linus "Wow! You're a fast worker, you'll get off of those old 3080s in no time."
+    cs "It's going well. I have the background all done, and I'm working on adding graphics and fixing audio."
+    linus "Wow! You're a fast worker. You'll get off of that old 3080 in no time."
     cs "Thanks Linus."
-    linus "Speaking of live streaming, we need a new PC for the WAN Show, can you go and buy parts for one?"
+    linus "Speaking of live streaming, we need a new PC for the WAN Show. Can you go and buy parts for one?"
 
     menu: 
         "What are you going to do?"
@@ -57,16 +57,16 @@ label csbiii_start:
 
 label edit_video:
     cs "Nah, I wanna finish this video first. That way I can help you pump out videos faster."
-    linus "Alright, that's fine. I'll probably send Colton to get the parts instead, he's good at sucking up to those kinda things."
-    cs "Alright haha, yeah I definitely wasn't using this as an excuse to get out of shopping!"
+    linus "Alright, that's fine. I'll probably send Colton to get the parts instead. He's good at sucking up and doing this kinda thing."
+    cs "Alright, yeah. I definitely wasn't using this as an excuse to get out of shopping!"
     linus "...ok? Whatever, just keep editing."
     cs "Yeah, no, don't worry I got this."
     hide linus with moveoutright
     n "Linus leaves the room."
     stop music fadeout 3.0
     music end
-    cs "Hmm, this video looks pretty great so far, I'm practically almost done at this point."
-    cs "I wonder what the others will think of this though? I should probably get opinions from some of the other employees."
+    cs "Hmm, this video looks pretty great so far, I'm practically done at this point."
+    cs "I wonder what the others will think of this. I should probably get opinions from some of the other employees."
     play music "<loop 0>good_eatin.mp3" volume 0.4
     music "Good Eatin' - ClascyJitto"
     show taran at right with moveinright
@@ -85,10 +85,10 @@ label edit_video:
     cs "Thanks! I guess my many years of video editing is finally paying off after all."
     taran "They definitely have."
     taran "You know what? I think this video is so good, I don't even think Linus needs to check this."
-    taran "He will be so surprised when you upload it, he will wonder how you put it together so well in such little time."
+    taran "He'll be so surprised when you upload it. He's gonna wonder how you put it together so well in such little time."
     show cs
     cs "You really think so? I mean, I don't want him to be upset with me."
-    taran "Don't worry about it. If he thinks it is that bad, I'll take the blame on it."
+    taran "Don't worry about it. If he thinks it's that bad, I'll take the blame on it."
     cs "That's nice and all, but do you think that's a good idea? I mean, I don't want to mess up my first chance at this."
     taran "Nah, don't worry about it."
     taran "Even if something dumb happens, he usually never gets mad at us for doing silly things like that."
@@ -108,10 +108,10 @@ label edit_video:
     stop music fadeout 3.0
     music end
     cs "Well, I guess since this video is already good enough, I can upload it now."
-    cs "It's so crazy having the ability to access the LTT channels. There is so much crazy shit going on here!"
+    cs "It's so crazy having the ability to access the LTT channels. There's so much crazy shit going on here!"
     cs "Oh well, time to upload this."
     n "CS pauses for a moment."
-    cs "I don't know, I really feel like I shouldn't upload this yet."
+    cs "I don't know. I really feel like I shouldn't upload this yet."
     cs "It doesn't feel complete. Something is missing from it..."
     cs "Lemme go look at the project file and run through the video again."
     n "Just as CS was about to watch his video, an idea kicked in."

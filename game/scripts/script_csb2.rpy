@@ -497,7 +497,7 @@ label bordercrossing:
     music PASSPORT.MID - George Stone
     linus "Sure, you can have a job, just show us proof of citizenship and you're ready to go!"
     cs "Colour is spelled with a u, eh."
-    linus "I need actual papers, the last time I hired someone who used that as proof of citizenship I got fined and had to sell one of my thousands of 4090s."
+    linus "I need actual papers. Last time I hired someone who used that as proof of citizenship, I got fined and had to sell one of my thousands of 4090s."
     cs "Ummmm, I'll be right back."
 
     scene outside_ltt
