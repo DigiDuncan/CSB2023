@@ -82,6 +82,7 @@ init python:
         "miku": "Hatsune Miku",
         "sayori": "Sayori",
         "joel": "Vargskelethor Joel",
+        "pomni": "Pomni",
         #Archival
         "k174": "Pakoo's Memories",
         "addy": "Addy",

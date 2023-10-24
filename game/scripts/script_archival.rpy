@@ -2,9 +2,9 @@ label archival:
     stop music
     scene cs_room_2
     show cs at mid_left
-    n "CS looks at his bedroom door."
+    n "CS looks at his bed."
     cs "Yeah, after {i}everything{/i} that has happened today, some rest sounds really nice."
-    n "CS enters his bedroom and immediately jumps into bed."
+    n "CS immediately jumps into bed."
     cs "Ah, finally, I can get a good night's sleep."
     n "CS does the finger guns at his ceiling."
     cs "This is CS{cps=*0.1}... {cps=*10}passing out!"
@@ -26,14 +26,14 @@ label archival:
     n "CS immediately jolts up, realizing that he's not in his room."
     cs "Wait a minute. Where am I? This place…"
     n "CS trails off, feeling uneasy about this new location. It doesn't look familiar to him at all, but for some reason..."
-    cs "Why does the place feel so familiar? Something doesn't feel right."
+    cs "Why does the place {i}feel{/i} so familiar? Something doesn't seem right."
     n "CS gets up, and goes over to a laptop sitting on the desk next to him."
     scene craptop_old with fade
     show cs disappointed at left with moveinleft
     cs "I feel like this is my craptop, but I don't even have my craptop anymore!"
     cs "It looks off though..."
     n "CS lifts the lid and powers it on, curious about the strange connection he is feeling with it."
-    n "The laptop slowly powers on, playing the classic Windows XP start sound, even though it shows a static screen of Windows 10 updating."
+    n "The laptop slowly powers on, playing the classic Windows XP start sound."
     n "The laptop immediately bluescreens, and blares out the following:"
     play sound "windows_logon.mp3"
     craptop "Your PC sux. lol."
@@ -49,8 +49,8 @@ label archival:
     show k174 at center with moveinright
     show k199 at mid_left_left with moveinright
     show k207h at mid_right_right with moveinright
-    n "The door slowly opens, and three people with white suits and top hats enter the room."
-    n "They all look like the same person, except one is wearing sunglasses and the other is wearing a hazmat suit."
+    n "The door slowly opens, and three people with white suits and blue hair enter the room."
+    n "They all look like the same person, except one is wearing sunglasses, another a top hat, and the other is wearing a hazmat suit."
     n "They quickly scan the room, and notice the laptop turned on."
     show k199 flipped
     unknown "What the hell, K17! I thought this place didn't have any triggers!"
@@ -81,17 +81,16 @@ label archival:
     k199 "Wait a second…"
     n "K19-9 sees something shift for a second in the corner and leans in to look."
     show cs disappointed at left with moveinleft
-    show k199 behind cs
-    n "CS turns around for a second and sees a face staring right at him."
-    show cs worried
-    cs "Gahhhh!"
     show k174 at mid_right
     show k199 at center
     with move
+    n "CS turns around for a second and sees a face staring right at him."
+    show cs worried
+    cs "Gahhhh!"
     k199 "Oh fuck! What the hell?"
     n "CS quickly stands up. Everyone is silent and staring at CS."
     k207 "Shit dude, that's him! He's here!"
-    cs "Okay wait! Hold on a second!"
+    cs "Okay, wait! Hold on a second!"
     k174 "{i}What the fuck?! Why does he look like that?{/i}"
     show cs disappointed
     cs "Damn, okay, now I just feel insulted."
@@ -136,7 +135,7 @@ label archival:
     n "CS realizes that this is his chance and runs past them and out the door."
     scene door_old with fade
     show cs worried at left with moveinleft
-    n "CS quickly slams the door behind him as screams echo through the room behind him."
+    n "CS quickly slams the door behind him as screams echo through the room."
     n "CS finds himself in the living room somehow, even though the bedroom was on another floor."
     cs "Shit, where do I go? I need to get out of here!"
     n "CS runs outside."
@@ -210,14 +209,14 @@ label archival_finale:
     show archival_5
     show cs disappointed
     with dissolve
-    n "He realizes that the game that he is playing is the world that CS lives in, and it looks like this man is making fun or poking fun at his world."
+    n "CS realizes that the version of him inside the tank is playing a game made of the very world that he lives in, even going so far as to poke fun at it."
     show cs scared
     n "Before CS can really take all this in though, a few guards at the end of the building yell something at him."
     n "The guards are wearing tophats and black suits as well, and are carrying rifles."
     scene archival_3 with dissolve
     show cs worried at right with moveinleft
     show cs worried flipped with determination
-    n "They start to chase after CS, and he runs a bit as well and hides behind one of the canisters."
+    n "They start to chase after CS, and he runs a bit and then hides behind one of the canisters."
     show hart1 at center
     show hart2 at left
     with moveinleft
@@ -252,7 +251,7 @@ label archival_finale:
     hide hart2 with moveoutright
     n "After he finally manages to make it to the end of the building, he runs along the side to try to find an exit."
     scene archival_8 with dissolve
-    n "While the guards are still firing at him while running, he finds a set of doors that leads him into another large area."
+    n "While the guards are still firing at him, he finds a set of doors that leads him into another large area."
     scene archival_7 with dissolve
     show cs worried at offscreenleft
     hide cs worried with moveoutright
@@ -283,7 +282,8 @@ label archival_finale:
     show hart2 at offscreenleft
     hide hart2 with moveoutright
     scene archival_9 with dissolve
-    n "CS runs into another hallway that is now a lot longer, with a lot more turns. CS runs straight for a bit, then turns left when he hears the gunfire. CS switches between going left and right."
+    n "CS runs into a hallway, with a lot of turns. CS runs straight for a bit, then turns left when he hears the gunfire. He switches between going left and right."
+    window hide
     scene archival_10a with dissolve
     scene archival_11a with dissolve
     scene archival_9a with dissolve
@@ -364,7 +364,7 @@ label archival_finale:
     scene archival_15 with dissolve
     stop sound fadeout 3.0
     show cs scared at mid_left with moveinleft
-    n "A bigger sign that clarifies the station is here hangs ahead of him as the last set of doors open to reveal an opening to a train station, where a tram car is waiting for him on the rail."
+    n "A bigger sign that clarifies the station is here hangs ahead of him, as the last set of doors open to reveal a train station, where a tram car is waiting for him on the rail."
     hide cs with moveoutright
     scene archival_16 with dissolve
     show cs scared at center with moveinleft
@@ -373,7 +373,7 @@ label archival_finale:
     stop music fadeout 3.0
     scene archival_13 with dissolve
     play music "<loop 0>take_trip2.mp3" volume 0.5
-    n "As he gets in on time as the door slowly shuts right before the guys can get in."
+    n "He gets in on time as the door slowly shuts, right before the guys can get in."
     show archival_19
     with dissolve    
     n "CS goes over to the console in the front of the tram and hits the giant forward button."
@@ -413,12 +413,12 @@ label archival_finale:
     show cs disappointed with hpunch
     scene the_tram with dissolve
     n "CS looks to his right, as he sees these giant facilities fly past him. "
-    n "After about 20 of the facilities fly by, the tram suddenly stops. CS looks around, confused, and then he looks to his left."
     scene white
     show archival_18
     show cs disappointed at center
     with dissolve
-    n "To his left, as a long, endless looking hallway with a blinding light filling up the hallway."
+    n "After about 20 of the facilities fly by, the tram suddenly stops. CS looks around, confused, and then he looks to his left."
+    n "To his left, is a long, endless looking hallway with a blinding light filling up his view."
     n "The tram slowly starts to rotate onto the light hallway's rail."
     scene train_in_tunnel
     show cs scared at center
@@ -448,7 +448,7 @@ label archival_finale:
     with shake1
     n "CS panics and tries to stop the train, but it is no use."
     scene sign_closeup with dissolve
-    n "A message appears at the top of the tram on a panel, that shows someone who looks like one of the guards waving at him."
+    n "He notices a panel, that shows someone who looks like one of the guards waving at him."
     scene white
     show train_in_tunnel
     show cs concentrate at center
@@ -464,7 +464,6 @@ label archival_finale:
     pause 3.0
     scene black with dissolve
     $ achievement_manager.unlock("Archived")
-    n "The Archival Ending."
     n "CS has been deleted, and has been sent to the beginning of time itself."
     pause 5.0
     play music "<loop 0>everybody_wants.mp3" volume 1.0

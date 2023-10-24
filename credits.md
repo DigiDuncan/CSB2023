@@ -59,6 +59,7 @@
 - BEST MUSIC
     - サマークリアランスセール
     - Morning Highway
+    - Afternoon Hills
 - Mel O Dee
     - Scales of Joy
 - Charles Gounod

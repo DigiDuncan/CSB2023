@@ -1871,6 +1871,8 @@ label ikea:
     scene ikea_inside
     show ikea_greeter at mid_right
     with dissolve
+    play music "<loop 0>afternoon_hills.mp3" volume 0.5
+    music Afternoon Hills - BEST MUSIC
     show cs at mid_left with moveinleft
     ikea_greeter "Welcome to Ikea! Can I help you with anything?"
     cs "Yeah can you show me where the food court is?"
@@ -1941,9 +1943,13 @@ label ikea:
     show cs flipped at center with move
     cs "Whatever, I'll find something else to do."
     hide cs with moveoutleft
+    stop music fadeout 3.0
+    music end
     scene plushie_zone 
     show pomni at right
     with dissolve
+    play music "<loop 0>xddcc.mp3" volume 0.8
+    music XDDCC - Gooseworx
     n "CS wanders back by the plushie section and notices a clown."
     show cs at mid_left with moveinleft
     cs "Huh, that's a weird-looking plushie."
@@ -1966,6 +1972,8 @@ label ikea:
     pomni "There are plenty of beds here. Maybe it wouldn't be so bad if I just stayed."
     n "Pomni leaves to go find a bed."
     hide pomni with moveoutleft
+    stop music fadeout 3.0
+    music end
     cs "Poor thing. Hopefully she gets some rest quickly."
     cs "I should find my way back to the exit though. I don't wanna get too lost."
     hide cs with moveoutright
@@ -1982,6 +1990,7 @@ label ikea:
     show ikea_worker at right
     show cs at left
     with dissolve
+    play music "<loop 0>afternoon_hills.mp3" volume 0.5
     ikea_worker "Hi! What would you like?"
     cs "I'll take some lobster, caviar, sauerkraut, kippers, champagne, and semlor."
     ikea_worker "Coming right up!"
@@ -1990,6 +1999,7 @@ label ikea:
     scene eating_food_2 with dissolve
     n "He gets through all of the kippers and caviar first, then moves to the lobster and sauerkraut, all the while chugging champagne."
     n "Finally, he starts eating the semlor for desert, but after he finishes the first couple, he starts to slow down."
+    stop music fadeout 3.0
     n "As he takes the first bite of his last semla, he blacks out."
     scene black
     #CS ends up by the dumpster behind the Ikea.

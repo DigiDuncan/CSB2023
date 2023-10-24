@@ -122,6 +122,8 @@ init python:
         "The Chase - Toby Fox": "chase.mp3",
         "Neko To Sanpo - NEKOWORKs": "neko_to_sanpo.mp3",
         "Real World - Project SEKAI": "real_world.mp3",
+        "Afternoon Hills - BEST MUSIC": "afternoon_hills.mp3",
+        "XDDCC - Gooseworx": "xddcc.mp3",
         #AI
         "School - Toby Fox": "school.mp3",
         "Cliffs - Toby Fox": "cliffs.mp3",
