@@ -920,7 +920,7 @@ label wait_forest:
     cs "We don't really have a car or anything, we are completely lost, and we got the cops still looking for us, probably!"
     arceus "Look man, I know it's pretty hard right now, but we gotta be optimistic about this."
     arceus "The second we find people, I'm sure we can work something out and head back home."
-    cs "If you say so, I just hope we don't have to WALK all the way there."
+    cs "If you say so, I just hope we don't have to {i}walk{/i} all the way there."
     arceus "I don't think that'll be the case."
     copguy "{cps=10}I don't think so either."
     n "Before CS and Arc can react, they both get the lights knocked out of them."

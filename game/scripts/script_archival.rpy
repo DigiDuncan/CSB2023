@@ -270,7 +270,7 @@ label archival_finale:
     hide hart1 with moveoutright
     show hart2 at offscreenleft
     hide hart2 with moveoutright
-    n "The people with the guns start firing again, as a bunch of alarms go off, echoing throughout the whole place. The alarms start yelling:"
+    n "The people with the guns start firing again, as a bunch of alarms go off, echoing throughout the whole place. A voice over the loudspeaker cuts through the sirens:"
     scene archival_5 with dissolve
     show cs scared at center with moveinleft
     play sound "<loop 0>less_annoying_alarm_sound.mp3" loop volume 0.6
@@ -282,7 +282,7 @@ label archival_finale:
     show hart2 at offscreenleft
     hide hart2 with moveoutright
     scene archival_9 with dissolve
-    n "CS runs into a hallway, with a lot of turns. CS runs straight for a bit, then turns left when he hears the gunfire. He switches between going left and right."
+    n "CS runs into a hallway with a lot of turns. CS runs straight for a bit, then turns left when he hears the gunfire. He switches between going left and right."
     window hide
     scene archival_10a with dissolve
     scene archival_11a with dissolve
@@ -356,7 +356,7 @@ label archival_finale:
     scene archival_10 with dissolve
     scene archival_11 with dissolve
     scene archival_12 with dissolve
-    n "After a while, CS continues running straight until he sees a sign that says \"STATION 1: >>>\"."
+    n "After a while, CS continues running straight until he sees a sign that says \"STATION 1 >>\"."
     n "CS runs down the exit, and follows the signs while running down the hallway."
     scene archival_14 with dissolve
     n "While CS is running, he sees a bunch of stairs leading down ahead of him."
@@ -368,7 +368,7 @@ label archival_finale:
     hide cs with moveoutright
     scene archival_16 with dissolve
     show cs scared at center with moveinleft
-    n "CS makes one last sprint to the tram, as the door to the tram starts to close as he rushes inside."
+    n "CS makes one last sprint to the tram, just rushing inside as the door begins to close."
     hide cs with moveoutright
     stop music fadeout 3.0
     scene archival_13 with dissolve

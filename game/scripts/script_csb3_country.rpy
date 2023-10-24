@@ -281,7 +281,7 @@ label england:
     with fade
     n "As CS slowly wakes up, he sees the plane landing on the tarmac."
     cs "Oh huh, we are already here."
-    cs "Either that was a fast trip, or I slept WAYYYYY too long."
+    cs "Either that was a fast trip, or I slept {i}wayyy{/i} too long."
     cs "Welp, I guess this is where I get off."
     hide cs with moveoutright
     scene black with dissolve
@@ -362,7 +362,7 @@ label england_second:
     with fade
     n "As CS slowly wakes up, he sees the plane landing on the tarmac."
     cs "Oh huh, we are already here."
-    cs "Either that was a fast trip, or I slept WAYYYYY too long."
+    cs "Either that was a fast trip, or I slept {i}wayyy{/i} too long."
     cs "Welp, I guess this is where I get off."
     hide cs with moveoutright
     scene black with dissolve
@@ -1787,7 +1787,7 @@ label aurora_borealis:
     moomin "So what brings you to Moominvalley?"
     cs "I wanted to see the Aurora Borealis."
     moomin "Huh? What's that? I've never heard of it."
-    cs "It's when the sky lights up a bunch of beautiful colors."
+    cs "It's when the sky lights up with a bunch of beautiful colors."
     cs "This is the kind of place where it should happen, so I'm surprised you haven't heard about it."
     cs "I was hoping to see it tonight."
     moomin "Well, if you want to find it, we should ask my friend Snufkin. He goes on a big journey every year, so he should know."
@@ -1804,7 +1804,7 @@ label aurora_borealis:
     show moomin with determination
     stop music fadeout 3.0
     music end
-    cs "So, if Moomin is the name of your species and also the name of the valley, how many of your species are there in the valley."
+    cs "So, if Moomin is the name of your species and also the name of the valley, how many of your species are there in the valley?"
     moomin "There's me, Moominmama, and Moominpapa."
     cs "Wait, so just three of you?"
     moomin "Well, there's also the Snork and Snorkmaiden. They look kinda like us, but they're Snorks, not Moomins."
@@ -1814,7 +1814,7 @@ label aurora_borealis:
         moomin "Just let it be fun."
         moomin "Matpat-GameTheory-sounding ass."
     else:
-        moomin "Mama and papa have more family, but they don't live around here."
+        moomin "Mama and Papa have more family, but they don't live around here."
     moomin "Anyway, Snufkin should be right over here."
     show snufkin at right with moveinright
     play music "<loop 0>snufin.mp3" volume 0.5
@@ -1831,7 +1831,7 @@ label aurora_borealis:
     snufkin "Did you think they were something that just happened?"
     show cs
     snufkin "The sky doesn't just light up on its own, you need magic for that."
-    snufkin "If you want to see the Aurora, you're gonna have to talk to the witch and get her to turn them on for you."
+    snufkin "If you want to see the Aurora, you're gonna have to talk to the witch and get her to turn it on for you."
     show cs worried
     cs "Wait, the witch?"
     snufkin "Yeah, she lives in the forest."
@@ -1857,7 +1857,7 @@ label aurora_borealis:
     stop music fadeout 3.0
     music end
     alicia "Moomin, Snufkin, you're here!"
-    snufkin "Oh hello Alicia. Is your grandma around."
+    snufkin "Oh, hello Alicia. Is your grandma around?"
     alicia "Yep! She's making potions in the house."
     snufkin "That's great. This stranger needs her help to see the Aurora Borealis."
     alicia "Well, I don't know if she'll help, but I'll go get her."
@@ -1885,7 +1885,7 @@ label aurora_borealis:
     show cs at left with moveinleft
     witch "Wow, that was fast. Now all I have to do is put the carcass through the skinner and I can cook the meat after it's skinned."
     witch "A promise is a promise, the lights will be on tonight."
-    cs "What? Is it that easy? You didn't even need to cast a spell or anything."
+    cs "What? Is it that easy? You didn't even need to, like, cast a spell or anything?"
     witch "Yeah, it's just some light. It's no big deal."
     witch "I'm not sure why you came this far for it to be honest."
     cs "Well, we don't have any witches where I'm from, so that's probably it."
@@ -1913,7 +1913,7 @@ label ikea:
     cs "I should go check out the Ikea here."
     cs "It's the land of Ikea. They're probably a lot better than the ones in the US."
     cs "Easy to find on the map too. They have icons for all the major tourist attractions."
-    cs "Weird that there's only one Ikea here around here though."
+    cs "Weird that there's only one Ikea around here though."
     cs "I guess it's just the flagship Ikea store. It's labeled Onda Ikea - gå inte hit."
     cs "That probably means, like, Super Ikea or something."
     cs "Mondo Ikea - go into here."
@@ -1943,7 +1943,7 @@ label ikea:
     music Afternoon Hills - BEST MUSIC
     show cs at mid_left with moveinleft
     ikea_greeter "Welcome to Ikea! Can I help you with anything?"
-    cs "Yeah can you show me where the food court is?"
+    cs "Yeah, can you show me where the food court is?"
     ikea_greeter "Of course. It's right around that corner and to the left."
     show cs happy
     cs "Alright, thanks!"
@@ -2005,7 +2005,7 @@ label ikea:
     show cs flipped with determination
     n "CS goes to sit on the toilet, but an employee runs over and stops him."
     show ikea_greeter flipped at mid_left with moveinleft
-    ikea_worker "That toilet is display only!"
+    ikea_worker "That toilet is for display only!"
     show cs disappointed flipped
     cs "Oh man, that's disappointing."
     show cs flipped at center with move
