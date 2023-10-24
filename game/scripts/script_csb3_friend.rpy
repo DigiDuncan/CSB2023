@@ -734,7 +734,7 @@ label fire_range:
     arceus "How are you gonna help us? Do you even know what is going on?"
     pakoo "Of course! The cops are chasing you, right?"
     arceus "I knew it! You are a cop!"
-    pakoo "No-- dammit okay, listen to me for a second."
+    pakoo "No-- damn it, okay, listen to me for a second."
     pakoo "I've known for a while Copguy is chasing you down."
     pakoo "I've also known that Copguy has been working for 15 years, and you are his last criminal he wants to bust."
     pakoo "So he's gonna do anything to take you guys down."
@@ -955,7 +955,7 @@ label so_join:
     with fade
     n "After that intense fight, the cops seemed to best CS and his crew."
     n "CS is panting heavily."
-    cs "Damnit..."
+    cs "Damn it..."
     pakoo "He's way too strong..."
     copguy "Is that all you guys got?"
     copguy "Or are you ready to finally admit your defeat?"
@@ -1057,7 +1057,7 @@ label after_cop_fight:
     with fade
     show copguy at mid_right with moveinright
     copguy "Hey Sheriff, I have some unfortunate news."
-    sheriff "God damnit what is it this time?"
+    sheriff "God damn it what is it this time?"
     copguy "Not only does CS have a group of allies, but he is armed to the teeth."
     copguy "He took down most of my men."
     sheriff "Ah hell... so this is really THAT bad isn't it..."

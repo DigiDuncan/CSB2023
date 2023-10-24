@@ -386,7 +386,7 @@ label vegas:
     scene slots with fade
     cs "C'mon, this is the one!"
     cs "Bars, {w=0.5}bars, {w=0.5}football player with a hotdog?"
-    cs "Damnit! So close!"
+    cs "Damn it! So close!"
     cs "I haven't won anything, and I've already spent most of my money..."
     cs "I wonder what Arc is up to, I haven't seen him at all."
     n "CS gets up from the slot machine and starts to look for Arc."
@@ -519,7 +519,7 @@ label folded:
     show drillbreak at center_right
     play sound "drillbreak.ogg" loop volume 0.5
     show arceus full angry flipped
-    arceus "God damnit!"
+    arceus "God  !"
     hide drillbreak
     show arceus full flipped
     show drill at center_right

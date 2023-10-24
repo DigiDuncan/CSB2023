@@ -242,15 +242,15 @@ label room:
     cs "Hmmm..."
     cs "I know! I should watch some other YTPs for inspiration."
     show craptop ytp
-    n "CS opens up YouTube and begins watching YTPs. After a while, CS runs into some old YTPs."
+    n "CS opens up YouTube and begins watching YTPs. After a while, CS runs into some older poops."
     cs "Man, it was so easy back then. All you needed was Windows Movie Maker and some effects. If only it was that easy now..."
     cs "..."
-    cs "Oh look a flashback. What a coincidence..."
+    cs "Oh, look, a flashback. What a coincidence..."
     scene cs_room with pixellate
     show cs_young with moveinbottom
     ycs "Hey guys! Young CS here! Today I'm gonna be editing a craaaaAaAAaAAAAAaaAazy video!!"
     play sound "keyboard.ogg"
-    n "keyboard tapping"
+    n "CS taps furiously on his keyboard."
     ycs "Ohhhhhh YeeEeeEeEeeEEeEEs! This is lookin' good!"
     hide cs_young
     scene cs_room
@@ -274,7 +274,7 @@ label room:
     hoh_operator "Alright. That will be 200,000 bits. You can pay us afterwards."
     n "The operator hangs up."
     show cs
-    cs "Well that is one thing taken care of."
+    cs "Well, that is one thing taken care of."
     cs "I guess I'll work on my new YTP while I wait."
     scene black with fade
     n "Time passes and the doorbell rings."
@@ -294,19 +294,19 @@ label room:
     ed "Alright that will be 200,000 Bits."
     cs "Okay, I guess they already told you what I need done... Lemme get my wallet..."
     cs "Hang on a sec. Didn't they say I could pay afterwards?"
-    ed "Yeah well, corporate policies just changed five seconds ago. Pay up."
+    ed "Yeah, well, corporate policies just changed five seconds ago. Pay up."
     show cs flipped with determination
     hide cs with moveoutleft
     n "A few moments later..."
     show cs at left with moveinleft
-    cs "Here you go! I'll get out of you guys' hair while you work."
+    cs "Here you go! I'll get out of your guys' hair while you work."
     hide cs with moveoutright
     n "CS leaves after paying 200,000 Bits."
     ed "Come on in, guys, CS left."
     show ed at left with move
     show wesley at center with moveinright
     show rich at right with moveinright
-    ed "So now that we're here, what should we do to him?"
+    ed "So, now that we're here, what should we do to him?"
     "Ed, Wesley, and Richard" "Hmmm..."
     wesley "Let's go check his room. We might get some ideas."
     show cs_room_2 behind ed with dissolve
@@ -374,7 +374,7 @@ label michael_house:
     n "CS looks in the back seat of his car."
     cs "I have some Genergy with me, if you guys want some."
     michael "Sounds wonderful. I've never tried it, but I'm sure it's good."
-    cs "Alright well, I'll be there soon!"
+    cs "Alright, well, I'll be there soon!"
     show cs at left
     n "CS puts his phone away and drives over to Michael's house."
     play sound "driving.wav" volume 0.5
@@ -393,7 +393,7 @@ label rosen_house:
         show cs flipped angry at right with moveinright
         cs "Tell me the rest of the story!"
         michael "What?"
-        cs "Damnit, don't fuck around with me!"
+        cs "Damn it, don't fuck around with me!"
         cs "It's not true!"
         hide michael with moveoutleft
         show pakoo disappointed flipped at left with moveinleft
@@ -427,13 +427,13 @@ label rosen_house:
     show cs flipped at right
     with ease
     cs "Hey Michael!"
-    michael "Sit down, make yourself comfy. I got a new poem I want to show you!"
+    michael "Sit down, make yourself comfy. I've got a new poem I want to show you!"
     cs "Sure thing, enlighten me."
-    michael "Right. This one is called:{w}{i}The Library.{/i}"
+    michael "Right. This one is called:{w} {i}The Library.{/i}"
     michael "There once was a man who would go on a grand adventure."
     michael "He would meet all sorts of friends, and flee from his enemies."
     michael "After his long adventure, he took a long nap."
-    michael "When he woke up, he was in a huge library."
+    michael "When he woke up, he was in a {i}huge{/i} library."
     if e2:
         michael "He started to get up, and walk around."
         michael "While he was walking, he found another version of himself."
@@ -477,7 +477,7 @@ label rosen_house:
     show phil at center with moveinright
     phil "Phil Swift here!"
     michael "CS, meet my other friend, Phil!"
-    cs "Oh wow! I didn't know you were friends with Phil Swift!"
+    cs "Oh, wow! I didn't know you were friends with Phil Swift!"
     michael "Well, it might be because he said he could make the best chocolate cake."
     michael "Speaking of which, Phil, do you have the cake?"
     phil "Here it is! It even works underwater!"
@@ -490,7 +490,7 @@ label rosen_house:
     michael_nobeep "Blarrrgh!"
     n "Michael spits out the Flex Seal cake."
     michael "This is horrible! Get out! Get out of here!"
-    phil "But it seals, and bonds--"
+    phil "But, it seals, and bonds--"
     michael "OUT!"
     hide phil with moveoutright
     hide cs
@@ -523,7 +523,7 @@ label csbi_end:
     scene cs_room with fade
     show cs with moveinleft
     stop sound fadeout 2.0
-    n "CS walks into his room."
+    n "CS walks into his apartment."
     show cs disappointed
     cs "What?! They're gone? Already?"
     hide cs
@@ -538,11 +538,14 @@ label csbi_end:
     cs "Wait..."
     cs "The last people in this room were the HoH SiS guys!"
     cs "They must have messed with it!"
+    show craptop_bg at rotate_5
+    show craptop off at rotate_5
+    with hpunch
     window hide
     play sound "foundationfail.ogg" volume 0.5
     pause 3.0
     cs "They didn't even do the JoJ!"
-    show craptop sad with hpunch
+    show craptop sad at rotate_5 with hpunch
     play sound "audio/punch.ogg"
     if fun_value(20):
         play sound "secret/gul.ogg"

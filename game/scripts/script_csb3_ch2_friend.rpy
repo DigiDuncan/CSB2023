@@ -409,7 +409,7 @@ label cs_rage:
     show digi dark flipped at mid_offscreen_left
     with fade
     n "After CS and the group manage to push back the national guard, Copguy once again flees at the last moment."
-    cs "Hey! You get back here damnit!"
+    cs "Hey! You get back here, damn it!"
     show cs dark angry at mid_right with move
     show cs dark angry flipped with determination
     cs "Guys let's chase after him!"
@@ -826,7 +826,7 @@ label car_slam:
     show cs flipped at mid_left with move
     show copguycrawl at mid_right with moveinbottom
     show copguycrawl with vpunch
-    copguy "Damnit, you can't escape from me!"
+    copguy "Damn it, you can't escape from me!"
     n "Copguy manages to crawl out of the rubble that is his car."
     show cs worried
     cs "Holy what? How did you--"

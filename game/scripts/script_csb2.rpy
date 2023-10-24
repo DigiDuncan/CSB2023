@@ -97,7 +97,7 @@ label special:
     play sound "audio/punch.ogg"
     rich "Hey! Cut it out!"
     play sound "audio/punch.ogg"
-    wesley "I'm not trying to fight you! I don't know what's happening! Help!"
+    wesley "I'm not trying to fight you! I don't know what's happening! {i}Help!!{/i}"
     play sound "audio/punch.ogg"
     rich "Ed! Do something!"
     play sound "audio/punch.ogg"
@@ -232,7 +232,7 @@ label asylum:
     
 # Caught
 label caught:
-    cs "Dammit! Ed's calling the police! I gotta go after him!"
+    cs "Damn it! Ed's calling the police! I gotta go after him!"
     ed "911! Come quickly! He's chasing after me!"
     play sound "siren.ogg" loop
     show blue_light at left

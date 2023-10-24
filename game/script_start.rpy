@@ -50,6 +50,12 @@ transform rotate_10:
     ypos 0.5
     zoom 1.33
 
+transform rotate_5:
+    subpixel True
+    rotate 5 xanchor 0.5 yanchor 0.5
+    ypos 0.5
+    zoom 1.1
+
 transform center_left:
     yanchor 0.5 ypos 0.5
     xanchor 0.0 xpos 0.0

@@ -33,7 +33,7 @@ label csbiii_start:
             "No"  (type = "true"):
                 pass
     show cs worried
-    cs "Dammit Taran, you can edit your own macro fetish content."
+    cs "Damn it, Taran, you can edit your own macro fetish content."
     show cs
     cs "I guess I'll edit the livestreaming one."
     scene black with fade
@@ -604,7 +604,7 @@ label arc_escape:
     scene outside_ltt
     n "Copguy orders the rest of the cops to leave the scene and return back to the station."
     show copguy flipped at left with moveinleft
-    copguy "Damnit, they don't have CS anymore. We're gonna have to look harder for him."
+    copguy "Damn it, they don't have CS anymore. We're gonna have to look harder for him."
     scene road_to_canada
     show cs disappointed dusk at left
     show arceus dusk at right
@@ -662,7 +662,7 @@ label arc_escape:
     copguy "Unfortunately, no we did not."
     n "The sheriff slams his desk."
     show sheriff at left with vpunch
-    sheriff "Damnit! And how did you fuck that up?"
+    sheriff "Damn it! And how did you fuck that up?"
     copguy "Look, you see, he managed--"
     sheriff "You know what, I don't want to hear this!"
     sheriff "First, they manage to escape from one of our top prisons, and now you're telling me that you lost him?!"
