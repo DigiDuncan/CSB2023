@@ -69,7 +69,7 @@ label chop:
     cs "I sawed this foundation repairman in half!"
     show ed_phone at right with moveinright
     show cs angry at left with move
-    ed "Hello, 911? My coworker just got karate chopped by a disgruntled customer off the roof! Send help!"
+    ed "Hello, 911? My coworker just got karate chopped off the roof by a disgruntled customer! Send help!"
     jump caught
 
 # Kick
@@ -85,7 +85,7 @@ label kick:
     cs "That'll teach you not to mess with a nerd's computer!"
     show ed_phone at right with moveinright
     show cs angry at left with move
-    ed "Hello, 911? My coworker just got kicked by a disgruntled customer off the roof! Send help!"
+    ed "Hello, 911? My coworker just got kicked off the roof by a disgruntled customer! Send help!"
     jump caught
 
 # Special
@@ -97,7 +97,7 @@ label special:
     play sound "audio/punch.ogg"
     rich "Hey! Cut it out!"
     play sound "audio/punch.ogg"
-    wesley "I'm not trying to fight! I don't know what is happening help!!"
+    wesley "I'm not trying to fight you! I don't know what's happening! Help!"
     play sound "audio/punch.ogg"
     rich "Ed! Do something!"
     play sound "audio/punch.ogg"
@@ -119,8 +119,8 @@ label special:
         show ed at right with moveinright
     ed "Hello, 911? My coworkers are-"
     n "CS sentence-mixes Ed's words to his own will."
-    ed "Everything is fine here officer. No need to come here."
-    ed "What wait just happened?"
+    ed "Everything is fine here, officer. No need to come here."
+    ed "Wait, what just happened?"
     n "CS quickly puts all the workers to sleep."
     hide ed with moveoutbottom
     show cs at left
@@ -160,12 +160,12 @@ label questioning:
     show cs disappointed at left with moveinleft
     show copguy at right with moveinright
     copguy "Alright CS, a lot of crazy things happened today."
-    copguy "The CEO of HoH SiS called us today, and was immediately interrupted by something or someone telling us that everything was under control."
+    copguy "The CEO of HoH SiS called us today, and he was immediately interrupted by something or someone telling us that everything was under control."
     copguy "After reviewing the phone call, his voice sounds kinda messed up."
     cs "I uhh, I don't know what that is all about..."
     copguy "Oh really?"
     copguy "What about all the workers in the building? Most of them were lying cold on the floor."
-    cs "Okay fine!"
+    cs "Okay, fine!"
     cs "I confess!"
     cs "I was using YTP magic on the employees to make them fight, and I--"
     copguy "You what? What the hell are you on about?"
@@ -193,7 +193,7 @@ label asylum:
     show cs insane worried flipped at left with moveinright
     show cs insane worried with determination
     show asylum_worker at right with moveinright
-    asylum_worker "Here is your room. Enjoy living out the rest of your life here."
+    asylum_worker "Here's your room. Enjoy living out the rest of your life here."
     show cs insane worried at center with moveinleft
     cs "Sir, you need to listen to me! I'm not crazy!"
     asylum_worker "That's what they all say. Get off of me."
@@ -214,8 +214,8 @@ label asylum:
     cs "What?"
     cs "Who are you?"
     csgod "I am CS God, and I was the one who used the YTP power."
-    cs "WHAT? How? I am so confused."
-    csgod "You channelled your power through me, that was how you were able to do those abilities back at HoH SiS HQ."
+    cs "WHAT?! How? I am so confused."
+    csgod "You channeled my power through you. That was how you were able to do those abilities back at HoH SiS HQ."
     csgod "It seems that you weren't good enough at lying to get yourself out of the situation though."
     cs "Well, I wanted to be honest!"
     csgod "Yeah well, look where honesty got you."
@@ -386,7 +386,7 @@ label bordercrossing:
     border_guard "Works for me, eh."
 
     scene canada with fade 
-    n "Some time passes as the party continues forth into the land of Canada."
+    n "Some time passes as the party ventures forth into the land of Canada."
     cs "Arceus, can we stop somewhere? I'm getting hungry."
     anno "Yeah, we've been walking for miles now."
     arceus "Guys. We've only just left the border. You can still see it behind us."
@@ -433,7 +433,7 @@ label bordercrossing:
 
     arceus "Hi."
     cashier "Can I help you?"
-    arceus "Yeah, can I have a dozen glazed donuts please?"
+    arceus "Can I have a dozen glazed donuts please?"
     cashier "Oh hi, Arceus, I didn't know it was you."
 
     show anno
@@ -475,7 +475,7 @@ label bordercrossing:
 
     n "CS, Arceus, and Anno enjoy some well-deserved donuts."
     show arceus worried
-    arceus "Sorry to interrupt you two, but we may have a problem: Those donuts cost me the last of my money. We are going to need to find a way to make some cash."
+    arceus "Sorry to interrupt you two, but we may have a problem: Those donuts cost me the last of my money. We're going to need to find a way to make some cash."
     scene outside_ltt
     n "CS looks across the street to see Linus Media Group."
 
