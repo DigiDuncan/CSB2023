@@ -684,7 +684,7 @@ class Fighters:
     CS_FINAL = Fighter("CS (Final)", False, 288, 10, 40, [Attacks.KICK, Attacks.BULLET_SPRAY, Attacks.YTP_MAGIC], Image("images/characters/cs/neutral.png"), display_name = "CS")
     CS_FINAL2 = Fighter("CS (Error)", False, 1880, 10, 250, [Attacks.KICK, Attacks.YTP_HEAL, Attacks.YTP_MAGIC_NOCOOL], Image("images/characters/cs/neutral.png"), display_name = "CS")
     CS_WEAK = Fighter("CS (Weak)", False, 188, 5, 25, [Attacks.PUNCH], Image("images/characters/cs/neutral.png"), display_name = "CS")
-    CS_ARCHIVAL = Fighter("CS (Archival)", False, 1027, 50, 27, [Attacks.PUNCH, Attacks.YTP_HEAL], Image("images/characters/cs/neutral.png"), display_name = "CS")
+    CS_ARCHIVAL = Fighter("CS (Archival)", False, 1027, 50, 27, [Attacks.KICK, Attacks.YTP_HEAL], Image("images/characters/cs/neutral.png"), display_name = "CS")
     ARCEUS = Fighter("Arceus", False, 160, 15, 35, [Attacks.SLASH, Attacks.LIGHT_CAST], Image("images/characters/arc/arceus.png"))
     PAKOO = Fighter("Pakoo", False, 145, 20, 30, [Attacks.INSIGHT, Attacks.SHOTGUN], Image("images/characters/pakoo/pakoo.png"))
     MIKA = Fighter("Mika", False, 165, 20, 30, [Attacks.ENCOURAGE, Attacks.HIGH_NOON], Image("images/characters/mika.png"))
