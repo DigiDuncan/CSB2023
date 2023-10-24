@@ -1861,7 +1861,7 @@ label aurora_borealis:
     alicia "Yep! She's making potions in the house."
     snufkin "That's great. This stranger needs her help to see the Aurora Borealis."
     alicia "Well, I don't know if she'll help, but I'll go get her."
-    show witch at center with dissolve
+    show witch at mid_right with dissolve
     play music "<loop 0>lady_of_the_cold.mp3" volume 0.5
     music Lady Of The Cold - Sumio Shiratori
     witch "What's all the hub-bub about?"
