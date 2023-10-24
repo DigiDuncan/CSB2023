@@ -570,7 +570,7 @@ label hell_zone:
     cs "Whhhaaat?"
     arceus "I just haven't seen you prepare like, an actual meal before."
     show cs angry
-    cs "Yeah well, you don't know everything about me!"
+    cs "Yeah, well, you don't know everything about me!"
     cs "I'll show you!"
     scene black with dissolve
     n "CS gets out of the car and walks up toward the building."
@@ -850,7 +850,7 @@ label top_zone:
     hammond "Oh really? Take another look..."
     n "CS looks and realizes his license plate matches the Honda Civic on the track."
     show cs worried
-    cs "WHAT? How did you get my car?"
+    cs "{i}What?{/i} How did you get my car?"
     jeremy "We may have stolen your car and shipped it all the way over to the UK for this race."
     james "I mean, it's YOUR car you wanted to race in, right?"
     show cs disappointed
@@ -1118,7 +1118,7 @@ label england_japan:
     cs "I don't really know where to go there, I guess I'll have to see when I get there."
     arceus "Well you have to get the Domino's Hatsune Miku Pizza."
     kitty "Or sing some Japanese Karaoke!"
-    cs "Yeah well, I'll have to let you guys know how I'm doing after the trip."
+    cs ",, I'll have to let you guys know how I'm doing after the trip."
     arceus "Welp, should we take you back to the airport?"
     cs "Sure, let's go."
     stop music fadeout 3.0

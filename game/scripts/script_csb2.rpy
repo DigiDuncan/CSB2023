@@ -218,7 +218,7 @@ label asylum:
     csgod "You channeled my power through you. That was how you were able to do those abilities back at HoH SiS HQ."
     csgod "It seems that you weren't good enough at lying to get yourself out of the situation though."
     cs "Well, I wanted to be honest!"
-    csgod "Yeah well, look where honesty got you."
+    csgod "Yeah, well, look where honesty got you."
     csgod "No one would believe something as silly as YTP power."
     csgod "For your punishment, I'm gonna leave you here you a while."
     cs "No! Please!"
@@ -260,9 +260,9 @@ label jail:
     show copguy at right
     with move
     copguy "Alright, welcome to the slammer. How tough are ya?"
-    cs "How tough am I?! How, tough, am, I?! I beat Cuphead!"
+    cs "How tough am I?! {bt=a3-p10-s4}How tough am I?!{/bt} I beat Cuphead!"
     copguy "So?"
-    cs "In under 90 minutes!"
+    cs "{i}In under 90 minutes!"
     copguy "Hmm... okay, you're a tough enough guy to handle this cellmate, then."
 
     hide copguy with moveoutright
@@ -273,7 +273,7 @@ label jail:
     cs "Oh, hi Arceus."
     arceus "Heya, CS. .w."
     # And it's about time.
-    cs "So what are you in for?"
+    cs "So, what are you in for?"
     arceus "Putting spyware on a politician's phone."
     cs "Yeah, no, that checks out."
     arceus "And from my recent debug of CSBounciness, I know that you're in for beating up workers at HoH SiS."
@@ -290,7 +290,7 @@ label jail:
     arceus "If you say so... Who were you thinking of breaking out?"
     cs "Let's just break out that guy next to us, I think his name was Anno...?"
     arceus "Anno? Sure, I've seen what he's capable of, he may be of use to us."
-    cs "Alright then, let's get going!"
+    cs "Alright, then, let's get going!"
 
     show arceus prison at offscreenright
     show cs prison at offscreenleft
@@ -304,21 +304,21 @@ label breakout:
     with dissolve
 
     arceus "So, what's the plan? I've been trying to break outta here for five years."
-    cs "Well, for a start. I need to get a feel of the routine here."
+    cs "Well, for starters, I need to get a feel of the routine here."
     arceus "I really can't stand being here another minute. I'll give you the rundown. Hasn't changed then, won't change now." 
-    n "Arceus describes the prison routine to CS."
+    n "Arceus describes the prison routine to CS."  # DX: Replace with blur, fade out then back in
     cs "I think I got all that."
     arceus "So, what's our plan, boss?"
     cs "I gotta grab a few plastic spoons from the mess hall, a cup of molten chocolate, a guard outfit, and a change of shorts."
     arceus "Why a change of shorts?"
     show cs prison_worried at left
-    cs "You kidding me? I'm gonna shit myself 'cause this is scary as hell."
+    cs "You kidding me? I'm gonna shit myself, 'cause this is scary as hell."
     arceus "Fair enough."
     scene black with fade
 
     stop music fadeout 3.0
     music end
-    n "The current day ends, and the next one progresses. CS and Arceus gather the required essentials for their escape. Along the way, they inform Anno, who more than happily complies with the plan." 
+    n "The day comes to an end and the next one follows. CS and Arceus gather the required essentials for their escape. Along the way, they inform Anno, who more than happily complies with the plan." 
     n "The next evening..."
     play music "<loop 0>moongazer.mp3" volume 0.5
     music Moongazer - Dr. Awesome
@@ -333,12 +333,12 @@ label breakout:
     show cs prison at center with dissolve
     cs "Extra shorts..."
     cs "Check."
-    cs "Alright men, let's get the heck out of here!"
+    cs "Alright, men, let's get the heck out of here!"
 
     scene black with dissolve
 
     n "In the dark of the night, the three begin chipping away at their cell floor."
-    n "Upon breaking through, they set up makeshift bed dummies in their beds with their prison outfits, and don their acquired guard outfits."
+    n "Upon breaking through, they set up makeshift dummies in their beds with their prison outfits, and don their acquired guard outfits."
 
     scene tunnel with fade
     # If anyone asks, Arceus is part god and can dig really easily, I guess.
@@ -359,8 +359,8 @@ label breakout:
     hide arceus
     with dissolve
     n "The three continue to dig for hours, until their hands begin to blister and their spoons break."
-    arceus "Based on my instinct and my tiredness, this should be far enough."
-    n "The now escaped fugitives dig up for their ascent to the surface."
+    arceus "Based on my instinct, and my tiredness, this should be far enough."
+    n "The now-escaped fugitives dig upwards for their ascent to the surface."
     stop music fadeout 3.0
     music end
 
@@ -377,6 +377,7 @@ label bordercrossing:
     n "A wild border guard appears."
 
     show border_guard at center with dissolve
+    # INTENTIONAL DISSOLVE: Pokemon reference
     if fun_value(10):
         border_guard "Eh, Schnitzelburg!"
     border_guard "I'm going to need proof of citizenship, eh."
@@ -394,12 +395,12 @@ label bordercrossing:
     $ renpy.music.set_pause(True, "music")
     play music2 "star_spangled_banner.mp3"
     music The Star Spangled Banner - THE UNITED STATES OF AMERICA
-    n "The crew look behind them and still see a faint American flag waving."
+    n "The crews look behind them and still sees a faint American flag waving."
     scene canada
     stop music2
     $ renpy.music.set_pause(False, "music")
     cs "Prison food just isn't all that filling."
-    arceus "I suppose we could find a Tim Horton's, it's as common in Canada as a McDonald's is in America."
+    arceus "I suppose we could find a Tim Horton's, it's as common in Canada as McDonald's is in America."
     n "Anno and CS nod aggressively."
     n "Arceus sniffs the air."
     arceus "There's one just over here, come on."
@@ -407,7 +408,7 @@ label bordercrossing:
     scene outside_tim_hortons
     show cs at left
     with fade
-    cs "I'm starving after all that walking, I need a donut."
+    cs "I'm starving after all that walking. I need a donut."
     show cs at offscreenright with move
     show arceus flipped at offscreenright with moveinleft
     show anno at offscreenright with moveinleft
@@ -433,8 +434,8 @@ label bordercrossing:
 
     arceus "Hi."
     cashier "Can I help you?"
-    arceus "Can I have a dozen glazed donuts please?"
-    cashier "Oh hi, Arceus, I didn't know it was you."
+    arceus "Can I have a dozen glazed donuts, please?"
+    cashier "Oh, hi Arceus, I didn't know it was you."
 
     show anno
     anno "Wait, huh?"
@@ -461,7 +462,7 @@ label bordercrossing:
 
     show cs disappointed
     cs "..."
-    cs "I think I'm {i}really{/i} sleep deprived."
+    cs "I think I'm {i}really{/i} sleep-deprived."
 
     $ achievement_manager.unlock("Ohai, Mark")
     play music "<loop 0>buy_something.mp3" volume 0.6
@@ -483,7 +484,7 @@ label bordercrossing:
     show cashier at t_cashier_at_tims
     show inside_tim_hortons_fg
     show cs
-    cs "Linus Media Group, huh? I have a lot of video editing experience, maybe I can get a job there."
+    cs "Linus Media Group, huh? I have a lot of video editing experience... maybe I can get a job there!"
     stop music fadeout 3.0
     music end
 
@@ -495,7 +496,7 @@ label bordercrossing:
     with fade
     play music "<loop 0>passport.mp3" volume 0.5
     music PASSPORT.MID - George Stone
-    linus "Sure, you can have a job, just show us proof of citizenship and you're ready to go!"
+    linus "Sure, you can have a job. Just show us proof of citizenship and you're ready to go!"
     cs "Colour is spelled with a u, eh."
     linus "I need actual papers. Last time I hired someone who used that as proof of citizenship, I got fined and had to sell one of my thousands of 4090s."
     cs "Ummmm, I'll be right back."
@@ -524,7 +525,7 @@ label bordercrossing:
     arceus "Perfect."
     n "Within minutes, Arceus has hacked the Canadian government records to display CS as having a valid work visa."
     arceus "Even their security is too nice..."
-    n "Arceus rummages around the dumpster more and finds a magnet from an old CRT."
+    n "Arceus digs through the dumpster more and finds a magnet from an old CRT."
     n "He places it against the laptop, corrupting the hard drive instantly."
     arceus "Without a trace."
     n "He discards both items and rushes out of the alley."

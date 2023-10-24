@@ -135,7 +135,7 @@ label dpn_diner:
     nova "Shouldn't we we all go together?"
     aria_alt "Nah, just stay here in case I miss them or something. I'll be fine."
     digi "Aria, are you sure? I mean, the cops are after them."
-    aria_alt "Yeah well, like I said, I know what I'm doing. I'll be back."
+    aria_alt "Yeah, well, like I said, I know what I'm doing. I'll be back."
     hide aria with moveoutright
     pause 1.0
     nova "They're gonna die."
@@ -388,7 +388,7 @@ label car_ride_2:
     copguy "Well? What do you think CS? You ready to go back to jail?"
     cs "Never!"
     copguy "Oh really? Because I just called the national guard here to help me stop you."
-    tate "Yeah well, CS called me to stop you!"
+    tate "Yeah, well, CS called me to stop you!"
     digi "Yeah! Us too!"
     n "CS' friends start yelling, as the national guard men ready their weapons."
     copguy "I see, you wanted to do this the hard way..."

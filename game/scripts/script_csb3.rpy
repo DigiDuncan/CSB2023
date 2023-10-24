@@ -16,14 +16,14 @@ label csbiii_start:
     scene csdesk with fade
     show linus at right with moveinright
     show cs at left with moveinleft
-    cs "Wow! I thought this was a starting office, why do I get such a cool desk?"
-    linus "Actually, this is our worst setup. You'll get upgraded after you've been here a while."
+    cs "Wow! I thought this was a starting office. Why do I get such a cool desk?"
+    linus "Actually, this is our worst setup. You'll get upgraded after you've been here for a while."
     cs "Holy shit, really? This is way better than any setup I've seen, let alone had."
     linus "You must've had really bad setups then. This only has a 3080. Everyone else has 3090s or 4080s."
     cs "I have absolutely no problem with a 3080."
     linus "Well, enjoy!"
     hide linus with moveoutright
-    cs "I guess I better get to work on editing, let's see what videos I need to edit..."
+    cs "I guess I better get to work on editing. Let's see what videos I need to edit..."
     cs "Let's see, I have the new TechQuickie video on how live streaming works, or the video on how at least half of the keys on your keyboard should be macros..."
     if persistent.true_ending:
         menu:
@@ -42,10 +42,10 @@ label csbiii_start:
     show cs at left
     with fade
     show linus at right with moveinright
-    linus "Hey CS, how's the new video coming along?"
-    cs "It's going well. I have the background all done, and I'm working on adding graphics and fixing audio."
+    linus "Hey, CS, how's the new video coming along?"
+    cs "It's going well! I have the background all done, and I'm working on adding graphics and fixing audio."
     linus "Wow! You're a fast worker. You'll get off of that old 3080 in no time."
-    cs "Thanks Linus."
+    cs "Thanks, Linus."
     linus "Speaking of live streaming, we need a new PC for the WAN Show. Can you go and buy parts for one?"
 
     menu: 

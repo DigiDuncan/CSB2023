@@ -1188,7 +1188,7 @@ label braghohsis:
     show ed at right
     show rich at mid_mid_right behind ed
     show cs angry at left
-    cs "Yeah well, I have so much money! I don't really care!"
+    cs "Yeah, well, I have so much money! I don't really care!"
     cs "You guys deserve to have your company in shambles!"
     n "Richard and Ed back up to their UFO."
     hide rich

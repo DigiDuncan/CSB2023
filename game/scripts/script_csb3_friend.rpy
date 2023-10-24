@@ -2,7 +2,7 @@ label microcenter:
     cs "Sure, what parts do you need?"
     linus "We need eggs, milk..."
     linus "Just kidding."
-    linus "I'll leave the details up to you since you've done a lot of live streaming, just get the highest end available."
+    linus "I'll leave the details up to you since you've done a lot of live streaming. Just get the highest end available."
     cs "Alright, I'll go get the parts."
     scene black with fade
     pause 3.0
@@ -10,22 +10,22 @@ label microcenter:
     show linus at right
     with fade
     show cs at left with moveinleft
-    cs "I have your new streaming PC, and it runs quite well too! Way better than my computer!"
-    linus "Awesome! Lemme go move this into the othe--{w=0.25}WOAAAHHH!!!"
+    cs "I have your new streaming PC, and it runs quite well, too! Way better than my computer!"
+    linus "Awesome! Lemme go move this into the othe--{w=0.25}{i}woahhhh!!!"
     show linus with hpunch
     n "Linus trips and falls, immediately destroying the insides and outsides of the PC that CS just built."
-    cs "Oh damn, you okay there?"
-    linus "No of course not! I just destroyed another one of these $20,000 computing machines! How the hell am I going to get another just like this?"
+    cs "Oh, damn, you okay there?"
+    linus "No, of course not! I just destroyed another one of these $20,000 computing machines! How the hell am I going to get another just like this?"
     cs "Well, you could just always buy more parts like these, I'm sure you have the budget for that."
     linus "No no, that's too expensive and wasteful, let me think..."
     linus "Hmmm..."
-    linus "Wait! I just got a brilliant idea! Why don't you go buy more parts for me, we certainly have the budget to do that!"
+    linus "Wait! I just got a brilliant idea! Why don't you go buy more parts for me! We certainly have the budget to do that!"
     show cs disappointed
     cs "Uhmm… I literally just said--{nw}"
     linus "Alright! The plan is settled! You can go fetch me some more parts for the ultimate streaming machine, and you get to decide what parts should be in the computer!"
     show cs
-    cs "Okay but, are there any recommendations you would give me for building this? This is YOUR money, you know."
-    linus "Nah, it's fine. I'm sure you will do well picking out parts, make sure to get the highest quality you can!"
+    cs "Okay, but, are there any recommendations you would give me for building this? This is {i}your{/i} money, you know."
+    linus "Nah, it's fine. I'm sure you will do well picking out parts. Make sure to get the highest quality you can!"
     cs "Alrighty, I'll get going now."
     stop music fadeout 3.0
     music end
@@ -35,7 +35,7 @@ label microcenter:
     n "CS goes to Microcenter."
     show cs at left with moveinleft
     show cs happy
-    cs "Okay gamers, we are buying some parts for our epic computing machine. Let's go inside the magical concrete structure to buy some computing parts."  # the fuck is this line Pakoo
+    cs "Okay, gamers, we are buying some parts for our epic computing machine. Let's go inside the magical concrete structure to buy some computing parts."  # the fuck is this line Pakoo
     cs "Wow, this building looks a lot bigger than the places I would go shopping at near home."
     hide cs at right with moveoutright
     n "CS enters the building."
@@ -45,7 +45,7 @@ label microcenter:
     show cs at left with moveinleft
     cs "Woah! This place is huge!"
     cs "There are so many options to pick from! And I have as much money as I'll ever need, too!"
-    cs "Before I get too carried away though, I should probably start by buying the processor."
+    cs "Before I get too carried away, though, I should probably start by buying the processor."
     hide cs at right with moveoutright
     scene cpuaisle with fade
     n "CS goes to the CPU aisle."
@@ -56,9 +56,9 @@ label microcenter:
     show cs
     cs "Let's see here…"
     cs "I could get a super high-end Intel CPU since Linus still seems to default to Intel even after shilling for AMD…"
-    cs "Or I could get a Ryzen, more cores would probably be better for streaming..."
+    cs "Or I could get a Ryzen... more cores would probably be better for streaming..."
     show cs happy
-    cs "Too many good options! I don't know what one to pick!"
+    cs "Too many good options! I don't know which one to pick!"
     show cs
     if fun_value(40):
         cs "Whatever, I'll get this AMD Threadripper."        
@@ -300,13 +300,13 @@ label attack_fanboy:
     show cs angry at center with dissolve
     if fanboy_type == "nvidia":
         "Fanboys" "Boo!! You suck! NVIDIA is the best!"  
-        cs "Yeah well, let's see about that!"
+        cs "Yeah, well, let's see about that!"
         stop sound fadeout 3.0
         music Nordic Report 2 - Lizardking
         jump rpg_fanboy_fight_nvidia     
     else:
         "Fanboys" "Boo!! You suck! AMD is the best!"
-    cs "Yeah well, let's see about that!"
+    cs "Yeah, well, let's see about that!"
     stop sound fadeout 3.0
     music Nordic Report 1 - Lizardking
     jump rpg_fanboy_fight_amd

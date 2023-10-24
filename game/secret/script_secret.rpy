@@ -22,7 +22,7 @@ label secret2:
     digi "Oh, again?"
     digi "You gotta tell someone to get on with writing this game."
     stop music
-    pakoo "Yeah well fuck you bitch!"
+    pakoo "Yeah, well fuck you, bitch!"
     show pakoo at center with moveinright
     show digi at center with vpunch
     play sound "alt_punch.ogg"
