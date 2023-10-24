@@ -1,8 +1,8 @@
 label south:
     cs "Why don't we try going south?"
     show arceus
-    arceus "Alright, what's your plan? Where are we going exactly?"
-    cs "I've always kinda wanted to go down to Vegas, we could have a ton of fun down there!"
+    arceus "Alright, what's your plan? Where are we going, exactly?"
+    cs "I've always kinda wanted to go down to Vegas. We could have a ton of fun down there!"
     show arceus worried
     arceus "Don't you want to go back home?"
     cs "Listen, we are free again and in the middle of nowhere. If we can find a way to make a bit of cash and get a car, maybe we can make it big!"
@@ -14,14 +14,14 @@ label south:
     show cs happy
     cs "Hell yeah!"
     scene black with fade
-    n "CS and Arc keep following the road for a while, until they come across a small town."
+    n "CS and Arc keep following the road for a while until they come across a small town."
     scene town with fade
     show cs at left with moveinleft
     show arceus at right with moveinright
     cs "Oh my God! We found civilization again!"
     arceus "Thank God."
-    n "The two look around for a bit, when they see a gas station close by."
-    cs "Let's head over to that gas station, so we can pick up something to eat."
+    n "The two look around for a bit until they see a gas station close by."
+    cs "Let's head over to that gas station so we can pick up something to eat."
     n "CS and Arc head over to the convenience store at the gas station."
     hide cs with moveoutright
     show arceus flipped at right
@@ -38,7 +38,7 @@ label south:
     show arceus flipped at right
     with moveinleft
     show arceus with determination
-    cs "Okay so, how do we get down to Nevada? That's quite a distance."
+    cs "Okay, so, how do we get down to Nevada? That's quite a distance."
     arceus "We could use those bikes over there?"
     cs "Nah, that's too much effort."
     cs "How about..."
@@ -49,8 +49,8 @@ label south:
     n "CS quickly starts grabbing material from thin air and puts together a new car."
     play sound "legosfx.mp3" volume 1
     pause 3.0
-    cs "Ta dah!"
-    arceus "HOW DID YOU DO THAT!?"
+    cs "Tada!"
+    arceus "{i}How did you do that!?"
     cs "Look, I'm a master builder. You wouldn't understand."
     arceus "Well... does the car even work?"
     cs "Only one way to find out!"
@@ -63,12 +63,12 @@ label south:
     n "Once they get into the car, CS starts it up."
     play sound "driving.wav" volume 0.5
     pause 1.0
-    cs "Woohoo! Vegas Time!"
-    arceus "I don't even know how you do these things man, but let's go!"
-    n "The duo head out to Vegas, or where they presume Vegas is."
+    cs "Woohoo! Vegas time!"
+    arceus "I don't even know how you do these things, man, but let's go!"
+    n "The duo heads out to Vegas, or where they presume Vegas is."
     stop sound fadeout 2.0
     scene black with fade
-    n "After many hours of driving, it starts to turn night time again."
+    n "After many hours of driving, day turns to night once again."
     stop music fadeout 3.0
     music end
     jump utah
@@ -81,8 +81,8 @@ label utah:
     show arceus at right behind cscar2
     with fade
     arceus "Are you sure we're close to Vegas?"
-    cs "We have to be! Nevada is like right below Washington!"
-    arceus "Well, there is a state sign coming up, let's see if you're right."
+    cs "We {i}have{/i} to be! Nevada is, like, right below Washington!"
+    arceus "Well, there's a state sign coming up. Let's see if you're right."
     if fun_value(20):
         scene utajsign
         show cscar1
@@ -92,7 +92,7 @@ label utah:
         n "As they approach the sign, it reads \"Welcome to UTAJ, Life Elevated\"."
         arceus "Welp. You tried."
         cs "I could've sworn we were going the right way."
-        arceus "Did you ever see a sign that said \"Las Vegas - in how ever many miles\"?"
+        arceus "Did you ever see a sign that said \"Las Vegas - in however many miles\"?"
         cs "No...?"
         arceus "Oh well. At least we know where we are now."
         arceus "Tomorrow, we'll head to Vegas."
@@ -107,7 +107,7 @@ label utah:
         n "As they approach the sign, it reads \"Welcome to UTAH, Life Elevated\"."
         arceus "Welp. You tried."
         cs "I could've sworn we were going the right way."
-        arceus "Did you ever see a sign that said \"Las Vegas - in how ever many miles\"?"
+        arceus "Did you ever see a sign that said \"Las Vegas - in however many miles\"?"
         cs "No...?"
         arceus "Oh well. At least we know where we are now."
         arceus "Tomorrow, we'll head to Vegas."
@@ -121,15 +121,15 @@ label utah:
     show arceus at right behind cscar2
     with dissolve
     cs "Alright, let's start looking for a place."
-    cs "We got like Joe's Diner over there, there's a Casey's..."
+    cs "We got, like, Joe's Diner over there, there's a Casey's..."
     cs "Grilled Mormons? Ewww!"
     arceus "There's uhh... The Soup Store?"
     cs "Nah, that's a clothing store."
-    arceus "Oh weird."
-    cs "Wait hold up! I think I see a pizza place!"
-    arceus "Man, pizza does sound good right about now."
-    cs "Woah what? It's a Lego pizza place?"
-    cs "We're going there. Right now."
+    arceus "Oh, weird."
+    cs "Wait, hold up! I think I see a pizza place!"
+    arceus "Man, pizza {i}does{/i} sound good right about now."
+    cs "Woah, what? It's a Lego pizza place?"
+    cs "We're going there. {i}Right now."
     n "CS pulls into the parking lot of the restaurant."
     scene pizzaplace with fade
     show cs dark at left with moveinleft
@@ -139,24 +139,24 @@ label utah:
     show arceus worried dark
     n "Arceus looks worried."
     arceus "Are you sure about this, CS? This place gives me the creeps."
-    cs "This is my dream place to eat at. We NEED to see if we can get in."
+    cs "This is my dream place to eat at. We {i}need{/i} to see if we can get in."
     scene legodoor with fade
     show cs dark at left with moveinleft
     show arceus worried dark at right with moveinright
-    n "They approach the front door, and the sign on front of it says the place is closed."
-    arceus "Dang, that suuuuuure sucks. We can leave now right?"
+    n "They approach the front door and the sign on it says the place is closed."
+    arceus "Dang, that suuuuuure sucks. We can leave now, right?"
     scene legodooropen
     show cs dark at left
     show arceus worried dark at right
     n "CS pushes the door open."
     cs "The door isn't locked! We can go in!"
-    arceus "Oh great. Yippee!"
+    arceus "Oh, great. Yippee..."
     scene black with fade
     n "As CS and Arc walk in, they are greeted with a musty aroma and a dimly lit party room."
     scene fazlobby with fade
     play music "<loop 0>tunnely_shimbers.mp3" volume 0.5
     music Tunnely Shimbers - Mr. Sauceman
-    n "CS walks around in awe, as Arceus creeps behind him."
+    n "CS walks around in awe as Arceus creeps behind him."
     show cs dark at left with moveinleft
     show arceus flipped dark at right with moveinleft
     show arceus dark
@@ -173,16 +173,16 @@ label utah:
         cs "No? It's just a plushie..."
         cs "Anyways..."
     cs "Wow, a Lego-themed pizza restaurant. This place looks like it was built out of Lego too!"
-    cs "Woah Arc, look at those big Minifigure statues!"
-    n "Up in the front of the room, four human-scale Lego minifigures stand up on a stage."
-    n "CS goes up and stands next to them."
+    cs "Woah, Arc, look at those big minifig statues!"
+    n "Up in the front of the room, four human-scale Lego minifigures can be seen standing up on the stage."
+    n "CS goes up to stand next to them."
     scene legostage with fade
-    show cs dark at left with moveinleft 
+    show cs dark at left with moveinleft
     cs "Arceus, do you have a camera? You should take a picture of me!"
-    arceus "No, why would I have a camera? Also you probably shouldn't be up there!"
+    arceus "No, why would I have a camera? Also, you probably shouldn't be up there!"
     arceus "Weren't we gonna get some pizza?"
     pause 1.0
-    arceus "Do they even have pizza here? I can smell it, but it doesn't look like anyone's here."
+    arceus "Do they even {i}have{/i} pizza here? I can smell it, but it doesn't look like anyone's here."
     cs "I see it in the back by the counter!"
     n "CS hops off stage and runs over to the serving counter."
     hide cs with moveoutright
@@ -195,12 +195,12 @@ label utah:
     arceus "It's hot too... who made this?"
     cs "The cook who works here, duh!"
     arceus "The place was closed, CS."
-    cs "Well then, why would the cook in the back be making pizzas?"
+    cs "Well, then, why would the cook in the back be making pizzas?"
     show arceus angry dark
-    arceus "Because there is- whatever, let's just find a place to sit down and eat."
-    arceus "And not out here, I don't wanna look at those creepy minifigures."
+    arceus "Because there is-- Whatever, let's just find a place to sit down and eat."
+    arceus "And not out here. I don't wanna look at those creepy minifigures."
     cs "Fine..."
-    n "CS and Arc head down the hallway next to the kitchen area, until they find a small office in the back."
+    n "CS and Arc head down the hallway next to the kitchen area until they find a small office in the back."
     scene fazplace with fade
     show cs dark at left with moveinleft
     show arceus flipped dark at right with moveinleft
@@ -208,28 +208,28 @@ label utah:
     arceus "Perfect. Let's eat in here, then we get back in the car."
     cs "Aww, I wanted to spend the night here!"
     show arceus angry dark
-    arceus "No fucking way dude."
+    arceus "No fucking way, dude."
     show arceus dark
     n "CS notices a Lego RC car sitting on the desk with a controller."
-    cs "Ah sweet! I used to have one of these!"
+    cs "Ah, sweet! I used to have one of these!"
     n "As CS turns it on, the TV screen next to them turns on as well, and shows live footage from the Lego car."
     scene tvcar with dissolve
-    cs "Hey look at that! We can see where the car goes!"
+    cs "Hey, look at that! We can see where the car goes!"
     cs "While we eat, I'm gonna take the car around the restaurant and see if we can find anything cool."
     arceus "Alright, just don't break it."
-    n "CS drives the car outside of the office, and starts going into different rooms."
+    n "CS drives the car outside of the officez and starts going into different rooms."
     cs "This already feels like a cool vacation. I'm glad we managed to find this."
-    arceus "Well, at least you're happy."
-    cs "Weren't there supposed to be robotic Legos though? I was looking forward to tha- Heyyy!!!"
+    arceus "Well, at least {i}you're{/i} happy."
+    cs "Weren't there supposed to be robotic Legos though? I was looking forward to tha-- Heyyy!!!"
     scene fazplace
     show cs disappointed dark at left
     show arceus dark at right
     arceus "What? What's going on?"
-    cs "The Minifigures! One of them is gone!"
+    cs "The minifigs! One of them is gone!"
     show arceus worried dark
-    arceus "WHAT??"
-    arceus "CS we need to get the fuck out of here now."
-    cs "But I haven't finished my pizz-"
+    arceus "{i}What?"
+    arceus "CS, we need to get the fuck out of here, {i}now!"
+    cs "But I haven't finished my pizz--"
     arceus "I don't care, let's go!"
     stop music fadeout 3.0
     music end 
@@ -245,45 +245,45 @@ label utah:
     show arceus worried dark at mid_right_right with moveinright   
     n "Before they make it to the door, Arceus stops dead in his tracks."
     cs "Hey! Why'd we stop?"
-    n "CS looks ahead of him to see the giant Minifigure standing infront of them."
+    n "CS looks ahead of him to see the giant minifigure standing in front of them."
     cs "Ohh."
     arceus "CS, don't move a muscle."
-    cs "Why not? it's just a leg-"
+    cs "Why not? it's just a Leg--"
     play music "<loop 0>hard_drive.mp3" volume 0.5
     music Hard Drive to Munch You - Mr. Sauceman
     show lego eyes
-    n "The Minifigure's eyes glow as it raises its arms up and starts running at CS."
+    n "The minifigure's eyes glow as it raises its arms up and starts running at CS."
     lego "HEEYYYY!!!!!"
     n "Arceus quickly drags CS out of the way at the last second."
     show arceus dark at left
     show lego eyes at lego_run
     with move
-    lego "A MAN HAS FALLEN INTO THE-"
+    lego "A MAN HAS FALLEN INTO THE--"
     hide lego with moveoutbottom
-    n "The Minifigure crashes into the wall and falls to the ground."
+    n "The minifigure crashes into the wall and falls to the ground."
     show cs worried dark with vpunch
     n "The other figures up ahead turn on and start moving toward Arc and CS."
     show arceus worried dark
-    arceus "RUN CS RUN!!!"
-    n "They desperately run as fast as they can to the front door, and then slam the door behind them."
+    arceus "{bt=a3-p10-s4}Run, CS, run!!!"
+    n "They desperately run as fast as they can to the front door, then slam the door behind them."
     scene pizzaplace with fade
     show cs worried dark at left with moveinleft
     show arceus worried dark flipped at right with moveinleft
     show arceus worried dark
-    n "The Minifigures run up to the door and smash their arms and heads through."
+    n "The minifigures run up to the door and smash their arms and heads through."
     arceus "To the car! Get in the car!"
     show cs worried dark flipped with determination
     hide cs
     hide arceus
     with moveoutleft
-    n "Arceus hops in the drivers seat, while CS gets in the back."
+    n "Arceus hops in the drivers seat while CS gets in the back."
     scene pizzaplace
     show cscar1arc
     show cscar2
     show arceus flipped at left behind cscar2
     with fade
     cs "I made this car though..."
-    n "Arceus starts the car, as he then takes off at lightning speed out of the parking out and back onto the road."
+    n "Arceus starts the car. He takes off at lightning speed out of the parking out and back onto the road."
     scene black with fade
     stop music fadeout 3.0
     music end
@@ -292,11 +292,11 @@ label utah:
     show cscar2
     show arceus flipped at left behind cscar2
     with fade
-    arceus "Thank God, I can take a breather now."
-    cs "Man this sucks."
+    arceus "Thank God. I can take a breather now."
+    cs "Man, this sucks."
     cs "It was super cool before the Legos tried to kill us."
     arceus "I think that whole restaurant was trying to kill us, CS."
-    n "Arceus drives the rest of the way until they hit Las Vegas."
+    n "Arceus drives the rest of the way until they reach Las Vegas."
     jump vegas
 
 label vegas:

@@ -1081,18 +1081,18 @@ label good_convince:
 label choose_direction:
     $ persistent.csb3b_unlocked = True
     scene black with determination
-    n "As the duo continues their journey through the night, they soon have to figure out exactly where to go."
+    n "As the duo continues their journey through the night, they soon have to figure out exactly where to go."  # Reword?
     scene washington_road morning
     show cs at left
     show arceus at right
     with fade
     play music "<loop 0>happy_roaming.mp3" volume 0.5
     music Happy Roaming - Lorin Nelson
-    cs "We've been walking all night, I'm exhausted."
+    cs "We've been walking all night. I'm exhausted."
     arceus "Yeah, let's hope we find food and water soon."
-    cs "Hey uhh, do you know exactly where we're going?"
+    cs "Hey, uhh, do you know exactly where we're going?"
     arceus "Well, I noticed that the sun rises ahead of us, which means we're heading east right now."
-    arceus "We can head in any direction really. The second we find a better form of transportation than walking, we're taking it."
+    arceus "We can head in any direction, really. The second we find a better form of transportation than walking, we're taking it."
     menu:
         "Which way do you want to go?"
         "North":
@@ -1102,14 +1102,14 @@ label choose_direction:
         "South":
             jump south
         "West":
-            jump west 
+            jump west
 
 label north:
     cs "What if we go north?"
     show arceus worried
     arceus "...What?"
     show cs disappointed
-    cs "You said pick a direction!"
+    cs "You said to pick a direction!"
     show arceus
     arceus "To the north is Canada. Where we just came from. Try again."
     show cs
@@ -1126,7 +1126,7 @@ label north:
 label north2:
     $ achievement_manager.unlock("Can We Go Back?")
     show arceus angry
-    arceus "I literally just said-"
+    arceus "I literally just said--"
     arceus "Just pick another direction."
     show arceus
     menu:
@@ -1160,8 +1160,8 @@ label west:
 label west2:
     cs "Let's try going west again. I'm sure there is something there."
     show arceus worried
-    arceus "Uhm, okay... Maybe we've missed something."
-    n "CS and Arc run into the Pacific, again."
+    arceus "Uhm, okay... maybe we've missed something."
+    n "CS and Arc run into the Pacific again."
     scene washington_road dusk
     show cs dusk at left
     show arceus dusk at right
@@ -1177,7 +1177,7 @@ label west2:
             jump west3
 
 label west3:
-    cs "Nah come on, there is definitely SOMETHING we can find west."
+    cs "Nah, come on, there is definitely {i}something{/i} we can find going west."
     show arceus worried
     arceus "I really don't want to go there again..."
     cs "Nah, we got this, for sure this time."
@@ -1185,8 +1185,8 @@ label west3:
     scene washington_road
     show cs dark at left
     show arceus angry dark at right
-    cs "Hey! that's quite an epic crustacean!"
-    arceus "Alright cool, can we pick another direction that ISN'T west this time?"
+    cs "Hey! That's quite an epic crustacean!"
+    arceus "Alright, cool, can we pick another direction that {i}isn't{/i} west this time?"
     menu:
         "North":
             jump north
@@ -1199,8 +1199,8 @@ label west3:
 
 label west4:
     cs "Okay! One last time!"
-    arceus "... Something tells me you were in an asylum for a bit..."
-    n "CS and Arc surprisingly, find the ocean again."
+    arceus "... Something tells me that you were in an asylum for a bit..."
+    n "CS and Arc, surprisingly, find the ocean again."
     scene washington_road morning
     show cs happy at left
     show arceus angry at right
