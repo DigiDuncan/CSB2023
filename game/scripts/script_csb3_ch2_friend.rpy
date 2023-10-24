@@ -10,21 +10,21 @@ label dpn_call:
     with fade
     play music "<loop 0>tuna_fish.mp3" loop volume 0.6
     music Tuna Fish - Dr. Awesome
-    cs "What a crazy day so far man."
+    cs "What a crazy day so far, man."
     cs "I can't believe we had to fight all those cops! If it weren't for Tate and the gang, we'd be dead meat already."
     arceus "Yeah, but hey, you held them off pretty well with that fancy gun of yours."
     pakoo "Yeah, that was some great marksmanship, CS!"
     show cs happy
     cs "Thank you!"
     show cs
-    arceus "So now that we're on the road, and we have time to think, what is our plan?"
-    arceus "Copguy's gonna come back, we need to think fast."
+    arceus "So, now that we're on the road, and we have time to think, what is our plan?"
+    arceus "Copguy's gonna come back, so we need to think fast."
     cs "Is there anyone else we can call for help?"
-    arceus "There are a few people, I can hit up Digi and see if he wants to help."
-    pakoo "Ah yes, that's a good idea, Arceus. I should ask Aria and Nova if they can help us."
+    arceus "There are a few people. I can hit up Digi and see if he wants to help."
+    pakoo "Ah, yes, that's a good idea, Arceus. I should ask Aria and Nova if they can help us."
     cs "Is there any specific location we should head to?"
     pakoo "Where are we anyways? Like west of Montana or something?"
-    arceus "I think so, I'll let them know to stop somewhere ahead of us, so we'll run into them."
+    arceus "I think so. I'll let them know to stop somewhere ahead of us, so we'll run into them."
     cs "Alright, I'll keep heading straight."
     pause 2.0
     show cs disappointed
@@ -58,7 +58,7 @@ label car_ride_1:
     show cs disappointed at left
     show pakoo at right
     with fade
-    cs "So yeah, that's why I'm worried."
+    cs "So, yeah, that's why I'm worried."
     show pakoo disappointed
     pakoo "Yeah, I getcha, I'm sur--{w=1.0}{nw}"
     play sound "car_horn.ogg" volume 1
@@ -79,11 +79,11 @@ label car_ride_1:
     with fade
     tate "Haaahahaha-- *snort*"
     kitty "Bloody hell!"
-    mika "Geez, I didn't think it was that bad."
+    mika "Geez, I didn't think it was {i}that{/i} bad."
     show tate flipped
     tate "Yeah, alright, we had a laugh, but maybe we should chill a bit."
     tate "They've probably been stressed out all day long."
-    tate "Anyways, how y'all doing? Wait, I don't think we've ever actually met."
+    tate "Anyways, how're y'all doing? Wait, I don't think we've ever actually met."
     mika "Well, I'm Mika, and thankfully Pakoo called in time for us to arrive."
     kitty "Hi, I'm Kitty. I hope Arcie is doing well enough."
     tate "Hi, I'm Tate. Nice to meet y'all."
@@ -102,16 +102,16 @@ label car_ride_1:
         show pakoo at right
     with fade
     pause 1.0
-    arceus "Alright, well it looks like Aria is gonna pick up Digi and Nova, and meet us here soon."
+    arceus "Alright, well it looks like Aria is gonna pick up Digi and Nova, then meet us here soon."
     cs "Wow, that was fast!"
     pakoo "Yeah, that's crazy."
     arceus "They'll meet us at some diner in approximately a few hours from now."
-    cs "Alright then, that sounds good to me! I'm hungry so it'll be nice to get some food."
+    cs "Alright, then, that sounds good to me! I'm hungry, so it'll be nice to get some food."
     arceus "Yeah, same."
     stop music fadeout 3.0
     music end
     scene black with fade
-    n "As a few hours pass, the DPN crew arrives at the S&P Diner, and waits to be served."
+    n "A few hours pass and the DPN crew arrives at the S&P Diner. They are waiting to be served."
     jump dpn_diner
 
 label dpn_diner:
@@ -124,14 +124,14 @@ label dpn_diner:
     music Full Rulle Med Klas - Lizardking
     digi "Finally, we can stretch our legs again."
     nova "Remind me what you needed me here for again? I have a set later tonight I need to prepare for!"
-    digi "CS is in trouble, he's being chased by the cops."
+    digi "CS is in trouble. He's being chased by the cops."
     nova "How in the world are we supposed to help with that?!"
     aria_alt "Don't worry, we can just trail them off with donuts if it gets really rough."
     nova "You sure that will really work??"
     aria_alt "Tried and tested."
     digi "CS and the gang should be passing by soon."
     aria_alt "Shit, they probably don't know where we are located."
-    aria_alt "I'll go drive down the highway and lead them here, you guys wait back here just in case."
+    aria_alt "I'll go drive down the highway and lead them here. You guys wait back here just in case."
     nova "Shouldn't we we all go together?"
     aria_alt "Nah, just stay here in case I miss them or something. I'll be fine."
     digi "Aria, are you sure? I mean, the cops are after them."
@@ -159,8 +159,8 @@ label dpn_diner:
     show cop_2 at mid_right
     with fade
     show aria dark at left with moveinleft
-    aria_alt "Ah, great. What is this now?"
-    cop "Sorry, but a ragtag group of criminals is heading through this way, so we need to stop them."
+    aria_alt "Ah, great. What is this, now?"
+    cop "Sorry, but a ragtag group of criminals is heading through this way. We need to stop them."
     aria_alt "Ah, yeah. I understand."
     aria_alt "I'll just go around the other way."
     show aria dark flipped with determination
@@ -171,10 +171,10 @@ label dpn_diner:
     hide cop
     hide cop_2
     with moveoutbottom
-    n "As Aria heads back to the car, she sneaks around and knocks the cop's heads together, knocking them out."
+    n "As Aria heads back to the car, she sneaks around and knocks the cop's heads together, rendering them unconcious."
     show aria dark flipped at right with move
     show cop dark at left with moveinleft
-    cop "Ah shit! We got two men down! Arrest her!"
+    cop "Ah, shit! We got two men down! Arrest her!"
     stop music fadeout 3.0
     music end
     music Desert Dawn - Lizardking
@@ -196,10 +196,10 @@ label cs_meetup:
     else:
         aria_alt "Yeah, they weren't too much of a problem through."
     tate "Good, the less cops, the better."
-    aria_alt "Nova and Digi are at the diner up ahead, let's get this blockade out of the way and get going."
+    aria_alt "Nova and Digi are at the diner up ahead. Let's move this blockade out of the way and get going."
     cs "Righty-o."
     scene black with fade
-    n "CS, Aria, and Tate clear the road, and then follow Aria up to the diner."
+    n "CS, Aria, and Tate clear the road. The group then proceeds to follow Aria back to the diner."
     n "Meanwhile, back at the diner..."
     window hide
     stop music fadeout 3.0
@@ -214,13 +214,13 @@ label cs_meetup:
     digi "They should be here any moment now."
     n "While they are talking, flashing lights shine through the diner."
     show digi flipped with determination
-    digi "Oh shit! Fuck! It's the cops!"
-    nova "Great Digi, see what you did?"
+    digi "Oh, shit! Fuck! It's the cops!"
+    nova "Great, Digi, see what you did?"
     digi "What did I do? Huh?"
     show cop at right with moveinright
     cop "Hey! We've heard that there are two suspects here who are helping out a criminal gang! Show yourselves!"
     n "The people in the diner start freaking out and hide under their seats."
-    nova "Alright Digi, let's do this."
+    nova "Alright, Digi, let's do this."
     digi "On it."
     stop music fadeout 3.0
     music Full Rulle Med Klas - Lizardking
@@ -236,11 +236,11 @@ label cs_meetup_2:
     nova "Welp, there goes all of my energy for the day."
     nova "I'm beat."
     show aria flipped at right with moveinright
-    aria_alt "Hey, we just got here, are you guys okay?"
+    aria_alt "Hey, we just got here. Are you guys okay?"
     show digi flipped with determination
-    digi "Yeah, we're fine, how about you?"
+    digi "Yeah, we're fine. How about you?"
     aria_alt "Yeah, I also had to fight some cops on the way to find CS."
-    digi "Shit, so we need to get going, like, now, before more come."
+    digi "Shit, so we need to get going... like... {i}now{/i}, before more come."
     if fun_value(5):
         aria_alt "Yeah, they won't stop coming. Let's meet up with the rest of the crew first."
     else:
@@ -262,9 +262,9 @@ label cs_meetup_2:
     show nova dark flipped at mid_left
     show aria dark at left
     with moveinleft
-    cs "Hey guys! Are you all good?"
+    cs "Hey, guys! Are you all good?"
     if nice_car:
-        digi "Woah damn, when did you get such a nice car?"
+        digi "Woah, damn, when did you get such a nice car?"
         nova "That is a sick ride."
     else:
         digi "Yeah, what about you? What is going on here?"
@@ -278,13 +278,13 @@ label cs_meetup_2:
     arceus "HoH SiS problems."
     digi "Ahhh."
     nova "Does this mean CS is getting cancelled?"
-    cs "No no, I'm not gonna get cancelled."
-    digi "You killed like, at least a few people!"
-    arceus "Yeah, but at least he didn't, like, sell feet pics."
+    cs "No, no, I'm not gonna get cancelled."
+    digi "You killed like... at least a few people!"
+    arceus "Yeah, but at least he didn't, like... sell feet pics."
     aria_alt "Or say the N-word."
     digi "Oh, yeah, that clears up everything..."
     arceus "But the cops still don't like that we downed multiple units, so we should get moving about now."
-    cs "Yeah, alright everyone, back on the road!"
+    cs "Yeah. Alright everyone, back on the road!"
     cs "Everyone follow me, and we will eventually find a safe spot away from the cops!"
     arceus "Roger that."
     show cs dark with determination
@@ -293,7 +293,7 @@ label cs_meetup_2:
     hide arceus
     with moveoutright
     n "Everyone gets back into their cars, and they take off in a convoy, hoping to end this madness soon."
-    n "In CS' group, the gang decides what they can do to get away from the cops."
+    n "In CS' group, the gang decides on what they can do to get away from the cops."
     if nice_car:
         scene joj_charger_fg
         show drive_night behind joj_charger_fg
@@ -303,12 +303,12 @@ label cs_meetup_2:
     show cs at left
     show pakoo at right
     with fade
-    cs "I really don't have an idea of where to go, I'm just driving in a straight line."
+    cs "I really don't have an idea of where to go. I'm just driving in a straight line."
     arceus "I would try to jam their signals, but I don't know where they are."
-    arceus "I haven't seen Copguy since we've fought him."
+    arceus "I haven't seen Copguy since we fought him."
     pakoo "Well, if he does come back, we'll be ready for him."
-    cs "I hope, but at the same time I don't want to think about running into him again."
-    cs "I can't go back to prison, that shit was scary."
+    cs "I hope, but at the same time, I don't want to think about running into him again."
+    cs "I can't go back to prison. That shit was scary."
     arceus "You're telling me."
     cs "I wonder how the others are doing..."
     scene black with dissolve
@@ -329,7 +329,7 @@ label car_ride_2:
     show tate flipped
     mika "We'll destroy anything that comes our way, don't worry."
     tate "Hell yeah, we got this!"
-    mika "We definitely got this don't worry."
+    mika "We've definitely got this don't worry."
     kitty "I wonder how those new guys are handling the situation..."
     scene black with dissolve
     pause 2.0
@@ -340,16 +340,16 @@ label car_ride_2:
     with fade
     digi "I can't believe CS went to jail."
     aria_alt "Arceus was in jail for five years, Digi."
-    digi "Yeah I know, but that's an Arceus thing to do."
+    digi "Yeah, I know, but that's an Arceus thing to do."
     nova "Is it?? That's kinda concerning."
-    digi "No, I meant like, he knows what he's doing."
+    digi "No, I meant like... he knows what he's doing."
     nova "Clearly not, if he ended up in jail!"
     n "Aria laughs."
-    digi "Look, here's the thing, right? I'm just shaken up a bit still after Arceus and Pakoo called us, explaining that they needed help quickly."
+    digi "Look, here's the thing, right? I'm just shaken up a bit still after Arceus and Pakoo called us explaining that they needed help quickly."
     digi "And then we fought and killed cops!"
     aria_alt "Least insane DPN activity."
     digi "Aria, please. I'm legitimately worried about CS."
-    aria_alt "They'll be fine, I'm sure this will be over soon."
+    aria_alt "He'll be fine, I'm sure this will be over soon."
     digi "Man, I just really hope so."
     scene black with fade
     pause 2.0
@@ -365,13 +365,13 @@ label car_ride_2:
     stop music fadeout 3.0
     music end
     cs "Well, should we find somewhere to stop for the night? We've been going for a while."
-    pakoo "Holy shit! Stop CS!"
+    pakoo "Holy shit! Stop, CS!"
     hide drive_night
     if nice_car:
         show battle_block_without_theater behind joj_charger_fg
     else:
         show battle_block_without_theater behind car_inside_fg
-    n "As CS looks ahead, he screeches on the breaks just in time."
+    n "As CS looks ahead, he screeches on the brakes just in time."
     n "Barbed wire, soldiers, and military trucks block the highway, with Copguy standing in the front of it all."
     cs "This can't be good."
     scene black with fade
@@ -385,17 +385,17 @@ label car_ride_2:
     show arceus angry dark flipped at mid_left_left
     show digi dark flipped at mid_offscreen_left
     with moveinleft
-    copguy "Well? What do you think CS? You ready to go back to jail?"
+    copguy "Well? What do you think, CS? You ready to go back to jail?"
     cs "Never!"
-    copguy "Oh really? Because I just called the national guard here to help me stop you."
+    copguy "Oh, really? Because I just called the National Guard here to help me stop you."
     tate "Yeah, well, CS called me to stop you!"
     digi "Yeah! Us too!"
-    n "CS' friends start yelling, as the national guard men ready their weapons."
-    copguy "I see, you wanted to do this the hard way..."
+    n "CS' friends start yelling as the national guard men ready their weapons."
+    copguy "I see. You wanted to do this the hard way..."
     copguy "Well, you're gonna find out why you never pick the hard way!"
     if nice_car:
         n "The soldiers seem distracted, aweing at CS' car."
-        copguy "Don't mind the car, attack!"
+        copguy "Don't mind the car! Attack!"
     else:
         copguy "Soldiers! Attack!"
     music Thousand March - Mr. Sauceman
@@ -408,16 +408,16 @@ label cs_rage:
     show arceus dark flipped at left
     show digi dark flipped at mid_offscreen_left
     with fade
-    n "After CS and the group manage to push back the national guard, Copguy once again flees at the last moment."
+    n "After CS and the group manage to push back the National Guard, Copguy once again flees at the last moment."
     cs "Hey! You get back here, damn it!"
     show cs dark angry at mid_right with move
     show cs dark angry flipped with determination
-    cs "Guys let's chase after him!"
+    cs "Guys, let's chase after him!"
     play music "triage_at_dawn.mp3" loop volume 0.6
     music Triage At Dawn - Kelly Bailey
     show arceus worried dark flipped
     arceus "CS, we need a minute. We just fought a tank."
-    cs "No time for that! We need to stop him now!"
+    cs "No time for that! We need to stop him {i}now!{/i}"
     show tate srs dark
     tate "CS, no, we really gotta wait a sec."
     show arceus dark flipped
@@ -427,12 +427,12 @@ label cs_rage:
     cs "He keeps running away like a wimp!"
     arceus "CS, you gotta calm down, we can-- "
     show cs dark angry flipped with determination
-    cs "Calm down? CALM DOWN?"
+    cs "Calm down? {i}Calm down{/i}?!"
     show cs dark angry flipped with hpunch
     cs "Do you know what we just fought through?"
     cs "He's just gonna keep building up stronger units for us to attack, and then run away if we beat him!"
     show cs dark angry with determination
-    cs "We need to head out now!"
+    cs "We {i}need{/i} to head out {i}now!{/i}"
     show cs dark angry with hpunch
     pause 1.0
     show cs dark angry with vpunch
@@ -442,7 +442,7 @@ label cs_rage:
     show cs dark angry with vpunch
     n "CS goes to the debris from the battle, desperately trying to move it out of the way."
     show cs dark concentrate
-    cs "Guys, cmon, please! We have... to... hnngg..."
+    cs "Guys, c'mon, please! We have... to... hnngg..."
     show tate shock dark
     tate "Woah, CS? What are you doing?"
     show cs dark concentrate with vpunch
@@ -454,7 +454,7 @@ label cs_rage:
     show cs dark at center with move
     cs "Wait, what the hell?! Did I move all of that already?"
     show tate dark
-    n "As CS is gawking at the work he just did, a purple figure appears in front of CS."
+    n "As CS is gawking at the work he just did, a purple figure appears in front of him."
     hide tate
     hide arceus
     hide digi
@@ -463,17 +463,17 @@ label cs_rage:
     show csgod at right with dissolve  
     csgod "You're welcome."
     cs "Woah, hey! Are you CSGod?"
-    csgod "Indeed I am. You've seemed to channel my power through determination."
+    csgod "Indeed I am. You've seem to have channeled my power through determination."
     if nice_car:
         csgod "Also, it was me who let the intrusive thoughts win for you, and let you pick that nice car."
         cs "Well, thanks for that. This car is amazing!"
         cs "Anyways, can I use YTP Magic or something?"
     else:
         cs "Holy crap, does that mean I can use YTP Magic?"
-    csgod "In theory, yes. Although you should take some time to rest."
-    csgod "Don't beat yourself up over Copguy, you'll be able to beat him down next time, if you calm down and focus."
+    csgod "In theory, yes. Although, you should take some time to rest."
+    csgod "Don't beat yourself up over Copguy. You'll be able to beat him down next time if you calm down and focus."
     csgod "I'm gonna let you go for now. Copguy is planning his most devious attack yet, and you need to be prepared."
-    cs "I see, well, thank you for that CSGod!"
+    cs "I see, well, thank you for that, CSGod!"
     csgod "No problem."
     hide csgod with dissolve
     n "CSGod fades away, and CS turns back to the group."
@@ -487,17 +487,17 @@ label cs_rage:
     tate "CS, you good? You were just staring up at the sky and talking to yourself about magic or something."
     show tate dark
     cs "I'm all good, don't worry."
-    cs "Sorry I got upset, I just need to relax."
-    cs "Arc, you drive, I'm gonna lie down in the backseat."
+    cs "Sorry I got upset. I just need to relax."
+    cs "Arc, you drive. I'm gonna lie down in the backseat."
     show arceus worried dark flipped
     arceus "You need anything else?"
-    cs "I'm good, just some rest."
+    cs "I'm good. Just some rest."
     show arceus dark flipped
     hide cs with moveoutleft
     n "CS heads into the backseat of the car and lies down."
     show digi dark at center with move
     show arceus dark flipped at left with move
-    digi "Alright well, what's the plan? CS is technically right, we need to go track down Copguy somehow."
+    digi "Alright, well, what's the plan? CS is technically right. We need to go track down Copguy somehow."
     arceus "I managed to put a tracking device on Copguy's car in the heat of the battle."
     arceus "I'll be following him, and I'll update you guys about what's going on."
     show arceus dark with determination
@@ -522,32 +522,32 @@ label copguy_pres:
     show copguy flipped at left
     show drive_night behind police_car_fg
     with fade
-    sheriff "They WHAT??"
+    sheriff "They {i}what{/i}?!"
     copguy "They blew up our tank, sir."
     sheriff "Shit! Urghhh..."
     sheriff "There is only one thing we can do."
     sheriff "Copguy, call this number."
-    n "The sheriff sends Copguy the phone number and he dials it."
+    n "The sheriff sends Copguy the phone number, and Copguy dials it."
     copguy "Hello?"
     if fun_value(20):
         bomaha "Who is this?"
         bomaha "How did you get this number?"
         copguy "Hey Mr. President, it's me, Copguy. There is a ragtag gang of criminals on the loose that we can't stop."
-        copguy "We sent the Montana National Guard to stop them, and this gang plowed right through them."
+        copguy "We sent the Montana National Guard to stop them, and this group plowed right through them."
         bomaha "I see."
         bomaha "Looks like we'll have to pull out the big guns."
     else:
         obama "Who is this?"
         obama "How did you get this number?"
         copguy "Hey Mr. President, it's me, Copguy. There is a ragtag gang of criminals on the loose that we can't stop."
-        copguy "We sent the Montana National Guard to stop them, and this gang plowed right through them."
+        copguy "We sent the Montana National Guard to stop them, and this group plowed right through them."
         obama "I see."
         obama "Looks like we'll have to pull out the big guns."
     if fun_value(20):
-        bomaha "You are gonna head to Chigaco, I'll have a jet come pick you up."
+        bomaha "You are gonna head to Chigaco. I'll have a jet come pick you up."
     else:
-        obama "You are gonna head to Chicago, I'll have a jet come pick you up."
-    copguy "Thank you sir, I won't stop till this group is defeated."
+        obama "You are gonna head to Chicago. I'll have a jet come pick you up."
+    copguy "Thank you sir. I won't stop until these menaces are defeated."
     scene black with dissolve
     window hide
     jump car_ride_3
@@ -564,14 +564,14 @@ label car_ride_3:
     with fade
     play music "the_whale.mp3" loop volume 0.6
     music The Whale - Dr. Awesome
-    n "While they are driving, Arceus notices that copguy starts ludicrously speeding up until he stops in Illinois."
+    n "While they are driving, Arceus notices that Copguy starts ludicrously speeding up until he stops in Illinois."
     arceus "Guys, I think I found out where Copguy is headed."
     if fun_value(20):
         arceus "He's stopped in Chigaco."
     else:
         arceus "He's stopped in Chicago."
-    pakoo "Ah shoot."
-    cs "I'm gonna ping everyone in CSCord, and see if anyone else is able to help us out."
+    pakoo "Ah, shoot."
+    cs "I'm gonna ping everyone in CSCord. See if anyone else is able to help us out."
     cs "We're gonna need it."
     scene black with fade
     pause 2.0
@@ -580,11 +580,11 @@ label car_ride_3:
     show aria at left
     show digi at right
     with fade
-    nova "So I guess this is my night. I really need to catch up with music stuff when I get home."
+    nova "So, I guess this is my night. I really need to catch up with music stuff when I get home."
     digi "Guys, I'm concerned that CS might actually be going insane."
     aria_alt "Digi, you didn't know that from the start?"
-    digi "Did you see him? He was just, talking to the sky!"
-    nova "Yeah? Well let a man talk to the sky!"
+    digi "Did you see him? He was just... talking to the sky!"
+    nova "Yeah? Well, let a man talk to the sky!"
     digi "But he was absolutely going insane!"
     aria_alt "Digi, you gotta learn that the spectrum hits different for everyone."
     scene black with fade
@@ -599,7 +599,7 @@ label car_ride_3:
     tate "Saaaaame, which ones?"
     mika "Usually the off-brand Cheez-its, but I really don't like the off-brand goldfish either."
     show tate shock flipped
-    tate "Wait, you don't like gold whales?! I love those!"
+    tate "Wait, you don't like Gold Whales?! I love those!"
     show tate flipped
     mika "Well, I just don't like them too much."
     kitty "The snack that breaks your back: Gold Whales!"
@@ -630,7 +630,7 @@ label final_meetup:
     show cs at mid_left
     show arceus flipped at mid_offscreen_left behind cs
     with moveinleft
-    n "The last group to meet up all emerge as well, who are:"
+    n "The last group to meet up all emerge as well, which is made up of:"
     show blank at center with moveinright
     blank "Hi!"
     $ renpy.movie_cutscene("movies/blank.webm")
@@ -646,10 +646,10 @@ label final_meetup:
         cs "Thanks! I've heard that a lot today."
     else:
         cs "Nice to finally meet you guys! Where's DB?"
-    anno "Db05 isn't here yet, he's been busy."
-    anno "He'll be here soon though, we've been talking to him on the phone."
+    anno "Db05 isn't here yet. He's been busy."
+    anno "He'll be here soon though. We've been talking to him on the phone."
     n "Anno holds out his phone."
-    db "Hey guys! Sorry I'm gonna miss out on the huge battle thing, I had to do some things at home first."
+    db "Hey guys! Sorry I'm gonna miss out on the huge battle thing! I had to do some things at home first."
     $ renpy.movie_cutscene("movies/db.webm")
     db "But I'll gladly encourage you while you all are fighting!"
     cs "No problem DB! Every little bit helps!"
@@ -674,7 +674,7 @@ label between_1:
     show arceus worried flipped
     arceus "Is that an even bigger tank than the last one?"
     show cs angry
-    cs "Alright guys! Battle positions! We've got a tank!"
+    cs "Alright, guys! Battle positions! We've got a tank!"
     jump rpg_final_fight_2
 
 label between_2:
@@ -684,9 +684,9 @@ label between_2:
     show arceus flipped at left
     with dissolve
     play music "the_whale.mp3" loop volume 0.6
-    cs "C'mon guys! We gotta get to Copguy!"
+    cs "C'mon guys! We've gotta get to Copguy!"
     tate "Where is Copguy, anyways? Do you even know where he could be?"
-    n "All of a sudden, the ground starts to shake, as a blinding light blasts the group."
+    n "All of a sudden, the ground starts to shake as a blinding light blasts the group."
     stop music fadeout 3.0
     show tate shock
     show arceus worried flipped
@@ -715,7 +715,7 @@ label between_2:
     cs "Go to hell, Copguy! You'll never defeat me!"
     copguy "Heheh, you can tell yourself that."
     copguy "I've been making sure to note down you and your group's abilities..."
-    copguy "Why don't we try one out!"
+    copguy "Why don't we try one out?"
     n "Copguy casts Light Cast on Arceus!"
     play sound "minigames/car/gaster_blast.wav"
     scene white with dissolve
@@ -743,10 +743,10 @@ label weapon_of_choice:
 label car_slam:
     stop music fadeout 1.0
     scene war_torn_1 with fade
-    n "CS looks around, and views the destruction around him."
+    n "CS looks around and views the destruction around him."
     n "The city that they once fought in has now been reduced to rubble and war-torn buildings."
     show cs flipped at right with moveinbottom
-    n "CS gathers his bearings, and starts checking on his friends."
+    n "CS gathers his bearings and starts checking on his friends."
     cs "Hello? Are you guys alright?"
     show arceus flipped at mid_mid_left with moveinleft
     arceus "Did we get him?"
@@ -763,7 +763,7 @@ label car_slam:
     show kitty flipped at right
     with fade
     show tate shock
-    tate "Y'all see that shit?!"
+    tate "Y'all {i}see{/i} that shit?!"
     mika "CS crushed the whole city!"
     show tate
     show cs at mid_right with moveinleft
@@ -782,13 +782,13 @@ label car_slam:
     show cs at left with moveinleft
     digi "Holy shit! CS! You're alive!"
     cs "Yeah! How about you guys?"
-    nova "I wanna fall over, I'm so tired."
+    nova "I wanna fall over. I'm so tired."
     if fun_value(20):
         aria_alt "I never thought that our first meetup would be at a mall, and our second would be the destruction of Chigaco."  
     else:  
         aria_alt "I never thought that our first meetup would be at a mall, and our second would be the destruction of Chicago."
     n "CS laughs."
-    cs "Yeah, me either, Aria."
+    cs "Yeah, me neither, Aria."
     cs "There is one last group to check on."
     hide cs with moveoutright
     scene black with fade
@@ -800,11 +800,11 @@ label car_slam:
     with fade
     show cs at left with moveinleft
     cs "Hey, did DB ever make it to the fight?"
-    anno "No, I never saw him, at least."
+    anno "No... I never saw him, at least."
     blank "Anno's phone got busted during the fight, so we won't know now what his progress was."
     cs "Dang, that's a shame."
-    cs "I kinda hope he doesn't come now, I'd hate for him to witness the damage we did."
-    midge "Well, we won right? What's the plan now?"
+    cs "I kinda hope he doesn't come now. I'd hate for him to witness the damage we did."
+    midge "Well, we won, right? What's the plan now?"
     cs "I wanna make sure Copguy is gone for real."
     cs "I will be right back."
     hide cs with moveoutright
@@ -812,7 +812,7 @@ label car_slam:
     pause 1.0
     scene war_torn_4 with fade
     show cs at left with moveinleft
-    n "CS walks through the wastelands, searching for anything reminiscent of Copguy."
+    n "CS walks through the wastelands searching for anything reminiscent of Copguy."
     n "Eventually, he finds Copguy's wrecked cop car."
     show cs at center with move
     cs "Welp. There rests Copguy."
@@ -849,9 +849,9 @@ label car_slam:
     db "Oh no, does that mean I'm gonna go to jail?"
     db "I can't go! Who's gonna take care of everything back at home?"
     cs "Relax, we destroyed the majority of the police force."
-    db "Wait, so does that mean, we were the bad guys all along?"
+    db "Wait, so does that mean... we were the bad guys all along?"
     cs "Nah."
-    cs "That man was like, deranged."
+    cs "That man was like, {i}deranged.{/i}"
     scene black with dissolve
     window hide
     show paper at center with easeinright

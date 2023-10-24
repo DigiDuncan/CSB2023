@@ -295,7 +295,7 @@ label attack_fanboy:
     cs "Actually, you know what? Leave this to me!"
     hide cs with moveoutleft
     n "CS runs out the front door into the crowd."
-    linus "CS what are you doing? You gonna get yourself killed out there!"
+    linus "CS what are you doing? You're gonna get yourself killed out there!"
     stop sound fadeout 3.0
     scene outside_ltt with fade
     play sound "<loop 0>yelling.ogg" loop volume 1
@@ -330,15 +330,15 @@ label after_fanboy:
     show arceus worried
     arceus "What happened here?"
     show cs
-    cs "Oh hey Arc. There were some angry fanboys complaining outside of LTT, so I fought them!"
+    cs "Oh, hey Arc. There were some angry fanboys complaining outside of LTT, so I fought them!"
     arceus "You fought them?"
-    cs "Yeah! I won as well!"
+    cs "Yeah! I won, as well!"
     show arceus
     show linus at left with moveinleft
-    linus "Woah hey, CS you alright?"
+    linus "Woah, hey, CS you alright?"
     cs "Yeah! I fought them and scared the rest away!"
-    linus "Well shit! Good job CS!"
-    linus "Hey I mean, if this happened again, would you be ready again to fight back?"
+    linus "Well, shit! Good job, CS!"
+    linus "Hey, if this happens again, would you be ready to fight again?"
     if fanboy_type == "nvidia":
         cs "Umm, if they're NVIDIA fans, sure thing I guess."       
     else:
@@ -346,12 +346,12 @@ label after_fanboy:
     linus "Great! I'll be right back."
     hide linus with moveoutleft
     show cs worried
-    cs "Hey wait! What does that mean? What are you doing?"
+    cs "Hey, wait! What does that mean? What are you doing?"
     show cs
     arceus "CS? Do you have a minute?"
     cs "Looks like I do now, why?"
     arceus "We need to talk for a moment. Can we go somewhere private in the meantime?"
-    cs "Sure I guess, yeah."
+    cs "Sure, I guess, yeah."
     show arceus flipped with determination
     hide cs
     hide arceus
@@ -365,19 +365,19 @@ label after_fanboy:
     show arceus with determination
     arceus "Alright, hi."
     show cs disappointed
-    cs "We could've just gone upstairs in the building?"
+    cs "We could've just gone upstairs in the building..?"
     arceus "Nah, I don't want anyone to hear us."
     show cs
-    arceus "Okay so, we have a major problem."
+    arceus "Okay, so, we have a major problem."
     arceus "Remember when we escaped from that prison?"
     cs "How could I forget?"
     arceus "Well, the cops are still actively searching for us."
     arceus "Based off of the recent events that just happened here, they're probably gonna be here soon."
     show cs worried
-    cs "Ah shit."
+    cs "Ah, shit."
     cs "What am I gonna tell Linus? The cops are probably going to question him!"
     arceus "Yeah, I'm wondering how we are gonna get out of this."
-    arceus "Let's just go inside and play it cool, maybe we'll think of something."
+    arceus "Let's just go inside and play it cool. Maybe we'll think of something."
     show cs disappointed
     cs "Okay."
     show arceus
@@ -411,11 +411,11 @@ label after_fanboy:
     music end
     linus "They're gonna help you learn how to use a gun and stuff like that in case we get rioters again!"
     show cs worried
-    cs "Woah what? Don't you think weapons training is a bit overkill for this?"
+    cs "Woah, what? Don't you think weapons training is a bit overkill for this?"
     linus "Nahhh!"
-    linus "We can even make a video about it, so others won't fuck with us!"
+    linus "We can even make a video about it so others won't fuck with us!"
     show cs disappointed
-    cs "Geez okay, if you're so sure."
+    cs "Geez, okay, if you're so sure."
     linus "Come on, let's get inside first."
     show pakoo flipped with determination
     hide cs
@@ -430,14 +430,14 @@ label after_fanboy:
     show pakoo flipped at mid_mid_right behind linus   
     with moveinleft
     show pakoo
-    linus "Alright well, this is Pakoo, our weapons expert! They should be able to give you the proper weapons training you need!"
+    linus "Alright, well, this is Pakoo, our weapons expert! They should be able to give you the proper weapons training you need!"
     cs "Oh, I see. That's Pakoo."
     cs "I didn't recognize you, but how come you didn't recognize me?"
-    pakoo "Of course I knew who you were dummy, I was just messing with you!"
+    pakoo "Of course I knew who you were, dummy! I was just messing with you!"
     show arceus flipped angry
     arceus "I still thought you were a cop."
     show arceus flipped
-    linus "Alright well, we should show you guys the training course."
+    linus "Alright, well, we should show you guys the training course."
     show cs worried
     cs "A whole training course? At LTT?"
     show cs disappointed
@@ -450,7 +450,7 @@ label after_fanboy:
     hide pakoo
     with moveoutright
     show cs at mid_right with move
-    arceus "Hey CS?"
+    arceus "Hey, CS?"
     show cs flipped with determination
     cs "Yeah?"
     arceus "If the cops are coming our way, I'll come down and let you know, but we'll just have to get going immediately, no exclamation to Linus."
@@ -471,14 +471,14 @@ label training:
     play music "klaxon_beat.mp3" loop volume 0.6
     music Klaxon Beat - Kelly Bailey
     linus "Alright, here's our facility! What do you think?"
-    cs "Oh wow! This looks like something from Quake!"
+    cs "Oh, wow! This looks like something from Quake!"
     pakoo "Close."
     linus "Follow me this way to the entrance for the course."
     cs "The course?"
     pakoo "Yeah, you gotta run through some exercises before you can use a gun!"
     show cs disappointed
     cs "Manual labor? Ugh..."
-    linus "Alright, Hup Hup CS! Let's go!"
+    linus "Alright, hup hup CS! Let's go!"
     hide linus
     hide cs
     hide pakoo
@@ -488,8 +488,8 @@ label training:
     show cs disappointed at center
     show pakoo flipped at left behind linus    
     with moveinleft
-    linus "Alright well, get going through the courses, and we'll watch from above and help you if you need anything."
-    pakoo "Good luck CS! I'm sure you got this."
+    linus "Alright, well, get going through the courses, and we'll watch from above and help you if you need anything."
+    pakoo "Good luck, CS! I'm sure you got this."
     hide linus
     hide pakoo
     with moveoutright
@@ -513,7 +513,7 @@ label training:
     pakoo "Alright, you gotta jump across this pit."
     show cs disappointed
     cs "Really? This is a huge pit..."
-    pakoo "Cmon, you got this!"
+    pakoo "C'mon, you got this!"
 
     menu:
         "Do a cool ass jump":
@@ -524,7 +524,7 @@ label training:
 
 label cool_jump:
     show cs
-    cs "I got this guys, you watching?"
+    cs "I've got this guys, you watching?"
     pakoo "Yep!"
     show cs at t_punchup with move
     show cs at right with moveintop
@@ -533,8 +533,8 @@ label cool_jump:
     "Pakoo and Linus" "WOOAHH!!"
     show cs happy
     cs "Hell yeah! What did you guys think of that?"
-    pakoo "That was impessive man!"
-    linus "I never doubted you CS!"
+    pakoo "That was impressive man!"
+    linus "I never doubted you, CS!"
     cs "Hey, maybe this training isn't too bad!"
     hide cs with moveoutright
     jump fire_range
@@ -558,9 +558,9 @@ label fire_range:
     show cs angry
     cs "So do I just-- why won't it fire!!"
     show cs
-    pakoo "Okay woah woah, calm down."
+    pakoo "Okay, woah, woah! Calm down."
     pakoo "You gotta turn the safety off."
-    pakoo "Be careful where you aim that as well."
+    pakoo "Be careful where you aim that, as well."
     cs "Alright, I think I got this now."
     cs "Watch this!"
     show m4 at left with determination
@@ -622,7 +622,7 @@ label fire_range:
     cs "Woohoo! I got all the targets!"
     pakoo "Nice job CS!"
     linus "That was excellent! You passed the course with flying colours!"
-    pakoo "Head back to the main lobby, and we'll meet up with you there."
+    pakoo "Head back to the main lobby and we'll meet up with you there."
     cs "Alright, cya in a bit!"
     stop music fadeout 3.0
     music end
@@ -636,13 +636,13 @@ label fire_range:
     show linus at mid_mid_right
     show pakoo at right
     with moveinright
-    linus "Alrighty! Well Pakoo, what do you think? Do you think he's ready to become a guard for LTT?"
+    linus "Alrighty! Well, Pakoo, what do you think? Do you think he's ready to become a guard for LTT?"
     pakoo "I would say so, yeah."
     cs "Awesome! This is gonna be like a real arena shooter!"
     show pakoo disappointed
     pakoo "...yeah."
     show pakoo
-    pakoo "I think some more training should be done until he's a proper armed guard,"
+    pakoo "I think some more training should be done until he's a proper armed guard..."
     show pakoo worried
     pakoo "and this seems very... what's the right word..."
     show pakoo disappointed
@@ -662,8 +662,8 @@ label fire_range:
     show cs disappointed
     cs "Alright... I gotta go. This is important."
     linus "Yeah, and this is too! We gotta train more!"
-    cs "Look I'll, explain later okay?"
-    arceus "Alright, we're going CS!"
+    cs "Look I'll... explain later okay?"
+    arceus "Alright, we're going, CS!"
     arceus "C'mon!"
     cs "This is CS... signing out."
     show cs disappointed flipped
@@ -675,20 +675,20 @@ label fire_range:
     show linus at mid_left with move
     linus "Hey! Come back here!"
     show pakoo disappointed at center with move
-    pakoo "Hey Linus?"
+    pakoo "Hey, Linus?"
     linus "Yeah?"
     pakoo "Let me go with him. This is important for his job with you, and... I'm the reason why he's leaving."
     linus "What??"
     show pakoo worried
     pakoo "Yeah I... set up a plan with him in secret afterwards..."
     show pakoo
-    pakoo "So that he would be more trained when he came back! To impress you!"
+    pakoo "So that he would be better trained when he came back! To impress you!"
     show pakoo worried
-    pakoo "Guess I went a little too hard with the scheduling though..."
+    pakoo "Guess I went a little too hard with the scheduling, though..."
     linus "Ahh, I see. I get it now."
-    linus "I'll pretend like I didn't know, go help him."
+    linus "I'll pretend like I didn't know. Go help him."
     show pakoo
-    pakoo "Alright sweet! Thank you Linus!"
+    pakoo "Alright sweet! Thank you, Linus!"
     hide pakoo with moveoutleft
     pause 1.0
     linus "This is such a good idea! Pat yourself on the back, Linus."
@@ -711,7 +711,7 @@ label fire_range:
     arceus "Holy shit! You took the LMG with you?"
     show arceus
     cs "Yeah, I don't know, it looked cool, and no one really saw me hiding it."
-    cs "So y'know... free gun?"
+    cs "So, y'know... free gun?"
     show arceus happy
     arceus "Hell yeah! We can use this!"
     cs "Yeah! To shoot mean people right?"
@@ -725,9 +725,9 @@ label fire_range:
     window hide
     show m4
     show pakoo disappointed flipped
-    cs "Hey I am armed!"
+    cs "Hey, I'm armed!"
     cs "...and dangerous!"
-    pakoo "Woah woah, put the gun down."
+    pakoo "Woah, woah! Put the gun down."
     pakoo "I'm gonna help you guys!"
     hide m4
     show cs disappointed flipped
@@ -737,16 +737,16 @@ label fire_range:
     pakoo "Of course! The cops are chasing you, right?"
     arceus "I knew it! You are a cop!"
     pakoo "No-- damn it, okay, listen to me for a second."
-    pakoo "I've known for a while Copguy is chasing you down."
-    pakoo "I've also known that Copguy has been working for 15 years, and you are his last criminal he wants to bust."
+    pakoo "I've known for a while that Copguy is chasing you down."
+    pakoo "I've also known that Copguy has been working for 15 years and that you are his last criminal he wants to bust."
     pakoo "So he's gonna do anything to take you guys down."
     show arceus
     pakoo "Why do you think I showed up here? I know Copguy, and you're all over the place now!"
-    pakoo "You made a video on a channel with like, millions of subscribers! What were you thinking?"
+    pakoo "You made a video on a channel with like... millions of subscribers! What were you thinking?"
     cs "Shit, I never really thought about that."
     pakoo "Look, I just lied to Linus so he won't question this, so let me help you."
     arceus "CS? What do you say?"
-    cs "I guess if you are willing to, you have more weapons right?"
+    cs "I guess if you are willing to. You have more weapons right?"
     pakoo "Yeah I--{w=0.5}{nw}"
     show cs flipped
     cs "That's all I needed to hear!"
@@ -761,14 +761,14 @@ label fire_range:
     stop music fadeout 3.0
     music end
     scene black with fade
-    n "Arceus takes one of the LTT laptops to scramble their location, and head off to the car dealer."
+    n "Arceus takes one of the LTT laptops to scramble their location, and the group heads off to the car dealership."
     scene canada_block with fade
     show pakoo at right
     show cs at center
     show arceus flipped at left
     with moveinleft
-    arceus "We should be almost there, it should be around this corner."
-    pakoo "Real quick before we get there, I should let Mika know what's going on today."
+    arceus "We should be almost there. It should be around this corner."
+    pakoo "Real quick, before we get there, I should let Mika know what's going on today."
     cs "Who?"
     pakoo "Sorry, my boyfriend. I didn't really tell him that I'm helping two guys escape from the cops."
     show arceus worried flipped
@@ -784,7 +784,7 @@ label fire_range:
     show pakoo flipped with determination
     show pakoo flipped at right with move
     show pakoo with determination
-    pakoo "I had these few spare with me, you guys should just keep them."
+    pakoo "I had a couple spares with me, you guys should just keep them."
     pakoo "One may or may not be LTT property that I stole."
     scene black with fade
     n "The gang stops to call their friends and partners, and then makes their way to the dealership."
@@ -825,7 +825,7 @@ label car_picker:
     with moveinleft
     show carguy with determination
     carguy "Look at all these nice cars!"
-    carguy "You guys look around, I'll be in the dealership building when you guys pick something you like."
+    carguy "You guys look around. I'll be in the dealership building when you guys pick something you like."
     show carguy flipped with determination
     hide carguy with moveoutright
     pause 0.5
@@ -833,7 +833,7 @@ label car_picker:
     show cs at center
     with move
     show arceus with determination
-    arceus "Alright guys, pick out a car quick and let's get the hell outta here!"
+    arceus "Alright, guys, pick out a car quick and let's get the hell outta here!"
     menu:
         "Pick a car!"
         "JoJ Charger":
@@ -846,8 +846,8 @@ label car_picker:
 label cool_car:
     $ nice_car = True
     cs "That's a nice car!"
-    pakoo "That is a sick ass car."
-    arceus "Damn. Are we taking it CS?"
+    pakoo "That is a sick-ass car."
+    arceus "Damn. Are we taking it, CS?"
     cs "Hell yeah! We can't just turn up a car as cool as this!"
     stop music fadeout 3.0
     music end
@@ -898,7 +898,7 @@ label cool_car:
     jump rpg_cop_fight_1
 
 label reg_car:
-    cs "Hey! I have a Honda Civic, let's just take that!"
+    cs "Hey! I have a Honda Civic! Let's just take that!"
     arceus "Works for me."
     pakoo "Let's go!"
     stop music fadeout 3.0
@@ -931,7 +931,7 @@ label reg_car:
     show pakoo at right
     with moveinright
     copguy "Alright, put your hands in the air!"
-    n "CS pulls out his LMG and fires a few shots in the air."
+    n "CS pulls out his LMG and fires a few warning shots."
     show cs angry flipped
     show m4 flipped at center with determination
     show m4 fire flipped at center with determination
@@ -955,7 +955,7 @@ label so_join:
     show arceus worried at mid_right
     show pakoo disappointed at right
     with fade
-    n "After that intense fight, the cops seemed to best CS and his crew."
+    n "After that intense fight, the cops seem to best CS and his crew."
     n "CS is panting heavily."
     cs "Damn it..."
     pakoo "He's way too strong..."
@@ -997,7 +997,7 @@ label after_cop_fight:
     cs "Yeah, uhm..."
     cs "How are you doing?"
     show tate srs
-    tate "I'm fine, but you're going to have to explain what the fuck is happening here."
+    tate "I'm fine, but {i}you're{/i} going to have to explain what the fuck is happening here."
     show cs disappointed flipped
     cs "Fuck."
     show tate
@@ -1058,16 +1058,16 @@ label after_cop_fight:
     show sheriff at left
     with fade
     show copguy at mid_right with moveinright
-    copguy "Hey Sheriff, I have some unfortunate news."
+    copguy "Hey, Sheriff, I have some unfortunate news."
     sheriff "God damn it what is it this time?"
     copguy "Not only does CS have a group of allies, but he is armed to the teeth."
     copguy "He took down most of my men."
-    sheriff "Ah hell... so this is really THAT bad isn't it..."
+    sheriff "Ah hell... so this is really {i}that{/i} bad isn't it..."
     sheriff "We're gonna need some backup."
     copguy "Yeah, I just came to ask about that."
-    sheriff "Lemme call the National Guard, did you see where they were headed?"
+    sheriff "Lemme call the National Guard. Did you see where they were headed?"
     copguy "I think they were headed east, sir."
-    sheriff "Alright. I'll call the Montana National Guard, we can probably block them off."
+    sheriff "Alright. I'll call the Montana National Guard. We can probably block them off."
     copguy "Thank you so much. I will continue to track them down."
     sheriff "Good luck, Copguy."
     show copguy flipped with determination
@@ -1125,7 +1125,7 @@ label flint_car:
     show blue_light at left
     show red_light at right
     n "Sirens blare in the dealership as Copguy pulls up to the car."
-    copguy "Out of all the cars in my lot you decided to escape with, it was the Flintmobile?"
+    copguy "Out of all the cars in this lot you decided to escape with: It was the Flintmobile?"
     copguy "That's kinda sad."
     bad_end "Fleenstones?" "car_picker"  
     
