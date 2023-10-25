@@ -23,7 +23,7 @@ label dpn_call:
     arceus "There are a few people. I can hit up Digi and see if he wants to help."
     pakoo "Ah, yes, that's a good idea, Arceus. I should ask Aria and Nova if they can help us."
     cs "Is there any specific location we should head to?"
-    pakoo "Where are we anyways? Like west of Montana or something?"
+    pakoo "Where are we anyway? Like west of Montana or something?"
     arceus "I think so. I'll let them know to stop somewhere ahead of us, so we'll run into them."
     cs "Alright, I'll keep heading straight."
     pause 2.0
@@ -77,7 +77,7 @@ label car_ride_1:
     show mika at left
     show tate smug flipped at right
     with fade
-    tate "Haaahahaha-- *snort*"
+    tate "Haaahahaha-- {i}snort{/i}"
     kitty "Bloody hell!"
     mika "Geez, I didn't think it was {i}that{/i} bad."
     show tate flipped
@@ -279,8 +279,8 @@ label cs_meetup_2:
     digi "Ahhh."
     nova "Does this mean CS is getting cancelled?"
     cs "No, no, I'm not gonna get cancelled."
-    digi "You killed like... at least a few people!"
-    arceus "Yeah, but at least he didn't, like... sell feet pics."
+    digi "You killed like, at least a few people!"
+    arceus "Yeah, but at least he didn't, like, sell feet pics."
     aria_alt "Or say the N-word."
     digi "Oh, yeah, that clears up everything..."
     arceus "But the cops still don't like that we downed multiple units, so we should get moving about now."
@@ -342,7 +342,7 @@ label car_ride_2:
     aria_alt "Arceus was in jail for five years, Digi."
     digi "Yeah, I know, but that's an Arceus thing to do."
     nova "Is it?? That's kinda concerning."
-    digi "No, I meant like... he knows what he's doing."
+    digi "No, I meant like, he knows what he's doing."
     nova "Clearly not, if he ended up in jail!"
     n "Aria laughs."
     digi "Look, here's the thing, right? I'm just shaken up a bit still after Arceus and Pakoo called us explaining that they needed help quickly."
@@ -390,7 +390,7 @@ label car_ride_2:
     copguy "Oh, really? Because I just called the National Guard here to help me stop you."
     tate "Yeah, well, CS called me to stop you!"
     digi "Yeah! Us too!"
-    n "CS' friends start yelling as the national guard men ready their weapons."
+    n "CS' friends start yelling as the National Guard men ready their weapons."
     copguy "I see. You wanted to do this the hard way..."
     copguy "Well, you're gonna find out why you never pick the hard way!"
     if nice_car:
@@ -421,7 +421,7 @@ label cs_rage:
     show tate srs dark
     tate "CS, no, we really gotta wait a sec."
     show arceus dark flipped
-    digi "We're never gonna catch up with him at this point anyways..."
+    digi "We're never gonna catch up with him at this point anyway..."
     cs "Fuck! I can't believe this!"
     show cs dark angry with determination
     cs "He keeps running away like a wimp!"
@@ -685,7 +685,7 @@ label between_2:
     with dissolve
     play music "the_whale.mp3" loop volume 0.6
     cs "C'mon guys! We've gotta get to Copguy!"
-    tate "Where is Copguy, anyways? Do you even know where he could be?"
+    tate "Where is Copguy, anyway? Do you even know where he could be?"
     n "All of a sudden, the ground starts to shake as a blinding light blasts the group."
     stop music fadeout 3.0
     show tate shock
@@ -726,7 +726,7 @@ label between_2:
     show copguy_ex at right 
     with dissolve 
     show arceus worried flipped with vpunch
-    arceus "Ow! How did you---{w=1.0}{nw}"
+    arceus "Ow! How did you--{w=1.0}{nw}"
     copguy "I think that's all you needed to see. Let's end this, CS."
     stop music fadeout 3.0
     scene black with dissolve

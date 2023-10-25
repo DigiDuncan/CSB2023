@@ -28,7 +28,7 @@ label new_plan:
     cs "Ah! Arceus?!"
     arceus "CS, we've gotta get outta here, fast."
     show cs worried 
-    cs "OK, what? What's going on?"
+    cs "Okay, what? What's going on?"
     arceus "Cops. They're still after us."
     cs "Oh, come on, really?! Today has sucked bad enough already."
     show arceus
@@ -55,7 +55,7 @@ label new_plan:
     show arceus at right
     show cs at left
     with fade
-    arceus "OK, let's think. We have two big problems: The cops, and money."
+    arceus "Okay, let's think. We have two big problems: The cops, and money."
     cs "Right."
     arceus "Let's tackle these one at a time."
     cs "The cops, first."
@@ -103,17 +103,17 @@ label new_plan:
     anno "I'm down, but, do you have controllers?"
     cs "Do I?"
     hide cs with moveoutleft
-    n "Anno and Arc look at each other confused."
+    n "Anno and Arceus look at each other confused."
     show cs guitar at left with moveinleft
     n "CS comes back holding two guitar controllers and a drum kit."
-    cs "Saw em on the side of the road. Couldn't pass em up."
+    cs "Saw 'em on the side of the road. Couldn't pass 'em up."
     jump guitar_hero
 
 label guitar_hero:
     play music "<loop 0>audio/hitmewithyourbestshot.mp3" volume 0.5
     music Hit Me With Your Best Shot - Pat Benatar
     scene hotel_guitar_hero with fade
-    n "CS, Anno, and Arc relax by playing some Guitar Hero."
+    n "CS, Anno, and Arceus relax by playing some Guitar Hero."
     arceus "Man, we're all pretty good at this."
     cs "Wait, this gives me an idea."
     anno "What?"
@@ -272,7 +272,7 @@ label hotel_next_day:
     n "Arceus and Anno are stuffing their face."
     play music "<loop 0>audio/now_what.mp3" volume 0.5
     music Now What? 1 - Dr. Awesome
-    cs "The song has, like... a hundred thousand streams."
+    cs "The song has, like, a hundred thousand streams."
     n "Arceus nearly spits out his food."
     # arceus shocked?
     arceus "It has {i}what?!{/i}"
@@ -320,7 +320,7 @@ label song_2:
     music Happy Rock - Benjamin TISSOT
     n "An upbeat rock instrumental plays from Anno's computer."
     show arceus happy
-    arceus "Heck yeah, awesome. OK, here I go..."
+    arceus "Heck yeah, awesome. Okay, here I go..."
     arceus "{cps=15}{image=note_small1.png} We're going down to Vegas,{w=1.5} we're gonna strike it rich!{w=1.5}\nWe're going down to Vegas..."
     show arceus worried
     arceus "Uh..."
@@ -416,7 +416,7 @@ label ep_time:
     music Energetic Rock - Every Day Music
     anno "{cps=15}{image=note_small1.png} I made my way over to Japan... {image=note_small2.png}"
     $ line_2 = renpy.input("What should the next line be?", "", length = 64)
-    anno "OK! How about..."
+    anno "Okay! How about..."
     anno "{cps=15}{image=note_small1.png} I found myself in the U.K... {image=note_small2.png}"
     $ line_3 = renpy.input("What should the next line be?", "", length = 64)
     anno "Nice, nice, how about:"
@@ -520,7 +520,7 @@ label mcd:
     anno "Well, you guys ready to write the next song?"
     cs "Ugh, I'm starving."
     arceus "That hotel breakfast just isn't doing it for me today."
-    anno "Hmm... we have a little extra money from the first song's streams. Wanna go to, like... McDonald's?"
+    anno "Hmm... we have a little extra money from the first song's streams. Wanna go to, like, McDonald's?"
     n "CS perks up."
     cs "For sure."
     arceus "Well then, let's head out!"
@@ -539,7 +539,7 @@ label mcd:
     music Racing Minigame Song - FNAF 6
     n "CS and the gang sit at a table in the McDonald's and eat their food."
     n "As they eat, they start talking about their next song."
-    cs "OK, I had this idea, but it's a bit out there."
+    cs "Okay, I had this idea, but it's a bit out there."
     anno "Alright, let's hear it."
     $ renpy.music.set_pause(True, "music")
     play music2 "<loop 0>audio/france.mp3" volume 0.5
@@ -554,12 +554,12 @@ label mcd:
     arceus "That might be a little bit much."
     n "Arceus texts someone under the table."
     cs "Yeah, I was worried about that."
-    cs "OK, OK, I have a different idea."
+    cs "Okay, okay, I have a different idea."
     anno "Yeah...?"
     cs "Well, I don't have all the lyrics yet..."
     show arceus
     arceus "Maybe this time, we can fill in the lines!"
-    cs "OK! Here's what I have so far:"
+    cs "Okay! Here's what I have so far:"
     $ renpy.music.set_pause(True, "music")
     play music2 "<loop 0>audio/dragon_castle.mp3" volume 0.5
     music Dragon Castle - BreakingCopyright
@@ -618,7 +618,7 @@ label hotel_lobby_2:
     play music "<loop 0>audio/gold_room.mp3" volume 0.5
     music Youre At A Ball In The Gold Room - Nemos Dreamscapes
     n "As they walk through the hotel lobby to their room, they hum their newest song to themselves."
-    cs "{cps=15}{image=note_small1.png}{i}[line_5]{/i}{image=note_small2.png}"
+    cs "{cps=15}{image=note_small1.png} {i}[line_5]{/i} {image=note_small2.png}"
     n "Someone in the lobby overhears them singing the song and runs up to them."
     show guest at right with moveinright
     guest "Holy shit, are you from [band_name]?!"
@@ -741,11 +741,11 @@ label fan_interaction:
     with fade
 
     n "The gang regroups to discuss."
-    cs "OK, give it to me straight. How many sales of the EP?"
+    cs "Okay, give it to me straight. How many sales of the EP?"
     anno "57,685."
     cs "Holy shit, that's a lot of sales, how much money--{nw}"
     anno "57,688."
-    cs "OK, yeah, I got that, how much money does that equate to--{w=0.5}{nw}"
+    cs "Okay, yeah, I got that, how much money does that equate to--{w=0.5}{nw}"
     anno "57,692...{w=1.0}{nw}"
     cs "Stop refreshing the page!"
     anno "Sorry."
@@ -803,7 +803,7 @@ label howie:
     anno "Already? We haven't even struck a deal!"
     agent "Ah, you will, I trust in that... but until then, why don't I treat you all to the ride of a lifetime?"
     stop music fadeout 3.0
-    n "CS, Anno, and Arc follow Howie to the limo parked out front."
+    n "CS, Anno, and Arceus follow Howie to the limo parked out front."
     show howie with determination
     hide cs
     hide anno
@@ -851,7 +851,7 @@ label limo_time:
     music end    
 
     scene black with dissolve
-    n "As Anno reads over the contract, CS, Arc, and Howie talk more about the deal."
+    n "As Anno reads over the contract, CS, Arceus, and Howie talk more about the deal."
     menu:
         "Should they take the deal?"
         "Yes"  (type = "good"):
@@ -892,7 +892,7 @@ label signed_the_contract:
     arceus "Yeah, he'll be busy running the expo."
     cs "Man, I don't know... We didn't end on great terms..."
     arceus "Let's just get a good night's sleep. If we need to be up that early, I need to get some shuteye."
-    cs "OK..."
+    cs "Okay..."
 
     scene black with dissolve
     n "The gang heads upstairs to bed, but CS struggles to sleep well."
@@ -913,12 +913,12 @@ label signed_the_contract:
     cs "Ah!"
     show cs
     csgod "I wouldn't fret about Linus."
-    cs "How-- how did you--"
+    cs "How- how did you--"
     csgod "What you did was your best. Good men will realize that. His anger will have been brief, despite his rash actions."
     cs "How do you know all this?"
     csgod "That isn't important. What's important is your mind being prepared for the day ahead."
     csgod "You will go to bed, you will rest, and you will do your best, as you have."
-    cs "Th-thank you... what do I call you?"
+    cs "Th- thank you... what do I call you?"
     csgod "You can call me...{w=1.5} !!!"
     hide csgod with dissolve
     stop music fadeout 3.0
@@ -1137,7 +1137,7 @@ label second_tour_day:
         cs "Wait, how did you know my size?"
         ges "It's online, eh?"
         cs "Wait, it's what--{w=0.5}{nw}"
-        ges "That'll be $88.88, if you want em, eh?"
+        ges "That'll be $88.88, if you want 'em, eh?"
         cs "I'll take them!"
     else:
         ges "Welcome to the sho-- woah, are you CS?"
@@ -1164,7 +1164,7 @@ label second_tour_day:
         cs "Wait, how did you know my size?"
         ges "It's online."
         cs "Wait, it's what--{w=0.5}{nw}"
-        ges "That'll be $88.88, if you want em!"
+        ges "That'll be $88.88, if you want 'em!"
         cs "I'll take them!"
     stop music fadeout 3.0
     music end
@@ -1367,7 +1367,7 @@ label third_tour_day:
         "Ice":
             $ line_11 = "Everybody knows I'm cool as ice"
 
-    cs "OK!"
+    cs "Okay!"
     play sound "audio/start_rocking.mp3"
     cs "{cps=15}{image=note_small1.png} [line_11] {image=note_small2.png}"
     $ line_12 = renpy.input("What's the next line?", length = 64)
@@ -1414,7 +1414,7 @@ label final_tour_bus:
     agent "$10,000!"
     n "The gang perks up."
     cs "Wait... $10K?!"
-    n "Arc nudges CS."
+    n "Arceus nudges CS."
     arceus "You can go home!"
     show cs disappointed
     stop music fadeout 3.0

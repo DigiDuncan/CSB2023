@@ -89,7 +89,7 @@ label csbi_start:
     n "The Discord is overflowing with people trying to talk to CS."
     show cs at left
     play sound "ping.mp3"
-    cs "OK, bedtime! Bye guys!"
+    cs "Okay, bedtime! Bye guys!"
     show nova at right
     play sound "ping.mp3"
     nova "But it's like 8:04AM and you just woke up."
@@ -132,7 +132,7 @@ label csbi_start:
     carguy_nobeep "Nooot so nice scratch..."
     carguy "You should try Crotch Doctor!"
     show cs worried at left
-    cs "OH GOD AN ADVERTISER!!!"
+    cs "OH GOD, AN ADVERTISER!!!"
     stop music fadeout 3.0
     music end
     cs "QUICK START THE CAR, START THE CAR!!!"
@@ -184,7 +184,7 @@ label walmart:
     hide doug
     cs "Now, let's find some food!"
     show walmart_aisle behind cs with dissolve
-    cs "*pop* Noice! Genergy is two for $5! I'll take them all!"
+    cs "{i}pop{/i} Noice! Genergy is two for $5! I'll take them all!"
     cs "Oooh! Pringles are on sale too! Yoink!"
     n "CS walks to the checkout area."
     scene walmart_register
@@ -287,12 +287,12 @@ label room:
     cs "Let me go get the door..."
     show cs at left with move
     show door_open behind cs
-    cs "Hello! I am cs188 and I-"
+    cs "Hello! I am CS, and I--"
     show ed at right with moveinright
     play music "<loop 0>hohsis_theme.mp3" volume 0.2
     music Alfred Hitchcock Intro Theme - Charles Gounod
     ed "Alright that will be 200,000 Bits."
-    cs "Okay, I guess they already told you what I need done... Lemme get my wallet..."
+    cs "Okay, I guess they already told you what I need done. Lemme get my wallet..."
     cs "Hang on a sec. Didn't they say I could pay afterwards?"
     ed "Yeah, well, corporate policies just changed five seconds ago. Pay up."
     show cs flipped with determination
@@ -572,7 +572,7 @@ label csbi_end:
     $ persistent.seen.add("hoh_worker")
     hide worker_1 with moveoutright
     show worker_2 at right with moveinright
-    worker_2 "They--... They're on the roof!!"
+    worker_2 "They- They're on the roof!!"
     cs "Good!!"
     n "..."
     show black with dissolve

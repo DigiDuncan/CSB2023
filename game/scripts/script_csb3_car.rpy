@@ -68,7 +68,7 @@ label car_dialogue:
     cs "You went to college? I thought you'd been in prison for five years!"
     arceus "And...?"
     cs "How... how old are you?"
-    n "Arc locks eyes with CS."
+    n "Arceus locks eyes with CS."
     cs "I forgot what I was saying. Never mind."
     arceus "Yeah, that's fine."
 
@@ -170,7 +170,7 @@ label car_dialogue:
     cs "Oh, hey, Linus. It's me, CS!"
     cs "I'm sorry about the cop scenario. I had an issue with a company called HoH SiS where they scammed me, and I kinda beat up their workers."
     digi "CS, what the hell did you do?"
-    linus "It's all good. I heard that the cops were looking for them anyways."
+    linus "It's all good. I heard that the cops were looking for them anyway."
     linus "I'm sorry to hear about all that. I hope you are doing well."
     cs "We're doing okay!"
     linus "That's good. I hope to hear from you again."
@@ -301,7 +301,7 @@ label car_dialogue:
 
     cs "Let's play 20 Questions!"
     arceus "Sure."
-    cs "OK, it's an object."
+    cs "Okay, it's an object."
     arceus "Is it bigger than a breadbox?"
     cs "Nope."
     arceus "Um, is it useful?"
@@ -318,9 +318,9 @@ label car_dialogue:
     cs "Nope!"
     arceus "Dang it, uh, is it a tool?"
     cs "Yes?"
-    arceus "OK, OK, is it in the kitchen?"
+    arceus "Okay, okay, is it in the kitchen?"
     cs "Yes!"
-    arceus "OK, so is it a fork?"
+    arceus "Okay, so is it a fork?"
     cs "Nope!"
     arceus "How many questions have I done?"
     cs "You're halfway in."
@@ -348,7 +348,7 @@ label car_dialogue:
     pause 1.0
 
     cs "{i}First of all, let me get something straight: This is a journal, not a diary. I know what it says on the cover, but when Mom went out to buy this thing I specifically told her to get one that didn't say “diary” on it."
-    arceus "OK, OK, I get it."
+    arceus "Okay, okay, I get it."
 
     pause 1.0
 
@@ -396,7 +396,7 @@ label car_dialogue:
     pakoo "Because it's a little funny. Speaking of which did you know about this dance Digi did?{w=0.5}{nw}"
     digi "Stop! Billy, hang up on him!"
     billy "No, it's {i}my{/i} radio!"
-    n "Arc temporarily disables the Jupiter Jack."
+    n "Arceus temporarily disables the Jupiter Jack."
     digi "Thank you, Arc."
     billy "What the actual fuck? I'm gonna throw you all out of this car!"
     cs "Now I'm curious, what was Pakoo talking about, Digi?"

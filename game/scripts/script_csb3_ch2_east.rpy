@@ -22,7 +22,7 @@ label east:
     arceus "Thank God the slushie machine was working for once."
     cs "Okay, now that we can think about something other than food, what's our plan to get home?"
     arceus "Yeah... I have no clue currently."
-    arceus "I was hoping that we could hitchhike on a bus or something, but it might be ages until that happens... If it even {i}does{/i} happen... This town is too small for a bus route."
+    arceus "I was hoping that we could hitchhike on a bus or something, but it might be ages until that happens, if it even {i}does{/i} happen... This town is too small for a bus route."
     stop music fadeout 3.0
     music end
     menu:
@@ -64,7 +64,7 @@ label billy_driver:
     show cs at left with moveinleft
     show arceus worried at right with moveinright
     arceus "Are you crazy? To drive all the way back to New York, in a stranger's car, at that."
-    arceus "Besides, how are we even going to pay the guy anyways?"
+    arceus "Besides, how are we even going to pay the guy anyway?"
     cs "Well, we don't have to go all the way to New York. We could go a small distance then ask another driver."
     show arceus angry
     arceus "That would be even more in gas money!"
@@ -87,9 +87,9 @@ label billy_driver:
     cs "Alright, well, it's settled! We have our driver, Arceus!"
     arceus "..."
     show arceus
-    arceus "... What the fuck? Works for me, I guess."
+    arceus "...What the fuck? Works for me, I guess."
     cs "Hell yeah! I call shotgun!"
-    n "CS and Arc get into Billy's car."
+    n "CS and Arceus get into Billy's car."
     stop music fadeout 3.0
     music end
     hide cs with moveoutright
@@ -199,7 +199,7 @@ label montana:
     billy "That was quite the experience. I should've brought my Hercules Hook!"
     cs "Yeah, really, let's get out of here!"
     arceus "Huh? What's going on?"
-    cs "Nothing, Arc, just uh... slipped and fell in the store."
+    cs "Nothing, Arc, just uh, slipped and fell in the store."
     arceus "Okay, whatever, I'm going back to sleep..."
     n "Billy takes off out of the parking lot."
     scene car background night
@@ -251,7 +251,7 @@ label montana:
     show cultist gun
     n "The cultist aims at Arceus."
     cultist "You wanna fuck with me?"
-    arceus "I mean... If you're offering."
+    arceus "I mean, if you're offering."
     n "The cultist looks annoyed."
     show cultist
     cultist "I'm gonna get the rest of the gang to deal with you guys. Don't fucking move."
@@ -300,7 +300,7 @@ label montana:
     cs "Huh?"
     cs "I mean,"
     cs_fakegod "Yeah, that's right, it's me, CSGod!"
-    cs_fakegod "You'd better leave these three alone, or I'll uh... Smite you!"
+    cs_fakegod "You'd better leave these three alone, or I'll uh, Smite you!"
     cultist "CSGod doesn't smite, he uses YTP mag--{w=0.5}"
     cs_fakegod "Don't tempt your god! I will edit you so hard that you'll look like you came from an AwfulFawful YTP!"
     cultist_2 "We need to leave! We're sorry!"
@@ -365,7 +365,7 @@ label montana:
     cashier "Hello, what would you like to order?"
     billy "Hi, Billy Mays here! I would like to get the Buy 1 Get 1 Free breakfast meal for my friends here,"
     billy "and I would also like to get the Egg McMuffin and a Big Mac for me."
-    cashier "Sure thing, that'll be-{nw}"
+    cashier "Sure thing, that'll be--{nw}"
     billy "But I'm not done yet! I would like to triple the offer and get three Big Macs, and also three large sodas without any shipping!"
     cashier "Uhh, yeah, we can do that without shipping."
     cashier "That'll be about, let's see..."
@@ -376,7 +376,7 @@ label montana:
     scene mcdees
     show billy car
     with fade
-    n "CS and Arc happily chow down on the Mickey D's they just got."
+    n "CS and Arceus happily chow down on the Mickey D's they just got."
     arceus "Thank God for that."
     cs "I have never been so excited to get a Big Mac."
     scene car plains
@@ -390,7 +390,7 @@ label south_dakota:
     cs "Woohoo!"
     stop music fadeout 3.0
     music end
-    arceus "I don't think you should be super excited. There is like... nothing here."
+    arceus "I don't think you should be super excited. There is, like, nothing here."
     cs "Oh, yeah, we don't even have trees to look at anymore."
     cs "Is there anything to do in this state?"
     arceus "There's Mount Rushmore, I guess there's Wall Dr--{w=0.5}"
@@ -477,7 +477,7 @@ label nebraska:
     billy "Hi, it's Billy!"
     arceus "Hey, Pakoo."
     cs "Yeah! I haven't seen you in a while. I never thought you'd live in this place!"
-    pakoo "I never thought you guys would come down to Omaha. There's, like... nothing here."
+    pakoo "I never thought you guys would come down to Omaha. There's, like, nothing here."
     cs "We've been through a lot recently. Do you know somewhere we can eat and rest for the night?"
     n "Pakoo thinks for a moment."
     pakoo "I think I know a place."
@@ -634,7 +634,7 @@ label michigan:
     billy "It looks like we're coming up to a place called Bronson. Maybe we could stop there for food."
     arceus "Nah, this place looks too rural to have much around."
     n "The two look over to CS, who seems visibly distressed."
-    arceus "Uh... CS? How's it going?"
+    arceus "Uh, CS? How's it going?"
     cs "I... should be fine."
     cs "Something about the name Bronson, Michigan sends a chill down my spine."
     arceus "We'll just skip it. Nothing around here anyway."
@@ -778,7 +778,7 @@ label interstate_69:
     billy "Well, that was deeply disconcerting."
     gnome "If you are not used to it, I suppose so."
     billy "I think I need a break from driving after all that."
-    cs "Yeah, that's fine. I was getting hungry anyways."
+    cs "Yeah, that's fine. I was getting hungry anyway."
     cs "Hey Mx. Gnome, do you know anywhere good to eat around here?"
     gnome "I don't often eat Human Food, however, I do know of one Restaurant because of my previous Human Encounter."
     cs "Cool! Can you take us there?"
@@ -1074,7 +1074,7 @@ label interstate_69:
     billy "So, no matter which way I take, I'm at risk of ending up in a cursed path to the middle of a haunted forest?"
     aria "I wouldn't say cursed or haunted, but I would advise staying with me."
     aria "Any unfamiliar woods comes with a chance of getting lost, and I imagine you all don't want that."
-    billy "Why would anyone!?"
+    billy "Why would anyone?!"
     aria "To each their own, I suppose."
     billy "What do you all think?"
     show cs dark flipped behind arceus
@@ -1112,7 +1112,7 @@ label interstate_69:
     arceus "Oh for f--{w=0.5} whatever, just get us out of here!"
     aria "No need to worry, we're on the way."
     arceus "As long as we're on the fastest path out of here, I'm happy."
-    cs "Aria, how exactly do you find this relaxing!?"
+    cs "Aria, how exactly do you find this relaxing?!"
     aria "I simply appreciate the beauty of the world around me."
     billy "I think that's fair. That {i}is{/i} a very pretty tree."
     aria "Thank you! See? {i}Someone{/i} gets it!"
@@ -1140,7 +1140,7 @@ label interstate_69:
     aria "It's similar to a CRT whine, so it might be too high-pitched for you to be able to hear it."
     arceus "I can hear CRTs, but I don't hear that..."
     billy "What are you talking about? That's so loud, how can you not hear it?"
-    cs "Wait, Billy and Aria are the only two that can hear it!?"
+    cs "Wait, Billy and Aria are the only two that can hear it?!"
     cs "The Fae must have something to do with the weird forest obsession."
     cs "We need to get Billy out of here, ASAP."
     arceus "We can't go forward with it up ahead!"
@@ -1153,7 +1153,7 @@ label interstate_69:
     n "They all slip past the Seraphite, and It floats off between the trees."
     n "They walk further along the path, which becomes less clear as tree branches block their way."
     aria "Huh, these aren't normally here..."
-    arceus "What do you mean \"not normally here\"?! Is this path changing!?"
+    arceus "What do you mean \"not normally here\"?! Is this path changing?!"
     cs "What the hell? How are we getting out of here?!"
     billy "I guess we've gotta just go through."
     arceus "Go through where?! These branches are about as thick as the trees on the side!"
@@ -1165,7 +1165,7 @@ label interstate_69:
     n "Eventually, they reach the end and the canopy begins to thin out as they reach a path next to a road."
     show creepy_path_exit
     aria "Alright, here's the path back."
-    arceus "Are you sure?! Can you guarantee me that this path is the same way it's supposed to be!?"
+    arceus "Are you sure?! Can you guarantee me that this path is the same way it's supposed to be?!"
     aria "Yeah, that path is the same as it always is."
     billy "That path goes back the same way we came, of course it's fine."
     arceus "That was what she said about the last path and then we ended up climbing between a tangled web of branches."
@@ -1367,7 +1367,7 @@ label interstate_94:
     violent_jay "Clown connection again. I could detect two clowns in here."
     mario "Smiley was the only one."
     violent_jay "There were definitely two. The other is still here."
-    n "They walk towards the back where CS and Arc are, and Violent Jay points at CS."
+    n "They walk towards the back where CS and Arceus are, and Violent Jay points at CS."
     hide violent_jay
     hide shaggy_too_dope
     with moveoutright
@@ -1408,7 +1408,7 @@ label interstate_94:
     hide arceus
     hide billy
     with moveoutleft
-    n "CS, Billy, and Arc all walk out."
+    n "CS, Billy, and Arceus all walk out."
     mario "That was really nice. I guess you {i}can{/i} have shit in Detroit after all."
     scene black with dissolve
     jump ohio
@@ -1567,7 +1567,7 @@ label pennsylvania:
     show cs at left
     with dissolve
     show arceus at right with moveinright
-    n "Arc catches up with CS at the sign-up table."
+    n "Arceus catches up with CS at the sign-up table."
     signup "...and you said your last name is... 188?"
     cs "Yeah, this confuses everyone."
     cs "Oh, hey, Arc! Whatcha doing?"
@@ -1575,9 +1575,9 @@ label pennsylvania:
     arceus "Just came to support my friend."
     cs "Aww, thanks, man."
     show arceus
-    signup "OK, that's you all registered. Fuzzy guy, you signing up too?"
+    signup "Okay, that's you all registered. Fuzzy guy, you signing up too?"
     arceus "Nah, I feel like that would be basically cheating."
-    cs "OK, well, I have to go to the backstage and get set up. See you soon, Arc!"
+    cs "Okay, well, I have to go to the backstage and get set up. See you soon, Arc!"
     stop music fadeout 3.0
     music end
     scene cc_backstage with dissolve
@@ -1709,7 +1709,7 @@ label win_pencil:
     hide digi onlayer broadcast with moveoutright
     n "Digi runs off."
     show arceus happy at t_stagescreen onlayer broadcast with moveinright
-    n "Arc runs on stage."
+    n "Arceus runs on stage."
     arceus "Holy shit, CS, you did it! That was amazing!"
     hide arceus onlayer broadcast
     show cs happy at t_stagescreen onlayer broadcast
@@ -1803,13 +1803,13 @@ label back_home:
     ed "What do you think, CS? After you put Wesley in the hospital? After you crippled most of our workers?"
     cs "Well, you guys scammed me out of my money and broke my computer! Of {i}course{/i} I wanted some kind of revenge!"
     ed "Why do you think this all started?"
-    cs "I--{w=0.5} I don't know, because you're evil?"
+    cs "I-{w=0.5} I don't know, because you're evil?"
     ed "CS, you made a laughingstock of our company long ago."
     ed "When you made that parody video of us that you call a \"YTP\", people wouldn't stop harrassing us about it."
     rich "You tried to humiliate us with your videos. You made others think we were a joke!"
     ed "You see, my ancestors came from the planet JoJ many years ago to start a foundation company."
     ed "It was the best damn foundation company in the world."
-    ed "We repaired more than fifty percent of all foundations on the planet, and now... you."
+    ed "We repaired more than 50 percent of all foundations on the planet, and now, you."
     ed "You. You embarrassed us with those silly stupid, videos that dragged our family company through the mud."
     rich "That's why Ed wanted to get revenge on you. That's why we destroyed your computer, CS."
     cs "I don't understand..."
@@ -1864,7 +1864,7 @@ label talktohohsis:
     show cashier at mid_mid_right behind cs with moveinleft
     cashier "Yeah! Go CS!"
     show pakoo happy at center with moveinleft
-    pakoo "Yeah! Get em, CS!"
+    pakoo "Yeah! Get 'em, CS!"
     show peppino at mid_left behind cs with moveinleft
     peppino "It's pizza time!"
     show digi at mid_mid_left behind cs with moveinleft
@@ -2062,7 +2062,7 @@ label ltt_ending:
     n "CS starts up his stream overlay and goes live on Twitch."
     cs "Hey guys! CS here! Sorry I was gone for a couple weeks!"
     n "The chat slowly comes in, confused."
-    chat "Oh you're streaming?{w=0.25} I thought you were working for LTT now?{w=0.25} What happened to the YTPs?{w=0.25} Are you OK?{w=0.25} Where have you been?"
+    chat "Oh you're streaming?{w=0.25} I thought you were working for LTT now?{w=0.25} What happened to the YTPs?{w=0.25} Are you okay?{w=0.25} Where have you been?"
     show cs at mid_left
     cs "Well guys..."
     cs "It's a long story..."

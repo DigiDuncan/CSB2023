@@ -110,7 +110,7 @@ label high_gpu:
     show cashzone_foreground
     with fade
     show cs at mid_left with moveinleft
-    cashier "That'll be $1188."
+    cashier "That'll be $1,188."
     cs "Welp, not my money!"
     cs "Awesome! Hopefully this is gonna be good enough for Linus!"
     hide cs with moveoutright
@@ -776,7 +776,7 @@ label fire_range:
     show arceus flipped
     cs "I might tell Tate as well..."
     cs "You mind if we make some calls as well?"
-    n "Pakoo pulls out a couple of phones from his back pocket and gives them to Arc and CS."
+    n "Pakoo pulls out a couple of phones from his back pocket and gives them to Arceus and CS."
     show pakoo at center with move
     pause 1.0
     show pakoo at left with move

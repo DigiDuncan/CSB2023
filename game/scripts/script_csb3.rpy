@@ -24,7 +24,7 @@ label csbiii_start:
     linus "Well, enjoy!"
     hide linus with moveoutright
     cs "I guess I better get to work on editing. Let's see what videos I need to edit..."
-    cs "Let's see, I have the new TechQuickie video on how live streaming works, or the video on how at least half of the keys on your keyboard should be macros..."
+    cs "Let's see, I have the new TechQuickie video on how livestreaming works, or the video on how at least half of the keys on your keyboard should be macros..."
     if persistent.true_ending:
         menu:
             "Hold a meeting?"
@@ -59,7 +59,7 @@ label edit_video:
     cs "Nah, I wanna finish this video first. That way I can help you pump out videos faster."
     linus "Alright, that's fine. I'll probably send Colton to get the parts instead. He's good at sucking up and doing this kinda thing."
     cs "Alright, yeah. I definitely wasn't using this as an excuse to get out of shopping!"
-    linus "...ok? Whatever, just keep editing."
+    linus "...okay? Whatever, just keep editing."
     cs "Yeah, no, don't worry, I've got this."
     hide linus with moveoutright
     n "Linus leaves the room."
@@ -180,7 +180,7 @@ label boost:
     show linus at left with ease
     show linus at center with ease
     show cs happy
-    n "CS' frown fades into a big grin as they both high-five."
+    n "CS' frown fades into a big grin as they both high five."
     cs "Hell yeah! I never would've thought that YTPs would help me in a business setting, let alone with a boss who enjoys them!"
     cs "Alright! Well, I guess I'd better get back to poopin'!"
     show cs flipped at left
@@ -214,7 +214,7 @@ label boost:
     show cs disappointed
     cs "Umm, you sure this is the right box? It literally says--"
     linus "Yeah, I know what it says, I just wrote this on here so no one else uses it."
-    linus "Don't worry, I didn't, like... buy it from some creepy dude at a garage sale who claims it's haunted."
+    linus "Don't worry, I didn't, like, buy it from some creepy dude at a garage sale who claims it's haunted."
     n "CS looks unnerved."
     linus "Look just... open the box. I'm sure you'll like it."
     n "CS cautiously takes the box and opens the top. "
@@ -286,7 +286,7 @@ label boost:
         cs "You really have butter fingers with everything, Linus."
     else:
         linus "Here. Take this water bottle, it will keep you hydrated and your water cool. lttstore.com"
-        cs "... Linus, we aren't filming..."
+        cs "...Linus, we aren't filming..."
         linus "Sorry. Force of habit."
     n "Some time passes and they finish the recording."
     n "Afterwards, CS goes up to Linus' office."
@@ -502,7 +502,7 @@ label cops_ltt:
     arceus "The cops are almost here, CS! If they find you, you won't be able to work anyway!"
     cs "I'm done running, Arc. I need to be with LTT."
     arceus "Welp. I tried."
-    n "Arc shrugs and walks away as he goes to escape on his own."
+    n "Arceus shrugs and walks away as he goes to escape on his own."
     show arceus flipped with determination
     hide arceus flipped with moveoutright
     linus "CS, what happened with the cops?! I still have no clue what's going on!"
@@ -557,7 +557,7 @@ label arc_escape:
     show colton at mid_left
     n "The employees at LTT are in chaos as the police show up to the front of the building."
     luke "WTF is going on?"
-    taran "Linus! What did you do!?"
+    taran "Linus! What did you do?!"
     linus "Relax, guys, it's nothing that we did."
     n "Linus mutters to himself."
     linus "{i}I should've done a background check on CS. It's weird how--{/i}"
@@ -675,11 +675,11 @@ label arc_escape:
     copguy "Sure thing, boss. I'll track him down...{w=0.5} on my own."
     show copguy flipped
     hide copguy with moveoutright
-    n "Copguy turns around and heads out to track down CS and Arc."
+    n "Copguy turns around and heads out to track down CS and Arceus."
     stop music fadeout 3.0
     music end
     scene washington_road with fade
-    n "Meanwhile, CS and Arc are still making their way through the US without any sense of direction."
+    n "Meanwhile, CS and Arceus are still making their way through the US without any sense of direction."
     play music "<loop 0>echoing.mp3" volume 0.5
     music Echoing - Banana
     show cs dark at left with moveinleft
@@ -695,7 +695,7 @@ label arc_escape:
     show blue_light at left
     show red_light at right
     play sound "<loop 0>siren.ogg" volume 0.1
-    n "Arceus squints into the night, but CS and Arc both immediately recognize the sounds."
+    n "Arceus squints into the night, but CS and Arceus both immediately recognize the sounds."
     show cs worried dark
     show arceus worried dark
     "CS and Arceus" "{i}Shit!"
@@ -718,7 +718,7 @@ label ytp_magic_fight:
     show cs concentrate dark
     n "CS closes his eyes. He starts to concentrate on the sirens and the car."
     play sound "<loop 0>siren.ogg" loop fadein 3.0 volume 0.4
-    arceus "CS?!? What are you doing!?"
+    arceus "CS?! What are you doing?!"
     play sound "<loop 0>siren.ogg" loop volume 0.5
     arceus "CS!!!! They're heading right for us!!"
     play sound "<loop 0>siren.ogg" loop volume 0.6
@@ -740,7 +740,7 @@ label ytp_magic_fight:
     pause 0.2
     show cs dark
     pause 1.0
-    arceus "CS??? Are you okay?"
+    arceus "CS?? Are you okay?"
     cs "Yeah, I feel really good, actually."
     cs "Are we good?"
     arceus "..."
@@ -899,7 +899,7 @@ label pussy_out_forest:
     with moveoutright
     scene black with fade
     stop sound fadeout 1.0
-    n "CS and Arc quickly jump into the trees next to them."
+    n "CS and Arceus quickly jump into the trees next to them."
     n "As CS and Arceus hunker down into the foliage, they see the flash of lights fly past them."
     arceus "Phew! That was a close one, CS!"
     cs "Yeah, it looks like we hid just in time."
@@ -909,7 +909,7 @@ label pussy_out_forest:
 label wait_forest:
     cs "We should probably wait for a little bit. They might turn around and see us."
     arceus "Yeah, that's a good point. I kinda don't want to risk going back to prison again."
-    n "CS and Arc stay quiet in the forest for about 15 minutes before heading back onto the road again."
+    n "CS and Arceus stay quiet in the forest for about 15 minutes before heading back onto the road again."
     scene washington_road with fade
     show cs dark at left with moveinleft
     show arceus dark at right with moveinright
@@ -924,10 +924,10 @@ label wait_forest:
     cs "If you say so. I just hope we don't have to {i}walk{/i} all the way there."
     arceus "I don't think that'll be the case."
     copguy "{cps=10}I don't think so either."
-    n "Before CS and Arc can react, they both get the lights knocked out of them."
+    n "Before CS and Arceus can react, they both get the lights knocked out of them."
     play sound "punch.ogg"
     scene black with determination
-    n "When CS and Arc wake up, they find themselves in handcuffs leaned up against a cop car."
+    n "When CS and Arceus wake up, they find themselves in handcuffs leaned up against a cop car."
     scene washington_road
     show cs disappointed dark at left
     show arceus dark flipped at mid_left_left
@@ -953,8 +953,8 @@ label wait_forest:
     show arceus worried flipped at right
     show cs disappointed at left
     with moveinleft
-    n "CS and Arc are thrown into the back of the cruiser as Copguy barks some order into his walkie."
-    copguy "This is Copguy calling in a 1-8-8 on Compass Road. Sheriff? We got em."
+    n "CS and Arceus are thrown into the back of the cruiser as Copguy barks some order into his walkie."
+    copguy "This is Copguy calling in a 1-8-8 on Compass Road. Sheriff? We got 'em."
     n "Copguy starts the car and they drive off."
     jump copcar_menu
 
@@ -1044,7 +1044,7 @@ label good_convince:
     music end
     hide copguy with moveoutleft
     n "Copguy gets out of the car."
-    n "He then proceeds to open the doors and let CS and Arc out, freeing them of their shackles."
+    n "He then proceeds to open the doors and let CS and Arceus out, freeing them of their shackles."
     scene washington_road with fade
     show copguy dark flipped at right with moveinleft
     show copguy dark with determination
@@ -1060,7 +1060,7 @@ label good_convince:
     show arceus dark flipped at mid_right_right with move
     show arceus dark at mid_right_right
     show cs dark
-    n "CS and Arc look at each other and smile."
+    n "CS and Arceus look at each other and smile."
     play music "<loop 0>bun_guster.mp3" volume 0.3
     music Bun Guster - Satoru Kosaki
     arceus "Holy crap, I didn't think that would work."
@@ -1143,7 +1143,7 @@ label north2:
 label west:
     cs "I think we should go west."
     arceus "Alright, we can try."
-    n "CS and Arc run into the Pacific Ocean."
+    n "CS and Arceus run into the Pacific Ocean."
     scene washington_road day
     show cs at left
     show arceus at right
@@ -1162,7 +1162,7 @@ label west2:
     cs "Let's try going west again. I'm sure there is something there."
     show arceus worried
     arceus "Uhm, okay... maybe we've missed something."
-    n "CS and Arc run into the Pacific again."
+    n "CS and Arceus run into the Pacific again."
     scene washington_road dusk
     show cs dusk at left
     show arceus dusk at right
@@ -1182,7 +1182,7 @@ label west3:
     show arceus worried
     arceus "I really don't want to go there again..."
     cs "Nah, we got this, for sure this time."
-    n "CS and Arc find a cool looking crab, but still just the ocean again."
+    n "CS and Arceus find a cool looking crab, but still just the ocean again."
     scene washington_road
     show cs dark at left
     show arceus angry dark at right
@@ -1201,7 +1201,7 @@ label west3:
 label west4:
     cs "Okay! One last time!"
     arceus "... Something tells me that you were in an asylum for a bit..."
-    n "CS and Arc, surprisingly, find the ocean again."
+    n "CS and Arceus, surprisingly, find the ocean again."
     scene washington_road morning
     show cs happy at left
     show arceus angry at right

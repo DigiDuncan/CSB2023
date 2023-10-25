@@ -67,7 +67,7 @@ label archival:
     unknown "Look, there's nothing to worry about. Besides, even if you die, how are you gonna tell them?"
     k207 "Shut up, K19!"
     k199 "Alright, sheesh."
-    k207 "What I was trying to say is that this could've taken place after HoH SiS left, meaning CS is out right now anyways."
+    k207 "What I was trying to say is that this could've taken place after HoH SiS left, meaning CS is out right now anyway."
     k199 "Yeah, but why did it {i}trigger?{/i} There is {i}no one{/i} here!"
     k207 "I don't know, man! I'm just throwing something out there!"
     k199 "God! It's a miracle you could put this together, K17. It feels like this place is barely holding up!"

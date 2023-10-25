@@ -387,7 +387,7 @@ label england_second:
     show arceus
     cs "I'm on vacation, and I decided to visit England!"
     arceus "Ah."
-    arceus "So uhm..."
+    arceus "So, um..."
     arceus "Do you need a place to stay?"
     cs "I guess so, I have some money but I don't know what hotels are like here."
     show arceus happy
@@ -469,7 +469,7 @@ label arceus_place:
     arceus "For a long time, actually. I've been wanting to move up here, but, y'know..."
     kitty "Yeah, you did a dumb and got arrested!"
     show arceus worried
-    arceus "Yeah, yeah, well anyways..."
+    arceus "Yeah, yeah, well anyway..."
     show arceus
     arceus "What do you want to do here, CS? It's a brand new country! There are a ton of things you can do..."
     jump england_menu
@@ -530,7 +530,7 @@ label hell_zone:
     pause 0.2
     show cs disappointed
     n "CS slowly gets up."
-    cs "Wh-- what? It's already morning?"
+    cs "Wh- what? It's already morning?"
     arceus "Yep."
     arceus "More importantly, you got accepted into this season of Hell's Kitchen."
     n "CS jerks up."
@@ -545,7 +545,7 @@ label hell_zone:
     hide arceus
     with moveoutright
     scene black with dissolve
-    n "Arc drives CS up to the studio for the Hell's Kitchen trial."
+    n "Arceus drives CS up to the studio for the Hell's Kitchen trial."
     scene car_insidearc_fg flipped
     show hell_outside behind car_insidearc_fg
     show arceus at right
@@ -597,7 +597,7 @@ label hell_zone:
     show cs disappointed
     with dissolve
     cs "I despise it when people bring up my clothes."
-    cs "What's wrong with this, anyways? It's perfectly normal!"
+    cs "What's wrong with this, anyway? It's perfectly normal!"
     scene hell_kitchen
     show cs disappointed flipped at right
     show gordon at left
@@ -749,7 +749,7 @@ label good_ramsay:
     cs "I think..."
     cs "That you were wrong!"
     show case at center with moveinbottom
-    n "CS pulls out the briefcase and shows it to Arc."
+    n "CS pulls out the briefcase and shows it to Arceus."
     show arceus worried
     arceus "Holy shit! What'd you do??"
     cs "I made him a Genergy, CS style!"
@@ -763,8 +763,8 @@ label good_ramsay:
     show arceus
     arceus "Whatever, let's head back home."
     scene black with dissolve
-    n "CS and Arc head back home."
-    n "Once CS and Arc get home, they go inside and discuss the news."
+    n "CS and Arceus head back home."
+    n "Once CS and Arceus get home, they go inside and discuss the news."
     scene dining_room
     show cs at left
     show arceus at center
@@ -777,7 +777,7 @@ label good_ramsay:
     cs "Well, I sold the recipe, so I don't really know anymore."
     kitty "Well, shit..."
     cs "Just kidding! I still have a backup, but I'm gonna keep it secret."
-    kitty "Ah, ok."
+    kitty "Ah, okay."
     arceus "Well, you did quite a bit already. Is there anything else you want to do here?"
     $ achievement_manager.unlock("Master Chef")
     jump england_menu
@@ -793,7 +793,7 @@ label top_zone:
     arceus "Still, you're crazy to think that you can beat them with that."
     cs "Well, that's the fun part, right?"
     cs "If I win, I'll blow them away!"
-    arceus "How do you even get on Top Gear, anyways?"
+    arceus "How do you even get on Top Gear, anyway?"
     kitty "We might be able to just call them."
     cs "If it's that easy, then, hell yeah, let's do it!"
     scene black with dissolve
@@ -809,7 +809,7 @@ label top_zone:
     arceus "Sure, I guess. Let's go."
     stop music fadeout 3.0
     show black with dissolve
-    n "CS, Arc, and Kitty head up to the Top Gear Track."
+    n "CS, Arceus, and Kitty head up to the Top Gear Track."
     scene car_insidearc_fg flipped
     show top_gear_track behind car_insidearc_fg
     show arceus at right
@@ -981,7 +981,7 @@ label scott_zone:
     cs "Alright, well, what are we waiting for? Let's go!"
     stop music fadeout 3.0
     scene black with dissolve
-    n "CS and Arc get in the car and head up to Tom Scott's house."
+    n "CS and Arceus get in the car and head up to Tom Scott's house."
     scene tom_house with fade
     show cs at left with moveinleft
     show arceus at right with moveinright
@@ -1062,7 +1062,7 @@ label scott_move:
     show arceus
     cs "Sure, yeah, let's head back home."
     scene black with dissolve
-    n "Arc and CS drive back to the house."
+    n "Arceus and CS drive back to the house."
     scene dining_room
     show cs at left
     show arceus at center
@@ -1548,7 +1548,7 @@ label miku_pizza:
     miku "... so I said, \"You think that was fast, wait until I sing {i}INTENSE VOICE!\""
     n "CS laughs."
     cs "Well, Miku, this was very nice, but I need to head on my way."
-    miku "OK! Thanks for sharing lunch with me, this was very nice."
+    miku "Okay! Thanks for sharing lunch with me, this was very nice."
     cs "Bye, Miku!"
     $ achievement_manager.unlock("Have Some Fucking Pizza!")
     scene black with dissolve

@@ -264,7 +264,7 @@ define anno = Character("Anno", callback = renpy.partial(char_callback, name = "
 define border_guard = Character("Border Guard", callback = renpy.partial(char_callback, name = "border_guard"))
 define linus = Character("Linus", callback = renpy.partial(char_callback, name = "linus", beep = "ltt"))
 define asylum_worker = Character("Mr. Mohs", callback = renpy.partial(char_callback, name = "mohs"))
-define csgod = Character("CS God", callback = renpy.partial(char_callback, name = "csgod", beep = "csgod"))
+define csgod = Character("CSGod", callback = renpy.partial(char_callback, name = "csgod", beep = "csgod"))
 define luke = Character("Luke", callback = renpy.partial(char_callback, name = "luke", beep = "luke"))
 define taran = Character("Taran", callback = renpy.partial(char_callback, name = "taran"))
 define colton = Character("Colton", callback = renpy.partial(char_callback, name = "colton"))
