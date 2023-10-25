@@ -1226,7 +1226,7 @@ label japan_two:
     show cs at left
     with fade
     n "As CS wakes up, he sees the plane landing outside."
-    cs "Wow, I really slept a lot, or that was a crazy fast trip."
+    cs "Wow, either I really slept a lot, or that was a crazy fast trip."
     cs "Welp, time to check out Japan!"
     scene black with dissolve
     n "CS exits the terminal and enters the airport."
@@ -1235,7 +1235,7 @@ label japan_two:
     play music "<loop 0>automatic_love.mp3" volume 0.4
     music Automatic Love - Siix0
     cs "Wow, this place is already pretty crazy!"
-    cs "Well, I don't know anyone who speaks English this time over here.."
+    cs "Well, I don't know anyone who speaks English over here.."
     cs "And I forgot why I was travelling here, to be honest."
     n "CS walks out of the airport."
     hide cs with moveoutright
@@ -1251,7 +1251,7 @@ label anime_adventure:
     cs "This place is so compact, I could be here for days!"
     cs "Let's start looking!"
     scene black with dissolve
-    n "CS quickly finds a shop selling video games, and other electronics."
+    n "CS quickly finds a shop selling video games and other electronics."
     scene game_store_back with fade
     show cs at mid_left with moveinleft
     cs "Wow, this is like a dream!"
@@ -1259,7 +1259,7 @@ label anime_adventure:
     cs "I would've freaked out at this when I was a kid."
     if england_check:
         cs "There are some games I could buy here, but I don't know what to pick..."
-        cs "I've always wanted a big box of some classic DOS games I played, but I don't know if they'd have that."
+        cs "I've always wanted a big box of some classic DOS games I used to play, but I don't know if they'd have that."
         cs "I guess I can go ask the cashier."
         show cs flipped with determination
         hide cs with moveoutleft
@@ -1281,17 +1281,17 @@ label anime_adventure:
         with fade
         show cs at left with moveinleft
         n "As CS is about to walk out of the store, the cashier says something to him."
-    cashier "Hey dude, nice cosplay!"
+    cashier "Hey, dude, nice cosplay!"
     show cs disappointed
     cs "Huh?"
     n "CS was surprised the cashier could speak English."
     cashier "Yeah, your maid outfit! Were you going to Comiket this year?"
-    cs "No I-- This is my regular attire..."
+    cs "No, I-- This is my regular attire..."
     cashier "C'mon! No one just wears that kinda outfit everywhere!"
     cashier "Wait a second, isn't that the outfit of..."
     cs "I'm sorry, I really need to get going."
     show cs worried
-    cashier "Yeah I remember! That's from Nekopara, right?"
+    cashier "Yeah, I remember! That's from Nekopara, right?"
     cashier "Wait there. I know the head of NekoWorks, lemme take a picture and send it to them."
     hide cs with moveoutright
     play music "<loop 0>chase.mp3" volume 0.4
@@ -1330,7 +1330,7 @@ label anime_adventure:
     show cashier at left with moveinleft
     cashier "Hey, look at that! It's Sayori, the creator of Nekopara!"
     show cs scared
-    cs "WHAT?!?!"
+    cs "{i}What?!"
     play music "<loop 0>neko_to_sanpo.mp3" volume 0.4
     music Neko To Sanpo - NEKOWORKs
     sayori "Hello, and who might you be?"
@@ -1339,7 +1339,7 @@ label anime_adventure:
     cashier "Does it matter who he is? He said that he's been wearing this outfit forever!"
     sayori "Is this true?"
     cs "Well, okay, it's a long story..."
-    cs "Since you are the creator, I guess I can bring this up."
+    cs "Since you {i}are{/i} the creator, I guess I can bring this up."
     cs "It all started several years ago..."
     scene black with dissolve
     centered "Two hours later..."
@@ -1347,25 +1347,25 @@ label anime_adventure:
     show cs disappointed at center
     show cashier at left
     with fade    
-    cs "So yeah. That's why I wear this outfit."
-    cs "You guys better tell NO ONE about this."
+    cs "So, yeah. That's why I wear this outfit."
+    cs "You guys better tell {i}no one{/i} about this."
     cashier "That was amazing!"
     sayori "Well, that does seem very reasonable."
-    sayori "And technically, you've been promoting my games for a long time now."
+    sayori "And, technically, you've been promoting my games for a long time now."
     show cs
     cs "Have I?"
-    sayori "Well based on the dates you gave me, the amount of people who bought Nekopara merch has gone up dramatically."
-    sayori "So as a token of gratitude, I'm gonna give you a bundle of my sales from the past few years."
+    sayori "Well, based on the dates you gave me, the amount of people who bought Nekopara merch has gone up dramatically."
+    sayori "So, as a token of gratitude, I'm gonna give you a portion of my sales from the past few years."
     cs "Woah, really?"
     cs "Just for wearing this outfit?"
     sayori "The numbers don't lie."
     sayori "Here you go."
-    n "Sayori hands CS a few stacks of Yen, that add up to about 10,000 USD."
-    sayori "Don't go spend it all in one place, unless it's Nekopara merch."
+    n "Sayori hands CS a few stacks of yen that add up to about 10,000 USD."
+    sayori "Don't go spending it all in one place, unless it's on Nekopara merch."
     cashier "See? Look how cool your cosplay was!"
     show cs happy
     cs "Yeah. I do have a really cool outfit."
-    cs "Thank you so much guys!"
+    cs "Thank you so much, guys!"
     show cs happy flipped with determination
     hide cs with moveoutleft
     stop music fadeout 3.0
@@ -1393,13 +1393,13 @@ label karaoke:
     n "CS walks around for a bit, trying to find a place to stop at."
     scene karaoke_bar_outside with fade
     show cs at center with moveinleft
-    cs "We got a restaurant, a few general stores..."
+    cs "We've got a restaurant, a few general stores..."
     cs "Ah! Bar and Karaoke!"
     cs "Let's go see what they have!"
     stop music fadeout 3.0
     music end    
     scene black with dissolve
-    n "CS enters the Bar and Karaoke, and makes his way over to the Karaoke area."
+    n "CS enters the Bar and Karaoke, and makes his way over to the karaoke area."
     scene karaoke_bar_inside with fade
     show cs at mid_left with moveinleft
     cs "Wow, look at this! So many songs to play here!"
@@ -1419,7 +1419,7 @@ label karaoke:
     show cs at mid_left
     with fade
     cs "Woohoo! That was fun!"
-    cs "That kinda wore me out though."
+    cs "That kinda wore me out, though."
     cs "I don't think I should sing another one for now."
     scene black with dissolve
     n "CS heads out of the bar."
@@ -1435,8 +1435,8 @@ label miku_pizza:
     $ miku_check = True
     cs "I wanna have some fun with Miku!"
     cs "They had a Domino's ad where you can go have some fun with Miku, right?"
-    cs "But that was like, ten years ago..."
-    cs "People still love Miku, I'm sure she'll uphold the deal!"
+    cs "But, that was, like, ten years ago..."
+    cs "People still love Miku, so I'm sure she'll uphold the deal!"
     stop music fadeout 3.0
     music end    
     scene black with dissolve
@@ -1448,7 +1448,7 @@ label miku_pizza:
     show cs at left with moveinleft
     play music "<loop 0>funiculi_holiday.mp3" volume 0.3
     music Funiculi Holiday - ClascyJitto
-    cashier "Welcome to Domino's, can I take your order?"
+    cashier "Welcome to Domino's! Can I take your order?"
     cs "I want to meet Miku!"
     cashier "Sir, what are you on about?"
     cs "Your promotion! You guys said I could have some fun with Miku!"
@@ -1457,12 +1457,12 @@ label miku_pizza:
     cs "Ugh, can I just talk to Scott?"
     cashier "Who??"
     cs "Scott! The president of Domino's Pizza!"
-    cashier "Man, I'm just the cashier here, you think I know the president?"
+    cashier "Man, I'm just the cashier here. You think I know the president?"
     if fun_value(20):
         obama "Hi.{w=0.5}{nw}"
     show cs
-    cs "How can I find him then?"
-    cashier "I think the headquarters is pretty close to here if you're that desperate."
+    cs "How can I find him, then?"
+    cashier "I think the headquarters is pretty close to here, if you're that desperate."
     cs "I am, and thank you!"
     show cs flipped with determination
     hide cs with moveoutleft
@@ -1505,11 +1505,11 @@ label miku_pizza:
     cs "I'm cs188, and I'm curious about your Miku promotion."
     scott_pres "That was... what, ten years ago?"
     cs "It was, but I know Miku would uphold the deal!"
-    scott_pres "Wasn't the deal like, something to do with an app? I barely remember."
+    scott_pres "Wasn't the deal, like, something to do with an app? I barely remember."
     cs "Uh, I don't either."
     show cs angry
     cs "But I want to meet Miku!"
-    scott_pres "Listen son, I hate to break it to you, but I don't think Miku is real."
+    scott_pres "Listen, son, I hate to break it to you, but I don't think Miku is real."
     cs "What do you mean she's not real? She was dancing with you in the commerical!"
     scott_pres "I know, but that was movie magic. I'm sorry--{w=0.5}{nw}"
     play music "real_world.mp3"
@@ -1520,10 +1520,10 @@ label miku_pizza:
     miku "What was that?"
     scott_pres "Miku?!"
     cs "Miku!"
-    miku "I heard someone was here to see me so I came up right away."
+    miku "I heard someone was here to see me, so I came up right away."
     scott_pres "How did you get in my office?"
-    miku "Your receptionist let me up. She was freaking out a lot so she must have forgotten to call you."
-    scott_pres "But... you're not... it was a green screen! It was augemented reality! You're not real!"
+    miku "Your receptionist let me up. She was freaking out a lot, so she must have forgotten to call you."
+    scott_pres "But... you're not... it was a green screen! It was augmented reality! You're not real!"
     miku "I feel pretty real."
     miku "Anywho, hi, CS! Love your videos."
     cs "You... watch my videos?"
@@ -1545,9 +1545,9 @@ label miku_pizza:
     show miku at right
     with fade
     play music "<loop 0>automatic_love.mp3" volume 0.4
-    miku "... so I said \"you think that was fast, wait until I sing INTENSE VOICE!\""
+    miku "... so I said, \"You think that was fast, wait until I sing {i}INTENSE VOICE!\""
     n "CS laughs."
-    cs "Well Miku, this was very nice, but I need to head on my way."
+    cs "Well, Miku, this was very nice, but I need to head on my way."
     miku "OK! Thanks for sharing lunch with me, this was very nice."
     cs "Bye, Miku!"
     $ achievement_manager.unlock("Have Some Fucking Pizza!")
@@ -1577,7 +1577,7 @@ label japan_leave_airport:
     show tokyo_airport with fade
     show cs at center with moveinleft
     cs "Man, what a time I had here."
-    cs "Alright well, where should I go this time?"
+    cs "Alright, well, where should I go this time?"
     if (not england_check) and (not sweden_check):
         menu:
             "Sweden":
@@ -1624,9 +1624,9 @@ label japan_england:
 label going_home:
     stop music fadeout 1.0
     cs "I guess it's time to head home."
-    cs "I've done so many things during this trip, I honestly forgot why I started this."
+    cs "I've done so many things during this trip. I honestly forgot why I started this."
     cs "I had to kinda rush it, just like with a real vacation!"
-    cs "Oh well."
+    cs "Oh, well."
     cs "I'm a bit homesick, and I honestly can't wait to get home."
     scene black with dissolve
     n "CS buys a ticket to US and gets on the airplane."
@@ -1645,7 +1645,7 @@ label going_home:
     cs "Hey, are you that advertiser?"
     cs "What are you doing here?"
     carguy "Well, I was a cop who was trying to track you down, but we couldn't find you."
-    carguy "So I gave up on my job."
+    carguy "So, I gave up on my job."
     cs "Oooh, yeah, I forgot that's why I left."
     carguy "Well, I don't really care anymore."
     carguy "My job is over with, I'm just gonna go advertise car products."
@@ -1653,7 +1653,7 @@ label going_home:
     n "Carguy leaves the scene."
     cs "Well, that took care of that problem."
     cs "Now, where was I?"
-    cs "Oh yeah, let's get inside."
+    cs "Oh, yeah, let's get inside."
     hide cs with moveoutright
     scene cs_room with fade
     show cs at center with moveinleft
@@ -1662,7 +1662,7 @@ label going_home:
     cs "I can finally sleep for a day."
     scene cs_room_2 with fade
     n "CS glances over at his Union Jack."
-    cs "Maybe, I should get two more flags."
+    cs "Maybe... I should get two more flags."
     stop music fadeout 1.0
     music end
     $ renpy.movie_cutscene("movies/credits.webm")
