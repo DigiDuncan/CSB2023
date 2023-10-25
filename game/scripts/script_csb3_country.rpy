@@ -77,9 +77,9 @@ label knocked_out:
     cs "What did I do before that?"
     n "The news starts playing on the TV in CS' room, explaining how three criminals broke out of prison a couple days ago."
     show cs disappointed metal4
-    cs "Oh shoot! Yeah I went to prison and met Arceus and Anno! I need to get out of here!"
+    cs "Oh, shoot! Yeah, I went to prison and met Arceus and Anno! I need to get out of here!"
     hide cs with moveoutright
-    n "CS goes and gets dressed, and runs out of his room."
+    n "CS gets dressed and runs out of his room."
     scene black with dissolve
     window hide
     pause 1.5
@@ -90,7 +90,7 @@ label knocked_out:
     show cs flipped
     cs "Excuse me, do you know where the closest airport is?"
     nurse "Uhh, yeah, it's actually about a mile or two east of here."
-    cs "Thank you, bye!"
+    cs "Thank you! Bye!"
     hide cs with moveoutleft
     nurse "Uhm, sir, shouldn't you stay in your room?"
     nurse "Sir?"
@@ -98,9 +98,9 @@ label knocked_out:
     scene canada_block
     show cs disappointed at left
     with fade
-    cs "Ah shit, I need to really get out of here before the cops catch up with me."
+    cs "Ah, shit, I need to really get out of here before the cops catch up with me."
     cs "I hope Linus left me enough money to travel, otherwise I'm probably screwed."
-    cs "Man, I hope that Arceus and Anno are okay too, I wonder what happened to them..."
+    cs "Man, I hope that Arceus and Anno are okay too. I wonder what happened to them..."
     hide cs with moveoutright
     scene black with dissolve
     n "CS hastily makes his way to the airport."
@@ -123,8 +123,8 @@ label knocked_out:
     cs "Oh shiiiiiiiiiiiiiiiiiit."
     benrey "You can't get on the plane without your Pass{w=0.5} Port."
     show cs disappointed
-    cs "I'm sorry, I don't have one. Can you like, give me one?"
-    benrey "Well what country do you want to go visit?"
+    cs "I'm sorry, I don't have one. Can you, like, give me one?"
+    benrey "Well, what country do you want to go visit?"
     menu:
         "England":
             jump england_travel
@@ -136,7 +136,7 @@ label knocked_out:
 label england_travel:
     $ engfirst = True
     cs "Uhh, I guess I wanted to go to England?"
-    benrey "Well I'm sorry, but everyone has a Pass{w=0.5} Port!"
+    benrey "Well, I'm sorry, but everyone has a Pass{w=0.5} Port!"
     benrey "Try checking your pocket."
     n "CS puts his hand in his pocket and pulls out a Canadian passport."
     show cs
@@ -144,7 +144,7 @@ label england_travel:
     benrey "See? I told you! Now let's get you your ticket."
     n "CS hands the ticket man his money."
     benrey "Alright, your plane is actually leaving here in about 15 minutes."
-    cs "Ah shit, thanks!"
+    cs "Ah, shit, thanks!"
     hide cs with moveoutright
     show airport_tsa
     show tsa at right
@@ -157,7 +157,7 @@ label england_travel:
     cs "I don't have any bags."
     tsa "What? Go through the metal detector!"
     show cs at mid_right with move
-    n "CS walks through, and the detector stays silent."
+    n "CS walks through and the detector stays silent."
     tsa "Impossible!"
     cs "So this means I'm good to go, right?"
     n "The TSA man grumbles."
@@ -172,9 +172,9 @@ label england_travel:
     scene airplane_seats
     show cs at left
     with fade
-    n "CS gets himself comfortable, and tries to not think about the cops."
+    n "CS gets himself comfortable and tries to not think about the cops."
     cs "Whew! What a day."
-    cs "I really hope this works out, I don't think I have enough to travel again after this."
+    cs "I really hope this works out. I don't think I have enough to travel again after this."
     cs "I didn't think this is how I'd be going to another country, rushing out of a hospital and all."
     cs "Well, it's been a long day."
     cs "I guess I should get some rest."
@@ -192,7 +192,7 @@ label sweden_travel:
     benrey "See? I told you! Everyone has a Pass{w=0.5} Port! Now let's get you your ticket."
     n "CS hands the ticket dude his money."
     benrey "Alright, your plane is actually leaving here in about 20 minutes."
-    cs "Ah shoot, thanks!"
+    cs "Ah, shoot, thanks!"
     hide cs with moveoutright
     show airport_tsa
     show tsa at right
@@ -205,7 +205,7 @@ label sweden_travel:
     cs "I don't, have any bags?"
     tsa "Alright then, just go through the metal detector!"
     show cs at mid_right with move
-    n "CS walks through, and the detector stays silent."
+    n "CS walks through and the detector stays silent."
     tsa "Huh."
     cs "So this means I'm good to go, right?"
     tsa "Yes, you're good to go, sir."
@@ -219,9 +219,9 @@ label sweden_travel:
     scene airplane_seats
     show cs at left
     with fade
-    n "CS gets himself comfortable, and tries to not think about the cops."
+    n "CS gets himself comfortable and tries to not think about the cops."
     cs "Whew! What a day."
-    cs "I really hope this works out, I don't think I have enough to travel again after this."
+    cs "I really hope this works out. I don't think I have enough to travel again after this."
     cs "I didn't think this is how I'd be going to another country, rushing out of a hospital and all."
     cs "Well, it's been a long day."
     cs "I guess I should get some rest."
@@ -231,7 +231,7 @@ label sweden_travel:
 label japan_travel:
     $ japfirst = True
     cs "Uhh, I guess I wanted to go to Japan?"
-    benrey "Well I'm sorry, but everyone's got a Pass{w=0.5} Port!"
+    benrey "Well, I'm sorry, but everyone's got a Pass{w=0.5} Port!"
     benrey "Try checking your left shoe."
     n "CS takes off his left shoe and pulls out a Canadian passport."
     show cs
@@ -239,7 +239,7 @@ label japan_travel:
     benrey "See? I knew it! Now let's get you your ticket."
     n "CS hands the ticket guy his money."
     benrey "Alright, your plane is actually leaving here in about 10 minutes."
-    cs "Ah shucks, thanks!"
+    cs "Ah, shucks, thanks!"
     hide cs with moveoutright
     show airport_tsa
     show tsa at right
@@ -249,7 +249,7 @@ label japan_travel:
     cs "I'm almost there!"
     tsa "Alright, go on through."
     show cs at mid_right with move
-    n "CS walks through, and the detector stays silent."
+    n "CS walks through and the detector stays silent."
     cs "So this means I'm good to go, right?"
     n "The TSA man nods."
     tsa "Yes, you're good to go, sir."
@@ -263,9 +263,9 @@ label japan_travel:
     scene airplane_seats
     show cs at left
     with fade
-    n "CS gets himself comfortable, and tries to not think about the cops."
+    n "CS gets himself comfortable and tries to not think about the cops."
     cs "Whew! What a day."
-    cs "I really hope this works out, I don't think I have enough to travel again after this."
+    cs "I really hope this works out. I don't think I have enough to travel again after this."
     cs "I didn't think this is how I'd be going to another country, rushing out of a hospital and all."
     cs "Well, it's been a long day."
     cs "I guess I should get some rest."
@@ -280,16 +280,16 @@ label england:
     show cs at left
     with fade
     n "As CS slowly wakes up, he sees the plane landing on the tarmac."
-    cs "Oh huh, we are already here."
+    cs "Oh, huh, we are already here."
     cs "Either that was a fast trip, or I slept {i}wayyy{/i} too long."
     cs "Welp, I guess this is where I get off."
     hide cs with moveoutright
     scene black with dissolve
-    n "CS gets out of the plane, and makes his way into the airport."
+    n "CS gets out of the plane and makes his way into the airport."
     scene britport with fade
     show cs at mid_left with moveinleft
     cs "Well, at least I picked an English-speaking country."
-    cs "Could you imagine if I picked something like, Sweden? Or Japan?"
+    cs "Could you imagine if I'd picked something like Sweden? Or Japan?"
     cs "Either way, this is quite the breath of fresh air."
     cs "Don't have to run from the law anymore, so that's a plus."
     hide cs with moveoutright
@@ -298,7 +298,7 @@ label england:
     scene embassy with fade
     show cs at center with moveinleft
     show cs disappointed
-    cs "Bad thing this, I don't have any money!"
+    cs "Bad thing is, I don't have any money!"
     cs "So I don't really know what to do now."
     cs "I guess I'll have to start asking random people for a job..."
     hide cs with moveoutright
@@ -314,26 +314,26 @@ label england_first:
     cs "Man, this kinda sucks!"
     show arceus at mid_right with moveinright
     play music "<loop 0>stal.mp3" volume 0.4
-    arceus "Hey CS? Is that you?"
+    arceus "Hey, CS? Is that you?"
     show cs
     cs "Oh my goodness! Why-- How are you here?"
     show arceus happy
-    arceus "I live here with my girlfriend now! What are you doing here?"
+    arceus "I live here with my girlfriend now! What are {i}you{/i} doing here?"
     show arceus
-    cs "I, used the last of my money to buy a plane ticket."
+    cs "I... used the last of my money to buy a plane ticket."
     arceus "Ah."
     arceus "Assuming you did that to get away from the cops?"
     cs "Yeah..."
     show arceus worried
     arceus "I heard about your fight, but I couldn't engage too much, since the ambulance took you away shortly after I showed up."
     show arceus happy
-    arceus "So I decided to finally move up here, since I got out of prison and all."
+    arceus "So, I decided to finally move up here, since I got out of prison and all."
     show arceus
     cs "That makes sense."
-    arceus "So uhm..."
+    arceus "So, um..."
     arceus "Do you need a place to stay? You said you were out of money."
     show arceus happy
-    arceus "You can come and live with me and Kitty for a while! I'm sure she wouldn't mind."
+    arceus "You can come and live with Kitty and me for a while! I'm sure she wouldn't mind."
     show arceus
     show cs happy
     cs "I would really appreciate it! Thank you!"
@@ -342,7 +342,7 @@ label england_first:
     arceus "Nah, don't worry about it. You helped break me out of prison!"
     n "The shopkeeper looks at them weirdly."
     arceus "In GTA V."
-    cs "Yeah yeah, that heist was really fun."
+    cs "Yeah, yeah, that heist was really fun."
     arceus "Anyways, let's get you to our place."
     stop music fadeout 3.0
     show arceus flipped with determination
@@ -350,7 +350,7 @@ label england_first:
     hide arceus
     with moveoutright
     show black with dissolve
-    n "Arceus and CS jump on a double decker and head down to their house."
+    n "Arceus and CS jump on a double decker and head down to the house."
     jump arceus_place
 
 label england_second:
@@ -428,28 +428,28 @@ label arceus_place:
     arceus "Yep. This is what five quid gets you here."
     cs "Woah, what? How much is a quid?"
     show arceus happy
-    arceus "I'm just messing, it's a little more than a US dollar."
+    arceus "I'm just messing. It's a little more than a US dollar."
     show arceus
     show kitty flipped at right with moveinright
     $ persistent.seen.add("round")
     show arceus flipped
-    kitty "Hey Arcie! You're home!"
+    kitty "Hey, Arcie! You're home!"
     kitty "Hey, who's this man?"
-    arceus "This is CS, my jail bud- I mean my friend! You remember that guy who made the YTPs?"
+    arceus "This is CS, my jail bud--{w=0.25} I mean, my friend! You remember that guy who made the YTPs?"
     kitty "Oh, yeah. Isn't he kinda famous?"
     cs "I wouldn't say that..."
     if japan_check:
         arceus "He's deciding to visit England, so I wanted to invite him to stay here."
         arceus "Is that okay?"
-        kitty "Yeah but, how long will he be here for?"
-        cs "Not too long I don't think, I just like this country and wanted to take a vacation here."
+        kitty "Yeah, but, how long will he be here for?"
+        cs "Not too long I don't think. I just like this country and wanted to take a vacation here."
         show arceus happy flipped
         arceus "Well, let's make some dinner, and we can find fun things here to do!"
         cs "Sure thing!"
     else:
         arceus "He's broke right now, and I was wondering if he could stay here for a bit."
-        kitty "I guess that's fine, how long is he gonna stay here though?"
-        cs "It shouldn't be too long, I'm gonna try to find a way to get some money."
+        kitty "I guess that's fine. How long is he gonna stay here though?"
+        cs "It shouldn't be too long. I'm gonna try to find a way to get some money."
         show arceus happy flipped
         arceus "Why don't we all eat and talk about it?"
         cs "That would be great. I'm starving."
@@ -459,19 +459,19 @@ label arceus_place:
     hide cs
     with moveoutright
     scene black with dissolve
-    n "Kitty and Arceus prepare dinner, and they all sit down at the dining table and eat."
+    n "Kitty and Arceus prepare dinner, and then they all sit down at the dining table and eat."
     scene dining_room
     show kitty flipped at right
     show arceus at center
     show cs at left
     with fade
     cs "So, how long have you guys been together?"
-    arceus "For a long time actually, I've been wanting to move up here, but y'know..."
+    arceus "For a long time, actually. I've been wanting to move up here, but, y'know..."
     kitty "Yeah, you did a dumb and got arrested!"
     show arceus worried
-    arceus "Yeah yeah, well anyways..."
+    arceus "Yeah, yeah, well anyways..."
     show arceus
-    arceus "What do you want to do here, CS? It's a brand new country, there are a ton of things you can do..."
+    arceus "What do you want to do here, CS? It's a brand new country! There are a ton of things you can do..."
     jump england_menu
 
 label hell_zone:
@@ -480,11 +480,11 @@ label hell_zone:
     show arceus worried
     arceus "Wat."
     cs "Yeah! I can go on the show and cook up some crazy meal and win!"
-    arceus "CS, you realize who the man is who runs Hell's Kitchen?"
+    arceus "CS, you realize who the man {i}is{/i} who runs Hell's Kitchen?"
     cs "Yeah, it's Gordon Ramsay! I love that guy."
     arceus "Yeah, and he's kinda scary."
     cs "Yeah, but that's just because it's a show."
-    cs "I'm sure he's like, really funny."
+    cs "I'm sure he's, like, really funny."
     show arceus
     arceus "Besides, how are you going to get on the show?"
     arceus "Don't you have to submit an application?"
@@ -515,14 +515,14 @@ label hell_zone:
     with moveoutleft
     scene black with dissolve
     n "Everyone gets a good night's sleep."
-    n "The next morning..."
+    centered "The next morning..."
     scene kitty_room
     show cs concentrate at left
     with fade
     cs "Zzzzz....."
     cs "Zzzzz....."
     show arceus at center with moveinright
-    arceus "Hey. Wake up sleepyhead."
+    arceus "Hey. Wake up, sleepyhead."
     pause 0.5
     show cs disappointed
     pause 0.5
@@ -530,12 +530,12 @@ label hell_zone:
     pause 0.2
     show cs disappointed
     n "CS slowly gets up."
-    cs "Wh- what? It's already morning?"
+    cs "Wh-- what? It's already morning?"
     arceus "Yep."
     arceus "More importantly, you got accepted into this season of Hell's Kitchen."
     n "CS jerks up."
     show cs
-    cs "What really?"
+    cs "What, really?"
     show arceus angry
     cs "I mean, of course! I am a master cook, after all."
     show arceus
@@ -545,7 +545,7 @@ label hell_zone:
     hide arceus
     with moveoutright
     scene black with dissolve
-    n "Arc drives CS up to the place for the Hell's Kitchen trial."
+    n "Arc drives CS up to the studio for the Hell's Kitchen trial."
     scene car_insidearc_fg flipped
     show hell_outside behind car_insidearc_fg
     show arceus at right
@@ -556,19 +556,19 @@ label hell_zone:
     cs "Well, this definitely looks like Hell."
     show arceus worried
     arceus "I can already feel Ramsay's presence from here. It's terrifying."
-    cs "Alright well, are you ready?"
+    cs "Alright, well, are you ready?"
     show arceus angry
-    arceus "What do you mean? You're the one who signed up for this! I'll be waiting for you in the car."
+    arceus "What do you mean? {i}You're{/i} the one who signed up for this! I'll be waiting for you in the car."
     cs "I thought you wanted to watch me cook?"
     show arceus worried
-    arceus "CS, I'm sorry, but I don't, how do I put this..."
+    arceus "CS, I'm sorry, but I don't... how do I put this..."
     arceus "Think you'll come out alive?"
     cs "You think I'm gonna die?"
     show arceus
-    arceus "No no, I meant that more metaphorically, like, you just aren't a good cook."
+    arceus "No, no, I meant that more metaphorically, like, you just aren't a good cook."
     show cs disappointed
     cs "Whhhaaat?"
-    arceus "I just haven't seen you prepare like, an actual meal before."
+    arceus "I just haven't seen you prepare, like, an actual meal before."
     show cs angry
     cs "Yeah, well, you don't know everything about me!"
     cs "I'll show you!"
@@ -579,45 +579,45 @@ label hell_zone:
     cs "Stupid Arceus doesn't think I can cook? Well, I'm gonna blow them away! They won't be able to even put me on the show because I'll be {i}too{/i} good!"
     hide cs with moveoutright
     scene black with dissolve
-    n "When CS enters the main room, he notices that Gordon is waiting for CS at the kitchen, with his arms crossed."
+    n "When CS enters the main room, he notices that Gordon is waiting for him at the kitchen with his arms crossed."
     scene hell_kitchen
     show gordon at left
     with fade
     show cs flipped at right with moveinright
     gordon "Are you Mr... 188?"
-    cs "Yea, that's m--{w=0.5}{nw}"
-    gordon "Yeah, it says here on your application that you are 'The best cook in the world' is that correct sir?"
-    gordon "Oh, for fucks sake! What the bloody hell is this?"
+    cs "Yeah, that's m--{w=0.5}{nw}"
+    gordon "Yeah, it says here on your application that you are 'the best cook in the world', is that correct, sir?"
+    gordon "Oh, for fuck's sake! What the bloody hell is this?"
     show cs disappointed flipped
     n "Before CS can speak, Gordon takes one good look at CS' clothing."
     play sound "waterphone.mp3"
-    gordon "Did you wear this silly outfit as well to just fuck with me? Are you serious?"
+    gordon "Did you wear this silly outfit as well just to fuck with me? Are you serious?"
     cs "What? This is just my normal attire."
     scene talking_head
     show cs disappointed
     with dissolve
     cs "I despise it when people bring up my clothes."
-    cs "What's wrong with this anyways? It's perfectly normal!"
+    cs "What's wrong with this, anyways? It's perfectly normal!"
     scene hell_kitchen
     show cs disappointed flipped at right
     show gordon at left
     with fade
-    gordon "Normal attire my arse! Are you really here to cook, or are we just playing games?"
+    gordon "Normal attire, my arse! Are you really here to cook, or are we just playing games?"
     show cs worried flipped
-    cs "No no! I'm really ready to blow you away, Mr. Ramsay!"
-    gordon "Well, you better hope your cooking skills can save you from your fashion sense."
+    cs "No, no! I'm really ready to blow you away, Mr. Ramsay!"
+    gordon "Well, you'd better hope your cooking skills can save you from your fashion sense."
     gordon "You've got an hour. Use whatever you can find here to try to make the best dish you can."
     gordon "God..."
     hide gordon with moveoutleft
     show cs disappointed flipped at center with move
-    n "Gordon yells under his breath as he stomps out of the kitchen, into the backroom."
+    n "Gordon grumbles under his breath as he stomps out of the kitchen into the backroom."
     stop music fadeout 3.0
     music end    
-    n "CS goes to one of the stations, and starting trying to figure out what to make."
+    n "CS goes to one of the stations and starts trying to figure out what to make."
     scene talking_head
     show cs disappointed
     with dissolve
-    cs "Arceus was kinda right, I guess Gordon is as scary without the cameras rolling."
+    cs "Arceus was kinda right. I guess Gordon {i}is{/i} as scary without the cameras rolling."
     scene hell_kitchen
     show cs disappointed flipped
     with fade
@@ -640,30 +640,30 @@ label bad_ramsay:
     cs "I guess the only thing I can think of off the top of my head is the cake Phil made for Michael."
     cs "That can't be too hard, right? It's just chocolate cake and Flex Seal, I think."
     cs "Don't know if the Flex Seal adds any taste, but I guess it's worth a try?"
-    cs "Alright well, let's do this."
+    cs "Alright, well, let's do this."
     scene black with dissolve
-    n "Over the next hour, CS bakes together the Flex Cake."
+    n "Over the next hour, CS bakes the Flex Cake."
     scene hell_kitchen
     show cs flipped at right
     show gordon at left
     with fade
     play music "<loop 0>tumultuous.mp3" volume 0.4
     music Tumultuous - David Vanacore
-    gordon "Alright Mr. 188, let's see what you've made!"
-    cs "This is my special chocolate cake design! With a secret ingredient."
-    gordon "Well well well, doesn't this look fantastic!"
+    gordon "Alright, Mr. 188, let's see what you've made!"
+    cs "This is my special chocolate cake recipe! With a secret ingredient."
+    gordon "Well, well, well, doesn't this look fantastic?"
     gordon "Let's see how it tastes!"
     n "Gordon takes a slice and starts eating it."
     gordon "It's very rich and smooth on the outside,"
-    gordon "But it tastes weird, on the--{w=0.5}{nw}"
+    gordon "But it tastes weird... on the--{w=0.5}{nw}"
     n "Gordon starts coughing."
     show cs disappointed flipped
     cs "Woah, you okay there?"
-    n "Gordon holds his throat and falls over, spits the Flex Seal out, and passes out."
+    n "Gordon holds his throat and falls over, spits out the Flex Seal, and passes out."
     play sound "waterphone.mp3"
     hide gordon with moveoutbottom
     show cs disappointed flipped with hpunch
-    cs "Ooooooooohhhhh Fuuuuuuucckkk."
+    cs "Ooooooooohhhhh fuuuuuuucckkk."
     bad_end "Master Chef?\nMore like, Master Death!" "gordon_menu"
 
 label good_ramsay:
@@ -680,43 +680,43 @@ label good_ramsay:
     play music "<loop 0>tumultuous.mp3" volume 0.4
     music Tumultuous - David Vanacore
     show gordon at left with moveinleft
-    gordon "Alright Mr. 188! Chop chop!"
+    gordon "Alright, Mr. 188! Chop, chop!"
     cs "Alright, I'm almost done!"
     hide gordon with moveoutleft
-    cs "Okay, I am pretty much done, I even managed to get the label on it too."
+    cs "Okay, I am pretty much done. I even managed to get the label on it too."
     cs "I'm gonna add a bit of DaThings' secret SuS, and it's good to go!"
     show cs flipped at right with move
     gordon "Alright, time's up!"
     n "Gordon comes over to CS' station."
     show gordon at left with moveinleft
-    gordon "Show me what you made."
-    cs "What we have here, is some of my homemade Genergy."
+    gordon "Show me what you've made."
+    cs "What we have here is some of my homemade Genergy."
     show cs happy flipped
     cs "It's an energy drink that gets the juices moving through you!"
     show cs flipped
     gordon "Well, that's a new one."
     gordon "I don't think I've ever seen someone make an energy drink on a cooking show..."
     play sound "waterphone.mp3"
-    gordon "What do you mean that the juices are gonna move through you? Like is this gonna make me have to go to the bathroom?"
+    gordon "What do you mean that the juices are gonna move through you? Like, is this gonna make me have to go to the bathroom?"
     show cs disappointed flipped
-    cs "No, I meant like, energize you."
+    cs "No, I meant, like, energize you."
     scene talking_head
     show cs disappointed
     with dissolve
-    cs "This man is terrifying, I can never tell if he's in a good mood or not."
+    cs "This man is terrifying! I can never tell if he's in a good mood or not."
     scene hell_kitchen
     show cs disappointed flipped at right
     show gordon at left
     with fade
-    gordon "Well yeah, I can see that."
+    gordon "Well, yeah, I can see that."
     gordon "Well, here goes nothing."
     n "Gordon gulps down the Genergy."
-    n "Gordon sits there for a moment, and smacks his lips."
-    gordon "This has, the weirdest flavor ever."
+    n "Gordon sits there for a moment, then smacks his lips."
+    gordon "This has... the weirdest flavor ever."
     gordon "I can't even describe it, but..."
     show cs flipped
     gordon "It's really good, actually."
-    gordon "This might be, the best damn thing I've ever tasted."
+    gordon "This might be... the best damn thing I've ever tasted."
     gordon "Fuck..."
     hide gordon with moveoutleft
     n "Gordon turns around walks into the backroom area again."
@@ -727,13 +727,13 @@ label good_ramsay:
     cs "Arceus is gonna be so surprised when he hears the news!"
     show cs flipped
     cs "Man, I wish he could've seen this."
-    n "Gordon comes back with a briefcase, full of cash."
+    n "Gordon comes back with a briefcase full of cash."
     show gordon at center
     show case at mid_mid_right
     with moveinleft
     gordon "Listen, I don't know how you made that, but I'll buy your recipe for £100,000."
     gordon "We won't need to speak of this again."
-    cs "Well, shit yeah, I guess I really can't say no to that."
+    cs "Well, shit, yeah, I guess I really can't say no to that."
     n "Gordon gives the briefcase to CS."
     show case at mid_right_right with move
     gordon "Alright, thank you. Now leave."
@@ -754,7 +754,7 @@ label good_ramsay:
     arceus "Holy shit! What'd you do??"
     cs "I made him a Genergy, CS style!"
     cs "He apparently loved it so much he bought my recipe!"
-    arceus "WHHAATT?"
+    arceus "{i}What?!"
     arceus "You got Gordon Ramsay, Master Chef, to buy your recipe in one go?"
     show cs happy
     cs "Yep!"
@@ -771,33 +771,33 @@ label good_ramsay:
     show kitty flipped at right
     with fade
     play music "<loop 0>wool_gloves.mp3" volume 0.4
-    kitty "CS did what?"
-    arceus "Yeah, I know right? I don't understand either."
+    kitty "CS did {i}what?"
+    arceus "Yeah, I know, right? I don't understand either."
     kitty "What is in this Genergy drink of yours?"
     cs "Well, I sold the recipe, so I don't really know anymore."
     kitty "Well, shit..."
     cs "Just kidding! I still have a backup, but I'm gonna keep it secret."
     kitty "Ah, ok."
-    arceus "Well, you did quite a bit already, is there anything else you want to do here?"
+    arceus "Well, you did quite a bit already. Is there anything else you want to do here?"
     $ achievement_manager.unlock("Master Chef")
     jump england_menu
     
 label top_zone:
     $ gear_check = True
     cs "I kinda wanna go on Top Gear."
-    kitty "Well now I gotta see that."
+    kitty "Well, now I gotta see that."
     kitty "What are you gonna do to get on the show?"
     cs "I thinking of trying to race one of their cars in my car."
-    arceus "You don't have your car with you though..."
+    arceus "You don't have your car with you, though..."
     cs "Yeah, but I'm sure they have a spare Honda Civic!"
     arceus "Still, you're crazy to think that you can beat them with that."
     cs "Well, that's the fun part, right?"
     cs "If I win, I'll blow them away!"
     arceus "How do you even get on Top Gear, anyways?"
     kitty "We might be able to just call them."
-    cs "If it's that easy, then hell yeah, let's do it!"
+    cs "If it's that easy, then, hell yeah, let's do it!"
     scene black with dissolve
-    n "Kitty calls the members of Top Gear, after a brief panic attack, to get CS on the show for a day."
+    n "After a brief panic attack, Kitty calls the members of Top Gear to get CS on the show for a day."
     scene dining_room
     show cs at left
     show arceus at center
@@ -805,7 +805,7 @@ label top_zone:
     with fade
     kitty "Yeah, they said if you can drive over there today, we can start the race!"
     cs "Wow, that was fast."
-    cs "Should we get going then?"
+    cs "Should we get going, then?"
     arceus "Sure, I guess. Let's go."
     stop music fadeout 3.0
     show black with dissolve
@@ -835,9 +835,9 @@ label top_zone:
     james "Well, you're about to see it."
     show cs at left with moveinleft
     cs "Hey guys! CS here!"
-    jeremy "Hey CS, so you think you can beat Richard in a race, huh?"
+    jeremy "Hey, CS, so you think you can beat Richard in a race, huh?"
     show cs happy
-    cs "Hell yeah I do!"
+    cs "Hell yeah, I do!"
     show cs
     hammond "Well, I wish you the best of luck, buddy."
     n "As he says that, a McLaren rolls up on the track."
@@ -846,19 +846,20 @@ label top_zone:
     james "What if he loses?"
     hammond "Well, obviously, he's gonna lose."
     hammond "If he loses, we'll blow up the car!"
-    cs "Well, it's technically not MY car..."
-    hammond "Oh really? Take another look..."
-    n "CS looks and realizes his license plate matches the Honda Civic on the track."
+    cs "Well, it's technically not {i}my{/i} car..."
+    hammond "Oh, really? Take another look..."
+    n "CS looks and realizes the Honda Civic on the track has his license plate."
     show cs worried
     cs "{i}What?{/i} How did you get my car?"
     jeremy "We may have stolen your car and shipped it all the way over to the UK for this race."
-    james "I mean, it's YOUR car you wanted to race in, right?"
+    james "I mean, it's {i}your{/i} car you wanted to race in, right?"
     show cs disappointed
     cs "Yeah, I guess so..."
     hammond "Well, what are you guys waiting for? Let's do this race!"
     scene black with dissolve
-    n "CS and Richard get in their cars, and wait for the countdown."
+    n "CS and Richard get in their cars and wait for the countdown."
     jump top_gear_menu
+
 label top_gear_menu:
     scene black
     menu:
@@ -877,7 +878,7 @@ label top_lose:
     show hammond at center
     show cs disappointed at left
     with fade
-    hammond "Well well well!"
+    hammond "Well, well, well!"
     hammond "Looks like I won after all!"
     hammond "As for you..."
     n "Jeremy pulls out a remote switch that detonates a bomb under CS' car, turning it into scrap."
@@ -895,25 +896,25 @@ label top_win:
     show cs happy at left
     with fade
     hammond "What the bloody hell? How did you beat me?"
-    cs "Oh you know. I have my ways."
+    cs "Oh, you know. I have my ways."
     james "Well, I guess that means we owe him, right?"
     hammond "Yeah, I guess so."
-    hammond "Jeremy, can you go remove the bomb from his car?"
+    hammond "Jeremy, can you go remove the bomb from under his car?"
     show cs worried
     cs "Wait, there was a bomb on the car the whole time?"
     james "Well, kinda."
     show cs angry
-    cs "What the hell! Now I'm really glad I won!"
+    cs "What the hell! Now I'm {i}really{/i} glad I won!"
     cs "I'm glad I didn't hit anything, otherwise the explosion would've finished me off!"
-    hammond "It's just a bomb, it'll buff out if it went off."
+    hammond "It's just a bomb, it would buff out if it went off."
     cs "Yeah, I'm sure."
     n "Richard hands CS his money."
-    cs "Can you ship my car back as well? You brought it here, after all."
-    james "Ah shit, you're right."
+    cs "Can you ship my car back, as well? You brought it here, after all."
+    james "Ah, shit, you're right."
     james "We'll send your car back home as soon as possible."
     cs "Thanks."
-    cs "Well, I guess I should be going now, I'd like to race again sometime WITHOUT a bomb stuck to the bottom of my car."
-    hammond "But that was fun, wasn't it?"
+    cs "Well, I guess I should be going now. I'd like to race again sometime {i}without{/i} a bomb stuck to the bottom of my car."
+    hammond "But, that was fun, wasn't it?"
     cs "It was fun before the end!"
     cs "Whatever, I'll see you guys later."
     show cs angry flipped with determination
@@ -937,7 +938,7 @@ label top_win:
     cs "They were planning to blow my car up if I lost!"
     kitty "Damn, that's kinda fucked up."
     show arceus happy
-    arceus "Well good thing you won!"
+    arceus "Well, good thing you won!"
     show arceus
     cs "Yeah, no kidding."
     cs "Let's head home now."
@@ -948,7 +949,7 @@ label top_win:
     show arceus at center
     show kitty flipped at right
     with fade
-    kitty "Well, on the plus side, you won 10,000 pounds!"
+    kitty "Well, on the plus side, you won £10,000!"
     cs "Yeah, I'll have to transfer this to USD when I get back home."
     cs "I hope those cops forgot about me by now."
     arceus "Anyways, is there anything else you want to do here in England?"
@@ -958,14 +959,14 @@ label top_win:
 label scott_zone:
     $ tom_check = True
     cs "I wanna see what Tom Scott is up to."
-    kitty "Who now?"
+    kitty "Who, now?"
     arceus "He's some guy here who explores weird topics on YouTube."
     cs "Yeah, I kinda wanna see if I can go do stuff with him."
     cs "Maybe I can be in his video?"
-    kitty "Well first, you'd have to contact him, which I feel like won't work out too well."
+    kitty "Well, first, you'd have to contact him, which I feel like won't work out too well."
     arceus "Or I could find out where he lives."
     cs "Can you do that?"
-    arceus "I mean, I CAN."
+    arceus "I mean, I {i}can."
     arceus "Legally, probably not."
     kitty "Yeah, remember the last time you did something illeg--{w=0.5}{nw}"
     show arceus happy
@@ -974,10 +975,10 @@ label scott_zone:
     kitty "Arcie! Don't do that!"
     show cs happy
     cs "Woohoo! Does that mean we can go there?"
-    arceus "Sure, and don't worry Kitty, they won't catch me doing this."
-    kitty "You better be right!"
+    arceus "Sure! And don't worry Kitty, they won't catch me doing this."
+    kitty "You'd better be right!"
     show cs
-    cs "Alright well, what are we waiting for? Let's go!"
+    cs "Alright, well, what are we waiting for? Let's go!"
     stop music fadeout 3.0
     scene black with dissolve
     n "CS and Arc get in the car and head up to Tom Scott's house."
@@ -986,7 +987,7 @@ label scott_zone:
     show arceus at right with moveinright
     cs "Are you sure this is his house?"
     arceus "Yep."
-    cs "Should we just knock or?"
+    cs "Should we just knock, or...?"
     arceus "Well, we can't really call him, right?"
     cs "Yeah, I guess so."
     cs "I guess I can knock."
@@ -1010,6 +1011,7 @@ label scott_zone:
     tom "That means if I get hit by a car, this video will not be uploaded."
     tom "Anyways, as I was saying..."
     jump scott_menu
+
 label scott_menu:
     scene tom_road
     show tom
@@ -1021,24 +1023,24 @@ label scott_menu:
 
 label scott_move:
     show cs flipped at offscreenright
-    cs "Hey Tom, move out of the way!"
+    cs "Hey, Tom, move out of the way!"
     show tom at right with move
     show car at lego_run behind tom
     with move
-    n "Tom immediately jumps out of the way, as a car zooms past him."
+    n "Tom immediately jumps out of the way as a car zooms past him."
     show tom at center
     show cs flipped at right
     with move
-    tom "Oh wow, you saved my life!"
+    tom "Oh, wow, you saved my life!"
     tom "What's your name?"
     cs "My name is cs188."
-    tom "Well thank you cs188 for that, I guess now this video will upload properly now."
+    tom "Well, thank you, cs188, for that. I guess now this video will upload properly now."
     cs "Does this mean I can be in the video?"
-    tom "Sure thing cs188, you saved me, after all."
+    tom "Sure thing, cs188! You saved me, after all."
     show cs happy flipped
     cs "Yesss!"
-    cs "Okay I'm gonna go now, bye!"
-    tom "Bye to you too!"
+    cs "Okay, I'm gonna go now. Bye!"
+    tom "Bye to you, too!"
     show cs happy with determination
     hide cs with moveoutright
     scene tom_house
@@ -1047,7 +1049,7 @@ label scott_move:
     show cs happy at left with moveinleft
     arceus "Hey, did you get to talk with him?"
     cs "Yeah! I saved him from getting run over!"
-    arceus "Woah really? Did you end up in his video?"
+    arceus "Woah, really? Did you end up in his video?"
     cs "Yeah!"
     arceus "Cool! Were you guys gonna do anything else?"
     show cs
@@ -1056,9 +1058,9 @@ label scott_move:
     arceus "Wait, that's it?"
     arceus "I thought you guys were gonna do more stuff."
     cs "Nah, I just wanted to be in a video with him."
-    arceus "Okay, so are we done here?"
+    arceus "Okay, so, are we done here?"
     show arceus
-    cs "Sure yeah, let's head back home."
+    cs "Sure, yeah, let's head back home."
     scene black with dissolve
     n "Arc and CS drive back to the house."
     scene dining_room
@@ -1069,7 +1071,7 @@ label scott_move:
     play music "<loop 0>wool_gloves.mp3" volume 0.4
     kitty "You saved a man's life?"
     cs "Yeah, and I get to be in his video!"
-    kitty "Well, looks like you got two for one then!"
+    kitty "Well, looks like you got two for one, then!"
     kitty "Is there anything else you want to do?"
     $ achievement_manager.unlock("The Man In The Red Shirt")
     jump england_menu
@@ -1077,11 +1079,11 @@ label scott_move:
 label england_done:
     cs "Well, I think that's everything I wanted to do here."
     show arceus happy
-    arceus "Oh nice!"
+    arceus "Oh, nice!"
     show arceus
     kitty "So, are you leaving now? You managed to do so much in so little time!"
     cs "Yeah, I think I'm gonna go visit somewhere else."
-    arceus "Oh really? Where do you think you wanna go?"
+    arceus "Oh, really? Where do you think you wanna go?"
     if (not japan_check) and (not sweden_check):
         menu:
             "Sweden":
@@ -1099,14 +1101,14 @@ label scott_movent:
     stop music fadeout 3.0
     scene tom_road
     show tom
-    cs "I should wait till he's done with his video."
-    tom "So yeah, we're just gonna keep talking about this road in particular."
+    cs "I should wait until he's done with his video."
+    tom "So, yeah, we're just gonna keep talking about this road in particular."
     show car at car_run behind tom
     with move
     tom "This road here was created in 1968, by OHP--{w=0.5}{nw}"
     play sound "car_crash.ogg" volume 0.7
     scene black
-    n "A speeding car rams into Tom, and he flies off into the distance."
+    n "A speeding car rams into Tom and he flies off into the distance."
     cs "Uh oh. {w=3.5} I didn't see nothin'."
     bad_end "Welp, that's the end\nof that video!" "scott_menu"
     return

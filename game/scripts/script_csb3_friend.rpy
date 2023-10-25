@@ -2,7 +2,7 @@ label microcenter:
     cs "Sure, what parts do you need?"
     linus "We need eggs, milk..."
     linus "Just kidding."
-    linus "I'll leave the details up to you since you've done a lot of live streaming. Just get the highest end available."
+    linus "I'll leave the details up to you since you've done a lot of livestreaming. Just get the highest end available."
     cs "Alright, I'll go get the parts."
     scene black with fade
     pause 3.0
@@ -17,11 +17,11 @@ label microcenter:
     cs "Oh, damn, you okay there?"
     linus "No, of course not! I just destroyed another one of these $20,000 computing machines! How the hell am I going to get another just like this?"
     cs "Well, you could just always buy more parts like these, I'm sure you have the budget for that."
-    linus "No no, that's too expensive and wasteful, let me think..."
+    linus "No, no, that's too expensive and wasteful. Let me think..."
     linus "Hmmm..."
     linus "Wait! I just got a brilliant idea! Why don't you go buy more parts for me! We certainly have the budget to do that!"
     show cs disappointed
-    cs "Uhmm… I literally just said--{nw}"
+    cs "Umm… I literally just said--{nw}"
     linus "Alright! The plan is settled! You can go fetch me some more parts for the ultimate streaming machine, and you get to decide what parts should be in the computer!"
     show cs
     cs "Okay, but, are there any recommendations you would give me for building this? This is {i}your{/i} money, you know."
@@ -69,7 +69,7 @@ label microcenter:
     scene gpuaisle with fade
     show cs at mid_left with moveinleft
     n "CS heads over to the GPU aisle."
-    cs "Hmm, we've got AMD and NVIDIA, I wish Linus told me which one I should get..."
+    cs "Hmm, we've got AMD and NVIDIA. I wish Linus told me which one I should get..."
     n "CS looks at his options."
     hide cs with moveoutright
     scene gpuaisle2 with fade
@@ -102,7 +102,7 @@ label high_gpu:
     else:
         cs "Alright, I'm just gonna get the RTX 4080."
         cs "I know NVIDIA pretty well, so I'm sure they're the best option to choose here."
-    cs "Let's go check this out."
+    cs "Let's go check out."
     hide cs with moveoutright
     n "CS heads to the checkout."
     scene cashzone 
@@ -125,12 +125,12 @@ label high_gpu:
     play music "<loop 0>creative_exercise.mp3" loop volume 0.3
     music Creative Exercise - Hirokazu Tanaka
     show cs at left with moveinleft
-    cs "Hey Linus! I got your parts!"
+    cs "Hey, Linus! I got your parts!"
     linus "Alright, let's see what you got!"
     show linus at mid_left_left with move
     pause 0.5
     show linus at center with move
-    linus "Alright let's see what we got here..."
+    linus "Alright, let's see what we got here..."
     linus "Nice, an Intel i9..."
     if fanboy_type == "nvidia":
         linus "Oh, nice! A Radeon RX 7900! That's amazing!"
@@ -148,7 +148,7 @@ label high_gpu:
     cs "Oh, wow, already?"
     linus "Yeah, I'm excited! You can help me build it, right?"
     cs "Yeah, of course!"
-    linus "Alright then, let's go!"
+    linus "Alright, then, let's go!"
     hide linus
     hide cs
     with moveoutright
@@ -166,7 +166,7 @@ label high_gpu:
     cs "Okay."
     linus "3...{w=1} 2...{w=1} 1...{w=1} Action."
     linus "Today, we are going to start-- {nw}"
-    cs "Hey guys, CS here! How's it goin? Today we are going to build this CraAaAaAaAzY computer!"
+    cs "Hey guys, CS here! How's it goin? Today we are going to build this {bt=a3-p10-s4}CraAaAaAaAzY{/bt} computer!"
     pause 1.0
     linus "Yeah. As I was going to say, we have our new employee cs188 with us, helping build a new streaming machine for LTT!"
     if fanboy_type == "nvidia":
@@ -200,8 +200,8 @@ label high_gpu:
     show linus at mid_right
     with fade
     show cs at mid_left with moveinleft
-    linus "Hey CS!"
-    cs "Hey Linus!"
+    linus "Hey, CS!"
+    cs "Hey, Linus!"
     linus "Let's see how our video did!"
     n "Linus and CS sit down at the desk while Linus pulls up the video."
     scene comments with fade
@@ -215,10 +215,10 @@ label high_gpu:
     linus "Well, they seem to like your build!"
     cs "Yes!!"
     if fanboy_type == "nvidia":
-        cs "Aw, man, what are those people saying? AMD blows, you guys are hoes?"        
+        cs "Aw, man, what are those people saying? \"AMD blows, you guys are hoes\"?"        
     else:
-        cs "Aw, man, what are those people saying? NVIDIA sucks, you guys are cucks?"
-    cs "Heyyy!!! No I'm not..."
+        cs "Aw, man, what are those people saying? \"NVIDIA sucks, you guys are cucks\"?"
+    cs "Heyyy!!! {size=-10}No I'm not..."
     stop music fadeout 3.0
     music end
     linus "Yeah, there are always people who get upset because of the brand we used. Don't worry, this always happens."
@@ -232,7 +232,7 @@ label high_gpu:
     linus "Hold on, lemme go check the window."
     hide linus at offscreenright with moveoutright
     if fanboy_type == "nvidia":
-            n "Linus heads over the window, and peers out to see a bunch of angry NVIDIA fans rioting."
+        n "Linus heads over the window, and peers out to see a bunch of angry NVIDIA fans rioting."
     else:
         n "Linus heads over the window, and peers out to see a bunch of angry AMD fans rioting."
     linus "Oh shit, this is bad..."
@@ -241,7 +241,7 @@ label high_gpu:
     play sound "<loop 0>glass.ogg" volume 3
     show sansbrick at offscreenleft with moveinright
     show cs worried
-    cs "Woah! Stand back Linus!"
+    cs "Woah! Stand back, Linus!"
     show linus at center with moveinright
     if fanboy_type == "nvidia":
         linus "The NVIDIA fans are rioting outside! We need to hide!"        
@@ -281,7 +281,7 @@ label stay_inside:
     show cs disappointed flipped at right
     cs "Let's just... stay here."
     cs "They've got to go away at some point, right?"
-    linus "Sure, I mean, we are LTT after all!"
+    linus "Sure, I mean, we {i}are{/i} LTT after all!"
     linus "We're so cool, our fans love us! They'll probably run home here in a moment."
     taran "Holy shit! They're throwing bricks!"
     play sound "<loop 0>glass.ogg" volume 3

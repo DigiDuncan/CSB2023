@@ -37,7 +37,7 @@ label csbiii_start:
     show cs
     cs "I guess I'll edit the livestreaming one."
     scene black with fade
-    n "CS starts working on editing the TechQuickie video and Linus comes in to check on him."
+    n "CS starts working on editing the TechQuickie video, and after some time, Linus comes in to check on him."
     scene csdesk
     show cs at left
     with fade
@@ -46,7 +46,7 @@ label csbiii_start:
     cs "It's going well! I have the background all done, and I'm working on adding graphics and fixing audio."
     linus "Wow! You're a fast worker. You'll get off of that old 3080 in no time."
     cs "Thanks, Linus."
-    linus "Speaking of live streaming, we need a new PC for the WAN Show. Can you go and buy parts for one?"
+    linus "Speaking of livestreaming, we need a new PC for the WAN Show. Can you go and buy parts for one?"
 
     menu: 
         "What are you going to do?"
