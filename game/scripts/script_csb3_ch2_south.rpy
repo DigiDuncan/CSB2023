@@ -1143,7 +1143,7 @@ label lego_ending:
     cs "You're all invited to come stay at my island once it's built!"
     n "The chat is freaking out as CS announces his plan."
     cs "I'm gonna start buying all the Lego bricks we need, and you guys can help build the island!"
-    cs "Now let's see what to buy..."
+    cs "Now, let's see what to buy..."
     scene black with fade
     stop music fadeout 1.0
     music end  
