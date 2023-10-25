@@ -997,6 +997,7 @@ label interstate_69:
     show arceus flipped at center
     with fade
     show aria at right
+    with moveinright
     aria "Hey, everyone. How'd you sleep?"
     show cs happy
     cs "It was great. Thanks."
