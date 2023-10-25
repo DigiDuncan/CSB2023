@@ -21,7 +21,6 @@ See what needs to be done below.
 - [X] End Fight cutscene [Pakoo/Digi, Sept. W4]
 - [X] Arceus Art [Kitty, October]
 - [X] Aria Art [Aria, October]
-- [ ] Installer [Digi, Oct. W3]
 
 ### True Ending [ASAP]
 - [X] Michigan [Aria]
@@ -82,14 +81,14 @@ See what needs to be done below.
     - [X] Music
     - [X] Bios
     - [X] Jukebox
-- [ ] Sweden [Aria]
+- [X] Sweden [Aria]
     - [X] Script
-    - [ ] Backgrounds [60%]
-    - [ ] Characters [60%]
-    - [ ] Transitions [60%]
-    - [ ] Music
-    - [ ] Bios
-    - [ ] Jukebox
+    - [X] Backgrounds
+    - [X] Characters
+    - [X] Transitions
+    - [X] Music
+    - [X] Bios
+    - [X] Jukebox
 - [X] Ending
 
 ### Archival Ending [Pakoo/Baker, October]
