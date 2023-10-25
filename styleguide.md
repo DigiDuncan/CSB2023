@@ -1,4 +1,6 @@
 ### GRAMMAR
+- Make sure all writing is in present tense.
+> CS walks into the room.
 - The word "like" (and other filler words like 'um') should be surrounded by commas.
 > You haven't said anything, like, at all.
 
