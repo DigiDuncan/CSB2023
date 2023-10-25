@@ -1131,15 +1131,15 @@ label flint_car:
     
 
 label low_gpu:
-    cs "I should probably try to save Linus some money. Most of the expensive parts he gets are from sponsors, he's not actually that rich."
+    cs "I should probably try to save Linus some money. Most of the expensive parts he gets are from sponsors. He's not actually {i}that{/i} rich."
     n "CS flags down an employee."
     show cashier at mid_right with moveinright
-    cs "I'm trying to get a graphics card, and I want to save money, what do you have?"
-    worker "Everything here is pretty expensive, lemme check the back..."
+    cs "I'm trying to get a graphics card, and I want to save money. What do you have?"
+    worker "Everything here is pretty expensive. Lemme check the back..."
     cs "Alright, I'll wait here."
     hide cashier with moveoutright
     pause 2.0
-    cs "Dum Dee Dum..."
+    cs "Dum dee dum..."
     cs "I'm gonna make some silly faces while I wait!"
     show cs disappointed with determination
     pause 1.0
@@ -1159,9 +1159,9 @@ label low_gpu:
     cs "Oops! Sorry!"
     cs "Anyways, what did you find?"
     worker "I got this. It's pretty old, and it's covered in dust, but it's like $50."
-    cs "Sounds great, I'll take it."
+    cs "Sounds great! I'll take it!"
     hide cs with moveoutright
-    n "CS heads out to the checkout."
+    n "CS heads over to the checkout."
     scene cashzone 
     show cashier at center
     show cashzone_foreground
@@ -1177,13 +1177,13 @@ label low_gpu:
     with fade
     n "CS meets Linus in his office."
     show cs at left with moveinleft
-    cs "Hey Linus! I got your parts!"
-    cs "I even got the CPU for free, I don't think they scanned it!"
-    linus "Ooh goodie! Lemme see!"
+    cs "Hey, Linus! I've got your parts!"
+    cs "I even got the CPU for free! I don't think they even scanned it!"
+    linus "Ooh, goodie! Lemme see!"
     show linus at mid_left_left with move
     pause 0.5
     show linus at center with move
-    linus "Alright let's see what we got here..."
+    linus "Alright, let's see what we got here..."
     linus "Nice, an Intel i9..."
     linus "And a GTX..."
     linus "CS?"
@@ -1191,9 +1191,9 @@ label low_gpu:
     linus "What the fuck is this shit?"
     show cs disappointed
     cs "What do you mean?"
-    linus "Why did you pick this old ass graphics card?"
+    linus "Why did you pick this old-ass graphics card?"
     linus "This is awful! We can't have a cool computer with this!"
-    cs "Well, I know you probably didn't wanna me to spend too much, plus I had something similar to this once!"
+    cs "Well, I know you probably didn't want me to spend too much, plus, I had something similar to this once!"
     linus "I don't care about costs! I wanted a cool streaming computer and you failed!"
     linus "You're fired!"
     cs "W-W-What?"

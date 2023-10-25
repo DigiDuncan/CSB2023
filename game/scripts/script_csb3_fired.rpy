@@ -11,7 +11,7 @@ label new_plan:
     with fade
     cs "This really sucks. One of my favorite YouTubers just kicked me out of my dream job and told me to never come back!"
     show cs
-    cs "I would be acting super emotional right now, but the years of angry YouTube comments against me have already worn me down."
+    cs "I {i}would{/i} be acting super emotional right now, but years of angry YouTube comments against me have already prepared me for this."
     cs "Well, I guess I have no other choice than to look for another job."
     n "CS sulks away in defeat."
 
@@ -21,12 +21,12 @@ label new_plan:
     cs "Ugh, what am I going to do now?"
     cs "I don't even know what other job I could get."
     cs "I've spent most of my life editing..."
-    n "Before CS can spend much time thinking about alternatives, someone comes running up to CS."
+    n "Before CS can spend much time thinking about alternatives, someone comes running up to him."
     show arceus worried at right with moveinright
     arceus "CS!"
     show cs scared
     cs "Ah! Arceus?!"
-    arceus "CS, we gotta get outta here, fast."
+    arceus "CS, we've gotta get outta here, fast."
     show cs worried 
     cs "OK, what? What's going on?"
     arceus "Cops. They're still after us."
@@ -41,21 +41,21 @@ label new_plan:
     cs "No, I got fired."
     arceus "Aw, man. That sucks. I'm sure we'll figure it out."
     arceus "Come on, let's go back to the hotel. We can think of something, I'm sure."
-    cs "Alright man, thanks. Let's go."
+    cs "Alright, man, thanks. Let's go."
 
     scene hotel_lobby
     show cs flipped at right
     show arceus flipped at left
     with fade
-    arceus "Come on up to my room, we'll workshop where to go from here."
-    cs "Alrighty then. Not like I'll be able to pay for my own much longer..."
-    arceus "Oh come on, don't talk like that. Come on."
+    arceus "Come on up to my room, and we'll workshop where to go from here."
+    cs "Alrighty, then. Not like I'll be able to pay for my own much longer..."
+    arceus "Oh, c'mon, don't talk like that! Let's go."
 
     scene hotel_room
     show arceus at right
     show cs at left
     with fade
-    arceus "OK, let's think. We have two big problems. The cops, and money."
+    arceus "OK, let's think. We have two big problems: The cops, and money."
     cs "Right."
     arceus "Let's tackle these one at a time."
     cs "The cops, first."
@@ -69,16 +69,16 @@ label new_plan:
     arceus "Yeah, of course."
     show anno at center with moveinleft
     anno "Hey, CS, what are you doing here?"
-    cs "I got fired. And the cops are still after us."
+    cs "I got fired, and the cops are still after us."
     anno "Ah, fuck. What's the plan?"
-    arceus "Nothing yet... wait. Anno, I just got an idea."
+    arceus "Nothing yet... wait. Anno, I've just got an idea."
     anno "What's up?"
     arceus "You know AI stuff, right?"
     anno "Well, yeah, but I don't see--"
-    arceus "We AI generate a message to the cops. Tell them they don't need to go after us anymore."
+    arceus "We AI generate a message to the cops telling them they don't need to go after us anymore."
     anno "From who?"
     arceus "HoH SiS."
-    anno "Wait, yeah, I can totally do that, I have the models ready for that and everything."
+    anno "Wait, yeah, I can totally do that. I have the models ready for that and everything."
     n "Anno starts typing away at his laptop, and within a few minutes, a voice plays out of the speaker."
     ed "I think CS is a pretty good guy. You shouldn't arrest him."
     cs "Oh my God, that's amazing! But what about you two?"
@@ -87,6 +87,7 @@ label new_plan:
     if fun_value(20):
         play sound "<loop 0>obama.mp3" volume 0.5
         bomahanobeep "I'm officially pardoning Annorexorcist and Arceus3251, for helping me out of a pickle."
+        # If this line is changed, change the audio
     else:
         play sound "<loop 0>obama.mp3" volume 0.5
         obamanobeep "I'm officially pardoning Annorexorcist and Arceus3251, for helping me out of a pickle."
@@ -97,7 +98,7 @@ label new_plan:
     music end
     cs "But what about money? I'm still out of a job and I'd like to keep having a roof over my head."
     show arceus
-    arceus "I don't know man, I can't think after all that. Let's take a bit and relax. Clear our heads."
+    arceus "I don't know, man, I can't think after all that. Let's take a bit and relax. Clear our heads."
     cs "Good call. Wanna play some Guitar Hero?"
     anno "I'm down, but, do you have controllers?"
     cs "Do I?"
@@ -122,13 +123,14 @@ label guitar_hero:
     cs "Come on! Anno knows AI, Arc is actually a really good percussionist, and I have millions of scrobbles, so I know my music."
     anno "He has a point..."
     arceus "Does he?"
-    cs "What's the worst that happens? We need money, don't we?"
+    cs "What's the worst that could happen? We need money, don't we?"
     arceus "We do..."
     cs "Then let's do this!"
     anno "I'm down!"
     cs "Arc?"
     arceus "What do I have to lose?"
     cs "Woohoo!"  # haha I did it too Pakoo
+    # Learn to use commas, fuck-ass. "I did it too, Pakoo" - Arc
     stop music fadeout 3.0
     music end
     $ achievement_manager.unlock("Guitar Hero")
@@ -140,7 +142,7 @@ label guitar_hero:
     with fade
     play music "<loop 0>audio/hightop.mp3" volume 0.5
     music Hightop - Dr. Awesome
-    cs "Maybe we should call Blank. He's like, an actual musician."
+    cs "Maybe we should call Blank. He's, like... an actual musician."
     show cs phone
     n "CS calls Blank on Discord."
     blank "CS? Where the heck have you been?"
@@ -154,33 +156,33 @@ label guitar_hero:
     show cs
     cs "Well, you heard the man. Anno, do you have FL Studio?"
     anno "Just got it."
-    cs "Well let's get to work, boys!"
+    cs "Well, let's get to work, boys!"
     jump write_song
 
 label write_song:
     stop music fadeout 3.0
     scene black with dissolve
-    n "After some time, the gang have their first song written."
+    n "After some time, the gang has their first song written."
     stop music fadeout 3.0
     music end
     scene hotel_room with dissolve
     show arceus happy at right with moveinright
-    arceus "You know, that's not half bad."
+    arceus "Ya know what? That's not half bad."
     show anno at left with moveinright
     anno "I like it a lot!"
     show cs at center with moveinbottom
-    cs "Wanna play it again one more time?"
+    cs "Wanna play it one more time?"
     anno "Can do!"
     n "Anno hits play on the track."
     play music "<loop 0>audio/everlong.mp3" volume 0.5
     music Everlong - Foo Fighters
-    n "{cps=15}{image=note_small1.png}We broke the chains, now we're free to fly,{w=1.5}\nEscaped concrete, and now we see blue skies{w=1.5}\nBecome brand new, we'll leave the past behind,{w=1.5}\nPrisoners no more, 'cause a new life we'll find{image=note_small2.png}"
+    n "{cps=15}{image=note_small1.png} We broke the chains, now we're free to fly,{w=1.5}\nEscaped concrete, and now we see blue skies{w=1.5}\nBecome brand new, we'll leave the past behind,{w=1.5}\nPrisoners no more, 'cause a new life we'll find {image=note_small2.png}"
     cs "Yeah, that's really good!"
     show arceus
     stop music fadeout 3.0
     music end
-    arceus "Well I guess all we have to do now is upload it."
-    anno "Alright boys, what do we call it?"
+    arceus "Well, I guess all we have to do now is upload it."
+    anno "Alright, boys, what do we call it?"
     $ song_name_1 = renpy.input("What should we call the song?", song_name_1, length = 32)
     cs "How about {i}[song_name_1]{/i}?"
     $ achievement_manager.unlock("Hi, My Name Is...")
@@ -243,7 +245,7 @@ label hotel_next_day:
     arceus "Mmm."
 
     pause 2.0
-    cs "Do you have any ideas for{nw}"
+    cs "Do you have any ideas for--{nw}"
     show arceus angry
     arceus "Man I {i}just{/i} woke up."
     cs "Yeah, sorry."
@@ -263,21 +265,21 @@ label hotel_next_day:
     show arceus with determination
     n "They all sit down to eat."
 
-    n "As they eat, CS checks the stream numbers on {i}[song_name_1]{/i}."
+    n "As they eat, CS checks the number of streams on {i}[song_name_1]{/i}."
     show cs scared
     cs "Guys?"
     arceus "Mmm?"
     n "Arceus and Anno are stuffing their face."
     play music "<loop 0>audio/now_what.mp3" volume 0.5
     music Now What? 1 - Dr. Awesome
-    cs "The song has like, a hundred thousand streams."
+    cs "The song has, like... a hundred thousand streams."
     n "Arceus nearly spits out his food."
     # arceus shocked?
-    arceus "It has what?!"
-    n "CS shows Arc the phone."
+    arceus "It has {i}what?!{/i}"
+    n "CS shows Arceus the phone."
     show arceus happy
     arceus "Holy shit!"
-    anno "Wait, that's crazy actually."
+    anno "Wait, that's crazy, actually."
     show cs happy
     cs "This is amazing! We might have a ticket out of here! We won't have to run from the cops anymore!"
     n "A random patron turns to look at CS."
@@ -290,7 +292,7 @@ label hotel_next_day:
     show arceus
     arceus "We can't let this window close, right?"
     cs "I'm shocked, but yeah! Let's do it!"
-    n "The gang finish their food and head back up to their room."
+    n "The gang finishes their food and heads back up to their room."
     stop music fadeout 3.0
     music end
     hide cs
@@ -319,19 +321,19 @@ label song_2:
     n "An upbeat rock instrumental plays from Anno's computer."
     show arceus happy
     arceus "Heck yeah, awesome. OK, here I go..."
-    arceus "{cps=15}{image=note_small1.png}We're going down to Vegas,{w=1.5} we're gonna strike it rich!{w=1.5}\nWe're going down to Vegas..."
+    arceus "{cps=15}{image=note_small1.png} We're going down to Vegas,{w=1.5} we're gonna strike it rich!{w=1.5}\nWe're going down to Vegas..."
     show arceus worried
     arceus "Uh..."
     $ line_1 = renpy.input("Finish the line!", "", length = 64)
-    cs "How about, '[line_1]'"
+    cs "How about, '[line_1]'?"
     $ achievement_manager.unlock("Singer-Songwriter")
     show arceus happy
     arceus "Yeah!"
-    arceus "{cps=15}{image=note_small1.png}We're going down to Vegas,{w=1.5} [line_1]{image=note_small2.png}"
+    arceus "{cps=15}{image=note_small1.png} We're going down to Vegas,{w=1.5} [line_1] {image=note_small2.png}"
     cs "Woohoo! That sounds awesome!"
     stop music fadeout 3.0
     music end
-    anno "Let's get some backing vocals and a solo done and we have another song!"
+    anno "Let's get some backing vocals and a solo done, then we have another song!"
     arceus "I'm glad you guys like it :3"
 
     scene black with dissolve
@@ -343,41 +345,42 @@ label song_2:
     show cs
     with dissolve
     anno "So what do we call this one?"
-    arceus "I liked your name for the last one, CS, why don't you name this one, too?"
+    arceus "I liked your name for the last one, CS, so why don't you name this one, too?"
     cs "How about..."
     $ song_name_2 = renpy.input("What should we call the song?", song_name_2, length = 32)
     cs "{i}[song_name_2]?{/i}"
     show arceus happy
     arceus "You're a genius, CS."
     show cs happy
-    cs "Aw, thanks, guys. Wait, we don't have a band name either!"
+    cs "Aw, thanks, guys. Wait, we don't have a band name, either!"
     anno "Yeah, what were you thinking?"
     cs "I was thinking..."
     $ band_name = renpy.input("What should we call the band?", band_name, length = 32)
     cs "[band_name]!"
-    anno "Woah, awesome! Not as good as 'Nirvana', but you know, it wasn't going to be."
+    anno "Woah, awesome! Not as good as 'Nirvana', but, you know, it wasn't going to be."
     cs "Hell yeah! [band_name] forever!"
-    n "They all high-five."
-    arceus "Well, I guess tomorrow, we can release this one!"
+    n "They all high five."
+    arceus "Well, I guess tomorrow we can release this one!"
     anno "Sounds good!"
-    cs "I'm getting tired, I think we should hit the sack."
+    cs "I'm getting tired. I think we should hit the sack."
     if fun_value(10):
-        arceus "I'm gonna hit my sack{nw}"
+        arceus "I'm gonna hit {i}my{/i} sack{nw}"
+        # Ow, my sack :( - Arc
     arceus "Yeah, that sounds like a good idea."
     n "The boys all get ready for a night's rest."
 
     scene black with dissolve
     pause 2.0
-    cs "Hey guys?"
+    cs "Hey, guys?"
     anno "Hmm?"
     cs "What if we {i}don't{/i} release the song tomorrow?"
     arceus "What? Are you crazy? We're doing so well."
-    cs "That's what I'm saying. Let's release a whole EP! That way, we get more views on the whole thing, and maybe we can even sell vinyls!"
+    cs "That's what I'm saying. Let's release a whole EP! That way, we get more streams on the whole thing, and maybe we can even sell vinyls!"
     arceus "You and your vinyls."
     cs "I mean, come on, right? Our first gamble paid off, and now we have an audience. What do we have to lose?"
     anno "Yeah, we could."
     arceus "I guess I'm cool with that."
-    cs "Let's do it then! [band_name], here we go!"
+    cs "Let's do it, then! [band_name], here we go!"
     jump ep_time
 
 label ep_time:
@@ -389,7 +392,7 @@ label ep_time:
     show cs
     with dissolve
 
-    cs "So, we're making a whole EP, what do we have to do?"
+    cs "So, we're making a whole EP. What do we have to do?"
     anno "Well, Naming King, what were you thinking about calling it?"
     cs "Well, I had a dream last night."
     show arceus worried
@@ -399,33 +402,33 @@ label ep_time:
     cs "[ep_name]!"
     anno "You know what, I like it."
     show arceus happy
-    arceus "See, when you said 'I thought of it in a dream,' I thought it was going to suck."
+    arceus "See, when you said \"I thought of it in a dream\", I thought it was going to suck."
     cs "Fair."
-    cs "So now we need to start putting some songs on this bad boy!"
+    cs "So, now we need to start putting some songs on this bad boy!"
     show arceus
-    arceus "Well then let's get to it, yeah? We already have {i}[song_name_1]{/i} and {i}[song_name_2]{/i}."
+    arceus "Well then, let's get to it, yeah? We already have {i}[song_name_1]{/i} and {i}[song_name_2]{/i}."
     anno "Well, I had an idea for one this time."
     cs "Oh? Hit us with it!"
     anno "Well, I know I want it to be about travelling the world, but I don't know what to say for some of the lines."
     cs "I can help fill them in!"
-    anno "Alright, awesome, here's what I got:"
+    anno "Alright, awesome, here's what I've got:"
     play music "<loop 0>audio/energetic_rock.mp3" volume 0.5
     music Energetic Rock - Every Day Music
-    anno "{cps=15}{image=note_small1.png}I made my way over to Japan...{image=note_small2.png}"
+    anno "{cps=15}{image=note_small1.png} I made my way over to Japan... {image=note_small2.png}"
     $ line_2 = renpy.input("What should the next line be?", "", length = 64)
     anno "OK! How about..."
-    anno "{cps=15}{image=note_small1.png}I found myself in the U.K...{image=note_small2.png}"
+    anno "{cps=15}{image=note_small1.png} I found myself in the U.K... {image=note_small2.png}"
     $ line_3 = renpy.input("What should the next line be?", "", length = 64)
     anno "Nice, nice, how about:"
-    anno "{cps=15}{image=note_small1.png}I'm gonna go party in Sweden...{image=note_small2.png}"
+    anno "{cps=15}{image=note_small1.png} I'm gonna go party in Sweden... {image=note_small2.png}"
     $ line_4 = renpy.input("What should the next line be?", "", length = 64)
-    anno "{cps=15}{image=note_small1.png}I'm globetrottin'!{image=note_small2.png}"
+    anno "{cps=15}{image=note_small1.png} I'm globetrottin'! {image=note_small2.png}"
     cs "Hey, I like that! Sing it all the way through!"
     anno "Gotcha!"
-    anno "{cps=15}{image=note_small1.png}I made my way over to Japan...{w=1.5}\n[line_2]{image=note_small2.png}"
-    anno "{cps=15}{image=note_small1.png}I found myself in the U.K...{w=1.5}\n[line_3]{image=note_small2.png}"
-    anno "{cps=15}{image=note_small1.png}I'm gonna go party in Sweden...{w=1.5}\n[line_4]{image=note_small2.png}"
-    anno "{cps=15}{image=note_small1.png}I'm globetrottin'!{image=note_small2.png}"
+    anno "{cps=15}{image=note_small1.png} I made my way over to Japan... {w=1.5}\n[line_2]{image=note_small2.png}"
+    anno "{cps=15}{image=note_small1.png} I found myself in the U.K... {w=1.5}\n[line_3]{image=note_small2.png}"
+    anno "{cps=15}{image=note_small1.png} I'm gonna go party in Sweden... {w=1.5}\n[line_4]{image=note_small2.png}"
+    anno "{cps=15}{image=note_small1.png} I'm globetrottin'! {image=note_small2.png}"
     show arceus happy
     n "Arceus claps."
     cs "Well, I guess you want me to name this one, too?"
@@ -439,17 +442,17 @@ label ep_time:
     stop music fadeout 3.0
     music end
     arceus "Dang, and all without leaving the breakfast table."
-    anno "Now that's efficency. I'll go back upstairs and polish this up."
+    anno "Now, that's efficency. I'll go back upstairs and polish this up."
     hide anno with moveoutleft
-    n "Anno gets up from his seat and heads to the room."
+    n "Anno gets up from his seat and heads back to the room."
     cs "He's really been a huge help with all of this."
     show arceus worried
     arceus "Yeah, I kinda feel like I'm not pulling my weight."
-    cs "What do you mean, you wrote {i}[song_name_2]{/i}!"
+    cs "What do you mean, you wrote {i}[song_name_2]!{/i}"
     show arceus
     arceus "True, true."
-    cs "Listen, I'm just like, the name guy. And part of me doesn't even feel like I'm coming up with those, they just kinda come to me, man."
-    arceus "Nah dude, you wrote {i}[song_name_1]{/i}!"
+    cs "Listen, I'm just, like... the name guy. And part of me doesn't even feel like I'm coming up with {i}those{/i}. They just.. kinda come to me, man."
+    arceus "Nah, dude, you wrote {i}[song_name_1]!{/i}"
     cs "I guess."
     arceus "We should head back upstairs with Anno. Maybe there is something we can do to help!"
     cs "Yeah, let's go see!"
@@ -466,7 +469,7 @@ label back_to_room:
     with moveinleft
     show arceus with determination
 
-    n "Anno is deep in his laptop."
+    n "Anno is deeply concentrated on his laptop."
     anno "Hey guys!"
     cs "Hey!"
     arceus "We were wondering, is there anything we can do to help?"
@@ -478,8 +481,8 @@ label back_to_room:
     show arceus happy
     arceus "Thank you, thank you."
     cs "What can I do?"
-    anno "Well, you already named it {i}[song_name_3]{/i}, and that's definitely our best title yet. You wrote like, half the lines, too."
-    anno "But if you want to record backing vocals, this track might sound dope with them!"
+    anno "Well, you already named it {i}[song_name_3]{/i}, and that's definitely our best title yet. You wrote, like, half the lines, too."
+    anno "But, if you want to record backing vocals, this track might sound dope with them!"
     cs "Will do!"
     python:
         last_words = []
@@ -493,12 +496,12 @@ label back_to_room:
     anno "You're clear! That was awesome!"
     cs "Thank you, thank you!"
     arceus "Is that us wrapped for the day?"
-    anno "I think it is! I'll export this and save it as {i}[song_name_3]{/i}!"
+    anno "I think it is! I'll export this and save it as {i}[song_name_3]!{/i}"
     cs "Let's go!"
-    n "Everyone high-fives."
+    n "Everyone high fives."
     stop music fadeout 3.0
     scene black with dissolve
-    n "The gang go to bed after another successful day."
+    n "The gang goes to bed after another successful day."
     cs "{i}At this rate, we'll have this whole EP done by the end of the week!"
     n "CS smiles to himself, drifting off to sleep."
 
@@ -517,7 +520,7 @@ label mcd:
     anno "Well, you guys ready to write the next song?"
     cs "Ugh, I'm starving."
     arceus "That hotel breakfast just isn't doing it for me today."
-    anno "Hmm... we have a little extra money from the first song's streams, wanna go to like, McDonald's?"
+    anno "Hmm... we have a little extra money from the first song's streams. Wanna go to, like... McDonald's?"
     n "CS perks up."
     cs "For sure."
     arceus "Well then, let's head out!"
@@ -541,7 +544,7 @@ label mcd:
     $ renpy.music.set_pause(True, "music")
     play music2 "<loop 0>audio/france.mp3" volume 0.5
     music Guillotine World - Kikiyama
-    cs "{cps=15}{image=note_small1.png}I'M GONNA TAKE OVER THE WORLD.{w=1.0} I'M GONNA KILL GOD.{w=1.0} I CAN CONTORT REALITY TO MY WHIMS--{image=note_small2.png}"
+    cs "{cps=15}{image=note_small1.png} I'M GONNA TAKE OVER THE WORLD.{w=1.0} I'M GONNA KILL GOD.{w=1.0} I CAN CONTORT REALITY TO MY WHIMS-- {image=note_small2.png}"
     stop music2
     music end
     $ renpy.music.set_pause(False, "music")
@@ -553,28 +556,28 @@ label mcd:
     cs "Yeah, I was worried about that."
     cs "OK, OK, I have a different idea."
     anno "Yeah...?"
-    cs "Well I don't have all the lyrics yet..."
+    cs "Well, I don't have all the lyrics yet..."
     show arceus
     arceus "Maybe this time, we can fill in the lines!"
     cs "OK! Here's what I have so far:"
     $ renpy.music.set_pause(True, "music")
     play music2 "<loop 0>audio/dragon_castle.mp3" volume 0.5
     music Dragon Castle - BreakingCopyright
-    cs "{cps=15}{image=note_small1.png}Through all adversity, we'll bind together and overcome...{image=note_small2.png}"
+    cs "{cps=15}{image=note_small1.png} Through all adversity, we'll bind together and overcome... {image=note_small2.png}"
     arceus "Ooh, I got something:"
     $ line_5 = renpy.input("What should the next line be?", "", length = 64)
-    arceus "{cps=15}{image=note_small1.png}[line_5]{image=note_small2.png}"
+    arceus "{cps=15}{image=note_small1.png} [line_5] {image=note_small2.png}"
     cs "Nice! How about:"
-    cs "{cps=15}{image=note_small1.png}With my friends beside there's no foe we can not fight...{image=note_small2.png}"
+    cs "{cps=15}{image=note_small1.png} With my friends beside there's no foe we can not fight... {image=note_small2.png}"
     anno "Let me take this one."
     $ line_6 = renpy.input("What should the next line be?", "", length = 64)
-    anno "{cps=15}{image=note_small1.png}[line_6]{image=note_small2.png}"
+    anno "{cps=15}{image=note_small1.png} [line_6] {image=note_small2.png}"
     cs "Heck yeah! And then I think we should have a solo like:"
     cs "{cps=15}{image=note1.png}{image=note4.png}{image=note3.png}{image=note1.png}{image=note5.png}{image=note1.png}{image=note2.png}{image=note1.png}{image=note2.png}{image=note2.png}{image=note4.png}{image=note4.png}{image=note3.png}{image=note3.png}{image=note5.png}{image=note5.png}{image=note1.png}{image=note1.png}{nw}"
     arceus "Woah, how are you doing that with your mouth?"
     cs "What, like:"
     cs "{cps=10}{image=note1.png}{image=note2.png}{image=note3.png}{image=note4.png}{image=note5.png}"
-    cs "Honestly I have no idea."
+    cs "Honestly, I have no idea."
     stop music2 fadeout 3.0
     music end
     $ renpy.music.set_pause(False, "music")
@@ -584,7 +587,7 @@ label mcd:
     cs "Huh?"
     customer "Yeah, I heard you guys making that song from my table, it's really good!"
     anno "Thanks! We're actually putting out an EP soon!"
-    customer "Well I definitely wanna hear that song again, what's it called?"
+    customer "Well, I definitely wanna hear that song again. What's it called?"
     cs "Uh..."
     $ song_name_4 = renpy.input("What should the song be called?", song_name_4, length = 32)
     cs "It's called {i}[song_name_4]!{/i}"
@@ -596,8 +599,8 @@ label mcd:
     cs "People are really liking our stuff."
     show arceus happy
     arceus "This is going better than I ever dared to hope."
-    anno "Let's go back to the room and get this song made!"
-    n "On their way out of the store, CS turns to Arc."
+    anno "Let's go back to the hotel and get this song made!"
+    n "On their way out of the store, CS turns to Arceus."
     cs "You know, I think [song_name_4] might be our best one yet."
     stop music fadeout 3.0
     music end    
@@ -621,16 +624,16 @@ label hotel_lobby_2:
     guest "Holy shit, are you from [band_name]?!"
     cs "Uh..."
     guest "You are! Holy shit!"
-    guest "You guys are cracked at making music! You're like GOATed!"
+    guest "You guys are {i}cracked{/i} at making music! You're like {i}GOATed!{/i}"
     cs "What? What does that--"
     n "A crowd starts to form around them."
-    guest "You're a rizz God! You're off the sauce at this shit!"
+    guest "You're a rizz god! You're off the sauce at this shit!"
     anno "We've released one song."
-    guest "I'm like the biggest stan of you guys! You guys gotta perform."
+    guest "I'm, like, the biggest stan of you guys! You guys {i}gotta{/i} perform."
     arceus "Perform?"
-    guest "You gotta like, give us a sneak peak of your new EP!"
+    guest "You gotta, like, give us a sneak peak of your new EP!"
     anno "{i}How did he know we're releasing a new EP{/i}"
-    guest "Come on! You gotta! You'll pop off on TikTok."
+    guest "Come on! You {i}gotta!{/i} You'll pop off on TikTok."
     cs "Uh, sure? I guess?"
     n "The crowd cheers."
     stop music fadeout 3.0
@@ -640,7 +643,7 @@ label hotel_lobby_2:
     cs "[song_name_2]!"
     n "Anno starts up the backing track, and Arceus grabs some random objects to use as a drum kit."
     play music "<loop 0>audio/happy_rock.mp3" volume 0.5
-    cs "{cps=15}{image=note_small1.png}We're going down to Vegas, we're gonna strike it rich!{w=1.5}\nWe're going down to Vegas, [line_1]{image=note_small2.png}"
+    cs "{cps=15}{image=note_small1.png} We're going down to Vegas, we're gonna strike it rich!{w=1.5}\nWe're going down to Vegas, [line_1] {image=note_small2.png}"
     n "The crowd cheers wildly."
     anno "We're [band_name]! Check out [ep_name] on streaming services soon!"
     stop music fadeout 3.0
@@ -657,7 +660,7 @@ label song_5:
 
     anno "This is the last song on the EP. We need to go big with this one."
     show arceus worried
-    arceus "I'm nervous to write this one, we really need to end on a banger."
+    arceus "I'm nervous to write this one. We really need to end on a banger."
     anno "Something victorious, something inspiring."
     show arceus
     arceus "Hmmm..."
@@ -667,7 +670,7 @@ label song_5:
     cs "But I wrote all the other songs!"
     anno "Nah, you filled in our blanks."
     arceus "Yeah, why don't you write the whole thing this time!"
-    cs "Oh gosh, you guys sure?"
+    cs "Oh, gosh, you guys sure?"
     anno "Yeah, go ahead! Here, I'll give you a beat..."
     play music "<loop 0>audio/sweet_victory.mp3" volume 0.5
     music Sweet Victory - David Eisley
@@ -676,15 +679,16 @@ label song_5:
     $ line_8 = renpy.input("Write a line! (2/4)", "", length = 64)
     $ line_9 = renpy.input("Write a line! (3/4)", "", length = 64)
     $ line_10 = renpy.input("Write a line! (4/4)", "", length = 64)
-    cs "I think I have something, here it is!"
-    cs "{cps=15}{image=note_small1.png}[line_7]{w=1.5}\n[line_8]{w=1.5}\n[line_9]{w=1.5}\n[line_10]{image=note_small2.png}"
+    cs "I think I have something! Here it is:"
+    cs "{cps=15}{image=note_small1.png} [line_7]{w=1.5}\n[line_8]{w=1.5}\n[line_9]{w=1.5}\n[line_10] {image=note_small2.png}"
     arceus "Yo?!"
-    anno "That's perfect! Give it name!"
+    anno "That's perfect! Give it a name!"
+    # Yeah, give it name, Digi <3
     $ song_name_5 = renpy.input("What should the song be called?", song_name_5, length = 32)
     cs "It's called {i}[song_name_5]!{/i}"
     show arceus happy
     arceus "That's going to be a huge hit."
-    anno "So wait, that's [ep_name] done, then!"
+    anno "So, wait, that's [ep_name] done, then!"
     cs "Woohoo!"
     n "They all high five."
     anno "I guess I'll get this mastered and release it tonight!"
@@ -706,8 +710,8 @@ label fan_interaction:
     show cs angry at left with moveinleft
     cs "Hello?"
     show mean at right with moveinright
-    mean "OMG, it's CS!"
-    cs "Huh? Are you like, a fan?"
+    mean "Holy fuck, it's CS!"
+    cs "Huh? Are you, like, a fan?"
     mean "Yes! Of your music!"
     n "CS for a moment forgets he just spent a week making an EP."
     cs "My... music? Oh, yeah, right, [band_name]!"
@@ -722,7 +726,7 @@ label fan_interaction:
     n "CS closes the door."
     show cs flipped 
     cs "Anno?"
-    n "Anno wakes up, barely."
+    n "Anno wakes up, but just barely."
     anno "Huh?"
     cs "I need you to check the numbers, quick."
     anno "The numbers? On [ep_name]? Uh..."
@@ -739,9 +743,9 @@ label fan_interaction:
     n "The gang regroups to discuss."
     cs "OK, give it to me straight. How many sales of the EP?"
     anno "57,685."
-    cs "Holy shit, that's a lot of sales, how much money{nw}"
+    cs "Holy shit, that's a lot of sales, how much money--{nw}"
     anno "57,688."
-    cs "OK, yeah, I got that, how much money does that equate to{w=0.5}{nw}"
+    cs "OK, yeah, I got that, how much money does that equate to--{w=0.5}{nw}"
     anno "57,692...{w=1.0}{nw}"
     cs "Stop refreshing the page!"
     anno "Sorry."
@@ -754,24 +758,25 @@ label fan_interaction:
     arceus "You wanna go back to prison?"
     anno "No..."
     show arceus
-    arceus "Well then."
+    arceus "Well, then."
     cs "We need to figure this out. We at least have enough money to get out of this hotel room."
     arceus "And more."
-    cs "And more, but we gotta be careful. We don't wanna blow it, or spend more than we can pay the taxes on."
+    cs "And more, but we've gotta be careful. We don't wanna blow it or spend more than we can pay the taxes on."
     anno "For sure."
     cs "How are we going to figure out how to--"
     n "Anno gets an email."
     anno "Wait, hold on, let me read this, it looks important."
     agent "{b}Tour Offer{/b}\nHey, [band_name]!\nMy name is Howie Mandell, and I'm a talent agent and tour manager."
     cs "Woah, really?"
-    agent "I'm emailing to inquire if you'd be interested in touring the country with your band. Your latest EP, [ep_name], has been making big waves on streaming services, and a live performance might be just what you need to take the next step."
+    agent "I'm emailing to inquire about whether you'd be interested in touring the country with your band. Your latest EP, [ep_name], has been making big waves on streaming services."
+    agent "I think live performances might be just what you need to take the next step."
     anno "Oh my God!"
     agent "If you're willing to negotiate, I think we could strike a very mutually benefitial deal for both of us."
     show arceus happy
     arceus "That sounds amazing!"
     agent "Please get in touch as soon as you can,\n-- Howie Mandell"
     cs "We have to accept, right?"
-    arceus "Our last two gambles paid off, I guess we gotta go all the way."
+    arceus "Our last two gambles paid off. May as well go all the way."
     anno "We can't pass this up. I'll email him back."
     cs "[band_name] is going on tour!"
     stop music fadeout 3.0
@@ -798,7 +803,7 @@ label howie:
     anno "Already? We haven't even struck a deal!"
     agent "Ah, you will, I trust in that... but until then, why don't I treat you all to the ride of a lifetime?"
     stop music fadeout 3.0
-    n "CS, Anno, and Arc all head into the limo out front, lead by Howie."
+    n "CS, Anno, and Arc follow Howie to the limo parked out front."
     show howie with determination
     hide cs
     hide anno
@@ -818,14 +823,14 @@ label limo_time:
     arceus "These snacks are amazing!"
     anno "This music's awesome!"
     cs "These seats sure are comfy!"
-    agent "Alright boys, enough chat, let's talk business."
+    agent "Alright, boys, enough chat, let's talk business."
     agent "I want to take you guys on tour."
     show cs worried
     show arceus flipped
     cs "Already?!"
-    agent "Oh yeah baby, already. [ep_name] made [band_name] big, overnight. This kinda success comes once in a lifetime, and it's in your lifetime, and it's right now!"
+    agent "Oh yeah, baby, already. [ep_name] made [band_name] big overnight. This kind of success comes once in a lifetime, and it's in {i}your{/i} lifetime, and it's {i}right now!{/i}"
     anno "Woah, woah, woah, slow down. Why are you so invested in our success?"
-    agent "Oh, don't think I'm going to get a raw deal here, I know how to make sure we all end up happy."
+    agent "Oh, don't think I'm going to get a raw deal here. I know how to make sure we all end up happy."
     show arceus angry flipped
     arceus "You sure you mean all of us?"
     agent "I sense you're spooked so I'll give ya the rub. We take you on tour. Every ticket you sell, I get a cut, you get a cut, we all go home snuggling our cash."
@@ -834,11 +839,11 @@ label limo_time:
     show arceus flipped
     show cs
     anno "So what's the plan? How do we get venues? Do we even have a way to promote?"
-    agent "Leave all the fiddly buisness to me. You guys just get on stage and sing like, {i}[song_name_3]{/i} or whatever."
-    agent "How's that song go? {image=note_small1.png}{i}I made my way over to Japan, [line_3]?{/i}{image=note_small2.png}"
+    agent "Leave all the fiddly buisness to me. You guys just get on stage and sing like, {i}[song_name_3],{/i} or whatever."
+    agent "How's that song go?\n{image=note_small1.png} {i}I made my way over to Japan, [line_3]?{/i} {image=note_small2.png}"
     show arceus angry flipped
     arceus "No, that's not--{w=0.5}{nw}"
-    agent "Anywho, do we got a deal?"
+    agent "Anywho, do we have a deal?"
     anno "I want to see whatever contract you're having us sign, first."
     agent "Smart man, smart man. Here it is."
     n "Howie hands Anno the contract."
@@ -871,11 +876,11 @@ label signed_the_contract:
     play music "<loop 0>audio/gold_room.mp3" volume 0.5
     agent "Well, your first stop is Vancouver."
     cs "Vancouver? Where are we playing?"
-    n "Howie reads his iPad."
+    n "Howie reads from his iPad."
     agent "Looks like something called LTX? Linus Tech Expo?"
     show cs worried
     cs "Wait, Linus--"
-    agent "See you bright and early tomorrow, we're getting in a tour bus!"
+    agent "See you bright and early tomorrow! We're taking a tour bus!"
 
     hide howie with moveoutright
     show cs at center
@@ -885,15 +890,15 @@ label signed_the_contract:
     cs "Linus..."
     anno "Don't be worried. Maybe he won't even recognize you."
     arceus "Yeah, he'll be busy running the expo."
-    cs "Man, I don't know, we didn't end on great terms."
-    arceus "Let's just get a good night sleep. If we need to be up that early I need to get shuteye."
+    cs "Man, I don't know... We didn't end on great terms..."
+    arceus "Let's just get a good night's sleep. If we need to be up that early, I need to get some shuteye."
     cs "OK..."
 
     scene black with dissolve
     n "The gang heads upstairs to bed, but CS struggles to sleep well."
     cs "{i}Man, I'm worried about seeing Linus again. What if he just throws all of us out because he doesn't want to see me?"
     cs "{i}The fate of [band_name] could rest in some dumb shit I did in the past."
-    cs "{i}Not even the past, like, a week or two ago."
+    cs "{i}Not even the past, like, week or two ago."
     cs "{i}Ugh, I can't sleep like this. I need a drink."
     n "CS gets out of bed and takes a walk around the halls."
 
@@ -912,15 +917,15 @@ label signed_the_contract:
     csgod "What you did was your best. Good men will realize that. His anger will have been brief, despite his rash actions."
     cs "How do you know all this?"
     csgod "That isn't important. What's important is your mind being prepared for the day ahead."
-    csgod "You will go to bed, you will rest, and you will do your best -- as you have."
+    csgod "You will go to bed, you will rest, and you will do your best, as you have."
     cs "Th-thank you... what do I call you?"
     csgod "You can call me...{w=1.5} !!!"
     hide csgod with dissolve
     stop music fadeout 3.0
     music end    
     show janitor at right with moveinright
-    janitor "You alright man? Who are you talking to?"
-    cs "N-- no-one. Just heading to bed."
+    janitor "You alright, man? Who are you talking to?"
+    cs "N-no one. Just heading to bed."
     show cs flipped
     hide cs with moveoutleft
     janitor "Weird guy."
@@ -929,7 +934,7 @@ label signed_the_contract:
 label first_tour_day:
     stop music fadeout 3.0
     scene black with dissolve
-    n "CS heads to bed, and the next morning, the [band_name] crew gets ready for their first tour day."
+    n "CS heads to bed. The next morning, the [band_name] crew gets ready for their first tour day."
 
     scene hotel_room
     show anno at left
@@ -941,7 +946,7 @@ label first_tour_day:
     cs "Much."
     arceus "What changed?"
     cs "Eh, something... something got into my head and cleared things up for me."
-    arceus "Alrighty man, well let's hope it did a good job, because it's time to hit the road."
+    arceus "Alrighty, man, well let's hope it did a good job, because it's time to hit the road."
 
     show arceus flipped with determination
     hide arceus
@@ -958,7 +963,7 @@ label first_tour_day:
     show howie at right with moveinright
     agent "You boys ready to go?"
     cs "Ready as we'll ever be."
-    agent "Well, then! It's show time!"
+    agent "Well, then! It's showtime!"
     stop music fadeout 3.0
     scene black with dissolve
     scene ltx with dissolve
@@ -971,11 +976,11 @@ label first_tour_day:
     cs "Well, it's pretty busy, I doubt we'll run into--"
     show linus at right with moveinright
     play music "<loop 0>passport.mp3" volume 0.5
-    linus "Oh good, you guys are finally, here, you're [band_name], right?"
-    linus "Luke told me about you guys, and I listened to [ep_name] last night... I really liked, uh, which one was it, {i}[song_name_4]{/i}?"
+    linus "Oh good, you guys are finally here. You're [band_name], right?"
+    linus "Luke told me about you guys, and I listened to [ep_name] last night... I really liked, uh, which one was it, {i}[song_name_4]?{/i}"
     linus "Anywho, I...{w=1.0} wait, CS?!"
     cs "Uh, hi?"
-    linus "Wait, you... you're the lead singer in [band_name]?!"
+    linus "Wait, you... {i}you're{/i} the lead singer in [band_name]?!"
     cs "Looks like it..."
     linus "Well, I'll say this, you're better at singing than you are editing LTT videos."
     show cs worried
@@ -984,12 +989,12 @@ label first_tour_day:
     linus "Listen, don't worry about it."
     show cs surprised
     cs "Really?"
-    linus "Yeah, I was too hard on you. Maybe too quick to fire you, too, though it looks like you're in a better position than I could have given you."
+    linus "Yeah, I was too hard on you. Maybe too quick to fire you, too, though it looks like you're in a better position than I could have offered you."
     show cs happy
     cs "Well, thanks for the apology."
     linus "Yeah, you deserve it. Honestly, when the public learned who was editing that video and that we axed you, they were pretty upset."
     cs "How about this, when I get out of this mess, you let me edit a guest video, and I'll make a video saying we parted ways amicably."
-    linus "Now that's a deal I'll take."
+    linus "Now, that's a deal I'll take."
     linus "Now, get on stage and rock the house!"
     stop music fadeout 3.0
     scene ltx_stage
@@ -998,15 +1003,15 @@ label first_tour_day:
     show cs
     with dissolve
     n "The crowd is going insane."
-    cs "We're [band_name], and this is {i}[song_name_4]{/i}!"
+    cs "We're [band_name], and this is {i}[song_name_4]!{/i}"
     play sound "audio/start_rocking.mp3"
     play sound "audio/cheer1.mp3"
-    n "The crowd is nuts."
+    n "The crowd roars louder."
     play music "<loop 0>audio/dragon_castle.mp3" volume 0.5
-    cs "{cps=15}{image=note_small1.png}Through all adversity, we'll bind together and overcome!{image=note_small2.png}"
-    cs "{cps=15}{image=note_small1.png}[line_5]{image=note_small2.png}"
-    cs "{cps=15}{image=note_small1.png}With my friends beside there's no foe we can not fight!{image=note_small2.png}"
-    cs "{cps=15}{image=note_small1.png}[line_6]{image=note_small2.png}"
+    cs "{cps=15}{image=note_small1.png} Through all adversity, we'll bind together and overcome! {image=note_small2.png}"
+    cs "{cps=15}{image=note_small1.png} [line_5] {image=note_small2.png}"
+    cs "{cps=15}{image=note_small1.png} With my friends beside there's no foe we can not fight! {image=note_small2.png}"
+    cs "{cps=15}{image=note_small1.png} [line_6] {image=note_small2.png}"
     n "Anno plays an epic guitar solo."
     stop music fadeout 3.0
     play sound "audio/cheer1.mp3"
@@ -1033,10 +1038,10 @@ label first_tour_day:
     show arceus at right
     with move
 
-    arceus "We did it, that was amazing!"
+    arceus "We did it! That was amazing!"
     anno "Hell yeah!"
     cs "We rocked!"
-    arceus "Welp, back on the bus to recoop and see how much we earned!"
+    arceus "Welp, back on the bus to recoup and see how much we earned!"
 
     show arceus flipped with determination
     hide cs
@@ -1056,23 +1061,23 @@ label first_tour_day:
     show howie at right behind arceus
 
     agent "Boys!"
-    n "The team turn to Howie to look at him."
+    n "The team turns to face Howie."
     agent "You really rocked out there! Playing Linus' favorite song, that was a clutch move."
     cs "How much did we make?"
     agent "Five."
     arceus "Five?!"
     agent "Thousand."
-    anno "Holy shit, already? With that kinda cashflow, we could..."
-    agent "Woah, woah, woah, slow your horses kid."
-    anno "Slow my horses...?"
+    anno "Holy shit, already? With that kinda cashflow, we could--"
+    agent "Woah, woah, woah, hold your horses, kid."
+    anno "Hold my horses...?"
     agent "That's without me taking my cut, or you three splitting it. We still got more shows to do, you know!"
-    cs "Well then, let's get this show on the road!"
+    cs "Well, then, let's get this show on the road!"
     stop music fadeout 3.0
     scene black with dissolve
     jump second_tour_day
 
 label second_tour_day:
-    n "The group rests for the day, on their way to their next venue."
+    n "The group rests while on their way to their next venue."
     
     scene tour_bus_inside
     show anno at left
@@ -1086,10 +1091,10 @@ label second_tour_day:
     cs "Yeah, I might head into the city. What about you guys?"
     anno "Nah, I'm good."
     arceus "Yeah, I'm just gonna chill here."
-    cs "Alrighty then!"
+    cs "Alrighty, then!"
     stop music fadeout 3.0
     scene black with dissolve
-    n "As they pull into the city, CS gets out and walks the street."
+    n "After they pull into the city, CS gets out and walks the streets."
 
     scene manitoba_street
     show cs with moveinleft
@@ -1108,24 +1113,24 @@ label second_tour_day:
     with dissolve
     show cs at left with moveinleft
     if fun_value(30):
-        ges "Welcome to the sho--, woah, are you CS, eh?"
+        ges "Welcome to the sho-- woah, are you CS, eh?"
         cs "Yeah, how'd you know?"
         ges "Aren't you touring with [band_name] right now, eh?"
         cs "Yeah, I am!"
         ges "Dude, I've been listening to [song_name_3] all day, eh?"
-        ges "{cps=15}{image=note_small1.png}I found myself in the U.K...{w=1.5}\n[line_3]{image=note_small2.png}, eh?"
+        ges "{cps=15}{image=note_small1.png} I found myself in the U.K...{w=1.5}\n[line_3] {image=note_small2.png}, eh?"
         ges "That shit slaps, eh?"
-        cs "Well, thanks, I was wondering if you had some nice shoes for my concert tonight."
-        ges "Oh man, I got just the thing, eh?"
+        cs "Well, thanks! I was wondering if you had some nice shoes for my concert tonight."
+        ges "Oh, man, I've got just the thing, eh?"
         hide ges with moveoutright
-        n "Ges searches through boxes in the back."
+        n "Ges searches through stock in the back."
         n "He returns with a box."
         show ges at right with moveinright
-        ges "These are called the {i}Gessler Step, eh?"
+        ges "These are called the {i}Gessler Step,{/i} eh?"
         cs "The Gessler Step?"
-        ges "The finest shoes I got, and I personally recommend them. You'll love 'em or my name isn't Ges! And it is, eh?"
+        ges "The finest shoes I've got, and I personally recommend them. You'll love 'em or my name isn't Ges! And it is, eh?"
         cs "Wait, did you make these shoes?"
-        ges "Nah, just kinda a coincidence, eh?"
+        ges "Nah, just kind of a coincidence, eh?"
         cs "Oh, okay."
         n "CS tries on the shoes."
         cs "These are awesome!"
@@ -1135,24 +1140,24 @@ label second_tour_day:
         ges "That'll be $88.88, if you want em, eh?"
         cs "I'll take them!"
     else:
-        ges "Welcome to the sho--, woah, are you CS?"
+        ges "Welcome to the sho-- woah, are you CS?"
         cs "Yeah, how'd you know?"
         ges "Aren't you touring with [band_name] right now?"
         cs "Yeah, I am!"
         ges "Dude, I've been listening to [song_name_3] all day!"
-        ges "{cps=15}{image=note_small1.png}I found myself in the U.K...{w=1.5}\n[line_3]{image=note_small2.png}"
+        ges "{cps=15}{image=note_small1.png} I found myself in the U.K...{w=1.5}\n[line_3] {image=note_small2.png}"
         ges "That shit slaps!"
-        cs "Well, thanks, I was wondering if you had some nice shoes for my concert tonight."
-        ges "Oh man, I got just the thing."
+        cs "Well, thanks! I was wondering if you had some nice shoes for my concert tonight."
+        ges "Oh, man, I've got just the thing."
         hide ges with moveoutright
-        n "Ges searches through boxes in the back."
+        n "Ges searches through stock in the back."
         n "He returns with a box."
         show ges at right with moveinright
         ges "These are called the {i}Gessler Step!"
         cs "The Gessler Step?"
-        ges "The finest shoes I got, and I personally recommend them. You'll love 'em or my name isn't Ges! And it is."
+        ges "The finest shoes I've got, and I personally recommend them. You'll love 'em or my name isn't Ges! And it is."
         cs "Wait, did you make these shoes?"
-        ges "Nah, just kinda a coincidence."
+        ges "Nah, just kind of a coincidence."
         cs "Oh, okay."
         n "CS tries on the shoes."
         cs "These are awesome!"
@@ -1171,7 +1176,7 @@ label second_tour_day:
     with dissolve
     play music "<loop 0>audio/exotic.mp3" volume 0.5
     show cs flipped at right with moveinright
-    anno "Hey CS!"
+    anno "Hey, CS!"
     arceus "Dang, nice shoes!"
     cs "Thanks! Are you guys ready to perform tonight?"
     show arceus happy
@@ -1192,9 +1197,9 @@ label second_tour_day:
     n "A crowd can be heard cheering for the previous act."
     show nova at right with moveinright
     show arceus flipped
-    nova "Easy crowd tonight, you guys are gonna knock it out of the--{w=0.5} CS?"
+    nova "Easy gig tonight, you guys are gonna knock it out of the--{w=0.5} CS?"
     cs "Nova? What are you doing here?"
-    nova "I live close by, I was DJing as the opening act..."
+    nova "I live close by. I was DJing as the opening act..."
     nova "Wait, let me check something."
     n "Nova looks at a piece of paper."
     nova "Opening for... [band_name]? Is that you guys?"
@@ -1203,7 +1208,7 @@ label second_tour_day:
     nova "I didn't know it was you!"
     cs "Well, us."
     n "CS gestures to the others."
-    nova "Of course! Well you guys go clean up out there."
+    nova "Of course! Well, you guys go clean up out there."
     show arceus happy
     arceus "Will do!"
     
@@ -1216,21 +1221,22 @@ label second_tour_day:
     show cs
     with dissolve
 
-    cs "I know you all just watched an amazing performance by Nova, and that's going to be a hard act to follow..."
-    cs "But who wants to hear {i}[song_name_3]{/i}?!"
+    cs "I know you all just watched an amazing performance by Nova, and that's going to be a tough act to follow..."
+    cs "But, who wants to hear {i}[song_name_3]?!{/i}"
     play sound "audio/start_rocking.mp3"
     play sound "audio/cheer1.mp3"
     n "The crowd is exploding."
+    # Fun value, add explosion sounds - Arc
     play music "<loop 0>audio/energetic_rock.mp3" volume 0.5
-    cs "{cps=15}{image=note_small1.png}I made my way over to Japan...{w=1.5}\n[line_2]{image=note_small2.png}"
-    cs "{cps=15}{image=note_small1.png}I found myself in the U.K...{w=1.5}\n[line_3]{image=note_small2.png}"
-    cs "{cps=15}{image=note_small1.png}I'm gonna go party in Sweden...{w=1.5}\n[line_4]{image=note_small2.png}"
-    cs "{cps=15}{image=note_small1.png}I'm globetrottin'!{image=note_small2.png}"
+    cs "{cps=15}{image=note_small1.png} I made my way over to Japan...{w=1.5}\n[line_2] {image=note_small2.png}"
+    cs "{cps=15}{image=note_small1.png} I found myself in the U.K...{w=1.5}\n[line_3] {image=note_small2.png}"
+    cs "{cps=15}{image=note_small1.png} I'm gonna go party in Sweden...{w=1.5}\n[line_4] {image=note_small2.png}"
+    cs "{cps=15}{image=note_small1.png} I'm globetrottin'! {image=note_small2.png}"
     stop music fadeout 3.0
     play sound "audio/cheer1.mp3"
     n "The crowd is applauding wildly."
     cs "We're [band_name]!"
-    n "The crowd is loving it."
+    n "The audience is loving it."
 
     scene black with dissolve
     
@@ -1244,15 +1250,15 @@ label second_tour_day:
 
 label third_tour_day:
     n "Howie hollers from the front of the bus."
-    agent "Alright boys, it's your last performance!"
-    cs "Where are we heading?"
+    agent "Alright, boys, it's your last performance!"
+    cs "Where are we headed?"
     agent "Ontario!"
     cs "Ontario? That's where that one fan was from!"
     agent "Well he's about to be a happy camper!"
-    anno "I can't believe we're already at our last tour day!"
+    anno "I can't believe we're already on our last tour day!"
     $ line_num = renpy.get_filename_line()[1] + 1
     arceus "Well, it's been [line_num] lines, it's been a while."
-    anno "We're going to really have to go big for this one, I think it's our biggest audience size yet."
+    anno "We're going to really have to go big for this one. I think it's our biggest audience yet."
     cs "We'll put on a show like they've never seen before!"
 
     stop music fadeout 3.0
@@ -1263,16 +1269,17 @@ label third_tour_day:
     show cs at mid_mid_left
     with moveinleft
 
-    cs "Alright, well let's get prepared, we have way more songs to do tonight--{nw}"
-    show mean with moveinright
+    cs "Alright, well, let's get prepared. We have way more songs to do tonight--{nw}"
+    show mean at right with moveinright
     mean "{i}Holy shit, it's you!"
     cs "Wait, are you that fan from my hotel?"
     mean "{i}You actually made it to Ontario?!"
     cs "Uh... yeah, totally because you asked me to!"
     show cs worried
     show mean at mid_mid_left
-    with move
-    n "Mean tackle hugs CS."
+    with MoveTransition(0.25)
+    show cs worried with hpunch
+    n "Mean tackle-hugs CS."
     if fun_value(5):
         cs "Ow."
     
@@ -1287,58 +1294,58 @@ label third_tour_day:
     show cs
     with dissolve
 
-    cs "For our special performance tonight, we'll be singing every song off [ep_name]!"
+    cs "For our special performance tonight, we'll be singing every song off our album: [ep_name]!"
     n "The crowd is going wild."
-    cs "First up, it's {i}[song_name_1]{/i}!"
+    cs "First up, it's {i}[song_name_1]!{/i}"
     play sound "audio/start_rocking.mp3"
-    n "The crowd cheers."
+    n "The audience cheers."
     play sound "audio/cheer2.mp3"
     play music "<loop 0>audio/everlong.mp3" volume 0.5
-    cs "{cps=15}{image=note_small1.png}We broke the chains, now we're free to fly,{w=1.5}\nEscaped concrete, and now we see blue skies{w=1.5}\nBecome brand new, we'll leave the past behind,{w=1.5}\nPrisoners no more, 'cause a new life we'll find{image=note_small2.png}"
+    cs "{cps=15}{image=note_small1.png} We broke the chains, now we're free to fly,{w=1.5}\nEscaped concrete, and now we see blue skies{w=1.5}\nBecome brand new, we'll leave the past behind,{w=1.5}\nPrisoners no more, 'cause a new life we'll find {image=note_small2.png}"
     n "The crowd is loving this!"
     stop music fadeout 3.0
-    cs "Who wants to hear {i}[song_name_2]{/i}?!"
+    cs "Who wants to hear {i}[song_name_2]?!{/i}"
     play sound "audio/start_rocking.mp3"
     n "The crowd responds with further excitement."
     play sound "audio/cheer2.mp3"
     play music "<loop 0>audio/happy_rock.mp3" volume 0.5
-    cs "{cps=15}{image=note_small1.png}We're going down to Vegas,{w=1.5} we're gonna strike it rich!{w=1.5}\nWe're going down to Vegas,{w=1.5} [line_1]"
-    n "The audience is adoring this."
+    cs "{cps=15}{image=note_small1.png} We're going down to Vegas,{w=1.5} we're gonna strike it rich!{w=1.5}\nWe're going down to Vegas,{w=1.5} [line_1]! {image=note_small2.png}"
+    n "The fans are adoring this."
     stop music fadeout 3.0
 
     cs "Next up, here's a classic: [song_name_3]"
-    anno "CS, none of our songs are classics, we're a new band."
+    anno "CS, none of our songs are classics. We're a new band."
     play sound "audio/start_rocking.mp3"
     n "The crowd laughs."
     play music "<loop 0>audio/energetic_rock.mp3" volume 0.5
-    cs "{cps=15}{image=note_small1.png}I made my way over to Japan...{w=1.5}\n[line_2]{image=note_small2.png}"
-    cs "{cps=15}{image=note_small1.png}I found myself in the U.K...{w=1.5}\n[line_3]{image=note_small2.png}"
-    cs "{cps=15}{image=note_small1.png}I'm gonna go party in Sweden...{w=1.5}\n[line_4]{image=note_small2.png}"
-    cs "{cps=15}{image=note_small1.png}I'm globetrottin'!{image=note_small2.png}"
-    n "The crowd loves this a lot."
+    cs "{cps=15}{image=note_small1.png} I made my way over to Japan...{w=1.5}\n[line_2] {image=note_small2.png}"
+    cs "{cps=15}{image=note_small1.png} I found myself in the U.K...{w=1.5}\n[line_3] {image=note_small2.png}"
+    cs "{cps=15}{image=note_small1.png} I'm gonna go party in Sweden...{w=1.5}\n[line_4] {image=note_small2.png}"
+    cs "{cps=15}{image=note_small1.png} I'm globetrottin'!{image=note_small2.png}"
+    n "The audience loves this a lot."
     stop music fadeout 3.0
-    cs "Alright, here's a favorite for a lot of you: [song_name_4]!"
+    cs "Alright, here's a fan favorite: [song_name_4]!"
     play sound "audio/start_rocking.mp3"
     play sound "audio/cheer2.mp3"
     play music "<loop 0>audio/dragon_castle.mp3" volume 0.5
-    cs "{cps=15}{image=note_small1.png}Through all adversity, we'll bind together and overcome!{image=note_small2.png}"
-    cs "{cps=15}{image=note_small1.png}[line_5]{image=note_small2.png}"
-    cs "{cps=15}{image=note_small1.png}With my friends beside there's no foe we can not fight!{image=note_small2.png}"
-    cs "{cps=15}{image=note_small1.png}[line_6]{image=note_small2.png}"
+    cs "{cps=15}{image=note_small1.png} Through all adversity, we'll bind together and overcome! {image=note_small2.png}"
+    cs "{cps=15}{image=note_small1.png} [line_5] {image=note_small2.png}"
+    cs "{cps=15}{image=note_small1.png} With my friends beside there's no foe we can not fight! {image=note_small2.png}"
+    cs "{cps=15}{image=note_small1.png} [line_6] {image=note_small2.png}"
     n "Anno shreds an epic solo."
-    n "The crowd is exploding!"
+    n "The fans are exploding!"
     stop music fadeout 3.0
-    cs "And now, for the first time on stage: it's [song_name_5]!"
+    cs "And now! For the first time on stage! It's [song_name_5]!"
     play sound "audio/start_rocking.mp3"
     play sound "audio/cheer2.mp3"
     n "The crowd is ready to burst."
     play music "<loop 0>audio/sweet_victory.mp3" volume 0.5
-    cs "{cps=15}{image=note_small1.png}[line_7]{w=1.5}\n[line_8]{w=1.5}\n[line_9]{w=1.5}\n[line_10]{image=note_small2.png}"
-    n "The crowd can't get enough!"
+    cs "{cps=15}{image=note_small1.png} [line_7]{w=1.5}\n[line_8]{w=1.5}\n[line_9]{w=1.5}\n[line_10] {image=note_small2.png}"
+    n "The audience can't get enough!"
     stop music fadeout 3.0
     crowd "Encore! {w=0.5}Encore! {w=0.5}Encore! {w=0.5}"
     n "CS whispers to the others."
-    cs "Encore? But we don't have any more songs..."
+    cs "Encore? But, we don't have any more songs..."
     arceus "Make something up!"
     n "CS shouts to the crowd."
     cs "Uh... hey, you guys! Give me a word!"
@@ -1362,9 +1369,9 @@ label third_tour_day:
 
     cs "OK!"
     play sound "audio/start_rocking.mp3"
-    cs "{cps=15}{image=note_small1.png}[line_11]{image=note_small2.png}"
+    cs "{cps=15}{image=note_small1.png} [line_11] {image=note_small2.png}"
     $ line_12 = renpy.input("What's the next line?", length = 64)
-    cs "{cps=15}{image=note_small1.png}[line_12]{image=note_small2.png}"
+    cs "{cps=15}{image=note_small1.png} [line_12] {image=note_small2.png}"
 
     cs "Thank you! We're [band_name], and thank you for listening to [ep_name]!"
     play sound "audio/cheer2.mp3"
@@ -1378,6 +1385,7 @@ label third_tour_day:
 
     scene black with Dissolve(3.0)
     # Line 1200, give it up for line 1200
+    # Line 1388, give it up for line 1388
     jump final_tour_bus
 
 label final_tour_bus:
@@ -1402,10 +1410,10 @@ label final_tour_bus:
     arceus "I need a nap."
     agent "Well, maybe this will perk you guys up. Wanna hear the final total?"
     cs "Sure, what is it?"
-    agent "Well, after all the cuts, and splitting it... {w=0.5}each of you gets..."
+    agent "Well, after all the cuts, and splitting it... {w=0.5}each of you get..."
     agent "$10,000!"
     n "The gang perks up."
-    cs "Wait... 10K?!"
+    cs "Wait... $10K?!"
     n "Arc nudges CS."
     arceus "You can go home!"
     show cs disappointed
@@ -1418,10 +1426,10 @@ label final_tour_bus:
     arceus "Yeah, we can still make music together, but you need to get back to your normal routine for a bit."
     anno "Yeah, reset your head a bit."
     show cs
-    cs "Yeah, you're right. And hey, maybe we can write [ep_name] 2 some day!"
+    cs "Yeah, you're right. And, hey, maybe we can write [ep_name] 2 some day!"
     arceus "Maybe we shouldn't name it [ep_name] 2."
     cs "Yeah."
-    agent "Want me to point this bus towards Casa De CS?"
+    agent "Want me to point this bus towards Casa de CS?"
     cs "You know what, yeah, let's do it."
     show arceus happy
     arceus "Let's get you home, buddy."
@@ -1441,20 +1449,20 @@ label final_tour_bus:
     arceus "Well, you should get some rest. It's been a wild few weeks for you."
     cs "It's been a wild few {i}years{/i} for you."
     arceus "Fair enough."
-    anno "Yeah, we need to get back to our places too. Figure out how to reintegrate."
+    anno "Yeah, we need to get back to our places, too. Figure out how to reintegrate."
     show howie flipped at left with moveinleft
     agent "Pleasure doing business with you boys."
     cs "Thanks, Mr. Mandell."
     agent "Please, call me Howie."
-    cs "Well, thanks Howie."
+    cs "Well, thanks, Howie."
     cs "Bye, everyone! Let's talk soon."
     cs "[band_name] forever!"
-    n "They all high-five one last time."
+    n "They all high five one last time."
     stop music fadeout 3.0
     music end
     scene cs_door_outside with dissolve
     show cs with moveinleft
-    n "CS goes to head inside, but there's a note on his door."
+    n "CS moves to head inside, but there's a note on his door."
     sticky "We waited for you to come home to confront you, but you took too long, so we left."
     sticky "Fuck you.\n-- HoH SiS"
     cs "Well, I guess that's the end of that."
@@ -1466,7 +1474,7 @@ label final_tour_bus:
     show cs guitar
     play sound "audio/start_rocking.mp3"
 
-    cs "{cps=15}{image=note_small1.png}[line_7]{w=1.5}\n[line_8]{w=1.5}\n[line_9]{w=1.5}\n[line_10]{image=note_small2.png}"
+    cs "{cps=15}{image=note_small1.png} [line_7]{w=1.5}\n[line_8]{w=1.5}\n[line_9]{w=1.5}\n[line_10] {image=note_small2.png}"
     $ achievement_manager.unlock("You Rock!")
     $ renpy.end_replay()
     scene black with Dissolve(3.0)

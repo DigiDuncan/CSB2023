@@ -139,8 +139,8 @@ label fired:
     linus "It's actually the very opposite of that. You're fired."
     show cs disappointed
     cs "Wait, what?"
-    linus "Look, I don't care how much you really wanted to humiliate me, just leave."
-    cs "I don't understand, I didn't think you would be this upse-{w=0.25}{nw}"
+    linus "Look, I don't care how much you really wanted to humiliate me. Just leave."
+    cs "I don't understand, I didn't think you would be this upse--{w=0.25}{nw}"
     linus "Just get out of here you stupid dumb animal!!"
     cs "..."
     n "CS turns around and stomps out of the building."
