@@ -993,7 +993,7 @@ label back_home_alt:
     show arceus at left with determination
     hide billy with moveoutleft
     hide arceus with moveoutleft
-    n "As CS was saying goodbye to his friends, a familiar but upsetting voice can be heard at the front of CS' house."
+    n "As CS says goodbye to his friends, a familiar but upsetting voice can be heard at the front of CS' house."
     stop music fadeout 1.0
     music end
     ed "{i}You!"
@@ -1185,7 +1185,7 @@ label fighthohsis_alt:
     hide cs
     pause 2.0
     show cs disappointed at mid_left with moveintop
-    cs "I no longer want the joj..."
+    cs "I no longer want the JoJ..."
     hide cs with moveoutbottom
     show ed with hpunch
     ed "Time to take a shit on the house."

@@ -1210,9 +1210,9 @@ label interstate_94:
     cs "We've all been through way too much for me to want to take any unnecessary detours."
     cs "I'm so tired. I just want to get home..."
     cs "I've made some pretty dumb jokes in my life, but I'm not wasting another second."
-    cs "Especially not for a goddamn 69 joke."
+    cs "Especially not for a God damn 69 joke."
     billy "Fine, we'll take 94! All we needed was that first sentence."
-    cs "Sorry guys. I guess I'm just on-edge right now."
+    cs "Sorry, guys. I guess I'm just on-edge right now."
     arceus "I thought it sounded like a good route..."
     scene black with dissolve
     n "The conversation comes to a halt as they continue heading down the highway."
@@ -1226,13 +1226,13 @@ label interstate_94:
     arceus "It's crazy hot in here right now."
     cs "Huh, I didn't notice."
     arceus "I am literally always wearing a fur coat, so I guess we have different scales."
-    cs "Yeah that'll do that. You're also wearing a hoodie. You could take that off."
+    cs "Yeah, that'll do that. You're also wearing a hoodie. You could take that off."
     arceus "If you wanna see me naked, you can just ask..."
-    cs "I didn't mean-- whatever..."
+    cs "I didn't mean-- {w=0.5}whatever..."
     show billy car turn with vpunch
     play sound "audio/splash.mp3"
     show billy car turn with hpunch
-    n "Soon after Arceus rolled down the window, they hit a large, flooded pothole."
+    n "Soon after Arceus rolled down the window, they hit a large flooded pothole."
     n "Water splashes up from the puddle through the car window."
     show billy car
     arceus "Oh no! My hoodie's a mess now!"
@@ -1244,7 +1244,7 @@ label interstate_94:
     scene mario_outside
     show billy car
     with dissolve
-    arceus "Alright there's one! Mario's Coin Laundry!"
+    arceus "Alright, there's one! Mario's Coin Laundry!"
     arceus "Billy! Pull over!"
     billy "Sure, I guess. I don't know if I'll be around much longer if I say no..."
     scene black with dissolve
@@ -1257,37 +1257,37 @@ label interstate_94:
     show cs at left
     show arceus dirty flipped at mid_left
     with moveinleft
-    mario "Hey paisanos! Welcome to my laundromat!"
+    mario "Hey, paisanos! Welcome to my laundromat!"
     show arceus dirty worried flipped
     arceus "Wait, Mario? Why are you here?"
     mario "Are you surprised? My name's on the sign and my picture's in the window."
     show arceus dirty flipped
-    arceus "Yeah but I assumed it was just a bootleg."
+    arceus "Yeah, but I assumed it was just a bootleg."
     show arceus dirty worried flipped
     arceus "Aren't you meant to be saving princesses or plumbing or driving go-karts or competing in the Olympics or whatever it is you do?"
     arceus "When did you have time to open a laundromat?"
     mario "All that stuff doesn't pay the bills."
     arceus "I'm pretty sure being a plumber is a decent career."
-    arceus "And do you how much an olympic swimmer can make just on endorsements alone? It's nuts!"
-    arceus "Also don't you get royalties from Nintendo or something?"
+    arceus "And do you how much an Olympic swimmer can make just on endorsements alone? It's nuts!"
+    arceus "Also, don't you get royalties from Nintendo or something?"
     show arceus dirty flipped
-    mario "Miyamoto's my creator so he gets to choose how the royalties are dispersed."
+    mario "Miyamoto's my creator, so he gets to choose how the royalties are dispersed."
     mario "It's like a trust fund."
-    mario "He spent all my royalties on his mo-ped, and now I'm stuck running this laundromat."
+    mario "He spent all my royalties on his moped, and now I'm stuck running this laundromat."
     cs "Sorry to hear that."
     arceus "Yeah, that sucks a lot."
     mario "It is what is it."
     n "Suddenly, they all hear a metal banging sound and one of the customers walks over."
     show smiley at center with moveinright
     smiley "I was just waiting on my laundry and the machine made a loud clang and stopped spinning."
-    mario "Alright I'll be right over there."
+    mario "Alright, I'll be right over there."
     show mario flipped with determination
     hide mario with moveoutright
     pause 1.0
     mario "No shoes in the machine! If it's broken, you're paying for the replacement!"
     n "Mario takes out the shoes and tries running the machine, but it doesn't turn back on."
     show mario at right with moveinright
-    mario "There are three signs that say not to put shoes in the machine, and you decide to put these big-ass clown shoes in there?!"
+    mario "There are {i}three{/i} signs that say not to put shoes in the machine, and you decide to put these big-ass clown shoes in there?!"
     mario "You really are a damn clown, I'll tell you that for free."
     smiley "The shoes were dirty, and I have a show to get to."
     smiley "Speaking of, I still gotta head over there."
@@ -1295,7 +1295,7 @@ label interstate_94:
     hide smiley with moveoutleft
     n "Smiley runs out of the building and gets into his car."
     play sound "audio/gamer_and_girl.mp3" volume 0.4
-    n "You hear a loud 'awoooooga!' horn as a colorful little clown car drives past."
+    n "A loud 'awoooooga!' horn is heard as a colorful little clown car drives past."
     mario "Bastard. I really didn't need this today..."
     mario "Whatever, what do y'all need?"
     arceus "I just need to wash my hoodie before we get back on the road."
@@ -1326,7 +1326,7 @@ label interstate_94:
     arceus "Fair."
     aria "What are you guys doing here?"
     show cs disappointed
-    cs "We're uh, kinda on a road trip?"
+    cs "We're, uh, kinda on a road trip?"
     show arceus dirty worried flipped
     arceus "From the law."
     cs "Yeah."
@@ -1348,14 +1348,14 @@ label interstate_94:
     show violent_jay at mid_left
     with moveinleft
     violent_jay "We're here to see Mario."
-    mario "Hey paisanos, what can I--" 
+    mario "Hey, paisanos, what can I--" 
     pause 0.5
     mario "Oh God, more clowns. This is not what I needed today."
-    shaggy_too_dope "We're not just any clowns, we're juggalos."
+    shaggy_too_dope "We're not just any clowns, we're Juggalos."
     shaggy_too_dope "And you don't need to worry about us. We're not like Smiley."
     mario "How did you two hear about that? How do you how his name?"
     violent_jay "All clowns are connected."
-    violent_jay "We might be juggalos, but we are still clowns."
+    violent_jay "We might be Juggalos, but we are still clowns."
     mario "What is it you want with me?"
     shaggy_too_dope "We want to replace the washing machine."
     violent_jay "We can't let that guy give clowns a bad name."
@@ -1387,7 +1387,7 @@ label interstate_94:
     cs "You do call yourself Violent Jay. I'd imagine you're used to it by now."
     violent_jay "That's fair."
     show mario at right with moveinright
-    violent_jay "Anyway, here's the check for the washer. We gotta head out."
+    violent_jay "Anyway, here's the check for the washer. We've gotta head out."
     hide violent_jay
     hide shaggy_too_dope
     with moveoutleft
@@ -1772,25 +1772,25 @@ label back_home:
     show arceus flipped at left with moveinleft
     arceus "We made it back to your house, CS!"
     show cs flipped at center with moveinright
-    cs "Finally I'm home..."
+    cs "Finally, I'm home..."
     cs "Arceus, thank you so much for everything on this trip. I couldn't have done it without you."
-    arceus "Aw, it was nice helping ya here."
+    arceus "Aww, it was nice helping ya here."
     cs "You too, Billy."
     show billy at mid_left behind arceus with moveinleft
     billy "No problem!"
     cs "Well, I guess I should get some rest."
-    cs "If you guys want, we can have a party at my place tomorrow to celebrate all the shit we went through!"
+    cs "If you guys want, we can have a party at my place tomorrow to celebrate getting through all this shit!"
     show arceus happy flipped
     "Arc and Billy" "Hell yeah!"
     show arceus at left with determination
     hide billy with moveoutleft
     hide arceus with moveoutleft
-    n "As CS was saying bye to his friends, a familiar but upsetting voice can be heard at the front of CS' house."
+    n "As CS says goodbye to his friends, a familiar but upsetting voice can be heard at the front of CS' house."
     stop music fadeout 1.0
     music end
     ed "{i}You!"
     show cs disappointed at left with moveinleft
-    n "CS and the gang look forth at CS' front porch, where Richard and Ed are waiting angrily for him."
+    n "CS and the gang look towards CS' front porch, where Richard and Ed are waiting angrily for him."
     play music2 "<loop 0>hohsisremix.mp3" volume 0.5
     music "Alfred's Theme - Eminem"
     show ed at right
@@ -1800,7 +1800,7 @@ label back_home:
     rich "We've been trying to stop you for a while now, but this is the final stop for you."
     cs "HoH SiS?? What do you guys still want from me?"
     ed "What do you think, CS? After you put Wesley in the hospital? After you crippled most of our workers?"
-    cs "Well, you guys scammed me out of my money and broke my computer! Of course I wanted some kind of revenge!"
+    cs "Well, you guys scammed me out of my money and broke my computer! Of {i}course{/i} I wanted some kind of revenge!"
     ed "Why do you think this all started?"
     cs "I--{w=0.5} I don't know, because you're evil?"
     ed "CS, you made a laughingstock of our company long ago."
@@ -1809,7 +1809,7 @@ label back_home:
     ed "You see, my ancestors came from the planet JoJ many years ago to start a foundation company."
     ed "It was the best damn foundation company in the world."
     ed "We repaired more than fifty percent of all foundations on the planet, and now... you."
-    ed "You. You embarrassed us with those silly, stupid videos that dragged our family company through the mud."
+    ed "You. You embarrassed us with those silly stupid, videos that dragged our family company through the mud."
     rich "That's why Ed wanted to get revenge on you. That's why we destroyed your computer, CS."
     cs "I don't understand..."
     menu:
@@ -1823,9 +1823,9 @@ label back_home:
             jump copsathohsis
 
 label talktohohsis:
-    cs "I never intended to harm your company, I just thought that the video was a good source to YTP."
-    cs "I'm sorry about all those prank callers, I even made a video telling people to stop prank calling you."
-    cs "I never had bad intentions for you guys... honestly it was also kind of like a free promotion."
+    cs "I never intended to harm your company. I just thought that the video was a good source to YTP."
+    cs "I'm sorry about all those prank callers. I even made a video telling people to stop prank calling you."
+    cs "I never had bad intentions for you guys... honestly, it was also kind of like a free promotion."
     ed "Well, I'm sorry CS, but it's too late."
     ed "Richard, get the JoJ UFO and vaporize the house."
     stop music2 fadeout 1.0
@@ -1841,9 +1841,9 @@ label talktohohsis:
     anno "I don't know, because..."
     anno "CS wasn't trying to harm you!"
     show arceus flipped at mid_left_left with moveinleft
-    arceus "Yeah, CS' videos are hilarious, and honestly if I knew you guys before this, I would've called you up for help on my house."
-    arceus "If y'know, I didn't go after that one politican."
-    ed "Well okay, but--"
+    arceus "Yeah, CS' videos are hilarious, and honestly, if I knew you guys before this, I would've called you up for help on my house."
+    arceus "If, y'know, I didn't go after that one politican."
+    ed "Well, okay, but--"
     n "Even more of CS' friends show up at the scene."
     show cs at left
     show linus at mid_left behind phil with moveinleft
@@ -1896,7 +1896,7 @@ label talktohohsis:
     cs "Wow, I don't know how you all got here coincidently, but I appreciate it!"
     show cs at left
     rich "Oh my God, that's so many people!"
-    ed "Okay okay, I get it."
+    ed "Okay, okay, I get it."
     hide anno
     hide arceus flipped
     hide linus
@@ -1926,14 +1926,14 @@ label talktohohsis:
     cs "And I'm sorry for injuring your coworkers."
     stop music fadeout 3.0
     music end
-    ed "Wesley is still in the hospital, so like, if you wanted to, give us some more money..."
+    ed "Wesley is still in the hospital, so, like, if you wanted to give us some more money..."
     show cs disappointed at left
     cs "Didn't you scam me out of more money than my foundation was worth?"
-    ed "Oh yeah..."
+    ed "Oh, yeah..."
     show cs angry at left
     cs "What {i}about{/i} my foundation as well?"
     show cs at left
-    cs "Tell you what: if you can fix my foundation, I'll pay you for that, and we put this all behind us."
+    cs "Tell you what. If you can fix my foundation, I'll pay you for that, and we put this all behind us."
     rich "What do you think, Ed?"
     n "Ed ponders for a moment."
     ed "Sure. We have a deal."
@@ -1942,11 +1942,11 @@ label talktohohsis:
     n "As if the crowd couldn't get any bigger, the cops show up."
     show cs at left
     show copguy flipped at center with moveinleft
-    copguy "Hey CS, we finally found HoH SiS."
-    copguy "And it looks like you did too."
+    copguy "Hey, CS, we finally found HoH SiS."
+    copguy "And it looks like you did, too."
     show sheriff at mid_left with moveinleft
-    sheriff "Good job Copguy, time to put them in the slammer!"
-    cs "No need guys, we worked everything out."
+    sheriff "Good job, Copguy. Time to put them in the slammer!"
+    cs "No need, guys, we worked everything out."
     sheriff "What?!"
     copguy "Are you sure?"
     ed "Yep, we got everything under control."
@@ -2011,7 +2011,7 @@ label streaming:
     n "The chat is overflowing with messages."
     chat "Yeah what happened to you?{w=0.25} Oh my God, CS, you're here!{w=0.25} Hi!{w=0.25} Hi!{w=0.25} Where have you been?"
     show cs happy at mid_left
-    cs "Well guys..."
+    cs "Well, guys..."
     n "CS chuckles."
     cs "It's a long story..."
     if achievement_manager.get("That's All, Folks!").unlocked:
@@ -2110,7 +2110,7 @@ label fighthohsis:
     hide cs
     pause 2.0
     show cs disappointed at mid_left with moveintop
-    cs "I no longer want the joj..."
+    cs "I no longer want the JoJ..."
     hide cs with moveoutbottom
     show ed with hpunch
     ed "Time to take a shit on the house."
@@ -2123,9 +2123,9 @@ label fuckuphohsis:
     show ed at right
     show rich at mid_mid_right behind ed
     show cs angry at left
-    cs "Yeah I actually hate you guys, and I wanted to mess with your business!"
+    cs "Yeah, I actually hate you guys, and I wanted to mess with your business!"
     cs "You guys suck and I hate you both!"
-    cs "You guys deserve to have your company in shambles!"
+    cs "You guys {i}deserve{/i} to have your company in shambles!"
     n "Richard and Ed back up to their UFO."
     hide rich
     hide ed
@@ -2133,7 +2133,7 @@ label fuckuphohsis:
     cs "Hey! Where are you guys going?!"
     cs "Come back here!"
     hide cs with moveoutright
-    n "The JoJ UFO flies up over the house and vaporizes it."
+    n "The JoJ UFO flies up over the house, then vaporizes it with a laser."
     play sound "beam.ogg" volume 0.6
     show beam at xstretch_in
     pause 1.5
@@ -2142,7 +2142,7 @@ label fuckuphohsis:
     pause 1.0
     show cs disappointed at left with moveinleft
     with vpunch
-    n "Ed flips CS off, and then flies away."
+    n "Ed flips CS the bird, then flies away."
     show cs disappointed
     pause 1.0
     cs "Fuck."
