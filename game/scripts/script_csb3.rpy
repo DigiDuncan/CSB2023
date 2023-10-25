@@ -609,7 +609,7 @@ label arc_escape:
     show cs disappointed dusk at left
     show arceus dusk at right
     with fade
-    n "Meanwhile, CS and Arc have been running back to the US border."
+    n "Meanwhile, CS and Arceus have been running back to the US border."
     cs "Aw, man! This is embarrassing!"
     arceus "Yeah, so much for the editing job, I guess."
     cs "I can't seem to get a break this month. First my problems with HoH SiS, now I'm running from the cops?"
@@ -621,12 +621,13 @@ label arc_escape:
     arceus "I heard about the cops at the last second when I was checking comms chatter around the area. I figured that since you helped me out, I should come back for you."
     cs "Thanks, man. I really owe you again."
     arceus "Nah, I owe you."
-    scene border_dusk with fade
+    scene border_dusk
     show cs dusk at left
     show arceus dusk flipped at mid_left
+    with fade
     play music "<loop 0>atarashii_kaze.mp3" volume 0.3
     music Atarashii Kaze - Satoru Kosaki
-    n "CS and Arc approach the border guard again."
+    n "CS and Arceus approach the border guard again."
     show border_guard dusk at right with moveinright
     border_guard "I'm gonna need proof of--"
     border_guard "Ey, it's you two buds again!"

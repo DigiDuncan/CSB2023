@@ -10,7 +10,7 @@ label east:
     arceus "Thank God."
     n "The two look around for a bit until they see a gas station close by."
     cs "Let's head over to that gas station so we can pick up something to eat."
-    n "CS and Arc head over to the convenience store at the gas station."
+    n "CS and Arceus head over to the convenience store at the gas station."
     hide cs with moveoutright
     show arceus flipped at right
     hide arceus with moveoutright
