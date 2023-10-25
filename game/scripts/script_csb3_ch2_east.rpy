@@ -1,15 +1,15 @@
 label east:
-    cs "Well since east is the way home, we should probably go that way."
+    cs "Well, since east is the way home, we should probably go that way."
     show arceus
     arceus "Alright, that sounds like a good idea."
-    n "CS and Arc keep following the road for a while, until they come across a small town."
+    n "CS and Arceus keep following the road for a while until they come across a small town."
     scene town with fade
     show cs at left with moveinleft
     show arceus at right with moveinright
     cs "Oh my God! We found civilization again!"
     arceus "Thank God."
-    n "The two look around for a bit, when they see a gas station close by."
-    cs "Let's head over to that gas station, so we can pick up some food."
+    n "The two look around for a bit until they see a gas station close by."
+    cs "Let's head over to that gas station so we can pick up something to eat."
     n "CS and Arc head over to the convenience store at the gas station."
     hide cs with moveoutright
     show arceus flipped at right
@@ -21,8 +21,8 @@ label east:
     cs "Donuts and chips have never tasted better."
     arceus "Thank God the slushie machine was working for once."
     cs "Okay, now that we can think about something other than food, what's our plan to get home?"
-    arceus "Yeah, I have no clue currently."
-    arceus "I was hoping that we could like hitchhike on a bus or something, but it might be ages until that happens... if it even {i}does{/i} happen, this town is small enough as is."
+    arceus "Yeah... I have no clue currently."
+    arceus "I was hoping that we could hitchhike on a bus or something, but it might be ages until that happens... If it even {i}does{/i} happen... This town is too small for a bus route."
     stop music fadeout 3.0
     music end
     menu:
@@ -36,43 +36,43 @@ label hotwire:
     scene gasinside
     show cs at left
     show arceus at right
-    cs "I don't know, we could just, hotwire a car?"
-    arceus "I can probably do that, let's go look."
+    cs "I don't know... We could just... Hotwire a car?"
+    arceus "I can probably do that. Let's go look."
     scene gasoutside with fade
     show cs at left with moveinleft
     show arceus at right with moveinright
-    n "CS and Arc approach one of the cars in front of the gas station."
+    n "CS and Arceus approach one of the cars in front of the gas station."
     n "Arceus smashes open the window and opens the door from the inside."
     arceus "Alright, so if we connect this to this..."
     n "The car starts up."
     cs "Hell yeah! Let's go home!"
-    n "All of a sudden, flashing lights and sirens show up behind them."
+    n "As if on cue, sirens and lights approach the two."
     show blue_light at left
     show red_light at right
     play sound "<loop 0>siren.ogg" volume 0.5
     show copguy at center with moveinright
     show cs disappointed
     show arceus worried
-    copguy "I heard the sound of a car window breaking from miles away!"
+    copguy "I could hear the sound of a car window breaking from miles away!"
     copguy "You guys already blew it! Back to the slammer!"
     bad_end "What did Copguy\njust tell you?" "choose_direction"
 
 label billy_driver:
-    cs "Why don't we just wait for someone at the gas station to come out, and then we ask them for an Uber?"
+    cs "Why don't we just wait for someone at the gas station to come out, and then we ask them for a ride?"
     n "CS walks over to someone's car parked in the front of the gas station."
     scene gasoutside with fade
     show cs at left with moveinleft
     show arceus worried at right with moveinright
-    arceus "Are you crazy? To drive all the way back to New York? In a stranger's car at that."
+    arceus "Are you crazy? To drive all the way back to New York, in a stranger's car, at that."
     arceus "Besides, how are we even going to pay the guy anyways?"
-    cs "Well we don't have to go all the way to New York, we could go a small distance and then get another Uber."
+    cs "Well, we don't have to go all the way to New York. We could go a small distance then ask another driver."
     show arceus angry
-    arceus "That would be even more money in tips!"
-    n "As the two are agruing, the owner of the car comes up to them."
+    arceus "That would be even more in gas money!"
+    n "As the two are arguing, the owner of the car approaches them."
     unknown "What are you doing next to my car?"
     cs "Oh, hi."
-    cs "Do you think you can Uber us to New York?"
-    unknown "Oh uhh, hold on a second."
+    cs "Do you think you can give us a ride to New York?"
+    unknown "Oh, uhh, hold on a second!"
     n "The mysterious driver walks behind the store."
     arceus "What are you doing? That man looks like he's going to kill us!"
     arceus "He's probably getting a gun, we need to lea--{w=1.5}{nw}"
@@ -82,12 +82,12 @@ label billy_driver:
     billy "Hi, Billy Mays here for the Uber Driver!"
     billy "The fast and easy way for people who don't have a car to get around!"
     show cs happy
-    cs "Sweet! We need to get to Upstate New York, do you think you can help us?"
+    cs "Sweet! We need to get to upstate New York. Do you think you can help us?"
     billy "Absolutely! For only $19.95, I'll take you both to New York!"
-    cs "Alright well, it's settled! We have our driver, Arceus!"
+    cs "Alright, well, it's settled! We have our driver, Arceus!"
     arceus "..."
     show arceus
-    arceus "... What the fuck. Works for me I guess."
+    arceus "... What the fuck? Works for me, I guess."
     cs "Hell yeah! I call shotgun!"
     n "CS and Arc get into Billy's car."
     stop music fadeout 3.0
@@ -103,13 +103,13 @@ label in_billy_car:
     show billy car
     play music "<loop 0>billy_radio.mp3" volume 0.3
     music Billy Mays Gangsta Remix - mastamokei
-    cs "Alright so, it's just a straight shot to New York?"
+    cs "Alright, so, it's just a straight shot to New York?"
     show billy car turn
     billy "Yep! We are gonna head through Idaho and Montana first, so get ready to see the sights!"
     show billy car happy
     cs "Yeah! It's almost like a vacation!"
-    arceus "Well on a vacation, you usually have money to spend on all the crazy parts you see."
-    cs "Let's just enjoy the ride there at least."
+    arceus "Well, on a vacation, you usually have money to spend on all the crazy parts you see."
+    cs "Let's just enjoy the ride there, at least."
     arceus "Fair point."
     stop music fadeout 3.0
     music end
@@ -121,23 +121,23 @@ label montana:
     with fade
     play music "<loop 0>weird_personalities.mp3" volume 0.6
     music Weird Personalities - Lizardking
-    n "After a few hours of driving, the trio currently finds themselves in the middle of Montana."
-    n "Arceus is sleeping, while CS peers out the window."
+    n "After a few hours of driving through Idaho, the trio finds themselves in the middle of Montana."
+    n "Arceus is sleeping while CS peers out the window."
     cs "Are we there yet?"
     show billy car turn
     billy "Nope!"
     show billy car
-    cs "Aw man..."
+    cs "Aw, man..."
     show billy car turn
-    billy "We still got a ways to go, we aren't even a quarter of the way yet."
+    billy "We've still got a ways to go! We aren't even a quarter of the way yet!"
     show billy car
-    cs "Alright, I'll just, keep looking at the trees pass by."
-    billy "Well good news for you, there is a small town up ahead."
-    billy "I was gonna buy some new supplies for my gadgets, if you guys want to pick out anything."
+    cs "Alright, I'll just... keep looking at the trees pass by."
+    billy "Well, good news for you! There is a small town up ahead!"
+    billy "I was gonna buy some new supplies for my gadgets if you guys want to pick out anything."
     cs "Sure! I love buying random things!"
-    cs "What about you Arceus?"
+    cs "What about you, Arceus?"
     cs "Hey, Arc!"
-    billy "CS, you should probably leave the dog thing alone in the back."
+    billy "CS, you should probably leave the dog thing in the back alone."
     n "Arceus immediately jerks straight up."
     arceus "What did you just call me?"
     billy "Nothing!"
@@ -147,36 +147,36 @@ label montana:
     stop music fadeout 3.0
     music end
     cs "Same, I'll come with you."
-    n "Arceus falls back to sleep in the car."
+    n "Arceus goes back to sleep in the car."
     play sound "doorslam.ogg"
     scene hardwareinside with fade
     play music "<loop 0>home_depot.mp3" volume 0.4
     music "Let's Do This - Home Depot"
     show cs at left with moveinleft
-    cs "Wow look at all this stuff!"
-    cs "They've got Allen wrenches, gerbil feeders, toilet seats, electric heaters{nw}"
-    cs "Trash compactors, juice extractor, shower rods and water meters{nw}"
-    cs "Walkie-talkies, copper wires, safety goggles, radial tires{nw}"
-    cs "BB pellets, rubber mallets, fans and dehumidifiers{nw}"
-    cs "Picture hangers, paper cutters, waffle irons, window shutters{nw}"
-    cs "Paint removers, window louvres, masking tape and plastic gutters{nw}"
-    cs "Kitchen faucets, folding tables, weather stripping, jumper cables{nw}"
-    cs "Hooks and tackle, grout and spackle, power foggers, spoons and ladles{nw}"
-    cs "Pesticides for fumigation, high-performance lubrication{nw}"
-    cs "Metal roofing, water proofing, multi-purpose insulation{nw}"
-    cs "Air compressors, brass connectors, wrecking chisels, smoke detectors{nw}"
-    cs "Tire gauges, hamster cages, thermostats and bug deflectors{nw}"
+    cs "Wow, look at all this stuff!"
+    cs "They've got Allen wrenches, gerbil feeders, toilet seats, electric heaters,{nw}"
+    cs "Trash compactors, juice extractor, shower rods and water meters,{nw}"
+    cs "Walkie-talkies, copper wires, safety goggles, radial tires,{nw}"
+    cs "BB pellets, rubber mallets, fans and dehumidifiers,{nw}"
+    cs "Picture hangers, paper cutters, waffle irons, window shutters,{nw}"
+    cs "Paint removers, window louvres, masking tape and plastic gutters,{nw}"
+    cs "Kitchen faucets, folding tables, weather stripping, jumper cables,{nw}"
+    cs "Hooks and tackle, grout and spackle, power foggers, spoons and ladles,{nw}"
+    cs "Pesticides for fumigation, high-performance lubrication,{nw}"
+    cs "Metal roofing, water proofing, multi-purpose insulation,{nw}"
+    cs "Air compressors, brass connectors, wrecking chisels, smoke detectors,{nw}"
+    cs "Tire gauges, hamster cages, thermostats and bug deflectors,{nw}"
     show cs worried
-    cs "Trailer hitch demagnetizers, automatic circumcisers{nw}"
+    cs "Trailer hitch demagnetizers, automatic circumcisers,{nw}"
     show cs
-    cs "Tennis rackets, angle brackets, Duracells and Energizers{nw}"
-    cs "Soffit panels, circuit breakers, vacuum cleaners, coffee makers{nw}"
-    cs "Calculators, generators, matching salt and pepper shakers{nw}"
-    cs "and I think that's it..."
+    cs "Tennis rackets, angle brackets, Duracells and Energizers,{nw}"
+    cs "Soffit panels, circuit breakers, vacuum cleaners, coffee makers,{nw}"
+    cs "Calculators, generators, matching salt and pepper shakers,{nw}"
+    cs "and, I think that's it..."
     cs "Ooh! Look at all this paint!"
-    cs "Let's get some orange, blue, purple,"
+    cs "Let's get some {color=#FF9900}orange{/color}, {color=#7897FF}blue{/color}, {color=#CB50FF}purple{/color}..."
     show cs happy
-    cs "More colors, I need more colors!"
+    cs "More {color=#FF0000}c{/color}{color=#FFCC00}o{/color}{color=#FFFF00}l{/color}{color=#CCFF00}o{/color}{color=#00FF00}r{/color}{color=#00FFCC}s{/color}, I need {bt=a3-p10-s4}{color=#00FFFF}m{/color}{color=#00CCFF}o{/color}{color=#7978FF}r{/color}{color=#CC00FF}e{/color} {color=#FF00FF}c{/color}{color=#FF00CC}o{/color}{color=#FF0000}l{/color}{color=#FFCC00}o{/color}{color=#FFFF00}r{/color}{color=#CCFF00}s{/color}{color=#00FF00}!{/color}"
     show billy at right with moveinright
     show cs
     billy "You ready to go, CS?"
