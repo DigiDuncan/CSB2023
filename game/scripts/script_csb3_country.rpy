@@ -1158,7 +1158,7 @@ label england_sweden:
     kitty "Huh, never heard much about Sweden."
     arceus "Is there anywhere you wanna go in particular in Sweden?"
     cs "I don't really know where to go there."
-    arceus "Well you have to meet Vinesauce Joel."
+    arceus "Well, you have to meet Vinesauce Joel."
     cs "Yeah, that's a good idea."
     arceus "Welp, should we take you back to the airport?"
     cs "Sure, let's go."
@@ -1169,24 +1169,24 @@ label england_sweden:
     show arceus flipped at left
     show cs flipped at right
     with fade
-    cs "Well, thank you so much Arceus for everything, really."
+    cs "Well, thank you so much, Arceus, for everything, really."
     show arceus happy flipped
-    arceus "It's all good man, I loved having you here."
-    arceus "It's also impressive that you made so much money in the short amount of time you were here, you'll probably be set for Sweden!"
+    arceus "It's all good, man, I loved having you here."
+    arceus "It's also impressive that you made so much money in the short amount of time you were here. You'll probably be set for Sweden!"
     show arceus flipped
-    cs "Yeah, I honestly don't know how I managed to most of those things, I was kinda winging it."
+    cs "Yeah, I honestly don't know how I managed to most of those things. I was kinda winging it."
     cs "Welp, it looks like my plane is here."
-    cs "See ya Arceus!"
-    arceus "See you later CS!"
+    cs "See ya, Arceus!"
+    arceus "See you later, CS!"
     show cs with determination
     hide cs with moveoutright
     scene black with dissolve
-    n "CS grabs his ticket and heads on the next plane."
+    n "CS grabs his ticket and heads onto the next plane."
     scene airplane_seats
     show cs at left
     with fade
     cs "Man, I'm kinda nervous to go to Sweden, actually."
-    cs "It's going to be pretty crazy I think."
+    cs "It's going to be pretty crazy, I think."
     cs "Oh well, I'm sure it'll be fun."
     cs "Time to get some sleep."
     scene black with dissolve
@@ -1718,28 +1718,28 @@ label sweden_second:
     play music "<loop 0>creative_exercise.mp3" loop volume 0.3
     cs "Wow! There's so many people around."
     cs "I guess I should try to find something to do..."
-    cs "I should be able to find a bus to somewhere cool, I have some money this time."
+    cs "I should be able to find a bus to somewhere cool. I have some money this time!"
     hide cs with moveoutright
     scene bus_zone 
     show swede at left    
     with dissolve
     show cs flipped at right with moveinright
     cs "That guy looks like he'd be able to help."
-    cs "Excuse me sir, do you know where the bus stop is?"
+    cs "Excuse me, sir, do you know where the bus stop is?"
     average_swede "Min svävare är full med ålar."
-    cs "Oh dang, I forgot not many Swedes can speak English. Hopefully I find someone who can."
+    cs "Oh, dang, I forgot not many Swedes can speak English. Hopefully I find someone who can."
     n "As CS says this, he sees a bus drive past and decides to just follow it to the bus stop."
     hide cs with moveoutleft
     scene black with dissolve
     pause 2.0
     scene bus_map with dissolve
-    n "As CS looks at the map, he tries to figure out what bus to take."
+    n "As CS looks at the map, he tries to figure out which bus to take."
     jump sweden_menu 
 
 label aurora_borealis:
     $ lights_check = True
-    cs "I am in Sweden, so I guess I may as well go see the Northern Lights."
-    cs "I should go somewhere less urban if I wanna see it properly though. Too much light pollution here."
+    cs "I {i}am{/i} in Sweden, so I guess I may as well go see the Northern Lights."
+    cs "I should go somewhere less urban if I wanna see it properly, though. Too much light pollution here."
     cs "I'll just get on a bus and keep going until I see somewhere with clear skies."
     scene black with dissolve
     stop music fadeout 3.0
@@ -1748,7 +1748,7 @@ label aurora_borealis:
     show cs flipped at mid_left
     with dissolve
     n "CS sits down on the next bus and begins staring out the window like he's in a music video."
-    n "Eventually, he sees an area that looks good and gets off the bus."
+    n "Eventually, he sees an area that looks good, and gets off the bus."
     scene black with dissolve
     scene moomin_zone1 with dissolve
     show cs happy at mid_left with moveinleft
@@ -1759,7 +1759,7 @@ label aurora_borealis:
     n "CS has a pleasant walk through the woods until he eventually comes to the edge of the forest."
     scene moomin_zone3 with dissolve
     show cs at center with moveinleft
-    n "Outside of the woods is a valley of rolling hills, entirely clear except for a strange, cylindrical house."
+    n "Outside of the woods is a valley of rolling hills, entirely clear except for a strange cylindrical house."
     cs "That's one interesting building. I wonder who lives there."
     show moomin flipped at left with moveinleft
     play music "<loop 0>muumin_tani_fuyu.mp3" volume 0.5
@@ -1775,7 +1775,7 @@ label aurora_borealis:
     if(fun_value(40)): 
         cs "My name is Walter Hartwell White. I live at 308 Negra Arroyo Lane, Albuquerque, New Mexico, 87104."
         moomin "I don't believe you."
-        cs "Oh okay. You're right, I'm actually CS. What's your name?"
+        cs "Oh, okay. You're right, I'm actually CS. What's your name?"
     else:
         cs "My name's CS. What's your name?"
     moomin "I'm Moomin. Nice to meet you!"
@@ -1786,14 +1786,14 @@ label aurora_borealis:
     cs "Are you named after the valley or did you name it after yourself?"
     moomin "Well, my full name is Moomintroll. Moomin is the name of my species."
     cs "Huh, that's interesting."
-    moomin "So what brings you to Moominvalley?"
+    moomin "So, what brings you to Moominvalley?"
     cs "I wanted to see the Aurora Borealis."
     moomin "Huh? What's that? I've never heard of it."
     cs "It's when the sky lights up with a bunch of beautiful colors."
     cs "This is the kind of place where it should happen, so I'm surprised you haven't heard about it."
     cs "I was hoping to see it tonight."
     moomin "Well, if you want to find it, we should ask my friend Snufkin. He goes on a big journey every year, so he should know."
-    moomin "He lives over by the river, we can go over there quickly."
+    moomin "He lives over by the river. We can go over there quickly."
     cs "Sounds good. I'm just happy to explore this place more."
     n "CS and Moomin start walking over."
     show cs with determination
@@ -1806,7 +1806,7 @@ label aurora_borealis:
     show moomin with determination
     stop music fadeout 3.0
     music end
-    cs "So, if Moomin is the name of your species and also the name of the valley, how many of your species are there in the valley?"
+    cs "So, if Moomin is the name of your species, and also the name of the valley, how many of your species are there in the valley?"
     moomin "There's me, Moominmama, and Moominpapa."
     cs "Wait, so just three of you?"
     moomin "Well, there's also the Snork and Snorkmaiden. They look kinda like us, but they're Snorks, not Moomins."
@@ -1822,22 +1822,22 @@ label aurora_borealis:
     play music "<loop 0>snufin.mp3" volume 0.5
     music Snufkin The Traveler - Sumio Shiratori
     show moomin flipped
-    moomin "Hello Snufkin!"
-    snufkin "Hello Moomin. I see you've brought a new friend."
+    moomin "Hello, Snufkin!"
+    snufkin "Hello, Moomin. I see you've brought a new friend."
     moomin "Yes, this is CS. He's looking for something, and I thought you could help."
     cs "I'd like to see the Aurora Borealis." 
     cs "I was hoping to see it tonight, but Moomin said he never heard of it, so I think maybe it doesn't happen around here."
     snufkin "Why, sure it can! It can happen anywhere."
     show cs disappointed
-    cs "Don't you have to be far enough north..."
-    snufkin "Did you think they were something that just happened?"
+    cs "Don't you have to be far enough north...?"
+    snufkin "Did you think they were something that just {i}happened?"
     show cs
     snufkin "The sky doesn't just light up on its own, you need magic for that."
     snufkin "If you want to see the Aurora, you're gonna have to talk to the witch and get her to turn it on for you."
     show cs worried
     cs "Wait, the witch?"
     snufkin "Yeah, she lives in the forest."
-    snufkin "She doesn't like us very much though. You'll have to do something to convince her."
+    snufkin "She doesn't like us very much, though. You'll have to do something to convince her."
     show cs disappointed
     cs "Well, I came this far already. I may as well try."
     show cs
@@ -1859,21 +1859,22 @@ label aurora_borealis:
     stop music fadeout 3.0
     music end
     alicia "Moomin, Snufkin, you're here!"
-    snufkin "Oh, hello Alicia. Is your grandma around?"
+    snufkin "Oh, hello, Alicia. Is your grandma around?"
     alicia "Yep! She's making potions in the house."
     snufkin "That's great. This stranger needs her help to see the Aurora Borealis."
     alicia "Well, I don't know if she'll help, but I'll go get her."
     show witch at mid_right with dissolve
     play music "<loop 0>lady_of_the_cold.mp3" volume 0.5
     music Lady Of The Cold - Sumio Shiratori
-    witch "What's all the hub-bub about?"
-    cs "Hello Madam Witch. I'd like your help seeing the Aurora Borealis."
-    witch "Oh is that all? Sure, I can turn it on for you, but I'm gonna need something from you first."
+    witch "What's all the hubbub about?"
+    cs "Hello, Madam Witch. I'd like your help seeing the Aurora Borealis."
+    witch "Oh, is that all? Sure, I can turn it on for you, but I'm gonna need something from you first."
     witch "I've been wanting to make a steamed ham. It's an old family recipe."
     witch "I've just been so busy, I haven't had time to go find a pig for it."
     witch "Could you go get one for me?"
     cs "I've never hunted before, but I'll give it a shot."
-    hide cs with moveoutright    
+    hide cs with moveoutright
+    scene black with fade
     n "CS quickly fashions a spear out of a branch and some rocks he found on the forest path, and he heads out to find the pig."
     scene waddle_zone with dissolve
     show cs at mid_left with moveinleft
@@ -1888,10 +1889,10 @@ label aurora_borealis:
     with moveinleft
     witch "Wow, that was fast. Now all I have to do is put the carcass through the skinner and I can cook the meat after it's skinned."
     hide pig with dissolve
-    witch "A promise is a promise, the lights will be on tonight."
+    witch "A promise is a promise. The lights will be on tonight."
     cs "What? Is it that easy? You didn't even need to, like, cast a spell or anything?"
     witch "Yeah, it's just some light. It's no big deal."
-    witch "I'm not sure why you came this far for it to be honest."
+    witch "I'm not sure why you came this far for it, to be honest."
     cs "Well, we don't have any witches where I'm from, so that's probably it."
     cs "Thanks for the help. Enjoy your ham."
     stop music fadeout 3.0
@@ -1902,7 +1903,7 @@ label aurora_borealis:
     show moomin flipped at left
     show snufkin at right
     with dissolve
-    n "Finally, the sky lights up and CS is enthralled."
+    n "Finally, the sky lights up, and CS is enthralled."
     cs "Wow, that's beautiful! Totally worth killing that pig."
     $ achievement_manager.unlock("Obviously Grilled")
     show cs
@@ -1916,12 +1917,12 @@ label ikea:
     $ ikea_check = True
     cs "I should go check out the Ikea here."
     cs "It's the land of Ikea. They're probably a lot better than the ones in the US."
-    cs "Easy to find on the map too. They have icons for all the major tourist attractions."
-    cs "Weird that there's only one Ikea around here though."
-    cs "I guess it's just the flagship Ikea store. It's labeled Onda Ikea - gå inte hit."
-    cs "That probably means, like, Super Ikea or something."
-    cs "Mondo Ikea - go into here."
-    cs "Yeah that makes sense. English and Swedish are pretty much the same."
+    cs "Easy to find on the map, too. They have icons for all the major tourist attractions."
+    cs "Weird that there's only one Ikea around here, though."
+    cs "I guess it's just the flagship Ikea store. It's labeled \"Onda Ikea - gå inte hit\"."
+    cs "That probably means, like, \"Super Ikea\" or something."
+    cs "\"Mondo Ikea - go into here\"."
+    cs "Yeah, that makes sense. English and Swedish are pretty much the same."
     scene black with dissolve
     stop music fadeout 3.0
     music end
@@ -1929,9 +1930,9 @@ label ikea:
     scene bus_seat
     show cs flipped at mid_left
     with dissolve
-    cs "Oh my gosh I was right! That's the biggest Ikea I've ever seen."
+    cs "Oh my gosh, I was right! That's the biggest Ikea I've ever seen."
     scene black with dissolve
-    n "CS presses the button to stop the bus, and the rest of the passengers give him a weird look as he gets off."
+    n "CS presses the button to stop the bus. The rest of the passengers give him a weird look as he gets off."
     scene ikea_outside
     with dissolve
     show cs at center with moveinleft
@@ -1957,7 +1958,7 @@ label ikea:
     show ikea_worker at right
     with dissolve
     show cs at left with moveinleft
-    ikea_worker "Hi! What would you like to eat?"
+    ikea_worker "Hi! What can I get you?"
     cs "I'd like mashed potatoes, Swedish balls, gravy, and lingonberry sauce please."
     ikea_worker "Do you mean Swedish meatballs?"
     cs "I know what I said."
@@ -1965,10 +1966,10 @@ label ikea:
     n "CS gets his food and goes to sit down."
     hide cs with moveoutright
     scene eating_food with dissolve
-    cs "Mmm, this is good. I don't know how I feel about the balls though."
+    cs "Mmm, this is good. I don't know how I feel about the balls, though."
     n "The worker comes over and sees CS trying to eat the Swedish flag that came with the meatballs."
     ikea_worker "Um, sir, you're supposed to take the little Swedish flag out of the meatball first."
-    cs "Ohhh! Yeah that makes sense. I just thought that was what made it authentic."
+    cs "Ohhh! Yeah, that makes sense. I just thought that was what made it authentic."
     ikea_worker "Only one of the balls had the flag..."
     n "CS tries one of the other meatballs."
     cs "Yeah, it's much better when you eat just the ball. Thanks for the tip."
@@ -1992,7 +1993,7 @@ label ikea:
     ikea_worker "Excuse me, would you be interested in this Blåhaj?"
     show cs disappointed
     cs "Not particularly."
-    ikea_worker "Oh okay. Sorry, I saw the maid dress and cat ears, and I just assumed."
+    ikea_worker "Oh, okay. Sorry, I saw the maid dress and cat ears, and I just assumed."
     show cs
     cs "No worries."
     hide cs with moveoutright
@@ -2003,7 +2004,7 @@ label ikea:
     show cs happy
     cs "So many buttons!"
     show cs
-    cs "I forget what these are called. I think it was 'be-gay' or something like that."
+    cs "I forget what these are called. I think it was \"be-gay\" or something like that."
     cs "Whatever, let's try it out!"
     show cs at mid_offscreen_right with move
     show cs flipped with determination
@@ -2011,7 +2012,7 @@ label ikea:
     show ikea_greeter flipped at mid_left with moveinleft
     ikea_worker "That toilet is for display only!"
     show cs disappointed flipped
-    cs "Oh man, that's disappointing."
+    cs "Oh, man, that's disappointing."
     show cs flipped at center with move
     cs "Whatever, I'll find something else to do."
     hide cs with moveoutleft
@@ -2022,7 +2023,7 @@ label ikea:
     with dissolve
     play music "<loop 0>xddcc.mp3" volume 0.8
     music XDDCC - Gooseworx
-    n "CS wanders back by the plushie section and notices a clown."
+    n "CS meanders back by the plushie section and notices a clown."
     show cs at mid_left with moveinleft
     cs "Huh, that's a weird-looking plushie."
     pomni "I'm not a plushie!"
@@ -2034,11 +2035,11 @@ label ikea:
     show cs disappointed
     cs "What do you mean? The exit is right over there..."
     show cs worried
-    cs "Wait, what way {i}did{/i} I come from?"
+    cs "Wait, which way {i}did{/i} I come from?"
     show cs disappointed
     pomni "See? I've been following exit signs for the past few days."
     pomni "I've only stopped to go to food court. The signs just take you through a loop."
-    cs "You've been looking for a few days?! You need to get to sleep."
+    cs "You've been looking for a few {i}days?!{/i} You need to get to sleep."
     cs "Maybe you'll be able to get out if you look when you're more rested."
     pomni "I don't think I will, but maybe you're right."
     pomni "There are plenty of beds here. Maybe it wouldn't be so bad if I just stayed."
@@ -2047,7 +2048,7 @@ label ikea:
     stop music fadeout 3.0
     music end
     cs "Poor thing. Hopefully she gets some rest quickly."
-    cs "I should find my way back to the exit though. I don't wanna get too lost."
+    cs "I should find my way back to the exit, though. I don't wanna get lost, too."
     hide cs with moveoutright
     n "CS starts following the exit signs, but he eventually realizes that he's been looking for the exit longer than he had been in the store."
     scene home_decor with dissolve
@@ -2105,22 +2106,22 @@ label joel:
     stop music fadeout 3.0
     music end
     scene black with dissolve
-    n "CS gets on a bus headed north, and falls asleep."
+    n "CS gets on a bus headed north and falls asleep."
     n "When the bus reaches the end of the line, one of the other riders wakes him up."
     scene bus_seat
     show cs concentrate at mid_left
     show joel at mid_right
     with dissolve
-    joel "Hey man, you gotta get up. End of the line here."
+    joel "Hey, man, you gotta get up. End of the line here."
     show cs
-    cs "Oh alright, thanks for waking me--"
+    cs "Oh, alright, thanks for waking me--"
     pause 0.5
     show cs worried with hpunch
     cs "Wait, you're Joel! What are you doing here?"
     show cs surprised
-    joel "I'm just taking the bus back home. What're you doing here?"
-    cs "I was looking for you actually."
-    joel "What? How? Why?"
+    joel "I'm just taking the bus back home. What're {i}you{/i} doing here?"
+    cs "I was looking for you, actually."
+    joel "What? {w=0.25}How? {w=0.25}Why?"
     show cs
     cs "I just happened to be in Sweden, and I knew that you were more north, so I went north."
     joel "Your plan was just to explore all of Northern Sweden?"
@@ -2129,12 +2130,12 @@ label joel:
     joel "I suppose. Why did you even want to find me?"
     cs "I just thought it would be cool to hang out."
     cs "I know you also like YTPs, and I make those, so you might be interested."
-    joel "Well, I do like YTPs. This situation is already nonsensical enough, might as well lean into it."
+    joel "Well, I {i}do{/i} like YTPs. This situation is already nonsensical enough, might as well lean into it."
     joel "Wanna come to my house?"
     cs "Sounds like a plan. It's freezing out and I have nowhere else to go."
     joel "You really didn't think this plan through at all, huh."
     cs "Didn't think I needed to." 
-    cs "It's working out really well, so I still don't really."
+    cs "It's working out really well, so I still don't, really."
     joel "We'll see how long that works out for you."
     scene black with dissolve
     pause 3.0
@@ -2151,20 +2152,20 @@ label joel:
     cs "Ooh, it's nice."
     show cs
     cs "Wait, what's all this equipment for?"
-    joel "Oh yeah that's all my alien radar stuff."
+    joel "Oh, yeah, that's all my alien radar stuff."
     cs "Why are you tracking aliens?"
     joel "They keep coming and killing my livestock."
-    joel "At first I thought it was just Swedish Santa because I forgot to leave out porridge for him."
-    joel "Then I left out porridge for him after I replaced the first horse, but then that horse was also killed."
+    joel "At first, I thought it was just Swedish Santa, because I forgot to leave out porridge for him."
+    joel "Then, I left out porridge for him after I replaced the first horse, but then that horse was also killed."
     joel "He didn't even eat the porridge!"
     joel "I left a camera out after I replaced the horse, and I caught the little grey alien on the camera."
-    cs "That's wild. So you're tracking it so you know when it comes for the horse?"
+    cs "That's wild. So, you're tracking it so you know when it comes for the horse?"
     joel "I would be, but I haven't replaced the horse."
     joel "The radar isn't very accurate, and the alien seems to live around here, so I can't tell when it's coming."
     joel "No point in buying a third horse if I can't protect it."
     cs "How did you even get the radar? Did you know how accurate it would be?"
-    joel "In theory this radar could be accurate enough, but it's missing a part."
-    joel "And of course, they don't make it anymore, and it was only in a few old laptops."
+    joel "In theory, this radar {i}would{/i} be accurate enough, but it's missing a part."
+    joel "And, of course, they don't make it anymore, since it was only in a few old laptops."
     cs "Ooh, I have one of those!"
     show craptopsmall at mid_left_left with dissolve
     n "CS pulls out his craptop and hands it to Joel."
@@ -2176,17 +2177,17 @@ label joel:
     hide craptopsmall with dissolve
     joel "Wait, what?! Where did you pull that from?"
     cs "Don't worry about it."
-    joel "What the hell!? This is the right laptop!"
+    joel "What the hell?! This {i}is{/i} the right laptop!"
     joel "You just went to Sweden with an old laptop, hopped on a bus to the north, happened to find me, and that laptop happened to have the part I needed?!"
     cs "That's an accurate recounting of events, yes."
     joel "You didn't know where I lived or that I was working on this radar! How did you manage to get the exact right part to me by random chance?!"
-    joel "Alright, I don't have time to unpack all that. I gotta get the radar done ASAP."
+    joel "Alright, I don't have time to unpack all that. I've gotta get the radar done ASAP."
     n "Joel opens the craptop and puts the part in the machine."
     scene joel_computer with dissolve
     n "He flips the power switch on, and with a satisfying click, the green phosphor screen lights up, now with a much smaller dot than before."
-    joel "Holy shit it worked!"
+    joel "Holy shit, it worked!"
     joel "I can finally get that grey and stop living in fear!"
-    joel "Now I just need bait."
+    joel "Now, I just need bait."
     joel "Any chance you have a horse wherever you had that laptop?"
     cs "Can't help you there."
     joel "Was worth a shot at this point."
@@ -2197,7 +2198,7 @@ label joel:
     show joel at right
     with dissolve
     cs "Why would I go be bait for an alien that's already killed two horses that are about ten times my weight?"
-    joel "You'll be fine, don't worry about it."
+    joel "You'll be fine! Don't worry about it."
     show pipe_gun flipped at mid_right_right with dissolve
     n "Joel pulls out a makeshift gun."
     joel "This bad boy is enough to kill any alien."
@@ -2222,7 +2223,7 @@ label joel:
     show bear at midoffscreenleftspin
     show dog at offscreenleftspin
     with MoveTransition(1.0)
-    cs "Oh nothing much, just {bt=a3-p10-s4}(all this random fucking shit flying back\nand forth)"
+    cs "Oh, nothing much, just {bt=a3-p10-s4}(all this random fucking shit flying back\nand forth)"
     joel "You're an interesting critter, man."
     cs "Thanks!"
     stop music fadeout 3.0
@@ -2234,9 +2235,9 @@ label joel:
     play music "<loop 0>candle_world.mp3" volume 0.4
     music Candle World - Kikiyama
     cs "Alright, I'm in position."
-    joel "Sounds good, I'll run out when I see the alien moving this way and tell you on the walkie-talkie."
+    joel "Sounds good. I'll run out when I see the alien moving this way, and I'll let you know on the walkie-talkie."
     pause 3.0
-    joel "Holy shit grey incoming!!! I'm on my way!"
+    joel "Holy shit, grey incoming!!! I'm on my way!"
     hide cs with moveoutright
     pause 1.0
     show joel flipped at mid_left with moveinleft
@@ -2274,7 +2275,7 @@ label joel:
     cs "Sounds like a plan."
     show joel flipped with determination
     hide joel with moveoutright
-    n "CS goes and plays Cuphead while Joel cooks."
+    n "CS plays Cuphead while Joel cooks."
     pause 5.0
     scene black with dissolve
     pause 1.0
@@ -2285,15 +2286,15 @@ label joel:
     joel "Dinner's ready! Reindeer and alien meatballs, lingonberry sauce, mashed potatoes, and surströmming."
     cs "That's certainly a unique meal."
     joel "Well, I wasn't gonna waste the alien meat."
-    cs "I meant the reindeer and surströmming, but I suppose that's also unique."
-    n "CS and Joel enjoy the meal and have a great time talking at dinner."
+    cs "I meant the reindeer and surströmming, but, I suppose that's also unique."
+    n "CS and Joel enjoy the meal and have a great time talking over dinner."
     joel "Well, it's getting late, we should get to bed. You can sleep on the couch."
-    joel "Can't get a bus back right now anyway."
+    joel "Can't get a bus back right now, anyway."
     cs "Great idea. Risking my life and eating reindeer was enough excitement for one night. I'm exhausted."
     stop music fadeout 3.0
     scene black with dissolve
     $ achievement_manager.unlock("Grand Dad")
-    n "After a good night's sleep, and the alien adventures with Joel, CS gets up and heads out to the nearest bus stop."
+    n "After a good night's sleep, CS gets up and heads out to the nearest bus stop."
     scene bus_map with dissolve
     jump sweden_menu
 
