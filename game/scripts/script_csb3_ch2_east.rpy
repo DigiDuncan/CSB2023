@@ -1802,13 +1802,13 @@ label back_home:
     cs "Well, you guys scammed me out of my money and broke my computer! Of course I wanted some kind of revenge!"
     ed "Why do you think this all started?"
     cs "I--{w=0.5} I don't know, because you're evil?"
-    ed "CS, you put our company to shame long ago."
+    ed "CS, you made a laughingstock of our company long ago."
     ed "When you made that parody video of us that you call a \"YTP\", people wouldn't stop harrassing us about it."
-    rich "You tried to humiliate us with your videos, with others thinking we were a joke."
-    ed "You see, my ancestors came from the planet JoJ many years ago to live here and start a foundation company."
+    rich "You tried to humiliate us with your videos. You made others think we were a joke!"
+    ed "You see, my ancestors came from the planet JoJ many years ago to start a foundation company."
     ed "It was the best damn foundation company in the world."
     ed "We repaired more than fifty percent of all foundations on the planet, and now... you."
-    ed "You. You embarrassed us with those silly, stupid, videos that dragged our family company through the mud."
+    ed "You. You embarrassed us with those silly, stupid videos that dragged our family company through the mud."
     rich "That's why Ed wanted to get revenge on you. That's why we destroyed your computer, CS."
     cs "I don't understand..."
     menu:
@@ -1987,7 +1987,7 @@ label true_ending:
     stop music
     n "CS looks over at his desk, where a new computer is sitting."
     scene cs_room_2 with fade
-    n "CS looks at the monitor that has a sticky note that says \"From LTT\"."
+    n "CS looks at the monitor, which has a sticky note that says \"From LTT\"."
     show cs happy at mid_left with moveinleft
     cs "Oh my goodness, Linus got me a new PC!"
     n "There is also a note that says: \"We'd love to have you work with us again virtually, just give us a call\"."
@@ -2050,7 +2050,7 @@ label ltt_ending:
     stop music
     n "CS looks over at his desk, where a new computer is sitting."
     scene cs_room_2 with fade
-    n "CS looks at the monitor that has a sticky note that says \"From LTT\"."
+    n "CS looks at the monitor, which has a sticky note that says \"From LTT\"."
     show cs happy at mid_left with moveinleft
     cs "Oh my goodness, Linus got me a new PC!"
     n "There is also a note that says: \"We'd love to have you work with us again virtually, just give us a call\"."
@@ -2113,6 +2113,7 @@ label fighthohsis:
     hide cs with moveoutbottom
     show ed with hpunch
     ed "Time to take a shit on the house."
+    music end
     bad_end "Revenge!" "back_home"
 
 label fuckuphohsis:
