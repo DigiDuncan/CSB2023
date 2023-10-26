@@ -5,7 +5,7 @@ label south:
     cs "I've always kinda wanted to go down to Vegas. We could have a ton of fun down there!"
     show arceus worried
     arceus "Don't you want to go back home?"
-    cs "Listen, we are free again and in the middle of nowhere. If we can find a way to make a bit of cash and get a car, maybe we can make it big!"
+    cs "Listen, we are free again, and we're in the middle of nowhere. If we can find a way to make a bit of cash and get a car, maybe we can make it big!"
     show arceus angry
     arceus "This sounds like an awful idea."
     pause 1.0
@@ -65,7 +65,7 @@ label south:
     pause 1.0
     cs "Woohoo! Vegas time!"
     arceus "I don't even know how you do these things, man, but let's go!"
-    n "The duo heads out to Vegas, or where they presume Vegas is."
+    n "The duo heads out to Vegas, or, where they presume Vegas is."
     stop sound fadeout 2.0
     scene black with fade
     n "After many hours of driving, day turns to night once again."
@@ -94,7 +94,7 @@ label utah:
         cs "I could've sworn we were going the right way."
         arceus "Did you ever see a sign that said \"Las Vegas - in however many miles\"?"
         cs "No...?"
-        arceus "Oh well. At least we know where we are now."
+        arceus "Oh, well. At least we know where we are now."
         arceus "Tomorrow, we'll head to Vegas."
         arceus "Let's find somewhere to eat before we hit the hay tonight."
         n "They continue driving for a bit until they come across a small town."
@@ -109,7 +109,7 @@ label utah:
         cs "I could've sworn we were going the right way."
         arceus "Did you ever see a sign that said \"Las Vegas - in however many miles\"?"
         cs "No...?"
-        arceus "Oh well. At least we know where we are now."
+        arceus "Oh, well. At least we know where we are now."
         arceus "Tomorrow, we'll head to Vegas."
         arceus "Let's find somewhere to eat before we hit the hay tonight."
         n "They continue driving for a bit until they come across a small town."
@@ -143,7 +143,7 @@ label utah:
     scene legodoor with fade
     show cs dark at left with moveinleft
     show arceus worried dark at right with moveinright
-    n "They approach the front door and the sign on it says the place is closed."
+    n "They approach the front door. There is a sign on the door that reads \"CLOSED.\""
     arceus "Dang, that suuuuuure sucks. We can leave now, right?"
     scene legodooropen
     show cs dark at left
@@ -172,8 +172,8 @@ label utah:
         arceus "Please CS, can we {i}not{/i} go to the one place with a {i}bee?{/i}"
         cs "No? It's just a plushie..."
         cs "Anyways..."
-    cs "Wow, a Lego-themed pizza restaurant. This place looks like it was built out of Lego too!"
-    cs "Woah, Arc, look at those big minifig statues!"
+    cs "Wow, a Lego-themed pizza restaurant. This place looks like it was built out of Lego, too!"
+    cs "Woah, Arc, look at those giant minifig statues!"
     n "Up in the front of the room, four human-scale Lego minifigures can be seen standing up on the stage."
     n "CS goes up to stand next to them."
     scene legostage with fade
@@ -195,7 +195,7 @@ label utah:
     arceus "It's hot too, who made this?"
     cs "The cook who works here, duh!"
     arceus "The place was closed, CS."
-    cs "Well, then, why would the cook in the back be making pizzas?"
+    cs "Well, then, why would the cook be in the back making pizzas?"
     show arceus angry dark
     arceus "Because there is-- Whatever, let's just find a place to sit down and eat."
     arceus "And not out here. I don't wanna look at those creepy minifigures."
@@ -217,7 +217,7 @@ label utah:
     cs "Hey, look at that! We can see where the car goes!"
     cs "While we eat, I'm gonna take the car around the restaurant and see if we can find anything cool."
     arceus "Alright, just don't break it."
-    n "CS drives the car outside of the officez and starts going into different rooms."
+    n "CS drives the car outside of the office and into different rooms."
     cs "This already feels like a cool vacation. I'm glad we managed to find this."
     arceus "Well, at least {i}you're{/i} happy."
     cs "Weren't there supposed to be robotic Legos though? I was looking forward to tha-- Heyyy!!!"
@@ -276,7 +276,7 @@ label utah:
     hide cs
     hide arceus
     with moveoutleft
-    n "Arceus hops in the drivers seat while CS gets in the back."
+    n "Arceus hops in the driver's seat while CS gets in the back."
     scene pizzaplace
     show cscar1arc
     show cscar2
@@ -416,7 +416,7 @@ label vegas:
     unknown "Arright, great! Come sit down here."
     hide cs with moveoutleft
     n "CS sits down at the poker table and notices that the man's skin is a putrid green."
-    n "CS looks disgusted, but shrugs as he doesn't want to start trouble now."
+    n "CS looks disgusted, but shrugs, as he doesn't want to start trouble now."
     scene luigi2
     show green flipped at left
     with fade
@@ -431,7 +431,7 @@ label vegas:
     scene pokertable with fade
     show cards1
     green "Hahahaha! I can tell this one's a winner!"
-    n "CS looks at his cards: He's got an ace of spades and a king of spades."
+    n "CS looks at his cards. He's got an ace of spades and a king of spades."
     show cards2
     n "The dealer lays down a nine of hearts, an eight of clubs, and a queen of spades."
     green "Arright! I'm puttin' one million in!"
@@ -528,7 +528,7 @@ label folded:
     show drillbreak at center_right
     play sound "drillbreak.ogg" loop volume 0.5
     show arceus full angry flipped
-    arceus "You broke-dick piece of shit drill!"
+    arceus "You broke-dick piece-of-shit drill!"
     hide drillbreak
     show arceus full flipped
     show drill at center_right
@@ -570,7 +570,7 @@ label folded:
     show arceus
     arceus "Yeah, and the casino steals from us. Slots are rigged, man."
     show cs disappointed
-    cs "Yeah, I guess you're right. Oh well."
+    cs "Yeah, I guess you're right. Oh, well."
     cs "Did anyone notice?"
     show arceus happy
     arceus "Nope! I 100 percent stealthed that!"
@@ -623,14 +623,14 @@ label poker3:
         cs "What in the world??"
         lancer "I just found this cool shiny metal in the back, but it didn't taste very good."
         show case at mid_right with dissolve
-        lancer "Here, have it waiter dude!"
+        lancer "Here, have it, waiter dude!"
         lancer "See ya later!"
         hide lancer with moveouttop
         stop music fadeout 3.0
         music end
         pause 2.0
         show cs flipped
-        cs "Well then!"
+        cs "Well, then!"
         cs "Awesome, I guess!"
         cs "Time to show Arc!"
         show cs with determination
@@ -682,7 +682,7 @@ label poker3:
     else:
         show cards5
         n "CS has a royal flush with his ace and king of spades, while Mr. Green has a seven of hearts and a ten of clubs."
-        n "Mr. Green pukes all over the table and falls over backwards, passing out."
+        n "Mr. Green vomits all over the table and falls over backwards, passing out."
         stop music fadeout 3.0
         music end
         $ achievement_manager.unlock("High Roller")
@@ -1268,7 +1268,7 @@ label noairport:
     show arceus at right with determination
     cs "Okay! We are here!"
     show arceus worried
-    arceus "Yep! This is my house alright! This is what it looks like!"
+    arceus "Yep! This is my house, alright! This is what it looks like!"
     show arceus
     n "They enter Arceus' hou--{nw}"
     show mika at center with moveintop
