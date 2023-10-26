@@ -1772,7 +1772,7 @@ label aurora_borealis:
     moomin "I don't mean to alarm you. I just wanted to say hi."
     show cs flipped
     moomin "Who are you?"
-    if(fun_value(40)): 
+    if fun_value(40): 
         cs "My name is Walter Hartwell White. I live at 308 Negra Arroyo Lane, Albuquerque, New Mexico, 87104."
         moomin "I don't believe you."
         cs "Oh, okay. You're right, I'm actually CS. What's your name?"
@@ -1810,7 +1810,7 @@ label aurora_borealis:
     moomin "There's me, Moominmama, and Moominpapa."
     cs "Wait, so just three of you?"
     moomin "Well, there's also the Snork and Snorkmaiden. They look kinda like us, but they're Snorks, not Moomins."
-    if(fun_value(5)):
+    if fun_value(5):
         cs "If there are only three or maybe five of you, how did you evolve?"
         cs "Where did you all come from?"
         moomin "Just let it be fun."
