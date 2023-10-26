@@ -77,7 +77,7 @@ label car_dialogue:
     cs "How long is this drive?"
     arceus "You sound like a child asking their mom if they're at Disney World yet."
     cs "I'm sorry, man, I just want to get home."
-    billy "It's quite a ways away still!"
+    billy "It's quite a ways away, still!"
     cs "Aw man..."
     arceus "Listen, at least the cops aren't after us this time."
     billy "What?"
@@ -239,7 +239,6 @@ label car_dialogue:
     cs "Man, we should have a podcast or something."
     arceus "No, no we shouldn't."
     cs "What do you mean? We're just chatting right now and I think it's pretty funny!"
-    digi "It's only funny sometimes, but not everyone is gonna watch this."
     arceus "You only think it's funny because we're the ones talking."
     arceus "Every group of idiot friends thinks they're funny enough to have a podcast, and 99 percent of the time, they're wrong."
     billy "Yeah, I gotta agree with him on this one. I don't think anyone would find this funny."
@@ -365,7 +364,7 @@ label car_dialogue:
 
     pause 1.0
 
-    n "CS hears something from the back of the car. It sounds like the fumbling of plastic."
+    n "CS hears something from the back of the car. It sounds like the faint clacking of plastic."
     n "CS turns around."
     n "Arceus is mumbling under his breath."
     arceus "Right, up, right inverted, up inverted..."
@@ -402,7 +401,7 @@ label car_dialogue:
     cs "Now I'm curious, what was Pakoo talking about, Digi?"
     digi "Look, I'll tell you later. I don't want to think about it."
     n "The radio comes back on."
-    pakoo "--and yeah it's like the best video ever. Thank you, Digi. I unironically love that video."
+    pakoo "--and, yeah, it's like the best video ever. Thank you, Digi. I unironically love that video."
     digi "Sure, Pakoo."
 
     pause 1.0
@@ -471,13 +470,15 @@ label car_dialogue:
     mean "Hello, Mr. Mays! Is Digi with you?"
     digi "What the fuck, Mean. How did you know I was with Billy?"
     mean "Bro, I'mma keep it a hundred, I was just calling random numbers until I got you."
-    mean "Also, turn on your ringer, I called you first."
+    mean "Also, turn on your ringer. I called you first."
     n "Digi checks his phone."
     digi "Whoops."
     digi "So, what did ya need me for?"
     mean "I just wanted to say hi."
     mean "Hi!"
     digi "Hi, Mean."
+    mean "Also, Tate says \"a.\""
+    tate "a"
     n "The phone hangs up."
 
     pause 1.0
@@ -487,7 +488,7 @@ label car_dialogue:
     play music2 "<loop 0>summer_clearance_sale.mp3" volume 0.5
     doug "When you shop at Walmart..."
     doug "You're shopping at Walmart."
-    doug "Keep shopping at Walmart by going to Walmart today!"
+    doug "Keep shopping at Walmart{w=0.25}by going to Walmart today!"
     stop music2
     $ renpy.music.set_pause(False, "music")
     pause 2.5
