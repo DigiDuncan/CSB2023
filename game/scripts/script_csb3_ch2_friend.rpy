@@ -863,5 +863,6 @@ label car_slam:
     pause 1.0
     $ renpy.movie_cutscene("movies/wherearetheynow.webm")
     pause 1.0
+    $ renpy.movie_cutscene("movies/credits.webm")
     $ renpy.end_replay()
     return

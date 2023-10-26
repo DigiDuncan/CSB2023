@@ -1471,8 +1471,7 @@ label final_tour_bus:
 
     cs "{cps=15}{image=note_small1.png} [line_7]{w=1.5}\n[line_8]{w=1.5}\n[line_9]{w=1.5}\n[line_10] {image=note_small2.png}"
     $ achievement_manager.unlock("You Rock!")
-    $ renpy.end_replay()
     scene black with Dissolve(3.0)
-
     $ renpy.movie_cutscene("movies/credits.webm")
+    $ renpy.end_replay()
     return
