@@ -120,7 +120,7 @@ label car_dialogue:
     pause 1.0
 
     n "Billy gets a call on his Jupiter Jack."
-    pakoo "Hey, guys, which Cars movie is your favorite?"
+    pakoo "Hey, guys, which {i}Cars{/i} movie is your favorite?"
     pakoo "I personally think the first one is the best."
     cs "Nah, it's definitely the second one."
     arceus "Yeah, I'm with CS on this one."
