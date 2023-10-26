@@ -580,7 +580,7 @@ label csbi_end:
     show worker_3 at mid_center_right
     show worker_4 at mid_left
     with dissolve
-    show cs angry flipped with moveinleft
+    show cs angry flipped with moveinright
     cs "Get out of my way!"
     n "CS bodyslams the workers as he runs past."
     play sound "audio/punch.ogg"
