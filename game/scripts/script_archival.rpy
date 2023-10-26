@@ -24,7 +24,7 @@ label archival:
     cs "How is every--"
     show cs worried
     n "CS immediately jolts up, realizing that he's not in his room."
-    cs "Wait a minute. Where am I? This place…"
+    cs "Wait a minute. Where am I? This place..."
     n "CS trails off, feeling uneasy about this new location. It doesn't look familiar to him at all, but for some reason..."
     cs "Why does the place {i}feel{/i} so familiar? Something doesn't seem right."
     n "CS gets up, and goes over to a laptop sitting on the desk next to him."
@@ -78,7 +78,7 @@ label archival:
     k174 "Look, I don't know why I wrote that. We need to figure out what's causing this! I'm a bit worried."
     k207 "I'm sure it's nothing, dude. Why don't we go check out another part of this place?"
     show k199
-    k199 "Wait a second…"
+    k199 "Wait a second..."
     n "K19-9 sees something shift in the corner and leans in to look."
     show cs disappointed at left with moveinleft
     show k174 at mid_right
@@ -94,7 +94,7 @@ label archival:
     k174 "{i}What the fuck?! Why does he look like that?{/i}"
     show cs disappointed
     cs "Damn, okay, now I just feel insulted."
-    k199 "Dude, just, find something here to knock him out or whatever!"
+    k199 "Dude, just, find something here to knock him out, or whatever!"
     k174 "Okayokayokay! I got this! Take this!"
     show worker_1 at center with moveintop
     n "One of the HoH SiS workers materializes in between CS and the three people."
@@ -153,10 +153,10 @@ label archival:
     scene csmart_old with fade
     show cs worried at left with moveinleft
     n "CS starts to drive off, but he is instantly teleported to a Walmart that has a \"CS\" poorly pasted onto the sign."
-    cs "What is this place?! What is going on?!"
+    cs "What {i}is{/i} this place?! What's going on?!"
     n "CS looks around for a second and sees what looks like a crack in the sky."
     cs "What the hell?"
-    n "Before CS can figure out what to do, the three guys from earlier catch up with CS."
+    n "Before CS can figure out what to do, the trio from earlier catches up with CS."
     stop music fadeout 3.0
     music end
     show k199 at center
@@ -183,9 +183,9 @@ label archival_finale:
     stop music fadeout 3.0
     music end
     n "CS, without any second thoughts, breaks off pieces of the wall enough to widen the crack and crawls through the hole."
-    n "…"
-    n "…"
-    n "…"
+    n "..."
+    n "..."
+    n "..."
     scene archival_1 with fade
     play music "<loop 0>take_trip.mp3" volume 0.7
     music "Take a Trip from Me - u4ia"
@@ -209,7 +209,7 @@ label archival_finale:
     show archival_5
     show cs disappointed
     with dissolve
-    n "CS realizes that the version of him inside the tank is playing a game made of the very world that he lives in, even going so far as to poke fun at it."
+    n "CS realizes that this other him is playing a game made of the very world that he lives in, even going so far as to poke fun at it."
     show cs scared
     n "Before CS can really take all this in, a few guards at the end of the building yell something at him."
     n "The guards are wearing tophats and black suits, and are carrying rifles."
@@ -251,7 +251,7 @@ label archival_finale:
     hide hart2 with moveoutright
     n "After he finally manages to make it to the end of the building, he runs along the side to try to find an exit."
     scene archival_8 with dissolve
-    n "While the guards are still firing at him, he finds a set of doors that leads him into another large area."
+    n "While the guards are still firing, he finds a set of doors that leads him into another large area."
     scene archival_7 with dissolve
     show cs worried at offscreenleft
     hide cs worried with moveoutright
@@ -270,7 +270,7 @@ label archival_finale:
     hide hart1 with moveoutright
     show hart2 at offscreenleft
     hide hart2 with moveoutright
-    n "The people with the guns start firing again, as a bunch of alarms go off, echoing throughout the whole place. A voice over the loudspeaker cuts through the sirens:"
+    n "The people with the guns start shooting again, as a bunch of alarms go off, echoing throughout the whole place. A voice over the loudspeaker cuts through the sirens:"
     scene archival_5 with dissolve
     show cs scared at center with moveinleft
     play sound "<loop 0>less_annoying_alarm_sound.mp3" loop volume 0.6
@@ -282,7 +282,7 @@ label archival_finale:
     show hart2 at offscreenleft
     hide hart2 with moveoutright
     scene archival_9 with dissolve
-    n "CS runs into a hallway with a lot of turns. He goes straight for a bit, then turns left when he hears the gunfire. He switches between going left and right."
+    n "CS runs into a hallway with a lot of turns. He goes straight for a bit, then turns left when he hears the gunfire. He alternates between going left and right."
     window hide
     scene archival_10a with dissolve
     scene archival_11a with dissolve
@@ -368,7 +368,7 @@ label archival_finale:
     hide cs with moveoutright
     scene archival_16 with dissolve
     show cs scared at center with moveinleft
-    n "CS makes one last sprint to the tram, just rushing inside as the door begins to close."
+    n "CS makes one last dash to the tram, just rushing inside as the door begins to close."
     hide cs with moveoutright
     stop music fadeout 3.0
     scene archival_13 with dissolve
@@ -381,7 +381,7 @@ label archival_finale:
     show hart1 at left
     show hart2 at center
     with dissolve
-    n "The tram slowly starts to take off. The guards back away from the tram and pull out what looks like walkie talkies."
+    n "The tram slowly starts to take off. The guards back away from the tram and pull out what looks like walkie-talkies."
     scene black
     show archival_18
     show cs disappointed at center
