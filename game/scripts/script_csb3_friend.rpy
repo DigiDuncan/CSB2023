@@ -2,7 +2,7 @@ label microcenter:
     cs "Sure, what parts do you need?"
     linus "We need eggs, milk..."
     linus "Just kidding."
-    linus "I'll leave the details up to you since you've done a lot of livestreaming. Just get the highest end available."
+    linus "I'll leave the details up to you since you've done a lot of livestreaming. Just get the highest-end available."
     cs "Alright, I'll go get the parts."
     scene black with fade
     pause 3.0
@@ -13,10 +13,10 @@ label microcenter:
     cs "I have your new streaming PC, and it runs quite well, too! Way better than my computer!"
     linus "Awesome! Lemme go move this into the othe--{w=0.25}{i}woahhhh!!!"
     show linus with hpunch
-    n "Linus trips and falls, immediately destroying the insides and outsides of the PC that CS just built."
+    n "Linus trips and falls, immediately destroying the insides and outsides of the PC that CS had just built."
     cs "Oh, damn, you okay there?"
     linus "No, of course not! I just destroyed another one of these $20,000 computing machines! How the hell am I going to get another just like this?"
-    cs "Well, you could just always buy more parts like these, I'm sure you have the budget for that."
+    cs "Well, you could just always buy more parts like these. I'm sure you have the budget for that."
     linus "No, no, that's too expensive and wasteful. Let me think..."
     linus "Hmmm..."
     linus "Wait! I just got a brilliant idea! Why don't you go buy more parts for me! We certainly have the budget to do that!"
@@ -25,7 +25,7 @@ label microcenter:
     linus "Alright! The plan is settled! You can go fetch me some more parts for the ultimate streaming machine, and you get to decide what parts should be in the computer!"
     show cs
     cs "Okay, but, are there any recommendations you would give me for building this? This is {i}your{/i} money, you know."
-    linus "Nah, it's fine. I'm sure you will do well picking out parts. Make sure to get the highest quality you can!"
+    linus "Nah, it's fine. I'm sure you will do well picking out parts. Make sure to get the highest-quality components that you can!"
     cs "Alrighty, I'll get going now."
     stop music fadeout 3.0
     music end
@@ -125,12 +125,12 @@ label high_gpu:
     play music "<loop 0>creative_exercise.mp3" loop volume 0.3
     music Creative Exercise - Hirokazu Tanaka
     show cs at left with moveinleft
-    cs "Hey, Linus! I got your parts!"
+    cs "Hey, Linus! I've got your parts!"
     linus "Alright, let's see what you got!"
     show linus at mid_left_left with move
     pause 0.5
     show linus at center with move
-    linus "Alright, let's see what we got here..."
+    linus "Alright, let's see what we've got here..."
     linus "Nice, an Intel i9..."
     if fanboy_type == "nvidia":
         linus "Oh, nice! A Radeon RX 7900! That's amazing!"
@@ -138,12 +138,12 @@ label high_gpu:
         cs "Thanks, man!"
         cs "I was hoping you'd like it, since you use AMD for gaming."
     else:
-        linus "Ooh! A RTX 4080! Excellent choice CS!"
+        linus "Ooh! A RTX 4080! Excellent choice, CS!"
         show cs happy
         cs "Thank you!"
         show cs
         cs "I'm more of an NVIDIA guy myself, so I decided to go with it."
-    linus "Well, you made some great purchases. I'm excited to see the specs we'll get with this!"
+    linus "Well, you made some great purchases. I'm excited to see the specs we'll get with this setup!"
     linus "I'm gonna go get the set ready, and then we can build and test it on camera."
     cs "Oh, wow, already?"
     linus "Yeah, I'm excited! You can help me build it, right?"
@@ -166,21 +166,21 @@ label high_gpu:
     cs "Okay."
     linus "3...{w=1} 2...{w=1} 1...{w=1} Action."
     linus "Today, we are going to start-- {nw}"
-    cs "Hey guys, CS here! How's it goin? Today we are going to build this {bt=a3-p10-s4}CraAaAaAaAzY{/bt} computer!"
+    cs "Hey guys, CS here! How's it goin'? Today, we are going to build this {bt=a3-p10-s4}CraAaAaAaAzY{/bt} computer!"
     pause 1.0
     linus "Yeah. As I was going to say, we have our new employee cs188 with us, helping build a new streaming machine for LTT!"
     if fanboy_type == "nvidia":
         linus "CS picked out the parts, which were an Intel i9 and a Radeon RX 7900!"
         cs "Woohoo! Go AMD!"       
     else:
-        linus "CS picked out the parts, which were an Intel i9 and a RTX 4080!"
+        linus "CS picked out the parts, which were an Intel i9 and an RTX 4080!"
         cs "Woohoo! NVIDIA is the best!"
     linus "Alright, let's put the computer together!"
     stop music fadeout 3.0
     music end
     scene black with fade
-    n "CS and Linus then spend the next hour building and setting up the computer, showing off its amazing capabilities."
-    n "When they finish recording, they clean up the set and Linus gives the footage to the editors."
+    n "CS and Linus then spend the next hour putting the computer together and showing off its amazing capabilities."
+    n "When they finish recording, they clean up the set, and Linus gives the footage to the editors."
     scene inside_ltt with fade
     show cs at left
     show linus at right
@@ -232,10 +232,10 @@ label high_gpu:
     linus "Hold on, lemme go check the window."
     hide linus at offscreenright with moveoutright
     if fanboy_type == "nvidia":
-        n "Linus heads over the window, and peers out to see a bunch of angry NVIDIA fans rioting."
+        n "Linus heads over the window and peers out to see a bunch of angry NVIDIA fans rioting."
     else:
-        n "Linus heads over the window, and peers out to see a bunch of angry AMD fans rioting."
-    linus "Oh shit, this is bad..."
+        n "Linus heads over the window and peers out to see a bunch of angry AMD fans rioting."
+    linus "Oh, shit. This is bad..."
     cs "What is it?"
     n "All of a sudden, a brick flies through the window!"
     play sound "<loop 0>glass.ogg" volume 3
@@ -295,7 +295,7 @@ label attack_fanboy:
     cs "Actually, you know what? Leave this to me!"
     hide cs with moveoutleft
     n "CS runs out the front door into the crowd."
-    linus "CS what are you doing? You're gonna get yourself killed out there!"
+    linus "CS, what are you doing? You're gonna get yourself killed out there!"
     stop sound fadeout 3.0
     scene outside_ltt with fade
     play sound "<loop 0>yelling.ogg" loop volume 1
@@ -324,7 +324,7 @@ label after_fanboy:
     else:
         $ achievement_manager.unlock("The Threadripper")
     cs "That was exhilarating!"
-    cs "That's right! The rest of you get out of here!"
+    cs "That's right! The rest of you, get out of here!"
     show arceus at right with moveinright
     arceus "CS! We need to--"
     show arceus worried
@@ -336,13 +336,13 @@ label after_fanboy:
     show arceus
     show linus at left with moveinleft
     linus "Woah, hey, CS you alright?"
-    cs "Yeah! I fought them and scared the rest away!"
+    cs "Yeah! I fought them, and then scared the rest away!"
     linus "Well, shit! Good job, CS!"
     linus "Hey, if this happens again, would you be ready to fight again?"
     if fanboy_type == "nvidia":
-        cs "Umm, if they're NVIDIA fans, sure thing I guess."       
+        cs "Umm, if they're NVIDIA fans, sure thing, I guess."       
     else:
-        cs "Umm, if they're AMD fans, sure thing I guess."
+        cs "Umm, if they're AMD fans, sure thing, I guess."
     linus "Great! I'll be right back."
     hide linus with moveoutleft
     show cs worried
@@ -399,7 +399,7 @@ label after_fanboy:
     arceus "Uhh, no?"
     pakoo "Oh, Linus brought me here to--"
     show arceus flipped angry
-    arceus "Are you a cop? You better not be cop."
+    arceus "Are you a cop? You'd better not be a cop."
     if fun_value(50):
         cs "Hey, aren't you the guy who made Petscop 2?"
         pakoo "Huh?"
@@ -409,7 +409,7 @@ label after_fanboy:
     linus "CS, this is the trainer we brought in today!"
     stop music fadeout 3.0
     music end
-    linus "They're gonna help you learn how to use a gun and stuff like that in case we get rioters again!"
+    linus "They're gonna help you learn how to use a firearm in case we get rioters again!"
     show cs worried
     cs "Woah, what? Don't you think weapons training is a bit overkill for this?"
     linus "Nahhh!"
@@ -453,7 +453,7 @@ label after_fanboy:
     arceus "Hey, CS?"
     show cs flipped with determination
     cs "Yeah?"
-    arceus "If the cops are coming our way, I'll come down and let you know, but we'll just have to get going immediately, no exclamation to Linus."
+    arceus "If the cops are coming our way, I'll come down and let you know, but we'll just have to get going immediately. No explanation to Linus."
     arceus "Got it?"
     cs "Yep! I'll see you soon!"
     show cs with determination
@@ -475,10 +475,10 @@ label training:
     pakoo "Close."
     linus "Follow me this way to the entrance for the course."
     cs "The course?"
-    pakoo "Yeah, you gotta run through some exercises before you can use a gun!"
+    pakoo "Yeah, you've gotta run through some exercises before you can use a gun!"
     show cs disappointed
     cs "Manual labor? Ugh..."
-    linus "Alright, hup hup CS! Let's go!"
+    linus "Alright, hup hup, CS! Let's go!"
     hide linus
     hide cs
     hide pakoo
@@ -524,7 +524,7 @@ label training:
 
 label cool_jump:
     show cs
-    cs "I've got this guys, you watching?"
+    cs "I've got this guys! You watching?"
     pakoo "Yep!"
     show cs at t_punchup with move
     show cs at right with moveintop
@@ -533,7 +533,7 @@ label cool_jump:
     "Pakoo and Linus" "WOOAHH!!"
     show cs happy
     cs "Hell yeah! What did you guys think of that?"
-    pakoo "That was impressive man!"
+    pakoo "That was impressive, man!"
     linus "I never doubted you, CS!"
     cs "Hey, maybe this training isn't too bad!"
     hide cs with moveoutright
@@ -556,12 +556,12 @@ label fire_range:
     show m4 at left
     cs "Yep!"
     show cs angry
-    cs "So do I just-- why won't it fire!!"
+    cs "So do I just-- why won't it fire?!"
     show cs
     pakoo "Okay, woah, woah! Calm down."
-    pakoo "You gotta turn the safety off."
+    pakoo "You've gotta turn the safety off."
     pakoo "Be careful where you aim that, as well."
-    cs "Alright, I think I got this now."
+    cs "Alright, I think I've got this now."
     cs "Watch this!"
     show m4 at left with determination
     show m4 fire at left with determination
@@ -650,18 +650,18 @@ label fire_range:
     linus "Whatttt? Look, I need this for my company."
     linus "There are just too many variables for what could happen, and I need some... protection for those variables!"
     show cs disappointed
-    cs "Will I be able to work on editing ever? That's kinda what I signed up for in the first place, now that you mention this training stuff."
+    cs "Will I be able to work on editing... ever? That's kinda what I signed up for in the first place, now that you mention this training stuff."
     show pakoo
     show cs
     linus "Sure! It's just--{w=0.5}{nw}"
     show arceus flipped at left with moveinleft
     play music "cp_violation.mp3" loop volume 0.6
     music CP Violation - Kelly Bailey
-    arceus "Alright CS. We gotta go now."
+    arceus "Alright, CS. We've gotta go, now."
     linus "Heyy! How'd you get down here?"
     show cs disappointed
-    cs "Alright... I gotta go. This is important."
-    linus "Yeah, and this is too! We gotta train more!"
+    cs "Alright... I've gotta go. This is important."
+    linus "Yeah, and this is too! We've gotta train more!"
     cs "Look I'll... explain later okay?"
     arceus "Alright, we're going, CS!"
     arceus "C'mon!"
@@ -688,7 +688,7 @@ label fire_range:
     linus "Ahh, I see. I get it now."
     linus "I'll pretend like I didn't know. Go help him."
     show pakoo
-    pakoo "Alright sweet! Thank you, Linus!"
+    pakoo "Alright, sweet! Thank you, Linus!"
     hide pakoo with moveoutleft
     pause 1.0
     linus "This is such a good idea! Pat yourself on the back, Linus."
@@ -701,7 +701,7 @@ label fire_range:
     show arceus with determination
     arceus "What do you mean, man? You got proper firearms training!"
     show cs
-    cs "Oh yeah!"
+    cs "Oh, yeah!"
     cs "That reminds me..."
     show m4 at center
     pause 1.0
@@ -716,7 +716,7 @@ label fire_range:
     arceus "Hell yeah! We can use this!"
     cs "Yeah! To shoot mean people right?"
     show arceus angry
-    arceus "Geez man, I was thinking to intimidate them!"
+    arceus "Geez, man, I was thinking to {i}intimidate{/i} them!"
     cs "...I was also thinking that."
     show arceus
     show pakoo flipped at left with moveinleft
@@ -735,11 +735,11 @@ label fire_range:
     show arceus angry
     arceus "How are you gonna help us? Do you even know what is going on?"
     pakoo "Of course! The cops are chasing you, right?"
-    arceus "I knew it! You are a cop!"
-    pakoo "No-- damn it, okay, listen to me for a second."
+    arceus "I knew it! You {i}are{/i} a cop!"
+    pakoo "No-- damn it, okay, just listen to me for a second."
     pakoo "I've known for a while that Copguy is chasing you down."
-    pakoo "I've also known that Copguy has been working for 15 years and that you are his last criminal he wants to bust."
-    pakoo "So he's gonna do anything to take you guys down."
+    pakoo "I've also known that Copguy has been on the force for 15 years, and that you are the last criminal he wants to bust."
+    pakoo "He's gonna do anything to take you guys down."
     show arceus
     pakoo "Why do you think I showed up here? I know Copguy, and you're all over the place now!"
     pakoo "You made a video on a channel with like... millions of subscribers! What were you thinking?"
@@ -774,7 +774,7 @@ label fire_range:
     show arceus worried flipped
     arceus "Fuuuuuck, I haven't told Kitty that I escaped from prison."
     show arceus flipped
-    cs "I might tell Tate as well..."
+    cs "I should probably tell Tate, as well..."
     cs "You mind if we make some calls as well?"
     n "Pakoo pulls out a couple of phones from his back pocket and gives them to Arceus and CS."
     show pakoo at center with move
@@ -784,10 +784,10 @@ label fire_range:
     show pakoo flipped with determination
     show pakoo flipped at right with move
     show pakoo with determination
-    pakoo "I had a couple spares with me, you guys should just keep them."
+    pakoo "I had a couple spares with me. You guys should just keep them."
     pakoo "One may or may not be LTT property that I stole."
     scene black with fade
-    n "The gang stops to call their friends and partners, and then makes their way to the dealership."
+    n "The gang stops to call their friends and partners, then makes their way to the dealership."
     scene dealership with fade
     show arceus flipped at center
     show cs at mid_mid_left
@@ -800,7 +800,7 @@ label fire_range:
     play music "<loop 0>mm_complete.mp3" loop volume 0.6
     music Mm Complete - Matthew Simmonds
     carguy "Check out all these nice cars!"
-    carguy "Nooooot so nice that you fellas don't have a car though."
+    carguy "Nooooot so nice that you fellas don't have a car, though."
     carguy "Wouldn't it be nice if having a car was this easy?"
     pakoo "Yeah, you know how expensive cars are these days?"
     carguy "Well, with my new real estate technology, you can! Welcome to Carguy's Deals!"
@@ -825,7 +825,7 @@ label car_picker:
     with moveinleft
     show carguy with determination
     carguy "Look at all these nice cars!"
-    carguy "You guys look around. I'll be in the dealership building when you guys pick something you like."
+    carguy "You guys look around. I'll be in the dealership building when you all pick something you like."
     show carguy flipped with determination
     hide carguy with moveoutright
     pause 0.5
@@ -833,7 +833,7 @@ label car_picker:
     show cs at center
     with move
     show arceus with determination
-    arceus "Alright, guys, pick out a car quick and let's get the hell outta here!"
+    arceus "Alright, guys, pick out a car quick, and let's get the hell outta here!"
     menu:
         "Pick a car!"
         "JoJ Charger":
@@ -848,7 +848,7 @@ label cool_car:
     cs "That's a nice car!"
     pakoo "That is a sick-ass car."
     arceus "Damn. Are we taking it, CS?"
-    cs "Hell yeah! We can't just turn up a car as cool as this!"
+    cs "Hell yeah! We can't just turn down a car as cool as this!"
     stop music fadeout 3.0
     music end
     scene joj_charger_fg
@@ -856,14 +856,14 @@ label cool_car:
     with fade
     show cs at left with moveinleft
     show pakoo at right with moveinright
-    pakoo "Punch it CS! We gotta get outta here!"
+    pakoo "Punch it CS! We've gotta get outta here!"
     play sound "siren.ogg" loop fadein 2.0 volume 0.2
     show blue_light at left
     show red_light at right
-    n "As CS started up the car and began to drive off, the cops pull up around him."
+    n "As CS starts up the car and begins to drive off, the cops pull up around him."
     show cs disappointed
     show pakoo disappointed
-    n "Copguy walks up next to the car."
+    n "Copguy walks up to the car."
     copguy "Nice car!"
     copguy "Noooot so nice that you walked right into my trap!"
     copguy "We've got you guys surrounded! Get out of the car now!"
@@ -912,11 +912,11 @@ label reg_car:
     play sound "siren.ogg" loop fadein 2.0 volume 0.2
     show blue_light at left
     show red_light at right
-    n "As CS started up the car and began to drive off, the cops pull up around him."
+    n "As CS starts up the car and begins to drive off, the cops pull up around him."
     show cs disappointed
     show pakoo disappointed
     n "Copguy walks up next to the car."
-    copguy "Looks like you walked right into my trap!"
+    copguy "Looks like you've walked right into my trap!"
     copguy "We've got you guys surrounded! Get out of the car now!"
     arceus "You guys ready?"
     "CS and Pakoo" "Yep. Let's do this."
@@ -976,7 +976,7 @@ label so_join:
     show kitty at left
     $ persistent.seen.add("round")
     with moveinleft
-    tate "That's right! Y'all gotta get through us first!"
+    tate "All y'all've gotta get through us, first!"
     mika "Yeah! Fuck da police! (For legal reasons this is a joke.)"
     kitty "Let's get them!"
     music For The People!- Lizardking
@@ -997,7 +997,7 @@ label after_cop_fight:
     cs "Yeah, uhm..."
     cs "How are you doing?"
     show tate srs
-    tate "I'm fine, but {i}you're{/i} going to have to explain what the fuck is happening here."
+    tate "I'm fine, but {i}you're{/i} going to have to explain what the fuck is happening."
     show cs disappointed flipped
     cs "Fuck."
     show tate
@@ -1010,7 +1010,7 @@ label after_cop_fight:
     show cs flipped
     mika "Pakoo, next time you are gonna fight people, let me know in advance!"
     show pakoo disappointed
-    pakoo "I know I know, this just came up not too long ago!"
+    pakoo "I know, I know. This just came up not too long ago!"
     if nice_car:
         mika "Dammn, nice car!"
         show pakoo happy
@@ -1062,7 +1062,7 @@ label after_cop_fight:
     sheriff "God damn it what is it this time?"
     copguy "Not only does CS have a group of allies, but he is armed to the teeth."
     copguy "He took down most of my men."
-    sheriff "Ah hell... so this is really {i}that{/i} bad isn't it..."
+    sheriff "Ah hell... so this is really {i}that{/i} bad, isn't it..."
     sheriff "We're gonna need some backup."
     copguy "Yeah, I just came to ask about that."
     sheriff "Lemme call the National Guard. Did you see where they were headed?"
@@ -1106,7 +1106,7 @@ label flint_car:
     show cs flipped with determination
     cs "Yep! This thing looks like the real deal!"
     show pakoo disappointed flipped with determination
-    pakoo "You sure about this? You gotta use your feet to move, man."
+    pakoo "You sure about this? You've gotta use your feet to move, man."
     cs "Yes, I know how the Flintmobile works."
     scene flintcar_fg
     show dealership behind flintcar_fg
@@ -1125,7 +1125,7 @@ label flint_car:
     show blue_light at left
     show red_light at right
     n "Sirens blare in the dealership as Copguy pulls up to the car."
-    copguy "Out of all the cars in this lot you decided to escape with: It was the Flintmobile?"
+    copguy "Out of all the cars in this lot you decided to escape with, you picked the Flintmobile?"
     copguy "That's kinda sad."
     bad_end "Fleenstones?" "car_picker"  
     
@@ -1134,7 +1134,7 @@ label low_gpu:
     cs "I should probably try to save Linus some money. Most of the expensive parts he gets are from sponsors. He's not actually {i}that{/i} rich."
     n "CS flags down an employee."
     show cashier at mid_right with moveinright
-    cs "I'm trying to get a graphics card, and I want to save money. What do you have?"
+    cs "I'm trying to get a graphics card, and I want to save money. What would you recommend?"
     worker "Everything here is pretty expensive. Lemme check the back..."
     cs "Alright, I'll wait here."
     hide cashier with moveoutright
