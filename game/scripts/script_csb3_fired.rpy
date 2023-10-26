@@ -99,7 +99,7 @@ label new_plan:
     cs "But what about money? I'm still out of a job and I'd like to keep having a roof over my head."
     show arceus
     arceus "I don't know, man, I can't think after all that. Let's take a bit and relax. Clear our heads."
-    cs "Good call. Wanna play some Guitar Hero?"
+    cs "Good call. Wanna play some {i}Guitar Hero?{/i}"
     anno "I'm down, but, do you have controllers?"
     cs "Do I?"
     hide cs with moveoutleft
@@ -113,7 +113,7 @@ label guitar_hero:
     play music "<loop 0>audio/hitmewithyourbestshot.mp3" volume 0.5
     music Hit Me With Your Best Shot - Pat Benatar
     scene hotel_guitar_hero with fade
-    n "CS, Anno, and Arceus relax by playing some Guitar Hero."
+    n "CS, Anno, and Arceus relax by playing some {i}Guitar Hero.{/i}"
     arceus "Man, we're all pretty good at this."
     cs "Wait, this gives me an idea."
     anno "What?"
@@ -828,7 +828,7 @@ label limo_time:
     show cs worried
     show arceus flipped
     cs "Already?!"
-    agent "Oh yeah, baby, already. [ep_name] made [band_name] big overnight. This kind of success comes once in a lifetime, and it's in {i}your{/i} lifetime, and it's {i}right now!{/i}"
+    agent "Oh yeah, baby, already. {i}[ep_name]{/i} made [band_name] big overnight. This kind of success comes once in a lifetime, and it's in {i}your{/i} lifetime, and it's {i}right now!{/i}"
     anno "Woah, woah, woah, slow down. Why are you so invested in our success?"
     agent "Oh, don't think I'm going to get a raw deal here. I know how to make sure we all end up happy."
     show arceus angry flipped
@@ -977,7 +977,7 @@ label first_tour_day:
     show linus at right with moveinright
     play music "<loop 0>passport.mp3" volume 0.5
     linus "Oh good, you guys are finally here. You're [band_name], right?"
-    linus "Luke told me about you guys, and I listened to [ep_name] last night... I really liked, uh, which one was it, {i}[song_name_4]?{/i}"
+    linus "Luke told me about you guys, and I listened to {i}[ep_name]{/i} last night... I really liked, uh, which one was it, {i}[song_name_4]?{/i}"
     linus "Anywho, I...{w=1.0} wait, CS?!"
     cs "Uh, hi?"
     linus "Wait, you... {i}you're{/i} the lead singer in [band_name]?!"
@@ -1204,7 +1204,7 @@ label second_tour_day:
     n "Nova looks at a piece of paper."
     nova "Opening for... [band_name]? Is that you guys?"
     cs "Yep!"
-    nova "No shit, I've been listening to [ep_name] on Spoofy a ton this week!"
+    nova "No shit, I've been listening to {i}[ep_name]{/i} on Spoofy a ton this week!"
     nova "I didn't know it was you!"
     cs "Well, us."
     n "CS gestures to the others."
@@ -1294,7 +1294,7 @@ label third_tour_day:
     show cs
     with dissolve
 
-    cs "For our special performance tonight, we'll be singing every song off our album: [ep_name]!"
+    cs "For our special performance tonight, we'll be singing every song off our album: {i}[ep_name]!{/i}"
     n "The crowd is going wild."
     cs "First up, it's {i}[song_name_1]!{/i}"
     play sound "audio/start_rocking.mp3"
@@ -1373,7 +1373,7 @@ label third_tour_day:
     $ line_12 = renpy.input("What's the next line?", length = 64)
     cs "{cps=15}{image=note_small1.png} [line_12] {image=note_small2.png}"
 
-    cs "Thank you! We're [band_name], and thank you for listening to [ep_name]!"
+    cs "Thank you! We're [band_name], and thank you for listening to {i}[ep_name]!{/i}"
     play sound "audio/cheer2.mp3"
     n "The crowd is overjoyed."
 
@@ -1426,8 +1426,8 @@ label final_tour_bus:
     arceus "Yeah, we can still make music together, but you need to get back to your normal routine for a bit."
     anno "Yeah, reset your head a bit."
     show cs
-    cs "Yeah, you're right. And, hey, maybe we can write [ep_name] 2 some day!"
-    arceus "Maybe we shouldn't name it [ep_name] 2."
+    cs "Yeah, you're right. And, hey, maybe we can write {i}[ep_name] 2{/i} some day!"
+    arceus "Maybe we shouldn't name it {i}[ep_name] 2.{/i}"
     cs "Yeah."
     agent "Want me to point this bus towards Casa de CS?"
     cs "You know what, yeah, let's do it."
@@ -1469,7 +1469,7 @@ label final_tour_bus:
 
     scene cs_room with dissolve
     show cs with moveinleft
-    cs "I think I'm going to play some Guitar Hero before bed."
+    cs "I think I'm going to play some {i}Guitar Hero{/i} before bed."
     n "CS gets out his guitar."
     show cs guitar
     play sound "audio/start_rocking.mp3"

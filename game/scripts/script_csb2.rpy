@@ -260,7 +260,7 @@ label jail:
     show copguy at right
     with move
     copguy "Alright, welcome to the slammer. How tough are ya?"
-    cs "How tough am I?! {bt=a3-p10-s4}How tough am I?!{/bt} I beat Cuphead!"
+    cs "How tough am I?! {bt=a3-p10-s4}How tough am I?!{/bt} I beat {i}Cuphead!{/i}"
     copguy "So?"
     cs "{i}In under 90 minutes!"
     copguy "Hmm... okay, you're a tough enough guy to handle this cellmate, then."

@@ -2275,7 +2275,7 @@ label joel:
     cs "Sounds like a plan."
     show joel flipped with determination
     hide joel with moveoutright
-    n "CS plays Cuphead while Joel cooks."
+    n "CS plays {i}Cuphead{/i} while Joel cooks."
     pause 5.0
     scene black with dissolve
     pause 1.0
