@@ -341,7 +341,7 @@ label england_first:
     cs "I'll do whatever I can to pay you back."
     arceus "Nah, don't worry about it. You helped break me out of prison!"
     n "The shopkeeper looks at them weirdly."
-    arceus "In GTA V."
+    arceus "In {i}GTA V.{/i}"
     cs "Yeah, yeah, that heist was really fun."
     arceus "Anyways, let's get you to our place."
     stop music fadeout 3.0
