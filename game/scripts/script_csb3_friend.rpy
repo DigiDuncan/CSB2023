@@ -976,7 +976,7 @@ label so_join:
     show kitty at left
     $ persistent.seen.add("round")
     with moveinleft
-    tate "All y'all've gotta get through us, first!"
+    tate "All y'all've gotta get through {i}us,{/i} first!"
     mika "Yeah! Fuck da police! (For legal reasons this is a joke.)"
     kitty "Let's get them!"
     music For The People!- Lizardking
@@ -997,7 +997,7 @@ label after_cop_fight:
     cs "Yeah, uhm..."
     cs "How are you doing?"
     show tate srs
-    tate "I'm fine, but {i}you're{/i} going to have to explain what the fuck is happening."
+    tate "{i}I'm{/i} fine, but {i}you're{/i} going to have to explain what the fuck is happening."
     show cs disappointed flipped
     cs "Fuck."
     show tate
