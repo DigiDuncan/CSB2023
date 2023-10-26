@@ -17,7 +17,7 @@ label csbi_start:
         with fade
         pause 7.0
         show pakoo at right with moveinright
-        pakoo "Oh whoops!"
+        pakoo "Oh, whoops!"
         pakoo "The old game is still here..."
         pakoo "Lemme fix that real quick for you."
         play sound "page.wav" volume 5
@@ -104,7 +104,7 @@ label csbi_start:
     show craptop car
     cs "Time to watch car crash videos for the next couple of hours!"
     show black with fade
-    n "Two hours later..."
+    centered "Two hours later..."
     scene cs_room
     show cs
     cs "Okay... What to do now?"
@@ -135,7 +135,7 @@ label csbi_start:
     cs "OH GOD, AN ADVERTISER!!!"
     stop music fadeout 3.0
     music end
-    cs "QUICK START THE CAR, START THE CAR!!!"
+    cs "QUICK! START THE CAR, START THE CAR!!!"
     hide cs with moveoutright
     play sound "doorslam.ogg"
     scene cs_car_inside
@@ -164,7 +164,7 @@ label walmart:
     scene walmart_outside
     show cs happy
     with fade
-    cs "Oh yes! Walmart is open!"
+    cs "Oh, yes! Walmart is open!"
     scene walmart_inside with fade
     show screen best_music
     $ _current_song = "Summer Clearance Sale"
@@ -173,7 +173,7 @@ label walmart:
     $ persistent.heard.add("Summer Clearance Sale - BEST MUSIC")
     n "CS walks inside."
     show doug at right with moveinright
-    greeter "Hello and welcome to Walmart! Can I help you with anything?"
+    greeter "Hello, and welcome to Walmart! Can I help you with anything?"
     show cs at left with moveinleft
     cs "Wow! It's Walmart CEO Doug McMillon! You actually work here?"
     doug "Of course! They were short a greeter today, so I filled in the slot!"
@@ -291,7 +291,7 @@ label room:
     show ed at right with moveinright
     play music "<loop 0>hohsis_theme.mp3" volume 0.2
     music Alfred Hitchcock Intro Theme - Charles Gounod
-    ed "Alright that will be 200,000 Bits."
+    ed "Alright, that will be 200,000 Bits."
     cs "Okay, I guess they already told you what I need done. Lemme get my wallet..."
     cs "Hang on a sec. Didn't they say I could pay afterwards?"
     ed "Yeah, well, corporate policies just changed five seconds ago. Pay up."
@@ -301,8 +301,8 @@ label room:
     show cs at left with moveinleft
     cs "Here you go! I'll get out of your guys' hair while you work."
     hide cs with moveoutright
-    n "CS leaves after paying 200,000 Bits."
-    ed "Come on in, guys, CS left."
+    n "CS leaves after paying 200,000 bits."
+    ed "Come on in, guys. CS just left."
     show ed at left with move
     show wesley at center with moveinright
     show rich at right with moveinright
@@ -313,7 +313,7 @@ label room:
     n "The three HoH SiS workers go to CS's room."
     wesley "Wow, I didn't know CS had a Union Jack!"
     ed "CS sure loves those Brits~!"
-    wesley "Alright, but now what should we do?"
+    wesley "Alright, but, now what should we do?"
     ed "How about we burn down his house!"
     wesley "Eh..."
     rich "How about we mess with his laptop?"
@@ -365,7 +365,7 @@ label michael_house:
     show cs phone at left
     n "CS pulls out his phone and calls Michael."
     michael "Hello!"
-    cs "Hey Michael! How you doin' today?"
+    cs "Hey, Michael! How you doin' today?"
     michael "I'm feeling rather noice today."
     cs "That's good to hear! You mind if I head over to your place?"
     cs "The JoJ is being done on my house, so I figured we can chat for a bit."
@@ -426,10 +426,10 @@ label rosen_house:
     show michael at left
     show cs flipped at right
     with ease
-    cs "Hey Michael!"
+    cs "Hey, Michael!"
     michael "Sit down, make yourself comfy. I've got a new poem I want to show you!"
     cs "Sure thing, enlighten me."
-    michael "Right. This one is called:{w} {i}The Library.{/i}"
+    michael "Right. This one is called{w} {i}The Library.{/i}"
     michael "There once was a man who would go on a grand adventure."
     michael "He would meet all sorts of friends, and flee from his enemies."
     michael "After his long adventure, he took a long nap."
@@ -500,7 +500,7 @@ label rosen_house:
     michael "Goodness."
     n "Michael downs the whole can."
     michael "Quick! Get out!"
-    cs "What is going on?"
+    cs "What's going on?"
     michael "The Genergyfoogle is here! It's come to eat us all!"
     cs "Oh man, did that Genergy have something else in it...?"
     cs "I need to get out before he goes nuts!"
