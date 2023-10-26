@@ -538,14 +538,14 @@ label csbi_end:
     cs "Wait..."
     cs "The last people in this room were the HoH SiS guys!"
     cs "They must have messed with it!"
-    show craptop_bg at rotate_5
-    show craptop off at rotate_5
+    show craptop_bg at rotate_6
+    show craptop off at rotate_6
     with hpunch
     window hide
     play sound "foundationfail.ogg" volume 0.5
     pause 3.0
     cs "They didn't even do the JoJ!"
-    show craptop sad at rotate_5 with hpunch
+    show craptop sad at rotate_6 with hpunch
     play sound "audio/punch.ogg"
     if fun_value(20):
         play sound "secret/gul.ogg"
