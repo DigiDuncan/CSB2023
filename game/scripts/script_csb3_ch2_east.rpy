@@ -1296,7 +1296,7 @@ label interstate_94:
     hide smiley with moveoutleft
     n "Smiley runs out of the building and gets into his car."
     play sound "audio/gamer_and_girl.mp3" volume 0.4
-    n "A loud 'awoooooga!' horn is heard as a colorful little clown car drives past."
+    n "A loud \"awoooooga!\" horn is heard as a colorful little clown car drives past."
     mario "Bastard. I really didn't need this today..."
     mario "Whatever, what do y'all need?"
     arceus "I just need to wash my hoodie before we get back on the road."
@@ -1639,7 +1639,7 @@ label pennsylvania:
     show crowd at t_stagescreen onlayer broadcast
     n "The crowd explodes into uproarious applause."
     hide crowd onlayer broadcast
-    host "ON 'GO', THESE LOVELIES WILL BE COMPETING TO SEE WHO CAN {color=#ffff00}SHARPEN THE MOST PENCILS!"
+    host "ON \"GO\", THESE LOVELIES WILL BE COMPETING TO SEE WHO CAN {color=#ffff00}SHARPEN THE MOST PENCILS!"
     host "THIS TRULY IS THE BATTLE OF A CENTURY, FOLKS! DIGIDUNCAN, OUR LONG TIME CHAMP, GOES UP AGAINST A NEWCOMER, THE AMAZING CS188!"
     play sound "audio/cheer2.mp3"
     show crowd at t_stagescreen onlayer broadcast

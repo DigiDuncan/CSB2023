@@ -357,7 +357,7 @@ label song_2:
     cs "I was thinking..."
     $ band_name = renpy.input("What should we call the band?", band_name, length = 32)
     cs "[band_name]!"
-    anno "Woah, awesome! Not as good as 'Nirvana', but, you know, it wasn't going to be."
+    anno "Woah, awesome! Not as good as \"Nirvana\", but, you know, it wasn't going to be."
     cs "Hell yeah! [band_name] forever!"
     n "They all high five."
     arceus "Well, I guess tomorrow we can release this one!"

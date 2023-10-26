@@ -34,7 +34,7 @@ label archival:
     cs "It looks {i}off{/i}, though..."
     n "CS lifts the lid and powers it on, curious about the strange connection he is feeling with it."
     n "The laptop slowly powers on, playing the classic Windows XP start sound."
-    n "The laptop immediately bluescreens, and blares out the following:"
+    n "The laptop immediately bluescreens and blares out the following:"
     play sound "windows_logon.mp3"
     craptop "Your PC sux. lol."
     unknown "Hey, what the fuck was that?"
@@ -64,7 +64,7 @@ label archival:
     hide k207h
     show k207 at mid_right_right
     k207 "Alright, fine! But if I get corona and die, then I'll make sure Addy fires both of you!"
-    unknown "Look, there's nothing to worry about. Besides, even if you die, how are you gonna tell them?"
+    unknown "Look, there's nothing to worry about. Besides, if you die, how are you gonna tell them?"
     k207 "Shut up, K19!"
     k199 "Alright, sheesh."
     k207 "What I was trying to say is that this could've taken place after HoH SiS left, meaning CS is out right now anyway."

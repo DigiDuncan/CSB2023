@@ -8,9 +8,9 @@ label england_menu:
     python:
         locations = []
         if not ramsay_check:
-            locations.append(("Go On Hell's Kitchen", "hell_zone"))
+            locations.append(("Go On {i}Hell's Kitchen{/i}", "hell_zone"))
         if not gear_check:
-            locations.append(("Go on Top Gear", "top_zone"))
+            locations.append(("Go on {i}Top Gear{/i}", "top_zone"))
         if not tom_check:
             locations.append(("Go on an adventure with Tom Scott", "scott_zone"))
         if not locations:
@@ -476,11 +476,11 @@ label arceus_place:
 
 label hell_zone:
     $ ramsay_check = True
-    cs "I wanna go on Hell's Kitchen!"
+    cs "I wanna go on {i}Hell's Kitchen!{/i}"
     show arceus worried
     arceus "Wat."
     cs "Yeah! I can go on the show and cook up some crazy meal and win!"
-    arceus "CS, you realize who the man {i}is{/i} who runs Hell's Kitchen?"
+    arceus "CS, you realize who the man {i}is{/i} who runs {i}Hell's Kitchen?{/i}"
     cs "Yeah, it's Gordon Ramsay! I love that guy."
     arceus "Yeah, and he's kinda scary."
     cs "Yeah, but that's just because it's a show."
@@ -532,7 +532,7 @@ label hell_zone:
     n "CS slowly gets up."
     cs "Wh- what? It's already morning?"
     arceus "Yep."
-    arceus "More importantly, you got accepted into this season of Hell's Kitchen."
+    arceus "More importantly, you got accepted into this season of {i}Hell's Kitchen.{/i}"
     n "CS jerks up."
     show cs
     cs "What, really?"
@@ -545,7 +545,7 @@ label hell_zone:
     hide arceus
     with moveoutright
     scene black with dissolve
-    n "Arceus drives CS up to the studio for the Hell's Kitchen trial."
+    n "Arceus drives CS up to the studio for the {i}Hell's Kitchen{/i} trial."
     scene car_insidearc_fg flipped
     show hell_outside behind car_insidearc_fg
     show arceus at right
@@ -784,7 +784,7 @@ label good_ramsay:
     
 label top_zone:
     $ gear_check = True
-    cs "I kinda wanna go on Top Gear."
+    cs "I kinda wanna go on {i}Top Gear.{/i}"
     kitty "Well, now I gotta see that."
     kitty "What are you gonna do to get on the show?"
     cs "I thinking of trying to race one of their cars in my car."
@@ -793,11 +793,11 @@ label top_zone:
     arceus "Still, you're crazy to think that you can beat them with that."
     cs "Well, that's the fun part, right?"
     cs "If I win, I'll blow them away!"
-    arceus "How do you even get on Top Gear, anyway?"
+    arceus "How do you even get on {i}Top Gear,{/i} anyway?"
     kitty "We might be able to just call them."
     cs "If it's that easy, then, hell yeah, let's do it!"
     scene black with dissolve
-    n "After a brief panic attack, Kitty calls the members of Top Gear to get CS on the show for a day."
+    n "After a brief panic attack, Kitty calls the members of {i}Top Gear{/i} to get CS on the show for a day."
     scene dining_room
     show cs at left
     show arceus at center
@@ -810,6 +810,7 @@ label top_zone:
     stop music fadeout 3.0
     show black with dissolve
     n "CS, Arceus, and Kitty head up to the Top Gear Track."
+    # TODO: Top Gear Track? is this a real location? or just a generic track that Top Gear uses? if the latter, please fix as such: don't capitalize track, and italicize the show Top Gear - tate
     scene car_insidearc_fg flipped
     show top_gear_track behind car_insidearc_fg
     show arceus at right
@@ -823,7 +824,7 @@ label top_zone:
     arceus "Good luck, CS!"
     show arceus
     cs "Thanks!"
-    n "CS gets out of the car and heads up to the Top Gear crew."
+    n "CS gets out of the car and heads up to the {i}Top Gear{/i} crew."
     scene top_gear_track
     show james at right
     show jeremy at mid_right

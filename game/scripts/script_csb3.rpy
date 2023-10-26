@@ -242,7 +242,7 @@ label boost:
     n "Linus and CS take apart CS' PC and put the card in."
     n "They then start the computer, and everything boots up as normal."
     linus "Alright, now that it's up and working, we need to install the drivers. The card came with a flash drive that includes them."
-    n "As Linus inserts the flash drive, a window off the side of the screen pops up saying 'Your new Peeforce Experience drivers are available.'"
+    n "As Linus inserts the flash drive, a window off the side of the screen pops up saying \"Your new Peeforce Experience drivers are available.\""
     n "CS chuckles a bit."
     show cs happy
     cs "Peeforce? I must admit, even these driver names are a bit silly."
