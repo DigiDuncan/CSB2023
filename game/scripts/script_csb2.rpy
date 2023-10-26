@@ -232,7 +232,7 @@ label asylum:
     
 # Caught
 label caught:
-    cs "Damn it! Ed's calling the police! I gotta go after him!"
+    cs "Damn it! Ed's calling the police! I've gotta go after him!"
     ed "911! Come quickly! He's chasing after me!"
     play sound "siren.ogg" loop
     show blue_light at left
@@ -309,7 +309,7 @@ label breakout:
     n "Arceus describes the prison routine to CS."  # DX: Replace with blur, fade out then back in
     cs "I think I got all that."
     arceus "So, what's our plan, boss?"
-    cs "I gotta grab a few plastic spoons from the mess hall, a cup of molten chocolate, a guard outfit, and a change of shorts."
+    cs "I've gotta grab a few plastic spoons from the mess hall, a cup of molten chocolate, a guard outfit, and a change of shorts."
     arceus "Why a change of shorts?"
     show cs prison_worried at left
     cs "You kidding me? I'm gonna shit myself, 'cause this is scary as hell."
@@ -319,7 +319,7 @@ label breakout:
     stop music fadeout 3.0
     music end
     n "The day comes to an end and the next one follows. CS and Arceus gather the required essentials for their escape. Along the way, they inform Anno, who more than happily complies with the plan." 
-    n "The next evening..."
+    centered "The next evening..."
     play music "<loop 0>moongazer.mp3" volume 0.5
     music Moongazer - Dr. Awesome
     cs "Key, check."
@@ -351,7 +351,7 @@ label breakout:
     
     show anno guard dark with easeinbottom
     anno "How are we supposed to cross the border with the new wall?"
-    arceus "Not the Mexican border, the Canadian border. We're in Washington, it's way closer and they're too polite to send us back."
+    arceus "Not the Mexican border, the Canadian border. We're in Washington, it's way closer, and they're too polite to send us back."
     cs "Works for me, free healthcare."
     arceus "Well, you have to live there for a few years before you get access to that, but you should last a few years without getting sick living on that healthy diet of Ritz and EZ cheese."
     hide cs
@@ -395,7 +395,7 @@ label bordercrossing:
     $ renpy.music.set_pause(True, "music")
     play music2 "star_spangled_banner.mp3"
     music The Star Spangled Banner - THE UNITED STATES OF AMERICA
-    n "The crews look behind them and still sees a faint American flag waving."
+    n "The crew looks behind them and still sees a faint American flag waving."
     scene canada
     stop music2
     $ renpy.music.set_pause(False, "music")
@@ -561,7 +561,7 @@ label bordercrossing:
     with fade
     show cs happy with moveinleft
 
-    cs "I did it, I got the job!"
+    cs "I did it! I got the job!"
     anno "Woohoo!"
     show arceus happy flipped
     arceus "Hell yeah!"
