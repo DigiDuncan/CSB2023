@@ -20,7 +20,7 @@ label archival:
     play music "<loop 0>facing_worlds.mp3" volume 0.5
     music "Facing Worlds - Michiel van den Bos"
     n "CS slowly wakes up after his long rest."
-    cs "Hey guys! CS here!"
+    cs "Hey guys, CS here!"
     cs "How is every--"
     show cs worried
     n "CS immediately jolts up, realizing that he's not in his room."

@@ -834,7 +834,7 @@ label top_zone:
     jeremy "Hah! I'd like to see him try!"
     james "Well, you're about to see it."
     show cs at left with moveinleft
-    cs "Hey guys! CS here!"
+    cs "Hey guys, CS here!"
     jeremy "Hey, CS, so you think you can beat Richard in a race, huh?"
     show cs happy
     cs "Hell yeah, I do!"
