@@ -624,7 +624,7 @@ label poker3:
         lancer "I just found this cool shiny metal in the back, but it didn't taste very good."
         show case at mid_right with dissolve
         lancer "Here, have it waiter dude!"
-        lancer "Cya later!"
+        lancer "See ya later!"
         hide lancer with moveouttop
         stop music fadeout 3.0
         music end

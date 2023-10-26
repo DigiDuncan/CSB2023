@@ -623,7 +623,7 @@ label fire_range:
     pakoo "Nice job CS!"
     linus "That was excellent! You passed the course with flying colours!"
     pakoo "Head back to the main lobby and we'll meet up with you there."
-    cs "Alright, cya in a bit!"
+    cs "Alright, see ya in a bit!"
     stop music fadeout 3.0
     music end
     hide m4
