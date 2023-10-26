@@ -13,18 +13,18 @@
 - Pakoopara
 - Mikapara
 - BubbleTheSlime
-- alleZSoyez
+- Tate "alleZSoyez"
 - UndeadKitty
 - blanknam3d
 - Ges "DefinitelyNotGes"
 - Aria "Estroteric"
 - Midgalicis
 - db05
-- 4Bakers?
+- 4Bakers
 
 ## Writing
 **Lead Writer:** Pakoo  
-**Addtl. Writing:**
+**Addt'l. Writing:**
 - DigiDuncan
 - Arceus3251
 - Aria "Estroteric"
@@ -34,15 +34,50 @@
 **Frontend Programming:** Arceus3251  
 **Alpha Testing:** Arceus3251  
 **Beta Testing:**
-- alleSSoyez
+- Tate "alleZSoyez"
 - 4Bakers
 - BubbleTheSlime
 - meancarnavor
 - Mikapara
+- UndeadKitty
 *with help from the Ren'Py Discord community*  
 
 **Kinetic Text Tags** *by* Daniel Westfall  
 **Codex** *by* Skolaztika
+**Achievements System Help** KiloOscarSix
+
+***Soundtrack Director*** Pakoo
+***Beep Manager*** Pakoo
+
+## Art
+**CSocola Sprites:** Greta "lovelycloud"  
+**Arceus Sprites:** UndeadKitty
+**DigiDuncan Sprites:** Yukio "nyutral"  
+**Aria Sprites:** Aria "estroteric"
+**Bubble Sprites:** BubbleTheSlime
+**Pakoo Sprites:** Pakoo
+**Tate Sprite:** Tate "alleZSoyez"
+**Ges Sprite:** Mikapara
+
+**Addtl. Art:**
+- EddieJustEddie
+- blanknam3d
+- meancarnavor
+- Guithais
+- Tate "alleZSoyez"
+- Midgalicis
+- UndeadKitty
+- Pakoo
+- 4Bakers
+
+**Background Manager:** Pakoo  
+**Addt'l. Background Help:**
+- Arceus3251
+- DigiDuncan
+- Aria "Estroteric"
+- Mrs. 8923
+**3D Rendering:** 4Bakers  
+**Sprite Manager:** Pakoo
 
 ## Audio
 **UST Director:** Pakoo  
@@ -214,7 +249,6 @@
     - Sweet Victory
 - Various Artists
     - Wool Gloves
-    - Billys Mix 1
 - David Vanacore
     - Conflict
     - Tumultuous
@@ -224,10 +258,17 @@
     - Neko To Sanpo
 - Project SEKAI
     - Real World
+- Gooseworx
+    - XDDCC
+- Tanoshii Moomin Ikka
+    - Song of the Lady of the Cold
 - Sumio Shiratori
     - Muumin Tani Fuyu
     - Snufkin The Traveler
-    - Lady Of The Cold
+- John Stafford Smith
+    - The Star-Spangled Banner
+- FantomenK
+    - Goodbye Summer, Hello Winter
 - AZALI
     - BATTLE UNDER A BROKEN SKY
 - Tears For Fears
@@ -235,34 +276,8 @@
 - Black Rebel Motorcycle Club
     - Weapon of Choice
 
-## Art
-**CSocola Sprites:** Greta "@lovelycloud"  
-**Arceus Sprites:** UndeadKitty
-**DigiDuncan Sprites:** Yukio "@nyutral"  
-**Aria Sprites:** Aria "@estroteric"
-**Bubble Sprites:** BubbleTheSlime
-**Pakoo Sprites:** Pakoo
-**Ges Sprite:** Mikapara
-
-**Addtl. Art:**
-- EddieJustEddie
-- blanknam3d
-- meancarnavor
-- Guithais
-- alleZSoyez
-- Midgalicis
-- UndeadKitty
-- Pakoo
-- 4Bakers
-
-**Background Manager:** Pakoo  
-**Addtl. Background Help:**
-- Arceus3251
-- DigiDuncan
-**3D Rendering:** 4Bakers  
-**Sprite Manager:** Pakoo
-
 ## Misc.
+**Comma Wrangler:** Tate "alleZSoyez"
 **Culture Consultant:** Aria "Estroteric"  
 **In Loving Memory (/j):** ItsNovaHere  
 **Executive Producer:** SurgeTheRaichu  
@@ -271,7 +286,7 @@
 ## Special Thanks
 - cs188, for inspiring this game!
 - The CSCord, for starting it all
-- DPN and it's loving circle of support
+- DPN and its loving circle of support
 - Triston and the Shattered Realms community
 - Our significant others, for holding us together
 - Cody and PJ, for hosting Digi and Arceus at their home for a time during this game's development
