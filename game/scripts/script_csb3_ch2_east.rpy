@@ -36,7 +36,7 @@ label hotwire:
     scene gasinside
     show cs at left
     show arceus at right
-    cs "I don't know... We could just... Hotwire a car?"
+    cs "I don't know... We could just... hotwire a car?"
     arceus "I can probably do that. Let's go look."
     scene gasoutside with fade
     show cs at left with moveinleft
@@ -133,7 +133,7 @@ label montana:
     show billy car
     cs "Alright, I'll just... keep looking at the trees pass by."
     billy "Well, good news for you! There is a small town up ahead!"
-    billy "I was gonna buy some new supplies for my gadgets if you guys want to pick out anything."
+    billy "I was gonna buy some new supplies for my gadgets, if you guys want to pick out anything."
     cs "Sure! I love buying random things!"
     cs "What about you, Arceus?"
     cs "Hey, Arc!"
@@ -187,7 +187,7 @@ label montana:
     show cashier with hpunch
     cashier "I gotcha covered. Have a good day!"
     hide cashier with moveoutright
-    cs "Letsgoletsgoletsgoweneedtogetoutofhere"
+    cs "{bt=a3-p10-s4}Letsgoletsgoletsgoweneedtogetoutofhere"
     hide cs with moveoutright
     hide billy with moveoutright
     stop music fadeout 3.0   
@@ -199,7 +199,7 @@ label montana:
     billy "That was quite the experience. I should've brought my Hercules Hook!"
     cs "Yeah, really, let's get out of here!"
     arceus "Huh? What's going on?"
-    cs "Nothing, Arc, just uh, slipped and fell in the store."
+    cs "Nothing, Arc. I, just, uh... slipped and fell in the store."
     arceus "Okay, whatever, I'm going back to sleep..."
     n "Billy takes off out of the parking lot."
     scene car background night
@@ -296,14 +296,14 @@ label montana:
     cultist_2 "No way..."
     cultist_3 "It's CSGod!"
     cultist_2 "Praise CSGod!"
-    cultist "Oh no! It's the one thing that we don't hate!"
+    cultist "Oh no! It's the one thing that we {i}don't{/i} hate!"
     cs "Huh?"
     cs "I mean,"
     cs_fakegod "Yeah, that's right, it's me, CSGod!"
-    cs_fakegod "You'd better leave these three alone, or I'll uh, Smite you!"
+    cs_fakegod "You'd better leave these three alone, or I'll uh, smite you!"
     cultist "CSGod doesn't smite, he uses YTP mag--{w=0.5}"
     cs_fakegod "Don't tempt your god! I will edit you so hard that you'll look like you came from an AwfulFawful YTP!"
-    cultist_2 "We need to leave! We're sorry!"
+    cultist_2 "We're sorry! We'll leave!"
     n "Billy comes up behind CS with one of his gadgets."
     show cs fakegod at mid_offscreen_left with move
     show billy laser at mid_left with moveinleft
@@ -315,7 +315,7 @@ label montana:
     hide cultist_2 with moveoutright
     hide laser_beam
     n "Massive laser shots land between the cultists as they scramble away!"
-    cultist_3 "I don't wanna turn into a YTP! Go guys go!"
+    cultist_3 "I don't wanna turn into a YTP! Go, guys, {i}go!{/i}"
     play sound "minigames/car/gaster_blast.wav"
     show laser_beam at t_gun behind billy
     hide cultist_3 with moveoutright
@@ -348,9 +348,9 @@ label montana:
     show billy car
     with fade
     n "The gang gets back in the car and books it out of the forest."
-    n "After a while of driving, Billy pulls the car into a small area at the edge of the forest to let everyone rest."
+    n "After a while, Billy pulls the car into a small area at the edge of the forest to let everyone rest."
     scene black with fade
-    n "After the night passes, they set off again on their trip."
+    n "The night passes, then they set off once again."
     scene car background
     show billy car
     play music "<loop 0>mort_farm.mp3" volume 0.4
@@ -425,7 +425,7 @@ label south_dakota:
     n "Arceus looks back at Mount Rushmore, now with CS, Arceus, and Billy's faces on the mountain."
     hide cs with moveoutright
     show arceus worried flipped
-    arceus "You scare me, CS. I don't even... Want to question how or why."
+    arceus "You scare me, CS. I don't even... want to question how or why."
     show arceus happy flipped
     arceus "{size=-12}I do look pretty cool though."
     stop music fadeout 3.0
@@ -497,7 +497,8 @@ label nebraska:
     show arceus flipped at mid_left
     with moveinleft
     show pakoo with determination
-    pakoo "Here we are! This is probably the best location to eat at... At least that I know of."
+    pakoo "Here we are! This is probably the best location to eat at..."
+    pakoo "At least, that I know of."
     scene peppinopizzabg
     show peppinopizzafg
     with fade   
@@ -531,7 +532,7 @@ label nebraska:
         billy "Better than my restaurant mini-burgers!"
     show cs
     show arceus flipped
-    pakoo "Alright, well, I should get going, but I hope y'all have a good time doing whatever y'all doing."
+    pakoo "Alright, well, I should get going, but I hope y'all have a good time doing whatever y'all are doing."
     cs "Yep! Take care, Pakoo!"
     hide pakoo with moveoutleft
     scene black with fade
@@ -639,7 +640,7 @@ label michigan:
     cs "Something about the name Bronson, Michigan sends a chill down my spine."
     arceus "We'll just skip it. Nothing around here anyway."
     scene black with dissolve
-    n "They keep driving while CS continues muttering \"Don't go to Bronson\" under his breath until they finally stop seeing Bronson signs." 
+    n "They keep driving. CS continues muttering \"Don't go to Bronson\" until they finally stop seeing Bronson signs." 
     scene car plains
     show billy car
     with dissolve  
@@ -692,7 +693,7 @@ label interstate_69:
     billy "Oh, did Arceus get out to pee?"
     arceus "You can literally see me in your rear-view mirror right now."
     billy "Only if I squint."
-    arceus "I'm not that small, man..." #Me with the goddamn ellipses again lmao
+    arceus "I'm not that small, man..." # Me with the goddamn ellipses again lmao - Aria
     cs "No, guys, that short guy. The one with the red pointy hat."
     arceus "Oh, shit, you're right! That looks like a gnome!"
     cs "God, did Blank somehow track me to Michigan?"
@@ -705,7 +706,7 @@ label interstate_69:
     billy "I'm gonna see what he wants."
     play sound "roll_window.ogg" volume 0.7
     pause 2.0 
-    #It could be funny to have an option to ignore the gnome for a while
+    # DX: It could be funny to have an option to ignore the gnome for a while
     play music "<loop 0>wayward_wanderer.mp3" volume 0.7
     music Wayward Wanderer - Deep Gnome
     gnome "Hallo, may I enter your Automobile?" 
@@ -880,7 +881,7 @@ label interstate_69:
     show aria flipped at left
     show gnome at center
     show waitress at right
-    waitress "Pigs are expensive, and they have a good union. We just hire a bunch of shrimp instead."
+    waitress "Pigs are expensive and they have a good union. We just hire a bunch of shrimp instead."
     scene cafe_sitting_2
     show cs at left
     show billy at center
@@ -1291,7 +1292,7 @@ label interstate_94:
     mario "There are {i}three{/i} signs that say not to put shoes in the machine, and you decide to put these big-ass clown shoes in there?!"
     mario "You really are a damn clown, I'll tell you that for free."
     smiley "The shoes were dirty, and I have a show to get to."
-    smiley "Speaking of, I still gotta head over there."
+    smiley "Speaking of, I've still gotta head over there."
     smiley "See ya!"
     hide smiley with moveoutleft
     n "Smiley runs out of the building and gets into his car."
@@ -1731,7 +1732,7 @@ label win_pencil:
     scene cc_crowd with dissolve
     play music "<loop 0>fourside.mp3" volume 0.6
     cs "Well, that was a lot of excitement for one day. Let's head home."
-    n "Though he was working harder to support CS, Arceus couldn't help but look relieved to be back on track."  # reword?
+    n "Despite working harder to support CS, Arceus can't help but look relieved to get back on track."
     arceus "Absolutely."
     billy "Let's get back in my car!"
     scene cc_parking_lot
@@ -1744,7 +1745,7 @@ label win_pencil:
     digi "Hey, uh, can I get a ride?"
     cs "Huh?"
     if archack:
-        digi "Well, my arm got hacked, or something, so I lost."
+        digi "Well, my arm got hacked, or something, so, I lost."
         show arceus worried
         arceus "Heh..."
         show arceus
