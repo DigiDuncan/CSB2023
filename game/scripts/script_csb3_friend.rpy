@@ -401,7 +401,7 @@ label after_fanboy:
     show arceus flipped angry
     arceus "Are you a cop? You'd better not be a cop."
     if fun_value(50):
-        cs "Hey, aren't you the guy who made Petscop 2?"
+        cs "Hey, aren't you the guy who made {i}Petscop 2?{/i}"
         pakoo "Huh?"
     show arceus flipped
     show linus at center with vpunch
