@@ -470,7 +470,7 @@ label car_dialogue:
     mean "Hello, Mr. Mays! Is Digi with you?"
     digi "What the fuck, Mean. How did you know I was with Billy?"
     mean "Bro, I'mma keep it a hundred, I was just calling random numbers until I got you."
-    mean "Also, turn on your ringer. I called you first."
+    mean "Also, turn on your ringer. I called {i}you{/i} first."
     n "Digi checks his phone."
     digi "Whoops."
     digi "So, what did ya need me for?"
