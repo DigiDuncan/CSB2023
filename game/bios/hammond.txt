@@ -1,3 +1,3 @@
-"Welcome to Top Gear"
+"Welcome to {i}Top Gear."{/i}
 
-Whether it's racing cars or wrecking them, they love anything car-related. They have pushed the limits of cars and car parts. Sometimes, it's a bit too much, and for those reasons, they've had to make a new Top Gear because they got kicked out of the original one.
+Whether it's racing cars or wrecking them, they love anything car-related. They have pushed the limits of many vehicles as well as of their components. Sometimes they overdo it, and because of this, they were kicked out of the original {i}Top Gear{/i} and had to make a new spin-off.
