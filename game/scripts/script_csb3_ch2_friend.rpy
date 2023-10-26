@@ -715,8 +715,7 @@ label between_2:
     show arceus angry flipped
     cs "Go to hell, Copguy! You'll never defeat me!"
     copguy "Heheh, you can tell yourself that."
-    copguy "I've been making sure to note down your team's abilities..." 
-    # TODO: arc and i both hated this above line, maybe workshop this?? - tate
+    copguy "I've been making sure to note down your team's abilities..."
     copguy "Why don't we try one out?"
     n "Copguy casts Light Cast on Arceus!"
     play sound "minigames/car/gaster_blast.wav"
@@ -785,7 +784,6 @@ label car_slam:
     digi "Holy shit! CS! You're alive!"
     cs "Yeah! How about you guys?"
     nova "I wanna fall over. I'm so tired."
-    # TODO: there's a fun value, but these following lines are literally the same??? - tate
     if fun_value(20):
         aria_alt "I never thought that our first meetup would be at a mall, and our second would be the destruction of Chigaco."  
     else:  

@@ -810,7 +810,6 @@ label top_zone:
     stop music fadeout 3.0
     show black with dissolve
     n "CS, Arceus, and Kitty head up to the Top Gear Track."
-    # TODO: Top Gear Track? is this a real location? or just a generic track that Top Gear uses? if the latter, please fix as such: don't capitalize track, and italicize the show Top Gear - tate
     scene car_insidearc_fg flipped
     show top_gear_track behind car_insidearc_fg
     show arceus at right

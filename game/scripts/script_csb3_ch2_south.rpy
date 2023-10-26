@@ -1300,7 +1300,7 @@ label noairport:
     pause 2.0
     show cs angry
     pause 2.0
-    cs "Ahem!" # TODO: Consistency check asterisk
+    cs "Ahem!"
     scene old_house_inside
     show cs happy at left
     show arceus at right

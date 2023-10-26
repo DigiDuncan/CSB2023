@@ -582,7 +582,7 @@ label after_ufo:
     n "As they are driving through Illinois, they pass by Chicago."
     arceus "One day, I'm gonna rule that place."
     cs "What are you... talking about?"
-    arceus "It's better than ruling the Earth." #I feel like it'd be funny to wax poetic here about how great chicago is. Not super long, but enough to run the joke home. I love the idea of sleepy arc rambling on about chicago for a bit.
+    arceus "It's better than ruling the Earth." # DX: I feel like it'd be funny to wax poetic here about how great chicago is. Not super long, but enough to run the joke home. I love the idea of sleepy arc rambling on about chicago for a bit.
     # Who the fuck wrote that comment, and what the fuck does it mean? - Arc
     cs "Get some sleep, Arc."
     scene black with dissolve

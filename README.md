@@ -103,12 +103,12 @@ See what needs to be done below.
 - [X] Sprite Emotion Pass
 - [X] Sprite Time-of-Day Check
 - [X] Jukebox/Achievements/Bio Pass
-- [ ] Remove/address all TODO comments
-- [ ] Add more bounciness
+- [X] Remove/address all TODO comments
+- [X] Add more bounciness
 - [X] Check Discord channels for missing content
 
 ### Wishlist
 - [X] Ultimate Custom Night (RPG Freeplay)
     - [X] Additional fighters/AIs
-- [ ] "The Legend" style custscene for HoH SiS monolouge [Digi or Pakoo]
+- [X] "The Legend" style custscene for HoH SiS monolouge [Digi or Pakoo] **moved to DX**
 - [X] More car dialouge

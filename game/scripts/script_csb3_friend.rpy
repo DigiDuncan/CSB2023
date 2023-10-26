@@ -35,7 +35,7 @@ label microcenter:
     n "CS goes to Microcenter."
     show cs at left with moveinleft
     show cs happy
-    cs "Okay, gamers, we are buying some parts for our epic computing machine. Let's go inside the magical concrete structure to buy some computing parts."  # the fuck is this line Pakoo
+    cs "Okay, gamers, we are buying some parts for our epic computing machine. Let's go inside the magical concrete structure to buy some computing parts."  # the fuck is this line Pakoo -- DD
     cs "Wow, this building looks a lot bigger than the places I would go shopping at near home."
     hide cs at right with moveoutright
     n "CS enters the building."

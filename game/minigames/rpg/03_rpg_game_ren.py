@@ -943,7 +943,7 @@ class EnemyDisplayable(renpy.Displayable):
             else:
                 r.place(self.fighter.sprite, x=0, y=0)
         # Making the health bar
-        # THIS IS GARBAGE FULL OF MAGIC NUMBERS
+        # THIS IS GARBAGE FULL OF MAGIC NUMBERS -- DD
         self.red_part = Solid("#FF0000", xsize = 1920 // 9, ysize = 1920 // 54)
         self.green_part = Solid("#00FF00", xsize = int((1920 // 9) * ((self.fighter.health_points) / (self.fighter.max_health))), ysize = 1920 // 54)
         r.place(self.red_part, x = (self.size[0] // 2) - ((1920 // 9) // 2), y = int(25))

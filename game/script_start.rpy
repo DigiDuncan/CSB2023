@@ -348,10 +348,10 @@ define ikea_worker = Character("Ikea Worker", callback = char_callback)
 define pomni = Character("Pomni", callback = renpy.partial(char_callback, name = "pomni", beep = "pomni"))
 define average_swede = Character("Swede", callback = char_callback)
 define alien = Character("Grey", callback = char_callback)
-define moomin = Character("Moomin", callback = renpy.partial(char_callback, name = "moomin"))  # TODO: Beep, bio
-define snufkin = Character("Snufkin", callback = renpy.partial(char_callback, name = "snufkin"))  # TODO: Beep, bio
+define moomin = Character("Moomin", callback = renpy.partial(char_callback, name = "moomin"))  # DX: Beep
+define snufkin = Character("Snufkin", callback = renpy.partial(char_callback, name = "snufkin"))  # DX: Beep
 define alicia = Character("Alicia", callback = renpy.partial(char_callback, name = "alicia"))
-define witch = Character("Witch", callback = renpy.partial(char_callback, name = "witch"))  # TODO: Beep, bio
+define witch = Character("Witch", callback = renpy.partial(char_callback, name = "witch"))  # DX: Beep
 
 # Character Images
 ## CS
@@ -1090,7 +1090,7 @@ default japfirst = False
 default archack = False
 default jade = False
 default clown = False
-default nome = False  # wow I hate this name
+default nome = False  # wow I hate this name - DD
 
 # Fired route
 default band_name = "CS' Crazy Crew"

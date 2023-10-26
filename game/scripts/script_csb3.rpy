@@ -354,7 +354,7 @@ label ytp_edit:
     n "Linus laughs a bit."
     linus "Oh, CS, when I gave you the YTP card, that was meant for use on your own channel, not the LTT one."
     cs "I know, but--{w=0.25}{nw}"
-    linus "I mean, for example...{w=0.5} TARAN! GET IN HERE!"  # Should this be caps?
+    linus "I mean, for example...{w=0.5} TARAN! GET IN HERE!"
     n "Taran rushes up to Linus' office."
     show taran at right with moveinright
     n "Taran is panting and out of breath."
@@ -1026,7 +1026,7 @@ label good_convince:
     scene backseat
     show craptop evidence
     with dissolve
-    n "Copguy stops the car as Arceus plays back the scene from {/i}CS Bounciness I{i} with the scamming of CS by HoH SiS."  # Weird line
+    n "Copguy stops the car as Arceus plays back the scene from {/i}CS Bounciness I{i} with the scamming of CS by HoH SiS."  # DX: Weird line?
     scene copcar
     show copguy at mid_left
     show copcar_mask
@@ -1082,7 +1082,7 @@ label good_convince:
 label choose_direction:
     $ persistent.csb3b_unlocked = True
     scene black with determination
-    n "As the duo continues their journey through the night, they soon have to figure out exactly where to go."  # Reword?
+    n "As the duo continues their journey through the night, they soon have to figure out exactly where to go."  # DX: Reword?
     scene washington_road morning
     show cs at left
     show arceus at right

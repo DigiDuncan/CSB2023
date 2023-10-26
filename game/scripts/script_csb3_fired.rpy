@@ -1,10 +1,3 @@
-### TODO:
-
-
-# TODO: TRANSITIONS NEED TO BE MORE DYNAMIC
-# anno is always just sitting on the left, arc on the right, and CS in the middle
-# need to like, make this more interesting?
-
 label new_plan:
     scene outside_ltt
     show cs angry at center
@@ -83,11 +76,9 @@ label new_plan:
     ed "I think CS is a pretty good guy. You shouldn't arrest him."
     cs "Oh my God, that's amazing! But what about you two?"
     anno "Gotcha covered."
-    # IDEA: Maybe have an actual AI-generated clip here?
     if fun_value(20):
         play sound "<loop 0>obama.mp3" volume 0.5
         bomahanobeep "I'm officially pardoning Annorexorcist and Arceus3251, for helping me out of a pickle."
-        # If this line is changed, change the audio
     else:
         play sound "<loop 0>obama.mp3" volume 0.5
         obamanobeep "I'm officially pardoning Annorexorcist and Arceus3251, for helping me out of a pickle."
@@ -129,7 +120,7 @@ label guitar_hero:
     anno "I'm down!"
     cs "Arc?"
     arceus "What do I have to lose?"
-    cs "Woohoo!"  # haha I did it too Pakoo
+    cs "Woohoo!"  # haha I did it too Pakoo -- DD
     # Learn to use commas, fuck-ass. "I did it too, Pakoo" - Arc
     stop music fadeout 3.0
     music end
@@ -274,7 +265,7 @@ label hotel_next_day:
     music Now What? 1 - Dr. Awesome
     cs "The song has, like, a hundred thousand streams."
     n "Arceus nearly spits out his food."
-    # arceus shocked?
+    # DX: arceus shocked?
     arceus "It has {i}what?!{/i}"
     n "CS shows Arceus the phone."
     show arceus happy
