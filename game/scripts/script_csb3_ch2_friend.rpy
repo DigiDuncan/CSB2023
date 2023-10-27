@@ -472,7 +472,7 @@ label cs_rage:
     else:
         cs "Holy crap, does that mean I can use YTP Magic?"
     csgod "In theory, yes. Although, you should take some time to rest."
-    csgod "Don not beat yourself up over Copguy. You will be able to beat him down next time if you calm down and focus."
+    csgod "Do not beat yourself up over Copguy. You will be able to beat him down next time if you calm down and focus."
     csgod "I shall let you go for now. Copguy is planning his most devious attack yet, and you need to be prepared."
     cs "I see, well, thank you for that, CSGod!"
     csgod "No problem."
