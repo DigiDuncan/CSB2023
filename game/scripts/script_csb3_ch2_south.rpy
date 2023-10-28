@@ -1182,6 +1182,7 @@ label fighthohsis_alt:
     hide cs with moveoutbottom
     show ed with hpunch
     ed "Time to take a shit on the house."
+    stop music fadeout 1.0
     music end
     bad_end "Revenge!" "back_home_alt"
 
@@ -1215,6 +1216,7 @@ label braghohsis:
     pause 1.0
     cs "Fuck."
     bad_end "Time to bunk\nat Rosen's!" "back_home_alt"
+    stop music fadeout 1.0
     music end
     return
 
