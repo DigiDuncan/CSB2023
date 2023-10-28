@@ -706,7 +706,7 @@ label poker3:
         jerma "You beat my highest roller! How'd you do that?"
         cs "Uhh, I dunno."
         jerma "Well, congrats on your victory!"
-        jerma "I'll go get the money for you. Mr. Green is gonna have to pay up to me now."
+        jerma "I'll go get the money for you. Mr. Green is gonna have to pay up to {i}me,{/i} now."
         cs "Alright! I'm gonna go find my friend real quick."
         jerma "Sure thing! Meet me back by the employee access area."
         show cs with determination
