@@ -896,7 +896,7 @@ label airport:
     show cs
     billy "Need a ride? I'll take you to any destination for only $19.95!"
     show arceus happy flipped
-    arceus "Welp, CS, we found our other option!"
+    arceus "Welp, CS, we've found our other option!"
     show case at mid_mid_right with dissolve
     n "Arceus opens the briefcase and gives Billy a gold bar."
     show arceus flipped
