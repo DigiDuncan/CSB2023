@@ -55,8 +55,8 @@ label microcenter:
     cs "I honestly don't know which one to pick."
     show cs
     cs "Let's see here…"
-    cs "I could get a super high-end Intel CPU since Linus still seems to default to Intel even after shilling for AMD…"
-    cs "Or I could get a Ryzen... more cores would probably be better for streaming..."
+    cs "I could get a super high-end Intel CPU, since Linus still seems to default to Intel even after shilling for AMD…"
+    cs "Or, I could get a Ryzen... more cores would probably be better for streaming..."
     show cs happy
     cs "Too many good options! I don't know which one to pick!"
     show cs

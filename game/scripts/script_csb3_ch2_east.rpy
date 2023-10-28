@@ -2040,7 +2040,7 @@ label ytp_ending:
     n "The chat is overflowing with messages."
     chat "Yeah what happened to you?{w=0.25} Oh my God, CS, you're here!{w=0.25} Hi!{w=0.25} Hi!{w=0.25} Where have you been?"
     show cs at mid_left
-    cs "Well guys..."
+    cs "Well, guys..."
     n "CS chuckles."
     cs "It's a long story..."
     scene black with fade
@@ -2065,7 +2065,7 @@ label ltt_ending:
     n "The chat slowly comes in, confused."
     chat "Oh you're streaming?{w=0.25} I thought you were working for LTT now?{w=0.25} What happened to the YTPs?{w=0.25} Are you okay?{w=0.25} Where have you been?"
     show cs at mid_left
-    cs "Well guys..."
+    cs "Well, guys..."
     cs "It's a long story..."
     scene black with fade
     stop music2 fadeout 1.0   

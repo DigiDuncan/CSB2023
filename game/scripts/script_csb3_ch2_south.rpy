@@ -1076,7 +1076,7 @@ label true_ending_alt:
     n "CS looks at the monitor, which has a sticky note that says \"From LTT\"."
     show cs happy at mid_left with moveinleft
     cs "Oh my goodness, Linus got me a new PC!"
-    n "There is also a note that says: \"We'd love to have to work with us again virtually, just give us a call\"."
+    n "There is also a note that says: \"We'd love to have you work with us again virtually, just give us a call\"."
     cs "I'll have to make sure to call them later!"
     show cs at mid_left
     cs "Before I head off for the night, I'll do a stream real quick."
@@ -1085,7 +1085,7 @@ label true_ending_alt:
     n "The chat is overflowing with messages."
     chat "Yeah what happened to you?{w=0.25} Oh my God, CS, you're here!{w=0.25} Hi!{w=0.25} Hi!{w=0.25} Where have you been?"
     show cs happy at mid_left
-    cs "Well guys..."
+    cs "Well, guys..."
     jump lego_ending
 
 label ytp_ending_alt:
@@ -1099,7 +1099,7 @@ label ytp_ending_alt:
     n "The chat is overflowing with messages."
     chat "Yeah what happened to you?{w=0.25} Oh my God, CS, you're here!{w=0.25} Hi!{w=0.25} Hi!{w=0.25} Where have you been?"
     show cs at mid_left
-    cs "Well guys..."
+    cs "Well, guys..."
     jump lego_ending
 
 label ltt_ending_alt:
@@ -1108,7 +1108,7 @@ label ltt_ending_alt:
     n "CS looks at the monitor, which has a sticky note that says \"From LTT\"."
     show cs happy at mid_left with moveinleft
     cs "Oh my goodness, Linus got me a new PC!"
-    n "There is also a note that says: \"We'd love to have to work with us again virtually, just give us a call\"."
+    n "There is also a note that says: \"We'd love to have you work with us again virtually, just give us a call\"."
     cs "I'll have to make sure to call them later!"
     show cs at mid_left
     cs "Before I head off for the night, I'll do a stream real quick."
@@ -1117,7 +1117,7 @@ label ltt_ending_alt:
     n "The chat slowly comes in, confused."
     chat "Oh you're streaming?{w=0.25} I thought you were working for LTT now?{w=0.25} What happened to the YTPs?{w=0.25} Are you okay?{w=0.25} Where have you been?"
     show cs at mid_left
-    cs "Well guys..."
+    cs "Well, guys..."
     jump lego_ending
 
 label lego_ending:
