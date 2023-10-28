@@ -332,7 +332,7 @@ label vegas:
     n "After a few hours of driving, the duo sees the bright Las Vegas sign coming into view."
     cs "Woohoo! We're almost there!"
     arceus "Some reckless gambling will probably help me forget about the horrors from that restaurant..."
-    n "As they enter Las Vegas and find a place to park. They then start heading down The Strip."
+    n "They enter Las Vegas and find a place to park, then they start heading down The Strip."
     if jade:
         scene vegasjade2 with fade
     else:
