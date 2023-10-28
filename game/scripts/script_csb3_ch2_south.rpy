@@ -358,7 +358,7 @@ label vegas:
     show cs at left with moveinleft
     show arceus at right with moveinright
     show arceus worried
-    arceus "Oh God, I already feel like I have a migraine..."
+    arceus "Oh, God, I already feel like I have a migraine..."
     cs "C'mon, Arc, let's go play some slots!"
     hide cs dark with moveoutright
     n "CS starts looking around for a machine to sit at."

@@ -918,7 +918,7 @@ label wait_forest:
     cs "Now that we are out here and have more time to talk, where exactly are we heading to? Why did we come back to the US?"
     arceus "Well, I figured you wanted to go back home, right?"
     cs "Of course I want to head back home, it's just... it seems so far away."
-    cs "We don't really have a car or anything, we are completely lost, and we got the cops still looking for us, probably!"
+    cs "We don't really have a car or anything, we are completely lost, and we've got the cops still looking for us, probably!"
     arceus "Look, man, I know it's pretty hard right now, but we've gotta be optimistic about this."
     arceus "The second we find people, I'm sure we can work something out and head back home."
     cs "If you say so. I just hope we don't have to {i}walk{/i} all the way there."
@@ -1181,7 +1181,7 @@ label west3:
     cs "Nah, come on, there is definitely {i}something{/i} we can find going west."
     show arceus worried
     arceus "I really don't want to go there again..."
-    cs "Nah, we got this, for sure this time."
+    cs "Nah, we've got this. For sure this time."
     n "CS and Arceus find a cool looking crab, but still just the ocean again."
     scene washington_road
     show cs dark at left
