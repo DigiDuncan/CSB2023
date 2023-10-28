@@ -790,20 +790,13 @@ label poker3:
 
 label airport:
     cs "We should head back home now. I have a plan for our newfound riches."
-    arceus "Alright! I'm excited to see what you've got cooking up!"
-    arceus "Let's get going!"
-    show arceus with determination
-    hide cs
-    hide arceus
-    with moveoutleft
-    scene black with fade
-    cs "We should head back home now. I have a plan for our newfound riches."
-    show arceus happy
+    show arceus flipped happy
     arceus "Alright! I'm excited to see what you've got cooking up!"
     arceus "Let's get going!"
     show cs flipped with determination
+    show arceus with determination
     hide cs
-    hide arceus flipped
+    hide arceus
     with moveoutleft
     scene black with fade
     n "CS drives to the airport nearest to Las Vegas."
