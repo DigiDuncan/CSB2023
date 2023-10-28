@@ -1300,7 +1300,7 @@ label noairport:
     pause 2.0
     show cs angry
     pause 2.0
-    cs "Ahem!"
+    cs "{i}Ahem!{/i}"
     scene old_house_inside
     show cs happy at left
     show arceus at right
@@ -1338,7 +1338,7 @@ label noairport:
     show cs with hpunch
     n "All of a sudden, the sentient craptop pops out of the TV!"
     show craptopreal at truecenter with moveinbottom
-    craptop "Yo, what's up fellas! It's me, the craptop!"
+    craptop "Yo! What's up, fellas? It's me, the craptop!"
     craptop "I hate all of you!"
     craptop "So, yeah, take this random shit on my hard drive!"
     n "The craptop starts spewing out random shit?"
