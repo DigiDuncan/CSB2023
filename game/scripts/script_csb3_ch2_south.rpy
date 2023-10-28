@@ -192,13 +192,13 @@ label utah:
     with fade
     n "A couple boxes of freshly-baked pizza are sitting there."
     show arceus worried dark
-    arceus "It's hot too, who made this?"
+    arceus "It's hot, too! Who {i}made{/i} this?"
     cs "The cook who works here, duh!"
     arceus "The place was closed, CS."
     cs "Well, then, why would the cook be in the back making pizzas?"
     show arceus angry dark
     arceus "Because there is-- Whatever, let's just find a place to sit down and eat."
-    arceus "And not out here. I don't wanna look at those creepy minifigures."
+    arceus "... And not out here. I don't wanna look at those creepy minifigures."
     cs "Fine..."
     n "CS and Arceus head down the hallway next to the kitchen area until they find a small office in the back."
     scene fazplace with fade
@@ -230,7 +230,7 @@ label utah:
     arceus "{i}What?"
     arceus "CS, we need to get the fuck out of here, {i}now!"
     cs "But I haven't finished my pizz--"
-    arceus "I don't care, let's go!"
+    arceus "I don't care! Let's go!"
     stop music fadeout 3.0
     music end 
     n "Arceus drags CS by the arm as they run out of the office and down the hallway."
@@ -248,7 +248,7 @@ label utah:
     n "CS looks ahead of him to see the giant minifigure standing in front of them."
     cs "Ohh."
     arceus "CS, don't move a muscle."
-    cs "Why not? it's just a Leg--"
+    cs "Why not? It's just a Leg--"
     play music "<loop 0>hard_drive.mp3" volume 0.5
     music Hard Drive to Munch You - Mr. Sauceman
     show lego eyes
@@ -283,7 +283,7 @@ label utah:
     show arceus flipped at left behind cscar2
     with fade
     cs "I made this car though..."
-    n "Arceus starts the car. He takes off at lightning speed out of the parking out and back onto the road."
+    n "Arceus starts the car. He takes off at lightning speed out of the parking lot and back onto the road."
     scene black with fade
     stop music fadeout 3.0
     music end
