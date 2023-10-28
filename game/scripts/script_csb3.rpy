@@ -165,7 +165,7 @@ label boost:
     linus "It was..."
     show cs disappointed
     cs "Oh shoot, it was awful, wasn't it?"
-    cs "Yeah, I should've realized my style is too crazy. I guess I should leave…"
+    cs "Yeah, I should've realized my style is too crazy. I guess I should leave..."
     show cs disappointed flipped at left
     show linus behind cs at left with ease
     show linus at center with ease
@@ -686,7 +686,7 @@ label arc_escape:
     show arceus dark at right with moveinright
     cs "Hey, Arceus? Do you have any clue where we are?"
     arceus "No idea, I'm just following the road. There's bound to be a rest stop here eventually."
-    cs "I hope so. We've been walking for hours. It's gotta be midnight around now…"
+    cs "I hope so. We've been walking for hours. It's gotta be midnight around now..."
     stop music fadeout 3.0
     music end
     n "CS looks down the road."

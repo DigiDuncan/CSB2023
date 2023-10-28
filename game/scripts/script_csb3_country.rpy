@@ -159,7 +159,7 @@ label england_travel:
     show cs at mid_right with move
     n "CS walks through and the detector stays silent."
     tsa "Impossible!"
-    cs "So this means I'm good to go, right?"
+    cs "So, this means I'm good to go, right?"
     n "The TSA man grumbles."
     tsa "Yes, you're good to go, sir."
     show cs happy
@@ -207,7 +207,7 @@ label sweden_travel:
     show cs at mid_right with move
     n "CS walks through and the detector stays silent."
     tsa "Huh."
-    cs "So this means I'm good to go, right?"
+    cs "So, this means I'm good to go, right?"
     tsa "Yes, you're good to go, sir."
     show cs happy
     cs "Woohoo! Thanks!"
@@ -250,7 +250,7 @@ label japan_travel:
     tsa "Alright, go on through."
     show cs at mid_right with move
     n "CS walks through and the detector stays silent."
-    cs "So this means I'm good to go, right?"
+    cs "So, this means I'm good to go, right?"
     n "The TSA man nods."
     tsa "Yes, you're good to go, sir."
     show cs happy

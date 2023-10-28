@@ -952,7 +952,7 @@ label airport_bad:
     show tsa at right
     show bag at right
     with move
-    tsa "This is stolen property! We are confiscating this and you guys have to go!"
+    tsa "This is stolen property! We are confiscating this, and you guys have to go!"
     show cs worried
     cs "Aw, man!"
     show arceus flipped at center with move

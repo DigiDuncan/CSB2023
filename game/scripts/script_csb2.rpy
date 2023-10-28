@@ -92,7 +92,7 @@ label kick:
 label special:
     show cs concentrate at left
     show wesley at right
-    n "CS uses his YTP magic to make the foundation repairmen fight each other."
+    n "CS uses his YTP Magic to make the foundation repairmen fight each other."
     hide wesley at right with moveoutright
     play sound "audio/punch.ogg"
     rich "Hey! Cut it out!"
@@ -117,8 +117,8 @@ label special:
         jump csbi_start
     else:    
         show ed at right with moveinright
-    ed "Hello, 911? My coworkers are-"
-    n "CS sentence-mixes Ed's words to his own will."
+    ed "Hello, 911? My coworkers are--"
+    n "CS sentence-mixes Ed's words."
     ed "Everything is fine here, officer. No need to come here."
     ed "Wait, what just happened?"
     n "CS quickly puts all the workers to sleep."
@@ -142,9 +142,9 @@ label special:
     stop sound fadeout 1.0
     cs "What's going on? I didn't do anything!"
     show cs worried at left
-    copguy "Come with us, we need to ask you some questions."
+    copguy "Come with us. We need to ask you some questions."
     show cs at left
-    cs "Alright, sure thing officer."
+    cs "Alright, sure thing, officer."
     show cs flipped with determination
     hide cs
     hide copguy
@@ -159,15 +159,15 @@ label questioning:
     music Card Castle - Toby Fox
     show cs disappointed at left with moveinleft
     show copguy at right with moveinright
-    copguy "Alright CS, a lot of crazy things happened today."
-    copguy "The CEO of HoH SiS called us today, and he was immediately interrupted by something or someone telling us that everything was under control."
+    copguy "Alright, CS. A lot of crazy things happened today."
+    copguy "The CEO of HoH SiS called us and he was immediately interrupted by something, or some{i}one,{/i} telling us that everything was under control."
     copguy "After reviewing the phone call, his voice sounds kinda messed up."
     cs "I, uhh, I don't know what that is all about..."
-    copguy "Oh really?"
-    copguy "What about all the workers in the building? Most of them were lying cold on the floor."
+    copguy "Oh, really?"
+    copguy "What about all of the workers in the building? Most of them were out cold on the floor."
     cs "Okay, fine!"
     cs "I confess!"
-    cs "I was using YTP magic on the employees to make them fight, and I--"
+    cs "I was using YTP Magic on the employees to make them fight each other, and I--"
     copguy "You what? What the hell are you on about?"
     cs "I have this power, and I just figured out how to--"
     copguy "Alright, I've heard enough."
@@ -213,16 +213,16 @@ label asylum:
     with moveinright
     cs "What?"
     cs "Who are you?"
-    csgod "I am CSGod, and I was the one who used the YTP power."
+    csgod "I am CSGod, and it was I who used the YTP power."
     cs "{i}What?!{/i} How? I am so confused."
-    csgod "You channeled my power through you. That was how you were able to do those abilities back at HoH SiS HQ."
-    csgod "It seems that you weren't good enough at lying to get yourself out of the situation though."
+    csgod "You channeled my power through you. That was how you were able to use those abilities back at HoH SiS HQ."
+    csgod "However, it seems that you weren't good enough at lying to get yourself out of the situation."
     cs "Well, I wanted to be honest!"
     csgod "Yeah, well, look where honesty got you."
     csgod "No one would believe something as silly as YTP power."
-    csgod "For your punishment, I'm gonna leave you here you a while."
+    csgod "For your punishment, I shall leave you here you a while."
     cs "No! Please!"
-    csgod "You'll get out soon enough, but maybe you should think about making a {i}better choice{/i} next time."
+    csgod "You will get out soon enough, but maybe you should think about making a {i}better choice{/i} next time."
     hide csgod with moveoutright
     stop music fadeout 3.0
     music end
@@ -567,7 +567,8 @@ label bordercrossing:
     arceus "Hell yeah!"
 
     anno "Let's celebrate!"
-    n "CS, Anno, and Arceus cheers their donuts together." # TODO: THIS LINE SUCKS LET'S FIX IT
+    n "The three cheer and raise up their donuts, pressing them together in a sort of toast."
+    # I FINALLY FIGURED OUT HOW TO REWRITE THAT FUCKING LINE HOLY SHIT - TATE
     stop music fadeout 3.0
     music end
 

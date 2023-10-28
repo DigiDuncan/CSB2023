@@ -11,7 +11,7 @@ label dpn_call:
     play music "<loop 0>tuna_fish.mp3" loop volume 0.6
     music Tuna Fish - Dr. Awesome
     cs "What a crazy day so far, man."
-    cs "I can't believe we had to fight all those cops! If it weren't for Tate and the gang, we'd be dead meat already."
+    cs "I can't believe we had to fight all of those cops! If it weren't for Tate and the gang, we'd be dead meat already."
     arceus "Yeah, but hey, you held them off pretty well with that fancy gun of yours."
     pakoo "Yeah, that was some great marksmanship, CS!"
     show cs happy
