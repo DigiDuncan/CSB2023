@@ -866,7 +866,7 @@ label airport:
     cs "Zzzz..."
     arceus "I guess he has."
     show arceus flipped
-    arceus "That or he's just really tired. I don't blame him."
+    arceus "That, or he's just really tired. I don't blame him."
     show arceus worried flipped
     arceus "I hate flying though, and I can't stop thinking about being in a flying metal tube."
     arceus "It'll be over soon enough."
