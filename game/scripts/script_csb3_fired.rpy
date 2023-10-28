@@ -23,7 +23,7 @@ label new_plan:
     show cs worried 
     cs "Okay, what? What's going on?"
     arceus "Cops. They're still after us."
-    cs "Oh, come on, really?! Today has sucked bad enough already."
+    cs "Oh, come on, {i}really?!{/i} Today has sucked bad enough already."
     show arceus
     arceus "What happened to you? I just thought you were out here for a smoke break."
     show cs disappointed
@@ -64,7 +64,8 @@ label new_plan:
     anno "Hey, CS, what are you doing here?"
     cs "I got fired, and the cops are still after us."
     anno "Ah, fuck. What's the plan?"
-    arceus "Nothing yet... wait. Anno, I've just got an idea."
+    arceus "Nothing yet..."
+    arceus "Wait. Anno, I've just got an idea."
     anno "What's up?"
     arceus "You know AI stuff, right?"
     anno "Well, yeah, but I don't see--"
@@ -178,7 +179,7 @@ label write_song:
     arceus "Well, I guess all we have to do now is upload it."
     anno "Alright, boys, what do we call it?"
     $ song_name_1 = renpy.input("What should we call the song?", song_name_1, length = 32)
-    cs "How about {i}[song_name_1]{/i}?"
+    cs "How about {i}[song_name_1]?{/i}"
     $ achievement_manager.unlock("Hi, My Name Is...")
     if song_name_1 == "FUCK SEX BALLS":
         show arceus angry
@@ -259,7 +260,7 @@ label hotel_next_day:
     show arceus with determination
     n "They all sit down to eat."
 
-    n "As they eat, CS checks the number of streams on {i}[song_name_1]{/i}."
+    n "As they eat, CS checks the number of streams on {i}[song_name_1].{/i}"
     show cs scared
     cs "Guys?"
     arceus "Mmm?"
@@ -475,7 +476,7 @@ label back_to_room:
     show arceus happy
     arceus "Thank you, thank you."
     cs "What can I do?"
-    anno "Well, you already named it {i}[song_name_3]{/i}, and that's definitely our best title yet. You wrote, like, half the lines, too."
+    anno "Well, you already named it {i}[song_name_3],{/i} and that's definitely our best title yet. You wrote, like, half the lines, too."
     anno "But, if you want to record backing vocals, this track might sound dope with them!"
     cs "Will do!"
     python:
@@ -1309,7 +1310,7 @@ label third_tour_day:
     n "The fans are adoring this."
     stop music fadeout 3.0
 
-    cs "Next up, here's a classic: {i}[song_name_3]{/i}"
+    cs "Next up, here's a classic: {i}[song_name_3]!{/i}"
     anno "CS, none of our songs are classics. We're a new band."
     play sound "audio/start_rocking.mp3"
     n "The crowd laughs."
@@ -1320,7 +1321,7 @@ label third_tour_day:
     cs "{cps=15}{image=note_small1.png} I'm globetrottin'!{image=note_small2.png}"
     n "The audience loves this a lot."
     stop music fadeout 3.0
-    cs "Alright, here's a fan favorite: {i}[song_name_4]{/i}!"
+    cs "Alright, here's a fan favorite: {i}[song_name_4]!{/i}"
     play sound "audio/start_rocking.mp3"
     play sound "audio/cheer2.mp3"
     play music "<loop 0>audio/dragon_castle.mp3" volume 0.5
@@ -1406,7 +1407,7 @@ label final_tour_bus:
     arceus "I need a nap."
     agent "Well, maybe this will perk you guys up. Wanna hear the final total?"
     cs "Sure, what is it?"
-    agent "Well, after all the cuts, and then splitting it... {w=0.5}each of you get..."
+    agent "Well, after all the cuts, and then splitting it... {w=0.5}each of you gets..."
     agent "$10,000!"
     n "The gang perks up."
     cs "Wait... $10K?!"
