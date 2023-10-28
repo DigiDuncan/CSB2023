@@ -980,7 +980,7 @@ label back_home_alt:
     show arceus flipped at left with moveinleft
     arceus "We made it back to your house, CS!"
     show cs flipped at center with moveinright
-    cs "Finally I'm home..."
+    cs "Finally, I'm home..."
     cs "Arceus, thank you so much for everything on this trip. I couldn't have done it without you."
     arceus "Aw, it was nice helping ya here."
     cs "You too, Billy."
