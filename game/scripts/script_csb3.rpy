@@ -919,7 +919,7 @@ label wait_forest:
     arceus "Well, I figured you wanted to go back home, right?"
     cs "Of course I want to head back home, it's just... it seems so far away."
     cs "We don't really have a car or anything, we are completely lost, and we got the cops still looking for us, probably!"
-    arceus "Look, man, I know it's pretty hard right now, but we gotta be optimistic about this."
+    arceus "Look, man, I know it's pretty hard right now, but we've gotta be optimistic about this."
     arceus "The second we find people, I'm sure we can work something out and head back home."
     cs "If you say so. I just hope we don't have to {i}walk{/i} all the way there."
     arceus "I don't think that'll be the case."
