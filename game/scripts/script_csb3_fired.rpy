@@ -1092,6 +1092,7 @@ label second_tour_day:
     n "After they pull into the city, CS gets out and walks the streets."
 
     scene manitoba_street
+    with dissolve
     show cs with moveinleft
     play music "<loop 0>track4.mp3" volume 0.4
     music Track 4 - Weatherscan
