@@ -152,7 +152,7 @@ label utah:
     cs "The door isn't locked! We can go in!"
     arceus "Oh, great. Yippee..."
     scene black with fade
-    n "As CS and Arceus walk in, they are greeted with a musty aroma and a dimly lit party room."
+    n "As CS and Arceus walk in, they are greeted with a musty aroma and a dimly-lit party room."
     scene fazlobby with fade
     play music "<loop 0>tunnely_shimbers.mp3" volume 0.5
     music Tunnely Shimbers - Mr. Sauceman

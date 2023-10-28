@@ -252,7 +252,7 @@ label boost:
     n "They both laugh as the drivers install, and once they're finished, CS boots up Premiere."
     scene csvideo with fade
     cs "Alrighty, let's see here. Why don't we try this on that YTP I just made?"
-    linus "Go to the settings real quick, and find the YTP features. Turn YTP mode ON to allow the poop-tracing."
+    linus "Go to the settings real quick, and find the YTP features. Turn YTP mode on to allow the poop-tracing."
     cs "Alright, here goes nothing."
     n "A loading bar appears as the timeline starts shifting, creating different edits in the process."
     cs "Holy crap! This is amazing! It optimized every part of my YTP!"
