@@ -1025,7 +1025,7 @@ label donatehohsis:
     cs "I never intended to harm your company. I just thought that the video was a good source to YTP."
     cs "I'm sorry about all those prank callers. I even made a video telling people to stop prank calling you."
     cs "I never had bad intentions for you guys... Honestly, it was also kind of like a free promotion."
-    ed "Well, I'm sorry CS, but it's too late."
+    ed "Well, I'm sorry, CS, but it's too late."
     ed "Richard, get the JoJ UFO and vaporize the house."
     stop music2 fadeout 1.0
     music end
