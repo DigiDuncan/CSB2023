@@ -208,7 +208,7 @@ label walmart:
     carguy_nobeep "Nooooot so nice scratch."
     show cs disappointed at left
     cs "Not you again!"
-    cs "I gotta get outta here!"
+    cs "I've gotta get outta here!"
     hide cs with moveoutright
     play sound "doorslam.ogg"
     show car_inside with fade
@@ -248,10 +248,10 @@ label room:
     cs "Oh, look, a flashback. What a coincidence..."
     scene cs_room with pixellate
     show cs_young with moveinbottom
-    ycs "Hey guys, Young CS here! Today I'm gonna be editing a craaaaAaAAaAAAAAaaAazy video!!"
+    ycs "Hey guys, Young CS here! Today, I'm gonna be editing a \n{bt=a3-p10-s4}CraAaAaAaAzY{/bt} video!!"
     play sound "keyboard.ogg"
     n "CS taps furiously on his keyboard."
-    ycs "Ohhhhhh YeeEeeEeEeeEEeEEs! This is lookin' good!"
+    ycs "Ohhhhhh {bt=a3-p10-s4}YeeEeeEeEeeEEeEEs!{/bt} This is lookin' good!"
     hide cs_young
     scene cs_room
     show cs
@@ -365,7 +365,7 @@ label michael_house:
     show cs phone at left
     n "CS pulls out his phone and calls Michael."
     michael "Hello!"
-    cs "Hey, Michael! How you doin' today?"
+    cs "Hey, Michael! How're you doin' today?"
     michael "I'm feeling rather noice today."
     cs "That's good to hear! You mind if I head over to your place?"
     cs "The JoJ is being done on my house, so I figured we can chat for a bit."
@@ -502,7 +502,7 @@ label rosen_house:
     michael "Quick! Get out!"
     cs "What's going on?"
     michael "The Genergyfoogle is here! It's come to eat us all!"
-    cs "Oh man, did that Genergy have something else in it...?"
+    cs "Oh man, did that Genergy have something {i}else{/i} in it...?"
     cs "I need to get out before he goes nuts!"
     show cs with determination
     hide cs with moveoutright
@@ -605,7 +605,7 @@ label csbi_end:
     hide worker_5
     show worker_5alt at left
     worker_5 "Uhh, that way!"
-    cs "Thanks, and also-"
+    cs "Thanks, and also--"
     n "CS clocks the worker in the face."
     show cs angry flipped at left with move
     play sound "audio/punch.ogg"

@@ -152,7 +152,7 @@ label utah:
     cs "The door isn't locked! We can go in!"
     arceus "Oh, great. Yippee..."
     scene black with fade
-    n "As CS and Arceus walk in, they are greeted with a musty aroma and a dimly lit party room."
+    n "As CS and Arceus walk in, they are greeted with a musty aroma and a dimly-lit party room."
     scene fazlobby with fade
     play music "<loop 0>tunnely_shimbers.mp3" volume 0.5
     music Tunnely Shimbers - Mr. Sauceman
@@ -192,13 +192,13 @@ label utah:
     with fade
     n "A couple boxes of freshly-baked pizza are sitting there."
     show arceus worried dark
-    arceus "It's hot too, who made this?"
+    arceus "It's hot, too! Who {i}made{/i} this?"
     cs "The cook who works here, duh!"
     arceus "The place was closed, CS."
     cs "Well, then, why would the cook be in the back making pizzas?"
     show arceus angry dark
     arceus "Because there is-- Whatever, let's just find a place to sit down and eat."
-    arceus "And not out here. I don't wanna look at those creepy minifigures."
+    arceus "... And not out here. I don't wanna look at those creepy minifigures."
     cs "Fine..."
     n "CS and Arceus head down the hallway next to the kitchen area until they find a small office in the back."
     scene fazplace with fade
@@ -230,7 +230,7 @@ label utah:
     arceus "{i}What?"
     arceus "CS, we need to get the fuck out of here, {i}now!"
     cs "But I haven't finished my pizz--"
-    arceus "I don't care, let's go!"
+    arceus "I don't care! Let's go!"
     stop music fadeout 3.0
     music end 
     n "Arceus drags CS by the arm as they run out of the office and down the hallway."
@@ -248,7 +248,7 @@ label utah:
     n "CS looks ahead of him to see the giant minifigure standing in front of them."
     cs "Ohh."
     arceus "CS, don't move a muscle."
-    cs "Why not? it's just a Leg--"
+    cs "Why not? It's just a Leg--"
     play music "<loop 0>hard_drive.mp3" volume 0.5
     music Hard Drive to Munch You - Mr. Sauceman
     show lego eyes
@@ -283,7 +283,7 @@ label utah:
     show arceus flipped at left behind cscar2
     with fade
     cs "I made this car though..."
-    n "Arceus starts the car. He takes off at lightning speed out of the parking out and back onto the road."
+    n "Arceus starts the car. He takes off at lightning speed out of the parking lot and back onto the road."
     scene black with fade
     stop music fadeout 3.0
     music end
@@ -332,7 +332,7 @@ label vegas:
     n "After a few hours of driving, the duo sees the bright Las Vegas sign coming into view."
     cs "Woohoo! We're almost there!"
     arceus "Some reckless gambling will probably help me forget about the horrors from that restaurant..."
-    n "As they enter Las Vegas and find a place to park. They then start heading down The Strip."
+    n "They enter Las Vegas and find a place to park, then they start heading down The Strip."
     if jade:
         scene vegasjade2 with fade
     else:
@@ -358,7 +358,7 @@ label vegas:
     show cs at left with moveinleft
     show arceus at right with moveinright
     show arceus worried
-    arceus "Oh God, I already feel like I have a migraine..."
+    arceus "Oh, God, I already feel like I have a migraine..."
     cs "C'mon, Arc, let's go play some slots!"
     hide cs dark with moveoutright
     n "CS starts looking around for a machine to sit at."
@@ -706,7 +706,7 @@ label poker3:
         jerma "You beat my highest roller! How'd you do that?"
         cs "Uhh, I dunno."
         jerma "Well, congrats on your victory!"
-        jerma "I'll go get the money for you. Mr. Green is gonna have to pay up to me now."
+        jerma "I'll go get the money for you. Mr. Green is gonna have to pay up to {i}me,{/i} now."
         cs "Alright! I'm gonna go find my friend real quick."
         jerma "Sure thing! Meet me back by the employee access area."
         show cs with determination
@@ -790,20 +790,13 @@ label poker3:
 
 label airport:
     cs "We should head back home now. I have a plan for our newfound riches."
-    arceus "Alright! I'm excited to see what you've got cooking up!"
-    arceus "Let's get going!"
-    show arceus with determination
-    hide cs
-    hide arceus
-    with moveoutleft
-    scene black with fade
-    cs "We should head back home now. I have a plan for our newfound riches."
-    show arceus happy
+    show arceus flipped happy
     arceus "Alright! I'm excited to see what you've got cooking up!"
     arceus "Let's get going!"
     show cs flipped with determination
+    show arceus with determination
     hide cs
-    hide arceus flipped
+    hide arceus
     with moveoutleft
     scene black with fade
     n "CS drives to the airport nearest to Las Vegas."
@@ -866,7 +859,7 @@ label airport:
     cs "Zzzz..."
     arceus "I guess he has."
     show arceus flipped
-    arceus "That or he's just really tired. I don't blame him."
+    arceus "That, or he's just really tired. I don't blame him."
     show arceus worried flipped
     arceus "I hate flying though, and I can't stop thinking about being in a flying metal tube."
     arceus "It'll be over soon enough."
@@ -896,7 +889,7 @@ label airport:
     show cs
     billy "Need a ride? I'll take you to any destination for only $19.95!"
     show arceus happy flipped
-    arceus "Welp, CS, we found our other option!"
+    arceus "Welp, CS, we've found our other option!"
     show case at mid_mid_right with dissolve
     n "Arceus opens the briefcase and gives Billy a gold bar."
     show arceus flipped
@@ -959,7 +952,7 @@ label airport_bad:
     show tsa at right
     show bag at right
     with move
-    tsa "This is stolen property! We are confiscating this and you guys have to go!"
+    tsa "This is stolen property! We are confiscating this, and you guys have to go!"
     show cs worried
     cs "Aw, man!"
     show arceus flipped at center with move
@@ -980,7 +973,7 @@ label back_home_alt:
     show arceus flipped at left with moveinleft
     arceus "We made it back to your house, CS!"
     show cs flipped at center with moveinright
-    cs "Finally I'm home..."
+    cs "Finally, I'm home..."
     cs "Arceus, thank you so much for everything on this trip. I couldn't have done it without you."
     arceus "Aw, it was nice helping ya here."
     cs "You too, Billy."
@@ -1016,8 +1009,8 @@ label back_home_alt:
     rich "You tried to humiliate us with your videos. You made others think we were a joke!"
     ed "You see, my ancestors came from the planet JoJ many years ago to start a foundation company."
     ed "It was the best damn foundation company in the world."
-    ed "We repaired more than 50 percent of all foundations on the planet, and now, you."
-    ed "You. You embarrassed us with those silly stupid, videos that dragged our family company through the mud."
+    ed "We repaired more than 50 percent of all foundations on the planet, and now... {i}you.{/i}"
+    ed "You. You embarrassed us with those silly, stupid videos that dragged our family company through the mud."
     rich "That's why Ed wanted to get revenge on you. That's why we destroyed your computer, CS."
     cs "I don't understand..."
     menu:
@@ -1032,7 +1025,7 @@ label donatehohsis:
     cs "I never intended to harm your company. I just thought that the video was a good source to YTP."
     cs "I'm sorry about all those prank callers. I even made a video telling people to stop prank calling you."
     cs "I never had bad intentions for you guys... Honestly, it was also kind of like a free promotion."
-    ed "Well, I'm sorry CS, but it's too late."
+    ed "Well, I'm sorry, CS, but it's too late."
     ed "Richard, get the JoJ UFO and vaporize the house."
     stop music2 fadeout 1.0
     music end
@@ -1083,7 +1076,7 @@ label true_ending_alt:
     n "CS looks at the monitor, which has a sticky note that says \"From LTT\"."
     show cs happy at mid_left with moveinleft
     cs "Oh my goodness, Linus got me a new PC!"
-    n "There is also a note that says: \"We'd love to have to work with us again virtually, just give us a call\"."
+    n "There is also a note that says: \"We'd love to have you work with us again virtually, just give us a call\"."
     cs "I'll have to make sure to call them later!"
     show cs at mid_left
     cs "Before I head off for the night, I'll do a stream real quick."
@@ -1092,7 +1085,7 @@ label true_ending_alt:
     n "The chat is overflowing with messages."
     chat "Yeah what happened to you?{w=0.25} Oh my God, CS, you're here!{w=0.25} Hi!{w=0.25} Hi!{w=0.25} Where have you been?"
     show cs happy at mid_left
-    cs "Well guys..."
+    cs "Well, guys..."
     jump lego_ending
 
 label ytp_ending_alt:
@@ -1106,7 +1099,7 @@ label ytp_ending_alt:
     n "The chat is overflowing with messages."
     chat "Yeah what happened to you?{w=0.25} Oh my God, CS, you're here!{w=0.25} Hi!{w=0.25} Hi!{w=0.25} Where have you been?"
     show cs at mid_left
-    cs "Well guys..."
+    cs "Well, guys..."
     jump lego_ending
 
 label ltt_ending_alt:
@@ -1115,7 +1108,7 @@ label ltt_ending_alt:
     n "CS looks at the monitor, which has a sticky note that says \"From LTT\"."
     show cs happy at mid_left with moveinleft
     cs "Oh my goodness, Linus got me a new PC!"
-    n "There is also a note that says: \"We'd love to have to work with us again virtually, just give us a call\"."
+    n "There is also a note that says: \"We'd love to have you work with us again virtually, just give us a call\"."
     cs "I'll have to make sure to call them later!"
     show cs at mid_left
     cs "Before I head off for the night, I'll do a stream real quick."
@@ -1124,7 +1117,7 @@ label ltt_ending_alt:
     n "The chat slowly comes in, confused."
     chat "Oh you're streaming?{w=0.25} I thought you were working for LTT now?{w=0.25} What happened to the YTPs?{w=0.25} Are you okay?{w=0.25} Where have you been?"
     show cs at mid_left
-    cs "Well guys..."
+    cs "Well, guys..."
     jump lego_ending
 
 label lego_ending:
@@ -1189,6 +1182,7 @@ label fighthohsis_alt:
     hide cs with moveoutbottom
     show ed with hpunch
     ed "Time to take a shit on the house."
+    stop music fadeout 1.0
     music end
     bad_end "Revenge!" "back_home_alt"
 
@@ -1222,6 +1216,7 @@ label braghohsis:
     pause 1.0
     cs "Fuck."
     bad_end "Time to bunk\nat Rosen's!" "back_home_alt"
+    stop music fadeout 1.0
     music end
     return
 
@@ -1300,7 +1295,7 @@ label noairport:
     pause 2.0
     show cs angry
     pause 2.0
-    cs "Ahem!"
+    cs "{i}Ahem!{/i}"
     scene old_house_inside
     show cs happy at left
     show arceus at right
@@ -1338,7 +1333,7 @@ label noairport:
     show cs with hpunch
     n "All of a sudden, the sentient craptop pops out of the TV!"
     show craptopreal at truecenter with moveinbottom
-    craptop "Yo, what's up fellas! It's me, the craptop!"
+    craptop "Yo! What's up, fellas? It's me, the craptop!"
     craptop "I hate all of you!"
     craptop "So, yeah, take this random shit on my hard drive!"
     n "The craptop starts spewing out random shit?"
@@ -1353,7 +1348,7 @@ label noairport:
     arceus "I don't even know anymore."
     cs "This isn't fiction and everything here is real and has happened!"
     cs "I'm gonna start streaming on time!"
-    cs "And then Copguy comes on, shoots me, then I die!"
+    cs "And then Copguy comes in, and shoots me, then I die!"
     n "Sure, fine, whatever."
     show copguy at mid_right with moveinright
     copguy "You're... Done for!"

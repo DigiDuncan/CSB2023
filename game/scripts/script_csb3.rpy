@@ -18,12 +18,12 @@ label csbiii_start:
     show cs at left with moveinleft
     cs "Wow! I thought this was a starting office. Why do I get such a cool desk?"
     linus "Actually, this is our worst setup. You'll get upgraded after you've been here for a while."
-    cs "Holy shit, really? This is way better than any setup I've seen, let alone had."
+    cs "Holy shit, really? This is way better than any setup I've seen, let alone {i}had.{/i}"
     linus "You must've had really bad setups then. This only has a 3080. Everyone else has 3090s or 4080s."
     cs "I have absolutely no problem with a 3080."
     linus "Well, enjoy!"
     hide linus with moveoutright
-    cs "I guess I better get to work on editing. Let's see what videos I need to edit..."
+    cs "I guess I'd better get to work on editing. Let's see what videos I need to edit..."
     cs "Let's see, I have the new TechQuickie video on how livestreaming works, or the video on how at least half of the keys on your keyboard should be macros..."
     if persistent.true_ending:
         menu:
@@ -56,7 +56,7 @@ label csbiii_start:
             jump edit_video
 
 label edit_video:
-    cs "Nah, I wanna finish this video first. That way I can help you pump out videos faster."
+    cs "Nah, I wanna finish this project first. That way I can help you pump out videos faster."
     linus "Alright, that's fine. I'll probably send Colton to get the parts instead. He's good at sucking up and doing this kinda thing."
     cs "Alright, yeah. I definitely wasn't using this as an excuse to get out of shopping!"
     linus "...okay? Whatever, just keep editing."
@@ -165,7 +165,7 @@ label boost:
     linus "It was..."
     show cs disappointed
     cs "Oh shoot, it was awful, wasn't it?"
-    cs "Yeah, I should've realized my style is too crazy. I guess I should leave…"
+    cs "Yeah, I should've realized my style is too crazy. I guess I should leave..."
     show cs disappointed flipped at left
     show linus behind cs at left with ease
     show linus at center with ease
@@ -192,7 +192,7 @@ label boost:
     show cs at center
     with fade
     n "When CS gets back to his setup, he starts letting his mind race with ideas."
-    cs "Oh man, where do I even start now?"
+    cs "Oh, man... where do I even start now?"
     cs "I have so many ideas of videos to poop. I could even try to teach Linus how to YTP..."
     cs "I mean, with the amount of tech he drops on a daily basis, he kinda already {i}is{/i} a YTP."
     cs "Alright, well, back to editing!"
@@ -213,10 +213,10 @@ label boost:
     n "Linus holds out a rectangular box with bold black lettering. It reads, {b}DO NOT USE.{/b}"
     show cs disappointed
     cs "Umm, you sure this is the right box? It literally says--"
-    linus "Yeah, I know what it says, I just wrote this on here so no one else uses it."
+    linus "Yeah, I know what it says, I just wrote this on here so no one {i}else{/i} uses it."
     linus "Don't worry, I didn't, like, buy it from some creepy dude at a garage sale who claims it's haunted."
     n "CS looks unnerved."
-    linus "Look just... open the box. I'm sure you'll like it."
+    linus "Look, just... open the box. I'm sure you'll like it."
     n "CS cautiously takes the box and opens the top. "
     show ytx at truecenter
     n "Inside is what looks to be a graphics card, but with a brown YouTube logo engraved into the side."
@@ -232,12 +232,12 @@ label boost:
     hide ytx
     n "CS facepalms while Luke can be heard laughing in the background."
     cs "Goodness, Linus, you should maybe not do that next time."
-    linus "Yeah, I'm sorry. Maybe you should hold it." 
+    linus "Yeah, I'm sorry. Maybe {i}you{/i} should hold it." 
     linus "This card is called the YTX-9001 Ti, a PCI add-in for enhancing and optimizing YouTube Poops."
     n "CS' eyes widen."
     cs "Wait, whaaat? That's awesome! How does this even work?"
     linus "We don't even know. We haven't even tested it yet."
-    linus "It also apparently has poop-tracing, which I'm curious to see how that works."
+    linus "It also apparently has poop-tracing, which I'm especially curious about."
     cs "Well, what are we waiting for? Let's get this thing hooked up!"
     n "Linus and CS take apart CS' PC and put the card in."
     n "They then start the computer, and everything boots up as normal."
@@ -245,16 +245,16 @@ label boost:
     n "As Linus inserts the flash drive, a window off the side of the screen pops up saying \"Your new Peeforce Experience drivers are available.\""
     n "CS chuckles a bit."
     show cs happy
-    cs "Peeforce? I must admit, even these driver names are a bit silly."
+    cs "\"Peeforce\"? I must admit, even these driver names are a bit silly."
     n "Linus laughs."
     linus "If you want, we can wipe them later."
     cs "Wipe! Now {i}you're{/i} in on it!"
     n "They both laugh as the drivers install, and once they're finished, CS boots up Premiere."
     scene csvideo with fade
     cs "Alrighty, let's see here. Why don't we try this on that YTP I just made?"
-    linus "Go to the settings real quick, and find the YTP features. Turn YTP mode ON to allow the poop-tracing."
+    linus "Go to the settings real quick, and find the YTP features. Turn YTP mode on to allow the poop-tracing."
     cs "Alright, here goes nothing."
-    n "A loading bar appears as the timeline starts shifting and different edits are created in the process."
+    n "A loading bar appears as the timeline starts shifting, creating different edits in the process."
     cs "Holy crap! This is amazing! It optimized every part of my YTP!"
     linus "That's pretty cool, but let's try it on a completely new source."
     linus "Open the video that we just took yesterday."
@@ -274,7 +274,7 @@ label boost:
     show linus at t_linus_ltt behind ltt_fg with moveinright
     n "Linus goes and gets the cameras set up, and they start to film the video."
     linus "These days, video editing can be so difficult and tedious. Lately, the YouTube algorithm has been demanding more from us content creators."
-    linus "Which is why today we have brought along our newest employee, long term YouTube Pooper cs188 for this review of the new YTX-9001!"
+    linus "Which is why today we have brought along our newest employee, long-term YouTube Pooper cs188 for this review of the new YTX-9001!"
     cs "Hey guys, CS here! The YTX-9001 is a fantastic card, and we can't wait to show you all of its features!"
     linus "Much like we can't wait to show you this segue to our sponsor!"
     n "The two stand for a moment awkwardly staring at the camera."
@@ -446,7 +446,7 @@ label both_fan:
     n "Half an hour passes, and CS has shown LTT what YTPs are all about."
     hide black with fade
     cs "Welp. Those are some of the best ones that I could find."
-    taran "Hey, those were actually really funny. Linus, didn't you tell me about how much you actually {i}liked{/i} YTPs?"
+    taran "Hey, those were actually really funny. Linus, weren't you telling me about how much you actually {i}liked{/i} YTPs?"
     linus "Nooooo...?"
     luke "Now that you say that..."
     linus "Alright, fine! I guess if you all like it too, we could put some on our channel from time to time."
@@ -457,7 +457,7 @@ label both_fan:
     show cs
     cs "Alright, that's fair."
     linus "Well, the rest of you can go back to what you were doing."
-    colton "Oh yeah, Linus? Before I go, I was told someone was banging on the door to enter just a minute ago."
+    colton "Oh, yeah, Linus? Before I go, I was told someone was banging on the door to enter just a minute ago."
     colton "They were dressed up like a furry or something."
     linus "Great, CS, did you attract your furry fanbase to work here as well?"
     cs "I swear, this doesn't have anything to do with my community."
@@ -472,7 +472,7 @@ label both_fan:
     show cs at center with moveinleft
     n "Linus goes to open the door."
     linus "Who's there? Is anyone here?"
-    n "Suddenly, Arceus rushes in through the doors."
+    n "Suddenly, Arceus rushes in."
     show arceus worried at mid_right with moveinright
     arceus "CS! There you are! We need to go, ASAP!"
     play music2 "<loop 0>hired_guns.mp3" volume 0.5
@@ -482,7 +482,7 @@ label both_fan:
     cs "Shut up, Linus!"
     cs "Arceus, what's going on? Where have you been?"
     arceus "Look, CS, we don't have much time. I know that you've been living here for a while, but the cops are still looking to extradite us back to America, and they are headed to LTT to search for you!"
-    linus "{i}What?{/i} CS, why are the cops chasing you? This could seriously damage our reputation {size=-10}more than the time I mentioned I dropped hard R's as a kid!"
+    linus "{i}What?{/i} CS, why are the cops chasing you? This could seriously damage our reputation {size=-10}more than the time I mentioned I dropped hard Rs as a kid!"
 
     menu:
         "What will CS do?"
@@ -525,7 +525,7 @@ label cops_ltt:
 
 label arc_escape:
     cs "Look, I'm sorry, Linus. I wish I could explain, but Arceus is right. I need to get going."
-    linus "I am like, {i}so{/i} confused and frustrated. This better not ruin LMG."
+    linus "I am, like, {i}so{/i} confused and frustrated. This better not ruin LMG."
     show cs disappointed
     cs "I'm sorry, guys. I'll try to get you guys caught up after this."
     cs "This is CS, signing out."
@@ -686,7 +686,7 @@ label arc_escape:
     show arceus dark at right with moveinright
     cs "Hey, Arceus? Do you have any clue where we are?"
     arceus "No idea, I'm just following the road. There's bound to be a rest stop here eventually."
-    cs "I hope so. We've been walking for hours. It's gotta be midnight around now…"
+    cs "I hope so. We've been walking for hours. It's gotta be midnight around now..."
     stop music fadeout 3.0
     music end
     n "CS looks down the road."
@@ -822,7 +822,7 @@ label wait_arc:
     cs "Yep."
     show arceus worried
     arceus "Dude, are you {i}sure{/i} you're okay?"
-    arceus "You haven't said anything, like at all, for the past several hours."
+    arceus "You haven't said anything, like, {i}at all,{/i} for the past several hours."
     cs "I'm fine."
     arceus "...okay."
     arceus "Well, uhh, what should we do now?"
@@ -918,8 +918,8 @@ label wait_forest:
     cs "Now that we are out here and have more time to talk, where exactly are we heading to? Why did we come back to the US?"
     arceus "Well, I figured you wanted to go back home, right?"
     cs "Of course I want to head back home, it's just... it seems so far away."
-    cs "We don't really have a car or anything, we are completely lost, and we got the cops still looking for us, probably!"
-    arceus "Look, man, I know it's pretty hard right now, but we gotta be optimistic about this."
+    cs "We don't really have a car or anything, we are completely lost, and we've got the cops still looking for us, probably!"
+    arceus "Look, man, I know it's pretty hard right now, but we've gotta be optimistic about this."
     arceus "The second we find people, I'm sure we can work something out and head back home."
     cs "If you say so. I just hope we don't have to {i}walk{/i} all the way there."
     arceus "I don't think that'll be the case."
@@ -1026,7 +1026,7 @@ label good_convince:
     scene backseat
     show craptop evidence
     with dissolve
-    n "Copguy stops the car as Arceus plays back the scene from {/i}CS Bounciness I{i} with the scamming of CS by HoH SiS."  # DX: Weird line?
+    n "Copguy stops the car as Arceus plays back the scene from {i}CS Bounciness I{/i} with the scamming of CS by HoH SiS."  # DX: Weird line?
     scene copcar
     show copguy at mid_left
     show copcar_mask
@@ -1181,7 +1181,7 @@ label west3:
     cs "Nah, come on, there is definitely {i}something{/i} we can find going west."
     show arceus worried
     arceus "I really don't want to go there again..."
-    cs "Nah, we got this, for sure this time."
+    cs "Nah, we've got this. For sure this time."
     n "CS and Arceus find a cool looking crab, but still just the ocean again."
     scene washington_road
     show cs dark at left

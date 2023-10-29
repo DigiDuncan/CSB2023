@@ -11,7 +11,7 @@ label dpn_call:
     play music "<loop 0>tuna_fish.mp3" loop volume 0.6
     music Tuna Fish - Dr. Awesome
     cs "What a crazy day so far, man."
-    cs "I can't believe we had to fight all those cops! If it weren't for Tate and the gang, we'd be dead meat already."
+    cs "I can't believe we had to fight all of those cops! If it weren't for Tate and the gang, we'd be dead meat already."
     arceus "Yeah, but hey, you held them off pretty well with that fancy gun of yours."
     pakoo "Yeah, that was some great marksmanship, CS!"
     show cs happy
@@ -472,7 +472,7 @@ label cs_rage:
     else:
         cs "Holy crap, does that mean I can use YTP Magic?"
     csgod "In theory, yes. Although, you should take some time to rest."
-    csgod "Don not beat yourself up over Copguy. You will be able to beat him down next time if you calm down and focus."
+    csgod "Do not beat yourself up over Copguy. You will be able to beat him down next time if you calm down and focus."
     csgod "I shall let you go for now. Copguy is planning his most devious attack yet, and you need to be prepared."
     cs "I see, well, thank you for that, CSGod!"
     csgod "No problem."

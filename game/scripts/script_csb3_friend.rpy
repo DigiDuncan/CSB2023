@@ -21,7 +21,7 @@ label microcenter:
     linus "Hmmm..."
     linus "Wait! I just got a brilliant idea! Why don't you go buy more parts for me! We certainly have the budget to do that!"
     show cs disappointed
-    cs "Umm… I literally just said--{nw}"
+    cs "Umm... I literally just said--{nw}"
     linus "Alright! The plan is settled! You can go fetch me some more parts for the ultimate streaming machine, and you get to decide what parts should be in the computer!"
     show cs
     cs "Okay, but, are there any recommendations you would give me for building this? This is {i}your{/i} money, you know."
@@ -54,9 +54,9 @@ label microcenter:
     show cs happy
     cs "I honestly don't know which one to pick."
     show cs
-    cs "Let's see here…"
-    cs "I could get a super high-end Intel CPU since Linus still seems to default to Intel even after shilling for AMD…"
-    cs "Or I could get a Ryzen... more cores would probably be better for streaming..."
+    cs "Let's see here..."
+    cs "I could get a super high-end Intel CPU, since Linus still seems to default to Intel even after shilling for AMD..."
+    cs "Or, I could get a Ryzen... more cores would probably be better for streaming..."
     show cs happy
     cs "Too many good options! I don't know which one to pick!"
     show cs

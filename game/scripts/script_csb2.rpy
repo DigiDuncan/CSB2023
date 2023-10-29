@@ -92,7 +92,7 @@ label kick:
 label special:
     show cs concentrate at left
     show wesley at right
-    n "CS uses his YTP magic to make the foundation repairmen fight each other."
+    n "CS uses his YTP Magic to make the foundation repairmen fight each other."
     hide wesley at right with moveoutright
     play sound "audio/punch.ogg"
     rich "Hey! Cut it out!"
@@ -117,8 +117,8 @@ label special:
         jump csbi_start
     else:    
         show ed at right with moveinright
-    ed "Hello, 911? My coworkers are-"
-    n "CS sentence-mixes Ed's words to his own will."
+    ed "Hello, 911? My coworkers are--"
+    n "CS sentence-mixes Ed's words."
     ed "Everything is fine here, officer. No need to come here."
     ed "Wait, what just happened?"
     n "CS quickly puts all the workers to sleep."
@@ -142,9 +142,9 @@ label special:
     stop sound fadeout 1.0
     cs "What's going on? I didn't do anything!"
     show cs worried at left
-    copguy "Come with us, we need to ask you some questions."
+    copguy "Come with us. We need to ask you some questions."
     show cs at left
-    cs "Alright, sure thing officer."
+    cs "Alright, sure thing, officer."
     show cs flipped with determination
     hide cs
     hide copguy
@@ -159,15 +159,15 @@ label questioning:
     music Card Castle - Toby Fox
     show cs disappointed at left with moveinleft
     show copguy at right with moveinright
-    copguy "Alright CS, a lot of crazy things happened today."
-    copguy "The CEO of HoH SiS called us today, and he was immediately interrupted by something or someone telling us that everything was under control."
+    copguy "Alright, CS. A lot of crazy things happened today."
+    copguy "The CEO of HoH SiS called us and he was immediately interrupted by something, or some{i}one,{/i} telling us that everything was under control."
     copguy "After reviewing the phone call, his voice sounds kinda messed up."
     cs "I, uhh, I don't know what that is all about..."
-    copguy "Oh really?"
-    copguy "What about all the workers in the building? Most of them were lying cold on the floor."
+    copguy "Oh, really?"
+    copguy "What about all of the workers in the building? Most of them were out cold on the floor."
     cs "Okay, fine!"
     cs "I confess!"
-    cs "I was using YTP magic on the employees to make them fight, and I--"
+    cs "I was using YTP Magic on the employees to make them fight each other, and I--"
     copguy "You what? What the hell are you on about?"
     cs "I have this power, and I just figured out how to--"
     copguy "Alright, I've heard enough."
@@ -213,16 +213,16 @@ label asylum:
     with moveinright
     cs "What?"
     cs "Who are you?"
-    csgod "I am CSGod, and I was the one who used the YTP power."
+    csgod "I am CSGod, and it was I who used the YTP power."
     cs "{i}What?!{/i} How? I am so confused."
-    csgod "You channeled my power through you. That was how you were able to do those abilities back at HoH SiS HQ."
-    csgod "It seems that you weren't good enough at lying to get yourself out of the situation though."
+    csgod "You channeled my power through you. That was how you were able to use those abilities back at HoH SiS HQ."
+    csgod "However, it seems that you weren't good enough at lying to get yourself out of the situation."
     cs "Well, I wanted to be honest!"
     csgod "Yeah, well, look where honesty got you."
     csgod "No one would believe something as silly as YTP power."
-    csgod "For your punishment, I'm gonna leave you here you a while."
+    csgod "For your punishment, I shall leave you here you a while."
     cs "No! Please!"
-    csgod "You'll get out soon enough, but maybe you should think about making a {i}better choice{/i} next time."
+    csgod "You will get out soon enough, but maybe you should think about making a {i}better choice{/i} next time."
     hide csgod with moveoutright
     stop music fadeout 3.0
     music end
@@ -270,7 +270,7 @@ label jail:
 
     play music "<loop 0>stal.mp3" volume 0.4
     music stal - C418
-    cs "Oh, hi Arceus."
+    cs "Oh, hi, Arceus."
     arceus "Heya, CS. .w."
     # And it's about time.
     cs "So, what are you in for?"
@@ -285,11 +285,11 @@ label jail:
     n "A brief moment of silence..."
     show cs prison at left
     arceus "Welp. I'm tired of this place. Wanna break out?"
-    cs "Eh... sure, why not, I've played plenty of The Escapists, I should be able to figure it out."
+    cs "Eh... sure, why not, I've played plenty of {i}The Escapists,{/i} I should be able to figure it out."
     cs "We should break out at least one other person though."
     arceus "If you say so... Who were you thinking of breaking out?"
     cs "Let's just break out that guy next to us, I think his name was Anno...?"
-    arceus "Anno? Sure, I've seen what he's capable of, he may be of use to us."
+    arceus "Anno? Sure, I've seen what he's capable of, so he may be of use to us."
     cs "Alright, then, let's get going!"
 
     show arceus prison at offscreenright
@@ -309,7 +309,7 @@ label breakout:
     n "Arceus describes the prison routine to CS."  # DX: Replace with blur, fade out then back in
     cs "I think I got all that."
     arceus "So, what's our plan, boss?"
-    cs "I've gotta grab a few plastic spoons from the mess hall, a cup of molten chocolate, a guard outfit, and a change of shorts."
+    cs "I've gotta grab a few plastic spoons from the mess hall, a cup of molten chocolate, a guard uniform, and a change of shorts."
     arceus "Why a change of shorts?"
     show cs prison_worried at left
     cs "You kidding me? I'm gonna shit myself, 'cause this is scary as hell."
@@ -352,7 +352,7 @@ label breakout:
     show anno guard dark with easeinbottom
     anno "How are we supposed to cross the border with the new wall?"
     arceus "Not the Mexican border, the Canadian border. We're in Washington, it's way closer, and they're too polite to send us back."
-    cs "Works for me, free healthcare."
+    cs "Works for me. Free healthcare!"
     arceus "Well, you have to live there for a few years before you get access to that, but you should last a few years without getting sick living on that healthy diet of Ritz and EZ cheese."
     hide cs
     hide anno guard
@@ -400,7 +400,7 @@ label bordercrossing:
     stop music2
     $ renpy.music.set_pause(False, "music")
     cs "Prison food just isn't all that filling."
-    arceus "I suppose we could find a Tim Horton's, it's as common in Canada as McDonald's is in America."
+    arceus "I suppose we could find a Tim Horton's. It's as common in Canada as McDonald's is in America."
     n "Anno and CS nod aggressively."
     n "Arceus sniffs the air."
     arceus "There's one just over here, come on."
@@ -476,7 +476,7 @@ label bordercrossing:
 
     n "CS, Arceus, and Anno enjoy some well-deserved donuts."
     show arceus worried
-    arceus "Sorry to interrupt you two, but we may have a problem: Those donuts cost me the last of my money. We're going to need to find a way to make some cash."
+    arceus "Sorry to interrupt you two, but we may have a problem. Those donuts cost me the last of my money. We're going to need to find a way to make some cash."
     scene outside_ltt
     n "CS looks across the street to see Linus Media Group."
 
@@ -498,7 +498,7 @@ label bordercrossing:
     music PASSPORT.MID - George Stone
     linus "Sure, you can have a job. Just show us proof of citizenship and you're ready to go!"
     cs "Colour is spelled with a u, eh."
-    linus "I need actual papers. Last time I hired someone who used that as proof of citizenship, I got fined and had to sell one of my thousands of 4090s."
+    linus "I need actual papers. Last time I hired someone who used {i}that{/i} as proof of citizenship, I got fined and had to sell one of my thousands of 4090s."
     cs "Ummmm, I'll be right back."
 
     scene outside_ltt
@@ -567,7 +567,8 @@ label bordercrossing:
     arceus "Hell yeah!"
 
     anno "Let's celebrate!"
-    n "CS, Anno, and Arceus cheers their donuts together."
+    n "The three cheer and raise up their donuts, pressing them together in a sort of toast."
+    # I FINALLY FIGURED OUT HOW TO REWRITE THAT FUCKING LINE HOLY SHIT - TATE
     stop music fadeout 3.0
     music end
 

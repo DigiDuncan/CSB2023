@@ -1810,8 +1810,8 @@ label back_home:
     rich "You tried to humiliate us with your videos. You made others think we were a joke!"
     ed "You see, my ancestors came from the planet JoJ many years ago to start a foundation company."
     ed "It was the best damn foundation company in the world."
-    ed "We repaired more than 50 percent of all foundations on the planet, and now, you."
-    ed "You. You embarrassed us with those silly stupid, videos that dragged our family company through the mud."
+    ed "We repaired more than 50 percent of all foundations on the planet, and now... {i}you.{/i}"
+    ed "You. You embarrassed us with those silly, stupid videos that dragged our family company through the mud."
     rich "That's why Ed wanted to get revenge on you. That's why we destroyed your computer, CS."
     cs "I don't understand..."
     menu:
@@ -1828,7 +1828,7 @@ label talktohohsis:
     cs "I never intended to harm your company. I just thought that the video was a good source to YTP."
     cs "I'm sorry about all those prank callers. I even made a video telling people to stop prank calling you."
     cs "I never had bad intentions for you guys... honestly, it was also kind of like a free promotion."
-    ed "Well, I'm sorry CS, but it's too late."
+    ed "Well, I'm sorry, CS, but it's too late."
     ed "Richard, get the JoJ UFO and vaporize the house."
     stop music2 fadeout 1.0
     show anno at offscreenleft
@@ -2040,7 +2040,7 @@ label ytp_ending:
     n "The chat is overflowing with messages."
     chat "Yeah what happened to you?{w=0.25} Oh my God, CS, you're here!{w=0.25} Hi!{w=0.25} Hi!{w=0.25} Where have you been?"
     show cs at mid_left
-    cs "Well guys..."
+    cs "Well, guys..."
     n "CS chuckles."
     cs "It's a long story..."
     scene black with fade
@@ -2065,7 +2065,7 @@ label ltt_ending:
     n "The chat slowly comes in, confused."
     chat "Oh you're streaming?{w=0.25} I thought you were working for LTT now?{w=0.25} What happened to the YTPs?{w=0.25} Are you okay?{w=0.25} Where have you been?"
     show cs at mid_left
-    cs "Well guys..."
+    cs "Well, guys..."
     cs "It's a long story..."
     scene black with fade
     stop music2 fadeout 1.0   

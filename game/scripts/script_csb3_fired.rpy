@@ -23,7 +23,7 @@ label new_plan:
     show cs worried 
     cs "Okay, what? What's going on?"
     arceus "Cops. They're still after us."
-    cs "Oh, come on, really?! Today has sucked bad enough already."
+    cs "Oh, come on, {i}really?!{/i} Today has sucked bad enough already."
     show arceus
     arceus "What happened to you? I just thought you were out here for a smoke break."
     show cs disappointed
@@ -64,7 +64,8 @@ label new_plan:
     anno "Hey, CS, what are you doing here?"
     cs "I got fired, and the cops are still after us."
     anno "Ah, fuck. What's the plan?"
-    arceus "Nothing yet... wait. Anno, I've just got an idea."
+    arceus "Nothing yet..."
+    arceus "Wait. Anno, I've just got an idea."
     anno "What's up?"
     arceus "You know AI stuff, right?"
     anno "Well, yeah, but I don't see--"
@@ -95,7 +96,7 @@ label new_plan:
     arceus "I don't know, man, I can't think after all that. Let's take a bit and relax. Clear our heads."
     cs "Good call. Wanna play some {i}Guitar Hero?{/i}"
     anno "I'm down, but, do you have controllers?"
-    cs "Do I?"
+    cs "{i}Do{/i} I?"
     hide cs with moveoutleft
     n "Anno and Arceus look at each other confused."
     show cs guitar at left with moveinleft
@@ -119,7 +120,7 @@ label guitar_hero:
     arceus "Does he?"
     cs "What's the worst that could happen? We need money, don't we?"
     arceus "We do..."
-    cs "Then let's do this!"
+    cs "Then, let's do this!"
     anno "I'm down!"
     cs "Arc?"
     arceus "What do I have to lose?"
@@ -145,7 +146,7 @@ label guitar_hero:
     cs "Wait, that's it?"
     blank "I mean, that's not {i}it{/i}, but--"
     show cs happy
-    cs "Awesome, thanks Blank!"
+    cs "Awesome! Thanks, Blank!"
     n "CS hangs up."
     show cs
     cs "Well, you heard the man. Anno, do you have FL Studio?"
@@ -178,7 +179,7 @@ label write_song:
     arceus "Well, I guess all we have to do now is upload it."
     anno "Alright, boys, what do we call it?"
     $ song_name_1 = renpy.input("What should we call the song?", song_name_1, length = 32)
-    cs "How about {i}[song_name_1]{/i}?"
+    cs "How about {i}[song_name_1]?{/i}"
     $ achievement_manager.unlock("Hi, My Name Is...")
     if song_name_1 == "FUCK SEX BALLS":
         show arceus angry
@@ -195,7 +196,7 @@ label write_song:
     cs "Alright, it's settled! Let's upload {i}[song_name_1]{/i} to streaming services!"
     show arceus
     arceus "Are you going to plug it in the Discord?"
-    cs "I guess I should, but people are going to be really confused as to why I'm still not streaming..."
+    cs "I guess I should, but, people are going to be really confused as to why I'm still not streaming..."
     anno "I think they're used to you not streaming for a while."
     cs "Fair, but a music career?"
     arceus "Just say it's a side project."
@@ -241,7 +242,7 @@ label hotel_next_day:
     pause 2.0
     cs "Do you have any ideas for--{nw}"
     show arceus angry
-    arceus "Man I {i}just{/i} woke up."
+    arceus "Man, I {i}just{/i} woke up."
     cs "Yeah, sorry."
 
     pause 2.0
@@ -259,11 +260,11 @@ label hotel_next_day:
     show arceus with determination
     n "They all sit down to eat."
 
-    n "As they eat, CS checks the number of streams on {i}[song_name_1]{/i}."
+    n "As they eat, CS checks the number of streams on {i}[song_name_1].{/i}"
     show cs scared
     cs "Guys?"
     arceus "Mmm?"
-    n "Arceus and Anno are stuffing their face."
+    n "Arceus and Anno are stuffing their faces."
     play music "<loop 0>audio/now_what.mp3" volume 0.5
     music Now What? 1 - Dr. Awesome
     cs "The song has, like, a hundred thousand streams."
@@ -275,7 +276,7 @@ label hotel_next_day:
     arceus "Holy shit!"
     anno "Wait, that's crazy, actually."
     show cs happy
-    cs "This is amazing! We might have a ticket out of here! We won't have to run from the cops anymore!"
+    cs "This is amazing! We might have a ticket out of here! We won't have to run from the cops anymore!" # we changing this line? since they already resolved this? - tate
     n "A random patron turns to look at CS."
     show cs worried
     cs "Uh... metaphorically, of course."
@@ -468,14 +469,14 @@ label back_to_room:
     cs "Hey!"
     arceus "We were wondering, is there anything we can do to help?"
     anno "Hmm... well, I need help with this solo."
-    arceus "Well, hey, I'm a percussionist, I can get a drum solo in there."
+    arceus "Well, hey, I'm a percussionist. I can get a drum solo in there."
     anno "Yeah, lay one on me!"
     n "Anno plays the track, and Arceus taps out a killer drum line."
     anno "That's awesome, man!"
     show arceus happy
     arceus "Thank you, thank you."
     cs "What can I do?"
-    anno "Well, you already named it {i}[song_name_3]{/i}, and that's definitely our best title yet. You wrote, like, half the lines, too."
+    anno "Well, you already named it {i}[song_name_3],{/i} and that's definitely our best title yet. You wrote, like, half the lines, too."
     anno "But, if you want to record backing vocals, this track might sound dope with them!"
     cs "Will do!"
     python:
@@ -552,7 +553,7 @@ label mcd:
     anno "Yeah...?"
     cs "Well, I don't have all the lyrics yet..."
     show arceus
-    arceus "Maybe this time, we can fill in the lines!"
+    arceus "Maybe this time, {i}we{/i} can fill in the lines!"
     cs "Okay! Here's what I have so far..."
     $ renpy.music.set_pause(True, "music")
     play music2 "<loop 0>audio/dragon_castle.mp3" volume 0.5
@@ -585,7 +586,7 @@ label mcd:
     cs "Uh..."
     $ song_name_4 = renpy.input("What should the song be called?", song_name_4, length = 32)
     cs "It's called {i}[song_name_4]!{/i}"
-    anno "It'll be on our EP [ep_name], just look up [band_name] on streaming services!"
+    anno "It'll be on our EP {i}[ep_name],{/i} just look up [band_name] on streaming services!"
     customer "Awesome, I'm excited! I'll make sure to check it out!"
     n "The customer walks away."
     hide customer with moveoutright
@@ -595,7 +596,7 @@ label mcd:
     arceus "This is going better than I ever dared to hope."
     anno "Let's go back to the hotel and get this song made!"
     n "On their way out of the store, CS turns to Arceus."
-    cs "You know, I think [song_name_4] might be our best one yet."
+    cs "You know, I think {i}[song_name_4]{/i} might be our best one yet."
     stop music fadeout 3.0
     music end    
     scene black with dissolve
@@ -617,7 +618,7 @@ label hotel_lobby_2:
     show guest at right with moveinright
     guest "Holy shit, are you from [band_name]?!"
     cs "Uh..."
-    guest "You are! Holy shit!"
+    guest "You {i}are!{/i} Holy shit!"
     guest "You guys are {i}cracked{/i} at making music! You're like {i}GOATed!{/i}"
     # DX: fun value "GOATed with the swows" - Tate/Digi
     cs "What? What does that--"
@@ -635,12 +636,12 @@ label hotel_lobby_2:
     music end    
     cs "Alright, well, here's our song..."
     n "CS turns to the others to cue them."
-    cs "[song_name_2]!"
+    cs "{i}[song_name_2]!{/i}"
     n "Anno starts up the backing track, and Arceus grabs some random objects to use as a drum kit."
     play music "<loop 0>audio/happy_rock.mp3" volume 0.5
     cs "{cps=15}{image=note_small1.png} We're going down to Vegas, we're gonna strike it rich!{w=1.5}\nWe're going down to Vegas, [line_1] {image=note_small2.png}"
     n "The crowd cheers wildly."
-    anno "We're [band_name]! Check out [ep_name] on streaming services soon!"
+    anno "We're [band_name]! Check out {i}[ep_name]{/i} on streaming services soon!"
     stop music fadeout 3.0
     n "The gang heads up to their room."
     jump song_5
@@ -683,7 +684,7 @@ label song_5:
     cs "It's called {i}[song_name_5]!{/i}"
     show arceus happy
     arceus "That's going to be a huge hit."
-    anno "So, wait, that's [ep_name] done, then!"
+    anno "So, wait, that's {i}[ep_name]{/i} done, then!"
     cs "Woohoo!"
     n "They all high five."
     anno "I guess I'll get this mastered and release it tonight!"
@@ -724,7 +725,7 @@ label fan_interaction:
     n "Anno wakes up, but just barely."
     anno "Huh?"
     cs "I need you to check the numbers, quick."
-    anno "The numbers? On [ep_name]? Uh..."
+    anno "The numbers? On {i}[ep_name]?{/i} Uh..."
     n "Anno pulls out his phone."
     n "Anno drops his phone."
     anno "Guys... we might have more money than we thought."
@@ -763,10 +764,10 @@ label fan_interaction:
     anno "Wait, hold on, let me read this, it looks important."
     agent "{b}Tour Offer{/b}\nHey, [band_name]!\nMy name is Howie Mandell, and I'm a talent agent and tour manager."
     cs "Woah, really?"
-    agent "I'm emailing to inquire about whether you'd be interested in touring the country with your band. Your latest EP, [ep_name], has been making big waves on streaming services."
+    agent "I'm emailing to inquire about whether you'd be interested in touring the country with your band. Your latest EP, {i}[ep_name],{/i} has been making big waves on streaming services."
     agent "I think live performances might be just what you need to take the next step."
     anno "Oh my God!"
-    agent "If you're willing to negotiate, I think we could strike a very mutually beneficial deal for both of us."
+    agent "If you're willing to negotiate, I think we could strike a very mutually beneficial deal."
     show arceus happy
     arceus "That sounds amazing!"
     agent "Please get in touch as soon as you can,\n-- Howie Mandell"
@@ -827,7 +828,7 @@ label limo_time:
     anno "Woah, woah, woah, slow down. Why are you so invested in our success?"
     agent "Oh, don't think I'm going to get a raw deal here. I know how to make sure we all end up happy."
     show arceus angry flipped
-    arceus "You sure you mean all of us?"
+    arceus "You sure you mean {i}all{/i} of us?"
     agent "I sense you're spooked so I'll give ya the rub. We take you on tour. Every ticket you sell, I get a cut, you get a cut, we all go home snuggling our cash."
     cs "You snuggle your cash?"
     agent "Better than lavender, baby."
@@ -941,7 +942,7 @@ label first_tour_day:
     cs "Much."
     arceus "What changed?"
     cs "Eh, something... something got into my head and cleared things up for me."
-    arceus "Alrighty, man, well let's hope it did a good job, because it's time to hit the road."
+    arceus "Alrighty, man, well, let's hope it did a good job, because it's time to hit the road."
 
     show arceus flipped with determination
     hide arceus
@@ -968,7 +969,7 @@ label first_tour_day:
     with moveinleft
 
     n "They all arrive at LTX."
-    cs "Well, it's pretty busy, I doubt we'll run into--"
+    cs "Well, it's pretty busy. I doubt we'll run into--"
     show linus at right with moveinright
     play music "<loop 0>passport.mp3" volume 0.5
     linus "Oh good, you guys are finally here. You're [band_name], right?"
@@ -1065,7 +1066,7 @@ label first_tour_day:
     anno "Holy shit, already? With that kinda cashflow, we could--"
     agent "Woah, woah, woah, hold your horses, kid."
     anno "Hold my horses...?"
-    agent "That's without me taking my cut, or you three splitting it. We still got more shows to do, you know!"
+    agent "That's without me taking my cut, or you three splitting it. We've still got more shows to do, you know!"
     cs "Well, then, let's get this show on the road!"
     stop music fadeout 3.0
     scene black with dissolve
@@ -1092,6 +1093,7 @@ label second_tour_day:
     n "After they pull into the city, CS gets out and walks the streets."
 
     scene manitoba_street
+    with dissolve
     show cs with moveinleft
     play music "<loop 0>track4.mp3" volume 0.4
     music Track 4 - Weatherscan
@@ -1112,7 +1114,7 @@ label second_tour_day:
         cs "Yeah, how'd you know?"
         ges "Aren't you touring with [band_name] right now, eh?"
         cs "Yeah, I am!"
-        ges "Dude, I've been listening to [song_name_3] all day, eh?"
+        ges "Dude, I've been listening to {i}[song_name_3]{/i} all day, eh?"
         ges "{cps=15}{image=note_small1.png} I found myself in the U.K...{w=1.5}\n[line_3] {image=note_small2.png}, eh?"
         ges "That shit slaps, eh?"
         cs "Well, thanks! I was wondering if you had some nice shoes for my concert tonight."
@@ -1139,7 +1141,7 @@ label second_tour_day:
         cs "Yeah, how'd you know?"
         ges "Aren't you touring with [band_name] right now?"
         cs "Yeah, I am!"
-        ges "Dude, I've been listening to [song_name_3] all day!"
+        ges "Dude, I've been listening to {i}[song_name_3]{/i} all day!"
         ges "{cps=15}{image=note_small1.png} I found myself in the U.K...{w=1.5}\n[line_3] {image=note_small2.png}"
         ges "That shit slaps!"
         cs "Well, thanks! I was wondering if you had some nice shoes for my concert tonight."
@@ -1177,7 +1179,7 @@ label second_tour_day:
     show arceus happy
     arceus "Heck yeah!"
     anno "Of course."
-    cs "I think we should sing [song_name_3] tonight."
+    cs "I think we should sing {i}[song_name_3]{/i} tonight."
     show arceus
     arceus "Why is that?"
     cs "I just think it'll make someone pretty happy."
@@ -1249,7 +1251,7 @@ label third_tour_day:
     cs "Where are we headed?"
     agent "Ontario!"
     cs "Ontario? That's where that one fan was from!"
-    agent "Well he's about to be a happy camper!"
+    agent "Well, he's about to be a happy camper!"
     anno "I can't believe we're already on our last tour day!"
     $ line_num = renpy.get_filename_line()[1] + 1
     arceus "Well, it's been [line_num] lines, it's been a while."
@@ -1308,7 +1310,7 @@ label third_tour_day:
     n "The fans are adoring this."
     stop music fadeout 3.0
 
-    cs "Next up, here's a classic: [song_name_3]"
+    cs "Next up, here's a classic: {i}[song_name_3]!{/i}"
     anno "CS, none of our songs are classics. We're a new band."
     play sound "audio/start_rocking.mp3"
     n "The crowd laughs."
@@ -1319,7 +1321,7 @@ label third_tour_day:
     cs "{cps=15}{image=note_small1.png} I'm globetrottin'!{image=note_small2.png}"
     n "The audience loves this a lot."
     stop music fadeout 3.0
-    cs "Alright, here's a fan favorite: [song_name_4]!"
+    cs "Alright, here's a fan favorite: {i}[song_name_4]!{/i}"
     play sound "audio/start_rocking.mp3"
     play sound "audio/cheer2.mp3"
     play music "<loop 0>audio/dragon_castle.mp3" volume 0.5
@@ -1330,7 +1332,7 @@ label third_tour_day:
     n "Anno shreds an epic solo."
     n "The fans are exploding!"
     stop music fadeout 3.0
-    cs "And now! For the first time on stage! It's [song_name_5]!"
+    cs "And now! For the first time on stage! It's {i}[song_name_5]!{/i}"
     play sound "audio/start_rocking.mp3"
     play sound "audio/cheer2.mp3"
     n "The crowd is ready to burst."
@@ -1405,7 +1407,7 @@ label final_tour_bus:
     arceus "I need a nap."
     agent "Well, maybe this will perk you guys up. Wanna hear the final total?"
     cs "Sure, what is it?"
-    agent "Well, after all the cuts, and then splitting it... {w=0.5}each of you get..."
+    agent "Well, after all the cuts, and then splitting it... {w=0.5}each of you gets..."
     agent "$10,000!"
     n "The gang perks up."
     cs "Wait... $10K?!"
