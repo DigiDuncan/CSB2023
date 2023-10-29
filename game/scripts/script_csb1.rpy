@@ -248,7 +248,7 @@ label room:
     cs "Oh, look, a flashback. What a coincidence..."
     scene cs_room with pixellate
     show cs_young with moveinbottom
-    ycs "Hey guys, Young CS here! Today, I'm gonna be editing a {bt=a3-p10-s4}CraAaAaAaAzY{/bt} video!!"
+    ycs "Hey guys, Young CS here! Today, I'm gonna be editing a \n{bt=a3-p10-s4}CraAaAaAaAzY{/bt} video!!"
     play sound "keyboard.ogg"
     n "CS taps furiously on his keyboard."
     ycs "Ohhhhhh {bt=a3-p10-s4}YeeEeeEeEeeEEeEEs!{/bt} This is lookin' good!"
