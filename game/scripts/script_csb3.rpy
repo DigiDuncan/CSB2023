@@ -173,9 +173,9 @@ label boost:
     n "As CS turns around, Linus gives him a friendly punch in the back."
     play music "<loop 0>airport_counter.mp3" volume 0.5
     music Airport Counter - Kazumi Totaka
-    linus "Dude, what are you talking about? That video was awesome!"
+    linus "Dude, what are you talking about? That video was {i}awesome!{/i}"
     show cs at left
-    cs "Woah, wait, you actually like YTPs?"
+    cs "Woah, wait! You actually {i}like{/i} YTPs?"
     linus "Yeah, man! You think I just hired you on the spot because of your obviously fake visa?"
     linus "I love your videos! I've been secretly hoping you would YTP one of mine for the longest time!"
     show linus at left with ease

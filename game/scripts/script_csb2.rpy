@@ -216,7 +216,7 @@ label asylum:
     csgod "I am CSGod, and it was I who used the YTP power."
     cs "{i}What?!{/i} How? I am so confused."
     csgod "You channeled my power through you. That was how you were able to use those abilities back at HoH SiS HQ."
-    csgod "However, it seems that you weren't good enough at lying to get yourself out of the situation."
+    csgod "However, it seems that you weren't good enough at lying to get yourself out of this situation."
     cs "Well, I wanted to be honest!"
     csgod "Yeah, well, look where honesty got you."
     csgod "No one would believe something as silly as YTP power."

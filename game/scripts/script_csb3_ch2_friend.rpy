@@ -41,14 +41,14 @@ label car_ride_1:
     show tate flipped at right
     with fade
     tate "Road trip, let's goooo!"
-    tate "Man, I can't believe CS didn't tell us! This is so great!!"
+    tate "Man, I can't believe CS didn't tell us! This is great!"
     mika "I know, right?"
     tate "How're you holding up, Kitty?"
     kitty "Yeah... I'm doing okaye.."
     show tate shock flipped
     tate "Hold up, is that CS in front of us?"
     show tate smug flipped
-    tate "Heyyyy, Mika. {w=0.2}You should smack that horn. {w=0.2}You should do it. {w=0.2}Right now. {w=0.2}You should scare CS. {w=0.2}{bt=a3-p10-s4}Do it now."
+    tate "Heyyyy, Mika. {w=0.2}You should smack that horn. {w=0.2}You should do it. {w=0.2}Right now. {w=0.2}You should scare CS. {w=0.2}Right now. {w=0.2}{bt=a3-p10-s4}Do it now."
     if nice_car:
         scene joj_charger_fg
         show drive_day behind joj_charger_fg
@@ -111,7 +111,7 @@ label car_ride_1:
     stop music fadeout 3.0
     music end
     scene black with fade
-    n "A few hours pass and the DPN crew arrives at the S&P Diner. They are waiting to be served."
+    n "A few hours pass and the DPN crew arrives at the S&P Diner. They chat as they wait to be served."
     jump dpn_diner
 
 label dpn_diner:
@@ -174,7 +174,7 @@ label dpn_diner:
     n "As Aria heads back to the car, she sneaks around and knocks the cop's heads together, rendering them unconcious."
     show aria dark flipped at right with move
     show cop dark at left with moveinleft
-    cop "Ah, shit! We got two men down! Arrest her!"
+    cop "Ah, shit! We've got two men down! Arrest her!"
     stop music fadeout 3.0
     music end
     music Desert Dawn - Lizardking
@@ -240,7 +240,7 @@ label cs_meetup_2:
     show digi flipped with determination
     digi "Yeah, we're fine. How about you?"
     aria_alt "Yeah, I also had to fight some cops on the way to find CS."
-    digi "Shit, so we need to get going... like... {i}now{/i}, before more come."
+    digi "Shit, so we need to get going, like, {i}now{/i}, before more come."
     if fun_value(5):
         aria_alt "Yeah, they won't stop coming. Let's meet up with the rest of the crew first."
     else:
@@ -328,8 +328,8 @@ label car_ride_2:
     kitty "What if he's preparing defenses to ambush us?"
     show tate flipped
     mika "We'll destroy anything that comes our way, don't worry."
-    tate "Hell yeah, we got this!"
-    mika "We've definitely got this don't worry."
+    tate "Hell yeah, we've got this!"
+    mika "We've definitely got this, don't worry."
     kitty "I wonder how those new guys are handling the situation..."
     scene black with dissolve
     pause 2.0
@@ -444,7 +444,7 @@ label cs_rage:
     show cs dark concentrate
     cs "Guys, c'mon, please! We have... to... hnngg..."
     show tate shock dark
-    tate "Woah, CS? What are you doing?"
+    tate "Woah, CS? What are you doing?!"
     show cs dark concentrate with vpunch
     show cs dark concentrate with hpunch
     show cs dark concentrate with vpunch
@@ -472,7 +472,7 @@ label cs_rage:
     else:
         cs "Holy crap, does that mean I can use YTP Magic?"
     csgod "In theory, yes. Although, you should take some time to rest."
-    csgod "Do not beat yourself up over Copguy. You will be able to beat him down next time if you calm down and focus."
+    csgod "Do not beat yourself up over Copguy. You will be able to defeat him if you calm down and focus."
     csgod "I shall let you go for now. Copguy is planning his most devious attack yet, and you need to be prepared."
     cs "I see, well, thank you for that, CSGod!"
     csgod "No problem."
@@ -518,12 +518,12 @@ label cs_rage:
     jump copguy_pres
 
 label copguy_pres:
-    n "After Copguy fled the scene, he immediately went to summarize the bad news to the sheriff."
+    n "After Copguy fled the scene, he immediately called to summarize the bad news to the sheriff."
     scene police_car_fg
     show copguy flipped at left
     show drive_night behind police_car_fg
     with fade
-    sheriff "They {i}what{/i}?!"
+    sheriff "They {i}what?!{/i}"
     copguy "They blew up our tank, sir."
     sheriff "Shit! Urghhh..."
     sheriff "There is only one thing we can do."
@@ -548,7 +548,7 @@ label copguy_pres:
         bomaha "You are gonna head to Chigaco. I'll have a jet come pick you up."
     else:
         obama "You are gonna head to Chicago. I'll have a jet come pick you up."
-    copguy "Thank you, sir. I won't stop until these menaces are defeated."
+    copguy "Thank you, sir. I won't stop until these menaces are behind bars."
     scene black with dissolve
     window hide
     jump car_ride_3
@@ -595,12 +595,12 @@ label car_ride_3:
     show mika at left
     show tate flipped at right
     with fade
-    tate "So I went to Dollar Tree a couple days ago, right? Bought some of their off-brand snacks..."
+    tate "So I went to Dollar Tree a couple days ago, right? Bought some of their off-brand snacks--"
     mika "I feel like only a few off-brands can taste well, but there are a few I just can't eat."
     tate "Saaaaame, which ones?"
     mika "Usually the off-brand Cheez-its, but I really don't like the off-brand Goldfish either."
     show tate shock flipped
-    tate "Wait, you don't like Gold Whales?! I love those!"
+    tate "Wait, you don't like Gold Whales?! I {i}love{/i} those!"
     show tate flipped
     mika "Well, I just don't like them too much."
     kitty "The snack that breaks your back: Gold Whales!"
@@ -648,7 +648,7 @@ label final_meetup:
     else:
         cs "Nice to finally meet you guys! Where's DB?"
     anno "Db05 isn't here yet. He's been busy."
-    anno "He'll be here soon though. We've been talking to him on the phone."
+    anno "He'll be here soon, though. We've been talking to him on the phone."
     n "Anno holds out his phone."
     db "Hey, guys! Sorry I'm gonna miss out on the huge battle thing! I had to do some things at home first."
     $ renpy.movie_cutscene("movies/db.webm")
@@ -717,7 +717,7 @@ label between_2:
     copguy "Heheh, you can tell yourself that."
     copguy "I've been making sure to note down your team's abilities..."
     copguy "Why don't we try one out?"
-    n "Copguy casts Light Cast on Arceus!"
+    n "Copguy uses Light Cast on Arceus!"
     play sound "minigames/car/gaster_blast.wav"
     scene white with dissolve
     scene war_torn_5
@@ -728,7 +728,7 @@ label between_2:
     with dissolve 
     show arceus worried flipped with vpunch
     arceus "Ow! How did you--{w=1.0}{nw}"
-    copguy "I think that's all you needed to see. Let's end this, CS."
+    copguy "I think that's all you need to see. Let's end this, CS."
     stop music fadeout 3.0
     scene black with dissolve
     jump rpg_final_fight_3 
@@ -744,7 +744,7 @@ label weapon_of_choice:
 label car_slam:
     stop music fadeout 1.0
     scene war_torn_1 with fade
-    n "CS looks around and views the destruction around him."
+    n "CS looks around, taking in the destruction around him."
     n "The city that they once fought in has now been reduced to rubble and war-torn buildings."
     show cs flipped at right with moveinbottom
     n "CS gathers his bearings and starts checking on his friends."
@@ -753,7 +753,7 @@ label car_slam:
     arceus "Did we get him?"
     show pakoo flipped at left with moveinleft
     pakoo "Man, that was insane. You guys demolished this place!"
-    cs "I hope Copguy is dead. I am definitely going to jail for this one if he's alive!"
+    cs "I hope Copguy is dead. I am {i}definitely{/i} going to jail for this one if he's still alive!"
     n "CS continues to check on the others."
     hide cs with moveoutleft
     scene black with fade
@@ -805,7 +805,7 @@ label car_slam:
     blank "Anno's phone got busted during the fight, so we don't know now what his ETA is."
     # yeah, uh, that line was weird - tate
     cs "Dang, that's a shame."
-    cs "I kinda hope he doesn't come now. I'd hate for him to witness the damage we did."
+    cs "I kinda hope he doesn't show up now. I'd hate for him to witness the damage we did."
     midge "Well, we won, right? What's the plan now?"
     cs "I wanna make sure Copguy is gone for real."
     cs "I'll be right back."
@@ -823,7 +823,7 @@ label car_slam:
     show cs flipped
     cs "Nahhh! That guy was a jerk!"
     cs "This is why you don't mess with the Master Of The Poop!"
-    cs "...The Youtube Poop, actually. I realized that kinda sounded stupid."
+    cs "...The Youtube Poop, actually. I realize that sounded kinda stupid."
     n "CS turns around and walks away."
     show cs flipped at mid_left with move
     show copguycrawl at mid_right with moveinbottom

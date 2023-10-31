@@ -1076,7 +1076,7 @@ label true_ending_alt:
     n "CS looks at the monitor, which has a sticky note that says \"From LTT\"."
     show cs happy at mid_left with moveinleft
     cs "Oh my goodness, Linus got me a new PC!"
-    n "There is also a note that says: \"We'd love to have you work with us again virtually, just give us a call\"."
+    n "There is also a note that says: \"We'd love to have you work with us again virtually. Just give us a call!\"."
     cs "I'll have to make sure to call them later!"
     show cs at mid_left
     cs "Before I head off for the night, I'll do a stream real quick."
@@ -1108,7 +1108,7 @@ label ltt_ending_alt:
     n "CS looks at the monitor, which has a sticky note that says \"From LTT\"."
     show cs happy at mid_left with moveinleft
     cs "Oh my goodness, Linus got me a new PC!"
-    n "There is also a note that says: \"We'd love to have you work with us again virtually, just give us a call\"."
+    n "There is also a note that says: \"We'd love to have you work with us again virtually. Just give us a call!\"."
     cs "I'll have to make sure to call them later!"
     show cs at mid_left
     cs "Before I head off for the night, I'll do a stream real quick."

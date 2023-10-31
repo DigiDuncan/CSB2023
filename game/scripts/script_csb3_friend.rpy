@@ -19,13 +19,13 @@ label microcenter:
     cs "Well, you could just always buy more parts like these. I'm sure you have the budget for that."
     linus "No, no, that's too expensive and wasteful. Let me think..."
     linus "Hmmm..."
-    linus "Wait! I just got a brilliant idea! Why don't you go buy more parts for me! We certainly have the budget to do that!"
+    linus "Wait! I just had a brilliant idea! Why don't you go buy more parts for me? We {i}certainly{/i} have the budget to do that!"
     show cs disappointed
     cs "Umm... I literally just said--{nw}"
     linus "Alright! The plan is settled! You can go fetch me some more parts for the ultimate streaming machine, and you get to decide what parts should be in the computer!"
     show cs
     cs "Okay, but, are there any recommendations you would give me for building this? This is {i}your{/i} money, you know."
-    linus "Nah, it's fine. I'm sure you will do well picking out parts. Make sure to get the highest-quality components that you can!"
+    linus "Nah, it's fine. I'm sure you'll do well at picking out parts. Just make sure to get the highest-quality components that you can!"
     cs "Alrighty, I'll get going now."
     stop music fadeout 3.0
     music end
@@ -69,7 +69,7 @@ label microcenter:
     scene gpuaisle with fade
     show cs at mid_left with moveinleft
     n "CS heads over to the GPU aisle."
-    cs "Hmm, we've got AMD and NVIDIA. I wish Linus told me which one I should get..."
+    cs "Hmm, we've got AMD and NVIDIA. I wish Linus had told me which one I should get..."
     n "CS looks at his options."
     hide cs with moveoutright
     scene gpuaisle2 with fade
@@ -394,7 +394,7 @@ label after_fanboy:
     show arceus flipped at mid_left
     with moveinleft
     pakoo "Hey, what are you guys up to?"
-    arceus "Nothing. We work at LTT, going back to our job."
+    arceus "Nothing. We work at LTT. We were just returning from lunch."
     pakoo "Oh? Are you CS?"
     arceus "Uhh, no?"
     pakoo "Oh, Linus brought me here to--"
@@ -432,7 +432,7 @@ label after_fanboy:
     show pakoo
     linus "Alright, well, this is Pakoo, our weapons expert! They should be able to give you the proper weapons training you need!"
     cs "Oh, I see. That's Pakoo."
-    cs "I didn't recognize you, but how come you didn't recognize me?"
+    cs "I didn't recognize you, but how come {i}you{/i} didn't recognize {i}me?{/i}"
     pakoo "Of course I knew who you were, dummy! I was just messing with you!"
     show arceus flipped angry
     arceus "I still thought you were a cop."
@@ -516,7 +516,7 @@ label training:
     pakoo "C'mon, you got this!"
 
     menu:
-        "Do a cool ass jump":
+        "Do a cool-ass jump":
             jump cool_jump
         "Do a regular jump":
             jump reg_jump
@@ -558,7 +558,7 @@ label fire_range:
     show cs angry
     cs "So do I just-- why won't it fire?!"
     show cs
-    pakoo "Okay, woah, woah! Calm down."
+    pakoo "Okay, woah, {i}woah!{/i} Calm down!"
     pakoo "You've gotta turn the safety off."
     pakoo "Be careful where you aim that, as well."
     cs "Alright, I think I've got this now."
@@ -648,7 +648,7 @@ label fire_range:
     show pakoo disappointed
     pakoo "Exaggerated?"
     linus "Whatttt? Look, I need this for my company."
-    linus "There are just too many variables for what could happen, and I need some... protection for those variables!"
+    linus "There are just too many variables for what could happen, and I need some... {i}protection{/i} from those variables!"
     show cs disappointed
     cs "Will I be able to work on editing... ever? That's kinda what I signed up for in the first place, now that you mention this training stuff."
     show pakoo
@@ -705,7 +705,7 @@ label fire_range:
     cs "That reminds me..."
     show m4 at center
     pause 1.0
-    cs "I took this with me too!"
+    cs "I took {i}this{/i} with me too!"
     hide m4
     show arceus worried
     arceus "Holy shit! You took the LMG with you?"
@@ -739,19 +739,19 @@ label fire_range:
     pakoo "No-- damn it, okay, just listen to me for a second."
     pakoo "I've known for a while that Copguy is chasing you down."
     pakoo "I've also known that Copguy has been on the force for 15 years, and that you are the last criminal he wants to bust."
-    pakoo "He's gonna do anything to take you guys down."
+    pakoo "He'll do anything to take you guys down."
     show arceus
     pakoo "Why do you think I showed up here? I know Copguy, and you're all over the place now!"
-    pakoo "You made a video on a channel with like... millions of subscribers! What were you thinking?"
+    pakoo "You appeared in a video on a channel with, like... {i}millions{/i} of subscribers! What were you thinking?"
     cs "Shit, I never really thought about that."
     pakoo "Look, I just lied to Linus so he won't question this, so let me help you."
     arceus "CS? What do you say?"
-    cs "I guess if you are willing to. You have more weapons right?"
-    pakoo "Yeah I--{w=0.5}{nw}"
+    cs "I guess, if you are willing to. You have more weapons, right?"
+    pakoo "Yeah, I--{w=0.5}{nw}"
     show cs flipped
     cs "That's all I needed to hear!"
     show pakoo flipped
-    pakoo "Yeah, I can help you a bit more along the way as well."
+    pakoo "Yeah. I can help you a bit with other things along the way, as well."
     pakoo "Where are we headed to?"
     arceus "Lemme think..."
     arceus "We don't really have a vehicle, and there is a car dealership a block from here..."
@@ -1021,7 +1021,7 @@ label after_cop_fight:
         show pakoo happy
     else:
         show pakoo
-    kitty "Arcie.. This does not surprise me in the slightest."
+    kitty "Arcie... This does not surprise me in the slightest."
     show arceus worried
     arceus "I mean, I {i}did{/i} say I was going to be in trouble with the law at some point in my life."
     if nice_car:
@@ -1031,7 +1031,7 @@ label after_cop_fight:
     else:
         arceus "Well, I know we just met up, but we should probably get going."
     show arceus
-    tate "Alrighty then, we'll follow behind and keep watch."
+    tate "Alrighty, then. We'll follow behind and keep watch."
     cs "Shit yeah, Copguys not dead, he's gonna probably call backup on us."
     pakoo "Let's start heading east."
     show cs
@@ -1062,7 +1062,7 @@ label after_cop_fight:
     sheriff "God damn it what is it this time?"
     copguy "Not only does CS have a group of allies, but he is armed to the teeth."
     copguy "He took down most of my men."
-    sheriff "Ah hell... so this is really {i}that{/i} bad, isn't it..."
+    sheriff "Ah, hell... so this is really {i}that{/i} bad, isn't it..."
     sheriff "We're gonna need some backup."
     copguy "Yeah, I just came to ask about that."
     sheriff "Lemme call the National Guard. Did you see where they were headed?"

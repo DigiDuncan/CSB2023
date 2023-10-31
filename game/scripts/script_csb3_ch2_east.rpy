@@ -129,13 +129,14 @@ label montana:
     show billy car
     cs "Aw, man..."
     show billy car turn
-    billy "We've still got a ways to go! We aren't even a quarter of the way yet!"
+    billy "We've still got a ways to go! We aren't even a {i}quarter{/i} of the way yet!"
     show billy car
     cs "Alright, I'll just... keep looking at the trees pass by."
     billy "Well, good news for you! There is a small town up ahead!"
     billy "I was gonna buy some new supplies for my gadgets, if you guys want to pick out anything."
     cs "Sure! I love buying random things!"
     cs "What about you, Arceus?"
+    n "..."
     cs "Hey, Arc!"
     billy "CS, you should probably leave the dog thing in the back alone."
     n "Arceus immediately jerks straight up."
@@ -300,8 +301,8 @@ label montana:
     cs "Huh?"
     cs "I mean,"
     cs_fakegod "Yeah, that's right, it's me, CSGod!"
-    cs_fakegod "You'd better leave these three alone, or I'll uh, smite you!"
-    cultist "CSGod doesn't smite, he uses YTP mag--{w=0.5}"
+    cs_fakegod "You'd better leave these three alone, or I'll, uh, {i}smite{/i} you!"
+    cultist "CSGod doesn't smite, he uses YTP Mag--{w=0.5}"
     cs_fakegod "Don't tempt your god! I will edit you so hard that you'll look like you came from an AwfulFawful YTP!"
     cultist_2 "We're sorry! We'll leave!"
     n "Billy comes up behind CS with one of his gadgets."
@@ -328,7 +329,7 @@ label montana:
     n "The cultists disappear into the forest."
     stop music fadeout 3.0 
     music end
-    billy "That's the power of the Awesome Augement!"
+    billy "{i}That's{/i} the power of the Awesome Augement!"
     play music "<loop 0>showtime.mp3" volume 0.4
     music "It's Showtime - Toby Fox"
     show cs fakegod at center with moveinright
@@ -356,7 +357,7 @@ label montana:
     play music "<loop 0>mort_farm.mp3" volume 0.4
     music "Mort's Farm - ClascyJitto"
     cs "Can we stop somewhere to eat? We haven't eaten since yesterday."
-    arceus "Yeah, unfortunately, the one store you guys went to didn't have anything edible."
+    arceus "Yeah, unfortunately, the one store you guys {i}did{/i} go to didn't have anything edible."
     billy "Sure, yeah, there's a McDonald's up here in a couple miles."
     scene mcdonalds
     show billy car
@@ -396,7 +397,7 @@ label south_dakota:
     arceus "There's Mount Rushmore, I guess there's Wall Dr--{w=0.5}"
     cs "Oh, hell yeah! Let's go to Mount Rushmore!"
     scene black with fade
-    n "In about an hour, the crew arrives at Mount Rushmore."
+    n "About an hour later, the crew arrives at Mount Rushmore."
     scene rushmore with fade
     n "They all hike up to the viewing spot to get a good look at the founding fathers."
     play music "<loop 0>taiikusai_desu_yo.mp3" volume 0.4
@@ -407,7 +408,7 @@ label south_dakota:
     billy "Wow, to think that we won a war without the Gopher."
     billy "How did they even communicate without the Jupiter Jack?"
     show cs concentrate
-    arceus "It'd be cool if I had my face carved out into a mountain. Wouldn't that be cool, CS?"
+    arceus "It'd be cool if I had my face carved into a mountain. Wouldn't that be neat, CS?"
     show arceus flipped at center
     n "Arceus looks over at CS concentrating on something intensely."
     arceus "CS? Are you okay?"
@@ -422,12 +423,12 @@ label south_dakota:
     arceus "Huh?"
     show cs happy
     cs "There we go! Fixed!"
-    n "Arceus looks back at Mount Rushmore, now with CS, Arceus, and Billy's faces on the mountain."
+    n "Arceus looks back at Mount Rushmore.... which now has CS, Arceus, and Billy's faces carved into the stone!"
     hide cs with moveoutright
     show arceus worried flipped
-    arceus "You scare me, CS. I don't even... want to question how or why."
+    arceus "You scare me, CS. I don't even... {i}want{/i} to question how or why."
     show arceus happy flipped
-    arceus "{size=-12}I do look pretty cool though."
+    arceus "{size=-12}I {i}do{/i} look pretty cool though."
     stop music fadeout 3.0
     music end
     n "The gang gets back in the car before the overwhelming crowd of people engulfs the site after what just happened."
@@ -438,9 +439,9 @@ label south_dakota:
     play music "<loop 0>track4.mp3" volume 0.4
     music Track 4 - Weatherscan
     n "By the time they reach Sioux City, it is already evening."
-    cs "There really is nothing out here, is there?"
-    arceus "Nope. I don't get how people can even live here."
-    billy "We're like halfway through the Midwest. We've only got a couple states left to travel before we are in the heartland."
+    cs "There really {i}is{/i} nothing out here, is there?"
+    arceus "Nope. I don't get how people can even {i}live{/i} here."
+    billy "We're, like, halfway through the Midwest. We've only got a couple states left to travel before we are in the heartland."
     n "Billy follows the Missouri River down until they arrive in Omaha."
     jump nebraska
 
@@ -448,9 +449,9 @@ label nebraska:
     scene omaha
     show billy car
     with fade
-    n "The gang finally hits Omaha, right before sundown."
-    cs "This is the biggest city here? This is pretty small."
-    billy "It looks very quaint. Hopefully we can find a place to stop here."
+    n "The gang finally hits Omaha right before sundown."
+    cs "{i}This{/i} is the biggest city here? This is pretty small."
+    billy "It looks very quaint. Hopefully we can find someplace to stay tonight."
     billy "I have no damn clue where to go here."
     arceus "Let's get out and look for somewhere to eat."
     hide billy car
@@ -476,7 +477,7 @@ label nebraska:
     pakoo "Arceus, you too? And, Billy... Mays?"
     billy "Hi, it's Billy!"
     arceus "Hey, Pakoo."
-    cs "Yeah! I haven't seen you in a while. I never thought you'd live in this place!"
+    cs "Yeah! I haven't seen you in a while. I never thought you'd live in a place like {i}this!{/i}"
     pakoo "I never thought you guys would come down to Omaha. There's, like, nothing here."
     cs "We've been through a lot recently. Do you know somewhere we can eat and rest for the night?"
     n "Pakoo thinks for a moment."
@@ -559,7 +560,7 @@ label iowa:
     arceus "{i}What?!{/i}"
     billy "Who?"
     cs "They have their UFO and--"
-    n "A huge laser beam blasts on the left side of the road, ripping up everything in its path!"
+    n "A huge laser beam blasts along the left side of the road, ripping up everything in its path!"
     play sound "minigames/car/gaster_blast.wav"
     show billy car turn with hpunch
     show billy car turn with vpunch
@@ -576,19 +577,19 @@ label after_ufo:
     music end
     cs "Holy shit! We made it!"
     arceus "That was some good driving, Billy!"
-    billy "That's the power of the 6000 pound car!"
-    n "They continue driving through the end of the Midwest."
+    billy "{i}That's{/i} the power of the 6,000-pound car!"
+    n "They continue driving through to the end of the Midwest."
     scene car plains night
     show billy car
     with fade
-    n "As they are driving through Illinois, they pass by Chicago."
+    n "As they are traveling through Illinois, they pass by Chicago."
     arceus "One day, I'm gonna rule that place."
     cs "What are you... talking about?"
     arceus "It's better than ruling the Earth." # DX: I feel like it'd be funny to wax poetic here about how great chicago is. Not super long, but enough to run the joke home. I love the idea of sleepy arc rambling on about chicago for a bit.
     # Who the fuck wrote that comment, and what the fuck does it mean? - Arc
     cs "Get some sleep, Arc."
     scene black with dissolve
-    n "The gang stops in Indiana for the night then takes off in the morning."
+    n "The gang stops in Indiana for the night. They take off again in the morning."
     jump michigan
 
 label michigan:
@@ -613,14 +614,14 @@ label michigan:
     streetguy "Possibly in Michigan."
     billy "What?"
     streetguy "Like I said, I don't know details."
-    billy "Well, do you know what roads are affected? We need to get to New York."
+    billy "Well, do you know which roads are affected? We need to get to New York."
     streetguy "Last I saw, the route through Michigan should still be open."
     streetguy "That's how I found out about the horseman of the apocalypse."
     streetguy "Michigan having better roads than literally any other place is a sign of the end times."
     billy "Alright, thanks for the help. I'm gonna get going."
     hide billy with moveoutleft
     scene black with dissolve
-    n "Billy gets back in the car and tells the others what the guy said."
+    n "Billy gets back in the car to tell the others what the stranger had told him."
     scene gas_station_2
     show billy car
     with dissolve
@@ -685,7 +686,7 @@ label interstate_69:
     billy "We are in Lansing. They have one of the biggest football schools in the country."
     cs "Really? I've never heard of that before."
     billy "Figures. You don't strike me as the type to know about sports."
-    cs "Yeah, that's fair."
+    cs "You would be correct."
     arceus "God, the people on the sidewalk are going so much faster than us. What is this?"
     billy "I guess you can only get so many cars through a small intersection."
     arceus "Well, if it's so many damn cars, we should be through by now."
@@ -694,11 +695,11 @@ label interstate_69:
     billy "Oh, did Arceus get out to pee?"
     arceus "You can literally see me in your rear-view mirror right now."
     billy "Only if I squint."
-    arceus "I'm not that small, man..." # Me with the goddamn ellipses again lmao - Aria
-    cs "No, guys, that short guy. The one with the red pointy hat."
+    arceus "I'm not {i}that{/i} small, man..." # Me with the goddamn ellipses again lmao - Aria
+    cs "No, look, that short guy. The one with the red pointy hat."
     arceus "Oh, shit, you're right! That looks like a gnome!"
     cs "God, did Blank somehow track me to Michigan?"
-    arceus "Blank is at least three gnomes tall though. That couldn't just be him in a costume."
+    arceus "Blank is at least three gnomes tall, though. That couldn't just be him in a costume."
     cs "You're probably right, but I wouldn't be all that shocked if he learned practical effects for a gag."
     cs "Wait, is he coming this way?!"
     n "The gnome steps out from behind the tree and makes his way to the door of the unoccupied seat of the car, motioning a request to roll down the window."
@@ -838,7 +839,7 @@ label interstate_69:
     show aria flipped at left
     show gnome at center
     show waitress at right
-    aria "Yeah. I got tired of having to ask for chopsticks whenever I came here, and I figured if I spoke Chinese, they'd just assume that I want them."
+    aria "Yeah. I got tired of having to ask for chopsticks whenever I came here, and I figured if I spoke Chinese, they'd just assume that I'd want them."
     scene cafe_sitting_2
     show cs at left
     show billy at center
@@ -850,7 +851,7 @@ label interstate_69:
     show waitress at right
     aria "It did. Not sure that the return on investment made sense effort-wise, but it's a cool skill either way."
     aria "What did you all want to eat?"
-    gnome "Frog Legs sound good."
+    gnome "Frog legs sound good."
     scene cafe_sitting_2
     show cs at left
     show billy at center
@@ -882,7 +883,7 @@ label interstate_69:
     show aria flipped at left
     show gnome at center
     show waitress at right
-    waitress "Pigs are expensive and they have a good union. We just hire a bunch of shrimp instead."
+    waitress "Pigs are expensive and they have a good union. We just hired a bunch of shrimp instead."
     scene cafe_sitting_2
     show cs at left
     show billy at center
@@ -892,7 +893,7 @@ label interstate_69:
     show aria flipped at left
     show gnome at center
     show waitress at right
-    waitress "It wasn't meant to be humorous, but fair enough."
+    waitress "It wasn't meant to be humorous, but, fair enough."
     scene cafe_sitting_2
     show cs at left
     show billy at center
@@ -942,8 +943,8 @@ label interstate_69:
     billy "Well, I died of a heart attack, got buried, came back from the dead, dug my way out of the grave, and tried to go back to normal."
     billy "People just assumed I was an imposter, and I couldn't get any pitchman gigs, so I became an Uber driver."
     billy "Then these guys showed up and I offered to drive them from Washington to New York."
-    billy "I heard CS was a YouTuber, so I was just expecting a MrBeast-style video."
-    billy "Now, I'm stuck hanging out with gnomes, and floating blobs, and going through forest dimensions."
+    billy "I heard CS was a YouTuber, so I was just expecting some MrBeast-style video."
+    billy "Now, I'm stuck hanging out with gnomes and floating blobs, and going through forest dimensions."
     pause 1.0
     billy "No offense."
     scene cafe_sitting
@@ -960,7 +961,7 @@ label interstate_69:
     scene cafe_sitting
     show aria flipped at left
     show gnome at center
-    aria "Would you all like to come rest at my apartment for a while? I have enough space for you all to get some sleep."
+    aria "Would you like to come rest at my apartment for a while? I have enough space for you all to get some sleep."
     aria "I also have a really pretty wooded area behind my apartment I can take you through."
     aria "You've all been through a lot. It'd be a good way to relax before you finish the drive."
     scene cafe_sitting_2
@@ -968,7 +969,7 @@ label interstate_69:
     show billy at center
     show arceus at right
     arceus "That'd be great. It'd be nice to get some proper rest."
-    billy "I'd be happy to be off the road for a while longer. I think I might've had enough of forests for today though..."
+    billy "I'd be happy to be off the road for a while longer. I think I might've had enough of forests for today, though..."
     scene cafe_sitting
     show aria flipped at left
     show gnome at center
@@ -979,7 +980,7 @@ label interstate_69:
     show arceus at right
     cs "Yeah, sure, we'll go over there after we eat."
     show waitress at mid_right with moveinright
-    waitress "Here's everyone's food."
+    waitress "Here's everyone's food. Enjoy your meal!"
     scene black with dissolve
     stop music fadeout 3.0
     music end
@@ -1162,7 +1163,7 @@ label interstate_69:
     billy "We go down the same way we've been going."
     billy "What's your issue? You're short enough that you don't even need to crouch to get under the branches."
     arceus "Fuck off."
-    arceus "I guess you're right, though, we can't really turn back now."
+    arceus "I guess you're right, though. We can't really turn back now."
     n "Everyone begins making their way through the nest of tree branches."
     n "Eventually, they reach the end and the canopy begins to thin out as they reach a path next to a road."
     show creepy_path_exit
@@ -1179,9 +1180,9 @@ label interstate_69:
     arceus "That's a normal road with a sidewalk over there. We're taking that."
     cs "I'm with Arceus on this one."
     cs "I don't think I'll be able to go between two rows of trees without having a panic attack for a while."
-    aria "I think Michigan roads are scarier than any forest, but I'll take you back how you want."
+    aria "I think Michigan roads are scarier than any forest, but I'll take you back on whichever path you want."
     $ achievement_manager.unlock("Analog Horror Protagonist")
-    n "They all walk down and reach the apartment where the car is parked."
+    n "They all walk down and reach the apartment, then make their way to where the car is parked."
     scene aria_apartment_outside
     show billy at left
     show cs
@@ -1196,9 +1197,9 @@ label interstate_69:
     cs "Thanks for letting us rest at your place."
     aria "Anytime."
     aria "Billy, it was nice meeting you. You're welcome to come back and visit the woods again."
-    billy "It was nice meeting you too, I'll definitely come back next time I'm in Michigan."
-    aria "CS, it was nice seeing you again." 
-    aria "Arceus, it was nice finally meeting you in person."
+    billy "It was nice meeting you too. I'll definitely come back next time I'm in Michigan."
+    aria "CS, it was also nice seeing you again." 
+    aria "And Arceus, it was nice finally meeting you in person."
     arceus "You as well, until we went to the woods."
     aria "Yeah, sorry about that..."
     billy "You're fine. It was nice then, too. He's just got a bit of a skill issue, I think."
@@ -1216,34 +1217,34 @@ label interstate_94:
     cs "Especially not for a God damn 69 joke."
     billy "Fine, we'll take 94! All we needed was that first sentence."
     cs "Sorry, guys. I guess I'm just on-edge right now."
-    arceus "I thought it sounded like a good route..."
+    arceus "{i}I{/i} thought it sounded like a good route..."
     scene black with dissolve
     n "The conversation comes to a halt as they continue heading down the highway."
     scene car plains
     show billy car
     with fade
     billy "Looks like there's a traffic jam up ahead. I'm gonna get off and take a detour."
-    arceus "I'm gonna roll a window down now that we're off the highway and it's less noisy."
+    arceus "I'm gonna roll a window down now that we're off the noisy highway."
     play sound "roll_window.ogg" volume 0.7
     pause 1.0 
     arceus "It's crazy hot in here right now."
     cs "Huh, I didn't notice."
     arceus "I am literally always wearing a fur coat, so I guess we have different scales."
-    cs "Yeah, that'll do that. You're also wearing a hoodie. You could take that off."
+    cs "Yeah, that'll do it. You're also wearing a hoodie. You could take that off."
     arceus "If you wanna see me naked, you can just ask..."
     cs "I didn't mean-- {w=0.5}whatever..."
     show billy car turn with vpunch
     play sound "audio/splash.mp3"
     show billy car turn with hpunch
-    n "Soon after Arceus rolled down the window, they hit a large flooded pothole."
+    n "Soon after Arceus rolled down the window, they drive over a large flooded pothole."
     n "Water splashes up from the puddle through the car window."
     show billy car
     arceus "Oh no! My hoodie's a mess now!"
-    cs "It was actively making you too hot, so it shouldn't be a big deal, right?"
-    arceus "The sun was making me too hot. The hoodie was just making me too comfy!"
+    cs "It was actively making you too hot, so now it shouldn't be a big deal, right?"
+    arceus "The {i}sun{/i} was making me too hot. The hoodie was just making me too comfy!"
     arceus "We're already on a detour. We can just stop at the next laundromat we see and wash it."
     pause 5.0
-    n "They continue down the road until Arceus notices a laundromat."
+    n "They continue down the road until Arceus spots a laundromat."
     scene mario_outside
     show billy car
     with dissolve
@@ -1263,11 +1264,11 @@ label interstate_94:
     mario "Hey, paisanos! Welcome to my laundromat!"
     show arceus dirty worried flipped
     arceus "Wait, Mario? Why are you here?"
-    mario "Are you surprised? My name's on the sign and my picture's in the window."
+    mario "Why are you surprised? My name's on the sign and my picture's in the window."
     show arceus dirty flipped
     arceus "Yeah, but I assumed it was just a bootleg."
     show arceus dirty worried flipped
-    arceus "Aren't you meant to be saving princesses or plumbing or driving go-karts or competing in the Olympics or whatever it is you do?"
+    arceus "Aren't you meant to be saving princesses or plumbing or driving go-karts or competing in the Olympics or... whatever {i}else{/i} it is that you do?"
     arceus "When did you have time to open a laundromat?"
     mario "All that stuff doesn't pay the bills."
     arceus "I'm pretty sure being a plumber is a decent career."
@@ -1276,7 +1277,7 @@ label interstate_94:
     show arceus dirty flipped
     mario "Miyamoto's my creator, so he gets to choose how the royalties are dispersed."
     mario "It's like a trust fund."
-    mario "He spent all my royalties on his moped, and now I'm stuck running this laundromat."
+    mario "He spent all my royalties on his moped, so now I'm stuck running this laundromat."
     cs "Sorry to hear that."
     arceus "Yeah, that sucks a lot."
     mario "It is what is it."
@@ -1291,7 +1292,7 @@ label interstate_94:
     n "Mario takes out the shoes and tries running the machine, but it doesn't turn back on."
     show mario at right with moveinright
     mario "There are {i}three{/i} signs that say not to put shoes in the machine, and you decide to put these big-ass clown shoes in there?!"
-    mario "You really are a damn clown, I'll tell you that for free."
+    mario "You really {i}are{/i} a damn clown. I'll tell you that for free."
     smiley "The shoes were dirty, and I have a show to get to."
     smiley "Speaking of, I've still gotta head over there."
     smiley "See ya!"
@@ -1303,7 +1304,7 @@ label interstate_94:
     mario "Whatever, what do y'all need?"
     arceus "I just need to wash my hoodie before we get back on the road."
     mario "Alright. Detergent is over in the corner."
-    n "Arceus and the others go to the back corner and wait for the hoodie to wash."    
+    n "Arceus and the others go to the back corner and wait for the hoodie to get clean."    
     n "Mario goes back to quietly sobbing in the back room."
     show mario flipped with determination
     hide mario with moveoutright
@@ -1324,7 +1325,7 @@ label interstate_94:
     cs "{i}You're{/i} Aria? What happened to you?"
     aria "I got different."
     show cs
-    arceus "I imagine we're not getting more detail than that."
+    arceus "I imagine we're not getting more details than that."
     aria "Not in this game."
     arceus "Fair."
     aria "What are you guys doing here?"
@@ -1353,14 +1354,14 @@ label interstate_94:
     violent_jay "We're here to see Mario."
     mario "Hey, paisanos, what can I--" 
     pause 0.5
-    mario "Oh God, more clowns. This is not what I needed today."
+    mario "Oh God, more clowns. This is {i}not{/i} what I needed today."
     shaggy_too_dope "We're not just any clowns, we're Juggalos."
     shaggy_too_dope "And you don't need to worry about us. We're not like Smiley."
     mario "How did you two hear about that? How do you how his name?"
     violent_jay "All clowns are connected."
     violent_jay "We might be Juggalos, but we are still clowns."
     mario "What is it you want with me?"
-    shaggy_too_dope "We want to replace the washing machine."
+    shaggy_too_dope "We want to replace that washing machine."
     violent_jay "We can't let that guy give clowns a bad name."
     violent_jay "Also, we heard about your situation with Miyamoto and all. That's messed up."
     mario "Wahoo! Thank you, I don't know what to say."
@@ -1380,14 +1381,14 @@ label interstate_94:
     show violent_jay at center
     with moveinright
     violent_jay "There he is!"
-    cs "Who, me? Are you guys Insane Clown Posse?! What do you want with me?"
+    cs "Who, me? Wait, are you guys Insane Clown Posse?! What do you want with me?"
     violent_jay "Chill, man. You're just the other clown we detected here."
     show cs worried
     cs "I'm not a clown..."
     shaggy_too_dope "Can't argue with the clown sense. Definitely a clown."
     violent_jay "Why is everybody so worried whenever they see us today?"
     show cs
-    cs "You do call yourself Violent Jay. I'd imagine you're used to it by now."
+    cs "You {i}do{/i} call yourself Violent Jay. I'd imagine you're used to it by now."
     violent_jay "That's fair."
     show mario at right with moveinright
     violent_jay "Anyway, here's the check for the washer. We've gotta head out."
@@ -1404,7 +1405,7 @@ label interstate_94:
     show arceus at mid_left with moveinright
     stop music fadeout 3.0
     music end
-    arceus "Yeah, the hoodie's dry, so we're ready to head out. Here's the money, Mario. Good luck with business."
+    arceus "Yeah, my hoodie's dry, so we're ready to head out. Here's the money, Mario. Good luck with business."
     show cs flipped with determination
     hide cs
     hide arceus
@@ -1420,7 +1421,7 @@ label ohio:
         scene car plains
         show billy car
         with fade
-        n "After that fiasco, they travel through Ohio."
+        n "After that fiasco, they continue their trip, soon passing through Ohio."
         show scott_border
         play music "<loop 0>breakout.mp3" volume 0.3  
         music Breakout - Shoichiro Sakamoto 
@@ -1451,12 +1452,12 @@ label ohio:
         stop music fadeout 3.0
         music end
         hide scott_border with dissolve
-        arceus "I'm glad it just faded away. I did not want to spray cleaner in my eyes."
+        arceus "I'm glad it just faded away. I did {i}not{/i} want to spray cleaner in my eyes."
     else:
         scene car plains
         show billy car
         with fade
-        n "After that fiasco, they travel through Ohio."
+        n "After that fiasco, they continue their trip, soon passing through Ohio."
         show scott_border
         play music "<loop 0>breakout.mp3" volume 0.3  
         music Breakout - Shoichiro Sakamoto 
@@ -1487,7 +1488,7 @@ label ohio:
         stop music fadeout 3.0
         music end
         hide scott_border with dissolve
-        arceus "I'm glad it just faded away. I did not want to spray cleaner in my eyes."
+        arceus "I'm glad it just faded away. I did {i}not{/i} want to spray cleaner in my eyes."
     jump pennsylvania
 
 label pennsylvania:
@@ -1538,13 +1539,13 @@ label pennsylvania:
     n "The pencil man looks at CS."
     hide cs
     show pencilguy at center
-    pencil "You look like the kinda guy that could win a competition like that. And boy howdy Dixon, do we need it, the current champion hasn't been bested in five years!"
+    pencil "You look like the kinda guy who could win a competition like that. And boy howdy Dixon, do we need it! The current champion hasn't been bested in five years!"
     hide pencilguy with moveoutright
     n "The pencil walks away."
     show cs at center
     cs "A pencil sharpening competition?"
-    n "CS sees visions of an old video in his head."
-    cs "I could totally crush that! I've gotta sign up!"
+    n "Visions of an old video appear in CS's head."
+    cs "I could totally {i}crush{/i} that! I've {i}gotta{/i} sign up!"
     show arceus angry at right with moveinright
     arceus "CS, come on, man. I wanna get to your house so I can--"
     hide cs with moveoutright
@@ -1554,7 +1555,7 @@ label pennsylvania:
     show arceus worried
     arceus "I suppose, I just..."
     n "Arceus thinks for a moment."
-    arceus "Fuck, I have been kind of a jerk during this whole road trip. Maybe I do need to let go."
+    arceus "Fuck, I {i}have{/i} been kind of a jerk during this whole road trip. Maybe I do need to let go."
     show arceus
     billy "That's the spirit! Now, go cheer on your friend!"
     show arceus happy
@@ -1563,7 +1564,7 @@ label pennsylvania:
     show arceus happy flipped with determination
     hide arceus with moveoutright
     n "Arceus runs off after CS."
-    billy "Now, that's the power of good advice!"
+    billy "Now, {i}that's{/i} the power of good advice!"
     scene cc_lobby
     show cashier at center
     show cs at left
@@ -1591,7 +1592,7 @@ label pennsylvania:
     cs "Wait, Digi?!"
     digi "CS?!"
     cs "What are you doing here?"
-    digi "I always compete in the Pencil Sharpening Competition! I was inspired after that video of yours."
+    digi "I {i}always{/i} compete in the Pencil Sharpening Competition! I was inspired after that video of yours."
     cs "Oh, wow, really? Thank you, I guess!"
     cs "Do you think we'll be up against each other?"
     digi "I mean, probably. I'm the champ."
@@ -1642,7 +1643,7 @@ label pennsylvania:
     n "The crowd explodes into uproarious applause."
     hide crowd onlayer broadcast
     host "ON \"GO\", THESE LOVELIES WILL BE COMPETING TO SEE WHO CAN {color=#ffff00}SHARPEN THE MOST PENCILS!"
-    host "THIS TRULY IS THE BATTLE OF A CENTURY, FOLKS! DIGIDUNCAN, OUR LONG TIME CHAMP, GOES UP AGAINST A NEWCOMER, THE AMAZING CS188!"
+    host "THIS TRULY IS THE BATTLE OF A CENTURY, FOLKS! DIGIDUNCAN, OUR LONG-TIME CHAMP, WILL BE GOING UP AGAINST A NEWCOMER, THE AMAZING CS188!"
     play sound "audio/cheer2.mp3"
     show crowd at t_stagescreen onlayer broadcast
     n "The crowd is going wild."
@@ -1863,7 +1864,7 @@ label talktohohsis:
     show phil at mid_left behind cs with moveinleft     
     phil "I can help too, with the power of Flex Tape!"
     show doug at center behind cs with moveinbottom
-    doug "I don't know what I'm doing here, but yeah, good job guys!"
+    doug "I don't know what I'm doing here, but yeah, good job, guys!"
     show cashier at mid_mid_right behind cs with moveinleft
     cashier "Yeah! Go CS!"
     show pakoo happy at center with moveinleft
@@ -1935,7 +1936,7 @@ label talktohohsis:
     cs "Didn't you scam me out of more money than my foundation was worth?"
     ed "Oh, yeah..."
     show cs angry at left
-    cs "What {i}about{/i} my foundation as well?"
+    cs "What {i}about{/i} my foundation, anyway?"
     show cs at left
     cs "Tell you what. If you can fix my foundation, I'll pay you for that, and we put this all behind us."
     rich "What do you think, Ed?"
@@ -1955,7 +1956,7 @@ label talktohohsis:
     copguy "Are you sure?"
     ed "Yep, we got everything under control."
     sheriff "All this for nothing..."
-    sheriff "Whatever, c'mon Copguy, let's go."
+    sheriff "Whatever. C'mon, Copguy, let's go."
     n "The cops get back in their car and speed off."
     show copguy with determination
     hide sheriff with moveoutleft
@@ -1965,12 +1966,12 @@ label talktohohsis:
     show cs at mid_right with moveinright
     n "After all that commotion, CS finally steps up to his front door."
     show cs flipped at mid_right
-    n "CS looks back out into the crowd again one more time."
+    n "He looks back out towards the crowd again one more time."
     cs "This is CS..."
     cs "Signing out!"
     play sound "cheers.ogg" volume 0.7
     pause 2.0
-    n "The crowd errupts in cheers as CS finally enters his house."
+    n "The crowd erupts into cheers as CS finally enters his house."
     scene black with dissolve
     pause 1.0
     $ renpy.movie_cutscene("movies/hoh_repair.webm")
@@ -1995,7 +1996,7 @@ label true_ending:
     n "CS looks at the monitor, which has a sticky note that says \"From LTT\"."
     show cs happy at mid_left with moveinleft
     cs "Oh my goodness, Linus got me a new PC!"
-    n "There is also a note that says: \"We'd love to have you work with us again virtually, just give us a call\"."
+    n "There is also a note that says: \"We'd love to have you work with us again virtually. Just give us a call!\"."
     cs "I'll have to make sure to call them later!"
     if persistent.true_ending:
         menu:
@@ -2058,7 +2059,7 @@ label ltt_ending:
     n "CS looks at the monitor, which has a sticky note that says \"From LTT\"."
     show cs happy at mid_left with moveinleft
     cs "Oh my goodness, Linus got me a new PC!"
-    n "There is also a note that says: \"We'd love to have you work with us again virtually, just give us a call\"."
+    n "There is also a note that says: \"We'd love to have you work with us again virtually. Just give us a call!\"."
     cs "I'll have to make sure to call them later!"
     show cs at mid_left
     cs "Before I head off for the night, I'll do a stream real quick."
@@ -2168,7 +2169,7 @@ label copsathohsis:
     show copguy flipped at center with moveinleft
     cs "Here they are! They scammed me out of my money!"
     n "Copguy cuffs the HoH SiS members and pulls out his walkie."
-    copguy "We got them, sheriff. Time to bring them to the slammer."
+    copguy "We got 'em, Sheriff. Time to put 'em in the slammer."
     hide copguy
     hide rich
     hide ed

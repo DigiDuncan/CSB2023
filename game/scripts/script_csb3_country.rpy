@@ -8,7 +8,7 @@ label england_menu:
     python:
         locations = []
         if not ramsay_check:
-            locations.append(("Go On {i}Hell's Kitchen{/i}", "hell_zone"))
+            locations.append(("Go on {i}Hell's Kitchen{/i}", "hell_zone"))
         if not gear_check:
             locations.append(("Go on {i}Top Gear{/i}", "top_zone"))
         if not tom_check:
@@ -30,7 +30,7 @@ label japan_menu:
         if not anime_check:
             locations.append(("Go on an anime adventure", "anime_adventure"))
         if not karaoke_check:
-            locations.append(("Go sing some karaoke", "karaoke"))
+            locations.append(("Sing some karaoke", "karaoke"))
         if not miku_check:
             locations.append(("Have some fun with Miku", "miku_pizza"))
         if not locations:
@@ -44,7 +44,7 @@ label sweden_menu:
         if not lights_check:
             locations.append(("Go see the Aurora Borealis", "aurora_borealis"))
         if not ikea_check:
-            locations.append(("Go to Ikea", "ikea"))
+            locations.append(("Check out Ikea", "ikea"))
         if not joel_check:
             locations.append(("Find Joel", "joel"))
         if not locations:
@@ -75,7 +75,7 @@ label knocked_out:
     n "CS sits there for a minute, trying to recollect his memory."
     cs "So I went to go work at LTT, after I..."
     cs "What did I do before that?"
-    n "The news starts playing on the TV in CS' room, explaining how three criminals broke out of prison a couple days ago."
+    n "The news starts playing on the TV in CS' room, explaining how three criminals broke out of prison a couple of days ago."
     show cs disappointed metal4
     cs "Oh, shoot! Yeah, I went to prison and met Arceus and Anno! I need to get out of here!"
     hide cs with moveoutright
@@ -98,7 +98,7 @@ label knocked_out:
     scene canada_block
     show cs disappointed at left
     with fade
-    cs "Ah, shit, I need to really get out of here before the cops catch up with me."
+    cs "Ah, shit. I need to really get out of here before the cops catch up with me."
     cs "I hope Linus left me enough money to travel, otherwise I'm probably screwed."
     cs "Man, I hope that Arceus and Anno are okay too. I wonder what happened to them..."
     hide cs with moveoutright
@@ -120,7 +120,7 @@ label knocked_out:
     show cs at left with moveinleft
     benrey "Hey, do you have your Pass{w=0.5} Port?"
     show cs worried
-    cs "Oh shiiiiiiiiiiiiiiiiiit."
+    cs "Oh, shiiiiiiiiiiiiiiiiiit."
     benrey "You can't get on the plane without your Pass{w=0.5} Port."
     show cs disappointed
     cs "I'm sorry, I don't have one. Can you, like, give me one?"
@@ -140,7 +140,7 @@ label england_travel:
     benrey "Try checking your pocket."
     n "CS puts his hand in his pocket and pulls out a Canadian passport."
     show cs
-    cs "Oh, well look at that!"
+    cs "Oh! Well, look at that!"
     benrey "See? I told you! Now let's get you your ticket."
     n "CS hands the ticket man his money."
     benrey "Alright, your plane is actually leaving here in about 15 minutes."
@@ -235,7 +235,7 @@ label japan_travel:
     benrey "Try checking your left shoe."
     n "CS takes off his left shoe and pulls out a Canadian passport."
     show cs
-    cs "Oh, what in the world?"
+    cs "Oh! What in the world?"
     benrey "See? I knew it! Now let's get you your ticket."
     n "CS hands the ticket guy his money."
     benrey "Alright, your plane is actually leaving here in about 10 minutes."

@@ -36,23 +36,23 @@ label car_dialogue:
     cs "Are you a furry?"
     arceus "I mean, I {i}am{/i} furry."
     cs "You know what I mean."
-    arceus "Is it really being a furry if I'm literally not a human?"
+    arceus "Is it {i}really{/i} being a furry if I'm literally not a human?"
     cs "Fair point."
 
     pause 1.0
 
     cs "You know, I can drive, Billy."
     billy "This is {i}my{/i} car!"
-    cs "Well, yeah, but if you don't want to drive the whole way..."
+    cs "Well, {i}yeah,{/i} but, if you don't want to drive the whole way..."
     billy "No, I'm good. You're in {i}my{/i} car, and that means {i}I'll{/i} drive!"
-    cs "Alright, man, I just don't feel like we paid you enough for this."
-    billy "Everything I sell, it's always $19.95!"
+    cs "Alright, man... I just don't feel like we paid you enough for this."
+    billy "Everything I sell is always $19.95!"
     cs "Well, thanks, man."
-    billy "That's the power of friendship!"
+    billy "{i}That's{/i} the power of friendship!"
 
     pause 1.0
 
-    digi "CS, how did you actually beat me in the pencil sharpening contest?"
+    digi "CS, how {i}did{/i} you beat me in the pencil sharpening contest?"
     digi "I have, like, robotic augments."
     cs "Digi, you said you were inspired by me, correct?"
     digi "Yeah..."
@@ -76,9 +76,9 @@ label car_dialogue:
 
     cs "How long is this drive?"
     arceus "You sound like a child asking their mom if they're at Disney World yet."
-    cs "I'm sorry, man, I just want to get home."
+    cs "I'm sorry, man. I just want to get home."
     billy "It's quite a ways away, still!"
-    cs "Aw man..."
+    cs "Aw, man..."
     arceus "Listen, at least the cops aren't after us this time."
     billy "What?"
     digi "Huh?"
@@ -104,15 +104,15 @@ label car_dialogue:
     cs "Well, I pay for the whole Creative Cloud."
     digi "Why? Isn't that super expensive?"
     arceus "You know, I can get you the whole suite for free."
-    cs "No, no, I know, I just don't feel like I should."
+    cs "No, no, I know. I just don't feel like I should."
     arceus "Yarr."
-    cs "No, thank you, I understand what you were insinuating."
+    cs "No, thank you. I understand what you were insinuating."
     arceus ";)"
     billy "How much are you paying for it?"
     cs "Like $50 a month..."
     digi "That's fucking insane!"
     billy "Unbelievable! I wouldn't pay more than $19.95!"
-    billy "And buy one get one free!"
+    billy "And buy one, get one {i}free!{/i}"
     cs "What would I do with two Adobe suites?"
     billy "What would you do with two Grater Platers?"
     cs "Fair enough."
@@ -142,10 +142,10 @@ label car_dialogue:
     cs "Yeah, I've been thinking, what if, like, I took the other job Linus gave me?"
     arceus "What do you mean?"
     cs "Oh, Linus wanted me to build him a stream machine."
-    arceus "Ah, I see, that sounds cool."
+    arceus "Ah, I see. That sounds cool."
     cs "I was thinking about what would have happened if I'd done that."
     cs "I might've, like, gotten into a fight and went to the hospital or something."
-    cs "And then travelled the world!"
+    cs "And then traveled the world!"
     arceus "That's very... descriptive."
     cs "What I love about the Butterfly Effect is that that might've actually happened!"
 
@@ -170,8 +170,8 @@ label car_dialogue:
     cs "Oh, hey, Linus. It's me, CS!"
     cs "I'm sorry about the cop scenario. I had an issue with a company called HoH SiS where they scammed me, and I kinda beat up their workers."
     digi "CS, what the hell did you do?"
-    linus "It's all good. I heard that the cops were looking for them anyway."
-    linus "I'm sorry to hear about all that. I hope you are doing well."
+    linus "Oh, HoH SiS? I heard that the cops were looking for them anyway."
+    linus "I'm sorry to hear about all that, though. I hope you are doing well now."
     cs "We're doing okay!"
     linus "That's good. I hope to hear from you again."
 
@@ -190,7 +190,7 @@ label car_dialogue:
 
     arceus "Hey, remember that pizza place we went to?"
     cs "Yeah, why?"
-    arceus "Well, we spent the night there, and I could have {i}sworn{/i} there was someone watching us."
+    arceus "Well, when we spent the night there, I could have {i}sworn{/i} there was someone watching us."
     cs "Oh, really? Like, when we were sleeping?"
     arceus "Yeah, I think I saw this dude with a funky hat, and he had a camera."
     cs "That's really creepy."
@@ -224,7 +224,7 @@ label car_dialogue:
     billy "No, fuck you! {i}I'm{/i} the real Billy!"
     cs "Yeah, dude from the radio, you sound like an imposter."
     arceus "sus{w=0.25}{nw}"
-    tv_billy "And you sound like that one guy who I sold a laptop to from his old-ass TV!"
+    tv_billy "And {i}you{/i} sound like that one guy who I sold a laptop to from his old-ass TV!"
     cs "No clue what are you talking about."
     n "Billy turns off the Jupiter Jack for a while."
 
@@ -238,7 +238,7 @@ label car_dialogue:
 
     cs "Man, we should have a podcast or something."
     arceus "No, no we shouldn't."
-    cs "What do you mean? We're just chatting right now and I think it's pretty funny!"
+    cs "What do you mean? We're just chatting right now, and I think it's pretty funny!"
     arceus "You only think it's funny because we're the ones talking."
     arceus "Every group of idiot friends thinks they're funny enough to have a podcast, and 99 percent of the time, they're wrong."
     billy "Yeah, I gotta agree with him on this one. I don't think anyone would find this funny."
@@ -275,7 +275,7 @@ label car_dialogue:
 
     pause 1.0
 
-    cs "I spy with my little eye something blue."
+    cs "I spy, with my little eye, something blue."
     arceus "Is it the car?"
     cs "Yeah..."
 
@@ -283,10 +283,10 @@ label car_dialogue:
 
     cs "Did you know you can buy 500,000 plastic straws on AliBaba for like $50?"
     arceus "Why... would you?"
-    cs "I don't know, you just can."
+    cs "I don't know, you just {i}can.{/i}"
     billy "That's an amazing deal!"
-    arceus "I think that's for like, restaurants."
-    cs "I guess, but, like, that'd be funny to do, right?"
+    arceus "I think that's meant for, like, restaurants."
+    cs "I guess, but, like, that'd still be funny to do, right?"
     arceus "...no?"
     cs "Yeah, you're probably right."
 
@@ -373,7 +373,7 @@ label car_dialogue:
     cs "Where the fuck did you get a Rubik's cube?"
     arceus "Man, we've been a lot of places the last few days. I don't remember exactly where I got a Rubik's cube."
     cs "I need to learn to stop asking questions."
-    arceus "That you do."
+    arceus "That, you do."
 
     pause 1.0
 
@@ -381,7 +381,7 @@ label car_dialogue:
     tv_billy "Hi, Billy Mays here for Smacid!"
     billy "What the actual fuck?"
     tv_billy "The fast and easy way to smash stomach pain from the source!"
-    billy "What is this shit? I would never sell this scammy crap!"
+    billy "What is this shit? I would {i}never{/i} sell this scammy crap!"
     n "Billy changes the channel on the Jupiter Jack."
 
     pause 1.0
@@ -398,10 +398,10 @@ label car_dialogue:
     n "Arceus temporarily disables the Jupiter Jack."
     digi "Thank you, Arc."
     billy "What the actual fuck? I'm gonna throw you all out of this car!"
-    cs "Now I'm curious, what was Pakoo talking about, Digi?"
+    cs "Now I'm curious. What was Pakoo talking about, Digi?"
     digi "Look, I'll tell you later. I don't want to think about it."
     n "The radio comes back on."
-    pakoo "--and, yeah, it's like the best video ever. Thank you, Digi. I unironically love that video."
+    pakoo "--and, yeah, it's, like, the best video ever. Thank you, Digi. I unironically love that video."
     digi "Sure, Pakoo."
 
     pause 1.0
@@ -426,16 +426,16 @@ label car_dialogue:
     pause 1.0
 
     billy "Hi, Billy Mays here! No..."
-    billy "Hi Billy Mays... No..."
+    billy "Hi, Billy Mays... No..."
     billy "Billy Mays here! For the... No..."
     cs "You okay, man?"
     billy "I just try to practice my infomerical voice a few times a day."
     billy "Recently, I've felt like I've been losing my charm."
     digi "Did somebody say charm?"
-    billy "Hold on, I think I got it."
-    billy "Hi, Billy Mays here, for Charm! The fast and easy way to play all of your rhythm games, in one engine."
+    billy "Hold on, I think I've got it!"
+    billy "Hi, Billy Mays here, for {i}Charm!{/i} The fast and easy way to play all of your rhythm games, in one engine."
     digi "Dude, that was amazing! Can I record you saying that next time?"
-    billy "Sure! I can do a commerical for Charm if you want. I'm kinda sparse on new products these days."
+    billy "Sure! I can do a commerical for {i}Charm{/i} if you want. New product pitches are pretty sparse these days."
     digi "Hell yeah!"
 
     pause 1.0
@@ -469,7 +469,7 @@ label car_dialogue:
     billy "Hi, it's Billy!"
     mean "Hello, Mr. Mays! Is Digi with you?"
     digi "What the fuck, Mean. How did you know I was with Billy?"
-    mean "Bro, I'mma keep it a hundred, I was just calling random numbers until I got you."
+    mean "Bro, I'mma keep it a hundred. I was just calling random numbers until I got you."
     mean "Also, turn on your ringer. I called {i}you{/i} first."
     n "Digi checks his phone."
     digi "Whoops."
@@ -496,14 +496,14 @@ label car_dialogue:
 
     pause 1.0
 
-    n "The guys in the back start looking through Billy's gadgets."
+    n "The guys in the back start looking through Billy's various tools."
     show billy car turn
     billy "Hey! What are you guys doing back there?"
     cs "Nothing! I just dropped something."
     show billy car
     billy "Alright. You'd better not mess with my gadgets!"
     digi "Shhh! Don't say anything!"
-    cs "Okay, I got it. Arceus, roll down the window."
+    cs "Okay, I've got it. Arceus, roll down the window."
     play sound "<from 0 to 1>roll_window.ogg" volume 0.7
     pause 5.0
     cs "Alright, you ready?"
