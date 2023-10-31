@@ -705,7 +705,7 @@ label fire_range:
     cs "That reminds me..."
     show m4 at center
     pause 1.0
-    cs "I took {i}this{/i} with me too!"
+    cs "I took {i}this{/i} with me, too!"
     hide m4
     show arceus worried
     arceus "Holy shit! You took the LMG with you?"
