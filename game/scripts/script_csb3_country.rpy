@@ -69,7 +69,7 @@ label knocked_out:
         cs "Wha--"
         cs "What happened? How long have I been out?"
     show cs disappointed metal3
-    cs "Thank God I didn't catch some virus from a global pandemic or something."
+    cs "Thank God I didn't catch some virus from a global pandemic, or something."
     stop sound
     cs "I guess that's the last time I try to do something for LTT."
     n "CS sits there for a minute, trying to recollect his memory."
@@ -141,7 +141,7 @@ label england_travel:
     n "CS puts his hand in his pocket and pulls out a Canadian passport."
     show cs
     cs "Oh! Well, look at that!"
-    benrey "See? I told you! Now let's get you your ticket."
+    benrey "See? I told you! Now, let's get you your ticket."
     n "CS hands the ticket man his money."
     benrey "Alright, your plane is actually leaving here in about 15 minutes."
     cs "Ah, shit, thanks!"
@@ -189,7 +189,7 @@ label sweden_travel:
     n "CS puts his hand in his back pocket and pulls out a Canadian passport."
     show cs
     cs "Oh, didn't know I had this!"
-    benrey "See? I told you! Everyone has a Pass{w=0.5} Port! Now let's get you your ticket."
+    benrey "See? I told you! Everyone has a Pass{w=0.5} Port! Now, let's get you your ticket."
     n "CS hands the ticket dude his money."
     benrey "Alright, your plane is actually leaving here in about 20 minutes."
     cs "Ah, shoot, thanks!"
@@ -236,7 +236,7 @@ label japan_travel:
     n "CS takes off his left shoe and pulls out a Canadian passport."
     show cs
     cs "Oh! What in the world?"
-    benrey "See? I knew it! Now let's get you your ticket."
+    benrey "See? I knew it! Now, let's get you your ticket."
     n "CS hands the ticket guy his money."
     benrey "Alright, your plane is actually leaving here in about 10 minutes."
     cs "Ah, shucks, thanks!"
@@ -316,7 +316,7 @@ label england_first:
     play music "<loop 0>stal.mp3" volume 0.4
     arceus "Hey, CS? Is that you?"
     show cs
-    cs "Oh my goodness! Why-- How are you here?"
+    cs "Oh, my God! Why-- How are you here?"
     show arceus happy
     arceus "I live here with my girlfriend now! What are {i}you{/i} doing here?"
     show arceus
@@ -370,8 +370,8 @@ label england_second:
     scene britport with fade
     show cs at mid_left with moveinleft
     cs "Well, I picked an English-speaking country this time."
-    cs "It's a bit of fresh air again to understand most people once again."
-    cs "I honestly forgot why I am on this big vacation, but it's been fun so far!"
+    cs "Being able to understand what people are saying again is a breath of fresh air."
+    cs "I honestly forgot why I'm even on this big vacation, but it's been fun so far!"
     hide cs with moveoutright
     scene black with dissolve
     n "CS walks out of the airport."
@@ -381,7 +381,7 @@ label england_second:
     play music "<loop 0>stal.mp3" volume 0.4
     arceus "Hey CS? Is that you?"
     show cs
-    cs "Oh my goodness! Why-- How are you here?"
+    cs "Oh, my God! Why-- How are you here?"
     show arceus happy
     arceus "I live here with my girlfriend now! What are you doing here?"
     show arceus
@@ -389,7 +389,7 @@ label england_second:
     arceus "Ah."
     arceus "So, um..."
     arceus "Do you need a place to stay?"
-    cs "I guess so, I have some money but I don't know what hotels are like here."
+    cs "I guess so. I have some money, but I don't know what hotels are like here."
     show arceus happy
     arceus "You could come and live with me and Kitty for a while! I'm sure she wouldn't mind."
     show cs happy
@@ -412,7 +412,7 @@ label arceus_place:
     show arceus flipped at center with moveinleft
     show cs at left with moveinleft
     arceus "Here we are. Home sweet home."
-    cs "This is a house? It looks like the size of an apartment."
+    cs "This is a {i}house?{/i} It looks like the size of an apartment."
     show arceus angry flipped
     arceus "CS, remember we're in the UK?"
     show arceus flipped
@@ -438,20 +438,20 @@ label arceus_place:
     arceus "This is CS, my jail bud--{w=0.25} I mean, my friend! You remember that guy who made the YTPs?"
     kitty "Oh, yeah. Isn't he kinda famous?"
     cs "I wouldn't say that..."
-    if japan_check:
+    if japan_check or sweden_check:
         arceus "He's deciding to visit England, so I wanted to invite him to stay here."
         arceus "Is that okay?"
         kitty "Yeah, but, how long will he be here for?"
-        cs "Not too long I don't think. I just like this country and wanted to take a vacation here."
+        cs "Not too long, I don't think. I just like this country and wanted to take a vacation here."
         show arceus happy flipped
-        arceus "Well, let's make some dinner, and we can find fun things here to do!"
+        arceus "Well, let's make some dinner, then we can find fun things here to do!"
         cs "Sure thing!"
     else:
         arceus "He's broke right now, and I was wondering if he could stay here for a bit."
         kitty "I guess that's fine. How long is he gonna stay here though?"
         cs "It shouldn't be too long. I'm gonna try to find a way to get some money."
         show arceus happy flipped
-        arceus "Why don't we all eat and talk about it?"
+        arceus "Why don't we all talk about it over dinner?"
         cs "That would be great. I'm starving."
     show kitty with determination
     hide arceus
@@ -479,12 +479,12 @@ label hell_zone:
     cs "I wanna go on {i}Hell's Kitchen!{/i}"
     show arceus worried
     arceus "Wat."
-    cs "Yeah! I can go on the show and cook up some crazy meal and win!"
+    cs "Yeah! I can go on the show, cook up some crazy meal, and win!"
     arceus "CS, you realize who the man {i}is{/i} who runs {i}Hell's Kitchen?{/i}"
     cs "Yeah, it's Gordon Ramsay! I love that guy."
     arceus "Yeah, and he's kinda scary."
     cs "Yeah, but that's just because it's a show."
-    cs "I'm sure he's, like, really funny."
+    cs "I'm sure he's actually, like, really funny."
     show arceus
     arceus "Besides, how are you going to get on the show?"
     arceus "Don't you have to submit an application?"
@@ -502,7 +502,7 @@ label hell_zone:
     kitty "Do you think you're gonna win this? It's a pretty tough challenge."
     cs "I think I've got something up my sleeve."
     kitty "If you really think so, I guess we'll see if you get in."
-    cs "Even though I slept on the plane ride here, I am still really tired."
+    cs "Even though I slept on the plane ride here, I'm still really tired."
     cs "I think I'm gonna get some sleep."
     arceus "Is the couch good enough for you? Sorry we don't really have another option right now."
     cs "Yeah, it's all good."
@@ -1133,7 +1133,7 @@ label england_japan:
     cs "Well, thank you so much Arceus for everything, really."
     show arceus happy flipped
     arceus "It's all good man, I loved having you here."
-    arceus "It's also impressive that you made so much money in the short amount of time you were here. You'll probably be set for Japan!"
+    arceus "It's also impressive that you've made so much money in the short amount of time you've been here. You'll probably be set for Japan!"
     show arceus flipped
     cs "Yeah, I honestly don't know how I managed to do most of those things, I was kinda winging it."
     cs "Welp, it looks like my plane is here."
@@ -1172,7 +1172,7 @@ label england_sweden:
     cs "Well, thank you so much, Arceus, for everything, really."
     show arceus happy flipped
     arceus "It's all good, man, I loved having you here."
-    arceus "It's also impressive that you made so much money in the short amount of time you were here. You'll probably be set for Sweden!"
+    arceus "It's also impressive that you've made so much money in the short amount of time you've been here. You'll probably be set for Sweden!"
     show arceus flipped
     cs "Yeah, I honestly don't know how I managed to most of those things. I was kinda winging it."
     cs "Welp, it looks like my plane is here."
@@ -1270,7 +1270,7 @@ label anime_adventure:
         with fade
         show cs at left with moveinleft
     else:
-        cs "Unfortunately, I don't have any money to spend of this kinda stuff."
+        cs "Unfortunately, I don't have enough to spend of this kinda stuff."
         cs "If I ever return with some more money, I'll have to get something from here."
         show cs flipped with determination
         hide cs with moveoutleft
