@@ -202,15 +202,15 @@ label play_pencilgame:
     if archack:
         if _return > (DIGI_SCORE - 70):
             $ achievement_manager.unlock("Pencil Sharpening Day!")
-            jump win_pencil
+            $ renpy.jump(minigame_win)
         else:
-            jump lose_pencil_game
+            $ renpy.jump(minigame_loss)
     else:
         if _return > DIGI_SCORE:
             $ achievement_manager.unlock("Pencil Sharpening Day!")
-            jump win_pencil
+            $ renpy.jump(minigame_win)
         else:
-            jump lose_pencil_game
+            $ renpy.jump(minigame_loss)
 
 label pencilgame_done:
     show arceus

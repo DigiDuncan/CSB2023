@@ -1122,13 +1122,18 @@ default party_2 = "tate"
 default party_3 = "digi"
 default party_4 = "arceus"
 default ucn_bg = "images/bg/fnaf_office.png"  # DX: There is currently no way to set these.
-default ucn_music = "minigames/pencil/rude_buster.mp3"
+default ucn_music = "minigames/pencil/rude_buster.mp3"  # "
 default ucn_scale = 1.0
 default cont = False
+
+# Minigames
+default minigame_win = "secret"
+default minigame_loss = "secret"
 
 default typewriter_text = "Hello, world!"
 
 python early:
+    # BAD END
     def parse_bad_end(lexer):
         text = lexer.string()
         label = lexer.string()
@@ -1157,6 +1162,29 @@ python early:
         name = "bad_end",
         parse = parse_bad_end,
         execute = execute_bad_end,
+        block = False
+    )
+
+    # MINIGAME
+    def parse_minigame(lexer):
+        label = lexer.string()
+        win = lexer.string()
+        loss = lexer.string()
+
+        return (label, win, loss)
+
+    def execute_minigame(parsed_object):
+        global minigame_win
+        global minigame_loss
+        label, win, loss = parsed_object
+        minigame_win = win
+        minigame_loss = loss
+        renpy.jump(label)
+
+    renpy.register_statement(
+        name = "minigame",
+        parse = parse_minigame,
+        execute = execute_minigame,
         block = False
     )
 

@@ -566,7 +566,7 @@ label iowa:
     show billy car
     arceus "Shit, this is bad..."
     cs "Billy, you need to switch lanes when it charges up!"
-    jump play_cargame
+    minigame "play_cargame" "after_ufo" "lose_car_game"
 
 label after_ufo:
     scene car plains
@@ -1669,7 +1669,7 @@ label pennsylvania:
     n "Both competitors hover their hands over the pencils..."
     host "GO!"
     music Rude Buster - Toby Fox
-    jump play_pencilgame
+    minigame "play_pencilgame" "win_pencil" "lose_pencil_game"
 
 label win_pencil:
     hide bad_end_screen

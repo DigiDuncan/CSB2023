@@ -213,10 +213,6 @@ label play_cargame:
 
     if _return == True:
         $ achievement_manager.unlock("Blaster Disaster")
-        jump after_ufo
+        $ renpy.jump(minigame_win)
     else:
-        jump lose_car_game
-
-label cargame_done:
-    show arceus
-    arceus ":3"
+        $ renpy.jump(minigame_loss)

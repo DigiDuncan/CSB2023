@@ -124,7 +124,7 @@ label edit_video:
     cs "Welp, time to get to work!"
     scene black with dissolve
     music Supernova - Laszlo
-    jump play_editgame
+    minigame "play_editgame" "boost" "fired"
 
 label fired:
     $ renpy.movie_cutscene("movies/mymovie_cs.webm")
