@@ -150,6 +150,7 @@ label fired:
     jump new_plan
 
 label boost:
+    $ renpy.mark_label_seen("play_edit_game")
     $ renpy.movie_cutscene("movies/good_cs_ytp.webm")
     scene black
     centered "The next day."

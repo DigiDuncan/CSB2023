@@ -569,6 +569,7 @@ label iowa:
     minigame "play_cargame" "after_ufo" "lose_car_game"
 
 label after_ufo:
+    $ renpy.mark_label_seen("play_car_game")
     scene car plains
     show billy car
     stop music fadeout 3.0
@@ -1672,6 +1673,7 @@ label pennsylvania:
     minigame "play_pencilgame" "win_pencil" "lose_pencil_game"
 
 label win_pencil:
+    $ renpy.mark_label_seen("play_pencil_game")
     hide bad_end_screen
     hide typewriter
     show stage_screen as stage_screen_l at t_stage_screen_l

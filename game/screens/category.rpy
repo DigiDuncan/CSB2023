@@ -39,6 +39,7 @@ screen category_nav():
             # textbutton "Endings" action ShowMenu("endings_welcome")
             textbutton "Jukebox" action ShowMenu("jukebox_welcome"), PauseAudio("music", True)
             textbutton "Endings" action ShowMenu("replay_gallery")
+            textbutton "Minigames" action ShowMenu("minigame_gallery")
             if preferences.developer_mode or persistent.creative_mode:
                 textbutton "Debug Menu" action ShowMenu("debug_menu")
                 textbutton "Ultimate\nCustom Night" action Start("rpg_ucn")
