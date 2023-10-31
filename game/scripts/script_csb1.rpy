@@ -211,7 +211,9 @@ label walmart:
     cs "I've gotta get outta here!"
     hide cs with moveoutright
     play sound "doorslam.ogg"
-    show car_inside with fade
+    scene cs_car_inside
+    show cs at left
+    with fade
     play music "<loop 0>canyon_but_in_the_car.mp3" volume 0.2
     play sound "driving.wav" volume 0.5
     cs "Let's get home before that guy doctors my crotch!"
