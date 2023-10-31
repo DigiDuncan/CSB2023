@@ -1270,7 +1270,7 @@ label anime_adventure:
         with fade
         show cs at left with moveinleft
     else:
-        cs "Unfortunately, I don't have enough to spend of this kinda stuff."
+        cs "Unfortunately, I don't have enough to spend on this kinda stuff."
         cs "If I ever return with some more money, I'll have to get something from here."
         show cs flipped with determination
         hide cs with moveoutleft
@@ -1292,7 +1292,7 @@ label anime_adventure:
     cs "I'm sorry, I really need to get going."
     show cs worried
     cashier "Yeah, I remember! That's from Nekopara, right?"
-    cashier "Wait there. I know the head of NekoWorks, lemme take a picture and send it to them."
+    cashier "Wait here, I know the head of NekoWorks. Lemme take a picture and send it to them."
     hide cs with moveoutright
     play music "<loop 0>chase.mp3" volume 0.4
     music The Chase - Toby Fox
@@ -1348,14 +1348,14 @@ label anime_adventure:
     show cashier at left
     with fade    
     cs "So, yeah. That's why I wear this outfit."
-    cs "You guys better tell {i}no one{/i} about this."
+    cs "You guys better not tell {i}anyone{/i} about this."
     cashier "That was amazing!"
     sayori "Well, that does seem very reasonable."
-    sayori "And, technically, you've been promoting my games for a long time now."
+    sayori "And, technically, this means that you've been promoting my games for a long time now."
     show cs
     cs "Have I?"
-    sayori "Well, based on the dates you gave me, the amount of people who bought Nekopara merch has gone up dramatically."
-    sayori "So, as a token of gratitude, I'm gonna give you a portion of my sales from the past few years."
+    sayori "Well, based on the dates you gave me... During this time, the number of people who bought Nekopara merch increased dramatically."
+    sayori "So, as a token of gratitude, I would like to give you a portion of my sales from the past few years."
     cs "Woah, really?"
     cs "Just for wearing this outfit?"
     sayori "The numbers don't lie."
@@ -1399,7 +1399,7 @@ label karaoke:
     stop music fadeout 3.0
     music end    
     scene black with dissolve
-    n "CS enters the Bar and Karaoke, and makes his way over to the karaoke area."
+    n "CS enters the karaoke bar and makes his way over to the karaoke area."
     scene karaoke_bar_inside with fade
     show cs at mid_left with moveinleft
     cs "Wow, look at this! So many songs to play here!"
@@ -1457,7 +1457,7 @@ label miku_pizza:
     cs "Ugh, can I just talk to Scott?"
     cashier "Who??"
     cs "Scott! The president of Domino's Pizza!"
-    cashier "Man, I'm just the cashier here. You think I know the president?"
+    cashier "Man, I'm just the cashier here. You think I know the {i}president?{/i}"
     if fun_value(20):
         obama "Hi.{w=0.5}{nw}"
     show cs
@@ -1481,7 +1481,7 @@ label miku_pizza:
     cs "I'm cs188, and I want to talk to Scott about the Miku promotion."
     receptionist "Why are you dressed like that?"
     cs "Can people stop asking me that?"
-    receptionist "You know what, if you have the guts to come in here dressed like that and ask directly for the man himself, he's gotta see this."
+    receptionist "You know what? If you have the guts to come in here dressed like that and ask directly for the man himself, he's gotta see this."
     n "The receptionist calls up to Scott's office."
     receptionist "Can I send someone up? He asked to see you directly.{w=1.0} Who is it?{w=0.5} You'll see."
     pause 1.0
@@ -1523,7 +1523,7 @@ label miku_pizza:
     miku "I heard someone was here to see me, so I came up right away."
     scott_pres "How did you get in my office?"
     miku "Your receptionist let me up. She was freaking out a lot, so she must have forgotten to call you."
-    scott_pres "But... you're not... it was a green screen! It was augmented reality! You're not real!"
+    scott_pres "But... you're not-- It was a green screen! It was augmented reality! You're not real!"
     miku "I feel pretty real."
     miku "Anywho, hi, CS! Love your videos."
     cs "You... watch my videos?"
@@ -1545,7 +1545,7 @@ label miku_pizza:
     show miku at right
     with fade
     play music "<loop 0>automatic_love.mp3" volume 0.4
-    miku "... so I said, \"You think that was fast, wait until I sing {i}INTENSE VOICE!\""
+    miku "... so I said, \"You think {i}that{/i} was fast? Wait until I sing {i}INTENSE VOICE!\""
     n "CS laughs."
     cs "Well, Miku, this was very nice, but I need to head on my way."
     miku "Okay! Thanks for sharing lunch with me, this was very nice."
@@ -1555,7 +1555,7 @@ label miku_pizza:
     scene tokyo_street
     show cs at center with moveinleft
     with fade
-    cs "I knew Miku was real!"
+    cs "I {i}knew{/i} Miku was real!"
     cs "That pizza was pretty good too."
     cs "Anyways, what should I do now?"
     jump japan_menu
@@ -1593,8 +1593,8 @@ label japan_leave_airport:
 
 label japan_sweden:
     cs "I think I wanna go to Sweden this time."
-    cs "I know Vinesauce Joel is there, and I have kinda always wanted to meet up with him."
-    cs "Well, if I did the crazy things I did in this country, then I'm sure I can make it in Sweden!"
+    cs "I know Vinesauce Joel is there, and I have always kinda wanted to meet up with him."
+    cs "Well, if I managed to do the crazy things I did in this country, then I'm sure I can make it in Sweden!"
     scene black with dissolve
     n "CS goes and gets his ticket and gets on the plane."
     scene airplane_seats
@@ -1694,12 +1694,12 @@ label sweden:
     cs "That guy looks like he'd be able to help."
     cs "Excuse me sir, do you know where the bus stop is?"
     average_swede "Min svävare är full med ålar."
-    cs "Oh dang, I forgot not many Swedes can speak English. Hopefully I find someone who can."
+    cs "Oh, dang. I forgot not many Swedes can speak English. Hopefully, I'll find someone who does."
     n "As CS says this, he sees a bus drive past and decides to just follow it to the bus stop."
     hide cs with moveoutleft
     pause 2.0
     scene bus_map with dissolve
-    n "As CS looks at the map, he tries to figure out what bus to take."
+    n "CS looks over the map, trying to figure out which bus to take."
     jump sweden_menu
 
 label sweden_second:
@@ -1727,13 +1727,13 @@ label sweden_second:
     cs "That guy looks like he'd be able to help."
     cs "Excuse me, sir, do you know where the bus stop is?"
     average_swede "Min svävare är full med ålar."
-    cs "Oh, dang, I forgot not many Swedes can speak English. Hopefully I find someone who can."
+    cs "Oh, dang. I forgot not many Swedes can speak English. Hopefully, I'll find someone who does."
     n "As CS says this, he sees a bus drive past and decides to just follow it to the bus stop."
     hide cs with moveoutleft
     scene black with dissolve
     pause 2.0
     scene bus_map with dissolve
-    n "As CS looks at the map, he tries to figure out which bus to take."
+    n "CS looks over the map, trying to figure out which bus to take."
     jump sweden_menu 
 
 label aurora_borealis:
@@ -2042,12 +2042,12 @@ label ikea:
     cs "You've been looking for a few {i}days?!{/i} You need to get to sleep."
     cs "Maybe you'll be able to get out if you look when you're more rested."
     pomni "I don't think I will, but maybe you're right."
-    pomni "There are plenty of beds here. Maybe it wouldn't be so bad if I just stayed."
+    pomni "There are plenty of beds here. Maybe it wouldn't be so bad if I just stayed..."
     n "Pomni leaves to go find a bed."
     hide pomni with moveoutleft
     stop music fadeout 3.0
     music end
-    cs "Poor thing. Hopefully she gets some rest quickly."
+    cs "Poor thing. I hope she gets some rest."
     cs "I should find my way back to the exit, though. I don't wanna get lost, too."
     hide cs with moveoutright
     n "CS starts following the exit signs, but he eventually realizes that he's been looking for the exit longer than he had been in the store."
