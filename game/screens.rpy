@@ -329,7 +329,7 @@ screen navigation():
 
         if _in_replay:
 
-            textbutton _("End Replay") action EndReplay(confirm=True)
+            textbutton _("Return to Menu") action EndReplay(confirm=True)
 
         elif not main_menu:
 
