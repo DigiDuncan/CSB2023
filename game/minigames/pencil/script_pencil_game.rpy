@@ -188,7 +188,7 @@ screen pencilgame:
         color "AAAAAA"
     add pencilgame
 
-label play_pencilgame:
+label minigame_pencil:
     window hide
     $ quick_menu = False
     play music "minigames/pencil/rude_buster.mp3" volume 0.5

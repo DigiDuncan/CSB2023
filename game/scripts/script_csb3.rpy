@@ -124,7 +124,7 @@ label edit_video:
     cs "Welp, time to get to work!"
     scene black with dissolve
     music Supernova - Laszlo
-    minigame "play_editgame" "boost" "fired"
+    minigame "minigame_editing" "boost" "fired"
 
 label fired:
     n "Let's see your results."

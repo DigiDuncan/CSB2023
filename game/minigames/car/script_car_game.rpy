@@ -204,7 +204,7 @@ screen cargame:
         repeat
     add cargame
 
-label play_cargame:
+label minigame_car:
     play music "<loop 0>speedy_comet.mp3" if_changed
     window hide
     $ quick_menu = False

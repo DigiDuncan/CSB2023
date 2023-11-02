@@ -156,7 +156,7 @@ screen editgame:
     add "minigames/editing/bg.png"
     add editgame
 
-label play_editgame:
+label minigame_editing:
     window hide
     $ quick_menu = False
     play music "minigames/editing/supernova.mp3" volume 0.25

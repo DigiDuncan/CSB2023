@@ -2,13 +2,13 @@ label lose_car_game:
     bad_end "100 percent\nunsatisfied." "iowa"
 
 label lose_pencil_game:
-    bad_end "You dumb foreskin." "play_pencilgame"
+    bad_end "You dumb foreskin." "minigame_pencil"
 
 label play_edit_game:
-    minigame "play_editgame" "play_editgame" "play_editgame"
+    minigame "minigame_editing" "minigame_editing" "minigame_editing"
 
 label play_car_game:
-    minigame "play_cargame" "play_cargame" "play_cargame"
+    minigame "minigame_car" "minigame_car" "minigame_car"
 
 label play_pencil_game:
-    minigame "play_pencilgame" "play_pencilgame" "play_pencilgame"
+    minigame "minigame_pencil" "minigame_pencil" "minigame_pencil"

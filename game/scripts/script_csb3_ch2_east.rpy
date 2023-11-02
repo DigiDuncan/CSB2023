@@ -567,7 +567,7 @@ label iowa:
     show billy car
     arceus "Shit, this is bad..."
     cs "Billy, you need to switch lanes when it charges up!"
-    minigame "play_cargame" "after_ufo" "lose_car_game"
+    minigame "minigame_car" "after_ufo" "lose_car_game"
 
 label after_ufo:
     $ renpy.mark_label_seen("play_car_game")
@@ -1671,7 +1671,7 @@ label pennsylvania:
     n "Both competitors hover their hands over the pencils..."
     host "GO!"
     music Rude Buster - Toby Fox
-    minigame "play_pencilgame" "win_pencil" "lose_pencil_game"
+    minigame "minigame_pencil" "win_pencil" "lose_pencil_game"
 
 label win_pencil:
     $ renpy.mark_label_seen("play_pencil_game")
