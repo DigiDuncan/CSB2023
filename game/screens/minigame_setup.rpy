@@ -22,7 +22,7 @@ init python:
     Minigame_items = []
     Minigame_items.append(MinigameItem(["EditGame"], "play_edit_game", "{outlinecolor=#000000}{color=#EA71FF}Editing Game{/color}{/outlinecolor}"))
     Minigame_items.append(MinigameItem(["CarGame"], "play_car_game", "{outlinecolor=#000000}{color=#244BB2}Car Game{/color}{/outlinecolor}"))
-    Minigame_items.append(MinigameItem(["PencilGame"], "play_pencil_game", "{outlinecolor=#000000}{color=#F6C715}Asylum Ending{/color}{/outlinecolor}"))
+    Minigame_items.append(MinigameItem(["PencilGame"], "play_pencil_game", "{outlinecolor=#000000}{color=#F6C715}Pencil Game{/color}{/outlinecolor}"))
 
 
 #the locked image for the replay gallery if you're using the gallery you can use the same (if you want to)
