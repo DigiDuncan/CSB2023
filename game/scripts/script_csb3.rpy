@@ -127,6 +127,7 @@ label edit_video:
     minigame "play_editgame" "boost" "fired"
 
 label fired:
+    n "Let's see your results."
     $ renpy.movie_cutscene("movies/mymovie_cs.webm")
     scene inside_ltt with fade
     n "The next day."
@@ -150,6 +151,7 @@ label fired:
     jump new_plan
 
 label boost:
+    n "Let's see your results!"
     $ renpy.mark_label_seen("play_edit_game")
     $ renpy.movie_cutscene("movies/good_cs_ytp.webm")
     scene black

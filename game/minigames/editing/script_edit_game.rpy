@@ -166,9 +166,7 @@ label play_editgame:
 
     if _return >= WIN_PERCENTAGE:
         stop music fadeout 2.0
-        n "Let's see your results!"
         $ renpy.jump(minigame_win)
     else:
         stop music fadeout 2.0
-        n "Let's see your results."
         $ renpy.jump(minigame_loss)
