@@ -65,6 +65,7 @@ init python:
         "Track 3 - Weatherscan": "track3.mp3",
         "New Leaf Title Theme - Kazumi Totaka": "ac_title.mp3",
         #South route
+        "Brick by Brick (Suck my Dick) - cs188": "brick_by_dick.mp3",
         "Tunnely Shimbers - Mr. Sauceman": "tunnely_shimbers.mp3",
         "Hard Drive to Munch You - Mr. Sauceman": "hard_drive.mp3",
         "Al's Penthouse - Andy Blythe": "penthouse.mp3",

@@ -43,6 +43,8 @@ label south:
     cs "Nah, that's too much effort."
     cs "How about..."
     cs "Hold on. I got an idea."
+    play music "brick_by_dick.mp3"
+    music Brick by Brick (Suck my Dick) - cs188
     cs "See those pieces on the ground?"
     show arceus worried
     arceus "What pieces?"
@@ -54,6 +56,8 @@ label south:
     cs "Look, I'm a master builder. You wouldn't understand."
     arceus "Well... does the car even work?"
     cs "Only one way to find out!"
+    stop music fadeout 3.0
+    music end
     scene gasoutside
     show cscar1
     show cscar2
