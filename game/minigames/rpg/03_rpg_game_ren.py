@@ -325,8 +325,8 @@ class AI:
         
         # Run the attack
         answer = what.run(subject, who)
-        print(f"[AI: {self.name}] {subject.name} running attack {what.name} on {sentence_join([t.name for t in who])}...")  # type: ignore
-        renpy.notify(f"{subject.display_name} running attack {what.name} on {sentence_join([t.display_name for t in who])}...")  # type: ignore
+        print(f"[AI: {self.name}] {subject.name} used {what.name} on {sentence_join([t.name for t in who])}...")  # type: ignore
+        renpy.notify(f"{subject.display_name} used {what.name} on {sentence_join([t.display_name for t in who])}...")  # type: ignore
         renpy.pause(1.0)
         return who, answer
 
