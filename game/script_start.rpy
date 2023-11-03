@@ -373,6 +373,8 @@ image cs disappointed metal2 = "characters/cs/disappointedmetal2.png"
 image cs disappointed metal3 = "characters/cs/disappointedmetal3.png"
 image cs disappointed metal4 = "characters/cs/disappointedmetal4.png"
 image cs disappointed flipped = "flip:characters/cs/disappointed.png"
+image cs surprised = "characters/cs/surprised.png"
+image cs surprised flipped = "flip:characters/cs/surprised.png"
 image cs concentrate = "characters/cs/concentrate.png"
 image cs concentrate dark = "characters/cs/concentratedark.png"
 image cs phone = "characters/cs/phone.png"
@@ -945,6 +947,9 @@ image archival_17 = "bg/archival/archival_17.png"
 image archival_18 = "bg/archival/archival_18.png"
 image archival_19 = "bg/archival/archival_19.png"
 
+## Train Route
+image kingman_exterior = "bg/train/kingman_exterior.png"
+
 # Static Images
 image post_it = "post-it.png"
 image ytx = Transform("ytx.png", zoom = 0.333)
@@ -1112,6 +1117,11 @@ default line_9 = ""
 default line_10 = ""
 default line_11 = ""
 default line_12 = ""
+
+# Train route
+default money_stolen = False
+default money_container = ""
+default money_stolen_dialogue_switch = ""
 
 # RPG
 default enemy_1 = "cop"
