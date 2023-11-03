@@ -125,7 +125,7 @@ label train_start_bad:
 label train_route_begin:
 
     n "A little over an hour later, the two arrive at Kingman Amtrak Station."
-    
+
     scene train_route_begin
     show kingman_exterior
     show cscar1
@@ -133,6 +133,11 @@ label train_route_begin:
     show cs at left behind cscar2
     show arceus at right behind cscar2
     with fade
+
+    play music "<loop 0>outdoors.mp3" volume 0.8
+    music Outdoors - Miki Obata
+
+    pause 1.0
 
     arceus "Welp, here we are!"
     show cs disappointed
@@ -155,7 +160,7 @@ label train_route_begin:
         $ money_container = "briefcase"
         $ money_stolen_dialogue_switch = "latch it shut"
 
-    "CS and Arceus get out of the car and grab the {money_container} of money."
+    n "CS and Arceus get out of the car and grab the [money_container] of money."
 
     show kingman_exterior
     with fade
@@ -167,8 +172,8 @@ label train_route_begin:
 
     cs "Oh, right. I guess we won't be needing this for a while."
     play sound "audio/lego_break.WAV"
-    n "CS quickly deconstructs the Lego car. He shoves the colorful little bricks into the {money_container} for later."
-    n "The {money_container} is now full to bursting, but CS just barely manages to {money_stolen_dialogue_switch}."
+    n "CS quickly deconstructs the Lego car. He shoves the colorful little bricks into the [money_container] for later."
+    n "The [money_container] is now full to bursting, but CS just barely manages to [money_stolen_dialogue_switch]."
     show arceus worried
     pause 1.0
     arceus "... You still never explained to me how the fuck you did that."
@@ -176,6 +181,7 @@ label train_route_begin:
     cs "Like I said, I'm a master builder."
     show arceus angry
     arceus "Whatever, man. Let's just go."
+    show cs happy flipped
     hide cs with moveoutleft
     hide arceus with moveoutleft
     scene black with fade
@@ -188,3 +194,5 @@ label train_route_begin:
     tate "Oh no! {w=0.25}You've reached the end of whatever's been programmed in already!"
     show tate srs
     tate "Tell IRL!Tate to finish the story!"
+    show tate
+    tate "Let's go back to the main menu for now."
