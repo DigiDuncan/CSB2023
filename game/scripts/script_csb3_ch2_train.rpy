@@ -134,7 +134,7 @@ label train_route_begin:
     show arceus at right behind cscar2
     with fade
 
-    play music "<loop 0>outdoors.mp3" volume 0.8
+    play music "<loop 0>outdoors.mp3" volume 1
     music Outdoors - Miki Obata
 
     pause 1.0
@@ -188,7 +188,8 @@ label train_route_begin:
     
     
 
-
+    play music "<loop 0>ochre_woods_day.mp3" volume 0.8
+    music Ochre Woods ~ Day - Miki Obata
     show tate shock at center
     tate "{bt=a3-p10-s4}Awawawawa!"
     tate "Oh no! {w=0.25}You've reached the end of whatever's been programmed in already!"
