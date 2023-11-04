@@ -356,6 +356,10 @@ label train_route_begin:
     scene black with fade
     n "The three all board the train."
     n "CS and Arceus buy tickets from the staff on board."
+
+    # TODO: amtrak stewardess sprite leading the group.
+
+    
     
 
     show tate shock at center
