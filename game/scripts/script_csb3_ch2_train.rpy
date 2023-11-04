@@ -33,20 +33,20 @@ label train_start_good:
     arceus "...Yeah!"
     arceus "That sounds like a great idea!"
     arceus "We could just relax and watch the world go by!"
-    arceus "Nobody has to drive, {w=0.25}we won’t have to worry about finding rest stops, {w=0.25}{i}and{/i} I won’t have a panic attack inside of a flying metal tube!"
+    arceus "Nobody has to drive, {w=0.25}we won't have to worry about finding rest stops, {w=0.25}{i}and{/i} I won't have a panic attack inside of a flying metal tube!"
     cs "I dunno... {w=0.25}How long would it take, though? {w=0.25}A flight would only be a few hours."
-    cs "Don’t trains have to stop a lot? {w=0.25}Wouldn’t it be more expensive, too?"
+    cs "Don't trains have to stop a lot? {w=0.25}Wouldn't it be more expensive, too?"
     show arceus worried flipped 
     arceus "Come {i}on,{/i} man! {w=0.25}I just want to unwind!"
-    arceus "We don’t even need to worry about how much it’ll cost, remember?"
+    arceus "We don't even need to worry about how much it'll cost, remember?"
     show arceus happy flipped 
     arceus "We're filthy stinkin' {i}rich!{/i}"
-    n "CS can sense that Arceus probably won’t take \"no\" for an answer."
-    cs "Well... {w=0.5}I suppose we {i}do{/i} have all the money we could ever need, {w=0.25}and we don’t really have any reason to rush getting home..."
+    n "CS can sense that Arceus probably won't take \"no\" for an answer."
+    cs "Well... {w=0.5}I suppose we {i}do{/i} have all the money we could ever need, {w=0.25}and we don't really have any reason to rush getting home..."
     show cs surprised flipped 
-    cs "And I’ve never been on a cross-country train before..."
+    cs "And I've never been on a cross-country train before..."
     show cs happy flipped
-    cs "Yeah, you know what? {w=0.25}Let’s do it!"
+    cs "Yeah, you know what? {w=0.25}Let's do it!"
     arceus "Let's go!"
 
     show cs happy
@@ -98,20 +98,20 @@ label train_start_bad:
     arceus "...Yeah!"
     arceus "That sounds like a great idea!"
     arceus "We could just relax and watch the world go by!"
-    arceus "Nobody has to drive, {w=0.25}we won’t have to worry about finding rest stops, {w=0.25}{i}and{/i} I won’t have a panic attack inside of a flying metal tube!"
+    arceus "Nobody has to drive, {w=0.25}we won't have to worry about finding rest stops, {w=0.25}{i}and{/i} I won't have a panic attack inside of a flying metal tube!"
     cs "I dunno... {w=0.25}How long would it take, though? {w=0.25}A flight would only be a few hours."
-    cs "Don’t trains have to stop a lot? {w=0.25}Wouldn’t it be more expensive, too?"
+    cs "Don't trains have to stop a lot? {w=0.25}Wouldn't it be more expensive, too?"
     show arceus worried
     arceus "Come {i}on,{/i} man! {w=0.25}I just want to unwind!"
-    arceus "We don’t even need to worry about how much it’ll cost, remember?"
+    arceus "We don't even need to worry about how much it'll cost, remember?"
     show arceus happy
     arceus "We're filthy stinkin' {i}rich!{/i}"
-    n "CS can sense that Arceus probably won’t take \"no\" for an answer."
-    cs "Well... {w=0.5}I suppose we {i}do{/i} have all the money we could ever need, {w=0.25}and we don’t really have any reason to rush getting home..."
+    n "CS can sense that Arceus probably won't take \"no\" for an answer."
+    cs "Well... {w=0.5}I suppose we {i}do{/i} have all the money we could ever need, {w=0.25}and we don't really have any reason to rush getting home..."
     show cs surprised
-    cs "And I’ve never been on a cross-country train before..."
+    cs "And I've never been on a cross-country train before..."
     show cs happy
-    cs "Yeah, you know what? {w=0.25}Let’s do it!"
+    cs "Yeah, you know what? {w=0.25}Let's do it!"
     arceus "Let's go!"
 
     show cs
@@ -322,7 +322,7 @@ label train_route_begin:
     n "The two wait a few moments before boarding while the incoming passengers exit the train."
     pause 2.0
     tate_offscreen "{bt=a3-p10-s4}{size=+24}Alllllll aboarrrrrrd!!"
-    cs "Welp, I guess that’s our--{nw}"
+    cs "Welp, I guess that's our--{nw}"
     show tate flipped at right with moveinright
     pause 1.0
     show cs worried
@@ -394,7 +394,7 @@ label train_route_begin:
     amtrak_conductor "Or we'll leave {i}both{/i} of you at the next station."
     show tate sad
     tate "Yes, sir..."
-    amtrak_conductor "Let’s get a move on."
+    amtrak_conductor "Let's get a move on."
 
     show amtrak_conductor flipped
     pause 0.5
