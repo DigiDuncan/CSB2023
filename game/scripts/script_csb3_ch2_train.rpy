@@ -241,14 +241,15 @@ label train_route_begin:
     cs "I don't see why not. Not like we have anything else to do."
     arceus "Alrighty, let's go."
     scene black with fade
-    n "CS and Arceus wander around the museum for a little while."
-    n "There aren't many exhibits in such a small building, but there is just enough to look at to pass the remaining time."
+    n "CS and Arceus wander around Kingman Railroad Museum for a little while."
+    n "There aren't many exhibits in such a small building, but there are just enough model trains to look at to pass the remaining time."
     n "About five minutes before the train's expected arrival, the two make their way out onto to the platform."
     
     show kingman_platform_2 with fade
 
-    show arceus flipped at mid_mid_left with moveinleft
-    show cs disappointed at left with moveinleft
+    show arceus flipped at mid_mid_left
+    show cs disappointed at left
+    with moveinleft
     
     cs "... Man, that's some bad luck, though. What are the odds of this place burning down {i}twice?!{/i}"
     show arceus
@@ -271,19 +272,21 @@ label train_route_begin:
     show arceus angry
     arceus "Man, I don't know what word you'd use for throwing someone off of a plane."
     arceus "That's not even a thing you can {i}do.{/i}"
-    arceus "How can a word exist for a thing that's {i}impossible?{/i}"
+    arceus "How can a word exist for a thing that's impossible?"
     show arceus
     show cs surprised
     arceus "Anyway, do you remember that news story about the guy who got duct-taped to his seat during a flight?"
     show arceus worried
     show cs disappointed
-    arceus "... Yeah. That's about the {i}only{/i} thing they could have done to protect themselves and everyone else."
+    arceus "... {w=0.5}Yeah. {w=0.5}That's about the {i}only{/i} thing they could have done to protect themselves and everyone else."
     show cs worried
     cs "Damn, I'd forgotten all about that!"
     cs "What would have happened if it had been on a train?"
     show arceus angry
     arceus "I dunno, man. I'm just gonna assume that they'd kick the bastard off at the next station."
     arceus "I really don't want to think about someone like that being on {i}our--{/i}"
+    stop music fadeout 3.0
+    music end
     show cs
     show arceus flipped
     play music "<loop 0>ochre_woods_day.mp3" volume 0.8
@@ -292,13 +295,16 @@ label train_route_begin:
     n "The conversation is interrupted by the blare of a train horn."
    
     show kingman_train_arrive with fade
-    n "The two watch as the locomotive approaches the station, eventually slowing to a stop."
+    n "The two watch as the locomotive approaches the station and eventually slows to a stop."
     hide cs
     hide arceus
 
     show amtrak_arrive_close with fade
-    show arceus flipped at mid_mid_left with moveinleft
-    show cs at left with moveinleft
+
+    show arceus flipped at mid_mid_left
+    show cs at left
+    with moveinleft
+
     arceus "Welp, there it is."
     n "The two wait a few moments before boarding while the other passengers exit the train."
     pause 1.0
@@ -327,20 +333,24 @@ label train_route_begin:
     cs "Oh, this is Arceus. He and I go {i}way{/i} back."
     show cs
     show arceus happy flipped
-    arceus "Hi, you can just call me Arc."  
+    arceus "Hiya. You can just call me Arc."  
     tate "Well, it's nice to meet ya, Arc."
     show arceus flipped
     tate "I'm Tate. I'm CS's--{w=0.5} uh... "
     show tate sheepish flipped
-    tate "Um... {w=1.0} friend. {w=0.25} Yes."
+    tate "Um... {w=1.0}friend. {w=0.25}Yes."
+    show cs happy
     cs "Yeah! Of course we're friends."
-    tate "Of course!"
+    tate "Of course."
     show arceus worried flipped
+    show tate sad flipped
     n "Arceus raises an eyebrow at this interaction."
     n "He decides that maybe it's better not to ask."
-    tate "A-Anyway. We should probably get going."
+    show cs
+    show tate sheepish flipped
+    tate "A-{w=0.1}Anyway. We should probably get going."
     show tate
-    tate "We don't wanna be stranded here. This train only comes through once a day, after all!"
+    tate "We don't wanna end up stranded here. This train only comes through once a day, after all!"
 
     show cs at mid_offscreen_left
     show arceus flipped at left
@@ -359,22 +369,132 @@ label train_route_begin:
     show tate smug flipped
     tate "Also, I kinda just wanted to do the funny."
     show tate sheepish
-    amtrak_conductor "Yeah, don't do that."
+    amtrak_conductor "Yeah, {w=0.25}don't do that."
     amtrak_conductor "You're on thin ice {i}anyway{/i} after what happened in the dining car."
-    tate "But I just wanted--{nw}"
-    amtrak_conductor "The only reason why you're still on this train is because the new guy won't let us kick you off."
+    tate "But, I just wanted--{nw}"
+    amtrak_conductor "The {i}only{/i} reason why you're still on this train is because the new guy won't let us kick you off."
     tate "Listen, I was just trying to he--{nw}"
     amtrak_conductor "Yeah, {w=0.25}well, {w=0.25}{i}don't."
     amtrak_conductor "Or we'll leave {i}both{/i} of you at the next station."
     show tate sad
     tate "Yes, sir..."
+    amtrak_conductor "Let’s get a move on."
+
+    hide tate
+    hide cs
+    hide arceus
+    with moveoutright
+
+    stop music fadeout 3.0
+    music end
+    scene black with fade
+    n "The group boards the train."
+    n "CS and Arceus buy tickets from the staff on board."
+    n "From there, the trio heads towards the sleeper cars."
+
+    show amtrak_sleeper_corridor
+    with fade
+    
+    # TODO: amtrak stewardess sprite leading the group.
+    show tate at mid_mid_right
+    show cs at left
+    show arceus flipped at mid_mid_left
+    with moveinleft
+
+    show tate flipped
+    tate "... And, {i}this{/i} way is the sleeper car! {w=0.25}Your room is--{nw}"
+    amtrak_stewardess "Tate."
+    show tate
+    tate "Hm?"
+    amtrak_stewardess "You're doing it again."
+    show tate sheepish
+    tate "Doing what again?"
+    amtrak_stewardess "Doing {i}my{/i} job."
+    show tate sad
+    amtrak_stewardess "I know that Mean lets you get away with a lot, but you {i}really{/i} need to let us work."
+    amtrak_stewardess "Why don't you catch up with your friends here until he wakes up?"
+    amtrak_stewardess "{size=-10}Or, why don't {i}you{/i} have a nap, too? {w=0.5}Do you {i}ever{/i} sleep?"
+    tate "Oh... {w=0.25}yeah."
+    tate "Sorry."
+    tate "I guess it {i}has{/i} been a while since I've seen CS. I can stay here for a bit..."
+    show tate sheepish flipped
+    tate "... if you're okay with that."
+    show cs happy
+    cs "Of course!"
+    show arceus worried flipped
+    show cs
+    arceus "Well, while you two are doing that, I {i}really{/i} need to use the can..."
+    amtrak_stewardess "Of course. Right through here, sir."
+    arceus "Thanks."
+    show arceus flipped
+    show tate
+    hide arceus with moveoutright
+    pause 1.0
+    show tate sheepish
+    amtrak_stewardess "I {i}mean{/i} it, Tate."
+    amtrak_stewardess "Be good."
+    tate "Yes, ma'am..."
+    n "The stewardess returns to work."
+
+    show tate sad flipped
+    show cs disappointed at mid_mid_left 
+    with moveinright
+
+    cs "Damn, why's everyone so snippy with you?"
+    cs "What did you {i}do?{/i}"
+    tate "My friend, Mean, usually lets me help out with whatever needs doing. He's not going to wake up for a while, though, so I've been pretty bored."
+    show tate sheepish flipped
+    tate "I thought I'd set up a surprise for him in the dining car, but the other staff didn't like it..."
+    tate "I guess I got a little carried away."
+    show tate sad flipped
+    tate "I hope {i}he{/i} likes it, at least."
+    show cs happy
+    cs "I'm sure he will!"
+    show tate sheepish flipped
+    cs "I hope his first shift goes well, too."
+    tate "Me, too..."
+    tate "I've been so nervous for him. I keep trying to find things to lighten his load, but his coworkers keep telling me, {w=0.25}don't do this, {w=0.25}don't do that..."
+    show cs surprised
+    cs "... {w=0.5}Yeah, {w=0.25}that tracks."
+    show cs disappointed
+    cs "You always {i}were{/i} a little..."
+    n "CS trails off."
+    show tate srs flipped
+    tate "A little...?"
+    show cs worried
+    cs "Just a little, uh--{nw}"
+
+    # TODO: need a sprite for the thief.
+
+    show cs scared at mid_offscreen_left with vpunch
+    show tate shock flipped
+    show cs concentrate
+    n "CS is knocked to the ground as a stranger sprints past him down the corridor!"
+    unknown "Sorry, cat dude! I've gotta {i}run!"
+    tate "Oh my God! Are you alright?!"
+    cs "Yeah... More surprised than anything."
+    show tate shock flipped at left with moveinleft
+    n "Tate helps CS up from the floor."
+
+    show cs concentrate at left
+    show tate sheepish flipped at center
+    with moveinright
+
+    pause 1.0
+    show cs disappointed
+    pause 2.0
+    tate "Y'know, maybe it's our own fault, for just standing out here while people are boarding."
+    tate "Let's go into y'all's room."
+    cs "Yeah, good idea."
+    show tate sheepish
+    pause 1.0
+
+    hide tate
+    hide cs
+    with moveoutright
 
     scene black with fade
-    n "The three all board the train."
-    n "CS and Arceus buy tickets from the staff on board."
-
-    # TODO: amtrak stewardess sprite leading the group.
-    # TODO: amtrak sleeper car corridor bg
+    
     
     
 
