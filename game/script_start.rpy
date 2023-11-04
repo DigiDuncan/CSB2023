@@ -355,6 +355,9 @@ define witch = Character("Witch", callback = renpy.partial(char_callback, name =
 define tate_offscreen = Character("???", callback = renpy.partial(char_callback, name = "tate_offscreen", beep="tate"))
 define amtrak_conductor = Character("Conductor", callback = char_callback)
 define amtrak_stewardess = Character("Stewardess", callback = char_callback)
+define amtrak_npc_1 = Character("Passenger 1", callback = char_callback)
+define amtrak_npc_2 = Character("Passenger 2", callback = char_callback)
+define amtrak_npc_3 = Character("Passenger 3", callback = char_callback)
 
 # Character Images
 ## CS
@@ -491,6 +494,8 @@ image tate sheepish = "characters/tate/tatesheepish.png"
 image tate sheepish flipped = "flip:characters/tate/tatesheepish.png"
 image tate sad = "characters/tate/tatesad.png"
 image tate sad flipped = "flip:characters/tate/tatesad.png"
+image tate stare = "characters/tate/tatestare.png"
+image tate stare flipped = "flip:characters/tate/tatestare.png"
 
 ##Archival
 image k174 = "characters/k174.png"

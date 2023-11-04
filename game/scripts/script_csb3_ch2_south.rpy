@@ -548,6 +548,10 @@ label folded:
     scene insafe with fade
     arceus "Look at all this loot! CS is gonna be so surprised..."
     n "While Arceus is looting the casino, CS continues his search."
+
+    # variable for use in train route.
+    $ money_stolen = True
+
     scene vegasbathroom with fade
     show cs disappointed at center with moveinleft
     cs "Hello? Arceus?"
@@ -763,6 +767,10 @@ label poker3:
         with move
         n "After CS collects his winnings, he finds his way back to the car."
         show cs flipped with determination
+
+        # variable for use in train route.
+        $ money_stolen = False
+
         hide cs
         hide case
         with moveoutleft

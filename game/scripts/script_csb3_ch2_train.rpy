@@ -289,12 +289,14 @@ label train_route_begin:
     music end
     show cs
     show arceus flipped
-    play music "<loop 0>ochre_woods_day.mp3" volume 0.8
-    music Ochre Woods ~ Day - Miki Obata
     play sound "audio/amtrak_horn.wav"
     n "The conversation is interrupted by the blare of a train horn."
    
+    # TODO: i need a similar image but less crunchy
+
     show kingman_train_arrive with fade
+    play music "<loop 0>ochre_woods_day.mp3" volume 0.8
+    music Ochre Woods ~ Day - Miki Obata
     n "The two watch as the locomotive approaches the station and eventually slows to a stop."
     hide cs
     hide arceus
@@ -306,13 +308,14 @@ label train_route_begin:
     with moveinleft
 
     arceus "Welp, there it is."
-    n "The two wait a few moments before boarding while the other passengers exit the train."
+    n "The two wait a few moments before boarding while the incoming passengers exit the train."
     pause 1.0
-    tate_offscreen "{bt=a3-p10-s4}All aboard!"
+    tate_offscreen "{bt=a3-p10-s4}Alllllll aboard!"
     cs "Welp, I guess that’s our--{nw}"
     show tate flipped at right with moveinright
     pause 1.0
     show cs worried
+    show tate stare flipped
     cs "Tate?!"
     cs "Is that you?"
     show tate shock flipped
@@ -328,12 +331,14 @@ label train_route_begin:
     tate "His first shift starts tonight, actually."
     show cs happy
     cs "Oh, cool!"
+    show tate stare flipped
     n "Tate notices Arceus."
     tate "Oh, who's your friend?"
     cs "Oh, this is Arceus. He and I go {i}way{/i} back."
     show cs
     show arceus happy flipped
-    arceus "Hiya. You can just call me Arc."  
+    arceus "Hiya. You can just call me Arc." 
+    show tate flipped
     tate "Well, it's nice to meet ya, Arc."
     show arceus flipped
     tate "I'm Tate. I'm CS's--{w=0.5} uh... "
@@ -368,8 +373,9 @@ label train_route_begin:
     tate "Hah, I don't actually work for Amtrak. I just try to help where I can."
     show tate smug flipped
     tate "Also, I kinda just wanted to do the funny."
-    show tate sheepish
     amtrak_conductor "Yeah, {w=0.25}don't do that."
+    show tate sheepish
+    pause 1.0
     amtrak_conductor "You're on thin ice {i}anyway{/i} after what happened in the dining car."
     tate "But, I just wanted--{nw}"
     amtrak_conductor "The {i}only{/i} reason why you're still on this train is because the new guy won't let us kick you off."
@@ -379,6 +385,10 @@ label train_route_begin:
     show tate sad
     tate "Yes, sir..."
     amtrak_conductor "Let’s get a move on."
+
+    # conductor sprite leaves first
+
+    pause 1.0
 
     hide tate
     hide cs
@@ -430,7 +440,11 @@ label train_route_begin:
     show arceus flipped
     show tate
     hide arceus with moveoutright
+    n "Arceus scurries off."
     pause 1.0
+    
+    # stewardess makes to walk away, then comes back
+
     show tate sheepish
     amtrak_stewardess "I {i}mean{/i} it, Tate."
     amtrak_stewardess "Be good."
@@ -440,6 +454,7 @@ label train_route_begin:
 
     show cs disappointed at mid_mid_left 
     with moveinright
+    pause 1.0
 
     cs "Damn, why's everyone so snippy with you?"
     show tate sad flipped
@@ -519,7 +534,8 @@ label train_route_begin:
     show arceus
     arceus "Oh, yeah. I think I'll be alright now."
     show cs
-    cs "That's good to hear."
+    cs "That's good to hear."   
+    show tate stare
     tate "Oh, yeah! Let me know if y'all need more toilet paper, or soap, or anything."
     show cs disappointed
     cs "...{w=0.5} Shouldn't we be asking the {i}staff?"
@@ -601,8 +617,23 @@ label train_route_begin:
     amtrak_conductor "Well, alright."
     show arceus worried
     arceus "May I ask what is going on out there? The noise kinda scared us."
-    
-    
+    amtrak_npc_1 "Hey, my watch is gone, too!"
+    amtrak_npc_2 "Man, {i}fuck{/i} your watch! They took my damn {i}Switch!{/i}"
+    amtrak_npc_3 "Such {i}language!"
+    amtrak_npc_3 "My dearest mother's priceless brooch is also missing, and you don't hear {i}me{/i} speaking like an utter {i}barbarian!"
+    n "The complaints of a few more distraught travelers echo through the car."
+    amtrak_conductor "Please remain calm, everyone! We will find out who the thief is, and they {i}will{/i} be brought to justice!"
+    amtrak_conductor "Please return to your rooms! We will have an update for you as soon as possible!"
+    n "Slowly, the disgruntled passengers return to their units."
+    pause 1.0
+    amtrak_conductor "... As you can probably tell, a lot of passengers have been victims of theft. "
+    amtrak_conductor "Are any of you missing valuables?"
+    show arceus worried
+    arceus "I mean, all we had was the one [money_container]."
+    pause 0.5
+    arceus "... {w=0.5}CS, where is the [money_container]?"
+    show cs worried flipped
+    cs "I thought {i}you{/i} had it?"
 
     scene black
     show tate shock at center
