@@ -497,7 +497,7 @@ image tate sad flipped = "flip:characters/tate/tatesad.png"
 image tate stare = "characters/tate/tatestare.png"
 image tate stare flipped = "flip:characters/tate/tatestare.png"
 
-##Archival
+## Archival
 image k174 = "characters/k174.png"
 image k174 flipped = "flip:characters/k174.png"
 image k199 = "characters/k199.png"
@@ -510,6 +510,12 @@ image nova1 = "characters/novaedit.png"
 image nova2 = "characters/novaedit.png"
 image nova3 = "characters/novaedit.png"
 image carguya = "characters/carguya.png"
+
+## Train
+image amtrak_conductor = "characters/amtrak_conductor.png"
+image amtrak_conductor flipped = "flip:characters/amtrak_conductor.png"
+image amtrak_stewardess = "characters/amtrak_stewardess.png"
+image amtrak_stewardess flipped = "flip:characters/amtrak_stewardess.png"
 
 ## Others
 image discord = "characters/discord.png"
