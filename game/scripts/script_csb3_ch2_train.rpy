@@ -50,9 +50,12 @@ label train_start_good:
     arceus "Let's go!"
 
     show cs happy
-    hide cs with moveoutright
     show arceus flipped
-    hide arceus with moveoutright
+    pause 0.25
+
+    hide arceus
+    hide cs
+    with moveoutright
 
     scene black with fade
 
@@ -112,9 +115,12 @@ label train_start_bad:
     arceus "Let's go!"
 
     show cs
-    hide cs with moveoutright
     show arceus flipped
-    hide arceus with moveoutright
+    pause 0.25
+
+    hide arceus
+    hide cs
+    with moveoutright
 
     scene black with fade
 
@@ -131,7 +137,8 @@ label train_route_begin:
     show cscar1
     show cscar2
     show cs at left behind cscar2
-    show arceus at right behind cscar2 with fade
+    show arceus at right behind cscar2
+    with fade
 
     play music "<loop 0>outdoors.mp3" volume 1
     music Outdoors - Miki Obata
@@ -164,10 +171,13 @@ label train_route_begin:
 
     show kingman_exterior with fade
 
-    show cs flipped at left with moveinright
-    show arceus at right with moveinright
+    show cs flipped at left
+    show arceus at right
+    with moveinright
+
     pause 2.0
     show cs
+    pause 1.0
 
     cs "Oh, right."
     cs "I guess we won't be needing this for a while."
@@ -182,18 +192,22 @@ label train_route_begin:
     show arceus angry
     arceus "Whatever, man. Let's just go."
     show cs happy flipped
-    hide cs with moveoutleft
-    hide arceus with moveoutleft
+    pause 0.25
+
+    hide cs
+    hide arceus
+    with moveoutleft
     scene black with fade
 
     show kingman_interior with fade
 
-    show arceus flipped at center with moveinleft
-    show cs at left with moveinleft
+    show arceus flipped at center
+    show cs at left
+    with moveinleft
 
     n "CS and Arceus enter the train station."
     n "To their surprise, the place is desolate."
-    cs "Hello? Is anyone here?"
+    cs "Hello? {w=0.5}Is anyone here?"
     show cs disappointed
     show arceus 
     arceus "Yeah, uh, remember what I said about this town being small? This station is unmanned."
@@ -210,7 +224,7 @@ label train_route_begin:
     arceus "Yep."
     cs "So, what do we do in the meantime? Is there anything here?"
 
-    pause 2.0
+    pause 1.0
     show cs disappointed flipped
     pause 1.0
     show arceus flipped
@@ -234,7 +248,7 @@ label train_route_begin:
     show kingman_platform_2 with fade
 
     show arceus flipped at mid_mid_left with moveinleft
-    show cs at left with moveinleft
+    show cs disappointed at left with moveinleft
     
     cs "... Man, that's some bad luck, though. What are the odds of this place burning down {i}twice?!{/i}"
     show arceus
@@ -310,7 +324,7 @@ label train_route_begin:
     cs "Oh, cool!"
     n "Tate notices Arceus."
     tate "Oh, who's your friend?"
-    cs "Oh, this is Arceus. He and I go way back."
+    cs "Oh, this is Arceus. He and I go {i}way{/i} back."
     show cs
     show arceus happy flipped
     arceus "Hi, you can just call me Arc."  
@@ -327,9 +341,11 @@ label train_route_begin:
     tate "A-Anyway. We should probably get going."
     show tate
     tate "We don't wanna be stranded here. This train only comes through once a day, after all!"
-    show cs at mid_offscreen_left with moveinright
-    show arceus flipped at left with moveinright
-    show tate at center with moveinright
+
+    show cs at mid_offscreen_left
+    show arceus flipped at left
+    show tate at center
+    with moveinright
 
     # TODO: serious-looking amtrak conductor enters from right here, on right side of screen.
 
@@ -348,7 +364,7 @@ label train_route_begin:
     tate "But I just wanted--{nw}"
     amtrak_conductor "The only reason why you're still on this train is because the new guy won't let us kick you off."
     tate "Listen, I was just trying to he--{nw}"
-    amtrak_conductor "Yeah, well, {i}don't."
+    amtrak_conductor "Yeah, {w=0.25}well, {w=0.25}{i}don't."
     amtrak_conductor "Or we'll leave {i}both{/i} of you at the next station."
     show tate sad
     tate "Yes, sir..."
@@ -358,7 +374,7 @@ label train_route_begin:
     n "CS and Arceus buy tickets from the staff on board."
 
     # TODO: amtrak stewardess sprite leading the group.
-
+    # TODO: amtrak sleeper car corridor bg
     
     
 
@@ -367,5 +383,5 @@ label train_route_begin:
     tate "Oh no! {w=0.25}You've reached the end of whatever's been programmed in already!"
     show tate srs
     tate "Tell IRL!Tate to finish the story!"
-    show tate
+    show tate sheepish
     tate "Let's go back to the main menu for now."
