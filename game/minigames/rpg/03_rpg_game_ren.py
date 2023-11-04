@@ -621,7 +621,7 @@ class Attacks:
     MUSIC_BOOST = Attack("Music Boost", "Boost one's defense by a bit.", change_stat, stat = "ap", target_count = 1, target_type = "allies", mult = 1.5)
     RAVE_DEF = Attack("Rave DEF", "Lowers the enemies defense.", change_stat, target_count = 0, target_type = "enemies", stat = "ap", cooldown = 3, mult = 0.5, ex = False)
     RAVE_OFF = Attack("Rave OFF", "Rupture eardrums.", damage_fighters, target_count = 0, target_type = "enemies", cooldown = 3, mult = 0.5, ex = False)
-    RAVE = ComboAttack("Rave", "Blast your enemies' eardrums! (Damages and lowers defense.)", [RAVE_DEF, RAVE_OFF])
+    RAVE = ComboAttack("Rave", "Blast your enemies' eardrums! (Damages enemies while lowering their defense.)", [RAVE_DEF, RAVE_OFF])
     SAMPLE_SPAM = Attack("Sample Spam", "", random_damage_fighters, min_mult = 1, max_mult = 3, mult = 1, ex = False)
     SOUND_BLAST = Attack("Sound Blast", "", damage_fighters, target_count = 0, target_type = "enemies", ex = False)
     SAMPLE_BLAST = ComboAttack("Sample Blast", "Blast your enemies with music! Varies in damage.", [SAMPLE_SPAM, SOUND_BLAST])

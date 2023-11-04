@@ -1035,7 +1035,7 @@ label after_cop_fight:
         arceus "Well, I know we just met up, but we should probably get going."
     show arceus
     tate "Alrighty, then. We'll follow behind and keep watch."
-    cs "Shit yeah, Copguys not dead, he's gonna probably call backup on us."
+    cs "Shit yeah, Copguys not dead, he's gonna probably call for backup on us."
     pakoo "Let's start heading east."
     show cs
     show arceus flipped
@@ -1065,7 +1065,7 @@ label after_cop_fight:
     sheriff "God damn it what is it this time?"
     copguy "Not only does CS have a group of allies, but he is armed to the teeth."
     copguy "He took down most of my men."
-    sheriff "Ah, hell... so this is really {i}that{/i} bad, isn't it..."
+    sheriff "Ah, hell... so this really is {i}that{/i} bad, isn't it..."
     sheriff "We're gonna need some backup."
     copguy "Yeah, I just came to ask about that."
     sheriff "Lemme call the National Guard. Did you see where they were headed?"
