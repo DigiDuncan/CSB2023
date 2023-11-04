@@ -352,6 +352,9 @@ define moomin = Character("Moomin", callback = renpy.partial(char_callback, name
 define snufkin = Character("Snufkin", callback = renpy.partial(char_callback, name = "snufkin"))  # DX: Beep
 define alicia = Character("Alicia", callback = renpy.partial(char_callback, name = "alicia"))
 define witch = Character("Witch", callback = renpy.partial(char_callback, name = "witch"))  # DX: Beep
+define tate_offscreen = Character("???", callback = renpy.partial(char_callback, name = "tate_offscreen", beep="tate"))
+define amtrak_conductor = Character("Conductor", callback = char_callback)
+define amtrak_stewardess = Character("Stewardess", callback = char_callback)
 
 # Character Images
 ## CS
@@ -949,6 +952,11 @@ image archival_19 = "bg/archival/archival_19.png"
 
 ## Train Route
 image kingman_exterior = "bg/train/kingman_exterior.png"
+image kingman_interior = "bg/train/kingman_interior.png"
+image kingman_platform_1 = "bg/train/kingman_platform_1.png"
+image kingman_platform_2 = "bg/train/kingman_platform_2.png"
+image kingman_train_arrive = "bg/train/kingman_train_arrive.png"
+image amtrak_arrive_close = "bg/train/amtrak_arrive_close.png"
 
 # Static Images
 image post_it = "post-it.png"
