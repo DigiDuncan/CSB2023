@@ -563,6 +563,7 @@ label fire_range:
     pakoo "Be careful where you aim that, as well."
     cs "Alright, I think I've got this now."
     cs "Watch this!"
+    window hide
     show m4 at left with determination
     show m4 fire at left with determination
     play sound "<loop 0>hks1.wav" volume 1
@@ -618,6 +619,7 @@ label fire_range:
     play sound "<loop 0>hks2.wav" volume 1
     show m4 at left with determination    
     pause 1.0
+    window show
     show cs happy
     cs "Woohoo! I got all the targets!"
     pakoo "Nice job CS!"
