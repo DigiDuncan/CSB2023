@@ -486,6 +486,10 @@ image tate smug = "characters/tate/tatesmug.png"
 image tate smug dark = "characters/tate/tatesmugdark.png"
 image tate smug flipped = "flip:characters/tate/tatesmug.png"
 image tate smug dark flipped = "flip:characters/tate/tatesmugdark.png"
+image tate sheepish = "characters/tate/tatesheepish.png"
+image tate sheepish flipped = "flip:characters/tate/tatesheepish.png"
+image tate sad = "characters/tate/tatesad.png"
+image tate sad flipped = "flip:characters/tate/tatesad.png"
 
 ##Archival
 image k174 = "characters/k174.png"
@@ -953,6 +957,7 @@ image archival_19 = "bg/archival/archival_19.png"
 ## Train Route
 image kingman_exterior = "bg/train/kingman_exterior.png"
 image kingman_interior = "bg/train/kingman_interior.png"
+image kingman_museum = "bg/train/kingman_museum.png"
 image kingman_platform_1 = "bg/train/kingman_platform_1.png"
 image kingman_platform_2 = "bg/train/kingman_platform_2.png"
 image kingman_train_arrive = "bg/train/kingman_train_arrive.png"

@@ -221,14 +221,14 @@ label train_route_begin:
     pause 1.0
     n "The two glance around the space for a moment."
     
-    # TODO: insert image here for museum
+    show kingman_museum with fade
 
     arceus "Looks like there's a little museum here. Wanna poke around there?"
     cs "I don't see why not. Not like we have anything else to do."
     arceus "Alrighty, let's go."
     scene black with fade
     n "CS and Arceus wander around the museum for a little while."
-    n "There aren't many exhibits in such a small building, but there was just enough to look at to pass the remaining time."
+    n "There aren't many exhibits in such a small building, but there is just enough to look at to pass the remaining time."
     n "About five minutes before the train's expected arrival, the two make their way out onto to the platform."
     
     show kingman_platform_2 with fade
@@ -252,7 +252,8 @@ label train_route_begin:
     show cs scared
     cs "Shit, I guess I've never really thought about that…"
     arceus "Yeah, and if you have a lunatic like that on a fucking {i}plane,{/i} it's not like you can just… {w=0.25}throw them overboard and keep going."
-    cs "\"Overboard\"? Wait, isn't that term only used for boats?"
+    show cs disappointed
+    cs "\"Overboard\"? {w=0.25}Wait, isn't that term only used for boats?"
     show arceus angry
     arceus "Man, I don't know what word you'd use for throwing someone off of a plane."
     arceus "That's not even a thing you can {i}do.{/i}"
@@ -261,21 +262,21 @@ label train_route_begin:
     show cs surprised
     arceus "Anyway, do you remember that news story about the guy who got duct-taped to his seat during a flight?"
     show arceus worried
+    show cs disappointed
     arceus "... Yeah. That's about the {i}only{/i} thing they could have done to protect themselves and everyone else."
     show cs worried
     cs "Damn, I'd forgotten all about that!"
     cs "What would have happened if it had been on a train?"
     show arceus angry
     arceus "I dunno, man. I'm just gonna assume that they'd kick the bastard off at the next station."
-    arceus "I really don't want to think about someone like that being on {i}our{/i} train."
+    arceus "I really don't want to think about someone like that being on {i}our--{/i}"
     show cs
     show arceus flipped
     play music "<loop 0>ochre_woods_day.mp3" volume 0.8
     music Ochre Woods ~ Day - Miki Obata
+    play sound "audio/amtrak_horn.wav"
     n "The conversation is interrupted by the blare of a train horn."
-
-    # TODO: sfx for train horn
-    
+   
     show kingman_train_arrive with fade
     n "The two watch as the locomotive approaches the station, eventually slowing to a stop."
     hide cs
@@ -290,6 +291,7 @@ label train_route_begin:
     tate_offscreen "{bt=a3-p10-s4}All aboard!"
     cs "Welp, I guess that’s our--{nw}"
     show tate flipped at right with moveinright
+    pause 1.0
     show cs worried
     cs "Tate?!"
     cs "Is that you?"
@@ -313,7 +315,9 @@ label train_route_begin:
     show arceus happy flipped
     arceus "Hi, you can just call me Arc."  
     tate "Well, it's nice to meet ya, Arc."
+    show arceus flipped
     tate "I'm Tate. I'm CS's--{w=0.5} uh... "
+    show tate sheepish flipped
     tate "Um... {w=1.0} friend. {w=0.25} Yes."
     cs "Yeah! Of course we're friends."
     tate "Of course!"
@@ -334,13 +338,11 @@ label train_route_begin:
     cs "... Wait, I thought you already called for everyone to board, Tate?"
     show arceus worried flipped
     arceus "Yeah, and why aren't you in uniform?"
-    show tate flipped
-    
-     # TODO: tate needs a sheepish face
-
+    show tate sheepish flipped
     tate "Hah, I don't actually work for Amtrak. I just try to help where I can."
+    show tate smug flipped
     tate "Also, I kinda just wanted to do the funny."
-    show tate
+    show tate sheepish
     amtrak_conductor "Yeah, don't do that."
     amtrak_conductor "You're on thin ice {i}anyway{/i} after what happened in the dining car."
     tate "But I just wanted--{nw}"
@@ -348,9 +350,7 @@ label train_route_begin:
     tate "Listen, I was just trying to he--{nw}"
     amtrak_conductor "Yeah, well, {i}don't."
     amtrak_conductor "Or we'll leave {i}both{/i} of you at the next station."
-
-     # TODO: tate needs a sad face
-
+    show tate sad
     tate "Yes, sir..."
 
     scene black with fade
