@@ -356,6 +356,7 @@ define moomin = Character("Moomin", callback = renpy.partial(char_callback, name
 define snufkin = Character("Snufkin", callback = renpy.partial(char_callback, name = "snufkin"))  # DX: Beep
 define alicia = Character("Alicia", callback = renpy.partial(char_callback, name = "alicia"))
 define witch = Character("Witch", callback = renpy.partial(char_callback, name = "witch"))  # DX: Beep
+define tate_offscreen = Character("???", callback = renpy.partial(char_callback, name = "tate_offscreen", beep="tate"))
 
 # Character Images
 ## CS
@@ -489,6 +490,8 @@ image tate sheepish = "characters/tate/tatesheepish.png"
 image tate sheepish flipped = "flip:characters/tate/tatesheepish.png"
 image tate sad = "characters/tate/tatesad.png"
 image tate sad flipped = "flip:characters/tate/tatesad.png"
+image tate stare = "characters/tate/tatestare.png"
+image tate stare flipped = "flip:characters/tate/tatestare.png"
 
 ## Mean
 image mean = "characters/mean/mean.png"
