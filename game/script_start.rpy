@@ -485,6 +485,10 @@ image tate smug = "characters/tate/tatesmug.png"
 image tate smug dark = "characters/tate/tatesmugdark.png"
 image tate smug flipped = "flip:characters/tate/tatesmug.png"
 image tate smug dark flipped = "flip:characters/tate/tatesmugdark.png"
+image tate sheepish = "characters/tate/tatesheepish.png"
+image tate sheepish flipped = "flip:characters/tate/tatesheepish.png"
+image tate sad = "characters/tate/tatesad.png"
+image tate sad flipped = "flip:characters/tate/tatesad.png"
 
 ## Mean
 image mean = "characters/mean/mean.png"
