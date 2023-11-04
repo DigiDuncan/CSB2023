@@ -1149,6 +1149,7 @@ default line_12 = ""
 default money_stolen = False
 default money_container = ""
 default money_stolen_dialogue_switch = ""
+default money_stolen_dialogue_switch_2 = ""
 
 # RPG
 default enemy_1 = "cop"

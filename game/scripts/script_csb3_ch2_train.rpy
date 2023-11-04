@@ -159,7 +159,6 @@ label train_route_begin:
 
     scene black with fade
 
-    # TODO: why doesn't this switch properly?!
     if money_stolen == True:
         $ money_container = "bag"
         $ money_stolen_dialogue_switch = "zip it up"
@@ -594,6 +593,10 @@ label train_route_begin:
 
     n "A sudden hard knock on the door startles the group."
     n "An uproar of angry passengers grows steadily louder."
+
+    play music "<loop 0>item_bounce.mp3" volume 0.6
+    music Item Bounce - Akira Miyagawa
+
     cs "What the hell?!"
     tate "No, no, {i}no!"
     tate "This can't be good!"
@@ -603,8 +606,10 @@ label train_route_begin:
     show cs scared flipped at mid_mid_right
     show tate shock flipped at right
     show arceus worried at mid_offscreen_right
-    show amtrak_conductor flipped at left
     with moveinright
+
+    show amtrak_conductor flipped at left
+    with moveinleft
     
     amtrak_conductor "Alright every--{w=0.5}{nw}"
     amtrak_conductor "Oh. {w=1.0}{i}Tate."
@@ -643,7 +648,7 @@ label train_route_begin:
     n "The complaints of a few more distraught travelers echo through the car."
     show amtrak_conductor at mid_offscreen_left with moveinleft
     amtrak_conductor "Please remain calm, everyone! We will find out who the thief is, and they {i}will{/i} be brought to justice!"
-    amtrak_conductor "Please return to your rooms! We will have an update for you as soon as possible!"
+    amtrak_conductor "Please return to your rooms! We will have an update for you as early as possible!"
     n "Slowly, the disgruntled passengers return to their units."
     pause 1.0
     show amtrak_conductor flipped at left with moveinright
@@ -655,6 +660,211 @@ label train_route_begin:
     arceus "... {w=0.5}CS, where is the [money_container]?"
     show cs worried
     cs "I thought {i}you{/i} had it?"
+
+    # TODO: sprites looking around every which way
+
+    show cs worried
+    cs "Oh."
+    show cs scared
+    cs "Shit."
+
+    if money_stolen == True:
+        $ money_stolen_dialogue_switch = "black bag"
+        $ money_stolen_dialogue_switch_2 = "... {w=0.5}won"
+    else:
+        $ money_stolen_dialogue_switch = "metal briefcase"
+        $ money_stolen_dialogue_switch_2 = "won"
+
+    show cs disappointed flipped
+    cs "Yes, sir, we're missing a single [money_stolen_dialogue_switch] filled with money we[money_stolen_dialogue_switch_2] while we were in Vegas."
+    show arceus angry
+    arceus "... And Lego bricks." 
+    show cs surprised
+    cs "And Legos, yes."
+    show tate srs flipped
+    tate "Wait, so..."
+    tate "You got rich in Vegas, and the first thing you did was buy {i}Legos?"
+    show cs worried
+    cs "Well, no--{nw}"
+    tate "I suppose I shouldn't have expected anything else from you."
+    show cs disappointed
+    cs "That's not what--{nw}"
+    show cs disappointed flipped
+    amtrak_conductor "Thank you, sir. We'll keep an eye out for your things."
+    show tate sheepish flipped
+    amtrak_conductor "Tate. {w=0.5}You'd better behave. {w=0.5}Stay out of the way during this investigation."
+    show tate sad flipped
+    tate "Yes, sir."
+    tate "I'll probably just keep chatting with CS until Mean wakes up."
+    amtrak_conductor "Good."
+    amtrak_conductor "As for you two..."
+    amtrak_conductor "Please let a {i}staff member{/i} know if you need anything, or if anything else goes missing."
+    show cs flipped
+    cs "Alright, thank you so much."
+    show arceus
+    arceus "Yeah, thanks!"
+    show amtrak_conductor
+    hide amtrak_conductor with moveoutleft
+
+    stop music fadeout 3.0
+    music end
+
+    show cs disappointed at left
+    show tate sad at mid_mid_left
+    show arceus worried at right
+    with moveinleft
+
+    n "The conductor leaves to return to his duties."
+    tate "I can't believe this..."
+    arceus "Me neither. All of that money, just {i}gone..."
+    show cs happy
+    cs "Nah, I'm sure they'll find it. Nobody started complaining until the train was already moving, so, all of our stuff should still be on board, right?"
+    arceus "I sure hope so..."
+    n "Tate shifts uncomfortably."
+    show cs disappointed
+    cs "Is everything alright, Tate?"
+    show tate sad flipped
+    tate "I was just thinking..."
+    tate "I don't think that Mean should know about any of this."
+    cs "Why not? It's not like {i}you're{/i} the one who stole it."
+    tate "It's just that... {w=0.5}he's got enough to worry about, since today will be his first official shift as the night conductor..."
+    tate "I really don't want him dealing with something like this on his first day."
+    show tate sheepish flipped
+    tate "I just feel like I have to do {i}something."
+    cs "Don't you think you've done enough already?"
+    show tate srs flipped
+    tate "What do you mean?"
+    show cs worried
+    cs "The conductor and that attendant both seemed really annoyed with you."
+    show cs surprised
+    cs "I {i}know{/i} how you work, Tate."
+    cs "I really think that sometimes you need to just... \n{w=0.25}let {w=0.25}things {w=0.25}{i}happen."
+    show tate shock flipped
+    tate "But, Mean--{nw}"
+    show tate sad
+    show arceus happy
+    arceus "Now, obviously, I've never met the guy, but I'm sure Mean will be fine."
+    show arceus
+    arceus "Think about it. You didn't, like, help him with his job interview, right?"
+    show tate sad
+    tate "Well, no..."
+    show tate sheepish
+    tate "I mean, I looked over his résumé, but that's all."
+    show cs happy
+    show tate sheepish flipped
+    cs "Exaaaaactly. {w=0.25}Just let things happen."
+    show tate srs flipped
+    tate "How can you be so... {i}unbothered{/i} by all of this? {w=0.25}And after you just lost so much money?!"
+    show arceus worried
+    arceus "{size=-10}Well, {i}I'm{/i} bothered by it..."
+    show cs worried
+    cs "I mean, yeah, it totally sucks balls, but all it means is that when we get home, things will just be the same as they were before."
+    show tate sheepish flipped
+    tate "I really do hope they find everyone's things.."
+    show tate sad flipped
+    tate "I'm just so scared that they'll accuse Mean of stealing it, or something."
+    
+    # TODO: An extra-sad tate sprite, on the verge of tears
+    
+    tate "I really don't know if he could handle losing this job, too."
+    show cs disappointed
+    cs "Wait, what happened at his last job?"
+    show tate srs flipped
+    tate "It was so fucking stupid."
+    tate "So, he was working for this home repair company, right? {w=0.25}They made him a security guard, since he's all spiky--{nw}"
+    show arceus 
+    arceus "{i}Spiky?{/i} Wha--{nw}"
+
+    # TODO: can we replace "pushed" to reference whichever attack was used in CSBII?
+
+    tate "--and then some weirdo dressed as a catgirl maid broke in and fought the CEO. {w=0.25}A lot of people got hurt."
+    show tate shock flipped
+    show cs worried
+    show arceus worried
+    tate "I think Mean said that someone even got pushed off of the roof!"
+    show tate sheepish flipped
+    tate "But since Mean couldn't... {w=0.5}{size=-5}hold him off... {w=1.0}{size=-5}he was... {w=1.5}{size=-5}fired..."
+    pause 1.0
+    show tate shock flipped
+    n "Tate goes silent. They are staring wide-eyed at CS' outfit."
+    tate "..."
+    pause 2.0
+    show cs scared
+    cs "... Woah, Tate, why are you look--{nw}"
+    
+    # TODO: tate needs a FURIOUS sprite
+
+    show tate srs flipped
+    tate "{bt=a3-p10-s4}{size=+24}IT WAS {i}YOU!!"
+    cs "Wha-- {i}huh?!"
+    tate "CS, WHAT THE {i}FUCK?!"
+    tate "{i}YOU{/i} BROKE INTO HOH SIS?!"
+    show cs worried
+    "Oh, yeah, uh--{nw}"
+    
+    show tate sad flipped
+    n "Tate is on the verge of tears."
+    tate "My best friend lost his job, {w=0.25}and it's your fault..."
+    tate "And now, {w=0.25}you're {i}here..."
+    tate "I can't believe this..."
+    show cs disappointed
+    cs "Tate..."
+    cs "Listen to me, please--{nw}"
+    show tate srs flipped
+    tate "{i}No!"
+    tate "I don't want to hear it!"
+    tate "Is {i}this{/i} what you've been up to since we--{w=0.25}{nw}"
+    tate "..."
+    tate "You know what, no."
+    tate "Fuck this shit."
+    tate "Mean's shift starts soon. {w=0.25}I need to be there for him."
+    tate "If either of y'all see him, you will not breathe a word of {i}any{/i} of this to him."
+    tate "Not about the thefts, and certainly not about what happened at HoH SiS."
+    tate "He doesn't need this. {w=0.25}Especially not today."
+    show cs worried
+    n "Tate reinforces their demand with a piercing glare towards CS."
+    show tate srs with hpunch
+    n "Tate then suddenly stands up."
+    tate "I'm sorry."
+    tate "I need to go."
+    show tate sad flipped
+    pause 0.25
+    hide tate with moveoutleft
+    n "Tate swiftly exits the sleeper car and runs off, not even bothering to shut the door behind them."
+    n "CS looks distraught."
+    pause 2.0
+    show cs disappointed
+    cs "...Fuck."
+    arceus "You alright, man?"
+    cs "I will be. I'm just worried about Tate."
+    cs "I don't even remember the last time they were so upset."
+    cs "I'm also really tired... I think I could use some rest."
+    show arceus
+    arceus "Yeah, same. I'm really glad we sprung for the private room."
+    show arceus happy
+    arceus "These beds are looking pretty good right now."
+    show cs
+    cs "They {i}do{/i} look nice."
+    show cs happy
+    cs "I think that tomorrow, {w=0.25}we'll wake up, {w=0.25}someone will have found our cash overnight, {w=0.25}Tate will have had some time to cool off, {w=0.25}we'll all get together and have a huge complimentary breakfast..."
+    cs "... and all will be right with the world!"
+
+    # TODO: some funny cheery fanfare jingle?
+
+    show arceus angry
+    arceus "... {i}I{/i} think you're way too optimistic about all this."
+    arceus "I'm going to bed."
+    show cs disappointed
+    cs "Yeah, I think I should, too..."
+
+    scene black with fade
+    n "CS and Arceus decide to call it an early night."
+    n "CS easily falls into a deep slumber."
+    n "While the train bed is indeed quite comfortable, Arceus struggles to get any rest."
+
+    # TODO: train room dark sprite
+    
+    
 
     scene black
     show tate shock at center
