@@ -776,7 +776,7 @@ label fire_range:
     show arceus worried flipped
     arceus "Fuuuuuck, I haven't told Kitty that I escaped from prison."
     show arceus flipped
-    cs "I should probably tell Tate, as well..."
+    cs "I should probably tell my friend Tate, as well..."
     cs "You mind if we make some calls as well?"
     n "Pakoo pulls out a couple of phones from his back pocket and gives them to Arceus and CS."
     show pakoo at center with move
