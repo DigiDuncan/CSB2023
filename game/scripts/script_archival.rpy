@@ -1,4 +1,8 @@
 label archival:
+    window hide
+    show screen warning("The following scene is a major tonal shift.\nIt may be disconcerting to some viewers.", "Warning: potential existential dread.", "pussy_out_archival")
+    pause
+    window show
     stop music
     scene cs_room_2
     show cs at mid_left
