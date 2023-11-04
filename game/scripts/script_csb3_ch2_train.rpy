@@ -402,7 +402,8 @@ label train_route_begin:
     with moveinleft
 
     show tate flipped
-    tate "... And, {i}this{/i} way is the sleeper car! {w=0.25}Your room is--{nw}"
+    pause 1.0
+    tate "... And, {i}this{/i} way is the sleeper car! {w=0.25}Your room is--{w=0.25}{nw}"
     amtrak_stewardess "Tate."
     show tate
     tate "Hm?"
@@ -435,14 +436,16 @@ label train_route_begin:
     amtrak_stewardess "Be good."
     tate "Yes, ma'am..."
     n "The stewardess returns to work."
+    pause 2.0
 
-    show tate sad flipped
     show cs disappointed at mid_mid_left 
     with moveinright
 
     cs "Damn, why's everyone so snippy with you?"
+    show tate sad flipped
     cs "What did you {i}do?{/i}"
-    tate "My friend, Mean, usually lets me help out with whatever needs doing. He's not going to wake up for a while, though, so I've been pretty bored."
+    tate "My friend, Mean, usually lets me help out with whatever needs doing."
+    tate "He's not going to wake up for a while, though, so I've been pretty bored."
     show tate sheepish flipped
     tate "I thought I'd set up a surprise for him in the dining car, but the other staff didn't like it..."
     tate "I guess I got a little carried away."
@@ -458,7 +461,8 @@ label train_route_begin:
     cs "... {w=0.5}Yeah, {w=0.25}that tracks."
     show cs disappointed
     cs "You always {i}were{/i} a little..."
-    n "CS trails off."
+    n "..."
+    pause 2.0
     show tate srs flipped
     tate "A little...?"
     show cs worried
@@ -469,10 +473,12 @@ label train_route_begin:
     show cs scared at mid_offscreen_left with vpunch
     show tate shock flipped
     show cs concentrate
-    n "CS is knocked to the ground as a stranger sprints past him down the corridor!"
+    show tate shock flipped at right with moveinright
+    n "CS is knocked to the ground as a stranger sprints down the corridor!"
     unknown "Sorry, cat dude! I've gotta {i}run!"
     tate "Oh my God! Are you alright?!"
-    cs "Yeah... More surprised than anything."
+    cs "Yeah..."
+    cs "More surprised than anything."
     show tate shock flipped at left with moveinleft
     n "Tate helps CS up from the floor."
 
@@ -487,7 +493,7 @@ label train_route_begin:
     tate "Let's go into y'all's room."
     cs "Yeah, good idea."
     show tate sheepish
-    pause 1.0
+    pause 0.25
 
     hide tate
     hide cs
@@ -495,9 +501,110 @@ label train_route_begin:
 
     scene black with fade
     
+    # TODO: I need a better picture than this...
+    show amtrak_sleeper_interior_day
+    show arceus at right
+    with fade
+
+    n "CS and Tate enter the sleeper unit just as the train starts moving."
+
+    show tate at mid_mid_left
+    show cs at left
+    with moveinleft
+
+    show arceus worried
+    arceus "Hey, guys. Sorry about that. I think something I ate at that creepy-ass pizza place didn't quite agree with me."
+    show cs disappointed
+    cs "Damn. Are you feeling any better?"
+    show arceus
+    arceus "Oh, yeah. I think I'll be alright now."
+    show cs
+    cs "That's good to hear."
+    tate "Oh, yeah! Let me know if y'all need more toilet paper, or soap, or anything."
+    show cs disappointed
+    cs "...{w=0.5} Shouldn't we be asking the {i}staff?"
+    show tate shock flipped
+    pause 1.0
+    show tate sad flipped
+    pause 0.5
+    tate "{w=0.5}...{w=0.5}Yes. {w=0.25}Yes, you should."
+    show tate sad
+    n "Tate sheepishly looks down at the floor."
+    show arceus worried
+    arceus "So, uh..."
+    arceus "Hey, Tate, how do you know CS, anyway?"
+    show tate sheepish
+    tate "Oh, uh..."
+    tate "We met a few years ago, back when Mixer was a thing."
+    show cs
+    cs "You might remember it as Beam, Arc."
+    show arceus happy
+    arceus "Oh yeah! {w=0.25}Damn, {i}Beam?"
+    show tate
+    arceus "Now {i}that's{/i} a name I haven't heard in a while!"
+    show cs disappointed
+    show arceus
+    cs "Yeah. It's a real shame that Microsoft eventually kills off every product I like."
+    show tate flipped   
+    tate "Yeah, it really is."
+    tate "But, you're not still shilling for them now, though, right?"
+    cs "..."
+    show tate sheepish flipped
+    tate "... {w=0.25}Right?"
+
+    show cs scared
+    show tate shock flipped
+    show arceus worried
+    with shake2
+
+    # TODO: sfx - loud knocking and angry crowds
+
+    n "A sudden hard knock on the door startles the group."
+    n "An uproar of angry passengers grows steadily louder."
+    cs "What the hell?!"
+    tate "No, no, {i}no!"
+    tate "This can't be good!"
+    arceus "So much for a relaxing trip..."
+    n "The door is slid open with a heavy hand."
+    
+    show cs scared flipped at mid_mid_right
+    show tate shock flipped at right
+    show arceus worried at mid_offscreen_right
+    with moveinright
+    
+    amtrak_conductor "Alright every--{w=0.5}{nw}"
+    amtrak_conductor "Oh. {w=1.0}{i}Tate."
+    tate "I {i}swear,{/i} sir! {w=0.5}Whatever happened just now, I had {i}nothing{/i} to do with it!"
+    tate "I've been in this room! Just talking with CS, here!"
+    show cs happy flipped
+    cs "Hey guys, CS here!"
+    amtrak_conductor "Huh?{w=0.5}{nw}"
+    show tate srs flipped
+    show arceus angry
+    tate "{i}Why.{w=0.5}{nw}"
+    show cs scared flipped
+    cs "{i}Ahem{w=0.25}{nw}"
+    show cs flipped
+    show tate sheepish flipped
+    show arceus
+    cs "I mean, {w=0.25}uh, {w=0.25}yes. {w=0.5}Tate was here the entire time."
+    arceus "Yep, Tate has been with us since we got on the train."
+    amtrak_conductor "Oh, really?"
+    amtrak_conductor "Well, if they are bothering you, I can take care of them for you."
+    show tate shock flipped
+    tate "Eep!"
+    show cs happy flipped
+    show tate sheepish flipped
+    cs "Oh, no, not at all!"
+    show cs flipped
+    cs "Tate and I have known each other for years. We were just catching up."
+    amtrak_conductor "Well, alright."
+    show arceus worried
+    arceus "May I ask what is going on out there? The noise kinda scared us."
     
     
 
+    scene black
     show tate shock at center
     tate "{bt=a3-p10-s4}Awawawawa!"
     tate "Oh no! {w=0.25}You've reached the end of whatever's been programmed in already!"
