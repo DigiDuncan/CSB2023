@@ -207,7 +207,9 @@ label train_route_begin:
     n "CS and Arceus enter the train station."
     n "To their surprise, the place is desolate."
     cs "Hello? {w=0.5}Is anyone here?"
+    pause 1.0
     show cs disappointed
+    pause 2.0
     show arceus 
     arceus "Yeah, uh, remember what I said about this town being small? This station is unmanned."
     arceus "We can buy tickets on the train once it gets here, though."
@@ -217,11 +219,18 @@ label train_route_begin:
     show cs disappointed at center with moveinright
     pause 2.0
     cs "Oh, right."
-    cs "..."
+    "..."
     cs "So, we have a little under an hour."
+    show arceus
+    arceus "Well... maybe a little {i}more{/i} than an hour."
+    cs "What do you mean?"
+    arceus "Don't you know? Amtrak is always late."
+    show cs worried
+    cs "What? That's not reliable at all!"
+    show arceus angry
+    arceus "Yeah, well, we're not like the UK."
     show arceus 
-    arceus "Yep."
-    cs "So, what do we do in the meantime? Is there anything here?"
+    cs "So, what do we do in the meantime, then? Is there anything here?"
 
     pause 1.0
     show cs disappointed flipped
@@ -282,6 +291,9 @@ label train_route_begin:
     cs "Damn, I'd forgotten all about that!"
     cs "What would have happened if it had been on a train?"
     show arceus angry
+
+    # TODO: polar express reference
+
     arceus "I dunno, man. I'm just gonna assume that they'd kick the bastard off at the next station."
     arceus "I really don't want to think about someone like that being on {i}our--{/i}"
     stop music fadeout 3.0
@@ -308,8 +320,8 @@ label train_route_begin:
 
     arceus "Welp, there it is."
     n "The two wait a few moments before boarding while the incoming passengers exit the train."
-    pause 1.0
-    tate_offscreen "{bt=a3-p10-s4}Alllllll aboard!"
+    pause 2.0
+    tate_offscreen "{bt=a3-p10-s4}{size=+24}Alllllll aboarrrrrrd!!"
     cs "Welp, I guess that’s our--{nw}"
     show tate flipped at right with moveinright
     pause 1.0
@@ -326,7 +338,7 @@ label train_route_begin:
     show tate flipped
     show cs
     tate "Yeah, I still live there. I'm just traveling a bit."
-    tate "A good friend of mine started a new job as a conductor for Amtrak, and asked me if I wanted to come with him for a while."
+    tate "A good friend of mine started a new job as a driver for Amtrak, and asked me if I wanted to come along with him for a while."
     tate "His first shift starts tonight, actually."
     show cs happy
     cs "Oh, cool!"
@@ -371,7 +383,7 @@ label train_route_begin:
     tate "Hah, I don't actually work for Amtrak. I just try to help where I can."
     show tate smug flipped
     tate "Also, I kinda just wanted to do the funny."
-    amtrak_conductor "Yeah, {w=0.25}don't do that."
+    amtrak_conductor "Yeah, {w=0.1}don't do that."
     show tate sheepish
     pause 1.0
     amtrak_conductor "You're on thin ice {i}anyway{/i} after what happened in the dining car."
@@ -414,6 +426,7 @@ label train_route_begin:
     show arceus flipped at mid_mid_left
     with moveinleft
 
+    pause 1.0
     show tate flipped
     pause 1.0
     tate "... And, {i}this{/i} way is the sleeper car! {w=0.25}Your room is--{w=0.25}{nw}"
@@ -482,7 +495,7 @@ label train_route_begin:
     show tate sheepish flipped
     cs "I hope his first shift goes well, too."
     tate "Me, too..."
-    tate "I've been so nervous for him. I keep trying to find things to lighten his load, but his coworkers keep telling me, {w=0.25}don't do this, {w=0.25}don't do that..."
+    tate "I've been so nervous for him. I keep trying to find things to do, to maybe lighten his load... but his coworkers keep telling me, {w=0.25}don't do this, {w=0.25}don't do that..."
     show cs surprised
     cs "... {w=0.5}Yeah, {w=0.25}that tracks."
     show cs disappointed
@@ -549,7 +562,7 @@ label train_route_begin:
     show tate
     cs "That's good to hear."   
     show tate stare
-    tate "Oh, yeah! Let me know if y'all need more toilet paper, or soap, or anything."
+    tate "Oh, yeah! Let me know if y'all need more toilet paper, {w=0.25}or soap, or... {w=0.25}anything."
     show cs disappointed
     cs "...{w=0.5} Shouldn't we be asking the {i}staff?"
     show tate shock flipped
@@ -568,7 +581,7 @@ label train_route_begin:
     show cs
     cs "You might remember it as Beam, Arc."
     show arceus happy
-    arceus "Oh yeah! {w=0.25}Damn, {i}Beam?"
+    arceus "Oh, yeah! {w=0.25}Damn, {i}Beam?"
     show tate
     arceus "Now {i}that's{/i} a name I haven't heard in a while!"
     show cs disappointed
@@ -577,7 +590,7 @@ label train_route_begin:
     show tate flipped   
     tate "Yeah, it really is."
     tate "But, you're not still shilling for them now, though, right?"
-    cs "..."
+    "..."
     show tate sheepish flipped
     tate "... {w=0.25}Right?"
 
@@ -603,6 +616,8 @@ label train_route_begin:
     arceus "So much for a relaxing trip..."
     n "The door is slid open with a heavy hand."
     
+    # TODO: SFX heavy sliding door slam
+    
     show cs scared flipped at mid_mid_right
     show tate shock flipped at right
     show arceus worried at mid_offscreen_right
@@ -613,8 +628,8 @@ label train_route_begin:
     
     amtrak_conductor "Alright every--{w=0.5}{nw}"
     amtrak_conductor "Oh. {w=1.0}{i}Tate."
-    tate "I {i}swear,{/i} sir! {w=0.5}Whatever happened just now, I had {i}nothing{/i} to do with it!"
-    tate "I've been in this room! Just talking with CS, here!"
+    tate "I {i}swear,{/i} sir! {w=0.5}Whatever happened just now, {w=0.25}I had {i}nothing{/i} to do with it!"
+    tate "I've been in this room! {w=0.25}Just talking with CS, here!"
     show cs happy flipped
     cs "Hey guys, CS here!"
     amtrak_conductor "Huh?{w=0.5}{nw}"
@@ -645,14 +660,15 @@ label train_route_begin:
     amtrak_npc_2 "Man, {i}fuck{/i} your watch! They took my damn {i}Switch!{/i}"
     amtrak_npc_3 "Such {i}language!"
     amtrak_npc_3 "My dearest mother's priceless brooch is also missing, and you don't hear {i}me{/i} speaking like an utter {i}barbarian!"
-    n "The complaints of a few more distraught travelers echo through the car."
+    n "The complaints of a few more distraught travelers echo throughout the car."
     show amtrak_conductor at mid_offscreen_left with moveinleft
-    amtrak_conductor "Please remain calm, everyone! We will find out who the thief is, and they {i}will{/i} be brought to justice!"
-    amtrak_conductor "Please return to your rooms! We will have an update for you as early as possible!"
-    n "Slowly, the disgruntled passengers return to their units."
+    amtrak_conductor "Please remain calm, everyone! {w=0.25}We will find out who the thief is, {w=0.25}and they {i}will{/i} be brought to justice!"
+    amtrak_conductor "Please return to your rooms! {w=0.25}We will have an update for you as early as possible!"
+    n "One by one, the disgruntled passengers return to their units."
     pause 1.0
     show amtrak_conductor flipped at left with moveinright
-    amtrak_conductor "... As you can probably tell, a lot of passengers have been victims of theft. "
+    pause 1.0
+    amtrak_conductor "... {w=0.25}As you can probably tell, a lot of passengers have been victims of theft. "
     amtrak_conductor "Are any of you missing valuables?"
     show arceus worried
     arceus "I mean, all we had was the one [money_container]."
@@ -670,10 +686,10 @@ label train_route_begin:
 
     if money_stolen == True:
         $ money_stolen_dialogue_switch = "black bag"
-        $ money_stolen_dialogue_switch_2 = "... {w=0.5}won"
+        $ money_stolen_dialogue_switch_2 = "\n... {w=0.5}won"
     else:
         $ money_stolen_dialogue_switch = "metal briefcase"
-        $ money_stolen_dialogue_switch_2 = "won"
+        $ money_stolen_dialogue_switch_2 = " won"
 
     show cs disappointed flipped
     cs "Yes, sir, we're missing a single [money_stolen_dialogue_switch] filled with money we[money_stolen_dialogue_switch_2] while we were in Vegas."
@@ -683,12 +699,12 @@ label train_route_begin:
     cs "And Legos, yes."
     show tate srs flipped
     tate "Wait, so..."
-    tate "You got rich in Vegas, and the first thing you did was buy {i}Legos?"
+    tate "You got rich in Vegas, {w=0.25}and the first thing you did was buy {i}Legos?"
     show cs worried
-    cs "Well, no--{nw}"
+    cs "Well, no--{w=0.25}{nw}"
     tate "I suppose I shouldn't have expected anything else from you."
     show cs disappointed
-    cs "That's not what--{nw}"
+    cs "That's not what--{w=0.25}{nw}"
     show cs disappointed flipped
     amtrak_conductor "Thank you, sir. We'll keep an eye out for your things."
     show tate sheepish flipped
@@ -716,7 +732,7 @@ label train_route_begin:
 
     n "The conductor leaves to return to his duties."
     tate "I can't believe this..."
-    arceus "Me neither. All of that money, just {i}gone..."
+    arceus "Me, neither. All of that money, just... {w=0.25}{i}gone..."
     show cs happy
     cs "Nah, I'm sure they'll find it. Nobody started complaining until the train was already moving, so, all of our stuff should still be on board, right?"
     arceus "I sure hope so..."
@@ -727,7 +743,7 @@ label train_route_begin:
     tate "I was just thinking..."
     tate "I don't think that Mean should know about any of this."
     cs "Why not? It's not like {i}you're{/i} the one who stole it."
-    tate "It's just that... {w=0.5}he's got enough to worry about, since today will be his first official shift as the night conductor..."
+    tate "It's just that... {w=0.5}he's got enough to worry about, since today will be his first official shift as the night driver..."
     tate "I really don't want him dealing with something like this on his first day."
     show tate sheepish flipped
     tate "I just feel like I have to do {i}something."
@@ -740,7 +756,7 @@ label train_route_begin:
     cs "I {i}know{/i} how you work, Tate."
     cs "I really think that sometimes you need to just... \n{w=0.25}let {w=0.25}things {w=0.25}{i}happen."
     show tate shock flipped
-    tate "But, Mean--{nw}"
+    tate "But, Mean--{w=0.25}{nw}"
     show tate sad
     show arceus happy
     arceus "Now, obviously, I've never met the guy, but I'm sure Mean will be fine."
@@ -771,13 +787,13 @@ label train_route_begin:
     cs "Wait, what happened at his last job?"
     show tate srs flipped
     tate "It was so fucking stupid."
-    tate "So, he was working for this home repair company, right? {w=0.25}They made him a security guard, since he's all spiky--{nw}"
+    tate "So, he was working for this home repair company, right? {w=0.25}They made him a security guard, since he's all spiky--{w=0.25}{nw}"
     show arceus 
-    arceus "{i}Spiky?{/i} Wha--{nw}"
+    arceus "{i}Spiky?{/i} {w=0.25}Wha--{w=0.25}{nw}"
 
     # TODO: can we replace "pushed" to reference whichever attack was used in CSBII?
 
-    tate "--and then some weirdo dressed as a catgirl maid broke in and fought the CEO. {w=0.25}A lot of people got hurt."
+    tate "--and then some weirdo dressed as a catgirl maid broke in and fought the CEO! {w=0.25}A lot of people got hurt!"
     show tate shock flipped
     show cs worried
     show arceus worried
@@ -786,21 +802,21 @@ label train_route_begin:
     tate "But since Mean couldn't... {w=0.5}{size=-5}hold him off... {w=1.0}{size=-5}he was... {w=1.5}{size=-5}fired..."
     pause 1.0
     show tate shock flipped
-    n "Tate goes silent. They are staring wide-eyed at CS' outfit."
+    n "Tate goes silent. They stare wide-eyed at CS' outfit."
     tate "..."
     pause 2.0
     show cs scared
-    cs "... Woah, Tate, why are you look--{nw}"
+    cs "... Woah, Tate, why are you look--{w=0.25}{nw}"
     
     # TODO: tate needs a FURIOUS sprite
 
     show tate srs flipped
-    tate "{bt=a3-p10-s4}{size=+24}IT WAS {i}YOU!!"
+    tate "{bt=a3-p10-s4}{size=+36}IT WAS {i}YOU!!"
     cs "Wha-- {i}huh?!"
     tate "CS, WHAT THE {i}FUCK?!"
     tate "{i}YOU{/i} BROKE INTO HOH SIS?!"
     show cs worried
-    "Oh, yeah, uh--{nw}"
+    "Oh, yeah, uh--{w=0.25}{nw}"
     
     show tate sad flipped
     n "Tate is on the verge of tears."
@@ -819,7 +835,7 @@ label train_route_begin:
     tate "Fuck this shit."
     tate "Mean's shift starts soon. {w=0.25}I need to be there for him."
     tate "If either of y'all see him, you will not breathe a word of {i}any{/i} of this to him."
-    tate "Not about the thefts, and certainly not about what happened at HoH SiS."
+    tate "Not about the thefts, {w=0.25}and certainly not about what happened at HoH SiS."
     tate "He doesn't need this. {w=0.25}Especially not today."
     show cs worried
     n "Tate reinforces their demand with a piercing glare towards CS."
@@ -834,7 +850,7 @@ label train_route_begin:
     n "CS looks distraught."
     pause 2.0
     show cs disappointed
-    cs "...Fuck."
+    cs "... {w=0.25}Fuck."
     arceus "You alright, man?"
     cs "I will be. I'm just worried about Tate."
     cs "I don't even remember the last time they were so upset."
@@ -852,7 +868,7 @@ label train_route_begin:
     # TODO: some funny cheery fanfare jingle?
 
     show arceus angry
-    arceus "... {i}I{/i} think you're way too optimistic about all this."
+    arceus "... {i}I{/i} think you're being way too optimistic about all of this."
     arceus "I'm going to bed."
     show cs disappointed
     cs "Yeah, I think I should, too..."
@@ -862,8 +878,23 @@ label train_route_begin:
     n "CS easily falls into a deep slumber."
     n "While the train bed is indeed quite comfortable, Arceus struggles to get any rest."
 
-    # TODO: train room dark sprite
+
+    # TODO: better bg image
+
+    show amtrak_sleeper_interior_night
+    with fade
+    pause 1.0
+    arceus "Fuck..."
+    arceus "I'm so tired, but I {i}still{/i} can't fucking sleep..."
+    arceus "I wonder if they have booze on this train."
+
+    show arceus dark at center with dissolve
+    n "Arceus quietly gets out of bed, being careful not to wake CS."
+    hide arceus with moveoutleft
+    pause 1.0
+    n "He gently shuts the door behind him, then makes for the dining car in hopes of drinking his worries away."
     
+    scene black with fade
     
 
     scene black

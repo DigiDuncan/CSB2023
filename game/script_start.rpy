@@ -976,6 +976,9 @@ image kingman_train_arrive = "bg/train/kingman_train_arrive.png"
 image amtrak_arrive_close = "bg/train/amtrak_arrive_close.png"
 image amtrak_sleeper_corridor = "bg/train/amtrak_sleeper_corridor.png"
 image amtrak_sleeper_interior_day = "bg/train/amtrak_sleeper_interior_day.jpg"
+image amtrak_sleeper_interior_night = "bg/train/amtrak_sleeper_interior_night.png"
+image amtrak_dining_car = "bg/train/amtrak_dining_car.png"
+image amtrak_dining_mean = "bg/train/amtrak_dining_mean.png" 
 
 # Static Images
 image post_it = "post-it.png"
