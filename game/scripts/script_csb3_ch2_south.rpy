@@ -666,7 +666,7 @@ label poker3:
         show arceus flipped at left
         with fade
         show cs flipped at right with moveinright
-        cs "Hey Arc, how you feeling?"
+        cs "Hey Arc, how're you feeling?"
         arceus "I do feel better now, yeah."
         arceus "I think it was just too much sensory overload for me."
         cs "Well that's good to hear."
@@ -768,7 +768,7 @@ label poker3:
         show arceus flipped at left
         with fade
         show cs flipped at right with moveinright
-        cs "Hey Arc, how you feelin'?"
+        cs "Hey Arc, how're you feelin'?"
         arceus "I do feel better now, yeah."
         arceus "I think it was just too much sensory overload for me."
         cs "Well, glad to hear you're feeling better!"

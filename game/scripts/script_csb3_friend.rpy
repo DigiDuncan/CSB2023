@@ -143,7 +143,7 @@ label high_gpu:
         cs "Thank you!"
         show cs
         cs "I'm more of an NVIDIA guy myself, so I decided to go with it."
-    linus "Well, you made some great purchases. I'm excited to see the specs we'll get with this setup!"
+    linus "Well, you've made some great purchases. I'm excited to see the specs we'll get with this setup!"
     linus "I'm gonna go get the set ready, and then we can build and test it on camera."
     cs "Oh, wow, already?"
     linus "Yeah, I'm excited! You can help me build it, right?"
@@ -365,7 +365,7 @@ label after_fanboy:
     show arceus with determination
     arceus "Alright, hi."
     show cs disappointed
-    cs "We could've just gone upstairs in the building..?"
+    cs "We could've just gone upstairs in the building...?"
     arceus "Nah, I don't want anyone to hear us."
     show cs
     arceus "Okay, so, we have a major problem."
@@ -471,7 +471,7 @@ label training:
     play music "klaxon_beat.mp3" loop volume 0.6
     music Klaxon Beat - Kelly Bailey
     linus "Alright, here's our facility! What do you think?"
-    cs "Oh, wow! This looks like something from Quake!"
+    cs "Oh, wow! This looks like something from {i}Quake!{/i}"
     pakoo "Close."
     linus "Follow me this way to the entrance for the course."
     cs "The course?"
@@ -489,7 +489,7 @@ label training:
     show pakoo flipped at left behind linus    
     with moveinleft
     linus "Alright, well, get going through the courses, and we'll watch from above and help you if you need anything."
-    pakoo "Good luck, CS! I'm sure you got this."
+    pakoo "Good luck, CS! I'm sure you've got this."
     hide linus
     hide pakoo
     with moveoutright
@@ -510,7 +510,7 @@ label training:
     pakoo "Alright, onto the next one."
     scene course_2 with fade
     show cs at left with moveinleft
-    pakoo "Alright, you gotta jump across this pit."
+    pakoo "Alright, you've gotta jump across this pit."
     show cs disappointed
     cs "Really? This is a huge pit..."
     pakoo "C'mon, you got this!"
@@ -524,7 +524,7 @@ label training:
 
 label cool_jump:
     show cs
-    cs "I've got this guys! You watching?"
+    cs "I've got this, guys! You watching?"
     pakoo "Yep!"
     show cs at t_punchup with move
     show cs at right with moveintop
@@ -532,7 +532,7 @@ label cool_jump:
     show cs at right with moveinbottom
     "Pakoo and Linus" "WOOAHH!!"
     show cs happy
-    cs "Hell yeah! What did you guys think of that?"
+    cs "Hell yeah! What did you guys think of {i}that?{/i}"
     pakoo "That was impressive, man!"
     linus "I never doubted you, CS!"
     cs "Hey, maybe this training isn't too bad!"
@@ -622,7 +622,7 @@ label fire_range:
     window show
     show cs happy
     cs "Woohoo! I got all the targets!"
-    pakoo "Nice job CS!"
+    pakoo "Nice job, CS!"
     linus "That was excellent! You passed the course with flying colours!"
     pakoo "Head back to the main lobby and we'll meet up with you there."
     cs "Alright, see ya in a bit!"
@@ -682,7 +682,7 @@ label fire_range:
     pakoo "Let me go with him. This is important for his job with you, and... I'm the reason why he's leaving."
     linus "What??"
     show pakoo worried
-    pakoo "Yeah I... set up a plan with him in secret afterwards..."
+    pakoo "Yeah, I... set up a plan with him in secret afterwards..."
     show pakoo
     pakoo "So that he would be better trained when he came back! To impress you!"
     show pakoo worried
@@ -725,7 +725,7 @@ label fire_range:
     pakoo "Hi!"
     show cs angry flipped
     window hide
-    show m4
+    show m4 flipped
     show pakoo disappointed flipped
     cs "Hey, I'm armed!"
     cs "...and dangerous!"
@@ -746,7 +746,7 @@ label fire_range:
     pakoo "Why do you think I showed up here? I know Copguy, and you're all over the place now!"
     pakoo "You appeared in a video on a channel with, like... {i}millions{/i} of subscribers! What were you thinking?"
     cs "Shit, I never really thought about that."
-    pakoo "Look, I just lied to Linus so he won't question this, so let me help you."
+    pakoo "Look, I just lied to Linus so he won't question this. Let me help you."
     arceus "CS? What do you say?"
     cs "I guess, if you are willing to. You have more weapons, right?"
     pakoo "Yeah, I--{w=0.5}{nw}"
@@ -796,14 +796,14 @@ label fire_range:
     show pakoo flipped at left behind cs
     with moveinleft
     arceus "Alright, here we are."
-    cs "So we can pick any car we'd like?"
+    cs "So, we can pick any car we'd like?"
     arceus "Basically, yeah."
     show carguy at mid_right with moveinright
     play music "<loop 0>mm_complete.mp3" loop volume 0.6
     music Mm Complete - Matthew Simmonds
     carguy "Check out all these nice cars!"
     carguy "Nooooot so nice that you fellas don't have a car, though."
-    carguy "Wouldn't it be nice if having a car was this easy?"
+    carguy "Wouldn't it be nice if having a car was {i}this{/i} easy?"
     pakoo "Yeah, you know how expensive cars are these days?"
     carguy "Well, with my new real estate technology, you can! Welcome to Carguy's Deals!"
     arceus "I don't think that's new technolo-- {w=1.0}{nw}"
@@ -826,8 +826,9 @@ label car_picker:
     show pakoo flipped at left behind cs
     with moveinleft
     show carguy with determination
-    carguy "Look at all these nice cars!"
-    carguy "You guys look around. I'll be in the dealership building when you all pick something you like."
+    carguy "Look at all of these nice cars!"
+    carguy "You guys look around. I'll be in the main building when you all pick something you like."
+    # above line changed for clarity - tate
     show carguy flipped with determination
     hide carguy with moveoutright
     pause 0.5
@@ -858,7 +859,7 @@ label cool_car:
     with fade
     show cs at left with moveinleft
     show pakoo at right with moveinright
-    pakoo "Punch it CS! We've gotta get outta here!"
+    pakoo "Punch it, CS! We've gotta get outta here!"
     play sound "siren.ogg" loop fadein 2.0 volume 0.2
     show blue_light at left
     show red_light at right
