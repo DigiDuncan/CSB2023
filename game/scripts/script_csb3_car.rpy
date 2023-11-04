@@ -109,7 +109,7 @@ label car_dialogue:
     cs "No, thank you. I understand what you were insinuating."
     arceus ";)"
     billy "How much are you paying for it?"
-    cs "Like $50 a month..."
+    cs "Like $60 a month..."
     digi "That's fucking insane!"
     billy "Unbelievable! I wouldn't pay more than $19.95!"
     billy "And buy one, get one {i}free!{/i}"
@@ -335,7 +335,7 @@ label car_dialogue:
     cs "Arc? Are you... reading {i}Moby Dick?"
     arceus "Yeah."
     arceus "{i}It is a way I have of driving off the spleen and regulating the circulation.  Whenever I find myself growing grim about the mouth;"
-    arceus "{i}whenever it is a damp, drizzly November in my soul; whenever I find myself involuntarily pausing before coffin warehouses, and bringing up the rear of every funeral I meet..."
+    arceus "{i}whenever it is a damp, drizzly November in my soul; whenever I find myself involuntarily pausing before coffin warehouses, and bringing up the rear of every funeral I meet--{nw}"
     cs "Do you... have to read out loud?"
     arceus "Oh, shit, I'm reading out loud?"
     cs "How do you not notice that?"
@@ -392,7 +392,7 @@ label car_dialogue:
     pakoo "It's kinda funny that it happened though."
     cs "Digi, is this true?"
     digi "Look, just-- why do you always clown on me for these things?"
-    pakoo "Because it's a little funny. Speaking of which did you know about this dance Digi did?{w=0.5}{nw}"
+    pakoo "Because it's a little funny. Speaking of which, did you know about this dance Digi did?{w=0.5}{nw}"
     digi "Stop! Billy, hang up on him!"
     billy "No, it's {i}my{/i} radio!"
     n "Arceus temporarily disables the Jupiter Jack."
@@ -488,7 +488,7 @@ label car_dialogue:
     play music2 "<loop 0>summer_clearance_sale.mp3" volume 0.5
     doug "When you shop at Walmart..."
     doug "You're shopping at Walmart."
-    doug "Keep shopping at Walmart{w=0.25}by going to Walmart today!"
+    doug "Keep shopping at Walmart{w=0.25} by going to Walmart today!"
     stop music2
     $ renpy.music.set_pause(False, "music")
     pause 2.5
@@ -502,8 +502,8 @@ label car_dialogue:
     cs "Nothing! I just dropped something."
     show billy car
     billy "Alright. You'd better not mess with my gadgets!"
-    digi "Shhh! Don't say anything!"
-    cs "Okay, I've got it. Arceus, roll down the window."
+    digi "{size=-10}Shhh! Don't say anything!"
+    cs "{size=-10}Okay, I've got it. Arceus, roll down the window."
     play sound "<from 0 to 1>roll_window.ogg" volume 0.7
     pause 5.0
     cs "Alright, you ready?"

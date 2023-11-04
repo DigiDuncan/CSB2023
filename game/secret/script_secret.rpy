@@ -4,8 +4,8 @@ label secret:
     show digi at center with Dissolve(3)
     digi "Oh, hi."
     digi "You, uh... {w=0.5}weren't supposed to see this."
-    digi "We probably messed something up for you to be here..."
-    digi "Or you're messing with the games files."
+    digi "We probably messed something up, for you to be here..."
+    digi "Or, you're messing with the game's files."
     digi "You wouldn't do that, would you?"
     digi "If this is a bug, you should report it to me."
     digi "Otherwise..."

@@ -58,12 +58,6 @@ screen minigame_gallery():
             null
 
     #previous/next buttons
-    if replay_page > 0:
-        textbutton "{color=#fff}Previous{/color}":
-            action SetVariable("minigame_page", minigame_page - 1)
-            xalign 0.1
-            yalign 0.98
-            background "#5F777F"
     if (minigame_page + 1) * 9 < len(Minigame_items):
         textbutton "{color=#fff}Next{/color}":
             action SetVariable("minigame_page", minigame_page + 1)

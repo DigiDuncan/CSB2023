@@ -63,7 +63,7 @@ label billy_driver:
     scene gasoutside with fade
     show cs at left with moveinleft
     show arceus worried at right with moveinright
-    arceus "Are you crazy? To drive all the way back to New York, in a stranger's car, at that."
+    arceus "Are you crazy? To drive all the way back to New York, in a stranger's car, at that?"
     arceus "Besides, how are we even going to pay the guy anyway?"
     cs "Well, we don't have to go all the way to New York. We could go a small distance then ask another driver."
     show arceus angry
@@ -228,10 +228,10 @@ label montana:
     billy "No, it's {i}my{/i} car!"
     show cultist gun
     n "The cultist pulls out a revolver and aims at Billy's head."
-    cultist "Does this like a joke to you guys?"
+    cultist "Does this look like a joke to you guys?"
     cultist "Out of the car. Now."
     n "Billy shrugs and opens the door, with the cultist leader still aiming the gun to his head."
-    cultist "You two as well, out."
+    cultist "You two, as well. Out."
     n "CS and Arceus both step out of the car."
     hide cultist with moveoutright
     hide billy car with fade
@@ -271,7 +271,7 @@ label montana:
     arceus "Never thought we'd run into cultists, out of all people."
     show cs flipped with determination
     hide cs with moveoutleft
-    n "CS starts rummaging around in the trunk too."
+    n "CS starts rummaging around in the trunk, too."
     arceus "CS, what are you doing?"
     show arceus worried flipped
     arceus "CS?!"
@@ -598,7 +598,7 @@ label michigan:
     with dissolve
     play music "<loop 0>track4.mp3" volume 0.4
     billy "Alright. The highway entrance should be right around here."
-    billy "We can head to Ohio and then we'll be getting really close."
+    billy "We can head to Ohio, and then we'll be getting really close."
     billy "Fuck."
     cs "What's wrong?"
     billy "The entrance is closed. We should stop and ask what's going on."
@@ -663,9 +663,9 @@ label interstate_69:
     $ nome = True
     cs "We're on a detour anyway. May as well take the funny route."
     billy "Alright. 69 it is."
-    arceus "I don't know if that's safe while driving, but we can once we stop somewhere, I suppose."
+    arceus "I don't know if that's safe while driving, but we can do that once we stop somewhere, I suppose."
     billy "I think I'm fine. You and CS can do that now if you want though."
-    cs "That'd be hard with the seatbelts on, so I'll wait. What if we got in a crash?"
+    cs "That'd be hard with the seatbelts on, so I'll wait. What if we got into a crash?"
     cs "Remember to always have safe sex, kids."
     arceus "Fair point."
     arceus "I've been seeing signs for East Lansing for a while. Maybe we should stop there."
@@ -691,7 +691,7 @@ label interstate_69:
     billy "I guess you can only get so many cars through a small intersection."
     arceus "Well, if it's so many damn cars, we should be through by now."
     billy "That's not what that expression means... Whatever. We just have to wait it out."
-    cs "Hey, do you guys see that little guy over behind that tree?"
+    cs "Hey, do you guys see that little guy? Over behind that tree?"
     billy "Oh, did Arceus get out to pee?"
     arceus "You can literally see me in your rear-view mirror right now."
     billy "Only if I squint."
@@ -851,7 +851,7 @@ label interstate_69:
     show waitress at right
     aria "It did. Not sure that the return on investment made sense effort-wise, but it's a cool skill either way."
     aria "What did you all want to eat?"
-    gnome "Frog legs sound good."
+    gnome "Frog Legs sound good."
     scene cafe_sitting_2
     show cs at left
     show billy at center
@@ -950,7 +950,7 @@ label interstate_69:
     scene cafe_sitting
     show aria flipped at left
     show gnome at center
-    gnome "None taken."
+    gnome "G'none taken."
     aria "A little bit taken, but I also brought up your cocaine overdose immediately after first meeting you, so fair play, honestly."
     aria "Y'all are headed to New York, then?"
     scene cafe_sitting_2
@@ -1102,9 +1102,9 @@ label interstate_69:
     scene doll_eye_tree
     n "Aria stopped listening because it's distracted by a tree up ahead."
     if fun_value(10): 
-        aria "Here's one of the white baneberries that I was talking about. They're also known as Actaea Pakoopoda or Doll's Eyes."
+        aria "Here's one of the white baneberries that I was talking about. They're also known as {i}Actaea Pakoopoda,{/i} or Doll's Eyes."
     else:
-        aria "Here's one of the white baneberries that I was talking about. They're also known as Actaea Pachypoda or Doll's Eyes."
+        aria "Here's one of the white baneberries that I was talking about. They're also known as {i}Actaea Pachypoda,{/i} or Doll's Eyes."
     arceus "I can see where they got the name!"
     aria "It does have thick stalks that fit the pachypoda name."
     arceus "Not the altiora poke-and-prod-er or whatever, the fucking doll's eyes!"
@@ -1120,7 +1120,7 @@ label interstate_69:
     billy "I think that's fair. That {i}is{/i} a very pretty tree."
     aria "Thank you! See? {i}Someone{/i} gets it!"
     cs "Oh no, I think the woods are getting to him. He's getting some kind of environmental Stockholm syndrome." 
-    cs "We've gotta get out of here quick before he gets worse."
+    cs "We've gotta get out of here, quick, before he gets worse."
     billy "I wouldn't be too worried about it."
     billy "I'm also terrified right now, but there's a certain macabre beauty that cuts through it..."
     arceus "Weren't you already scared going into this?"
@@ -1148,7 +1148,7 @@ label interstate_69:
     cs "We need to get Billy out of here, ASAP."
     arceus "We can't go forward with it up ahead!"
     aria "You can just walk past It. Faeries are mischievous, but They aren't malevolent."
-    arceus "Maybe not to you, you're also a glowing blob!"
+    arceus "Maybe not to {i}you!{/i} You're also a glowing blob!"
     aria "I wasn't always, and They left me alone then, too."
     cs "I don't know if I want to try and go back if we've encountered the Fae that make the trick paths..."
     cs "I guess we don't have any other options."
@@ -1187,7 +1187,7 @@ label interstate_69:
     show billy at left
     show cs
     show arceus flipped at mid_left
-    show aria dark at right
+    show aria at right
     with dissolve
     stop music fadeout 3.0
     music end
@@ -1847,12 +1847,12 @@ label talktohohsis:
     anno "CS wasn't trying to harm you!"
     show arceus flipped at mid_left_left with moveinleft
     arceus "Yeah, CS' videos are hilarious, and honestly, if I knew you guys before this, I would've called you up for help on my house."
-    arceus "If, y'know, I didn't go after that one politican."
+    arceus "If, y'know, I didn't go after that one politician."
     ed "Well, okay, but--"
     n "Even more of CS' friends show up at the scene."
     show cs at left
     show linus at mid_left behind phil with moveinleft
-    linus "Yeah, I loved those videos about HoH SiS, and we'd love for you to come up fix up some of the damages at the LTT offices."
+    linus "Yeah, I loved those videos about HoH SiS, and we'd love for you to come and fix up some of the damages at the LTT offices."
     show taran flipped at mid_mid_left behind cs with moveinleft
     show luke at mid_left_left behind cs with moveinleft
     show colton at default behind doug with moveinleft
@@ -1898,7 +1898,7 @@ label talktohohsis:
         show bubble at center behind border_guard with moveinbottom
         show bubble with vpunch
         $ persistent.seen.add("bubble")
-    cs "Wow, I don't know how you all got here coincidently, but I appreciate it!"
+    cs "Wow, I don't know how you all got here coincidentally, but I appreciate it!"
     show cs at left
     rich "Oh my God, that's so many people!"
     ed "Okay, okay, I get it."
@@ -1954,7 +1954,7 @@ label talktohohsis:
     cs "No need, guys, we worked everything out."
     sheriff "What?!"
     copguy "Are you sure?"
-    ed "Yep, we got everything under control."
+    ed "Yep, we've got everything under control."
     sheriff "All this for nothing..."
     sheriff "Whatever. C'mon, Copguy, let's go."
     n "The cops get back in their car and speed off."

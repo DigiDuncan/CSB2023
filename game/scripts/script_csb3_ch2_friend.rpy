@@ -88,7 +88,7 @@ label car_ride_1:
     kitty "Hi, I'm Kitty. I hope Arcie is doing well enough."
     tate "Howdy, I'm Tate. Nice to meet y'all."
     show tate smug flipped
-    tate "Now let's go kick some ass!"
+    tate "Now, let's go kick some ass!"
     if nice_car:
         scene joj_charger_fg
         show drive_day behind joj_charger_fg
@@ -195,7 +195,7 @@ label cs_meetup:
         aria_alt "First of all, nice car! Second of all, they weren't that hard to fight."
     else:
         aria_alt "Yeah, they weren't too much of a problem, through."
-    tate "Good, the less cops, the better."
+    tate "Good. The less cops, the better."
     aria_alt "Nova and Digi are at the diner up ahead. Let's move this blockade out of the way and get going."
     cs "Righty-o."
     scene black with fade
@@ -244,7 +244,7 @@ label cs_meetup_2:
     if fun_value(5):
         aria_alt "Yeah, they won't stop coming. Let's meet up with the rest of the crew first."
     else:
-        aria_alt "Yeah, they won't stop coming. Fed to the rules and I hit the ground running."
+        aria_alt "Yeah, they won't stop coming. Fed to the rules, and I hit the ground running."
         aria_alt "Let's meet up with the rest of the crew first."
     hide nova
     hide digi
@@ -303,7 +303,7 @@ label cs_meetup_2:
     show cs at left
     show pakoo at right
     with fade
-    cs "I really don't have an idea of where to go. I'm just driving in a straight line."
+    cs "I really don't have any idea of where to go. I'm just driving in a straight line."
     arceus "I would try to jam their signals, but I don't know where they are."
     arceus "I haven't seen Copguy since we fought him."
     pakoo "Well, if he does come back, we'll be ready for him."
@@ -375,7 +375,7 @@ label car_ride_2:
     n "Barbed wire, soldiers, and military trucks block the highway, with Copguy standing in the front of it all."
     cs "This can't be good."
     scene black with fade
-    n "The groups behind CS stop as well, as everyone gets out of their cars and approaches Copguy."
+    n "The groups behind CS stop as well. Everyone gets out of their cars to approach Copguy."
     scene battle_block_without_theater
     show copguy dark at mid_right
     show guard_soldier at right
@@ -474,7 +474,7 @@ label cs_rage:
     csgod "In theory, yes. Although, you should take some time to rest."
     csgod "Do not beat yourself up over Copguy. You will be able to defeat him if you calm down and focus."
     csgod "I shall let you go for now. Copguy is planning his most devious attack yet, and you need to be prepared."
-    cs "I see, well, thank you for that, CSGod!"
+    cs "I see. Well, thank you for that, CSGod!"
     csgod "No problem."
     hide csgod with dissolve
     n "CSGod fades away, and CS turns back to the group."
@@ -489,13 +489,13 @@ label cs_rage:
     show tate dark
     cs "I'm all good, don't worry."
     cs "Sorry I got upset. I just need to relax."
-    cs "Arc, you drive. I'm gonna lie down in the backseat."
+    cs "Arc, you drive. I'm gonna lie down in the back seat."
     show arceus worried dark flipped
     arceus "You need anything else?"
     cs "I'm good. Just some rest."
     show arceus dark flipped
     hide cs with moveoutleft
-    n "CS heads into the backseat of the car and lies down."
+    n "CS heads into the back seat of the car and lies down."
     show digi dark at center with move
     show arceus dark flipped at left with move
     digi "Alright, well, what's the plan? CS is technically right. We need to go track down Copguy somehow."
@@ -603,7 +603,7 @@ label car_ride_3:
     tate "Wait, you don't like Gold Whales?! I {i}love{/i} those!"
     show tate flipped
     mika "Well, I just don't like them too much."
-    kitty "The snack that breaks your back: Gold Whales!"
+    kitty "{image=note_small1.png}{i} The snack that breaks your back: {w=0.25}Gold Whales!{/i} {image=note_small2.png}"
     n "They all laugh."
     stop music fadeout 3.0
     music end
@@ -685,7 +685,7 @@ label between_2:
     show arceus flipped at left
     with dissolve
     play music "the_whale.mp3" loop volume 0.6
-    cs "C'mon guys! We've gotta get to Copguy!"
+    cs "C'mon, guys! We've gotta get to Copguy!"
     tate "Where is Copguy, anyway? Do you even know where he could be?"
     n "All of a sudden, the ground starts to shake as a blinding light blasts the group."
     stop music fadeout 3.0
@@ -768,7 +768,7 @@ label car_slam:
     mika "CS crushed the whole city!"
     show tate
     show cs at mid_right with moveinleft
-    cs "Hey guys! Are you all alright?"
+    cs "Hey guys! Are you alright?"
     kitty "Yeah, we're alright. I'm assuming you're fine?"
     cs "Better than ever! Although, that did wear me out quite a bit."
     cs "I'm gonna go see how the rest are doing."
@@ -842,7 +842,7 @@ label car_slam:
     show copguycrawl with hpunch
     hide copguycrawl with moveoutbottom
     show cs worried at left with move
-    db "Hey guys! I finally made it!"
+    db "Hey, guys! I finally made it!"
     db "Sorry I'm late! I had to feed the pets back at home and--"
     cs "DB, you did it!"
     db "What? What'd I do?"

@@ -72,7 +72,7 @@ label game_loop:
                             targets = encounter.fighters
                     else:
                         for g in range(target_count):
-                            targets.append(renpy.display_menu([("Who will " + curr_fighter.display_name + " attack? (" + str(target_count - g) + ")", None)] + [(e.display_name, e) for e in getattr(encounter, curr_attack.target_type)], screen = "enemy_choice"))
+                            targets.append(renpy.display_menu([("Who will " + curr_fighter.display_name + " target? (" + str(target_count - g) + ")", None)] + [(e.display_name, e) for e in getattr(encounter, curr_attack.target_type)], screen = "enemy_choice"))
                     print("Targets: ", [t.display_name for t in targets])
                     actions.append((curr_fighter, int(selected_move), targets))
             # Execute the attacks
