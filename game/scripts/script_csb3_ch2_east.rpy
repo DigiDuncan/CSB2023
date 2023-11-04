@@ -660,6 +660,10 @@ label michigan:
             jump interstate_94
 
 label interstate_69:
+    window hide
+    show screen warning("The following scene is a major tonal shift.\nIt may be disconcerting to some viewers.\nWarnings: creepy forests, haunting music, slow decents into madness", "pussy_out_i69")
+    pause
+    window show
     $ nome = True
     cs "We're on a detour anyway. May as well take the funny route."
     billy "Alright. 69 it is."
