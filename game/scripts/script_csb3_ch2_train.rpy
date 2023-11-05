@@ -755,7 +755,6 @@ label train_enter_sleeper:
         $ money_stolen_dialogue_switch = "red and gold treasure chest"
         $ money_stolen_dialogue_switch_2 = " totally plundered"
 
-
     show cs disappointed flipped
     cs "Yes, sir, we're missing a single [money_stolen_dialogue_switch] filled with money we[money_stolen_dialogue_switch_2] while we were in Vegas."
     show arceus angry
@@ -967,7 +966,6 @@ label train_enter_sleeper:
 
 label train_dining:
 
-    
     play music "<loop 0>krabby_klub.mp3" volume 0.6
     scene amtrak_dining_car
     with fade
@@ -1146,6 +1144,9 @@ label train_wakeup:
     music end
     play sound "audio/sliding_door_open.mp3"
     n "As if on cue, the room door slides open."
+
+
+    # THE FOLLOWING IS NOT STAYING, THIS IS JUST HERE SO I DON'T JUST SKIP BACK TO MAIN MENU
 
     scene black
     show tate shock at center
