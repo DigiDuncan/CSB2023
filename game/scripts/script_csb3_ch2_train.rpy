@@ -1,4 +1,7 @@
 label train_start_good:
+    # variable for use in train route.
+    $ money_stolen = False
+
     cs "We should head back home now. I have a plan for our newfound riches."
     show arceus happy flipped
     arceus "Alright! I'm excited to see what you've got cooking up!"
@@ -64,6 +67,9 @@ label train_start_good:
     jump train_route_begin
 
 label train_start_bad:
+    # variable for use in train route.
+    $ money_stolen = True
+
     cs "We should head back home now. I have a plan for our newfound riches."
     show arceus happy flipped
     arceus "Alright! I'm excited to see what you've got cooking up!"
