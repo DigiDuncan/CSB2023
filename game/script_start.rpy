@@ -502,12 +502,6 @@ image tate stare = "characters/tate/tatestare.png"
 image tate stare flipped = "flip:characters/tate/tatestare.png"
 
 ## Mean
-
-# hoh sis
-image mean hohsis1 = "flipped:characters/mean/meanhohsis1.png"
-image mean hohsis2 = "flipped:characters/mean/meanhohsis2.png"
-
-# train
 image mean = "characters/mean/mean.png"
 image mean flipped = "flip:characters/mean/mean.png"
 image mean happy = "characters/mean/meanhappy.png"
@@ -522,6 +516,8 @@ image mean wat = "characters/mean/meanwat.png"
 image mean wat flipped = "flip:characters/mean/meanwat.png"
 image mean furious = "characters/mean/meanfurious.png"
 image mean furious flipped = "flip:characters/mean/meanfurious.png"
+image mean scared = "characters/mean/meanscared.png"
+image mean scared flipped = "flip:characters/mean/meanscared.png"
 
 ## Archival
 image k174 = "characters/k174.png"
@@ -564,7 +560,7 @@ image worker_1 = "characters/worker_corn.png"
 image worker_2 = "characters/worker_blank.png"
 
 # updated sprite - tate
-image worker_3 = "flip:characters/mean/meanhohsis1.png"
+image worker_3 = "flip:characters/mean/meanhohsis.png"
 
 image worker_4 = "characters/worker_eville.png"
 image worker_5 = "characters/eddie_down.png"

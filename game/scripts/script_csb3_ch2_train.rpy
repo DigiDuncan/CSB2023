@@ -132,8 +132,7 @@ label train_route_begin:
 
     n "A little over an hour later, the two arrive at Kingman Amtrak Station."
 
-    scene train_route_begin
-    show kingman_exterior
+    scene kingman_exterior
     show cscar1
     show cscar2
     show cs at left behind cscar2
@@ -168,7 +167,7 @@ label train_route_begin:
 
     n "CS and Arceus get out of the car and grab the [money_container] of money."
 
-    show kingman_exterior with fade
+    scene kingman_exterior with fade
 
     show cs flipped at left
     show arceus at right
@@ -198,7 +197,7 @@ label train_route_begin:
     with moveoutleft
     scene black with fade
 
-    show kingman_interior with fade
+    scene kingman_interior with fade
 
     show arceus flipped at center
     show cs at left
@@ -243,7 +242,7 @@ label train_route_begin:
     pause 1.0
     n "The two glance around the space for a moment."
     
-    show kingman_museum with fade
+    scene kingman_museum with fade
 
     arceus "Looks like there's a little museum here. Wanna poke around there?"
     cs "I don't see why not. Not like we have anything else to do."
@@ -253,7 +252,7 @@ label train_route_begin:
     n "There aren't many exhibits in such a small building, but there are just enough model trains to look at to pass the remaining time."
     n "About five minutes before the train's expected arrival, the two make their way out onto to the platform."
     
-    show kingman_platform_2 with fade
+    scene kingman_platform_2 with fade
 
     show arceus flipped at mid_mid_left
     show cs disappointed at left
@@ -305,14 +304,14 @@ label train_route_begin:
    
     # TODO: i need a similar image but less crunchy
 
-    show kingman_train_arrive with fade
+    scene kingman_train_arrive with fade
     play music "<loop 0>ochre_woods_day.mp3" volume 0.8
     music Ochre Woods ~ Day - Miki Obata
     n "The two watch as the locomotive approaches the station and eventually slows to a stop."
     hide cs
     hide arceus
 
-    show amtrak_arrive_close with fade
+    scene amtrak_arrive_close with fade
 
     show arceus flipped at mid_mid_left
     show cs at left
@@ -413,7 +412,9 @@ label train_route_begin:
     n "CS and Arceus buy tickets from the staff on board."
     n "From there, the trio heads towards the sleeper cars."
 
-    show amtrak_sleeper_corridor
+label train_boarding:
+
+    scene amtrak_sleeper_corridor
     with fade
 
     play music "<loop 0>bedroom_day.mp3" volume 0.5
@@ -539,6 +540,8 @@ label train_route_begin:
     with moveoutright
 
     scene black with fade
+
+label train_enter_sleeper:
     
     # TODO: I need a better picture than this...
     show amtrak_sleeper_interior_day
@@ -881,7 +884,7 @@ label train_route_begin:
 
     # TODO: better bg image
 
-    show amtrak_sleeper_interior_night
+    scene amtrak_sleeper_interior_night
     with fade
     pause 1.0
     arceus "Fuck..."
@@ -896,20 +899,26 @@ label train_route_begin:
     
     scene black with fade
     
-    show amtrak_dining_car
+
+label amtrak_dining:
+
+    scene amtrak_dining_car
     with fade
     pause 1.0
+
+    play music "<loop 0>krabby_klub.mp3" volume 0.6
+    music Krabby Klub - Tsukasa Tawada
     
     show arceus at center with moveinright
 
     n "Arceus arrives at the dining car. The aromas of so many different foods mingling together overwhelm his canine senses."
     arceus "Geez, it smells like a high school cafeteria in here..."
-    arceus "I think I'll just grab a beer and get out."
+    arceus "I think I'll just grab a bottle of wine and get out."
     show arceus at left with moveinleft
-    n "As he heads to the counter, Arceus finds his attention redirected towards a yellow... something?"
+    n "As he heads to the counter, Arceus finds his attention redirected towards a yellow... {w=0.5}something?"
 
     hide arceus
-    show amtrak_dining_mean
+    scene amtrak_dining_mean
     show mean at t_mean_dining_car
     with fade
 
@@ -921,7 +930,7 @@ label train_route_begin:
     mean "I can't believe they made {i}all{/i} of this just for me!"
     mean "This is going to be the best day {i}ever!"
     show mean happy2
-    n "The sunny little spikeball sucks down a sausage."
+    n "The sunny little spikeball scarfs down a sausage."
     show arceus at right with moveinright
     with determination
     show mean happy
@@ -956,18 +965,69 @@ label train_route_begin:
     arceus "Well, uh... are you missing anything? Especially anything valuable?"
     mean "Nah, I didn't even bring anythin--{nw}"
     show mean wat
+    stop music fadeout 3.0
+    music end
     "..."
     mean "Wait."
-    show mean angry
+    show mean angry 
+    with Dissolve(1.0)
+    # the dissolve was arc's idea lol
     mean "Why?"
     arceus "We had some stuff stolen. A lot of people did, actual--{nw}"
+
+    # mean wanted the following section.
+
     show mean furious with vpunch
     mean "{i}WHAT?!"
+    show mean furious with hpunch
+    show mean furious with vpunch
     mean "{bt=a3-p10-s4}{size=+36}ON {i}MY{/i} FUCKING TRAIN?!"
-    mean "{bt=a3-p10-s4}MY FIRST SHIFT STARTS IN {i}TWENTY MINUTES!"
+    show mean furious with vpunch
+    mean "MY FIRST SHIFT STARTS IN {bt=a3-p10-s4}{i}TWENTY MINUTES!"
+    n "One can practically see the gears begin to turn in Arceus' head as he realizes who he is talking to."
+
+    # arc wanted this
+    if fun_value(10):
+        show arceus
+        arceus "Hey, can you do a Dallas impression?"
+        show mean wat
+        mean "Like this?"
+        show mean furious with vpunch
+        mean "{bt=a3-p10-s4}AUUUUUUUUUGH!!"
+
+    show arceus worried
+    arceus "Oh."
+    arceus "{i}Fuck."
+    hide mean with moveoutright
+    n "Mean dashes out of the dining car!"
+
+    scene amtrak_dining_car
+    with fade
+    pause 1.0
+    show mean scared at offscreenleft with determination
+    show mean scared at offscreenright
+    with MoveTransition(0.5)
+    pause 2.0
+    show arceus worried flipped at center with moveinleft
+    pause 2.0
+    n "Arceus, visibly shaken, leaves as well, without even getting the drink he came for."
+
+    # fun value
+    if fun_value(5):
+        n "He did at least steal a few of the abandoned pancakes."
+
+    n "He gets back to the sleeper car as quickly as he can."
+    hide arceus with moveoutright
+    scene black with fade
     
+label train_wakeup:
 
-
+    scene amtrak_sleeper_interior_night
+    with fade
+    pause 1.0
+    
+    
+    
     scene black
     show tate shock at center
     tate "{bt=a3-p10-s4}Awawawawa!"
