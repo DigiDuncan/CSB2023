@@ -543,6 +543,7 @@ image amtrak_conductor = "characters/amtrak_conductor.png"
 image amtrak_conductor flipped = "flip:characters/amtrak_conductor.png"
 image amtrak_stewardess = "characters/amtrak_stewardess.png"
 image amtrak_stewardess flipped = "flip:characters/amtrak_stewardess.png"
+image lupin = "characters/lupin.png"
 
 ## Others
 image discord = "characters/discord.png"

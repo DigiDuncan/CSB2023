@@ -543,18 +543,20 @@ label train_boarding:
     show cs worried
     cs "Just a little, uh--{nw}"
 
-    # TODO: need a sprite for the thief.
+    # TODO: less crumnchy sprite
 
     show cs scared at mid_offscreen_left with hpunch
     show tate shock flipped
+    show lupin at mid_mid_left with dissolve
     show cs concentrate
     show tate shock flipped at right with moveinright
     n "CS is knocked to the ground as a stranger sprints down the corridor!"
     unknown "Sorry, cat dude! I've gotta {i}run!"
+    hide lupin with dissolve
     n "The guy sprints away."
     pause 1.0
-    tate "Oh my God! CS, are you alright?!"
-    cs "Yeah..."
+    tate "Oh, my God! {w=0.25}CS, are you alright?!"
+    cs "Y-{w=0.1}Yeah..."
     cs "More surprised than anything."
     show tate shock flipped at left with moveinleft
     n "Tate helps CS up from the floor."
