@@ -4,6 +4,10 @@
 ##-----------------------------------------------
 
 init python:
+    def mark_read(k):
+        persistent.read.add(k)
+
+init python:
     global name_map
     name_map = {"cs": "cs188",
         #CSB1
@@ -91,7 +95,6 @@ init python:
         "k174": "Pakoo's Memories",
         "addy": "Addy",
         "iris": "???"
-
     }
 
 screen people_nav():
@@ -109,10 +112,12 @@ screen people_nav():
             xoffset 350
             for k in name_map.keys():
                 if k in persistent.seen:
+                    python:
+                        name_label = "{image=unread.png}" + name_map[k] if k not in persistent.read else name_map[k]
                     if k == "iris":
-                        textbutton name_map[k] action ShowMenu("person", k), ShowMenu("fake_error", "people.rpy", 126, "`bios/iris.txt` could not be rendered as a Text object.", "Hi, I'm Iris, a cosmic being with interest in the happenings of this reality, as well as some of the people involved in this story.\nDoes that sound too formal? I don't know. Hey, Digi, writing this shit's hard. You can fill in the rest from here.", _transition = determination)
+                        textbutton name_label action Function(mark_read, k), ShowMenu("person", k), ShowMenu("fake_error", "people.rpy", 126, "`bios/iris.txt` could not be rendered as a Text object.", "Hi, I'm Iris, a cosmic being with interest in the happenings of this reality, as well as some of the people involved in this story.\nDoes that sound too formal? I don't know. Hey, Digi, writing this shit's hard. You can fill in the rest from here.", _transition = determination)
                     else:
-                        textbutton name_map[k] action ShowMenu("person", k)
+                        textbutton name_label action Function(mark_read, k), ShowMenu("person", k)
 
     textbutton "Return to Extras" action ShowMenu("category_welcome") yoffset 950 xoffset 25
     textbutton "Main Menu" action Return() yoffset 1000 xoffset 25
