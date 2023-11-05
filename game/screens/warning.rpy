@@ -1,4 +1,6 @@
 screen warning(warning_text, triggers, leave_label):
+    python:
+        renpy.choice_for_skipping()
     add "#000000"
     vbox:
         xalign 0.5
