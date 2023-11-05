@@ -1,3 +1,5 @@
+# TODO: find someone who can make these bgms actually properly loop. i don't know where to find looped versions...
+
 label train_start_good:
     # variable for use in train route.
     $ money_stolen = False
@@ -219,7 +221,7 @@ label train_route_begin:
     show cs disappointed
     pause 2.0
     show arceus 
-    arceus "Yeah, uh, remember what I said about this town being small? This station is unmanned."
+    arceus "Yeah, uh, remember what I said about this town being small? {w=0.25}This station is unmanned."
     arceus "We can buy tickets on the train once it gets here, though."
     cs "Wow, okay. How long until the train is here, then?"
     show arceus flipped at mid_right with moveinright
@@ -251,14 +253,18 @@ label train_route_begin:
     pause 1.0
     n "The two glance around the space for a moment."
     
+    show cs flipped
+    show arceus
+    n "They spot the entrance to a museum."    
+    
     scene kingman_museum with fade
 
-    arceus "Looks like there's a little museum here. Wanna poke around there?"
+    arceus "Oh, look at all those little trains. Wanna poke around there?"
     cs "I don't see why not. Not like we have anything else to do."
     arceus "Alrighty, let's go."
     scene black with fade
     n "CS and Arceus wander around Kingman Railroad Museum for a little while."
-    n "There aren't many exhibits in such a small building, but there are just enough model trains to look at to pass the remaining time."
+    n "While not many exhibits can fit inside such a small building, there is just enough to see to pass the remaining time."
     n "About five minutes before the train's expected arrival, the two make their way out onto to the platform."
     
     scene kingman_platform_2 with fade
@@ -329,7 +335,7 @@ label train_route_begin:
     arceus "Welp, there it is."
     n "The two wait a few moments before boarding while the incoming passengers exit the train."
     pause 2.0
-    tate_offscreen "{bt=a3-p10-s4}{size=+24}Alllllll aboarrrrrrd!!"
+    tate_offscreen "{bt=a3-p10-s4}{size=+24}Alllllll aboarrrrrrd!!" with hpunch
     cs "Welp, I guess that's our--{nw}"
     show tate flipped at right with moveinright
     pause 1.0
@@ -346,7 +352,7 @@ label train_route_begin:
     show tate flipped
     show cs
     tate "Yeah, I still live there. I'm just traveling a bit."
-    tate "A good friend of mine started a new job as a driver for Amtrak, and asked me if I wanted to come along with him for a while."
+    tate "A good friend of mine started a new job as a driver for Amtrak. He gets discounted tickets, so he asked me if I wanted to come along with him for a while."
     tate "His first shift starts tonight, actually."
     show cs happy
     cs "Oh, cool!"
@@ -394,7 +400,7 @@ label train_route_begin:
     amtrak_conductor "Yeah, {w=0.1}don't do that."
     show tate sheepish
     pause 1.0
-    amtrak_conductor "You're on thin ice {i}anyway{/i} after what happened in the dining car."
+    amtrak_conductor "You're on thin ice anyway after what happened in the dining car."
     tate "But, I just wanted--{nw}"
     amtrak_conductor "The {i}only{/i} reason why you're still on this train is because the new guy won't let us kick you off."
     tate "Listen, I was just trying to he--{nw}"
@@ -519,7 +525,7 @@ label train_boarding:
 
     # TODO: need a sprite for the thief.
 
-    show cs scared at mid_offscreen_left with vpunch
+    show cs scared at mid_offscreen_left with hpunch
     show tate shock flipped
     show cs concentrate
     show tate shock flipped at right with moveinright
@@ -613,10 +619,10 @@ label train_enter_sleeper:
     show tate shock flipped
     show arceus worried
     with shake2
-
-    # TODO: sfx - loud knocking and angry crowds
+    play sound "audio/hard_knock.mp3"
 
     n "A sudden hard knock on the door startles the group."
+    # TODO: sfx - angry crowd fade in
     n "An uproar of angry passengers grows steadily louder."
 
     play music "<loop 0>item_bounce.mp3" volume 0.6
@@ -628,7 +634,8 @@ label train_enter_sleeper:
     arceus "So much for a relaxing trip..."
     n "The door is slid open with a heavy hand."
     
-    # TODO: SFX heavy sliding door slam
+    play sound "audio/sliding_door_open.mp3"
+    pause 1.0
     
     show cs scared flipped at mid_mid_right
     show tate shock flipped at right
@@ -746,6 +753,7 @@ label train_enter_sleeper:
     show arceus worried at right
     with moveinleft
 
+    play sound "audio/sliding_door_close.mp3"
     n "The conductor leaves to return to his duties."
     tate "I can't believe this..."
     arceus "Me, neither. All of that money, just... {w=0.25}{i}gone..."
@@ -855,13 +863,14 @@ label train_enter_sleeper:
     tate "He doesn't need this. {w=0.25}Especially not today."
     show cs worried
     n "Tate reinforces their demand with a piercing glare towards CS."
-    show tate srs with hpunch
-    n "Tate then suddenly stands up."
+    show tate srs
+    n "Tate then suddenly stands up." with vpunch
     tate "I'm sorry."
     tate "I need to go."
     show tate sad flipped
     pause 0.25
     hide tate with moveoutleft
+    play sound "audio/sliding_door_open.mp3"
     n "Tate swiftly exits the sleeper car and runs off, not even bothering to shut the door behind them."
     n "CS looks distraught."
     pause 2.0
@@ -907,11 +916,13 @@ label train_enter_sleeper:
     show arceus dark at center with dissolve
     n "Arceus quietly gets out of bed, being careful not to wake CS."
     hide arceus with moveoutleft
-    pause 1.0
+    play sound "audio/sliding_door_open.mp3"
+    pause 2.0
     n "He gently shuts the door behind him, then makes for the dining car in hopes of drinking his worries away."
-    
+    play sound "audio/sliding_door_close.mp3"
+
     scene black with fade
-    
+    pause 2.0
 
 label train_dining:
 
@@ -935,7 +946,7 @@ label train_dining:
     show mean at t_mean_dining_car
     with fade
 
-    n "A strange spiny entity is surrounded by piles of pancakes, sky-high stacks of sausages, oodles of eggs, and a whole bunch of bacon."
+    n "A strange spiny entity is surrounded by piles of pancakes, {w=0.25}sky-high stacks of sausages, {w=0.25}oodles of eggs, {w=0.25}and a whole bunch of bacon."
     n "Arceus can't help but stare in awe at both the enormous spread of food..."
     n "... and at the brightly-colored creature currently demolishing it."
     show mean happy
@@ -956,9 +967,9 @@ label train_dining:
     show mean happy
     show arceus worried
     arceus "It's... uh... getting pretty late. How can you possibly eat all of that so close to bed?"
-    mean "{i}Crunch, chew..."
+    mean "{i}Crunch, chew...{w=0.25}{nw}"
     mean "Oh, no!"
-    mean "{i}Gulp!"
+    mean "{i}Gulp!{w=0.25}{nw}"
     show mean
     mean "I just woke up, actually."
     mean "Today's a big day, so my friend made me this massive breakfast to celebrate!"
@@ -966,13 +977,13 @@ label train_dining:
     n "The popcorn-colored pincushion prepares to pursue another pancake."
     show mean happy
     arceus "Oh, wait! You've been asleep all day?"
-    mean "{i}Munch, munch..."
-    mean "Yeah! Shift work, you know how it goes."
+    mean "{i}Munch, munch...{w=0.25}{nw}"
+    mean "Yeah! Shift work... {w=0.25}you know how it goes."
     arceus "That, I do..."
     arceus "It's just that, uh..."
     arceus "If you've been asleep..."
     arceus "Have you heard about what happened?"
-    mean "{i}Gulp"
+    mean "{i}Gulp.{w=0.25}{nw}"
     show mean ayo
     mean "No...?"
     arceus "Well, uh... are you missing anything? Especially anything valuable?"
@@ -993,13 +1004,10 @@ label train_dining:
     play music "<loop 0>odd_one_out.mp3" volume 0.6
     music Odd One Out - Miki Obata
 
-    show mean furious with vpunch
-    mean "{i}WHAT?!"
-    show mean furious with hpunch
-    show mean furious with vpunch
-    mean "{bt=a3-p10-s4}{size=+36}ON {i}MY{/i} FUCKING TRAIN?!"
-    show mean furious with vpunch
-    mean "MY FIRST SHIFT STARTS IN {bt=a3-p10-s4}{i}TWENTY MINUTES!"
+    show mean furious
+    mean "{i}WHAT?!" with hpunch
+    mean "{bt=a3-p10-s4}{size=+36}ON {i}MY{/i} FUCKING TRAIN?!" with vpunch
+    mean "MY FIRST SHIFT STARTS IN {bt=a3-p10-s4}{i}TWENTY MINUTES!" with hpunch
     n "One can practically see the gears begin to turn in Arceus' head as he realizes who he is talking to."
 
     # arc wanted this
@@ -1008,8 +1016,10 @@ label train_dining:
         arceus "Wait, hey, can you do a Dallas impression?"
         show mean wat
         mean "Like this?"
-        show mean furious with vpunch
-        mean "{bt=a3-p10-s4}AUUUUUUUUUGH!!"
+        show mean furious
+        mean "{bt=a3-p10-s4}AUUUUUUUUUGH!!" with hpunch
+        show arceus happy
+        arceus "Yeah!"
 
     show arceus worried
     arceus "Oh."
@@ -1040,16 +1050,20 @@ label train_wakeup:
 
     scene amtrak_sleeper_interior_night
     with fade
+    play sound "audio/sliding_door_open.mp3"
     pause 1.0
     show arceus worried dark flipped at center with moveinleft
     pause 1.0
     arceus "CS!"
+    play sound "audio/sliding_door_close.mp3"
     arceus "Wake up!"
     cs "Hnnnh... {w=0.5}huh?"
     n "Arceus flips on the lights."
+    play sound "audio/lightswitch.wav"
     show amtrak_sleeper_interior_day
     hide arceus
     show arceus worried flipped
+    pause 1.0
     n "CS lets out a groan and rolls back over in bed."
     show arceus angry flipped
     cs "Zzzzz..."
@@ -1086,11 +1100,9 @@ label train_wakeup:
     pause 0.5
     cs "{w=0.25}... Oh no."
     cs "We are {i}definitely{/i} in trouble n--{nw}"
-    show arceus worried with vpunch
+    show arceus worried with hpunch
     music end
     n "As if on cue, the room door slides open."
-    
-
 
     scene black
     show tate shock at center
