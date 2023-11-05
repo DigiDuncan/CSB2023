@@ -109,7 +109,7 @@ label train_start_bad:
     pause 2.0
 
     # TODO: actual song title is Sub-Game Select, but this thing can't handle hyphens.
-    play music "<loop 0>sub_game_select.mp3" volume 1
+    play music "<loop 0>sub_game_select.ogg" volume 1
     music SubGame Select - Jun Ishikawa
 
     show arceus happy
@@ -1073,7 +1073,7 @@ label train_dining:
     with MoveTransition(0.5)
     pause 2.0
     show arceus worried flipped at center with moveinleft
-    pause 2.0
+    pause 1.0
     n "Arceus, visibly shaken, leaves as well, without even getting the drink he came for."
 
     # fun value
