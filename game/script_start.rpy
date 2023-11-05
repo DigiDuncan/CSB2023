@@ -482,7 +482,27 @@ image tate smug dark = "characters/tate/tatesmugdark.png"
 image tate smug flipped = "flip:characters/tate/tatesmug.png"
 image tate smug dark flipped = "flip:characters/tate/tatesmugdark.png"
 
-##Archival
+## Mean
+image mean = "characters/mean/mean.png"
+image mean flipped = "flip:characters/mean/mean.png"
+image mean happy = "characters/mean/meanhappy.png"
+image mean happy flipped = "flip:characters/mean/meanhappy.png"
+image mean happy2 = "characters/mean/meanhappy2.png"
+image mean happy2 flipped = "flip:characters/mean/meanhappy2.png"
+image mean ayo = "characters/mean/meanayo.png"
+image mean ayo flipped = "flip:characters/mean/meanayo.png"
+image mean angry = "characters/mean/meanangry.png"
+image mean angry flipped = "flip:characters/mean/meanangry.png"
+image mean wat = "characters/mean/meanwat.png"
+image mean wat flipped = "flip:characters/mean/meanwat.png"
+image mean furious = "characters/mean/meanfurious.png"
+image mean furious flipped = "flip:characters/mean/meanfurious.png"
+image mean scared = "characters/mean/meanscared.png"
+image mean scared flipped = "flip:characters/mean/meanscared.png"
+image mean surprised = "characters/mean/meansurprised.png"
+image mean surprised flipped = "flip:characters/mean/meansurprised.png"
+
+## Archival
 image k174 = "characters/k174.png"
 image k174 flipped = "flip:characters/k174.png"
 image k199 = "characters/k199.png"
