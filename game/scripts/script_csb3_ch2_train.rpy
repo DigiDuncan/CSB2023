@@ -915,7 +915,7 @@ label amtrak_dining:
     arceus "Geez, it smells like a high school cafeteria..."
     arceus "I think I'll just grab a bottle of wine and get out of here."
     show arceus at left with moveinleft
-    n "As he heads to the counter, Arceus finds his attention redirected towards a yellow... {w=0.5}something?"
+    n "As he heads to the counter, Arceus finds his attention redirected towards a yellow... {w=0.5}thing."
 
     hide arceus
     scene amtrak_dining_mean
@@ -976,6 +976,10 @@ label amtrak_dining:
     arceus "We had some stuff stolen. A lot of people did, actual--{nw}"
 
     # mean wanted the following section.
+    
+    play music "<loop 0>odd_one_out.mp3" volume 0.6
+    music Odd One Out - Miki Obata
+
     show mean furious with vpunch
     mean "{i}WHAT?!"
     show mean furious with hpunch
@@ -988,7 +992,7 @@ label amtrak_dining:
     # arc wanted this
     if fun_value(10):
         show arceus
-        arceus "Hey, can you do a Dallas impression?"
+        arceus "Wait, hey, can you do a Dallas impression?"
         show mean wat
         mean "Like this?"
         show mean furious with vpunch
@@ -1028,7 +1032,8 @@ label train_wakeup:
     pause 1.0
     arceus "CS!"
     arceus "Wake up!"
-    cs "Hnnnh... {w=0.5}huh?"    
+    cs "Hnnnh... {w=0.5}huh?"
+    n "Arceus flips on the lights."
     show amtrak_sleeper_interior_day
     hide arceus
     show arceus worried flipped
@@ -1065,10 +1070,11 @@ label train_wakeup:
     arceus "He's Tate's friend, {i}Mean!"
     arceus "The new night driver!"
     show cs scared flipped
-    pause 1.0
+    pause 0.5
     cs "{w=0.25}... Oh no."
     cs "We are {i}definitely{/i} in trouble n--{nw}"
     show arceus worried with vpunch
+    music end
     n "As if on cue, the room door slides open."
     
 
