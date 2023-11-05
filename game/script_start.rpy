@@ -1174,10 +1174,11 @@ default line_11 = ""
 default line_12 = ""
 
 # Train route
-default money_stolen = False
-default money_container = ""
-default money_stolen_dialogue_switch = ""
-default money_stolen_dialogue_switch_2 = ""
+# the default values are silly so that i know they're defaults
+default money_stolen = None
+default money_container = "treasure chest"
+default money_stolen_dialogue_switch = "lock it shut"
+default money_stolen_dialogue_switch_2 = "red and gold chest"
 
 # RPG
 default enemy_1 = "cop"

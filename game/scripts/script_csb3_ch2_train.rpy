@@ -161,9 +161,12 @@ label train_route_begin:
     if money_stolen == True:
         $ money_container = "bag"
         $ money_stolen_dialogue_switch = "zip it up"
-    else:
+    elif money_stolen == False:
         $ money_container = "briefcase"
         $ money_stolen_dialogue_switch = "latch it shut"
+    else:
+        $ money_container = "treasure chest"
+        $ money_stolen_dialogue_switch = "lock it shut"
 
     n "CS and Arceus get out of the car and grab the [money_container] of money."
 
@@ -690,9 +693,13 @@ label train_enter_sleeper:
     if money_stolen == True:
         $ money_stolen_dialogue_switch = "black bag"
         $ money_stolen_dialogue_switch_2 = "\n... {w=0.5}won"
-    else:
+    elif money_stolen == False:
         $ money_stolen_dialogue_switch = "metal briefcase"
         $ money_stolen_dialogue_switch_2 = " won"
+    else:
+        $ money_stolen_dialogue_switch = "red and gold treasure chest"
+        $ money_stolen_dialogue_switch_2 = " totally plundered"
+
 
     show cs disappointed flipped
     cs "Yes, sir, we're missing a single [money_stolen_dialogue_switch] filled with money we[money_stolen_dialogue_switch_2] while we were in Vegas."
@@ -900,7 +907,7 @@ label train_enter_sleeper:
     scene black with fade
     
 
-label amtrak_dining:
+label train_dining:
 
     scene amtrak_dining_car
     with fade
