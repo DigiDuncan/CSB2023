@@ -1,5 +1,6 @@
 label train_start_good:
     # variable for use in train route.
+    # Digi was here lol
     $ money_stolen = False
 
     cs "We should head back home now. I have a plan for our newfound riches."
