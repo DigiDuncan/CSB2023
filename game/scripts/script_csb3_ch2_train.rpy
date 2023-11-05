@@ -912,8 +912,8 @@ label amtrak_dining:
     show arceus at center with moveinright
 
     n "Arceus arrives at the dining car. The aromas of so many different foods mingling together overwhelm his canine senses."
-    arceus "Geez, it smells like a high school cafeteria in here..."
-    arceus "I think I'll just grab a bottle of wine and get out."
+    arceus "Geez, it smells like a high school cafeteria..."
+    arceus "I think I'll just grab a bottle of wine and get out of here."
     show arceus at left with moveinleft
     n "As he heads to the counter, Arceus finds his attention redirected towards a yellow... {w=0.5}something?"
 
@@ -976,7 +976,6 @@ label amtrak_dining:
     arceus "We had some stuff stolen. A lot of people did, actual--{nw}"
 
     # mean wanted the following section.
-
     show mean furious with vpunch
     mean "{i}WHAT?!"
     show mean furious with hpunch
@@ -1025,9 +1024,55 @@ label train_wakeup:
     scene amtrak_sleeper_interior_night
     with fade
     pause 1.0
+    show arceus worried dark flipped at center with moveinleft
+    pause 1.0
+    arceus "CS!"
+    arceus "Wake up!"
+    cs "Hnnnh... {w=0.5}huh?"    
+    show amtrak_sleeper_interior_day
+    hide arceus
+    show arceus worried flipped
+    n "CS lets out a groan and rolls back over in bed."
+    show arceus angry flipped
+    cs "Zzzzz..."
+    cs "{size=-12}Five more minutes, mom..."
+    show arceus angry flipped at right with moveinleft
+    n "Arceus pulls the blanket off of CS and drags him out of bed."
+
+    show arceus angry flipped at center
+    show cs concentrate flipped at right
+    with moveinright
     
+    cs "Hnngh, {w=0.25}huh, {w=0.25}what, {w=0.25}why?!"
+    show cs disappointed flipped
+    cs "Wha-- {w=0.05}What's going on?"
+    pause 1.0
+    n "CS notices Arceus is out of breath and panicking."
+    show cs worried flipped
+    cs "Wait, Arc, what's wrong?"
+    cs "Are you alright?"
+    show arceus worried flipped
+    arceus "Dude, I fucked up!"
+    arceus "I went to the dining car for a drink, and there was this... {w=0.5}{i}thing{/i} eating an insane amount of food, and I went to talk to him!"
+    arceus "He was asleep all day and didn't know about the thief, so I asked him if he's missing anything--{w=0.25}{nw}"
+    arceus "That {i}thing{/i} was Mean!"
+    show cs surprised flipped
+    cs "Wait, {w=0.25}he was mean to you? {w=0.5}What'd he do?"
+    show cs worried flipped
+    show arceus angry flipped
+    cs "Are you okay?"
+    arceus "No!"
+    arceus "He's Tate's friend, {i}Mean!"
+    arceus "The new night driver!"
+    show cs scared flipped
+    pause 1.0
+    cs "{w=0.25}... Oh no."
+    cs "We are {i}definitely{/i} in trouble n--{nw}"
+    show arceus worried with vpunch
+    n "As if on cue, the room door slides open."
     
-    
+
+
     scene black
     show tate shock at center
     tate "{bt=a3-p10-s4}Awawawawa!"
