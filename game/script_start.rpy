@@ -501,6 +501,8 @@ image tate sad = "characters/tate/tatesad.png"
 image tate sad flipped = "flip:characters/tate/tatesad.png"
 image tate stare = "characters/tate/tatestare.png"
 image tate stare flipped = "flip:characters/tate/tatestare.png"
+image tate cry = "characters/tate/tatecry.png"
+image tate cry flipped = "flip:characters/tate/tatecry.png"
 
 ## Mean
 image mean = "characters/mean/mean.png"
