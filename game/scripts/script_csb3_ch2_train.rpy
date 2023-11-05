@@ -1,7 +1,3 @@
-# TODO: find someone who can make these bgms actually properly loop. i don't know where to find looped versions...
-# TODO: also make sure all bgm volume is normalized. my headphones are unreliable.
-# i legitimately cannot tell if the volume of anything in this script is consistent with the rest of the game.
-
 label train_start_good:
     # variable for use in train route.
     # Digi was here lol
@@ -39,7 +35,7 @@ label train_start_good:
     pause 2.0
 
     # TODO: actual song title is Sub-Game Select, but this thing can't handle hyphens.
-    play music "<loop 0>sub_game_select.mp3" volume 0.6
+    play music "<loop 0>sub_game_select.mp3" volume 1
     music SubGame Select - Jun Ishikawa
 
     show arceus happy flipped 
@@ -114,7 +110,7 @@ label train_start_bad:
     pause 2.0
 
     # TODO: actual song title is Sub-Game Select, but this thing can't handle hyphens.
-    play music "<loop 0>sub_game_select.mp3" volume 0.6
+    play music "<loop 0>sub_game_select.mp3" volume 1
     music SubGame Select - Jun Ishikawa
 
     show arceus happy
@@ -338,7 +334,7 @@ label train_route_begin:
     # TODO: i need a similar image but less crunchy
 
     scene kingman_train_arrive with fade
-    play music "<loop 0>ochre_woods_day.mp3" volume 0.8
+    play music "<loop 0>ochre_woods_day.mp3" volume 1
     music Ochre Woods ~ Day - Miki Obata
     n "The two watch as the locomotive approaches the station and eventually slows to a stop."
     hide cs
@@ -452,10 +448,9 @@ label train_boarding:
     scene amtrak_sleeper_corridor
     with fade
 
-    play music "<loop 0>bedroom_day.mp3" volume 0.5
+    play music "<loop 0>bedroom_day.mp3" volume 1
     music Bedroom ~ Day - Miki Obata
     
-    # TODO: amtrak stewardess sprite leading the group.
     show amtrak_stewardess at right
     show tate at mid_mid_right
     show cs at left
@@ -652,7 +647,7 @@ label train_enter_sleeper:
     # TODO: sfx - angry crowd fade in
     n "An uproar of angry passengers grows steadily louder."
 
-    play music "<loop 0>item_bounce.mp3" volume 0.6
+    play music "<loop 0>item_bounce.mp3" volume 0.8
     music Item Bounce - Akira Miyagawa
 
     cs "What the hell?!"
@@ -968,7 +963,7 @@ label train_enter_sleeper:
 
 label train_dining:
 
-    play music "<loop 0>krabby_klub.mp3" volume 0.6
+    play music "<loop 0>krabby_klub.mp3" volume 1
     scene amtrak_dining_car
     with fade
     pause 1.0
@@ -1043,7 +1038,7 @@ label train_dining:
 
     # mean wanted the following section.
     
-    play music "<loop 0>odd_one_out.mp3" volume 0.6
+    play music "<loop 0>odd_one_out.mp3" volume 1
     music Odd One Out - Miki Obata
 
     show mean furious
