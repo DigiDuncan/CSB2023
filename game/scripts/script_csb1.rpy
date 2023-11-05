@@ -80,7 +80,7 @@ label csbi_start:
     show craptop updating
     craptop "Downloading update 200/13..."
     craptop "Update complete."
-    cs "OoOoOoOoO yes!"
+    cs "{bt=a3-p10-s4}OoOoOoOoO{/bt} yes!"
     show craptop discord
     play sound "windows_logon.mp3"
     cs "Hey guys!"
