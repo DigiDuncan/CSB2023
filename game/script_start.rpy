@@ -202,6 +202,10 @@ transform t_punchup:
     rotate 0
     linear 1 rotate 960
 
+transform t_mean_dining_car:
+    anchor (0.5, 0.5)
+    pos (0.3, 0.6)
+
 transform lego_run:
     pos (0.5, 0.5)
     anchor(0.5, 0.5)
@@ -497,6 +501,28 @@ image tate sad flipped = "flip:characters/tate/tatesad.png"
 image tate stare = "characters/tate/tatestare.png"
 image tate stare flipped = "flip:characters/tate/tatestare.png"
 
+## Mean
+
+# hoh sis
+image mean hohsis1 = "flipped:characters/mean/meanhohsis1.png"
+image mean hohsis2 = "flipped:characters/mean/meanhohsis2.png"
+
+# train
+image mean = "characters/mean/mean.png"
+image mean flipped = "flip:characters/mean/mean.png"
+image mean happy = "characters/mean/meanhappy.png"
+image mean happy flipped = "flip:characters/mean/meanhappy.png"
+image mean happy2 = "characters/mean/meanhappy2.png"
+image mean happy2 flipped = "flip:characters/mean/meanhappy2.png"
+image mean ayo = "characters/mean/meanayo.png"
+image mean ayo flipped = "flip:characters/mean/meanayo.png"
+image mean angry = "characters/mean/meanangry.png"
+image mean angry flipped = "flip:characters/mean/meanangry.png"
+image mean wat = "characters/mean/meanwat.png"
+image mean wat flipped = "flip:characters/mean/meanwat.png"
+image mean furious = "characters/mean/meanfurious.png"
+image mean furious flipped = "flip:characters/mean/meanfurious.png"
+
 ## Archival
 image k174 = "characters/k174.png"
 image k174 flipped = "flip:characters/k174.png"
@@ -536,7 +562,10 @@ image michael = "flip:characters/michael.png"
 image phil = "characters/phil.png"
 image worker_1 = "characters/worker_corn.png"
 image worker_2 = "characters/worker_blank.png"
-image worker_3 = "characters/worker_mean.png"
+
+# updated sprite - tate
+image worker_3 = "flip:characters/mean/meanhohsis1.png"
+
 image worker_4 = "characters/worker_eville.png"
 image worker_5 = "characters/eddie_down.png"
 image worker_5alt = "characters/eddie_up.png"
@@ -620,7 +649,6 @@ image howie flipped = "flip:characters/howie.png"
 image guest = "characters/guest.png"
 image janitor = "characters/janitor.png"
 image customer = "characters/customer.png"
-image mean = "characters/mean.png"
 image ges = "characters/ges.png"
 image gordon = "characters/gordon.png"
 image hammond = "characters/hammond.png"

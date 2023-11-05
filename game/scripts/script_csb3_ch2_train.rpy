@@ -896,6 +896,77 @@ label train_route_begin:
     
     scene black with fade
     
+    show amtrak_dining_car
+    with fade
+    pause 1.0
+    
+    show arceus at center with moveinright
+
+    n "Arceus arrives at the dining car. The aromas of so many different foods mingling together overwhelm his canine senses."
+    arceus "Geez, it smells like a high school cafeteria in here..."
+    arceus "I think I'll just grab a beer and get out."
+    show arceus at left with moveinleft
+    n "As he heads to the counter, Arceus finds his attention redirected towards a yellow... something?"
+
+    hide arceus
+    show amtrak_dining_mean
+    show mean at t_mean_dining_car
+    with fade
+
+    n "A strange spiny entity is surrounded by piles of pancakes, sky-high stacks of sausages, oodles of eggs, and a whole bunch of bacon."
+    n "Arceus can't help but stare in awe at both the enormous spread of food..."
+    n "... and at the brightly-colored creature currently demolishing it."
+    show mean happy
+    mean "Let's fucking {i}gooooo!{/i}"
+    mean "I can't believe they made {i}all{/i} of this just for me!"
+    mean "This is going to be the best day {i}ever!"
+    show mean happy2
+    n "The sunny little spikeball sucks down a sausage."
+    show arceus at right with moveinright
+    with determination
+    show mean happy
+    arceus "Damn..."
+    arceus "Wow, uh, excuse me. I have to ask..."
+    show mean
+    mean "Hm?"
+    show mean happy2
+    n "The buttery ball of barbs bites into some bacon."
+    show mean happy
+    show arceus worried
+    arceus "It's... uh... getting pretty late. How can you possibly eat all of that so close to bed?"
+    mean "{i}Crunch, chew..."
+    mean "Oh, no!"
+    mean "{i}Gulp!"
+    show mean
+    mean "I just woke up, actually."
+    mean "Today's a big day, so my friend made me this massive breakfast to celebrate!"
+    show mean happy2
+    n "The popcorn-colored pincushion prepares to pursue another pancake."
+    show mean happy
+    arceus "Oh, wait! You've been asleep all day?"
+    mean "{i}Munch, munch..."
+    mean "Yeah! Shift work, you know how it goes."
+    arceus "That, I do..."
+    arceus "It's just that, uh..."
+    arceus "If you've been asleep..."
+    arceus "Have you heard about what happened?"
+    mean "{i}Gulp"
+    show mean ayo
+    mean "No...?"
+    arceus "Well, uh... are you missing anything? Especially anything valuable?"
+    mean "Nah, I didn't even bring anythin--{nw}"
+    show mean wat
+    "..."
+    mean "Wait."
+    show mean angry
+    mean "Why?"
+    arceus "We had some stuff stolen. A lot of people did, actual--{nw}"
+    show mean furious with vpunch
+    mean "{i}WHAT?!"
+    mean "{bt=a3-p10-s4}{size=+36}ON {i}MY{/i} FUCKING TRAIN?!"
+    mean "{bt=a3-p10-s4}MY FIRST SHIFT STARTS IN {i}TWENTY MINUTES!"
+    
+
 
     scene black
     show tate shock at center
