@@ -207,7 +207,7 @@ label train_route_begin:
 
     cs "Oh, right."
     cs "I guess we won't be needing this for a while."
-    play sound "audio/lego_break.WAV"
+    play sound "audio/sfx_lego_break.WAV"
     n "CS quickly deconstructs the Lego car. He shoves the colorful little bricks into the [money_container] for later."
     n "The [money_container] is now full to bursting, but CS just barely manages to [money_stolen_dialogue_switch]."
     show arceus worried
@@ -332,7 +332,7 @@ label train_route_begin:
     music end
     show cs
     show arceus flipped
-    play sound "audio/amtrak_horn.wav"
+    play sound "audio/sfx_amtrak_horn.wav"
     n "The conversation is interrupted by the blare of a train horn."
    
     # TODO: i need a similar image but less crunchy
@@ -581,7 +581,7 @@ label train_boarding:
 label train_enter_sleeper:
 
     # TODO: I need a better picture than this...
-    play sound "audio/sliding_door_close.mp3"
+    play sound "audio/sfx_sliding_door_close.mp3"
     show amtrak_sleeper_interior_day
     show arceus at right
     with fade
@@ -644,7 +644,7 @@ label train_enter_sleeper:
     show tate shock flipped
     show arceus worried
     with shake2
-    play sound "audio/hard_knock.mp3"
+    play sound "audio/sfx_hard_knock.mp3"
 
     n "A sudden hard knock on the door startles the group."
     # TODO: sfx - angry crowd fade in
@@ -659,7 +659,7 @@ label train_enter_sleeper:
     arceus "So much for a relaxing trip..."
     n "The door is slid open with a heavy hand."
     
-    play sound "audio/sliding_door_open.mp3"
+    play sound "audio/sfx_sliding_door_open.mp3"
     pause 1.0
     
     show cs scared flipped at mid_mid_right
@@ -794,7 +794,7 @@ label train_enter_sleeper:
     show arceus worried at right
     with moveinleft
 
-    play sound "audio/sliding_door_close.mp3"
+    play sound "audio/sfx_sliding_door_close.mp3"
     n "The conductor leaves to return to his duties."
     tate "I can't believe this..."
     arceus "Me, neither. All of that money, just... {w=0.25}{i}gone..."
@@ -909,7 +909,7 @@ label train_enter_sleeper:
     show tate sad flipped
     pause 0.25
     hide tate with moveoutleft
-    play sound "audio/sliding_door_open.mp3"
+    play sound "audio/sfx_sliding_door_open.mp3"
     n "Tate swiftly exits the sleeper car and runs off, not even bothering to shut the door behind them."
     n "CS looks distraught."
     pause 2.0
@@ -956,10 +956,10 @@ label train_enter_sleeper:
     show arceus dark at center with dissolve
     n "Arceus quietly gets out of bed, being careful not to wake CS."
     hide arceus with moveoutleft
-    play sound "audio/sliding_door_open.mp3"
+    play sound "audio/sfx_sliding_door_open.mp3"
     pause 2.0
     n "He gently shuts the door behind him, then makes for the dining car in hopes of drinking his worries away."
-    play sound "audio/sliding_door_close.mp3"
+    play sound "audio/sfx_sliding_door_close.mp3"
 
     scene black with fade
     pause 3.0
@@ -1090,16 +1090,16 @@ label train_wakeup:
 
     scene amtrak_sleeper_interior_night
     with fade
-    play sound "audio/sliding_door_open.mp3"
+    play sound "audio/sfx_sliding_door_open.mp3"
     pause 1.0
     show arceus worried dark flipped at center with moveinleft
     pause 0.5
     arceus "CS!" with hpunch
-    play sound "audio/sliding_door_close.mp3"
+    play sound "audio/sfx_sliding_door_close.mp3"
     arceus "Wake up!"
     cs "Hnnnh... {w=0.5}huh?"
     n "Arceus flips on the lights."
-    play sound "audio/lightswitch.wav"
+    play sound "audio/sfx_lightswitch.wav"
     show amtrak_sleeper_interior_day
     hide arceus
     show arceus worried flipped
@@ -1142,7 +1142,7 @@ label train_wakeup:
     cs "We are {i}definitely{/i} in trouble n--{nw}"
     show arceus worried with hpunch
     music end
-    play sound "audio/sliding_door_open.mp3"
+    play sound "audio/sfx_sliding_door_open.mp3"
     n "As if on cue, the room door slides open."
 
 
