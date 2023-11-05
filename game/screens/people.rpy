@@ -186,6 +186,8 @@ screen person(l):
                 add "images/characters/tate/tatehappy.png" xalign 1.0 yalign 1.0 zoom 0.75
             elif l == "pakoo":
                 add "images/characters/pakoo/pakoo.png" xalign 1.0 yalign 1.0
+            elif l == "mean":
+                add "images/characters/mean/mean.png" xalign 1.0 yalign 1.0
             # SECRET
             elif l in ["iris", "bubble", "lancer", "howie", "round"]:
                 add f"secret/{l}.png" xalign 1.0 yalign 1.0 zoom 0.75
