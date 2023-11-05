@@ -1333,7 +1333,7 @@ label test:
     show copguy_ex
     show red_light
     show blue_light
-    show screen warning("The following scene sucks.", "secret")
+    show screen warning("The following scene sucks.", "Warnings: test", "secret")
     pause
     $ renpy.full_restart()
 
