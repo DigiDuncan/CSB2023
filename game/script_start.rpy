@@ -519,6 +519,8 @@ image mean furious = "characters/mean/meanfurious.png"
 image mean furious flipped = "flip:characters/mean/meanfurious.png"
 image mean scared = "characters/mean/meanscared.png"
 image mean scared flipped = "flip:characters/mean/meanscared.png"
+image mean surprised = "characters/mean/meansurprised.png"
+image mean surprised flipped = "flip:characters/mean/meansurprised.png"
 
 ## Archival
 image k174 = "characters/k174.png"

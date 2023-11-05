@@ -705,16 +705,19 @@ label fan_interaction:
     cs "Huh? Who the fuck knocks on a hotel door, especially at this hour?"
     show cs angry at left with moveinleft
     cs "Hello?"
-    show mean at right with moveinright
+    show mean surprised flipped at right with moveinright
     mean "Holy fuck, it's CS!"
     cs "Huh? Are you, like, a fan?"
+    show mean flipped
     mean "Yes! Of your music!"
     n "CS, for a moment, forgets he just spent a week making an EP."
     cs "My... music? Oh, yeah, right, [band_name]!"
     cs "Wait, how did you find my hotel room?"
+    show mean happy flipped
     mean "You should go on tour!"
     cs "What?"
     n "CS is still half asleep."
+    show mean happy2 flipped
     mean "Go on tour! I'm from Ontario."
     cs "Oh... kay?"
     mean "Bye!"
@@ -1267,13 +1270,14 @@ label third_tour_day:
     with moveinleft
 
     cs "Alright, well, let's get prepared. We have way more songs to do tonight--{nw}"
-    show mean at right with moveinright
+    show mean surprised flipped at right with moveinright
     mean "{i}Holy shit, it's you!"
     cs "Wait, are you that fan from my hotel?"
+    show mean flipped
     mean "{i}You actually made it to Ontario?!"
     cs "Uh... yeah, totally because you asked me to!"
     show cs worried
-    show mean at mid_mid_left
+    show mean happy at mid_mid_left
     with MoveTransition(0.25)
     show cs worried with hpunch
     n "Mean tackle-hugs CS."
