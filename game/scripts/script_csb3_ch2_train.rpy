@@ -1,6 +1,5 @@
 label train_start_good:
     # variable for use in train route.
-    # Digi was here lol
     $ money_stolen = False
 
     cs "We should head back home now. I have a plan for our newfound riches."
@@ -35,7 +34,7 @@ label train_start_good:
     pause 2.0
 
     # TODO: actual song title is Sub-Game Select, but this thing can't handle hyphens.
-    play music "<loop 0>sub_game_select.mp3" volume 1
+    play music "<loop 0>sub_game_select.ogg" volume 1
     music SubGame Select - Jun Ishikawa
 
     show arceus happy flipped 
@@ -160,7 +159,7 @@ label train_route_begin:
     show arceus at right behind cscar2
     with fade
 
-    play music "<loop 0>outdoors.mp3" volume 1
+    play music "<loop 54.031>outdoors.ogg" volume 1
     music Outdoors - Miki Obata
 
     pause 1.0
@@ -334,7 +333,7 @@ label train_route_begin:
     # TODO: i need a similar image but less crunchy
 
     scene kingman_train_arrive with fade
-    play music "<loop 0>ochre_woods_day.mp3" volume 1
+    play music "<loop 27.401>ochre_woods_day.ogg" volume 1
     music Ochre Woods ~ Day - Miki Obata
     n "The two watch as the locomotive approaches the station and eventually slows to a stop."
     hide cs
@@ -448,7 +447,7 @@ label train_boarding:
     scene amtrak_sleeper_corridor
     with fade
 
-    play music "<loop 0>bedroom_day.mp3" volume 1
+    play music "<loop 0.916>bedroom_day.ogg" volume 1
     music Bedroom ~ Day - Miki Obata
     
     show amtrak_stewardess at right
@@ -645,10 +644,10 @@ label train_enter_sleeper:
 
     n "A sudden hard knock on the door startles the group."
     # TODO: sfx - angry crowd fade in
-    n "An uproar of angry passengers grows steadily louder."
 
-    play music "<loop 0>item_bounce.mp3" volume 0.8
+    play music "<loop 0>item_bounce.ogg" volume 0.8
     music Item Bounce - Akira Miyagawa
+    n "An uproar of angry passengers grows steadily louder."
 
     cs "What the hell?!"
     tate "No, no, {i}no!"
@@ -963,12 +962,12 @@ label train_enter_sleeper:
 
 label train_dining:
 
-    play music "<loop 0>krabby_klub.mp3" volume 1
+    play music "<loop 3.1>krabby_klub.ogg" volume 1
     scene amtrak_dining_car
     with fade
     pause 1.0
     music Krabby Klub - Tsukasa Tawada
-    
+    pause 0.5
     show arceus at center with moveinright
 
     n "Arceus arrives at the dining car."
@@ -1038,8 +1037,8 @@ label train_dining:
 
     # mean wanted the following section.
     
-    play music "<loop 0>odd_one_out.mp3" volume 1
-    music Odd One Out - Miki Obata
+    play music "<loop 0>prof_kranes_kidnap.ogg" volume 1
+    music "Prof. Krane's Kidnap - Tsukasa Tawada"
 
     show mean furious
     mean "{i}WHAT?!" with hpunch
@@ -1057,6 +1056,8 @@ label train_dining:
         mean "{bt=a3-p10-s4}AUUUUUUUUUGH!!" with hpunch
         show arceus happy
         arceus "Yeah!"
+        show arceus worried
+        arceus "... {w=0.25}Wait."
 
     show arceus worried
     arceus "Oh."
@@ -1140,7 +1141,7 @@ label train_wakeup:
     show arceus worried with hpunch
     music end
     play sound "audio/sfx_sliding_door_open.mp3"
-    n "As if on cue, the room door slides open."
+    n "As if on cue, the room door slides open." with hpunch
 
 
     # THE FOLLOWING IS NOT STAYING, THIS IS JUST HERE SO I DON'T JUST SKIP BACK TO MAIN MENU
