@@ -33,9 +33,9 @@ label train_start_good:
     arceus "Actually... {w=0.25}yeah."
     pause 2.0
 
-    # TODO: actual song title is Sub-Game Select, but this thing can't handle hyphens.
+    # that's not a hyphen
     play music "<loop 0>sub_game_select.ogg" volume 1
-    music SubGame Select - Jun Ishikawa
+    music "Sub−Game Select - Jun Ishikawa"
 
     show arceus happy flipped 
     arceus "...Yeah!"
@@ -108,9 +108,9 @@ label train_start_bad:
     arceus "Actually... {w=0.25}yeah."
     pause 2.0
 
-    # TODO: actual song title is Sub-Game Select, but this thing can't handle hyphens.
+    # that's not a hyphen
     play music "<loop 0>sub_game_select.ogg" volume 1
-    music SubGame Select - Jun Ishikawa
+    music "Sub−Game Select - Jun Ishikawa"
 
     show arceus happy
     arceus "...Yeah!"
@@ -289,6 +289,18 @@ label train_route_begin:
     cs "... Man, that's some bad luck, though. What are the odds of this place burning down {i}twice?!{/i}"
     show arceus
     arceus "I mean, back then, trains were powered by steam."
+
+    # arc and mean wanted this
+    if fun_value(100):
+        show cs 
+        cs "Steam? Like Gabe Newell?"
+        show arceus angry
+        arceus "No."
+        show cs disappointed
+        cs "Oh."
+        show arceus flipped
+        arceus "Anyway..."
+
     arceus "Like, do you know what happens if you open a pressure cooker too early?"
     show cs disappointed
     cs "It... {w=0.25}{i}explodes,{/i}{w=0.25} right?"
@@ -317,11 +329,24 @@ label train_route_begin:
     show cs worried
     cs "Damn, I'd forgotten all about that!"
     cs "What would have happened if it had been on a train?"
-    show arceus angry
+    
+    # mean wanted this
+    if fun_value(10):
+        show arceus 
+        arceus "Have you ever seen {i}The Polar Express?"
+        show cs disappointed
+        cs "No, why?"
+        arceus "Well, they throw them off the train."
+        show cs worried
+        cs "Really?"
+        show arceus angry
+        arceus "No."
+        arceus "I'm just gonna assume that they'd kick the bastard off at the next station."
+    else:   
+        show arceus angry
+        arceus "I dunno, man. I'm just gonna assume that they'd kick the bastard off at the next station."
 
-    # TODO: polar express reference
 
-    arceus "I dunno, man. I'm just gonna assume that they'd kick the bastard off at the next station."
     arceus "I really don't want to think about someone like that being on {i}our--{/i}"
     stop music fadeout 3.0
     music end
@@ -969,7 +994,7 @@ label train_enter_sleeper:
     arceus "... {i}I{/i} think you're being way too optimistic about all of this."
     arceus "I'm going to bed."
     show cs disappointed
-    cs "Yeah, good idea..."
+    cs "Yeah, me too..."
 
     scene black with fade
     n "CS and Arceus decide to call it an early night."
@@ -1178,6 +1203,9 @@ label train_wakeup:
     music end
     play sound "audio/sfx_sliding_door_open.mp3"
     n "As if on cue, the room door slides open." with hpunch
+
+
+    
 
 
     # THE FOLLOWING IS NOT STAYING, THIS IS JUST HERE SO I DON'T JUST SKIP BACK TO MAIN MENU
