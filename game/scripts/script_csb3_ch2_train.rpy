@@ -626,7 +626,7 @@ label train_boarding:
 
 label train_enter_sleeper:
 
-    # TODO: I need a better background than this...
+    # TODO: better sleeper bg
     play sound "audio/sfx_sliding_door_close.mp3"
     show amtrak_sleeper_interior_day
     show arceus at right
@@ -998,7 +998,7 @@ label train_enter_sleeper:
     n "CS effortlessly falls into a deep slumber."
     n "While the fold-out bed is indeed quite comfortable, Arceus struggles to get any rest."
 
-    # TODO: better bg image
+    # TODO: better sleeper bg
 
     scene amtrak_sleeper_interior_night
     with fade
