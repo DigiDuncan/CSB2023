@@ -1317,7 +1317,7 @@ label train_wakeup:
     show mean ayo
     mean "Wait, you think Amtrak actually gives a shit about stolen items?"
     show mean angry
-    mean "Gamer, I was more worried about {i}you!"
+    mean "Bro, I was more worried about {i}you!"
     show cs disappointed flipped
     show mean worried
     mean "When that yellow fucker over there told me there was a crook on the train, I was worried that somebody was out here, like, {i}mugging{/i} people!"
