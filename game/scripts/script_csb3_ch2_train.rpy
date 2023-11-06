@@ -1234,19 +1234,20 @@ label train_wakeup:
     show tate srs at mid_mid_left with moveinright
     pause 2.0
 
+    tate "Like... {w=0.25}what?"
+    arceus "I thought he'd be... {w=0.25}just... {w=0.25}you know... {w=0.5}{i}some guy."
+    arceus "I didn't know he's, uh... {w=0.5}whatever he is."
+
     play music "<loop 1.071>e_gadds_lab.ogg" volume 1
     music "E. Gadd's Lab - Kazumi Totaka and Shinobu Tanaka"
 
-    tate "Like... {w=0.25}what?"
-    arceus "I thought he'd be... {w=0.25}just... {w=0.25}you know, {w=0.1}{i}some guy."
-    arceus "I didn't know he's, uh... {w=0.5}whatever he is."
     show tate sheepish
     show cs disappointed flipped
     pause 1.0
     "..."
     tate "{i}O{w=0.1}-Oh..."
     pause 0.5
-    tate "I guess... {w=1.0}{size=-5}that would have been... {w=1.0}{size=-5}an important detail to...{w=1.5}"
+    tate "I guess... {w=1.0}{size=-5}that would have been... {w=1.0}{size=-5}an {i}important{/i} detail to...{w=1.5}"
     tate "{size=-15}{i}Fuck..."
     pause 2.0
     n "Heavy breathing approaches from the hallway."
@@ -1308,7 +1309,7 @@ label train_wakeup:
     show mean happy
     mean "Yeah!"
     mean "You made me the best breakfast I've had in ages, {w=0.25}I start my dream job in 15 minutes, {w=0.25}{i}and{/i} I get to travel the US with my best friend!"
-    mean "If it weren't for you, I'd still be sitting at home playing fucking {i}Minecraft{/i} and listening to whatever weird shit is popular on Spoofy!"
+    mean "If it weren't for you, I'd still be sitting at home playing fucking {i}Minecraft{/i} and listening to whatever weird shit's popular on Spoofy!"
     mean "What could be better?"
     show tate sad flipped
     tate "But, what about the thief?!"
