@@ -1237,6 +1237,7 @@ label train_wakeup:
     tate "Like... {w=0.25}what?"
     arceus "I thought he'd be... {w=0.25}just... {w=0.25}you know... {w=0.5}{i}some guy."
     arceus "I didn't know he's, uh... {w=0.5}whatever he is."
+    pause 1.0    
 
     play music "<loop 1.071>e_gadds_lab.ogg" volume 1
     music "E. Gadd's Lab - Kazumi Totaka and Shinobu Tanaka"
