@@ -1188,6 +1188,7 @@ default money_stolen = None
 default money_container = "treasure chest"
 default money_stolen_dialogue_switch = "lock it shut"
 default money_stolen_dialogue_switch_2 = "red and gold chest"
+default polar_express_fun_value = False
 
 # RPG
 default enemy_1 = "cop"

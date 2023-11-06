@@ -1,3 +1,5 @@
+# TODO: mean needs a better text beep
+
 label train_start_good:
     # variable for use in train route.
     $ money_stolen = False
@@ -172,7 +174,7 @@ label train_route_begin:
     cs "It's just-- {w=0.25}I dunno, I guess I expected something... {w=0.25}bigger? {w=0.25}Fancier?"
     arceus "I mean, Kingman is a tiny-ass town. It would be pretty weird to have a massive station here."
     cs "I guess that makes sense."
-    arceus "We should probably get going soon, though. The train only even comes through here once a day."
+    arceus "We should probably get going soon, though. The train only comes through here once a day."
     show cs worried
     cs "Oh, shit. Alright."
 
@@ -332,6 +334,7 @@ label train_route_begin:
     
     # mean wanted this
     if fun_value(10):
+        $ polar_express_fun_value = True
         show arceus 
         arceus "Have you ever seen {i}The Polar Express?"
         show cs disappointed
@@ -345,7 +348,6 @@ label train_route_begin:
     else:   
         show arceus angry
         arceus "I dunno, man. I'm just gonna assume that they'd kick the bastard off at the next station."
-
 
     arceus "I really don't want to think about someone like that being on {i}our--{/i}"
     stop music fadeout 3.0
@@ -448,6 +450,13 @@ label train_route_begin:
     tate "Listen, I was just trying to he--{nw}"
     amtrak_conductor "Yeah, {w=0.25}well, {w=0.25}{i}don't."
     amtrak_conductor "Or we'll leave {i}both{/i} of you at the next station."
+
+
+    if polar_express_fun_value == True:
+        show arceus flipped
+        arceus "I told you!"
+        show arceus worried flipped
+
     show tate sad
     tate "Yes, sir..."
     amtrak_conductor "Let's get a move on."
@@ -588,6 +597,7 @@ label train_boarding:
     play sound "audio/punch.ogg"
 
     # TODO: less crumnchy lupin sprite
+    # TODO: sfx - Lupin musical sting
 
     show cs scared at mid_offscreen_left with hpunch
     show tate shock flipped
@@ -597,7 +607,7 @@ label train_boarding:
     n "CS is knocked to the ground as a stranger sprints down the corridor!"
     unknown "Sorry, cat dude! I've gotta {i}run!"
     hide lupin with dissolve
-    n "The guy sprints away."
+    n "The weird guy hurries away."
     pause 0.25
     tate "Oh, my God! {w=0.25}CS, are you alright?!"
     cs "Y-{w=0.1}Yeah..."
@@ -1035,9 +1045,9 @@ label train_dining:
     show arceus at left with moveinleft
     n "As he heads towards the counter, Arceus finds his attention redirected towards a yellow... {w=0.5}thing."
 
-    hide arceus
     scene amtrak_dining_mean
     show mean at t_mean_dining_car
+    hide arceus
     with fade
 
     n "A strange spiny entity is surrounded by piles of pancakes, {w=0.25}sky-high stacks of sausages, {w=0.25}oodles of eggs, {w=0.25}and a whole bunch of bacon."
