@@ -1202,7 +1202,7 @@ label train_wakeup:
     play sound "audio/sfx_sliding_door_open.mp3"
     n "As if on cue, the room door slides open." with hpunch
     
-    tate "{bt=a3-p10-s4}{size=+24}C.{w=0.25}S.{w=0.25} ONE HUNDRED AND EIGHTY{w=0.1}-EIGHT!!" with vpunch
+    tate "{bt=a3-p10-s4}{size=+24}C.{w=0.1}S.{w=0.25} ONE HUNDRED AND EIGHTY{w=0.1}-EIGHT!!" with vpunch
 
     show arceus worried at mid_mid_right
     show tate srs at left
@@ -1217,7 +1217,7 @@ label train_wakeup:
         tate "YOU HAD {bt=a3-p10-s4}{i}ONE{/i}{/bt} JOB!" with vpunch
 
     show tate srs at center with moveinleft
-    tate "YOU'RE GOING TO NEED A WHOLE LOT MORE THAN {bt=a3-p10-s4}{i}FOUNDATION\nREPAIR{/i}{/bt} AFTER I'M DONE WITH YOU!" with vpunch
+    tate "YOU'RE GOING TO NEED A WHOLE LOT MORE THAN {bt=a3-p10-s4}{i}FOUNDATION\nREPAIR{/i}{/bt} AFTER {i}I'M{/i} DONE WITH YOU!" with vpunch
 
     cs "Tate, wait!"
     arceus "It wasn't him!"
@@ -1232,6 +1232,11 @@ label train_wakeup:
     n "Tate is caught off-guard by Arceus' comment."
     pause 1.0
     show tate srs at mid_mid_left with moveinright
+    pause 2.0
+
+    play music "<loop 1.071>e_gadds_lab.ogg" volume 1
+    music "E. Gadd's Lab - Kazumi Totaka and Shinobu Tanaka"
+
     tate "Like... {w=0.25}what?"
     arceus "I thought he'd be... {w=0.25}just... {w=0.25}you know, {w=0.1}{i}some guy."
     arceus "I didn't know he's, uh... {w=0.5}whatever he is."
@@ -1243,7 +1248,7 @@ label train_wakeup:
     pause 0.5
     tate "I guess... {w=1.0}{size=-5}that would have been... {w=1.0}{size=-5}an important detail to...{w=1.5}"
     tate "{size=-15}{i}Fuck..."
-    pause 1.0
+    pause 2.0
     n "Heavy breathing approaches from the hallway."
     pause 0.5
 
@@ -1253,11 +1258,11 @@ label train_wakeup:
     show mean tired at mid_offscreen_left
     show tate sheepish at mid_mid_left
     with moveinleft
-    mean "{i}Pant...{nw}"
+    mean "{i}Pant...{w=0.25}{nw}"
     show mean tired at left with moveinleft
-    mean "{i}Pant...{nw}"
+    mean "{i}Pant...{w=0.25}{nw}"
     show mean tired at center_left with moveinleft
-    mean "{i}Wheeze..."
+    mean "{i}Wheeze...{w=0.25}"
 
     show mean surprised
     mean "There...{w=0.5} you are,{w=0.5} Tate..."
@@ -1274,12 +1279,12 @@ label train_wakeup:
     tate "I'm so sorry!"
     tate "I told them not to tell you!"
     show mean wat
-    mean "Tate--{nw}"
+    mean "Tate--{w=0.25}{nw}"
     tate "I wanted it to be kept secret so you could focus on work and{nw}"
     tate "I think the day shift people think I'm to blame for everything and{nw}"
     show mean angry
     show cs worried flipped
-    mean "{size=+12}{i}Tate--!{nw}"
+    mean "{size=+12}{i}Tate--!{w=0.25}{nw}"
     tate "I was really scared that they might blame you too since{nw}"
     show cs disappointed flipped
     show arceus angry
