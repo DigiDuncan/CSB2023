@@ -523,6 +523,10 @@ image mean scared = "characters/mean/meanscared.png"
 image mean scared flipped = "flip:characters/mean/meanscared.png"
 image mean surprised = "characters/mean/meansurprised.png"
 image mean surprised flipped = "flip:characters/mean/meansurprised.png"
+image mean tired = "characters/mean/meantired.png"
+image mean tired flipped = "flip:characters/mean/meantired.png"
+image mean worried = "characters/mean/meanworried.png"
+image mean worried flipped = "flip:characters/mean/meanworried.png"
 
 ## Archival
 image k174 = "characters/k174.png"

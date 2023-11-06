@@ -9,7 +9,7 @@ label train_start_good:
     show cs flipped
     show arceus flipped
     pause 2.0
-    n "{w=1}..."
+    "{w=1}..."
     pause 1.0
     show cs flipped
     show arceus worried flipped
@@ -84,7 +84,7 @@ label train_start_bad:
     show cs
     show arceus flipped
     pause 2.0
-    n "{w=1}..."
+    "{w=1}..."
     pause 1.0
     show cs
     show arceus worried
@@ -227,7 +227,7 @@ label train_route_begin:
     with moveinleft
 
     n "CS and Arceus enter the train station."
-    n "To their surprise, the place is desolate."
+    n "To CS' surprise, the place is desolate."
     cs "Hello? {w=0.5}Is anyone here?"
     pause 1.0
     show cs disappointed
@@ -354,8 +354,6 @@ label train_route_begin:
     show arceus flipped
     play sound "audio/sfx_amtrak_horn.wav"
     n "The conversation is interrupted by the blare of a train horn."
-   
-    # TODO: i need a similar image but less crunchy
 
     scene kingman_train_arrive with fade
     play music "<loop 27.401>ochre_woods_day.ogg" volume 1
@@ -867,7 +865,6 @@ label train_enter_sleeper:
     show tate sheepish flipped
     tate "I just feel like I have to do {i}something."
     cs "Don't you think you've done enough already?"
-    show tate srs flipped
     tate "What do you mean?"
     show cs worried
     cs "The conductor and that attendant both seemed really annoyed with you."
@@ -1081,8 +1078,9 @@ label train_dining:
     arceus "If you've been asleep..."
     arceus "Have you heard about what happened?"
     mean "{i}Gulp.{w=0.25}{nw}"
+    pause 1.0
     show mean ayo
-    mean "No...?"
+    mean "No{w=0.1}.{w=0.1}.{w=0.1}.{w=0.1}?"
     arceus "Well, uh... are you missing anything? Especially anything valuable?"
     mean "Nah, I didn't even bring anythin--{nw}"
     show mean wat
@@ -1184,7 +1182,7 @@ label train_wakeup:
     cs "Are you alright?"
     show arceus worried flipped
     arceus "Dude, I fucked up!"
-    arceus "I went to the dining car for a drink, and there was this... {w=0.5}{i}thing{/i} eating an insane amount of food, so I went to talk to him!"
+    arceus "I went to the dining car for a drink, and there was this... {w=0.5}{i}thing!{/i} {w=0.5}He was eating this {i}insane{/i} amount of food, so I went to talk to him!"
     arceus "He was asleep all day and didn't know about the thief, so I asked him if he's missing anything--{w=0.25}{nw}"
     arceus "That thing was {i}Mean!"
     show cs surprised flipped
@@ -1203,9 +1201,163 @@ label train_wakeup:
     music end
     play sound "audio/sfx_sliding_door_open.mp3"
     n "As if on cue, the room door slides open." with hpunch
-
-
     
+    tate "{bt=a3-p10-s4}{size=+24}C.{w=0.25}S.{w=0.25} ONE HUNDRED AND EIGHTY{w=0.1}-EIGHT!!" with vpunch
+
+    show arceus worried at mid_mid_right
+    show tate srs at left
+    with moveinleft
+
+    n "Tate stomps into the room, making a beeline for CS."
+    show tate srs at mid_mid_left with moveinleft
+
+    if fun_value(15):
+        tate "YOU HAD {bt=a3-p10-s4}{i}ONE{/i}{/bt} JOJ!" with vpunch
+    else:
+        tate "YOU HAD {bt=a3-p10-s4}{i}ONE{/i}{/bt} JOB!" with vpunch
+
+    show tate srs at center with moveinleft
+    tate "YOU'RE GOING TO NEED A WHOLE LOT MORE THAN {bt=a3-p10-s4}{i}FOUNDATION\nREPAIR{/i}{/bt} AFTER I'M DONE WITH YOU!" with vpunch
+
+    cs "Tate, wait!"
+    arceus "It wasn't him!"
+    arceus "I'm sorry!"
+    n "Tate inhales for another scream."
+    arceus "I didn't know Mean was... {w=0.25}like that!"
+
+    stop music
+
+    show tate shock
+    show cs worried flipped
+    n "Tate is caught off-guard by Arceus' comment."
+    pause 1.0
+    show tate srs at mid_mid_left with moveinright
+    tate "Like... {w=0.25}what?"
+    arceus "I thought he'd be... {w=0.25}just... {w=0.25}you know, {w=0.1}{i}some guy."
+    arceus "I didn't know he's, uh... {w=0.5}whatever he is."
+    show tate sheepish
+    show cs disappointed flipped
+    pause 1.0
+    "..."
+    tate "{i}O{w=0.1}-Oh..."
+    pause 0.5
+    tate "I guess... {w=1.0}{size=-5}that would have been... {w=1.0}{size=-5}an important detail to...{w=1.5}"
+    tate "{size=-15}{i}Fuck..."
+    pause 1.0
+    n "Heavy breathing approaches from the hallway."
+    pause 0.5
+
+    ### EVERYTHING PAST THIS POINT IS HEAVY WIP
+    ### MEAN PLS I NEED YOU TO HELP ME WRITE THE HEIST AAAAAAAA
+
+    show mean tired at mid_offscreen_left
+    show tate sheepish at mid_mid_left
+    with moveinleft
+    mean "{i}Pant...{nw}"
+    show mean tired at left with moveinleft
+    mean "{i}Pant...{nw}"
+    show mean tired at center_left with moveinleft
+    mean "{i}Wheeze..."
+
+    show mean surprised
+    mean "There...{w=0.5} you are,{w=0.5} Tate..."
+    
+    # here goes tate having too much fun with sprites again
+
+    show tate shock flipped
+    show mean scared
+    show cs scared flipped
+    tate "{bt=a3-p10-s4}{size=+12}Uwaaaaah!" with vpunch
+    tate "Mean!"
+    show tate sad flipped
+    show mean surprised
+    tate "I'm so sorry!"
+    tate "I told them not to tell you!"
+    show mean wat
+    mean "Tate--{nw}"
+    tate "I wanted it to be kept secret so you could focus on work and{nw}"
+    tate "I think the day shift people think I'm to blame for everything and{nw}"
+    show mean angry
+    show cs worried flipped
+    mean "{size=+12}{i}Tate--!{nw}"
+    tate "I was really scared that they might blame you too since{nw}"
+    show cs disappointed flipped
+    show arceus angry
+    tate "you were asleep all day and that means that you were the only one not accounted for when--{nw}"
+    show mean furious
+    show tate shock flipped
+    show cs scared flipped
+    show arceus worried
+    mean "{bt=a3-p10-s4}{size=+24}{i}TAAAAATE!!" with vpunch
+
+    show mean ayo
+    mean "What the fuck are you {i}talking{/i} about?"
+    show tate cry flipped
+    tate "{size=-10}I just wanted you to have a good first day..."
+    show mean worried
+    mean "What do you mean?"
+    show mean 
+    mean "Today's been {i}great!"
+    show tate shock flipped
+    tate "Huh?!" with vpunch
+    show mean happy
+    mean "Yeah!"
+    mean "You made me the best breakfast I've had in ages, {w=0.25}I start my dream job in 15 minutes, {w=0.25}{i}and{/i} I get to travel the US with my best friend!"
+    mean "If it weren't for you, I'd still be sitting at home playing fucking {i}Minecraft{/i} and listening to whatever weird shit is popular on Spoofy!"
+    mean "What could be better?"
+    show tate sad flipped
+    tate "But, what about the thief?!"
+    show mean ayo
+    mean "Wait, you think Amtrak actually gives a shit about stolen items?"
+    show mean angry
+    mean "Gamer, I was more worried about {i}you!"
+    show cs disappointed flipped
+    show mean worried
+    mean "When that yellow fucker over there told me there was a crook on the train, I was worried that somebody was out here, like, {i}mugging{/i} people!"
+    show arceus angry
+    arceus "\"Yellow fucker\"?"
+
+    # let's turn my shitpost into a fun value i suppose lmao
+    if fun_value(100):
+        mean "Like, no offense, Tate, but you only have, like, 5 DEF."
+        show arceus 
+        arceus "They {i}do{/i} have decent ATK and one of the only healing moves in the game, though."
+        cs "Huh?"
+        show tate srs
+        show mean ayo
+        tate "Don't I {i}at least{/i} have plot armor?"
+        tate "I'm a major character in this route!"
+        show cs worried flipped
+        cs "What are you all {i}talking{/i} about?!"
+        show tate shock
+        show mean surprised
+        show cs scared flipped
+        show arceus worried
+        n "Hi, it's me, the narrator."
+        n "This game is called CSBounciness, not alleZScreminess."
+        n "No plot armor for you."
+        show tate srs
+        tate "What the fuck?"
+        tate "Who wrote this?"
+        n "You are not prepared for the answer to that question."
+        show cs disappointed flipped
+        cs "I must be {i}really{/i} sleep-deprived..."
+    else:
+        mean "Like, no offense, Tate, but you aren't exactly at the peak of physical condition."    
+        show mean angry
+        mean "Didn't you sprain {i}both{/i} of your ankles at the same time last year just from {i}walking?"
+        show arceus worried
+        show cs worried flipped
+        show tate sheepish flipped
+        tate "Yes..."
+
+    show arceus worried
+    show cs worried flipped
+    show tate sheepish flipped
+    show mean worried
+    mean "... Right."
+    mean "Anyway, I just needed to make sure you were safe."
+
 
 
     # THE FOLLOWING IS NOT STAYING, THIS IS JUST HERE SO I DON'T JUST SKIP BACK TO MAIN MENU
