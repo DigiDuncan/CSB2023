@@ -1147,7 +1147,7 @@ label train_dining:
     if fun_value(5):
         n "He did at least steal a few of the abandoned pancakes."
 
-    n "He gets back to the sleeper car as quickly as he can."
+    n "He rushes back to the sleeper car as quickly as he can."
     hide arceus with moveoutright
     scene black with fade
     
