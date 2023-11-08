@@ -669,9 +669,10 @@ label train_enter_sleeper:
     tate "{w=0.5}...{w=0.5}Yes. {w=0.25}Yes, you should."
     show tate sad
     n "Tate sheepishly looks down at the floor."
+    pause 1.0
     show arceus worried
     arceus "So, uh..."
-    arceus "Hey, Tate, how do you know CS, anyway?"
+    arceus "Hey, Tate, how {i}do{/i} you know CS, anyway?"
     show tate sheepish
     tate "Oh, uh..."
     tate "We met a few years ago, back when Mixer was still a thing."
