@@ -226,14 +226,14 @@ class AI:
                  preferred_targets: list = None,
                  preference_weight = 2) -> None:
         self.name = name
-        self.heal_chance = heal_chance # Skew towards healing attacks
-        self.heal_threshold = heal_threshold # When should I heal
-        self.aggression = aggression # Big bad hit things
-        self.crowd_control = crowd_control # Favors AOE over Single
-        self.tacticity = tacticity # Debuffs and Buffs, aka the Pokemon strat
-        self.focus = focus # Target 'strong' or 'weak'
-        self.preferred_targets = [] if preferred_targets is None else preferred_targets # I wanna smack this boy in particular >:C
-        self.preference_weight = preference_weight # Multiplier how many more times likely to smack this boy
+        self.heal_chance = heal_chance  # Skew towards healing attacks
+        self.heal_threshold = heal_threshold  # When should I heal
+        self.aggression = aggression  # Big bad hit things
+        self.crowd_control = crowd_control  # Favors AOE over Single
+        self.tacticity = tacticity  # Debuffs and Buffs, aka the Pokemon strat
+        self.focus = focus  # Target 'strong' or 'weak'
+        self.preferred_targets = [] if preferred_targets is None else preferred_targets  # I wanna smack this boy in particular >:C
+        self.preference_weight = preference_weight  # Multiplier how many more times likely to smack this boy
 
     def run(self, subject: Fighter, encounter: Encounter) -> tuple[list[Fighter], AnswerList]:
         party_status = encounter.enemies if subject.enemy else encounter.allies
@@ -360,7 +360,7 @@ class Attack:
     @property
     def available(self) -> bool:
         return self._turns_until_available == 0
-    
+
     @property
     def type(self) -> str:
         if self.func == heal_fighters:
@@ -396,16 +396,16 @@ class ComboAttack:
     @property
     def _turns_until_available(self) -> int:
         return self.attacks[0]._turns_until_available
-    
+
     @_turns_until_available.setter
     def _turns_until_available(self, v: int):
         for a in self.attacks:
             a._turns_until_available = v
-    
+
     @property
     def target_count(self) -> int:
         return self.attacks[0].target_count
-    
+
     @property
     def target_type(self) -> int:
         return self.attacks[0].target_type
@@ -413,7 +413,7 @@ class ComboAttack:
     @property
     def available(self) -> bool:
         return all([a.available for a in self.attacks])
-    
+
     @property
     def type(self) -> str:
         types = [a.type for a in self.attacks]
@@ -421,7 +421,7 @@ class ComboAttack:
             if t in types:
                 return t
         return "damage"
-    
+
     @property
     def options(self) -> dict:
         return self.attacks[0].options
@@ -448,7 +448,7 @@ class Fighter:
     @property
     def health_points(self) -> int:
         return int(self._health_points)
-    
+
     @health_points.setter
     def health_points(self, v):
         self._health_points = int(v)
@@ -456,7 +456,7 @@ class Fighter:
     @property
     def max_health(self) -> int:
         return int(self._max_health)
-    
+
     @max_health.setter
     def max_health(self, v):
         self._max_health = int(v)
@@ -464,7 +464,7 @@ class Fighter:
     @property
     def armor_points(self) -> int:
         return int(self._armor_points)
-    
+
     @armor_points.setter
     def armor_points(self, v):
         self._armor_points = int(v)
@@ -472,7 +472,7 @@ class Fighter:
     @property
     def attack_points(self) -> int:
         return int(self._attack_points)
-    
+
     @attack_points.setter
     def attack_points(self, v):
         self._attack_points = int(max(1, v))
@@ -561,7 +561,7 @@ class Encounter:
     @property
     def enemies(self) -> list[Fighter]:
         return [f for f in self.fighters if f.enemy]
-    
+
     @property
     def all(self) -> list[Fighter]:
         return self.fighters
@@ -580,7 +580,7 @@ class Encounter:
             return True
         else:
             return None
-        
+
     def reset_cooldowns(self):
         for f in self.fighters:
             for a in f.attacks:
@@ -661,22 +661,22 @@ class Attacks:
     @classproperty
     def names(cls) -> list[str]:
         return [a for a in dir(cls) if a.isupper()]
-    
+
     @classproperty
     def attacks(cls) -> list[Attack]:
         return [cls.__dict__[a] for a in cls.names]
-    
+
     @classproperty
     def ex_attacks(cls) -> list[Attack]:
         return [a for a in cls.attacks if a.ex is True]
-    
+
     @classmethod
     def get(cls, k: str, default = None) -> Attack | None:
         return cls.__dict__.get(k, default)
 
 class Fighters:
     NONE = None
-    
+
     # Allies
     CS = Fighter("CS", False, 188, 10, 25, [Attacks.PUNCH, Attacks.BULLET_SPRAY], Image("images/characters/cs/neutral.png"), display_name = "CS")
     CS_NG = Fighter("CS (National Guard)", False, 188, 10, 30, [Attacks.CHOP, Attacks.BULLET_SPRAY], Image("images/characters/cs/neutral.png"), display_name = "CS")
@@ -731,30 +731,31 @@ class Fighters:
     @classproperty
     def names(cls) -> list[str]:
         return [f for f in dir(cls) if f.isupper()]
-    
+
     @classproperty
     def enemy_names(cls) -> list[str]:
         return [f for f in dir(cls) if f.isupper() and f != "NONE" and cls.__dict__[f].enemy]
-    
+
     @classproperty
     def ally_names(cls) -> list[str]:
         return [f for f in dir(cls) if f.isupper() and f != "NONE" and not cls.__dict__[f].enemy]
-    
+
     @classproperty
     def fighters(cls) -> list[Fighter]:
         return [cls.__dict__[f] for f in cls.names]
-    
+
     @classproperty
     def enemies(cls) -> list[Fighter]:
         return [cls.get(f) for f in cls.enemy_names]
-    
+
     @classproperty
     def allies(cls) -> list[Fighter]:
         return [cls.get(f) for f in cls.ally_names]
-    
+
     @classmethod
     def get(cls, k: str, default = None) -> Fighter | None:
         return cls.__dict__.get(k, default)
+
 
 # Dummy encounter to avoid errors
 encounter = Encounter([], Image("images/bg/black.png"), "audio/legosfx.mp3", 1, "start", "secret")
@@ -830,19 +831,19 @@ class DamageIndicator:
 
     def play(self):
         if self.indicator_type == "heal":
-            renpy.sound.play(f"audio/ut/snd_power.wav", channel = "sfx")
+            renpy.sound.play("audio/ut/snd_power.wav", channel = "sfx")
             self.play_sound = False
         elif self.indicator_type == "damage":
-            renpy.sound.play(f"audio/ut/snd_damage.wav", channel = "sfx")
+            renpy.sound.play("audio/ut/snd_damage.wav", channel = "sfx")
             self.play_sound = False
         elif self.indicator_type == "stat_up":
-            renpy.sound.play(f"audio/ut/snd_b.wav", channel = "sfx")
+            renpy.sound.play("audio/ut/snd_b.wav", channel = "sfx")
             self.play_sound = False
         elif self.indicator_type == "stat_down":
-            renpy.sound.play(f"audio/ut/snd_bluh.wav", channel = "sfx")
+            renpy.sound.play("audio/ut/snd_bluh.wav", channel = "sfx")
             self.play_sound = False
         elif self.indicator_type == "confused" or self.indicator_type == "unconfused":
-            renpy.sound.play(f"audio/ut/snd_chime.wav", channel = "sfx")
+            renpy.sound.play("audio/ut/snd_chime.wav", channel = "sfx")
             self.play_sound = False
 
 # This is the displayable that controls what's happening in the boxes at the bottom of the screen
@@ -902,7 +903,7 @@ class StatBlockDisplayable(renpy.Displayable):
         renpy.redraw(self, 0)
         self.last_tick = st
         return r
-    
+
     def event(self, ev, x, y, st):
         pass
 
@@ -927,7 +928,6 @@ class EnemyDisplayable(renpy.Displayable):
     def show_damage_indicator(self, ans: Answer):
         self.damage_indicators.append(DamageIndicator(ans))
 
-    
     def render(self, width, height, st, at):
         if self.last_tick is None:
             self.last_tick = st
@@ -974,7 +974,7 @@ class EnemyDisplayable(renpy.Displayable):
 
     def visit(self):
         return [self.fighter.sprite, self.red_part, self.green_part]
-    
+
 class RPGGameDisplayable(renpy.Displayable):
     def __init__(self, encounter: Encounter):
         self.encounter = encounter
@@ -1030,7 +1030,7 @@ class RPGGameDisplayable(renpy.Displayable):
 
     def visit(self):
         return self.enemy_displayables + self.statblock_displayables # Assets needed to load
-    
+
     def get_displayable_by_fighter(self, fighter: Fighter) -> Optional[EnemyDisplayable | StatBlockDisplayable]:
         valid_displayables = [d for d in self.enemy_displayables + self.statblock_displayables if d.fighter == fighter]
         if valid_displayables:
@@ -1090,6 +1090,7 @@ def execute_rpg(parsed_object):
 def lint_rpg(parsed_object):
     # I should probably do this at some point.
     pass
+
 
 """
 rpg:

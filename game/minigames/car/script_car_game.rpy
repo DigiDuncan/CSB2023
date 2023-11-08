@@ -125,7 +125,7 @@ init python:
                 if telegraph_cutoff < st < danger_cutoff:
                     self.danger_lane = self.enemy_lane
                     if not self.played_fire:
-                        renpy.sound.play("minigames/car/gaster_blast.wav", channel=0)
+                        renpy.sound.play("minigames/car/sfx_gaster_blast.wav", channel=0)
                         self.played_fire = True
                     # Render laser
                     r.blit(laser_renderer, (LANE_X[self.enemy_lane] - 15, UFO_Y+50))
@@ -140,7 +140,7 @@ init python:
                 # Telegraphing period
                 if telegraph_start < st < telegraph_cutoff:
                     if not self.played_charge:
-                        renpy.sound.play("minigames/car/gaster_charge.wav", channel=0)
+                        renpy.sound.play("minigames/car/sfx_gaster_charge.wav", channel=0)
                         self.played_charge = True
                     # Logic for the energy ball
                     laser_ball_displayable = renpy.displayable(self.laser_ball)

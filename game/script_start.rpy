@@ -523,6 +523,23 @@ image mean scared = "characters/mean/meanscared.png"
 image mean scared flipped = "flip:characters/mean/meanscared.png"
 image mean surprised = "characters/mean/meansurprised.png"
 image mean surprised flipped = "flip:characters/mean/meansurprised.png"
+## Mean
+
+# train
+image mean = "characters/mean/mean.png"
+image mean flipped = "flip:characters/mean/mean.png"
+image mean happy = "characters/mean/meanhappy.png"
+image mean happy flipped = "flip:characters/mean/meanhappy.png"
+image mean happy2 = "characters/mean/meanhappy2.png"
+image mean happy2 flipped = "flip:characters/mean/meanhappy2.png"
+image mean ayo = "characters/mean/meanayo.png"
+image mean ayo flipped = "flip:characters/mean/meanayo.png"
+image mean angry = "characters/mean/meanangry.png"
+image mean angry flipped = "flip:characters/mean/meanangry.png"
+image mean wat = "characters/mean/meanwat.png"
+image mean wat flipped = "flip:characters/mean/meanwat.png"
+image mean furious = "characters/mean/meanfurious.png"
+image mean furious flipped = "flip:characters/mean/meanfurious.png"
 image mean tired = "characters/mean/meantired.png"
 image mean tired flipped = "flip:characters/mean/meantired.png"
 image mean worried = "characters/mean/meanworried.png"
@@ -570,7 +587,7 @@ image worker_1 = "characters/worker_corn.png"
 image worker_2 = "characters/worker_blank.png"
 
 # updated sprite - tate
-image worker_3 = "flip:characters/mean/meanhohsis.png"
+image worker_3 = "flip:characters/mean/meanhohsis1.png"
 
 image worker_4 = "characters/worker_eville.png"
 image worker_5 = "characters/eddie_down.png"
@@ -1275,25 +1292,25 @@ screen chapter_menu():
             text "Start where?" textalign 0.5 size 72 xalign 0.5 yalign 0.5
             hbox xalign 0.5 yalign 0.5:
                 spacing 50
-                imagebutton auto "menu/csbi_%s.png" hover_sound "sfx-select.wav":
+                imagebutton auto "menu/csbi_%s.png" hover_sound "sfx_select.wav":
                     at transform:
                         zoom 0.666
-                    action Play("sound", "sfx-valid.wav"), Hide("chapter_menu", Fade(1.0)), Jump("csbi_start")
-                imagebutton auto "menu/csbii_%s.png" hover_sound "sfx-select.wav":
+                    action Play("sound", "sfx_valid.wav"), Hide("chapter_menu", Fade(1.0)), Jump("csbi_start")
+                imagebutton auto "menu/csbii_%s.png" hover_sound "sfx_select.wav":
                     sensitive persistent.csb2_unlocked
                     at transform:
                         zoom 0.666
-                    action Play("sound", "sfx-valid.wav"), Hide("chapter_menu", Fade(1.0)), Jump("csbii_start")
-                imagebutton auto "menu/csbiii1_%s.png" hover_sound "sfx-select.wav":
+                    action Play("sound", "sfx_valid.wav"), Hide("chapter_menu", Fade(1.0)), Jump("csbii_start")
+                imagebutton auto "menu/csbiii1_%s.png" hover_sound "sfx_select.wav":
                     sensitive persistent.csb3a_unlocked
                     at transform:
                         zoom 0.666
-                    action Play("sound", "sfx-valid.wav"), Hide("chapter_menu", Fade(1.0)), Jump("csbiii_start")
-                imagebutton auto "menu/csbiii2_%s.png" hover_sound "sfx-select.wav":
+                    action Play("sound", "sfx_valid.wav"), Hide("chapter_menu", Fade(1.0)), Jump("csbiii_start")
+                imagebutton auto "menu/csbiii2_%s.png" hover_sound "sfx_select.wav":
                     sensitive persistent.csb3b_unlocked
                     at transform:
                         zoom 0.666
-                    action Play("sound", "sfx-valid.wav"), Hide("chapter_menu", Fade(1.0)), Jump("choose_direction")
+                    action Play("sound", "sfx_valid.wav"), Hide("chapter_menu", Fade(1.0)), Jump("choose_direction")
 style start_window is empty
 
 label splashscreen:
@@ -1355,7 +1372,7 @@ label test:
     show copguy_ex
     show red_light
     show blue_light
-    show screen warning("The following scene sucks.", "secret")
+    show screen warning("The following scene sucks.", "Warnings: test", "secret")
     pause
     $ renpy.full_restart()
 
