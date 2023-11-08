@@ -592,9 +592,7 @@ label train_boarding:
     tate "A little...?"
     show cs worried
     cs "You know, {w=0.25}just a little, uhHH--!!{nw}"
-
-    # TODO: rename this sound. can't do it now since another route uses it too.
-    play sound "audio/punch.ogg"
+    play sound "audio/sfx_punch.ogg"
 
     # TODO: less crumnchy lupin sprite
     # TODO: sfx - Lupin musical sting
@@ -1223,11 +1221,12 @@ label train_wakeup:
 
     if fun_value(15):
         tate "YOU HAD {bt=a3-p10-s4}{i}ONE{/i}{/bt} JOJ!" with vpunch
+        show tate srs at center with moveinleft
+        tate "YOU'RE GONNA NEED A WHOLE LOT MORE THAN {bt=a3-p10-s4}{i}FOUNDATION\nREPAIR{/i}{/bt} AFTER {i}I'M{/i} DONE WITH YOU!" with vpunch
     else:
         tate "YOU HAD {bt=a3-p10-s4}{i}ONE{/i}{/bt} JOB!" with vpunch
-
-    show tate srs at center with moveinleft
-    tate "YOU'RE GOING TO NEED A WHOLE LOT MORE THAN {bt=a3-p10-s4}{i}FOUNDATION\nREPAIR{/i}{/bt} AFTER {i}I'M{/i} DONE WITH YOU!" with vpunch
+        show tate srs at center with moveinleft
+        tate "IS IT REALLY {i}THAT{/i} HARD FOR YOU TO KEEP A SECRET?!" with vpunch
 
     cs "Tate, wait!"
     arceus "It wasn't him!"
@@ -1270,11 +1269,11 @@ label train_wakeup:
     show mean tired at mid_offscreen_left
     show tate sheepish at mid_mid_left
     with moveinleft
-    mean "{i}Pant...{w=0.25}{nw}"
+    mean "{i}Pant...{w=0.5}{nw}"
     show mean tired at left with moveinleft
-    mean "{i}Pant...{w=0.25}{nw}"
+    mean "{i}Pant...{w=0.5}{nw}"
     show mean tired at center_left with moveinleft
-    mean "{i}Wheeze...{w=0.25}"
+    mean "{i}Wheeze...{w=0.5}"
 
     show mean surprised
     mean "There...{w=0.5} you are,{w=0.5} Tate..."
