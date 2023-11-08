@@ -357,11 +357,6 @@ define snufkin = Character("Snufkin", callback = renpy.partial(char_callback, na
 define alicia = Character("Alicia", callback = renpy.partial(char_callback, name = "alicia"))
 define witch = Character("Witch", callback = renpy.partial(char_callback, name = "witch"))  # DX: Beep
 define tate_offscreen = Character("???", callback = renpy.partial(char_callback, name = "tate_offscreen", beep="tate"))
-define amtrak_conductor = Character("Conductor", callback = char_callback)
-define amtrak_stewardess = Character("Stewardess", callback = char_callback)
-define amtrak_npc_1 = Character("Passenger 1", callback = char_callback)
-define amtrak_npc_2 = Character("Passenger 2", callback = char_callback)
-define amtrak_npc_3 = Character("Passenger 3", callback = char_callback)
 
 # Character Images
 ## CS
@@ -383,10 +378,7 @@ image cs disappointed metal2 = "characters/cs/disappointedmetal2.png"
 image cs disappointed metal3 = "characters/cs/disappointedmetal3.png"
 image cs disappointed metal4 = "characters/cs/disappointedmetal4.png"
 image cs disappointed flipped = "flip:characters/cs/disappointed.png"
-image cs surprised = "characters/cs/surprised.png"
-image cs surprised flipped = "flip:characters/cs/surprised.png"
 image cs concentrate = "characters/cs/concentrate.png"
-image cs concentrate flipped = "flip:characters/cs/concentrate.png"
 image cs concentrate dark = "characters/cs/concentratedark.png"
 image cs phone = "characters/cs/phone.png"
 image cs dark = "characters/cs/neutraldark.png"
@@ -405,7 +397,6 @@ image cs fakegod = "characters/cs/fake_god.png"
 image cs guitar = "characters/cs/guitar.png"
 image cs surprised = "characters/cs/surprised.png"
 image cs scared = "characters/cs/scared.png"
-image cs scared flipped = "flip:characters/cs/scared.png"
 image cs insane worried = "characters/cs/insane.png"
 image cs insane worried flipped = "flip:characters/cs/insane.png"
 image cs insane disappointed = "characters/cs/insane2.png"
@@ -501,8 +492,6 @@ image tate sad = "characters/tate/tatesad.png"
 image tate sad flipped = "flip:characters/tate/tatesad.png"
 image tate stare = "characters/tate/tatestare.png"
 image tate stare flipped = "flip:characters/tate/tatestare.png"
-image tate cry = "characters/tate/tatecry.png"
-image tate cry flipped = "flip:characters/tate/tatecry.png"
 
 ## Mean
 image mean = "characters/mean/mean.png"
@@ -523,7 +512,12 @@ image mean scared = "characters/mean/meanscared.png"
 image mean scared flipped = "flip:characters/mean/meanscared.png"
 image mean surprised = "characters/mean/meansurprised.png"
 image mean surprised flipped = "flip:characters/mean/meansurprised.png"
+
 ## Mean
+
+# hoh sis
+image mean hohsis1 = "flipped:characters/mean/meanhohsis1.png"
+image mean hohsis2 = "flipped:characters/mean/meanhohsis2.png"
 
 # train
 image mean = "characters/mean/mean.png"
@@ -540,10 +534,6 @@ image mean wat = "characters/mean/meanwat.png"
 image mean wat flipped = "flip:characters/mean/meanwat.png"
 image mean furious = "characters/mean/meanfurious.png"
 image mean furious flipped = "flip:characters/mean/meanfurious.png"
-image mean tired = "characters/mean/meantired.png"
-image mean tired flipped = "flip:characters/mean/meantired.png"
-image mean worried = "characters/mean/meanworried.png"
-image mean worried flipped = "flip:characters/mean/meanworried.png"
 
 ## Archival
 image k174 = "characters/k174.png"
@@ -558,13 +548,6 @@ image nova1 = "characters/novaedit.png"
 image nova2 = "characters/novaedit.png"
 image nova3 = "characters/novaedit.png"
 image carguya = "characters/carguya.png"
-
-## Train
-image amtrak_conductor = "characters/amtrak_conductor.png"
-image amtrak_conductor flipped = "flip:characters/amtrak_conductor.png"
-image amtrak_stewardess = "characters/amtrak_stewardess.png"
-image amtrak_stewardess flipped = "flip:characters/amtrak_stewardess.png"
-image lupin = "characters/lupin.png"
 
 ## Others
 image discord = "characters/discord.png"
@@ -1017,20 +1000,6 @@ image archival_17 = "bg/archival/archival_17.png"
 image archival_18 = "bg/archival/archival_18.png"
 image archival_19 = "bg/archival/archival_19.png"
 
-## Train Route
-image kingman_exterior = "bg/train/kingman_exterior.png"
-image kingman_interior = "bg/train/kingman_interior.png"
-image kingman_museum = "bg/train/kingman_museum.png"
-image kingman_platform_1 = "bg/train/kingman_platform_1.png"
-image kingman_platform_2 = "bg/train/kingman_platform_2.png"
-image kingman_train_arrive = "bg/train/kingman_train_arrive.png"
-image amtrak_arrive_close = "bg/train/amtrak_arrive_close.png"
-image amtrak_sleeper_corridor = "bg/train/amtrak_sleeper_corridor.png"
-image amtrak_sleeper_interior_day = "bg/train/amtrak_sleeper_interior_day.jpg"
-image amtrak_sleeper_interior_night = "bg/train/amtrak_sleeper_interior_night.png"
-image amtrak_dining_car = "bg/train/amtrak_dining_car.png"
-image amtrak_dining_mean = "bg/train/amtrak_dining_mean.png" 
-
 # Static Images
 image post_it = "post-it.png"
 image ytx = Transform("ytx.png", zoom = 0.333)
@@ -1198,14 +1167,6 @@ default line_9 = ""
 default line_10 = ""
 default line_11 = ""
 default line_12 = ""
-
-# Train route
-# the default values are silly so that i know they're defaults
-default money_stolen = None
-default money_container = "treasure chest"
-default money_stolen_dialogue_switch = "lock it shut"
-default money_stolen_dialogue_switch_2 = "red and gold chest"
-default polar_express_fun_value = False
 
 # RPG
 default enemy_1 = "cop"
