@@ -15,7 +15,7 @@ label train_start_good:
     pause 1.0
     show cs flipped
     show arceus worried flipped
-    pause 2.0
+    pause 1.0
     arceus "...But, how {i}will{/i} we get back, exactly?"
     arceus "That's a pretty long drive. {w=0.25}I'm already beat."
     cs "I saw some signs for an airport really clo--{nw}"
@@ -1041,7 +1041,7 @@ label train_dining:
     arceus "Geez, it smells like a high school cafeteria..."
     arceus "I think I'll just grab myself a bottle of wine and get out of here."
     show arceus at left with moveinleft
-    n "As he heads towards the counter, Arceus finds his attention redirected towards a yellow... {w=0.5}thing."
+    n "As he approaches the counter, Arceus finds his attention redirected towards a yellow... {w=0.5}thing."
 
     scene amtrak_dining_mean
     show mean at t_mean_dining_car
@@ -1099,6 +1099,7 @@ label train_dining:
     show mean angry 
     with Dissolve(1.0)
     # the dissolve was arc's idea lol
+    pause 1.0
     mean "Why?"
     arceus "We had some stuff stolen. {w=0.25}A lot of people did, actual--{nw}"
 
@@ -1246,22 +1247,22 @@ label train_wakeup:
     tate "Like... {w=0.25}what?"
     arceus "I thought he'd be... {w=0.25}just... {w=0.25}you know... {w=0.5}{i}some guy."
     arceus "I didn't know he's, uh... {w=0.5}whatever he is."
-    pause 1.0    
+    pause 2.0    
 
     play music "<loop 1.071>e_gadds_lab.ogg" volume 1
     music "E. Gadd's Lab - Kazumi Totaka and Shinobu Tanaka"
 
     show tate sheepish
     show cs disappointed flipped
-    pause 1.0
+    pause 2.0
     "..."
     tate "{i}O{w=0.1}-Oh..."
-    pause 0.5
+    pause 1.0
     tate "I guess... {w=1.0}{size=-5}that would have been... {w=1.0}{size=-5}an {i}important{/i} detail to...{w=1.5}"
     tate "{size=-15}{i}Fuck..."
-    pause 2.0
+    pause 3.0
     n "Heavy breathing approaches from the hallway."
-    pause 0.5
+    pause 1.0
 
     ### EVERYTHING PAST THIS POINT IS HEAVY WIP
     ### MEAN PLS I NEED YOU TO HELP ME WRITE THE HEIST AAAAAAAA
@@ -1371,8 +1372,8 @@ label train_wakeup:
     show cs worried flipped
     show tate sheepish flipped
     show mean worried
-    mean "... Right."
-    mean "Anyway, I just needed to make sure you were safe."
+    mean "... {w=0.25}Right."
+    mean "Anyway, {w=0.25}I just needed to make sure you were safe."
 
 
 
