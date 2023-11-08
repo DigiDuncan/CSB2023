@@ -1253,25 +1253,25 @@ screen chapter_menu():
             text "Start where?" textalign 0.5 size 72 xalign 0.5 yalign 0.5
             hbox xalign 0.5 yalign 0.5:
                 spacing 50
-                imagebutton auto "menu/csbi_%s.png" hover_sound "sfx-select.wav":
+                imagebutton auto "menu/csbi_%s.png" hover_sound "sfx_select.wav":
                     at transform:
                         zoom 0.666
-                    action Play("sound", "sfx-valid.wav"), Hide("chapter_menu", Fade(1.0)), Jump("csbi_start")
-                imagebutton auto "menu/csbii_%s.png" hover_sound "sfx-select.wav":
+                    action Play("sound", "sfx_valid.wav"), Hide("chapter_menu", Fade(1.0)), Jump("csbi_start")
+                imagebutton auto "menu/csbii_%s.png" hover_sound "sfx_select.wav":
                     sensitive persistent.csb2_unlocked
                     at transform:
                         zoom 0.666
-                    action Play("sound", "sfx-valid.wav"), Hide("chapter_menu", Fade(1.0)), Jump("csbii_start")
-                imagebutton auto "menu/csbiii1_%s.png" hover_sound "sfx-select.wav":
+                    action Play("sound", "sfx_valid.wav"), Hide("chapter_menu", Fade(1.0)), Jump("csbii_start")
+                imagebutton auto "menu/csbiii1_%s.png" hover_sound "sfx_select.wav":
                     sensitive persistent.csb3a_unlocked
                     at transform:
                         zoom 0.666
-                    action Play("sound", "sfx-valid.wav"), Hide("chapter_menu", Fade(1.0)), Jump("csbiii_start")
-                imagebutton auto "menu/csbiii2_%s.png" hover_sound "sfx-select.wav":
+                    action Play("sound", "sfx_valid.wav"), Hide("chapter_menu", Fade(1.0)), Jump("csbiii_start")
+                imagebutton auto "menu/csbiii2_%s.png" hover_sound "sfx_select.wav":
                     sensitive persistent.csb3b_unlocked
                     at transform:
                         zoom 0.666
-                    action Play("sound", "sfx-valid.wav"), Hide("chapter_menu", Fade(1.0)), Jump("choose_direction")
+                    action Play("sound", "sfx_valid.wav"), Hide("chapter_menu", Fade(1.0)), Jump("choose_direction")
 style start_window is empty
 
 label splashscreen:
