@@ -48,27 +48,27 @@ init python:
                 if 0 < current_time < 1:
                     # Display 3
                     if not self.three_played:
-                        renpy.sound.play("minigames/editing/count_beep.mp3")
+                        renpy.sound.play("minigames/editing/sfx_count_beep.mp3")
                         self.three_played = True
                     countdown_renderer = renpy.render(Text("3", color = "FF0000", size=200), 1920, 1080, st, at)
                     r.blit(countdown_renderer, (960, 540))
                 elif 1 < current_time < 2:
                     # Display 2
                     if not self.two_played:
-                        renpy.sound.play("minigames/editing/count_beep.mp3")
+                        renpy.sound.play("minigames/editing/sfx_count_beep.mp3")
                         self.two_played = True
                     countdown_renderer = renpy.render(Text("2", color = "FFFF00", size=200), 1920, 1080, st, at)
                     r.blit(countdown_renderer, (960, 540))
                 elif 2 < current_time < 3:
                     # Display 1
                     if not self.one_played:
-                        renpy.sound.play("minigames/editing/count_beep.mp3")
+                        renpy.sound.play("minigames/editing/sfx_count_beep.mp3")
                         self.one_played = True
                     countdown_renderer = renpy.render(Text("1", color = "00FF00", size=200), 1920, 1080, st, at)
                     r.blit(countdown_renderer, (960, 540))
                 elif current_time > 3:
                     # Yell Go at the player
-                    renpy.sound.play("minigames/editing/start_beep.mp3")
+                    renpy.sound.play("minigames/editing/sfx_start_beep.mp3")
                     self.started = True
 
             # Hit the space bar
@@ -78,12 +78,12 @@ init python:
                     self.successes += 1
                     self.hit_width = int(lerp(START_BOX_WIDTH, START_BOX_WIDTH / BOX_SHRINK_FACTOR, self.successes / TOTAL_ROUNDS))
                 else:
-                    renpy.sound.play("minigames/editing/ohno.ogg", channel="sound")
+                    renpy.sound.play("minigames/editing/sfx_ohno.ogg", channel="sound")
                 self.attempts += 1
                 self.hit_position = renpy.random.randint(self.hit_width, 1920 - self.hit_width)
                 self.hit = False
                 self.cut_positions.append(self.scissors_place)
-                renpy.sound.play("minigames/editing/cut.ogg", channel="sound2")
+                renpy.sound.play("minigames/editing/sfx_cut.ogg", channel="sound2")
 
             # Move scissors back and forth
             if self.scissors_direction:
