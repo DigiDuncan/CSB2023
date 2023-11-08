@@ -900,7 +900,7 @@ label train_enter_sleeper:
     show cs worried
     cs "I mean, yeah, it totally sucks balls, but all it means is that when we get home, things will just be the same as they were before."
     show tate sheepish flipped
-    tate "I really do hope they find everyone's things..."
+    tate "Even so, I really do hope they find everyone's things..."
     show tate sad flipped
     tate "I'm just so scared that they'll accuse Mean of stealing it, or something, since he's so new..."
     tate "I really don't know if he could handle losing this job, too."
