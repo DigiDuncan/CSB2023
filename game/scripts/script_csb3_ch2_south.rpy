@@ -54,7 +54,7 @@ label south:
     cs "Tada!"
     arceus "{i}How did you do that?!"
     cs "Look, I'm a master builder. You wouldn't understand."
-    arceus "Well... does the car even work?"
+    arceus "Well... does the car even {i}work?{/i}"
     cs "Only one way to find out!"
     stop music fadeout 3.0
     music end
@@ -548,10 +548,6 @@ label folded:
     scene insafe with fade
     arceus "Look at all this loot! CS is gonna be so surprised..."
     n "While Arceus is looting the casino, CS continues his search."
-
-    # variable for use in train route.
-    $ money_stolen = True
-
     scene vegasbathroom with fade
     show cs disappointed at center with moveinleft
     cs "Hello? Arceus?"
@@ -591,10 +587,12 @@ label folded:
     show arceus
     arceus "What would you like to do, CS?"
     menu:
-        "Go to the airport":
+        "Take a plane home":
             jump airport_bad
-        "Don't go to the airport":
+        "Take the car":
             jump noairport
+        "Take something else...?":
+            jump train_start_bad
 
 label poker3:
     cs "Still standing."
@@ -765,10 +763,6 @@ label poker3:
         with move
         n "After CS collects his winnings, he finds his way back to the car."
         show cs flipped with determination
-
-        # variable for use in train route.
-        $ money_stolen = False
-
         hide cs
         hide case
         with moveoutleft
@@ -795,10 +789,12 @@ label poker3:
     hide case
     arceus "Alright, well, what's the plan now? We have so much money, we can do anything with it!"
     menu:
-        "Go to airport"  (type = "good"):
+        "Take a plane home"  (type = "good"):
             jump airport
-        "Don't go to airport"  (type = "bad"):
+        "Take the car"  (type = "bad"):
             jump noairport
+        "Take something else...?" (type = "good"):
+            jump train_start_good
 
 label airport:
     cs "We should head back home now. I have a plan for our newfound riches."
