@@ -226,7 +226,7 @@ label high_gpu:
     show linus at mid_right
     show cs disappointed at mid_left
     with fade
-    play sound "<loop 0>sfx_yelling.ogg" loop volume 0.3
+    play music "<loop 0>yelling.ogg" loop volume 0.3
     cs "Hey, do you hear that?"
     n "CS and Linus can hear a growing audience of people yelling nearby."
     linus "Hold on, lemme go check the window."
@@ -238,7 +238,7 @@ label high_gpu:
     linus "Oh, shit. This is bad..."
     cs "What is it?"
     n "All of a sudden, a brick flies through the window!"
-    play sound "<loop 0>sfx_glass.ogg" volume 3
+    play sound "<loop 0>glass.ogg" volume 3
     show sansbrick at offscreenleft with moveinright
     show cs worried
     cs "Woah! Stand back, Linus!"
@@ -255,7 +255,7 @@ label high_gpu:
     scene black with fade
     n "CS and Linus meet up with the rest of the members downstairs."
     scene frontdoor
-    play sound "<loop 0>sfx_yelling.ogg" loop volume 0.5
+    play sound "<loop 0>yelling.ogg" loop volume 0.5
     show luke flipped at left
     show taran flipped at mid_mid_left
     with fade
@@ -284,7 +284,7 @@ label stay_inside:
     linus "Sure, I mean, we {i}are{/i} LTT after all!"
     linus "We're so cool, our fans love us! They'll probably run home here in a moment."
     taran "Holy shit! They're throwing bricks!"
-    play sound "<loop 0>sfx_glass.ogg" volume 3
+    play sound "<loop 0>glass.ogg" volume 3
     show sansbrick at offscreenright with moveinleft
     scene black
     stop sound
@@ -298,7 +298,7 @@ label attack_fanboy:
     linus "CS, what are you doing? You're gonna get yourself killed out there!"
     stop sound fadeout 3.0
     scene outside_ltt with fade
-    play sound "<loop 0>sfx_yelling.ogg" loop volume 1
+    play sound "<loop 0>yelling.ogg" loop volume 1
     show cs angry at center with dissolve
     if fanboy_type == "nvidia":
         "Fanboys" "Boo!! You suck! NVIDIA is the best!"  
@@ -566,57 +566,57 @@ label fire_range:
     window hide
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks1.wav" volume 1
+    play sound "<loop 0>hks1.wav" volume 1
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks2.wav" volume 1
+    play sound "<loop 0>hks2.wav" volume 1
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks1.wav" volume 1
+    play sound "<loop 0>hks1.wav" volume 1
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks3.wav" volume 1
+    play sound "<loop 0>hks3.wav" volume 1
     pause 0.5
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks2.wav" volume 1
+    play sound "<loop 0>hks2.wav" volume 1
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks1.wav" volume 1
+    play sound "<loop 0>hks1.wav" volume 1
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks3.wav" volume 1
+    play sound "<loop 0>hks3.wav" volume 1
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks2.wav" volume 1
+    play sound "<loop 0>hks2.wav" volume 1
     show m4 at left with determination    
     pause 1.0
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks2.wav" volume 1
+    play sound "<loop 0>hks2.wav" volume 1
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks1.wav" volume 1
+    play sound "<loop 0>hks1.wav" volume 1
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks3.wav" volume 1
+    play sound "<loop 0>hks3.wav" volume 1
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks2.wav" volume 1
+    play sound "<loop 0>hks2.wav" volume 1
     show m4 at left with determination    
     pause 1.0
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks2.wav" volume 1
+    play sound "<loop 0>hks2.wav" volume 1
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks1.wav" volume 1
+    play sound "<loop 0>hks1.wav" volume 1
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks3.wav" volume 1
+    play sound "<loop 0>hks3.wav" volume 1
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks2.wav" volume 1
+    play sound "<loop 0>hks2.wav" volume 1
     show m4 at left with determination    
     pause 1.0
     window show
@@ -860,7 +860,7 @@ label cool_car:
     show cs at left with moveinleft
     show pakoo at right with moveinright
     pakoo "Punch it, CS! We've gotta get outta here!"
-    play sound "sfx_siren.ogg" loop fadein 2.0 volume 0.2
+    play sound "siren.ogg" loop fadein 2.0 volume 0.2
     show blue_light at left
     show red_light at right
     n "As CS starts up the car and begins to drive off, the cops pull up around him."
@@ -887,12 +887,12 @@ label cool_car:
     show cs angry flipped
     show m4 flipped at center with determination
     show m4 fire flipped at center with determination
-    play sound "<loop 0>sfx_hks2.wav" volume 1
+    play sound "<loop 0>hks2.wav" volume 1
     show m4 flipped at center with determination 
     pause 0.5
     show m4 flipped at center with determination
     show m4 fire flipped at center with determination
-    play sound "<loop 0>sfx_hks2.wav" volume 1
+    play sound "<loop 0>hks2.wav" volume 1
     show m4 flipped at center with determination
     pause 0.5
     cs "Make me!"
@@ -912,7 +912,7 @@ label reg_car:
     show cs at left with moveinleft
     show pakoo at right with moveinright
     pakoo "Punch it CS! We gotta get outta here!"
-    play sound "sfx_siren.ogg" loop fadein 2.0 volume 0.2
+    play sound "siren.ogg" loop fadein 2.0 volume 0.2
     show blue_light at left
     show red_light at right
     n "As CS starts up the car and begins to drive off, the cops pull up around him."
@@ -938,12 +938,12 @@ label reg_car:
     show cs angry flipped
     show m4 flipped at center with determination
     show m4 fire flipped at center with determination
-    play sound "<loop 0>sfx_hks2.wav" volume 1
+    play sound "<loop 0>hks2.wav" volume 1
     show m4 flipped at center with determination 
     pause 0.5
     show m4 flipped at center with determination
     show m4 fire flipped at center with determination
-    play sound "<loop 0>sfx_hks2.wav" volume 1
+    play sound "<loop 0>hks2.wav" volume 1
     show m4 flipped at center with determination
     pause 0.5
     cs "Make me!"
@@ -1124,7 +1124,7 @@ label flint_car:
     show cs disappointed
     cs "Shit."
     show pakoo disappointed
-    play sound "sfx_siren.ogg" loop fadein 2.0 volume 0.2
+    play sound "siren.ogg" loop fadein 2.0 volume 0.2
     show blue_light at left
     show red_light at right
     n "Sirens blare in the dealership as Copguy pulls up to the car."

@@ -49,7 +49,7 @@ label hotwire:
     n "As if on cue, sirens and lights approach the two."
     show blue_light at left
     show red_light at right
-    play sound "<loop 0>sfx_siren.ogg" volume 0.5
+    play sound "<loop 0>siren.ogg" volume 0.5
     show copguy at center with moveinright
     show cs disappointed
     show arceus worried
@@ -149,7 +149,7 @@ label montana:
     music end
     cs "Same, I'll come with you."
     n "Arceus goes back to sleep in the car."
-    play sound "sfx_doorslam.ogg"
+    play sound "doorslam.ogg"
     scene hardwareinside with fade
     play music "<loop 0>home_depot.mp3" volume 0.4
     music "Let's Do This - Home Depot"
@@ -193,7 +193,7 @@ label montana:
     hide billy with moveoutright
     stop music fadeout 3.0   
     music end
-    play sound "sfx_doorslam.ogg"
+    play sound "doorslam.ogg"
     scene hardwareoutside
     show billy car
     with fade
@@ -212,7 +212,7 @@ label montana:
     billy "Yeah, let's see if I can find a place to stop at."
     billy "Wait a second, what the hell?"
     n "Billy brings the car to a screeching halt."
-    play sound "<from 0 to 2>sfx_car_crash.ogg" volume 0.7
+    play sound "<from 0 to 2>car_crash.ogg" volume 0.7
     scene cultforest
     show billy car
     play music "<loop 0>candle_world.mp3" volume 0.4
@@ -221,7 +221,7 @@ label montana:
     n "Ahead lies a barricade with a bunch of strange hooded people surrounding it."
     show cultist at mid_right behind billy with moveinright
     n "One of the members walks up to the driver's side and knocks on the window."
-    play sound "sfx_roll_window.ogg" volume 0.7
+    play sound "roll_window.ogg" volume 0.7
     n "Billy rolls down the window."
     billy "Hi, it's Billy! What are you doing by my car?"
     cultist "Get out of the car."
@@ -278,7 +278,7 @@ label montana:
     show cs fakegod at center with moveinleft
     cs "Look at me! {bt=a3-p10-s4}{color=#CB50FF}I'm purple!{/color}"
     $ renpy.music.set_pause(True, "music")
-    play sound "secret/sfx_funni.ogg" volume 0.5
+    play sound "secret/funni.ogg" volume 0.5
     pause 3.0
     stop sound
     $ renpy.music.set_pause(False, "music")
@@ -311,18 +311,18 @@ label montana:
     stop music fadeout 1.0 
     play music "<loop 0>blazing_corridor.mp3" volume 0.4    
     billy "Fire a laser! Fire a laser!"
-    play sound "minigames/car/sfx_gaster_blast.wav"
+    play sound "minigames/car/gaster_blast.wav"
     show laser_beam at t_gun behind billy
     hide cultist_2 with moveoutright
     hide laser_beam
     n "Massive laser shots land between the cultists as they scramble away!"
     cultist_3 "I don't wanna turn into a YTP! Go, guys, {i}go!{/i}"
-    play sound "minigames/car/sfx_gaster_blast.wav"
+    play sound "minigames/car/gaster_blast.wav"
     show laser_beam at t_gun behind billy
     hide cultist_3 with moveoutright
     hide laser_beam
     pause 0.5
-    play sound "minigames/car/sfx_gaster_blast.wav"
+    play sound "minigames/car/gaster_blast.wav"
     show laser_beam at t_gun behind billy
     hide cultist with moveoutright
     hide laser_beam
@@ -361,7 +361,7 @@ label montana:
     billy "Sure, yeah, there's a McDonald's up here in a couple miles."
     scene mcdonalds
     show billy car
-    play sound "sfx_roll_window.ogg" volume 0.7
+    play sound "roll_window.ogg" volume 0.7
     n "Billy pulls up to the drive-thru to place his order."
     cashier "Hello, what would you like to order?"
     billy "Hi, Billy Mays here! I would like to get the Buy 1 Get 1 Free breakfast meal for my friends here,"
@@ -414,7 +414,7 @@ label south_dakota:
     arceus "CS? Are you okay?"
     show arceus worried flipped at mid_right with moveinleft
     n "As Arceus starts to approach CS, the onlookers surrounding them all gasp loudly."
-    play sound "sfx_gasp.ogg" volume 2
+    play sound "gasp.ogg" volume 2
     scene csmore
     show cs concentrate at right
     show arceus worried at center
@@ -561,7 +561,7 @@ label iowa:
     billy "Who?"
     cs "They have their UFO and--"
     n "A huge laser beam blasts along the left side of the road, ripping up everything in its path!"
-    play sound "minigames/car/sfx_gaster_blast.wav"
+    play sound "minigames/car/gaster_blast.wav"
     show billy car turn with hpunch
     show billy car turn with vpunch
     show billy car
@@ -710,7 +710,7 @@ label interstate_69:
     billy "Holy shit, you two weren't kidding. I think he's trying to talk to us."
     stop music fadeout 3.0
     billy "I'm gonna see what he wants."
-    play sound "sfx_roll_window.ogg" volume 0.7
+    play sound "roll_window.ogg" volume 0.7
     pause 2.0 
     # DX: It could be funny to have an option to ignore the gnome for a while
     play music "<loop 0>wayward_wanderer.mp3" volume 0.7
@@ -1229,7 +1229,7 @@ label interstate_94:
     with fade
     billy "Looks like there's a traffic jam up ahead. I'm gonna get off and take a detour."
     arceus "I'm gonna roll a window down now that we're off the noisy highway."
-    play sound "sfx_roll_window.ogg" volume 0.7
+    play sound "roll_window.ogg" volume 0.7
     pause 1.0 
     arceus "It's crazy hot in here right now."
     cs "Huh, I didn't notice."
@@ -1238,7 +1238,7 @@ label interstate_94:
     arceus "If you wanna see me naked, you can just ask..."
     cs "I didn't mean-- {w=0.5}whatever..."
     show billy car turn with vpunch
-    play sound "sfx_splash.mp3"
+    play sound "audio/splash.mp3"
     show billy car turn with hpunch
     n "Soon after Arceus rolled down the window, they drive over a large flooded pothole."
     n "Water splashes up from the puddle through the car window."
@@ -1302,7 +1302,7 @@ label interstate_94:
     smiley "See ya!"
     hide smiley with moveoutleft
     n "Smiley runs out of the building and gets into his car."
-    play sound "sfx_gamer_and_girl.mp3" volume 0.4
+    play sound "audio/gamer_and_girl.mp3" volume 0.4
     n "A loud \"awoooooga!\" horn is heard as a colorful little clown car drives past."
     mario "Bastard. I really didn't need this today..."
     mario "Whatever, what do y'all need?"
@@ -1439,7 +1439,7 @@ label ohio:
         show scott_border
         with fade
         n "As they are driving through the state, they see some men on the side of road protesting the blue border."
-        play sound "sfx_roll_window.ogg" volume 0.7
+        play sound "roll_window.ogg" volume 0.7
         scott "Hey all, Scott here!"
         scott "Are you tired of having a blue border in your vision?"
         scott "You should try Kaboom!"
@@ -1475,7 +1475,7 @@ label ohio:
         show scott_border
         with fade
         n "As they are driving through the state, they see some men on the side of road protesting the blue border."
-        play sound "sfx_roll_window.ogg" volume 0.7
+        play sound "roll_window.ogg" volume 0.7
         billy "Hi, it's Billy!"
         billy "Are you tired of having a blue border in your vision?"
         billy "You should try Kaboom!"
@@ -1642,20 +1642,20 @@ label pennsylvania:
     host "WELCOME, FOLKS!"
     play music "<loop 0>showtime.mp3" volume 0.4
     host "EVERYONE GIVE A BIG HAND TO OUR WONDERFUL CONTESTANTS!"
-    play sound "sfx_cheer1.mp3"
+    play sound "audio/cheer1.mp3"
     show crowd at t_stagescreen onlayer broadcast
     n "The crowd explodes into uproarious applause."
     hide crowd onlayer broadcast
     host "ON \"GO\", THESE LOVELIES WILL BE COMPETING TO SEE WHO CAN {color=#ffff00}SHARPEN THE MOST PENCILS!"
     host "THIS TRULY IS THE BATTLE OF A CENTURY, FOLKS! DIGIDUNCAN, OUR LONG-TIME CHAMP, WILL BE GOING UP AGAINST A NEWCOMER, THE AMAZING CS188!"
-    play sound "sfx_cheer2.mp3"
+    play sound "audio/cheer2.mp3"
     show crowd at t_stagescreen onlayer broadcast
     n "The crowd is going wild."
     hide crowd onlayer broadcast
     host "ALL THEY HAVE TO DO IS {color=#ffff00}SHARPEN THE PENCILS AS QUICKLY AS POSSIBLE,{/color} WITHOUT {color=#ffff00}GETTING THE ERASER STUCK!"
     host "IT'S A TRULY MAGICAL EVENT, AND YOU'RE ALL ABOUT TO WITNESS IT! ARE YOU ALL READY?"
-    play sound2 "sfx_cheer1.mp3" noloop volume 0.5
-    play sound "sfx_cheer2.mp3" noloop volume 0.5
+    play sound2 "audio/cheer1.mp3" noloop volume 0.5
+    play sound "audio/cheer2.mp3" noloop volume 0.5
     show crowd at t_stagescreen onlayer broadcast
     n "The crowd is going absolutely crazy."
     hide crowd onlayer broadcast
@@ -1688,8 +1688,8 @@ label win_pencil:
     show mettaton at t_stagescreen onlayer broadcast 
     host "HOLY TICONDEROGA! WE HAVE A WINNER!"
     show crowd at t_stagescreen onlayer broadcast
-    play sound "sfx_cheer2.mp3" noloop volume 0.6
-    play sound2 "sfx_cheer1.mp3" noloop volume 0.6
+    play sound "audio/cheer2.mp3" noloop volume 0.6
+    play sound2 "audio/cheer1.mp3" noloop volume 0.6
     n "As if they couldn't get any louder, the crowd is going insane."
     hide crowd onlayer broadcast
     play music "<loop 0>showtime.mp3" volume 0.4
@@ -1973,7 +1973,7 @@ label talktohohsis:
     n "He looks back out towards the crowd again one more time."
     cs "This is CS..."
     cs "Signing out!"
-    play sound "sfx_cheers.ogg" volume 0.7
+    play sound "cheers.ogg" volume 0.7
     pause 2.0
     n "The crowd erupts into cheers as CS finally enters his house."
     scene black with dissolve
@@ -2097,22 +2097,22 @@ label fighthohsis:
     show cs at center
     show ed at center
     with move
-    play sound "sfx_punch.ogg"
-    play sound "sfx_punchalt.ogg"
+    play sound "audio/punch.ogg"
+    play sound "audio/punchalt.ogg"
     show cs with hpunch
-    play sound "sfx_punch.ogg"
-    play sound "sfx_punchalt.ogg"
+    play sound "audio/punch.ogg"
+    play sound "audio/punchalt.ogg"
     show ed with vpunch
-    play sound "sfx_punch.ogg"
-    play sound "sfx_punchalt.ogg"
+    play sound "audio/punch.ogg"
+    play sound "audio/punchalt.ogg"
     show cs with hpunch
-    play sound "sfx_punch.ogg"
-    play sound "sfx_punchalt.ogg"
+    play sound "audio/punch.ogg"
+    play sound "audio/punchalt.ogg"
     show ed with vpunch
-    play sound "sfx_punch.ogg"
-    play sound "sfx_punchalt.ogg"
+    play sound "audio/punch.ogg"
+    play sound "audio/punchalt.ogg"
     show cs with hpunch
-    play sound "sfx_alt_punch.ogg"
+    play sound "alt_punch.ogg"
     show cs at t_punchup with move
     show cs with vpunch
     show ed at right with move
@@ -2143,7 +2143,7 @@ label fuckuphohsis:
     cs "Come back here!"
     hide cs with moveoutright
     n "The JoJ UFO flies up over the house, then vaporizes it with a laser."
-    play sound "sfx_beam.ogg" volume 0.6
+    play sound "beam.ogg" volume 0.6
     show beam at xstretch_in
     pause 1.5
     show cshouse_vaporized behind beam
@@ -2169,7 +2169,7 @@ label copsathohsis:
     music end
     show blue_light at left
     show red_light at right
-    play sound "<loop 0>sfx_siren.ogg" loop volume 0.5
+    play sound "<loop 0>siren.ogg" loop volume 0.5
     show copguy flipped at center with moveinleft
     cs "Here they are! They scammed me out of my money!"
     n "Copguy cuffs the HoH SiS members and pulls out his walkie."

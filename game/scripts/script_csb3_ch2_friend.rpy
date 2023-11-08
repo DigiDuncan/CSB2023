@@ -61,7 +61,7 @@ label car_ride_1:
     cs "So, yeah, that's why I'm worried."
     show pakoo disappointed
     pakoo "Yeah, I getcha, I'm sur--{w=1.0}{nw}"
-    play sound "sfx_car_horn.ogg" volume 1
+    play sound "car_horn.ogg" volume 1
     show cs worried with vpunch
     show pakoo worried with vpunch
     cs "JESUS!!"
@@ -718,7 +718,7 @@ label between_2:
     copguy "I've been making sure to note down your team's abilities..."
     copguy "Why don't we try one out?"
     n "Copguy uses Light Cast on Arceus!"
-    play sound "minigames/car/sfx_gaster_blast.wav"
+    play sound "minigames/car/gaster_blast.wav"
     scene white with dissolve
     scene war_torn_5
     show cs worried at center
@@ -838,7 +838,7 @@ label car_slam:
     show db_cooper at offscreenright
     copguy "C--{w=0.5}{nw}"
     show db_cooper at right with moveinleft
-    play sound "secret/sfx_explosion.mp3" volume 1.5
+    play sound "secret/explosion.mp3" volume 1.5
     show copguycrawl with hpunch
     hide copguycrawl with moveoutbottom
     show cs worried at left with move
@@ -857,7 +857,7 @@ label car_slam:
     scene black with dissolve
     window hide
     show paper at center with easeinright
-    play sound "sfx_isaac.wav"
+    play sound "audio/isaac.wav"
     pause 1.0
     hide paper with easeoutleft
     pause 1.0

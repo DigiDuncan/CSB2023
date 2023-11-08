@@ -20,7 +20,7 @@ label csbi_start:
         pakoo "Oh, whoops!"
         pakoo "The old game is still here..."
         pakoo "Lemme fix that real quick for you."
-        play sound "sfx_page.wav" volume 5
+        play sound "page.wav" volume 5
         if e1:
             show pakoo disappointed with determination
             hide pakoo
@@ -36,7 +36,7 @@ label csbi_start:
         show oldgame
         with fade
         pause 3.0
-        play sound "sfx_page.wav" volume 5
+        play sound "page.wav" volume 5
         hide oldgame
         with moveoutright
         cs "I know what's going on now."
@@ -75,30 +75,30 @@ label csbi_start:
         sticky "Delete the CSCord."
     cs "Eh, maybe tomorrow."
     hide post_it
-    play sound "sfx_page.wav" volume 5
+    play sound "page.wav" volume 5
     pause 2.0
     show craptop updating
     craptop "Downloading update 200/13..."
     craptop "Update complete."
     cs "{bt=a3-p10-s4}OoOoOoOoO{/bt} yes!"
     show craptop discord
-    play sound "sfx_windows_logon.mp3"
+    play sound "windows_logon.mp3"
     cs "Hey guys!"
-    play sound "sfx_ping_spam.mp3"
+    play sound "ping_spam.mp3"
     discord "Hi! Hi! Hi! Hi!"
     n "The Discord is overflowing with people trying to talk to CS."
     show cs at left
-    play sound "sfx_ping.mp3"
+    play sound "ping.mp3"
     cs "Okay, bedtime! Bye guys!"
     show nova at right
-    play sound "sfx_ping.mp3"
+    play sound "ping.mp3"
     nova "But it's like 8:04AM and you just woke up."
-    play sound "sfx_ping.mp3"
+    play sound "ping.mp3"
     cs "Bye!"
     show cs flipped with determination
     hide cs with moveoutleft
     discord "CS is now offline."
-    play sound "sfx_ping.mp3"
+    play sound "ping.mp3"
     nova "k bye"
     hide nova
     show craptop car
@@ -125,10 +125,10 @@ label csbi_start:
     hide cs_house
     show cs at left with move
     show carguy at right with moveinright
-    play sound "sfx_nicecar.ogg"
+    play sound "nicecar.ogg"
     carguy_nobeep "Nice car!"
     cs "It's pretty nice, but it's got some scratches..."
-    play sound "sfx_notsonicescratch.ogg"
+    play sound "notsonicescratch.ogg"
     carguy_nobeep "Nooot so nice scratch..."
     carguy "You should try Crotch Doctor!"
     show cs worried at left
@@ -137,7 +137,7 @@ label csbi_start:
     music end
     cs "QUICK! START THE CAR, START THE CAR!!!"
     hide cs with moveoutright
-    play sound "sfx_doorslam.ogg"
+    play sound "doorslam.ogg"
     scene cs_car_inside
     show cs at left
     with fade
@@ -153,7 +153,7 @@ label csbi_start:
             $ achievement_manager.unlock("I Don't Like People!")
 
             cs "Screw you, I'm going anyway!"
-    play sound "sfx_driving.wav" volume 0.5
+    play sound "driving.wav" volume 0.5
     pause 3.0
     stop sound fadeout 2.0
     stop music fadeout 3.0
@@ -204,18 +204,18 @@ label walmart:
     show cs at left with moveinleft
     cs "Let's get to the car."
     show carguy at right with moveinright
-    play sound "sfx_notsonicescratch.ogg"
+    play sound "notsonicescratch.ogg"
     carguy_nobeep "Nooooot so nice scratch."
     show cs disappointed at left
     cs "Not you again!"
     cs "I've gotta get outta here!"
     hide cs with moveoutright
-    play sound "sfx_doorslam.ogg"
+    play sound "doorslam.ogg"
     scene cs_car_inside
     show cs at left
     with fade
     play music "<loop 0>canyon_but_in_the_car.mp3" volume 0.2
-    play sound "sfx_driving.wav" volume 0.5
+    play sound "driving.wav" volume 0.5
     cs "Let's get home before that guy doctors my crotch!"
     scene black with fade
     n "CS drives home and manages to avoid reenacting one of his favorite car crash videos."
@@ -251,7 +251,7 @@ label room:
     scene cs_room with pixellate
     show cs_young with moveinbottom
     ycs "Hey guys, Young CS here! Today, I'm gonna be editing a \n{bt=a3-p10-s4}CraAaAaAaAzY{/bt} video!!"
-    play sound "sfx_keyboard.ogg"
+    play sound "keyboard.ogg"
     n "CS taps furiously on his keyboard."
     ycs "Ohhhhhh {bt=a3-p10-s4}YeeEeeEeEeeEEeEEs!{/bt} This is lookin' good!"
     hide cs_young
@@ -259,7 +259,7 @@ label room:
     show cs
     with pixellate
     cs "Oh, flashback over."
-    play sound "sfx_foundationfail.ogg" volume 0.5
+    play sound "foundationfail.ogg" volume 0.5
     show cs_room behind cs at rotate_10 with hpunch
     n "A loud crash is heard as a crack is split in CS' foundation."
     show cs worried
@@ -280,7 +280,7 @@ label room:
     cs "I guess I'll work on my new YTP while I wait."
     scene black with fade
     n "Time passes and the doorbell rings."
-    play sound "sfx_doorbell.ogg" volume 0.5
+    play sound "doorbell.ogg" volume 0.5
     stop music fadeout 3.0
     music end
     scene door_closed with fade
@@ -337,7 +337,7 @@ label room:
     with moveinright
     rich "Lemme call our JoJ UFO."
     "Ed, Wesley, and Richard" "I'm beaming up!"
-    play sound "sfx_beam.ogg" volume 0.6
+    play sound "beam.ogg" volume 0.6
     show beam at xstretch_in
     pause 2.0
     hide ed
@@ -379,7 +379,7 @@ label michael_house:
     cs "Alright, well, I'll be there soon!"
     show cs at left
     n "CS puts his phone away and drives over to Michael's house."
-    play sound "sfx_driving.wav" volume 0.5
+    play sound "driving.wav" volume 0.5
     pause 2.0
     show black with dissolve
     stop sound fadeout 2.0
@@ -404,15 +404,15 @@ label rosen_house:
         cs "NO!{w=1.0}{nw}"
         show csgod at left with move
         show csgod with hpunch
-        play sound "sfx_punch.ogg"
+        play sound "audio/punch.ogg"
         show csgod at offscreenright
         show csgod at left with move
         show csgod with hpunch
-        play sound "sfx_punch.ogg"
+        play sound "audio/punch.ogg"
         show csgod at offscreenright
         show csgod at left with move
         show csgod with hpunch
-        play sound "sfx_punch.ogg"
+        play sound "audio/punch.ogg"
         hide csgod with dissolve
         n "Pakoo sighs."
         pakoo "Let's finish this."
@@ -462,7 +462,7 @@ label rosen_house:
         show black
     else:
         show black with dissolve
-    play sound "sfx_csnore.ogg"
+    play sound "csnore.ogg"
     michael "CS? Did you fall asleep?"
     michael "CS!"
     stop sound
@@ -471,7 +471,7 @@ label rosen_house:
     michael "Did you just... sleep through my entire poem?"
     cs "Nooooooooooooooooo?"
     n "Michael sighs and facepalms."
-    play sound "sfx_doorbell.ogg" volume 0.5 
+    play sound "doorbell.ogg" volume 0.5 
     n "The doorbell rings."
     michael "Oh! My other guest is here! I'll be right back!"
     hide michael at right with moveoutright
@@ -488,7 +488,7 @@ label rosen_house:
     show cs worried flipped at right
     cs "Michael! That's not chocolate cake!"
     michael "I have loads to eat! Om nom nom..."
-    play sound "sfx_puke.ogg"
+    play sound "puke.ogg"
     michael_nobeep "Blarrrgh!"
     n "Michael spits out the Flex Seal cake."
     michael "This is horrible! Get out! Get out of here!"
@@ -514,7 +514,7 @@ label rosen_house:
     with fade
 
     play music "<loop 0>canyon_but_in_the_car.mp3" volume 0.2
-    play sound "sfx_driving.wav" volume 0.5
+    play sound "driving.wav" volume 0.5
     stop music fadeout 3.0
     music end
     jump csbi_end
@@ -544,13 +544,13 @@ label csbi_end:
     show craptop off at rotate_6
     with hpunch
     window hide
-    play sound "sfx_foundationfail.ogg" volume 0.5
+    play sound "foundationfail.ogg" volume 0.5
     pause 3.0
     cs "They didn't even do the JoJ!"
     show craptop sad at rotate_6 with hpunch
-    play sound "sfx_punch.ogg"
+    play sound "audio/punch.ogg"
     if fun_value(20):
-        play sound "secret/sfx_gul.ogg"
+        play sound "secret/gul.ogg"
     pause 1.0
     scene cs_room
     show cs angry
@@ -569,7 +569,7 @@ label csbi_end:
     worker_1 "I don't know!!"
     cs "BullShisH!"
     n "CS punches the worker."
-    play sound "sfx_punch.ogg"
+    play sound "audio/punch.ogg"
     show worker_1 at right with hpunch
     $ persistent.seen.add("hoh_worker")
     hide worker_1 with moveoutright
@@ -585,11 +585,11 @@ label csbi_end:
     show cs angry flipped with moveinright
     cs "Get out of my way!"
     n "CS bodyslams the workers as he runs past."
-    play sound "sfx_punch.ogg"
+    play sound "audio/punch.ogg"
     show cs angry flipped at mid_left with move
     show worker_4 at mid_left with hpunch
     hide worker_4 with moveoutleft
-    play sound "sfx_punch.ogg"
+    play sound "audio/punch.ogg"
     show cs angry with determination
     show cs angry at mid_right with move
     show worker_3 at mid_center_right with hpunch
@@ -610,7 +610,7 @@ label csbi_end:
     cs "Thanks, and also--"
     n "CS clocks the worker in the face."
     show cs angry flipped at left with move
-    play sound "sfx_punch.ogg"
+    play sound "audio/punch.ogg"
     show cs angry flipped at offscreenleft with move
     show worker_5alt at left with hpunch
     hide worker_5alt with moveoutbottom
@@ -631,7 +631,7 @@ label left:
     show cs angry at left with moveinleft
     cs "A... pineapple?"
     show cs angry at right with move
-    play sound "sfx_punch.ogg"
+    play sound "audio/punch.ogg"
     show cs angry at left with move
     show worker_6 at right with hpunch
     hide worker_6 with moveoutright
@@ -643,7 +643,7 @@ label left:
     show cs angry
     with fade
     pause 2.0
-    play sound "sfx_elevator_ding.ogg"
+    play sound "audio/elevator_ding.ogg"
     scene black with fade
     jump csbii_start
 
@@ -654,7 +654,7 @@ label right:
     show cs angry at left with moveinleft
     cs "A fucking chicken?"
     show cs angry at right with move
-    play sound "sfx_punch.ogg"
+    play sound "audio/punch.ogg"
     show cs angry at left with move
     show worker_7 at right with hpunch
     hide worker_7 with moveoutright
@@ -666,14 +666,14 @@ label right:
     show cs angry
     with fade
     pause 2.0
-    play sound "sfx_elevator_ding.ogg"
+    play sound "audio/elevator_ding.ogg"
     scene black with fade
     jump csbii_start
 
 label error:
     if fun_value(1):
         show black
-        play sound "secret/sfx_gul.ogg"
+        play sound "secret/gul.ogg"
         pause 1.0
         return
     $ e1 = True

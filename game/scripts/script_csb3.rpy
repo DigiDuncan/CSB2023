@@ -228,7 +228,6 @@ label boost:
     linus "Not exactly. It's an experimental piece of hardware that we have never used before, and it's custom-made."
     n "Linus holds the card into the air."
     linus "Behold! {w=0.5} The-- WOAH SHIT {w=0.5}{nw}"
-    # TODO: there should be a sound effect here for when he drops it
     show ytx at t_linus_drop_tips
     pause 0.35
     show linus with vpunch
@@ -446,7 +445,7 @@ label both_fan:
     colton "A... what?"
     cs "Alright! Strap in, because YouTube is where the poop is!"
     show black with fade
-    play sound "sfx_ytpintro.ogg"
+    play sound "ytpintro.ogg"
     n "Half an hour passes, and CS has shown LTT what YTPs are all about."
     hide black with fade
     cs "Welp. Those are some of the best ones that I could find."
@@ -540,7 +539,7 @@ label arc_escape:
     with moveinright
     show cs disappointed at left
     n "CS and Arceus run out of the building and try to find cover while they escape."
-    play sound "sfx_siren.ogg" loop fadein 2.0 volume 0.2
+    play sound "siren.ogg" loop fadein 2.0 volume 0.2
     show blue_light at left
     show red_light at right
     n "As they are making their way further from the building, they can hear sirens grow in volume as flashing lights rush towards the LMG headquarters."
@@ -698,7 +697,7 @@ label arc_escape:
     arceus "Wait a minute, those are--"
     show blue_light at left
     show red_light at right
-    play sound "<loop 0>sfx_siren.ogg" volume 0.1
+    play sound "<loop 0>siren.ogg" volume 0.1
     n "Arceus squints into the night, but CS and Arceus both immediately recognize the sounds."
     show cs worried dark
     show arceus worried dark
@@ -721,16 +720,16 @@ label forest_menu:
 label ytp_magic_fight:
     show cs concentrate dark
     n "CS closes his eyes. He starts to concentrate on the sirens and the car."
-    play sound "<loop 0>sfx_siren.ogg" loop fadein 3.0 volume 0.4
+    play sound "<loop 0>siren.ogg" loop fadein 3.0 volume 0.4
     arceus "CS?! What are you doing?!"
-    play sound "<loop 0>sfx_siren.ogg" loop volume 0.5
+    play sound "<loop 0>siren.ogg" loop volume 0.5
     arceus "CS!!!! They're heading right for us!!"
-    play sound "<loop 0>sfx_siren.ogg" loop volume 0.6
+    play sound "<loop 0>siren.ogg" loop volume 0.6
     scene black
     arceus "CS!!!!!!!!!!!!"
-    play sound "<loop 0>sfx_siren.ogg" loop fadein 1.0 volume 2
+    play sound "<loop 0>siren.ogg" loop fadein 1.0 volume 2
     pause 1.0
-    play sound "sfx_car_crash.ogg" volume 0.7
+    play sound "car_crash.ogg" volume 0.7
     pause 7.0
     n "Copguy's car flies off the road and violently crashes into the forest."
     scene washington_road
@@ -789,7 +788,7 @@ label attack_arc:
     stop music2
     music end
     show csgod flipped at left with vpunch
-    play sound "sfx_alt_punch.ogg"
+    play sound "alt_punch.ogg"
     show csgod at t_punchup with move
     show arceus angry dark at right with hpunch
     arceus "Really? I've been a god longer than you, dummy."
@@ -877,9 +876,9 @@ label wait_arc:
     csgod "Stronger than ever."
     show csgod flipped at mid_left with moveinleft
     show arceus flipped at mid_left with vpunch
-    play sound "sfx_punch.ogg"
+    play sound "audio/punch.ogg"
     show arceus flipped at mid_left with hpunch
-    play sound "sfx_punchalt.ogg"
+    play sound "audio/punchalt.ogg"
     show arceus flipped at t_punchup with move
     arceus "Ouch."
     $ achievement_manager.unlock("No Mercy")
@@ -929,7 +928,7 @@ label wait_forest:
     arceus "I don't think that'll be the case."
     copguy "{cps=10}I don't think so either."
     n "Before CS and Arceus can react, they both get the lights knocked out of them."
-    play sound "sfx_punch.ogg"
+    play sound "punch.ogg"
     scene black with determination
     n "When CS and Arceus wake up, they find themselves in handcuffs leaned up against a cop car."
     scene washington_road
@@ -983,7 +982,7 @@ label bad_convince:
     show cs disappointed at left
     play music "<loop 0>pressing_pursuit_cornered.mp3" volume 0.3
     music Pressing Pursuit ~ Cornered - Masakazu Sugimori
-    play sound "sfx_hold_it.mp3" volume 0.5
+    play sound "hold_it.mp3" volume 0.5
     show hold_it at truecenter with hpunch
     pause 1.0
     hide hold_it
@@ -991,7 +990,7 @@ label bad_convince:
     cs "I just {i}look{/i} like CS!"
     show arceus worried
     arceus "I mean... he {i}might{/i} not be CS?"
-    play sound "sfx_objection.mp3" volume 0.5
+    play sound "objection.mp3" volume 0.5
     show objection at truecenter with hpunch
     pause 1.0
     hide objection
@@ -1004,7 +1003,7 @@ label good_convince:
     show cs worried
     play music "<loop 0>pressing_pursuit_cornered.mp3" volume 0.3
     music Pressing Pursuit ~ Cornered - Masakazu Sugimori
-    play sound "sfx_hold_it.mp3" volume 0.5
+    play sound "hold_it.mp3" volume 0.5
     show hold_it at truecenter with hpunch
     pause 1.0
     hide hold_it
@@ -1017,7 +1016,7 @@ label good_convince:
     cs "So, afterwards, I wanted to get my revenge!"
     copguy "I'm not believing this for a second."
     copguy "You really thought I would fall for some silly little lie?"
-    play sound "sfx_objection.mp3" volume 0.5
+    play sound "objection.mp3" volume 0.5
     show objection at truecenter with hpunch
     pause 1.0
     hide objection

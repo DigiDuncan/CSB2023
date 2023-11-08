@@ -81,10 +81,10 @@ label new_plan:
     # "I'm officially pardoning Annorexorcist and Arceus3251 because they really helped me out of a pickle."
     # - Tate
     if fun_value(20):
-        play sound "<loop 0>sfx_obama.mp3" volume 0.5
+        play sound "<loop 0>obama.mp3" volume 0.5
         bomahanobeep "I'm officially pardoning Annorexorcist and Arceus3251, for helping me out of a pickle."
     else:
-        play sound "<loop 0>sfx_obama.mp3" volume 0.5
+        play sound "<loop 0>obama.mp3" volume 0.5
         obamanobeep "I'm officially pardoning Annorexorcist and Arceus3251, for helping me out of a pickle."
     show arceus happy
     arceus "Incredible as always, Anno."
@@ -248,7 +248,7 @@ label hotel_next_day:
     pause 2.0
     stop music fadeout 3.0
     music end
-    play sound "sfx_elevator_ding.ogg"
+    play sound "audio/elevator_ding.ogg"
 
     scene hotel_breakfast with fade
     show cs at center with moveinleft
@@ -1003,8 +1003,8 @@ label first_tour_day:
     with dissolve
     n "The crowd is going insane."
     cs "We're [band_name], and this is {i}[song_name_4]!{/i}"
-    play sound "sfx_start_rocking.mp3"
-    play sound "sfx_cheer1.mp3"
+    play sound "audio/start_rocking.mp3"
+    play sound "audio/cheer1.mp3"
     n "The crowd roars louder."
     play music "<loop 0>audio/dragon_castle.mp3" volume 0.5
     cs "{cps=15}{image=note_small1.png} Through all adversity, we'll bind together and overcome! {image=note_small2.png}"
@@ -1013,7 +1013,7 @@ label first_tour_day:
     cs "{cps=15}{image=note_small1.png} [line_6] {image=note_small2.png}"
     n "Anno plays an epic guitar solo."
     stop music fadeout 3.0
-    play sound "sfx_cheer1.mp3"
+    play sound "audio/cheer1.mp3"
     pause 2.0
     scene black with Dissolve(3.0)
 
@@ -1223,8 +1223,8 @@ label second_tour_day:
 
     cs "I know you all just watched an amazing performance by Nova, and that's going to be a tough act to follow..."
     cs "But, who wants to hear {i}[song_name_3]?!{/i}"
-    play sound "sfx_start_rocking.mp3"
-    play sound "sfx_cheer1.mp3"
+    play sound "audio/start_rocking.mp3"
+    play sound "audio/cheer1.mp3"
     n "The crowd is exploding."
     # Fun value, add explosion sounds - Arc
     play music "<loop 0>audio/energetic_rock.mp3" volume 0.5
@@ -1233,7 +1233,7 @@ label second_tour_day:
     cs "{cps=15}{image=note_small1.png} I'm gonna go party in Sweden...{w=1.5}\n[line_4] {image=note_small2.png}"
     cs "{cps=15}{image=note_small1.png} I'm globetrottin'! {image=note_small2.png}"
     stop music fadeout 3.0
-    play sound "sfx_cheer1.mp3"
+    play sound "audio/cheer1.mp3"
     n "The crowd is applauding wildly."
     cs "We're [band_name]!"
     n "The audience is loving it."
@@ -1298,17 +1298,17 @@ label third_tour_day:
     cs "For our special performance tonight, we'll be singing every song off our album, {i}[ep_name]!{/i}"
     n "The crowd is going wild."
     cs "First up, it's {i}[song_name_1]!{/i}"
-    play sound "sfx_start_rocking.mp3"
+    play sound "audio/start_rocking.mp3"
     n "The audience cheers."
-    play sound "sfx_cheer2.mp3"
+    play sound "audio/cheer2.mp3"
     play music "<loop 0>audio/everlong.mp3" volume 0.5
     cs "{cps=15}{image=note_small1.png} We broke the chains, now we're free to fly,{w=1.5}\nEscaped concrete, and now we see blue skies{w=1.5}\nBecome brand new, we'll leave the past behind,{w=1.5}\nPrisoners no more, 'cause a new life we'll find {image=note_small2.png}"
     n "The crowd is loving this!"
     stop music fadeout 3.0
     cs "Who wants to hear {i}[song_name_2]?!{/i}"
-    play sound "sfx_start_rocking.mp3"
+    play sound "audio/start_rocking.mp3"
     n "The crowd responds with further excitement."
-    play sound "sfx_cheer2.mp3"
+    play sound "audio/cheer2.mp3"
     play music "<loop 0>audio/happy_rock.mp3" volume 0.5
     cs "{cps=15}{image=note_small1.png} We're going down to Vegas,{w=1.5} we're gonna strike it rich!{w=1.5}\nWe're going down to Vegas,{w=1.5} [line_1]! {image=note_small2.png}"
     n "The fans are adoring this."
@@ -1316,7 +1316,7 @@ label third_tour_day:
 
     cs "Next up, here's a classic: {i}[song_name_3]!{/i}"
     anno "CS, none of our songs are classics. We're a new band."
-    play sound "sfx_start_rocking.mp3"
+    play sound "audio/start_rocking.mp3"
     n "The crowd laughs."
     play music "<loop 0>audio/energetic_rock.mp3" volume 0.5
     cs "{cps=15}{image=note_small1.png} I made my way over to Japan...{w=1.5}\n[line_2] {image=note_small2.png}"
@@ -1326,8 +1326,8 @@ label third_tour_day:
     n "The audience loves this a lot."
     stop music fadeout 3.0
     cs "Alright, here's a fan favorite: {i}[song_name_4]!{/i}"
-    play sound "sfx_start_rocking.mp3"
-    play sound "sfx_cheer2.mp3"
+    play sound "audio/start_rocking.mp3"
+    play sound "audio/cheer2.mp3"
     play music "<loop 0>audio/dragon_castle.mp3" volume 0.5
     cs "{cps=15}{image=note_small1.png} Through all adversity, we'll bind together and overcome! {image=note_small2.png}"
     cs "{cps=15}{image=note_small1.png} [line_5] {image=note_small2.png}"
@@ -1337,8 +1337,8 @@ label third_tour_day:
     n "The fans are exploding!"
     stop music fadeout 3.0
     cs "And now! For the first time on stage! It's {i}[song_name_5]!{/i}"
-    play sound "sfx_start_rocking.mp3"
-    play sound "sfx_cheer2.mp3"
+    play sound "audio/start_rocking.mp3"
+    play sound "audio/cheer2.mp3"
     n "The crowd is ready to burst."
     play music "<loop 0>audio/sweet_victory.mp3" volume 0.5
     cs "{cps=15}{image=note_small1.png} [line_7]{w=1.5}\n[line_8]{w=1.5}\n[line_9]{w=1.5}\n[line_10] {image=note_small2.png}"
@@ -1369,13 +1369,13 @@ label third_tour_day:
             $ line_11 = "Everybody knows I'm cool as ice"
 
     cs "Okay!"
-    play sound "sfx_start_rocking.mp3"
+    play sound "audio/start_rocking.mp3"
     cs "{cps=15}{image=note_small1.png} [line_11] {image=note_small2.png}"
     $ line_12 = renpy.input("What's the next line?", length = 64)
     cs "{cps=15}{image=note_small1.png} [line_12] {image=note_small2.png}"
 
     cs "Thank you! We're [band_name], and thank you for listening to {i}[ep_name]!{/i}"
-    play sound "sfx_cheer2.mp3"
+    play sound "audio/cheer2.mp3"
     n "The crowd is overjoyed."
 
     show cs flipped with determination
@@ -1473,7 +1473,7 @@ label final_tour_bus:
     cs "I think I'm going to play some {i}Guitar Hero{/i} before bed."
     n "CS gets out his guitar."
     show cs guitar
-    play sound "sfx_start_rocking.mp3"
+    play sound "audio/start_rocking.mp3"
 
     cs "{cps=15}{image=note_small1.png} [line_7]{w=1.5}\n[line_8]{w=1.5}\n[line_9]{w=1.5}\n[line_10] {image=note_small2.png}"
     $ achievement_manager.unlock("You Rock!")

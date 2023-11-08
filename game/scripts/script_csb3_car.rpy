@@ -4,8 +4,8 @@ screen skip_car():
     style_prefix "skip_car"
 
     frame at t_skip_car:
-        imagebutton idle "images/skip_now.png" hover_sound "sfx_select.wav":
-            action Play("sound", "sfx_valid.wav"), Hide("skip_car", Fade(1.0)), Jump("back_home")
+        imagebutton idle "images/skip_now.png" hover_sound "sfx-select.wav":
+            action Play("sound", "sfx-valid.wav"), Hide("skip_car", Fade(1.0)), Jump("back_home")
 
 transform t_skip_car:
     xanchor 1.0 xpos 0.95
@@ -255,7 +255,7 @@ label car_dialogue:
     arceus "No, like, gas. Like, passed gas."
     cs "Oh, that was me."
     n "Billy rolls down the window for a bit."
-    play sound "sfx_roll_window.ogg" volume 0.7
+    play sound "roll_window.ogg" volume 0.7
     
     pause 5.0
 
@@ -455,11 +455,11 @@ label car_dialogue:
 
     pause 1.0
 
-    play sound "<from 0 to 1>sfx_roll_window.ogg" volume 0.7
+    play sound "<from 0 to 1>roll_window.ogg" volume 0.7
     pause 2.5
-    play sound "<from 0 to 2>sfx_roll_window.ogg" volume 0.7
+    play sound "<from 0 to 2>roll_window.ogg" volume 0.7
     pause 2.0
-    play sound "<from 0 to 1>sfx_roll_window.ogg" volume 0.7
+    play sound "<from 0 to 1>roll_window.ogg" volume 0.7
     pause 1.5
     arceus "CS, stop messing with the window. I can see you doing that."
     cs "Fine, I'm just bored."
@@ -504,11 +504,11 @@ label car_dialogue:
     billy "Alright. You'd better not mess with my gadgets!"
     digi "{size=-10}Shhh! Don't say anything!"
     cs "{size=-10}Okay, I've got it. Arceus, roll down the window."
-    play sound "<from 0 to 1>sfx_roll_window.ogg" volume 0.7
+    play sound "<from 0 to 1>roll_window.ogg" volume 0.7
     pause 5.0
     cs "Alright, you ready?"
     pause 2.0
-    play sound "minigames/car/sfx_gaster_blast.wav"
+    play sound "minigames/car/gaster_blast.wav"
     show billy car turn with hpunch
     show billy car turn with vpunch
     billy "What the hell are you guys doing?!"
@@ -518,7 +518,7 @@ label car_dialogue:
     digi "No, I didn't! You grabbed it!"
     cs "Arc rolled down the window!"
     arceus "Really? You're just gonna blame all of us?"
-    play sound "<from 0 to 2>sfx_car_crash.ogg" volume 0.7
+    play sound "<from 0 to 2>car_crash.ogg" volume 0.7
     scene tom_road
     show billy car turn with hpunch
     pause 3.0

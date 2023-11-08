@@ -54,7 +54,7 @@ label sweden_menu:
 
 label knocked_out:
     scene black
-    play sound "<loop 0>sfx_heartbeat.mp3" volume 1
+    play sound "<loop 0>heartbeat.mp3" volume 1
     n "..."
     n "As CS' vision fades back into view, he can hear a faint heart monitor beeping."
     scene hospital_room with dissolve
@@ -590,7 +590,7 @@ label hell_zone:
     gordon "Oh, for fuck's sake! What the bloody hell is this?"
     show cs disappointed flipped
     n "Before CS can speak, Gordon takes one good look at CS' clothing."
-    play sound "sfx_waterphone.mp3"
+    play sound "waterphone.mp3"
     gordon "Did you wear this silly outfit as well just to fuck with me? Are you serious?"
     cs "What? This is just my normal attire."
     scene talking_head
@@ -660,7 +660,7 @@ label bad_ramsay:
     show cs disappointed flipped
     cs "Woah, you okay there?"
     n "Gordon holds his throat and falls over, spits out the Flex Seal, and passes out."
-    play sound "sfx_waterphone.mp3"
+    play sound "waterphone.mp3"
     hide gordon with moveoutbottom
     show cs disappointed flipped with hpunch
     cs "Ooooooooohhhhh fuuuuuuucckkk."
@@ -696,7 +696,7 @@ label good_ramsay:
     show cs flipped
     gordon "Well, that's a new one."
     gordon "I don't think I've ever seen someone make an energy drink on a cooking show..."
-    play sound "sfx_waterphone.mp3"
+    play sound "waterphone.mp3"
     gordon "What do you mean that the juices are gonna move through you? Like, is this gonna make me have to go to the bathroom?"
     show cs disappointed flipped
     cs "No, I meant, like, energize you."
@@ -1106,7 +1106,7 @@ label scott_movent:
     show car at car_run behind tom
     with move
     tom "This road here was created in 1968, by OHP--{w=0.5}{nw}"
-    play sound "sfx_car_crash.ogg" volume 0.7
+    play sound "car_crash.ogg" volume 0.7
     scene black
     n "A speeding car rams into Tom and he flies off into the distance."
     cs "Uh oh. {w=3.5} I didn't see nothin'."
@@ -1491,7 +1491,7 @@ label miku_pizza:
     show cs at center
     with fade
     pause 3.0
-    play sound "sfx_elevator_ding.ogg"
+    play sound "audio/elevator_ding.ogg"
     scene black with dissolve
     pause 1.0
     scene ceo_office
@@ -2246,9 +2246,9 @@ label joel:
     joel "I've got you this time, alien!" #Joel makes it out just before the alien
     alien "Ikke skyt! Jeg er ikke en romvesen! Jeg er bare en normal norsk mann!" #Make this wingdings
     scene white with dissolve
-    play sound "<loop 0>sfx_hks2.wav" volume 0.7
+    play sound "<loop 0>hks2.wav" volume 0.7
     pause 0.1
-    play sound "<loop 0>sfx_hks1.wav" volume 0.7
+    play sound "<loop 0>hks1.wav" volume 0.7
     pause 0.1
     pause 1.0
     scene joel_outside

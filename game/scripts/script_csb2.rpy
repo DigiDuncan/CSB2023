@@ -29,23 +29,23 @@ label punch:
     cs "Take this!"
     n "CS punches Wesley and knocks him out."
     show cs angry at center with move
-    play sound "sfx_punch.ogg"
-    play sound "sfx_punch.ogg"
+    play sound "audio/punch.ogg"
+    play sound "audio/punch.ogg"
     show wesley at right with hpunch
-    play sound "sfx_punch.ogg"
-    play sound "sfx_punchalt.ogg"
+    play sound "audio/punch.ogg"
+    play sound "audio/punchalt.ogg"
     show wesley at right with vpunch
-    play sound "sfx_punch.ogg"
+    play sound "audio/punch.ogg"
     show wesley at right with hpunch
-    play sound "sfx_punch.ogg"
-    play sound "sfx_punchalt.ogg"
+    play sound "audio/punch.ogg"
+    play sound "audio/punchalt.ogg"
     show wesley at right with vpunch
-    play sound "sfx_punch.ogg"
+    play sound "audio/punch.ogg"
     show wesley at right with hpunch
-    play sound "sfx_punch.ogg"
-    play sound "sfx_punchalt.ogg"
+    play sound "audio/punch.ogg"
+    play sound "audio/punchalt.ogg"
     show wesley at right with vpunch
-    play sound "sfx_punch.ogg"
+    play sound "audio/punch.ogg"
     show wesley at right with hpunch
     play sound "victorypunch.ogg" volume 0.5
     show wesley at t_punchup with move
@@ -63,7 +63,7 @@ label chop:
     cs "Hiya!"
     n "CS chops Wesley in the chest and he flies off the roof."
     show cs angry at center with move
-    play sound "sfx_chop.ogg"
+    play sound "audio/chop.ogg"
     hide wesley with easeoutright
     show cs angry at left with move
     cs "I sawed this foundation repairman in half!"
@@ -94,13 +94,13 @@ label special:
     show wesley at right
     n "CS uses his YTP Magic to make the foundation repairmen fight each other."
     hide wesley at right with moveoutright
-    play sound "sfx_punch.ogg"
+    play sound "audio/punch.ogg"
     rich "Hey! Cut it out!"
-    play sound "sfx_punch.ogg"
+    play sound "audio/punch.ogg"
     wesley "I'm not trying to fight you! I don't know what's happening! {i}Help!!{/i}"
-    play sound "sfx_punch.ogg"
+    play sound "audio/punch.ogg"
     rich "Ed! Do something!"
-    play sound "sfx_punch.ogg"
+    play sound "audio/punch.ogg"
     if e1:
         n "Wesley shoots Richard in the head with his gun."
         pause 3.0
@@ -134,7 +134,7 @@ label special:
     scene hoh_hq with fade
     show cs at left with moveinleft
     n "As CS was about to leave, the cops come rushing in."
-    play sound "sfx_siren.ogg" loop
+    play sound "siren.ogg" loop
     show blue_light at left
     show red_light at right
     show copguy behind blue_light, red_light at right with moveinright
@@ -197,7 +197,7 @@ label asylum:
     show cs insane worried at center with moveinleft
     cs "Sir, you need to listen to me! I'm not crazy!"
     asylum_worker "That's what they all say. Get off of me."
-    play sound "sfx_punch.ogg"
+    play sound "audio/punch.ogg"
     show cs insane worried with vpunch
     hide cs worried with moveoutbottom
     asylum_worker "Sorry it had to be this way, bud."
@@ -234,7 +234,7 @@ label asylum:
 label caught:
     cs "Damn it! Ed's calling the police! I've gotta go after him!"
     ed "911! Come quickly! He's chasing after me!"
-    play sound "sfx_siren.ogg" loop
+    play sound "siren.ogg" loop
     show blue_light at left
     show red_light at right
     n "The police arrive and CS runs away."
