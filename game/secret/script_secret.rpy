@@ -43,7 +43,7 @@ label secret2:
     pakoo "Yeah, well fuck you, bitch!"
     show pakoo at center with moveinright
     show digi at center with vpunch
-    play sound "alt_punch.ogg"
+    play sound "sfx_alt_punch.ogg"
     show digi at t_punchup with move
     show pakoo at center with hpunch
     play music "<loop 0>showtime.mp3" volume 0.5
