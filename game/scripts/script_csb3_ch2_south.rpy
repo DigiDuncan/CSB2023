@@ -49,7 +49,7 @@ label south:
     show arceus worried
     arceus "What pieces?"
     n "CS quickly starts grabbing material from thin air and puts together a new car."
-    play sound "legosfx.mp3" volume 1
+    play sound "sfx_legosfx.mp3" volume 1
     pause 3.0
     cs "Tada!"
     arceus "{i}How did you do that?!"
@@ -65,7 +65,7 @@ label south:
     show cs at left behind cscar2 with moveinleft
     show arceus at right behind cscar2 with moveinright
     n "Once they get into the car, CS starts it up."
-    play sound "driving.wav" volume 0.5
+    play sound "sfx_driving.wav" volume 0.5
     pause 1.0
     cs "Woohoo! Vegas time!"
     arceus "I don't even know how you do these things, man, but let's go!"
@@ -167,7 +167,7 @@ label utah:
     if fun_value(25):
         pause 1.0
         show fumobee at lego_run
-        play sound "secret/vine.mp3"
+        play sound "secret/sfx_vine.mp3"
         with move
         pause 1.0
         show arceus worried dark
@@ -315,7 +315,7 @@ label vegas:
         show cscar2
         show arceus flipped at left behind cscar2
         with determination
-        play sound "clapperboard.wav"
+        play sound "sfx_clapperboard.wav"
         play music "<loop 0>penthouse.mp3" volume 0.5
         music "Al's Penthouse - Andy Blythe"
         $ returning_from_blooper = False
@@ -357,7 +357,7 @@ label vegas:
     with moveoutright
     n "CS and Arceus enter the casino. It looks like chaos is unfolding in front of their faces."
     scene casino1 with fade
-    play sound "slots.mp3" volume 3
+    play sound "sfx_slots.mp3" volume 3
     n "The sounds of slot machines fill the room. Many drunkards hobble around the establishment."
     show cs at left with moveinleft
     show arceus at right with moveinright
@@ -508,40 +508,40 @@ label folded:
     show arceus full flipped at mid_right
     show drill at center_right
     with fade
-    play sound "drill.ogg" loop volume 0.5
+    play sound "sfx_drill.ogg" loop volume 0.5
     arceus "Come on, I'm almost there..."
     pause 6.0
     show drillbreak at center_right
-    play sound "drillbreak.ogg" loop volume 0.5
+    play sound "sfx_drillbreak.ogg" loop volume 0.5
     show arceus full angry flipped
     arceus "Fuck!"
     hide drillbreak
     show arceus full flipped
     show drill at center_right
-    play sound "drill.ogg" loop volume 0.5
+    play sound "sfx_drill.ogg" loop volume 0.5
     pause 6.0
     show drillbreak at center_right
-    play sound "drillbreak.ogg" loop volume 0.5
+    play sound "sfx_drillbreak.ogg" loop volume 0.5
     show arceus full angry flipped
     arceus "God!"
     hide drillbreak
     show arceus full flipped
     show drill at center_right
-    play sound "drill.ogg" loop volume 0.5
+    play sound "sfx_drill.ogg" loop volume 0.5
     pause 6.0
     show drillbreak at center_right
-    play sound "drillbreak.ogg" loop volume 0.5
+    play sound "sfx_drillbreak.ogg" loop volume 0.5
     show arceus full angry flipped
     arceus "You broke-dick piece-of-shit drill!"
     hide drillbreak
     show arceus full flipped
     show drill at center_right
-    play sound "drill.ogg" loop volume 0.5
+    play sound "sfx_drill.ogg" loop volume 0.5
     pause 3.0
     scene outsafeopen
     show arceus full flipped at mid_right
     with fade
-    play sound "payday.mp3" volume 0.5
+    play sound "sfx_payday.mp3" volume 0.5
     $ achievement_manager.unlock("The House Doesn't Always Win")
     show arceus full happy flipped
     arceus "Hell yeah!"
@@ -619,7 +619,7 @@ label poker3:
         green "Hahahahahahahahahahahahahahahaha!!!!!!{nw}"
         show lancer at center with moveintop
         show lancer with vpunch
-        play sound "secret/explosion.mp3" volume 1.5
+        play sound "secret/sfx_explosion.mp3" volume 1.5
         show green at t_punchup with move
         pause 0.3
         play music "<loop 0>secret/lancer.mp3" volume 1
@@ -1164,22 +1164,22 @@ label fighthohsis_alt:
     show cs at center
     show ed at center
     with move
-    play sound "audio/punch.ogg"
-    play sound "audio/punchalt.ogg"
+    play sound "sfx_punch.ogg"
+    play sound "sfx_punchalt.ogg"
     show cs with hpunch
-    play sound "audio/punch.ogg"
-    play sound "audio/punchalt.ogg"
+    play sound "sfx_punch.ogg"
+    play sound "sfx_punchalt.ogg"
     show ed with vpunch
-    play sound "audio/punch.ogg"
-    play sound "audio/punchalt.ogg"
+    play sound "sfx_punch.ogg"
+    play sound "sfx_punchalt.ogg"
     show cs with hpunch
-    play sound "audio/punch.ogg"
-    play sound "audio/punchalt.ogg"
+    play sound "sfx_punch.ogg"
+    play sound "sfx_punchalt.ogg"
     show ed with vpunch
-    play sound "audio/punch.ogg"
-    play sound "audio/punchalt.ogg"
+    play sound "sfx_punch.ogg"
+    play sound "sfx_punchalt.ogg"
     show cs with hpunch
-    play sound "alt_punch.ogg"
+    play sound "sfx_alt_punch.ogg"
     show cs at t_punchup with move
     show cs with vpunch
     show ed at right with move
@@ -1209,7 +1209,7 @@ label braghohsis:
     cs "Hey! Where are you guys going?"
     cs "Come back here!"
     n "The JoJ UFO flies up over the house, then vaporizes it with a laser."
-    play sound "beam.ogg" volume 0.6
+    play sound "sfx_beam.ogg" volume 0.6
     show beam at xstretch_in
     pause 3.0
     show beam at xstretch_out
@@ -1382,10 +1382,10 @@ label reality_break:
     show cs happy at left
     show arceus angry at right
     with determination
-    play sound "bell.mp3"
+    play sound "sfx_bell.mp3"
     show cs
     pause 3.0
-    play sound "<loop 0>chatter.mp3"
+    play sound "<loop 0>sfx_chatter.mp3"
     n "A bell rings, causing cast and crew to scatter."
     cs "Huh?"
     direct "Wow! That got out of hand!"
