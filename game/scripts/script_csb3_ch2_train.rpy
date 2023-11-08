@@ -824,7 +824,7 @@ label train_enter_sleeper:
     cs "And Legos, yes."
     show tate srs flipped
     tate "Wait, so..."
-    tate "You win it big in Vegas, {w=0.25}and the first thing you do is buy {i}Legos?"
+    tate "You win it big in Vegas, {w=0.25}and the {i}first thing{/i} you do is buy {i}Legos?"
     show cs worried
     cs "Well, no--{w=0.25}{nw}"
     tate "I suppose I shouldn't have expected anything else from you."
@@ -921,7 +921,7 @@ label train_enter_sleeper:
     show arceus worried
     tate "I think Mean said that someone even got pushed off of the roof!"
     show tate sheepish flipped
-    tate "But since Mean couldn't... {w=0.5}{size=-5}hold him off... {w=1.0}{size=-5}he was... {w=1.5}{size=-5}fired..."
+    tate "But since Mean couldn't... {w=1.0}{size=-5}hold him off... {w=1.0}{size=-5}he was... {w=1.5}{size=-5}fired..."
     "..."
     pause 2.0
     show tate shock flipped
@@ -955,10 +955,9 @@ label train_enter_sleeper:
     tate "Is {i}this{/i} what you've been up to since we--{w=0.25}{nw}"
     "..."
     tate "You know what? {w=0.25}No."
-    tate "Fuck this shit."
     tate "Mean's shift starts soon. {w=0.25}I need to be there for him."
     tate "If either of y'all see him, {w=0.25}you will not breathe a word of {i}any{/i} of this to him."
-    tate "Not about the thefts, {w=0.25}and certainly not about what happened at HoH SiS."
+    tate "Not about the thefts, {w=0.25}and {i}certainly{/i} not about what happened at HoH SiS."
     tate "He doesn't need this. {w=0.25}Especially not today."
     show cs worried
     n "Tate reinforces their demand with a piercing glare towards CS."
@@ -981,9 +980,9 @@ label train_enter_sleeper:
     arceus "You alright, man?"
     cs "I will be. I'm just worried about Tate."
     cs "I don't remember the last time they were so upset."
-    cs "I'm also really tired... I think I could use some rest."
+    cs "All of their yelling suddenly has me {i}really{/i} tired, too... I think I could use some rest."
     show arceus
-    arceus "Yeah, same. I'm really glad we sprung for the private room."
+    arceus "Yeah, same. Also, I'm really glad we sprung for the private room."
     show arceus happy
     arceus "These beds are looking pretty good right now."
     show arceus
