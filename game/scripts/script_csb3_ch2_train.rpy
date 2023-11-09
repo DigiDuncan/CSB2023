@@ -92,7 +92,7 @@ label train_start_bad:
     show cs
     show arceus worried
     pause 2.0
-    arceus "...But, how {i}will{/i} we get back, exactly?"
+    arceus "... But, how {i}will{/i} we get back, exactly?"
     arceus "That's a pretty long drive. I'm already beat."
     cs "I saw some signs for an airport really clo--{nw}"
     show arceus angry

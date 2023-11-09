@@ -9,14 +9,14 @@
 init python:
     import re
     def auto_wait(s):
-        s = s.replace(". ", ". {w=0.25}") # period
-        #s = re.sub(r',(({\/[a-z]+})+)?', r'\1{nw=0.25}', s) # comma regex wip
-        s = s.replace(", ", ", {w=0.25}") # commas
-        s = s.replace("? ", "? {w=0.25}") # questions
-        s = s.replace("! ", "! {w=0.25}") # exclamation
-        s = s.replace("?! ", "?! {w=0.25}") # interrobang
-        s = s.replace("-- ", "-- {w=0.5}") # em-dash
-        s = s.replace('... ', "... {w=0.25}") # ellipsis (this will combine with the wait from period replacer, for 0.5 wait)
+        # these items wait for 0.25:
+        # commas, periods, question marks, exclamation marks
+        s = re.sub(r'(([,|.|?|!])([{\/(a-z)}]*) )', r'\1{w=0.25}', s) 
+
+        # these items wait for 0.5:
+        # ellipses, em-dashes, colons
+        s = re.sub(r'((--|\.\.\.|:)([{\/(a-z)}]*) )', r'\1{w=0.5}', s) 
+
         return s
     config.say_menu_text_filter = auto_wait
 
