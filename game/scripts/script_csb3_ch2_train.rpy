@@ -425,7 +425,7 @@ label train_route_begin:
     show tate sheepish flipped
     tate "A-{w=0.1}Anyway. We should probably get going."
     show tate
-    tate "We don't wanna end up stranded here. This train only comes through once a day, after all!"
+    tate "We don't wanna end up stranded here. This train only stops here once a day, after all!"
 
     show cs at mid_offscreen_left
     show arceus flipped at left
