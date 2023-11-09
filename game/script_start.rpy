@@ -1,3 +1,22 @@
+# Totally stolen from:
+#   https://www.renpy.org/doc/html/config.html#var-config.replace_text
+#   https://lemmasoft.renai.us/forums/viewtopic.php?t=22730
+# This is meant to place pauses after certain punctuation automatically so that the dialogue feels more... human.
+# These are set up so that it only works if there is more than once sentence in the text box at any given time.
+# Make sure there's a space after your punctuation or it won't work.
+# You can still add manual pauses wherever you like in the script if this isn't enough for you.
+
+init python:
+    def auto_wait(s):
+        s = s.replace(". ", ". {w=0.25}") # period
+        s = s.replace(", ", ", {w=0.25}") # commas
+        s = s.replace("? ", "? {w=0.25}") # questions
+        s = s.replace("! ", "! {w=0.25}") # exclamation
+        s = s.replace("?! ", "?! {w=0.25}") # interrobang
+        s = s.replace('... ', "... {w=0.25}") # ellipsis (this will combine with the wait from period replacer, for 0.5 wait)
+        return s
+    config.say_menu_text_filter = auto_wait
+
 # Flip
 init -10 python:
     def xflip(s):
