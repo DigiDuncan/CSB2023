@@ -549,9 +549,6 @@ label folded:
     arceus "Look at all this loot! CS is gonna be so surprised..."
     n "While Arceus is looting the casino, CS continues his search."
 
-    # variable for use in train route.
-    $ money_stolen = True
-
     scene vegasbathroom with fade
     show cs disappointed at center with moveinleft
     cs "Hello? Arceus?"
@@ -653,7 +650,7 @@ label poker3:
         scene vegasbathroom
         show arceus worried at center
         with fade
-        n "CS finds the bathroom, to see Arceus with his head up against the mirror."
+        n "CS enters the bathroom to see Arceus with his head up against the mirror."
         show cs at left with moveinleft
         cs "Hey, Arc! There you are! Are you okay?"
         arceus "My head hurts so bad..."
@@ -670,10 +667,10 @@ label poker3:
         show arceus flipped at left
         with fade
         show cs flipped at right with moveinright
-        cs "Hey Arc, how're you feeling?"
+        cs "Hey Arc, how're you feelin'?"
         arceus "I do feel better now, yeah."
         arceus "I think it was just too much sensory overload for me."
-        cs "Well that's good to hear."
+        cs "Well, glad to hear you're feeling better!"
         cs "What's also good to hear is that we are rich as hell!"
         show cs happy flipped
         show case flipped at right
@@ -765,9 +762,6 @@ label poker3:
         with move
         n "After CS collects his winnings, he finds his way back to the car."
         show cs flipped with determination
-
-        # variable for use in train route.
-        $ money_stolen = False
 
         hide cs
         hide case
