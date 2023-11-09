@@ -1,4 +1,4 @@
-# Totally stolen from:
+# Partially stolen from:
 #   https://www.renpy.org/doc/html/config.html#var-config.replace_text
 #   https://lemmasoft.renai.us/forums/viewtopic.php?t=22730
 # This is meant to place pauses after certain punctuation automatically so that the dialogue feels more... human.
@@ -7,12 +7,15 @@
 # You can still add manual pauses wherever you like in the script if this isn't enough for you.
 
 init python:
+    import re
     def auto_wait(s):
         s = s.replace(". ", ". {w=0.25}") # period
+        #s = re.sub(r',(({\/[a-z]+})+)?', r'\1{nw=0.25}', s) # comma regex wip
         s = s.replace(", ", ", {w=0.25}") # commas
         s = s.replace("? ", "? {w=0.25}") # questions
         s = s.replace("! ", "! {w=0.25}") # exclamation
         s = s.replace("?! ", "?! {w=0.25}") # interrobang
+        s = s.replace("-- ", "-- {w=0.5}") # em-dash
         s = s.replace('... ', "... {w=0.25}") # ellipsis (this will combine with the wait from period replacer, for 0.5 wait)
         return s
     config.say_menu_text_filter = auto_wait
