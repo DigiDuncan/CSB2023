@@ -1757,13 +1757,16 @@ label win_pencil:
         cs "Well, that was a lot of excrement for one day. Let's head home."
         arceus "A lot of what, now?"
         cs "A lot of... huh?"
-        cs "What'd I say?"
+        cs "I said, that was a lot of excitement for one day!"
+        n "Despite his confusion, Arceus can't help but look relieved to get back on track."
+        arceus "Uh, sure..."
+        billy "Don't you dare take a dump in my car!"
     else:
         cs "Well, that was a lot of excitement for one day. Let's head home."
+        n "Despite working harder to support CS, Arceus can't help but look relieved to get back on track."
+        arceus "Absolutely."
+        billy "Let's get back in my car!"
 
-    n "Despite working harder to support CS, Arceus can't help but look relieved to get back on track."
-    arceus "Absolutely."
-    billy "Let's get back in my car!"
     scene cc_parking_lot
     show cs flipped at right
     show arceus at mid_right
