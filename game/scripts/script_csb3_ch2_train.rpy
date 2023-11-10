@@ -809,7 +809,7 @@ label train_enter_sleeper:
 
     if money_stolen == True:
         $ money_stolen_dialogue_switch = "black bag"
-        $ money_stolen_dialogue_switch_2 = "\n... won"
+        $ money_stolen_dialogue_switch_2 = "... {w=0.5}won"
     elif money_stolen == False:
         $ money_stolen_dialogue_switch = "metal briefcase"
         $ money_stolen_dialogue_switch_2 = " won"
@@ -819,12 +819,12 @@ label train_enter_sleeper:
 
     show cs disappointed flipped
     cs "Yes, sir, we're missing a single [money_stolen_dialogue_switch] filled with money we[money_stolen_dialogue_switch_2] while we were in Vegas."
-    arceus "... And Lego bricks." 
+    arceus "And Lego bricks." 
     show cs surprised
     cs "And Legos, yes."
     show tate srs flipped
     tate "Wait, so..."
-    tate "You win it big in Vegas, and the {i}first thing{/i} you do is buy {i}Legos?"
+    tate "You win it big in Vegas, and the {i}first{/i} thing you do is buy {i}Legos?"
     show cs worried
     cs "Well, no--{w=0.25}{nw}"
     tate "I suppose I shouldn't have expected anything else from you."
@@ -909,7 +909,7 @@ label train_enter_sleeper:
     cs "Wait, what happened at his last job?"
     show tate srs flipped
     tate "It was so fucking stupid."
-    tate "So, he was working for this home repair company, right? They made him a security guard, since he's all spiky--{w=0.25}{nw}"
+    tate "So, he was working for this home repair company, right? They hired him on as a security guard, since he's all spiky--{w=0.25}{nw}"
     show arceus 
     arceus "{i}Spiky?{/i} Wha--{w=0.25}{nw}"
 
@@ -1191,7 +1191,7 @@ label train_wakeup:
     cs "Are you alright?"
     show arceus worried flipped
     arceus "Dude, I fucked up!"
-    arceus "I went to the dining car for a drink, and there was this... {i}thing!{/i} He was eating this {i}insane{/i} amount of food, so I went to talk to him!"
+    arceus "I went to the dining car for a drink, and there was this... {i}thing!{/i}{w=0.5} He was eating this {i}insane{/i} amount of food, so I went to talk to him!"
     arceus "He was asleep all day and didn't know about the thief, so I asked him if he's missing anything--{w=0.25}{nw}"
     arceus "That thing was {i}Mean!"
     show cs surprised flipped
