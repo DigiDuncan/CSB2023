@@ -47,7 +47,7 @@ label punch:
     show wesley at right with vpunch
     play sound "sfx_punch.ogg"
     show wesley at right with hpunch
-    play sound "victorypunch.ogg" volume 0.5
+    play sound "sfx_victorypunch.ogg" volume 0.5
     show wesley at t_punchup with move
     show cs angry at left with move
     cs "That'll teach you not to mess with a nerd's computer!"
