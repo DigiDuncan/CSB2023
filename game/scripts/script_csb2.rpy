@@ -60,7 +60,7 @@ label punch:
 label chop:
     show cs angry at left
     show wesley at right
-    cs "Hiya!"
+    cs "Hi-{i}yah!{/i}" # hiya is a greeting, not the sound you're looking for - tate
     n "CS chops Wesley in the chest and he flies off the roof."
     show cs angry at center with move
     play sound "sfx_chop.ogg"
@@ -133,7 +133,7 @@ label special:
     scene black with fade
     scene hoh_hq with fade
     show cs at left with moveinleft
-    n "As CS was about to leave, the cops come rushing in."
+    n "As CS makes to leave the building, the cops come rushing in."
     play sound "sfx_siren.ogg" loop
     show blue_light at left
     show red_light at right
@@ -215,11 +215,17 @@ label asylum:
     cs "Who are you?"
     csgod "I am CSGod, and it was I who used the YTP power."
     cs "{i}What?!{/i} How? I am so confused."
-    csgod "You channeled my power through you. That was how you were able to use those abilities back at HoH SiS HQ."
+    
+    # tate was here
+    if fun_value(5):
+        csgod "You channeled my power. You had it all, right there at your fingertits."
+        csgod "That was how you were able to use those abilities back at HoH SiS HQ."
+    else:
+        csgod "You channeled my power through your fingertips. That was how you were able to use those abilities back at HoH SiS HQ."
     csgod "However, it seems that you weren't good enough at lying to get yourself out of this situation."
     cs "Well, I wanted to be honest!"
     csgod "Yeah, well, look where honesty got you."
-    csgod "No one would believe something as silly as YTP power."
+    csgod "No mortal would ever believe in something as silly as YTP Magic."
     csgod "For your punishment, I shall leave you here you a while."
     cs "No! Please!"
     csgod "You will get out soon enough, but maybe you should think about making a {i}better choice{/i} next time."
@@ -246,7 +252,7 @@ label caught:
     cs "You can't catch me, I'm the speedy Michael Rosen!"
     stop music fadeout 3.0
     music end
-    n "As CS is not actually the speedy Michael Rosen, he gets caught by the police."
+    n "As CS is not actually the speedy Michael Rosen, he is quickly apprehended by the police."
     stop sound fadeout 1.0
     scene black with fade
     jump jail
@@ -273,10 +279,10 @@ label jail:
     cs "Oh, hi, Arceus."
     arceus "Heya, CS. .w."
     # And it's about time.
-    cs "So, what are you in for?"
+    cs "So, what're you in for?"
     arceus "Putting spyware on a politician's phone."
     cs "Yeah, no, that checks out."
-    arceus "And from my recent debug of CSBounciness, I know that you're in for beating up workers at HoH SiS."
+    arceus "And from my recent debug of {i}CSBounciness,{/i} I know that you're in for beating up workers at HoH SiS."
     cs "Your what?"
     arceus "Never mind. Why'd you do it, anyhow?"
     show cs prison_worried at left
@@ -304,7 +310,7 @@ label breakout:
     with dissolve
 
     arceus "So, what's the plan? I've been trying to break outta here for five years."
-    cs "Well, for starters, I need to get a feel of the routine here."
+    cs "Well, for starters, I need to get a feel for the routine here."
     arceus "I really can't stand being here another minute. I'll give you the rundown. Hasn't changed then, won't change now." 
     n "Arceus describes the prison routine to CS."  # DX: Replace with blur, fade out then back in
     cs "I think I got all that."
@@ -337,12 +343,12 @@ label breakout:
 
     scene black with dissolve
 
-    n "In the dark of the night, the three begin chipping away at their cell floor."
-    n "Upon breaking through, they set up makeshift dummies in their beds with their prison outfits, and don their acquired guard outfits."
+    n "In the dark of night, the three begin chipping away at their cell floor."
+    n "Upon breaking through, they set up makeshift dummies in their beds with their prison jumpsuits, then don their acquired guard uniforms."
 
     scene tunnel with fade
     # If anyone asks, Arceus is part god and can dig really easily, I guess.
-    n "They begin digging quickly, making distance away from their cells."
+    n "They begin digging quickly, putting distance between themselves and their cells."
     show cs guard dark at left with easeinleft
     cs "Jeez... I didn't think that would actually work."
 

@@ -12,7 +12,7 @@ label csbiii_start:
     linus "Welcome to Linus Media Group! Come on in. I'll show you to your desk."
     cs "Thanks, Linus."
     scene black with fade
-    n "Linus and CS walk to CS' new desk."
+    n "Linus leads CS to his new desk."
     scene csdesk with fade
     show linus at right with moveinright
     show cs at left with moveinleft
@@ -25,13 +25,30 @@ label csbiii_start:
     hide linus with moveoutright
     cs "I guess I'd better get to work on editing. Let's see what videos I need to edit..."
     cs "Let's see, I have the new TechQuickie video on how livestreaming works, or the video on how at least half of the keys on your keyboard should be macros..."
+
+    # this section added by tate
+
+    n "As CS ponders his choices, he receives a Slack message from Taran."
+    taran "Hey, CS, would you like to join us for a quick meeting?"
     if persistent.true_ending:
         menu:
-            "Hold a meeting?"
+            "Join the meeting?"
             "Yes":
                 jump csbiii_ai
             "No"  (type = "true"):
                 pass
+    show cs disappointed
+    cs "Not this time. I need to get to work!"
+    cs "Now, which video..."
+    menu:
+        "Which video will CS edit?"
+        "TechQuickie's Intro To Livestreaming" (type = "true"):
+            pass
+        "Comprehensive Keyboard Macro Guide":
+            jump boring_video  
+
+    # end section added by tate
+
     show cs worried
     cs "Damn it, Taran, you can edit your own macro fetish content."
     show cs
@@ -54,6 +71,40 @@ label csbiii_start:
             jump microcenter
         "Help edit a video." (type = "true"):
             jump edit_video
+
+label boring_video:
+    # please feel free to tweak this label as needed.
+    # this exists as part of the rewrite to clear up that jarring transition to AI ending. -tate
+
+    cs "I suppose that something super-technical like this would be really useful to the viewers. Maybe I'll learn something new, myself."
+    show cs
+    cs "Well, let's see what this is all about!"
+    scene black with fade
+    n "As CS watches the footage, his eyelids grow heavy..."
+    centered "Two hours later..."
+    play sound "sfx_csnore.ogg"
+    linus "CS?"
+
+    scene csdesk
+    show cs concentrate at left
+    show linus at right
+    with fade
+    
+    cs "Zzzzz..."
+    linus "{i}CS!!" with hpunch
+    
+    show cs scared
+    cs "Wha-- huh?!"
+
+    linus "Damn it, CS!"
+    linus "Asleep on the job?!"
+    cs "Oh, shi--{nw}"
+    linus "This is unacceptable! You're {i}fired!"
+
+    scene black with fade
+    n "CS is groggily escorted out of the building."
+    jump new_plan
+
 
 label edit_video:
     cs "Nah, I wanna finish this project first. That way I can help you pump out videos faster."

@@ -218,9 +218,9 @@ label montana:
     play music "<loop 0>candle_world.mp3" volume 0.4
     music Candle World - Kikiyama
     "CS and Arceus" "What in the world?"
-    n "Ahead lies a barricade with a bunch of strange hooded people surrounding it."
+    n "Ahead lies a barricade with a bunch of strange hooded figures surrounding it."
     show cultist at mid_right behind billy with moveinright
-    n "One of the members walks up to the driver's side and knocks on the window."
+    n "One of the strangers walks up to the driver's side and knocks on the window."
     play sound "sfx_roll_window.ogg" volume 0.7
     n "Billy rolls down the window."
     billy "Hi, it's Billy! What are you doing by my car?"
@@ -285,7 +285,7 @@ label montana:
     show arceus angry flipped
     arceus "CS, what the fuck are you doing...?!"
     arceus "You are going to definitely get us killed!"
-    n "Arceus hides behind the car as the cultist leader brings two others with him."
+    n "Arceus hides behind the car as the cultist leader returns, this time with two of his followers in tow."
     show arceus angry with determination
     hide arceus with moveoutleft
     show cs fakegod at left with moveinleft
@@ -301,8 +301,19 @@ label montana:
     cs "Huh?"
     cs "I mean,"
     cs_fakegod "Yeah, that's right, it's me, CSGod!"
-    cs_fakegod "You'd better leave these three alone, or I'll, uh, {i}smite{/i} you!"
-    cultist "CSGod doesn't smite, he uses YTP Mag--{w=0.5}"
+    
+    # tate was here
+    # this fun value references CS messing up reading during the livestream (around 2:37:45 of part 2 stream)
+    # thanks brodie for finding the timestamp for me
+    if fun_value(237):
+        cs_fakegod "You'd better leave these three alone, or I'll, uh, {i}shite{/i} you!"
+        cultist "CSGod doesn't smite, he uses YTP Mag--{w=0.5}"
+        cultist "Wait, did you say \"shite\"?"
+        cs_fakegod "{i}Silence!!"
+    else:
+        cs_fakegod "You'd better leave these three alone, or I'll, uh, {i}smite{/i} you!"
+        cultist "CSGod doesn't smite, he uses YTP Mag--{w=0.5}"
+
     cs_fakegod "Don't tempt your god! I will edit you so hard that you'll look like you came from an AwfulFawful YTP!"
     cultist_2 "We're sorry! We'll leave!"
     n "Billy comes up behind CS with one of his gadgets."
@@ -1738,7 +1749,18 @@ label win_pencil:
     hide cs
     scene cc_crowd with dissolve
     play music "<loop 0>fourside.mp3" volume 0.6
-    cs "Well, that was a lot of excitement for one day. Let's head home."
+
+    # tate was here
+    # this fun value references CS messing up reading during the livestream (around 4:07:05 of part 2 stream)
+    # thanks brodie for finding the timestamp for me
+    if fun_value(40):
+        cs "Well, that was a lot of excrement for one day. Let's head home."
+        arceus "A lot of what, now?"
+        cs "A lot of... huh?"
+        cs "What'd I say?"
+    else:
+        cs "Well, that was a lot of excitement for one day. Let's head home."
+
     n "Despite working harder to support CS, Arceus can't help but look relieved to get back on track."
     arceus "Absolutely."
     billy "Let's get back in my car!"

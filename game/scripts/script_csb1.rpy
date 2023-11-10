@@ -80,7 +80,7 @@ label csbi_start:
     show craptop updating
     craptop "Downloading update 200/13..."
     craptop "Update complete."
-    cs "{bt=a3-p10-s4}OoOoOoOoO{/bt} yes!"
+    cs "{bt=a3-p10-s4}OoOoOoOoOh{/bt} yes!"
     show craptop discord
     play sound "sfx_windows_logon.mp3"
     cs "Hey guys!"
@@ -89,7 +89,7 @@ label csbi_start:
     n "The Discord is overflowing with people trying to talk to CS."
     show cs at left
     play sound "sfx_ping.mp3"
-    cs "Okay, bedtime! Bye guys!"
+    cs "Okay, bedtime! Bye, guys!"
     show nova at right
     play sound "sfx_ping.mp3"
     nova "But it's like 8:04AM and you just woke up."
@@ -107,7 +107,7 @@ label csbi_start:
     centered "Two hours later..."
     scene cs_room
     show cs
-    cs "Okay... What to do now?"
+    cs "Okay... What to do, now?"
     cs "I could go outside, look at some flowers..."
     show cs happy
     stop music fadeout 3.0
@@ -184,7 +184,7 @@ label walmart:
     hide doug
     cs "Now, let's find some food!"
     show walmart_aisle behind cs with dissolve
-    cs "{i}pop{/i} Noice! Genergy is two for $5! I'll take them all!"
+    cs "{i}pop{/i}\nNoice! Genergy is two for $5! I'll take them all!"
     cs "Oooh! Pringles are on sale too! Yoink!"
     n "CS walks to the checkout area."
     scene walmart_register
@@ -237,10 +237,10 @@ label room:
     with fade
     play music "<loop 0>scales_of_joy.mp3" volume 0.3
     music scales of joy.mod - Mel O Dee
-    n "CS walks to his craptop and opens up Premiere."
+    n "CS sits down at his craptop and opens up Premiere."
     cs "Ooooh! Here's the one from my last editing stream. People would be excited to finally see this as a finished product."
     n "CS watches the in-progress video."
-    cs "This is pretty good, but I am feeling uninspired... I don't know where to go from here..."
+    cs "This is pretty good, but I'm feeling uninspired... I don't know where to go from here..."
     cs "Hmmm..."
     cs "I know! I should watch some other YTPs for inspiration."
     show craptop ytp
@@ -263,11 +263,11 @@ label room:
     show cs_room behind cs at rotate_10 with hpunch
     n "A loud crash is heard as a crack is split in CS' foundation."
     show cs worried
-    cs "Woah! I was dreaming so long that the foundation fell apart. My house just fell to the side!"
+    cs "Woah! I was dreaming for so long that the foundation fell apart. My house just fell to the side!"
     cs "I really need to get some foundation repair."
     show cs
     cs "Better call HoH SiS!"
-    cs "They are really good at giving me the JoJ!"
+    cs "They're really good at giving me the JoJ!"
     show cs phone
     n "CS dials 1-800-HoH-SiiS."
     cs "Hello? Can you give me the JoJ?"
@@ -276,7 +276,7 @@ label room:
     hoh_operator "Alright. That will be 200,000 bits. You can pay us afterwards."
     n "The operator hangs up."
     show cs
-    cs "Well, that is one thing taken care of."
+    cs "Welp, that's one thing taken care of."
     cs "I guess I'll work on my new YTP while I wait."
     scene black with fade
     n "Time passes and the doorbell rings."
@@ -352,7 +352,7 @@ label room:
     with fade
     show cs with moveinleft
     cs "Things sure are boooooring around here..."
-    cs "Hey, I got an idea!"
+    cs "Hey, I've got an idea!"
     cs "Let's go to Michael Rosen's house!"
     jump michael_house
 
@@ -528,6 +528,7 @@ label csbi_end:
     n "CS walks into his apartment."
     show cs disappointed
     cs "What?! They're gone? Already?"
+    cs "I guess I should get back to work on that YTP, then..."
     hide cs
     scene craptop_bg
     show craptop off
@@ -574,7 +575,7 @@ label csbi_end:
     $ persistent.seen.add("hoh_worker")
     hide worker_1 with moveoutright
     show worker_2 at right with moveinright
-    worker_2 "They- They're on the roof!!"
+    worker_2 "They-- They're on the roof!!"
     cs "Good!!"
     n "..."
     show black with dissolve
