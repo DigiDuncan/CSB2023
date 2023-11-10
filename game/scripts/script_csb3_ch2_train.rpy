@@ -1,5 +1,5 @@
 # TODO: mean needs a better text beep
-# TODO: hey digi you wanna do a check on this for any of google docs' weird smart characters?
+# TODO: add bios/music tracks to people/jukebox once route is written
 
 label train_start_good:
     # variable for use in train route.
@@ -169,7 +169,7 @@ label train_route_begin:
 
     arceus "Welp, here we are!"
     show cs disappointed
-    cs "... Wait, {i}this{/i} is the train station?"
+    cs "...Wait, {i}this{/i} is the train station?"
     arceus "Well, yeah."
     arceus "What were you expecting?"
     cs "It's just-- I dunno, I guess I expected something... bigger? Fancier?"
@@ -301,7 +301,7 @@ label train_route_begin:
         arceus "No."
         show cs disappointed
         cs "Oh."
-        show arceus flipped
+        show arceus
         arceus "Anyway..."
 
     arceus "Like, do you know what happens if you open a pressure cooker too early?"
@@ -532,7 +532,7 @@ label train_boarding:
     tate "Sorry."
     tate "I guess it {i}has{/i} been a while since I've seen CS. I can stay here for a bit..."
     show tate sheepish flipped
-    tate "... if you're okay with that."
+    tate "...if you're okay with that."
     show cs happy
     cs "Of course!"
     show arceus worried flipped
@@ -692,7 +692,7 @@ label train_enter_sleeper:
     "..."
     pause 1.0
     show tate sheepish flipped
-    tate "... Right?"
+    tate "...Right?"
 
     stop music fadeout 3.0
     music end
@@ -836,7 +836,7 @@ label train_enter_sleeper:
     amtrak_conductor "Tate. You'd better behave. Stay out of the way during this investigation."
     show tate sad flipped
     tate "Yes, sir."
-    tate "I'll probably just stay here until Mean wakes up."
+    tate "I'll probably just stay here until Mean clocks in."
     amtrak_conductor "Good."
     amtrak_conductor "As for you two..."
     amtrak_conductor "Please let a {i}staff member{/i} know if you need anything, or if anything else goes missing."
@@ -990,7 +990,7 @@ label train_enter_sleeper:
     cs "They {i}do{/i} look nice."
     show cs happy
     cs "I think that tomorrow, we'll wake up, someone will have found our cash overnight, Tate will have had some time to cool off, we'll all get together and have a huge complimentary breakfast..."
-    cs "... and all will be right with the world!"
+    cs "...and all will be right with the world!"
 
     # TODO: some funny cheery fanfare jingle?
 
@@ -1050,7 +1050,7 @@ label train_dining:
 
     n "A strange spiny entity is surrounded by piles of pancakes, sky-high stacks of sausages, oodles of eggs, and a whole bunch of bacon."
     n "Arceus can't help but stare in awe at both the enormous spread of food..."
-    n "... and at the brightly-colored creature currently demolishing it."
+    n "...and at the brightly-colored creature currently demolishing it."
     show mean happy
     mean "LET'S {w=0.25}FUCKING {w=0.25}{bt=a3-p10-s4}{i}GOOOOOOOO!!"
     mean "I can't believe they made {i}all{/i} of this just for me!"

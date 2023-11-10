@@ -11,11 +11,11 @@ init python:
     def auto_wait(s):
         # these items wait for 0.25:
         # commas, periods, question marks, exclamation marks
-        s = re.sub(r'(([,|.|?|!])([{\/(a-z)}]*) )', r'\1{w=0.25}', s) 
+        s = re.sub(r'(([,|.|?|!])(({\/[a-z]*})*) )', r'\1{w=0.25}', s, flags=re.IGNORECASE) 
 
         # these items wait for 0.5:
         # ellipses, em-dashes, colons
-        s = re.sub(r'((--|\.\.\.|:)([{\/(a-z)}]*) )', r'\1{w=0.5}', s) 
+        s = re.sub(r'((\.\.\.|--|:)(({\/[a-z]*})*) )', r'\1{w=0.5}', s, flags=re.IGNORECASE) 
 
         return s
     config.say_menu_text_filter = auto_wait
