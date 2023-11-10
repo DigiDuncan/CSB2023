@@ -526,13 +526,17 @@ image tate stare flipped = "flip:characters/tate/tatestare.png"
 image tate cry = "characters/tate/tatecry.png"
 image tate cry flipped = "flip:characters/tate/tatecry.png"
 
-## Mean
+## Mean (fired route)
 image mean = "characters/mean/mean.png"
 image mean flipped = "flip:characters/mean/mean.png"
 image mean happy = "characters/mean/meanhappy.png"
 image mean happy flipped = "flip:characters/mean/meanhappy.png"
 image mean happy2 = "characters/mean/meanhappy2.png"
 image mean happy2 flipped = "flip:characters/mean/meanhappy2.png"
+image mean surprised = "characters/mean/meansurprised.png"
+image mean surprised flipped = "flip:characters/mean/meansurprised.png"
+
+## Mean (new additional for train route)
 image mean ayo = "characters/mean/meanayo.png"
 image mean ayo flipped = "flip:characters/mean/meanayo.png"
 image mean angry = "characters/mean/meanangry.png"
@@ -543,9 +547,6 @@ image mean furious = "characters/mean/meanfurious.png"
 image mean furious flipped = "flip:characters/mean/meanfurious.png"
 image mean scared = "characters/mean/meanscared.png"
 image mean scared flipped = "flip:characters/mean/meanscared.png"
-image mean surprised = "characters/mean/meansurprised.png"
-image mean surprised flipped = "flip:characters/mean/meansurprised.png"
-## Mean
 
 # train
 image mean = "characters/mean/mean.png"
