@@ -5,6 +5,12 @@
             "speaker": "Digi",
             "transcript": "In this game, we decided to make it suck. No one had to play this game, so it didn't have to be good. That was our philosophy going into it.",
             "length": 7.5
+        },
+        {
+            "audio_path": "1b",
+            "speaker": "Digi",
+            "transcript": "Sometimes, I dream about cheese.",
+            "length": 3.3
         }
     ]
 }
