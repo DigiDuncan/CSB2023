@@ -43,7 +43,7 @@ screen dxcom(arg):
 
     frame at t_dxcom:
         imagebutton idle "dxcom/dxcom_icon.png" hover_sound "sfx_select.wav":
-            action Hide("dxcom"), SetVariable("current_dxcom", arg), Call("show_dxcom")
+            action Hide("dxcom"), SetVariable("current_dxcom", arg), Call("show_dxcom", from_current=True)
 
 transform t_dxcom:
     xanchor 1.0 xpos 0.95
