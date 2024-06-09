@@ -727,6 +727,7 @@ class Fighters:
     WESLEY = Fighter("Wesley", True, 200, 20, 40, [Attacks.PISTOL, Attacks.ALL_OVER_AGAIN], Image("images/characters/wesley.png"), ai = AIType.AGGRO)
     ED = Fighter("Ed", True, 300, 30, 25, [Attacks.HEAVY_PUNCH, Attacks.SOTH], Image("images/characters/ed.png"), ai = AIType.SMART)
     RICHARD = Fighter("Richard", True, 250, 20, 30, [Attacks.ONE_HUNDRED, Attacks.ICE_CREAM], Image("images/characters/rich.png"), ai = AIType.DEFENSIVE)
+    # TODO: Add the CEO of Diabetes
 
     @classproperty
     def names(cls) -> list[str]:
