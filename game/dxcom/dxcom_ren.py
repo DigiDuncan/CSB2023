@@ -59,6 +59,7 @@ class CommentaryString:
             renpy.with_statement(determination)
             renpy.show_screen("_dxcom", c)
             renpy.with_statement(determination)
+            renpy.pause(c.length)
 
 
 class CommentaryManager:
