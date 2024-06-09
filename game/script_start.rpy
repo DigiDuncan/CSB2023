@@ -1298,14 +1298,14 @@ init python:
 image typewriter = DynamicDisplayable(show_typewriter)
 
 label test:
+    show screen warning("The following scene sucks.", "Warnings: test", "secret")
     dxcom 1
-    # $ typewriter_text = "Here is some text, bitch\nI have no clue if it works\nI sure hope it does!"
-    # show typewriter
-    # pause
-    # show copguy_ex
-    # show red_light
-    # show blue_light
-    # show screen warning("The following scene sucks.", "Warnings: test", "secret")
+    $ typewriter_text = "Here is some text, bitch\nI have no clue if it works\nI sure hope it does!"
+    show typewriter
+    pause
+    show copguy_ex
+    show red_light
+    show blue_light
     pause
     $ renpy.full_restart()
 
