@@ -23,8 +23,6 @@ screen _dxcom(c):
                 layout "greedy"
                 color c.color
 
-    $ c.play()
-
     timer c.length action Hide('_dxcom')
 
 transform dxcom_appear:

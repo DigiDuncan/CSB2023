@@ -31,7 +31,7 @@ screen music():
     frame at music_appear:
         image "_music_text"
 
-    timer 5 action Hide('music')
+    timer 5 action Hide(_layer='music')
 
 transform music_appear:
     on show:

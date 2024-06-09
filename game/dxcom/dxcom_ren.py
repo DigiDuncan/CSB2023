@@ -38,9 +38,6 @@ class Commentary:
         else:
             return "#ffffff"
 
-    def play(self):
-        renpy.sound.play(self.full_path, channel="dxcom")
-
 
 class CommentaryString:
     def __init__(self, id: str, commentaries: list[Commentary]):
@@ -58,6 +55,7 @@ class CommentaryString:
         for c in self.commentaries:
             renpy.with_statement(determination)
             renpy.show_screen("_dxcom", c)
+            renpy.music.play(c.full_path, channel="dxcom", loop=False)
             renpy.with_statement(determination)
             renpy.pause(c.length)
 
