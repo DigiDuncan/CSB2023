@@ -56,11 +56,9 @@ class CommentaryString:
     
     def show(self):
         for c in self.commentaries:
-            c.play()
             renpy.with_statement(determination)
-            renpy.show_screen("dxcom", c)
+            renpy.show_screen("_dxcom", c)
             renpy.with_statement(determination)
-            renpy.pause(c.length)
 
 
 class CommentaryManager:

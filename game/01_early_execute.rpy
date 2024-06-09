@@ -101,7 +101,7 @@ python early:
         if parsed_object is None:
             return
         renpy.with_statement(determination)
-        commentary_manager.play(parsed_object)
+        renpy.show_screen("dxcom", parsed_object)
         renpy.with_statement(determination)
 
     def lint_dxcom(parsed_object):

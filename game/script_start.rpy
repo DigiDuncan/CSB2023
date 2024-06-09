@@ -1156,6 +1156,8 @@ default minigame_loss = "secret"
 
 default typewriter_text = "Hello, world!"
 
+default current_dxcom = "1"
+
 python early:
     # BAD END
     def parse_bad_end(lexer):

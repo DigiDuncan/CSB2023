@@ -49,6 +49,7 @@ label csbi_start:
     with dissolve
     play music "<loop 0>lets_hear_my_baby.mp3" volume 0.15
     music "Let's hear my baby - Walkman"
+    dxcom 1
     cs "Welp, time to start up the ol' Craptop."
     hide cs
     scene craptop_bg
