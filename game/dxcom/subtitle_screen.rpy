@@ -33,9 +33,9 @@ transform dxcom_appear:
         alpha 0.0
         xalign 0.0
         yalign 0.05
-        linear 0.5 alpha 1.0
+        linear 0.25 alpha 1.0
     on hide:
-        linear 0.5 alpha 0.0
+        linear 0.25 alpha 0.0
 
 screen dxcom(arg):
     zorder 100
