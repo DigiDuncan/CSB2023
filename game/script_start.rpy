@@ -1,8 +1,8 @@
 # Flip
 init -10 python:
 
-    duskmatrix = TintMatrix("#A09C97") * SaturationMatrix(1.0)
-    darkmatrix = TintMatrix("#6666FF") * SaturationMatrix(1.0)
+    duskmatrix = TintMatrix("#ffaa49")
+    darkmatrix = TintMatrix("#4848b8")
 
     def xflip(s):
         return Transform(s, xzoom = -1)
@@ -18,6 +18,16 @@ init -10 python:
         return Transform(s, matrixcolor=darkmatrix)
 
     config.displayable_prefix["dark"] = darkshade
+
+    def duskshadeflip(s):
+        return Transform(s, xzoom = -1, matrixcolor=duskmatrix)
+
+    config.displayable_prefix["dark:flip"] = duskshadeflip
+
+    def darkshadeflip(s):
+        return Transform(s, xzoom = -1, matrixcolor=darkmatrix)
+
+    config.displayable_prefix["dark:flip"] = darkshadeflip
 
 # Text beeps
 init python:
@@ -379,11 +389,11 @@ image cs flipped = "flip:characters/cs/neutral.png"
 image cs happy = "characters/cs/happy.png"
 image cs happy flipped = "flip:characters/cs/happy.png"
 image cs happy dark = "dark:characters/cs/happy.png"
-image cs happy dark flipped = "flip:characters/cs/happydark.png"
+image cs happy dark flipped = "dark:flip:characters/cs/happy.png"
 image cs angry = "characters/cs/angry.png"
 image cs angry dark = "dark:characters/cs/angry.png"
 image cs angry flipped = "flip:characters/cs/angry.png"
-image cs angry dark flipped = "flip:characters/cs/angrydark.png"
+image cs angry dark flipped = "dark:flip:characters/cs/angry.png"
 image cs worried = "characters/cs/worried.png"
 image cs worried flipped = "flip:characters/cs/worried.png"
 image cs disappointed = "characters/cs/disappointed.png"
@@ -393,16 +403,16 @@ image cs disappointed metal3 = "characters/cs/disappointedmetal3.png"
 image cs disappointed metal4 = "characters/cs/disappointedmetal4.png"
 image cs disappointed flipped = "flip:characters/cs/disappointed.png"
 image cs concentrate = "characters/cs/concentrate.png"
-image cs concentrate dark = "characters/cs/concentratedark.png"
+image cs concentrate dark = "dark:characters/cs/concentrate.png"
 image cs phone = "characters/cs/phone.png"
 image cs dark = "dark:characters/cs/neutral.png"
-image cs dark flipped = "flip:characters/cs/neutraldark.png"
+image cs dark flipped = "dark:flip:characters/cs/neutral.png"
 image cs dusk = "dusk:characters/cs/neutral.png"
 image cs disappointed dark = "dark:characters/cs/disappointed.png"
-image cs disappointed dark flipped = "flip:characters/cs/disappointeddark.png"
+image cs disappointed dark flipped = "dark:flip:characters/cs/disappointed.png"
 image cs disappointed dusk = "dusk:characters/cs/disappointed.png"
 image cs worried dark = "dark:characters/cs/worried.png"
-image cs worried dark flipped = "flip:characters/cs/worrieddark.png"
+image cs worried dark flipped = "dark:flip:characters/cs/worried.png"
 image cs prison = "characters/cs/prison.png"
 image cs prison_worried = "characters/cs/prison_worried.png"
 image cs guard = "characters/cs/guard.png"
@@ -432,13 +442,13 @@ image arceus full angry flipped = "flip:characters/arc/angryfull.png"
 image arceus angry = "characters/arc/angry.png"
 image arceus angry flipped = "flip:characters/arc/angry.png"
 image arceus angry dark = "dark:characters/arc/angry.png"
-image arceus angry dark flipped = "flip:characters/arc/angrydark.png"
+image arceus angry dark flipped = "dark:flip:characters/arc/angry.png"
 image arceus guard = "characters/arc/guard.png"
 image arceus guard flipped = "flip:characters/arc/guard.png"
 image arceus happy = "characters/arc/happy.png"
 image arceus happy flipped = "flip:characters/arc/happy.png"
 image arceus happy dark = "dark:characters/arc/happy.png"
-image arceus happy dark flipped = "flip:characters/arc/happydark.png"
+image arceus happy dark flipped = "dark:flip:characters/arc/happy.png"
 image arceus prison = "characters/arc/prison.png"
 image arceus prison flipped = "flip:characters/arc/prison.png"
 image arceus worried = "characters/arc/worried.png"
@@ -446,12 +456,12 @@ image arceus worried flipped = "flip:characters/arc/worried.png"
 image arceus dirty worried = "characters/arc/worrieddirty.png"
 image arceus dirty worried flipped = "flip:characters/arc/worrieddirty.png"
 image arceus worried dark = "dark:characters/arc/worried.png"
-image arceus worried dark flipped = "flip:characters/arc/worrieddark.png"
-image arceus dark = "characters/arc/arceusdark.png"
-image arceus dark flipped = "flip:characters/arc/arceusdark.png"
-image arceus dusk = "characters/arc/arceusdusk.png"
+image arceus worried dark flipped = "dark:flip:characters/arc/worried.png"
+image arceus dark = "dark:characters/arc/arceus.png"
+image arceus dark flipped = "dark:flip:characters/arc/arceus.png"
+image arceus dusk = "dusk:characters/arc/arceus.png"
 image arceus angry dusk = "dusk:characters/arc/angry.png"
-image arceus dusk flipped = "flip:characters/arc/arceusdusk.png"
+image arceus dusk flipped = "dusk:flip:characters/arc/arceus.png"
 
 ## Anno
 image anno = "characters/anno/anno.png"
@@ -463,7 +473,7 @@ image anno guard dark = "dark:characters/anno/anno_guard.png"
 image pakoo = "characters/pakoo/pakoo.png"
 image pakoo dark = "dark:characters/pakoo/pakoo.png"
 image pakoo flipped = "flip:characters/pakoo/pakoo.png"
-image pakoo dark flipped = "flip:characters/pakoo/pakoodark.png"
+image pakoo dark flipped = "dark:flip:characters/pakoo/pakoo.png"
 image pakoo worried = "characters/pakoo/pakoo_worried.png"
 image pakoo worried flipped = "flip:characters/pakoo/pakoo_worried.png"
 image pakoo disappointed = "characters/pakoo/pakoo_disappointed.png"
@@ -488,19 +498,19 @@ image craptop evidence = "characters/craptop/evidence.png"
 image tate = "characters/tate/tatehappy.png"
 image tate dark = "dark:characters/tate/tatehappy.png"
 image tate flipped = "flip:characters/tate/tatehappy.png"
-image tate dark flipped = "flip:characters/tate/tatehappydark.png"
+image tate dark flipped = "dark:flip:characters/tate/tatehappy.png"
 image tate srs = "characters/tate/tateserious.png"
-image tate srs dark = "characters/tate/tateseriousdark.png"
+image tate srs dark = "dark:characters/tate/tateserious.png"
 image tate srs flipped = "flip:characters/tate/tateserious.png"
-image tate srs dark flipped = "flip:characters/tate/tateseriousdark.png"
+image tate srs dark flipped = "dark:flip:characters/tate/tateserious.png"
 image tate shock = "characters/tate/tateshock.png"
-image tate shock dark = "characters/tate/tateshockdark.png"
+image tate shock dark = "dark:characters/tate/tateshock.png"
 image tate shock flipped = "flip:characters/tate/tateshock.png"
-image tate shock dark flipped = "flip:characters/tate/tateshockdark.png"
+image tate shock dark flipped = "dark:flip:characters/tate/tateshock.png"
 image tate smug = "characters/tate/tatesmug.png"
 image tate smug dark = "dark:characters/tate/tatesmug.png"
 image tate smug flipped = "flip:characters/tate/tatesmug.png"
-image tate smug dark flipped = "flip:characters/tate/tatesmugdark.png"
+image tate smug dark flipped = "dark:flip:characters/tate/tatesmug.png"
 image tate sheepish = "characters/tate/tatesheepish.png"
 image tate sheepish flipped = "flip:characters/tate/tatesheepish.png"
 image tate sad = "characters/tate/tatesad.png"
@@ -537,7 +547,7 @@ image discord = "characters/discord.png"
 image nova = "characters/nova.png"
 image nova dark = "dark:characters/nova.png"
 image nova flipped = "flip:characters/nova.png"
-image nova dark flipped = "flip:characters/novadark.png"
+image nova dark flipped = "dark:flip:characters/nova.png"
 image carguy = "characters/carguy.png"
 image carguy flipped = "flip:characters/carguy.png"
 image doug = "characters/doug.png"
@@ -571,7 +581,7 @@ image luke = "characters/luke.png"
 image luke flipped = "flip:characters/luke.png"
 image border_guard dusk = "characters/border_guard_dusk.png"
 image copguy dark = "dark:characters/copguy.png"
-image copguy dark flipped = "flip:characters/copguydark.png"
+image copguy dark flipped = "dark:flip:characters/copguy.png"
 image copguy_ai = "characters/ai_cop_guy_full.png"
 image taran = "characters/taran.png"
 image taran flipped = "flip:characters/taran.png"
@@ -595,7 +605,7 @@ image pencilguy = "characters/pencil.png"
 image digi = "characters/digi.png"
 image digi dark = "dark:characters/digi.png"
 image digi flipped = "flip:characters/digi.png"
-image digi dark flipped = "flip:characters/digidark.png"
+image digi dark flipped = "dark:flip:characters/digi.png"
 image trailtrash = "characters/trailtrash.png"
 image trailtrash flipped = "flip:characters/trailtrash.png"
 image jerma = "characters/jerma.png"
@@ -622,7 +632,7 @@ image midge = "characters/midge.png"
 image aria = "characters/aria.png"
 image aria flipped = "flip:characters/aria.png"
 image aria dark = "dark:characters/aria.png"
-image aria dark flipped = "flip:characters/aria_dark.png"
+image aria dark flipped = "dark:flip:characters/aria.png"
 image guard_soldier = "characters/guard_soldierdark.png"
 image obama = "characters/obama.png"
 image db = "characters/db.png"
@@ -1312,11 +1322,13 @@ image typewriter = DynamicDisplayable(show_typewriter)
 label test:
 
     scene washington_road dusk
-    show arceus dusk at center
+    show arceus dusk flipped at right
+    show cs dusk at left
     with fade
     arceus "This is a dusk test"
     scene washington_road
-    show arceus dark at center
+    show arceus dark at right
+    show cs dark at left
     with fade
     arceus "This is a dark test"
     $ renpy.full_restart()
