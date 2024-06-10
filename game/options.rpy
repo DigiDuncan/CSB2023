@@ -135,7 +135,7 @@ default preferences.bounciness_enable = True
 default preferences.csbounciness = 0
 default preferences.streamer_mode = False
 default preferences.dyslexia_mode = False
-default preferences.developer_mode = False
+default preferences.developer_mode = True
 
 default preferences.text_cps = 40.0
 

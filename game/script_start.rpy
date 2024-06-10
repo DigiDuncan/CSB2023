@@ -5,6 +5,12 @@ init -10 python:
 
     config.displayable_prefix["flip"] = xflip
 
+init -9 python:
+    def dawnshade(s):
+        return Transform(s, matrixcolor=TintMatrix("#A09C97") * SaturationMatrix(1.0))
+
+    config.displayable_prefix["dawn"] = dawnshade
+
 # Text beeps
 init python:
     renpy.music.register_channel("beep", "voice", loop = True)
@@ -406,6 +412,7 @@ image cs horse flipped = "flip:characters/cs/horse.png"
 ## Arc
 image arceus = "characters/arc/arceus.png"
 image arceus flipped = "flip:characters/arc/arceus.png"
+image arceus dawn = "dawn:characters/arc/arceus.png"
 image arceus dirty = "characters/arc/arceusdirty.png"
 image arceus dirty flipped = "flip:characters/arc/arceusdirty.png"
 image arceus full happy = "characters/arc/happyfull.png"
@@ -1295,14 +1302,10 @@ init python:
 image typewriter = DynamicDisplayable(show_typewriter)
 
 label test:
-    $ typewriter_text = "Here is some text, bitch\nI have no clue if it works\nI sure hope it does!"
-    show typewriter
-    pause
-    show copguy_ex
-    show red_light
-    show blue_light
-    show screen warning("The following scene sucks.", "Warnings: test", "secret")
-    pause
+
+    show arceus dawn at center
+
+    arceus "This is probably an abomination"
     $ renpy.full_restart()
 
 define shake1 = { "master" : hpunch }
