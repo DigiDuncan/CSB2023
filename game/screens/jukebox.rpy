@@ -224,7 +224,24 @@ init python:
         "Pixel Peeker Polka - Kevin MacLeod": "kevin.png",
         "Local Forecast - Kevin MacLeod": "kevin.png",
         "Track 4 - Weatherscan": "weather.png",
-        "Track 3 - Weatherscan": "weather.png"
+        "Track 3 - Weatherscan": "weather.png",
+        "Pressing Pursuit ~ Cornered - Masakazu Sugimori": "aceattorney.png",
+        "The Star Spangled Banner - THE UNITED STATES OF AMERICA": "america.png",
+        "Billy Mays Gangsta Remix - mastamokei": "billymays.png",
+        "Breakout - Shoichiro Sakamoto": "breakout.png",
+        "Brick by Brick (Suck my Dick) - cs188": "brickbybrick.png",
+        "BUBBLE TEA - darkcat": "bubbletea.png",
+        "Wayward Wanderer - Deep Gnome": "deepgnome.png",
+        "Alfred Hitchcock Intro Theme - Charles Gounod": "hitchcock.png",
+        "Speedy Comet - Mahito Yokota": "mariogalaxy.png",
+        "Melancholy - Imori": "melancholy",
+        "MisLeader - Triosk and Jan Jelinek": "misleader.png",
+        "Airport Counter - Kazumi Totaka": "newhorizons.png",
+        "Summer Clearance Sale - BEST MUSIC": "summerclearance.png",
+        "Morning Highway - BEST MUSIC": "summerclearance.png",
+        "Afternoon Hills - BEST MUSIC": "summerclearance.png",
+        "Supernova - Laszlo": "supernova.png",
+        "Al's Penthouse - Andy Blythe": "toystory.png"
     }
 
 
