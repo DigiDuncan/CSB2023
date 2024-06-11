@@ -387,7 +387,7 @@ label michael_house:
 
 label rosen_house:
     if e3:
-        play music "<loop 0>night.wav" volume 1
+        play music "<loop 0>night.mp3" volume 1
         scene rosen_abode
         show csgod at offscreenright
         show michael at left
