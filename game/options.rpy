@@ -29,7 +29,7 @@ define config.version = "1.2"
 ## Text that is placed on the game's about screen. Place the text between the
 ## triple-quotes, and leave a blank line between paragraphs.
 
-define gui.about = _p("""CSBounciness III (+ I.5 & II.5 ReMIX)
+define gui.about = _p("""CSBounciness III (+ 1 & 2 ReMIX)
 
 Over five years in the making, relive the wild rides of CSBounciness I and II,
 and embark on a new wacky adventure with CS and the gang in the all new CSBounciness

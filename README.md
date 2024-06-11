@@ -1,6 +1,6 @@
 # CSB2023
 CS Bounciness III, again.
-# CS Bounciness III & CS Bounciness HD I.5 + II.5 ReMix
+# CS Bounciness III & CS Bounciness HD 1 + 2 ReMix
 
 ## A **DPN Games** Project
 ## In Association With **DigiDuncan Media Group**
