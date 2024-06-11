@@ -1096,8 +1096,8 @@ screen keyboard_help():
     hbox:
         label "£"
         text _("Union Jacks your weiner right off!")
-        key "#" action Play("sound", "audio/billymaysfap.mp3"), Function(britishpound)
-        key "£" action Play("sound", "audio/billymaysfap.mp3"), Function(britishpound)
+        key "#" action Play("sound", "audio/sfx_britishpound.mp3"), Function(britishpound)
+        key "£" action Play("sound", "audio/sfx_britishpound.mp3"), Function(britishpound)
 
 screen mouse_help():
 
