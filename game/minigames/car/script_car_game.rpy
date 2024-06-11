@@ -128,13 +128,13 @@ init python:
                         renpy.sound.play("minigames/car/sfx_gaster_blast.wav", channel=0)
                         self.played_fire = True
                     # Render laser
-                    r.blit(laser_renderer, (LANE_X[self.enemy_lane] - 15, UFO_Y+50))
+                    r.blit(laser_renderer, (LANE_X[self.enemy_lane] - 16, UFO_Y+70))
 
                 # UFO X
                 if telegraph_start < st < danger_cutoff:
-                    cx = LANE_X[self.enemy_lane]
+                    cx = LANE_X[self.enemy_lane] + 11
                 else:
-                    cx = LANE_X[self.enemy_lane] + math.sin(st * SWAY_PERIOD) * SWAY_DISTANCE
+                    cx = LANE_X[self.enemy_lane] + 11 + math.sin(st * SWAY_PERIOD) * SWAY_DISTANCE
                 current_ufo_x = ease_linear(self.ufo_last_x, cx, self.ufo_last_move, self.ufo_move_time, st)
 
                 # Telegraphing period
@@ -153,7 +153,7 @@ init python:
                     laser_ball_renderer = renpy.render(t, 180, 180, st, at)
                     xo = (abs(l-1) * 180) / 2
                     yo = (abs(l-1) * 180) / 2
-                    r.blit(laser_ball_renderer, ((LANE_X[self.enemy_lane] + xo)-25, UFO_Y + yo))
+                    r.blit(laser_ball_renderer, ((LANE_X[self.enemy_lane] + xo) - 15, UFO_Y + yo))
 
                 # Render UFO
                 r.blit(ufo_renderer, (current_ufo_x, UFO_Y))
