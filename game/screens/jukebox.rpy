@@ -324,6 +324,6 @@ screen music_screen(l):
                 yalign(0.5)
         else:
             image f"images/jukebox/{album_map[l]}":
-                xysize(500, 500)
+                xysize(512, 512)
                 xalign(0.225)
                 yalign(0.5)
