@@ -295,7 +295,7 @@ define green = Character("Mr. Green", callback = renpy.partial(char_callback, na
 define jerma = Character("Jerma", callback = renpy.partial(char_callback, name = "jerma", beep = "jerma"))
 define pencil = Character("Pencil Greeter", callback =renpy.partial(char_callback, name = "pencil"))
 define signup = Character("Signup Helper", callback = char_callback)
-define host = Character("Host", callback = renpy.partial(char_callback, name = "mettaton", beep = "snd_mtt"), what_font = "DTM-MONO.otf", what_size = 40)
+define host = Character("Host", callback = renpy.partial(char_callback, name = "mettaton", beep = "snd_mtt"), what_font = "8bitoperator_jve.ttf", what_size = 40)
 define tsa = Character("TSA Agent", callback = renpy.partial(char_callback, name = "tsa"))
 define luigi = Character("Luigi", callback = renpy.partial(char_callback, name = "luigi", beep = "luigi"))
 define mika = Character("Mika", callback = renpy.partial(char_callback, name = "mika", beep = "mika"))
