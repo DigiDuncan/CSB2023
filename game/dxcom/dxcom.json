@@ -12,5 +12,49 @@
             "transcript": "Sometimes, I dream about cheese.",
             "length": 3.3
         }
+    ],
+    "newplan": [
+        {
+            "audio_path": "newplan1",
+            "speaker": "Digi",
+            "transcript": "This is the only route in the game that I was the writing director for. Pakoo basically handled all the other ones, except for a few exceptions.",
+            "length": 8.1
+        },
+        {
+            "audio_path": "newplan2",
+            "speaker": "Digi",
+            "transcript": "I hope that that doesn't mean that this route has a vastly different writing style than the rest of the game, though. Worked really hard to try to match it.",
+            "length": 7.3
+        }
+    ],
+    "hitme": [
+        {
+            "audio_path": "hitme",
+            "speaker": "Digi",
+            "transcript": "This MIDI of {i}Hit Me With Your Best Shot{/i} is hilariously bad, but we didn't want to get CS copyright struck.",
+            "length": 5.8
+        }
+    ],
+    "everlong": [
+        {
+            "audio_path": "everlong",
+            "speaker": "Digi",
+            "transcript": "For the backing track here, I'm pretty sure I asked Pakoo to get 'something like {i}Everlong{/i} by the Foo Fighters', and he just got a MIDI of Everlong. It's pretty funny, though!",
+            "length": 9.3
+        }
+    ],
+    "madlibs": [
+        {
+            "audio_path": "madlibs1",
+            "speaker": "Digi",
+            "transcript": "This is where we reveal the gimmick of this route! Basically every route had a gimmick. The True route is a road trip, the fanboy route is an RPG, and this route is a Mad Libs.",
+            "length": 10.5
+        },
+        {
+            "audio_path": "madlibs2",
+            "speaker": "Digi",
+            "transcript": "This was inspired by me literally digging through the Ren'Py documentation and figuring out there was a function to store text input into variables. It was all downhill from there!",
+            "length": 8.7
+        }
     ]
 }
