@@ -3,7 +3,7 @@ label lose_car_game:
     return
 
 label lose_pencil_game:
-    bad_end "You dumb foreskin." "minigame_pencil"
+    bad_end "Try, uh, mashing... faster?" "minigame_pencil"
     return
 
 label play_edit_game:
