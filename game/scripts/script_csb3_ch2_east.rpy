@@ -140,7 +140,7 @@ label montana:
     cs "Hey, Arc!"
     billy "CS, you should probably leave the dog thing in the back alone."
     n "Arceus immediately jerks straight up."
-    arceus "What did you just call me?"
+    arceus "{i}What did you just call me?{/i}"
     billy "Nothing!"
     scene hardwareoutside
     show billy car
