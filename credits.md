@@ -77,6 +77,7 @@
 - Aria "Estroteric"
 - Mrs. 8923
 **3D Rendering:** 4Bakers  
+**Asset Remastering Director:** 4Bakers
 **Sprite Manager:** Pakoo
 
 ## Audio
