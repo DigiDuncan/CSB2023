@@ -91,6 +91,9 @@
 - George Stone
     - Canyon
     - Passport
+- isg music lab
+    - Canyon Virtual Instruments Remake
+    - Passport Virtual Instruments Remake
 - BEST MUSIC
     - サマークリアランスセール
     - Morning Highway
