@@ -7,6 +7,7 @@ label after_true:
     n "Arceus went to England to live a happy life with Kitty,"
     n "and Billy, he's still selling his products while on the road."
     scene start_route with fade
+    play music "<loop 0>letshearspring.wav" volume 2
     pause 3.0
     scene cs_room_cars
     show cs at left
@@ -57,8 +58,10 @@ label after_true:
     arceus "*sigh* Alright, I guess you have a point. Let's do this."
     billy "Great! You're gonna love it!"
     scene black with dissolve
+    stop music fadeout 3.0
     n "Billy puts blindfolds on CS and Arc, and heard out."
     n "After what feels like forever, they arrive at their destination."
+    play music "<loop 0>echoingspring.wav" volume 2
     billy "Alright, you can take the blindfolds off. "
     scene wis_forest 
     show cs dark at left
@@ -118,7 +121,7 @@ label after_true:
     cs "I'll do it!"
     show arceus dark flipped    
     arceus "I'm gonna back up in case this thing explodes."
-    show cs dark at right
+    show cs dark at right with move
     show cs dark flipped with determination
     billy "Alright CS, just hit all those buttons on the side to start it up!"
     n "The machine starts whirring, as a mysterious light shoots out from the top."
@@ -134,6 +137,7 @@ label after_true:
     billy "Turn it off! Turn it off!"
     cs "I can't!!"
     scene white with dissolve
+    stop music fadeout 3.0
     n "A flash of blinding light engulfs CS, as he disappears with it."
     n "As CS slowly opens his eyes, he finds himself in an unforgiving place."
     cs "Wait, what happened?"
