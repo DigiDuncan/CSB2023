@@ -969,6 +969,15 @@ image archival_17 = "bg/archival/archival_17.png"
 image archival_18 = "bg/archival/archival_18.png"
 image archival_19 = "bg/archival/archival_19.png"
 
+#Pakoo Jam
+image pot_lift = "characters/pot_lift.png"
+image pot = "characters/pot.png"
+image pot_sunken = "characters/pot_sunken.png"
+image pot_beam = "characters/pot_beam.png"
+image start_route = "bg/proutest.png"
+image cs_room_cars = "bg/cs_bedroom_cars.png"
+image wis_forest = "bg/wis_forest.png"
+
 # Static Images
 image post_it = "post-it.png"
 image ytx = Transform("ytx.png", zoom = 0.333)
