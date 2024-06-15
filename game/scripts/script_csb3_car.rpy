@@ -22,7 +22,7 @@ label car_dialogue:
     show billy car
     with fade
     play music "<loop 0>billy_mix.mp3" volume 1
-    music Billys Mix 1 - Billy Mays
+    music "Billy's Mix - Billy Mays"
     cs "Well, Arceus, it has been quite a ride."
     arceus "It sure has. We've been through quite a lot, haven't we?"
     cs "Yeah, I'm so tired. I can't wait to get some actual rest."

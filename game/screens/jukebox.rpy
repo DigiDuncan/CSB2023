@@ -59,7 +59,7 @@ init python:
         "The Metropolis of Fourside - Keiichi Suzuki": "fourside.mp3",
         "Pokeys House - Keiichi Suzuki": "pokey.mp3",
         "Rude Buster - Toby Fox": "rude_buster.mp3",
-        "Billys Mix 1 - Billy Mays": "billymusicu.mp3",
+        "Billy's Mix - Billy Mays": "billymusicu.mp3",
         "Park Theme - Lorin Nelson": "park_theme.mp3",
         "Alfred's Theme - Eminem": "hohsisremix.mp3",
         "Track 3 - Weatherscan": "track3.mp3",
@@ -145,7 +145,7 @@ init python:
     global album_map
 
     album_map = {
-        "Billys Mix 1 - Billy Mays": "billymix.png",
+        "Billy's Mix - Billy Mays": "billymix.png",
         "CANYON.MID - George Stone": "windows.png",
         "PASSPORT.MID - George Stone": "windows.png",
         "stal - C418": "minecraft.png",
