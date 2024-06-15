@@ -504,8 +504,8 @@ label car_dialogue:
     cs "Nothing! I just dropped something."
     show billy car
     billy "Alright. You'd better not mess with my gadgets!"
-    digi "{size=-10}Shhh! Don't say anything!"
-    cs "{size=-10}Okay, I've got it. Arceus, roll down the window."
+    digi "{size=-15}Shhh! Don't say anything!"
+    cs "{size=-15}Okay, I've got it. Arceus, roll down the window."
     play sound "<from 0 to 1>sfx_roll_window.ogg" volume 0.7
     pause 5.0
     cs "Alright, you ready?"

@@ -218,7 +218,7 @@ label high_gpu:
         cs "Aw, man, what are those people saying? \"AMD blows, you guys are hoes\"?"        
     else:
         cs "Aw, man, what are those people saying? \"NVIDIA sucks, you guys are cucks\"?"
-    cs "Heyyy!!! {size=-10}No I'm not..."
+    cs "Heyyy!!! {size=-15}No I'm not..."
     stop music fadeout 3.0
     music end
     linus "Yeah, there are always people who get upset because of the brand we used. Don't worry, this always happens."

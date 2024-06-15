@@ -10,6 +10,7 @@
 - Sentences should not be connected with commas.
 - Do not use all caps for emphasis, use italics. (Or shake text!)
 - Em-dashes (when used to cut off a sentence) should be represented with --.
+- small text (like whispering) should use the prefix {size=-15}
 
 ### Files
 - backgrounds must be 1920x1080
