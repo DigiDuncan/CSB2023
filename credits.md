@@ -184,7 +184,7 @@
 - Shoichiro Sakamoto
     - Breakout
 - Billy Mays (kinda)
-    - Billys Mix 1
+    - Billy's Mix
 - Andy Blythe
     - Al's Penthouse
 - Marten Joustra
