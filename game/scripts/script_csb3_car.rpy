@@ -47,7 +47,9 @@ label car_dialogue:
     billy "No, I'm good. You're in {i}my{/i} car, and that means {i}I'll{/i} drive!"
     cs "Alright, man... I just don't feel like we paid you enough for this."
     billy "Everything I sell is always $19.95!"
-    cs "Well, thanks, man."
+    arceus "{size=-15}That isn't true--"
+    cs "{size=-15}Shh..."
+    cs "Thanks, man."
     billy "{i}That's{/i} the power of friendship!"
 
     pause 1.0
