@@ -1,12 +1,14 @@
 init python:
     renpy.add_layer("music", above = "master")
     renpy.add_layer("popup", above = "overlay")
+    renpy.add_layer("fun_icon", above = "master")
 
 # WARN:
 # For some reason the linter thinks that persistent variables with underscores
 # are never initialized. It's lying to you; it's fine.
 
 define determination = Dissolve(0.0)
+default fun_value_killswitch = Null
 default persistent.seen = set()
 default persistent.heard = set()
 default persistent.read = set()
@@ -46,8 +48,33 @@ style music_frame:
     yoffset 25
 
 init:
+    # For music
     transform _music_top_left:
         xanchor 0 xpos 0
+
+    # For fun value 
+    transform _fun_value_fade:
+        on show: 
+            xanchor 0 xpos 1592
+            yanchor 0 ypos 995
+            alpha 0.00
+            linear 0.25 alpha 1.00
+            time 3.0
+            linear 1 alpha 0.00
+
+    transform _fun_value_motion:
+        block:
+            linear 0.05 xpos 1591
+            linear 0.05 ypos 994
+
+            linear 0.05 xpos 1592
+            linear 0.05 ypos 995
+
+            linear 0.05 xpos 1593
+            linear 0.05 ypos 996
+
+            linear 0.25 alpha 1.00
+            repeat
 
 python early:
     # MUSIC POP UP
@@ -170,7 +197,14 @@ init python:
         return f"{', '.join(items[:-1])}{ox} {joiner} {items[-1]}"
 
     # FUN VALUES
+    renpy.image("_fun_value", "fun_value.png")
+
+    # Fun value handler
     def fun_value(rarity: int, id: str = None) -> bool:
+    
+        # hide any previous instance of the indicator
+        renpy.hide("_fun_value") 
+
         if not preferences.bounciness_enable:
             return False
         r = ease_linear(rarity, 1, 0, 100, preferences.csbounciness)
@@ -178,4 +212,7 @@ init python:
         ret = renpy.random.random() < chance
         if ret:
             achievement_manager.unlock("F.U.N.")
+            
+            # show the indicator. it'll fade out on its own and be hidden next time this runs
+            renpy.show("_fun_value",[_fun_value_fade,_fun_value_motion],"fun_icon")
         return ret
