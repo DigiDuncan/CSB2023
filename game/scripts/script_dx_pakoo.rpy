@@ -88,6 +88,7 @@ label after_true:
     cs "Alright, you grab the right, I'll grab the left."
     arceus "Fuck, this is heavy as hell!"
     billy "Alright, bring it over here!"
+    window hide
     show cs concentrate dark at mid_mid_right
     show pot_lift at mid_right
     show arceus angry dark at mid_right_right
@@ -140,38 +141,76 @@ label after_true:
     stop music fadeout 3.0
     n "A flash of blinding light engulfs CS, as he disappears with it."
     n "As CS slowly opens his eyes, he finds himself in an unforgiving place."
+    scene roombacks
+    show cs concentrate
+    with dissolve
+    play music "<loop 0>alien_atmosphere.mp3" volume 2
+    pause 1.5
+    show cs disappointed
+    pause 0.5
+    show cs concentrate
+    pause 0.2
+    show cs disappointed
+    pause 1.0
     cs "Wait, what happened?"
     cs "Oh God, where am I?"
+    show cs worried
     cs "Oh no… It can't be..."
+    show cs scared
     cs "Help, I have to be dreaming!"
     "???" "Hey! Who's up there?"
+    show cs scared flipped
     cs "Help! I'm stuck in the backrooms!"
     n "The man runs up the stairs to meet the panicking CS."
+    show renovator at left with moveinleft
+    stop music
     renovator "What's wrong with you? How did you get back here?"
+    show cs worried flipped
     cs "I've teleported into the backrooms and I think I'm stuck here forever!"
     n "The man laughs at CS."
     renovator "Well yeah, you're in my backroom, and you need to get out. The stairs are behind me."
+    show cs disappointed flipped
     cs "Wh- really?"
     renovator "Yes, and please get out. We are renovating this place into a rc racetrack room, and we don't need insane people ruining it."
     cs "Okay okay, I'm sorry."
+    hide cs with moveoutleft
+    scene backrooms with dissolve
+    show cs disappointed flipped at mid_left with moveinright
     n "As CS is leaving, he sees the sign with the date of the renovation."
     cs "Opening 2004? Is this outdated?"
+    show renovator at right with moveinright
     renovator "Are you insane or high dude? It's 2003, are you okay?"
     n "CS' heart drops."
+    show cs disappointed
     cs "Yeah, I just, am hungover I guess."
+    show cs disappointed flipped with determination
+    hide cs with moveoutleft
     n "As CS walks towards the front door, the renovator mutters \"fuckin drunkards\" to himself."
     renovator "You're also in Wisconsin, if you're too drunk or high to even remember where you live!"
+    scene hobbytown with dissolve
+    show cs disappointed at center with moveinleft
     n "CS' head is spinning."
     cs "So, I am in Wisconsin, about 20 years in the past, what else is new?"
     cs "Apparently I ended up in the backrooms as well?"
+    show cs disappointed flipped
     cs "I wonder if Billy and Arc ended up here too..."
+    show cs disappointed
     cs "Maybe I can find Billy's machine, if it ended up here."
     n "Before CS can get anywhere, a group of men run up to him."
-    cs "Hey what's going--"
-    cs "Ow! HEY--"
+    show shadowman at mid_left with moveinleft
+    cs "Hey what's going--{nw}"
+    scene black
+    cs "Ow! HEY--{nw}"
+    pause 5.0
+    scene pencilroomblur with dissolve
     cs "Ohhh, my head..."
     cs "What is going on with today..."
     cs "Where am I now?"
+    scene pencilroom
+    show cs disappointed pencil at center
+    show pencilguy at left
+    show pencilcashier at right
+    with dissolve
     cs "...and what the hell is this outfit?"
     pencil "Welcome, to the Pencil Cult!"
     cs "..."
@@ -197,12 +236,17 @@ label after_true:
     cs "Yeah okay, can I go to the bathroom first? I was gonna pee before you kinapped me."
     pencil "Hey that rhymed! Yeah you can go."
     cs "Thank you, I'll just be a moment!"
+    hide cs with moveoutright
+    scene black with dissolve
     n "CS gets to the bathroom and takes off his stuffy pencil costume."
+    show cs disappointed at center
     cs "God, what the fuck is all of this?"
     cs "I can't tell if I'm still in the past or what is going on now."
     cs "I need to find a way out of here."
     n "Just as CS was going to look for an exit, a video starts playing on one of the many TVs around the convention."
+    scene black with dissolve
     #CultCon intro video plays
+    show cs with dissolve
     cs "Well, I guess I'm not leaving now!"
     cs "I need to figure out how to get Billy's machine back..."
     n "Before cs can think, a familiar voice is heard rushing over to him."
@@ -345,4 +389,28 @@ label seek_competitors:
             jump catholic_ask
         "Lunatic Cultists":
             jump lunatic_ask
-            
+
+label pencil_ask:
+    pencil "It's officially our idea now!"
+    pencil "Look, if you want to win our vote, you gotta earn it!"
+    pencil "Behold!"
+    n "The pencil man pulls out a pencil sharpener."
+    cs "Lemme guess, a pencil sharpening contest?"
+    pencil "How'd you know?"
+    cs "Oh, just a hunch that's all."
+    pencil "Well if you can beat my score, we'll give you our vote!"
+    cs "Oh, I'll win."
+    pencil "Well aren't you cocky? Let's see this then!"
+    pencil "3, 2, 1,"
+    pencil "Go!"
+
+    pencil "Woah, where'd that kinda skill come from?"
+    pencil "You're a pencil sharpening legend!"
+    cs "I'll just say one thing."
+    cs "October 27th. Remember that day."
+    pencil "Uhh, alright?"
+    n "CS turns around and leaves without any more explanation."
+    cs "Well, that takes me back."
+    cs "Or I guess, that takes me forward!"
+    cs "Fuck I need to get back home..."
+    cs "Alright, well..."

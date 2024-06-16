@@ -357,6 +357,7 @@ define snufkin = Character("Snufkin", callback = renpy.partial(char_callback, na
 define alicia = Character("Alicia", callback = renpy.partial(char_callback, name = "alicia"))
 define witch = Character("Witch", callback = renpy.partial(char_callback, name = "witch"))  # DX: Beep
 define tate_offscreen = Character("???", callback = renpy.partial(char_callback, name = "tate_offscreen", beep="tate"))
+define renovator = Character("Renovator", callback = char_callback)
 
 # Character Images
 ## CS
@@ -398,6 +399,7 @@ image cs fakegod = "characters/cs/fake_god.png"
 image cs guitar = "characters/cs/guitar.png"
 image cs surprised = "characters/cs/surprised.png"
 image cs scared = "characters/cs/scared.png"
+image cs scared flipped = "flip:characters/cs/scared.png"
 image cs insane worried = "characters/cs/insane.png"
 image cs insane worried flipped = "flip:characters/cs/insane.png"
 image cs insane disappointed = "characters/cs/insane2.png"
@@ -977,6 +979,17 @@ image pot_beam = "characters/pot_beam.png"
 image start_route = "bg/proutest.png"
 image cs_room_cars = "bg/cs_bedroom_cars.png"
 image wis_forest = "bg/wis_forest.png"
+image roombacks = "bg/roombacks.png"
+image backrooms = "bg/backrooms.png"
+image renovator = "characters/renovator.png"
+image hobbytown = "bg/oshkosh.png"
+image shadowman = "characters/shadowman.png"
+image pencilcashier = "characters/pencilcashier.png"
+image cs pencil = "characters/cs/pencil.png"
+image cs angry pencil = "characters/cs/pencilangry.png"
+image cs disappointed pencil = "characters/cs/pencildisappointed.png"
+image pencilroom = "bg/pencilroom.png"
+image pencilroomblur = "bg/pencilroomblur.png"
 
 # Static Images
 image post_it = "post-it.png"
