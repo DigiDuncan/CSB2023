@@ -39,6 +39,7 @@ label csbiii_start:
                 pass
     show cs disappointed
     cs "Not this time. I need to get to work!"
+    show cs surprised
     cs "Now, which video..."
     menu:
         "Which video will CS edit?"
@@ -49,12 +50,12 @@ label csbiii_start:
 
     # end section added by tate
 
-    show cs worried
+    show cs disappointed
     cs "Damn it, Taran, you can edit your own macro fetish content."
     show cs
     cs "I guess I'll edit the livestreaming one."
     scene black with fade
-    n "CS starts working on editing the TechQuickie video, and after some time, Linus comes in to check on him."
+    n "CS starts working on editing the TechQuickie video. After some time, Linus comes in to check on him."
     scene csdesk
     show cs at left
     with fade
@@ -62,6 +63,7 @@ label csbiii_start:
     linus "Hey, CS, how's the new video coming along?"
     cs "It's going well! I have the background all done, and I'm working on adding graphics and fixing audio."
     linus "Wow! You're a fast worker. You'll get off of that old 3080 in no time."
+    show cs happy
     cs "Thanks, Linus."
     linus "Speaking of livestreaming, we need a new PC for the WAN Show. Can you go and buy parts for one?"
 
@@ -93,11 +95,12 @@ label boring_video:
     cs "Zzzzz..."
     linus "{i}CS!!" with hpunch
     
-    show cs scared
+    show cs worried
     cs "Wha-- huh?!"
 
     linus "Damn it, CS!"
-    linus "Asleep on the job?!"
+    linus "Asleep on the job? On your {i}first day?!"
+    show cs scared
     cs "Oh, shi--{nw}"
     linus "This is unacceptable! You're {i}fired!"
 
@@ -107,6 +110,7 @@ label boring_video:
 
 
 label edit_video:
+    show cs
     cs "Nah, I wanna finish this project first. That way I can help you pump out videos faster."
     linus "Alright, that's fine. I'll probably send Colton to get the parts instead. He's good at sucking up and doing this kinda thing."
     cs "Alright, yeah. I definitely wasn't using this as an excuse to get out of shopping!"
@@ -122,12 +126,13 @@ label edit_video:
     music "Good Eatin' - ClascyJitto"
     show taran at right with moveinright
     taran "Need any help with anything?"
+    show cs happy
     cs "Hey Taran! You wanna check out my video so far?"
     taran "Sure, let it roll."
     scene csvideo with fade
     n "CS and Taran watch CS' video."
     scene csdesk
-    show cs worried at left
+    show cs disappointed at left
     show taran at right
     with fade
     cs "Well, you think it's good?"
@@ -140,14 +145,17 @@ label edit_video:
     show cs
     cs "You really think so? I mean, I don't want him to be upset with me."
     taran "Don't worry about it. If he thinks it's that bad, I'll take the blame on it."
+    show cs disappointed
     cs "That's nice and all, but do you think that's a good idea? I mean, I don't want to mess up my first chance at this."
     taran "Nah, don't worry about it."
     taran "Even if something dumb happens, he usually never gets mad at us for doing silly things like that."
     cs "Well, if you say so, I guess it's fine."
     cs "Let's wait and see how he reacts."
     taran "Alrighty then, I'll catch you later!"
+    show cs happy
     cs "For tonight, this{w=0.1} is{w=0.1} CS,{w=0.5}{cps=*0.1} signing{cps=*10} out!"
     taran "...What did you say?"
+    show cs worried
     cs "Huh? I totally didn't say that, I'm just gonna leave."
     taran "..."
     n "..."
@@ -158,20 +166,27 @@ label edit_video:
     hide taran with moveoutright
     stop music fadeout 3.0
     music end
+    show cs
     cs "Well, I guess since this video is already good enough, I can upload it now."
     cs "It's so crazy having the ability to access the LTT channels. There's so much crazy shit going on here!"
     cs "Oh well. Time to upload this."
     n "CS pauses for a moment."
+    show cs surprised
     cs "I don't know. I really feel like I shouldn't upload this yet."
     cs "It doesn't feel complete. Something is missing from it..."
     cs "Lemme go look at the project file and run through the video again."
     n "Just as CS was about to watch his video, an idea kicked in."
+    show cs happy
     cs "I got it! I know exactly what to do!"
+    show cs
     cs "If Taran really does mean what he says about Linus, then I'm sure he'll love this!"
+    show cs happy
     cs "I'm gonna turn this video into a YTP!"
     cs "It will be perfect! No one will expect it because they probably don't even know what I did with my life for the past 13 years!"
+    show cs
     cs "As always, I should make sure it's as good as possible so at least Linus will enjoy it, along with his fans."
     cs "But I also don't have much time before Linus comes back and notices, so I need to hurry!"
+    show cs happy
     cs "Welp, time to get to work!"
     scene black with dissolve
     music Supernova - Laszlo
@@ -187,11 +202,13 @@ label fired:
     cs "Hey guys! Did you all check out the new video?"
     show linus at right with moveinright
     linus "Yes, and we need to talk."
+    show cs happy
     cs "Don't worry, I already know it's perfect. It's so great, isn't it?"
     linus "It's actually the very opposite of that. You're fired."
-    show cs disappointed
+    show cs worried
     cs "Wait, what?"
     linus "Look, I don't care how much you really wanted to humiliate me. Just leave."
+    show cs scared
     cs "I don't understand, I didn't think you would be this upse--{w=0.25}{nw}"
     linus "Just get out of here you stupid dumb animal!!"
     cs "..."
@@ -227,13 +244,13 @@ label boost:
     play music "<loop 0>airport_counter.mp3" volume 0.5
     music Airport Counter - Kazumi Totaka
     linus "Dude, what are you talking about? That video was {i}awesome!{/i}"
-    show cs at left
+    show cs worried at left
     cs "Woah, wait! You actually {i}like{/i} YTPs?"
     linus "Yeah, man! You think I just hired you on the spot because of your obviously fake visa?"
     linus "I love your videos! I've been secretly hoping you would YTP one of mine for the longest time!"
+    show cs happy with dissolve
     show linus at left with ease
     show linus at center with ease
-    show cs happy
     n "CS' frown fades into a big grin as they both high five."
     cs "Hell yeah! I never would've thought that YTPs would help me in a business setting, let alone with a boss who enjoys them!"
     cs "Alright! Well, I guess I'd better get back to poopin'!"
@@ -337,10 +354,14 @@ label boost:
     cs "Who knew recording could be so stressful. I could use a drink. The lights are so bright."
     if fun_value(15):
         linus "Here. Take this water bottl-- oops!"
+        play sound "sfx_metalpipe.mp3"
+        show cs scared with vpunch
         n "Linus drops the water bottle on the ground."
+        show cs worried
         cs "You really have butter fingers with everything, Linus."
     else:
         linus "Here. Take this water bottle, it will keep you hydrated and your water cool. lttstore.com"
+        show cs disappointed
         cs "...Linus, we aren't filming..."
         linus "Sorry. Force of habit."
     n "Some time passes and they finish the recording."
@@ -366,12 +387,14 @@ label reviews:
     linus "Sweet! I'll make sure to hit you up for our next video!"
     linus "If you want, you can think of some ideas for next time."
     linus "You should probably head out for now. It's getting late."
+    show cs disappointed
     cs "Yeah, I just hope that my community will move on with this new content."
     cs "I've been making YouTube Poops for a while now, so I hope they understand in due time."
     linus "I'm sure you'll be okay. Plus, the LTT fanbase is much bigger!"
     cs "I guess so."
     n "Before CS can think about this too much, a lot of commotion can be heard at the front of the building."
     show colton at mid_right with moveinright
+    show cs worried
     colton "Linus! There is a furry outside!"
     linus "What?"
     linus "Hold on, lemme check."
@@ -381,8 +404,10 @@ label reviews:
     show cs at center with moveinleft
     n "Linus goes to open the door."
     linus "Who's there? Is anyone here?"
+    stop music fadeout 1.0
     n "Suddenly, Arceus rushes in through the doors."
     show arceus worried at mid_right with moveinright
+    show cs scared
     arceus "CS! There you are! We need to go, ASAP!"
     play music2 "<loop 0>hired_guns.mp3" volume 0.5
     music Hired Guns - Brian Johnston
@@ -1038,6 +1063,7 @@ label bad_convince:
     show hold_it at truecenter with hpunch
     pause 1.0
     hide hold_it
+    show cs scared
     cs "Wait a second! I'm not actually CS!"
     cs "I just {i}look{/i} like CS!"
     show arceus worried
@@ -1048,11 +1074,12 @@ label bad_convince:
     hide objection
     stop music
     music end
+    show cs disappointed
     copguy "Nice try, bud. We saw your fake visa and everything. You two are going back to the slammer."
     bad_end "Did you really\nthink that would work?" "copcar_menu"
 
 label good_convince:
-    show cs worried
+    show cs angry
     play music "<loop 0>pressing_pursuit_cornered.mp3" volume 0.3
     music Pressing Pursuit ~ Cornered - Masakazu Sugimori
     play sound "sfx_hold_it.mp3" volume 0.5
@@ -1064,6 +1091,7 @@ label good_convince:
     arceus "Wait, what?"
     show arceus
     copguy "What are you on about?"
+    show cs worried
     cs "Yes! HoH SiS scammed me out of thousands of dollars to get my foundation fixed, and they also broke my laptop!"
     cs "So, afterwards, I wanted to get my revenge!"
     copguy "I'm not believing this for a second."

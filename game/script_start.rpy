@@ -380,6 +380,8 @@ define snufkin = Character("Snufkin", callback = renpy.partial(char_callback, na
 define alicia = Character("Alicia", callback = renpy.partial(char_callback, name = "alicia"))
 define witch = Character("Witch", callback = renpy.partial(char_callback, name = "witch"))  # DX: Beep
 define tate_offscreen = Character("???", callback = renpy.partial(char_callback, name = "tate_offscreen", beep="tate"))
+define pakoo_offscreen = Character("???", callback = renpy.partial(char_callback, name = "pakoo_offscreen", beep="pak"))
+define green_offscreen = Character("???", callback = renpy.partial(char_callback, name = "green", beep = "green"), what_color="#00FF00")
 
 # Character Images
 ## CS
@@ -402,6 +404,7 @@ image cs disappointed metal3 = "characters/cs/disappointedmetal3.png"
 image cs disappointed metal4 = "characters/cs/disappointedmetal4.png"
 image cs disappointed flipped = "flip:characters/cs/disappointed.png"
 image cs concentrate = "characters/cs/concentrate.png"
+image cs concentrate flipped = "flip:characters/cs/concentrate.png"
 image cs concentrate dark = "characters/cs/concentratedark.png"
 image cs phone = "characters/cs/phone.png"
 image cs dark = "characters/cs/neutraldark.png"

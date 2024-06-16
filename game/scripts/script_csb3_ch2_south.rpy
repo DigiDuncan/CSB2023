@@ -18,6 +18,7 @@ label south:
     scene town with fade
     show cs at left with moveinleft
     show arceus at right with moveinright
+    show cs happy
     cs "Oh my God! We found civilization again!"
     arceus "Thank God."
     n "The two look around for a bit until they see a gas station close by."
@@ -34,7 +35,7 @@ label south:
     arceus "Thank God the slushie machine was working for once." 
     n "After they finish their food, they start to plan their epic journey to Vegas."
     scene gasoutside with fade
-    show cs at left
+    show cs surprised at left
     show arceus flipped at right
     with moveinleft
     show arceus with determination
@@ -42,6 +43,7 @@ label south:
     arceus "We could use those bikes over there?"
     cs "Nah, that's too much effort."
     cs "How about..."
+    show cs
     cs "Hold on. I got an idea."
     play music "brick_by_dick.mp3"
     music Brick by Brick (Suck my Dick) - cs188
@@ -51,6 +53,7 @@ label south:
     n "CS quickly starts grabbing material from thin air and puts together a new car."
     play sound "sfx_legosfx.mp3" volume 1
     pause 3.0
+    show cs happy
     cs "Tada!"
     arceus "{i}How did you do that?!"
     cs "Look, I'm a master builder. You wouldn't understand."
@@ -95,6 +98,7 @@ label utah:
         show arceus at right behind cscar2
         n "As they approach the sign, it reads \"Welcome to UTAJ, Life Elevated\"."
         arceus "Welp. You tried."
+        show cs disappointed
         cs "I could've sworn we were going the right way."
         arceus "Did you ever see a sign that said \"Las Vegas - in however many miles\"?"
         cs "No...?"
@@ -110,6 +114,7 @@ label utah:
         show arceus at right behind cscar2
         n "As they approach the sign, it reads \"Welcome to UTAH, Life Elevated\"."
         arceus "Welp. You tried."
+        show cs disappointed
         cs "I could've sworn we were going the right way."
         arceus "Did you ever see a sign that said \"Las Vegas - in however many miles\"?"
         cs "No...?"
@@ -125,14 +130,20 @@ label utah:
     show arceus at right behind cscar2
     with dissolve
     cs "Alright, let's start looking for a place."
+    show cs surprised
     cs "We got, like, Joe's Diner over there, there's a Casey's..."
+    show cs worried
     cs "Grilled Mormons? Ewww!"
     arceus "There's uhh... The Soup Store?"
+    show cs disappointed
     cs "Nah, that's a clothing store."
     arceus "Oh, weird."
+    show cs surprised
     cs "Wait, hold up! I think I see a pizza place!"
     arceus "Man, pizza {i}does{/i} sound good right about now."
+    show cs
     cs "Woah, what? It's a Lego pizza place?"
+    show cs happy
     cs "We're going there. {i}Right now."
     n "CS pulls into the parking lot of the restaurant."
     scene pizzaplace with fade
@@ -153,6 +164,7 @@ label utah:
     show cs dark at left
     show arceus worried dark at right
     n "CS pushes the door open."
+    show cs happy dark
     cs "The door isn't locked! We can go in!"
     arceus "Oh, great. Yippee..."
     scene black with fade
@@ -174,14 +186,18 @@ label utah:
         arceus "Ahhh!! FUCK!"
         show arceus angry dark
         arceus "Please CS, can we {i}not{/i} go to the one place with a {i}bee?{/i}"
+        show cs disappointed dark
         cs "No? It's just a plushie..."
         cs "Anyways..."
+    show cs dark
     cs "Wow, a Lego-themed pizza restaurant. This place looks like it was built out of Lego, too!"
+    show cs happy dark flipped at mid_offscreen_left with moveoutleft
     cs "Woah, Arc, look at those giant minifig statues!"
     n "Up in the front of the room, four human-scale Lego minifigures can be seen standing up on the stage."
     n "CS goes up to stand next to them."
     scene legostage with fade
     show cs dark at left with moveinleft
+    show cs happy dark
     cs "Arceus, do you have a camera? You should take a picture of me!"
     arceus "No, why would I have a camera? Also, you probably shouldn't be up there!"
     arceus "Weren't we gonna get some pizza?"
@@ -197,12 +213,14 @@ label utah:
     n "A couple boxes of freshly-baked pizza are sitting there."
     show arceus worried dark
     arceus "It's hot, too! Who {i}made{/i} this?"
+    show cs happy dark
     cs "The cook who works here, duh!"
     arceus "The place was closed, CS."
     cs "Well, then, why would the cook be in the back making pizzas?"
     show arceus angry dark
     arceus "Because there is-- Whatever, let's just find a place to sit down and eat."
     arceus "... And not out here. I don't wanna look at those creepy minifigures."
+    show cs disappointed dark
     cs "Fine..."
     n "CS and Arceus head down the hallway next to the kitchen area until they find a small office in the back."
     scene fazplace with fade
@@ -210,11 +228,13 @@ label utah:
     show arceus flipped dark at right with moveinleft
     show arceus dark
     arceus "Perfect. Let's eat in here, then we get back in the car."
+    show cs disappointed dark
     cs "Aww, I wanted to spend the night here!"
     show arceus angry dark
     arceus "No fucking way, dude."
     show arceus dark
     n "CS notices a Lego RC car sitting on the desk with a controller."
+    show cs happy dark
     cs "Ah, sweet! I used to have one of these!"
     n "As CS turns it on, the TV screen next to them turns on as well, and shows live footage from the Lego car."
     scene tvcar with dissolve
@@ -245,7 +265,7 @@ label utah:
     scene fazhall
     show lego at truecenter
     with fade
-    show cs dark at mid_left_left with moveinleft
+    show cs disappointed dark at mid_left_left with moveinleft
     show arceus worried dark at mid_right_right with moveinright   
     n "Before they make it to the door, Arceus stops dead in his tracks."
     cs "Hey! Why'd we stop?"
@@ -265,6 +285,7 @@ label utah:
     lego "A MAN HAS FALLEN INTO THE--"
     hide lego with moveoutbottom
     n "The minifigure crashes into the wall and falls to the ground."
+    # TODO: whenever arc gets dark sprites to be handled programatically we need dark surprised and dark scared sprites for cs
     show cs worried dark with vpunch
     n "The other figures up ahead turn on and start moving toward Arceus and CS."
     show arceus worried dark
@@ -348,12 +369,14 @@ label vegas:
     arceus "I doubt we will, but, hell yeah! Let's go!"
     show arceus dark
     arceus "Do you want to get something to eat first? I see a place called Pasta... Italy... something.{w=1.0} They probably have food."
+    show cs disappointed dark
     cs "Why would we eat? We just got here, and I wanna gamble!"
+    show cs happy dark
     cs "Look over there! SlotsaFun! That looks like a cool place to start!"
     arceus "Alright, sure, I guess I can find something to eat there... Probably."
     show arceus dark flipped with determination
-    hide cs dark
-    hide arceus dark
+    hide cs
+    hide arceus
     with moveoutright
     n "CS and Arceus enter the casino. It looks like chaos is unfolding in front of their faces."
     scene casino1 with fade
@@ -362,6 +385,7 @@ label vegas:
     show cs at left with moveinleft
     show arceus at right with moveinright
     show arceus worried
+    show cs happy
     arceus "Oh, God, I already feel like I have a migraine..."
     cs "C'mon, Arc, let's go play some slots!"
     hide cs dark with moveoutright
@@ -410,14 +434,15 @@ label vegas:
     stop music fadeout 3.0
     stop sound fadeout 2.0
     music end
-    unknown "Hey, you!"
+    green_offscreen "Hey, you!"
     show cs disappointed flipped
     cs "Huh? Me?"
     n "CS notices a well-dressed man smoking a cigar and waving him over."
-    unknown "Yeah, you! Come over to the poker tabeh! {i}coughs{/i} I bet I can beat you!"
+    green_offscreen "Yeah, you! Come over to the poker tabeh! {i}coughs{/i} I bet I can beat you!"
     cs "I guess this is my last chance to make it big. It's worth a shot."
+    show cs surprised flipped
     cs "Alright, sure, I'll play a round, but I don't have much."
-    unknown "Arright, great! Come sit down here."
+    green_offscreen "Arright, great! Come sit down here."
     hide cs with moveoutleft
     n "CS sits down at the poker table and notices that the man's skin is a putrid green."
     n "CS looks disgusted, but shrugs, as he doesn't want to start trouble now."
@@ -618,6 +643,7 @@ label poker3:
         green "Hahahahahahahahahahahahahahahaha!!!!!!{nw}"
         show lancer at center with moveintop
         show lancer with vpunch
+        show cs scared flipped
         play sound "secret/sfx_explosion.mp3" volume 1.5
         show green at t_punchup with move
         pause 0.3
@@ -657,6 +683,7 @@ label poker3:
         arceus "I think I'm gonna head back to the car..."
         cs "Alright, I'm ready to leave too, because we just won a ton of money!"
         arceus "Wh... what?? Are you just trying to make me feel better?"
+        show cs happy
         cs "No joke! Look, let's head out to the car!"
         arceus "Alright..."
         hide arceus with moveoutleft
@@ -671,8 +698,8 @@ label poker3:
         arceus "I do feel better now, yeah."
         arceus "I think it was just too much sensory overload for me."
         cs "Well, glad to hear you're feeling better!"
-        cs "What's also good to hear is that we are rich as hell!"
         show cs happy flipped
+        cs "What's also good to hear is that we are rich as hell!"
         show case flipped at right
         n "CS opens the case to reveal loads of gold bars and diamonds."
         show arceus happy flipped
@@ -712,6 +739,7 @@ label poker3:
         cs "Uhh, I dunno."
         jerma "Well, congrats on your victory!"
         jerma "I'll go get the money for you. Mr. Green is gonna have to pay up to {i}me,{/i} now."
+        show cs happy flipped
         cs "Alright! I'm gonna go find my friend real quick."
         jerma "Sure thing! Meet me back by the employee access area."
         show cs with determination
@@ -734,6 +762,7 @@ label poker3:
         arceus "I think I'm gonna head back to the car..."
         cs "Alright, I'm ready to leave too, because we just won 100 million dollars!"
         arceus "Wh- what?? Are you just trying to make me feel better?"
+        show cs happy
         cs "No joke! Look, head out to the car, and I'll meet you there!"
         arceus "Alright..."
         hide arceus with moveoutleft
@@ -774,8 +803,8 @@ label poker3:
         arceus "I do feel better now, yeah."
         arceus "I think it was just too much sensory overload for me."
         cs "Well, glad to hear you're feeling better!"
-        cs "What's also good to hear is that we are rich as hell!"
         show cs happy flipped
+        cs "What's also good to hear is that we are rich as hell!"
         show case flipped at right
         n "CS opens the case to reveal loads of gold bars and diamonds."
         show arceus happy flipped
