@@ -3,15 +3,15 @@ init python:
 
     # Constants
     SHARPENER_MOUTH = 1430
-    DIGI_SCORE = 500
+    DIGI_SCORE = 1000
     MAX_PENCIL_LENGTH = 20.0
     SHARPEN_AMOUNT = 0.5
     GAME_LENGTH = 240 + 3
     PENCIL_WIDTH_PX = int(41.2 * 20)
     ERASER_SIZE = 200
-    PENCIL_LIMIT = 50
+    PENCIL_LIMIT = 60
 
-    class PencilGameDisplayable(renpy.Displayable):
+    class PencilGameDisplayable2(renpy.Displayable):
         def __init__(self):
             renpy.Displayable.__init__(self)
             # I'm using a boolean statement here, Q needing to be pressed is True, E needing to be pressed is false. Reason for this is just so I can be lazy.
@@ -27,14 +27,14 @@ init python:
             self.start_time = None
             self.win = None
             self.score = 0
-            self.pencil_sharpener = Image("minigames/pencil2/sharpener.png")
+            self.pencil_sharpener = Image("minigames/pencil/sharpener.png")
             if fun_value(10):
                 self.current_pencil = Image("secret/pencilcolor.png")
             else:           
-                self.current_pencil = Image("minigames/pencil2/pencil.png")
-            self.keyboard_q = Image("minigames/pencil2/key_q.png")
-            self.keyboard_e = Image("minigames/pencil2/key_e.png")
-            self.red_x = Image("minigames/pencil2/red_x.png")
+                self.current_pencil = Image("minigames/pencil/pencil.png")
+            self.keyboard_q = Image("minigames/pencil/key_q.png")
+            self.keyboard_e = Image("minigames/pencil/key_e.png")
+            self.red_x = Image("minigames/pencil/red_x.png")
 
             self.pencils = 0
             self.lock_out_time = None
@@ -56,28 +56,28 @@ init python:
                 if 0 < current_time < 1:
                     # Display 3
                     if not self.three_played:
-                        renpy.sound.play("minigames/pencil2/sfx_smash_3.wav")
+                        renpy.sound.play("minigames/pencil2/sfx_ding.wav")
                         self.three_played = True
                     countdown_renderer = renpy.render(Text("3", color="FF0000", size=200), 1920, 1080, st, at)
                     r.blit(countdown_renderer, (960, 540))
                 elif 1 < current_time < 2:
                     # Display 2
                     if not self.two_played:
-                        renpy.sound.play("minigames/pencil2/sfx_smash_2.wav")
+                        renpy.sound.play("minigames/pencil2/sfx_ding.wav")
                         self.two_played = True
                     countdown_renderer = renpy.render(Text("2", color="FFFF00", size=200), 1920, 1080, st, at)
                     r.blit(countdown_renderer, (960, 540))
                 elif 2 < current_time < 3:
                     # Display 1
                     if not self.one_played:
-                        renpy.sound.play("minigames/pencil2/sfx_smash_1.wav")
+                        renpy.sound.play("minigames/pencil2/sfx_ding.wav")
                         self.one_played = True
                     countdown_renderer = renpy.render(Text("1", color="00FF00", size=200), 1920, 1080, st, at)
                     r.blit(countdown_renderer, (960, 540))
                 elif current_time > 3:
                     # Yell Go at the player
                     if not self.go_played:
-                        renpy.sound.play("minigames/pencil2/sfx_smash_go.wav")
+                        renpy.sound.play("minigames/pencil2/sfx_dong.wav")
                         self.go_played = True
                     self.started = True
 
@@ -101,7 +101,7 @@ init python:
             if self.lock_out_time and current_time < self.lock_out_time:
                 r.blit(red_x_renderer, (1200, 300))
                 if not self.fail_played:
-                    renpy.sound.play("minigames/pencil2/sfx_fail.mp3")
+                    renpy.sound.play("minigames/pencil/sfx_fail.mp3")
                     self.fail_played = True
 
             elif self.lock_out_time and current_time >= self.lock_out_time:
@@ -151,14 +151,14 @@ init python:
             if ev.type == pygame.KEYDOWN and self.started:
                 if ev.key == pygame.K_q and self.current_key and not self.lock_out_time:
                     # Progress the pencil.
-                    self.pencil_sharpener = Image("minigames/pencil2/sharpener2.png")
+                    self.pencil_sharpener = Image("minigames/pencil/sharpener2.png")
                     self.current_pencil_length -= SHARPEN_AMOUNT
                     self.current_key = False
                     if self.current_pencil_length >= 0:
                         self.score += SHARPEN_AMOUNT
                 elif ev.key == pygame.K_e and not self.current_key and not self.lock_out_time:
                     # Progress the pencil
-                    self.pencil_sharpener = Image("minigames/pencil2/sharpener.png")
+                    self.pencil_sharpener = Image("minigames/pencil/sharpener.png")
                     self.current_pencil_length -= SHARPEN_AMOUNT
                     self.current_key = True
                     if self.current_pencil_length >= 0:
@@ -177,9 +177,9 @@ init python:
 
 
 screen pencilgame2:
-    default pencilgame2 = PencilGameDisplayable()
-    add "minigames/pencil2/stage.png"
-    add "minigames/pencil2/table.png" at transform:
+    default pencilgame2 = PencilGameDisplayable2()
+    add "images/bg/pencilroom.png"
+    add "minigames/pencil/table.png" at transform:
         yalign 1.0
     text "Press [[SPACE] to move on to the next pencil!":
         xalign 0.5
@@ -197,17 +197,10 @@ label minigame_pencil2:
     $ quick_menu = True
     window show
 
-    if _return >= 300:
+    if _return >= 30000000:
         $ achievement_manager.unlock("Pencilovania")
-    if archack:
-        if _return > (DIGI_SCORE - 70):
-            $ achievement_manager.unlock("Pencil Sharpening Day!")
-            $ renpy.jump(minigame_win)
-        else:
-            $ renpy.jump(minigame_loss)
     else:
         if _return > DIGI_SCORE:
-            $ achievement_manager.unlock("Pencil Sharpening Day!")
             $ renpy.jump(minigame_win)
         else:
             $ renpy.jump(minigame_loss)

@@ -239,28 +239,43 @@ label after_true:
     hide cs with moveoutright
     scene black with dissolve
     n "CS gets to the bathroom and takes off his stuffy pencil costume."
+    scene cult_con
     show cs disappointed at center
+    with dissolve
     cs "God, what the fuck is all of this?"
     cs "I can't tell if I'm still in the past or what is going on now."
     cs "I need to find a way out of here."
     n "Just as CS was going to look for an exit, a video starts playing on one of the many TVs around the convention."
     scene black with dissolve
     #CultCon intro video plays
-    show cs with dissolve
+    n "A video would play here, but I didn't finish it yet."
+    n "The video would sum up Cult Con, explaining that there is a side competition that takes place."
+    n "The competition is where cults sign up to try to impress other cults and get votes to win a prize."
+    n "The prize is Billy's machine that he made, somehow in the hands of CultCon."
+    scene cult_con
+    show cs 
+    with dissolve
     cs "Well, I guess I'm not leaving now!"
     cs "I need to figure out how to get Billy's machine back..."
     n "Before cs can think, a familiar voice is heard rushing over to him."
+    show cs disappointed at left with move
+    show csgod at right with moveinright
     csgod "Stop! Don't go anywhere yet!"
     cs "Oh great, what's going on now?"
     csgod "This is very convenient timing, I need you to speak to someone for me."
     csgod "There is this group of people, they are known as the Blue Branch Cult. They are--"
+    show cs
     cs "The Blue Branch Cult? Yeah, I've met them before. When Billy was taking us home?"
     csgod "Wait, you've seen them?"
     cs "Yeah, they tried to kill us! Don't you like, watch my every move or something?"
     csgod "I don't remember, I was probably taking a shit."
+    show cs disappointed
     cs "You... do that?"
+    hide csgod
+    show csgod_angry at right
     csgod "Look CS, I may be a god, but we still do a lot of the same things you mortals do."
     csgod "I don't watch over you every second, I'm sorry, but that would be extremely boring."
+    show cs angry
     cs "Wow, okay! I have had a pretty interesting life at least since HoH SiS came along!"
     cs "Why can't you speak to your cult yourself?"
     csgod "Okay let me explain this to you."
@@ -268,25 +283,41 @@ label after_true:
     csgod "You let that shit go to voicemail man, otherwise you're gonna get spammed till the end of time."
     cs "So you just want a middle man to do it for you."
     csgod "Well, yeah? Kinda?"
+    show cs pissed
     cs "I don't know how many times you have to take a shit or whatever, but if you were watching me, I am FUCKING STUCK IN THE PAST."
+    hide csgod_angry
+    show csgod at right
     csgod "..."
     csgod "Oh."
     csgod "..."
     csgod "So..."
     csgod "Do you think you still can still talk to them for me?"
+    show cs
     cs "Oh yeah sure give me one second."
+    show cs flipped with determination
+    hide cs with moveoutleft
     n "CS rushes off."
     csgod "Thank me, I thought this was gonna be harder."
+    show cs cultist at left with moveinleft
     cs "Yeah well fuck that, I'm not helping you!"
+    hide csgod
+    show csgod_angry at right
     csgod "Hey! Take that off right now! Your GOD demands it!"
     cs "Until you can bring me back to the future, I'm gonna go join your cult!"
     cs "And we are winning this competition!"
+    hide cs with moveoutright
     n "CS runs off to find the cultists."
     csgod "Fuck man, I really need to get my life together."
     n "Meanwhile, The Blue Branch Cult is deciding on how to win the yearly competition."
+    scene cult_con
+    show cultist_2 at right
+    show cultist_3 at mid_mid_right
+    show cultist at mid_right
+    with dissolve
     cultist_2 "Guys, how are we gonna win this year? CultCon is filled with actual competitors!"
     cultist_3 "Yeah, usually cults with the most followers would turn out to be some human traffickers or would torture their followers and lose."
     cultist "If it weren't for those Scientologist pricks, we would have a bit of an upper hand."
+    show cs cultist at left with moveinleft
     cs "Hey guys! Fellow hater of everything here!"
     cultist_3 "Is that a new follower?"
     cultist "I need to make sure. Do you think have what it takes to be a member of Blue Branch?"
@@ -370,6 +401,8 @@ label competiton_start:
     cs "Don't worry, we'll show him who's boss by the end of this."
     cultist "I hope so."
     n "CS runs off to find competitors."
+    scene cult_con with dissolve
+    show cs cultist at center with moveinleft
     cs "Alright, so there are a few cults I can challenge here."
     jump seek_competitors
     
@@ -391,26 +424,56 @@ label seek_competitors:
             jump lunatic_ask
 
 label pencil_ask:
+    cs "The cult leader said that the Pencil guys usually give us a vote, so I can see what they are up to. "
+    hide cs with moveoutright
+    n "CS makes his way to the pencil stand."
+    show pencilroom 
+    show pencilguy at right
+    with dissolve
+    show cs cultist at left with moveinleft
+    n "When he gets there, the Pencil leader immediately notices him."
+    pencil "Hey! You ran away from our group!"
+    pencil "You teamed up with Blue Branch? Hah! Well this year, we don't care anymore!"
+    show cs disappointed cultist
+    cs "What makes you say that?"
+    pencil "The cult idea wasn't really working out, so we are switching to a more casual approach to lure fans!"
+    cs "Like I suggested?"
     pencil "It's officially our idea now!"
     pencil "Look, if you want to win our vote, you gotta earn it!"
     pencil "Behold!"
     n "The pencil man pulls out a pencil sharpener."
+    show cs cultist
     cs "Lemme guess, a pencil sharpening contest?"
     pencil "How'd you know?"
     cs "Oh, just a hunch that's all."
-    pencil "Well if you can beat my score, we'll give you our vote!"
+    n "The pencil man puts the sharpener on the table next to them, and then pulls out a pack of 60 pencils."
+    pencil "You better hope you have some godlike endurance. You got 4 minutes."
+    pencil "If you can beat my score, we'll give you our vote!"
     cs "Oh, I'll win."
     pencil "Well aren't you cocky? Let's see this then!"
     pencil "3, 2, 1,"
     pencil "Go!"
+    minigame "minigame_pencil2" "win_pencil2" "lose_pencil_game"
 
+    label win_pencil2:
+    show pencilroom 
+    show pencilguy at right
+    show cs cultist at left
+    with dissolve
     pencil "Woah, where'd that kinda skill come from?"
     pencil "You're a pencil sharpening legend!"
     cs "I'll just say one thing."
     cs "October 27th. Remember that day."
     pencil "Uhh, alright?"
+    show cs cultist flipped with determination
+    hide cs with moveoutleft
     n "CS turns around and leaves without any more explanation."
+    show cult_con with dissolve
+    show cs cultist at center with moveinleft
     cs "Well, that takes me back."
     cs "Or I guess, that takes me forward!"
+    show cs disappointed cultist
     cs "Fuck I need to get back home..."
+    show cs cultist
     cs "Alright, well..."
+    jump seek_competitors
