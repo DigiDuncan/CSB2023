@@ -279,9 +279,9 @@ label boost:
     linus "Not exactly. It's an experimental piece of hardware that we have never used before, and it's custom-made."
     n "Linus holds the card into the air."
     linus "Behold! {w=0.5} The-- WOAH SHIT {w=0.5}{nw}"
-    # TODO: there should be a sound effect here for when he drops it
     show ytx at t_linus_drop_tips
     pause 0.35
+    play sound ("sfx_clonk.wav")
     show linus with vpunch
     n "Linus loses grip of the card as it tumbles down onto the table next to him."
     hide ytx
