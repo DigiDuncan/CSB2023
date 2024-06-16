@@ -56,7 +56,7 @@ init:
     transform _fun_value_fade:
         on show: 
             xanchor 0 xpos 1592
-            yanchor 0 ypos 995
+            yanchor 0 ypos 992
             alpha 0.00
             linear 0.25 alpha 1.00
             time 3.0
@@ -65,13 +65,13 @@ init:
     transform _fun_value_motion:
         block:
             linear 0.05 xpos 1591
-            linear 0.05 ypos 994
+            linear 0.05 ypos 991
 
             linear 0.05 xpos 1592
-            linear 0.05 ypos 995
+            linear 0.05 ypos 992
 
             linear 0.05 xpos 1593
-            linear 0.05 ypos 996
+            linear 0.05 ypos 993
 
             linear 0.25 alpha 1.00
             repeat
@@ -215,4 +215,5 @@ init python:
             
             # show the indicator. it'll fade out on its own and be hidden next time this runs
             renpy.show("_fun_value",[_fun_value_fade,_fun_value_motion],"fun_icon")
+            renpy.play("audio/sfx_sparkle.wav")
         return ret
