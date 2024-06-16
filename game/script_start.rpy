@@ -1,3 +1,26 @@
+# Text Beep Spacing
+# Partially stolen from:
+#   https://www.renpy.org/doc/html/config.html#var-config.replace_text
+#   https://lemmasoft.renai.us/forums/viewtopic.php?t=22730
+# This is meant to place pauses after certain punctuation automatically so that the dialogue feels more... human.
+# These are set up so that it only works if there is more than once sentence in the text box at any given time.
+# Make sure there's a space after your punctuation or it won't work.
+# You can still add manual pauses wherever you like in the script if this isn't enough for you.
+
+init python:
+    import re
+    def auto_wait(s):
+        # these items wait for 0.25:
+        # commas, periods, question marks, exclamation marks
+        s = re.sub(r'(([,|.|?|!])(({\/[a-z]*})*) )', r'\1{w=0.25}', s, flags=re.IGNORECASE) 
+
+        # these items wait for 0.5:
+        # ellipses, em-dashes, colons
+        s = re.sub(r'((\.\.\.|--|:)(({\/[a-z]*})*) )', r'\1{w=0.5}', s, flags=re.IGNORECASE) 
+
+        return s
+    config.say_menu_text_filter = auto_wait
+
 # Flip
 init -10 python:
     def xflip(s):
