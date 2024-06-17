@@ -704,7 +704,7 @@ label interstate_69:
     scene traffic
     show cscar1arc
     show billy at left
-    show cs flipped at right
+    show cs disappointed flipped at right
     show cscar2
     with dissolve 
     play music "<loop 0>honk_song.mp3" volume 0.8
@@ -725,9 +725,12 @@ label interstate_69:
     arceus "I'm not {i}that{/i} small, man..." # Me with the goddamn ellipses again lmao - Aria
     cs "No, look, that short guy. The one with the red pointy hat."
     arceus "Oh, shit, you're right! That looks like a gnome!"
+    show cs worried flipped
     cs "God, did Blank somehow track me to Michigan?"
     arceus "Blank is at least three gnomes tall, though. That couldn't just be him in a costume."
+    show cs disappointed flipped
     cs "You're probably right, but I wouldn't be all that shocked if he learned practical effects for a gag."
+    show cs worried flipped
     cs "Wait, is he coming this way?!"
     n "The gnome steps out from behind the tree and makes his way to the door of the unoccupied seat of the car, motioning a request to roll down the window."
     billy "Holy shit, you two weren't kidding. I think he's trying to talk to us."
@@ -742,6 +745,7 @@ label interstate_69:
     billy "What do you want with us?"
     gnome "I mean you no harm. May I sit and explain myself?"
     arceus "I don't think this guy is a threat. We may as well let him in."
+    show cs disappointed flipped
     cs "He'll at least make this traffic jam more entertaining."
     billy "Alright, fine, come on in."
     gnome "I thank you. As you may be aware, I am not of your Species."
@@ -755,6 +759,7 @@ label interstate_69:
     cs "How can you help us?"
     gnome "My kind is not of this World, but rather of the Forest Dimension. I cannot clear this Path, but I can bring you to another."
     cs "Yeah, that may as well happen to us at this point."
+    show cs happy flipped
     cs "Thanks for your help." 
     gnome "No need to thank me. It is mein Pleasure."
     n "Everyone feels an energy emanate from the gnome as they watch the environment around them transform from a modern university into a dense forest."
@@ -902,7 +907,7 @@ label interstate_69:
     aria "Wow, that phrasebook was really helpful."
     waitress "By the way, we don't have any pork to fry the rice right now."
     scene cafe_sitting_2
-    show cs at left
+    show cs disappointed at left
     show billy at center
     show arceus worried at right
     arceus "Wait, how?! That's by far the most popular thing we ordered..."
@@ -912,7 +917,7 @@ label interstate_69:
     show waitress at right
     waitress "Pigs are expensive and they have a good union. We just hired a bunch of shrimp instead."
     scene cafe_sitting_2
-    show cs at left
+    show cs disappointed at left
     show billy at center
     show arceus angry at right
     arceus "I'm not playing along with that joke."
@@ -1212,7 +1217,7 @@ label interstate_69:
     n "They all walk down and reach the apartment, then make their way to where the car is parked."
     scene aria_apartment_outside
     show billy at left
-    show cs
+    show cs 
     show arceus flipped at mid_left
     show aria at right
     with dissolve
@@ -1220,7 +1225,9 @@ label interstate_69:
     music end
     aria "Thanks for hanging out with me. It was fun."
     aria "Sorry you two didn't enjoy the woods, but I'm glad at least Billy seemed to like it."
+    show cs disappointed
     cs "I guess nothing was actively dangerous, and that's above average for us at this point."
+    show cs
     cs "Thanks for letting us rest at your place."
     aria "Anytime."
     aria "Billy, it was nice meeting you. You're welcome to come back and visit the woods again."
@@ -1732,7 +1739,7 @@ label win_pencil:
     cs "Good game!"
     hide cs onlayer broadcast
     show digi at t_stagescreen onlayer broadcast
-    digi "Same to you, man, that was wild!"
+    digi "Same to you, man! That was wild!"
     hide digi onlayer broadcast
     show cs at t_stagescreen onlayer broadcast
     cs "I don't know how I beat you, honestly."
