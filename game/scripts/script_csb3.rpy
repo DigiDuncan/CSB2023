@@ -289,7 +289,7 @@ label boost:
     n "CS looks unnerved."
     linus "Look, just... open the box. I'm sure you'll like it."
     n "CS cautiously takes the box and opens the top. "
-    show ytx at truecenter
+    show ytx at truecenter with dissolve
     n "Inside is what looks to be a graphics card, but with a brown YouTube logo engraved into the side."
     show cs
     cs "Woah, what is this, Linus? A YouTube-brand graphics card?"
@@ -299,13 +299,16 @@ label boost:
     show ytx at t_linus_drop_tips
     pause 0.35
     play sound ("sfx_clonk.wav")
+    show cs scared
     show linus with vpunch
     n "Linus loses grip of the card as it tumbles down onto the table next to him."
     hide ytx
     n "CS facepalms while Luke can be heard laughing in the background."
+    show cs disappointed
     cs "Goodness, Linus, you should maybe not do that next time."
     linus "Yeah, I'm sorry. Maybe {i}you{/i} should hold it." 
     linus "This card is called the YTX-9001 Ti, a PCI add-in for enhancing and optimizing YouTube Poops."
+    show cs
     n "CS' eyes widen."
     cs "Wait, whaaat? That's awesome! How does this even work?"
     linus "We don't even know. We haven't even tested it yet."
