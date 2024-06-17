@@ -5,12 +5,13 @@ label dpn_call:
     else:
         scene car_inside_fg
         show drive_day behind car_inside_fg
-    show cs at left
+    show cs disappointed at left
     show pakoo at right
     with fade
     play music "<loop 0>tuna_fish.mp3" loop volume 0.6
     music Tuna Fish - Dr. Awesome
     cs "What a crazy day so far, man."
+    show cs worried 
     cs "I can't believe we had to fight all of those cops! If it weren't for Tate and the gang, we'd be dead meat already."
     arceus "Yeah, but hey, you held them off pretty well with that fancy gun of yours."
     pakoo "Yeah, that was some great marksmanship, CS!"
@@ -62,7 +63,7 @@ label car_ride_1:
     show pakoo disappointed
     pakoo "Yeah, I getcha, I'm sur--{w=1.0}{nw}"
     play sound "sfx_car_horn.ogg" volume 1
-    show cs worried with vpunch
+    show cs scared with vpunch
     show pakoo worried with vpunch
     cs "JESUS!!"
     n "CS swerves all over the road after being startled."
@@ -190,11 +191,13 @@ label cs_meetup:
     show arceus dark flipped at mid_left
     show tate dark at left
     with moveinleft
+    show cs worried dark
     cs "Woah, what happened here? More cops?"
     if nice_car:
         aria_alt "First of all, nice car! Second of all, they weren't that hard to fight."
     else:
         aria_alt "Yeah, they weren't too much of a problem, through."
+    show cs disappointed dark
     tate "Good. The less cops, the better."
     aria_alt "Nova and Digi are at the diner up ahead. Let's move this blockade out of the way and get going."
     cs "Righty-o."
@@ -268,6 +271,7 @@ label cs_meetup_2:
         nova "That is a sick ride."
     else:
         digi "Yeah, what about you? What is going on here?"
+    show cs worried dark flipped
     cs "Well uhh..."
     if nice_car:
         arceus "We stole this car from a dealership, and then killed some cops."
@@ -278,6 +282,7 @@ label cs_meetup_2:
     arceus "HoH SiS problems."
     digi "Ahhh."
     nova "Does this mean CS is getting cancelled?"
+    show cs dark flipped
     cs "No, no, I'm not gonna get cancelled."
     digi "You killed, like, at least a few people!"
     arceus "Yeah, but at least he didn't, like, sell feet pics."
@@ -300,7 +305,7 @@ label cs_meetup_2:
     else:
         scene car_inside_fg
         show drive_night behind car_inside_fg
-    show cs at left
+    show cs disappointed at left
     show pakoo at right
     with fade
     cs "I really don't have any idea of where to go. I'm just driving in a straight line."
@@ -320,14 +325,13 @@ label car_ride_2:
     scene jeep_inside_fg
     show drive_night behind jeep_inside_fg
     show mika at left
-    show tate flipped at right
+    show tate srs flipped at right
     with fade
-    show tate srs flipped
     tate "Man, I'm bored."
     mika "Yeah, what the hell! Where is this Copguy dude at?"
     kitty "What if he's preparing defenses to ambush us?"
-    show tate flipped
     mika "We'll destroy anything that comes our way, don't worry."
+    show tate flipped
     tate "Hell yeah, we've got this!"
     mika "We've definitely got this, don't worry."
     kitty "I wonder how those new guys are handling the situation..."
@@ -366,6 +370,10 @@ label car_ride_2:
     music end
     cs "Well, should we find somewhere to stop for the night? We've been going for a while."
     pakoo "Holy shit! Stop, CS!"
+    play sound "sfx_tiresqueal.mp3"
+    show cs scared with vpunch
+    with vpunch
+    with vpunch
     hide drive_night
     if nice_car:
         show battle_block_without_theater behind joj_charger_fg
@@ -451,7 +459,7 @@ label cs_rage:
     n "All of a sudden, the debris starts moving on its own!"
     digi "Woah, what's going on?"
     cs "Can you guys please help--"
-    show cs dark at center with move
+    show cs worried dark at center with move
     cs "Wait, what the hell?! Did I move all of that already?"
     show tate dark
     n "As CS is gawking at the work he just did, a purple figure appears before him."
@@ -459,7 +467,7 @@ label cs_rage:
     hide arceus
     hide digi
     with moveoutleft
-    show cs dark at left with move
+    show cs worried dark at left with move
     show csgod at right with dissolve  
     csgod "You're welcome."
     cs "Woah, hey! Are you CSGod?"
@@ -467,13 +475,16 @@ label cs_rage:
     if nice_car:
         csgod "Also, it was I who allowed your intrusive thoughts to win, compelling you to pick that nice car."
         # i mean, he's a god, so he should probably speak like a god, goddamnit - tate
+        show cs happy dark
         cs "Well, thanks for that. This car is amazing!"
         cs "Anyways, can I use YTP Magic or something?"
     else:
         cs "Holy crap, does that mean I can use YTP Magic?"
+    show cs dark
     csgod "In theory, yes. Although, you should take some time to rest."
     csgod "Do not beat yourself up over Copguy. You will be able to defeat him if you calm down and focus."
     csgod "I shall let you go for now. Copguy is planning his most devious attack yet, and you need to be prepared."
+    show cs dark
     cs "I see. Well, thank you for that, CSGod!"
     csgod "No problem."
     hide csgod with dissolve
@@ -680,35 +691,43 @@ label between_1:
 
 label between_2:
     scene war_torn_5
-    show cs at center
+    show cs worried at center
     show tate at mid_left
     show arceus flipped at left
     with dissolve
     play music "the_whale.mp3" loop volume 0.6
     cs "C'mon, guys! We've gotta get to Copguy!"
+    show cs disappointed
     tate "Where is Copguy, anyway? Do you even know where he could be?"
     n "All of a sudden, the ground starts to shake as a blinding light blasts the group."
+    play sound "sfx_earthquake.mp3"
     stop music fadeout 3.0
     show tate shock
     show arceus worried flipped
-    show cs worried with hpunch
-    show cs worried with vpunch
-    show cs worried with hpunch
-    show cs worried with vpunch
-    show cs worried with hpunch
-    show cs worried with vpunch
-    show cs worried with hpunch
-    show cs worried with vpunch
+    show cs scared with hpunch
+    with vpunch
+    with hpunch
+    with vpunch
+    with hpunch
+    with vpunch
+    with hpunch
+    with vpunch
+    with hpunch
+    with vpunch
+    with hpunch
+    with vpunch
     scene white with dissolve
     pause 0.5
     scene war_torn_5
     show cs worried at center
     show tate shock at mid_left
     show arceus worried flipped at left
+    play sound "sfx_bossappears.wav"
     show copguy_ex at right 
     with dissolve
-    play music "prophet_2001.mp3" loop volume 0.6
+    pause 2.0
     copguy "Well, well, well, CS."
+    play music "prophet_2001.mp3" loop volume 0.6
     copguy "How do you like my new form? Pretty cool, right?"
     show cs angry
     show tate srs
@@ -746,13 +765,14 @@ label car_slam:
     scene war_torn_1 with fade
     n "CS looks around, taking in the destruction around him."
     n "The city that they once fought in has now been reduced to rubble and war-torn buildings."
-    show cs flipped at right with moveinbottom
+    show cs worried flipped at right with moveinbottom
     n "CS gathers his bearings and starts checking on his friends."
     cs "Hello? Are you guys alright?"
     show arceus flipped at mid_mid_left with moveinleft
     arceus "Did we get him?"
     show pakoo flipped at left with moveinleft
     pakoo "Man, that was insane. You guys demolished this place!"
+    show cs disappointed flipped
     cs "I hope Copguy is dead. I am {i}definitely{/i} going to jail for this one if he's still alive!"
     n "CS continues to check on the others."
     hide cs with moveoutleft
@@ -767,12 +787,12 @@ label car_slam:
     tate "Y'all {i}see{/i} that shit?!"
     mika "CS crushed the whole city!"
     show tate
-    show cs at mid_right with moveinleft
+    show cs disappointed flipped at mid_right with moveinright
     cs "Hey guys! Are you alright?"
     kitty "Yeah, we're alright. I'm assuming you're fine?"
     cs "Better than ever! Although, that did wear me out quite a bit."
     cs "I'm gonna go see how the rest are doing."
-    hide cs with moveoutright
+    hide cs with moveoutleft
     scene black with fade
     pause 1.0
     scene war_torn_3
@@ -788,8 +808,10 @@ label car_slam:
         aria_alt "I never thought that our first meetup would be at a mall, and our second would be the destruction of Chigaco."  
     else:  
         aria_alt "I never thought that our first meetup would be at a mall, and our second would be the destruction of Chicago."
+    show cs happy
     n "CS laughs."
     cs "Yeah, me neither, Aria."
+    show cs
     cs "There is one last group to check on."
     hide cs with moveoutright
     scene black with fade
@@ -807,6 +829,7 @@ label car_slam:
     cs "Dang, that's a shame."
     cs "I kinda hope he doesn't show up now. I'd hate for him to witness the damage we did."
     midge "Well, we won, right? What's the plan now?"
+    show cs angry
     cs "I wanna make sure Copguy is gone for real."
     cs "I'll be right back."
     hide cs with moveoutright
@@ -816,18 +839,21 @@ label car_slam:
     show cs at left with moveinleft
     n "CS walks through the wastelands searching for anything reminiscent of Copguy."
     n "Eventually, he finds Copguy's wrecked cop car."
-    show cs at center with move
+    show cs disappointed at center with move
     cs "Welp. There rests Copguy."
     cs "He fought well, he was a good cop, and God rest his soul."
     pause 3.0
     show cs flipped
     cs "Nahhh! That guy was a jerk!"
+    show cs happy flipped
     cs "This is why you don't mess with the Master Of The Poop!"
+    show cs surprised flipped
     cs "...The Youtube Poop, actually. I realize that sounded kinda stupid."
     n "CS turns around and walks away."
     show cs flipped at mid_left with move
     show copguycrawl at mid_right with moveinbottom
     show copguycrawl with vpunch
+    show cs scared flipped
     copguy "Damn it, you can't escape from me!"
     n "Copguy manages to crawl out of the rubble that is his car."
     show cs worried
@@ -838,18 +864,21 @@ label car_slam:
     show db_cooper at offscreenright
     copguy "C--{w=0.5}{nw}"
     show db_cooper at right with moveinleft
+    show cs scared
     play sound "secret/sfx_explosion.mp3" volume 1.5
     show copguycrawl with hpunch
     hide copguycrawl with moveoutbottom
     show cs worried at left with move
     db "Hey, guys! I finally made it!"
     db "Sorry I'm late! I had to feed the pets back at home and--"
+    show cs
     cs "DB, you did it!"
     db "What? What'd I do?"
-    show cs
+    show cs happy
     cs "You killed Copguy!"
     db "Oh no, does that mean I'm gonna go to jail?"
     db "I can't go! Who's gonna take care of everything back at home?"
+    show cs
     cs "Relax, we destroyed the majority of the police force."
     db "Wait, so does that mean... {i}we{/i} were the bad guys all along?"
     cs "Nah."
