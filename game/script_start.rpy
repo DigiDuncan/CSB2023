@@ -295,7 +295,7 @@ define green = Character("Mr. Green", callback = renpy.partial(char_callback, na
 define jerma = Character("Jerma", callback = renpy.partial(char_callback, name = "jerma", beep = "jerma"))
 define pencil = Character("Pencil Greeter", callback =renpy.partial(char_callback, name = "pencil"))
 define signup = Character("Signup Helper", callback = char_callback)
-define host = Character("Host", callback = renpy.partial(char_callback, name = "mettaton", beep = "snd_mtt"), what_font = "DTM-MONO.otf", what_size = 40)
+define host = Character("Host", callback = renpy.partial(char_callback, name = "mettaton", beep = "snd_mtt"), what_font = "8bitoperator_jve.ttf", what_size = 40)
 define tsa = Character("TSA Agent", callback = renpy.partial(char_callback, name = "tsa"))
 define luigi = Character("Luigi", callback = renpy.partial(char_callback, name = "luigi", beep = "luigi"))
 define mika = Character("Mika", callback = renpy.partial(char_callback, name = "mika", beep = "mika"))
@@ -1023,7 +1023,7 @@ image sign_closeup = Movie(play="movies/sign_closeup.webm")
 image woc = Movie(play="movies/woc.webm")
 image where = Movie(play="movies/wherearetheynow.webm")
 image karaoke = Transform(Movie(play = "movies/karaoke.webm", side_mask = True), zoom = 1.5)
-image bad_end_screen = Transform(Movie(play = "movies/bad_ending.webm", side_mask = True, loop=False, image="images/fail_end.png"), xzoom=2)
+image bad_end_screen = Transform(Movie(play = "movies/bad_ending.webm", side_mask = True, loop=False, image="images/fail_end.png"), size=(1920,1080))
 
 #Fun Values
 image utajsign = "secret/utajsign.png"
@@ -1040,15 +1040,15 @@ image bubble = Transform("secret/bubble.png", zoom = 2.0)
 image blue_light:
     "blue_light.png"
     alpha 0.0
-    linear 0.5 alpha 1.0
+    linear 0.5 alpha 0.8
     linear 0.5 alpha 0.0
     repeat
 
 image red_light:
     "red_light.png"
-    alpha 1.0
+    alpha 0.8
     linear 0.5 alpha 0.0
-    linear 0.5 alpha 1.0
+    linear 0.5 alpha 0.8
     repeat
 
 image copguy_ex_front:

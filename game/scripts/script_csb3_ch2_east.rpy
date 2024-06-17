@@ -140,7 +140,7 @@ label montana:
     cs "Hey, Arc!"
     billy "CS, you should probably leave the dog thing in the back alone."
     n "Arceus immediately jerks straight up."
-    arceus "What did you just call me?"
+    arceus "{i}What did you just call me?{/i}"
     billy "Nothing!"
     scene hardwareoutside
     show billy car
@@ -305,7 +305,7 @@ label montana:
     # tate was here
     # this fun value references CS messing up reading during the livestream (around 2:37:45 of part 2 stream)
     # thanks brodie for finding the timestamp for me
-    if fun_value(237):
+    if fun_value(23):
         cs_fakegod "You'd better leave these three alone, or I'll, uh, {i}shite{/i} you!"
         cultist "CSGod doesn't smite, he uses YTP Mag--{w=0.5}"
         cultist "Wait, did you say \"shite\"?"

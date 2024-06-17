@@ -22,7 +22,7 @@ label car_dialogue:
     show billy car
     with fade
     play music "<loop 0>billy_mix.mp3" volume 1
-    music Billys Mix 1 - Billy Mays
+    music "Billy's Mix - Billy Mays"
     cs "Well, Arceus, it has been quite a ride."
     arceus "It sure has. We've been through quite a lot, haven't we?"
     cs "Yeah, I'm so tired. I can't wait to get some actual rest."
@@ -47,7 +47,9 @@ label car_dialogue:
     billy "No, I'm good. You're in {i}my{/i} car, and that means {i}I'll{/i} drive!"
     cs "Alright, man... I just don't feel like we paid you enough for this."
     billy "Everything I sell is always $19.95!"
-    cs "Well, thanks, man."
+    arceus "{size=-15}That isn't true--"
+    cs "{size=-15}Shh..."
+    cs "Thanks, man."
     billy "{i}That's{/i} the power of friendship!"
 
     pause 1.0
@@ -502,8 +504,8 @@ label car_dialogue:
     cs "Nothing! I just dropped something."
     show billy car
     billy "Alright. You'd better not mess with my gadgets!"
-    digi "{size=-10}Shhh! Don't say anything!"
-    cs "{size=-10}Okay, I've got it. Arceus, roll down the window."
+    digi "{size=-15}Shhh! Don't say anything!"
+    cs "{size=-15}Okay, I've got it. Arceus, roll down the window."
     play sound "<from 0 to 1>sfx_roll_window.ogg" volume 0.7
     pause 5.0
     cs "Alright, you ready?"

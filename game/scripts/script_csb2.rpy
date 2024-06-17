@@ -500,7 +500,10 @@ label bordercrossing:
     scene inside_ltt
     show linus
     with fade
-    play music "<loop 0>passport.mp3" volume 0.5
+    if fun_value(25):
+        play music "<loop 0>passport-ytp.mp3" volume 0.5
+    else:
+        play music "<loop 0>passport.mp3" volume 0.5
     music PASSPORT.MID - George Stone
     linus "Sure, you can have a job. Just show us proof of citizenship and you're ready to go!"
     cs "Colour is spelled with a u, eh."

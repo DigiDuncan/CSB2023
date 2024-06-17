@@ -59,7 +59,7 @@ init python:
         "The Metropolis of Fourside - Keiichi Suzuki": "fourside.mp3",
         "Pokeys House - Keiichi Suzuki": "pokey.mp3",
         "Rude Buster - Toby Fox": "rude_buster.mp3",
-        "Billys Mix 1 - Billy Mays": "billymusicu.mp3",
+        "Billy's Mix - Billy Mays": "billymusicu.mp3",
         "Park Theme - Lorin Nelson": "park_theme.mp3",
         "Alfred's Theme - Eminem": "hohsisremix.mp3",
         "Track 3 - Weatherscan": "track3.mp3",
@@ -145,7 +145,7 @@ init python:
     global album_map
 
     album_map = {
-        "Billys Mix 1 - Billy Mays": "billymix.png",
+        "Billy's Mix - Billy Mays": "billymix.png",
         "CANYON.MID - George Stone": "windows.png",
         "PASSPORT.MID - George Stone": "windows.png",
         "stal - C418": "minecraft.png",
@@ -224,7 +224,24 @@ init python:
         "Pixel Peeker Polka - Kevin MacLeod": "kevin.png",
         "Local Forecast - Kevin MacLeod": "kevin.png",
         "Track 4 - Weatherscan": "weather.png",
-        "Track 3 - Weatherscan": "weather.png"
+        "Track 3 - Weatherscan": "weather.png",
+        "Pressing Pursuit ~ Cornered - Masakazu Sugimori": "aceattorney.png",
+        "The Star Spangled Banner - THE UNITED STATES OF AMERICA": "america.png",
+        "Billy Mays Gangsta Remix - mastamokei": "billymays.png",
+        "Breakout - Shoichiro Sakamoto": "breakout.png",
+        "Brick by Brick (Suck my Dick) - cs188": "brickbybrick.png",
+        "BUBBLE TEA - darkcat": "bubbletea.png",
+        "Wayward Wanderer - Deep Gnome": "deepgnome.png",
+        "Alfred Hitchcock Intro Theme - Charles Gounod": "hitchcock.png",
+        "Speedy Comet - Mahito Yokota": "mariogalaxy.png",
+        "Melancholy - Imori": "melancholy",
+        "MisLeader - Triosk and Jan Jelinek": "misleader.png",
+        "Airport Counter - Kazumi Totaka": "newhorizons.png",
+        "Summer Clearance Sale - BEST MUSIC": "summerclearance.png",
+        "Morning Highway - BEST MUSIC": "summerclearance.png",
+        "Afternoon Hills - BEST MUSIC": "summerclearance.png",
+        "Supernova - Laszlo": "supernova.png",
+        "Al's Penthouse - Andy Blythe": "toystory.png"
     }
 
 
@@ -324,6 +341,6 @@ screen music_screen(l):
                 yalign(0.5)
         else:
             image f"images/jukebox/{album_map[l]}":
-                xysize(500, 500)
+                xysize(512, 512)
                 xalign(0.225)
                 yalign(0.5)

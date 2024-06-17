@@ -77,6 +77,7 @@
 - Aria "Estroteric"
 - Mrs. 8923
 **3D Rendering:** 4Bakers  
+**Asset Remastering Director:** 4Bakers
 **Sprite Manager:** Pakoo
 
 ## Audio
@@ -91,6 +92,9 @@
 - George Stone
     - Canyon
     - Passport
+- isg music lab
+    - Canyon Virtual Instruments Remake
+    - Passport Virtual Instruments Remake
 - BEST MUSIC
     - サマークリアランスセール
     - Morning Highway
@@ -180,7 +184,7 @@
 - Shoichiro Sakamoto
     - Breakout
 - Billy Mays (kinda)
-    - Billys Mix 1
+    - Billy's Mix
 - Andy Blythe
     - Al's Penthouse
 - Marten Joustra

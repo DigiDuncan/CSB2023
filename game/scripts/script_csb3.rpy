@@ -391,7 +391,7 @@ label reviews:
     cs "It's a long story."
     cs "Arceus, what's going on? Where have you been?"
     arceus "Look, CS, we don't have much time. I know that you've been living here for a while, but the cops are still looking to extradite us back to America, and they are headed to LTT to search for you!"
-    linus "{i}What{/i}? CS, why are the cops chasing you? This could seriously damage our reputation {size=-10}more than the time I mentioned I dropped hard R's as a kid!"
+    linus "{i}What{/i}? CS, why are the cops chasing you? This could seriously damage our reputation {size=-15}more than the time I mentioned I dropped hard R's as a kid!"
     menu:
         "What will CS do?"
         "I'm going to stay with LTT." (type = "bad"):
@@ -458,7 +458,7 @@ label ytp_fan:
     show cs worried
     cs "Arceus, what's going on? Where have you been?"
     arceus "Look, CS, we don't have much time. I know that you've been living here for a while, but the cops are still looking to extradite us back to America, and they are headed to LTT to search for you!"
-    linus "{i}What?{/i} CS, why are the cops chasing you? This could seriously damage our reputation {size=-10}more than the time I mentioned I dropped hard R's as a kid!"
+    linus "{i}What?{/i} CS, why are the cops chasing you? This could seriously damage our reputation {size=-15}more than the time I mentioned I dropped hard R's as a kid!"
     menu:
         "What will CS do?"
         "I'm going to stay with LTT." (type = "bad"):
@@ -537,7 +537,7 @@ label both_fan:
     cs "Shut up, Linus!"
     cs "Arceus, what's going on? Where have you been?"
     arceus "Look, CS, we don't have much time. I know that you've been living here for a while, but the cops are still looking to extradite us back to America, and they are headed to LTT to search for you!"
-    linus "{i}What?{/i} CS, why are the cops chasing you? This could seriously damage our reputation {size=-10}more than the time I mentioned I dropped hard Rs as a kid!"
+    linus "{i}What?{/i} CS, why are the cops chasing you? This could seriously damage our reputation {size=-15}more than the time I mentioned I dropped hard Rs as a kid!"
 
     menu:
         "What will CS do?"
@@ -671,7 +671,7 @@ label arc_escape:
     cs "I should've just called another foundation repair company."
     arceus "Yeah, that sounds like hell."
     cs "It {i}is{/i} hell."
-    arceus "{size=-10}You could have called me. I am literally a god."
+    arceus "{size=-15}You could have called me. I am literally a god."
     arceus "I should've known that the cops were going look for us. We didn't hide our tracks too well."
     arceus "I heard about the cops at the last second when I was checking comms chatter around the area. I figured that since you helped me out, I should come back for you."
     cs "Thanks, man. I really owe you again."
@@ -882,7 +882,7 @@ label wait_arc:
     arceus "...okay."
     arceus "Well, uhh, what should we do now?"
     arceus "Are we gonna, like, try to get you home?"
-    arceus "{size=-4}Do you even wanna go home?"
+    arceus "{size=-5}Do you even wanna go home?"
     cs "Yes, yes, let's just wait here."
     arceus "In the middle of the road?"
     arceus "Why?"
