@@ -80,6 +80,7 @@ label kick:
     hide wesley with easeoutright
     show cs angry at left with move
 
+    dxcom hidemovie
     $ achievement_manager.unlock("Dead Meme")
 
     cs "That'll teach you not to mess with a nerd's computer!"
@@ -308,6 +309,8 @@ label breakout:
     show cs prison at left
     show arceus prison at right
     with dissolve
+
+    dxcom prisonroute
 
     arceus "So, what's the plan? I've been trying to break outta here for five years."
     cs "Well, for starters, I need to get a feel for the routine here."

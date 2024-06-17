@@ -1,0 +1,96 @@
+{
+    "1": [
+        {
+            "audio_path": "1",
+            "speaker": "Digi",
+            "transcript": "In this game, we decided to make it suck. No one had to play this game, so it didn't have to be good. That was our philosophy going into it.",
+            "length": 7.5
+        },
+        {
+            "audio_path": "1b",
+            "speaker": "Digi",
+            "transcript": "Sometimes, I dream about cheese.",
+            "length": 3.3
+        }
+    ],
+    "newplan": [
+        {
+            "audio_path": "newplan1",
+            "speaker": "Digi",
+            "transcript": "This is the only route in the game that I was the writing director for. Pakoo basically handled all the other ones, except for a few exceptions.",
+            "length": 8.1
+        },
+        {
+            "audio_path": "newplan2",
+            "speaker": "Digi",
+            "transcript": "I hope that that doesn't mean that this route has a vastly different writing style than the rest of the game, though. Worked really hard to try to match it.",
+            "length": 7.3
+        }
+    ],
+    "hitme": [
+        {
+            "audio_path": "hitme",
+            "speaker": "Digi",
+            "transcript": "This MIDI of {i}Hit Me With Your Best Shot{/i} is hilariously bad, but we didn't want to get CS copyright struck.",
+            "length": 5.8
+        }
+    ],
+    "everlong": [
+        {
+            "audio_path": "everlong",
+            "speaker": "Digi",
+            "transcript": "For the backing track here, I'm pretty sure I asked Pakoo to get 'something like {i}Everlong{/i} by the Foo Fighters', and he just got a MIDI of Everlong. It's pretty funny, though!",
+            "length": 9.3
+        }
+    ],
+    "madlibs": [
+        {
+            "audio_path": "madlibs1",
+            "speaker": "Digi",
+            "transcript": "This is where we reveal the gimmick of this route! Basically every route had a gimmick. The True route is a road trip, the fanboy route is an RPG, and this route is a Mad Libs.",
+            "length": 10.5
+        },
+        {
+            "audio_path": "madlibs2",
+            "speaker": "Digi",
+            "transcript": "This was inspired by me literally digging through the Ren'Py documentation and figuring out there was a function to store text input into variables. It was all downhill from there!",
+            "length": 8.7
+        }
+    ],
+    "hidemovie": [
+        {
+            "audio_path": "hidemovie1",
+            "speaker": "Arceus",
+            "transcript": "So funny story about this choice: I remember back in 2017, with the release of CSBII; I had never programmed anything in my life. At the time I was only doing video editing in High School. So I made this silly Kick Edit. When the team asked me how to add it in, I had zero idea what I was doing.",
+            "length": 15.4
+        },
+        {
+            "audio_path": "hidemovie2",
+            "speaker": "Arceus",
+            "transcript": "I vaguely remember sitting in a hotel room tinkering with various solutions, and I remember shouting \"Holy shit, I figured it out\", by delaying the end of the movie with \"hide movie with dissolve\", which lead to about 30 minutes to me playing with the number of 'hide movie with dissolves' The total number ended up being: 141 lines.",
+            "length": 18.8
+        },
+        {
+            "audio_path": "hidemovie3",
+            "speaker": "Arceus",
+            "transcript": "Thankfully, we found the proper way to do it.",
+            "length": 2.9
+        }
+    ],
+    "fightminigame": [
+        {
+            "audio_path": "fightminigame",
+            "speaker": "Arceus",
+            "transcript": "So the fight minigame I programmed whilst I was in Alabama visiting Digi (Shout out to PJ and Cody for the place to sleep), I remember we grinded out the minigame basically in a single night. Another thing to note, however, we went to Aldi the afternoon of programming, and I had bought a bottle of wine. By the end of the evening. That wine was gone.",
+            "length": 19.2
+        }
+    ],
+    "prisonroute": [
+        {
+            "audio_path": "prisonroute",
+            "speaker": "Arceus",
+            "transcript": "I was the man responsible for writing the prison escape scene. I believe to this date it was the only thing I actually wrote. I never actually expected to be a wingman or a secondary main character, honestly it felt pretty selfish of me. But then I was basically told straight up \"Yeah, we just had no one else, and you were just there\".",
+            "length": 17.9
+        }
+    ]
+}

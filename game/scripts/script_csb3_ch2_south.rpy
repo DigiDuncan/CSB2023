@@ -410,13 +410,27 @@ label vegas:
     arceus "I need to sit down."
     show arceus flipped with determination
     hide arceus with moveoutright
-    n "As Arceus wanders off to find a place to relax, CS tries his luck at the slots."
+    jump vegas_start_slots
+
+label vegas_start_slots:
     scene slots with fade
+    n "As Arceus wanders off to find a place to relax, CS tries his luck at the slots."
+    minigame "minigame_slots" "vegas_win_slots" "vegas_lose_slots"
+
+label vegas_win_slots:
+    cs "Woohoo! I'm on such a hot streak! Wait 'til Arc sees this."
+    cs "Hmm... I haven't seen him for a bit. I should go find him."
+    jump vegas_done_slots
+
+label vegas_lose_slots:
     cs "C'mon, this is the one!"
     cs "Bars, {w=1.0}bars, {w=1.0}football player with a{w=0.5} hot...dog...?"
     cs "Damn it! So close!"
     cs "I haven't won anything, and I've already spent most of my money..."
     cs "I wonder what Arc is up to. I haven't seen him at all."
+    jump vegas_done_slots
+
+label vegas_done_slots:
     n "CS gets up from the slot machine and begins looking for Arceus."
     scene casino1 with fade
     n "CS looks around for a while, but he can't find Arceus."

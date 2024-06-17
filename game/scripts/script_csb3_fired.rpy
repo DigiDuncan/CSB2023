@@ -9,6 +9,7 @@ label new_plan:
     n "CS sulks away in defeat."
 
     scene alley with fade
+    dxcom newplan
     show cs disappointed flipped with moveinright
     show cs disappointed
     cs "Ugh, what am I going to do now?"
@@ -108,6 +109,7 @@ label guitar_hero:
     play music "<loop 0>audio/hitmewithyourbestshot.mp3" volume 0.5
     music Hit Me With Your Best Shot - Pat Benatar
     scene hotel_guitar_hero with fade
+    dxcom hitme
     n "CS, Anno, and Arceus relax by playing some {i}Guitar Hero.{/i}"
     arceus "Man, we're all pretty good at this."
     cs "Wait, this gives me an idea."
@@ -171,12 +173,14 @@ label write_song:
     n "Anno hits play on the track."
     play music "<loop 0>audio/everlong.mp3" volume 0.5
     music Everlong - Foo Fighters
+    dxcom everlong
     n "{cps=15}{image=note_small1.png} We broke the chains, now we're free to fly,{w=1.5}\nEscaped concrete, and now we see blue skies{w=1.5}\nBecome brand new, we'll leave the past behind,{w=1.5}\nPrisoners no more, 'cause a new life we'll find {image=note_small2.png}"
     cs "Yeah, that's really good!"
     show arceus
     stop music fadeout 3.0
     music end
     arceus "Well, I guess all we have to do now is upload it."
+    dxcom madlibs
     anno "Alright, boys, what do we call it?"
     $ song_name_1 = renpy.input("What should we call the song?", song_name_1, length = 32)
     cs "How about {i}[song_name_1]?{/i}"

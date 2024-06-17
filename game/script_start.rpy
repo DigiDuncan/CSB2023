@@ -51,6 +51,7 @@ init python:
     renpy.music.register_channel("music2", "music")
     renpy.music.register_channel("jukebox", "music")
     renpy.music.register_channel("sfx", "sound")
+    renpy.music.register_channel("dxcom", "voice")
 
 init 10 python:
     def unlock_all():
@@ -1183,6 +1184,8 @@ default minigame_loss = "secret"
 
 default typewriter_text = "Hello, world!"
 
+default current_dxcom = "1"
+
 python early:
     # BAD END
     def parse_bad_end(lexer):
@@ -1323,13 +1326,14 @@ init python:
 image typewriter = DynamicDisplayable(show_typewriter)
 
 label test:
+    show screen warning("The following scene sucks.", "Warnings: test", "secret")
+    dxcom 1
     $ typewriter_text = "Here is some text, bitch\nI have no clue if it works\nI sure hope it does!"
     show typewriter
     pause
     show copguy_ex
     show red_light
     show blue_light
-    show screen warning("The following scene sucks.", "Warnings: test", "secret")
     pause
     $ renpy.full_restart()
 

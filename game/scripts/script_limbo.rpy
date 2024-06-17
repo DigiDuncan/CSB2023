@@ -18,6 +18,14 @@ label play_pencil_game:
     minigame "minigame_pencil" "minigame_pencil" "minigame_pencil"
     return
 
+label play_slots_game:
+    minigame "minigame_slots" "minigame_slots" "minigame_slots"
+    return
+
+label show_dxcom:
+    $ commentary_manager.play(current_dxcom)
+    return
+
 label pussy_out_archival:
     $ persistent.seen.add("k174")
     $ persistent.seen.add("addy")

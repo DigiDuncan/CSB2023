@@ -32,7 +32,7 @@ screen music():
     frame at music_appear:
         image "_music_text"
 
-    timer 5 action Hide('music')
+    timer 5 action Hide(_layer='music')
 
 transform music_appear:
     on show:
@@ -112,6 +112,28 @@ python early:
         parse = parse_music,
         lint = lint_music,
         execute = execute_music)
+
+    # DXCOM
+
+    def parse_dxcom(lexer):
+        string = lexer.rest()
+        return string
+
+    def execute_dxcom(parsed_object):
+        if parsed_object is None:
+            return
+        renpy.with_statement(determination)
+        renpy.show_screen("dxcom", parsed_object)
+        renpy.with_statement(determination)
+
+    def lint_dxcom(parsed_object):
+        if parsed_object is None:
+            pass
+
+    renpy.register_statement("dxcom",
+        parse = parse_dxcom,
+        lint = lint_dxcom,
+        execute = execute_dxcom)
 
 init python:
     # MUSIC POPUP
