@@ -6,6 +6,10 @@ label lose_pencil_game:
     bad_end "Try, uh, mashing... faster?" "minigame_pencil"
     return
 
+label lose_pencil_game2:
+    bad_end "You dumb skinfore." "minigame_pencil2"
+    return
+
 label play_edit_game:
     minigame "minigame_editing" "minigame_editing" "minigame_editing"
     return

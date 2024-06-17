@@ -383,6 +383,8 @@ define witch = Character("Witch", callback = renpy.partial(char_callback, name =
 define tate_offscreen = Character("???", callback = renpy.partial(char_callback, name = "tate_offscreen", beep="tate"))
 define pakoo_offscreen = Character("???", callback = renpy.partial(char_callback, name = "pakoo_offscreen", beep="pak"))
 define green_offscreen = Character("???", callback = renpy.partial(char_callback, name = "green", beep = "green"), what_color="#00FF00")
+define renovator = Character("Renovator", callback = char_callback)
+define cruise = Character("Tom Cruise", callback = char_callback)
 
 # Character Images
 ## CS
@@ -996,6 +998,41 @@ image archival_16 = "bg/archival/archival_16.png"
 image archival_17 = "bg/archival/archival_17.png"
 image archival_18 = "bg/archival/archival_18.png"
 image archival_19 = "bg/archival/archival_19.png"
+
+#Pakoo Jam
+image pot_lift = "characters/pot_lift.png"
+image pot = "characters/pot.png"
+image pot_sunken = "characters/pot_sunken.png"
+image pot_beam = "characters/pot_beam.png"
+image start_route = "bg/proutest.png"
+image cs_room_cars = "bg/cs_bedroom_cars.png"
+image wis_forest = "bg/wis_forest.png"
+image roombacks = "bg/roombacks.png"
+image backrooms = "bg/backrooms.png"
+image renovator = "characters/renovator.png"
+image hobbytown = "bg/oshkosh.png"
+image shadowman = "characters/shadowman.png"
+image pencilcashier = "characters/pencilcashier.png"
+image cs pencil = "characters/cs/pencil.png"
+image cs angry pencil = "characters/cs/pencilangry.png"
+image cs disappointed pencil = "characters/cs/pencildisappointed.png"
+image pencilroom = "bg/pencilroom.png"
+image pencilroomblur = "bg/pencilroomblur.png"
+image cult_con = "bg/cult_con.png"
+image csgod_angry = "characters/csgod_angry.png"
+image cs pissed = "characters/cs/pissed.png"
+image cs cultist = "characters/cs/robe.png"
+image cs disappointed cultist = "characters/cs/disappointedrobe.png"
+image cs angry cultist = "characters/cs/angryrobe.png"
+image cs cultist flipped = "flip:characters/cs/robe.png"
+image cs disappointed cultist flipped = "flip:characters/cs/disappointedrobe.png"
+image cs angry cultist flipped = "flip:characters/cs/angryrobe.png"
+image cruise = "characters/tom_cruise.png"
+image cruise flipped = "flip:characters/tom_cruise.png"
+image blue_branch = "bg/bluebranch.png"
+image onscreen_sharpener = "pencilsharpener.png"
+image renault = "renault.png"
+image renault_inside = "bg/renault_inside.png"
 
 # Static Images
 image post_it = "post-it.png"
