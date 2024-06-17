@@ -504,7 +504,7 @@ label bordercrossing:
     show linus
     with fade
     if fun_value(25):
-        play music "<loop 0>passport-ytp.mp3" volume 0.5
+        play music "<loop 0>passport_ytp.mp3" volume 0.5
     else:
         play music "<loop 0>passport.mp3" volume 0.5
     music PASSPORT.MID - George Stone
