@@ -42,8 +42,8 @@ label archival:
     n "The laptop slowly powers on, playing the classic Windows XP start sound."
     n "The laptop immediately bluescreens and blares out the following:"
     play sound "sfx_windows_logon.mp3"
-    craptop "Your PC sux. lol."
     with hpunch
+    craptop "Your PC sux. lol."
     unknown "Hey, what the fuck was that?"
     show cs scared
     cs "Shit!"
