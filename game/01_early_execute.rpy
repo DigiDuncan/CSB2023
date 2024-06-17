@@ -54,7 +54,7 @@ init:
     # For fun value 
     transform _fun_value_fade:
         on show: 
-            xanchor 0 xpos 1595
+            xanchor 0 xpos 23
             yanchor 0 ypos 992
             alpha 0.00
             linear 0.5 alpha 1.00
@@ -64,10 +64,10 @@ init:
     transform _fun_value_motion:
         block:
             # back
-            linear 0.1 xpos 1594
+            linear 0.1 xpos 22
             linear 0.01 ypos 991
             # forward
-            linear 0.1 xpos 1596
+            linear 0.1 xpos 24
             linear 0.01 ypos 993
             repeat
 

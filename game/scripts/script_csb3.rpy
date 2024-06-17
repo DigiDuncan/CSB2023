@@ -351,9 +351,10 @@ label boost:
     linus "Much like we can't wait to show you this segue to our sponsor!"
     n "The two stand for a moment awkwardly staring at the camera."
     linus "...Go ahead and cut."
+    show cs disappointed
     cs "Who knew recording could be so stressful. I could use a drink. The lights are so bright."
     if fun_value(15):
-        linus "Here. Take this water bottl-- oops!"
+        linus "Here. Take this water bottl-- oops!{w=0.5}{nw}"
         play sound "sfx_metalpipe.mp3"
         show cs scared with vpunch
         n "Linus drops the water bottle on the ground."
