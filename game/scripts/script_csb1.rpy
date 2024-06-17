@@ -135,11 +135,12 @@ label csbi_start:
     cs "OH GOD, AN ADVERTISER!!!"
     stop music fadeout 3.0
     music end
+    show cs scared at left
     cs "QUICK! START THE CAR, START THE CAR!!!"
     hide cs with moveoutright
     play sound "sfx_doorslam.ogg"
     scene cs_car_inside
-    show cs at left
+    show cs disappointed at left
     with fade
     play music "<loop 0>canyon_but_in_the_car.mp3" volume 0.2
     music CANYON.MID - George Stone
@@ -151,7 +152,8 @@ label csbi_start:
             cs "Yeah... It's a good idea to get some stuff."
         "No":
             $ achievement_manager.unlock("I Don't Like People!")
-
+            
+            show cs happy at left
             cs "Screw you, I'm going anyway!"
     play sound "sfx_driving.wav" volume 0.5
     pause 3.0
@@ -185,6 +187,7 @@ label walmart:
     cs "Now, let's find some food!"
     show walmart_aisle behind cs with dissolve
     cs "{i}pop{/i}\nNoice! Genergy is two for $5! I'll take them all!"
+    show cs happy
     cs "Oooh! Pringles are on sale too! Yoink!"
     n "CS walks to the checkout area."
     scene walmart_register
@@ -212,7 +215,7 @@ label walmart:
     hide cs with moveoutright
     play sound "sfx_doorslam.ogg"
     scene cs_car_inside
-    show cs at left
+    show cs worried at left
     with fade
     play music "<loop 0>canyon_but_in_the_car.mp3" volume 0.2
     play sound "sfx_driving.wav" volume 0.5
@@ -223,14 +226,15 @@ label walmart:
 
 label room:
     scene cs_room
-    show cs happy
+    show cs
     with dissolve
     stop sound fadeout 2.0
     stop music fadeout 3.0
     music end
     n "CS arrives home and walks to his room."
+    show cs happy
     cs "Ahhh. It's good to be home!"
-    show cs
+    show cs surprised
     cs "You know, I haven't put out a YTP in a while. I should work on one of my in-progress ones."
     scene craptop_bg
     show craptop edit
@@ -260,6 +264,7 @@ label room:
     with pixellate
     cs "Oh, flashback over."
     play sound "sfx_foundationfail.ogg" volume 0.5
+    show cs worried
     show cs_room behind cs at rotate_10 with hpunch
     n "A loud crash is heard as a crack is split in CS' foundation."
     show cs worried
@@ -295,9 +300,10 @@ label room:
     music Alfred Hitchcock Intro Theme - Charles Gounod
     ed "Alright, that will be 200,000 Bits."
     cs "Okay, I guess they already told you what I need done. Lemme get my wallet..."
+    show cs disappointed
     cs "Hang on a sec. Didn't they say I could pay afterwards?"
     ed "Yeah, well, corporate policies just changed five seconds ago. Pay up."
-    show cs flipped with determination
+    show cs disappointed flipped with determination
     hide cs with moveoutleft
     n "A few moments later..."
     show cs at left with moveinleft
@@ -353,6 +359,7 @@ label room:
     show cs with moveinleft
     cs "Things sure are boooooring around here..."
     cs "Hey, I've got an idea!"
+    show cs happy
     cs "Let's go to Michael Rosen's house!"
     jump michael_house
 
@@ -469,11 +476,13 @@ label rosen_house:
     hide black
     cs "Wha- what?"
     michael "Did you just... sleep through my entire poem?"
+    show cs worried flipped
     cs "Nooooooooooooooooo?"
     n "Michael sighs and facepalms."
     play sound "sfx_doorbell.ogg" volume 0.5 
     n "The doorbell rings."
     michael "Oh! My other guest is here! I'll be right back!"
+    show cs flipped
     hide michael at right with moveoutright
     show michael at left with moveinright
     show phil at center with moveinright
@@ -484,8 +493,9 @@ label rosen_house:
     michael "Speaking of which, Phil, do you have the cake?"
     phil "Here it is! It even works underwater!"
     michael "That's odd to mention, but time to eat!"
+    show cs worried flipped
     n "CS suddenly realizes what's going on."
-    show cs worried flipped at right
+    show cs scared flipped at right
     cs "Michael! That's not chocolate cake!"
     michael "I have loads to eat! Om nom nom..."
     play sound "sfx_puke.ogg"
@@ -496,21 +506,23 @@ label rosen_house:
     michael "OUT!"
     hide phil with moveoutright
     hide cs
-    show cs flipped at right
+    show cs disappointed flipped at right
     michael "I need something to drink. CS, did you bring that drink?"
     cs "Sure thing, here you go."
     michael "Goodness."
     n "Michael downs the whole can."
     michael "Quick! Get out!"
+    show cs worried flipped
     cs "What's going on?"
     michael "The Genergyfoogle is here! It's come to eat us all!"
     cs "Oh man, did that Genergy have something {i}else{/i} in it...?"
+    show cs scared flipped
     cs "I need to get out before he goes nuts!"
-    show cs with determination
+    show cs scared with determination
     hide cs with moveoutright
     pause 0.5
     scene car_inside
-    show cs at left
+    show cs surprised at left
     with fade
 
     play music "<loop 0>canyon_but_in_the_car.mp3" volume 0.2

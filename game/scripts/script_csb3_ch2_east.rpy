@@ -6,9 +6,11 @@ label east:
     scene town with fade
     show cs at left with moveinleft
     show arceus at right with moveinright
+    show cs happy
     cs "Oh my God! We found civilization again!"
     arceus "Thank God."
     n "The two look around for a bit until they see a gas station close by."
+    show cs
     cs "Let's head over to that gas station so we can pick up something to eat."
     n "CS and Arceus head over to the convenience store at the gas station."
     hide cs with moveoutright
@@ -34,7 +36,7 @@ label east:
 label hotwire:
     stop music
     scene gasinside
-    show cs at left
+    show cs surprised at left
     show arceus at right
     cs "I don't know... We could just... hotwire a car?"
     arceus "I can probably do that. Let's go look."
@@ -45,6 +47,8 @@ label hotwire:
     n "Arceus smashes open the window and opens the door from the inside."
     arceus "Alright, so if we connect this to this..."
     n "The car starts up."
+    show cs happy
+    show arceus happy
     cs "Hell yeah! Let's go home!"
     n "As if on cue, sirens and lights approach the two."
     show blue_light at left
@@ -65,6 +69,7 @@ label billy_driver:
     show arceus worried at right with moveinright
     arceus "Are you crazy? To drive all the way back to New York, in a stranger's car, at that?"
     arceus "Besides, how are we even going to pay the guy anyway?"
+    show cs disappointed
     cs "Well, we don't have to go all the way to New York. We could go a small distance then ask another driver."
     show arceus angry
     arceus "That would be even more in gas money!"
@@ -188,6 +193,7 @@ label montana:
     show cashier with hpunch
     cashier "I gotcha covered. Have a good day!"
     hide cashier with moveoutright
+    show cs scared
     cs "{bt=a3-p10-s4}Letsgoletsgoletsgoweneedtogetoutofhere"
     hide cs with moveoutright
     hide billy with moveoutright
@@ -417,6 +423,7 @@ label south_dakota:
     show arceus flipped at center with moveinleft
     show billy at left with moveinleft
     billy "Wow, to think that we won a war without the Gopher."
+    show arceus
     billy "How did they even communicate without the Jupiter Jack?"
     show cs concentrate
     arceus "It'd be cool if I had my face carved into a mountain. Wouldn't that be neat, CS?"
@@ -428,13 +435,15 @@ label south_dakota:
     play sound "sfx_gasp.ogg" volume 2
     scene csmore
     show cs concentrate at right
-    show arceus worried at center
+    show arceus worried flipped at center
     show billy at left
     with hpunch
     arceus "Huh?"
-    show cs happy
+    show cs happy flipped
     cs "There we go! Fixed!"
-    n "Arceus looks back at Mount Rushmore.... which now has CS, Arceus, and Billy's faces carved into the stone!"
+    show arceus worried
+    n "Arceus looks back at Mount Rushmore... which now has CS, Arceus, and Billy's faces carved into the stone!"
+    show cs happy
     hide cs with moveoutright
     show arceus worried flipped
     arceus "You scare me, CS. I don't even... {i}want{/i} to question how or why."
@@ -473,7 +482,7 @@ label nebraska:
     with moveinleft
     n "They all get out and start roaming the streets."
     n "Suddenly, CS hears a voice behind him."
-    unknown "CS? Is that you?"
+    pakoo_offscreen "CS? Is that you?"
     cs "Huh?"
     show cs flipped
     stop music fadeout 3.0
@@ -488,7 +497,9 @@ label nebraska:
     pakoo "Arceus, you too? And, Billy... Mays?"
     billy "Hi, it's Billy!"
     arceus "Hey, Pakoo."
+    show cs happy flipped
     cs "Yeah! I haven't seen you in a while. I never thought you'd live in a place like {i}this!{/i}"
+    show cs flipped
     pakoo "I never thought you guys would come down to Omaha. There's, like, nothing here."
     cs "We've been through a lot recently. Do you know somewhere we can eat and rest for the night?"
     n "Pakoo thinks for a moment."
@@ -545,6 +556,7 @@ label nebraska:
     show cs
     show arceus flipped
     pakoo "Alright, well, I should get going, but I hope y'all have a good time doing whatever y'all are doing."
+    show cs happy
     cs "Yep! Take care, Pakoo!"
     hide pakoo with moveoutleft
     scene black with fade
@@ -672,7 +684,7 @@ label michigan:
 
 label interstate_69:
     window hide
-    show screen warning("The following scene is a major tonal shift.\nIt may be disconcerting to some viewers.", "Warnings: creepy forests, haunting music, slow decents into madness.", "pussy_out_i69")
+    show screen warning("The following scene is a major tonal shift.\nIt may be disconcerting to some viewers.", "Warnings: creepy forests, haunting music, slow descents into madness.", "pussy_out_i69")
     pause
     window show
     $ nome = True
@@ -692,7 +704,7 @@ label interstate_69:
     scene traffic
     show cscar1arc
     show billy at left
-    show cs flipped at right
+    show cs disappointed flipped at right
     show cscar2
     with dissolve 
     play music "<loop 0>honk_song.mp3" volume 0.8
@@ -713,9 +725,12 @@ label interstate_69:
     arceus "I'm not {i}that{/i} small, man..." # Me with the goddamn ellipses again lmao - Aria
     cs "No, look, that short guy. The one with the red pointy hat."
     arceus "Oh, shit, you're right! That looks like a gnome!"
+    show cs worried flipped
     cs "God, did Blank somehow track me to Michigan?"
     arceus "Blank is at least three gnomes tall, though. That couldn't just be him in a costume."
+    show cs disappointed flipped
     cs "You're probably right, but I wouldn't be all that shocked if he learned practical effects for a gag."
+    show cs worried flipped
     cs "Wait, is he coming this way?!"
     n "The gnome steps out from behind the tree and makes his way to the door of the unoccupied seat of the car, motioning a request to roll down the window."
     billy "Holy shit, you two weren't kidding. I think he's trying to talk to us."
@@ -730,6 +745,7 @@ label interstate_69:
     billy "What do you want with us?"
     gnome "I mean you no harm. May I sit and explain myself?"
     arceus "I don't think this guy is a threat. We may as well let him in."
+    show cs disappointed flipped
     cs "He'll at least make this traffic jam more entertaining."
     billy "Alright, fine, come on in."
     gnome "I thank you. As you may be aware, I am not of your Species."
@@ -743,6 +759,7 @@ label interstate_69:
     cs "How can you help us?"
     gnome "My kind is not of this World, but rather of the Forest Dimension. I cannot clear this Path, but I can bring you to another."
     cs "Yeah, that may as well happen to us at this point."
+    show cs happy flipped
     cs "Thanks for your help." 
     gnome "No need to thank me. It is mein Pleasure."
     n "Everyone feels an energy emanate from the gnome as they watch the environment around them transform from a modern university into a dense forest."
@@ -890,7 +907,7 @@ label interstate_69:
     aria "Wow, that phrasebook was really helpful."
     waitress "By the way, we don't have any pork to fry the rice right now."
     scene cafe_sitting_2
-    show cs at left
+    show cs disappointed at left
     show billy at center
     show arceus worried at right
     arceus "Wait, how?! That's by far the most popular thing we ordered..."
@@ -900,7 +917,7 @@ label interstate_69:
     show waitress at right
     waitress "Pigs are expensive and they have a good union. We just hired a bunch of shrimp instead."
     scene cafe_sitting_2
-    show cs at left
+    show cs disappointed at left
     show billy at center
     show arceus angry at right
     arceus "I'm not playing along with that joke."
@@ -1200,7 +1217,7 @@ label interstate_69:
     n "They all walk down and reach the apartment, then make their way to where the car is parked."
     scene aria_apartment_outside
     show billy at left
-    show cs
+    show cs 
     show arceus flipped at mid_left
     show aria at right
     with dissolve
@@ -1208,7 +1225,9 @@ label interstate_69:
     music end
     aria "Thanks for hanging out with me. It was fun."
     aria "Sorry you two didn't enjoy the woods, but I'm glad at least Billy seemed to like it."
+    show cs disappointed
     cs "I guess nothing was actively dangerous, and that's above average for us at this point."
+    show cs
     cs "Thanks for letting us rest at your place."
     aria "Anytime."
     aria "Billy, it was nice meeting you. You're welcome to come back and visit the woods again."
@@ -1402,7 +1421,7 @@ label interstate_94:
     cs "I'm not a clown..."
     shaggy_too_dope "Can't argue with the clown sense. Definitely a clown."
     violent_jay "Why is everybody so worried whenever they see us today?"
-    show cs
+    show cs disappointed
     cs "You {i}do{/i} call yourself Violent Jay. I'd imagine you're used to it by now."
     violent_jay "That's fair."
     show mario at right with moveinright
@@ -1417,11 +1436,13 @@ label interstate_94:
     show cs disappointed
     cs "I'm not a clown. Clowns have to be good at makeup..."
     mario "I wouldn't worry about it."
-    show arceus at mid_left with moveinright
+    show arceus at mid_mid_right with moveinright
+    show arceus flipped
     stop music fadeout 3.0
     music end
     arceus "Yeah, my hoodie's dry, so we're ready to head out. Here's the money, Mario. Good luck with business."
     show cs flipped with determination
+    show arceus with determination
     hide cs
     hide arceus
     hide billy
@@ -1560,6 +1581,7 @@ label pennsylvania:
     show cs at center
     cs "A pencil sharpening competition?"
     n "Visions of an old video appear in CS's head."
+    show cs happy
     cs "I could totally {i}crush{/i} that! I've {i}gotta{/i} sign up!"
     show arceus angry at right with moveinright
     arceus "CS, come on, man. I wanna get to your house so I can--"
@@ -1584,13 +1606,14 @@ label pennsylvania:
     show cashier at center
     show cs at left
     with dissolve
-    show arceus at right with moveinright
     n "Arceus catches up with CS at the sign-up table."
     signup "...and you said your last name is... 188?"
     cs "Yeah, this confuses everyone."
+    show arceus at right with moveinright
     cs "Oh, hey, Arc! Whatcha doing?"
     show arceus happy
     arceus "Just came to support my friend."
+    show cs happy
     cs "Aww, thanks, man."
     show arceus
     signup "Okay, that's you all registered. Fuzzy guy, you signing up too?"
@@ -1608,13 +1631,18 @@ label pennsylvania:
     digi "CS?!"
     cs "What are you doing here?"
     digi "I {i}always{/i} compete in the Pencil Sharpening Competition! I was inspired after that video of yours."
+    show cs happy
     cs "Oh, wow, really? Thank you, I guess!"
+    show cs
     cs "Do you think we'll be up against each other?"
     digi "I mean, probably. I'm the champ."
+    show cs scared
     cs "You?!"
     digi "Five years running."
+    show cs disappointed
     cs "Oh, jeez, I guess we {i}will{/i} be against each other, if I make it that far."
     digi "Well, good luck to you!"
+    show cs 
     cs "You as well!"
     stop music fadeout 3.0
     music end
@@ -1636,10 +1664,10 @@ label pennsylvania:
     n "CS grabs Digi's hand."
     cs "Well, good luc--"
     n "Digi's hand grips CS stronger than a human could possibly grip."
-    show cs worried with vpunch
+    show cs scared with vpunch
     cs "Yow!"
     digi "Oops, sorry, let me just..."
-    show cs
+    show cs disappointed
     n "Digi pokes a panel on his arm."
     digi "Sorry about that, arm must have been on the wrong setting."
     n "CS thinks to himself."
@@ -1711,7 +1739,7 @@ label win_pencil:
     cs "Good game!"
     hide cs onlayer broadcast
     show digi at t_stagescreen onlayer broadcast
-    digi "Same to you, man, that was wild!"
+    digi "Same to you, man! That was wild!"
     hide digi onlayer broadcast
     show cs at t_stagescreen onlayer broadcast
     cs "I don't know how I beat you, honestly."
@@ -1743,7 +1771,7 @@ label win_pencil:
     show mettaton at t_stagescreen onlayer broadcast
     host "... {w=0.5}{color=#ffff00}PENCIL SHARPENER!"
     hide mettaton onlayer broadcast
-    show cs at t_stagescreen onlayer broadcast
+    show cs disappointed at t_stagescreen onlayer broadcast
     cs "I should have seen that coming."
     stop music fadeout 3.0
     hide cs
@@ -1792,6 +1820,7 @@ label win_pencil:
     digi "Thanks!"
     show arceus angry flipped
     hide arceus with moveoutright
+    show cs happy flipped
     cs "Well, Digi, you've got a ride!"
     digi "Thanks so much, man!"
     stop music fadeout 3.0
@@ -1813,6 +1842,7 @@ label back_home:
     show billy at mid_left behind arceus with moveinleft
     billy "No problem!"
     cs "Well, I guess I should get some rest."
+    show cs happy flipped
     cs "If you guys want, we can have a party at my place tomorrow to celebrate getting through all this shit!"
     show arceus happy flipped
     "Arc and Billy" "Hell yeah!"
@@ -1822,8 +1852,9 @@ label back_home:
     n "As CS says goodbye to his friends, a familiar but upsetting voice can be heard at the front of CS' house."
     stop music fadeout 1.0
     music end
+    show cs scared with hpunch
     ed "{i}You!"
-    show cs disappointed at left with moveinleft
+    show cs worried at left with moveinleft
     n "CS and the gang look towards CS' front porch, where Richard and Ed are waiting angrily for him."
     play music2 "<loop 0>hohsisremix.mp3" volume 0.5
     music "Alfred's Theme - Eminem"
@@ -1832,6 +1863,7 @@ label back_home:
     with moveinright
     ed "I have been waiting for you for quite some time now."
     rich "We've been trying to stop you for a while now, but this is the final stop for you."
+    show cs disappointed
     cs "HoH SiS?? What do you guys still want from me?"
     ed "What do you think, CS? After you put Wesley in the hospital? After you crippled most of our workers?"
     cs "Well, you guys scammed me out of my money and broke my computer! Of {i}course{/i} I wanted some kind of revenge!"

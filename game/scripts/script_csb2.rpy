@@ -412,7 +412,7 @@ label bordercrossing:
     arceus "There's one just over here, come on."
 
     scene outside_tim_hortons
-    show cs at left
+    show cs disappointed at left
     with fade
     cs "I'm starving after all that walking. I need a donut."
     show cs at offscreenright with move
@@ -427,25 +427,23 @@ label bordercrossing:
     with fade
     play music "<loop 0>buy_something.mp3" volume 0.6
     music Buy Something Will Ya! - Keiichi Suzuki
-    show cs at left with moveinleft
+    show cs at right with moveinleft
     show arceus flipped at center with moveinleft
-    show anno at right with moveinleft
-
+    show anno at left with moveinleft
+    
+    show cs flipped
     anno "Finally."
-    hide anno
-    hide cs
-    with dissolve
-
-    show arceus full flipped at t_arc_at_tims with ease
+    show cs flipped at mid_offscreen_right
+    show anno at mid_offscreen_left
+    show arceus full flipped at t_arc_at_tims
+    with ease
 
     arceus "Hi."
     cashier "Can I help you?"
     arceus "Can I have a dozen glazed donuts, please?"
     cashier "Oh, hi Arceus, I didn't know it was you."
 
-    show anno
     anno "Wait, huh?"
-    hide anno
     show arceus full flipped at t_arc_at_tims
     cashier "Here you go."
     show arceus full happy flipped
@@ -465,8 +463,10 @@ label bordercrossing:
     stop music fadeout 3.0
     music end
 
+    show cs disappointed flipped at right
+    show anno at left
+    with ease
 
-    show cs disappointed
     cs "..."
     cs "I think I'm {i}really{/i} sleep-deprived."
 

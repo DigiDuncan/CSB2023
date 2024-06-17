@@ -1,3 +1,26 @@
+# Text Beep Spacing
+# Partially stolen from:
+#   https://www.renpy.org/doc/html/config.html#var-config.replace_text
+#   https://lemmasoft.renai.us/forums/viewtopic.php?t=22730
+# This is meant to place pauses after certain punctuation automatically so that the dialogue feels more... human.
+# These are set up so that it only works if there is more than once sentence in the text box at any given time.
+# Make sure there's a space after your punctuation or it won't work.
+# You can still add manual pauses wherever you like in the script if this isn't enough for you.
+
+init python:
+    import re
+    def auto_wait(s):
+        # these items wait for 0.25:
+        # commas, periods, question marks, exclamation marks
+        s = re.sub(r'(([,|.|?|!])(({\/[a-z]*})*) )', r'\1{w=0.25}', s, flags=re.IGNORECASE) 
+
+        # these items wait for 0.5:
+        # ellipses, em-dashes, colons
+        s = re.sub(r'((\.\.\.|--|:)(({\/[a-z]*})*) )', r'\1{w=0.5}', s, flags=re.IGNORECASE) 
+
+        return s
+    config.say_menu_text_filter = auto_wait
+
 # Flip
 init -10 python:
     def xflip(s):
@@ -357,6 +380,8 @@ define snufkin = Character("Snufkin", callback = renpy.partial(char_callback, na
 define alicia = Character("Alicia", callback = renpy.partial(char_callback, name = "alicia"))
 define witch = Character("Witch", callback = renpy.partial(char_callback, name = "witch"))  # DX: Beep
 define tate_offscreen = Character("???", callback = renpy.partial(char_callback, name = "tate_offscreen", beep="tate"))
+define pakoo_offscreen = Character("???", callback = renpy.partial(char_callback, name = "pakoo_offscreen", beep="pak"))
+define green_offscreen = Character("???", callback = renpy.partial(char_callback, name = "green", beep = "green"), what_color="#00FF00")
 
 # Character Images
 ## CS
@@ -379,6 +404,7 @@ image cs disappointed metal3 = "characters/cs/disappointedmetal3.png"
 image cs disappointed metal4 = "characters/cs/disappointedmetal4.png"
 image cs disappointed flipped = "flip:characters/cs/disappointed.png"
 image cs concentrate = "characters/cs/concentrate.png"
+image cs concentrate flipped = "flip:characters/cs/concentrate.png"
 image cs concentrate dark = "characters/cs/concentratedark.png"
 image cs phone = "characters/cs/phone.png"
 image cs dark = "characters/cs/neutraldark.png"
@@ -396,7 +422,9 @@ image cs guard dark = "characters/cs/guarddark.png"
 image cs fakegod = "characters/cs/fake_god.png"
 image cs guitar = "characters/cs/guitar.png"
 image cs surprised = "characters/cs/surprised.png"
+image cs surprised flipped  = "flip:characters/cs/surprised.png"
 image cs scared = "characters/cs/scared.png"
+image cs scared flipped = "flip:characters/cs/scared.png"
 image cs insane worried = "characters/cs/insane.png"
 image cs insane worried flipped = "flip:characters/cs/insane.png"
 image cs insane disappointed = "characters/cs/insane2.png"

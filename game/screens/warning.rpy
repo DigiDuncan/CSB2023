@@ -17,7 +17,7 @@ screen warning(warning_text, triggers, leave_label):
             text_textalign 0.5
             text_size 36
             action Hide("warning"), Jump(leave_label)
-        textbutton "Procced":
+        textbutton "Proceed":
             xalign 0.5
             text_textalign 0.5
             text_size 36

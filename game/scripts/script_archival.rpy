@@ -9,6 +9,7 @@ label archival:
     n "CS looks at his bed."
     cs "Yeah, after {i}everything{/i} that has happened today, some rest sounds really nice."
     n "CS immediately jumps into bed."
+    show cs happy
     cs "Ah, finally, I can get a good night's sleep."
     n "CS does the finger guns at his ceiling."
     cs "This is CS{cps=*0.1}... {cps=*10}passing out!"
@@ -19,34 +20,37 @@ label archival:
     n "..."
     n "..."
     scene bedroom_old
-    show cs at left
-    with dissolve
     play music "<loop 0>facing_worlds.mp3" volume 0.5
     music "Facing Worlds - Michiel van den Bos"
     n "CS slowly wakes up after his long rest."
     cs "Hey guys, CS here!"
     cs "How is every--"
-    show cs worried
+    show cs scared at left with moveinbottom
+    with hpunch
+    with vpunch
     n "CS immediately jolts up, realizing that he's not in his room."
     cs "Wait a minute. Where am I? This place..."
     n "CS trails off, feeling uneasy about this new location. It doesn't look familiar to him at all, but for some reason..."
+    show cs worried
     cs "Why does the place {i}feel{/i} so familiar? Something doesn't seem right."
     n "CS gets up, and goes over to a laptop sitting on the desk next to him."
     scene craptop_old with fade
     show cs disappointed at left with moveinleft
-    cs "I feel like this is my craptop, but I don't even have my craptop anymore!"
+    cs "I feel like this is my craptop, but I don't even {i}have{/i} my craptop anymore!"
     cs "It looks {i}off{/i}, though..."
     n "CS lifts the lid and powers it on, curious about the strange connection he is feeling with it."
     n "The laptop slowly powers on, playing the classic Windows XP start sound."
     n "The laptop immediately bluescreens and blares out the following:"
     play sound "sfx_windows_logon.mp3"
+    with hpunch
     craptop "Your PC sux. lol."
     unknown "Hey, what the fuck was that?"
+    show cs scared
     cs "Shit!"
     hide cs with moveoutright
     scene bedroom_old with fade
-    show cs flipped at offscreenright
-    show cs flipped at offscreenleft with move
+    show cs scared flipped at offscreenright
+    show cs scared flipped at offscreenleft with move
     n "CS jumps over the chair next to him, hiding between it and the couch in the corner."
     n "He whispers to himself."
     cs "Why are there people here?"
@@ -84,14 +88,15 @@ label archival:
     show k199
     k199 "Wait a second..."
     n "K19-9 sees something shift in the corner and leans in to look."
-    show cs disappointed at left with moveinleft
-    show k174 at mid_right
-    show k199 at center
-    with move
+    show k199 at mid_offscreen_left with moveinright
     n "CS turns around for a moment and sees a face staring right at him."
-    show cs worried
+    with vpunch
     cs "Gahhhh!"
     k199 "Oh, fuck! What the hell?"
+    show cs worried at left
+    show k174 at mid_right
+    show k199 at center
+    with ease
     n "CS quickly stands up. Everyone is silent and staring at CS."
     k207 "Shit, dude, that's him! He's here!"
     cs "Okay, wait! Hold on a second!"
@@ -168,8 +173,8 @@ label archival:
     show k207 at right
     with moveinright
     k174 "There he is! He's trying to escape!"
-    show cs disappointed
     k199 "Yeah, not so fast, CS. We aren't letting you outta here that easily."
+    show cs disappointed
     cs "Can one of you guys please tell me what's going on?!"
     k207 "Do we really have to explain what's wrong to him?"
     k199 "No, he's going to find out the hard way. Let's kick his ass!"
@@ -193,8 +198,8 @@ label archival_finale:
     scene archival_1 with fade
     play music "<loop 0>take_trip.mp3" volume 0.7
     music "Take a Trip from Me - u4ia"
-    show cs disappointed at center with moveintop
-    hide cs with moveoutbottom
+    show cs scared at center with moveintop
+    hide cs scared with moveoutbottom
     n "The shattering of glass is heard, and CS finds himself in a pool of glowing cyan liquid."
     show cs disappointed at center with moveinbottom
     n "CS picks himself up from the glass and goo, and looks ahead of him in awe."
@@ -214,7 +219,7 @@ label archival_finale:
     show cs disappointed
     with dissolve
     n "CS realizes that this other him is playing a game made of the very world that he lives in, even going so far as to poke fun at it."
-    show cs scared
+    show cs scared with hpunch
     n "Before CS can really take all this in, a few guards at the end of the building yell something at him."
     n "The guards are wearing tophats and black suits, and are carrying rifles."
     scene archival_3 with dissolve
@@ -404,23 +409,24 @@ label archival_finale:
     n "The tram gets onto the lane and starts speeding incredibly fast."
     scene archival_18
     show train_outside_tunnel
-    show cs disappointed at center
-    show cs disappointed with vpunch
-    show cs disappointed with hpunch
-    show cs disappointed with vpunch
-    show cs disappointed with hpunch
-    show cs disappointed with vpunch
-    show cs disappointed with hpunch
-    show cs disappointed with vpunch
-    show cs disappointed with hpunch
-    show cs disappointed with vpunch
-    show cs disappointed with hpunch
+    show cs worried at center
+    with vpunch
+    with hpunch
+    with vpunch
+    with hpunch
+    with vpunch
+    with hpunch
+    with vpunch
+    with hpunch
+    with vpunch
+    with hpunch
     scene the_tram with dissolve
     n "CS looks to his right, and sees the giant facilities fly past him. "
     scene white
     show archival_18
-    show cs disappointed at center
+    show cs worried at center
     with dissolve
+    with hpunch
     n "After about twenty of the facilities fly by, the tram suddenly stops. CS looks around, confused, and then he looks to his left."
     n "To his left is a long and seemingly endless hallway with a blinding light filling up his view."
     n "The tram slowly starts to rotate onto the new hallway's rail."
@@ -428,22 +434,26 @@ label archival_finale:
     show cs scared at center
     with dissolve
     show cs scared with vpunch
-    show cs scared with hpunch
-    show cs scared with vpunch
-    show cs scared with hpunch
-    show cs scared with vpunch
-    show cs scared with hpunch
-    show cs scared with vpunch
-    show cs scared with hpunch
-    show cs scared with vpunch
-    show cs scared with hpunch
-    show cs scared with vpunch
-    show cs scared with hpunch
-    show cs scared with vpunch
-    show cs scared with hpunch
+    with hpunch
+    with vpunch
+    with hpunch
+    with vpunch
+    with hpunch
+    with vpunch
+    with hpunch
+    with vpunch
+    with hpunch
+    with vpunch
+    with hpunch
+    with vpunch
     show cs scared
     with shake2
     n "The tram then starts speeding into the light at ludicrous speeds. CS panics and sees the light envelop the outside of the tram."
+    show cs scared flipped
+    pause 0.5
+    show cs scared
+    pause 0.5
+    show cs scared flipped
     n "As CS looks around, he can see glimpses of memories of places he's been to rushing past him."
     scene car plains
     show archival_19

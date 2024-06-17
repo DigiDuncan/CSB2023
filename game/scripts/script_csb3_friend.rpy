@@ -53,22 +53,24 @@ label microcenter:
     cs "My goodness, there are so many options."
     show cs happy
     cs "I honestly don't know which one to pick."
-    show cs
+    show cs surprised
     cs "Let's see here..."
     cs "I could get a super high-end Intel CPU, since Linus still seems to default to Intel even after shilling for AMD..."
     cs "Or, I could get a Ryzen... more cores would probably be better for streaming..."
-    show cs happy
+    show cs disappointed
     cs "Too many good options! I don't know which one to pick!"
-    show cs
+    show cs happy
     if fun_value(40):
         cs "Whatever, I'll get this AMD Threadripper."        
     else:
         cs "Whatever, I'll get this Intel i9."
+    show cs
     cs "Now, for the GPU."
     hide cs with moveoutright
     scene gpuaisle with fade
     show cs at mid_left with moveinleft
     n "CS heads over to the GPU aisle."
+    show cs surprised
     cs "Hmm, we've got AMD and NVIDIA. I wish Linus had told me which one I should get..."
     n "CS looks at his options."
     hide cs with moveoutright
@@ -112,6 +114,7 @@ label high_gpu:
     show cs at mid_left with moveinleft
     cashier "That'll be $1,188."
     cs "Welp, not my money!"
+    show cs happy
     cs "Awesome! Hopefully this is gonna be good enough for Linus!"
     hide cs with moveoutright
     stop music fadeout 3.0
@@ -1148,9 +1151,9 @@ label low_gpu:
     pause 1.0
     show cs angry with determination
     pause 1.0
-    show cs concentrate with determination
-    pause 1.0
     show cs worried with determination
+    pause 1.0
+    show cs surprised with determination
     pause 1.0
     show cs happy with determination
     pause 1.0
@@ -1160,8 +1163,10 @@ label low_gpu:
     worker "Hey I'm-- what are you doing?"
     show cs worried
     cs "Oops! Sorry!"
+    show cs
     cs "Anyways, what did you find?"
     worker "I got this. It's pretty old, and it's covered in dust, but it's like $50."
+    show cs happy
     cs "Sounds great! I'll take it!"
     hide cs with moveoutright
     n "CS heads over to the checkout."
@@ -1171,6 +1176,7 @@ label low_gpu:
     with fade
     show cs at mid_left with moveinleft
     cashier "That'll be $50."
+    show cs happy
     cs "Good enough for me!"
     hide cs with moveoutright
     scene black with fade
@@ -1199,6 +1205,7 @@ label low_gpu:
     cs "Well, I know you probably didn't want me to spend too much, plus, I had something similar to this once!"
     linus "I don't care about costs! I wanted a cool streaming computer and you failed!"
     linus "You're fired!"
+    show cs scared
     cs "W-W-What?"
     linus "Leave! I'll hire someone else who can make a better PC than you!"
     show cs angry
