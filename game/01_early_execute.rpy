@@ -55,7 +55,7 @@ init:
     transform _fun_value_fade:
         on show: 
             xanchor 0 xpos 23
-            yanchor 0 ypos 992
+            yanchor 0 ypos 990
             alpha 0.00
             linear 0.5 alpha 1.00
             time 2.5
@@ -65,10 +65,10 @@ init:
         block:
             # back
             linear 0.1 xpos 22
-            linear 0.01 ypos 991
+            linear 0.01 ypos 989
             # forward
             linear 0.1 xpos 24
-            linear 0.01 ypos 993
+            linear 0.01 ypos 991
             repeat
 
 python early:
