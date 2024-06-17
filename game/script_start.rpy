@@ -1003,6 +1003,9 @@ image cs angry cultist flipped = "flip:characters/cs/angryrobe.png"
 image cruise = "characters/tom_cruise.png"
 image cruise flipped = "flip:characters/tom_cruise.png"
 image blue_branch = "bg/bluebranch.png"
+image onscreen_sharpener = "pencilsharpener.png"
+image renault = "renault.png"
+image renault_inside = "bg/renault_inside.png"
 
 # Static Images
 image post_it = "post-it.png"

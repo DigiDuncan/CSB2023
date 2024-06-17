@@ -178,7 +178,7 @@ init python:
 
 screen pencilgame2:
     default pencilgame2 = PencilGameDisplayable2()
-    add "images/bg/pencilroom.png"
+    add "minigames/pencil2/pencilboss.png"
     add "minigames/pencil/table.png" at transform:
         yalign 1.0
     text "Press [[SPACE] to move on to the next pencil!":

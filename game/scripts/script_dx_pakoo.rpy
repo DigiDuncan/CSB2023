@@ -137,8 +137,10 @@ label after_true:
     cs "Oh God what's happening?!"
     billy "Turn it off! Turn it off!"
     cs "I can't!!"
+    play sound "sfx_tinnitus.mp3" volume 3
     scene white with dissolve
     stop music fadeout 3.0
+    stop sound fadeout 5.0
     n "A flash of blinding light engulfs CS, as he disappears with it."
     n "As CS slowly opens his eyes, he finds himself in an unforgiving place."
     scene roombacks
@@ -195,12 +197,23 @@ label after_true:
     show cs disappointed flipped
     cs "I wonder if Billy and Arc ended up here too..."
     show cs disappointed
+    if fun_value(10):
+        n "All of a sudden, a time and space portal opens and Car Guy comes out of it."
+        jump renault
+    else:
+        jump back_to_story
+
+label back_to_story:
     cs "Maybe I can find Billy's machine, if it ended up here."
     n "Before CS can get anywhere, a group of men run up to him."
     show shadowman at mid_left with moveinleft
     cs "Hey what's going--{nw}"
+    play sound "sfx_hitbod1.wav"
     scene black
+    play sound "sfx_hitbod2.wav"
     cs "Ow! HEY--{nw}"
+    play sound "sfx_hitbod3.wav"
+    play sound "sfx_hitbod1.wav"
     pause 5.0
     scene pencilroomblur with dissolve
     cs "Ohhh, my head..."
@@ -263,7 +276,7 @@ label after_true:
     play music "<loop 0>10_feet_away.mp3" volume 1
     cs "Well, I guess I'm not leaving now!"
     cs "I need to figure out how to get Billy's machine back..."
-    n "Before cs can think, a familiar voice is heard rushing over to him."
+    n "Before CS can think, a familiar voice is heard rushing over to him."
     show cs disappointed at left with move
     show csgod at right with moveinright
     csgod "Stop! Don't go anywhere yet!"
@@ -427,17 +440,17 @@ label seek_competitors:
     cs "Which cult should I look for?"
     menu:
         "Pick a cult:"
-        "Scientology":
+        "Scientology (NF)":
             jump science_ask
-        "Cargo Cult":
+        "Cargo Cult (NF)":
             jump cargo_ask
-        "Wayside Summer Camp":
+        "Wayside Summer Camp (NF)":
             jump summer_ask
         "Pencil Cult":
             jump pencil_ask
-        "Catholicism":
+        "Catholicism (NF)":
             jump catholic_ask
-        "Lunatic Cultists":
+        "Lunatic Cultists (NF)":
             jump lunatic_ask
 
 label pencil_ask:
@@ -458,12 +471,14 @@ label pencil_ask:
     pencil "It's officially our idea now!"
     pencil "Look, if you want to win our vote, you gotta earn it!"
     pencil "Behold!"
+    show onscreen_sharpener at mid_right_right with dissolve
     n "The pencil man pulls out a pencil sharpener."
     show cs cultist
     cs "Lemme guess, a pencil sharpening contest?"
     pencil "How'd you know?"
     cs "Oh, just a hunch that's all."
     stop music fadeout 3.0
+    hide onscreen_sharpener with dissolve
     n "The pencil man puts the sharpener on the table next to them, and then pulls out a pack of 60 pencils."
     pencil "You better hope you have some godlike endurance. You got 4 minutes."
     pencil "If you can beat my score, we'll give you our vote!"
@@ -474,7 +489,9 @@ label pencil_ask:
     minigame "minigame_pencil2" "win_pencil2" "lose_pencil_game2"
 
     label win_pencil2:
-    show pencilroom 
+    hide bad_end_screen
+    hide typewriter
+    show pencilroom
     show pencilguy at right
     show cs cultist at left
     with dissolve
@@ -486,7 +503,8 @@ label pencil_ask:
     show cs cultist flipped with determination
     hide cs with moveoutleft
     n "CS turns around and leaves without any more explanation."
-    show cult_con with dissolve
+    scene cult_con with dissolve
+    play music "<loop 0>10_feet_away.mp3" volume 1
     show cs cultist at center with moveinleft
     cs "Well, that takes me back."
     cs "Or I guess, that takes me forward!"
@@ -495,3 +513,84 @@ label pencil_ask:
     show cs cultist
     cs "Alright, well..."
     jump seek_competitors
+
+label renault:
+    show carguy at right with moveinright
+    play music "<loop 0>scales_of_joy.mp3" volume 0.8
+    carguy "Hey CS!"
+    carguy "Do you want to test drive the all new Renault 5E?"
+    cs "Uhh..."
+    menu:
+        "Yes":
+            jump yes_renault
+        "No":
+            jump no_renault
+
+label no_renault:
+    carguy "Alright, suit yourself then!"
+    hide carguy with moveoutright
+    jump back_to_story
+
+label yes_renault:
+    carguy "Sweet! Come with me!"
+    show cs with determination
+    hide cs
+    hide carguy
+    with moveoutright
+    scene black with dissolve
+    pause 1.0
+    scene cs_street
+    show renault
+    with dissolve
+    show carguy flipped at mid_left
+    show cs at left
+    with moveinleft
+    cs "Well for one thing, it feels good to be back in the present."
+    carguy "Indeed! It also will feel nice driving this new electric car from Renault!"
+    carguy "Would you like to give it a test drive?"
+    show cs happy
+    cs "Sure!"
+    scene black
+    play sound "sfx_doorslam.ogg"
+    pause 0.4
+    play sound "sfx_doorslam.ogg"
+    pause 0.5
+    play sound "sfx_driving.wav" volume 0.5
+    scene renault_inside
+    show drive_day behind renault_inside
+    show cs at left
+    show carguy at right
+    with dissolve
+    cs "Wow! This car feels super smooth to drive!"
+    carguy "This car is like the R5 back in its day, a popular and essential car but with a modern twist: silent, high-tech, environmentally friendly and cheeky."
+    cs "I love it already!"
+    scene black
+    play sound "sfx_doorslam.ogg"
+    pause 0.4
+    play sound "sfx_doorslam.ogg"
+    pause 0.5
+    stop music fadeout 1.0
+    scene moomin_zone1
+    show renault
+    show cs at center
+    show carguy at right
+    with dissolve
+    play music "<loop 0>muumin_tani_fuyu.mp3" volume 1
+    carguy "So that was the new Renault 5E! I hope you enjoyed it!"
+    cs "Yeah I did!"
+    show cs disappointed
+    cs "By the way, where are we? I don't recognize this place at all!"
+    show moomin flipped at left with moveinleft
+    moomin "Hey, nice car! Can I test drive it?"
+    carguy "Sure thing! Off you go CS, you need to get back to your adventure!"
+    show cs worried
+    cs "Wait--{nw}"
+    stop music
+    scene hobbytown
+    show cs disappointed
+    play sound "sfx_clapperboard.wav"
+    cs "God damnit!"
+    cs "I felt so in control of that car, but so out of control at the same time..."
+    cs "Where was I here anyways?"
+    cs "Oh yeah..."
+    jump back_to_story
