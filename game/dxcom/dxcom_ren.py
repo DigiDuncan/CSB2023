@@ -1,5 +1,3 @@
-from renpy.display.transform import Transform
-from renpy.game import persistent
 import renpy.exports as renpy
 
 """renpy
@@ -35,6 +33,8 @@ class Commentary:
     def color(self) -> str:
         if self.speaker == "Digi":
             return "#0fcdf7"
+        elif self.speaker == "Arceus":
+            return "#f1c40f"
         else:
             return "#ffffff"
 

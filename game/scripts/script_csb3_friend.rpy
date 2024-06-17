@@ -317,6 +317,7 @@ label after_fanboy:
     scene outside_ltt
     show cs angry flipped at center
     with fade
+    dxcom fightminigame
     $ achievement_manager.unlock("I Thought This Was A Visual Novel")
     n "CS struggles to catch his breath."
     if fanboy_type == "nvidia":
