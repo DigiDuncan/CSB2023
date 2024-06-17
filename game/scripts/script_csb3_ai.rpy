@@ -11,6 +11,7 @@ label csbiii_ai:
     cs "Well, have you tried the \"Hairdryer Cooling System\"?"
     n "Everyone exchanges puzzled glances."
     "Everyone" "The what?"
+    show cs happy
     n "CS grins michevously."
     cs "Trust me, it's the ultimate cooling solution. Picture this: we attach a hairdryer to the CPU, set it to low heat, and let the breeze cool everything down. It's foolproof!"
     show linus at center with moveinright
@@ -36,7 +37,7 @@ label csbiii_ai:
     n "Arceus bursts in."
     show arceus at center with moveinright
     arceus "CS! We've got to get out of here, and fast! The cops are hot on our tails!"
-    show cs at left
+    show cs disappointed at left
     cs "Arceus, what in the world? Cops? I thought we were done with that prison break business!"
     arceus "Long story short, our disguise as janitors didn't quite fool them. We need to make a run for it before they catch up!"
     n "The colleagues in the office glance at each other, surprised and confused by the sudden turn of events."
@@ -58,11 +59,12 @@ label csbiii_ai:
     arceus "CS, do you even know where this tunnel leads?"
     cs "Not a clue, my foxy friend! But that's what makes it an adventure, right?"
     scene park1 with fade
-    show cs at left with moveinleft
-    show arceus at right with moveinright
+    show cs at left with moveinbottom
+    show arceus at right with moveinbottom
     play music "<loop 0>circus.mp3" volume 0.4
     music Circus - Toby Fox
     n "They emerge from the tunnel into a surprising location—an abandoned, overgrown amusement park."
+    show arceus angry
     arceus "An amusement park? Seriously, CS?"
     cs "Hey, when life hands you unexpected escapes, you make the most of them!"
     hide cs with moveoutright
@@ -70,7 +72,7 @@ label csbiii_ai:
     hide arceus with moveoutright
     scene park2 with fade
     show cs at left with moveinleft
-    show arceus at right with moveinright
+    show arceus flipped at right with moveinleft
     n "CS188 and Arceus start exploring the amusement park, hiding among the dilapidated rides and attractions while evading the pursuing cops."
     hide cs with moveoutright
     show arceus flipped with determination
@@ -83,29 +85,45 @@ label csbiii_ai:
     play music "<loop 0>chase.mp3" volume 0.4
     music The Chase - Toby Fox
     n "Arceus whispers to CS."
+    show arceus worried
     arceus "CS, we can't hide here forever. We need a distraction!"
+    show cs surprised
     n "CS thinks for a sec."
+    show cs
     cs "I've got it! Remember that prank we pulled back in prison using inflatable rubber ducks?"
+    show arceus happy
     arceus "How could I forget?"
+    show arceus
     cs "Well, let's unleash the \"Quack Attack\" on our pursuers!"
     play sound "<loop 0>sfx_duck.ogg" loop volume 0.7
     n "CS188 and Arceus discreetly inflate dozens of rubber ducks and release them, causing a colorful and noisy chaos."
     play sound "<loop 0>sfx_duck.ogg" loop volume 0.7
     show ai_ducks
     n "The cops are distracted, slipping and sliding on the rubber ducks, as CS188 and Arceus make their getaway."
-    hide copguy_ai with moveoutright
+    hide copguy_ai with dissolve 
+    show arceus flipped
+    hide cs with moveoutright
+    hide arceus with moveoutright
+    with ease
     stop sound fadeout 7.0
     hide ai_ducks with dissolve
     n "The chase scene intensifies as CS188 and Arceus dash through the amusement park, narrowly avoiding capture at every turn."
-    show cs flipped with determination
-    hide cs with moveoutleft
-    hide arceus with moveoutleft
+    # totally didnt steal this transition from train route - tate
+    show cs flipped at offscreenright with determination
+    show cs flipped at offscreenleft
+    with MoveTransition(0.5)
+    show arceus at offscreenright with determination
+    show arceus at offscreenleft
+    with MoveTransition(0.5)
     scene park2 with fade
-    show cs at left with moveinleft
+    show cs flipped at left with moveinright
     show arceus at right with moveinright
+    show cs
     n "CS188 and Arceus reach the park's exit, breathing heavily but exhilarated."
+    show arceus happy
     arceus "CS, that was insane! We actually made it!"
     n "CS catches his breath."
+    show cs happy
     cs "We sure did, buddy. Another adventure for the books!"
     play music "<loop 0>friendship.mp3" volume 0.4
     scene endingai with Fade(1.0, 1.0, 1.0)
