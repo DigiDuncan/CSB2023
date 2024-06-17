@@ -53,6 +53,8 @@ define achievements = [
     Achievement("All Over Again", "???", "Beat CSBIII all over again.", "alloveragain", True),
     Achievement("F.U.N.", "???", "Roll a fun value.", "fun", True),
     Achievement("Archived", "???", "Find Addy's Facility.", "archive", True),
+    Achievement("Graphite Grinder", "Sharpening Time 2", "Beat the Pencil Cultist's high score.", "grinder"),
+    Achievement("60 Drillless WR", "Your wrist hurts.", "Get a perfect score of 1200.", "1200"),
     Achievement("Gotta Catch Them All", "Collect every bio.", "Collect every bio.", "bios"),
     Achievement("The Brown Album", "Collect every song in the jukebox.", "Collect every song in the jukebox.", "juke"),
     Achievement("Fin.", "Collect all the endings.", "Collect all the endings.", "end")

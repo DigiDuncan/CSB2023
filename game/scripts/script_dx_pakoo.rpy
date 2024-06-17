@@ -211,6 +211,7 @@ label after_true:
     show pencilguy at left
     show pencilcashier at right
     with dissolve
+    play music "<loop 0>apple_kid.mp3" volume 1
     cs "...and what the hell is this outfit?"
     pencil "Welcome, to the Pencil Cult!"
     cs "..."
@@ -220,9 +221,9 @@ label after_true:
     pencil "We call ourselves a cult, so we can win CultCon and gain massive amounts of followers!"
     cashier "Don't bother with escaping either, I already tried that and they just blocked the door."
     cs "Okay okay, slow down."
-    cs "PencilCon? CultCon?"
+    cs "Pencil Cult? CultCon?"
     cs "Are we at... CultCon right now?"
-    pencil "Indeed, so we can show how massive our fanbase is by capturing people and if we win we can gain more pencil enthusists!"
+    pencil "Indeed, so we can show how massive our fanbase is by capturing people, and if we win, we can gain more pencil enthusiasts!"
     cs "Okay, first of all..."
     cs "Couldn't you like, advertise a bit better than kidnapping random people to make some kind of cult?"
     pencil "That's too much work! People wouldn't even glance at our ads!"
@@ -235,18 +236,22 @@ label after_true:
     pencil "But for now, you are now enlisted into the Pencil Cult and cannot leave until the event ends!"
     cs "Yeah okay, can I go to the bathroom first? I was gonna pee before you kinapped me."
     pencil "Hey that rhymed! Yeah you can go."
+    show cs pencil
     cs "Thank you, I'll just be a moment!"
     hide cs with moveoutright
     scene black with dissolve
+    stop music fadeout 3.0
     n "CS gets to the bathroom and takes off his stuffy pencil costume."
     scene cult_con
     show cs disappointed at center
     with dissolve
+    play music "<loop 0>10_feet_away.mp3" volume 1
     cs "God, what the fuck is all of this?"
     cs "I can't tell if I'm still in the past or what is going on now."
     cs "I need to find a way out of here."
     n "Just as CS was going to look for an exit, a video starts playing on one of the many TVs around the convention."
     scene black with dissolve
+    stop music fadeout 3.0
     #CultCon intro video plays
     n "A video would play here, but I didn't finish it yet."
     n "The video would sum up Cult Con, explaining that there is a side competition that takes place."
@@ -255,6 +260,7 @@ label after_true:
     scene cult_con
     show cs 
     with dissolve
+    play music "<loop 0>10_feet_away.mp3" volume 1
     cs "Well, I guess I'm not leaving now!"
     cs "I need to figure out how to get Billy's machine back..."
     n "Before cs can think, a familiar voice is heard rushing over to him."
@@ -274,7 +280,7 @@ label after_true:
     hide csgod
     show csgod_angry at right
     csgod "Look CS, I may be a god, but we still do a lot of the same things you mortals do."
-    csgod "I don't watch over you every second, I'm sorry, but that would be extremely boring."
+    csgod "I don't watch over you every second, like I'm sorry, but that would be extremely boring."
     show cs angry
     cs "Wow, okay! I have had a pretty interesting life at least since HoH SiS came along!"
     cs "Why can't you speak to your cult yourself?"
@@ -309,7 +315,7 @@ label after_true:
     n "CS runs off to find the cultists."
     csgod "Fuck man, I really need to get my life together."
     n "Meanwhile, The Blue Branch Cult is deciding on how to win the yearly competition."
-    scene cult_con
+    scene blue_branch
     show cultist_2 at right
     show cultist_3 at mid_mid_right
     show cultist at mid_right
@@ -320,13 +326,13 @@ label after_true:
     show cs cultist at left with moveinleft
     cs "Hey guys! Fellow hater of everything here!"
     cultist_3 "Is that a new follower?"
-    cultist "I need to make sure. Do you think have what it takes to be a member of Blue Branch?"
+    cultist "I need to make sure. Do you think you have what it takes to be a member of Blue Branch?"
     cs "I mean, I secretly don't hate CSGod."
     cultist "Yeah he's a real one let him in."
     cs "Woohoo!"
     cultist_2 "So, how did you find out about us?"
     cs "Well, I have heard about you guys from other CultCons, but I haven't been able to travel all the way to Montana."
-    cs "So I figured travelling to Winsconsin is easier, that would be my chance to get in."
+    cs "So I figured travelling to Winsconsin is easier, and that would be my chance to get in."
     cultist "Well, we appreciate it."
     cs "You mean you hate it?"
     cultist "Exactly."
@@ -334,7 +340,7 @@ label after_true:
     cultist "We need someone that can influence the other cults to put their votes in for us."
     cs "Well, I can certainly help with that. The prize this year is really something special."
     cultist_3 "Is it? It just looks like a big pot, I kinda hate it."
-    cs "Oh no, it has much more powerful than it looks."
+    cs "Oh no, it is much more powerful than it looks."
     cultist "Well, if you can help us win, we'll let you take it. We just care about winning."
     cs "Sounds good to me."
     jump cult_questions
@@ -373,35 +379,46 @@ label competitors_ask:
     jump cult_questions
 
 label win_ask:
-    cs "So, how do we in the competition?"
+    cs "So, how do we win in the competition?"
     cultist "Well, all the cults have a certain number of votes they give out to cults they are impressed by."
     cultist "The bigger the cult, the more votes you can hand out."
     cultist "That also means that bigger you are, the more votes that usually go to you."
-    cultist "It is possible for a small cult like us to win, we just have to put in more work to be influentual."
+    cultist "It is possible for a small cult like us to win, we just have to put in more work to be influential."
     cultist "Which is what you'll be doing."
     cs "Ah, I got it."
     jump cult_questions
 
 label competiton_start:
     cs "I think I'm good."
+    stop music fadeout 3.0
     cultist "Alright, awesome."
-    cultist "Now go out there and--"
+    cultist "Now go out there and--{nw}"
+    play music "<loop 0>hitsquad_2.mp3" volume 1
     cruise "Hey you purple-hooded idiots!"
+    show cruise flipped at center with moveinleft
+    show cs angry cultist
     cultist_2 "Yeah, what do YOU want?"
     cultist_3 "Get out of here, you alien worshipping asshole!"
     cruise "Oh, I just wanted to see how well you guys were LOSING this year!"
+    show cruise 
     cruise "I bet your God is fake, just like everyone elses!"
     cultist "Alright you prick, get the hell out of here!"
+    show cruise flipped
     cruise "Or what? If you attack me, you'll get kicked out!"
     cruise "I've been working on opening up past my human form, in which I'll be unstoppable."
     cruise "Then this convention will have something real to show off for once!"
     cruise "See y'all later!"
+    show cruise with determination
+    hide cruise with moveoutleft
+    stop music fadeout 3.0
+    show cs cultist
     cultist "Eugh, fuck that guy."
     cultist "Anyways, I wish you the best of luck."
     cs "Don't worry, we'll show him who's boss by the end of this."
     cultist "I hope so."
     n "CS runs off to find competitors."
     scene cult_con with dissolve
+    play music "<loop 0>10_feet_away.mp3" volume 1
     show cs cultist at center with moveinleft
     cs "Alright, so there are a few cults I can challenge here."
     jump seek_competitors
@@ -426,7 +443,7 @@ label seek_competitors:
 label pencil_ask:
     cs "The cult leader said that the Pencil guys usually give us a vote, so I can see what they are up to. "
     hide cs with moveoutright
-    n "CS makes his way to the pencil stand."
+    n "CS makes his way to the pencil room."
     show pencilroom 
     show pencilguy at right
     with dissolve
@@ -446,6 +463,7 @@ label pencil_ask:
     cs "Lemme guess, a pencil sharpening contest?"
     pencil "How'd you know?"
     cs "Oh, just a hunch that's all."
+    stop music fadeout 3.0
     n "The pencil man puts the sharpener on the table next to them, and then pulls out a pack of 60 pencils."
     pencil "You better hope you have some godlike endurance. You got 4 minutes."
     pencil "If you can beat my score, we'll give you our vote!"
@@ -453,7 +471,7 @@ label pencil_ask:
     pencil "Well aren't you cocky? Let's see this then!"
     pencil "3, 2, 1,"
     pencil "Go!"
-    minigame "minigame_pencil2" "win_pencil2" "lose_pencil_game"
+    minigame "minigame_pencil2" "win_pencil2" "lose_pencil_game2"
 
     label win_pencil2:
     show pencilroom 

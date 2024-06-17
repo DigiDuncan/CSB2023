@@ -358,6 +358,7 @@ define alicia = Character("Alicia", callback = renpy.partial(char_callback, name
 define witch = Character("Witch", callback = renpy.partial(char_callback, name = "witch"))  # DX: Beep
 define tate_offscreen = Character("???", callback = renpy.partial(char_callback, name = "tate_offscreen", beep="tate"))
 define renovator = Character("Renovator", callback = char_callback)
+define cruise = Character("Tom Cruise", callback = char_callback)
 
 # Character Images
 ## CS
@@ -999,6 +1000,9 @@ image cs angry cultist = "characters/cs/angryrobe.png"
 image cs cultist flipped = "flip:characters/cs/robe.png"
 image cs disappointed cultist flipped = "flip:characters/cs/disappointedrobe.png"
 image cs angry cultist flipped = "flip:characters/cs/angryrobe.png"
+image cruise = "characters/tom_cruise.png"
+image cruise flipped = "flip:characters/tom_cruise.png"
+image blue_branch = "bg/bluebranch.png"
 
 # Static Images
 image post_it = "post-it.png"

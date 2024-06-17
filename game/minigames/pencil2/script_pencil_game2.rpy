@@ -197,10 +197,11 @@ label minigame_pencil2:
     $ quick_menu = True
     window show
 
-    if _return >= 30000000:
-        $ achievement_manager.unlock("Pencilovania")
+    if _return >= 1200:
+        $ achievement_manager.unlock("60 Drillless WR")
     else:
         if _return > DIGI_SCORE:
+            $ achievement_manager.unlock("Graphite Grinder")
             $ renpy.jump(minigame_win)
         else:
             $ renpy.jump(minigame_loss)
