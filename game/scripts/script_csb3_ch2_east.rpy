@@ -513,7 +513,7 @@ label nebraska:
         baumer "Get out of Nebraskaska!"
         cs "We are working on it!"
         hide baumer with moveoutright
-        show arceus
+        show arceus  
         show pakoo disappointed flipped
         pakoo "Who was that?"
         cs "I don't know, what were you saying?"
