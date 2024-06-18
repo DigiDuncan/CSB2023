@@ -509,11 +509,15 @@ label nebraska:
     if fun_value(10):
         pakoo "I never thought you guys would come down to Nebraskaska. There's, like, nothing here."
         show baumer flipped at mid_left with moveinleft
+        show arceus worried
         baumer "Get out of Nebraskaska!"
         cs "We are working on it!"
         hide baumer with moveoutright
+        show arceus  
+        show pakoo disappointed flipped
         pakoo "Who was that?"
         cs "I don't know, what were you saying?"
+        show pakoo flipped
         pakoo "Oh yeah, I was gonna take you somewhere to eat."
         n "Pakoo takes the gang over to the old market section of Nebraskaska."
     else:
