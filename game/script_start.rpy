@@ -1241,8 +1241,8 @@ default ucn_scale = 1.0
 default cont = False
 
 # Minigames
-default minigame_win = "secret"
-default minigame_loss = "secret"
+default minigame_win = "secret_dx"
+default minigame_loss = "secret_dx"
 
 default typewriter_text = "Hello, world!"
 

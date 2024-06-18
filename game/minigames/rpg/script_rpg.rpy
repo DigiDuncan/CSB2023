@@ -8,8 +8,8 @@ label rpg_test:
             $enemy_2
             $enemy_3
         scale 1.0
-        on_win "secret"
-        on_lose "secret"
+        on_win "secret_dx"
+        on_lose "secret_dx"
 
 label rpg_fanboy_fight_amd:
     rpg:
@@ -49,7 +49,7 @@ label rpg_cop_fight_1:
             cop
             copguygodmode
         scale 1.0
-        on_win "secret"
+        on_win "secret_dx"
         on_lose "so_join"
 
 label rpg_cop_fight_2:
@@ -208,7 +208,7 @@ label rpg_error:
             cs_final2
             pakooe
         scale 2.0
-        on_win "secret2"
+        on_win "secret_dx"
         on_lose "after_error_fight"
 
 label rpg_archival:
