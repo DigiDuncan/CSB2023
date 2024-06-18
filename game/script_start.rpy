@@ -417,6 +417,13 @@ define ed_ai = Character("\"Ed\"", callback = renpy.partial(char_callback, name 
 define obamanobeep = Character("\"Obama\"", callback = renpy.partial(char_callback, name = "obama_ai", play_beeps = False))
 define bomahanobeep = Character("\"Omaha\"", callback = renpy.partial(char_callback, name = "obama_ai", play_beeps = False))
 
+# DX Train Route Character Definitions
+define amtrak_conductor = Character("Conductor", callback = char_callback)
+define amtrak_stewardess = Character("Stewardess", callback = char_callback)
+define amtrak_npc_1 = Character("Passenger 1", callback = char_callback)
+define amtrak_npc_2 = Character("Passenger 2", callback = char_callback)
+define amtrak_npc_3 = Character("Passenger 3", callback = char_callback)
+
 # Character Images
 ## CS
 image cs = "characters/cs/neutral.png"
@@ -576,6 +583,8 @@ image tate sad = "characters/tate/tatesad.png"
 image tate sad flipped = "flip:characters/tate/tatesad.png"
 image tate stare = "characters/tate/tatestare.png"
 image tate stare flipped = "flip:characters/tate/tatestare.png"
+image tate cry = "characters/tate/tatecry.png"
+image tate cry flipped = "flip:characters/tate/tatecry.png"
 
 ## Mean
 image mean = "characters/mean/mean.png"
@@ -586,6 +595,20 @@ image mean happy2 = "characters/mean/meanhappy2.png"
 image mean happy2 flipped = "flip:characters/mean/meanhappy2.png"
 image mean surprised = "characters/mean/meansurprised.png"
 image mean surprised flipped = "flip:characters/mean/meansurprised.png"
+image mean ayo = "characters/mean/meanayo.png"
+image mean ayo flipped = "flip:characters/mean/meanayo.png"
+image mean angry = "characters/mean/meanangry.png"
+image mean angry flipped = "flip:characters/mean/meanangry.png"
+image mean wat = "characters/mean/meanwat.png"
+image mean wat flipped = "flip:characters/mean/meanwat.png"
+image mean furious = "characters/mean/meanfurious.png"
+image mean furious flipped = "flip:characters/mean/meanfurious.png"
+image mean tired = "characters/mean/meantired.png"
+image mean tired flipped = "flip:characters/mean/meantired.png"
+image mean worried = "characters/mean/meanworried.png"
+image mean worried flipped = "flip:characters/mean/meanworried.png"
+image mean scared = "characters/mean/meanscared.png"
+image mean scared flipped = "flip:characters/mean/meanscared.png"
 
 ## Archival
 image k174 = "characters/k174.png"
@@ -1101,6 +1124,27 @@ image pencilcashier = "characters/pencilcashier.png"
 image cruise = "characters/tom_cruise.png"
 image cruise flipped = "flip:characters/tom_cruise.png"
 
+# DX Train Route
+image kingman_exterior = "bg/train/kingman_exterior.png"
+image kingman_interior = "bg/train/kingman_interior.png"
+image kingman_museum = "bg/train/kingman_museum.png"
+image kingman_platform_1 = "bg/train/kingman_platform_1.png"
+image kingman_platform_2 = "bg/train/kingman_platform_2.png"
+image kingman_train_arrive = "bg/train/kingman_train_arrive.png"
+image amtrak_arrive_close = "bg/train/amtrak_arrive_close.png"
+image amtrak_sleeper_corridor = "bg/train/amtrak_sleeper_corridor.png"
+image amtrak_sleeper_interior_day = "bg/train/amtrak_sleeper_interior_day.jpg"
+image amtrak_sleeper_interior_night = "bg/train/amtrak_sleeper_interior_night.png"
+image amtrak_dining_car = "bg/train/amtrak_dining_car.png"
+image amtrak_dining_mean = "bg/train/amtrak_dining_mean.png" 
+
+# Train Route NPCs
+image amtrak_conductor = "characters/amtrak_conductor.png"
+image amtrak_conductor flipped = "flip:characters/amtrak_conductor.png"
+image amtrak_stewardess = "characters/amtrak_stewardess.png"
+image amtrak_stewardess flipped = "flip:characters/amtrak_stewardess.png"
+image lupin = "characters/lupin.png"
+
 # Static Images
 image post_it = "post-it.png"
 image ytx = Transform("ytx.png", zoom = 0.333)
@@ -1274,6 +1318,14 @@ default line_9 = ""
 default line_10 = ""
 default line_11 = ""
 default line_12 = ""
+
+# DX Train route
+# the default values are silly so that i know they're defaults - tate
+default money_stolen = None
+default money_container = "treasure chest"
+default money_stolen_dialogue_switch = "lock it shut"
+default money_stolen_dialogue_switch_2 = "red and gold chest"
+default polar_express_fun_value = False
 
 # RPG
 default enemy_1 = "cop"
