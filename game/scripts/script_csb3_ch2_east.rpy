@@ -462,14 +462,20 @@ label south_dakota:
     cs "There really {i}is{/i} nothing out here, is there?"
     arceus "Nope. I don't get how people can even {i}live{/i} here."
     billy "We're, like, halfway through the Midwest. We've only got a couple states left to travel before we are in the heartland."
-    n "Billy follows the Missouri River down until they arrive in Omaha."
+    if fun_value(10):
+        n "Billy follows the Missouri River down until they arrive in Nebraskaska."       
+    else:    
+        n "Billy follows the Missouri River down until they arrive in Omaha."
     jump nebraska
 
 label nebraska:
     scene omaha
     show billy car
     with fade
-    n "The gang finally hits Omaha right before sundown."
+    if fun_value(10):
+        n "The gang finally hits Nebraskaska right before sundown."
+    else:
+        n "The gang finally hits Omaha right before sundown."
     cs "{i}This{/i} is the biggest city here? This is pretty small."
     billy "It looks very quaint. Hopefully we can find someplace to stay tonight."
     billy "I have no damn clue where to go here."
@@ -500,11 +506,22 @@ label nebraska:
     show cs happy flipped
     cs "Yeah! I haven't seen you in a while. I never thought you'd live in a place like {i}this!{/i}"
     show cs flipped
-    pakoo "I never thought you guys would come down to Omaha. There's, like, nothing here."
-    cs "We've been through a lot recently. Do you know somewhere we can eat and rest for the night?"
-    n "Pakoo thinks for a moment."
-    pakoo "I think I know a place."
-    n "Pakoo takes the gang over to the old market section of Omaha."
+    if fun_value(10):
+        pakoo "I never thought you guys would come down to Nebraskaska. There's, like, nothing here."
+        show baumer flipped at mid_left with moveinleft
+        baumer "Get out of Nebraskaska!"
+        cs "We are working on it!"
+        hide baumer with moveoutright
+        pakoo "Who was that?"
+        cs "I don't know, what were you saying?"
+        pakoo "Oh yeah, I was gonna take you somewhere to eat."
+        n "Pakoo takes the gang over to the old market section of Nebraskaska."
+    else:
+        pakoo "I never thought you guys would come down to Omaha. There's, like, nothing here."
+        cs "We've been through a lot recently. Do you know somewhere we can eat and rest for the night?"
+        n "Pakoo thinks for a moment."
+        pakoo "I think I know a place."
+        n "Pakoo takes the gang over to the old market section of Omaha."        
     show cs
     show arceus flipped
     with determination

@@ -406,6 +406,7 @@ define alicia = Character("Alicia", callback = renpy.partial(char_callback, name
 define witch = Character("Witch", callback = renpy.partial(char_callback, name = "witch"))  # DX: Beep
 define renovator = Character("Renovator", callback = char_callback)
 define cruise = Character("Tom Cruise", callback = char_callback)
+define baumer = Character("Steve Baumer", callback = char_callback)
 
 # Offscreen Character Definitions
 define tate_offscreen = Character("???", callback = renpy.partial(char_callback, name = "tate_offscreen", beep="tate"))
@@ -755,6 +756,8 @@ image moomin flipped = "flip:characters/moomin.png"
 image snufkin flipped = "flip:characters/snufkin.png"
 image alicia flipped = "flip:characters/alicia.png"
 image witch flipped = "flip:characters/witch.png"
+image baumer = "characters/ballmer_cutout.png"
+image baumer flipped = "flip:characters/ballmer_cutout.png"
 
 # Background Images
 ## CSBI
