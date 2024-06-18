@@ -1407,7 +1407,7 @@ label test:
             pass
         "True"  (type = "true"):
             pass
-        "DX"  (type = "dx"):
+        "New cool thing OwO"  (type = "dx"):
             pass
     $ renpy.full_restart()
 
