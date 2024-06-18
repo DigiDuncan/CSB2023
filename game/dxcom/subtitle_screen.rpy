@@ -46,6 +46,8 @@ screen dxcom(arg):
         imagebutton idle "dxcom_anim" hover_sound "sfx_select.wav":
             action Hide("dxcom"), SetVariable("current_dxcom", arg), Call("show_dxcom", from_current=True)
 
+    timer 15 action Hide('dxcom')
+
 transform t_dxcom:
     xanchor 1.0 xpos 0.95
     yanchor 0.0 ypos 0.05
@@ -53,5 +55,8 @@ transform t_dxcom:
     on show:
         alpha 0.0
         linear 0.5 alpha 1.0
+    on hide:
+        alpha 1.0
+        linear 0.5 alpha 0.0
 
 style dxcom_button_frame is empty
