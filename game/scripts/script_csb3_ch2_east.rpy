@@ -1834,8 +1834,9 @@ label back_home:
     n "After the long and treacherous journey, CS finally arrives at his house."
     show arceus flipped at left with moveinleft
     arceus "We made it back to your house, CS!"
-    show cs flipped at center with moveinright
+    show cs at center with moveinleft
     cs "Finally, I'm home..."
+    show cs flipped
     cs "Arceus, thank you so much for everything on this trip. I couldn't have done it without you."
     arceus "Aww, it was nice helping ya here."
     cs "You too, Billy."
@@ -1852,8 +1853,8 @@ label back_home:
     n "As CS says goodbye to his friends, a familiar but upsetting voice can be heard at the front of CS' house."
     stop music fadeout 1.0
     music end
-    show cs scared with hpunch
-    ed "{i}You!"
+    show cs scared flipped
+    ed "{i}You!" with hpunch
     show cs worried at left with moveinleft
     n "CS and the gang look towards CS' front porch, where Richard and Ed are waiting angrily for him."
     play music2 "<loop 0>hohsisremix.mp3" volume 0.5
@@ -1898,7 +1899,7 @@ label talktohohsis:
     show anno at offscreenleft
     play music "<loop 0>track3.mp3" volume 0.4
     music Track 3 - Weatherscan
-    unknown "Wait!!!"
+    anno_offscreen "Wait!!!"
     n "A voice can be heard behind the group running up to them."
     cs "Anno?"
     show anno at center behind doug with moveinleft

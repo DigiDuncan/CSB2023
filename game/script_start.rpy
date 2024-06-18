@@ -404,11 +404,14 @@ define moomin = Character("Moomin", callback = renpy.partial(char_callback, name
 define snufkin = Character("Snufkin", callback = renpy.partial(char_callback, name = "snufkin"))  # DX: Beep
 define alicia = Character("Alicia", callback = renpy.partial(char_callback, name = "alicia"))
 define witch = Character("Witch", callback = renpy.partial(char_callback, name = "witch"))  # DX: Beep
-define tate_offscreen = Character("???", callback = renpy.partial(char_callback, name = "tate_offscreen", beep="tate"))
-define pakoo_offscreen = Character("???", callback = renpy.partial(char_callback, name = "pakoo_offscreen", beep="pak"))
-define green_offscreen = Character("???", callback = renpy.partial(char_callback, name = "green", beep = "green"), what_color="#00FF00")
 define renovator = Character("Renovator", callback = char_callback)
 define cruise = Character("Tom Cruise", callback = char_callback)
+
+# Offscreen Character Definitions
+define tate_offscreen = Character("???", callback = renpy.partial(char_callback, name = "tate_offscreen", beep="tate"))
+define pakoo_offscreen = Character("???", callback = renpy.partial(char_callback, name = "pakoo_offscreen", beep="pak"))
+define green_offscreen = Character("???", callback = renpy.partial(char_callback, name = "green_offscreen", beep = "green"), what_color="#00FF00")
+define anno_offscreen = Character("???", callback = renpy.partial(char_callback, name = "anno_offscreen", beep = "anno"))
 
 # Character Images
 ## CS
@@ -452,11 +455,17 @@ image cs surprised = "characters/cs/surprised.png"
 image cs surprised flipped  = "flip:characters/cs/surprised.png"
 image cs scared = "characters/cs/scared.png"
 image cs scared flipped = "flip:characters/cs/scared.png"
+image cs scared dark = "dark:characters/cs/scared.png"
 image cs insane worried = "characters/cs/insane.png"
 image cs insane worried flipped = "flip:characters/cs/insane.png"
 image cs insane disappointed = "characters/cs/insane2.png"
 image cs horse = "characters/cs/horse.png"
 image cs horse flipped = "flip:characters/cs/horse.png"
+
+# CS Misc
+image csgod = "characters/csgod.png"
+image csgod flipped = "flip:characters/csgod.png"
+image young_cs = "characters/cs_young.png"
 
 ## Arc
 image arceus = "characters/arc/arceus.png"
@@ -524,6 +533,9 @@ image craptop sad = "characters/craptop/sad.png"
 image craptop updating = "characters/craptop/updating.png"
 image craptop ytp = "characters/craptop/ytp.png"
 image craptop evidence = "characters/craptop/evidence.png"
+image craptopreal = "characters/laptop.png"
+image craptopsmall = "characters/craptop.png"
+image craptopsmall flipped = "flip:characters/craptop.png"
 
 ## Tate
 image tate = "characters/tate/tatehappy.png"
@@ -572,134 +584,159 @@ image nova1 = "characters/novaedit.png"
 image nova2 = "characters/novaedit.png"
 image nova3 = "characters/novaedit.png"
 image carguya = "characters/carguya.png"
+image hart1 = "characters/hart1.png"
+image hart2 = "characters/hart2.png"
 
-## Others
-image discord = "characters/discord.png"
-image nova = "characters/nova.png"
-image nova dark = "dark:characters/nova.png"
-image nova flipped = "flip:characters/nova.png"
-image nova dark flipped = "dark:flip:characters/nova.png"
-image carguy = "characters/carguy.png"
-image carguy flipped = "flip:characters/carguy.png"
-image doug = "characters/doug.png"
-image cashier = "characters/cashier.png"
-image young_cs = "characters/cs_young.png"
+# HoH SiS 
 image rich = "characters/rich.png"
 image ed = "characters/ed.png"
 image ed phone = "characters/ed_phone.png"
 image wesley = "characters/wesley.png"
-image michael = "flip:characters/michael.png"
-image phil = "characters/phil.png"
 image worker_1 = "characters/worker_corn.png"
 image worker_2 = "characters/worker_blank.png"
-
-# updated sprite - tate
-image worker_3 = "flip:characters/mean/meanhohsis1.png"
-
+image worker_3 = "flip:characters/mean/meanhohsis1.png" # It's Mean!
 image worker_4 = "characters/worker_eville.png"
 image worker_5 = "characters/eddie_down.png"
 image worker_5alt = "characters/eddie_up.png"
 image worker_6 = "characters/worker_pineapple.png"
 image worker_7 = "characters/worker_chicken.png"
-image border_guard = "characters/border_guard.png"
-image linus = "characters/linus.png"
-image asylum_worker = "characters/mohs.png"
-image csgod = "characters/csgod.png"
-image csgod flipped = "flip:characters/csgod.png"
+
+# Copguy & Co.
 image copguy = "characters/copguy.png"
 image copguy flipped = "flip:characters/copguy.png"
-image luke = "characters/luke.png"
-image luke flipped = "flip:characters/luke.png"
-image border_guard dusk = "characters/border_guard_dusk.png"
 image copguy dark = "dark:characters/copguy.png"
 image copguy dark flipped = "dark:flip:characters/copguy.png"
 image copguy_ai = "characters/ai_cop_guy_full.png"
+image copguycrawl = "characters/copguycrawl.png"
+image sheriff = "characters/sheriff.png"
+image cop = "characters/cop.png"
+image cop dark = "dark:characters/cop.png"
+image cop_2 = "dark:characters/cop.png"
+image guard_soldier = "characters/dark:guard_soldier.png"
+image marine = "characters/marine.png"
+image big_tank = "characters/big_tank.png" # TODO: is this meant to reference the abrams or the sherman? - tate
+image asylum_worker = "characters/mohs.png"
+
+# CSB I
+image michael = "flip:characters/michael.png"
+image phil = "characters/phil.png"
+image carguy = "characters/carguy.png"
+image carguy flipped = "flip:characters/carguy.png"
+image doug = "characters/doug.png"
+
+# LMG & The Fanboys
+image linus = "characters/linus.png"
+image luke = "characters/luke.png"
+image luke flipped = "flip:characters/luke.png"
 image taran = "characters/taran.png"
 image taran flipped = "flip:characters/taran.png"
 image colton = "characters/colton.png"
-image sheriff = "characters/sheriff.png"
+image nfanboy = "characters/nvidiafanboy.png"
+image afanboy = "characters/amdfanboy.png"
+
+# Billy Mays
 image billy = "characters/billy.png"
 image billy car = "characters/billy/billy_car.png"
 image billy car happy = "characters/billy/billy_car_happy.png"
 image billy car turn = "characters/billy/billy_car_turn.png"
 image billy laser = "characters/BillyMaysWithLaser.png"
-image peppino = "characters/peppino.png"
-image peppino2 = "characters/peppino2.png"
+image billy dark = "dark:characters/billy.png"
+
+# Cultists
 image cultist = "characters/cultist.png"
 image cultist gun = "characters/cultistgun.png"
 image cultist_2 = "characters/cultist2.png"
 image cultist_3 = "characters/cultist2.png"
-image scott = "characters/scott.png"
-image terry = "characters/terry.png"
-image mettaton = "characters/mettaton.png"
-image pencilguy = "characters/pencil.png"
+
+# Digi
 image digi = "characters/digi.png"
 image digi dark = "dark:characters/digi.png"
 image digi flipped = "flip:characters/digi.png"
 image digi dark flipped = "dark:flip:characters/digi.png"
-image trailtrash = "characters/trailtrash.png"
-image trailtrash flipped = "flip:characters/trailtrash.png"
-image jerma = "characters/jerma.png"
-image tsa = "characters/tsa.png"
-image lego = "characters/lego.png"
-image lego eyes = "characters/legoeyes.png"
-image green = "characters/green.png"
-image green flipped = "flip:characters/green.png"
-image bouncer1 = "characters/bouncer.png"
-image bouncer2 = "characters/bouncer.png"
-image mika = "characters/mika.png"
-image mika dark = "dark:characters/mika.png"
-image craptopreal = "characters/laptop.png"
-image craptopsmall = "characters/craptop.png"
-image craptopsmall flipped = "flip:characters/craptop.png"
-image monika = "characters/monika.png"
-image kitty = "characters/kitty.png"
-image kitty flipped = "flip:characters/kitty.png"
-image blank = "characters/blank.png"
-image cop = "characters/cop.png"
-image cop dark = "dark:characters/cop.png"
-image cop_2 = "dark:characters/cop.png"
-image midge = "characters/midge.png"
+
+# Aria
 image aria = "characters/aria.png"
 image aria flipped = "flip:characters/aria.png"
 image aria dark = "dark:characters/aria.png"
 image aria dark flipped = "dark:flip:characters/aria.png"
-image guard_soldier = "characters/dark:guard_soldier.png"
-image obama = "characters/obama.png"
+
+# Our Friends!
+image kitty = "characters/kitty.png"
+image kitty flipped = "flip:characters/kitty.png"
+image blank = "characters/blank.png"
+image midge = "characters/midge.png"
+image mika = "characters/mika.png"
+image mika dark = "dark:characters/mika.png"
 image db = "characters/db.png"
-image nfanboy = "characters/nvidiafanboy.png"
-image afanboy = "characters/amdfanboy.png"
-image copguycrawl = "characters/copguycrawl.png"
 image db_cooper = "characters/db_coopergame.png"
-image marine = "characters/marine.png"
-image big_tank = "characters/big_tank.png" # TODO: is this meant to reference the abrams or the sherman? - tate
+image nova = "characters/nova.png"
+image nova dark = "dark:characters/nova.png"
+image nova flipped = "flip:characters/nova.png"
+image nova dark flipped = "dark:flip:characters/nova.png"
+image ges = "characters/ges.png"
+
+# Unsorted NPCs
+image cashier = "characters/cashier.png"
+image scott = "characters/scott.png"
+image obama = "characters/obama.png"
+image discord = "characters/discord.png"
+image border_guard = "characters/border_guard.png"
+image border_guard dusk = "characters/border_guard_dusk.png"
 image benrey = "characters/benrey.png"
-image howie = "characters/howie.png"
-image howie flipped = "flip:characters/howie.png"
+
+# Fired Route
 image guest = "characters/guest.png"
 image janitor = "characters/janitor.png"
 image customer = "characters/customer.png"
-image ges = "characters/ges.png"
-image gordon = "characters/gordon.png"
-image hammond = "characters/hammond.png"
-image jeremy = "characters/jeremy.png"
-image james = "characters/james.png"
-image tom = "characters/tom.png"
-image scott_pres = "characters/scott_pres.png"
-image miku = "characters/miku.png"
-image sayori = "characters/sayori.png"
-image car = "characters/car.png"
-image hart1 = "characters/hart1.png"
-image hart2 = "characters/hart2.png"
-image waitress = "characters/waitress.png"
+image howie = "characters/howie.png"
+image howie flipped = "flip:characters/howie.png"
+
+# South Route
+image bouncer1 = "characters/bouncer.png"
+image bouncer2 = "characters/bouncer.png"
+image trailtrash = "characters/trailtrash.png"
+image trailtrash flipped = "flip:characters/trailtrash.png"
+image green = "characters/green.png"
+image green flipped = "flip:characters/green.png"
+image jerma = "characters/jerma.png"
+image lego = "characters/lego.png"
+image lego eyes = "characters/legoeyes.png"
+image tsa = "characters/tsa.png"
+image monika = "characters/monika.png"
+
+# East Route
+image peppino = "characters/peppino.png"
+image peppino2 = "characters/peppino2.png"
 image streetguy = "characters/streetguy.png"
-image billy dark = "dark:characters/billy.png"
+image pencilguy = "characters/pencil.png"
+
+# East I-69
 image gnome = "characters/gnome.png"
+image waitress = "characters/waitress.png"
+image terry = "characters/terry.png"
+image mettaton = "characters/mettaton.png"
+
+# East I-94
 image smiley = "characters/smiley.png"
 image mario = "characters/mario.png"
 image mario flipped = "flip:characters/mario.png"
 image violent_jay = "characters/jay.png"
 image shaggy_too_dope = "characters/shaggydope.png"
+
+# England
+image gordon = "characters/gordon.png"
+image car = "characters/car.png"
+image tom = "characters/tom.png"
+image james = "characters/james.png"
+image jeremy = "characters/jeremy.png"
+image hammond = "characters/hammond.png"
+
+# Japan
+image scott_pres = "characters/scott_pres.png"
+image miku = "characters/miku.png"
+image sayori = "characters/sayori.png"
+
+# Sweden
 image joel = "characters/joel.png"
 image joel flipped = "flip:characters/joel.png"
 image ikea_greeter = "characters/ikea_man.png"

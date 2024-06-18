@@ -948,7 +948,7 @@ label airport:
     hide case with dissolve
     billy "That's cash in the trash!"
     billy "Well, then! Where are we going?"
-    n "CS tells Billy his address and they go down to the parking lot and start heading home."
+    n "CS tells Billy his address. They group then heads down to the parking lot to begin the final leg home."
     hide cs
     hide arceus flipped
     hide billy
@@ -1021,8 +1021,9 @@ label back_home_alt:
     n "After the long and exciting journey, CS finally arrives at his house."
     show arceus flipped at left with moveinleft
     arceus "We made it back to your house, CS!"
-    show cs flipped at center with moveinright
+    show cs at center with moveinleft
     cs "Finally, I'm home..."
+    show cs flipped
     cs "Arceus, thank you so much for everything on this trip. I couldn't have done it without you."
     arceus "Aw, it was nice helping ya here."
     cs "You too, Billy."
@@ -1038,7 +1039,8 @@ label back_home_alt:
     n "As CS says goodbye to his friends, a familiar but upsetting voice can be heard at the front of CS' house."
     stop music fadeout 1.0
     music end
-    ed "{i}You!"
+    show cs scared flipped
+    ed "{i}You!" with hpunch
     show cs disappointed at left with moveinleft
     n "CS and the gang look towards CS' front porch, where Richard and Ed are waiting angrily for him."
     play music2 "<loop 0>hohsisremix.mp3" volume 0.5
@@ -1323,17 +1325,20 @@ label noairport:
     mika "Ok, so, CS looks out the window and he spots a yellow Hummer."
     mika "The guy, with his arm out the window, says \"Dude, this car kicks ass! And I can watch Madagascar while driving!\""
     show arceus worried
+    show cs surprised
     mika "And it cuts to him watching Madagascar while driving."
     mika "And it's Alex saying \"What kind of music do you like Gloria?\""
     mika "(Alex the lion, by the way, from Madagascar)"
     mika "And Gloria says \"HIPPO HOP!\""
     mika "And then Gloria starts dancing, okay?"
     show arceus angry
+    show cs disappointed
     mika "And then the guy says \"HAHAHAHAHAHAH! Dude, those animals are so fucking funny! They make me want to merge without looking!\""
     mika "Anyways..."
     mika "Jos haluatte voittaa venäläiset, kutsukaa meitä suomalaisiksi ja soittakaa Säkkijärven polkkaa."
     hide mika with moveoutbottom
     arceus "CS? Was that in the scrip--{nw}"
+    show cs worried
     cs "Alright! Let's go in Arceus' house!"
     scene arceus_house
     show cs at left
@@ -1362,24 +1367,25 @@ label noairport:
     show cs at left
     show arceus at right
     n "The TV turns off and starts shaking."
+    show arceus worried
+    show cs scared
     play music "<loop 0>clownpiece.mp3" volume 0.6
     music Pierrot of the Star Spangled Banner - ZUN
-    show cs with vpunch
-    show cs with hpunch
-    show cs with vpunch
-    show cs with hpunch
-    show cs with vpunch
-    show cs with hpunch
-    show cs with vpunch
-    show cs with hpunch
-    show cs with vpunch
-    show cs with hpunch
-    show arceus worried
+    with vpunch
+    with hpunch
+    with vpunch
+    with hpunch
+    with vpunch
+    with hpunch
+    with vpunch
+    with hpunch
+    with vpunch
+    with hpunch
     arceus "What's going on?!"
-    show cs with vpunch
-    show cs with hpunch
-    show cs with vpunch
-    show cs with hpunch
+    with vpunch
+    with hpunch
+    with vpunch
+    with hpunch
     n "All of a sudden, the sentient craptop pops out of the TV!"
     show craptopreal at truecenter with moveinbottom
     craptop "Yo! What's up, fellas? It's me, the craptop!"
@@ -1400,7 +1406,7 @@ label noairport:
     cs "And then Copguy comes in, and shoots me, then I die!"
     n "Sure, fine, whatever."
     show copguy at mid_right with moveinright
-    copguy "You're... Done for!"
+    copguy "You're... done for!"
     copguy "Umm..."
     copguy "Pew pew pew!"
     cs "Oh no! Owwww!"
@@ -1428,6 +1434,7 @@ label reality_break:
     pause 3.0
     play sound "<loop 0>sfx_chatter.mp3"
     n "A bell rings, causing cast and crew to scatter."
+    show cs disappointed
     cs "Huh?"
     direct "Wow! That got out of hand!"
     cs "I was just--"

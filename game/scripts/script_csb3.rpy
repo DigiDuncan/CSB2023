@@ -766,7 +766,7 @@ label arc_escape:
     n "Meanwhile, CS and Arceus are still making their way through the US without any sense of direction."
     play music "<loop 0>echoing.mp3" volume 0.5
     music Echoing - Banana
-    show cs dark at left with moveinleft
+    show cs disappointed dark at left with moveinleft
     show arceus dark at right with moveinright
     cs "Hey, Arceus? Do you have any clue where we are?"
     arceus "No idea, I'm just following the road. There's bound to be a rest stop here eventually."
@@ -774,8 +774,11 @@ label arc_escape:
     stop music fadeout 3.0
     music end
     n "CS looks down the road."
+    show cs dark
     cs "Hey, Arc! I can see some lights in the distance! We've gotta be getting close!"
     arceus "Wait a minute, those are--"
+    show cs scared dark
+    show arceus worried dark
     show blue_light at left
     show red_light at right
     play sound "<loop 0>sfx_siren.ogg" volume 0.1
@@ -824,7 +827,7 @@ label ytp_magic_fight:
     pause 0.2
     show cs dark
     pause 1.0
-    arceus "CS?? Are you okay?"
+    arceus "CS? Are you okay?!"
     cs "Yeah, I feel really good, actually."
     cs "Are we good?"
     arceus "..."
@@ -911,7 +914,7 @@ label wait_arc:
     arceus "...okay."
     arceus "Well, uhh, what should we do now?"
     arceus "Are we gonna, like, try to get you home?"
-    arceus "{size=-5}Do you even wanna go home?"
+    arceus "{size=-15}Do you even wanna go home?"
     cs "Yes, yes, let's just wait here."
     arceus "In the middle of the road?"
     arceus "Why?"
@@ -941,7 +944,8 @@ label wait_arc:
     stop music fadeout 3.0
     music end
     scene cultforest
-    show billy car
+    show billy car 
+    with dissolve
     billy "Welp. We are here."
     n "CS gets out of the car and heads up the trail on the side of the road."
     arceus "Hey, uhh, I'm gonna get out too."
@@ -1001,6 +1005,7 @@ label wait_forest:
     arceus "Hmm?"
     cs "Now that we are out here and have more time to talk, where exactly are we heading to? Why did we come back to the US?"
     arceus "Well, I figured you wanted to go back home, right?"
+    show cs disappointed dark
     cs "Of course I want to head back home, it's just... it seems so far away."
     cs "We don't really have a car or anything, we are completely lost, and we've got the cops still looking for us, probably!"
     arceus "Look, man, I know it's pretty hard right now, but we've gotta be optimistic about this."
