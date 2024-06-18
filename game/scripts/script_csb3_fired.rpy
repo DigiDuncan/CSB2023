@@ -75,7 +75,7 @@ label new_plan:
     arceus "HoH SiS."
     anno "Wait, yeah, I can totally do that. I have the models ready for that and everything."
     n "Anno starts typing away at his laptop, and within a few minutes, a voice plays out of the speaker."
-    ed "I think CS is a pretty good guy. You shouldn't arrest him."
+    ed_ai "I think CS is a pretty good guy. You shouldn't arrest him."
     cs "Oh my God, that's amazing! But what about you two?"
     anno "Gotcha covered."
     # DX: These lines should be rewritten for clarification, but doing so would require also changing the AI-gen audio.

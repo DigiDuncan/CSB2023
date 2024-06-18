@@ -24,7 +24,7 @@ label csbiii_start:
     linus "Well, enjoy!"
     hide linus with moveoutright
     cs "I guess I'd better get to work on editing. Let's see what videos I need to edit..."
-    cs "Let's see, I have the new TechQuickie video on how livestreaming works, or the video on how at least half of the keys on your keyboard should be macros..."
+    cs "Hmm... I have the new TechQuickie video on how livestreaming works, or the video on how at least half of the keys on your keyboard should be macros..."
 
     # this section added by tate
 

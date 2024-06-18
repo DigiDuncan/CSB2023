@@ -69,9 +69,10 @@ label csbi_start:
     n "The Discord is overflowing with people trying to talk to CS."
     show cs at left with moveinleft
     menu:
+        "What will CS do?"
         "Speedrun CSBounciness" (type = "dx"):
             jump vibration
-        "Continue as normal" (type = "true"):
+        "Respond to chat" (type = "true"):
             pass
     play sound "sfx_ping.mp3"
     cs "Okay, bedtime! Bye, guys!"

@@ -358,8 +358,6 @@ define tate = Character("Tate", callback = renpy.partial(char_callback, name = "
 define kitty = Character("Kitty", callback = renpy.partial(char_callback, name = "kitty", beep = "kitty"))
 define obama = Character("Obama", callback = renpy.partial(char_callback, name = "obama", beep = "obama"))
 define bomaha = Character("Omaha", callback = renpy.partial(char_callback, name = "obama", beep = "obama"))
-define obamanobeep = Character("Obama", callback = renpy.partial(char_callback, name = "obama", play_beeps = False))
-define bomahanobeep = Character("Omaha", callback = renpy.partial(char_callback, name = "obama", play_beeps = False))
 define blank = Character("Blank", callback = renpy.partial(char_callback, name = "blank", beep = "blank"))
 define aria = Character("Aria", callback = renpy.partial(char_callback, name = "aria", beep = "aria"))
 define aria_alt = Character("Aria", callback = renpy.partial(char_callback, name = "aria", beep = "aria_alt"))
@@ -413,6 +411,11 @@ define tate_offscreen = Character("???", callback = renpy.partial(char_callback,
 define pakoo_offscreen = Character("???", callback = renpy.partial(char_callback, name = "pakoo_offscreen", beep="pak"))
 define green_offscreen = Character("???", callback = renpy.partial(char_callback, name = "green_offscreen", beep = "green"), what_color="#00FF00")
 define anno_offscreen = Character("???", callback = renpy.partial(char_callback, name = "anno_offscreen", beep = "anno"))
+
+# AI Imposter Character Definitions
+define ed_ai = Character("\"Ed\"", callback = renpy.partial(char_callback, name = "ed_ai", beep = "ed"))
+define obamanobeep = Character("\"Obama\"", callback = renpy.partial(char_callback, name = "obama_ai", play_beeps = False))
+define bomahanobeep = Character("\"Omaha\"", callback = renpy.partial(char_callback, name = "obama_ai", play_beeps = False))
 
 # Character Images
 ## CS
