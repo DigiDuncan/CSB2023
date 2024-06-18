@@ -55,7 +55,7 @@ class CommentaryString:
         for c in self.commentaries:
             renpy.with_statement(determination)
             renpy.show_screen("_dxcom", c)
-            renpy.music.play(c.full_path, channel="dxcom", loop=False)
+            renpy.music.play(c.full_path, channel="dxcom", loop=False, relative_volume = 2.0)
             renpy.with_statement(determination)
             renpy.pause(c.length)
 
