@@ -676,7 +676,13 @@ image aria flipped = "flip:characters/aria.png"
 image aria dark = "dark:characters/aria.png"
 image aria dark flipped = "dark:flip:characters/aria.png"
 
-# Our Friends!
+# Nova
+image nova = "characters/nova.png"
+image nova dark = "dark:characters/nova.png"
+image nova flipped = "flip:characters/nova.png"
+image nova dark flipped = "dark:flip:characters/nova.png"
+
+# More of our friends!
 image kitty = "characters/kitty.png"
 image kitty flipped = "flip:characters/kitty.png"
 image blank = "characters/blank.png"
@@ -685,10 +691,6 @@ image mika = "characters/mika.png"
 image mika dark = "dark:characters/mika.png"
 image db = "characters/db.png"
 image db_cooper = "characters/db_coopergame.png"
-image nova = "characters/nova.png"
-image nova dark = "dark:characters/nova.png"
-image nova flipped = "flip:characters/nova.png"
-image nova dark flipped = "dark:flip:characters/nova.png"
 image ges = "characters/ges.png"
 
 # Unsorted NPCs
