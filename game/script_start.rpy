@@ -1399,6 +1399,16 @@ label test:
     show cs dark at left
     with fade
     arceus "This is a dark test"
+    menu:
+        "Menu test?"
+        "Yes"  (type = "good"):
+            pass
+        "No"  (type = "bad"):
+            pass
+        "True"  (type = "true"):
+            pass
+        "DX"  (type = "dx"):
+            pass
     $ renpy.full_restart()
 
 define shake1 = { "master" : hpunch }

@@ -221,7 +221,7 @@ screen choice(items):
             elif choice_type == "bad" and preferences.streamer_mode:
                 textbutton "{color=#ff0000}[i.caption]" action i.action
             elif choice_type == "dx":
-                textbutton "{color=#0099cc}[i.caption]" action i.action
+                textbutton "{color=#0099cc}[i.caption] {image=gui/dx_text.png}" action i.action
             else:
                 textbutton i.caption action i.action
 
