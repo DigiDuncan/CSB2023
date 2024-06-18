@@ -371,9 +371,9 @@ style navigation_button_text:
 transform dx_fade:
     on show:
         alpha 0.0
-        linear 1.0 alpha 1.0
+        ease_cubic 2.0 alpha 1.0
     on hide:
-        linear 0.5 alpha 0.0
+        ease_cubic 1 alpha 0.0
 
 screen main_menu():
     ## This ensures that any other menu screen is replaced.

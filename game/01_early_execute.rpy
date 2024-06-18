@@ -57,18 +57,18 @@ init:
             xanchor 0 xpos 23
             yanchor 0 ypos 988
             alpha 0.00
-            linear 0.5 alpha 1.00
+            ease_cubic 0.5 alpha 1.00
             time 2.5
-            linear 1 alpha 0.00
+            ease_expo 1 alpha 0.00
 
     transform _fun_value_motion:
         block:
             # back
-            linear 0.1 xpos 22
-            linear 0.01 ypos 987
+            ease_cubic 0.1 xpos 22
+            ease_cubic 0.01 ypos 987
             # forward
-            linear 0.1 xpos 24
-            linear 0.01 ypos 989
+            ease_cubic 0.1 xpos 24
+            ease_cubic 0.01 ypos 989
             repeat
 
 python early:
