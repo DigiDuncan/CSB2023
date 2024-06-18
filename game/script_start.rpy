@@ -409,6 +409,7 @@ define pakoo_offscreen = Character("???", callback = renpy.partial(char_callback
 define green_offscreen = Character("???", callback = renpy.partial(char_callback, name = "green", beep = "green"), what_color="#00FF00")
 define renovator = Character("Renovator", callback = char_callback)
 define cruise = Character("Tom Cruise", callback = char_callback)
+define baumer = Character("Steve Baumer", callback = char_callback)
 
 # Character Images
 ## CS
@@ -718,6 +719,8 @@ image moomin flipped = "flip:characters/moomin.png"
 image snufkin flipped = "flip:characters/snufkin.png"
 image alicia flipped = "flip:characters/alicia.png"
 image witch flipped = "flip:characters/witch.png"
+image baumer = "characters/ballmer_cutout.png"
+image baumer flipped = "flip:characters/ballmer_cutout.png"
 
 # Background Images
 ## CSBI
