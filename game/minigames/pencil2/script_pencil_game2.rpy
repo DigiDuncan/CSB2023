@@ -3,13 +3,13 @@ init python:
 
     # Constants
     SHARPENER_MOUTH = 1430
-    DIGI_SCORE = 1000
+    DIGI_SCORE2 = 1000
     MAX_PENCIL_LENGTH = 20.0
     SHARPEN_AMOUNT = 0.5
-    GAME_LENGTH = 240 + 3
+    GAME_LENGTH2 = 240 + 3
     PENCIL_WIDTH_PX = int(41.2 * 20)
     ERASER_SIZE = 200
-    PENCIL_LIMIT = 60
+    PENCIL_LIMIT2 = 60
 
     class PencilGameDisplayable2(renpy.Displayable):
         def __init__(self):
@@ -116,15 +116,15 @@ init python:
 
             # Rendering in the timer
             if not current_time < 3:
-                if not (GAME_LENGTH - current_time < 0):
-                    time_renderer = renpy.render(Text(str(GAME_LENGTH - math.ceil(current_time)), color = "#FF0000", size = 144), 150, 100, st, at)
+                if not (GAME_LENGTH2 - current_time < 0):
+                    time_renderer = renpy.render(Text(str(GAME_LENGTH2 - math.ceil(current_time)), color = "#FF0000", size = 144), 150, 100, st, at)
                     r.blit(time_renderer, (50, 0))
                 else:
                     time_renderer = renpy.render(Text("0", color = "#FF0000", size = 144), 100, 100, st, at)
                     r.blit(time_renderer, (50, 0))
                 
             # Render the remaining pencils
-            count_renderer = renpy.render(Text(str(PENCIL_LIMIT - self.pencils) + " pencils remaining", color = "#FF0000", size = 72), 1000, 100, st, at)
+            count_renderer = renpy.render(Text(str(PENCIL_LIMIT2 - self.pencils) + " pencils remaining", color = "#FF0000", size = 72), 1000, 100, st, at)
             r.blit(count_renderer, (50, 125))
 
             # Render in the keys
@@ -139,7 +139,7 @@ init python:
             r.blit(e_key_renderer, (1220, 780))
 
             # Check if time's up or pencils out
-            if (GAME_LENGTH - current_time < 0) or (self.pencils >= PENCIL_LIMIT):
+            if (GAME_LENGTH2 - current_time < 0) or (self.pencils >= PENCIL_LIMIT2):
                 self.win = self.score
                 renpy.timeout(0)
 
@@ -164,7 +164,7 @@ init python:
                     if self.current_pencil_length >= 0:
                         self.score += SHARPEN_AMOUNT
                 elif ev.key == pygame.K_END and preferences.developer_mode:
-                    self.win = DIGI_SCORE + 1
+                    self.win = DIGI_SCORE2 + 1
             if ev.type == pygame.KEYDOWN and ev.key == pygame.K_SPACE and not self.lock_out_time:
                 # New pencil
                 self.current_pencil_length = MAX_PENCIL_LENGTH
@@ -200,7 +200,7 @@ label minigame_pencil2:
     if _return >= 1200:
         $ achievement_manager.unlock("60 Drillless WR")
     else:
-        if _return > DIGI_SCORE:
+        if _return > DIGI_SCORE2:
             $ achievement_manager.unlock("Graphite Grinder")
             $ renpy.jump(minigame_win)
         else:
