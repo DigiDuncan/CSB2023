@@ -699,8 +699,8 @@ class Fighters:
     ANNO = Fighter("Anno", False, 200, 20, 40, [Attacks.RADS_ATTACK, Attacks.AI_MIMIC], Image("images/characters/anno/anno.png"))
 
     # Allies (UCN)
-    BUBBLE = Fighter("Bubble", False, 250, 10, 35, [Attacks.STOMP, Attacks.POKE], Image("secret/bubble.png"))
-    GES = Fighter("Ges", False, 170, 20, 35, [Attacks.SWORD_SLASH, Attacks.FLAMETHROWER], Image("images/characters/ges.png"))
+    BUBBLE = Fighter("{image=gui/dx_text.png} Bubble", False, 250, 10, 35, [Attacks.STOMP, Attacks.POKE], Image("secret/bubble.png"), display_name = "Bubble")
+    GES = Fighter("{image=gui/dx_text.png} Ges", False, 170, 20, 35, [Attacks.SWORD_SLASH, Attacks.FLAMETHROWER], Image("images/characters/ges.png"), display_name = "Ges")
     MICHAEL = Fighter("Michael", False, 155, 15, 35, [Attacks.CHOCOLATE_CAKE, Attacks.CONFUSING_STORY], Image("images/characters/michael.png"))
     BILLY = Fighter("Billy", False, 220, 10, 25, [Attacks.HYPE_UP, Attacks.PITCHMAN], Image("images/characters/billy.png"))
     PHIL = Fighter("Phil", False, 160, 20, 40, [Attacks.HYPE_UP, Attacks.PITCHMAN], Image("images/characters/phil.png"))
@@ -724,9 +724,9 @@ class Fighters:
     K207 = Fighter("K20-7", True, 207, 20, 10, [Attacks.PUNCH], Image("images/characters/k207.png"), ai = AIType.DEFENSIVE)
 
     # Enemies (UCN)
-    WESLEY = Fighter("Wesley", True, 200, 20, 40, [Attacks.PISTOL, Attacks.ALL_OVER_AGAIN], Image("images/characters/wesley.png"), ai = AIType.AGGRO)
-    ED = Fighter("Ed", True, 300, 30, 25, [Attacks.HEAVY_PUNCH, Attacks.SOTH], Image("images/characters/ed.png"), ai = AIType.SMART)
-    RICHARD = Fighter("Richard", True, 250, 20, 30, [Attacks.ONE_HUNDRED, Attacks.ICE_CREAM], Image("images/characters/rich.png"), ai = AIType.DEFENSIVE)
+    WESLEY = Fighter("{image=gui/dx_text.png} Wesley", True, 200, 20, 40, [Attacks.PISTOL, Attacks.ALL_OVER_AGAIN], Image("images/characters/wesley.png"), ai = AIType.AGGRO, display_name = "Wesley")
+    ED = Fighter("{image=gui/dx_text.png} Ed", True, 300, 30, 25, [Attacks.HEAVY_PUNCH, Attacks.SOTH], Image("images/characters/ed.png"), ai = AIType.SMART, display_name = "Ed")
+    RICHARD = Fighter("{image=gui/dx_text.png} Richard", True, 250, 20, 30, [Attacks.ONE_HUNDRED, Attacks.ICE_CREAM], Image("images/characters/rich.png"), ai = AIType.DEFENSIVE, display_name = "Richard")
     # TODO: Add the CEO of Diabetes
 
     @classproperty
