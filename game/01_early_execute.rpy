@@ -214,7 +214,7 @@ init python:
         return f"{', '.join(items[:-1])}{ox} {joiner} {items[-1]}"
 
     # FUN VALUES
-    renpy.image("_fun_value", "fun_value.png")
+    renpy.image("_fun_value", "gui/fun_value.png")
 
     # Fun value handler
     def fun_value(rarity: int, id: str = None) -> bool:

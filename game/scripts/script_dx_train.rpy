@@ -1238,7 +1238,7 @@ label train_wakeup:
     pause 2.0    
 
     play music "<loop 1.071>e_gadds_lab.ogg" volume 1
-    music "E. Gadd's Lab - Kazumi Totaka and Shinobu Tanaka"
+    music "E. Gadd's Lab - Kazumi Totaka & Shinobu Tanaka"
 
     show tate sheepish
     show cs disappointed flipped
