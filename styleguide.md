@@ -18,3 +18,6 @@
 - sfx should must have the sfx_ prefix
 - videos have to be awfully encoded (enforced by Ren'Py)
  - PLEASE use 1:1 pixel ratio. that's why fail_end was broken.
+- When labelling characters in script_start, it goes in the order:
+    - (<character> <emotion> <outfit> <time> <flipped>)
+    - an example would be: cs worried cultist dark flipped
