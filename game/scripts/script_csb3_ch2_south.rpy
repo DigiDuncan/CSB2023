@@ -948,7 +948,7 @@ label airport:
     hide case with dissolve
     billy "That's cash in the trash!"
     billy "Well, then! Where are we going?"
-    n "CS tells Billy his address. They group then heads down to the parking lot to begin the final leg home."
+    n "CS tells Billy his address. The group then heads down to the parking lot to begin the final leg home."
     hide cs
     hide arceus flipped
     hide billy

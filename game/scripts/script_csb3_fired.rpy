@@ -5,6 +5,7 @@ label new_plan:
     cs "This really sucks. One of my favorite YouTubers just kicked me out of my dream job and told me to never come back!"
     show cs
     cs "I {i}would{/i} be acting super emotional right now, but years of angry YouTube comments against me have already prepared me for this."
+    show cs disappointed
     cs "Well, I guess I have no other choice than to look for another job."
     n "CS sulks away in defeat."
 
@@ -24,6 +25,7 @@ label new_plan:
     show cs worried 
     cs "Okay, what? What's going on?"
     arceus "Cops. They're still after us."
+    show cs angry
     cs "Oh, come on, {i}really?!{/i} Today has sucked bad enough already."
     show arceus
     arceus "What happened to you? I just thought you were out here for a smoke break."
@@ -42,6 +44,7 @@ label new_plan:
     show arceus flipped at left
     with fade
     arceus "Come on up to my room, and we'll workshop where to go from here."
+    show cs disappointed flipped
     cs "Alrighty, then. Not like I'll be able to pay for my own much longer..."
     arceus "Oh, c'mon, don't talk like that! Let's go."
 
