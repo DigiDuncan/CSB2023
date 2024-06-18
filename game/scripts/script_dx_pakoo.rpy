@@ -7,7 +7,7 @@ label after_true:
     n "Arceus went to England to live a happy life with Kitty,"
     n "and Billy, he's still selling his products while on the road."
     scene start_route with fade
-    play music "<loop 0>letshearspring.wav" volume 2
+    play music "<loop 0>letshearspring.mp3" volume 2
     pause 3.0
     scene cs_room_cars
     show cs at left
@@ -61,7 +61,7 @@ label after_true:
     stop music fadeout 3.0
     n "Billy puts blindfolds on CS and Arc, and heard out."
     n "After what feels like forever, they arrive at their destination."
-    play music "<loop 0>echoingspring.wav" volume 2
+    play music "<loop 0>echoingspring.mp3" volume 2
     billy "Alright, you can take the blindfolds off. "
     scene wis_forest 
     show cs dark at left
