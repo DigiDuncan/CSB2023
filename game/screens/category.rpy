@@ -42,6 +42,7 @@ screen category_nav():
             textbutton "Minigames" action ShowMenu("minigame_gallery")
             if preferences.developer_mode or persistent.creative_mode:
                 textbutton "Debug Menu" action ShowMenu("debug_menu")
+            if preferences.developer_mode or achievement_manager.get("Hopes and Dreams").unlocked:
                 textbutton "Ultimate\nCustom Night" action Start("rpg_ucn")
             if preferences.developer_mode:
                 textbutton "Test Scene" action Jump("test")
