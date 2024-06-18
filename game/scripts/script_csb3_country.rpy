@@ -108,7 +108,7 @@ label knocked_out:
     pause 1.0
     scene airport_interior with fade
     play music "<loop 0>airport.mp3" volume 0.4
-    music Airport Infilration - Marten Joustra
+    music Airport Infiltration - Andy Blythe & Marten Joustra
     show cs at left with moveinleft
     cs "Alright, whew! I made it."
     cs "I need to see if there is a plane that I can book quickly!"
@@ -422,7 +422,7 @@ label arceus_place:
     show arceus flipped at center with moveinleft
     show cs at left with moveinleft
     play music "<loop 0>wool_gloves.mp3" volume 0.4
-    music Wool Gloves - Various Artists
+    music Wool Gloves - imagiro
     cs "You guys have quite a quaint little place!"
     show arceus
     arceus "Yep. This is what five quid gets you here."
@@ -1332,7 +1332,7 @@ label anime_adventure:
     show cs scared
     cs "{i}What?!"
     play music "<loop 0>neko_to_sanpo.mp3" volume 0.4
-    music Neko To Sanpo - NEKOWORKs
+    music Neko To Sanpo - NEKO WORKs
     sayori "Hello, and who might you be?"
     show cs disappointed
     cs "Uhm..."

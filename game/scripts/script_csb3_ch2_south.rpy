@@ -851,7 +851,7 @@ label airport:
     n "CS drives to the airport nearest to Las Vegas."
     scene airport_interior with fade
     play music "<loop 0>airport.mp3" volume 0.4
-    music Airport Infilration - Marten Joustra
+    music Airport Infiltration - Andy Blythe & Marten Joustra
     show cs at left
     show arceus flipped at mid_left
     with moveinleft
@@ -970,7 +970,7 @@ label airport_bad:
     n "CS drives to the airport nearest to Las Vegas."
     scene airport_interior with fade
     play music "<loop 0>airport.mp3" volume 0.4
-    music Airport Infilration - Marten Joustra
+    music Airport Infiltration - Andy Blythe & Marten Joustra
     show cs at left
     show arceus flipped at mid_left
     with moveinleft

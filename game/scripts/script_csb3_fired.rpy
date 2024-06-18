@@ -822,7 +822,7 @@ label limo_time:
     show anno at left behind cs
     with dissolve
     play music "<loop 0>audio/exotic.mp3" volume 0.5
-    music Exotic - Panda Beats
+    music Exotic - Panda Beats ft. Newenx
     arceus "These snacks are amazing!"
     anno "This music's awesome!"
     cs "These seats sure are comfy!"
