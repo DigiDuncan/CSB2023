@@ -147,11 +147,14 @@ label walmart:
     with fade
     cs "Oh, yes! Walmart is open!"
     scene walmart_inside with fade
+
+    # This has to be like this because CJK support for this is mid.
     show screen best_music
     $ _current_song = "Summer Clearance Sale"
     $ _current_artist = "BEST MUSIC"
     play music "<loop 0>summer_clearance_sale.mp3"
     $ persistent.heard.add("Summer Clearance Sale - BEST MUSIC")
+
     n "CS walks inside."
     show doug at right with moveinright
     greeter "Hello, and welcome to Walmart! Can I help you with anything?"
@@ -613,23 +616,3 @@ label right:
     play sound "sfx_elevator_ding.ogg"
     scene black with fade
     jump csbii_start
-
-label error:
-    if fun_value(1):
-        show black
-        play sound "secret/sfx_gul.ogg"
-        pause 1.0
-        return
-    $ e1 = True
-    jump csbi_start
-
-label after_error_fight:
-    scene rosen_abode
-    show pakoo disappointed flipped at left
-    show cs angry flipped at right
-    with fade
-    pakoo "Goodbye."
-    hide cs with dissolve
-    pause 5.0
-    pakoo "Alright, let's restart the script."
-    return
