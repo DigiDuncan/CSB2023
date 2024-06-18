@@ -368,12 +368,20 @@ style navigation_button_text:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#main-menu
 
+transform dx_fade:
+    on show:
+        alpha 0.0
+        linear 1.0 alpha 1.0
+    on hide:
+        linear 0.5 alpha 0.0
+
 screen main_menu():
-
-
-            ## This ensures that any other menu screen is replaced.
+    ## This ensures that any other menu screen is replaced.
     tag menu
     add gui.main_menu_background
+
+    add "gui/dx_title.png" xalign 0.8 yalign 0.225 zoom 0.4:
+        at dx_fade
 
     ## This empty frame darkens the main menu.
     frame:
