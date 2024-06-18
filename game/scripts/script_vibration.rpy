@@ -1,10 +1,5 @@
 label vibration:
     stop music fadeout 3.0
-    scene black with fade
-    window hide
-    scene craptop_bg
-    show craptop desktop
-    with dissolve
     play music "<loop 0>lets_hear_my_sped.mp3" volume 0.7
     cs "Bye guys! I gotta head to the store!"
     scene black with dissolve

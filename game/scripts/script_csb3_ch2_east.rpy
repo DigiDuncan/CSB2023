@@ -2090,7 +2090,13 @@ label streaming:
     stop music2 fadeout 1.0   
     $ renpy.movie_cutscene("movies/credits.webm")
     $ renpy.end_replay()
-    return
+
+    menu:
+        "Play the after story?"
+        "Yes" (type = "dx"):
+            jump after_true
+        "No" (type = "true"):
+            return
 
 label ytp_ending:
     stop music

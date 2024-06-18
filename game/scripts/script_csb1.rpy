@@ -67,7 +67,12 @@ label csbi_start:
     play sound "sfx_ping_spam.mp3"
     discord "Hi! Hi! Hi! Hi!"
     n "The Discord is overflowing with people trying to talk to CS."
-    show cs at left
+    show cs at left with moveinleft
+    menu:
+        "Speedrun CSBounciness" (type = "dx"):
+            jump vibration
+        "Continue as normal" (type = "true"):
+            pass
     play sound "sfx_ping.mp3"
     cs "Okay, bedtime! Bye, guys!"
     show nova at right
