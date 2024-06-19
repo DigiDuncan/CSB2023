@@ -56,6 +56,12 @@ init python:
                 # ALL POOP = LOSE 10
                 renpy.sound.play("minigames/slots/sfx_fart.wav", channel=0)
                 return -10
+            elif (self.lane_1 == "poop" and self.lane_2 == "poop") or \
+                (self.lane_2 == "poop" and self.lane_3 == "poop") or \
+                (self.lane_3 == "poop" and self.lane_1 == "poop"):
+                # 2 POOP = LOSE 5
+                renpy.sound.play("minigames/slots/sfx_fart.wav", channel=0)
+                return -5
             elif self.lane_1 == "rosen" and self.lane_2 == "rosen" and self.lane_3 == "rosen":
                 # ALL ROSEN = 50
                 renpy.sound.play("minigames/slots/sfx_rosen_noice.mp3", channel=0)
