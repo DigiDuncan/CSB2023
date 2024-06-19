@@ -357,17 +357,21 @@ label boost:
     show cs disappointed
     cs "Who knew recording could be so stressful. I could use a drink. The lights are so bright."
     if fun_value(15):
+        show ltt_bottle behind ltt_fg at truecenter with moveinbottom
         linus "Here. Take this water bottl-- oops!{w=0.5}{nw}"
+        show ltt_bottle at t_linus_drop_tips
         play sound "sfx_metalpipe.mp3"
         show cs scared with vpunch
         n "Linus drops the water bottle on the ground."
         show cs worried
         cs "You really have butter fingers with everything, Linus."
     else:
+        show ltt_bottle behind ltt_fg at truecenter with moveinbottom
         linus "Here. Take this water bottle, it will keep you hydrated and your water cool. lttstore.com"
         show cs disappointed
         cs "...Linus, we aren't filming..."
         linus "Sorry. Force of habit."
+        hide ltt_bottle with dissolve
     n "Some time passes and they finish the recording."
     n "Afterwards, CS goes up to Linus' office."
     jump ltt_decide

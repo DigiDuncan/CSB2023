@@ -263,6 +263,7 @@ init python:
         "Snufkin The Traveler - Sumio Shiratori" : "moomin.png",
         "Lady Of The Cold - Sumio Shiratori" : "moomin2.png",
         "Everybody Wants To Rule The World - Tears For Fears" : "tearsforfears.png",
+        "BATTLE UNDER A BROKEN SKY - AZALI": "brokensky.png"
     }
 
 screen jukebox_nav():

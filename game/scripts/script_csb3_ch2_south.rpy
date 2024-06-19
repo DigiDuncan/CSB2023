@@ -625,12 +625,11 @@ label folded:
     show arceus happy
     arceus "Yeah! We can do whatever we wanna do now!"
     show arceus
-    arceus "What would you like to do, CS?"
     menu:
-        "How will they get home?"
+        arceus "What would you like to do, CS?"
         "Take a plane home":
             jump airport_bad
-        "Take the car":
+        "Take the car" (type = "bad"):
             jump noairport
         "Take something else...?" (type = "dx"):
             jump train_start_bad
@@ -835,13 +834,13 @@ label poker3:
     hide case
     arceus "Alright, well, what's the plan now? We have so much money, we can do anything with it!"
     menu:
-        "How will they get home?"
+        arceus "What would you like to do, CS?"
         "Take a plane home":
-            jump airport_bad
-        "Take the car":
+            jump airport
+        "Take the car" (type = "bad"):
             jump noairport
         "Take something else...?" (type = "dx"):
-            jump train_start_bad
+            jump train_start_good
 
 label airport:
     cs "We should head back home now. I have a plan for our newfound riches."

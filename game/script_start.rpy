@@ -1137,6 +1137,7 @@ image amtrak_sleeper_interior_day = "bg/train/amtrak_sleeper_interior_day.jpg"
 image amtrak_sleeper_interior_night = "bg/train/amtrak_sleeper_interior_night.png"
 image amtrak_dining_car = "bg/train/amtrak_dining_car.png"
 image amtrak_dining_mean = "bg/train/amtrak_dining_mean.png" 
+image moynihan_interior = "bg/train/moynihan_interior.png"
 
 # Train Route NPCs
 image amtrak_conductor = "characters/amtrak_conductor.png"
@@ -1148,6 +1149,7 @@ image lupin = "characters/lupin.png"
 # Static Images
 image post_it = "post-it.png"
 image ytx = Transform("ytx.png", zoom = 0.333)
+image ltt_bottle = "ltt_bottle.png"
 image objection = "objection.png"
 image hold_it = "hold_it.png"
 image scott_border = "scott_border.png"
@@ -1321,11 +1323,13 @@ default line_12 = ""
 
 # DX Train route
 # the default values are silly so that i know they're defaults - tate
-default money_stolen = None
-default money_container = "treasure chest"
-default money_stolen_dialogue_switch = "lock it shut"
-default money_stolen_dialogue_switch_2 = "red and gold chest"
-default polar_express_fun_value = False
+default train_money_stolen = None
+default train_money_container = "treasure chest"
+default train_money_stolen_dialogue_switch = "lock it shut"
+default train_money_stolen_dialogue_switch_2 = "red and gold chest"
+default train_polar_express_fun_value = False
+default train_pancake_fun_value = False
+default train_skip_at_chicago = False
 
 # RPG
 default enemy_1 = "cop"
