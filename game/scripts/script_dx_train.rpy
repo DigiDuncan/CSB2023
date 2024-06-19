@@ -1,6 +1,7 @@
 # TODO: mean needs a better text beep
 # TODO: add bios/music tracks to people/jukebox once route is written
 
+######## VARIABLES ########
 label train_start_good:
     $ train_money_stolen = False
     jump train_intro_start
@@ -9,6 +10,7 @@ label train_start_bad:
     $ train_money_stolen = True
     jump train_intro_start
 
+######## RUN INTRO ########
 label train_intro_start:
 
     # syntax: if train_money_stolen true flip sprites
@@ -183,17 +185,17 @@ label train_story_begin:
 
     scene black with fade
 
-    if train_money_stolen == False:
-        $ money_container = "bag"
+    if train_money_stolen == True:
+        $ train_money_container = "bag"
         $ train_money_stolen_dialogue_switch = "zip it up"
     elif train_money_stolen == False:
-        $ money_container = "briefcase"
+        $ train_money_container = "briefcase"
         $ train_money_stolen_dialogue_switch = "latch it shut"
     else:
-        $ money_container = "treasure chest"
+        $ train_money_container = "treasure chest"
         $ train_money_stolen_dialogue_switch = "lock it shut"
 
-    n "CS and Arceus get out of the car and grab the [money_container] of money."
+    n "CS and Arceus get out of the car and grab the [train_money_container] of money."
 
     scene kingman_exterior with fade
 
@@ -208,8 +210,8 @@ label train_story_begin:
     cs "Oh, right."
     cs "I guess we won't be needing this for a while."
     play sound "audio/sfx_lego_break.WAV"
-    n "CS quickly deconstructs the Lego car. He shoves the colorful little bricks into the [money_container] for later."
-    n "The [money_container] is now full to bursting, but CS just barely manages to [train_money_stolen_dialogue_switch]."
+    n "CS quickly deconstructs the Lego car. He shoves the colorful little bricks into the [train_money_container] for later."
+    n "The [train_money_container] is now full to bursting, but CS just barely manages to [train_money_stolen_dialogue_switch]."
     show arceus worried
     pause 1.0
     arceus "... You still never explained to me how the fuck you did that."
@@ -454,7 +456,6 @@ label train_story_begin:
     amtrak_conductor "Yeah, well, {i}don't."
     amtrak_conductor "Or we'll leave {i}both{/i} of you at the next station."
 
-
     if polar_express_fun_value == True:
         show arceus flipped
         arceus "I told you!"
@@ -472,7 +473,6 @@ label train_story_begin:
     pause 1.0
 
     # lol, let's have them look at each other for a sec like wat
-
     show cs disappointed at left
     show arceus worried flipped at mid_mid_left
     with moveoutright
@@ -781,14 +781,14 @@ label train_enter_sleeper:
     show arceus worried
     
     # begin this flip nonsense... why do i do this to myself
-    arceus "I mean, all we had was the one [money_container]."
+    arceus "I mean, all we had was the one [train_money_container]."
     pause 1.0
     show arceus worried flipped
     pause 1.0
     show arceus worried
     pause 2.0
 
-    arceus "... CS, where is the [money_container]?"
+    arceus "... CS, where is the [train_money_container]?"
     show tate shock
     show cs worried
     pause 1.0
@@ -809,7 +809,7 @@ label train_enter_sleeper:
     show cs scared
     cs "Shit."
 
-    if train_money_stolen == False:
+    if train_money_stolen == True:
         $ train_money_stolen_dialogue_switch = "black bag"
         $ train_money_stolen_dialogue_switch_2 = "... {w=0.5}won"
     elif train_money_stolen == False:
@@ -1416,8 +1416,10 @@ label train_wakeup:
         "Take matters into your own hands":
             jump train_begin_heist
 
-    # continue to ending if you wanna bail from this long-ass route now
+######## BAIL NOW ########
 label train_allow_staff:
+    $ train_skip_at_chicago = True
+
     cs "I think we should just let the staff do their jobs."
     tate "But Mean said that Amtrak doesn't care about stolen things!"
     show cs happy flipped
@@ -1441,16 +1443,18 @@ label train_allow_staff:
     n "After a brief layover in Chicago, CS and Arceus take the final uneventful transfer to New York."
     stop music fadeout 3.0
     music end
+
+    jump train_return_home_transition
+
+######## BEGIN THE HEIST ########
+label train_begin_heist:
+    $ train_skip_at_chicago = False
+    arceus "Too bad Tate hasn't written this yet. Let's skip to the test route."
     
     jump train_return_home_transition
 
-label train_begin_heist:
-    arceus "Too bad Tate hasn't written this yet."
-
-
-
+######## GO HOME ########
 label train_return_home_transition:
-    $ train_skip_at_chicago = True
     scene moynihan_interior with fade
 
     # TODO: add mean's chosen BGM here :D
@@ -1480,28 +1484,42 @@ label train_return_home_transition:
     show arceus happy flipped
     arceus "Welp, CS, we've found our other option!"
 
-    if train_skip_at_chicago == True:
+    # Did you play the whole route?
+    if train_skip_at_chicago == False:
+        if train_money_stolen == True:
+            show bag at mid_mid_right with dissolve
+            n "Arceus unzips the body bag and hands Billy a fistful of cash."
+            show arceus flipped
+            arceus "You think this will do the job?"
+            billy "Wow! This totally doesn't look suspicious at all!"
+            cs "We'll give you another $100 if you don't tell anyone."
+            billy "That's cash in the trash!"
+            hide bag with dissolve
+        else:
+            show case at mid_mid_right with dissolve
+            n "Arceus opens the briefcase and gives Billy a gold bar."
+            show arceus flipped
+            arceus "You think this will do the job?"
+            billy "Wow! You should save your money!"
+            cs "We've got plenty more where that came from. You can keep it."
+            billy "That's cash in the trash!"
+            hide case with dissolve
+    # Did you skip out before Chicago?
+    else:
         show arceus
         n "CS and Arceus rummage around in their pockets and manage to scrounge together $19.95."
         show arceus flipped
         cs "Here you go!"
-        billy "Thank you! Every Uber ride comes with my 100-percent satisfaction guarantee, or your money back!"
-        billy "Well, then! Where are we going?"
-        n "CS tells Billy his address. The group then heads down to the parking lot to begin the final leg home."
-        hide cs
-        hide arceus flipped
-        hide billy
-        with moveoutright
-        stop music fadeout 3.0
-        music end
-        jump back_home_alt
-    else:
-        if train_money_stolen == True:
-            n "this is where you give billy a wad of cash."
-        else:
-            n "this is where you give billy a gold bar."
+        billy "Thank you! Every Uber ride comes with my 100-percent satisfaction guarantee, or your money back!"        
 
-
-
+    billy "Well, then! Where are we going?"
+    n "CS tells Billy his address. The group then heads down to the parking lot to begin the final leg home."
+    hide cs
+    hide arceus flipped
+    hide billy
+    with moveoutright
+    stop music fadeout 3.0
+    music end
     jump back_home_alt
-    
+
+

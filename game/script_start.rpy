@@ -1329,7 +1329,7 @@ default train_money_stolen_dialogue_switch = "lock it shut"
 default train_money_stolen_dialogue_switch_2 = "red and gold chest"
 default train_polar_express_fun_value = False
 default train_pancake_fun_value = False
-default train_skip_at_chicago = False
+default train_skip_at_chicago = None
 
 # RPG
 default enemy_1 = "cop"
