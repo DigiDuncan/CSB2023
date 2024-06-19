@@ -14,7 +14,8 @@
 
 ### Files
 - backgrounds must be 1920x1080
-- music should be 44.1kHz 16bit .mp3
+- music should be 44.1kHz 16bit .ogg
+- sfx should be 44.1kHz 16bit .ogg or .flac
 - sfx should must have the sfx_ prefix
 - videos have to be awfully encoded (enforced by Ren'Py)
  - PLEASE use 1:1 pixel ratio. that's why fail_end was broken.
