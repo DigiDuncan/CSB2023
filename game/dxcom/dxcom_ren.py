@@ -23,7 +23,7 @@ class Commentary:
 
     @property
     def full_path(self) -> str:
-        return "dxcom/audio/" + self.audio_path + ".wav"
+        return "dxcom/audio/" + self.audio_path + ".flac"
     
     @property
     def full_text(self) -> str:

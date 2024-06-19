@@ -98,7 +98,7 @@ init python:
                 # Move enemy
                 if st - self.round_timer > MOVE_FREQUENCY:
                     # Fire laser logic
-                    renpy.sound.play("minigames/car/joj_loop.wav", channel=0)
+                    renpy.sound.play("minigames/car/joj_loop.flac", channel=0)
                     if self.enemy_lane is not None:
                         self.ufo_last_x = LANE_X[self.enemy_lane]
                     else:
@@ -125,7 +125,7 @@ init python:
                 if telegraph_cutoff < st < danger_cutoff:
                     self.danger_lane = self.enemy_lane
                     if not self.played_fire:
-                        renpy.sound.play("minigames/car/sfx_gaster_blast.wav", channel=0)
+                        renpy.sound.play("minigames/car/sfx_gaster_blast.flac", channel=0)
                         self.played_fire = True
                     # Render laser
                     r.blit(laser_renderer, (LANE_X[self.enemy_lane] - 16, UFO_Y+70))
@@ -140,7 +140,7 @@ init python:
                 # Telegraphing period
                 if telegraph_start < st < telegraph_cutoff:
                     if not self.played_charge:
-                        renpy.sound.play("minigames/car/sfx_gaster_charge.wav", channel=0)
+                        renpy.sound.play("minigames/car/sfx_gaster_charge.flac", channel=0)
                         self.played_charge = True
                     # Logic for the energy ball
                     laser_ball_displayable = renpy.displayable(self.laser_ball)
@@ -205,7 +205,7 @@ screen cargame:
     add cargame
 
 label minigame_car:
-    play music "<loop 0>speedy_comet.mp3" if_changed
+    play music "<loop 0>speedy_comet.ogg" if_changed
     window hide
     $ quick_menu = False
     call screen cargame

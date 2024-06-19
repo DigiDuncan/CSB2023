@@ -48,27 +48,27 @@ init python:
                 if 0 < current_time < 1:
                     # Display 3
                     if not self.three_played:
-                        renpy.sound.play("minigames/editing/sfx_count_beep.mp3")
+                        renpy.sound.play("minigames/editing/sfx_count_beep.ogg")
                         self.three_played = True
                     countdown_renderer = renpy.render(Text("3", color = "FF0000", size=200), 1920, 1080, st, at)
                     r.blit(countdown_renderer, (960, 540))
                 elif 1 < current_time < 2:
                     # Display 2
                     if not self.two_played:
-                        renpy.sound.play("minigames/editing/sfx_count_beep.mp3")
+                        renpy.sound.play("minigames/editing/sfx_count_beep.ogg")
                         self.two_played = True
                     countdown_renderer = renpy.render(Text("2", color = "FFFF00", size=200), 1920, 1080, st, at)
                     r.blit(countdown_renderer, (960, 540))
                 elif 2 < current_time < 3:
                     # Display 1
                     if not self.one_played:
-                        renpy.sound.play("minigames/editing/sfx_count_beep.mp3")
+                        renpy.sound.play("minigames/editing/sfx_count_beep.ogg")
                         self.one_played = True
                     countdown_renderer = renpy.render(Text("1", color = "00FF00", size=200), 1920, 1080, st, at)
                     r.blit(countdown_renderer, (960, 540))
                 elif current_time > 3:
                     # Yell Go at the player
-                    renpy.sound.play("minigames/editing/sfx_start_beep.mp3")
+                    renpy.sound.play("minigames/editing/sfx_start_beep.ogg")
                     self.started = True
 
             # Hit the space bar
@@ -159,7 +159,7 @@ screen editgame:
 label minigame_editing:
     window hide
     $ quick_menu = False
-    play music "minigames/editing/supernova.mp3" volume 0.25
+    play music "minigames/editing/supernova.ogg" volume 0.25
     call screen editgame
     $ quick_menu = True
     window show

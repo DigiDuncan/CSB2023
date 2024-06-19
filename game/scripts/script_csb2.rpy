@@ -144,7 +144,7 @@ label special:
 # Questioning
 label questioning:
     scene question with fade
-    play music "<loop 0>card_castle.mp3" volume 0.5
+    play music "<loop 0>card_castle.ogg" volume 0.5
     music Card Castle - Toby Fox
     show cs disappointed at left with moveinleft
     show copguy at right with moveinright
@@ -177,7 +177,7 @@ label questioning:
 # Asylum
 label asylum:
     scene asylum with fade
-    play music "<loop 0>basement.mp3" volume 0.5
+    play music "<loop 0>basement.ogg" volume 0.5
     music Basement - Toby Fox
     show cs insane worried flipped at left with moveinright
     show cs insane worried with determination
@@ -263,7 +263,7 @@ label jail:
     hide copguy with moveoutright
     show arceus prison at right with moveinright
 
-    play music "<loop 0>stal.mp3" volume 0.4
+    play music "<loop 0>stal.ogg" volume 0.4
     music stal - C418
     cs "Oh, hi, Arceus."
     arceus "Heya, CS. .w."
@@ -317,7 +317,7 @@ label breakout:
     music end
     n "The day comes to an end and the next one follows. CS and Arceus gather the required essentials for their escape. Along the way, they inform Anno, who more than happily complies with the plan." 
     centered "The next evening..."
-    play music "<loop 0>moongazer.mp3" volume 0.5
+    play music "<loop 0>moongazer.ogg" volume 0.5
     music Moongazer - Dr. Awesome
     cs "Key, check."
 
@@ -368,7 +368,7 @@ label breakout:
 
 label bordercrossing:
     scene border with fade
-    play music "<loop 0>onett.mp3" volume 0.6
+    play music "<loop 0>onett.ogg" volume 0.6
     music Onett Theme - Keiichi Suzuki
     n "CS, Anno, and Arceus emerge and begin heading north towards the border crossing."
     n "A wild border guard appears."
@@ -390,7 +390,7 @@ label bordercrossing:
     arceus "Guys. We've only just left the border. You can still see it behind us."
     scene flag
     $ renpy.music.set_pause(True, "music")
-    play music2 "star_spangled_banner.mp3"
+    play music2 "star_spangled_banner.ogg"
     music The Star Spangled Banner - THE UNITED STATES OF AMERICA
     n "The crew looks behind them and still sees a faint American flag waving."
     scene canada
@@ -416,7 +416,7 @@ label bordercrossing:
     show cashier at t_cashier_at_tims
     show inside_tim_hortons_fg
     with fade
-    play music "<loop 0>buy_something.mp3" volume 0.6
+    play music "<loop 0>buy_something.ogg" volume 0.6
     music Buy Something Will Ya! - Keiichi Suzuki
     show cs at right with moveinleft
     show arceus flipped at center with moveinleft
@@ -462,7 +462,7 @@ label bordercrossing:
     cs "I think I'm {i}really{/i} sleep-deprived."
 
     $ achievement_manager.unlock("Ohai, Mark")
-    play music "<loop 0>buy_something.mp3" volume 0.6
+    play music "<loop 0>buy_something.ogg" volume 0.6
     scene inside_tim_hortons
     show cashier at t_cashier_at_tims
     show inside_tim_hortons_fg
@@ -492,9 +492,9 @@ label bordercrossing:
     show linus
     with fade
     if fun_value(25):
-        play music "<loop 0>passport_ytp.mp3" volume 0.5
+        play music "<loop 0>passport_ytp.ogg" volume 0.5
     else:
-        play music "<loop 0>passport.mp3" volume 0.5
+        play music "<loop 0>passport.ogg" volume 0.5
     music PASSPORT.MID - George Stone
     linus "Sure, you can have a job. Just show us proof of citizenship and you're ready to go!"
     cs "Colour is spelled with a u, eh."

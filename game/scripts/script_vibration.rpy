@@ -1,6 +1,6 @@
 label vibration:
     stop music fadeout 3.0
-    play music "<loop 0>lets_hear_my_sped.mp3" volume 0.7
+    play music "<loop 0>lets_hear_my_sped.ogg" volume 0.7
     cs "Bye guys! I gotta head to the store!"
     scene black with dissolve
     pause 1.0
@@ -82,7 +82,7 @@ label vibration:
     scene jail_inside
     show cs at mid_left
     with dissolve
-    play music "<loop 0>fastbudget_song.mp3" volume 0.7
+    play music "<loop 0>fastbudget_song.ogg" volume 0.7
     show copguy at right with moveinright
     copguy "*Huff* *Huff*"
     show cs happy
@@ -123,7 +123,7 @@ label vibration:
     scene inside_ltt
     show linus at center
     with dissolve
-    play music "<loop 0>fastport.mp3" volume 0.7
+    play music "<loop 0>fastport.ogg" volume 0.7
     linus "Sorry, I can't get you a job, you don't have a visa."
     show arceus happy at right with moveinright
     arceus "Refresh the page!"
@@ -191,7 +191,7 @@ label vibration:
     scene black with dissolve
     stop music fadeout 3.0
     pause 1.0
-    play music "<loop 0>fasting.mp3" volume 0.7
+    play music "<loop 0>fasting.ogg" volume 0.7
     scene washington_road with dissolve
     show cs dark at left
     show arceus dark flipped at right
@@ -213,7 +213,7 @@ label vibration:
     show cs disappointed at left
     with moveinleft
     copguy "Alright, back to the slammer!"
-    play sound "sfx_hold_it.mp3" volume 0.5
+    play sound "sfx_hold_it.ogg" volume 0.5
     show hold_it at truecenter with hpunch
     pause 1.0
     hide hold_it
@@ -238,7 +238,7 @@ label vibration:
     show cs at left
     show arceus at right
     with dissolve
-    play music "<loop 0>happy_running.mp3" volume 0.7
+    play music "<loop 0>happy_running.ogg" volume 0.7
     cs "Alright, let's start walking home!"
     scene town
     show cs at left
@@ -302,8 +302,8 @@ label vibration:
     arceus "Woah, what is that flying past us?"
     play sound "sfx_roll_window.ogg" volume 0.7
     pause 0.5
-    play sound "sfx_joj_loop.wav" volume 1
-    play sound "sfx_splash.mp3"
+    play sound "sfx_joj_loop.flac" volume 1
+    play sound "sfx_splash.ogg"
     pause 0.5
     arceus "Damnit, I'm dirty now! We have to go wash it off!"
     billy "Aright, fine."

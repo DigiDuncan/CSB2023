@@ -82,7 +82,7 @@ label billy_driver:
     arceus "What are you doing? That man looks like he's going to kill us!"
     arceus "He's probably getting a gun, we need to lea--{w=1.5}{nw}"
     show billy at center with moveinleft
-    play music "<loop 0>mm_select.mp3" volume 0.3
+    play music "<loop 0>mm_select.ogg" volume 0.3
     music Mm Select - Matthew Simmonds
     billy "Hi, Billy Mays here for the Uber Driver!"
     billy "The fast and easy way for people who don't have a car to get around!"
@@ -106,7 +106,7 @@ label billy_driver:
 label in_billy_car:
     scene carback1
     show billy car
-    play music "<loop 0>billy_radio.mp3" volume 0.3
+    play music "<loop 0>billy_radio.ogg" volume 0.3
     music Billy Mays Gangsta Remix - mastamokei
     cs "Alright, so, it's just a straight shot to New York?"
     show billy car turn
@@ -124,7 +124,7 @@ label montana:
     scene car background
     show billy car
     with fade
-    play music "<loop 0>weird_personalities.mp3" volume 0.6
+    play music "<loop 0>weird_personalities.ogg" volume 0.6
     music Weird Personalities - Lizardking
     n "After a few hours of driving through Idaho, the trio finds themselves in the middle of Montana."
     n "Arceus is sleeping while CS peers out the window."
@@ -156,7 +156,7 @@ label montana:
     n "Arceus goes back to sleep in the car."
     play sound "sfx_doorslam.ogg"
     scene hardwareinside with fade
-    play music "<loop 0>home_depot.mp3" volume 0.4
+    play music "<loop 0>home_depot.ogg" volume 0.4
     music "Let's Do This - Home Depot"
     show cs at left with moveinleft
     cs "Wow, look at all this stuff!"
@@ -221,7 +221,7 @@ label montana:
     play sound "<from 0 to 2>sfx_car_crash.ogg" volume 0.7
     scene cultforest
     show billy car
-    play music "<loop 0>candle_world.mp3" volume 0.4
+    play music "<loop 0>candle_world.ogg" volume 0.4
     music Candle World - Kikiyama
     "CS and Arceus" "What in the world?"
     n "Ahead lies a barricade with a bunch of strange hooded figures surrounding it."
@@ -326,20 +326,20 @@ label montana:
     show cs fakegod at mid_offscreen_left with move
     show billy laser at mid_left with moveinleft
     stop music fadeout 1.0 
-    play music "<loop 0>blazing_corridor.mp3" volume 0.4    
+    play music "<loop 0>blazing_corridor.ogg" volume 0.4    
     billy "Fire a laser! Fire a laser!"
-    play sound "minigames/car/sfx_gaster_blast.wav"
+    play sound "minigames/car/sfx_gaster_blast.flac"
     show laser_beam at t_gun behind billy
     hide cultist_2 with moveoutright
     hide laser_beam
     n "Massive laser shots land between the cultists as they scramble away!"
     cultist_3 "I don't wanna turn into a YTP! Go, guys, {i}go!{/i}"
-    play sound "minigames/car/sfx_gaster_blast.wav"
+    play sound "minigames/car/sfx_gaster_blast.flac"
     show laser_beam at t_gun behind billy
     hide cultist_3 with moveoutright
     hide laser_beam
     pause 0.5
-    play sound "minigames/car/sfx_gaster_blast.wav"
+    play sound "minigames/car/sfx_gaster_blast.flac"
     show laser_beam at t_gun behind billy
     hide cultist with moveoutright
     hide laser_beam
@@ -347,7 +347,7 @@ label montana:
     stop music fadeout 3.0 
     music end
     billy "{i}That's{/i} the power of the Awesome Augement!"
-    play music "<loop 0>showtime.mp3" volume 0.4
+    play music "<loop 0>showtime.ogg" volume 0.4
     music "It's Showtime - Toby Fox"
     show cs fakegod at center with moveinright
     cs "Hooray! I'm a god now!"
@@ -371,7 +371,7 @@ label montana:
     n "The night passes, then they set off once again."
     scene car background
     show billy car
-    play music "<loop 0>mort_farm.mp3" volume 0.4
+    play music "<loop 0>mort_farm.ogg" volume 0.4
     music "Mort's Farm - ClascyJitto"
     cs "Can we stop somewhere to eat? We haven't eaten since yesterday."
     arceus "Yeah, unfortunately, the one store you guys {i}did{/i} go to didn't have anything edible."
@@ -417,7 +417,7 @@ label south_dakota:
     n "About an hour later, the crew arrives at Mount Rushmore."
     scene rushmore with fade
     n "They all hike up to the viewing spot to get a good look at the founding fathers."
-    play music "<loop 0>taiikusai_desu_yo.mp3" volume 0.4
+    play music "<loop 0>taiikusai_desu_yo.ogg" volume 0.4
     music Taiikusai Desu Yo - Satoru Kosaki
     show cs at right with moveinleft
     show arceus flipped at center with moveinleft
@@ -456,7 +456,7 @@ label south_dakota:
     show billy car
     with fade
     n "They continue to drive through the massive and empty plains of South Dakota."
-    play music "<loop 0>track4.mp3" volume 0.4
+    play music "<loop 0>track4.ogg" volume 0.4
     music Track 4 - Weatherscan
     n "By the time they reach Sioux City, it is already evening."
     cs "There really {i}is{/i} nothing out here, is there?"
@@ -546,7 +546,7 @@ label nebraska:
     scene peppinopizzabg
     show peppinopizzafg
     with fade   
-    play music "<loop 0>funiculi_holiday.mp3" volume 0.3
+    play music "<loop 0>funiculi_holiday.ogg" volume 0.3
     music Funiculi Holiday - ClascyJitto
     show peppino at t_pepzone1 behind peppinopizzafg with moveinleft
     show peppino at t_pepzone2 behind peppinopizzafg with ease
@@ -596,7 +596,7 @@ label iowa:
     billy "The rest of this trip shouldn't be too long!"
     n "As if on cue, a strange sound is heard from overhead."
     n "CS looks out the window."
-    play music "<loop 0>speedy_comet.mp3" volume 0.5
+    play music "<loop 0>speedy_comet.ogg" volume 0.5
     music Speedy Comet - Mahito Yokota
     cs "You have to be kidding me!"
     arceus "What's going on?"
@@ -605,7 +605,7 @@ label iowa:
     billy "Who?"
     cs "They have their UFO and--"
     n "A huge laser beam blasts along the left side of the road, ripping up everything in its path!"
-    play sound "minigames/car/sfx_gaster_blast.wav"
+    play sound "minigames/car/sfx_gaster_blast.flac"
     show billy car turn with hpunch
     show billy car turn with vpunch
     show billy car
@@ -640,7 +640,7 @@ label michigan:
     scene car plains
     show billy car
     with dissolve
-    play music "<loop 0>track4.mp3" volume 0.4
+    play music "<loop 0>track4.ogg" volume 0.4
     billy "Alright. The highway entrance should be right around here."
     billy "We can head to Ohio, and then we'll be getting really close."
     billy "Fuck."
@@ -728,7 +728,7 @@ label interstate_69:
     show cs disappointed flipped at right
     show cscar2
     with dissolve 
-    play music "<loop 0>honk_song.mp3" volume 0.8
+    play music "<loop 0>honk_song.ogg" volume 0.8
     cs "I was expecting there to be people around, but I wasn't expecting traffic like this. I wonder what's going on?"
     arceus "All the people walking are wearing green and white, so it's probably a sports thing."
     billy "We are in Lansing. They have one of the biggest football schools in the country."
@@ -760,7 +760,7 @@ label interstate_69:
     play sound "sfx_roll_window.ogg" volume 0.7
     pause 2.0 
     # DX: It could be funny to have an option to ignore the gnome for a while
-    play music "<loop 0>wayward_wanderer.mp3" volume 0.7
+    play music "<loop 0>wayward_wanderer.ogg" volume 0.7
     music Wayward Wanderer - Deep Gnome
     gnome "Hallo, may I enter your Automobile?" 
     billy "What do you want with us?"
@@ -854,7 +854,7 @@ label interstate_69:
     hide waitress with moveoutright
     n "As everyone is waiting, the strange glowing grey blob in the corner notices the group and floats over."
     show aria at right with moveinright
-    play music "<loop 0>mis_leader.mp3" volume 0.7
+    play music "<loop 0>mis_leader.ogg" volume 0.7
     music MisLeader - Triosk and Jan Jelinek
     aria "CS! Arc! What are you doing here?"
     gnome "Aria! I knew I recognized that Scent."
@@ -1073,7 +1073,7 @@ label interstate_69:
     show billy dark at center
     show aria dark flipped at left
     with dissolve
-    play music "<loop 0>dense_woods_b.mp3" volume 0.5
+    play music "<loop 0>dense_woods_b.ogg" volume 0.5
     music Dense Woods B - Kikiyama
     billy "Why does the window by the entrance have to be bright red?"
     billy "I've had enough of spooky forests today."
@@ -1144,7 +1144,7 @@ label interstate_69:
     stop music fadeout 3.0
     music end
     scene creepy_path_4 with dissolve
-    play music "melancholy.mp3"
+    play music "melancholy.ogg"
     music Melancholy - Imori
     aria "If you look to the right, you'll see one of my favorite paths in the woods."
     aria "It's not exactly clear, so we'll skip it today, but it leads to a pretty little grotto."
@@ -1289,7 +1289,7 @@ label interstate_94:
     arceus "If you wanna see me naked, you can just ask..."
     cs "I didn't mean-- {w=0.5}whatever..."
     show billy car turn with vpunch
-    play sound "sfx_splash.mp3"
+    play sound "sfx_splash.ogg"
     show billy car turn with hpunch
     n "Soon after Arceus rolled down the window, they drive over a large flooded pothole."
     n "Water splashes up from the puddle through the car window."
@@ -1311,7 +1311,7 @@ label interstate_94:
     scene mario_inside
     show mario at right
     with dissolve
-    play music "<loop 0>trash_zone.mp3" volume 0.3  
+    play music "<loop 0>trash_zone.ogg" volume 0.3  
     music Tubular Trash Zone - Mr. Sauceman
     show cs at left
     show arceus dirty flipped at mid_left
@@ -1353,7 +1353,7 @@ label interstate_94:
     smiley "See ya!"
     hide smiley with moveoutleft
     n "Smiley runs out of the building and gets into his car."
-    play sound "sfx_gamer_and_girl.mp3" volume 0.4
+    play sound "sfx_gamer_and_girl.ogg" volume 0.4
     n "A loud \"awoooooga!\" horn is heard as a colorful little clown car drives past."
     mario "Bastard. I really didn't need this today..."
     mario "Whatever, what do y'all need?"
@@ -1480,7 +1480,7 @@ label ohio:
         with fade
         n "After that fiasco, they continue their trip, soon passing through Ohio."
         show scott_border
-        play music "<loop 0>breakout.mp3" volume 0.3  
+        play music "<loop 0>breakout.ogg" volume 0.3  
         music Breakout - Shoichiro Sakamoto 
         n "Suddenly, a huge blue border enters everyone's vision."
         scott "Oh, what in the world? There is some red border in my eyes..."
@@ -1516,7 +1516,7 @@ label ohio:
         with fade
         n "After that fiasco, they continue their trip, soon passing through Ohio."
         show scott_border
-        play music "<loop 0>breakout.mp3" volume 0.3  
+        play music "<loop 0>breakout.ogg" volume 0.3  
         music Breakout - Shoichiro Sakamoto 
         n "Suddenly, a huge blue border enters everyone's vision."
         arceus "Oh, what in the world? There is some red border in my eyes..."
@@ -1551,7 +1551,7 @@ label ohio:
 label pennsylvania:
     n "The gang hits the last state before New York, Pennsylvania."
     scene billboard
-    play music "<loop 0>fourside.mp3" volume 0.6
+    play music "<loop 0>fourside.ogg" volume 0.6
     music The Metropolis of Fourside - Keiichi Suzuki
     n "CS sees a billboard pass by them."
     cs "Oh my God! It's PencilCon! We need to go!"
@@ -1646,7 +1646,7 @@ label pennsylvania:
     show cs at left with moveinleft
     n "CS walks to the backstage to prepare to compete when he notices a familiar face."
     show digi at right with moveinright
-    play music "<loop 0>pokey.mp3" volume 0.6
+    play music "<loop 0>pokey.ogg" volume 0.6
     music Pokeys House - Keiichi Suzuki
     cs "Wait, Digi?!"
     digi "CS?!"
@@ -1700,22 +1700,22 @@ label pennsylvania:
     with dissolve
     show mettaton at t_stagescreen onlayer broadcast
     host "WELCOME, FOLKS!"
-    play music "<loop 0>showtime.mp3" volume 0.4
+    play music "<loop 0>showtime.ogg" volume 0.4
     host "EVERYONE GIVE A BIG HAND TO OUR WONDERFUL CONTESTANTS!"
-    play sound "sfx_cheer1.mp3"
+    play sound "sfx_cheer1.ogg"
     show crowd at t_stagescreen onlayer broadcast
     n "The crowd explodes into uproarious applause."
     hide crowd onlayer broadcast
     host "ON \"GO\", THESE LOVELIES WILL BE COMPETING TO SEE WHO CAN {color=#ffff00}SHARPEN THE MOST PENCILS!"
     host "THIS TRULY IS THE BATTLE OF A CENTURY, FOLKS! DIGIDUNCAN, OUR LONG-TIME CHAMP, WILL BE GOING UP AGAINST A NEWCOMER, THE AMAZING CS188!"
-    play sound "sfx_cheer2.mp3"
+    play sound "sfx_cheer2.ogg"
     show crowd at t_stagescreen onlayer broadcast
     n "The crowd is going wild."
     hide crowd onlayer broadcast
     host "ALL THEY HAVE TO DO IS {color=#ffff00}SHARPEN THE PENCILS AS QUICKLY AS POSSIBLE,{/color} WITHOUT {color=#ffff00}GETTING THE ERASER STUCK!"
     host "IT'S A TRULY MAGICAL EVENT, AND YOU'RE ALL ABOUT TO WITNESS IT! ARE YOU ALL READY?"
-    play sound2 "sfx_cheer1.mp3" noloop volume 0.5
-    play sound "sfx_cheer2.mp3" noloop volume 0.5
+    play sound2 "sfx_cheer1.ogg" noloop volume 0.5
+    play sound "sfx_cheer2.ogg" noloop volume 0.5
     show crowd at t_stagescreen onlayer broadcast
     n "The crowd is going absolutely crazy."
     hide crowd onlayer broadcast
@@ -1748,11 +1748,11 @@ label win_pencil:
     show mettaton at t_stagescreen onlayer broadcast 
     host "HOLY TICONDEROGA! WE HAVE A WINNER!"
     show crowd at t_stagescreen onlayer broadcast
-    play sound "sfx_cheer2.mp3" noloop volume 0.6
-    play sound2 "sfx_cheer1.mp3" noloop volume 0.6
+    play sound "sfx_cheer2.ogg" noloop volume 0.6
+    play sound2 "sfx_cheer1.ogg" noloop volume 0.6
     n "As if they couldn't get any louder, the crowd is going insane."
     hide crowd onlayer broadcast
-    play music "<loop 0>showtime.mp3" volume 0.4
+    play music "<loop 0>showtime.ogg" volume 0.4
     host "THE CHAMP HAS FALLEN! LADIES AND GENTS, WHAT AN UPSET!"
     n "CS turns to Digi."
     hide mettaton onlayer broadcast
@@ -1797,7 +1797,7 @@ label win_pencil:
     stop music fadeout 3.0
     hide cs
     scene cc_crowd with dissolve
-    play music "<loop 0>fourside.mp3" volume 0.6
+    play music "<loop 0>fourside.ogg" volume 0.6
 
     # tate was here
     # this fun value references CS messing up reading during the livestream (around 4:07:05 of part 2 stream)
@@ -1850,7 +1850,7 @@ label win_pencil:
 label back_home:
     stop music2
     scene cs_house with fade
-    play music "<loop 0>park_theme.mp3" volume 0.5
+    play music "<loop 0>park_theme.ogg" volume 0.5
     music Park Theme - Lorin Nelson
     n "After the long and treacherous journey, CS finally arrives at his house."
     show arceus flipped at left with moveinleft
@@ -1878,7 +1878,7 @@ label back_home:
     ed "{i}You!" with hpunch
     show cs worried at left with moveinleft
     n "CS and the gang look towards CS' front porch, where Richard and Ed are waiting angrily for him."
-    play music2 "<loop 0>hohsisremix.mp3" volume 0.5
+    play music2 "<loop 0>hohsisremix.ogg" volume 0.5
     music "Alfred's Theme - Eminem"
     show ed at right
     show rich at mid_mid_right behind ed
@@ -1918,7 +1918,7 @@ label talktohohsis:
     ed "Richard, get the JoJ UFO and vaporize the house."
     stop music2 fadeout 1.0
     show anno at offscreenleft
-    play music "<loop 0>track3.mp3" volume 0.4
+    play music "<loop 0>track3.ogg" volume 0.4
     music Track 3 - Weatherscan
     anno_offscreen "Wait!!!"
     n "A voice can be heard behind the group running up to them."
@@ -2059,7 +2059,7 @@ label talktohohsis:
     pause 1.0
     $ renpy.movie_cutscene("movies/hoh_repair.webm")
     scene cs_room with dissolve
-    play music2 "<loop 0>ac_title.mp3" volume 0.4
+    play music2 "<loop 0>ac_title.ogg" volume 0.4
     music New Leaf Title Theme - Kazumi Totaka
     show cs at center with moveinleft
     cs "Ah, it's good to be home again!"

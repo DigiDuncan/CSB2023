@@ -759,7 +759,7 @@ class Fighters:
 
 
 # Dummy encounter to avoid errors
-encounter = Encounter([], Image("images/bg/black.png"), "audio/sfx_legosfx.mp3", 1, "start", "secret_dx")
+encounter = Encounter([], Image("images/bg/black.png"), "audio/sfx_legosfx.ogg", 1, "start", "secret_dx")
 
 # Indicator types
 IndicatorType = Literal["heal", "damage", "stat_up", "stat_down", "confused", "unconfused", "none"]
@@ -832,19 +832,19 @@ class DamageIndicator:
 
     def play(self):
         if self.indicator_type == "heal":
-            renpy.sound.play("audio/ut/snd_power.wav", channel = "sfx")
+            renpy.sound.play("audio/ut/snd_power.flac", channel = "sfx")
             self.play_sound = False
         elif self.indicator_type == "damage":
-            renpy.sound.play("audio/ut/snd_damage.wav", channel = "sfx")
+            renpy.sound.play("audio/ut/snd_damage.flac", channel = "sfx")
             self.play_sound = False
         elif self.indicator_type == "stat_up":
-            renpy.sound.play("audio/ut/snd_b.wav", channel = "sfx")
+            renpy.sound.play("audio/ut/snd_b.flac", channel = "sfx")
             self.play_sound = False
         elif self.indicator_type == "stat_down":
-            renpy.sound.play("audio/ut/snd_bluh.wav", channel = "sfx")
+            renpy.sound.play("audio/ut/snd_bluh.flac", channel = "sfx")
             self.play_sound = False
         elif self.indicator_type == "confused" or self.indicator_type == "unconfused":
-            renpy.sound.play("audio/ut/snd_chime.wav", channel = "sfx")
+            renpy.sound.play("audio/ut/snd_chime.flac", channel = "sfx")
             self.play_sound = False
 
 # This is the displayable that controls what's happening in the boxes at the bottom of the screen
@@ -1096,7 +1096,7 @@ def lint_rpg(parsed_object):
 """
 rpg:
     bg "images/bg/X.png"
-    music "audio/Y.mp3"
+    music "audio/Y.ogg"
     fighters:
         cs
         cop

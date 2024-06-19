@@ -4,8 +4,8 @@ screen skip_car():
     style_prefix "skip_car"
 
     frame at t_skip_car:
-        imagebutton idle "images/skip_now.png" hover_sound "sfx_select.wav":
-            action Play("sound", "sfx_valid.wav"), Hide("skip_car", Fade(1.0)), Jump("back_home")
+        imagebutton idle "images/skip_now.png" hover_sound "sfx_select.flac":
+            action Play("sound", "sfx_valid.flac"), Hide("skip_car", Fade(1.0)), Jump("back_home")
 
 transform t_skip_car:
     xanchor 1.0 xpos 0.95
@@ -21,7 +21,7 @@ label car_dialogue:
     scene car plains
     show billy car
     with fade
-    play music "<loop 0>billy_mix.mp3" volume 1
+    play music "<loop 0>billy_mix.ogg" volume 1
     music "Billy's Mix - Billy Mays"
     cs "Well, Arceus, it has been quite a ride."
     arceus "It sure has. We've been through quite a lot, haven't we?"
@@ -262,7 +262,7 @@ label car_dialogue:
     pause 5.0
 
     $ renpy.music.set_pause(True, "music")
-    play music2 "moving_right_along.mp3"
+    play music2 "moving_right_along.ogg"
     $ renpy.pause(5.0, hard = True)
     # 0:05.0
     cs "{cps=30}{image=note_small1.png} Moving right along, in search of good times and good news {image=note_small2.png}{w=0.8}{nw}"
@@ -487,7 +487,7 @@ label car_dialogue:
 
     n "An ad starts playing through the Jupiter Jack."
     $ renpy.music.set_pause(True, "music")
-    play music2 "<loop 0>summer_clearance_sale.mp3" volume 0.5
+    play music2 "<loop 0>summer_clearance_sale.ogg" volume 0.5
     doug "When you shop at Walmart..."
     doug "You're shopping at Walmart."
     doug "Keep shopping at Walmart{w=0.25} by going to Walmart today!"
@@ -510,7 +510,7 @@ label car_dialogue:
     pause 5.0
     cs "Alright, you ready?"
     pause 2.0
-    play sound "minigames/car/sfx_gaster_blast.wav"
+    play sound "minigames/car/sfx_gaster_blast.flac"
     show billy car turn with hpunch
     show billy car turn with vpunch
     billy "What the hell are you guys doing?!"
