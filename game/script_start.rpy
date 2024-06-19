@@ -254,6 +254,18 @@ transform t_mean_dining_car:
     anchor (0.5, 0.5)
     pos (0.3, 0.6)
 
+transform t_dining_car_breakfast:
+    anchor (0.6, 0.45)
+    pos (0.7, 0.4)
+
+transform t_dining_car_pancake:
+    anchor (0.5, 0.5)
+    pos (0.53, 0.58)
+
+transform t_arc_pancake:
+    anchor (0.5, 0.5)
+    pos (0.8, 0.68)
+
 transform lego_run:
     pos (0.5, 0.5)
     anchor(0.5, 0.5)
@@ -405,12 +417,14 @@ define witch = Character("Witch", callback = renpy.partial(char_callback, name =
 define renovator = Character("Renovator", callback = char_callback)
 define cruise = Character("Tom Cruise", callback = char_callback)
 define baumer = Character("Steve Baumer", callback = char_callback)
+define lupin = Character("Lupin", callback = renpy.partial(char_callback, name = "lupin", beep = "lupin"))
 
 # Offscreen Character Definitions
 define tate_offscreen = Character("???", callback = renpy.partial(char_callback, name = "tate_offscreen", beep="tate"))
 define pakoo_offscreen = Character("???", callback = renpy.partial(char_callback, name = "pakoo_offscreen", beep="pak"))
 define green_offscreen = Character("???", callback = renpy.partial(char_callback, name = "green_offscreen", beep = "green"), what_color="#00FF00")
 define anno_offscreen = Character("???", callback = renpy.partial(char_callback, name = "anno_offscreen", beep = "anno"))
+define lupin_offscreen = Character("???", callback = renpy.partial(char_callback, name = "lupin_offscreen", beep = "lupin"))
 
 # AI Imposter Character Definitions
 define ed_ai = Character("\"Ed\"", callback = renpy.partial(char_callback, name = "ed_ai", beep = "ed"))
@@ -1136,8 +1150,13 @@ image amtrak_sleeper_corridor = "bg/train/amtrak_sleeper_corridor.png"
 image amtrak_sleeper_interior_day = "bg/train/amtrak_sleeper_interior_day.jpg"
 image amtrak_sleeper_interior_night = "bg/train/amtrak_sleeper_interior_night.png"
 image amtrak_dining_car = "bg/train/amtrak_dining_car.png"
-image amtrak_dining_mean = "bg/train/amtrak_dining_mean.png" 
+image amtrak_dining_table = "bg/train/amtrak_dining_table.png"
+image amtrak_dining_food = "bg/train/food.png" 
+image amtrak_dining_pancake = "bg/train/pancake.png"
 image moynihan_interior = "bg/train/moynihan_interior.png"
+image amtrak_cab = "bg/train/amtrak_cab.png"
+image amtrak_sleeper_open_bg = "bg/train/amtrak_sleeper_open_bg.png" #these two images are bigger on purpose
+image amtrak_sleeper_open_fg = "bg/train/amtrak_sleeper_open_fg.png" #remastering is encouraged but don't change size pls
 
 # Train Route NPCs
 image amtrak_conductor = "characters/amtrak_conductor.png"
@@ -1145,6 +1164,9 @@ image amtrak_conductor flipped = "flip:characters/amtrak_conductor.png"
 image amtrak_stewardess = "characters/amtrak_stewardess.png"
 image amtrak_stewardess flipped = "flip:characters/amtrak_stewardess.png"
 image lupin = "characters/lupin.png"
+image lupin flipped = "flip:characters/lupin.png"
+image lupin hat = "characters/lupin_hat.png"
+image lupin hat flipped = "flip:characters/lupin_hat.png"
 
 # Static Images
 image post_it = "post-it.png"
