@@ -1422,10 +1422,10 @@ label train_wakeup:
     hide mean with moveoutleft
     n "Mean rolls away down the hall."
     show tate sad at left with moveoutleft
+    pause 1.0
     show tate sheepish
-    pause 0.5
     tate "So, uh..."
-    tate "I guess, since Mean has to work..."
+    tate "I guess, since Mean has to start work..."
     show arceus
     tate "What do y'all think we should do?"
 
@@ -1441,26 +1441,28 @@ label train_allow_staff:
     $ train_skip_at_chicago = True
 
     cs "I think we should just let the staff do their jobs."
-    tate "But Mean said that Amtrak doesn't care about stolen things!"
+    tate "Even though Mean said Amtrak doesn't care about stolen things?"
     show cs happy flipped
-    cs "But the day conductor said that he was investigating. He seemed pretty serious."
+    cs "I mean, the day conductor said that he was investigating. He seemed pretty serious."
     show tate srs
     tate "Oh, come on. Do you {i}really{/i} trust that guy?"
     show cs disappointed flipped
-    cs "I mean, do we really have a choice? It's clear that they don't want you interfering."
+    cs "Do we really have a choice? It's clear that they don't want you interfering."
+    tate "Sometimes {i}interfering{/i} is the only way things get {i}done!"
     show arceus angry
     arceus "Okay, I am {i}not{/i} about to spend the rest of this trip listening to you two bickering."
     arceus "Let's just let them do the investigation, and if we get it back, we get it back."
-    arceus "I want to go to bed."
+    arceus "I'm tired, we've been through hell, and I want to go to bed."
     show tate sad
-    tate "I suppose it is late..."
+    tate "I suppose it {i}is{/i} late..."
     show tate sheepish
     tate "It was nice seeing you again, CS. It was nice to meet you too, Arc."
     tate "I hope you two enjoy the rest of the journey!"
     scene black with fade
     n "Tate bids CS and Arceus farewell before heading towards the cab to join Mean."
-    n "As expected, the money was never returned."
-    n "After a brief layover in Chicago, CS and Arceus take the final uneventful transfer to New York."
+    n "CS and Arceus spend the following day resting and admiring the vast and varied scenery of The Midwest."
+    n "As expected, the money is never returned."
+    n "After a brief layover in Chicago and a haughty \"I told you so\" from Tate, CS and Arceus take the final uneventful transfer to New York."
     stop music fadeout 3.0
     music end
 
@@ -1765,8 +1767,8 @@ label train_search_tate:
     pause 3.0
     tate "{size=-15}...Or not."
     pause 1.0
-    show lupin hat flipped at center with moveinleft
     n "The suave criminal leans in towards Tate."
+    show lupin hat flipped at center with MoveTransition(1.0)
     pause 0.5
     lupin_offscreen "Tell ya what, pumpkin."
     lupin_offscreen "If you'll agree to {i}one{/i} date with me, I'll give it back."
@@ -1820,6 +1822,8 @@ label train_confront_lupin:
 
 ######## GO HOME ########
 label train_return_home_transition:
+    # yes i stole much of this from south route, oh well, i'm tired ok - tate
+    
     scene moynihan_interior with fade
 
     # TODO: add mean's chosen BGM here :D
@@ -1848,6 +1852,8 @@ label train_return_home_transition:
     billy "Need a ride? I'll take you to any destination for only $19.95!"
     show arceus happy flipped
     arceus "Welp, CS, we've found our other option!"
+
+    # TODO: did lupin take the heat if the money was stolen? if yes, i need to rewrite this
 
     # Did you play the whole route?
     if train_skip_at_chicago == False:
