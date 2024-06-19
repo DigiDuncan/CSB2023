@@ -425,6 +425,7 @@ define pakoo_offscreen = Character("???", callback = renpy.partial(char_callback
 define green_offscreen = Character("???", callback = renpy.partial(char_callback, name = "green_offscreen", beep = "green"), what_color="#00FF00")
 define anno_offscreen = Character("???", callback = renpy.partial(char_callback, name = "anno_offscreen", beep = "anno"))
 define lupin_offscreen = Character("???", callback = renpy.partial(char_callback, name = "lupin_offscreen", beep = "lupin"))
+define mean_offscreen = Character("???", callback = renpy.partial(char_callback, name = "mean_offscreen", beep = "mean"))
 
 # AI Imposter Character Definitions
 define ed_ai = Character("\"Ed\"", callback = renpy.partial(char_callback, name = "ed_ai", beep = "ed"))
@@ -1352,6 +1353,7 @@ default train_money_stolen_dialogue_switch_2 = "red and gold chest"
 default train_polar_express_fun_value = False
 default train_pancake_fun_value = False
 default train_skip_at_chicago = None
+default train_tate_is_fragile_fun_value = False
 
 # RPG
 default enemy_1 = "cop"
