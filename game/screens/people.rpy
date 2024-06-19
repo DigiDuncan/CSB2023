@@ -94,7 +94,12 @@ init python:
         #Archival
         "k174": "Pakoo's Memories",
         "addy": "Addy",
-        "iris": "???"
+        "iris": "???",
+        #DX: Train
+        "amtrak_conductor": "{image=gui/dx_text.png} Conductor",
+        "amtrak_stewardess": "{image=gui/dx_text.png} Stewardess",
+        "lupin": "{image=gui/dx_text.png} Lupin III",
+        "zenigata": "{image=gui/dx_text.png} Zenigata"
     }
 
 screen people_nav():
