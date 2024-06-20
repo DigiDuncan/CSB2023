@@ -31,7 +31,7 @@ label e3:
     show oldgame
     with fade
     pause 3.0
-    play sound "sfx_page.flac" volume 5
+    play sound "sfx_page.ogg" volume 5
     hide oldgame
     with moveoutright
     cs "I know what's going on now."

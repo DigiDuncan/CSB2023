@@ -2246,9 +2246,9 @@ label joel:
     joel "I've got you this time, alien!" #Joel makes it out just before the alien
     alien "Ikke skyt! Jeg er ikke en romvesen! Jeg er bare en normal norsk mann!" #Make this wingdings
     scene white with dissolve
-    play sound "<loop 0>sfx_hks2.flac" volume 0.7
+    play sound "<loop 0>sfx_hks2.ogg" volume 0.7
     pause 0.1
-    play sound "<loop 0>sfx_hks1.flac" volume 0.7
+    play sound "<loop 0>sfx_hks1.ogg" volume 0.7
     pause 0.1
     pause 1.0
     scene joel_outside

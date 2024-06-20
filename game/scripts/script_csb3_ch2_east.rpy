@@ -328,18 +328,18 @@ label montana:
     stop music fadeout 1.0 
     play music "<loop 0>blazing_corridor.ogg" volume 0.4    
     billy "Fire a laser! Fire a laser!"
-    play sound "minigames/car/sfx_gaster_blast.flac"
+    play sound "minigames/car/sfx_gaster_blast.ogg"
     show laser_beam at t_gun behind billy
     hide cultist_2 with moveoutright
     hide laser_beam
     n "Massive laser shots land between the cultists as they scramble away!"
     cultist_3 "I don't wanna turn into a YTP! Go, guys, {i}go!{/i}"
-    play sound "minigames/car/sfx_gaster_blast.flac"
+    play sound "minigames/car/sfx_gaster_blast.ogg"
     show laser_beam at t_gun behind billy
     hide cultist_3 with moveoutright
     hide laser_beam
     pause 0.5
-    play sound "minigames/car/sfx_gaster_blast.flac"
+    play sound "minigames/car/sfx_gaster_blast.ogg"
     show laser_beam at t_gun behind billy
     hide cultist with moveoutright
     hide laser_beam
@@ -605,7 +605,7 @@ label iowa:
     billy "Who?"
     cs "They have their UFO and--"
     n "A huge laser beam blasts along the left side of the road, ripping up everything in its path!"
-    play sound "minigames/car/sfx_gaster_blast.flac"
+    play sound "minigames/car/sfx_gaster_blast.ogg"
     show billy car turn with hpunch
     show billy car turn with vpunch
     show billy car

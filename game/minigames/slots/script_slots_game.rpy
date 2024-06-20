@@ -50,17 +50,17 @@ init python:
                 (self.lane_2 == "gold" and self.lane_3 == "gold") or \
                 (self.lane_3 == "gold" and self.lane_1 == "gold"):
                 # TWO GOLD = 50
-                renpy.sound.play("minigames/slots/sfx_tada.flac", channel=0)
+                renpy.sound.play("minigames/slots/sfx_tada.ogg", channel=0)
                 return 50
             elif self.lane_1 == "poop" and self.lane_2 == "poop" and self.lane_3 == "poop":
                 # ALL POOP = LOSE 10
-                renpy.sound.play("minigames/slots/sfx_fart.flac", channel=0)
+                renpy.sound.play("minigames/slots/sfx_fart.ogg", channel=0)
                 return -10
             elif (self.lane_1 == "poop" and self.lane_2 == "poop") or \
                 (self.lane_2 == "poop" and self.lane_3 == "poop") or \
                 (self.lane_3 == "poop" and self.lane_1 == "poop"):
                 # 2 POOP = LOSE 5
-                renpy.sound.play("minigames/slots/sfx_fart.flac", channel=0)
+                renpy.sound.play("minigames/slots/sfx_fart.ogg", channel=0)
                 return -5
             elif self.lane_1 == "rosen" and self.lane_2 == "rosen" and self.lane_3 == "rosen":
                 # ALL ROSEN = 50

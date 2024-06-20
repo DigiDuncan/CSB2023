@@ -209,7 +209,7 @@ label train_story_begin:
 
     cs "Oh, right."
     cs "I guess we won't be needing this for a while."
-    play sound "audio/sfx_lego_break.flac"
+    play sound "audio/sfx_lego_break.ogg"
     n "CS quickly deconstructs the Lego car. He shoves the colorful little bricks into the [train_money_container] for later."
     n "The [train_money_container] is now full to bursting, but CS just barely manages to [train_money_stolen_dialogue_switch]."
     show arceus worried
@@ -359,7 +359,7 @@ label train_story_begin:
     music end
     show cs
     show arceus flipped
-    play sound "audio/sfx_amtrak_horn.flac"
+    play sound "audio/sfx_amtrak_horn.ogg"
     n "The conversation is interrupted by the blare of a train horn."
 
     scene kingman_train_arrive with fade
@@ -1029,7 +1029,7 @@ label train_enter_sleeper:
 
         # TODO: replace with a proper sliding door slam later
 
-        play sound "audio/sfx_clonk.flac"
+        play sound "audio/sfx_clonk.ogg"
         with hpunch
         pause 1.0
         arceus "{i}Shit!"
@@ -1188,7 +1188,7 @@ label train_wakeup:
     arceus "Wake up!!"
     cs "Hnnnh... huh?"
     n "Arceus flips on the lights."
-    play sound "audio/sfx_lightswitch.flac"
+    play sound "audio/sfx_lightswitch.ogg"
     show amtrak_sleeper_interior_day
     hide arceus
     show arceus worried flipped

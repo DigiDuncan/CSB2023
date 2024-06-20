@@ -570,57 +570,57 @@ label fire_range:
     window hide
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks1.flac" volume 1
+    play sound "<loop 0>sfx_hks1.ogg" volume 1
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks2.flac" volume 1
+    play sound "<loop 0>sfx_hks2.ogg" volume 1
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks1.flac" volume 1
+    play sound "<loop 0>sfx_hks1.ogg" volume 1
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks3.flac" volume 1
+    play sound "<loop 0>sfx_hks3.ogg" volume 1
     pause 0.5
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks2.flac" volume 1
+    play sound "<loop 0>sfx_hks2.ogg" volume 1
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks1.flac" volume 1
+    play sound "<loop 0>sfx_hks1.ogg" volume 1
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks3.flac" volume 1
+    play sound "<loop 0>sfx_hks3.ogg" volume 1
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks2.flac" volume 1
+    play sound "<loop 0>sfx_hks2.ogg" volume 1
     show m4 at left with determination    
     pause 1.0
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks2.flac" volume 1
+    play sound "<loop 0>sfx_hks2.ogg" volume 1
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks1.flac" volume 1
+    play sound "<loop 0>sfx_hks1.ogg" volume 1
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks3.flac" volume 1
+    play sound "<loop 0>sfx_hks3.ogg" volume 1
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks2.flac" volume 1
+    play sound "<loop 0>sfx_hks2.ogg" volume 1
     show m4 at left with determination    
     pause 1.0
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks2.flac" volume 1
+    play sound "<loop 0>sfx_hks2.ogg" volume 1
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks1.flac" volume 1
+    play sound "<loop 0>sfx_hks1.ogg" volume 1
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks3.flac" volume 1
+    play sound "<loop 0>sfx_hks3.ogg" volume 1
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks2.flac" volume 1
+    play sound "<loop 0>sfx_hks2.ogg" volume 1
     show m4 at left with determination    
     pause 1.0
     window show
@@ -891,12 +891,12 @@ label cool_car:
     show cs angry flipped
     show m4 flipped at center with determination
     show m4 fire flipped at center with determination
-    play sound "<loop 0>sfx_hks2.flac" volume 1
+    play sound "<loop 0>sfx_hks2.ogg" volume 1
     show m4 flipped at center with determination 
     pause 0.5
     show m4 flipped at center with determination
     show m4 fire flipped at center with determination
-    play sound "<loop 0>sfx_hks2.flac" volume 1
+    play sound "<loop 0>sfx_hks2.ogg" volume 1
     show m4 flipped at center with determination
     pause 0.5
     cs "Make me!"
@@ -942,12 +942,12 @@ label reg_car:
     show cs angry flipped
     show m4 flipped at center with determination
     show m4 fire flipped at center with determination
-    play sound "<loop 0>sfx_hks2.flac" volume 1
+    play sound "<loop 0>sfx_hks2.ogg" volume 1
     show m4 flipped at center with determination 
     pause 0.5
     show m4 flipped at center with determination
     show m4 fire flipped at center with determination
-    play sound "<loop 0>sfx_hks2.flac" volume 1
+    play sound "<loop 0>sfx_hks2.ogg" volume 1
     show m4 flipped at center with determination
     pause 0.5
     cs "Make me!"

@@ -722,7 +722,7 @@ label between_2:
     show cs worried at center
     show tate shock at mid_left
     show arceus worried flipped at left
-    play sound "sfx_bossappears.flac"
+    play sound "sfx_bossappears.ogg"
     show copguy_ex at right 
     with dissolve
     pause 2.0
@@ -737,7 +737,7 @@ label between_2:
     copguy "I've been making sure to note down your team's abilities..."
     copguy "Why don't we try one out?"
     n "Copguy uses Light Cast on Arceus!"
-    play sound "minigames/car/sfx_gaster_blast.flac"
+    play sound "minigames/car/sfx_gaster_blast.ogg"
     scene white with dissolve
     scene war_torn_5
     show cs worried at center
@@ -886,7 +886,7 @@ label car_slam:
     scene black with dissolve
     window hide
     show paper at center with easeinright
-    play sound "sfx_isaac.flac"
+    play sound "sfx_isaac.ogg"
     pause 1.0
     hide paper with easeoutleft
     pause 1.0

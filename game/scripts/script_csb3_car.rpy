@@ -4,8 +4,8 @@ screen skip_car():
     style_prefix "skip_car"
 
     frame at t_skip_car:
-        imagebutton idle "images/skip_now.png" hover_sound "sfx_select.flac":
-            action Play("sound", "sfx_valid.flac"), Hide("skip_car", Fade(1.0)), Jump("back_home")
+        imagebutton idle "images/skip_now.png" hover_sound "sfx_select.ogg":
+            action Play("sound", "sfx_valid.ogg"), Hide("skip_car", Fade(1.0)), Jump("back_home")
 
 transform t_skip_car:
     xanchor 1.0 xpos 0.95
@@ -510,7 +510,7 @@ label car_dialogue:
     pause 5.0
     cs "Alright, you ready?"
     pause 2.0
-    play sound "minigames/car/sfx_gaster_blast.flac"
+    play sound "minigames/car/sfx_gaster_blast.ogg"
     show billy car turn with hpunch
     show billy car turn with vpunch
     billy "What the hell are you guys doing?!"

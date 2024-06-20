@@ -302,7 +302,7 @@ label vibration:
     arceus "Woah, what is that flying past us?"
     play sound "sfx_roll_window.ogg" volume 0.7
     pause 0.5
-    play sound "sfx_joj_loop.flac" volume 1
+    play sound "sfx_joj_loop.ogg" volume 1
     play sound "sfx_splash.ogg"
     pause 0.5
     arceus "Damnit, I'm dirty now! We have to go wash it off!"

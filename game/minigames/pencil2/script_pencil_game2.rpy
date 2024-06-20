@@ -56,28 +56,28 @@ init python:
                 if 0 < current_time < 1:
                     # Display 3
                     if not self.three_played:
-                        renpy.sound.play("minigames/pencil2/sfx_ding.flac")
+                        renpy.sound.play("minigames/pencil2/sfx_ding.ogg")
                         self.three_played = True
                     countdown_renderer = renpy.render(Text("3", color="FF0000", size=200), 1920, 1080, st, at)
                     r.blit(countdown_renderer, (960, 540))
                 elif 1 < current_time < 2:
                     # Display 2
                     if not self.two_played:
-                        renpy.sound.play("minigames/pencil2/sfx_ding.flac")
+                        renpy.sound.play("minigames/pencil2/sfx_ding.ogg")
                         self.two_played = True
                     countdown_renderer = renpy.render(Text("2", color="FFFF00", size=200), 1920, 1080, st, at)
                     r.blit(countdown_renderer, (960, 540))
                 elif 2 < current_time < 3:
                     # Display 1
                     if not self.one_played:
-                        renpy.sound.play("minigames/pencil2/sfx_ding.flac")
+                        renpy.sound.play("minigames/pencil2/sfx_ding.ogg")
                         self.one_played = True
                     countdown_renderer = renpy.render(Text("1", color="00FF00", size=200), 1920, 1080, st, at)
                     r.blit(countdown_renderer, (960, 540))
                 elif current_time > 3:
                     # Yell Go at the player
                     if not self.go_played:
-                        renpy.sound.play("minigames/pencil2/sfx_dong.flac")
+                        renpy.sound.play("minigames/pencil2/sfx_dong.ogg")
                         self.go_played = True
                     self.started = True
 

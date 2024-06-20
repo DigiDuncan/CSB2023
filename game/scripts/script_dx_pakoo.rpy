@@ -127,7 +127,7 @@ label after_true:
     billy "Alright CS, just hit all those buttons on the side to start it up!"
     n "The machine starts whirring, as a mysterious light shoots out from the top."
     hide pot_sunken
-    play sound "sfx_okuubeam.flac" volume 1
+    play sound "sfx_okuubeam.ogg" volume 1
     show pot_beam at mid_right with hpunch
     show pot_beam at mid_right with vpunch
     show arceus worried dark flipped
@@ -208,12 +208,12 @@ label back_to_story:
     n "Before CS can get anywhere, a group of men run up to him."
     show shadowman at mid_left with moveinleft
     cs "Hey what's going--{nw}"
-    play sound "sfx_hitbod1.flac"
+    play sound "sfx_hitbod1.ogg"
     scene black
-    play sound "sfx_hitbod2.flac"
+    play sound "sfx_hitbod2.ogg"
     cs "Ow! HEY--{nw}"
-    play sound "sfx_hitbod3.flac"
-    play sound "sfx_hitbod1.flac"
+    play sound "sfx_hitbod3.ogg"
+    play sound "sfx_hitbod1.ogg"
     pause 5.0
     scene pencilroomblur with dissolve
     cs "Ohhh, my head..."
@@ -555,7 +555,7 @@ label yes_renault:
     pause 0.4
     play sound "sfx_doorslam.ogg"
     pause 0.5
-    play sound "sfx_driving.flac" volume 0.5
+    play sound "sfx_driving.ogg" volume 0.5
     scene renault_inside
     show drive_day behind renault_inside
     show cs at left
@@ -588,7 +588,7 @@ label yes_renault:
     stop music
     scene hobbytown
     show cs disappointed
-    play sound "sfx_clapperboard.flac"
+    play sound "sfx_clapperboard.ogg"
     cs "God damnit!"
     cs "I felt so in control of that car, but so out of control at the same time..."
     cs "Where was I here anyways?"

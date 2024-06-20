@@ -43,7 +43,7 @@ screen dxcom(arg):
     style_prefix "dxcom_button"
 
     frame at t_dxcom:
-        imagebutton idle "dxcom_anim" hover_sound "sfx_select.flac":
+        imagebutton idle "dxcom_anim" hover_sound "sfx_select.ogg":
             action Hide("dxcom"), SetVariable("current_dxcom", arg), Call("show_dxcom", from_current=True)
 
     timer 15 action Hide('dxcom')

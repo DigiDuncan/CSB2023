@@ -68,7 +68,7 @@ label south:
     show cs at left behind cscar2 with moveinleft
     show arceus at right behind cscar2 with moveinright
     n "Once they get into the car, CS starts it up."
-    play sound "sfx_driving.flac" volume 0.5
+    play sound "sfx_driving.ogg" volume 0.5
     pause 1.0
     cs "Woohoo! Vegas time!"
     arceus "I don't even know how you do these things, man, but let's go!"
@@ -336,7 +336,7 @@ label vegas:
         show cscar2
         show arceus flipped at left behind cscar2
         with determination
-        play sound "sfx_clapperboard.flac"
+        play sound "sfx_clapperboard.ogg"
         play music "<loop 0>penthouse.ogg" volume 0.5
         music "Al's Penthouse - Andy Blythe"
         $ returning_from_blooper = False

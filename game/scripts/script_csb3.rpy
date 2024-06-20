@@ -298,7 +298,7 @@ label boost:
     linus "Behold! {w=0.5} The-- WOAH SHIT {w=0.5}{nw}"
     show ytx at t_linus_drop_tips
     pause 0.35
-    play sound ("sfx_clonk.flac")
+    play sound ("sfx_clonk.ogg")
     show cs scared
     show linus with vpunch
     n "Linus loses grip of the card as it tumbles down onto the table next to him."

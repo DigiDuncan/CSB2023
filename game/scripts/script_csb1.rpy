@@ -20,7 +20,7 @@ label csbi_start:
         pakoo "Oh, whoops!"
         pakoo "The old game is still here..."
         pakoo "Lemme fix that real quick for you."
-        play sound "sfx_page.flac" volume 5
+        play sound "sfx_page.ogg" volume 5
         if e1:
             show pakoo disappointed with determination
             hide pakoo
@@ -55,7 +55,7 @@ label csbi_start:
         sticky "Delete the CSCord."
     cs "Eh, maybe tomorrow."
     hide post_it
-    play sound "sfx_page.flac" volume 5
+    play sound "sfx_page.ogg" volume 5
     pause 2.0
     show craptop updating
     craptop "Downloading update 200/13..."
@@ -140,7 +140,7 @@ label csbi_start:
             $ achievement_manager.unlock("I Don't Like People!")
             show cs happy at left
             cs "Screw you, I'm going anyway!"
-    play sound "sfx_driving.flac" volume 0.5
+    play sound "sfx_driving.ogg" volume 0.5
     pause 3.0
     stop sound fadeout 2.0
     stop music fadeout 3.0
@@ -206,7 +206,7 @@ label walmart:
     show cs worried at left
     with fade
     play music "<loop 0>canyon_but_in_the_car.ogg" volume 0.2
-    play sound "sfx_driving.flac" volume 0.5
+    play sound "sfx_driving.ogg" volume 0.5
     cs "Let's get home before that guy doctors my crotch!"
     scene black with fade
     n "CS drives home and manages to avoid reenacting one of his favorite car crash videos."
@@ -374,7 +374,7 @@ label michael_house:
     cs "Alright, well, I'll be there soon!"
     show cs at left
     n "CS puts his phone away and drives over to Michael's house."
-    play sound "sfx_driving.flac" volume 0.5
+    play sound "sfx_driving.ogg" volume 0.5
     pause 2.0
     show black with dissolve
     stop sound fadeout 2.0
@@ -466,7 +466,7 @@ label rosen_house:
     with fade
 
     play music "<loop 0>canyon_but_in_the_car.ogg" volume 0.2
-    play sound "sfx_driving.flac" volume 0.5
+    play sound "sfx_driving.ogg" volume 0.5
     stop music fadeout 3.0
     music end
     jump csbi_end
