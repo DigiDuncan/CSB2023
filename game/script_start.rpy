@@ -266,6 +266,14 @@ transform t_arc_pancake:
     anchor (0.5, 0.5)
     pos (0.8, 0.68)
 
+transform t_dining_arc_search_left:
+    anchor (0.0, 0.0)
+    pos (-0.04, 0.9)
+
+transform t_dining_arc_search_right:
+    anchor (-3.0, 0.0)
+    pos (-0.04, 0.9)
+
 transform lego_run:
     pos (0.5, 0.5)
     anchor(0.5, 0.5)

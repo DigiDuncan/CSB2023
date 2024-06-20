@@ -1421,7 +1421,7 @@ label train_wakeup:
     show mean flipped
     hide mean with moveoutleft
     n "Mean rolls away down the hall."
-    show tate sad at left with moveoutleft
+    show tate sheepish at left with moveoutleft
     pause 1.0
     show tate sheepish
     tate "So, uh..."
@@ -1480,7 +1480,7 @@ label train_begin_heist:
     show tate shock
     tate "Arc did what now?"
     show cs worried flipped
-    arceus "Gee, thanks, CS."
+    arceus "Gee, {i}thanks,{/i} CS."
     arceus "But, since you asked..."
     show arceus
     show tate sheepish
@@ -1490,7 +1490,7 @@ label train_begin_heist:
     arceus "I doubt we can get access to it, but maybe we could get someone to check the cab."
     tate "Actually, Mean lent me his spare key to the cab in case I needed the toilet in there, so I can check it."
     arceus "Oh, nice. I know my way around the dining car, so I can look there."
-    cs "Guess I'll check around here. Maybe the [train_money_container] is just under a seat or something."
+    cs "Guess I'll stick around here, then. Maybe the [train_money_container] is just under a seat or something."
     arceus "Sounds like a plan."
     show tate
     show cs flipped
@@ -1566,22 +1566,29 @@ label train_search_arceus:
     with fade
     n "Arceus returns to the dining car."
     arceus "Well, let's see if anything is hidden around here..."
-    show arceus at left with moveinright
+    show arceus at left with ease
+    show arceus at t_dining_arc_search_left with ease
     n "Arceus checks under the tables..."
-    show arceus flipped at right with moveinleft
+    show arceus at left with ease
+    show arceus flipped at center with ease
+    show arceus flipped at right with ease
+    show arceus flipped at t_dining_arc_search_right with ease
     n "Then, he checks under the seats..."
     show lupin hat at offscreenright behind arceus with determination
     show lupin hat at offscreenleft
     with MoveTransition(2.0)
-    show arceus at mid_left with moveinright
-    n "But he finds a whole lot of nothing."
+    show arceus flipped at right with ease
+    show arceus at center with ease
+    n "All he finds is trash and loose change."
+    pause 1.0
+    show arceus worried
     arceus "I guess maybe there's just nothing here."
     scene amtrak_dining_table
     show amtrak_dining_food at t_dining_car_breakfast
     show amtrak_dining_pancake at t_dining_car_pancake behind amtrak_dining_food
     with fade
     n "From across the room, Arceus glances towards the forgotten breakfast." 
-    arceus "It's a damn shame that all of that went to waste."
+    arceus "It's a damn shame that all of food went to waste."
 
     if pancake_fun_value == True:
         arceus "Mean probably wouldn't care if I took a bit more..."
@@ -1590,6 +1597,7 @@ label train_search_arceus:
     show lupin hat at mid_right with moveinright
     pause 1.0
     show amtrak_dining_food at offscreenleft
+    play sound "sfx_whoosh.mp3"
     show lupin hat at offscreenleft
     with ease
     arceus "What the fuck?!"
@@ -1605,13 +1613,13 @@ label train_search_arceus:
     hide arceus with moveoutright
     scene black with fade
     pause 2.0
-    arceus "What the fuck? He even took the {i}booze?!"
+    arceus "What the fuck? He even took all the {i}booze?!"
     
 label train_search_cs:
     
     # TODO: YES I KNOW THIS SCENE IS CRUSTIER THAN FRENCH BREAD PLS HELP
 
-    pause 1.0
+    pause 1.5
     scene amtrak_sleeper_corridor
     show cs disappointed at center
     with fade
@@ -1624,8 +1632,8 @@ label train_search_cs:
     cs "That lady in Room 3 threw a {i}shoe{/i} at me, for fuck's sake!"
     show cs disappointed
     cs "Maybe I should just head up front to meet the others..."
-    show cs disappointed at right with ease
-    pause 0.5
+    show cs disappointed at right with MoveTransition(0.5)
+    pause 1.0
     n "CS stops suddenly."
     n "There is, in fact, a single door open." 
   
@@ -1643,7 +1651,7 @@ label train_search_cs:
 
     n "A man in a familiar red jacket is just finishing off a large breakfast."
     lupin_offscreen "I can't believe how easy that was. {color=#FFDBFC}Pink sweater{/color} had the staff running around like ants!"
-    lupin_offscreen "They don't know it, but they'd be my perfect accomplice!"
+    lupin_offscreen "They don't know it, but they'd be my {i}perfect{/i} accomplice!"
     hide amtrak_dining_food with dissolve
     pause 1.0
     lupin_offscreen "Mmmm..."
@@ -1659,13 +1667,14 @@ label train_search_cs:
     with ease
 
     pause 2.0
-    cs "Hey! That's our money!"
+    cs "Hey! That's our cash!"
     cs "Hey you! Give that back!" with hpunch
-    lupin_offscreen "Hey, it's my pretty kitty!"
+    lupin_offscreen "Well, would you look at that? It's my pretty kitty!"
     lupin_offscreen "Sorry, babe, but I've gotta split!"
 
     scene amtrak_sleeper_corridor
     show cs angry at center
+    play sound "sfx_whoosh.mp3"
     show lupin hat at offscreenright
     show lupin hat at center with MoveTransition(0.25)
 
@@ -1685,7 +1694,7 @@ label train_search_cs:
     pause 0.5
     show cs surprised
     cs "Wait..."
-    pause 1.0
+    pause 0.5
     show cs disappointed
     cs "\"Pretty kitty\"?"
     pause 1.5
@@ -1694,7 +1703,7 @@ label train_search_cs:
     show cs angry
     cs "... That guy must have stolen the money when he knocked me down earlier!"
     cs "At least I got a good look at his face this time!"
-    cs "I need to go find the others!"
+    cs "I need to find Arc and Tate!"
     show cs angry at offscreenright with moveinleft
     scene black with fade
 
@@ -1754,50 +1763,55 @@ label train_search_tate:
     with hpunch
     with hpunch
     pause 2.0
-    lupin_offscreen "...and it appears that your crew's {i}muscle{/i} is currently {i}unavailable."
+    lupin_offscreen "...and it appears that the {i}muscle{/i} of your crew is currently {i}unavailable."
     play sound "sfx_poot.mp3"
     with vpunch
     pause 1.0
     show tate sheepish flipped
     tate "N-{w=0.1}Now, you listen here. Don't underestimate me..."
-    tate "Just give me the hat, yeah? Besides, even if you're not scared of {i}me,{/i} Mr. Conductor will probably be out at any moment."
+    tate "Just give me the hat, yeah? Besides, even if you're not scared of {i}me,{/i} Mr. Conductor will probably be done in there at any moment."
     play sound "sfx_fart_deep.mp3"
-    with hpunch
-    with hpunch
+    with vpunch
+    with vpunch
+    with vpunch
     pause 3.0
-    tate "{size=-15}...Or not."
+    tate "{size=-15}...Or, not."
     pause 1.0
     n "The suave criminal leans in towards Tate."
     show lupin hat flipped at center with MoveTransition(1.0)
     pause 0.5
     lupin_offscreen "Tell ya what, pumpkin."
-    lupin_offscreen "If you'll agree to {i}one{/i} date with me, I'll give it back."
+    lupin_offscreen "If you'll agree to {i}one{/i} date with me, I'll give you the hat."
     show tate srs flipped
     tate "Not a chance in hell."
-    lupin_offscreen "Well, then. It appears that we are locked in a stalemate, doesn't it?"
-    lupin_offscreen "But, I don't really care for chess. I have it on good authority that {i}you{/i} don't, either."
+    lupin_offscreen "Well, then. It appears that we are locked in a stalemate, now, aren't we?"
+    lupin_offscreen "I, for one, love chess, but I have it on good authority that it's not your cup of tea."
     show tate sheepish flipped
-    lupin_offscreen "I think we'd both rather play a different game."
+    tate "Wait, how did y--{w=0.25}{nw}"
+    lupin_offscreen "I feel like we'd both prefer to play a different game anyway."
     tate "Speak for yourself..."
-    lupin_offscreen "No, no, hear me out! Personally, I'm a {i}huge{/i} fan of hide and seek."
+    lupin_offscreen "No, no, hear me out! Personally, I'm a {i}huge{/i} fan of hide-and-seek."
     tate "Wha--{w=0.25}{nw}"
     lupin_offscreen "Ah, but today's your lucky day!"
-    lupin_offscreen "See, I've heard that you're bad at counting."
-    lupin_offscreen "Fortunately, for you, you'll only need to count to 1.{image=heart_small.png}"
+    lupin_offscreen "You see, I {i}also{/i} happen to know that you're bad at counting."
+    lupin_offscreen "Fortunately for you, you'll only need to count to 1."
+    lupin_offscreen "Catch me if you can.{image=heart_small.png}"
     show tate shock flipped
+    play sound "sfx_whoosh.mp3"
     show lupin hat flipped at offscreenright with MoveTransition(0.25)
     show tate shock at right
     pause 1.0
-    n "The crook is gone with the wind."
+    n "The crook is gone without a trace."
     tate "Oh no!"
     tate "I've {i}got{/i} to get that hat back!"
     show tate shock flipped at left with MoveTransition(0.25)
-    tate "Mr. Conductor! We've got trouble!"
-    amtrak_conductor "Sorry, Tate. I'm a little {i}busy.{/i}"
+    tate "{bt=a3-p10-s4}{size=+24}Mr. Conductor!!" with hpunch
+    tate "We've got trouble!"
+    amtrak_conductor "Sorry, Tate. I'm a little {i}busy."
     amtrak_conductor "Where is Mean?"
     show tate cry flipped
-    tate "{i}I-{w=0.1}I don't know!"
-    amtrak_conductor "What do you mean you {i}don't know?{/i} He was just in there."
+    tate "I-{w=0.1}I don't know!"
+    amtrak_conductor "What do you mean you {i}don't know?{/i} He was just in there a minute ago."
     tate "I don't know, okay?! He's just {i}not{/i} in here!"
     tate "I'll go find CS and Arc! They're the only other people who might have seen him!"
     amtrak_conductor "That's probably the first good idea you've had all day."
@@ -1808,6 +1822,7 @@ label train_search_tate:
     show tate at offscreenright with moveoutright
     pause 2.0
     play sound "sfx_fart_lite.mp3"
+    with hpunch
     with hpunch
     with hpunch
     pause 2.0
