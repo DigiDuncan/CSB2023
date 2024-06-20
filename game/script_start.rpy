@@ -63,9 +63,9 @@ init python:
         if preferences.text_beeps and play_beeps:
             if event == "show":
                 if beep is not None:
-                    renpy.sound.play(f"audio/text/{beep}.wav", channel = "beep", loop = True)
+                    renpy.sound.play(f"audio/text/{beep}.ogg", channel = "beep", loop = True)
                 else:
-                    renpy.sound.play(f"audio/text/ut.wav", channel = "beep", loop = True)
+                    renpy.sound.play(f"audio/text/ut.ogg", channel = "beep", loop = True)
             elif event == "slow_done" or event == "end":
                 renpy.sound.stop(channel = "beep")
 
@@ -1299,7 +1299,7 @@ default party_2 = "tate"
 default party_3 = "digi"
 default party_4 = "arceus"
 default ucn_bg = "images/bg/fnaf_office.png"  # DX: There is currently no way to set these.
-default ucn_music = "minigames/pencil/rude_buster.mp3"  # "
+default ucn_music = "minigames/pencil/rude_buster.ogg"  # "
 default ucn_scale = 1.0
 default cont = False
 
@@ -1377,25 +1377,25 @@ screen chapter_menu():
             text "Start where?" textalign 0.5 size 72 xalign 0.5 yalign 0.5
             hbox xalign 0.5 yalign 0.5:
                 spacing 50
-                imagebutton auto "menu/csbi_%s.png" hover_sound "sfx_select.wav":
+                imagebutton auto "menu/csbi_%s.png" hover_sound "sfx_select.ogg":
                     at transform:
                         zoom 0.666
-                    action Play("sound", "sfx_valid.wav"), Hide("chapter_menu", Fade(1.0)), Jump("csbi_start")
-                imagebutton auto "menu/csbii_%s.png" hover_sound "sfx_select.wav":
+                    action Play("sound", "sfx_valid.ogg"), Hide("chapter_menu", Fade(1.0)), Jump("csbi_start")
+                imagebutton auto "menu/csbii_%s.png" hover_sound "sfx_select.ogg":
                     sensitive persistent.csb2_unlocked
                     at transform:
                         zoom 0.666
-                    action Play("sound", "sfx_valid.wav"), Hide("chapter_menu", Fade(1.0)), Jump("csbii_start")
-                imagebutton auto "menu/csbiii1_%s.png" hover_sound "sfx_select.wav":
+                    action Play("sound", "sfx_valid.ogg"), Hide("chapter_menu", Fade(1.0)), Jump("csbii_start")
+                imagebutton auto "menu/csbiii1_%s.png" hover_sound "sfx_select.ogg":
                     sensitive persistent.csb3a_unlocked
                     at transform:
                         zoom 0.666
-                    action Play("sound", "sfx_valid.wav"), Hide("chapter_menu", Fade(1.0)), Jump("csbiii_start")
-                imagebutton auto "menu/csbiii2_%s.png" hover_sound "sfx_select.wav":
+                    action Play("sound", "sfx_valid.ogg"), Hide("chapter_menu", Fade(1.0)), Jump("csbiii_start")
+                imagebutton auto "menu/csbiii2_%s.png" hover_sound "sfx_select.ogg":
                     sensitive persistent.csb3b_unlocked
                     at transform:
                         zoom 0.666
-                    action Play("sound", "sfx_valid.wav"), Hide("chapter_menu", Fade(1.0)), Jump("choose_direction")
+                    action Play("sound", "sfx_valid.ogg"), Hide("chapter_menu", Fade(1.0)), Jump("choose_direction")
 style start_window is empty
 
 label splashscreen:
@@ -1421,10 +1421,10 @@ label before_main_menu:
 
     if not persistent.seen_splash:
         if not renpy.music.is_playing():
-            $ renpy.music.play("bubble_tea.mp3", loop = False)
+            $ renpy.music.play("bubble_tea.ogg", loop = False)
     else:
         if not renpy.music.is_playing():
-            $ renpy.music.play("<from 16.53>bubble_tea.mp3", loop = False)
+            $ renpy.music.play("<from 16.53>bubble_tea.ogg", loop = False)
             $ persistent.seen_splash = False
 
     return

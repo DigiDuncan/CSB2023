@@ -40,7 +40,7 @@ label microcenter:
     hide cs at right with moveoutright
     n "CS enters the building."
     scene microinside with fade
-    play music "<loop 0>morning_highway.mp3" loop volume 0.4
+    play music "<loop 0>morning_highway.ogg" loop volume 0.4
     music Morning Highway - BEST MUSIC
     show cs at left with moveinleft
     cs "Woah! This place is huge!"
@@ -125,7 +125,7 @@ label high_gpu:
     show linus at center
     with fade
     n "CS meets Linus in his office."
-    play music "<loop 0>creative_exercise.mp3" loop volume 0.3
+    play music "<loop 0>creative_exercise.ogg" loop volume 0.3
     music Creative Exercise - Hirokazu Tanaka
     show cs at left with moveinleft
     cs "Hey, Linus! I've got your parts!"
@@ -208,7 +208,7 @@ label high_gpu:
     linus "Let's see how our video did!"
     n "Linus and CS sit down at the desk while Linus pulls up the video."
     scene comments with fade
-    play music "<loop 0>pixel_peeker_polka.mp3" loop volume 0.4
+    play music "<loop 0>pixel_peeker_polka.ogg" loop volume 0.4
     music Pixel Peeker Polka - Kevin MacLeod
     linus "Alright, well, we've already got quite a lot of views..."
     cs "Man! I wish I got this amount of average views!"
@@ -361,7 +361,7 @@ label after_fanboy:
     hide arceus
     with moveoutright
     scene alley with fade
-    play music "<loop 0>lowbudget_song.mp3" loop volume 0.4
+    play music "<loop 0>lowbudget_song.ogg" loop volume 0.4
     music Lowbudget Song - Dr. Awesome
     show arceus flipped at right
     show cs at center
@@ -472,7 +472,7 @@ label training:
     show cs at center
     show pakoo flipped at left behind linus   
     with moveinleft
-    play music "klaxon_beat.mp3" loop volume 0.6
+    play music "klaxon_beat.ogg" loop volume 0.6
     music Klaxon Beat - Kelly Bailey
     linus "Alright, here's our facility! What do you think?"
     cs "Oh, wow! This looks like something from {i}Quake!{/i}"
@@ -570,57 +570,57 @@ label fire_range:
     window hide
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks1.wav" volume 1
+    play sound "<loop 0>sfx_hks1.ogg" volume 1
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks2.wav" volume 1
+    play sound "<loop 0>sfx_hks2.ogg" volume 1
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks1.wav" volume 1
+    play sound "<loop 0>sfx_hks1.ogg" volume 1
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks3.wav" volume 1
+    play sound "<loop 0>sfx_hks3.ogg" volume 1
     pause 0.5
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks2.wav" volume 1
+    play sound "<loop 0>sfx_hks2.ogg" volume 1
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks1.wav" volume 1
+    play sound "<loop 0>sfx_hks1.ogg" volume 1
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks3.wav" volume 1
+    play sound "<loop 0>sfx_hks3.ogg" volume 1
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks2.wav" volume 1
+    play sound "<loop 0>sfx_hks2.ogg" volume 1
     show m4 at left with determination    
     pause 1.0
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks2.wav" volume 1
+    play sound "<loop 0>sfx_hks2.ogg" volume 1
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks1.wav" volume 1
+    play sound "<loop 0>sfx_hks1.ogg" volume 1
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks3.wav" volume 1
+    play sound "<loop 0>sfx_hks3.ogg" volume 1
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks2.wav" volume 1
+    play sound "<loop 0>sfx_hks2.ogg" volume 1
     show m4 at left with determination    
     pause 1.0
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks2.wav" volume 1
+    play sound "<loop 0>sfx_hks2.ogg" volume 1
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks1.wav" volume 1
+    play sound "<loop 0>sfx_hks1.ogg" volume 1
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks3.wav" volume 1
+    play sound "<loop 0>sfx_hks3.ogg" volume 1
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks2.wav" volume 1
+    play sound "<loop 0>sfx_hks2.ogg" volume 1
     show m4 at left with determination    
     pause 1.0
     window show
@@ -661,7 +661,7 @@ label fire_range:
     show cs
     linus "Sure! It's just--{w=0.5}{nw}"
     show arceus flipped at left with moveinleft
-    play music "cp_violation.mp3" loop volume 0.6
+    play music "cp_violation.ogg" loop volume 0.6
     music CP Violation - Kelly Bailey
     arceus "Alright, CS. We've gotta go, now."
     linus "Heyy! How'd you get down here?"
@@ -803,7 +803,7 @@ label fire_range:
     cs "So, we can pick any car we'd like?"
     arceus "Basically, yeah."
     show carguy at mid_right with moveinright
-    play music "<loop 0>mm_complete.mp3" loop volume 0.6
+    play music "<loop 0>mm_complete.ogg" loop volume 0.6
     music Mm Complete - Matthew Simmonds
     carguy "Check out all these nice cars!"
     carguy "Nooooot so nice that you fellas don't have a car, though."
@@ -891,12 +891,12 @@ label cool_car:
     show cs angry flipped
     show m4 flipped at center with determination
     show m4 fire flipped at center with determination
-    play sound "<loop 0>sfx_hks2.wav" volume 1
+    play sound "<loop 0>sfx_hks2.ogg" volume 1
     show m4 flipped at center with determination 
     pause 0.5
     show m4 flipped at center with determination
     show m4 fire flipped at center with determination
-    play sound "<loop 0>sfx_hks2.wav" volume 1
+    play sound "<loop 0>sfx_hks2.ogg" volume 1
     show m4 flipped at center with determination
     pause 0.5
     cs "Make me!"
@@ -942,12 +942,12 @@ label reg_car:
     show cs angry flipped
     show m4 flipped at center with determination
     show m4 fire flipped at center with determination
-    play sound "<loop 0>sfx_hks2.wav" volume 1
+    play sound "<loop 0>sfx_hks2.ogg" volume 1
     show m4 flipped at center with determination 
     pause 0.5
     show m4 flipped at center with determination
     show m4 fire flipped at center with determination
-    play sound "<loop 0>sfx_hks2.wav" volume 1
+    play sound "<loop 0>sfx_hks2.ogg" volume 1
     show m4 flipped at center with determination
     pause 0.5
     cs "Make me!"
@@ -1060,7 +1060,7 @@ label after_cop_fight:
     n "Both groups head out of the dealership, making haste from the cops."
     n "Meanwhile, Copguy heads back to the police station to call for help."
     scene sheriff_office
-    play music "<loop 0>police_station.mp3" volume 0.5  
+    play music "<loop 0>police_station.ogg" volume 0.5  
     music Police Station - Lorin Nelson  
     show sheriff at left
     with fade

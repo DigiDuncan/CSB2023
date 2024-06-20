@@ -1,7 +1,7 @@
 label rpg_test:
     rpg:
         bg "images/bg/casino1.png"
-        music "audio/card_castle.mp3"
+        music "audio/card_castle.ogg"
         fighters:
             cs
             $enemy_1
@@ -14,7 +14,7 @@ label rpg_test:
 label rpg_fanboy_fight_amd:
     rpg:
         bg "images/bg/linus_office_outside.png"
-        music "audio/nordic_report_1.mp3"
+        music "audio/nordic_report_1.ogg"
         fighters:
             cs_weak
             fanboyb
@@ -35,12 +35,12 @@ label rpg_fanboy_fight_nvidia:
         scale 1.0
         on_win "after_fanboy"
         on_lose "knocked_out"
-        music "audio/nordic_report_2.mp3"
+        music "audio/nordic_report_2.ogg"
 
 label rpg_cop_fight_1:
     rpg:
         bg "images/bg/dealership.png"
-        music "audio/compulsion_to_obey.mp3"
+        music "audio/compulsion_to_obey.ogg"
         fighters:
             cs
             arceus
@@ -55,7 +55,7 @@ label rpg_cop_fight_1:
 label rpg_cop_fight_2:
     rpg:
         bg "images/bg/dealership.png"
-        music "audio/for_the_people.mp3"
+        music "audio/for_the_people.ogg"
         fighters:
             mika
             kitty
@@ -68,7 +68,7 @@ label rpg_cop_fight_2:
 label rpg_cop_fight_3:
     rpg:
         bg "images/bg/cs_somewhere.png"
-        music "audio/desert_dawn.mp3"
+        music "audio/desert_dawn.ogg"
         fighters:
             aria
             cop
@@ -80,7 +80,7 @@ label rpg_cop_fight_3:
 label rpg_cop_fight_4:
     rpg:
         bg "images/bg/dinerinside.png"
-        music "audio/dinerfight.mp3"
+        music "audio/dinerfight.ogg"
         fighters:
             digi
             nova
@@ -106,7 +106,7 @@ label rpg_ng_fight:
     $ party_4 = renpy.display_menu([(a.title() if a != "CS_NG" else "CS", a) for a in ng_fighters if a not in chosen_ng_fighters], screen="ucn_choice")
     rpg:
         bg "images/bg/battle_block_without_theater.png"
-        music "audio/thousand_march.mp3"
+        music "audio/thousand_march.ogg"
         fighters:
             $party_1
             $party_2
@@ -135,7 +135,7 @@ label rpg_final_fight_1:
     $ party_4 = renpy.display_menu([(a.title() if a != "CS_STRONG" else "CS", a) for a in final_fighters_1 if a not in chosen_final_fighters_1], screen="ucn_choice")
     rpg:
         bg "images/bg/war_torn_2.png"
-        music "audio/trans_atlantic.mp3"
+        music "audio/trans_atlantic.ogg"
         fighters:
             $party_1
             $party_2
@@ -164,7 +164,7 @@ label rpg_final_fight_2:
     $ party_4 = renpy.display_menu([(a.title() if a != "CS_STRONG" else "CS", a) for a in final_fighters_2 if a not in chosen_final_fighters_2], screen="ucn_choice")
     rpg:
         bg "images/bg/war_torn_3.png"
-        music "audio/trans_atlantic.mp3"
+        music "audio/trans_atlantic.ogg"
         fighters:
             $party_1
             $party_2
@@ -189,7 +189,7 @@ label rpg_final_fight_3:
     $ party_4 = renpy.display_menu([(a.title() if a != "CS_FINAL" else "CS", a) for a in final_fighters_3 if a not in chosen_final_fighters_3], screen="ucn_choice")
     rpg:
         bg "images/bg/war_torn_4.png"
-        music "audio/prophetpart2.mp3"
+        music "audio/prophetpart2.ogg"
         fighters:
             cs_final
             $party_2
@@ -203,7 +203,7 @@ label rpg_final_fight_3:
 label rpg_error:
     rpg:
         bg "secret/falling_apart.png"
-        music "audio/prophetpart2.mp3"
+        music "audio/prophetpart2.ogg"
         fighters:
             cs_final2
             pakooe
@@ -222,4 +222,4 @@ label rpg_archival:
         scale 1.0
         on_win "archival_finale"
         on_lose "rpg_archival"
-        music "audio/broken_sky.mp3"
+        music "audio/broken_sky.ogg"

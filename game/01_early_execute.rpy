@@ -232,5 +232,5 @@ init python:
             
             # show the indicator. it'll fade out on its own and be hidden next time this runs
             renpy.show("_fun_value",[_fun_value_fade,_fun_value_motion],"fun_icon")
-            renpy.play("audio/sfx_sparkle.wav")
+            renpy.play("audio/sfx_sparkle.ogg")
         return ret

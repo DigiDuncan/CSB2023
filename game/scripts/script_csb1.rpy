@@ -20,7 +20,7 @@ label csbi_start:
         pakoo "Oh, whoops!"
         pakoo "The old game is still here..."
         pakoo "Lemme fix that real quick for you."
-        play sound "sfx_page.wav" volume 5
+        play sound "sfx_page.ogg" volume 5
         if e1:
             show pakoo disappointed with determination
             hide pakoo
@@ -35,7 +35,7 @@ label csbi_start:
     scene cs_room
     show cs at center
     with dissolve
-    play music "<loop 0>lets_hear_my_baby.mp3" volume 0.15
+    play music "<loop 0>lets_hear_my_baby.ogg" volume 0.15
     music "Let's hear my baby - Walkman"
     cs "Welp, time to start up the ol' Craptop."
     hide cs
@@ -55,16 +55,16 @@ label csbi_start:
         sticky "Delete the CSCord."
     cs "Eh, maybe tomorrow."
     hide post_it
-    play sound "sfx_page.wav" volume 5
+    play sound "sfx_page.ogg" volume 5
     pause 2.0
     show craptop updating
     craptop "Downloading update 200/13..."
     craptop "Update complete."
     cs "{bt=a3-p10-s4}OoOoOoOoOh{/bt} yes!"
     show craptop discord
-    play sound "sfx_windows_logon.mp3"
+    play sound "sfx_windows_logon.ogg"
     cs "Hey guys!"
-    play sound "sfx_ping_spam.mp3"
+    play sound "sfx_ping_spam.ogg"
     discord "Hi! Hi! Hi! Hi!"
     n "The Discord is overflowing with people trying to talk to CS."
     show cs at left with moveinleft
@@ -74,17 +74,17 @@ label csbi_start:
             jump vibration
         "Respond to chat" (type = "true"):
             pass
-    play sound "sfx_ping.mp3"
+    play sound "sfx_ping.ogg"
     cs "Okay, bedtime! Bye, guys!"
     show nova at right
-    play sound "sfx_ping.mp3"
+    play sound "sfx_ping.ogg"
     nova "But it's like 8:04AM and you just woke up."
-    play sound "sfx_ping.mp3"
+    play sound "sfx_ping.ogg"
     cs "Bye!"
     show cs flipped with determination
     hide cs with moveoutleft
     discord "CS is now offline."
-    play sound "sfx_ping.mp3"
+    play sound "sfx_ping.ogg"
     nova "k bye"
     hide nova
     show craptop car
@@ -102,7 +102,7 @@ label csbi_start:
     scene cs_house
     show cs happy
     with fade
-    play music "canyon.mp3" volume 0.2
+    play music "canyon.ogg" volume 0.2
     music CANYON.MID - George Stone
     cs "Nice day!"
     show cs
@@ -128,7 +128,7 @@ label csbi_start:
     scene cs_car_inside
     show cs disappointed at left
     with fade
-    play music "<loop 0>canyon_but_in_the_car.mp3" volume 0.2
+    play music "<loop 0>canyon_but_in_the_car.ogg" volume 0.2
     music CANYON.MID - George Stone
     cs "Whew... That was close!"
     cs "Should I go get groceries?"
@@ -140,7 +140,7 @@ label csbi_start:
             $ achievement_manager.unlock("I Don't Like People!")
             show cs happy at left
             cs "Screw you, I'm going anyway!"
-    play sound "sfx_driving.wav" volume 0.5
+    play sound "sfx_driving.ogg" volume 0.5
     pause 3.0
     stop sound fadeout 2.0
     stop music fadeout 3.0
@@ -158,7 +158,7 @@ label walmart:
     show screen best_music
     $ _current_song = "Summer Clearance Sale"
     $ _current_artist = "BEST MUSIC"
-    play music "<loop 0>summer_clearance_sale.mp3"
+    play music "<loop 0>summer_clearance_sale.ogg"
     $ persistent.heard.add("Summer Clearance Sale - BEST MUSIC")
 
     n "CS walks inside."
@@ -205,8 +205,8 @@ label walmart:
     scene cs_car_inside
     show cs worried at left
     with fade
-    play music "<loop 0>canyon_but_in_the_car.mp3" volume 0.2
-    play sound "sfx_driving.wav" volume 0.5
+    play music "<loop 0>canyon_but_in_the_car.ogg" volume 0.2
+    play sound "sfx_driving.ogg" volume 0.5
     cs "Let's get home before that guy doctors my crotch!"
     scene black with fade
     n "CS drives home and manages to avoid reenacting one of his favorite car crash videos."
@@ -227,7 +227,7 @@ label room:
     scene craptop_bg
     show craptop edit
     with fade
-    play music "<loop 0>scales_of_joy.mp3" volume 0.3
+    play music "<loop 0>scales_of_joy.ogg" volume 0.3
     music scales of joy.mod - Mel O Dee
     n "CS sits down at his craptop and opens up Premiere."
     cs "Ooooh! Here's the one from my last editing stream. People would be excited to finally see this as a finished product."
@@ -284,7 +284,7 @@ label room:
     show door_open behind cs
     cs "Hello! I am CS, and I--"
     show ed at right with moveinright
-    play music "<loop 0>hohsis_theme.mp3" volume 0.2
+    play music "<loop 0>hohsis_theme.ogg" volume 0.2
     music Alfred Hitchcock Intro Theme - Charles Gounod
     ed "Alright, that will be 200,000 Bits."
     cs "Okay, I guess they already told you what I need done. Lemme get my wallet..."
@@ -355,7 +355,7 @@ label michael_house:
     scene car_inside
     show cs at left
     with fade
-    play music "<loop 0>canyon_but_in_the_car.mp3" volume 0.2
+    play music "<loop 0>canyon_but_in_the_car.ogg" volume 0.2
     cs "Thankfully, Michael lives pretty close."
     cs "His vacation house in the US is only a few streets away!"
     cs "Before I forget, I should probably call him first."
@@ -374,7 +374,7 @@ label michael_house:
     cs "Alright, well, I'll be there soon!"
     show cs at left
     n "CS puts his phone away and drives over to Michael's house."
-    play sound "sfx_driving.wav" volume 0.5
+    play sound "sfx_driving.ogg" volume 0.5
     pause 2.0
     show black with dissolve
     stop sound fadeout 2.0
@@ -385,7 +385,7 @@ label rosen_house:
         jump e3_rosen
     else:
         scene rosen_abode with fade
-    play music "<loop 0>super_friendly.mp3" volume 0.4
+    play music "<loop 0>super_friendly.ogg" volume 0.4
     music Super Friendly - Kevin Macleod
     show michael at right with moveinright
     show cs flipped at offscreenright
@@ -465,8 +465,8 @@ label rosen_house:
     show cs surprised at left
     with fade
 
-    play music "<loop 0>canyon_but_in_the_car.mp3" volume 0.2
-    play sound "sfx_driving.wav" volume 0.5
+    play music "<loop 0>canyon_but_in_the_car.ogg" volume 0.2
+    play sound "sfx_driving.ogg" volume 0.5
     stop music fadeout 3.0
     music end
     jump csbi_end
@@ -515,7 +515,7 @@ label csbi_end:
     scene hoh_hq
     show cs angry
     with dissolve
-    play music "<loop 0>time_for_a_smackdown.mp3" volume 0.2
+    play music "<loop 0>time_for_a_smackdown.ogg" volume 0.2
     music Time for a Smackdown! - Mr. Sauceman
     cs "Alright! Where are the head JoJites?!"
     show worker_1 at right with moveinright

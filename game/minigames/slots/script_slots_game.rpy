@@ -44,36 +44,36 @@ init python:
         def score(self) -> int:
             if self.lane_1 == "gold" and self.lane_2 == "gold" and self.lane_3 == "gold":
                 # ALL GOLD = 100
-                renpy.sound.play("minigames/slots/sfx_woohoo.mp3", channel=0)
+                renpy.sound.play("minigames/slots/sfx_woohoo.ogg", channel=0)
                 return 100
             elif (self.lane_1 == "gold" and self.lane_2 == "gold") or \
                 (self.lane_2 == "gold" and self.lane_3 == "gold") or \
                 (self.lane_3 == "gold" and self.lane_1 == "gold"):
                 # TWO GOLD = 50
-                renpy.sound.play("minigames/slots/sfx_tada.wav", channel=0)
+                renpy.sound.play("minigames/slots/sfx_tada.ogg", channel=0)
                 return 50
             elif self.lane_1 == "poop" and self.lane_2 == "poop" and self.lane_3 == "poop":
                 # ALL POOP = LOSE 10
-                renpy.sound.play("minigames/slots/sfx_fart.wav", channel=0)
+                renpy.sound.play("minigames/slots/sfx_fart.ogg", channel=0)
                 return -10
             elif (self.lane_1 == "poop" and self.lane_2 == "poop") or \
                 (self.lane_2 == "poop" and self.lane_3 == "poop") or \
                 (self.lane_3 == "poop" and self.lane_1 == "poop"):
                 # 2 POOP = LOSE 5
-                renpy.sound.play("minigames/slots/sfx_fart.wav", channel=0)
+                renpy.sound.play("minigames/slots/sfx_fart.ogg", channel=0)
                 return -5
             elif self.lane_1 == "rosen" and self.lane_2 == "rosen" and self.lane_3 == "rosen":
                 # ALL ROSEN = 50
-                renpy.sound.play("minigames/slots/sfx_rosen_noice.mp3", channel=0)
+                renpy.sound.play("minigames/slots/sfx_rosen_noice.ogg", channel=0)
                 return 50
             elif (self.lane_1 == "rosen" and self.lane_2 == "rosen") or \
                 (self.lane_2 == "rosen" and self.lane_3 == "rosen") or \
                 (self.lane_3 == "rosen" and self.lane_1 == "rosen"):
                 # TWO ROSEN = 25
-                renpy.sound.play("minigames/slots/sfx_rosen_pop.mp3", channel=0)
+                renpy.sound.play("minigames/slots/sfx_rosen_pop.ogg", channel=0)
                 return 25
             else:
-                renpy.sound.play("minigames/slots/sfx_gamblecore_awwdangit.mp3", channel=0)
+                renpy.sound.play("minigames/slots/sfx_gamblecore_awwdangit.ogg", channel=0)
                 return 0
 
 
@@ -178,8 +178,8 @@ screen slotsgame:
 label minigame_slots:
     window hide
     $ quick_menu = False
-    play music "<loop 0>minigames/slots/game_corner.mp3" if_changed
-    play sound "minigames/slots/sfx_gamblecore_letsgogambling.mp3"
+    play music "<loop 0>minigames/slots/game_corner.ogg" if_changed
+    play sound "minigames/slots/sfx_gamblecore_letsgogambling.ogg"
     call screen slotsgame
     $ quick_menu = True
     window show

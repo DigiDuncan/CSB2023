@@ -45,13 +45,13 @@ label south:
     cs "How about..."
     show cs
     cs "Hold on. I got an idea."
-    play music "brick_by_dick.mp3"
+    play music "brick_by_dick.ogg"
     music Brick by Brick (Suck my Dick) - cs188
     cs "See those pieces on the ground?"
     show arceus worried
     arceus "What pieces?"
     n "CS quickly starts grabbing material from thin air and puts together a new car."
-    play sound "sfx_legosfx.mp3" volume 1
+    play sound "sfx_legosfx.ogg" volume 1
     pause 3.0
     show cs happy
     cs "Tada!"
@@ -68,7 +68,7 @@ label south:
     show cs at left behind cscar2 with moveinleft
     show arceus at right behind cscar2 with moveinright
     n "Once they get into the car, CS starts it up."
-    play sound "sfx_driving.wav" volume 0.5
+    play sound "sfx_driving.ogg" volume 0.5
     pause 1.0
     cs "Woohoo! Vegas time!"
     arceus "I don't even know how you do these things, man, but let's go!"
@@ -170,7 +170,7 @@ label utah:
     scene black with fade
     n "As CS and Arceus walk in, they are greeted with a musty aroma and a dimly-lit party room."
     scene fazlobby with fade
-    play music "<loop 0>tunnely_shimbers.mp3" volume 0.5
+    play music "<loop 0>tunnely_shimbers.ogg" volume 0.5
     music Tunnely Shimbers - Mr. Sauceman
     n "CS walks around in awe as Arceus creeps behind him."
     show cs dark at left with moveinleft
@@ -179,7 +179,7 @@ label utah:
     if fun_value(25):
         pause 1.0
         show fumobee at lego_run
-        play sound "secret/sfx_vine.mp3"
+        play sound "secret/sfx_vine.ogg"
         with move
         pause 1.0
         show arceus worried dark
@@ -273,7 +273,7 @@ label utah:
     cs "Ohh."
     arceus "CS, don't move a muscle."
     cs "Why not? It's just a Leg--"
-    play music "<loop 0>hard_drive.mp3" volume 0.5
+    play music "<loop 0>hard_drive.ogg" volume 0.5
     music Hard Drive to Munch You - Mr. Sauceman
     show lego eyes
     n "The minifigure's eyes glow as it raises its arms up and starts running at CS."
@@ -336,8 +336,8 @@ label vegas:
         show cscar2
         show arceus flipped at left behind cscar2
         with determination
-        play sound "sfx_clapperboard.wav"
-        play music "<loop 0>penthouse.mp3" volume 0.5
+        play sound "sfx_clapperboard.ogg"
+        play music "<loop 0>penthouse.ogg" volume 0.5
         music "Al's Penthouse - Andy Blythe"
         $ returning_from_blooper = False
     else:
@@ -352,7 +352,7 @@ label vegas:
         show cscar2
         show arceus flipped at left behind cscar2
         with fade
-    play music "<loop 0>penthouse.mp3" volume 0.5
+    play music "<loop 0>penthouse.ogg" volume 0.5
     music "Al's Penthouse - Andy Blythe"
     n "After a few hours of driving, the duo sees the bright Las Vegas sign coming into view."
     cs "Woohoo! We're almost there!"
@@ -380,7 +380,7 @@ label vegas:
     with moveoutright
     n "CS and Arceus enter the casino. It looks like chaos is unfolding in front of their faces."
     scene casino1 with fade
-    play sound "sfx_slots.mp3" volume 3
+    play sound "sfx_slots.ogg" volume 3
     n "The sounds of slot machines fill the room. Many drunkards hobble around the establishment."
     show cs at left with moveinleft
     show arceus at right with moveinright
@@ -464,7 +464,7 @@ label vegas_done_slots:
     show green flipped at left
     with fade
     show cs disappointed flipped at right with moveinright
-    play music "<loop 0>laurel_palace.mp3" volume 0.5
+    play music "<loop 0>laurel_palace.ogg" volume 0.5
     music Laurel Palace - Manami Matsumae
     green "Deal us some cards arready!"
     scene luigi1
@@ -580,7 +580,7 @@ label folded:
     scene outsafeopen
     show arceus full flipped at mid_right
     with fade
-    play sound "sfx_payday.mp3" volume 0.5
+    play sound "sfx_payday.ogg" volume 0.5
     $ achievement_manager.unlock("The House Doesn't Always Win")
     show arceus full happy flipped
     arceus "Hell yeah!"
@@ -658,10 +658,10 @@ label poker3:
         show lancer at center with moveintop
         show lancer with vpunch
         show cs scared flipped
-        play sound "secret/sfx_explosion.mp3" volume 1.5
+        play sound "secret/sfx_explosion.ogg" volume 1.5
         show green at t_punchup with move
         pause 0.3
-        play music "<loop 0>secret/lancer.mp3" volume 1
+        play music "<loop 0>secret/lancer.ogg" volume 1
         music Lancer - Toby Fox
         lancer "Hey guys!"
         show cs worried flipped
@@ -735,7 +735,7 @@ label poker3:
         scene luigi2
         show cs happy flipped at right
         cs "Woohoo! I won!"
-        play music "<loop 0>price_right.mp3" volume 0.5
+        play music "<loop 0>price_right.ogg" volume 0.5
         music Price Is Right Theme - Edd Kalehoff
         luigi "Congratulations, sir, you just won 100 million dollars!"
         cs "Yay! I can pay for my Creative Cloud without donations!"
@@ -850,7 +850,7 @@ label airport:
     scene black with fade
     n "CS drives to the airport nearest to Las Vegas."
     scene airport_interior with fade
-    play music "<loop 0>airport.mp3" volume 0.4
+    play music "<loop 0>airport.ogg" volume 0.4
     music Airport Infiltration - Andy Blythe & Marten Joustra
     show cs at left
     show arceus flipped at mid_left
@@ -932,7 +932,7 @@ label airport:
     show arceus
     arceus "Yeah, the walk there would take hours."
     cs "Shit, uhh, what are our other options?"
-    play music "<loop 0>mm_select.mp3" volume 0.3
+    play music "<loop 0>mm_select.ogg" volume 0.3
     music Mm Select - Matthew Simmonds
     show billy at right
     show cs
@@ -969,7 +969,7 @@ label airport_bad:
     scene black with fade
     n "CS drives to the airport nearest to Las Vegas."
     scene airport_interior with fade
-    play music "<loop 0>airport.mp3" volume 0.4
+    play music "<loop 0>airport.ogg" volume 0.4
     music Airport Infiltration - Andy Blythe & Marten Joustra
     show cs at left
     show arceus flipped at mid_left
@@ -1016,7 +1016,7 @@ label airport_bad:
 
 label back_home_alt:
     scene cs_house with fade
-    play music "<loop 0>park_theme.mp3" volume 0.5
+    play music "<loop 0>park_theme.ogg" volume 0.5
     music Park Theme - Lorin Nelson
     n "After the long and exciting journey, CS finally arrives at his house."
     show arceus flipped at left with moveinleft
@@ -1043,7 +1043,7 @@ label back_home_alt:
     ed "{i}You!" with hpunch
     show cs disappointed at left with moveinleft
     n "CS and the gang look towards CS' front porch, where Richard and Ed are waiting angrily for him."
-    play music2 "<loop 0>hohsisremix.mp3" volume 0.5
+    play music2 "<loop 0>hohsisremix.ogg" volume 0.5
     music "Alfred's Theme - Eminem"
     show ed at right
     show rich at mid_mid_right behind ed
@@ -1108,7 +1108,7 @@ label donatehohsis:
     show cs at right with move
     n "CS walks up to his front door."
     scene cs_room with fade
-    play music "<loop 0>ac_title.mp3" volume 0.4
+    play music "<loop 0>ac_title.ogg" volume 0.4
     music New Leaf Title Theme - Kazumi Totaka
     show cs at center with moveinleft
     cs "Ah, it's good to be home again!"
@@ -1320,7 +1320,7 @@ label noairport:
     show mika at center with moveintop
     show mika at center with vpunch
     mika "Oi, chaps!"
-    play music "<loop 0>pokey.mp3" volume 0.6
+    play music "<loop 0>pokey.ogg" volume 0.6
     music Pokeys House - Keiichi Suzuki
     mika "Ok, so, CS looks out the window and he spots a yellow Hummer."
     mika "The guy, with his arm out the window, says \"Dude, this car kicks ass! And I can watch Madagascar while driving!\""
@@ -1369,7 +1369,7 @@ label noairport:
     n "The TV turns off and starts shaking."
     show arceus worried
     show cs scared
-    play music "<loop 0>clownpiece.mp3" volume 0.6
+    play music "<loop 0>clownpiece.ogg" volume 0.6
     music Pierrot of the Star Spangled Banner - ZUN
     with vpunch
     with hpunch
@@ -1429,10 +1429,10 @@ label reality_break:
     show cs happy at left
     show arceus angry at right
     with determination
-    play sound "sfx_bell.mp3"
+    play sound "sfx_bell.ogg"
     show cs
     pause 3.0
-    play sound "<loop 0>sfx_chatter.mp3"
+    play sound "<loop 0>sfx_chatter.ogg"
     n "A bell rings, causing cast and crew to scatter."
     show cs disappointed
     cs "Huh?"

@@ -31,7 +31,7 @@ label e3:
     show oldgame
     with fade
     pause 3.0
-    play sound "sfx_page.wav" volume 5
+    play sound "sfx_page.ogg" volume 5
     hide oldgame
     with moveoutright
     cs "I know what's going on now."
@@ -61,7 +61,7 @@ label e2_rosen:
     jump csbi_start
 
 label e3_rosen:
-    play music "<loop 0>night.mp3" volume 1
+    play music "<loop 0>night.ogg" volume 1
     scene rosen_abode
     show csgod at offscreenright
     show michael at left

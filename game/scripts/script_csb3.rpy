@@ -6,7 +6,7 @@ label csbiii_start:
     n "CS returns to LMG the next day."
     hide cs with moveoutright
     scene inside_ltt with fade
-    play music "<loop 0>passport.mp3" volume 0.5
+    play music "<loop 0>passport.ogg" volume 0.5
     music PASSPORT.MID - George Stone
     show linus at center with moveinright
     linus "Welcome to Linus Media Group! Come on in. I'll show you to your desk."
@@ -122,7 +122,7 @@ label edit_video:
     music end
     cs "Hmm, this video looks pretty great so far. I'm practically done at this point."
     cs "I wonder what the others will think of this. I should probably get opinions from some of the other employees."
-    play music "<loop 0>good_eatin.mp3" volume 0.4
+    play music "<loop 0>good_eatin.ogg" volume 0.4
     music "Good Eatin' - ClascyJitto"
     show taran at right with moveinright
     taran "Need any help with anything?"
@@ -241,7 +241,7 @@ label boost:
     show linus behind cs at left with ease
     show linus at center with ease
     n "As CS turns around, Linus gives him a friendly punch in the back."
-    play music "<loop 0>airport_counter.mp3" volume 0.5
+    play music "<loop 0>airport_counter.ogg" volume 0.5
     music Airport Counter - Kazumi Totaka
     linus "Dude, what are you talking about? That video was {i}awesome!{/i}"
     show cs worried at left
@@ -298,7 +298,7 @@ label boost:
     linus "Behold! {w=0.5} The-- WOAH SHIT {w=0.5}{nw}"
     show ytx at t_linus_drop_tips
     pause 0.35
-    play sound ("sfx_clonk.wav")
+    play sound ("sfx_clonk.ogg")
     show cs scared
     show linus with vpunch
     n "Linus loses grip of the card as it tumbles down onto the table next to him."
@@ -358,7 +358,7 @@ label boost:
     cs "Who knew recording could be so stressful. I could use a drink. The lights are so bright."
     if fun_value(15):
         linus "Here. Take this water bottl-- oops!{w=0.5}{nw}"
-        play sound "sfx_metalpipe.mp3"
+        play sound "sfx_metalpipe.ogg"
         show cs scared with vpunch
         n "Linus drops the water bottle on the ground."
         show cs worried
@@ -413,7 +413,7 @@ label reviews:
     show arceus worried at mid_right with moveinright
     show cs scared
     arceus "CS! There you are! We need to go, ASAP!"
-    play music2 "<loop 0>hired_guns.mp3" volume 0.5
+    play music2 "<loop 0>hired_guns.ogg" volume 0.5
     music Hired Guns - Brian Johnston
     linus "CS? You know this person?"
     show cs worried
@@ -481,7 +481,7 @@ label ytp_fan:
     n "Suddenly, Arceus rushes in through the doors."
     show arceus worried at mid_right with moveinright
     arceus "CS! There you are! We need to go ASAP!"
-    play music2 "<loop 0>hired_guns.mp3" volume 0.5
+    play music2 "<loop 0>hired_guns.ogg" volume 0.5
     music Hired Guns - Brian Johnston
     linus "CS? Seriously?"
     show cs worried
@@ -559,7 +559,7 @@ label both_fan:
     n "Suddenly, Arceus rushes in."
     show arceus worried at mid_right with moveinright
     arceus "CS! There you are! We need to go, ASAP!"
-    play music2 "<loop 0>hired_guns.mp3" volume 0.5
+    play music2 "<loop 0>hired_guns.ogg" volume 0.5
     music Hired Guns - Brian Johnston
     linus "So you {i}do{/i} have a furry fanbase who wants to join LTT! Damn it, CS, I should've known."
     show cs worried
@@ -651,7 +651,7 @@ label arc_escape:
     with move
     show copguy at right with moveinright
     n "Copguy bursts in."
-    play music "<loop 0>undyne.mp3" volume 0.5
+    play music "<loop 0>undyne.ogg" volume 0.5
     music Undyne - Toby Fox
     copguy "Alright, everyone! Back against the wall! Nobody move!"
     luke "So, are we moving to the wall or... not moving?"
@@ -709,7 +709,7 @@ label arc_escape:
     show cs dusk at left
     show arceus dusk flipped at mid_left
     with fade
-    play music "<loop 0>atarashii_kaze.mp3" volume 0.3
+    play music "<loop 0>atarashii_kaze.ogg" volume 0.3
     music Atarashii Kaze - Satoru Kosaki
     n "CS and Arceus approach the border guard again."
     show border_guard dusk at right with moveinright
@@ -738,7 +738,7 @@ label arc_escape:
     scene sheriff_office
     show sheriff at left
     with fade
-    play music "<loop 0>police_station.mp3" volume 0.5
+    play music "<loop 0>police_station.ogg" volume 0.5
     music Police Station - Lorin Nelson  
     n "Back at the police station, Copguy talks to the sheriff about CS."
     show sheriff at left
@@ -764,7 +764,7 @@ label arc_escape:
     music end
     scene washington_road with fade
     n "Meanwhile, CS and Arceus are still making their way through the US without any sense of direction."
-    play music "<loop 0>echoing.mp3" volume 0.5
+    play music "<loop 0>echoing.ogg" volume 0.5
     music Echoing - Banana
     show cs disappointed dark at left with moveinleft
     show arceus dark at right with moveinright
@@ -843,7 +843,7 @@ label ytp_magic_fight:
     scene washington_road with fade
     show cs dark at left with moveinleft
     show arceus dark at right with moveinright
-    play music2 "<loop 0>killcops.mp3" volume 0.5
+    play music2 "<loop 0>killcops.ogg" volume 0.5
     music Echoing? - Banana
     n "The duo continues to travel along the road."
     n "Arceus is wary of CS' actions as he can't help but notice CS muttering to himself as they walk."
@@ -933,7 +933,7 @@ label wait_arc:
     billy "Let's go!"
     scene car background
     show billy car
-    play music "<loop 0>insane_personalities.mp3" volume 0.6
+    play music "<loop 0>insane_personalities.ogg" volume 0.6
     music Insane Personalities - Lizardking
     pause 5.0
     scene car background night
@@ -957,7 +957,7 @@ label wait_arc:
     arceus "After that incident with the cops, he's been..."
     pause 1.0
     arceus "He's just been--"
-    play music "<from 60 to 170>insane_personalities.mp3" volume 1
+    play music "<from 60 to 170>insane_personalities.ogg" volume 1
     csgod "Stronger than ever."
     show csgod flipped at mid_left with moveinleft
     show arceus flipped at mid_left with vpunch
@@ -1024,7 +1024,7 @@ label wait_forest:
     cs "Huh?"
     cs "What happened?"
     show copguy dark at right with moveinright
-    play music "<loop 0>danger_mystery.mp3" volume 0.5
+    play music "<loop 0>danger_mystery.ogg" volume 0.5
     music Danger Mystery - Toby Fox
     copguy "Hey, you're finally awake."
     arceus "Hey, CS."
@@ -1066,9 +1066,9 @@ label bad_convince:
     show copcar_mask
     show arceus at right
     show cs disappointed at left
-    play music "<loop 0>pressing_pursuit_cornered.mp3" volume 0.3
+    play music "<loop 0>pressing_pursuit_cornered.ogg" volume 0.3
     music Pressing Pursuit ~ Cornered - Masakazu Sugimori
-    play sound "sfx_hold_it.mp3" volume 0.5
+    play sound "sfx_hold_it.ogg" volume 0.5
     show hold_it at truecenter with hpunch
     pause 1.0
     hide hold_it
@@ -1077,7 +1077,7 @@ label bad_convince:
     cs "I just {i}look{/i} like CS!"
     show arceus worried
     arceus "I mean... he {i}might{/i} not be CS?"
-    play sound "sfx_objection.mp3" volume 0.5
+    play sound "sfx_objection.ogg" volume 0.5
     show objection at truecenter with hpunch
     pause 1.0
     hide objection
@@ -1089,9 +1089,9 @@ label bad_convince:
 
 label good_convince:
     show cs angry
-    play music "<loop 0>pressing_pursuit_cornered.mp3" volume 0.3
+    play music "<loop 0>pressing_pursuit_cornered.ogg" volume 0.3
     music Pressing Pursuit ~ Cornered - Masakazu Sugimori
-    play sound "sfx_hold_it.mp3" volume 0.5
+    play sound "sfx_hold_it.ogg" volume 0.5
     show hold_it at truecenter with hpunch
     pause 1.0
     hide hold_it
@@ -1105,7 +1105,7 @@ label good_convince:
     cs "So, afterwards, I wanted to get my revenge!"
     copguy "I'm not believing this for a second."
     copguy "You really thought I would fall for some silly little lie?"
-    play sound "sfx_objection.mp3" volume 0.5
+    play sound "sfx_objection.ogg" volume 0.5
     show objection at truecenter with hpunch
     pause 1.0
     hide objection
@@ -1153,7 +1153,7 @@ label good_convince:
     show arceus dark at mid_right_right
     show cs dark
     n "CS and Arceus look at each other and smile."
-    play music "<loop 0>bun_guster.mp3" volume 0.3
+    play music "<loop 0>bun_guster.ogg" volume 0.3
     music Bun Guster - Satoru Kosaki
     arceus "Holy crap, I didn't think that would work."
     cs "Me neither! I'm so glad that he let us go!"
@@ -1179,7 +1179,7 @@ label choose_direction:
     show cs at left
     show arceus at right
     with fade
-    play music "<loop 0>happy_roaming.mp3" volume 0.5
+    play music "<loop 0>happy_roaming.ogg" volume 0.5
     music Happy Roaming - Lorin Nelson
     cs "We've been walking all night. I'm exhausted."
     arceus "Yeah, let's hope we find food and water soon."

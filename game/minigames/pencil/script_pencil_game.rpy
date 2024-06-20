@@ -56,28 +56,28 @@ init python:
                 if 0 < current_time < 1:
                     # Display 3
                     if not self.three_played:
-                        renpy.sound.play("minigames/pencil/sfx_smash_3.wav")
+                        renpy.sound.play("minigames/pencil/sfx_smash_3.ogg")
                         self.three_played = True
                     countdown_renderer = renpy.render(Text("3", color="FF0000", size=200), 1920, 1080, st, at)
                     r.blit(countdown_renderer, (960, 540))
                 elif 1 < current_time < 2:
                     # Display 2
                     if not self.two_played:
-                        renpy.sound.play("minigames/pencil/sfx_smash_2.wav")
+                        renpy.sound.play("minigames/pencil/sfx_smash_2.ogg")
                         self.two_played = True
                     countdown_renderer = renpy.render(Text("2", color="FFFF00", size=200), 1920, 1080, st, at)
                     r.blit(countdown_renderer, (960, 540))
                 elif 2 < current_time < 3:
                     # Display 1
                     if not self.one_played:
-                        renpy.sound.play("minigames/pencil/sfx_smash_1.wav")
+                        renpy.sound.play("minigames/pencil/sfx_smash_1.ogg")
                         self.one_played = True
                     countdown_renderer = renpy.render(Text("1", color="00FF00", size=200), 1920, 1080, st, at)
                     r.blit(countdown_renderer, (960, 540))
                 elif current_time > 3:
                     # Yell Go at the player
                     if not self.go_played:
-                        renpy.sound.play("minigames/pencil/sfx_smash_go.wav")
+                        renpy.sound.play("minigames/pencil/sfx_smash_go.ogg")
                         self.go_played = True
                     self.started = True
 
@@ -101,7 +101,7 @@ init python:
             if self.lock_out_time and current_time < self.lock_out_time:
                 r.blit(red_x_renderer, (1200, 300))
                 if not self.fail_played:
-                    renpy.sound.play("minigames/pencil/sfx_fail.mp3")
+                    renpy.sound.play("minigames/pencil/sfx_fail.ogg")
                     self.fail_played = True
 
             elif self.lock_out_time and current_time >= self.lock_out_time:
@@ -191,7 +191,7 @@ screen pencilgame:
 label minigame_pencil:
     window hide
     $ quick_menu = False
-    play music "minigames/pencil/rude_buster.mp3" volume 0.5
+    play music "minigames/pencil/rude_buster.ogg" volume 0.5
     call screen pencilgame
     stop music
     $ quick_menu = True
