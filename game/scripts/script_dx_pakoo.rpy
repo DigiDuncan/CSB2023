@@ -514,6 +514,47 @@ label pencil_ask:
     cs "Alright, well..."
     jump seek_competitors
 
+label science_ask:
+    cs "Y'know, the scientologists think they are all that, but maybe me talking to them will convince them to get us a vote."
+    n "CS runs over to scientologists stand."
+    n "When CS gets there, he sees Tom Cruise standing there, greeting other cult members walking by."
+    cruise "Yeah, and make sure to watch my movies too!"
+    cs "Hey, guy! CS here!"
+    cruise "Hey, you're that new guy!"
+    cruise "Why the hell did you pick those guys anyway? They always lose!"
+    cs "Well, it's funny that you said this convention never can show off any real power."
+    cs "I think I got something up my sleeve that will match your needs."
+    cruise "Hah! They all say that bud, what makes you so special?"
+    cs "If you put a vote in for us, and we win, I'll show you all."
+    cs "If I can't, the Blue Branch won't show up for another Cult Con."
+    cruise "A bet? Sure, I'm down, but you better not let me down!"
+    cs "I won't man, don't worry."
+    n "CS heads back to the convention floor."
+    cs "Well, that was a lot easier than I thought."
+    jump seek_competitors
+
+label catholic_ask:
+    cs "Who the hell are those guys?"
+    cs "They just look like Christians!"
+    n "CS goes to check out the Catholics."
+    n "As CS approaches the priest, he immediately greets him."
+    priest "Hello! Would you like to donate to the church?"
+    cs "No thanks, I don't have money on me."
+    cs "Do you, want to vote for Blue Branch?"
+    priest "Oh sorry, we don't hand out votes to anyone."
+    priest "We just want to see if any cult is willing to..."
+    priest "...Upgrade?"
+    cs "Have you gotten anyone to bite?"
+    priest "Not yet, but I'm sure someone will realize--{nw}"
+    cs "Dude, I'm sorry, but I don't think this is gonna work out for you guys."
+    priest "Just get out of here, you'll ruin my company."
+    cs "Alright, cya!"
+    n "CS heads back to the convention floor."
+    cs "Well, that was a load of crap!"
+    jump seek_competitors
+
+
+
 label renault:
     show carguy at right with moveinright
     play music "<loop 0>scales_of_joy.ogg" volume 0.8
