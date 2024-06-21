@@ -94,7 +94,9 @@ init python:
         #Archival
         "k174": "Pakoo's Memories",
         "addy": "Addy",
-        "iris": "???"
+        "iris": "???",
+        #BTTFCS
+        "cruise": "Tom Cruise"
     }
 
 screen people_nav():

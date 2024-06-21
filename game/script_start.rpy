@@ -403,7 +403,7 @@ define snufkin = Character("Snufkin", callback = renpy.partial(char_callback, na
 define alicia = Character("Alicia", callback = renpy.partial(char_callback, name = "alicia"))
 define witch = Character("Witch", callback = renpy.partial(char_callback, name = "witch"))  # DX: Beep
 define renovator = Character("Renovator", callback = char_callback)
-define cruise = Character("Tom Cruise", callback = char_callback)
+define cruise = Character("Tom Cruise", callback = renpy.partial(char_callback, name = "cruise"))
 define baumer = Character("Steve Baumer", callback = char_callback)
 
 # Offscreen Character Definitions
@@ -1113,8 +1113,8 @@ image renault_inside = "bg/renault_inside.png"
 image renovator = "characters/renovator.png"
 image shadowman = "characters/shadowman.png"
 image pencilcashier = "characters/pencilcashier.png"
-image cruise = "characters/tom_cruise.png"
-image cruise flipped = "flip:characters/tom_cruise.png"
+image cruise = "characters/cruise.png"
+image cruise flipped = "flip:characters/cruise.png"
 
 # Static Images
 image post_it = "post-it.png"
@@ -1158,6 +1158,7 @@ image pot_sunken = "pot_sunken.png"
 image pot_beam = "pot_beam.png"
 image onscreen_sharpener = "pencilsharpener.png"
 image renault = "renault.png"
+image passportdigi = "passportdigi.png"
 
 # Movies
 image car background = Movie(play="movies/car_background.webm")

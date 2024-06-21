@@ -495,6 +495,10 @@ label bordercrossing:
         play music "<loop 0>passport_ytp.ogg" volume 0.5
     else:
         play music "<loop 0>passport.ogg" volume 0.5
+    if fun_value(90):
+        show passportdigi with dissolve
+    else:
+        hide passportdigi
     music PASSPORT.MID - George Stone
     linus "Sure, you can have a job. Just show us proof of citizenship and you're ready to go!"
     cs "Colour is spelled with a u, eh."
@@ -504,6 +508,10 @@ label bordercrossing:
     scene outside_ltt
     show arceus at right
     with dissolve
+    if fun_value(90):
+        show passportdigi with dissolve
+    else:
+        hide passportdigi
     show cs at left with moveinleft
     show cs worried
     cs "Arc, what am I gonna do? They need proof I'm legal to work."
@@ -517,6 +525,10 @@ label bordercrossing:
 
     scene alley
     with dissolve
+    if fun_value(90):
+        show passportdigi with dissolve
+    else:
+        hide passportdigi
     show arceus flipped with moveinleft
 
     n "Arceus rummages around in the dumpsters behind LMG."
@@ -537,6 +549,10 @@ label bordercrossing:
     scene outside_ltt
     show cs at left
     with dissolve
+    if fun_value(90):
+        show passportdigi with dissolve
+    else:
+        hide passportdigi
     show arceus at right with moveinright
 
     arceus "All taken care of."
@@ -547,7 +563,10 @@ label bordercrossing:
     scene inside_ltt
     show linus
     with fade
-
+    if fun_value(90):
+        show passportdigi with dissolve
+    else:
+        hide passportdigi
     linus "I didn't think you could have a number as a last name..."
     linus "Yep, there you are, cs188, with a valid working visa."
     linus "Looks like you're hired!"
@@ -559,6 +578,10 @@ label bordercrossing:
     show anno at right
     show arceus flipped at left
     with fade
+    if fun_value(90):
+        show passportdigi with dissolve
+    else:
+        hide passportdigi
     show cs happy with moveinleft
 
     cs "I did it! I got the job!"
