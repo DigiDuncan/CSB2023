@@ -311,6 +311,183 @@ label asset_debugger:
         ed "test 16{w=0.5}{nw}"
     else:
         jump exit_debug
+    if fun_value(17):
+        play sound "sfx_clonk.ogg"
+        play music "breakout.ogg"
+        scene cs_street
+        show billy car turn at mid_right
+        show objection at center
+        show cs disappointed metal4 at left
+        show digi at mid_left_left
+        show big_tank at mid_left
+        show nfanboy at mid_mid_left
+        show tate sheepish at mid_mid_right
+        show cultist_2 at mid_right_right
+        show arceus guard flipped at right 
+        wesley "test 17{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(18):
+        play sound "sfx_csnore.ogg"
+        play music "brick_by_dick.ogg"
+        scene hoh_outside
+        show hold_it at center
+        show cs disappointed flipped at left
+        show digi dark at mid_left_left
+        show asylum_worker at mid_left
+        show afanboy at mid_mid_left
+        show tate sheepish flipped at mid_mid_right
+        show billy laser at mid_right
+        show cultist_3 at mid_right_right
+        show arceus happy at right 
+        michael "test 18{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(19):
+        play sound "sfx_doorbell.ogg"
+        play music "broken_sky.ogg"
+        scene hoh_hq
+        show scott_border at center
+        show cs concentrate at left
+        show digi flipped at mid_left_left
+        show aria at mid_left
+        show nova at mid_mid_left
+        show tate sad at mid_mid_right
+        show billy dark at mid_right
+        show kitty at mid_right_right
+        show arceus happy flipped at right 
+        michael_nobeep "test 19{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(20):
+        play sound "sfx_doorslam.ogg"
+        play music "bubble_tea.ogg"
+        scene hoh_hq2
+        show cswanted at center
+        show cs concentrate dark at left
+        show digi dark flipped at mid_left_left
+        show aria flipped at mid_left
+        show nova dark at mid_mid_left
+        show tate sad flipped at mid_mid_right
+        show cashier at mid_right
+        show kitty flipped at mid_right_right
+        show arceus happy dark at right 
+        phil "test 20{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(21):
+        play sound "sfx_drill.ogg"
+        play music "bun_guster.ogg"
+        scene hoh_hq3
+        show laser_beam at center
+        show cs concentrate flipped at left
+        show guest at mid_left_left
+        show aria dark at mid_left
+        show nova flipped at mid_mid_left
+        show tate stare at mid_mid_right
+        show scott at mid_right
+        show blank at mid_right_right
+        show arceus happy dark flipped at right 
+        worker_1 "test 21{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(22):
+        play sound "sfx_drillbreak.ogg"
+        play music "buy_something.ogg"
+        scene hoh_hq4
+        show cards1 at center
+        show cs dark at left
+        show janitor at mid_left_left
+        show aria dark flipped at mid_left
+        show nova dark flipped at mid_mid_left
+        show tate stare flipped at mid_mid_right
+        show obama at mid_right
+        show midge at mid_right_right
+        show arceus prison at right 
+        worker_2 "test 22{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(23):
+        play sound "sfx_driving.ogg"
+        play music "candle_world.ogg"
+        scene hoh_hq5
+        show cards2 at center
+        show cs dark flipped at left
+        show customer at mid_left_left
+        show bouncer1 at mid_left
+        show peppino at mid_mid_left
+        show gnome at mid_mid_right
+        show discord at mid_right
+        show mika at mid_right_right
+        show arceus prison flipped at right 
+        worker_3 "test 23{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(24):
+        play sound "sfx_duck.ogg"
+        play music "canyon.ogg"
+        scene hoh_elevator
+        show cards3 at center
+        show cs dusk at left
+        show howie at mid_left_left
+        show bouncer2 at mid_left
+        show peppino2 at mid_mid_left
+        show waitress at mid_mid_right
+        show border_guard at mid_right
+        show mika dark at mid_right_right
+        show arceus worried at right 
+        worker_4 "test 24{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(25):
+        play sound "sfx_earthquake.ogg"
+        play music "canyon_but_in_the_car.ogg"
+        scene helipad
+        show cards4 at center
+        show cs disappointed dark at left
+        show howie flipped at mid_left_left
+        show trailtrash at mid_left
+        show streetguy at mid_mid_left
+        show terry at mid_mid_right
+        show border_guard dusk at mid_right
+        show db at mid_right_right
+        show arceus worried flipped at right 
+        worker_5 "test 25{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(26):
+        play sound "sfx_elevator_ding.ogg"
+        play music "canyon_but_in_the_car_real.ogg"
+        scene jail_inside
+        show cards5 at center
+        show cs disappointed dark flipped at left
+        show smiley at mid_left_left
+        show trailtrash flipped at mid_left
+        show pencilguy at mid_mid_left
+        show mettaton at mid_mid_right
+        show benrey at mid_right
+        show db_cooper at mid_right_right
+        show arceus dirty worried at right 
+        worker_6 "test 26{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(27):
+        play sound "sfx_foundationfail.ogg"
+        play music "canyon_real.ogg"
+        scene jail_cell
+        show con_screen at center
+        show cs disappointed dusk at left
+        show mario at mid_left_left
+        show green at mid_left
+        show gordon at mid_mid_left
+        show scott_pres at mid_mid_right
+        show joel at mid_right
+        show ges at mid_right_right
+        show arceus dirty worried flipped at right 
+        worker_7 "test 27{w=0.5}{nw}"
+    else:
+        jump exit_debug
+
     n "Done."
     return
 
