@@ -1473,6 +1473,8 @@ label test:
             pass
         "New cool thing OwO"  (type = "dx"):
             pass
+        "Asset Debugger":
+            jump asset_debugger
     $ renpy.full_restart()
 
 define shake1 = { "master" : hpunch }
