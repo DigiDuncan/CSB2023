@@ -155,11 +155,11 @@ label asset_debugger:
         play sound "sfx_britishpound.ogg"
         play music "another_him.ogg"
         scene cs_car
+        show craptop off at center
         show cs angry at left
         show ed phone at mid_left_left
         show copguy dark at mid_left
         show pakoo disappointed at mid_mid_left
-        show craptop off at center
         show tate srs flipped at mid_mid_right
         show mean surprised at mid_right
         show k207h at mid_right_right
@@ -171,16 +171,128 @@ label asset_debugger:
         play sound "sfx_bucket.ogg"
         play music "apple_kid.ogg"
         scene cs_car_inside
+        show craptop sad at center
         show cs angry dark at left
         show wesley at mid_left_left
         show copguy dark flipped at mid_left
         show pakoo disappointed flipped at mid_mid_left
-        show craptop sad at center
         show tate srs dark flipped at mid_mid_right
         show mean surprised flipped at mid_right
         show k207h flipped at mid_right_right
         show arceus full at right 
         carguy "test 8{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(9):
+        play sound "sfx_car_crash.ogg"
+        play music "atarashii_kaze.ogg"
+        scene walmart_outside
+        show craptop updating at center
+        show cs angry flipped at left
+        show worker_1 at mid_left_left
+        show copguy_ai at mid_left
+        show pakoo happy at mid_mid_left
+        show tate shock at mid_mid_right
+        show michael at mid_right
+        show nova1 at mid_right_right
+        show arceus full flipped at right 
+        carguy_nobeep "test 9{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(10):
+        play sound "sfx_car_horn.ogg"
+        play music "automatic_love.ogg"
+        scene walmart_inside
+        show craptop ytp at center
+        show cs angry dark flipped at left
+        show worker_2 at mid_left_left
+        show copguycrawl at mid_left
+        show pakoo happy flipped at mid_mid_left
+        show tate shock dark at mid_mid_right
+        show phil at mid_right
+        show nova2 at mid_right_right
+        show arceus full angry at right 
+        greeter "test 10{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(11):
+        play sound "sfx_chatter.ogg"
+        play music "basement.ogg"
+        scene walmart_aisle
+        show craptop evidence at center
+        show cs worried at left
+        show worker_3 at mid_left_left
+        show sheriff at mid_left
+        show linus at mid_mid_left
+        show tate shock flipped at mid_mid_right
+        show carguy at mid_right
+        show nova3 at mid_right_right
+        show arceus full angry flipped at right 
+        doug "test 11{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(12):
+        play sound "sfx_cheer1.ogg"
+        play music "bestmusicu.ogg"
+        scene walmart_register_fg
+        show craptopreal at center
+        show cs worried flipped at left
+        show worker_4 at mid_left_left
+        show cop at mid_left
+        show luke at mid_mid_left
+        show tate shock dark flipped at mid_mid_right
+        show carguy flipped at mid_right
+        show carguya at mid_right_right
+        show arceus angry at right 
+        cashier "test 12{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(13):
+        play sound "sfx_cheer2.ogg"
+        play music "billy_mix.ogg"
+        scene walmart_register
+        show craptopsmall at center
+        show cs disappointed at left
+        show worker_5 at mid_left_left
+        show cop dark at mid_left
+        show luke flipped at mid_mid_left
+        show tate smug at mid_mid_right
+        show doug at mid_right
+        show hart1 at mid_right_right
+        show arceus angry flipped at right 
+        ycs "test 13{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(14):
+        play sound "sfx_cheers.ogg"
+        play music "billy_radio.ogg"
+        scene cs_door_closed
+        show craptopsmall flipped at center
+        show cs disappointed metal at left
+        show worker_5alt at mid_left_left
+        show cop_2 at mid_left
+        show taran at mid_mid_left
+        show tate smug dark at mid_mid_right
+        show billy at mid_right
+        show hart2 at mid_right_right
+        show arceus angry dark at right 
+        hoh_operator "test 14{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(15):
+        play sound "sfx_chop.ogg"
+        play music "Billymusicu.ogg"
+        scene cs_door_open
+        show billy car at mid_right
+        show post_it at center
+        show cs disappointed metal2 at left
+        show worker_6 at mid_left_left
+        show guard_soldier at mid_left
+        show taran flipped at mid_mid_left
+        show tate smug flipped at mid_mid_right
+        show cultist at mid_right_right
+        show arceus angry dark flipped at right 
+        rich "test 15{w=0.5}{nw}"
     else:
         jump exit_debug
     n "Done."
