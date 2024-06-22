@@ -295,6 +295,22 @@ label asset_debugger:
         rich "test 15{w=0.5}{nw}"
     else:
         jump exit_debug
+    if fun_value(16):
+        play sound "sfx_clapperboard.ogg"
+        play music "blazing_corridor.ogg"
+        scene rosen_abode
+        show billy car happy at mid_right
+        show ytx at center
+        show cs disappointed metal3 at left
+        show worker_7 at mid_left_left
+        show marine at mid_left
+        show colton at mid_mid_left
+        show tate smug dark flipped at mid_mid_right
+        show cultist gun at mid_right_right
+        show arceus guard at right 
+        ed "test 16{w=0.5}{nw}"
+    else:
+        jump exit_debug
     n "Done."
     return
 
