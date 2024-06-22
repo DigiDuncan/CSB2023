@@ -1529,6 +1529,7 @@ label train_meanwhile:
     play sound "sfx_sliding_door_open.mp3"
     n "The cab door suddenly opens from behind."
     show lupin hat flipped at left
+    pause 1.0
     show amtrak_conductor at right
     with moveinright
     play sound "sfx_sliding_door_close.mp3"
@@ -1588,19 +1589,22 @@ label train_search_arceus:
     show amtrak_dining_pancake at t_dining_car_pancake behind amtrak_dining_food
     with fade
     n "From across the room, Arceus glances towards the forgotten breakfast." 
-    arceus "It's a damn shame that all of food went to waste."
+    arceus "It's a damn shame that all of that food went to waste."
 
     if pancake_fun_value == True:
         arceus "Mean probably wouldn't care if I took a bit more..."
     else:
         arceus "I wonder if Mean would mind if I grabbed a bit before it goes bad..."
+
     show lupin hat at mid_right with moveinright
     pause 1.0
     show amtrak_dining_food at offscreenleft
     play sound "sfx_whoosh.mp3"
     show lupin hat at offscreenleft
     with ease
+    pause 0.5
     arceus "What the fuck?!"
+    pause 0.5
     show arceus angry at right behind amtrak_dining_pancake with moveinright 
     arceus "Man... what is {i}wrong{/i} with people?!"
     n "Arceus spots a lone pancake."
@@ -1627,7 +1631,7 @@ label train_search_cs:
 
     n "CS finds himself alone in the deserted corridor."
     cs "I guess I should have expected nobody to keep their doors open this late."
-    cs "I probably should have {i}also{/i} expected that they'd not let me in..."
+    cs "I probably should have {i}also{/i} expected that nobody would want to let me in..."
     show cs worried
     cs "That lady in Room 3 threw a {i}shoe{/i} at me, for fuck's sake!"
     show cs disappointed
@@ -1649,7 +1653,7 @@ label train_search_cs:
     show amtrak_sleeper_open_fg
     with fade
 
-    n "A man in a familiar red jacket is just finishing off a large breakfast."
+    n "A man in an oddly familiar red jacket is just finishing off a large breakfast."
     lupin_offscreen "I can't believe how easy that was. {color=#FFDBFC}Pink sweater{/color} had the staff running around like ants!"
     lupin_offscreen "They don't know it, but they'd be my {i}perfect{/i} accomplice!"
     hide amtrak_dining_food with dissolve

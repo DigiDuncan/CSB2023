@@ -968,7 +968,7 @@ label so_join:
     pakoo "He's way too strong..."
     copguy "Is that all you guys got?"
     copguy "Or are you ready to finally admit your defeat?"
-    unknown "Waaaaaaaaaait!"
+    tate_offscreen "{bt=a3-p10-s4}{size=+24}Waaaaaaaaaait!" with hpunch
     show copguy
     copguy "Huh??"
     show tate srs at left with moveinleft
