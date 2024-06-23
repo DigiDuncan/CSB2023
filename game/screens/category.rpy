@@ -40,11 +40,12 @@ screen category_nav():
             textbutton "Jukebox" action ShowMenu("jukebox_welcome"), PauseAudio("music", True)
             textbutton "Endings" action ShowMenu("replay_gallery")
             textbutton "Minigames" action ShowMenu("minigame_gallery")
-            if preferences.developer_mode or persistent.creative_mode:
-                textbutton "Debug Menu" action ShowMenu("debug_menu")
             if preferences.developer_mode or achievement_manager.get("Hopes and Dreams").unlocked:
                 textbutton "Ultimate\nCustom Night" action Start("rpg_ucn")
+            if preferences.developer_mode or persistent.creative_mode:
+                textbutton "Debug Menu" action ShowMenu("debug_menu")
             if preferences.developer_mode:
+                textbutton "Asset Debugger" action Function(asset_debugger)
                 textbutton "Test Scene" action Jump("test")
                 textbutton "Unlock All" action Function(unlock_all)
             textbutton "Clear Persistent Data" action Jump("clear_screen")
