@@ -45,7 +45,7 @@ screen category_nav():
             if preferences.developer_mode or persistent.creative_mode:
                 textbutton "Debug Menu" action ShowMenu("debug_menu")
             if preferences.developer_mode:
-                textbutton "Asset Debugger" action Function(asset_debugger)
+                textbutton "Asset Debugger" action Jump("asset_debugger")
                 textbutton "Test Scene" action Jump("test")
                 textbutton "Unlock All" action Function(unlock_all)
             textbutton "Clear Persistent Data" action Jump("clear_screen")
