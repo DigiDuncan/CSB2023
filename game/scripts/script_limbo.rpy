@@ -487,6 +487,86 @@ label asset_debugger:
         worker_7 "test 27{w=0.5}{nw}"
     else:
         jump exit_debug
+    if fun_value(28):
+        play sound "sfx_gamer_and_girl.ogg"
+        play music "card_castle.ogg"
+        scene border
+        show case at center
+        show cs worried dark at left
+        show mario flipped at mid_left_left
+        show green flipped at mid_left
+        show car at mid_mid_left
+        show miku at mid_mid_right
+        show joel flipped at mid_right
+        show renovator at mid_right_right
+        show arceus worried dark at right 
+        digi "test 28{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(29):
+        play sound "sfx_gasp.ogg"
+        play music "chase.ogg"
+        scene outside_tim_hortons
+        show case flipped at center
+        show cs worried dark flipped at left
+        show violent_jay at mid_left_left
+        show jerma at mid_left
+        show tom at mid_mid_left
+        show sayori at mid_mid_right
+        show ikea_greeter at mid_right
+        show shadowman at mid_right_right
+        show arceus worried dark flipped at right 
+        pakoo "test 29{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(30):
+        play sound "sfx_glass.ogg"
+        play music "circus.ogg"
+        scene inside_tim_hortons_fg
+        show bag at center
+        show cs prison at left
+        show shaggy_too_dope at mid_left_left
+        show lego at mid_left
+        show james at mid_mid_left
+        show fumobee at mid_mid_right
+        show ikea_greeter blahaj at mid_right
+        show pencilcashier at mid_right_right
+        show arceus dark at right 
+        addy "test 30{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(31):
+        play sound "sfx_heartbeat.ogg"
+        play music "cliffs.ogg"
+        scene inside_tim_hortons
+        show bag flipped at center
+        show cs prison_worried at left
+        show blue_light at mid_left_left
+        show lego eyes at mid_left
+        show jeremy at mid_mid_left
+        show fumobee2 at mid_mid_right
+        show ikea_greeter flipped at mid_right
+        show cruise at mid_right_right
+        show arceus dark flipped at right 
+        copguy "test 31{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(32):
+        play sound "sfx_hitbod1.ogg"
+        play music "clownpiece.ogg"
+        scene tunnel
+        show drill at center
+        show cs guard at left
+        show red_light at mid_left_left
+        show tsa at mid_left
+        show hammond at mid_mid_left
+        show cards5alt at mid_mid_right
+        show swede at mid_right
+        show cruise flipped at mid_right_right
+        show arceus dusk at right 
+        arceus "test 32{w=0.5}{nw}"
+    else:
+        jump exit_debug
 
     n "Done."
     return
