@@ -515,7 +515,76 @@ label asset_debugger:
         arceus "test 32{w=0.5}{nw}"
     else:
         jump exit_debug
-
+    if fun_value(33):
+        play sound "sfx_hitbod2.ogg"
+        play music "compulsion_to_obey.ogg"
+        scene canada
+        show drillbreak at center
+        show cs guard dark at left
+        show copguy_ex_front at mid_left_left
+        show monika at mid_left
+        show lancer at mid_mid_right
+        show alien at mid_right
+        show arceus angry dusk at right 
+        anno "test 33{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(34):
+        play sound "sfx_hitbod3.ogg"
+        play music "conflict.ogg"
+        scene flag
+        show sansbrick at center
+        show cs fakegod at left
+        show copguy_ex_back at mid_left_left
+        show lancer flipped at mid_mid_right
+        show alien dead at mid_right
+        show arceus dusk flipped at right 
+        border_guard "test 34{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(35):
+        play sound "sfx_hks1.ogg"
+        play music "cp_violation.ogg"
+        scene outside_ltt
+        show oldgame at center
+        show cs guitar at left
+        show ai_ducks at mid_left_left
+        show bubble at mid_mid_right
+        show ikea_worker at mid_right
+        linus "test 35{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(36):
+        play sound "sfx_hks2.ogg"
+        play music "creative_exercise.ogg"
+        scene inside_ltt
+        show m4 at center
+        show cs surprised at left
+        show stage_screen at mid_left_left
+        show pomni at mid_right
+        asylum_worker "test 36{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(37):
+        play sound "sfx_hks3.ogg"
+        play music "danger_mystery.ogg"
+        scene alley
+        show m4 flipped at center
+        show cs surprised flipped at left
+        show moomin at mid_right
+        csgod "test 37{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(38):
+        play sound "sfx_hold_it.ogg"
+        play music "dealin_dope.ogg"
+        scene question
+        show m4 fire at center
+        show cs scared at left
+        show snufkin at mid_right
+        luke "test 38{w=0.5}{nw}"
+    else:
+        jump exit_debug
     n "Done."
     return
 
