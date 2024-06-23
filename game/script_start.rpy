@@ -1473,6 +1473,8 @@ label test:
             pass
         "New cool thing OwO"  (type = "dx"):
             pass
+    show screen warning("The following scene is a test.\nIt may be teste.", "Warnings: developer cruft, bad puns", "start")
+    pause
     $ renpy.full_restart()
 
 define shake1 = { "master" : hpunch }
