@@ -585,6 +585,95 @@ label asset_debugger:
         luke "test 38{w=0.5}{nw}"
     else:
         jump exit_debug
+    if fun_value(39):
+        play sound "sfx_isaac.ogg"
+        play music "dense_woods_b.ogg"
+        scene asylum
+        show m4 fire flipped at center
+        show cs scared flipped at left
+        show alicia at mid_right
+        taran "test 39{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(40):
+        play sound "sfx_joj_loop.ogg"
+        play music "desert_dawn.ogg"
+        scene csdesk
+        show script at center
+        show cs scared dark at left
+        show witch at mid_right
+        colton "test 40{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(41):
+        play sound "sfx_keyboard.ogg"
+        play music "dig_this.ogg"
+        scene csvideo
+        show post_it2 at center
+        show cs insane worried at left
+        show moomin_flipped at mid_right
+        sheriff "test 41{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(42):
+        play sound "sfx_knock.ogg"
+        play music "dinerfight.ogg"
+        scene setup
+        show colorbars at center
+        show cs insane worried flipped at left
+        show snufkin_flipped at mid_right
+        billy "test 42{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(43):
+        play sound "sfx_legosfx.ogg"
+        play music "dragon_castle.ogg"
+        scene loffice
+        show paper at center
+        show cs insane disappointed at left
+        show alicia_flipped at mid_right
+        tv_billy "test 43{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(44):
+        play sound "sfx_less_annoying_alarm_sound.ogg"
+        play music "echoing.ogg"
+        scene ltt_bg
+        show pipe_gun at center
+        show cs horse at left
+        show witch_flipped at mid_right
+        cultist "test 44{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(45):
+        play sound "sfx_metalpipe.ogg"
+        play music "echoingspring.ogg"
+        scene ltt_fg
+        show pipe_gun flipped at center
+        show cs horse flipped at left
+        show baumer at mid_right
+        cultist_2 "test 45{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(46):
+        play sound "sfx_nicecar.ogg"
+        play music "energetic_rock.ogg"
+        scene frontdoor
+        show cheetos at center
+        show cs pissed at left
+        show baumer flipped at mid_right
+        cultist_3 "test 46{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(47):
+        play sound "sfx_notsonicescratch.ogg"
+        play music "everlong.ogg"
+        scene road_to_canada
+        show bear at center
+        show cs pissed flipped at left
+        scott "test 47{w=0.5}{nw}"
+    else:
+        jump exit_debug
     n "Done."
     return
 
