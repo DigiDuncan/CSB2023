@@ -8,6 +8,7 @@ init python:
 # are never initialized. It's lying to you; it's fine.
 
 define determination = Dissolve(0.0)
+default translate_this_line = ""
 default persistent.seen = set()
 default persistent.heard = set()
 default persistent.read = set()

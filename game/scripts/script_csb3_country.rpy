@@ -1692,8 +1692,12 @@ label sweden:
     with dissolve
     show cs flipped at right with moveinright
     cs "That guy looks like he'd be able to help."
-    cs "Excuse me sir, do you know where the bus stop is?"
-    average_swede "Min svävare är full med ålar."
+    cs "Excuse, me, sir, do you know where the bus stop is?"
+
+    $ translate_this_line = "My hovercraft is filled with eels."
+    average_swede "{a=show:show_tl}Min svävare är full med ålar.{/a}"
+
+    show cs disappointed flipped
     cs "Oh, dang. I forgot not many Swedes can speak English. Hopefully, I'll find someone who does."
     n "As CS says this, he sees a bus drive past and decides to just follow it to the bus stop."
     hide cs with moveoutleft
@@ -1725,8 +1729,12 @@ label sweden_second:
     with dissolve
     show cs flipped at right with moveinright
     cs "That guy looks like he'd be able to help."
-    cs "Excuse me, sir, do you know where the bus stop is?"
-    average_swede "Min svävare är full med ålar."
+    cs "Excuse, me, sir, do you know where the bus stop is?"
+
+    $ translate_this_line = "My hovercraft is filled with eels."
+    average_swede "{a=show:show_tl}Min svävare är full med ålar.{/a}"
+
+    show cs disappointed flipped
     cs "Oh, dang. I forgot not many Swedes can speak English. Hopefully, I'll find someone who does."
     n "As CS says this, he sees a bus drive past and decides to just follow it to the bus stop."
     hide cs with moveoutleft
