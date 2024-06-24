@@ -13,26 +13,26 @@ label train_start_bad:
 ######## RUN INTRO ########
 label train_intro_start:
 
-    # syntax: if train_money_stolen true flip sprites
+    # syntax: if train_money_stolen true DON'T flip sprites
 
     cs "We should head back home now. I have a plan for our newfound riches."
 
     # flip
     if train_money_stolen == True:
-       show arceus happy flipped
+       show arceus happy
     else:
-        show arceus happy 
+        show arceus happy flipped
 
     arceus "Alright! I'm excited to see what you've got cooking up!"
     arceus "Let's get going!"
 
     # flip
     if train_money_stolen == True:
-       show cs flipped
-       show arceus flipped
+       show cs
+       show arceus
     else:
-        show cs
-        show arceus
+        show cs flipped
+        show arceus flipped
 
     pause 2.0
     "{w=1.0}..."
@@ -40,11 +40,11 @@ label train_intro_start:
 
     # flip
     if train_money_stolen == True:
-        show cs flipped
-        show arceus worried flipped
-    else:
         show cs
         show arceus worried
+    else:
+        show cs flipped
+        show arceus worried flipped
 
     pause 1.0
     arceus "... But, how {i}will{/i} we get back, exactly?"
@@ -52,19 +52,19 @@ label train_intro_start:
 
     # flip
     if train_money_stolen == True:
-        show cs surprised flipped
-    else:
         show cs surprised
+    else:
+        show cs surprised flipped
 
     cs "I saw some signs for an airport really clo--{w=0.25}{nw}"
 
     # flip
     if train_money_stolen == True:
-        show arceus angry flipped
-        show cs disappointed flipped
-    else:
         show arceus angry
         show cs disappointed
+    else:
+        show arceus angry flipped
+        show cs disappointed flipped
 
     arceus "Dude, {i}no.{/i}"
     arceus "We are {i}not{/i} flying. I hate flying."
@@ -76,9 +76,9 @@ label train_intro_start:
 
     # flip
     if train_money_stolen == True:
-        show arceus flipped
-    else:
         show arceus
+    else:
+        show arceus flipped
 
     pause 2.0
     n "Arceus thinks for a moment."
@@ -92,9 +92,9 @@ label train_intro_start:
 
     # flip
     if train_money_stolen == True:
-        show arceus happy flipped
-    else:
         show arceus happy
+    else:
+        show arceus happy flipped
 
     arceus "...Yeah!"
     arceus "That sounds like a great idea!"
@@ -105,18 +105,18 @@ label train_intro_start:
 
     # flip
     if train_money_stolen == True:
-        show arceus worried flipped 
+        show arceus worried
     else:
-        show arceus worried 
+        show arceus worried flipped
 
     arceus "Come {i}on,{/i} man! I just want to unwind!"
     arceus "We don't even need to worry about how much it'll cost, remember?"
 
     # flip
     if train_money_stolen == True:
-        show arceus happy flipped 
-    else:
         show arceus happy
+    else:
+        show arceus happy flipped
  
     arceus "We're filthy stinkin' {i}rich!{/i}"
     n "CS can sense that Arceus probably won't take \"no\" for an answer."
@@ -124,17 +124,17 @@ label train_intro_start:
     
     # flip
     if train_money_stolen == True:
-        show cs surprised flipped  
+        show cs surprised 
     else:
-        show cs surprised
+        show cs surprised flipped
 
     cs "And I've never been on a cross-country train before..."
 
     # flip
     if train_money_stolen == True:
-        show cs happy flipped  
+        show cs happy 
     else:
-        show cs happy
+        show cs happy flipped
 
     cs "Yeah, you know what? Let's do it!"
     arceus "Let's go!"
@@ -1923,7 +1923,7 @@ label train_confront_lupin:
     mean "Damn..."
     mean "Where's the conductor? Is he still on duty?"
     show tate sheepish
-    tate "Well, uh..."
+    tate "Well, uh...{w=0.25}{nw}"
     play sound "sfx_fart_again.ogg"
     show cs scared flipped
     show tate shock flipped
@@ -1955,22 +1955,23 @@ label train_confront_lupin:
     arceus "That doesn't explain why you need it to drive the train..."
     mean "I'm talking triple-stitched, reinforced, dual-layered denim, lined with 100-percent pure Merino wool!"
     arceus "That... still doesn't explain anything."
+    show mean unamused
     mean "I'm spiky. I need a hat that'll hold up."
     show arceus angry
     arceus "That {i}still{/i} doesn't explain why you can't work without it."
     show mean angry
 
     if fun_value(10):
-        mean "Me without my hat is like Mario without his hat!"
+        mean "Me without my hat is like Mario without his!"
         mean "Just because it's a game mechanic doesn't mean it's {i}right!"
     else:
-        mean "I can't exactly fit into a standard uniform, now, can I?"
+        mean "Bro, look at me. I can't exactly fit into a standard uniform, now, can I?"
 
     show arceus worried
     arceus "I... suppose not."
+    mean "Let's just start looking."
+    
 
-    
-    
     "This is a placeholder line until more is written."
 
 
