@@ -146,13 +146,17 @@ transform mid_center_right:
     yanchor 0.5 ypos 0.5
     xanchor 0.5 xpos 0.75
 
-transform center_right:
+transform mid_center_left:
     yanchor 0.5 ypos 0.5
-    xanchor 1.0 xpos 1.0
+    xanchor 0.5 xpos 0.25
 
-transform center_left:
+transform center_mid_left:
     yanchor 0.5 ypos 0.5
-    xanchor 0.0 xpos 0.0
+    xanchor 0.5 xpos 0.4
+
+transform center_mid_right:
+    yanchor 0.5 ypos 0.5
+    xanchor 0.5 xpos 0.8
 
 transform mid_offscreen_right:
     yanchor 1.0 ypos 1.0
@@ -632,6 +636,8 @@ image mean worried = "characters/mean/meanworried.png"
 image mean worried flipped = "flip:characters/mean/meanworried.png"
 image mean scared = "characters/mean/meanscared.png"
 image mean scared flipped = "flip:characters/mean/meanscared.png"
+image mean unamused = "characters/mean/meanunamused.png"
+image mean unamused flipped = "flip:characters/mean/meanunamused.png"
 
 ## Archival
 image k174 = "characters/k174.png"
@@ -1166,6 +1172,7 @@ image moynihan_interior = "bg/train/moynihan_interior.png"
 image amtrak_cab = "bg/train/amtrak_cab.png"
 image amtrak_sleeper_open_bg = "bg/train/amtrak_sleeper_open_bg.png" #these two images are bigger on purpose
 image amtrak_sleeper_open_fg = "bg/train/amtrak_sleeper_open_fg.png" #remastering is encouraged but don't change size pls
+image amtrak_economy = "bg/train/amtrak_economy.png"
 
 # Train Route NPCs
 image amtrak_conductor = "characters/amtrak_conductor.png"

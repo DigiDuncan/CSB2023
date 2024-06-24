@@ -210,8 +210,22 @@ label train_story_begin:
     cs "Oh, right."
     cs "I guess we won't be needing this for a while."
     play sound "audio/sfx_lego_break.WAV"
+
+    if train_money_stolen == True:
+        show bag at mid_mid_left with dissolve
+    else:
+        show briefcase at mid_mid_left with dissolve
+
     n "CS quickly deconstructs the Lego car. He shoves the colorful little bricks into the [train_money_container] for later."
+ 
     n "The [train_money_container] is now full to bursting, but CS just barely manages to [train_money_stolen_dialogue_switch]."
+
+    if train_money_stolen == True:
+        hide bag with dissolve
+    else:
+        hide briefcase with dissolve
+
+    pause 1.0
     show arceus worried
     pause 1.0
     arceus "... You still never explained to me how the fuck you did that."
@@ -414,19 +428,19 @@ label train_story_begin:
     show tate flipped
     tate "Well, it's nice to meet ya, Arc."
     show arceus flipped
-    tate "I'm Tate. I'm CS's-- uh... "
-    show cs surprised
+    tate "I'm Tate. I'm, uh...{w=0.5}{nw}"
     show tate sheepish flipped
-    tate "Um... friend. Yes."
+    show cs surprised
+    pause 1.0
+    "...{w=1.0}{nw}"
+    tate "I'm just an old friend of CS's."
     show cs happy
-    cs "Yeah! Of course we're friends."
+    cs "Yep!"
     tate "Of course."
     show arceus worried flipped
-    show tate sad flipped
     n "Arceus raises an eyebrow at this interaction."
     n "He decides that maybe it's better not to ask."
     show cs
-    show tate sheepish flipped
     tate "A-{w=0.1}Anyway. We should probably get going."
     show tate
     tate "We don't wanna end up stranded here. This train only stops here once a day, after all!"
@@ -463,7 +477,7 @@ label train_story_begin:
 
     show tate sad
     tate "Yes, sir..."
-    amtrak_conductor "Let's get a move on."
+    amtrak_conductor "Now, let's get a move on."
 
     show amtrak_conductor flipped
     pause 0.25
@@ -599,13 +613,14 @@ label train_boarding:
     # TODO: less crumnchy lupin sprite
     # TODO: sfx - Lupin musical sting
 
-    show cs scared at mid_offscreen_left with hpunch
+    show cs scared at mid_offscreen_left
     show tate shock flipped
-    show lupin at mid_mid_left with dissolve
+    with hpunch
     show cs concentrate
-    show tate shock flipped at right with moveinright
+    show tate shock flipped at right with MoveTransition(0.25)
+    show lupin at mid_mid_left with dissolve
     n "CS is knocked to the ground as a stranger sprints down the corridor!"
-    unknown "Sorry, pretty kitty! I've gotta {i}run!"
+    lupin_offscreen "Sorry, pretty kitty! I've gotta {i}run!"
     hide lupin with dissolve
     n "The weird guy hurries away."
     pause 0.25
@@ -617,7 +632,7 @@ label train_boarding:
 
     show cs concentrate at left
     show tate sheepish flipped at center
-    with moveinright
+    with MoveTransition(1.0)
 
     pause 1.0
     show cs disappointed
@@ -648,6 +663,7 @@ label train_enter_sleeper:
     show cs at left
     with moveinleft
 
+    pause 0.5
     show arceus worried
     arceus "Hey, guys. Sorry about that."
     arceus "I think something I ate at that creepy-ass pizza place didn't quite agree with me."
@@ -676,7 +692,7 @@ label train_enter_sleeper:
     arceus "So, uh..."
     arceus "Hey, Tate, how {i}do{/i} you know CS, anyway?"
     show tate sheepish
-    tate "Oh, uh..."
+    tate "O-{w=0.1}Oh, uh..."
     tate "We met a few years ago, back when Mixer was still a thing."
     show cs
     cs "You might remember it as Beam, Arc."
@@ -694,7 +710,7 @@ label train_enter_sleeper:
     "..."
     pause 1.0
     show tate sheepish flipped
-    tate "...Right?"
+    tate "... Right?"
 
     stop music fadeout 3.0
     music end
@@ -901,6 +917,7 @@ label train_enter_sleeper:
     show arceus worried
     arceus "{size=-10}Well, {i}I'm{/i} bothered by it..."
     show cs worried
+    show arceus
     cs "I mean, yeah, it totally sucks balls, but all it means is that when we get home, things will just be the same as they were before."
     show tate sheepish flipped
     tate "Even so, I really do hope they find everyone's things..."
@@ -954,7 +971,7 @@ label train_enter_sleeper:
     show tate srs flipped
     tate "{i}No!"
     tate "I don't want to hear it!"
-    tate "Is {i}this{/i} what you've been up to since we--{w=0.25}{nw}"
+    tate "Is {i}this{/i} what you've been up to since--{w=0.5}{nw}"
     "..."
     tate "You know what? No."
     tate "Mean's shift starts soon. I need to be there for him."
@@ -962,7 +979,7 @@ label train_enter_sleeper:
     tate "Not about the thefts, and {i}certainly{/i} not about what happened at HoH SiS."
     tate "He doesn't need this. Especially not today."
     show cs worried
-    n "Tate reinforces their demand with a piercing glare towards CS."
+    n "Tate reinforces their demand with a piercing glare towards CS." with hpunch
     show tate srs
     n "Tate then suddenly stands up." with vpunch
     tate "I'm sorry."
@@ -1836,8 +1853,126 @@ label train_search_tate:
     pause 1.0
 
 label train_confront_lupin:
-    tate "Sorry. Mean and I haven't written this yet."
-    mean "Yeah, sorry. Come back later, ya bozo."
+    scene amtrak_economy
+    show tate sad at left
+    show mean worried flipped at truecenter
+    with fade
+    n "CS shows up in economy to find Tate with Mean. The two seem upset about something."
+    pause 1.0
+    show cs disappointed flipped at right with moveinright
+    pause 1.0
+    cs "Hey guys, what's going on? Did you find anything?"
+    show mean worried
+    show tate sad
+    tate "CS! It's terrible!"
+    tate "Mean's hat was stolen!"
+    mean "{size=-15}Mah fuckin' hat..."
+    show cs angry flipped
+    cs "I wonder if it's the same guy who has our money..."
+    show tate shock 
+    show mean ayo
+    tate "Wait, you saw who had it?!"
+    cs "Yeah! Some guy in a red jacket ran off with it!"
+    show mean unamused
+    mean "Oh, yeah, that's {i}real{/i} descriptive."
+    mean "Even I wear a red jacket sometimes."
+    show tate sheepish
+    show cs disappointed flipped
+    cs "You do? How?"
+    tate "Well, you see--{w=0.5}{nw}"
+    show mean angry flipped
+    mean "And you were saying, before CS came in, that you saw the bastard who took my hat?"
+    show tate srs
+    tate "Yeah. Remember that creep I told you about earlier?"
+    tate "The one who keeps hitting on me?"
+    show mean unamused flipped
+    mean "Are you sure you aren't just saying that because you want an excuse to get rid of the guy?"
+    show tate shock
+    tate "No! I'm serious!"
+    tate "He {i}also{/i} wears a red jacket!"
+    tate "He ran off before I could catch him!"
+    n "A familiar grumbling approaches the group."
+    
+    show arceus angry at offscreenright with dissolve
+
+    show cs disappointed flipped at mid_mid_right
+    show mean unamused flipped at center_mid_left
+    show arceus angry at right
+    with ease
+
+    arceus "{size=-15}All the fuckin' booze..."
+
+    show cs disappointed
+    show mean unamused
+    show tate sheepish
+    
+    cs "Oh, hey, Arc. You find anything in the dining car?"
+    arceus "I sure did! This dude in a red coat just stole the entire goddamn pile of food that Mean had!"
+    show mean angry
+    mean "Mah fuckin' {i}food,{/i} too?!" with hpunch
+    cs "... Why do {i}you{/i} seem so upset about it, Arc?"
+    show arceus worried
+    arceus "Because he stole all the {i}alcohol,{/i} too!"
+    show mean worried
+    mean "Jesus..."
+    show mean angry flipped
+    show cs disappointed flipped
+    mean "Tate, did you know about this?"
+    show tate sad
+    tate "No!"
+    mean "Damn..."
+    mean "Where's the conductor? Is he still on duty?"
+    show tate sheepish
+    tate "Well, uh..."
+    play sound "sfx_fart_again.ogg"
+    show cs scared flipped
+    show tate shock flipped
+    show mean scared flipped
+    with hpunch
+    pause 2.0
+    show tate sheepish
+
+    if fun_value(5):
+        tate "He's on 'doody', alright..."
+    else:
+        tate "He's... a little busy."
+
+    show mean unamused flipped
+    show cs worried flipped
+ 
+    mean "God damn it, I told him not to mix that protein powder with milk..."
+    show mean angry
+    show cs disappointed flipped
+    mean "I guess it's up to us to find the guy."
+    mean "I can't start work without my hat!"
+    show arceus worried
+    arceus "What's so special about the hat?"
+    cs "And isn't our money a little more important than your hat?"
+    show mean worried
+    show cs disappointed flipped
+    mean "Nah, you don't understand."
+    mean "That hat is one-of-a-kind."
+    arceus "That doesn't explain why you need it to drive the train..."
+    mean "I'm talking triple-stitched, reinforced, dual-layered denim, lined with 100-percent pure Merino wool!"
+    arceus "That... still doesn't explain anything."
+    mean "I'm spiky. I need a hat that'll hold up."
+    show arceus angry
+    arceus "That {i}still{/i} doesn't explain why you can't work without it."
+    show mean angry
+
+    if fun_value(10):
+        mean "Me without my hat is like Mario without his hat!"
+        mean "Just because it's a game mechanic doesn't mean it's {i}right!"
+    else:
+        mean "I can't exactly fit into a standard uniform, now, can I?"
+
+    show arceus worried
+    arceus "I... suppose not."
+
+    
+    
+    "This is a placeholder line until more is written."
+
 
 ######## GO HOME ########
 label train_return_home_transition:
