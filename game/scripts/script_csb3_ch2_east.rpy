@@ -1437,12 +1437,12 @@ label interstate_69:
     show cs
     aria "I dunno, people change."
     aria "Speaking of surprising, is that Billy Mays with you?"
-    billy "In the flesh."
+    billy "Hi, it's Billy!"
     aria "Didn't you die of a heart attack or cocaine overdose or something?"
-    billy "Cocaine-induced heart attack, yeah."
-    billy "You're a formerly-human floating grey blob that hangs out with gnomes. I don't think I'm the weirdest thing here right now."
+    billy "Yep! Don't mix that shit with Oxy Clean, lemme tell ya."
+    billy "Also, what the actual fuck? If i'm so surprising, what about you? You look like a sentient mixture of Oxi Clean and Kaboom!"
     aria "Fair enough. Do you all wanna eat with me?"
-    cs "Sure. It's been a while."
+    cs "Sure, we had some pizza a couple days ago and we haven't ate much since."
     scene black with dissolve
     n "CS and the gang sit down with Aria."
     scene cafe_sitting
