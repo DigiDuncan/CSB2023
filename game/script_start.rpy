@@ -63,9 +63,9 @@ init python:
         if preferences.text_beeps and play_beeps:
             if event == "show":
                 if beep is not None:
-                    renpy.sound.play(f"audio/text/{beep}.ogg", channel = "beep", loop = True)
+                    renpy.sound.play(f"audio/text/{beep}.wav", channel = "beep", loop = True)
                 else:
-                    renpy.sound.play(f"audio/text/ut.ogg", channel = "beep", loop = True)
+                    renpy.sound.play(f"audio/text/ut.wav", channel = "beep", loop = True)
             elif event == "slow_done" or event == "end":
                 renpy.sound.stop(channel = "beep")
 
