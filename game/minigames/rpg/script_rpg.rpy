@@ -231,8 +231,8 @@ label bronsonbattle:
             cs_weak
             arceus
             billy
-            copguy_Exe
+            copguy_exe
         scale 1.0
         on_win "bronson_win"
         on_lose "bronsonbattle"
-        music "audio/upon_me.ogg"
+        music "audio/error.ogg"

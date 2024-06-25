@@ -110,6 +110,7 @@ label bronson:
     cs "What the hell, man?"
     play sound2 "<loop 0>sfx_siren.ogg" volume 0.1 loop
     arceus "Both of you, shut up! Do you hear... something in the distance?"
+    window hide
     stop music fadeout 5.0
     pause 5.0
     play sound2 "<loop 0>sfx_siren.ogg" volume 0.2
@@ -156,8 +157,56 @@ label bronson:
     jump bronsonbattle
 
 label bronson_win:
+    scene bronsoncrash
+    show billy at left
+    show arceus dirty flipped at mid_left
+    show cs disappointed flipped at mid_right
+    with dissolve
     cs "Holy crap, we did it."
-    return
+    show arceus dirty worried flipped at mid_left
+    arceus "I don't know how, or what is going on, but I kinda want to get out of here."
+    billy "Sounds good to me, let's get back on the road!"
+    scene black with dissolve
+    n "Thankfully, the car wasn't too much of a wreck, and they got back on the road."
+    window hide
+    pause 1.0
+    play sound "sfx_doorslam.ogg"
+    scene bronson_hell
+    show cscar1arc
+    show billy at left
+    show cs disappointed flipped at right
+    show cscar2
+    with dissolve
+    pause 3.0
+    n "Everyone is still pretty silent on the ride out of Bronson."
+    cs "Is it okay, if we all just..."
+    arceus "Forget about this?"
+    cs "Yeah. I don't want to think about this ever again. That was spooky as hell."
+    arceus "Yeah. Whatever else happens on this trip won't be as bad as this."
+    n "After a while, the storm finally clears up."
+    stop sound fadeout 3.0
+    scene car plains
+    show billy car
+    with dissolve
+    billy "Hey guys?"
+    billy "I'm sorry for how I acted back there, I don't know what came over me."
+    cs "You freaked me out when you said that I was ruining this trip."
+    billy "Nonsense, I may have picked you guys up to take you home a few days ago..."
+    billy "But I can say you guys are friends for life."
+    arceus "Same here."
+    arceus "You guys are great."
+    cs "Yeah, we had some great times so far!"
+    cs "I mean, that pizza back in Nebraska was pretty frickin' good."
+    billy "Well, in other news, we are coming across some more exits."
+    billy "There is I-69 and I-94."
+    billy "Which one are you guys down to take? I'm honestly up for anything that's not blood red skies again."
+    menu:
+        "Which road should we take?"
+        "I-69":
+            jump interstate_69
+        "I-94":
+            jump interstate_94
+
 label continue_michigan:
     arceus "Nah, this place looks too rural to have much around."
     n "The two look over to CS, who seems visibly distressed."
@@ -166,10 +215,10 @@ label continue_michigan:
     cs "Something about the name Bronson, Michigan sends a chill down my spine."
     arceus "We'll just skip it. Nothing around here anyway."
     scene black with dissolve
-    n "They keep driving. CS continues muttering \"Don't go to Bronson\" until they finally stop seeing Bronson signs." 
+    n "They keep driving. CS continues muttering \"Don't go to Bronson\" until they finally stop seeing Bronson signs."
     scene car plains
     show billy car
-    with dissolve  
+    with dissolve
     billy "Alright. We're way past Bronson, but we're getting pretty far north."
     billy "We should probably find an exit to start heading towards New York soon."
     cs "There's an exit coming up. We can take either I-69 or 94."
