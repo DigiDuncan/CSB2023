@@ -1070,8 +1070,9 @@ label back_home:
             jump talktohohsis
         "Fuck up" (type = "bad"):
             jump fuckuphohsis
-        "Call Copguy":
-            jump copsathohsis
+        if persistent.true_ending:
+            "Call Copguy":
+                jump copsathohsis
 
 label talktohohsis:
     cs "I never intended to harm your company. I just thought that the video was a good source to YTP."
