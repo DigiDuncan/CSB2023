@@ -1063,16 +1063,24 @@ label back_home:
     ed "You. You embarrassed us with those silly, stupid videos that dragged our family company through the mud."
     rich "That's why Ed wanted to get revenge on you. That's why we destroyed your computer, CS."
     cs "I don't understand..."
-    menu:
-        "Fight" (type = "bad"):
-            jump fighthohsis
-        "Negotiate" (type = "true"):
-            jump talktohohsis
-        "Fuck up" (type = "bad"):
-            jump fuckuphohsis
-    #if persistent.true_ending:
-        "Call Copguy":
-            jump copsathohsis
+    if persistent.true_ending:
+        menu:
+            "Fight them!" (type = "bad"):
+                jump fighthohsis
+            "Negotiate with them!" (type = "true"):
+                jump talktohohsis
+            "Tell it like it is!" (type = "bad"):
+                jump fuckuphohsis
+            "Call Copguy!":
+                jump copsathohsis
+    else:
+        menu:
+            "Fight them!" (type = "bad"):
+                jump fighthohsis
+            "Negotiate with them!" (type = "true"):
+                jump talktohohsis
+            "Tell it like it is!" (type = "bad"):
+                jump fuckuphohsis
 
 label talktohohsis:
     cs "I never intended to harm your company. I just thought that the video was a good source to YTP."
