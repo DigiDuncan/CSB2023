@@ -26,6 +26,20 @@ screen ucn_bg():
             for bg in bg_list:
                 imagebutton idle bg action SetVariable("ucn_bg", bg), Hide("ucn_bg") xysize (240, 120)
 
+screen ucn_bgm_choice(items):
+    viewport:
+        xysize(1920, 540)
+        yanchor -0.25
+        style_prefix "choice"
+        side_yfill True
+        scrollbars "vertical"
+        mousewheel True
+        vbox:
+            for i in items:
+                textbutton i.caption.removeprefix("audio/").removesuffix(".ogg").removeprefix("/"):
+                    anchor(-0.25, -0.25)
+                    action i.action
+
 # screen ucn_mainmenu:
     # tag menu
     # timer 0.5 action MainMenu(confirm = False)
@@ -59,9 +73,9 @@ label rpg_ucn:
     $ ucn_scale = renpy.display_menu([(str(a), a) for a in scales], screen="ucn_choice")
 
     $ renpy.show_screen("ucn_bg")
-    $ narrator("Click to begin!", interact = False)
     $ renpy.pause()
-    
+    $ renpy.hide_screen("ucn_bg")
+    $ ucn_music = renpy.display_menu([(m, m) for m in bgm_list], screen="ucn_bgm_choice")
 
     rpg:
         bg "ucn"

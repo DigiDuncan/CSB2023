@@ -1318,7 +1318,7 @@ init python:
 
     bgm_list = []
     for bgm in file_list("audio"):
-        if bgm.endswith(".ogg") and not bgm.startswith("sfx_") and "unused" not in bgm:
+        if bgm.endswith(".ogg") and "sfx" not in bgm and "unused" not in bgm:
             bgm_list.append("audio/" + bgm)
 
 # Minigames
