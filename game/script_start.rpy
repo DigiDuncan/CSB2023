@@ -1309,6 +1309,18 @@ default ucn_music = "minigames/pencil/rude_buster.ogg"  # "
 default ucn_scale = 1.0
 default cont = False
 
+# Helpful lists
+init python:
+    bg_list = []
+    for bg in file_list("images/bg"):
+        if bg.endswith(".png"):
+            bg_list.append("images/bg" + bg)
+
+    bgm_list = []
+    for bgm in file_list("audio"):
+        if bgm.endswith(".ogg") and not bgm.startswith("sfx_") and "unused" not in bgm:
+            bgm_list.append("audio/" + bgm)
+
 # Minigames
 default minigame_win = "secret_dx"
 default minigame_loss = "secret_dx"

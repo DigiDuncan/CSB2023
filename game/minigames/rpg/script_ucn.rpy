@@ -12,6 +12,20 @@ screen ucn_choice(items):
                     anchor(-0.25, -0.25)
                     action i.action
 
+screen ucn_bg():
+    text "Choose a scene!" xanchor 0.5
+    viewport:
+        xysize(1920, 980)
+        yanchor 0.0
+        side_yfill True
+        scrollbars "vertical"
+        mousewheel True
+        grid 5 100:
+            xfill True
+            yfill True
+            for bg in bg_list:
+                imagebutton idle bg action SetVariable("ucn_bg", bg), Hide("ucn_bg") xysize (240, 120)
+
 # screen ucn_mainmenu:
     # tag menu
     # timer 0.5 action MainMenu(confirm = False)
@@ -43,6 +57,11 @@ label rpg_ucn:
 
     $ narrator("Choose a party scale!", interact = False)
     $ ucn_scale = renpy.display_menu([(str(a), a) for a in scales], screen="ucn_choice")
+
+    $ renpy.show_screen("ucn_bg")
+    $ narrator("Click to begin!", interact = False)
+    $ renpy.pause()
+    
 
     rpg:
         bg "ucn"
