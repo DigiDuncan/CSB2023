@@ -1552,8 +1552,8 @@ label train_meanwhile:
     play sound "sfx_sliding_door_close.mp3"
     show lupin hat flipped
     amtrak_conductor "Oh, good evening, Mean."
-    amtrak_conductor "I almost didn't recognize you {color=#D03131}like that.{/color}"
-    amtrak_conductor "Well, you already know what to do, so I'll leave you to it."
+    amtrak_conductor "I almost didn't recognize you {color=#D9053A}like that.{/color}"
+    amtrak_conductor "Well, you already know the drill, so I'll leave you to it."
     lupin_offscreen "You got it, boss!"
     amtrak_conductor "Hopefully your little friend will stay out of the way tonight. Corralling them all day has me absolutely beat."
     lupin_offscreen "No worries, boss. I'm sure {color=#FFDBFC}pink sweater{/color} is tired from cooking all day."
@@ -1675,8 +1675,7 @@ label train_search_cs:
     lupin_offscreen "They don't know it, but they'd be my {i}perfect{/i} accomplice!"
     hide amtrak_dining_food with dissolve
     pause 1.0
-    lupin_offscreen "Mmmm..."
-    lupin_offscreen "{i}Burp!{/i}" with hpunch
+    lupin_offscreen "Mmmm... {i}Burp!{/i}" with hpunch
     lupin_offscreen "Oh, pardon me!"
     lupin_offscreen "I guess asking them on a dinner date would be a bad idea. They'd totally out-cook the chef!"
     lupin_offscreen "I wonder if they like movies..." 
@@ -1847,7 +1846,7 @@ label train_search_tate:
     with hpunch
     with hpunch
     pause 2.0
-    amtrak_conductor "I guess it's time to switch protein shake brands..."
+    amtrak_conductor "I guess it's time to switch protein shakes..."
     pause 0.5
     scene black with fade
     pause 1.0
@@ -1940,7 +1939,7 @@ label train_confront_lupin:
     show mean unamused flipped
     show cs worried flipped
  
-    mean "God damn it, I told him not to mix that protein powder with milk..."
+    mean "God damn it, I told him not to mix that protein powder with milk."
     show mean angry
     show cs disappointed flipped
     mean "I guess it's up to us to find the guy."
@@ -1970,6 +1969,7 @@ label train_confront_lupin:
     show arceus worried
     arceus "I... suppose not."
     mean "Let's just start looking."
+    
     
 
     "This is a placeholder line until more is written."
