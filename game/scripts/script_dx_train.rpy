@@ -313,7 +313,7 @@ label train_story_begin:
     arceus "I mean, back then, trains were powered by steam."
 
     # arc and mean wanted this
-    if fun_value(100):
+    if fun_value(10):
         show cs 
         cs "Steam? Like Gabe Newell?"
         show arceus angry
@@ -1038,7 +1038,7 @@ label train_enter_sleeper:
 
     play sound "audio/sfx_sliding_door_open.mp3"
 
-    if fun_value(10):
+    if fun_value(5):
         pause 2.0
         n "... However, the door was heavier than he expected."
 
@@ -1149,7 +1149,7 @@ label train_dining:
     n "One can practically see the gears begin to turn in Arceus' head as he realizes who he is talking to."
 
     # arc wanted this
-    if fun_value(10):
+    if fun_value(50):
         show arceus
         arceus "Wait, hey, can you do a Dallas impression?"
         show mean wat
