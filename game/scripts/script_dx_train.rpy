@@ -1,5 +1,6 @@
 # TODO: mean needs a better text beep
 # TODO: add bios/music tracks to people/jukebox once route is written
+# TODO: make sure reflections are removed from all background images + cut out windows so we can have moving scenery
 
 ######## VARIABLES ########
 label train_start_good:
@@ -931,14 +932,11 @@ label train_enter_sleeper:
     tate "So, he was working for this home repair company, right? They hired him on as a security guard, since he's all spiky--{w=0.25}{nw}"
     show arceus 
     arceus "{i}Spiky?{/i} Wha--{w=0.25}{nw}"
-
-    # TODO: can we replace "pushed" to reference whichever attack was used in CSBII?
-
     tate "--and then some weirdo dressed as a catgirl maid broke in and fought the CEO! A lot of people got hurt!"
     show tate shock flipped
     show cs worried
     show arceus worried
-    tate "I think Mean said that someone even got pushed off of the roof!"
+    tate "I think Mean said that someone even got [ch2_cs_attack_used] off of the roof!"
     show tate sheepish flipped
     tate "But since Mean couldn't... {w=0.5}{size=-5}hold him off... {w=0.5}{size=-5}he was... {w=1.0}{size=-5}fired..."
     "..."
@@ -1042,7 +1040,7 @@ label train_enter_sleeper:
 
     if fun_value(10):
         pause 2.0
-        n "...But the door was heavier than he expected."
+        n "... However, the door was heavier than he expected."
 
         # TODO: replace with a proper sliding door slam later
 
@@ -1315,7 +1313,7 @@ label train_wakeup:
 
     show mean surprised
     mean "There... {i}cough"
-    mean "...There you are, Tate..."
+    mean "... There you are, Tate..."
     
     # here goes tate having too much fun with sprites again
 
@@ -1571,7 +1569,7 @@ label train_meanwhile:
     with hpunch
     with hpunch
     pause 1.5
-    lupin_offscreen "...Seems like he'll be a while."
+    lupin_offscreen "... Seems like he'll be a while."
     show lupin hat flipped at center with moveinright
     lupin_offscreen "And that's just what I need."
     scene black with fade
@@ -1675,7 +1673,8 @@ label train_search_cs:
     lupin_offscreen "They don't know it, but they'd be my {i}perfect{/i} accomplice!"
     hide amtrak_dining_food with dissolve
     pause 1.0
-    lupin_offscreen "Mmmm... {i}Burp!{/i}" with hpunch
+    lupin_offscreen "Mmmm...{done} {i}Burp!{/i}" 
+    lupin_offscreen "Mmmm...{fast} {i}Burp!{/i}"  with hpunch
     lupin_offscreen "Oh, pardon me!"
     lupin_offscreen "I guess asking them on a dinner date would be a bad idea. They'd totally out-cook the chef!"
     lupin_offscreen "I wonder if they like movies..." 
@@ -1745,7 +1744,7 @@ label train_search_tate:
     show tate srs flipped
     "..."
     pause 2.0   
-    tate "...Why are {i}you{/i} here?"
+    tate "... Why are {i}you{/i} here?"
     
     lupin_offscreen "Hey, look, it's my favorite {color=#FFDBFC}pink sweater{/color}!"
     show lupin hat flipped at mid_mid_left with moveinleft 
@@ -1856,7 +1855,7 @@ label train_confront_lupin:
     show tate sad at left
     show mean worried flipped at truecenter
     with fade
-    n "CS shows up in economy to find Tate with Mean. The two seem upset about something."
+    n "CS shows up in economy to find Tate with Mean. The pair appears to be frustrated over something."
     pause 1.0
     show cs disappointed flipped at right with moveinright
     pause 1.0
@@ -1883,7 +1882,7 @@ label train_confront_lupin:
     mean "And you were saying, before CS came in, that you saw the bastard who took my hat?"
     show tate srs
     tate "Yeah. Remember that creep I told you about earlier?"
-    tate "The one who keeps hitting on me?"
+    tate "The one who kept bugging me while I was working on your surprise?"
     show mean unamused flipped
     mean "Are you sure you aren't just saying that because you want an excuse to get rid of the guy?"
     show tate shock
@@ -1906,7 +1905,7 @@ label train_confront_lupin:
     show tate sheepish
     
     cs "Oh, hey, Arc. You find anything in the dining car?"
-    arceus "I sure did! This dude in a red coat just stole the entire goddamn pile of food that Mean had!"
+    arceus "I sure did! This dude in a red coat just walked away with that entire goddamn pile of food!"
     show mean angry
     mean "Mah fuckin' {i}food,{/i} too?!" with hpunch
     cs "... Why do {i}you{/i} seem so upset about it, Arc?"
@@ -1932,7 +1931,7 @@ label train_confront_lupin:
     show tate sheepish
 
     if fun_value(5):
-        tate "He's on 'doody', alright..."
+        tate "He's on 'doodie', alright..."
     else:
         tate "He's... a little busy."
 
@@ -1961,15 +1960,16 @@ label train_confront_lupin:
     show mean angry
 
     if fun_value(10):
-        mean "Me without my hat is like Mario without his!"
+        mean "Me without my hat is like Mario without {i}his!"
         mean "Just because it's a game mechanic doesn't mean it's {i}right!"
     else:
-        mean "Bro, look at me. I can't exactly fit into a standard uniform, now, can I?"
+        mean "Bro, just {i}look{/i} at me. I can't exactly fit into a standard uniform, now, can I?"
 
     show arceus worried
     arceus "I... suppose not."
     mean "Let's just start looking."
-    
+    mean "I say that we start at the very back of the train and go car-by-car."
+    mean "Let's stick together in case this guy is dangerous."
     
 
     "This is a placeholder line until more is written."

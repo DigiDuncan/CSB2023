@@ -1162,8 +1162,8 @@ image kingman_platform_2 = "bg/train/kingman_platform_2.png"
 image kingman_train_arrive = "bg/train/kingman_train_arrive.png"
 image amtrak_arrive_close = "bg/train/amtrak_arrive_close.png"
 image amtrak_sleeper_corridor = "bg/train/amtrak_sleeper_corridor.png"
-image amtrak_sleeper_interior_day = "bg/train/amtrak_sleeper_interior_day.jpg"
-image amtrak_sleeper_interior_night = "bg/train/amtrak_sleeper_interior_night.png"
+image amtrak_sleeper_interior_day = "bg/train/amtrak_sleeper_interior.png"
+image amtrak_sleeper_interior_night = "dark:bg/train/amtrak_sleeper_interior.png"
 image amtrak_dining_car = "bg/train/amtrak_dining_car.png"
 image amtrak_dining_table = "bg/train/amtrak_dining_table.png"
 image amtrak_dining_food = "bg/train/food.png" 
@@ -1171,7 +1171,7 @@ image amtrak_dining_pancake = "bg/train/pancake.png"
 image moynihan_interior = "bg/train/moynihan_interior.png"
 image amtrak_cab = "bg/train/amtrak_cab.png"
 image amtrak_sleeper_open_bg = "bg/train/amtrak_sleeper_open_bg.png" #these two images are bigger on purpose
-image amtrak_sleeper_open_fg = "bg/train/amtrak_sleeper_open_fg.png" #remastering is encouraged but don't change size pls
+image amtrak_sleeper_open_fg = "bg/train/amtrak_sleeper_open_fg.png" #remastering is encouraged but don't change size unless you must
 image amtrak_economy = "bg/train/amtrak_economy.png"
 
 # Train Route NPCs
@@ -1369,6 +1369,7 @@ default train_polar_express_fun_value = False
 default train_pancake_fun_value = False
 default train_skip_at_chicago = None
 default train_tate_is_fragile_fun_value = False
+default ch2_cs_attack_used = "pushed"
 
 # RPG
 default enemy_1 = "cop"
