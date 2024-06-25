@@ -1304,8 +1304,8 @@ default party_1 = "cs"
 default party_2 = "tate"
 default party_3 = "digi"
 default party_4 = "arceus"
-default ucn_bg = "images/bg/fnaf_office.png"  # DX: There is currently no way to set these.
-default ucn_music = "minigames/pencil/rude_buster.ogg"  # "
+default ucn_bg = "images/bg/fnaf_office.png"
+default ucn_music = "minigames/pencil/rude_buster.ogg"
 default ucn_scale = 1.0
 default cont = False
 

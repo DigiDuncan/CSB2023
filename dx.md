@@ -1,10 +1,11 @@
 ## NEW in Deluxe Edition
 
-- Over 200 assets remastered and restored
+- Over 200 assets remastered and restored!
 - New routes!
-    - Post-True
-    - Speedrun
-- New characters in the RPG Game
+    - Post-True route!
+    - A new play to play CSB! 
+    - A new alternate South path!
+- Revamped several scenes and added new exciting dialouge!
 - A new minigame: slots!
 - Recolored dusk and night time sprites!
 - A new content warning system!
@@ -17,3 +18,5 @@
 - New sound effects!
 - More jukebox items, bios, and album art to collect!
 - New achivements!
+- New customizability in Ultimate Custom Night!
+- New fighters in Ultimate Custom Night!
