@@ -405,6 +405,7 @@ define witch = Character("Witch", callback = renpy.partial(char_callback, name =
 define renovator = Character("Renovator", callback = char_callback)
 define cruise = Character("Tom Cruise", callback = renpy.partial(char_callback, name = "cruise"))
 define baumer = Character("Steve Baumer", callback = char_callback)
+define copguyexe = Character("Copguy", callback = renpy.partial(char_callback, name = "copguy", beep = "copexe"))
 
 # Offscreen Character Definitions
 define tate_offscreen = Character("???", callback = renpy.partial(char_callback, name = "tate_offscreen", beep="tate"))
@@ -647,6 +648,8 @@ image guard_soldier = "characters/dark:guard_soldier.png"
 image marine = "characters/marine.png"
 image big_tank = "characters/big_tank.png" # TODO: is this meant to reference the abrams or the sherman? - tate
 image asylum_worker = "characters/mohs.png"
+image copguyexe = "characters/copguyexe.png"
+image copguyexe flipped = "flip:characters/copguyexe.png"
 
 # CSB I
 image michael = "flip:characters/michael.png"
@@ -1000,6 +1003,7 @@ image mario_inside2 = "bg/mario_inside2.png"
 image mario_outside = "bg/mario_outside.png"
 image gnome_forest = "bg/gnome_forest.png"
 image forest_clearing = "bg/forest_clearing.jpg"
+image bronsoncrash = "bg/bronsoncrash.png"
 
 ## Country Route
 image britport = "bg/britport.png"
@@ -1179,6 +1183,7 @@ image woc = Movie(play="movies/woc.webm")
 image where = Movie(play="movies/wherearetheynow.webm")
 image karaoke = Transform(Movie(play = "movies/karaoke.webm", side_mask = True), zoom = 1.5)
 image bad_end_screen = Transform(Movie(play = "movies/bad_ending.webm", side_mask = True, loop=False, image="images/fail_end.png"), size=(1920,1080))
+image bronson_hell = Movie(play="movies/bronsonhell.MP4")
 
 #Fun Values
 image utajsign = "secret/utajsign.png"

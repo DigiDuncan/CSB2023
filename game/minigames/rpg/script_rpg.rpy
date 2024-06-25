@@ -223,3 +223,16 @@ label rpg_archival:
         on_win "archival_finale"
         on_lose "rpg_archival"
         music "audio/broken_sky.ogg"
+
+label bronsonbattle:
+    rpg:
+        bg "images/bg/bronsoncrash.png"
+        fighters:
+            cs_weak
+            arceus
+            billy
+            copguy_Exe
+        scale 1.0
+        on_win "bronson_win"
+        on_lose "bronsonbattle"
+        music "audio/upon_me.ogg"

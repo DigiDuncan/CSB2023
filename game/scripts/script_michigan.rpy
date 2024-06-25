@@ -52,11 +52,112 @@ label bronson:
     cs "Look man, just don't go to Bronson okay?"
     billy "Okay okay, we won't go."
     cs "It's just, I am getting a really bad vibe from that place."
+    show billy car turn
     billy "CS, I already said we aren't going there, okay?"
     arceus "I'm getting chills thinking about it too, CS is right."
     billy "Okay shut up! Let me drive!"
-    return
+    play music "<loop 0>upon_me.ogg"
+    cs "Billy, you took the Bronson exit."
+    show billy car
+    billy "..."
+    scene car plains night
+    show billy car
+    with dissolve
+    billy "Shit."
+    n "As they continue down into Bronson, the clouds get darker, it starts storming, and the sky turns red."
+    n "The screams of the damned can be heard, almost like they are cheering."
+    n "Welcome to Bronson."
+    scene black with dissolve
+    pause 2.0
+    $ achievement_manager.unlock("We don't go to Bronson")
+    play sound "<loop 0>sfx_thunder.ogg" volume 0.5 loop
+    scene bronson_hell
+    show cscar1arc
+    show billy at left
+    show cs scared flipped at right
+    show cscar2
+    with dissolve 
+    cs "Holy shit, I think we are in hell."
+    arceus "What the..."
+    billy "Actual fuck."
+    cs "Okay, okay, don't freak out."
+    cs "This is the worst time to freak out."
+    cs "Maybe Michigan gets surprise storms?"
+    billy "With blood red clouds?"
+    arceus "If we keep going, maybe we'll just blow right through it?"
+    billy "It's the only option we got."
+    arceus "Bronson is small, right? We'll be out of here in no time!"
+    cs "Yeah, right Billy?"
+    billy "I think so, I mean, we survived a UFO attack, this can't be much worse!"
+    show cs disappointed flipped
+    cs "Yeah!"
+    billy "And well, if you didn't distract me, we wouldn't be here!"
+    show cs worried flipped
+    cs "Hey! I felt sick thinking about that name!"
+    arceus "Yeah, I don't know why, but I felt it too..."
+    billy "Well, you need to shut your mouth when I am driving!"
+    show cs disappointed flipped
+    cs "Billy, what has gotten into you?"
+    billy "I don't know, maybe because we are here because of you!"
+    show cs angry flipped
+    cs "Well maybe you need to keep your eyes on the road!"
+    billy "Don't tell me how to drive damnit!"
+    arceus "Guys! Calm down!"
+    cs "This is not my fault at all!"
+    billy "Just shut the fuck up!"
+    billy "I shouldn't have picked you up at all! It's been nothing but trouble with you CS!"
+    show cs disappointed flipped
+    cs "What the hell, man?"
+    play sound2 "<loop 0>sfx_siren.ogg" volume 0.1 loop
+    arceus "Both of you, shut up! Do you hear... something in the distance?"
+    stop music fadeout 5.0
+    pause 5.0
+    play sound2 "<loop 0>sfx_siren.ogg" volume 0.2
+    pause 2.0
+    play sound2 "<loop 0>sfx_siren.ogg" volume 0.3
+    pause 2.0
+    play sound2 "<loop 0>sfx_siren.ogg" volume 0.4
+    show blue_light at left
+    show red_light at right
+    with dissolve
+    pause 2.0
+    play sound2 "<loop 0>sfx_siren.ogg" volume 0.5
+    show cs scared flipped
+    cs "Is... that..."
+    arceus "It's Copguy."
+    cs "Billy, step on it!"
+    billy "I'm going as fast as I can!"
+    arceus "He's catching up!"
+    cs "I think he's gonna ram us!"
+    cs "Brace yourselves!"
+    scene black with dissolve
+    play sound2 "sfx_car_crash.ogg" volume 0.7 noloop
+    pause 10.0
+    play sound2 "<loop 0>sfx_siren.ogg" volume 0.2 loop
+    scene bronsoncrash
+    show billy laser at left
+    show arceus dirty worried flipped at mid_left
+    show cs disappointed flipped at mid_right
+    with dissolve
+    pause 2.0
+    billy "Everyone, stay quiet."
+    cs "Is he..."
+    copguyexe "WHERE ARE YOU, CS?"
+    billy "Hunker down, and wait."
+    billy "Get ready to fight."
+    copguyexe "I CAN SMELL YOU."
+    show cs worried flipped
+    pause 3.0
+    copguyexe "THERE YOU ARE. GET READY FOR YOUR WORST NIGHTMARE!"
+    stop sound2 fadeout 1.0
+    show copguyexe with dissolve
+    scene white with dissolve
+    pause 1.0
+    jump bronsonbattle
 
+label bronson_win:
+    cs "Holy crap, we did it."
+    return
 label continue_michigan:
     arceus "Nah, this place looks too rural to have much around."
     n "The two look over to CS, who seems visibly distressed."
