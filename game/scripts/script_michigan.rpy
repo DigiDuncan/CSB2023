@@ -412,10 +412,10 @@ label interstate_69_old:
     show waitress at right with moveinright    
     aria "Alright."
 
-    $ translate_this_line = "Boss lady! They would sit with me."
+    $ translate_this_line = "Waitress, they'll sit with me!"
     aria "{a=show:show_tl}{font=cjk}老板娘！他们会跟我一起坐。{/a}"
 
-    $ translate_this_line = "Sure!"
+    $ translate_this_line = "OK!"
     waitress "{a=show:show_tl}{font=cjk}可以啊！{/a}"
 
     scene cafe_sitting_2
@@ -455,16 +455,16 @@ label interstate_69_old:
     show gnome at center
     show waitress at right
 
-    $ translate_this_line = "Please give me a bowl of fish-flavored eggplant. Let me ask you, if I said some shit, you wouldn't tell them, right?"
+    $ translate_this_line = "Please give me a bowl of fish-flavored eggplant. Let me ask, if I just said some random shit, you wouldn't tell them, right?"
     aria "{a=show:show_tl}{font=cjk}请给一碗鱼香茄子。请问一下，如果我说一点狗屁，你不会告诉他们，对吧？{/a}"
 
-    $ translate_this_line = "Yes, I won't."
+    $ translate_this_line = "No, I won't."
     waitress "{a=show:show_tl}{font=cjk}对，我不会。{/a}"
 
-    $ translate_this_line = "Okay. Thanks. Unless they use Google Translate, they don't understand it at all."
+    $ translate_this_line = "Okay. Thanks. Unless they use Google Translate, they won't understand it at all."
     aria "{a=show:show_tl}{font=cjk}好啊。谢谢。除非他们使用{/font}Google Translate, {font=cjk}他们完全听不懂。{/a}"
 
-    $ translate_this_line = "I want them to think my Chinese is better than I really am."
+    $ translate_this_line = "I want them to think my Chinese is better than it really is."
     aria "{a=show:show_tl}{font=cjk}我想让他们以为我的中文水平比我真的水平更好。{/a}"
 
     $ translate_this_line = "My hovercraft is filled with eels."
@@ -981,10 +981,10 @@ label interstate_69:
     show waitress at right with moveinright
     aria "Alright."
 
-    $ translate_this_line = "Boss lady! They would sit with me."
+    $ translate_this_line = "Waitress, they'll sit with me!"
     aria "{a=show:show_tl}{font=cjk}老板娘！他们会跟我一起坐。{/a}"
 
-    $ translate_this_line = "Sure!"
+    $ translate_this_line = "OK!"
     waitress "{a=show:show_tl}{font=cjk}可以啊！{/a}"
 
     scene cafe_sitting_2
@@ -1024,16 +1024,16 @@ label interstate_69:
     show gnome at center
     show waitress at right
 
-    $ translate_this_line = "Please give me a bowl of fish-flavored eggplant. Let me ask you, if I said some shit, you wouldn't tell them, right?"
+    $ translate_this_line = "Please give me a bowl of fish-flavored eggplant. Let me ask, if I just said some random shit, you wouldn't tell them, right?"
     aria "{a=show:show_tl}{font=cjk}请给一碗鱼香茄子。请问一下，如果我说一点狗屁，你不会告诉他们，对吧？{/a}"
 
-    $ translate_this_line = "Yes, I won't."
+    $ translate_this_line = "No, I won't."
     waitress "{a=show:show_tl}{font=cjk}对，我不会。{/a}"
 
-    $ translate_this_line = "Okay. Thanks. Unless they use Google Translate, they don't understand it at all."
+    $ translate_this_line = "Okay. Thanks. Unless they use Google Translate, they won't understand it at all."
     aria "{a=show:show_tl}{font=cjk}好啊。谢谢。除非他们使用{/font}Google Translate, {font=cjk}他们完全听不懂。{/a}"
 
-    $ translate_this_line = "I want them to think my Chinese is better than I really am."
+    $ translate_this_line = "I want them to think my Chinese is better than it really is."
     aria "{a=show:show_tl}{font=cjk}我想让他们以为我的中文水平比我真的水平更好。{/a}"
 
     $ translate_this_line = "My hovercraft is filled with eels."
