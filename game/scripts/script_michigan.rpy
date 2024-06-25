@@ -43,7 +43,7 @@ label michigan:
     billy "It looks like we're coming up to a place called Bronson. Maybe we could stop there for food."
     menu:
         "Decide."
-        "Try to stop going to Bronson":
+        "Try to stop going to Bronson" (type = "dx"):
             jump bronson
         "Don't say anything":
             jump continue_michigan
