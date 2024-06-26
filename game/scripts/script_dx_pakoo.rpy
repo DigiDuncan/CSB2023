@@ -587,6 +587,14 @@ label catholic_find:
     cs "Well, I need to figure out who to ask..."
     jump seek_competitors
 
+label summer_ask:
+    cs "There is a summer camp here?"
+    cs "That seems really fishy, didn't the cult leader say something about cults with tortured followers get disqualified?"
+    cs "I better go check them out."
+    n "CS makes his way over to the Wayside Summer Camp booth."
+    cs "Hey, what is this... camp all about?"
+    wayside_instructor "Welcome to Wayside Summer Camp!"
+
 
 label renault:
     show carguy at right with moveinright
