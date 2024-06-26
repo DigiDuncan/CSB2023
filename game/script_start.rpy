@@ -1274,6 +1274,7 @@ default archack = False
 default jade = False
 default clown = False
 default nome = False  # wow I hate this name - DD
+default god_money = False
 
 # Fired route
 default band_name = "CS' Crazy Crew"

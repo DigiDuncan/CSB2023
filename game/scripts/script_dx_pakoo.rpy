@@ -310,7 +310,7 @@ label back_to_story:
     csgod "Oh."
     csgod "..."
     csgod "So..."
-    csgod "Do you think you still can still talk to them for me?"
+    csgod "Do you think you can still talk to them for me?"
     show cs
     cs "Oh yeah sure give me one second."
     show cs flipped with determination
@@ -345,7 +345,7 @@ label back_to_story:
     cs "Woohoo!"
     cultist_2 "So, how did you find out about us?"
     cs "Well, I have heard about you guys from other CultCons, but I haven't been able to travel all the way to Montana."
-    cs "So I figured travelling to Winsconsin is easier, and that would be my chance to get in."
+    cs "So I figured travelling to Wisconsin is easier, and that would be my chance to get in."
     cultist "Well, we appreciate it."
     cs "You mean you hate it?"
     cultist "Exactly."
@@ -500,6 +500,13 @@ label pencil_ask:
     cs "I'll just say one thing."
     cs "October 27th. Remember that day."
     pencil "Uhh, alright?"
+    if god_money:
+        cs "Also, do you have any spare change I can have?"
+        pencil "What? I mean, I guess you did beat my score..."
+        n "The pencil man takes out some bills and hands them to CS."
+        n "It looks to be an assortment of ones and fives."
+        cs "Thank you! Your contributions are appreciated."
+        pencil "...Your welcome?"
     show cs cultist flipped with determination
     hide cs with moveoutleft
     n "CS turns around and leaves without any more explanation."
@@ -529,6 +536,19 @@ label science_ask:
     cs "If I can't, the Blue Branch won't show up for another Cult Con."
     cruise "A bet? Sure, I'm down, but you better not let me down!"
     cs "I won't man, don't worry."
+    if god_money:
+        cs "By the way, do you have any spare change?"
+        cruise "Why the hell would I give any money to you?"
+        cruise "You are like, part of the group I hate!"
+        cs "I dunno, it was worth a try."
+        n "CS heads back to the convention floor."
+        cruise "Wait! Are you just gonna walk away?"
+        cs "Well, I mean, you already say no."
+        cruise "Ok-- Fuck-- just give me a moment."
+        n "Mr. Cruise pulls out a few tens and hands it to CS."
+        cruise "I'm not just gonna let you win that easily, if you lose, now I can really laugh at you!"
+        cs "Thanks, your donation will be incredibly useful!"
+        cruise "Yeah yeah, whatever."
     n "CS heads back to the convention floor."
     cs "Well, that was a lot easier than I thought."
     jump seek_competitors
@@ -539,6 +559,10 @@ label catholic_ask:
     n "CS goes to check out the Catholics."
     n "As CS approaches the priest, he immediately greets him."
     priest "Hello! Would you like to donate to the church?"
+    menu:
+        "Find money to donate":
+            jump catholic_find
+        "Ask for vote regardless":
     cs "No thanks, I don't have money on me."
     cs "Do you, want to vote for Blue Branch?"
     priest "Oh sorry, we don't hand out votes to anyone."
@@ -553,6 +577,15 @@ label catholic_ask:
     cs "Well, that was a load of crap!"
     jump seek_competitors
 
+label catholic_find:
+    $ god_money = True
+    cs "Stay right here, I'm sure I can find some money."
+    priest "I wasn't planning on moving, but thank you! The church will thank you."
+    n "CS runs back to the main floor."
+    cs "So what I'm thinking, is if I give those guys some money, they'll be sure to give us votes!"
+    cs "I mean, the Catholic church here must have a lot of votes to give out! right?"
+    cs "Well, I need to figure out who to ask..."
+    jump seek_competitors
 
 
 label renault:
@@ -632,6 +665,6 @@ label yes_renault:
     play sound "sfx_clapperboard.ogg"
     cs "God damnit!"
     cs "I felt so in control of that car, but so out of control at the same time..."
-    cs "Where was I here anyways?"
+    cs "Why was I here anyways?"
     cs "Oh yeah..."
     jump back_to_story
