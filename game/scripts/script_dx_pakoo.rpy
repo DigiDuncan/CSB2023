@@ -563,7 +563,7 @@ label catholic_ask:
         "Find money to donate":
             jump catholic_find
         "Ask for vote regardless":
-    cs "No thanks, I don't have money on me."
+            cs "No thanks, I don't have money on me."
     cs "Do you, want to vote for Blue Branch?"
     priest "Oh sorry, we don't hand out votes to anyone."
     priest "We just want to see if any cult is willing to..."
