@@ -1356,7 +1356,7 @@ label train_wakeup:
     tate "Huh?!" with vpunch
     show mean happy
     mean "Yeah!"
-    mean "You made me the best breakfast I've had in ages, I start my dream job in 15 minutes, {i}and{/i} I get to travel the US with my best friend!"
+    mean "You made me the best breakfast I've had in ages, I start my dream job in 15 minutes, {i}and{/i} I get to travel the US with one of my best friends!"
     
     if pancake_fun_value == True:
         show arceus happy
@@ -1433,7 +1433,7 @@ label train_wakeup:
     tate "Yes..."
     show mean
     mean "Cool. See you later!"
-    show mean flipped
+    show mean flipped at t_mean_rollout
     hide mean with moveoutleft
     n "Mean rolls away down the hall."
     show tate sheepish at left with moveoutleft
@@ -1668,13 +1668,13 @@ label train_search_cs:
     show amtrak_sleeper_open_fg
     with fade
 
-    n "A man in an oddly familiar red jacket is just finishing off a large breakfast."
+    n "A man in an oddly familiar red jacket is finishing off a feast."
     lupin_offscreen "I can't believe how easy that was. {color=#FFDBFC}Pink sweater{/color} had the staff running around like ants!"
     lupin_offscreen "They don't know it, but they'd be my {i}perfect{/i} accomplice!"
     hide amtrak_dining_food with dissolve
     pause 1.0
     lupin_offscreen "Mmmm...{done} {i}Burp!{/i}" 
-    lupin_offscreen "Mmmm...{fast} {i}Burp!{/i}"  with hpunch
+    lupin_offscreen "Mmmm...{fast} {i}Burp!{/i}" with hpunch
     lupin_offscreen "Oh, pardon me!"
     lupin_offscreen "I guess asking them on a dinner date would be a bad idea. They'd totally out-cook the chef!"
     lupin_offscreen "I wonder if they like movies..." 
@@ -1764,7 +1764,7 @@ label train_search_tate:
     pause 1.0
     tate "There are only three things in my life that I have {i}ever{/i} been more sure of."
     tate "Now... I don't know who you are, but I'm getting really sick of seeing you."
-    tate "I would have thought you'd taken the hint while I was cooking this morning, but I guess I have to spell it out for you."
+    tate "I would have thought you'd finally taken the hint while I was cooking this morning, but I guess I have to spell it out for you."
     tate "I am {i}not{/i} interested."
     tate "Second order of business..."
     tate "You will give me that hat right this instant."
@@ -1872,6 +1872,7 @@ label train_confront_lupin:
     tate "Wait, you saw who had it?!"
     cs "Yeah! Some guy in a red jacket ran off with it!"
     show mean unamused
+    show tate stare
     mean "Oh, yeah, that's {i}real{/i} descriptive."
     mean "Even I wear a red jacket sometimes."
     show tate sheepish
@@ -1881,23 +1882,24 @@ label train_confront_lupin:
     show mean angry flipped
     mean "And you were saying, before CS came in, that you saw the bastard who took my hat?"
     show tate srs
-    tate "Yeah. Remember that creep I told you about earlier?"
-    tate "The one who kept bugging me while I was working on your surprise?"
+    tate "Yeah. Remember that guy I told you about earlier?"
+    tate "The one who's been bugging me since we left Cali?"
     show mean unamused flipped
     mean "Are you sure you aren't just saying that because you want an excuse to get rid of the guy?"
     show tate shock
     tate "No! I'm serious!"
     tate "He {i}also{/i} wears a red jacket!"
-    tate "He ran off before I could catch him!"
+    tate "He ran off with your hat before I could catch him!"
     n "A familiar grumbling approaches the group."
     
-    show arceus angry at offscreenright with dissolve
+    show arceus angry at offscreenright with determination
 
     show cs disappointed flipped at mid_mid_right
     show mean unamused flipped at center_mid_left
     show arceus angry at right
-    with ease
+    with MoveTransition(0.5)
 
+    pause 0.5
     arceus "{size=-15}All the fuckin' booze..."
 
     show cs disappointed

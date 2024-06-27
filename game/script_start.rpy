@@ -262,6 +262,10 @@ transform t_dining_car_breakfast:
     anchor (0.6, 0.45)
     pos (0.7, 0.4)
 
+transform t_mean_rollout:
+    rotate 0
+    linear 1 rotate -180
+
 transform t_dining_car_pancake:
     anchor (0.5, 0.5)
     pos (0.53, 0.58)
