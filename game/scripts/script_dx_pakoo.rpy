@@ -595,6 +595,20 @@ label summer_ask:
     cs "Hey, what is this... camp all about?"
     wayside_instructor "Welcome to Wayside Summer Camp!"
 
+label lunatic_ask:
+    cs "Hmm, who are those guys? They look like plague doctors almost…"
+    cs "Let's go check them out."
+    n "CS runs over to meet the Lunatic Cultists."
+    cs "Hey guys! Cultist here!"
+    l_cultist "Aren't we all."
+    cs "So, what do you guys do? Who do you worship?"
+    l_cultist "We are the Lunatic Cultists. We worship our leader, who plans to summon the Moon Lord and bring balance to the world!"
+    cs "I can see the Lunatic part, definitely. That's sounds pretty crazy."
+    l_cultist "Well what about you then?"
+    cs "We worship CSGod, who will use YTP mag-- Yeah ok, I sound crazy too."
+    cs "My plan was to ask you guys for votes, but I don't think our ideas are as big as yours."
+    l_cultist "If you want our votes, you must pass a quiz."
+
 
 label renault:
     show carguy at right with moveinright
