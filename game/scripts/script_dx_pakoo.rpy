@@ -437,6 +437,8 @@ label competiton_start:
     jump seek_competitors
     
 label seek_competitors:
+    scene cult_con
+    show cs cultist at center
     cs "Which cult should I look for?"
     menu:
         "Pick a cult:"
@@ -596,7 +598,7 @@ label summer_ask:
     wayside_instructor "Welcome to Wayside Summer Camp!"
 
 label lunatic_ask:
-    cs "Hmm, who are those guys? They look like plague doctors almost…"
+    cs "Hmm, who are those guys? They look like plague doctors almost..."
     cs "Let's go check them out."
     n "CS runs over to meet the Lunatic Cultists."
     cs "Hey guys! Cultist here!"
@@ -608,6 +610,139 @@ label lunatic_ask:
     cs "We worship CSGod, who will use YTP mag-- Yeah ok, I sound crazy too."
     cs "My plan was to ask you guys for votes, but I don't think our ideas are as big as yours."
     l_cultist "If you want our votes, you must pass a quiz."
+    l_cultist "If you can guess right, we will give you all of our votes!"
+    cs "Alright well, lay it on me."
+    l_cultist "What are the 3 evils of the world?"
+    #CS answers
+    $ terraria_question_1 = renpy.input("Name the first evil.", terraria_question_1, length = 32)
+    $ terraria_question_2 = renpy.input("Name the second evil.", terraria_question_2, length = 32)
+    $ terraria_question_3 = renpy.input("Name the third evil.", terraria_question_3, length = 32)
+    cs "[terraria_question_1], [terraria_question_2], and [terraria_question_3]."
+    if terraria_question_1 == "FUCK":
+        if terraria_question_2 == "SEX":
+            if terraria_question_3 == "BALLS":  
+                jump secret_dx2
+    if terraria_question_1 == "Hallow":
+        if terraria_question_2 == "Crimson":
+            if terraria_question_3 == "Corruption":
+                l_cultist "Wait, how the hell did you know that?"
+                cs "There is this game called--"
+                l_cultist "You don't need to make an excuse, you have clearly been in the cult before."
+                cs "I haven't?"
+                l_cultist "I'm lost for words."
+                l_cultist "We'll give you all our votes, because no one was supposed to get that answer correct."
+                cs "Woohoo!"
+                cs "Thank you so much!"
+                n "CS heads back to the convention floor."
+                cs "I've barely played Terraria, so either I looked up or asked the chat."
+                cs "Either way, I got a ton of votes now!"
+                jump seek_competitors
+    else:
+        l_cultist "Dude, how was he gonna know that? Only we know that!"
+    l_cultist "Shit you right that was probably too hard."
+    l_cultist "Alright, for these next questions we'll peer into your mind!"
+    cs "Woah wait--"
+    n "The cultists take CS into a limbo-like area, where he has the all thoughts of his past adventures from different timelines."
+    l_cultist "Alright, cs... 188?"
+    l_cultist "That's your name, apparently…"
+    l_cultist "Let's ask you a few questions."
+    l_cultist "How many friends did you gather to help takedown Copguy EX? Excluding you, of course."
+    $ csb_question_1 = renpy.input("How many friends did you gather to defeat Copguy EX?", csb_question_1, length = 32)
+    if csb_question_1 == "12":
+        $ votes = 3
+        l_cultist "Alright, good. Next question."
+    else:
+        $ votes = 0
+        jump quiz_finish
+    l_cultist "What is the total amount of endings you can get?"
+    $ csb_question_2 = renpy.input("How many endings can you get? (Plus the bad ones)", csb_question_2, length = 32)
+    if csb_question_2 == "27":
+        $ votes = 7
+        l_cultist "Alright, you are doing pretty good so far!"
+    else:
+        jump quiz_finish
+    l_cultist "You've already won most of our votes, but we have one more question that'll give you all of our votes."
+    l_cultist "You ready?"
+    l_cultist "Last question."
+    l_cultist "How much money in USD did you make in Country route?"
+    l_cultist "For convenience sake, here are the values translated from Pounds and Yen." 
+    n "1 Japanese Yen = 0.0062 USD"
+    n "1 Pound Sterling = 1.26 USD"
+    l_cultist "You made need to use a calc."
+    l_cultist "That's slang for calculator if you didn't know."
+    $ csb_question_3 = renpy.input("How much richer is CS after Country route?", csb_question_3, length = 32)
+    if csb_question_3 == "148600":
+        $ votes = 10
+        l_cultist "Alright, it looks like you got all the answers right! Good job!"
+    else:
+        jump quiz_finish
+label quiz_finish:
+    l_cultist "Let's bring you back to reality now."
+    n "CS' mind feels like it's being untangled, and then being put back together."
+    cs "Woah, where am I?"
+    cs "And what the hell just happened?"
+    l_cultist "Well, we asked you some questions from deep inside your mind, and then cleared it so you don't remember."
+    cs "Wait, why did you wipe my mind?"
+    l_cultist "Because it played out events of you in different timelines?"
+    l_cultist "I don't know, I feel like knowing what you did in five different timelines would screw something up?"
+    l_cultist "Either with you or reality itself."
+    cs "As long as you didn't remove my frontal lobe or something, that's all that matters."
+    l_cultist "Well, we should gather up your votes."
+    l_cultist "It looks like you got..."
+    l_cultist "[votes] votes."
+    if votes == 0:
+        jump zero_right
+    if votes == 3:
+        jump one_right
+    if votes == 7:
+        jump two_right
+    if votes == 10:
+        jump three_right
+    else:
+        jump secret_dx
+    #CS got zero right
+label zero_right:
+    cs "Dang, I really got no votes?"
+    l_cultist "Sorry, but you didn't get any of your answers right."
+    l_cultist "Maybe consider calling some of your friends, so you can remember who they are."
+    cs "Yeah yeah, I'll get going…"
+    n "CS sulks back to the convention floor."
+    cs "That really sucks, I can't believe I did that bad."
+    cs "I need to find more people to get votes from..."
+    jump seek_competitors
+    #CS got one right
+label one_right:
+    cs "Hey, I'll get what I can take."
+    l_cultist "You could've done a bit better, but there was quite a bit for you to take in."
+    cs "Oh well, it's okay."
+    n "CS makes his way back to the convention floor."
+    cs "Hey, at least I got some votes, but I still should go get some more."
+    cs "Let's see…"
+    jump seek_competitors
+    #CS got two right
+label two_right:
+    cs "That's not bad at all!"
+    l_cultist "To be honest, that last question was pretty hard."
+    l_cultist "I don't blame you for not getting it."
+    cs "Well, I still did pretty good I think."
+    n "CS gets back to the convention floor."
+    cs "Well, I'm doing pretty good, I would say!"
+    cs "I need to get some more votes, but I'm feeling confident!"
+    cs "Alright, who's next?"
+    jump seek_competitors
+    #CS got them all right
+label three_right:    
+    cs "Woohoo!"
+    l_cultist "Geez, you got a really good memory."
+    l_cultist "You deserve to win this year, good luck to ya, man."
+    cs "Thank you!"
+    n "CS happily makes his way back to the convention floor."
+    cs "Who won the lottery? I did!"
+    cs "Smell that air!"
+    cs "I think we are gonna win this competition!"
+    cs "Who's next?"
+    jump seek_competitors
+
 
 
 label renault:

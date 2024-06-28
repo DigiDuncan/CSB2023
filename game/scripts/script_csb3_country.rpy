@@ -1360,7 +1360,7 @@ label anime_adventure:
     cs "Just for wearing this outfit?"
     sayori "The numbers don't lie."
     sayori "Here you go."
-    n "Sayori hands CS a few stacks of yen that add up to about 10,000 USD."
+    n "Sayori hands CS a few stacks of yen that add up to 10,000 USD."
     sayori "Don't go spending it all in one place, unless it's on Nekopara merch."
     cashier "See? Look how cool your cosplay was!"
     show cs happy

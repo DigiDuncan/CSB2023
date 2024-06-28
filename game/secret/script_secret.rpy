@@ -16,6 +16,16 @@ label secret_dx:
     pause 3.0
     return
 
+label secret_dx2:
+    scene black with fade
+    play music "<loop 0>secret/space_classroom.ogg"
+    show pakoo at center with Dissolve(3)
+    pakoo "Okay, that was funny, but that's my joke."
+    pakoo "Don't do it again."
+    scene black with dissolve
+    pause 1.0
+    play music "<loop 0>10_feet_away.ogg" volume 1
+    jump seek_competitors
 # label secret:
 #     scene black with fade
 #     play music "<loop 0>secret/space_classroom.ogg"

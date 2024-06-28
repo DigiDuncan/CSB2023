@@ -406,6 +406,7 @@ define renovator = Character("Renovator", callback = char_callback)
 define cruise = Character("Tom Cruise", callback = renpy.partial(char_callback, name = "cruise"))
 define baumer = Character("Steve Baumer", callback = char_callback)
 define copguyexe = Character("Copguy", callback = renpy.partial(char_callback, name = "copguy", beep = "copexe"))
+define l_cultist = Character("Lunatic Cultist", callback = char_callback)
 
 # Offscreen Character Definitions
 define tate_offscreen = Character("???", callback = renpy.partial(char_callback, name = "tate_offscreen", beep="tate"))
@@ -1296,6 +1297,15 @@ default line_9 = ""
 default line_10 = ""
 default line_11 = ""
 default line_12 = ""
+
+#BTTF
+default terraria_question_1 = ""
+default terraria_question_2 = ""
+default terraria_question_3 = ""
+default csb_question_1 = ""
+default csb_question_2 = ""
+default csb_question_3 = ""
+default votes = ""
 
 # RPG
 default enemy_1 = "cop"
