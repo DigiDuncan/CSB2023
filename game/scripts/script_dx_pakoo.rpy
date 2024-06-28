@@ -506,6 +506,8 @@ label pencil_ask:
         cs "Also, do you have any spare change I can have?"
         pencil "What? I mean, I guess you did beat my score..."
         n "The pencil man takes out some bills and hands them to CS."
+        $ cath_counter += 13
+        n "Current balance: $[cath_counter]."
         n "It looks to be an assortment of ones and fives."
         cs "Thank you! Your contributions are appreciated."
         pencil "...Your welcome?"
@@ -541,13 +543,15 @@ label science_ask:
     if god_money:
         cs "By the way, do you have any spare change?"
         cruise "Why the hell would I give any money to you?"
-        cruise "You are like, part of the group I hate!"
+        cruise "You are like, part of that fuckin' group that I hate!"
         cs "I dunno, it was worth a try."
         n "CS heads back to the convention floor."
         cruise "Wait! Are you just gonna walk away?"
         cs "Well, I mean, you already say no."
         cruise "Ok-- Fuck-- just give me a moment."
         n "Mr. Cruise pulls out a few tens and hands it to CS."
+        $ cath_counter += 30
+        n "Current balance: $[cath_counter]."
         cruise "I'm not just gonna let you win that easily, if you lose, now I can really laugh at you!"
         cs "Thanks, your donation will be incredibly useful!"
         cruise "Yeah yeah, whatever."

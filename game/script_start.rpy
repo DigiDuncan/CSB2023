@@ -1305,7 +1305,9 @@ default terraria_question_3 = ""
 default csb_question_1 = ""
 default csb_question_2 = ""
 default csb_question_3 = ""
-default votes = ""
+default lunatic_votes = ""
+default total_votes = ""
+default cath_counter = "0"
 
 # RPG
 default enemy_1 = "cop"
