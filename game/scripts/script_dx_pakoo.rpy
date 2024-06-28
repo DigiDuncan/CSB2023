@@ -613,30 +613,27 @@ label lunatic_ask:
     l_cultist "If you can guess right, we will give you all of our votes!"
     cs "Alright well, lay it on me."
     l_cultist "What are the 3 evils of the world?"
-    #CS answers
-    $ terraria_question_1 = renpy.input("Name the first evil.", terraria_question_1, length = 32)
-    $ terraria_question_2 = renpy.input("Name the second evil.", terraria_question_2, length = 32)
-    $ terraria_question_3 = renpy.input("Name the third evil.", terraria_question_3, length = 32)
+    # CS answers
+    $ terraria_question_1 = renpy.input("Name the first evil.", terraria_question_1, length = 32).lower()
+    $ terraria_question_2 = renpy.input("Name the second evil.", terraria_question_2, length = 32).lower()
+    $ terraria_question_3 = renpy.input("Name the third evil.", terraria_question_3, length = 32).lower()
+    $ all_terraria = [terraria_question_1, terraria_question_2, terraria_question_3]
     cs "[terraria_question_1], [terraria_question_2], and [terraria_question_3]."
-    if terraria_question_1 == "FUCK":
-        if terraria_question_2 == "SEX":
-            if terraria_question_3 == "BALLS":  
-                jump secret_dx2
-    if terraria_question_1 == "Hallow":
-        if terraria_question_2 == "Crimson":
-            if terraria_question_3 == "Corruption":
-                l_cultist "Wait, how the hell did you know that?"
-                cs "There is this game called--"
-                l_cultist "You don't need to make an excuse, you have clearly been in the cult before."
-                cs "I haven't?"
-                l_cultist "I'm lost for words."
-                l_cultist "We'll give you all our votes, because no one was supposed to get that answer correct."
-                cs "Woohoo!"
-                cs "Thank you so much!"
-                n "CS heads back to the convention floor."
-                cs "I've barely played Terraria, so either I looked up or asked the chat."
-                cs "Either way, I got a ton of votes now!"
-                jump seek_competitors
+    if terraria_question_1 == "fuck" and terraria_question_2 == "sex" and terraria_question_3 == "balls":
+        jump secret_dx2
+    if "hallow" in all_terraria and "crimson" in all_terraria and "corruption" in all_terraria:
+        l_cultist "Wait, how the hell did you know that?"
+        cs "There is this game called--"
+        l_cultist "You don't need to make an excuse, you have clearly been in the cult before."
+        cs "I haven't?"
+        l_cultist "I'm lost for words."
+        l_cultist "We'll give you all our votes, because no one was supposed to get that answer correct."
+        cs "Woohoo!"
+        cs "Thank you so much!"
+        n "CS heads back to the convention floor."
+        cs "I've barely played Terraria, so either I looked up or asked the chat."
+        cs "Either way, I got a ton of votes now!"
+        jump seek_competitors
     else:
         l_cultist "Dude, how was he gonna know that? Only we know that!"
     l_cultist "Shit you right that was probably too hard."
@@ -647,35 +644,37 @@ label lunatic_ask:
     l_cultist "That's your name, apparently…"
     l_cultist "Let's ask you a few questions."
     l_cultist "How many friends did you gather to help takedown Copguy EX? Excluding you, of course."
-    $ csb_question_1 = renpy.input("How many friends did you gather to defeat Copguy EX?", csb_question_1, length = 32)
-    if csb_question_1 == "12":
-        $ votes = 3
+
+    # Initialize votes
+    $ lunatic_votes = 0
+
+    $ csb_question_1 = renpy.input("How many friends did you gather to defeat Copguy EX?", csb_question_1, length = 32).lower()
+    if csb_question_1 in ["12", "twelve", "a dozen"]:
+        $ lunatic_votes += 3
         l_cultist "Alright, good. Next question."
-    else:
-        $ votes = 0
-        jump quiz_finish
+
     l_cultist "What is the total amount of endings you can get?"
-    $ csb_question_2 = renpy.input("How many endings can you get? (Plus the bad ones)", csb_question_2, length = 32)
-    if csb_question_2 == "27":
-        $ votes = 7
+    $ csb_question_2 = renpy.input("How many endings can you get? (Plus the bad ones)", csb_question_2, length = 32).lower()
+    if csb_question_2 in ["27", "twenty-seven", "twenty seven"]:
+        $ lunatic_votes += 4
         l_cultist "Alright, you are doing pretty good so far!"
-    else:
-        jump quiz_finish
     l_cultist "You've already won most of our votes, but we have one more question that'll give you all of our votes."
     l_cultist "You ready?"
     l_cultist "Last question."
+    
     l_cultist "How much money in USD did you make in Country route?"
     l_cultist "For convenience sake, here are the values translated from Pounds and Yen." 
     n "1 Japanese Yen = 0.0062 USD"
     n "1 Pound Sterling = 1.26 USD"
     l_cultist "You made need to use a calc."
     l_cultist "That's slang for calculator if you didn't know."
-    $ csb_question_3 = renpy.input("How much richer is CS after Country route?", csb_question_3, length = 32)
-    if csb_question_3 == "148600":
-        $ votes = 10
+    $ csb_question_3 = renpy.input("How much richer is CS after Country route?", csb_question_3, length = 32).lower()
+    if csb_question_3 in ["148600", "148,600", "$148600", "$148,600"]:
+        $ lunatic_votes += 3
         l_cultist "Alright, it looks like you got all the answers right! Good job!"
-    else:
-        jump quiz_finish
+    
+    jump quiz_finish
+
 label quiz_finish:
     l_cultist "Let's bring you back to reality now."
     n "CS' mind feels like it's being untangled, and then being put back together."

@@ -5,6 +5,7 @@
     - Post-True route!
     - A new play to play CSB! 
     - A new alternate South path!
+    - A new path to take, possibly in Michigan!
 - Revamped several scenes and added new exciting dialouge!
 - A new minigame: slots!
 - Recolored dusk and night time sprites!
@@ -18,5 +19,6 @@
 - New sound effects!
 - More jukebox items, bios, and album art to collect!
 - New achivements!
-- New customizability in Ultimate Custom Night!
 - New fighters in Ultimate Custom Night!
+- Choose custom backgrounds and music in Ultimate Custom Night!
+- Translatable foreign text!
