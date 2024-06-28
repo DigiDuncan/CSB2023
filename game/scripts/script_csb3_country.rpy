@@ -1204,8 +1204,11 @@ label japan:
     n "CS exits the terminal and enters the airport."
     scene tokyo_airport with fade
     show cs at center with moveinleft
-    play music "<loop 0>automatic_love.ogg" volume 0.4
-    music Automatic Love - Siix0
+    if fun_value(10):
+        play music "<loop 0>yuuka_town.ogg" volume 0.4
+    else:        
+        play music "<loop 0>automatic_love.ogg" volume 0.4
+        music Automatic Love - Siix0
     cs "Wow, this place is already pretty crazy!"
     cs "I feel like this was a better place to pick than England or Sweden."
     cs "And on top of it all, I don't have to worry about the cops anymore!"
@@ -1232,8 +1235,11 @@ label japan_two:
     n "CS exits the terminal and enters the airport."
     scene tokyo_airport with fade
     show cs at center with moveinleft
-    play music "<loop 0>automatic_love.ogg" volume 0.4
-    music Automatic Love - Siix0
+    if fun_value(10):
+        play music "<loop 0>yuuka_town.ogg" volume 0.4
+    else:  
+        play music "<loop 0>automatic_love.ogg" volume 0.4
+        music Automatic Love - Siix0
     cs "Wow, this place is already pretty crazy!"
     cs "Well, I don't know anyone who speaks English over here.."
     cs "And I forgot why I was travelling here, to be honest."
@@ -1376,7 +1382,10 @@ label anime_adventure:
     scene tokyo_street_night
     show cs at center
     with fade
-    play music "<loop 0>automatic_love.ogg" volume 0.4
+    if fun_value(10):
+        play music "<loop 0>yuuka_town.ogg" volume 0.4
+    else:  
+        play music "<loop 0>automatic_love.ogg" volume 0.4
     if england_check:
         cs "I could plan a super fancy trip after this is over!"
     else:
@@ -1427,7 +1436,10 @@ label karaoke:
     show cs
     with fade
     $ achievement_manager.unlock("Dame Da Ne")
-    play music "<loop 0>automatic_love.ogg" volume 0.4
+    if fun_value(10):
+        play music "<loop 0>yuuka_town.ogg" volume 0.4
+    else:  
+        play music "<loop 0>automatic_love.ogg" volume 0.4
     cs "Well, is there anything else I should do here?"
     jump japan_menu
 
@@ -1544,7 +1556,10 @@ label miku_pizza:
     show cs at left
     show miku at right
     with fade
-    play music "<loop 0>automatic_love.ogg" volume 0.4
+    if fun_value(10):
+        play music "<loop 0>yuuka_town.ogg" volume 0.4
+    else:  
+        play music "<loop 0>automatic_love.ogg" volume 0.4
     miku "... so I said, \"You think {i}that{/i} was fast? Wait until I sing {i}INTENSE VOICE!\""
     n "CS laughs."
     cs "Well, Miku, this was very nice, but I need to head on my way."
