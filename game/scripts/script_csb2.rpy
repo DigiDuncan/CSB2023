@@ -148,7 +148,10 @@ label questioning:
     music Card Castle - Toby Fox
     show cs disappointed at left with moveinleft
     show copguy at right with moveinright
-    copguy "Alright, CS. A lot of crazy things happened today."
+    if fun_value(30):
+        copguy "Alright, CS. This is the Card Castle."
+    else:
+        copguy "Alright, CS. A lot of crazy things happened today."
     copguy "The CEO of HoH SiS called us and he was immediately interrupted by something, or some{i}one,{/i} telling us that everything was under control."
     copguy "After reviewing the phone call, his voice sounds kinda messed up."
     cs "I, uhh, I don't know what that is all about..."
@@ -182,7 +185,10 @@ label asylum:
     show cs insane worried flipped at left with moveinright
     show cs insane worried with determination
     show asylum_worker at right with moveinright
-    asylum_worker "Here's your room. Enjoy living out the rest of your life here."
+    if fun_value(30):
+        asylum_worker "Here's your basement. Enjoy living out the rest of your life here."
+    else:
+        asylum_worker "Here's your room. Enjoy living out the rest of your life here."
     show cs insane worried at center with moveinleft
     cs "Sir, you need to listen to me! I'm not crazy!"
     asylum_worker "That's what they all say. Get off of me."
@@ -265,7 +271,10 @@ label jail:
 
     play music "<loop 0>stal.ogg" volume 0.4
     music stal - C418
-    cs "Oh, hi, Arceus."
+    if fun_value(30):
+        cs "Oh, hi, Arceus. Sorry for stal-ing."
+    else:
+        cs "Oh, hi, Arceus."
     arceus "Heya, CS. .w."
     # And it's about time.
     cs "So, what're you in for?"
@@ -319,7 +328,11 @@ label breakout:
     centered "The next evening..."
     play music "<loop 0>moongazer.ogg" volume 0.5
     music Moongazer - Dr. Awesome
-    cs "Key, check."
+    if fun_value(30):
+        anno "I can't wait to gaze at the moon again once we're out of here."
+        cs "Key, check."
+    else:
+        cs "Key, check."
 
     show arceus prison flipped at left with moveinleft
     arceus "Uniforms, check."
@@ -370,6 +383,9 @@ label bordercrossing:
     scene border with fade
     play music "<loop 0>onett.ogg" volume 0.6
     music Onett Theme - Keiichi Suzuki
+    if fun_value(30):
+        n "CS, Anno, and Arceus emerge and begin heading north towards Onett. Theme."
+    else:
     n "CS, Anno, and Arceus emerge and begin heading north towards the border crossing."
     n "A wild border guard appears."
 
@@ -392,7 +408,10 @@ label bordercrossing:
     $ renpy.music.set_pause(True, "music")
     play music2 "star_spangled_banner.ogg"
     music The Star Spangled Banner - THE UNITED STATES OF AMERICA
-    n "The crew looks behind them and still sees a faint American flag waving."
+    if fun_value(30):
+        n "The crew looks behind them and hears The Star Spangled Banner playing."
+    else:
+        n "The crew looks behind them and still sees a faint American flag waving."
     scene canada
     stop music2
     $ renpy.music.set_pause(False, "music")
