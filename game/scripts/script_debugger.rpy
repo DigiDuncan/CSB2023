@@ -515,7 +515,165 @@ label asset_debugger:
         arceus "test 32{w=0.5}{nw}"
     else:
         jump exit_debug
-
+    if fun_value(33):
+        play sound "sfx_hitbod2.ogg"
+        play music "compulsion_to_obey.ogg"
+        scene canada
+        show drillbreak at center
+        show cs guard dark at left
+        show copguy_ex_front at mid_left_left
+        show monika at mid_left
+        show lancer at mid_mid_right
+        show alien at mid_right
+        show arceus angry dusk at right 
+        anno "test 33{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(34):
+        play sound "sfx_hitbod3.ogg"
+        play music "conflict.ogg"
+        scene flag
+        show sansbrick at center
+        show cs fakegod at left
+        show copguy_ex_back at mid_left_left
+        show lancer flipped at mid_mid_right
+        show alien dead at mid_right
+        show arceus dusk flipped at right 
+        border_guard "test 34{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(35):
+        play sound "sfx_hks1.ogg"
+        play music "cp_violation.ogg"
+        scene outside_ltt
+        show oldgame at center
+        show cs guitar at left
+        show ai_ducks at mid_left_left
+        show bubble at mid_mid_right
+        show ikea_worker at mid_right
+        linus "test 35{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(36):
+        play sound "sfx_hks2.ogg"
+        play music "creative_exercise.ogg"
+        scene inside_ltt
+        show m4 at center
+        show cs surprised at left
+        show stage_screen at mid_left_left
+        show pomni at mid_right
+        asylum_worker "test 36{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(37):
+        play sound "sfx_hks3.ogg"
+        play music "danger_mystery.ogg"
+        scene alley
+        show m4 flipped at center
+        show cs surprised flipped at left
+        show moomin at mid_right
+        csgod "test 37{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(38):
+        play sound "sfx_hold_it.ogg"
+        play music "dealin_dope.ogg"
+        scene question
+        show m4 fire at center
+        show cs scared at left
+        show snufkin at mid_right
+        luke "test 38{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(39):
+        play sound "sfx_isaac.ogg"
+        play music "dense_woods_b.ogg"
+        scene asylum
+        show m4 fire flipped at center
+        show cs scared flipped at left
+        show alicia at mid_right
+        taran "test 39{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(40):
+        play sound "sfx_joj_loop.ogg"
+        play music "desert_dawn.ogg"
+        scene csdesk
+        show script at center
+        show cs scared dark at left
+        show witch at mid_right
+        colton "test 40{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(41):
+        play sound "sfx_keyboard.ogg"
+        play music "dig_this.ogg"
+        scene csvideo
+        show post_it2 at center
+        show cs insane worried at left
+        show moomin_flipped at mid_right
+        sheriff "test 41{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(42):
+        play sound "sfx_knock.ogg"
+        play music "dinerfight.ogg"
+        scene setup
+        show colorbars at center
+        show cs insane worried flipped at left
+        show snufkin_flipped at mid_right
+        billy "test 42{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(43):
+        play sound "sfx_legosfx.ogg"
+        play music "dragon_castle.ogg"
+        scene loffice
+        show paper at center
+        show cs insane disappointed at left
+        show alicia_flipped at mid_right
+        tv_billy "test 43{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(44):
+        play sound "sfx_less_annoying_alarm_sound.ogg"
+        play music "echoing.ogg"
+        scene ltt_bg
+        show pipe_gun at center
+        show cs horse at left
+        show witch_flipped at mid_right
+        cultist "test 44{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(45):
+        play sound "sfx_metalpipe.ogg"
+        play music "echoingspring.ogg"
+        scene ltt_fg
+        show pipe_gun flipped at center
+        show cs horse flipped at left
+        show baumer at mid_right
+        cultist_2 "test 45{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(46):
+        play sound "sfx_nicecar.ogg"
+        play music "energetic_rock.ogg"
+        scene frontdoor
+        show cheetos at center
+        show cs pissed at left
+        show baumer flipped at mid_right
+        cultist_3 "test 46{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(47):
+        play sound "sfx_notsonicescratch.ogg"
+        play music "everlong.ogg"
+        scene road_to_canada
+        show bear at center
+        show cs pissed flipped at left
+        scott "test 47{w=0.5}{nw}"
+    else:
+        jump exit_debug
     n "Done."
     return
 

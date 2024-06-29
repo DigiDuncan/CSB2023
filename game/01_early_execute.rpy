@@ -8,6 +8,7 @@ init python:
 # are never initialized. It's lying to you; it's fine.
 
 define determination = Dissolve(0.0)
+default translate_this_line = ""
 default persistent.seen = set()
 default persistent.heard = set()
 default persistent.read = set()
@@ -136,6 +137,8 @@ python early:
         execute = execute_dxcom)
 
 init python:
+    import re
+
     # MUSIC POPUP
     def _music_gen_text(st, at):
         return HBox(
@@ -234,3 +237,12 @@ init python:
             renpy.show("_fun_value",[_fun_value_fade,_fun_value_motion],"fun_icon")
             renpy.play("audio/sfx_sparkle.ogg")
         return ret
+
+    # File listing
+    def file_list(dir=""):
+        l = renpy.list_files()
+        rv = []
+        for f in l:
+            if re.match(dir,f):
+                rv.append(f[(len(dir)):])
+        return rv

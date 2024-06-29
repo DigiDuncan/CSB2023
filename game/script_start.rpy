@@ -63,9 +63,9 @@ init python:
         if preferences.text_beeps and play_beeps:
             if event == "show":
                 if beep is not None:
-                    renpy.sound.play(f"audio/text/{beep}.ogg", channel = "beep", loop = True)
+                    renpy.sound.play(f"audio/text/{beep}.wav", channel = "beep", loop = True)
                 else:
-                    renpy.sound.play(f"audio/text/ut.ogg", channel = "beep", loop = True)
+                    renpy.sound.play(f"audio/text/ut.wav", channel = "beep", loop = True)
             elif event == "slow_done" or event == "end":
                 renpy.sound.stop(channel = "beep")
 
@@ -405,6 +405,8 @@ define witch = Character("Witch", callback = renpy.partial(char_callback, name =
 define renovator = Character("Renovator", callback = char_callback)
 define cruise = Character("Tom Cruise", callback = renpy.partial(char_callback, name = "cruise"))
 define baumer = Character("Steve Baumer", callback = char_callback)
+define copguyexe = Character("Copguy", callback = renpy.partial(char_callback, name = "copguy", beep = "copexe"))
+define l_cultist = Character("Lunatic Cultist", callback = char_callback)
 
 # Offscreen Character Definitions
 define tate_offscreen = Character("???", callback = renpy.partial(char_callback, name = "tate_offscreen", beep="tate"))
@@ -647,6 +649,8 @@ image guard_soldier = "characters/dark:guard_soldier.png"
 image marine = "characters/marine.png"
 image big_tank = "characters/big_tank.png" # TODO: is this meant to reference the abrams or the sherman? - tate
 image asylum_worker = "characters/mohs.png"
+image copguyexe = "characters/copguyexe.png"
+image copguyexe flipped = "flip:characters/copguyexe.png"
 
 # CSB I
 image michael = "flip:characters/michael.png"
@@ -1000,6 +1004,7 @@ image mario_inside2 = "bg/mario_inside2.png"
 image mario_outside = "bg/mario_outside.png"
 image gnome_forest = "bg/gnome_forest.png"
 image forest_clearing = "bg/forest_clearing.jpg"
+image bronsoncrash = "bg/bronsoncrash.png"
 
 ## Country Route
 image britport = "bg/britport.png"
@@ -1179,6 +1184,7 @@ image woc = Movie(play="movies/woc.webm")
 image where = Movie(play="movies/wherearetheynow.webm")
 image karaoke = Transform(Movie(play = "movies/karaoke.webm", side_mask = True), zoom = 1.5)
 image bad_end_screen = Transform(Movie(play = "movies/bad_ending.webm", side_mask = True, loop=False, image="images/fail_end.png"), size=(1920,1080))
+image bronson_hell = Movie(play="movies/bronsonhell.webm")
 
 #Fun Values
 image utajsign = "secret/utajsign.png"
@@ -1269,6 +1275,7 @@ default archack = False
 default jade = False
 default clown = False
 default nome = False  # wow I hate this name - DD
+default god_money = False
 
 # Fired route
 default band_name = "CS' Crazy Crew"
@@ -1291,6 +1298,17 @@ default line_10 = ""
 default line_11 = ""
 default line_12 = ""
 
+#BTTF
+default terraria_question_1 = ""
+default terraria_question_2 = ""
+default terraria_question_3 = ""
+default csb_question_1 = ""
+default csb_question_2 = ""
+default csb_question_3 = ""
+default lunatic_votes = ""
+default total_votes = ""
+default cath_counter = "0"
+
 # RPG
 default enemy_1 = "cop"
 default enemy_2 = "cop"
@@ -1299,10 +1317,22 @@ default party_1 = "cs"
 default party_2 = "tate"
 default party_3 = "digi"
 default party_4 = "arceus"
-default ucn_bg = "images/bg/fnaf_office.png"  # DX: There is currently no way to set these.
-default ucn_music = "minigames/pencil/rude_buster.ogg"  # "
+default ucn_bg = "images/bg/fnaf_office.png"
+default ucn_music = "minigames/pencil/rude_buster.ogg"
 default ucn_scale = 1.0
 default cont = False
+
+# Helpful lists
+init python:
+    bg_list = []
+    for bg in file_list("images/bg"):
+        if bg.endswith(".png"):
+            bg_list.append("images/bg" + bg)
+
+    bgm_list = []
+    for bgm in file_list("audio"):
+        if bgm.endswith(".ogg") and "sfx" not in bgm and "unused" not in bgm:
+            bgm_list.append("audio/" + bgm)
 
 # Minigames
 default minigame_win = "secret_dx"

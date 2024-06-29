@@ -634,6 +634,7 @@ class Attacks:
     AI_MIMIC = Attack("AI Mimic", "Copies an enemy's attack.", ai_mimic, target_count = 1, target_type = "enemies", cooldown = 2)
     SHELL = Attack("Shell", "Fire a tank shell!", random_damage_fighters, min_mult = 1, max_mult = 2)
     HEAL_EX = Attack("Heal EX", "Lots of healing.", heal_fighters, target_count = 0, target_type = "allies", mult = 10)
+    AUGMENT = Attack("Awesome Augment", "Fire a laser! Fire a laser!", damage_fighters, mult = 15, ex = False, cooldown = 5)
 
     # UCN
     STOMP = Attack("Stomp", "Send an earthquake to the enemies!", damage_fighters, target_count = 0, target_type = "enemies", ex = False, mult = 0.75)
@@ -702,7 +703,7 @@ class Fighters:
     BUBBLE = Fighter("{image=gui/dx_text.png} Bubble", False, 250, 10, 35, [Attacks.STOMP, Attacks.POKE], Image("secret/bubble.png"), display_name = "Bubble")
     GES = Fighter("{image=gui/dx_text.png} Ges", False, 170, 20, 35, [Attacks.SWORD_SLASH, Attacks.FLAMETHROWER], Image("images/characters/ges.png"), display_name = "Ges")
     MICHAEL = Fighter("Michael", False, 155, 15, 35, [Attacks.CHOCOLATE_CAKE, Attacks.CONFUSING_STORY], Image("images/characters/michael.png"))
-    BILLY = Fighter("Billy", False, 220, 10, 25, [Attacks.HYPE_UP, Attacks.PITCHMAN], Image("images/characters/billy.png"))
+    BILLY = Fighter("Billy", False, 220, 10, 25, [Attacks.HYPE_UP, Attacks.PITCHMAN, Attacks.AUGMENT], Image("images/characters/billy.png"))
     PHIL = Fighter("Phil", False, 160, 20, 40, [Attacks.HYPE_UP, Attacks.PITCHMAN], Image("images/characters/phil.png"))
     MEAN = Fighter("Mean", False, 150, 20, 35, [Attacks.HUG, Attacks.SPIKE_BOMB], Image("images/characters/mean.png"))
     POMNI = Fighter("Pomni", False, 200, 15, 30, [Attacks.RAINBOW_VOMIT_NOCOOL, Attacks.RAINBOW_VOMIT_NOCOOL], Image("images/secret/pomni.png"))
@@ -719,6 +720,7 @@ class Fighters:
     BIG_TANK = Fighter("Abrams", True, 700, 70, 150, [Attacks.SHELL], Image("images/characters/abrams.png"), ai = AIType.AGGRO)
     COPGUY_EX = Fighter("Copguy EX", True, 2222, 30, 50, Attacks.ex_attacks, Image("images/characters/copguy.png"), ai = AIType.COPGUY_EX)
     PAKOOE = Fighter("Pakoo (Error)", True, 9999, 70, 150, [Attacks.FUN_VALUE], Image("images/characters/pakoo/pakoo_disappointed.png"), ai = AIType.AGGRO, display_name = "Pakoo")
+    COPGUY_EXE = Fighter("Copguy EXE", True, 666, 66, 66, [Attacks.ELDRITCH_BLAST, Attacks.RAINBOW_VOMIT, Attacks.SLASH, Attacks.CONFUSING_STORY], Image("images/characters/copguyexe.png"), ai = AIType.AGGRO)
     K174 = Fighter("K17-4", True, 174, 17, 20, [Attacks.PUNCH], Image("images/characters/k174.png"), ai = AIType.NEUTRAL)
     K199 = Fighter("K19-9", True, 199, 19, 30, [Attacks.KICK], Image("images/characters/k199.png"), ai = AIType.AGGRO)
     K207 = Fighter("K20-7", True, 207, 20, 10, [Attacks.PUNCH], Image("images/characters/k207.png"), ai = AIType.DEFENSIVE)

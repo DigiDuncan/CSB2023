@@ -1204,8 +1204,11 @@ label japan:
     n "CS exits the terminal and enters the airport."
     scene tokyo_airport with fade
     show cs at center with moveinleft
-    play music "<loop 0>automatic_love.ogg" volume 0.4
-    music Automatic Love - Siix0
+    if fun_value(10):
+        play music "<loop 0>yuuka_town.ogg" volume 0.4
+    else:        
+        play music "<loop 0>automatic_love.ogg" volume 0.4
+        music Automatic Love - Siix0
     cs "Wow, this place is already pretty crazy!"
     cs "I feel like this was a better place to pick than England or Sweden."
     cs "And on top of it all, I don't have to worry about the cops anymore!"
@@ -1232,8 +1235,11 @@ label japan_two:
     n "CS exits the terminal and enters the airport."
     scene tokyo_airport with fade
     show cs at center with moveinleft
-    play music "<loop 0>automatic_love.ogg" volume 0.4
-    music Automatic Love - Siix0
+    if fun_value(10):
+        play music "<loop 0>yuuka_town.ogg" volume 0.4
+    else:  
+        play music "<loop 0>automatic_love.ogg" volume 0.4
+        music Automatic Love - Siix0
     cs "Wow, this place is already pretty crazy!"
     cs "Well, I don't know anyone who speaks English over here.."
     cs "And I forgot why I was travelling here, to be honest."
@@ -1360,7 +1366,7 @@ label anime_adventure:
     cs "Just for wearing this outfit?"
     sayori "The numbers don't lie."
     sayori "Here you go."
-    n "Sayori hands CS a few stacks of yen that add up to about 10,000 USD."
+    n "Sayori hands CS a few stacks of yen that add up to 10,000 USD."
     sayori "Don't go spending it all in one place, unless it's on Nekopara merch."
     cashier "See? Look how cool your cosplay was!"
     show cs happy
@@ -1376,7 +1382,10 @@ label anime_adventure:
     scene tokyo_street_night
     show cs at center
     with fade
-    play music "<loop 0>automatic_love.ogg" volume 0.4
+    if fun_value(10):
+        play music "<loop 0>yuuka_town.ogg" volume 0.4
+    else:  
+        play music "<loop 0>automatic_love.ogg" volume 0.4
     if england_check:
         cs "I could plan a super fancy trip after this is over!"
     else:
@@ -1427,7 +1436,10 @@ label karaoke:
     show cs
     with fade
     $ achievement_manager.unlock("Dame Da Ne")
-    play music "<loop 0>automatic_love.ogg" volume 0.4
+    if fun_value(10):
+        play music "<loop 0>yuuka_town.ogg" volume 0.4
+    else:  
+        play music "<loop 0>automatic_love.ogg" volume 0.4
     cs "Well, is there anything else I should do here?"
     jump japan_menu
 
@@ -1544,7 +1556,10 @@ label miku_pizza:
     show cs at left
     show miku at right
     with fade
-    play music "<loop 0>automatic_love.ogg" volume 0.4
+    if fun_value(10):
+        play music "<loop 0>yuuka_town.ogg" volume 0.4
+    else:  
+        play music "<loop 0>automatic_love.ogg" volume 0.4
     miku "... so I said, \"You think {i}that{/i} was fast? Wait until I sing {i}INTENSE VOICE!\""
     n "CS laughs."
     cs "Well, Miku, this was very nice, but I need to head on my way."
@@ -1692,8 +1707,12 @@ label sweden:
     with dissolve
     show cs flipped at right with moveinright
     cs "That guy looks like he'd be able to help."
-    cs "Excuse me sir, do you know where the bus stop is?"
-    average_swede "Min svävare är full med ålar."
+    cs "Excuse, me, sir, do you know where the bus stop is?"
+
+    $ translate_this_line = "My hovercraft is filled with eels."
+    average_swede "{a=show:show_tl}Min svävare är full med ålar.{/a}"
+
+    show cs disappointed flipped
     cs "Oh, dang. I forgot not many Swedes can speak English. Hopefully, I'll find someone who does."
     n "As CS says this, he sees a bus drive past and decides to just follow it to the bus stop."
     hide cs with moveoutleft
@@ -1725,8 +1744,12 @@ label sweden_second:
     with dissolve
     show cs flipped at right with moveinright
     cs "That guy looks like he'd be able to help."
-    cs "Excuse me, sir, do you know where the bus stop is?"
-    average_swede "Min svävare är full med ålar."
+    cs "Excuse, me, sir, do you know where the bus stop is?"
+
+    $ translate_this_line = "My hovercraft is filled with eels."
+    average_swede "{a=show:show_tl}Min svävare är full med ålar.{/a}"
+
+    show cs disappointed flipped
     cs "Oh, dang. I forgot not many Swedes can speak English. Hopefully, I'll find someone who does."
     n "As CS says this, he sees a bus drive past and decides to just follow it to the bus stop."
     hide cs with moveoutleft
