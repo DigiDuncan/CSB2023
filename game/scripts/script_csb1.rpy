@@ -37,7 +37,10 @@ label csbi_start:
     with dissolve
     play music "<loop 0>lets_hear_my_baby.ogg" volume 0.15
     music "Let's hear my baby - Walkman"
-    cs "Welp, time to start up the ol' Craptop."
+    if fun_value(30):
+        cs "Welp, Let's hear my baby."
+    else:
+        cs "Welp, time to start up the ol' Craptop."
     hide cs
     scene craptop_bg
     show craptop desktop
@@ -104,7 +107,10 @@ label csbi_start:
     with fade
     play music "canyon.ogg" volume 0.2
     music CANYON.MID - George Stone
-    cs "Nice day!"
+    if fun_value(30):
+        cs "Woah! Is that a canyon over there?"
+    else:    
+        cs "Nice day!"
     show cs
     cs "Well, I guess it's car time."
     show cs_car behind cs
@@ -163,7 +169,10 @@ label walmart:
 
     n "CS walks inside."
     show doug at right with moveinright
-    greeter "Hello, and welcome to Walmart! Can I help you with anything?"
+    if fun_value(30):
+        greeter "Welcome, the Summer Clearance Sale is going on! Isn't this the BEST MUSIC ever?"
+    else:
+        greeter "Hello, and welcome to Walmart! Can I help you with anything?"
     show cs at left with moveinleft
     cs "Wow! It's Walmart CEO Doug McMillon! You actually work here?"
     doug "Of course! They were short a greeter today, so I filled in the slot!"
@@ -230,7 +239,10 @@ label room:
     play music "<loop 0>scales_of_joy.ogg" volume 0.3
     music scales of joy.mod - Mel O Dee
     n "CS sits down at his craptop and opens up Premiere."
-    cs "Ooooh! Here's the one from my last editing stream. People would be excited to finally see this as a finished product."
+    if fun_value(30):
+        cs "Ooooh! I can really feel the scales of joy! People would be excited to finally see this as a finished product."
+    else:
+        cs "Ooooh! Here's the one from my last editing stream. People would be excited to finally see this as a finished product."
     n "CS watches the in-progress video."
     cs "This is pretty good, but I'm feeling uninspired... I don't know where to go from here..."
     cs "Hmmm..."
@@ -286,7 +298,13 @@ label room:
     show ed at right with moveinright
     play music "<loop 0>hohsis_theme.ogg" volume 0.2
     music Alfred Hitchcock Intro Theme - Charles Gounod
-    ed "Alright, that will be 200,000 Bits."
+    if fun_value(30):
+        ed "Alright, that will be Alfred Hitchcock Intro Theme."
+        show cs disappointed
+        cs "What?"
+        show cs
+    else:    
+        ed "Alright, that will be 200,000 Bits."
     cs "Okay, I guess they already told you what I need done. Lemme get my wallet..."
     show cs disappointed
     cs "Hang on a sec. Didn't they say I could pay afterwards?"
@@ -389,7 +407,10 @@ label rosen_house:
     music Super Friendly - Kevin Macleod
     show michael at right with moveinright
     show cs flipped at offscreenright
-    michael "Come in! Come in!"
+    if fun_value(30):
+        michael "Come in! Come in! I'm Super Friendly!"
+    else:
+        michael "Come in! Come in!"
     show michael at left
     show cs flipped at right
     with ease
@@ -517,7 +538,10 @@ label csbi_end:
     with dissolve
     play music "<loop 0>time_for_a_smackdown.ogg" volume 0.2
     music Time for a Smackdown! - Mr. Sauceman
-    cs "Alright! Where are the head JoJites?!"
+    if fun_value(30):
+        cs "Alright! It's time for a Smackdown!"       
+    else:    
+        cs "Alright! Where are the head JoJites?!"
     show worker_1 at right with moveinright
     worker_1 "I don't know!!"
     cs "BullShisH!"
