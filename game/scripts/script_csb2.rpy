@@ -386,7 +386,7 @@ label bordercrossing:
     if fun_value(30):
         n "CS, Anno, and Arceus emerge and begin heading north towards Onett. Theme."
     else:
-    n "CS, Anno, and Arceus emerge and begin heading north towards the border crossing."
+        n "CS, Anno, and Arceus emerge and begin heading north towards the border crossing."
     n "A wild border guard appears."
 
     show border_guard at center with dissolve
