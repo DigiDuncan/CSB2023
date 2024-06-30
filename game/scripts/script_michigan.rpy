@@ -291,7 +291,10 @@ label interstate_69_old:
     # DX: It could be funny to have an option to ignore the gnome for a while
     play music "<loop 0>wayward_wanderer.ogg" volume 0.7
     music Wayward Wanderer - Deep Gnome
-    gnome "Hallo, may I enter your Automobile?" 
+    if fun_value(30):
+        gnome "Hallo, I am a Wayward Wanderer, may I enter your Automobile?"
+    else:
+        gnome "Hallo, may I enter your Automobile?" 
     billy "What do you want with us?"
     gnome "I mean you no harm. May I sit and explain myself?"
     arceus "I don't think this guy is a threat. We may as well let him in."
@@ -855,7 +858,10 @@ label interstate_69:
     # DX: It could be funny to have an option to ignore the gnome for a while
     play music "<loop 0>wayward_wanderer.ogg" volume 0.7
     music Wayward Wanderer - Deep Gnome
-    gnome "Hallo, may I enter your Automobile?" 
+    if fun_value(30):
+        gnome "Hallo, I am a Wayward Wanderer, may I enter your Automobile?"
+    else:
+        gnome "Hallo, may I enter your Automobile?" 
     billy "Hi, Billy Mays here! What are doing next to my car?"
     gnome "I mean you no harm. May I sit and explain myself?"
     arceus "See CS, he's not Blank. I don't think Blank has a German accent."
@@ -950,7 +956,10 @@ label interstate_69:
     show waitress at right with moveinright
     waitress "Welcome, welcome. Please wait, and I'll come seat you in a minute."
     hide waitress with moveoutright
-    n "As everyone is waiting, the strange glowing grey blob in the corner notices the group and floats over."
+    if fun_value(30):
+        n "As everyone is waiting, the strange misleading grey blob in the corner notices the group and floats over."
+    else:
+        n "As everyone is waiting, the strange glowing grey blob in the corner notices the group and floats over."
     show aria at right with moveinright
     play music "<loop 0>mis_leader.ogg" volume 0.7
     music MisLeader - Triosk and Jan Jelinek
@@ -1171,7 +1180,10 @@ label interstate_69:
     with dissolve
     play music "<loop 0>dense_woods_b.ogg" volume 0.5
     music Dense Woods B - Kikiyama
-    billy "Why does the window by the entrance have to be bright red?"
+    if fun_value(30):
+        cs "Wouldn't you say these are some Dense Woods, Billy?"
+    else:
+        billy "Why does the window by the entrance have to be bright red?"
     billy "I've had enough of spooky forests today."
     aria "It's fine. That guy always has his lights set to red."
     aria "It's admittedly a little creepy, but you get used to it."
@@ -1242,7 +1254,10 @@ label interstate_69:
     scene creepy_path_4 with dissolve
     play music "melancholy.ogg"
     music Melancholy - Imori
-    aria "If you look to the right, you'll see one of my favorite paths in the woods."
+    if fun_value(30):
+        aria "If you look to the right, you'll see one of my favorite, melancholy, paths in the woods."
+    else:
+        aria "If you look to the right, you'll see one of my favorite paths in the woods."
     aria "It's not exactly clear, so we'll skip it today, but it leads to a pretty little grotto."
     aria "It feels like something out of a fairy tale."
     cs "This whole forest does, but only the uncensored Brothers Grimm versions."

@@ -80,7 +80,10 @@ label billy_driver:
     unknown "Oh, uhh, hold on a second!"
     n "The mysterious driver walks behind the store."
     arceus "What are you doing? That man looks like he's going to kill us!"
-    arceus "He's probably getting a gun, we need to lea--{w=1.5}{nw}"
+    if fun_value(30):
+        arceus "He's probably selecting his 9mm, we need to lea--{w=1.5}{nw}"
+    else:
+        arceus "He's probably getting a gun, we need to lea--{w=1.5}{nw}"
     show billy at center with moveinleft
     play music "<loop 0>mm_select.ogg" volume 0.3
     music Mm Select - Matthew Simmonds
@@ -108,7 +111,12 @@ label in_billy_car:
     show billy car
     play music "<loop 0>billy_radio.ogg" volume 0.3
     music Billy Mays Gangsta Remix - mastamokei
-    cs "Alright, so, it's just a straight shot to New York?"
+    if fun_value(30):
+        cs "Is this the Billy Mays Gangsta Remix?"
+        billy "Yeah! I wrote this song myself!"
+        cs "Cool, so are we going to New York?"
+    else:
+        cs "Alright, so, it's just a straight shot to New York?"
     show billy car turn
     billy "Yep! We are gonna head through Idaho and Montana first, so get ready to see the sights!"
     show billy car happy
@@ -126,7 +134,10 @@ label montana:
     with fade
     play music "<loop 0>weird_personalities.ogg" volume 0.6
     music Weird Personalities - Lizardking
-    n "After a few hours of driving through Idaho, the trio finds themselves in the middle of Montana."
+    if fun_value(30):
+        n "After a few hours of driving through Idaho, the trio finds themselves having weird personalities in the middle of Montana."
+    else:
+        n "After a few hours of driving through Idaho, the trio finds themselves in the middle of Montana."
     n "Arceus is sleeping while CS peers out the window."
     cs "Are we there yet?"
     show billy car turn
@@ -159,7 +170,11 @@ label montana:
     play music "<loop 0>home_depot.ogg" volume 0.4
     music "Let's Do This - Home Depot"
     show cs at left with moveinleft
-    cs "Wow, look at all this stuff!"
+    if fun_value(30):
+        cs "Alright, Let's do this!"
+        cs "They have a lot of stuff here!"
+    else:
+        cs "Wow, look at all this stuff!"
     cs "They've got Allen wrenches, gerbil feeders, toilet seats, electric heaters,{nw}"
     cs "Trash compactors, juice extractor, shower rods and water meters,{nw}"
     cs "Walkie-talkies, copper wires, safety goggles, radial tires,{nw}"
@@ -223,7 +238,10 @@ label montana:
     show billy car
     play music "<loop 0>candle_world.ogg" volume 0.4
     music Candle World - Kikiyama
-    "CS and Arceus" "What in the world?"
+    if fun_value(30):
+        "CS and Arceus" "What in the candle world?"
+    else:
+        "CS and Arceus" "What in the world?"
     n "Ahead lies a barricade with a bunch of strange hooded figures surrounding it."
     show cultist at mid_right behind billy with moveinright
     n "One of the strangers walks up to the driver's side and knocks on the window."
@@ -368,7 +386,10 @@ label montana:
     n "The gang gets back in the car and books it out of the forest."
     n "After a while, Billy pulls the car into a small area at the edge of the forest to let everyone rest."
     scene black with fade
-    n "The night passes, then they set off once again."
+    if fun_value(30):
+        n "The night passes, then they set off, passing by Mort's farm."
+    else:
+        n "The night passes, then they set off once again."
     scene car background
     show billy car
     play music "<loop 0>mort_farm.ogg" volume 0.4
@@ -422,7 +443,16 @@ label south_dakota:
     show cs at right with moveinleft
     show arceus flipped at center with moveinleft
     show billy at left with moveinleft
-    billy "Wow, to think that we won a war without the Gopher."
+    if fun_value(30):
+        pause 1.0
+        show cs disappointed
+        pause 2.0
+        cs "Uhh..."
+        direct "Just say something god damnit, keep the bit going!"
+        cs "Uhh... Taiikusai Desu Yo! That means those faces look cool in Japanese!"
+        show cs
+    else:
+        billy "Wow, to think that we won a war without the Gopher."
     show arceus
     billy "How did they even communicate without the Jupiter Jack?"
     show cs concentrate
@@ -455,7 +485,10 @@ label south_dakota:
     scene car plains
     show billy car
     with fade
-    n "They continue to drive through the massive and empty plains of South Dakota."
+    if fun_value(30):
+        n "They continue to drive on Track 4 through the massive and empty plains of South Dakota."
+    else:
+        n "They continue to drive through the massive and empty plains of South Dakota."
     play music "<loop 0>track4.ogg" volume 0.4
     music Track 4 - Weatherscan
     n "By the time they reach Sioux City, it is already evening."
@@ -555,7 +588,10 @@ label nebraska:
     show billy at right behind pakoo with moveinleft
     show cs at left with moveinleft
     show arceus flipped at mid_left with moveinleft
-    peppino "Hey Piezanos, whatcha want today?"
+    if fun_value(30):
+        peppino "Hey Piezanos, it's the Funiculi Holiday! whatcha want today?"
+    else:
+        peppino "Hey Piezanos, whatcha want today?"
     pakoo "Hey Peppino, can you get me and my friends the Gustavo special today?"
     show peppino2 at t_pepzone2 behind peppinopizzafg
     hide peppino
@@ -596,6 +632,10 @@ label iowa:
     billy "The rest of this trip shouldn't be too long!"
     n "As if on cue, a strange sound is heard from overhead."
     n "CS looks out the window."
+    if fun_value(30):
+        n "CS looks out the window, to see what looks like a speedy comet." 
+    else:
+        n "CS looks out the window."    
     play music "<loop 0>speedy_comet.ogg" volume 0.5
     music Speedy Comet - Mahito Yokota
     cs "You have to be kidding me!"
@@ -641,7 +681,10 @@ label ohio:
         scene car plains
         show billy car
         with fade
-        n "After that fiasco, they continue their trip, soon passing through Ohio."
+        if fun_value(30):
+            n "After that fiasco, they continue their trip, breaking out of Indiana and soon passing through Ohio."
+        else:
+            n "After that fiasco, they continue their trip, soon passing through Ohio."
         show scott_border
         play music "<loop 0>breakout.ogg" volume 0.3  
         music Breakout - Shoichiro Sakamoto 
@@ -677,7 +720,10 @@ label ohio:
         scene car plains
         show billy car
         with fade
-        n "After that fiasco, they continue their trip, soon passing through Ohio."
+        if fun_value(30):
+            n "After that fiasco, they continue their trip, breaking out of Indiana and soon passing through Ohio."
+        else:
+            n "After that fiasco, they continue their trip, soon passing through Ohio."
         show scott_border
         play music "<loop 0>breakout.ogg" volume 0.3  
         music Breakout - Shoichiro Sakamoto 
