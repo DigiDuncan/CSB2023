@@ -442,7 +442,10 @@ label bordercrossing:
     show anno at left with moveinleft
     
     show cs flipped
-    anno "Finally."
+    if fun_value(30):
+        anno "Arceus, buy something, will ya?"
+    else: 
+        anno "Finally."
     show cs flipped at mid_offscreen_right
     show anno at mid_offscreen_left
     show arceus full flipped at t_arc_at_tims
@@ -519,7 +522,10 @@ label bordercrossing:
     else:
         hide passportdigi
     music PASSPORT.MID - George Stone
-    linus "Sure, you can have a job. Just show us proof of citizenship and you're ready to go!"
+    if fun_value(30):
+        linus "Sure, you can have a job. Just show us your passport and you're ready to go!"
+    else: 
+        linus "Sure, you can have a job. Just show us proof of citizenship and you're ready to go!"
     cs "Colour is spelled with a u, eh."
     linus "I need actual papers. Last time I hired someone who used {i}that{/i} as proof of citizenship, I got fined and had to sell one of my thousands of 4090s."
     cs "Ummmm, I'll be right back."
