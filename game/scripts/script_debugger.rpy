@@ -674,6 +674,51 @@ label asset_debugger:
         scott "test 47{w=0.5}{nw}"
     else:
         jump exit_debug
+    if fun_value(48):
+        play sound "sfx_obama.ogg"
+        play music "everybody_wants.ogg"
+        scene border_dusk
+        show dog at center
+        show cs cultist at left
+        terry "test 48{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(49):
+        play sound "sfx_objection.ogg"
+        play music "exotic.ogg"
+        scene sheriff_office
+        show pig at center
+        show cs cultist flipped at left
+        carla "test 49{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(50):
+        play sound "sfx_okuubeam.ogg"
+        play music "facing_worlds.ogg"
+        scene washington_road
+        show pot_lift at center
+        show cs disappointed cultist at left
+        peppino "test 50{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(51):
+        play sound "sfx_page.ogg"
+        play music "fastbudget_song.ogg"
+        scene washington_road day
+        show pot at center
+        show cs angry cultist at left
+        iris "test 51{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(52):
+        play sound "sfx_payday.ogg"
+        play music "fasting.ogg"
+        scene washington_road dusk
+        show pot_sunken at center
+        show cs disappointed cultist flipped at left
+        lego "test 52{w=0.5}{nw}"
+    else:
+        jump exit_debug
     n "Done."
     return
 

@@ -631,7 +631,6 @@ label iowa:
     billy "Alright, well, ever since that cult encounter, it's been pretty smooth sailing!"
     billy "The rest of this trip shouldn't be too long!"
     n "As if on cue, a strange sound is heard from overhead."
-    n "CS looks out the window."
     if fun_value(30):
         n "CS looks out the window, to see what looks like a speedy comet." 
     else:
