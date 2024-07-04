@@ -719,6 +719,67 @@ label asset_debugger:
         lego "test 52{w=0.5}{nw}"
     else:
         jump exit_debug
+    if fun_value(53):
+        play sound "sfx_ping.ogg"
+        play music "fastport.ogg"
+        scene washington_road morning
+        show pot_beam at center
+        show cs angry cultist flipped at left
+        trailtrash "test 53{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(54):
+        play sound "sfx_ping_spam.ogg"
+        play music "flyday_chinatown.ogg"
+        scene copcar
+        show onscreen_sharpener at center
+        show cs pencil at left
+        green "test 54{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(55):
+        play sound "sfx_puke.ogg"
+        play music "fnaf_6.ogg"
+        scene copcar_mask
+        show renault at center
+        show cs angry pencil at left
+        jerma "test 55{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(56):
+        play sound "sfx_punch.ogg"
+        play music "for_the_people.ogg"
+        scene microcenter
+        show passportdigi at center
+        show cs disappointed pencil at left
+        pencil "test 56{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(57):
+        play sound "sfx_punchalt.ogg"
+        play music "fourside.ogg"
+        scene microinside
+        show cs phone at left
+        signup "test 57{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(58):
+        play sound "sfx_ringtone.ogg"
+        play music "france.ogg"
+        scene cashzone
+        show cs phone flipped at left
+        host "test 58{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(59):
+        play sound "sfx_roll_window.ogg"
+        play music "friendship.ogg"
+        scene cashzone_foreground
+        show cs disappointed phone at left
+        tsa "test 59{w=0.5}{nw}"
+    else:
+        jump exit_debug
+
     n "Done."
     return
 

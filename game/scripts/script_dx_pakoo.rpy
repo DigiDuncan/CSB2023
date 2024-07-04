@@ -182,6 +182,7 @@ label after_true:
     cs "Opening 2004? Is this outdated?"
     show renovator at right with moveinright
     renovator "Are you insane or high dude? It's 2003, are you okay?"
+    play sound "sfx_somethingchanged.ogg"
     n "CS' heart drops."
     show cs disappointed
     cs "Yeah, I just, am hungover I guess."
