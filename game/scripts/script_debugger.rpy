@@ -779,6 +779,237 @@ label asset_debugger:
         tsa "test 59{w=0.5}{nw}"
     else:
         jump exit_debug
+    if fun_value(60):
+        play sound "sfx_select.ogg"
+        play music "full_rulle_med_klas.ogg"
+        scene cpuaisle
+        show cs disappointed phone flipped at left
+        luigi "test 60{w=0.5}{nw}"
+    else:
+        jump exit_debug
+
+    if fun_value(61):
+        play sound "sfx_siren.ogg"
+        play music "funiculi_holiday.ogg"
+        scene gpuaisle
+        show cs worried phone at left
+        mika "test 61{w=0.5}{nw}"
+    else:
+        jump exit_debug
+
+    if fun_value(62):
+        play sound "sfx_slots.ogg"
+        play music "gold_room.ogg"
+        scene gpuaisle2
+        show cs worried phone flipped at left
+        k174 "test 62{w=0.5}{nw}"
+    else:
+        jump exit_debug
+
+    if fun_value(63):
+        play sound "sfx_somethingchanged.ogg"
+        play music "good_eatin.ogg"
+        scene testing_main
+        show cs angry phone at left
+        k199 "test 63{w=0.5}{nw}"
+    else:
+        jump exit_debug
+
+    if fun_value(64):
+        play sound "sfx_sparkle.ogg"
+        play music "happy_roaming.ogg"
+        scene testing_front
+        show cs angry phone flipped at left
+        k207 "test 64{w=0.5}{nw}"
+    else:
+        jump exit_debug
+
+    if fun_value(65):
+        play sound "sfx_splash.ogg"
+        play music "happy_rock.ogg"
+        scene course_1
+        show cs scared phone at left
+        billy_far "test 65{w=0.5}{nw}"
+    else:
+        jump exit_debug
+
+    if fun_value(66):
+        play sound "sfx_start_rocking.ogg"
+        play music "happy_running.ogg"
+        scene course_2
+        show cs scared phone flipped at left
+        direct "test 66{w=0.5}{nw}"
+    else:
+        jump exit_debug
+
+    if fun_value(67):
+        play sound "sfx_thunder.ogg"
+        play music "hard_drive.ogg"
+        scene course_3
+        show cs surprised phone at left
+        monika "test 67{w=0.5}{nw}"
+    else:
+        jump exit_debug
+
+    if fun_value(68):
+        play sound "sfx_tinnitus.ogg"
+        play music "hightop.ogg"
+        scene canada_block
+        show cs surprised phone flipped at left
+        lancer "test 68{w=0.5}{nw}"
+    else:
+        jump exit_debug
+
+    if fun_value(69):
+        play sound "sfx_tiresqueal.ogg"
+        play music "hired_guns.ogg"
+        scene dealership
+        show cs pissed phone at left
+        tate "test 69{w=0.5}{nw}"
+    else:
+        jump exit_debug
+
+    if fun_value(70):
+        play sound "sfx_valid.ogg"
+        play music "hitmewithyourbestshot.ogg"
+        scene dealer_cars
+        show cs pissed phone flipped at left
+        kitty "test 70{w=0.5}{nw}"
+    else:
+        jump exit_debug
+
+    if fun_value(71):
+        play sound "sfx_victorypunch.ogg"
+        play music "hitsquad_2.ogg"
+        scene flintcar_outside
+        show cs concentrate phone at left
+        obama "test 71{w=0.5}{nw}"
+    else:
+        jump exit_debug
+
+    if fun_value(72):
+        play sound "sfx_waterphone.ogg"
+        play music "hohsis_theme.ogg"
+        scene flintcar_fg
+        show cs concentrate phone flipped at left
+        bomaha "test 72{w=0.5}{nw}"
+    else:
+        jump exit_debug
+
+    if fun_value(73):
+        play sound "sfx_windows_logon.ogg"
+        play music "hohsisremix.ogg"
+        scene car_inside_fg
+        show cs at rotate_10
+        blank "test 73{w=0.5}{nw}"
+    else:
+        jump exit_debug
+
+    if fun_value(74):
+        play sound "sfx_yelling.ogg"
+        play music "home_depot.ogg"
+        scene joj_charger_fg
+        show cs at rotate_6
+        aria "test 74{w=0.5}{nw}"
+    else:
+        jump exit_debug
+
+    if fun_value(75):
+        play sound "sfx_ytpintro.ogg"
+        play music "honk_song.ogg"
+        scene comments
+        show cs at rotate_5
+        aria_alt "test 75{w=0.5}{nw}"
+    else:
+        jump exit_debug
+
+    if fun_value(76):
+        play music "insane_personalities.ogg"
+        scene hospital_room
+        show cs at center_left
+        cop "test 76{w=0.5}{nw}"
+    else:
+        jump exit_debug
+
+    if fun_value(77):
+        play music "killcops.ogg"
+        scene hospital_reception
+        show cs at center_right
+        midge "test 77{w=0.5}{nw}"
+    else:
+        jump exit_debug
+
+    if fun_value(78):
+        play music "klaxon_beat.ogg"
+        scene ticket_counter
+        show cs at mid_center_right
+        db "test 78{w=0.5}{nw}"
+    else:
+        jump exit_debug
+
+    if fun_value(79):
+        play music "la_by_night.ogg"
+        scene backseat
+        show cs at mid_offscreen_right
+        customer "test 79{w=0.5}{nw}"
+    else:
+        jump exit_debug
+
+    if fun_value(80):
+        play music "lady_of_the_cold.ogg"
+        scene hotel_lobby
+        show cs at mid_offscreen_left
+        guest "test 80{w=0.5}{nw}"
+    else:
+        jump exit_debug
+
+    if fun_value(81):
+        play music "laurel_palace.ogg"
+        scene hotel_room
+        show cs at xstretch_in
+        ges "test 81{w=0.5}{nw}"
+    else:
+        jump exit_debug
+
+    if fun_value(82):
+        play music "lego_island.ogg"
+        scene hotel_breakfast
+        show cs at xstretch_out
+        nurse "test 82{w=0.5}{nw}"
+    else:
+        jump exit_debug
+
+    if fun_value(83):
+        play music "lets_hear_my_baby.ogg"
+        scene hotel_guitar_hero
+        show cs at little_bounce
+        benrey "test 83{w=0.5}{nw}"
+    else:
+        jump exit_debug
+
+    if fun_value(84):
+        play music "lets_hear_my_sped.ogg"
+        scene hotel_door
+        show cs at t_post_it
+        mean "test 84{w=0.5}{nw}"
+    else:
+        jump exit_debug
+
+    if fun_value(85):
+        play music "letshearspring.ogg"
+        scene hotel_hall
+        show cs at t_copguy_frontseat
+        agent "test 85{w=0.5}{nw}"
+    else:
+        jump exit_debug
+
+    if fun_value(86):
+        play music "lisbon_fever.ogg"
+        scene hotel_hall
+        show cs at t_copguy_frontseat
+        agent "test 86{w=0.5}{nw}"
+    else:
+        jump exit_debug
 
     n "Done."
     return
