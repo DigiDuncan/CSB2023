@@ -320,6 +320,7 @@ label after_fanboy:
     scene outside_ltt
     show cs angry flipped at center
     with fade
+
     dxcom fightminigame
     $ achievement_manager.unlock("I Thought This Was A Visual Novel")
     n "CS struggles to catch his breath."
@@ -338,6 +339,8 @@ label after_fanboy:
     arceus "You fought them?"
     cs "Yeah! I won, as well!"
     show arceus
+    hide screen dxcom
+
     show linus at left with moveinleft
     linus "Woah, hey, CS you alright?"
     cs "Yeah! I fought them, and then scared the rest away!"

@@ -38,6 +38,7 @@ label new_plan:
     arceus "Aw, man. That sucks. I'm sure we'll figure it out."
     arceus "Come on, let's go back to the hotel. We can think of something, I'm sure."
     cs "Alright, man, thanks. Let's go."
+    hide screen dxcom
 
     scene hotel_lobby
     show cs flipped at right
@@ -133,6 +134,7 @@ label guitar_hero:
     # Learn to use commas, fuck-ass. "I did it too, Pakoo" - Arc
     stop music fadeout 3.0
     music end
+    hide screen dxcom
     $ achievement_manager.unlock("Guitar Hero")
 
     scene hotel_room
@@ -176,12 +178,15 @@ label write_song:
     n "Anno hits play on the track."
     play music "<loop 0>audio/everlong.ogg" volume 0.5
     music Everlong - Foo Fighters
+
     dxcom everlong
     n "{cps=15}{image=note_small1.png} We broke the chains, now we're free to fly,{w=1.5}\nEscaped concrete, and now we see blue skies{w=1.5}\nBecome brand new, we'll leave the past behind,{w=1.5}\nPrisoners no more, 'cause a new life we'll find {image=note_small2.png}"
     cs "Yeah, that's really good!"
     show arceus
     stop music fadeout 3.0
     music end
+    hide screen dxcom
+
     arceus "Well, I guess all we have to do now is upload it."
     dxcom madlibs
     anno "Alright, boys, what do we call it?"
@@ -220,6 +225,7 @@ label write_song:
 
     scene black with dissolve
     n "While they sleep, the song accumulates streams..."
+    hide screen dxcom
     jump hotel_next_day
 
 label hotel_next_day:

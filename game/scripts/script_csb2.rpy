@@ -87,6 +87,7 @@ label kick:
     show ed_phone at right with moveinright
     show cs angry at left with move
     ed "Hello, 911? My coworker just got kicked off the roof by a disgruntled customer! Send help!"
+    hide screen dxcom
     jump caught
 
 # Special
@@ -320,6 +321,7 @@ label breakout:
     show cs prison_worried at left
     cs "You kidding me? I'm gonna shit myself, 'cause this is scary as hell."
     arceus "Fair enough."
+    hide screen dxcom
     scene black with fade
 
     stop music fadeout 3.0
