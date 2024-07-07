@@ -543,6 +543,7 @@ label csbi_end:
     else:    
         cs "Alright! Where are the head JoJites?!"
     show worker_1 at right with moveinright
+    dxcom hohsisfight
     worker_1 "I don't know!!"
     cs "BullShisH!"
     n "CS punches the worker."
@@ -553,6 +554,7 @@ label csbi_end:
     show worker_2 at right with moveinright
     worker_2 "They-- They're on the roof!!"
     cs "Good!!"
+    hide screen dxcom
     n "..."
     show black with dissolve
     scene hoh_hq2

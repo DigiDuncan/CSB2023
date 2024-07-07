@@ -118,5 +118,27 @@
             "transcript": "But then, together we altered it to be what you see now.",
             "length": 3.3
         }
+    ],
+	"hohsisfight": [
+        {
+            "audio_path": "fighting",
+            "speaker": "Pakoo",
+            "transcript": "So at this scene in the game, in the original version of CSB1, we were going to have this huge fight scene where he's going through the HoH SiS HQ beating up workers. But we didn't have the time, and we didn't know how to, y'know do this whole scene. So when we started working on this game, I wanted to include that.",
+            "length": 19.8
+        },
+        {
+            "audio_path": "fighting2",
+            "speaker": "Pakoo",
+            "transcript": "And, Y'know, I even went out and made sound effects and transitions. It was the first thing I did in this game, and it was super fun to do.",
+            "length": 8.5
+        }
+    ],
+	"5years": [
+        {
+            "audio_path": "5year",
+            "speaker": "Pakoo",
+            "transcript": "This part of the CSB3 script we worked back on in 2018, and we didn't actually do anything with it for about 5 years, until we started working on the game in 2023.",
+            "length": 11.9
+        }
     ]
 }
