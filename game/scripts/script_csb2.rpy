@@ -355,9 +355,9 @@ label breakout:
     scene tunnel with fade
     # If anyone asks, Arceus is part god and can dig really easily, I guess.
 
-    dxcom tint
     n "They begin digging quickly, putting distance between themselves and their cells."
     show cs guard dark at left with easeinleft
+    dxcom tint
     cs "Jeez... I didn't think that would actually work."
 
     show arceus guard at right with easeinright
