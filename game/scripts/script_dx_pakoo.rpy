@@ -198,7 +198,7 @@ label after_true:
     show cs disappointed flipped
     cs "I wonder if Billy and Arc ended up here too..."
     show cs disappointed
-    if fun_value(10):
+    if fun_value(FUN_VALUE_COMMON):
         n "All of a sudden, a time and space portal opens and Car Guy comes out of it."
         jump renault
     else:

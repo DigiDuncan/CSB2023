@@ -90,7 +90,7 @@ label utah:
     arceus "Are you sure we're close to Vegas?"
     cs "We {i}have{/i} to be! Nevada is, like, right below Washington!"
     arceus "Well, there's a state sign coming up. Let's see if you're right."
-    if fun_value(20):
+    if fun_value(FUN_VALUE_RARE):
         scene utajsign
         show cscar1
         show cscar2
@@ -176,7 +176,7 @@ label utah:
     show cs dark at left with moveinleft
     show arceus flipped dark at right with moveinleft
     show arceus dark
-    if fun_value(25):
+    if fun_value(FUN_VALUE_RARE):
         pause 1.0
         show fumobee at lego_run
         play sound "secret/sfx_vine.ogg"
@@ -326,7 +326,7 @@ label utah:
 
 label vegas:
     if returning_from_blooper:
-        if fun_value(10):
+        if fun_value(FUN_VALUE_COMMON):
             scene vegasjade
             $ jade = True
         else:
@@ -341,7 +341,7 @@ label vegas:
         music "Al's Penthouse - Andy Blythe"
         $ returning_from_blooper = False
     else:
-        if fun_value(10):
+        if fun_value(FUN_VALUE_COMMON):
             $ jade = True
             scene vegasjade
             $ persistent.seen.add("bubble")
@@ -642,7 +642,7 @@ label poker3:
     pause 1.0
     scene pokertable
     n "Mr. Green and CS put their cards down."
-    if fun_value(42):
+    if fun_value(FUN_VALUE_LEGENDARY):
         show cards5alt
         n "CS and Mr. Green both have a royal flush with ace and king of spades."
         stop music fadeout 3.0
@@ -744,7 +744,7 @@ label poker3:
         cs "Finally! Arc and I can buy whatever we want! I need to let him know!"
         n "Before CS runs off to find Arceus, the owner of the casino approaches CS."
         show jerma at left with moveinleft
-        if fun_value(5):
+        if fun_value(FUN_VALUE_UNOBTRUSIVE):
             n "Jerma looks down at Mr. Green."
             jerma "Woah, clean up on aisle {i}you!"
             jerma "Anyways..."

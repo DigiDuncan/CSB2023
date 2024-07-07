@@ -125,7 +125,7 @@ label edit_video:
     play music "<loop 0>good_eatin.ogg" volume 0.4
     music "Good Eatin' - ClascyJitto"
     show taran at right with moveinright
-    if fun_value(30):
+    if fun_value(FUN_VALUE_MUSIC):
         taran "You eatin' good, CS?"
     else:
         taran "Need any help with anything?"
@@ -190,7 +190,7 @@ label edit_video:
     cs "As always, I should make sure it's as good as possible so at least Linus will enjoy it, along with his fans."
     cs "But I also don't have much time before Linus comes back and notices, so I need to hurry!"
     show cs happy
-    if fun_value(30):
+    if fun_value(FUN_VALUE_MUSIC):
         cs "Welp, time to make a supernova of a video!"
     else:
         cs "Welp, time to get to work!"
@@ -246,7 +246,7 @@ label boost:
     show cs disappointed flipped at left
     show linus behind cs at left with ease
     show linus at center with ease
-    if fun_value(30):
+    if fun_value(FUN_VALUE_MUSIC):
         n "As CS turns around, he almost trips on a counter, one that looks like those found at the airport."
     else:
         n "As CS turns around, Linus gives him a friendly punch in the back."
@@ -365,7 +365,7 @@ label boost:
     linus "...Go ahead and cut."
     show cs disappointed
     cs "Who knew recording could be so stressful. I could use a drink. The lights are so bright."
-    if fun_value(15):
+    if fun_value(FUN_VALUE_COMMON):
         linus "Here. Take this water bottl-- oops!{w=0.5}{nw}"
         play sound "sfx_metalpipe.ogg"
         show cs scared with vpunch
@@ -421,7 +421,7 @@ label reviews:
     n "Suddenly, Arceus rushes in through the doors."
     show arceus worried at mid_right with moveinright
     show cs scared
-    if fun_value(30):
+    if fun_value(FUN_VALUE_MUSIC):
         arceus "CS! There you are! Hired guns are coming after us!"
     else:
         arceus "CS! There you are! We need to go, ASAP!"
@@ -492,7 +492,7 @@ label ytp_fan:
     linus "Who's there? Is anyone here?"
     n "Suddenly, Arceus rushes in through the doors."
     show arceus worried at mid_right with moveinright
-    if fun_value(30):
+    if fun_value(FUN_VALUE_MUSIC):
         arceus "CS! There you are! Hired guns are coming after us!"
     else:
         arceus "CS! There you are! We need to go, ASAP!"
@@ -573,7 +573,7 @@ label both_fan:
     linus "Who's there? Is anyone here?"
     n "Suddenly, Arceus rushes in."
     show arceus worried at mid_right with moveinright
-    if fun_value(30):
+    if fun_value(FUN_VALUE_MUSIC):
         arceus "CS! There you are! Hired guns are coming after us!"
     else:
         arceus "CS! There you are! We need to go, ASAP!"
@@ -668,7 +668,7 @@ label arc_escape:
     show colton at center
     with move
     show copguy at right with moveinright
-    if fun_value(30):
+    if fun_value(FUN_VALUE_MUSIC):
         n "Undyne bursts in."
     else:    
         n "Copguy bursts in."
@@ -735,7 +735,7 @@ label arc_escape:
     n "CS and Arceus approach the border guard again."
     show border_guard dusk at right with moveinright
     border_guard "I'm gonna need proof of--"
-    if fun_value(30):
+    if fun_value(FUN_VALUE_MUSIC):
         border_guard "Atarashii Kaze! It's you two buds again!"
     else:  
         border_guard "Ey, it's you two buds again!"
@@ -787,7 +787,7 @@ label arc_escape:
     stop music fadeout 3.0
     music end
     scene washington_road with fade
-    if fun_value(30):
+    if fun_value(FUN_VALUE_MUSIC):
         n "Meanwhile, CS and Arceus are still making their way through the US, while strange sounds seem to be echoing in the forest."
     else:  
         n "Meanwhile, CS and Arceus are still making their way through the US without any sense of direction."
@@ -1053,7 +1053,7 @@ label wait_forest:
     show copguy dark at right with moveinright
     play music "<loop 0>danger_mystery.ogg" volume 0.5
     music Danger Mystery - Toby Fox
-    if fun_value(30):
+    if fun_value(FUN_VALUE_MUSIC):
         copguy "Hey, ain't this a dangerous mystery."
     else:  
         copguy "Hey, you're finally awake."
@@ -1103,7 +1103,7 @@ label bad_convince:
     pause 1.0
     hide hold_it
     show cs scared
-    if fun_value(30):
+    if fun_value(FUN_VALUE_MUSIC):
         cs "Wait a second! I'm not actually CS! I'm cornered and I'm Pressing Pursuit!"
     else: 
         cs "Wait a second! I'm not actually CS!"
@@ -1128,7 +1128,7 @@ label good_convince:
     show hold_it at truecenter with hpunch
     pause 1.0
     hide hold_it
-    if fun_value(30):
+    if fun_value(FUN_VALUE_MUSIC):
         cs "Wait a second! The reason all this happened was because HoH SiS sabotaged my computer and cornered me! I'm Pressing Pursuit!"
     else: 
         cs "Wait a second! The reason all this happened was because HoH SiS sabotaged my computer!"
@@ -1189,7 +1189,7 @@ label good_convince:
     show arceus dark at mid_right_right
     show cs dark
     n "CS and Arceus look at each other and smile."
-    if fun_value(30):
+    if fun_value(FUN_VALUE_MUSIC):
         n "CS and Arceus look at each other and smile, doing their Bun Guster pose."  
     else: 
         n "CS and Arceus look at each other and smile."       
@@ -1221,7 +1221,7 @@ label choose_direction:
     with fade
     play music "<loop 0>happy_roaming.ogg" volume 0.5
     music Happy Roaming - Lorin Nelson
-    if fun_value(30):
+    if fun_value(FUN_VALUE_MUSIC):
         cs "We've been happily roaming all night, but I'm exhausted." 
     else: 
         cs "We've been walking all night. I'm exhausted."

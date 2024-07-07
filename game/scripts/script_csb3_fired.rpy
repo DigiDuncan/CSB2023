@@ -84,7 +84,7 @@ label new_plan:
     # DX: These lines should be rewritten for clarification, but doing so would require also changing the AI-gen audio.
     # "I'm officially pardoning Annorexorcist and Arceus3251 because they really helped me out of a pickle."
     # - Tate
-    if fun_value(20):
+    if fun_value(FUN_VALUE_RARE):
         play sound "<loop 0>sfx_obama.ogg" volume 0.5
         bomahanobeep "I'm officially pardoning Annorexorcist and Arceus3251, for helping me out of a pickle."
     else:
@@ -365,7 +365,7 @@ label song_2:
     arceus "Well, I guess tomorrow we can release this one!"
     anno "Sounds good!"
     cs "I'm getting tired. I think we should hit the sack."
-    if fun_value(10):
+    if fun_value(FUN_VALUE_COMMON):
         arceus "I'm gonna hit {i}my{/i} sack{nw}"
         # Ow, my sack :( - Arc
     arceus "Yeah, that sounds like a good idea."
@@ -1119,7 +1119,7 @@ label second_tour_day:
     show ges at right with moveinright
     with dissolve
     show cs at left with moveinleft
-    if fun_value(30):
+    if fun_value(FUN_VALUE_LEGENDARY):
         ges "Welcome to the sho-- woah, are you CS, eh?"
         cs "Yeah, how'd you know?"
         ges "Aren't you touring with [band_name] right now, eh?"
@@ -1288,7 +1288,7 @@ label third_tour_day:
     with MoveTransition(0.25)
     show cs worried with hpunch
     n "Mean tackle-hugs CS."
-    if fun_value(5):
+    if fun_value(FUN_VALUE_UNOBTRUSIVE):
         cs "Ow."
     
     show mean at right with move
@@ -1357,7 +1357,7 @@ label third_tour_day:
     arceus "Make something up!"
     n "CS shouts to the crowd."
     cs "Uh... hey, you guys! Give me a word!"
-    if fun_value(15):
+    if fun_value(FUN_VALUE_COMMON):
         crowd "Orange! {w=0.5}Monkey! {w=0.5}Eagle!"
         show cs concentrate
         n "CS desperately tries not to think about those words."

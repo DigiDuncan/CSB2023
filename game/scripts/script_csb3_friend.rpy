@@ -60,7 +60,7 @@ label microcenter:
     show cs disappointed
     cs "Too many good options! I don't know which one to pick!"
     show cs happy
-    if fun_value(40):
+    if fun_value(FUN_VALUE_COMMON):  # this was originally 1/40, but why???
         cs "Whatever, I'll get this AMD Threadripper."        
     else:
         cs "Whatever, I'll get this Intel i9."
@@ -404,7 +404,7 @@ label after_fanboy:
     pakoo "Oh, Linus brought me here to--"
     show arceus flipped angry
     arceus "Are you a cop? You'd better not be a cop."
-    if fun_value(50):
+    if fun_value(FUN_VALUE_LEGENDARY):
         cs "Hey, aren't you the guy who made {i}Petscop 2?{/i}"
         pakoo "Huh?"
     show arceus flipped
@@ -1024,7 +1024,7 @@ label after_cop_fight:
         pakoo "Thanks! I love this car."
     else:
         show pakoo
-    if fun_value(5):
+    if fun_value(FUN_VALUE_UNOBTRUSIVE):
         show pakoo happy
     else:
         show pakoo

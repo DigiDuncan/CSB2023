@@ -67,7 +67,7 @@ label car_ride_1:
     show pakoo worried with vpunch
     cs "JESUS!!"
     n "CS swerves all over the road after being startled."
-    if fun_value(5):
+    if fun_value(FUN_VALUE_UNOBTRUSIVE):
         show pakoo happy
     else:
         show pakoo
@@ -97,7 +97,7 @@ label car_ride_1:
         scene car_inside_fg
         show drive_day behind car_inside_fg
     show cs at left
-    if fun_value(5):
+    if fun_value(FUN_VALUE_UNOBTRUSIVE):
         show pakoo happy at right
     else:
         show pakoo at right
@@ -244,7 +244,7 @@ label cs_meetup_2:
     digi "Yeah, we're fine. How about you?"
     aria_alt "Yeah, I also had to fight some cops on the way to find CS."
     digi "Shit, so we need to get going, like, {i}now{/i}, before more come."
-    if fun_value(5):
+    if fun_value(FUN_VALUE_UNOBTRUSIVE):
         aria_alt "Yeah, they won't stop coming. Let's meet up with the rest of the crew first."
     else:
         aria_alt "Yeah, they won't stop coming. Fed to the rules, and I hit the ground running."
@@ -541,7 +541,7 @@ label copguy_pres:
     sheriff "Copguy, call this number."
     n "The sheriff sends Copguy the phone number, and Copguy dials it."
     copguy "Hello?"
-    if fun_value(20):
+    if fun_value(FUN_VALUE_RARE):
         bomaha "Who is this?"
         bomaha "How did you get this number?"
         copguy "Hey Mr. President, it's me, Copguy. There is a ragtag gang of criminals on the loose that we can't stop."
@@ -555,7 +555,7 @@ label copguy_pres:
         copguy "We sent the Montana National Guard to stop them, and this group plowed right through them."
         obama "I see."
         obama "Looks like we'll have to pull out the big guns."
-    if fun_value(20):
+    if fun_value(FUN_VALUE_RARE):
         bomaha "You are gonna head to Chigaco. I'll have a jet come pick you up."
     else:
         obama "You are gonna head to Chicago. I'll have a jet come pick you up."
@@ -578,7 +578,7 @@ label car_ride_3:
     music The Whale - Dr. Awesome
     n "While they are driving, Arceus notices that Copguy starts ludicrously speeding up until he stops in Illinois."
     arceus "Guys, I think I found out where Copguy is headed."
-    if fun_value(20):
+    if fun_value(FUN_VALUE_COMMON):
         arceus "He's stopped in Chigaco."
     else:
         arceus "He's stopped in Chicago."
@@ -804,7 +804,7 @@ label car_slam:
     digi "Holy shit! CS! You're alive!"
     cs "Yeah! How about you guys?"
     nova "I wanna fall over. I'm so tired."
-    if fun_value(20):
+    if fun_value(FUN_VALUE_COMMON):
         aria_alt "I never thought that our first meetup would be at a mall, and our second would be the destruction of Chigaco."  
     else:  
         aria_alt "I never thought that our first meetup would be at a mall, and our second would be the destruction of Chicago."

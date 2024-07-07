@@ -80,7 +80,7 @@ label billy_driver:
     unknown "Oh, uhh, hold on a second!"
     n "The mysterious driver walks behind the store."
     arceus "What are you doing? That man looks like he's going to kill us!"
-    if fun_value(30):
+    if fun_value(FUN_VALUE_MUSIC):
         arceus "He's probably selecting his 9mm, we need to lea--{w=1.5}{nw}"
     else:
         arceus "He's probably getting a gun, we need to lea--{w=1.5}{nw}"
@@ -111,7 +111,7 @@ label in_billy_car:
     show billy car
     play music "<loop 0>billy_radio.ogg" volume 0.3
     music Billy Mays Gangsta Remix - mastamokei
-    if fun_value(30):
+    if fun_value(FUN_VALUE_MUSIC):
         cs "Is this the Billy Mays Gangsta Remix?"
         billy "Yeah! I wrote this song myself!"
         cs "Cool, so are we going to New York?"
@@ -134,7 +134,7 @@ label montana:
     with fade
     play music "<loop 0>weird_personalities.ogg" volume 0.6
     music Weird Personalities - Lizardking
-    if fun_value(30):
+    if fun_value(FUN_VALUE_MUSIC):
         n "After a few hours of driving through Idaho, the trio finds themselves having weird personalities in the middle of Montana."
     else:
         n "After a few hours of driving through Idaho, the trio finds themselves in the middle of Montana."
@@ -170,7 +170,7 @@ label montana:
     play music "<loop 0>home_depot.ogg" volume 0.4
     music "Let's Do This - Home Depot"
     show cs at left with moveinleft
-    if fun_value(30):
+    if fun_value(FUN_VALUE_MUSIC):
         cs "Alright, Let's do this!"
         cs "They have a lot of stuff here!"
     else:
@@ -238,7 +238,7 @@ label montana:
     show billy car
     play music "<loop 0>candle_world.ogg" volume 0.4
     music Candle World - Kikiyama
-    if fun_value(30):
+    if fun_value(FUN_VALUE_MUSIC):
         "CS and Arceus" "What in the candle world?"
     else:
         "CS and Arceus" "What in the world?"
@@ -329,7 +329,7 @@ label montana:
     # tate was here
     # this fun value references CS messing up reading during the livestream (around 2:37:45 of part 2 stream)
     # thanks brodie for finding the timestamp for me
-    if fun_value(23):
+    if fun_value(23):  # this is 23 to reference the timecode
         cs_fakegod "You'd better leave these three alone, or I'll, uh, {i}shite{/i} you!"
         cultist "CSGod doesn't smite, he uses YTP Mag--{w=0.5}"
         cultist "Wait, did you say \"shite\"?"
@@ -386,7 +386,7 @@ label montana:
     n "The gang gets back in the car and books it out of the forest."
     n "After a while, Billy pulls the car into a small area at the edge of the forest to let everyone rest."
     scene black with fade
-    if fun_value(30):
+    if fun_value(FUN_VALUE_MUSIC):
         n "The night passes, then they set off, passing by Mort's farm."
     else:
         n "The night passes, then they set off once again."
@@ -443,7 +443,7 @@ label south_dakota:
     show cs at right with moveinleft
     show arceus flipped at center with moveinleft
     show billy at left with moveinleft
-    if fun_value(30):
+    if fun_value(FUN_VALUE_MUSIC):
         pause 1.0
         show cs disappointed
         pause 2.0
@@ -485,7 +485,7 @@ label south_dakota:
     scene car plains
     show billy car
     with fade
-    if fun_value(30):
+    if fun_value(FUN_VALUE_MUSIC):
         n "They continue to drive on Track 4 through the massive and empty plains of South Dakota."
     else:
         n "They continue to drive through the massive and empty plains of South Dakota."
@@ -495,7 +495,7 @@ label south_dakota:
     cs "There really {i}is{/i} nothing out here, is there?"
     arceus "Nope. I don't get how people can even {i}live{/i} here."
     billy "We're, like, halfway through the Midwest. We've only got a couple states left to travel before we are in the heartland."
-    if fun_value(10):
+    if fun_value(FUN_VALUE_COMMON):
         n "Billy follows the Missouri River down until they arrive in Nebraskaska."       
     else:    
         n "Billy follows the Missouri River down until they arrive in Omaha."
@@ -505,7 +505,7 @@ label nebraska:
     scene omaha
     show billy car
     with fade
-    if fun_value(10):
+    if fun_value(FUN_VALUE_COMMON):
         n "The gang finally hits Nebraskaska right before sundown."
     else:
         n "The gang finally hits Omaha right before sundown."
@@ -539,7 +539,7 @@ label nebraska:
     show cs happy flipped
     cs "Yeah! I haven't seen you in a while. I never thought you'd live in a place like {i}this!{/i}"
     show cs flipped
-    if fun_value(10):
+    if fun_value(FUN_VALUE_UNOBTRUSIVE):
         pakoo "I never thought you guys would come down to Nebraskaska. There's, like, nothing here."
         show baumer flipped at mid_left with moveinleft
         show arceus worried
@@ -588,7 +588,7 @@ label nebraska:
     show billy at right behind pakoo with moveinleft
     show cs at left with moveinleft
     show arceus flipped at mid_left with moveinleft
-    if fun_value(30):
+    if fun_value(FUN_VALUE_MUSIC):
         peppino "Hey Piezanos, it's the Funiculi Holiday! whatcha want today?"
     else:
         peppino "Hey Piezanos, whatcha want today?"
@@ -606,7 +606,7 @@ label nebraska:
     cs "Damn, this is some good pizza!"
     show arceus happy flipped
     arceus "Probably some of the best pizza I've ever had."
-    if fun_value(10):
+    if fun_value(FUN_VALUE_COMMON):
         billy "Better than my restroom mini-burgers!"
     else:
         billy "Better than my restaurant mini-burgers!"
@@ -631,7 +631,7 @@ label iowa:
     billy "Alright, well, ever since that cult encounter, it's been pretty smooth sailing!"
     billy "The rest of this trip shouldn't be too long!"
     n "As if on cue, a strange sound is heard from overhead."
-    if fun_value(30):
+    if fun_value(FUN_VALUE_MUSIC):
         n "CS looks out the window, to see what looks like a speedy comet." 
     else:
         n "CS looks out the window."    
@@ -676,11 +676,11 @@ label after_ufo:
     jump michigan
   
 label ohio:
-    if fun_value(50):
+    if fun_value(FUN_VALUE_EPIC):
         scene car plains
         show billy car
         with fade
-        if fun_value(30):
+        if fun_value(FUN_VALUE_MUSIC):
             n "After that fiasco, they continue their trip, breaking out of Indiana and soon passing through Ohio."
         else:
             n "After that fiasco, they continue their trip, soon passing through Ohio."
@@ -719,7 +719,7 @@ label ohio:
         scene car plains
         show billy car
         with fade
-        if fun_value(30):
+        if fun_value(FUN_VALUE_MUSIC):
             n "After that fiasco, they continue their trip, breaking out of Indiana and soon passing through Ohio."
         else:
             n "After that fiasco, they continue their trip, soon passing through Ohio."
@@ -931,7 +931,7 @@ label pennsylvania:
     stop music fadeout 3.0
     n "CS glances over at Digi and they nod at each other."
     host "3..."
-    if fun_value(50):
+    if fun_value(FUN_VALUE_LEGENDARY):
         n "Digi looks to be smacking his arm."
         $ archack = True
     else:
@@ -1010,7 +1010,7 @@ label win_pencil:
     # tate was here
     # this fun value references CS messing up reading during the livestream (around 4:07:05 of part 2 stream)
     # thanks brodie for finding the timestamp for me
-    if fun_value(40):
+    if fun_value(40):  # this is 40 to reference the timecode
         cs "Well, that was a lot of excrement for one day. Let's head home."
         arceus "A lot of what, now?"
         cs "A lot of... huh?"
@@ -1194,7 +1194,7 @@ label talktohohsis:
     pencil "I knew you were a cool dude!"
     show border_guard at mid_mid_left behind cs with moveinleft
     border_guard "I'm important too, eh!"
-    if jade or fun_value(10):
+    if jade or fun_value(FUN_VALUE_COMMON):
         show bubble at center behind border_guard with moveinbottom
         show bubble with vpunch
         $ persistent.seen.add("bubble")

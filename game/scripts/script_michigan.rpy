@@ -291,7 +291,7 @@ label interstate_69_old:
     # DX: It could be funny to have an option to ignore the gnome for a while
     play music "<loop 0>wayward_wanderer.ogg" volume 0.7
     music Wayward Wanderer - Deep Gnome
-    if fun_value(30):
+    if fun_value(FUN_VALUE_MUSIC):
         gnome "Hallo, I am a Wayward Wanderer, may I enter your Automobile?"
     else:
         gnome "Hallo, may I enter your Automobile?" 
@@ -703,7 +703,7 @@ label interstate_69_old:
     cs "That's not a good thing..."
     scene doll_eye_tree
     n "Aria stopped listening because it's distracted by a tree up ahead."
-    if fun_value(10): 
+    if fun_value(FUN_VALUE_COMMON): 
         aria "Here's one of the white baneberries that I was talking about. They're also known as {i}Actaea Pakoopoda,{/i} or Doll's Eyes."
     else:
         aria "Here's one of the white baneberries that I was talking about. They're also known as {i}Actaea Pachypoda,{/i} or Doll's Eyes."
@@ -858,7 +858,7 @@ label interstate_69:
     # DX: It could be funny to have an option to ignore the gnome for a while
     play music "<loop 0>wayward_wanderer.ogg" volume 0.7
     music Wayward Wanderer - Deep Gnome
-    if fun_value(30):
+    if fun_value(FUN_VALUE_MUSIC):
         gnome "Hallo, I am a Wayward Wanderer, may I enter your Automobile?"
     else:
         gnome "Hallo, may I enter your Automobile?" 
@@ -956,7 +956,7 @@ label interstate_69:
     show waitress at right with moveinright
     waitress "Welcome, welcome. Please wait, and I'll come seat you in a minute."
     hide waitress with moveoutright
-    if fun_value(30):
+    if fun_value(FUN_VALUE_MUSIC):
         n "As everyone is waiting, the strange misleading grey blob in the corner notices the group and floats over."
     else:
         n "As everyone is waiting, the strange glowing grey blob in the corner notices the group and floats over."
@@ -1180,7 +1180,7 @@ label interstate_69:
     with dissolve
     play music "<loop 0>dense_woods_b.ogg" volume 0.5
     music Dense Woods B - Kikiyama
-    if fun_value(30):
+    if fun_value(FUN_VALUE_MUSIC):
         cs "Wouldn't you say these are some Dense Woods, Billy?"
     else:
         billy "Why does the window by the entrance have to be bright red?"
@@ -1254,7 +1254,7 @@ label interstate_69:
     scene creepy_path_4 with dissolve
     play music "melancholy.ogg"
     music Melancholy - Imori
-    if fun_value(30):
+    if fun_value(FUN_VALUE_MUSIC):
         aria "If you look to the right, you'll see one of my favorite, melancholy, paths in the woods."
     else:
         aria "If you look to the right, you'll see one of my favorite paths in the woods."
@@ -1265,7 +1265,7 @@ label interstate_69:
     cs "That's not a good thing..."
     scene doll_eye_tree
     n "Aria stopped listening because it's distracted by a tree up ahead."
-    if fun_value(10): 
+    if fun_value(FUN_VALUE_COMMON): 
         aria "Here's one of the white baneberries that I was talking about. They're also known as {i}Actaea Pakoopoda,{/i} or Doll's Eyes."
     else:
         aria "Here's one of the white baneberries that I was talking about. They're also known as {i}Actaea Pachypoda,{/i} or Doll's Eyes."

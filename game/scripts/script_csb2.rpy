@@ -148,7 +148,7 @@ label questioning:
     music Card Castle - Toby Fox
     show cs disappointed at left with moveinleft
     show copguy at right with moveinright
-    if fun_value(30):
+    if fun_value(FUN_VALUE_MUSIC):
         copguy "Alright, CS. This is the Card Castle."
     else:
         copguy "Alright, CS. A lot of crazy things happened today."
@@ -185,7 +185,7 @@ label asylum:
     show cs insane worried flipped at left with moveinright
     show cs insane worried with determination
     show asylum_worker at right with moveinright
-    if fun_value(30):
+    if fun_value(FUN_VALUE_MUSIC):
         asylum_worker "Here's your basement. Enjoy living out the rest of your life here."
     else:
         asylum_worker "Here's your room. Enjoy living out the rest of your life here."
@@ -212,7 +212,7 @@ label asylum:
     cs "{i}What?!{/i} How? I am so confused."
     
     # tate was here
-    if fun_value(5):
+    if fun_value(FUN_VALUE_UNOBTRUSIVE):
         csgod "You channeled my power. You had it all, right there at your fingertits."
         csgod "That was how you were able to use those abilities back at HoH SiS HQ."
     else:
@@ -271,7 +271,7 @@ label jail:
 
     play music "<loop 0>stal.ogg" volume 0.4
     music stal - C418
-    if fun_value(30):
+    if fun_value(FUN_VALUE_MUSIC):
         cs "Oh, hi, Arceus. Sorry for stal-ing."
     else:
         cs "Oh, hi, Arceus."
@@ -328,7 +328,7 @@ label breakout:
     centered "The next evening..."
     play music "<loop 0>moongazer.ogg" volume 0.5
     music Moongazer - Dr. Awesome
-    if fun_value(30):
+    if fun_value(FUN_VALUE_MUSIC):
         anno "I can't wait to gaze at the moon again once we're out of here."
         cs "Key, check."
     else:
@@ -383,7 +383,7 @@ label bordercrossing:
     scene border with fade
     play music "<loop 0>onett.ogg" volume 0.6
     music Onett Theme - Keiichi Suzuki
-    if fun_value(30):
+    if fun_value(FUN_VALUE_MUSIC):
         n "CS, Anno, and Arceus emerge and begin heading north towards Onett. Theme."
     else:
         n "CS, Anno, and Arceus emerge and begin heading north towards the border crossing."
@@ -391,7 +391,7 @@ label bordercrossing:
 
     show border_guard at center with dissolve
     # INTENTIONAL DISSOLVE: Pokemon reference
-    if fun_value(10):
+    if fun_value(FUN_VALUE_COMMON):
         border_guard "Eh, Schnitzelburg!"
     border_guard "I'm going to need proof of citizenship, eh."
     show border_guard at right with move
@@ -408,7 +408,7 @@ label bordercrossing:
     $ renpy.music.set_pause(True, "music")
     play music2 "star_spangled_banner.ogg"
     music The Star Spangled Banner - THE UNITED STATES OF AMERICA
-    if fun_value(30):
+    if fun_value(FUN_VALUE_MUSIC):
         n "The crew looks behind them and hears The Star Spangled Banner playing."
     else:
         n "The crew looks behind them and still sees a faint American flag waving."
@@ -442,7 +442,7 @@ label bordercrossing:
     show anno at left with moveinleft
     
     show cs flipped
-    if fun_value(30):
+    if fun_value(FUN_VALUE_MUSIC):
         anno "Arceus, buy something, will ya?"
     else: 
         anno "Finally."
@@ -513,16 +513,16 @@ label bordercrossing:
     scene inside_ltt
     show linus
     with fade
-    if fun_value(25):
+    if fun_value(FUN_VALUE_RARE):
         play music "<loop 0>passport_ytp.ogg" volume 0.5
     else:
         play music "<loop 0>passport.ogg" volume 0.5
-    if fun_value(90):
+    if fun_value(FUN_VALUE_EPIC):
         show passportdigi with dissolve
     else:
         hide passportdigi
     music PASSPORT.MID - George Stone
-    if fun_value(30):
+    if fun_value(FUN_VALUE_MUSIC):
         linus "Sure, you can have a job. Just show us your passport and you're ready to go!"
     else: 
         linus "Sure, you can have a job. Just show us proof of citizenship and you're ready to go!"
@@ -533,7 +533,7 @@ label bordercrossing:
     scene outside_ltt
     show arceus at right
     with dissolve
-    if fun_value(90):
+    if fun_value(FUN_VALUE_EPIC):
         show passportdigi with dissolve
     else:
         hide passportdigi
@@ -550,7 +550,7 @@ label bordercrossing:
 
     scene alley
     with dissolve
-    if fun_value(90):
+    if fun_value(FUN_VALUE_EPIC):
         show passportdigi with dissolve
     else:
         hide passportdigi
@@ -574,7 +574,7 @@ label bordercrossing:
     scene outside_ltt
     show cs at left
     with dissolve
-    if fun_value(90):
+    if fun_value(FUN_VALUE_EPIC):
         show passportdigi with dissolve
     else:
         hide passportdigi
@@ -588,7 +588,7 @@ label bordercrossing:
     scene inside_ltt
     show linus
     with fade
-    if fun_value(90):
+    if fun_value(FUN_VALUE_EPIC):
         show passportdigi with dissolve
     else:
         hide passportdigi
@@ -603,7 +603,7 @@ label bordercrossing:
     show anno at right
     show arceus flipped at left
     with fade
-    if fun_value(90):
+    if fun_value(FUN_VALUE_EPIC):
         show passportdigi with dissolve
     else:
         hide passportdigi

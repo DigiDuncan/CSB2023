@@ -59,7 +59,7 @@ label knocked_out:
     n "As CS' vision fades back into view, he can hear a faint heart monitor beeping."
     scene hospital_room with dissolve
     n "CS immediately snaps up."
-    if fun_value(40):
+    if fun_value(FUN_VALUE_LEGENDARY):
         show cs disappointed metal at mid_left with moveinbottom
         cs "Wha--"
         cs "What happened? How long have I been out?"
@@ -1204,7 +1204,7 @@ label japan:
     n "CS exits the terminal and enters the airport."
     scene tokyo_airport with fade
     show cs at center with moveinleft
-    if fun_value(10):
+    if fun_value(FUN_VALUE_COMMON):
         play music "<loop 0>yuuka_town.ogg" volume 0.4
     else:        
         play music "<loop 0>automatic_love.ogg" volume 0.4
@@ -1235,7 +1235,7 @@ label japan_two:
     n "CS exits the terminal and enters the airport."
     scene tokyo_airport with fade
     show cs at center with moveinleft
-    if fun_value(10):
+    if fun_value(FUN_VALUE_COMMON):
         play music "<loop 0>yuuka_town.ogg" volume 0.4
     else:  
         play music "<loop 0>automatic_love.ogg" volume 0.4
@@ -1382,7 +1382,7 @@ label anime_adventure:
     scene tokyo_street_night
     show cs at center
     with fade
-    if fun_value(10):
+    if fun_value(FUN_VALUE_COMMON):
         play music "<loop 0>yuuka_town.ogg" volume 0.4
     else:  
         play music "<loop 0>automatic_love.ogg" volume 0.4
@@ -1436,7 +1436,7 @@ label karaoke:
     show cs
     with fade
     $ achievement_manager.unlock("Dame Da Ne")
-    if fun_value(10):
+    if fun_value(FUN_VALUE_COMMON):
         play music "<loop 0>yuuka_town.ogg" volume 0.4
     else:  
         play music "<loop 0>automatic_love.ogg" volume 0.4
@@ -1470,7 +1470,7 @@ label miku_pizza:
     cashier "Who??"
     cs "Scott! The president of Domino's Pizza!"
     cashier "Man, I'm just the cashier here. You think I know the {i}president?{/i}"
-    if fun_value(20):
+    if fun_value(FUN_VALUE_RARE):
         obama "Hi.{w=0.5}{nw}"
     show cs
     cs "How can I find him, then?"
@@ -1507,7 +1507,7 @@ label miku_pizza:
     scene black with dissolve
     pause 1.0
     scene ceo_office
-    if fun_value(50):
+    if fun_value(FUN_VALUE_LEGENDARY):
         show scott at right
     else:
         show scott_pres at right
@@ -1556,7 +1556,7 @@ label miku_pizza:
     show cs at left
     show miku at right
     with fade
-    if fun_value(10):
+    if fun_value(FUN_VALUE_COMMON):
         play music "<loop 0>yuuka_town.ogg" volume 0.4
     else:  
         play music "<loop 0>automatic_love.ogg" volume 0.4
@@ -1795,7 +1795,7 @@ label aurora_borealis:
     moomin "I don't mean to alarm you. I just wanted to say hi."
     show cs flipped
     moomin "Who are you?"
-    if fun_value(40): 
+    if fun_value(FUN_VALUE_LEGENDARY): 
         cs "My name is Walter Hartwell White. I live at 308 Negra Arroyo Lane, Albuquerque, New Mexico, 87104."
         moomin "I don't believe you."
         cs "Oh, okay. You're right, I'm actually CS. What's your name?"
@@ -1833,7 +1833,7 @@ label aurora_borealis:
     moomin "There's me, Moominmama, and Moominpapa."
     cs "Wait, so just three of you?"
     moomin "Well, there's also the Snork and Snorkmaiden. They look kinda like us, but they're Snorks, not Moomins."
-    if fun_value(5):
+    if fun_value(FUN_VALUE_UNOBTRUSIVE):
         cs "If there are only three or maybe five of you, how did you evolve?"
         cs "Where did you all come from?"
         moomin "Just let it be fun."

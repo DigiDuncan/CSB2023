@@ -37,7 +37,7 @@ label csbi_start:
     with dissolve
     play music "<loop 0>lets_hear_my_baby.ogg" volume 0.15
     music "Let's hear my baby - Walkman"
-    if fun_value(30):
+    if fun_value(FUN_VALUE_MUSIC):
         cs "Welp, Let's hear my baby."
     else:
         cs "Welp, time to start up the ol' Craptop."
@@ -107,7 +107,7 @@ label csbi_start:
     with fade
     play music "canyon.ogg" volume 0.2
     music CANYON.MID - George Stone
-    if fun_value(30):
+    if fun_value(FUN_VALUE_MUSIC ):
         cs "Woah! Is that a canyon over there?"
     else:    
         cs "Nice day!"
@@ -169,7 +169,7 @@ label walmart:
 
     n "CS walks inside."
     show doug at right with moveinright
-    if fun_value(30):
+    if fun_value(FUN_VALUE_MUSIC ):
         greeter "Welcome, the Summer Clearance Sale is going on! Isn't this the BEST MUSIC ever?"
     else:
         greeter "Hello, and welcome to Walmart! Can I help you with anything?"
@@ -239,7 +239,7 @@ label room:
     play music "<loop 0>scales_of_joy.ogg" volume 0.3
     music scales of joy.mod - Mel O Dee
     n "CS sits down at his craptop and opens up Premiere."
-    if fun_value(30):
+    if fun_value(FUN_VALUE_MUSIC ):
         cs "Ooooh! I can really feel the scales of joy! People would be excited to finally see this as a finished product."
     else:
         cs "Ooooh! Here's the one from my last editing stream. People would be excited to finally see this as a finished product."
@@ -298,7 +298,7 @@ label room:
     show ed at right with moveinright
     play music "<loop 0>hohsis_theme.ogg" volume 0.2
     music Alfred Hitchcock Intro Theme - Charles Gounod
-    if fun_value(30):
+    if fun_value(FUN_VALUE_MUSIC ):
         ed "Alright, that will be Alfred Hitchcock Intro Theme."
         show cs disappointed
         cs "What?"
@@ -407,7 +407,7 @@ label rosen_house:
     music Super Friendly - Kevin Macleod
     show michael at right with moveinright
     show cs flipped at offscreenright
-    if fun_value(30):
+    if fun_value(FUN_VALUE_MUSIC ):
         michael "Come in! Come in! I'm Super Friendly!"
     else:
         michael "Come in! Come in!"
@@ -523,7 +523,7 @@ label csbi_end:
     cs "They didn't even do the JoJ!"
     show craptop sad at rotate_6 with hpunch
     play sound "sfx_punch.ogg"
-    if fun_value(20):
+    if fun_value(FUN_VALUE_RARE):
         play sound "secret/sfx_gul.ogg"
     pause 1.0
     scene cs_room
@@ -538,7 +538,7 @@ label csbi_end:
     with dissolve
     play music "<loop 0>time_for_a_smackdown.ogg" volume 0.2
     music Time for a Smackdown! - Mr. Sauceman
-    if fun_value(30):
+    if fun_value(FUN_VALUE_MUSIC):
         cs "Alright! It's time for a Smackdown!"       
     else:    
         cs "Alright! Where are the head JoJites?!"
@@ -571,7 +571,7 @@ label csbi_end:
     show cs angry at mid_right with move
     show worker_3 at mid_center_right with hpunch
     hide worker_3 with moveoutright
-    if fun_value(5):
+    if fun_value(FUN_VALUE_UNOBTRUSIVE):
         cs "Ow."
         mean "AUUUUUGH!!"
     show cs angry at offscreenright with move
