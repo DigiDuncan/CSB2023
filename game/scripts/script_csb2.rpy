@@ -354,6 +354,8 @@ label breakout:
 
     scene tunnel with fade
     # If anyone asks, Arceus is part god and can dig really easily, I guess.
+
+    dxcom tint
     n "They begin digging quickly, putting distance between themselves and their cells."
     show cs guard dark at left with easeinleft
     cs "Jeez... I didn't think that would actually work."
@@ -376,6 +378,7 @@ label breakout:
     stop music fadeout 3.0
     music end
 
+    hide screen dxcom
     hide cs with dissolve
     hide arceus with dissolve
     hide anno with dissolve

@@ -92,5 +92,31 @@
             "transcript": "I was the man responsible for writing the prison escape scene. I believe to this date it was the only thing I actually wrote. I never actually expected to be a wingman or a secondary main character, honestly it felt pretty selfish of me. But then I was basically told straight up \"Yeah, we just had no one else, and you were just there\".",
             "length": 17.9
         }
-    ]
+    ],
+	"tint": [
+        {
+            "audio_path": "tint1",
+            "speaker": "Arceus",
+            "transcript": "These lighting effects actually are generated when the game first starts up, I figured out how to apply a TintMatrix to an image and alter it's color and lighting.",
+            "length": 7.7
+        },
+        {
+            "audio_path": "tint2",
+            "speaker": "Kitty",
+            "transcript": "At first they sucked.",
+            "length": 1.6
+        },
+        {
+            "audio_path": "tint3",
+            "speaker": "Arceus",
+            "transcript": "Wow, thanks.",
+            "length": 1.7
+        },
+        {
+            "audio_path": "tint4",
+            "speaker": "Kitty",
+            "transcript": "But then, together we altered it to be what you see now.",
+            "length": 3.3
+        }
+    ],
 }
