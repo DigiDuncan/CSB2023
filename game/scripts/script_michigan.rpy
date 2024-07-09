@@ -202,7 +202,7 @@ label bronson_win:
     billy "Which one are you guys down to take? I'm honestly up for anything that's not blood red skies again."
     menu:
         "Which road should we take?"
-        "I-69":
+        "I-69" (type = "warning"):
             jump interstate_69
         "I-94":
             jump interstate_94
@@ -227,7 +227,7 @@ label continue_michigan:
     billy "I guess it's up to you then, CS."
     menu:
         "Which road should we take?"
-        "I-69":
+        "I-69" (type = "warning"):
             jump interstate_69
         "I-94":
             jump interstate_94

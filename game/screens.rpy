@@ -222,6 +222,8 @@ screen choice(items):
                 textbutton "{color=#ff0000}[i.caption]" action i.action
             elif choice_type == "dx":
                 textbutton "{image=gui/dx_text.png} {color=#0099cc}[i.caption]" action i.action
+            elif choice_type == "warning":
+                textbutton "{image=gui/warning_text.png} {color=#ffff00}[i.caption]" action i.action
             else:
                 textbutton i.caption action i.action
 

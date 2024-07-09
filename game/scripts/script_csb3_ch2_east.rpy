@@ -1300,7 +1300,7 @@ label true_ending:
     cs "I'll have to make sure to call them later!"
     if persistent.true_ending:
         menu:
-            "Go to sleep":
+            "Go to sleep" (type = "warning"):
                 jump archival
             "Stream" (type = "true"):
                 jump streaming
