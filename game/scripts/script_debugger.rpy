@@ -759,6 +759,7 @@ label asset_debugger:
         play sound "sfx_punchalt.ogg"
         play music "fourside.ogg"
         scene microinside
+        show copguyexe at center
         show cs phone at left
         signup "test 57{w=0.5}{nw}"
     else:
@@ -767,6 +768,7 @@ label asset_debugger:
         play sound "sfx_ringtone.ogg"
         play music "france.ogg"
         scene cashzone
+        show copguyexe flipped at center
         show cs phone flipped at left
         host "test 58{w=0.5}{nw}"
     else:
@@ -924,6 +926,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(76):
+        play sound "secret/sfx_explosion.ogg"
         play music "insane_personalities.ogg"
         scene hospital_room
         show cs at center_left
@@ -932,6 +935,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(77):
+        play sound "secret/sfx_funni.ogg"
         play music "killcops.ogg"
         scene hospital_reception
         show cs at center_right
@@ -940,6 +944,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(78):
+        play sound "secret/sfx_gul.ogg"
         play music "klaxon_beat.ogg"
         scene ticket_counter
         show cs at mid_center_right
@@ -948,6 +953,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(79):
+        play sound "secret/sfx_vine.ogg"
         play music "la_by_night.ogg"
         scene backseat
         show cs at mid_offscreen_right
@@ -1005,12 +1011,686 @@ label asset_debugger:
 
     if fun_value(86):
         play music "lisbon_fever.ogg"
-        scene hotel_hall
+        scene falling_apart
         show cs at t_copguy_frontseat
         agent "test 86{w=0.5}{nw}"
     else:
         jump exit_debug
+    if fun_value(87):
+        play music "local_forecast.ogg"
+        scene ltx
+        show cs at t_arc_at_tims
+        receptionist "test 87{w=0.5}{nw}"
+    else:
+        jump exit_debug
 
+    if fun_value(88):
+        play music "lowbudget_song.ogg"
+        scene ltx_stage
+        show cs at t_cs_ltt
+        scott_pres "test 88{w=0.5}{nw}"
+    else:
+        jump exit_debug
+
+    if fun_value(89):
+        play music "maladys_melody.ogg"
+        scene in_limo
+        show cs at t_linus_ltt
+        miku "test 89{w=0.5}{nw}"
+    else:
+        jump exit_debug
+
+    if fun_value(90):
+        play music "Melancholy.ogg"
+        scene tour_bus_inside
+        show cs at t_pepzone1
+        hammond "test 90{w=0.5}{nw}"
+    else:
+        jump exit_debug
+
+    if fun_value(91):
+        play music "mis_leader.ogg"
+        scene big_stage
+        show cs at t_pepzone2
+        jeremy "test 91{w=0.5}{nw}"
+    else:
+        jump exit_debug
+
+    if fun_value(92):
+        play music "mm_complete.ogg"
+        scene stage2
+        show cs at t_linus_drop_tips
+        james "test 92{w=0.5}{nw}"
+    else:
+        jump exit_debug
+
+    if fun_value(93):
+        play music "mm_select.ogg"
+        scene cs_door_outside
+        show cs at t_gun
+        tom "test 93{w=0.5}{nw}"
+    else:
+        jump exit_debug
+
+    if fun_value(94):
+        play music "moongazer.ogg"
+        scene manitoba_street
+        show cs at t_stage_screen_1
+        sayori "test 94{w=0.5}{nw}"
+    else:
+        jump exit_debug
+
+    if fun_value(95):
+        play music "morning_highway.ogg"
+        scene shoe_store
+        show cs at t_stage_screen_c
+        gnome "test 95{w=0.5}{nw}"
+    else:
+        jump exit_debug
+
+    if fun_value(96):
+        play music "mort_farm.ogg"
+        scene washington_road day
+        show cs at t_stage_screen_r
+        chat "test 96{w=0.5}{nw}"
+    else:
+        jump exit_debug
+
+    if fun_value(97):
+        play music "moving_right_along.ogg"
+        scene washington_road dusk
+        show cs at t_stagescreen
+        unknown "test 97{w=0.5}{nw}"
+    else:
+        jump exit_debug
+
+    if fun_value(98):
+        play music "muumin_tani_fuyu.ogg"
+        scene washington_road morning
+        show cs at t_punchup
+        crowd "test 98{w=0.5}{nw}"
+    else:
+        jump exit_debug
+
+    if fun_value(99):
+        play music "neko_to_sanpo.ogg"
+        scene town
+        show cs at t_mean_dining_car
+        worker "test 99{w=0.5}{nw}"
+    else:
+        jump exit_debug
+
+    if fun_value(100):
+        play music "night.ogg"
+        scene gasinside
+        show cs at lego_run
+        streetguy "test 100{w=0.5}{nw}"
+    else:
+        jump exit_debug
+
+    if fun_value(101):
+        play music "nordic_report_1.ogg"
+        scene gasoutside
+        show cs at car_run
+        waitress "test 101{w=0.5}{nw}"
+    else:
+        jump exit_debug
+
+    if fun_value(102):
+        play music "nordic_report_2.ogg"
+        scene carback1
+        show cs at typewriter_location
+        mario "test 102{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(103):
+        play music "now_what.ogg"
+        scene hardwareinside
+        show cs at midoffscreenright
+        smiley "test 103{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(104):
+        play music "onett.ogg"
+        scene hardwareoutside
+        show cs at midoffscreenleftspin
+        violent_jay "test 104{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(105):
+        play music "park_theme.ogg"
+        scene cultforest
+        show cs at offscreenrightspin
+        shaggy_too_dope "test 105{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(106):
+        play music "passport.ogg"
+        scene mcdonalds
+        show cs at offscreenleftspin
+        joel "test 106{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(107):
+        play music "passport_real.ogg"
+        scene mcdees
+        ikea_greeter "test 107{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(108):
+        play music "passport_ytp.ogg"
+        scene rushmore
+        ikea_worker "test 108{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(109):
+        play music "penthouse.ogg"
+        scene csmore
+        pomni "test 109{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(110):
+        play music "pixel_peeker_polka.ogg"
+        scene omaha
+        average_swede "test 110{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(111):
+        play music "pokey.ogg"
+        scene alleyway
+        alien "test 111{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(112):
+        play music "police_station.ogg"
+        scene peppinopizzabg
+        moomin "test 112{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(113):
+        play music "pressing_pursuit_cornered.ogg"
+        scene peppinopizzafg
+        snufkin "test 113{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(114):
+        play music "price_right.ogg"
+        scene wozniaktroubles
+        alicia "test 114{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(115):
+        play music "prophet_2001.ogg"
+        scene cshouse_vaporized
+        witch "test 115{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(116):
+        play music "prophetpart2.ogg"
+        scene cscar1
+        renovator "test 116{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(117):
+        play music "real_world.ogg"
+        scene cscar1arc
+        cruise "test 117{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(118):
+        play music "rosens_loop.ogg"
+        scene cscar2
+        baumer "test 118{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(119):
+        play music "scales_of_joy.ogg"
+        scene utah
+        copguyexe "test 119{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(120):
+        play music "school.ogg"
+        scene utahsign
+        l_cultist "test 120{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(121):
+        play music "showtime.ogg"
+        scene utahnight
+        tate_offscreen "test 121{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(122):
+        play music "snufkin.ogg"
+        scene pizzaplace
+        pakoo_offscreen "test 122{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(123):
+        play music "speedy_comet.ogg"
+        scene legodoor
+        green_offscreen "test 123{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(124):
+        play music "stal.ogg"
+        scene legodooropen
+        anno_offscreen "test 124{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(125):
+        play music "star_spangled_banner.ogg"
+        scene legostage
+        ed_ai "test 125{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(126):
+        play music "street_noise.ogg"
+        scene vegas
+        obamanobeep "test 126{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(127):
+        play music "summer_clearance_sale.ogg"
+        scene strip
+        bomahanobeep "test 127{w=0.5}{nw}"
+    else:
+        jump exit_debug
+    if fun_value(128):
+        play music "super_friendly.ogg"
+        scene slots
+        pause 1.0
+    else:
+        jump exit_debug
+    if fun_value(129):
+        play music "sweet_victory.ogg"
+        scene tablegames
+        pause 1.0
+    else:
+        jump exit_debug
+    if fun_value(130):
+        play music "taiikusai_desu_yo.ogg"
+        scene pokertable
+        pause 1.0
+    else:
+        jump exit_debug
+    if fun_value(131):
+        play music "take_trip.ogg"
+        scene luigi1
+        pause 1.0
+    else:
+        jump exit_debug
+    if fun_value(132):
+        play music "take_trip2.ogg"
+        scene luigi2
+        pause 1.0
+    else:
+        jump exit_debug
+    if fun_value(133):
+        play music "the_rest_of_bubble_tea.ogg"
+        scene vegasbathroom
+        pause 1.0
+    else:
+        jump exit_debug
+    if fun_value(134):
+        play music "the_whale.ogg"
+        scene backroomcasino
+        pause 1.0
+    else:
+        jump exit_debug
+    if fun_value(135):
+        play music "thousand_march.ogg"
+        scene outsafe
+        pause 1.0
+    else:
+        jump exit_debug
+    if fun_value(136):
+        play music "time_for_a_smackdown.ogg"
+        scene outsafeopen
+        pause 1.0
+    else:
+        jump exit_debug
+    if fun_value(137):
+        play music "track3.ogg"
+        scene insafe
+        pause 1.0
+    else:
+        jump exit_debug
+    if fun_value(138):
+        play music "track4.ogg"
+        scene carpark
+        pause 1.0
+    else:
+        jump exit_debug
+    if fun_value(139):
+        play music "trans_atlantic.ogg"
+        scene casino1
+        pause 1.0
+    else:
+        jump exit_debug
+    if fun_value(140):
+        play music "trash_zone.ogg"
+        scene fazhall
+        pause 1.0
+    else:
+        jump exit_debug
+    if fun_value(141):
+        play music "triage_at_dawn.ogg"
+        scene fazlobby
+        pause 1.0
+    else:
+        jump exit_debug
+    if fun_value(142):
+        play music "tumultuous.ogg"
+        scene fazplace
+        pause 1.0
+    else:
+        jump exit_debug
+    if fun_value(143):
+        play music "tuna_fish.ogg"
+        scene airplane_seats
+        pause 1.0
+    else:
+        jump exit_debug
+    if fun_value(144):
+        play music "tunnely_shimbers.ogg"
+        scene airport_interior
+        pause 1.0
+    else:
+        jump exit_debug
+    if fun_value(145):
+        play music "undyne.ogg"
+        scene airport_seats
+        pause 1.0
+    else:
+        jump exit_debug
+    if fun_value(146):
+        play music "upon_me.ogg"
+        scene airport_tsa
+        pause 1.0
+    else:
+        jump exit_debug
+    if fun_value(147):
+        play music "wayward_wanderer.ogg"
+        scene airport_inside
+        pause 1.0
+    else:
+        jump exit_debug
+    if fun_value(148):
+        play music "weird_personalities.ogg"
+        scene old_house_outside
+        pause 1.0
+    else:
+        jump exit_debug
+    if fun_value(149):
+        play music "winter_lullaby.ogg"
+        scene old_house_inside
+        pause 1.0
+    else:
+        jump exit_debug
+    if fun_value(150):
+        play music "wool_gloves.ogg"
+        scene cc_parking_lot
+        pause 1.0
+    else:
+        jump exit_debug
+    if fun_value(151):
+        play music "xddcc.ogg"
+        scene cc_lobby
+        pause 1.0
+    else:
+        jump exit_debug
+    if fun_value(152):
+        play music "secret/credits.ogg"
+        scene cc_entrance
+        pause 1.0
+    else:
+        jump exit_debug
+    if fun_value(153):
+        play music "secret/lancer.ogg"
+        scene cc_crowd
+        pause 1.0
+    else:
+        jump exit_debug
+    if fun_value(154):
+        play music "secret/space_classroom.ogg"
+        scene cc_stage
+        pause 1.0
+    else:
+        jump exit_debug
+    if fun_value(155):
+        play music "error.ogg"
+        scene cc_backstage
+        pause 1.0
+    else:
+        jump exit_debug
+    if fun_value(156):
+        play music "yuuka_town.ogg"
+        scene billboard
+        pause 1.0
+    else:
+        jump exit_debug
+    if fun_value(157):
+        scene texas
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(158):
+        scene tvbilly
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(159):
+        scene jeep_inside_fg
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(160):
+        scene dinerinside
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(161):
+        scene aria_car_fg
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(162):
+        scene aria_room
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(163):
+        scene aria_apartment_outside
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(164):
+        scene cs_somewhere
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(165):
+        scene dineroutside
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(166):
+        scene battle_block_without_theater
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(167):
+        scene final_destination
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(168):
+        scene police_car_fg
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(169):
+        scene war_torn_1
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(170):
+        scene war_torn_2
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(171):
+        scene war_torn_3
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(172):
+        scene war_torn_4
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(173):
+        scene war_torn_5
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(174):
+        scene car_insidearc_fg
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(175):
+        scene car_insidearc_fg flipped
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(176):
+        scene joj_chargerarc_fg
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(177):
+        scene gas_station_2
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(178):
+        scene traffic
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(179):
+        scene white
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(180):
+        scene parking_lot
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(181):
+        scene path_entrance
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(182):
+        scene path_forest
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(183):
+        scene creepy_path
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(184):
+        scene creepy_path_2
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(185):
+        scene creepy_path_3
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(186):
+        scene creepy_path_4
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(187):
+        scene creepy_path_fairy
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(188):
+        scene creepy_path_exit
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(189):
+        scene cafe_entrance
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(190):
+        scene cafe_sitting
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(191):
+        scene cafe_sitting_2
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(192):
+        scene trafficjam
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(193):
+        scene east_cafe
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(194):
+        scene doll_eye_tree
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(195):
+        scene mario_inside
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(196):
+        scene mario_inside2
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(197):
+        scene mario_outside
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(198):
+        scene gnome_forest
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(199):
+        scene forest_clearing
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(200):
+        scene bronsoncrash
+        pause 0.1
+    else:
+        jump exit_debug
     n "Done."
     return
 
