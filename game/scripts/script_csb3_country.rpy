@@ -132,6 +132,8 @@ label knocked_out:
             jump sweden_travel
         "Japan":
             jump japan_travel
+        "Kuwait" (type = "dx"):
+            jump kuwait_travel
 
 label england_travel:
     $ engfirst = True

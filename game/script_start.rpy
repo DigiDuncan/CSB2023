@@ -407,6 +407,10 @@ define cruise = Character("Tom Cruise", callback = renpy.partial(char_callback, 
 define baumer = Character("Steve Baumer", callback = char_callback)
 define copguyexe = Character("Copguy", callback = renpy.partial(char_callback, name = "copguy", beep = "copexe"))
 define l_cultist = Character("Lunatic Cultist", callback = char_callback)
+define RCOMEM = Character("RCOMEM", callback = char_callback)
+define k_doctor = Character("Kuwait Doctor", callback = char_callback)
+define k_nurse = Character("Kuwait Nurse", callback = char_callback)
+define l_snow = Character("Lt. Snow", callback = char_callback)
 
 # Offscreen Character Definitions
 define tate_offscreen = Character("???", callback = renpy.partial(char_callback, name = "tate_offscreen", beep="tate"))
@@ -493,6 +497,7 @@ image cs pissed phone = "characters/cs/pissed_phone.png"
 image cs pissed phone flipped = "flip:characters/cs/pissed_phone.png"
 image cs concentrate phone = "characters/cs/concentrate_phone.png"
 image cs concentrate phone flipped = "flip:characters/cs/concentrate_phone.png"
+image cs worried punished = "characters/cs/PunishedCSGownWorried.png"
 
 # CS Misc
 image csgod = "characters/csgod.png"
@@ -1120,6 +1125,17 @@ image shadowman = "characters/shadowman.png"
 image pencilcashier = "characters/pencilcashier.png"
 image cruise = "characters/cruise.png"
 image cruise flipped = "flip:characters/cruise.png"
+
+# CS wacky Kuwait Adventures: Mika Edition (Deluxe Content [With Funky Kong {And Dante from Devil may Cry}])
+image kuwait_city = "bg/kuwait_city.jpg"
+image RCOMEM = "characters/RCOMEM.png"
+image kuwait_explosion = "bg/kuwait_explosion.png"
+image kuwait_hospital_inside = "bg/kuwait_hospital_inside.png"
+image kuwait_nurse_1 = "characters/k_nurse.png"
+image kuwait_doctor_1 = "characters/k_doctor.png"
+image kuwait_hospital_corridor = "bg/kuwait_hospital_corridor.png"
+image kuwait_islandbase_leaders = "bg/kuwait_islandbase_leaders.png"
+image kuwait_lieutenant_snow = "characters/kuwait_lieutenant_snow.png"
 
 # Static Images
 image post_it = "post-it.png"
