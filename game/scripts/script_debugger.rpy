@@ -777,6 +777,10 @@ label asset_debugger:
         play sound "sfx_roll_window.ogg"
         play music "friendship.ogg"
         scene cashzone_foreground
+        show RCOMOM at center
+        show kuwait_doctor_1 at mid_left
+        show kuwait_nurse_1 at mid_right
+        show kuwait_lieutenant_snow at mid_mid_right
         show cs disappointed phone at left
         tsa "test 59{w=0.5}{nw}"
     else:
@@ -1174,6 +1178,7 @@ label asset_debugger:
     if fun_value(107):
         play music "passport_real.ogg"
         scene mcdees
+        show cs worried punished
         ikea_greeter "test 107{w=0.5}{nw}"
     else:
         jump exit_debug
@@ -1300,24 +1305,28 @@ label asset_debugger:
     if fun_value(128):
         play music "super_friendly.ogg"
         scene slots
+        RCOMEM "test 128{w=0.5}{nw}"
         pause 1.0
     else:
         jump exit_debug
     if fun_value(129):
         play music "sweet_victory.ogg"
         scene tablegames
+        k_doctor "test 129{w=0.5}{nw}"
         pause 1.0
     else:
         jump exit_debug
     if fun_value(130):
         play music "taiikusai_desu_yo.ogg"
         scene pokertable
+        k_nurse "test 130{w=0.5}{nw}"
         pause 1.0
     else:
         jump exit_debug
     if fun_value(131):
         play music "take_trip.ogg"
         scene luigi1
+        l_snow "test 131{w=0.5}{nw}"
         pause 1.0
     else:
         jump exit_debug
@@ -1472,6 +1481,7 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(157):
+        play music "tmwstw.ogg"
         scene texas
         pause 0.1
     else:
@@ -1688,6 +1698,261 @@ label asset_debugger:
         jump exit_debug
     if fun_value(200):
         scene bronsoncrash
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(201):
+        scene britport
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(202):
+        scene embassy
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(203):
+        scene uk_street
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(204):
+        scene kitty_house
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(205):
+        scene kitty_room
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(206):
+        scene dining_room
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(207):
+        scene hell_outside
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(208):
+        scene dominos
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(209):
+        scene dominos_counter
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(210):
+        scene ceo_office
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(211):
+        scene japanese_street
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(212):
+        scene front_desk
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(213):
+        scene hell_kitchen
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(214):
+        scene top_gear_track
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(215):
+        scene tom_house
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(216):
+        scene tom_road
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(217):
+        scene tokyo_street
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(218):
+        scene tokyo_airport
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(219):
+        scene game_store_back
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(220):
+        scene game_store_front
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(221):
+        scene tokyo_street_2
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(222):
+        scene tokyo_street_night
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(223):
+        scene karaoke_bar_inside
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(224):
+        scene karaoke_bar_outside
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(225):
+        scene ceo_office_2
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(226):
+        scene front_desk_2
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(227):
+        scene talking_head
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(228):
+        scene stockholm
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(229):
+        scene bus_zone
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(230):
+        scene bus_map
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(231):
+        scene bus_seat
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(232):
+        scene ikea_outside
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(233):
+        scene ikea_inside
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(234):
+        scene joel_house
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(235):
+        scene joel_computer
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(236):
+        scene joel_outside
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(237):
+        scene joel_dining
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(238):
+        scene food_court
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(239):
+        scene eating_food
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(240):
+        scene home_decor
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(241):
+        scene toilet_zone
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(242):
+        scene plushie_zone
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(243):
+        scene eating_food_2
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(244):
+        scene dumpster
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(245):
+        scene moomin_zone1
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(246):
+        scene moomin_zone2
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(247):
+        scene moomin_zone3
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(248):
+        scene moomin_zone3b
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(249):
+        scene moomin_zone4
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(250):
+        scene moomin_zone5
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(251):
+        scene waddle_zone
         pause 0.1
     else:
         jump exit_debug
