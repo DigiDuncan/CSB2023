@@ -1137,6 +1137,8 @@ image kuwait_hospital_corridor = "bg/kuwait_hospital_corridor.png"
 image kuwait_islandbase_leaders = "bg/kuwait_islandbase_leaders.png"
 image kuwait_lieutenant_snow = "characters/kuwait_lieutenant_snow.png"
 
+image green_screen = "bg/green.png"
+
 # Static Images
 image post_it = "post-it.png"
 image ytx = Transform("ytx.png", zoom = 0.333)
