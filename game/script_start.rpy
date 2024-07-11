@@ -1454,6 +1454,11 @@ screen chapter_menu():
                     at transform:
                         zoom 0.666
                     action Play("sound", "sfx_valid.ogg"), Hide("chapter_menu", Fade(1.0)), Jump("choose_direction")
+                imagebutton auto "menu/csbiiidx_%s.png" hover_sound "sfx_select.ogg":
+                    sensitive persistent.true_ending
+                    at transform:
+                        zoom 0.666
+                    action Play("sound", "sfx_valid.ogg"), Hide("chapter_menu"), Jump("dx_start")
 style start_window is empty
 
 label splashscreen:

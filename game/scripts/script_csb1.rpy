@@ -42,6 +42,9 @@ label csbi_start:
     else:
         cs "Welp, time to start up the ol' Craptop."
     hide cs
+    jump csbi_craptop
+
+label csbi_craptop:
     scene craptop_bg
     show craptop desktop
     if e2:
@@ -50,7 +53,6 @@ label csbi_start:
         show post_it at t_post_it
 
     $ achievement_manager.unlock("ZUP!")
-
     craptop "Your PC sux. lol."
     if e2:
         jump e2

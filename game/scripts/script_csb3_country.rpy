@@ -106,6 +106,9 @@ label knocked_out:
     n "CS hastily makes his way to the airport."
     window hide
     pause 1.0
+    jump airport_choose
+
+label airport_choose:
     scene airport_interior with fade
     play music "<loop 0>airport.ogg" volume 0.4
     music Airport Infiltration - Andy Blythe & Marten Joustra

@@ -1,3 +1,35 @@
+screen dx_select(items):
+    vbox:
+        xalign 0.5
+        viewport:
+            xysize(950, 540)
+            xalign 0.75
+            ypos 0.1
+            style_prefix "choice"
+            vbox:
+                xalign 0.5
+                spacing 20
+                text "Play the After Story?" xalign 0.5 textalign 0.5
+                imagebutton auto "menu/csbiiidx_%s.png" hover_sound "sfx_select.ogg":
+                    at transform:
+                        zoom 0.666
+                        xalign 0.5
+                    action Play("sound", "sfx_valid.ogg"), Hide("dx_select"), Jump("after_true")
+                text "Or something else?" xalign 0.5 textalign 0.5
+        viewport:
+            xysize(1920, 540)
+            yanchor -0.25
+            xoffset -0.1
+            style_prefix "choice"
+            side_yfill True
+            scrollbars "vertical"
+            mousewheel True
+            vbox:
+                for i in items:
+                    textbutton i.caption:
+                        anchor(-0.25, -0.25)
+                        action i.action
+
 label lose_car_game:
     bad_end "100 percent\nunsatisfied." "iowa"
     return
@@ -49,3 +81,14 @@ label pussy_out_i69:
     $ achievement_manager.unlock("You've Been Gnomed")
     $ achievement_manager.unlock("Analog Horror Protagonist")
     jump interstate_94
+
+label dx_start:
+    python:
+        destinations = {
+            "Craptop": "csbi_craptop",
+            "Kuwait": "airport_choose",
+            "Train": None
+        }
+        
+        place_to_go = renpy.display_menu([(k, v) for k, v in destinations.items()], screen="dx_select")
+        renpy.jump(place_to_go)
