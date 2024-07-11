@@ -1204,6 +1204,7 @@ image karaoke = Transform(Movie(play = "movies/karaoke.webm", side_mask = True),
 image bad_end_screen = Transform(Movie(play = "movies/bad_ending.webm", side_mask = True, loop=False, image="images/fail_end.png"), size=(1920,1080))
 image bronson_hell = Movie(play="movies/bronsonhell.webm")
 image fun_cs_house = Movie(play="movies/funvaluecshouse.webm")
+image fun_hoh_sis = Movie(play="movies/funvaluehohsis.webm")
 
 #Fun Values
 image utajsign = "secret/utajsign.png"
