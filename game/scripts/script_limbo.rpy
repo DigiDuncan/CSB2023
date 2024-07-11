@@ -87,7 +87,9 @@ label dx_start:
         destinations = {
             "Craptop": "csbi_craptop",
             "Kuwait": "airport_choose",
-            "Train": None
+            "Train": None,
+            "Bronson": "michigan",
+            "I-69": "continue_michigan"
         }
         
         place_to_go = renpy.display_menu([(k, v) for k, v in destinations.items()], screen="dx_select")
