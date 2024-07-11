@@ -85,11 +85,10 @@ label pussy_out_i69:
 label dx_start:
     python:
         destinations = {
-            "Craptop": "csbi_craptop",
+            "Speedrun": "csbi_craptop",
             "Kuwait": "airport_choose",
             "Train": None,
-            "Bronson": "michigan",
-            "I-69": "continue_michigan"
+            "Bronson": "michigan"
         }
         
         place_to_go = renpy.display_menu([(k, v) for k, v in destinations.items()], screen="dx_select")
