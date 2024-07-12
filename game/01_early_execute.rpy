@@ -55,8 +55,8 @@ init:
     # For fun value 
     transform _fun_value_fade:
         on show: 
-            xanchor 0 xpos 23
-            yanchor 0 ypos 988
+            xanchor 0 xpos 18
+            yanchor 0 ypos 980
             alpha 0.00
             ease_cubic 0.5 alpha 1.00
             time 2.5
@@ -65,11 +65,11 @@ init:
     transform _fun_value_motion:
         block:
             # back
-            ease_cubic 0.1 xpos 22
-            ease_cubic 0.01 ypos 987
+            ease_cubic 0.1 xpos 17
+            ease_cubic 0.01 ypos 979
             # forward
-            ease_cubic 0.1 xpos 24
-            ease_cubic 0.01 ypos 989
+            ease_cubic 0.1 xpos 19
+            ease_cubic 0.01 ypos 981
             repeat
 
 python early:
@@ -217,13 +217,17 @@ init python:
         return f"{', '.join(items[:-1])}{ox} {joiner} {items[-1]}"
 
     # FUN VALUES
-    renpy.image("_fun_value", "fun_value.png")
+    renpy.image("_fun_value", "gui/fun_value.png")
+    renpy.image("_fun_value_music","gui/fun_value_music.png")
+    renpy.image("_fun_value_fish","gui/fun_value_fish.png")
 
     # Fun value handler
     def fun_value(rarity: int, id: str = None) -> bool:
     
         # hide any previous instance of the indicator
-        renpy.hide("_fun_value") 
+        renpy.hide("_fun_value")
+        renpy.hide("_fun_value_music")
+        renpy.hide("_fun_value_fish")
 
         if not preferences.bounciness_enable:
             return False
