@@ -832,7 +832,7 @@ label forest_menu:
         "Fight the cops with YTP Magic" (type = "bad"):
             jump ytp_magic_fight
         "Flee into the forest" (type = "true"):
-            jump pussy_out_forest
+            jump escape_forest
 
 label ytp_magic_fight:
     show cs concentrate dark
@@ -1010,7 +1010,7 @@ label wait_arc:
     stop music
     bad_end "This will affect\nthe local trout population!" "forest_menu"
 
-label pussy_out_forest:
+label escape_forest:
     $ achievement_manager.unlock("Pacifist")
     cs "Arceus, quick! Let's escape into the forest!"
     arceus "Alrighty, let's go!"

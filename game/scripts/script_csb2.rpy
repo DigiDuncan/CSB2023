@@ -15,18 +15,18 @@ label csbii_start:
         "What attack would you like to use?"
         "Punch" (type = "true"):
             $ ch2_cs_attack_used = "punched"
-            jump punch
+            jump csbii_punch
         "Chop" (type = "true"):
             $ ch2_cs_attack_used = "karate-chopped"
-            jump chop
+            jump csbii_chop
         "Kick" (type = "true"):
             $ ch2_cs_attack_used = "Sparta-kicked"
-            jump kick
+            jump csbii_kick
         "Special" (type = "bad"):
-            jump special
+            jump csbii_special
 
 # Punch
-label punch:
+label csbii_punch:
     show cs angry at left
     show wesley at right
     cs "Take this!"
@@ -57,10 +57,10 @@ label punch:
     show ed_phone at right with moveinright
     show cs angry at left with move
     ed "Hello, 911? My coworker just got knocked out by a disgruntled customer and appears to be dying! Send help!"
-    jump caught
+    jump csbii_caught
 
 # Chop
-label chop:
+label csbii_chop:
     show cs angry at left
     show wesley at right
     cs "Hi-{i}yah!{/i}" # hiya is a greeting, not the sound you're looking for - tate
@@ -73,10 +73,10 @@ label chop:
     show ed_phone at right with moveinright
     show cs angry at left with move
     ed "Hello, 911? My coworker just got karate chopped off the roof by a disgruntled customer! Send help!"
-    jump caught
+    jump csbii_caught
 
 # Kick
-label kick:
+label csbii_kick:
     show cs angry at left
     show wesley at right
     $ renpy.movie_cutscene("movies/kick.webm")
@@ -91,10 +91,10 @@ label kick:
     show cs angry at left with move
     ed "Hello, 911? My coworker just got kicked off the roof by a disgruntled customer! Send help!"
     hide screen dxcom
-    jump caught
+    jump csbii_caught
 
 # Special
-label special:
+label csbii_special:
     show cs concentrate at left
     show wesley at right
     n "CS uses his YTP Magic to make the foundation repairmen fight each other."
@@ -143,10 +143,10 @@ label special:
     hide copguy
     with moveoutleft
     scene black with fade
-    jump questioning
+    jump csbii_questioning
 
 # Questioning
-label questioning:
+label csbii_questioning:
     scene question with fade
     play music "<loop 0>card_castle.ogg" volume 0.5
     music Card Castle - Toby Fox
@@ -179,10 +179,10 @@ label questioning:
     stop music fadeout 3.0
     music end
     scene black with fade
-    jump asylum
+    jump csbii_asylum
 
 # Asylum
-label asylum:
+label csbii_asylum:
     scene asylum with fade
     play music "<loop 0>basement.ogg" volume 0.5
     music Basement - Toby Fox
@@ -236,7 +236,7 @@ label asylum:
     return
     
 # Caught
-label caught:
+label csbii_caught:
     cs "Damn it! Ed's calling the police! I've gotta go after him!"
     ed "911! Come quickly! He's chasing after me!"
     play sound "sfx_siren.ogg" loop
@@ -254,9 +254,9 @@ label caught:
     n "As CS is not actually the speedy Michael Rosen, he is quickly apprehended by the police."
     stop sound fadeout 1.0
     scene black with fade
-    jump jail
+    jump csbii_jail
 
-label jail:
+label csbii_jail:
     scene jail_inside with fade
     show cs prison at offscreenleft
     show copguy at offscreenright
@@ -303,9 +303,9 @@ label jail:
     show arceus prison at offscreenright
     show cs prison at offscreenleft
     with ease
-    jump breakout
+    jump csbii_breakout
 
-label breakout:
+label csbii_breakout:
     scene jail_cell
     show cs prison at left
     show arceus prison at right
@@ -385,9 +385,9 @@ label breakout:
     hide cs with dissolve
     hide arceus with dissolve
     hide anno with dissolve
-    jump bordercrossing
+    jump csbii_bordercrossing
 
-label bordercrossing:
+label csbii_bordercrossing:
     scene border with fade
     play music "<loop 0>onett.ogg" volume 0.6
     music Onett Theme - Keiichi Suzuki

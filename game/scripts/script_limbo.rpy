@@ -62,7 +62,7 @@ label show_dxcom:
     $ commentary_manager.play(current_dxcom)
     return
 
-label pussy_out_archival:
+label back_out_archival:
     $ persistent.seen.add("k174")
     $ persistent.seen.add("addy")
     $ persistent.heard.add("Facing Worlds - Michiel van den Bos")
@@ -72,7 +72,7 @@ label pussy_out_archival:
     $ achievement_manager.unlock("Archived")
     return
 
-label pussy_out_i69:
+label back_out_i69:
     $ persistent.seen.add("gnome")
     $ persistent.heard.add("Wayward Wanderer - Deep Gnome")
     $ persistent.heard.add("MisLeader - Triosk and Jan Jelinek")

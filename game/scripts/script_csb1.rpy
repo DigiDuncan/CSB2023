@@ -153,9 +153,9 @@ label csbi_craptop:
     stop sound fadeout 2.0
     stop music fadeout 3.0
     music end
-    jump walmart
+    jump csbi_walmart
 
-label walmart:
+label csbi_walmart:
     scene walmart_outside
     show cs happy
     with fade
@@ -221,9 +221,9 @@ label walmart:
     cs "Let's get home before that guy doctors my crotch!"
     scene black with fade
     n "CS drives home and manages to avoid reenacting one of his favorite car crash videos."
-    jump room
+    jump csbi_room
 
-label room:
+label csbi_room:
     scene cs_room
     show cs
     with dissolve
@@ -370,9 +370,9 @@ label room:
     cs "Hey, I've got an idea!"
     show cs happy
     cs "Let's go to Michael Rosen's house!"
-    jump michael_house
+    jump csbi_michael_house
 
-label michael_house:
+label csbi_michael_house:
     scene car_inside
     show cs at left
     with fade
@@ -404,9 +404,9 @@ label michael_house:
     pause 2.0
     show black with dissolve
     stop sound fadeout 2.0
-    jump rosen_house
+    jump csbi_rosen_house
 
-label rosen_house:
+label csbi_rosen_house:
     if e3:
         jump e3_rosen
     else:
@@ -607,11 +607,11 @@ label csbi_end:
 
     menu:
         "Left":
-            jump left
+            jump csbi_end_left
         "Right":
-            jump right
+            jump csbi_end_right
 
-label left:
+label csbi_end_left:
     scene hoh_hq5
     show worker_6 at right
     with dissolve
@@ -634,7 +634,7 @@ label left:
     scene black with fade
     jump csbii_start
 
-label right:
+label csbi_end_right:
     scene hoh_hq5
     show worker_7 at right
     with dissolve

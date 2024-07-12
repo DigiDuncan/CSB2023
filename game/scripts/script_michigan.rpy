@@ -234,7 +234,7 @@ label continue_michigan:
 
 label interstate_69_old:
     window hide
-    show screen warning("The following scene is a major tonal shift.\nIt may be disconcerting to some viewers.", "Warnings: creepy forests, haunting music, slow descents into madness.", "pussy_out_i69")
+    show screen warning("The following scene is a major tonal shift.\nIt may be disconcerting to some viewers.", "Warnings: creepy forests, haunting music, slow descents into madness.", "back_out_i69")
     pause
     window show
     $ nome = True

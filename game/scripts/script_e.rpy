@@ -22,7 +22,7 @@ label e2:
     stop music fadeout 3.0
     music end
     n "CS takes off and heads to Rosen's house."
-    jump rosen_house
+    jump csbi_rosen_house
 
 label e3:
     window hide
@@ -37,7 +37,7 @@ label e3:
     cs "I know what's going on now."
     cs "Fuck this."
     n "Jumping to rosen_house...{w=1.25}{nw}"
-    jump rosen_house
+    jump csbi_rosen_house
 
 label e2_rosen:
     michael "He started to get up, and walk around."
