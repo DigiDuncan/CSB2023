@@ -1,4 +1,6 @@
-label new_plan:
+label fired_new_plan:
+    stop music fadeout 3.0
+    music end
     scene outside_ltt
     show cs angry at center
     with fade

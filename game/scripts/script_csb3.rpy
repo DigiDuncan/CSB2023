@@ -48,7 +48,7 @@ label csbiii_start:
         "TechQuickie's Intro To Livestreaming" (type = "true"):
             pass
         "Comprehensive Keyboard Macro Guide":
-            jump boring_video  
+            jump csbiii_boring_video 
 
     # end section added by tate
 
@@ -74,12 +74,13 @@ label csbiii_start:
         "Go to the store.":
             jump microcenter
         "Help edit a video." (type = "true"):
-            jump edit_video
+            jump csbiii_edit_video
 
-label boring_video:
-    # please feel free to tweak this label as needed.
-    # this exists as part of the rewrite to clear up that jarring transition to AI ending. -tate
-
+label csbiii_boring_video:
+    scene csdesk
+    show cs surprised at left
+    play music "<loop 0>passport.ogg" volume 0.5 if_changed
+    music PASSPORT.MID - George Stone
     cs "I suppose that something super-technical like this would be really useful to the viewers. Maybe I'll learn something new, myself."
     show cs
     cs "Well, let's see what this is all about!"
@@ -108,11 +109,15 @@ label boring_video:
 
     scene black with fade
     n "CS is groggily escorted out of the building."
-    jump new_plan
+    jump fired_new_plan
 
 
-label edit_video:
-    show cs
+label csbiii_edit_video:
+    play music "<loop 0>passport.ogg" volume 0.5 if_changed
+    music PASSPORT.MID - George Stone
+    show csdesk
+    show linus at right
+    show cs at left  
     cs "Nah, I wanna finish this project first. That way I can help you pump out videos faster."
     linus "Alright, that's fine. I'll probably send Colton to get the parts instead. He's good at sucking up and doing this kinda thing."
     cs "Alright, yeah. I definitely wasn't using this as an excuse to get out of shopping!"
@@ -200,7 +205,10 @@ label edit_video:
     music Supernova - Laszlo
     minigame "minigame_editing" "boost" "fired"
 
-label fired:
+label csbiii_fired:
+    scene black with dissolve
+    stop music fadeout 3.0
+    music end
     n "Let's see your results."
     $ renpy.movie_cutscene("movies/mymovie_cs.webm")
     scene inside_ltt with fade
@@ -213,6 +221,8 @@ label fired:
     show cs happy
     cs "Don't worry, I already know it's perfect. It's so great, isn't it?"
     linus "It's actually the very opposite of that. You're fired."
+    if fun_value(FUN_VALUE_UNOBTRUSIVE):
+        play sound "sfx_waterphone.ogg"    
     show cs worried
     cs "Wait, what?"
     linus "Look, I don't care how much you really wanted to humiliate me. Just leave."
@@ -224,7 +234,7 @@ label fired:
     show cs angry flipped with hpunch
     hide cs with moveoutleft
     scene black with fade
-    jump new_plan
+    jump fired_new_plan
 
 label boost:
     n "Let's see your results!"
