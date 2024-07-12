@@ -45,6 +45,7 @@ label csbi_start:
     jump csbi_craptop
 
 label csbi_craptop:
+    play music "<loop 0>lets_hear_my_baby.ogg" volume 0.15 if_changed
     scene craptop_bg
     show craptop desktop
     if e2:
@@ -150,12 +151,12 @@ label csbi_craptop:
             cs "Screw you, I'm going anyway!"
     play sound "sfx_driving.ogg" volume 0.5
     pause 3.0
-    stop sound fadeout 2.0
-    stop music fadeout 3.0
-    music end
     jump csbi_walmart
 
 label csbi_walmart:
+    stop sound fadeout 2.0
+    stop music fadeout 3.0
+    music end
     scene walmart_outside
     show cs happy
     with fade
@@ -490,18 +491,17 @@ label csbi_rosen_house:
     show cs scared with determination
     hide cs with moveoutright
     pause 0.5
-    scene car_inside
-    show cs surprised at left
-    with fade
-
-    play music "<loop 0>canyon_but_in_the_car.ogg" volume 0.2
-    play sound "sfx_driving.ogg" volume 0.5
-    stop music fadeout 3.0
-    music end
     jump csbi_end
 
 label csbi_end:
+    scene car_inside
+    show cs surprised at left
+    with fade
+    play music "<loop 0>canyon_but_in_the_car.ogg" volume 0.2
+    play sound "sfx_driving.ogg" volume 0.5
     $ achievement_manager.unlock("Overcaffeinated")
+    stop music fadeout 3.0
+    music end
     cs "I should check on the HoH SiS folks. They should be making some progress by now."
     scene cs_room with fade
     show cs with moveinleft

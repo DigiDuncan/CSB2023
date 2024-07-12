@@ -1,8 +1,10 @@
 label csbii_start:
     $ persistent.csb2_unlocked = True
+    play music "<loop 0>time_for_a_smackdown.ogg" volume 0.2 if_changed
+    music Time for a Smackdown! - Mr. Sauceman
     scene helipad
     show wesley at right
-    with fade
+    with dissolve
     show cs angry at left with moveinleft
     cs "You'll pay for what you did!"
     n "Wesley sweats nervously."
@@ -27,6 +29,9 @@ label csbii_start:
 
 # Punch
 label csbii_punch:
+    play music "<loop 0>time_for_a_smackdown.ogg" volume 0.2 if_changed
+    music Time for a Smackdown! - Mr. Sauceman
+    scene helipad
     show cs angry at left
     show wesley at right
     cs "Take this!"
@@ -61,6 +66,9 @@ label csbii_punch:
 
 # Chop
 label csbii_chop:
+    play music "<loop 0>time_for_a_smackdown.ogg" volume 0.2 if_changed
+    music Time for a Smackdown! - Mr. Sauceman
+    scene helipad
     show cs angry at left
     show wesley at right
     cs "Hi-{i}yah!{/i}" # hiya is a greeting, not the sound you're looking for - tate
@@ -77,6 +85,9 @@ label csbii_chop:
 
 # Kick
 label csbii_kick:
+    play music "<loop 0>time_for_a_smackdown.ogg" volume 0.2 if_changed
+    music Time for a Smackdown! - Mr. Sauceman
+    scene helipad
     show cs angry at left
     show wesley at right
     $ renpy.movie_cutscene("movies/kick.webm")
@@ -95,6 +106,9 @@ label csbii_kick:
 
 # Special
 label csbii_special:
+    play music "<loop 0>time_for_a_smackdown.ogg" volume 0.2 if_changed
+    music Time for a Smackdown! - Mr. Sauceman
+    scene helipad
     show cs concentrate at left
     show wesley at right
     n "CS uses his YTP Magic to make the foundation repairmen fight each other."
@@ -237,6 +251,11 @@ label csbii_asylum:
     
 # Caught
 label csbii_caught:
+    play music "<loop 0>time_for_a_smackdown.ogg" volume 0.2 if_changed
+    music Time for a Smackdown! - Mr. Sauceman
+    scene helipad
+    show ed_phone at right
+    show cs angry at left
     cs "Damn it! Ed's calling the police! I've gotta go after him!"
     ed "911! Come quickly! He's chasing after me!"
     play sound "sfx_siren.ogg" loop
@@ -257,6 +276,8 @@ label csbii_caught:
     jump csbii_jail
 
 label csbii_jail:
+    stop music fadeout 3.0
+    music end
     scene jail_inside with fade
     show cs prison at offscreenleft
     show copguy at offscreenright
@@ -306,6 +327,8 @@ label csbii_jail:
     jump csbii_breakout
 
 label csbii_breakout:
+    play music "<loop 0>stal.ogg" volume 0.4 if_changed
+    music stal - C418
     scene jail_cell
     show cs prison at left
     show arceus prison at right
@@ -517,7 +540,9 @@ label csbii_bordercrossing:
 
     scene black with fade
     n "CS walks into the studio to ask for a job."
+    jump csbii_ltt
 
+label csbii_ltt:
     scene inside_ltt
     show linus
     with fade
