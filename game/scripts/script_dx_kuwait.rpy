@@ -87,13 +87,14 @@ label kuwait_hospital:
     pause 10
     play sound "sfx_heartbeat.ogg" loop
     play music "tmwstw.ogg"
-    centered "{cps=*0.05}7 years later"
+    pause 5
     cs "{i}Where... where am I?{/i}"
     cs "{i}Everything hurts like hell.{/i}"
     cs "{i}Might as well try opening my eyes.{/i}"
-    scene kuwait_hospital_inside with dissolve
+    scene kuwait_hospital_inside 
     show kuwait_doctor_1 at right
     show kuwait_nurse_1 at left
+    with Fade(0, 0, 5)
     k_nurse "Doctor, doctor! He's waking up!"
     k_doctor "Ah, it's about time. Welcome back to the land of the living."
     k_doctor "Will you shut that damn thing off?"
@@ -133,7 +134,7 @@ label kuwait_hospital:
     scene kuwait_hospital_bathroom_clear 
     cs "What the fuck happened?!{w=1}{nw}"
     scene black
-    centered "CSBIII: Kuwait (Working title)"
+    centered "CSBIII: Kuwait"
     n "After panicking for 30 minutes CS finally exits the bathroom and goes to meet the Lieutenant."
     scene kuwait_islandbase_leaders
     show kuwait_lieutenant_snow at right
@@ -145,10 +146,44 @@ label kuwait_hospital:
     cs "Well, what the hell is going on?"
     l_snow "Now CS, I know it's going to shock you but... It's been 7 years since Kuwait fell."
     cs "You mean to tell me I've been in a coma for 7 years?!"
-    l_snow "Yeah, also this is where I'm gonna stop cuz I wanna do other things today :p"
-    cs "Can I at least have my wallet back?"
-    l_snow "No, I like it. Imma keep it"
-    cs ":("
+    scene black
+    centered "Chapter 1: 7 Years later"
+    scene kuwait_islandbase_leaders
+    show cs worried punished at left
+    show kuwait_lieutenant_snow at right
+    with dissolve
+    l_snow "Yeah, it's very shocking I know"
+    cs "Yeah, it is! Also, what do you mean the fall of Kuwait, did it get attacked?"
+    l_snow "Sadly, yes. The infection started in a Canadian airport in British Columbia."
+    l_snow "Many people were already infected in planes, that's how it spread everywhere."
+    l_snow "Right now the only places we know that have not turend are Russia and Greece."
+    cs "Wait, infection? Like zombies?!"
+    l_snow "Or walkers, zeds, idiots that move slow and are somewhat easy to kill, as Isaac puts it."
+    cs "This is... so much to take in right now, I need a moment."
+    l_snow "I understand, for now, how about you go get changed?"
+    cs "Did my outfit survive?"
+    l_snow "It was mostly obliterated in the blast but we got some scraps!"
+    cs "That's okay to know. I'll see what I can piece together."
 
+    scene black
+    centered "This is the part where CS changes clothes (wip)"
+
+    scene kuwait_islandbase_leaders
+    show kuwait_lieutenant_snow at right
+    with dissolve
+    show cs worried punished at left with moveinleft
+    cs "Alright, I'm changed."
+    l_snow "Alright fantastic, we're aware of who you are by the way. Your abilities and whatnot. We've also seen your videos."
+    cs "Oh god, you saw those?"
+    l_snow "Yeah, they were funny."
+    l_snow "Anyways, we need a field agent of sorts. Someone who knows they're way around a fight y'know?"
+    cs "I'll see, last fight I had I ended up here in Kuwait."
+    l_snow "Two things before you go. Here's your field communicator, an Ipad 2!"
+    cs "An Ipad? You sure that's the best you have?"
+    l_snow "I mean, we have this Holographic display device if you want to give it a spin"
+    l_snow "The Wireless internet networkable device of wonderous strenghts Phosphor holographic OLED night-vision (capable) e-display"
+    cs "Windows Phone?"
+    l_snow "I guess you could call it that?"
+    cs "Awesome, I love Windows phones!"
 
     
