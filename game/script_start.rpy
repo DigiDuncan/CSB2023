@@ -313,6 +313,16 @@ transform offscreenleftspin:
     pos(-0.5, 0.5)
     linear 2 rotate 360
 
+transform t_blur_on:
+    blur 0.0
+    linear 1.0:
+        blur 20.0
+
+transform t_blur_off:
+    blur 20.0
+    linear 1.0:
+        blur 0.0
+
 # Character Definitions
 define n = Character(None, what_italic = True, callback = char_callback)  # Narrator
 define cs = Character("cs188", callback = renpy.partial(char_callback, name = "cs", beep = "cs"))
