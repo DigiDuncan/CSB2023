@@ -67,15 +67,15 @@ label kuwait:
     cs "Man, Kuwait is so nice, especially this time of year!"
     show RCOMEM at right with moveinright
     RCOMEM "Hey, good morning!"
-    cs "Good morning to you too!"
+    cs "Good morning to you, too!"
     hide RCOMEM with moveoutleft
-    cs "Man, it's a great thing that in 1992 US Forces succesfuly liberated Kuwait from Saddam Husseins prescence in operation Desert Sabre."
+    cs "Man, it's a great thing that in 1992, U.S. Forces succesfully liberated Kuwait from Saddam Hussein's prescence in Operation Desert Sabre."
     cs "Thus leading to the majority of the population of Kuwait speaking perfect English in return!"
     cs "I don't know how I would've managed if they spoke a different language from mine."
-    cs "Weird how this is the only thing i learnt in my history class."
+    cs "Weird how this is the only thing I learnt in my history class."
     n "As CS is remembering his youth, he starts hearing crackling and booms on the distance."
     cs "What the heck could those be?"
-    n "Just in that moment something big hits CS"
+    n "Just in that moment, something big hits CS!"
     cs "WHAT THE F--{w=0.1}{nw}"
     show kuwait_explosion behind cs
     play sound "secret/sfx_explosion.ogg"
@@ -100,42 +100,42 @@ label kuwait_hospital:
     k_doctor "Will you shut that damn thing off?"
     stop sound
     stop music
-    k_nurse "Sorry Doctor."
-    cs "What the he-"
+    k_nurse "Sorry, Doctor."
+    cs "What the he--"
     k_doctor "Try not to speak just yet, you've been out cold for a while."
     k_doctor "You're one of the few we managed to get out before Kuwait completely fell."
-    k_doctor "I know you have some questions, but you're going to have to take those up with the lieutenant"
+    k_doctor "I know you have some questions, but you're going to have to take those up with the lieutenant."
     k_doctor "We've stabilized you well for the time you've been here, but it might take some time for you to walk properly again."
     k_doctor "You should start getting up in the next few minutes thanks to modern science!"
     k_doctor "Okay nurse, let's bounce!"
     hide kuwait_doctor_1 
     hide kuwait_nurse_1
     with moveoutleft
-    cs "{i}Oh jeez{/i}"
+    cs "{i}Oh jeez...{/i}"
     scene black with dissolve
     n "CS falls asleep for a few more hours."
-    n "Waking up CS feels refreshed, but hungry and very thirsty"
+    n "Waking up, CS feels refreshed, but hungry and very thirsty."
     cs "I really need to take a crap too."
     cs "Nurse, where's the bathroom?"
-    k_nurse "Down the hall to the left"
-    cs "Thanks nurse!"
+    k_nurse "Down the hall, to the left."
+    cs "Thanks, nurse!"
     centered "A CSBIII Expansion created by: Mikapara"
     scene kuwait_hospital_corridor with dissolve
-    cs "Man, it's really hard to walk. I basically have to grab onto anything."
+    cs "Man, it's really hard to walk. I basically have to grab onto everything."
     cs "Last thing I remember, there were strange sounds on the distance."
-    cs "Having said that, I feel like I got the best sleep of my life."
+    cs "Having said that, I feel like I got the best sleep of my life!"
     scene black
-    centered "With the help of: Pakoo and Digiduncan."
+    centered "With the help of: Pakoo and DigiDuncan."
     cs "This should be the bathroom."
     n "As CS is about to walk into one of the stalls he notices something strange in the mirror."
     scene kuwait_hospital_bathroom_foggy with dissolve
     cs "What the hell, why's it so blurry?"
-    n "CS uses some of the strength he has to de-fog the mirror"
+    n "CS uses some of the strength he has to de-fog the mirror."
     scene kuwait_hospital_bathroom_clear 
     cs "What the fuck happened?!{w=1}{nw}"
     scene black
     centered "CSBIII: Kuwait"
-    n "After panicking for 30 minutes CS finally exits the bathroom and goes to meet the Lieutenant."
+    n "After panicking for 30 minutes, CS finally exits the bathroom and goes to meet the Lieutenant."
     scene kuwait_islandbase_leaders
     show kuwait_lieutenant_snow at right
     with dissolve
@@ -144,21 +144,21 @@ label kuwait_hospital:
     cs "Yes! Wait, how'd you know my name?"
     l_snow "We took a peek at your wallet when you first came in."
     cs "Well, what the hell is going on?"
-    l_snow "Now CS, I know it's going to shock you but... It's been 7 years since Kuwait fell."
-    cs "You mean to tell me I've been in a coma for 7 years?!"
+    l_snow "Now CS, I know it's going to shock you but... It's been seven years since Kuwait fell."
+    cs "You mean to tell me I've been in a coma for seven years?!"
     scene black
-    centered "Chapter 1: 7 Years later"
+    centered "Chapter 1: 7 Years Later"
     scene kuwait_islandbase_leaders
     show cs worried punished at left
     show kuwait_lieutenant_snow at right
     with dissolve
-    l_snow "Yeah, it's very shocking I know"
+    l_snow "Yeah, it's very shocking, I know."
     cs "Yeah, it is! Also, what do you mean the fall of Kuwait, did it get attacked?"
     l_snow "Sadly, yes. The infection started in a Canadian airport in British Columbia."
     l_snow "Many people were already infected in planes, that's how it spread everywhere."
-    l_snow "Right now the only places we know that have not turend are Russia and Greece."
+    l_snow "Right now, the only places we know that have not turend are Russia and Greece."
     cs "Wait, infection? Like zombies?!"
-    l_snow "Or walkers, zeds, idiots that move slow and are somewhat easy to kill, as Isaac puts it."
+    l_snow "Or walkers, zeds... idiots that move slow and are somewhat easy to kill, as Isaac puts it."
     cs "This is... so much to take in right now, I need a moment."
     l_snow "I understand, for now, how about you go get changed?"
     cs "Did my outfit survive?"
@@ -166,24 +166,22 @@ label kuwait_hospital:
     cs "That's okay to know. I'll see what I can piece together."
 
     scene black
-    centered "This is the part where CS changes clothes (wip)"
+    centered "This is the part where CS changes clothes (WIP)"
 
     scene kuwait_islandbase_leaders
     show kuwait_lieutenant_snow at right
     with dissolve
     show cs worried punished at left with moveinleft
     cs "Alright, I'm changed."
-    l_snow "Alright fantastic, we're aware of who you are by the way. Your abilities and whatnot. We've also seen your videos."
+    l_snow "Alright, fantastic, we're aware of who you are by the way. Your abilities and what-not. We've also seen your videos."
     cs "Oh god, you saw those?"
     l_snow "Yeah, they were funny."
-    l_snow "Anyways, we need a field agent of sorts. Someone who knows they're way around a fight y'know?"
+    l_snow "Anyways, we need a field agent of sorts. Someone who knows they're way around a fight, y'know?"
     cs "I'll see, last fight I had I ended up here in Kuwait."
-    l_snow "Two things before you go. Here's your field communicator, an Ipad 2!"
-    cs "An Ipad? You sure that's the best you have?"
-    l_snow "I mean, we have this Holographic display device if you want to give it a spin"
-    l_snow "The Wireless internet networkable device of wonderous strenghts Phosphor holographic OLED night-vision (capable) e-display"
+    l_snow "Two things before you go. Here's your field communicator, an iPad 2!"
+    cs "An iPad? You sure that's the best you have?"
+    l_snow "I mean, we have this holographic display device, if you want to give it a spin."
+    l_snow "The Wireless Internet Networkable Device Of Wonderous Strengths Phosphor Holographic OLED Night-vision-capable E-display!"
     cs "Windows Phone?"
     l_snow "I guess you could call it that?"
-    cs "Awesome, I love Windows phones!"
-
-    
+    cs "Awesome, I love Windows Phones!"

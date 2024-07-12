@@ -407,7 +407,7 @@ define cruise = Character("Tom Cruise", callback = renpy.partial(char_callback, 
 define baumer = Character("Steve Baumer", callback = char_callback)
 define copguyexe = Character("Copguy", callback = renpy.partial(char_callback, name = "copguy", beep = "copexe"))
 define l_cultist = Character("Lunatic Cultist", callback = char_callback)
-define RCOMEM = Character("RCOMEM", callback = char_callback)
+define RCOMEM = Character("Rocco Mem", callback = char_callback)
 define k_doctor = Character("Kuwait Doctor", callback = char_callback)
 define k_nurse = Character("Kuwait Nurse", callback = char_callback)
 define l_snow = Character("Lt. Snow", callback = char_callback)
