@@ -203,15 +203,15 @@ label csbiii_edit_video:
         cs "Welp, time to get to work!"
     scene black with dissolve
     music Supernova - Laszlo
-    minigame "minigame_editing" "boost" "fired"
+    minigame "minigame_editing" "csbiii_boost" "csbiii_bad_video"
 
-label csbiii_fired:
+label csbiii_bad_video:
     scene black with dissolve
     stop music fadeout 3.0
     music end
     n "Let's see your results."
     $ renpy.movie_cutscene("movies/mymovie_cs.webm")
-    scene inside_ltt with fade
+    scene inside_ltt with dissolve
     n "The next day."
     n "CS walks into LMG to greet Linus."
     show cs at left with moveinleft
@@ -233,17 +233,20 @@ label csbiii_fired:
     n "CS turns around and stomps out of the building."
     show cs angry flipped with hpunch
     hide cs with moveoutleft
-    scene black with fade
+    scene black with dissolve
     jump fired_new_plan
 
-label boost:
+label csbiii_boost:
+    scene black with dissolve
+    stop music fadeout 3.0
+    music end
     n "Let's see your results!"
     $ renpy.mark_label_seen("play_edit_game")
     $ renpy.movie_cutscene("movies/good_cs_ytp.webm")
     scene black
     centered "The next day."
     $ achievement_manager.unlock("#1 Rated Pooper")
-    scene inside_ltt with fade
+    scene inside_ltt with dissolve
     show cs at offscreenleft
     n "CS walks into LMG to greet Linus."
     show cs at left with moveinleft
@@ -282,7 +285,7 @@ label boost:
     cs "Sure thing!"
     scene csdesk
     show cs at center
-    with fade
+    with dissolve
     n "When CS gets back to his setup, he starts letting his mind race with ideas."
     cs "Oh, man... where do I even start now?"
     cs "I have so many ideas of videos to poop. I could even try to teach Linus how to YTP..."
@@ -346,7 +349,7 @@ label boost:
     linus "If you want, we can wipe them later."
     cs "Wipe! Now {i}you're{/i} in on it!"
     n "They both laugh as the drivers install, and once they're finished, CS boots up Premiere."
-    scene csvideo with fade
+    scene csvideo with dissolve
     cs "Alrighty, let's see here. Why don't we try this on that YTP I just made?"
     linus "Go to the settings real quick, and find the YTP features. Turn YTP mode on to allow the poop-tracing."
     cs "Alright, here goes nothing."
@@ -359,13 +362,13 @@ label boost:
     scene csdesk
     show cs at left
     show linus at right
-    with fade
+    with dissolve
     cs "Wow, thank you so much for this, Linus!"
     linus "No problem! This was my gift to you. Now, we should make a review video of it before the day ends."
     cs "Sure thing. Let's take the card out real quick."
     scene ltt_bg
     show ltt_fg
-    with fade
+    with dissolve
     show cs at t_cs_ltt behind ltt_fg with moveinleft
     show linus at t_linus_ltt behind ltt_fg with moveinright
     n "Linus goes and gets the cameras set up, and they start to film the video."
@@ -395,21 +398,28 @@ label boost:
         hide ltt_bottle with dissolve
     n "Some time passes and they finish the recording."
     n "Afterwards, CS goes up to Linus' office."
-    jump ltt_decide
+    jump csbiii_ltt_decide
 
-label ltt_decide:
-    scene loffice with fade
+label csbiii_ltt_decide:
+    play music "<loop 0>airport_counter.ogg" volume 0.5 if_changed
+    music Airport Counter - Kazumi Totaka
+    scene loffice with dissolve
     show cs at left with moveinleft
     cs "Hey, Linus?"
     linus "What's up, CS? What do you need help with?"
     menu:
         "What does CS need help with?"
         "I want to work on YTPs." (type = "true"):
-            jump ytp_edit
+            jump csbiii_ytp_edit
         "I want to do reviews.":
-            jump reviews
+            jump csbiii_reviews
 
-label reviews:
+label csbiii_reviews:
+    play music "<loop 0>airport_counter.ogg" volume 0.5 if_changed
+    music Airport Counter - Kazumi Totaka
+    scene loffice
+    show cs at left
+    show linus at offscreenright
     $ fanbase = "ltt"
     cs "I'm up to doing more review videos with you."
     show linus at center with ease
@@ -452,11 +462,15 @@ label reviews:
     menu:
         "What will CS do?"
         "I'm going to stay with LTT." (type = "bad"):
-            jump cops_ltt
+            jump csbiii_cops_ltt
         "Escape with Arceus.":
-            jump arc_escape
+            jump csbiii_arc_escape
     
-label ytp_edit:
+label csbiii_ytp_edit:
+    play music "<loop 0>airport_counter.ogg" volume 0.5 if_changed
+    music Airport Counter - Kazumi Totaka
+    scene loffice
+    show cs at left
     show linus at offscreenright
     cs "I have a question about my job here at LTT."
     n "Linus stands up and walks over to him."
@@ -479,11 +493,17 @@ label ytp_edit:
     menu:
         "What will CS do?"
         "Show everyone more YTPs." (type = "true"):
-            jump both_fan
+            jump csbiii_both_fan
         "Ignore them and keep making your own YTPs.":
-            jump ytp_fan
+            jump csbiii_ytp_fan
 
-label ytp_fan:
+label csbiii_ytp_fan:
+    play music "<loop 0>airport_counter.ogg" volume 0.5 if_changed
+    music Airport Counter - Kazumi Totaka
+    scene loffice
+    show cs at left
+    show linus at center
+    show taran at right
     $ fanbase = "ytp"
     cs "Well, I want to keep working on YTPs!"
     stop music fadeout 3.0
@@ -522,12 +542,18 @@ label ytp_fan:
     menu:
         "What will CS do?"
         "I'm going to stay with LTT." (type = "bad"):
-            jump cops_ltt
+            jump csbiii_cops_ltt
         "Escape with Arceus." (type = "true"):
-            jump arc_escape
+            jump csbiii_arc_escape
 
 
-label both_fan:
+label csbiii_both_fan:
+    play music "<loop 0>airport_counter.ogg" volume 0.5 if_changed
+    music Airport Counter - Kazumi Totaka
+    scene loffice
+    show cs at left
+    show linus at center
+    show taran at right
     $ fanbase = "both"
     stop music fadeout 3.0
     music end
@@ -605,12 +631,14 @@ label both_fan:
     menu:
         "What will CS do?"
         "I'm going to stay with LTT." (type = "bad"):
-            jump cops_ltt
+            jump csbiii_cops_ltt
         "Escape with Arceus." (type = "true"):
-            jump arc_escape
+            jump csbiii_arc_escape
 
-label cops_ltt:
-    stop music
+label csbiii_cops_ltt:
+    stop music fadeout 3.0
+    stop music2 fadeout 3.0
+    music end
     scene frontdoor
     show linus at right
     show arceus worried at mid_right
@@ -639,9 +667,15 @@ label cops_ltt:
     copguy "You are under arrest! Put your hands in the air!"
     stop music2 fadeout 3.0
     music end
-    bad_end "Stupid CS! You dropped\nyour lore in front of the hoes!" "ltt_decide"
+    bad_end "Stupid CS! You dropped\nyour lore in front of the hoes!" "csbiii_ltt_decide"
 
-label arc_escape:
+label csbiii_arc_escape:
+    play music2 "<loop 0>hired_guns.ogg" volume 0.5 if_changed
+    music Hired Guns - Brian Johnston
+    scene frontdoor 
+    show cs worried at center
+    show linus at right
+    show arceus worried at mid_right
     cs "Look, I'm sorry, Linus. I wish I could explain, but Arceus is right. I need to get going."
     linus "I am, like, {i}so{/i} confused and frustrated. This better not ruin LMG."
     show cs disappointed
@@ -673,6 +707,7 @@ label arc_escape:
     show luke at center
     show taran at right
     show colton at mid_left
+    with dissolve
     n "The employees at LTT are in chaos as the police show up to the front of the building."
     luke "WTF is going on?"
     taran "Linus! What did you do?!"
@@ -830,8 +865,10 @@ label arc_escape:
     show arceus worried dark
     "CS and Arceus" "{i}Shit!"
     arceus "Copguy's back! He's probably looking all over for us! What do we do, CS?!"
-    jump forest_menu
-label forest_menu:
+    jump csbiii_forest_menu
+label csbiii_forest_menu:
+    stop music fadeout 3.0
+    music end
     scene washington_road
     show cs worried dark at left
     show arceus worried dark at right
