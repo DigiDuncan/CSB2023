@@ -20,7 +20,7 @@ label csbi_start:
         pakoo "Oh, whoops!"
         pakoo "The old game is still here..."
         pakoo "Lemme fix that real quick for you."
-        play sound "sfx_page.ogg" volume 5
+        play sound sfx_page volume 5
         if e1:
             show pakoo disappointed with determination
             hide pakoo
@@ -35,7 +35,7 @@ label csbi_start:
     scene cs_room
     show cs at center
     with dissolve
-    play music "<loop 0>lets_hear_my_baby.ogg" volume 0.15
+    play music lets_hear_my_baby volume 0.15
     music "Let's hear my baby - Walkman"
     if fun_value(FUN_VALUE_MUSIC):
         cs "Welp, Let's hear my baby."
@@ -45,7 +45,7 @@ label csbi_start:
     jump csbi_craptop
 
 label csbi_craptop:
-    play music "<loop 0>lets_hear_my_baby.ogg" volume 0.15 if_changed
+    play music lets_hear_my_baby volume 0.15 if_changed
     scene craptop_bg
     show craptop desktop
     if e2:
@@ -61,16 +61,16 @@ label csbi_craptop:
         sticky "Delete the CSCord."
     cs "Eh, maybe tomorrow."
     hide post_it
-    play sound "sfx_page.ogg" volume 5
+    play sound sfx_page volume 5
     pause 2.0
     show craptop updating
     craptop "Downloading update 200/13..."
     craptop "Update complete."
     cs "{bt=a3-p10-s4}OoOoOoOoOh{/bt} yes!"
     show craptop discord
-    play sound "sfx_windows_logon.ogg"
+    play sound windows_logon
     cs "Hey guys!"
-    play sound "sfx_ping_spam.ogg"
+    play sound ping_spam
     discord "Hi! Hi! Hi! Hi!"
     n "The Discord is overflowing with people trying to talk to CS."
     show cs at left with moveinleft
@@ -80,17 +80,17 @@ label csbi_craptop:
             jump vibration
         "Respond to chat" (type = "true"):
             pass
-    play sound "sfx_ping.ogg"
+    play sound sfx_ping
     cs "Okay, bedtime! Bye, guys!"
     show nova at right
-    play sound "sfx_ping.ogg"
+    play sound sfx_ping
     nova "But it's like 8:04AM and you just woke up."
-    play sound "sfx_ping.ogg"
+    play sound sfx_ping
     cs "Bye!"
     show cs flipped with determination
     hide cs with moveoutleft
     discord "CS is now offline."
-    play sound "sfx_ping.ogg"
+    play sound sfx_ping
     nova "k bye"
     hide nova
     show craptop car
@@ -108,9 +108,9 @@ label csbi_craptop:
     scene cs_house
     show cs happy
     with fade
-    play music "canyon.ogg" volume 0.2
+    play music canyon volume 0.2
     music CANYON.MID - George Stone
-    if fun_value(FUN_VALUE_MUSIC ):
+    if fun_value(FUN_VALUE_MUSIC):
         cs "Woah! Is that a canyon over there?"
     else:    
         cs "Nice day!"
@@ -120,10 +120,10 @@ label csbi_craptop:
     hide cs_house
     show cs at left with move
     show carguy at right with moveinright
-    play sound "sfx_nicecar.ogg"
+    play sound sfx_nice_car
     carguy_nobeep "Nice car!"
     cs "It's pretty nice, but it's got some scratches..."
-    play sound "sfx_notsonicescratch.ogg"
+    play sound sfx_not_so_nice_scratch
     carguy_nobeep "Nooot so nice scratch..."
     carguy "You should try Crotch Doctor!"
     show cs worried at left
@@ -133,11 +133,11 @@ label csbi_craptop:
     show cs scared at left
     cs "QUICK! START THE CAR, START THE CAR!!!"
     hide cs with moveoutright
-    play sound "sfx_doorslam.ogg"
+    play sound sfx_doorslam
     scene cs_car_inside
     show cs disappointed at left
     with fade
-    play music "<loop 0>canyon_but_in_the_car.ogg" volume 0.2
+    play music canyon_car volume 0.2
     music CANYON.MID - George Stone
     cs "Whew... That was close!"
     cs "Should I go get groceries?"
@@ -149,7 +149,7 @@ label csbi_craptop:
             $ achievement_manager.unlock("I Don't Like People!")
             show cs happy at left
             cs "Screw you, I'm going anyway!"
-    play sound "sfx_driving.ogg" volume 0.5
+    play sound sfx_driving volume 0.5
     pause 3.0
     jump csbi_walmart
 
@@ -167,12 +167,12 @@ label csbi_walmart:
     show screen best_music
     $ _current_song = "Summer Clearance Sale"
     $ _current_artist = "BEST MUSIC"
-    play music "<loop 0>summer_clearance_sale.ogg"
+    play music summer_clearance_sale
     $ persistent.heard.add("Summer Clearance Sale - BEST MUSIC")
 
     n "CS walks inside."
     show doug at right with moveinright
-    if fun_value(FUN_VALUE_MUSIC ):
+    if fun_value(FUN_VALUE_MUSIC):
         greeter "Welcome, the Summer Clearance Sale is going on! Isn't this the BEST MUSIC ever?"
     else:
         greeter "Hello, and welcome to Walmart! Can I help you with anything?"
@@ -207,18 +207,18 @@ label csbi_walmart:
     show cs at left with moveinleft
     cs "Let's get to the car."
     show carguy at right with moveinright
-    play sound "sfx_notsonicescratch.ogg"
+    play sound sfx_not_so_nice_scratch
     carguy_nobeep "Nooooot so nice scratch."
     show cs disappointed at left
     cs "Not you again!"
     cs "I've gotta get outta here!"
     hide cs with moveoutright
-    play sound "sfx_doorslam.ogg"
+    play sound sfx_doorslam
     scene cs_car_inside
     show cs worried at left
     with fade
-    play music "<loop 0>canyon_but_in_the_car.ogg" volume 0.2
-    play sound "sfx_driving.ogg" volume 0.5
+    play music canyon_car volume 0.2
+    play sound sfx_driving volume 0.5
     cs "Let's get home before that guy doctors my crotch!"
     scene black with fade
     n "CS drives home and manages to avoid reenacting one of his favorite car crash videos."
@@ -239,10 +239,10 @@ label csbi_room:
     scene craptop_bg
     show craptop edit
     with fade
-    play music "<loop 0>scales_of_joy.ogg" volume 0.3
+    play music scales_of_joy volume 0.3
     music scales of joy.mod - Mel O Dee
     n "CS sits down at his craptop and opens up Premiere."
-    if fun_value(FUN_VALUE_MUSIC ):
+    if fun_value(FUN_VALUE_MUSIC):
         cs "Ooooh! I can really feel the scales of joy! People would be excited to finally see this as a finished product."
     else:
         cs "Ooooh! Here's the one from my last editing stream. People would be excited to finally see this as a finished product."
@@ -258,7 +258,7 @@ label csbi_room:
     scene cs_room with pixellate
     show cs_young with moveinbottom
     ycs "Hey guys, Young CS here! Today, I'm gonna be editing a \n{bt=a3-p10-s4}CraAaAaAaAzY{/bt} video!!"
-    play sound "sfx_keyboard.ogg"
+    play sound sfx_keyboard
     n "CS taps furiously on his keyboard."
     ycs "Ohhhhhh {bt=a3-p10-s4}YeeEeeEeEeeEEeEEs!{/bt} This is lookin' good!"
     hide cs_young
@@ -266,7 +266,7 @@ label csbi_room:
     show cs
     with pixellate
     cs "Oh, flashback over."
-    play sound "sfx_foundationfail.ogg" volume 0.5
+    play sound sfx_foundationfail volume 0.5
     show cs worried
     show cs_room behind cs at rotate_10 with hpunch
     n "A loud crash is heard as a crack is split in CS' foundation."
@@ -289,7 +289,7 @@ label csbi_room:
     cs "I guess I'll work on my new YTP while I wait."
     scene black with fade
     n "Time passes and the doorbell rings."
-    play sound "sfx_doorbell.ogg" volume 0.5
+    play sound sfx_doorbell volume 0.5
     stop music fadeout 3.0
     music end
     scene door_closed with fade
@@ -300,9 +300,9 @@ label csbi_room:
     show door_open behind cs
     cs "Hello! I am CS, and I--"
     show ed at right with moveinright
-    play music "<loop 0>hohsis_theme.ogg" volume 0.2
+    play music hohsis_theme volume 0.2
     music Alfred Hitchcock Intro Theme - Charles Gounod
-    if fun_value(FUN_VALUE_MUSIC ):
+    if fun_value(FUN_VALUE_MUSIC):
         ed "Alright, that will be Alfred Hitchcock Intro Theme."
         show cs disappointed
         cs "What?"
@@ -353,7 +353,7 @@ label csbi_room:
     with moveinright
     rich "Lemme call our JoJ UFO."
     "Ed, Wesley, and Richard" "I'm beaming up!"
-    play sound "sfx_beam.ogg" volume 0.6
+    play sound sfx_beam volume 0.6
     show beam at xstretch_in
     pause 2.0
     hide ed
@@ -377,7 +377,7 @@ label csbi_michael_house:
     scene car_inside
     show cs at left
     with fade
-    play music "<loop 0>canyon_but_in_the_car.ogg" volume 0.2
+    play music canyon_car volume 0.2
     cs "Thankfully, Michael lives pretty close."
     cs "His vacation house in the US is only a few streets away!"
     cs "Before I forget, I should probably call him first."
@@ -401,7 +401,7 @@ label csbi_michael_house:
     cs "Alright, well, I'll be there soon!"
     show cs at left
     n "CS puts his phone away and drives over to Michael's house."
-    play sound "sfx_driving.ogg" volume 0.5
+    play sound sfx_driving volume 0.5
     pause 2.0
     show black with dissolve
     stop sound fadeout 2.0
@@ -412,11 +412,11 @@ label csbi_rosen_house:
         jump e3_rosen
     else:
         scene rosen_abode with fade
-    play music "<loop 0>super_friendly.ogg" volume 0.4
+    play music super_friendly volume 0.4
     music Super Friendly - Kevin Macleod
     show michael at right with moveinright
     show cs flipped at offscreenright
-    if fun_value(FUN_VALUE_MUSIC ):
+    if fun_value(FUN_VALUE_MUSIC):
         michael "Come in! Come in! I'm Super Friendly!"
     else:
         michael "Come in! Come in!"
@@ -439,7 +439,7 @@ label csbi_rosen_house:
         show black
     else:
         show black with dissolve
-    play sound "sfx_csnore.ogg"
+    play sound sfx_csnore
     michael "CS? Did you fall asleep?"
     michael "CS!"
     stop sound
@@ -449,7 +449,7 @@ label csbi_rosen_house:
     show cs worried flipped
     cs "Nooooooooooooooooo?"
     n "Michael sighs and facepalms."
-    play sound "sfx_doorbell.ogg" volume 0.5 
+    play sound sfx_doorbell volume 0.5 
     n "The doorbell rings."
     michael "Oh! My other guest is here! I'll be right back!"
     show cs flipped
@@ -468,7 +468,7 @@ label csbi_rosen_house:
     show cs scared flipped at right
     cs "Michael! That's not chocolate cake!"
     michael "I have loads to eat! Om nom nom..."
-    play sound "sfx_puke.ogg"
+    play sound sfx_puke
     michael_nobeep "Blarrrgh!"
     n "Michael spits out the Flex Seal cake."
     michael "This is horrible! Get out! Get out of here!"
@@ -497,8 +497,8 @@ label csbi_end:
     scene car_inside
     show cs surprised at left
     with fade
-    play music "<loop 0>canyon_but_in_the_car.ogg" volume 0.2
-    play sound "sfx_driving.ogg" volume 0.5
+    play music canyon_car volume 0.2
+    play sound driving volume 0.5
     $ achievement_manager.unlock("Overcaffeinated")
     stop music fadeout 3.0
     music end
@@ -526,13 +526,13 @@ label csbi_end:
     show craptop off at rotate_6
     with hpunch
     window hide
-    play sound "sfx_foundationfail.ogg" volume 0.5
+    play sound sfx_foundationfail volume 0.5
     pause 3.0
     cs "They didn't even do the JoJ!"
     show craptop sad at rotate_6 with hpunch
     play sound "sfx_punch.ogg"
     if fun_value(FUN_VALUE_RARE):
-        play sound "secret/sfx_gul.ogg"
+        play sound sfx_gul
     pause 1.0
     scene cs_room
     show cs angry
@@ -544,7 +544,7 @@ label csbi_end:
     scene hoh_hq
     show cs angry
     with dissolve
-    play music "<loop 0>time_for_a_smackdown.ogg" volume 0.2
+    play music time_for_a_smackdown volume 0.2
     music Time for a Smackdown! - Mr. Sauceman
     if fun_value(FUN_VALUE_MUSIC):
         cs "Alright! It's time for a Smackdown!"       
@@ -555,7 +555,7 @@ label csbi_end:
     worker_1 "I don't know!!"
     cs "BullShisH!"
     n "CS punches the worker."
-    play sound "sfx_punch.ogg"
+    play sound sfx_punch
     show worker_1 at right with hpunch
     $ persistent.seen.add("hoh_worker")
     hide worker_1 with moveoutright
@@ -572,11 +572,11 @@ label csbi_end:
     show cs angry flipped with moveinright
     cs "Get out of my way!"
     n "CS bodyslams the workers as he runs past."
-    play sound "sfx_punch.ogg"
+    play sound sfx_punch
     show cs angry flipped at mid_left with move
     show worker_4 at mid_left with hpunch
     hide worker_4 with moveoutleft
-    play sound "sfx_punch.ogg"
+    play sound sfx_punch
     show cs angry with determination
     show cs angry at mid_right with move
     show worker_3 at mid_center_right with hpunch
@@ -597,7 +597,7 @@ label csbi_end:
     cs "Thanks, and also--"
     n "CS clocks the worker in the face."
     show cs angry flipped at left with move
-    play sound "sfx_punch.ogg"
+    play sound sfx_punch
     show cs angry flipped at offscreenleft with move
     show worker_5alt at left with hpunch
     hide worker_5alt with moveoutbottom
@@ -618,7 +618,7 @@ label csbi_end_left:
     show cs angry at left with moveinleft
     cs "A... pineapple?"
     show cs angry at right with move
-    play sound "sfx_punch.ogg"
+    play sound sfx_punch
     show cs angry at left with move
     show worker_6 at right with hpunch
     hide worker_6 with moveoutright
@@ -630,7 +630,7 @@ label csbi_end_left:
     show cs angry
     with fade
     pause 2.0
-    play sound "sfx_elevator_ding.ogg"
+    play sound sfx_elevator_ding
     scene black with fade
     jump csbii_start
 
@@ -641,7 +641,7 @@ label csbi_end_right:
     show cs angry at left with moveinleft
     cs "A fucking chicken?"
     show cs angry at right with move
-    play sound "sfx_punch.ogg"
+    play sound sfx_punch
     show cs angry at left with move
     show worker_7 at right with hpunch
     hide worker_7 with moveoutright
@@ -653,6 +653,6 @@ label csbi_end_right:
     show cs angry
     with fade
     pause 2.0
-    play sound "sfx_elevator_ding.ogg"
+    play sound sfx_elevator_ding
     scene black with fade
     jump csbii_start

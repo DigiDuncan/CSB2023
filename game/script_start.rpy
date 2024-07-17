@@ -1364,6 +1364,36 @@ layeredimage copguy_ex:
 
 image ai_ducks = SnowBlossom("duck.png", 50)
 
+# Audio
+# CSBI Music
+define audio.lets_hear_my_baby = "lets_hear_my_baby.ogg"
+define audio.canyon = "canyon.ogg"
+define audio.canyon_car = "canyon_but_in_the_car.ogg"
+define audio.summer_clearance_sale = "summer_clearance_sale.ogg"
+define audio.scales_of_joy = "scales_of_joy.ogg"
+define audio.hohsis_theme = "hohsis_theme.ogg"
+define audio.super_friendly = "super_friendly.ogg"
+define audio.time_for_a_smackdown = "time_for_a_smackdown.ogg"
+
+# SFX
+define audio.sfx_beam = "sfx_beam.ogg"
+define audio.sfx_csnore = "sfx_csnore.ogg"
+define audio.sfx_doorbell = "sfx_doorbell.ogg"
+define audio.sfx_doorslam = "sfx_doorslam.ogg"
+define audio.sfx_driving = "sfx_driving.ogg"
+define audio.sfx_elevator_ding = "sfx_elevator_ding.ogg"
+define audio.sfx_foundationfail = "sfx_foundationfail.ogg"
+define audio.sfx_gul = "secret/sfx_gul.ogg"
+define audio.sfx_keyboard = "sfx_keyboard.ogg"
+define audio.sfx_nice_car = "sfx_nicecar.ogg"
+define audio.sfx_not_so_nice_scratch = "sfx_not_so_nice_scratch.ogg"
+define audio.sfx_page = "sfx_page.ogg"
+define audio.sfx_ping = "sfx_ping.ogg"
+define audio.sfx_ping_spam = "sfx_ping_spam.ogg"
+define audio.sfx_puke = "sfx_puke.ogg"
+define audio.sfx_punch = "sfx_punch.ogg"
+define audio.sfx_windows_logon = "sfx_windows_logon.ogg"
+
 # Layers?
 define config.detached_layers += ["broadcast"]
 image stage_screen = Window(Layer("broadcast", clipping = False), background = "minigames/pencil/stage.png")
