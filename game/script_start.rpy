@@ -1387,6 +1387,12 @@ define audio.buy_something = "buy_something.ogg"
 define audio.passport = "passport.ogg"
 define audio.passport_ytp = "passport_ytp.ogg"  # TODO: This should be moved to /secret
 
+#CSBIII AI Music
+define audio.school = "school.ogg"
+define audio.cliffs = "cliffs.ogg"
+define audio.circus = "circus.ogg"
+define audio.chase = "chase.ogg"
+define audio.friendship = "friendship.ogg"
 
 # SFX
 define audio.sfx_beam = "sfx_beam.ogg"
@@ -1410,6 +1416,7 @@ define audio.sfx_victory_punch = "sfx_victory_punch.ogg"
 define audio.sfx_windows_logon = "sfx_windows_logon.ogg"
 define audio.sfx_chop = "sfx_chop.ogg"
 define audio.sfx_siren = "sfx_siren.ogg"
+define audio.sfx_duck = "sfx_duck.ogg"
 
 # Layers?
 define config.detached_layers += ["broadcast"]
