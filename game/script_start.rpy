@@ -588,6 +588,7 @@ image arceus worried dark flipped = "dark:flip:characters/arc/worried.png"
 image arceus dark = "dark:characters/arc/arceus.png"
 image arceus dark flipped = "dark:flip:characters/arc/arceus.png"
 image arceus dusk = "dusk:characters/arc/arceus.png"
+image arceus worried dusk = "dusk:characters/arc/worried.png"
 image arceus angry dusk = "dusk:characters/arc/angry.png"
 image arceus dusk flipped = "dusk:flip:characters/arc/arceus.png"
 
@@ -1613,7 +1614,7 @@ screen chapter_menu():
                     sensitive persistent.csb3b_unlocked
                     at transform:
                         zoom 0.666
-                    action Play("sound", "sfx_valid.ogg"), Hide("chapter_menu", Fade(1.0)), Jump("choose_direction")
+                    action Play("sound", "sfx_valid.ogg"), Hide("chapter_menu", Fade(1.0)), Jump("csbiii_choose_direction")
                 imagebutton auto "menu/csbiiidx_%s.png" hover_sound "sfx_select.ogg":
                     sensitive persistent.true_ending
                     at transform:

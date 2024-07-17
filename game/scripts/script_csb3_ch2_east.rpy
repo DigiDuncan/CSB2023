@@ -1,4 +1,4 @@
-label east:
+label true_east:
     cs "Well, since east is the way home, we should probably go that way."
     show arceus
     arceus "Alright, that sounds like a good idea."

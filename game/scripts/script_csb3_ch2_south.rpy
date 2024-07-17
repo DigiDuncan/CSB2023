@@ -1,4 +1,4 @@
-label south:
+label south_start:
     cs "Why don't we try going south?"
     show arceus
     arceus "Alright, what's your plan? Where are we going, exactly?"
