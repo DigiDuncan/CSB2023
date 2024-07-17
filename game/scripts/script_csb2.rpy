@@ -1,6 +1,6 @@
 label csbii_start:
     $ persistent.csb2_unlocked = True
-    play music "<loop 0>time_for_a_smackdown.ogg" volume 0.2 if_changed
+    play music time_for_a_smackdown volume 0.2 if_changed
     music Time for a Smackdown! - Mr. Sauceman
     scene helipad
     show wesley at right
@@ -29,7 +29,7 @@ label csbii_start:
 
 # Punch
 label csbii_punch:
-    play music "<loop 0>time_for_a_smackdown.ogg" volume 0.2 if_changed
+    play music time_for_a_smackdown volume 0.2 if_changed
     music Time for a Smackdown! - Mr. Sauceman
     scene helipad
     show cs angry at left
@@ -37,25 +37,25 @@ label csbii_punch:
     cs "Take this!"
     n "CS punches Wesley and knocks him out."
     show cs angry at center with move
-    play sound "sfx_punch.ogg"
-    play sound "sfx_punch.ogg"
+    play sound sfx_punch
+    play sound sfx_punch
     show wesley at right with hpunch
-    play sound "sfx_punch.ogg"
-    play sound "sfx_punchalt.ogg"
+    play sound sfx_punch
+    play sound sfx_punchalt
     show wesley at right with vpunch
-    play sound "sfx_punch.ogg"
+    play sound sfx_punch
     show wesley at right with hpunch
-    play sound "sfx_punch.ogg"
-    play sound "sfx_punchalt.ogg"
+    play sound sfx_punch
+    play sound sfx_punchalt
     show wesley at right with vpunch
-    play sound "sfx_punch.ogg"
+    play sound sfx_punch
     show wesley at right with hpunch
-    play sound "sfx_punch.ogg"
-    play sound "sfx_punchalt.ogg"
+    play sound sfx_punch
+    play sound sfx_punchalt
     show wesley at right with vpunch
-    play sound "sfx_punch.ogg"
+    play sound sfx_punch
     show wesley at right with hpunch
-    play sound "sfx_victorypunch.ogg" volume 0.5
+    play sound sfx_victorypunch volume 0.5
     show wesley at t_punchup with move
     show cs angry at left with move
     cs "That'll teach you not to mess with a nerd's computer!"
@@ -66,7 +66,7 @@ label csbii_punch:
 
 # Chop
 label csbii_chop:
-    play music "<loop 0>time_for_a_smackdown.ogg" volume 0.2 if_changed
+    play music time_for_a_smackdown volume 0.2 if_changed
     music Time for a Smackdown! - Mr. Sauceman
     scene helipad
     show cs angry at left
@@ -74,7 +74,7 @@ label csbii_chop:
     cs "Hi-{i}yah!{/i}" # hiya is a greeting, not the sound you're looking for - tate
     n "CS chops Wesley in the chest and he flies off the roof."
     show cs angry at center with move
-    play sound "sfx_chop.ogg"
+    play sound sfx_chop
     hide wesley with easeoutright
     show cs angry at left with move
     cs "I sawed this foundation repairman in half!"
@@ -85,7 +85,7 @@ label csbii_chop:
 
 # Kick
 label csbii_kick:
-    play music "<loop 0>time_for_a_smackdown.ogg" volume 0.2 if_changed
+    play music time_for_a_smackdown volume 0.2 if_changed
     music Time for a Smackdown! - Mr. Sauceman
     scene helipad
     show cs angry at left
@@ -106,20 +106,20 @@ label csbii_kick:
 
 # Special
 label csbii_special:
-    play music "<loop 0>time_for_a_smackdown.ogg" volume 0.2 if_changed
+    play music time_for_a_smackdown volume 0.2 if_changed
     music Time for a Smackdown! - Mr. Sauceman
     scene helipad
     show cs concentrate at left
     show wesley at right
     n "CS uses his YTP Magic to make the foundation repairmen fight each other."
     hide wesley at right with moveoutright
-    play sound "sfx_punch.ogg"
+    play sound sfx_punch
     rich "Hey! Cut it out!"
-    play sound "sfx_punch.ogg"
+    play sound sfx_punch
     wesley "I'm not trying to fight you! I don't know what's happening! {i}Help!!{/i}"
-    play sound "sfx_punch.ogg"
+    play sound sfx_punch
     rich "Ed! Do something!"
-    play sound "sfx_punch.ogg"
+    play sound sfx_punch
     if e1:
         jump e1
     else:    
@@ -141,7 +141,7 @@ label csbii_special:
     scene hoh_hq with fade
     show cs at left with moveinleft
     n "As CS makes to leave the building, the cops come rushing in."
-    play sound "sfx_siren.ogg" loop
+    play sound sfx_siren loop
     show blue_light at left
     show red_light at right
     show copguy behind blue_light, red_light at right with moveinright
@@ -162,7 +162,7 @@ label csbii_special:
 # Questioning
 label csbii_questioning:
     scene question with fade
-    play music "<loop 0>card_castle.ogg" volume 0.5
+    play music card_castle volume 0.5
     music Card Castle - Toby Fox
     show cs disappointed at left with moveinleft
     show copguy at right with moveinright
@@ -198,7 +198,7 @@ label csbii_questioning:
 # Asylum
 label csbii_asylum:
     scene asylum with fade
-    play music "<loop 0>basement.ogg" volume 0.5
+    play music basement volume 0.5
     music Basement - Toby Fox
     show cs insane worried flipped at left with moveinright
     show cs insane worried with determination
@@ -210,7 +210,7 @@ label csbii_asylum:
     show cs insane worried at center with moveinleft
     cs "Sir, you need to listen to me! I'm not crazy!"
     asylum_worker "That's what they all say. Get off of me."
-    play sound "sfx_punch.ogg"
+    play sound sfx_punch
     show cs insane worried with vpunch
     hide cs worried with moveoutbottom
     asylum_worker "Sorry it had to be this way, bud."
@@ -251,14 +251,14 @@ label csbii_asylum:
     
 # Caught
 label csbii_caught:
-    play music "<loop 0>time_for_a_smackdown.ogg" volume 0.2 if_changed
+    play music time_for_a_smackdown volume 0.2 if_changed
     music Time for a Smackdown! - Mr. Sauceman
     scene helipad
     show ed_phone at right
     show cs angry at left
     cs "Damn it! Ed's calling the police! I've gotta go after him!"
     ed "911! Come quickly! He's chasing after me!"
-    play sound "sfx_siren.ogg" loop
+    play sound sfx_siren loop
     show blue_light at left
     show red_light at right
     n "The police arrive and CS runs away."
@@ -294,7 +294,7 @@ label csbii_jail:
     hide copguy with moveoutright
     show arceus prison at right with moveinright
 
-    play music "<loop 0>stal.ogg" volume 0.4
+    play music stal volume 0.4
     music stal - C418
     if fun_value(FUN_VALUE_MUSIC):
         cs "Oh, hi, Arceus. Sorry for stal-ing."
@@ -327,7 +327,7 @@ label csbii_jail:
     jump csbii_breakout
 
 label csbii_breakout:
-    play music "<loop 0>stal.ogg" volume 0.4 if_changed
+    play music stal volume 0.4 if_changed
     music stal - C418
     scene jail_cell
     show cs prison at left
@@ -354,7 +354,7 @@ label csbii_breakout:
     music end
     n "The day comes to an end and the next one follows. CS and Arceus gather the required essentials for their escape. Along the way, they inform Anno, who more than happily complies with the plan." 
     centered "The next evening..."
-    play music "<loop 0>moongazer.ogg" volume 0.5
+    play music moongazer volume 0.5
     music Moongazer - Dr. Awesome
     if fun_value(FUN_VALUE_MUSIC):
         anno "I can't wait to gaze at the moon again once we're out of here."
@@ -412,7 +412,7 @@ label csbii_breakout:
 
 label csbii_bordercrossing:
     scene border with fade
-    play music "<loop 0>onett.ogg" volume 0.6
+    play music onett volume 0.6
     music Onett Theme - Keiichi Suzuki
     if fun_value(FUN_VALUE_MUSIC):
         n "CS, Anno, and Arceus emerge and begin heading north towards Onett. Theme."
@@ -437,7 +437,7 @@ label csbii_bordercrossing:
     arceus "Guys. We've only just left the border. You can still see it behind us."
     scene flag
     $ renpy.music.set_pause(True, "music")
-    play music2 "star_spangled_banner.ogg"
+    play music2 star_spangled_banner
     music The Star Spangled Banner - THE UNITED STATES OF AMERICA
     if fun_value(FUN_VALUE_MUSIC):
         n "The crew looks behind them and hears The Star Spangled Banner playing."
@@ -466,7 +466,7 @@ label csbii_bordercrossing:
     show cashier at t_cashier_at_tims
     show inside_tim_hortons_fg
     with fade
-    play music "<loop 0>buy_something.ogg" volume 0.6
+    play music buy_something volume 0.6
     music Buy Something Will Ya! - Keiichi Suzuki
     show cs at right with moveinleft
     show arceus flipped at center with moveinleft
@@ -515,7 +515,7 @@ label csbii_bordercrossing:
     cs "I think I'm {i}really{/i} sleep-deprived."
 
     $ achievement_manager.unlock("Ohai, Mark")
-    play music "<loop 0>buy_something.ogg" volume 0.6
+    play music buy_something volume 0.6
     scene inside_tim_hortons
     show cashier at t_cashier_at_tims
     show inside_tim_hortons_fg
@@ -547,9 +547,9 @@ label csbii_ltt:
     show linus
     with fade
     if fun_value(FUN_VALUE_RARE):
-        play music "<loop 0>passport_ytp.ogg" volume 0.5
+        play music passport_ytp volume 0.5
     else:
-        play music "<loop 0>passport.ogg" volume 0.5
+        play music passport volume 0.5
     if fun_value(FUN_VALUE_EPIC):
         show passportdigi with dissolve
     else:

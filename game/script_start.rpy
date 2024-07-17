@@ -1375,6 +1375,18 @@ define audio.hohsis_theme = "hohsis_theme.ogg"
 define audio.super_friendly = "super_friendly.ogg"
 define audio.time_for_a_smackdown = "time_for_a_smackdown.ogg"
 
+#CSBII Music
+define audio.card_castle = "card_castle.ogg"
+define audio.basement = "basement.ogg"
+define audio.stal = "stal.ogg"
+define audio.moongazer = "moongazer.ogg"
+define audio.onett = "onett.ogg"
+define audio.star_spangled_banner = "star_spangled_banner.ogg"
+define audio.buy_something = "buy_something.ogg"
+define audio.passport = "passport.ogg"
+define audio.passport_ytp = "passport_ytp.ogg"  # TODO: This should be moved to /secret
+
+
 # SFX
 define audio.sfx_beam = "sfx_beam.ogg"
 define audio.sfx_csnore = "sfx_csnore.ogg"
@@ -1392,7 +1404,11 @@ define audio.sfx_ping = "sfx_ping.ogg"
 define audio.sfx_ping_spam = "sfx_ping_spam.ogg"
 define audio.sfx_puke = "sfx_puke.ogg"
 define audio.sfx_punch = "sfx_punch.ogg"
+define audio.sfx_punch_alt = "sfx_punch_alt.ogg"
+define audio.sfx_victory_punch = "sfx_victory_punch.ogg"
 define audio.sfx_windows_logon = "sfx_windows_logon.ogg"
+define audio.sfx_chop = "sfx_chop.ogg"
+define audio.sfx_siren = "sfx_siren.ogg"
 
 # Layers?
 define config.detached_layers += ["broadcast"]
