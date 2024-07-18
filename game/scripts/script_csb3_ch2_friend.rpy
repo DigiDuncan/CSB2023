@@ -34,6 +34,8 @@ label friend2_dpn_call:
     jump friend2_car_ride_1
 
 label friend2_car_ride_1:
+    play music "<loop 0>tuna_fish.ogg" loop volume 0.6 if_changed
+    music Tuna Fish - Dr. Awesome
     scene black with fade
     n "Meanwhile, Tate's group seems to be having the time of their life."
     scene jeep_inside_fg
@@ -230,6 +232,8 @@ label friend2_cs_meetup:
     jump rpg_cop_fight_4
 
 label friend2_cs_meetup_2:
+    stop music fadeout 3.0
+    music end
     scene dinerinside
     show digi at center
     show nova flipped at left
@@ -322,6 +326,8 @@ label friend2_cs_meetup_2:
     jump friend2_car_ride_2
 
 label friend2_car_ride_2:
+    play music "<loop 0>la_by_night.ogg" volume 0.5 if_changed
+    music L.A. By Night - Dr. Awesome
     scene jeep_inside_fg
     show drive_night behind jeep_inside_fg
     show mika at left
@@ -410,12 +416,14 @@ label friend2_car_ride_2:
     jump rpg_ng_fight
 
 label friend2_cs_rage:
+    stop music fadeout 3.0
+    music end
     scene battle_block_without_theater
     show cs dark angry at center
     show tate dark at mid_left
     show arceus dark flipped at left
     show digi dark flipped at mid_offscreen_left
-    with fade
+    with dissolve
     n "After CS and his friends manage to push back the National Guard, Copguy once again flees at the last moment."
     cs "Hey! You get back here, damn it!"
     show cs dark angry at mid_right with move
@@ -521,19 +529,19 @@ label friend2_cs_rage:
     hide digi
     hide tate
     with moveoutleft
-    scene black with fade
+    scene black with dissolve
     n "The crew takes off after getting back in their respective cars."
-    stop music fadeout 3.0
-    music end
-    scene black with fade
     jump friend2_copguy_pres
 
 label friend2_copguy_pres:
+    stop music fadeout 3.0
+    music end
+    scene black with dissolve
     n "After Copguy fled the scene, he immediately called to summarize the bad news to the sheriff."
     scene police_car_fg
     show copguy flipped at left
     show drive_night behind police_car_fg
-    with fade
+    with dissolve
     sheriff "They {i}what?!{/i}"
     copguy "They blew up our tank, sir."
     sheriff "Shit! Urghhh..."
@@ -674,6 +682,8 @@ label friend2_final_meetup:
     jump rpg_final_fight_1
 
 label friend2_between_1:
+    stop music fadeout 3.0
+    music end
     scene war_torn_3
     show cs at center
     show pakoo flipped at mid_left
@@ -690,6 +700,8 @@ label friend2_between_1:
     jump rpg_final_fight_2
 
 label friend2_between_2:
+    stop music fadeout 3.0
+    music end
     scene war_torn_5
     show cs worried at center
     show tate at mid_left

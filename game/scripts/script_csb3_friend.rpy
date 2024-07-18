@@ -1,4 +1,9 @@
 label friend_microcenter:
+    play music passport volume 0.5 if_changed
+    music PASSPORT.MID - George Stone
+    scene csdesk
+    show linus at right
+    show cs at left
     cs "Sure, what parts do you need?"
     linus "We need eggs, milk..."
     linus "Just kidding."
@@ -74,12 +79,12 @@ label friend_microcenter:
     cs "Hmm, we've got AMD and NVIDIA. I wish Linus had told me which one I should get..."
     n "CS looks at his options."
     hide cs with moveoutright
-    scene gpuaisle2 with fade
+    scene gpuaisle2 with dissolve
     show cs at center with moveinleft
     pause 2.0
     show cs flipped with determination
     hide cs with moveoutleft
-    scene gpuaisle with fade
+    scene gpuaisle with dissolve
     show cs flipped at mid_left with moveinright
     pause 1.0
     show cs with determination
@@ -98,6 +103,10 @@ label friend_microcenter:
             jump friend_low_gpu
 
 label friend_high_gpu:
+    play music "<loop 0>morning_highway.ogg" loop volume 0.4 if_changed
+    music Morning Highway - BEST MUSIC
+    scene gpuaisle
+    show cs at mid_left
     if fanboy_type == "nvidia":
         cs "Alright, I'm just gonna get the Radeon RX 7900."
         cs "Linus likes to use AMD for streaming and gaming, so I hope this will work."
@@ -281,6 +290,13 @@ label friend_high_gpu:
             jump friend_stay_inside
 
 label friend_stay_inside:
+    stop music fadeout 3.0
+    music end
+    scene frontdoor
+    play sound "<loop 0>sfx_yelling.ogg" loop volume 0.5 if_changed
+    show luke flipped at left
+    show taran flipped at mid_mid_left
+    show linus at center
     show cs disappointed flipped at right
     cs "Let's just... stay here."
     cs "They've got to go away at some point, right?"
@@ -294,7 +310,14 @@ label friend_stay_inside:
     jump country_knocked_out
 
 label friend_attack_fanboy:
-    show cs angry flipped
+    stop music fadeout 3.0
+    music end
+    scene frontdoor
+    play sound "<loop 0>sfx_yelling.ogg" loop volume 0.5 if_changed
+    show luke flipped at left
+    show taran flipped at mid_mid_left
+    show linus at center
+    show cs angry flipped at right
     cs "Actually, you know what? Leave this to me!"
     hide cs with moveoutleft
     n "CS runs out the front door into the crowd."
@@ -317,9 +340,11 @@ label friend_attack_fanboy:
     jump rpg_fanboy_fight_amd
 
 label friend_after_fanboy:
+    stop music fadeout 3.0
+    music end
     scene outside_ltt
     show cs angry flipped at center
-    with fade
+    with dissolve
 
     dxcom fightminigame
     $ achievement_manager.unlock("I Thought This Was A Visual Novel")
@@ -515,7 +540,7 @@ label friend_training:
     show cs happy
     cs "Piece of cake!"
     pakoo "Alright, onto the next one."
-    scene course_2 with fade
+    scene course_2 with dissolve
     show cs at left with moveinleft
     pakoo "Alright, you've gotta jump across this pit."
     show cs disappointed
@@ -530,7 +555,10 @@ label friend_training:
 
 
 label friend_cool_jump:
-    show cs
+    play music "klaxon_beat.ogg" loop volume 0.6 if_changed
+    music Klaxon Beat - Kelly Bailey
+    scene course_2
+    show cs at left
     cs "I've got this, guys! You watching?"
     pakoo "Yep!"
     show cs at t_punchup with move
@@ -547,7 +575,10 @@ label friend_cool_jump:
     jump friend_fire_range
 
 label friend_reg_jump:
-    show cs
+    play music "klaxon_beat.ogg" loop volume 0.6 if_changed
+    music Klaxon Beat - Kelly Bailey
+    scene course_2
+    show cs at left
     cs "Alright, here goes nothing!"
     show cs at top with move
     show cs at right with move
@@ -557,6 +588,8 @@ label friend_reg_jump:
     jump friend_fire_range
 
 label friend_fire_range:
+    play music "klaxon_beat.ogg" loop volume 0.6 if_changed
+    music Klaxon Beat - Kelly Bailey
     scene course_3 with fade
     show cs at left with moveinleft
     pakoo "Alright, you picked up the LMG before you came into this room, right?"
@@ -826,7 +859,9 @@ label friend_fire_range:
 
 label friend_car_picker:
     stop sound
-    scene dealer_cars with fade
+    play music "<loop 0>mm_complete.ogg" loop volume 0.6 if_changed
+    music Mm Complete - Matthew Simmonds
+    scene dealer_cars with dissolve
     show carguy flipped at right
     show arceus flipped at center
     show cs at mid_mid_left
@@ -854,6 +889,12 @@ label friend_car_picker:
             jump friend_flint_car
 
 label friend_cool_car:
+    play music "<loop 0>mm_complete.ogg" loop volume 0.6 if_changed
+    music Mm Complete - Matthew Simmonds
+    scene dealer_cars
+    show arceus at mid_right
+    show cs at center
+    show pakoo flipped at left behind cs
     $ nice_car = True
     cs "That's a nice car!"
     pakoo "That is a sick-ass car."
@@ -908,6 +949,12 @@ label friend_cool_car:
     jump rpg_cop_fight_1
 
 label friend_reg_car:
+    play music "<loop 0>mm_complete.ogg" loop volume 0.6 if_changed
+    music Mm Complete - Matthew Simmonds
+    scene dealer_cars
+    show arceus at mid_right
+    show cs at center
+    show pakoo flipped at left behind cs
     cs "Hey! I have a Honda Civic! Let's just take that!"
     arceus "Works for me."
     pakoo "Let's go!"
@@ -959,6 +1006,8 @@ label friend_reg_car:
     jump rpg_cop_fight_1
 
 label friend_so_join:
+    stop music fadeout 3.0
+    music end
     scene dealership
     show copguy flipped at left
     show cs disappointed flipped at center
@@ -993,11 +1042,13 @@ label friend_so_join:
     jump rpg_cop_fight_2
 
 label friend_after_cop_fight:
+    stop music fadeout 3.0
+    music end
     scene dealership
     show tate at mid_mid_left
     show mika at mid_left
     show kitty at left
-    with fade
+    with dissolve
     tate "Yaaaaaaaay! We won!"
     tate "Hey, y'all good?"
     show cs flipped at mid_mid_right
@@ -1141,6 +1192,10 @@ label friend_flint_car:
     
 
 label friend_low_gpu:
+    play music "<loop 0>morning_highway.ogg" loop volume 0.4 if_changed
+    music Morning Highway - BEST MUSIC
+    scene gpuaisle
+    show cs at mid_left
     cs "I should probably try to save Linus some money. Most of the expensive parts he gets are from sponsors. He's not actually {i}that{/i} rich."
     n "CS flags down an employee."
     show cashier at mid_right with moveinright

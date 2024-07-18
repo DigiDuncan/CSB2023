@@ -1254,16 +1254,15 @@ label fired_second_tour_day:
     n "The audience is loving it."
 
     scene black with dissolve
-    
+    jump fired_third_tour_day
+
+label fired_third_tour_day:
     scene tour_bus_inside
     show anno at left
     show arceus at right
     show cs
     with dissolve
     play music "<loop 0>audio/exotic.ogg" volume 0.5
-    jump fired_third_tour_day
-
-label fired_third_tour_day:
     n "Howie hollers from the front of the bus."
     agent "Alright, boys, it's your last performance!"
     cs "Where are we headed?"
