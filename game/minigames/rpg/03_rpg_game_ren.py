@@ -215,7 +215,7 @@ def ai_mimic(subject: Fighter, targets: list[Fighter], crit: bool, options: dict
     return attack.run(subject, targets, crit)
 
 # AI Targeting
-def get_target(encounter: Encounter, attack: Attack) -> list[Fighter]:
+def get_target(encounter: Encounter, fighter: Fighter, attack: Attack) -> list[Fighter]:
     target: list[Fighter] = []
 
     # If it's auto targeting
@@ -226,13 +226,13 @@ def get_target(encounter: Encounter, attack: Attack) -> list[Fighter]:
     # If the targeting computer is switched off, Luke, are you okay?
     else:
         if attack.target_type == "enemies":
-            target_staging = encounter.allies if subject.enemy else encounter.enemies
+            target_staging = encounter.allies if fighter.enemy else encounter.enemies
         elif attack.target_type == "allies":
-            target_staging = encounter.enemies if subject.enemy else encounter.allies
+            target_staging = encounter.enemies if fighter.enemy else encounter.allies
         elif attack.target_type == "all":
             target_staging = encounter.fighters
         else:
-            target_staging = encounter.allies if subject.enemy else encounter.enemies
+            target_staging = encounter.allies if fighter.enemy else encounter.enemies
 
         # Choose fighters (weighted)
         weights = []
@@ -331,7 +331,7 @@ class AI:
         answer = []
         for atk in what.attacks:
             # Run the attack(s)
-            subwho = get_target(encounter, atk)
+            subwho = get_target(encounter, subject, atk)
             who.extend(subwho)
             answer.extend(atk.run(subject, subwho))
             print(f"[AI: {self.name}] {subject.name} used {atk.name} on {sentence_join([t.name for t in subwho])}...")  # type: ignore
