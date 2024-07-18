@@ -1988,7 +1988,7 @@ label train_confront_lupin:
         pause 0.5
         show cs disappointed flipped at offscreenright with determination
         show cs disappointed flipped at right with MoveTransition(1.0)
-        play music "<from 0 loop 24>insomnia_loopable.ogg"
+        play music "<loop 0>insomnia_intro.ogg"
         music Insomnia - W∆W
         pause 1.0
         cs "Tate? You can't sleep either?"
@@ -2026,7 +2026,7 @@ label train_confront_lupin:
         show cs worried flipped
         cs "Huh?"
         stop music fadeout 1.0
-        play music "<from 22>insomnia_loopable.ogg"
+        play music "<from 22.6>insomnia_full.ogg"
         show tate srs at mid_mid_left with moveinleft
         tate "Will you indulge me?"
         menu:
