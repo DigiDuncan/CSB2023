@@ -214,6 +214,40 @@ def ai_mimic(subject: Fighter, targets: list[Fighter], crit: bool, options: dict
     print(f"[AI Mimic] running {attack.name}...")
     return attack.run(subject, targets, crit)
 
+# AI Targeting
+def get_target(encounter: Encounter, attack: Attack) -> list[Fighter]:
+    target: list[Fighter] = []
+
+    # If it's auto targeting
+    if attack.target_count == 0:
+        target_type = {"enemies": "allies", "allies": "enemies", "all": "all"}[attack.target_type]
+        target = getattr(encounter, target_type)
+
+    # If the targeting computer is switched off, Luke, are you okay?
+    else:
+        if attack.target_type == "enemies":
+            target_staging = encounter.allies if subject.enemy else encounter.enemies
+        elif attack.target_type == "allies":
+            target_staging = encounter.enemies if subject.enemy else encounter.allies
+        elif attack.target_type == "all":
+            target_staging = encounter.fighters
+        else:
+            target_staging = encounter.allies if subject.enemy else encounter.enemies
+
+        # Choose fighters (weighted)
+        weights = []
+        for n, f in enumerate(target_staging):
+            score = (self.preference_weight if f.name in self.preferred_targets else 1)
+            strength = n / len(target_staging)
+            if self.focus == "strong":
+                score *= strength
+            elif self.focus == "weak":
+                score *= (1 - strength)
+            weights.append(score)
+        for _ in range(attack.target_count):
+            target.append(renpy.random.choices(target_staging, weights = weights)[0])
+    return target
+
 class AI:
     def __init__(self,
                  name: str,
@@ -241,7 +275,6 @@ class AI:
         # Sort enemies by weak-first
         enemy_status.sort(key = lambda x: (x.health_points * (1 - (x.armor_points / 100))))
         what: Attack = None
-        who: list[Fighter] = []
         # i_dont_know = "3rd Base"
         available_attacks = [a for a in subject.attacks if a.available]
         # No attacks to chose?
@@ -294,40 +327,17 @@ class AI:
 
         # What should be determined before this
 
-        # If it's auto targeting
-        if what.target_count == 0:
-            target_type = {"enemies": "allies", "allies": "enemies", "all": "all"}[what.target_type]
-            who = getattr(encounter, target_type)
+        who = []
+        answer = []
+        for atk in what.attacks:
+            # Run the attack(s)
+            subwho = get_target(encounter, atk)
+            who.extend(subwho)
+            answer.extend(atk.run(subject, subwho))
+            print(f"[AI: {self.name}] {subject.name} used {atk.name} on {sentence_join([t.name for t in subwho])}...")  # type: ignore
+            renpy.notify(f"{subject.display_name} used {atk.name} on {sentence_join([t.display_name for t in subwho])}...")  # type: ignore
+            renpy.pause(1.0)
 
-        # If the targeting computer is switched off, Luke, are you okay?
-        else:
-            if what.target_type == "enemies":
-                who_staging = encounter.allies if subject.enemy else encounter.enemies
-            elif what.target_type == "allies":
-                who_staging = encounter.enemies if subject.enemy else encounter.allies
-            elif what.target_type == "all":
-                who_staging = encounter.fighters
-            else:
-                who_staging = encounter.allies if subject.enemy else encounter.enemies
-
-            # Choose fighters (weighted)
-            weights = []
-            for n, f in enumerate(who_staging):
-                score = (self.preference_weight if f.name in self.preferred_targets else 1)
-                strength = n / len(who_staging)
-                if self.focus == "strong":
-                    score *= strength
-                elif self.focus == "weak":
-                    score *= (1 - strength)
-                weights.append(score)
-            for _ in range(what.target_count):
-                who.append(renpy.random.choices(who_staging, weights = weights)[0])
-        
-        # Run the attack
-        answer = what.run(subject, who)
-        print(f"[AI: {self.name}] {subject.name} used {what.name} on {sentence_join([t.name for t in who])}...")  # type: ignore
-        renpy.notify(f"{subject.display_name} used {what.name} on {sentence_join([t.display_name for t in who])}...")  # type: ignore
-        renpy.pause(1.0)
         return who, answer
 
 class AIType:
@@ -356,6 +366,10 @@ class Attack:
     def run(self, subject: Fighter, fighters: list[Fighter], crit: bool = False) -> AnswerList:
         self._turns_until_available = self.cooldown
         return self.func(subject, fighters, crit, self.options)
+
+    @property
+    def attacks(self) -> list[Attack]:
+        return [self]
 
     @property
     def available(self) -> bool:
