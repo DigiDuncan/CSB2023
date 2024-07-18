@@ -647,12 +647,12 @@ class Attacks:
     SHELL = Attack("Shell", "Fire a tank shell!", random_damage_fighters, min_mult = 1, max_mult = 2, accuracy = 60)
     HEAL_EX = Attack("Heal EX", "Lots of healing.", heal_fighters, target_count = 0, target_type = "allies", mult = 10, accuracy = 100)
     AUGMENT = Attack("Awesome Augment", "Fire a laser! Fire a laser!", damage_fighters, target_count = 0, mult = 15, ex = False, cooldown = 5, accuracy = 100)
-    TATE_RECALL = Attack("Tate's Recall", "Remember something dreadful.", damage_fighters, target_count = 0, target_type = "allies", mult = 0.5, turns = 5, ex = False)
-    TATE_REVERB = Attack("Tate's Reverb", "Make them all remember.", damage_over_time, target_count = 0, target_type = "enemies", mult = 1, turns = 5, ex = False)
-    REVERB_RECALL = ComboAttack("Reverb Recall", "Channel your pain over several turns. Also damages the user.", [TATE_RECALL, TATE_REVERB], cooldown = 5, ex = False)
-    TATE_ECHOES = Attack("Tate's Echoes", "The past haunts you.", change_stat, stat = "ap", target_count = 0, target_type = "allies", mult = 0.5, cooldown = 10, ex = False)
-    TATE_BLAST = Attack("Tate's Blaster", "Make it haunt them, too.", damage_fighters, target_count = 0, target_type = "enemies", mult = 3, cooldown = 10, ex = False)
-    ECHO_BLAST = ComboAttack("Echo Blast", "Make them feel the pain of the past, at the cost of your AP.", [TATE_ECHOES, TATE_BLAST], cooldown = 10, used = True, ex = False)
+    TATE_RECALL = Attack("Tate's Recall", "Remember something dreadful.", damage_fighters, target_count = 0, target_type = "allies", mult = 0.5, turns = 5, accuracy = 90, ex = False)
+    TATE_REVERB = Attack("Tate's Reverb", "Make them all remember.", damage_over_time, target_count = 0, target_type = "enemies", mult = 1, turns = 5, accuracy = 90, ex = False)
+    REVERB_RECALL = ComboAttack("Reverb Recall", "Channel your pain over several turns. Also damages the user.", [TATE_RECALL, TATE_REVERB], cooldown = 5, accuracy = 90, ex = False)
+    TATE_ECHOES = Attack("Tate's Echoes", "The past haunts you.", change_stat, stat = "ap", target_count = 0, target_type = "allies", mult = 0.5, cooldown = 10, accuracy = 100, ex = False)
+    TATE_BLAST = Attack("Tate's Blaster", "Make it haunt them, too.", damage_fighters, target_count = 0, target_type = "enemies", mult = 3, cooldown = 10, accuracy = 100,ex = False)
+    ECHO_BLAST = ComboAttack("Echo Blast", "Make them feel the pain of the past, at the cost of your AP.", [TATE_ECHOES, TATE_BLAST], cooldown = 10, accuracy = 100, used = True, ex = False)
 
     # UCN
     STOMP = Attack("Stomp", "Send an earthquake to the enemies!", damage_fighters, target_count = 0, target_type = "enemies", ex = False, mult = 0.75)

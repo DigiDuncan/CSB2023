@@ -69,6 +69,7 @@ define achievements = [
     Achievement("Archived", "???", "Find Addy's Facility.", "archive", "story", True),
     Achievement("Graphite Grinder", "Sharpening Time 2", "Beat the Pencil Cultist's high score.", "grinder", "story", dx = True),
     Achievement("60 Drillless WR", "Your wrist hurts.", "Get a perfect score of 1200.", "1200","extra", dx = True),
+    Achievement("For Poop And For Glory", "Remind them who the main character is.", "Defeat Tate EX.", "vs-tate", "extra", dx = True),
     Achievement("We Don't Go To Bronson", "???", "Welcome to Hell!",  "bronson", "story", dx = True),
     Achievement("Gotta Catch Them All", "Collect every bio.", "Collect every bio.", "bios", "extra"),
     Achievement("The Brown Album", "Collect every song in the jukebox.", "Collect every song in the jukebox.", "juke", "extra"),

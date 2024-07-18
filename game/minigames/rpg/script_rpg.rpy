@@ -241,6 +241,7 @@ label rpg_vs_tate:
     rpg:
         bg "images/bg/train/amtrak_observation.png"
 
+		# TODO: This does not work yet, always defaults to punch
         python:
             if ch2_cs_attack_used = "karate-chopped":
                 cs_chosen_form = "cs_vs_tate_chop"

@@ -2060,6 +2060,7 @@ label train_confront_lupin:
                 
 label train_vs_tate_win:
     "Placeholder (defeat Tate)"
+    $ achievement_manager.unlock("For Poop And For Glory")
 
 label train_vs_tate_lose:
     "Placeholder (lose to Tate)"
