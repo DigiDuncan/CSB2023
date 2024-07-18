@@ -335,7 +335,7 @@ class AI:
             who.extend(subwho)
             answer.extend(atk.run(subject, subwho))
             print(f"[AI: {self.name}] {subject.name} used {atk.name} on {sentence_join([t.name for t in subwho])}...")  # type: ignore
-            renpy.notify(f"{subject.display_name} used {atk.name} on {sentence_join([t.display_name for t in subwho])}...")  # type: ignore
+            renpy.notify(f"{subject.display_name} used {what.name} on {sentence_join([t.display_name for t in subwho])}...")  # type: ignore
             renpy.pause(1.0)
 
         return who, answer
@@ -416,14 +416,6 @@ class ComboAttack:
     def _turns_until_available(self, v: int):
         for a in self.attacks:
             a._turns_until_available = v
-
-    @property
-    def target_count(self) -> int:
-        return self.attacks[0].target_count
-
-    @property
-    def target_type(self) -> int:
-        return self.attacks[0].target_type
 
     @property
     def available(self) -> bool:
