@@ -17,7 +17,7 @@ from copy import deepcopy
 from typing import Callable, Literal, Optional
 import math
 
-DamageType = Literal["hp", "confusion", "ap", "atk", "none"]
+DamageType = Literal["hp", "confusion", "ap", "atk", "none", "miss"]
 Answer = tuple[int, DamageType]
 AnswerList = list[Answer]
 
@@ -493,11 +493,15 @@ class Fighter:
 
     def attack(self, style: int, targets: list[Fighter]) -> AnswerList:
         hit = (renpy.random.choice([True, False]) if self.confused else True) and not self.dead
+        hit = hit and renpy.random.random() <= (self.attacks[style].accuracy / 100)
         if hit:
             return self.attacks[style].run(self, targets)
         elif self.confused:
             renpy.notify(f"{self.display_name} is confused!")
             return [(0, "none")]
+        else:
+            renpy.notify(f"{self.display_name} missed!")
+            return [(0, "miss")]
 
     def attack_ai(self, encounter: Encounter) -> tuple(list["Fighter"], AnswerList):
         if not self.dead:
@@ -795,6 +799,8 @@ class DamageIndicator:
                 return "unconfused"
             else:
                 return "confused"
+        elif self.type == "miss":
+            return "miss"
         else:
             return "none"
 
@@ -812,6 +818,8 @@ class DamageIndicator:
             return (0xFF, 0x00, 0x00)
         elif self.indicator_type == "heal":
             return (0x00, 0xFF, 0x00)
+        elif self.indicator_type == "miss":
+            return (0xFF, 0xAA, 0xAA)
         else:
             # This shouldn't happen
             return (0xFF, 0xFF, 0xFF)
@@ -826,6 +834,8 @@ class DamageIndicator:
             return "Unconfused!"
         elif self.indicator_type == "confused":
             return "Confused!"
+        elif self.indicator_type == "miss":
+            return "Miss!"
         elif self.indicator_type == "damage":
             return str(abs(self.value))
         elif self.indicator_type == "heal":
@@ -844,7 +854,7 @@ class DamageIndicator:
         elif self.indicator_type == "stat_up":
             renpy.sound.play("audio/ut/snd_b.ogg", channel = "sfx")
             self.play_sound = False
-        elif self.indicator_type == "stat_down":
+        elif self.indicator_type == "stat_down" or self.indicator_type == "miss":
             renpy.sound.play("audio/ut/snd_bluh.ogg", channel = "sfx")
             self.play_sound = False
         elif self.indicator_type == "confused" or self.indicator_type == "unconfused":
