@@ -1972,11 +1972,98 @@ label train_confront_lupin:
     mean "Let's just start looking."
     mean "I say that we start at the very back of the train and go car-by-car."
     mean "Let's stick together in case this guy is dangerous."
-    
-
+   
     "This is a placeholder line until more is written."
 
+    ######## SECRET FIGHT VS TATE ########
+    if fun_value(1111):
+        stop music fadeout 1.0
+        scene black
+        n "Try as he may, after all of the excitement, CS just can't get to sleep."
+        n "He decides to go for a walk, eventually finding himself in the observation car."
+        n "He isn't alone."
+        scene amtrak_observation 
+        show tate srs flipped at left
+        with fade
+        pause 0.5
+        show cs disappointed flipped at offscreenright with determination
+        show cs disappointed flipped at right with MoveTransition(1.0)
+        play music "<loop 0>insomnia_intro.ogg"
+        music Insomnia - W∆W
+        pause 1.0
+        cs "Tate? You can't sleep either?"
+        tate "Sure can't."
+        "..."
+        pause 1.0
+        cs "Tate? Are you alright?"
+        show tate srs
+        tate "You know, I've been thinking, CS."
+        tate "I've been thinking a lot, actually."
+        cs "About what?"
+        tate "I just wanted to relax on this trip."
+        tate "Yet, somehow, chaos always follows me..."
+        tate "And, somehow, we keep running into each other."
+        tate "Are the two correlated? I do not know."
+        cs "What are you saying, Tate?"
+        tate "Your actions affect more than just you."
+        tate "Your attack on HoH Sis cost Mean his job."
+        tate "You lured a thief onto this train."
+        tate "In another place, I had to save you from your own bad decisions."
+        tate "In another time, I fought alongside you."
+        tate "Tell me, CS."
+        tate "Do you think I could have taken on that crook alone?"
+        menu:
+            "Could Tate have defeated Lupin?"
+            "Maybe?":
+                pass
+            "Not a chance.":
+                pass
+        cs "Well, uh--{w=0.5}{nw}"
+        tate "I guess it doesn't matter. He was more of a runner than a fighter, anyway."
+        show tate srs at mid_left with moveinleft
+        tate "I think I can take {i}you,{i} CS."
+        show cs worried flipped
+        cs "Huh?"
+        stop music fadeout 1.0
+        play music "insomnia_2.ogg"
+        show tate srs at mid_mid_left with moveinleft
+        tate "Will you indulge me?"
+        menu:
+            "Will you?"
+            "No way.":
+                cs "No way. I don't want to accidentally hurt you."
+                show tate srs flipped
+                tate "Fair enough."
+                tate "I think I'll head to bed then."
+                tate "You should, too."
+            "Are you sure?":
+                cs "Are you sure you want this? I don't want you getting hurt..."
+                tate "You know that I wouldn't ask if I didn't want it."
+                tate "Don't hold back."
+                show cs scared flipped
+                cs "Tate, I'm serious, I don't want to hurt you."
+                tate "You don't need to worry about that."
+                show tate srs at center with moveinleft
+                show tate smug
+                show cs scared flipped
+                tate "You don't even need to worry about hurting my feelings this time."
+                tate "... You're not {i}afraid,{/i} are you?"
+                show cs surprised flipped
+                cs "Of you? Why would I be?"
+                tate "Then, let's do this."
+                stop music fadeout 1.0
+                scene white with dissolve
+                pause 1.0
+                # TODO: tate battle sprite
+                jump rpg_vs_tate
+                
+label train_vs_tate_win:
+    "Placeholder (defeat Tate)"
 
+label train_vs_tate_lose:
+    "Placeholder (lose to Tate)"
+                
+        
 ######## GO HOME ########
 label train_return_home_transition:
     # yes i stole much of this from south route, oh well, i'm tired ok - tate

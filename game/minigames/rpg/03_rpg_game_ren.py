@@ -377,10 +377,11 @@ class Attack:
             return "damage"
 
 class ComboAttack:
-    def __init__(self, name: str, descripton: str, attacks: list[Attack], ex = True):
+    def __init__(self, name: str, descripton: str, attacks: list[Attack], cooldown: int = 0, used = False, ex = True):
         self.name = name
         self.description = descripton
         self.attacks = attacks
+        self.cooldown = cooldown
         self.ex = ex
         self.used = attacks[0].used
 
@@ -634,6 +635,12 @@ class Attacks:
     AI_MIMIC = Attack("AI Mimic", "Copies an enemy's attack.", ai_mimic, target_count = 1, target_type = "enemies", cooldown = 2)
     SHELL = Attack("Shell", "Fire a tank shell!", random_damage_fighters, min_mult = 1, max_mult = 2)
     HEAL_EX = Attack("Heal EX", "Lots of healing.", heal_fighters, target_count = 0, target_type = "allies", mult = 10)
+    TATE_RECALL = Attack("Tate's Recall", "Remember something dreadful.", damage_fighters, target_count = 0, target_type = "allies", mult = 0.5, ex = False)
+    TATE_REVERB = Attack("Tate's Reverb", "Make them all remember.", damage_over_time, target_count = 0, target_type = "enemies", mult = 1, turns = 5, ex = False)
+    REVERB_RECALL = ComboAttack("Reverb Recall", "Channel your pain over several turns. Also damages the user.", [TATE_RECALL, TATE_REVERB], cooldown = 5, ex = False)
+    TATE_ECHOES = Attack("Tate's Echoes", "The past haunts you.", change_stat, stat = "ap", target_count = 1, target_type = "allies", mult = 0.5, ex = False)
+    TATE_BLAST = Attack("Tate's Blaster", "Make it haunt them, too.", damage_fighters, target_count = 1, target_type = "enemies", mult = 3, cooldown = 10, ex = False)
+    ECHO_BLAST = ComboAttack("Echo Blast", "Make them feel the pain of the past, at the cost of your AP.", [TATE_ECHOES, TATE_BLAST], cooldown = 10, ex = False)
 
     # UCN
     STOMP = Attack("Stomp", "Send an earthquake to the enemies!", damage_fighters, target_count = 0, target_type = "enemies", ex = False, mult = 0.75)
@@ -685,6 +692,9 @@ class Fighters:
     CS_FINAL2 = Fighter("CS (Error)", False, 1880, 10, 250, [Attacks.KICK, Attacks.YTP_HEAL, Attacks.YTP_MAGIC_NOCOOL], Image("images/characters/cs/neutral.png"), display_name = "CS")
     CS_WEAK = Fighter("CS (Weak)", False, 188, 5, 25, [Attacks.PUNCH], Image("images/characters/cs/neutral.png"), display_name = "CS")
     CS_ARCHIVAL = Fighter("CS (Archival)", False, 1027, 50, 27, [Attacks.KICK, Attacks.YTP_HEAL], Image("images/characters/cs/neutral.png"), display_name = "CS")
+    CS_VS_TATE_PUNCH = Fighter("CS (VS Tate - Punch)", False, 288, 10, 40, [Attacks.PUNCH, Attacks.YTP_MAGIC], Image("images/characters/cs/neutral.png"), display_name = "CS")
+    CS_VS_TATE_KICK = Fighter("CS (VS Tate - Kick)", False, 288, 10, 40, [Attacks.KICK, Attacks.YTP_MAGIC], Image("images/characters/cs/neutral.png"), display_name = "CS")
+    CS_VS_TATE_CHOP = Fighter("CS (VS Tate - Chop)", False, 288, 10, 40, [Attacks.CHOP, Attacks.YTP_MAGIC], Image("images/characters/cs/neutral.png"), display_name = "CS")
     ARCEUS = Fighter("Arceus", False, 160, 15, 35, [Attacks.SLASH, Attacks.LIGHT_CAST], Image("images/characters/arc/arceus.png"))
     PAKOO = Fighter("Pakoo", False, 145, 20, 30, [Attacks.INSIGHT, Attacks.SHOTGUN], Image("images/characters/pakoo/pakoo.png"))
     MIKA = Fighter("Mika", False, 165, 20, 30, [Attacks.ENCOURAGE, Attacks.HIGH_NOON], Image("images/characters/mika.png"))
@@ -722,6 +732,7 @@ class Fighters:
     K174 = Fighter("K17-4", True, 174, 17, 20, [Attacks.PUNCH], Image("images/characters/k174.png"), ai = AIType.NEUTRAL)
     K199 = Fighter("K19-9", True, 199, 19, 30, [Attacks.KICK], Image("images/characters/k199.png"), ai = AIType.AGGRO)
     K207 = Fighter("K20-7", True, 207, 20, 10, [Attacks.PUNCH], Image("images/characters/k207.png"), ai = AIType.DEFENSIVE)
+    TATE_EX = Fighter("{image=gui/dx_text.png} Tate EX", True, 1111, 6, 35, [Attacks.DAMAGE_SCREM, Attacks.REVERB_RECALL, Attacks.ECHO_BLAST], Image("images/characters/tate/tatesmug.png"), ai = AIType.AGGRO, display_name = "Tate EX") 
 
     # Enemies (UCN)
     WESLEY = Fighter("{image=gui/dx_text.png} Wesley", True, 200, 20, 40, [Attacks.PISTOL, Attacks.ALL_OVER_AGAIN], Image("images/characters/wesley.png"), ai = AIType.AGGRO, display_name = "Wesley")

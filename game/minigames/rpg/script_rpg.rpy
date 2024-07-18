@@ -223,3 +223,24 @@ label rpg_archival:
         on_win "archival_finale"
         on_lose "rpg_archival"
         music "audio/broken_sky.mp3"
+        
+label rpg_vs_tate:
+    rpg:
+        bg "images/bg/train/amtrak_observation.png"
+
+        $ cs_chosen_form = Fighters.CS_VS_TATE_PUNCH
+        $ if ch2_cs_attack_used = "karate-chopped":
+            $ cs_chosen_form = Fighters.CS_VS_TATE_CHOP
+        $ elif ch2_cs_attack_used = "Sparta-kicked":
+            $ cs_chosen_form = Fighters.CS_VS_TATE_KICK
+        $ else:
+            $ cs_chosen_form = Fighters.CS_VS_TATE_PUNCH
+                
+        fighters:
+            cs_vs_tate_punch
+            tate_ex
+
+        scale 2.0
+        on_win "train_vs_tate_win"
+        on_lose "train_vs_tate_loss"
+        music "audio/space.ogg"

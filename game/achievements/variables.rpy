@@ -55,6 +55,7 @@ define achievements = [
     Achievement("Archived", "???", "Find Addy's Facility.", "archive", True),
     Achievement("Graphite Grinder", "Sharpening Time 2", "Beat the Pencil Cultist's high score.", "grinder"),
     Achievement("60 Drillless WR", "Your wrist hurts.", "Get a perfect score of 1200.", "1200"),
+    Achievement("For Poop And For Glory", "Remind them of who the main character is.", "Defeat Stellarian Tate.", "vs-tate"),
     Achievement("Gotta Catch Them All", "Collect every bio.", "Collect every bio.", "bios"),
     Achievement("The Brown Album", "Collect every song in the jukebox.", "Collect every song in the jukebox.", "juke"),
     Achievement("Fin.", "Collect all the endings.", "Collect all the endings.", "end")
