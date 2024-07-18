@@ -200,11 +200,11 @@ label dx_after_true:
     show cs disappointed
     if fun_value(FUN_VALUE_COMMON):
         n "All of a sudden, a time and space portal opens and Car Guy comes out of it."
-        jump renault
+        jump dx_after_renault
     else:
-        jump back_to_story
+        jump dx_after_back_to_story
 
-label back_to_story:
+label dx_after_back_to_story:
     cs "Maybe I can find Billy's machine, if it ended up here."
     n "Before CS can get anywhere, a group of men run up to him."
     show shadowman at mid_left with moveinleft
@@ -357,31 +357,31 @@ label back_to_story:
     cs "Oh no, it is much more powerful than it looks."
     cultist "Well, if you can help us win, we'll let you take it. We just care about winning."
     cs "Sounds good to me."
-    jump cult_questions
+    jump dx_after_cult_questions
 
-label cult_questions:
+label dx_after_cult_questions:
     cultist "Is there anything else you would like to know about?"
     menu:
         "What else would you like to know?"
         "Tell me more about CultCon.":
-            jump cultcon_ask
+            jump dx_after_cultcon_ask
         "Who are our competitors?":
-            jump competitors_ask
+            jump dx_after_competitors_ask
         "How can we win the competition?":
-            jump win_ask
+            jump dx_after_win_ask
         "I think I'm good.":
-            jump competiton_start
+            jump dx_after_competiton_start
 
-label cultcon_ask:
+label dx_after_cultcon_ask:
     cs "Tell me more about how CultCon works."
     cultist "Well, you see, CultCon is mainly just an event for cultists to meet up and share ideas, teachings, and other cult related things."
     cultist "The Cult Competiton is a side thing where only a few cults try to participate in."
     cultist "If they win, then they win the prize they are showing off, and get bragging rights about how awesome their cult is, usually growing their cult in the process."
     cultist "That's what we are interested in."
     cultist "We almost won a few years back when those Heaven's Gate people voted for us, but they just killed themselves the next year."
-    jump cult_questions
+    jump dx_after_cult_questions
 
-label competitors_ask:
+label dx_after_competitors_ask:
     cs "Who are the main competitors this year?"
     cultist "Well, there are the pencil guys who usually end up in dead last, and they give their vote to us most of the time."
     cultist "Our main opponent is the Scientologists, because they have so many numbers aren't completely psycho."
@@ -390,9 +390,9 @@ label competitors_ask:
     cs "Tom Cruise?"
     cultist "Yeah, fuck that guy. If there is ONE THING I hate more than everything else, it's gotta be him."
     cultist "I don't think the rest of the groups aren't as bad as them, and I believe you'll have an easy time winning them over."
-    jump cult_questions
+    jump dx_after_cult_questions
 
-label win_ask:
+label dx_after_win_ask:
     cs "So, how do we win in the competition?"
     cultist "Well, all the cults have a certain number of votes they give out to cults they are impressed by."
     cultist "The bigger the cult, the more votes you can hand out."
@@ -400,9 +400,9 @@ label win_ask:
     cultist "It is possible for a small cult like us to win, we just have to put in more work to be influential."
     cultist "Which is what you'll be doing."
     cs "Ah, I got it."
-    jump cult_questions
+    jump dx_after_cult_questions
 
-label competiton_start:
+label dx_after_competiton_start:
     cs "I think I'm good."
     stop music fadeout 3.0
     cultist "Alright, awesome."
@@ -435,28 +435,28 @@ label competiton_start:
     play music "<loop 0>10_feet_away.ogg" volume 1
     show cs cultist at center with moveinleft
     cs "Alright, so there are a few cults I can challenge here."
-    jump seek_competitors
+    jump dx_after_seek_competitors
     
-label seek_competitors:
+label dx_after_seek_competitors:
     scene cult_con
     show cs cultist at center
     cs "Which cult should I look for?"
     menu:
         "Pick a cult:"
         "Scientology (NF)":
-            jump science_ask
+            jump dx_after_science_ask
         "Cargo Cult (NF)":
-            jump cargo_ask
+            jump dx_after_cargo_ask
         "Wayside Summer Camp (NF)":
-            jump summer_ask
+            jump dx_after_summer_ask
         "Pencil Cult":
-            jump pencil_ask
+            jump dx_after_pencil_ask
         "Catholicism (NF)":
-            jump catholic_ask
+            jump dx_after_catholic_ask
         "Lunatic Cultists (NF)":
-            jump lunatic_ask
+            jump dx_after_lunatic_ask
 
-label pencil_ask:
+label dx_after_pencil_ask:
     cs "The cult leader said that the Pencil guys usually give us a vote, so I can see what they are up to. "
     hide cs with moveoutright
     n "CS makes his way to the pencil room."
@@ -489,9 +489,9 @@ label pencil_ask:
     pencil "Well aren't you cocky? Let's see this then!"
     pencil "3, 2, 1,"
     pencil "Go!"
-    minigame "minigame_pencil2" "win_pencil2" "lose_pencil_game2"
+    minigame "minigame_pencil2" "dx_after_win_pencil2" "lose_pencil_game2"
 
-    label win_pencil2:
+    label dx_after_win_pencil2:
     hide bad_end_screen
     hide typewriter
     show pencilroom
@@ -524,9 +524,9 @@ label pencil_ask:
     cs "Fuck I need to get back home..."
     show cs cultist
     cs "Alright, well..."
-    jump seek_competitors
+    jump dx_after_seek_competitors
 
-label science_ask:
+label dx_after_science_ask:
     cs "Y'know, the scientologists think they are all that, but maybe me talking to them will convince them to get us a vote."
     n "CS runs over to scientologists stand."
     n "When CS gets there, he sees Tom Cruise standing there, greeting other cult members walking by."
@@ -558,9 +558,9 @@ label science_ask:
         cruise "Yeah yeah, whatever."
     n "CS heads back to the convention floor."
     cs "Well, that was a lot easier than I thought."
-    jump seek_competitors
+    jump dx_after_seek_competitors
 
-label catholic_ask:
+label dx_after_catholic_ask:
     cs "Who the hell are those guys?"
     cs "They just look like Christians!"
     n "CS goes to check out the Catholics."
@@ -568,7 +568,7 @@ label catholic_ask:
     priest "Hello! Would you like to donate to the church?"
     menu:
         "Find money to donate":
-            jump catholic_find
+            jump dx_after_catholic_find
         "Ask for vote regardless":
             cs "No thanks, I don't have money on me."
     cs "Do you, want to vote for Blue Branch?"
@@ -582,9 +582,9 @@ label catholic_ask:
     cs "Alright, cya!"
     n "CS heads back to the convention floor."
     cs "Well, that was a load of crap!"
-    jump seek_competitors
+    jump dx_after_seek_competitors
 
-label catholic_find:
+label dx_after_catholic_find:
     $ god_money = True
     cs "Stay right here, I'm sure I can find some money."
     priest "I wasn't planning on moving, but thank you! The church will thank you."
@@ -592,9 +592,9 @@ label catholic_find:
     cs "So what I'm thinking, is if I give those guys some money, they'll be sure to give us votes!"
     cs "I mean, the Catholic church here must have a lot of votes to give out! right?"
     cs "Well, I need to figure out who to ask..."
-    jump seek_competitors
+    jump dx_after_seek_competitors
 
-label summer_ask:
+label dx_after_summer_ask:
     cs "There is a summer camp here?"
     cs "That seems really fishy, didn't the cult leader say something about cults with tortured followers get disqualified?"
     cs "I better go check them out."
@@ -602,7 +602,7 @@ label summer_ask:
     cs "Hey, what is this... camp all about?"
     wayside_instructor "Welcome to Wayside Summer Camp!"
 
-label lunatic_ask:
+label dx_after_lunatic_ask:
     cs "Hmm, who are those guys? They look like plague doctors almost..."
     cs "Let's go check them out."
     n "CS runs over to meet the Lunatic Cultists."
@@ -638,7 +638,7 @@ label lunatic_ask:
         n "CS heads back to the convention floor."
         cs "I've barely played Terraria, so either I looked up or asked the chat."
         cs "Either way, I got a ton of votes now!"
-        jump seek_competitors
+        jump dx_after_seek_competitors
     else:
         l_cultist "Dude, how was he gonna know that? Only we know that!"
     l_cultist "Shit you right that was probably too hard."
@@ -678,9 +678,9 @@ label lunatic_ask:
         $ lunatic_votes += 3
         l_cultist "Alright, it looks like you got all the answers right! Good job!"
     
-    jump quiz_finish
+    jump dx_after_quiz_finish
 
-label quiz_finish:
+label dx_after_quiz_finish:
     l_cultist "Let's bring you back to reality now."
     n "CS' mind feels like it's being untangled, and then being put back together."
     cs "Woah, where am I?"
@@ -695,17 +695,17 @@ label quiz_finish:
     l_cultist "It looks like you got..."
     l_cultist "[votes] votes."
     if votes == 0:
-        jump zero_right
+        jump dx_after_zero_right
     if votes == 3:
-        jump one_right
+        jump dx_after_one_right
     if votes == 7:
-        jump two_right
+        jump dx_after_two_right
     if votes == 10:
-        jump three_right
+        jump dx_after_three_right
     else:
         jump secret_dx
     #CS got zero right
-label zero_right:
+label dx_after_zero_right:
     cs "Dang, I really got no votes?"
     l_cultist "Sorry, but you didn't get any of your answers right."
     l_cultist "Maybe consider calling some of your friends, so you can remember who they are."
@@ -713,18 +713,18 @@ label zero_right:
     n "CS sulks back to the convention floor."
     cs "That really sucks, I can't believe I did that bad."
     cs "I need to find more people to get votes from..."
-    jump seek_competitors
+    jump dx_after_seek_competitors
     #CS got one right
-label one_right:
+label dx_after_one_right:
     cs "Hey, I'll get what I can take."
     l_cultist "You could've done a bit better, but there was quite a bit for you to take in."
     cs "Oh well, it's okay."
     n "CS makes his way back to the convention floor."
     cs "Hey, at least I got some votes, but I still should go get some more."
     cs "Let's see…"
-    jump seek_competitors
+    jump dx_after_seek_competitors
     #CS got two right
-label two_right:
+label dx_after_two_right:
     cs "That's not bad at all!"
     l_cultist "To be honest, that last question was pretty hard."
     l_cultist "I don't blame you for not getting it."
@@ -733,9 +733,9 @@ label two_right:
     cs "Well, I'm doing pretty good, I would say!"
     cs "I need to get some more votes, but I'm feeling confident!"
     cs "Alright, who's next?"
-    jump seek_competitors
+    jump dx_after_seek_competitors
     #CS got them all right
-label three_right:    
+label dx_after_three_right:    
     cs "Woohoo!"
     l_cultist "Geez, you got a really good memory."
     l_cultist "You deserve to win this year, good luck to ya, man."
@@ -745,11 +745,11 @@ label three_right:
     cs "Smell that air!"
     cs "I think we are gonna win this competition!"
     cs "Who's next?"
-    jump seek_competitors
+    jump dx_after_seek_competitors
 
 
 
-label renault:
+label dx_after_renault:
     show carguy at right with moveinright
     play music "<loop 0>scales_of_joy.ogg" volume 0.8
     carguy "Hey CS!"
@@ -757,16 +757,16 @@ label renault:
     cs "Uhh..."
     menu:
         "Yes":
-            jump yes_renault
+            jump dx_after_yes_renault
         "No":
-            jump no_renault
+            jump dx_after_no_renault
 
-label no_renault:
+label dx_after_no_renault:
     carguy "Alright, suit yourself then!"
     hide carguy with moveoutright
     jump back_to_story
 
-label yes_renault:
+label dx_after_yes_renault:
     carguy "Sweet! Come with me!"
     show cs with determination
     hide cs
@@ -828,9 +828,9 @@ label yes_renault:
     cs "I felt so in control of that car, but so out of control at the same time..."
     cs "Why was I here anyways?"
     cs "Oh yeah..."
-    jump back_to_story
+    jump dx_after_back_to_story
 
-label fun_value_land:
+label finale_fun_value_land:
     scene white
     stop music fadeout 3.0
     cs "Woaoaoaoaoahhhh!!"

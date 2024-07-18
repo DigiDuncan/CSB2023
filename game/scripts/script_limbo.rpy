@@ -14,7 +14,7 @@ screen dx_select(items):
                     at transform:
                         zoom 0.666
                         xalign 0.5
-                    action Play("sound", "sfx_valid.ogg"), Hide("dx_select"), Jump("after_true")
+                    action Play("sound", "sfx_valid.ogg"), Hide("dx_select"), Jump("dx_after_true")
                 text "Or something else?" xalign 0.5 textalign 0.5
         viewport:
             xysize(1920, 540)
