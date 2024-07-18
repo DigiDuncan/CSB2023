@@ -83,6 +83,7 @@ label back_out_i69:
     jump interstate_94
 
 label dx_start:
+    scene game_menu 
     python:
         destinations = {
             "Speedrun": "csbi_craptop",

@@ -184,13 +184,13 @@ label archival:
     jump rpg_archival
 
 label archival_finale:
+    stop music fadeout 3.0
+    music end
     scene csmart_old
     show cs disappointed at left
     with dissolve
     n "After the battle, CS makes his way to the crack, and realizes that there is an invisible wall."
     hide cs with dissolve
-    stop music fadeout 3.0
-    music end
     n "CS, without any second thoughts, breaks off pieces of the wall enough to widen the crack and crawls through the hole."
     n "..."
     n "..."

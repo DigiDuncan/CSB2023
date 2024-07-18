@@ -53,6 +53,8 @@ label sweden_menu:
         renpy.jump(label_jump)
 
 label country_knocked_out:
+    stop music fadeout 1.0
+    music end
     scene black
     play sound "<loop 0>sfx_heartbeat.ogg" volume 1
     n "..."
@@ -139,6 +141,11 @@ label country_airport_choose:
             jump kuwait_travel
 
 label england_travel:
+    play music "<loop 0>airport.ogg" volume 0.4 if_changed
+    music Airport Infiltration - Andy Blythe & Marten Joustra
+    scene ticket_counter
+    show benrey at center
+    show cs disappointed at left
     $ engfirst = True
     cs "Uhh, I guess I wanted to go to England?"
     benrey "Well, I'm sorry, but everyone has a Pass{w=0.5} Port!"
@@ -278,6 +285,8 @@ label japan_travel:
     jump japan
 
 label england:
+    stop music fadeout 3.0
+    music end
     $ england_check = True
     scene black
     pause 1.0
@@ -310,6 +319,8 @@ label england:
     jump england_first
 
 label england_first:
+    stop music fadeout 1.0
+    music end
     scene uk_street with fade
     show cs disappointed at mid_left with moveinleft
     n "CS walks up to a shop owner on the side of the street."
@@ -359,6 +370,7 @@ label england_first:
     jump england_arceus_place
 
 label england_second:
+    stop music fadeout 3.0
     $ england_check = True
     scene black
     pause 1.0
@@ -412,6 +424,8 @@ label england_second:
     jump england_arceus_place
 
 label england_arceus_place:
+    stop music fadeout 1.0
+    music end
     pause 1.0
     scene kitty_house with fade
     show arceus flipped at center with moveinleft
@@ -479,7 +493,13 @@ label england_arceus_place:
     arceus "What do you want to do here, CS? It's a brand new country! There are a ton of things you can do..."
     jump england_menu
 
-label england_shell_zone:
+label england_hell_zone:
+    play music "<loop 0>wool_gloves.ogg" volume 0.4 if_changed
+    music Wool Gloves - imagiro
+    scene dining_room
+    show kitty flipped at right
+    show arceus at center
+    show cs at left
     $ ramsay_check = True
     cs "I wanna go on {i}Hell's Kitchen!{/i}"
     show arceus worried
@@ -672,6 +692,9 @@ label england_bad_ramsay:
     bad_end "Master Chef?\nMore like, Master Death!" "gordon_menu"
 
 label england_good_ramsay:
+    stop music fadeout 3.0
+    music end 
+    scene hell_kitchen
     show cs flipped
     cs "Yeah, you know what? I'm gonna make some Genergy."
     cs "It's my signature beverage! And Michael liked it, I think, and he's British too!"
@@ -788,6 +811,12 @@ label england_good_ramsay:
     jump england_menu
     
 label england_top_zone:
+    play music "<loop 0>wool_gloves.ogg" volume 0.4 if_changed
+    music Wool Gloves - imagiro
+    scene dining_room
+    show kitty flipped at right
+    show arceus at center
+    show cs at left
     $ gear_check = True
     cs "I kinda wanna go on {i}Top Gear.{/i}"
     kitty "Well, now I gotta see that."
@@ -866,6 +895,7 @@ label england_top_zone:
     jump england_top_gear_menu
 
 label england_top_gear_menu:
+    stop music fadeout 3.0
     scene black
     menu:
         "Lose the race":
@@ -962,6 +992,12 @@ label england_top_win:
     jump england_menu
 
 label england_scott_zone:
+    play music "<loop 0>wool_gloves.ogg" volume 0.4 if_changed
+    music Wool Gloves - imagiro
+    scene dining_room
+    show kitty flipped at right
+    show arceus at center
+    show cs at left
     $ tom_check = True
     cs "I wanna see what Tom Scott is up to."
     kitty "Who, now?"
@@ -1018,6 +1054,7 @@ label england_scott_zone:
     jump england_scott_menu
 
 label england_scott_menu:
+    stop music fadeout 3.0
     scene tom_road
     show tom
     menu:
@@ -1027,6 +1064,9 @@ label england_scott_menu:
             jump england_scott_movent
 
 label england_scott_move:
+    stop music fadeout 3.0
+    scene tom_road
+    show tom
     show cs flipped at offscreenright
     cs "Hey, Tom, move out of the way!"
     show tom at right with move
@@ -1082,6 +1122,12 @@ label england_scott_move:
     jump england_menu
 
 label england_done:
+    play music "<loop 0>wool_gloves.ogg" volume 0.4 if_changed
+    music Wool Gloves - imagiro
+    scene dining_room
+    show kitty flipped at right
+    show arceus at center
+    show cs at left
     cs "Well, I think that's everything I wanted to do here."
     show arceus happy
     arceus "Oh, nice!"
@@ -1119,6 +1165,12 @@ label england_scott_movent:
     return
 
 label england_japan:
+    play music "<loop 0>wool_gloves.ogg" volume 0.4 if_changed
+    music Wool Gloves - imagiro
+    scene dining_room
+    show kitty flipped at right
+    show arceus at center
+    show cs at left
     cs "I was thinking of going to Japan."
     kitty "That sounds pretty cool!"
     arceus "Is there anywhere you wanna go in particular in Japan?"
@@ -1159,6 +1211,12 @@ label england_japan:
     jump japan_two
 
 label england_sweden:
+    play music "<loop 0>wool_gloves.ogg" volume 0.4 if_changed
+    music Wool Gloves - imagiro
+    scene dining_room
+    show kitty flipped at right
+    show arceus at center
+    show cs at left
     cs "I was thinking of going to Sweden."
     kitty "Huh, never heard much about Sweden."
     arceus "Is there anywhere you wanna go in particular in Sweden?"

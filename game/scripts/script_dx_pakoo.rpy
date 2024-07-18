@@ -205,6 +205,9 @@ label dx_after_true:
         jump dx_after_back_to_story
 
 label dx_after_back_to_story:
+    stop music fadeout 1.0
+    scene hobbytown
+    show cs disappointed
     cs "Maybe I can find Billy's machine, if it ended up here."
     n "Before CS can get anywhere, a group of men run up to him."
     show shadowman at mid_left with moveinleft
@@ -360,6 +363,12 @@ label dx_after_back_to_story:
     jump dx_after_cult_questions
 
 label dx_after_cult_questions:
+    play music "<loop 0>10_feet_away.ogg" volume 1 if_changed 
+    scene blue_branch
+    show cultist_2 at right
+    show cultist_3 at mid_mid_right
+    show cultist at mid_right
+    show cs cultist at left
     cultist "Is there anything else you would like to know about?"
     menu:
         "What else would you like to know?"
@@ -373,6 +382,12 @@ label dx_after_cult_questions:
             jump dx_after_competiton_start
 
 label dx_after_cultcon_ask:
+    play music "<loop 0>10_feet_away.ogg" volume 1 if_changed 
+    scene blue_branch
+    show cultist_2 at right
+    show cultist_3 at mid_mid_right
+    show cultist at mid_right
+    show cs cultist at left
     cs "Tell me more about how CultCon works."
     cultist "Well, you see, CultCon is mainly just an event for cultists to meet up and share ideas, teachings, and other cult related things."
     cultist "The Cult Competiton is a side thing where only a few cults try to participate in."
@@ -382,6 +397,12 @@ label dx_after_cultcon_ask:
     jump dx_after_cult_questions
 
 label dx_after_competitors_ask:
+    play music "<loop 0>10_feet_away.ogg" volume 1 if_changed 
+    scene blue_branch
+    show cultist_2 at right
+    show cultist_3 at mid_mid_right
+    show cultist at mid_right
+    show cs cultist at left
     cs "Who are the main competitors this year?"
     cultist "Well, there are the pencil guys who usually end up in dead last, and they give their vote to us most of the time."
     cultist "Our main opponent is the Scientologists, because they have so many numbers aren't completely psycho."
@@ -393,6 +414,12 @@ label dx_after_competitors_ask:
     jump dx_after_cult_questions
 
 label dx_after_win_ask:
+    play music "<loop 0>10_feet_away.ogg" volume 1 if_changed 
+    scene blue_branch
+    show cultist_2 at right
+    show cultist_3 at mid_mid_right
+    show cultist at mid_right
+    show cs cultist at left
     cs "So, how do we win in the competition?"
     cultist "Well, all the cults have a certain number of votes they give out to cults they are impressed by."
     cultist "The bigger the cult, the more votes you can hand out."
@@ -403,6 +430,12 @@ label dx_after_win_ask:
     jump dx_after_cult_questions
 
 label dx_after_competiton_start:
+    play music "<loop 0>10_feet_away.ogg" volume 1 if_changed 
+    scene blue_branch
+    show cultist_2 at right
+    show cultist_3 at mid_mid_right
+    show cultist at mid_right
+    show cs cultist at left
     cs "I think I'm good."
     stop music fadeout 3.0
     cultist "Alright, awesome."
@@ -438,6 +471,7 @@ label dx_after_competiton_start:
     jump dx_after_seek_competitors
     
 label dx_after_seek_competitors:
+    play music "<loop 0>10_feet_away.ogg" volume 1 if_changed  
     scene cult_con
     show cs cultist at center
     cs "Which cult should I look for?"
@@ -457,6 +491,9 @@ label dx_after_seek_competitors:
             jump dx_after_lunatic_ask
 
 label dx_after_pencil_ask:
+    play music "<loop 0>10_feet_away.ogg" volume 1 if_changed    
+    scene cult_con
+    show cs cultist at center
     cs "The cult leader said that the Pencil guys usually give us a vote, so I can see what they are up to. "
     hide cs with moveoutright
     n "CS makes his way to the pencil room."
@@ -527,6 +564,9 @@ label dx_after_pencil_ask:
     jump dx_after_seek_competitors
 
 label dx_after_science_ask:
+    play music "<loop 0>10_feet_away.ogg" volume 1 if_changed    
+    scene cult_con
+    show cs cultist at center
     cs "Y'know, the scientologists think they are all that, but maybe me talking to them will convince them to get us a vote."
     n "CS runs over to scientologists stand."
     n "When CS gets there, he sees Tom Cruise standing there, greeting other cult members walking by."
@@ -561,6 +601,9 @@ label dx_after_science_ask:
     jump dx_after_seek_competitors
 
 label dx_after_catholic_ask:
+    play music "<loop 0>10_feet_away.ogg" volume 1 if_changed    
+    scene cult_con
+    show cs cultist at center
     cs "Who the hell are those guys?"
     cs "They just look like Christians!"
     n "CS goes to check out the Catholics."
@@ -595,6 +638,9 @@ label dx_after_catholic_find:
     jump dx_after_seek_competitors
 
 label dx_after_summer_ask:
+    play music "<loop 0>10_feet_away.ogg" volume 1 if_changed    
+    scene cult_con
+    show cs cultist at center
     cs "There is a summer camp here?"
     cs "That seems really fishy, didn't the cult leader say something about cults with tortured followers get disqualified?"
     cs "I better go check them out."
@@ -603,6 +649,9 @@ label dx_after_summer_ask:
     wayside_instructor "Welcome to Wayside Summer Camp!"
 
 label dx_after_lunatic_ask:
+    play music "<loop 0>10_feet_away.ogg" volume 1 if_changed    
+    scene cult_con
+    show cs cultist at center
     cs "Hmm, who are those guys? They look like plague doctors almost..."
     cs "Let's go check them out."
     n "CS runs over to meet the Lunatic Cultists."
@@ -750,6 +799,9 @@ label dx_after_three_right:
 
 
 label dx_after_renault:
+    stop music fadeout 1.0
+    scene hobbytown
+    show cs disappointed
     show carguy at right with moveinright
     play music "<loop 0>scales_of_joy.ogg" volume 0.8
     carguy "Hey CS!"
@@ -762,11 +814,19 @@ label dx_after_renault:
             jump dx_after_no_renault
 
 label dx_after_no_renault:
+    stop music fadeout 5.0
+    scene hobbytown
+    show cs disappointed
+    show carguy at right
     carguy "Alright, suit yourself then!"
     hide carguy with moveoutright
-    jump back_to_story
+    jump dx_after_back_to_story
 
 label dx_after_yes_renault:
+    play music "<loop 0>scales_of_joy.ogg" volume 0.8 if_changed
+    scene hobbytown
+    show cs disappointed
+    show carguy at right
     carguy "Sweet! Come with me!"
     show cs with determination
     hide cs
