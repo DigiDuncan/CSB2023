@@ -228,16 +228,16 @@ label rpg_vs_tate:
     rpg:
         bg "images/bg/train/amtrak_observation.png"
 
-        $ cs_chosen_form = Fighters.CS_VS_TATE_PUNCH
-        $ if ch2_cs_attack_used = "karate-chopped":
-            $ cs_chosen_form = Fighters.CS_VS_TATE_CHOP
-        $ elif ch2_cs_attack_used = "Sparta-kicked":
-            $ cs_chosen_form = Fighters.CS_VS_TATE_KICK
-        $ else:
-            $ cs_chosen_form = Fighters.CS_VS_TATE_PUNCH
+        python:
+            if ch2_cs_attack_used = "karate-chopped":
+                cs_chosen_form = "cs_vs_tate_chop"
+            elif ch2_cs_attack_used = "Sparta-kicked":
+                cs_chosen_form = "cs_vs_tate_kick"
+            else:
+                cs_chosen_form = "cs_vs_tate_punch"
                 
         fighters:
-            cs_vs_tate_punch
+            $cs_chosen_form
             tate_ex
 
         scale 2.0
