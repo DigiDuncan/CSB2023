@@ -241,7 +241,7 @@ label rpg_vs_tate:
     rpg:
         bg "images/bg/train/amtrak_observation.png"
 
-		# TODO: This does not work yet, always defaults to punch
+        # TODO: This does not work yet, always defaults to punch
         python:
             if ch2_cs_attack_used = "karate-chopped":
                 cs_chosen_form = "cs_vs_tate_chop"
@@ -256,5 +256,5 @@ label rpg_vs_tate:
 
         scale 2.0
         on_win "train_vs_tate_win"
-        on_lose "train_vs_tate_loss"
+        on_lose "train_vs_tate_lose"
         music "audio/space.ogg"
