@@ -1988,7 +1988,7 @@ label train_confront_lupin:
         pause 0.5
         show cs disappointed flipped at offscreenright with determination
         show cs disappointed flipped at right with MoveTransition(1.0)
-        play music "<loop 0>insomnia_intro.ogg"
+        play music "<from 0 loop 24>insomnia_loopable.ogg"
         music Insomnia - W∆W
         pause 1.0
         cs "Tate? You can't sleep either?"
@@ -2019,13 +2019,14 @@ label train_confront_lupin:
             "Not a chance.":
                 pass
         cs "Well, uh--{w=0.5}{nw}"
-        tate "I guess it doesn't matter. He was more of a runner than a fighter, anyway."
+        tate "I guess it doesn't matter."
+        tate "He was more of a runner than a fighter, anyway."
         show tate srs at mid_left with moveinleft
-        tate "I think I can take {i}you,{i} CS."
+        tate "I think I could take {i}you,{i} CS."
         show cs worried flipped
         cs "Huh?"
         stop music fadeout 1.0
-        play music "insomnia_2.ogg"
+        play music "<from 22>insomnia_loopable.ogg"
         show tate srs at mid_mid_left with moveinleft
         tate "Will you indulge me?"
         menu:
