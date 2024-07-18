@@ -6,7 +6,7 @@ label csbiii_start:
     n "CS returns to LMG the next day."
     hide cs with moveoutright
     scene inside_ltt with fade
-    play music "<loop 0>passport.ogg" volume 0.5
+    play music passport volume 0.5
     music PASSPORT.MID - George Stone
     show linus at center with moveinright
     linus "Welcome to Linus Media Group! Come on in. I'll show you to your desk."
@@ -79,7 +79,7 @@ label csbiii_start:
 label csbiii_boring_video:
     scene csdesk
     show cs surprised at left
-    play music "<loop 0>passport.ogg" volume 0.5 if_changed
+    play music passport volume 0.5 if_changed
     music PASSPORT.MID - George Stone
     cs "I suppose that something super-technical like this would be really useful to the viewers. Maybe I'll learn something new, myself."
     show cs
@@ -87,7 +87,7 @@ label csbiii_boring_video:
     scene black with fade
     n "As CS watches the footage, his eyelids grow heavy..."
     centered "Two hours later..."
-    play sound "sfx_csnore.ogg"
+    play sound sfx_csnore
     linus "CS?"
 
     scene csdesk
@@ -113,7 +113,7 @@ label csbiii_boring_video:
 
 
 label csbiii_edit_video:
-    play music "<loop 0>passport.ogg" volume 0.5 if_changed
+    play music passport volume 0.5 if_changed
     music PASSPORT.MID - George Stone
     show csdesk
     show linus at right
@@ -129,7 +129,7 @@ label csbiii_edit_video:
     music end
     cs "Hmm, this video looks pretty great so far. I'm practically done at this point."
     cs "I wonder what the others will think of this. I should probably get opinions from some of the other employees."
-    play music "<loop 0>good_eatin.ogg" volume 0.4
+    play music good_eatin volume 0.4
     music "Good Eatin' - ClascyJitto"
     show taran at right with moveinright
     if fun_value(FUN_VALUE_MUSIC):
@@ -222,7 +222,7 @@ label csbiii_bad_video:
     cs "Don't worry, I already know it's perfect. It's so great, isn't it?"
     linus "It's actually the very opposite of that. You're fired."
     if fun_value(FUN_VALUE_UNOBTRUSIVE):
-        play sound "sfx_waterphone.ogg"    
+        play sound sfx_waterphone
     show cs worried
     cs "Wait, what?"
     linus "Look, I don't care how much you really wanted to humiliate me. Just leave."
@@ -265,7 +265,7 @@ label csbiii_boost:
         n "As CS turns around, he almost trips on a counter, one that looks like those found at the airport."
     else:
         n "As CS turns around, Linus gives him a friendly punch in the back."
-    play music "<loop 0>airport_counter.ogg" volume 0.5
+    play music airport_counter volume 0.5
     music Airport Counter - Kazumi Totaka
     linus "Dude, what are you talking about? That video was {i}awesome!{/i}"
     show cs worried at left
@@ -322,7 +322,7 @@ label csbiii_boost:
     linus "Behold! {w=0.5} The-- WOAH SHIT {w=0.5}{nw}"
     show ytx at t_linus_drop_tips
     pause 0.35
-    play sound ("sfx_clonk.ogg")
+    play sound sfx_clonk
     show cs scared
     show linus with vpunch
     n "Linus loses grip of the card as it tumbles down onto the table next to him."
@@ -383,8 +383,8 @@ label csbiii_boost:
     if fun_value(FUN_VALUE_COMMON):
         show ltt_bottle behind ltt_fg at truecenter with moveinbottom
         linus "Here. Take this water bottl-- oops!{w=0.5}{nw}"
-        play sound "sfx_metalpipe.ogg"
         show ltt_bottle at t_linus_drop_tips
+        play sound sfx_metalpipe
         show cs scared with vpunch
         n "Linus drops the water bottle on the ground."
         show cs worried
@@ -401,7 +401,7 @@ label csbiii_boost:
     jump csbiii_ltt_decide
 
 label csbiii_ltt_decide:
-    play music "<loop 0>airport_counter.ogg" volume 0.5 if_changed
+    play music airport_counter volume 0.5 if_changed
     music Airport Counter - Kazumi Totaka
     scene loffice with dissolve
     show cs at left with moveinleft
@@ -415,7 +415,7 @@ label csbiii_ltt_decide:
             jump csbiii_reviews
 
 label csbiii_reviews:
-    play music "<loop 0>airport_counter.ogg" volume 0.5 if_changed
+    play music airport_counter volume 0.5 if_changed
     music Airport Counter - Kazumi Totaka
     scene loffice
     show cs at left
@@ -451,7 +451,7 @@ label csbiii_reviews:
         arceus "CS! There you are! Hired guns are coming after us!"
     else:
         arceus "CS! There you are! We need to go, ASAP!"
-    play music "<loop 0>hired_guns.ogg" volume 0.5
+    play music hired_guns volume 0.5
     music Hired Guns - Brian Johnston
     linus "CS? You know this person?"
     show cs worried
@@ -467,7 +467,7 @@ label csbiii_reviews:
             jump csbiii_arc_escape
     
 label csbiii_ytp_edit:
-    play music "<loop 0>airport_counter.ogg" volume 0.5 if_changed
+    play music airport_counter volume 0.5 if_changed
     music Airport Counter - Kazumi Totaka
     scene loffice
     show cs at left
@@ -498,7 +498,7 @@ label csbiii_ytp_edit:
             jump csbiii_ytp_fan
 
 label csbiii_ytp_fan:
-    play music "<loop 0>airport_counter.ogg" volume 0.5 if_changed
+    play music airport_counter volume 0.5 if_changed
     music Airport Counter - Kazumi Totaka
     scene loffice
     show cs at left
@@ -532,7 +532,7 @@ label csbiii_ytp_fan:
         arceus "CS! There you are! Hired guns are coming after us!"
     else:
         arceus "CS! There you are! We need to go, ASAP!"
-    play music "<loop 0>hired_guns.ogg" volume 0.5
+    play music hired_guns volume 0.5
     music Hired Guns - Brian Johnston
     linus "CS? Seriously?"
     show cs worried
@@ -548,7 +548,7 @@ label csbiii_ytp_fan:
 
 
 label csbiii_both_fan:
-    play music "<loop 0>airport_counter.ogg" volume 0.5 if_changed
+    play music airport_counter volume 0.5 if_changed
     music Airport Counter - Kazumi Totaka
     scene loffice
     show cs at left
@@ -583,7 +583,7 @@ label csbiii_both_fan:
     colton "A... what?"
     cs "Alright! Strap in, because YouTube is where the poop is!"
     show black with fade
-    play sound "sfx_ytpintro.ogg"
+    play sound sfx_ytpintro
     n "Half an hour passes, and CS has shown LTT what YTPs are all about."
     hide black with fade
     cs "Welp. Those are some of the best ones that I could find."
@@ -619,7 +619,7 @@ label csbiii_both_fan:
         arceus "CS! There you are! Hired guns are coming after us!"
     else:
         arceus "CS! There you are! We need to go, ASAP!"
-    play music "<loop 0>hired_guns.ogg" volume 0.5
+    play music hired_guns volume 0.5
     music Hired Guns - Brian Johnston
     linus "So you {i}do{/i} have a furry fanbase who wants to join LTT! Damn it, CS, I should've known."
     show cs worried
@@ -669,7 +669,7 @@ label csbiii_cops_ltt:
     bad_end "Stupid CS! You dropped\nyour lore in front of the hoes!" "csbiii_ltt_decide"
 
 label csbiii_arc_escape:
-    play music "<loop 0>hired_guns.ogg" volume 0.5 if_changed
+    play music hired_guns volume 0.5 if_changed
     music Hired Guns - Brian Johnston
     scene frontdoor 
     show cs worried at center
@@ -687,7 +687,7 @@ label csbiii_arc_escape:
     with moveinright
     show cs disappointed at left
     n "CS and Arceus run out of the building and try to find cover while they escape."
-    play sound "sfx_siren.ogg" loop fadein 2.0 volume 0.2
+    play sound sfx_siren loop fadein 2.0 volume 0.2
     show blue_light at left
     show red_light at right
     n "As they are making their way further from the building, they can hear sirens grow in volume as flashing lights rush towards the LMG headquarters."
@@ -722,7 +722,7 @@ label csbiii_arc_escape:
         n "Undyne bursts in."
     else:    
         n "Copguy bursts in."
-    play music "<loop 0>undyne.ogg" volume 0.5
+    play music undyne volume 0.5
     music Undyne - Toby Fox
     copguy "Alright, everyone! Back against the wall! Nobody move!"
     luke "So, are we moving to the wall or... not moving?"
@@ -780,7 +780,7 @@ label csbiii_arc_escape:
     show cs dusk at left
     show arceus dusk flipped at mid_left
     with fade
-    play music "<loop 0>atarashii_kaze.ogg" volume 0.3
+    play music atarashii_kaze volume 0.3
     music Atarashii Kaze - Satoru Kosaki
     n "CS and Arceus approach the border guard again."
     show border_guard dusk at right with moveinright
@@ -812,7 +812,7 @@ label csbiii_arc_escape:
     scene sheriff_office
     show sheriff at left
     with fade
-    play music "<loop 0>police_station.ogg" volume 0.5
+    play music police_station volume 0.5
     music Police Station - Lorin Nelson  
     n "Back at the police station, Copguy talks to the sheriff about CS."
     show sheriff at left
@@ -841,7 +841,7 @@ label csbiii_arc_escape:
         n "Meanwhile, CS and Arceus are still making their way through the US, while strange sounds seem to be echoing in the forest."
     else:  
         n "Meanwhile, CS and Arceus are still making their way through the US without any sense of direction."
-    play music "<loop 0>echoing.ogg" volume 0.5
+    play music echoing volume 0.5
     music Echoing - Banana
     show cs disappointed dark at left with moveinleft
     show arceus dark at right with moveinright
@@ -858,7 +858,7 @@ label csbiii_arc_escape:
     show arceus worried dark
     show blue_light at left
     show red_light at right
-    play sound "<loop 0>sfx_siren.ogg" volume 0.1
+    play sound sfx_siren volume 0.1
     n "Arceus squints into the night, but CS and Arceus both immediately recognize the sounds."
     show cs worried dark
     show arceus worried dark
@@ -889,16 +889,16 @@ label genocide_fight:
     show blue_light at left
     show red_light at right
     n "CS closes his eyes. He starts to concentrate on the sirens and the car."
-    play sound "<loop 0>sfx_siren.ogg" loop fadein 3.0 volume 0.4
+    play sound sfx_siren loop fadein 3.0 volume 0.4
     arceus "CS?! What are you doing?!"
-    play sound "<loop 0>sfx_siren.ogg" loop volume 0.5
+    play sound sfx_siren loop volume 0.5
     arceus "CS!!!! They're heading right for us!!"
-    play sound "<loop 0>sfx_siren.ogg" loop volume 0.6
+    play sound sfx_siren loop volume 0.6
     scene black
     arceus "CS!!!!!!!!!!!!"
-    play sound "<loop 0>sfx_siren.ogg" loop fadein 1.0 volume 2
+    play sound sfx_siren loop fadein 1.0 volume 2
     pause 1.0
-    play sound "sfx_car_crash.ogg" volume 0.7
+    play sound sfx_car_crash volume 0.7
     pause 7.0
     n "Copguy's car flies off the road and violently crashes into the forest."
     scene washington_road
@@ -928,7 +928,7 @@ label genocide_fight:
     scene washington_road with fade
     show cs dark at left with moveinleft
     show arceus dark at right with moveinright
-    play music "<loop 0>killcops.ogg" volume 0.5
+    play music kill_cops volume 0.5
     music Echoing? - Banana
     n "The duo continues to travel along the road."
     n "Arceus is wary of CS' actions as he can't help but notice CS muttering to himself as they walk."
@@ -958,7 +958,7 @@ label genocide_attack_arc:
     stop music2
     music end
     show csgod flipped at left with vpunch
-    play sound "sfx_alt_punch.ogg"
+    play sound sfx_alt_punch
     show csgod at t_punchup with move
     show arceus angry dark at right with hpunch
     arceus "Really? I've been a god longer than you, dummy."
@@ -1018,7 +1018,7 @@ label genocide_wait_arc:
     billy "Let's go!"
     scene car background
     show billy car
-    play music "<loop 0>insane_personalities.ogg" volume 0.6
+    play music insane_personalities volume 0.6
     music Insane Personalities - Lizardking
     pause 5.0
     scene car background night
@@ -1046,9 +1046,9 @@ label genocide_wait_arc:
     csgod "Stronger than ever."
     show csgod flipped at mid_left with moveinleft
     show arceus flipped at mid_left with vpunch
-    play sound "sfx_punch.ogg"
+    play sound sfx_punch
     show arceus flipped at mid_left with hpunch
-    play sound "sfx_punchalt.ogg"
+    play sound sfx_punch_alt
     show arceus flipped at t_punchup with move
     arceus "Ouch."
     $ achievement_manager.unlock("No Mercy")
@@ -1108,7 +1108,7 @@ label csbiii_wait_forest:
     arceus "I don't think that'll be the case."
     copguy "{cps=10}I don't think so either."
     n "Before CS and Arceus can react, they both get the lights knocked out of them."
-    play sound "sfx_punch.ogg"
+    play sound sfx_punch
     scene black with determination
     n "When CS and Arceus wake up, they find themselves in handcuffs leaned up against a cop car."
     scene washington_road
@@ -1118,7 +1118,7 @@ label csbiii_wait_forest:
     cs "Huh?"
     cs "What happened?"
     show copguy dark at right with moveinright
-    play music "<loop 0>danger_mystery.ogg" volume 0.5
+    play music danger_mystery volume 0.5
     music Danger Mystery - Toby Fox
     if fun_value(FUN_VALUE_MUSIC):
         copguy "Hey, ain't this a dangerous mystery."
@@ -1145,7 +1145,7 @@ label csbiii_wait_forest:
     jump csbiii_copcar_menu
 
 label csbiii_copcar_menu:
-    play music "<loop 0>danger_mystery.ogg" volume 0.5 if_changed
+    play music danger_mystery volume 0.5 if_changed
     scene copcar
     show copguy at t_copguy_frontseat
     show copcar_mask
@@ -1164,9 +1164,9 @@ label csbiii_bad_convince:
     show copcar_mask
     show arceus at right
     show cs disappointed at left
-    play music "<loop 0>pressing_pursuit_cornered.ogg" volume 0.3
+    play music pressing_pursuit_cornered volume 0.3
     music Pressing Pursuit ~ Cornered - Masakazu Sugimori
-    play sound "sfx_hold_it.ogg" volume 0.5
+    play sound sfx_hold_it volume 0.5
     show hold_it at truecenter with hpunch
     pause 1.0
     hide hold_it
@@ -1178,7 +1178,7 @@ label csbiii_bad_convince:
     cs "I just {i}look{/i} like CS!"
     show arceus worried
     arceus "I mean... he {i}might{/i} not be CS?"
-    play sound "sfx_objection.ogg" volume 0.5
+    play sound objection volume 0.5
     show objection at truecenter with hpunch
     pause 1.0
     hide objection
@@ -1194,9 +1194,9 @@ label csbiii_good_convince:
     show copcar_mask
     show arceus at right
     show cs angry at left
-    play music "<loop 0>pressing_pursuit_cornered.ogg" volume 0.3
+    play music pressing_pursuit_cornered volume 0.3
     music Pressing Pursuit ~ Cornered - Masakazu Sugimori
-    play sound "sfx_hold_it.ogg" volume 0.5
+    play sound sfx_hold_it volume 0.5
     show hold_it at truecenter with hpunch
     pause 1.0
     hide hold_it
@@ -1213,7 +1213,7 @@ label csbiii_good_convince:
     cs "So, afterwards, I wanted to get my revenge!"
     copguy "I'm not believing this for a second."
     copguy "You really thought I would fall for some silly little lie?"
-    play sound "sfx_objection.ogg" volume 0.5
+    play sound sfx_objection volume 0.5
     show objection at truecenter with hpunch
     pause 1.0
     hide objection
@@ -1265,7 +1265,7 @@ label csbiii_good_convince:
         n "CS and Arceus look at each other and smile, doing their Bun Guster pose."  
     else: 
         n "CS and Arceus look at each other and smile."       
-    play music "<loop 0>bun_guster.ogg" volume 0.3
+    play music bun_guster volume 0.3
     music Bun Guster - Satoru Kosaki
     arceus "Holy crap, I didn't think that would work."
     cs "Me neither! I'm so glad that he let us go!"
@@ -1293,7 +1293,7 @@ label csbiii_choose_direction:
     show cs at left
     show arceus at right
     with fade
-    play music "<loop 0>happy_roaming.ogg" volume 0.5
+    play music happy_roaming volume 0.5
     music Happy Roaming - Lorin Nelson
     if fun_value(FUN_VALUE_MUSIC):
         cs "We've been happily roaming all night, but I'm exhausted." 
@@ -1315,7 +1315,7 @@ label csbiii_choose_direction:
             jump csbiii_west
 
 label csbiii_north:
-    play music "<loop 0>happy_roaming.ogg" volume 0.5 if_changed
+    play music happy_roaming volume 0.5 if_changed
     scene washington_road morning
     show cs at left
     show arceus at right
@@ -1338,7 +1338,7 @@ label csbiii_north:
             jump csbiii_west 
 
 label csbiii_north2:
-    play music "<loop 0>happy_roaming.ogg" volume 0.5 if_changed
+    play music happy_roaming volume 0.5 if_changed
     scene washington_road morning
     show cs at left
     show arceus angry at right
@@ -1357,7 +1357,7 @@ label csbiii_north2:
             jump csbiii_west
 
 label csbiii_west:
-    play music "<loop 0>happy_roaming.ogg" volume 0.5 if_changed
+    play music happy_roaming volume 0.5 if_changed
     scene washington_road morning
     show cs at left
     show arceus at right
@@ -1379,7 +1379,7 @@ label csbiii_west:
             jump csbiii_west2
 
 label csbiii_west2:
-    play music "<loop 0>happy_roaming.ogg" volume 0.5 if_changed
+    play music happy_roaming volume 0.5 if_changed
     scene washington_road day
     show cs at left
     show arceus at right
@@ -1402,7 +1402,7 @@ label csbiii_west2:
             jump csbiii_west3
 
 label csbiii_west3:
-    play music "<loop 0>happy_roaming.ogg" volume 0.5 if_changed
+    play music happy_roaming volume 0.5 if_changed
     scene washington_road dusk
     show cs dusk at left
     show arceus dusk at right
@@ -1427,7 +1427,7 @@ label csbiii_west3:
             jump csbiii_west4
 
 label csbiii_west4:
-    play music "<loop 0>happy_roaming.ogg" volume 0.5 if_changed
+    play music happy_roaming volume 0.5 if_changed
     scene washington_road
     show cs dark at left
     show arceus dark at right
@@ -1448,7 +1448,7 @@ label csbiii_west4:
             jump csbiii_west5
 
 label csbiii_west5:
-    play music "<loop 0>happy_roaming.ogg" volume 0.5 if_changed
+    play music happy_roaming volume 0.5 if_changed
     scene washington_road day
     show cs at left
     show arceus angry at right
@@ -1464,7 +1464,7 @@ label csbiii_west5:
             jump csbiii_west6
 
 label csbiii_west6:
-    play music "<loop 0>happy_roaming.ogg" volume 0.5 if_changed
+    play music happy_roaming volume 0.5 if_changed
     scene washington_road dusk
     show cs dusk at left
     show arceus angry dusk at right
@@ -1480,7 +1480,7 @@ label csbiii_west6:
             jump csbiii_west7
 
 label csbiii_west7:
-    play music "<loop 0>happy_roaming.ogg" volume 0.5 if_changed
+    play music happy_roaming volume 0.5 if_changed
     scene washington_road
     show cs dark at left
     show arceus angry dark at right
@@ -1496,7 +1496,7 @@ label csbiii_west7:
             jump csbiii_west8
 
 label csbiii_west8:
-    play music "<loop 0>happy_roaming.ogg" volume 0.5 if_changed
+    play music happy_roaming volume 0.5 if_changed
     scene washington_road morning
     show cs at left
     show arceus angry at right

@@ -21,7 +21,7 @@ label car_dialogue:
     scene car plains
     show billy car
     with fade
-    play music "<loop 0>billy_mix.ogg" volume 1
+    play music billy_mix volume 1
     music "Billy's Mix - Billy Mays"
     cs "Well, Arceus, it has been quite a ride."
     arceus "It sure has. We've been through quite a lot, haven't we?"
@@ -257,12 +257,12 @@ label car_dialogue:
     arceus "No, like, gas. Like, passed gas."
     cs "Oh, that was me."
     n "Billy rolls down the window for a bit."
-    play sound "sfx_roll_window.ogg" volume 0.7
+    play sound sfx_roll_window volume 0.7
     
     pause 5.0
 
     $ renpy.music.set_pause(True, "music")
-    play music2 "moving_right_along.ogg"
+    play music2 moving_right_along
     $ renpy.pause(5.0, hard = True)
     # 0:05.0
     cs "{cps=30}{image=note_small1.png} Moving right along, in search of good times and good news {image=note_small2.png}{w=0.8}{nw}"
@@ -487,7 +487,7 @@ label car_dialogue:
 
     n "An ad starts playing through the Jupiter Jack."
     $ renpy.music.set_pause(True, "music")
-    play music2 "<loop 0>summer_clearance_sale.ogg" volume 0.5
+    play music2 summer_clearance_sale volume 0.5
     doug "When you shop at Walmart..."
     doug "You're shopping at Walmart."
     doug "Keep shopping at Walmart{w=0.25} by going to Walmart today!"

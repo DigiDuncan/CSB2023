@@ -1387,6 +1387,21 @@ define audio.buy_something = "buy_something.ogg"
 define audio.passport = "passport.ogg"
 define audio.passport_ytp = "passport_ytp.ogg"  # TODO: This should be moved to /secret
 
+#CSBIII Act 1 Music
+define audio.passport = "passport.ogg"
+define audio.good_eatin = "good_eatin.ogg"
+define audio.airport_counter = "airport_counter.ogg"
+define audio.hired_guns = "hired_guns.ogg"
+define audio.undyne = "undyne.ogg"
+define audio.atarashii_kaze = "atarashii_kaze.ogg"
+define audio.police_station = "police_station.ogg"
+define audio.echoing = "echoing.ogg"
+define audio.kill_cops = "killcops.ogg"
+define insane_personalities = "insane_personalities.ogg"
+define danger_mystery = "danger_mystery.ogg"
+define pressing_pursuit_cornered = "pressing_pursuit_cornered.ogg"
+define bun_guster = "bun_guster.ogg"
+
 #CSBIII AI Music
 define audio.school = "school.ogg"
 define audio.cliffs = "cliffs.ogg"
@@ -1394,7 +1409,12 @@ define audio.circus = "circus.ogg"
 define audio.chase = "chase.ogg"
 define audio.friendship = "friendship.ogg"
 
+# CSBIII Car Music
+define audio.billy_mix = "billy_mix.ogg"
+define audio.moving_right_along = "moving_right_along.ogg"
+
 # SFX
+define audio.sfx_alt_punch = "sfx_alt_punch.ogg"
 define audio.sfx_beam = "sfx_beam.ogg"
 define audio.sfx_csnore = "sfx_csnore.ogg"
 define audio.sfx_doorbell = "sfx_doorbell.ogg"
@@ -1411,12 +1431,21 @@ define audio.sfx_ping = "sfx_ping.ogg"
 define audio.sfx_ping_spam = "sfx_ping_spam.ogg"
 define audio.sfx_puke = "sfx_puke.ogg"
 define audio.sfx_punch = "sfx_punch.ogg"
-define audio.sfx_punch_alt = "sfx_punch_alt.ogg"
+define audio.sfx_punch_alt = "sfx_alt_punch.ogg"
 define audio.sfx_victory_punch = "sfx_victory_punch.ogg"
 define audio.sfx_windows_logon = "sfx_windows_logon.ogg"
 define audio.sfx_chop = "sfx_chop.ogg"
 define audio.sfx_siren = "sfx_siren.ogg"
 define audio.sfx_duck = "sfx_duck.ogg"
+define audio.sfx_roll_window = "sfx_roll_window.ogg"
+define audio.sfx_waterphone = "sfx_waterphone.ogg"
+define audio.sfx_clonk = "sfx_clonk.ogg"
+define audio.sfx_metalpipe = "sfx_metalpipe.ogg"
+define audio.sfx_ytpintro = "sfx_ytpintro.ogg"
+define audio.sfx_car_crash = "sfx_car_crash.ogg"
+define audio.sfx_hold_it = "sfx_hold_it.ogg"
+define audio.sfx_objection = "sfx_objection.ogg"
+
 
 # Layers?
 define config.detached_layers += ["broadcast"]
