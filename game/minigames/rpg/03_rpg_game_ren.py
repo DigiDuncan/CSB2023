@@ -314,15 +314,20 @@ class AI:
                 score = 1.0
                 if atk.type == "damage" or atk.type == "aoe":
                     score *= (self.aggression * atk.options.get("mult", 1))
+                    print("damage "+str(score))
                 elif atk.type == "buff" or atk.type == "debuff" or atk.type == "confuse":
                     score *= self.tacticity
+                    print("buff "+str(score))
                 if atk.type == "aoe":
                     score *= self.crowd_control
+                    print("aoe "+str(score))
                 if heal_time:
                     score *= atk.options.get("mult", 1)  # weight towards better heals
+                    print("heal "+str(score))
                 scores.append(score)
 
             # Choose an attack.
+            print(available_attacks, scores)
             what = renpy.random.choices(available_attacks, weights = scores)[0]
 
         # What should be determined before this
@@ -342,7 +347,7 @@ class AI:
 
 class AIType:
     NEUTRAL = AI("Neutral")
-    AGGRO = AI("Aggro", aggression = 3, tacticity = 0.5, crowd_control = 0, heal_threshold = 0.25, heal_chance = 0.25)
+    AGGRO = AI("Aggro", aggression = 3, tacticity = 0.5, crowd_control = 0.1, heal_threshold = 0.25, heal_chance = 0.25)
     DEFENSIVE = AI("Defensive", heal_threshold = 0.75, tacticity = 3, heal_chance = 0.60)
     SMART = AI("Smart", tacticity = 2, crowd_control = 2, heal_chance = 0.60)
     COPGUY_EX = AI("EX", aggression = 3, tacticity = 2, preferred_targets = ["CS"], heal_chance = 0.70)
@@ -509,7 +514,7 @@ class Fighter:
             renpy.notify(f"{self.display_name} missed!")
             return [(0, "miss")]
 
-    def attack_ai(self, encounter: Encounter) -> tuple(list["Fighter"], AnswerList):
+    def attack_ai(self, encounter: Encounter) -> tuple[list["Fighter"], AnswerList]:
         if not self.dead:
             return self.ai.run(self, encounter)
         return ([], [])
