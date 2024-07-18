@@ -146,13 +146,17 @@ transform mid_center_right:
     yanchor 0.5 ypos 0.5
     xanchor 0.5 xpos 0.75
 
-transform center_right:
+transform mid_center_left:
     yanchor 0.5 ypos 0.5
-    xanchor 1.0 xpos 1.0
+    xanchor 0.5 xpos 0.25
 
-transform center_left:
+transform center_mid_left:
     yanchor 0.5 ypos 0.5
-    xanchor 0.0 xpos 0.0
+    xanchor 0.5 xpos 0.4
+
+transform center_mid_right:
+    yanchor 0.5 ypos 0.5
+    xanchor 0.5 xpos 0.8
 
 transform mid_offscreen_right:
     yanchor 1.0 ypos 1.0
@@ -253,6 +257,30 @@ transform t_punchup:
 transform t_mean_dining_car:
     anchor (0.5, 0.5)
     pos (0.3, 0.6)
+
+transform t_dining_car_breakfast:
+    anchor (0.6, 0.45)
+    pos (0.7, 0.4)
+
+transform t_mean_rollout:
+    rotate 0
+    linear 1 rotate -180
+
+transform t_dining_car_pancake:
+    anchor (0.5, 0.5)
+    pos (0.53, 0.58)
+
+transform t_arc_pancake:
+    anchor (0.5, 0.5)
+    pos (0.8, 0.68)
+
+transform t_dining_arc_search_left:
+    anchor (0.0, 0.0)
+    pos (-0.04, 0.9)
+
+transform t_dining_arc_search_right:
+    anchor (-3.0, 0.0)
+    pos (-0.04, 0.9)
 
 transform lego_run:
     pos (0.5, 0.5)
@@ -411,17 +439,27 @@ define RCOMEM = Character("Rocco Mem", callback = char_callback)
 define k_doctor = Character("Kuwait Doctor", callback = char_callback)
 define k_nurse = Character("Kuwait Nurse", callback = char_callback)
 define l_snow = Character("Lt. Snow", callback = char_callback)
+define lupin = Character("Lupin", callback = renpy.partial(char_callback, name = "lupin", beep = "lupin"))
 
 # Offscreen Character Definitions
 define tate_offscreen = Character("???", callback = renpy.partial(char_callback, name = "tate_offscreen", beep="tate"))
 define pakoo_offscreen = Character("???", callback = renpy.partial(char_callback, name = "pakoo_offscreen", beep="pak"))
 define green_offscreen = Character("???", callback = renpy.partial(char_callback, name = "green_offscreen", beep = "green"), what_color="#00FF00")
 define anno_offscreen = Character("???", callback = renpy.partial(char_callback, name = "anno_offscreen", beep = "anno"))
+define lupin_offscreen = Character("???", callback = renpy.partial(char_callback, name = "lupin_offscreen", beep = "lupin"))
+define mean_offscreen = Character("???", callback = renpy.partial(char_callback, name = "mean_offscreen", beep = "mean"))
 
 # AI Imposter Character Definitions
 define ed_ai = Character("\"Ed\"", callback = renpy.partial(char_callback, name = "ed_ai", beep = "ed"))
 define obamanobeep = Character("\"Obama\"", callback = renpy.partial(char_callback, name = "obama_ai", play_beeps = False))
 define bomahanobeep = Character("\"Omaha\"", callback = renpy.partial(char_callback, name = "obama_ai", play_beeps = False))
+
+# DX Train Route Character Definitions
+define amtrak_conductor = Character("Conductor", callback = char_callback)
+define amtrak_stewardess = Character("Stewardess", callback = char_callback)
+define amtrak_npc_1 = Character("Passenger 1", callback = char_callback)
+define amtrak_npc_2 = Character("Passenger 2", callback = char_callback)
+define amtrak_npc_3 = Character("Passenger 3", callback = char_callback)
 
 # Character Images
 ## CS
@@ -600,6 +638,8 @@ image tate sad = "characters/tate/tatesad.png"
 image tate sad flipped = "flip:characters/tate/tatesad.png"
 image tate stare = "characters/tate/tatestare.png"
 image tate stare flipped = "flip:characters/tate/tatestare.png"
+image tate cry = "characters/tate/tatecry.png"
+image tate cry flipped = "flip:characters/tate/tatecry.png"
 
 ## Mean
 image mean = "characters/mean/mean.png"
@@ -610,6 +650,22 @@ image mean happy2 = "characters/mean/meanhappy2.png"
 image mean happy2 flipped = "flip:characters/mean/meanhappy2.png"
 image mean surprised = "characters/mean/meansurprised.png"
 image mean surprised flipped = "flip:characters/mean/meansurprised.png"
+image mean ayo = "characters/mean/meanayo.png"
+image mean ayo flipped = "flip:characters/mean/meanayo.png"
+image mean angry = "characters/mean/meanangry.png"
+image mean angry flipped = "flip:characters/mean/meanangry.png"
+image mean wat = "characters/mean/meanwat.png"
+image mean wat flipped = "flip:characters/mean/meanwat.png"
+image mean furious = "characters/mean/meanfurious.png"
+image mean furious flipped = "flip:characters/mean/meanfurious.png"
+image mean tired = "characters/mean/meantired.png"
+image mean tired flipped = "flip:characters/mean/meantired.png"
+image mean worried = "characters/mean/meanworried.png"
+image mean worried flipped = "flip:characters/mean/meanworried.png"
+image mean scared = "characters/mean/meanscared.png"
+image mean scared flipped = "flip:characters/mean/meanscared.png"
+image mean unamused = "characters/mean/meanunamused.png"
+image mean unamused flipped = "flip:characters/mean/meanunamused.png"
 
 ## Archival
 image k174 = "characters/k174.png"
@@ -1141,9 +1197,41 @@ image kuwait_lieutenant_snow = "characters/kuwait_lieutenant_snow.png"
 
 image green_screen = "bg/green.png"
 
+# DX Train Route
+image kingman_exterior = "bg/train/kingman_exterior.png"
+image kingman_interior = "bg/train/kingman_interior.png"
+image kingman_museum = "bg/train/kingman_museum.png"
+image kingman_platform_1 = "bg/train/kingman_platform_1.png"
+image kingman_platform_2 = "bg/train/kingman_platform_2.png"
+image kingman_train_arrive = "bg/train/kingman_train_arrive.png"
+image amtrak_arrive_close = "bg/train/amtrak_arrive_close.png"
+image amtrak_sleeper_corridor = "bg/train/amtrak_sleeper_corridor.png"
+image amtrak_sleeper_interior_day = "bg/train/amtrak_sleeper_interior.png"
+image amtrak_sleeper_interior_night = "dark:bg/train/amtrak_sleeper_interior.png"
+image amtrak_dining_car = "bg/train/amtrak_dining_car.png"
+image amtrak_dining_table = "bg/train/amtrak_dining_table.png"
+image amtrak_dining_food = "bg/train/food.png" 
+image amtrak_dining_pancake = "bg/train/pancake.png"
+image moynihan_interior = "bg/train/moynihan_interior.png"
+image amtrak_cab = "bg/train/amtrak_cab.png"
+image amtrak_sleeper_open_bg = "bg/train/amtrak_sleeper_open_bg.png" #these two images are bigger on purpose
+image amtrak_sleeper_open_fg = "bg/train/amtrak_sleeper_open_fg.png" #remastering is encouraged but don't change size unless you must
+image amtrak_economy = "bg/train/amtrak_economy.png"
+
+# Train Route NPCs
+image amtrak_conductor = "characters/amtrak_conductor.png"
+image amtrak_conductor flipped = "flip:characters/amtrak_conductor.png"
+image amtrak_stewardess = "characters/amtrak_stewardess.png"
+image amtrak_stewardess flipped = "flip:characters/amtrak_stewardess.png"
+image lupin = "characters/lupin.png"
+image lupin flipped = "flip:characters/lupin.png"
+image lupin hat = "characters/lupin_hat.png"
+image lupin hat flipped = "flip:characters/lupin_hat.png"
+
 # Static Images
 image post_it = "post-it.png"
 image ytx = Transform("ytx.png", zoom = 0.333)
+image ltt_bottle = "ltt_bottle.png"
 image objection = "objection.png"
 image hold_it = "hold_it.png"
 image scott_border = "scott_border.png"
@@ -1327,6 +1415,19 @@ default line_9 = ""
 default line_10 = ""
 default line_11 = ""
 default line_12 = ""
+
+# DX Train route
+# the default values are silly so that i know they're defaults - tate
+default train_money_stolen = None
+default train_money_container = "treasure chest"
+default train_money_stolen_dialogue_switch = "lock it shut"
+default train_money_stolen_dialogue_switch_2 = "red and gold chest"
+default train_polar_express_fun_value = False
+default train_pancake_fun_value = False
+default train_skip_at_chicago = None
+default train_tate_is_fragile_fun_value = False
+default ch2_cs_attack_used = "pushed"
+default cs_chosen_form = "cs_vs_tate_punch"
 
 #BTTF
 default terraria_question_1 = ""

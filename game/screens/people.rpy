@@ -95,6 +95,12 @@ init python:
         "k174": "Pakoo's Memories",
         "addy": "Addy",
         "iris": "???",
+        #DX: Train
+        "amtrak_conductor": "{image=gui/dx_text.png} Conductor",
+        "amtrak_stewardess": "{image=gui/dx_text.png} Stewardess",
+        "lupin": "{image=gui/dx_text.png} Lupin III",
+        "zenigata": "{image=gui/dx_text.png} Zenigata",
+        "tate_ex": "{image=gui/dx_text.png} Tate EX"
         #BTTFCS
         "cruise": "{image=gui/dx_text.png} Tom Cruise"
     }
@@ -191,6 +197,8 @@ screen person(l):
                 add "images/characters/anno/anno.png" xalign 1.0 yalign 1.0 zoom 0.75
             elif l == "tate":
                 add "images/characters/tate/tatehappy.png" xalign 1.0 yalign 1.0 zoom 0.75
+            elif l == "tate_ex":
+                add "images/characters/tate/tate_ex.png" xalign 1.0 yalign 1.0 zoom 0.75
             elif l == "pakoo":
                 add "images/characters/pakoo/pakoo.png" xalign 1.0 yalign 1.0
             elif l == "mean":

@@ -14,10 +14,13 @@ label csbii_start:
     menu:
         "What attack would you like to use?"
         "Punch" (type = "true"):
+            $ ch2_cs_attack_used = "punched"
             jump punch
         "Chop" (type = "true"):
+            $ ch2_cs_attack_used = "karate-chopped"
             jump chop
         "Kick" (type = "true"):
+            $ ch2_cs_attack_used = "Sparta-kicked"
             jump kick
         "Special" (type = "bad"):
             jump special

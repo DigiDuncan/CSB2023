@@ -140,7 +140,17 @@ init python:
         "Everybody Wants To Rule The World - Tears For Fears": "everybody_wants.mp3",
         #Genocide route
         "Insane Personalities - Lizardking": "insane_personalities.mp3",
-        "Echoing? - Banana": "killcops.mp3"
+        "Echoing? - Banana": "killcops.mp3",
+        #DX: Train Route
+        "Sub−Game Select - Jun Ishikawa": "sub_game_select.ogg",
+        "Outdoors - Miki Obata": "outdoors.ogg",
+        "Ochre Woods ~ Day - Miki Obata": "ochre_woods_day.ogg",
+        "Bedroom ~ Day - Miki Obata": "bedroom_day.ogg",
+        "Item Bounce - Akira Miyagawa": "item_bounce.ogg",
+        "Krabby Klub - Tsukasa Tawada": "krabby_klub.ogg",
+        "Prof. Krane's Kidnap - Tsukasa Tawada": "prof_kranes_kidnap.ogg",
+        "E. Gadd's Lab - Kazumi Totaka & Shinobu Tanaka": "e_gadds_lab.ogg",
+        "ONBS - Tsukasa Tawada": "onbs.ogg",
     }
     global album_map
 
@@ -263,6 +273,16 @@ init python:
         "Snufkin The Traveler - Sumio Shiratori" : "moomin.png",
         "Lady Of The Cold - Sumio Shiratori" : "moomin2.png",
         "Everybody Wants To Rule The World - Tears For Fears" : "tearsforfears.png",
+        "BATTLE UNDER A BROKEN SKY - AZALI": "brokensky.png",
+        "Sub−Game Select - Jun Ishikawa": "kirby64.png",
+        "Outdoors - Miki Obata": "pkmnchannel.png",
+        "Ochre Woods ~ Day - Miki Obata": "heyyoupikachu.png",
+        "Bedroom ~ Day - Miki Obata": "heyyoupikachu.png",
+        "Item Bounce - Akira Miyagawa": "kirbyairride.png",
+        "Krabby Klub - Tsukasa Tawada": "pokemonxd.png",
+        "Prof. Krane's Kidnap - Tsukasa Tawada": "pokemonxd.png",
+        "E. Gadd's Lab - Kazumi Totaka & Shinobu Tanaka": "luigismansion.png",
+        "ONBS - Tsukasa Tawada": "pokemonxd.png",
     }
 
 screen jukebox_nav():

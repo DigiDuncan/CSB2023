@@ -214,6 +214,40 @@ def ai_mimic(subject: Fighter, targets: list[Fighter], crit: bool, options: dict
     print(f"[AI Mimic] running {attack.name}...")
     return attack.run(subject, targets, crit)
 
+# AI Targeting
+def get_target(encounter: Encounter, attack: Attack) -> list[Fighter]:
+    target: list[Fighter] = []
+
+    # If it's auto targeting
+    if attack.target_count == 0:
+        target_type = {"enemies": "allies", "allies": "enemies", "all": "all"}[attack.target_type]
+        target = getattr(encounter, target_type)
+
+    # If the targeting computer is switched off, Luke, are you okay?
+    else:
+        if attack.target_type == "enemies":
+            target_staging = encounter.allies if subject.enemy else encounter.enemies
+        elif attack.target_type == "allies":
+            target_staging = encounter.enemies if subject.enemy else encounter.allies
+        elif attack.target_type == "all":
+            target_staging = encounter.fighters
+        else:
+            target_staging = encounter.allies if subject.enemy else encounter.enemies
+
+        # Choose fighters (weighted)
+        weights = []
+        for n, f in enumerate(target_staging):
+            score = (self.preference_weight if f.name in self.preferred_targets else 1)
+            strength = n / len(target_staging)
+            if self.focus == "strong":
+                score *= strength
+            elif self.focus == "weak":
+                score *= (1 - strength)
+            weights.append(score)
+        for _ in range(attack.target_count):
+            target.append(renpy.random.choices(target_staging, weights = weights)[0])
+    return target
+
 class AI:
     def __init__(self,
                  name: str,
@@ -241,7 +275,6 @@ class AI:
         # Sort enemies by weak-first
         enemy_status.sort(key = lambda x: (x.health_points * (1 - (x.armor_points / 100))))
         what: Attack = None
-        who: list[Fighter] = []
         # i_dont_know = "3rd Base"
         available_attacks = [a for a in subject.attacks if a.available]
         # No attacks to chose?
@@ -294,40 +327,17 @@ class AI:
 
         # What should be determined before this
 
-        # If it's auto targeting
-        if what.target_count == 0:
-            target_type = {"enemies": "allies", "allies": "enemies", "all": "all"}[what.target_type]
-            who = getattr(encounter, target_type)
+        who = []
+        answer = []
+        for atk in what.attacks:
+            # Run the attack(s)
+            subwho = get_target(encounter, atk)
+            who.extend(subwho)
+            answer.extend(atk.run(subject, subwho))
+            print(f"[AI: {self.name}] {subject.name} used {atk.name} on {sentence_join([t.name for t in subwho])}...")  # type: ignore
+            renpy.notify(f"{subject.display_name} used {what.name} on {sentence_join([t.display_name for t in subwho])}...")  # type: ignore
+            renpy.pause(1.0)
 
-        # If the targeting computer is switched off, Luke, are you okay?
-        else:
-            if what.target_type == "enemies":
-                who_staging = encounter.allies if subject.enemy else encounter.enemies
-            elif what.target_type == "allies":
-                who_staging = encounter.enemies if subject.enemy else encounter.allies
-            elif what.target_type == "all":
-                who_staging = encounter.fighters
-            else:
-                who_staging = encounter.allies if subject.enemy else encounter.enemies
-
-            # Choose fighters (weighted)
-            weights = []
-            for n, f in enumerate(who_staging):
-                score = (self.preference_weight if f.name in self.preferred_targets else 1)
-                strength = n / len(who_staging)
-                if self.focus == "strong":
-                    score *= strength
-                elif self.focus == "weak":
-                    score *= (1 - strength)
-                weights.append(score)
-            for _ in range(what.target_count):
-                who.append(renpy.random.choices(who_staging, weights = weights)[0])
-        
-        # Run the attack
-        answer = what.run(subject, who)
-        print(f"[AI: {self.name}] {subject.name} used {what.name} on {sentence_join([t.name for t in who])}...")  # type: ignore
-        renpy.notify(f"{subject.display_name} used {what.name} on {sentence_join([t.display_name for t in who])}...")  # type: ignore
-        renpy.pause(1.0)
         return who, answer
 
 class AIType:
@@ -359,6 +369,10 @@ class Attack:
         return self.func(subject, fighters, crit, self.options)
 
     @property
+    def attacks(self) -> list[Attack]:
+        return [self]
+
+    @property
     def available(self) -> bool:
         return self._turns_until_available == 0
 
@@ -378,7 +392,7 @@ class Attack:
             return "damage"
 
 class ComboAttack:
-    def __init__(self, name: str, descripton: str, attacks: list[Attack], accuracy: int= 80, ex = True):
+    def __init__(self, name: str, descripton: str, attacks: list[Attack], cooldown: int = 0, used = False, ex = True):
         self.name = name
         self.description = descripton
         self.attacks = attacks
@@ -403,14 +417,6 @@ class ComboAttack:
     def _turns_until_available(self, v: int):
         for a in self.attacks:
             a._turns_until_available = v
-
-    @property
-    def target_count(self) -> int:
-        return self.attacks[0].target_count
-
-    @property
-    def target_type(self) -> int:
-        return self.attacks[0].target_type
 
     @property
     def available(self) -> bool:
@@ -641,6 +647,12 @@ class Attacks:
     SHELL = Attack("Shell", "Fire a tank shell!", random_damage_fighters, min_mult = 1, max_mult = 2, accuracy = 60)
     HEAL_EX = Attack("Heal EX", "Lots of healing.", heal_fighters, target_count = 0, target_type = "allies", mult = 10, accuracy = 100)
     AUGMENT = Attack("Awesome Augment", "Fire a laser! Fire a laser!", damage_fighters, target_count = 0, mult = 15, ex = False, cooldown = 5, accuracy = 100)
+    TATE_RECALL = Attack("Tate's Recall", "Remember something dreadful.", damage_fighters, target_count = 0, target_type = "allies", mult = 0.5, turns = 5, ex = False)
+    TATE_REVERB = Attack("Tate's Reverb", "Make them all remember.", damage_over_time, target_count = 0, target_type = "enemies", mult = 1, turns = 5, ex = False)
+    REVERB_RECALL = ComboAttack("Reverb Recall", "Channel your pain over several turns. Also damages the user.", [TATE_RECALL, TATE_REVERB], cooldown = 5, ex = False)
+    TATE_ECHOES = Attack("Tate's Echoes", "The past haunts you.", change_stat, stat = "ap", target_count = 0, target_type = "allies", mult = 0.5, cooldown = 10, ex = False)
+    TATE_BLAST = Attack("Tate's Blaster", "Make it haunt them, too.", damage_fighters, target_count = 0, target_type = "enemies", mult = 3, cooldown = 10, ex = False)
+    ECHO_BLAST = ComboAttack("Echo Blast", "Make them feel the pain of the past, at the cost of your AP.", [TATE_ECHOES, TATE_BLAST], cooldown = 10, used = True, ex = False)
 
     # UCN
     STOMP = Attack("Stomp", "Send an earthquake to the enemies!", damage_fighters, target_count = 0, target_type = "enemies", ex = False, mult = 0.75)
@@ -692,6 +704,9 @@ class Fighters:
     CS_FINAL2 = Fighter("CS (Error)", False, 1880, 10, 250, [Attacks.KICK, Attacks.YTP_HEAL, Attacks.YTP_MAGIC_NOCOOL], Image("images/characters/cs/neutral.png"), display_name = "CS")
     CS_WEAK = Fighter("CS (Weak)", False, 188, 5, 25, [Attacks.PUNCH], Image("images/characters/cs/neutral.png"), display_name = "CS")
     CS_ARCHIVAL = Fighter("CS (Archival)", False, 1027, 50, 27, [Attacks.KICK, Attacks.YTP_HEAL], Image("images/characters/cs/neutral.png"), display_name = "CS")
+    CS_VS_TATE_PUNCH = Fighter("CS (VS Tate - Punch)", False, 288, 10, 40, [Attacks.PUNCH, Attacks.YTP_MAGIC], Image("images/characters/cs/neutral.png"), display_name = "CS")
+    CS_VS_TATE_KICK = Fighter("CS (VS Tate - Kick)", False, 288, 10, 40, [Attacks.KICK, Attacks.YTP_MAGIC], Image("images/characters/cs/neutral.png"), display_name = "CS")
+    CS_VS_TATE_CHOP = Fighter("CS (VS Tate - Chop)", False, 288, 10, 40, [Attacks.CHOP, Attacks.YTP_MAGIC], Image("images/characters/cs/neutral.png"), display_name = "CS")
     ARCEUS = Fighter("Arceus", False, 160, 15, 35, [Attacks.SLASH, Attacks.LIGHT_CAST], Image("images/characters/arc/arceus.png"))
     PAKOO = Fighter("Pakoo", False, 145, 20, 30, [Attacks.INSIGHT, Attacks.SHOTGUN], Image("images/characters/pakoo/pakoo.png"))
     MIKA = Fighter("Mika", False, 165, 20, 30, [Attacks.ENCOURAGE, Attacks.HIGH_NOON], Image("images/characters/mika.png"))
@@ -730,6 +745,7 @@ class Fighters:
     K174 = Fighter("K17-4", True, 174, 17, 20, [Attacks.PUNCH], Image("images/characters/k174.png"), ai = AIType.NEUTRAL)
     K199 = Fighter("K19-9", True, 199, 19, 30, [Attacks.KICK], Image("images/characters/k199.png"), ai = AIType.AGGRO)
     K207 = Fighter("K20-7", True, 207, 20, 10, [Attacks.PUNCH], Image("images/characters/k207.png"), ai = AIType.DEFENSIVE)
+    TATE_EX = Fighter("{image=gui/dx_text.png} Tate EX", True, 1111, 6, 35, [Attacks.DAMAGE_SCREM, Attacks.REVERB_RECALL, Attacks.ECHO_BLAST], Image("images/characters/tate/tatesmug.png"), ai = AIType.AGGRO, display_name = "Tate EX") 
 
     # Enemies (UCN)
     WESLEY = Fighter("{image=gui/dx_text.png} Wesley", True, 200, 20, 40, [Attacks.PISTOL, Attacks.ALL_OVER_AGAIN], Image("images/characters/wesley.png"), ai = AIType.AGGRO, display_name = "Wesley")

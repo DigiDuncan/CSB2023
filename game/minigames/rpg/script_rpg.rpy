@@ -223,6 +223,10 @@ label rpg_archival:
         on_win "archival_finale"
         on_lose "rpg_archival"
         music "audio/broken_sky.ogg"
+        
+label rpg_vs_tate:
+    rpg:
+        bg "images/bg/train/amtrak_observation.png"
 
 label bronsonbattle:
     rpg:
@@ -236,3 +240,20 @@ label bronsonbattle:
         on_win "bronson_win"
         on_lose "bronsonbattle"
         music "audio/error.ogg"
+
+        python:
+            if ch2_cs_attack_used = "karate-chopped":
+                cs_chosen_form = "cs_vs_tate_chop"
+            elif ch2_cs_attack_used = "Sparta-kicked":
+                cs_chosen_form = "cs_vs_tate_kick"
+            else:
+                cs_chosen_form = "cs_vs_tate_punch"
+                
+        fighters:
+            $cs_chosen_form
+            tate_ex
+
+        scale 2.0
+        on_win "train_vs_tate_win"
+        on_lose "train_vs_tate_loss"
+        music "audio/space.ogg"

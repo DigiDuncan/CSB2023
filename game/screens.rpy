@@ -1,4 +1,4 @@
-﻿init python:
+init python:
     def change_bounciness(new_bounciness):
         preferences.csbounciness = new_bounciness
 
