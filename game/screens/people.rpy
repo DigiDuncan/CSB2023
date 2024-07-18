@@ -96,7 +96,7 @@ init python:
         "addy": "Addy",
         "iris": "???",
         #BTTFCS
-        "cruise": "Tom Cruise"
+        "cruise": "{image=gui/dx_text.png} Tom Cruise"
     }
 
 screen people_nav():
