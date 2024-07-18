@@ -17,6 +17,7 @@ class Achievement:
     icon_image: str
     category: str
     hidden: bool = False
+    dx: bool = False
    
     @property
     def unlocked(self) -> bool:
@@ -28,11 +29,15 @@ class Achievement:
 
     @property
     def icon(self) -> str:
-        d = renpy.displayable(f"achievements/{self.icon_image}.png")
+        if self.dx:
+            d = Composite((128, 128), (0, 0), f"achievements/{self.icon_image}.png", (0, 0), "achievements/dx_border.png")
+        else:
+            d = renpy.displayable(f"achievements/{self.icon_image}.png")
+
         if self.unlocked:
             return d
-            
-        return Transform(d, matrixcolor=SaturationMatrix(0.0))  # type: ignore
+        else:
+            return Transform(d, matrixcolor=SaturationMatrix(0.0))  # type: ignore
 
     def __hash__(self) -> int:
         return hash(self.name)

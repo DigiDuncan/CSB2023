@@ -13,6 +13,7 @@ default persistent.unlocked_achievements = set()
 #           - Requires the player to do anything else that would not occur naturally through normal gameplay.
 # Optional args:
 #   - Whether achievement is hidden until unlocked (Default: False)
+#   - Whether achivement is DX-new (Default: False)
 
 define achievements = [
     Achievement("ZUP!", "???", "Start the game.", "zup", "extra"),
@@ -66,9 +67,9 @@ define achievements = [
     Achievement("All Over Again", "???", "Beat CSBIII all over again.", "alloveragain", "extra", True),
     Achievement("F.U.N.", "???", "Roll a fun value.", "fun", "extra", True),
     Achievement("Archived", "???", "Find Addy's Facility.", "archive", "story", True),
-    Achievement("Graphite Grinder", "Sharpening Time 2", "Beat the Pencil Cultist's high score.", "grinder", "story"),
-    Achievement("60 Drillless WR", "Your wrist hurts.", "Get a perfect score of 1200.", "1200","extra"),
-    Achievement("We Don't Go To Bronson", "???", "Welcome to Hell!",  "bronson", "story"),
+    Achievement("Graphite Grinder", "Sharpening Time 2", "Beat the Pencil Cultist's high score.", "grinder", "story", dx = True),
+    Achievement("60 Drillless WR", "Your wrist hurts.", "Get a perfect score of 1200.", "1200","extra", dx = True),
+    Achievement("We Don't Go To Bronson", "???", "Welcome to Hell!",  "bronson", "story", dx = True),
     Achievement("Gotta Catch Them All", "Collect every bio.", "Collect every bio.", "bios", "extra"),
     Achievement("The Brown Album", "Collect every song in the jukebox.", "Collect every song in the jukebox.", "juke", "extra"),
     Achievement("Fin.", "Collect all the endings.", "Collect all the endings.", "end", "extra")
