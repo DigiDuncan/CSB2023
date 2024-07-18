@@ -1422,7 +1422,7 @@ define audio.pokey = "pokey.ogg"
 define audio.park_theme = "park_theme.ogg"
 define audio.hohsis_remix = "hohsisremix.ogg"
 define audio.track_3 = "track3.ogg"
-define ac_title = "ac_title.ogg"
+define audio.ac_title = "ac_title.ogg"
 
 #CSBIII AI Music
 define audio.school = "school.ogg"
