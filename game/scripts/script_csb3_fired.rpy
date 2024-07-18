@@ -109,9 +109,9 @@ label fired_new_plan:
     show cs guitar at left with moveinleft
     n "CS comes back holding two guitar controllers and a drum kit."
     cs "Saw 'em on the side of the road. Couldn't pass 'em up."
-    jump guitar_hero
+    jump fired_guitar_hero
 
-label guitar_hero:
+label fired_guitar_hero:
     play music "<loop 0>audio/hitmewithyourbestshot.ogg" volume 0.5
     music Hit Me With Your Best Shot - Pat Benatar
     scene hotel_guitar_hero with fade
@@ -161,9 +161,9 @@ label guitar_hero:
     cs "Well, you heard the man. Anno, do you have FL Studio?"
     anno "Just got it."
     cs "Well, let's get to work, boys!"
-    jump write_song
+    jump fired_write_song
 
-label write_song:
+label fired_write_song:
     stop music fadeout 3.0
     scene black with dissolve
     n "After some time, the gang has their first song written."
@@ -228,9 +228,9 @@ label write_song:
     scene black with dissolve
     n "While they sleep, the song accumulates streams..."
     hide screen dxcom
-    jump hotel_next_day
+    jump fired_hotel_next_day
 
-label hotel_next_day:
+label fired_hotel_next_day:
     stop music fadeout 3.0
     scene hotel_room with dissolve
     show cs at left with moveinleft
@@ -309,9 +309,9 @@ label hotel_next_day:
     hide anno
     hide arceus
     with moveoutright
-    jump song_2
+    jump fired_song_2
 
-label song_2:
+label fired_song_2:
     stop music fadeout 3.0
     scene hotel_room
     show anno at left
@@ -391,9 +391,9 @@ label song_2:
     anno "Yeah, we could."
     arceus "I guess I'm cool with that."
     cs "Let's do it, then! [band_name], here we go!"
-    jump ep_time
+    jump fired_ep_time
 
-label ep_time:
+label fired_ep_time:
     stop music fadeout 3.0
     pause 1.0
     scene hotel_breakfast
@@ -466,9 +466,9 @@ label ep_time:
     cs "I guess."
     arceus "We should head back upstairs with Anno. Maybe there is something we can do to help!"
     cs "Yeah, let's go see!"
-    jump back_to_room 
+    jump fired_back_to_room 
 
-label back_to_room:
+label fired_back_to_room:
     stop music fadeout 3.0
     scene hotel_room
     show anno
@@ -516,9 +516,9 @@ label back_to_room:
     n "CS smiles to himself, drifting off to sleep."
 
     pause 1.0
-    jump mcd
+    jump fired_mcd
 
-label mcd:
+label fired_mcd:
     stop music fadeout 3.0
 
     scene hotel_room
@@ -615,9 +615,9 @@ label mcd:
     stop music fadeout 3.0
     music end    
     scene black with dissolve
-    jump hotel_lobby_2
+    jump fired_hotel_lobby_2
 
-label hotel_lobby_2:
+label fired_hotel_lobby_2:
     stop music fadeout 3.0
 
     scene hotel_lobby    
@@ -659,9 +659,9 @@ label hotel_lobby_2:
     anno "We're [band_name]! Check out {i}[ep_name]{/i} on streaming services soon!"
     stop music fadeout 3.0
     n "The gang heads up to their room."
-    jump song_5
+    jump fired_song_5
 
-label song_5:
+label fired_song_5:
     stop music fadeout 3.0
     scene hotel_room
     show anno at left
@@ -708,9 +708,9 @@ label song_5:
     music end 
     arceus "You know, I'm starting to really believe in this whole thing."
     $ achievement_manager.unlock("Independent Artist")
-    jump fan_interaction
+    jump fired_fan_interaction
 
-label fan_interaction:
+label fired_fan_interaction:
     stop music fadeout 3.0
     scene black with dissolve
     n "The next day, in the early morning, they hear a knock on their hotel room door."
@@ -795,9 +795,9 @@ label fan_interaction:
     cs "[band_name] is going on tour!"
     stop music fadeout 3.0
     music end    
-    jump howie
+    jump fired_howie
 
-label howie:
+label fired_howie:
     stop music fadeout 3.0
     scene black with dissolve
     n "After a few hours, the band meets Howie downstairs in the lobby."
@@ -824,9 +824,9 @@ label howie:
     hide arceus
     hide howie
     with moveoutleft
-    jump limo_time
+    jump fired_limo_time
 
-label limo_time:
+label fired_limo_time:
     scene in_limo
     show arceus happy flipped
     show cs happy at mid_mid_left
@@ -869,14 +869,14 @@ label limo_time:
     menu:
         "Should they take the deal?"
         "Yes"  (type = "good"):
-            jump signed_the_contract
+            jump fired_signed_the_contract
         "No"  (type = "bad"):
-            jump no_contract
+            jump fired_no_contract
             
-label no_contract:
-    bad_end "Well,\nthat was kinda dumb!" "limo_time"
+label fired_no_contract:
+    bad_end "Well,\nthat was kinda dumb!" "fired_limo_time"
 
-label signed_the_contract:
+label fired_signed_the_contract:
     stop music fadeout 3.0
     scene black
     n "After some time, Anno signs the contract, and they all return to the hotel."
@@ -943,9 +943,9 @@ label signed_the_contract:
     show cs flipped
     hide cs with moveoutleft
     janitor "Weird guy."
-    jump first_tour_day
+    jump fired_first_tour_day
 
-label first_tour_day:
+label fired_first_tour_day:
     stop music fadeout 3.0
     scene black with dissolve
     n "CS heads to bed. The next morning, the [band_name] crew gets ready for their first tour day."
@@ -1088,9 +1088,9 @@ label first_tour_day:
     cs "Well, then, let's get this show on the road!"
     stop music fadeout 3.0
     scene black with dissolve
-    jump second_tour_day
+    jump fired_second_tour_day
 
-label second_tour_day:
+label fired_second_tour_day:
     n "The group rests while on their way to their next venue."
     
     scene tour_bus_inside
@@ -1261,9 +1261,9 @@ label second_tour_day:
     show cs
     with dissolve
     play music "<loop 0>audio/exotic.ogg" volume 0.5
-    jump third_tour_day
+    jump fired_third_tour_day
 
-label third_tour_day:
+label fired_third_tour_day:
     n "Howie hollers from the front of the bus."
     agent "Alright, boys, it's your last performance!"
     cs "Where are we headed?"
@@ -1402,9 +1402,9 @@ label third_tour_day:
     scene black with Dissolve(3.0)
     # Line 1200, give it up for line 1200
     # Line 1388, give it up for line 1388
-    jump final_tour_bus
+    jump fired_final_tour_bus
 
-label final_tour_bus:
+label fired_final_tour_bus:
     scene tour_bus_inside
     show anno at left
     show arceus at right

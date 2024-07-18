@@ -8,11 +8,11 @@ label england_menu:
     python:
         locations = []
         if not ramsay_check:
-            locations.append(("Go on {i}Hell's Kitchen{/i}", "hell_zone"))
+            locations.append(("Go on {i}Hell's Kitchen{/i}", "england_hell_zone"))
         if not gear_check:
-            locations.append(("Go on {i}Top Gear{/i}", "top_zone"))
+            locations.append(("Go on {i}Top Gear{/i}", "england_top_zone"))
         if not tom_check:
-            locations.append(("Go on an adventure with Tom Scott", "scott_zone"))
+            locations.append(("Go on an adventure with Tom Scott", "england_scott_zone"))
         if not locations:
             locations.append(("I've done everything", "england_done"))
         label_jump = renpy.display_menu(locations)
@@ -28,11 +28,11 @@ label japan_menu:
     python:
         locations = []
         if not anime_check:
-            locations.append(("Go on an anime adventure", "anime_adventure"))
+            locations.append(("Go on an anime adventure", "japan_anime_adventure"))
         if not karaoke_check:
-            locations.append(("Sing some karaoke", "karaoke"))
+            locations.append(("Sing some karaoke", "japan_karaoke"))
         if not miku_check:
-            locations.append(("Have some fun with Miku", "miku_pizza"))
+            locations.append(("Have some fun with Miku", "japan_miku_pizza"))
         if not locations:
             locations.append(("I've done everything", "japan_leave"))
         label_jump = renpy.display_menu(locations)
@@ -42,17 +42,17 @@ label sweden_menu:
     python:
         locations = []
         if not lights_check:
-            locations.append(("Go see the Aurora Borealis", "aurora_borealis"))
+            locations.append(("Go see the Aurora Borealis", "sweden_aurora_borealis"))
         if not ikea_check:
-            locations.append(("Check out Ikea", "ikea"))
+            locations.append(("Check out Ikea", "sweden_ikea"))
         if not joel_check:
-            locations.append(("Find Joel", "joel"))
+            locations.append(("Find Joel", "sweden_joel"))
         if not locations:
             locations.append(("I've done everything", "sweden_leave"))
         label_jump = renpy.display_menu(locations)
         renpy.jump(label_jump)
 
-label knocked_out:
+label country_knocked_out:
     scene black
     play sound "<loop 0>sfx_heartbeat.ogg" volume 1
     n "..."
@@ -106,9 +106,9 @@ label knocked_out:
     n "CS hastily makes his way to the airport."
     window hide
     pause 1.0
-    jump airport_choose
+    jump country_airport_choose
 
-label airport_choose:
+label country_airport_choose:
     scene airport_interior with fade
     play music "<loop 0>airport.ogg" volume 0.4
     music Airport Infiltration - Andy Blythe & Marten Joustra
@@ -356,7 +356,7 @@ label england_first:
     with moveoutright
     show black with dissolve
     n "Arceus and CS jump on a double decker and head down to the house."
-    jump arceus_place
+    jump england_arceus_place
 
 label england_second:
     $ england_check = True
@@ -409,9 +409,9 @@ label england_second:
     with moveoutright
     show black with dissolve
     n "Arceus and CS jump on a double decker and heads down to their house."
-    jump arceus_place
+    jump england_arceus_place
 
-label arceus_place:
+label england_arceus_place:
     pause 1.0
     scene kitty_house with fade
     show arceus flipped at center with moveinleft
@@ -479,7 +479,7 @@ label arceus_place:
     arceus "What do you want to do here, CS? It's a brand new country! There are a ton of things you can do..."
     jump england_menu
 
-label hell_zone:
+label england_shell_zone:
     $ ramsay_check = True
     cs "I wanna go on {i}Hell's Kitchen!{/i}"
     show arceus worried
@@ -627,18 +627,18 @@ label hell_zone:
     show cs disappointed flipped
     with fade
     cs "Well, I have a couple options for what I should make."
-    jump gordon_menu
+    jump england_gordon_menu
 
-label gordon_menu:
+label england_gordon_menu:
     scene hell_kitchen
     show cs disappointed flipped
     menu:
         "Make some Genergy":
-            jump good_ramsay
+            jump england_good_ramsay
         "Make Phil's cake":
-            jump bad_ramsay
+            jump england_bad_ramsay
 
-label bad_ramsay:
+label england_bad_ramsay:
     stop music fadeout 3.0
     scene hell_kitchen
     show cs flipped
@@ -671,7 +671,7 @@ label bad_ramsay:
     cs "Ooooooooohhhhh fuuuuuuucckkk."
     bad_end "Master Chef?\nMore like, Master Death!" "gordon_menu"
 
-label good_ramsay:
+label england_good_ramsay:
     show cs flipped
     cs "Yeah, you know what? I'm gonna make some Genergy."
     cs "It's my signature beverage! And Michael liked it, I think, and he's British too!"
@@ -787,7 +787,7 @@ label good_ramsay:
     $ achievement_manager.unlock("Master Chef")
     jump england_menu
     
-label top_zone:
+label england_top_zone:
     $ gear_check = True
     cs "I kinda wanna go on {i}Top Gear.{/i}"
     kitty "Well, now I gotta see that."
@@ -863,17 +863,17 @@ label top_zone:
     hammond "Well, what are you guys waiting for? Let's do this race!"
     scene black with dissolve
     n "CS and Richard get in their cars and wait for the countdown."
-    jump top_gear_menu
+    jump england_top_gear_menu
 
-label top_gear_menu:
+label england_top_gear_menu:
     scene black
     menu:
         "Lose the race":
-            jump top_lose
+            jump england_top_lose
         "Win the race":
-            jump top_win
+            jump england_top_win
     
-label top_lose:
+label england_top_lose:
     stop music fadeout 3.0
     music end    
     n "As the race finishes, the contestants get out of their cars."
@@ -890,7 +890,7 @@ label top_lose:
     cs "Fuck."
     bad_end "You want it all,\nbut the world won't give it up!" "top_gear_menu"
 
-label top_win:
+label england_top_win:
     stop music fadeout 3.0
     music end    
     n "As the race finishes, the contestants get out of their cars."
@@ -961,7 +961,7 @@ label top_win:
     $ achievement_manager.unlock("Bottom Gear")
     jump england_menu
 
-label scott_zone:
+label england_scott_zone:
     $ tom_check = True
     cs "I wanna see what Tom Scott is up to."
     kitty "Who, now?"
@@ -1015,18 +1015,18 @@ label scott_zone:
     tom "As you can see here, I am standing in the middle of this road."
     tom "That means if I get hit by a car, this video will not be uploaded."
     tom "Anyways, as I was saying..."
-    jump scott_menu
+    jump england_scott_menu
 
-label scott_menu:
+label england_scott_menu:
     scene tom_road
     show tom
     menu:
         "Tell Tom to move":
-            jump scott_move
+            jump england_scott_move
         "Let Tom do his thing":
-            jump scott_movent
+            jump england_scott_movent
 
-label scott_move:
+label england_scott_move:
     show cs flipped at offscreenright
     cs "Hey, Tom, move out of the way!"
     show tom at right with move
@@ -1100,9 +1100,9 @@ label england_done:
     elif japan_check and (not sweden_check):
         jump england_sweden
     else:
-        jump going_home
+        jump country_going_home
 
-label scott_movent:
+label england_scott_movent:
     stop music fadeout 3.0
     scene tom_road
     show tom
@@ -1256,7 +1256,7 @@ label japan_two:
     cs "But the question is, what should I do here?"
     jump japan_menu
 
-label anime_adventure:
+label japan_anime_adventure:
     $ anime_check = True
     cs "I guess I can look around the city."
     cs "This place is so compact, I could be here for days!"
@@ -1398,7 +1398,7 @@ label anime_adventure:
     cs "I still feel like I should stay and do some things here."
     jump japan_menu
 
-label karaoke:
+label japan_karaoke:
     $ karaoke_check = True
     cs "I mean, I've always wanted to sing karaoke in Japan."
     cs "I don't know where I could go to sing, though."
@@ -1448,7 +1448,7 @@ label karaoke:
     cs "Well, is there anything else I should do here?"
     jump japan_menu
 
-label miku_pizza:
+label japan_miku_pizza:
     $ miku_check = True
     cs "I wanna have some fun with Miku!"
     cs "They had a Domino's ad where you can go have some fun with Miku, right?"
@@ -1609,7 +1609,7 @@ label japan_leave_airport:
     elif england_check and (not sweden_check):
         jump japan_sweden
     else:
-        jump going_home
+        jump country_going_home
 
 label japan_sweden:
     cs "I think I wanna go to Sweden this time."
@@ -1641,7 +1641,7 @@ label japan_england:
     scene black with dissolve
     jump england_second
 
-label going_home:
+label country_going_home:
     stop music fadeout 1.0
     cs "I guess it's time to head home."
     cs "I've done so many things during this trip. I honestly forgot why I started this."
@@ -1764,7 +1764,7 @@ label sweden_second:
     n "CS looks over the map, trying to figure out which bus to take."
     jump sweden_menu 
 
-label aurora_borealis:
+label sweden_aurora_borealis:
     $ lights_check = True
     cs "I {i}am{/i} in Sweden, so I guess I may as well go see the Northern Lights."
     cs "I should go somewhere less urban if I wanna see it properly, though. Too much light pollution here."
@@ -1941,7 +1941,7 @@ label aurora_borealis:
     scene bus_map with dissolve
     jump sweden_menu
 
-label ikea:
+label sweden_ikea:
     $ ikea_check = True
     cs "I should go check out the Ikea here."
     cs "It's the land of Ikea. They're probably a lot better than the ones in the US."
@@ -2127,7 +2127,7 @@ label ikea:
     scene bus_map with dissolve
     jump sweden_menu
 
-label joel:
+label sweden_joel:
     $ joel_check = True
     cs "I should try to find Vinesauce Joel. He likes YTPs, so he'd probably want to hang out."
     cs "I know he's in Northern Sweden, so I'll get up there. Sweden's pretty small, it couldn't be that hard to find him."
@@ -2340,7 +2340,7 @@ label sweden_leave:
     elif england_check and (not japan_check):
         jump sweden_japan
     else:
-        jump going_home
+        jump country_going_home
 
 label sweden_england:
     cs "I guess I really kinda want to go to England this time."

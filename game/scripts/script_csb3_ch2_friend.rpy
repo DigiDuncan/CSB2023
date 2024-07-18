@@ -1,4 +1,4 @@
-label dpn_call:
+label friend2_dpn_call:
     if nice_car:
         scene joj_charger_fg
         show drive_day behind joj_charger_fg
@@ -31,9 +31,9 @@ label dpn_call:
     show cs disappointed
     pakoo "Man, I hope Mika is okay. I don't how I'm gonna explain this whole situation to them later."
     arceus "I think we're all in the same boat on that problem. I'm sure they'll all be fine."
-    jump car_ride_1
+    jump friend2_car_ride_1
 
-label car_ride_1:
+label friend2_car_ride_1:
     scene black with fade
     n "Meanwhile, Tate's group seems to be having the time of their life."
     scene jeep_inside_fg
@@ -113,9 +113,9 @@ label car_ride_1:
     music end
     scene black with fade
     n "A few hours pass and the DPN crew arrives at the S&P Diner. They chat as they wait to be served."
-    jump dpn_diner
+    jump friend2_dpn_diner
 
-label dpn_diner:
+label friend2_dpn_diner:
     scene dinerinside
     show digi at right
     show nova flipped at center
@@ -181,7 +181,7 @@ label dpn_diner:
     music Desert Dawn - Lizardking
     jump rpg_cop_fight_3
 
-label cs_meetup:
+label friend2_cs_meetup:
     scene cs_somewhere 
     show aria dark flipped at right
     with fade
@@ -229,7 +229,7 @@ label cs_meetup:
     music Full Rulle Med Klas - Lizardking
     jump rpg_cop_fight_4
 
-label cs_meetup_2:
+label friend2_cs_meetup_2:
     scene dinerinside
     show digi at center
     show nova flipped at left
@@ -319,9 +319,9 @@ label cs_meetup_2:
     scene black with dissolve
     window hide
     pause 2.0
-    jump car_ride_2
+    jump friend2_car_ride_2
 
-label car_ride_2:
+label friend2_car_ride_2:
     scene jeep_inside_fg
     show drive_night behind jeep_inside_fg
     show mika at left
@@ -409,7 +409,7 @@ label car_ride_2:
     music Thousand March - Mr. Sauceman
     jump rpg_ng_fight
 
-label cs_rage:
+label friend2_cs_rage:
     scene battle_block_without_theater
     show cs dark angry at center
     show tate dark at mid_left
@@ -526,9 +526,9 @@ label cs_rage:
     stop music fadeout 3.0
     music end
     scene black with fade
-    jump copguy_pres
+    jump friend2_copguy_pres
 
-label copguy_pres:
+label friend2_copguy_pres:
     n "After Copguy fled the scene, he immediately called to summarize the bad news to the sheriff."
     scene police_car_fg
     show copguy flipped at left
@@ -562,9 +562,9 @@ label copguy_pres:
     copguy "Thank you, sir. I won't stop until these menaces are behind bars."
     scene black with dissolve
     window hide
-    jump car_ride_3
+    jump friend2_car_ride_3
 
-label car_ride_3:
+label friend2_car_ride_3:
     if nice_car:
         scene joj_chargerarc_fg
         show drive_night behind joj_chargerarc_fg
@@ -619,9 +619,9 @@ label car_ride_3:
     stop music fadeout 3.0
     music end
     scene black with fade
-    jump final_meetup
+    jump friend2_final_meetup
 
-label final_meetup:
+label friend2_final_meetup:
     if nice_car:
         scene joj_chargerarc_fg
         show final_destination behind joj_chargerarc_fg
@@ -673,7 +673,7 @@ label final_meetup:
     music Trans Atlantic - Lizardking
     jump rpg_final_fight_1
 
-label between_1:
+label friend2_between_1:
     scene war_torn_3
     show cs at center
     show pakoo flipped at mid_left
@@ -689,7 +689,7 @@ label between_1:
     cs "Alright, guys! Battle positions! We've got a tank!"
     jump rpg_final_fight_2
 
-label between_2:
+label friend2_between_2:
     scene war_torn_5
     show cs worried at center
     show tate at mid_left
@@ -752,15 +752,15 @@ label between_2:
     scene black with dissolve
     jump rpg_final_fight_3 
 
-label weapon_of_choice:
+label friend2_weapon_of_choice:
     window hide
     pause 1.0
     $ renpy.movie_cutscene("movies/woc.webm")
     $ achievement_manager.unlock("Hopes and Dreams")
     $ achievement_manager.unlock("Machine Gun")
-    jump car_slam
+    jump friend2_car_slam
 
-label car_slam:
+label friend2_car_slam:
     stop music fadeout 1.0
     scene war_torn_1 with fade
     n "CS looks around, taking in the destruction around him."

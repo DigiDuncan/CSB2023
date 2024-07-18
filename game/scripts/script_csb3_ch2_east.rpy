@@ -29,11 +29,11 @@ label true_east:
     music end
     menu:
         "Wait for driver at the gas station" (type = "true"):
-            jump billy_driver
+            jump true_billy_driver
         "Hotwire a car" (type = "bad"):
-            jump hotwire
+            jump true_hotwire
 
-label hotwire:
+label true_hotwire:
     stop music
     scene gasinside
     show cs surprised at left
@@ -59,9 +59,9 @@ label hotwire:
     show arceus worried
     copguy "I could hear the sound of a car window breaking from miles away!"
     copguy "You guys already blew it! Back to the slammer!"
-    bad_end "What did Copguy\njust tell you?" "choose_direction"
+    bad_end "What did Copguy\njust tell you?" "csbiii_choose_direction"
 
-label billy_driver:
+label true_billy_driver:
     cs "Why don't we just wait for someone at the gas station to come out, and then we ask them for a ride?"
     n "CS walks over to someone's car parked in the front of the gas station."
     scene gasoutside with fade
@@ -104,9 +104,9 @@ label billy_driver:
     hide billy with moveoutright
     show arceus flipped at right
     hide arceus with moveoutright
-    jump in_billy_car
+    jump true_in_billy_car
 
-label in_billy_car:
+label true_in_billy_car:
     scene carback1
     show billy car
     play music "<loop 0>billy_radio.ogg" volume 0.3
@@ -126,9 +126,9 @@ label in_billy_car:
     arceus "Fair point."
     stop music fadeout 3.0
     music end
-    jump montana
+    jump true_montana
 
-label montana:
+label true_montana:
     scene car background
     show billy car
     with fade
@@ -422,9 +422,9 @@ label montana:
     show billy car
     with fade
     n "Billy heads out on the open road again as they enter the state of South Dakota."
-    jump south_dakota
+    jump true_south_dakota
 
-label south_dakota:
+label true_south_dakota:
     arceus "Welcome to the Great Plains."
     cs "Woohoo!"
     stop music fadeout 3.0
@@ -499,9 +499,9 @@ label south_dakota:
         n "Billy follows the Missouri River down until they arrive in Nebraskaska."       
     else:    
         n "Billy follows the Missouri River down until they arrive in Omaha."
-    jump nebraska
+    jump true_nebraska
 
-label nebraska:
+label true_nebraska:
     scene omaha
     show billy car
     with fade
@@ -621,9 +621,9 @@ label nebraska:
     music end
     n "The gang heads to the backroom area to rest for the night."
     n "Once they wake up, they thank Peppino for his hospitality and head out."
-    jump iowa
+    jump true_iowa
 
-label iowa:
+label true_iowa:
     scene car plains
     show billy car
     with fade 
@@ -650,9 +650,9 @@ label iowa:
     show billy car
     arceus "Shit, this is bad..."
     cs "Billy, you need to switch lanes when it charges up!"
-    minigame "minigame_car" "after_ufo" "lose_car_game"
+    minigame "minigame_car" "true_after_ufo" "lose_car_game"
 
-label after_ufo:
+label true_after_ufo:
     $ renpy.mark_label_seen("play_car_game")
     scene car plains
     show billy car
@@ -675,7 +675,7 @@ label after_ufo:
     n "The gang stops in Indiana for the night. They take off again in the morning."
     jump michigan
   
-label ohio:
+label true_ohio:
     if fun_value(FUN_VALUE_EPIC):
         scene car plains
         show billy car
@@ -754,9 +754,9 @@ label ohio:
         music end
         hide scott_border with dissolve
         arceus "I'm glad it just faded away. I did {i}not{/i} want to spray cleaner in my eyes."
-    jump pennsylvania
+    jump true_pennsylvania
 
-label pennsylvania:
+label true_pennsylvania:
     n "The gang hits the last state before New York, Pennsylvania."
     scene billboard
     play music "<loop 0>fourside.ogg" volume 0.6
@@ -943,9 +943,9 @@ label pennsylvania:
     n "Both competitors hover their hands over the pencils..."
     host "GO!"
     music Rude Buster - Toby Fox
-    minigame "minigame_pencil" "win_pencil" "lose_pencil_game"
+    minigame "minigame_pencil" "true_win_pencil" "lose_pencil_game"
 
-label win_pencil:
+label true_win_pencil:
     $ renpy.mark_label_seen("play_pencil_game")
     hide bad_end_screen
     hide typewriter
@@ -1055,7 +1055,7 @@ label win_pencil:
     stop music fadeout 3.0
     jump car_dialogue
 
-label back_home:
+label true_back_home:
     stop music2
     scene cs_house with fade
     play music "<loop 0>park_theme.ogg" volume 0.5
@@ -1111,23 +1111,23 @@ label back_home:
     if persistent.true_ending:
         menu:
             "Fight them!" (type = "bad"):
-                jump fighthohsis
+                jump true_fighthohsis
             "Negotiate with them!" (type = "true"):
-                jump talktohohsis
+                jump true_talktohohsis
             "Tell it like it is!" (type = "bad"):
-                jump fuckuphohsis
+                jump true_fuckuphohsis
             "Call Copguy!":
-                jump copsathohsis
+                jump true_copsathohsis
     else:
         menu:
             "Fight them!" (type = "bad"):
-                jump fighthohsis
+                jump true_fighthohsis
             "Negotiate with them!" (type = "true"):
-                jump talktohohsis
+                jump true_talktohohsis
             "Tell it like it is!" (type = "bad"):
-                jump fuckuphohsis
+                jump true_fuckuphohsis
 
-label talktohohsis:
+label true_talktohohsis:
     cs "I never intended to harm your company. I just thought that the video was a good source to YTP."
     cs "I'm sorry about all those prank callers. I even made a video telling people to stop prank calling you."
     cs "I never had bad intentions for you guys... honestly, it was also kind of like a free promotion."
@@ -1283,9 +1283,9 @@ label talktohohsis:
     if fanbase == "both":
         jump true_ending
     elif fanbase == "ltt":
-        jump ltt_ending
+        jump true_ltt_ending
     elif fanbase == "ytp":
-        jump ytp_ending
+        jump true_ytp_ending
     else:
         jump true_ending
 
@@ -1303,12 +1303,12 @@ label true_ending:
             "Go to sleep" (type = "warning"):
                 jump archival
             "Stream" (type = "true"):
-                jump streaming
+                jump true_streaming
     else:
         $ persistent.true_ending = True
-        jump streaming
+        jump true_streaming
 
-label streaming:
+label true_streaming:
     show cs at mid_left
     cs "Before I head off for the night, I'll do a stream real quick."
     n "CS starts up his stream overlay and goes live on Twitch."
@@ -1333,11 +1333,11 @@ label streaming:
     menu:
         "Play the after story?"
         "Yes" (type = "dx"):
-            jump after_true
+            jump dx_after_true
         "No" (type = "true"):
             return
 
-label ytp_ending:
+label true_ytp_ending:
     stop music
     n "CS looks over at his desk, where his old computer is sitting."
     scene cs_room_2 with fade
@@ -1358,7 +1358,7 @@ label ytp_ending:
     $ renpy.end_replay()
     return
 
-label ltt_ending:
+label true_ltt_ending:
     stop music
     n "CS looks over at his desk, where a new computer is sitting."
     scene cs_room_2 with fade
@@ -1382,7 +1382,7 @@ label ltt_ending:
     $ renpy.end_replay()
     return
 
-label fighthohsis:
+label true_fighthohsis:
     stop music
     scene cs_house
     show cs disappointed at left
@@ -1426,9 +1426,9 @@ label fighthohsis:
     show ed with hpunch
     ed "Time to take a shit on the house."
     music end
-    bad_end "Revenge!" "back_home"
+    bad_end "Revenge!" "true_back_home"
 
-label fuckuphohsis:
+label true_fuckuphohsis:
     stop music
     scene cs_house
     show ed at right
@@ -1457,9 +1457,9 @@ label fuckuphohsis:
     show cs disappointed
     pause 1.0
     cs "Fuck."
-    bad_end "Time to bunk\nat Rosen's!" "back_home"  
+    bad_end "Time to bunk\nat Rosen's!" "true_back_home"  
 
-label copsathohsis:
+label true_copsathohsis:
     stop music
     scene cs_house
     show ed at right

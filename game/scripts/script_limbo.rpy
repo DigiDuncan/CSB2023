@@ -31,7 +31,7 @@ screen dx_select(items):
                         action i.action
 
 label lose_car_game:
-    bad_end "100 percent\nunsatisfied." "iowa"
+    bad_end "100 percent\nunsatisfied." "true_iowa"
     return
 
 label lose_pencil_game:

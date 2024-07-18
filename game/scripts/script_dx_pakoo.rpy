@@ -1,4 +1,4 @@
-label after_true:
+label dx_after_true:
     scene black with dissolve
     stop music fadeout 3.0
     music end

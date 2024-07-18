@@ -44,11 +44,11 @@ label michigan:
     menu:
         "Decide."
         "Try to stop going to Bronson" (type = "dx"):
-            jump bronson
+            jump michigan_bronson
         "Don't say anything":
-            jump continue_michigan
+            jump michigan_continue
 
-label bronson:
+label michigan_bronson:
     cs "Look man, just don't go to Bronson okay?"
     billy "Okay okay, we won't go."
     cs "It's just, I am getting a really bad vibe from that place."
@@ -154,9 +154,9 @@ label bronson:
     show copguyexe with dissolve
     scene white with dissolve
     pause 1.0
-    jump bronsonbattle
+    jump rpg_bronsonbattle
 
-label bronson_win:
+label michigan_bronson_win:
     scene bronsoncrash
     show billy at left
     show arceus dirty flipped at mid_left
@@ -203,11 +203,11 @@ label bronson_win:
     menu:
         "Which road should we take?"
         "I-69" (type = "warning"):
-            jump interstate_69
+            jump michigan_interstate_69
         "I-94":
-            jump interstate_94
+            jump michigan_interstate_94
 
-label continue_michigan:
+label michigan_continue:
     arceus "Nah, this place looks too rural to have much around."
     n "The two look over to CS, who seems visibly distressed."
     arceus "Uh, CS? How's it going?"
@@ -228,11 +228,11 @@ label continue_michigan:
     menu:
         "Which road should we take?"
         "I-69" (type = "warning"):
-            jump interstate_69
+            jump michigan_interstate_69
         "I-94":
-            jump interstate_94
+            jump michigan_interstate_94
 
-label interstate_69_old:
+label michigan_interstate_69_old:
     window hide
     show screen warning("The following scene is a major tonal shift.\nIt may be disconcerting to some viewers.", "Warnings: creepy forests, haunting music, slow descents into madness.", "back_out_i69")
     pause
@@ -810,9 +810,9 @@ label interstate_69_old:
     arceus "Whatever, man..."
     aria "Bye-bye, y'all! Good luck on your adventure!"
     scene black with dissolve
-    jump ohio
+    jump true_ohio
 
-label interstate_69:
+label michigan_interstate_69:
     $ nome = True
     cs "We're on a detour anyway. May as well take the funny route."
     billy "Alright. 69 it is."
@@ -1378,9 +1378,9 @@ label interstate_69:
     arceus "Whatever, man..."
     aria "Bye-bye, y'all! Good luck on your adventure!"
     scene black with dissolve
-    jump ohio
+    jump true_ohio
 
-label interstate_94:
+label michigan_interstate_94:
     $ clown = True
     cs "What are you talking about? We're getting on 94."
     cs "We've all been through way too much for me to want to take any unnecessary detours."
@@ -1588,4 +1588,4 @@ label interstate_94:
     n "CS, Billy, and Arceus all walk out."
     mario "That was really nice. I guess you {i}can{/i} have shit in Detroit after all."
     scene black with dissolve
-    jump ohio
+    jump true_ohio

@@ -78,9 +78,9 @@ label south_start:
     n "After many hours of driving, day turns to night once again."
     stop music fadeout 3.0
     music end
-    jump utah
+    jump south_utah
 
-label utah:
+label south_utah:
     scene utah
     show cscar1
     show cscar2
@@ -322,9 +322,9 @@ label utah:
     cs "It was super cool before the Legos tried to kill us."
     arceus "I think that whole restaurant was trying to kill us, CS."
     n "Arceus drives the rest of the way until they reach Las Vegas."
-    jump vegas
+    jump south_vegas
 
-label vegas:
+label south_vegas:
     if returning_from_blooper:
         if fun_value(FUN_VALUE_COMMON):
             scene vegasjade
@@ -410,27 +410,27 @@ label vegas:
     arceus "I need to sit down."
     show arceus flipped with determination
     hide arceus with moveoutright
-    jump vegas_start_slots
+    jump south_vegas_start_slots
 
-label vegas_start_slots:
+label south_vegas_start_slots:
     scene slots with fade
     n "As Arceus wanders off to find a place to relax, CS tries his luck at the slots."
-    minigame "minigame_slots" "vegas_win_slots" "vegas_lose_slots"
+    minigame "minigame_slots" "south_vegas_win_slots" "south_vegas_lose_slots"
 
-label vegas_win_slots:
+label south_vegas_win_slots:
     cs "Woohoo! I'm on such a hot streak! Wait 'til Arc sees this."
     cs "Hmm... I haven't seen him for a bit. I should go find him."
-    jump vegas_done_slots
+    jump south_vegas_done_slots
 
-label vegas_lose_slots:
+label south_vegas_lose_slots:
     cs "C'mon, this is the one!"
     cs "Bars, {w=1.0}bars, {w=1.0}football player with a{w=0.5} hot...dog...?"
     cs "Damn it! So close!"
     cs "I haven't won anything, and I've already spent most of my money..."
     cs "I wonder what Arc is up to. I haven't seen him at all."
-    jump vegas_done_slots
+    jump south_vegas_done_slots
 
-label vegas_done_slots:
+label south_vegas_done_slots:
     n "CS gets up from the slot machine and begins looking for Arceus."
     scene casino1 with fade
     n "CS looks around for a while, but he can't find Arceus."
@@ -484,11 +484,11 @@ label vegas_done_slots:
     n "CS ponders for a moment, wondering if he should risk it all."
     menu:
         "Fold" (type = "bad"):
-            jump folded
+            jump south_folded
         "Stand" (type = "good"):
-            jump poker
+            jump south_poker
 
-label poker:
+label south_poker:
     cs "No. I'll stand."
     green "Bwahahaha! You think you can beat me?"
     scene luigi1
@@ -501,11 +501,11 @@ label poker:
     green "Ten million! You're bluffing! I can see through you!"
     menu:
         "Fold" (type = "bad"):
-            jump folded
+            jump south_folded
         "Stand" (type = "good"):
-            jump poker2
+            jump south_poker2
 
-label poker2:
+label south_poker2:
     cs "I'm still gonna stand."
     green "I'm gonna be rich! You better have that money on you, boy!"
     scene luigi1
@@ -518,11 +518,11 @@ label poker2:
     green "100 million! You better drop out {i}coughs{/i} rrright now!"
     menu:
         "Fold"  (type = "bad"):
-            jump folded
+            jump south_folded
         "Stand"  (type = "good"):
-            jump poker3
+            jump south_poker3
 
-label folded:
+label south_folded:
     scene luigi2
     show green flipped at left
     show cs disappointed flipped at right
@@ -634,7 +634,7 @@ label folded:
         "Take something else...?" (type = "dx"):
             jump train_start_bad
 
-label poker3:
+label south_poker3:
     cs "Still standing."
     green "What?! You son of a bitch, you are so scrrewed!"
     scene luigi2
@@ -842,7 +842,7 @@ label poker3:
         "Take something else...?" (type = "dx"):
             jump train_start_good
 
-label airport:
+label south_airport:
     cs "We should head back home now. I have a plan for our newfound riches."
     show arceus flipped happy
     arceus "Alright! I'm excited to see what you've got cooking up!"
@@ -960,9 +960,9 @@ label airport:
     with moveoutright
     stop music fadeout 3.0
     music end
-    jump back_home_alt
+    jump south_back_home_alt
 
-label airport_bad:
+label south_airport_bad:
     cs "We should head back home now. I have a plan for our newfound riches."
     show arceus happy
     arceus "Alright! I'm excited to see what you've got cooking up!"
@@ -1017,9 +1017,9 @@ label airport_bad:
     arceus "Aaannd...."
     stop music fadeout 3.0
     music end    
-    jump choose_direction
+    jump csbiii_choose_direction
 
-label back_home_alt:
+label south_back_home_alt:
     scene cs_house with fade
     play music "<loop 0>park_theme.ogg" volume 0.5
     music Park Theme - Lorin Nelson
@@ -1071,13 +1071,13 @@ label back_home_alt:
     cs "I don't understand..."
     menu:
         "Fight" (type = "bad"):
-            jump fighthohsis_alt
+            jump south_fighthohsis_alt
         "Donate" (type = "true"):
-            jump donatehohsis
+            jump south_donatehohsis
         "Brag" (type = "bad"):
-            jump braghohsis
+            jump south_braghohsis
 
-label donatehohsis:
+label south_donatehohsis:
     cs "I never intended to harm your company. I just thought that the video was a good source to YTP."
     cs "I'm sorry about all those prank callers. I even made a video telling people to stop prank calling you."
     cs "I never had bad intentions for you guys... Honestly, it was also kind of like a free promotion."
@@ -1118,15 +1118,15 @@ label donatehohsis:
     show cs at center with moveinleft
     cs "Ah, it's good to be home again!"
     if fanbase == "both":
-        jump true_ending_alt
+        jump south_true_ending_alt
     elif fanbase == "ltt":
-        jump ltt_ending_alt
+        jump south_ltt_ending_alt
     elif fanbase == "ytp":
-        jump ytp_ending_alt
+        jump south_ytp_ending_alt
     else:
-        jump true_ending_alt
+        jump south_true_ending_alt
 
-label true_ending_alt:
+label south_true_ending_alt:
     n "CS looks over at his desk, where a new computer is sitting."
     scene cs_room_2 with fade
     n "CS looks at the monitor, which has a sticky note that says \"From LTT\"."
@@ -1142,9 +1142,9 @@ label true_ending_alt:
     chat "Yeah what happened to you?{w=0.25} Oh my God, CS, you're here!{w=0.25} Hi!{w=0.25} Hi!{w=0.25} Where have you been?"
     show cs happy at mid_left
     cs "Well, guys..."
-    jump lego_ending
+    jump south_lego_ending
 
-label ytp_ending_alt:
+label south_ytp_ending_alt:
     n "CS looks over at his desk, where his old computer is sitting."
     scene cs_room_2 with fade
     show cs at mid_left
@@ -1156,9 +1156,9 @@ label ytp_ending_alt:
     chat "Yeah what happened to you?{w=0.25} Oh my God, CS, you're here!{w=0.25} Hi!{w=0.25} Hi!{w=0.25} Where have you been?"
     show cs at mid_left
     cs "Well, guys..."
-    jump lego_ending
+    jump south_lego_ending
 
-label ltt_ending_alt:
+label south_ltt_ending_alt:
     n "CS looks over at his desk, where a new computer is sitting."
     scene cs_room_2 with fade
     n "CS looks at the monitor, which has a sticky note that says \"From LTT\"."
@@ -1174,9 +1174,9 @@ label ltt_ending_alt:
     chat "Oh you're streaming?{w=0.25} I thought you were working for LTT now?{w=0.25} What happened to the YTPs?{w=0.25} Are you okay?{w=0.25} Where have you been?"
     show cs at mid_left
     cs "Well, guys..."
-    jump lego_ending
+    jump south_lego_ending
 
-label lego_ending:
+label south_lego_ending:
     scene cs_room_2
     show cs at mid_left
     stop music fadeout 1.0
@@ -1200,7 +1200,7 @@ label lego_ending:
     $ renpy.end_replay()
     return
 
-label fighthohsis_alt:
+label south_fighthohsis_alt:
     n "CS challenges HoH SiS to a fight."
     show cs angry
     cs "I beat up all your workers and Wesley, I can take you guys down too!"
@@ -1240,9 +1240,9 @@ label fighthohsis_alt:
     ed "Time to take a shit on the house."
     stop music fadeout 1.0
     music end
-    bad_end "Revenge!" "back_home_alt"
+    bad_end "Revenge!" "south_back_home_alt"
 
-label braghohsis:
+label south_braghohsis:
     stop music
     scene cs_house
     show ed at right
@@ -1271,12 +1271,12 @@ label braghohsis:
     show cs disappointed
     pause 1.0
     cs "Fuck."
-    bad_end "Time to bunk\nat Rosen's!" "back_home_alt"
+    bad_end "Time to bunk\nat Rosen's!" "south_back_home_alt"
     stop music fadeout 1.0
     music end
     return
 
-label noairport:
+label south_noairport:
     cs "Nah, I don't wanna go to the airport."
     cs "We should take the car and drive."
     arceus "Okay, well, let's get going!"
@@ -1425,9 +1425,9 @@ label noairport:
     show cs happy at left with move
     cs "Woohoo! I love this!"
     cs "And then comes in Gandalf the Grey and Gandalf the Wh--{nw}"
-    jump reality_break
+    jump south_reality_break
 
-label reality_break:
+label south_reality_break:
     stop music
     music end  
     direct "Cut!"
@@ -1467,4 +1467,4 @@ label reality_break:
     direct "Aaaaaand...{w=1.0}{nw}"
     $ returning_from_blooper = True
     $ renpy.end_replay()
-    jump vegas
+    jump south_vegas

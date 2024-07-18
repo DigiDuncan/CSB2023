@@ -21,8 +21,8 @@ label rpg_fanboy_fight_amd:
             fanboyb
             fanboyb
         scale 1.0
-        on_win "after_fanboy"
-        on_lose "knocked_out"
+        on_win "friend_after_fanboy"
+        on_lose "country_knocked_out"
 
 label rpg_fanboy_fight_nvidia:
     rpg:
@@ -33,8 +33,8 @@ label rpg_fanboy_fight_nvidia:
             fanboya
             fanboya
         scale 1.0
-        on_win "after_fanboy"
-        on_lose "knocked_out"
+        on_win "friend_after_fanboy"
+        on_lose "country_knocked_out"
         music "audio/nordic_report_2.ogg"
 
 label rpg_cop_fight_1:
@@ -50,7 +50,7 @@ label rpg_cop_fight_1:
             copguygodmode
         scale 1.0
         on_win "secret_dx"
-        on_lose "so_join"
+        on_lose "friend_so_join"
 
 label rpg_cop_fight_2:
     rpg:
@@ -62,7 +62,7 @@ label rpg_cop_fight_2:
             tate
             copguy
         scale 1.0
-        on_win "after_cop_fight"
+        on_win "friend_after_cop_fight"
         on_lose "rpg_cop_fight_2"
 
 label rpg_cop_fight_3:
@@ -74,7 +74,7 @@ label rpg_cop_fight_3:
             cop
             cop
         scale 1.0
-        on_win "cs_meetup"
+        on_win "friend2_cs_meetup"
         on_lose "rpg_cop_fight_3"
 
 label rpg_cop_fight_4:
@@ -87,7 +87,7 @@ label rpg_cop_fight_4:
             cop
             cop
         scale 1.0
-        on_win "cs_meetup_2"
+        on_win "friend2_cs_meetup_2"
         on_lose "rpg_cop_fight_4"
 
 label rpg_ng_fight:
@@ -116,7 +116,7 @@ label rpg_ng_fight:
             sml_tank
             guard
         scale 1.7
-        on_win "cs_rage"
+        on_win "friend2_cs_rage"
         on_lose "rpg_ng_fight"
 
 label rpg_final_fight_1:
@@ -145,7 +145,7 @@ label rpg_final_fight_1:
             marine
             marine
         scale 1.75
-        on_win "between_1"
+        on_win "friend2_between_1"
         on_lose "rpg_final_fight_1"
 
 label rpg_final_fight_2:
@@ -173,7 +173,7 @@ label rpg_final_fight_2:
             marine
             big_tank
         scale 2.0
-        on_win "between_2"
+        on_win "friend2_between_2"
         on_lose "rpg_final_fight_1"
 
 label rpg_final_fight_3:
@@ -197,7 +197,7 @@ label rpg_final_fight_3:
             $party_4
             copguy_ex
         scale 2.0
-        on_win "weapon_of_choice"
+        on_win "friend2_weapon_of_choice"
         on_lose "rpg_final_fight_1"
 
 label rpg_error:
@@ -224,7 +224,7 @@ label rpg_archival:
         on_lose "rpg_archival"
         music "audio/broken_sky.ogg"
 
-label bronsonbattle:
+label rpg_bronsonbattle:
     rpg:
         bg "images/bg/bronsoncrash.png"
         fighters:
@@ -233,7 +233,7 @@ label bronsonbattle:
             billy
             copguy_exe
         scale 1.0
-        on_win "bronson_win"
+        on_win "michigan_bronson_win"
         on_lose "bronsonbattle"
         music "audio/error.ogg"
         

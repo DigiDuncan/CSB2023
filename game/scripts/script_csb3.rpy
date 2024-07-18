@@ -72,7 +72,7 @@ label csbiii_start:
     menu: 
         "What are you going to do?"
         "Go to the store.":
-            jump microcenter
+            jump friend_microcenter
         "Help edit a video." (type = "true"):
             jump csbiii_edit_video
 
@@ -1308,7 +1308,7 @@ label csbiii_choose_direction:
         "North":
             jump csbiii_north
         "East" (type = "true"):
-            jump true_start
+            jump true_east
         "South":
             jump south_start
         "West":

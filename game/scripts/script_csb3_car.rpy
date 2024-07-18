@@ -5,7 +5,7 @@ screen skip_car():
 
     frame at t_skip_car:
         imagebutton idle "images/skip_now.png" hover_sound "sfx_select.ogg":
-            action Play("sound", "sfx_valid.ogg"), Hide("skip_car", Fade(1.0)), Jump("back_home")
+            action Play("sound", "sfx_valid.ogg"), Hide("skip_car", Fade(1.0)), Jump("true_back_home")
 
 transform t_skip_car:
     xanchor 1.0 xpos 0.95
@@ -553,4 +553,4 @@ label car_dialogue:
 
     hide screen skip_car
 
-    jump back_home
+    jump true_back_home

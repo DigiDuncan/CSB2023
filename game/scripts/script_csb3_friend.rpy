@@ -1,4 +1,4 @@
-label microcenter:
+label friend_microcenter:
     cs "Sure, what parts do you need?"
     linus "We need eggs, milk..."
     linus "Just kidding."
@@ -90,14 +90,14 @@ label microcenter:
         "Which card do you want to choose?"
         "RTX 4080":
             $ fanboy_type = "amd"
-            jump high_gpu
+            jump friend_high_gpu
         "Radeon RX 7900":
             $ fanboy_type = "nvidia"
-            jump high_gpu
+            jump friend_high_gpu
         "GTX 760"  (type = "bad"):
-            jump low_gpu
+            jump friend_low_gpu
 
-label high_gpu:
+label friend_high_gpu:
     if fanboy_type == "nvidia":
         cs "Alright, I'm just gonna get the Radeon RX 7900."
         cs "Linus likes to use AMD for streaming and gaming, so I hope this will work."
@@ -276,11 +276,11 @@ label high_gpu:
     menu:
         "What do you want to do?"
         "Go out and fight!":
-            jump attack_fanboy
+            jump friend_attack_fanboy
         "Stay inside and wait.":
-            jump stay_inside
+            jump friend_stay_inside
 
-label stay_inside:
+label friend_stay_inside:
     show cs disappointed flipped at right
     cs "Let's just... stay here."
     cs "They've got to go away at some point, right?"
@@ -291,9 +291,9 @@ label stay_inside:
     show sansbrick at offscreenright with moveinleft
     scene black
     stop sound
-    jump knocked_out
+    jump country_knocked_out
 
-label attack_fanboy:
+label friend_attack_fanboy:
     show cs angry flipped
     cs "Actually, you know what? Leave this to me!"
     hide cs with moveoutleft
@@ -316,7 +316,7 @@ label attack_fanboy:
     music Nordic Report 1 - Lizardking
     jump rpg_fanboy_fight_amd
 
-label after_fanboy:
+label friend_after_fanboy:
     scene outside_ltt
     show cs angry flipped at center
     with fade
@@ -467,9 +467,9 @@ label after_fanboy:
     hide cs with moveoutright
     scene black with fade
     n "CS, Linus, and Pakoo head down an elevator into the training facility."
-    jump training
+    jump friend_training
 
-label training:
+label friend_training:
     scene testing_main with fade
     show linus at right
     show cs at center
@@ -524,12 +524,12 @@ label training:
 
     menu:
         "Do a cool-ass jump":
-            jump cool_jump
+            jump friend_cool_jump
         "Do a regular jump":
-            jump reg_jump
+            jump friend_reg_jump
 
 
-label cool_jump:
+label friend_cool_jump:
     show cs
     cs "I've got this, guys! You watching?"
     pakoo "Yep!"
@@ -544,9 +544,9 @@ label cool_jump:
     linus "I never doubted you, CS!"
     cs "Hey, maybe this training isn't too bad!"
     hide cs with moveoutright
-    jump fire_range
+    jump friend_fire_range
 
-label reg_jump:
+label friend_reg_jump:
     show cs
     cs "Alright, here goes nothing!"
     show cs at top with move
@@ -554,9 +554,9 @@ label reg_jump:
     cs "Woohoo! I did it!"
     pakoo "Nice! Let's keep moving!"
     hide cs with moveoutright
-    jump fire_range
+    jump friend_fire_range
 
-label fire_range:
+label friend_fire_range:
     scene course_3 with fade
     show cs at left with moveinleft
     pakoo "Alright, you picked up the LMG before you came into this room, right?"
@@ -822,9 +822,9 @@ label fire_range:
     hide cs
     hide arceus
     with moveoutright
-    jump car_picker
+    jump friend_car_picker
 
-label car_picker:
+label friend_car_picker:
     stop sound
     scene dealer_cars with fade
     show carguy flipped at right
@@ -847,13 +847,13 @@ label car_picker:
     menu:
         "Pick a car!"
         "JoJ Charger":
-            jump cool_car
+            jump friend_cool_car
         "Honda Civic":
-            jump reg_car
+            jump friend_reg_car
         "Flintstones Car"  (type = "bad"):
-            jump flint_car
+            jump friend_flint_car
 
-label cool_car:
+label friend_cool_car:
     $ nice_car = True
     cs "That's a nice car!"
     pakoo "That is a sick-ass car."
@@ -907,7 +907,7 @@ label cool_car:
     music Compulsion To Obey - Lizardking
     jump rpg_cop_fight_1
 
-label reg_car:
+label friend_reg_car:
     cs "Hey! I have a Honda Civic! Let's just take that!"
     arceus "Works for me."
     pakoo "Let's go!"
@@ -958,7 +958,7 @@ label reg_car:
     music Compulsion To Obey - Lizardking
     jump rpg_cop_fight_1
 
-label so_join:
+label friend_so_join:
     scene dealership
     show copguy flipped at left
     show cs disappointed flipped at center
@@ -992,7 +992,7 @@ label so_join:
     music For The People!- Lizardking
     jump rpg_cop_fight_2
 
-label after_cop_fight:
+label friend_after_cop_fight:
     scene dealership
     show tate at mid_mid_left
     show mika at mid_left
@@ -1087,10 +1087,10 @@ label after_cop_fight:
     music end
     stop music fadeout 3.0
     pause 3.0
-    jump dpn_call
+    jump friend2_dpn_call
 
 
-label flint_car:
+label friend_flint_car:
     stop music fadeout 3.0
     music end
     scene dealer_cars
@@ -1140,7 +1140,7 @@ label flint_car:
     bad_end "Fleenstones?" "car_picker"  
     
 
-label low_gpu:
+label friend_low_gpu:
     cs "I should probably try to save Linus some money. Most of the expensive parts he gets are from sponsors. He's not actually {i}that{/i} rich."
     n "CS flags down an employee."
     show cashier at mid_right with moveinright
@@ -1218,4 +1218,4 @@ label low_gpu:
     hide cs with moveoutright
     n "CS stomps out of the building."
     scene black with fade
-    jump new_plan
+    jump fired_new_plan
