@@ -68,7 +68,7 @@ label csbi_craptop:
     craptop "Update complete."
     cs "{bt=a3-p10-s4}OoOoOoOoOh{/bt} yes!"
     show craptop discord
-    play sound windows_logon
+    play sound sfx_windows_logon
     cs "Hey guys!"
     play sound ping_spam
     discord "Hi! Hi! Hi! Hi!"
