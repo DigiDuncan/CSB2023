@@ -1401,6 +1401,7 @@ define insane_personalities = "insane_personalities.ogg"
 define danger_mystery = "danger_mystery.ogg"
 define pressing_pursuit_cornered = "pressing_pursuit_cornered.ogg"
 define bun_guster = "bun_guster.ogg"
+define happy_roaming = "happy_roaming.ogg"
 
 #CSBIII AI Music
 define audio.school = "school.ogg"
