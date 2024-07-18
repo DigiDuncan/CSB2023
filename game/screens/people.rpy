@@ -100,7 +100,7 @@ init python:
         "amtrak_stewardess": "{image=gui/dx_text.png} Stewardess",
         "lupin": "{image=gui/dx_text.png} Lupin III",
         "zenigata": "{image=gui/dx_text.png} Zenigata",
-        "tate_ex": "{image=gui/dx_text.png} Tate EX"
+        "tate_ex": "{image=gui/dx_text.png} Tate EX",
         #BTTFCS
         "cruise": "{image=gui/dx_text.png} Tom Cruise"
     }
