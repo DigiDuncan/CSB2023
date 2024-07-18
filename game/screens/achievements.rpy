@@ -75,9 +75,7 @@ screen achievements_welcome():
         draggable True
         pagekeys True
         vbox:
-        
             text "[percent_unlocked_display]% Unlocked"
-            
             spacing 25
             if achievement_manager.unlocked:
                 text "Unlocked Achievements ([unlocked_count]/[total_count])"
