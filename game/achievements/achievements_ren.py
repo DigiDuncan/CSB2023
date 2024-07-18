@@ -15,8 +15,9 @@ class Achievement:
     locked_desc: str
     unlocked_desc: str
     icon_image: str
+    category: str
     hidden: bool = False
-
+   
     @property
     def unlocked(self) -> bool:
         return self.name in persistent.unlocked_achievements
@@ -30,7 +31,7 @@ class Achievement:
         d = renpy.displayable(f"achievements/{self.icon_image}.png")
         if self.unlocked:
             return d
-
+            
         return Transform(d, matrixcolor=SaturationMatrix(0.0))  # type: ignore
 
     def __hash__(self) -> int:

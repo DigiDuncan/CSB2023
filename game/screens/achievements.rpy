@@ -11,15 +11,58 @@ screen achievements_nav():
 ##-------------CODEX WELCOME---------------------
 ##-----------------------------------------------
 screen achievements_welcome():
-    ##This is the "People" category's welcome page. This is the first screen players see after they select a category.
+    ##This is the Achievements page.
 
     tag menu
     use achievements_nav
     python:
-        achievement_count = len(achievements)
-        unlocked_count = len(persistent.unlocked_achievements)
-        locked_count = achievement_count - unlocked_count
-        hidden_count = len([a for a in achievements if not a.name in persistent.unlocked_achievements and a.hidden])
+        
+        # --- IMPORTANT NOTICE ---
+        # DO NOT EVER USE len([a for a in achievements ...])
+        # DO NOT DO IT
+        # IT COUNTS WORSE THAN I DO
+        # FOR EXAMPLE, IT THINKS NEWLINES ARE LIST ITEMS
+        # TRUST ME ON THIS - Tate
+    
+        story_count = 0
+        extra_count = 0
+        story_unlocked_count = 0
+        extra_unlocked_count = 0
+        locked_count = 0
+        unlocked_count = 0
+        hidden_count = 0
+        total_count = 0
+        
+        for a in achievements:
+            # total items
+            total_count += 1
+            
+            # count categories, then unlocked in each category
+            if a.category == "story":
+                story_count += 1
+                if a.name in persistent.unlocked_achievements:
+                    story_unlocked_count =+ 1   
+            
+            if a.category == "extra":
+                extra_count += 1
+                if a.name in persistent.unlocked_achievements:
+                    extra_unlocked_count =+ 1
+                 
+            # count hidden
+            if a.name not in persistent.unlocked_achievements and a.hidden == True:
+                hidden_count += 1
+            # count unlocked total
+            if a.name in persistent.unlocked_achievements:
+                unlocked_count += 1
+            
+        # fix remaining locked
+        locked_remaining_count = total_count - unlocked_count    
+            
+        # funny 188% achievements
+        # make it 100% on the backend for math reasons then convert it
+        percent_unlocked_backend = (unlocked_count / total_count) * 100
+        percent_unlocked_display = int(percent_unlocked_backend * 1.88)
+       
     viewport:
         xsize 1300
         ysize 800
@@ -32,9 +75,12 @@ screen achievements_welcome():
         draggable True
         pagekeys True
         vbox:
+        
+            text "[percent_unlocked_display]% Unlocked"
+            
             spacing 25
             if achievement_manager.unlocked:
-                text "Unlocked Achievements ([unlocked_count]/[achievement_count])"
+                text "Unlocked Achievements ([unlocked_count]/[total_count])"
                 for a in achievements:
                     if a.name in persistent.unlocked_achievements:
                         hbox:
@@ -48,7 +94,7 @@ screen achievements_welcome():
             if achievement_manager.unlocked and achievement_manager.locked:
                 null height 100
             if achievement_manager.locked:
-                text "Locked Achievements ([locked_count]/[achievement_count], [hidden_count] hidden)"
+                text "Locked Achievements ([locked_count]/[locked_remaining_count], [hidden_count] hidden)"
                 for a in achievements:
                     if not a.name in persistent.unlocked_achievements and not a.hidden:
                         hbox:
@@ -59,4 +105,3 @@ screen achievements_welcome():
                                 text a.name
                                 text a.desc:
                                     color("#BBBBBB")
-            

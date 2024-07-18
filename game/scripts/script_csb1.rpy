@@ -279,6 +279,7 @@ label room:
     n "CS dials 1-800-HoH-SiiS."
     cs "Hello? Can you give me the JoJ?"
     hoh_operator "Is this a prank caller on the line?"
+    show cs phone worried
     cs "No! My house really needs foundation repair! I need your help ASAP!!"
     hoh_operator "Alright. That will be 200,000 bits. You can pay us afterwards."
     n "The operator hangs up."
@@ -384,13 +385,18 @@ label michael_house:
     michael "Hello!"
     cs "Hey, Michael! How're you doin' today?"
     michael "I'm feeling rather noice today."
+    show cs happy phone
     cs "That's good to hear! You mind if I head over to your place?"
+    show cs phone
     cs "The JoJ is being done on my house, so I figured we can chat for a bit."
     michael "Sure! I have a another guest visiting as well, bringing chocolate cake."
+    show cs happy phone
     cs "Mmm! That sounds delicious!"
+    show cs phone
     n "CS looks in the back seat of his car."
     cs "I have some Genergy with me, if you guys want some."
     michael "Sounds wonderful. I've never tried it, but I'm sure it's good."
+    show cs happy phone
     cs "Alright, well, I'll be there soon!"
     show cs at left
     n "CS puts his phone away and drives over to Michael's house."
