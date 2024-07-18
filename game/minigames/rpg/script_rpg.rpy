@@ -223,10 +223,6 @@ label rpg_archival:
         on_win "archival_finale"
         on_lose "rpg_archival"
         music "audio/broken_sky.ogg"
-        
-label rpg_vs_tate:
-    rpg:
-        bg "images/bg/train/amtrak_observation.png"
 
 label bronsonbattle:
     rpg:
@@ -240,6 +236,10 @@ label bronsonbattle:
         on_win "bronson_win"
         on_lose "bronsonbattle"
         music "audio/error.ogg"
+        
+label rpg_vs_tate:
+    rpg:
+        bg "images/bg/train/amtrak_observation.png"
 
         python:
             if ch2_cs_attack_used = "karate-chopped":

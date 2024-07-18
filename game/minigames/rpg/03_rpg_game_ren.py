@@ -392,7 +392,7 @@ class Attack:
             return "damage"
 
 class ComboAttack:
-    def __init__(self, name: str, descripton: str, attacks: list[Attack], cooldown: int = 0, used = False, ex = True):
+    def __init__(self, name: str, descripton: str, attacks: list[Attack], accuracy: int = 80, cooldown: int = 0, used = False, ex = True):
         self.name = name
         self.description = descripton
         self.attacks = attacks
