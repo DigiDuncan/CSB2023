@@ -56,7 +56,7 @@ label country_knocked_out:
     stop music fadeout 1.0
     music end
     scene black
-    play sound "<loop 0>sfx_heartbeat.ogg" volume 1
+    play sound sfx_heartbeat volume 1
     n "..."
     n "As CS' vision fades back into view, he can hear a faint heart monitor beeping."
     scene hospital_room with dissolve
@@ -112,7 +112,7 @@ label country_knocked_out:
 
 label country_airport_choose:
     scene airport_interior with fade
-    play music "<loop 0>airport.ogg" volume 0.4
+    play music airport volume 0.4
     music Airport Infiltration - Andy Blythe & Marten Joustra
     show cs at left with moveinleft
     cs "Alright, whew! I made it."
@@ -141,7 +141,7 @@ label country_airport_choose:
             jump kuwait_travel
 
 label england_travel:
-    play music "<loop 0>airport.ogg" volume 0.4 if_changed
+    play music airport volume 0.4 if_changed
     music Airport Infiltration - Andy Blythe & Marten Joustra
     scene ticket_counter
     show benrey at center
@@ -329,7 +329,7 @@ label england_first:
     cs "Damn, sorry."
     cs "Man, this kinda sucks!"
     show arceus at mid_right with moveinright
-    play music "<loop 0>stal.ogg" volume 0.4
+    play music stal volume 0.4
     arceus "Hey, CS? Is that you?"
     show cs
     cs "Oh, my God! Why-- How are you here?"
@@ -395,7 +395,7 @@ label england_second:
     scene embassy with fade
     show cs at center with moveinleft
     show arceus at mid_right with moveinright
-    play music "<loop 0>stal.ogg" volume 0.4
+    play music stal volume 0.4
     arceus "Hey CS? Is that you?"
     show cs
     cs "Oh, my God! Why-- How are you here?"
@@ -440,7 +440,7 @@ label england_arceus_place:
     scene kitty_room with fade
     show arceus flipped at center with moveinleft
     show cs at left with moveinleft
-    play music "<loop 0>wool_gloves.ogg" volume 0.4
+    play music wool_gloves volume 0.4
     music Wool Gloves - imagiro
     cs "You guys have quite a quaint little place!"
     show arceus
@@ -494,7 +494,7 @@ label england_arceus_place:
     jump england_menu
 
 label england_hell_zone:
-    play music "<loop 0>wool_gloves.ogg" volume 0.4 if_changed
+    play music wool_gloves volume 0.4 if_changed
     music Wool Gloves - imagiro
     scene dining_room
     show kitty flipped at right
@@ -576,7 +576,7 @@ label england_hell_zone:
     show arceus at right
     show cs at left
     with fade
-    play music "<loop 0>conflict.ogg" volume 0.4
+    play music conflict volume 0.4
     music Conflict - David Vanacore
     cs "Well, this definitely looks like Hell."
     show arceus worried
@@ -615,7 +615,7 @@ label england_hell_zone:
     gordon "Oh, for fuck's sake! What the bloody hell is this?"
     show cs disappointed flipped
     n "Before CS can speak, Gordon takes one good look at CS' clothing."
-    play sound "sfx_waterphone.ogg"
+    play sound sfx_waterphone
     gordon "Did you wear this silly outfit as well just to fuck with me? Are you serious?"
     cs "What? This is just my normal attire."
     scene talking_head
@@ -672,7 +672,7 @@ label england_bad_ramsay:
     show cs flipped at right
     show gordon at left
     with fade
-    play music "<loop 0>tumultuous.ogg" volume 0.4
+    play music tumultuous volume 0.4
     music Tumultuous - David Vanacore
     gordon "Alright, Mr. 188, let's see what you've made!"
     cs "This is my special chocolate cake recipe! With a secret ingredient."
@@ -685,7 +685,7 @@ label england_bad_ramsay:
     show cs disappointed flipped
     cs "Woah, you okay there?"
     n "Gordon holds his throat and falls over, spits out the Flex Seal, and passes out."
-    play sound "sfx_waterphone.ogg"
+    play sound sfx_waterphone
     hide gordon with moveoutbottom
     show cs disappointed flipped with hpunch
     cs "Ooooooooohhhhh fuuuuuuucckkk."
@@ -705,7 +705,7 @@ label england_good_ramsay:
     scene hell_kitchen
     show cs flipped
     with fade
-    play music "<loop 0>tumultuous.ogg" volume 0.4
+    play music tumultuous volume 0.4
     music Tumultuous - David Vanacore
     show gordon at left with moveinleft
     gordon "Alright, Mr. 188! Chop, chop!"
@@ -724,7 +724,7 @@ label england_good_ramsay:
     show cs flipped
     gordon "Well, that's a new one."
     gordon "I don't think I've ever seen someone make an energy drink on a cooking show..."
-    play sound "sfx_waterphone.ogg"
+    play sound waterphone
     gordon "What do you mean that the juices are gonna move through you? Like, is this gonna make me have to go to the bathroom?"
     show cs disappointed flipped
     cs "No, I meant, like, energize you."
@@ -798,7 +798,7 @@ label england_good_ramsay:
     show arceus at center
     show kitty flipped at right
     with fade
-    play music "<loop 0>wool_gloves.ogg" volume 0.4
+    play music wool_gloves.ogg volume 0.4
     kitty "CS did {i}what?"
     arceus "Yeah, I know, right? I don't understand either."
     kitty "What is in this Genergy drink of yours?"
@@ -811,7 +811,7 @@ label england_good_ramsay:
     jump england_menu
     
 label england_top_zone:
-    play music "<loop 0>wool_gloves.ogg" volume 0.4 if_changed
+    play music wool_gloves.ogg volume 0.4 if_changed
     music Wool Gloves - imagiro
     scene dining_room
     show kitty flipped at right
@@ -849,7 +849,7 @@ label england_top_zone:
     show arceus at right
     show kitty at left
     with fade
-    play music "<loop 0>lisbon_fever.ogg" volume 0.4
+    play music lisbon_fever volume 0.4
     music Lisbon Fever - Dr. Awesome
     n "As they drive up to the track, the gang sees Jeremy, Richard, and James."
     kitty "Alright, we'll watch from the side of the track."
@@ -959,7 +959,7 @@ label england_top_win:
     show arceus at right
     show kitty at left
     with fade    
-    play music "<loop 0>wool_gloves.ogg" volume 0.4
+    play music wool_gloves volume 0.4
     kitty "Woo! You won the race!"
     show arceus happy
     arceus "That was insane, man!"
@@ -992,7 +992,7 @@ label england_top_win:
     jump england_menu
 
 label england_scott_zone:
-    play music "<loop 0>wool_gloves.ogg" volume 0.4 if_changed
+    play music wool_gloves volume 0.4 if_changed
     music Wool Gloves - imagiro
     scene dining_room
     show kitty flipped at right
@@ -1113,7 +1113,7 @@ label england_scott_move:
     show arceus at center
     show kitty flipped at right
     with fade
-    play music "<loop 0>wool_gloves.ogg" volume 0.4
+    play music wool_gloves volume 0.4
     kitty "You saved a man's life?"
     cs "Yeah, and I get to be in his video!"
     kitty "Well, looks like you got two for one, then!"
@@ -1122,7 +1122,7 @@ label england_scott_move:
     jump england_menu
 
 label england_done:
-    play music "<loop 0>wool_gloves.ogg" volume 0.4 if_changed
+    play music wool_gloves volume 0.4 if_changed
     music Wool Gloves - imagiro
     scene dining_room
     show kitty flipped at right
@@ -1157,7 +1157,7 @@ label england_scott_movent:
     show car at car_run behind tom
     with move
     tom "This road here was created in 1968, by OHP--{w=0.5}{nw}"
-    play sound "sfx_car_crash.ogg" volume 0.7
+    play sound sfx_car_crash volume 0.7
     scene black
     n "A speeding car rams into Tom and he flies off into the distance."
     cs "Uh oh. {w=3.5} I didn't see nothin'."
@@ -1165,7 +1165,7 @@ label england_scott_movent:
     return
 
 label england_japan:
-    play music "<loop 0>wool_gloves.ogg" volume 0.4 if_changed
+    play music wool_gloves volume 0.4 if_changed
     music Wool Gloves - imagiro
     scene dining_room
     show kitty flipped at right
@@ -1211,7 +1211,7 @@ label england_japan:
     jump japan_two
 
 label england_sweden:
-    play music "<loop 0>wool_gloves.ogg" volume 0.4 if_changed
+    play music wool_gloves volume 0.4 if_changed
     music Wool Gloves - imagiro
     scene dining_room
     show kitty flipped at right
@@ -1268,9 +1268,9 @@ label japan:
     scene tokyo_airport with fade
     show cs at center with moveinleft
     if fun_value(FUN_VALUE_COMMON):
-        play music "<loop 0>yuuka_town.ogg" volume 0.4
+        play music yuuka_town volume 0.4
     else:        
-        play music "<loop 0>automatic_love.ogg" volume 0.4
+        play music automatic_love volume 0.4
         music Automatic Love - Siix0
     cs "Wow, this place is already pretty crazy!"
     cs "I feel like this was a better place to pick than England or Sweden."
@@ -1299,9 +1299,9 @@ label japan_two:
     scene tokyo_airport with fade
     show cs at center with moveinleft
     if fun_value(FUN_VALUE_COMMON):
-        play music "<loop 0>yuuka_town.ogg" volume 0.4
+        play music yuuka_town volume 0.4
     else:  
-        play music "<loop 0>automatic_love.ogg" volume 0.4
+        play music automatic_love volume 0.4
         music Automatic Love - Siix0
     cs "Wow, this place is already pretty crazy!"
     cs "Well, I don't know anyone who speaks English over here.."
@@ -1363,7 +1363,7 @@ label japan_anime_adventure:
     cashier "Yeah, I remember! That's from Nekopara, right?"
     cashier "Wait here, I know the head of NekoWorks. Lemme take a picture and send it to them."
     hide cs with moveoutright
-    play music "<loop 0>chase.ogg" volume 0.4
+    play music chase volume 0.4
     music The Chase - Toby Fox
     n "CS rushes out the door."
     cashier "Wait! Come back!"
@@ -1400,7 +1400,7 @@ label japan_anime_adventure:
     cashier "Hey, look at that! It's Sayori, the creator of Nekopara!"
     show cs scared
     cs "{i}What?!"
-    play music "<loop 0>neko_to_sanpo.ogg" volume 0.4
+    play music neko_to_sanpo volume 0.4
     music Neko To Sanpo - NEKO WORKs
     sayori "Hello, and who might you be?"
     show cs disappointed
@@ -1446,9 +1446,9 @@ label japan_anime_adventure:
     show cs at center
     with fade
     if fun_value(FUN_VALUE_COMMON):
-        play music "<loop 0>yuuka_town.ogg" volume 0.4
+        play music yuuka_town volume 0.4
     else:  
-        play music "<loop 0>automatic_love.ogg" volume 0.4
+        play music automatic_love volume 0.4
     if england_check:
         cs "I could plan a super fancy trip after this is over!"
     else:
@@ -1500,9 +1500,9 @@ label japan_karaoke:
     with fade
     $ achievement_manager.unlock("Dame Da Ne")
     if fun_value(FUN_VALUE_COMMON):
-        play music "<loop 0>yuuka_town.ogg" volume 0.4
+        play music yuuka_town volume 0.4
     else:  
-        play music "<loop 0>automatic_love.ogg" volume 0.4
+        play music automatic_love volume 0.4
     cs "Well, is there anything else I should do here?"
     jump japan_menu
 
@@ -1521,7 +1521,7 @@ label japan_miku_pizza:
     show cashier at right
     with fade
     show cs at left with moveinleft
-    play music "<loop 0>funiculi_holiday.ogg" volume 0.3
+    play music funiculi_holiday volume 0.3
     music Funiculi Holiday - ClascyJitto
     cashier "Welcome to Domino's! Can I take your order?"
     cs "I want to meet Miku!"
@@ -1566,7 +1566,7 @@ label japan_miku_pizza:
     show cs at center
     with fade
     pause 3.0
-    play sound "sfx_elevator_ding.ogg"
+    play sound sfx_elevator_ding
     scene black with dissolve
     pause 1.0
     scene ceo_office
@@ -1587,7 +1587,7 @@ label japan_miku_pizza:
     scott_pres "Listen, son, I hate to break it to you, but I don't think Miku is real."
     cs "What do you mean she's not real? She was dancing with you in the commerical!"
     scott_pres "I know, but that was movie magic. I'm sorry--{w=0.5}{nw}"
-    play music "real_world.ogg"
+    play music real_world
     music Real World - Project SEKAI
     show cs
     show miku at center with moveinbottom
@@ -1620,9 +1620,9 @@ label japan_miku_pizza:
     show miku at right
     with fade
     if fun_value(FUN_VALUE_COMMON):
-        play music "<loop 0>yuuka_town.ogg" volume 0.4
+        play music yuuka_town volume 0.4
     else:  
-        play music "<loop 0>automatic_love.ogg" volume 0.4
+        play music automatic_love volume 0.4
     miku "... so I said, \"You think {i}that{/i} was fast? Wait until I sing {i}INTENSE VOICE!\""
     n "CS laughs."
     cs "Well, Miku, this was very nice, but I need to head on my way."
@@ -1711,7 +1711,7 @@ label country_going_home:
     n "CS takes another nap to pass the time."
     scene cs_house with fade
     show cs happy at mid_left with moveinleft
-    play music "<loop 0>park_theme.ogg" volume 0.5
+    play music park_theme volume 0.5
     music Park Theme - Lorin Nelson
     cs "Ah, finally back home!"
     cs "I can't wait to get some sleep in my own bed again."
@@ -1760,7 +1760,7 @@ label sweden:
     scene stockholm 
     with fade
     show cs at center with moveinleft
-    play music "<loop 0>creative_exercise.ogg" loop volume 0.3
+    play music creative_exercise loop volume 0.3
     cs "Wow! There's so many people around."
     cs "I guess I should try to find something to do..."
     cs "I don't have much money left, but I should be able to find a bus to somewhere cool."
@@ -1797,7 +1797,7 @@ label sweden_second:
     scene stockholm 
     with fade
     show cs at center with moveinleft
-    play music "<loop 0>creative_exercise.ogg" loop volume 0.3
+    play music creative_exercise loop volume 0.3
     cs "Wow! There's so many people around."
     cs "I guess I should try to find something to do..."
     cs "I should be able to find a bus to somewhere cool. I have some money this time!"
@@ -1848,7 +1848,7 @@ label sweden_aurora_borealis:
     n "Outside of the woods is a valley of rolling hills, entirely clear except for a strange cylindrical house."
     cs "That's one interesting building. I wonder who lives there."
     show moomin flipped at left with moveinleft
-    play music "<loop 0>muumin_tani_fuyu.ogg" volume 0.5
+    play music muumin_tani_fuyu volume 0.5
     music Muumin Tani Fuyu - Sumio Shiratori
     moomin "I do!"
     show cs worried with hpunch
@@ -1905,7 +1905,7 @@ label sweden_aurora_borealis:
         moomin "Mama and Papa have more family, but they don't live around here."
     moomin "Anyway, Snufkin should be right over here."
     show snufkin at right with moveinright
-    play music "<loop 0>snufin.ogg" volume 0.5
+    play music snufin volume 0.5
     music Snufkin The Traveler - Sumio Shiratori
     show moomin flipped
     moomin "Hello, Snufkin!"
@@ -1950,7 +1950,7 @@ label sweden_aurora_borealis:
     snufkin "That's great. This stranger needs her help to see the Aurora Borealis."
     alicia "Well, I don't know if she'll help, but I'll go get her."
     show witch at mid_right with dissolve
-    play music "<loop 0>lady_of_the_cold.ogg" volume 0.5
+    play music lady_of_the_cold volume 0.5
     music Lady Of The Cold - Sumio Shiratori
     witch "What's all the hubbub about?"
     cs "Hello, Madam Witch. I'd like your help seeing the Aurora Borealis."
@@ -2030,7 +2030,7 @@ label sweden_ikea:
     scene ikea_inside
     show ikea_greeter at mid_right
     with dissolve
-    play music "<loop 0>afternoon_hills.ogg" volume 0.5
+    play music afternoon_hills volume 0.5
     music Afternoon Hills - BEST MUSIC
     show cs at mid_left with moveinleft
     ikea_greeter "Welcome to Ikea! Can I help you with anything?"
@@ -2107,7 +2107,7 @@ label sweden_ikea:
     scene plushie_zone 
     show pomni at right
     with dissolve
-    play music "<loop 0>xddcc.ogg" volume 0.8
+    play music xddcc volume 0.8
     music XDDCC - Gooseworx
     n "CS meanders back by the plushie section and notices a clown."
     show cs at mid_left with moveinleft
@@ -2149,7 +2149,7 @@ label sweden_ikea:
     show ikea_worker at right
     show cs at left
     with dissolve
-    play music "<loop 0>afternoon_hills.ogg" volume 0.5
+    play music afternoon_hills volume 0.5
     ikea_worker "Hi! What would you like?"
     cs "I'll take some lobster, caviar, sauerkraut, kippers, champagne, and semlor."
     ikea_worker "Coming right up!"
@@ -2230,7 +2230,7 @@ label sweden_joel:
     show cs at left
     with moveinleft
     show joel at right with determination
-    play music "klaxon_beat.ogg" loop volume 0.6
+    play music klaxon_beat loop volume 0.6
     music Klaxon Beat - Kelly Bailey
     joel "I thought {i}I{/i} was a dumbass..."
     joel "Well, whatever, here's my house."
@@ -2318,7 +2318,7 @@ label sweden_joel:
     n "Joel gives CS a walkie-talkie. CS heads outside to the stable while Joel watches the radar."
     scene joel_outside with dissolve
     show cs horse at center with moveinleft
-    play music "<loop 0>candle_world.ogg" volume 0.4
+    play music candle_world volume 0.4
     music Candle World - Kikiyama
     cs "Alright, I'm in position."
     joel "Sounds good. I'll run out when I see the alien moving this way, and I'll let you know on the walkie-talkie."
@@ -2332,9 +2332,9 @@ label sweden_joel:
     joel "I've got you this time, alien!" #Joel makes it out just before the alien
     alien "Ikke skyt! Jeg er ikke en romvesen! Jeg er bare en normal norsk mann!" #Make this wingdings
     scene white with dissolve
-    play sound "<loop 0>sfx_hks2.ogg" volume 0.7
+    play sound sfx_hks2 volume 0.7
     pause 0.1
-    play sound "<loop 0>sfx_hks1.ogg" volume 0.7
+    play sound sfx_hks1 volume 0.7
     pause 0.1
     pause 1.0
     scene joel_outside
@@ -2356,7 +2356,7 @@ label sweden_joel:
     show cs at left
     show joel at right
     with dissolve
-    play music "klaxon_beat.ogg" loop volume 0.6
+    play music klaxon_beat loop volume 0.6
     joel "You can just wait in the living room and play some games while I cook."
     cs "Sounds like a plan."
     show joel flipped with determination
