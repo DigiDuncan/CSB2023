@@ -1189,7 +1189,7 @@ label train_dining:
 
     # fun value
     if fun_value(5):
-        $ pancake_fun_value = True
+        $ train_pancake_fun_value = True
         n "He did at least steal a few of the abandoned pancakes."
 
     n "He rushes back to the sleeper car as quickly as he can."
@@ -1384,7 +1384,7 @@ label train_wakeup:
     arceus "\"Yellow fucker\"?"
 
     # let's turn my shitpost into a fun value i suppose lmao
-    if fun_value(100):
+    if fun_value(111):
         $ train_tate_is_fragile_fun_value = True
         mean "Like, no offense, Tate, but you only have, like, 5 DEF."
         show arceus 
@@ -1622,7 +1622,7 @@ label train_search_arceus:
     n "From across the room, Arceus glances towards the forgotten breakfast." 
     arceus "It's a damn shame that all of that food went to waste."
 
-    if pancake_fun_value == True:
+    if train_pancake_fun_value == True:
         arceus "Mean probably wouldn't care if I took a bit more..."
     else:
         arceus "I wonder if Mean would mind if I grabbed a bit before it goes bad..."
@@ -2002,7 +2002,7 @@ label train_confront_lupin:
 
 ######## SECRET FIGHT VS TATE ########
 label train_tate_ex_encounter:
-    if fun_value(1111):
+    if train_tate_is_fragile_fun_value == True:
         stop music fadeout 1.0
         scene black
         n "Try as he may, after all of the excitement, CS just can't get to sleep."
@@ -2013,13 +2013,11 @@ label train_tate_ex_encounter:
         show tate srs flipped at left
         with fade
         pause 0.5
-        play music "<loop 0>insomnia_intro.ogg"
+        play music insomnia_intro
         # TODO: Fix this artist name, should be W∆W
         music Insomnia - W∆W
         show cs disappointed flipped at offscreenright with determination
         show cs disappointed flipped at right with MoveTransition(1.0)
-        play music insomnia_intro
-        music Insomnia - W∆W
         pause 1.0
         cs "Tate?"
         cs "You can't sleep either?"
@@ -2061,10 +2059,8 @@ label train_tate_ex_encounter:
         tate "Do I think I could take {i}you,{/i} CS?"
         show cs worried flipped
         cs "Huh?"
-        stop music fadeout 1.0
-        play music insomnia_full
         show tate srs at mid_mid_left with moveinleft
-        queue music "<from 22.6>insomnia.ogg"
+        queue music insomnia_loop
         tate "Will you indulge me?"
         menu:
             "Will you?"
@@ -2104,21 +2100,40 @@ label train_tate_ex_encounter:
                 show cs scared flipped
                 show tate smug sil_white flipped with dissolve
                 stop music fadeout 1.0
+                play sound sfx_spellcast
                 scene white with dissolve
                 pause 1.0
                 # TODO: tate battle sprite
                 music Space - W∆W
-                # we dont want to actually see the popup
+                # we don't want to actually see the popup
                 hide music
                 jump rpg_vs_tate
+    else:
+        jump train_completed
                 
 label train_vs_tate_win:
-    "Placeholder (defeat Tate)"
+    pause 2.0
+    tate "I guess it only makes sense, doesn't it?"
+    tate "CS {i}is{/i} the main character, after all."
+    tate "At least my question is answered."
+    tate "Thank you, CS."
+    pause 2.0
+    scene black with dissolve
+    pause 1.0
     $ achievement_manager.unlock("For Poop And For Glory")
     jump train_completed
 
 label train_vs_tate_lose:
-    "Placeholder (lose to Tate)"
+    pause 2.0
+    tate "Huh."
+    tate "I didn't think I'd actually win that for a minute, there..."
+    tate "You didn't go easy on me, did you?"
+    tate "..."
+    tate "I think I'd prefer to believe that you didn't."
+    tate "Thank you, CS."
+    pause 2.0
+    scene black with dissolve
+    pause 1.0
     jump train_completed
     
 label train_completed:
