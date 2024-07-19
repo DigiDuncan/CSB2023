@@ -49,6 +49,9 @@ label michigan:
             jump michigan_continue
 
 label michigan_bronson:
+    scene car plains
+    show billy car
+    stop music fadeout 3.0
     cs "Look man, just don't go to Bronson okay?"
     billy "Okay okay, we won't go."
     cs "It's just, I am getting a really bad vibe from that place."
@@ -69,7 +72,7 @@ label michigan_bronson:
     n "Welcome to Bronson."
     scene black with dissolve
     pause 2.0
-    $ achievement_manager.unlock("We don't go to Bronson")
+    $ achievement_manager.unlock("We Don't Go To Bronson")
     play sound sfx_thunder volume 0.5 loop
     scene bronson_hell
     show cscar1arc
@@ -157,6 +160,8 @@ label michigan_bronson:
     jump rpg_bronsonbattle
 
 label michigan_bronson_win:
+    play sound sfx_thunder volume 0.5 loop if_changed
+    stop music fadeout 3.0
     scene bronsoncrash
     show billy at left
     show arceus dirty flipped at mid_left
@@ -208,6 +213,9 @@ label michigan_bronson_win:
             jump michigan_interstate_94
 
 label michigan_continue:
+    scene car plains
+    show billy car
+    stop music fadeout 3.0
     arceus "Nah, this place looks too rural to have much around."
     n "The two look over to CS, who seems visibly distressed."
     arceus "Uh, CS? How's it going?"
@@ -233,6 +241,7 @@ label michigan_continue:
             jump michigan_interstate_94
 
 label michigan_interstate_69_old:
+    stop music fadeout 3.0
     window hide
     show screen warning("The following scene is a major tonal shift.\nIt may be disconcerting to some viewers.", "Warnings: creepy forests, haunting music, slow descents into madness.", "back_out_i69")
     pause
@@ -813,6 +822,9 @@ label michigan_interstate_69_old:
     jump true_ohio
 
 label michigan_interstate_69:
+    scene car plains
+    show billy car
+    stop music fadeout 3.0
     $ nome = True
     cs "We're on a detour anyway. May as well take the funny route."
     billy "Alright. 69 it is."
@@ -1381,6 +1393,9 @@ label michigan_interstate_69:
     jump true_ohio
 
 label michigan_interstate_94:
+    scene car plains
+    show billy car
+    stop music fadeout 3.0
     $ clown = True
     cs "What are you talking about? We're getting on 94."
     cs "We've all been through way too much for me to want to take any unnecessary detours."

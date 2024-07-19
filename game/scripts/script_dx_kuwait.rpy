@@ -1,4 +1,9 @@
 label kuwait_travel:
+    play music "<loop 0>airport.ogg" volume 0.4 if_changed
+    music Airport Infiltration - Andy Blythe & Marten Joustra
+    scene ticket_counter
+    show benrey at center
+    show cs disappointed at left
     cs "Uhh, I guess I wanted to go to Kuwait?"
     benrey "Well, I'm sorry, but everyone has a Pass{w=0.5} Port!"
     show cs disappointed
@@ -84,6 +89,7 @@ label kuwait:
     scene black
 
 label kuwait_hospital:
+    scene black
     pause 10
     play sound sfx_heartbeat loop
     play music tmwstw

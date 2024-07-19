@@ -1,6 +1,10 @@
 label south_start:
+    play music happy_roaming volume 0.5 if_changed
+    music Happy Roaming - Lorin Nelson
+    scene washington_road morning
+    show cs at left
+    show arceus at right
     cs "Why don't we try going south?"
-    show arceus
     arceus "Alright, what's your plan? Where are we going, exactly?"
     cs "I've always kinda wanted to go down to Vegas. We could have a ton of fun down there!"
     show arceus worried
@@ -76,11 +80,11 @@ label south_start:
     stop sound fadeout 2.0
     scene black with fade
     n "After many hours of driving, day turns to night once again."
-    stop music fadeout 3.0
-    music end
     jump south_utah
 
 label south_utah:
+    stop music fadeout 3.0
+    music end
     scene utah
     show cscar1
     show cscar2
@@ -487,6 +491,10 @@ label south_vegas_done_slots:
             jump south_poker
 
 label south_poker:
+    scene pokertable
+    show cards2
+    play music laurel_palace volume 0.5 if_changed
+    music Laurel Palace - Manami Matsumae
     cs "No. I'll stand."
     green "Bwahahaha! You think you can beat me?"
     scene luigi1
@@ -504,6 +512,10 @@ label south_poker:
             jump south_poker2
 
 label south_poker2:
+    scene pokertable
+    show cards3
+    play music laurel_palace volume 0.5 if_changed
+    music Laurel Palace - Manami Matsumae
     cs "I'm still gonna stand."
     green "I'm gonna be rich! You better have that money on you, boy!"
     scene luigi1
@@ -521,6 +533,8 @@ label south_poker2:
             jump south_poker3
 
 label south_folded:
+    play music laurel_palace volume 0.5 if_changed
+    music Laurel Palace - Manami Matsumae
     scene luigi2
     show green flipped at left
     show cs disappointed flipped at right
@@ -626,13 +640,17 @@ label south_folded:
     menu:
         arceus "What would you like to do, CS?"
         "Take a plane home":
-            jump airport_bad
+            jump south_airport_bad
         "Take the car" (type = "bad"):
-            jump noairport
+            jump south_noairport
         "Take something else...?" (type = "dx"):
             jump train_start_bad
 
 label south_poker3:
+    scene pokertable
+    show cards4
+    play music laurel_palace volume 0.5 if_changed
+    music Laurel Palace - Manami Matsumae
     cs "Still standing."
     green "What?! You son of a bitch, you are so scrrewed!"
     scene luigi2
@@ -834,13 +852,17 @@ label south_poker3:
     menu:
         arceus "What would you like to do, CS?"
         "Take a plane home":
-            jump airport
+            jump south_airport
         "Take the car" (type = "bad"):
-            jump noairport
+            jump south_noairport
         "Take something else...?" (type = "dx"):
             jump train_start_good
 
 label south_airport:
+    stop music fadeout 3.0
+    scene carpark 
+    show arceus flipped at left
+    show cs flipped at right
     cs "We should head back home now. I have a plan for our newfound riches."
     show arceus flipped happy
     arceus "Alright! I'm excited to see what you've got cooking up!"
@@ -961,6 +983,10 @@ label south_airport:
     jump south_back_home_alt
 
 label south_airport_bad:
+    stop music fadeout 3.0
+    scene carpark 
+    show arceus at right
+    show cs at center
     cs "We should head back home now. I have a plan for our newfound riches."
     show arceus happy
     arceus "Alright! I'm excited to see what you've got cooking up!"
@@ -1076,6 +1102,12 @@ label south_back_home_alt:
             jump south_braghohsis
 
 label south_donatehohsis:
+    play music hohsisremix volume 0.5 if_changed
+    music "Alfred's Theme - Eminem"
+    scene cs_house
+    show ed at right
+    show rich at mid_mid_right behind ed
+    show cs disappointed at left
     cs "I never intended to harm your company. I just thought that the video was a good source to YTP."
     cs "I'm sorry about all those prank callers. I even made a video telling people to stop prank calling you."
     cs "I never had bad intentions for you guys... Honestly, it was also kind of like a free promotion."
@@ -1125,6 +1157,10 @@ label south_donatehohsis:
         jump south_true_ending_alt
 
 label south_true_ending_alt:
+    scene cs_room
+    play music ac_title volume 0.4 if_changed
+    music New Leaf Title Theme - Kazumi Totaka
+    show cs at center
     n "CS looks over at his desk, where a new computer is sitting."
     scene cs_room_2 with fade
     n "CS looks at the monitor, which has a sticky note that says \"From LTT\"."
@@ -1143,6 +1179,10 @@ label south_true_ending_alt:
     jump south_lego_ending
 
 label south_ytp_ending_alt:
+    scene cs_room
+    play music ac_title volume 0.4 if_changed
+    music New Leaf Title Theme - Kazumi Totaka
+    show cs at center
     n "CS looks over at his desk, where his old computer is sitting."
     scene cs_room_2 with fade
     show cs at mid_left
@@ -1157,6 +1197,10 @@ label south_ytp_ending_alt:
     jump south_lego_ending
 
 label south_ltt_ending_alt:
+    scene cs_room
+    play music ac_title volume 0.4 if_changed
+    music New Leaf Title Theme - Kazumi Totaka
+    show cs at center
     n "CS looks over at his desk, where a new computer is sitting."
     scene cs_room_2 with fade
     n "CS looks at the monitor, which has a sticky note that says \"From LTT\"."
@@ -1199,6 +1243,12 @@ label south_lego_ending:
     return
 
 label south_fighthohsis_alt:
+    play music hohsisremix volume 0.5 if_changed
+    music "Alfred's Theme - Eminem"
+    scene cs_house
+    show ed at right
+    show rich at mid_mid_right behind ed
+    show cs angry at left
     n "CS challenges HoH SiS to a fight."
     show cs angry
     cs "I beat up all your workers and Wesley, I can take you guys down too!"
@@ -1241,7 +1291,8 @@ label south_fighthohsis_alt:
     bad_end "Revenge!" "south_back_home_alt"
 
 label south_braghohsis:
-    stop music
+    play music hohsisremix volume 0.5 if_changed
+    music "Alfred's Theme - Eminem"
     scene cs_house
     show ed at right
     show rich at mid_mid_right behind ed
@@ -1275,6 +1326,9 @@ label south_braghohsis:
     return
 
 label south_noairport:
+    stop music fadeout 1.0
+    music end
+    scene carpark
     cs "Nah, I don't wanna go to the airport."
     cs "We should take the car and drive."
     arceus "Okay, well, let's get going!"

@@ -1,6 +1,8 @@
 label vibration:
     stop music fadeout 3.0
     play music lets_hear_my_sped volume 0.7
+    scene craptop_bg
+    show craptop discord
     cs "Bye guys! I gotta head to the store!"
     scene black with dissolve
     pause 1.0
