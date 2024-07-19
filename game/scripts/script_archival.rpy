@@ -482,7 +482,7 @@ label archival_finale:
     pause 2.0
     $ renpy.movie_cutscene("movies/credits.webm")
     pause 2.0
-    play music everybody_wants volume 1.0
+    play music everybody_wants 
     music "Everybody Wants To Rule The World - Tears For Fears"
     n "Addy gets a phone call."
     addy "Hello? Who is this?"

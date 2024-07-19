@@ -56,7 +56,7 @@ label country_knocked_out:
     stop music fadeout 1.0
     music end
     scene black
-    play sound sfx_heartbeat volume 1
+    play sound sfx_heartbeat
     n "..."
     n "As CS' vision fades back into view, he can hear a faint heart monitor beeping."
     scene hospital_room with dissolve

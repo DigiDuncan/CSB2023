@@ -61,7 +61,7 @@ label e2_rosen:
     jump csbi_start
 
 label e3_rosen:
-    play music night volume 1
+    play music night
     scene rosen_abode
     show csgod at offscreenright
     show michael at left

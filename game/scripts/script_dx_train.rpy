@@ -88,7 +88,7 @@ label train_intro_start:
     pause 2.0
 
     # that's not a hyphen
-    play music "<loop 0>sub_game_select.ogg" volume 1
+    play music "<loop 0>sub_game_select.ogg"
     music "Sub−Game Select - Jun Ishikawa"
 
     # flip
@@ -167,7 +167,7 @@ label train_story_begin:
     show arceus at right behind cscar2
     with fade
 
-    play music "<loop 54.031>outdoors.ogg" volume 1
+    play music "<loop 54.031>outdoors.ogg"
     music Outdoors - Miki Obata
 
     pause 1.0
@@ -378,7 +378,7 @@ label train_story_begin:
     n "The conversation is interrupted by the blare of a train horn."
 
     scene kingman_train_arrive with fade
-    play music "<loop 27.401>ochre_woods_day.ogg" volume 1
+    play music "<loop 27.401>ochre_woods_day.ogg"
     music Ochre Woods ~ Day - Miki Obata
     n "The two watch as the locomotive approaches the station and eventually slows to a stop."
     hide cs
@@ -517,7 +517,7 @@ label train_boarding:
     scene amtrak_sleeper_corridor
     with fade
 
-    play music "<loop 0.916>bedroom_day.ogg" volume 1
+    play music "<loop 0.916>bedroom_day.ogg"
     music Bedroom ~ Day - Miki Obata
     
     pause 2.0 
@@ -1061,7 +1061,7 @@ label train_enter_sleeper:
 
 label train_dining:
 
-    play music "<loop 3.1>krabby_klub.ogg" volume 1
+    play music "<loop 3.1>krabby_klub.ogg"
     scene amtrak_dining_car
     with fade
     pause 1.0
@@ -1139,7 +1139,7 @@ label train_dining:
 
     # mean wanted the following section.
     
-    play music "<loop 0>prof_kranes_kidnap.ogg" volume 1
+    play music "<loop 0>prof_kranes_kidnap.ogg"
     music "Prof. Krane's Kidnap - Tsukasa Tawada"
 
     show mean furious
@@ -1287,7 +1287,7 @@ label train_wakeup:
     arceus "I didn't know he's, uh... whatever he is."
     pause 2.0    
 
-    play music "<loop 1.071>e_gadds_lab.ogg" volume 1
+    play music "<loop 1.071>e_gadds_lab.ogg"
     music "E. Gadd's Lab - Kazumi Totaka & Shinobu Tanaka"
 
     show tate sheepish

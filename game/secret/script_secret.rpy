@@ -24,7 +24,7 @@ label secret_dx2:
     pakoo "Don't do it again."
     scene black with dissolve
     pause 1.0
-    play music ten_feet_away volume 1
+    play music ten_feet_away
     jump seek_competitors
 
 # THESE ARE LEFT HERE AS A WAT TO REMEMBER THE OLD SECRET SCREENS

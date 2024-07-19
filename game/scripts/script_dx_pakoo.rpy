@@ -127,7 +127,7 @@ label dx_after_true:
     billy "Alright CS, just hit all those buttons on the side to start it up!"
     n "The machine starts whirring, as a mysterious light shoots out from the top."
     hide pot_sunken
-    play sound sfx_okuubeam volume 1
+    play sound sfx_okuubeam
     show pot_beam at mid_right with hpunch
     show pot_beam at mid_right with vpunch
     show arceus worried dark flipped
@@ -228,7 +228,7 @@ label dx_after_back_to_story:
     show pencilguy at left
     show pencilcashier at right
     with dissolve
-    play music apple_kid volume 1
+    play music apple_kid
     cs "...and what the hell is this outfit?"
     pencil "Welcome, to the Pencil Cult!"
     cs "..."
@@ -262,7 +262,7 @@ label dx_after_back_to_story:
     scene cult_con
     show cs disappointed at center
     with dissolve
-    play music ten_feet_away volume 1
+    play music ten_feet_away
     cs "God, what the fuck is all of this?"
     cs "I can't tell if I'm still in the past or what is going on now."
     cs "I need to find a way out of here."
@@ -277,7 +277,7 @@ label dx_after_back_to_story:
     scene cult_con
     show cs 
     with dissolve
-    play music ten_feet_away volume 1
+    play music ten_feet_away
     cs "Well, I guess I'm not leaving now!"
     cs "I need to figure out how to get Billy's machine back..."
     n "Before CS can think, a familiar voice is heard rushing over to him."
@@ -363,7 +363,7 @@ label dx_after_back_to_story:
     jump dx_after_cult_questions
 
 label dx_after_cult_questions:
-    play music ten_feet_away volume 1 if_changed 
+    play music ten_feet_away if_changed 
     scene blue_branch
     show cultist_2 at right
     show cultist_3 at mid_mid_right
@@ -382,7 +382,7 @@ label dx_after_cult_questions:
             jump dx_after_competiton_start
 
 label dx_after_cultcon_ask:
-    play music ten_feet_away volume 1 if_changed 
+    play music ten_feet_away if_changed 
     scene blue_branch
     show cultist_2 at right
     show cultist_3 at mid_mid_right
@@ -397,7 +397,7 @@ label dx_after_cultcon_ask:
     jump dx_after_cult_questions
 
 label dx_after_competitors_ask:
-    play music ten_feet_away volume 1 if_changed 
+    play music ten_feet_away if_changed 
     scene blue_branch
     show cultist_2 at right
     show cultist_3 at mid_mid_right
@@ -414,7 +414,7 @@ label dx_after_competitors_ask:
     jump dx_after_cult_questions
 
 label dx_after_win_ask:
-    play music ten_feet_away volume 1 if_changed 
+    play music ten_feet_away if_changed 
     scene blue_branch
     show cultist_2 at right
     show cultist_3 at mid_mid_right
@@ -430,7 +430,7 @@ label dx_after_win_ask:
     jump dx_after_cult_questions
 
 label dx_after_competiton_start:
-    play music ten_feet_away volume 1 if_changed 
+    play music ten_feet_away if_changed 
     scene blue_branch
     show cultist_2 at right
     show cultist_3 at mid_mid_right
@@ -440,7 +440,7 @@ label dx_after_competiton_start:
     stop music fadeout 3.0
     cultist "Alright, awesome."
     cultist "Now go out there and--{nw}"
-    play music hitsquad_2 volume 1
+    play music hitsquad_2
     cruise "Hey you purple-hooded idiots!"
     show cruise flipped at center with moveinleft
     show cs angry cultist
@@ -465,13 +465,13 @@ label dx_after_competiton_start:
     cultist "I hope so."
     n "CS runs off to find competitors."
     scene cult_con with dissolve
-    play music ten_feet_away volume 1
+    play music ten_feet_away
     show cs cultist at center with moveinleft
     cs "Alright, so there are a few cults I can challenge here."
     jump dx_after_seek_competitors
     
 label dx_after_seek_competitors:
-    play music ten_feet_away volume 1 if_changed
+    play music ten_feet_away if_changed
     scene cult_con
     show cs cultist at center
     cs "Which cult should I look for?"
@@ -491,7 +491,7 @@ label dx_after_seek_competitors:
             jump dx_after_lunatic_ask
 
 label dx_after_pencil_ask:
-    play music ten_feet_away volume 1 if_changed    
+    play music ten_feet_away if_changed    
     scene cult_con
     show cs cultist at center
     cs "The cult leader said that the Pencil guys usually give us a vote, so I can see what they are up to. "
@@ -553,7 +553,7 @@ label dx_after_pencil_ask:
     hide cs with moveoutleft
     n "CS turns around and leaves without any more explanation."
     scene cult_con with dissolve
-    play music ten_feet_away volume 1
+    play music ten_feet_away
     show cs cultist at center with moveinleft
     cs "Well, that takes me back."
     cs "Or I guess, that takes me forward!"
@@ -564,7 +564,7 @@ label dx_after_pencil_ask:
     jump dx_after_seek_competitors
 
 label dx_after_science_ask:
-    play music ten_feet_away volume 1 if_changed    
+    play music ten_feet_away if_changed    
     scene cult_con
     show cs cultist at center
     cs "Y'know, the scientologists think they are all that, but maybe me talking to them will convince them to get us a vote."
@@ -601,7 +601,7 @@ label dx_after_science_ask:
     jump dx_after_seek_competitors
 
 label dx_after_catholic_ask:
-    play music ten_feet_away volume 1 if_changed    
+    play music ten_feet_away if_changed    
     scene cult_con
     show cs cultist at center
     cs "Who the hell are those guys?"
@@ -638,7 +638,7 @@ label dx_after_catholic_find:
     jump dx_after_seek_competitors
 
 label dx_after_summer_ask:
-    play music ten_feet_away volume 1 if_changed    
+    play music ten_feet_away if_changed    
     scene cult_con
     show cs cultist at center
     cs "There is a summer camp here?"
@@ -649,7 +649,7 @@ label dx_after_summer_ask:
     wayside_instructor "Welcome to Wayside Summer Camp!"
 
 label dx_after_lunatic_ask:
-    play music ten_feet_away volume 1 if_changed    
+    play music ten_feet_away if_changed    
     scene cult_con
     show cs cultist at center
     cs "Hmm, who are those guys? They look like plague doctors almost..."
@@ -870,7 +870,7 @@ label dx_after_yes_renault:
     show cs at center
     show carguy at right
     with dissolve
-    play music muumin_tani_fuyu volume 1
+    play music muumin_tani_fuyu
     carguy "So that was the new Renault 5E! I hope you enjoyed it!"
     cs "Yeah I did!"
     show cs disappointed

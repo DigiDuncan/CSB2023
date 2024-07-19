@@ -1042,7 +1042,7 @@ label genocide_wait_arc:
     arceus "After that incident with the cops, he's been..."
     pause 1.0
     arceus "He's just been--"
-    play music "<from 60 to 170>insane_personalities.ogg" volume 1
+    play music "<from 60 to 170>insane_personalities.ogg"
     csgod "Stronger than ever."
     show csgod flipped at mid_left with moveinleft
     show arceus flipped at mid_left with vpunch

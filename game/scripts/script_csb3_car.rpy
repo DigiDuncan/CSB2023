@@ -21,7 +21,7 @@ label car_dialogue:
     scene car plains
     show billy car
     with fade
-    play music billy_mix volume 1
+    play music billy_mix
     music "Billy's Mix - Billy Mays"
     cs "Well, Arceus, it has been quite a ride."
     arceus "It sure has. We've been through quite a lot, haven't we?"

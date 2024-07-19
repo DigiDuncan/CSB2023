@@ -661,7 +661,7 @@ label south_poker3:
         play sound sfx_explosion volume 1.5
         show green at t_punchup with move
         pause 0.3
-        play music lancer volume 1
+        play music lancer
         music Lancer - Toby Fox
         lancer "Hey guys!"
         show cs worried flipped

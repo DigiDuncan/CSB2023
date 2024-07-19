@@ -64,7 +64,7 @@ label friend2_car_ride_1:
     cs "So, yeah, that's why I'm worried."
     show pakoo disappointed
     pakoo "Yeah, I getcha, I'm sur--{w=1.0}{nw}"
-    play sound "sfx_car_horn.ogg" volume 1
+    play sound "sfx_car_horn.ogg"
     show cs scared with vpunch
     show pakoo worried with vpunch
     cs "JESUS!!"

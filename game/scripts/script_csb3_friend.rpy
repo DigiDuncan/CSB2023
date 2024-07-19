@@ -324,7 +324,7 @@ label friend_attack_fanboy:
     linus "CS, what are you doing? You're gonna get yourself killed out there!"
     stop sound fadeout 3.0
     scene outside_ltt with fade
-    play sound sfx_yelling loop volume 1
+    play sound sfx_yelling loop
     show cs angry at center with dissolve
     if fanboy_type == "nvidia":
         "Fanboys" "Boo!! You suck! NVIDIA is the best!"  
@@ -606,57 +606,57 @@ label friend_fire_range:
     window hide
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound sfx_hks1 loop volume 1
+    play sound sfx_hks1 loop
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound sfx_hks2 loop volume 1
+    play sound sfx_hks2 loop
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound sfx_hks1 loop volume 1
+    play sound sfx_hks1 loop
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound sfx_hks3 loop volume 1
+    play sound sfx_hks3 loop
     pause 0.5
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound sfx_hks2 loop volume 1
+    play sound sfx_hks2 loop
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound sfx_hks1 loop volume 1
+    play sound sfx_hks1 loop
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound sfx_hks3 loop volume 1
+    play sound sfx_hks3 loop
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound sfx_hks2 loop volume 1
+    play sound sfx_hks2 loop
     show m4 at left with determination    
     pause 1.0
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound sfx_hks2 loop volume 1
+    play sound sfx_hks2 loop
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound sfx_hks1 loop volume 1
+    play sound sfx_hks1 loop
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound sfx_hks3 loop volume 1
+    play sound sfx_hks3 loop
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound sfx_hks2 loop volume 1
+    play sound sfx_hks2 loop
     show m4 at left with determination    
     pause 1.0
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound sfx_hks2 loop volume 1
+    play sound sfx_hks2 loop
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound sfx_hks1 loop volume 1
+    play sound sfx_hks1 loop
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound sfx_hks3 loop volume 1
+    play sound sfx_hks3 loop
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound sfx_hks2 loop volume 1
+    play sound sfx_hks2 loop
     show m4 at left with determination    
     pause 1.0
     window show
@@ -935,12 +935,12 @@ label friend_cool_car:
     show cs angry flipped
     show m4 flipped at center with determination
     show m4 fire flipped at center with determination
-    play sound sfx_hks2.ogg loop volume 1
+    play sound sfx_hks2.ogg loop
     show m4 flipped at center with determination 
     pause 0.5
     show m4 flipped at center with determination
     show m4 fire flipped at center with determination
-    play sound sfx_hks2 loop volume 1
+    play sound sfx_hks2 loop
     show m4 flipped at center with determination
     pause 0.5
     cs "Make me!"
@@ -992,12 +992,12 @@ label friend_reg_car:
     show cs angry flipped
     show m4 flipped at center with determination
     show m4 fire flipped at center with determination
-    play sound >sfx_hks2.ogg loop volume 1
+    play sound >sfx_hks2.ogg loop
     show m4 flipped at center with determination 
     pause 0.5
     show m4 flipped at center with determination
     show m4 fire flipped at center with determination
-    play sound sfx_hks2.ogg loop volume 1
+    play sound sfx_hks2.ogg loop
     show m4 flipped at center with determination
     pause 0.5
     cs "Make me!"
