@@ -1178,7 +1178,7 @@ label csbiii_bad_convince:
     cs "I just {i}look{/i} like CS!"
     show arceus worried
     arceus "I mean... he {i}might{/i} not be CS?"
-    play sound objection volume 0.5
+    play sound sfx_objection volume 0.5
     show objection at truecenter with hpunch
     pause 1.0
     hide objection

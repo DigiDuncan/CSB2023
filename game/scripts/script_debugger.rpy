@@ -623,7 +623,7 @@ label asset_debugger:
         show post_it2 at center
         show cs insane worried at left
         show mean furious flipped at mid_mid_left
-        show moomin_flipped at mid_right
+        show moomin flipped at mid_right
         sheriff "test 41{w=0.5}{nw}"
     else:
         jump exit_debug
@@ -634,7 +634,7 @@ label asset_debugger:
         show colorbars at center
         show cs insane worried flipped at left
         show mean tired at mid_mid_left
-        show snufkin_flipped at mid_right
+        show snufkin flipped at mid_right
         billy "test 42{w=0.5}{nw}"
     else:
         jump exit_debug
@@ -645,7 +645,7 @@ label asset_debugger:
         show paper at center
         show cs insane disappointed at left
         show mean tired flipped at mid_mid_left
-        show alicia_flipped at mid_right
+        show alicia flipped at mid_right
         tv_billy "test 43{w=0.5}{nw}"
     else:
         jump exit_debug
@@ -656,7 +656,7 @@ label asset_debugger:
         show pipe_gun at center
         show cs horse at left
         show mean worried at mid_mid_left
-        show witch_flipped at mid_right
+        show witch flipped at mid_right
         cultist "test 44{w=0.5}{nw}"
     else:
         jump exit_debug
@@ -1056,7 +1056,7 @@ label asset_debugger:
     if fun_value(86):
         play sound sfx_fart_with_reverb
         play music lisbon_fever
-        scene falling_apart
+        scene falling
         show cs at t_copguy_frontseat
         agent "test 86{w=0.5}{nw}"
     else:

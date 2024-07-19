@@ -708,7 +708,7 @@ class Attacks:
     TATE_ECHOES = Attack("Tate's Echoes", "The past haunts you.", change_stat, stat = "atk", target_count = 0, target_type = "allies", mult = 0.5, cooldown = 10, accuracy = 100, ex = False)
     TATE_BLAST = Attack("Tate's Blaster", "Make it haunt them, too.", damage_fighters, target_count = 0, target_type = "enemies", mult = 5, cooldown = 10, accuracy = 100,ex = False)
     ECHO_BLAST = ComboAttack("Echo Blast", "Make them feel the pain of the past, at the cost of your ATK.", [TATE_BLAST, TATE_ECHOES], cooldown = 10, accuracy = 100, ex = False)
-    GENERGY = Attack("Genergy", "Sip a bit of energy drink for healing.", heal_fighters, target_count = 1, target_type = "allies", mult = 1.2, cooldown = 2, accuracy = 100, ex = False)
+    GENERGY = Attack("Genergy", "Sip a bit of energy drink for healing.", heal_fighters, target_count = 1, target_type = "allies", mult = 3, cooldown = 2, accuracy = 100, ex = False)
 
     # UCN
     STOMP = Attack("Stomp", "Send an earthquake to the enemies!", damage_fighters, target_count = 0, target_type = "enemies", ex = False, mult = 0.75)
@@ -801,7 +801,7 @@ class Fighters:
     K174 = Fighter("K17-4", True, 174, 17, 20, [Attacks.PUNCH], Image("images/characters/k174.png"), ai = AIType.NEUTRAL)
     K199 = Fighter("K19-9", True, 199, 19, 30, [Attacks.KICK], Image("images/characters/k199.png"), ai = AIType.AGGRO)
     K207 = Fighter("K20-7", True, 207, 20, 10, [Attacks.PUNCH], Image("images/characters/k207.png"), ai = AIType.DEFENSIVE)
-    TATE_EX = Fighter("{image=gui/dx_text.png} Tate EX", True, 1111, 11, 35, [Attacks.DAMAGE_SCREM, Attacks.REVERB_RECALL, Attacks.ECHO_BLAST], Image("images/characters/tate/tate_ex.png"), ai = AIType.AGGRO, display_name = "Tate EX") 
+    TATE_EX = Fighter("{image=gui/dx_text.png} Tate EX", True, 1111, 11, 111, [Attacks.DAMAGE_SCREM, Attacks.REVERB_RECALL, Attacks.ECHO_BLAST], Image("images/characters/tate/tate_ex.png"), ai = AIType.AGGRO, display_name = "Tate EX") 
 
     # Enemies (UCN)
     WESLEY = Fighter("{image=gui/dx_text.png} Wesley", True, 200, 20, 40, [Attacks.PISTOL, Attacks.ALL_OVER_AGAIN], Image("images/characters/wesley.png"), ai = AIType.AGGRO, display_name = "Wesley")

@@ -967,7 +967,7 @@ label friend_reg_car:
     show cs at left with moveinleft
     show pakoo at right with moveinright
     pakoo "Punch it CS! We gotta get outta here!"
-    play sound siren loop fadein 2.0 volume 0.2
+    play sound sfx_siren loop fadein 2.0 volume 0.2
     show blue_light at left
     show red_light at right
     n "As CS starts up the car and begins to drive off, the cops pull up around him."
@@ -993,12 +993,12 @@ label friend_reg_car:
     show cs angry flipped
     show m4 flipped at center with determination
     show m4 fire flipped at center with determination
-    play sound >sfx_hks2.ogg loop
+    play sound sfx_hks2 loop
     show m4 flipped at center with determination 
     pause 0.5
     show m4 flipped at center with determination
     show m4 fire flipped at center with determination
-    play sound sfx_hks2.ogg loop
+    play sound sfx_hks2 loop
     show m4 flipped at center with determination
     pause 0.5
     cs "Make me!"

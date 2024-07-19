@@ -2048,7 +2048,9 @@ label train_tate_ex_encounter:
         tate "Your attack on HoH SiS cost Mean his job."
         tate "You lured a thief onto this train."
         tate "In another place, I had to drop everything to save you from your own bad decisions."
+        show cs worried flipped
         tate "In another time, I fought alongside you."
+        cs "Tate, what are you {i}talking{/i} about?"
         tate "Tell me, CS."
         tate "Do you think I could have taken on that crook alone?"
         menu:
@@ -2057,6 +2059,7 @@ label train_tate_ex_encounter:
                 pass
             "Not a chance.":
                 pass
+        show cs disappointed flipped
         cs "Well, uh--{w=0.5}{nw}"
         show tate srs flipped
         tate "I guess it doesn't matter."
@@ -2110,18 +2113,14 @@ label train_tate_ex_encounter:
                 stop music fadeout 1.0
                 play sound sfx_spellcast
                 scene white with dissolve
-                pause 1.0
-                # TODO: another artist to fix
-                music Space - W∆W
-                # we don't want to actually see the popup
-                hide music
+                pause 2.0
                 # TODO: Tate's battle sprite is off center and lacking the effect
                 jump rpg_vs_tate
     else:
         jump train_completed
                 
 label train_vs_tate_win:
-    pause 3.0
+    pause 5.0
     tate "I guess it only makes sense, doesn't it?"
     tate "CS {i}is{/i} the main character, after all."
     tate "At least my question is answered."
@@ -2133,7 +2132,7 @@ label train_vs_tate_win:
     jump train_completed
 
 label train_vs_tate_lose:
-    pause 3.0
+    pause 5.0
     tate "Huh."
     tate "I didn't think I'd actually win that for a minute, there..."
     tate "You didn't go easy on me, did you?"

@@ -1264,7 +1264,7 @@ label south_fighthohsis_alt:
     show ed at center
     with move
     play sound sfx_punch
-    play sound sfx_punch_alttt
+    play sound sfx_punch_alt
     show cs with hpunch
     play sound sfx_punch
     play sound sfx_punch_alt
