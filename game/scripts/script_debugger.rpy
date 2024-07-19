@@ -1630,12 +1630,13 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(171):
-        play music yuuka_town
+        play music funvalueland
         scene war_torn_3
         pause 0.1
     else:
         jump exit_debug
     if fun_value(172):
+        play music yuuka_town
         scene war_torn_4
         pause 0.1
     else:
