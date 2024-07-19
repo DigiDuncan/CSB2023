@@ -8,16 +8,26 @@
 - cs188 (with the number) should be lowercase.
 - CS (without the number) should be uppercase.
 - Sentences should not be connected with commas.
-- Do not use all caps for emphasis, use italics. (Or shake text!)
+- Do not use all caps for emphasis, use italics. (or shake text!)
 - Em-dashes (when used to cut off a sentence) should be represented with --.
-- small text (like whispering) should use the prefix {size=-15}
+- Small text (like whispering) should use the prefix `{size=-15}`
 
-### Files
-- backgrounds must be 1920x1080
-- all audio should be 44.1kHz 16bit .ogg 
-- sfx should must have the sfx_ prefix
-- videos have to be awfully encoded (enforced by Ren'Py)
- - PLEASE use 1:1 pixel ratio. that's why fail_end was broken.
+### FILES
+- Backgrounds must be 1920x1080
+- All audio should be 44.1kHz 16bit .ogg 
+- SFX should must have the `sfx_` prefix
+- Videos have to be awfully encoded (enforced by Ren'Py), use Handbrake and make a `.webm` with Vorbis audio.
+    - PLEASE use 1:1 pixel ratio. that's why fail_end was broken.
+
+### CODE
 - When labelling characters in script_start, it goes in the order:
     - (<character> <emotion> <outfit> <time> <flipped>)
-    - an example would be: cs worried cultist dark flipped
+    - An example would be: `cs worried cultist dark flipped`
+- All music and sound effects should be defined in `script_start`, under the correct header.
+    - Do not use `<loop 0>`, it doesn't do anything.
+    - Do not use `volume 1`, it also doesn't do anything.
+- All labels should start with the route they're a part of.
+    - Example: `train_start` or `fired_new_plan`
+- At the beginning of a new label, re-setup the character positions and music.
+    - If a music track should continue from the last label, use `if_changed` at the end of the `play` statement.
+    - Test your label by jumping to it with the debug menu and making sure it looks right.
