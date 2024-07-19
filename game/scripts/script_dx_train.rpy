@@ -2103,7 +2103,6 @@ label train_tate_ex_encounter:
                 play sound sfx_spellcast
                 scene white with dissolve
                 pause 1.0
-                # TODO: tate battle sprite
                 music Space - W∆W
                 # we don't want to actually see the popup
                 hide music
