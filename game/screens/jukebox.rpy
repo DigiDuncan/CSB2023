@@ -151,6 +151,8 @@ init python:
         "Prof. Krane's Kidnap - Tsukasa Tawada": "prof_kranes_kidnap.ogg",
         "E. Gadd's Lab - Kazumi Totaka & Shinobu Tanaka": "e_gadds_lab.ogg",
         "ONBS - Tsukasa Tawada": "onbs.ogg",
+        "Insomnia - W∆W": "insomnia.ogg",
+        "Space - W∆W": "space.ogg",
     }
     global album_map
 
@@ -283,6 +285,8 @@ init python:
         "Prof. Krane's Kidnap - Tsukasa Tawada": "pokemonxd.png",
         "E. Gadd's Lab - Kazumi Totaka & Shinobu Tanaka": "luigismansion.png",
         "ONBS - Tsukasa Tawada": "pokemonxd.png",
+        "Insomnia - W∆W": "moon.png",
+        "Space - W∆W": "moon.png",
     }
 
 screen jukebox_nav():

@@ -1044,7 +1044,7 @@ label train_enter_sleeper:
 
         # TODO: replace with a proper sliding door slam later
 
-        play sound "audio/sfx_clonk.wav"
+        play sound "audio/sfx_clonk.ogg"
         with hpunch
         pause 1.0
         arceus "{i}Shit!"
@@ -1986,18 +1986,20 @@ label train_confront_lupin:
         show tate srs flipped at left
         with fade
         pause 0.5
+        play music "<loop 0>insomnia_intro.ogg"
         show cs disappointed flipped at offscreenright with determination
         show cs disappointed flipped at right with MoveTransition(1.0)
-        play music "<loop 0>insomnia_intro.ogg"
-        music Insomnia - W∆W
         pause 1.0
+        # TODO: Fix this artist name, should be W∆W
+        music Insomnia - W∆W
         cs "Tate? You can't sleep either?"
         tate "Sure can't."
         "..."
         pause 1.0
         cs "Tate? Are you alright?"
-        show tate srs
         tate "You know, I've been thinking, CS."
+        show tate srs
+        pause 1.0
         tate "I've been thinking a lot, actually."
         cs "About what?"
         tate "I just wanted to relax on this trip."
@@ -2006,9 +2008,9 @@ label train_confront_lupin:
         tate "Are the two correlated? I do not know."
         cs "What are you saying, Tate?"
         tate "Your actions affect more than just you."
-        tate "Your attack on HoH Sis cost Mean his job."
+        tate "Your attack on HoH SiS cost Mean his job."
         tate "You lured a thief onto this train."
-        tate "In another place, I had to save you from your own bad decisions."
+        tate "In another place, I had to drop everything to save you from your own bad decisions."
         tate "In another time, I fought alongside you."
         tate "Tell me, CS."
         tate "Do you think I could have taken on that crook alone?"
@@ -2022,12 +2024,12 @@ label train_confront_lupin:
         tate "I guess it doesn't matter."
         tate "He was more of a runner than a fighter, anyway."
         show tate srs at mid_left with moveinleft
-        tate "I think I could take {i}you,{i} CS."
+        pause 0.5
+        tate "I think I could take {i}you,{/i} CS."
         show cs worried flipped
         cs "Huh?"
-        stop music fadeout 1.0
-        play music "<from 22.6>insomnia_full.ogg"
         show tate srs at mid_mid_left with moveinleft
+        queue music "<from 22.6>insomnia.ogg"
         tate "Will you indulge me?"
         menu:
             "Will you?"
@@ -2039,7 +2041,7 @@ label train_confront_lupin:
                 tate "You should, too."
             "Are you sure?":
                 cs "Are you sure you want this? I don't want you getting hurt..."
-                tate "You know that I wouldn't ask if I didn't want it."
+                tate "You know that I wouldn't ask if I wasn't willing to accept that risk."
                 tate "Don't hold back."
                 show cs scared flipped
                 cs "Tate, I'm serious, I don't want to hurt you."
@@ -2056,6 +2058,9 @@ label train_confront_lupin:
                 scene white with dissolve
                 pause 1.0
                 # TODO: tate battle sprite
+                music Space - W∆W
+                # we dont want to actually see the popup
+                hide music
                 jump rpg_vs_tate
                 
 label train_vs_tate_win:
