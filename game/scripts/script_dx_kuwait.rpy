@@ -1,5 +1,5 @@
 label kuwait_travel:
-    play music "<loop 0>airport.ogg" volume 0.4 if_changed
+    play music airport volume 0.4 if_changed
     music Airport Infiltration - Andy Blythe & Marten Joustra
     scene ticket_counter
     show benrey at center
