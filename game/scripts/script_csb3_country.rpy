@@ -1793,6 +1793,7 @@ label country_going_home:
     cs "Maybe... I should get two more flags."
     stop music fadeout 1.0
     music end
+    $ ending_manager.mark("country")
     $ renpy.movie_cutscene("movies/credits.webm")
     $ renpy.end_replay()
     return

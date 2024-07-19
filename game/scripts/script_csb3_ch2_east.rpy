@@ -1323,10 +1323,9 @@ label true_streaming:
         $ achievement_manager.unlock("All Over Again")
     else:
         $ achievement_manager.unlock("That's All, Folks!")
-    if preferences.csbounciness == 100:
-        $ achievement_manager.unlock("Boingy Boingy Boingy")
     scene black with fade
-    stop music2 fadeout 1.0   
+    stop music2 fadeout 1.0
+    $ ending_manager.mark("true")
     $ renpy.movie_cutscene("movies/credits.webm")
     $ renpy.end_replay()
 

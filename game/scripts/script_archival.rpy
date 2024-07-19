@@ -510,6 +510,7 @@ label archival_finale:
     addy "Thank goodness I saved this."
     n "Addy places the jar in a receptacle."
     addy "Well, here goes nothing."
+    $ ending_manager.mark("archival")
     $ renpy.movie_cutscene("movies/archival_end.webm")
     $ renpy.end_replay()
     return

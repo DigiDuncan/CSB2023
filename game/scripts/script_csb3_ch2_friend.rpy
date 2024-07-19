@@ -901,6 +901,7 @@ label friend2_car_slam:
     play sound sfx_issac
     pause 1.0
     hide paper with easeoutleft
+    $ ending_manager.mark("friend")
     pause 1.0
     $ renpy.movie_cutscene("movies/wherearetheynow.webm")
     pause 1.0

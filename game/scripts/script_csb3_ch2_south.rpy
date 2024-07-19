@@ -1239,7 +1239,8 @@ label south_lego_ending:
     cs "Now, let's see what to buy..."
     scene black with fade
     stop music fadeout 1.0
-    music end  
+    music end
+    $ ending_manager.mark("south")
     $ renpy.movie_cutscene("movies/credits.webm")
     $ renpy.end_replay()
     return
