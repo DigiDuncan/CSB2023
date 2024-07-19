@@ -848,6 +848,7 @@ label asset_debugger:
         play sound sfx_somethingchanged
         play music good_eatin
         scene testing_main
+        show ltt_bottle at center
         show cs angry phone at left
         k199 "test 63{w=0.5}{nw}"
     else:
@@ -857,6 +858,7 @@ label asset_debugger:
         play sound sfx_sparkle
         play music happy_roaming
         scene testing_front
+        show amtrak_dining_food at center
         show cs angry phone flipped at left
         k207 "test 64{w=0.5}{nw}"
     else:
@@ -866,6 +868,7 @@ label asset_debugger:
         play sound sfx_splash
         play music happy_rock
         scene course_1
+        show amtrak_dining_pancake at center
         show cs scared phone at left
         billy_far "test 65{w=0.5}{nw}"
     else:
@@ -962,7 +965,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(76):
-        play sound "secret/sfx_explosion.ogg"
+        play sound sfx_explosion
         play music insane_personalities
         scene hospital_room
         show cs at center_left
@@ -971,7 +974,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(77):
-        play sound "secret/sfx_funni.ogg"
+        play sound sfx_funni
         play music killcops
         scene hospital_reception
         show cs at center_right
@@ -980,7 +983,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(78):
-        play sound "secret/sfx_gul.ogg"
+        play sound sfx_gul
         play music klaxon_beat
         scene ticket_counter
         show cs at mid_center_right
@@ -989,7 +992,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(79):
-        play sound "secret/sfx_vine.ogg"
+        play sound sfx_vine
         play music la_by_night
         scene backseat
         show cs at mid_offscreen_right
@@ -998,6 +1001,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(80):
+        play sound sfx_amtrak_horn
         play music lady_of_the_cold
         scene hotel_lobby
         show cs at mid_offscreen_left
@@ -1006,6 +1010,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(81):
+        play sound sfx_billymaysfap
         play music laurel_palace
         scene hotel_room
         show cs at xstretch_in
@@ -1014,6 +1019,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(82):
+        play sound sfx_fart
         play music lego_island
         scene hotel_breakfast
         show cs at xstretch_out
@@ -1022,6 +1028,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(83):
+        play sound sfx_fart_again
         play music lets_hear_my_baby
         scene hotel_guitar_hero
         show cs at little_bounce
@@ -1030,6 +1037,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(84):
+        play sound sfx_fart_deep
         play music lets_hear_my_sped
         scene hotel_door
         show cs at t_post_it
@@ -1038,6 +1046,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(85):
+        play sound sfx_fart_lite
         play music letshearspring
         scene hotel_hall
         show cs at t_copguy_frontseat
@@ -1046,6 +1055,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(86):
+        play sound sfx_fart_with_reverb
         play music lisbon_fever
         scene falling_apart
         show cs at t_copguy_frontseat
@@ -1053,6 +1063,7 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(87):
+        play sound sfx_hard_knock
         play music local_forecast
         scene ltx
         show cs at t_arc_at_tims
@@ -1061,6 +1072,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(88):
+        play sound sfx_hubbub
         play music lowbudget_song
         scene ltx_stage
         show cs at t_cs_ltt
@@ -1069,6 +1081,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(89):
+        play sound sfx_lego_break
         play music maladys_melody
         scene in_limo
         show cs at t_linus_ltt
@@ -1077,6 +1090,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(90):
+        play sound sfx_lightswitch
         play music Melancholy
         scene tour_bus_inside
         show cs at t_pepzone1
@@ -1085,6 +1099,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(91):
+        play sound sfx_poot
         play music mis_leader
         scene big_stage
         show cs at t_pepzone2
@@ -1093,6 +1108,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(92):
+        play sound sfx_sliding_door_close
         play music mm_complete
         scene stage2
         show cs at t_linus_drop_tips
@@ -1101,6 +1117,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(93):
+        play sound sfx_sliding_door_open
         play music mm_select
         scene cs_door_outside
         show cs at t_gun
@@ -1109,6 +1126,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(94):
+        play sound sfx_whoosh
         play music moongazer
         scene manitoba_street
         show cs at t_stage_screen_1
@@ -1523,7 +1541,7 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(156):
-        play music yuuka_town
+        play music bedroom_day
         scene billboard
         pause 1.0
     else:
@@ -1535,71 +1553,85 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(158):
+        play music e_gadds_lab
         scene tvbilly
         pause 0.1
     else:
         jump exit_debug
     if fun_value(159):
+        play music insomnia
         scene jeep_inside_fg
         pause 0.1
     else:
         jump exit_debug
     if fun_value(160):
+        play music insomnia_intro
         scene dinerinside
         pause 0.1
     else:
         jump exit_debug
     if fun_value(161):
+        play music insomnia_loop
         scene aria_car_fg
         pause 0.1
     else:
         jump exit_debug
     if fun_value(162):
+        play music item_bounce
         scene aria_room
         pause 0.1
     else:
         jump exit_debug
     if fun_value(163):
+        play music krabby_klub
         scene aria_apartment_outside
         pause 0.1
     else:
         jump exit_debug
     if fun_value(164):
+        play music night
         scene cs_somewhere
         pause 0.1
     else:
         jump exit_debug
     if fun_value(165):
+        play music ochre_woods_day
         scene dineroutside
         pause 0.1
     else:
         jump exit_debug
     if fun_value(166):
+        play music onbs
         scene battle_block_without_theater
         pause 0.1
     else:
         jump exit_debug
     if fun_value(167):
+        play music outdoors
         scene final_destination
         pause 0.1
     else:
         jump exit_debug
     if fun_value(168):
+        play music prof_kranes_kidnap
         scene police_car_fg
         pause 0.1
     else:
         jump exit_debug
     if fun_value(169):
+        play music space
         scene war_torn_1
         pause 0.1
     else:
         jump exit_debug
     if fun_value(170):
+        play music sub_game_select
         scene war_torn_2
         pause 0.1
     else:
         jump exit_debug
     if fun_value(171):
+        play music yuuka_town
         scene war_torn_3
         pause 0.1
     else:

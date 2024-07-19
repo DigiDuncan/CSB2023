@@ -1236,8 +1236,6 @@ image amtrak_sleeper_interior_day = "bg/train/amtrak_sleeper_interior.png"
 image amtrak_sleeper_interior_night = "dark:bg/train/amtrak_sleeper_interior.png"
 image amtrak_dining_car = "bg/train/amtrak_dining_car.png"
 image amtrak_dining_table = "bg/train/amtrak_dining_table.png"
-image amtrak_dining_food = "bg/train/food.png" 
-image amtrak_dining_pancake = "bg/train/pancake.png"
 image moynihan_interior = "bg/train/moynihan_interior.png"
 image amtrak_cab = "bg/train/amtrak_cab.png"
 image amtrak_sleeper_open_bg = "bg/train/amtrak_sleeper_open_bg.png" #these two images are bigger on purpose
@@ -1298,6 +1296,8 @@ image pot_beam = "pot_beam.png"
 image onscreen_sharpener = "pencilsharpener.png"
 image renault = "renault.png"
 image passportdigi = "passportdigi.png"
+image amtrak_dining_food = "food.png" 
+image amtrak_dining_pancake = "pancake.png"
 
 # Movies
 image car background = Movie(play="movies/car_background.webm")
