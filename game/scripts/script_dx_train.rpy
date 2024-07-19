@@ -20,7 +20,7 @@ label train_intro_start:
 
     # flip
     if train_money_stolen == True:
-       show arceus happy
+        show arceus happy
     else:
         show arceus happy flipped
 
@@ -29,8 +29,8 @@ label train_intro_start:
 
     # flip
     if train_money_stolen == True:
-       show cs
-       show arceus
+        show cs
+        show arceus
     else:
         show cs flipped
         show arceus flipped
@@ -88,7 +88,7 @@ label train_intro_start:
     pause 2.0
 
     # that's not a hyphen
-    play music "<loop 0>sub_game_select.ogg"
+    play music sub_game_select
     music "Sub−Game Select - Jun Ishikawa"
 
     # flip
@@ -210,7 +210,7 @@ label train_story_begin:
 
     cs "Oh, right."
     cs "I guess we won't be needing this for a while."
-    play sound "audio/sfx_lego_break.WAV"
+    play sound sfx_lego_break
 
     if train_money_stolen == True:
         show bag at mid_mid_left with dissolve
@@ -374,7 +374,7 @@ label train_story_begin:
     music end
     show cs
     show arceus flipped
-    play sound "audio/sfx_amtrak_horn.wav"
+    play sound sfx_amtrak_horn
     n "The conversation is interrupted by the blare of a train horn."
 
     scene kingman_train_arrive with fade
@@ -517,7 +517,7 @@ label train_boarding:
     scene amtrak_sleeper_corridor
     with fade
 
-    play music "<loop 0.916>bedroom_day.ogg"
+    play music bedroom_day
     music Bedroom ~ Day - Miki Obata
     
     pause 2.0 
@@ -609,7 +609,7 @@ label train_boarding:
     tate "A little...?"
     show cs worried
     cs "You know, just a little, uhHH--!!{w=0.25}{nw}"
-    play sound "audio/sfx_punch.ogg"
+    play sound sfx_punch
 
     # TODO: less crumnchy lupin sprite
     # TODO: sfx - Lupin musical sting
@@ -653,7 +653,7 @@ label train_boarding:
 label train_enter_sleeper:
 
     # TODO: better sleeper bg
-    play sound "audio/sfx_sliding_door_close.mp3"
+    play sound sfx_sliding_door_close
     show amtrak_sleeper_interior_day
     show arceus at right
     with fade
@@ -720,13 +720,13 @@ label train_enter_sleeper:
     show tate shock flipped
     show arceus worried
     with shake2
-    play sound "audio/sfx_hard_knock.mp3"
+    play sound sfx_hard_knock
 
     n "A sudden hard knock on the door startles the group."
 
-    play music "<loop 0>item_bounce.ogg" volume 0.8
+    play music item_bounce volume 0.8
     music Item Bounce - Akira Miyagawa
-    play sound "audio/sfx_hubbub.ogg" loop fadein 2.0 volume 0.3
+    play sound sfx_hubbub loop fadein 2.0 volume 0.3
 
     n "An uproar of angry passengers grows steadily louder."
 
@@ -736,7 +736,7 @@ label train_enter_sleeper:
     arceus "So much for a relaxing trip..."
     n "The door is slid open with a heavy hand."
     
-    play sound "audio/sfx_sliding_door_open.mp3"
+    play sound sfx_sliding_door_open
     pause 1.0
     
     show cs scared flipped at mid_mid_right
@@ -778,7 +778,7 @@ label train_enter_sleeper:
     arceus "May I ask what is going on out there? The noise kinda scared us."
     show amtrak_conductor
     show cs disappointed flipped
-    play sound "audio/sfx_hubbub.ogg" loop volume 0.3
+    play sound sfx_hubbub loop volume 0.3
     amtrak_npc_1 "Hey, my watch is gone, too!" with hpunch
     amtrak_npc_2 "Man, {i}fuck{/i} your watch! They took my damn {i}Switch!{/i}"
     amtrak_npc_3 "Such {i}language!" with hpunch
@@ -874,7 +874,7 @@ label train_enter_sleeper:
     show arceus worried at right
     with moveinleft
 
-    play sound "audio/sfx_sliding_door_close.mp3"
+    play sound sfx_sliding_door_close
     n "The conductor leaves to return to his duties."
     tate "I can't believe this..."
     arceus "Me, neither. All of that money, just... {i}gone..."
@@ -985,7 +985,7 @@ label train_enter_sleeper:
     show tate sad flipped
     pause 0.25
     hide tate with moveoutleft
-    play sound "audio/sfx_sliding_door_open.mp3"
+    play sound sfx_sliding_door_open
     n "Tate swiftly exits the room and runs off, not even bothering to shut the door behind them."
 
     # TODO: bgm
@@ -1036,7 +1036,7 @@ label train_enter_sleeper:
     n "Arceus quietly gets out of bed, being careful not to wake CS."
     hide arceus with moveoutleft
 
-    play sound "audio/sfx_sliding_door_open.mp3"
+    play sound sfx_sliding_door_open
 
     if fun_value(5):
         pause 2.0
@@ -1044,7 +1044,7 @@ label train_enter_sleeper:
 
         # TODO: replace with a proper sliding door slam later
 
-        play sound "audio/sfx_clonk.wav"
+        play sound sfx_clonk
         with hpunch
         pause 1.0
         arceus "{i}Shit!"
@@ -1054,14 +1054,14 @@ label train_enter_sleeper:
     else:
         pause 2.0
         n "He gently shuts the door behind him, then makes for the dining car in hopes of drinking his worries away."
-        play sound "audio/sfx_sliding_door_close.mp3"
+        play sound sfx_sliding_door_close
 
     scene black with fade
     pause 3.0
 
 label train_dining:
 
-    play music "<loop 3.1>krabby_klub.ogg"
+    play music krabby_klub
     scene amtrak_dining_car
     with fade
     pause 1.0
@@ -1139,7 +1139,7 @@ label train_dining:
 
     # mean wanted the following section.
     
-    play music "<loop 0>prof_kranes_kidnap.ogg"
+    play music prof_kranes_kidnap
     music "Prof. Krane's Kidnap - Tsukasa Tawada"
 
     show mean furious
@@ -1194,16 +1194,16 @@ label train_wakeup:
 
     scene amtrak_sleeper_interior_night
     with fade
-    play sound "audio/sfx_sliding_door_open.mp3"
+    play sound sfx_sliding_door_open
     pause 1.0
     show arceus worried dark flipped at center with moveinleft
     pause 0.5
     arceus "CS!" with hpunch
-    play sound "audio/sfx_sliding_door_close.mp3"
+    play sound sfx_sliding_door_close
     arceus "Wake up!!"
     cs "Hnnnh... huh?"
     n "Arceus flips on the lights."
-    play sound "audio/sfx_lightswitch.wav"
+    play sound sfx_lightswitch
     show amtrak_sleeper_interior_day
     hide arceus
     show arceus worried flipped
@@ -1246,7 +1246,7 @@ label train_wakeup:
     cs "We are {i}definitely{/i} in trouble n--{w=0.25}{nw}"
     show arceus worried with hpunch
     music end
-    play sound "audio/sfx_sliding_door_open.mp3"
+    play sound sfx_sliding_door_open
     n "As if on cue, the room door slides open." with hpunch
     
     tate "{bt=a3-p10-s4}{size=+24}C.{w=0.1}S. ONE HUNDRED AND EIGHTY{w=0.1}-EIGHT!!" with vpunch
@@ -1287,7 +1287,7 @@ label train_wakeup:
     arceus "I didn't know he's, uh... whatever he is."
     pause 2.0    
 
-    play music "<loop 1.071>e_gadds_lab.ogg"
+    play music e_gadds_lab
     music "E. Gadd's Lab - Kazumi Totaka & Shinobu Tanaka"
 
     show tate sheepish
@@ -1533,7 +1533,7 @@ label train_meanwhile:
     scene amtrak_cab
     show lupin at center
     with fade
-    play music "<loop 0>onbs.ogg"
+    play music onbs
     music "ONBS - Tsukasa Tawada"
 
     pause 1.0
@@ -1541,13 +1541,13 @@ label train_meanwhile:
     show lupin hat with dissolve
     lupin_offscreen "And with {i}this..."
     lupin_offscreen "Nobody would ever suspect the driver, right?"
-    play sound "sfx_sliding_door_open.mp3"
+    play sound sfx_sliding_door_open
     n "The cab door suddenly opens from behind."
     show lupin hat flipped at left
     pause 1.0
     show amtrak_conductor at right
     with moveinright
-    play sound "sfx_sliding_door_close.mp3"
+    play sound sfx_sliding_door_close
     show lupin hat flipped
     amtrak_conductor "Oh, good evening, Mean."
     amtrak_conductor "I almost didn't recognize you {color=#D9053A}like that.{/color}"
@@ -1560,11 +1560,11 @@ label train_meanwhile:
     amtrak_conductor "If you'll excuse me..."
     hide amtrak_conductor with moveoutleft
     show lupin hat
-    play sound "sfx_sliding_door_open.mp3"
+    play sound sfx_sliding_door_open
     n "The conductor retires to the cab toilet for a while."
-    play sound "sfx_sliding_door_close.mp3"
+    play sound sfx_sliding_door_close
     pause 4.0
-    play sound "sfx_fart_with_reverb.mp3"
+    play sound sfx_fart_with_reverb
     with hpunch
     with hpunch
     with hpunch
@@ -1614,7 +1614,7 @@ label train_search_arceus:
     show lupin hat at mid_right with moveinright
     pause 1.0
     show amtrak_dining_food at offscreenleft
-    play sound "sfx_whoosh.mp3"
+    play sound sfx_whoosh
     show lupin hat at offscreenleft
     with ease
     pause 0.5
@@ -1693,11 +1693,11 @@ label train_search_cs:
 
     scene amtrak_sleeper_corridor
     show cs angry at center
-    play sound "sfx_whoosh.mp3"
+    play sound sfx_whoosh
     show lupin hat at offscreenright
     show lupin hat at center with MoveTransition(0.25)
 
-    play sound "audio/sfx_punch.ogg"
+    play sound sfx_punch
     show cs scared at mid_offscreen_left with hpunch
     show cs concentrate
     hide lupin with dissolve
@@ -1732,7 +1732,7 @@ label train_search_tate:
     show lupin hat at left
     with fade
 
-    play sound "sfx_sliding_door_open.mp3"
+    play sound sfx_sliding_door_open
     pause 3.0
 
     show tate flipped behind lupin at offscreenright
@@ -1756,7 +1756,7 @@ label train_search_tate:
     lupin_offscreen "Are you absolutely {i}sure{/i} that we're not meant to be?{image=heart_small.png}"
     show lupin hat flipped at right with moveinleft
     pause 0.1
-    play sound "audio/sfx_punch.ogg"
+    play sound sfx_punch
     show lupin hat flipped at left with MoveTransition(0.1)
     with vpunch
     n "Tate pushes the stubborn suitor away."
@@ -1777,19 +1777,19 @@ label train_search_tate:
 
     lupin_offscreen "The sea urchin isn't here yet--{w=0.5}{nw}"
     show tate shock flipped
-    play sound "sfx_fart.mp3"
+    play sound sfx_fart
     with vpunch
     with hpunch
     with hpunch
     pause 2.0
     lupin_offscreen "...and it appears that the {i}muscle{/i} of your crew is currently {i}unavailable."
-    play sound "sfx_poot.mp3"
+    play sound sfx_poot
     with vpunch
     pause 1.0
     show tate sheepish flipped
     tate "N-{w=0.1}Now, you listen here. Don't underestimate me..."
     tate "Just give me the hat, yeah? Besides, even if you're not scared of {i}me,{/i} Mr. Conductor will probably be done in there at any moment."
-    play sound "sfx_fart_deep.mp3"
+    play sound sfx_fart_deep
     with vpunch
     with vpunch
     with vpunch
@@ -1816,7 +1816,7 @@ label train_search_tate:
     lupin_offscreen "Fortunately for you, you'll only need to count to 1."
     lupin_offscreen "Catch me if you can.{image=heart_small.png}"
     show tate shock flipped
-    play sound "sfx_whoosh.mp3"
+    play sound sfx_whoosh
     show lupin hat flipped at offscreenright with MoveTransition(0.25)
     show tate shock at right
     pause 1.0
@@ -1840,7 +1840,7 @@ label train_search_tate:
     tate "Yes, sir!"
     show tate at offscreenright with moveoutright
     pause 2.0
-    play sound "sfx_fart_lite.mp3"
+    play sound sfx_fart_lite
     with hpunch
     with hpunch
     with hpunch
@@ -1924,7 +1924,7 @@ label train_confront_lupin:
     mean "Where's the conductor? Is he still on duty?"
     show tate sheepish
     tate "Well, uh...{w=0.25}{nw}"
-    play sound "sfx_fart_again.ogg"
+    play sound sfx_fart_again
     show cs scared flipped
     show tate shock flipped
     show mean scared flipped
@@ -1988,7 +1988,7 @@ label train_confront_lupin:
         pause 0.5
         show cs disappointed flipped at offscreenright with determination
         show cs disappointed flipped at right with MoveTransition(1.0)
-        play music "<loop 0>insomnia_intro.ogg"
+        play music insomnia_intro
         music Insomnia - W∆W
         pause 1.0
         cs "Tate? You can't sleep either?"
@@ -2026,7 +2026,7 @@ label train_confront_lupin:
         show cs worried flipped
         cs "Huh?"
         stop music fadeout 1.0
-        play music "<from 22.6>insomnia_full.ogg"
+        play music insomnia_full
         show tate srs at mid_mid_left with moveinleft
         tate "Will you indulge me?"
         menu:
@@ -2091,7 +2091,7 @@ label train_return_home_transition:
     show arceus
     arceus "Yeah, the walk there would take hours."
     cs "Shit, uhh, what are our other options?"
-    play music "<loop 0>mm_select.mp3" volume 0.3
+    play music mm_select volume 0.3
     music Mm Select - Matthew Simmonds
     show billy at right
     show cs
