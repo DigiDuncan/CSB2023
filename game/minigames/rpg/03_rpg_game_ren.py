@@ -563,6 +563,7 @@ class Fighter:
             for h, t in self.damage_per_turn:
                 if t > 0:
                     print(f"{self.name}: Taking {h} DOT damage...")
+                    renpy.notify(f"{self.display_name} is taking bleed damage!")
                     self.health_points -= h
                     answer.append((int(-h), "hp"))
                 else:
@@ -572,9 +573,11 @@ class Fighter:
             self.confused = renpy.random.choice([True, False])
             if self.confused:
                 print(f"{self.name}: I'm still confused...")
+                renpy.notify(f"{self.display_name} is confused!")
                 answer.append((1, "confusion"))
             else:
                 print(f"{self.name}: No longer confused!")
+                renpy.notify(f"{self.display_name} is no longer confused!")
                 answer.append((0, "confusion"))
         # Cooldowns
         for a in self.attacks:
