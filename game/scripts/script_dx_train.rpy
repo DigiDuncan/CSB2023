@@ -13,7 +13,9 @@ label train_start_bad:
 
 ######## RUN INTRO ########
 label train_intro_start:
-
+    stop music fadeout 3.0
+    music end
+    scene carpark
     # syntax: if train_money_stolen true DON'T flip sprites
 
     cs "We should head back home now. I have a plan for our newfound riches."
@@ -648,9 +650,12 @@ label train_boarding:
     hide cs
     with moveoutright
 
-    scene black with fade
+    scene black with dissolve
+    jump train_enter_sleeper
 
 label train_enter_sleeper:
+    play music bedroom_day if_changed
+    music Bedroom ~ Day - Miki Obata
 
     # TODO: better sleeper bg
     play sound sfx_sliding_door_close
@@ -1204,7 +1209,7 @@ label train_wakeup:
     cs "Hnnnh... huh?"
     n "Arceus flips on the lights."
     play sound sfx_lightswitch
-    show amtrak_sleeper_interior_day
+    scene amtrak_sleeper_interior_day
     hide arceus
     show arceus worried flipped
     pause 0.5
@@ -1358,7 +1363,7 @@ label train_wakeup:
     mean "Yeah!"
     mean "You made me the best breakfast I've had in ages, I start my dream job in 15 minutes, {i}and{/i} I get to travel the US with one of my best friends!"
     
-    if pancake_fun_value == True:
+    if train_pancake_fun_value == True:
         show arceus happy
         arceus "{size=-15}Those were some damn good pancakes, by the way."
         show arceus worried
@@ -1453,6 +1458,12 @@ label train_wakeup:
 
 ######## BAIL NOW ########
 label train_allow_staff:
+    play music e_gadds_lab if_changed
+    music "E. Gadd's Lab - Kazumi Totaka & Shinobu Tanaka"
+    scene amtrak_sleeper_interior_day
+    show tate sheepish at left
+    show arceus at mid_mid_right
+    show cs disappointed flipped at right
     $ train_skip_at_chicago = True
 
     cs "I think we should just let the staff do their jobs."
@@ -1478,13 +1489,17 @@ label train_allow_staff:
     n "CS and Arceus spend the following day resting and admiring the vast and varied scenery of The Midwest."
     n "As expected, the money is never returned."
     n "After a brief layover in Chicago and a haughty \"I told you so\" from Tate, CS and Arceus take the final uneventful transfer to New York."
-    stop music fadeout 3.0
-    music end
 
     jump train_return_home_transition
 
 ######## BEGIN THE HEIST ########
 label train_begin_heist:
+    play music e_gadds_lab if_changed
+    music "E. Gadd's Lab - Kazumi Totaka & Shinobu Tanaka"
+    scene amtrak_sleeper_interior_day
+    show tate sheepish at left
+    show arceus at mid_mid_right
+    show cs disappointed flipped at right
     $ train_skip_at_chicago = False
     cs "Do you really think we'd be able to track down the thief?"
     tate "I sure hope so. Unless they jumped off of a moving train, they've gotta be here."
@@ -1633,8 +1648,11 @@ label train_search_arceus:
     scene black with fade
     pause 2.0
     arceus "What the fuck? He even took all the {i}booze?!"
+    jump train_search_cs
     
 label train_search_cs:
+    play music onbs if_changed
+    music "ONBS - Tsukasa Tawada"
     
     # TODO: YES I KNOW THIS SCENE IS CRUSTIER THAN FRENCH BREAD PLS HELP
 
@@ -1724,9 +1742,12 @@ label train_search_cs:
     cs "At least I got a good look at his face this time!"
     cs "I need to find Arc and Tate!"
     show cs angry at offscreenright with moveinleft
-    scene black with fade
+    scene black with dissolve
+    jump train_search_tate
 
 label train_search_tate:
+    play music onbs if_changed
+    music "ONBS - Tsukasa Tawada"
     pause 0.5
     scene amtrak_cab
     show lupin hat at left
@@ -1847,10 +1868,13 @@ label train_search_tate:
     pause 2.0
     amtrak_conductor "I guess it's time to switch protein shakes..."
     pause 0.5
-    scene black with fade
+    scene black with dissolve
     pause 1.0
+    jump train_confront_lupin
 
 label train_confront_lupin:
+    play music onbs if_changed
+    music "ONBS - Tsukasa Tawada"
     scene amtrak_economy
     show tate sad at left
     show mean worried flipped at truecenter
@@ -2069,7 +2093,8 @@ label train_vs_tate_lose:
 ######## GO HOME ########
 label train_return_home_transition:
     # yes i stole much of this from south route, oh well, i'm tired ok - tate
-    
+    stop music fadeout 1.0
+    music end    
     scene moynihan_interior with fade
 
     # TODO: add mean's chosen BGM here :D
