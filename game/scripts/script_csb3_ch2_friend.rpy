@@ -8,7 +8,7 @@ label friend2_dpn_call:
     show cs disappointed at left
     show pakoo at right
     with fade
-    play music "<loop 0>tuna_fish.ogg" loop volume 0.6
+    play music tuna_fish loop volume 0.6
     music Tuna Fish - Dr. Awesome
     cs "What a crazy day so far, man."
     show cs worried 
@@ -34,7 +34,7 @@ label friend2_dpn_call:
     jump friend2_car_ride_1
 
 label friend2_car_ride_1:
-    play music "<loop 0>tuna_fish.ogg" loop volume 0.6 if_changed
+    play music tuna_fish loop volume 0.6 if_changed
     music Tuna Fish - Dr. Awesome
     scene black with fade
     n "Meanwhile, Tate's group seems to be having the time of their life."
@@ -153,7 +153,7 @@ label friend2_dpn_diner:
     n "As Aria approaches CS and the gang, they screech on the brakes as they almost run into a blockade."
     hide drive_night
     show cs_somewhere behind aria_car_fg
-    play music "<loop 0>dense_woods_b.ogg" volume 0.5
+    play music dense_woods_b volume 0.5
     music Dense Woods B - Kikiyama
     n "Cop cars surround the vicinity of the area."
     n "Aria gets out of the car."
@@ -187,7 +187,7 @@ label friend2_cs_meetup:
     scene cs_somewhere 
     show aria dark flipped at right
     with fade
-    play music "<loop 0>dense_woods_b.ogg" volume 0.5
+    play music dense_woods_b volume 0.5
     n "After Aria takes care of the cops, CS and Tate's group rolls up on the other side of the blockade."
     show cs dark at center
     show arceus dark flipped at mid_left
@@ -260,7 +260,7 @@ label friend2_cs_meetup_2:
     scene black with dissolve
     n "Digi, Aria, and Nova all go outside to meet everyone else."
     scene dineroutside
-    play music "<loop 0>la_by_night.ogg" volume 0.5
+    play music la_by_night volume 0.5
     music L.A. By Night - Dr. Awesome
     show cs dark flipped at right
     show arceus dark at mid_right
@@ -326,7 +326,7 @@ label friend2_cs_meetup_2:
     jump friend2_car_ride_2
 
 label friend2_car_ride_2:
-    play music "<loop 0>la_by_night.ogg" volume 0.5 if_changed
+    play music la_by_night volume 0.5 if_changed
     music L.A. By Night - Dr. Awesome
     scene jeep_inside_fg
     show drive_night behind jeep_inside_fg
@@ -376,7 +376,7 @@ label friend2_car_ride_2:
     music end
     cs "Well, should we find somewhere to stop for the night? We've been going for a while."
     pakoo "Holy shit! Stop, CS!"
-    play sound "sfx_tiresqueal.ogg"
+    play sound sfx_tiresqueal
     show cs scared with vpunch
     with vpunch
     with vpunch
@@ -429,7 +429,7 @@ label friend2_cs_rage:
     show cs dark angry at mid_right with move
     show cs dark angry flipped with determination
     cs "Guys, let's chase after him!"
-    play music "triage_at_dawn.ogg" loop volume 0.6
+    play music triage_at_dawn loop volume 0.6
     music Triage At Dawn - Kelly Bailey
     show arceus worried dark flipped
     arceus "CS, we need a minute. We just fought a tank."
@@ -582,7 +582,7 @@ label friend2_car_ride_3:
     show arceus flipped at left
     show pakoo at right
     with fade
-    play music "the_whale.ogg" loop volume 0.6
+    play music the_whale loop volume 0.6
     music The Whale - Dr. Awesome
     n "While they are driving, Arceus notices that Copguy starts ludicrously speeding up until he stops in Illinois."
     arceus "Guys, I think I found out where Copguy is headed."
@@ -639,7 +639,7 @@ label friend2_final_meetup:
     show arceus flipped at left
     show pakoo at right
     with fade
-    play music "prophet_2001.ogg" loop volume 0.6
+    play music prophet_2001 loop volume 0.6
     music Prophet 2001 - Dr. Awesome
     arceus "Alright, we are here."
     pakoo "So, who is joining us to help fight Copguy?"
@@ -707,12 +707,12 @@ label friend2_between_2:
     show tate at mid_left
     show arceus flipped at left
     with dissolve
-    play music "the_whale.ogg" loop volume 0.6
+    play music the_whale loop volume 0.6
     cs "C'mon, guys! We've gotta get to Copguy!"
     show cs disappointed
     tate "Where is Copguy, anyway? Do you even know where he could be?"
     n "All of a sudden, the ground starts to shake as a blinding light blasts the group."
-    play sound "sfx_earthquake.ogg"
+    play sound sfx_earthquake
     stop music fadeout 3.0
     show tate shock
     show arceus worried flipped
@@ -734,12 +734,12 @@ label friend2_between_2:
     show cs worried at center
     show tate shock at mid_left
     show arceus worried flipped at left
-    play sound "sfx_bossappears.ogg"
+    play sound sfx_bossappears
     show copguy_ex at right 
     with dissolve
     pause 2.0
     copguy "Well, well, well, CS."
-    play music "prophet_2001.ogg" loop volume 0.6
+    play music prophet_2001 loop volume 0.6
     copguy "How do you like my new form? Pretty cool, right?"
     show cs angry
     show tate srs
@@ -877,7 +877,7 @@ label friend2_car_slam:
     copguy "C--{w=0.5}{nw}"
     show db_cooper at right with moveinleft
     show cs scared
-    play sound "secret/sfx_explosion.ogg" volume 1.5
+    play sound sfx_explosion volume 1.5
     show copguycrawl with hpunch
     hide copguycrawl with moveoutbottom
     show cs worried at left with move
@@ -898,7 +898,7 @@ label friend2_car_slam:
     scene black with dissolve
     window hide
     show paper at center with easeinright
-    play sound "sfx_isaac.ogg"
+    play sound sfx_issac
     pause 1.0
     hide paper with easeoutleft
     pause 1.0
