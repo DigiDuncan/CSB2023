@@ -4,8 +4,8 @@ label asset_debugger:
     arceus "I hate the debugger, it's so uncomfortable!"
     cs "Well, it'll be over in no time! Remember to have bounciness at max!"
     if fun_value(1):
-        play sound "sfx_achieve.ogg"
-        play music "10_feet_away.ogg"
+        play sound sfx_achieve
+        play music ten_feet_away
         scene game_menu
         show craptop blank at center
         show cs at left
@@ -20,8 +20,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(2):
-        play sound "sfx_alt_punch.ogg"
-        play music "ac_title.ogg"
+        play sound sfx_alt_punch
+        play music ac_title
         scene black
         show craptop car at center
         show cs flipped at left
@@ -36,8 +36,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(3):
-        play sound "sfx_back.ogg"
-        play music "afternoon_hills.ogg"
+        play sound sfx_back
+        play music afternoon_hills
         scene cs_room
         show craptop desktop at center
         show cs happy at left
@@ -52,8 +52,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(4):
-        play sound "sfx_beam.ogg"
-        play music "airport.ogg"
+        play sound sfx_beam
+        play music airport
         scene cs_room_2
         show craptop discord at center
         show cs happy flipped at left
@@ -68,8 +68,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(5):
-        play sound "sfx_bell.ogg"
-        play music "airport_counter.ogg"
+        play sound sfx_bell
+        play music airport_counter
         scene craptop_bg
         show craptop edit at center
         show cs happy dark at left
@@ -84,8 +84,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(6):
-        play sound "sfx_bossappears.ogg"
-        play music "alien_atmosphere.ogg"
+        play sound sfx_bossappears
+        play music alien_atmosphere
         scene cs_house
         show craptop error at center
         show cs happy dark flipped at left
@@ -100,8 +100,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(7):
-        play sound "sfx_britishpound.ogg"
-        play music "another_him.ogg"
+        play sound sfx_britishpound
+        play music another_him
         scene cs_car
         show craptop off at center
         show cs angry at left
@@ -116,8 +116,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(8):
-        play sound "sfx_bucket.ogg"
-        play music "apple_kid.ogg"
+        play sound sfx_bucket
+        play music apple_kid
         scene cs_car_inside
         show craptop sad at center
         show cs angry dark at left
@@ -132,8 +132,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(9):
-        play sound "sfx_car_crash.ogg"
-        play music "atarashii_kaze.ogg"
+        play sound sfx_car_crash
+        play music atarashii_kaze
         scene walmart_outside
         show craptop updating at center
         show cs angry flipped at left
@@ -148,8 +148,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(10):
-        play sound "sfx_car_horn.ogg"
-        play music "automatic_love.ogg"
+        play sound sfx_car_horn
+        play music automatic_love
         scene walmart_inside
         show craptop ytp at center
         show cs angry dark flipped at left
@@ -164,8 +164,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(11):
-        play sound "sfx_chatter.ogg"
-        play music "basement.ogg"
+        play sound sfx_chatter
+        play music basement
         scene walmart_aisle
         show craptop evidence at center
         show cs worried at left
@@ -180,8 +180,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(12):
-        play sound "sfx_cheer1.ogg"
-        play music "bestmusicu.ogg"
+        play sound sfx_cheer1
+        play music bestmusicu
         scene walmart_register_fg
         show craptopreal at center
         show cs worried flipped at left
@@ -196,8 +196,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(13):
-        play sound "sfx_cheer2.ogg"
-        play music "billy_mix.ogg"
+        play sound sfx_cheer2
+        play music billy_mix
         scene walmart_register
         show craptopsmall at center
         show cs disappointed at left
@@ -212,8 +212,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(14):
-        play sound "sfx_cheers.ogg"
-        play music "billy_radio.ogg"
+        play sound sfx_cheers
+        play music billy_radio
         scene cs_door_closed
         show craptopsmall flipped at center
         show cs disappointed metal at left
@@ -228,8 +228,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(15):
-        play sound "sfx_chop.ogg"
-        play music "Billymusicu.ogg"
+        play sound sfx_chop
+        play music Billymusicu
         scene cs_door_open
         show billy car at mid_right
         show post_it at center
@@ -244,8 +244,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(16):
-        play sound "sfx_clapperboard.ogg"
-        play music "blazing_corridor.ogg"
+        play sound sfx_clapperboard
+        play music blazing_corridor
         scene rosen_abode
         show billy car happy at mid_right
         show ytx at center
@@ -260,8 +260,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(17):
-        play sound "sfx_clonk.ogg"
-        play music "breakout.ogg"
+        play sound sfx_clonk
+        play music breakout
         scene cs_street
         show billy car turn at mid_right
         show objection at center
@@ -276,8 +276,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(18):
-        play sound "sfx_csnore.ogg"
-        play music "brick_by_dick.ogg"
+        play sound sfx_csnore
+        play music brick_by_dick
         scene hoh_outside
         show hold_it at center
         show cs disappointed flipped at left
@@ -292,8 +292,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(19):
-        play sound "sfx_doorbell.ogg"
-        play music "broken_sky.ogg"
+        play sound sfx_doorbell
+        play music broken_sky
         scene hoh_hq
         show scott_border at center
         show cs concentrate at left
@@ -308,8 +308,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(20):
-        play sound "sfx_doorslam.ogg"
-        play music "bubble_tea.ogg"
+        play sound sfx_doorslam
+        play music bubble_tea
         scene hoh_hq2
         show cswanted at center
         show cs concentrate dark at left
@@ -324,8 +324,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(21):
-        play sound "sfx_drill.ogg"
-        play music "bun_guster.ogg"
+        play sound sfx_drill
+        play music bun_guster
         scene hoh_hq3
         show laser_beam at center
         show cs concentrate flipped at left
@@ -340,8 +340,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(22):
-        play sound "sfx_drillbreak.ogg"
-        play music "buy_something.ogg"
+        play sound sfx_drillbreak
+        play music buy_something
         scene hoh_hq4
         show cards1 at center
         show cs dark at left
@@ -356,8 +356,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(23):
-        play sound "sfx_driving.ogg"
-        play music "candle_world.ogg"
+        play sound sfx_driving
+        play music candle_world
         scene hoh_hq5
         show cards2 at center
         show cs dark flipped at left
@@ -372,8 +372,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(24):
-        play sound "sfx_duck.ogg"
-        play music "canyon.ogg"
+        play sound sfx_duck
+        play music canyon
         scene hoh_elevator
         show cards3 at center
         show cs dusk at left
@@ -388,8 +388,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(25):
-        play sound "sfx_earthquake.ogg"
-        play music "canyon_but_in_the_car.ogg"
+        play sound sfx_earthquake
+        play music canyon_but_in_the_car
         scene helipad
         show cards4 at center
         show cs disappointed dark at left
@@ -404,8 +404,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(26):
-        play sound "sfx_elevator_ding.ogg"
-        play music "canyon_but_in_the_car_real.ogg"
+        play sound sfx_elevator_ding
+        play music canyon_but_in_the_car_real
         scene jail_inside
         show cards5 at center
         show cs disappointed dark flipped at left
@@ -420,8 +420,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(27):
-        play sound "sfx_foundationfail.ogg"
-        play music "canyon_real.ogg"
+        play sound sfx_foundationfail
+        play music canyon_real
         scene jail_cell
         show con_screen at center
         show cs disappointed dusk at left
@@ -436,8 +436,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(28):
-        play sound "sfx_gamer_and_girl.ogg"
-        play music "card_castle.ogg"
+        play sound sfx_gamer_and_girl
+        play music card_castle
         scene border
         show case at center
         show cs worried dark at left
@@ -452,8 +452,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(29):
-        play sound "sfx_gasp.ogg"
-        play music "chase.ogg"
+        play sound sfx_gasp
+        play music chase
         scene outside_tim_hortons
         show case flipped at center
         show cs worried dark flipped at left
@@ -468,8 +468,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(30):
-        play sound "sfx_glass.ogg"
-        play music "circus.ogg"
+        play sound sfx_glass
+        play music circus
         scene inside_tim_hortons_fg
         show bag at center
         show cs prison at left
@@ -484,8 +484,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(31):
-        play sound "sfx_heartbeat.ogg"
-        play music "cliffs.ogg"
+        play sound sfx_heartbeat
+        play music cliffs
         scene inside_tim_hortons
         show bag flipped at center
         show cs prison_worried at left
@@ -500,8 +500,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(32):
-        play sound "sfx_hitbod1.ogg"
-        play music "clownpiece.ogg"
+        play sound sfx_hitbod1
+        play music clownpiece
         scene tunnel
         show drill at center
         show cs guard at left
@@ -516,8 +516,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(33):
-        play sound "sfx_hitbod2.ogg"
-        play music "compulsion_to_obey.ogg"
+        play sound sfx_hitbod2
+        play music compulsion_to_obey
         scene canada
         show drillbreak at center
         show cs guard dark at left
@@ -531,8 +531,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(34):
-        play sound "sfx_hitbod3.ogg"
-        play music "conflict.ogg"
+        play sound sfx_hitbod3
+        play music conflict
         scene flag
         show sansbrick at center
         show cs fakegod at left
@@ -545,8 +545,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(35):
-        play sound "sfx_hks1.ogg"
-        play music "cp_violation.ogg"
+        play sound sfx_hks1
+        play music cp_violation
         scene outside_ltt
         show oldgame at center
         show cs guitar at left
@@ -559,8 +559,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(36):
-        play sound "sfx_hks2.ogg"
-        play music "creative_exercise.ogg"
+        play sound sfx_hks2
+        play music creative_exercise
         scene inside_ltt
         show m4 at center
         show cs surprised at left
@@ -572,8 +572,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(37):
-        play sound "sfx_hks3.ogg"
-        play music "danger_mystery.ogg"
+        play sound sfx_hks3
+        play music danger_mystery
         scene alley
         show m4 flipped at center
         show cs surprised flipped at left
@@ -584,8 +584,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(38):
-        play sound "sfx_hold_it.ogg"
-        play music "dealin_dope.ogg"
+        play sound sfx_hold_it
+        play music dealin_dope
         scene question
         show m4 fire at center
         show cs scared at left
@@ -596,8 +596,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(39):
-        play sound "sfx_isaac.ogg"
-        play music "dense_woods_b.ogg"
+        play sound sfx_isaac
+        play music dense_woods_b
         scene asylum
         show m4 fire flipped at center
         show cs scared flipped at left
@@ -607,8 +607,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(40):
-        play sound "sfx_joj_loop.ogg"
-        play music "desert_dawn.ogg"
+        play sound sfx_joj_loop
+        play music desert_dawn
         scene csdesk
         show script at center
         show cs scared dark at left
@@ -618,8 +618,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(41):
-        play sound "sfx_keyboard.ogg"
-        play music "dig_this.ogg"
+        play sound sfx_keyboard
+        play music dig_this
         scene csvideo
         show post_it2 at center
         show cs insane worried at left
@@ -629,8 +629,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(42):
-        play sound "sfx_knock.ogg"
-        play music "dinerfight.ogg"
+        play sound sfx_knock
+        play music dinerfight
         scene setup
         show colorbars at center
         show cs insane worried flipped at left
@@ -640,8 +640,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(43):
-        play sound "sfx_legosfx.ogg"
-        play music "dragon_castle.ogg"
+        play sound sfx_legosfx
+        play music dragon_castle
         scene loffice
         show paper at center
         show cs insane disappointed at left
@@ -651,8 +651,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(44):
-        play sound "sfx_less_annoying_alarm_sound.ogg"
-        play music "echoing.ogg"
+        play sound sfx_less_annoying_alarm_sound
+        play music echoing
         scene ltt_bg
         show pipe_gun at center
         show cs horse at left
@@ -662,8 +662,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(45):
-        play sound "sfx_metalpipe.ogg"
-        play music "echoingspring.ogg"
+        play sound sfx_metalpipe
+        play music echoingspring
         scene ltt_fg
         show pipe_gun flipped at center
         show cs horse flipped at left
@@ -673,8 +673,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(46):
-        play sound "sfx_nicecar.ogg"
-        play music "energetic_rock.ogg"
+        play sound sfx_nicecar
+        play music energetic_rock
         scene frontdoor
         show cheetos at center
         show cs pissed at left
@@ -684,8 +684,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(47):
-        play sound "sfx_notsonicescratch.ogg"
-        play music "everlong.ogg"
+        play sound sfx_notsonicescratch
+        play music everlong
         scene road_to_canada
         show bear at center
         show mean scared flipped at mid_mid_left
@@ -694,8 +694,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(48):
-        play sound "sfx_obama.ogg"
-        play music "everybody_wants.ogg"
+        play sound sfx_obama
+        play music everybody_wants
         scene border_dusk
         show dog at center
         show mean unamused at mid_mid_left
@@ -704,8 +704,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(49):
-        play sound "sfx_objection.ogg"
-        play music "exotic.ogg"
+        play sound sfx_objection
+        play music exotic
         scene sheriff_office
         show pig at center
         show mean unamused flipped at mid_mid_left
@@ -714,8 +714,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(50):
-        play sound "sfx_okuubeam.ogg"
-        play music "facing_worlds.ogg"
+        play sound sfx_okuubeam
+        play music facing_worlds
         scene washington_road
         show pot_lift at center
         show amtrak_conductor at mid_mid_left
@@ -724,8 +724,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(51):
-        play sound "sfx_page.ogg"
-        play music "fastbudget_song.ogg"
+        play sound sfx_page
+        play music fastbudget_song
         scene washington_road day
         show pot at center
         show amtrak_conductor flipped at mid_mid_left
@@ -734,8 +734,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(52):
-        play sound "sfx_payday.ogg"
-        play music "fasting.ogg"
+        play sound sfx_payday
+        play music fasting
         scene washington_road dusk
         show pot_sunken at center
         show amtrak_stewardess at mid_mid_left
@@ -744,8 +744,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(53):
-        play sound "sfx_ping.ogg"
-        play music "fastport.ogg"
+        play sound sfx_ping
+        play music fastport
         scene washington_road morning
         show pot_beam at center
         show amtrak_stewardess flipped at mid_mid_left
@@ -754,8 +754,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(54):
-        play sound "sfx_ping_spam.ogg"
-        play music "flyday_chinatown.ogg"
+        play sound sfx_ping_spam
+        play music flyday_chinatown
         scene copcar
         show onscreen_sharpener at center
         show lupin at mid_mid_left
@@ -764,8 +764,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(55):
-        play sound "sfx_puke.ogg"
-        play music "fnaf_6.ogg"
+        play sound sfx_puke
+        play music fnaf_6
         scene copcar_mask
         show renault at center
         show lupin flipped at mid_mid_left
@@ -774,8 +774,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(56):
-        play sound "sfx_punch.ogg"
-        play music "for_the_people.ogg"
+        play sound sfx_punch
+        play music for_the_people
         scene microcenter
         show passportdigi at center
         show lupin hat at mid_mid_left
@@ -784,8 +784,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(57):
-        play sound "sfx_punch_alt.ogg"
-        play music "fourside.ogg"
+        play sound sfx_punch_alt
+        play music fourside
         scene microinside
         show copguyexe at center
         show lupin hat flipped at mid_mid_left
@@ -794,8 +794,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(58):
-        play sound "sfx_ringtone.ogg"
-        play music "france.ogg"
+        play sound sfx_ringtone
+        play music france
         scene cashzone
         show copguyexe flipped at center
         show cs phone flipped at left
@@ -803,8 +803,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(59):
-        play sound "sfx_roll_window.ogg"
-        play music "friendship.ogg"
+        play sound sfx_roll_window
+        play music friendship
         scene cashzone_foreground
         show RCOMOM at center
         show kuwait_doctor_1 at mid_left
@@ -815,8 +815,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(60):
-        play sound "sfx_select.ogg"
-        play music "full_rulle_med_klas.ogg"
+        play sound sfx_select
+        play music full_rulle_med_klas
         scene cpuaisle
         show tate_ex_front at center
         show cs disappointed phone flipped at left
@@ -825,8 +825,8 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(61):
-        play sound "sfx_siren.ogg"
-        play music "funiculi_holiday.ogg"
+        play sound sfx_siren
+        play music funiculi_holiday
         scene gpuaisle
         show tate_ex_abberation at center
         show cs worried phone at left
@@ -835,8 +835,8 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(62):
-        play sound "sfx_slots.ogg"
-        play music "gold_room.ogg"
+        play sound sfx_slots
+        play music gold_room
         scene gpuaisle2
         show tate_ex at center
         show cs worried phone flipped at left
@@ -845,8 +845,8 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(63):
-        play sound "sfx_somethingchanged.ogg"
-        play music "good_eatin.ogg"
+        play sound sfx_somethingchanged
+        play music good_eatin
         scene testing_main
         show cs angry phone at left
         k199 "test 63{w=0.5}{nw}"
@@ -854,8 +854,8 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(64):
-        play sound "sfx_sparkle.ogg"
-        play music "happy_roaming.ogg"
+        play sound sfx_sparkle
+        play music happy_roaming
         scene testing_front
         show cs angry phone flipped at left
         k207 "test 64{w=0.5}{nw}"
@@ -863,8 +863,8 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(65):
-        play sound "sfx_splash.ogg"
-        play music "happy_rock.ogg"
+        play sound sfx_splash
+        play music happy_rock
         scene course_1
         show cs scared phone at left
         billy_far "test 65{w=0.5}{nw}"
@@ -872,8 +872,8 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(66):
-        play sound "sfx_start_rocking.ogg"
-        play music "happy_running.ogg"
+        play sound sfx_start_rocking
+        play music happy_running
         scene course_2
         show cs scared phone flipped at left
         direct "test 66{w=0.5}{nw}"
@@ -881,8 +881,8 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(67):
-        play sound "sfx_thunder.ogg"
-        play music "hard_drive.ogg"
+        play sound sfx_thunder
+        play music hard_drive
         scene course_3
         show cs surprised phone at left
         monika "test 67{w=0.5}{nw}"
@@ -890,8 +890,8 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(68):
-        play sound "sfx_tinnitus.ogg"
-        play music "hightop.ogg"
+        play sound sfx_tinnitus
+        play music hightop
         scene canada_block
         show cs surprised phone flipped at left
         lancer "test 68{w=0.5}{nw}"
@@ -899,8 +899,8 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(69):
-        play sound "sfx_tiresqueal.ogg"
-        play music "hired_guns.ogg"
+        play sound sfx_tiresqueal
+        play music hired_guns
         scene dealership
         show cs pissed phone at left
         tate "test 69{w=0.5}{nw}"
@@ -908,8 +908,8 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(70):
-        play sound "sfx_valid.ogg"
-        play music "hitmewithyourbestshot.ogg"
+        play sound sfx_valid
+        play music hitmewithyourbestshot
         scene dealer_cars
         show cs pissed phone flipped at left
         kitty "test 70{w=0.5}{nw}"
@@ -917,8 +917,8 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(71):
-        play sound "sfx_victorypunch.ogg"
-        play music "hitsquad_2.ogg"
+        play sound sfx_victorypunch
+        play music hitsquad_2
         scene flintcar_outside
         show cs concentrate phone at left
         obama "test 71{w=0.5}{nw}"
@@ -926,8 +926,8 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(72):
-        play sound "sfx_waterphone.ogg"
-        play music "hohsis_theme.ogg"
+        play sound sfx_waterphone
+        play music hohsis_theme
         scene flintcar_fg
         show cs concentrate phone flipped at left
         bomaha "test 72{w=0.5}{nw}"
@@ -935,8 +935,8 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(73):
-        play sound "sfx_windows_logon.ogg"
-        play music "hohsisremix.ogg"
+        play sound sfx_windows_logon
+        play music hohsisremix
         scene car_inside_fg
         show cs at rotate_10
         blank "test 73{w=0.5}{nw}"
@@ -944,8 +944,8 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(74):
-        play sound "sfx_yelling.ogg"
-        play music "home_depot.ogg"
+        play sound sfx_yelling
+        play music home_depot
         scene joj_charger_fg
         show cs at rotate_6
         aria "test 74{w=0.5}{nw}"
@@ -953,8 +953,8 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(75):
-        play sound "sfx_ytpintro.ogg"
-        play music "honk_song.ogg"
+        play sound sfx_ytpintro
+        play music honk_song
         scene comments
         show cs at rotate_5
         aria_alt "test 75{w=0.5}{nw}"
@@ -963,7 +963,7 @@ label asset_debugger:
 
     if fun_value(76):
         play sound "secret/sfx_explosion.ogg"
-        play music "insane_personalities.ogg"
+        play music insane_personalities
         scene hospital_room
         show cs at center_left
         cop "test 76{w=0.5}{nw}"
@@ -972,7 +972,7 @@ label asset_debugger:
 
     if fun_value(77):
         play sound "secret/sfx_funni.ogg"
-        play music "killcops.ogg"
+        play music killcops
         scene hospital_reception
         show cs at center_right
         midge "test 77{w=0.5}{nw}"
@@ -981,7 +981,7 @@ label asset_debugger:
 
     if fun_value(78):
         play sound "secret/sfx_gul.ogg"
-        play music "klaxon_beat.ogg"
+        play music klaxon_beat
         scene ticket_counter
         show cs at mid_center_right
         db "test 78{w=0.5}{nw}"
@@ -990,7 +990,7 @@ label asset_debugger:
 
     if fun_value(79):
         play sound "secret/sfx_vine.ogg"
-        play music "la_by_night.ogg"
+        play music la_by_night
         scene backseat
         show cs at mid_offscreen_right
         customer "test 79{w=0.5}{nw}"
@@ -998,7 +998,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(80):
-        play music "lady_of_the_cold.ogg"
+        play music lady_of_the_cold
         scene hotel_lobby
         show cs at mid_offscreen_left
         guest "test 80{w=0.5}{nw}"
@@ -1006,7 +1006,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(81):
-        play music "laurel_palace.ogg"
+        play music laurel_palace
         scene hotel_room
         show cs at xstretch_in
         ges "test 81{w=0.5}{nw}"
@@ -1014,7 +1014,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(82):
-        play music "lego_island.ogg"
+        play music lego_island
         scene hotel_breakfast
         show cs at xstretch_out
         nurse "test 82{w=0.5}{nw}"
@@ -1022,7 +1022,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(83):
-        play music "lets_hear_my_baby.ogg"
+        play music lets_hear_my_baby
         scene hotel_guitar_hero
         show cs at little_bounce
         benrey "test 83{w=0.5}{nw}"
@@ -1030,7 +1030,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(84):
-        play music "lets_hear_my_sped.ogg"
+        play music lets_hear_my_sped
         scene hotel_door
         show cs at t_post_it
         mean "test 84{w=0.5}{nw}"
@@ -1038,7 +1038,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(85):
-        play music "letshearspring.ogg"
+        play music letshearspring
         scene hotel_hall
         show cs at t_copguy_frontseat
         agent "test 85{w=0.5}{nw}"
@@ -1046,14 +1046,14 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(86):
-        play music "lisbon_fever.ogg"
+        play music lisbon_fever
         scene falling_apart
         show cs at t_copguy_frontseat
         agent "test 86{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(87):
-        play music "local_forecast.ogg"
+        play music local_forecast
         scene ltx
         show cs at t_arc_at_tims
         receptionist "test 87{w=0.5}{nw}"
@@ -1061,7 +1061,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(88):
-        play music "lowbudget_song.ogg"
+        play music lowbudget_song
         scene ltx_stage
         show cs at t_cs_ltt
         scott_pres "test 88{w=0.5}{nw}"
@@ -1069,7 +1069,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(89):
-        play music "maladys_melody.ogg"
+        play music maladys_melody
         scene in_limo
         show cs at t_linus_ltt
         miku "test 89{w=0.5}{nw}"
@@ -1077,7 +1077,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(90):
-        play music "Melancholy.ogg"
+        play music Melancholy
         scene tour_bus_inside
         show cs at t_pepzone1
         hammond "test 90{w=0.5}{nw}"
@@ -1085,7 +1085,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(91):
-        play music "mis_leader.ogg"
+        play music mis_leader
         scene big_stage
         show cs at t_pepzone2
         jeremy "test 91{w=0.5}{nw}"
@@ -1093,7 +1093,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(92):
-        play music "mm_complete.ogg"
+        play music mm_complete
         scene stage2
         show cs at t_linus_drop_tips
         james "test 92{w=0.5}{nw}"
@@ -1101,7 +1101,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(93):
-        play music "mm_select.ogg"
+        play music mm_select
         scene cs_door_outside
         show cs at t_gun
         tom "test 93{w=0.5}{nw}"
@@ -1109,7 +1109,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(94):
-        play music "moongazer.ogg"
+        play music moongazer
         scene manitoba_street
         show cs at t_stage_screen_1
         sayori "test 94{w=0.5}{nw}"
@@ -1117,7 +1117,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(95):
-        play music "morning_highway.ogg"
+        play music morning_highway
         scene shoe_store
         show cs at t_stage_screen_c
         gnome "test 95{w=0.5}{nw}"
@@ -1125,7 +1125,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(96):
-        play music "mort_farm.ogg"
+        play music mort_farm
         scene washington_road day
         show cs at t_stage_screen_r
         chat "test 96{w=0.5}{nw}"
@@ -1133,7 +1133,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(97):
-        play music "moving_right_along.ogg"
+        play music moving_right_along
         scene washington_road dusk
         show cs at t_stagescreen
         unknown "test 97{w=0.5}{nw}"
@@ -1141,7 +1141,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(98):
-        play music "muumin_tani_fuyu.ogg"
+        play music muumin_tani_fuyu
         scene washington_road morning
         show cs at t_punchup
         crowd "test 98{w=0.5}{nw}"
@@ -1149,7 +1149,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(99):
-        play music "neko_to_sanpo.ogg"
+        play music neko_to_sanpo
         scene town
         show cs at t_mean_dining_car
         worker "test 99{w=0.5}{nw}"
@@ -1157,7 +1157,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(100):
-        play music "night.ogg"
+        play music night
         scene gasinside
         show cs at lego_run
         streetguy "test 100{w=0.5}{nw}"
@@ -1165,7 +1165,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(101):
-        play music "nordic_report_1.ogg"
+        play music nordic_report_1
         scene gasoutside
         show cs at car_run
         waitress "test 101{w=0.5}{nw}"
@@ -1173,363 +1173,363 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(102):
-        play music "nordic_report_2.ogg"
+        play music nordic_report_2
         scene carback1
         show cs at typewriter_location
         mario "test 102{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(103):
-        play music "now_what.ogg"
+        play music now_what
         scene hardwareinside
         show cs at midoffscreenright
         smiley "test 103{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(104):
-        play music "onett.ogg"
+        play music onett
         scene hardwareoutside
         show cs at midoffscreenleftspin
         violent_jay "test 104{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(105):
-        play music "park_theme.ogg"
+        play music park_theme
         scene cultforest
         show cs at offscreenrightspin
         shaggy_too_dope "test 105{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(106):
-        play music "passport.ogg"
+        play music passport
         scene mcdonalds
         show cs at offscreenleftspin
         joel "test 106{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(107):
-        play music "passport_real.ogg"
+        play music passport_real
         scene mcdees
         show cs worried punished
         ikea_greeter "test 107{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(108):
-        play music "passport_ytp.ogg"
+        play music passport_ytp
         scene rushmore
         show cs at t_dining_car_breakfast
         ikea_worker "test 108{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(109):
-        play music "penthouse.ogg"
+        play music penthouse
         scene csmore
         show cs at t_mean_rollout
         pomni "test 109{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(110):
-        play music "pixel_peeker_polka.ogg"
+        play music pixel_peeker_polka
         scene omaha
         show cs at t_dining_car_pancake
         average_swede "test 110{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(111):
-        play music "pokey.ogg"
+        play music pokey
         scene alleyway
         show cs at t_arc_pancake
         alien "test 111{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(112):
-        play music "police_station.ogg"
+        play music police_station
         scene peppinopizzabg
         show cs at t_dining_arc_search_left
         moomin "test 112{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(113):
-        play music "pressing_pursuit_cornered.ogg"
+        play music pressing_pursuit_cornered
         scene peppinopizzafg
         show cs at t_dining_arc_search_right
         snufkin "test 113{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(114):
-        play music "price_right.ogg"
+        play music price_right
         scene wozniaktroubles
         show cs at t_blur_on
         alicia "test 114{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(115):
-        play music "prophet_2001.ogg"
+        play music prophet_2001
         scene cshouse_vaporized
         show cs at t_blur_off
         witch "test 115{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(116):
-        play music "prophetpart2.ogg"
+        play music prophetpart2
         scene cscar1
         renovator "test 116{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(117):
-        play music "real_world.ogg"
+        play music real_world
         scene cscar1arc
         cruise "test 117{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(118):
-        play music "rosens_loop.ogg"
+        play music rosens_loop
         scene cscar2
         baumer "test 118{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(119):
-        play music "scales_of_joy.ogg"
+        play music scales_of_joy
         scene utah
         copguyexe "test 119{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(120):
-        play music "school.ogg"
+        play music school
         scene utahsign
         l_cultist "test 120{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(121):
-        play music "showtime.ogg"
+        play music showtime
         scene utahnight
         tate_offscreen "test 121{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(122):
-        play music "snufkin.ogg"
+        play music snufkin
         scene pizzaplace
         pakoo_offscreen "test 122{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(123):
-        play music "speedy_comet.ogg"
+        play music speedy_comet
         scene legodoor
         green_offscreen "test 123{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(124):
-        play music "stal.ogg"
+        play music stal
         scene legodooropen
         anno_offscreen "test 124{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(125):
-        play music "star_spangled_banner.ogg"
+        play music star_spangled_banner
         scene legostage
         ed_ai "test 125{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(126):
-        play music "street_noise.ogg"
+        play music street_noise
         scene vegas
         obamanobeep "test 126{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(127):
-        play music "summer_clearance_sale.ogg"
+        play music summer_clearance_sale
         scene strip
         bomahanobeep "test 127{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(128):
-        play music "super_friendly.ogg"
+        play music super_friendly
         scene slots
         RCOMEM "test 128{w=0.5}{nw}"
         pause 1.0
     else:
         jump exit_debug
     if fun_value(129):
-        play music "sweet_victory.ogg"
+        play music sweet_victory
         scene tablegames
         k_doctor "test 129{w=0.5}{nw}"
         pause 1.0
     else:
         jump exit_debug
     if fun_value(130):
-        play music "taiikusai_desu_yo.ogg"
+        play music taiikusai_desu_yo
         scene pokertable
         k_nurse "test 130{w=0.5}{nw}"
         pause 1.0
     else:
         jump exit_debug
     if fun_value(131):
-        play music "take_trip.ogg"
+        play music take_trip
         scene luigi1
         l_snow "test 131{w=0.5}{nw}"
         pause 1.0
     else:
         jump exit_debug
     if fun_value(132):
-        play music "take_trip2.ogg"
+        play music take_trip2
         scene luigi2
         lupin "test 132{w=0.5}{nw}"
         pause 1.0
     else:
         jump exit_debug
     if fun_value(133):
-        play music "the_rest_of_bubble_tea.ogg"
+        play music the_rest_of_bubble_tea
         scene vegasbathroom
         lupin_offscreen "test 133{w=0.5}{nw}"
         pause 1.0
     else:
         jump exit_debug
     if fun_value(134):
-        play music "the_whale.ogg"
+        play music the_whale
         scene backroomcasino
         mean_offscreen "test 134{w=0.5}{nw}"
         pause 1.0
     else:
         jump exit_debug
     if fun_value(135):
-        play music "thousand_march.ogg"
+        play music thousand_march
         scene outsafe
         amtrak_conductor "test 135{w=0.5}{nw}"
         pause 1.0
     else:
         jump exit_debug
     if fun_value(136):
-        play music "time_for_a_smackdown.ogg"
+        play music time_for_a_smackdown
         scene outsafeopen
         amtrak_stewardess "test 136{w=0.5}{nw}"
         pause 1.0
     else:
         jump exit_debug
     if fun_value(137):
-        play music "track3.ogg"
+        play music track_3
         scene insafe
         amtrak_npc_1 "test 137{w=0.5}{nw}"
         pause 1.0
     else:
         jump exit_debug
     if fun_value(138):
-        play music "track4.ogg"
+        play music track_4
         scene carpark
         amtrak_npc_2 "test 138{w=0.5}{nw}"
         pause 1.0
     else:
         jump exit_debug
     if fun_value(139):
-        play music "trans_atlantic.ogg"
+        play music trans_atlantic
         scene casino1
         amtrak_npc_3 "test 139{w=0.5}{nw}"
         pause 1.0
     else:
         jump exit_debug
     if fun_value(140):
-        play music "trash_zone.ogg"
+        play music trash_zone
         scene fazhall
         pause 1.0
     else:
         jump exit_debug
     if fun_value(141):
-        play music "triage_at_dawn.ogg"
+        play music triage_at_dawn
         scene fazlobby
         pause 1.0
     else:
         jump exit_debug
     if fun_value(142):
-        play music "tumultuous.ogg"
+        play music tumultuous
         scene fazplace
         pause 1.0
     else:
         jump exit_debug
     if fun_value(143):
-        play music "tuna_fish.ogg"
+        play music tuna_fish
         scene airplane_seats
         pause 1.0
     else:
         jump exit_debug
     if fun_value(144):
-        play music "tunnely_shimbers.ogg"
+        play music tunnely_shimbers
         scene airport_interior
         pause 1.0
     else:
         jump exit_debug
     if fun_value(145):
-        play music "undyne.ogg"
+        play music undyne
         scene airport_seats
         pause 1.0
     else:
         jump exit_debug
     if fun_value(146):
-        play music "upon_me.ogg"
+        play music upon_me
         scene airport_tsa
         pause 1.0
     else:
         jump exit_debug
     if fun_value(147):
-        play music "wayward_wanderer.ogg"
+        play music wayward_wanderer
         scene airport_inside
         pause 1.0
     else:
         jump exit_debug
     if fun_value(148):
-        play music "weird_personalities.ogg"
+        play music weird_personalities
         scene old_house_outside
         pause 1.0
     else:
         jump exit_debug
     if fun_value(149):
-        play music "winter_lullaby.ogg"
+        play music winter_lullaby
         scene old_house_inside
         pause 1.0
     else:
         jump exit_debug
     if fun_value(150):
-        play music "wool_gloves.ogg"
+        play music wool_gloves
         scene cc_parking_lot
         pause 1.0
     else:
         jump exit_debug
     if fun_value(151):
-        play music "xddcc.ogg"
+        play music xddcc
         scene cc_lobby
         pause 1.0
     else:
         jump exit_debug
     if fun_value(152):
-        play music "secret/credits.ogg"
+        play music credits
         scene cc_entrance
         pause 1.0
     else:
         jump exit_debug
     if fun_value(153):
-        play music "secret/lancer.ogg"
+        play music lancer
         scene cc_crowd
         pause 1.0
     else:
         jump exit_debug
     if fun_value(154):
-        play music "secret/space_classroom.ogg"
+        play music space_classroom
         scene cc_stage
         pause 1.0
     else:
         jump exit_debug
     if fun_value(155):
-        play music "error.ogg"
+        play music error
         scene cc_backstage
         pause 1.0
     else:
         jump exit_debug
     if fun_value(156):
-        play music "yuuka_town.ogg"
+        play music yuuka_town
         scene billboard
         pause 1.0
     else:
         jump exit_debug
     if fun_value(157):
-        play music "tmwstw.ogg"
+        play music tmwstw
         scene texas
         pause 0.1
     else:

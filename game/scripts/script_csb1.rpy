@@ -530,7 +530,7 @@ label csbi_end:
     pause 3.0
     cs "They didn't even do the JoJ!"
     show craptop sad at rotate_6 with hpunch
-    play sound "sfx_punch.ogg"
+    play sound sfx_punch
     if fun_value(FUN_VALUE_RARE):
         play sound sfx_gul
     pause 1.0

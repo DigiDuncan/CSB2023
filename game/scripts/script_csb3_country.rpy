@@ -194,7 +194,7 @@ label england_travel:
     jump england
 
 label sweden_travel:
-    play music "<loop 0>airport.ogg" volume 0.4 if_changed
+    play music airport volume 0.4 if_changed
     music Airport Infiltration - Andy Blythe & Marten Joustra
     scene ticket_counter
     show benrey at center
@@ -246,7 +246,7 @@ label sweden_travel:
     jump sweden
 
 label japan_travel:
-    play music "<loop 0>airport.ogg" volume 0.4 if_changed
+    play music airport volume 0.4 if_changed
     music Airport Infiltration - Andy Blythe & Marten Joustra
     scene ticket_counter
     show benrey at center
@@ -1330,9 +1330,9 @@ label japan_two:
 
 label japan_anime_adventure:
     if fun_value(FUN_VALUE_COMMON):
-        play music "<loop 0>yuuka_town.ogg" volume 0.4 if_changed
+        play music yuuka_town volume 0.4 if_changed
     else:  
-        play music "<loop 0>automatic_love.ogg" volume 0.4 if_changed
+        play music automatic_love volume 0.4 if_changed
         music Automatic Love - Siix0
     scene tokyo_street
     show cs at center
@@ -1479,9 +1479,9 @@ label japan_anime_adventure:
 
 label japan_karaoke:
     if fun_value(FUN_VALUE_COMMON):
-        play music "<loop 0>yuuka_town.ogg" volume 0.4 if_changed
+        play music yuuka_town volume 0.4 if_changed
     else:  
-        play music "<loop 0>automatic_love.ogg" volume 0.4 if_changed
+        play music automatic_love volume 0.4 if_changed
         music Automatic Love - Siix0
     scene tokyo_street
     show cs at center
@@ -1536,9 +1536,9 @@ label japan_karaoke:
 
 label japan_miku_pizza:
     if fun_value(FUN_VALUE_COMMON):
-        play music "<loop 0>yuuka_town.ogg" volume 0.4 if_changed
+        play music yuuka_town volume 0.4 if_changed
     else:  
-        play music "<loop 0>automatic_love.ogg" volume 0.4 if_changed
+        play music automatic_love volume 0.4 if_changed
         music Automatic Love - Siix0
     scene tokyo_street
     show cs at center
@@ -1675,9 +1675,9 @@ label japan_miku_pizza:
 
 label japan_leave:
     if fun_value(FUN_VALUE_COMMON):
-        play music "<loop 0>yuuka_town.ogg" volume 0.4 if_changed
+        play music yuuka_town volume 0.4 if_changed
     else:  
-        play music "<loop 0>automatic_love.ogg" volume 0.4 if_changed
+        play music automatic_love volume 0.4 if_changed
         music Automatic Love - Siix0
     scene tokyo_street
     show cs at center

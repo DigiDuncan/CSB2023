@@ -57,7 +57,7 @@ label secret_dx2:
 #     pakoo "Yeah, well fuck you, bitch!"
 #     show pakoo at center with moveinright
 #     show digi at center with vpunch
-#     play sound "sfx_punchalt.ogg"
+#     play sound sfx_punchalt
 #     show digi at t_punchup with move
 #     show pakoo at center with hpunch
 #     play music "showtime.ogg" volume 0.5
