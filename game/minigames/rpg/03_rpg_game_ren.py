@@ -437,6 +437,24 @@ class ComboAttack:
             a._turns_until_available = v
 
     @property
+    def target_count(self) -> int:
+        tc = self.attacks[0].target_count
+        for atk in self.attacks:
+            if atk.target_count != tc and atk.target_count != 0:
+                print("WARNING: ComboAttack has mismatched target counts, this will cause problems!")
+                break
+        return self.attacks[0].target_count
+
+    @property
+    def target_type(self) -> int:
+        tt = self.attacks[0].target_type
+        for atk in self.attacks:
+            if atk.target_type != tt and atk.target_count != 0:
+                print("WARNING: ComboAttack has mismatched target types, this will cause problems!")
+                break
+        return self.attacks[0].target_type
+
+    @property
     def available(self) -> bool:
         return all([a.available for a in self.attacks])
 
