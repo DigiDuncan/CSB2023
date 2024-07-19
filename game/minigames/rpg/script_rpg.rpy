@@ -238,17 +238,16 @@ label rpg_bronsonbattle:
         music "audio/error.ogg"
         
 label rpg_vs_tate:
+    python:
+        if ch2_cs_attack_used = "karate-chopped":
+            cs_chosen_form = "CS_VS_TATE_CHOP"
+        elif ch2_cs_attack_used = "Sparta-kicked":
+            cs_chosen_form = "CS_VS_TATE_KICK"
+        else:
+            cs_chosen_form = "CS_VS_TATE_PUNCH"
+
     rpg:
         bg "images/bg/train/amtrak_observation.png"
-
-        # TODO: This does not work yet, always defaults to punch
-        python:
-            if ch2_cs_attack_used = "karate-chopped":
-                cs_chosen_form = "cs_vs_tate_chop"
-            elif ch2_cs_attack_used = "Sparta-kicked":
-                cs_chosen_form = "cs_vs_tate_kick"
-            else:
-                cs_chosen_form = "cs_vs_tate_punch"
                 
         fighters:
             $cs_chosen_form
