@@ -21,37 +21,51 @@ init python:
         return s
     config.say_menu_text_filter = auto_wait
 
-# Flip
+# Flips + color shaders
 init -10 python:
-
+    # dusk shader
     duskmatrix = TintMatrix("#ffaa49")
-    darkmatrix = TintMatrix("#4848b8")
-
-    def xflip(s):
-        return Transform(s, xzoom = -1)
-
-    config.displayable_prefix["flip"] = xflip
-
+    
     def duskshade(s):
         return Transform(s, matrixcolor=duskmatrix)
-
-    config.displayable_prefix["dusk"] = duskshade
-
-    def darkshade(s):
-        return Transform(s, matrixcolor=darkmatrix)
-
-    config.displayable_prefix["dark"] = darkshade
-
+        
     def duskshadeflip(s):
         return Transform(s, xzoom = -1, matrixcolor=duskmatrix)
-
-    config.displayable_prefix["dark:flip"] = duskshadeflip
-
+        
+    config.displayable_prefix["dusk"] = duskshade
+    config.displayable_prefix["dusk:flip"] = duskshadeflip
+    
+    # dark shader
+    darkmatrix = TintMatrix("#4848b8")
+    
+    def darkshade(s):
+        return Transform(s, matrixcolor=darkmatrix)
+        
     def darkshadeflip(s):
         return Transform(s, xzoom = -1, matrixcolor=darkmatrix)
-
+        
+    config.displayable_prefix["dark"] = darkshade
     config.displayable_prefix["dark:flip"] = darkshadeflip
+    
+    # white silhouette
+    sil_white_matrix = BrightnessMatrix(value=1.0)
+        
+    def sil_white(s):
+        return Transform(s, xzoom = -1, matrixcolor=sil_white_matrix)
+        
+    def sil_white_flip(s):
+        return Transform(s, xzoom = -1, matrixcolor=sil_white_matrix)
 
+    config.displayable_prefix["sil_white"] = sil_white
+    config.displayable_prefix["sil_white:flip"] = sil_white_flip
+    
+    # x flip
+    def xflip(s):
+        return Transform(s, xzoom = -1)
+        
+    config.displayable_prefix["flip"] = xflip
+    
+    
 # Text beeps
 init python:
     renpy.music.register_channel("beep", "voice", loop = True)
@@ -632,6 +646,7 @@ image tate smug = "characters/tate/tatesmug.png"
 image tate smug dark = "dark:characters/tate/tatesmug.png"
 image tate smug flipped = "flip:characters/tate/tatesmug.png"
 image tate smug dark flipped = "dark:flip:characters/tate/tatesmug.png"
+image tate smug sil_white flipped = "sil_white:flip:characters/tate/tatesmug.png"
 image tate sheepish = "characters/tate/tatesheepish.png"
 image tate sheepish flipped = "flip:characters/tate/tatesheepish.png"
 image tate sad = "characters/tate/tatesad.png"
