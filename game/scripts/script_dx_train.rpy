@@ -2047,10 +2047,11 @@ label train_tate_ex_encounter:
         tate "Your actions affect more than just you."
         tate "Your attack on HoH SiS cost Mean his job."
         tate "You lured a thief onto this train."
-        tate "In another place, I had to drop everything to save you from your own bad decisions."
         show cs worried flipped
+        tate "In another place, I had to drop everything to save you from your own bad decisions."
         tate "In another time, I fought alongside you."
-        cs "Tate, what are you {i}talking{/i} about?"
+        show cs scared flipped
+        cs "Tate, what hell are you {i}talking{/i} about?!"
         tate "Tell me, CS."
         tate "Do you think I could have taken on that crook alone?"
         menu:
@@ -2066,13 +2067,13 @@ label train_tate_ex_encounter:
         tate "He was more of a runner than a fighter, anyway."
         pause 1.0
         show tate srs at mid_left with moveinleft
-        pause 0.5
+        pause 1.0
         tate "Do I think I could take {i}you,{/i} CS?"
         show cs worried flipped
         cs "Huh?"
         show tate srs at mid_mid_left with moveinleft
-        queue music insomnia_loop
         tate "Will you indulge me?"
+        queue music insomnia_loop
         menu:
             "Will you?"
             "No way.":
@@ -2095,7 +2096,7 @@ label train_tate_ex_encounter:
                 jump train_completed
             "Are you sure?":
                 cs "Are you sure you want this? I don't want you getting hurt..."
-                tate "You know that I wouldn't ask if I wasn't willing to accept that risk."
+                tate "You know that I wouldn't ask if I wasn't willing to accept the risk."
                 tate "I only ask that you don't hold back."
                 show cs scared flipped
                 cs "Tate, I'm serious, I don't want to hurt you."
@@ -2108,10 +2109,11 @@ label train_tate_ex_encounter:
                 show cs surprised flipped
                 cs "Of {i}you?{/i} Why would I be?"
                 tate "Then, let's do this."
-                show cs scared flipped
+                show cs worried flipped
                 show tate smug sil_white flipped with dissolve
                 stop music fadeout 1.0
                 play sound sfx_spellcast
+                show cs scared flipped
                 scene white with dissolve
                 pause 2.0
                 # TODO: Tate's battle sprite is off center and lacking the effect
@@ -2125,23 +2127,25 @@ label train_vs_tate_win:
     tate "CS {i}is{/i} the main character, after all."
     tate "At least my question is answered."
     tate "Thank you, CS."
+    tate "Let us never speak of this."
     pause 2.0
     scene black with dissolve
-    pause 1.0
+    pause 2.0
     $ achievement_manager.unlock("For Poop And For Glory")
     jump train_completed
 
 label train_vs_tate_lose:
     pause 5.0
     tate "Huh."
-    tate "I didn't think I'd actually win that for a minute, there..."
+    tate "I didn't think I'd actually win that, for a minute, there..."
     tate "You didn't go easy on me, did you?"
     tate "..."
     tate "I think I'd prefer to believe that you didn't."
     tate "Thank you, CS."
+    tate "Let us never speak of this."
     pause 2.0
     scene black with dissolve
-    pause 1.0
+    pause 2.0
     jump train_completed
     
 label train_completed:
