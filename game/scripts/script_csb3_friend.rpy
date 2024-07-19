@@ -947,7 +947,6 @@ label friend_cool_car:
     cs "Make me!"
     copguy "He's armed! Men, get in position and fire!"
     music Compulsion To Obey - Lizardking
-    # TODO: This battle crashes
     jump rpg_cop_fight_1
 
 label friend_reg_car:

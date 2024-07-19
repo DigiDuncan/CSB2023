@@ -181,7 +181,6 @@ label friend2_dpn_diner:
     stop music fadeout 3.0
     music end
     music Desert Dawn - Lizardking
-    # TODO: This battle crashes
     jump rpg_cop_fight_3
 
 label friend2_cs_meetup:
@@ -230,7 +229,6 @@ label friend2_cs_meetup:
     digi "On it."
     stop music fadeout 3.0
     music Full Rulle Med Klas - Lizardking
-    # TODO: more crashes...
     jump rpg_cop_fight_4
 
 label friend2_cs_meetup_2:
@@ -415,7 +413,6 @@ label friend2_car_ride_2:
     else:
         copguy "Soldiers! Attack!"
     music Thousand March - Mr. Sauceman
-    # TODO: crashes
     jump rpg_ng_fight
 
 label friend2_cs_rage:
@@ -682,7 +679,6 @@ label friend2_final_meetup:
     music end
     scene black with dissolve
     music Trans Atlantic - Lizardking
-    # TODO: crashy
     jump rpg_final_fight_1
 
 label friend2_between_1:
@@ -701,7 +697,6 @@ label friend2_between_1:
     arceus "Is that an even bigger tank than the last one?"
     show cs angry
     cs "Alright, guys! Battle positions! We've got a tank!"
-    # TODO: is it safe to assume every fight has a crash??
     jump rpg_final_fight_2
 
 label friend2_between_2:
@@ -767,7 +762,6 @@ label friend2_between_2:
     copguy "I think that's all you need to see. Let's end this, CS."
     stop music fadeout 3.0
     scene black with dissolve
-    # TODO: even the last guy crashes...
     jump rpg_final_fight_3 
 
 label friend2_weapon_of_choice:
