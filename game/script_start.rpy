@@ -1478,7 +1478,7 @@ define audio.real_world = "real_world.ogg"
 define audio.muumin_tani_fuyu = "muumin_tani_fuyu.ogg"
 define audio.snufin = "snufin.ogg"
 define audio.lady_of_the_cold = "lady_of_the_cold.ogg"
-define audio.afternoon_hills "afternoon_hills.ogg"
+define audio.afternoon_hills = "afternoon_hills.ogg"
 define audio.xddcc = "xddcc.ogg"
 
 # CSBIII Fired/Rockstar Music
