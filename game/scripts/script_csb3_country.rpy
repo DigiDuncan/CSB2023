@@ -8,11 +8,11 @@ label england_menu:
     python:
         locations = []
         if not ramsay_check:
-            locations.append(("Go on {i}Hell's Kitchen{/i}", "hell_zone"))
+            locations.append(("Go on {i}Hell's Kitchen{/i}", "england_hell_zone"))
         if not gear_check:
-            locations.append(("Go on {i}Top Gear{/i}", "top_zone"))
+            locations.append(("Go on {i}Top Gear{/i}", "england_top_zone"))
         if not tom_check:
-            locations.append(("Go on an adventure with Tom Scott", "scott_zone"))
+            locations.append(("Go on an adventure with Tom Scott", "england_scott_zone"))
         if not locations:
             locations.append(("I've done everything", "england_done"))
         label_jump = renpy.display_menu(locations)
@@ -28,11 +28,11 @@ label japan_menu:
     python:
         locations = []
         if not anime_check:
-            locations.append(("Go on an anime adventure", "anime_adventure"))
+            locations.append(("Go on an anime adventure", "japan_anime_adventure"))
         if not karaoke_check:
-            locations.append(("Sing some karaoke", "karaoke"))
+            locations.append(("Sing some karaoke", "japan_karaoke"))
         if not miku_check:
-            locations.append(("Have some fun with Miku", "miku_pizza"))
+            locations.append(("Have some fun with Miku", "japan_miku_pizza"))
         if not locations:
             locations.append(("I've done everything", "japan_leave"))
         label_jump = renpy.display_menu(locations)
@@ -42,19 +42,21 @@ label sweden_menu:
     python:
         locations = []
         if not lights_check:
-            locations.append(("Go see the Aurora Borealis", "aurora_borealis"))
+            locations.append(("Go see the Aurora Borealis", "sweden_aurora_borealis"))
         if not ikea_check:
-            locations.append(("Check out Ikea", "ikea"))
+            locations.append(("Check out Ikea", "sweden_ikea"))
         if not joel_check:
-            locations.append(("Find Joel", "joel"))
+            locations.append(("Find Joel", "sweden_joel"))
         if not locations:
             locations.append(("I've done everything", "sweden_leave"))
         label_jump = renpy.display_menu(locations)
         renpy.jump(label_jump)
 
-label knocked_out:
+label country_knocked_out:
+    stop music fadeout 1.0
+    music end
     scene black
-    play sound "<loop 0>sfx_heartbeat.ogg" volume 1
+    play sound sfx_heartbeat
     n "..."
     n "As CS' vision fades back into view, he can hear a faint heart monitor beeping."
     scene hospital_room with dissolve
@@ -106,11 +108,11 @@ label knocked_out:
     n "CS hastily makes his way to the airport."
     window hide
     pause 1.0
-    jump airport_choose
+    jump country_airport_choose
 
-label airport_choose:
+label country_airport_choose:
     scene airport_interior with fade
-    play music "<loop 0>airport.ogg" volume 0.4
+    play music airport volume 0.4
     music Airport Infiltration - Andy Blythe & Marten Joustra
     show cs at left with moveinleft
     cs "Alright, whew! I made it."
@@ -139,6 +141,11 @@ label airport_choose:
             jump kuwait_travel
 
 label england_travel:
+    play music airport volume 0.4 if_changed
+    music Airport Infiltration - Andy Blythe & Marten Joustra
+    scene ticket_counter
+    show benrey at center
+    show cs disappointed at left
     $ engfirst = True
     cs "Uhh, I guess I wanted to go to England?"
     benrey "Well, I'm sorry, but everyone has a Pass{w=0.5} Port!"
@@ -187,6 +194,11 @@ label england_travel:
     jump england
 
 label sweden_travel:
+    play music "<loop 0>airport.ogg" volume 0.4 if_changed
+    music Airport Infiltration - Andy Blythe & Marten Joustra
+    scene ticket_counter
+    show benrey at center
+    show cs disappointed at left
     $ swedfirst = True
     cs "Uhh, I guess I wanted to go to Sweden?"
     benrey "But everyone has a Pass{w=0.5} Port!"
@@ -199,7 +211,7 @@ label sweden_travel:
     benrey "Alright, your plane is actually leaving here in about 20 minutes."
     cs "Ah, shoot, thanks!"
     hide cs with moveoutright
-    show airport_tsa
+    scene airport_tsa
     show tsa at right
     with fade
     n "CS rushes up to the TSA to get checked through."
@@ -234,6 +246,11 @@ label sweden_travel:
     jump sweden
 
 label japan_travel:
+    play music "<loop 0>airport.ogg" volume 0.4 if_changed
+    music Airport Infiltration - Andy Blythe & Marten Joustra
+    scene ticket_counter
+    show benrey at center
+    show cs disappointed at left
     $ japfirst = True
     cs "Uhh, I guess I wanted to go to Japan?"
     benrey "Well, I'm sorry, but everyone's got a Pass{w=0.5} Port!"
@@ -246,7 +263,7 @@ label japan_travel:
     benrey "Alright, your plane is actually leaving here in about 10 minutes."
     cs "Ah, shucks, thanks!"
     hide cs with moveoutright
-    show airport_tsa
+    scene airport_tsa
     show tsa at right
     with fade
     n "CS rushes up to the TSA to get checked through."
@@ -278,6 +295,8 @@ label japan_travel:
     jump japan
 
 label england:
+    stop music fadeout 3.0
+    music end
     $ england_check = True
     scene black
     pause 1.0
@@ -310,6 +329,8 @@ label england:
     jump england_first
 
 label england_first:
+    stop music fadeout 1.0
+    music end
     scene uk_street with fade
     show cs disappointed at mid_left with moveinleft
     n "CS walks up to a shop owner on the side of the street."
@@ -318,7 +339,7 @@ label england_first:
     cs "Damn, sorry."
     cs "Man, this kinda sucks!"
     show arceus at mid_right with moveinright
-    play music "<loop 0>stal.ogg" volume 0.4
+    play music stal volume 0.4
     arceus "Hey, CS? Is that you?"
     show cs
     cs "Oh, my God! Why-- How are you here?"
@@ -356,9 +377,10 @@ label england_first:
     with moveoutright
     show black with dissolve
     n "Arceus and CS jump on a double decker and head down to the house."
-    jump arceus_place
+    jump england_arceus_place
 
 label england_second:
+    stop music fadeout 3.0
     $ england_check = True
     scene black
     pause 1.0
@@ -383,7 +405,7 @@ label england_second:
     scene embassy with fade
     show cs at center with moveinleft
     show arceus at mid_right with moveinright
-    play music "<loop 0>stal.ogg" volume 0.4
+    play music stal volume 0.4
     arceus "Hey CS? Is that you?"
     show cs
     cs "Oh, my God! Why-- How are you here?"
@@ -409,9 +431,11 @@ label england_second:
     with moveoutright
     show black with dissolve
     n "Arceus and CS jump on a double decker and heads down to their house."
-    jump arceus_place
+    jump england_arceus_place
 
-label arceus_place:
+label england_arceus_place:
+    stop music fadeout 1.0
+    music end
     pause 1.0
     scene kitty_house with fade
     show arceus flipped at center with moveinleft
@@ -426,7 +450,7 @@ label arceus_place:
     scene kitty_room with fade
     show arceus flipped at center with moveinleft
     show cs at left with moveinleft
-    play music "<loop 0>wool_gloves.ogg" volume 0.4
+    play music wool_gloves volume 0.4
     music Wool Gloves - imagiro
     cs "You guys have quite a quaint little place!"
     show arceus
@@ -479,7 +503,13 @@ label arceus_place:
     arceus "What do you want to do here, CS? It's a brand new country! There are a ton of things you can do..."
     jump england_menu
 
-label hell_zone:
+label england_hell_zone:
+    play music wool_gloves volume 0.4 if_changed
+    music Wool Gloves - imagiro
+    scene dining_room
+    show kitty flipped at right
+    show arceus at center
+    show cs at left
     $ ramsay_check = True
     cs "I wanna go on {i}Hell's Kitchen!{/i}"
     show arceus worried
@@ -556,7 +586,7 @@ label hell_zone:
     show arceus at right
     show cs at left
     with fade
-    play music "<loop 0>conflict.ogg" volume 0.4
+    play music conflict volume 0.4
     music Conflict - David Vanacore
     cs "Well, this definitely looks like Hell."
     show arceus worried
@@ -595,7 +625,7 @@ label hell_zone:
     gordon "Oh, for fuck's sake! What the bloody hell is this?"
     show cs disappointed flipped
     n "Before CS can speak, Gordon takes one good look at CS' clothing."
-    play sound "sfx_waterphone.ogg"
+    play sound sfx_waterphone
     gordon "Did you wear this silly outfit as well just to fuck with me? Are you serious?"
     cs "What? This is just my normal attire."
     scene talking_head
@@ -627,18 +657,18 @@ label hell_zone:
     show cs disappointed flipped
     with fade
     cs "Well, I have a couple options for what I should make."
-    jump gordon_menu
+    jump england_gordon_menu
 
-label gordon_menu:
+label england_gordon_menu:
     scene hell_kitchen
     show cs disappointed flipped
     menu:
         "Make some Genergy":
-            jump good_ramsay
+            jump england_good_ramsay
         "Make Phil's cake":
-            jump bad_ramsay
+            jump england_bad_ramsay
 
-label bad_ramsay:
+label england_bad_ramsay:
     stop music fadeout 3.0
     scene hell_kitchen
     show cs flipped
@@ -652,7 +682,7 @@ label bad_ramsay:
     show cs flipped at right
     show gordon at left
     with fade
-    play music "<loop 0>tumultuous.ogg" volume 0.4
+    play music tumultuous volume 0.4
     music Tumultuous - David Vanacore
     gordon "Alright, Mr. 188, let's see what you've made!"
     cs "This is my special chocolate cake recipe! With a secret ingredient."
@@ -665,13 +695,16 @@ label bad_ramsay:
     show cs disappointed flipped
     cs "Woah, you okay there?"
     n "Gordon holds his throat and falls over, spits out the Flex Seal, and passes out."
-    play sound "sfx_waterphone.ogg"
+    play sound sfx_waterphone
     hide gordon with moveoutbottom
     show cs disappointed flipped with hpunch
     cs "Ooooooooohhhhh fuuuuuuucckkk."
-    bad_end "Master Chef?\nMore like, Master Death!" "gordon_menu"
+    bad_end "Master Chef?\nMore like, Master Death!" "england_gordon_menu"
 
-label good_ramsay:
+label england_good_ramsay:
+    stop music fadeout 3.0
+    music end 
+    scene hell_kitchen
     show cs flipped
     cs "Yeah, you know what? I'm gonna make some Genergy."
     cs "It's my signature beverage! And Michael liked it, I think, and he's British too!"
@@ -682,7 +715,7 @@ label good_ramsay:
     scene hell_kitchen
     show cs flipped
     with fade
-    play music "<loop 0>tumultuous.ogg" volume 0.4
+    play music tumultuous volume 0.4
     music Tumultuous - David Vanacore
     show gordon at left with moveinleft
     gordon "Alright, Mr. 188! Chop, chop!"
@@ -701,7 +734,7 @@ label good_ramsay:
     show cs flipped
     gordon "Well, that's a new one."
     gordon "I don't think I've ever seen someone make an energy drink on a cooking show..."
-    play sound "sfx_waterphone.ogg"
+    play sound waterphone
     gordon "What do you mean that the juices are gonna move through you? Like, is this gonna make me have to go to the bathroom?"
     show cs disappointed flipped
     cs "No, I meant, like, energize you."
@@ -775,7 +808,7 @@ label good_ramsay:
     show arceus at center
     show kitty flipped at right
     with fade
-    play music "<loop 0>wool_gloves.ogg" volume 0.4
+    play music wool_gloves.ogg volume 0.4
     kitty "CS did {i}what?"
     arceus "Yeah, I know, right? I don't understand either."
     kitty "What is in this Genergy drink of yours?"
@@ -787,7 +820,13 @@ label good_ramsay:
     $ achievement_manager.unlock("Master Chef")
     jump england_menu
     
-label top_zone:
+label england_top_zone:
+    play music wool_gloves.ogg volume 0.4 if_changed
+    music Wool Gloves - imagiro
+    scene dining_room
+    show kitty flipped at right
+    show arceus at center
+    show cs at left
     $ gear_check = True
     cs "I kinda wanna go on {i}Top Gear.{/i}"
     kitty "Well, now I gotta see that."
@@ -820,7 +859,7 @@ label top_zone:
     show arceus at right
     show kitty at left
     with fade
-    play music "<loop 0>lisbon_fever.ogg" volume 0.4
+    play music lisbon_fever volume 0.4
     music Lisbon Fever - Dr. Awesome
     n "As they drive up to the track, the gang sees Jeremy, Richard, and James."
     kitty "Alright, we'll watch from the side of the track."
@@ -863,17 +902,18 @@ label top_zone:
     hammond "Well, what are you guys waiting for? Let's do this race!"
     scene black with dissolve
     n "CS and Richard get in their cars and wait for the countdown."
-    jump top_gear_menu
+    jump england_top_gear_menu
 
-label top_gear_menu:
+label england_top_gear_menu:
+    stop music fadeout 3.0
     scene black
     menu:
         "Lose the race":
-            jump top_lose
+            jump england_top_lose
         "Win the race":
-            jump top_win
+            jump england_top_win
     
-label top_lose:
+label england_top_lose:
     stop music fadeout 3.0
     music end    
     n "As the race finishes, the contestants get out of their cars."
@@ -888,9 +928,9 @@ label top_lose:
     hammond "As for you..."
     n "Jeremy pulls out a remote switch that detonates a bomb under CS' car, turning it into scrap."
     cs "Fuck."
-    bad_end "You want it all,\nbut the world won't give it up!" "top_gear_menu"
+    bad_end "You want it all,\nbut the world won't give it up!" "england_top_gear_menu"
 
-label top_win:
+label england_top_win:
     stop music fadeout 3.0
     music end    
     n "As the race finishes, the contestants get out of their cars."
@@ -929,7 +969,7 @@ label top_win:
     show arceus at right
     show kitty at left
     with fade    
-    play music "<loop 0>wool_gloves.ogg" volume 0.4
+    play music wool_gloves volume 0.4
     kitty "Woo! You won the race!"
     show arceus happy
     arceus "That was insane, man!"
@@ -961,7 +1001,13 @@ label top_win:
     $ achievement_manager.unlock("Bottom Gear")
     jump england_menu
 
-label scott_zone:
+label england_scott_zone:
+    play music wool_gloves volume 0.4 if_changed
+    music Wool Gloves - imagiro
+    scene dining_room
+    show kitty flipped at right
+    show arceus at center
+    show cs at left
     $ tom_check = True
     cs "I wanna see what Tom Scott is up to."
     kitty "Who, now?"
@@ -1015,18 +1061,22 @@ label scott_zone:
     tom "As you can see here, I am standing in the middle of this road."
     tom "That means if I get hit by a car, this video will not be uploaded."
     tom "Anyways, as I was saying..."
-    jump scott_menu
+    jump england_scott_menu
 
-label scott_menu:
+label england_scott_menu:
+    stop music fadeout 3.0
     scene tom_road
     show tom
     menu:
         "Tell Tom to move":
-            jump scott_move
+            jump england_scott_move
         "Let Tom do his thing":
-            jump scott_movent
+            jump england_scott_movent
 
-label scott_move:
+label england_scott_move:
+    stop music fadeout 3.0
+    scene tom_road
+    show tom
     show cs flipped at offscreenright
     cs "Hey, Tom, move out of the way!"
     show tom at right with move
@@ -1073,7 +1123,7 @@ label scott_move:
     show arceus at center
     show kitty flipped at right
     with fade
-    play music "<loop 0>wool_gloves.ogg" volume 0.4
+    play music wool_gloves volume 0.4
     kitty "You saved a man's life?"
     cs "Yeah, and I get to be in his video!"
     kitty "Well, looks like you got two for one, then!"
@@ -1082,6 +1132,12 @@ label scott_move:
     jump england_menu
 
 label england_done:
+    play music wool_gloves volume 0.4 if_changed
+    music Wool Gloves - imagiro
+    scene dining_room
+    show kitty flipped at right
+    show arceus at center
+    show cs at left
     cs "Well, I think that's everything I wanted to do here."
     show arceus happy
     arceus "Oh, nice!"
@@ -1100,9 +1156,9 @@ label england_done:
     elif japan_check and (not sweden_check):
         jump england_sweden
     else:
-        jump going_home
+        jump country_going_home
 
-label scott_movent:
+label england_scott_movent:
     stop music fadeout 3.0
     scene tom_road
     show tom
@@ -1111,14 +1167,20 @@ label scott_movent:
     show car at car_run behind tom
     with move
     tom "This road here was created in 1968, by OHP--{w=0.5}{nw}"
-    play sound "sfx_car_crash.ogg" volume 0.7
+    play sound sfx_car_crash volume 0.7
     scene black
     n "A speeding car rams into Tom and he flies off into the distance."
     cs "Uh oh. {w=3.5} I didn't see nothin'."
-    bad_end "Welp, that's the end\nof that video!" "scott_menu"
+    bad_end "Welp, that's the end\nof that video!" "england_scott_menu"
     return
 
 label england_japan:
+    play music wool_gloves volume 0.4 if_changed
+    music Wool Gloves - imagiro
+    scene dining_room
+    show kitty flipped at right
+    show arceus at center
+    show cs at left
     cs "I was thinking of going to Japan."
     kitty "That sounds pretty cool!"
     arceus "Is there anywhere you wanna go in particular in Japan?"
@@ -1159,6 +1221,12 @@ label england_japan:
     jump japan_two
 
 label england_sweden:
+    play music wool_gloves volume 0.4 if_changed
+    music Wool Gloves - imagiro
+    scene dining_room
+    show kitty flipped at right
+    show arceus at center
+    show cs at left
     cs "I was thinking of going to Sweden."
     kitty "Huh, never heard much about Sweden."
     arceus "Is there anywhere you wanna go in particular in Sweden?"
@@ -1189,7 +1257,7 @@ label england_sweden:
     n "CS grabs his ticket and heads onto the next plane."
     scene airplane_seats
     show cs at left
-    with fade
+    with dissolve
     cs "Man, I'm kinda nervous to go to Sweden, actually."
     cs "It's going to be pretty crazy, I think."
     cs "Oh well, I'm sure it'll be fun."
@@ -1198,21 +1266,23 @@ label england_sweden:
     jump sweden_second
 
 label japan:
+    stop music fadeout 3.0
+    music end
     $ japan_check = True
-    show airplane_seats
+    scene airplane_seats
     show cs at left
-    with fade
+    with dissolve
     n "As CS wakes up, he sees the plane landing outside."
     cs "Wow, I really slept a lot, or that was a crazy fast trip."
     cs "Welp, time to check out Japan!"
     scene black with dissolve
     n "CS exits the terminal and enters the airport."
-    scene tokyo_airport with fade
+    scene tokyo_airport with dissolve
     show cs at center with moveinleft
     if fun_value(FUN_VALUE_COMMON):
-        play music "<loop 0>yuuka_town.ogg" volume 0.4
+        play music yuuka_town volume 0.4
     else:        
-        play music "<loop 0>automatic_love.ogg" volume 0.4
+        play music automatic_love volume 0.4
         music Automatic Love - Siix0
     cs "Wow, this place is already pretty crazy!"
     cs "I feel like this was a better place to pick than England or Sweden."
@@ -1229,8 +1299,10 @@ label japan:
     jump japan_menu
 
 label japan_two:
+    stop music fadeout 3.0
+    music end
     $ japan_check = True
-    show airplane_seats
+    scene airplane_seats
     show cs at left
     with fade
     n "As CS wakes up, he sees the plane landing outside."
@@ -1241,9 +1313,9 @@ label japan_two:
     scene tokyo_airport with fade
     show cs at center with moveinleft
     if fun_value(FUN_VALUE_COMMON):
-        play music "<loop 0>yuuka_town.ogg" volume 0.4
+        play music yuuka_town volume 0.4
     else:  
-        play music "<loop 0>automatic_love.ogg" volume 0.4
+        play music automatic_love volume 0.4
         music Automatic Love - Siix0
     cs "Wow, this place is already pretty crazy!"
     cs "Well, I don't know anyone who speaks English over here.."
@@ -1256,7 +1328,14 @@ label japan_two:
     cs "But the question is, what should I do here?"
     jump japan_menu
 
-label anime_adventure:
+label japan_anime_adventure:
+    if fun_value(FUN_VALUE_COMMON):
+        play music "<loop 0>yuuka_town.ogg" volume 0.4 if_changed
+    else:  
+        play music "<loop 0>automatic_love.ogg" volume 0.4 if_changed
+        music Automatic Love - Siix0
+    scene tokyo_street
+    show cs at center
     $ anime_check = True
     cs "I guess I can look around the city."
     cs "This place is so compact, I could be here for days!"
@@ -1305,7 +1384,7 @@ label anime_adventure:
     cashier "Yeah, I remember! That's from Nekopara, right?"
     cashier "Wait here, I know the head of NekoWorks. Lemme take a picture and send it to them."
     hide cs with moveoutright
-    play music "<loop 0>chase.ogg" volume 0.4
+    play music chase volume 0.4
     music The Chase - Toby Fox
     n "CS rushes out the door."
     cashier "Wait! Come back!"
@@ -1342,7 +1421,7 @@ label anime_adventure:
     cashier "Hey, look at that! It's Sayori, the creator of Nekopara!"
     show cs scared
     cs "{i}What?!"
-    play music "<loop 0>neko_to_sanpo.ogg" volume 0.4
+    play music neko_to_sanpo volume 0.4
     music Neko To Sanpo - NEKO WORKs
     sayori "Hello, and who might you be?"
     show cs disappointed
@@ -1388,9 +1467,9 @@ label anime_adventure:
     show cs at center
     with fade
     if fun_value(FUN_VALUE_COMMON):
-        play music "<loop 0>yuuka_town.ogg" volume 0.4
+        play music yuuka_town volume 0.4
     else:  
-        play music "<loop 0>automatic_love.ogg" volume 0.4
+        play music automatic_love volume 0.4
     if england_check:
         cs "I could plan a super fancy trip after this is over!"
     else:
@@ -1398,7 +1477,14 @@ label anime_adventure:
     cs "I still feel like I should stay and do some things here."
     jump japan_menu
 
-label karaoke:
+label japan_karaoke:
+    if fun_value(FUN_VALUE_COMMON):
+        play music "<loop 0>yuuka_town.ogg" volume 0.4 if_changed
+    else:  
+        play music "<loop 0>automatic_love.ogg" volume 0.4 if_changed
+        music Automatic Love - Siix0
+    scene tokyo_street
+    show cs at center
     $ karaoke_check = True
     cs "I mean, I've always wanted to sing karaoke in Japan."
     cs "I don't know where I could go to sing, though."
@@ -1442,13 +1528,20 @@ label karaoke:
     with fade
     $ achievement_manager.unlock("Dame Da Ne")
     if fun_value(FUN_VALUE_COMMON):
-        play music "<loop 0>yuuka_town.ogg" volume 0.4
+        play music yuuka_town volume 0.4
     else:  
-        play music "<loop 0>automatic_love.ogg" volume 0.4
+        play music automatic_love volume 0.4
     cs "Well, is there anything else I should do here?"
     jump japan_menu
 
-label miku_pizza:
+label japan_miku_pizza:
+    if fun_value(FUN_VALUE_COMMON):
+        play music "<loop 0>yuuka_town.ogg" volume 0.4 if_changed
+    else:  
+        play music "<loop 0>automatic_love.ogg" volume 0.4 if_changed
+        music Automatic Love - Siix0
+    scene tokyo_street
+    show cs at center
     $ miku_check = True
     cs "I wanna have some fun with Miku!"
     cs "They had a Domino's ad where you can go have some fun with Miku, right?"
@@ -1463,7 +1556,7 @@ label miku_pizza:
     show cashier at right
     with fade
     show cs at left with moveinleft
-    play music "<loop 0>funiculi_holiday.ogg" volume 0.3
+    play music funiculi_holiday volume 0.3
     music Funiculi Holiday - ClascyJitto
     cashier "Welcome to Domino's! Can I take your order?"
     cs "I want to meet Miku!"
@@ -1508,7 +1601,7 @@ label miku_pizza:
     show cs at center
     with fade
     pause 3.0
-    play sound "sfx_elevator_ding.ogg"
+    play sound sfx_elevator_ding
     scene black with dissolve
     pause 1.0
     scene ceo_office
@@ -1529,7 +1622,7 @@ label miku_pizza:
     scott_pres "Listen, son, I hate to break it to you, but I don't think Miku is real."
     cs "What do you mean she's not real? She was dancing with you in the commerical!"
     scott_pres "I know, but that was movie magic. I'm sorry--{w=0.5}{nw}"
-    play music "real_world.ogg"
+    play music real_world
     music Real World - Project SEKAI
     show cs
     show miku at center with moveinbottom
@@ -1562,9 +1655,9 @@ label miku_pizza:
     show miku at right
     with fade
     if fun_value(FUN_VALUE_COMMON):
-        play music "<loop 0>yuuka_town.ogg" volume 0.4
+        play music yuuka_town volume 0.4
     else:  
-        play music "<loop 0>automatic_love.ogg" volume 0.4
+        play music automatic_love volume 0.4
     miku "... so I said, \"You think {i}that{/i} was fast? Wait until I sing {i}INTENSE VOICE!\""
     n "CS laughs."
     cs "Well, Miku, this was very nice, but I need to head on my way."
@@ -1581,9 +1674,14 @@ label miku_pizza:
     jump japan_menu
 
 label japan_leave:
+    if fun_value(FUN_VALUE_COMMON):
+        play music "<loop 0>yuuka_town.ogg" volume 0.4 if_changed
+    else:  
+        play music "<loop 0>automatic_love.ogg" volume 0.4 if_changed
+        music Automatic Love - Siix0
     scene tokyo_street
-    show cs
-    with fade
+    show cs at center
+    with dissolve
     cs "Well, I think I've done everything I wanted to do here!"
     cs "This place was really cool, but I should get going for now."
     cs "Maybe one day, I can return when I have more time."
@@ -1594,7 +1692,9 @@ label japan_leave:
     jump japan_leave_airport
 
 label japan_leave_airport:
-    show tokyo_airport with fade
+    stop music fadeout 3.0
+    music end
+    scene tokyo_airport with fade
     show cs at center with moveinleft
     cs "Man, what a time I had here."
     cs "Alright, well, where should I go this time?"
@@ -1609,9 +1709,13 @@ label japan_leave_airport:
     elif england_check and (not sweden_check):
         jump japan_sweden
     else:
-        jump going_home
+        jump country_going_home
 
 label japan_sweden:
+    stop music fadeout 3.0
+    music end
+    scene tokyo_airport
+    show cs
     cs "I think I wanna go to Sweden this time."
     cs "I know Vinesauce Joel is there, and I have always kinda wanted to meet up with him."
     cs "Well, if I managed to do the crazy things I did in this country, then I'm sure I can make it in Sweden!"
@@ -1627,6 +1731,10 @@ label japan_sweden:
     jump sweden_second
 
 label japan_england:
+    stop music fadeout 3.0
+    music end
+    scene tokyo_airport
+    show cs
     $ england_check = True
     cs "I think I wanna go to England this time."
     cs "I've always wanted to go to England, there is so much to do there.."
@@ -1641,7 +1749,7 @@ label japan_england:
     scene black with dissolve
     jump england_second
 
-label going_home:
+label country_going_home:
     stop music fadeout 1.0
     cs "I guess it's time to head home."
     cs "I've done so many things during this trip. I honestly forgot why I started this."
@@ -1653,7 +1761,7 @@ label going_home:
     n "CS takes another nap to pass the time."
     scene cs_house with fade
     show cs happy at mid_left with moveinleft
-    play music "<loop 0>park_theme.ogg" volume 0.5
+    play music park_theme volume 0.5
     music Park Theme - Lorin Nelson
     cs "Ah, finally back home!"
     cs "I can't wait to get some sleep in my own bed again."
@@ -1690,6 +1798,8 @@ label going_home:
     return
 
 label sweden:
+    stop music fadeout 1.0
+    music end
     $ sweden_check = True
     scene airplane_seats
     show cs at left
@@ -1702,7 +1812,7 @@ label sweden:
     scene stockholm 
     with fade
     show cs at center with moveinleft
-    play music "<loop 0>creative_exercise.ogg" loop volume 0.3
+    play music creative_exercise loop volume 0.3
     cs "Wow! There's so many people around."
     cs "I guess I should try to find something to do..."
     cs "I don't have much money left, but I should be able to find a bus to somewhere cool."
@@ -1727,6 +1837,8 @@ label sweden:
     jump sweden_menu
 
 label sweden_second:
+    stop music fadeout 1.0
+    music end
     $ sweden_check = True
     scene airplane_seats
     show cs at left
@@ -1739,7 +1851,7 @@ label sweden_second:
     scene stockholm 
     with fade
     show cs at center with moveinleft
-    play music "<loop 0>creative_exercise.ogg" loop volume 0.3
+    play music creative_exercise loop volume 0.3
     cs "Wow! There's so many people around."
     cs "I guess I should try to find something to do..."
     cs "I should be able to find a bus to somewhere cool. I have some money this time!"
@@ -1764,14 +1876,16 @@ label sweden_second:
     n "CS looks over the map, trying to figure out which bus to take."
     jump sweden_menu 
 
-label aurora_borealis:
+label sweden_aurora_borealis:
+    stop music fadeout 3.0
+    music end
+    scene bus_map
     $ lights_check = True
     cs "I {i}am{/i} in Sweden, so I guess I may as well go see the Northern Lights."
     cs "I should go somewhere less urban if I wanna see it properly, though. Too much light pollution here."
     cs "I'll just get on a bus and keep going until I see somewhere with clear skies."
     scene black with dissolve
-    stop music fadeout 3.0
-    music end
+    pause 3.0
     scene bus_seat
     show cs flipped at mid_left
     with dissolve
@@ -1790,7 +1904,7 @@ label aurora_borealis:
     n "Outside of the woods is a valley of rolling hills, entirely clear except for a strange cylindrical house."
     cs "That's one interesting building. I wonder who lives there."
     show moomin flipped at left with moveinleft
-    play music "<loop 0>muumin_tani_fuyu.ogg" volume 0.5
+    play music muumin_tani_fuyu volume 0.5
     music Muumin Tani Fuyu - Sumio Shiratori
     moomin "I do!"
     show cs worried with hpunch
@@ -1847,7 +1961,7 @@ label aurora_borealis:
         moomin "Mama and Papa have more family, but they don't live around here."
     moomin "Anyway, Snufkin should be right over here."
     show snufkin at right with moveinright
-    play music "<loop 0>snufin.ogg" volume 0.5
+    play music snufin volume 0.5
     music Snufkin The Traveler - Sumio Shiratori
     show moomin flipped
     moomin "Hello, Snufkin!"
@@ -1892,7 +2006,7 @@ label aurora_borealis:
     snufkin "That's great. This stranger needs her help to see the Aurora Borealis."
     alicia "Well, I don't know if she'll help, but I'll go get her."
     show witch at mid_right with dissolve
-    play music "<loop 0>lady_of_the_cold.ogg" volume 0.5
+    play music lady_of_the_cold volume 0.5
     music Lady Of The Cold - Sumio Shiratori
     witch "What's all the hubbub about?"
     cs "Hello, Madam Witch. I'd like your help seeing the Aurora Borealis."
@@ -1941,7 +2055,10 @@ label aurora_borealis:
     scene bus_map with dissolve
     jump sweden_menu
 
-label ikea:
+label sweden_ikea:
+    stop music fadeout 3.0
+    music end
+    scene bus_map
     $ ikea_check = True
     cs "I should go check out the Ikea here."
     cs "It's the land of Ikea. They're probably a lot better than the ones in the US."
@@ -1952,8 +2069,6 @@ label ikea:
     cs "\"Mondo Ikea - go into here\"."
     cs "Yeah, that makes sense. English and Swedish are pretty much the same."
     scene black with dissolve
-    stop music fadeout 3.0
-    music end
     n "CS rides the bus for a while and eventually the Ikea comes into view."
     scene bus_seat
     show cs flipped at mid_left
@@ -1972,7 +2087,7 @@ label ikea:
     scene ikea_inside
     show ikea_greeter at mid_right
     with dissolve
-    play music "<loop 0>afternoon_hills.ogg" volume 0.5
+    play music afternoon_hills volume 0.5
     music Afternoon Hills - BEST MUSIC
     show cs at mid_left with moveinleft
     ikea_greeter "Welcome to Ikea! Can I help you with anything?"
@@ -2049,7 +2164,7 @@ label ikea:
     scene plushie_zone 
     show pomni at right
     with dissolve
-    play music "<loop 0>xddcc.ogg" volume 0.8
+    play music xddcc volume 0.8
     music XDDCC - Gooseworx
     n "CS meanders back by the plushie section and notices a clown."
     show cs at mid_left with moveinleft
@@ -2091,7 +2206,7 @@ label ikea:
     show ikea_worker at right
     show cs at left
     with dissolve
-    play music "<loop 0>afternoon_hills.ogg" volume 0.5
+    play music afternoon_hills volume 0.5
     ikea_worker "Hi! What would you like?"
     cs "I'll take some lobster, caviar, sauerkraut, kippers, champagne, and semlor."
     ikea_worker "Coming right up!"
@@ -2127,12 +2242,13 @@ label ikea:
     scene bus_map with dissolve
     jump sweden_menu
 
-label joel:
+label sweden_joel:
+    stop music fadeout 3.0
+    music end
+    scene bus_map
     $ joel_check = True
     cs "I should try to find Vinesauce Joel. He likes YTPs, so he'd probably want to hang out."
     cs "I know he's in Northern Sweden, so I'll get up there. Sweden's pretty small, it couldn't be that hard to find him."
-    stop music fadeout 3.0
-    music end
     scene black with dissolve
     n "CS gets on a bus headed north and falls asleep."
     n "When the bus reaches the end of the line, one of the other riders wakes him up."
@@ -2172,7 +2288,7 @@ label joel:
     show cs at left
     with moveinleft
     show joel at right with determination
-    play music "klaxon_beat.ogg" loop volume 0.6
+    play music klaxon_beat loop volume 0.6
     music Klaxon Beat - Kelly Bailey
     joel "I thought {i}I{/i} was a dumbass..."
     joel "Well, whatever, here's my house."
@@ -2260,7 +2376,7 @@ label joel:
     n "Joel gives CS a walkie-talkie. CS heads outside to the stable while Joel watches the radar."
     scene joel_outside with dissolve
     show cs horse at center with moveinleft
-    play music "<loop 0>candle_world.ogg" volume 0.4
+    play music candle_world volume 0.4
     music Candle World - Kikiyama
     cs "Alright, I'm in position."
     joel "Sounds good. I'll run out when I see the alien moving this way, and I'll let you know on the walkie-talkie."
@@ -2274,9 +2390,9 @@ label joel:
     joel "I've got you this time, alien!" #Joel makes it out just before the alien
     alien "Ikke skyt! Jeg er ikke en romvesen! Jeg er bare en normal norsk mann!" #Make this wingdings
     scene white with dissolve
-    play sound "<loop 0>sfx_hks2.ogg" volume 0.7
+    play sound sfx_hks2 volume 0.7
     pause 0.1
-    play sound "<loop 0>sfx_hks1.ogg" volume 0.7
+    play sound sfx_hks1 volume 0.7
     pause 0.1
     pause 1.0
     scene joel_outside
@@ -2298,7 +2414,7 @@ label joel:
     show cs at left
     show joel at right
     with dissolve
-    play music "klaxon_beat.ogg" loop volume 0.6
+    play music klaxon_beat loop volume 0.6
     joel "You can just wait in the living room and play some games while I cook."
     cs "Sounds like a plan."
     show joel flipped with determination
@@ -2327,6 +2443,8 @@ label joel:
     jump sweden_menu
 
 label sweden_leave:
+    stop music fadeout 3.0
+    scene bus_map
     cs "Well, I guess I really just wanted to meet Joel."
     cs "Before I go back to the airport, where should I go next?"
     if (not england_check) and (not japan_check):
@@ -2340,9 +2458,11 @@ label sweden_leave:
     elif england_check and (not japan_check):
         jump sweden_japan
     else:
-        jump going_home
+        jump country_going_home
 
 label sweden_england:
+    stop music fadeout 3.0
+    scene bus_map
     cs "I guess I really kinda want to go to England this time."
     cs "I have a Union Jack in my room, why would I not go?"
     cs "Fuck it, let's head to the UK!"
@@ -2351,6 +2471,8 @@ label sweden_england:
     jump england_second
 
 label sweden_japan:
+    stop music fadeout 3.0
+    scene bus_map
     cs "I guess Japan seems pretty cool."
     cs "It wouldn't hurt to head there and check stuff out."
     cs "Let's go to Japan!"

@@ -1,6 +1,10 @@
-label south:
+label south_start:
+    play music happy_roaming volume 0.5 if_changed
+    music Happy Roaming - Lorin Nelson
+    scene washington_road morning
+    show cs at left
+    show arceus at right
     cs "Why don't we try going south?"
-    show arceus
     arceus "Alright, what's your plan? Where are we going, exactly?"
     cs "I've always kinda wanted to go down to Vegas. We could have a ton of fun down there!"
     show arceus worried
@@ -45,13 +49,13 @@ label south:
     cs "How about..."
     show cs
     cs "Hold on. I got an idea."
-    play music "brick_by_dick.ogg"
+    play music brick_by_dick
     music Brick by Brick (Suck my Dick) - cs188
     cs "See those pieces on the ground?"
     show arceus worried
     arceus "What pieces?"
     n "CS quickly starts grabbing material from thin air and puts together a new car."
-    play sound "sfx_legosfx.ogg" volume 1
+    play sound sfx_lego
     pause 3.0
     show cs happy
     cs "Tada!"
@@ -68,7 +72,7 @@ label south:
     show cs at left behind cscar2 with moveinleft
     show arceus at right behind cscar2 with moveinright
     n "Once they get into the car, CS starts it up."
-    play sound "sfx_driving.ogg" volume 0.5
+    play sound sfx_driving volume 0.5
     pause 1.0
     cs "Woohoo! Vegas time!"
     arceus "I don't even know how you do these things, man, but let's go!"
@@ -76,11 +80,11 @@ label south:
     stop sound fadeout 2.0
     scene black with fade
     n "After many hours of driving, day turns to night once again."
+    jump south_utah
+
+label south_utah:
     stop music fadeout 3.0
     music end
-    jump utah
-
-label utah:
     scene utah
     show cscar1
     show cscar2
@@ -170,7 +174,7 @@ label utah:
     scene black with fade
     n "As CS and Arceus walk in, they are greeted with a musty aroma and a dimly-lit party room."
     scene fazlobby with fade
-    play music "<loop 0>tunnely_shimbers.ogg" volume 0.5
+    play music tunnely_shimbers volume 0.5
     music Tunnely Shimbers - Mr. Sauceman
     n "CS walks around in awe as Arceus creeps behind him."
     show cs dark at left with moveinleft
@@ -179,7 +183,7 @@ label utah:
     if fun_value(FUN_VALUE_RARE):
         pause 1.0
         show fumobee at lego_run
-        play sound "secret/sfx_vine.ogg"
+        play sound sfx_vine
         with move
         pause 1.0
         show arceus worried dark
@@ -273,7 +277,7 @@ label utah:
     cs "Ohh."
     arceus "CS, don't move a muscle."
     cs "Why not? It's just a Leg--"
-    play music "<loop 0>hard_drive.ogg" volume 0.5
+    play music hard_drive volume 0.5
     music Hard Drive to Munch You - Mr. Sauceman
     show lego eyes
     n "The minifigure's eyes glow as it raises its arms up and starts running at CS."
@@ -322,9 +326,9 @@ label utah:
     cs "It was super cool before the Legos tried to kill us."
     arceus "I think that whole restaurant was trying to kill us, CS."
     n "Arceus drives the rest of the way until they reach Las Vegas."
-    jump vegas
+    jump south_vegas
 
-label vegas:
+label south_vegas:
     if returning_from_blooper:
         if fun_value(FUN_VALUE_COMMON):
             scene vegasjade
@@ -332,18 +336,16 @@ label vegas:
         else:
             $ jade = False
             scene vegas
-        show cscar1
+        show cscar1arc
         show cscar2
         show arceus flipped at left behind cscar2
         with determination
-        play sound "sfx_clapperboard.ogg"
-        play music "<loop 0>penthouse.ogg" volume 0.5
-        music "Al's Penthouse - Andy Blythe"
+        play sound sfx_clapperboard
         $ returning_from_blooper = False
     else:
         if fun_value(FUN_VALUE_COMMON):
-            $ jade = True
             scene vegasjade
+            $ jade = True
             $ persistent.seen.add("bubble")
         else:
             $ jade = False
@@ -352,7 +354,7 @@ label vegas:
         show cscar2
         show arceus flipped at left behind cscar2
         with fade
-    play music "<loop 0>penthouse.ogg" volume 0.5
+    play music penthouse volume 0.5
     music "Al's Penthouse - Andy Blythe"
     n "After a few hours of driving, the duo sees the bright Las Vegas sign coming into view."
     cs "Woohoo! We're almost there!"
@@ -380,7 +382,7 @@ label vegas:
     with moveoutright
     n "CS and Arceus enter the casino. It looks like chaos is unfolding in front of their faces."
     scene casino1 with fade
-    play sound "sfx_slots.ogg" volume 3
+    play sound sfx_slots volume 3
     n "The sounds of slot machines fill the room. Many drunkards hobble around the establishment."
     show cs at left with moveinleft
     show arceus at right with moveinright
@@ -410,27 +412,27 @@ label vegas:
     arceus "I need to sit down."
     show arceus flipped with determination
     hide arceus with moveoutright
-    jump vegas_start_slots
+    jump south_vegas_start_slots
 
-label vegas_start_slots:
+label south_vegas_start_slots:
     scene slots with fade
     n "As Arceus wanders off to find a place to relax, CS tries his luck at the slots."
-    minigame "minigame_slots" "vegas_win_slots" "vegas_lose_slots"
+    minigame "minigame_slots" "south_vegas_win_slots" "south_vegas_lose_slots"
 
-label vegas_win_slots:
+label south_vegas_win_slots:
     cs "Woohoo! I'm on such a hot streak! Wait 'til Arc sees this."
     cs "Hmm... I haven't seen him for a bit. I should go find him."
-    jump vegas_done_slots
+    jump south_vegas_done_slots
 
-label vegas_lose_slots:
+label south_vegas_lose_slots:
     cs "C'mon, this is the one!"
     cs "Bars, {w=1.0}bars, {w=1.0}football player with a{w=0.5} hot...dog...?"
     cs "Damn it! So close!"
     cs "I haven't won anything, and I've already spent most of my money..."
     cs "I wonder what Arc is up to. I haven't seen him at all."
-    jump vegas_done_slots
+    jump south_vegas_done_slots
 
-label vegas_done_slots:
+label south_vegas_done_slots:
     n "CS gets up from the slot machine and begins looking for Arceus."
     scene casino1 with fade
     n "CS looks around for a while, but he can't find Arceus."
@@ -464,7 +466,7 @@ label vegas_done_slots:
     show green flipped at left
     with fade
     show cs disappointed flipped at right with moveinright
-    play music "<loop 0>laurel_palace.ogg" volume 0.5
+    play music laurel_palace volume 0.5
     music Laurel Palace - Manami Matsumae
     green "Deal us some cards arready!"
     scene luigi1
@@ -484,11 +486,15 @@ label vegas_done_slots:
     n "CS ponders for a moment, wondering if he should risk it all."
     menu:
         "Fold" (type = "bad"):
-            jump folded
+            jump south_folded
         "Stand" (type = "good"):
-            jump poker
+            jump south_poker
 
-label poker:
+label south_poker:
+    scene pokertable
+    show cards2
+    play music laurel_palace volume 0.5 if_changed
+    music Laurel Palace - Manami Matsumae
     cs "No. I'll stand."
     green "Bwahahaha! You think you can beat me?"
     scene luigi1
@@ -501,11 +507,15 @@ label poker:
     green "Ten million! You're bluffing! I can see through you!"
     menu:
         "Fold" (type = "bad"):
-            jump folded
+            jump south_folded
         "Stand" (type = "good"):
-            jump poker2
+            jump south_poker2
 
-label poker2:
+label south_poker2:
+    scene pokertable
+    show cards3
+    play music laurel_palace volume 0.5 if_changed
+    music Laurel Palace - Manami Matsumae
     cs "I'm still gonna stand."
     green "I'm gonna be rich! You better have that money on you, boy!"
     scene luigi1
@@ -518,11 +528,13 @@ label poker2:
     green "100 million! You better drop out {i}coughs{/i} rrright now!"
     menu:
         "Fold"  (type = "bad"):
-            jump folded
+            jump south_folded
         "Stand"  (type = "good"):
-            jump poker3
+            jump south_poker3
 
-label folded:
+label south_folded:
+    play music laurel_palace volume 0.5 if_changed
+    music Laurel Palace - Manami Matsumae
     scene luigi2
     show green flipped at left
     show cs disappointed flipped at right
@@ -547,40 +559,40 @@ label folded:
     show arceus full flipped at mid_right
     show drill at center_right
     with fade
-    play sound "sfx_drill.ogg" loop volume 0.5
+    play sound sfx_drill loop volume 0.5
     arceus "Come on, I'm almost there..."
     pause 6.0
     show drillbreak at center_right
-    play sound "sfx_drillbreak.ogg" loop volume 0.5
+    play sound sfx_drillbreak loop volume 0.5
     show arceus full angry flipped
     arceus "Fuck!"
     hide drillbreak
     show arceus full flipped
     show drill at center_right
-    play sound "sfx_drill.ogg" loop volume 0.5
+    play sound sfx_drill loop volume 0.5
     pause 6.0
     show drillbreak at center_right
-    play sound "sfx_drillbreak.ogg" loop volume 0.5
+    play sound sfx_drillbreak loop volume 0.5
     show arceus full angry flipped
     arceus "God!"
     hide drillbreak
     show arceus full flipped
     show drill at center_right
-    play sound "sfx_drill.ogg" loop volume 0.5
+    play sound sfx_drill loop volume 0.5
     pause 6.0
     show drillbreak at center_right
-    play sound "sfx_drillbreak.ogg" loop volume 0.5
+    play sound sfx_drillbreak loop volume 0.5
     show arceus full angry flipped
     arceus "You broke-dick piece-of-shit drill!"
     hide drillbreak
     show arceus full flipped
     show drill at center_right
-    play sound "sfx_drill.ogg" loop volume 0.5
+    play sound sfx_drill loop volume 0.5
     pause 3.0
     scene outsafeopen
     show arceus full flipped at mid_right
     with fade
-    play sound "sfx_payday.ogg" volume 0.5
+    play sound sfx_payday volume 0.5
     $ achievement_manager.unlock("The House Doesn't Always Win")
     show arceus full happy flipped
     arceus "Hell yeah!"
@@ -628,13 +640,17 @@ label folded:
     menu:
         arceus "What would you like to do, CS?"
         "Take a plane home":
-            jump airport_bad
+            jump south_airport_bad
         "Take the car" (type = "bad"):
-            jump noairport
+            jump south_noairport
         "Take something else...?" (type = "dx"):
             jump train_start_bad
 
-label poker3:
+label south_poker3:
+    scene pokertable
+    show cards4
+    play music laurel_palace volume 0.5 if_changed
+    music Laurel Palace - Manami Matsumae
     cs "Still standing."
     green "What?! You son of a bitch, you are so scrrewed!"
     scene luigi2
@@ -660,10 +676,10 @@ label poker3:
         show lancer at center with moveintop
         show lancer with vpunch
         show cs scared flipped
-        play sound "secret/sfx_explosion.ogg" volume 1.5
+        play sound sfx_explosion volume 1.5
         show green at t_punchup with move
         pause 0.3
-        play music "<loop 0>secret/lancer.ogg" volume 1
+        play music lancer
         music Lancer - Toby Fox
         lancer "Hey guys!"
         show cs worried flipped
@@ -737,7 +753,7 @@ label poker3:
         scene luigi2
         show cs happy flipped at right
         cs "Woohoo! I won!"
-        play music "<loop 0>price_right.ogg" volume 0.5
+        play music price_right volume 0.5
         music Price Is Right Theme - Edd Kalehoff
         luigi "Congratulations, sir, you just won 100 million dollars!"
         cs "Yay! I can pay for my Creative Cloud without donations!"
@@ -836,13 +852,17 @@ label poker3:
     menu:
         arceus "What would you like to do, CS?"
         "Take a plane home":
-            jump airport
+            jump south_airport
         "Take the car" (type = "bad"):
-            jump noairport
+            jump south_noairport
         "Take something else...?" (type = "dx"):
             jump train_start_good
 
-label airport:
+label south_airport:
+    stop music fadeout 3.0
+    scene carpark 
+    show arceus flipped at left
+    show cs flipped at right
     cs "We should head back home now. I have a plan for our newfound riches."
     show arceus flipped happy
     arceus "Alright! I'm excited to see what you've got cooking up!"
@@ -855,7 +875,7 @@ label airport:
     scene black with fade
     n "CS drives to the airport nearest to Las Vegas."
     scene airport_interior with fade
-    play music "<loop 0>airport.ogg" volume 0.4
+    play music airport volume 0.4
     music Airport Infiltration - Andy Blythe & Marten Joustra
     show cs at left
     show arceus flipped at mid_left
@@ -937,7 +957,7 @@ label airport:
     show arceus
     arceus "Yeah, the walk there would take hours."
     cs "Shit, uhh, what are our other options?"
-    play music "<loop 0>mm_select.ogg" volume 0.3
+    play music mm_select volume 0.3
     music Mm Select - Matthew Simmonds
     show billy at right
     show cs
@@ -960,9 +980,13 @@ label airport:
     with moveoutright
     stop music fadeout 3.0
     music end
-    jump back_home_alt
+    jump south_back_home_alt
 
-label airport_bad:
+label south_airport_bad:
+    stop music fadeout 3.0
+    scene carpark 
+    show arceus at right
+    show cs at center
     cs "We should head back home now. I have a plan for our newfound riches."
     show arceus happy
     arceus "Alright! I'm excited to see what you've got cooking up!"
@@ -974,7 +998,7 @@ label airport_bad:
     scene black with fade
     n "CS drives to the airport nearest to Las Vegas."
     scene airport_interior with fade
-    play music "<loop 0>airport.ogg" volume 0.4
+    play music airport volume 0.4
     music Airport Infiltration - Andy Blythe & Marten Joustra
     show cs at left
     show arceus flipped at mid_left
@@ -1017,11 +1041,11 @@ label airport_bad:
     arceus "Aaannd...."
     stop music fadeout 3.0
     music end    
-    jump choose_direction
+    jump csbiii_choose_direction
 
-label back_home_alt:
+label south_back_home_alt:
     scene cs_house with fade
-    play music "<loop 0>park_theme.ogg" volume 0.5
+    play music park_theme volume 0.5
     music Park Theme - Lorin Nelson
     n "After the long and exciting journey, CS finally arrives at his house."
     show arceus flipped at left with moveinleft
@@ -1048,7 +1072,7 @@ label back_home_alt:
     ed "{i}You!" with hpunch
     show cs disappointed at left with moveinleft
     n "CS and the gang look towards CS' front porch, where Richard and Ed are waiting angrily for him."
-    play music2 "<loop 0>hohsisremix.ogg" volume 0.5
+    play music hohsisremix volume 0.5
     music "Alfred's Theme - Eminem"
     show ed at right
     show rich at mid_mid_right behind ed
@@ -1071,19 +1095,25 @@ label back_home_alt:
     cs "I don't understand..."
     menu:
         "Fight" (type = "bad"):
-            jump fighthohsis_alt
+            jump south_fighthohsis_alt
         "Donate" (type = "true"):
-            jump donatehohsis
+            jump south_donatehohsis
         "Brag" (type = "bad"):
-            jump braghohsis
+            jump south_braghohsis
 
-label donatehohsis:
+label south_donatehohsis:
+    play music hohsisremix volume 0.5 if_changed
+    music "Alfred's Theme - Eminem"
+    scene cs_house
+    show ed at right
+    show rich at mid_mid_right behind ed
+    show cs disappointed at left
     cs "I never intended to harm your company. I just thought that the video was a good source to YTP."
     cs "I'm sorry about all those prank callers. I even made a video telling people to stop prank calling you."
     cs "I never had bad intentions for you guys... Honestly, it was also kind of like a free promotion."
     ed "Well, I'm sorry, CS, but it's too late."
     ed "Richard, get the JoJ UFO and vaporize the house."
-    stop music2 fadeout 1.0
+    stop music fadeout 1.0
     music end
     cs "Woah, woah! Hold on a second!"
     cs "I am genuinely sorry about those videos, and I am sorry if you had any business losses."
@@ -1113,20 +1143,24 @@ label donatehohsis:
     show cs at right with move
     n "CS walks up to his front door."
     scene cs_room with fade
-    play music "<loop 0>ac_title.ogg" volume 0.4
+    play music ac_title volume 0.4
     music New Leaf Title Theme - Kazumi Totaka
     show cs at center with moveinleft
     cs "Ah, it's good to be home again!"
     if fanbase == "both":
-        jump true_ending_alt
+        jump south_true_ending_alt
     elif fanbase == "ltt":
-        jump ltt_ending_alt
+        jump south_ltt_ending_alt
     elif fanbase == "ytp":
-        jump ytp_ending_alt
+        jump south_ytp_ending_alt
     else:
-        jump true_ending_alt
+        jump south_true_ending_alt
 
-label true_ending_alt:
+label south_true_ending_alt:
+    scene cs_room
+    play music ac_title volume 0.4 if_changed
+    music New Leaf Title Theme - Kazumi Totaka
+    show cs at center
     n "CS looks over at his desk, where a new computer is sitting."
     scene cs_room_2 with fade
     n "CS looks at the monitor, which has a sticky note that says \"From LTT\"."
@@ -1142,9 +1176,13 @@ label true_ending_alt:
     chat "Yeah what happened to you?{w=0.25} Oh my God, CS, you're here!{w=0.25} Hi!{w=0.25} Hi!{w=0.25} Where have you been?"
     show cs happy at mid_left
     cs "Well, guys..."
-    jump lego_ending
+    jump south_lego_ending
 
-label ytp_ending_alt:
+label south_ytp_ending_alt:
+    scene cs_room
+    play music ac_title volume 0.4 if_changed
+    music New Leaf Title Theme - Kazumi Totaka
+    show cs at center
     n "CS looks over at his desk, where his old computer is sitting."
     scene cs_room_2 with fade
     show cs at mid_left
@@ -1156,9 +1194,13 @@ label ytp_ending_alt:
     chat "Yeah what happened to you?{w=0.25} Oh my God, CS, you're here!{w=0.25} Hi!{w=0.25} Hi!{w=0.25} Where have you been?"
     show cs at mid_left
     cs "Well, guys..."
-    jump lego_ending
+    jump south_lego_ending
 
-label ltt_ending_alt:
+label south_ltt_ending_alt:
+    scene cs_room
+    play music ac_title volume 0.4 if_changed
+    music New Leaf Title Theme - Kazumi Totaka
+    show cs at center
     n "CS looks over at his desk, where a new computer is sitting."
     scene cs_room_2 with fade
     n "CS looks at the monitor, which has a sticky note that says \"From LTT\"."
@@ -1174,15 +1216,15 @@ label ltt_ending_alt:
     chat "Oh you're streaming?{w=0.25} I thought you were working for LTT now?{w=0.25} What happened to the YTPs?{w=0.25} Are you okay?{w=0.25} Where have you been?"
     show cs at mid_left
     cs "Well, guys..."
-    jump lego_ending
+    jump south_lego_ending
 
-label lego_ending:
+label south_lego_ending:
     scene cs_room_2
     show cs at mid_left
     stop music fadeout 1.0
     music end
     cs "Guess what!"
-    play music "<loop 0>lego_island.ogg" volume 0.6
+    play music lego_island volume 0.6
     music Lego Island Theme - Lorin Nelson
     show case at mid_left
     n "CS takes his briefcase out and opens it up on camera."
@@ -1200,7 +1242,13 @@ label lego_ending:
     $ renpy.end_replay()
     return
 
-label fighthohsis_alt:
+label south_fighthohsis_alt:
+    play music hohsisremix volume 0.5 if_changed
+    music "Alfred's Theme - Eminem"
+    scene cs_house
+    show ed at right
+    show rich at mid_mid_right behind ed
+    show cs angry at left
     n "CS challenges HoH SiS to a fight."
     show cs angry
     cs "I beat up all your workers and Wesley, I can take you guys down too!"
@@ -1212,22 +1260,22 @@ label fighthohsis_alt:
     show cs at center
     show ed at center
     with move
-    play sound "sfx_punch.ogg"
-    play sound "sfx_punchalt.ogg"
+    play sound sfx_punch
+    play sound sfx_punch_alttt
     show cs with hpunch
-    play sound "sfx_punch.ogg"
-    play sound "sfx_punchalt.ogg"
+    play sound sfx_punch
+    play sound sfx_punch_alt
     show ed with vpunch
-    play sound "sfx_punch.ogg"
-    play sound "sfx_punchalt.ogg"
+    play sound sfx_punch
+    play sound sfx_punch_alt
     show cs with hpunch
-    play sound "sfx_punch.ogg"
-    play sound "sfx_punchalt.ogg"
+    play sound sfx_punch
+    play sound sfx_punch_alt
     show ed with vpunch
-    play sound "sfx_punch.ogg"
-    play sound "sfx_punchalt.ogg"
+    play sound sfx_punch
+    play sound sfx_punch_alt
     show cs with hpunch
-    play sound "sfx_alt_punch.ogg"
+    play sound sfx_alt_punch
     show cs at t_punchup with move
     show cs with vpunch
     show ed at right with move
@@ -1240,10 +1288,11 @@ label fighthohsis_alt:
     ed "Time to take a shit on the house."
     stop music fadeout 1.0
     music end
-    bad_end "Revenge!" "back_home_alt"
+    bad_end "Revenge!" "south_back_home_alt"
 
-label braghohsis:
-    stop music
+label south_braghohsis:
+    play music hohsisremix volume 0.5 if_changed
+    music "Alfred's Theme - Eminem"
     scene cs_house
     show ed at right
     show rich at mid_mid_right behind ed
@@ -1257,7 +1306,7 @@ label braghohsis:
     cs "Hey! Where are you guys going?"
     cs "Come back here!"
     n "The JoJ UFO flies up over the house, then vaporizes it with a laser."
-    play sound "sfx_beam.ogg" volume 0.6
+    play sound sfx_beam volume 0.6
     show beam at xstretch_in
     pause 3.0
     show beam at xstretch_out
@@ -1271,12 +1320,15 @@ label braghohsis:
     show cs disappointed
     pause 1.0
     cs "Fuck."
-    bad_end "Time to bunk\nat Rosen's!" "back_home_alt"
+    bad_end "Time to bunk\nat Rosen's!" "south_back_home_alt"
     stop music fadeout 1.0
     music end
     return
 
-label noairport:
+label south_noairport:
+    stop music fadeout 1.0
+    music end
+    scene carpark
     cs "Nah, I don't wanna go to the airport."
     cs "We should take the car and drive."
     arceus "Okay, well, let's get going!"
@@ -1325,7 +1377,7 @@ label noairport:
     show mika at center with moveintop
     show mika at center with vpunch
     mika "Oi, chaps!"
-    play music "<loop 0>pokey.ogg" volume 0.6
+    play music pokey volume 0.6
     music Pokeys House - Keiichi Suzuki
     mika "Ok, so, CS looks out the window and he spots a yellow Hummer."
     mika "The guy, with his arm out the window, says \"Dude, this car kicks ass! And I can watch Madagascar while driving!\""
@@ -1375,7 +1427,7 @@ label noairport:
     n "The TV turns off and starts shaking."
     show arceus worried
     show cs scared
-    play music "<loop 0>clownpiece.ogg" volume 0.6
+    play music clownpiece volume 0.6
     music Pierrot of the Star Spangled Banner - ZUN
     with vpunch
     with hpunch
@@ -1425,9 +1477,9 @@ label noairport:
     show cs happy at left with move
     cs "Woohoo! I love this!"
     cs "And then comes in Gandalf the Grey and Gandalf the Wh--{nw}"
-    jump reality_break
+    jump south_reality_break
 
-label reality_break:
+label south_reality_break:
     stop music
     music end  
     direct "Cut!"
@@ -1435,10 +1487,10 @@ label reality_break:
     show cs happy at left
     show arceus angry at right
     with determination
-    play sound "sfx_bell.ogg"
+    play sound sfx_bell
     show cs
     pause 3.0
-    play sound "<loop 0>sfx_chatter.ogg"
+    play sound sfx_chatter loop
     n "A bell rings, causing cast and crew to scatter."
     show cs disappointed
     cs "Huh?"
@@ -1467,4 +1519,4 @@ label reality_break:
     direct "Aaaaaand...{w=1.0}{nw}"
     $ returning_from_blooper = True
     $ renpy.end_replay()
-    jump vegas
+    jump south_vegas

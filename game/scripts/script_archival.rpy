@@ -1,6 +1,6 @@
 label archival:
     window hide
-    show screen warning("The following scene is a major tonal shift.\nIt may be disconcerting to some viewers.", "Warning: potential existential dread.", "pussy_out_archival")
+    show screen warning("The following scene is a major tonal shift.\nIt may be disconcerting to some viewers.", "Warning: potential existential dread.", "back_out_archival")
     pause
     window show
     stop music
@@ -20,7 +20,7 @@ label archival:
     n "..."
     n "..."
     scene bedroom_old
-    play music "<loop 0>facing_worlds.ogg" volume 0.5
+    play music facing_worlds volume 0.5
     music "Facing Worlds - Michiel van den Bos"
     n "CS slowly wakes up after his long rest."
     cs "Hey guys, CS here!"
@@ -41,7 +41,7 @@ label archival:
     n "CS lifts the lid and powers it on, curious about the strange connection he is feeling with it."
     n "The laptop slowly powers on, playing the classic Windows XP start sound."
     n "The laptop immediately bluescreens and blares out the following:"
-    play sound "sfx_windows_logon.ogg"
+    play sound sfx_windows_logon
     with hpunch
     craptop "Your PC sux. lol."
     unknown "Hey, what the fuck was that?"
@@ -116,7 +116,7 @@ label archival:
     n "CS suddenly lets his instinct take over."
     show cs angry
     cs "BullShisH!"
-    play sound "sfx_punch.ogg"
+    play sound sfx_punch
     show worker_4 at center with hpunch
     hide worker_4 with moveoutright
     n "CS punches the worker to the ground."
@@ -184,19 +184,19 @@ label archival:
     jump rpg_archival
 
 label archival_finale:
+    stop music fadeout 3.0
+    music end
     scene csmart_old
     show cs disappointed at left
     with dissolve
     n "After the battle, CS makes his way to the crack, and realizes that there is an invisible wall."
     hide cs with dissolve
-    stop music fadeout 3.0
-    music end
     n "CS, without any second thoughts, breaks off pieces of the wall enough to widen the crack and crawls through the hole."
     n "..."
     n "..."
     n "..."
     scene archival_1 with fade
-    play music "<loop 0>take_trip.ogg" volume 0.7
+    play music take_trip volume 0.7
     music "Take a Trip from Me - u4ia"
     show cs scared at center with moveintop
     hide cs scared with moveoutbottom
@@ -232,28 +232,28 @@ label archival_finale:
     n "The guys come around the corner, and start firing at CS as he sprints out of there."
     show cs worried with determination
     hide cs with moveoutright
-    play sound "<loop 0>sfx_hks2.ogg" volume 0.7
+    play sound sfx_hks2 loop volume 0.7
     pause 0.1
-    play sound "<loop 0>sfx_hks1.ogg" volume 0.7
+    play sound sfx_hks1 loop volume 0.7
     pause 0.1
-    play sound "<loop 0>sfx_hks2.ogg" volume 0.7
+    play sound sfx_hks2 loop volume 0.7
     pause 0.1
-    play sound "<loop 0>sfx_hks1.ogg" volume 0.7
+    play sound sfx_hks1 loop volume 0.7
     pause 0.1
-    play sound "<loop 0>sfx_hks2.ogg" volume 0.7
+    play sound sfx_hks2 loop volume 0.7
     hide hart1 with moveoutright
     hide hart2 with moveoutright
     scene archival_7 with dissolve
     show cs worried at offscreenleft
     hide cs worried with moveoutright
     n "CS starts weaving between the canisters to try to lose them."
-    play sound "<loop 0>sfx_hks2.ogg" volume 0.7
+    play sound sfx_hks2 loop volume 0.7
     pause 0.1
-    play sound "<loop 0>sfx_hks1.ogg" volume 0.7
+    play sound sfx_hks1 loop volume 0.7
     pause 0.1
-    play sound "<loop 0>sfx_hks2.ogg" volume 0.7
+    play sound sfx_hks2 loop volume 0.7
     pause 0.1
-    play sound "<loop 0>sfx_hks1.ogg" volume 0.7
+    play sound sfx_hks1 loop volume 0.7
     show hart1 at offscreenleft
     hide hart1 with moveoutright
     show hart2 at offscreenleft
@@ -264,17 +264,17 @@ label archival_finale:
     scene archival_7 with dissolve
     show cs worried at offscreenleft
     hide cs worried with moveoutright
-    play sound "<loop 0>sfx_hks2.ogg" volume 0.7
+    play sound sfx_hks2 loop volume 0.7
     pause 0.1
-    play sound "<loop 0>sfx_hks1.ogg" volume 0.7
+    play sound sfx_hks1 loop volume 0.7
     pause 0.1
-    play sound "<loop 0>sfx_hks2.ogg" volume 0.7
+    play sound sfx_hks2 loop volume 0.7
     pause 0.1
-    play sound "<loop 0>sfx_hks1.ogg" volume 0.7
+    play sound sfx_hks1 loop volume 0.7
     pause 0.1
-    play sound "<loop 0>sfx_hks2.ogg" volume 0.7
+    play sound sfx_hks2 loop volume 0.7
     pause 0.1
-    play sound "<loop 0>sfx_hks1.ogg" volume 0.7
+    play sound sfx_hks1 loop volume 0.7
     show hart1 at offscreenleft
     hide hart1 with moveoutright
     show hart2 at offscreenleft
@@ -282,7 +282,7 @@ label archival_finale:
     n "The people with the guns start shooting again, as a bunch of alarms go off, echoing throughout the whole place. A voice over the loudspeaker cuts through the sirens:"
     scene archival_5 with dissolve
     show cs scared at center with moveinleft
-    play sound "<loop 0>sfx_less_annoying_alarm_sound.ogg" loop volume 0.6
+    play sound less_annoying_alarm_sound loop volume 0.6
     n "\"Warning! Warning! Memory Breach at Sector 4 Foxtrot Kilo 17! Entity Charlie Sierra Bravo has breached. Please evacuate to Foxtrot Kilo 16 or below immediately.\""
     n "The alarm repeats itself while CS is still running, zigzagging around the chaos."
     hide cs with moveoutright
@@ -298,70 +298,70 @@ label archival_finale:
     scene archival_9a with dissolve
     scene archival_10a with dissolve
     scene archival_11a with dissolve
-    play sound "<loop 0>sfx_hks2.ogg" volume 0.7
+    play sound sfx_hks2 loop volume 0.7
     pause 0.1
-    play sound "<loop 0>sfx_hks1.ogg" volume 0.7
+    play sound sfx_hks1 loop volume 0.7
     pause 0.1
-    play sound "<loop 0>sfx_hks2.ogg" volume 0.7
+    play sound sfx_hks2 loop volume 0.7
     pause 0.1
-    play sound "<loop 0>sfx_hks1.ogg" volume 0.7
+    play sound sfx_hks1 loop volume 0.7
     scene archival_9a with dissolve
     scene archival_10 with dissolve
     scene archival_11 with dissolve
     scene archival_9a with dissolve
-    play sound "<loop 0>sfx_hks2.ogg" volume 0.7
+    play sound sfx_hks2 loop volume 0.7
     pause 0.1
-    play sound "<loop 0>sfx_hks1.ogg" volume 0.7
+    play sound sfx_hks1 loop volume 0.7
     pause 0.1
-    play sound "<loop 0>sfx_hks2.ogg" volume 0.7
+    play sound sfx_hks2 loop volume 0.7
     pause 0.1
-    play sound "<loop 0>sfx_hks1.ogg" volume 0.7
+    play sound sfx_hks1 loop volume 0.7
     scene archival_10a with dissolve
     scene archival_11a with dissolve
     scene archival_9a with dissolve
     scene archival_10a with dissolve
     scene archival_11a with dissolve
-    play sound "<loop 0>sfx_hks2.ogg" volume 0.7
+    play sound sfx_hks2 loop volume 0.7
     pause 0.1
-    play sound "<loop 0>sfx_hks1.ogg" volume 0.7
+    play sound sfx_hks1 loop volume 0.7
     pause 0.1
-    play sound "<loop 0>sfx_hks2.ogg" volume 0.7
+    play sound sfx_hks2 loop volume 0.7
     pause 0.1
-    play sound "<loop 0>sfx_hks1.ogg" volume 0.7
+    play sound sfx_hks1 loop volume 0.7
     scene archival_9a with dissolve
     scene archival_10 with dissolve
     scene archival_11 with dissolve
     scene archival_9a with dissolve
-    play sound "<loop 0>sfx_hks2.ogg" volume 0.7
+    play sound sfx_hks2 loop volume 0.7
     pause 0.1
-    play sound "<loop 0>sfx_hks1.ogg" volume 0.7
+    play sound sfx_hks1 loop volume 0.7
     pause 0.1
-    play sound "<loop 0>sfx_hks2.ogg" volume 0.7
+    play sound sfx_hks2 loop volume 0.7
     pause 0.1
-    play sound "<loop 0>sfx_hks1.ogg" volume 0.7
+    play sound sfx_hks1 loop volume 0.7
     scene archival_10a with dissolve
     scene archival_11a with dissolve
     scene archival_9a with dissolve
     scene archival_10 with dissolve
     scene archival_11 with dissolve
-    play sound "<loop 0>sfx_hks2.ogg" volume 0.7
+    play sound sfx_hks2 loop volume 0.7
     pause 0.1
-    play sound "<loop 0>sfx_hks1.ogg" volume 0.7
+    play sound sfx_hks1 loop volume 0.7
     pause 0.1
-    play sound "<loop 0>sfx_hks2.ogg" volume 0.7
+    play sound sfx_hks2 loop volume 0.7
     pause 0.1
-    play sound "<loop 0>sfx_hks1.ogg" volume 0.7
+    play sound sfx_hks1 loop volume 0.7
     scene archival_9a with dissolve
     scene archival_10 with dissolve
     scene archival_11 with dissolve
     scene archival_9a with dissolve
-    play sound "<loop 0>sfx_hks2.ogg" volume 0.7
+    play sound sfx_hks2 loop volume 0.7
     pause 0.1
-    play sound "<loop 0>sfx_hks1.ogg" volume 0.7
+    play sound sfx_hks1 loop volume 0.7
     pause 0.1
-    play sound "<loop 0>sfx_hks2.ogg" volume 0.7
+    play sound sfx_hks2 loop volume 0.7
     pause 0.1
-    play sound "<loop 0>sfx_hks1.ogg" volume 0.7
+    play sound sfx_hks1 loop volume 0.7
     scene archival_10 with dissolve
     scene archival_11 with dissolve
     scene archival_12 with dissolve
@@ -381,7 +381,7 @@ label archival_finale:
     hide cs with moveoutright
     stop music fadeout 3.0
     scene archival_13 with dissolve
-    play music "<loop 0>take_trip2.ogg" volume 0.5
+    play music take_trip2 volume 0.5
     n "He gets in on time as the door slowly shuts, right before the guys can get in."
     show archival_19
     with dissolve    
@@ -482,7 +482,7 @@ label archival_finale:
     pause 2.0
     $ renpy.movie_cutscene("movies/credits.webm")
     pause 2.0
-    play music "<loop 0>everybody_wants.ogg" volume 1.0
+    play music everybody_wants 
     music "Everybody Wants To Rule The World - Tears For Fears"
     n "Addy gets a phone call."
     addy "Hello? Who is this?"

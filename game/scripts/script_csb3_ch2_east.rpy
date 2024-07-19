@@ -1,4 +1,4 @@
-label east:
+label true_east:
     cs "Well, since east is the way home, we should probably go that way."
     show arceus
     arceus "Alright, that sounds like a good idea."
@@ -29,11 +29,11 @@ label east:
     music end
     menu:
         "Wait for driver at the gas station" (type = "true"):
-            jump billy_driver
+            jump true_billy_driver
         "Hotwire a car" (type = "bad"):
-            jump hotwire
+            jump true_hotwire
 
-label hotwire:
+label true_hotwire:
     stop music
     scene gasinside
     show cs surprised at left
@@ -53,15 +53,15 @@ label hotwire:
     n "As if on cue, sirens and lights approach the two."
     show blue_light at left
     show red_light at right
-    play sound "<loop 0>sfx_siren.ogg" volume 0.5
+    play sound sfx_siren volume 0.5
     show copguy at center with moveinright
     show cs disappointed
     show arceus worried
     copguy "I could hear the sound of a car window breaking from miles away!"
     copguy "You guys already blew it! Back to the slammer!"
-    bad_end "What did Copguy\njust tell you?" "choose_direction"
+    bad_end "What did Copguy\njust tell you?" "csbiii_choose_direction"
 
-label billy_driver:
+label true_billy_driver:
     cs "Why don't we just wait for someone at the gas station to come out, and then we ask them for a ride?"
     n "CS walks over to someone's car parked in the front of the gas station."
     scene gasoutside with fade
@@ -85,7 +85,7 @@ label billy_driver:
     else:
         arceus "He's probably getting a gun, we need to lea--{w=1.5}{nw}"
     show billy at center with moveinleft
-    play music "<loop 0>mm_select.ogg" volume 0.3
+    play music mm_select volume 0.3
     music Mm Select - Matthew Simmonds
     billy "Hi, Billy Mays here for the Uber Driver!"
     billy "The fast and easy way for people who don't have a car to get around!"
@@ -104,12 +104,12 @@ label billy_driver:
     hide billy with moveoutright
     show arceus flipped at right
     hide arceus with moveoutright
-    jump in_billy_car
+    jump true_in_billy_car
 
-label in_billy_car:
+label true_in_billy_car:
     scene carback1
     show billy car
-    play music "<loop 0>billy_radio.ogg" volume 0.3
+    play music billy_radio volume 0.3
     music Billy Mays Gangsta Remix - mastamokei
     if fun_value(FUN_VALUE_MUSIC):
         cs "Is this the Billy Mays Gangsta Remix?"
@@ -126,13 +126,13 @@ label in_billy_car:
     arceus "Fair point."
     stop music fadeout 3.0
     music end
-    jump montana
+    jump true_montana
 
-label montana:
+label true_montana:
     scene car background
     show billy car
     with fade
-    play music "<loop 0>weird_personalities.ogg" volume 0.6
+    play music weird_personalities volume 0.6
     music Weird Personalities - Lizardking
     if fun_value(FUN_VALUE_MUSIC):
         n "After a few hours of driving through Idaho, the trio finds themselves having weird personalities in the middle of Montana."
@@ -165,9 +165,9 @@ label montana:
     music end
     cs "Same, I'll come with you."
     n "Arceus goes back to sleep in the car."
-    play sound "sfx_doorslam.ogg"
+    play sound sfx_doorslam
     scene hardwareinside with fade
-    play music "<loop 0>home_depot.ogg" volume 0.4
+    play music home_depot volume 0.4
     music "Let's Do This - Home Depot"
     show cs at left with moveinleft
     if fun_value(FUN_VALUE_MUSIC):
@@ -214,7 +214,7 @@ label montana:
     hide billy with moveoutright
     stop music fadeout 3.0   
     music end
-    play sound "sfx_doorslam.ogg"
+    play sound sfx_doorslam
     scene hardwareoutside
     show billy car
     with fade
@@ -236,7 +236,7 @@ label montana:
     play sound "<from 0 to 2>sfx_car_crash.ogg" volume 0.7
     scene cultforest
     show billy car
-    play music "<loop 0>candle_world.ogg" volume 0.4
+    play music candle_world volume 0.4
     music Candle World - Kikiyama
     if fun_value(FUN_VALUE_MUSIC):
         "CS and Arceus" "What in the candle world?"
@@ -245,7 +245,7 @@ label montana:
     n "Ahead lies a barricade with a bunch of strange hooded figures surrounding it."
     show cultist at mid_right behind billy with moveinright
     n "One of the strangers walks up to the driver's side and knocks on the window."
-    play sound "sfx_roll_window.ogg" volume 0.7
+    play sound sfx_roll_window volume 0.7
     n "Billy rolls down the window."
     billy "Hi, it's Billy! What are you doing by my car?"
     cultist "Get out of the car."
@@ -302,7 +302,7 @@ label montana:
     show cs fakegod at center with moveinleft
     cs "Look at me! {bt=a3-p10-s4}{color=#CB50FF}I'm purple!{/color}"
     $ renpy.music.set_pause(True, "music")
-    play sound "secret/sfx_funni.ogg" volume 0.5
+    play sound sfx_funni volume 0.5
     pause 3.0
     stop sound
     $ renpy.music.set_pause(False, "music")
@@ -344,20 +344,20 @@ label montana:
     show cs fakegod at mid_offscreen_left with move
     show billy laser at mid_left with moveinleft
     stop music fadeout 1.0 
-    play music "<loop 0>blazing_corridor.ogg" volume 0.4    
+    play music blazing_corridor volume 0.4    
     billy "Fire a laser! Fire a laser!"
-    play sound "minigames/car/sfx_gaster_blast.ogg"
+    play sound sfx_gaster_blast
     show laser_beam at t_gun behind billy
     hide cultist_2 with moveoutright
     hide laser_beam
     n "Massive laser shots land between the cultists as they scramble away!"
     cultist_3 "I don't wanna turn into a YTP! Go, guys, {i}go!{/i}"
-    play sound "minigames/car/sfx_gaster_blast.ogg"
+    play sound sfx_gaster_blast
     show laser_beam at t_gun behind billy
     hide cultist_3 with moveoutright
     hide laser_beam
     pause 0.5
-    play sound "minigames/car/sfx_gaster_blast.ogg"
+    play sound sfx_gaster_blast
     show laser_beam at t_gun behind billy
     hide cultist with moveoutright
     hide laser_beam
@@ -365,7 +365,7 @@ label montana:
     stop music fadeout 3.0 
     music end
     billy "{i}That's{/i} the power of the Awesome Augement!"
-    play music "<loop 0>showtime.ogg" volume 0.4
+    play music showtime volume 0.4
     music "It's Showtime - Toby Fox"
     show cs fakegod at center with moveinright
     cs "Hooray! I'm a god now!"
@@ -392,14 +392,14 @@ label montana:
         n "The night passes, then they set off once again."
     scene car background
     show billy car
-    play music "<loop 0>mort_farm.ogg" volume 0.4
+    play music mort_farm volume 0.4
     music "Mort's Farm - ClascyJitto"
     cs "Can we stop somewhere to eat? We haven't eaten since yesterday."
     arceus "Yeah, unfortunately, the one store you guys {i}did{/i} go to didn't have anything edible."
     billy "Sure, yeah, there's a McDonald's up here in a couple miles."
     scene mcdonalds
     show billy car
-    play sound "sfx_roll_window.ogg" volume 0.7
+    play sound sfx_roll_window volume 0.7
     n "Billy pulls up to the drive-thru to place his order."
     cashier "Hello, what would you like to order?"
     billy "Hi, Billy Mays here! I would like to get the Buy 1 Get 1 Free breakfast meal for my friends here,"
@@ -422,9 +422,9 @@ label montana:
     show billy car
     with fade
     n "Billy heads out on the open road again as they enter the state of South Dakota."
-    jump south_dakota
+    jump true_south_dakota
 
-label south_dakota:
+label true_south_dakota:
     arceus "Welcome to the Great Plains."
     cs "Woohoo!"
     stop music fadeout 3.0
@@ -438,7 +438,7 @@ label south_dakota:
     n "About an hour later, the crew arrives at Mount Rushmore."
     scene rushmore with fade
     n "They all hike up to the viewing spot to get a good look at the founding fathers."
-    play music "<loop 0>taiikusai_desu_yo.ogg" volume 0.4
+    play music taiikusai_desu_yo volume 0.4
     music Taiikusai Desu Yo - Satoru Kosaki
     show cs at right with moveinleft
     show arceus flipped at center with moveinleft
@@ -462,7 +462,7 @@ label south_dakota:
     arceus "CS? Are you okay?"
     show arceus worried flipped at mid_right with moveinleft
     n "As Arceus starts to approach CS, the onlookers surrounding them all gasp loudly."
-    play sound "sfx_gasp.ogg" volume 2
+    play sound sfx_gasp volume 2
     scene csmore
     show cs concentrate at right
     show arceus worried flipped at center
@@ -489,7 +489,7 @@ label south_dakota:
         n "They continue to drive on Track 4 through the massive and empty plains of South Dakota."
     else:
         n "They continue to drive through the massive and empty plains of South Dakota."
-    play music "<loop 0>track4.ogg" volume 0.4
+    play music track_4 volume 0.4
     music Track 4 - Weatherscan
     n "By the time they reach Sioux City, it is already evening."
     cs "There really {i}is{/i} nothing out here, is there?"
@@ -499,9 +499,9 @@ label south_dakota:
         n "Billy follows the Missouri River down until they arrive in Nebraskaska."       
     else:    
         n "Billy follows the Missouri River down until they arrive in Omaha."
-    jump nebraska
+    jump true_nebraska
 
-label nebraska:
+label true_nebraska:
     scene omaha
     show billy car
     with fade
@@ -579,7 +579,7 @@ label nebraska:
     scene peppinopizzabg
     show peppinopizzafg
     with fade   
-    play music "<loop 0>funiculi_holiday.ogg" volume 0.3
+    play music funiculi_holiday volume 0.3
     music Funiculi Holiday - ClascyJitto
     show peppino at t_pepzone1 behind peppinopizzafg with moveinleft
     show peppino at t_pepzone2 behind peppinopizzafg with ease
@@ -621,9 +621,9 @@ label nebraska:
     music end
     n "The gang heads to the backroom area to rest for the night."
     n "Once they wake up, they thank Peppino for his hospitality and head out."
-    jump iowa
+    jump true_iowa
 
-label iowa:
+label true_iowa:
     scene car plains
     show billy car
     with fade 
@@ -635,7 +635,7 @@ label iowa:
         n "CS looks out the window, to see what looks like a speedy comet." 
     else:
         n "CS looks out the window."    
-    play music "<loop 0>speedy_comet.ogg" volume 0.5
+    play music speedy_comet volume 0.5
     music Speedy Comet - Mahito Yokota
     cs "You have to be kidding me!"
     arceus "What's going on?"
@@ -644,15 +644,15 @@ label iowa:
     billy "Who?"
     cs "They have their UFO and--"
     n "A huge laser beam blasts along the left side of the road, ripping up everything in its path!"
-    play sound "minigames/car/sfx_gaster_blast.ogg"
+    play sound sfx_gaster_blast
     show billy car turn with hpunch
     show billy car turn with vpunch
     show billy car
     arceus "Shit, this is bad..."
     cs "Billy, you need to switch lanes when it charges up!"
-    minigame "minigame_car" "after_ufo" "lose_car_game"
+    minigame "minigame_car" "true_after_ufo" "lose_car_game"
 
-label after_ufo:
+label true_after_ufo:
     $ renpy.mark_label_seen("play_car_game")
     scene car plains
     show billy car
@@ -675,7 +675,7 @@ label after_ufo:
     n "The gang stops in Indiana for the night. They take off again in the morning."
     jump michigan
   
-label ohio:
+label true_ohio:
     if fun_value(FUN_VALUE_EPIC):
         scene car plains
         show billy car
@@ -685,7 +685,7 @@ label ohio:
         else:
             n "After that fiasco, they continue their trip, soon passing through Ohio."
         show scott_border
-        play music "<loop 0>breakout.ogg" volume 0.3  
+        play music breakout volume 0.3  
         music Breakout - Shoichiro Sakamoto 
         n "Suddenly, a huge blue border enters everyone's vision."
         scott "Oh, what in the world? There is some red border in my eyes..."
@@ -697,7 +697,7 @@ label ohio:
         show scott_border
         with fade
         n "As they are driving through the state, they see some men on the side of road protesting the blue border."
-        play sound "sfx_roll_window.ogg" volume 0.7
+        play sound sfx_roll_window volume 0.7
         scott "Hey all, Scott here!"
         scott "Are you tired of having a blue border in your vision?"
         scott "You should try Kaboom!"
@@ -724,7 +724,7 @@ label ohio:
         else:
             n "After that fiasco, they continue their trip, soon passing through Ohio."
         show scott_border
-        play music "<loop 0>breakout.ogg" volume 0.3  
+        play music breakout volume 0.3  
         music Breakout - Shoichiro Sakamoto 
         n "Suddenly, a huge blue border enters everyone's vision."
         arceus "Oh, what in the world? There is some red border in my eyes..."
@@ -736,7 +736,7 @@ label ohio:
         show scott_border
         with fade
         n "As they are driving through the state, they see some men on the side of road protesting the blue border."
-        play sound "sfx_roll_window.ogg" volume 0.7
+        play sound sfx_roll_window volume 0.7
         billy "Hi, it's Billy!"
         billy "Are you tired of having a blue border in your vision?"
         billy "You should try Kaboom!"
@@ -754,12 +754,12 @@ label ohio:
         music end
         hide scott_border with dissolve
         arceus "I'm glad it just faded away. I did {i}not{/i} want to spray cleaner in my eyes."
-    jump pennsylvania
+    jump true_pennsylvania
 
-label pennsylvania:
+label true_pennsylvania:
     n "The gang hits the last state before New York, Pennsylvania."
     scene billboard
-    play music "<loop 0>fourside.ogg" volume 0.6
+    play music fourside volume 0.6
     music The Metropolis of Fourside - Keiichi Suzuki
     n "CS sees a billboard pass by them."
     cs "Oh my God! It's PencilCon! We need to go!"
@@ -854,7 +854,7 @@ label pennsylvania:
     show cs at left with moveinleft
     n "CS walks to the backstage to prepare to compete when he notices a familiar face."
     show digi at right with moveinright
-    play music "<loop 0>pokey.ogg" volume 0.6
+    play music pokey volume 0.6
     music Pokeys House - Keiichi Suzuki
     cs "Wait, Digi?!"
     digi "CS?!"
@@ -908,22 +908,22 @@ label pennsylvania:
     with dissolve
     show mettaton at t_stagescreen onlayer broadcast
     host "WELCOME, FOLKS!"
-    play music "<loop 0>showtime.ogg" volume 0.4
+    play music showtime volume 0.4
     host "EVERYONE GIVE A BIG HAND TO OUR WONDERFUL CONTESTANTS!"
-    play sound "sfx_cheer1.ogg"
+    play sound cheer
     show crowd at t_stagescreen onlayer broadcast
     n "The crowd explodes into uproarious applause."
     hide crowd onlayer broadcast
     host "ON \"GO\", THESE LOVELIES WILL BE COMPETING TO SEE WHO CAN {color=#ffff00}SHARPEN THE MOST PENCILS!"
     host "THIS TRULY IS THE BATTLE OF A CENTURY, FOLKS! DIGIDUNCAN, OUR LONG-TIME CHAMP, WILL BE GOING UP AGAINST A NEWCOMER, THE AMAZING CS188!"
-    play sound "sfx_cheer2.ogg"
+    play sound cheer2
     show crowd at t_stagescreen onlayer broadcast
     n "The crowd is going wild."
     hide crowd onlayer broadcast
     host "ALL THEY HAVE TO DO IS {color=#ffff00}SHARPEN THE PENCILS AS QUICKLY AS POSSIBLE,{/color} WITHOUT {color=#ffff00}GETTING THE ERASER STUCK!"
     host "IT'S A TRULY MAGICAL EVENT, AND YOU'RE ALL ABOUT TO WITNESS IT! ARE YOU ALL READY?"
-    play sound2 "sfx_cheer1.ogg" noloop volume 0.5
-    play sound "sfx_cheer2.ogg" noloop volume 0.5
+    play sound2 cheer noloop volume 0.5
+    play sound cheer2 noloop volume 0.5
     show crowd at t_stagescreen onlayer broadcast
     n "The crowd is going absolutely crazy."
     hide crowd onlayer broadcast
@@ -943,9 +943,9 @@ label pennsylvania:
     n "Both competitors hover their hands over the pencils..."
     host "GO!"
     music Rude Buster - Toby Fox
-    minigame "minigame_pencil" "win_pencil" "lose_pencil_game"
+    minigame "minigame_pencil" "true_win_pencil" "lose_pencil_game"
 
-label win_pencil:
+label true_win_pencil:
     $ renpy.mark_label_seen("play_pencil_game")
     hide bad_end_screen
     hide typewriter
@@ -956,11 +956,11 @@ label win_pencil:
     show mettaton at t_stagescreen onlayer broadcast 
     host "HOLY TICONDEROGA! WE HAVE A WINNER!"
     show crowd at t_stagescreen onlayer broadcast
-    play sound "sfx_cheer2.ogg" noloop volume 0.6
-    play sound2 "sfx_cheer1.ogg" noloop volume 0.6
+    play sound cheer2 noloop volume 0.6
+    play sound2 cheer1 noloop volume 0.6
     n "As if they couldn't get any louder, the crowd is going insane."
     hide crowd onlayer broadcast
-    play music "<loop 0>showtime.ogg" volume 0.4
+    play music showtime volume 0.4
     host "THE CHAMP HAS FALLEN! LADIES AND GENTS, WHAT AN UPSET!"
     n "CS turns to Digi."
     hide mettaton onlayer broadcast
@@ -1005,7 +1005,7 @@ label win_pencil:
     stop music fadeout 3.0
     hide cs
     scene cc_crowd with dissolve
-    play music "<loop 0>fourside.ogg" volume 0.6
+    play music fourside volume 0.6
 
     # tate was here
     # this fun value references CS messing up reading during the livestream (around 4:07:05 of part 2 stream)
@@ -1055,10 +1055,10 @@ label win_pencil:
     stop music fadeout 3.0
     jump car_dialogue
 
-label back_home:
+label true_back_home:
     stop music2
     scene cs_house with fade
-    play music "<loop 0>park_theme.ogg" volume 0.5
+    play music park_theme volume 0.5
     music Park Theme - Lorin Nelson
     n "After the long and treacherous journey, CS finally arrives at his house."
     show arceus flipped at left with moveinleft
@@ -1086,7 +1086,7 @@ label back_home:
     ed "{i}You!" with hpunch
     show cs worried at left with moveinleft
     n "CS and the gang look towards CS' front porch, where Richard and Ed are waiting angrily for him."
-    play music2 "<loop 0>hohsisremix.ogg" volume 0.5
+    play music hohsis_remix volume 0.5
     music "Alfred's Theme - Eminem"
     show ed at right
     show rich at mid_mid_right behind ed
@@ -1111,31 +1111,31 @@ label back_home:
     if persistent.true_ending:
         menu:
             "Fight them!" (type = "bad"):
-                jump fighthohsis
+                jump true_fighthohsis
             "Negotiate with them!" (type = "true"):
-                jump talktohohsis
+                jump true_talktohohsis
             "Tell it like it is!" (type = "bad"):
-                jump fuckuphohsis
+                jump true_fuckuphohsis
             "Call Copguy!":
-                jump copsathohsis
+                jump true_copsathohsis
     else:
         menu:
             "Fight them!" (type = "bad"):
-                jump fighthohsis
+                jump true_fighthohsis
             "Negotiate with them!" (type = "true"):
-                jump talktohohsis
+                jump true_talktohohsis
             "Tell it like it is!" (type = "bad"):
-                jump fuckuphohsis
+                jump true_fuckuphohsis
 
-label talktohohsis:
+label true_talktohohsis:
     cs "I never intended to harm your company. I just thought that the video was a good source to YTP."
     cs "I'm sorry about all those prank callers. I even made a video telling people to stop prank calling you."
     cs "I never had bad intentions for you guys... honestly, it was also kind of like a free promotion."
     ed "Well, I'm sorry, CS, but it's too late."
     ed "Richard, get the JoJ UFO and vaporize the house."
-    stop music2 fadeout 1.0
+    stop music fadeout 1.0
     show anno at offscreenleft
-    play music "<loop 0>track3.ogg" volume 0.4
+    play music track_3 volume 0.4
     music Track 3 - Weatherscan
     anno_offscreen "Wait!!!"
     n "A voice can be heard behind the group running up to them."
@@ -1269,23 +1269,23 @@ label talktohohsis:
     n "He looks back out towards the crowd again one more time."
     cs "This is CS..."
     cs "Signing out!"
-    play sound "sfx_cheers.ogg" volume 0.7
+    play sound sfx_cheers volume 0.7
     pause 2.0
     n "The crowd erupts into cheers as CS finally enters his house."
     scene black with dissolve
     pause 1.0
     $ renpy.movie_cutscene("movies/hoh_repair.webm")
     scene cs_room with dissolve
-    play music2 "<loop 0>ac_title.ogg" volume 0.4
+    play music ac_title volume 0.4
     music New Leaf Title Theme - Kazumi Totaka
     show cs at center with moveinleft
     cs "Ah, it's good to be home again!"
     if fanbase == "both":
         jump true_ending
     elif fanbase == "ltt":
-        jump ltt_ending
+        jump true_ltt_ending
     elif fanbase == "ytp":
-        jump ytp_ending
+        jump true_ytp_ending
     else:
         jump true_ending
 
@@ -1303,12 +1303,12 @@ label true_ending:
             "Go to sleep" (type = "warning"):
                 jump archival
             "Stream" (type = "true"):
-                jump streaming
+                jump true_streaming
     else:
         $ persistent.true_ending = True
-        jump streaming
+        jump true_streaming
 
-label streaming:
+label true_streaming:
     show cs at mid_left
     cs "Before I head off for the night, I'll do a stream real quick."
     n "CS starts up his stream overlay and goes live on Twitch."
@@ -1333,11 +1333,11 @@ label streaming:
     menu:
         "Play the after story?"
         "Yes" (type = "dx"):
-            jump after_true
+            jump dx_after_true
         "No" (type = "true"):
             return
 
-label ytp_ending:
+label true_ytp_ending:
     stop music
     n "CS looks over at his desk, where his old computer is sitting."
     scene cs_room_2 with fade
@@ -1358,7 +1358,7 @@ label ytp_ending:
     $ renpy.end_replay()
     return
 
-label ltt_ending:
+label true_ltt_ending:
     stop music
     n "CS looks over at his desk, where a new computer is sitting."
     scene cs_room_2 with fade
@@ -1382,7 +1382,7 @@ label ltt_ending:
     $ renpy.end_replay()
     return
 
-label fighthohsis:
+label true_fighthohsis:
     stop music
     scene cs_house
     show cs disappointed at left
@@ -1399,22 +1399,22 @@ label fighthohsis:
     show cs at center
     show ed at center
     with move
-    play sound "sfx_punch.ogg"
-    play sound "sfx_punchalt.ogg"
+    play sound sfx_punch
+    play sound sfx_punch_alt
     show cs with hpunch
-    play sound "sfx_punch.ogg"
-    play sound "sfx_punchalt.ogg"
+    play sound sfx_punch
+    play sound sfx_punch_alt
     show ed with vpunch
-    play sound "sfx_punch.ogg"
-    play sound "sfx_punchalt.ogg"
+    play sound sfx_punch
+    play sound sfx_punch_alt
     show cs with hpunch
-    play sound "sfx_punch.ogg"
-    play sound "sfx_punchalt.ogg"
+    play sound sfx_punch
+    play sound sfx_punch_alt
     show ed with vpunch
-    play sound "sfx_punch.ogg"
-    play sound "sfx_punchalt.ogg"
+    play sound sfx_punch
+    play sound sfx_punch_alt
     show cs with hpunch
-    play sound "sfx_alt_punch.ogg"
+    play sound sfx_alt_punch
     show cs at t_punchup with move
     show cs with vpunch
     show ed at right with move
@@ -1426,9 +1426,9 @@ label fighthohsis:
     show ed with hpunch
     ed "Time to take a shit on the house."
     music end
-    bad_end "Revenge!" "back_home"
+    bad_end "Revenge!" "true_back_home"
 
-label fuckuphohsis:
+label true_fuckuphohsis:
     stop music
     scene cs_house
     show ed at right
@@ -1445,7 +1445,7 @@ label fuckuphohsis:
     cs "Come back here!"
     hide cs with moveoutright
     n "The JoJ UFO flies up over the house, then vaporizes it with a laser."
-    play sound "sfx_beam.ogg" volume 0.6
+    play sound sfx_beam volume 0.6
     show beam at xstretch_in
     pause 1.5
     show cshouse_vaporized behind beam
@@ -1457,9 +1457,9 @@ label fuckuphohsis:
     show cs disappointed
     pause 1.0
     cs "Fuck."
-    bad_end "Time to bunk\nat Rosen's!" "back_home"  
+    bad_end "Time to bunk\nat Rosen's!" "true_back_home"  
 
-label copsathohsis:
+label true_copsathohsis:
     stop music
     scene cs_house
     show ed at right
@@ -1471,7 +1471,7 @@ label copsathohsis:
     music end
     show blue_light at left
     show red_light at right
-    play sound "<loop 0>sfx_siren.ogg" loop volume 0.5
+    play sound sfx_siren loop volume 0.5
     show copguy flipped at center with moveinleft
     cs "Here they are! They scammed me out of my money!"
     n "Copguy cuffs the HoH SiS members and pulls out his walkie."

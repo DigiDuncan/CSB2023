@@ -1,4 +1,9 @@
 label kuwait_travel:
+    play music "<loop 0>airport.ogg" volume 0.4 if_changed
+    music Airport Infiltration - Andy Blythe & Marten Joustra
+    scene ticket_counter
+    show benrey at center
+    show cs disappointed at left
     cs "Uhh, I guess I wanted to go to Kuwait?"
     benrey "Well, I'm sorry, but everyone has a Pass{w=0.5} Port!"
     show cs disappointed
@@ -78,15 +83,16 @@ label kuwait:
     n "Just in that moment, something big hits CS!"
     cs "WHAT THE F--{w=0.1}{nw}"
     show kuwait_explosion behind cs
-    play sound "secret/sfx_explosion.ogg"
+    play sound sfx_explosion
     hide cs with moveoutleft 
     stop sound
     scene black
 
 label kuwait_hospital:
+    scene black
     pause 10
-    play sound "sfx_heartbeat.ogg" loop
-    play music "tmwstw.ogg"
+    play sound sfx_heartbeat loop
+    play music tmwstw
     pause 5
     cs "{i}Where... where am I?{/i}"
     cs "{i}Everything hurts like hell.{/i}"

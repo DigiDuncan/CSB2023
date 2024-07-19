@@ -1,7 +1,7 @@
 label csbiii_ai:
     scene linusmedia with fade
     show cs at left with moveinleft
-    play music "<loop 0>school.ogg" volume 0.4
+    play music school volume 0.4
     music School - Toby Fox
     n "CS is in the Linus Tech Tips office, surrounded by computer parts and confused colleagues."
     n "CS scratches his head."
@@ -49,7 +49,7 @@ label csbiii_ai:
     scene entertunnel with fade
     show cs at left with moveinleft
     show arceus at right with moveinright
-    play music "<loop 0>cliffs.ogg" volume 0.4
+    play music cliffs volume 0.4
     music Cliffs - Toby Fox
     n "CS188 and Arceus dash to a hidden panel on the floor, revealing a concealed entrance to the escape tunnel."
     scene secrettunnel with fade
@@ -61,7 +61,7 @@ label csbiii_ai:
     scene park1 with fade
     show cs at left with moveinbottom
     show arceus at right with moveinbottom
-    play music "<loop 0>circus.ogg" volume 0.4
+    play music circus volume 0.4
     music Circus - Toby Fox
     n "They emerge from the tunnel into a surprising location—an abandoned, overgrown amusement park."
     show arceus angry
@@ -82,7 +82,7 @@ label csbiii_ai:
     show arceus at right with moveinright
     n "CS188 and Arceus duck behind a broken carousel as the cops pass by."
     show copguy_ai at center with moveinbottom
-    play music "<loop 0>chase.ogg" volume 0.4
+    play music chase volume 0.4
     music The Chase - Toby Fox
     n "Arceus whispers to CS."
     show arceus worried
@@ -95,9 +95,9 @@ label csbiii_ai:
     arceus "How could I forget?"
     show arceus
     cs "Well, let's unleash the \"Quack Attack\" on our pursuers!"
-    play sound "<loop 0>sfx_duck.ogg" loop volume 0.7
+    play sound sfx_duck loop volume 0.7
     n "CS188 and Arceus discreetly inflate dozens of rubber ducks and release them, causing a colorful and noisy chaos."
-    play sound "<loop 0>sfx_duck.ogg" loop volume 0.7
+    play sound sfx_duck loop volume 0.7
     show ai_ducks
     n "The cops are distracted, slipping and sliding on the rubber ducks, as CS188 and Arceus make their getaway."
     hide copguy_ai with dissolve 
@@ -125,7 +125,7 @@ label csbiii_ai:
     n "CS catches his breath."
     show cs happy
     cs "We sure did, buddy. Another adventure for the books!"
-    play music "<loop 0>friendship.ogg" volume 0.4
+    play music friendship volume 0.4
     scene endingai with Fade(1.0, 1.0, 1.0)
     music Friendship - Toby Fox
     n "CS188 and Arceus exchange a high-five and disappear into the distance, ready for their next escapade."

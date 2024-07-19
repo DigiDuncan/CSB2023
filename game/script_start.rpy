@@ -327,6 +327,16 @@ transform offscreenleftspin:
     pos(-0.5, 0.5)
     linear 2 rotate 360
 
+transform t_blur_on:
+    blur 0.0
+    linear 1.0:
+        blur 20.0
+
+transform t_blur_off:
+    blur 20.0
+    linear 1.0:
+        blur 0.0
+
 # Character Definitions
 define n = Character(None, what_italic = True, callback = char_callback)  # Narrator
 define cs = Character("cs188", callback = renpy.partial(char_callback, name = "cs", beep = "cs"))
@@ -592,6 +602,7 @@ image arceus worried dark flipped = "dark:flip:characters/arc/worried.png"
 image arceus dark = "dark:characters/arc/arceus.png"
 image arceus dark flipped = "dark:flip:characters/arc/arceus.png"
 image arceus dusk = "dusk:characters/arc/arceus.png"
+image arceus worried dusk = "dusk:characters/arc/worried.png"
 image arceus angry dusk = "dusk:characters/arc/angry.png"
 image arceus dusk flipped = "dusk:flip:characters/arc/arceus.png"
 
@@ -1369,6 +1380,284 @@ layeredimage copguy_ex:
 
 image ai_ducks = SnowBlossom("duck.png", 50)
 
+# Audio
+# CSBI Music
+define audio.lets_hear_my_baby = "lets_hear_my_baby.ogg"
+define audio.canyon = "canyon.ogg"
+define audio.canyon_car = "canyon_but_in_the_car.ogg"
+define audio.summer_clearance_sale = "summer_clearance_sale.ogg"
+define audio.scales_of_joy = "scales_of_joy.ogg"
+define audio.hohsis_theme = "hohsis_theme.ogg"
+define audio.super_friendly = "super_friendly.ogg"
+define audio.time_for_a_smackdown = "time_for_a_smackdown.ogg"
+
+# CSBI Speedrun Music
+define audio.lets_hear_my_sped = "lets_hear_my_sped.ogg"
+define audio.fastbudget_song = "fastbudget_song.ogg"
+define audio.fastport = "fastport.ogg"
+define audio.fasting = "fasting.ogg"
+define audio.happy_running = "happy_running.ogg"
+
+#CSBII Music
+define audio.card_castle = "card_castle.ogg"
+define audio.basement = "basement.ogg"
+define audio.stal = "stal.ogg"
+define audio.moongazer = "moongazer.ogg"
+define audio.onett = "onett.ogg"
+define audio.star_spangled_banner = "star_spangled_banner.ogg"
+define audio.buy_something = "buy_something.ogg"
+define audio.passport = "passport.ogg"
+define audio.passport_ytp = "passport_ytp.ogg"  # TODO: This should be moved to /secret
+
+#CSBIII Act 1 Music
+define audio.passport = "passport.ogg"
+define audio.good_eatin = "good_eatin.ogg"
+define audio.airport_counter = "airport_counter.ogg"
+define audio.hired_guns = "hired_guns.ogg"
+define audio.undyne = "undyne.ogg"
+define audio.atarashii_kaze = "atarashii_kaze.ogg"
+define audio.police_station = "police_station.ogg"
+define audio.echoing = "echoing.ogg"
+define audio.kill_cops = "killcops.ogg"
+define audio.insane_personalities = "insane_personalities.ogg"
+define audio.danger_mystery = "danger_mystery.ogg"
+define audio.pressing_pursuit_cornered = "pressing_pursuit_cornered.ogg"
+define audio.bun_guster = "bun_guster.ogg"
+define audio.happy_roaming = "happy_roaming.ogg"
+
+#CSBIII True Music
+define audio.mm_select = "mm_select.ogg"
+define audio.billy_radio = "billy_radio.ogg"
+define audio.weird_personalities = "weird_personalities.ogg"
+define audio.home_depot = "home_depot.ogg"
+define audio.candle_world = "candle_world.ogg"
+define audio.blazing_corridor = "blazing_corridor.ogg"
+define audio.showtime = "showtime.ogg"
+define audio.mort_farm = "mort_farm.ogg"
+define audio.taiikusai_desu_yo = "taiikusai_desu_yo.ogg"
+define audio.track_4 = "track4.ogg"
+define audio.funiculi_holiday = "funiculi_holiday.ogg"
+define audio.speedy_comet = "speedy_comet.ogg"
+define audio.breakout = "breakout.ogg"
+define audio.fourside = "fourside.ogg"
+define audio.pokey = "pokey.ogg"
+define audio.park_theme = "park_theme.ogg"
+define audio.hohsis_remix = "hohsisremix.ogg"
+define audio.track_3 = "track3.ogg"
+define audio.ac_title = "ac_title.ogg"
+
+# CSBIII Michigan
+define audio.upon_me = "upon_me.ogg"
+define audio.honk_song = "honk_song.ogg"
+define audio.wayward_wanderer = "wayward_wanderer.ogg"
+define audio.mis_leader = "mis_leader.ogg"
+define audio.melancholy = "melancholy.ogg"
+define audio.trash_zone = "trash_zone.ogg"
+
+# CSBIII South Music
+define audio.brick_by_dick = "brick_by_dick.ogg"
+define audio.tunnely_shimbers = "tunnely_shimbers.ogg"
+define audio.hard_drive = "hard_drive.ogg"
+define audio.penthouse = "penthouse.ogg"
+define audio.laurel_palace = "laurel_palace.ogg"
+define audio.lancer = "secret/lancer.ogg"
+define audio.price_right = "price_right.ogg"
+define audio.airport = "airport.ogg"
+define audio.lego_island = "lego_island.ogg"
+define audio.clownpiece = "clownpiece.ogg"
+
+# CSBIII Friend Music
+define audio.morning_highway = "morning_highway.ogg"
+define audio.creative_exercise = "creative_exercise.ogg"
+define audio.pixel_peeker_polka = "pixel_peeker_polka.ogg"
+define audio.Lowbudget_song = "lowbudget_song.ogg"
+define audio.klaxon_beat = "klaxon_beat.ogg"
+define audio.cp_violation = "cp_violation.ogg"
+define audio.mm_complete = "mm_complete.ogg"
+define audio.police_station = "police_station.ogg"
+define audio.tuna_fish = "tuna_fish.ogg"
+define audio.full_rulle_med_klas = "<from 0 to 86>full_rulle_med_klas.ogg"
+define audio.dense_woods_b = "dense_woods_b.ogg"
+define audio.la_by_night = "la_by_night.ogg"
+define audio.triage_at_dawn = "triage_at_dawn.ogg"
+define audio.the_whale = "the_whale.ogg"
+define audio.prophet_2001 = "prophet_2001.ogg"
+define audio.insane_personalities = "<from 60 to 170>insane_personalities.ogg"
+
+# CSBIII Country Music
+define audio.wool_gloves = "wool_gloves.ogg"
+define audio.conflict = "conflict.ogg"
+define audio.tumultuous = "tumultuous.ogg"
+define audio.lisbon_fever = "lisbon_fever.ogg"
+define audio.yuuka_town = "yuuka_town.ogg"
+define audio.automatic_love = "automatic_love.ogg"
+define audio.chase = "chase.ogg"
+define audio.neko_to_sanpo = "neko_to_sanpo.ogg"
+define audio.real_world = "real_world.ogg"
+define audio.muumin_tani_fuyu = "muumin_tani_fuyu.ogg"
+define audio.snufin = "snufin.ogg"
+define audio.lady_of_the_cold = "lady_of_the_cold.ogg"
+define audio.afternoon_hills = "afternoon_hills.ogg"
+define audio.xddcc = "xddcc.ogg"
+
+# CSBIII Fired/Rockstar Music
+define audio.dealin_dope = "dealin_dope.ogg"
+define audio.hit_me_with_your_best_shot = "hitmewithyourbestshot.ogg"
+define audio.hightop = "hightop.ogg"
+define audio.everlong = "everlong.ogg"
+define audio.local_forecast = "local_forecast.ogg"
+define audio.now_what = "now_what.ogg"
+define audio.happy_rock = "happy_rock.ogg"
+define audio.energetic_rock = "energetic_rock.ogg"
+define audio.fnaf_6 = "fnaf_6.ogg"
+define audio.france = "france.ogg"
+define audio.dragon_castle = "dragon_castle.ogg"
+define audio.gold_room = "gold_room.ogg"
+define audio.sweet_victory = "sweet_victory.ogg"
+define audio.dig_this = "dig_this.ogg"
+define audio.exotic = "exotic.ogg"
+define audio.another_him = "another_him.ogg"
+define audio.track_4 = "track4.ogg"
+
+# CSBIII AI Music
+define audio.school = "school.ogg"
+define audio.cliffs = "cliffs.ogg"
+define audio.circus = "circus.ogg"
+define audio.chase = "chase.ogg"
+define audio.friendship = "friendship.ogg"
+
+# CSBIII Archival Music
+define audio.facing_worlds = "facing_worlds.ogg"
+define audio.take_trip = "take_trip.ogg"
+define audio.take_trip2 = "take_trip2.ogg"
+define audio.everybody_wants = "everybody_wants.ogg"
+
+# CSBIII Error Music
+define audio.night = "night.ogg"
+
+# CSBIII Car Music
+define audio.billy_mix = "billy_mix.ogg"
+define audio.moving_right_along = "moving_right_along.ogg"
+
+# CSBIII DX Train Music
+define audio.sub_game_select = "sub_game_select.ogg"
+define audio.outdoors = "<loop 54.031>outdoors.ogg"
+define audio.bedroom_day = "<loop 0.916>bedroom_day.ogg"
+define audio.item_bounce = "item_bounce.ogg"
+define audio.krabby_klub = "<loop 3.1>krabby_klub.ogg"
+define audio.ochre_woods_day = "<loop 27.401>ochre_woods_day.ogg"
+define audio.prof_kranes_kidnap = "prof_kranes_kidnap.ogg"
+define audio.e_gadds_lab = "<loop 1.071>e_gadds_lab.ogg"
+define audio.onbs = "onbs.ogg"
+define audio.insomnia_intro = "insomnia_intro.ogg"
+define audio.insomnia_full = "<from 22.6>insomnia_full.ogg"
+
+# CSBIII DX Kuwait Music
+define audio.tmwstw = "tmwstw.ogg"
+
+# CSBIII DX After-True Music
+define audio.lets_hear_spring = "letshearspring.ogg"
+define audio.echoing_spring = "echoingspring.ogg"
+define audio.alien_atmosphere = "alien_atmosphere.ogg"
+define audio.apple_kid = "apple_kid.ogg"
+define audio.ten_feet_away = "10_feet_away.ogg"
+define audio.hitsquad_2 = "hitsquad_2.ogg"
+
+# CSBIII DX Finale Music
+define audio.funvalueland = "funvalueland.ogg"
+
+# Other?
+define audio.space_classroom = "secret/space_classroom.ogg"
+
+# SFX
+define audio.sfx_alt_punch = "sfx_alt_punch.ogg"
+define audio.sfx_amtrak_horn = "sfx_amtrak_horn.wav"
+define audio.sfx_bossappears = "sfx_bossappears.ogg"
+define audio.sfx_beam = "sfx_beam.ogg"
+define audio.sfx_bell = "sfx_bell.ogg"
+define audio.sfx_bucket = "sfx_bucket.ogg"
+define audio.sfx_car_crash = "sfx_car_crash.ogg"
+define audio.sfx_car_horn = "sfx_car_horn.ogg"
+define audio.sfx_chatter = "sfx_chatter.ogg"
+define audio.sfx_cheer = "sfx_cheer1.ogg"
+define audio.sfx_cheer2 = "sfx_cheer2.ogg"
+define audio.sfx_cheers = "sfx_cheers.ogg"
+define audio.sfx_chop = "sfx_chop.ogg"
+define audio.sfx_clapperboard = "sfx_clapperboard.ogg"
+define audio.sfx_clonk = "sfx_clonk.ogg"
+define audio.sfx_csnore = "sfx_csnore.ogg"
+define audio.sfx_drill = "sfx_drill.ogg"
+define audio.sfx_drillbreak = "sfx_drillbreak.ogg"
+define audio.sfx_doorbell = "sfx_doorbell.ogg"
+define audio.sfx_doorslam = "sfx_doorslam.ogg"
+define audio.sfx_driving = "sfx_driving.ogg"
+define audio.sfx_duck = "sfx_duck.ogg"
+define audio.sfx_earthquake = "sfx_earthquake.ogg"
+define audio.sfx_elevator_ding = "sfx_elevator_ding.ogg"
+define audio.sfx_explosion = "secret/sfx_explosion.ogg"
+define audio.sfx_fart = "sfx_fart.mp3"
+define audio.sfx_fart_again = "sfx_fart_again.ogg"
+define audio.sfx_fart_deep = "sfx_fart_deep.mp3"
+define audio.sfx_fart_lite = "sfx_fart_lite.mp3"
+define audio.sfx_fart_with_reverb = "sfx_fart_with_reverb.mp3"
+define audio.sfx_foundationfail = "sfx_foundationfail.ogg"
+define audio.sfx_funni = "secret/sfx_funni.ogg"
+define audio.sfx_gamer_and_girl = "sfx_gamer_and_girl.ogg"
+define audio.sfx_gasp = "sfx_gasp.ogg"
+define audio.sfx_gaster_blast = "minigames/car/sfx_gaster_blast.ogg"
+define audio.sfx_glass = "sfx_glass.ogg"
+define audio.sfx_gul = "secret/sfx_gul.ogg"
+define audio.sfx_heartbeat = "sfx_heartbeat.ogg"
+define audio.sfx_lego = "sfx_legosfx.ogg"
+define audio.sfx_lego_break = "sfx_lego_break.WAV"
+define audio.sfx_hard_knock = "sfx_hard_knock.mp3"
+define audio.sfx_hubbub = "sfx_hubbub.ogg"
+define audio.sfx_hitbod1 = "sfx_hitbod1.ogg"
+define audio.sfx_hitbod2 = "sfx_hitbod2.ogg"
+define audio.sfx_hitbod3 = "sfx_hitbod3.ogg"
+define audio.sfx_hks1 = "sfx_hks1.ogg"
+define audio.sfx_hks2 = "sfx_hks2.ogg"
+define audio.sfx_hks3 = "sfx_hks3.ogg"
+define audio.sfx_hold_it = "sfx_hold_it.ogg"
+define audio.sfx_issac = "sfx_isaac.ogg"
+define audio.sfx_joj_loop = "sfx_joj_loop.ogg"
+define audio.sfx_less_annoying_alarm_sound = "sfx_less_annoying_alarm_sound.ogg"
+define audio.sfx_lightswitch = "sfx_lightswitch.wav"
+define audio.sfx_keyboard = "sfx_keyboard.ogg"
+define audio.sfx_metalpipe = "sfx_metalpipe.ogg"
+define audio.sfx_nice_car = "sfx_nicecar.ogg"
+define audio.sfx_not_so_nice_scratch = "sfx_not_so_nice_scratch.ogg"
+define audio.sfx_obama = "sfx_obama.ogg"
+define audio.sfx_objection = "sfx_objection.ogg"
+define audio.sfx_okuubeam = "sfx_okuubeam.ogg"
+define audio.sfx_page = "sfx_page.ogg"
+define audio.sfx_payday = "sfx_payday.ogg"
+define audio.sfx_ping = "sfx_ping.ogg"
+define audio.sfx_ping_spam = "sfx_ping_spam.ogg"
+define audio.sfx_poot = "sfx_poot.mp3"
+define audio.sfx_puke = "sfx_puke.ogg"
+define audio.sfx_punch = "sfx_punch.ogg"
+define audio.sfx_punch_alt = "sfx_alt_punch.ogg"
+define audio.sfx_ringtone = "sfx_ringtone.ogg"
+define audio.sfx_roll_window = "sfx_roll_window.ogg"
+define audio.sfx_siren = "sfx_siren.ogg"
+define audio.sfx_sliding_door_close = "sfx_sliding_door_close.mp3"
+define audio.sfx_sliding_door_open = "sfx_sliding_door_open.mp3"
+define audio.sfx_slots = "sfx_slots.ogg"
+define audio.sfx_somethingchanged = "sfx_somethingchanged.ogg"
+define audio.sfx_splash = "sfx_splash.ogg"
+define audio.sfx_start_rocking = "sfx_start_rocking.ogg"
+define audio.sfx_thunder = "sfx_thunder.ogg"
+define audio.sfx_tinnitus = "sfx_tinnitus.ogg"
+define audio.sfx_tiresqueal = "sfx_tiresqueal.ogg"
+define audio.sfx_victory_punch = "sfx_victory_punch.ogg"
+define audio.sfx_vine = "secret/sfx_vine.ogg"
+define audio.sfx_waterphone = "sfx_waterphone.ogg"
+define audio.sfx_whoosh = "sfx_whoosh.mp3"
+define audio.sfx_windows_logon = "sfx_windows_logon.ogg"
+define audio.sfx_yelling = "sfx_yelling.ogg"
+define audio.sfx_ytpintro = "sfx_ytpintro.ogg"
+
 # Layers?
 define config.detached_layers += ["broadcast"]
 image stage_screen = Window(Layer("broadcast", clipping = False), background = "minigames/pencil/stage.png")
@@ -1572,7 +1861,7 @@ screen chapter_menu():
                     sensitive persistent.csb3b_unlocked
                     at transform:
                         zoom 0.666
-                    action Play("sound", "sfx_valid.ogg"), Hide("chapter_menu", Fade(1.0)), Jump("choose_direction")
+                    action Play("sound", "sfx_valid.ogg"), Hide("chapter_menu", Fade(1.0)), Jump("csbiii_choose_direction")
                 imagebutton auto "menu/csbiiidx_%s.png" hover_sound "sfx_select.ogg":
                     sensitive persistent.true_ending
                     at transform:

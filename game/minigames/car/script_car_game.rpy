@@ -205,7 +205,7 @@ screen cargame:
     add cargame
 
 label minigame_car:
-    play music "<loop 0>speedy_comet.ogg" if_changed
+    play music speedy_comet if_changed
     window hide
     $ quick_menu = False
     call screen cargame

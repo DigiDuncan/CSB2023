@@ -2,7 +2,7 @@ label michigan:
     scene car plains
     show billy car
     with dissolve
-    play music "<loop 0>track4.ogg" volume 0.4
+    play music track_4 volume 0.4
     billy "Alright. The highway entrance should be right around here."
     billy "We can head to Ohio, and then we'll be getting really close."
     billy "Fuck."
@@ -44,11 +44,14 @@ label michigan:
     menu:
         "Decide."
         "Try to stop going to Bronson" (type = "dx"):
-            jump bronson
+            jump michigan_bronson
         "Don't say anything":
-            jump continue_michigan
+            jump michigan_continue
 
-label bronson:
+label michigan_bronson:
+    scene car plains
+    show billy car
+    stop music fadeout 3.0
     cs "Look man, just don't go to Bronson okay?"
     billy "Okay okay, we won't go."
     cs "It's just, I am getting a really bad vibe from that place."
@@ -56,7 +59,7 @@ label bronson:
     billy "CS, I already said we aren't going there, okay?"
     arceus "I'm getting chills thinking about it too, CS is right."
     billy "Okay shut up! Let me drive!"
-    play music "<loop 0>upon_me.ogg"
+    play music upon_me
     cs "Billy, you took the Bronson exit."
     show billy car
     billy "..."
@@ -69,8 +72,8 @@ label bronson:
     n "Welcome to Bronson."
     scene black with dissolve
     pause 2.0
-    $ achievement_manager.unlock("We don't go to Bronson")
-    play sound "<loop 0>sfx_thunder.ogg" volume 0.5 loop
+    $ achievement_manager.unlock("We Don't Go To Bronson")
+    play sound sfx_thunder volume 0.5 loop
     scene bronson_hell
     show cscar1arc
     show billy at left
@@ -108,21 +111,21 @@ label bronson:
     billy "I shouldn't have picked you up at all! It's been nothing but trouble with you CS!"
     show cs disappointed flipped
     cs "What the hell, man?"
-    play sound2 "<loop 0>sfx_siren.ogg" volume 0.1 loop
+    play sound2 sfx_siren volume 0.1 loop
     arceus "Both of you, shut up! Do you hear... something in the distance?"
     window hide
     stop music fadeout 5.0
     pause 5.0
-    play sound2 "<loop 0>sfx_siren.ogg" volume 0.2
+    play sound2 sfx_siren volume 0.2
     pause 2.0
-    play sound2 "<loop 0>sfx_siren.ogg" volume 0.3
+    play sound2 sfx_siren volume 0.3
     pause 2.0
-    play sound2 "<loop 0>sfx_siren.ogg" volume 0.4
+    play sound2 sfx_siren volume 0.4
     show blue_light at left
     show red_light at right
     with dissolve
     pause 2.0
-    play sound2 "<loop 0>sfx_siren.ogg" volume 0.5
+    play sound2 sfx_siren volume 0.5
     show cs scared flipped
     cs "Is... that..."
     arceus "It's Copguy."
@@ -132,9 +135,9 @@ label bronson:
     cs "I think he's gonna ram us!"
     cs "Brace yourselves!"
     scene black with dissolve
-    play sound2 "sfx_car_crash.ogg" volume 0.7 noloop
+    play sound2 sfx_car_crash volume 0.7 noloop
     pause 10.0
-    play sound2 "<loop 0>sfx_siren.ogg" volume 0.2 loop
+    play sound2 sfx_siren volume 0.2 loop
     scene bronsoncrash
     show billy laser at left
     show arceus dirty worried flipped at mid_left
@@ -154,9 +157,11 @@ label bronson:
     show copguyexe with dissolve
     scene white with dissolve
     pause 1.0
-    jump bronsonbattle
+    jump rpg_bronsonbattle
 
-label bronson_win:
+label michigan_bronson_win:
+    play sound sfx_thunder volume 0.5 loop if_changed
+    stop music fadeout 3.0
     scene bronsoncrash
     show billy at left
     show arceus dirty flipped at mid_left
@@ -170,7 +175,7 @@ label bronson_win:
     n "Thankfully, the car wasn't too much of a wreck, and they got back on the road."
     window hide
     pause 1.0
-    play sound "sfx_doorslam.ogg"
+    play sound sfx_doorslam
     scene bronson_hell
     show cscar1arc
     show billy at left
@@ -203,11 +208,14 @@ label bronson_win:
     menu:
         "Which road should we take?"
         "I-69" (type = "warning"):
-            jump interstate_69
+            jump michigan_interstate_69
         "I-94":
-            jump interstate_94
+            jump michigan_interstate_94
 
-label continue_michigan:
+label michigan_continue:
+    scene car plains
+    show billy car
+    stop music fadeout 3.0
     arceus "Nah, this place looks too rural to have much around."
     n "The two look over to CS, who seems visibly distressed."
     arceus "Uh, CS? How's it going?"
@@ -228,13 +236,14 @@ label continue_michigan:
     menu:
         "Which road should we take?"
         "I-69" (type = "warning"):
-            jump interstate_69
+            jump michigan_interstate_69
         "I-94":
-            jump interstate_94
+            jump michigan_interstate_94
 
-label interstate_69_old:
+label michigan_interstate_69_old:
+    stop music fadeout 3.0
     window hide
-    show screen warning("The following scene is a major tonal shift.\nIt may be disconcerting to some viewers.", "Warnings: creepy forests, haunting music, slow descents into madness.", "pussy_out_i69")
+    show screen warning("The following scene is a major tonal shift.\nIt may be disconcerting to some viewers.", "Warnings: creepy forests, haunting music, slow descents into madness.", "back_out_i69")
     pause
     window show
     $ nome = True
@@ -257,7 +266,7 @@ label interstate_69_old:
     show cs disappointed flipped at right
     show cscar2
     with dissolve 
-    play music "<loop 0>honk_song.ogg" volume 0.8
+    play music honk_song volume 0.8
     cs "I was expecting there to be people around, but I wasn't expecting traffic like this. I wonder what's going on?"
     arceus "All the people walking are wearing green and white, so it's probably a sports thing."
     billy "We are in Lansing. They have one of the biggest football schools in the country."
@@ -286,10 +295,10 @@ label interstate_69_old:
     billy "Holy shit, you two weren't kidding. I think he's trying to talk to us."
     stop music fadeout 3.0
     billy "I'm gonna see what he wants."
-    play sound "sfx_roll_window.ogg" volume 0.7
+    play sound sfx_roll_window volume 0.7
     pause 2.0 
     # DX: It could be funny to have an option to ignore the gnome for a while
-    play music "<loop 0>wayward_wanderer.ogg" volume 0.7
+    play music wayward_wanderer volume 0.7
     music Wayward Wanderer - Deep Gnome
     if fun_value(FUN_VALUE_MUSIC):
         gnome "Hallo, I am a Wayward Wanderer, may I enter your Automobile?"
@@ -386,7 +395,7 @@ label interstate_69_old:
     hide waitress with moveoutright
     n "As everyone is waiting, the strange glowing grey blob in the corner notices the group and floats over."
     show aria at right with moveinright
-    play music "<loop 0>mis_leader.ogg" volume 0.7
+    play music mis_leader volume 0.7
     music MisLeader - Triosk and Jan Jelinek
     aria "CS! Arc! What are you doing here?"
     gnome "Aria! I knew I recognized that Scent."
@@ -622,7 +631,7 @@ label interstate_69_old:
     show billy dark at center
     show aria dark flipped at left
     with dissolve
-    play music "<loop 0>dense_woods_b.ogg" volume 0.5
+    play music dense_woods_b volume 0.5
     music Dense Woods B - Kikiyama
     billy "Why does the window by the entrance have to be bright red?"
     billy "I've had enough of spooky forests today."
@@ -693,7 +702,7 @@ label interstate_69_old:
     stop music fadeout 3.0
     music end
     scene creepy_path_4 with dissolve
-    play music "melancholy.ogg"
+    play music melancholy
     music Melancholy - Imori
     aria "If you look to the right, you'll see one of my favorite paths in the woods."
     aria "It's not exactly clear, so we'll skip it today, but it leads to a pretty little grotto."
@@ -810,9 +819,12 @@ label interstate_69_old:
     arceus "Whatever, man..."
     aria "Bye-bye, y'all! Good luck on your adventure!"
     scene black with dissolve
-    jump ohio
+    jump true_ohio
 
-label interstate_69:
+label michigan_interstate_69:
+    scene car plains
+    show billy car
+    stop music fadeout 3.0
     $ nome = True
     cs "We're on a detour anyway. May as well take the funny route."
     billy "Alright. 69 it is."
@@ -829,7 +841,7 @@ label interstate_69:
     show cs disappointed flipped at right
     show cscar2
     with dissolve 
-    play music "<loop 0>honk_song.ogg" volume 0.8
+    play music honk_song volume 0.8
     cs "Ugh, traffic? Billy, you have a dashcam, right?"
     show cs flipped
     billy "Of course! I have the Crash Stopper! The fast and easy way to make sure you never crash again!"
@@ -853,10 +865,10 @@ label interstate_69:
     show cs disappointed flipped
     stop music fadeout 3.0
     billy "I'm gonna see what he wants, grab the Awesome Augement if he tries to do anything funny."
-    play sound "sfx_roll_window.ogg" volume 0.7
+    play sound sfx_roll_window volume 0.7
     pause 2.0 
     # DX: It could be funny to have an option to ignore the gnome for a while
-    play music "<loop 0>wayward_wanderer.ogg" volume 0.7
+    play music wayward_wanderer volume 0.7
     music Wayward Wanderer - Deep Gnome
     if fun_value(FUN_VALUE_MUSIC):
         gnome "Hallo, I am a Wayward Wanderer, may I enter your Automobile?"
@@ -961,7 +973,7 @@ label interstate_69:
     else:
         n "As everyone is waiting, the strange glowing grey blob in the corner notices the group and floats over."
     show aria at right with moveinright
-    play music "<loop 0>mis_leader.ogg" volume 0.7
+    play music mis_leader volume 0.7
     music MisLeader - Triosk and Jan Jelinek
     aria "CS! Arc! What are you doing here?"
     gnome "Aria! I knew I recognized that Scent."
@@ -1178,7 +1190,7 @@ label interstate_69:
     show billy dark at center
     show aria dark flipped at left
     with dissolve
-    play music "<loop 0>dense_woods_b.ogg" volume 0.5
+    play music dense_woods_b volume 0.5
     music Dense Woods B - Kikiyama
     if fun_value(FUN_VALUE_MUSIC):
         cs "Wouldn't you say these are some Dense Woods, Billy?"
@@ -1252,7 +1264,7 @@ label interstate_69:
     stop music fadeout 3.0
     music end
     scene creepy_path_4 with dissolve
-    play music "melancholy.ogg"
+    play music melancholy
     music Melancholy - Imori
     if fun_value(FUN_VALUE_MUSIC):
         aria "If you look to the right, you'll see one of my favorite, melancholy, paths in the woods."
@@ -1275,7 +1287,7 @@ label interstate_69:
     arceus "That tree is watching us."
     aria "I like to think that Mother Nature watc--{w=2.0}{nw}"
     $ renpy.music.set_pause(True, "music")
-    play music2 "<loop 0>sfx_ringtone.ogg" volume 3 
+    play music2 sfx_ringtone volume 3 
     n "All of a sudden, CS' phone starts going off."
     cs "Oh shit, sorry. I forgot I left my ringer on."
     aria "Well, can you turn it off? You're interrupting my friend's song!"
@@ -1378,9 +1390,12 @@ label interstate_69:
     arceus "Whatever, man..."
     aria "Bye-bye, y'all! Good luck on your adventure!"
     scene black with dissolve
-    jump ohio
+    jump true_ohio
 
-label interstate_94:
+label michigan_interstate_94:
+    scene car plains
+    show billy car
+    stop music fadeout 3.0
     $ clown = True
     cs "What are you talking about? We're getting on 94."
     cs "We've all been through way too much for me to want to take any unnecessary detours."
@@ -1397,7 +1412,7 @@ label interstate_94:
     with fade
     billy "Looks like there's a traffic jam up ahead. I'm gonna get off and take a detour."
     arceus "I'm gonna roll a window down now that we're off the noisy highway."
-    play sound "sfx_roll_window.ogg" volume 0.7
+    play sound sfx_roll_window volume 0.7
     pause 1.0 
     arceus "It's crazy hot in here right now."
     cs "Huh, I didn't notice."
@@ -1406,7 +1421,7 @@ label interstate_94:
     arceus "If you wanna see me naked, you can just ask..."
     cs "I didn't mean-- {w=0.5}whatever..."
     show billy car turn with vpunch
-    play sound "sfx_splash.ogg"
+    play sound sfx_splash
     show billy car turn with hpunch
     n "Soon after Arceus rolled down the window, they drive over a large flooded pothole."
     n "Water splashes up from the puddle through the car window."
@@ -1428,7 +1443,7 @@ label interstate_94:
     scene mario_inside
     show mario at right
     with dissolve
-    play music "<loop 0>trash_zone.ogg" volume 0.3  
+    play music trash_zone volume 0.3  
     music Tubular Trash Zone - Mr. Sauceman
     show cs at left
     show arceus dirty flipped at mid_left
@@ -1470,7 +1485,7 @@ label interstate_94:
     smiley "See ya!"
     hide smiley with moveoutleft
     n "Smiley runs out of the building and gets into his car."
-    play sound "sfx_gamer_and_girl.ogg" volume 0.4
+    play sound sfx_gamer_and_girl volume 0.4
     n "A loud \"awoooooga!\" horn is heard as a colorful little clown car drives past."
     mario "Bastard. I really didn't need this today..."
     mario "Whatever, what do y'all need?"
@@ -1588,4 +1603,4 @@ label interstate_94:
     n "CS, Billy, and Arceus all walk out."
     mario "That was really nice. I guess you {i}can{/i} have shit in Detroit after all."
     scene black with dissolve
-    jump ohio
+    jump true_ohio

@@ -1,4 +1,4 @@
-label dpn_call:
+label friend2_dpn_call:
     if nice_car:
         scene joj_charger_fg
         show drive_day behind joj_charger_fg
@@ -8,7 +8,7 @@ label dpn_call:
     show cs disappointed at left
     show pakoo at right
     with fade
-    play music "<loop 0>tuna_fish.ogg" loop volume 0.6
+    play music tuna_fish loop volume 0.6
     music Tuna Fish - Dr. Awesome
     cs "What a crazy day so far, man."
     show cs worried 
@@ -31,9 +31,11 @@ label dpn_call:
     show cs disappointed
     pakoo "Man, I hope Mika is okay. I don't how I'm gonna explain this whole situation to them later."
     arceus "I think we're all in the same boat on that problem. I'm sure they'll all be fine."
-    jump car_ride_1
+    jump friend2_car_ride_1
 
-label car_ride_1:
+label friend2_car_ride_1:
+    play music tuna_fish loop volume 0.6 if_changed
+    music Tuna Fish - Dr. Awesome
     scene black with fade
     n "Meanwhile, Tate's group seems to be having the time of their life."
     scene jeep_inside_fg
@@ -62,7 +64,7 @@ label car_ride_1:
     cs "So, yeah, that's why I'm worried."
     show pakoo disappointed
     pakoo "Yeah, I getcha, I'm sur--{w=1.0}{nw}"
-    play sound "sfx_car_horn.ogg" volume 1
+    play sound "sfx_car_horn.ogg"
     show cs scared with vpunch
     show pakoo worried with vpunch
     cs "JESUS!!"
@@ -113,15 +115,15 @@ label car_ride_1:
     music end
     scene black with fade
     n "A few hours pass and the DPN crew arrives at the S&P Diner. They chat as they wait to be served."
-    jump dpn_diner
+    jump friend2_dpn_diner
 
-label dpn_diner:
+label friend2_dpn_diner:
     scene dinerinside
     show digi at right
     show nova flipped at center
     show aria at left
     with fade
-    play music "<from 0 to 86>full_rulle_med_klas.ogg" volume 0.5
+    play music full_rulle_med_klas volume 0.5
     music Full Rulle Med Klas - Lizardking
     digi "Finally, we can stretch our legs again."
     nova "Remind me of what you needed me here for, again? I have a set later tonight I need to prepare for!"
@@ -151,7 +153,7 @@ label dpn_diner:
     n "As Aria approaches CS and the gang, they screech on the brakes as they almost run into a blockade."
     hide drive_night
     show cs_somewhere behind aria_car_fg
-    play music "<loop 0>dense_woods_b.ogg" volume 0.5
+    play music dense_woods_b volume 0.5
     music Dense Woods B - Kikiyama
     n "Cop cars surround the vicinity of the area."
     n "Aria gets out of the car."
@@ -181,11 +183,11 @@ label dpn_diner:
     music Desert Dawn - Lizardking
     jump rpg_cop_fight_3
 
-label cs_meetup:
+label friend2_cs_meetup:
     scene cs_somewhere 
     show aria dark flipped at right
     with fade
-    play music "<loop 0>dense_woods_b.ogg" volume 0.5
+    play music dense_woods_b volume 0.5
     n "After Aria takes care of the cops, CS and Tate's group rolls up on the other side of the blockade."
     show cs dark at center
     show arceus dark flipped at mid_left
@@ -210,7 +212,7 @@ label cs_meetup:
     show digi at center
     show nova flipped at left
     with fade
-    play music "<from 0 to 86>full_rulle_med_klas.ogg" volume 0.5
+    play music full_rulle_med_klas volume 0.5
     pause 2.0
     nova "They are so dead."
     digi "Stop saying that! They are probably fine."
@@ -229,7 +231,9 @@ label cs_meetup:
     music Full Rulle Med Klas - Lizardking
     jump rpg_cop_fight_4
 
-label cs_meetup_2:
+label friend2_cs_meetup_2:
+    stop music fadeout 3.0
+    music end
     scene dinerinside
     show digi at center
     show nova flipped at left
@@ -256,7 +260,7 @@ label cs_meetup_2:
     scene black with dissolve
     n "Digi, Aria, and Nova all go outside to meet everyone else."
     scene dineroutside
-    play music "<loop 0>la_by_night.ogg" volume 0.5
+    play music la_by_night volume 0.5
     music L.A. By Night - Dr. Awesome
     show cs dark flipped at right
     show arceus dark at mid_right
@@ -319,9 +323,11 @@ label cs_meetup_2:
     scene black with dissolve
     window hide
     pause 2.0
-    jump car_ride_2
+    jump friend2_car_ride_2
 
-label car_ride_2:
+label friend2_car_ride_2:
+    play music la_by_night volume 0.5 if_changed
+    music L.A. By Night - Dr. Awesome
     scene jeep_inside_fg
     show drive_night behind jeep_inside_fg
     show mika at left
@@ -370,7 +376,7 @@ label car_ride_2:
     music end
     cs "Well, should we find somewhere to stop for the night? We've been going for a while."
     pakoo "Holy shit! Stop, CS!"
-    play sound "sfx_tiresqueal.ogg"
+    play sound sfx_tiresqueal
     show cs scared with vpunch
     with vpunch
     with vpunch
@@ -409,19 +415,21 @@ label car_ride_2:
     music Thousand March - Mr. Sauceman
     jump rpg_ng_fight
 
-label cs_rage:
+label friend2_cs_rage:
+    stop music fadeout 3.0
+    music end
     scene battle_block_without_theater
     show cs dark angry at center
     show tate dark at mid_left
     show arceus dark flipped at left
     show digi dark flipped at mid_offscreen_left
-    with fade
+    with dissolve
     n "After CS and his friends manage to push back the National Guard, Copguy once again flees at the last moment."
     cs "Hey! You get back here, damn it!"
     show cs dark angry at mid_right with move
     show cs dark angry flipped with determination
     cs "Guys, let's chase after him!"
-    play music "triage_at_dawn.ogg" loop volume 0.6
+    play music triage_at_dawn loop volume 0.6
     music Triage At Dawn - Kelly Bailey
     show arceus worried dark flipped
     arceus "CS, we need a minute. We just fought a tank."
@@ -521,19 +529,19 @@ label cs_rage:
     hide digi
     hide tate
     with moveoutleft
-    scene black with fade
+    scene black with dissolve
     n "The crew takes off after getting back in their respective cars."
+    jump friend2_copguy_pres
+
+label friend2_copguy_pres:
     stop music fadeout 3.0
     music end
-    scene black with fade
-    jump copguy_pres
-
-label copguy_pres:
+    scene black with dissolve
     n "After Copguy fled the scene, he immediately called to summarize the bad news to the sheriff."
     scene police_car_fg
     show copguy flipped at left
     show drive_night behind police_car_fg
-    with fade
+    with dissolve
     sheriff "They {i}what?!{/i}"
     copguy "They blew up our tank, sir."
     sheriff "Shit! Urghhh..."
@@ -562,9 +570,9 @@ label copguy_pres:
     copguy "Thank you, sir. I won't stop until these menaces are behind bars."
     scene black with dissolve
     window hide
-    jump car_ride_3
+    jump friend2_car_ride_3
 
-label car_ride_3:
+label friend2_car_ride_3:
     if nice_car:
         scene joj_chargerarc_fg
         show drive_night behind joj_chargerarc_fg
@@ -574,7 +582,7 @@ label car_ride_3:
     show arceus flipped at left
     show pakoo at right
     with fade
-    play music "the_whale.ogg" loop volume 0.6
+    play music the_whale loop volume 0.6
     music The Whale - Dr. Awesome
     n "While they are driving, Arceus notices that Copguy starts ludicrously speeding up until he stops in Illinois."
     arceus "Guys, I think I found out where Copguy is headed."
@@ -619,9 +627,9 @@ label car_ride_3:
     stop music fadeout 3.0
     music end
     scene black with fade
-    jump final_meetup
+    jump friend2_final_meetup
 
-label final_meetup:
+label friend2_final_meetup:
     if nice_car:
         scene joj_chargerarc_fg
         show final_destination behind joj_chargerarc_fg
@@ -631,7 +639,7 @@ label final_meetup:
     show arceus flipped at left
     show pakoo at right
     with fade
-    play music "prophet_2001.ogg" loop volume 0.6
+    play music prophet_2001 loop volume 0.6
     music Prophet 2001 - Dr. Awesome
     arceus "Alright, we are here."
     pakoo "So, who is joining us to help fight Copguy?"
@@ -673,7 +681,9 @@ label final_meetup:
     music Trans Atlantic - Lizardking
     jump rpg_final_fight_1
 
-label between_1:
+label friend2_between_1:
+    stop music fadeout 3.0
+    music end
     scene war_torn_3
     show cs at center
     show pakoo flipped at mid_left
@@ -689,18 +699,20 @@ label between_1:
     cs "Alright, guys! Battle positions! We've got a tank!"
     jump rpg_final_fight_2
 
-label between_2:
+label friend2_between_2:
+    stop music fadeout 3.0
+    music end
     scene war_torn_5
     show cs worried at center
     show tate at mid_left
     show arceus flipped at left
     with dissolve
-    play music "the_whale.ogg" loop volume 0.6
+    play music the_whale loop volume 0.6
     cs "C'mon, guys! We've gotta get to Copguy!"
     show cs disappointed
     tate "Where is Copguy, anyway? Do you even know where he could be?"
     n "All of a sudden, the ground starts to shake as a blinding light blasts the group."
-    play sound "sfx_earthquake.ogg"
+    play sound sfx_earthquake
     stop music fadeout 3.0
     show tate shock
     show arceus worried flipped
@@ -722,12 +734,12 @@ label between_2:
     show cs worried at center
     show tate shock at mid_left
     show arceus worried flipped at left
-    play sound "sfx_bossappears.ogg"
+    play sound sfx_bossappears
     show copguy_ex at right 
     with dissolve
     pause 2.0
     copguy "Well, well, well, CS."
-    play music "prophet_2001.ogg" loop volume 0.6
+    play music prophet_2001 loop volume 0.6
     copguy "How do you like my new form? Pretty cool, right?"
     show cs angry
     show tate srs
@@ -737,7 +749,7 @@ label between_2:
     copguy "I've been making sure to note down your team's abilities..."
     copguy "Why don't we try one out?"
     n "Copguy uses Light Cast on Arceus!"
-    play sound "minigames/car/sfx_gaster_blast.ogg"
+    play sound sfx_gaster_blast
     scene white with dissolve
     scene war_torn_5
     show cs worried at center
@@ -752,15 +764,15 @@ label between_2:
     scene black with dissolve
     jump rpg_final_fight_3 
 
-label weapon_of_choice:
+label friend2_weapon_of_choice:
     window hide
     pause 1.0
     $ renpy.movie_cutscene("movies/woc.webm")
     $ achievement_manager.unlock("Hopes and Dreams")
     $ achievement_manager.unlock("Machine Gun")
-    jump car_slam
+    jump friend2_car_slam
 
-label car_slam:
+label friend2_car_slam:
     stop music fadeout 1.0
     scene war_torn_1 with fade
     n "CS looks around, taking in the destruction around him."
@@ -865,7 +877,7 @@ label car_slam:
     copguy "C--{w=0.5}{nw}"
     show db_cooper at right with moveinleft
     show cs scared
-    play sound "secret/sfx_explosion.ogg" volume 1.5
+    play sound sfx_explosion volume 1.5
     show copguycrawl with hpunch
     hide copguycrawl with moveoutbottom
     show cs worried at left with move
@@ -886,7 +898,7 @@ label car_slam:
     scene black with dissolve
     window hide
     show paper at center with easeinright
-    play sound "sfx_isaac.ogg"
+    play sound sfx_issac
     pause 1.0
     hide paper with easeoutleft
     pause 1.0

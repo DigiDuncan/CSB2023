@@ -1,4 +1,9 @@
-label microcenter:
+label friend_microcenter:
+    play music passport volume 0.5 if_changed
+    music PASSPORT.MID - George Stone
+    scene csdesk
+    show linus at right
+    show cs at left
     cs "Sure, what parts do you need?"
     linus "We need eggs, milk..."
     linus "Just kidding."
@@ -40,7 +45,7 @@ label microcenter:
     hide cs at right with moveoutright
     n "CS enters the building."
     scene microinside with fade
-    play music "<loop 0>morning_highway.ogg" loop volume 0.4
+    play music morning_highway loop volume 0.4
     music Morning Highway - BEST MUSIC
     show cs at left with moveinleft
     cs "Woah! This place is huge!"
@@ -74,12 +79,12 @@ label microcenter:
     cs "Hmm, we've got AMD and NVIDIA. I wish Linus had told me which one I should get..."
     n "CS looks at his options."
     hide cs with moveoutright
-    scene gpuaisle2 with fade
+    scene gpuaisle2 with dissolve
     show cs at center with moveinleft
     pause 2.0
     show cs flipped with determination
     hide cs with moveoutleft
-    scene gpuaisle with fade
+    scene gpuaisle with dissolve
     show cs flipped at mid_left with moveinright
     pause 1.0
     show cs with determination
@@ -90,14 +95,18 @@ label microcenter:
         "Which card do you want to choose?"
         "RTX 4080":
             $ fanboy_type = "amd"
-            jump high_gpu
+            jump friend_high_gpu
         "Radeon RX 7900":
             $ fanboy_type = "nvidia"
-            jump high_gpu
+            jump friend_high_gpu
         "GTX 760"  (type = "bad"):
-            jump low_gpu
+            jump friend_low_gpu
 
-label high_gpu:
+label friend_high_gpu:
+    play music morning_highway loop volume 0.4 if_changed
+    music Morning Highway - BEST MUSIC
+    scene gpuaisle
+    show cs at mid_left
     if fanboy_type == "nvidia":
         cs "Alright, I'm just gonna get the Radeon RX 7900."
         cs "Linus likes to use AMD for streaming and gaming, so I hope this will work."
@@ -125,7 +134,7 @@ label high_gpu:
     show linus at center
     with fade
     n "CS meets Linus in his office."
-    play music "<loop 0>creative_exercise.ogg" loop volume 0.3
+    play music creative_exercise loop volume 0.3
     music Creative Exercise - Hirokazu Tanaka
     show cs at left with moveinleft
     cs "Hey, Linus! I've got your parts!"
@@ -208,7 +217,7 @@ label high_gpu:
     linus "Let's see how our video did!"
     n "Linus and CS sit down at the desk while Linus pulls up the video."
     scene comments with fade
-    play music "<loop 0>pixel_peeker_polka.ogg" loop volume 0.4
+    play music pixel_peeker_polka loop volume 0.4
     music Pixel Peeker Polka - Kevin MacLeod
     linus "Alright, well, we've already got quite a lot of views..."
     cs "Man! I wish I got this amount of average views!"
@@ -229,7 +238,7 @@ label high_gpu:
     show linus at mid_right
     show cs disappointed at mid_left
     with fade
-    play sound "<loop 0>sfx_yelling.ogg" loop volume 0.3
+    play sound sfx_yelling loop volume 0.3
     cs "Hey, do you hear that?"
     n "CS and Linus can hear a growing audience of people yelling nearby."
     linus "Hold on, lemme go check the window."
@@ -241,7 +250,7 @@ label high_gpu:
     linus "Oh, shit. This is bad..."
     cs "What is it?"
     n "All of a sudden, a brick flies through the window!"
-    play sound "<loop 0>sfx_glass.ogg" volume 3
+    play sound sfx_glass volume 3
     show sansbrick at offscreenleft with moveinright
     show cs worried
     cs "Woah! Stand back, Linus!"
@@ -258,7 +267,7 @@ label high_gpu:
     scene black with fade
     n "CS and Linus meet up with the rest of the members downstairs."
     scene frontdoor
-    play sound "<loop 0>sfx_yelling.ogg" loop volume 0.5
+    play sound sfx_yelling loop volume 0.5
     show luke flipped at left
     show taran flipped at mid_mid_left
     with fade
@@ -276,32 +285,46 @@ label high_gpu:
     menu:
         "What do you want to do?"
         "Go out and fight!":
-            jump attack_fanboy
+            jump friend_attack_fanboy
         "Stay inside and wait.":
-            jump stay_inside
+            jump friend_stay_inside
 
-label stay_inside:
+label friend_stay_inside:
+    stop music fadeout 3.0
+    music end
+    scene frontdoor
+    play sound sfx_yelling loop volume 0.5 if_changed
+    show luke flipped at left
+    show taran flipped at mid_mid_left
+    show linus at center
     show cs disappointed flipped at right
     cs "Let's just... stay here."
     cs "They've got to go away at some point, right?"
     linus "Sure, I mean, we {i}are{/i} LTT after all!"
     linus "We're so cool, our fans love us! They'll probably run home here in a moment."
     taran "Holy shit! They're throwing bricks!"
-    play sound "<loop 0>sfx_glass.ogg" volume 3
+    play sound sfx_glass volume 3
     show sansbrick at offscreenright with moveinleft
     scene black
     stop sound
-    jump knocked_out
+    jump country_knocked_out
 
-label attack_fanboy:
-    show cs angry flipped
+label friend_attack_fanboy:
+    stop music fadeout 3.0
+    music end
+    scene frontdoor
+    play sound sfx_yelling loop volume 0.5 if_changed
+    show luke flipped at left
+    show taran flipped at mid_mid_left
+    show linus at center
+    show cs angry flipped at right
     cs "Actually, you know what? Leave this to me!"
     hide cs with moveoutleft
     n "CS runs out the front door into the crowd."
     linus "CS, what are you doing? You're gonna get yourself killed out there!"
     stop sound fadeout 3.0
     scene outside_ltt with fade
-    play sound "<loop 0>sfx_yelling.ogg" loop volume 1
+    play sound sfx_yelling loop
     show cs angry at center with dissolve
     if fanboy_type == "nvidia":
         "Fanboys" "Boo!! You suck! NVIDIA is the best!"  
@@ -316,10 +339,12 @@ label attack_fanboy:
     music Nordic Report 1 - Lizardking
     jump rpg_fanboy_fight_amd
 
-label after_fanboy:
+label friend_after_fanboy:
+    stop music fadeout 3.0
+    music end
     scene outside_ltt
     show cs angry flipped at center
-    with fade
+    with dissolve
 
     dxcom fightminigame
     $ achievement_manager.unlock("I Thought This Was A Visual Novel")
@@ -364,7 +389,7 @@ label after_fanboy:
     hide arceus
     with moveoutright
     scene alley with fade
-    play music "<loop 0>lowbudget_song.ogg" loop volume 0.4
+    play music Lowbudget_song loop volume 0.4
     music Lowbudget Song - Dr. Awesome
     show arceus flipped at right
     show cs at center
@@ -467,15 +492,15 @@ label after_fanboy:
     hide cs with moveoutright
     scene black with fade
     n "CS, Linus, and Pakoo head down an elevator into the training facility."
-    jump training
+    jump friend_training
 
-label training:
+label friend_training:
     scene testing_main with fade
     show linus at right
     show cs at center
     show pakoo flipped at left behind linus   
     with moveinleft
-    play music "klaxon_beat.ogg" loop volume 0.6
+    play music klaxon_beat loop volume 0.6
     music Klaxon Beat - Kelly Bailey
     linus "Alright, here's our facility! What do you think?"
     cs "Oh, wow! This looks like something from {i}Quake!{/i}"
@@ -515,7 +540,7 @@ label training:
     show cs happy
     cs "Piece of cake!"
     pakoo "Alright, onto the next one."
-    scene course_2 with fade
+    scene course_2 with dissolve
     show cs at left with moveinleft
     pakoo "Alright, you've gotta jump across this pit."
     show cs disappointed
@@ -524,13 +549,16 @@ label training:
 
     menu:
         "Do a cool-ass jump":
-            jump cool_jump
+            jump friend_cool_jump
         "Do a regular jump":
-            jump reg_jump
+            jump friend_reg_jump
 
 
-label cool_jump:
-    show cs
+label friend_cool_jump:
+    play music klaxon_beat loop volume 0.6 if_changed
+    music Klaxon Beat - Kelly Bailey
+    scene course_2
+    show cs at left
     cs "I've got this, guys! You watching?"
     pakoo "Yep!"
     show cs at t_punchup with move
@@ -544,19 +572,24 @@ label cool_jump:
     linus "I never doubted you, CS!"
     cs "Hey, maybe this training isn't too bad!"
     hide cs with moveoutright
-    jump fire_range
+    jump friend_fire_range
 
-label reg_jump:
-    show cs
+label friend_reg_jump:
+    play music klaxon_beat loop volume 0.6 if_changed
+    music Klaxon Beat - Kelly Bailey
+    scene course_2
+    show cs at left
     cs "Alright, here goes nothing!"
     show cs at top with move
     show cs at right with move
     cs "Woohoo! I did it!"
     pakoo "Nice! Let's keep moving!"
     hide cs with moveoutright
-    jump fire_range
+    jump friend_fire_range
 
-label fire_range:
+label friend_fire_range:
+    play music klaxon_beat loop volume 0.6 if_changed
+    music Klaxon Beat - Kelly Bailey
     scene course_3 with fade
     show cs at left with moveinleft
     pakoo "Alright, you picked up the LMG before you came into this room, right?"
@@ -573,57 +606,57 @@ label fire_range:
     window hide
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks1.ogg" volume 1
+    play sound sfx_hks1 loop
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks2.ogg" volume 1
+    play sound sfx_hks2 loop
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks1.ogg" volume 1
+    play sound sfx_hks1 loop
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks3.ogg" volume 1
+    play sound sfx_hks3 loop
     pause 0.5
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks2.ogg" volume 1
+    play sound sfx_hks2 loop
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks1.ogg" volume 1
+    play sound sfx_hks1 loop
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks3.ogg" volume 1
+    play sound sfx_hks3 loop
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks2.ogg" volume 1
+    play sound sfx_hks2 loop
     show m4 at left with determination    
     pause 1.0
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks2.ogg" volume 1
+    play sound sfx_hks2 loop
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks1.ogg" volume 1
+    play sound sfx_hks1 loop
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks3.ogg" volume 1
+    play sound sfx_hks3 loop
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks2.ogg" volume 1
+    play sound sfx_hks2 loop
     show m4 at left with determination    
     pause 1.0
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks2.ogg" volume 1
+    play sound sfx_hks2 loop
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks1.ogg" volume 1
+    play sound sfx_hks1 loop
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks3.ogg" volume 1
+    play sound sfx_hks3 loop
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound "<loop 0>sfx_hks2.ogg" volume 1
+    play sound sfx_hks2 loop
     show m4 at left with determination    
     pause 1.0
     window show
@@ -664,7 +697,7 @@ label fire_range:
     show cs
     linus "Sure! It's just--{w=0.5}{nw}"
     show arceus flipped at left with moveinleft
-    play music "cp_violation.ogg" loop volume 0.6
+    play music cp_violation loop volume 0.6
     music CP Violation - Kelly Bailey
     arceus "Alright, CS. We've gotta go, now."
     linus "Heyy! How'd you get down here?"
@@ -806,7 +839,7 @@ label fire_range:
     cs "So, we can pick any car we'd like?"
     arceus "Basically, yeah."
     show carguy at mid_right with moveinright
-    play music "<loop 0>mm_complete.ogg" loop volume 0.6
+    play music mm_complete loop volume 0.6
     music Mm Complete - Matthew Simmonds
     carguy "Check out all these nice cars!"
     carguy "Nooooot so nice that you fellas don't have a car, though."
@@ -822,11 +855,13 @@ label fire_range:
     hide cs
     hide arceus
     with moveoutright
-    jump car_picker
+    jump friend_car_picker
 
-label car_picker:
+label friend_car_picker:
     stop sound
-    scene dealer_cars with fade
+    play music mm_complete loop volume 0.6 if_changed
+    music Mm Complete - Matthew Simmonds
+    scene dealer_cars with dissolve
     show carguy flipped at right
     show arceus flipped at center
     show cs at mid_mid_left
@@ -847,13 +882,19 @@ label car_picker:
     menu:
         "Pick a car!"
         "JoJ Charger":
-            jump cool_car
+            jump friend_cool_car
         "Honda Civic":
-            jump reg_car
+            jump friend_reg_car
         "Flintstones Car"  (type = "bad"):
-            jump flint_car
+            jump friend_flint_car
 
-label cool_car:
+label friend_cool_car:
+    play music mm_complete loop volume 0.6 if_changed
+    music Mm Complete - Matthew Simmonds
+    scene dealer_cars
+    show arceus at mid_right
+    show cs at center
+    show pakoo flipped at left behind cs
     $ nice_car = True
     cs "That's a nice car!"
     pakoo "That is a sick-ass car."
@@ -867,7 +908,7 @@ label cool_car:
     show cs at left with moveinleft
     show pakoo at right with moveinright
     pakoo "Punch it, CS! We've gotta get outta here!"
-    play sound "sfx_siren.ogg" loop fadein 2.0 volume 0.2
+    play sound sfx_siren loop fadein 2.0 volume 0.2
     show blue_light at left
     show red_light at right
     n "As CS starts up the car and begins to drive off, the cops pull up around him."
@@ -894,12 +935,12 @@ label cool_car:
     show cs angry flipped
     show m4 flipped at center with determination
     show m4 fire flipped at center with determination
-    play sound "<loop 0>sfx_hks2.ogg" volume 1
+    play sound sfx_hks2.ogg loop
     show m4 flipped at center with determination 
     pause 0.5
     show m4 flipped at center with determination
     show m4 fire flipped at center with determination
-    play sound "<loop 0>sfx_hks2.ogg" volume 1
+    play sound sfx_hks2 loop
     show m4 flipped at center with determination
     pause 0.5
     cs "Make me!"
@@ -907,7 +948,13 @@ label cool_car:
     music Compulsion To Obey - Lizardking
     jump rpg_cop_fight_1
 
-label reg_car:
+label friend_reg_car:
+    play music mm_complete loop volume 0.6 if_changed
+    music Mm Complete - Matthew Simmonds
+    scene dealer_cars
+    show arceus at mid_right
+    show cs at center
+    show pakoo flipped at left behind cs
     cs "Hey! I have a Honda Civic! Let's just take that!"
     arceus "Works for me."
     pakoo "Let's go!"
@@ -919,7 +966,7 @@ label reg_car:
     show cs at left with moveinleft
     show pakoo at right with moveinright
     pakoo "Punch it CS! We gotta get outta here!"
-    play sound "sfx_siren.ogg" loop fadein 2.0 volume 0.2
+    play sound siren loop fadein 2.0 volume 0.2
     show blue_light at left
     show red_light at right
     n "As CS starts up the car and begins to drive off, the cops pull up around him."
@@ -945,12 +992,12 @@ label reg_car:
     show cs angry flipped
     show m4 flipped at center with determination
     show m4 fire flipped at center with determination
-    play sound "<loop 0>sfx_hks2.ogg" volume 1
+    play sound >sfx_hks2.ogg loop
     show m4 flipped at center with determination 
     pause 0.5
     show m4 flipped at center with determination
     show m4 fire flipped at center with determination
-    play sound "<loop 0>sfx_hks2.ogg" volume 1
+    play sound sfx_hks2.ogg loop
     show m4 flipped at center with determination
     pause 0.5
     cs "Make me!"
@@ -958,7 +1005,9 @@ label reg_car:
     music Compulsion To Obey - Lizardking
     jump rpg_cop_fight_1
 
-label so_join:
+label friend_so_join:
+    stop music fadeout 3.0
+    music end
     scene dealership
     show copguy flipped at left
     show cs disappointed flipped at center
@@ -992,12 +1041,14 @@ label so_join:
     music For The People!- Lizardking
     jump rpg_cop_fight_2
 
-label after_cop_fight:
+label friend_after_cop_fight:
+    stop music fadeout 3.0
+    music end
     scene dealership
     show tate at mid_mid_left
     show mika at mid_left
     show kitty at left
-    with fade
+    with dissolve
     tate "Yaaaaaaaay! We won!"
     tate "Hey, y'all good?"
     show cs flipped at mid_mid_right
@@ -1063,7 +1114,7 @@ label after_cop_fight:
     n "Both groups head out of the dealership, making haste from the cops."
     n "Meanwhile, Copguy heads back to the police station to call for help."
     scene sheriff_office
-    play music "<loop 0>police_station.ogg" volume 0.5  
+    play music police_station volume 0.5  
     music Police Station - Lorin Nelson  
     show sheriff at left
     with fade
@@ -1087,10 +1138,10 @@ label after_cop_fight:
     music end
     stop music fadeout 3.0
     pause 3.0
-    jump dpn_call
+    jump friend2_dpn_call
 
 
-label flint_car:
+label friend_flint_car:
     stop music fadeout 3.0
     music end
     scene dealer_cars
@@ -1131,7 +1182,7 @@ label flint_car:
     show cs disappointed
     cs "Shit."
     show pakoo disappointed
-    play sound "sfx_siren.ogg" loop fadein 2.0 volume 0.2
+    play sound sfx_siren loop fadein 2.0 volume 0.2
     show blue_light at left
     show red_light at right
     n "Sirens blare in the dealership as Copguy pulls up to the car."
@@ -1140,7 +1191,11 @@ label flint_car:
     bad_end "Fleenstones?" "car_picker"  
     
 
-label low_gpu:
+label friend_low_gpu:
+    play music morning_highway loop volume 0.4 if_changed
+    music Morning Highway - BEST MUSIC
+    scene gpuaisle
+    show cs at mid_left
     cs "I should probably try to save Linus some money. Most of the expensive parts he gets are from sponsors. He's not actually {i}that{/i} rich."
     n "CS flags down an employee."
     show cashier at mid_right with moveinright
@@ -1218,4 +1273,4 @@ label low_gpu:
     hide cs with moveoutright
     n "CS stomps out of the building."
     scene black with fade
-    jump new_plan
+    jump fired_new_plan

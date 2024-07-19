@@ -1,6 +1,8 @@
 label vibration:
     stop music fadeout 3.0
-    play music "<loop 0>lets_hear_my_sped.ogg" volume 0.7
+    play music lets_hear_my_sped volume 0.7
+    scene craptop_bg
+    show craptop discord
     cs "Bye guys! I gotta head to the store!"
     scene black with dissolve
     pause 1.0
@@ -13,7 +15,7 @@ label vibration:
     show cs_room
     show cs at center
     with dissolve
-    play sound "sfx_foundationfail.ogg" volume 0.5
+    play sound sfx_foundationfail volume 0.5
     show cs_room behind cs at rotate_10 with hpunch
     pause 1.0
     cs "Woah shit! I need to call HoH SiS!"
@@ -52,7 +54,7 @@ label vibration:
     show hoh_hq 
     with dissolve
     show cs angry at center with moveinleft
-    play sound "sfx_punchalt.ogg"
+    play sound sfx_punch_alt
     show cs angry at t_punchup with move
     show helipad
     show ed at right
@@ -63,13 +65,13 @@ label vibration:
     show wesley at mid_left
     with dissolve
     show cs angry at mid_left with moveinbottom
-    play sound "sfx_punch.ogg"
+    play sound sfx_punch
     show wesley at t_punchup with move
     hide ed
     show ed_phone at right
     pause 0.5
     cs "That's for my house!"
-    play sound "sfx_siren.ogg" loop
+    play sound sfx_siren loop
     show blue_light at left
     show red_light at right
     show copguy behind blue_light, red_light at right with moveinright
@@ -82,7 +84,7 @@ label vibration:
     scene jail_inside
     show cs at mid_left
     with dissolve
-    play music "<loop 0>fastbudget_song.ogg" volume 0.7
+    play music fastbudget_song volume 0.7
     show copguy at right with moveinright
     copguy "*Huff* *Huff*"
     show cs happy
@@ -123,7 +125,7 @@ label vibration:
     scene inside_ltt
     show linus at center
     with dissolve
-    play music "<loop 0>fastport.ogg" volume 0.7
+    play music fastport volume 0.7
     linus "Sorry, I can't get you a job, you don't have a visa."
     show arceus happy at right with moveinright
     arceus "Refresh the page!"
@@ -169,7 +171,7 @@ label vibration:
     cs "What if I show you more YTPs?"
     linus "Sure, I guess..."
     scene black 
-    play sound "sfx_ytpintro.ogg"
+    play sound sfx_ytpintro
     pause 2.0
     scene loffice
     show cs at left
@@ -191,7 +193,7 @@ label vibration:
     scene black with dissolve
     stop music fadeout 3.0
     pause 1.0
-    play music "<loop 0>fasting.ogg" volume 0.7
+    play music fasting volume 0.7
     scene washington_road with dissolve
     show cs dark at left
     show arceus dark flipped at right
@@ -202,8 +204,8 @@ label vibration:
     show copguy dark at center with moveinleft
     copguy "Not so fast!"
     scene black
-    play sound "sfx_punch.ogg"
-    play sound "sfx_punchalt.ogg"
+    play sound sfx_punch
+    play sound sfx_punch_alt
     pause 1.0
     scene copcar
     show copguy at t_copguy_frontseat
@@ -213,7 +215,7 @@ label vibration:
     show cs disappointed at left
     with moveinleft
     copguy "Alright, back to the slammer!"
-    play sound "sfx_hold_it.ogg" volume 0.5
+    play sound sfx_hold_it volume 0.5
     show hold_it at truecenter with hpunch
     pause 1.0
     hide hold_it
@@ -232,13 +234,13 @@ label vibration:
     copguy "Alright, looks good to me!"
     scene black with dissolve
     stop music fadeout 3.0
-    play sound "sfx_doorslam.ogg"
+    play sound sfx_doorslam
     pause 1.0
     scene washington_road morning
     show cs at left
     show arceus at right
     with dissolve
-    play music "<loop 0>happy_running.ogg" volume 0.7
+    play music happy_running volume 0.7
     cs "Alright, let's start walking home!"
     scene town
     show cs at left
@@ -250,7 +252,7 @@ label vibration:
     show cs happy
     cs "Awesome let's go!"
     scene black
-    play sound "sfx_doorslam.ogg"
+    play sound sfx_doorslam
     pause 1.0
     scene carback1
     show billy car
@@ -300,10 +302,10 @@ label vibration:
     with dissolve
     pause 2.0
     arceus "Woah, what is that flying past us?"
-    play sound "sfx_roll_window.ogg" volume 0.7
+    play sound sfx_roll_window volume 0.7
     pause 0.5
-    play sound "sfx_joj_loop.ogg" volume 1
-    play sound "sfx_splash.ogg"
+    play sound sfx_joj_loop
+    play sound sfx_splash
     pause 0.5
     arceus "Damnit, I'm dirty now! We have to go wash it off!"
     billy "Aright, fine."
@@ -363,7 +365,7 @@ label vibration:
     pause 1.0
     scene cs_house with dissolve
     show cs at left with moveinleft
-    play sound "sfx_beam.ogg" volume 0.6
+    play sound sfx_beam volume 0.6
     show beam at xstretch_in
     pause 2.0
     show ed
