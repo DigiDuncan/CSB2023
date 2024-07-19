@@ -734,7 +734,7 @@ image sheriff = "characters/sheriff.png"
 image cop = "characters/cop.png"
 image cop dark = "dark:characters/cop.png"
 image cop_2 = "dark:characters/cop.png"
-image guard_soldier = "characters/dark:guard_soldier.png"
+image guard_soldier = "dark:characters/guard_soldier.png"
 image marine = "characters/marine.png"
 image big_tank = "characters/big_tank.png" # TODO: is this meant to reference the abrams or the sherman? - tate
 image asylum_worker = "characters/mohs.png"
@@ -1334,6 +1334,9 @@ image lancer flipped = "flip:secret/lancer.png"
 image bubble = Transform("secret/bubble.png", zoom = 2.0)
 
 # Animated Sprites
+
+# for cop car lights
+
 image blue_light:
     "blue_light.png"
     alpha 0.0
@@ -1347,6 +1350,8 @@ image red_light:
     linear 0.5 alpha 0.0
     linear 0.5 alpha 0.8
     repeat
+
+# for copguy_ex
 
 image copguy_ex_front:
     "characters/copguy_ex1.png"
@@ -1377,6 +1382,33 @@ layeredimage copguy_ex:
     group ignore_me:
         attribute wow default:
             "copguy_ex_front"
+            
+# for tate ex
+# TODO: THIS ISNT NEARLY DONE YET
+# Supposed to be a chromatic abberation-type beat
+
+image tate_ex_front:
+    "characters/tate/tate_ex.png"
+    align (0.4, 0.5)
+
+image tate_ex_abberation:
+    contains:
+        "characters/tate/tate_ex_c.png"
+        "characters/tate/tate_ex_y.png"
+        "characters/tate/tate_ex_m.png"
+    align (0.4, 0.5)
+
+layeredimage tate_ex:
+                    
+    always:
+        "tate_ex_abberation"
+
+    group ignore_me:
+        attribute wow default:
+            "tate_ex_front"
+            
+
+# misc
 
 image ai_ducks = SnowBlossom("duck.png", 50)
 
@@ -1549,7 +1581,7 @@ define audio.ochre_woods_day = "<loop 27.401>ochre_woods_day.ogg"
 define audio.prof_kranes_kidnap = "prof_kranes_kidnap.ogg"
 define audio.e_gadds_lab = "<loop 1.071>e_gadds_lab.ogg"
 define audio.onbs = "onbs.ogg"
-define audio.insomnia_intro = "<from 0 to 11.299>insomnia.ogg"
+define audio.insomnia_intro = "<from 0 to 22.6>insomnia.ogg"
 define audio.insomnia_loop = "<from 22.6>insomnia.ogg"
 
 # CSBIII DX Kuwait Music
@@ -1607,6 +1639,9 @@ define audio.sfx_gasp = "sfx_gasp.ogg"
 define audio.sfx_gaster_blast = "minigames/car/sfx_gaster_blast.ogg"
 define audio.sfx_glass = "sfx_glass.ogg"
 define audio.sfx_gul = "secret/sfx_gul.ogg"
+define audio.sfx_hks1 = "sfx_hks1.ogg"
+define audio.sfx_hks2 = "sfx_hks2.ogg"
+define audio.sfx_hks3 = "sfx_hks3.ogg"
 define audio.sfx_heartbeat = "sfx_heartbeat.ogg"
 define audio.sfx_lego = "sfx_legosfx.ogg"
 define audio.sfx_lego_break = "sfx_lego_break.WAV"
@@ -1676,6 +1711,7 @@ default fanboy_type = None
 default fanbase = None
 default nice_car = False
 default returning_from_blooper = False
+default south_car_stole_money = False
 default e1 = False
 default e2 = False
 default e3 = False

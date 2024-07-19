@@ -1018,7 +1018,7 @@ label fired_first_tour_day:
     with dissolve
     n "The crowd is going insane."
     cs "We're [band_name], and this is {i}[song_name_4]!{/i}"
-    play sound start_rocking
+    play sound sfx_start_rocking
     play sound sfx_cheer
     n "The crowd roars louder."
     play music dragon_castle volume 0.5

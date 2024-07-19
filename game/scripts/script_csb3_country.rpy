@@ -734,7 +734,7 @@ label england_good_ramsay:
     show cs flipped
     gordon "Well, that's a new one."
     gordon "I don't think I've ever seen someone make an energy drink on a cooking show..."
-    play sound waterphone
+    play sound sfx_waterphone
     gordon "What do you mean that the juices are gonna move through you? Like, is this gonna make me have to go to the bathroom?"
     show cs disappointed flipped
     cs "No, I meant, like, energize you."
@@ -808,7 +808,7 @@ label england_good_ramsay:
     show arceus at center
     show kitty flipped at right
     with fade
-    play music wool_gloves.ogg volume 0.4
+    play music wool_gloves volume 0.4
     kitty "CS did {i}what?"
     arceus "Yeah, I know, right? I don't understand either."
     kitty "What is in this Genergy drink of yours?"
@@ -821,7 +821,7 @@ label england_good_ramsay:
     jump england_menu
     
 label england_top_zone:
-    play music wool_gloves.ogg volume 0.4 if_changed
+    play music wool_gloves volume 0.4 if_changed
     music Wool Gloves - imagiro
     scene dining_room
     show kitty flipped at right

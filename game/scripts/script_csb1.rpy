@@ -70,7 +70,7 @@ label csbi_craptop:
     show craptop discord
     play sound sfx_windows_logon
     cs "Hey guys!"
-    play sound ping_spam
+    play sound sfx_ping_spam
     discord "Hi! Hi! Hi! Hi!"
     n "The Discord is overflowing with people trying to talk to CS."
     show cs at left with moveinleft
@@ -498,7 +498,7 @@ label csbi_end:
     show cs surprised at left
     with fade
     play music canyon_car volume 0.2
-    play sound driving volume 0.5
+    play sound sfx_driving volume 0.5
     $ achievement_manager.unlock("Overcaffeinated")
     stop music fadeout 3.0
     music end

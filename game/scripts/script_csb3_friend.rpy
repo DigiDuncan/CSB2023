@@ -935,7 +935,8 @@ label friend_cool_car:
     show cs angry flipped
     show m4 flipped at center with determination
     show m4 fire flipped at center with determination
-    play sound sfx_hks2.ogg loop
+    # TODO: why does this loop?
+    play sound sfx_hks2
     show m4 flipped at center with determination 
     pause 0.5
     show m4 flipped at center with determination
@@ -946,6 +947,7 @@ label friend_cool_car:
     cs "Make me!"
     copguy "He's armed! Men, get in position and fire!"
     music Compulsion To Obey - Lizardking
+    # TODO: This battle crashes
     jump rpg_cop_fight_1
 
 label friend_reg_car:
@@ -1093,7 +1095,7 @@ label friend_after_cop_fight:
         arceus "Well, I know we just met up, but we should probably get going."
     show arceus
     tate "Alrighty, then. We'll follow behind and keep watch."
-    cs "Shit yeah, Copguys not dead, he's gonna probably call for backup on us."
+    cs "Shit, yeah, Copguy's not dead. He's gonna probably call for backup on us."
     pakoo "Let's start heading east."
     show cs
     show arceus flipped

@@ -19,6 +19,14 @@ label train_intro_start:
     scene carpark
     # syntax: if train_money_stolen true DON'T flip sprites
 
+    # flip
+    if train_money_stolen == True:
+        show arceus at right
+        show cs at center
+    else:
+        show arceus flipped at left
+        show cs flipped at right
+
     cs "We should head back home now. I have a plan for our newfound riches."
 
     # flip
@@ -2103,15 +2111,17 @@ label train_tate_ex_encounter:
                 play sound sfx_spellcast
                 scene white with dissolve
                 pause 1.0
+                # TODO: another artist to fix
                 music Space - W∆W
                 # we don't want to actually see the popup
                 hide music
+                # TODO: Tate's battle sprite is off center and lacking the effect
                 jump rpg_vs_tate
     else:
         jump train_completed
                 
 label train_vs_tate_win:
-    pause 2.0
+    pause 3.0
     tate "I guess it only makes sense, doesn't it?"
     tate "CS {i}is{/i} the main character, after all."
     tate "At least my question is answered."
@@ -2123,7 +2133,7 @@ label train_vs_tate_win:
     jump train_completed
 
 label train_vs_tate_lose:
-    pause 2.0
+    pause 3.0
     tate "Huh."
     tate "I didn't think I'd actually win that for a minute, there..."
     tate "You didn't go easy on me, did you?"
@@ -2212,4 +2222,4 @@ label train_return_home_transition:
     with moveoutright
     stop music fadeout 3.0
     music end
-    jump back_home_alt
+    jump south_back_home_alt

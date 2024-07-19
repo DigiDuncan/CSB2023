@@ -636,6 +636,7 @@ label south_folded:
     hide bag with dissolve
     show arceus happy
     arceus "Yeah! We can do whatever we wanna do now!"
+    $ south_car_stole_money = True
     show arceus
     menu:
         arceus "What would you like to do, CS?"
@@ -848,6 +849,7 @@ label south_poker3:
         arceus "Hahaha, I would've too if I lost that much money."
         cs "Yeah, that's true."
     hide case
+    $ south_car_stole_money = False
     arceus "Alright, well, what's the plan now? We have so much money, we can do anything with it!"
     menu:
         arceus "What would you like to do, CS?"
@@ -1329,6 +1331,15 @@ label south_noairport:
     stop music fadeout 1.0
     music end
     scene carpark
+    
+    # force flip
+    if south_car_stole_money == False:
+        show arceus flipped at left
+        show cs flipped at right
+    else:
+        show arceus at right
+        show cs at center
+        
     cs "Nah, I don't wanna go to the airport."
     cs "We should take the car and drive."
     arceus "Okay, well, let's get going!"
