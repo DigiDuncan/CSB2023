@@ -123,7 +123,7 @@ label friend2_dpn_diner:
     show nova flipped at center
     show aria at left
     with fade
-    play music "<from 0 to 86>full_rulle_med_klas.ogg" volume 0.5
+    play music full_rulle_med_klas volume 0.5
     music Full Rulle Med Klas - Lizardking
     digi "Finally, we can stretch our legs again."
     nova "Remind me of what you needed me here for, again? I have a set later tonight I need to prepare for!"
@@ -212,7 +212,7 @@ label friend2_cs_meetup:
     show digi at center
     show nova flipped at left
     with fade
-    play music "<from 0 to 86>full_rulle_med_klas.ogg" volume 0.5
+    play music full_rulle_med_klas volume 0.5
     pause 2.0
     nova "They are so dead."
     digi "Stop saying that! They are probably fine."

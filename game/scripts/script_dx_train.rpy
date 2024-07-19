@@ -167,7 +167,7 @@ label train_story_begin:
     show arceus at right behind cscar2
     with fade
 
-    play music "<loop 54.031>outdoors.ogg"
+    play music outdoors
     music Outdoors - Miki Obata
 
     pause 1.0
@@ -378,7 +378,7 @@ label train_story_begin:
     n "The conversation is interrupted by the blare of a train horn."
 
     scene kingman_train_arrive with fade
-    play music "<loop 27.401>ochre_woods_day.ogg"
+    play music ochre_woods_day
     music Ochre Woods ~ Day - Miki Obata
     n "The two watch as the locomotive approaches the station and eventually slows to a stop."
     hide cs

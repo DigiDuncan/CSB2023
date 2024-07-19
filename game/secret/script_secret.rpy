@@ -31,7 +31,7 @@ label secret_dx2:
 
 # label secret:
 #     scene black with fade
-#     play music "<loop 0>secret/space_classroom.ogg"
+#     play music "secret/space_classroom.ogg"
 #     show digi at center with Dissolve(3)
 #     digi "Oh, hi."
 #     digi "You, uh... {w=0.5}weren't supposed to see this."
@@ -49,7 +49,7 @@ label secret_dx2:
 
 # label secret2:
 #     scene black with fade
-#     play music "<loop 0>secret/space_classroom.ogg"
+#     play music "secret/space_classroom.ogg"
 #     show digi at center with Dissolve(3)
 #     digi "Oh, again?"
 #     digi "You gotta tell someone to get on with writing this game."
@@ -60,7 +60,7 @@ label secret_dx2:
 #     play sound "sfx_punchalt.ogg"
 #     show digi at t_punchup with move
 #     show pakoo at center with hpunch
-#     play music "<loop 0>showtime.ogg" volume 0.5
+#     play music "showtime.ogg" volume 0.5
 #     pakoo "Thats fucking right, we finished the True Ending!"
 #     pakoo "I am horribly drawn and it's 5am but hell yeah we fuckin diiiiiiiiiiiiiiidd ittttttttttt!!!!!!"
 #     pakoo "Yeeaaaaaahhhhh!!! Wooooooooo!!!! Wooooooo!!! Tetttttriiissssssss!!!{nw}"
@@ -72,7 +72,7 @@ label secret_dx2:
 
 # label secret3:
 #     scene black with fade
-#     play music "<loop 0>secret/space_classroom.ogg"
+#     play music "secret/space_classroom.ogg"
 #     show digi at center with Dissolve(3)
 #     digi "Oh, again?"
 #     digi "You gotta tell someone to get on with writing this game."

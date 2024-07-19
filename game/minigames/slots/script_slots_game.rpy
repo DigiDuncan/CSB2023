@@ -178,7 +178,7 @@ screen slotsgame:
 label minigame_slots:
     window hide
     $ quick_menu = False
-    play music "<loop 0>minigames/slots/game_corner.ogg" if_changed
+    play music "minigames/slots/game_corner.ogg" if_changed
     play sound "minigames/slots/sfx_gamblecore_letsgogambling.ogg"
     call screen slotsgame
     $ quick_menu = True

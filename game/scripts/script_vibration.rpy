@@ -238,7 +238,7 @@ label vibration:
     show cs at left
     show arceus at right
     with dissolve
-    play music "<loop 0>happy_running.ogg" volume 0.7
+    play music happy_running volume 0.7
     cs "Alright, let's start walking home!"
     scene town
     show cs at left

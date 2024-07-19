@@ -1381,6 +1381,7 @@ define audio.lets_hear_my_sped = "lets_hear_my_sped.ogg"
 define audio.fastbudget_song = "fastbudget_song.ogg"
 define audio.fastport = "fastport.ogg"
 define audio.fasting = "fasting.ogg"
+define audio.happy_running = "happy_running.ogg"
 
 #CSBII Music
 define audio.card_castle = "card_castle.ogg"
@@ -1439,6 +1440,7 @@ define audio.melancholy = "melancholy.ogg"
 define audio.trash_zone = "trash_zone.ogg"
 
 # CSBIII South Music
+define audio.brick_by_dick = "brick_by_dick.ogg"
 define audio.tunnely_shimbers = "tunnely_shimbers.ogg"
 define audio.hard_drive = "hard_drive.ogg"
 define audio.penthouse = "penthouse.ogg"
@@ -1459,11 +1461,13 @@ define audio.cp_violation = "cp_violation.ogg"
 define audio.mm_complete = "mm_complete.ogg"
 define audio.police_station = "police_station.ogg"
 define audio.tuna_fish = "tuna_fish.ogg"
+define audio.full_rulle_med_klas = "<from 0 to 86>full_rulle_med_klas.ogg"
 define audio.dense_woods_b = "dense_woods_b.ogg"
 define audio.la_by_night = "la_by_night.ogg"
 define audio.triage_at_dawn = "triage_at_dawn.ogg"
 define audio.the_whale = "the_whale.ogg"
 define audio.prophet_2001 = "prophet_2001.ogg"
+define audio.insane_personalities = "<from 60 to 170>insane_personalities.ogg"
 
 # CSBIII Country Music
 define audio.wool_gloves = "wool_gloves.ogg"
@@ -1522,9 +1526,11 @@ define audio.moving_right_along = "moving_right_along.ogg"
 
 # CSBIII DX Train Music
 define audio.sub_game_select = "sub_game_select.ogg"
+define audio.outdoors = "<loop 54.031>outdoors.ogg"
 define audio.bedroom_day = "<loop 0.916>bedroom_day.ogg"
 define audio.item_bounce = "item_bounce.ogg"
 define audio.krabby_klub = "<loop 3.1>krabby_klub.ogg"
+define audio.ochre_woods_day = "<loop 27.401>ochre_woods_day.ogg"
 define audio.prof_kranes_kidnap = "prof_kranes_kidnap.ogg"
 define audio.e_gadds_lab = "<loop 1.071>e_gadds_lab.ogg"
 define audio.onbs = "onbs.ogg"
