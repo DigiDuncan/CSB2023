@@ -31,7 +31,7 @@ label e3:
     show oldgame
     with fade
     pause 3.0
-    play sound "sfx_page.ogg" volume 5
+    play sound sfx_page volume 5
     hide oldgame
     with moveoutright
     cs "I know what's going on now."
@@ -61,7 +61,7 @@ label e2_rosen:
     jump csbi_start
 
 label e3_rosen:
-    play music "<loop 0>night.ogg" volume 1
+    play music night volume 1
     scene rosen_abode
     show csgod at offscreenright
     show michael at left
@@ -78,15 +78,15 @@ label e3_rosen:
     cs "NO!{w=1.0}{nw}"
     show csgod at left with move
     show csgod with hpunch
-    play sound "sfx_punch.ogg"
+    play sound sfx_punch
     show csgod at offscreenright
     show csgod at left with move
     show csgod with hpunch
-    play sound "sfx_punch.ogg"
+    play sound sfx_punch
     show csgod at offscreenright
     show csgod at left with move
     show csgod with hpunch
-    play sound "sfx_punch.ogg"
+    play sound sfx_punch
     hide csgod with dissolve
     n "Pakoo sighs."
     pakoo "Let's finish this."
@@ -96,7 +96,7 @@ label e3_rosen:
 label error:
     if fun_value(1):
         show black
-        play sound "secret/sfx_gul.ogg"
+        play sound sfx_gul
         pause 1.0
         return
     $ e1 = True

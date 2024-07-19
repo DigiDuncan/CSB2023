@@ -7,7 +7,7 @@ label dx_after_true:
     n "Arceus went to England to live a happy life with Kitty,"
     n "and Billy, he's still selling his products while on the road."
     scene start_route with fade
-    play music "<loop 0>letshearspring.ogg" volume 2
+    play music letshearspring volume 2
     pause 3.0
     scene cs_room_cars
     show cs at left
@@ -16,12 +16,12 @@ label dx_after_true:
     with dissolve
     n "CS and his friends are watching car crash videos on the TV."
     show cs angry
-    play sound "sfx_car_horn.ogg" volume 0.5
+    play sound sfx_car_horn volume 0.5
     pause 1.0
     cs "What an idiot!"
     billy "The don't turn on red sign is there for a reason!"
     show cs worried
-    play sound "sfx_car_crash.ogg" volume 0.5
+    play sound sfx_car_crash volume 0.5
     pause 2.0
     cs "Holy shit!"
     show cs
@@ -61,7 +61,7 @@ label dx_after_true:
     stop music fadeout 3.0
     n "Billy puts blindfolds on CS and Arc, and heard out."
     n "After what feels like forever, they arrive at their destination."
-    play music "<loop 0>echoingspring.ogg" volume 2
+    play music echoing_spring volume 2
     billy "Alright, you can take the blindfolds off. "
     scene wis_forest 
     show cs dark at left
@@ -96,7 +96,7 @@ label dx_after_true:
     pause 0.5
     hide pot_lift
     show pot_sunken at mid_right
-    play sound "sfx_bucket.ogg" volume 0.9
+    play sound sfx_bucket volume 0.9
     pause 1.0
     show billy dark at left with move
     show cs dark flipped with determination
@@ -127,7 +127,7 @@ label dx_after_true:
     billy "Alright CS, just hit all those buttons on the side to start it up!"
     n "The machine starts whirring, as a mysterious light shoots out from the top."
     hide pot_sunken
-    play sound "sfx_okuubeam.ogg" volume 1
+    play sound sfx_okuubeam volume 1
     show pot_beam at mid_right with hpunch
     show pot_beam at mid_right with vpunch
     show arceus worried dark flipped
@@ -137,7 +137,7 @@ label dx_after_true:
     cs "Oh God what's happening?!"
     billy "Turn it off! Turn it off!"
     cs "I can't!!"
-    play sound "sfx_tinnitus.ogg" volume 3
+    play sound sfx_tinnitus volume 3
     scene white with dissolve
     stop music fadeout 3.0
     stop sound fadeout 5.0
@@ -146,7 +146,7 @@ label dx_after_true:
     scene roombacks
     show cs concentrate
     with dissolve
-    play music "<loop 0>alien_atmosphere.ogg" volume 2
+    play music alien_atmosphere volume 2
     pause 1.5
     show cs disappointed
     pause 0.5
@@ -182,7 +182,7 @@ label dx_after_true:
     cs "Opening 2004? Is this outdated?"
     show renovator at right with moveinright
     renovator "Are you insane or high dude? It's 2003, are you okay?"
-    play sound "sfx_somethingchanged.ogg"
+    play sound sfx_somethingchanged
     n "CS' heart drops."
     show cs disappointed
     cs "Yeah, I just, am hungover I guess."
@@ -212,12 +212,12 @@ label dx_after_back_to_story:
     n "Before CS can get anywhere, a group of men run up to him."
     show shadowman at mid_left with moveinleft
     cs "Hey what's going--{nw}"
-    play sound "sfx_hitbod1.ogg"
+    play sound sfx_hitbod1
     scene black
-    play sound "sfx_hitbod2.ogg"
+    play sound sfx_hitbod2
     cs "Ow! HEY--{nw}"
-    play sound "sfx_hitbod3.ogg"
-    play sound "sfx_hitbod1.ogg"
+    play sound sfx_hitbod3
+    play sound sfx_hitbod1
     pause 5.0
     scene pencilroomblur with dissolve
     cs "Ohhh, my head..."
@@ -228,7 +228,7 @@ label dx_after_back_to_story:
     show pencilguy at left
     show pencilcashier at right
     with dissolve
-    play music "<loop 0>apple_kid.ogg" volume 1
+    play music apple_kid volume 1
     cs "...and what the hell is this outfit?"
     pencil "Welcome, to the Pencil Cult!"
     cs "..."
@@ -262,7 +262,7 @@ label dx_after_back_to_story:
     scene cult_con
     show cs disappointed at center
     with dissolve
-    play music "<loop 0>10_feet_away.ogg" volume 1
+    play music ten_feet_away volume 1
     cs "God, what the fuck is all of this?"
     cs "I can't tell if I'm still in the past or what is going on now."
     cs "I need to find a way out of here."
@@ -277,7 +277,7 @@ label dx_after_back_to_story:
     scene cult_con
     show cs 
     with dissolve
-    play music "<loop 0>10_feet_away.ogg" volume 1
+    play music ten_feet_away volume 1
     cs "Well, I guess I'm not leaving now!"
     cs "I need to figure out how to get Billy's machine back..."
     n "Before CS can think, a familiar voice is heard rushing over to him."
@@ -363,7 +363,7 @@ label dx_after_back_to_story:
     jump dx_after_cult_questions
 
 label dx_after_cult_questions:
-    play music "<loop 0>10_feet_away.ogg" volume 1 if_changed 
+    play music ten_feet_away volume 1 if_changed 
     scene blue_branch
     show cultist_2 at right
     show cultist_3 at mid_mid_right
@@ -382,7 +382,7 @@ label dx_after_cult_questions:
             jump dx_after_competiton_start
 
 label dx_after_cultcon_ask:
-    play music "<loop 0>10_feet_away.ogg" volume 1 if_changed 
+    play music ten_feet_away volume 1 if_changed 
     scene blue_branch
     show cultist_2 at right
     show cultist_3 at mid_mid_right
@@ -397,7 +397,7 @@ label dx_after_cultcon_ask:
     jump dx_after_cult_questions
 
 label dx_after_competitors_ask:
-    play music "<loop 0>10_feet_away.ogg" volume 1 if_changed 
+    play music ten_feet_away volume 1 if_changed 
     scene blue_branch
     show cultist_2 at right
     show cultist_3 at mid_mid_right
@@ -414,7 +414,7 @@ label dx_after_competitors_ask:
     jump dx_after_cult_questions
 
 label dx_after_win_ask:
-    play music "<loop 0>10_feet_away.ogg" volume 1 if_changed 
+    play music ten_feet_away volume 1 if_changed 
     scene blue_branch
     show cultist_2 at right
     show cultist_3 at mid_mid_right
@@ -430,7 +430,7 @@ label dx_after_win_ask:
     jump dx_after_cult_questions
 
 label dx_after_competiton_start:
-    play music "<loop 0>10_feet_away.ogg" volume 1 if_changed 
+    play music ten_feet_away volume 1 if_changed 
     scene blue_branch
     show cultist_2 at right
     show cultist_3 at mid_mid_right
@@ -440,7 +440,7 @@ label dx_after_competiton_start:
     stop music fadeout 3.0
     cultist "Alright, awesome."
     cultist "Now go out there and--{nw}"
-    play music "<loop 0>hitsquad_2.ogg" volume 1
+    play music hitsquad_2 volume 1
     cruise "Hey you purple-hooded idiots!"
     show cruise flipped at center with moveinleft
     show cs angry cultist
@@ -465,13 +465,13 @@ label dx_after_competiton_start:
     cultist "I hope so."
     n "CS runs off to find competitors."
     scene cult_con with dissolve
-    play music "<loop 0>10_feet_away.ogg" volume 1
+    play music ten_feet_away volume 1
     show cs cultist at center with moveinleft
     cs "Alright, so there are a few cults I can challenge here."
     jump dx_after_seek_competitors
     
 label dx_after_seek_competitors:
-    play music "<loop 0>10_feet_away.ogg" volume 1 if_changed  
+    play music ten_feet_away volume 1 if_changed
     scene cult_con
     show cs cultist at center
     cs "Which cult should I look for?"
@@ -491,7 +491,7 @@ label dx_after_seek_competitors:
             jump dx_after_lunatic_ask
 
 label dx_after_pencil_ask:
-    play music "<loop 0>10_feet_away.ogg" volume 1 if_changed    
+    play music ten_feet_away volume 1 if_changed    
     scene cult_con
     show cs cultist at center
     cs "The cult leader said that the Pencil guys usually give us a vote, so I can see what they are up to. "
@@ -553,7 +553,7 @@ label dx_after_pencil_ask:
     hide cs with moveoutleft
     n "CS turns around and leaves without any more explanation."
     scene cult_con with dissolve
-    play music "<loop 0>10_feet_away.ogg" volume 1
+    play music ten_feet_away volume 1
     show cs cultist at center with moveinleft
     cs "Well, that takes me back."
     cs "Or I guess, that takes me forward!"
@@ -564,7 +564,7 @@ label dx_after_pencil_ask:
     jump dx_after_seek_competitors
 
 label dx_after_science_ask:
-    play music "<loop 0>10_feet_away.ogg" volume 1 if_changed    
+    play music ten_feet_away volume 1 if_changed    
     scene cult_con
     show cs cultist at center
     cs "Y'know, the scientologists think they are all that, but maybe me talking to them will convince them to get us a vote."
@@ -601,7 +601,7 @@ label dx_after_science_ask:
     jump dx_after_seek_competitors
 
 label dx_after_catholic_ask:
-    play music "<loop 0>10_feet_away.ogg" volume 1 if_changed    
+    play music ten_feet_away volume 1 if_changed    
     scene cult_con
     show cs cultist at center
     cs "Who the hell are those guys?"
@@ -638,7 +638,7 @@ label dx_after_catholic_find:
     jump dx_after_seek_competitors
 
 label dx_after_summer_ask:
-    play music "<loop 0>10_feet_away.ogg" volume 1 if_changed    
+    play music ten_feet_away volume 1 if_changed    
     scene cult_con
     show cs cultist at center
     cs "There is a summer camp here?"
@@ -649,7 +649,7 @@ label dx_after_summer_ask:
     wayside_instructor "Welcome to Wayside Summer Camp!"
 
 label dx_after_lunatic_ask:
-    play music "<loop 0>10_feet_away.ogg" volume 1 if_changed    
+    play music ten_feet_away volume 1 if_changed    
     scene cult_con
     show cs cultist at center
     cs "Hmm, who are those guys? They look like plague doctors almost..."
@@ -803,7 +803,7 @@ label dx_after_renault:
     scene hobbytown
     show cs disappointed
     show carguy at right with moveinright
-    play music "<loop 0>scales_of_joy.ogg" volume 0.8
+    play music scales_of_joy volume 0.8
     carguy "Hey CS!"
     carguy "Do you want to test drive the all new Renault 5E?"
     cs "Uhh..."
@@ -823,7 +823,7 @@ label dx_after_no_renault:
     jump dx_after_back_to_story
 
 label dx_after_yes_renault:
-    play music "<loop 0>scales_of_joy.ogg" volume 0.8 if_changed
+    play music scales_of_joy volume 0.8 if_changed
     scene hobbytown
     show cs disappointed
     show carguy at right
@@ -846,11 +846,11 @@ label dx_after_yes_renault:
     show cs happy
     cs "Sure!"
     scene black
-    play sound "sfx_doorslam.ogg"
+    play sound sfx_doorslam
     pause 0.4
-    play sound "sfx_doorslam.ogg"
+    play sound sfx_doorslam
     pause 0.5
-    play sound "sfx_driving.ogg" volume 0.5
+    play sound sfx_driving volume 0.5
     scene renault_inside
     show drive_day behind renault_inside
     show cs at left
@@ -860,9 +860,9 @@ label dx_after_yes_renault:
     carguy "This car is like the R5 back in its day, a popular and essential car but with a modern twist: silent, high-tech, environmentally friendly and cheeky."
     cs "I love it already!"
     scene black
-    play sound "sfx_doorslam.ogg"
+    play sound sfx_doorslam
     pause 0.4
-    play sound "sfx_doorslam.ogg"
+    play sound sfx_doorslam
     pause 0.5
     stop music fadeout 1.0
     scene moomin_zone1
@@ -870,7 +870,7 @@ label dx_after_yes_renault:
     show cs at center
     show carguy at right
     with dissolve
-    play music "<loop 0>muumin_tani_fuyu.ogg" volume 1
+    play music muumin_tani_fuyu volume 1
     carguy "So that was the new Renault 5E! I hope you enjoyed it!"
     cs "Yeah I did!"
     show cs disappointed
@@ -883,7 +883,7 @@ label dx_after_yes_renault:
     stop music
     scene hobbytown
     show cs disappointed
-    play sound "sfx_clapperboard.ogg"
+    play sound sfx_clapperboard
     cs "God damnit!"
     cs "I felt so in control of that car, but so out of control at the same time..."
     cs "Why was I here anyways?"
@@ -897,7 +897,7 @@ label finale_fun_value_land:
     scene black with dissolve
     cs "Ohhh... ow..."
     cs "I think I'm back..."
-    play music "<loop 0>funvalueland.ogg" fadein 5.0 volume 3
+    play music funvalueland fadein 5.0 volume 3
     cs "Oh god, I am I home?"
     scene fun_cs_house with dissolve
     pause 3.0

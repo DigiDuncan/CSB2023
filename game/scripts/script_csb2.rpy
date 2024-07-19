@@ -41,17 +41,17 @@ label csbii_punch:
     play sound sfx_punch
     show wesley at right with hpunch
     play sound sfx_punch
-    play sound sfx_punchalt
+    play sound sfx_punch_alt
     show wesley at right with vpunch
     play sound sfx_punch
     show wesley at right with hpunch
     play sound sfx_punch
-    play sound sfx_punchalt
+    play sound sfx_punch_alt
     show wesley at right with vpunch
     play sound sfx_punch
     show wesley at right with hpunch
     play sound sfx_punch
-    play sound sfx_punchalt
+    play sound sfx_punch_alt
     show wesley at right with vpunch
     play sound sfx_punch
     show wesley at right with hpunch

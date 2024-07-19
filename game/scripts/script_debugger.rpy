@@ -756,7 +756,7 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(57):
-        play sound "sfx_punchalt.ogg"
+        play sound "sfx_punch_alt.ogg"
         play music "fourside.ogg"
         scene microinside
         show copguyexe at center

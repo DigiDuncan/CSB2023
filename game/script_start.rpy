@@ -1376,6 +1376,12 @@ define audio.hohsis_theme = "hohsis_theme.ogg"
 define audio.super_friendly = "super_friendly.ogg"
 define audio.time_for_a_smackdown = "time_for_a_smackdown.ogg"
 
+# CSBI Speedrun Music
+define audio.lets_hear_my_sped = "lets_hear_my_sped.ogg"
+define audio.fastbudget_song = "fastbudget_song.ogg"
+define audio.fastport = "fastport.ogg"
+define audio.fasting = "fasting.ogg"
+
 #CSBII Music
 define audio.card_castle = "card_castle.ogg"
 define audio.basement = "basement.ogg"
@@ -1493,15 +1499,39 @@ define audio.circus = "circus.ogg"
 define audio.chase = "chase.ogg"
 define audio.friendship = "friendship.ogg"
 
+# CSBIII Archival Music
+define audio.facing_worlds = "facing_worlds.ogg"
+define audio.take_trip = "take_trip.ogg"
+define audio.take_trip2 = "take_trip2.ogg"
+define audio.everybody_wants = "everybody_wants.ogg"
+
+# CSBIII Error Music
+define audio.night = "night.ogg"
+
 # CSBIII Car Music
 define audio.billy_mix = "billy_mix.ogg"
 define audio.moving_right_along = "moving_right_along.ogg"
+
+# CSBIII DX Kuwait Music
+define audio.tmwstw = "tmwstw.ogg"
+
+# CSBIII DX After-True Music
+define audio.lets_hear_spring = "letshearspring.ogg"
+define audio.echoing_spring = "echoingspring.ogg"
+define audio.alien_atmosphere = "alien_atmosphere.ogg"
+define audio.apple_kid = "apple_kid.ogg"
+define audio.ten_feet_away = "10_feet_away.ogg"
+define audio.hitsquad_2 = "hitsquad_2.ogg"
+
+# CSBIII DX Finale Music
+define audio.funvalueland = "funvalueland.ogg"
 
 # SFX
 define audio.sfx_alt_punch = "sfx_alt_punch.ogg"
 define audio.sfx_bossappears = "sfx_bossappears.ogg"
 define audio.sfx_beam = "sfx_beam.ogg"
 define audio.sfx_bell = "sfx_bell.ogg"
+define audio.sfx_bucket = "sfx_bucket.ogg"
 define audio.sfx_car_crash = "sfx_car_crash.ogg"
 define audio.sfx_car_horn = "sfx_car_horn.ogg"
 define audio.sfx_chatter = "sfx_chatter.ogg"
@@ -1526,19 +1556,25 @@ define audio.sfx_funni = "secret/sfx_funni.ogg"
 define audio.sfx_gasp = "sfx_gasp.ogg"
 define audio.sfx_glass = "sfx_glass.ogg"
 define audio.sfx_gul = "secret/sfx_gul.ogg"
-define audio.heartbeat = "sfx_heartbeat.ogg"
+define audio.sfx_heartbeat = "sfx_heartbeat.ogg"
 define audio.sfx_lego = "sfx_legosfx.ogg"
+define audio.sfx_hitbod1 = "sfx_hitbod1.ogg"
+define audio.sfx_hitbod2 = "sfx_hitbod2.ogg"
+define audio.sfx_hitbod3 = "sfx_hitbod3.ogg"
 define audio.sfx_hks1 = "sfx_hks1.ogg"
 define audio.sfx_hks2 = "sfx_hks2.ogg"
 define audio.sfx_hks3 = "sfx_hks3.ogg"
 define audio.sfx_hold_it = "sfx_hold_it.ogg"
 define audio.sfx_issac = "sfx_isaac.ogg"
+define audio.sfx_joj_loop = "sfx_joj_loop.ogg"
+define audio.sfx_less_annoying_alarm_sound = "sfx_less_annoying_alarm_sound.ogg"
 define audio.sfx_keyboard = "sfx_keyboard.ogg"
 define audio.sfx_metalpipe = "sfx_metalpipe.ogg"
 define audio.sfx_nice_car = "sfx_nicecar.ogg"
 define audio.sfx_not_so_nice_scratch = "sfx_not_so_nice_scratch.ogg"
 define audio.sfx_obama = "sfx_obama.ogg"
 define audio.sfx_objection = "sfx_objection.ogg"
+define audio.sfx_okuubeam = "sfx_okuubeam.ogg"
 define audio.sfx_page = "sfx_page.ogg"
 define audio.sfx_payday = "sfx_payday.ogg"
 define audio.sfx_ping = "sfx_ping.ogg"
@@ -1549,7 +1585,10 @@ define audio.sfx_punch_alt = "sfx_alt_punch.ogg"
 define audio.sfx_roll_window = "sfx_roll_window.ogg"
 define audio.sfx_siren = "sfx_siren.ogg"
 define audio.sfx_slots = "sfx_slots.ogg"
-define audio.start_rocking = "sfx_start_rocking.ogg"
+define audio.sfx_somethingchanged = "sfx_somethingchanged.ogg"
+define audio.sfx_splash = "sfx_splash.ogg"
+define audio.sfx_start_rocking = "sfx_start_rocking.ogg"
+define audio.sfx_tinnitus = "sfx_tinnitus.ogg"
 define audio.sfx_tiresqueal = "sfx_tiresqueal.ogg"
 define audio.sfx_victory_punch = "sfx_victory_punch.ogg"
 define audio.sfx_vine = "secret/sfx_vine.ogg"

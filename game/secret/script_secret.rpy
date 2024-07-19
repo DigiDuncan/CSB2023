@@ -1,6 +1,6 @@
 label secret_dx:
     scene black with fade
-    play music "<loop 0>secret/space_classroom.ogg"
+    play music space_classroom
     show digi at center with Dissolve(3)
     digi "Oh, hi."
     digi "You, uh... {w=0.5}weren't supposed to see this."
@@ -18,14 +18,17 @@ label secret_dx:
 
 label secret_dx2:
     scene black with fade
-    play music "<loop 0>secret/space_classroom.ogg"
+    play music space_classroom
     show pakoo at center with Dissolve(3)
     pakoo "Okay, that was funny, but that's my joke."
     pakoo "Don't do it again."
     scene black with dissolve
     pause 1.0
-    play music "<loop 0>10_feet_away.ogg" volume 1
+    play music ten_feet_away volume 1
     jump seek_competitors
+
+# THESE ARE LEFT HERE AS A WAT TO REMEMBER THE OLD SECRET SCREENS
+
 # label secret:
 #     scene black with fade
 #     play music "<loop 0>secret/space_classroom.ogg"

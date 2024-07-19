@@ -78,15 +78,15 @@ label kuwait:
     n "Just in that moment, something big hits CS!"
     cs "WHAT THE F--{w=0.1}{nw}"
     show kuwait_explosion behind cs
-    play sound "secret/sfx_explosion.ogg"
+    play sound sfx_explosion
     hide cs with moveoutleft 
     stop sound
     scene black
 
 label kuwait_hospital:
     pause 10
-    play sound "sfx_heartbeat.ogg" loop
-    play music "tmwstw.ogg"
+    play sound sfx_heartbeat loop
+    play music tmwstw
     pause 5
     cs "{i}Where... where am I?{/i}"
     cs "{i}Everything hurts like hell.{/i}"
