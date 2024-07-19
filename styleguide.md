@@ -31,3 +31,10 @@
 - At the beginning of a new label, re-setup the character positions and music.
     - If a music track should continue from the last label, use `if_changed` at the end of the `play` statement.
     - Test your label by jumping to it with the debug menu and making sure it looks right.
+- If you play a music track, make sure:
+    - It's in the Jukebox
+    - You show the music popup with `music <title> - <artist>`
+    - You call `music end` when the music is over
+- DO NOT USE `with fade`
+    - Use `with dissolve`
+    - Just trust us
