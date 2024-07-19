@@ -239,9 +239,9 @@ label rpg_bronsonbattle:
         
 label rpg_vs_tate:
     python:
-        if ch2_cs_attack_used = "karate-chopped":
+        if ch2_cs_attack_used == "karate-chopped":
             cs_chosen_form = "CS_VS_TATE_CHOP"
-        elif ch2_cs_attack_used = "Sparta-kicked":
+        elif ch2_cs_attack_used == "Sparta-kicked":
             cs_chosen_form = "CS_VS_TATE_KICK"
         else:
             cs_chosen_form = "CS_VS_TATE_PUNCH"
