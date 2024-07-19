@@ -572,7 +572,6 @@ image young_cs = "characters/cs_young.png"
 ## Arc
 image arceus = "characters/arc/arceus.png"
 image arceus flipped = "flip:characters/arc/arceus.png"
-image arceus dawn = "dawn:characters/arc/arceus.png"
 image arceus dirty = "characters/arc/arceusdirty.png"
 image arceus dirty flipped = "flip:characters/arc/arceusdirty.png"
 image arceus full happy = "characters/arc/happyfull.png"
@@ -736,7 +735,7 @@ image cop dark = "dark:characters/cop.png"
 image cop_2 = "dark:characters/cop.png"
 image guard_soldier = "dark:characters/guard_soldier.png"
 image marine = "characters/marine.png"
-image big_tank = "characters/big_tank.png"
+image big_tank = "characters/abrams.png"
 image asylum_worker = "characters/mohs.png"
 image copguyexe = "characters/copguyexe.png"
 image copguyexe flipped = "flip:characters/copguyexe.png"
@@ -1600,6 +1599,8 @@ define audio.funvalueland = "funvalueland.ogg"
 
 # Other?
 define audio.space_classroom = "secret/space_classroom.ogg"
+define audio.Billymusicu = "Billymusicu.ogg"
+define audio.ocean_man = "secret/credits.ogg"
 
 # SFX
 define audio.sfx_alt_punch = "sfx_alt_punch.ogg"

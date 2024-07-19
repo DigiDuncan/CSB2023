@@ -47,7 +47,6 @@ label asset_debugger:
         show tate flipped at mid_mid_right
         show mean happy at mid_right
         show k199 at mid_right_right
-        show arceus dawn at right 
         cs_fakegod "test 3{w=0.5}{nw}"
     else:
         jump exit_debug
@@ -684,7 +683,7 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(47):
-        play sound sfx_notsonicescratch
+        play sound sfx_not_so_nice_scratch
         play music everlong
         scene road_to_canada
         show bear at center
@@ -1091,7 +1090,7 @@ label asset_debugger:
 
     if fun_value(90):
         play sound sfx_lightswitch
-        play music Melancholy
+        play music melancholy
         scene tour_bus_inside
         show cs at t_pepzone1
         hammond "test 90{w=0.5}{nw}"
@@ -1129,7 +1128,7 @@ label asset_debugger:
         play sound sfx_whoosh
         play music moongazer
         scene manitoba_street
-        show cs at t_stage_screen_1
+        show cs at t_stage_screen_l
         sayori "test 94{w=0.5}{nw}"
     else:
         jump exit_debug
@@ -1325,7 +1324,7 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(122):
-        play music snufkin
+        play music snufin
         scene pizzaplace
         pakoo_offscreen "test 122{w=0.5}{nw}"
     else:
@@ -1517,7 +1516,7 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(152):
-        play music credits
+        play music ocean_man
         scene cc_entrance
         pause 1.0
     else:
