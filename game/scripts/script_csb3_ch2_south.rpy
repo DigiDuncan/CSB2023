@@ -45,7 +45,7 @@ label south_start:
     cs "How about..."
     show cs
     cs "Hold on. I got an idea."
-    play music "brick_by_dick.ogg"
+    play music brick_by_dick
     music Brick by Brick (Suck my Dick) - cs188
     cs "See those pieces on the ground?"
     show arceus worried
