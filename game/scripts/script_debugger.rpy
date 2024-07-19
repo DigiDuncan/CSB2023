@@ -523,6 +523,7 @@ label asset_debugger:
         show cs guard dark at left
         show copguy_ex_front at mid_left_left
         show monika at mid_left
+        show mean ayo at mid_mid_left
         show lancer at mid_mid_right
         show alien at mid_right
         show arceus angry dusk at right 
@@ -536,6 +537,7 @@ label asset_debugger:
         show sansbrick at center
         show cs fakegod at left
         show copguy_ex_back at mid_left_left
+        show mean ayo flipped at mid_mid_left
         show lancer flipped at mid_mid_right
         show alien dead at mid_right
         show arceus dusk flipped at right 
@@ -549,8 +551,10 @@ label asset_debugger:
         show oldgame at center
         show cs guitar at left
         show ai_ducks at mid_left_left
+        show mean angry at mid_mid_left
         show bubble at mid_mid_right
         show ikea_worker at mid_right
+        show arceus worried dusk at right
         linus "test 35{w=0.5}{nw}"
     else:
         jump exit_debug
@@ -561,6 +565,8 @@ label asset_debugger:
         show m4 at center
         show cs surprised at left
         show stage_screen at mid_left_left
+        show mean angry flipped at mid_mid_left
+        show tate smug sil_white flipped at mid_mid_right
         show pomni at mid_right
         asylum_worker "test 36{w=0.5}{nw}"
     else:
@@ -571,6 +577,8 @@ label asset_debugger:
         scene alley
         show m4 flipped at center
         show cs surprised flipped at left
+        show mean wat at mid_mid_left
+        show tate cry at mid_mid_right
         show moomin at mid_right
         csgod "test 37{w=0.5}{nw}"
     else:
@@ -581,6 +589,8 @@ label asset_debugger:
         scene question
         show m4 fire at center
         show cs scared at left
+        show mean wat flipped at mid_mid_left
+        show tate cry flipped at mid_mid_right
         show snufkin at mid_right
         luke "test 38{w=0.5}{nw}"
     else:
@@ -591,6 +601,7 @@ label asset_debugger:
         scene asylum
         show m4 fire flipped at center
         show cs scared flipped at left
+        show mean furious at mid_mid_left
         show alicia at mid_right
         taran "test 39{w=0.5}{nw}"
     else:
@@ -601,6 +612,7 @@ label asset_debugger:
         scene csdesk
         show script at center
         show cs scared dark at left
+        show mean furious at mid_mid_left
         show witch at mid_right
         colton "test 40{w=0.5}{nw}"
     else:
@@ -611,6 +623,7 @@ label asset_debugger:
         scene csvideo
         show post_it2 at center
         show cs insane worried at left
+        show mean furious flipped at mid_mid_left
         show moomin_flipped at mid_right
         sheriff "test 41{w=0.5}{nw}"
     else:
@@ -621,6 +634,7 @@ label asset_debugger:
         scene setup
         show colorbars at center
         show cs insane worried flipped at left
+        show mean tired at mid_mid_left
         show snufkin_flipped at mid_right
         billy "test 42{w=0.5}{nw}"
     else:
@@ -631,6 +645,7 @@ label asset_debugger:
         scene loffice
         show paper at center
         show cs insane disappointed at left
+        show mean tired flipped at mid_mid_left
         show alicia_flipped at mid_right
         tv_billy "test 43{w=0.5}{nw}"
     else:
@@ -641,6 +656,7 @@ label asset_debugger:
         scene ltt_bg
         show pipe_gun at center
         show cs horse at left
+        show mean worried at mid_mid_left
         show witch_flipped at mid_right
         cultist "test 44{w=0.5}{nw}"
     else:
@@ -651,6 +667,7 @@ label asset_debugger:
         scene ltt_fg
         show pipe_gun flipped at center
         show cs horse flipped at left
+        show mean worried flipped at mid_mid_left
         show baumer at mid_right
         cultist_2 "test 45{w=0.5}{nw}"
     else:
@@ -661,6 +678,7 @@ label asset_debugger:
         scene frontdoor
         show cheetos at center
         show cs pissed at left
+        show mean scared at mid_mid_left
         show baumer flipped at mid_right
         cultist_3 "test 46{w=0.5}{nw}"
     else:
@@ -670,6 +688,7 @@ label asset_debugger:
         play music "everlong.ogg"
         scene road_to_canada
         show bear at center
+        show mean scared flipped at mid_mid_left
         show cs pissed flipped at left
         scott "test 47{w=0.5}{nw}"
     else:
@@ -679,6 +698,7 @@ label asset_debugger:
         play music "everybody_wants.ogg"
         scene border_dusk
         show dog at center
+        show mean unamused at mid_mid_left
         show cs cultist at left
         terry "test 48{w=0.5}{nw}"
     else:
@@ -688,6 +708,7 @@ label asset_debugger:
         play music "exotic.ogg"
         scene sheriff_office
         show pig at center
+        show mean unamused flipped at mid_mid_left
         show cs cultist flipped at left
         carla "test 49{w=0.5}{nw}"
     else:
@@ -697,6 +718,7 @@ label asset_debugger:
         play music "facing_worlds.ogg"
         scene washington_road
         show pot_lift at center
+        show amtrak_conductor at mid_mid_left
         show cs disappointed cultist at left
         peppino "test 50{w=0.5}{nw}"
     else:
@@ -706,6 +728,7 @@ label asset_debugger:
         play music "fastbudget_song.ogg"
         scene washington_road day
         show pot at center
+        show amtrak_conductor flipped at mid_mid_left
         show cs angry cultist at left
         iris "test 51{w=0.5}{nw}"
     else:
@@ -715,6 +738,7 @@ label asset_debugger:
         play music "fasting.ogg"
         scene washington_road dusk
         show pot_sunken at center
+        show amtrak_stewardess at mid_mid_left
         show cs disappointed cultist flipped at left
         lego "test 52{w=0.5}{nw}"
     else:
@@ -724,6 +748,7 @@ label asset_debugger:
         play music "fastport.ogg"
         scene washington_road morning
         show pot_beam at center
+        show amtrak_stewardess flipped at mid_mid_left
         show cs angry cultist flipped at left
         trailtrash "test 53{w=0.5}{nw}"
     else:
@@ -733,6 +758,7 @@ label asset_debugger:
         play music "flyday_chinatown.ogg"
         scene copcar
         show onscreen_sharpener at center
+        show lupin at mid_mid_left
         show cs pencil at left
         green "test 54{w=0.5}{nw}"
     else:
@@ -742,6 +768,7 @@ label asset_debugger:
         play music "fnaf_6.ogg"
         scene copcar_mask
         show renault at center
+        show lupin flipped at mid_mid_left
         show cs angry pencil at left
         jerma "test 55{w=0.5}{nw}"
     else:
@@ -751,6 +778,7 @@ label asset_debugger:
         play music "for_the_people.ogg"
         scene microcenter
         show passportdigi at center
+        show lupin hat at mid_mid_left
         show cs disappointed pencil at left
         pencil "test 56{w=0.5}{nw}"
     else:
@@ -760,6 +788,7 @@ label asset_debugger:
         play music "fourside.ogg"
         scene microinside
         show copguyexe at center
+        show lupin hat flipped at mid_mid_left
         show cs phone at left
         signup "test 57{w=0.5}{nw}"
     else:
@@ -789,6 +818,7 @@ label asset_debugger:
         play sound "sfx_select.ogg"
         play music "full_rulle_med_klas.ogg"
         scene cpuaisle
+        show tate_ex_front at center
         show cs disappointed phone flipped at left
         luigi "test 60{w=0.5}{nw}"
     else:
@@ -798,6 +828,7 @@ label asset_debugger:
         play sound "sfx_siren.ogg"
         play music "funiculi_holiday.ogg"
         scene gpuaisle
+        show tate_ex_abberation at center
         show cs worried phone at left
         mika "test 61{w=0.5}{nw}"
     else:
@@ -807,6 +838,7 @@ label asset_debugger:
         play sound "sfx_slots.ogg"
         play music "gold_room.ogg"
         scene gpuaisle2
+        show tate_ex at center
         show cs worried phone flipped at left
         k174 "test 62{w=0.5}{nw}"
     else:
@@ -1185,48 +1217,56 @@ label asset_debugger:
     if fun_value(108):
         play music "passport_ytp.ogg"
         scene rushmore
+        show cs at t_dining_car_breakfast
         ikea_worker "test 108{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(109):
         play music "penthouse.ogg"
         scene csmore
+        show cs at t_mean_rollout
         pomni "test 109{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(110):
         play music "pixel_peeker_polka.ogg"
         scene omaha
+        show cs at t_dining_car_pancake
         average_swede "test 110{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(111):
         play music "pokey.ogg"
         scene alleyway
+        show cs at t_arc_pancake
         alien "test 111{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(112):
         play music "police_station.ogg"
         scene peppinopizzabg
+        show cs at t_dining_arc_search_left
         moomin "test 112{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(113):
         play music "pressing_pursuit_cornered.ogg"
         scene peppinopizzafg
+        show cs at t_dining_arc_search_right
         snufkin "test 113{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(114):
         play music "price_right.ogg"
         scene wozniaktroubles
+        show cs at t_blur_on
         alicia "test 114{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(115):
         play music "prophet_2001.ogg"
         scene cshouse_vaporized
+        show cs at t_blur_off
         witch "test 115{w=0.5}{nw}"
     else:
         jump exit_debug
@@ -1333,48 +1373,56 @@ label asset_debugger:
     if fun_value(132):
         play music "take_trip2.ogg"
         scene luigi2
+        lupin "test 132{w=0.5}{nw}"
         pause 1.0
     else:
         jump exit_debug
     if fun_value(133):
         play music "the_rest_of_bubble_tea.ogg"
         scene vegasbathroom
+        lupin_offscreen "test 133{w=0.5}{nw}"
         pause 1.0
     else:
         jump exit_debug
     if fun_value(134):
         play music "the_whale.ogg"
         scene backroomcasino
+        mean_offscreen "test 134{w=0.5}{nw}"
         pause 1.0
     else:
         jump exit_debug
     if fun_value(135):
         play music "thousand_march.ogg"
         scene outsafe
+        amtrak_conductor "test 135{w=0.5}{nw}"
         pause 1.0
     else:
         jump exit_debug
     if fun_value(136):
         play music "time_for_a_smackdown.ogg"
         scene outsafeopen
+        amtrak_stewardess "test 136{w=0.5}{nw}"
         pause 1.0
     else:
         jump exit_debug
     if fun_value(137):
         play music "track3.ogg"
         scene insafe
+        amtrak_npc_1 "test 137{w=0.5}{nw}"
         pause 1.0
     else:
         jump exit_debug
     if fun_value(138):
         play music "track4.ogg"
         scene carpark
+        amtrak_npc_2 "test 138{w=0.5}{nw}"
         pause 1.0
     else:
         jump exit_debug
     if fun_value(139):
         play music "trans_atlantic.ogg"
         scene casino1
+        amtrak_npc_3 "test 139{w=0.5}{nw}"
         pause 1.0
     else:
         jump exit_debug
