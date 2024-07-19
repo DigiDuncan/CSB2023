@@ -2036,6 +2036,487 @@ label asset_debugger:
         pause 0.1
     else:
         jump exit_debug
+    if fun_value(252):
+        scene park1
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(253):
+        scene park2
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(254):
+        scene carousel
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(255):
+        scene endingai 
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(256):
+        scene entertunnel
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(257):
+        scene linusmedia
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(258):
+        scene secrettunnel
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(259):
+        scene hairdryercoolingsystem
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(260):
+        scene tempsdown
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(261):
+        scene car_old
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(262):
+        scene car_inside_old
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(263):
+        scene bedroom_old
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(264):
+        scene door_old
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(265):
+        scene csmart_old
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(266):
+        scene craptop_old
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(267):
+        scene falling_old
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(268):
+        scene archival_1
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(269):
+        scene archival_2
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(270):
+        scene archival_3
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(271):
+        scene archival_4
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(272):
+        scene archival_5
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(273):
+        scene archival_6
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(274):
+        scene archival_7
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(275):
+        scene archival_8
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(276):
+        scene archival_9
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(277):
+        scene archival_10
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(278):
+        scene archival_11
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(279):
+        scene archival_9a
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(280):
+        scene archival_10a
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(281):
+        scene archival_11a
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(282):
+        scene archival_12
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(283):
+        scene archival_13
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(284):
+        scene archival_14
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(285):
+        scene archival_15
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(286):
+        scene archival_16
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(287):
+        scene archival_17
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(288):
+        scene archival_18
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(289):
+        scene archival_19
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(290):
+        scene start_route
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(291):
+        scene cs_room_cars
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(292):
+        scene wis_forest
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(293):
+        scene roombacks
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(294):
+        scene backrooms
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(295):
+        scene hobbytown
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(296):
+        scene pencilroom
+        pause 0.1 
+    else:
+        jump exit_debug
+    if fun_value(297):
+        scene pencilroomblur
+        pause 0.1 
+    else:
+        jump exit_debug
+    if fun_value(298):
+        scene cult_con
+        pause 0.1 
+    else:
+        jump exit_debug
+    if fun_value(299):
+        scene blue_branch
+        pause 0.1 
+    else:
+        jump exit_debug
+    if fun_value(300):
+        scene renault_inside
+        pause 0.1 
+    else:
+        jump exit_debug
+    if fun_value(301):
+        scene kuwait_city
+        pause 0.1 
+    else:
+        jump exit_debug
+    if fun_value(302):
+        scene kuwait_explosion
+        pause 0.1 
+    else:
+        jump exit_debug
+    if fun_value(303):
+        scene kuwait_hospital_inside
+        pause 0.1 
+    else:
+        jump exit_debug
+    if fun_value(304):
+        scene kuwait_hospital_corridor
+        pause 0.1 
+    else:
+        jump exit_debug
+    if fun_value(305):
+        scene kuwait_islandbase_leaders
+        pause 0.1 
+    else:
+        jump exit_debug
+    if fun_value(306):
+        scene green
+        pause 0.1 
+    else:
+        jump exit_debug
+    if fun_value(307):
+        scene kingman_exterior
+        pause 0.1 
+    else:
+        jump exit_debug
+    if fun_value(308):
+        scene kingman_interior
+        pause 0.1 
+    else:
+        jump exit_debug
+    if fun_value(309):
+        scene kingman_museum
+        pause 0.1 
+    else:
+        jump exit_debug
+    if fun_value(310):
+        scene kingman_platform_1
+        pause 0.1 
+    else:
+        jump exit_debug
+    if fun_value(311):
+        scene kingman_platform_2
+        pause 0.1 
+    else:
+        jump exit_debug
+    if fun_value(312):
+        scene kingman_train_arrive
+        pause 0.1 
+    else:
+        jump exit_debug
+    if fun_value(313):
+        scene amtrak_arrive_close
+        pause 0.1 
+    else:
+        jump exit_debug
+    if fun_value(314):
+        scene amtrak_sleeper_corridor
+        pause 0.1 
+    else:
+        jump exit_debug
+    if fun_value(315):
+        scene amtrak_sleeper_interior_day
+        pause 0.1 
+    else:
+        jump exit_debug
+    if fun_value(316):
+        scene amtrak_sleeper_interior_night
+        pause 0.1 
+    else:
+        jump exit_debug
+    if fun_value(317):
+        scene amtrak_dining_car
+        pause 0.1 
+    else:
+        jump exit_debug
+    if fun_value(318):
+        scene amtrak_dining_table
+        pause 0.1 
+    else:
+        jump exit_debug
+    if fun_value(319):
+        scene moynihan_interior
+        pause 0.1 
+    else:
+        jump exit_debug
+    if fun_value(320):
+        scene amtrak_cab
+        pause 0.1 
+    else:
+        jump exit_debug
+    if fun_value(321):
+        scene amtrak_sleeper_open_bg
+        pause 0.1 
+    else:
+        jump exit_debug
+    if fun_value(322):
+        scene amtrak_sleeper_open_fg
+        pause 0.1 
+    else:
+        jump exit_debug
+    if fun_value(323):
+        scene amtrak_economy
+        pause 0.1 
+    else:
+        jump exit_debug
+    if fun_value(324):
+        scene utajsign
+        pause 0.1 
+    else:
+        jump exit_debug
+    if fun_value(325):
+        scene vegasjade
+        pause 0.1 
+    else:
+        jump exit_debug
+    if fun_value(326):
+        scene vegasjade2
+        pause 0.1 
+    else:
+        jump exit_debug
+    if fun_value(327):
+        scene car background
+        pause 5.0 
+    else:
+        jump exit_debug
+    if fun_value(328):
+        scene car background night
+        pause 5.0 
+    else:
+        jump exit_debug
+    if fun_value(329):
+        scene car plains
+        pause 5.0 
+    else:
+        jump exit_debug
+    if fun_value(330):
+        scene car plains night
+        pause 5.0 
+    else:
+        jump exit_debug
+    if fun_value(331):
+        scene tvcar
+        pause 5.0 
+    else:
+        jump exit_debug
+    if fun_value(332):
+        scene drive_night
+        pause 5.0 
+    else:
+        jump exit_debug
+    if fun_value(333):
+        scene drive_day
+        pause 5.0 
+    else:
+        jump exit_debug
+    if fun_value(334):
+        scene csb1tube
+        pause 5.0 
+    else:
+        jump exit_debug
+    if fun_value(335):
+        scene train_start
+        pause 5.0 
+    else:
+        jump exit_debug
+    if fun_value(336):
+        scene train_in_tunnel
+        pause 5.0 
+    else:
+        jump exit_debug
+    if fun_value(337):
+        scene train_outside_tunnel
+        pause 5.0 
+    else:
+        jump exit_debug
+    if fun_value(338):
+        scene train_loop
+        pause 5.0 
+    else:
+        jump exit_debug
+    if fun_value(339):
+        scene the_tram
+        pause 5.0 
+    else:
+        jump exit_debug
+    if fun_value(340):
+        scene sign_closeup
+        pause 5.0 
+    else:
+        jump exit_debug
+    if fun_value(341):
+        scene woc
+        pause 5.0 
+    else:
+        jump exit_debug
+    if fun_value(342):
+        scene where
+        pause 5.0 
+    else:
+        jump exit_debug
+    if fun_value(343):
+        scene karaoke
+        pause 5.0 
+    else:
+        jump exit_debug
+    if fun_value(344):
+        scene bad_end_screen
+        pause 5.0 
+    else:
+        jump exit_debug
+    if fun_value(345):
+        scene bronson_hell
+        pause 5.0 
+    else:
+        jump exit_debug
+    if fun_value(346):
+        scene fun_cs_house
+        pause 5.0 
+    else:
+        jump exit_debug
+    if fun_value(347):
+        scene fun_hoh_sis
+        pause 5.0 
+    else:
+        jump exit_debug
+
     n "Done."
     return
 
