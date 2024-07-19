@@ -142,7 +142,7 @@ def change_stat(subject: Fighter, targets: list[Fighter], crit: bool, options: d
                     f._funni_ap = True
             f.armor_points = new_ap
             answer.append((int(f.armor_points - old_ap), "ap"))
-            print(f"Setting {f.name} AP to {f.armor_points}.")
+            print(f"Setting {f.name} DEF to {f.armor_points}.")
         elif stat == "atk":
             old_atk = f.attack_points
             f.attack_points *= mult
@@ -159,7 +159,7 @@ def draw_in(subject: Fighter, targets: list[Fighter], crit: bool, options: dict)
     attack_type = renpy.random.randint(1, 4)
     # ap up, allies
     if attack_type == 1:
-        print("[Draw In] AP Up")
+        print("[Draw In] DEF Up")
         for f in targets:
             if (f.enemy ^ subject.enemy):
                 answer.append((0, "none"))
@@ -170,7 +170,7 @@ def draw_in(subject: Fighter, targets: list[Fighter], crit: bool, options: dict)
                 answer.append((diff, "ap"))
     # ap down, enemies
     elif attack_type == 2:
-        print("[Draw In] AP Down")
+        print("[Draw In] DEF Down")
         for f in targets:
             if not (f.enemy ^ subject.enemy):
                 answer.append((0, "none"))
@@ -190,7 +190,7 @@ def draw_in(subject: Fighter, targets: list[Fighter], crit: bool, options: dict)
                 f.attack_points *= mult
                 diff = f.attack_points - old_ap
                 answer.append((diff, "atk"))
-    # ap down, enemies
+    # atk down, enemies
     elif attack_type == 4:
         print("[Draw In] ATK Down")
         for f in targets:
@@ -606,14 +606,14 @@ class Encounter:
 class Attacks:
     PUNCH = Attack("Punch", "A simple punch.", damage_fighters)
     RAW_CHOP = Attack("Raw Chop", "Hiya!", damage_fighters, ex = False)
-    CS_AP_DOWN = Attack("CS AP Down", "Bring AP of an enemy down.", change_stat, stat = "ap", mult = 0.75, ex = False)
-    CHOP = ComboAttack("Chop", "Hit an enemy and bring their AP down.", [RAW_CHOP, CS_AP_DOWN])
+    CS_AP_DOWN = Attack("CS DEF Down", "Bring DEF of an enemy down.", change_stat, stat = "ap", mult = 0.75, ex = False)
+    CHOP = ComboAttack("Chop", "Hit an enemy and bring their DEF down.", [RAW_CHOP, CS_AP_DOWN])
     RAW_KICK = Attack("Raw Kick", "It's fuckin raw!", damage_fighters, mult = 2, ex = False)
     YTP_MAGIC = Attack("YTP Magic", "Channel the power of YTP!", damage_fighters, cooldown = 10, mult = 20, accuracy = 100, used = True)
     YTP_MAGIC_NOCOOL = Attack("YTP Magic", "Let no one stand in your way.", damage_fighters, mult = 20, accuracy = 100, ex = False)
     YTP_HEAL = Attack("Attack.HEAL", "No matter the cost.", heal_fighters, target_count = 0, target_type = "allies", cooldown = 1, mult = 3, accuracy = 100,)
     FUN_VALUE = Attack("Fun Value", "A Dev's favorite attack.", damage_fighters, mult = 10, accuracy = 100,)
-    KICK = ComboAttack("Kick", "A stronger attack, and lowers AP.", [RAW_KICK, CS_AP_DOWN])
+    KICK = ComboAttack("Kick", "A stronger attack, and lowers DEF.", [RAW_KICK, CS_AP_DOWN])
     BULLET_SPRAY = Attack("Bullet Spray", "Shred all enemies with your LMG!", damage_fighters, target_count = 0, target_type = "enemies", cooldown = 3, mult = 1.5, accuracy = 70)
     RAW_SLASH = Attack("Raw Slash", "It's fuckin raw!", damage_fighters, ex = False)
     BLEED = Attack("Bleed", "Bleed them dry!", damage_over_time, mult = 0.25, ex = False)
@@ -664,7 +664,7 @@ class Attacks:
     STOMP = Attack("Stomp", "Send an earthquake to the enemies!", damage_fighters, target_count = 0, target_type = "enemies", ex = False, mult = 0.75)
     POKE = Attack("Poke", "A mega poke.", damage_fighters, target_count = 1, target_type = "enemies", ex = False, mult = 2.5, accuracy = 90)
     SWORD = Attack("Sword", "The edge of a sharp thing.", damage_fighters, target_count = 1, target_type = "enemies", ex = False)
-    SWORD_AP = Attack("Sword (AP Down)", "The edge of a sharp thing, more.", change_stat, stat = "ap", target_count = 1, target_type = "enemies", mult = 0.75, ex = False)
+    SWORD_AP = Attack("Sword (DEF Down)", "The edge of a sharp thing, more.", change_stat, stat = "ap", target_count = 1, target_type = "enemies", mult = 0.75, ex = False)
     SWORD_SLASH = ComboAttack("Sword Slash", "Hit an enemy, and take a chip out of their armor.", [SWORD, SWORD_AP], ex = False)
     FLAMETHROWER = Attack("Flamethrower", "Spray all your enemies with burning fuel!", damage_over_time, target_count = 0, target_type = "enemies", ex = False, mult = 0.5, turns = 3, cooldown = 3, accuracy = 70)
     CHOCOLATE_CAKE = Attack("Chocolate Cake", "Heal a party member with loads to eat!", heal_fighters, target_type = "allies", accuracy = 95, ex = False)
@@ -674,7 +674,7 @@ class Attacks:
     HUG = Attack("Hug", "Hug an enemy (ouch).", damage_fighters, target_count = 1, target_type = "enemies", ex = False, mult = 1.5, accuracy = 90)
     SPIKE_BOMB = Attack("Spike Bomb", "Release spikes to all enemies!", damage_fighters, target_count = 0, target_type = "enemies", ex = False, mult = 1.5, cooldown = 3, accuracy = 75)
     SHOT = Attack("Shot", "I'd like to see you outrun bullet.", damage_fighters, target_count = 1, target_type = "enemies", ex = False, mult = 1.5)
-    SHOT_AP = Attack("Shot (AP Down)", "Kevlar destroyed.", change_stat, stat = "ap", target_count = 1, target_type = "enemies", mult = 0.75, ex = False)
+    SHOT_AP = Attack("Shot (DEF Down)", "Kevlar destroyed.", change_stat, stat = "ap", target_count = 1, target_type = "enemies", mult = 0.75, ex = False)
     PISTOL = ComboAttack("Pistol", "A sharp shot to the chest.", [SHOT, SHOT_AP], ex = False)
     ALL_OVER_AGAIN = Attack("All Over Again", "Ditto.", ai_mimic)
     HEAVY_PUNCH = Attack("Heavy Punch", "A quick blow.", damage_fighters, target_count = 1, target_type = "enemies", ex = False, mult = 1.75, accuracy = 75)
@@ -849,7 +849,7 @@ class DamageIndicator:
     @property
     def text(self) -> str:
         if self.type == "ap":
-            return str(self.value) + " AP"
+            return str(self.value) + " DEF"
         elif self.type == "atk":
             return str(self.value) + " ATK"
         elif self.indicator_type == "unconfused":
@@ -890,7 +890,7 @@ class StatBlockDisplayable(renpy.Displayable):
         self.fighter = fighter
         self.fighter_name = Text(self.fighter.display_name, color = "#FC8900", size = 50)
         self.health_text = Text("HP: " + str(self.fighter.health_points) + "/" + str(self.fighter.max_health), color = "#FFFFFF", size = self.text_size)
-        self.AP_text = Text("AP: " + str(self.fighter.armor_points), color = "#FFFFFF", size = self.text_size)
+        self.AP_text = Text("DEF: " + str(self.fighter.armor_points), color = "#FFFFFF", size = self.text_size)
         self.ATK_text = Text("ATK: " + str(self.fighter.attack_points), color = "#FFFFFF", size = self.text_size)
         self.stat_back = Image("minigames/rpg/statbox.png")
         self.damage_indicators: list[DamageIndicator] = []
@@ -911,7 +911,7 @@ class StatBlockDisplayable(renpy.Displayable):
         x_al = 25
         y_al = 65
         self.health_text = Text("HP: " + str(self.fighter.health_points) + "/" + str(self.fighter.max_health), color = "#FFFFFF", size = self.text_size)
-        self.AP_text = Text("AP: " + str(self.fighter.armor_points), color = "#FFFFFF", size=self.text_size)
+        self.AP_text = Text("DEF: " + str(self.fighter.armor_points), color = "#FFFFFF", size=self.text_size)
         self.ATK_text = Text("ATK: " + str(self.fighter.attack_points), color = "#FFFFFF", size=self.text_size)
         r = renpy.Render(370, 270)
         r.place(self.stat_back)
