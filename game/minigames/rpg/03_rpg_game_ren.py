@@ -237,11 +237,11 @@ def get_target(encounter: Encounter, fighter: Fighter, attack: Attack) -> list[F
         # Choose fighters (weighted)
         weights = []
         for n, f in enumerate(target_staging):
-            score = (self.preference_weight if f.name in self.preferred_targets else 1)
+            score = (fighter.ai.preference_weight if f.name in fighter.ai.preferred_targets else 1)
             strength = n / len(target_staging)
-            if self.focus == "strong":
+            if fighter.ai.focus == "strong":
                 score *= strength
-            elif self.focus == "weak":
+            elif fighter.ai.focus == "weak":
                 score *= (1 - strength)
             weights.append(score)
         for _ in range(attack.target_count):
