@@ -749,7 +749,7 @@ label friend2_between_2:
     copguy "I've been making sure to note down your team's abilities..."
     copguy "Why don't we try one out?"
     n "Copguy uses Light Cast on Arceus!"
-    play sound "minigames/car/sfx_gaster_blast.ogg"
+    play sound sfx_gaster_blast
     scene white with dissolve
     scene war_torn_5
     show cs worried at center

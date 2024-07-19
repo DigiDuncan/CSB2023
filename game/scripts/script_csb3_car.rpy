@@ -510,7 +510,7 @@ label car_dialogue:
     pause 5.0
     cs "Alright, you ready?"
     pause 2.0
-    play sound "minigames/car/sfx_gaster_blast.ogg"
+    play sound sfx_gaster_blast
     show billy car turn with hpunch
     show billy car turn with vpunch
     billy "What the hell are you guys doing?!"
