@@ -35,7 +35,9 @@ label game_loop:
     python:
         global rpggame
         encounter = rpggame.encounter
+        print("Resetting RPG game scene...")
         encounter.reset_cooldowns()
+        print("Starting RPG fight!")
         while encounter.won is None:
             # First phase, get the user inputs of what each fighter should do.
             actions = []

@@ -218,6 +218,8 @@ def ai_mimic(subject: Fighter, targets: list[Fighter], crit: bool, options: dict
 def get_target(encounter: Encounter, fighter: Fighter, attack: Attack) -> list[Fighter]:
     target: list[Fighter] = []
 
+    print(f"{fighter.name}: Getting targets for {attack.name}...")
+
     # If it's auto targeting
     if attack.target_count == 0:
         target_type = {"enemies": "allies", "allies": "enemies", "all": "all"}[attack.target_type]
@@ -276,6 +278,9 @@ class AI:
         enemy_status.sort(key = lambda x: (x.health_points * (1 - (x.armor_points / 100))))
         what: Attack = None
         # i_dont_know = "3rd Base"
+
+        print(f"{subject.name}: Choosing an attack...")
+
         available_attacks = [a for a in subject.attacks if a.available]
         # No attacks to chose?
         if len(available_attacks) == 0:
@@ -314,16 +319,12 @@ class AI:
                 score = 1.0
                 if atk.type == "damage" or atk.type == "aoe":
                     score *= (self.aggression * atk.options.get("mult", 1))
-                    print("damage "+str(score))
                 elif atk.type == "buff" or atk.type == "debuff" or atk.type == "confuse":
                     score *= self.tacticity
-                    print("buff "+str(score))
                 if atk.type == "aoe":
                     score *= self.crowd_control
-                    print("aoe "+str(score))
                 if heal_time:
                     score *= atk.options.get("mult", 1)  # weight towards better heals
-                    print("heal "+str(score))
                 scores.append(score)
 
             # Choose an attack.
@@ -344,6 +345,12 @@ class AI:
             renpy.pause(1.0)
 
         return who, answer
+
+    def __str__(self) -> str:
+        return f"<AI {self.name}>"
+
+    def __repr__(self) -> str:
+        return self.__str__()
 
 class AIType:
     NEUTRAL = AI("Neutral")
@@ -396,6 +403,12 @@ class Attack:
         else:
             return "damage"
 
+    def __str__(self) -> str:
+        return f"<Attack {self.name}>"
+
+    def __repr__(self) -> str:
+        return self.__str__()
+
 class ComboAttack:
     def __init__(self, name: str, descripton: str, attacks: list[Attack], accuracy: int = 80, cooldown: int = 0, used = False, ex = True):
         self.name = name
@@ -438,6 +451,12 @@ class ComboAttack:
     @property
     def options(self) -> dict:
         return self.attacks[0].options
+
+    def __str__(self) -> str:
+        return f"<ComboAttack {self.name} ({self.attacks})>"
+
+    def __repr__(self) -> str:
+        return self.__str__()
 
 class Fighter:
     def __init__(self, name: str, enemy: bool, hp: int, ap: int, atk: int, attacks: list[Attack | ComboAttack], sprite: Displayable, multiplier: float = 1, ai: AI = None, display_name: str = None):
@@ -557,6 +576,12 @@ class Fighter:
     def dead(self) -> bool:
         return self.health_points <= 0
 
+    def __str__(self) -> str:
+        return f"<Fighter {self.name} | HP: {self._health_points}/{self._max_health} ATK: {self._attack_points} DEF: {self._armor_points}>"
+
+    def __repr__(self) -> str:
+        return self.__str__()
+
 class Encounter:
     def __init__(self, fighters: list[Fighter], background: Displayable, music: str, scale: float, on_win: str, on_lose: str = "start"):
         self.fighters = [deepcopy(f) for f in fighters if f is not None]
@@ -591,6 +616,7 @@ class Encounter:
     def won(self) -> bool | None:
         if len(self.allies) == 0:
             return False
+        # This special exception occurs since DB is the only fighter to not be "on the field."
         elif len(self.allies) == 1 and self.allies[0].name == "DB05":
             return False
         elif len(self.enemies) == 0:
@@ -602,6 +628,12 @@ class Encounter:
         for f in self.fighters:
             for a in f.attacks:
                 a._turns_until_available = 0 if not a.used else a.cooldown
+
+    def __str__(self) -> str:
+        return f"<Encounter {self.allies} vs {self.enemies}>"
+
+    def __repr__(self) -> str:
+        return self.__str__()
 
 class Attacks:
     PUNCH = Attack("Punch", "A simple punch.", damage_fighters)

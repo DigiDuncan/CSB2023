@@ -62,7 +62,7 @@ screen achievements_welcome():
         # make it 100% on the backend for math reasons then convert it
         percent_unlocked_backend = (unlocked_count / total_count) * 100
         percent_unlocked_display = int(percent_unlocked_backend * 1.88)
-       
+
     viewport:
         xsize 1300
         ysize 800
