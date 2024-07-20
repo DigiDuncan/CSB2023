@@ -1392,7 +1392,14 @@ layeredimage copguy_ex:
 
 image tate_ex_front:
     "characters/tate/tate_ex.png"
-    xysize (944, 1000)
+    alignaround (0.5, 0.5)
+    align (0.5, 0.5)
+    pos (0.5, 0.5)
+    pass
+    xpos 0.49
+    ease 2.0 xpos 0.51
+    ease 2.0 xpos 0.49
+    repeat
     
 image tate_ex_ca_c:
     "characters/tate/tate_ex_c.png"
@@ -1407,38 +1414,45 @@ image tate_ex_ca_c:
 
 image tate_ex_ca_m:
     "characters/tate/tate_ex_m.png"
-    xysize (944, 1000)
+    alignaround (0.5, 0.5)
+    align (0.5, 0.5)
+    pos (0.5, 0.5)
+    pass
+    xpos 0.51
+    ease 2.0 xpos 0.49
+    ease 2.0 xpos 0.51
+    repeat
 
 image tate_ex_ca_y:
     "characters/tate/tate_ex_y.png"
-    xysize (944, 1000)
+    alignaround (0.5, 0.5)
+    align (0.5, 0.5)
+    pos (0.5, 0.5)
+    pass
+    xpos 0.51
+    ease 2.0 xpos 0.49
+    ease 2.0 xpos 0.51
+    repeat
 
-layeredimage tate_ex_setup:
-    xysize (944, 1000)
+layeredimage tate_ex:
+    always:
+        "tate_ex_ca_c"
 
-    group abberation_c:
-        attribute c:
-            "tate_ex_c"
-    
-    group abberation_m:
-        attribute m:
-            "tate_ex_m"
-            
-    group abberation_y:
-        attribute y:
-            "tate_ex_y"
-            
-    group front:
-        attribute front default:
+    group ignore_me:
+        attribute wow default:
+            "tate_ex_ca_m"
+
+layeredimage tate_ex2:
+    always:
+        "tate_ex_ca_y"
+
+    group ignore_me:
+        attribute wow default:
             "tate_ex_front"
-        
-image tate_ex:
-    "tate_ex_setup"
-    
+
 # misc
 
 image ai_ducks = SnowBlossom("duck.png", 50)
-
 # Audio
 # CSBI Music
 define audio.lets_hear_my_baby = "lets_hear_my_baby.ogg"
@@ -1999,7 +2013,15 @@ label test:
     menu:
         "Menu test?"
         "Yes"  (type = "good"):
-            pass
+            stop music
+            show copguy_ex at left
+            pakoo "This is Copguy EX."
+            show tate_ex at right
+            pakoo "This is Tate EX."
+            show tate_ex2 at right
+            pakoo "This is also Tate EX."
+            pakoo "Does this work? Idk"
+            return
         "No"  (type = "bad"):
             pass
         "True"  (type = "true"):
