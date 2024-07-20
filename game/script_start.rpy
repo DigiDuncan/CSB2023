@@ -2012,3 +2012,8 @@ label test:
 
 define shake1 = { "master" : hpunch }
 define shake2 = { "master" : vpunch }
+
+screen debugger_menu():
+    text "Stats" textalign 0.5 size 72 xalign 0.5 yalign 0.5
+    hbox xalign 0.5 yalign 0.5:
+        spacing 50
