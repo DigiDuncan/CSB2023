@@ -522,6 +522,7 @@ label train_story_begin:
     scene black with fade
     n "The group boards the train."
     n "CS and Arceus buy tickets from the staff. After a brief tour of all of the amenities, the trio heads towards the sleeper cars."
+    jump train_boarding
 
 label train_boarding:
 
@@ -1072,6 +1073,7 @@ label train_enter_sleeper:
 
     scene black with fade
     pause 3.0
+    jump train_dining
 
 label train_dining:
 
@@ -1203,6 +1205,7 @@ label train_dining:
     n "He rushes back to the sleeper car as quickly as he can."
     hide arceus with moveoutright
     scene black with fade
+    jump train_wakeup
     
 label train_wakeup:
 
@@ -2007,6 +2010,8 @@ label train_confront_lupin:
     mean "Let's stick together in case this guy is dangerous."
    
     "This is a placeholder line until more is written."
+    "For now let's jump to Tate EX fight."
+    jump train_tate_ex_encounter
 
 ######## SECRET FIGHT VS TATE ########
 label train_tate_ex_encounter:
@@ -2153,6 +2158,9 @@ label train_vs_tate_lose:
 label train_completed:
     "Placeholder line for if you complete train route."
     $ achievement_manager.unlock("All Aboard!")
+    # TODO: Technically, the train stops in Chicago IRL.
+    # TODO: Replace this label with Chicago route if you choose to write one.
+    jump train_return_home_transition
                 
         
 ######## GO HOME ########
