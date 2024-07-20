@@ -1532,6 +1532,7 @@ define audio.ac_title = "ac_title.ogg"
 
 # CSBIII Michigan
 define audio.upon_me = "upon_me.ogg"
+define audio.error = "error.ogg"
 define audio.honk_song = "honk_song.ogg"
 define audio.wayward_wanderer = "wayward_wanderer.ogg"
 define audio.mis_leader = "mis_leader.ogg"

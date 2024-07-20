@@ -1281,6 +1281,7 @@ label japan:
     show cs at center with moveinleft
     if fun_value(FUN_VALUE_COMMON):
         play music yuuka_town volume 0.4
+        music village_1_JP013BM - Yuuka Kazami
     else:        
         play music automatic_love volume 0.4
         music Automatic Love - Siix0
@@ -1314,6 +1315,7 @@ label japan_two:
     show cs at center with moveinleft
     if fun_value(FUN_VALUE_COMMON):
         play music yuuka_town volume 0.4
+        music village_1_JP013BM - Yuuka Kazami
     else:  
         play music automatic_love volume 0.4
         music Automatic Love - Siix0

@@ -1,6 +1,7 @@
 label vibration:
     stop music fadeout 3.0
     play music lets_hear_my_sped volume 0.7
+    music "Let's Hear My Speed - Pakoo"
     scene craptop_bg
     show craptop discord
     cs "Bye guys! I gotta head to the store!"
@@ -79,12 +80,14 @@ label vibration:
     hide cs with moveoutright
     scene black with dissolve
     stop music fadeout 3.0
+    music end
     stop sound fadeout 1.0
     pause 1.0
     scene jail_inside
     show cs at mid_left
     with dissolve
     play music fastbudget_song volume 0.7
+    music "Fastbudget Song - Pakoo"
     show copguy at right with moveinright
     copguy "*Huff* *Huff*"
     show cs happy
@@ -121,11 +124,13 @@ label vibration:
     with moveoutright
     scene black with dissolve
     stop music fadeout 3.0
+    music end
     pause 1.0
     scene inside_ltt
     show linus at center
     with dissolve
     play music fastport volume 0.7
+    music "Fastport.MID - Pakoo"
     linus "Sorry, I can't get you a job, you don't have a visa."
     show arceus happy at right with moveinright
     arceus "Refresh the page!"
@@ -192,8 +197,10 @@ label vibration:
     hide copguy with moveoutright
     scene black with dissolve
     stop music fadeout 3.0
+    music end
     pause 1.0
     play music fasting volume 0.7
+    music "Fasting - Pakoo"
     scene washington_road with dissolve
     show cs dark at left
     show arceus dark flipped at right
@@ -234,6 +241,7 @@ label vibration:
     copguy "Alright, looks good to me!"
     scene black with dissolve
     stop music fadeout 3.0
+    music end
     play sound sfx_doorslam
     pause 1.0
     scene washington_road morning
@@ -241,6 +249,7 @@ label vibration:
     show arceus at right
     with dissolve
     play music happy_running volume 0.7
+    music "Happy Running - Pakoo"
     cs "Alright, let's start walking home!"
     scene town
     show cs at left
@@ -381,4 +390,6 @@ label vibration:
     cs "Awesome!"
     scene black with dissolve
     stop music fadeout 3.0
+    music end
     pause 2.0
+    return

@@ -60,6 +60,7 @@ label michigan_bronson:
     arceus "I'm getting chills thinking about it too, CS is right."
     billy "Okay shut up! Let me drive!"
     play music upon_me
+    music Upon Me - Dr. Awesome
     cs "Billy, you took the Bronson exit."
     show billy car
     billy "..."
@@ -115,6 +116,7 @@ label michigan_bronson:
     arceus "Both of you, shut up! Do you hear... something in the distance?"
     window hide
     stop music fadeout 5.0
+    music end
     pause 5.0
     play sound2 sfx_siren volume 0.2
     pause 2.0
@@ -157,11 +159,13 @@ label michigan_bronson:
     show copguyexe with dissolve
     scene white with dissolve
     pause 1.0
+    music Prophet ERROR - Pakoo
     jump rpg_bronsonbattle
 
 label michigan_bronson_win:
     play sound sfx_thunder volume 0.5 loop if_changed
     stop music fadeout 3.0
+    music end
     scene bronsoncrash
     show billy at left
     show arceus dirty flipped at mid_left

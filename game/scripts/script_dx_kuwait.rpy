@@ -93,6 +93,7 @@ label kuwait_hospital:
     pause 10
     play sound sfx_heartbeat loop
     play music tmwstw
+    music The Man Who Sold The World - Nirvana
     pause 5
     cs "{i}Where... where am I?{/i}"
     cs "{i}Everything hurts like hell.{/i}"
@@ -106,6 +107,7 @@ label kuwait_hospital:
     k_doctor "Will you shut that damn thing off?"
     stop sound
     stop music
+    music end
     k_nurse "Sorry, Doctor."
     cs "What the he--"
     k_doctor "Try not to speak just yet, you've been out cold for a while."

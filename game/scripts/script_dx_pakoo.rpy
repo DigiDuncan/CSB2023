@@ -8,6 +8,7 @@ label dx_after_true:
     n "and Billy, he's still selling his products while on the road."
     scene start_route with fade
     play music letshearspring volume 2
+    music "Let's Hear My Baby: Spring Remix - Pakoo"  
     pause 3.0
     scene cs_room_cars
     show cs at left
@@ -59,9 +60,11 @@ label dx_after_true:
     billy "Great! You're gonna love it!"
     scene black with dissolve
     stop music fadeout 3.0
+    music end
     n "Billy puts blindfolds on CS and Arc, and heard out."
     n "After what feels like forever, they arrive at their destination."
     play music echoing_spring volume 2
+    music "Echoing: Spring Remix - Pakoo" 
     billy "Alright, you can take the blindfolds off. "
     scene wis_forest 
     show cs dark at left
@@ -140,6 +143,7 @@ label dx_after_true:
     play sound sfx_tinnitus volume 3
     scene white with dissolve
     stop music fadeout 3.0
+    music end
     stop sound fadeout 5.0
     n "A flash of blinding light engulfs CS, as he disappears with it."
     n "As CS slowly opens his eyes, he finds himself in an unforgiving place."
@@ -147,6 +151,7 @@ label dx_after_true:
     show cs concentrate
     with dissolve
     play music alien_atmosphere volume 2
+    music "Alien Atmosphere - Dr. Awesome"
     pause 1.5
     show cs disappointed
     pause 0.5
@@ -166,6 +171,7 @@ label dx_after_true:
     n "The man runs up the stairs to meet the panicking CS."
     show renovator at left with moveinleft
     stop music
+    music end
     renovator "What's wrong with you? How did you get back here?"
     show cs worried flipped
     cs "I've teleported into the backrooms and I think I'm stuck here forever!"
@@ -206,6 +212,7 @@ label dx_after_true:
 
 label dx_after_back_to_story:
     stop music fadeout 1.0
+    music end
     scene hobbytown
     show cs disappointed
     cs "Maybe I can find Billy's machine, if it ended up here."
@@ -229,6 +236,7 @@ label dx_after_back_to_story:
     show pencilcashier at right
     with dissolve
     play music apple_kid
+    music "Apple Kid - Keiichi Suzuki"
     cs "...and what the hell is this outfit?"
     pencil "Welcome, to the Pencil Cult!"
     cs "..."
@@ -258,17 +266,20 @@ label dx_after_back_to_story:
     hide cs with moveoutright
     scene black with dissolve
     stop music fadeout 3.0
+    music end
     n "CS gets to the bathroom and takes off his stuffy pencil costume."
     scene cult_con
     show cs disappointed at center
     with dissolve
     play music ten_feet_away
+    music "10 Feet Away - Dr. Awesome"
     cs "God, what the fuck is all of this?"
     cs "I can't tell if I'm still in the past or what is going on now."
     cs "I need to find a way out of here."
     n "Just as CS was going to look for an exit, a video starts playing on one of the many TVs around the convention."
     scene black with dissolve
     stop music fadeout 3.0
+    music end
     #CultCon intro video plays
     n "A video would play here, but I didn't finish it yet."
     n "The video would sum up Cult Con, explaining that there is a side competition that takes place."
@@ -438,9 +449,11 @@ label dx_after_competiton_start:
     show cs cultist at left
     cs "I think I'm good."
     stop music fadeout 3.0
+    music end
     cultist "Alright, awesome."
     cultist "Now go out there and--{nw}"
     play music hitsquad_2
+    music "Hitsquad 2 - Dr. Awesome"
     cruise "Hey you purple-hooded idiots!"
     show cruise flipped at center with moveinleft
     show cs angry cultist
@@ -458,6 +471,7 @@ label dx_after_competiton_start:
     show cruise with determination
     hide cruise with moveoutleft
     stop music fadeout 3.0
+    music end
     show cs cultist
     cultist "Eugh, fuck that guy."
     cultist "Anyways, I wish you the best of luck."
@@ -518,6 +532,7 @@ label dx_after_pencil_ask:
     pencil "How'd you know?"
     cs "Oh, just a hunch that's all."
     stop music fadeout 3.0
+    music end
     hide onscreen_sharpener with dissolve
     n "The pencil man puts the sharpener on the table next to them, and then pulls out a pack of 60 pencils."
     pencil "You better hope you have some godlike endurance. You got 4 minutes."
@@ -526,11 +541,14 @@ label dx_after_pencil_ask:
     pencil "Well aren't you cocky? Let's see this then!"
     pencil "3, 2, 1,"
     pencil "Go!"
+    music "Get The Funk - Dr. Awesome"
     minigame "minigame_pencil2" "dx_after_win_pencil2" "lose_pencil_game2"
 
     label dx_after_win_pencil2:
     hide bad_end_screen
     hide typewriter
+    stop music fadeout 3.0
+    music end   
     show pencilroom
     show pencilguy at right
     show cs cultist at left
@@ -815,6 +833,7 @@ label dx_after_renault:
 
 label dx_after_no_renault:
     stop music fadeout 5.0
+    music end
     scene hobbytown
     show cs disappointed
     show carguy at right
@@ -871,6 +890,7 @@ label dx_after_yes_renault:
     show carguy at right
     with dissolve
     play music muumin_tani_fuyu
+    music Muumin Tani Fuyu - Sumio Shiratori
     carguy "So that was the new Renault 5E! I hope you enjoyed it!"
     cs "Yeah I did!"
     show cs disappointed
@@ -881,6 +901,7 @@ label dx_after_yes_renault:
     show cs worried
     cs "Wait--{nw}"
     stop music
+    music end
     scene hobbytown
     show cs disappointed
     play sound sfx_clapperboard
@@ -898,6 +919,7 @@ label finale_fun_value_land:
     cs "Ohhh... ow..."
     cs "I think I'm back..."
     play music funvalueland fadein 5.0 volume 3
+    $ persistent.heard.add("SPOT.FASSIMRD - Fun Value Land")
     cs "Oh god, I am I home?"
     scene fun_cs_house with dissolve
     pause 3.0

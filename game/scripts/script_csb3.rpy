@@ -929,7 +929,7 @@ label genocide_fight:
     show cs dark at left with moveinleft
     show arceus dark at right with moveinright
     play music kill_cops volume 0.5
-    music Echoing? - Banana
+    music Echoing? - Pakoo
     n "The duo continues to travel along the road."
     n "Arceus is wary of CS' actions as he can't help but notice CS muttering to himself as they walk."
     cs "{chaos}TmV2ZXIgZ29ubmEgZ2l2ZSB5b3UgdXAsIG5ldmVyIGdvbm5hIGxldCB5b3UgZG93biwgbmV2ZXIgZ29ubmEgcnVuIGFyb3VuZCBhbmQgZGVzZXJ0IHlvdS4KTmV2ZXIgZ29ubmEgbWFrZSB5b3UgY3J5LCBuZXZlciBnb25uYSBzYXkgZ29vZGJ5ZSwgbmV2ZXIgZ29ubmEgdGVsbCBhIGxpZSwgYW5kIGh1cnQgeW91fg=="
@@ -1019,7 +1019,7 @@ label genocide_wait_arc:
     scene car background
     show billy car
     play music insane_personalities volume 0.6
-    music Insane Personalities - Lizardking
+    music Insane Personalities - Pakoo
     pause 5.0
     scene car background night
     show billy car
