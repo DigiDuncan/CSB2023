@@ -3,7 +3,9 @@ label asset_debugger:
     show arceus angry
     arceus "I hate the debugger, it's so uncomfortable!"
     cs "Well, it'll be over in no time! Remember to have bounciness at max!"
+    $ sfxtotal = 0
     if fun_value(1):
+        $ sfxtotal += 1
         play sound sfx_achieve
         play music ten_feet_away
         scene game_menu
