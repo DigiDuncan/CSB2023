@@ -249,7 +249,7 @@ label rpg_bronsonbattle:
             copguy_exe
         scale 1.0
         on_win "michigan_bronson_win"
-        on_lose "bronsonbattle"
+        on_lose "rpg_bronsonbattle"
         music "audio/error.ogg"
         intro_text "You are challenged by... Copguy?"
         

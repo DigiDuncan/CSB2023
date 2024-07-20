@@ -52,13 +52,13 @@ label michigan_bronson:
     scene car plains
     show billy car
     stop music fadeout 3.0
-    cs "Look man, just don't go to Bronson okay?"
-    billy "Okay okay, we won't go."
-    cs "It's just, I am getting a really bad vibe from that place."
+    cs "Look, man, just don't go to Bronson okay?"
+    billy "Okay, okay, we won't go."
+    cs "It's just... I am getting a really bad vibe from that place."
     show billy car turn
     billy "CS, I already said we aren't going there, okay?"
     arceus "I'm getting chills thinking about it too, CS is right."
-    billy "Okay shut up! Let me drive!"
+    billy "Okay, shut up! Let me drive!"
     play music upon_me
     music Upon Me - Dr. Awesome
     cs "Billy, you took the Bronson exit."
@@ -68,8 +68,8 @@ label michigan_bronson:
     show billy car
     with dissolve
     billy "Shit."
-    n "As they continue down into Bronson, the clouds get darker, it starts storming, and the sky turns red."
-    n "The screams of the damned can be heard, almost like they are cheering."
+    n "As they continue into Bronson, the clouds darken. A crimson thunderstorm approaches."
+    n "The screams of the damned can be heard, sounding more similar to cheering..."
     n "Welcome to Bronson."
     scene black with dissolve
     pause 2.0
@@ -81,39 +81,39 @@ label michigan_bronson:
     show cs scared flipped at right
     show cscar2
     with dissolve 
-    cs "Holy shit, I think we are in hell."
+    cs "Holy shit... I think we are in hell."
     arceus "What the..."
     billy "Actual fuck."
     cs "Okay, okay, don't freak out."
-    cs "This is the worst time to freak out."
-    cs "Maybe Michigan gets surprise storms?"
-    billy "With blood red clouds?"
-    arceus "If we keep going, maybe we'll just blow right through it?"
-    billy "It's the only option we got."
+    cs "This is the {i}worst{/i} time to freak out."
+    cs "Maybe Michigan just gets surprise storms?"
+    billy "With blood-red clouds?"
+    arceus "If we keep going, maybe we'll just blow right through it...?"
+    billy "It's the only option we've got."
     arceus "Bronson is small, right? We'll be out of here in no time!"
-    cs "Yeah, right Billy?"
-    billy "I think so, I mean, we survived a UFO attack, this can't be much worse!"
+    cs "Yeah! Right, Billy?"
+    billy "I think so... I mean, we survived a UFO attack,so this can't be much worse!"
     show cs disappointed flipped
     cs "Yeah!"
-    billy "And well, if you didn't distract me, we wouldn't be here!"
+    billy "And, well, if you didn't distract me, we wouldn't be here!"
     show cs worried flipped
-    cs "Hey! I felt sick thinking about that name!"
-    arceus "Yeah, I don't know why, but I felt it too..."
+    cs "Hey! I felt sick thinking about even the name of this place!"
+    arceus "Yeah... I don't know why, but I felt it too..."
     billy "Well, you need to shut your mouth when I am driving!"
     show cs disappointed flipped
     cs "Billy, what has gotten into you?"
-    billy "I don't know, maybe because we are here because of you!"
+    billy "I don't know, maybe because we are here because of you?!"
     show cs angry flipped
-    cs "Well maybe you need to keep your eyes on the road!"
-    billy "Don't tell me how to drive damnit!"
+    cs "Well, maybe {i}you{/i} need to keep your eyes on the road!"
+    billy "Don't tell me how to drive, damn it!"
     arceus "Guys! Calm down!"
-    cs "This is not my fault at all!"
+    cs "This is not my fault {i}at all!"
     billy "Just shut the fuck up!"
-    billy "I shouldn't have picked you up at all! It's been nothing but trouble with you CS!"
+    billy "I shouldn't have picked you up to begin with! It's been nothing but trouble with you CS!"
     show cs disappointed flipped
     cs "What the hell, man?"
     play sound2 sfx_siren volume 0.1 loop
-    arceus "Both of you, shut up! Do you hear... something in the distance?"
+    arceus "Both of you, shut up! Do you hear... {i}something{/i} in the distance?"
     window hide
     stop music fadeout 5.0
     music end
@@ -129,7 +129,7 @@ label michigan_bronson:
     pause 2.0
     play sound2 sfx_siren volume 0.5
     show cs scared flipped
-    cs "Is... that..."
+    cs "Is... that...?"
     arceus "It's Copguy."
     cs "Billy, step on it!"
     billy "I'm going as fast as I can!"
@@ -149,7 +149,7 @@ label michigan_bronson:
     billy "Everyone, stay quiet."
     cs "Is he..."
     copguyexe "WHERE ARE YOU, CS?"
-    billy "Hunker down, and wait."
+    billy "Hunker down and wait."
     billy "Get ready to fight."
     copguyexe "I CAN SMELL YOU."
     show cs worried flipped
@@ -173,10 +173,11 @@ label michigan_bronson_win:
     with dissolve
     cs "Holy crap, we did it."
     show arceus dirty worried flipped at mid_left
-    arceus "I don't know how, or what is going on, but I kinda want to get out of here."
-    billy "Sounds good to me, let's get back on the road!"
+    arceus "I don't know what is happening, or {i}how,{/i} but I kinda just want to get out of here."
+    billy "Sounds good to me. Let's get back on the road!"
     scene black with dissolve
-    n "Thankfully, the car wasn't too much of a wreck, and they got back on the road."
+    n "Thankfully, Billy's car is still operational."
+    n "Shaken, the trio quickly drives away from this place."
     window hide
     pause 1.0
     play sound sfx_doorslam
@@ -187,28 +188,28 @@ label michigan_bronson_win:
     show cscar2
     with dissolve
     pause 3.0
-    n "Everyone is still pretty silent on the ride out of Bronson."
-    cs "Is it okay, if we all just..."
+    n "As Bronson gradually fades over the horizon behind them, no one says a word."
+    cs "Is it okay... if we all just..."
     arceus "Forget about this?"
     cs "Yeah. I don't want to think about this ever again. That was spooky as hell."
-    arceus "Yeah. Whatever else happens on this trip won't be as bad as this."
+    arceus "Yeah. Whatever else happens on this trip can't possibly be as bad as this."
     n "After a while, the storm finally clears up."
     stop sound fadeout 3.0
     scene car plains
     show billy car
     with dissolve
-    billy "Hey guys?"
-    billy "I'm sorry for how I acted back there, I don't know what came over me."
+    billy "Hey, guys?"
+    billy "I'm sorry for how I acted back there. I don't know what came over me."
     cs "You freaked me out when you said that I was ruining this trip."
-    billy "Nonsense, I may have picked you guys up to take you home a few days ago..."
-    billy "But I can say you guys are friends for life."
+    billy "Nonsense. I may have picked you guys up to take you home a few days ago..."
+    billy "But I can say that you guys are friends for life."
     arceus "Same here."
     arceus "You guys are great."
-    cs "Yeah, we had some great times so far!"
+    cs "Yeah, we've had some great times so far!"
     cs "I mean, that pizza back in Nebraska was pretty frickin' good."
-    billy "Well, in other news, we are coming across some more exits."
-    billy "There is I-69 and I-94."
-    billy "Which one are you guys down to take? I'm honestly up for anything that's not blood red skies again."
+    billy "And, in less creepy news, there are more exits coming up here..."
+    billy "We've got both I-69 and I-94."
+    billy "Which one are you guys down to take? I'm honestly up for anything that's not blood-red skies again."
     menu:
         "Which road should we take?"
         "I-69" (type = "warning"):
