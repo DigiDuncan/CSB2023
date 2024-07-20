@@ -707,10 +707,10 @@ class Attacks:
     HEAL_EX = Attack("Heal EX", "Lots of healing.", heal_fighters, target_count = 0, target_type = "allies", mult = 10, accuracy = 100)
     AUGMENT = Attack("Awesome Augment", "Fire a laser! Fire a laser!", damage_fighters, target_count = 0, mult = 15, ex = False, cooldown = 5, accuracy = 100)
     TATE_RECALL = Attack("Tate's Recall", "Remember something dreadful.", damage_fighters, target_count = 0, target_type = "allies", mult = 0.5, cooldown = 5, turns = 5, accuracy = 90, ex = False)
-    TATE_REVERB = Attack("Tate's Reverb", "Make them all remember.", damage_over_time, target_count = 0, target_type = "enemies", mult = 1, cooldown = 5, turns = 5, accuracy = 90, ex = False)
-    REVERB_RECALL = ComboAttack("Reverb Recall", "Channel your pain over several turns. Also damages the user.", [TATE_RECALL, TATE_REVERB], cooldown = 5, accuracy = 90, ex = False)
+    TATE_REVERB = Attack("Tate's Reverb", "Make them all remember.", damage_over_time, target_count = 0, target_type = "enemies", mult = 0.75, cooldown = 5, turns = 5, accuracy = 90, ex = False)
+    REVERB_RECALL = ComboAttack("Reverb Recall", "Channel your pain over 5 turns. Also damages the user.", [TATE_RECALL, TATE_REVERB], cooldown = 5, accuracy = 90, ex = False)
     TATE_ECHOES = Attack("Tate's Echoes", "The past haunts you.", change_stat, stat = "atk", target_count = 0, target_type = "allies", mult = 0.5, cooldown = 10, accuracy = 100, ex = False)
-    TATE_BLAST = Attack("Tate's Blaster", "Make it haunt them, too.", damage_fighters, target_count = 0, target_type = "enemies", mult = 5, cooldown = 10, accuracy = 100,ex = False)
+    TATE_BLAST = Attack("Tate's Blaster", "Make it haunt them, too.", damage_fighters, target_count = 0, target_type = "enemies", mult = 4, cooldown = 10, accuracy = 100,ex = False)
     ECHO_BLAST = ComboAttack("Echo Blast", "Make them feel the pain of the past, at the cost of your ATK.", [TATE_BLAST, TATE_ECHOES], cooldown = 10, accuracy = 100, ex = False)
     GENERGY = Attack("Genergy", "Sip some refreshing Genergy.", heal_fighters, target_count = 1, target_type = "allies", mult = 3, cooldown = 2, accuracy = 100, ex = False)
 

@@ -2129,14 +2129,17 @@ label train_tate_ex_encounter:
                 
 label train_vs_tate_win:
     pause 5.0
+    tate "..."
     tate "I guess it only makes sense, doesn't it?"
     tate "You {i}are{/i} the main character, after all."
+    "..."
     tate "At least my question is answered."
     tate "Thank you, CS."
     tate "Let us never speak of this."
     pause 2.0
     scene black with dissolve
     pause 2.0
+    $ persistent.seen.add("tate_ex")
     $ achievement_manager.unlock("Main Character Syndrome")
     jump train_completed
 
@@ -2152,6 +2155,7 @@ label train_vs_tate_lose:
     pause 2.0
     scene black with dissolve
     pause 2.0
+    $ persistent.seen.add("tate_ex")
     jump train_completed
     
 label train_completed:
