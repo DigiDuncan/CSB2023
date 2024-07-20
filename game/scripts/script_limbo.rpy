@@ -88,7 +88,7 @@ label dx_start:
         destinations = {
             "Speedrun": "csbi_craptop",
             "Kuwait": "airport_choose",
-            "Train": None,
+            "Train": "train_start_good",
             "Bronson": "michigan"
         }
         
