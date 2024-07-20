@@ -39,7 +39,11 @@ label game_loop:
         encounter = rpggame.encounter
         print("Resetting RPG game scene...")
         encounter.reset_cooldowns()
+        print("Showing intro text...")
+        # TODO: this is supposed to read a variable, but it... doesn't. it just doesn't.
+        narrator(encounter.get_intro_text)
         print("Starting RPG fight!")
+        
         while encounter.won is None:
             # First phase, get the user inputs of what each fighter should do.
             actions = []

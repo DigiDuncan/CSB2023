@@ -2124,7 +2124,7 @@ label train_tate_ex_encounter:
             show cs scared flipped
             scene white with dissolve
             pause 2.0
-            # TODO: Tate EX sprite anim is working but not in battle??
+            # TODO: Tate EX sprite anim is working but not in battle?? also health bar/text indicators are missing
             jump rpg_tate_ex
                 
 label train_tate_ex_win:
