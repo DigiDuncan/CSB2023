@@ -40,7 +40,6 @@ label game_loop:
         print("Resetting RPG game scene...")
         encounter.reset_cooldowns()
         print("Showing intro text...")
-        # TODO: this is supposed to read a variable, but it... doesn't. it just doesn't.
         narrator(encounter.intro_text)
         print("Starting RPG fight!")
         
