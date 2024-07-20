@@ -2520,7 +2520,8 @@ label asset_debugger:
         jump exit_debug
 
     n "Done."
-    call screen debugger_menu()
+    show screen debugger_menu
+    pause 5.0
     return
 
 label exit_debug:
