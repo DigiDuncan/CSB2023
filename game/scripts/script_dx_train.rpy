@@ -2010,123 +2010,124 @@ label train_confront_lupin:
     mean "Let's stick together in case this guy is dangerous."
    
     "This is a placeholder line until more is written."
-    "For now let's jump to Tate EX fight."
-    jump train_tate_ex_encounter
+    "For now, let's jump somewhere else..."
+    
+    if train_tate_is_fragile_fun_value == True:
+        jump train_tate_ex_encounter
+    else:
+        jump train_completed
 
 ######## SECRET FIGHT VS TATE ########
 label train_tate_ex_encounter:
-    if train_tate_is_fragile_fun_value == True:
-        stop music fadeout 1.0
-        scene black
-        n "Try as he may, after all of the excitement, CS just can't get to sleep."
-        n "He decides to go for a walk, eventually finding himself in the observation car."
-        n "He isn't alone."
-        pause 0.5
-        scene amtrak_observation 
-        show tate srs flipped at left
-        with fade
-        pause 0.5
-        play music insomnia_intro
-        # TODO: Fix this artist name, should be W∆W
-        music Insomnia - W∆W
-        show cs disappointed flipped at offscreenright with determination
-        show cs disappointed flipped at right with MoveTransition(1.0)
-        pause 1.0
-        cs "Tate?"
-        cs "You can't sleep either?"
-        tate "Sure can't."
-        "..."
-        pause 1.0
-        cs "Tate? Are you alright?"
-        tate "You know, CS, I've been thinking."
-        pause 0.5
-        show tate srs
-        pause 1.0
-        tate "I've been thinking a lot, actually."
-        cs "About what?"
-        tate "I just wanted to relax on this trip."
-        tate "Yet, somehow, chaos always follows me..."
-        tate "And, somehow, we keep running into each other."
-        tate "Are the two correlated? I do not know."
-        cs "What are you saying, Tate?"
-        tate "Your actions affect more than just you."
-        tate "Your attack on HoH SiS cost Mean his job."
-        tate "You lured a thief onto this train."
-        show cs worried flipped
-        tate "In another place, I had to drop everything to save you from your own bad decisions."
-        tate "In another time, I fought alongside you."
-        show cs scared flipped
-        cs "Tate, what hell are you {i}talking{/i} about?!"
-        tate "Tell me, CS."
-        tate "Do you think I could have taken on that crook alone?"
-        menu:
-            "Could Tate have defeated Lupin?"
-            "Maybe?":
-                pass
-            "Not a chance.":
-                pass
-        show cs disappointed flipped
-        cs "Well, uh--{w=0.5}{nw}"
-        show tate srs flipped
-        tate "I guess it doesn't matter."
-        tate "He was more of a runner than a fighter, anyway."
-        pause 1.0
-        show tate srs at mid_left with moveinleft
-        pause 1.0
-        tate "Do I think I could take {i}you,{/i} CS?"
-        show cs worried flipped
-        cs "Huh?"
-        show tate srs at mid_mid_left with moveinleft
-        tate "Will you indulge me?"
-        queue music insomnia_loop
-        menu:
-            "Will you?"
-            "No way.":
-                cs "No way. I don't want to accidentally hurt you."
-                show tate srs flipped
-                tate "Fair enough."
-                tate "I think I'll head to bed then."
-                tate "You should, too."
-                show cs disappointed flipped
-                cs "Yeah..."
-                cs "You're probably right."
-                cs "Have a good night, Tate."
-                tate "You too."
-                show cs disappointed
-                show cs disappointed at offscreenright with MoveTransition(0.5)
-                pause 1.0
-                tate "Unbelievable..."
-                scene black with fade
-                stop music fadeout 1.0
-                jump train_completed
-            "Are you sure?":
-                cs "Are you sure you want this? I don't want you getting hurt..."
-                tate "You know that I wouldn't ask if I wasn't willing to accept the risk."
-                tate "I only ask that you don't hold back."
-                show cs scared flipped
-                cs "Tate, I'm serious, I don't want to hurt you."
-                tate "You don't need to worry about that."
-                show tate srs at center with moveinleft
-                show tate smug
-                show cs scared flipped
-                tate "You don't even need to worry about hurting my feelings this time."
-                tate "... You're not {i}afraid,{/i} are you?"
-                show cs surprised flipped
-                cs "Of {i}you?{/i} Why would I be?"
-                tate "Then, let's do this."
-                show cs worried flipped
-                show tate smug sil_white flipped with dissolve
-                stop music fadeout 1.0
-                play sound sfx_spellcast
-                show cs scared flipped
-                scene white with dissolve
-                pause 2.0
-                # TODO: Tate's battle sprite is off center and lacking the effect
-                show tate_ex
-                "Pausing script here to test Tate EX animation..."
-                jump rpg_vs_tate
-    else:
-        jump train_completed
+    stop music fadeout 1.0
+    scene black
+    n "Try as he may, after all of the excitement, CS just can't get to sleep."
+    n "He decides to go for a walk, eventually finding himself in the observation car."
+    n "He isn't alone."
+    pause 0.5
+    scene amtrak_observation 
+    show tate srs flipped at left
+    with fade
+    pause 0.5
+    play music insomnia_intro
+    # TODO: Fix this artist name, should be W∆W
+    music Insomnia - W∆W
+    show cs disappointed flipped at offscreenright with determination
+    show cs disappointed flipped at right with MoveTransition(1.0)
+    pause 1.0
+    cs "Tate?"
+    cs "You can't sleep either?"
+    tate "Sure can't."
+    "..."
+    pause 1.0
+    cs "Tate? Are you alright?"
+    tate "You know, CS, I've been thinking."
+    pause 0.5
+    show tate srs
+    pause 1.0
+    tate "I've been thinking a lot, actually."
+    cs "About what?"
+    tate "I just wanted to relax on this trip."
+    tate "Yet, somehow, chaos always follows me..."
+    tate "And, somehow, we keep running into each other."
+    tate "Are the two correlated? I do not know."
+    cs "What are you saying, Tate?"
+    tate "Your actions affect more than just you."
+    tate "Your attack on HoH SiS cost Mean his job."
+    tate "You lured a thief onto this train."
+    show cs worried flipped
+    tate "In another place, I had to drop everything to save you from your own bad decisions."
+    tate "In another time, I fought alongside you."
+    show cs scared flipped
+    cs "Tate, what hell are you {i}talking{/i} about?!"
+    tate "Tell me, CS."
+    tate "Do you think I could have taken on that crook alone?"
+    menu:
+        "Could Tate have defeated Lupin?"
+        "Maybe?":
+            pass
+        "Not a chance.":
+            pass
+    show cs disappointed flipped
+    cs "Well, uh--{w=0.5}{nw}"
+    show tate srs flipped
+    tate "I guess it doesn't matter."
+    tate "He was more of a runner than a fighter, anyway."
+    pause 1.0
+    show tate srs at mid_left with moveinleft
+    pause 1.0
+    tate "Do I think I could take {i}you,{/i} CS?"
+    show cs worried flipped
+    cs "Huh?"
+    show tate srs at mid_mid_left with moveinleft
+    tate "Will you indulge me?"
+    queue music insomnia_loop
+    menu:
+        "Will you?"
+        "No way.":
+            cs "No way. I don't want to accidentally hurt you."
+            show tate srs flipped
+            tate "Fair enough."
+            tate "I think I'll head to bed then."
+            tate "You should, too."
+            show cs disappointed flipped
+            cs "Yeah..."
+            cs "You're probably right."
+            cs "Have a good night, Tate."
+            tate "You too."
+            show cs disappointed
+            show cs disappointed at offscreenright with MoveTransition(0.5)
+            pause 1.0
+            tate "Unbelievable..."
+            scene black with fade
+            stop music fadeout 1.0
+            jump train_completed
+        "Are you sure?":
+            cs "Are you sure you want this? I don't want you getting hurt..."
+            tate "You know that I wouldn't ask if I wasn't willing to accept the risk."
+            tate "I only ask that you don't hold back."
+            show cs scared flipped
+            cs "Tate, I'm serious, I don't want to hurt you."
+            tate "You don't need to worry about that."
+            show tate srs at center with moveinleft
+            show tate smug
+            show cs scared flipped
+            tate "You don't even need to worry about hurting my feelings this time."
+            tate "... You're not {i}afraid,{/i} are you?"
+            show cs surprised flipped
+            cs "Of {i}you?{/i} Why would I be?"
+            tate "Then, let's do this."
+            show cs worried flipped
+            show tate smug sil_white flipped with dissolve
+            stop music fadeout 1.0
+            play sound sfx_spellcast
+            show cs scared flipped
+            scene white with dissolve
+            pause 2.0
+            # TODO: Tate's battle sprite is off center and lacking the effect
+            show tate_ex
+            "Pausing script here to test Tate EX animation..."
+            jump rpg_vs_tate
                 
 label train_vs_tate_win:
     pause 5.0
