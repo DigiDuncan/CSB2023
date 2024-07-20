@@ -604,13 +604,14 @@ class Fighter:
         return self.__str__()
 
 class Encounter:
-    def __init__(self, fighters: list[Fighter], background: Displayable, music: str, scale: float, on_win: str, on_lose: str = "start"):
+    def __init__(self, fighters: list[Fighter], background: Displayable, music: str, scale: float, on_win: str, on_lose: str = "start", intro_text = str):
         self.fighters = [deepcopy(f) for f in fighters if f is not None]
         self.background = background
         self.music = music
         self.scale = scale
         self.on_win = on_win
         self.on_lose = on_lose
+        self.intro_text = intro_text
 
         for a in self.allies:
             a.health_points *= scale
@@ -711,7 +712,7 @@ class Attacks:
     TATE_ECHOES = Attack("Tate's Echoes", "The past haunts you.", change_stat, stat = "atk", target_count = 0, target_type = "allies", mult = 0.5, cooldown = 10, accuracy = 100, ex = False)
     TATE_BLAST = Attack("Tate's Blaster", "Make it haunt them, too.", damage_fighters, target_count = 0, target_type = "enemies", mult = 5, cooldown = 10, accuracy = 100,ex = False)
     ECHO_BLAST = ComboAttack("Echo Blast", "Make them feel the pain of the past, at the cost of your ATK.", [TATE_BLAST, TATE_ECHOES], cooldown = 10, accuracy = 100, ex = False)
-    GENERGY = Attack("Genergy", "Sip a bit of energy drink for healing.", heal_fighters, target_count = 1, target_type = "allies", mult = 3, cooldown = 2, accuracy = 100, ex = False)
+    GENERGY = Attack("Genergy", "Sip some refreshing Genergy.", heal_fighters, target_count = 1, target_type = "allies", mult = 3, cooldown = 2, accuracy = 100, ex = False)
 
     # UCN
     STOMP = Attack("Stomp", "Send an earthquake to the enemies!", damage_fighters, target_count = 0, target_type = "enemies", ex = False, mult = 0.75)
@@ -1023,7 +1024,7 @@ class EnemyDisplayable(renpy.Displayable):
             self.last_tick = st
         dt = st - self.last_tick
         r = renpy.Render(640, self.size[1])
-        if self.fighter.name != "Copguy EX":
+        if self.fighter.name != "Copguy EX" or self.fighter.name != "Tate EX":
             if self.damage_indicators:
                 if self.damage_indicators[0].indicator_type == "damage":
                     if not math.cos(20*self.damage_indicators[0].time_on_screen)<0:

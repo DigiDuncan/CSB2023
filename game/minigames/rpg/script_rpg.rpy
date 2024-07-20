@@ -1,3 +1,5 @@
+# TODO: battles do not automatically register songs in jukebox!
+
 label rpg_test:
     rpg:
         bg "images/bg/casino1.png"
@@ -10,6 +12,7 @@ label rpg_test:
         scale 1.0
         on_win "secret_dx"
         on_lose "secret_dx"
+        intro_text "Let the test battle commence!"
 
 label rpg_fanboy_fight_amd:
     rpg:
@@ -23,6 +26,7 @@ label rpg_fanboy_fight_amd:
         scale 1.0
         on_win "friend_after_fanboy"
         on_lose "country_knocked_out"
+        intro_text "The AMD fanboys have come to cancel you!"
 
 label rpg_fanboy_fight_nvidia:
     rpg:
@@ -36,6 +40,7 @@ label rpg_fanboy_fight_nvidia:
         on_win "friend_after_fanboy"
         on_lose "country_knocked_out"
         music "audio/nordic_report_2.ogg"
+        intro_text "The NVIDIA fanboys have come to cancel you!"
 
 label rpg_cop_fight_1:
     rpg:
@@ -51,6 +56,7 @@ label rpg_cop_fight_1:
         scale 1.0
         on_win "secret_dx"
         on_lose "friend_so_join"
+        intro_text "Copguy is here to detain you!"
 
 label rpg_cop_fight_2:
     rpg:
@@ -64,6 +70,7 @@ label rpg_cop_fight_2:
         scale 1.0
         on_win "friend_after_cop_fight"
         on_lose "rpg_cop_fight_2"
+        intro_text "Copguy is ready for more!"
 
 label rpg_cop_fight_3:
     rpg:
@@ -76,6 +83,7 @@ label rpg_cop_fight_3:
         scale 1.0
         on_win "friend2_cs_meetup"
         on_lose "rpg_cop_fight_3"
+        intro_text "The cops have formed a barricade!"
 
 label rpg_cop_fight_4:
     rpg:
@@ -89,6 +97,7 @@ label rpg_cop_fight_4:
         scale 1.0
         on_win "friend2_cs_meetup_2"
         on_lose "rpg_cop_fight_4"
+        intro_text "The cops are suspcious of you!"
 
 label rpg_ng_fight:
     $ ng_fighters = ["CS_NG", "ARCEUS", "PAKOO", "MIKA", "KITTY", "TATE", "ARIA", "DIGI", "NOVA", "NONE"]
@@ -118,6 +127,7 @@ label rpg_ng_fight:
         scale 1.7
         on_win "friend2_cs_rage"
         on_lose "rpg_ng_fight"
+        intro_text "Copguy blocks the way!"
 
 label rpg_final_fight_1:
     $ final_fighters_1 = ["CS_STRONG", "ARCEUS", "PAKOO", "MIKA", "KITTY", "TATE", "ARIA", "DIGI", "NOVA", "BLANK", "MIDGE", "ANNO", "NONE"]
@@ -147,6 +157,7 @@ label rpg_final_fight_1:
         scale 1.75
         on_win "friend2_between_1"
         on_lose "rpg_final_fight_1"
+        intro_text "The soldiers prepare to fire!"
 
 label rpg_final_fight_2:
     $ final_fighters_2 = ["CS_STRONG", "ARCEUS", "PAKOO", "MIKA", "KITTY", "TATE", "ARIA", "DIGI", "NOVA", "BLANK", "MIDGE", "ANNO", "NONE"]
@@ -175,6 +186,7 @@ label rpg_final_fight_2:
         scale 2.0
         on_win "friend2_between_2"
         on_lose "rpg_final_fight_1"
+        intro_text "The soldiers called in reinforcements!"
 
 label rpg_final_fight_3:
     $ final_fighters_3 = ["ARCEUS", "PAKOO", "MIKA", "KITTY", "TATE", "ARIA", "DIGI", "NOVA", "BLANK", "MIDGE", "ANNO", "DB05", "NONE"]
@@ -199,6 +211,7 @@ label rpg_final_fight_3:
         scale 2.0
         on_win "friend2_weapon_of_choice"
         on_lose "rpg_final_fight_1"
+        intro_text "Copguy EX is here to end this!"
 
 label rpg_error:
     rpg:
@@ -210,6 +223,7 @@ label rpg_error:
         scale 2.0
         on_win "secret_dx"
         on_lose "after_error_fight"
+        intro_text "Pakoo has come to restore order!"
 
 label rpg_archival:
     rpg:
@@ -223,6 +237,7 @@ label rpg_archival:
         on_win "archival_finale"
         on_lose "rpg_archival"
         music "audio/broken_sky.ogg"
+        intro_text "Three strange people block the way!"
 
 label rpg_bronsonbattle:
     rpg:
@@ -236,6 +251,7 @@ label rpg_bronsonbattle:
         on_win "michigan_bronson_win"
         on_lose "bronsonbattle"
         music "audio/error.ogg"
+        intro_text "You are challenged by... Copguy?"
         
 label rpg_vs_tate:
     python:
@@ -257,3 +273,4 @@ label rpg_vs_tate:
         on_win "train_vs_tate_win"
         on_lose "train_vs_tate_lose"
         music "audio/space.ogg"
+        intro_text "Tate EX challenges you!"

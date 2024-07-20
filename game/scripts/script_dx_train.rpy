@@ -2117,6 +2117,8 @@ label train_tate_ex_encounter:
                 scene white with dissolve
                 pause 2.0
                 # TODO: Tate's battle sprite is off center and lacking the effect
+                show tate_ex
+                "Pausing script here to test Tate EX animation..."
                 jump rpg_vs_tate
     else:
         jump train_completed

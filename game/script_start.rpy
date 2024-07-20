@@ -1392,25 +1392,49 @@ layeredimage copguy_ex:
 
 image tate_ex_front:
     "characters/tate/tate_ex.png"
-    align (0.4, 0.5)
+    xysize (944, 1000)
+    
+image tate_ex_ca_c:
+    "characters/tate/tate_ex_c.png"
+    alignaround (0.5, 0.5)
+    align (0.5, 0.5)
+    pos (0.5, 0.5)
+    pass
+    xpos 0.49
+    ease 2.0 xpos 0.51
+    ease 2.0 xpos 0.49
+    repeat
 
-image tate_ex_abberation:
-    contains:
-        "characters/tate/tate_ex_c.png"
-        "characters/tate/tate_ex_y.png"
-        "characters/tate/tate_ex_m.png"
-    align (0.4, 0.5)
+image tate_ex_ca_m:
+    "characters/tate/tate_ex_m.png"
+    xysize (944, 1000)
 
-layeredimage tate_ex:
-                    
-    always:
-        "tate_ex_abberation"
+image tate_ex_ca_y:
+    "characters/tate/tate_ex_y.png"
+    xysize (944, 1000)
 
-    group ignore_me:
-        attribute wow default:
-            "tate_ex_front"
+layeredimage tate_ex_setup:
+    xysize (944, 1000)
+
+    group abberation_c:
+        attribute c:
+            "tate_ex_c"
+    
+    group abberation_m:
+        attribute m:
+            "tate_ex_m"
             
-
+    group abberation_y:
+        attribute y:
+            "tate_ex_y"
+            
+    group front:
+        attribute front default:
+            "tate_ex_front"
+        
+image tate_ex:
+    "tate_ex_setup"
+    
 # misc
 
 image ai_ducks = SnowBlossom("duck.png", 50)
