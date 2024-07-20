@@ -25,6 +25,16 @@ default persistent.csb3b_unlocked = False
 # Register CJK font
 define config.font_name_map["cjk"] = "ZCOOLKuaiLe-Regular.ttf"
 
+# Fun values
+default FUN_VALUE_UNOBTRUSIVE = 5
+default FUN_VALUE_COMMON = 10
+default FUN_VALUE_RARE = 25
+default FUN_VALUE_MUSIC = 32
+default FUN_VALUE_LEGENDARY = 50
+default FUN_VALUE_EPIC = 90
+
+default FUN_VALUE_FISH_CHANCE = 0.05
+
 screen music():
     zorder 100
     layer "music"
@@ -228,8 +238,6 @@ init python:
         renpy.hide("_fun_value")
         renpy.hide("_fun_value_music")
         renpy.hide("_fun_value_fish")
-
-        # TODO: implement music and fish values somehow
         
         if not preferences.bounciness_enable:
             return False
@@ -238,9 +246,17 @@ init python:
         ret = renpy.random.random() < chance
         if ret:
             achievement_manager.unlock("F.U.N.")
-            
-            # show the indicator. it'll fade out on its own and be hidden next time this runs
-            renpy.show("_fun_value",[_fun_value_fade,_fun_value_motion],"fun_icon")
+            # Show the indicator. It'll fade out on its own and be hidden next time this runs.
+            if rarity == FUN_VALUE_MUSIC:
+                # Music indicator
+                renpy.show("_fun_value_music",[_fun_value_fade,_fun_value_motion],"fun_icon")
+            else:
+                if renpy.random.random() < FUN_VALUE_FISH_CHANCE:
+                    # Fish indicator
+                    renpy.show("_fun_value_fish",[_fun_value_fade,_fun_value_motion],"fun_icon")
+                else:
+                    # Normal indicator
+                    renpy.show("_fun_value",[_fun_value_fade,_fun_value_motion],"fun_icon")
             renpy.play("audio/sfx_sparkle.ogg")
         return ret
 

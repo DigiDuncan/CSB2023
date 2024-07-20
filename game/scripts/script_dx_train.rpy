@@ -324,7 +324,7 @@ label train_story_begin:
     arceus "I mean, back then, trains were powered by steam."
 
     # arc and mean wanted this
-    if fun_value(10):
+    if fun_value(FUN_VALUE_COMMON):
         show cs 
         cs "Steam? Like Gabe Newell?"
         show arceus angry
@@ -364,7 +364,7 @@ label train_story_begin:
     cs "What would have happened if it had been on a train?"
     
     # mean wanted this
-    if fun_value(10):
+    if fun_value(FUN_VALUE_COMMON):
         $ polar_express_fun_value = True
         show arceus 
         arceus "Have you ever seen {i}The Polar Express?"
@@ -1053,7 +1053,7 @@ label train_enter_sleeper:
 
     play sound sfx_sliding_door_open
 
-    if fun_value(5):
+    if fun_value(FUN_VALUE_UNOBTRUSIVE):
         pause 2.0
         n "... However, the door was heavier than he expected."
 
@@ -1165,7 +1165,7 @@ label train_dining:
     n "One can practically see the gears begin to turn in Arceus' head as he realizes who he is talking to."
 
     # arc wanted this
-    if fun_value(50):
+    if fun_value(FUN_VALUE_LEGENDARY):
         show arceus
         arceus "Wait, hey, can you do a Dallas impression?"
         show mean wat
@@ -1198,7 +1198,7 @@ label train_dining:
     n "Arceus, visibly shaken, leaves as well, without even getting the drink he came for."
 
     # fun value
-    if fun_value(5):
+    if fun_value(FUN_VALUE_UNOBTRUSIVE):
         $ train_pancake_fun_value = True
         n "He did at least steal a few of the abandoned pancakes."
 
@@ -1275,7 +1275,7 @@ label train_wakeup:
     n "Tate stomps into the room, making a beeline for CS."
     show tate srs at mid_mid_left with moveinleft
 
-    if fun_value(15):
+    if fun_value(FUN_VALUE_COMMON):
         tate "YOU HAD {bt=a3-p10-s4}{i}ONE{/i}{/bt} JOJ!" with vpunch
         show tate srs at center with moveinleft
         tate "YOU'RE GONNA NEED A WHOLE LOT MORE THAN {bt=a3-p10-s4}{i}FOUNDATION\nREPAIR{/i}{/bt} AFTER {i}I'M{/i} DONE WITH YOU!" with vpunch
@@ -1395,7 +1395,7 @@ label train_wakeup:
     arceus "\"Yellow fucker\"?"
 
     # let's turn my shitpost into a fun value i suppose lmao
-    if fun_value(111):
+    if fun_value(FUN_VALUE_EPIC):
         $ train_tate_is_fragile_fun_value = True
         mean "Like, no offense, Tate, but you only have, like, 5 DEF."
         show arceus 
@@ -1968,7 +1968,7 @@ label train_confront_lupin:
     pause 2.0
     show tate sheepish
 
-    if fun_value(5):
+    if fun_value(FUN_VALUE_UNOBTRUSIVE):
         tate "He's on 'doodie', alright..."
     else:
         tate "He's... a little busy."
@@ -1997,7 +1997,7 @@ label train_confront_lupin:
     arceus "That {i}still{/i} doesn't explain why you can't work without it."
     show mean angry
 
-    if fun_value(10):
+    if fun_value(FUN_VALUE_COMMON):
         mean "Me without my hat is like Mario without {i}his!"
         mean "Just because it's a game mechanic doesn't mean it's {i}right!"
     else:

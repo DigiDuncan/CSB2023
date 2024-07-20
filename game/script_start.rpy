@@ -1749,14 +1749,6 @@ define audio.sfx_ytpintro = "sfx_ytpintro.ogg"
 define config.detached_layers += ["broadcast"]
 image stage_screen = Window(Layer("broadcast", clipping = False), background = "minigames/pencil/stage.png")
 
-# Fun values
-default FUN_VALUE_UNOBTRUSIVE = 5
-default FUN_VALUE_COMMON = 10
-default FUN_VALUE_RARE = 25
-default FUN_VALUE_MUSIC = 30
-default FUN_VALUE_LEGENDARY = 50
-default FUN_VALUE_EPIC = 90
-
 # Checks
 default fanboy_type = None
 default fanbase = None
