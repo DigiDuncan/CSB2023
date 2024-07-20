@@ -829,7 +829,7 @@ label asset_debugger:
         play sound sfx_siren
         play music funiculi_holiday
         scene gpuaisle
-        show tate_ex_abberation at center
+        show tate_ex_preparation at center
         show cs worried phone at left
         mika "test 61{w=0.5}{nw}"
     else:

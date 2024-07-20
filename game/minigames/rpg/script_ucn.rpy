@@ -103,6 +103,7 @@ label rpg_ucn:
         scale "ucn"
         on_win "after_ucn"
         on_lose "after_ucn"
+        intro_text "Begin!"
 
 label after_ucn:
     $ cont = renpy.display_menu([("New Game", True), ("Return", False)], screen = "ucn_choice")

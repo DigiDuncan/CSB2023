@@ -633,10 +633,6 @@ class Encounter:
     @property
     def turn_order(self) -> list[Fighter]:
         return self.allies + self.enemies
-        
-    @property
-    def get_intro_text(self) -> str:
-        return self.intro_text
 
     @property
     def won(self) -> bool | None:
@@ -1164,10 +1160,14 @@ def parse_rpg(lexer):
             label = l.string()
         elif l.keyword("on_lose"):
             label2 = l.string()
-    return (bg, music, fighters, scale, label, label2)
+
+    # intro text
+        elif l.keyword("intro_text"):
+            intro_text = l.string()
+    return (bg, music, fighters, scale, label, label2, intro_text)
 
 def execute_rpg(parsed_object):
-    b, m, f, s, l, ll = parsed_object
+    b, m, f, s, l, ll, it = parsed_object
     global rpggame
     rpggame.encounter = Encounter(
         [getattr(Fighters, globals().get(fighter.replace("$", "")).upper())
@@ -1177,7 +1177,8 @@ def execute_rpg(parsed_object):
         ucn_music if m == "ucn" else m,  # type: ignore
         ucn_scale if s == "\"ucn\"" else float(s),  # type: ignore
         l,
-        ll
+        ll,
+        it
     )
     rpggame.reset()
     renpy.jump("play_rpggame")
@@ -1185,7 +1186,6 @@ def execute_rpg(parsed_object):
 def lint_rpg(parsed_object):
     # I should probably do this at some point.
     pass
-
 
 """
 rpg:
@@ -1197,9 +1197,10 @@ rpg:
         etc...
     on_win "label"
     on_lose "label2"
+    intro_text "text when battle starts"
 """
 renpy.register_statement(
-    name="rpg",
+    name = "rpg",
     parse = parse_rpg,
     lint = lint_rpg,
     execute = execute_rpg,
