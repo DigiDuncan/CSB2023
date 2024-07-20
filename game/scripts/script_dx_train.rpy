@@ -2129,11 +2129,11 @@ label train_tate_ex_encounter:
                 
 label train_tate_ex_win:
     pause 5.0
-    tate "..."
+    "..."
     tate "I guess it only makes sense, doesn't it?"
     tate "You {i}are{/i} the main character, after all."
-    tate "..."
-    tate "At least my question is answered."
+    "..."
+    tate "At least my question has been answered."
     tate "Thank you, CS."
     tate "Let us never speak of this."
     pause 2.0
@@ -2148,7 +2148,7 @@ label train_tate_ex_lose:
     tate "Huh."
     tate "I didn't think I'd actually win that, for a minute, there..."
     tate "You didn't go easy on me, did you?"
-    tate "..."
+    "..."
     tate "I think I'd prefer to believe that you didn't."
     tate "Thank you, CS."
     tate "Let us never speak of this."
@@ -2162,7 +2162,7 @@ label train_completed:
     "Placeholder line for if you complete train route."
     $ achievement_manager.unlock("All Aboard!")
     # TODO: Technically, the train stops in Chicago IRL.
-    # TODO: Replace this label with Chicago route if you choose to write one.
+    # TODO: Replace this label with Chicago route, should anyone choose to write one.
     jump train_return_home_transition
                 
         

@@ -1189,7 +1189,7 @@ label friend_flint_car:
     n "Sirens blare in the dealership as Copguy pulls up to the car."
     copguy "Out of all the cars in this lot you decided to escape with, you picked the Flintmobile?"
     copguy "That's kinda sad."
-    bad_end "Fleenstones?" "car_picker"  
+    bad_end "Fleenstones?" "friend_car_picker"
     
 
 label friend_low_gpu:
