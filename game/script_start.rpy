@@ -1394,6 +1394,7 @@ image tate_ex_front:
     align (0.5, 0.5)
     pos (0.5, 0.5)
     pass
+    # this is on purpose
     ease 0.5 xpos 0.5
     ease 0.5 ypos 0.5
     repeat
@@ -1404,12 +1405,12 @@ image tate_ex_ca_c:
     align (0.5, 0.5)
     pos (0.5, 0.5)
     pass
-    xpos 0.51
-    ypos 0.51
-    linear 0.5 ypos 0.49
-    linear 0.5 xpos 0.49
-    linear 0.5 ypos 0.51
-    linear 0.5 xpos 0.51
+    xpos 0.505
+    ypos 0.505
+    linear 0.5 ypos 0.495
+    linear 0.5 xpos 0.495
+    linear 0.5 ypos 0.505
+    linear 0.5 xpos 0.505
     repeat
 
 image tate_ex_ca_m:
@@ -1418,12 +1419,12 @@ image tate_ex_ca_m:
     align (0.5, 0.5)
     pos (0.5, 0.5)
     pass
-    xpos 0.51
-    ypos 0.51
-    linear 1.0 ypos 0.49
-    linear 1.0 xpos 0.49
-    linear 1.0 ypos 0.51
-    linear 1.0 xpos 0.51
+    xpos 0.505
+    ypos 0.505
+    linear 1.0 ypos 0.495
+    linear 1.0 xpos 0.495
+    linear 1.0 ypos 0.505
+    linear 1.0 xpos 0.505
     repeat
 
 image tate_ex_ca_y:
@@ -1432,12 +1433,12 @@ image tate_ex_ca_y:
     align (0.5, 0.5)
     pos (0.5, 0.5)
     pass
-    xpos 0.51
-    ypos 0.51
-    linear 0.25 ypos 0.49
-    linear 0.25 xpos 0.49
-    linear 0.25 ypos 0.51
-    linear 0.25 xpos 0.51
+    xpos 0.505
+    ypos 0.505
+    linear 0.25 ypos 0.495
+    linear 0.25 xpos 0.495
+    linear 0.25 ypos 0.505
+    linear 0.25 xpos 0.505
     repeat
 
 layeredimage tate_ex_preparation:
