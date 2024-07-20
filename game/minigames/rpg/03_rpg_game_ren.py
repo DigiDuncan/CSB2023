@@ -1024,7 +1024,7 @@ class EnemyDisplayable(renpy.Displayable):
             self.last_tick = st
         dt = st - self.last_tick
         r = renpy.Render(640, self.size[1])
-        if self.fighter.name != "Copguy EX" or self.fighter.name != "Tate EX":
+        if self.fighter.name != "Copguy EX" and self.fighter.name != "{image=gui/dx_text.png} Tate EX":
             if self.damage_indicators:
                 if self.damage_indicators[0].indicator_type == "damage":
                     if not math.cos(20*self.damage_indicators[0].time_on_screen)<0:

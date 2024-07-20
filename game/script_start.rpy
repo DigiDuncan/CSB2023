@@ -1387,8 +1387,6 @@ layeredimage copguy_ex:
             "copguy_ex_front"
             
 # for tate ex
-# TODO: THIS ISNT NEARLY DONE YET
-# Supposed to be a chromatic abberation-type beat
 
 image tate_ex_front:
     "characters/tate/tate_ex.png"
@@ -1458,7 +1456,7 @@ layeredimage tate_ex_preparation:
 image tate_ex:
     contains:
         "tate_ex_preparation"
-    xysize (944,1000)
+    xysize (744,800)
     xcenter 0.25
     ycenter 0.6
 

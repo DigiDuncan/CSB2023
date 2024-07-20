@@ -29,7 +29,7 @@ screen rpggame():
     add rpggame.encounter.background
     if "Copguy EX" in [e.name for e in rpggame.encounter.enemies]:
         add "copguy_ex"
-    if "Tate EX" in [e.name for e in rpggame.encounter.enemies]:
+    if "{image=gui/dx_text.png} Tate EX" in [e.name for e in rpggame.encounter.enemies]:
         add "tate_ex"
     add rpggame
 

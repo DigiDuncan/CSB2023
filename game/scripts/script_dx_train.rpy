@@ -2125,14 +2125,14 @@ label train_tate_ex_encounter:
             scene white with dissolve
             pause 2.0
             # TODO: Tate EX sprite anim is working but not in battle??
-            jump rpg_vs_tate
+            jump rpg_tate_ex
                 
-label train_vs_tate_win:
+label train_tate_ex_win:
     pause 5.0
     tate "..."
     tate "I guess it only makes sense, doesn't it?"
     tate "You {i}are{/i} the main character, after all."
-    "..."
+    tate "..."
     tate "At least my question is answered."
     tate "Thank you, CS."
     tate "Let us never speak of this."
@@ -2143,7 +2143,7 @@ label train_vs_tate_win:
     $ achievement_manager.unlock("Main Character Syndrome")
     jump train_completed
 
-label train_vs_tate_lose:
+label train_tate_ex_lose:
     pause 5.0
     tate "Huh."
     tate "I didn't think I'd actually win that, for a minute, there..."

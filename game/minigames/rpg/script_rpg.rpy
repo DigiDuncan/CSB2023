@@ -253,7 +253,7 @@ label rpg_bronsonbattle:
         music "audio/error.ogg"
         intro_text "You are challenged by... Copguy?"
         
-label rpg_vs_tate:
+label rpg_tate_ex:
     python:
         if ch2_cs_attack_used == "karate-chopped":
             cs_chosen_form = "CS_VS_TATE_CHOP"
@@ -270,7 +270,7 @@ label rpg_vs_tate:
             tate_ex
 
         scale 2.0
-        on_win "train_vs_tate_win"
-        on_lose "train_vs_tate_lose"
+        on_win "train_tate_ex_win"
+        on_lose "train_tate_ex_lose"
         music "audio/space.ogg"
         intro_text "Tate EX challenges you!"
