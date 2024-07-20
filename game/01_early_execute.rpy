@@ -229,6 +229,8 @@ init python:
         renpy.hide("_fun_value_music")
         renpy.hide("_fun_value_fish")
 
+        # TODO: implement music and fish values somehow
+        
         if not preferences.bounciness_enable:
             return False
         r = ease_linear(rarity, 1, 0, 100, preferences.csbounciness)

@@ -1396,9 +1396,8 @@ image tate_ex_front:
     align (0.5, 0.5)
     pos (0.5, 0.5)
     pass
-    xpos 0.49
-    ease 2.0 xpos 0.51
-    ease 2.0 xpos 0.49
+    ease 0.5 xpos 0.5
+    ease 0.5 ypos 0.5
     repeat
     
 image tate_ex_ca_c:
@@ -1407,9 +1406,12 @@ image tate_ex_ca_c:
     align (0.5, 0.5)
     pos (0.5, 0.5)
     pass
-    xpos 0.49
-    ease 2.0 xpos 0.51
-    ease 2.0 xpos 0.49
+    xpos 0.51
+    ypos 0.51
+    linear 0.5 ypos 0.49
+    linear 0.5 xpos 0.49
+    linear 0.5 ypos 0.51
+    linear 0.5 xpos 0.51
     repeat
 
 image tate_ex_ca_m:
@@ -1419,8 +1421,11 @@ image tate_ex_ca_m:
     pos (0.5, 0.5)
     pass
     xpos 0.51
-    ease 2.0 xpos 0.49
-    ease 2.0 xpos 0.51
+    ypos 0.51
+    linear 1.0 ypos 0.49
+    linear 1.0 xpos 0.49
+    linear 1.0 ypos 0.51
+    linear 1.0 xpos 0.51
     repeat
 
 image tate_ex_ca_y:
@@ -1430,25 +1435,32 @@ image tate_ex_ca_y:
     pos (0.5, 0.5)
     pass
     xpos 0.51
-    ease 2.0 xpos 0.49
-    ease 2.0 xpos 0.51
+    ypos 0.51
+    linear 0.25 ypos 0.49
+    linear 0.25 xpos 0.49
+    linear 0.25 ypos 0.51
+    linear 0.25 xpos 0.51
     repeat
 
-layeredimage tate_ex:
-    always:
-        "tate_ex_ca_c"
-
-    group ignore_me:
-        attribute wow default:
+layeredimage tate_ex_preparation:
+    group cmy:
+        attribute c default:
+            "tate_ex_ca_c"
+        attribute m default:
             "tate_ex_ca_m"
-
-layeredimage tate_ex2:
-    always:
-        "tate_ex_ca_y"
+        attribute y default:
+            "tate_ex_ca_y"
 
     group ignore_me:
         attribute wow default:
             "tate_ex_front"
+            
+image tate_ex:
+    contains:
+        "tate_ex_preparation"
+    xysize (944,1000)
+    xcenter 0.25
+    ycenter 0.6
 
 # misc
 
@@ -2018,8 +2030,6 @@ label test:
             pakoo "This is Copguy EX."
             show tate_ex at right
             pakoo "This is Tate EX."
-            show tate_ex2 at right
-            pakoo "This is also Tate EX."
             pakoo "Does this work? Idk"
             return
         "No"  (type = "bad"):

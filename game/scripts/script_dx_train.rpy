@@ -2021,8 +2021,8 @@ label train_confront_lupin:
 label train_tate_ex_encounter:
     stop music fadeout 1.0
     scene black
-    n "Try as he may, after all of the excitement, CS just can't get to sleep."
-    n "He decides to go for a walk, eventually finding himself in the observation car."
+    n "Try as he may, after all of that excitement, CS just can't get to sleep."
+    n "He decides to go for a walk, meandering through each quiet corridor until he eventually finds himself in the observation car."
     n "He isn't alone."
     pause 0.5
     scene amtrak_observation 
@@ -2036,7 +2036,7 @@ label train_tate_ex_encounter:
     show cs disappointed flipped at right with MoveTransition(1.0)
     pause 1.0
     cs "Tate?"
-    cs "You can't sleep either?"
+    cs "You can't sleep, either?"
     tate "Sure can't."
     "..."
     pause 1.0
@@ -2124,22 +2124,20 @@ label train_tate_ex_encounter:
             show cs scared flipped
             scene white with dissolve
             pause 2.0
-            # TODO: Tate's battle sprite is off center and lacking the effect
-            show tate_ex
-            "Pausing script here to test Tate EX animation..."
+            # TODO: Tate EX sprite anim is working but not in battle??
             jump rpg_vs_tate
                 
 label train_vs_tate_win:
     pause 5.0
     tate "I guess it only makes sense, doesn't it?"
-    tate "CS {i}is{/i} the main character, after all."
+    tate "You {i}are{/i} the main character, after all."
     tate "At least my question is answered."
     tate "Thank you, CS."
     tate "Let us never speak of this."
     pause 2.0
     scene black with dissolve
     pause 2.0
-    $ achievement_manager.unlock("For Poop And For Glory")
+    $ achievement_manager.unlock("Main Character Syndrome")
     jump train_completed
 
 label train_vs_tate_lose:
