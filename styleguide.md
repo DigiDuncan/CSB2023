@@ -38,3 +38,19 @@
 - DO NOT USE `with fade`
     - Use `with dissolve`
     - Just trust us
+
+### CHECKS BEFORE RELEASE
+- Is all music in the jukebox?
+- Does all music have a popup?
+- Is all music audio balanced?
+- Does every important character have a bio?
+- Does every very important character have a beep?
+- Are choices marked with their type in the menus for Streamer Mode?
+- Do all characters transition onto screen smoothly?
+- Are all fade transitions using `dissolve`?
+- Do all important choices result in an achievement?
+- Are all backgrounds, character sprites, music, and sound effects declared as variables?
+- Have all minigames been tested thoroughly?
+- Have the RPG fights been balance tested?
+- Did Tate do a grammar pass?
+- Did Baker do an asset pass?
