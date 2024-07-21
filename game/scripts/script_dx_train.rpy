@@ -99,7 +99,7 @@ label train_intro_start:
     pause 2.0
 
     # that's not a hyphen
-    play music sub_game_select
+    play music sub_game_select if_changed
     music "Sub−Game Select - Jun Ishikawa"
 
     # flip
@@ -178,7 +178,7 @@ label train_story_begin:
     show arceus at right behind cscar2
     with fade
 
-    play music outdoors
+    play music outdoors if_changed
     music Outdoors - Miki Obata
 
     pause 1.0
@@ -389,7 +389,7 @@ label train_story_begin:
     n "The conversation is interrupted by the blare of a train horn."
 
     scene kingman_train_arrive with fade
-    play music ochre_woods_day
+    play music ochre_woods_day if_changed
     music Ochre Woods ~ Day - Miki Obata
     n "The two watch as the locomotive approaches the station and eventually slows to a stop."
     hide cs
@@ -529,7 +529,7 @@ label train_boarding:
     scene amtrak_sleeper_corridor
     with fade
 
-    play music bedroom_day
+    play music bedroom_day if_changed
     music Bedroom ~ Day - Miki Obata
     
     pause 2.0 
@@ -739,7 +739,7 @@ label train_enter_sleeper:
 
     n "A sudden hard knock on the door startles the group."
 
-    play music item_bounce volume 0.8
+    play music item_bounce volume 0.8 if_changed
     music Item Bounce - Akira Miyagawa
     play sound sfx_hubbub loop fadein 2.0 volume 0.3
 
@@ -1077,7 +1077,7 @@ label train_enter_sleeper:
 
 label train_dining:
 
-    play music krabby_klub
+    play music krabby_klub if_changed
     scene amtrak_dining_car
     with fade
     pause 1.0
@@ -1155,7 +1155,7 @@ label train_dining:
 
     # mean wanted the following section.
     
-    play music prof_kranes_kidnap
+    play music prof_kranes_kidnap if_changed
     music "Prof. Krane's Kidnap - Tsukasa Tawada"
 
     show mean furious
@@ -1304,7 +1304,7 @@ label train_wakeup:
     arceus "I didn't know he's, uh... whatever he is."
     pause 2.0    
 
-    play music e_gadds_lab
+    play music e_gadds_lab if_changed
     music "E. Gadd's Lab - Kazumi Totaka & Shinobu Tanaka"
 
     show tate sheepish
@@ -1560,7 +1560,7 @@ label train_meanwhile:
     scene amtrak_cab
     show lupin at center
     with fade
-    play music onbs
+    play music onbs if_changed
     music "ONBS - Tsukasa Tawada"
 
     pause 1.0
@@ -2023,13 +2023,13 @@ label train_tate_ex_encounter:
     scene black
     n "Try as he may, after all of that excitement, CS can't settle down enough to fall asleep."
     n "He decides to go for a walk, meandering through each quiet corridor until he eventually finds himself in the observation car."
-    n "He isn't alone."
+    n "He is not alone."
     pause 0.5
     scene amtrak_observation 
     show tate srs flipped at left
     with fade
-    pause 0.5
-    play music insomnia_intro
+    pause 1.0
+    play music insomnia_intro if_changed
     # TODO: Fix this artist name, should be W∆W
     music Insomnia - W∆W
     show cs disappointed flipped at offscreenright with determination
@@ -2039,13 +2039,13 @@ label train_tate_ex_encounter:
     cs "You can't sleep, either?"
     tate "Sure can't."
     "..."
-    pause 1.0
-    cs "Tate? Are you alright?"
-    tate "You know, CS, I've been thinking."
-    pause 0.5
+    pause 2.0
+    cs "... Tate? Are you alright?"
+    tate "You know, CS, I've been thinking..."
+    pause 2.0
     show tate srs
-    pause 1.0
-    tate "I've been thinking a lot, actually."
+    pause 2.5
+    tate "I've been thinking {i}a lot,{/i} actually."
     cs "About what?"
     tate "I just wanted to relax on this trip."
     tate "Yet, somehow, chaos always follows me..."
@@ -2073,64 +2073,93 @@ label train_tate_ex_encounter:
     show tate srs flipped
     tate "I guess it doesn't matter."
     tate "He was more of a runner than a fighter, anyway."
-    pause 1.0
+    pause 3.0
     show tate srs at mid_left with moveinleft
-    pause 1.0
+    "..."
+    pause 2.5
     tate "Do I think I could take {i}you,{/i} CS?"
     show cs worried flipped
-    cs "Huh?"
-    show tate srs at mid_mid_left with moveinleft
+    cs "Huh?!"
+    show tate srs at mid_mid_left with MoveTransition(1.0)
+    # i REALLY need this next line to hit hard...
+    pause 1.0
+    tate "{bt=a1-p9-s1}{color=#CB50FF}I{w=0.05} know{w=0.005} what{w=0.005} you{w=0.005} are.{/color}"
+    pause 1.5
+    tate "I think you already know what I want from you."
+    show cs scared flipped
+    show tate srs at center with MoveTransition(1.0)
+    pause 0.5
     tate "Will you indulge me?"
-    queue music insomnia_loop
     menu:
         "Will you?"
         "No way.":
-            cs "No way. I don't want to accidentally hurt you."
-            show tate srs flipped
-            tate "Fair enough."
-            tate "I think I'll head to bed then."
+            show cs disappointed flipped
+            cs "No way. I think that's a terrible idea."
+            show tate shock
+            cs "I know how easily you injure yourself..."
+            pause 0.5
+            show tate srs
+            pause 2.0
+            tate "... Fair enough."
+            show cs worried flipped
+            tate "I'll try another timeline."
+            tate "For now, I think I'll head back to bed."
             tate "You should, too."
+            cs "..."
             show cs disappointed flipped
             cs "Yeah..."
-            cs "You're probably right."
-            cs "Have a good night, Tate."
-            tate "You too."
+            cs "You're... probably right."
+            cs "Have a good night, then, Tate."
+            tate "You, too."
             show cs disappointed
-            show cs disappointed at offscreenright with MoveTransition(0.5)
+            show cs disappointed at mid_right_right
+            show tate srs flipped at left
+            with MoveTransition(1.5)
             pause 1.0
+            show cs scared flipped
+            pause 0.5
+            show cs disappointed
+            show cs disappointed at offscreenright with moveoutright
+            pause 3.5
             tate "Unbelievable..."
             scene black with fade
             stop music fadeout 1.0
             jump train_completed
         "Are you sure?":
-            cs "Are you sure you want this? I don't want you getting hurt..."
+            queue music insomnia_loop
+            show cs worried flipped
+            cs "Are you sure about this? I don't want you getting hurt..."
             tate "You know that I wouldn't ask if I wasn't willing to accept the risk."
-            tate "I only ask that you don't hold back."
-            show cs scared flipped
+            tate "I have only one request."
+            tate "Don't you dare hold back."
+            show cs scared flipped behind tate
             cs "Tate, I'm serious, I don't want to hurt you."
             tate "You don't need to worry about that."
-            show tate srs at center with moveinleft
+            show tate srs at mid_mid_right with MoveTransition(1.0)
             show tate smug
-            show cs scared flipped
-            tate "You don't even need to worry about hurting my feelings this time."
+            tate "It's not like I'm inviting you to play chess..."
+            tate "So, this time, you don't even need to worry about hurting my feelings."
             tate "... You're not {i}afraid,{/i} are you?"
             show cs surprised flipped
             cs "Of {i}you?{/i} Why would I be?"
-            tate "Then, let's do this."
+            tate "Then, what are we still standing around for?"
+            tate "Let's do this."
             show cs worried flipped
-            show tate smug sil_white flipped with dissolve
+            show tate smug at center with MoveTransition(1.0)
+            show tate smug sil_white flipped with Dissolve(1.0)
             stop music fadeout 1.0
             play sound sfx_spellcast
             show cs scared flipped
-            scene white with dissolve
+            scene white with Dissolve(1.0)
             pause 2.0
             # TODO: Tate EX sprite anim is working but not in battle?? also health bar/text indicators are missing
             jump rpg_tate_ex
                 
 label train_tate_ex_win:
+    play sound sfx_sparkles
     pause 5.0
     "..."
-    tate "I guess it only makes sense, doesn't it?"
+    tate "... I guess it only makes sense, doesn't it?"
     tate "You {i}are{/i} the main character, after all."
     "..."
     tate "At least my question has been answered."
@@ -2146,7 +2175,7 @@ label train_tate_ex_win:
 label train_tate_ex_lose:
     pause 5.0
     tate "Huh."
-    tate "I didn't think I'd actually win that, for a minute, there..."
+    tate "I wasn't sure if I'd actually win that, for a minute, there..."
     tate "You didn't go easy on me, did you?"
     "..."
     tate "I think I'd prefer to believe that you didn't."
@@ -2163,6 +2192,7 @@ label train_completed:
     $ achievement_manager.unlock("All Aboard!")
     # TODO: Technically, the train stops in Chicago IRL.
     # TODO: Replace this label with Chicago route, should anyone choose to write one.
+    # TODO: Please let me know if you do so we can rework CS getting home a bit (below).
     jump train_return_home_transition
                 
         
@@ -2192,7 +2222,7 @@ label train_return_home_transition:
     show arceus
     arceus "Yeah, the walk there would take hours."
     cs "Shit, uhh, what are our other options?"
-    play music mm_select volume 0.3
+    play music mm_select volume 0.3 if_changed
     music Mm Select - Matthew Simmonds
     show billy at right
     show cs
