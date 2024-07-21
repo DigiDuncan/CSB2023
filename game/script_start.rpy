@@ -211,6 +211,7 @@ transform t_cashier_at_tims:
     yanchor 1.0 ypos 0.80
     xanchor 0.5 xpos 0.725
     zoom 0.6
+
 transform t_arc_at_tims:
     yanchor 1.0 ypos 0.75
     xanchor 0.5 xpos 0.625
@@ -336,6 +337,14 @@ transform t_blur_off:
     blur 20.0
     linear 1.0:
         blur 0.0
+
+transform t_toby:
+    xalign 0.5 yalign 0.5
+    alpha 0.0
+    linear 0.25:
+        alpha 0.75
+    linear 0.25:
+        alpha 0.0
 
 # Character Definitions
 define n = Character(None, what_italic = True, callback = char_callback)  # Narrator
@@ -1301,6 +1310,7 @@ image renault = "renault.png"
 image passportdigi = "passportdigi.png"
 image amtrak_dining_food = "food.png" 
 image amtrak_dining_pancake = "pancake.png"
+image toby = "secret/toby.png"
 
 # Movies
 image car background = Movie(play="movies/car_background.webm")

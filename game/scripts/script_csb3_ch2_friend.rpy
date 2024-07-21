@@ -477,6 +477,9 @@ label friend2_cs_rage:
     csgod "You're welcome."
     cs "Woah, hey! Are you CSGod?"
     csgod "Indeed, I am. You seem to have channeled my power through determination."
+    if fun_value(FUN_VALUE_LEGENDARY):
+        play sound sfx_vine
+        show toby at t_toby
     if nice_car:
         csgod "Also, it was I who allowed your intrusive thoughts to win, compelling you to pick that nice car."
         # i mean, he's a god, so he should probably speak like a god, goddamnit - tate
