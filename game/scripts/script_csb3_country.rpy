@@ -85,7 +85,7 @@ label country_knocked_out:
     scene black with dissolve
     window hide
     pause 1.5
-    scene hospital_reception with fade
+    scene hospital_reception with dissolve
     show cs worried flipped at mid_left with moveinright
     pause 0.5
     show cs disappointed flipped at right with move
@@ -99,7 +99,7 @@ label country_knocked_out:
     nurse "Welp. I guess he's feeling fine."
     scene canada_block
     show cs disappointed at left
-    with fade
+    with dissolve
     cs "Ah, shit. I need to really get out of here before the cops catch up with me."
     cs "I hope Linus left me enough money to travel, otherwise I'm probably screwed."
     cs "Man, I hope that Arceus and Anno are okay too. I wonder what happened to them..."
@@ -111,7 +111,7 @@ label country_knocked_out:
     jump country_airport_choose
 
 label country_airport_choose:
-    scene airport_interior with fade
+    scene airport_interior with dissolve
     play music airport volume 0.4
     music Airport Infiltration - Andy Blythe & Marten Joustra
     show cs at left with moveinleft
@@ -121,7 +121,7 @@ label country_airport_choose:
     n "CS dashes over to the ticket counter."
     scene ticket_counter
     show benrey at center
-    with fade
+    with dissolve
     show cs at left with moveinleft
     benrey "Hey, do you have your Pass{w=0.5} Port?"
     show cs worried
@@ -160,7 +160,7 @@ label england_travel:
     hide cs with moveoutright
     show airport_tsa
     show tsa at right
-    with fade
+    with dissolve
     n "CS rushes up to the TSA to get checked through."
     show cs at mid_left with moveinleft
     n "CS takes a minute to catch his breath."
@@ -183,7 +183,7 @@ label england_travel:
     music end
     scene airplane_seats
     show cs at left
-    with fade
+    with dissolve
     n "CS gets himself comfortable and tries to not think about the cops."
     cs "Whew! What a day."
     cs "I really hope this works out. I don't think I have enough to travel again after this."
@@ -213,7 +213,7 @@ label sweden_travel:
     hide cs with moveoutright
     scene airport_tsa
     show tsa at right
-    with fade
+    with dissolve
     n "CS rushes up to the TSA to get checked through."
     show cs at mid_left with moveinleft
     n "CS almost loses his breath sprinting."
@@ -235,7 +235,7 @@ label sweden_travel:
     music end
     scene airplane_seats
     show cs at left
-    with fade
+    with dissolve
     n "CS gets himself comfortable and tries to not think about the cops."
     cs "Whew! What a day."
     cs "I really hope this works out. I don't think I have enough to travel again after this."
@@ -265,7 +265,7 @@ label japan_travel:
     hide cs with moveoutright
     scene airport_tsa
     show tsa at right
-    with fade
+    with dissolve
     n "CS rushes up to the TSA to get checked through."
     show cs at mid_left with moveinleft
     cs "I'm almost there!"
@@ -284,7 +284,7 @@ label japan_travel:
     music end
     scene airplane_seats
     show cs at left
-    with fade
+    with dissolve
     n "CS gets himself comfortable and tries to not think about the cops."
     cs "Whew! What a day."
     cs "I really hope this works out. I don't think I have enough to travel again after this."
@@ -302,7 +302,7 @@ label england:
     pause 1.0
     scene airplane_seats
     show cs at left
-    with fade
+    with dissolve
     n "As CS slowly wakes up, he sees the plane landing on the tarmac."
     cs "Oh, huh, we are already here."
     cs "Either that was a fast trip, or I slept {i}wayyy{/i} too long."
@@ -310,7 +310,7 @@ label england:
     hide cs with moveoutright
     scene black with dissolve
     n "CS gets out of the plane and makes his way into the airport."
-    scene britport with fade
+    scene britport with dissolve
     show cs at mid_left with moveinleft
     cs "Well, at least I picked an English-speaking country."
     cs "Could you imagine if I'd picked something like Sweden? Or Japan?"
@@ -319,7 +319,7 @@ label england:
     hide cs with moveoutright
     scene black with dissolve
     n "CS walks out of the airport."
-    scene embassy with fade
+    scene embassy with dissolve
     show cs at center with moveinleft
     show cs disappointed
     cs "Bad thing is, I don't have any money!"
@@ -331,7 +331,7 @@ label england:
 label england_first:
     stop music fadeout 1.0
     music end
-    scene uk_street with fade
+    scene uk_street with dissolve
     show cs disappointed at mid_left with moveinleft
     n "CS walks up to a shop owner on the side of the street."
     cs "Hello? Are you guys hiring?"
@@ -386,7 +386,7 @@ label england_second:
     pause 1.0
     scene airplane_seats
     show cs at left
-    with fade
+    with dissolve
     n "As CS slowly wakes up, he sees the plane landing on the tarmac."
     cs "Oh huh, we are already here."
     cs "Either that was a fast trip, or I slept {i}wayyy{/i} too long."
@@ -394,7 +394,7 @@ label england_second:
     hide cs with moveoutright
     scene black with dissolve
     n "CS gets out of the plane, and makes his way into the airport."
-    scene britport with fade
+    scene britport with dissolve
     show cs at mid_left with moveinleft
     cs "Well, I picked an English-speaking country this time."
     cs "Being able to understand what people are saying again is a breath of fresh air."
@@ -402,7 +402,7 @@ label england_second:
     hide cs with moveoutright
     scene black with dissolve
     n "CS walks out of the airport."
-    scene embassy with fade
+    scene embassy with dissolve
     show cs at center with moveinleft
     show arceus at mid_right with moveinright
     play music stal volume 0.4
@@ -437,7 +437,7 @@ label england_arceus_place:
     stop music fadeout 1.0
     music end
     pause 1.0
-    scene kitty_house with fade
+    scene kitty_house with dissolve
     show arceus flipped at center with moveinleft
     show cs at left with moveinleft
     arceus "Here we are. Home sweet home."
@@ -447,7 +447,7 @@ label england_arceus_place:
     show arceus flipped
     cs "Ohhhh, yeah. Forgot about that."
     arceus "Whatever, just, come on in."
-    scene kitty_room with fade
+    scene kitty_room with dissolve
     show arceus flipped at center with moveinleft
     show cs at left with moveinleft
     play music wool_gloves volume 0.4
@@ -493,7 +493,7 @@ label england_arceus_place:
     show kitty flipped at right
     show arceus at center
     show cs at left
-    with fade
+    with dissolve
     cs "So, how long have you guys been together?"
     arceus "For a long time, actually. I've been wanting to move up here, but, y'know..."
     kitty "Yeah, you did a dumb and got arrested!"
@@ -532,7 +532,7 @@ label england_hell_zone:
     show kitty flipped at right
     show arceus at center
     show cs at left
-    with fade
+    with dissolve
     cs "Annnnddd done!"
     kitty "Do you think you're gonna win this? It's a pretty tough challenge."
     cs "I think I've got something up my sleeve."
@@ -553,7 +553,7 @@ label england_hell_zone:
     centered "The next morning..."
     scene kitty_room
     show cs concentrate at left
-    with fade
+    with dissolve
     cs "Zzzzz....."
     cs "Zzzzz....."
     show arceus at center with moveinright
@@ -585,7 +585,7 @@ label england_hell_zone:
     show hell_outside behind car_insidearc_fg
     show arceus at right
     show cs at left
-    with fade
+    with dissolve
     play music conflict volume 0.4
     music Conflict - David Vanacore
     cs "Well, this definitely looks like Hell."
@@ -609,7 +609,7 @@ label england_hell_zone:
     cs "I'll show you!"
     scene black with dissolve
     n "CS gets out of the car and walks up toward the building."
-    scene hell_outside with fade
+    scene hell_outside with dissolve
     show cs angry at mid_left with moveinleft
     cs "Stupid Arceus doesn't think I can cook? Well, I'm gonna blow them away! They won't be able to even put me on the show because I'll be {i}too{/i} good!"
     hide cs with moveoutright
@@ -617,7 +617,7 @@ label england_hell_zone:
     n "When CS enters the main room, he notices that Gordon is waiting for him at the kitchen with his arms crossed."
     scene hell_kitchen
     show gordon at left
-    with fade
+    with dissolve
     show cs flipped at right with moveinright
     gordon "Are you Mr... 188?"
     cs "Yeah, that's m--{w=0.5}{nw}"
@@ -636,7 +636,7 @@ label england_hell_zone:
     scene hell_kitchen
     show cs disappointed flipped at right
     show gordon at left
-    with fade
+    with dissolve
     gordon "Normal attire, my arse! Are you really here to cook, or are we just playing games?"
     show cs worried flipped
     cs "No, no! I'm really ready to blow you away, Mr. Ramsay!"
@@ -655,7 +655,7 @@ label england_hell_zone:
     cs "Arceus was kinda right. I guess Gordon {i}is{/i} as scary without the cameras rolling."
     scene hell_kitchen
     show cs disappointed flipped
-    with fade
+    with dissolve
     cs "Well, I have a couple options for what I should make."
     jump england_gordon_menu
 
@@ -681,7 +681,7 @@ label england_bad_ramsay:
     scene hell_kitchen
     show cs flipped at right
     show gordon at left
-    with fade
+    with dissolve
     play music tumultuous volume 0.4
     music Tumultuous - David Vanacore
     gordon "Alright, Mr. 188, let's see what you've made!"
@@ -714,7 +714,7 @@ label england_good_ramsay:
     n "At the five minute mark, Gordon comes out and starts shouting."
     scene hell_kitchen
     show cs flipped
-    with fade
+    with dissolve
     play music tumultuous volume 0.4
     music Tumultuous - David Vanacore
     show gordon at left with moveinleft
@@ -745,7 +745,7 @@ label england_good_ramsay:
     scene hell_kitchen
     show cs disappointed flipped at right
     show gordon at left
-    with fade
+    with dissolve
     gordon "Well, yeah, I can see that."
     gordon "Well, here goes nothing."
     n "Gordon gulps down the Genergy."
@@ -782,7 +782,7 @@ label england_good_ramsay:
     show hell_outside behind car_insidearc_fg
     show arceus at right
     show cs at left
-    with fade
+    with dissolve
     arceus "Well, how'd it go?"
     cs "I think..."
     cs "That you were wrong!"
@@ -807,7 +807,7 @@ label england_good_ramsay:
     show cs at left
     show arceus at center
     show kitty flipped at right
-    with fade
+    with dissolve
     play music wool_gloves volume 0.4
     kitty "CS did {i}what?"
     arceus "Yeah, I know, right? I don't understand either."
@@ -846,7 +846,7 @@ label england_top_zone:
     show cs at left
     show arceus at center
     show kitty flipped at right
-    with fade
+    with dissolve
     kitty "Yeah, they said if you can drive over there today, we can start the race!"
     cs "Wow, that was fast."
     cs "Should we get going, then?"
@@ -858,7 +858,7 @@ label england_top_zone:
     show top_gear_track behind car_insidearc_fg
     show arceus at right
     show kitty at left
-    with fade
+    with dissolve
     play music lisbon_fever volume 0.4
     music Lisbon Fever - Dr. Awesome
     n "As they drive up to the track, the gang sees Jeremy, Richard, and James."
@@ -872,7 +872,7 @@ label england_top_zone:
     show james at right
     show jeremy at mid_right
     show hammond at center
-    with fade
+    with dissolve
     hammond "So, this bloke thinks he can beat us in his typical car?"
     james "Yeah, he really thinks so."
     jeremy "Hah! I'd like to see him try!"
@@ -922,7 +922,7 @@ label england_top_lose:
     show jeremy at mid_right
     show hammond at center
     show cs disappointed at left
-    with fade
+    with dissolve
     hammond "Well, well, well!"
     hammond "Looks like I won after all!"
     hammond "As for you..."
@@ -939,7 +939,7 @@ label england_top_win:
     show jeremy at mid_right
     show hammond at center
     show cs happy at left
-    with fade
+    with dissolve
     hammond "What the bloody hell? How did you beat me?"
     cs "Oh, you know. I have my ways."
     james "Well, I guess that means we owe him, right?"
@@ -968,7 +968,7 @@ label england_top_win:
     show top_gear_track behind car_insidearc_fg
     show arceus at right
     show kitty at left
-    with fade    
+    with dissolve    
     play music wool_gloves volume 0.4
     kitty "Woo! You won the race!"
     show arceus happy
@@ -993,7 +993,7 @@ label england_top_win:
     show cs at left
     show arceus at center
     show kitty flipped at right
-    with fade
+    with dissolve
     kitty "Well, on the plus side, you won £10,000!"
     cs "Yeah, I'll have to transfer this to USD when I get back home."
     cs "I hope those cops forgot about me by now."
@@ -1033,7 +1033,7 @@ label england_scott_zone:
     stop music fadeout 3.0
     scene black with dissolve
     n "CS and Arceus get in the car and head up to Tom Scott's house."
-    scene tom_house with fade
+    scene tom_house with dissolve
     show cs at left with moveinleft
     show arceus at right with moveinright
     cs "Are you sure this is his house?"
@@ -1051,13 +1051,13 @@ label england_scott_zone:
     scene tom_house
     show cs at left
     show arceus at right
-    with fade
+    with dissolve
     n "As CS is going back to the car, he notices someone with a red shirt standing in the middle of the road."
     cs "Hey, I wonder if that's him."
     hide cs with moveoutright
     scene tom_road
     show tom
-    with fade
+    with dissolve
     tom "As you can see here, I am standing in the middle of this road."
     tom "That means if I get hit by a car, this video will not be uploaded."
     tom "Anyways, as I was saying..."
@@ -1100,7 +1100,7 @@ label england_scott_move:
     hide cs with moveoutright
     scene tom_house
     show arceus at right
-    with fade
+    with dissolve
     show cs happy at left with moveinleft
     arceus "Hey, did you get to talk with him?"
     cs "Yeah! I saved him from getting run over!"
@@ -1122,7 +1122,7 @@ label england_scott_move:
     show cs at left
     show arceus at center
     show kitty flipped at right
-    with fade
+    with dissolve
     play music wool_gloves volume 0.4
     kitty "You saved a man's life?"
     cs "Yeah, and I get to be in his video!"
@@ -1196,7 +1196,7 @@ label england_japan:
     scene britport
     show arceus flipped at left
     show cs flipped at right
-    with fade
+    with dissolve
     cs "Well, thank you so much Arceus for everything, really."
     show arceus happy flipped
     arceus "It's all good man, I loved having you here."
@@ -1212,7 +1212,7 @@ label england_japan:
     n "CS grabs his ticket and heads on to the next plane."
     scene airplane_seats
     show cs at left
-    with fade
+    with dissolve
     cs "Man, I'm kinda nervous to go to Japan, actually."
     cs "It's going to be wildly different than anything I've seen before."
     cs "Oh well, I'm sure it'll be fun."
@@ -1241,7 +1241,7 @@ label england_sweden:
     scene britport
     show arceus flipped at left
     show cs flipped at right
-    with fade
+    with dissolve
     cs "Well, thank you so much, Arceus, for everything, really."
     show arceus happy flipped
     arceus "It's all good, man, I loved having you here."
@@ -1290,7 +1290,7 @@ label japan:
     cs "And on top of it all, I don't have to worry about the cops anymore!"
     n "CS walks out of the airport."
     hide cs with moveoutright
-    scene tokyo_street with fade
+    scene tokyo_street with dissolve
     show cs disappointed at center with moveinleft
     cs "Unfortunately, I don't have any money left on me."
     cs "So I really don't know what to do now."
@@ -1305,13 +1305,13 @@ label japan_two:
     $ japan_check = True
     scene airplane_seats
     show cs at left
-    with fade
+    with dissolve
     n "As CS wakes up, he sees the plane landing outside."
     cs "Wow, either I really slept a lot, or that was a crazy fast trip."
     cs "Welp, time to check out Japan!"
     scene black with dissolve
     n "CS exits the terminal and enters the airport."
-    scene tokyo_airport with fade
+    scene tokyo_airport with dissolve
     show cs at center with moveinleft
     if fun_value(FUN_VALUE_COMMON):
         play music yuuka_town volume 0.4
@@ -1324,7 +1324,7 @@ label japan_two:
     cs "And I forgot why I was travelling here, to be honest."
     n "CS walks out of the airport."
     hide cs with moveoutright
-    scene tokyo_street with fade
+    scene tokyo_street with dissolve
     show cs at center with moveinleft
     cs "Fortunately, I have some money this time."
     cs "But the question is, what should I do here?"
@@ -1344,7 +1344,7 @@ label japan_anime_adventure:
     cs "Let's start looking!"
     scene black with dissolve
     n "CS quickly finds a shop selling video games and other electronics."
-    scene game_store_back with fade
+    scene game_store_back with dissolve
     show cs at mid_left with moveinleft
     cs "Wow, this is like a dream!"
     cs "There are so many retro games here!"
@@ -1359,7 +1359,7 @@ label japan_anime_adventure:
         music end   
         scene game_store_front
         show cashier at right
-        with fade
+        with dissolve
         show cs at left with moveinleft
     else:
         cs "Unfortunately, I don't have enough to spend on this kinda stuff."
@@ -1370,7 +1370,7 @@ label japan_anime_adventure:
         music end    
         scene game_store_front
         show cashier at right
-        with fade
+        with dissolve
         show cs at left with moveinleft
         n "As CS is about to walk out of the store, the cashier says something to him."
     cashier "Hey, dude, nice cosplay!"
@@ -1390,7 +1390,7 @@ label japan_anime_adventure:
     music The Chase - Toby Fox
     n "CS rushes out the door."
     cashier "Wait! Come back!"
-    scene tokyo_street_2 with fade
+    scene tokyo_street_2 with dissolve
     show cs at center with moveinleft
     cs "Whew! That was close. I need to--{w=1.0}{nw}"
     show cashier at left with moveinleft
@@ -1400,7 +1400,7 @@ label japan_anime_adventure:
     hide cs with moveoutright
     scene black with dissolve
     n "CS keeps running, trying to lose the insane cashier."
-    scene front_desk_2 with fade
+    scene front_desk_2 with dissolve
     show cs disappointed at center with moveinleft
     cs "Okay, I think I lost him."
     cs "So, where was I?"
@@ -1413,7 +1413,7 @@ label japan_anime_adventure:
     with moveoutright
     scene black with dissolve
     n "The cashier chases CS up the stairs, all the way to the top floor."
-    scene ceo_office_2 with fade
+    scene ceo_office_2 with dissolve
     n "CS runs into the boss's office of the building."
     show cs worried at center with moveinleft
     stop music fadeout 3.0
@@ -1438,7 +1438,7 @@ label japan_anime_adventure:
     scene ceo_office_2 
     show cs disappointed at center
     show cashier at left
-    with fade    
+    with dissolve    
     cs "So, yeah. That's why I wear this outfit."
     cs "You guys better not tell {i}anyone{/i} about this."
     cashier "That was amazing!"
@@ -1467,7 +1467,7 @@ label japan_anime_adventure:
     $ achievement_manager.unlock("I'm Scared Right Now...")
     scene tokyo_street_night
     show cs at center
-    with fade
+    with dissolve
     if fun_value(FUN_VALUE_COMMON):
         play music yuuka_town volume 0.4
     else:  
@@ -1493,7 +1493,7 @@ label japan_karaoke:
     cs "There are some signs in English here."
     scene black with dissolve
     n "CS walks around for a bit, trying to find a place to stop at."
-    scene karaoke_bar_outside with fade
+    scene karaoke_bar_outside with dissolve
     show cs at center with moveinleft
     cs "We've got a restaurant, a few general stores..."
     cs "Ah! Bar and Karaoke!"
@@ -1502,7 +1502,7 @@ label japan_karaoke:
     music end    
     scene black with dissolve
     n "CS enters the karaoke bar and makes his way over to the karaoke area."
-    scene karaoke_bar_inside with fade
+    scene karaoke_bar_inside with dissolve
     show cs at mid_left with moveinleft
     cs "Wow, look at this! So many songs to play here!"
     cs "And no one seems to be here, so I can sing to my heart's content!"
@@ -1519,7 +1519,7 @@ label japan_karaoke:
     pause 119
     scene karaoke_bar_inside
     show cs at mid_left
-    with fade
+    with dissolve
     cs "Woohoo! That was fun!"
     cs "That kinda wore me out, though."
     cs "I don't think I should sing another one for now."
@@ -1527,7 +1527,7 @@ label japan_karaoke:
     n "CS heads out of the bar."
     scene karaoke_bar_outside
     show cs
-    with fade
+    with dissolve
     $ achievement_manager.unlock("Dame Da Ne")
     if fun_value(FUN_VALUE_COMMON):
         play music yuuka_town volume 0.4
@@ -1556,7 +1556,7 @@ label japan_miku_pizza:
 
     scene dominos_counter 
     show cashier at right
-    with fade
+    with dissolve
     show cs at left with moveinleft
     play music funiculi_holiday volume 0.3
     music Funiculi Holiday - ClascyJitto
@@ -1580,12 +1580,12 @@ label japan_miku_pizza:
     hide cs with moveoutleft
     stop music fadeout 3.0
     music end
-    scene japanese_street with fade
+    scene japanese_street with dissolve
     show cs at center with moveinleft
     n "CS walks for a while until he finds the Domino's HQ."
     cs "Finally, here's the place!"
 
-    scene front_desk with fade
+    scene front_desk with dissolve
     show cs at left with moveinleft
     n "CS walks up to the receptionist."
     cs "I'd like to speak to Scott."
@@ -1601,7 +1601,7 @@ label japan_miku_pizza:
 
     scene elevator
     show cs at center
-    with fade
+    with dissolve
     pause 3.0
     play sound sfx_elevator_ding
     scene black with dissolve
@@ -1611,7 +1611,7 @@ label japan_miku_pizza:
         show scott at right
     else:
         show scott_pres at right
-    with fade
+    with dissolve
     show cs at left with moveinleft
     scott_pres "Hello, sir, and what is your name?"
     cs "I'm cs188, and I'm curious about your Miku promotion."
@@ -1655,7 +1655,7 @@ label japan_miku_pizza:
     scene dominos
     show cs at left
     show miku at right
-    with fade
+    with dissolve
     if fun_value(FUN_VALUE_COMMON):
         play music yuuka_town volume 0.4
     else:  
@@ -1669,7 +1669,7 @@ label japan_miku_pizza:
     scene black with dissolve
     scene tokyo_street
     show cs at center with moveinleft
-    with fade
+    with dissolve
     cs "I {i}knew{/i} Miku was real!"
     cs "That pizza was pretty good too."
     cs "Anyways, what should I do now?"
@@ -1696,7 +1696,7 @@ label japan_leave:
 label japan_leave_airport:
     stop music fadeout 3.0
     music end
-    scene tokyo_airport with fade
+    scene tokyo_airport with dissolve
     show cs at center with moveinleft
     cs "Man, what a time I had here."
     cs "Alright, well, where should I go this time?"
@@ -1725,7 +1725,7 @@ label japan_sweden:
     n "CS goes and gets his ticket and gets on the plane."
     scene airplane_seats
     show cs at left
-    with fade
+    with dissolve
     cs "Well, I'm off to Sweden!"
     cs "This is gonna be quite the trip."
     cs "I'm gonna try to get some shuteye."
@@ -1744,7 +1744,7 @@ label japan_england:
     n "CS goes and gets his ticket and gets on the plane."
     scene airplane_seats
     show cs at left
-    with fade
+    with dissolve
     cs "Well, I'm off to England!"
     cs "This is gonna be quite the trip."
     cs "I'm gonna try to get some sleep."
@@ -1761,7 +1761,7 @@ label country_going_home:
     scene black with dissolve
     n "CS buys a ticket to US and gets on the airplane."
     n "CS takes another nap to pass the time."
-    scene cs_house with fade
+    scene cs_house with dissolve
     show cs happy at mid_left with moveinleft
     play music park_theme volume 0.5
     music Park Theme - Lorin Nelson
@@ -1770,7 +1770,7 @@ label country_going_home:
     scene cs_car
     show carguy at right
     show cs at left
-    with fade
+    with dissolve
     n "When CS walks up to his driveway, he notices a familiar face."
     cs "Hey, are you that advertiser?"
     cs "What are you doing here?"
@@ -1785,12 +1785,12 @@ label country_going_home:
     cs "Now, where was I?"
     cs "Oh, yeah, let's get inside."
     hide cs with moveoutright
-    scene cs_room with fade
+    scene cs_room with dissolve
     show cs at center with moveinleft
     n "CS gets inside and relaxes once more in his own house."
     cs "Man, what a trip that was."
     cs "I can finally sleep for a day."
-    scene cs_room_2 with fade
+    scene cs_room_2 with dissolve
     n "CS glances over at his Union Jack."
     cs "Maybe... I should get two more flags."
     stop music fadeout 1.0
@@ -1813,7 +1813,7 @@ label sweden:
     scene black with dissolve
     n "CS exits the airport and finds himself in the middle of the city."
     scene stockholm 
-    with fade
+    with dissolve
     show cs at center with moveinleft
     play music creative_exercise loop volume 0.3
     cs "Wow! There's so many people around."
@@ -1852,7 +1852,7 @@ label sweden_second:
     scene black with dissolve
     n "CS exits the airport and finds himself in the middle of the city."
     scene stockholm 
-    with fade
+    with dissolve
     show cs at center with moveinleft
     play music creative_exercise loop volume 0.3
     cs "Wow! There's so many people around."
@@ -2019,7 +2019,7 @@ label sweden_aurora_borealis:
     witch "Could you go get one for me?"
     cs "I've never hunted before, but I'll give it a shot."
     hide cs with moveoutright
-    scene black with fade
+    scene black with dissolve
     n "CS quickly fashions a spear out of a branch and some rocks he found on the forest path, and he heads out to find the pig."
     scene waddle_zone with dissolve
     show cs at mid_left with moveinleft

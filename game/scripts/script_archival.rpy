@@ -34,7 +34,7 @@ label archival:
     show cs worried
     cs "Why does the place {i}feel{/i} so familiar? Something doesn't seem right."
     n "CS gets up, and goes over to a laptop sitting on the desk next to him."
-    scene craptop_old with fade
+    scene craptop_old with dissolve
     show cs disappointed at left with moveinleft
     cs "I feel like this is my craptop, but I don't even {i}have{/i} my craptop anymore!"
     cs "It looks {i}off{/i}, though..."
@@ -48,7 +48,7 @@ label archival:
     show cs scared
     cs "Shit!"
     hide cs with moveoutright
-    scene bedroom_old with fade
+    scene bedroom_old with dissolve
     show cs scared flipped at offscreenright
     show cs scared flipped at offscreenleft with move
     n "CS jumps over the chair next to him, hiding between it and the couch in the corner."
@@ -142,24 +142,24 @@ label archival:
     show nova2 at center with vpunch
     hide cs with moveoutright
     n "CS realizes that this is his chance and runs past them and out the door."
-    scene door_old with fade
+    scene door_old with dissolve
     show cs worried at left with moveinleft
     n "CS quickly slams the door behind him as screams echo through the room."
     n "CS finds himself in the living room somehow, even though the bedroom was on another floor."
     cs "Shit, where do I go? I need to get out of here!"
     n "CS runs outside."
     hide cs with moveoutright
-    scene car_old with fade
+    scene car_old with dissolve
     show cs worried at left with moveinleft
     n "A blue car is sitting out on the driveway."
     show carguya at right with moveinright
     carguy "Nice car! Nooooot so--"
     hide cs with moveoutright
     n "CS pushes him out of the way as he smashes open the window and gets in the car."
-    scene car_inside_old with fade
+    scene car_inside_old with dissolve
     show cs worried at left with moveinleft
     n "The interior of the car is drastically different from the outside, but thankfully the car starts up."
-    scene csmart_old with fade
+    scene csmart_old with dissolve
     show cs worried at left with moveinleft
     n "CS starts to drive off, but he is instantly teleported to a Walmart that has a \"CS\" poorly pasted onto the sign."
     cs "What {i}is{/i} this place?! What's going on?!"
@@ -194,7 +194,7 @@ label archival_finale:
     n "..."
     n "..."
     n "..."
-    scene archival_1 with fade
+    scene archival_1 with dissolve
     play music take_trip volume 0.7
     music "Take a Trip from Me - u4ia"
     show cs scared at center with moveintop

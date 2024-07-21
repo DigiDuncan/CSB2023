@@ -2014,12 +2014,12 @@ label test:
     scene washington_road dusk
     show arceus dusk flipped at right
     show cs dusk at left
-    with fade
+    with dissolve
     arceus "This is a dusk test"
     scene washington_road
     show arceus dark at right
     show cs dark at left
-    with fade
+    with dissolve
     arceus "This is a dark test"
     menu:
         "Menu test?"

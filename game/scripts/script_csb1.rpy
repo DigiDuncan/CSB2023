@@ -7,14 +7,14 @@ screen best_music():
 label csbi_start:
     $ quick_menu = False
     stop music fadeout 3.0
-    scene black with fade
+    scene black with dissolve
     $ quick_menu = True
     if persistent.first_time:
         window hide
         scene cs_room
         show cs at center
         show oldgame
-        with fade
+        with dissolve
         pause 7.0
         show pakoo at right with moveinright
         pakoo "Oh, whoops!"
@@ -95,7 +95,7 @@ label csbi_craptop:
     hide nova
     show craptop car
     cs "Time to watch car crash videos for the next couple of hours!"
-    show black with fade
+    show black with dissolve
     centered "Two hours later..."
     scene cs_room
     show cs
@@ -107,7 +107,7 @@ label csbi_craptop:
     cs "Yeah! Let's go outside!"
     scene cs_house
     show cs happy
-    with fade
+    with dissolve
     play music canyon volume 0.2
     music CANYON.MID - George Stone
     if fun_value(FUN_VALUE_MUSIC):
@@ -136,7 +136,7 @@ label csbi_craptop:
     play sound sfx_doorslam
     scene cs_car_inside
     show cs disappointed at left
-    with fade
+    with dissolve
     play music canyon_car volume 0.2
     music CANYON.MID - George Stone
     cs "Whew... That was close!"
@@ -159,9 +159,9 @@ label csbi_walmart:
     music end
     scene walmart_outside
     show cs happy
-    with fade
+    with dissolve
     cs "Oh, yes! Walmart is open!"
-    scene walmart_inside with fade
+    scene walmart_inside with dissolve
 
     # This has to be like this because CJK support for this is mid.
     show screen best_music
@@ -203,7 +203,7 @@ label csbi_walmart:
     hide cs with moveoutright
     stop music fadeout 3.0
     music end
-    scene walmart_outside with fade
+    scene walmart_outside with dissolve
     show cs at left with moveinleft
     cs "Let's get to the car."
     show carguy at right with moveinright
@@ -216,11 +216,11 @@ label csbi_walmart:
     play sound sfx_doorslam
     scene cs_car_inside
     show cs worried at left
-    with fade
+    with dissolve
     play music canyon_car volume 0.2
     play sound sfx_driving volume 0.5
     cs "Let's get home before that guy doctors my crotch!"
-    scene black with fade
+    scene black with dissolve
     n "CS drives home and manages to avoid reenacting one of his favorite car crash videos."
     jump csbi_room
 
@@ -238,7 +238,7 @@ label csbi_room:
     cs "You know, I haven't put out a YTP in a while. I should work on one of my in-progress ones."
     scene craptop_bg
     show craptop edit
-    with fade
+    with dissolve
     play music scales_of_joy volume 0.3
     music scales of joy.mod - Mel O Dee
     n "CS sits down at his craptop and opens up Premiere."
@@ -287,12 +287,12 @@ label csbi_room:
     show cs
     cs "Welp, that's one thing taken care of."
     cs "I guess I'll work on my new YTP while I wait."
-    scene black with fade
+    scene black with dissolve
     n "Time passes and the doorbell rings."
     play sound sfx_doorbell volume 0.5
     stop music fadeout 3.0
     music end
-    scene door_closed with fade
+    scene door_closed with dissolve
     show cs happy with moveinleft
     cs "Oh, they're here!"
     cs "Let me go get the door..."
@@ -346,7 +346,7 @@ label csbi_room:
     wesley "Hurry up!"
     show craptop error with hpunch
     pause 1.0
-    scene cs_house with fade
+    scene cs_house with dissolve
     show ed at left
     show wesley at center
     show rich at right
@@ -365,7 +365,7 @@ label csbi_room:
     stop music fadeout 3.0
     music end
     scene cs_street
-    with fade
+    with dissolve
     show cs with moveinleft
     cs "Things sure are boooooring around here..."
     cs "Hey, I've got an idea!"
@@ -376,7 +376,7 @@ label csbi_room:
 label csbi_michael_house:
     scene car_inside
     show cs at left
-    with fade
+    with dissolve
     play music canyon_car volume 0.2
     cs "Thankfully, Michael lives pretty close."
     cs "His vacation house in the US is only a few streets away!"
@@ -411,7 +411,7 @@ label csbi_rosen_house:
     if e3:
         jump e3_rosen
     else:
-        scene rosen_abode with fade
+        scene rosen_abode with dissolve
     play music super_friendly volume 0.4
     music Super Friendly - Kevin Macleod
     show michael at right with moveinright
@@ -496,14 +496,14 @@ label csbi_rosen_house:
 label csbi_end:
     scene car_inside
     show cs surprised at left
-    with fade
+    with dissolve
     play music canyon_car volume 0.2
     play sound sfx_driving volume 0.5
     $ achievement_manager.unlock("Overcaffeinated")
     stop music fadeout 3.0
     music end
     cs "I should check on the HoH SiS folks. They should be making some progress by now."
-    scene cs_room with fade
+    scene cs_room with dissolve
     show cs with moveinleft
     stop sound fadeout 2.0
     n "CS walks into his apartment."
@@ -538,7 +538,7 @@ label csbi_end:
     show cs angry
     cs "I need to get those guys!"
     cs "I'm gonna go to HoH SiS HQ and kick some butt!"
-    scene hoh_outside with fade
+    scene hoh_outside with dissolve
     window hide
     pause 1.0
     scene hoh_hq
@@ -625,13 +625,13 @@ label csbi_end_left:
 
     $ achievement_manager.unlock("HoH SiS's Most Wanted")
 
-    scene black with fade
+    scene black with dissolve
     scene hoh_elevator
     show cs angry
-    with fade
+    with dissolve
     pause 2.0
     play sound sfx_elevator_ding
-    scene black with fade
+    scene black with dissolve
     jump csbii_start
 
 label csbi_end_right:
@@ -648,11 +648,11 @@ label csbi_end_right:
     
     $ achievement_manager.unlock("HoH SiS's Most Wanted")
 
-    scene black with fade
+    scene black with dissolve
     scene hoh_elevator
     show cs angry
-    with fade
+    with dissolve
     pause 2.0
     play sound sfx_elevator_ding
-    scene black with fade
+    scene black with dissolve
     jump csbii_start

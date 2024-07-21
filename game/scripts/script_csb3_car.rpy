@@ -20,7 +20,7 @@ style skip_car_frame is empty
 label car_dialogue:
     scene car plains
     show billy car
-    with fade
+    with dissolve
     play music billy_mix
     music "Billy's Mix - Billy Mays"
     cs "Well, Arceus, it has been quite a ride."

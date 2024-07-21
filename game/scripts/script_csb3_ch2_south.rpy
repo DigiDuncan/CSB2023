@@ -17,9 +17,9 @@ label south_start:
     arceus "Eh, fuck it. What do I have to lose at this point? Let's go!"
     show cs happy
     cs "Hell yeah!"
-    scene black with fade
+    scene black with dissolve
     n "CS and Arceus keep following the road for a while until they come across a small town."
-    scene town with fade
+    scene town with dissolve
     show cs at left with moveinleft
     show arceus at right with moveinright
     show cs happy
@@ -31,14 +31,14 @@ label south_start:
     hide cs with moveoutright
     show arceus flipped at right
     hide arceus with moveoutright
-    scene gasinside with fade
+    scene gasinside with dissolve
     show cs at left with moveinleft
     show arceus at right with moveinright
     arceus "Finally, some good fucking food."
     cs "Donuts and chips have never tasted better."
     arceus "Thank God the slushie machine was working for once." 
     n "After they finish their food, they start to plan their epic journey to Vegas."
-    scene gasoutside with fade
+    scene gasoutside with dissolve
     show cs surprised at left
     show arceus flipped at right
     with moveinleft
@@ -68,7 +68,7 @@ label south_start:
     scene gasoutside
     show cscar1
     show cscar2
-    with fade
+    with dissolve
     show cs at left behind cscar2 with moveinleft
     show arceus at right behind cscar2 with moveinright
     n "Once they get into the car, CS starts it up."
@@ -78,7 +78,7 @@ label south_start:
     arceus "I don't even know how you do these things, man, but let's go!"
     n "The duo heads out to Vegas, or, where they presume Vegas is."
     stop sound fadeout 2.0
-    scene black with fade
+    scene black with dissolve
     n "After many hours of driving, day turns to night once again."
     jump south_utah
 
@@ -90,7 +90,7 @@ label south_utah:
     show cscar2
     show cs at left behind cscar2
     show arceus at right behind cscar2
-    with fade
+    with dissolve
     arceus "Are you sure we're close to Vegas?"
     cs "We {i}have{/i} to be! Nevada is, like, right below Washington!"
     arceus "Well, there's a state sign coming up. Let's see if you're right."
@@ -150,7 +150,7 @@ label south_utah:
     show cs happy
     cs "We're going there. {i}Right now."
     n "CS pulls into the parking lot of the restaurant."
-    scene pizzaplace with fade
+    scene pizzaplace with dissolve
     show cs dark at left with moveinleft
     show arceus dark at right with moveinright
     cs "I've never seen this before!"
@@ -159,7 +159,7 @@ label south_utah:
     n "Arceus looks worried."
     arceus "Are you sure about this, CS? This place gives me the creeps."
     cs "This is my dream place to eat at. We {i}need{/i} to see if we can get in."
-    scene legodoor with fade
+    scene legodoor with dissolve
     show cs dark at left with moveinleft
     show arceus worried dark at right with moveinright
     n "They approach the front door. There is a sign on the door that reads \"CLOSED.\""
@@ -171,9 +171,9 @@ label south_utah:
     show cs happy dark
     cs "The door isn't locked! We can go in!"
     arceus "Oh, great. Yippee..."
-    scene black with fade
+    scene black with dissolve
     n "As CS and Arceus walk in, they are greeted with a musty aroma and a dimly-lit party room."
-    scene fazlobby with fade
+    scene fazlobby with dissolve
     play music tunnely_shimbers volume 0.5
     music Tunnely Shimbers - Mr. Sauceman
     n "CS walks around in awe as Arceus creeps behind him."
@@ -199,7 +199,7 @@ label south_utah:
     cs "Woah, Arc, look at those giant minifig statues!"
     n "Up in the front of the room, four human-scale Lego minifigures can be seen standing up on the stage."
     n "CS goes up to stand next to them."
-    scene legostage with fade
+    scene legostage with dissolve
     show cs dark at left with moveinleft
     show cs happy dark
     cs "Arceus, do you have a camera? You should take a picture of me!"
@@ -213,7 +213,7 @@ label south_utah:
     scene fazlobby
     show cs dark at left
     show arceus dark at right
-    with fade
+    with dissolve
     n "A couple boxes of freshly-baked pizza are sitting there."
     show arceus worried dark
     arceus "It's hot, too! Who {i}made{/i} this?"
@@ -227,7 +227,7 @@ label south_utah:
     show cs disappointed dark
     cs "Fine..."
     n "CS and Arceus head down the hallway next to the kitchen area until they find a small office in the back."
-    scene fazplace with fade
+    scene fazplace with dissolve
     show cs dark at left with moveinleft
     show arceus flipped dark at right with moveinleft
     show arceus dark
@@ -268,7 +268,7 @@ label south_utah:
     with moveoutleft
     scene fazhall
     show lego at truecenter
-    with fade
+    with dissolve
     show cs disappointed dark at mid_left_left with moveinleft
     show arceus worried dark at mid_right_right with moveinright   
     n "Before they make it to the door, Arceus stops dead in his tracks."
@@ -295,7 +295,7 @@ label south_utah:
     show arceus worried dark
     arceus "{bt=a3-p10-s4}Run, CS, run!!!"
     n "They desperately run as fast as they can to the front door, then slam the door behind them."
-    scene pizzaplace with fade
+    scene pizzaplace with dissolve
     show cs worried dark at left with moveinleft
     show arceus worried dark flipped at right with moveinleft
     show arceus worried dark
@@ -310,17 +310,17 @@ label south_utah:
     show cscar1arc
     show cscar2
     show arceus flipped at left behind cscar2
-    with fade
+    with dissolve
     cs "I made this car though..."
     n "Arceus starts the car. He takes off at lightning speed out of the parking lot and back onto the road."
-    scene black with fade
+    scene black with dissolve
     stop music fadeout 3.0
     music end
     scene utahnight
     show cscar1arc
     show cscar2
     show arceus flipped at left behind cscar2
-    with fade
+    with dissolve
     arceus "Thank God. I can take a breather now."
     cs "Man, this sucks."
     cs "It was super cool before the Legos tried to kill us."
@@ -353,7 +353,7 @@ label south_vegas:
         show cscar1arc
         show cscar2
         show arceus flipped at left behind cscar2
-        with fade
+        with dissolve
     play music penthouse volume 0.5
     music "Al's Penthouse - Andy Blythe"
     n "After a few hours of driving, the duo sees the bright Las Vegas sign coming into view."
@@ -361,9 +361,9 @@ label south_vegas:
     arceus "Some reckless gambling will probably help me forget about the horrors from that restaurant..."
     n "They enter Las Vegas and find a place to park, then they start heading down The Strip."
     if jade:
-        scene vegasjade2 with fade
+        scene vegasjade2 with dissolve
     else:
-        scene strip with fade
+        scene strip with dissolve
     show cs dark at left with moveinleft
     show arceus dark at right with moveinright
     cs "Alright, Arc, you ready to get rich?"
@@ -381,7 +381,7 @@ label south_vegas:
     hide arceus
     with moveoutright
     n "CS and Arceus enter the casino. It looks like chaos is unfolding in front of their faces."
-    scene casino1 with fade
+    scene casino1 with dissolve
     play sound sfx_slots volume 3
     n "The sounds of slot machines fill the room. Many drunkards hobble around the establishment."
     show cs at left with moveinleft
@@ -415,7 +415,7 @@ label south_vegas:
     jump south_vegas_start_slots
 
 label south_vegas_start_slots:
-    scene slots with fade
+    scene slots with dissolve
     n "As Arceus wanders off to find a place to relax, CS tries his luck at the slots."
     minigame "minigame_slots" "south_vegas_win_slots" "south_vegas_lose_slots"
 
@@ -434,7 +434,7 @@ label south_vegas_lose_slots:
 
 label south_vegas_done_slots:
     n "CS gets up from the slot machine and begins looking for Arceus."
-    scene casino1 with fade
+    scene casino1 with dissolve
     n "CS looks around for a while, but he can't find Arceus."
     show cs disappointed at center with moveinleft
     cs "Arceus! Hello?"
@@ -442,7 +442,7 @@ label south_vegas_done_slots:
     cs "Maybe he went to the table games. I'll go check over there."
     hide cs with moveoutright
     n "CS heads over to the table games section to search for Arceus."
-    scene tablegames with fade
+    scene tablegames with dissolve
     show cs disappointed at center with moveinleft
     cs "Arceus, are you around here?"
     cs "I've checked all the tables and I still can't find him!"
@@ -464,7 +464,7 @@ label south_vegas_done_slots:
     n "CS looks disgusted, but shrugs, as he doesn't want to start trouble now."
     scene luigi2
     show green flipped at left
-    with fade
+    with dissolve
     show cs disappointed flipped at right with moveinright
     play music laurel_palace volume 0.5
     music Laurel Palace - Manami Matsumae
@@ -473,7 +473,7 @@ label south_vegas_done_slots:
     show green flipped at left
     show cs disappointed flipped at right
     n "The house deals the cards out to Mr. Green and CS."
-    scene pokertable with fade
+    scene pokertable with dissolve
     show cards1
     green "Hahahaha! I can tell this one's a winner!"
     n "CS looks at his cards. He's got an ace of spades and a king of spades."
@@ -544,7 +544,7 @@ label south_folded:
     show cs disappointed with determination
     hide cs at right with moveoutright
     n "CS sulks back to the lobby."
-    scene casino1 with fade
+    scene casino1 with dissolve
     stop music fadeout 3.0
     music end
     show cs disappointed at center with moveinleft
@@ -553,12 +553,12 @@ label south_folded:
     cs "I wonder where he went..."
     hide cs with moveoutright
     n "CS returns to the search for Arceus."
-    scene black with fade
+    scene black with dissolve
     n "Meanwhile, Arceus has been trying to win it big, but in a different kind of way..."
     scene outsafe
     show arceus full flipped at mid_right
     show drill at center_right
-    with fade
+    with dissolve
     play sound sfx_drill loop volume 0.5
     arceus "Come on, I'm almost there..."
     pause 6.0
@@ -591,16 +591,16 @@ label south_folded:
     pause 3.0
     scene outsafeopen
     show arceus full flipped at mid_right
-    with fade
+    with dissolve
     play sound sfx_payday volume 0.5
     $ achievement_manager.unlock("The House Doesn't Always Win")
     show arceus full happy flipped
     arceus "Hell yeah!"
-    scene insafe with fade
+    scene insafe with dissolve
     arceus "Look at all this loot! CS is gonna be so surprised..."
     n "While Arceus is looting the casino, CS continues his search."
 
-    scene vegasbathroom with fade
+    scene vegasbathroom with dissolve
     show cs disappointed at center with moveinleft
     cs "Hello? Arceus?"
     cs "Not in the bathroom..."
@@ -608,11 +608,11 @@ label south_folded:
     cs "I guess I should go check. I'm kinda tired of this place anyway."
     show cs disappointed flipped with determination
     hide cs with moveoutleft
-    scene black with fade
+    scene black with dissolve
     n "CS heads out to the parking lot to find Arceus by the car."
     scene carpark
     show arceus at right
-    with fade
+    with dissolve
     show cs at center with moveinleft
     cs "Hey! There you are! Where were you?"
     show arceus happy
@@ -700,7 +700,7 @@ label south_poker3:
         show cs with determination
         hide case with dissolve
         hide cs with moveoutright
-        scene casino1 with fade    
+        scene casino1 with dissolve    
         n "CS continues to look for Arceus."
         show cs disappointed at center with moveinleft
         cs "Arc? Where are you?"
@@ -708,7 +708,7 @@ label south_poker3:
         hide cs with moveoutright
         scene vegasbathroom
         show arceus worried at center
-        with fade
+        with dissolve
         n "CS enters the bathroom to see Arceus with his head up against the mirror."
         show cs at left with moveinleft
         cs "Hey, Arc! There you are! Are you okay?"
@@ -725,7 +725,7 @@ label south_poker3:
         hide cs with moveoutleft
         scene carpark
         show arceus flipped at left
-        with fade
+        with dissolve
         show cs flipped at right with moveinright
         cs "Hey Arc, how're you feelin'?"
         arceus "I do feel better now, yeah."
@@ -779,7 +779,7 @@ label south_poker3:
         hide cs with moveoutright
         stop music fadeout 3.0
         music end
-        scene casino1 with fade    
+        scene casino1 with dissolve    
         n "CS continues to look for Arceus."
         show cs disappointed at center with moveinleft
         cs "Arc? Where are you?"
@@ -787,7 +787,7 @@ label south_poker3:
         hide cs with moveoutright
         scene vegasbathroom
         show arceus worried at center
-        with fade
+        with dissolve
         n "CS enters the bathroom to see Arceus with his head up against the mirror."
         show cs at left with moveinleft
         cs "Hey, Arc! There you are! Are you okay?"
@@ -806,7 +806,7 @@ label south_poker3:
         scene backroomcasino
         show jerma at center
         show case flipped at mid_mid_left
-        with fade
+        with dissolve
         n "Jerma is waiting with a briefcase."
         show cs at left behind case with moveinleft
         jerma "Here he is! The man of the hour!"
@@ -830,7 +830,7 @@ label south_poker3:
         with moveoutleft
         scene carpark
         show arceus flipped at left
-        with fade
+        with dissolve
         show cs flipped at right with moveinright
         cs "Hey Arc, how're you feelin'?"
         arceus "I do feel better now, yeah."
@@ -874,9 +874,9 @@ label south_airport:
     hide cs
     hide arceus
     with moveoutleft
-    scene black with fade
+    scene black with dissolve
     n "CS drives to the airport nearest to Las Vegas."
-    scene airport_interior with fade
+    scene airport_interior with dissolve
     play music airport volume 0.4
     music Airport Infiltration - Andy Blythe & Marten Joustra
     show cs at left
@@ -891,7 +891,7 @@ label south_airport:
     with moveoutright
     scene airport_tsa
     show tsa at right
-    with fade
+    with dissolve
     show cs at left
     show arceus flipped at mid_left
     with moveinleft
@@ -919,7 +919,7 @@ label south_airport:
     with moveoutright
     stop music fadeout 3.0
     music end
-    scene airplane_seats with fade
+    scene airplane_seats with dissolve
     n "They go and sit down somewhere near the back of the plane."
     show cs flipped at mid_left
     show arceus at center
@@ -939,9 +939,9 @@ label south_airport:
     show arceus worried flipped
     arceus "I hate flying though, and I can't stop thinking about being in a flying metal tube."
     arceus "It'll be over soon enough."
-    scene black with fade
+    scene black with dissolve
     n "After a few hours, the plane arrives in New York."
-    scene airport_inside with fade
+    scene airport_inside with dissolve
     n "CS and Arceus get out of the plane and relax in the waiting area."
     show cs at left
     show arceus flipped at center
@@ -997,9 +997,9 @@ label south_airport_bad:
     hide cs
     hide arceus flipped
     with moveoutleft
-    scene black with fade
+    scene black with dissolve
     n "CS drives to the airport nearest to Las Vegas."
-    scene airport_interior with fade
+    scene airport_interior with dissolve
     play music airport volume 0.4
     music Airport Infiltration - Andy Blythe & Marten Joustra
     show cs at left
@@ -1014,7 +1014,7 @@ label south_airport_bad:
     with moveoutright
     scene airport_tsa
     show tsa at right
-    with fade
+    with dissolve
     show cs at left
     show arceus flipped at mid_left
     with moveinleft
@@ -1046,7 +1046,7 @@ label south_airport_bad:
     jump csbiii_choose_direction
 
 label south_back_home_alt:
-    scene cs_house with fade
+    scene cs_house with dissolve
     play music park_theme volume 0.5
     music Park Theme - Lorin Nelson
     n "After the long and exciting journey, CS finally arrives at his house."
@@ -1144,7 +1144,7 @@ label south_donatehohsis:
     n "Ed and Richard go back to their JoJ UFO and take off."
     show cs at right with move
     n "CS walks up to his front door."
-    scene cs_room with fade
+    scene cs_room with dissolve
     play music ac_title volume 0.4
     music New Leaf Title Theme - Kazumi Totaka
     show cs at center with moveinleft
@@ -1164,7 +1164,7 @@ label south_true_ending_alt:
     music New Leaf Title Theme - Kazumi Totaka
     show cs at center
     n "CS looks over at his desk, where a new computer is sitting."
-    scene cs_room_2 with fade
+    scene cs_room_2 with dissolve
     n "CS looks at the monitor, which has a sticky note that says \"From LTT\"."
     show cs happy at mid_left with moveinleft
     cs "Oh my goodness, Linus got me a new PC!"
@@ -1186,7 +1186,7 @@ label south_ytp_ending_alt:
     music New Leaf Title Theme - Kazumi Totaka
     show cs at center
     n "CS looks over at his desk, where his old computer is sitting."
-    scene cs_room_2 with fade
+    scene cs_room_2 with dissolve
     show cs at mid_left
     cs "Oh yeah, I forgot I actually have a computer that's not a craptop."
     cs "Before I head off for the night, I'll do a stream real quick."
@@ -1204,7 +1204,7 @@ label south_ltt_ending_alt:
     music New Leaf Title Theme - Kazumi Totaka
     show cs at center
     n "CS looks over at his desk, where a new computer is sitting."
-    scene cs_room_2 with fade
+    scene cs_room_2 with dissolve
     n "CS looks at the monitor, which has a sticky note that says \"From LTT\"."
     show cs happy at mid_left with moveinleft
     cs "Oh my goodness, Linus got me a new PC!"
@@ -1237,7 +1237,7 @@ label south_lego_ending:
     n "The chat is freaking out as CS announces his plan."
     cs "I'm gonna start buying all the Lego bricks we need, and you guys can help build the island!"
     cs "Now, let's see what to buy..."
-    scene black with fade
+    scene black with dissolve
     stop music fadeout 1.0
     music end
     $ ending_manager.mark("south")
@@ -1351,16 +1351,16 @@ label south_noairport:
     show cscar2
     show cs at left behind cscar2
     show arceus at right behind cscar2
-    with fade
+    with dissolve
     n "CS and Arceus get back in the car and head east."
-    scene black with fade
+    scene black with dissolve
     n "After quite a bit of driving, they reach the tip of Texas."
     scene texas
     show cscar1
     show cscar2
     show cs at left behind cscar2
     show arceus at right behind cscar2
-    with fade
+    with dissolve
     pause 3.0
     show cs happy
     pause 1.0
@@ -1374,9 +1374,9 @@ label south_noairport:
     cs "I mean, we are going to my house, and I... feel like we should just check out your house!"
     arceus "Umm, okay."
     arceus "I guess we can go to my house."
-    scene black with fade
+    scene black with dissolve
     n "CS makes a stop at Arceus' house, which isn't too far away."
-    scene old_house_outside with fade
+    scene old_house_outside with dissolve
     show cs at left
     show arceus flipped at right
     with moveinleft
@@ -1430,7 +1430,7 @@ label south_noairport:
     cs "Well, okay, let's turn it on!"
     show arceus
     n "CS fiddles with the knobs and turns it on."
-    scene tvbilly with fade
+    scene tvbilly with dissolve
     tv_billy "Hi, it's Billy! I've been trying to sell this craptop for years and have never gotten any buyers!"
     tv_billy "So, whoever you are who just accessed Super Heaven, here's my craptop!"
     scene old_house_inside

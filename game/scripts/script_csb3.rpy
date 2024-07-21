@@ -1,19 +1,19 @@
 label csbiii_start:
     $ persistent.csb3a_unlocked = True
     stop music fadeout 3.0
-    scene outside_ltt with fade
+    scene outside_ltt with dissolve
     show cs at left with moveinleft
     n "CS returns to LMG the next day."
     hide cs with moveoutright
-    scene inside_ltt with fade
+    scene inside_ltt with dissolve
     play music passport volume 0.5
     music PASSPORT.MID - George Stone
     show linus at center with moveinright
     linus "Welcome to Linus Media Group! Come on in. I'll show you to your desk."
     cs "Thanks, Linus."
-    scene black with fade
+    scene black with dissolve
     n "Linus leads CS to his new desk."
-    scene csdesk with fade
+    scene csdesk with dissolve
     show linus at right with moveinright
     show cs at left with moveinleft
     dxcom 5years
@@ -56,11 +56,11 @@ label csbiii_start:
     cs "Damn it, Taran, you can edit your own macro fetish content."
     show cs
     cs "I guess I'll edit the livestreaming one."
-    scene black with fade
+    scene black with dissolve
     n "CS starts working on editing the TechQuickie video. After some time, Linus comes in to check on him."
     scene csdesk
     show cs at left
-    with fade
+    with dissolve
     show linus at right with moveinright
     linus "Hey, CS, how's the new video coming along?"
     cs "It's going well! I have the background all done, and I'm working on adding graphics and fixing audio."
@@ -84,7 +84,7 @@ label csbiii_boring_video:
     cs "I suppose that something super-technical like this would be really useful to the viewers. Maybe I'll learn something new, myself."
     show cs
     cs "Well, let's see what this is all about!"
-    scene black with fade
+    scene black with dissolve
     n "As CS watches the footage, his eyelids grow heavy..."
     centered "Two hours later..."
     play sound sfx_csnore
@@ -93,7 +93,7 @@ label csbiii_boring_video:
     scene csdesk
     show cs concentrate at left
     show linus at right
-    with fade
+    with dissolve
     
     cs "Zzzzz..."
     linus "{i}CS!!" with hpunch
@@ -107,7 +107,7 @@ label csbiii_boring_video:
     cs "Oh, shi--{nw}"
     linus "This is unacceptable! You're {i}fired!"
 
-    scene black with fade
+    scene black with dissolve
     n "CS is groggily escorted out of the building."
     jump fired_new_plan
 
@@ -139,12 +139,12 @@ label csbiii_edit_video:
     show cs happy
     cs "Hey Taran! You wanna check out my video so far?"
     taran "Sure, let it roll."
-    scene csvideo with fade
+    scene csvideo with dissolve
     n "CS and Taran watch CS' video."
     scene csdesk
     show cs disappointed at left
     show taran at right
-    with fade
+    with dissolve
     cs "Well, you think it's good?"
     taran "Hey hey! That's not half bad!"
     show cs happy
@@ -437,7 +437,7 @@ label csbiii_reviews:
     linus "What?"
     linus "Hold on, lemme check."
     n "CS and Linus rush to the front door."
-    scene frontdoor with fade
+    scene frontdoor with dissolve
     show linus at right with moveinleft
     show cs at center with moveinleft
     n "Linus goes to open the door."
@@ -520,7 +520,7 @@ label csbiii_ytp_fan:
     linus "What?"
     linus "Hold on, lemme check."
     n "CS and Linus rush to the front door."
-    scene frontdoor with fade
+    scene frontdoor with dissolve
     show linus at right with moveinleft
     show cs at center with moveinleft
     n "Linus goes to open the door."
@@ -563,7 +563,7 @@ label csbiii_both_fan:
     hide taran with moveoutright
     hide linus with moveoutright
     hide cs with moveoutright
-    scene csdesk with fade
+    scene csdesk with dissolve
     n "Linus gathers more employees as they follow CS to his office."
     show cs flipped at center with moveinright
     show cs with determination
@@ -581,10 +581,10 @@ label csbiii_both_fan:
     linus "Oh no..."
     colton "A... what?"
     cs "Alright! Strap in, because YouTube is where the poop is!"
-    show black with fade
+    show black with dissolve
     play sound sfx_ytpintro
     n "Half an hour passes, and CS has shown LTT what YTPs are all about."
-    hide black with fade
+    hide black with dissolve
     cs "Welp. Those are some of the best ones that I could find."
     taran "Hey, those were actually really funny. Linus, weren't you telling me about how much you actually {i}liked{/i} YTPs?"
     linus "Nooooo...?"
@@ -604,10 +604,10 @@ label csbiii_both_fan:
     linus "Wait, what do you mean? I was just joking about the furry fanbase."
     cs "..."
     linus "Whatever, let's just go check out who it is."
-    scene black with fade
+    scene black with dissolve
 
     n "CS and Linus rush to the front door."
-    scene frontdoor with fade
+    scene frontdoor with dissolve
     show linus at right with moveinleft
     show cs at center with moveinleft
     n "Linus goes to open the door."
@@ -762,7 +762,7 @@ label csbiii_arc_escape:
     scene road_to_canada
     show cs disappointed dusk at left
     show arceus dusk at right
-    with fade
+    with dissolve
     n "Meanwhile, CS and Arceus have been running back to the US border."
     cs "Aw, man! This is embarrassing!"
     arceus "Yeah, so much for the editing job, I guess."
@@ -778,7 +778,7 @@ label csbiii_arc_escape:
     scene border_dusk
     show cs dusk at left
     show arceus dusk flipped at mid_left
-    with fade
+    with dissolve
     play music atarashii_kaze volume 0.3
     music Atarashii Kaze - Satoru Kosaki
     n "CS and Arceus approach the border guard again."
@@ -792,7 +792,7 @@ label csbiii_arc_escape:
     cs "Yep!"
     border_guard "Alright, hope you two come back to visit the Great White North again, ey buds?"
     arceus "Sure thing!"
-    scene washington_road with fade
+    scene washington_road with dissolve
     n "The duo continues their trek now in the US, in the state of Washington."
     show cs dark at left with moveinleft
     show arceus dark at right with moveinright
@@ -810,7 +810,7 @@ label csbiii_arc_escape:
     cs "Ah, I see."
     scene sheriff_office
     show sheriff at left
-    with fade
+    with dissolve
     play music police_station volume 0.5
     music Police Station - Lorin Nelson  
     n "Back at the police station, Copguy talks to the sheriff about CS."
@@ -835,7 +835,7 @@ label csbiii_arc_escape:
     n "Copguy turns around and heads out to track down CS and Arceus."
     stop music fadeout 3.0
     music end
-    scene washington_road with fade
+    scene washington_road with dissolve
     if fun_value(FUN_VALUE_MUSIC):
         n "Meanwhile, CS and Arceus are still making their way through the US, while strange sounds seem to be echoing in the forest."
     else:  
@@ -903,7 +903,7 @@ label genocide_fight:
     scene washington_road
     show arceus worried dark at right
     show cs concentrate dark at left
-    with fade
+    with dissolve
     pause 3.0
     show cs dark
     pause 1.0
@@ -924,7 +924,7 @@ label genocide_fight:
     cs "Eh, not really."
     arceus "Alright, well..."
     arceus "Let's keep going..."
-    scene washington_road with fade
+    scene washington_road with dissolve
     show cs dark at left with moveinleft
     show arceus dark at right with moveinright
     play music kill_cops volume 0.5
@@ -978,7 +978,7 @@ label genocide_wait_arc:
     scene washington_road morning
     show arceus at right
     show cs at left
-    with fade
+    with dissolve
     pause 3.0
     arceus "So, uhh, should we keep going this direction?"
     cs "..."
@@ -987,7 +987,7 @@ label genocide_wait_arc:
     scene town
     show arceus at right
     show cs at left
-    with fade    
+    with dissolve    
     pause 2.0
     arceus "Hey, we found a town! That's good, right?"
     cs "Yep."
@@ -1022,7 +1022,7 @@ label genocide_wait_arc:
     pause 5.0
     scene car background night
     show billy car
-    with fade
+    with dissolve
     pause 3.0
     n "For the whole drive, no one says a word."
     stop music fadeout 3.0
@@ -1033,7 +1033,7 @@ label genocide_wait_arc:
     billy "Welp. We are here."
     n "CS gets out of the car and heads up the trail on the side of the road."
     arceus "Hey, uhh, I'm gonna get out too."
-    hide billy car with fade
+    hide billy car with dissolve
     show arceus flipped at mid_left with moveinleft
     arceus "CS? Where did you go?"
     arceus "What is wrong with him right now?"
@@ -1113,7 +1113,7 @@ label csbiii_wait_forest:
     scene washington_road
     show cs disappointed dark at left
     show arceus dark flipped at mid_left_left
-    with fade
+    with dissolve
     cs "Huh?"
     cs "What happened?"
     show copguy dark at right with moveinright
@@ -1134,7 +1134,7 @@ label csbiii_wait_forest:
     scene copcar
     show copguy at t_copguy_frontseat
     show copcar_mask
-    with fade
+    with dissolve
     show arceus worried flipped at right
     show cs disappointed at left
     with moveinleft
@@ -1244,7 +1244,7 @@ label csbiii_good_convince:
     hide copguy with moveoutleft
     n "Copguy gets out of the car."
     n "He then proceeds to open the doors and let CS and Arceus out, freeing them of their shackles."
-    scene washington_road with fade
+    scene washington_road with dissolve
     show copguy dark flipped at right with moveinleft
     show copguy dark with determination
     show cs disappointed dark at left with moveinleft
@@ -1291,7 +1291,7 @@ label csbiii_choose_direction:
     scene washington_road morning
     show cs at left
     show arceus at right
-    with fade
+    with dissolve
     play music happy_roaming volume 0.5
     music Happy Roaming - Lorin Nelson
     if fun_value(FUN_VALUE_MUSIC):

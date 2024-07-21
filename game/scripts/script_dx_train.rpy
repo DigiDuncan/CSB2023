@@ -159,7 +159,7 @@ label train_intro_start:
     hide cs
     with moveoutright
 
-    scene black with fade
+    scene black with dissolve
     stop music fadeout 3.0
     music end
 
@@ -176,7 +176,7 @@ label train_story_begin:
     show cscar2
     show cs at left behind cscar2
     show arceus at right behind cscar2
-    with fade
+    with dissolve
 
     play music outdoors if_changed
     music Outdoors - Miki Obata
@@ -195,7 +195,7 @@ label train_story_begin:
     show cs worried
     cs "Oh, shit. Alright."
 
-    scene black with fade
+    scene black with dissolve
 
     if train_money_stolen == True:
         $ train_money_container = "bag"
@@ -209,7 +209,7 @@ label train_story_begin:
 
     n "CS and Arceus get out of the car and grab the [train_money_container] of money."
 
-    scene kingman_exterior with fade
+    scene kingman_exterior with dissolve
 
     show cs flipped at left
     show arceus at right
@@ -251,9 +251,9 @@ label train_story_begin:
     hide cs
     hide arceus
     with moveoutleft
-    scene black with fade
+    scene black with dissolve
 
-    scene kingman_interior with fade
+    scene kingman_interior with dissolve
 
     show arceus flipped at center
     show cs at left
@@ -302,17 +302,17 @@ label train_story_begin:
     show arceus
     n "They spot the entrance to a museum."    
     
-    scene kingman_museum with fade
+    scene kingman_museum with dissolve
 
     arceus "Oh, look at all those little trains. Wanna poke around there?"
     cs "I don't see why not. Not like we have anything else to do."
     arceus "Alrighty, let's go."
-    scene black with fade
+    scene black with dissolve
     n "CS and Arceus wander around Kingman Railroad Museum for a little while."
     n "While not many exhibits can fit inside such a small building, there is just enough to see to pass the remaining time."
     n "About five minutes before the train's expected arrival, the two make their way out onto to the platform."
     
-    scene kingman_platform_2 with fade
+    scene kingman_platform_2 with dissolve
 
     show arceus flipped at mid_mid_left
     show cs disappointed at left
@@ -388,14 +388,14 @@ label train_story_begin:
     play sound sfx_amtrak_horn
     n "The conversation is interrupted by the blare of a train horn."
 
-    scene kingman_train_arrive with fade
+    scene kingman_train_arrive with dissolve
     play music ochre_woods_day if_changed
     music Ochre Woods ~ Day - Miki Obata
     n "The two watch as the locomotive approaches the station and eventually slows to a stop."
     hide cs
     hide arceus
 
-    scene amtrak_arrive_close with fade
+    scene amtrak_arrive_close with dissolve
 
     show arceus flipped at mid_mid_left
     show cs at left
@@ -519,7 +519,7 @@ label train_story_begin:
 
     stop music fadeout 3.0
     music end
-    scene black with fade
+    scene black with dissolve
     n "The group boards the train."
     n "CS and Arceus buy tickets from the staff. After a brief tour of all of the amenities, the trio heads towards the sleeper cars."
     jump train_boarding
@@ -527,7 +527,7 @@ label train_story_begin:
 label train_boarding:
 
     scene amtrak_sleeper_corridor
-    with fade
+    with dissolve
 
     play music bedroom_day if_changed
     music Bedroom ~ Day - Miki Obata
@@ -671,7 +671,7 @@ label train_enter_sleeper:
     play sound sfx_sliding_door_close
     show amtrak_sleeper_interior_day
     show arceus at right
-    with fade
+    with dissolve
 
     n "CS and Tate enter the sleeper unit just as the train takes off."
     
@@ -1033,7 +1033,7 @@ label train_enter_sleeper:
     show cs disappointed
     cs "Yeah, me too..."
 
-    scene black with fade
+    scene black with dissolve
     n "CS and Arceus decide to call it an early night."
     n "CS effortlessly falls into a deep slumber."
     n "While the fold-out bed is indeed quite comfortable, Arceus struggles to get any rest."
@@ -1041,7 +1041,7 @@ label train_enter_sleeper:
     # TODO: better sleeper bg
 
     scene amtrak_sleeper_interior_night
-    with fade
+    with dissolve
     pause 1.0
     arceus "Fuck..."
     arceus "I'm so tired, but I {i}still{/i} can't fucking sleep..."
@@ -1071,7 +1071,7 @@ label train_enter_sleeper:
         n "He gently shuts the door behind him, then makes for the dining car in hopes of drinking his worries away."
         play sound sfx_sliding_door_close
 
-    scene black with fade
+    scene black with dissolve
     pause 3.0
     jump train_dining
 
@@ -1079,7 +1079,7 @@ label train_dining:
 
     play music krabby_klub if_changed
     scene amtrak_dining_car
-    with fade
+    with dissolve
     pause 1.0
     music Krabby Klub - Tsukasa Tawada
     pause 0.5
@@ -1096,7 +1096,7 @@ label train_dining:
     show mean at t_mean_dining_car
     show amtrak_dining_food at t_dining_car_breakfast behind mean
     hide arceus
-    with fade
+    with dissolve
 
     n "A strange spiny entity is surrounded by piles of pancakes, sky-high stacks of sausages, oodles of eggs, and a whole bunch of bacon."
     n "Arceus can't help but stare in awe at both the enormous spread of food..."
@@ -1187,7 +1187,7 @@ label train_dining:
     n "Mean dashes out of the dining car!"
 
     scene amtrak_dining_car
-    with fade
+    with dissolve
     pause 1.0
     show mean scared at offscreenleft with determination
     show mean scared at offscreenright
@@ -1204,13 +1204,13 @@ label train_dining:
 
     n "He rushes back to the sleeper car as quickly as he can."
     hide arceus with moveoutright
-    scene black with fade
+    scene black with dissolve
     jump train_wakeup
     
 label train_wakeup:
 
     scene amtrak_sleeper_interior_night
-    with fade
+    with dissolve
     play sound sfx_sliding_door_open
     pause 1.0
     show arceus worried dark flipped at center with moveinleft
@@ -1496,7 +1496,7 @@ label train_allow_staff:
     show tate sheepish
     tate "It was nice seeing you again, CS. It was nice to meet you too, Arc."
     tate "I hope you two enjoy the rest of the journey!"
-    scene black with fade
+    scene black with dissolve
     n "Tate bids CS and Arceus farewell before heading towards the cab to join Mean."
     n "CS and Arceus spend the following day resting and admiring the vast and varied scenery of The Midwest."
     n "As expected, the money is never returned."
@@ -1550,7 +1550,7 @@ label train_begin_heist:
 
     stop music fadeout 3.0
     music end
-    scene black with fade
+    scene black with dissolve
     jump train_meanwhile
 
 label train_meanwhile:
@@ -1559,7 +1559,7 @@ label train_meanwhile:
     pause 0.5
     scene amtrak_cab
     show lupin at center
-    with fade
+    with dissolve
     play music onbs if_changed
     music "ONBS - Tsukasa Tawada"
 
@@ -1599,14 +1599,14 @@ label train_meanwhile:
     lupin_offscreen "... Seems like he'll be a while."
     show lupin hat flipped at center with moveinright
     lupin_offscreen "And that's just what I need."
-    scene black with fade
+    scene black with dissolve
     pause 1.0
     jump train_search_arceus
 
 label train_search_arceus:
     scene amtrak_dining_car
     show arceus at center
-    with fade
+    with dissolve
     n "Arceus returns to the dining car."
     arceus "Well, let's see if anything is hidden around here..."
     show arceus at left with ease
@@ -1629,7 +1629,7 @@ label train_search_arceus:
     scene amtrak_dining_table
     show amtrak_dining_food at t_dining_car_breakfast
     show amtrak_dining_pancake at t_dining_car_pancake behind amtrak_dining_food
-    with fade
+    with dissolve
     n "From across the room, Arceus glances towards the forgotten breakfast." 
     arceus "It's a damn shame that all of that food went to waste."
 
@@ -1657,7 +1657,7 @@ label train_search_arceus:
     arceus "I need a drink..."
     show arceus angry flipped
     hide arceus with moveoutright
-    scene black with fade
+    scene black with dissolve
     pause 2.0
     arceus "What the fuck? He even took all the {i}booze?!"
     jump train_search_cs
@@ -1671,7 +1671,7 @@ label train_search_cs:
     pause 1.5
     scene amtrak_sleeper_corridor
     show cs disappointed at center
-    with fade
+    with dissolve
     pause 1.0
 
     n "CS finds himself alone in the deserted corridor."
@@ -1696,7 +1696,7 @@ label train_search_cs:
 
     show amtrak_dining_food at mid_mid_left
     show amtrak_sleeper_open_fg
-    with fade
+    with dissolve
 
     n "A man in an oddly familiar red jacket is finishing off a feast."
     lupin_offscreen "I can't believe how easy that was. {color=#FFDBFC}Pink sweater{/color} had the staff running around like ants!"
@@ -1763,7 +1763,7 @@ label train_search_tate:
     pause 0.5
     scene amtrak_cab
     show lupin hat at left
-    with fade
+    with dissolve
 
     play sound sfx_sliding_door_open
     pause 3.0
@@ -1890,7 +1890,7 @@ label train_confront_lupin:
     scene amtrak_economy
     show tate sad at left
     show mean worried flipped at truecenter
-    with fade
+    with dissolve
     n "CS shows up in economy to find Tate with Mean. The pair appears to be frustrated over something."
     pause 1.0
     show cs disappointed flipped at right with moveinright
@@ -2027,7 +2027,7 @@ label train_tate_ex_encounter:
     pause 0.5
     scene amtrak_observation 
     show tate srs flipped at left
-    with fade
+    with dissolve
     pause 1.0
     play music insomnia_intro if_changed
     # TODO: Fix this artist name, should be W∆W
@@ -2122,7 +2122,7 @@ label train_tate_ex_encounter:
             show cs disappointed at offscreenright with moveoutright
             pause 3.5
             tate "Unbelievable..."
-            scene black with fade
+            scene black with dissolve
             stop music fadeout 1.0
             jump train_completed
         "Are you sure?":
@@ -2201,7 +2201,7 @@ label train_return_home_transition:
     # yes i stole much of this from south route, oh well, i'm tired ok - tate
     stop music fadeout 1.0
     music end    
-    scene moynihan_interior with fade
+    scene moynihan_interior with dissolve
 
     # TODO: add mean's chosen BGM here :D
 

@@ -13,7 +13,7 @@ label michigan:
     n "Billy pulls into a nearby gas station and gets out to talk."
     scene gas_station_2
     show streetguy at mid_right
-    with fade
+    with dissolve
     show billy at mid_left with moveinleft
     billy "Hey, man. Do you know what's up with the highway?"
     streetguy "Not sure on details, but I hear they found one of the horsemen of the apocalypse flying around."
@@ -393,7 +393,7 @@ label michigan_interstate_69_old:
     show arceus flipped at mid_left
     show billy at center
     show gnome at mid_left_left
-    with fade
+    with dissolve
     show waitress at right with moveinright
     waitress "Welcome, welcome. Please wait, and I'll come seat you in a minute."
     hide waitress with moveoutright
@@ -424,7 +424,7 @@ label michigan_interstate_69_old:
     scene cafe_sitting
     show aria flipped at left
     show gnome at center
-    with fade
+    with dissolve
     show waitress at right with moveinright    
     aria "Alright."
 
@@ -613,7 +613,7 @@ label michigan_interstate_69_old:
     show cs at left
     show billy at mid_left behind cs
     show arceus flipped at center
-    with fade
+    with dissolve
     show aria at right
     with moveinright
     aria "Hey, everyone. How'd you sleep?"
@@ -968,7 +968,7 @@ label michigan_interstate_69:
     show arceus flipped at mid_left
     show billy at center
     show gnome at mid_left_left
-    with fade
+    with dissolve
     show waitress at right with moveinright
     waitress "Welcome, welcome. Please wait, and I'll come seat you in a minute."
     hide waitress with moveoutright
@@ -1002,7 +1002,7 @@ label michigan_interstate_69:
     scene cafe_sitting
     show aria flipped at left
     show gnome at center
-    with fade
+    with dissolve
     show waitress at right with moveinright
     aria "Alright."
 
@@ -1413,7 +1413,7 @@ label michigan_interstate_94:
     n "The conversation comes to a halt as they continue heading down the highway."
     scene car plains
     show billy car
-    with fade
+    with dissolve
     billy "Looks like there's a traffic jam up ahead. I'm gonna get off and take a detour."
     arceus "I'm gonna roll a window down now that we're off the noisy highway."
     play sound sfx_roll_window volume 0.7

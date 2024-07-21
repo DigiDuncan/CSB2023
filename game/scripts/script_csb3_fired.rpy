@@ -3,7 +3,7 @@ label fired_new_plan:
     music end
     scene outside_ltt
     show cs angry at center
-    with fade
+    with dissolve
     cs "This really sucks. One of my favorite YouTubers just kicked me out of my dream job and told me to never come back!"
     show cs
     cs "I {i}would{/i} be acting super emotional right now, but years of angry YouTube comments against me have already prepared me for this."
@@ -11,7 +11,7 @@ label fired_new_plan:
     cs "Well, I guess I have no other choice than to look for another job."
     n "CS sulks away in defeat."
 
-    scene alley with fade
+    scene alley with dissolve
     dxcom newplan
     show cs disappointed flipped with moveinright
     show cs disappointed
@@ -45,7 +45,7 @@ label fired_new_plan:
     scene hotel_lobby
     show cs flipped at right
     show arceus flipped at left
-    with fade
+    with dissolve
     arceus "Come on up to my room, and we'll workshop where to go from here."
     show cs disappointed flipped
     cs "Alrighty, then. Not like I'll be able to pay for my own much longer..."
@@ -54,7 +54,7 @@ label fired_new_plan:
     scene hotel_room
     show arceus at right
     show cs at left
-    with fade
+    with dissolve
     arceus "Okay, let's think. We have two big problems: The cops, and money."
     cs "Right."
     arceus "Let's tackle these one at a time."
@@ -114,7 +114,7 @@ label fired_new_plan:
 label fired_guitar_hero:
     play music hit_me_with_your_best_shot volume 0.5
     music Hit Me With Your Best Shot - Pat Benatar
-    scene hotel_guitar_hero with fade
+    scene hotel_guitar_hero with dissolve
     dxcom hitme
     n "CS, Anno, and Arceus relax by playing some {i}Guitar Hero.{/i}"
     arceus "Man, we're all pretty good at this."
@@ -143,7 +143,7 @@ label fired_guitar_hero:
     show arceus at right
     show cs at left
     show anno at center
-    with fade
+    with dissolve
     play music hightop volume 0.5
     music Hightop - Dr. Awesome
     cs "Maybe we should call Blank. He's, like... an actual musician."
@@ -241,7 +241,7 @@ label fired_hotel_next_day:
     show arceus with determination
     arceus "Those sausages are amazing."
 
-    scene hoh_elevator with fade
+    scene hoh_elevator with dissolve
     show anno at left
     show arceus at right
     show cs
@@ -265,7 +265,7 @@ label fired_hotel_next_day:
     music end
     play sound sfx_elevator_ding
 
-    scene hotel_breakfast with fade
+    scene hotel_breakfast with dissolve
     show cs at center with moveinleft
     cs "Ah, nothing like a hotel breakfast to wake me up."
     n "The other two groggily join CS."
@@ -752,7 +752,7 @@ label fired_fan_interaction:
     show anno at left
     show arceus at right
     show cs 
-    with fade
+    with dissolve
 
     n "The gang regroups to discuss."
     cs "Okay, give it to me straight. How many sales of the EP?"
@@ -1280,7 +1280,7 @@ label fired_third_tour_day:
 
     stop music fadeout 3.0
     scene convention_center_lobby
-    with fade
+    with dissolve
     show anno at left
     show arceus at mid_mid_right
     show cs at mid_mid_left

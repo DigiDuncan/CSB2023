@@ -6,7 +6,7 @@ label dx_after_true:
     n "CS' life went back to normal, working on YTPs and reacting to car crash videos on stream."
     n "Arceus went to England to live a happy life with Kitty,"
     n "and Billy, he's still selling his products while on the road."
-    scene start_route with fade
+    scene start_route with dissolve
     play music letshearspring volume 2
     music "Let's Hear My Baby: Spring Remix - Pakoo"  
     pause 3.0

@@ -9,11 +9,11 @@ label friend_microcenter:
     linus "Just kidding."
     linus "I'll leave the details up to you since you've done a lot of livestreaming. Just get the highest-end available."
     cs "Alright, I'll go get the parts."
-    scene black with fade
+    scene black with dissolve
     pause 3.0
     scene csdesk
     show linus at right
-    with fade
+    with dissolve
     show cs at left with moveinleft
     cs "I have your new streaming PC, and it runs quite well, too! Way better than my computer!"
     linus "Awesome! Lemme go move this into the othe--{w=0.25}{i}woahhhh!!!"
@@ -36,7 +36,7 @@ label friend_microcenter:
     music end
     scene black with dissolve
     pause 2.0
-    scene microcenter with fade
+    scene microcenter with dissolve
     n "CS goes to Microcenter."
     show cs at left with moveinleft
     show cs happy
@@ -44,7 +44,7 @@ label friend_microcenter:
     cs "Wow, this building looks a lot bigger than the places I would go shopping at near home."
     hide cs at right with moveoutright
     n "CS enters the building."
-    scene microinside with fade
+    scene microinside with dissolve
     play music morning_highway loop volume 0.4
     music Morning Highway - BEST MUSIC
     show cs at left with moveinleft
@@ -52,7 +52,7 @@ label friend_microcenter:
     cs "There are so many options to pick from! And I have as much money as I'll ever need, too!"
     cs "Before I get too carried away, though, I should probably start by buying the processor."
     hide cs at right with moveoutright
-    scene cpuaisle with fade
+    scene cpuaisle with dissolve
     n "CS goes to the CPU aisle."
     show cs at mid_left with moveinleft
     cs "My goodness, there are so many options."
@@ -72,7 +72,7 @@ label friend_microcenter:
     show cs
     cs "Now, for the GPU."
     hide cs with moveoutright
-    scene gpuaisle with fade
+    scene gpuaisle with dissolve
     show cs at mid_left with moveinleft
     n "CS heads over to the GPU aisle."
     show cs surprised
@@ -119,7 +119,7 @@ label friend_high_gpu:
     scene cashzone 
     show cashier at center
     show cashzone_foreground
-    with fade
+    with dissolve
     show cs at mid_left with moveinleft
     cashier "That'll be $1,188."
     cs "Welp, not my money!"
@@ -128,11 +128,11 @@ label friend_high_gpu:
     hide cs with moveoutright
     stop music fadeout 3.0
     music end
-    scene black with fade
+    scene black with dissolve
     n "CS heads back to LTT."
     scene loffice
     show linus at center
-    with fade
+    with dissolve
     n "CS meets Linus in his office."
     play music creative_exercise loop volume 0.3
     music Creative Exercise - Hirokazu Tanaka
@@ -164,11 +164,11 @@ label friend_high_gpu:
     hide linus
     hide cs
     with moveoutright
-    scene black with fade
+    scene black with dissolve
     n "CS and Linus head down to the recording room, then Linus sets up the cameras and equipment."
     scene ltt_bg
     show ltt_fg
-    with fade
+    with dissolve
     show cs at t_cs_ltt behind ltt_fg with moveinleft
     linus "Alright, one second..."
     show linus at t_linus_ltt behind ltt_fg with moveinright
@@ -190,10 +190,10 @@ label friend_high_gpu:
     linus "Alright, let's put the computer together!"
     stop music fadeout 3.0
     music end
-    scene black with fade
+    scene black with dissolve
     n "CS and Linus then spend the next hour putting the computer together and showing off its amazing capabilities."
     n "When they finish recording, they clean up the set, and Linus gives the footage to the editors."
-    scene inside_ltt with fade
+    scene inside_ltt with dissolve
     show cs at left
     show linus at right
     with moveinleft
@@ -205,18 +205,18 @@ label friend_high_gpu:
     cs "Alrighty, well, I'm pumped! See you tomorrow!"
     hide cs with moveoutright
     hide linus with moveoutleft
-    scene black with fade
+    scene black with dissolve
     n "CS heads back to the hotel he's been staying at, already excited for the next day."
     n "As morning comes, CS heads back to LTT to check out the video."
     scene inside_ltt
     show linus at mid_right
-    with fade
+    with dissolve
     show cs at mid_left with moveinleft
     linus "Hey, CS!"
     cs "Hey, Linus!"
     linus "Let's see how our video did!"
     n "Linus and CS sit down at the desk while Linus pulls up the video."
-    scene comments with fade
+    scene comments with dissolve
     play music pixel_peeker_polka loop volume 0.4
     music Pixel Peeker Polka - Kevin MacLeod
     linus "Alright, well, we've already got quite a lot of views..."
@@ -237,7 +237,7 @@ label friend_high_gpu:
     scene inside_ltt
     show linus at mid_right
     show cs disappointed at mid_left
-    with fade
+    with dissolve
     play sound sfx_yelling loop volume 0.3
     cs "Hey, do you hear that?"
     n "CS and Linus can hear a growing audience of people yelling nearby."
@@ -264,13 +264,13 @@ label friend_high_gpu:
     hide linus
     with moveoutleft
     stop music fadeout 3.0
-    scene black with fade
+    scene black with dissolve
     n "CS and Linus meet up with the rest of the members downstairs."
     scene frontdoor
     play sound sfx_yelling loop volume 0.5
     show luke flipped at left
     show taran flipped at mid_mid_left
-    with fade
+    with dissolve
     show linus at center
     show cs flipped at right
     with moveinright
@@ -323,7 +323,7 @@ label friend_attack_fanboy:
     n "CS runs out the front door into the crowd."
     linus "CS, what are you doing? You're gonna get yourself killed out there!"
     stop sound fadeout 3.0
-    scene outside_ltt with fade
+    scene outside_ltt with dissolve
     play sound sfx_yelling loop
     show cs angry at center with dissolve
     if fanboy_type == "nvidia":
@@ -386,7 +386,7 @@ label friend_after_fanboy:
     hide cs
     hide arceus
     with moveoutright
-    scene alley with fade
+    scene alley with dissolve
     play music Lowbudget_song loop volume 0.4
     music Lowbudget Song - Dr. Awesome
     show arceus flipped at right
@@ -419,7 +419,7 @@ label friend_after_fanboy:
     with moveoutleft
     scene outside_ltt 
     show pakoo at right
-    with fade
+    with dissolve
     show cs disappointed at left
     show arceus flipped at mid_left
     with moveinleft
@@ -453,7 +453,7 @@ label friend_after_fanboy:
     hide linus
     hide pakoo
     with moveoutright
-    scene frontdoor with fade
+    scene frontdoor with dissolve
     show cs at left
     show arceus flipped at mid_left
     show linus at right
@@ -488,12 +488,12 @@ label friend_after_fanboy:
     cs "Yep! I'll see you soon!"
     show cs with determination
     hide cs with moveoutright
-    scene black with fade
+    scene black with dissolve
     n "CS, Linus, and Pakoo head down an elevator into the training facility."
     jump friend_training
 
 label friend_training:
-    scene testing_main with fade
+    scene testing_main with dissolve
     show linus at right
     show cs at center
     show pakoo flipped at left behind linus   
@@ -513,7 +513,7 @@ label friend_training:
     hide cs
     hide pakoo
     with moveoutright
-    scene testing_front with fade
+    scene testing_front with dissolve
     show linus at mid_left
     show cs disappointed at center
     show pakoo flipped at left behind linus    
@@ -526,7 +526,7 @@ label friend_training:
     cs "Alright..."
     cs "Here goes nothing."
     scene black with dissolve
-    scene course_1 with fade
+    scene course_1 with dissolve
     show cs at left with moveinleft
     pakoo "Alright, just make your way through these blockades."
     cs "Just crouch under them and stuff?"
@@ -588,7 +588,7 @@ label friend_reg_jump:
 label friend_fire_range:
     play music klaxon_beat loop volume 0.6 if_changed
     music Klaxon Beat - Kelly Bailey
-    scene course_3 with fade
+    scene course_3 with dissolve
     show cs at left with moveinleft
     pakoo "Alright, you picked up the LMG before you came into this room, right?"
     show m4 at left
@@ -669,7 +669,7 @@ label friend_fire_range:
     hide m4
     show cs happy flipped with determination
     hide cs with moveoutleft
-    scene testing_main with fade
+    scene testing_main with dissolve
     show cs flipped at mid_mid_left with moveinright
     show cs with determination
     pause 1.0
@@ -733,7 +733,7 @@ label friend_fire_range:
     pause 1.0
     linus "This is such a good idea! Pat yourself on the back, Linus."
     show black with dissolve
-    show outside_ltt with fade
+    show outside_ltt with dissolve
     show cs disappointed at center
     show arceus flipped at right
     with moveinleft
@@ -800,9 +800,9 @@ label friend_fire_range:
     cs "Hell yeah! Let's do this!"
     stop music fadeout 3.0
     music end
-    scene black with fade
+    scene black with dissolve
     n "Arceus takes one of the LTT laptops to scramble their location, and the group heads off to the car dealership."
-    scene canada_block with fade
+    scene canada_block with dissolve
     show pakoo at right
     show cs at center
     show arceus flipped at left
@@ -826,9 +826,9 @@ label friend_fire_range:
     show pakoo with determination
     pakoo "I had a couple spares with me. You guys should just keep them."
     pakoo "One may or may not be LTT property that I stole."
-    scene black with fade
+    scene black with dissolve
     n "The gang stops to call their friends and partners, then makes their way to the dealership."
-    scene dealership with fade
+    scene dealership with dissolve
     show arceus flipped at center
     show cs at mid_mid_left
     show pakoo flipped at left behind cs
@@ -902,7 +902,7 @@ label friend_cool_car:
     music end
     scene joj_charger_fg
     show dealership behind joj_charger_fg
-    with fade
+    with dissolve
     show cs at left with moveinleft
     show pakoo at right with moveinright
     pakoo "Punch it, CS! We've gotta get outta here!"
@@ -923,7 +923,7 @@ label friend_cool_car:
     show blue_light at left
     show red_light at right
     show copguy flipped at left
-    with fade
+    with dissolve
     show cs disappointed flipped at center
     show arceus at mid_mid_right
     show pakoo at right
@@ -960,7 +960,7 @@ label friend_reg_car:
     music end
     scene car_inside_fg
     show dealership behind car_inside_fg
-    with fade
+    with dissolve
     show cs at left with moveinleft
     show pakoo at right with moveinright
     pakoo "Punch it CS! We gotta get outta here!"
@@ -980,7 +980,7 @@ label friend_reg_car:
     show blue_light at left
     show red_light at right
     show copguy flipped at left
-    with fade
+    with dissolve
     show cs disappointed flipped at center
     show arceus at mid_mid_right
     show pakoo at right
@@ -1010,7 +1010,7 @@ label friend_so_join:
     show cs disappointed flipped at center
     show arceus worried at mid_right
     show pakoo disappointed at right
-    with fade
+    with dissolve
     n "After that intense fight, the cops seem to best CS and his crew."
     n "CS is panting heavily."
     cs "Damn it..."
@@ -1106,14 +1106,14 @@ label friend_after_cop_fight:
     hide mika
     hide tate
     with moveoutleft
-    scene black with fade
+    scene black with dissolve
     n "Both groups head out of the dealership, making haste from the cops."
     n "Meanwhile, Copguy heads back to the police station to call for help."
     scene sheriff_office
     play music police_station volume 0.5  
     music Police Station - Lorin Nelson  
     show sheriff at left
-    with fade
+    with dissolve
     show copguy at mid_right with moveinright
     copguy "Hey, Sheriff, I have some unfortunate news."
     sheriff "God damn it what is it this time?"
@@ -1155,7 +1155,7 @@ label friend_flint_car:
     hide cs
     hide pakoo
     with moveoutright
-    scene flintcar_outside with fade
+    scene flintcar_outside with dissolve
     show cs at mid_right
     show arceus flipped at mid_left
     show pakoo flipped at left
@@ -1167,7 +1167,7 @@ label friend_flint_car:
     cs "Yes, I know how the Flintmobile works."
     scene flintcar_fg
     show dealership behind flintcar_fg
-    with fade
+    with dissolve
     show cs at left with moveinleft
     show pakoo at right with moveinright
     cs "Alrighty, you all in?"
@@ -1228,17 +1228,17 @@ label friend_low_gpu:
     scene cashzone 
     show cashier at center
     show cashzone_foreground
-    with fade
+    with dissolve
     show cs at mid_left with moveinleft
     cashier "That'll be $50."
     show cs happy
     cs "Good enough for me!"
     hide cs with moveoutright
-    scene black with fade
+    scene black with dissolve
     n "CS heads back to LTT."
     scene loffice
     show linus at center
-    with fade
+    with dissolve
     n "CS meets Linus in his office."
     show cs at left with moveinleft
     cs "Hey, Linus! I've got your parts!"
@@ -1268,5 +1268,5 @@ label friend_low_gpu:
     show cs angry with vpunch
     hide cs with moveoutright
     n "CS stomps out of the building."
-    scene black with fade
+    scene black with dissolve
     jump fired_new_plan

@@ -7,7 +7,7 @@ label friend2_dpn_call:
         show drive_day behind car_inside_fg
     show cs disappointed at left
     show pakoo at right
-    with fade
+    with dissolve
     play music tuna_fish loop volume 0.6
     music Tuna Fish - Dr. Awesome
     cs "What a crazy day so far, man."
@@ -36,13 +36,13 @@ label friend2_dpn_call:
 label friend2_car_ride_1:
     play music tuna_fish loop volume 0.6 if_changed
     music Tuna Fish - Dr. Awesome
-    scene black with fade
+    scene black with dissolve
     n "Meanwhile, Tate's group seems to be having the time of their life."
     scene jeep_inside_fg
     show drive_day behind jeep_inside_fg
     show mika at left
     show tate flipped at right
-    with fade
+    with dissolve
     tate "Road trip, let's goooo!"
     tate "Man, I can't believe CS didn't tell us! This is great!"
     mika "I know, right?"
@@ -60,7 +60,7 @@ label friend2_car_ride_1:
         show drive_day behind car_inside_fg
     show cs disappointed at left
     show pakoo at right
-    with fade
+    with dissolve
     cs "So, yeah, that's why I'm worried."
     show pakoo disappointed
     pakoo "Yeah, I getcha, I'm sur--{w=1.0}{nw}"
@@ -79,7 +79,7 @@ label friend2_car_ride_1:
     show drive_day behind jeep_inside_fg
     show mika at left
     show tate smug flipped at right
-    with fade
+    with dissolve
     tate "Haaahahaha-- {i}snort{/i}"
     kitty "Bloody hell!"
     mika "Geez, I didn't think it was {i}that{/i} bad."
@@ -103,7 +103,7 @@ label friend2_car_ride_1:
         show pakoo happy at right
     else:
         show pakoo at right
-    with fade
+    with dissolve
     pause 1.0
     arceus "Alright, well, it looks like Aria is gonna pick up Digi and Nova. They'll meet us here soon."
     cs "Wow, that was fast!"
@@ -113,7 +113,7 @@ label friend2_car_ride_1:
     arceus "Yeah, same."
     stop music fadeout 3.0
     music end
-    scene black with fade
+    scene black with dissolve
     n "A few hours pass and the DPN crew arrives at the S&P Diner. They chat as they wait to be served."
     jump friend2_dpn_diner
 
@@ -122,7 +122,7 @@ label friend2_dpn_diner:
     show digi at right
     show nova flipped at center
     show aria at left
-    with fade
+    with dissolve
     play music full_rulle_med_klas volume 0.5
     music Full Rulle Med Klas - Lizardking
     digi "Finally, we can stretch our legs again."
@@ -144,11 +144,11 @@ label friend2_dpn_diner:
     nova "They're gonna die."
     stop music fadeout 3.0
     music end
-    scene black with fade
+    scene black with dissolve
     scene aria_car_fg
     show drive_night behind aria_car_fg
     show aria at left
-    with fade
+    with dissolve
     pause 3.0
     n "As Aria approaches CS and the gang, they screech on the brakes as they almost run into a blockade."
     hide drive_night
@@ -160,7 +160,7 @@ label friend2_dpn_diner:
     scene cs_somewhere
     show cop dark at right
     show cop_2 at mid_right
-    with fade
+    with dissolve
     show aria dark at left with moveinleft
     aria_alt "Ah, great. What is this, now?"
     cop "Sorry, but a ragtag group of criminals is heading through this way. We need to stop them."
@@ -185,7 +185,7 @@ label friend2_dpn_diner:
 label friend2_cs_meetup:
     scene cs_somewhere 
     show aria dark flipped at right
-    with fade
+    with dissolve
     play music dense_woods_b volume 0.5
     n "After Aria takes care of the cops, CS and Tate's group rolls up on the other side of the blockade."
     show cs dark at center
@@ -202,7 +202,7 @@ label friend2_cs_meetup:
     tate "Good. The less cops, the better."
     aria_alt "Nova and Digi are at the diner up ahead. Let's move this blockade out of the way and get going."
     cs "Righty-o."
-    scene black with fade
+    scene black with dissolve
     n "CS, Aria, and Tate clear the road. The group then proceeds to follow Aria back to the diner."
     n "Meanwhile, back at the diner..."
     window hide
@@ -210,7 +210,7 @@ label friend2_cs_meetup:
     scene dinerinside
     show digi at center
     show nova flipped at left
-    with fade
+    with dissolve
     play music full_rulle_med_klas volume 0.5
     pause 2.0
     nova "They are so dead."
@@ -235,7 +235,7 @@ label friend2_cs_meetup_2:
     scene dinerinside
     show digi at center
     show nova flipped at left
-    with fade    
+    with dissolve    
     n "After the fight, the rest of the people in the diner flee from the scene."
     digi "Wow, holy shit, we did it!"
     nova "Welp, there goes all of my energy for the day."
@@ -262,7 +262,7 @@ label friend2_cs_meetup_2:
     music L.A. By Night - Dr. Awesome
     show cs dark flipped at right
     show arceus dark at mid_right
-    with fade
+    with dissolve
     show digi dark flipped at center
     show nova dark flipped at mid_left
     show aria dark at left
@@ -309,7 +309,7 @@ label friend2_cs_meetup_2:
         show drive_night behind car_inside_fg
     show cs disappointed at left
     show pakoo at right
-    with fade
+    with dissolve
     cs "I really don't have any idea of where to go. I'm just driving in a straight line."
     arceus "I would try to jam their signals, but I don't know where they are."
     arceus "I haven't seen Copguy since we fought him."
@@ -330,7 +330,7 @@ label friend2_car_ride_2:
     show drive_night behind jeep_inside_fg
     show mika at left
     show tate srs flipped at right
-    with fade
+    with dissolve
     tate "Man, I'm bored."
     mika "Yeah, what the hell! Where is this Copguy dude at?"
     kitty "What if he's preparing defenses to ambush us?"
@@ -345,7 +345,7 @@ label friend2_car_ride_2:
     show drive_night behind aria_car_fg
     show aria at left
     show digi at right
-    with fade
+    with dissolve
     digi "I can't believe CS went to jail."
     aria_alt "Arceus was in jail for five years, Digi."
     digi "Yeah, I know, but that's an Arceus thing to do."
@@ -359,7 +359,7 @@ label friend2_car_ride_2:
     digi "Aria, please. I'm legitimately worried about CS."
     aria_alt "He'll be fine, I'm sure this will be over soon."
     digi "Man, I just really hope so."
-    scene black with fade
+    scene black with dissolve
     pause 2.0
     if nice_car:
         scene joj_charger_fg
@@ -369,7 +369,7 @@ label friend2_car_ride_2:
         show drive_night behind car_inside_fg
     show cs at left
     show pakoo at right
-    with fade
+    with dissolve
     stop music fadeout 3.0
     music end
     cs "Well, should we find somewhere to stop for the night? We've been going for a while."
@@ -386,12 +386,12 @@ label friend2_car_ride_2:
     n "As CS looks ahead, he screeches on the brakes just in time."
     n "Barbed wire, soldiers, and military trucks block the highway, with Copguy standing in the front of it all."
     cs "This can't be good."
-    scene black with fade
+    scene black with dissolve
     n "The groups behind CS stop as well. Everyone gets out of their cars to approach Copguy."
     scene battle_block_without_theater
     show copguy dark at mid_right
     show guard_soldier at right
-    with fade
+    with dissolve
     show cs dark angry at center
     show tate srs dark at mid_left
     show arceus angry dark flipped at mid_left_left
@@ -578,7 +578,7 @@ label friend2_car_ride_3:
         show drive_night behind car_insidearc_fg
     show arceus flipped at left
     show pakoo at right
-    with fade
+    with dissolve
     play music the_whale loop volume 0.6
     music The Whale - Dr. Awesome
     n "While they are driving, Arceus notices that Copguy starts ludicrously speeding up until he stops in Illinois."
@@ -590,13 +590,13 @@ label friend2_car_ride_3:
     pakoo "Ah, shoot."
     cs "I'm gonna ping everyone in CSCord and see if anyone else is able to help us out."
     cs "We're gonna need it."
-    scene black with fade
+    scene black with dissolve
     pause 2.0
     scene aria_car_fg
     show drive_night behind aria_car_fg
     show aria at left
     show digi at right
-    with fade
+    with dissolve
     nova "So, I guess this is my night. I really need to catch up with music stuff when I get home."
     digi "Guys, I'm concerned that CS might actually be going insane."
     aria_alt "Digi, you didn't know that from the start?"
@@ -604,13 +604,13 @@ label friend2_car_ride_3:
     nova "Yeah? Well, let a man talk to the sky!"
     digi "But he was absolutely going insane!"
     aria_alt "Digi, you've gotta learn that the spectrum hits different for everyone."
-    scene black with fade
+    scene black with dissolve
     pause 2.0
     scene jeep_inside_fg
     show drive_night behind jeep_inside_fg
     show mika at left
     show tate flipped at right
-    with fade
+    with dissolve
     tate "So I went to Dollar Tree a couple days ago, right? Bought some of their off-brand snacks--"
     mika "I feel like only a few off-brands can taste well, but there are a few I just can't eat."
     tate "Saaaaame, which ones?"
@@ -623,7 +623,7 @@ label friend2_car_ride_3:
     n "They all laugh."
     stop music fadeout 3.0
     music end
-    scene black with fade
+    scene black with dissolve
     jump friend2_final_meetup
 
 label friend2_final_meetup:
@@ -635,15 +635,15 @@ label friend2_final_meetup:
         show final_destination behind car_insidearc_fg
     show arceus flipped at left
     show pakoo at right
-    with fade
+    with dissolve
     play music prophet_2001 loop volume 0.6
     music Prophet 2001 - Dr. Awesome
     arceus "Alright, we are here."
     pakoo "So, who is joining us to help fight Copguy?"
     cs "Let's go take a look."
-    scene black with fade
+    scene black with dissolve
     n "The teams leave their cars and meet up with one another."
-    scene final_destination with fade
+    scene final_destination with dissolve
     show cs at mid_left
     show arceus flipped at mid_offscreen_left behind cs
     with moveinleft
@@ -770,7 +770,7 @@ label friend2_weapon_of_choice:
 
 label friend2_car_slam:
     stop music fadeout 1.0
-    scene war_torn_1 with fade
+    scene war_torn_1 with dissolve
     n "CS looks around, taking in the destruction around him."
     n "The city that they once fought in has now been reduced to rubble and war-torn buildings."
     show cs worried flipped at right with moveinbottom
@@ -784,13 +784,13 @@ label friend2_car_slam:
     cs "I hope Copguy is dead. I am {i}definitely{/i} going to jail for this one if he's still alive!"
     n "CS continues to check on the others."
     hide cs with moveoutleft
-    scene black with fade
+    scene black with dissolve
     pause 1.0
     scene war_torn_2
     show tate at mid_left
     show mika at center
     show kitty flipped at right
-    with fade
+    with dissolve
     show tate shock
     tate "Y'all {i}see{/i} that shit?!"
     mika "CS crushed the whole city!"
@@ -801,13 +801,13 @@ label friend2_car_slam:
     cs "Better than ever! Although, that did wear me out quite a bit."
     cs "I'm gonna go see how the rest are doing."
     hide cs with moveoutleft
-    scene black with fade
+    scene black with dissolve
     pause 1.0
     scene war_torn_3
     show digi at center
     show nova at mid_right
     show aria at right
-    with fade
+    with dissolve
     show cs at left with moveinleft
     digi "Holy shit! CS! You're alive!"
     cs "Yeah! How about you guys?"
@@ -822,13 +822,13 @@ label friend2_car_slam:
     show cs
     cs "There is one last group to check on."
     hide cs with moveoutright
-    scene black with fade
+    scene black with dissolve
     pause 1.0
     scene war_torn_5
     show midge at mid_mid_left
     show anno at mid_mid_right
     show blank at right
-    with fade
+    with dissolve
     show cs at left with moveinleft
     cs "Hey, did DB ever make it to the fight?"
     anno "No... I never {i}saw{/i} him, at least."
@@ -841,9 +841,9 @@ label friend2_car_slam:
     cs "I wanna make sure Copguy is gone for real."
     cs "I'll be right back."
     hide cs with moveoutright
-    scene black with fade
+    scene black with dissolve
     pause 1.0
-    scene war_torn_4 with fade
+    scene war_torn_4 with dissolve
     show cs at left with moveinleft
     n "CS walks through the wastelands searching for anything reminiscent of Copguy."
     n "Eventually, he finds Copguy's wrecked cop car."

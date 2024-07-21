@@ -3,7 +3,7 @@ label true_east:
     show arceus
     arceus "Alright, that sounds like a good idea."
     n "CS and Arceus keep following the road for a while until they come across a small town."
-    scene town with fade
+    scene town with dissolve
     show cs at left with moveinleft
     show arceus at right with moveinright
     show cs happy
@@ -16,7 +16,7 @@ label true_east:
     hide cs with moveoutright
     show arceus flipped at right
     hide arceus with moveoutright
-    scene gasinside with fade
+    scene gasinside with dissolve
     show cs at left with moveinleft
     show arceus at right with moveinright
     arceus "Finally, some good fucking food."
@@ -40,7 +40,7 @@ label true_hotwire:
     show arceus at right
     cs "I don't know... We could just... hotwire a car?"
     arceus "I can probably do that. Let's go look."
-    scene gasoutside with fade
+    scene gasoutside with dissolve
     show cs at left with moveinleft
     show arceus at right with moveinright
     n "CS and Arceus approach one of the cars in front of the gas station."
@@ -64,7 +64,7 @@ label true_hotwire:
 label true_billy_driver:
     cs "Why don't we just wait for someone at the gas station to come out, and then we ask them for a ride?"
     n "CS walks over to someone's car parked in the front of the gas station."
-    scene gasoutside with fade
+    scene gasoutside with dissolve
     show cs at left with moveinleft
     show arceus worried at right with moveinright
     arceus "Are you crazy? To drive all the way back to New York, in a stranger's car, at that?"
@@ -131,7 +131,7 @@ label true_in_billy_car:
 label true_montana:
     scene car background
     show billy car
-    with fade
+    with dissolve
     play music weird_personalities volume 0.6
     music Weird Personalities - Lizardking
     if fun_value(FUN_VALUE_MUSIC):
@@ -166,7 +166,7 @@ label true_montana:
     cs "Same, I'll come with you."
     n "Arceus goes back to sleep in the car."
     play sound sfx_doorslam
-    scene hardwareinside with fade
+    scene hardwareinside with dissolve
     play music home_depot volume 0.4
     music "Let's Do This - Home Depot"
     show cs at left with moveinleft
@@ -217,7 +217,7 @@ label true_montana:
     play sound sfx_doorslam
     scene hardwareoutside
     show billy car
-    with fade
+    with dissolve
     billy "That was quite the experience. I should've brought my Hercules Hook!"
     cs "Yeah, really, let's get out of here!"
     arceus "Huh? What's going on?"
@@ -226,7 +226,7 @@ label true_montana:
     n "Billy takes off out of the parking lot."
     scene car background night
     show billy car
-    with fade
+    with dissolve
     cs "Man, today was also pretty crazy."
     arceus "Yeah, at least I got some sleep after all of it."
     cs "Speaking of which, can we find a place to rest soon?"
@@ -258,7 +258,7 @@ label true_montana:
     cultist "You two, as well. Out."
     n "CS and Arceus both step out of the car."
     hide cultist with moveoutright
-    hide billy car with fade
+    hide billy car with dissolve
     show billy at mid_mid_left
     show cs disappointed at mid_left
     show arceus worried flipped at left
@@ -382,10 +382,10 @@ label true_montana:
     music end
     scene car background night
     show billy car
-    with fade
+    with dissolve
     n "The gang gets back in the car and books it out of the forest."
     n "After a while, Billy pulls the car into a small area at the edge of the forest to let everyone rest."
-    scene black with fade
+    scene black with dissolve
     if fun_value(FUN_VALUE_MUSIC):
         n "The night passes, then they set off, passing by Mort's farm."
     else:
@@ -410,17 +410,17 @@ label true_montana:
     cashier "That'll be about, let's see..."
     cashier "$36.88."
     billy "Wow! What a deal! I'm coming around to pick up my order!"
-    scene black with fade
+    scene black with dissolve
     n "Billy drives through and picks up everyone's meals."
     scene mcdees
     show billy car
-    with fade
+    with dissolve
     n "CS and Arceus happily chow down on the Mickey D's they just got."
     arceus "Thank God for that."
     cs "I have never been so excited to get a Big Mac."
     scene car plains
     show billy car
-    with fade
+    with dissolve
     n "Billy heads out on the open road again as they enter the state of South Dakota."
     jump true_south_dakota
 
@@ -434,9 +434,9 @@ label true_south_dakota:
     cs "Is there anything to do in this state?"
     arceus "There's Mount Rushmore, I guess there's Wall Dr--{w=0.5}"
     cs "Oh, hell yeah! Let's go to Mount Rushmore!"
-    scene black with fade
+    scene black with dissolve
     n "About an hour later, the crew arrives at Mount Rushmore."
-    scene rushmore with fade
+    scene rushmore with dissolve
     n "They all hike up to the viewing spot to get a good look at the founding fathers."
     play music taiikusai_desu_yo volume 0.4
     music Taiikusai Desu Yo - Satoru Kosaki
@@ -484,7 +484,7 @@ label true_south_dakota:
     n "The gang gets back in the car before the overwhelming crowd of people engulfs the site after what just happened."
     scene car plains
     show billy car
-    with fade
+    with dissolve
     if fun_value(FUN_VALUE_MUSIC):
         n "They continue to drive on Track 4 through the massive and empty plains of South Dakota."
     else:
@@ -504,7 +504,7 @@ label true_south_dakota:
 label true_nebraska:
     scene omaha
     show billy car
-    with fade
+    with dissolve
     if fun_value(FUN_VALUE_COMMON):
         n "The gang finally hits Nebraskaska right before sundown."
     else:
@@ -567,7 +567,7 @@ label true_nebraska:
     hide billy
     hide arceus
     with easeoutright
-    scene alleyway with fade
+    scene alleyway with dissolve
     show pakoo flipped at center
     show billy at right
     show cs at left
@@ -578,7 +578,7 @@ label true_nebraska:
     pakoo "At least, that I know of."
     scene peppinopizzabg
     show peppinopizzafg
-    with fade   
+    with dissolve   
     play music funiculi_holiday volume 0.3
     music Funiculi Holiday - ClascyJitto
     show peppino at t_pepzone1 behind peppinopizzafg with moveinleft
@@ -616,7 +616,7 @@ label true_nebraska:
     show cs happy
     cs "Yep! Take care, Pakoo!"
     hide pakoo with moveoutleft
-    scene black with fade
+    scene black with dissolve
     stop music fadeout 3.0
     music end
     n "The gang heads to the backroom area to rest for the night."
@@ -626,7 +626,7 @@ label true_nebraska:
 label true_iowa:
     scene car plains
     show billy car
-    with fade 
+    with dissolve 
     n "They get back in car and continue into Iowa."
     billy "Alright, well, ever since that cult encounter, it's been pretty smooth sailing!"
     billy "The rest of this trip shouldn't be too long!"
@@ -664,7 +664,7 @@ label true_after_ufo:
     n "They continue driving through to the end of the Midwest."
     scene car plains night
     show billy car
-    with fade
+    with dissolve
     n "As they are traveling through Illinois, they pass by Chicago."
     arceus "One day, I'm gonna rule that place."
     cs "What are you... talking about?"
@@ -679,7 +679,7 @@ label true_ohio:
     if fun_value(FUN_VALUE_EPIC):
         scene car plains
         show billy car
-        with fade
+        with dissolve
         if fun_value(FUN_VALUE_MUSIC):
             n "After that fiasco, they continue their trip, breaking out of Indiana and soon passing through Ohio."
         else:
@@ -695,7 +695,7 @@ label true_ohio:
         scene wozniaktroubles
         show billy car
         show scott_border
-        with fade
+        with dissolve
         n "As they are driving through the state, they see some men on the side of road protesting the blue border."
         play sound sfx_roll_window volume 0.7
         scott "Hey all, Scott here!"
@@ -709,7 +709,7 @@ label true_ohio:
         scene car plains
         show billy car
         show scott_border
-        with fade
+        with dissolve
         n "Once they leave the state, the border goes away."
         stop music fadeout 3.0
         music end
@@ -718,7 +718,7 @@ label true_ohio:
     else:
         scene car plains
         show billy car
-        with fade
+        with dissolve
         if fun_value(FUN_VALUE_MUSIC):
             n "After that fiasco, they continue their trip, breaking out of Indiana and soon passing through Ohio."
         else:
@@ -734,7 +734,7 @@ label true_ohio:
         scene wozniaktroubles
         show billy car
         show scott_border
-        with fade
+        with dissolve
         n "As they are driving through the state, they see some men on the side of road protesting the blue border."
         play sound sfx_roll_window volume 0.7
         billy "Hi, it's Billy!"
@@ -748,7 +748,7 @@ label true_ohio:
         scene car plains
         show billy car
         show scott_border
-        with fade
+        with dissolve
         n "Once they leave the state, the border goes away."
         stop music fadeout 3.0
         music end
@@ -772,7 +772,7 @@ label true_pennsylvania:
     pause 3.0
     arceus "Fine, sure, whatever."
     cs "Woohoo! Let's go!"
-    scene cc_parking_lot with fade
+    scene cc_parking_lot with dissolve
     show cs at left
     show arceus flipped at mid_left
     show billy at center
@@ -875,14 +875,14 @@ label true_pennsylvania:
     cs "You as well!"
     stop music fadeout 3.0
     music end
-    scene black with fade
+    scene black with dissolve
     n "After a grueling competition, CS climbs his way up to the top of the bracket!"
     scene black
     show stage_screen as stage_screen_l at t_stage_screen_l
     show con_screen at t_stage_screen_c
     show stage_screen as stage_screen_r at t_stage_screen_r
     show cc_stage
-    with fade
+    with dissolve
     show cs at left with moveinleft
     cs "Well, I've made it this far. I guess it's just me versus Digi now..."
     show digi at right with moveinright
@@ -1027,7 +1027,7 @@ label true_win_pencil:
     show cs flipped at right
     show arceus at mid_right
     show billy at center
-    with fade
+    with dissolve
     show digi flipped at left with moveinleft
     n "Digi runs up to the group."
     digi "Hey, uh, can I get a ride?"
@@ -1056,7 +1056,7 @@ label true_win_pencil:
 
 label true_back_home:
     stop music2
-    scene cs_house with fade
+    scene cs_house with dissolve
     play music park_theme volume 0.5
     music Park Theme - Lorin Nelson
     n "After the long and treacherous journey, CS finally arrives at his house."
@@ -1291,7 +1291,7 @@ label true_talktohohsis:
 label true_ending:
     stop music
     n "CS looks over at his desk, where a new computer is sitting."
-    scene cs_room_2 with fade
+    scene cs_room_2 with dissolve
     n "CS looks at the monitor, which has a sticky note that says \"From LTT\"."
     show cs happy at mid_left with moveinleft
     cs "Oh my goodness, Linus got me a new PC!"
@@ -1322,7 +1322,7 @@ label true_streaming:
         $ achievement_manager.unlock("All Over Again")
     else:
         $ achievement_manager.unlock("That's All, Folks!")
-    scene black with fade
+    scene black with dissolve
     stop music2 fadeout 1.0
     $ ending_manager.mark("true")
     $ renpy.movie_cutscene("movies/credits.webm")
@@ -1338,7 +1338,7 @@ label true_streaming:
 label true_ytp_ending:
     stop music
     n "CS looks over at his desk, where his old computer is sitting."
-    scene cs_room_2 with fade
+    scene cs_room_2 with dissolve
     show cs at mid_left
     cs "Oh yeah, I forgot I actually have a computer that's not a craptop."
     cs "Before I head off for the night, I'll do a stream real quick."
@@ -1350,7 +1350,7 @@ label true_ytp_ending:
     cs "Well, guys..."
     n "CS chuckles."
     cs "It's a long story..."
-    scene black with fade
+    scene black with dissolve
     stop music2 fadeout 1.0   
     $ renpy.movie_cutscene("movies/credits.webm")
     $ renpy.end_replay()
@@ -1359,7 +1359,7 @@ label true_ytp_ending:
 label true_ltt_ending:
     stop music
     n "CS looks over at his desk, where a new computer is sitting."
-    scene cs_room_2 with fade
+    scene cs_room_2 with dissolve
     n "CS looks at the monitor, which has a sticky note that says \"From LTT\"."
     show cs happy at mid_left with moveinleft
     cs "Oh my goodness, Linus got me a new PC!"
@@ -1374,7 +1374,7 @@ label true_ltt_ending:
     show cs at mid_left
     cs "Well, guys..."
     cs "It's a long story..."
-    scene black with fade
+    scene black with dissolve
     stop music2 fadeout 1.0   
     $ renpy.movie_cutscene("movies/credits.webm")
     $ renpy.end_replay()
@@ -1485,7 +1485,7 @@ label true_copsathohsis:
     cs "Welp. That was easy."
     cs "Finally, I can rest at home."
     n "CS walks up to his house and enters."
-    scene cs_room with fade
+    scene cs_room with dissolve
     show cs at center with moveinleft
     cs "Ah, it's good to be home again!"
     jump true_ending

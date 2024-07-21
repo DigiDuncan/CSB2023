@@ -1,5 +1,5 @@
 label secret_dx:
-    scene black with fade
+    scene black with dissolve
     play music space_classroom
     show digi at center with Dissolve(3)
     digi "Oh, hi."
@@ -17,7 +17,7 @@ label secret_dx:
     return
 
 label secret_dx2:
-    scene black with fade
+    scene black with dissolve
     play music space_classroom
     show pakoo at center with Dissolve(3)
     pakoo "Okay, that was funny, but that's my joke."
@@ -30,7 +30,7 @@ label secret_dx2:
 # THESE ARE LEFT HERE AS A WAT TO REMEMBER THE OLD SECRET SCREENS
 
 # label secret:
-#     scene black with fade
+#     scene black with dissolve
 #     play music "secret/space_classroom.ogg"
 #     show digi at center with Dissolve(3)
 #     digi "Oh, hi."
@@ -48,7 +48,7 @@ label secret_dx2:
 #     return
 
 # label secret2:
-#     scene black with fade
+#     scene black with dissolve
 #     play music "secret/space_classroom.ogg"
 #     show digi at center with Dissolve(3)
 #     digi "Oh, again?"
@@ -71,7 +71,7 @@ label secret_dx2:
 #     return
 
 # label secret3:
-#     scene black with fade
+#     scene black with dissolve
 #     play music "secret/space_classroom.ogg"
 #     show digi at center with Dissolve(3)
 #     digi "Oh, again?"

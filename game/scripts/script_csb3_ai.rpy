@@ -1,5 +1,5 @@
 label csbiii_ai:
-    scene linusmedia with fade
+    scene linusmedia with dissolve
     show cs at left with moveinleft
     play music school volume 0.4
     music School - Toby Fox
@@ -27,7 +27,7 @@ label csbiii_ai:
     linus "CS, I can't believe it. Your hairdryer solution is... actually genius."
     scene linusmedia
     show cs happy at left
-    with fade
+    with dissolve
     cs "That's how we do things in CS188 style, Linus! Unconventional, unpredictable, but effective."
     n "The team erupts into laughter and applause as the gaming PC's temperatures stabilize."
     show linus at right with moveinright
@@ -46,19 +46,19 @@ label csbiii_ai:
     show cs flipped with determination
     hide cs with moveoutleft
     hide arceus with moveoutleft
-    scene entertunnel with fade
+    scene entertunnel with dissolve
     show cs at left with moveinleft
     show arceus at right with moveinright
     play music cliffs volume 0.4
     music Cliffs - Toby Fox
     n "CS188 and Arceus dash to a hidden panel on the floor, revealing a concealed entrance to the escape tunnel."
-    scene secrettunnel with fade
+    scene secrettunnel with dissolve
     show cs at left with moveinleft
     show arceus at right with moveinright
     n "CS188 and Arceus crawl through the dimly lit tunnel, their heartbeats echoing."
     arceus "CS, do you even know where this tunnel leads?"
     cs "Not a clue, my foxy friend! But that's what makes it an adventure, right?"
-    scene park1 with fade
+    scene park1 with dissolve
     show cs at left with moveinbottom
     show arceus at right with moveinbottom
     play music circus volume 0.4
@@ -70,14 +70,14 @@ label csbiii_ai:
     hide cs with moveoutright
     show arceus flipped with determination
     hide arceus with moveoutright
-    scene park2 with fade
+    scene park2 with dissolve
     show cs at left with moveinleft
     show arceus flipped at right with moveinleft
     n "CS188 and Arceus start exploring the amusement park, hiding among the dilapidated rides and attractions while evading the pursuing cops."
     hide cs with moveoutright
     show arceus flipped with determination
     hide arceus with moveoutright
-    scene carousel with fade
+    scene carousel with dissolve
     show cs at left with moveinleft
     show arceus at right with moveinright
     n "CS188 and Arceus duck behind a broken carousel as the cops pass by."
@@ -115,7 +115,7 @@ label csbiii_ai:
     show arceus at offscreenright with determination
     show arceus at offscreenleft
     with MoveTransition(0.5)
-    scene park2 with fade
+    scene park2 with dissolve
     show cs flipped at left with moveinright
     show arceus at right with moveinright
     show cs
@@ -126,7 +126,7 @@ label csbiii_ai:
     show cs happy
     cs "We sure did, buddy. Another adventure for the books!"
     play music friendship volume 0.4
-    scene endingai with Fade(1.0, 1.0, 1.0)
+    scene endingai with dissolve(1.0, 1.0, 1.0)
     music Friendship - Toby Fox
     n "CS188 and Arceus exchange a high-five and disappear into the distance, ready for their next escapade."
     "ChatGPT" "Note: The script is a fictional representation and does not reflect the actual personalities or actions of CS188 or any real-life individuals."

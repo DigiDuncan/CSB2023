@@ -18,7 +18,7 @@ label e2:
     cs "Eh, maybe tomorrow."
     pause 1.0
     cs "Actually, maybe I should."
-    scene black with fade
+    scene black with dissolve
     stop music fadeout 3.0
     music end
     n "CS takes off and heads to Rosen's house."
@@ -29,7 +29,7 @@ label e3:
     scene cs_room
     show cs angry
     show oldgame
-    with fade
+    with dissolve
     pause 3.0
     play sound sfx_page volume 5
     hide oldgame
@@ -65,7 +65,7 @@ label e3_rosen:
     scene rosen_abode
     show csgod at offscreenright
     show michael at left
-    with fade
+    with dissolve
     show cs flipped angry at right with moveinright
     cs "Tell me the rest of the story!"
     michael "What?"
@@ -106,7 +106,7 @@ label after_error_fight:
     scene rosen_abode
     show pakoo disappointed flipped at left
     show cs angry flipped at right
-    with fade
+    with dissolve
     pakoo "Goodbye."
     hide cs with dissolve
     pause 5.0

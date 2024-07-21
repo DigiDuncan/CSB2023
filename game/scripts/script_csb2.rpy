@@ -137,8 +137,8 @@ label csbii_special:
     hide cs with moveoutleft
     stop music fadeout 3.0
     music end
-    scene black with fade
-    scene hoh_hq with fade
+    scene black with dissolve
+    scene hoh_hq with dissolve
     show cs at left with moveinleft
     n "As CS makes to leave the building, the cops come rushing in."
     play sound sfx_siren loop
@@ -156,12 +156,12 @@ label csbii_special:
     hide cs
     hide copguy
     with moveoutleft
-    scene black with fade
+    scene black with dissolve
     jump csbii_questioning
 
 # Questioning
 label csbii_questioning:
-    scene question with fade
+    scene question with dissolve
     play music card_castle volume 0.5
     music Card Castle - Toby Fox
     show cs disappointed at left with moveinleft
@@ -192,12 +192,12 @@ label csbii_questioning:
     with moveoutright
     stop music fadeout 3.0
     music end
-    scene black with fade
+    scene black with dissolve
     jump csbii_asylum
 
 # Asylum
 label csbii_asylum:
-    scene asylum with fade
+    scene asylum with dissolve
     play music basement volume 0.5
     music Basement - Toby Fox
     show cs insane worried flipped at left with moveinright
@@ -272,13 +272,13 @@ label csbii_caught:
     music end
     n "As CS is not actually the speedy Michael Rosen, he is quickly apprehended by the police."
     stop sound fadeout 1.0
-    scene black with fade
+    scene black with dissolve
     jump csbii_jail
 
 label csbii_jail:
     stop music fadeout 3.0
     music end
-    scene jail_inside with fade
+    scene jail_inside with dissolve
     show cs prison at offscreenleft
     show copguy at offscreenright
     with determination
@@ -348,7 +348,7 @@ label csbii_breakout:
     cs "You kidding me? I'm gonna shit myself, 'cause this is scary as hell."
     arceus "Fair enough."
     hide screen dxcom
-    scene black with fade
+    scene black with dissolve
 
     stop music fadeout 3.0
     music end
@@ -378,7 +378,7 @@ label csbii_breakout:
     n "In the dark of night, the three begin chipping away at their cell floor."
     n "Upon breaking through, they set up makeshift dummies in their beds with their prison jumpsuits, then don their acquired guard uniforms."
 
-    scene tunnel with fade
+    scene tunnel with dissolve
     # If anyone asks, Arceus is part god and can dig really easily, I guess.
 
     n "They begin digging quickly, putting distance between themselves and their cells."
@@ -411,7 +411,7 @@ label csbii_breakout:
     jump csbii_bordercrossing
 
 label csbii_bordercrossing:
-    scene border with fade
+    scene border with dissolve
     play music onett volume 0.6
     music Onett Theme - Keiichi Suzuki
     if fun_value(FUN_VALUE_MUSIC):
@@ -430,7 +430,7 @@ label csbii_bordercrossing:
     arceus "Colour is spelled with a u, eh."
     border_guard "Works for me, eh."
 
-    scene canada with fade 
+    scene canada with dissolve 
     n "Some time passes as the party ventures forth into the land of Canada."
     cs "Arceus, can we stop somewhere? I'm getting hungry."
     anno "Yeah, we've been walking for miles now."
@@ -454,7 +454,7 @@ label csbii_bordercrossing:
 
     scene outside_tim_hortons
     show cs disappointed at left
-    with fade
+    with dissolve
     cs "I'm starving after all that walking. I need a donut."
     show cs at offscreenright with move
     show arceus flipped at offscreenright with moveinleft
@@ -465,7 +465,7 @@ label csbii_bordercrossing:
     scene inside_tim_hortons
     show cashier at t_cashier_at_tims
     show inside_tim_hortons_fg
-    with fade
+    with dissolve
     play music buy_something volume 0.6
     music Buy Something Will Ya! - Keiichi Suzuki
     show cs at right with moveinleft
@@ -522,7 +522,7 @@ label csbii_bordercrossing:
     show cs
     show anno at left
     show arceus at right
-    with fade
+    with dissolve
 
     n "CS, Arceus, and Anno enjoy some well-deserved donuts."
     show arceus worried
@@ -538,14 +538,14 @@ label csbii_bordercrossing:
     stop music fadeout 3.0
     music end
 
-    scene black with fade
+    scene black with dissolve
     n "CS walks into the studio to ask for a job."
     jump csbii_ltt
 
 label csbii_ltt:
     scene inside_ltt
     show linus
-    with fade
+    with dissolve
     if fun_value(FUN_VALUE_RARE):
         play music passport_ytp volume 0.5
     else:
@@ -617,10 +617,10 @@ label csbii_ltt:
     cs "What did you do?"
     arceus "Don't worry about it. Just have them look you up."
 
-    scene black with fade
+    scene black with dissolve
     scene inside_ltt
     show linus
-    with fade
+    with dissolve
     if fun_value(FUN_VALUE_EPIC):
         show passportdigi with dissolve
     else:
@@ -635,7 +635,7 @@ label csbii_ltt:
     show inside_tim_hortons_fg
     show anno at right
     show arceus flipped at left
-    with fade
+    with dissolve
     if fun_value(FUN_VALUE_EPIC):
         show passportdigi with dissolve
     else:
@@ -655,5 +655,5 @@ label csbii_ltt:
 
     $ achievement_manager.unlock("Welcome to CSBIII, Mother Fucker")
 
-    scene black with fade
+    scene black with dissolve
     jump csbiii_start

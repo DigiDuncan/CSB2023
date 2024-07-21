@@ -45,7 +45,7 @@ label kuwait_travel:
     music end
     scene airplane_seats
     show cs at left
-    with fade
+    with dissolve
     n "CS gets himself comfortable and tries to not think about the cops."
     cs "Whew! What a day."
     cs "I really hope this works out. I don't think I have enough to travel again after this."
@@ -101,7 +101,7 @@ label kuwait_hospital:
     scene kuwait_hospital_inside 
     show kuwait_doctor_1 at right
     show kuwait_nurse_1 at left
-    with Fade(0, 0, 5)
+    with dissolve(0, 0, 5)
     k_nurse "Doctor, doctor! He's waking up!"
     k_doctor "Ah, it's about time. Welcome back to the land of the living."
     k_doctor "Will you shut that damn thing off?"
