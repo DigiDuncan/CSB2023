@@ -617,8 +617,13 @@ label friend2_car_ride_3:
     mika "Usually the off-brand Cheez-its, but I really don't like the off-brand Goldfish either."
     show tate shock flipped
     tate "Wait, you don't like Gold Whales?! I {i}love{/i} those!"
-    show tate flipped
+    show tate sheepish flipped
+    
+    if fun_value(FUN_VALUE_UNOBTRUSIVE):
+        tate "{size=-12}I even brought extras to share..."
+
     mika "Well, I just don't like them too much."
+    show tate flipped
     kitty "{image=note_small1.png}{i} The snack that breaks your back: {w=0.25}Gold Whales!{/i} {image=note_small2.png}"
     n "They all laugh."
     stop music fadeout 3.0

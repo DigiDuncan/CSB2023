@@ -21,10 +21,10 @@ init python:
     #Replay_items.append(ReplayItem(["the thumbnail"], "the_label_from_code", "brief description"))
     Minigame_items = []
     Minigame_items.append(MinigameItem(["EditGame"], "play_edit_game", "{outlinecolor=#000000}{color=#EA71FF}Editing Game{/color}{/outlinecolor}"))
-    Minigame_items.append(MinigameItem(["CarGame"], "play_car_game", "{outlinecolor=#000000}{color=#244BB2}Car Game{/color}{/outlinecolor}"))
-    Minigame_items.append(MinigameItem(["PencilGame"], "play_pencil_game", "{outlinecolor=#000000}{color=#F6C715}Pencil Game{/color}{/outlinecolor}"))
-    Minigame_items.append(MinigameItem(["SlotsGame"], "play_slots_game", "{outlinecolor=#000000}{color=#00FF00}Slots Game{/color}{/outlinecolor}"))
-    Minigame_items.append(MinigameItem(["Pencil2Game"], "play_pencil2_game", "{outlinecolor=#000000}{color=#B90EEA}Pencil Game 2{/color}{/outlinecolor}"))
+    Minigame_items.append(MinigameItem(["CarGame"], "play_car_game", "{outlinecolor=#000000}{color=#D4FF43}Car Game{/color}{/outlinecolor}"))
+    Minigame_items.append(MinigameItem(["PencilGame"], "play_pencil_game", "{outlinecolor=#000000}{color=#FFCA00}Pencil Game{/color}{/outlinecolor}"))
+    Minigame_items.append(MinigameItem(["SlotsGame"], "play_slots_game", "{outlinecolor=#000000}{color=#518EFF}Slots Game{/color}{/outlinecolor}"))
+    Minigame_items.append(MinigameItem(["Pencil2Game"], "play_pencil2_game", "{outlinecolor=#000000}{color=#FF7E7E}Pencil Game 2{/color}{/outlinecolor}"))
 
 #the locked image for the replay gallery if you're using the gallery you can use the same (if you want to)
 image replay_locked = "images/replay/replay_lock.jpg"

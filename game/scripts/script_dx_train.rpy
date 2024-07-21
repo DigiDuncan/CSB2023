@@ -1969,7 +1969,7 @@ label train_confront_lupin:
     show tate sheepish
 
     if fun_value(FUN_VALUE_UNOBTRUSIVE):
-        tate "He's on 'doodie', alright..."
+        tate "He's on \"doodie\", alright..."
     else:
         tate "He's... a little busy."
 
@@ -1983,7 +1983,7 @@ label train_confront_lupin:
     mean "I can't start work without my hat!"
     show arceus worried
     arceus "What's so special about the hat?"
-    cs "And isn't our money a little more important than your hat?"
+    cs "And, isn't our money a little more important than your hat?"
     show mean worried
     show cs disappointed flipped
     mean "Nah, you don't understand."
@@ -1994,7 +1994,7 @@ label train_confront_lupin:
     show mean unamused
     mean "I'm spiky. I need a hat that'll hold up."
     show arceus angry
-    arceus "That {i}still{/i} doesn't explain why you can't work without it."
+    arceus "That {i}still{/i} doesn't explain why you can't work without it!"
     show mean angry
 
     if fun_value(FUN_VALUE_COMMON):
