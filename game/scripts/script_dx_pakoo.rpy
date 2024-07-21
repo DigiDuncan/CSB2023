@@ -746,14 +746,14 @@ label dx_after_quiz_finish:
     cs "As long as you didn't remove my frontal lobe or something, that's all that matters."
     l_cultist "Well, we should gather up your votes."
     l_cultist "It looks like you got..."
-    l_cultist "[votes] votes."
-    if votes == 0:
+    l_cultist "[lunatic_votes] votes."
+    if lunatic_votes == 0:
         jump dx_after_zero_right
-    if votes == 3:
+    if lunatic_votes == 3:
         jump dx_after_one_right
-    if votes == 7:
+    if lunatic_votes == 7:
         jump dx_after_two_right
-    if votes == 10:
+    if lunatic_votes == 10:
         jump dx_after_three_right
     else:
         jump secret_dx

@@ -604,57 +604,57 @@ label friend_fire_range:
     window hide
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound sfx_hks1 loop
+    play sound sfx_hks1 
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound sfx_hks2 loop
+    play sound sfx_hks2 
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound sfx_hks1 loop
+    play sound sfx_hks1 
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound sfx_hks3 loop
+    play sound sfx_hks3 
     pause 0.5
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound sfx_hks2 loop
+    play sound sfx_hks2 
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound sfx_hks1 loop
+    play sound sfx_hks1 
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound sfx_hks3 loop
+    play sound sfx_hks3 
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound sfx_hks2 loop
+    play sound sfx_hks2 
     show m4 at left with determination    
     pause 1.0
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound sfx_hks2 loop
+    play sound sfx_hks2 
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound sfx_hks1 loop
+    play sound sfx_hks1 
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound sfx_hks3 loop
+    play sound sfx_hks3 
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound sfx_hks2 loop
+    play sound sfx_hks2 
     show m4 at left with determination    
     pause 1.0
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound sfx_hks2 loop
+    play sound sfx_hks2
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound sfx_hks1 loop
+    play sound sfx_hks1
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound sfx_hks3 loop
+    play sound sfx_hks3
     show m4 at left with determination
     show m4 fire at left with determination
-    play sound sfx_hks2 loop
+    play sound sfx_hks2
     show m4 at left with determination    
     pause 1.0
     window show
@@ -939,7 +939,7 @@ label friend_cool_car:
     pause 0.5
     show m4 flipped at center with determination
     show m4 fire flipped at center with determination
-    play sound sfx_hks2 loop
+    play sound sfx_hks2
     show m4 flipped at center with determination
     pause 0.5
     cs "Make me!"
@@ -990,12 +990,12 @@ label friend_reg_car:
     show cs angry flipped
     show m4 flipped at center with determination
     show m4 fire flipped at center with determination
-    play sound sfx_hks2 loop
+    play sound sfx_hks2
     show m4 flipped at center with determination 
     pause 0.5
     show m4 flipped at center with determination
     show m4 fire flipped at center with determination
-    play sound sfx_hks2 loop
+    play sound sfx_hks2
     show m4 flipped at center with determination
     pause 0.5
     cs "Make me!"
