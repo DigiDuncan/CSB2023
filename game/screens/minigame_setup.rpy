@@ -24,7 +24,7 @@ init python:
     Minigame_items.append(MinigameItem(["CarGame"], "play_car_game", "{outlinecolor=#000000}{color=#244BB2}Car Game{/color}{/outlinecolor}"))
     Minigame_items.append(MinigameItem(["PencilGame"], "play_pencil_game", "{outlinecolor=#000000}{color=#F6C715}Pencil Game{/color}{/outlinecolor}"))
     Minigame_items.append(MinigameItem(["SlotsGame"], "play_slots_game", "{outlinecolor=#000000}{color=#00FF00}Slots Game{/color}{/outlinecolor}"))
-
+    Minigame_items.append(MinigameItem(["Pencil2Game"], "play_pencil2_game", "{outlinecolor=#000000}{color=#B90EEA}Pencil Game 2{/color}{/outlinecolor}"))
 
 #the locked image for the replay gallery if you're using the gallery you can use the same (if you want to)
 image replay_locked = "images/replay/replay_lock.jpg"
@@ -35,3 +35,4 @@ image EditGame = ("images/replay/edit_game.png")
 image CarGame = ("images/replay/car_game.png")
 image PencilGame = ("images/replay/pencil_game.png")
 image SlotsGame = ("images/replay/slots_game.png")
+image Pencil2Game = ("images/replay/pencil2_game.png")

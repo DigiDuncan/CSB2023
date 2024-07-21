@@ -541,7 +541,7 @@ label dx_after_pencil_ask:
     pencil "Well aren't you cocky? Let's see this then!"
     pencil "3, 2, 1,"
     pencil "Go!"
-    minigame "play_pencilgame2" "dx_after_win_pencil2" "lose_pencil_game2"
+    minigame "play_pencil2_game" "dx_after_win_pencil2" "lose_pencil_game2"
 
     label dx_after_win_pencil2:
     hide bad_end_screen
