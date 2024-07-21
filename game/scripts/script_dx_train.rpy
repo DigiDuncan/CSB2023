@@ -365,7 +365,7 @@ label train_story_begin:
     
     # mean wanted this
     if fun_value(FUN_VALUE_COMMON):
-        $ polar_express_fun_value = True
+        $ train_polar_express_fun_value = True
         show arceus 
         arceus "Have you ever seen {i}The Polar Express?"
         show cs disappointed
@@ -482,7 +482,7 @@ label train_story_begin:
     amtrak_conductor "Yeah, well, {i}don't."
     amtrak_conductor "Or we'll leave {i}both{/i} of you at the next station."
 
-    if polar_express_fun_value == True:
+    if train_polar_express_fun_value == True:
         show arceus flipped
         arceus "I told you!"
         show arceus worried flipped
