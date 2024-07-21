@@ -159,7 +159,6 @@ label michigan_bronson:
     show copguyexe with dissolve
     scene white with dissolve
     pause 1.0
-    music Prophet ERROR - Pakoo
     jump rpg_bronsonbattle
 
 label michigan_bronson_win:

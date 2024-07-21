@@ -1,4 +1,7 @@
-# TODO: battles do not automatically register songs in jukebox!
+# IMPORTANT!
+# You no longer need to manually register battle music in the jukebox before jumping to the battle's label.
+# Just define it here with the filename and in music_map.
+# As long as both steps are done, battle music will be registered in jukebox automatically.
 
 label rpg_test:
     rpg:
@@ -83,7 +86,7 @@ label rpg_cop_fight_3:
         scale 1.0
         on_win "friend2_cs_meetup"
         on_lose "rpg_cop_fight_3"
-        intro_text "The cops have formed a barricade!"
+        intro_text "The cops ready their pistols!"
 
 label rpg_cop_fight_4:
     rpg:
@@ -97,7 +100,7 @@ label rpg_cop_fight_4:
         scale 1.0
         on_win "friend2_cs_meetup_2"
         on_lose "rpg_cop_fight_4"
-        intro_text "The cops are suspcious of you!"
+        intro_text "The cops are suspicious of you!"
 
 label rpg_ng_fight:
     $ ng_fighters = ["CS_NG", "ARCEUS", "PAKOO", "MIKA", "KITTY", "TATE", "ARIA", "DIGI", "NOVA", "NONE"]
@@ -127,7 +130,7 @@ label rpg_ng_fight:
         scale 1.7
         on_win "friend2_cs_rage"
         on_lose "rpg_ng_fight"
-        intro_text "Copguy blocks the way!"
+        intro_text "The National Guard has crosshairs on you!"
 
 label rpg_final_fight_1:
     $ final_fighters_1 = ["CS_STRONG", "ARCEUS", "PAKOO", "MIKA", "KITTY", "TATE", "ARIA", "DIGI", "NOVA", "BLANK", "MIDGE", "ANNO", "NONE"]
@@ -157,7 +160,7 @@ label rpg_final_fight_1:
         scale 1.75
         on_win "friend2_between_1"
         on_lose "rpg_final_fight_1"
-        intro_text "The soldiers prepare to fire!"
+        intro_text "Reinforcements have arrived!"
 
 label rpg_final_fight_2:
     $ final_fighters_2 = ["CS_STRONG", "ARCEUS", "PAKOO", "MIKA", "KITTY", "TATE", "ARIA", "DIGI", "NOVA", "BLANK", "MIDGE", "ANNO", "NONE"]
@@ -186,7 +189,7 @@ label rpg_final_fight_2:
         scale 2.0
         on_win "friend2_between_2"
         on_lose "rpg_final_fight_1"
-        intro_text "The soldiers called in reinforcements!"
+        intro_text "Another squadron enters the fray!"
 
 label rpg_final_fight_3:
     $ final_fighters_3 = ["ARCEUS", "PAKOO", "MIKA", "KITTY", "TATE", "ARIA", "DIGI", "NOVA", "BLANK", "MIDGE", "ANNO", "DB05", "NONE"]
@@ -237,7 +240,7 @@ label rpg_archival:
         on_win "archival_finale"
         on_lose "rpg_archival"
         music "audio/broken_sky.ogg"
-        intro_text "Three strange people block the way!"
+        intro_text "The odd trio blocks your path!"
 
 label rpg_bronsonbattle:
     rpg:

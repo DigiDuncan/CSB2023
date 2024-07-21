@@ -330,13 +330,11 @@ label friend_attack_fanboy:
         "Fanboys" "Boo!! You suck! NVIDIA is the best!"  
         cs "Yeah, well, let's see about that!"
         stop sound fadeout 3.0
-        music Nordic Report 2 - Lizardking
         jump rpg_fanboy_fight_nvidia     
     else:
         "Fanboys" "Boo!! You suck! AMD is the best!"
     cs "Yeah, well, let's see about that!"
     stop sound fadeout 3.0
-    music Nordic Report 1 - Lizardking
     jump rpg_fanboy_fight_amd
 
 label friend_after_fanboy:
@@ -946,7 +944,6 @@ label friend_cool_car:
     pause 0.5
     cs "Make me!"
     copguy "He's armed! Men, get in position and fire!"
-    music Compulsion To Obey - Lizardking
     jump rpg_cop_fight_1
 
 label friend_reg_car:
@@ -1003,7 +1000,6 @@ label friend_reg_car:
     pause 0.5
     cs "Make me!"
     copguy "He's armed! Men, get in position and fire!"
-    music Compulsion To Obey - Lizardking
     jump rpg_cop_fight_1
 
 label friend_so_join:
@@ -1039,7 +1035,6 @@ label friend_so_join:
     tate "All y'all've gotta get through {i}us,{/i} first!"
     mika "Yeah! Fuck da police! (For legal reasons this is a joke.)"
     kitty "Let's get them!"
-    music For The People!- Lizardking
     jump rpg_cop_fight_2
 
 label friend_after_cop_fight:

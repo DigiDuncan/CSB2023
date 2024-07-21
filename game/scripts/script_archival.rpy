@@ -180,7 +180,6 @@ label archival:
     k199 "No, he's going to find out the hard way. Let's kick his ass!"
     k174 "Shouldn't we let Addy deal with this?"
     k199 "Fuck that! Let's settle this now!"
-    music BATTLE UNDER A BROKEN SKY - AZALI
     jump rpg_archival
 
 label archival_finale:

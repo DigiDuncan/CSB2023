@@ -37,10 +37,20 @@ label game_loop:
     python:
         global rpggame
         encounter = rpggame.encounter
+        
         print("Resetting RPG game scene...")
         encounter.reset_cooldowns()
+        
+        print("Checking jukebox registry...")
+        for k, v in music_map.items():
+            x =  encounter.music.removeprefix("audio/")
+            if x == v:
+                print(f"Located track {k}.")
+                persistent.heard.add(k)
+
         print("Showing intro text...")
         narrator(encounter.intro_text)
+        
         print("Starting RPG fight!")
         
         while encounter.won is None:

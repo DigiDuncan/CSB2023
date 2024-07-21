@@ -1180,7 +1180,7 @@ def execute_rpg(parsed_object):
         ll,
         it
     )
-    rpggame.reset()
+    rpggame.reset()            
     renpy.jump("play_rpggame")
 
 def lint_rpg(parsed_object):
