@@ -1630,6 +1630,7 @@ define audio.moving_right_along = "moving_right_along.ogg"
 # CSBIII DX Train Music
 define audio.sub_game_select = "sub_game_select.ogg"
 define audio.outdoors = "<loop 54.031>outdoors.ogg"
+define audio.hide_and_seek = "hide_and_seek.ogg"
 define audio.bedroom_day = "<loop 0.916>bedroom_day.ogg"
 define audio.item_bounce = "item_bounce.ogg"
 define audio.krabby_klub = "<loop 3.1>krabby_klub.ogg"

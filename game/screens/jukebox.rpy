@@ -145,6 +145,7 @@ init python:
         #DX: Train Route
         "Sub−Game Select - Jun Ishikawa": "sub_game_select.ogg",
         "Outdoors - Miki Obata": "outdoors.ogg",
+        "Hide And Seek - Chiro": "hide_and_seek.ogg",
         "Ochre Woods ~ Day - Miki Obata": "ochre_woods_day.ogg",
         "Bedroom ~ Day - Miki Obata": "bedroom_day.ogg",
         "Item Bounce - Akira Miyagawa": "item_bounce.ogg",
@@ -310,6 +311,7 @@ init python:
         "BATTLE UNDER A BROKEN SKY - AZALI": "brokensky.png",
         "Sub−Game Select - Jun Ishikawa": "kirby64.png",
         "Outdoors - Miki Obata": "pkmnchannel.png",
+        "Hide And Seek - Chiro": "hideandseek.png",
         "Ochre Woods ~ Day - Miki Obata": "heyyoupikachu.png",
         "Bedroom ~ Day - Miki Obata": "heyyoupikachu.png",
         "Item Bounce - Akira Miyagawa": "kirbyairride.png",

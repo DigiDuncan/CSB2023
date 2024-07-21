@@ -29,18 +29,18 @@ init python:
 
 
 screen toytrainsgame:
-    default toytraingame = TemplateGameDisplayable()
+    default toytrainsgame = ToyTrainsGameDisplayable()
     # Add a background or any static images here.
-    add templategame
+    add toytrainsgame
 
 label play_toytrainsgame:
     window hide
     $ quick_menu = False
-    call screen toytraingame
+    play music hide_and_seek if_changed
+    call screen toytrainsgame
+    $ persistent.heard.add("Chiro - Hide and Seek")
     $ quick_menu = True
     window show
-    
-    play music hide_and_seek if_changed
 
     if _return == True:
         $ achievement_manager.unlock("Lots & Lots of Trains!")
