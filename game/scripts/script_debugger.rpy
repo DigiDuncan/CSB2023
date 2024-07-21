@@ -1136,6 +1136,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(95):
+        play sound sfx_sparkles
         play music morning_highway
         scene shoe_store
         show cs at t_stage_screen_c
@@ -1144,6 +1145,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(96):
+        play sound sfx_spellcast
         play music mort_farm
         scene washington_road day
         show cs at t_stage_screen_r
@@ -1550,120 +1552,125 @@ label asset_debugger:
     if fun_value(157):
         play music tmwstw
         scene texas
-        pause 0.1
+        pause 1.0
     else:
         jump exit_debug
     if fun_value(158):
         play music e_gadds_lab
         scene tvbilly
-        pause 0.1
+        pause 1.0
     else:
         jump exit_debug
     if fun_value(159):
         play music insomnia
         scene jeep_inside_fg
-        pause 0.1
+        pause 1.0
     else:
         jump exit_debug
     if fun_value(160):
         play music insomnia_intro
         scene dinerinside
-        pause 0.1
+        pause 1.0
     else:
         jump exit_debug
     if fun_value(161):
         play music insomnia_loop
         scene aria_car_fg
-        pause 0.1
+        pause 1.0
     else:
         jump exit_debug
     if fun_value(162):
         play music item_bounce
         scene aria_room
-        pause 0.1
+        pause 1.0
     else:
         jump exit_debug
     if fun_value(163):
         play music krabby_klub
         scene aria_apartment_outside
-        pause 0.1
+        pause 1.0
     else:
         jump exit_debug
     if fun_value(164):
         play music night
         scene cs_somewhere
-        pause 0.1
+        pause 1.0
     else:
         jump exit_debug
     if fun_value(165):
         play music ochre_woods_day
         scene dineroutside
-        pause 0.1
+        pause 1.0
     else:
         jump exit_debug
     if fun_value(166):
         play music onbs
         scene battle_block_without_theater
-        pause 0.1
+        pause 1.0
     else:
         jump exit_debug
     if fun_value(167):
         play music outdoors
         scene final_destination
-        pause 0.1
+        pause 1.0
     else:
         jump exit_debug
     if fun_value(168):
         play music prof_kranes_kidnap
         scene police_car_fg
-        pause 0.1
+        pause 1.0
     else:
         jump exit_debug
     if fun_value(169):
         play music space
         scene war_torn_1
-        pause 0.1
+        pause 1.0
     else:
         jump exit_debug
     if fun_value(170):
         play music sub_game_select
         scene war_torn_2
-        pause 0.1
+        pause 1.0
     else:
         jump exit_debug
     if fun_value(171):
         play music funvalueland
         scene war_torn_3
-        pause 0.1
+        pause 1.0
     else:
         jump exit_debug
     if fun_value(172):
-        play music yuuka_town
+        play music supernova
         scene war_torn_4
-        pause 0.1
+        pause 1.0
     else:
         jump exit_debug
+        play music game_corner
     if fun_value(173):
         scene war_torn_5
-        pause 0.1
+        pause 1.0
     else:
         jump exit_debug
     if fun_value(174):
+        play music get_the_funk
         scene car_insidearc_fg
-        pause 0.1
+        pause 1.0
     else:
         jump exit_debug
     if fun_value(175):
+        play music hide_and_seek
         scene car_insidearc_fg flipped
-        pause 0.1
+        pause 1.0
     else:
         jump exit_debug
     if fun_value(176):
+        play music rude_buster
         scene joj_chargerarc_fg
-        pause 0.1
+        pause 1.0
     else:
         jump exit_debug
     if fun_value(177):
+        play music yuuka_town
         scene gas_station_2
         pause 0.1
     else:
