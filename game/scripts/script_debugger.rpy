@@ -1367,306 +1367,306 @@ label asset_debugger:
         play music super_friendly
         scene slots
         RCOMEM "test 128{w=0.5}{nw}"
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(129):
         play music sweet_victory
         scene tablegames
         k_doctor "test 129{w=0.5}{nw}"
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(130):
         play music taiikusai_desu_yo
         scene pokertable
         k_nurse "test 130{w=0.5}{nw}"
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(131):
         play music take_trip
         scene luigi1
         l_snow "test 131{w=0.5}{nw}"
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(132):
         play music take_trip2
         scene luigi2
         lupin "test 132{w=0.5}{nw}"
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(133):
         play music the_rest_of_bubble_tea
         scene vegasbathroom
         lupin_offscreen "test 133{w=0.5}{nw}"
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(134):
         play music the_whale
         scene backroomcasino
         mean_offscreen "test 134{w=0.5}{nw}"
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(135):
         play music thousand_march
         scene outsafe
         amtrak_conductor "test 135{w=0.5}{nw}"
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(136):
         play music time_for_a_smackdown
         scene outsafeopen
         amtrak_stewardess "test 136{w=0.5}{nw}"
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(137):
         play music track_3
         scene insafe
         amtrak_npc_1 "test 137{w=0.5}{nw}"
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(138):
         play music track_4
         scene carpark
         amtrak_npc_2 "test 138{w=0.5}{nw}"
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(139):
         play music trans_atlantic
         scene casino1
         amtrak_npc_3 "test 139{w=0.5}{nw}"
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(140):
         play music trash_zone
         scene fazhall
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(141):
         play music triage_at_dawn
         scene fazlobby
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(142):
         play music tumultuous
         scene fazplace
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(143):
         play music tuna_fish
         scene airplane_seats
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(144):
         play music tunnely_shimbers
         scene airport_interior
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(145):
         play music undyne
         scene airport_seats
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(146):
         play music upon_me
         scene airport_tsa
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(147):
         play music wayward_wanderer
         scene airport_inside
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(148):
         play music weird_personalities
         scene old_house_outside
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(149):
         play music winter_lullaby
         scene old_house_inside
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(150):
         play music wool_gloves
         scene cc_parking_lot
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(151):
         play music xddcc
         scene cc_lobby
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(152):
         play music ocean_man
         scene cc_entrance
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(153):
         play music lancer
         scene cc_crowd
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(154):
         play music space_classroom
         scene cc_stage
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(155):
         play music error
         scene cc_backstage
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(156):
         play music bedroom_day
         scene billboard
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(157):
         play music tmwstw
         scene texas
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(158):
         play music e_gadds_lab
         scene tvbilly
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(159):
         play music insomnia
         scene jeep_inside_fg
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(160):
         play music insomnia_intro
         scene dinerinside
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(161):
         play music insomnia_loop
         scene aria_car_fg
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(162):
         play music item_bounce
         scene aria_room
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(163):
         play music krabby_klub
         scene aria_apartment_outside
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(164):
         play music night
         scene cs_somewhere
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(165):
         play music ochre_woods_day
         scene dineroutside
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(166):
         play music onbs
         scene battle_block_without_theater
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(167):
         play music outdoors
         scene final_destination
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(168):
         play music prof_kranes_kidnap
         scene police_car_fg
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(169):
         play music space
         scene war_torn_1
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(170):
         play music sub_game_select
         scene war_torn_2
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(171):
         play music funvalueland
         scene war_torn_3
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(172):
         play music supernova
         scene war_torn_4
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
         play music game_corner
     if fun_value(173):
         scene war_torn_5
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(174):
         play music get_the_funk
         scene car_insidearc_fg
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(175):
         play music hide_and_seek
         scene car_insidearc_fg flipped
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(176):
         play music rude_buster
         scene joj_chargerarc_fg
-        pause 1.0
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(177):
@@ -2533,6 +2533,6 @@ label asset_debugger:
 
 label exit_debug:
     show cs angry
-    pause 1.0
+    pause 0.5
     cs "You didn't turn it on!"
     return
