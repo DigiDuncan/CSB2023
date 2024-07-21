@@ -159,7 +159,8 @@ screen editgame:
 label minigame_editing:
     window hide
     $ quick_menu = False
-    play music "minigames/editing/supernova.ogg" volume 0.25
+    play music supernova volume 0.25 if_changed
+    $ persistent.heard.add("Supernova - Laszlo")
     call screen editgame
     $ quick_menu = True
     window show

@@ -191,7 +191,8 @@ screen pencilgame:
 label minigame_pencil:
     window hide
     $ quick_menu = False
-    play music "minigames/pencil/rude_buster.ogg" volume 0.5
+    play music rude_buster volume 0.5 if_changed
+    $ persistent.heard.add("Rude Buster - Toby Fox")
     call screen pencilgame
     stop music
     $ quick_menu = True

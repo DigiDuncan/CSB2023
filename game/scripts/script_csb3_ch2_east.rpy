@@ -942,7 +942,6 @@ label true_pennsylvania:
     host "1..."
     n "Both competitors hover their hands over the pencils..."
     host "GO!"
-    music Rude Buster - Toby Fox
     minigame "minigame_pencil" "true_win_pencil" "lose_pencil_game"
 
 label true_win_pencil:

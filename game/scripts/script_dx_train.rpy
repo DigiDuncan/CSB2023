@@ -2021,7 +2021,7 @@ label train_confront_lupin:
 label train_tate_ex_encounter:
     stop music fadeout 1.0
     scene black
-    n "Try as he may, after all of that excitement, CS just can't get to sleep."
+    n "Try as he may, after all of that excitement, CS can't settle down enough to fall asleep."
     n "He decides to go for a walk, meandering through each quiet corridor until he eventually finds himself in the observation car."
     n "He isn't alone."
     pause 0.5

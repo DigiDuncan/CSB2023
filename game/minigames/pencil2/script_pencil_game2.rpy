@@ -11,7 +11,7 @@ init python:
     ERASER_SIZE = 200
     PENCIL_LIMIT2 = 60
 
-    class PencilGameDisplayable2(renpy.Displayable):
+    class PencilGame2Displayable(renpy.Displayable):
         def __init__(self):
             renpy.Displayable.__init__(self)
             # I'm using a boolean statement here, Q needing to be pressed is True, E needing to be pressed is false. Reason for this is just so I can be lazy.
@@ -177,7 +177,7 @@ init python:
 
 
 screen pencilgame2:
-    default pencilgame2 = PencilGameDisplayable2()
+    default pencilgame2 = PencilGame2Displayable()
     add "minigames/pencil2/pencilboss.png"
     add "minigames/pencil/table.png" at transform:
         yalign 1.0
@@ -188,10 +188,11 @@ screen pencilgame2:
         color "AAAAAA"
     add pencilgame2
 
-label minigame_pencil2:
+label play_pencilgame2:
     window hide
     $ quick_menu = False
-    play music "minigames/pencil2/get_the_funk.ogg" volume 0.5
+    play music get_the_funk volume 0.5 if_changed
+    $ persistent.heard.add("Get The Funk - Dr. Awesome")
     call screen pencilgame2
     stop music
     $ quick_menu = True

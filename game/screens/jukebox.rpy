@@ -69,6 +69,7 @@ init python:
         "Tunnely Shimbers - Mr. Sauceman": "tunnely_shimbers.ogg",
         "Hard Drive to Munch You - Mr. Sauceman": "hard_drive.ogg",
         "Al's Penthouse - Andy Blythe": "penthouse.ogg",
+        "Rocket Game Corner - Junichi Masuda": "rocket_game_corner.ogg",
         "Laurel Palace - Manami Matsumae": "laurel_palace.ogg",
         "Lancer - Toby Fox": "lancer.ogg",
         "Price Is Right Theme - Edd Kalehoff": "price_right.ogg",
@@ -284,6 +285,7 @@ init python:
         "Afternoon Hills - BEST MUSIC": "summerclearance.png",
         "Supernova - Laszlo": "supernova.png",
         "Al's Penthouse - Andy Blythe": "toystory.png",
+        "Rocket Game Corner - Junichi Masuda": "pkmnredblue.png",
         "Laurel Palace - Manami Matsumae" : "vegasstrikes.png",
         "Price Is Right Theme - Edd Kalehoff" : "priceisright.png",
         "Pierrot of the Star Spangled Banner - ZUN" : "touhou15.png",
@@ -342,17 +344,7 @@ screen jukebox_nav():
             spacing 10
             xoffset 350
             for k, v in music_map.items():
-                if k in persistent.heard:
-                    if v in ["lancer.ogg"]:
-                        textbutton k action ShowMenu("music_screen", k), Play("jukebox", "secret/" + v, relative_volume=0.5)
-                    elif v in ["supernova.ogg"]:
-                        textbutton k action ShowMenu("music_screen", k), Play("jukebox", "minigames/editing/" + v, relative_volume=0.5)
-                    elif v in ["rude_buster.ogg"]:
-                        textbutton k action ShowMenu("music_screen", k), Play("jukebox", "minigames/pencil/" + v, relative_volume=0.5)
-                    elif v in ["get_the_funk.ogg"]:
-                        textbutton k action ShowMenu("music_screen", k), Play("jukebox", "minigames/pencil2/" + v, relative_volume=0.5)
-                    else:
-                        textbutton k action ShowMenu("music_screen", k), Play("jukebox", "audio/" + v, relative_volume=0.5)
+                textbutton k action ShowMenu("music_screen", k), Play("jukebox", "audio/" + v, relative_volume=0.5)
 
     textbutton "Return to categories" action ShowMenu("category_welcome"), Stop("jukebox"), PauseAudio("music", False) yoffset 950 xoffset 25
     textbutton "Return" action Return(), Stop("jukebox"), PauseAudio("music", False) yoffset 1000 xoffset 25

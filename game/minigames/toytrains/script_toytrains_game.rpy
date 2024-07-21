@@ -1,7 +1,7 @@
 init python:
     import math
 
-    class ToytrainGameDisplayable(renpy.Displayable):
+    class ToyTrainsGameDisplayable(renpy.Displayable):
         def __init__(self):
             renpy.Displayable.__init__(self)
             self.start_time = None
@@ -28,25 +28,26 @@ init python:
             return [] # Assets needed to load
 
 
-screen toytraingame:
-    default templategame = TemplateGameDisplayable()
+screen toytrainsgame:
+    default toytraingame = TemplateGameDisplayable()
     # Add a background or any static images here.
     add templategame
 
-label play_toytraingame:
+label play_toytrainsgame:
     window hide
     $ quick_menu = False
-    call screen templategame
+    call screen toytraingame
     $ quick_menu = True
     window show
+    
+    play music hide_and_seek if_changed
 
     if _return == True:
-        pass
-        # Thing for win condition
+        $ achievement_manager.unlock("Lots & Lots of Trains!")
+        $ renpy.jump(minigame_win)
     else:
-        pass
-        # Thing for lose condition
+        $ renpy.jump(minigame_loss)
 
-label toytraingame_done:
+label toytrainsgame_done:
     # Thing to do after the game if we reach here.
     pass

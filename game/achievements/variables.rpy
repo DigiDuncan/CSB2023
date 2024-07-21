@@ -71,7 +71,8 @@ define achievements = [
     Achievement("60 Drillless WR", "Your wrist hurts.", "Get a perfect score of 1200.", "1200","extra", dx = True),
     Achievement("We Don't Go To Bronson", "???", "Welcome to Hell!",  "bronson", "story", dx = True),
     Achievement("Main Character Syndrome", "Remind them whose game this is.", "Defeat Tate EX.", "vs-tate", "extra", dx = True),
-    Achievement("All Aboard!", "???", "Complete Train Route.", "train", "story", dx = True),
+    Achievement("Lots & Lots of Trains!", "Aren't they just adorable?", "Play with some model trains.", "train", "story", dx = True),
+    Achievement("All Aboard!", "???", "Complete Train Route.", "amtrak", "story", dx = True),
     Achievement("Gotta Catch Them All", "Collect every bio.", "Collect every bio.", "bios", "extra"),
     Achievement("The Brown Album", "Collect every song in the jukebox.", "Collect every song in the jukebox.", "juke", "extra"),
     Achievement("Fin.", "Collect all the endings.", "Collect all the endings.", "end", "extra")

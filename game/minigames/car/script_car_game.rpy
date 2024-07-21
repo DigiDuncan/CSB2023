@@ -206,6 +206,7 @@ screen cargame:
 
 label minigame_car:
     play music speedy_comet if_changed
+    $ persistent.heard.add("Speedy Comet - Mahito Yokota")
     window hide
     $ quick_menu = False
     call screen cargame

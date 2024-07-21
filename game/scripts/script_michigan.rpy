@@ -52,12 +52,12 @@ label michigan_bronson:
     scene car plains
     show billy car
     stop music fadeout 3.0
-    cs "Look, man, just don't go to Bronson okay?"
+    cs "Look, man, just don't go to Bronson, okay?"
     billy "Okay, okay, we won't go."
     cs "It's just... I am getting a really bad vibe from that place."
     show billy car turn
     billy "CS, I already said we aren't going there, okay?"
-    arceus "I'm getting chills thinking about it too, CS is right."
+    arceus "I'm getting chills thinking about it, too. CS is right."
     billy "Okay, shut up! Let me drive!"
     play music upon_me
     music Upon Me - Dr. Awesome
@@ -95,14 +95,14 @@ label michigan_bronson:
     billy "I think so... I mean, we survived a UFO attack,so this can't be much worse!"
     show cs disappointed flipped
     cs "Yeah!"
-    billy "And, well, if you didn't distract me, we wouldn't be here!"
+    billy "Also, well... if you didn't distract me, we wouldn't be here!"
     show cs worried flipped
-    cs "Hey! I felt sick thinking about even the name of this place!"
+    cs "Hey! I felt sick thinking about even the {i}name{/i} of this place!"
     arceus "Yeah... I don't know why, but I felt it too..."
     billy "Well, you need to shut your mouth when I am driving!"
     show cs disappointed flipped
     cs "Billy, what has gotten into you?"
-    billy "I don't know, maybe because we are here because of you?!"
+    billy "I don't know, maybe because we are here because of {i}you?!"
     show cs angry flipped
     cs "Well, maybe {i}you{/i} need to keep your eyes on the road!"
     billy "Don't tell me how to drive, damn it!"

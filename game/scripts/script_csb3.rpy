@@ -202,7 +202,6 @@ label csbiii_edit_video:
     else:
         cs "Welp, time to get to work!"
     scene black with dissolve
-    music Supernova - Laszlo
     minigame "minigame_editing" "csbiii_boost" "csbiii_bad_video"
 
 label csbiii_bad_video:
