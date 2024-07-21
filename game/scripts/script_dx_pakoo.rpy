@@ -491,17 +491,13 @@ label dx_after_seek_competitors:
     cs "Which cult should I look for?"
     menu:
         "Pick a cult:"
-        "Scientology (NF)":
+        "Scientology":
             jump dx_after_science_ask
-        "Cargo Cult (NF)":
-            jump dx_after_cargo_ask
-        "Wayside Summer Camp (NF)":
-            jump dx_after_summer_ask
         "Pencil Cult":
             jump dx_after_pencil_ask
-        "Catholicism (NF)":
+        "Catholicism":
             jump dx_after_catholic_ask
-        "Lunatic Cultists (NF)":
+        "Lunatic Cultists":
             jump dx_after_lunatic_ask
 
 label dx_after_pencil_ask:
@@ -646,6 +642,7 @@ label dx_after_catholic_ask:
 
 label dx_after_catholic_find:
     $ god_money = True
+    $ cath_counter = 0
     cs "Stay right here, I'm sure I can find some money."
     priest "I wasn't planning on moving, but thank you! The church will thank you."
     n "CS runs back to the main floor."
@@ -654,16 +651,6 @@ label dx_after_catholic_find:
     cs "Well, I need to figure out who to ask..."
     jump dx_after_seek_competitors
 
-label dx_after_summer_ask:
-    play music ten_feet_away if_changed    
-    scene cult_con
-    show cs cultist at center
-    cs "There is a summer camp here?"
-    cs "That seems really fishy, didn't the cult leader say something about cults with tortured followers get disqualified?"
-    cs "I better go check them out."
-    n "CS makes his way over to the Wayside Summer Camp booth."
-    cs "Hey, what is this... camp all about?"
-    wayside_instructor "Welcome to Wayside Summer Camp!"
 
 label dx_after_lunatic_ask:
     play music ten_feet_away if_changed    
@@ -775,7 +762,14 @@ label dx_after_zero_right:
     cs "Dang, I really got no votes?"
     l_cultist "Sorry, but you didn't get any of your answers right."
     l_cultist "Maybe consider calling some of your friends, so you can remember who they are."
-    cs "Yeah yeah, I'll get going…"
+    cs "Yeah yeah, I'll get going..."
+    if god_money:
+        cs "Also before I go, do you guys have any spare change?"
+        l_cultist "I guess we have a bit…"
+        n "They hand CS a copper coin."
+        cs "Thanks."
+        $ cath_counter += 0.01
+        n "Current balance: $[cath_counter]."
     n "CS sulks back to the convention floor."
     cs "That really sucks, I can't believe I did that bad."
     cs "I need to find more people to get votes from..."
@@ -785,6 +779,12 @@ label dx_after_one_right:
     cs "Hey, I'll get what I can take."
     l_cultist "You could've done a bit better, but there was quite a bit for you to take in."
     cs "Oh well, it's okay."
+    if god_money:
+        l_cultist "Here, we have something..."
+        n "They hand CS a silver coin."
+        cs "Thank you!"
+        $ cath_counter += 1
+        n "Current balance: $[cath_counter]."
     n "CS makes his way back to the convention floor."
     cs "Hey, at least I got some votes, but I still should go get some more."
     cs "Let's see…"
@@ -795,6 +795,12 @@ label dx_after_two_right:
     l_cultist "To be honest, that last question was pretty hard."
     l_cultist "I don't blame you for not getting it."
     cs "Well, I still did pretty good I think."
+    if god_money:
+        l_cultist "Y'know what? You can have this."
+        n "They hand CS a gold coin."
+        cs "Holy crap, thanks a lot!"
+        $ cath_counter += 100
+        n "Current balance: $[cath_counter]."
     n "CS gets back to the convention floor."
     cs "Well, I'm doing pretty good, I would say!"
     cs "I need to get some more votes, but I'm feeling confident!"
@@ -806,6 +812,12 @@ label dx_after_three_right:
     l_cultist "Geez, you got a really good memory."
     l_cultist "You deserve to win this year, good luck to ya, man."
     cs "Thank you!"
+    if god_money:
+        l_cultist "I think you deserve this."
+        n "They hand CS a shiny platinum coin."
+        cs "Woohoo!"
+        $ cath_counter += 10000
+        n "Current balance: $[cath_counter]."
     n "CS happily makes his way back to the convention floor."
     cs "Who won the lottery? I did!"
     cs "Smell that air!"
