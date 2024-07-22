@@ -1180,6 +1180,7 @@ label asset_debugger:
     if fun_value(100):
         play music night
         scene gasinside
+        show toby at center
         show cs at lego_run
         streetguy "test 100{w=0.5}{nw}"
     else:
