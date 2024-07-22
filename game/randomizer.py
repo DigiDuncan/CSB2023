@@ -88,7 +88,7 @@ def scramble():
         console.print(f"[blue]Scrambling {len(bg_images)} BGs...")
         for i in bg_images:
             random_value = random.choice(possible_bgs)
-            new_line = f"image {i.var_name} = \"{random_value}\""
+            new_line = f"image {i.var_name} = \"{random_value}\"\n"
             new_lines[i.line_num] = new_line
             possible_bgs.remove(random_value)
 
@@ -96,7 +96,7 @@ def scramble():
         console.print(f"[blue]Scrambling {len(char_images)} character sprites...")
         for i in char_images:
             random_value = random.choice(possible_char_images)
-            new_line = f"image {i.var_name} = \"{random_value}\""
+            new_line = f"image {i.var_name} = \"{random_value}\"\n"
             new_lines[i.line_num] = new_line
             possible_char_images.remove(random_value)
 
@@ -104,7 +104,7 @@ def scramble():
         console.print(f"[blue]Scrambling {len(char_names)} character names...")
         for i in char_names:
             random_value = random.choice(possible_char_names)
-            new_line = f"define {i.var_name} = Character(\"{random_value}\", callback = {i.callback})"
+            new_line = f"define {i.var_name} = Character(\"{random_value}\", callback = {i.callback})\n"
             new_lines[i.line_num] = new_line
             possible_char_names.remove(random_value)
 
@@ -112,7 +112,7 @@ def scramble():
         console.print(f"[blue]Scrambling {len(bgms)} BGMs...")
         for i in bgms:
             random_value = random.choice(possible_bgms)
-            new_line = f"define audio.{i.var_name} = \"{random_value}\""
+            new_line = f"define audio.{i.var_name} = \"{random_value}\"\n"
             new_lines[i.line_num] = new_line
             possible_bgms.remove(random_value)
 
@@ -120,12 +120,9 @@ def scramble():
         console.print(f"[blue]Scrambling {len(sfxs)} SFX...")
         for i in sfxs:
             random_value = random.choice(possible_sfxs)
-            new_line = f"define audio.sfx{i.var_name} = \"{random_value}\""
+            new_line = f"define audio.sfx{i.var_name} = \"{random_value}\"\n"
             new_lines[i.line_num] = new_line
             possible_sfxs.remove(random_value)
-
-    # Reappend new lines
-    new_lines = [l + "\n" for l in new_lines]
 
     console.print("[blue]Writing new script...")
     # Replace script_start
