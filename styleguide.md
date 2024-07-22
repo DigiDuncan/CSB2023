@@ -52,5 +52,7 @@
 - Are all backgrounds, character sprites, music, and sound effects declared as variables?
 - Have all minigames been tested thoroughly?
 - Have the RPG fights been balance tested?
+- Are all endings added in the endings registry?
+- Are all minigames added in the minigames registry?
 - Did Tate do a grammar pass?
 - Did Baker do an asset pass?
