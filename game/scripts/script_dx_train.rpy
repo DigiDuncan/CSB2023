@@ -304,7 +304,7 @@ label train_story_begin:
     
     scene kingman_museum_1 with dissolve
 
-    arceus "Aww, look at all those cute little trains. Wanna poke around there?"
+    arceus "Aww, look at all those little trains. Wanna poke around in there?"
     
     menu:
         "Would you like to visit Kingman Railroad Museum?"
