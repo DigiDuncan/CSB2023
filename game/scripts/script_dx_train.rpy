@@ -363,7 +363,7 @@ label train_story_begin:
             scene black with dissolve
             n "As CS takes a quick nap in a lobby chair, Arceus wanders around the museum."
             n "While not many exhibits can fit inside such a small building, there is just enough to see to pass the remaining time."
-            n "About five minutes before the train's expected arrival, the two make their way out onto to the platform, Arceus sharing some of the things he learned from the various displays."
+            n "About five minutes before the train's expected arrival, the two make their way out onto to the platform as Arceus shares some of the things he learned today."
             jump train_kingman_platform
 
 label train_race_win:
@@ -376,7 +376,7 @@ label train_race_win:
     cs "Good game, Arc."
     arceus "Yeah, GG..."
     show arceus
-    arceus "Honestly, I think this game is rigged anyway. Just look at the size of each track!"
+    arceus "Honestly, I think this game is rigged anyway. Just look at how much bigger my track is!"
     show cs disappointed
     cs "... Hey, you're right! I can't unsee it now!"
     cs "Who built this?"
@@ -398,7 +398,7 @@ label train_race_win:
 
     n "CS and Arceus wander around the museum for a little longer."
     n "While not many exhibits can fit inside such a small building, there is just enough to see to pass the remaining time."
-    n "About five minutes before the train's expected arrival, the two make their way out onto to the platform, still discussing some of the things they learned from the various displays."
+    n "About five minutes before the train's expected arrival, the two make their way out onto to the platform, still discussing some of the things they learned today."
         
     jump train_kingman_platform
     
@@ -434,7 +434,7 @@ label train_race_lose:
 
     n "CS and Arceus wander around the museum for a little longer."
     n "While not many exhibits can fit inside such a small building, there is just enough to see to pass the remaining time."
-    n "About five minutes before the train's expected arrival, the two make their way out onto to the platform, still discussing some of the things they learned from the various displays."
+    n "About five minutes before the train's expected arrival, the two make their way out onto to the platform, still discussing some of the things they learned today."
     jump train_kingman_platform
 
 label train_kingman_platform:
