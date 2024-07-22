@@ -338,7 +338,7 @@ label dx_after_back_to_story:
     cs "Yeah, well, fuck that! I'm not helping you!"
     hide csgod
     show csgod_angry at right
-    csgod "Hey! Take that off right now! Your {i]god{/i} demands it!"
+    csgod "Hey! Take that off right now! Your {i}god{/i} demands it!"
     cs "Until you can bring me back to the future, I'm gonna go join your cult!"
     cs "And, we are winning this competition!"
     hide cs with moveoutright
