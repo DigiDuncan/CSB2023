@@ -3,7 +3,10 @@ label csbiii_ai:
     show cs at left with moveinleft
     play music school volume 0.4
     music School - Toby Fox
-    n "CS is in the Linus Tech Tips office, surrounded by computer parts and confused colleagues."
+    if fun_value(FUN_VALUE_MUSIC):
+        n "CS is at school, surrounded by computer parts and confused colleagues."
+    else:    
+        n "CS is in the Linus Tech Tips office, surrounded by computer parts and confused colleagues."
     n "CS scratches his head."
     cs "Aright, team, we've got a problem. This gaming PC is overheating, and we need a fix that's... shall we say, out of the box?"
     show luke at right with moveinright
@@ -51,7 +54,10 @@ label csbiii_ai:
     show arceus at right with moveinright
     play music cliffs volume 0.4
     music Cliffs - Toby Fox
-    n "CS188 and Arceus dash to a hidden panel on the floor, revealing a concealed entrance to the escape tunnel."
+    if fun_value(FUN_VALUE_MUSIC):
+        n "CS188 and Arceus dash to a hidden panel on the floor, revealing a concealed entrance to the cliffs."
+    else:
+        n "CS188 and Arceus dash to a hidden panel on the floor, revealing a concealed entrance to the escape tunnel."
     scene secrettunnel with dissolve
     show cs at left with moveinleft
     show arceus at right with moveinright
@@ -63,7 +69,10 @@ label csbiii_ai:
     show arceus at right with moveinbottom
     play music circus volume 0.4
     music Circus - Toby Fox
-    n "They emerge from the tunnel into a surprising location—an abandoned, overgrown amusement park."
+    if fun_value(FUN_VALUE_MUSIC):
+        n "They emerge from the tunnel into a surprising location—an abandoned, overgrown circus."
+    else:
+        n "They emerge from the tunnel into a surprising location—an abandoned, overgrown amusement park."
     show arceus angry
     arceus "An amusement park? Seriously, CS?"
     cs "Hey, when life hands you unexpected escapes, you make the most of them!"
@@ -84,7 +93,10 @@ label csbiii_ai:
     show copguy_ai at center with moveinbottom
     play music chase volume 0.4
     music The Chase - Toby Fox
-    n "Arceus whispers to CS."
+    if fun_value(FUN_VALUE_MUSIC):
+        n "CS188 and Arceus duck behind a broken carousel as the cops chase by."
+    else:
+        n "Arceus whispers to CS."
     show arceus worried
     arceus "CS, we can't hide here forever. We need a distraction!"
     show cs surprised
@@ -128,7 +140,10 @@ label csbiii_ai:
     play music friendship volume 0.4
     scene endingai with dissolve(1.0, 1.0, 1.0)
     music Friendship - Toby Fox
-    n "CS188 and Arceus exchange a high-five and disappear into the distance, ready for their next escapade."
+    if fun_value(FUN_VALUE_MUSIC):
+        n "We sure did, buddy. Another adventure for the books! Hooray for friendship!"
+    else:
+        n "CS188 and Arceus exchange a high-five and disappear into the distance, ready for their next escapade."
     "ChatGPT" "Note: The script is a fictional representation and does not reflect the actual personalities or actions of CS188 or any real-life individuals."
     $ achievement_manager.unlock("Artifical Unintelligence")
     pause 2.0

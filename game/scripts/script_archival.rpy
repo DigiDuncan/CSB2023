@@ -22,7 +22,10 @@ label archival:
     scene bedroom_old
     play music facing_worlds volume 0.5
     music "Facing Worlds - Michiel van den Bos"
-    n "CS slowly wakes up after his long rest."
+    if fun_value(FUN_VALUE_MUSIC):
+        n "CS slowly faces worlds after his long rest."
+    else:
+        n "CS slowly wakes up after his long rest."
     cs "Hey guys, CS here!"
     cs "How is every--"
     show cs scared at left with moveinbottom
@@ -179,7 +182,10 @@ label archival:
     k207 "Do we really have to explain what's wrong to him?"
     k199 "No, he's going to find out the hard way. Let's kick his ass!"
     k174 "Shouldn't we let Addy deal with this?"
-    k199 "Fuck that! Let's settle this now!"
+    if fun_value(FUN_VALUE_MUSIC):
+        k199 "Fuck that! Let's have a BATTLE UNDER A BROKEN SKY!"
+    else:
+        k199 "Fuck that! Let's settle this now!"
     jump rpg_archival
 
 label archival_finale:
@@ -190,7 +196,10 @@ label archival_finale:
     with dissolve
     n "After the battle, CS makes his way to the crack, and realizes that there is an invisible wall."
     hide cs with dissolve
-    n "CS, without any second thoughts, breaks off pieces of the wall enough to widen the crack and crawls through the hole."
+    if fun_value(FUN_VALUE_MUSIC):
+        n "CS, without any second thoughts, breaks off pieces of the wall enough to widen the crack and takes a trip. From me."
+    else:
+        n "CS, without any second thoughts, breaks off pieces of the wall enough to widen the crack and crawls through the hole."
     n "..."
     n "..."
     n "..."
@@ -484,7 +493,14 @@ label archival_finale:
     play music everybody_wants 
     music "Everybody Wants To Rule The World - Tears For Fears"
     n "Addy gets a phone call."
-    addy "Hello? Who is this?"
+    if fun_value(FUN_VALUE_MUSIC):
+        addy "Hello? Is this everybody? Because I want to rule the world."
+        n "CS off the screen bursts out laughing."
+        iris "Okay, that was terrible."
+        addy "I know, lol."
+        addy "Anyways..."
+    else:
+        addy "Hello? Who is this?"
     iris "Hello, Addy."
     n "Addy fumbles the phone, nearly dropping it in surprise."
     addy "Iris?"

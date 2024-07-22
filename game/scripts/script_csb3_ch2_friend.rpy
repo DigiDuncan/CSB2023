@@ -12,7 +12,10 @@ label friend2_dpn_call:
     music Tuna Fish - Dr. Awesome
     cs "What a crazy day so far, man."
     show cs worried 
-    cs "I can't believe we had to fight all of those cops! If it weren't for Tate and the gang, we'd be dead meat already."
+    if fun_value(FUN_VALUE_MUSIC):
+        cs "I can't believe we had to fight all of those cops! If it weren't for Tate and the gang, we'd be tuna fish already."
+    else:
+        cs "I can't believe we had to fight all of those cops! If it weren't for Tate and the gang, we'd be dead meat already."
     arceus "Yeah, but hey, you held them off pretty well with that fancy gun of yours."
     pakoo "Yeah, that was some great marksmanship, CS!"
     show cs happy
@@ -125,7 +128,13 @@ label friend2_dpn_diner:
     with dissolve
     play music full_rulle_med_klas volume 0.5
     music Full Rulle Med Klas - Lizardking
-    digi "Finally, we can stretch our legs again."
+    if fun_value(FUN_VALUE_MUSIC):
+        digi "Finally, we can fully rulle our med klas again."
+        nova "What?"
+        digi "Dude I don't how I was supposed to make that work!"
+        nova "Whatever."
+    else:
+        digi "Finally, we can stretch our legs again."
     nova "Remind me of what you needed me here for, again? I have a set later tonight I need to prepare for!"
     digi "CS is in trouble. He's being chased by the cops."
     nova "How in the world are we supposed to help with that?!"
@@ -155,7 +164,10 @@ label friend2_dpn_diner:
     show cs_somewhere behind aria_car_fg
     play music dense_woods_b volume 0.5
     music Dense Woods B - Kikiyama
-    n "Cop cars surround the vicinity of the area."
+    if fun_value(FUN_VALUE_MUSIC):
+        n "Cop cars surround the vicinity of Dense woods B."
+    else:
+        n "Cop cars surround the vicinity of the area."
     n "Aria gets out of the car."
     scene cs_somewhere
     show cop dark at right
@@ -177,7 +189,10 @@ label friend2_dpn_diner:
     n "As Aria heads back to the car, she sneaks around and knocks the cop's heads together, rendering them unconcious."
     show aria dark flipped at right with move
     show cop dark at left with moveinleft
-    cop "Ah, shit! We've got two men down! Arrest her!"
+    if fun_value(FUN_VALUE_MUSIC):
+        cop "Ah, shit! We've got two men down! Arrest her! This is a code Desert Dawn!"
+    else:
+        cop "Ah, shit! We've got two men down! Arrest her!"
     stop music fadeout 3.0
     music end
     jump rpg_cop_fight_3
@@ -256,7 +271,10 @@ label friend2_cs_meetup_2:
     hide aria
     with moveoutright
     scene black with dissolve
-    n "Digi, Aria, and Nova all go outside to meet everyone else."
+    if fun_value(FUN_VALUE_MUSIC):
+        n "Digi, Aria, and Nova all go outside to meet everyone at L.A. by night."
+    else:
+        n "Digi, Aria, and Nova all go outside to meet everyone else."
     scene dineroutside
     play music la_by_night volume 0.5
     music L.A. By Night - Dr. Awesome
@@ -407,7 +425,12 @@ label friend2_car_ride_2:
     copguy "Well, you're gonna find out why you never pick the hard way!"
     if nice_car:
         n "The soldiers seem distracted, aweing at CS' car."
-        copguy "Don't mind the car! Attack!"
+        if fun_value(FUN_VALUE_MUSIC):
+            copguy "Don't mind the car! Begin the Thousand March!"
+        else:
+            copguy "Don't mind the car! Attack!"
+    if fun_value(FUN_VALUE_MUSIC):
+        copguy "Soldiers! Begin the Thousand March!"
     else:
         copguy "Soldiers! Attack!"
     jump rpg_ng_fight

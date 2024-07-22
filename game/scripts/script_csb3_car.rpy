@@ -23,7 +23,11 @@ label car_dialogue:
     with dissolve
     play music billy_mix
     music "Billy's Mix - Billy Mays"
-    cs "Well, Arceus, it has been quite a ride."
+    if fun_value(FUN_VALUE_MUSIC):
+        n "Well Arceus, it's time for Billy's Mix!"
+        arceus "It sure is. We've done a lot, right?"
+    else:
+        cs "Well, Arceus, it has been quite a ride."
     arceus "It sure has. We've been through quite a lot, haven't we?"
     cs "Yeah, I'm so tired. I can't wait to get some actual rest."
 

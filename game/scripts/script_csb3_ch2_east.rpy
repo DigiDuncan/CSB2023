@@ -368,7 +368,10 @@ label true_montana:
     play music showtime volume 0.4
     music "It's Showtime - Toby Fox"
     show cs fakegod at center with moveinright
-    cs "Hooray! I'm a god now!"
+    if fun_value(FUN_VALUE_MUSIC):
+        cs "Hooray! It's showtime now!"
+    else:
+        cs "Hooray! I'm a god now!"
     show arceus flipped at left with moveinleft
     arceus "CS, I don't know how you pull this stuff off."
     show arceus worried flipped
@@ -761,7 +764,10 @@ label true_pennsylvania:
     scene billboard
     play music fourside volume 0.6
     music The Metropolis of Fourside - Keiichi Suzuki
-    n "CS sees a billboard pass by them."
+    if fun_value(FUN_VALUE_MUSIC):
+        n "CS sees The Metropolis of Four side pass by them."
+    else:
+        n "CS sees a billboard pass by them."
     cs "Oh my God! It's PencilCon! We need to go!"
     arceus "Why the fuck do you want to go to {i}PencilCon{/i} when we are so close to home?!"
     cs "Because I love sharpening pencils! I made my own holiday around it! Please, Billy, can we go to PencilCon?"
@@ -856,7 +862,12 @@ label true_pennsylvania:
     show digi at right with moveinright
     play music pokey volume 0.6
     music Pokeys House - Keiichi Suzuki
-    cs "Wait, Digi?!"
+    if fun_value(FUN_VALUE_MUSIC):
+        cs "Wait, Pokey?"
+        digi "Huh?"
+        cs "I mean, Digi!"        
+    else:
+        cs "Wait, Digi?!"
     digi "CS?!"
     cs "What are you doing here?"
     digi "I {i}always{/i} compete in the Pencil Sharpening Competition! I was inspired after that video of yours."
@@ -941,7 +952,10 @@ label true_pennsylvania:
     n "CS concentrates, his hands ready to sharpen like his life depends on it."
     host "1..."
     n "Both competitors hover their hands over the pencils..."
-    host "GO!"
+    if fun_value(FUN_VALUE_MUSIC):
+        host "BUST THOSE PENCILS RUDELY!"      
+    else:
+        host "GO!"
     minigame "minigame_pencil" "true_win_pencil" "lose_pencil_game"
 
 label true_win_pencil:
@@ -1059,7 +1073,10 @@ label true_back_home:
     scene cs_house with dissolve
     play music park_theme volume 0.5
     music Park Theme - Lorin Nelson
-    n "After the long and treacherous journey, CS finally arrives at his house."
+    if fun_value(FUN_VALUE_MUSIC):
+        n "After listening to Billy's many themes, they drive past the park next to CS' house."      
+    else:
+        n "After the long and treacherous journey, CS finally arrives at his house."
     show arceus flipped at left with moveinleft
     arceus "We made it back to your house, CS!"
     show cs at center with moveinleft
@@ -1090,7 +1107,10 @@ label true_back_home:
     show ed at right
     show rich at mid_mid_right behind ed
     with moveinright
-    ed "I have been waiting for you for quite some time now."
+    if fun_value(FUN_VALUE_MUSIC):
+        n "I've been listening to Alfred's theme while waiting for you."      
+    else:
+        ed "I have been waiting for you for quite some time now."
     rich "We've been trying to stop you for a while now, but this is the final stop for you."
     show cs disappointed
     cs "HoH SiS?? What do you guys still want from me?"
@@ -1136,10 +1156,21 @@ label true_talktohohsis:
     show anno at offscreenleft
     play music track_3 volume 0.4
     music Track 3 - Weatherscan
-    anno_offscreen "Wait!!!"
-    n "A voice can be heard behind the group running up to them."
-    cs "Anno?"
-    show anno at center behind doug with moveinleft
+    if fun_value(FUN_VALUE_MUSIC):
+        show anno at center behind doug with moveinleft
+        anno "Track 3!!!"
+        show cs angry
+        cs "C'mon Anno, this is an important moment!"
+        ed "Yeah, is that the best you can do?"
+        anno "Sorry guys, I honestly didn't get enough sleep for the final act."
+        show cs disappointed
+        cs "Well it's over now, we'll do another take later, let's keep going so we have more practice for the final take."
+    
+    else:
+        anno_offscreen "Wait!!!"
+        n "A voice can be heard behind the group running up to them."
+        cs "Anno?"
+        show anno at center behind doug with moveinleft
     anno "You guys can't just destroy CS' house!"
     ed "Why not?"
     anno "I don't know, because..."
@@ -1278,7 +1309,15 @@ label true_talktohohsis:
     play music ac_title volume 0.4
     music New Leaf Title Theme - Kazumi Totaka
     show cs at center with moveinleft
-    cs "Ah, it's good to be home again!"
+    if fun_value(FUN_VALUE_MUSIC):
+        cs "Ah, It's good to be New Leaf Title Theme again!"
+        show cs happy
+        cs "cs laughs."
+        billy_afar "Hey, now you have no room to talk!"
+        show cs
+        cs "Oh whatever, this take is ruined anyways."
+    else:
+        cs "Ah, it's good to be home again!"
     if fanbase == "both":
         jump true_ending
     elif fanbase == "ltt":
