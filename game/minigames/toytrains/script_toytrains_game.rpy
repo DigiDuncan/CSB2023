@@ -1,6 +1,29 @@
 init python:
     import math
 
+    class Jig:
+        def __init__(self):
+            self.position = (0, 0)
+
+        @property
+        def x(self) -> int:
+            return self.position[0]
+
+        @x.setter
+        def x(self, i: int):
+            self.position = (i, self.position[1])
+
+        @property
+        def y(self) -> int:
+            return self.position[1]
+
+        @y.setter
+        def y(self, i: int):
+            self.position = (self.position[0], i)
+
+        def pos(self, x, y) -> tuple[int, int]:
+            return (x - self.position[0], y - self.position[1])
+
     class ToyTrainsGameDisplayable(renpy.Displayable):
         def __init__(self):
             renpy.Displayable.__init__(self)
@@ -8,6 +31,14 @@ init python:
             self.bg = Image("minigames/toytrains/bg_do_not_resize.png")
             self.train_cs = Image("minigames/toytrains/train_cs.png")
             self.train_arceus = Image("minigames/toytrains/train_arceus.png")
+
+            self.up = False
+            self.left = False
+            self.down = False
+            self.right = False
+
+            self.jig = Jig()
+            self.jig.position = (2760, 1590)
             
             self.start_time = None
             self.win = None
@@ -18,29 +49,33 @@ init python:
             r = renpy.Render(1920, 1080)
 
             # Do some fancy things here!
+            if self.up:
+                self.jig.y -= 1
+            if self.down:
+                self.jig.y += 1
+            if self.left:
+                self.jig.x -= 1
+            if self.right:
+                self.jig.x += 1
             
             # Moving Backgound
-            
-            # make note of starting position here: ?, ?
-            bg_offset_x = 0
-            bg_offset_y = 0
             
             bg_displayable = renpy.displayable(self.bg)
             bg_transform = Transform(bg_displayable)
             bg_renderer = renpy.render(bg_transform, 0, 0, st, at)
-            r.blit(bg_renderer, (bg_offset_x , bg_offset_y))
+            r.blit(bg_renderer, self.jig.pos(0, 0))
             
             # CS Train
             train_cs_displayable = renpy.displayable(self.train_cs)
             train_cs_transform = Transform(train_cs_displayable, zoom = 0.5)
             train_cs_renderer = renpy.render(train_cs_transform, 475, 597, st, at)
-            r.blit(train_cs_renderer, (1300, 300))
+            r.blit(train_cs_renderer, self.jig.pos(4055, 2015))
 
             # Arc Train
             train_arceus_displayable = renpy.displayable(self.train_arceus)
             train_arceus_transform = Transform(train_arceus_displayable, zoom = 0.5)
             train_arceus_renderer = renpy.render(train_arceus_transform, 475, 597, st, at)
-            r.blit(train_arceus_renderer, (1000, 300))
+            r.blit(train_arceus_renderer, self.jig.pos(4355, 2015))
 
             renpy.redraw(self, 0)
             return r
@@ -49,11 +84,28 @@ init python:
             import pygame
             if ev.type == pygame.KEYDOWN and ev.key == pygame.K_END:
                 self.win = True
+            elif ev.type == pygame.KEYDOWN and ev.key == pygame.K_UP:
+                self.up = True
+            elif ev.type == pygame.KEYDOWN and ev.key == pygame.K_LEFT:
+                self.left = True
+            elif ev.type == pygame.KEYDOWN and ev.key == pygame.K_DOWN:
+                self.down = True
+            elif ev.type == pygame.KEYDOWN and ev.key == pygame.K_RIGHT:
+                self.right = True
+            elif ev.type == pygame.KEYUP and ev.key == pygame.K_UP:
+                self.up = False
+            elif ev.type == pygame.KEYUP and ev.key == pygame.K_LEFT:
+                self.left = False
+            elif ev.type == pygame.KEYUP and ev.key == pygame.K_DOWN:
+                self.down = False
+            elif ev.type == pygame.KEYUP and ev.key == pygame.K_RIGHT:
+                self.right = False
+
             if self.win is not None:
                 return self.win
 
         def visit(self):
-            return [] # Assets needed to load
+            return [self.bg, self.train_cs, self.train_arceus] # Assets needed to load
 
 
 screen toytrainsgame:
