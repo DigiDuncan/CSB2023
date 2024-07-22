@@ -19,7 +19,7 @@ class DigiIntPrompt(IntPrompt):
 console = Console()
 
 RE_BG_IMAGE = r'image (.+)\s?=\s?"(bg.+)"'
-RE_CHAR_IMAGE = r'image (.+)\s?=\s?"(characters.+)"'
+RE_CHAR_IMAGE = r'^\s*?image (.+)\s?=\s?"(characters.+)"'
 RE_CHARACTER = r'define (.+)\s?=\s?Character\("(.*)",\s?callback\s?=\s?(.*)\)'
 RE_BGM = r'define audio\.(?!sfx)(.+)\s?=\s?"(.+)"'
 RE_SFX = r'define audio\.(?=sfx)(.+)\s?=\s?"(.+)"'
@@ -37,7 +37,7 @@ class Replacement:
     replacement: str
     original_line: str
     callback: str = None
-
+    indent_level: int = 0
 
 def scramble():
     lines = []
@@ -67,7 +67,8 @@ def scramble():
         if (m := re.match(RE_BG_IMAGE, line)) and "Movie" not in line and "Window" not in line and SCRAMBLE_BG_IMAGES:
             bg_images.append(Replacement(n, m.group(1), m.group(2), line))
         elif (m := re.match(RE_CHAR_IMAGE, line)) and "Movie" not in line and "Window" not in line and SCRAMBLE_CHAR_IMAGES:
-            char_images.append(Replacement(n, m.group(1), m.group(2), line))
+            indent = (len(line) - len(line.lstrip())) // 4
+            char_images.append(Replacement(n, m.group(1), m.group(2), line, indent_level = indent))
         elif (m := re.match(RE_CHARACTER, line)) and SCRAMBLE_CHAR_NAMES:
             char_names.append(Replacement(n, m.group(1), m.group(2), line, m.group(3)))
         elif (m := re.match(RE_BGM, line)) and SCRAMBLE_BGM:
@@ -97,6 +98,7 @@ def scramble():
         for i in char_images:
             random_value = random.choice(possible_char_images)
             new_line = f"image {i.var_name} = \"{random_value}\"\n"
+            new_line = (" " * i.indent_level * 4) + new_line
             new_lines[i.line_num] = new_line
             possible_char_images.remove(random_value)
 
