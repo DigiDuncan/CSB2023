@@ -2332,7 +2332,7 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(309):
-        scene kingman_museum
+        scene kingman_museum_1
         pause 0.1 
     else:
         jump exit_debug
@@ -2418,7 +2418,7 @@ label asset_debugger:
         jump exit_debug
     if fun_value(326):
         scene vegasjade2
-        pause 0.1 
+        pause 0.1
     else:
         jump exit_debug
     if fun_value(327):
@@ -2524,6 +2524,11 @@ label asset_debugger:
     if fun_value(347):
         scene fun_hoh_sis
         pause 5.0 
+    else:
+        jump exit_debug
+    if fun_value (348):
+        scene kingman_museum_2
+        pause 0.1
     else:
         jump exit_debug
 

@@ -473,7 +473,7 @@ define k_doctor = Character("Kuwait Doctor", callback = char_callback)
 define k_nurse = Character("Kuwait Nurse", callback = char_callback)
 define l_snow = Character("Lt. Snow", callback = char_callback)
 define lupin = Character("Lupin", callback = renpy.partial(char_callback, name = "lupin", beep = "lupin"))
-
+define priest = Character("Priest", callback = char_callback)
 # Offscreen Character Definitions
 define tate_offscreen = Character("???", callback = renpy.partial(char_callback, name = "tate_offscreen", beep="tate"))
 define pakoo_offscreen = Character("???", callback = renpy.partial(char_callback, name = "pakoo_offscreen", beep="pak"))
@@ -1221,6 +1221,10 @@ image shadowman = "characters/shadowman.png"
 image pencilcashier = "characters/pencilcashier.png"
 image cruise = "characters/cruise.png"
 image cruise flipped = "flip:characters/cruise.png"
+image priest = "characters/priest.png"
+image priest flipped = "flip:characters/priest.png"
+image lunatic_cultist = "characters/lunatic_cultist.png"
+image lunatic_cultist flipped = "flip:characters/lunatic_cultist.png"
 
 # CS wacky Kuwait Adventures: Mika Edition (Deluxe Content [With Funky Kong {And Dante from Devil may Cry}])
 image kuwait_city = "bg/kuwait_city.jpg"

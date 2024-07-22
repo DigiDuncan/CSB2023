@@ -289,6 +289,7 @@ label dx_after_back_to_story:
     show cs 
     with dissolve
     play music ten_feet_away
+    $ total_votes = 0
     cs "Well, I guess I'm not leaving now!"
     cs "I need to figure out how to get Billy's machine back..."
     n "Before CS can think, a familiar voice is heard rushing over to him."
@@ -581,45 +582,67 @@ label dx_after_science_ask:
     scene cult_con
     show cs cultist at center
     cs "Y'know, the scientologists think they are all that, but maybe me talking to them will convince them to get us a vote."
+    hide cs with moveoutright
     n "CS runs over to scientologists stand."
+    show cs cultist at left
+    show cruise flipped at mid_right
     n "When CS gets there, he sees Tom Cruise standing there, greeting other cult members walking by."
     cruise "Yeah, and make sure to watch my movies too!"
     cs "Hey, guy! CS here!"
+    show cruise
     cruise "Hey, you're that new guy!"
     cruise "Why the hell did you pick those guys anyway? They always lose!"
+    show cs disappointed cultist
     cs "Well, it's funny that you said this convention never can show off any real power."
     cs "I think I got something up my sleeve that will match your needs."
     cruise "Hah! They all say that bud, what makes you so special?"
     cs "If you put a vote in for us, and we win, I'll show you all."
     cs "If I can't, the Blue Branch won't show up for another Cult Con."
     cruise "A bet? Sure, I'm down, but you better not let me down!"
+    show cs angry cultist
     cs "I won't man, don't worry."
     if god_money:
+        show cs cultist
         cs "By the way, do you have any spare change?"
         cruise "Why the hell would I give any money to you?"
         cruise "You are like, part of that fuckin' group that I hate!"
+        show cs disappointed cultist        
         cs "I dunno, it was worth a try."
+        show cs disappointed cultist flipped
         n "CS heads back to the convention floor."
+        show cs disappointed cultist flipped at offscreenleft with move
         cruise "Wait! Are you just gonna walk away?"
+        show cs disappointed cultist with determination
         cs "Well, I mean, you already say no."
+        show cruise flipped
         cruise "Ok-- Fuck-- just give me a moment."
+        show cs cultist at center with move
+        show cruise
         n "Mr. Cruise pulls out a few tens and hands it to CS."
         $ cath_counter += 30
         n "Current balance: $[cath_counter]."
         cruise "I'm not just gonna let you win that easily, if you lose, now I can really laugh at you!"
         cs "Thanks, your donation will be incredibly useful!"
         cruise "Yeah yeah, whatever."
+    show cs cultist flipped with determination
+    hide cs with moveoutleft
     n "CS heads back to the convention floor."
+    scene cultcon with dissolve
+    show cs cultist at center
     cs "Well, that was a lot easier than I thought."
     jump dx_after_seek_competitors
 
 label dx_after_catholic_ask:
-    play music ten_feet_away if_changed    
+    play music ten_feet_away if_changed
     scene cult_con
     show cs cultist at center
     cs "Who the hell are those guys?"
     cs "They just look like Christians!"
     n "CS goes to check out the Catholics."
+    hide cs with moveoutright
+    pause 0.5
+    show priest at mid_right
+    show cs cultist at left with moveinleft
     n "As CS approaches the priest, he immediately greets him."
     priest "Hello! Would you like to donate to the church?"
     menu:
@@ -633,10 +656,17 @@ label dx_after_catholic_ask:
     priest "...Upgrade?"
     cs "Have you gotten anyone to bite?"
     priest "Not yet, but I'm sure someone will realize--{nw}"
+    show cs disappointed cultist
     cs "Dude, I'm sorry, but I don't think this is gonna work out for you guys."
     priest "Just get out of here, you'll ruin my company."
+    show cs cultist
     cs "Alright, cya!"
     n "CS heads back to the convention floor."
+    show cs cultist flipped with determination
+    hide cs with moveoutleft
+    pause 0.5
+    scene cult_con with dissolve
+    show cs cultist at center with moveinleft
     cs "Well, that was a load of crap!"
     jump dx_after_seek_competitors
 
@@ -658,16 +688,22 @@ label dx_after_lunatic_ask:
     show cs cultist at center
     cs "Hmm, who are those guys? They look like plague doctors almost..."
     cs "Let's go check them out."
+    hide cs with moveoutright
     n "CS runs over to meet the Lunatic Cultists."
+    show lunatic_cultist at mid_right
+    show cs cultist at mid_left with moveinleft
     cs "Hey guys! Cultist here!"
     l_cultist "Aren't we all."
     cs "So, what do you guys do? Who do you worship?"
     l_cultist "We are the Lunatic Cultists. We worship our leader, who plans to summon the Moon Lord and bring balance to the world!"
     cs "I can see the Lunatic part, definitely. That's sounds pretty crazy."
     l_cultist "Well what about you then?"
+    show cs disappointed cultist
     cs "We worship CSGod, who will use YTP mag-- Yeah ok, I sound crazy too."
     cs "My plan was to ask you guys for votes, but I don't think our ideas are as big as yours."
+    show cs cultist
     l_cultist "If you want our votes, you must pass a quiz."
+    $ lunatic_votes = 0
     l_cultist "If you can guess right, we will give you all of our votes!"
     cs "Alright well, lay it on me."
     l_cultist "What are the 3 evils of the world?"
@@ -686,9 +722,21 @@ label dx_after_lunatic_ask:
         cs "I haven't?"
         l_cultist "I'm lost for words."
         l_cultist "We'll give you all our votes, because no one was supposed to get that answer correct."
+        $ lunatic_votes += 10
+        $ total_votes += [lunatic_votes]
         cs "Woohoo!"
         cs "Thank you so much!"
+        if god_money:
+            l_cultist "I think you deserve this."
+            n "They hand CS a shiny platinum coin."
+            cs "Woohoo!"
+            $ cath_counter += 10000
+            n "Current balance: $[cath_counter]."
+        show cs cultist flipped with determination
+        hide cs with moveoutleft
         n "CS heads back to the convention floor."
+        scene cult_con
+        show cs cultist at center with moveinleft
         cs "I've barely played Terraria, so either I looked up or asked the chat."
         cs "Either way, I got a ton of votes now!"
         jump dx_after_seek_competitors
@@ -696,15 +744,19 @@ label dx_after_lunatic_ask:
         l_cultist "Dude, how was he gonna know that? Only we know that!"
     l_cultist "Shit you right that was probably too hard."
     l_cultist "Alright, for these next questions we'll peer into your mind!"
+    show cs disappointed cultist
     cs "Woah wait--"
+    scene black with dissolve
     n "The cultists take CS into a limbo-like area, where he has the all thoughts of his past adventures from different timelines."
+    show lunatic_cultist at center with moveinright
+    play music space_classroom
     l_cultist "Alright, cs... 188?"
+    show lunatic_cultist flipped
     l_cultist "That's your name, apparently…"
+    show lunatic_cultist
     l_cultist "Let's ask you a few questions."
     l_cultist "How many friends did you gather to help takedown Copguy EX? Excluding you, of course."
 
-    # Initialize votes
-    $ lunatic_votes = 0
 
     $ csb_question_1 = renpy.input("How many friends did you gather to defeat Copguy EX?", csb_question_1, length = 32).lower()
     if csb_question_1 in ["12", "twelve", "a dozen"]:
@@ -725,7 +777,9 @@ label dx_after_lunatic_ask:
     n "1 Japanese Yen = 0.0062 USD"
     n "1 Pound Sterling = 1.26 USD"
     l_cultist "You made need to use a calc."
+    show lunatic_cultist flipped
     l_cultist "That's slang for calculator if you didn't know."
+    show lunatic_cultist
     $ csb_question_3 = renpy.input("How much richer is CS after Country route?", csb_question_3, length = 32).lower()
     if csb_question_3 in ["148600", "148,600", "$148600", "$148,600"]:
         $ lunatic_votes += 3
@@ -735,18 +789,27 @@ label dx_after_lunatic_ask:
 
 label dx_after_quiz_finish:
     l_cultist "Let's bring you back to reality now."
+    stop music fadeout 3.0
     n "CS' mind feels like it's being untangled, and then being put back together."
+    play music ten_feet_away if_changed
+    scene cult_con
+    show cs disappointed cultist at mid_left
+    show lunatic_cultist at mid_right
+    with dissolve
     cs "Woah, where am I?"
     cs "And what the hell just happened?"
     l_cultist "Well, we asked you some questions from deep inside your mind, and then cleared it so you don't remember."
+    show cs angry cultist
     cs "Wait, why did you wipe my mind?"
     l_cultist "Because it played out events of you in different timelines?"
     l_cultist "I don't know, I feel like knowing what you did in five different timelines would screw something up?"
     l_cultist "Either with you or reality itself."
     cs "As long as you didn't remove my frontal lobe or something, that's all that matters."
+    show cs cultist
     l_cultist "Well, we should gather up your votes."
     l_cultist "It looks like you got..."
     l_cultist "[lunatic_votes] votes."
+    $ total_votes += [lunatic_votes]
     if lunatic_votes == 0:
         jump dx_after_zero_right
     if lunatic_votes == 3:
@@ -759,6 +822,7 @@ label dx_after_quiz_finish:
         jump secret_dx
     #CS got zero right
 label dx_after_zero_right:
+    show cs disappointed cultist
     cs "Dang, I really got no votes?"
     l_cultist "Sorry, but you didn't get any of your answers right."
     l_cultist "Maybe consider calling some of your friends, so you can remember who they are."
@@ -770,7 +834,11 @@ label dx_after_zero_right:
         cs "Thanks."
         $ cath_counter += 0.01
         n "Current balance: $[cath_counter]."
+    show cs disappointed cultist flipped with determination
+    hide cs with moveoutleft
     n "CS sulks back to the convention floor."
+    scene cult_con
+    show cs disappointed cultist at center with moveinleft
     cs "That really sucks, I can't believe I did that bad."
     cs "I need to find more people to get votes from..."
     jump dx_after_seek_competitors
@@ -785,7 +853,11 @@ label dx_after_one_right:
         cs "Thank you!"
         $ cath_counter += 1
         n "Current balance: $[cath_counter]."
+    show cs cultist flipped with determination
+    hide cs with moveoutleft
     n "CS makes his way back to the convention floor."
+    scene cult_con
+    show cs cultist at center with moveinleft
     cs "Hey, at least I got some votes, but I still should go get some more."
     cs "Let's see…"
     jump dx_after_seek_competitors
@@ -801,7 +873,11 @@ label dx_after_two_right:
         cs "Holy crap, thanks a lot!"
         $ cath_counter += 100
         n "Current balance: $[cath_counter]."
+    show cs cultist flipped with determination
+    hide cs with moveoutleft
     n "CS gets back to the convention floor."
+    scene cult_con
+    show cs cultist at center with moveinleft
     cs "Well, I'm doing pretty good, I would say!"
     cs "I need to get some more votes, but I'm feeling confident!"
     cs "Alright, who's next?"
@@ -818,7 +894,11 @@ label dx_after_three_right:
         cs "Woohoo!"
         $ cath_counter += 10000
         n "Current balance: $[cath_counter]."
+    show cs cultist flipped with determination
+    hide cs with moveoutleft
     n "CS happily makes his way back to the convention floor."
+    scene cult_con
+    show cs cultist at center with moveinleft
     cs "Who won the lottery? I did!"
     cs "Smell that air!"
     cs "I think we are gonna win this competition!"
