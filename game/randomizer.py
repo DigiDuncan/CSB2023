@@ -128,18 +128,18 @@ def scramble():
 
     console.print("[blue]Writing new script...")
     # Replace script_start
-    with open("./random_script_start.rpy", "w") as f:
+    with open("./script_start.rpy", "w") as f:
         f.writelines(new_lines)
 
     exit(0)
 
 def unscramble():
     console.print("[blue]Reverting script_start...")
+    # Remove the new script start
+    os.remove("./script_start.rpy")
+
     # Rename the old script start
     os.rename("script_start.rpybu", "script_start.rpy")
-
-    # Remove the new script start
-    os.remove("random_script_start.rpy")
 
     exit(0)
 
