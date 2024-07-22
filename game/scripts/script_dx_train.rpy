@@ -298,26 +298,152 @@ label train_story_begin:
     pause 1.0
     n "The two glance around the space for a moment."
     
-    show cs flipped
+    show cs disappointed flipped
     show arceus
     n "They spot the entrance to a museum."    
     
-    scene kingman_museum with dissolve
+    scene kingman_museum_1 with dissolve
 
-    arceus "Oh, look at all those little trains. Wanna poke around there?"
-    cs "I don't see why not. Not like we have anything else to do."
-    arceus "Alrighty, let's go."
-    scene black with dissolve
-    n "CS and Arceus wander around Kingman Railroad Museum for a little while."
-    n "While not many exhibits can fit inside such a small building, there is just enough to see to pass the remaining time."
-    n "About five minutes before the train's expected arrival, the two make their way out onto to the platform."
+    arceus "Aww, look at all those cute little trains. Wanna poke around there?"
     
-    scene kingman_platform_2 with dissolve
+    menu:
+        "Would you like to visit Kingman Railroad Museum?"
+        "Sure.":
+            cs "Sure, I don't see why not. Not like we have anything else to do."
+            arceus "Alrighty, let's go!"
+            scene black with dissolve
+            pause 1.0
+            scene kingman_museum_2 with dissolve
+            pause 2.0
+            show cs flipped at center
+            show arceus at mid_right
+            with moveinright
+            pause 1.0
+            cs "Wow, there's so much stuff here!"
+            show cs flipped
+            cs "What should we check out first?"
+            arceus "Ooh, how about that train set over there?"
+            n "Arceus points towards a custom train exhibit with two attached controllers."
+            show cs disappointed flipped
+            n "It looks... familiar."
+            show cs disappointed
+            cs "It looks like {i}Minecraft..."
+            arceus "You don't like {i}Minecraft?"
+            cs "Nah. The crafting system is just too much."
+            show arceus worried
+            arceus "I guess it's not for everyone..."
+            show arceus
+            arceus "Thankfully, there's none of that here. Let's try it out!"
+            show cs
+            cs "Yeah, you're right. Let's go!"
+            show cs flipped
+            show cs flipped at offscreenleft
+            show arceus at offscreenleft
+            with moveoutleft
+            stop music fadeout 2.0
+            scene black with dissolve
+            minigame "play_toytrains_game" "train_race_win" "train_race_lose"
+        "Not really...":
+            scene kingman_interior
+            show cs disappointed flipped at center
+            show arceus at mid_right
+            with dissolve
+            cs "Not really..."
+            show arceus angry
+            show cs disappointed
+            arceus "What, would you rather just sit around bored, then?"
+            cs "I'm just not that into trains."
+            show cs happy
+            cs "Now, if this were a Lego museum, {i}that{/i} would be another story!"
+            show arceus
+            arceus "Well, {i}I'm{/i} going to go check it out."
+            show arceus happy
+            show cs worried
+            arceus "Just don't be offended when I pepper you with fun train facts afterwards! :3c"
+            scene black with dissolve
+            n "As CS takes a quick nap in a lobby chair, Arceus wanders around the museum."
+            n "While not many exhibits can fit inside such a small building, there is just enough to see to pass the remaining time."
+            n "About five minutes before the train's expected arrival, the two make their way out onto to the platform, Arceus sharing some of the things he learned from the various displays."
+            jump train_kingman_platform
 
+label train_race_win:
+    scene kingman_museum_2
+    show cs happy at left
+    show arceus worried at right
+    with dissolve
+    cs "Woohoo!"
+    show cs
+    cs "Good game, Arc."
+    arceus "Yeah, GG..."
+    show arceus
+    arceus "Honestly, I think this game is rigged anyway. Just look at the size of each track!"
+    show cs disappointed
+    cs "... Hey, you're right! I can't unsee it now!"
+    cs "Who built this?"
+    n "CS takes a closer look at the plaque."
+    n "\"This display was generously built and donated by aZSz.\""
+    show cs surprised
+    "..."
+    show cs
+    cs "No idea who that is."
+    cs "Let's see what else is here, I guess."
+    show arceus happy
+    arceus "Yeah! I wonder if there are any better train sets to play with."
+    show cs flipped
+    show arceus
+    show arceus at offscreenleft
+    show cs flipped at offscreenleft
+    with moveoutleft
+    scene black with dissolve
+
+    n "CS and Arceus wander around the museum for a little longer."
+    n "While not many exhibits can fit inside such a small building, there is just enough to see to pass the remaining time."
+    n "About five minutes before the train's expected arrival, the two make their way out onto to the platform, still discussing some of the things they learned from the various displays."
+        
+    jump train_kingman_platform
+    
+label train_race_lose:
+    scene kingman_museum_2
+    show cs disappointed at left
+    show arceus happy at right
+    with dissolve
+    arceus "Let's fuckin' go!"
+    cs "Aww, damn it..."
+    cs "This has {i}got{/i} to be rigged! I play with RC cars all the time!"
+    cs "Model trains can't be {i}that{/i} different, can they?"
+    show arceus worried
+    arceus "I mean, RC cars don't exactly have a possibility of derailing..."
+    cs "I suppose..."
+    show arceus
+    arceus "I wonder who built this. {i}Minecraft{/i}-themed is an interesting choice."
+    n "CS takes a closer look at the plaque."
+    n "\"This display was generously built and donated by aZSz.\""
+    show cs surprised
+    "..."
+    show cs
+    cs "No idea who that is."
+    cs "Let's see what else is here, I guess."
+    show arceus happy
+    arceus "Yeah! I wonder if there are more train sets we can play with."
+    show cs flipped
+    show arceus
+    show arceus at offscreenleft
+    show cs flipped at offscreenleft
+    with moveoutleft
+    scene black with dissolve
+
+    n "CS and Arceus wander around the museum for a little longer."
+    n "While not many exhibits can fit inside such a small building, there is just enough to see to pass the remaining time."
+    n "About five minutes before the train's expected arrival, the two make their way out onto to the platform, still discussing some of the things they learned from the various displays."
+    jump train_kingman_platform
+
+label train_kingman_platform:
+    scene kingman_platform_2 with dissolve
+    pause 1.0
     show arceus flipped at mid_mid_left
     show cs disappointed at left
     with moveinleft
-    pause 1.0
+    pause 2.0
 
     cs "... Man, that's some bad luck, though. What are the odds of this place burning down {i}twice?!{/i}"
     show arceus

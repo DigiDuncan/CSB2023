@@ -59,7 +59,6 @@ init python:
                 self.jig.x += 5
             
             # Moving Backgound
-            
             bg_displayable = renpy.displayable(self.bg)
             bg_transform = Transform(bg_displayable)
             bg_renderer = renpy.render(bg_transform, 0, 0, st, at)
@@ -76,6 +75,11 @@ init python:
             train_arceus_transform = Transform(train_arceus_displayable, zoom = 0.5)
             train_arceus_renderer = renpy.render(train_arceus_transform, 475, 597, st, at)
             r.blit(train_arceus_renderer, self.jig.pos(4355, 2015))
+            
+            # Text
+            temp_txt = "Hi, this doesn't work yet.\nUse arrow keys to check out the map, at least.\nPress END to \"win\", Space to \"lose.\""
+            temp_txt_render = renpy.render(Text(temp_txt, color = "#FFFFFF", size = 50), 1920, 100, st, at)
+            r.blit(temp_txt_render, (0, 0))
 
             renpy.redraw(self, 0)
             return r
@@ -84,6 +88,9 @@ init python:
             import pygame
             if ev.type == pygame.KEYDOWN and ev.key == pygame.K_END:
                 self.win = True
+            # temporary
+            elif ev.type == pygame.KEYDOWN and ev.key == pygame.K_SPACE:
+                self.win = False
             elif ev.type == pygame.KEYDOWN and ev.key == pygame.K_UP:
                 self.up = True
             elif ev.type == pygame.KEYDOWN and ev.key == pygame.K_LEFT:
@@ -107,7 +114,6 @@ init python:
         def visit(self):
             return [self.bg, self.train_cs, self.train_arceus] # Assets needed to load
 
-
 screen toytrainsgame:
     default toytrainsgame = ToyTrainsGameDisplayable()
     # Add a background or any static images here.
@@ -124,9 +130,13 @@ label play_toytrains_game:
     window show
 
     if _return == True:
-        $ achievement_manager.unlock("Lots & Lots of Trains!")
+        $ achievement_manager.unlock("Lots & Lots Of Trains!")
+        stop music fadeout 2.0
+        
         $ renpy.jump(minigame_win)
     else:
+        stop music fadeout 2.0
+        
         $ renpy.jump(minigame_loss)
 
 label toytrainsgame_done:
