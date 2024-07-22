@@ -23,6 +23,10 @@ init python:
 
 # Flips + color shaders
 init -10 python:
+    def flip_image(image_name):
+        displayable = renpy.get_registered_image(image_name)
+        return Transform(displayable, xzoom = -1)
+
     # dusk shader
     duskmatrix = TintMatrix("#ffaa49")
     
@@ -64,8 +68,7 @@ init -10 python:
         return Transform(s, xzoom = -1)
         
     config.displayable_prefix["flip"] = xflip
-    
-    
+
 # Text beeps
 init python:
     renpy.music.register_channel("beep", "voice", loop = True)
@@ -535,20 +538,9 @@ init 0:
     image cs disappointed metal3 = "characters/cs/disappointedmetal3.png"
     image cs disappointed metal4 = "characters/cs/disappointedmetal4.png"
 
-## 50 Shades of CS
+# Transformed images
 init 1 python:
-
-    duskmatrix = TintMatrix("#ffaa49")
-    darkmatrix = TintMatrix("#4848b8")
-
-    def duskshade(image_name):
-        displayable = renpy.get_registered_image(image_name)
-        return Transform(image_name, matrixcolor = duskmatrix)
-
-    def darkshade(image_name):
-        displayable = renpy.get_registered_image(image_name)
-        return Transform(image_name, matrixcolor = darkmatrix)
-
+    ## 50 Shades of CS
     renpy.image("cs happy dark", darkshade("cs happy"))
     renpy.image("cs angry dark", darkshade("cs angry"))
     renpy.image("cs concentrate dark", darkshade("concentrate"))
@@ -560,13 +552,7 @@ init 1 python:
     renpy.image("cs guard dark", darkshade("cs guard"))
     renpy.image("cs scared dark", darkshade("cs scared"))
 
-
-## CS Flipped Edition
-init 2 python:
-    def flip_image(image_name):
-        displayable = renpy.get_registered_image(image_name)
-        return Transform(displayable, xzoom = -1)
-
+    ## CS Flipped Edition
     renpy.image("cs flipped", flip_image("cs"))
     renpy.image("cs happy flipped", flip_image("cs happy"))
     renpy.image("cs angry flipped", flip_image("cs angry"))
@@ -591,20 +577,7 @@ init 2 python:
     renpy.image("cs pissed phone flipped", flip_image("cs pissed phone"))
     renpy.image("cs concentrate phone flipped", flip_image("cs concentrate phone"))
 
-## CS Flipped and Shaded
-init 4 python:
-
-    duskmatrix = TintMatrix("#ffaa49")
-    darkmatrix = TintMatrix("#4848b8")
-
-    def duskshadeflip(image_name):
-        displayable = renpy.get_registered_image(image_name)
-        return Transform(displayable, xzoom =- 1, matrixcolor=duskmatrix)
-
-    def dawnshadeflip(image_name):
-        displayable = renpy.get_registered_image(image_name)
-        return Transform(displayable, xzoom =- 1, mattrixcolor = dawnmatrix)
-
+    ## CS Flipped and Shaded
     renpy.image("cs happy dark flipped", darkshadeflip("cs happy"))
     renpy.image("cs angry dark flipped", darkshadeflip("cs angry"))
     renpy.image("cs dark flipped", darkshadeflip("cs"))
