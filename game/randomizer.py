@@ -159,6 +159,11 @@ def get_current_options_table() -> Table:
 def choose_scramble_options():
     global SCRAMBLE_BG_IMAGES, SCRAMBLE_BGM, SCRAMBLE_CHAR_IMAGES, SCRAMBLE_CHAR_NAMES, SCRAMBLE_SFX
     console.clear()
+
+    if os.path.isfile("./script_start.rpybu"):
+        console.print(":warning: [bold yellow]Your game is in a scrambled state. Please unscramble first.")
+        exit()
+
     console.print(get_current_options_table())
     choice = DigiPrompt.ask("Choose a number, or hit ENTER to scramble!", choices = ["1", "2", "3", "4", "5", ""])
     if choice == "":
