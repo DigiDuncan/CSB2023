@@ -1,20 +1,34 @@
 import os
 import random
 import re
-import rich
+
+from rich.console import Console
+from rich.prompt import IntPrompt, Prompt
+from rich.progress import track
+from rich.table import Table
+
 from dataclasses import dataclass
 
-SCRAMBLE_BG_IMAGES = True
-SCRAMBLE_CHAR_IMAGES = True
-SCRAMBLE_CHAR_NAMES = True
-SCRAMBLE_BGM = True
-SCRAMBLE_SFX = True
+class DigiPrompt(Prompt):
+    prompt_suffix = " > "
+
+
+class DigiIntPrompt(IntPrompt):
+    prompt_suffix = " > "
+
+console = Console()
 
 RE_BG_IMAGE = r'image (.+)\s?=\s?"(bg.+)"'
 RE_CHAR_IMAGE = r'image (.+)\s?=\s?"(characters.+)"'
 RE_CHARACTER = r'define (.+)\s?=\s?Character\("(.*)",\s?callback\s?=\s?(.*)\)'
 RE_BGM = r'define audio\.(?!sfx)(.+)\s?=\s?"(.+)"'
 RE_SFX = r'define audio\.(?=sfx)(.+)\s?=\s?"(.+)"'
+
+SCRAMBLE_BG_IMAGES = True
+SCRAMBLE_CHAR_IMAGES = True
+SCRAMBLE_CHAR_NAMES = True
+SCRAMBLE_BGM = True
+SCRAMBLE_SFX = True
 
 @dataclass
 class Replacement:
@@ -42,15 +56,13 @@ def scramble():
         lines = f.readlines()
         new_lines = [None] * len(lines)
 
-    print("Backing up old script...")
+    console.print("[blue]Backing up old script...")
 
     # Rename the old script start
     os.rename("script_start.rpy", "script_start.rpybu")
 
-    print("Reading lines...")
-
     # Read lines
-    for n, line in enumerate(lines):
+    for n, line in track(enumerate(lines), "[blue]Reading lines...", len(lines)):
         if (m := re.match(RE_BG_IMAGE, line)) and "Movie" not in line and "Window" not in line and SCRAMBLE_BG_IMAGES:
             bg_images.append(Replacement(n, m.group(1), m.group(2), line))
         elif (m := re.match(RE_CHAR_IMAGE, line)) and "Movie" not in line and "Window" not in line and SCRAMBLE_CHAR_IMAGES:
@@ -71,51 +83,110 @@ def scramble():
     possible_bgms = [j.replacement for j in bgms]
     possible_sfxs = [j.replacement for j in sfxs]
 
-    print("Scrambling BGs...")
-    for i in bg_images:
-        random_value = random.choice(possible_bgs)
-        new_line = f"image {i.var_name} = \"{random_value}\""
-        new_lines[i.line_num] = new_line
-        possible_bgs.remove(random_value)
+    if SCRAMBLE_BG_IMAGES:
+        console.print(f"[blue]Scrambling {len(bg_images)} BGs...")
+        for i in bg_images:
+            random_value = random.choice(possible_bgs)
+            new_line = f"image {i.var_name} = \"{random_value}\""
+            new_lines[i.line_num] = new_line
+            possible_bgs.remove(random_value)
 
-    print("Scrambling character sprites...")
-    for i in char_images:
-        random_value = random.choice(possible_char_images)
-        new_line = f"image {i.var_name} = \"{random_value}\""
-        new_lines[i.line_num] = new_line
-        possible_char_images.remove(random_value)
+    if SCRAMBLE_CHAR_IMAGES:
+        console.print(f"[blue]Scrambling {len(char_images)} character sprites...")
+        for i in char_images:
+            random_value = random.choice(possible_char_images)
+            new_line = f"image {i.var_name} = \"{random_value}\""
+            new_lines[i.line_num] = new_line
+            possible_char_images.remove(random_value)
 
-    print("Scrambling character names...")
-    for i in char_names:
-        random_value = random.choice(possible_char_names)
-        new_line = f"define {i.var_name} = Character(\"{random_value}\", callback = {i.callback})"
-        new_lines[i.line_num] = new_line
-        possible_char_names.remove(random_value)
+    if SCRAMBLE_CHAR_NAMES:
+        console.print(f"[blue]Scrambling {len(char_names)} character names...")
+        for i in char_names:
+            random_value = random.choice(possible_char_names)
+            new_line = f"define {i.var_name} = Character(\"{random_value}\", callback = {i.callback})"
+            new_lines[i.line_num] = new_line
+            possible_char_names.remove(random_value)
 
-    print("Scrambling BGMs...")
-    for i in bgms:
-        random_value = random.choice(possible_bgms)
-        new_line = f"define audio.{i.var_name} = \"{random_value}\""
-        new_lines[i.line_num] = new_line
-        possible_bgms.remove(random_value)
+    if SCRAMBLE_BGM:
+        console.print(f"[blue]Scrambling {len(bgms)} BGMs...")
+        for i in bgms:
+            random_value = random.choice(possible_bgms)
+            new_line = f"define audio.{i.var_name} = \"{random_value}\""
+            new_lines[i.line_num] = new_line
+            possible_bgms.remove(random_value)
 
-    print("Scrambling SFX...")
-    for i in sfxs:
-        random_value = random.choice(possible_sfxs)
-        new_line = f"define audio.sfx{i.var_name} = \"{random_value}\""
-        new_lines[i.line_num] = new_line
-        possible_sfxs.remove(random_value)
+    if SCRAMBLE_SFX:
+        console.print(f"[blue]Scrambling {len(sfxs)} SFX...")
+        for i in sfxs:
+            random_value = random.choice(possible_sfxs)
+            new_line = f"define audio.sfx{i.var_name} = \"{random_value}\""
+            new_lines[i.line_num] = new_line
+            possible_sfxs.remove(random_value)
 
     # Reappend new lines
     new_lines = [l + "\n" for l in new_lines]
 
-    print("Writing new script...")
+    console.print("[blue]Writing new script...")
     # Replace script_start
-    with open("./script_start.rpy", "w") as f:
+    with open("./random_script_start.rpy", "w") as f:
         f.writelines(new_lines)
 
+    exit(0)
+
+def unscramble():
+    console.print("[blue]Reverting script_start...")
+    # Rename the old script start
+    os.rename("script_start.rpybu", "script_start.rpy")
+
+    # Remove the new script start
+    os.remove("random_script_start.rpy")
+
+    exit(0)
+
+def get_current_options_table() -> Table:
+    t = Table("Scramble?", "Y/N", "#", title = "What would you like scrambled?")
+    t.add_row("Background Images", ":white_check_mark:" if SCRAMBLE_BG_IMAGES else ":x:", "1")
+    t.add_row("Character Images", ":white_check_mark:" if SCRAMBLE_CHAR_IMAGES else ":x:", "2")
+    t.add_row("Character Names", ":white_check_mark:" if SCRAMBLE_CHAR_NAMES else ":x:", "3")
+    t.add_row("Music", ":white_check_mark:" if SCRAMBLE_BGM else ":x:", "4")
+    t.add_row("Sound Effects", ":white_check_mark:" if SCRAMBLE_SFX else ":x:", "5")
+    t.caption = "Choose a number to toggle."
+
+    return t
+
+def choose_scramble_options():
+    global SCRAMBLE_BG_IMAGES, SCRAMBLE_BGM, SCRAMBLE_CHAR_IMAGES, SCRAMBLE_CHAR_NAMES, SCRAMBLE_SFX
+    console.print(get_current_options_table())
+    choice = DigiPrompt.ask("Choose a number, or hit ENTER to scramble!", choices = ["1", "2", "3", "4", "5", ""])
+    if choice == "":
+        scramble()
+    elif choice == "1":
+        SCRAMBLE_BG_IMAGES = not SCRAMBLE_BG_IMAGES
+    elif choice == "2":
+        SCRAMBLE_CHAR_IMAGES = not SCRAMBLE_CHAR_IMAGES
+    elif choice == "3":
+        SCRAMBLE_CHAR_NAMES = not SCRAMBLE_CHAR_NAMES
+    elif choice == "4":
+        SCRAMBLE_BGM = not SCRAMBLE_BGM
+    elif choice == "5":
+        SCRAMBLE_SFX = not SCRAMBLE_SFX
+    else:
+        console.print(":warning: [bold yellow]Invalid option.")
+    choose_scramble_options()
+
+
+def choose():
+    choice = DigiIntPrompt.ask("Scramble (1) or unscramble (2)?", choices = ["1", "2"])
+    if choice == 1:
+        choose_scramble_options()
+    elif choice == 2:
+        unscramble()
+    else:
+        console.print(":warning: [bold yellow]Invalid option.")
+        choose()
+
 def main():
-    scramble()
+    choose()
 
 if __name__ == "__main__":
     main()
