@@ -180,7 +180,8 @@ label dx_after_true:
     renovator "Well yeah, you're in {i}my{/i} backroom, and you need to get out. The stairs are behind me."
     show cs disappointed flipped
     cs "Wh-- really?"
-    renovator "Yes, and please leave quickly. We are renovating this place into an RC racetrack room, and we don't need insane people ruining it."
+    #"Get out" is more aggressive than "leave quickly"
+    renovator "Yes, and please get out. We are renovating this place into an RC racetrack room, and we don't need insane people ruining it."
     cs "Okay, okay. I'm sorry."
     hide cs with moveoutleft
     scene backrooms with dissolve
@@ -320,7 +321,8 @@ label dx_after_back_to_story:
     cs "So, you just want a middle man to do it for you."
     csgod "Well, yeah? Kinda?"
     show cs pissed
-    cs "I don't know how many times you have to take a shit, or whatever, but in case you weren't watching, I am fucking {i}stuck in the past."
+    #The only reason I want to keep caps here, is because I had to create a new sprite to show how mad he was.
+    cs "I don't know how many times you have to take a shit, or whatever, but in case you weren't watching, I AM FUCKING {i}STUCK IN THE PAST."
     hide csgod_angry
     show csgod at right
     csgod "..."
@@ -902,8 +904,9 @@ label dx_after_three_right:
     n "CS happily makes his way back to the convention floor."
     scene cult_con
     show cs cultist at center with moveinleft
+    # This is a reference to Fallout: NV, keep this the way it is
     cs "Who won the lottery? I did!"
-    cs "Smell that? That's luck in the air!"
+    cs "Smell that air!"
     cs "I really think we are gonna win this!"
     cs "Who's next?"
     jump dx_after_seek_competitors
