@@ -5,6 +5,7 @@ init python:
         def __init__(self):
             renpy.Displayable.__init__(self)
             
+            self.bg = Image("minigames/toytrains/bg_do_not_resize.png")
             self.train_cs = Image("minigames/toytrains/train_cs.png")
             self.train_arceus = Image("minigames/toytrains/train_arceus.png")
             
@@ -17,6 +18,17 @@ init python:
             r = renpy.Render(1920, 1080)
 
             # Do some fancy things here!
+            
+            # Moving Backgound
+            
+            # make note of starting position here: ?, ?
+            bg_offset_x = 0
+            bg_offset_y = 0
+            
+            bg_displayable = renpy.displayable(self.bg)
+            bg_transform = Transform(bg_displayable)
+            bg_renderer = renpy.render(bg_transform, 0, 0, st, at)
+            r.blit(bg_renderer, (bg_offset_x , bg_offset_y))
             
             # CS Train
             train_cs_displayable = renpy.displayable(self.train_cs)
@@ -47,11 +59,10 @@ init python:
 screen toytrainsgame:
     default toytrainsgame = ToyTrainsGameDisplayable()
     # Add a background or any static images here.
-    add "minigames/toytrains/bg.png"
-    
+
     add toytrainsgame
 
-label play_toytrainsgame:
+label play_toytrains_game:
     window hide
     $ quick_menu = False
     play music hide_and_seek if_changed
