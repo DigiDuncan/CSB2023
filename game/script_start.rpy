@@ -1670,6 +1670,7 @@ define audio.hitsquad_2 = "hitsquad_2.ogg"
 
 # CSBIII DX Finale Music
 define audio.funvalueland = "funvalueland.ogg"
+define audio.unobtrusive_fun = "unobtrusive_fun.ogg"
 
 # Other?
 define audio.space_classroom = "secret/space_classroom.ogg"

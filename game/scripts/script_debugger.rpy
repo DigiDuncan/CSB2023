@@ -527,6 +527,7 @@ label asset_debugger:
         show mean ayo at mid_mid_left
         show lancer at mid_mid_right
         show alien at mid_right
+        show lunatic_cultist at mid_right_right
         show arceus angry dusk at right 
         anno "test 33{w=0.5}{nw}"
     else:
@@ -541,6 +542,7 @@ label asset_debugger:
         show mean ayo flipped at mid_mid_left
         show lancer flipped at mid_mid_right
         show alien dead at mid_right
+        show lunatic_cultist flipped at mid_right_right
         show arceus dusk flipped at right 
         border_guard "test 34{w=0.5}{nw}"
     else:
@@ -555,6 +557,7 @@ label asset_debugger:
         show mean angry at mid_mid_left
         show bubble at mid_mid_right
         show ikea_worker at mid_right
+        show priest at mid_right_right
         show arceus worried dusk at right
         linus "test 35{w=0.5}{nw}"
     else:
@@ -569,6 +572,7 @@ label asset_debugger:
         show mean angry flipped at mid_mid_left
         show tate smug sil_white flipped at mid_mid_right
         show pomni at mid_right
+        show priest flipped at mid_right_right
         asylum_worker "test 36{w=0.5}{nw}"
     else:
         jump exit_debug
@@ -674,7 +678,7 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(46):
-        play sound sfx_nicecar
+        play sound sfx_nice_car
         play music energetic_rock
         scene frontdoor
         show cheetos at center
