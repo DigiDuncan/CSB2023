@@ -136,14 +136,14 @@ label csbiii_ai:
     arceus "CS, that was insane! We actually made it!"
     n "CS catches his breath."
     show cs happy
-    cs "We sure did, buddy. Another adventure for the books!"
-    play music friendship volume 0.4
-    scene endingai with dissolve(1.0, 1.0, 1.0)
-    music Friendship - Toby Fox
     if fun_value(FUN_VALUE_MUSIC):
         n "We sure did, buddy. Another adventure for the books! Hooray for friendship!"
     else:
-        n "CS188 and Arceus exchange a high-five and disappear into the distance, ready for their next escapade."
+        cs "We sure did, buddy. Another adventure for the books!"  
+    play music friendship volume 0.4
+    scene endingai with Fade(1.0, 1.0, 1.0)
+    music Friendship - Toby Fox
+    n "CS188 and Arceus exchange a high-five and disappear into the distance, ready for their next escapade."
     "ChatGPT" "Note: The script is a fictional representation and does not reflect the actual personalities or actions of CS188 or any real-life individuals."
     $ achievement_manager.unlock("Artifical Unintelligence")
     pause 2.0

@@ -1108,7 +1108,7 @@ label true_back_home:
     show rich at mid_mid_right behind ed
     with moveinright
     if fun_value(FUN_VALUE_MUSIC):
-        n "I've been listening to Alfred's theme while waiting for you."      
+        ed "I've been listening to Alfred's theme while waiting for you."      
     else:
         ed "I have been waiting for you for quite some time now."
     rich "We've been trying to stop you for a while now, but this is the final stop for you."
@@ -1312,8 +1312,8 @@ label true_talktohohsis:
     if fun_value(FUN_VALUE_MUSIC):
         cs "Ah, It's good to be New Leaf Title Theme again!"
         show cs happy
-        cs "cs laughs."
-        billy_afar "Hey, now you have no room to talk!"
+        cs "CS laughs."
+        billy_far "Hey, now you have no room to talk!"
         show cs
         cs "Oh whatever, this take is ruined anyways."
     else:
@@ -1328,7 +1328,7 @@ label true_talktohohsis:
         jump true_ending
 
 label true_ending:
-    stop music
+    play music ac_title volume 0.4 if_changed
     n "CS looks over at his desk, where a new computer is sitting."
     scene cs_room_2 with dissolve
     n "CS looks at the monitor, which has a sticky note that says \"From LTT\"."
@@ -1375,7 +1375,7 @@ label true_streaming:
             return
 
 label true_ytp_ending:
-    stop music
+    play music ac_title volume 0.4 if_changed
     n "CS looks over at his desk, where his old computer is sitting."
     scene cs_room_2 with dissolve
     show cs at mid_left
@@ -1396,7 +1396,7 @@ label true_ytp_ending:
     return
 
 label true_ltt_ending:
-    stop music
+    play music ac_title volume 0.4 if_changed
     n "CS looks over at his desk, where a new computer is sitting."
     scene cs_room_2 with dissolve
     n "CS looks at the monitor, which has a sticky note that says \"From LTT\"."
@@ -1420,7 +1420,7 @@ label true_ltt_ending:
     return
 
 label true_fighthohsis:
-    stop music
+    play music hohsis_remix volume 0.5 if_changed
     scene cs_house
     show cs disappointed at left
     show ed at right
@@ -1466,7 +1466,7 @@ label true_fighthohsis:
     bad_end "Revenge!" "true_back_home"
 
 label true_fuckuphohsis:
-    stop music
+    play music hohsis_remix volume 0.5 if_changed
     scene cs_house
     show ed at right
     show rich at mid_mid_right behind ed
@@ -1497,7 +1497,7 @@ label true_fuckuphohsis:
     bad_end "Time to bunk\nat Rosen's!" "true_back_home"  
 
 label true_copsathohsis:
-    stop music
+    stop music fadeout 3.0
     scene cs_house
     show ed at right
     show rich at mid_mid_right behind ed

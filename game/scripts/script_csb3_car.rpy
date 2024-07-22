@@ -24,7 +24,7 @@ label car_dialogue:
     play music billy_mix
     music "Billy's Mix - Billy Mays"
     if fun_value(FUN_VALUE_MUSIC):
-        n "Well Arceus, it's time for Billy's Mix!"
+        cs "Well Arceus, it's time for Billy's Mix!"
         arceus "It sure is. We've done a lot, right?"
     else:
         cs "Well, Arceus, it has been quite a ride."
