@@ -19,7 +19,7 @@ label vibration:
     play sound sfx_foundationfail volume 0.5
     show cs_room behind cs at rotate_10 with hpunch
     pause 1.0
-    cs "Woah shit! I need to call HoH SiS!"
+    cs "Woah, shit! I need to call HoH SiS!"
     show cs phone
     show ed at right with moveinright
     show cs
@@ -36,8 +36,8 @@ label vibration:
     with dissolve
     michael "So, if you play the True route again, you get a secret ending!"
     show cs flipped
-    cs "Huh? Sorry I was sleeping."
-    cs "I gotta head home now, bye!"
+    cs "Huh? Sorry, I was sleeping."
+    cs "I've gotta head home now, bye!"
     show cs with determination
     hide cs with moveoutright
     scene black with dissolve
@@ -45,9 +45,9 @@ label vibration:
     scene cs_room with dissolve
     show cs disappointed at center with moveinleft
     cs "Hey, my house is still fucked up!"
-    cs "My laptop as well!"
+    cs "My laptop, as well!"
     show cs angry
-    cs "I'm gonna go kick their ass!"
+    cs "I'm gonna go kick their asses!"
     hide cs with moveoutright
     scene black with dissolve
     pause 1.0
@@ -76,7 +76,7 @@ label vibration:
     show blue_light at left
     show red_light at right
     show copguy behind blue_light, red_light at right with moveinright
-    cs "You won't catch me! Cya!"
+    cs "You won't catch me! See ya!"
     hide cs with moveoutright
     scene black with dissolve
     stop music fadeout 3.0
@@ -89,16 +89,16 @@ label vibration:
     play music fastbudget_song volume 0.7
     music "Fastbudget Song - Pakoo"
     show copguy at right with moveinright
-    copguy "*Huff* *Huff*"
+    copguy "{i}Huff... huff..."
     show cs happy
     cs "I beat you here!"
-    copguy "Well, at least, you, turned yourself in."
+    copguy "Well... at least... you... turned yourself in."
     show cs
-    copguy "Stay here for a moment while I get your suit."
+    copguy "Stay here for a moment while I get your uniform."
     show copguy flipped with determination
     hide copguy with moveoutright
     show arceus prison at right with moveinright
-    arceus "Hey CS, wanna break out?"
+    arceus "Hey, CS, wanna break out?"
     cs "Sure!"
     show cs flipped with determination
     hide cs
@@ -131,7 +131,7 @@ label vibration:
     with dissolve
     play music fastport volume 0.7
     music "Fastport.MID - Pakoo"
-    linus "Sorry, I can't get you a job, you don't have a visa."
+    linus "Sorry, I can't get you a job. You don't have a visa."
     show arceus happy at right with moveinright
     arceus "Refresh the page!"
     linus "Oh, I guess you have a visa now. That was fast..."
@@ -160,7 +160,7 @@ label vibration:
     with dissolve
     show cs at left with moveinleft
     linus "Dude, that was awesome! I love YTPs!"
-    linus "I even have a cool ass graphics card that makes YTP making easier!"
+    linus "I even have a cool-ass graphics card that makes YTP making easier!"
     cs "Nice!"
     linus "Let's make a video about it!"
     scene black with dissolve
@@ -169,8 +169,8 @@ label vibration:
     show cs at left
     show linus at right
     with moveinleft
-    cs "Alright well, I'm gonna make more YTPs for the channel!"
-    linus "No sorry, when I gave that card, I technically meant for your own use, even though I didn't mention that."
+    cs "Alright, well, I'm gonna make more YTPs for the channel!"
+    linus "No, sorry. When I gave you that card, I technically meant that it's for your own use, even though I didn't mention that."
     show cs disappointed
     cs "Oh..."
     cs "What if I show you more YTPs?"
@@ -185,7 +185,7 @@ label vibration:
     linus "Damn, I guess that worked."
     show arceus at center with moveinright
     arceus "Hey CS! We gotta go! Cops are here!"
-    cs "Alright! Bye guys!"
+    cs "Alright! Bye, guys!"
     show arceus flipped with determination
     hide cs
     hide arceus
@@ -206,7 +206,7 @@ label vibration:
     show arceus dark flipped at right
     with moveinleft
     show arceus dark with determination
-    arceus "Alright, we got outta there."
+    arceus "Alright, we've got outta there."
     cs "Yeah, now we have to trek home."
     show copguy dark at center with moveinleft
     copguy "Not so fast!"
@@ -257,16 +257,16 @@ label vibration:
     with dissolve
     cs "This is gonna be a long walk."
     show billy at center with moveinleft
-    billy "Hi it's Billy! If you give me $20 I'll take you home!"
+    billy "Hi, it's Billy! If you give me $20 I'll take you home!"
     show cs happy
-    cs "Awesome let's go!"
+    cs "Awesome, let's go!"
     scene black
     play sound sfx_doorslam
     pause 1.0
     scene carback1
     show billy car
     with dissolve
-    billy "Where we heading?"
+    billy "Where're we heading?"
     cs "New York!"
     billy "Alright! Let's go!"
     scene car background night
@@ -286,7 +286,7 @@ label vibration:
     scene rushmore
     show billy car
     with dissolve
-    cs "Hey wait! Watch this!"
+    cs "Hey, wait! Watch this!"
     scene csmore
     show billy car with hpunch
     billy "Cool!"
@@ -324,13 +324,13 @@ label vibration:
     show mario at right
     with dissolve
     show arceus dirty flipped at left with moveinleft
-    mario "Alright, the washers are over there. Some fuckin clown broke the dryers unfortunately."
+    mario "Alright, the washers are over there. Unfortunately, some fuckin clown broke the dryers."
     arceus "I'll deal with it."
     hide arceus with moveoutright
     show shaggy_too_dope at left
     show violent_jay at mid_left
     with moveinleft
-    shaggy_too_dope "Here's some money Mario."
+    shaggy_too_dope "Here's some money, Mario."
     mario "Thanks."
     hide shaggy_too_dope
     hide violent_jay
@@ -343,14 +343,14 @@ label vibration:
     pause 2.0
     scene wozniaktroubles
     show billy car
-    billy "Holy shit Scott the Woz!"
+    billy "Holy shit, Scott the Woz!"
     scene car plains
     show billy car
     with dissolve
     pause 2.0
     scene billboard
     show billy car
-    cs "Holy shit! Pencilcon! We gotta go!"
+    cs "Holy shit! Pencilcon! We've gotta go!"
     billy "Alright..."
     scene black with dissolve
     pause 1.0
@@ -381,9 +381,9 @@ label vibration:
     with dissolve
     show beam at xstretch_out
     ed "Damn, I don't know how you beat us."
-    ed "But I finally caught up with you!"
+    ed "But, I finally caught up with you!"
     cs "Are you gonna fix my house?"
-    ed "What? Why would I do that?"
+    ed "What? Why would we do that?"
     cs "I'm sorry for everything I caused?"
     ed "Alright, we'll fix your house."
     show cs happy
