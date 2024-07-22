@@ -376,7 +376,7 @@ label train_race_win:
     cs "Good game, Arc."
     arceus "Yeah, GG..."
     show arceus
-    arceus "Honestly, I think this game is rigged anyway. Just look at how much bigger my track is!"
+    arceus "Honestly, I think this game is rigged, anyway. Just look at how much bigger {i}my{/i} track is!"
     show cs disappointed
     cs "... Hey, you're right! I can't unsee it now!"
     cs "Who built this?"
@@ -2037,17 +2037,17 @@ label train_confront_lupin:
     show tate stare
     mean "Oh, yeah, that's {i}real{/i} descriptive."
     mean "Even I wear a red jacket sometimes."
-    show tate sheepish
     show cs disappointed flipped
     cs "You do? How?"
+    show tate sheepish
     tate "Well, you see--{w=0.5}{nw}"
     show mean angry flipped
-    mean "And you were saying, before CS came in, that you saw the bastard who took my hat?"
+    mean "And, you were saying, before CS came in, that you saw the bastard who took my hat?"
     show tate srs
     tate "Yeah. Remember that guy I told you about earlier?"
     tate "The one who's been bugging me since we left Cali?"
     show mean unamused flipped
-    mean "Are you sure you aren't just saying that because you want an excuse to get rid of the guy?"
+    mean "Are you sure you aren't just saying that so the staff has an excuse to get rid of the guy?"
     show tate shock
     tate "No! I'm serious!"
     tate "He {i}also{/i} wears a red jacket!"
@@ -2059,7 +2059,7 @@ label train_confront_lupin:
     show cs disappointed flipped at mid_mid_right
     show mean unamused flipped at center_mid_left
     show arceus angry at right
-    with MoveTransition(0.5)
+    with MoveTransition(1.0)
 
     pause 0.5
     arceus "{size=-15}All the fuckin' booze..."
@@ -2105,7 +2105,7 @@ label train_confront_lupin:
     mean "God damn it, I told him not to mix that protein powder with milk."
     show mean angry
     show cs disappointed flipped
-    mean "I guess it's up to us to find the guy."
+    mean "Well, I guess it's up to us to find the guy."
     mean "I can't start work without my hat!"
     show arceus worried
     arceus "What's so special about the hat?"
@@ -2125,14 +2125,14 @@ label train_confront_lupin:
 
     if fun_value(FUN_VALUE_COMMON):
         mean "Me without my hat is like Mario without {i}his!"
-        mean "Just because it's a game mechanic doesn't mean it's {i}right!"
+        mean "Just because it's a game mechanic doesn't mean that it's {i}right!"
     else:
         mean "Bro, just {i}look{/i} at me. I can't exactly fit into a standard uniform, now, can I?"
 
     show arceus worried
     arceus "I... suppose not."
     mean "Let's just start looking."
-    mean "I say that we start at the very back of the train and go car-by-car."
+    mean "I say that we start at the very back of the train, then search car-by-car."
     mean "Let's stick together in case this guy is dangerous."
    
     "This is a placeholder line until more is written."
