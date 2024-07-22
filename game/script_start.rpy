@@ -495,86 +495,125 @@ define amtrak_npc_2 = Character("Passenger 2", callback = char_callback)
 define amtrak_npc_3 = Character("Passenger 3", callback = char_callback)
 
 # Character Images
-## CS
-image cs = "characters/cs/neutral.png"
-image cs flipped = "flip:characters/cs/neutral.png"
-image cs happy = "characters/cs/happy.png"
-image cs happy flipped = "flip:characters/cs/happy.png"
-image cs happy dark = "dark:characters/cs/happy.png"
-image cs happy dark flipped = "dark:flip:characters/cs/happy.png"
-image cs angry = "characters/cs/angry.png"
-image cs angry dark = "dark:characters/cs/angry.png"
-image cs angry flipped = "flip:characters/cs/angry.png"
-image cs angry dark flipped = "dark:flip:characters/cs/angry.png"
-image cs worried = "characters/cs/worried.png"
-image cs worried flipped = "flip:characters/cs/worried.png"
-image cs disappointed = "characters/cs/disappointed.png"
-image cs disappointed metal = "characters/cs/disappointedmetal.png"
-image cs disappointed metal2 = "characters/cs/disappointedmetal2.png"
-image cs disappointed metal3 = "characters/cs/disappointedmetal3.png"
-image cs disappointed metal4 = "characters/cs/disappointedmetal4.png"
-image cs disappointed flipped = "flip:characters/cs/disappointed.png"
-image cs concentrate = "characters/cs/concentrate.png"
-image cs concentrate dark = "dark:characters/cs/concentrate.png"
-image cs concentrate flipped = "flip:characters/cs/concentrate.png"
-image cs dark = "dark:characters/cs/neutral.png"
-image cs dark flipped = "dark:flip:characters/cs/neutral.png"
-image cs dusk = "dusk:characters/cs/neutral.png"
-image cs disappointed dark = "dark:characters/cs/disappointed.png"
-image cs disappointed dark flipped = "dark:flip:characters/cs/disappointed.png"
-image cs disappointed dusk = "dusk:characters/cs/disappointed.png"
-image cs worried dark = "dark:characters/cs/worried.png"
-image cs worried dark flipped = "dark:flip:characters/cs/worried.png"
-image cs prison = "characters/cs/prison.png"
-image cs prison_worried = "characters/cs/prison_worried.png"
-image cs guard = "characters/cs/guard.png"
-image cs guard dark = "dark:characters/cs/guard.png"
-image cs fakegod = "characters/cs/fake_god.png"
-image cs guitar = "characters/cs/guitar.png"
-image cs surprised = "characters/cs/surprised.png"
-image cs surprised flipped  = "flip:characters/cs/surprised.png"
-image cs scared = "characters/cs/scared.png"
-image cs scared flipped = "flip:characters/cs/scared.png"
-image cs scared dark = "dark:characters/cs/scared.png"
-image cs insane worried = "characters/cs/insane.png"
-image cs insane worried flipped = "flip:characters/cs/insane.png"
-image cs insane disappointed = "characters/cs/insane2.png"
-image cs horse = "characters/cs/horse.png"
-image cs horse flipped = "flip:characters/cs/horse.png"
-image cs pissed = "characters/cs/pissed.png"
-image cs pissed flipped = "flip:characters/cs/pissed.png"
-image cs cultist = "characters/cs/robe.png"
-image cs disappointed cultist = "characters/cs/disappointedrobe.png"
-image cs angry cultist = "characters/cs/angryrobe.png"
-image cs cultist flipped = "flip:characters/cs/robe.png"
-image cs disappointed cultist flipped = "flip:characters/cs/disappointedrobe.png"
-image cs angry cultist flipped = "flip:characters/cs/angryrobe.png"
-image cs pencil = "characters/cs/pencil.png"
-image cs angry pencil = "characters/cs/pencilangry.png"
-image cs disappointed pencil = "characters/cs/pencildisappointed.png"
-image cs phone = "characters/cs/phone.png"
-image cs phone flipped = "flip:characters/cs/phone.png"
-image cs happy phone = "characters/cs/happy_phone.png"
-image cs happy phone flipped = "flip:characters/cs/happy_phone.png"
-image cs disappointed phone = "characters/cs/disappointed_phone.png"
-image cs disappointed phone flipped = "flip:characters/cs/disappointed_phone.png"
-image cs worried phone = "characters/cs/worried_phone.png"
-image cs worried phone flipped = "flip:characters/cs/worried_phone.png"
-image cs angry phone = "characters/cs/angry_phone.png"
-image cs angry phone flipped = "flip:characters/cs/angry_phone.png"
-image cs scared phone = "characters/cs/scared_phone.png"
-image cs scared phone flipped = "flip:characters/cs/scared_phone.png"
-image cs surprised phone = "characters/cs/surprised_phone.png"
-image cs surprised phone flipped = "flip:characters/cs/surprised_phone.png"
-image cs pissed phone = "characters/cs/pissed_phone.png"
-image cs pissed phone flipped = "flip:characters/cs/pissed_phone.png"
-image cs concentrate phone = "characters/cs/concentrate_phone.png"
-image cs concentrate phone flipped = "flip:characters/cs/concentrate_phone.png"
-image cs worried punished = "characters/cs/PunishedCSGownWorried.png"
+## CS Normal
+init 0:
+    image cs = "characters/cs/neutral.png"
+    image cs happy = "characters/cs/happy.png"
+    image cs angry = "characters/cs/angry.png"
+    image cs worried = "characters/cs/worried.png"
+    image cs disappointed = "characters/cs/disappointed.png"
+    image cs concentrate = "characters/cs/concentrate.png"
+    image cs prison = "characters/cs/prison.png"
+    image cs prison_worried = "characters/cs/prison_worried.png"
+    image cs guard = "characters/cs/guard.png"
+    image cs fakegod = "characters/cs/fake_god.png"
+    image cs guitar = "characters/cs/guitar.png"
+    image cs surprised = "characters/cs/surprised.png"
+    image cs scared = "characters/cs/scared.png"
+    image cs insane worried = "characters/cs/insane.png"
+    image cs insane disappointed = "characters/cs/insane2.png"
+    image cs horse = "characters/cs/horse.png"
+    image cs pissed = "characters/cs/pissed.png"
+    image cs cultist = "characters/cs/robe.png"
+    image cs disappointed cultist = "characters/cs/disappointedrobe.png"
+    image cs angry cultist = "characters/cs/angryrobe.png"
+    image cs pencil = "characters/cs/pencil.png"
+    image cs angry pencil = "characters/cs/pencilangry.png"
+    image cs disappointed pencil = "characters/cs/pencildisappointed.png"
+    image cs phone = "characters/cs/phone.png"
+    image cs happy phone = "characters/cs/happy_phone.png"
+    image cs disappointed phone = "characters/cs/disappointed_phone.png"
+    image cs worried phone = "characters/cs/worried_phone.png"
+    image cs angry phone = "characters/cs/angry_phone.png"
+    image cs scared phone = "characters/cs/scared_phone.png"
+    image cs surprised phone = "characters/cs/surprised_phone.png"
+    image cs pissed phone = "characters/cs/pissed_phone.png"
+    image cs concentrate phone = "characters/cs/concentrate_phone.png"
+    image cs worried punished = "characters/cs/PunishedCSGownWorried.png"
+    image cs disappointed metal = "characters/cs/disappointedmetal.png"
+    image cs disappointed metal2 = "characters/cs/disappointedmetal2.png"
+    image cs disappointed metal3 = "characters/cs/disappointedmetal3.png"
+    image cs disappointed metal4 = "characters/cs/disappointedmetal4.png"
+
+## 50 Shades of CS
+init 1 python:
+
+    duskmatrix = TintMatrix("#ffaa49")
+    darkmatrix = TintMatrix("#4848b8")
+
+    def duskshade(image_name):
+        displayable = renpy.get_registered_image(image_name)
+        return Transform(image_name, matrixcolor = duskmatrix)
+
+    def darkshade(image_name):
+        displayable = renpy.get_registered_image(image_name)
+        return Transform(image_name, matrixcolor = darkmatrix)
+
+    renpy.image("cs happy dark", darkshade("cs happy"))
+    renpy.image("cs angry dark", darkshade("cs angry"))
+    renpy.image("cs concentrate dark", darkshade("concentrate"))
+    renpy.image("cs dark", darkshade("cs"))
+    renpy.image("cs dusk", duskshade("cs"))
+    renpy.image("cs disappointed dark", darkshade("cs disappointed"))
+    renpy.image("cs disappointed dusk", duskshade("cs disappointed"))
+    renpy.image("cs worried dark", darkshade("cs worried"))
+    renpy.image("cs guard dark", darkshade("cs guard"))
+    renpy.image("cs scared dark", darkshade("cs scared"))
+
+
+## CS Flipped Edition
+init 2 python:
+    def flip_image(image_name):
+        displayable = renpy.get_registered_image(image_name)
+        return Transform(displayable, xzoom = -1)
+
+    renpy.image("cs flipped", flip_image("cs"))
+    renpy.image("cs happy flipped", flip_image("cs happy"))
+    renpy.image("cs angry flipped", flip_image("cs angry"))
+    renpy.image("cs worried flipped", flip_image("cs worried"))
+    renpy.image("cs disappointed flipped", flip_image("cs disappointed"))
+    renpy.image("cs concentrate flipped", flip_image("cs concentrate"))
+    renpy.image("cs surprised flipped", flip_image("cs surprised"))
+    renpy.image("cs scared flipped", flip_image("cs scared"))
+    renpy.image("cs insane worried flipped", flip_image("cs insane worried"))
+    renpy.image("cs horse flipped", flip_image("cs horse"))
+    renpy.image("cs pissed flipped", flip_image("cs phone"))
+    renpy.image("cs cultist flipped", flip_image("cs cultist"))
+    renpy.image("cs disappointed cultistt flipped", flip_image("cs disappointed cultist"))
+    renpy.image("cs angry cultist flipped", flip_image("cs angry cultist"))
+    renpy.image("cs phone flipped", flip_image("cs phone"))
+    renpy.image("cs happy phone flipped", flip_image("cs happy phone"))
+    renpy.image("cs disappointed phone flipped", flip_image("cs disappointed phone"))
+    renpy.image("cs worried phone flipped", flip_image("cs worried phone"))
+    renpy.image("cs angry phone flipped", flip_image("cs angry phone"))
+    renpy.image("cs scared phone flipped", flip_image("cs scared phone"))
+    renpy.image("cs surprised phone flipped", flip_image("cs surprised phone"))
+    renpy.image("cs pissed phone flipped", flip_image("cs pissed phone"))
+    renpy.image("cs concentrate phone flipped", flip_image("cs concentrate phone"))
+
+## CS Flipped and Shaded
+init 4 python:
+
+    duskmatrix = TintMatrix("#ffaa49")
+    darkmatrix = TintMatrix("#4848b8")
+
+    def duskshadeflip(image_name):
+        displayable = renpy.get_registered_image(image_name)
+        return Transform(displayable, xzoom =- 1, matrixcolor=duskmatrix)
+
+    def dawnshadeflip(image_name):
+        displayable = renpy.get_registered_image(image_name)
+        return Transform(displayable, xzoom =- 1, mattrixcolor = dawnmatrix)
+
+    renpy.image("cs happy dark flipped", darkshadeflip("cs happy"))
+    renpy.image("cs angry dark flipped", darkshadeflip("cs angry"))
+    renpy.image("cs dark flipped", darkshadeflip("cs"))
+    renpy.image("cs worried dark flipped", darkshadeflip("cs worried"))
+    renpy.image("cs disappointed dark flipped", darkshadeflip("cs disappointed"))
 
 # CS Misc
 image csgod = "characters/csgod.png"
-image csgod flipped = "flip:characters/csgod.png"
+image csgod flipped = im.Flip("csgod", horizontal = True)
 image csgod_angry = "characters/csgod_angry.png"
 image young_cs = "characters/cs_young.png"
 
