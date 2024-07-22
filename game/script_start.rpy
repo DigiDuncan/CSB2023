@@ -613,7 +613,7 @@ init 4 python:
 
 # CS Misc
 image csgod = "characters/csgod.png"
-image csgod flipped = im.Flip("csgod", horizontal = True)
+image csgod flipped = "flip:characters/csgod"
 image csgod_angry = "characters/csgod_angry.png"
 image young_cs = "characters/cs_young.png"
 
