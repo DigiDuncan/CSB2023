@@ -50,13 +50,13 @@ init python:
 
             # Do some fancy things here!
             if self.up:
-                self.jig.y -= 1
+                self.jig.y -= 5
             if self.down:
-                self.jig.y += 1
+                self.jig.y += 5
             if self.left:
-                self.jig.x -= 1
+                self.jig.x -= 5
             if self.right:
-                self.jig.x += 1
+                self.jig.x += 5
             
             # Moving Backgound
             
@@ -111,7 +111,7 @@ init python:
 screen toytrainsgame:
     default toytrainsgame = ToyTrainsGameDisplayable()
     # Add a background or any static images here.
-
+    add "minigames/toytrains/bg_carpet.png"
     add toytrainsgame
 
 label play_toytrains_game:
