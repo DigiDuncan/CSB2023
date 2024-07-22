@@ -49,7 +49,8 @@ def scramble():
     bgms = []
     sfxs = []
 
-    print("Loading lines...")
+    console.clear()
+    console.print("[blue]Loading lines...")
 
     # Load the script_start
     with open("./script_start.rpy") as f:
@@ -134,6 +135,7 @@ def scramble():
     exit(0)
 
 def unscramble():
+    console.clear()
     console.print("[blue]Reverting script_start...")
     # Remove the new script start
     os.remove("./script_start.rpy")
@@ -156,6 +158,7 @@ def get_current_options_table() -> Table:
 
 def choose_scramble_options():
     global SCRAMBLE_BG_IMAGES, SCRAMBLE_BGM, SCRAMBLE_CHAR_IMAGES, SCRAMBLE_CHAR_NAMES, SCRAMBLE_SFX
+    console.clear()
     console.print(get_current_options_table())
     choice = DigiPrompt.ask("Choose a number, or hit ENTER to scramble!", choices = ["1", "2", "3", "4", "5", ""])
     if choice == "":
@@ -176,6 +179,7 @@ def choose_scramble_options():
 
 
 def choose():
+    console.clear()
     choice = DigiIntPrompt.ask("Scramble (1) or unscramble (2)?", choices = ["1", "2"])
     if choice == 1:
         choose_scramble_options()
