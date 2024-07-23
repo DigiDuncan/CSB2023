@@ -346,6 +346,16 @@ transform t_toby:
     linear 0.25:
         alpha 0.0
 
+transform t_boom:
+    on show:
+        xalign 0.5 yalign -0.5
+        linear 1.0:
+            yalign 0.0
+    on hide:
+        linear 1.0:
+            yalign -0.5
+
+
 # Character Definitions
 define n = Character(None, what_italic = True, callback = char_callback)  # Narrator
 define cs = Character("cs188", callback = renpy.partial(char_callback, name = "cs", beep = "cs"))
@@ -1316,6 +1326,7 @@ image passportdigi = "passportdigi.png"
 image amtrak_dining_food = "food.png" 
 image amtrak_dining_pancake = "pancake.png"
 image toby = "secret/toby.png"
+image boom = "secret/boom_mic.png"
 
 # Movies
 image car background = Movie(play="movies/car_background.webm")

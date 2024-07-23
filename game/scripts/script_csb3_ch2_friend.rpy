@@ -308,6 +308,26 @@ label friend2_cs_meetup_2:
     arceus "Yeah, but at least he didn't, like, sell feet pics."
     aria_alt "Or say the N-word."
     digi "Oh, yeah, that clears up everything..."
+    if fun_value(FUN_VALUE_LEGENDARY):
+        arceus "But the cops still don't like that we downed multiple--{nw}"
+        show boom at t_boom
+        $ renpy.music.set_pause(True, "music")
+        arceus "..."
+        cs "I think the boom mic is in the shot."
+        aria_alt "I'm shocked this is the first time that's happened, frankly."
+        show digi flipped dark at little_bounce
+        digi "I can't reach it..."
+        aria_alt "You grabbing it isn't going to help, either. Why would that do that anything?"
+        direct "Can we please raise the boom mic out of the shot?"
+        nova "I'm so tired, guys. Are we nearly done this scene?"
+        n "CS checks the script."
+        cs "Yeah, there's only like six more lines after this, and then we change scenes."
+        hide boom
+        n "The boom mic is raised out of frame."
+        direct "Thank you! OK, just restart the line you were on, Arc?"
+        arceus "You got it, boss."
+        play sound sfx_clapperboard
+        $ renpy.music.set_pause(False, "music")
     arceus "But the cops still don't like that we downed multiple units, so we should get moving about now."
     cs "Yeah. Alright everyone, back on the road!"
     cs "Everyone follow me, and we will eventually find a safe spot away from the cops!"
