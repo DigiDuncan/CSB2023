@@ -29,7 +29,7 @@ init python:
         preferences.max_fun = new_max_fun
         max_fun_label = ""
         if preferences.max_fun >= FUN_VALUE_LEGENDARY:
-            max_fun_label = "Legnedary"
+            max_fun_label = "Legendary"
         elif preferences.max_fun >= FUN_VALUE_EPIC:
             max_fun_label = "Epic"
         elif preferences.max_fun >= FUN_VALUE_MUSIC:
