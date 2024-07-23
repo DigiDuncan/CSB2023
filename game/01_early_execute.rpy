@@ -25,16 +25,6 @@ default persistent.csb3b_unlocked = False
 # Register CJK font
 define config.font_name_map["cjk"] = "ZCOOLKuaiLe-Regular.ttf"
 
-# Fun values
-default FUN_VALUE_UNOBTRUSIVE = 5
-default FUN_VALUE_COMMON = 10
-default FUN_VALUE_RARE = 25
-default FUN_VALUE_MUSIC = 32
-default FUN_VALUE_LEGENDARY = 50
-default FUN_VALUE_EPIC = 90
-
-default FUN_VALUE_FISH_CHANCE = 0.05
-
 screen music():
     zorder 100
     layer "music"
@@ -241,6 +231,9 @@ init python:
         
         if not preferences.bounciness_enable:
             return False
+        if rarity > preferences.max_fun:
+            return False
+
         r = ease_linear(rarity, 1, 0, 100, preferences.csbounciness)
         chance = 1 / r
         ret = renpy.random.random() < chance

@@ -1,6 +1,57 @@
 init python:
+    FUN_VALUE_UNOBTRUSIVE = 5
+    FUN_VALUE_COMMON = 10
+    FUN_VALUE_RARE = 25
+    FUN_VALUE_MUSIC = 32
+    FUN_VALUE_LEGENDARY = 50
+    FUN_VALUE_EPIC = 90
+
+    FUN_VALUE_FISH_CHANCE = 0.05
+
+    bounciness_label = f"+{preferences.csbounciness}%" if preferences.csbounciness else "Default"
+    max_fun_label = ""
+    if preferences.max_fun >= FUN_VALUE_EPIC:
+        max_fun_label = "Epic"
+    elif preferences.max_fun >= FUN_VALUE_LEGENDARY:
+        max_fun_label = "Legendary"
+    elif preferences.max_fun >= FUN_VALUE_MUSIC:
+        max_fun_label = "Rare + Music"
+    elif preferences.max_fun >= FUN_VALUE_RARE:
+        max_fun_label = "Rare"
+    elif preferences.max_fun >= FUN_VALUE_COMMON:
+        max_fun_label = "Common"
+    elif preferences.max_fun >= FUN_VALUE_UNOBTRUSIVE:
+        max_fun_label = "Unobtrusive"
+    else:
+        max_fun_label = "Off"
+
     def change_bounciness(new_bounciness):
+        global bounciness_label
         preferences.csbounciness = new_bounciness
+        bounciness_label = f"+{preferences.csbounciness}%" if preferences.csbounciness else "Default"
+        renpy.restart_interaction()
+
+    def change_max_fun(new_max_fun):
+        global max_fun_label
+        print(f"I'm being changed! {new_max_fun}")
+        preferences.max_fun = new_max_fun
+        max_fun_label = ""
+        if preferences.max_fun >= FUN_VALUE_EPIC:
+            max_fun_label = "Epic"
+        elif preferences.max_fun >= FUN_VALUE_LEGENDARY:
+            max_fun_label = "Legendary"
+        elif preferences.max_fun >= FUN_VALUE_MUSIC:
+            max_fun_label = "Rare + Music"
+        elif preferences.max_fun >= FUN_VALUE_RARE:
+            max_fun_label = "Rare"
+        elif preferences.max_fun >= FUN_VALUE_COMMON:
+            max_fun_label = "Common"
+        elif preferences.max_fun >= FUN_VALUE_UNOBTRUSIVE:
+            max_fun_label = "Unobtrusive"
+        else:
+            max_fun_label = "Off"
+        print(f"{max_fun_label}")
+        renpy.restart_interaction()
 
 ################################################################################
 ## Initialization
@@ -842,15 +893,28 @@ screen preferences():
                         textbutton _("Mute All"):
                             action Preference("all mute", "toggle")
                             style "mute_all_button"
-                vbox:
-                    label _("CSBounciness")
-                    textbutton _("Toggle Bounciness") action ToggleField(preferences, "bounciness_enable")
-                    hbox:
-                        bar:
-                            style "slider"
-                            value preferences.csbounciness
-                            range 100
-                            changed(change_bounciness)
+            vbox:
+                xsize 0.75
+                label _("CSBounciness")
+                textbutton _("Toggle Bounciness") action ToggleField(preferences, "bounciness_enable")
+                label _("Bounciness Chance")
+                hbox:
+                    bar:
+                        style "slider"
+                        value preferences.csbounciness
+                        range 100
+                        changed(change_bounciness)
+                    null width 20
+                    label "[bounciness_label]" yoffset -10
+                label _("Max Bounciness Rarity")
+                hbox:
+                    bar:
+                        style "slider"
+                        value preferences.max_fun
+                        range 100
+                        changed(change_max_fun)
+                    null width 20
+                    label "[max_fun_label]" yoffset -10 xminimum 200
 
 style pref_label is gui_label
 style pref_label_text is gui_label_text

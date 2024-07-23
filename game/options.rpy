@@ -135,6 +135,7 @@ define config.window_hide_transition = Dissolve(.2)
 default preferences.text_beeps = True
 default preferences.bounciness_enable = True
 default preferences.csbounciness = 0
+default preferences.max_fun = 100
 default preferences.streamer_mode = False
 default preferences.dyslexia_mode = False
 default preferences.developer_commentary = True
