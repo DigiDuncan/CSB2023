@@ -26,9 +26,6 @@ init python:
     Minigame_items.append(MinigameItem(["SlotsGame"], "play_slots_game", "{outlinecolor=#000000}{color=#518EFF}Slots Game{/color}{/outlinecolor}"))
     Minigame_items.append(MinigameItem(["Pencil2Game"], "play_pencil2_game", "{outlinecolor=#000000}{color=#FF7E7E}Pencil Game 2{/color}{/outlinecolor}"))
 
-#the locked image for the replay gallery if you're using the gallery you can use the same (if you want to)
-image replay_locked = "images/replay/replay_lock.jpg"
-
 # Images are going to be 600 x 338
 #replay thumbnails images setup defined here
 image EditGame = ("images/replay/edit_game.png")

@@ -49,10 +49,6 @@ init python:
     Replay_items.append(ReplayItem(["FriendEnd"], "friend2_car_slam", "{outlinecolor=#000000}{color=#FFFF00}Friend Ending{/color}{/outlinecolor}"))
     Replay_items.append(ReplayItem(["CountryEnd"], "country_going_home", "{outlinecolor=#000000}{color=#FFFF00}Globetrotter{/color}{/outlinecolor}"))
 
-
-#the locked image for the replay gallery if you're using the gallery you can use the same (if you want to)
-image replay_locked = "images/replay/replay_lock.jpg"
-
 # Images are going to be 600 x 338
 #replay thumbnails images setup defined here
 image Asylum = ("images/replay/asylum_bad.png")
