@@ -255,7 +255,7 @@ init python:
                 # Music indicator
                 renpy.show("_fun_value_music",[_fun_value_fade,_fun_value_motion],"fun_icon")
             else:
-                if renpy.random.random() < FUN_VALUE_EPIC_CHANCE:
+                if renpy.random.random() < FUN_VALUE_FISH_CHANCE:
                     # Fish indicator
                     renpy.show("_fun_value_fish",[_fun_value_fade,_fun_value_motion],"fun_icon")
                 else:
