@@ -31,7 +31,7 @@
         {
             "audio_path": "hitme",
             "speaker": "Digi",
-            "transcript": "This MIDI of {i}Hit Me With Your Best Shot{/i} is hilariously bad, but we didn't want to get CS copyright struck.",
+            "transcript": "This MIDI of {i}Hit Me With Your Best Shot{/i} is hilariously bad, but we didn't want to get CS copyright-struck.",
             "length": 5.8
         }
     ],
@@ -39,7 +39,7 @@
         {
             "audio_path": "everlong",
             "speaker": "Digi",
-            "transcript": "For the backing track here, I'm pretty sure I asked Pakoo to get 'something like {i}Everlong{/i} by the Foo Fighters', and he just got a MIDI of Everlong. It's pretty funny, though!",
+            "transcript": "For the backing track here, I'm pretty sure I asked Pakoo to get \"something like {i}Everlong{/i} by the Foo Fighters\", and he just got a MIDI of Everlong. It's pretty funny, though!",
             "length": 9.3
         }
     ],
@@ -47,7 +47,7 @@
         {
             "audio_path": "madlibs1",
             "speaker": "Digi",
-            "transcript": "This is where we reveal the gimmick of this route! Basically every route had a gimmick. The True route is a road trip, the fanboy route is an RPG, and this route is a Mad Libs.",
+            "transcript": "This is where we reveal the gimmick of this route! Basically, every route had a gimmick. The True route is a road trip, the fanboy route is an RPG, and this route is a Mad Libs.",
             "length": 10.5
         },
         {
@@ -61,13 +61,13 @@
         {
             "audio_path": "hidemovie1",
             "speaker": "Arceus",
-            "transcript": "So funny story about this choice: I remember back in 2017, with the release of CSBII; I had never programmed anything in my life. At the time I was only doing video editing in High School. So I made this silly Kick Edit. When the team asked me how to add it in, I had zero idea what I was doing.",
+            "transcript": "So, funny story about this choice: I remember, back in 2017, with the release of {i}CSBII,{/i} I'd never programmed anything in my life. At the time, I was only doing video editing in high school. So, I made this silly \"kick\" edit. When the team asked me how to add it in, I had zero idea what I was doing.",
             "length": 15.4
         },
         {
             "audio_path": "hidemovie2",
             "speaker": "Arceus",
-            "transcript": "I vaguely remember sitting in a hotel room tinkering with various solutions, and I remember shouting \"Holy shit, I figured it out\", by delaying the end of the movie with \"hide movie with dissolve\", which lead to about 30 minutes to me playing with the number of 'hide movie with dissolves' The total number ended up being: 141 lines.",
+            "transcript": "But, I vaguely remember sitting in a hotel room tinkering with various solutions, and I remember shouting \"Holy {i}shit,{/i} I figured it out!\", by delaying the end of the movie with \"hide movie with dissolve\", which lead to about 30 minutes to me playing with the number of \"hide movie with dissolve\"s. The total number ended up being 141 lines.",
             "length": 18.8
         },
         {
@@ -79,31 +79,43 @@
     ],
     "fightminigame": [
         {
-            "audio_path": "fightminigame",
+            "audio_path": "fightminigame1",
             "speaker": "Arceus",
-            "transcript": "So the fight minigame I programmed whilst I was in Alabama visiting Digi (Shout out to PJ and Cody for the place to sleep), I remember we grinded out the minigame basically in a single night. Another thing to note, however, we went to Aldi the afternoon of programming, and I had bought a bottle of wine. By the end of the evening. That wine was gone.",
-            "length": 19.2
+            "transcript": "So, the fight minigame, I had programmed whilst I was in Alabama visiting Digi (shout-out to PJ and Cody for the place to sleep), I remember, we grinded out the minigame basically in a single night.",
+            "length": 10.2
+        },
+        {
+            "audio_path": "fightminigame2",
+            "speaker": "Arceus",
+            "transcript": "Another thing to note, though, however: we went to Aldi the afternoon of programming, and I had bought a bottle of wine. By the end of the evening, that wine was gone.",
+            "length": 8.7
         }
     ],
     "prisonroute": [
         {
-            "audio_path": "prisonroute",
+            "audio_path": "prisonroute1",
             "speaker": "Arceus",
-            "transcript": "I was the man responsible for writing the prison escape scene. I believe to this date it was the only thing I actually wrote. I never actually expected to be a wingman or a secondary main character, honestly it felt pretty selfish of me. But then I was basically told straight up \"Yeah, we just had no one else, and you were just there\".",
-            "length": 17.9
+            "transcript": "I was the man responsible for writing the prison escape scene. I believe, to this date, it was the only thing I actually wrote. I never actually {i}expected{/i} to be a wingman or a secondary main character. Honestly, it felt pretty selfish of me.",
+            "length": 11.9
+        }, 
+        {
+            "audio_path": "prisonroute2",
+            "speaker": "Arceus",
+            "transcript": "But, then, I was basically just told straight-up, \"Yeah, we had no one else, and you were just... {i}there\".{/i}",
+            "length": 5.91
         }
     ],
-	"tint": [
+    "tint": [
         {
             "audio_path": "tint1",
             "speaker": "Arceus",
-            "transcript": "These lighting effects actually are generated when the game first starts up, I figured out how to apply a TintMatrix to an image and alter it's color and lighting.",
+            "transcript": "These lighting effects actually are generated when the game first starts up. I figured out how to apply a TintMatrix to an image and alter its color and lighting.",
             "length": 7.7
         },
         {
             "audio_path": "tint2",
             "speaker": "Kitty",
-            "transcript": "At first they sucked.",
+            "transcript": "At first, they sucked.",
             "length": 1.6
         },
         {
@@ -115,30 +127,65 @@
         {
             "audio_path": "tint4",
             "speaker": "Kitty",
-            "transcript": "But then, together we altered it to be what you see now.",
+            "transcript": "But, then, together, we altered it to be what you see now.",
             "length": 3.3
         }
     ],
-	"hohsisfight": [
+    "hohsisfight": [
         {
             "audio_path": "fighting",
             "speaker": "Pakoo",
-            "transcript": "So at this scene in the game, in the original version of CSB1, we were going to have this huge fight scene where he's going through the HoH SiS HQ beating up workers. But we didn't have the time, and we didn't know how to, y'know do this whole scene. So when we started working on this game, I wanted to include that.",
+            "transcript": "So, at this scene in the game, in the original version of {i}CSBI,{/i} we were going to have this huge fight scene where he's going through the HoH SiS HQ, beating up workers, but we didn't have the time, and we didn't know how to, y'know, do this whole scene. So, when we started working on {i}this{/i} game, I wanted to include that.",
             "length": 19.8
         },
         {
             "audio_path": "fighting2",
             "speaker": "Pakoo",
-            "transcript": "And, Y'know, I even went out and made sound effects and transitions. It was the first thing I did in this game, and it was super fun to do.",
+            "transcript": "And, y'know, I even went out by making sound effects and transitions. It was the first thing I did in this game, and it was super-fun to do.",
             "length": 8.5
         }
     ],
-	"5years": [
+    "5years": [
         {
             "audio_path": "5year",
             "speaker": "Pakoo",
-            "transcript": "This part of the CSB3 script we worked back on in 2018, and we didn't actually do anything with it for about 5 years, until we started working on the game in 2023.",
+            "transcript": "This part of the {i}CSBIII{/i} script, we worked back on in 2018, and, we didn't actually {i}do{/i} anything with it for about five years... until we started working on the game in 2023.",
             "length": 11.9
         }
+    ],
+    "donuts": [
+        {
+            "audio_path": "placeholder",
+            "speaker": "Tate",
+            "transcript": "Oh, God... {i}this{/i} line. If you were there for CS' initial playthrough stream of {i}CSBIII,{/i} then, you may remember this. The original line read as follows: \"CS, Anno, and Arceus cheers their donuts together.\" I'm sorry, {i}what?{/i}",
+            "length": 10
+        },
+        {
+            "audio_path": "placeholder",
+            "speaker": "Tate",
+            "transcript": "I absolutely {i}hated{/i} it! Not only was I having trouble thinking of a replacement, but, I faced some pushback from Digi, who {i}loved{/i} the line! I'm pretty sure he's the one who wrote it, but don't quote me on that. Eventually, everyone kinda forgot about fixing it {i}at all{/i} until that stream happened...",
+            "length": 10
+        }
+    ],
+    "tate_ex": [
+        {
+            "audio_path": "placeholder",
+            "speaker": "Tate",
+            "transcript": "So, it was never in the original plan to have {i}any{/i} kind of RPG battles in Train route, especially not one against... {i}me.{/i} I mean, yeah, I'm the one who wrote most of the route, but, somehow, making myself into a boss fight seemed... narcissistic? My hope is that the name of the achievement {i}at least{/i} makes it clear that I am self-aware.",
+            "length": 10
+        },
+        {
+            "audio_path": "placeholder",
+            "speaker": "Tate",
+            "transcript": "Sometimes, plans change when you get inspired by some random royalty-free breakcore EP and end up hyperfocusing on art and code for a straight week, nonstop. I hope the fight is as fun to play as it was to create.",
+            "length": 10
+        },
+        {
+            "audio_path": "placeholder",
+            "speaker": "Tate",
+            "transcript": "Also, fun fact about this battle: Tate EX's double-edged attacks are an all-new mechanic, exclusive to {i}DX.{/i} This battle actually ended up breaking the entire RPG system... {i}twice.{/i}",
+            "length": 10
+        }
     ]
+    
 }

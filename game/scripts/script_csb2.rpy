@@ -648,6 +648,10 @@ label csbii_ltt:
     arceus "Hell yeah!"
 
     anno "Let's celebrate!"
+    
+    # audio is not ready yet - tate
+    dxcom donuts
+    
     n "The three cheer and raise up their donuts, pressing them together in a sort of toast."
     # I FINALLY FIGURED OUT HOW TO REWRITE THAT FUCKING LINE HOLY SHIT - TATE
     stop music fadeout 3.0

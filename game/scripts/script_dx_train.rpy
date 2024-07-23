@@ -2290,6 +2290,10 @@ label train_tate_ex_win:
     "..."
     tate "At least my question has been answered."
     tate "Thank you, CS."
+    
+    # audio is not ready yet - tate
+    dxcom tate_ex
+    
     tate "Let us never speak of this."
     pause 2.0
     scene black with dissolve
