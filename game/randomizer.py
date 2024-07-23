@@ -161,6 +161,78 @@ def scramble():
 
     exit(0)
 
+def get_cs_names():
+    c_names = ["Crappy", "Cool", "Crazy", "Cooky", "Candy", "Cheesy", "Creamy", "Cookie", "Compu", "Cheerful", "Chaotic", "Cash"]
+    s_names = ["Streamer", "Sucker", "Server", "Serve", "Steamer", "Singer", "Sausage", "Saturday", "Sunday", "Steve", "Spender", "Stomper"]
+
+    all_names = []
+    for c in c_names:
+        for s in s_names:
+            all_names.append(c + s)
+    
+    all_names.extend(["CS", "cs", "cS", "Cs", "cs188creations", "cs188returns", "cs188streams", "C.S. One Hundred And Eighty Eight"])
+
+    return all_names
+
+def oops():
+    lines = []
+    new_lines = []
+
+    char_images = []
+    char_names = []
+
+    console.clear()
+    console.print("[blue]Loading lines...")
+
+    # Load the script_start
+    with open("./script_start.rpy") as f:
+        lines = f.readlines()
+        new_lines = [None] * len(lines)
+
+    console.print("[blue]Backing up old script...")
+
+    # Rename the old script start
+    if not os.path.isfile("script_start.rpybu"):
+        os.rename("script_start.rpy", "script_start.rpybu")
+
+    # Read lines
+    for n, line in track(enumerate(lines), "[blue]Reading lines...", len(lines)):
+        if (m := re.match(RE_CHAR_IMAGE, line)) and "Movie" not in line and "Window" not in line:
+            indent = (len(line) - len(line.lstrip())) // 4
+            char_images.append(Replacement(n, m.group(1), m.group(2), line, indent_level = indent))
+        elif (m := re.match(RE_CHARACTER, line)):
+            char_names.append(Replacement(n, m.group(1), m.group(2), line, m.group(3)))
+        else:
+            new_lines[n] = line
+    
+    # Randomize values
+    possible_char_images = [j.replacement for j in char_images if "cs" in j.replacement]
+    possible_char_names = get_cs_names()
+
+    console.print(f"[blue]CSing {len(char_images)} character sprites...")
+    for i in char_images:
+        random_value = random.choice(possible_char_images)
+        new_line = f"image {i.var_name} = \"{random_value}\"\n"
+        new_line = (" " * i.indent_level * 4) + new_line
+        new_lines[i.line_num] = new_line
+
+    console.print(f"[blue]CSing {len(char_names)} character names...")
+    for i in char_names:
+        if i.var_name.strip() == "cs":
+            new_line = i.original_line
+            new_lines[i.line_num] = new_line
+        else:
+            random_value = random.choice(possible_char_names)
+            new_line = f"define {i.var_name} = Character(\"{random_value}\", callback = renpy.partial(char_callback, name = \"cs\", beep = \"cs\"))\n"
+            new_lines[i.line_num] = new_line
+
+    console.print("[blue]Writing new script...")
+    # Replace script_start
+    with open("./script_start.rpy", "w") as f:
+        f.writelines(new_lines)
+
+    exit(0)
+
 def unscramble():
     console.clear()
     console.print("[blue]Reverting script_start...")
@@ -216,16 +288,19 @@ def choose_scramble_options():
     choose_scramble_options()
 
 
-def choose():
-    console.clear()
-    choice = DigiIntPrompt.ask("Scramble (1) or unscramble (2)?", choices = ["1", "2"])
+def choose(clear = True):
+    if clear:
+        console.clear()
+    choice = DigiIntPrompt.ask("Scramble (1) or unscramble (2)?\nOr, Oops, All CS! (3)?", choices = ["1", "2", "3"])
     if choice == 1:
         choose_scramble_options()
     elif choice == 2:
         unscramble()
+    elif choice == 3:
+        oops()
     else:
         console.print(":warning: [bold yellow]Invalid option.")
-        choose()
+        choose(False)
 
 def main():
     choose()
