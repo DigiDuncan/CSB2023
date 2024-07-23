@@ -308,7 +308,7 @@ label friend2_cs_meetup_2:
     arceus "Yeah, but at least he didn't, like, sell feet pics."
     aria_alt "Or say the N-word."
     digi "Oh, yeah, that clears up everything..."
-    if fun_value(FUN_VALUE_LEGENDARY):
+    if fun_value(FUN_VALUE_EPIC):
         arceus "But the cops still don't like that we downed multiple--{nw}"
         show boom at t_boom
         $ renpy.music.set_pause(True, "music")
@@ -520,7 +520,7 @@ label friend2_cs_rage:
     csgod "You're welcome."
     cs "Woah, hey! Are you CSGod?"
     csgod "Indeed, I am. You seem to have channeled my power through determination."
-    if fun_value(FUN_VALUE_LEGENDARY):
+    if fun_value(FUN_VALUE_EPIC):
         play sound sfx_vine
         show toby at t_toby
     if nice_car:

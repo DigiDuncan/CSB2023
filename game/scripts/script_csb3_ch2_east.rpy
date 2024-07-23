@@ -679,7 +679,7 @@ label true_after_ufo:
     jump michigan
   
 label true_ohio:
-    if fun_value(FUN_VALUE_EPIC):
+    if fun_value(FUN_VALUE_LEGENDARY):
         scene car plains
         show billy car
         with dissolve
@@ -942,7 +942,7 @@ label true_pennsylvania:
     stop music fadeout 3.0
     n "CS glances over at Digi and they nod at each other."
     host "3..."
-    if fun_value(FUN_VALUE_LEGENDARY):
+    if fun_value(FUN_VALUE_EPIC):
         n "Digi looks to be smacking his arm."
         $ archack = True
     else:

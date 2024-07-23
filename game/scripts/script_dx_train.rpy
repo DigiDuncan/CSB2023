@@ -1291,7 +1291,7 @@ label train_dining:
     n "One can practically see the gears begin to turn in Arceus' head as he realizes who he is talking to."
 
     # arc wanted this
-    if fun_value(FUN_VALUE_LEGENDARY):
+    if fun_value(FUN_VALUE_EPIC):
         show arceus
         arceus "Wait, hey, can you do a Dallas impression?"
         show mean wat
@@ -1521,7 +1521,7 @@ label train_wakeup:
     arceus "\"Yellow fucker\"?"
 
     # let's turn my shitpost into a fun value i suppose lmao
-    if fun_value(FUN_VALUE_EPIC):
+    if fun_value(FUN_VALUE_LEGENDARY):
         $ train_tate_is_fragile_fun_value = True
         mean "Like, no offense, Tate, but you only have, like, 5 DEF."
         show arceus 

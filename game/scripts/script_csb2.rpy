@@ -550,7 +550,7 @@ label csbii_ltt:
         play music passport_ytp volume 0.5
     else:
         play music passport volume 0.5
-    if fun_value(FUN_VALUE_EPIC):
+    if fun_value(FUN_VALUE_LEGENDARY):
         show passportdigi with dissolve
     else:
         hide passportdigi
@@ -566,7 +566,7 @@ label csbii_ltt:
     scene outside_ltt
     show arceus at right
     with dissolve
-    if fun_value(FUN_VALUE_EPIC):
+    if fun_value(FUN_VALUE_LEGENDARY):
         show passportdigi with dissolve
     else:
         hide passportdigi
@@ -583,7 +583,7 @@ label csbii_ltt:
 
     scene alley
     with dissolve
-    if fun_value(FUN_VALUE_EPIC):
+    if fun_value(FUN_VALUE_LEGENDARY):
         show passportdigi with dissolve
     else:
         hide passportdigi
@@ -607,7 +607,7 @@ label csbii_ltt:
     scene outside_ltt
     show cs at left
     with dissolve
-    if fun_value(FUN_VALUE_EPIC):
+    if fun_value(FUN_VALUE_LEGENDARY):
         show passportdigi with dissolve
     else:
         hide passportdigi
@@ -621,7 +621,7 @@ label csbii_ltt:
     scene inside_ltt
     show linus
     with dissolve
-    if fun_value(FUN_VALUE_EPIC):
+    if fun_value(FUN_VALUE_LEGENDARY):
         show passportdigi with dissolve
     else:
         hide passportdigi
@@ -636,7 +636,7 @@ label csbii_ltt:
     show anno at right
     show arceus flipped at left
     with dissolve
-    if fun_value(FUN_VALUE_EPIC):
+    if fun_value(FUN_VALUE_LEGENDARY):
         show passportdigi with dissolve
     else:
         hide passportdigi

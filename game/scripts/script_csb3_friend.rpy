@@ -430,7 +430,7 @@ label friend_after_fanboy:
     pakoo "Oh, Linus brought me here to--"
     show arceus flipped angry
     arceus "Are you a cop? You'd better not be a cop."
-    if fun_value(FUN_VALUE_LEGENDARY):
+    if fun_value(FUN_VALUE_EPIC):
         cs "Hey, aren't you the guy who made {i}Petscop 2?{/i}"
         pakoo "Huh?"
     show arceus flipped

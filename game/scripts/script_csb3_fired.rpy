@@ -1127,7 +1127,7 @@ label fired_second_tour_day:
     show ges at right with moveinright
     with dissolve
     show cs at left with moveinleft
-    if fun_value(FUN_VALUE_LEGENDARY):
+    if fun_value(FUN_VALUE_EPIC):
         ges "Welcome to the sho-- woah, are you CS, eh?"
         cs "Yeah, how'd you know?"
         ges "Aren't you touring with [band_name] right now, eh?"

@@ -1,19 +1,11 @@
 init python:
-    FUN_VALUE_UNOBTRUSIVE = 5
-    FUN_VALUE_COMMON = 10
-    FUN_VALUE_RARE = 25
-    FUN_VALUE_MUSIC = 32
-    FUN_VALUE_LEGENDARY = 50
-    FUN_VALUE_EPIC = 90
-
-    FUN_VALUE_FISH_CHANCE = 0.05
 
     bounciness_label = f"+{preferences.csbounciness}%" if preferences.csbounciness else "Default"
     max_fun_label = ""
-    if preferences.max_fun >= FUN_VALUE_EPIC:
-        max_fun_label = "Epic"
-    elif preferences.max_fun >= FUN_VALUE_LEGENDARY:
+    if preferences.max_fun >= FUN_VALUE_LEGENDARY:
         max_fun_label = "Legendary"
+    elif preferences.max_fun >= FUN_VALUE_EPIC:
+        max_fun_label = "Epic"
     elif preferences.max_fun >= FUN_VALUE_MUSIC:
         max_fun_label = "Rare + Music"
     elif preferences.max_fun >= FUN_VALUE_RARE:
@@ -36,10 +28,10 @@ init python:
         print(f"I'm being changed! {new_max_fun}")
         preferences.max_fun = new_max_fun
         max_fun_label = ""
-        if preferences.max_fun >= FUN_VALUE_EPIC:
+        if preferences.max_fun >= FUN_VALUE_LEGENDARY:
+            max_fun_label = "Legnedary"
+        elif preferences.max_fun >= FUN_VALUE_EPIC:
             max_fun_label = "Epic"
-        elif preferences.max_fun >= FUN_VALUE_LEGENDARY:
-            max_fun_label = "Legendary"
         elif preferences.max_fun >= FUN_VALUE_MUSIC:
             max_fun_label = "Rare + Music"
         elif preferences.max_fun >= FUN_VALUE_RARE:

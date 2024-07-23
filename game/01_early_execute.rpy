@@ -1,3 +1,14 @@
+init -1 python:
+    # This is a weird place to define these, but I have to I think.
+    FUN_VALUE_UNOBTRUSIVE = 5
+    FUN_VALUE_COMMON = 10
+    FUN_VALUE_RARE = 25
+    FUN_VALUE_MUSIC = 32
+    FUN_VALUE_EPIC = 50
+    FUN_VALUE_LEGENDARY = 90
+
+    FUN_VALUE_EPIC_CHANCE = 0.05
+
 init python:
     renpy.add_layer("music", above = "master")
     renpy.add_layer("popup", above = "overlay")
@@ -219,7 +230,7 @@ init python:
     # FUN VALUES
     renpy.image("_fun_value", "gui/fun_value.png")
     renpy.image("_fun_value_music","gui/fun_value_music.png")
-    renpy.image("_fun_value_fish","gui/fun_value_fish.png")
+    renpy.image("_FUN_VALUE_EPIC","gui/FUN_VALUE_EPIC.png")
 
     # Fun value handler
     def fun_value(rarity: int, id: str = None) -> bool:
@@ -227,7 +238,7 @@ init python:
         # hide any previous instance of the indicator
         renpy.hide("_fun_value")
         renpy.hide("_fun_value_music")
-        renpy.hide("_fun_value_fish")
+        renpy.hide("_FUN_VALUE_EPIC")
         
         if not preferences.bounciness_enable:
             return False
@@ -244,9 +255,9 @@ init python:
                 # Music indicator
                 renpy.show("_fun_value_music",[_fun_value_fade,_fun_value_motion],"fun_icon")
             else:
-                if renpy.random.random() < FUN_VALUE_FISH_CHANCE:
+                if renpy.random.random() < FUN_VALUE_EPIC_CHANCE:
                     # Fish indicator
-                    renpy.show("_fun_value_fish",[_fun_value_fade,_fun_value_motion],"fun_icon")
+                    renpy.show("_FUN_VALUE_EPIC",[_fun_value_fade,_fun_value_motion],"fun_icon")
                 else:
                     # Normal indicator
                     renpy.show("_fun_value",[_fun_value_fade,_fun_value_motion],"fun_icon")

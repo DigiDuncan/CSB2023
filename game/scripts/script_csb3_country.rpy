@@ -61,7 +61,7 @@ label country_knocked_out:
     n "As CS' vision fades back into view, he can hear a faint heart monitor beeping."
     scene hospital_room with dissolve
     n "CS immediately snaps up."
-    if fun_value(FUN_VALUE_LEGENDARY):
+    if fun_value(FUN_VALUE_EPIC):
         show cs disappointed metal at mid_left with moveinbottom
         cs "Wha--"
         cs "What happened? How long have I been out?"
@@ -1607,7 +1607,7 @@ label japan_miku_pizza:
     scene black with dissolve
     pause 1.0
     scene ceo_office
-    if fun_value(FUN_VALUE_LEGENDARY):
+    if fun_value(FUN_VALUE_EPIC):
         show scott at right
     else:
         show scott_pres at right
@@ -1917,7 +1917,7 @@ label sweden_aurora_borealis:
     moomin "I don't mean to alarm you. I just wanted to say hi."
     show cs flipped
     moomin "Who are you?"
-    if fun_value(FUN_VALUE_LEGENDARY): 
+    if fun_value(FUN_VALUE_EPIC): 
         cs "My name is Walter Hartwell White. I live at 308 Negra Arroyo Lane, Albuquerque, New Mexico, 87104."
         moomin "I don't believe you."
         cs "Oh, okay. You're right, I'm actually CS. What's your name?"
