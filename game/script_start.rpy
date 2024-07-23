@@ -1845,14 +1845,17 @@ default csb_question_2 = ""
 default csb_question_3 = ""
 default lunatic_votes = 0
 default pencil_votes = 0
+default science_votes = 0
+default cath_votes = 0
 default total_votes = 0
 default cath_counter = 0
 default god_money = False
 default pencil_check = False
-default pencil_check2 = False
+default check2 = False
 default cath_check = False
 default lunatic_check = False
 default science_check = False
+default science_check2 = False
 
 # RPG
 default enemy_1 = "cop"

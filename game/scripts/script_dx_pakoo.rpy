@@ -521,7 +521,7 @@ label dx_after_pencil_ask:
         menu:
             "Choose what you want to do:"
             "Ask for money":
-                if pencil_check2:
+                if check2:
                     cs "Do you have any spare change I can have?"
                     pencil "Dude, you already asked for some money! I'm not rich!"
                     pencil "I already spent it all on this pencil gig!"
@@ -543,7 +543,7 @@ label dx_after_pencil_ask:
                 n "CS goes back to the convention floor."
                 show cs cultist flipped with determination
                 hide cs with moveoutleft
-                $ pencil_check2 = True
+                $ check2 = True
                 scene cult_con with dissolve
                 play music ten_feet_away if_changed
                 show cs cultist at center with moveinleft
@@ -626,7 +626,7 @@ label dx_after_pencil_ask:
     show pencilguy at right
     show cs cultist at left
     with dissolve
-    if god_money and pencil_check2:
+    if god_money and check2:
         pencil "Geez, you did it again."
         show cs cultist flipped with determination
         hide cs with moveoutleft
@@ -645,7 +645,7 @@ label dx_after_pencil_ask:
         n "It looks to be an assortment of ones and fives."
         cs "Thank you! Your contributions are appreciated."
         pencil "... You're welcome?"
-        $ pencil_check2 = True   
+        $ check2 = True   
         show cs cultist flipped with determination
         hide cs with moveoutleft
         n "CS turns around and leaves, offering no further explanation."
@@ -671,7 +671,7 @@ label dx_after_pencil_ask:
         n "It looks to be an assortment of ones and fives."
         cs "Thank you! Your contributions are appreciated."
         pencil "... You're welcome?"
-        $ pencil_check2 = True
+        $ check2 = True
     show cs cultist flipped with determination
     hide cs with moveoutleft
     n "CS turns around and leaves, offering no further explanation."
@@ -691,10 +691,55 @@ label dx_after_science_ask:
     play music ten_feet_away if_changed    
     scene cult_con
     show cs cultist at center
+    if science_check and god_money:
+        cs "I could try asking them for money, it's worth a shot."
+        hide cs with moveoutright
+        n "CS runs over to Scientology stand."
+        show cs cultist at left with moveinleft
+        show cruise flipped at mid_right
+        show cruise with determination
+        cruise "Hey, welcome back! Want to give up already?"
+        show cs cultist
+        cs "I was going to ask, you have any spare change?"
+        if science_check2:
+            cruise "I already gave you a bit of money!"
+            jump dx_after_seek_competitors
+        cruise "Why the hell would I give any money to you?"
+        cruise "You are, like, part of that fuckin' group that I hate!"
+        show cs disappointed cultist        
+        cs "I dunno, it was worth a try."
+        show cs disappointed cultist flipped
+        n "CS heads back to the convention floor."
+        show cs disappointed cultist flipped at offscreenleft with move
+        cruise "Wait! Are you just gonna walk away?!"
+        show cs disappointed cultist with determination
+        cs "Well, I mean, you already say no."
+        show cruise flipped
+        cruise "Okay, fuck... Just give me a moment."
+        show cs cultist at center with move
+        show cruise
+        n "Mr. Cruise pulls out a few tens and hands them to CS."
+        $ cath_counter += 30
+        n "Current balance: $[cath_counter]."
+        cruise "I'm not just gonna let you win that easily. If you lose, now I can {i}really{/i} laugh at you!"
+        cs "Thanks! Your donation will be incredibly useful!"
+        cruise "Yeah, yeah, whatever."
+        $ science_check2 = True
+        show cs cultist flipped with determination
+        hide cs with moveoutleft
+        n "CS heads back to the convention floor."
+        scene cultcon with dissolve
+        show cs cultist at center
+        cs "Well, that was a lot easier than I thought."        
+        jump dx_after_seek_competitors
+
+    if science_check:
+        cs "I guess I could see if Tom Cruise has anything else to say."
+        jump dx_after_seek_competitors
     cs "Y'know, the Scientologists think they are all that, but maybe if I talk to them, I can convince them to vote for us."
     hide cs with moveoutright
     n "CS runs over to Scientology stand."
-    show cs cultist at left
+    show cs cultist at left with moveinleft
     show cruise flipped at mid_right
     n "When he gets there, he sees Tom Cruise standing nearby, greeting other cult members walking by."
     cruise "Yeah, and make sure to watch my movies, too!"
@@ -711,6 +756,8 @@ label dx_after_science_ask:
     cruise "A bet? Sure, I'm down, but you'd better not disappoint me!"
     show cs angry cultist
     cs "I won't, man, don't worry."
+    $ science_votes = 0
+    $ science_votes += 37
     if god_money:
         show cs cultist
         cs "By the way, do you have any spare change?"
@@ -734,6 +781,7 @@ label dx_after_science_ask:
         cruise "I'm not just gonna let you win that easily. If you lose, now I can {i}really{/i} laugh at you!"
         cs "Thanks! Your donation will be incredibly useful!"
         cruise "Yeah, yeah, whatever."
+    $ science_check = True
     show cs cultist flipped with determination
     hide cs with moveoutleft
     n "CS heads back to the convention floor."
