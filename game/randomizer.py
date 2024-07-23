@@ -24,6 +24,7 @@ RE_PROP = r'image (.+)\s?=\s?"((?!.*:?characters|bg.+).+)"'
 RE_CHARACTER = r'define (.+)\s?=\s?Character\("(.*)",\s?callback\s?=\s?(.*)\)'
 RE_BGM = r'define audio\.(?!sfx)(.+)\s?=\s?"(.+)"'
 RE_SFX = r'define audio\.(?=sfx)(.+)\s?=\s?"(.+)"'
+RE_TRANSFORM = r'transform (.+):'
 
 SCRAMBLE_BG_IMAGES = True
 SCRAMBLE_CHAR_IMAGES = True
@@ -31,6 +32,7 @@ SCRAMBLE_PROPS = True
 SCRAMBLE_CHAR_NAMES = True
 SCRAMBLE_BGM = True
 SCRAMBLE_SFX = True
+SCRAMBLE_TRANSFORMS = True
 
 @dataclass
 class Replacement:
@@ -51,6 +53,7 @@ def scramble():
     char_names = []
     bgms = []
     sfxs = []
+    transforms = []
 
     console.clear()
     console.print("[blue]Loading lines...")
@@ -72,7 +75,7 @@ def scramble():
         elif (m := re.match(RE_CHAR_IMAGE, line)) and "Movie" not in line and "Window" not in line and SCRAMBLE_CHAR_IMAGES:
             indent = (len(line) - len(line.lstrip())) // 4
             char_images.append(Replacement(n, m.group(1), m.group(2), line, indent_level = indent))
-        elif (m := re.match(RE_PROP, line)) and SCRAMBLE_PROPS:
+        elif (m := re.match(RE_PROP, line)) and "Movie" not in line and "Window" not in line and SCRAMBLE_PROPS:
             prop_images.append(Replacement(n, m.group(1), m.group(2), line))
         elif (m := re.match(RE_CHARACTER, line)) and SCRAMBLE_CHAR_NAMES:
             char_names.append(Replacement(n, m.group(1), m.group(2), line, m.group(3)))
@@ -80,16 +83,19 @@ def scramble():
             bgms.append(Replacement(n, m.group(1), m.group(2), line))
         elif (m := re.match(RE_SFX, line)) and SCRAMBLE_SFX:
             sfxs.append(Replacement(n, m.group(1), m.group(2), line))
+        elif (m := re.match(RE_TRANSFORM, line)) and SCRAMBLE_TRANSFORMS:
+            transforms.append(Replacement(n, m.group(1), m.group(1), line))
         else:
             new_lines[n] = line
     
     # Randomize values
     possible_bgs = [j.replacement for j in bg_images]
     possible_char_images = [j.replacement for j in char_images]
-    possible_prop_images = [j.replacement for j in prop_images]
+    possible_props = [j.replacement for j in prop_images]
     possible_char_names = [j.replacement for j in char_names]
     possible_bgms = [j.replacement for j in bgms]
     possible_sfxs = [j.replacement for j in sfxs]
+    possible_transforms = [j.replacement for j in transforms]
 
     if SCRAMBLE_BG_IMAGES:
         console.print(f"[blue]Scrambling {len(bg_images)} BGs...")
@@ -140,6 +146,14 @@ def scramble():
             new_lines[i.line_num] = new_line
             possible_sfxs.remove(random_value)
 
+    if SCRAMBLE_TRANSFORMS:
+        console.print(f"[blue]Scrambling {len(transforms)} transforms...")
+        for i in transforms:
+            random_value = random.choice(possible_transforms)
+            new_line = f"transform {random_value}:\n"
+            new_lines[i.line_num] = new_line
+            possible_transforms.remove(random_value)
+
     console.print("[blue]Writing new script...")
     # Replace script_start
     with open("./script_start.rpy", "w") as f:
@@ -166,12 +180,13 @@ def get_current_options_table() -> Table:
     t.add_row("Character Names", ":white_check_mark:" if SCRAMBLE_CHAR_NAMES else ":x:", "4")
     t.add_row("Music", ":white_check_mark:" if SCRAMBLE_BGM else ":x:", "5")
     t.add_row("Sound Effects", ":white_check_mark:" if SCRAMBLE_SFX else ":x:", "6")
+    t.add_row("Transforms", ":white_check_mark:" if SCRAMBLE_TRANSFORMS else ":x:", "7")
     t.caption = "Choose a number to toggle."
 
     return t
 
 def choose_scramble_options():
-    global SCRAMBLE_BG_IMAGES, SCRAMBLE_BGM, SCRAMBLE_CHAR_IMAGES, SCRAMBLE_CHAR_NAMES, SCRAMBLE_SFX, SCRAMBLE_PROPS
+    global SCRAMBLE_BG_IMAGES, SCRAMBLE_BGM, SCRAMBLE_CHAR_IMAGES, SCRAMBLE_CHAR_NAMES, SCRAMBLE_SFX, SCRAMBLE_PROPS, SCRAMBLE_TRANSFORMS
     console.clear()
 
     if os.path.isfile("./script_start.rpybu"):
@@ -179,7 +194,7 @@ def choose_scramble_options():
         exit()
 
     console.print(get_current_options_table())
-    choice = DigiPrompt.ask("Choose a number, or hit ENTER to scramble!", choices = ["1", "2", "3", "4", "5", "6", ""])
+    choice = DigiPrompt.ask("Choose a number, or hit ENTER to scramble!", choices = ["1", "2", "3", "4", "5", "6", "7", ""])
     if choice == "":
         scramble()
     elif choice == "1":
@@ -194,6 +209,8 @@ def choose_scramble_options():
         SCRAMBLE_BGM = not SCRAMBLE_BGM
     elif choice == "6":
         SCRAMBLE_SFX = not SCRAMBLE_SFX
+    elif choice == "7":
+        SCRAMBLE_TRANSFORMS = not SCRAMBLE_TRANSFORMS
     else:
         console.print(":warning: [bold yellow]Invalid option.")
     choose_scramble_options()
