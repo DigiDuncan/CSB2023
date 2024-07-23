@@ -176,7 +176,7 @@ def get_current_options_table() -> Table:
     t = Table("Scramble?", "Y/N", "#", title = "What would you like scrambled?")
     t.add_row("Background Images", ":white_check_mark:" if SCRAMBLE_BG_IMAGES else ":x:", "1")
     t.add_row("Character Images", ":white_check_mark:" if SCRAMBLE_CHAR_IMAGES else ":x:", "2")
-    t.add_row("Character Images", ":white_check_mark:" if SCRAMBLE_CHAR_IMAGES else ":x:", "3")
+    t.add_row("Props", ":white_check_mark:" if SCRAMBLE_PROPS else ":x:", "3")
     t.add_row("Character Names", ":white_check_mark:" if SCRAMBLE_CHAR_NAMES else ":x:", "4")
     t.add_row("Music", ":white_check_mark:" if SCRAMBLE_BGM else ":x:", "5")
     t.add_row("Sound Effects", ":white_check_mark:" if SCRAMBLE_SFX else ":x:", "6")
