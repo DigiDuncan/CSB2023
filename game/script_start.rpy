@@ -1520,7 +1520,6 @@ define audio.passport = "passport.ogg"
 define audio.passport_ytp = "passport_ytp.ogg"  # TODO: This should be moved to /secret
 
 #CSBIII Act 1 Music
-define audio.passport = "passport.ogg"
 define audio.good_eatin = "good_eatin.ogg"
 define audio.supernova = "supernova.ogg"
 define audio.airport_counter = "airport_counter.ogg"
@@ -1588,7 +1587,6 @@ define audio.Lowbudget_song = "lowbudget_song.ogg"
 define audio.klaxon_beat = "klaxon_beat.ogg"
 define audio.cp_violation = "cp_violation.ogg"
 define audio.mm_complete = "mm_complete.ogg"
-define audio.police_station = "police_station.ogg"
 define audio.tuna_fish = "tuna_fish.ogg"
 define audio.full_rulle_med_klas = "<from 0 to 86>full_rulle_med_klas.ogg"
 define audio.dense_woods_b = "dense_woods_b.ogg"
@@ -1631,13 +1629,11 @@ define audio.sweet_victory = "sweet_victory.ogg"
 define audio.dig_this = "dig_this.ogg"
 define audio.exotic = "exotic.ogg"
 define audio.another_him = "another_him.ogg"
-define audio.track_4 = "track4.ogg"
 
 # CSBIII AI Music
 define audio.school = "school.ogg"
 define audio.cliffs = "cliffs.ogg"
 define audio.circus = "circus.ogg"
-define audio.chase = "chase.ogg"
 define audio.friendship = "friendship.ogg"
 
 # CSBIII Archival Music
