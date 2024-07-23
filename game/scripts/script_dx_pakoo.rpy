@@ -506,6 +506,8 @@ label dx_after_seek_competitors:
             jump dx_after_lunatic_ask
         "Check votes/balance":
             jump dx_after_votes_balance
+        "Back to Blue Branch":
+            jump dx_after_branch_ask
 
 label dx_after_votes_balance:
     cs "Ah, let's see here..."
@@ -1173,7 +1175,21 @@ label dx_after_three_right:
     cs "Who's next?"
     jump dx_after_seek_competitors
 
-
+label dx_after_branch_ask:
+    play music ten_feet_away if_changed    
+    scene cult_con
+    show cs cultist at center
+    cs "I'm gonna go back to the Blue Branch guys."
+    show cs cultist flipped with determination
+    hide cs with moveoutleft
+    n "CS walks back to check on Blue Branch."
+    play music ten_feet_away if_changed 
+    scene blue_branch
+    show cultist_2 at right
+    show cultist_3 at mid_mid_right
+    show cultist at mid_right
+    with dissolve
+    show cs cultist at left with moveinleft
 
 label dx_after_renault:
     stop music fadeout 1.0
