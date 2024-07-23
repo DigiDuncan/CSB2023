@@ -2282,6 +2282,7 @@ label train_tate_ex_encounter:
             jump rpg_tate_ex
                 
 label train_tate_ex_win:
+    scene white
     play sound sfx_sparkles
     pause 5.0
     "..."
@@ -2290,19 +2291,20 @@ label train_tate_ex_win:
     "..."
     tate "At least my question has been answered."
     tate "Thank you, CS."
+    tate "Let us never speak of this."
     
+    $ persistent.seen.add("tate_ex")
+    $ achievement_manager.unlock("Main Character Syndrome")
     # audio is not ready yet - tate
     dxcom tate_ex
     
-    tate "Let us never speak of this."
     pause 2.0
     scene black with dissolve
     pause 2.0
-    $ persistent.seen.add("tate_ex")
-    $ achievement_manager.unlock("Main Character Syndrome")
     jump train_completed
 
 label train_tate_ex_lose:
+    scene white
     pause 5.0
     tate "Huh."
     tate "I wasn't sure if I'd actually win that, for a minute, there..."
