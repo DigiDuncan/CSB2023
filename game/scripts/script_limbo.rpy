@@ -39,7 +39,7 @@ label lose_pencil_game:
     return
 
 label lose_pencil_game2:
-    bad_end "You dumb skinfore." "minigame_pencil2"
+    bad_end "You dumb skinfore." "play_pencil2_game"
     return
 
 label play_edit_game:

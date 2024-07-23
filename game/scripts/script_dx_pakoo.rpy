@@ -493,7 +493,6 @@ label dx_after_seek_competitors:
     play music ten_feet_away if_changed
     scene cult_con
     show cs cultist at center
-    n "Total votes: [total_votes]"
     cs "Which cult should I look for?"
     menu:
         "Pick a cult:"
@@ -505,6 +504,14 @@ label dx_after_seek_competitors:
             jump dx_after_catholic_ask
         "Lunatic Cultists":
             jump dx_after_lunatic_ask
+        "Check votes/balance":
+            jump dx_after_votes_balance
+
+label dx_after_votes_balance:
+    cs "Ah, let's see here..."
+    n "Total votes: [total_votes]"
+    n "Current balance: $[cath_counter]"
+    jump dx_after_seek_competitors
 
 label dx_after_pencil_ask:
     play music ten_feet_away if_changed    
@@ -703,6 +710,14 @@ label dx_after_science_ask:
         cs "I was going to ask, you have any spare change?"
         if science_check2:
             cruise "I already gave you a bit of money!"
+            cruise "I don't carry around a million dollars with me everywhere I go!"
+            cs "Sorry, sorry. I didn't mean to ask you again."
+            cruise "Just get out of here! You better not disappoint me tonight!"
+            show cs cultist flipped with determination
+            hide cs with moveoutleft
+            n "CS heads back to the convention floor."
+            scene cult_con with dissolve
+            show cs cultist at center with moveinleft 
             jump dx_after_seek_competitors
         cruise "Why the hell would I give any money to you?"
         cruise "You are, like, part of that fuckin' group that I hate!"
@@ -728,13 +743,34 @@ label dx_after_science_ask:
         show cs cultist flipped with determination
         hide cs with moveoutleft
         n "CS heads back to the convention floor."
-        scene cultcon with dissolve
-        show cs cultist at center
+        scene cult_con with dissolve
+        show cs cultist at center with moveinleft
         cs "Well, that was a lot easier than I thought."        
         jump dx_after_seek_competitors
 
     if science_check:
         cs "I guess I could see if Tom Cruise has anything else to say."
+        hide cs with moveoutright
+        n "CS runs over to Scientology stand."
+        show cs cultist at left with moveinleft
+        show cruise flipped at mid_right
+        cs "Hey! I'm back!"
+        show cruise
+        cruise "What do you want?"
+        cs "I was just gonna ask..."
+        cs "Can I have like, one more vote?"
+        cruise "What the fuck? No!"
+        cs "Pleeeease??"
+        cruise "Just for that, I'm gonna give you a tenth of a vote."
+        $ science_votes = 0
+        $ science_votes += 0.1
+        $ total_votes += science_votes
+        cs "Fine, I'm just getting bored of this."
+        show cs cultist flipped with determination
+        hide cs with moveoutleft
+        n "CS heads back to the convention floor."
+        scene cult_con with dissolve
+        show cs cultist at center with moveinleft       
         jump dx_after_seek_competitors
     cs "Y'know, the Scientologists think they are all that, but maybe if I talk to them, I can convince them to vote for us."
     hide cs with moveoutright
@@ -758,6 +794,7 @@ label dx_after_science_ask:
     cs "I won't, man, don't worry."
     $ science_votes = 0
     $ science_votes += 37
+    $ total_votes += science_votes
     if god_money:
         show cs cultist
         cs "By the way, do you have any spare change?"
@@ -785,8 +822,8 @@ label dx_after_science_ask:
     show cs cultist flipped with determination
     hide cs with moveoutleft
     n "CS heads back to the convention floor."
-    scene cultcon with dissolve
-    show cs cultist at center
+    scene cult_con with dissolve
+    show cs cultist at center with moveinleft
     cs "Well, that was a lot easier than I thought."
     jump dx_after_seek_competitors
 
@@ -794,11 +831,42 @@ label dx_after_catholic_ask:
     play music ten_feet_away if_changed
     scene cult_con
     show cs cultist at center
+    if god_money:
+        hide cs with moveoutright
+        n "CS goes to check out the Catholics."
+        show priest at mid_right
+        show cs cultist at left with moveinleft
+        priest "Hello, do you have anything to donate yet?"
+        menu:
+            "Donate money":
+                jump dx_after_catholic_tally
+            "Keep looking":
+                cs "I think I'm gonna find a bit more."
+                priest "The more, the merrier!"
+                n "CS heads back to the convention floor."
+                show cs cultist flipped with determination
+                hide cs with moveoutleft
+                pause 0.5
+                scene cult_con with dissolve
+                show cs cultist at center with moveinleft
+                jump dx_after_seek_competitors              
+    if cath_check:
+        cs "Ugh, alright, let's see what those Christians have to offer."
+        hide cs with moveoutright
+        n "CS goes to check out the Catholics."
+        show priest at mid_right
+        show cs cultist at left with moveinleft
+        priest "I thought I told you to leave!"
+        cs "Look, I'm sorry, I'm just a bit stressed actually because a lot has happened today..."
+        cs "...and I kinda need to win this prize."
+        priest "Well, if you are willing, I can accept cash, and possibly change my mind on our voting offer!"
+        priest "Maybe you will want to reconsider my original offer?"
+        cs "I don't know about becoming Catholic, but I can find some money."
+        jump dx_after_catholic_find
     cs "Who the hell are those guys?"
     cs "They just look like Christians!"
-    n "CS goes to check out the Catholics."
     hide cs with moveoutright
-    pause 0.5
+    n "CS goes to check out the Catholics."
     show priest at mid_right
     show cs cultist at left with moveinleft
     n "As CS approaches the priest, he immediately greets him."
@@ -819,6 +887,7 @@ label dx_after_catholic_ask:
     priest "Just get out of here. You'll ruin my image."
     show cs cultist
     cs "Alright, cya!"
+    $ cath_check = True
     n "CS heads back to the convention floor."
     show cs cultist flipped with determination
     hide cs with moveoutleft
@@ -839,6 +908,45 @@ label dx_after_catholic_find:
     cs "Well, I need to figure out who to ask..."
     jump dx_after_seek_competitors
 
+label dx_after_catholic_tally:
+    play music ten_feet_away if_changed    
+    scene cult_con
+    show priest at mid_right
+    show cs cultist at left
+    $ cath_votes = 0
+    cs "I think I'm ready to donate my money."
+    priest "Alrighty! Let's see what you got!"
+    priest "It looks like you got:"
+    priest "$[cath_counter]!"
+    priest "With this much, I think we can give you..."
+    if 0 <= cath_counter < 10:
+        priest "5 votes."
+        $ cath_votes += 5
+    elif 10 <= cath_counter < 25:
+        priest "10 votes."
+        $ cath_votes += 10
+    elif 25 <= cath_counter < 50:
+        priest "20 votes."
+        $ cath_votes += 20
+    elif 50 <= cath_counter < 100:
+        priest "30 votes."
+        $ cath_votes += 30
+    elif 100 <= cath_counter < 125:
+        priest "35 votes."
+        $ cath_votes += 35
+    elif 125 <= cath_counter < 150:
+        priest "40 votes."
+        $ cath_votes += 40
+    elif 150 <= cath_counter:
+        priest "50 votes."
+        $ cath_votes += 50
+    cs "Awesome sauce."
+    show cs cultist flipped with determination
+    hide cs with moveoutleft
+    pause 0.5
+    scene cult_con with dissolve
+    show cs cultist at center with moveinleft
+    jump dx_after_seek_competitors
 
 label dx_after_lunatic_ask:
     play music ten_feet_away if_changed    
