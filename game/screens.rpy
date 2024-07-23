@@ -25,7 +25,6 @@ init python:
 
     def change_max_fun(new_max_fun):
         global max_fun_label
-        print(f"I'm being changed! {new_max_fun}")
         preferences.max_fun = new_max_fun
         max_fun_label = ""
         if preferences.max_fun >= FUN_VALUE_LEGENDARY:
@@ -42,7 +41,6 @@ init python:
             max_fun_label = "Unobtrusive"
         else:
             max_fun_label = "Off"
-        print(f"{max_fun_label}")
         renpy.restart_interaction()
 
 ################################################################################
