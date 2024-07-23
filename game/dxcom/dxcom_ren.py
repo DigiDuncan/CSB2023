@@ -38,7 +38,7 @@ class Commentary:
         elif self.speaker == "Kitty":
             return "#51c6ff"
         elif self.speaker == "Pakoo":
-            return "#732cc4"  
+            return "#a85cff"  
         elif self.speaker == "Tate":
             return "#ffdbfc"
         else:
