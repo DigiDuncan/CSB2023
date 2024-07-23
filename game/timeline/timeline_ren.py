@@ -1,0 +1,44 @@
+import renpy.exports as renpy
+
+"""renpy
+init python:
+"""
+
+from dataclasses import dataclass
+from typing import Literal
+from renpy.game import persistent
+
+Direction = Literal["left", "right"]
+CSBIIAttack = Literal["punch", "kick", "chop", "special"]
+EastEnding = Literal["fight", "negotiate", "fuckup", "call"]
+SouthTransport = Literal["plane", "car", "train"]
+SouthEnding = Literal["fight", "donate", "brag"]
+Country = Literal["england", "sweden", "japan"]
+SongTopic = Literal["banana", "street", "ice"]
+Fanbase = Literal["ltt", "ytp", "both"]
+
+@dataclass
+class Timeline:
+    speedran_csb: bool = False
+    got_groceries: bool = True
+    beat_worker: Direction = "left"
+    csbii_attack: CSBII_Attack = "punch"
+    east_ending: EastEnding = "negotiate"
+    stand_count: int = 0
+    south_transport_type: SouthTransport = "plane"
+    south_ending: SouthEnding = "donate"
+    first_country: Country = "england"
+    second_country: Country = "sweden"
+    third_country: Country = "japan"
+    last_song_about: SongTopic = "banana"
+    went_to_store: bool = False
+    fanbase: Fanbase = "both"
+    tried_north: bool = False
+    tried_west: bool = False
+    went_to_museum: bool = False
+    left_train_early: bool = False
+    fought_tate: bool = False
+    went_to_bronson: bool = False
+    took_i69: bool = False
+
+persistent.timeline = Timeline()
