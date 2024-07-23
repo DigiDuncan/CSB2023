@@ -1800,7 +1800,6 @@ default archack = False
 default jade = False
 default clown = False
 default nome = False  # wow I hate this name - DD
-default god_money = False
 default sfxtotal = ""
 
 # Fired route
@@ -1844,9 +1843,16 @@ default terraria_question_3 = ""
 default csb_question_1 = ""
 default csb_question_2 = ""
 default csb_question_3 = ""
-default lunatic_votes = ""
-default total_votes = ""
-default cath_counter = "0"
+default lunatic_votes = 0
+default pencil_votes = 0
+default total_votes = 0
+default cath_counter = 0
+default god_money = False
+default pencil_check = False
+default pencil_check2 = False
+default cath_check = False
+default lunatic_check = False
+default science_check = False
 
 # RPG
 default enemy_1 = "cop"

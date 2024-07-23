@@ -493,6 +493,7 @@ label dx_after_seek_competitors:
     play music ten_feet_away if_changed
     scene cult_con
     show cs cultist at center
+    n "Total votes: [total_votes]"
     cs "Which cult should I look for?"
     menu:
         "Pick a cult:"
@@ -509,10 +510,82 @@ label dx_after_pencil_ask:
     play music ten_feet_away if_changed    
     scene cult_con
     show cs cultist at center
+    if pencil_check and god_money:
+        cs "Maybe I should go see if they have any extra spare change."
+        scene pencilroom 
+        show pencilguy at right
+        with dissolve
+        show cs cultist at left with moveinleft
+        pencil "Hey hey hey! Were you looking to {i}sharpen{/i} your skills again?"
+        
+        menu:
+            "Choose what you want to do:"
+            "Ask for money":
+                if pencil_check2:
+                    cs "Do you have any spare change I can have?"
+                    pencil "Dude, you already asked for some money! I'm not rich!"
+                    pencil "I already spent it all on this pencil gig!"
+                    cs "Oops. Sorry, I'll just go back."
+                    show cs cultist flipped with determination
+                    hide cs with moveoutleft
+                    scene cult_con with dissolve
+                    play music ten_feet_away if_changed
+                    show cs cultist at center with moveinleft
+                    jump dx_after_seek_competitors
+                cs "Do you have any spare change I can have?"
+                pencil "What? I mean, I guess you did beat my score..."
+                n "The pencil man takes out some bills and hands them to CS."
+                n "It looks to be an assortment of ones and fives."
+                $ cath_counter += 13
+                n "Current balance: $[cath_counter]."
+                cs "Thank you! Your contributions are appreciated."
+                pencil "... You're welcome?"
+                n "CS goes back to the convention floor."
+                show cs cultist flipped with determination
+                hide cs with moveoutleft
+                $ pencil_check2 = True
+                scene cult_con with dissolve
+                play music ten_feet_away if_changed
+                show cs cultist at center with moveinleft
+                jump dx_after_seek_competitors
+            "Redo pencil game":
+                cs "I would indeed, like to {i}sharpen{/i} my skills."
+                pencil "Alright! You must have a strong arm to do this again! What have you been doing to be strong in just your arm?"
+                pause 1.0
+                pencil "I just thought about it, don't tell me."
+                n "The pencil man pulls out the sharpener and some more pencils."
+                pencil "Ready, and, go!"
+                minigame "play_pencil2_game" "dx_after_win_pencil2" "lose_pencil_game2"
+    elif pencil_check:
+        cs "Maybe I can try to beat my previous score."
+        scene pencilroom 
+        show pencilguy at right
+        with dissolve
+        show cs cultist at left with moveinleft
+        pencil "Hey hey hey! Were you looking to {i}sharpen{/i} your skills again?"
+        menu:
+            "Choose what you want to do:"
+            "Redo pencil game":
+                cs "I would indeed, like to {i}sharpen{/i} my skills."
+                pencil "Alright! You must have a strong arm to do this again! What have you been doing to be strong in just your arm?"
+                pause 1.0
+                pencil "I just thought about it, don't tell me."
+                n "The pencil man pulls out the sharpener and some more pencils."
+                pencil "Ready, and, go!"
+                minigame "play_pencil2_game" "dx_after_win_pencil2" "lose_pencil_game2"
+            "Go back":
+                cs "Sorry, I think I just got lost."
+                pencil "Yeah, it happens to me everytime."
+                show cs cultist flipped with determination
+                hide cs with moveoutleft
+                scene cult_con with dissolve
+                play music ten_feet_away if_changed
+                show cs cultist at center with moveinleft
+                jump dx_after_seek_competitors
     cs "The cult leader said that the pencil guys usually give us a vote, so let's go see what they are up to."
     hide cs with moveoutright
     n "CS makes his way to the pencil room."
-    show pencilroom 
+    scene pencilroom 
     show pencilguy at right
     with dissolve
     show cs cultist at left with moveinleft
@@ -553,11 +626,42 @@ label dx_after_pencil_ask:
     show pencilguy at right
     show cs cultist at left
     with dissolve
+    if god_money and pencil_check2:
+        pencil "Geez, you did it again."
+        show cs cultist flipped with determination
+        hide cs with moveoutleft
+        n "CS turns around and leaves, offering no further explanation."
+        scene cult_con with dissolve
+        play music ten_feet_away if_changed
+        show cs cultist at center with moveinleft
+        jump dx_after_seek_competitors 
+    elif god_money and pencil_check:
+        pencil "Geez, you did it again."
+        cs "Also, do you have any spare change I can have?"
+        pencil "What? I mean, I guess you did beat my score..."
+        n "The pencil man takes out some bills and hands them to CS."
+        $ cath_counter += 13
+        n "Current balance: $[cath_counter]."
+        n "It looks to be an assortment of ones and fives."
+        cs "Thank you! Your contributions are appreciated."
+        pencil "... You're welcome?"
+        $ pencil_check2 = True   
+        show cs cultist flipped with determination
+        hide cs with moveoutleft
+        n "CS turns around and leaves, offering no further explanation."
+        $ pencil_check = True
+        scene cult_con with dissolve
+        play music ten_feet_away if_changed
+        show cs cultist at center with moveinleft
+        jump dx_after_seek_competitors 
+    $ pencil_votes = 0
+    $ pencil_votes += 3
+    $ total_votes += pencil_votes
     pencil "Woah, where'd {i}that{/i} kinda skill come from?!"
     pencil "You're a pencil sharpening {i}legend!"
     cs "I'll just say one thing:"
     cs "October 27th. Remember that day."
-    pencil "Uhh, alright?"
+    pencil "Uhh, alright?"    
     if god_money:
         cs "Also, do you have any spare change I can have?"
         pencil "What? I mean, I guess you did beat my score..."
@@ -567,11 +671,13 @@ label dx_after_pencil_ask:
         n "It looks to be an assortment of ones and fives."
         cs "Thank you! Your contributions are appreciated."
         pencil "... You're welcome?"
+        $ pencil_check2 = True
     show cs cultist flipped with determination
     hide cs with moveoutleft
     n "CS turns around and leaves, offering no further explanation."
+    $ pencil_check = True
     scene cult_con with dissolve
-    play music ten_feet_away
+    play music ten_feet_away if_changed
     show cs cultist at center with moveinleft
     cs "Well, that takes me back."
     cs "Or, I guess, that takes me {i}forward!"
@@ -728,7 +834,7 @@ label dx_after_lunatic_ask:
         l_cultist "I'm at a loss for words."
         l_cultist "We'll give you all our votes, because no one outside of the cult is supposed to know this."
         $ lunatic_votes += 10
-        $ total_votes += [lunatic_votes]
+        $ total_votes += lunatic_votes
         cs "Woohoo!"
         cs "Thank you so much!"
         if god_money:
@@ -814,7 +920,7 @@ label dx_after_quiz_finish:
     l_cultist "Well, we should gather up your votes."
     l_cultist "It looks like you got..."
     l_cultist "[lunatic_votes] votes."
-    $ total_votes += [lunatic_votes]
+    $ total_votes += lunatic_votes
     if lunatic_votes == 0:
         jump dx_after_zero_right
     if lunatic_votes == 3:
