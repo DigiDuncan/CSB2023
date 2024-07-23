@@ -80,7 +80,7 @@ label back_out_i69:
     $ persistent.heard.add("Melancholy - Imori")
     $ achievement_manager.unlock("You've Been Gnomed")
     $ achievement_manager.unlock("Analog Horror Protagonist")
-    jump interstate_94
+    jump michigan_interstate_94
 
 label dx_start:
     scene game_menu 

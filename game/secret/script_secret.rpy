@@ -25,7 +25,7 @@ label secret_dx2:
     scene black with dissolve
     pause 1.0
     play music ten_feet_away
-    jump seek_competitors
+    jump dx_after_seek_competitors
 
 # THESE ARE LEFT HERE AS A WAT TO REMEMBER THE OLD SECRET SCREENS
 
