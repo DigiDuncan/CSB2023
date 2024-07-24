@@ -211,9 +211,12 @@ def oops():
 
     console.print(f"[blue]CSing {len(char_images)} character sprites...")
     for i in char_images:
-        random_value = random.choice(possible_char_images)
-        new_line = f"image {i.var_name} = \"{random_value}\"\n"
-        new_line = (" " * i.indent_level * 4) + new_line
+        if i.var_name.startswith("cs"):
+            new_line = i.old_line
+        else:
+            random_value = random.choice(possible_char_images)
+            new_line = f"image {i.var_name} = \"{random_value}\"\n"
+            new_line = (" " * i.indent_level * 4) + new_line
         new_lines[i.line_num] = new_line
 
     console.print(f"[blue]CSing {len(char_names)} character names...")
