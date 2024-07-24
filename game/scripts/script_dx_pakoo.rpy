@@ -1399,6 +1399,13 @@ label dx_after_branch_ask2:
     cs "When does the tallying start?"
     n "The cult leader checks his watch."
     cultist "It looks like it's gonna be starting any minute now."
+    scene black with dissolve
+    n "Placeholder for ending cultcon"
+    n "Votes to win: 70"
+    n "You have: [total_votes]"
+    n "Returning to menu for now."
+    return
+
 
 label dx_after_renault:
     stop music fadeout 1.0
