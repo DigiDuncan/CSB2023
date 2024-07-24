@@ -804,12 +804,10 @@ screen preferences():
     use game_menu(_("Preferences"), scroll="viewport"):
 
         vbox:
-
             hbox:
                 box_wrap True
 
                 if renpy.variant("pc") or renpy.variant("web"):
-
                     vbox:
                         style_prefix "radio"
                         label _("Display")
@@ -823,68 +821,53 @@ screen preferences():
                     textbutton _("After Choices") action Preference("after choices", "toggle")
                     textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
 
-                ## Additional vboxes of type "radio_pref" or "check_pref" can be
-                ## added here, to add additional creator-defined preferences.
-
-            null height (4 * gui.pref_spacing)
+                vbox:
+                    style_prefix "check"
+                    label "Game Settings"
+                    textbutton _("Text Beeps") action ToggleField(preferences, "text_beeps")
+                    textbutton _("Streamer Mode") action ToggleField(preferences, "streamer_mode")
+                    textbutton _("Dyslexia Mode") action gui.TogglePreference("font", "fonts/comic.ttf", "fonts/Yokelvision.otf"), gui.TogglePreference("fsm", 0.75, 1)
+                    textbutton _("Developer Mode") action ToggleField(preferences, "developer_mode")
 
             hbox:
                 style_prefix "slider"
                 box_wrap True
 
                 vbox:
-
                     label _("Text Speed")
-
                     bar value Preference("text speed")
 
                     label _("Auto-Forward Time")
-
                     bar value Preference("auto-forward time")
 
-                    
-
-                    textbutton _("Text Beeps") action ToggleField(preferences, "text_beeps")
-                    textbutton _("Streamer Mode") action ToggleField(preferences, "streamer_mode")
-                    textbutton _("Dyslexia Mode") action gui.TogglePreference("font", "fonts/comic.ttf", "fonts/Yokelvision.otf"), gui.TogglePreference("fsm", 0.75, 1)
-                    # textbutton _("Developer Mode") action ToggleField(preferences, "developer_mode")
+                    if config.has_music or config.has_sound or config.has_voice:
+                        null height 20
+                        textbutton _("Mute All Audio"):
+                            action Preference("all mute", "toggle")
+                            style "mute_all_button"
 
                 vbox:
-
                     if config.has_music:
                         label _("Music Volume")
-
                         hbox:
                             bar value Preference("music volume")
 
                     if config.has_sound:
-
                         label _("Sound Volume")
-
                         hbox:
                             bar value Preference("sound volume")
-
                             if config.sample_sound:
                                 textbutton _("Test") action Play("sound", config.sample_sound)
 
-
                     if config.has_voice:
                         label _("Voice Volume")
-
                         hbox:
                             bar value Preference("voice volume")
-
                             if config.sample_voice:
                                 textbutton _("Test") action Play("voice", config.sample_voice)
-
-                    if config.has_music or config.has_sound or config.has_voice:
-                        null height gui.pref_spacing
-
-                        textbutton _("Mute All"):
-                            action Preference("all mute", "toggle")
-                            style "mute_all_button"
             vbox:
                 xsize 0.75
+                style_prefix "check"
                 label _("CSBounciness")
                 textbutton _("Toggle Bounciness") action ToggleField(preferences, "bounciness_enable")
                 label _("Bounciness Chance")
@@ -952,6 +935,7 @@ style radio_button:
 
 style radio_button_text:
     properties gui.button_text_properties("radio_button")
+    size 36
 
 style check_vbox:
     spacing gui.pref_button_spacing
@@ -962,6 +946,7 @@ style check_button:
 
 style check_button_text:
     properties gui.button_text_properties("check_button")
+    size 36
 
 style slider_slider:
     xsize 525
