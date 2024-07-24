@@ -839,13 +839,6 @@ screen preferences():
 
                     label _("Auto-Forward Time")
                     bar value Preference("auto-forward time")
-
-                    if config.has_music or config.has_sound or config.has_voice:
-                        null height 20
-                        textbutton _("Mute All Audio"):
-                            action Preference("all mute", "toggle")
-                            style "mute_all_button"
-
                 vbox:
                     if config.has_music:
                         label _("Music Volume")
@@ -865,11 +858,21 @@ screen preferences():
                             bar value Preference("voice volume")
                             if config.sample_voice:
                                 textbutton _("Test") action Play("voice", config.sample_voice)
+
+                    if config.has_music or config.has_sound or config.has_voice:
+                        textbutton _("Mute All Audio"):
+                            action Preference("all mute", "toggle")
+                            style "mute_all_button"
             vbox:
                 xsize 0.75
                 style_prefix "check"
-                label _("CSBounciness")
-                textbutton _("Toggle Bounciness") action ToggleField(preferences, "bounciness_enable")
+                hbox:
+                    textbutton _("Toggle Bounciness") action ToggleField(preferences, "bounciness_enable")
+                    null width 10
+                    label "Silly, random events that add jokes and scenes to the story.":
+                        text_size 20
+                        text_color "#555555"
+                        yoffset 10
                 label _("Bounciness Chance")
                 hbox:
                     bar:
