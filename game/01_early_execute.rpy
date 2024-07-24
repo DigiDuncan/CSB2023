@@ -242,7 +242,7 @@ init python:
         
         if not preferences.bounciness_enable:
             return False
-        if rarity > preferences.max_fun:
+        if rarity > preferences.max_fun and rarity < 99:
             return False
 
         r = ease_linear(rarity, 1, 0, 100, preferences.csbounciness)
