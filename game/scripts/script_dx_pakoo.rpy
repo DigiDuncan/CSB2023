@@ -453,9 +453,11 @@ label dx_after_competiton_start:
     show cultist at mid_right
     show cs cultist at left
     cs "I think I'm good."
+    cultist "Alright, awesome."
+    if con_start:
+        jump menu_branch_ask
     stop music fadeout 3.0
     music end
-    cultist "Alright, awesome."
     cultist "Now go out there and--{nw}"
     play music hitsquad_2
     music "Hitsquad 2 - Dr. Awesome"
@@ -486,6 +488,7 @@ label dx_after_competiton_start:
     scene cult_con with dissolve
     play music ten_feet_away
     show cs cultist at center with moveinleft
+    $ con_start = True
     cs "Alright, so, there are a few cults I can challenge here."
     jump dx_after_seek_competitors
     
@@ -838,17 +841,26 @@ label dx_after_catholic_ask:
         n "CS goes to check out the Catholics."
         show priest at mid_right
         show cs cultist at left with moveinleft
+        if cath_check2:
+            priest "You have already donated. Thank you for your contribution!"
+            cs "Oh yeah, I already did that."
+            cs "Welp, back to the floor."
+            show cs cultist flipped with determination
+            hide cs with moveoutleft
+            pause 1.0
+            scene cult_con with dissolve
+            show cs cultist at center with moveinleft
+            jump dx_after_seek_competitors           
         priest "Hello, do you have anything to donate yet?"
         menu:
             "Donate money":
                 jump dx_after_catholic_tally
-            "Keep looking":
+            "Keep looking for money":
                 cs "I think I'm gonna find a bit more."
                 priest "The more, the merrier!"
-                n "CS heads back to the convention floor."
                 show cs cultist flipped with determination
                 hide cs with moveoutleft
-                pause 0.5
+                n "CS heads back to the convention floor."
                 scene cult_con with dissolve
                 show cs cultist at center with moveinleft
                 jump dx_after_seek_competitors              
@@ -904,7 +916,11 @@ label dx_after_catholic_find:
     $ cath_counter = 0
     cs "Stay right here. I'm sure I can find some money."
     priest "I wasn't planning on moving, but thank you! The church will thank you."
+    show cs cultist flipped with determination
+    hide cs with moveoutleft
     n "CS runs back to the main floor."
+    scene cult_con with dissolve
+    show cs cultist at center with moveinleft
     cs "So, what I'm thinking is, if I give those guys some money, they'll be sure to give us votes!"
     cs "I mean, the Catholic church must have a {i}lot{/i} of votes to give out, right?"
     cs "Well, I need to figure out who to ask..."
@@ -915,7 +931,20 @@ label dx_after_catholic_tally:
     scene cult_con
     show priest at mid_right
     show cs cultist at left
-    $ cath_votes = 0
+    n "Are you sure? Once you donate, you cannot come back to give more money!"
+    menu:
+        "Keep looking for money":
+            cs "I think I'm gonna find a bit more."
+            priest "The more, the merrier!"
+            n "CS heads back to the convention floor."
+            show cs cultist flipped with determination
+            hide cs with moveoutleft
+            pause 0.5
+            scene cult_con with dissolve
+            show cs cultist at center with moveinleft
+            jump dx_after_seek_competitors 
+        "Yes, donate":
+            $ cath_votes = 0
     cs "I think I'm ready to donate my money."
     priest "Alrighty! Let's see what you got!"
     priest "It looks like you got:"
@@ -943,6 +972,8 @@ label dx_after_catholic_tally:
         priest "50 votes."
         $ cath_votes += 50
     cs "Awesome sauce."
+    $ cath_check2 = True
+    $ cath_counter = 0
     show cs cultist flipped with determination
     hide cs with moveoutleft
     pause 0.5
@@ -954,10 +985,119 @@ label dx_after_lunatic_ask:
     play music ten_feet_away if_changed    
     scene cult_con
     show cs cultist at center
+    if lunatic_check3 and god_money:
+        cs "I think I cheated here on this one, I have no reason to go back."
+        show lunatic_cultist at mid_right with moveinright
+        l_cultist "Hold up! I forgot to give you this!"
+        $ cath_counter += 10000
+        n "Current balance: $[cath_counter]."
+        cs "Woohoo!"
+        hide lunatic_cultist with moveoutleft
+        jump dx_after_seek_competitors
+    if lunatic_check3:
+        cs "I think I cheated here on this one, I have no reason to go back."
+        jump dx_after_seek_competitors
+    if lunatic_check and god_money:
+        cs "Well, did look pretty fancy for a cult, maybe they have some spare change to hand out?"
+        hide cs with moveoutright
+        n "CS runs over to meet the Lunatic Cultists."
+        scene cult_zone1
+        show lunatic_cultist at mid_right
+        with dissolve
+        show cs cultist at mid_left with moveinleft
+        l_cultist "Welcome back."
+        l_cultist "Was there anything you needed?"
+        cs "Did you have any spare change you could give me?"
+        if lunatic_check2:
+            l_cultist "Sorry, we don't have much else we would want to give away right now."
+            cs "Ah, it's okay."
+            cs "Worth a try."
+            show cs cultist flipped with determination
+            hide cs with moveoutleft
+            n "CS heads back to the floor."
+            scene cult_con with dissolve
+            show cs cultist at center with moveinleft
+            jump dx_after_seek_competitors
+        if lunatic_votes == 0:
+            cs "Also, before I go, do you guys have any spare change?"
+            l_cultist "I guess we have a bit…"
+            n "They hand CS a copper coin."
+            cs "Thanks."
+            $ cath_counter += 0.01
+            n "Current balance: $[cath_counter]."
+            show cs cultist flipped with determination
+            hide cs with moveoutleft
+            n "CS sulks back to the convention floor."
+            scene cult_con
+            show cs cultist at center with moveinleft
+            $ lunatic_check2 = True 
+            jump dx_after_seek_competitors 
+        elif lunatic_votes == 3 or 4:
+            l_cultist "Here, we have something..."
+            n "They hand CS a silver coin."
+            cs "Thank you!"
+            $ cath_counter += 1
+            n "Current balance: $[cath_counter]."
+            show cs cultist flipped with determination
+            hide cs with moveoutleft
+            n "CS makes his way back to the convention floor."
+            scene cult_con
+            show cs cultist at center with moveinleft
+            $ lunatic_check2 = True  
+            jump dx_after_seek_competitors
+        elif lunatic_votes == 6 or 7:
+            l_cultist "Y'know what? You can have this."
+            n "They hand CS a gold coin."
+            cs "Holy crap, thanks a lot!"
+            $ cath_counter += 100
+            n "Current balance: $[cath_counter]."
+            show cs cultist flipped with determination
+            hide cs with moveoutleft
+            n "CS gets back to the convention floor."
+            scene cult_con
+            show cs cultist at center with moveinleft
+            $ lunatic_check2 = True
+            jump dx_after_seek_competitors       
+        elif lunatic_votes == 10:
+            l_cultist "I think you deserve this."
+            n "They hand CS a shiny platinum coin."
+            cs "Woohoo!"
+            $ cath_counter += 10000
+            n "Current balance: $[cath_counter]."
+            show cs cultist flipped with determination
+            hide cs with moveoutleft
+            n "CS happily makes his way back to the convention floor."
+            scene cult_con
+            show cs cultist at center with moveinleft
+            $ lunatic_check2 = True
+            jump dx_after_seek_competitors      
+        else:
+            jump secret_dx
+    if lunatic_check:
+        cs "I guess I can check about doing those questions again?"
+        hide cs with moveoutright
+        n "CS runs over to meet the Lunatic Cultists."
+        scene cult_zone1
+        show lunatic_cultist at mid_right
+        with dissolve
+        show cs cultist at mid_left with moveinleft
+        l_cultist "Welcome back."
+        l_cultist "Was there anything you needed?"
+        cs "Can I answer those questions again?"
+        l_cultist "Unfortunately, we gave you one shot at answering those questions."
+        l_cultist "We travelled into your mind, if you couldn't answer them there, why do it again?"
+        show cs disappointed cultist
+        cs "I... guess that would make sense."
+        cs "Dangit."
+        l_cultist "You can try the first set of questions again though!"
+        show cs cultist
+        cs "Sure, I'll give it another try!"
+        jump dx_after_lunatic_jump
     cs "Hmm, who are those guys? They look like plague doctors, almost..."
     cs "Let's go check them out."
     hide cs with moveoutright
     n "CS runs over to meet the Lunatic Cultists."
+    scene cult_zone1 with dissolve
     show lunatic_cultist at mid_right
     show cs cultist at mid_left with moveinleft
     cs "Hey, guys! Cultist here!"
@@ -975,6 +1115,7 @@ label dx_after_lunatic_ask:
     $ lunatic_votes = 0
     l_cultist "If you can guess every answer correctly, we will give you {i}all{/i} of our votes!"
     cs "Alright well, lay it on me."
+label dx_after_lunatic_jump:
     l_cultist "What are the three evils of the world?"
     # CS answers
     $ terraria_question_1 = renpy.input("Name the first evil.", terraria_question_1, length = 32).lower()
@@ -1001,6 +1142,7 @@ label dx_after_lunatic_ask:
             cs "Woohoo!"
             $ cath_counter += 10000
             n "Current balance: $[cath_counter]."
+            $ lunatic_check2 = True
         show cs cultist flipped with determination
         hide cs with moveoutleft
         n "CS heads back to the convention floor."
@@ -1008,8 +1150,19 @@ label dx_after_lunatic_ask:
         show cs cultist at center with moveinleft
         cs "I've barely played Terraria, so either I looked it up or asked the chat."
         cs "Either way, I've gotten us a ton of votes now!"
+        $ lunatic_check3 = True
         jump dx_after_seek_competitors
     else:
+        if lunatic_check:
+            l_cultist "Sorry, those aren't the correct answers."
+            show cs disappointed cultist
+            cs "Fuck."
+            show cs disappointed cultist flipped with determination
+            hide cs with moveoutleft
+            n "CS sulks back to the convention floor."
+            scene cult_con
+            show cs cultist at center with moveinleft
+            jump dx_after_seek_competitors
         l_cultist "Dude, how was he gonna know that? Only {i}we{/i} know that!"
     l_cultist "Shit, you're right. That was probably too hard."
     l_cultist "Alright, for these next questions, we'll peer into your mind!"
@@ -1061,7 +1214,7 @@ label dx_after_quiz_finish:
     stop music fadeout 3.0
     n "CS' mind feels like it's being untangled, then put back together again."
     play music ten_feet_away if_changed
-    scene cult_con
+    scene cult_zone1
     show cs disappointed cultist at mid_left
     show lunatic_cultist at mid_right
     with dissolve
@@ -1081,11 +1234,11 @@ label dx_after_quiz_finish:
     $ total_votes += lunatic_votes
     if lunatic_votes == 0:
         jump dx_after_zero_right
-    if lunatic_votes == 3:
+    elif lunatic_votes == 3 or 4:
         jump dx_after_one_right
-    if lunatic_votes == 7:
+    elif lunatic_votes == 6 or 7:
         jump dx_after_two_right
-    if lunatic_votes == 10:
+    elif lunatic_votes == 10:
         jump dx_after_three_right
     else:
         jump secret_dx
@@ -1103,6 +1256,7 @@ label dx_after_zero_right:
         cs "Thanks."
         $ cath_counter += 0.01
         n "Current balance: $[cath_counter]."
+        $ lunatic_check2 = True
     show cs disappointed cultist flipped with determination
     hide cs with moveoutleft
     n "CS sulks back to the convention floor."
@@ -1110,6 +1264,7 @@ label dx_after_zero_right:
     show cs disappointed cultist at center with moveinleft
     cs "That really sucks. I can't believe I did {i}that{/i} bad."
     cs "I need to find more people to get votes from..."
+    $ lunatic_check = True
     jump dx_after_seek_competitors
     #CS got one right
 label dx_after_one_right:
@@ -1122,6 +1277,7 @@ label dx_after_one_right:
         cs "Thank you!"
         $ cath_counter += 1
         n "Current balance: $[cath_counter]."
+        $ lunatic_check2 = True
     show cs cultist flipped with determination
     hide cs with moveoutleft
     n "CS makes his way back to the convention floor."
@@ -1129,6 +1285,7 @@ label dx_after_one_right:
     show cs cultist at center with moveinleft
     cs "Hey, at least I got some votes. I should still go try for more."
     cs "Let's see…"
+    $ lunatic_check = True
     jump dx_after_seek_competitors
     #CS got two right
 label dx_after_two_right:
@@ -1142,6 +1299,7 @@ label dx_after_two_right:
         cs "Holy crap, thanks a lot!"
         $ cath_counter += 100
         n "Current balance: $[cath_counter]."
+        $ lunatic_check2 = True
     show cs cultist flipped with determination
     hide cs with moveoutleft
     n "CS gets back to the convention floor."
@@ -1150,6 +1308,7 @@ label dx_after_two_right:
     cs "Well, I'm doing pretty good, I would say!"
     cs "I need to get some more votes, but I'm feeling confident!"
     cs "Alright, who's next?"
+    $ lunatic_check = True
     jump dx_after_seek_competitors
     #CS got them all right
 label dx_after_three_right:    
@@ -1163,6 +1322,7 @@ label dx_after_three_right:
         cs "Woohoo!"
         $ cath_counter += 10000
         n "Current balance: $[cath_counter]."
+        $ lunatic_check2 = True
     show cs cultist flipped with determination
     hide cs with moveoutleft
     n "CS happily makes his way back to the convention floor."
@@ -1173,6 +1333,7 @@ label dx_after_three_right:
     cs "Smell that air!"
     cs "I really think we are gonna win this!"
     cs "Who's next?"
+    $ lunatic_check = True
     jump dx_after_seek_competitors
 
 label dx_after_branch_ask:
@@ -1190,6 +1351,52 @@ label dx_after_branch_ask:
     show cultist at mid_right
     with dissolve
     show cs cultist at left with moveinleft
+    cultist "Welcome back! Did you need anyone else?"
+    jump menu_branch_ask
+
+label menu_branch_ask:
+    menu:
+        "Ask for help again":
+            jump dx_after_cult_questions
+        "Finish gathering votes":
+            jump dx_after_branch_ask2
+        "Continue gathering votes":
+            cs "Nevermind, I'm gonna see if I can get some more votes."
+            cultist "Alright, well, get out there and show them how cool we are!"
+            cs "On it!"
+            show cs cultist at offscreenright with move
+            pause 0.3
+            show cs cultist at offscreenright with vpunch
+            play sound sfx_clonk
+            pause 1.0
+            show cs disappointed cultist flipped at right with moveinright
+            cs "Ow, that was a wall."
+            cs "I'm okay..."
+            cultist "Maybe raise your hood a bit?"
+            cs "Nah, I'm fine. Alright, back to culting!"
+            hide cs with moveoutleft
+            play music ten_feet_away if_changed
+            scene cult_con
+            with dissolve
+            show cs cultist at center with moveinleft
+            jump dx_after_seek_competitors
+
+label dx_after_branch_ask2:
+    play music ten_feet_away if_changed 
+    scene blue_branch
+    show cultist_2 at right
+    show cultist_3 at mid_mid_right
+    show cultist at mid_right
+    show cs cultist at left
+    cs "I think I have impressed all the groups enough!"
+    cultist_2 "Nice job!"
+    cultist_3 "I hope we manage to win this year!"
+    cultist "We are proud to see your involvement and dedication to Blue Branch."
+    cultist "Let's hope you didn't let us down."
+    cs "Well, I guess we'll find out soon enough."
+    cs "When does the tallying start?"
+    n "The cult leader checks his watch."
+    cultist "It looks like it's gonna be starting any minute now."
 
 label dx_after_renault:
     stop music fadeout 1.0

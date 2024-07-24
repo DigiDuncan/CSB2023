@@ -1231,6 +1231,7 @@ image pencilroomblur = "bg/pencilroomblur.png"
 image cult_con = "bg/cult_con.png"
 image blue_branch = "bg/bluebranch.png"
 image renault_inside = "bg/renault_inside.png"
+image cult_zone1 = "bg/cultzone1.png"
 
 # Back to the future: CS edition characters
 image renovator = "characters/renovator.png"
@@ -1616,7 +1617,6 @@ define audio.la_by_night = "la_by_night.ogg"
 define audio.triage_at_dawn = "triage_at_dawn.ogg"
 define audio.the_whale = "the_whale.ogg"
 define audio.prophet_2001 = "prophet_2001.ogg"
-define audio.insane_personalities = "<from 60 to 170>insane_personalities.ogg"
 
 # CSBIII Country Music
 define audio.wool_gloves = "wool_gloves.ogg"
@@ -1882,9 +1882,13 @@ default god_money = False
 default pencil_check = False
 default check2 = False
 default cath_check = False
+default cath_check2 = False
 default lunatic_check = False
+default lunatic_check2 = False
+default lunatic_check3 = False
 default science_check = False
 default science_check2 = False
+default con_start = False
 
 # RPG
 default enemy_1 = "cop"

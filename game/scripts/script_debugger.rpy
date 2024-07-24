@@ -811,7 +811,7 @@ label asset_debugger:
         play sound sfx_roll_window
         play music friendship
         scene cashzone_foreground
-        show RCOMOM at center
+        show RCOMEM at center
         show kuwait_doctor_1 at mid_left
         show kuwait_nurse_1 at mid_right
         show kuwait_lieutenant_snow at mid_mid_right
@@ -1651,8 +1651,8 @@ label asset_debugger:
         pause 0.5
     else:
         jump exit_debug
-        play music game_corner
     if fun_value(173):
+        play music game_corner
         scene war_torn_5
         pause 0.5
     else:
@@ -2128,7 +2128,7 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(267):
-        scene falling_old
+        scene falling
         pause 0.1
     else:
         jump exit_debug
@@ -2589,7 +2589,14 @@ label asset_debugger:
         $ renpy.movie_cutscene(splash)
     else:
         jump exit_debug
-
+    if fun_value (362):
+        scene cult_zone1
+    else:
+        jump exit_debug
+    if fun_value (363):
+        scene kingman_museum_3
+    else:
+        jump exit_debug
 
     n "Done."
     show screen debugger_menu
