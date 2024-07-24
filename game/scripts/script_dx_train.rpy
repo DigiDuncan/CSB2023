@@ -367,6 +367,7 @@ label train_story_begin:
             jump train_kingman_platform
 
 label train_race_win:
+    play music outdoors if_changed
     scene kingman_museum_2
     show cs happy at left
     show arceus worried at right
@@ -403,11 +404,12 @@ label train_race_win:
     jump train_kingman_platform
     
 label train_race_lose:
+    play music outdoors if_changed
     scene kingman_museum_2
     show cs disappointed at left
     show arceus happy at right
     with dissolve
-    arceus "Let's fuckin' go!"
+    arceus "Let's fuckin' {i}go!"
     cs "Aww, damn it..."
     cs "This has {i}got{/i} to be rigged! I play with RC cars all the time!"
     cs "Model trains can't be {i}that{/i} different, can they?"
@@ -438,6 +440,7 @@ label train_race_lose:
     jump train_kingman_platform
 
 label train_kingman_platform:
+    play music outdoors if_changed
     scene kingman_platform_2 with dissolve
     pause 1.0
     show arceus flipped at mid_mid_left
