@@ -8,6 +8,7 @@
     - A new path to take, possibly in Michigan!
 - Revamped several scenes and added new exciting dialouge!
 - A new minigame: slots!
+- More new minigames in new-in-DX routes!
 - Recolored dusk and night time sprites!
 - A new content warning system!
 - An indicator for what bios you haven't read yet!
@@ -22,3 +23,5 @@
 - New fighters in Ultimate Custom Night!
 - Choose custom backgrounds and music in Ultimate Custom Night!
 - Translatable foreign text!
+- A new fun value system!
+- A fully fledged randomizer for pooping your game!
