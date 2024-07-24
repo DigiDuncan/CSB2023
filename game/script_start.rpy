@@ -473,17 +473,7 @@ define moomin = Character("Moomin", callback = renpy.partial(char_callback, name
 define snufkin = Character("Snufkin", callback = renpy.partial(char_callback, name = "snufkin"))  # DX: Beep
 define alicia = Character("Alicia", callback = renpy.partial(char_callback, name = "alicia"))
 define witch = Character("Witch", callback = renpy.partial(char_callback, name = "witch"))  # DX: Beep
-define renovator = Character("Renovator", callback = char_callback)
-define cruise = Character("Tom Cruise", callback = renpy.partial(char_callback, name = "cruise"))
-define baumer = Character("Steve Baumer", callback = char_callback)
-define copguyexe = Character("Copguy", callback = renpy.partial(char_callback, name = "copguy", beep = "copexe"))
-define l_cultist = Character("Lunatic Cultist", callback = char_callback)
-define RCOMEM = Character("Rocco Mem", callback = char_callback)
-define k_doctor = Character("Kuwait Doctor", callback = char_callback)
-define k_nurse = Character("Kuwait Nurse", callback = char_callback)
-define l_snow = Character("Lt. Snow", callback = char_callback)
-define lupin = Character("Lupin", callback = renpy.partial(char_callback, name = "lupin", beep = "lupin"))
-define priest = Character("Priest", callback = char_callback)
+
 # Offscreen Character Definitions
 define tate_offscreen = Character("???", callback = renpy.partial(char_callback, name = "tate_offscreen", beep="tate"))
 define pakoo_offscreen = Character("???", callback = renpy.partial(char_callback, name = "pakoo_offscreen", beep="pak"))
@@ -497,8 +487,25 @@ define ed_ai = Character("\"Ed\"", callback = renpy.partial(char_callback, name 
 define obamanobeep = Character("\"Obama\"", callback = renpy.partial(char_callback, name = "obama_ai", play_beeps = False))
 define bomahanobeep = Character("\"Omaha\"", callback = renpy.partial(char_callback, name = "obama_ai", play_beeps = False))
 
+# DX Misc Character Definitions
+define copguyexe = Character("Copguy", callback = renpy.partial(char_callback, name = "copguy", beep = "copexe"))
+
+# DX CultCon Character Definitions
+define renovator = Character("Renovator", callback = char_callback)
+define cruise = Character("Tom Cruise", callback = renpy.partial(char_callback, name = "cruise"))
+define baumer = Character("Steve Baumer", callback = char_callback)
+define l_cultist = Character("Lunatic Cultist", callback = char_callback)
+define priest = Character("Priest", callback = char_callback)
+
+# DX Kuwait Character Definitions
+define RCOMEM = Character("Rocco Mem", callback = char_callback)
+define k_doctor = Character("Kuwait Doctor", callback = char_callback)
+define k_nurse = Character("Kuwait Nurse", callback = char_callback)
+define l_snow = Character("Lt. Snow", callback = char_callback)
+
 # DX Train Route Character Definitions
-define amtrak_conductor = Character("Conductor", callback = char_callback)
+define amtrak_conductor = Character("Conductor", callback = renpy.partial(char_callback, name = "amtrak_conductor", beep = "amtrak_conductor"))
+define lupin = Character("Lupin", callback = renpy.partial(char_callback, name = "lupin", beep = "lupin"))
 define amtrak_stewardess = Character("Stewardess", callback = char_callback)
 define amtrak_npc_1 = Character("Passenger 1", callback = char_callback)
 define amtrak_npc_2 = Character("Passenger 2", callback = char_callback)
