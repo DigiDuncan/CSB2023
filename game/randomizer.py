@@ -162,8 +162,8 @@ def scramble():
     exit(0)
 
 def get_cs_names():
-    c_names = ["Crappy", "Cool", "Crazy", "Cooky", "Candy", "Cheesy", "Creamy", "Cookie", "Compu", "Cheerful", "Chaotic", "Cash", "Charlie", "Child", "Chocolate", "C", "Coal", "Cole", "Cereal", "Car", "C-section", "Champion", "Chris", "Crystal", "Chrome", "Carburetor", "Criminal", "Christ", "Conservative", "Coke", "Chicken", "Chef", "Cacophony", "Canoodle", "Colonoscopy", "Chile", "Coelacanth", "Craptop", "Chat"]
-    s_names = ["Streamer", "Sucker", "Server", "Serve", "Steamer", "Singer", "Sausage", "Saturday", "Sunday", "Steve", "Spender", "Stomper", "Shoveler", "Smeller", "Stinker", "S", "Slicer", "Slim-jim", "Scientist", "Serial-killer", "Slasher", "Stabber", "Salesman", "Section", "Shoes", "Stain", "SEX", "Soup", "Seller", "S188", "Snickerdoodle", "Skedaddle", "Spellcaster", "Switch", "Szabo", "Soyez", "System"]
+    c_names = ["Crappy", "Cool", "Crazy", "Cooky", "Candy", "Cheesy", "Creamy", "Cookie", "Compu", "Cheerful", "Chaotic", "Cash", "Charlie", "Chocolate", "C", "Coal", "Cole", "Cereal", "Car", "Champion", "Chris", "Crystal", "Chrome", "Carburetor", "Criminal", "Christ", "Conservative", "Coke", "Chicken", "Chef", "Cacophony", "Canoodle", "Colonoscopy", "Chile", "Coelacanth", "Craptop", "Chat"]
+    s_names = ["Streamer", "Sucker", "Server", "Serve", "Steamer", "Singer", "Sausage", "Saturday", "Sunday", "Steve", "Spender", "Stomper", "Shoveler", "Smeller", "Stinker", "S", "Slicer", "Slim-jim", "Scientist", "Serial-killer", "Slasher", "Stabber", "Salesman", "Section", "Shoes", "Stain", "SEX", "Soup", "Seller", "S188", "Snickerdoodle", "Skedaddle", "Spellcaster", "Switch", "Soyez", "System"]
 
     all_names = []
     for c in c_names:
