@@ -823,6 +823,7 @@ label dx_after_science_ask:
         cruise "I'm not just gonna let you win that easily. If you lose, now I can {i}really{/i} laugh at you!"
         cs "Thanks! Your donation will be incredibly useful!"
         cruise "Yeah, yeah, whatever."
+        $ science_check2 = True
     $ science_check = True
     show cs cultist flipped with determination
     hide cs with moveoutleft
@@ -974,6 +975,7 @@ label dx_after_catholic_tally:
     cs "Awesome sauce."
     $ cath_check2 = True
     $ cath_counter = 0
+    $ total_votes += cath_votes
     show cs cultist flipped with determination
     hide cs with moveoutleft
     pause 0.5
@@ -1019,7 +1021,6 @@ label dx_after_lunatic_ask:
             show cs cultist at center with moveinleft
             jump dx_after_seek_competitors
         if lunatic_votes == 0:
-            cs "Also, before I go, do you guys have any spare change?"
             l_cultist "I guess we have a bit…"
             n "They hand CS a copper coin."
             cs "Thanks."
@@ -1028,7 +1029,7 @@ label dx_after_lunatic_ask:
             show cs cultist flipped with determination
             hide cs with moveoutleft
             n "CS sulks back to the convention floor."
-            scene cult_con
+            scene cult_con with dissolve
             show cs cultist at center with moveinleft
             $ lunatic_check2 = True 
             jump dx_after_seek_competitors 
@@ -1041,7 +1042,7 @@ label dx_after_lunatic_ask:
             show cs cultist flipped with determination
             hide cs with moveoutleft
             n "CS makes his way back to the convention floor."
-            scene cult_con
+            scene cult_con with dissolve
             show cs cultist at center with moveinleft
             $ lunatic_check2 = True  
             jump dx_after_seek_competitors
@@ -1054,7 +1055,7 @@ label dx_after_lunatic_ask:
             show cs cultist flipped with determination
             hide cs with moveoutleft
             n "CS gets back to the convention floor."
-            scene cult_con
+            scene cult_con with dissolve
             show cs cultist at center with moveinleft
             $ lunatic_check2 = True
             jump dx_after_seek_competitors       
@@ -1067,7 +1068,7 @@ label dx_after_lunatic_ask:
             show cs cultist flipped with determination
             hide cs with moveoutleft
             n "CS happily makes his way back to the convention floor."
-            scene cult_con
+            scene cult_con with dissolve
             show cs cultist at center with moveinleft
             $ lunatic_check2 = True
             jump dx_after_seek_competitors      
@@ -1097,8 +1098,9 @@ label dx_after_lunatic_ask:
     cs "Let's go check them out."
     hide cs with moveoutright
     n "CS runs over to meet the Lunatic Cultists."
-    scene cult_zone1 with dissolve
+    scene cult_zone1
     show lunatic_cultist at mid_right
+    with dissolve
     show cs cultist at mid_left with moveinleft
     cs "Hey, guys! Cultist here!"
     l_cultist "Aren't we all?"
@@ -1146,7 +1148,7 @@ label dx_after_lunatic_jump:
         show cs cultist flipped with determination
         hide cs with moveoutleft
         n "CS heads back to the convention floor."
-        scene cult_con
+        scene cult_con with dissolve
         show cs cultist at center with moveinleft
         cs "I've barely played Terraria, so either I looked it up or asked the chat."
         cs "Either way, I've gotten us a ton of votes now!"
@@ -1160,7 +1162,7 @@ label dx_after_lunatic_jump:
             show cs disappointed cultist flipped with determination
             hide cs with moveoutleft
             n "CS sulks back to the convention floor."
-            scene cult_con
+            scene cult_con with dissolve
             show cs cultist at center with moveinleft
             jump dx_after_seek_competitors
         l_cultist "Dude, how was he gonna know that? Only {i}we{/i} know that!"
@@ -1260,7 +1262,7 @@ label dx_after_zero_right:
     show cs disappointed cultist flipped with determination
     hide cs with moveoutleft
     n "CS sulks back to the convention floor."
-    scene cult_con
+    scene cult_con with dissolve
     show cs disappointed cultist at center with moveinleft
     cs "That really sucks. I can't believe I did {i}that{/i} bad."
     cs "I need to find more people to get votes from..."
@@ -1281,7 +1283,7 @@ label dx_after_one_right:
     show cs cultist flipped with determination
     hide cs with moveoutleft
     n "CS makes his way back to the convention floor."
-    scene cult_con
+    scene cult_con with dissolve
     show cs cultist at center with moveinleft
     cs "Hey, at least I got some votes. I should still go try for more."
     cs "Let's see…"
@@ -1303,7 +1305,7 @@ label dx_after_two_right:
     show cs cultist flipped with determination
     hide cs with moveoutleft
     n "CS gets back to the convention floor."
-    scene cult_con
+    scene cult_con with dissolve
     show cs cultist at center with moveinleft
     cs "Well, I'm doing pretty good, I would say!"
     cs "I need to get some more votes, but I'm feeling confident!"
@@ -1326,7 +1328,7 @@ label dx_after_three_right:
     show cs cultist flipped with determination
     hide cs with moveoutleft
     n "CS happily makes his way back to the convention floor."
-    scene cult_con
+    scene cult_con with dissolve
     show cs cultist at center with moveinleft
     # This is a reference to Fallout: NV, keep this the way it is
     cs "Who won the lottery? I did!"
