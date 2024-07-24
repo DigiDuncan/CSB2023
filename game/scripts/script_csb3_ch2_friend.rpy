@@ -701,13 +701,13 @@ label friend2_final_meetup:
     n "The last group to meet up all emerge as well, which is made up of:"
     show blank at center with moveinright
     blank "Hi!"
-    $ renpy.movie_cutscene("movies/blank.webm")
+    $ renpy.movie_cutscene(blank_bl)
     show anno at mid_right with moveinright
     anno "Yo."
-    $ renpy.movie_cutscene("movies/anno.webm")
+    $ renpy.movie_cutscene(anno_bl)
     show midge at mid_offscreen_right behind anno with moveinright
     midge "Oh hai."
-    $ renpy.movie_cutscene("movies/midge.webm")
+    $ renpy.movie_cutscene(midge_bl)
     $ achievement_manager.unlock("A Little Help From My Friends")
     if nice_car:
         "Blank, Anno, and Midge" "Nice car!"
@@ -718,7 +718,7 @@ label friend2_final_meetup:
     anno "He'll be here soon, though. We've been talking to him on the phone."
     n "Anno holds out his phone."
     db "Hey, guys! Sorry I'm gonna miss out on the huge battle thing! I had to do some things at home first."
-    $ renpy.movie_cutscene("movies/db.webm")
+    $ renpy.movie_cutscene(db_bl)
     db "But I'll gladly encourage you while you all are fighting!"
     cs "No problem DB! Every little bit helps!"
     tate "Y'all ready?"
@@ -814,7 +814,7 @@ label friend2_between_2:
 label friend2_weapon_of_choice:
     window hide
     pause 1.0
-    $ renpy.movie_cutscene("movies/woc.webm")
+    $ renpy.movie_cutscene(woc)
     $ achievement_manager.unlock("Hopes and Dreams")
     $ achievement_manager.unlock("Machine Gun")
     jump friend2_car_slam
@@ -950,8 +950,8 @@ label friend2_car_slam:
     hide paper with easeoutleft
     $ ending_manager.mark("friend")
     pause 1.0
-    $ renpy.movie_cutscene("movies/wherearetheynow.webm")
+    $ renpy.movie_cutscene(where)
     pause 1.0
-    $ renpy.movie_cutscene("movies/credits.webm")
+    $ renpy.movie_cutscene(creditsm)
     $ renpy.end_replay()
     return

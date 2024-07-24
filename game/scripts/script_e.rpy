@@ -90,7 +90,7 @@ label e3_rosen:
     hide csgod with dissolve
     n "Pakoo sighs."
     pakoo "Let's finish this."
-    $ renpy.movie_cutscene("movies/error_cutscene.webm")
+    $ renpy.movie_cutscene(error_cutscene)
     jump rpg_error
 
 label error:

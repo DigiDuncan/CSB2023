@@ -1350,13 +1350,27 @@ image train_outside_tunnel = Movie(play="movies/train_outside_tunnel.webm")
 image train_loop = Movie(play="movies/train_loop.webm")
 image the_tram = Movie(play="movies/the_tram.webm")
 image sign_closeup = Movie(play="movies/sign_closeup.webm")
-image woc = Movie(play="movies/woc.webm")
-image where = Movie(play="movies/wherearetheynow.webm")
 image karaoke = Transform(Movie(play = "movies/karaoke.webm", side_mask = True), zoom = 1.5)
 image bad_end_screen = Transform(Movie(play = "movies/bad_ending.webm", side_mask = True, loop=False, image="images/fail_end.png"), size=(1920,1080))
 image bronson_hell = Movie(play="movies/bronsonhell.webm")
 image fun_cs_house = Movie(play="movies/funvaluecshouse.webm")
 image fun_hoh_sis = Movie(play="movies/funvaluehohsis.webm")
+
+#Movie Cutscenes
+define anno_bl = "movies/anno.webm"
+define blank_bl = "movies/blank.webm"
+define db_bl = "movies/db.webm"
+define midge_bl = "movies/midge.webm"
+define woc = "movies/woc.webm"
+define where = "movies/wherearetheynow.webm"
+define creditsm = "movies/credits.webm"
+define archival_end = "movies/archival_end.webm"
+define error_cutscene = "movies/error_cutscene.webm"
+define good_ytp = "movies/good_cs_ytp.webm"
+define bad_ytp = "movies/mymovie_cs.webm"
+define hoh_repair = "movies/hoh_repair.webm"
+define kick = "movies/kick.webm"
+define splash = "movies/splash.webm"
 
 #Fun Values
 image utajsign = "secret/utajsign.png"
@@ -1997,7 +2011,7 @@ screen chapter_menu():
 style start_window is empty
 
 label splashscreen:
-    $ renpy.movie_cutscene("movies/splash.webm")
+    $ renpy.movie_cutscene(splash)
     $ persistent.seen_splash = True
     $ persistent.heard.add("BUBBLE TEA - darkcat")
     return

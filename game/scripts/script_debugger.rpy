@@ -1455,6 +1455,7 @@ label asset_debugger:
     if fun_value(140):
         play music trash_zone
         scene fazhall
+        priest "test 140{w=0.5}{nw}"
         pause 0.5
     else:
         jump exit_debug
@@ -1675,12 +1676,13 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(177):
-        play music yuuka_town
+        play music unobtrusive_fun
         scene gas_station_2
-        pause 0.1
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(178):
+        play music yuuka_town
         scene traffic
         pause 0.1
     else:
@@ -2496,12 +2498,12 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(341):
-        scene woc
+        $ renpy.movie_cutscene(woc)
         pause 5.0 
     else:
         jump exit_debug
     if fun_value(342):
-        scene where
+        $ renpy.movie_cutscene(where)
         pause 5.0 
     else:
         jump exit_debug
@@ -2535,6 +2537,59 @@ label asset_debugger:
         pause 0.1
     else:
         jump exit_debug
+    if fun_value (349):
+        $ renpy.movie_cutscene(anno_bl)
+    else:
+        jump exit_debug
+    if fun_value (350):
+        $ renpy.movie_cutscene(blank_bl)
+    else:
+        jump exit_debug
+    if fun_value (351):
+        $ renpy.movie_cutscene(db_bl)
+    else:
+        jump exit_debug
+    if fun_value (352):
+        $ renpy.movie_cutscene(midge_bl)
+    else:
+        jump exit_debug
+    if fun_value (353):
+        $ renpy.movie_cutscene(blank_bl)
+    else:
+        jump exit_debug
+    if fun_value (354):
+        $ renpy.movie_cutscene(creditsm)
+    else:
+        jump exit_debug
+    if fun_value (355):
+        $ renpy.movie_cutscene(archival_end)
+    else:
+        jump exit_debug
+    if fun_value (356):
+        $ renpy.movie_cutscene(error_cutscene)
+    else:
+        jump exit_debug
+    if fun_value (357):
+        $ renpy.movie_cutscene(good_ytp)
+    else:
+        jump exit_debug
+    if fun_value (358):
+        $ renpy.movie_cutscene(bad_ytp)
+    else:
+        jump exit_debug
+    if fun_value (359):
+        $ renpy.movie_cutscene(hoh_repair)
+    else:
+        jump exit_debug
+    if fun_value (360):
+        $ renpy.movie_cutscene(kick)
+    else:
+        jump exit_debug
+    if fun_value (361):
+        $ renpy.movie_cutscene(splash)
+    else:
+        jump exit_debug
+
 
     n "Done."
     show screen debugger_menu

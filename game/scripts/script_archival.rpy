@@ -488,7 +488,7 @@ label archival_finale:
     $ achievement_manager.unlock("Archived")
     n "CS has been deleted, and has been sent to the beginning of time itself."
     pause 2.0
-    $ renpy.movie_cutscene("movies/credits.webm")
+    $ renpy.movie_cutscene(creditsm)
     pause 2.0
     play music everybody_wants 
     music "Everybody Wants To Rule The World - Tears For Fears"
@@ -526,6 +526,6 @@ label archival_finale:
     n "Addy places the jar in a receptacle."
     addy "Well, here goes nothing."
     $ ending_manager.mark("archival")
-    $ renpy.movie_cutscene("movies/archival_end.webm")
+    $ renpy.movie_cutscene(archival_end)
     $ renpy.end_replay()
     return

@@ -1241,7 +1241,7 @@ label south_lego_ending:
     stop music fadeout 1.0
     music end
     $ ending_manager.mark("south")
-    $ renpy.movie_cutscene("movies/credits.webm")
+    $ renpy.movie_cutscene(creditsm)
     $ renpy.end_replay()
     return
 

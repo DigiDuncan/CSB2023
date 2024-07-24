@@ -1796,7 +1796,7 @@ label country_going_home:
     stop music fadeout 1.0
     music end
     $ ending_manager.mark("country")
-    $ renpy.movie_cutscene("movies/credits.webm")
+    $ renpy.movie_cutscene(creditsm)
     $ renpy.end_replay()
     return
 

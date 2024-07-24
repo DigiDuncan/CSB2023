@@ -90,7 +90,7 @@ label csbii_kick:
     scene helipad
     show cs angry at left
     show wesley at right
-    $ renpy.movie_cutscene("movies/kick.webm")
+    $ renpy.movie_cutscene(kick)
     hide wesley with easeoutright
     show cs angry at left with move
 

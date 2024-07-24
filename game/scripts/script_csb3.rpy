@@ -209,7 +209,7 @@ label csbiii_bad_video:
     stop music fadeout 3.0
     music end
     n "Let's see your results."
-    $ renpy.movie_cutscene("movies/mymovie_cs.webm")
+    $ renpy.movie_cutscene(bad_ytp)
     scene inside_ltt with dissolve
     n "The next day."
     n "CS walks into LMG to greet Linus."
@@ -241,7 +241,7 @@ label csbiii_boost:
     music end
     n "Let's see your results!"
     $ renpy.mark_label_seen("play_edit_game")
-    $ renpy.movie_cutscene("movies/good_cs_ytp.webm")
+    $ renpy.movie_cutscene(good_ytp)
     scene black
     centered "The next day."
     $ achievement_manager.unlock("#1 Rated Pooper")

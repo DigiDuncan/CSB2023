@@ -1304,7 +1304,7 @@ label true_talktohohsis:
     n "The crowd erupts into cheers as CS finally enters his house."
     scene black with dissolve
     pause 1.0
-    $ renpy.movie_cutscene("movies/hoh_repair.webm")
+    $ renpy.movie_cutscene(hoh_repair)
     scene cs_room with dissolve
     play music ac_title volume 0.4
     music New Leaf Title Theme - Kazumi Totaka
@@ -1364,7 +1364,7 @@ label true_streaming:
     scene black with dissolve
     stop music2 fadeout 1.0
     $ ending_manager.mark("true")
-    $ renpy.movie_cutscene("movies/credits.webm")
+    $ renpy.movie_cutscene(creditsm)
     $ renpy.end_replay()
 
     menu:
@@ -1391,7 +1391,7 @@ label true_ytp_ending:
     cs "It's a long story..."
     scene black with dissolve
     stop music2 fadeout 1.0   
-    $ renpy.movie_cutscene("movies/credits.webm")
+    $ renpy.movie_cutscene(creditsm)
     $ renpy.end_replay()
     return
 
@@ -1415,7 +1415,7 @@ label true_ltt_ending:
     cs "It's a long story..."
     scene black with dissolve
     stop music2 fadeout 1.0   
-    $ renpy.movie_cutscene("movies/credits.webm")
+    $ renpy.movie_cutscene(creditsm)
     $ renpy.end_replay()
     return
 

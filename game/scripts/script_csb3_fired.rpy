@@ -1496,6 +1496,6 @@ label fired_final_tour_bus:
     $ achievement_manager.unlock("You Rock!")
     scene black with Dissolve(3.0)
     $ ending_manager.mark("rockstar")
-    $ renpy.movie_cutscene("movies/credits.webm")
+    $ renpy.movie_cutscene(creditsm)
     $ renpy.end_replay()
     return
