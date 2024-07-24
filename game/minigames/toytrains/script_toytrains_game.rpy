@@ -27,6 +27,10 @@ init python:
     class ToyTrainsGameDisplayable(renpy.Displayable):
         def __init__(self):
             renpy.Displayable.__init__(self)
+
+            self.total_laps = 3
+            self.current_lap = 1
+            self.current_key = None
             
             self.bg = Image("minigames/toytrains/bg_do_not_resize.png")
             self.train_cs = Image("minigames/toytrains/train_cs.png")
@@ -77,9 +81,12 @@ init python:
             r.blit(train_arceus_renderer, self.jig.pos(4355, 2015))
             
             # Text
+            laps_left_txt_render = renpy.render(Text("LAP: "+str(self.current_lap)+"/"+str(self.total_laps), color = "#FFFFFF", size = 72), 300, 100, st, at)
+            r.blit(laps_left_txt_render, (16, 0))
+            
             temp_txt = "Hi, this doesn't work yet.\nUse arrow keys to check out the map, at least.\nPress END to \"win\", Space to \"lose.\""
             temp_txt_render = renpy.render(Text(temp_txt, color = "#FFFFFF", size = 50), 1920, 100, st, at)
-            r.blit(temp_txt_render, (0, 0))
+            r.blit(temp_txt_render, (16, 80))
 
             renpy.redraw(self, 0)
             return r
