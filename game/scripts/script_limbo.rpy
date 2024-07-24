@@ -2,7 +2,7 @@ screen dx_select(items):
     vbox:
         xalign 0.5
         viewport:
-            xysize(950, 540)
+            xysize(950, 550)
             xalign 0.75
             ypos 0.1
             style_prefix "choice"
@@ -17,12 +17,11 @@ screen dx_select(items):
                     action Play("sound", "sfx_valid.ogg"), Hide("dx_select"), Jump("dx_after_true")
                 text "Or something else?" xalign 0.5 textalign 0.5
         viewport:
-            xysize(1920, 540)
-            yanchor -0.25
+            xysize(1920, 600)
+            yanchor -0.025
             xoffset -0.1
             style_prefix "choice"
             side_yfill True
-            scrollbars "vertical"
             mousewheel True
             vbox:
                 for i in items:
@@ -87,8 +86,9 @@ label dx_start:
     python:
         destinations = {
             "Speedrun": "csbi_craptop",
-            "Kuwait": "airport_choose",
-            "Train": "train_start_good",
+            "Kuwait": "kuwait_travel",
+            "Train (Winner)": "train_start_good",
+            "Train (Thief)": "train_start_bad",
             "Bronson": "michigan"
         }
         

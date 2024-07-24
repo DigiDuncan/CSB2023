@@ -72,6 +72,7 @@ define achievements = [
     Achievement("60 Drillless WR", "Your wrist hurts.", "Get a perfect score of 1200.", "1200","extra", dx = True),
     Achievement("We Don't Go To Bronson", "???", "Welcome to Hell!",  "bronson", "story", dx = True),
     Achievement("Lots & Lots Of Trains!", "Aren't they just adorable?", "Play with some model trains.", "train", "story", dx = True),
+    Achievement("Conductor Skillz 188", "No health potions here.", "Win the train game with full health.", "train_healthy", "extra", dx = True),
     Achievement("Main Character Syndrome", "Remind them whose game this is.", "Defeat Tate EX.", "vs-tate", "extra", dx = True),
     Achievement("All Aboard!", "???", "Complete Train Route.", "amtrak", "story", dx = True),
     Achievement("Gotta Catch Them All", "Collect every bio.", "Collect every bio.", "bios", "extra"),
