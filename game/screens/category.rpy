@@ -18,11 +18,13 @@ screen category_nav():
 
     viewport:
         if persistent.creative_mode or preferences.developer_mode:
-            xpos 25 ypos 150
+            xpos 25
+            yalign 0.5
             xsize 350 ysize 750
         else:
-            xpos 25 ypos 400
-            xsize 350 ysize 350
+            xpos 25
+            yalign 0.5
+            xsize 350 ysize 500
         mousewheel True
         scrollbars "vertical"
         draggable True
@@ -44,8 +46,8 @@ screen category_nav():
                 textbutton "Ultimate\nCustom Night" action Start("rpg_ucn")
             if preferences.developer_mode or persistent.creative_mode:
                 textbutton "Debug Menu" action ShowMenu("debug_menu")
-            if preferences.developer_mode:
                 textbutton "Asset Debugger" action Jump("asset_debugger")
+            if preferences.developer_mode:
                 textbutton "Test Scene" action Jump("test")
                 textbutton "Unlock All" action Function(unlock_all)
             textbutton "Clear Persistent Data" action Jump("clear_screen")
@@ -68,7 +70,9 @@ screen category_welcome():
             xalign 0.5 yalign 0.5
             xoffset 200
             #xoffset 400
-            text _p("""You could say this screen is... Extra :)""")
+            text _p("""Here, you'll find bonus content, galleries, achievements, and more!
+
+            Make sure to keep checking back here as you play to see what you've unlocked!""")
 
             #Really short text might not be centered correctly, you have to adjust the xoffset.
 
