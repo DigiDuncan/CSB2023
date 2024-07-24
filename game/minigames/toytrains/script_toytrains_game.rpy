@@ -70,15 +70,15 @@ init python:
             
             # CS Train
             train_cs_displayable = renpy.displayable(self.train_cs)
-            train_cs_transform = Transform(train_cs_displayable, zoom = 0.5)
+            train_cs_transform = Transform(train_cs_displayable, zoom = 0.8)
             train_cs_renderer = renpy.render(train_cs_transform, 475, 597, st, at)
-            r.blit(train_cs_renderer, self.jig.pos(4055, 2015))
+            r.blit(train_cs_renderer, self.jig.pos(4043, 2015))
 
             # Arc Train
             train_arceus_displayable = renpy.displayable(self.train_arceus)
-            train_arceus_transform = Transform(train_arceus_displayable, zoom = 0.5)
+            train_arceus_transform = Transform(train_arceus_displayable, zoom = 0.8)
             train_arceus_renderer = renpy.render(train_arceus_transform, 475, 597, st, at)
-            r.blit(train_arceus_renderer, self.jig.pos(4355, 2015))
+            r.blit(train_arceus_renderer, self.jig.pos(4338, 2015))
             
             # Text
             laps_left_txt_render = renpy.render(Text("LAP: "+str(self.current_lap)+"/"+str(self.total_laps), color = "#FFFFFF", size = 72), 300, 100, st, at)
