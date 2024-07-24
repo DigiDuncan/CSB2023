@@ -388,6 +388,7 @@ label vibration:
     ed "Alright, we'll fix your house."
     show cs happy
     cs "Awesome!"
+    $ achievement_manager.unlock("Chronicle Skipper 188")
     scene black with dissolve
     stop music fadeout 3.0
     music end

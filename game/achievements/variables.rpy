@@ -68,6 +68,7 @@ define achievements = [
     Achievement("F.U.N.", "???", "Roll a fun value.", "fun", "extra", True),
     Achievement("Archived", "???", "Find Addy's Facility.", "archive", "story", True),
     Achievement("Graphite Grinder", "Sharpening Time 2", "Beat the Pencil Cultist's high score.", "grinder", "story", dx = True),
+    Achievement("Chronicle Skipper 188", "Think you can you set a new record?", "Stay home and speedrun this game!", "speedrun", "story", dx=True),
     Achievement("60 Drillless WR", "Your wrist hurts.", "Get a perfect score of 1200.", "1200","extra", dx = True),
     Achievement("We Don't Go To Bronson", "???", "Welcome to Hell!",  "bronson", "story", dx = True),
     Achievement("Lots & Lots Of Trains!", "Aren't they just adorable?", "Play with some model trains.", "train", "story", dx = True),
