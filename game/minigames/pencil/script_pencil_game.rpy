@@ -117,7 +117,7 @@ init python:
             # Rendering in the timer
             if not current_time < 3:
                 if not (GAME_LENGTH - current_time < 0):
-                    time_renderer = renpy.render(Text(str(GAME_LENGTH - math.ceil(current_time)), color = "#FF0000", size = 128), 150, 100, st, at)
+                    time_renderer = renpy.render(Text(str(GAME_LENGTH - math.ceil(current_time)), color = "#FF0000", size = 144), 150, 100, st, at)
                     r.blit(time_renderer, (0, 0))
                 else:
                     time_renderer = renpy.render(Text("0", color = "#FF0000", size = 144), 100, 100, st, at)
