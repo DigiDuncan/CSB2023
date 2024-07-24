@@ -323,10 +323,15 @@ label train_story_begin:
             show cs flipped
             cs "What should we check out first?"
             arceus "Ooh, how about that train set over there?"
+            
+            scene kingman_museum_3 with dissolve
             n "Arceus points towards a custom train exhibit with two attached controllers."
-            show cs disappointed flipped
             n "It looks... familiar."
-            show cs disappointed
+            
+            scene kingman_museum_2
+            show cs disappointed at center
+            show arceus at mid_right
+            with dissolve
             cs "It looks like {i}Minecraft..."
             arceus "You don't like {i}Minecraft?"
             cs "Nah. The crafting system is just too much."
