@@ -69,7 +69,7 @@ label vibration:
     play sound sfx_punch
     show wesley at t_punchup with move
     hide ed
-    show ed_phone at right
+    show ed phone at right
     pause 0.5
     cs "That's for my house!"
     play sound sfx_siren loop
