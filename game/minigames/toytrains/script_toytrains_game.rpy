@@ -28,6 +28,7 @@ init python:
         def __init__(self):
             renpy.Displayable.__init__(self)
 
+            self.hp = 3
             self.total_laps = 3
             self.current_lap = 1
             self.current_key = None
@@ -80,13 +81,21 @@ init python:
             train_arceus_renderer = renpy.render(train_arceus_transform, 475, 597, st, at)
             r.blit(train_arceus_renderer, self.jig.pos(4338, 2015))
             
-            # Text
+            ### Text Elements
+            
+            # Lap Counter
             laps_left_txt_render = renpy.render(Text("LAP: "+str(self.current_lap)+"/"+str(self.total_laps), color = "#FFFFFF", size = 72), 300, 100, st, at)
             r.blit(laps_left_txt_render, (16, 0))
             
+            # HP
+            hp_left_txt_render = renpy.render(Text("HP: "+str(self.hp), color = "#FFFFFF", size = 72), 300, 100, st, at)
+            r.blit(hp_left_txt_render, (16, 60))
+            
+            
+            # Temporary
             temp_txt = "Hi, this doesn't work yet.\nUse arrow keys to check out the map, at least.\nPress END to \"win\", Space to \"lose.\""
             temp_txt_render = renpy.render(Text(temp_txt, color = "#FFFFFF", size = 50), 1920, 100, st, at)
-            r.blit(temp_txt_render, (16, 80))
+            r.blit(temp_txt_render, (16, 128))
 
             renpy.redraw(self, 0)
             return r
