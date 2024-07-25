@@ -1,7 +1,6 @@
 # TODO: mean needs a better text beep
-# TODO: add bios/music tracks to people/jukebox once route is written
+# TODO: make sure all music/bios are added by the end
 # TODO: make sure reflections are removed from all background images + cut out windows so we can have moving scenery
-# TODO: make sure all audio files are .ogg
 
 ######## VARIABLES ########
 label train_start_good:
@@ -690,12 +689,12 @@ label train_boarding:
     show tate sad
     amtrak_stewardess "I know that Mean lets you get away with a lot, but you {i}really{/i} need to let us work."
     amtrak_stewardess "Why don't you catch up with your friends here until he wakes up?"
-    amtrak_stewardess "{size=-10}Or, why don't {i}you{/i} have a nap, too? {w=0.25}Do you {i}ever{/i} sleep?"
+    amtrak_stewardess "{size=-15}Or, why don't {i}you{/i} have a nap, too? {w=0.25}Do you {i}ever{/i} sleep?"
     tate "Oh... right."
     tate "Sorry."
     tate "I guess it {i}has{/i} been a while since I've seen CS. I can stay here for a bit..."
     show tate sheepish flipped
-    tate "...if you're okay with that."
+    tate "...{w=-0.25} if you're okay with that."
     show cs happy
     cs "Of course!"
     show arceus worried flipped
@@ -754,7 +753,7 @@ label train_boarding:
     show tate srs flipped
     tate "A little...?"
     show cs worried
-    cs "You know, just a little, uhHH--!!{w=0.25}{nw}"
+    cs "You know, just a little-- {i}uhHH!{w=0.25}{nw}"
     play sound sfx_punch
 
     # TODO: less crumnchy lupin sprite
@@ -771,7 +770,7 @@ label train_boarding:
     hide lupin with dissolve
     n "The weird guy hurries away."
     pause 0.25
-    tate "Oh, my God! CS, are you alright?!"
+    tate "Oh,{w=-0.25} my God! CS, are you alright?!"
     cs "Y-{w=0.1}Yeah..."
     cs "More surprised than anything."
     show tate shock flipped at left with moveinleft
@@ -821,7 +820,7 @@ label train_enter_sleeper:
     show tate stare
     cs "Damn. Are you feeling any better?"
     show arceus
-    arceus "Oh, yeah. I think I'll be alright now."
+    arceus "Oh, yeah. I think I'll be alright, now."
     show cs
     show tate
     cs "That's good to hear."   
@@ -916,7 +915,7 @@ label train_enter_sleeper:
     amtrak_conductor "Oh, really?"
     amtrak_conductor "Well, if they are bothering you, I can take care of them for you."
     show tate cry flipped
-    tate "{i}{size=-10}Eep!"
+    tate "{i}{size=-15}Eep!"
     show cs happy flipped
     show tate sheepish flipped
     cs "Oh, no, not at all!"
@@ -931,7 +930,7 @@ label train_enter_sleeper:
     amtrak_npc_1 "Hey, my watch is gone, too!" with hpunch
     amtrak_npc_2 "Man, {i}fuck{/i} your watch! They took my damn {i}Switch!{/i}"
     amtrak_npc_3 "Such {i}language!" with hpunch
-    amtrak_npc_3 "My dearest mother's priceless brooch is also missing, and you don't hear {i}me{/i} speaking like an utter {i}barbarian!"
+    amtrak_npc_3 "My dearest mother's priceless brooch is {i}also{/i} missing, and you don't hear {i}me{/i} speaking like an utter {i}barbarian!"
     n "The complaints of a few more troubled travelers echo throughout the cabin."
     show amtrak_conductor at mid_offscreen_left with moveinleft
     amtrak_conductor "Please remain calm, everyone! We will find out who the thief is, and they {i}will{/i} be brought to justice!"
@@ -1054,7 +1053,7 @@ label train_enter_sleeper:
     show arceus happy
     arceus "Now, obviously, I've never met the guy, but I'm sure Mean will be fine."
     show arceus
-    arceus "Think about it. You didn't, like, help him with his job interview, right?"
+    arceus "Think about it. You didn't, like, help him through his job interview, did you?"
     show tate sad
     tate "Well, no..."
     show tate sheepish
@@ -1063,9 +1062,9 @@ label train_enter_sleeper:
     show tate sheepish flipped
     cs "Exaaaaactly. You've done all you can, so, just let things happen."
     show tate srs flipped
-    tate "How can you be so... {i}unbothered{/i} by all of this? And after you just lost so much money?!"
+    tate "How can you be so... {i}unbothered{/i} by all of this? After you just lost so much money?!"
     show arceus worried
-    arceus "{size=-10}Well, {i}I'm{/i} bothered by it..."
+    arceus "{size=-15}Well, {i}I'm{/i} bothered by it..."
     show cs worried
     show arceus
     cs "I mean, yeah, it totally sucks balls, but all it means is that when we get home, things will just be the same as they were before."
@@ -1075,10 +1074,11 @@ label train_enter_sleeper:
     tate "I'm just so scared that they'll accuse Mean of stealing it, or something, since he's so new..."
     tate "I really don't know if he could handle losing {i}this{/i} job, too."
     show cs disappointed
-    cs "Wait, what happened at his last job?"
+    cs "Wait, what happened at his {i}last{/i} job?"
     show tate srs flipped
     tate "It was so fucking stupid."
-    tate "So, he was working for this home repair company, right? They hired him on as a security guard, since he's all spiky--{w=0.25}{nw}"
+    tate "So, he was working for this home repair company, right?"
+    tate "They hired him on as a security guard, since he's all spiky--{w=0.25}{nw}"
     show arceus 
     arceus "{i}Spiky?{/i} Wha--{w=0.25}{nw}"
     tate "--and then some weirdo dressed as a catgirl maid broke in and fought the CEO! A lot of people got hurt!"
@@ -1110,7 +1110,7 @@ label train_enter_sleeper:
     show tate cry flipped
     n "Tate is on the verge of tears."
     tate "My best friend lost his job, and it's your fault..."
-    tate "And now, you're {i}here..."
+    tate "And, now, you're {i}here..."
     tate "I can't believe this..."
     show cs disappointed
     cs "Tate..."
@@ -1156,7 +1156,7 @@ label train_enter_sleeper:
     cs "They {i}do{/i} look nice."
     show cs happy
     cs "I think that tomorrow, we'll wake up, someone will have found our cash overnight, Tate will have had some time to cool off, we'll all get together and have a huge complimentary breakfast..."
-    cs "...and all will be right with the world!"
+    cs "...{w=0} and all will be right with the world!"
 
     # TODO: some funny cheery fanfare jingle?
 
@@ -1165,7 +1165,7 @@ label train_enter_sleeper:
     arceus "... {i}I{/i} think you're being way too optimistic about all of this."
     arceus "I'm going to bed."
     show cs disappointed
-    cs "Yeah, me too..."
+    cs "Yeah, me,{w=0} too..."
 
     scene black with dissolve
     n "CS and Arceus decide to call it an early night."
@@ -1234,7 +1234,7 @@ label train_dining:
 
     n "A strange spiny entity is surrounded by piles of pancakes, sky-high stacks of sausages, oodles of eggs, and a whole bunch of bacon."
     n "Arceus can't help but stare in awe at both the enormous spread of food..."
-    n "...and at the brightly-colored creature currently demolishing it."
+    n "...{w=0} and at the brightly-colored creature currently demolishing it."
     show mean happy
     mean_offscreen "LET'S {w=0.25}FUCKING {w=0.25}{bt=a3-p10-s4}{i}GOOOOOOOO!!"
     mean_offscreen "I can't believe they made {i}all{/i} of this just for me!"
@@ -1362,7 +1362,7 @@ label train_wakeup:
     n "CS lets out a groan and rolls back over in bed."
     show arceus angry flipped
     cs "Zzzzz..."
-    cs "{size=-12}Five more minutes, mom..."
+    cs "{size=-15}Five more minutes, mom..."
     show arceus angry flipped at right with moveinleft
     n "Arceus pulls the blanket off of CS and drags him out of bed."
 
@@ -1370,7 +1370,7 @@ label train_wakeup:
     show cs concentrate flipped at right
     with moveinright
     
-    cs "Hnngh, huh, what, why?!"
+    cs "Hnngh, huh, what, {i}why?!"
     show cs disappointed flipped
     cs "Wha-- What's going on?"
     pause 0.5
@@ -1393,7 +1393,7 @@ label train_wakeup:
     arceus "The new night driver!"
     show cs scared flipped
     pause 0.5
-    cs "{w=0.25}... Oh no."
+    cs "{w=0.25}... Oh,{w=0} no."
     cs "We are {i}definitely{/i} in trouble n--{w=0.25}{nw}"
     show arceus worried with hpunch
     music end
@@ -1498,7 +1498,7 @@ label train_wakeup:
     mean "What the fuck are you {i}talking{/i} about?"
     show tate cry flipped
     show cs disappointed flipped
-    tate "{size=-10}I just wanted you to have a good first day..."
+    tate "{size=-15}I just wanted you to have a good first day..."
     show mean worried
     mean "What do you mean?"
     show mean 
@@ -1519,7 +1519,7 @@ label train_wakeup:
     show tate sad flipped
     tate "But, what about the thief?!"
     show mean ayo
-    mean "Wait, you think Amtrak actually gives a shit about stolen items?"
+    mean "Wait, you think Amtrak actually {i}gives{/i} a shit about stolen items?"
     show mean angry
     mean "Bro, I was more worried about {i}you!"
     show cs disappointed flipped
@@ -1552,6 +1552,7 @@ label train_wakeup:
         show tate srs
         tate "What the fuck?"
         show tate srs flipped
+        show mean worried
         tate "Who wrote this?"
         show tate sheepish
         show mean worried
@@ -1648,13 +1649,13 @@ label train_begin_heist:
     show cs disappointed flipped at right
     $ train_skip_at_chicago = False
     cs "Do you really think we'd be able to track down the thief?"
-    tate "I sure hope so. Unless they jumped off of a moving train, they've gotta be here."
+    tate "I sure hope so. Like you said earlier, unless they jumped off of a moving train, they've gotta be here."
     show cs flipped
     cs "Hey, Arc! You've done cybercrime before, right?"
     show arceus angry flipped
     cs "Where do you think the thief would hide stolen goods?"
     show tate shock
-    tate "Arc did what now?"
+    tate "Arc did {i}what,{/i} now?!"
     show cs worried flipped
     arceus "Gee, {i}thanks,{/i} CS."
     arceus "But, since you asked..."
@@ -1670,7 +1671,7 @@ label train_begin_heist:
     arceus "Sounds like a plan."
     show tate
     show cs flipped
-    tate "Yep, I'll head out then. Should we meet up in economy class when we're done looking?"
+    tate "Yep, I'll head out then. Let's meet up in coach when we're done looking."
     cs "Yeah, sounds good."
     arceus "Sure thing."
     tate "Well, let's get to it, then."
@@ -1680,7 +1681,7 @@ label train_begin_heist:
     hide arceus
     with moveoutleft
 
-    n "CS, Arceus, and Tate split up to search different areas of the train."
+    n "CS, Arceus, and Tate split up to search the different areas of the train."
 
     stop music fadeout 3.0
     music end
@@ -1698,7 +1699,7 @@ label train_meanwhile:
     music "ONBS - Tsukasa Tawada"
 
     pause 1.0
-    lupin_offscreen "This is perfect! I can't believe I could just waltz on in like that!"
+    lupin_offscreen "This is {i}perfect!{/i} I can't believe I could just waltz on in like that!"
     show lupin hat with dissolve
     lupin_offscreen "And with {i}this..."
     lupin_offscreen "Nobody would ever suspect the driver, right?"
@@ -1732,7 +1733,7 @@ label train_meanwhile:
     pause 1.5
     lupin_offscreen "... Seems like he'll be a while."
     show lupin hat flipped at center with moveinright
-    lupin_offscreen "And that's just what I need."
+    lupin_offscreen "And,{w=0} that's just what I need."
     scene black with dissolve
     pause 1.0
     jump train_search_arceus
@@ -1759,7 +1760,7 @@ label train_search_arceus:
     n "All he finds is trash and loose change."
     pause 1.0
     show arceus worried
-    arceus "I guess maybe there's just nothing here."
+    arceus "I guess there's just nothing here."
     scene amtrak_dining_table
     show amtrak_dining_food at t_dining_car_breakfast
     show amtrak_dining_pancake at t_dining_car_pancake behind amtrak_dining_food
@@ -1809,12 +1810,12 @@ label train_search_cs:
     pause 1.0
 
     n "CS finds himself alone in the deserted corridor."
-    cs "I guess I should have expected nobody to keep their doors open this late."
+    cs "I guess I should have expected that nobody would keep their doors open this late."
     cs "I probably should have {i}also{/i} expected that nobody would want to let me in..."
     show cs worried
     cs "That lady in Room 3 threw a {i}shoe{/i} at me, for fuck's sake!"
     show cs disappointed
-    cs "Maybe I should just head up front to meet the others..."
+    cs "Maybe I should just head out to meet the others..."
     show cs disappointed at right with MoveTransition(0.5)
     pause 1.0
     n "CS stops suddenly."
@@ -1832,7 +1833,7 @@ label train_search_cs:
     show amtrak_sleeper_open_fg
     with dissolve
 
-    n "A man in an oddly familiar red jacket is finishing off a feast."
+    n "A man in an oddly familiar red jacket is finishing off a small feast."
     lupin_offscreen "I can't believe how easy that was. {color=#FFDBFC}Pink sweater{/color} had the staff running around like ants!"
     lupin_offscreen "They don't know it, but they'd be my {i}perfect{/i} accomplice!"
     hide amtrak_dining_food with dissolve
@@ -1851,7 +1852,7 @@ label train_search_cs:
 
     pause 2.0
     cs "Hey! That's our cash!"
-    cs "Hey you! Give that back!" with hpunch
+    cs "Hey,{w=0} you! Give that back!" with hpunch
     lupin_offscreen "Well, would you look at that? It's my pretty kitty!"
     lupin_offscreen "Sorry, babe, but I've gotta split!"
 
@@ -1887,7 +1888,7 @@ label train_search_cs:
     cs "... That guy must have stolen the money when he knocked me down earlier!"
     cs "At least I got a good look at his face this time!"
     cs "I need to find Arc and Tate!"
-    show cs angry at offscreenright with moveinleft
+    show cs angry at offscreenright with moveoutright
     scene black with dissolve
     jump train_search_tate
 
@@ -1903,7 +1904,7 @@ label train_search_tate:
     pause 3.0
 
     show tate flipped behind lupin at offscreenright
-    show tate flipped at right with moveinright
+    show tate flipped at mid_right with moveinright
     
     tate "Excuse me, Mr. Conductor?"
     show lupin hat flipped
@@ -1917,9 +1918,10 @@ label train_search_tate:
     show lupin hat flipped at mid_mid_left with moveinleft 
     lupin_offscreen "We just seem to keep finding each other!"
     show lupin hat flipped at center with moveinleft
-    show tate srs flipped at mid_offscreen_right with moveoutright
+    show tate srs flipped at right with moveoutright
     lupin_offscreen "Are you absolutely sure you mean what you say?"
     show lupin hat flipped at mid_mid_right with moveinleft
+    show tate srs flipped at mid_offscreen_right with moveoutright
     lupin_offscreen "Are you absolutely {i}sure{/i} that we're not meant to be?{image=heart_small.png}"
     show lupin hat flipped at right with moveinleft
     pause 0.1
@@ -1961,7 +1963,7 @@ label train_search_tate:
     with vpunch
     with vpunch
     pause 3.0
-    tate "{size=-15}...Or, not."
+    tate "{size=-15}... Or, not."
     pause 1.0
     n "The suave criminal leans in towards Tate."
     show lupin hat flipped at center with MoveTransition(1.0)
@@ -1988,7 +1990,7 @@ label train_search_tate:
     show tate shock at right
     pause 1.0
     n "The crook is gone without a trace."
-    tate "Oh no!"
+    tate "Oh, no!"
     tate "I've {i}got{/i} to get that hat back!"
     show tate shock flipped at left with MoveTransition(0.25)
     tate "{bt=a3-p10-s4}{size=+24}Mr. Conductor!!" with hpunch
@@ -2050,7 +2052,7 @@ label train_confront_lupin:
     show tate sheepish
     tate "Well, you see--{w=0.5}{nw}"
     show mean angry flipped
-    mean "And, you were saying, before CS came in, that you saw the bastard who took my hat?"
+    mean "Anyway, you were saying, before CS came in, that you saw the bastard who took my hat?"
     show tate srs
     tate "Yeah. Remember that guy I told you about earlier?"
     tate "The one who's been bugging me since we left Cali?"
@@ -2150,7 +2152,7 @@ label train_confront_lupin:
     show mean angry
     mean "You two on board with this?"
     cs "Works for me..."
-    arceus "{size=-12}Fuck you mean by \"dog-thing\"?"
+    arceus "{size=-15}Fuck you mean, \"dog-thing\"?"
     mean "Let's go."
     show mean angry at offscreenright with moveoutright
     show tate sheepish at offscreenright
@@ -2227,7 +2229,7 @@ label train_confront_lupin:
     lupin_offscreen "{i}And{/i} a fluffy doggo to pet?!"
     show cs angry flipped
     lupin_offscreen "Today must be my lucky--{w=0.5}{nw}"
-    mean "Alright, {i}can{/i} it!" with hpunch
+    mean "Alright, {i}CAN{/i} IT!" with hpunch
     mean "We have some questions for you."
     mean "And, {i}you{/i} have {i}my hat{/i} for {i}me."
     mean "You're coming with us."
@@ -2235,6 +2237,7 @@ label train_confront_lupin:
     show tate shock flipped
     show cs worried flipped
     show arceus worried
+    play sound sfx_whoosh
     show lupin hat at offscreenleft with MoveTransition(0.25)
     mean "{bt=a3-p10-s4}{size=+24}Oh,{w=-0.25} no,{w=-0.25} you don't!"
     arceus "Shit!"

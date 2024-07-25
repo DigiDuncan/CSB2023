@@ -6,6 +6,9 @@
 # These are set up so that it only works if there is more than once sentence in the text box at any given time.
 # Make sure there's a space after your punctuation or it won't work.
 # You can still add manual pauses wherever you like in the script if this isn't enough for you.
+# If for some reason you do NOT want the auto-pause in a certain line, put {w=0} immediately after the punctuation.
+#   Example:
+#       mean "Hey! You,{w=0} there!"
 
 init python:
     import re
