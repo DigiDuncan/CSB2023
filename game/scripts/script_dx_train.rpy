@@ -1189,7 +1189,7 @@ label train_enter_sleeper:
 
     if fun_value(FUN_VALUE_UNOBTRUSIVE):
         pause 2.0
-        n "... However, the door was heavier than he expected."
+        n "... However, the door is heavier than expected."
 
         # TODO: replace with a proper sliding door slam later
 
@@ -2021,7 +2021,7 @@ label train_search_tate:
 label train_confront_lupin:
     play music onbs if_changed
     music "ONBS - Tsukasa Tawada"
-    scene amtrak_economy
+    scene amtrak_coach_1
     show tate sad at left
     show mean worried flipped at truecenter
     with dissolve
@@ -2140,12 +2140,152 @@ label train_confront_lupin:
     show arceus worried
     arceus "I... suppose not."
     mean "Let's just start looking."
-    mean "I say that we start at the very back of the train, then search car-by-car."
-    mean "Let's stick together in case this guy is dangerous."
-   
-    "This is a placeholder line until more is written."
-    "For now, let's jump somewhere else..."
+    tate "Should we split up a--{w=0.5}{nw}"
+    show mean angry flipped
+    mean "No,{w=-0.25} the fuck we should {i}not."
+    mean "We've got you, two dudes, and a dog-thing."
+    show arceus angry
+    mean "I've seen enough {i}Scooby-Doo{/i} to know how {i}that{/i} would end."
+    mean "We're gonna stick together in case this guy is dangerous."
+    show mean angry
+    mean "You two on board with this?"
+    cs "Works for me..."
+    arceus "{size=-12}Fuck you mean by \"dog-thing\"?"
+    mean "Let's go."
+    show mean angry at offscreenright with moveoutright
+    show tate sheepish at offscreenright
+    show cs disappointed at offscreenright
+    show arceus angry flipped at offscreenright
+    with moveoutright
+    scene black with dissolve
     
+    "The group heads towards the very last coach car."
+    scene amtrak_coach_2
+    with dissolve
+    
+    show mean angry flipped at left
+    show tate sheepish flipped at mid_mid_left
+    show cs disappointed flipped at mid_mid_right
+    show arceus angry at right
+    with moveinright
+    
+    "One after the other, they search each car for any sign of the suspect."
+    
+    show mean angry flipped at offscreenleft
+    show tate sheepish flipped at offscreenleft
+    show cs disappointed flipped at offscreenleft
+    show arceus angry at offscreenleft
+    with moveoutleft
+    scene black with dissolve
+    
+    scene amtrak_coach_1
+    with dissolve
+    
+    show mean angry flipped at left
+    show tate sheepish flipped at mid_mid_left
+    show cs disappointed flipped at mid_mid_right
+    show arceus angry at right
+    with moveinright
+    
+    pause 1.0
+    
+    show mean angry flipped at offscreenleft
+    show tate sheepish flipped at offscreenleft
+    show cs disappointed flipped at offscreenleft
+    show arceus angry at offscreenleft
+    with moveoutleft
+    scene black with dissolve
+    
+    scene amtrak_observation_1
+    with dissolve
+    
+    show mean angry flipped at left
+    show tate sheepish flipped at mid_mid_left
+    show cs disappointed flipped at mid_mid_right
+    show arceus angry at right
+    with moveinright
+    
+    "The group wordlessly follows Mean until he suddenly stops."
+    
+    mean "Hey! You,{w=-0.25} there!" with hpunch
+    
+    show lupin hat flipped at offscreenleft with determination
+    show lupin hat flipped at left
+    show mean angry flipped at center
+    show tate shock flipped at mid_mid_right behind mean
+    show cs worried flipped at mid_right
+    show arceus worried
+    with MoveTransition(1.0)
+    
+    n "The strange man from before casually steps towards Mean."
+    n "He immediately locks eyes with CS."
+    show cs scared flipped
+    lupin_offscreen "Hello again, pretty kitty!"
+    show tate srs flipped
+    lupin_offscreen "Wow! You brought {color=#FFDBFC}pink sweater{/color}, too?"
+    show arceus angry
+    lupin_offscreen "{i}And{/i} a fluffy doggo to pet?!"
+    show cs angry flipped
+    lupin_offscreen "Today must be my lucky--{w=0.5}{nw}"
+    mean "Alright, {i}can{/i} it!" with hpunch
+    mean "We have some questions for you."
+    mean "And, {i}you{/i} have {i}my hat{/i} for {i}me."
+    mean "You're coming with us."
+    lupin_offscreen "Not without a fight!"
+    show tate shock flipped
+    show cs worried flipped
+    show arceus worried
+    show lupin hat at offscreenleft with MoveTransition(0.25)
+    mean "{bt=a3-p10-s4}{size=+24}Oh,{w=-0.25} no,{w=-0.25} you don't!"
+    arceus "Shit!"
+    cs "What do we do?!"
+    mean "Tate! {i}Hit it!"
+    show tate shock flipped at center with moveinright
+    tate "Ohshitohfuckohshitohfuck--{nw}"
+    show mean furious flipped
+    mean "{bt=a3-p10-s4}{size=+24}JUST THROW ME ALREADY!"
+    play sound sfx_whoosh
+    show mean furious at offscreenleft with MoveTransition(0.25)
+    n "Tate picks up Mean and tosses him at the thief!"
+    play sound sfx_cat_crash
+    show cs scared flipped
+    show arceus worried
+    show tate shock flipped
+    with hpunch
+    with vpunch
+    with hpunch
+    with vpunch
+    with hpunch
+    "..."
+    # TODO: would be funny if the "Miss!" indicator from the RPG fights showed up here, but idk how to do that
+    n "The attack misses."
+    show tate sheepish flipped
+    pause 1.0
+    show mean unamused at center_left with MoveTransition(1.0)
+    show cs disappointed flipped
+    "..."
+    pause 1.0
+    mean "Wow."
+    mean "Are you guys {i}always{/i} this useless?"
+    tate "We... probably should've practiced that more..."
+    mean "Guess we've gotta do this old-fashioned way."
+    show mean angry flipped
+    mean "Let's get 'em!"
+    
+    show mean angry flipped at offscreenleft
+    show tate srs flipped at offscreenleft
+    show cs angry flipped at offscreenleft
+    show arceus angry at offscreenleft
+    with moveoutleft
+    
+    scene black with dissolve
+    n "The team gives chase through the next few cars." 
+    n "Finally, the thief stops just before the cab..."
+    
+    "This is a placeholder line until more is written."
+    "Jumping somewhere else..."
+    
+       
     if train_tate_is_fragile_fun_value == True:
         jump train_tate_ex_encounter
     else:

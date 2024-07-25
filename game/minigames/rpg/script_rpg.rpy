@@ -268,7 +268,7 @@ label rpg_tate_ex:
             cs_chosen_form = "CS_VS_TATE_PUNCH"
 
     rpg:
-        bg "images/bg/train/amtrak_observation.png"
+        bg "images/bg/train/amtrak_observation_2.png"
                 
         fighters:
             $cs_chosen_form

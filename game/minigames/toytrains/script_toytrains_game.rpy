@@ -148,8 +148,9 @@ label play_toytrains_game:
     if _return == True:
         $ achievement_manager.unlock("Lots & Lots Of Trains!")
         
-        if ToyTrainsGameDisplayable.hp == 3:
-            $ achievement_manager.unlock("Conductor Skillz 188")
+        # this doesn't work yet
+        # if ToyTrainsGameDisplayable.hp == 3:
+        #    $ achievement_manager.unlock("Conductor Skillz 188")
         
         stop music fadeout 2.0
         

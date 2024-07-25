@@ -1276,7 +1276,8 @@ image moynihan_interior = "bg/train/moynihan_interior.png"
 image amtrak_cab = "bg/train/amtrak_cab.png"
 image amtrak_sleeper_open_bg = "bg/train/amtrak_sleeper_open_bg.png" #these two images are bigger on purpose
 image amtrak_sleeper_open_fg = "bg/train/amtrak_sleeper_open_fg.png" #remastering is encouraged but don't change size unless you must
-image amtrak_economy = "bg/train/amtrak_economy.png"
+image amtrak_coach_1 = "bg/train/amtrak_coach_1.png"
+image amtrak_coach_2 = "bg/train/amtrak_coach_2.png"
 
 # Train Route NPCs
 image amtrak_conductor = "characters/amtrak_conductor.png"
@@ -1715,6 +1716,7 @@ define audio.sfx_bell = "sfx_bell.ogg"
 define audio.sfx_bucket = "sfx_bucket.ogg"
 define audio.sfx_car_crash = "sfx_car_crash.ogg"
 define audio.sfx_car_horn = "sfx_car_horn.ogg"
+define audio.sfx_cat_crash = "sfx_cat_crash.ogg"
 define audio.sfx_chatter = "sfx_chatter.ogg"
 define audio.sfx_cheer = "sfx_cheer1.ogg"
 define audio.sfx_cheer2 = "sfx_cheer2.ogg"
