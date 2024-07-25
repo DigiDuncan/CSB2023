@@ -1502,6 +1502,107 @@ label dx_after_yes_renault:
     cs "Oh, yeah..."
     jump dx_after_back_to_story
 
+label dx_after_super_heaven:
+    stop music fadeout 3.0
+    music end
+    scene white
+    n "CS is engulfed with a blinding white light."
+    n "..."
+    pause 3.0
+    show cs concentrate at left
+    with Dissolve(5.0)
+    pause 1.0
+    show cs disappointed
+    pause 1.0
+    show cs concentrate
+    pause 0.3
+    show cs disappointed
+    pause 1.0
+    show cs concentrate
+    pause 0.7
+    show cs disappointed
+    pause 1.0
+    cs "Did..."
+    cs "Did I die?"
+    billy "Nonsense, CS!"
+    cs "Billy? Is that you?"
+    cs "Are you... God?"
+    billy "Hi, it's me! Perfect Billy Mays!"
+    billy "I am much more powerful than God!"
+    billy "You haven't died, you have been brought up to Super Heaven, where only I reside!"
+    cs "So I didn't die, but I'm in heaven? How does that work?"
+    billy "You have contacted me directly in the second only other way possible!"
+    billy "You mixed all of my products together!"
+    cs "So Billy wasn't crazy... or maybe he was."
+    cs "Wait, if you are Perfect Billy Mays, then who is the Billy that me and Arc were with this whole time?"
+    billy "You see, when the Billy Mays you probably know of passed away in 2009, I embued another human with the power of pitching!"
+    billy "That's the new Billy you know of!"
+    cs "Okay okay, hold on a minute."
+    billy "I have all day!"
+    cs "So, there were other Billy Mays' before the 2009 one?"
+    billy "Yep!"
+    cs "Like, how far back?"
+    billy "Since the beginning of time!"
+    cs "Wait, so we have had Billy Mays' running around our planet, since like, caveman times?"
+    billy "Even before that!"
+    cs "How does that-- Y'know what, I've had a long day, I need to stop asking questions."
+    billy "Good idea!"
+    cs "So, okay, I'm a little freaked out about whatever the hell is going on, is there any way I can like, go home?"
+    billy "I have the power to send you back to the present, but since you are here, I have some things to show you."
+    billy "You may not remember, but we have met before!"
+    cs "We have?"
+    billy "Yes! You called me once by accessing my only commerical that plays on loop!"
+    # Show screenshots of Old CSB2 here
+    cs "I... can't say I remember doing that."
+    cs "I don't think I even had a TV that old in a long time."
+    billy "Wait, of course! You don't remember this at all!"
+    billy "That's because this happened in another line!"
+    cs "Another line?"
+    billy "Of time. A timeline, if you will."
+    cs "Oh, great, how many times did I screw up?"
+    billy "Well... Let's look... together!"
+    #Pan out to view the timeline
+    cs "Woah..."
+    cs "So... this is everything I could've ever done since I... started my old laptop up?"
+    billy "Exactly!"
+    cs "So, let's see here..."
+    cs "I got fired from LTT, and became a rockstar with Anno and Arceus? That sounds awesome! I should've got fired!"
+    cs "Or here, we went to Vegas and stopped a criminal on a train..."
+    cs "...and in this one, me and my friends beat up Copguy? As a, god?"
+    billy "It was Copguy EX, he was like, okay I don't even know what that was about."
+    cs "Oh and what the fuck is this one? Pakoo deleted me from existence or some shit?"
+    cs "I'm gonna really give it to him when I get back to the present!"
+    cs "Wow! I don't wanna sound egotistical, but I think I have had the craziest life ever!"
+    cs "Wait, why does it start there?"
+    cs "Wouldn't this start from when I was born? That doesn't make much sense!"
+    billy "Well..."
+    billy "There is one thing I forgot to mention."
+    cs "What, that this is a video game or something?"
+    billy "What? No!"
+    billy "Well, sorta."
+    cs "What? Actually, I shouldn't be surprised."
+    cs "That day ended with me beating up HoH SiS, that's only something I would do in a video game."
+    billy "Well, when you were wondering why you have had such a crazy life, it's not by coincedence."
+    billy "There is someone is this world who is known as..."
+    billy "The Scriptwriter."
+    billy "They are basically the reason you have had a chaotic life in the past year or so."
+    cs "I was gonna say, I mean, like, why me?"
+    cs "I just make like YouTube Poops and watch car crash videos!"
+    billy "Well, this entity has chosen you to be the, protagonist of sorts."
+    cs "So do I have like, real life plot armor?"
+    cs "I mean, now that I think about it, we dug out of prison using plastic spoons."
+    billy "Maybe, but all I know is that you are the one who has to stop them."
+    cs "So, I can't relax yet?"
+    cs "I was really hoping I could go back to a normal life again, I'm tired."
+    billy "Don't worry CS, the least I can do is this!"
+    #Billy heals CS
+    cs "Wow, it feels like I just slept for a week!"
+    cs "I don't think I have ever felt this good before."
+    billy "That's great! Because I am gonna send you back home now."
+    billy "Good luck!"
+    cs "Wait that's it--{w=0.5}{nw}"
+    jump finale_fun_value_land    
+
 label finale_fun_value_land:
     scene white
     stop music fadeout 3.0
