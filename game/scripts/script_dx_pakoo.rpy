@@ -1033,7 +1033,7 @@ label dx_after_lunatic_ask:
             show cs cultist at center with moveinleft
             $ lunatic_check2 = True 
             jump dx_after_seek_competitors 
-        elif lunatic_votes == 3 or 4:
+        elif lunatic_votes == 3 or lunatic_votes == 4:
             l_cultist "Here, we have something..."
             n "They hand CS a silver coin."
             cs "Thank you!"
@@ -1046,7 +1046,7 @@ label dx_after_lunatic_ask:
             show cs cultist at center with moveinleft
             $ lunatic_check2 = True  
             jump dx_after_seek_competitors
-        elif lunatic_votes == 6 or 7:
+        elif lunatic_votes == 6 or lunatic_votes == 7:
             l_cultist "Y'know what? You can have this."
             n "They hand CS a gold coin."
             cs "Holy crap, thanks a lot!"
@@ -1236,9 +1236,9 @@ label dx_after_quiz_finish:
     $ total_votes += lunatic_votes
     if lunatic_votes == 0:
         jump dx_after_zero_right
-    elif lunatic_votes == 3 or 4:
+    elif lunatic_votes == 3 or lunatic_votes == 4:
         jump dx_after_one_right
-    elif lunatic_votes == 6 or 7:
+    elif lunatic_votes == 6 or lunatic_votes == 7:
         jump dx_after_two_right
     elif lunatic_votes == 10:
         jump dx_after_three_right
