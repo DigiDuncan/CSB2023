@@ -837,7 +837,7 @@ image scott = "characters/scott.png"
 image obama = "characters/obama.png"
 image discord = "characters/discord.png"
 image border_guard = "characters/border_guard.png"
-image border_guard dusk = "characters/border_guard_dusk.png"
+image border_guard dusk = "dusk:characters/border_guard.png"
 image benrey = "characters/benrey.png"
 
 # Fired Route
