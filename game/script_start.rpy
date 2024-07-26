@@ -349,6 +349,14 @@ transform t_toby:
     linear 0.25:
         alpha 0.0
 
+transform t_lupin_out:
+    linear 1.0:
+        alpha 0.0
+        rotate 2070
+        zoom 0.1
+        xanchor 0.5 xpos 0.25
+        yanchor 0.5 ypos 0.333
+
 transform t_boom:
     on show:
         xalign 0.5 yalign -0.5

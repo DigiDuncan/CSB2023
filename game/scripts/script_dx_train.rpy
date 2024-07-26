@@ -2300,9 +2300,12 @@ label train_confront_lupin:
     mean "Alright, pal. End of the line."
     lupin_offscreen "That's what you think!"
     
-    
-    
-    
+    show lupin hat at t_lupin_out
+    show tate srs at mid_left
+    show cs angry at mid_left_left
+    show arceus angry flipped at mid_offscreen_left
+    show mean angry at mid_mid_left
+    with move
     
     "This is a placeholder line until more is written."
     "Jumping somewhere else..."
