@@ -358,7 +358,6 @@ transform t_boom:
         linear 1.0:
             yalign -0.5
 
-
 # Character Definitions
 define n = Character(None, what_italic = True, callback = char_callback)  # Narrator
 define cs = Character("cs188", callback = renpy.partial(char_callback, name = "cs", beep = "cs"))
@@ -513,6 +512,9 @@ define amtrak_stewardess = Character("Stewardess", callback = char_callback)
 define amtrak_npc_1 = Character("Passenger 1", callback = char_callback)
 define amtrak_npc_2 = Character("Passenger 2", callback = char_callback)
 define amtrak_npc_3 = Character("Passenger 3", callback = char_callback)
+
+# DX Finale Character Definitions
+define perfect_billy = Character("Perfect Billy", callback = renpy.partial(char_callback, name = "billy", beep = "billy"), screen = "perfect_billy_text")
 
 # Character Images
 ## CS
@@ -2102,6 +2104,8 @@ label test:
             pass
     show screen warning("The following scene is a test.\nIt may be teste.", "Warnings: developer cruft, bad puns", "start")
     pause
+    perfect_billy "I'm Perfect Billy Mays!"
+    cs "woah that's crazy"
     $ renpy.full_restart()
 
 define shake1 = { "master" : hpunch }
