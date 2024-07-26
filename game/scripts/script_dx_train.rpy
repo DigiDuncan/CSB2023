@@ -1,6 +1,6 @@
 # TODO: mean needs a better text beep
 # TODO: make sure all music/bios are added by the end
-# TODO: make sure reflections are removed from all background images + cut out windows so we can have moving scenery
+# TODO: make sure peoples' reflections are removed from all train background images + cut out windows so we can have moving scenery
 
 ######## VARIABLES ########
 label train_start_good:
@@ -2284,6 +2284,25 @@ label train_confront_lupin:
     scene black with dissolve
     n "The team gives chase through the next few cars." 
     n "Finally, the thief stops just before the cab..."
+    
+    scene amtrak_baggage with dissolve
+    
+    show lupin hat flipped at right with moveinleft
+    show lupin hat
+    pause 1.0   
+    show tate srs at mid_mid_left
+    show cs angry at mid_left
+    show arceus angry flipped at left
+    show mean angry at center
+    with moveinleft
+    
+    n "At last, the four manage to corner him."
+    mean "Alright, pal. End of the line."
+    lupin_offscreen "That's what you think!"
+    
+    
+    
+    
     
     "This is a placeholder line until more is written."
     "Jumping somewhere else..."

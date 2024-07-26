@@ -1283,6 +1283,7 @@ image amtrak_sleeper_open_bg = "bg/train/amtrak_sleeper_open_bg.png" #these two 
 image amtrak_sleeper_open_fg = "bg/train/amtrak_sleeper_open_fg.png" #remastering is encouraged but don't change size unless you must
 image amtrak_coach_1 = "bg/train/amtrak_coach_1.png"
 image amtrak_coach_2 = "bg/train/amtrak_coach_2.png"
+image amtrak_baggage = "bg/train/amtrak_baggage.png"
 
 # Train Route NPCs
 image amtrak_conductor = "characters/amtrak_conductor.png"
