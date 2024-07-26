@@ -731,6 +731,7 @@ label asset_debugger:
         play music facing_worlds
         scene washington_road
         show pot_lift at center
+        show mean human at mid_left
         show amtrak_conductor at mid_mid_left
         show cs disappointed cultist at left
         peppino "test 50{w=0.5}{nw}"
@@ -741,6 +742,7 @@ label asset_debugger:
         play music fastbudget_song
         scene washington_road day
         show pot at center
+        show mean angry sil_white flipped at mid_left
         show amtrak_conductor flipped at mid_mid_left
         show cs angry cultist at left
         iris "test 51{w=0.5}{nw}"
@@ -901,6 +903,7 @@ label asset_debugger:
         play sound sfx_thunder
         play music hard_drive
         scene course_3
+        show mean_clothes at center
         show cs surprised phone at left
         monika "test 67{w=0.5}{nw}"
     else:
@@ -2634,6 +2637,10 @@ label asset_debugger:
         jump exit_debug
     if fun_value (370):
         scene amtrak_observation_2
+    else:
+        jump exit_debug
+    if fun_value (371):
+        scene amtrak_top
     else:
         jump exit_debug
 
