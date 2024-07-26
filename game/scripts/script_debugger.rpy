@@ -630,6 +630,7 @@ label asset_debugger:
         show cs insane worried at left
         show mean furious flipped at mid_mid_left
         show moomin flipped at mid_right
+        show train_boss_1 at right
         sheriff "test 41{w=0.5}{nw}"
     else:
         jump exit_debug
@@ -641,6 +642,7 @@ label asset_debugger:
         show cs insane worried flipped at left
         show mean tired at mid_mid_left
         show snufkin flipped at mid_right
+        show train_boss_2 at right
         billy "test 42{w=0.5}{nw}"
     else:
         jump exit_debug
@@ -652,6 +654,7 @@ label asset_debugger:
         show cs insane disappointed at left
         show mean tired flipped at mid_mid_left
         show alicia flipped at mid_right
+        show train_boss_3 at right
         tv_billy "test 43{w=0.5}{nw}"
     else:
         jump exit_debug
@@ -663,6 +666,7 @@ label asset_debugger:
         show cs horse at left
         show mean worried at mid_mid_left
         show witch flipped at mid_right
+        show train_boss_4 at right
         cultist "test 44{w=0.5}{nw}"
     else:
         jump exit_debug
@@ -674,6 +678,7 @@ label asset_debugger:
         show cs horse flipped at left
         show mean worried flipped at mid_mid_left
         show baumer at mid_right
+        show train_boss_5 at right
         cultist_2 "test 45{w=0.5}{nw}"
     else:
         jump exit_debug
@@ -685,6 +690,7 @@ label asset_debugger:
         show cs pissed at left
         show mean scared at mid_mid_left
         show baumer flipped at mid_right
+        show train_boss_6 at right
         cultist_3 "test 46{w=0.5}{nw}"
     else:
         jump exit_debug
@@ -695,6 +701,7 @@ label asset_debugger:
         show bear at center
         show mean scared flipped at mid_mid_left
         show cs pissed flipped at left
+        show train_boss_7 at right
         scott "test 47{w=0.5}{nw}"
     else:
         jump exit_debug
@@ -705,6 +712,7 @@ label asset_debugger:
         show dog at center
         show mean unamused at mid_mid_left
         show cs cultist at left
+        show train_boss_final at right
         terry "test 48{w=0.5}{nw}"
     else:
         jump exit_debug
@@ -883,6 +891,7 @@ label asset_debugger:
         play sound sfx_start_rocking
         play music happy_running
         scene course_2
+        image boom at center
         show cs scared phone flipped at left
         direct "test 66{w=0.5}{nw}"
     else:
@@ -1158,6 +1167,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(97):
+        play sound sfx_cat_crash
         play music moving_right_along
         scene washington_road dusk
         show cs at t_stagescreen
@@ -1462,6 +1472,7 @@ label asset_debugger:
     if fun_value(141):
         play music triage_at_dawn
         scene fazlobby
+        perfect_billy "test 141{w=0.5}{nw}"
         pause 0.5
     else:
         jump exit_debug
@@ -2595,6 +2606,34 @@ label asset_debugger:
         jump exit_debug
     if fun_value (363):
         scene kingman_museum_3
+    else:
+        jump exit_debug
+    if fun_value (364):
+        scene kuwait_hallway
+    else:
+        jump exit_debug
+    if fun_value (365):
+        scene kuwait_island_outside
+    else:
+        jump exit_debug
+    if fun_value (366):
+        scene amtrak_baggage
+    else:
+        jump exit_debug
+    if fun_value (367):
+        scene amtrak_coach_1
+    else:
+        jump exit_debug
+    if fun_value (368):
+        scene amtrak_coach_2
+    else:
+        jump exit_debug
+    if fun_value (369):
+        scene amtrak_observation_1
+    else:
+        jump exit_debug
+    if fun_value (370):
+        scene amtrak_observation_2
     else:
         jump exit_debug
 
