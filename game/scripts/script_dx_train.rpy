@@ -2079,7 +2079,7 @@ label train_confront_lupin:
     show tate sheepish
     
     cs "Oh, hey, Arc. You find anything in the dining car?"
-    arceus "I sure did! This dude in a red coat just walked away with that entire goddamn pile of food!"
+    arceus "I sure did! This dude in a red coat just walked away with that {i}entire{/i} goddamn pile of food!"
     show mean angry
     mean "Mah fuckin' {i}food,{/i} too?!" with hpunch
     cs "... Why do {i}you{/i} seem so upset about it, Arc?"
@@ -2144,7 +2144,7 @@ label train_confront_lupin:
     mean "Let's just start looking."
     tate "Should we split up a--{w=0.5}{nw}"
     show mean angry flipped
-    mean "No,{w=-0.25} the fuck we should {i}not."
+    mean "No,{w=0} the fuck we should {i}not."
     mean "We've got you, two dudes, and a dog-thing."
     show arceus angry
     mean "I've seen enough {i}Scooby-Doo{/i} to know how {i}that{/i} would end."
@@ -2209,7 +2209,7 @@ label train_confront_lupin:
     
     "The group wordlessly follows Mean until he suddenly stops."
     
-    mean "Hey! You,{w=-0.25} there!" with hpunch
+    mean "Hey! You,{w=0} there!" with hpunch
     
     show lupin hat flipped at offscreenleft with determination
     show lupin hat flipped at left
@@ -2231,7 +2231,7 @@ label train_confront_lupin:
     lupin_offscreen "Today must be my lucky--{w=0.5}{nw}"
     mean "Alright, {i}CAN{/i} IT!" with hpunch
     mean "We have some questions for you."
-    mean "And, {i}you{/i} have {i}my hat{/i} for {i}me."
+    mean "And, {i}you{/i} have {w=0.25}{i}my hat{/i}{w=0.25} for {i}me."
     mean "You're coming with us."
     lupin_offscreen "Not without a fight!"
     show tate shock flipped
@@ -2239,7 +2239,7 @@ label train_confront_lupin:
     show arceus worried
     play sound sfx_whoosh
     show lupin hat at offscreenleft with MoveTransition(0.25)
-    mean "{bt=a3-p10-s4}{size=+24}Oh,{w=-0.25} no,{w=-0.25} you don't!"
+    mean "{bt=a3-p10-s4}{size=+24}Oh,{w=0} no,{w=0} you don't!"
     arceus "Shit!"
     cs "What do we do?!"
     mean "Tate! {i}Hit it!"
@@ -2288,7 +2288,7 @@ label train_confront_lupin:
     "This is a placeholder line until more is written."
     "Jumping somewhere else..."
     
-       
+    
     if train_tate_is_fragile_fun_value == True:
         jump train_tate_ex_encounter
     else:
@@ -2429,7 +2429,7 @@ label train_tate_ex_encounter:
             show cs scared flipped
             scene white with Dissolve(1.0)
             pause 2.0
-            # TODO: Tate EX sprite anim is working but not in battle?? also health bar/text indicators are missing
+            # TODO: Tate EX sprite health bar/text indicators are still missing
             jump rpg_tate_ex
                 
 label train_tate_ex_win:
