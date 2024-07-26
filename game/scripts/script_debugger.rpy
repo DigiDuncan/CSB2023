@@ -891,7 +891,7 @@ label asset_debugger:
         play sound sfx_start_rocking
         play music happy_running
         scene course_2
-        image boom at center
+        show boom at center
         show cs scared phone flipped at left
         direct "test 66{w=0.5}{nw}"
     else:

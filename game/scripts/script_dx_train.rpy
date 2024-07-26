@@ -2243,7 +2243,10 @@ label train_confront_lupin:
     arceus "Shit!"
     cs "What do we do?!"
     mean "Tate! {i}Hit it!"
-    show tate shock flipped at center with moveinright
+    show tate shock flipped at center
+    show cs worried flipped at mid_right_right
+    show arceus worried at mid_offscreen_right
+    with MoveTransition(0.5)
     tate "Ohshitohfuckohshitohfuck--{nw}"
     show mean furious flipped
     mean "{bt=a3-p10-s4}{size=+24}JUST THROW ME ALREADY!"
@@ -2252,7 +2255,6 @@ label train_confront_lupin:
     n "Tate picks up Mean and tosses him at the thief!"
     play sound sfx_cat_crash
     show cs scared flipped
-    show arceus worried
     show tate shock flipped
     with hpunch
     with vpunch
@@ -2270,7 +2272,7 @@ label train_confront_lupin:
     pause 1.0
     mean "Wow."
     mean "Are you guys {i}always{/i} this useless?"
-    tate "We... probably should've practiced that more..."
+    tate "We... probably should've practiced that one more..."
     mean "Guess we've gotta do this old-fashioned way."
     show mean angry flipped
     mean "Let's get 'em!"
@@ -2282,8 +2284,7 @@ label train_confront_lupin:
     with moveoutleft
     
     scene black with dissolve
-    n "The team gives chase through the next few cars." 
-    n "Finally, the thief stops just before the cab..."
+    n "The team gives chase through the next few cars, all the way until just before they reach the cab..."
     
     scene amtrak_baggage with dissolve
     
@@ -2298,14 +2299,107 @@ label train_confront_lupin:
     
     n "At last, the four manage to corner him."
     mean "Alright, pal. End of the line."
-    lupin_offscreen "That's what you think!"
+    lupin_offscreen "That's what {i}you{/i} think!"
     
     show lupin hat at t_lupin_out
-    show tate srs at mid_left
-    show cs angry at mid_left_left
-    show arceus angry flipped at mid_offscreen_left
-    show mean angry at mid_mid_left
+    show tate shock at mid_left
+    show cs worried at mid_left_left
+    show arceus worried flipped at mid_offscreen_left
+    show mean wat at mid_mid_left
     with move
+    
+    n "The crook escapes through a window!"
+    pause 0.5
+    show mean wat flipped at right
+    show tate shock flipped at mid_mid_right
+    show cs disappointed at mid_mid_left
+    show arceus angry flipped at left
+    with moveinleft
+    
+    tate "Now, what?!"
+    show tate sad flipped
+    tate "We can't possibly catch up with him..."
+    show arceus worried
+    arceus "I can't even reach the top of the window..."
+    show cs disappointed flipped
+    cs "Damn, me neither..."
+    show tate sad
+    show arceus worried flipped
+    show cs disappointed
+    tate "Mean, I think all the stolen stuff might be gone forever..."
+    
+    show mean angry flipped at center
+    show tate shock flipped at right
+    with move
+    
+    mean "Nah, I've got this."
+    show arceus worried
+    show cs worried
+    
+    show mean angry sil_white flipped with Dissolve(0.5)
+    scene white with Dissolve(1.0)
+    
+    scene amtrak_baggage
+    show arceus worried at left
+    show cs scared at mid_left behind arceus
+    show tate shock flipped at right
+    # TODO: this is NOT mean's final sprite lmfao. also he should be taller than the other three
+    show mean human at center
+    with dissolve
+    
+    # TODO: this joke may be cut
+    cs "Aaaaaagh!"
+    tate "{i}Mean--!"
+    arceus "Good grief, he's {i}naked!"
+    mean "... Oh, oops."
+    mean "Yeah, I usually only change while I'm in my room..."
+    tate "{i}Cover yourself!"
+    show mean_clothes at right with dissolve
+    n "Tate produces from seemingly nowhere a set of clothes and throws them at Mean!"
+    show mean human at offscreenleft
+    show mean_clothes at offscreenleft
+    with MoveTransition(0.25)
+    pause 3.0
+    show mean human at center with moveinright
+    mean "Ah, that's better."
+    show tate srs flipped
+    tate "At least {i}one{/i} of us came prepared."
+    mean "Yeah, yeah..."
+    mean "Anyway..."
+    
+    # end of joke that may be cut
+    
+    mean "All y'all short-ass fuckin'..."
+    n "Mean tosses the others onto the roof!"
+    tate "Uwaaaaah!"
+    show tate at t_lupin_out with move
+    cs "Aaaaaaagh!"
+    show cs at t_lupin_out with move
+    arceus "Waaaaargh!"
+    show arceus at t_lupin_out with move
+    mean "Let's do this!"
+    show mean human at t_lupin_out
+    scene black with dissolve
+    stop music fadeout 2.0
+    pause 2.0
+    
+label train_on_top:
+    # TODO: yes i know this edit is shit
+    # TODO: need moving background
+    scene amtrak_top
+    
+    show lupin hat flipped at right
+    show tate shock at center
+    show cs worried at mid_mid_left
+    show arceus worried at left
+    with dissolve
+    
+    show mean human at mid_left_left with moveinleft
+    mean "Hold it right there, criminal scum!"
+    show lupin hat
+    lupin_offscreen "Wow! You guys sure are determined!"
+    lupin_offscreen "This should be fun!"
+    
     
     "This is a placeholder line until more is written."
     "Jumping somewhere else..."

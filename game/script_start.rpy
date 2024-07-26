@@ -718,6 +718,7 @@ image mean ayo = "characters/mean/meanayo.png"
 image mean ayo flipped = "flip:characters/mean/meanayo.png"
 image mean angry = "characters/mean/meanangry.png"
 image mean angry flipped = "flip:characters/mean/meanangry.png"
+image mean angry sil_white flipped = "sil_white:flip:characters/mean/meanangry.png"
 image mean wat = "characters/mean/meanwat.png"
 image mean wat flipped = "flip:characters/mean/meanwat.png"
 image mean furious = "characters/mean/meanfurious.png"
@@ -730,6 +731,9 @@ image mean scared = "characters/mean/meanscared.png"
 image mean scared flipped = "flip:characters/mean/meanscared.png"
 image mean unamused = "characters/mean/meanunamused.png"
 image mean unamused flipped = "flip:characters/mean/meanunamused.png"
+
+## Mean (human form)
+image mean human = "characters/mean/meanhuman.png"
 
 ## Archival
 image k174 = "characters/k174.png"
@@ -1294,6 +1298,7 @@ image amtrak_sleeper_open_fg = "bg/train/amtrak_sleeper_open_fg.png" #remasterin
 image amtrak_coach_1 = "bg/train/amtrak_coach_1.png"
 image amtrak_coach_2 = "bg/train/amtrak_coach_2.png"
 image amtrak_baggage = "bg/train/amtrak_baggage.png"
+image amtrak_top = "bg/train/amtrak_top.png"
 
 # Train Route NPCs
 image amtrak_conductor = "characters/amtrak_conductor.png"
@@ -1333,6 +1338,7 @@ image m4 = "m4.png"
 image m4 fire = "m4fire.png"
 image m4 fire flipped = "flip:m4fire.png"
 image m4 flipped = "flip:m4.png"
+image mean_clothes = "mean_clothes.png"
 image objection = "objection.png"
 image oldgame = "oldgame.png"
 image onscreen_sharpener = "pencilsharpener.png"
