@@ -82,7 +82,7 @@ label csbi_craptop:
             pass
     play sound sfx_ping
     cs "Okay, bedtime! Bye, guys!"
-    show nova at right
+    show nova at right with dissolve
     play sound sfx_ping
     nova "But it's like 8:04AM and you just woke up."
     play sound sfx_ping
@@ -92,13 +92,14 @@ label csbi_craptop:
     discord "CS is now offline."
     play sound sfx_ping
     nova "k bye"
-    hide nova
+    hide nova with dissolve
     show craptop car
     cs "Time to watch car crash videos for the next couple of hours!"
     show black with dissolve
     centered "Two hours later..."
     scene cs_room
     show cs
+    with dissolve
     cs "Okay... What to do, now?"
     cs "I could go outside, look at some flowers..."
     show cs happy
@@ -116,10 +117,10 @@ label csbi_craptop:
         cs "Nice day!"
     show cs
     cs "Well, I guess it's car time."
-    show cs_car behind cs
-    hide cs_house
-    show cs at left with move
-    show carguy at right with moveinright
+    scene cs_car
+    show carguy at right
+    with dissolve
+    show cs at left with moveinleft
     play sound sfx_nice_car
     carguy_nobeep "Nice car!"
     cs "It's pretty nice, but it's got some scratches..."
@@ -506,7 +507,7 @@ label csbi_end:
     scene cs_room with dissolve
     show cs with moveinleft
     stop sound fadeout 2.0
-    n "CS walks into his apartment."
+    n "CS walks into his house."
     show cs disappointed
     cs "What?! They're gone? Already?"
     cs "I guess I should get back to work on that YTP, then..."

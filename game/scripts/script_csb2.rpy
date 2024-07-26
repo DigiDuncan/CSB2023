@@ -38,20 +38,20 @@ label csbii_punch:
     n "CS punches Wesley and knocks him out."
     show cs angry at center with move
     play sound sfx_punch
-    play sound sfx_punch
+    play sound sfx_alt_punch
     show wesley at right with hpunch
     play sound sfx_punch
-    play sound sfx_punch_alt
+    play sound sfx_alt_punch
     show wesley at right with vpunch
     play sound sfx_punch
     show wesley at right with hpunch
     play sound sfx_punch
-    play sound sfx_punch_alt
+    play sound sfx_alt_punch
     show wesley at right with vpunch
     play sound sfx_punch
     show wesley at right with hpunch
     play sound sfx_punch
-    play sound sfx_punch_alt
+    play sound sfx_alt_punch
     show wesley at right with vpunch
     play sound sfx_punch
     show wesley at right with hpunch
@@ -145,6 +145,7 @@ label csbii_special:
     show blue_light at left
     show red_light at right
     show copguy behind blue_light, red_light at right with moveinright
+    show cs surprised
     copguy "Freeze! Put your hands in the air!"
     stop sound fadeout 1.0
     cs "What's going on? I didn't do anything!"
@@ -164,8 +165,8 @@ label csbii_questioning:
     scene question with dissolve
     play music card_castle volume 0.5
     music Card Castle - Toby Fox
-    show cs disappointed at left with moveinleft
-    show copguy at right with moveinright
+    show cs disappointed dark at left with moveinleft
+    show copguy dark at right with moveinright
     if fun_value(FUN_VALUE_MUSIC):
         copguy "Alright, CS. This is the Card Castle."
     else:
