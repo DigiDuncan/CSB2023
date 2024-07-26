@@ -1516,6 +1516,69 @@ image tate_ex:
     xcenter 0.25
     ycenter 0.6
 
+#Train boss
+image train_boss_1:
+    "characters/finale/trainboss1.png"
+    ease 2.0 rotate -1
+    ease 2.0 rotate 1
+    repeat
+
+image train_boss_2:
+    "characters/finale/trainboss2.png"
+    ease 2.0 rotate -1
+    ease 2.0 rotate 1
+    repeat
+
+image train_boss_3:
+    "characters/finale/trainboss3.png"
+    ease 2.0 rotate -15
+    ease 2.0 rotate 15
+    repeat
+
+image train_boss_4:
+    "characters/finale/trainboss4.png"
+    ease 2.0 rotate -10
+    ease 2.0 rotate 10
+    repeat
+
+image train_boss_5:
+    "characters/finale/trainboss5.png"
+    ease 2.0 rotate -10
+    ease 2.0 rotate 10
+    repeat
+
+image train_boss_6:
+    "characters/finale/trainboss6.png"
+    ease 2.0 rotate -5
+    ease 1.0 rotate 5
+    repeat
+
+image train_boss_7:
+    "characters/finale/trainboss7.png"
+    ease 1.0 rotate 5
+    ease 2.0 rotate -5
+    repeat
+
+layeredimage train_boss_final:
+    yanchor 1.10
+    zoom 1.25
+    group skarei:
+        attribute s default:
+            "train_boss_6"
+        attribute k default:
+            "train_boss_7"
+        attribute a default:
+            "train_boss_5"
+        attribute r default:
+            "train_boss_4"
+        attribute e default:
+            "train_boss_2"
+        attribute i default:
+            "train_boss_1"
+
+    group ignore_me:
+        attribute wow default:
+            "train_boss_3"
 # misc
 
 image ai_ducks = SnowBlossom("duck.png", 50)
@@ -2099,7 +2162,13 @@ label test:
         "No"  (type = "bad"):
             pass
         "True"  (type = "true"):
-            pass
+            stop music
+            scene amtrak_dining_car
+            show cs scared at left
+            show mean scared flipped at right
+            pause 2.0
+            show train_boss_final with easeintop
+            pakoo "This is the train boss."
         "New cool thing OwO"  (type = "dx"):
             pass
     show screen warning("The following scene is a test.\nIt may be teste.", "Warnings: developer cruft, bad puns", "start")
