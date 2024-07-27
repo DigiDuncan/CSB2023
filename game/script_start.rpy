@@ -1309,6 +1309,8 @@ image lupin = "characters/lupin.png"
 image lupin flipped = "flip:characters/lupin.png"
 image lupin hat = "characters/lupin_hat.png"
 image lupin hat flipped = "flip:characters/lupin_hat.png"
+image zenigata = "characters/zenigata.png"
+image zenigata flipped = "flip:characters/zenigata.png"
 
 # Static Images
 image amtrak_dining_food = "food.png" 

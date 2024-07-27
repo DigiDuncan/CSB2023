@@ -2161,13 +2161,8 @@ label train_confront_lupin:
     show arceus angry flipped at offscreenright
     with moveoutright
     scene black with dissolve
-    
-    "Hi, it's me again, the narrator."
-    "Everything past this point is NOT final. In fact, it's all scuffed to shit and mostly unfinished. Be not afraid of the placeholder graphics."
-    "You have been warned!"
-    "Anyway... {i}ahem..."
-    
-    n "The four make their way to the very last car on the train."
+       
+    n "The four make their way towards the very last car on the train."
     scene amtrak_coach_2
     with dissolve
     
@@ -2213,7 +2208,7 @@ label train_confront_lupin:
     show arceus angry at right
     with moveinright
     
-    n "The group wordlessly follows Mean until he suddenly stops in the first observation car."
+    n "The group wordlessly follows Mean until they reach the observation lounge, where he suddenly stops."
     
     mean "Hey! You,{w=0} there!" with hpunch
     
@@ -2255,8 +2250,9 @@ label train_confront_lupin:
     with MoveTransition(0.5)
     tate "Ohshitohfuckohshitohfuck--{nw}"
     show mean furious flipped
-    mean "{bt=a3-p10-s4}{size=+24}JUST THROW ME ALREADY!"
+    mean "{bt=a3-p10-s4}{size=+24}JUST THROW ME,{w=0} ALREADY!"
     play sound sfx_whoosh
+    show mean furious at truecenter with MoveTransition(0.1)
     show mean furious at offscreenleft with MoveTransition(0.25)
     n "Tate picks up Mean and tosses him at the thief!"
     play sound sfx_cat_crash
@@ -2289,9 +2285,41 @@ label train_confront_lupin:
     show arceus angry at offscreenleft
     with moveoutleft
     
-    scene black with dissolve
     n "The team gives chase through the next few cars."
-    n "Through the sleepers, through the dining car..."
+    
+    scene amtrak_dining_car with dissolve
+    n "Through the dining car..."
+    
+    show lupin hat at offscreenright with determination
+    show lupin hat at offscreenleft with MoveTransition(0.5)
+    
+    show mean angry flipped at offscreenright
+    show tate srs flipped at offscreenright
+    show cs angry flipped at offscreenright
+    show arceus angry at offscreenright
+    with determination
+    
+    show mean angry flipped at offscreenleft with MoveTransition(0.5)
+    show tate srs flipped at offscreenleft with MoveTransition(0.5)
+    show cs angry flipped at offscreenleft with MoveTransition(0.5)
+    show arceus angry at offscreenleft with MoveTransition(0.5)
+    
+    scene amtrak_sleeper_corridor with dissolve
+    n "Through the sleeper units..."
+    
+    show lupin hat at offscreenright with determination
+    show lupin hat at offscreenleft with MoveTransition(0.5)
+    
+    show mean angry flipped at offscreenright
+    show tate srs flipped at offscreenright
+    show cs angry flipped at offscreenright
+    show arceus angry at offscreenright
+    with determination
+    
+    show mean angry flipped at offscreenleft with MoveTransition(0.5)
+    show tate srs flipped at offscreenleft with MoveTransition(0.5)
+    show cs angry flipped at offscreenleft with MoveTransition(0.5)
+    show arceus angry at offscreenleft with MoveTransition(0.5)
     
     scene amtrak_baggage with dissolve
     
@@ -2323,34 +2351,51 @@ label train_confront_lupin:
     show arceus angry flipped at left
     with moveinleft
     
-    tate "Now, what?!"
+    # EVERYTHING AFTER THIS POINT UNFINISHED
+    n "(Hi, it's me, the narrator. Everything after this point is... not done.)"
+    n "(I'm sure Tate will get around to it eventually.)"
+    
+    # TODO: would be funny if there were like indicators after each person's line here showing their heights. CS is 5'4, Tate is (allegedly) 5'2, Arc is ???
+    
+    tate "Now,{w=0} what?!"
     show tate sad flipped
     tate "We can't possibly catch up with him..."
-    show arceus worried
-    arceus "I can't even reach the top of the window..."
-    show cs disappointed flipped
-    cs "Damn, me neither..."
-    show tate sad
     show arceus worried flipped
-    show cs disappointed
+    arceus "It looked like he jumped onto the roof!"
+    show arceus worried at mid_offscreen_left with moveoutleft
+    pause 1.0
+    arceus "... Fuck, I can't even {i}reach{/i} the roof!"
+    show cs disappointed flipped at mid_left_left with moveoutleft
+    pause 1.0
+    show cs worried flipped
+    cs "Damn! Me, neither!"
+    
+    show cs disappointed at mid_mid_left
+    show arceus worried flipped at left
+    with moveinright
+    
+    show tate sheepish flipped
+    tate "Fuck. If CS can't reach it, I don't even have a shot."
+    show tate sad
     tate "Mean, I think all the stolen stuff might be gone forever..."
     
     show mean angry flipped at center
     show tate shock flipped at right
+    show arceus worried flipped at left
+    show cs disappointed at mid_left
     with move
     
-    mean "Nah, I've got this."
-    show arceus worried
-    show cs worried
+    mean "Nah, watch."
+    mean "I've got this."
     
     show mean angry sil_white flipped with Dissolve(0.5)
     scene white with Dissolve(1.0)
     
     scene amtrak_baggage
-    show arceus worried at left
+    show arceus worried flipped at left
     show cs scared at mid_left behind arceus
     show tate shock flipped at right
-    # TODO: this is NOT mean's final sprite lmfao. also he should be taller than the other three
+    # TODO: this is NOT mean's final sprite lmfao. also he should be noticably taller than the other three
     show mean human at center
     with dissolve
     
@@ -2360,30 +2405,39 @@ label train_confront_lupin:
     arceus "Good grief, he's {i}naked!"
     mean "... Oh, oops."
     mean "Yeah, I usually only change while I'm in my room..."
+    show tate srs flipped
     tate "{i}Cover yourself!"
     show mean_clothes at right with dissolve
-    n "Tate produces from seemingly nowhere a set of clothes and throws them at Mean!"
+    n "From seemingly nowhere, Tate produces a set of clothes and throws them at Mean!"
+    play sound sfx_whoosh
     show mean human at offscreenleft
     show mean_clothes at offscreenleft
     with MoveTransition(0.25)
     pause 3.0
     show mean human at center with moveinright
-    mean "Ah, that's better."
-    show tate srs flipped
+    show cs disappointed
+    mean "Ah, that's better!"
+    show tate sheepish flipped
     tate "At least {i}one{/i} of us came prepared."
     mean "Yeah, yeah..."
     mean "Anyway..."
     
     # end of joke that may be cut
     
-    mean "All y'all short-ass fuckin'..."
+    mean "Can't believe {i}all{/i} of you are such short-ass motherfuckers..."
+    show arceus angry flipped
+    show cs surprised
+    mean "Let me handle this."
     n "Mean tosses the others onto the roof!"
+    show tate shock flipped
     tate "Uwaaaaah!"
-    show tate at t_lupin_out with move
+    show tate shock at t_lupin_out with move
+    show cs scared
     cs "Aaaaaaagh!"
-    show cs at t_lupin_out with move
+    show cs scared at t_lupin_out with move
+    show arceus worried flipped
     arceus "Waaaaargh!"
-    show arceus at t_lupin_out with move
+    show arceus worried flipped at t_lupin_out with move
     mean "Let's do this!"
     show mean human at t_lupin_out
     scene black with dissolve
@@ -2406,6 +2460,9 @@ label train_on_top:
     show lupin hat
     lupin_offscreen "Wow! You guys sure are determined!"
     lupin_offscreen "This should be fun!"
+    
+    # TODO: letterbox movie edit where they all stare lupin down
+    
     n "Gunshots ring out!"
     
     
