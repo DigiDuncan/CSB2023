@@ -6,19 +6,15 @@ label credits:
     image cred = Text(credits_s, text_align=0.5)
     image thanks = Text("{size=80}Thanks for Playing!", text_align=0.5)
     
-    $ credits_speed = 30 #scrolling speed in seconds
+    $ credits_speed = 30 #scrolling speed in seconds. adjust it once we get the real credits in
 
-    scene black with dissolve
     window hide
+    $ quick_menu = False
+    scene black with dissolve
     
-    show cred at Move((0.5, 5.0), (0.5, 0.0), credits_speed, repeat=False, bounce=False, xanchor="center", yanchor="bottom")
-    # don't ask me why they want so many dissolves, maybe someone else can unfuck it
+    show cred at Move((0.5, 3.1), (0.5, 0.0), credits_speed, repeat=False, bounce=False, xanchor="center", yanchor="bottom")
     with dissolve
-    with Pause(credits_speed - 5) # apparently this HAS to be here?? thanks i hate it
-    with dissolve
-    with Pause(3)
-    with dissolve
-    with Pause(1)
+    with Pause(credits_speed + 1)
     show thanks:
         yanchor 0.5 ypos 0.5
         xanchor 0.5 xpos 0.5
@@ -34,12 +30,12 @@ init python:
     # it would be ATROCIOUS to try fitting the ENTIRE real credits here LIKE THIS!
     # obviously these are just test credits rn for train route
     # if we can use a json file, maybe we could obfuscate text of things not seen yet? :eyes:
-    credits = ('Writing Lead',"alleZSoyez"), ('Additional Writing', 'Meancarnavor\nArceus3251\nDigiDuncan'), ('Other stuff','Other people')
+    credits = ('Writing Lead',"alleZSoyez"), ('Additional Writing', 'Meancarnavor\nArceus3251\nDigiDuncan'), ('Other Stuff','Other People'), ('Are these credits serious?', 'Absolutely the fuck {i}not.{/i}\nLet\'s get the real ones in here soon!')
     
     # CSB logo here
-    # TODO: replace it with a cleaner one
-    credits_s = "{image=gui/credits/csb_iii_dx_small_rough.png}\n"
+    credits_s = "{image=gui/credits/csbiiidx_small.png}\n"
     # TODO: do we want to do credits per route or for the entire game each time?
+    # probably the latter??
     credits_s = credits_s + "\n{size=80}CSBounciness III DX: Train Route\n"
     c1 = ''
     for c in credits:
@@ -49,6 +45,5 @@ init python:
         c1=c[0]
     credits_s = credits_s + "\n{size=60}{font=fonts/impact.ttf}Engine\n{size=50}{font=fonts/Yokelvision.otf}" + renpy.version()
     # DPN logo here
-    # TODO: resize this later probably
     credits_s = credits_s + "\n{image=gui/credits/dpn_logo.png}"
     
