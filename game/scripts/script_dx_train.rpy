@@ -1635,6 +1635,7 @@ label train_allow_staff:
     n "Tate bids CS and Arceus farewell before heading towards the cab to join Mean."
     n "CS and Arceus spend the following day resting and admiring the vast and varied scenery of The Midwest."
     n "As expected, the money is never returned."
+    $ train_ending_money_returned = False
     n "After a brief layover in Chicago and a haughty \"I told you so\" from Tate, CS and Arceus take the final uneventful transfer to New York."
 
     jump train_return_home_transition
@@ -2418,14 +2419,18 @@ label train_on_top:
             "This is the part where you catch Lupin and bring him to the conductor."
             if train_money_stolen == True:
                 "But, since the bag of money isn't legit, CS and Arceus take it back, but they don't say one damn word about its legitimacy."
+                $ train_ending_money_returned = True
             else:
                 "Since the briefcase of money is certified legit, CS and Arceus take back what is rightfully theirs!"
+                $ train_ending_money_returned = True
         "Lose":
             "This is the part where the conductor is waiting for you at the front of the train and catches Lupin."
             if train_money_stolen == True:
                 "Since the bag of money isn't legit, Lupin takes the heat for it. CS and Arceus are broke as fuck once again."
+                $ train_ending_money_returned = False
             else:
                 "Since the briefcase of money is certified legit, CS and Arceus get it back!"
+                $ train_ending_money_returned = True
                 
     "No matter what happens now, the rest of the passengers get their things back."
     "By now, it's probably, like... 2 AM."
@@ -2585,7 +2590,7 @@ label train_tate_ex_win:
     play sound sfx_sparkles
     pause 5.0
     "..."
-    tate "... I guess it only makes sense, doesn't it?"
+    tate "I guess it only makes sense, doesn't it?"
     tate "You {i}are{/i} the main character, after all."
     "..."
     tate "At least my question has been answered."
@@ -2661,10 +2666,9 @@ label train_return_home_transition:
     show arceus happy flipped
     arceus "Welp, CS, we've found our other option!"
 
-    # TODO: did lupin take the heat if the money was stolen? if yes, i need to rewrite this
-
-    # Did you play the whole route?
-    if train_skip_at_chicago == False:
+    # If you got the money back
+    if train_ending_money_returned == True:
+        # If you won the money
         if train_money_stolen == True:
             show bag at mid_mid_right with dissolve
             n "Arceus unzips the body bag and hands Billy a fistful of cash."
@@ -2674,6 +2678,7 @@ label train_return_home_transition:
             cs "We'll give you another $100 if you don't tell anyone."
             billy "That's cash in the trash!"
             hide bag with dissolve
+        # If you stole the money
         else:
             show case at mid_mid_right with dissolve
             n "Arceus opens the briefcase and gives Billy a gold bar."
@@ -2683,13 +2688,13 @@ label train_return_home_transition:
             cs "We've got plenty more where that came from. You can keep it."
             billy "That's cash in the trash!"
             hide case with dissolve
-    # Did you skip out before Chicago?
-    else:
+    # If you did NOT get the money back
+    else: 
         show arceus
         n "CS and Arceus rummage around in their pockets and manage to scrounge together $19.95."
         show arceus flipped
         cs "Here you go!"
-        billy "Thank you! Every Uber ride comes with my 100-percent satisfaction guarantee, or your money back!"        
+        billy "Thank you! Every Uber ride comes with my 100-percent satisfaction guarantee, or your money back!"
 
     billy "Well, then! Where are we going?"
     n "CS tells Billy his address. The group then heads down to the parking lot to begin the final leg home."
@@ -2699,4 +2704,17 @@ label train_return_home_transition:
     with moveoutright
     stop music fadeout 3.0
     music end
-    jump south_back_home_alt
+    
+    # TODO: fix these endings!
+    # if he gets the money back, it'll either be in the briefcase or the bag, and currently the south_back_home_alt only is set up to use the briefcase
+    # if he does not get the money back, there is no setup for this
+    
+    # final endings:
+    # TODO: why the FUCK does it keep looping back to the Tate EX battle after this????
+    if train_ending_money_returned == True:
+        if train_money_stolen == True:
+            "Tell Tate that this ending isn't quite right..."
+        jump south_back_home_alt
+    else:
+        "Tell Tate to write a new ending! CS didn't get the money!"
+        jump south_back_home_al

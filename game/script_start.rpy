@@ -1949,6 +1949,7 @@ default train_polar_express_fun_value = False
 default train_pancake_fun_value = False
 default train_skip_at_chicago = None
 default train_tate_is_fragile_fun_value = False
+default train_ending_money_returned = False
 default ch2_cs_attack_used = "pushed"
 default cs_chosen_form = "cs_vs_tate_punch"
 
