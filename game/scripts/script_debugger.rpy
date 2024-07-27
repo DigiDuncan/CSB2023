@@ -582,6 +582,7 @@ label asset_debugger:
         scene alley
         show m4 flipped at center
         show cs surprised flipped at left
+        show zenigata at mid_left
         show mean wat at mid_mid_left
         show tate cry at mid_mid_right
         show moomin at mid_right
@@ -594,6 +595,7 @@ label asset_debugger:
         scene question
         show m4 fire at center
         show cs scared at left
+        show zenigata flipped at mid_left
         show mean wat flipped at mid_mid_left
         show tate cry flipped at mid_mid_right
         show snufkin at mid_right
