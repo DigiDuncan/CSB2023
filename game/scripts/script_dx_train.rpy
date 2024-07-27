@@ -2437,8 +2437,9 @@ label train_on_top:
     "Let's all get some rest..."
     scene black with dissolve
     "I think here is a good place for Tate to test that rolling credits thing."
-    
-    call credits("train_check_secret")
+    "This {i}probably{/i} isn't staying here, though."
+    call credits
+    jump train_check_secret
         
 ######## SECRET FIGHT VS TATE ########
         
