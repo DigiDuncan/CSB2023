@@ -2433,7 +2433,7 @@ label train_on_top:
     scene black with dissolve
     "I think here is a good place for Tate to test that rolling credits thing."
     
-    call credits
+    call credits("train_check_secret")
         
 ######## SECRET FIGHT VS TATE ########
         

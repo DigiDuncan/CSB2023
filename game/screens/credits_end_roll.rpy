@@ -1,6 +1,6 @@
 # code almost entirely stolen from https://lemmasoft.renai.us/forums/viewtopic.php?t=22481
 
-label credits:
+label credits(jump_after):
     # TODO: make this fucking thing accept a label to jump to after credits end
 
     image cred = Text(credits_s, text_align=0.5)
@@ -23,7 +23,7 @@ label credits:
     hide thanks
     with dissolve
     pause 5.0
-    return
+    $ renpy.jump(jump_after)
 
 init python:
     # TODO: this shit needs to read a file properly.
