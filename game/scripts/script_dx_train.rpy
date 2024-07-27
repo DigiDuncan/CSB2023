@@ -2717,4 +2717,4 @@ label train_return_home_transition:
         jump south_back_home_alt
     else:
         "Tell Tate to write a new ending! CS didn't get the money!"
-        jump south_back_home_al
+        jump south_back_home_alt
