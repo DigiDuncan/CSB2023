@@ -2161,7 +2161,12 @@ label train_confront_lupin:
     with moveoutright
     scene black with dissolve
     
-    "The group heads towards the very last coach car."
+    "Hi, it's me again, the narrator."
+    "Everything past this point is NOT final. In fact, it's all scuffed to shit and mostly unfinished. Be not afraid of the placeholder graphics."
+    "You have been warned!"
+    "Anyway... {i}ahem..."
+    
+    n "The four make their way to the very last car on the train."
     scene amtrak_coach_2
     with dissolve
     
@@ -2171,7 +2176,7 @@ label train_confront_lupin:
     show arceus angry at right
     with moveinright
     
-    "One after the other, they search each car for any sign of the suspect."
+    "Searching one section after the other, they fail to find any sign of the suspect in coach..."
     
     show mean angry flipped at offscreenleft
     show tate sheepish flipped at offscreenleft
@@ -2207,7 +2212,7 @@ label train_confront_lupin:
     show arceus angry at right
     with moveinright
     
-    "The group wordlessly follows Mean until he suddenly stops."
+    "The group wordlessly follows Mean until he suddenly stops in the first observation car."
     
     mean "Hey! You,{w=0} there!" with hpunch
     
@@ -2399,18 +2404,45 @@ label train_on_top:
     show lupin hat
     lupin_offscreen "Wow! You guys sure are determined!"
     lupin_offscreen "This should be fun!"
+    n "Gunshots ring out!"
     
     
-    "This is a placeholder line until more is written."
-    "Jumping somewhere else..."
+    "Everything beyond this point is a placeholder until more is written."
+    "This is the part where Zenigata pulls up alongside the train while shooting at Lupin."
+    "And, this is the part where a minigame would go."
+    "The story ends differently now, depending on whether you stole or won the money."
+    "It will also end differently depending on whether you win or lose this minigame."
+    menu: 
+        "Since there's no game here yet, pick your ending, I guess."
+        "Win":
+            "This is the part where you catch Lupin and bring him to the conductor."
+            if train_money_stolen == True:
+                "But, since the bag of money isn't legit, CS and Arceus take it back, but they don't say one damn word about its legitimacy."
+            else:
+                "Since the briefcase of money is certified legit, CS and Arceus take back what is rightfully theirs!"
+        "Lose":
+            "This is the part where the conductor is waiting for you at the front of the train and catches Lupin."
+            if train_money_stolen == True:
+                "Since the bag of money isn't legit, Lupin takes the heat for it. CS and Arceus are broke as fuck once again."
+            else:
+                "Since the briefcase of money is certified legit, CS and Arceus get it back!"
+                
+    "No matter what happens now, the rest of the passengers get their things back."
+    "By now, it's probably, like... 2 AM."
+    "Let's all get some rest..."
+    scene black with dissolve
+    "I think here is a good place for Tate to test that rolling credits thing."
     
-    
+    call credits
+        
+######## SECRET FIGHT VS TATE ########
+        
+label train_check_secret:
     if train_tate_is_fragile_fun_value == True:
         jump train_tate_ex_encounter
     else:
         jump train_completed
 
-######## SECRET FIGHT VS TATE ########
 label train_tate_ex_encounter:
     stop music fadeout 1.0
     scene black
@@ -2418,7 +2450,7 @@ label train_tate_ex_encounter:
     n "He decides to go for a walk, meandering through each quiet corridor until he eventually finds himself in the observation car."
     n "He is not alone."
     pause 0.5
-    scene amtrak_observation 
+    scene amtrak_observation_2
     show tate srs flipped at left
     with dissolve
     pause 1.0
