@@ -1,8 +1,6 @@
 # code almost entirely stolen from https://lemmasoft.renai.us/forums/viewtopic.php?t=22481
 
 label credits:
-    # TODO: make this fucking thing accept a label to jump to after credits end
-
     image cred = Text(credits_s, text_align=0.5)
     image thanks = Text("{size=80}Thanks for Playing!", text_align=0.5)
     

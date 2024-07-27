@@ -2177,7 +2177,7 @@ label train_confront_lupin:
     show arceus angry at right
     with moveinright
     
-    "Searching one section after the other, they fail to find any sign of the suspect in coach..."
+    n "Searching one section after another, they fail to find any sign of the suspect in coach."
     
     show mean angry flipped at offscreenleft
     show tate sheepish flipped at offscreenleft
@@ -2213,7 +2213,7 @@ label train_confront_lupin:
     show arceus angry at right
     with moveinright
     
-    "The group wordlessly follows Mean until he suddenly stops in the first observation car."
+    n "The group wordlessly follows Mean until he suddenly stops in the first observation car."
     
     mean "Hey! You,{w=0} there!" with hpunch
     
@@ -2269,8 +2269,8 @@ label train_confront_lupin:
     with hpunch
     "..."
     # TODO: would be funny if the "Miss!" indicator from the RPG fights showed up here, but idk how to do that
-    n "The attack misses."
     show tate sheepish flipped
+    n "The attack misses."
     pause 1.0
     show mean unamused at center_left with MoveTransition(1.0)
     show cs disappointed flipped
@@ -2278,7 +2278,7 @@ label train_confront_lupin:
     pause 1.0
     mean "Wow."
     mean "Are you guys {i}always{/i} this useless?"
-    tate "We... probably should've practiced that one more..."
+    tate "We... probably should've practiced that one more."
     mean "Guess we've gotta do this old-fashioned way."
     show mean angry flipped
     mean "Let's get 'em!"
@@ -2290,7 +2290,8 @@ label train_confront_lupin:
     with moveoutleft
     
     scene black with dissolve
-    n "The team gives chase through the next few cars, all the way until just before they reach the cab..."
+    n "The team gives chase through the next few cars."
+    n "Through the sleepers, through the dining car..."
     
     scene amtrak_baggage with dissolve
     
@@ -2303,7 +2304,7 @@ label train_confront_lupin:
     show mean angry at center
     with moveinleft
     
-    n "At last, the four manage to corner him."
+    n "At last, the quartet corners him in the luggage car."
     mean "Alright, pal. End of the line."
     lupin_offscreen "That's what {i}you{/i} think!"
     
