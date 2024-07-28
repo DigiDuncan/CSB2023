@@ -383,7 +383,7 @@ transform t_boom:
         linear 1.0:
             yalign -0.5
 
-transform _t_evil_mika:
+transform t_evil_mika:
     zoom 2
     xalign 0.5
     yalign 1.0

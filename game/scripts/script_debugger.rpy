@@ -539,6 +539,7 @@ label asset_debugger:
         show sansbrick at center
         show cs fakegod at left
         show copguy_ex_back at mid_left_left
+        show weird_al at mid_left
         show mean ayo flipped at mid_mid_left
         show lancer flipped at mid_mid_right
         show alien dead at mid_right
@@ -554,6 +555,7 @@ label asset_debugger:
         show oldgame at center
         show cs guitar at left
         show ai_ducks at mid_left_left
+        show cpt_underpants at mid_left
         show mean angry at mid_mid_left
         show bubble at mid_mid_right
         show ikea_worker at mid_right
@@ -569,6 +571,7 @@ label asset_debugger:
         show m4 at center
         show cs surprised at left
         show stage_screen at mid_left_left
+        show david at mid_left
         show mean angry flipped at mid_mid_left
         show tate smug sil_white flipped at mid_mid_right
         show pomni at mid_right
@@ -582,6 +585,7 @@ label asset_debugger:
         scene alley
         show m4 flipped at center
         show cs surprised flipped at left
+        show george at mid_left_left
         show zenigata at mid_left
         show mean wat at mid_mid_left
         show tate cry at mid_mid_right
@@ -595,6 +599,7 @@ label asset_debugger:
         scene question
         show m4 fire at center
         show cs scared at left
+        show harold at mid_left_left
         show zenigata flipped at mid_left
         show mean wat flipped at mid_mid_left
         show tate cry flipped at mid_mid_right
@@ -607,6 +612,7 @@ label asset_debugger:
         play music dense_woods_b
         scene asylum
         show m4 fire flipped at center
+        show mr_krupp at mid_left_left
         show cs scared flipped at left
         show mean furious at mid_mid_left
         show alicia at mid_right
@@ -755,6 +761,7 @@ label asset_debugger:
         play music fasting
         scene washington_road dusk
         show pot_sunken at center
+        show mean human flipped at mid_left
         show amtrak_stewardess at mid_mid_left
         show cs disappointed cultist flipped at left
         lego "test 52{w=0.5}{nw}"
@@ -765,6 +772,7 @@ label asset_debugger:
         play music fastport
         scene washington_road morning
         show pot_beam at center
+        show mean happy human at mid_left
         show amtrak_stewardess flipped at mid_mid_left
         show cs angry cultist flipped at left
         trailtrash "test 53{w=0.5}{nw}"
@@ -775,6 +783,7 @@ label asset_debugger:
         play music flyday_chinatown
         scene copcar
         show onscreen_sharpener at center
+        show mean happy human flipped at mid_left
         show lupin at mid_mid_left
         show cs pencil at left
         green "test 54{w=0.5}{nw}"
@@ -785,6 +794,7 @@ label asset_debugger:
         play music fnaf_6
         scene copcar_mask
         show renault at center
+        show mean annoyed human at mid_left
         show lupin flipped at mid_mid_left
         show cs angry pencil at left
         jerma "test 55{w=0.5}{nw}"
@@ -796,6 +806,7 @@ label asset_debugger:
         scene microcenter
         show passportdigi at center
         show lupin hat at mid_mid_left
+        show mean annoyed human flipped at mid_left
         show cs disappointed pencil at left
         pencil "test 56{w=0.5}{nw}"
     else:
@@ -805,6 +816,7 @@ label asset_debugger:
         play music fourside
         scene microinside
         show copguyexe at center
+        show mean shocked human at mid_left
         show lupin hat flipped at mid_mid_left
         show cs phone at left
         signup "test 57{w=0.5}{nw}"
@@ -815,6 +827,7 @@ label asset_debugger:
         play music france
         scene cashzone
         show copguyexe flipped at center
+        show mean shocked human flipped at mid_left
         show cs phone flipped at left
         host "test 58{w=0.5}{nw}"
     else:
@@ -836,6 +849,7 @@ label asset_debugger:
         play music full_rulle_med_klas
         scene cpuaisle
         show tate_ex_front at center
+        show mean angry human at mid_left
         show cs disappointed phone flipped at left
         luigi "test 60{w=0.5}{nw}"
     else:
@@ -846,6 +860,7 @@ label asset_debugger:
         play music funiculi_holiday
         scene gpuaisle
         show tate_ex_preparation at center
+        show mean angry human flipped at mid_left
         show cs worried phone at left
         mika "test 61{w=0.5}{nw}"
     else:
@@ -856,6 +871,7 @@ label asset_debugger:
         play music gold_room
         scene gpuaisle2
         show tate_ex at center
+        show fake_rpg_miss at mid_left_left
         show cs worried phone flipped at left
         k174 "test 62{w=0.5}{nw}"
     else:
@@ -866,6 +882,7 @@ label asset_debugger:
         play music good_eatin
         scene testing_main
         show ltt_bottle at center
+        show oof_45 at mid_left_left
         show cs angry phone at left
         k199 "test 63{w=0.5}{nw}"
     else:
@@ -876,6 +893,7 @@ label asset_debugger:
         play music happy_roaming
         scene testing_front
         show amtrak_dining_food at center
+        show oof_54 at mid_left_left
         show cs angry phone flipped at left
         k207 "test 64{w=0.5}{nw}"
     else:
@@ -886,6 +904,7 @@ label asset_debugger:
         play music happy_rock
         scene course_1
         show amtrak_dining_pancake at center
+        show oof_52 at mid_left_left
         show cs scared phone at left
         billy_far "test 65{w=0.5}{nw}"
     else:
@@ -1314,42 +1333,49 @@ label asset_debugger:
     if fun_value(116):
         play music prophetpart2
         scene cscar1
+        show cs at t_fake_rpg_text
         renovator "test 116{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(117):
         play music real_world
         scene cscar1arc
+        show cs at edge_left
         cruise "test 117{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(118):
         play music rosens_loop
         scene cscar2
+        show cs at edge_right
         baumer "test 118{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(119):
         play music scales_of_joy
         scene utah
+        show cs at t_evil_mika
         copguyexe "test 119{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(120):
         play music school
         scene utahsign
+        show cs at t_toby
         l_cultist "test 120{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(121):
         play music showtime
         scene utahnight
+        show cs at t_lupin_out
         tate_offscreen "test 121{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(122):
         play music snufin
         scene pizzaplace
+        show cs at t_boom
         pakoo_offscreen "test 122{w=0.5}{nw}"
     else:
         jump exit_debug
@@ -1387,128 +1413,114 @@ label asset_debugger:
         play music super_friendly
         scene slots
         RCOMEM "test 128{w=0.5}{nw}"
-        pause 0.5
     else:
         jump exit_debug
     if fun_value(129):
         play music sweet_victory
         scene tablegames
         k_doctor "test 129{w=0.5}{nw}"
-        pause 0.5
     else:
         jump exit_debug
     if fun_value(130):
         play music taiikusai_desu_yo
         scene pokertable
         k_nurse "test 130{w=0.5}{nw}"
-        pause 0.5
     else:
         jump exit_debug
     if fun_value(131):
         play music take_trip
         scene luigi1
         l_snow "test 131{w=0.5}{nw}"
-        pause 0.5
     else:
         jump exit_debug
     if fun_value(132):
         play music take_trip2
         scene luigi2
         lupin "test 132{w=0.5}{nw}"
-        pause 0.5
     else:
         jump exit_debug
     if fun_value(133):
         play music the_rest_of_bubble_tea
         scene vegasbathroom
         lupin_offscreen "test 133{w=0.5}{nw}"
-        pause 0.5
     else:
         jump exit_debug
     if fun_value(134):
         play music the_whale
         scene backroomcasino
         mean_offscreen "test 134{w=0.5}{nw}"
-        pause 0.5
     else:
         jump exit_debug
     if fun_value(135):
         play music thousand_march
         scene outsafe
         amtrak_conductor "test 135{w=0.5}{nw}"
-        pause 0.5
     else:
         jump exit_debug
     if fun_value(136):
         play music time_for_a_smackdown
         scene outsafeopen
         amtrak_stewardess "test 136{w=0.5}{nw}"
-        pause 0.5
     else:
         jump exit_debug
     if fun_value(137):
         play music track_3
         scene insafe
         amtrak_npc_1 "test 137{w=0.5}{nw}"
-        pause 0.5
     else:
         jump exit_debug
     if fun_value(138):
         play music track_4
         scene carpark
         amtrak_npc_2 "test 138{w=0.5}{nw}"
-        pause 0.5
     else:
         jump exit_debug
     if fun_value(139):
         play music trans_atlantic
         scene casino1
         amtrak_npc_3 "test 139{w=0.5}{nw}"
-        pause 0.5
     else:
         jump exit_debug
     if fun_value(140):
         play music trash_zone
         scene fazhall
         priest "test 140{w=0.5}{nw}"
-        pause 0.5
     else:
         jump exit_debug
     if fun_value(141):
         play music triage_at_dawn
         scene fazlobby
         perfect_billy "test 141{w=0.5}{nw}"
-        pause 0.5
     else:
         jump exit_debug
     if fun_value(142):
         play music tumultuous
         scene fazplace
-        pause 0.5
+        weird_al "test 142{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(143):
         play music tuna_fish
         scene airplane_seats
-        pause 0.5
+        david "test 143{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(144):
         play music tunnely_shimbers
         scene airport_interior
-        pause 0.5
+        mr_krupp "test 144{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(145):
         play music undyne
         scene airport_seats
-        pause 0.5
+        george "test 145{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(146):
         play music upon_me
         scene airport_tsa
-        pause 0.5
+        harold "test 146{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(147):
@@ -2645,6 +2657,16 @@ label asset_debugger:
         scene amtrak_top
     else:
         jump exit_debug
+    if fun_value (372):
+        scene classroom
+    else:
+        jump exit_debug
+    if fun_value (373):
+        scene broom_closet
+    else:
+        jump exit_debug
+
+
 
     n "Done."
     show screen debugger_menu
