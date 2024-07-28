@@ -1333,7 +1333,7 @@ label asset_debugger:
     if fun_value(116):
         play music prophetpart2
         scene cscar1
-        show cs at t_fake_rpg_text
+        show cs at t_fake_rpg_text(0,0)
         renovator "test 116{w=0.5}{nw}"
     else:
         jump exit_debug
