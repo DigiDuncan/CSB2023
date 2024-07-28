@@ -262,7 +262,7 @@ init python:
                 else:
                     # Normal indicator
                     renpy.show("_fun_value",[_fun_value_fade,_fun_value_motion],"fun_icon")
-            renpy.play("audio/sfx_sparkle.ogg")
+            renpy.play("audio/sfx/sfx_sparkle.ogg")
         return ret
 
     # File listing

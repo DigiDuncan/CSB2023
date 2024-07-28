@@ -77,7 +77,7 @@ class AchievementManager:
     def unlock(self, name: str, show_screen = True):
         ach = self.get(name)
         if not ach.unlocked:
-            renpy.sound.play("audio/sfx_achieve.ogg", channel = "sound", loop = False)
+            renpy.sound.play("audio/sfx/sfx_achieve.ogg", channel = "sound", loop = False)
             ach.unlock(show_screen)
 
     def unlock_all(self):

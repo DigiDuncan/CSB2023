@@ -843,7 +843,7 @@ class Fighters:
 
 
 # Dummy encounter to avoid errors
-encounter = Encounter([], Image("images/bg/black.png"), "audio/sfx_legosfx.ogg", 1, "start", "secret_dx")
+encounter = Encounter([], Image("images/bg/black.png"), "audio/sfx/sfx_legosfx.ogg", 1, "start", "secret_dx")
 
 # Indicator types
 IndicatorType = Literal["heal", "damage", "stat_up", "stat_down", "confused", "unconfused", "none"]
