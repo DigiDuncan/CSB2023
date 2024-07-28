@@ -2403,37 +2403,24 @@ label train_confront_lupin:
     mean "I can't believe {i}all{/i} of you are such short-ass motherfuckers."
 
     # stupid gag idea i had.
-    # is it funnier to hit them one at a time or all at once?
+    # is it funnier to hit them one at a time or all at once? mean thinks all at once
     
-    show oof_45 at t_fake_rpg_text(0.1, 0.3)
+    show oof_45 at t_fake_rpg_text(0.05, 0.3)
+    show oof_54 at t_fake_rpg_text(0.2, 0.125)
+    show oof_52 at t_fake_rpg_text(0.81, 0.2)
 
     play sound "audio/ut/snd_damage.ogg" volume 0.5
     show arceus angry flipped
-    with hpunch
-    hide oof_45
-    pause 0.5
-    
-    show oof_54 at t_fake_rpg_text(0.2, 0.125)
-            
-    play sound "audio/ut/snd_damage.ogg" volume 0.5
     show cs angry
-    with hpunch
-    hide oof_54
-    pause 0.5
-    
-    show oof_52 at t_fake_rpg_text(0.81, 0.2)
-    
-    play sound "audio/ut/snd_damage.ogg" volume 0.5
     show tate sad flipped
     with hpunch
-    hide oof_52
     pause 0.5
-
+    
     "..."
     pause 2.0
     show mean annoyed human
     mean "What?"
-    mean "You all {i}just{/i} said you can't reach--{w=0.5}{nw}"
+    mean "You all {i}just{/i} said you can't reach..."
     mean "Never mind."
     show mean human
     mean "Let me handle this."
