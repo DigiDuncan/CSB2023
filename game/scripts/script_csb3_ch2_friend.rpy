@@ -809,7 +809,7 @@ label friend2_between_2:
     show cs angry
     show tate srs
     show arceus angry flipped
-    cs "Go to hell, Copguy! You'll never defeat me!"
+    cs "Go to hell, Copguy! You'll never defeat us!"
     copguy "Heheh, you can tell yourself that."
     copguy "I've been making sure to note down your team's abilities..."
     copguy "Why don't we try one out?"

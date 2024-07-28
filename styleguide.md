@@ -15,7 +15,7 @@
 ### FILES
 - Backgrounds must be 1920x1080
 - All audio should be 44.1kHz 16bit .ogg 
-- SFX should must have the `sfx_` prefix and be placed in the `/sfx` folder.
+- SFX must have the `sfx_` prefix and be placed in the `/sfx` folder.
 - Videos have to be awfully encoded (enforced by Ren'Py), use Handbrake and make a `.webm` with Vorbis audio.
     - PLEASE use 1:1 pixel ratio. that's why fail_end was broken.
 
