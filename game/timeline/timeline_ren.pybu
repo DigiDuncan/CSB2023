@@ -1,7 +1,7 @@
 import renpy.exports as renpy
 
 """renpy
-init python:
+python early:
 """
 
 from dataclasses import dataclass
@@ -17,7 +17,7 @@ Country = Literal["england", "sweden", "japan"]
 SongTopic = Literal["banana", "street", "ice"]
 Fanbase = Literal["ltt", "ytp", "both"]
 
-@dataclass
+@dataclass(eq = True)
 class Timeline:
     speedran_csb: bool = False
     got_groceries: bool = True
@@ -41,4 +41,4 @@ class Timeline:
     went_to_bronson: bool = False
     took_i69: bool = False
 
-persistent.timeline = Timeline()
+# persistent.timeline = Timeline()
