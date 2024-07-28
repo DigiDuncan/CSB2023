@@ -182,6 +182,14 @@ transform mid_offscreen_right:
 transform mid_offscreen_left:
     yanchor 1.0 ypos 1.0
     xanchor 0.5 xpos -0.0
+    
+transform edge_left:
+    yanchor 1.0 ypos 1.0
+    xanchor 0.5 xpos 0.05
+    
+transform edge_right:
+    yanchor 1.0 ypos 1.0
+    xanchor 0.5 xpos 0.95
 
 transform xstretch_in:
     xalign 0.5
@@ -727,7 +735,7 @@ image mean ayo = "characters/mean/meanayo.png"
 image mean ayo flipped = "flip:characters/mean/meanayo.png"
 image mean angry = "characters/mean/meanangry.png"
 image mean angry flipped = "flip:characters/mean/meanangry.png"
-image mean angry sil_white flipped = "sil_white:flip:characters/mean/meanangry.png"
+image mean angry sil_white flipped = "flip:sil_white:characters/mean/meanangry.png"
 image mean wat = "characters/mean/meanwat.png"
 image mean wat flipped = "flip:characters/mean/meanwat.png"
 image mean furious = "characters/mean/meanfurious.png"

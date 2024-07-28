@@ -100,6 +100,7 @@ init python:
         "amtrak_stewardess": "{image=gui/dx_text.png} Stewardess",
         "lupin": "{image=gui/dx_text.png} Lupin III",
         "zenigata": "{image=gui/dx_text.png} Zenigata",
+        "mean_human": "{image=gui/dx_text.png} Mean (Human Form)",
         "tate_ex": "{image=gui/dx_text.png} Tate EX",
         #BTTFCS
         "cruise": "{image=gui/dx_text.png} Tom Cruise"
@@ -199,6 +200,8 @@ screen person(l):
                 add "images/characters/tate/tatehappy.png" xalign 1.0 yalign 1.0 zoom 0.75
             elif l == "tate_ex":
                 add "images/characters/tate/tate_ex.png" xalign 1.0 yalign 1.0 zoom 0.75
+            elif l == "mean_human":
+                add "images/characters/mean/meanhumanneutral.png" xalign 1.0 yalign 1.0 zoom 0.75
             elif l == "pakoo":
                 add "images/characters/pakoo/pakoo.png" xalign 1.0 yalign 1.0
             elif l == "mean":

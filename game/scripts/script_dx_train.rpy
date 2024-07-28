@@ -2255,7 +2255,7 @@ label train_confront_lupin:
     show mean furious at truecenter with MoveTransition(0.1)
     show mean furious at offscreenleft with MoveTransition(0.25)
     play sound sfx_cat_crash
-    show fake_rpg_miss at t_fake_rpg_text(0.48,0.2)
+    show fake_rpg_miss at t_fake_rpg_text(0.48, 0.2)
     show cs scared flipped
     show tate shock flipped
     with hpunch
@@ -2351,10 +2351,6 @@ label train_confront_lupin:
     with moveinleft
     
     # EVERYTHING AFTER THIS POINT UNFINISHED
-    n "(Hi, it's me, the narrator. Everything after this point is... not done.)"
-    n "(I'm sure Tate will get around to it eventually.)"
-    
-    # TODO: would be funny if there were like indicators after each person's line here showing their heights. CS is 5'4, Tate is (allegedly) 5'2, Arc is 4'5
     
     tate "Now,{w=0} what?!"
     show tate sad flipped
@@ -2380,32 +2376,36 @@ label train_confront_lupin:
     tate "Mean, I think all the stolen stuff might be gone forever..."
     
     show mean angry flipped at center
-    show tate shock flipped at right
-    show arceus worried flipped at left
+    show tate sheepish flipped at right
+    show arceus worried flipped at edge_left
     show cs disappointed at mid_left
     with move
     
     mean "Nah, watch."
     mean "I've got this."
     
+    show tate shock flipped
+    show cs worried
     show mean angry sil_white flipped with Dissolve(0.5)
-    scene white with Dissolve(2.0)
+    scene white with Dissolve(1.0)
     pause 1.0
     
     scene amtrak_baggage
-    show arceus worried flipped at left
+    show arceus worried flipped at edge_left
     show cs scared at mid_left behind arceus
     show tate shock flipped at right
-    # TODO: this is NOT mean's final sprite lmfao. also he should be noticably taller than the other three
     show mean human at center
+    $ persistent.seen.add("mean_human")
     with dissolve
     pause 2.0
+    mean "Damn..."
+    mean "I couldn't see it before, but..."
     mean "I can't believe {i}all{/i} of you are such short-ass motherfuckers."
 
     # stupid gag idea i had.
     # is it funnier to hit them one at a time or all at once?
     
-    show oof_45 at t_fake_rpg_text(0.1,0.3)
+    show oof_45 at t_fake_rpg_text(0.1, 0.3)
 
     play sound "audio/ut/snd_damage.ogg" volume 0.5
     show arceus angry flipped
@@ -2413,7 +2413,7 @@ label train_confront_lupin:
     hide oof_45
     pause 0.5
     
-    show oof_54 at t_fake_rpg_text(0.2,0.125)
+    show oof_54 at t_fake_rpg_text(0.2, 0.125)
             
     play sound "audio/ut/snd_damage.ogg" volume 0.5
     show cs angry
@@ -2421,7 +2421,7 @@ label train_confront_lupin:
     hide oof_54
     pause 0.5
     
-    show oof_52 at t_fake_rpg_text(0.81,0.2)
+    show oof_52 at t_fake_rpg_text(0.81, 0.2)
     
     play sound "audio/ut/snd_damage.ogg" volume 0.5
     show tate sad flipped
@@ -2698,8 +2698,7 @@ label train_completed:
     # TODO: Replace this label with Chicago route, should anyone choose to write one.
     # TODO: Please let me know if you do so we can rework CS getting home a bit (below).
     jump train_return_home_transition
-                
-        
+
 ######## GO HOME ########
 label train_return_home_transition:
     # yes i stole much of this from south route, oh well, i'm tired ok - tate
@@ -2778,7 +2777,6 @@ label train_return_home_transition:
     # if he does not get the money back, there is no setup for this
     
     # final endings:
-    # TODO: why the FUCK does it keep looping back to the Tate EX battle after this????
     if train_ending_money_returned == True:
         if train_money_stolen == True:
             "Tell Tate that this ending isn't quite right..."
