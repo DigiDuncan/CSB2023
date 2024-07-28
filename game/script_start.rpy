@@ -383,6 +383,11 @@ transform t_boom:
         linear 1.0:
             yalign -0.5
 
+transform _t_evil_mika:
+    zoom 2
+    xalign 0.5
+    yalign 1.0
+
 # Character Definitions
 define n = Character(None, what_italic = True, callback = char_callback)  # Narrator
 define cs = Character("cs188", callback = renpy.partial(char_callback, name = "cs", beep = "cs"))
@@ -516,6 +521,13 @@ define bomahanobeep = Character("\"Omaha\"", callback = renpy.partial(char_callb
 
 # DX Misc Character Definitions
 define copguyexe = Character("Copguy", callback = renpy.partial(char_callback, name = "copguy", beep = "copexe"))
+
+# DX Digi Character Definitions
+define weird_al = Character("Weird Al", callback = char_callback)
+define david = Character("David", callback = char_callback)
+define mr_krupp = Character("Mr. Krupp", callback = char_callback)
+define george = Character("George", callback = char_callback)
+define harold = Character("Harold", callback = char_callback)
 
 # DX CultCon Character Definitions
 define renovator = Character("Renovator", callback = char_callback)
@@ -1343,6 +1355,18 @@ image fake_rpg_miss = Text("{size=50}{color=#FFAAAA}Miss!", text_align=0.5)
 image oof_45 = Text("{size=50}{color=#FFEE00}4'5\"", text_align=0.5)
 image oof_54 = Text("{size=50}{color=#CE256E}5'4\"", text_align=0.5)
 image oof_52 = Text("{size=50}{color=#233260}5'2\"", text_align=0.5)
+
+# DX Digi Backgrounds
+image classroom = "secret/up/classroom.png"
+image broom_closet = "secret/up/broom_closet.png"
+
+# DX Digi Characters
+image weird_al = "secret/up/weird_al.png"
+image cpt_underpants = "secret/up/cpt_underpants.png"
+image david = "secret/up/david.png"
+image george = "secret/up/george.png"
+image harold = "secret/up/harold.png"
+image mr_krupp = "secret/up/mr_krupp.png"
 
 # Static Images
 image amtrak_dining_food = "food.png" 

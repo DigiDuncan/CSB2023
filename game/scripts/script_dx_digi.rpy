@@ -12,30 +12,15 @@ label fix_pakoo_death:
     digi "See you on the other side!"
     return
 
-# UNDERPANTS ONLY
-
-transform _t_evil_mika:
-    zoom 2
-    xalign 0.5
-    yalign 1.0
-
-define weird_al = Character("Weird Al", callback = char_callback)
-define david = Character("David", callback = char_callback)
-define mr_krupp = Character("Mr. Krupp", callback = char_callback)
-define george = Character("George", callback = char_callback)
-define harold = Character("Harold", callback = char_callback)
-
-image classroom = "secret/up/classroom.png"
-image broom_closet = "secret/up/broom_closet.png"
-
-image weird_al = "secret/up/weird_al.png"
-image cpt_underpants = "secret/up/cpt_underpants.png"
-image david = "secret/up/david.png"
-image george = "secret/up/george.png"
-image harold = "secret/up/harold.png"
-image mr_krupp = "secret/up/mr_krupp.png"
-
 label dx_underpants:
+    # Hi, Tate, I assume you'll see this at some point.
+    # This is a reference to a Mad Lib Pakoo and Mika wrote at 3AM and sent me via voice message.
+    # There's a reason this barely makes sense.
+    # If you're doing a grammar pass on this, please don't change the wording without consulting me.
+    # Just want to make sure the jokes stay intact.
+    # Thanks!
+    # -- Digi
+
     play music school volume 0.4
     scene classroom
     show george at left
@@ -103,3 +88,4 @@ label dx_underpants:
     with dissolve
     george "This has got to be the dumbest story we've ever been in!"
     harold "Don't blame me, Pakoo wrote it!"
+    return
