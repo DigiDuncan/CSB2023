@@ -110,7 +110,7 @@ label train_intro_start:
     arceus "...Yeah!"
     if fun_value(FUN_VALUE_MUSIC):
         arceus "That selects like a sub-game idea!"
-        cs "...yeah."
+        cs "... Yeah."
     else:
         arceus "That sounds like a great idea!"
     arceus "We could just relax and watch the world go by!"
@@ -172,7 +172,7 @@ label train_intro_start:
 
 label train_story_begin:
     if fun_value(FUN_VALUE_MUSIC):
-        n "A little over an hour later, the two arrive outdoors of the Kingman Amtrak Station."
+        n "A little over an hour later, the two arrive outdoors at the Kingman Amtrak Station."
     else:
         n "A little over an hour later, the two arrive at Kingman Amtrak Station."
 
@@ -531,7 +531,7 @@ label train_kingman_platform:
     play music ochre_woods_day if_changed
     music Ochre Woods ~ Day - Miki Obata
     if fun_value(FUN_VALUE_MUSIC):
-        n "The two watch as the locomotive approaches the Ochre woods during the day, and eventually slows to a stop."
+        n "The two watch as the locomotive approaches the Ochre Woods during the day and eventually slows to a stop."
     else:
         n "The two watch as the locomotive approaches the station and eventually slows to a stop."
     hide cs
@@ -694,11 +694,11 @@ label train_boarding:
         tate "Hm?"
         amtrak_stewardess "Bedroom {i}~ Day.{/i}"
         show tate sheepish
-        tate "I know but–{w=1.0}{nw}"
+        tate "I know, but–-{w=1.0}{nw}"
         amtrak_stewardess "Keep up with the bit."
         show tate sad
-        tate "But CS gets away with it all the time..."
-        amtrak_stewardess "Also, stop doing {i}my{/i} job."
+        tate "But, CS gets away with it all the time..."
+        amtrak_stewardess "Also, please stop trying to do {i}my{/i} job."
     else:
         tate "... And, {i}this{/i} way is the sleeper car! Your room is--{w=0.25}{nw}"
         show amtrak_stewardess flipped
@@ -1322,7 +1322,8 @@ label train_dining:
     show mean furious
     mean_offscreen "{i}WHAT?!" with hpunch
     if fun_value(FUN_VALUE_MUSIC):
-        mean_offscreen "{bt=a3-p10-s4}{size=+36}PROF. KRANE'S BEEN {i}KIDNAPPED?{/i}ON MY FUCKING TRAIN?!" with vpunch
+        mean_offscreen "{bt=a3-p10-s4}{size=+36}PROF. KRANE'S BEEN {i}KIDNAPPED?{/i}" with vpunch
+        mean_offscreen "{bt=a3-p10-s4}{size=+36}ON {i}MY{/i} FUCKING TRAIN?!" with vpunch
     else:
         mean_offscreen "{bt=a3-p10-s4}{size=+36}ON {i}MY{/i} FUCKING TRAIN?!" with vpunch
     mean_offscreen "MY FIRST SHIFT STARTS IN {bt=a3-p10-s4}{i}TWENTY MINUTES!" with hpunch
@@ -2292,6 +2293,7 @@ label train_confront_lupin:
     show mean furious at offscreenleft with MoveTransition(0.25)
     play sound sfx_cat_crash
     show fake_rpg_miss at t_fake_rpg_text(0.48, 0.2)
+    play sound2 "/audio/ut/snd_bluh.ogg" volume 0.5 noloop
     show cs scared flipped
     show tate shock flipped
     with hpunch
@@ -2392,7 +2394,7 @@ label train_confront_lupin:
     show tate sad flipped
     tate "We can't possibly catch up with him..."
     show arceus worried flipped
-    arceus "It looked like he jumped onto the roof!"
+    arceus "I think he jumped onto the roof!"
     show arceus worried at mid_offscreen_left with moveoutleft
     pause 1.0
     arceus "... Fuck, I can't even {i}reach{/i} the roof!"
@@ -2419,6 +2421,9 @@ label train_confront_lupin:
     
     mean "Nah, watch."
     mean "I've got this."
+    
+    # TODO: mean needs to pick a sfx for his transformation sequence
+    # TODO: why does his sprite flip weird? it shouldn't. did i fuck up the sil_white:flip shader?
     
     show tate shock flipped
     show cs worried
@@ -2459,10 +2464,10 @@ label train_confront_lupin:
     mean "You all {i}just{/i} said you can't reach..."
     mean "Never mind."
     show mean human
-    mean "Let me handle this."
+    mean "Anyway, let me handle this."
     n "Mean tosses the others onto the roof!"
     show tate shock flipped
-    tate "Uwaaaaah!"
+    tate "Awawawawawa!"
     show tate shock at t_lupin_out with move
     show cs scared
     cs "Aaaaaaagh!"
@@ -2488,7 +2493,7 @@ label train_on_top:
     show arceus worried at left
     with dissolve
     
-    show mean human angry flipped at mid_left_left with moveinleft
+    show mean human angry flipped at mid_left_left behind arceus with moveinleft
     mean "Hold it right there, criminal scum!"
     show lupin hat
     lupin_offscreen "Wow! You guys sure are determined!"
