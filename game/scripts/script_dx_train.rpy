@@ -2371,7 +2371,7 @@ label train_confront_lupin:
     with moveinright
     
     show tate sheepish flipped
-    tate "Fuck. If CS can't reach it, I don't even have a shot."
+    tate "Well, shit. If CS can't reach it, I don't even have a shot."
     show tate sad
     tate "Mean, I think all the stolen stuff might be gone forever..."
     
