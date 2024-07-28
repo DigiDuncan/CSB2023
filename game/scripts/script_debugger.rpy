@@ -2619,54 +2619,74 @@ label asset_debugger:
         jump exit_debug
     if fun_value (362):
         scene cult_zone1
+        pause 0.1
     else:
         jump exit_debug
     if fun_value (363):
         scene kingman_museum_3
+        pause 0.1
     else:
         jump exit_debug
     if fun_value (364):
         scene kuwait_hallway
+        pause 0.1
     else:
         jump exit_debug
     if fun_value (365):
         scene kuwait_island_outside
+        pause 0.1
     else:
         jump exit_debug
     if fun_value (366):
         scene amtrak_baggage
+        pause 0.1
     else:
         jump exit_debug
     if fun_value (367):
         scene amtrak_coach_1
+        pause 0.1
     else:
         jump exit_debug
     if fun_value (368):
         scene amtrak_coach_2
+        pause 0.1
     else:
         jump exit_debug
     if fun_value (369):
         scene amtrak_observation_1
+        pause 0.1
     else:
         jump exit_debug
     if fun_value (370):
         scene amtrak_observation_2
+        pause 0.1
     else:
         jump exit_debug
     if fun_value (371):
         scene amtrak_top
+        pause 0.1
     else:
         jump exit_debug
     if fun_value (372):
         scene classroom
+        pause 0.1
     else:
         jump exit_debug
     if fun_value (373):
         scene broom_closet
+        pause 0.1
     else:
         jump exit_debug
-
-
+    if fun_value (374):
+        scene vegaspent
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value (375):
+        scene vegasjadepent
+        pause 0.1
+    else:
+        jump exit_debug
 
     n "Done."
     show screen debugger_menu

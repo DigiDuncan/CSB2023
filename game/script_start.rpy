@@ -764,14 +764,14 @@ image mean unamused flipped = "flip:characters/mean/meanunamused.png"
 ## Mean (Human Form)
 image mean human = "characters/mean/meanhumanneutral.png"
 image mean human flipped = "flip:characters/mean/meanhumanneutral.png"
-image mean human happy = "characters/mean/meanhumanhappy.png"
-image mean human happy flipped = "flip:characters/mean/meanhumanhappy.png"
-image mean human annoyed = "characters/mean/meanhumanannoyed.png"
-image mean human annoyed flipped = "flip:characters/mean/meanhumanannoyed.png"
-image mean human shocked = "characters/mean/meanhumanshocked.png"
-image mean human shocked flipped = "flip:characters/mean/meanhumanshocked.png"
-image mean human angry = "characters/mean/meanhumanangry.png"
-image mean human angry flipped = "flip:characters/mean/meanhumanangry.png"
+image mean happy human = "characters/mean/meanhumanhappy.png"
+image mean happy human flipped = "flip:characters/mean/meanhumanhappy.png"
+image mean annoyed human = "characters/mean/meanhumanannoyed.png"
+image mean annoyed human flipped = "flip:characters/mean/meanhumanannoyed.png"
+image mean shocked human = "characters/mean/meanhumanshocked.png"
+image mean shocked human flipped = "flip:characters/mean/meanhumanshocked.png"
+image mean angry human = "characters/mean/meanhumanangry.png"
+image mean angry human flipped = "flip:characters/mean/meanhumanangry.png"
 
 ## Archival
 image k174 = "characters/k174.png"
@@ -1656,6 +1656,77 @@ layeredimage train_boss_final:
     group ignore_me:
         attribute wow default:
             "train_boss_3"
+
+# Finale Flying Train
+
+image train_fly_1:
+    "characters/finale/train_fly_1.png"
+    ease 3.0 rotate -3
+    ease 3.0 rotate 3
+    repeat
+
+image train_fly_2:
+    "characters/finale/train_fly_2.png"
+    ease 3.0 rotate 3
+    ease 3.0 rotate -3
+    repeat
+
+image train_fly_3:
+    "characters/finale/train_fly_2.png"
+    align (0.85, 0.0)
+    ease 3.0 rotate -3
+    ease 3.0 rotate 3
+    repeat
+
+image train_fly_4:
+    "characters/finale/train_fly_2.png"
+    align (1.70, 0.0)
+    ease 3.0 rotate 3
+    ease 3.0 rotate -3
+    repeat
+
+image train_fly_5:
+    "characters/finale/train_fly_2.png"
+    align (2.55, 0.0)
+    ease 3.0 rotate -3
+    ease 3.0 rotate 3
+    repeat
+
+image train_fly_6:
+    "characters/finale/train_fly_2.png"
+    align (3.40, 0.0)
+    ease 3.0 rotate 3
+    ease 3.0 rotate -3
+    repeat
+
+image train_fly_7:
+    "characters/finale/train_fly_2.png"
+    align (4.25, 0.0)
+    ease 3.0 rotate -3
+    ease 3.0 rotate 3
+    repeat
+
+layeredimage flying_train_final:
+    ycenter -100
+    group 123456:
+        attribute 1 default:
+            "train_fly_2"
+        attribute 2 default:
+            "train_fly_3"
+        attribute 3 default:
+            "train_fly_4"
+        attribute 4 default:
+            "train_fly_5"
+        attribute 5 default:
+            "train_fly_6"
+        attribute 6 default:
+            "train_fly_7"
+
+
+    group ignore_me:
+        attribute wow default:
+            "train_fly_1"
+
 # misc
 
 image ai_ducks = SnowBlossom("duck.png", 50)
@@ -2232,30 +2303,47 @@ label test:
     menu:
         "Menu test?"
         "Yes"  (type = "good"):
-            stop music
-            show copguy_ex at left
-            pakoo "This is Copguy EX."
-            show tate_ex at right
-            pakoo "This is Tate EX."
-            pakoo "Does this work? Idk"
-            return
+            $ renpy.full_restart()
         "No"  (type = "bad"):
-            pass
+            $ renpy.full_restart()
         "True"  (type = "true"):
-            stop music
-            scene amtrak_dining_car
-            show cs scared at left
-            show mean scared flipped at right
-            pause 2.0
-            show train_boss_final with easeintop
-            pakoo "This is the train boss."
+            $ renpy.full_restart()
         "New cool thing OwO"  (type = "dx"):
-            pass
-    show screen warning("The following scene is a test.\nIt may be teste.", "Warnings: developer cruft, bad puns", "start")
-    pause
-    perfect_billy "I'm Perfect Billy Mays!"
-    cs "woah that's crazy"
-    $ renpy.full_restart()
+            menu:
+                "Train Boss Test":
+                    stop music
+                    scene amtrak_dining_car
+                    show cs scared at left
+                    show mean scared flipped at right
+                    pause 2.0
+                    show train_boss_final with easeintop
+                    pakoo "This is the train boss."
+                    $ renpy.full_restart()
+                "Screen Test":
+                    show screen warning("The following scene is a test.\nIt may be teste.", "Warnings: developer cruft, bad puns", "start")
+                    pause
+                    $ renpy.full_restart()
+                "EX Test":
+                    stop music
+                    show copguy_ex at left
+                    pakoo "This is Copguy EX."
+                    show tate_ex at right
+                    pakoo "This is Tate EX."
+                    pakoo "Does this work? Idk"
+                    $ renpy.full_restart()
+                "Perfect Billy Test":
+                    perfect_billy "I'm Perfect Billy Mays!"
+                    cs "woah that's crazy"
+                    $ renpy.full_restart()
+                "Flying Train Test":
+                    stop music
+                    show flying_train_final at right with easeinright
+                    pause 1.0
+                    show flying_train_final at left with ease          
+                    pakoo "This is the flying train layered image."
+                    hide flying_train_final with easeoutleft
+                    pause
+                    $ renpy.full_restart()
 
 define shake1 = { "master" : hpunch }
 define shake2 = { "master" : vpunch }

@@ -303,7 +303,7 @@ label fired_hotel_next_day:
     play music now_what volume 0.5
     music Now What? 1 - Dr. Awesome
     if fun_value(FUN_VALUE_MUSIC):
-        cs "That one song has, like, a hundred thousand streams Now what?"
+        cs "That one song has, like, a hundred thousand streams. Now what?"
     else:
         cs "The song has, like, a hundred thousand streams."
     n "Arceus nearly spits out his food."
