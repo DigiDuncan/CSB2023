@@ -15,13 +15,13 @@
 ### FILES
 - Backgrounds must be 1920x1080
 - All audio should be 44.1kHz 16bit .ogg 
-- SFX should must have the `sfx_` prefix
+- SFX should must have the `sfx_` prefix and be placed in the `/sfx` folder.
 - Videos have to be awfully encoded (enforced by Ren'Py), use Handbrake and make a `.webm` with Vorbis audio.
     - PLEASE use 1:1 pixel ratio. that's why fail_end was broken.
 
 ### CODE
 - When labelling characters in script_start, it goes in the order:
-    - (<character> <emotion> <outfit> <time> <flipped>)
+    - `<character> <emotion> <outfit> <time> <flipped>`
     - An example would be: `cs worried cultist dark flipped`
 - All music and sound effects should be defined in `script_start`, under the correct header.
     - Do not use `<loop 0>`, it doesn't do anything.
