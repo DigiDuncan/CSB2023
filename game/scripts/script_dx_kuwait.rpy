@@ -109,7 +109,11 @@ label kuwait_hospital:
     music The Man Who Sold The World - Nirvana
     pause 5
     cs "{i}Where... where am I?{/i}"
-    cs "{i}Everything hurts like hell...{/i}"
+    if fun_value(FUN_VALUE_MUSIC):
+        cs "{i}Am I the man who sold the world?{/i}"
+        cs "{i}Everything hurts like hell...{/i}"
+    else:
+        cs "{i}Everything hurts like hell...{/i}"
     cs "{i}Might as well try opening my eyes.{/i}"
     scene kuwait_hospital_inside 
     show kuwait_doctor_1 at right

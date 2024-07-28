@@ -452,7 +452,14 @@ label england_arceus_place:
     show cs at left with moveinleft
     play music wool_gloves volume 0.4
     music Wool Gloves - imagiro
-    cs "You guys have quite a quaint little place!"
+    if fun_value(FUN_VALUE_MUSIC):
+        cs "You guys have quite a collection of Wool Gloves!"
+        show cs disappointed
+        cs "I meant..."
+        show cs
+        cs "You guys have quite a quaint little place!"
+    else:
+        cs "You guys have quite a quaint little place!"
     show arceus
     arceus "Yep. This is what five quid gets you here."
     cs "Woah, what? How much is a quid?"
@@ -580,7 +587,10 @@ label england_hell_zone:
     hide arceus
     with moveoutright
     scene black with dissolve
-    n "Arceus drives CS up to the studio for the {i}Hell's Kitchen{/i} trial."
+    if fun_value(FUN_VALUE_MUSIC):
+        n "Arceus drives CS up to the studio for the {i}Hell's Kitchen{/i} conflict."
+    else:
+        n "Arceus drives CS up to the studio for the {i}Hell's Kitchen{/i} trial."
     scene car_insidearc_fg flipped
     show hell_outside behind car_insidearc_fg
     show arceus at right
@@ -677,7 +687,10 @@ label england_bad_ramsay:
     cs "Don't know if the Flex Seal adds any taste, but I guess it's worth a try?"
     cs "Alright, well, let's do this."
     scene black with dissolve
-    n "Over the next hour, CS bakes the Flex Cake."
+    if fun_value(FUN_VALUE_MUSIC):
+        n "Over the next hour, CS tumultuously bakes the Flex Cake."
+    else:
+        n "Over the next hour, CS bakes the Flex Cake."
     scene hell_kitchen
     show cs flipped at right
     show gordon at left
@@ -711,7 +724,10 @@ label england_good_ramsay:
     cs "It's gotta work!"
     scene black with dissolve
     n "CS spends the hour mixing together the perfect concoction for Genergy."
-    n "At the five minute mark, Gordon comes out and starts shouting."
+    if fun_value(FUN_VALUE_MUSIC):
+        n "At the five minute mark, Gordon comes out and starts shouting tumultuously."
+    else:
+        n "At the five minute mark, Gordon comes out and starts shouting."
     scene hell_kitchen
     show cs flipped
     with dissolve
@@ -862,6 +878,8 @@ label england_top_zone:
     play music lisbon_fever volume 0.4
     music Lisbon Fever - Dr. Awesome
     n "As they drive up to the track, the gang sees Jeremy, Richard, and James."
+    if fun_value(FUN_VALUE_MUSIC):
+        cs "Aw man, I'm getting Lisbon fever just thinking about this.."
     kitty "Alright, we'll watch from the side of the track."
     show arceus happy
     arceus "Good luck, CS!"
@@ -1285,7 +1303,10 @@ label japan:
     else:        
         play music automatic_love volume 0.4
         music Automatic Love - Siix0
-    cs "Wow, this place is already pretty crazy!"
+    if fun_value(FUN_VALUE_MUSIC):
+        cs "Wow, I'm automatically in love with this place!"
+    else:
+        cs "Wow, this place is already pretty crazy!"
     cs "I feel like this was a better place to pick than England or Sweden."
     cs "And on top of it all, I don't have to worry about the cops anymore!"
     n "CS walks out of the airport."
@@ -1319,7 +1340,10 @@ label japan_two:
     else:  
         play music automatic_love volume 0.4
         music Automatic Love - Siix0
-    cs "Wow, this place is already pretty crazy!"
+    if fun_value(FUN_VALUE_MUSIC):
+        cs "Wow, I'm automatically in love with this place!"
+    else:
+        cs "Wow, this place is already pretty crazy!"
     cs "Well, I don't know anyone who speaks English over here.."
     cs "And I forgot why I was travelling here, to be honest."
     n "CS walks out of the airport."
@@ -1425,7 +1449,10 @@ label japan_anime_adventure:
     cs "{i}What?!"
     play music neko_to_sanpo volume 0.4
     music Neko To Sanpo - NEKO WORKs
-    sayori "Hello, and who might you be?"
+    if fun_value(FUN_VALUE_MUSIC):
+        sayori "Neko to sanpo, and who might you be?"
+    else:
+        sayori "Hello, and who might you be?"
     show cs disappointed
     cs "Uhm..."
     cashier "Does it matter who he is? He said that he's been wearing this outfit forever!"
@@ -1629,7 +1656,10 @@ label japan_miku_pizza:
     show cs
     show miku at center with moveinbottom
     show miku with vpunch
-    miku "What was that?"
+    if fun_value(FUN_VALUE_MUSIC):
+        miku "What was that? I'm in the Real World!"
+    else:
+        miku "What was that?"
     scott_pres "Miku?!"
     cs "Miku!"
     miku "I heard someone was here to see me, so I came up right away."
@@ -1817,7 +1847,10 @@ label sweden:
     show cs at center with moveinleft
     play music creative_exercise loop volume 0.3
     cs "Wow! There's so many people around."
-    cs "I guess I should try to find something to do..."
+    if fun_value(FUN_VALUE_MUSIC):
+        cs "I guess I should try to find a creative exercise to do..."
+    else:
+        cs "I guess I should try to find something to do..."
     cs "I don't have much money left, but I should be able to find a bus to somewhere cool."
     hide cs with moveoutright
     scene bus_zone 
@@ -1856,7 +1889,10 @@ label sweden_second:
     show cs at center with moveinleft
     play music creative_exercise loop volume 0.3
     cs "Wow! There's so many people around."
-    cs "I guess I should try to find something to do..."
+    if fun_value(FUN_VALUE_MUSIC):
+        cs "I guess I should try to find a creative exercise to do..."
+    else:
+        cs "I guess I should try to find something to do..."
     cs "I should be able to find a bus to somewhere cool. I have some money this time!"
     hide cs with moveoutright
     scene bus_zone 
@@ -1913,7 +1949,11 @@ label sweden_aurora_borealis:
     show cs worried with hpunch
     show cs worried at mid_right with move
     show cs worried flipped with determination
-    cs "Ahh!"
+    if fun_value(FUN_VALUE_MUSIC):
+        cs "Ahh! Muumin Tani Fuyu!"
+        moomin "Yep. That's my song."
+    else:
+        cs "Ahh!"
     moomin "I don't mean to alarm you. I just wanted to say hi."
     show cs flipped
     moomin "Who are you?"
@@ -1967,7 +2007,10 @@ label sweden_aurora_borealis:
     play music snufin volume 0.5
     music Snufkin The Traveler - Sumio Shiratori
     show moomin flipped
-    moomin "Hello, Snufkin!"
+    if fun_value(FUN_VALUE_MUSIC):
+        moomin "Hello, Snufkin! The Traveler!"
+    else:
+        moomin "Hello, Snufkin!"
     snufkin "Hello, Moomin. I see you've brought a new friend."
     moomin "Yes, this is CS. He's looking for something, and I thought you could help."
     cs "I'd like to see the Aurora Borealis." 
@@ -2012,7 +2055,10 @@ label sweden_aurora_borealis:
     play music lady_of_the_cold volume 0.5
     music Lady Of The Cold - Sumio Shiratori
     witch "What's all the hubbub about?"
-    cs "Hello, Madam Witch. I'd like your help seeing the Aurora Borealis."
+    if fun_value(FUN_VALUE_MUSIC):
+        cs "Hello, Lady of the cold. I'd like your help seeing the Aurora Borealis."
+    else:
+        cs "Hello, Madam Witch. I'd like your help seeing the Aurora Borealis."
     witch "Oh, is that all? Sure, I can turn it on for you, but I'm gonna need something from you first."
     witch "I've been wanting to make a steamed ham. It's an old family recipe."
     witch "I've just been so busy, I haven't had time to go find a pig for it."
@@ -2093,7 +2139,10 @@ label sweden_ikea:
     play music afternoon_hills volume 0.5
     music Afternoon Hills - BEST MUSIC
     show cs at mid_left with moveinleft
-    ikea_greeter "Welcome to Ikea! Can I help you with anything?"
+    if fun_value(FUN_VALUE_MUSIC):
+        ikea_greeter "Welcome to the Afternoon hills! Can I help you with anything?"
+    else:
+        ikea_greeter "Welcome to Ikea! Can I help you with anything?"
     cs "Yeah, can you show me where the food court is?"
     ikea_greeter "Of course. It's right around that corner and to the left."
     show cs happy
@@ -2176,7 +2225,10 @@ label sweden_ikea:
     show cs disappointed
     cs "Oh, sorry. What's your name?"
     show cs
-    pomni "I'm Pomni."
+    if fun_value(FUN_VALUE_MUSIC):
+        pomni "I'm XDDCC."
+    else:
+        pomni "I'm Pomni."
     pomni "I've been trying to get out of here, but I can't."
     show cs disappointed
     cs "What do you mean? The exit is right over there..."
@@ -2294,7 +2346,13 @@ label sweden_joel:
     play music klaxon_beat loop volume 0.6
     music Klaxon Beat - Kelly Bailey
     joel "I thought {i}I{/i} was a dumbass..."
-    joel "Well, whatever, here's my house."
+    if fun_value(FUN_VALUE_MUSIC):
+        joel "Well, whatever, here's my Klaxon Beat."
+        show cs disappointed
+        pause 1.0
+        joel "I mean, my house."
+    else:
+        joel "Well, whatever, here's my house."
     show cs happy
     cs "Ooh, it's nice."
     show cs

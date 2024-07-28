@@ -56,7 +56,10 @@ label south_start:
     arceus "What pieces?"
     n "CS quickly starts grabbing material from thin air and puts together a new car."
     play sound sfx_lego
-    pause 3.0
+    if fun_value(FUN_VALUE_MUSIC):
+        cs "Brick by brick, suck my dick!"
+    else:
+        pause 3.0
     show cs happy
     cs "Tada!"
     arceus "{i}How did you do that?!"
@@ -176,7 +179,10 @@ label south_utah:
     scene fazlobby with dissolve
     play music tunnely_shimbers volume 0.5
     music Tunnely Shimbers - Mr. Sauceman
-    n "CS walks around in awe as Arceus creeps behind him."
+    if fun_value(FUN_VALUE_MUSIC):
+        n "CS walks around into the tunnel as Arceus shimbers behind him."
+    else:
+        n "CS walks around in awe as Arceus creeps behind him."
     show cs dark at left with moveinleft
     show arceus flipped dark at right with moveinleft
     show arceus dark
@@ -281,7 +287,10 @@ label south_utah:
     music Hard Drive to Munch You - Mr. Sauceman
     show lego eyes
     n "The minifigure's eyes glow as it raises its arms up and starts running at CS."
-    lego "HEEYYYY!!!!!"
+    if fun_value(FUN_VALUE_MUSIC):
+        lego "HARD DRIVE TO MUNCH YOU!!!"
+    else:
+        lego "HEEYYYY!!!!!"
     n "Arceus quickly drags CS out of the way at the last second."
     show arceus dark at left
     show lego eyes at lego_run
@@ -356,7 +365,21 @@ label south_vegas:
         with dissolve
     play music penthouse volume 0.5
     music "Al's Penthouse - Andy Blythe"
-    n "After a few hours of driving, the duo sees the bright Las Vegas sign coming into view."
+    if fun_value(FUN_VALUE_MUSIC):
+        scene vegaspent
+        show cscar1arc
+        show cscar2
+        show arceus flipped at left behind cscar2
+        with dissolve
+        if jade:
+            scene vegasjadepent
+            show cscar1arc
+            show cscar2
+            show arceus flipped at left behind cscar2
+            with dissolve
+        n "After a few hours of driving, the duo sees the bright Al's Penthouse sign coming into view."
+    else:
+        n "After a few hours of driving, the duo sees the bright Las Vegas sign coming into view."
     cs "Woohoo! We're almost there!"
     arceus "Some reckless gambling will probably help me forget about the horrors from that restaurant..."
     n "They enter Las Vegas and find a place to park, then they start heading down The Strip."
@@ -416,7 +439,10 @@ label south_vegas:
 
 label south_vegas_start_slots:
     scene slots with dissolve
-    n "As Arceus wanders off to find a place to relax, CS tries his luck at the slots."
+    if fun_value(FUN_VALUE_MUSIC):
+        n "As Arceus wanders off to find a place to relax, CS tries his luck at the game corner."
+    else:
+        n "As Arceus wanders off to find a place to relax, CS tries his luck at the slots."
     minigame "minigame_slots" "south_vegas_win_slots" "south_vegas_lose_slots"
 
 label south_vegas_win_slots:
@@ -468,7 +494,10 @@ label south_vegas_done_slots:
     show cs disappointed flipped at right with moveinright
     play music laurel_palace volume 0.5
     music Laurel Palace - Manami Matsumae
-    green "Deal us some cards arready!"
+    if fun_value(FUN_VALUE_MUSIC):
+        green "Deal us some cards arready! This is the Laurel Palace after all!"
+    else:
+        green "Deal us some cards arready!"
     scene luigi1
     show green flipped at left
     show cs disappointed flipped at right
@@ -682,7 +711,10 @@ label south_poker3:
         pause 0.3
         play music lancer
         music Lancer - Toby Fox
-        lancer "Hey guys!"
+        if fun_value(FUN_VALUE_MUSIC):
+            lancer "Hey guys! I'm Lancer!"
+        else:
+            lancer "Hey guys!"
         show cs worried flipped
         cs "What in the world??"
         lancer "I just found this cool shiny metal in the back, but it didn't taste very good."
@@ -756,7 +788,10 @@ label south_poker3:
         cs "Woohoo! I won!"
         play music price_right volume 0.5
         music Price Is Right Theme - Edd Kalehoff
-        luigi "Congratulations, sir, you just won 100 million dollars!"
+        if fun_value(FUN_VALUE_MUSIC):
+            luigi "Congratulations, sir! The price is right! Theme! You just won 100 million dollars!"
+        else:
+            luigi "Congratulations, sir, you just won 100 million dollars!"
         cs "Yay! I can pay for my Creative Cloud without donations!"
         n "CS jumps into the air and cheers."
         show cs flipped
@@ -875,7 +910,10 @@ label south_airport:
     hide arceus
     with moveoutleft
     scene black with dissolve
-    n "CS drives to the airport nearest to Las Vegas."
+    if fun_value(FUN_VALUE_MUSIC):
+        n "CS drives to infiltrate the airport nearest to Las Vegas."
+    else:
+        n "CS drives to the airport nearest to Las Vegas."
     scene airport_interior with dissolve
     play music airport volume 0.4
     music Airport Infiltration - Andy Blythe & Marten Joustra
@@ -998,7 +1036,10 @@ label south_airport_bad:
     hide arceus flipped
     with moveoutleft
     scene black with dissolve
-    n "CS drives to the airport nearest to Las Vegas."
+    if fun_value(FUN_VALUE_MUSIC):
+        n "CS drives to infiltrate the airport nearest to Las Vegas."
+    else:
+        n "CS drives to the airport nearest to Las Vegas."
     scene airport_interior with dissolve
     play music airport volume 0.4
     music Airport Infiltration - Andy Blythe & Marten Joustra
@@ -1459,7 +1500,13 @@ label south_noairport:
     n "All of a sudden, the sentient craptop pops out of the TV!"
     show craptopreal at truecenter with moveinbottom
     craptop "Yo! What's up, fellas? It's me, the craptop!"
-    craptop "I hate all of you!"
+    if fun_value(FUN_VALUE_MUSIC):
+        craptop "Pierrot of the Star Spangled Banner - ZUN!"
+        show cs happy
+        show arceus angry        
+        arceus "Oh, fuck off!"
+    else:
+        craptop "I hate all of you!"
     craptop "So, yeah, take this random shit on my hard drive!"
     n "The craptop starts spewing out random shit?"
     show monika at center with moveintop

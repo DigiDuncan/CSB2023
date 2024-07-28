@@ -36,7 +36,15 @@ label fired_new_plan:
     arceus "Man, I don't know."
     play music dealin_dope volume 0.5
     music Dealin Dope - Dr. Awesome
-    cs "No, I got fired."
+    if fun_value(FUN_VALUE_MUSIC):
+        cs "No, I got caught dealin' dope."
+        show arceus angry
+        arceus "What the fuck?"
+        cs "Hey, at least I'm not drinking, Arceus."
+        show arceus
+        cs "But no, I got fired."
+    else:
+        cs "No, I got fired."
     arceus "Aw, man. That sucks. I'm sure we'll figure it out."
     arceus "Come on, let's go back to the hotel. We can think of something, I'm sure."
     cs "Alright, man, thanks. Let's go."
@@ -108,7 +116,10 @@ label fired_new_plan:
     n "Anno and Arceus look at each other confused."
     show cs guitar at left with moveinleft
     n "CS comes back holding two guitar controllers and a drum kit."
-    cs "Saw 'em on the side of the road. Couldn't pass 'em up."
+    if fun_value(FUN_VALUE_MUSIC):
+        cs "Saw 'em on the side of the road. Couldn't pass 'em up. Now, hit me with your best shot!"
+    else:
+        cs "Saw 'em on the side of the road. Couldn't pass 'em up."
     jump fired_guitar_hero
 
 label fired_guitar_hero:
@@ -146,7 +157,10 @@ label fired_guitar_hero:
     with dissolve
     play music hightop volume 0.5
     music Hightop - Dr. Awesome
-    cs "Maybe we should call Blank. He's, like... an actual musician."
+    if fun_value(FUN_VALUE_MUSIC):
+        cs "Maybe we should call Blank if we wanna get high on top. He's, like... an actual musician."
+    else:
+        cs "Maybe we should call Blank. He's, like... an actual musician."
     show cs phone
     n "CS calls Blank on Discord."
     blank "CS? Where the heck have you been?"
@@ -177,7 +191,10 @@ label fired_write_song:
     show cs at center with moveinbottom
     cs "Wanna play it one more time?"
     anno "Can do!"
-    n "Anno hits play on the track."
+    if fun_value(FUN_VALUE_MUSIC):
+        n "Anno longs to ever hit play on the track."
+    else:
+        n "Anno hits play on the track."
     play music everlong volume 0.5
     music Everlong - Foo Fighters
 
@@ -249,7 +266,10 @@ label fired_hotel_next_day:
     play music local_forecast volume 0.5
     music Local Forecast - Kevin MacLeod
     pause 2.0
-    cs "So, see any good shows lately?"
+    if fun_value(FUN_VALUE_MUSIC):
+        cs "So, anyone see the local forecast?"
+    else:
+        cs "So, see any good shows lately?"
     arceus "You watch TV?"
     cs "Not really."
     arceus "Mmm."
@@ -282,7 +302,10 @@ label fired_hotel_next_day:
     n "Arceus and Anno are stuffing their faces."
     play music now_what volume 0.5
     music Now What? 1 - Dr. Awesome
-    cs "The song has, like, a hundred thousand streams."
+    if fun_value(FUN_VALUE_MUSIC):
+        cs "That one song has, like, a hundred thousand streams Now what?"
+    else:
+        cs "The song has, like, a hundred thousand streams."
     n "Arceus nearly spits out his food."
     # DX: arceus shocked?
     arceus "It has {i}what?!{/i}"
@@ -328,7 +351,10 @@ label fired_song_2:
     n "Anno tinkers around for a moment on his laptop, until..."
     play music happy_rock volume 0.5
     music Happy Rock - Benjamin TISSOT
-    n "An upbeat rock instrumental plays from Anno's computer."
+    if fun_value(FUN_VALUE_MUSIC):
+        n "A happy rock instrumental plays from Anno's computer."
+    else:
+        n "An upbeat rock instrumental plays from Anno's computer."
     show arceus happy
     arceus "Heck yeah, awesome. Okay, here I go..."
     arceus "{cps=15}{image=note_small1.png} We're going down to Vegas,{w=1.5} we're gonna strike it rich!{w=1.5}\nWe're going down to Vegas..."
@@ -421,7 +447,10 @@ label fired_ep_time:
     cs "Oh? Hit us with it!"
     anno "Well, I know I want it to be about travelling the world, but I don't know what to say for some of the lines."
     cs "I can help fill them in!"
-    anno "Alright, awesome, here's what I've got..."
+    if fun_value(FUN_VALUE_MUSIC):
+        anno "Alright, awesome, here's the energetic rock song I've got..."
+    else:
+        anno "Alright, awesome, here's what I've got..."
     play music energetic_rock volume 0.5
     music Energetic Rock - Every Day Music
     anno "{cps=15}{image=note_small1.png} I made my way over to Japan... {image=note_small2.png}"
@@ -547,14 +576,20 @@ label fired_mcd:
     with dissolve
     play music fnaf_6 volume 0.5
     music Racing Minigame Song - FNAF 6
-    n "CS and the gang sit at a table in the McDonald's and eat their food."
+    if fun_value(FUN_VALUE_MUSIC):
+        n "CS and the gang race over to the minigame table in the McDonald's and eat their food."
+    else:
+        n "CS and the gang sit at a table in the McDonald's and eat their food."
     n "As they eat, they start talking about their next song."
     cs "Okay, I had this idea, but it's a bit out there."
     anno "Alright, let's hear it."
     $ renpy.music.set_pause(True, "music")
     play music2 france volume 0.5
     music Guillotine World - Kikiyama
-    cs "{cps=15}{image=note_small1.png} I'M GONNA TAKE OVER THE WORLD.{w=1.0} I'M GONNA KILL GOD.{w=1.0} I CAN CONTORT REALITY TO MY WHIMS-- {image=note_small2.png}"
+    if fun_value(FUN_VALUE_MUSIC):
+        cs "{cps=15}{image=note_small1.png} I'M GONNA TAKE OVER THE GUILLOTINE WORLD.{w=1.0} I'M GONNA KILL GOD.{w=1.0} I CAN CONTORT REALITY TO MY WHIMS-- {image=note_small2.png}"
+    else:
+        cs "{cps=15}{image=note_small1.png} I'M GONNA TAKE OVER THE WORLD.{w=1.0} I'M GONNA KILL GOD.{w=1.0} I CAN CONTORT REALITY TO MY WHIMS-- {image=note_small2.png}"
     stop music2
     music end
     $ renpy.music.set_pause(False, "music")
@@ -568,7 +603,10 @@ label fired_mcd:
     anno "Yeah...?"
     cs "Well, I don't have all the lyrics yet..."
     show arceus
-    arceus "Maybe this time, {i}we{/i} can fill in the lines!"
+    if fun_value(FUN_VALUE_MUSIC):
+        arceus "Maybe this time, {i}we{/i} can take over the Dragon Castle!"
+    else:
+        arceus "Maybe this time, {i}we{/i} can fill in the lines!"
     cs "Okay! Here's what I have so far..."
     $ renpy.music.set_pause(True, "music")
     play music2 dragon_castle volume 0.5
@@ -627,7 +665,10 @@ label fired_hotel_lobby_2:
     with dissolve
     play music gold_room volume 0.5
     music Youre At A Ball In The Gold Room - Nemos Dreamscapes
-    n "As they walk through the hotel lobby to their room, they hum their newest song to themselves."
+    if fun_value(FUN_VALUE_MUSIC):
+        n "As they walk through the gold room to their ball, they hum their newest song to themselves."
+    else:
+        n "As they walk through the hotel lobby to their room, they hum their newest song to themselves."
     cs "{cps=15}{image=note_small1.png} {i}[line_5]{/i} {image=note_small2.png}"
     n "Someone in the lobby overhears them singing the song and runs up to them."
     show guest at right with moveinright
@@ -682,7 +723,10 @@ label fired_song_5:
     anno "Nah, you filled in our blanks."
     arceus "Yeah, why don't you write the whole thing this time!"
     cs "Oh, gosh, you guys sure?"
-    anno "Yeah, go ahead! Here, I'll give you a beat..."
+    if fun_value(FUN_VALUE_MUSIC):
+        anno "Yeah, go ahead! Here, I'll give you a sweet victory..."
+    else:
+        anno "Yeah, go ahead! Here, I'll give you a beat..."
     play music sweet_victory volume 0.5
     music Sweet Victory - David Eisley
     n "Anno plays an upbeat song on his laptop."
@@ -717,7 +761,10 @@ label fired_fan_interaction:
     scene hotel_door with dissolve
     play music dig_this volume 0.5
     music Dig This - Dr. Awesome
-    cs "Huh? Who the fuck knocks on a hotel door, especially at this hour?"
+    if fun_value(FUN_VALUE_MUSIC):
+        cs "Huh? Who the fuck digs this on a hotel door, especially at this hour?"
+    else:
+        cs "Huh? Who the fuck knocks on a hotel door, especially at this hour?"
     show cs angry at left with moveinleft
     cs "Hello?"
     show mean surprised flipped at right with moveinright
@@ -801,7 +848,6 @@ label fired_howie:
     stop music fadeout 3.0
     scene black with dissolve
     n "After a few hours, the band meets Howie downstairs in the lobby."
-
     scene hotel_lobby
     show anno
     show cs flipped at mid_right
@@ -834,7 +880,10 @@ label fired_limo_time:
     with dissolve
     play music exotic volume 0.5
     music Exotic - Panda Beats ft. Newenx
-    arceus "These snacks are amazing!"
+    if fun_value(FUN_VALUE_MUSIC):
+        arceus "These snacks are exotic!"
+    else:
+        arceus "These snacks are amazing!"
     anno "This music's awesome!"
     cs "These seats sure are comfy!"
     agent "Alright, boys, enough chat, let's talk business."
@@ -926,7 +975,10 @@ label fired_signed_the_contract:
     show cs surprised
     cs "Ah!"
     show cs
-    csgod "I would not fret about Linus."
+    if fun_value(FUN_VALUE_MUSIC):
+        csgod "I would not fret about another, especially him."
+    else:
+        csgod "I would not fret about Linus."
     cs "How- how did you--"
     csgod "What you did was your best. Good men will realize that. His anger will have been brief, despite his rash actions."
     cs "How do you know all this?"

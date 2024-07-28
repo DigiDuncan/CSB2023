@@ -40,8 +40,11 @@ label friend_microcenter:
     n "CS goes to Microcenter."
     show cs at left with moveinleft
     show cs happy
-    cs "Okay, gamers, we are buying some parts for our epic computing machine. Let's go inside the magical concrete structure to buy some computing parts."  # the fuck is this line Pakoo -- DD
-    cs "Wow, this building looks a lot bigger than the places I would go shopping at near home."
+    cs "Okay, gamers, we are buying some parts for our epic computing machine. Let's go inside the magical concrete structure to buy some computing parts."  # the fuck is this line Aria -- DD
+    if fun_value(FUN_VALUE_MUSIC):
+        cs "Wow, this building looks a lot bigger than the places I would go shopping at near home. I had to take the Morning Highway to get here!"
+    else:
+        cs "Wow, this building looks a lot bigger than the places I would go shopping at near home."
     hide cs at right with moveoutright
     n "CS enters the building."
     scene microinside with dissolve
@@ -214,7 +217,10 @@ label friend_high_gpu:
     show cs at mid_left with moveinleft
     linus "Hey, CS!"
     cs "Hey, Linus!"
-    linus "Let's see how our video did!"
+    if fun_value(FUN_VALUE_MUSIC):
+        linus "Let's peek at some polka pixels!"
+    else:
+        linus "Let's see how our video did!"
     n "Linus and CS sit down at the desk while Linus pulls up the video."
     scene comments with dissolve
     play music pixel_peeker_polka loop volume 0.4
@@ -327,7 +333,7 @@ label friend_attack_fanboy:
     play sound sfx_yelling loop
     show cs angry at center with dissolve
     if fanboy_type == "nvidia":
-        "Fanboys" "Boo!! You suck! NVIDIA is the best!"  
+        "Fanboys" "Boo!! You suck! NVIDIA is the best!"
         cs "Yeah, well, let's see about that!"
         stop sound fadeout 3.0
         jump rpg_fanboy_fight_nvidia     
@@ -380,7 +386,10 @@ label friend_after_fanboy:
     show cs
     arceus "CS? Do you have a minute?"
     cs "Looks like I do now, why?"
-    arceus "We need to talk for a moment. Can we go somewhere private in the meantime?"
+    if fun_value(FUN_VALUE_MUSIC):
+        arceus "We need to talk for a moment. Can we go somewhere private and play a low budget song in the meantime?"
+    else:
+        arceus "We need to talk for a moment. Can we go somewhere private in the meantime?"
     cs "Sure, I guess, yeah."
     show arceus flipped with determination
     hide cs
@@ -697,7 +706,18 @@ label friend_fire_range:
     show arceus flipped at left with moveinleft
     play music cp_violation loop volume 0.6
     music CP Violation - Kelly Bailey
-    arceus "Alright, CS. We've gotta go, now."
+    if fun_value(FUN_VALUE_MUSIC):
+        show cs worried
+        arceus "Alright, CS. We've gotta go, now."
+        cs "Uhh… yeah."
+        cs "Hey Arc, you remember what happened with the Subway guy?"
+        arceus "Yeah, that was fucked up."
+        arceus "That was a while ago now, wasn't it?"
+        cs "Yeah."
+        arceus "...Why do you bring that up now?"
+        cs "Uhh… nevermind."
+    else:
+        arceus "Alright, CS. We've gotta go, now."
     linus "Heyy! How'd you get down here?"
     show cs disappointed
     cs "Alright... I've gotta go. This is important."
@@ -839,7 +859,10 @@ label friend_fire_range:
     show carguy at mid_right with moveinright
     play music mm_complete loop volume 0.6
     music Mm Complete - Matthew Simmonds
-    carguy "Check out all these nice cars!"
+    if fun_value(FUN_VALUE_MUSIC):
+        carguy "Mm, Check out all these nice complete cars!"
+    else:
+        carguy "Check out all these nice cars!"
     carguy "Nooooot so nice that you fellas don't have a car, though."
     carguy "Wouldn't it be nice if having a car was {i}this{/i} easy?"
     pakoo "Yeah, you know how expensive cars are these days?"

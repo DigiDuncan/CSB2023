@@ -108,7 +108,11 @@ label train_intro_start:
         show arceus happy flipped
 
     arceus "...Yeah!"
-    arceus "That sounds like a great idea!"
+    if fun_value(FUN_VALUE_MUSIC):
+        arceus "That selects like a sub-game idea!"
+        cs "...yeah."
+    else:
+        arceus "That sounds like a great idea!"
     arceus "We could just relax and watch the world go by!"
     arceus "Nobody has to drive, we won't have to worry about finding rest stops, {i}and{/i} I won't have a panic attack inside of a flying metal tube!"
     cs "I dunno... How long would it take, though? A flight would only be a few hours."
@@ -167,8 +171,10 @@ label train_intro_start:
     jump train_story_begin
 
 label train_story_begin:
-
-    n "A little over an hour later, the two arrive at Kingman Amtrak Station."
+    if fun_value(FUN_VALUE_MUSIC):
+        n "A little over an hour later, the two arrive outdoors of the Kingman Amtrak Station."
+    else:
+        n "A little over an hour later, the two arrive at Kingman Amtrak Station."
 
     scene kingman_exterior
     show cscar1
@@ -524,7 +530,10 @@ label train_kingman_platform:
     scene kingman_train_arrive with dissolve
     play music ochre_woods_day if_changed
     music Ochre Woods ~ Day - Miki Obata
-    n "The two watch as the locomotive approaches the station and eventually slows to a stop."
+    if fun_value(FUN_VALUE_MUSIC):
+        n "The two watch as the locomotive approaches the Ochre woods during the day, and eventually slows to a stop."
+    else:
+        n "The two watch as the locomotive approaches the station and eventually slows to a stop."
     hide cs
     hide arceus
 
@@ -677,16 +686,30 @@ label train_boarding:
     pause 1.0
     show tate flipped
     pause 0.5
-    tate "... And, {i}this{/i} way is the sleeper car! Your room is--{w=0.25}{nw}"
-    show amtrak_stewardess flipped
-    amtrak_stewardess "Tate."
-    show tate
-    tate "Hm?"
-    amtrak_stewardess "You're doing it again."
-    show tate sheepish
-    tate "Doing what again?"
-    amtrak_stewardess "Doing {i}my{/i} job."
-    show tate sad
+    if fun_value(FUN_VALUE_MUSIC):
+        tate "... And, {i}this{/i} way is the bedroom car! Your room is--{w=0.25}{nw}"
+        show amtrak_stewardess flipped
+        amtrak_stewardess "Tate."
+        show tate
+        tate "Hm?"
+        amtrak_stewardess "Bedroom {i}~ Day.{/i}"
+        show tate sheepish
+        tate "I know but–{w=1.0}{nw}"
+        amtrak_stewardess "Keep up with the bit."
+        show tate sad
+        tate "But CS gets away with it all the time..."
+        amtrak_stewardess "Also, stop doing {i}my{/i} job."
+    else:
+        tate "... And, {i}this{/i} way is the sleeper car! Your room is--{w=0.25}{nw}"
+        show amtrak_stewardess flipped
+        amtrak_stewardess "Tate."
+        show tate
+        tate "Hm?"
+        amtrak_stewardess "You're doing it again."
+        show tate sheepish
+        tate "Doing what again?"
+        amtrak_stewardess "Doing {i}my{/i} job."
+        show tate sad
     amtrak_stewardess "I know that Mean lets you get away with a lot, but you {i}really{/i} need to let us work."
     amtrak_stewardess "Why don't you catch up with your friends here until he wakes up?"
     amtrak_stewardess "{size=-15}Or, why don't {i}you{/i} have a nap, too? {w=0.25}Do you {i}ever{/i} sleep?"
@@ -869,8 +892,10 @@ label train_enter_sleeper:
     show arceus worried
     with shake2
     play sound sfx_hard_knock
-
-    n "A sudden hard knock on the door startles the group."
+    if fun_value(FUN_VALUE_MUSIC):
+        n "A sudden item bouncing on the door startles the group."
+    else:
+        n "A sudden hard knock on the door startles the group."
 
     play music item_bounce volume 0.8 if_changed
     music Item Bounce - Akira Miyagawa
@@ -1218,8 +1243,10 @@ label train_dining:
     music Krabby Klub - Tsukasa Tawada
     pause 0.5
     show arceus at center with moveinright
-
-    n "Arceus arrives at the dining car."
+    if fun_value(FUN_VALUE_MUSIC):
+        n "Arceus arrives at the Krabby Klub."
+    else:
+        n "Arceus arrives at the dining car."
     n "The aromas of so many different foods mingling together overwhelm his canine senses."
     arceus "Geez, it smells like a high school cafeteria..."
     arceus "I think I'll just grab myself a bottle of wine and get out of here."
@@ -1294,7 +1321,10 @@ label train_dining:
 
     show mean furious
     mean_offscreen "{i}WHAT?!" with hpunch
-    mean_offscreen "{bt=a3-p10-s4}{size=+36}ON {i}MY{/i} FUCKING TRAIN?!" with vpunch
+    if fun_value(FUN_VALUE_MUSIC):
+        mean_offscreen "{bt=a3-p10-s4}{size=+36}PROF. KRANE'S BEEN {i}KIDNAPPED?{/i}ON MY FUCKING TRAIN?!" with vpunch
+    else:
+        mean_offscreen "{bt=a3-p10-s4}{size=+36}ON {i}MY{/i} FUCKING TRAIN?!" with vpunch
     mean_offscreen "MY FIRST SHIFT STARTS IN {bt=a3-p10-s4}{i}TWENTY MINUTES!" with hpunch
     n "One can practically see the gears begin to turn in Arceus' head as he realizes who he is talking to."
 
@@ -1450,7 +1480,10 @@ label train_wakeup:
     tate "I guess... {w=0.5}{size=-5}that would have been... {w=0.5}{size=-5}an {i}important{/i} detail to...{w=1.0}"
     tate "{size=-15}{i}Fuck..."
     pause 3.0
-    n "Heavy breathing approaches from the hallway."
+    if fun_value(FUN_VALUE_MUSIC):
+        n "Heavy breathing approaches from E. Gadd's Lab."
+    else:
+        n "Heavy breathing approaches from the hallway."
     pause 1.0
 
     show mean tired at mid_offscreen_left
@@ -1700,7 +1733,10 @@ label train_meanwhile:
     music "ONBS - Tsukasa Tawada"
 
     pause 1.0
-    lupin_offscreen "This is {i}perfect!{/i} I can't believe I could just waltz on in like that!"
+    if fun_value(FUN_VALUE_MUSIC):
+        lupin_offscreen "This is {i}perfect!{/i} I can't believe I could just ONBS on in like that!"
+    else:
+        lupin_offscreen "This is {i}perfect!{/i} I can't believe I could just waltz on in like that!"
     show lupin hat with dissolve
     lupin_offscreen "And with {i}this..."
     lupin_offscreen "Nobody would ever suspect the driver, right?"
@@ -2522,7 +2558,10 @@ label train_tate_ex_encounter:
     pause 1.0
     cs "Tate?"
     cs "You can't sleep, either?"
-    tate "Sure can't."
+    if fun_value(FUN_VALUE_MUSIC):
+        tate "Sure can't. I have Insomnia."
+    else:
+        tate "Sure can't."
     "..."
     pause 2.0
     cs "... Tate? Are you alright?"

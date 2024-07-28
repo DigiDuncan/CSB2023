@@ -58,7 +58,10 @@ label michigan_bronson:
     show billy car turn
     billy "CS, I already said we aren't going there, okay?"
     arceus "I'm getting chills thinking about it, too. CS is right."
-    billy "Okay, shut up! Let me drive!"
+    if fun_value(FUN_VALUE_MUSIC):
+        billy "Okay, shut up! On me drive!"
+    else:
+        billy "Okay, shut up! Let me drive!"
     play music upon_me
     music Upon Me - Dr. Awesome
     cs "Billy, you took the Bronson exit."
@@ -1452,7 +1455,10 @@ label michigan_interstate_94:
     show cs at left
     show arceus dirty flipped at mid_left
     with moveinleft
-    mario "Hey, paisanos! Welcome to my laundromat!"
+    if fun_value(FUN_VALUE_MUSIC):
+        mario "Hey, paisanos! Welcome to my Tubular Trash Zone!"
+    else:
+        mario "Hey, paisanos! Welcome to my laundromat!"
     show arceus dirty worried flipped
     arceus "Wait, Mario? Why are you here?"
     mario "Why are you surprised? My name's on the sign and my picture's in the window."

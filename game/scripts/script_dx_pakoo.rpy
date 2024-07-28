@@ -5,7 +5,10 @@ label dx_after_true:
     n "This story takes place a year or so the events that took place in the True Route."
     n "CS' life went back to normal, working on YTPs and reacting to car crash videos on stream."
     n "Arceus went to England to live a happy life with Kitty..."
-    n "As for Billy, he's still on the road, pitching his various products."
+    if fun_value(FUN_VALUE_MUSIC):
+        n "As for Billy, he's still on the road, hearing his baby: Spring Remix, and pitching his various products."
+    else:
+        n "As for Billy, he's still on the road, pitching his various products."
     scene start_route with dissolve
     play music letshearspring volume 2
     music "Let's Hear My Baby: Spring Remix - Pakoo"  
@@ -63,7 +66,10 @@ label dx_after_true:
     stop music fadeout 3.0
     music end
     n "Billy puts blindfolds on CS and Arc, then they all head out."
-    n "After what feels like forever, they arrive at their destination."
+    if fun_value(FUN_VALUE_MUSIC):
+        n "After what feels like forever, they arrive at their Echoing: Spring Remix destination."
+    else:
+        n "After what feels like forever, they arrive at their destination."
     play music echoing_spring volume 2
     music "Echoing: Spring Remix - Pakoo" 
     billy "Alright, you can take the blindfolds off."
@@ -147,7 +153,10 @@ label dx_after_true:
     music end
     stop sound fadeout 5.0
     n "A flash of blinding light engulfs CS. The rest of the forest disappears from his view."
-    n "As CS slowly opens his eyes, he finds himself in an unforgiving place."
+    if fun_value(FUN_VALUE_MUSIC):
+        n "As CS slowly opens his eyes, he finds himself in an alien atmosphere."
+    else:
+        n "As CS slowly opens his eyes, he finds himself in an unforgiving place."
     scene roombacks
     show cs concentrate
     with dissolve
@@ -240,7 +249,11 @@ label dx_after_back_to_story:
     play music apple_kid
     music "Apple Kid - Keiichi Suzuki"
     cs "...and what the hell is this outfit?"
-    pencil "Welcome to the Pencil Cult!"
+    if fun_value(FUN_VALUE_MUSIC):
+        pencil "Welcome, Apple kid, to the Pencil Cult!"
+        cs "That's not my name..."
+    else:
+        pencil "Welcome to the Pencil Cult!"
     cs "..."
     cs "Should I even ask?"
     pencil "Every year, we host PencilCon, the biggest gathering of pencil lovers worldwide!"
@@ -276,7 +289,10 @@ label dx_after_back_to_story:
     play music ten_feet_away
     music "10 Feet Away - Dr. Awesome"
     cs "God, what the fuck is all of this?"
-    cs "I can't tell if I'm still in the past, or what..."
+    if fun_value(FUN_VALUE_MUSIC):
+        cs "I can't tell if I'm still in the past, or 10 feet away..."
+    else:
+        cs "I can't tell if I'm still in the past, or what..."
     cs "I need to find a way out of here."
     n "Just as CS starts looking for an exit, a video starts playing on one of the many TVs around the convention hall."
     scene black with dissolve
@@ -461,7 +477,11 @@ label dx_after_competiton_start:
     cultist "Now go out there and--{nw}"
     play music hitsquad_2
     music "Hitsquad 2 - Dr. Awesome"
-    cruise "Hey you purple-hooded idiots!"
+    if fun_value(FUN_VALUE_MUSIC):
+        cruise "Hey you hit squad, 2, idiots!"
+        cs "Yeah, you tried."
+    else:
+        cruise "Hey you purple-hooded idiots!"
     show cruise flipped at center with moveinleft
     show cs angry cultist
     cultist_2 "Yeah, what do {i}you{/i} want?"

@@ -472,7 +472,11 @@ label friend2_cs_rage:
     play music triage_at_dawn loop volume 0.6
     music Triage At Dawn - Kelly Bailey
     show arceus worried dark flipped
-    arceus "CS, we need a minute. We just fought a tank."
+    if fun_value(FUN_VALUE_MUSIC):
+        arceus "CS, we need a minute."
+        arceus "We just had a Triage, and it's almost dawn!"
+    else:
+        arceus "CS, we need a minute. We just fought a tank."
     cs "No time for that! We need to stop him {i}now!{/i}"
     show tate srs dark
     tate "CS, no. We've really gotta wait a sec."
@@ -627,7 +631,15 @@ label friend2_car_ride_3:
     with dissolve
     play music the_whale loop volume 0.6
     music The Whale - Dr. Awesome
-    n "While they are driving, Arceus notices that Copguy starts ludicrously speeding up until he stops in Illinois."
+    if fun_value(FUN_VALUE_MUSIC):
+        n "While they are driving, Arceus notices that The Whale starts ludicrously speeding up until he stops in Illinois."
+        show arceus worried flipped
+        arceus "What the hell is that?"
+        cs "What is it, Arceus?"
+        show arceus flipped
+        arceus "Sorry, I thought I saw a flying whale on the GPS, but it was Copguy."
+    else:
+        n "While they are driving, Arceus notices that Copguy starts ludicrously speeding up until he stops in Illinois."
     arceus "Guys, I think I found out where Copguy is headed."
     if fun_value(FUN_VALUE_COMMON):
         arceus "He's stopped in Chigaco."
@@ -691,7 +703,10 @@ label friend2_final_meetup:
     music Prophet 2001 - Dr. Awesome
     arceus "Alright, we are here."
     pakoo "So, who is joining us to help fight Copguy?"
-    cs "Let's go take a look."
+    if fun_value(FUN_VALUE_MUSIC):
+        cs "Well, the prophet from 2001 will be here, but let's go take a look."
+    else:
+        cs "Let's go take a look."
     scene black with dissolve
     n "The teams leave their cars and meet up with one another."
     scene final_destination with dissolve
@@ -722,7 +737,10 @@ label friend2_final_meetup:
     db "But I'll gladly encourage you while you all are fighting!"
     cs "No problem DB! Every little bit helps!"
     tate "Y'all ready?"
-    cs "Hell yeah! Let's go put Copguy through the slammer!"
+    if fun_value(FUN_VALUE_MUSIC):
+        cs "Hell yeah! Let's go send Copguy Trans Atlantic!"
+    else:
+        cs "Hell yeah! Let's go put Copguy through the slammer!"
     stop music fadeout 3.0
     music end
     scene black with dissolve
@@ -830,7 +848,10 @@ label friend2_car_slam:
     show arceus flipped at mid_mid_left with moveinleft
     arceus "Did we get him?"
     show pakoo flipped at left with moveinleft
-    pakoo "Man, that was insane. You guys demolished this place!"
+    if fun_value(FUN_VALUE_MUSIC):
+        pakoo "Man, that was insane. You really found your Weapon Of Choice!"
+    else:
+        pakoo "Man, that was insane. You guys demolished this place!"
     show cs disappointed flipped
     cs "I hope Copguy is dead. I am {i}definitely{/i} going to jail for this one if he's still alive!"
     n "CS continues to check on the others."
@@ -941,7 +962,10 @@ label friend2_car_slam:
     cs "Relax, we destroyed the majority of the police force."
     db "Wait, so does that mean... {i}we{/i} were the bad guys all along?"
     cs "Nah."
-    cs "That man was like, {i}deranged.{/i}"
+    if fun_value(FUN_VALUE_MUSIC):
+        cs "You're the Legend, man. That man was like, {i}deranged.{/i}"
+    else:
+        cs "That man was like, {i}deranged.{/i}"
     scene black with dissolve
     window hide
     show paper at center with easeinright
