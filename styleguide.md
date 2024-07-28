@@ -21,8 +21,8 @@
 
 ### CODE
 - When labelling characters in script_start, it goes in the order:
-    - `<character> <emotion> <outfit> <time> <flipped>`
-    - An example would be: `cs worried cultist dark flipped`
+    - `<character> <form> <emotion> <outfit> <time/color shader> <flipped>`
+    - An example would be: `mean human happy hat dark flipped`
 - All music and sound effects should be defined in `script_start`, under the correct header.
     - Do not use `<loop 0>`, it doesn't do anything.
     - Do not use `volume 1`, it also doesn't do anything.
