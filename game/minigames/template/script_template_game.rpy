@@ -28,7 +28,7 @@ init python:
             return [] # Assets needed to load
 
 
-screen templategame:
+screen templategame():
     default templategame = TemplateGameDisplayable()
     # Add a background or any static images here.
     add templategame

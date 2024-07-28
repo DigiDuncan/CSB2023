@@ -150,7 +150,7 @@ init python:
         def visit(self):
             return [self.scissors]
 
-screen editgame:
+screen editgame():
     default editgame = EditGameDisplayable()
     # Add a background or any static images here.
     add "minigames/editing/bg.png"

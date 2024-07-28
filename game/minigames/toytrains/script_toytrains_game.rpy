@@ -130,7 +130,7 @@ init python:
         def visit(self):
             return [self.bg, self.train_cs, self.train_arceus] # Assets needed to load
 
-screen toytrainsgame:
+screen toytrainsgame():
     default toytrainsgame = ToyTrainsGameDisplayable()
     # Add a background or any static images here.
     add "minigames/toytrains/bg_carpet.png"

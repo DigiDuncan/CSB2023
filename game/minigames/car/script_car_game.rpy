@@ -196,7 +196,7 @@ init python:
             return [self.billycar, self.ufo, self.laser]
 
 
-screen cargame:
+screen cargame():
     default cargame = CarGameDisplayable()
     add "minigames/car/background.png" at transform:
         yanchor 0.5 ypos 0.0

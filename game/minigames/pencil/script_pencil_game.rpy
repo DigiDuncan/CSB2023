@@ -176,7 +176,7 @@ init python:
             return [self.pencil_sharpener, self.current_pencil, self.keyboard_q, self.keyboard_e]
 
 
-screen pencilgame:
+screen pencilgame():
     default pencilgame = PencilGameDisplayable()
     add "minigames/pencil/stage.png"
     add "minigames/pencil/table.png" at transform:

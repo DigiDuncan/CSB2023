@@ -176,7 +176,7 @@ init python:
             return [self.pencil_sharpener, self.current_pencil, self.keyboard_q, self.keyboard_e]
 
 
-screen pencil2game:
+screen pencil2game)_:
     default pencil2game = Pencil2GameDisplayable()
     add "minigames/pencil2/pencilboss.png"
     add "minigames/pencil/table.png" at transform:

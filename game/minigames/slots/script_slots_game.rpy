@@ -170,7 +170,7 @@ init python:
             return [self.bg, self.fg] # Assets needed to load
 
 
-screen slotsgame:
+screen slotsgame():
     default slotsgame = SlotsGameDisplayable()
     # Add a background or any static images here.
     add slotsgame
