@@ -2459,7 +2459,7 @@ label train_confront_lupin:
     
     "..."
     pause 2.0
-    show mean annoyed human
+    show mean human annoyed
     mean "What?"
     mean "You all {i}just{/i} said you can't reach..."
     mean "Never mind."
