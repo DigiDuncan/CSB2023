@@ -714,7 +714,7 @@ image tate stare flipped = "flip:characters/tate/tatestare.png"
 image tate cry = "characters/tate/tatecry.png"
 image tate cry flipped = "flip:characters/tate/tatecry.png"
 
-## Mean
+## Mean (Urchin Form)
 image mean = "characters/mean/mean.png"
 image mean flipped = "flip:characters/mean/mean.png"
 image mean happy = "characters/mean/meanhappy.png"
@@ -741,8 +741,17 @@ image mean scared flipped = "flip:characters/mean/meanscared.png"
 image mean unamused = "characters/mean/meanunamused.png"
 image mean unamused flipped = "flip:characters/mean/meanunamused.png"
 
-## Mean (human form)
-image mean human = "characters/mean/meanhuman.png"
+## Mean (Human Form)
+image mean human = "characters/mean/meanhumanneutral.png"
+image mean human flipped = "flip:characters/mean/meanhumanneutral.png"
+image mean happy human = "characters/mean/meanhumanhappy.png"
+image mean happy human flipped = "flip:characters/mean/meanhumanhappy.png"
+image mean annoyed human = "characters/mean/meanhumanannoyed.png"
+image mean annoyed human flipped = "flip:characters/mean/meanhumanannoyed.png"
+image mean shocked human = "characters/mean/meanhumanshocked.png"
+image mean shocked human flipped = "flip:characters/mean/meanhumanshocked.png"
+image mean angry human = "characters/mean/meanhumanangry.png"
+image mean angry human flipped = "flip:characters/mean/meanhumanangry.png"
 
 ## Archival
 image k174 = "characters/k174.png"

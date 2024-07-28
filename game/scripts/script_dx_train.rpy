@@ -2389,7 +2389,8 @@ label train_confront_lupin:
     mean "I've got this."
     
     show mean angry sil_white flipped with Dissolve(0.5)
-    scene white with Dissolve(1.0)
+    scene white with Dissolve(2.0)
+    pause 1.0
     
     scene amtrak_baggage
     show arceus worried flipped at left
@@ -2398,37 +2399,11 @@ label train_confront_lupin:
     # TODO: this is NOT mean's final sprite lmfao. also he should be noticably taller than the other three
     show mean human at center
     with dissolve
-    
-    # TODO: this joke may be cut
-    cs "Aaaaaagh!"
-    tate "{i}Mean--!"
-    arceus "Good grief, he's {i}naked!"
-    mean "... Oh, oops."
-    mean "Yeah, I usually only change while I'm in my room..."
-    show tate srs flipped
-    tate "{i}Cover yourself!"
-    show mean_clothes at right with dissolve
-    n "From seemingly nowhere, Tate produces a set of clothes and throws them at Mean!"
-    play sound sfx_whoosh
-    show mean human at offscreenleft
-    show mean_clothes at offscreenleft
-    with MoveTransition(0.25)
-    pause 3.0
-    show mean human at center with moveinright
-    show cs disappointed
-    mean "Ah, that's better!"
-    show tate sheepish flipped
-    tate "At least {i}one{/i} of us came prepared."
-    mean "Yeah, yeah..."
-    mean "Anyway..."
-    
-    # end of joke that may be cut
-    
+    pause 2.0
     mean "I can't believe {i}all{/i} of you are such short-ass motherfuckers."
 
-    
     # stupid gag idea i had.
-    # is it funnier to hit them once at a time or all at once?
+    # is it funnier to hit them one at a time or all at once?
     
     show oof_45 at t_fake_rpg_text(0.1,0.3)
 
@@ -2456,9 +2431,11 @@ label train_confront_lupin:
 
     "..."
     pause 2.0
+    show mean annoyed human
     mean "What?"
-    mean "You all just said you can't reach--{w=0.5}{nw}"
+    mean "You all {i}just{/i} said you can't reach--{w=0.5}{nw}"
     mean "Never mind."
+    show mean human
     mean "Let me handle this."
     n "Mean tosses the others onto the roof!"
     show tate shock flipped
@@ -2470,8 +2447,9 @@ label train_confront_lupin:
     show arceus worried flipped
     arceus "Waaaaargh!"
     show arceus worried flipped at t_lupin_out with move
+    show mean human happy
     mean "Let's do this!"
-    show mean human at t_lupin_out
+    show mean human happy at t_lupin_out
     scene black with dissolve
     stop music fadeout 2.0
     pause 2.0
@@ -2487,7 +2465,7 @@ label train_on_top:
     show arceus worried at left
     with dissolve
     
-    show mean human at mid_left_left with moveinleft
+    show mean human angry flipped at mid_left_left with moveinleft
     mean "Hold it right there, criminal scum!"
     show lupin hat
     lupin_offscreen "Wow! You guys sure are determined!"
@@ -2496,7 +2474,6 @@ label train_on_top:
     # TODO: letterbox movie edit where they all stare lupin down
     
     n "Gunshots ring out!"
-    
     
     "Everything beyond this point is a placeholder until more is written."
     "This is the part where Zenigata pulls up alongside the train while shooting at Lupin."
