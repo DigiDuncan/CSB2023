@@ -10,11 +10,11 @@ screen dx_select(items):
                 xalign 0.5
                 spacing 20
                 text "Play the After Story?" xalign 0.5 textalign 0.5
-                imagebutton auto "menu/csbiiidx_%s.png" hover_sound "sfx_select.ogg":
+                imagebutton auto "menu/csbiiidx_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
                     at transform:
                         zoom 0.666
                         xalign 0.5
-                    action Play("sound", "sfx_valid.ogg"), Hide("dx_select"), Jump("dx_after_true")
+                    action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("dx_after_true")
                 text "Or something else?" xalign 0.5 textalign 0.5
         viewport:
             xysize(1920, 600)
