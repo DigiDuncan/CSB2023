@@ -299,6 +299,15 @@ transform t_dining_arc_search_left:
 transform t_dining_arc_search_right:
     anchor (-3.0, 0.0)
     pos (-0.04, 0.9)
+    
+# TODO: make sure this transform exactly matches the rpg engine transform. i don't think i quite nailed it -tate
+transform t_fake_rpg_text(x,y):
+    on show:
+        xpos x
+        ypos y
+        pass
+        linear 0.25 ypos (y-0.05)
+        ease_expo 0.5 alpha 0.00
 
 transform lego_run:
     pos (0.5, 0.5)
@@ -1312,6 +1321,12 @@ image lupin hat flipped = "flip:characters/lupin_hat.png"
 image zenigata = "characters/zenigata.png"
 image zenigata flipped = "flip:characters/zenigata.png"
 
+# Train Route generated images
+image fake_rpg_miss = Text("{size=50}{color=#FFAAAA}Miss!", text_align=0.5)
+image oof_45 = Text("{size=50}{color=#FFEE00}4'5\"", text_align=0.5)
+image oof_54 = Text("{size=50}{color=#CE256E}5'4\"", text_align=0.5)
+image oof_52 = Text("{size=50}{color=#233260}5'2\"", text_align=0.5)
+
 # Static Images
 image amtrak_dining_food = "food.png" 
 image amtrak_dining_pancake = "pancake.png"
@@ -1531,7 +1546,7 @@ layeredimage tate_ex_preparation:
 image tate_ex:
     contains:
         "tate_ex_preparation"
-    xysize (744,800)
+    xysize (744, 800)
     xcenter 0.25
     ycenter 0.6
 

@@ -2254,8 +2254,8 @@ label train_confront_lupin:
     play sound sfx_whoosh
     show mean furious at truecenter with MoveTransition(0.1)
     show mean furious at offscreenleft with MoveTransition(0.25)
-    n "Tate picks up Mean and tosses him at the thief!"
     play sound sfx_cat_crash
+    show fake_rpg_miss at t_fake_rpg_text(0.48,0.2)
     show cs scared flipped
     show tate shock flipped
     with hpunch
@@ -2264,7 +2264,6 @@ label train_confront_lupin:
     with vpunch
     with hpunch
     "..."
-    # TODO: would be funny if the "Miss!" indicator from the RPG fights showed up here, but idk how to do that
     show tate sheepish flipped
     n "The attack misses."
     pause 1.0
@@ -2355,7 +2354,7 @@ label train_confront_lupin:
     n "(Hi, it's me, the narrator. Everything after this point is... not done.)"
     n "(I'm sure Tate will get around to it eventually.)"
     
-    # TODO: would be funny if there were like indicators after each person's line here showing their heights. CS is 5'4, Tate is (allegedly) 5'2, Arc is ???
+    # TODO: would be funny if there were like indicators after each person's line here showing their heights. CS is 5'4, Tate is (allegedly) 5'2, Arc is 4'5
     
     tate "Now,{w=0} what?!"
     show tate sad flipped
@@ -2365,6 +2364,7 @@ label train_confront_lupin:
     show arceus worried at mid_offscreen_left with moveoutleft
     pause 1.0
     arceus "... Fuck, I can't even {i}reach{/i} the roof!"
+    
     show cs disappointed flipped at mid_left_left with moveoutleft
     pause 1.0
     show cs worried flipped
@@ -2424,9 +2424,41 @@ label train_confront_lupin:
     
     # end of joke that may be cut
     
-    mean "Can't believe {i}all{/i} of you are such short-ass motherfuckers..."
+    mean "I can't believe {i}all{/i} of you are such short-ass motherfuckers."
+
+    
+    # stupid gag idea i had.
+    # is it funnier to hit them once at a time or all at once?
+    
+    show oof_45 at t_fake_rpg_text(0.1,0.3)
+
+    play sound "audio/ut/snd_damage.ogg" volume 0.5
     show arceus angry flipped
-    show cs surprised
+    with hpunch
+    hide oof_45
+    pause 0.5
+    
+    show oof_54 at t_fake_rpg_text(0.2,0.125)
+            
+    play sound "audio/ut/snd_damage.ogg" volume 0.5
+    show cs angry
+    with hpunch
+    hide oof_54
+    pause 0.5
+    
+    show oof_52 at t_fake_rpg_text(0.81,0.2)
+    
+    play sound "audio/ut/snd_damage.ogg" volume 0.5
+    show tate sad flipped
+    with hpunch
+    hide oof_52
+    pause 0.5
+
+    "..."
+    pause 2.0
+    mean "What?"
+    mean "You all just said you can't reach--{w=0.5}{nw}"
+    mean "Never mind."
     mean "Let me handle this."
     n "Mean tosses the others onto the roof!"
     show tate shock flipped
