@@ -1391,6 +1391,7 @@ label asset_debugger:
     if fun_value(123):
         play music speedy_comet
         scene legodoor
+        show cs at manual_pos(0,0)
         green_offscreen "test 123{w=0.5}{nw}"
     else:
         jump exit_debug
@@ -1535,7 +1536,7 @@ label asset_debugger:
     if fun_value(147):
         play music wayward_wanderer
         scene airport_inside
-        pause 0.5
+        zenigata_nobeep "test 147{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(148):
@@ -2698,6 +2699,21 @@ label asset_debugger:
         pause 0.1
     else:
         jump exit_debug
+    if fun_value (376):
+        scene letterbox1
+        pause 0.1
+    else:
+        jump exit_debug 
+    if fun_value (377):
+        scene letterbox2
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value (378):
+        scene letterbox3
+        pause 0.1
+    else:
+        jump exit_debug        
 
     n "Done."
     show screen debugger_menu
