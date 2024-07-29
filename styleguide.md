@@ -56,3 +56,19 @@
 - Are all minigames added in the minigames registry?
 - Did Tate do a grammar pass?
 - Did Baker do an asset pass?
+
+### WORKFLOW
+- Flowchart
+- Script writing
+- Basic asset creation
+- Basic transitions
+- Music
+- Sound effects
+- Grammar pass
+- Asset pass
+- Transition/cinematography pass
+ - Video creation would happen here
+- Add music to jukebox
+- Add bios
+- Add achievements
+- Add minigames (optional)
