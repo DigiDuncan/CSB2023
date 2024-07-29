@@ -2452,7 +2452,7 @@ label train_confront_lupin:
     mean "Damn..."
     mean "I couldn't see it before, but..."
     show mean human happy
-    mean "I can't believe {i}all{/i} of you motherfuckers are so {i}short!"
+    mean "I can't believe y'all motherfuckers are so {i}short!"
 
     # stupid gag idea i had.
     # is it funnier to hit them one at a time or all at once? mean thinks all at once
@@ -2503,23 +2503,128 @@ label train_confront_lupin:
 label train_on_top:
     # TODO: yes i know this edit is shit
     # TODO: need moving background
-    scene amtrak_top
+    scene
+    show amtrak_top
     
+    show tate sad at center
+    show cs worried at left
+    show arceus worried flipped at edge_left
     show lupin hat flipped at right
-    show tate shock at center
-    show cs worried at mid_mid_left
-    show arceus worried at left
     with dissolve
     
-    show mean human angry flipped at mid_left_left behind arceus with moveinleft
-    mean "Hold it right there, criminal scum!"
+    # mean wanted this
+    $mean_text = ""
+    $mean_fun_text = ""
+    $random = random.randint(1,3)
+    if random == 1:
+        $mean_text = "Stop right there,{w=0.25} criminal scum!"
+        $mean_fun_text = "Nobody breaks the law on my watch!{w=0.25} I'm confiscating your stolen goods.{w=0.25} Now,{w=0.25} pay your fine or it's off to jail."
+    elif random == 2:
+        $mean_text = "It's all over,{w=0.25} lawbreaker!"
+        $mean_fun_text = "Your spree is at an end.{w=0.25} I'll take any stolen goods you have.{w=0.25} The next move is yours--{w=0.5} Pay your fine,{w=0.25} or I'll haul you away!"
+    elif random == 3:
+        $mean_text = "Stop,{w=0.25} you’ve violated the law."
+        $mean_fun_text = "Pay the court a fine,{w=0.25} or serve your sentence.{w=0.25} Your stolen goods are now forfeit."
+    else:
+        $mean_text = "Stop right there!"
+        $mean_fun_text = "You're not getting away!"
+        
+    show mean human angry flipped at mid_left behind cs with moveinleft
+    mean "{bt=a3-p10-s4}{size=+24}[mean_text]" with hpunch
+    if fun_value(FUN_VALUE_RARE):
+        mean "[mean_fun_text]"
     show lupin hat
-    lupin_offscreen "Wow! You guys sure are determined!"
-    lupin_offscreen "This should be fun!"
+    lupin_offscreen "Wow! I didn't think you'd be brave enough to follow me up here!"
+    lupin_offscreen "You guys sure are {i}determined!"
     
-    # TODO: letterbox movie edit where they all stare lupin down
+    hide tate
+    hide mean
+    hide cs
+    hide arceus
     
+    #### DRAMATIC SCENE TIME
+    #### WHAT WAS I ON WHEN I THOUGHT THIS WOULD BE A GOOD IDEA???
+
+    ## SHOT 1
+    
+    show letterbox1 at Move((0, -120), (0, 0), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show letterbox2 at Move((0, 1200), (0, 1080), 1, repeat=False, bounce=False, xanchor="left", yanchor="bottom")
+    
+    show lupin hat:
+        subpixel True
+        xpos 6000
+        ypos 6250
+        pass
+        zoom 10
+        linear 4 xpos 7000
+    
+    show amtrak_top:
+        zoom 2
+    
+    lupin_offscreen "This should be {i}fun!{w=2.5}{nw}"
+    hide lupin
+    
+    ## SHOT 2
+    
+    show amtrak_top:
+        xysize (1920, 200)
+        xzoom -1
+
+    show tate srs at Move((0.65, 0.3), (0.6, 0.3), 8, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    
+    show cs angry at Move((0.2, 0.3), (0.1, 0.3), 8, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    
+    show arceus angry flipped at Move((0.1 ,0.4), (0.0, 0.4), 9, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    
+    show mean human angry flipped at Move((0.4, 0.15), (0.3, 0.15), 7, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show letterbox_screen at manual_pos(0,0)
+    
+    mean "You've got nowhere to run this time.{w=2.0}{nw}"
+    mean "Just give it up.{w=2.0}{nw}"
+    
+    hide mean
+    hide tate
+    hide cs
+    hide arceus
+    
+    ## SHOT 3
+    
+    show amtrak_top:
+        xysize (1920, 300)
+        xzoom 1
+    
+    show lupin hat behind letterbox_screen at Transform:
+        subpixel True
+        xpos 0.3
+        ypos 0.1
+        zoom 3
+        pass
+        parallel:
+            linear 6 xpos 0.4
+        parallel:
+            linear 6 ypos 0.2
+        parallel:
+            linear 6 zoom 2
+    
+    lupin_offscreen "Just when this is getting {i}good?{/i}{w=1.0}{nw}"
+    lupin_offscreen "No way!{w=1.0}{nw}"
+    
+    play sound sfx_hks1 noloop volume 0.7
+    with hpunch
+    pause 0.25
+    play sound sfx_hks1 noloop volume 0.7
+    with hpunch
+    play sound sfx_hks1 noloop volume 0.7
+    with hpunch
+    
+    pause 1.0
     n "Gunshots ring out!"
+    # placeholder: play sound zenigata_shout
+    zenigata_nobeep "{bt=a3-p10-s4}{size=+24}Lupiiiiin!"
+    
+    
+    
+    
     
     "Everything beyond this point is a placeholder until more is written."
     "This is the part where Zenigata pulls up alongside the train while shooting at Lupin."
@@ -2547,11 +2652,9 @@ label train_on_top:
                 
     "No matter what happens now, the rest of the passengers get their things back."
     "By now, it's probably, like... 2 AM."
+    "Maybe everyone chats in the cab a bit, then goes to bed."
     "Let's all get some rest..."
     scene black with dissolve
-    "I think here is a good place for Tate to test that rolling credits thing."
-    "This {i}probably{/i} isn't staying here, though."
-    call credits
     jump train_check_secret
         
 ######## SECRET FIGHT VS TATE ########

@@ -316,6 +316,11 @@ transform t_fake_rpg_text(x,y):
         pass
         linear 0.25 ypos (y-0.05)
         ease_expo 0.5 alpha 0.00
+        
+# i got tired. - tate
+transform manual_pos(x,y):
+    xpos x
+    xpos y
 
 transform lego_run:
     pos (0.5, 0.5)
@@ -512,6 +517,7 @@ define pakoo_offscreen = Character("???", callback = renpy.partial(char_callback
 define green_offscreen = Character("???", callback = renpy.partial(char_callback, name = "green_offscreen", beep = "green"), what_color="#00FF00")
 define anno_offscreen = Character("???", callback = renpy.partial(char_callback, name = "anno_offscreen", beep = "anno"))
 define lupin_offscreen = Character("???", callback = renpy.partial(char_callback, name = "lupin_offscreen", beep = "lupin"))
+define zenigata_nobeep = Character("???", callback = renpy.partial(char_callback, name = "zenigata_nobeep", play_beeps = False))
 define mean_offscreen = Character("???", callback = renpy.partial(char_callback, name = "mean_offscreen", beep = "mean"))
 
 # AI Imposter Character Definitions
@@ -1391,6 +1397,9 @@ image drill = "drillymays.png"
 image drillbreak = "drillymaysfuck.png"
 image hold_it = "hold_it.png"
 image laser_beam = "laser_beam.png"
+image letterbox1 = "letterbox.png"
+image letterbox2 = "letterbox.png"
+image letterbox3 = "letterbox_screen.png"
 image ltt_bottle = "ltt_bottle.png"
 image m4 = "m4.png"
 image m4 fire = "m4fire.png"
