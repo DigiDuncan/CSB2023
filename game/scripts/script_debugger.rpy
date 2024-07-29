@@ -2362,7 +2362,7 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(306):
-        scene green
+        scene green_screen
         pause 0.1 
     else:
         jump exit_debug
