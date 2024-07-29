@@ -314,8 +314,10 @@ transform t_fake_rpg_text(x,y):
         xpos x
         ypos y
         pass
-        linear 0.25 ypos (y-0.05)
-        ease_expo 0.5 alpha 0.00
+        parallel:
+            linear 0.25 ypos (y-0.05)
+        parallel:
+            ease_expo 0.5 alpha 0.00
         
 # i got tired. - tate
 transform manual_pos(x,y):
