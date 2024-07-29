@@ -1307,6 +1307,9 @@ image priest flipped = "flip:characters/priest.png"
 image lunatic_cultist = "characters/lunatic_cultist.png"
 image lunatic_cultist flipped = "flip:characters/lunatic_cultist.png"
 
+# Back to the future: CS edition generated assets
+image after_true_title = Text("{size=+196}Spring 202X", text_align=0.5)
+
 # CS wacky Kuwait Adventures: Mika Edition (Deluxe Content [With Funky Kong {And Dante from Devil may Cry}])
 image kuwait_city = "bg/kuwait_city.jpg"
 image RCOMEM = "characters/RCOMEM.png"

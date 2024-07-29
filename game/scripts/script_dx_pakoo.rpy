@@ -9,11 +9,15 @@ label dx_after_true:
         n "As for Billy, he's still on the road, hearing his baby: Spring Remix, and pitching his various products."
     else:
         n "As for Billy, he's still on the road, pitching his various products."
-    scene start_route with dissolve
+        
+    show after_true_title at truecenter with dissolve
+    pause 3.0
+    hide after_true_title with dissolve
+    pause 1.0
+    
     play music letshearspring volume 2
     music "Let's Hear My Baby: Spring Remix - Pakoo"  
-    pause 3.0
-    scene cs_room_cars
+    scene cs_room_cars with dissolve
     show cs at left
     show billy at center
     show arceus at right
@@ -59,7 +63,7 @@ label dx_after_true:
     cs "Exactly. I trust him."
     show cs
     show arceus
-    arceus "*{i}Sigh..."
+    arceus "{i}Sigh..."
     arceus "Alright, I guess you have a point. Let's do this."
     billy "Great! You're gonna love it!"
     scene black with dissolve
@@ -186,7 +190,7 @@ label dx_after_true:
     show cs worried flipped
     cs "I've teleported into the backrooms and I think I'm stuck here forever!"
     n "The man laughs at CS."
-    renovator "Well yeah, you're in {i}my{/i} backroom, and you need to get out. The stairs are behind me."
+    renovator "Well, yeah, you're in {i}my{/i} backroom, and you need to get out. The stairs are behind me."
     show cs disappointed flipped
     cs "Wh-- really?"
     #"Get out" is more aggressive than "leave quickly"
@@ -205,7 +209,7 @@ label dx_after_true:
     cs "Yeah, I just... I'm just hungover, I guess."
     show cs disappointed flipped with determination
     hide cs with moveoutleft
-    n "As CS walks towards the front door, the renovator mutters \"fuckin drunkards\" to himself."
+    renovator "{size=-15}Fuckin' drunkards..."
     renovator "You're {i}also{/i} in Wisconsin, in case you're too drunk or high to even remember where you live!"
     scene hobbytown with dissolve
     show cs disappointed at center with moveinleft
@@ -215,7 +219,7 @@ label dx_after_true:
     show cs disappointed flipped
     cs "I wonder if Billy and Arc ended up here too..."
     show cs disappointed
-    if fun_value(FUN_VALUE_COMMON):
+    if fun_value(FUN_VALUE_EPIC):
         n "All of a sudden, a time and space portal opens and Car Guy comes out of it."
         jump dx_after_renault
     else:
@@ -332,7 +336,7 @@ label dx_after_back_to_story:
     cs "Wow, okay! I have had a pretty interesting life, at least since HoH SiS came along!"
     cs "Why can't you speak to your cult yourself?"
     csgod "Okay, let me explain this to you."
-    csgod "Every time they do one of their rituals, it's like if one of your estatic fans called you on Discord."
+    csgod "Every time they do one of their rituals, it's like if one of your ecstatic fans called you on Discord."
     csgod "You let that shit go to voicemail, man, otherwise you're gonna get spammed until the end of time."
     cs "So, you just want a middle man to do it for you."
     csgod "Well, yeah? Kinda?"
@@ -1472,9 +1476,8 @@ label dx_after_yes_renault:
     with moveinleft
     cs "Well, for one thing, it feels good to be back in the present."
     carguy "Indeed! It will {i}also{/i} feel nice driving this new electric car from Renault!"
-    carguy "Would you like to give it a test drive?"
     show cs happy
-    cs "Sure!"
+    cs "Awesome! I can't wait!"
     scene black
     play sound sfx_doorslam
     pause 0.4
@@ -1503,7 +1506,7 @@ label dx_after_yes_renault:
     play music muumin_tani_fuyu
     music Muumin Tani Fuyu - Sumio Shiratori
     carguy "So, that was the new Renault 5E! I hope you enjoyed it!"
-    cs "Yeah I did!"
+    cs "Yeah, I did!"
     show cs disappointed
     cs "By the way, where are we? I don't recognize this place at all!"
     show moomin flipped at left with moveinleft
