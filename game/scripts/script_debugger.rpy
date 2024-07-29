@@ -750,6 +750,7 @@ label asset_debugger:
         show mean human at mid_left
         show amtrak_conductor at mid_mid_left
         show cs disappointed cultist at left
+        show after_true_title at mid_right
         peppino "test 50{w=0.5}{nw}"
     else:
         jump exit_debug
@@ -2713,7 +2714,7 @@ label asset_debugger:
         scene letterbox3
         pause 0.1
     else:
-        jump exit_debug        
+        jump exit_debug    
 
     n "Done."
     show screen debugger_menu
