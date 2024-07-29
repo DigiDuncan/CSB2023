@@ -1309,7 +1309,7 @@ image kuwait_doctor_1 = "characters/k_doctor.png"
 image kuwait_hospital_corridor = "bg/kuwait_hospital_corridor.png"
 image kuwait_islandbase_leaders = "bg/kuwait_islandbase_leaders.png"
 image kuwait_lieutenant_snow = "characters/kuwait_lieutenant_snow.png"
-image kuwait_hallway = "characters/kuwait_hallway.png"
+image kuwait_hallway = "bg/kuwait_hallway.png"
 image kuwait_island_outside = "characters/kuwait_island_outside.png"
 
 image green_screen = "bg/green.png"
