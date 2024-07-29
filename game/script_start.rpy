@@ -1899,6 +1899,8 @@ define audio.ochre_woods_day = "<loop 27.401>ochre_woods_day.ogg"
 define audio.prof_kranes_kidnap = "prof_kranes_kidnap.ogg"
 define audio.e_gadds_lab = "<loop 1.071>e_gadds_lab.ogg"
 define audio.onbs = "onbs.ogg"
+define audio.encounter_friend_intro = "<from 0 to 44.501>encounter_friend.ogg"
+define audio.encounter_friend_loop = "<from 44.502 to 77.599>encounter_friend.ogg"
 define audio.insomnia_intro = "<from 0 to 11.299>insomnia.ogg"
 define audio.insomnia_loop = "<from 22.6>insomnia.ogg"
 

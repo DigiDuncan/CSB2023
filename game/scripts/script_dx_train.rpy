@@ -2425,27 +2425,34 @@ label train_confront_lupin:
     # TODO: mean needs to pick a sfx for his transformation sequence
     # TODO: why does his sprite flip weird? it shouldn't. did i fuck up the sil_white:flip shader?
     
+    stop music fadeout 2.0
     show tate shock flipped
     show cs worried
     show mean angry sil_white flipped with Dissolve(0.5)
     scene white with Dissolve(1.0)
     pause 1.0
-    
+        
     scene amtrak_baggage
     show arceus worried flipped at edge_left
     show cs scared at mid_left behind arceus
     show tate shock flipped at right
     show mean human at center
     $ persistent.seen.add("mean_human")
-    with dissolve
+    with Dissolve(0.5)
+    play music encounter_friend_intro noloop
+    queue music encounter_friend_loop
+    music Encounter! Friend - Waichiro Ozaki
+    n "Mean transforms!"
     pause 2.0
     mean "Damn..."
     mean "I couldn't see it before, but..."
+    show mean human happy
     mean "I can't believe {i}all{/i} of you are such short-ass motherfuckers."
 
     # stupid gag idea i had.
     # is it funnier to hit them one at a time or all at once? mean thinks all at once
     
+    $ renpy.music.set_volume(0)
     show oof_45 at t_fake_rpg_text(0.05, 0.3)
     show oof_54 at t_fake_rpg_text(0.2, 0.125)
     show oof_52 at t_fake_rpg_text(0.81, 0.2)
@@ -2464,6 +2471,7 @@ label train_confront_lupin:
     mean "You all {i}just{/i} said you can't reach..."
     mean "Never mind."
     show mean human
+    $ renpy.music.set_volume(100)
     mean "Anyway, let me handle this."
     n "Mean tosses the others onto the roof!"
     show tate shock flipped
@@ -2479,7 +2487,6 @@ label train_confront_lupin:
     mean "Let's do this!"
     show mean human happy at t_lupin_out
     scene black with dissolve
-    stop music fadeout 2.0
     pause 2.0
     
 label train_on_top:
