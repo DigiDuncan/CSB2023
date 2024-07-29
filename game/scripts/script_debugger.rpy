@@ -576,6 +576,7 @@ label asset_debugger:
         show tate smug sil_white flipped at mid_mid_right
         show pomni at mid_right
         show priest flipped at mid_right_right
+        show train_fly_1 at right
         asylum_worker "test 36{w=0.5}{nw}"
     else:
         jump exit_debug
@@ -590,6 +591,7 @@ label asset_debugger:
         show mean wat at mid_mid_left
         show tate cry at mid_mid_right
         show moomin at mid_right
+        show train_fly_2 at right
         csgod "test 37{w=0.5}{nw}"
     else:
         jump exit_debug
@@ -604,6 +606,7 @@ label asset_debugger:
         show mean wat flipped at mid_mid_left
         show tate cry flipped at mid_mid_right
         show snufkin at mid_right
+        show train_fly_3 at right
         luke "test 38{w=0.5}{nw}"
     else:
         jump exit_debug
@@ -616,6 +619,7 @@ label asset_debugger:
         show cs scared flipped at left
         show mean furious at mid_mid_left
         show alicia at mid_right
+        show train_fly_4 at right
         taran "test 39{w=0.5}{nw}"
     else:
         jump exit_debug
@@ -627,6 +631,7 @@ label asset_debugger:
         show cs scared dark at left
         show mean furious at mid_mid_left
         show witch at mid_right
+        show train_fly_5 at right
         colton "test 40{w=0.5}{nw}"
     else:
         jump exit_debug
@@ -638,6 +643,7 @@ label asset_debugger:
         show cs insane worried at left
         show mean furious flipped at mid_mid_left
         show moomin flipped at mid_right
+        show train_fly_6 at mid_right_right
         show train_boss_1 at right
         sheriff "test 41{w=0.5}{nw}"
     else:
@@ -650,6 +656,7 @@ label asset_debugger:
         show cs insane worried flipped at left
         show mean tired at mid_mid_left
         show snufkin flipped at mid_right
+        show train_fly_7 at mid_right_right
         show train_boss_2 at right
         billy "test 42{w=0.5}{nw}"
     else:
@@ -662,6 +669,7 @@ label asset_debugger:
         show cs insane disappointed at left
         show mean tired flipped at mid_mid_left
         show alicia flipped at mid_right
+        show flying_train_final at mid_right_right
         show train_boss_3 at right
         tv_billy "test 43{w=0.5}{nw}"
     else:
@@ -772,7 +780,7 @@ label asset_debugger:
         play music fastport
         scene washington_road morning
         show pot_beam at center
-        show mean happy human at mid_left
+        show mean human happy at mid_left
         show amtrak_stewardess flipped at mid_mid_left
         show cs angry cultist flipped at left
         trailtrash "test 53{w=0.5}{nw}"
@@ -783,7 +791,7 @@ label asset_debugger:
         play music flyday_chinatown
         scene copcar
         show onscreen_sharpener at center
-        show mean happy human flipped at mid_left
+        show mean human happy flipped at mid_left
         show lupin at mid_mid_left
         show cs pencil at left
         green "test 54{w=0.5}{nw}"
@@ -794,7 +802,7 @@ label asset_debugger:
         play music fnaf_6
         scene copcar_mask
         show renault at center
-        show mean annoyed human at mid_left
+        show mean human annoyed at mid_left
         show lupin flipped at mid_mid_left
         show cs angry pencil at left
         jerma "test 55{w=0.5}{nw}"
@@ -806,7 +814,7 @@ label asset_debugger:
         scene microcenter
         show passportdigi at center
         show lupin hat at mid_mid_left
-        show mean annoyed human flipped at mid_left
+        show mean human annoyed flipped at mid_left
         show cs disappointed pencil at left
         pencil "test 56{w=0.5}{nw}"
     else:
@@ -816,7 +824,7 @@ label asset_debugger:
         play music fourside
         scene microinside
         show copguyexe at center
-        show mean shocked human at mid_left
+        show mean human shocked at mid_left
         show lupin hat flipped at mid_mid_left
         show cs phone at left
         signup "test 57{w=0.5}{nw}"
@@ -827,7 +835,7 @@ label asset_debugger:
         play music france
         scene cashzone
         show copguyexe flipped at center
-        show mean shocked human flipped at mid_left
+        show mean human shocked flipped at mid_left
         show cs phone flipped at left
         host "test 58{w=0.5}{nw}"
     else:
@@ -849,7 +857,7 @@ label asset_debugger:
         play music full_rulle_med_klas
         scene cpuaisle
         show tate_ex_front at center
-        show mean angry human at mid_left
+        show mean human angry at mid_left
         show cs disappointed phone flipped at left
         luigi "test 60{w=0.5}{nw}"
     else:
@@ -860,7 +868,7 @@ label asset_debugger:
         play music funiculi_holiday
         scene gpuaisle
         show tate_ex_preparation at center
-        show mean angry human flipped at mid_left
+        show mean human angry flipped at mid_left
         show cs worried phone at left
         mika "test 61{w=0.5}{nw}"
     else:
@@ -1200,6 +1208,7 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(98):
+        play sound sfx_mean_transform
         play music muumin_tani_fuyu
         scene washington_road morning
         show cs at t_punchup
@@ -1710,17 +1719,19 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(178):
-        play music yuuka_town
+        play music encounter_friend_intro
         scene traffic
-        pause 0.1
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(179):
+        play music encounter_friend_loop
         scene white
-        pause 0.1
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(180):
+        play music yuuka_town
         scene parking_lot
         pause 0.1
     else:
