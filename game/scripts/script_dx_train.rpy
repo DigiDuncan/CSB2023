@@ -2422,14 +2422,15 @@ label train_confront_lupin:
     mean "Nah, watch."
     mean "I've got this."
     
-    # TODO: mean needs to pick a sfx for his transformation sequence
+    # TODO: mean needs to pick a sfx for his transformation sequence if he doesnt want this one
     # TODO: why does his sprite flip weird? it shouldn't. did i fuck up the sil_white:flip shader?
     
+    play sound sfx_mean_transform
     stop music fadeout 2.0
     show tate shock flipped
     show cs worried
     show mean angry sil_white flipped with Dissolve(0.5)
-    scene white with Dissolve(1.0)
+    scene white with Dissolve(0.6)
     pause 1.0
         
     scene amtrak_baggage
@@ -2439,15 +2440,19 @@ label train_confront_lupin:
     show mean human at center
     $ persistent.seen.add("mean_human")
     with Dissolve(0.5)
+    pause 1.0
     play music encounter_friend_intro noloop
     queue music encounter_friend_loop
+    if fun_value(FUN_VALUE_MUSIC):
+        n "A friend is encountered!"
+    else:
+        n "Mean transforms!"
     music Encounter! Friend - Waichiro Ozaki
-    n "Mean transforms!"
     pause 2.0
     mean "Damn..."
     mean "I couldn't see it before, but..."
     show mean human happy
-    mean "I can't believe {i}all{/i} of you are such short-ass motherfuckers."
+    mean "I can't believe {i}all{/i} of you motherfuckers are so {i}short!"
 
     # stupid gag idea i had.
     # is it funnier to hit them one at a time or all at once? mean thinks all at once
@@ -2467,19 +2472,25 @@ label train_confront_lupin:
     "..."
     pause 2.0
     show mean human annoyed
-    mean "What?"
+    mean "... What?"
     mean "You all {i}just{/i} said you can't reach..."
     mean "Never mind."
     show mean human
     $ renpy.music.set_volume(100)
+    show cs disappointed
+    show tate sheepish flipped
     mean "Anyway, let me handle this."
+    mean "We're getting on top, {i}and{/i} we're gonna get this guy, one way or another!"
     n "Mean tosses the others onto the roof!"
+    show mean human flipped at mid_right behind tate with move
     show tate shock flipped
     tate "Awawawawawa!"
     show tate shock at t_lupin_out with move
+    show mean human at mid_mid_left behind cs with move
     show cs scared
     cs "Aaaaaaagh!"
     show cs scared at t_lupin_out with move
+    show mean human at mid_left with move
     show arceus worried flipped
     arceus "Waaaaargh!"
     show arceus worried flipped at t_lupin_out with move
@@ -2571,7 +2582,8 @@ label train_tate_ex_encounter:
     cs "Tate?"
     cs "You can't sleep, either?"
     if fun_value(FUN_VALUE_MUSIC):
-        tate "Sure can't. I have Insomnia."
+        tate "Sure can't."
+        tate "Damned {i}insomnia..."
     else:
         tate "Sure can't."
     "..."
