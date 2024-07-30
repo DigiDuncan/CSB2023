@@ -2675,6 +2675,7 @@ label train_on_top:
         "Since there's no game here yet, pick your ending, I guess."
         "Win":
             "This is the part where you catch Lupin and bring him to the conductor."
+            
             if train_money_stolen == True:
                 "But, since the bag of money isn't legit, CS and Arceus take it back, but they don't say one damn word about its legitimacy."
                 $ train_ending_money_returned = True
@@ -2683,10 +2684,12 @@ label train_on_top:
                 $ train_ending_money_returned = True
         "Lose":
             "This is the part where the conductor is waiting for you at the front of the train and catches Lupin."
+            
             if train_money_stolen == True:
                 "Since the bag of money isn't legit, Lupin takes the heat for it. CS and Arceus are broke as fuck once again."
                 $ train_ending_money_returned = False
-            else:
+                
+            if train_money_stolen == False:
                 "Since the briefcase of money is certified legit, CS and Arceus get it back!"
                 $ train_ending_money_returned = True
                 
@@ -2929,9 +2932,9 @@ label train_return_home_transition:
 
     # TODO: my variables are kinda broken rn
 
-    # If you got the money back
+    # GOT THE MONEY BACK?
     if train_ending_money_returned == True:
-        # If you won the money
+        # DID YOU STEAL THE MONEY?
         if train_money_stolen == True:
             show bag at mid_mid_right with dissolve
             n "Arceus unzips the body bag and hands Billy a fistful of cash."
@@ -2941,7 +2944,7 @@ label train_return_home_transition:
             cs "We'll give you another $100 if you don't tell anyone."
             billy "That's cash in the trash!"
             hide bag with dissolve
-        # If you stole the money
+        # DID YOU WIN THE MONEY?
         else:
             show case at mid_mid_right with dissolve
             n "Arceus opens the briefcase and gives Billy a gold bar."
@@ -2951,7 +2954,7 @@ label train_return_home_transition:
             cs "We've got plenty more where that came from. You can keep it."
             billy "That's cash in the trash!"
             hide case with dissolve
-    # If you did NOT get the money back
+    # DID YOU LOSE THE MONEY?
     else: 
         show arceus
         n "CS and Arceus rummage around in their pockets and manage to scrounge together $19.95."
