@@ -1254,8 +1254,8 @@ label train_dining:
     n "As he approaches the counter, Arceus finds his attention redirected towards a yellow... {w=0.5}thing."
 
     scene amtrak_dining_table
-    show mean at t_mean_dining_car
-    show amtrak_dining_food at t_dining_car_breakfast behind mean
+    show mean at manual_pos(300,350)
+    show amtrak_dining_food at manual_pos(805,145) behind mean
     hide arceus
     with dissolve
 
@@ -1783,12 +1783,12 @@ label train_search_arceus:
     n "Arceus returns to the dining car."
     arceus "Well, let's see if anything is hidden around here..."
     show arceus at left with ease
-    show arceus at t_dining_arc_search_left with ease
+    show arceus at manual_pos(-50,950) with ease
     n "Arceus checks under the tables..."
     show arceus at left with ease
     show arceus flipped at center with ease
     show arceus flipped at right with ease
-    show arceus flipped at t_dining_arc_search_right with ease
+    show arceus flipped at manual_pos(1460,950) with ease
     n "Then, he checks under the seats..."
     show lupin hat at offscreenright behind arceus with determination
     show lupin hat at offscreenleft
@@ -1800,8 +1800,8 @@ label train_search_arceus:
     show arceus worried
     arceus "I guess there's just nothing here."
     scene amtrak_dining_table
-    show amtrak_dining_food at t_dining_car_breakfast
-    show amtrak_dining_pancake at t_dining_car_pancake behind amtrak_dining_food
+    show amtrak_dining_food at manual_pos(805,145)
+    show amtrak_dining_pancake at manual_pos(915,575) behind amtrak_dining_food
     with dissolve
     n "From across the room, Arceus glances towards the forgotten breakfast." 
     arceus "It's a damn shame that all of that food went to waste."
@@ -1823,7 +1823,7 @@ label train_search_arceus:
     show arceus angry at right behind amtrak_dining_pancake with moveinright 
     arceus "Man... what is {i}wrong{/i} with people?!"
     n "Arceus spots a lone pancake."
-    show amtrak_dining_pancake at t_arc_pancake with ease
+    show amtrak_dining_pancake at manual_pos(1433, 683) with ease
     arceus "I guess I'll at least take this one..." 
     hide amtrak_dining_pancake with dissolve
     pause 1.5

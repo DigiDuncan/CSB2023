@@ -183,7 +183,8 @@ transform mid_offscreen_left:
     yanchor 1.0 ypos 1.0
     xanchor 0.5 xpos -0.0
     
-# i got tired. - tate
+# i got tired.
+# if ALL you need is a simple custom placement, no zoom/motion/effects, just use this please. - tate
 transform manual_pos(x,y):
     xanchor 0
     yanchor 0
@@ -279,33 +280,9 @@ transform t_punchup:
     rotate 0
     linear 1 rotate 960
 
-transform t_mean_dining_car:
-    anchor (0.5, 0.5)
-    pos (0.3, 0.6)
-
-transform t_dining_car_breakfast:
-    anchor (0.6, 0.45)
-    pos (0.7, 0.4)
-
 transform t_mean_rollout:
     rotate 0
     linear 1 rotate -180
-
-transform t_dining_car_pancake:
-    anchor (0.5, 0.5)
-    pos (0.53, 0.58)
-
-transform t_arc_pancake:
-    anchor (0.5, 0.5)
-    pos (0.8, 0.68)
-
-transform t_dining_arc_search_left:
-    anchor (0.0, 0.0)
-    pos (-0.04, 0.9)
-
-transform t_dining_arc_search_right:
-    anchor (-3.0, 0.0)
-    pos (-0.04, 0.9)
     
 # TODO: make sure this transform exactly matches the rpg engine transform. i don't think i quite nailed it -tate
 transform t_fake_rpg_text(x,y):
