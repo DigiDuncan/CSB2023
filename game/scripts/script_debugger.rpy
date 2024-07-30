@@ -19,6 +19,7 @@ label asset_debugger:
         scene game_menu
         show craptop blank at center
         show cs at left
+        $ spritetotal += 9
         show csgod at mid_left_left
         show anno at mid_left
         show pakoo at mid_mid_left
@@ -27,6 +28,7 @@ label asset_debugger:
         show k174 at mid_right_right
         show arceus at right 
         n "test 1{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(2):
@@ -38,6 +40,7 @@ label asset_debugger:
         scene black
         show craptop car at center
         show cs flipped at left
+        $ spritetotal += 9
         show csgod flipped at mid_left_left
         show anno prison at mid_left
         show pakoo dark at mid_mid_left
@@ -46,6 +49,7 @@ label asset_debugger:
         show k174 flipped at mid_right_right
         show arceus flipped at right 
         cs "test 2{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(3):
@@ -57,6 +61,7 @@ label asset_debugger:
         scene cs_room
         show craptop desktop at center
         show cs happy at left
+        $ spritetotal += 9
         show csgod_angry at mid_left_left
         show anno guard at mid_left
         show pakoo flipped at mid_mid_left
@@ -64,6 +69,7 @@ label asset_debugger:
         show mean happy at mid_right
         show k199 at mid_right_right
         cs_fakegod "test 3{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(4):
@@ -75,6 +81,7 @@ label asset_debugger:
         scene cs_room_2
         show craptop discord at center
         show cs happy flipped at left
+        $ spritetotal += 9
         show young_cs at mid_left_left
         show anno guard dark at mid_left
         show pakoo dark flipped at mid_mid_left
@@ -83,6 +90,7 @@ label asset_debugger:
         show k199 flipped at mid_right_right
         show arceus dirty at right 
         craptop "test 4{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(5):
@@ -94,6 +102,7 @@ label asset_debugger:
         scene craptop_bg
         show craptop edit at center
         show cs happy dark at left
+        $ spritetotal += 9
         show rich at mid_left_left
         show copguy at mid_left
         show pakoo worried at mid_mid_left
@@ -102,6 +111,7 @@ label asset_debugger:
         show k207 at mid_right_right
         show arceus dirty flipped at right 
         sticky "test 5{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(6):
@@ -113,6 +123,7 @@ label asset_debugger:
         scene cs_house
         show craptop error at center
         show cs happy dark flipped at left
+        $ spritetotal += 9
         show ed at mid_left_left
         show copguy flipped at mid_left
         show pakoo worried flipped at mid_mid_left
@@ -121,6 +132,7 @@ label asset_debugger:
         show k207 flipped at mid_right_right
         show arceus full happy at right 
         discord "test 6{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(7):
@@ -132,6 +144,7 @@ label asset_debugger:
         scene cs_car
         show craptop off at center
         show cs angry at left
+        $ spritetotal += 9
         show ed phone at mid_left_left
         show copguy dark at mid_left
         show pakoo disappointed at mid_mid_left
@@ -140,6 +153,7 @@ label asset_debugger:
         show k207h at mid_right_right
         show arceus full happy flipped at right 
         nova "test 7{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(8):
@@ -151,6 +165,7 @@ label asset_debugger:
         scene cs_car_inside
         show craptop sad at center
         show cs angry dark at left
+        $ spritetotal += 9
         show wesley at mid_left_left
         show copguy dark flipped at mid_left
         show pakoo disappointed flipped at mid_mid_left
@@ -159,6 +174,7 @@ label asset_debugger:
         show k207h flipped at mid_right_right
         show arceus full at right 
         carguy "test 8{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(9):
@@ -170,6 +186,7 @@ label asset_debugger:
         scene walmart_outside
         show craptop updating at center
         show cs angry flipped at left
+        $ spritetotal += 9
         show worker_1 at mid_left_left
         show copguy_ai at mid_left
         show pakoo happy at mid_mid_left
@@ -178,6 +195,7 @@ label asset_debugger:
         show nova1 at mid_right_right
         show arceus full flipped at right 
         carguy_nobeep "test 9{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(10):
@@ -189,6 +207,7 @@ label asset_debugger:
         scene walmart_inside
         show craptop ytp at center
         show cs angry dark flipped at left
+        $ spritetotal += 9
         show worker_2 at mid_left_left
         show copguycrawl at mid_left
         show pakoo happy flipped at mid_mid_left
@@ -197,6 +216,7 @@ label asset_debugger:
         show nova2 at mid_right_right
         show arceus full angry at right 
         greeter "test 10{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(11):
@@ -208,6 +228,7 @@ label asset_debugger:
         scene walmart_aisle
         show craptop evidence at center
         show cs worried at left
+        $ spritetotal += 9
         show worker_3 at mid_left_left
         show sheriff at mid_left
         show linus at mid_mid_left
@@ -216,6 +237,7 @@ label asset_debugger:
         show nova3 at mid_right_right
         show arceus full angry flipped at right 
         doug "test 11{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(12):
@@ -227,6 +249,7 @@ label asset_debugger:
         scene walmart_register_fg
         show craptopreal at center
         show cs worried flipped at left
+        $ spritetotal += 9
         show worker_4 at mid_left_left
         show cop at mid_left
         show luke at mid_mid_left
@@ -235,6 +258,7 @@ label asset_debugger:
         show carguya at mid_right_right
         show arceus angry at right 
         cashier "test 12{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(13):
@@ -246,6 +270,7 @@ label asset_debugger:
         scene walmart_register
         show craptopsmall at center
         show cs disappointed at left
+        $ spritetotal += 9
         show worker_5 at mid_left_left
         show cop dark at mid_left
         show luke flipped at mid_mid_left
@@ -254,6 +279,7 @@ label asset_debugger:
         show hart1 at mid_right_right
         show arceus angry flipped at right 
         ycs "test 13{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(14):
@@ -265,6 +291,7 @@ label asset_debugger:
         scene cs_door_closed
         show craptopsmall flipped at center
         show cs disappointed metal at left
+        $ spritetotal += 9
         show worker_5alt at mid_left_left
         show cop_2 at mid_left
         show taran at mid_mid_left
@@ -273,6 +300,7 @@ label asset_debugger:
         show hart2 at mid_right_right
         show arceus angry dark at right 
         hoh_operator "test 14{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(15):
@@ -285,6 +313,7 @@ label asset_debugger:
         show billy car at mid_right
         show post_it at center
         show cs disappointed metal2 at left
+        $ spritetotal += 9
         show worker_6 at mid_left_left
         show guard_soldier at mid_left
         show taran flipped at mid_mid_left
@@ -292,6 +321,7 @@ label asset_debugger:
         show cultist at mid_right_right
         show arceus angry dark flipped at right 
         rich "test 15{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(16):
@@ -304,6 +334,7 @@ label asset_debugger:
         show billy car happy at mid_right
         show ytx at center
         show cs disappointed metal3 at left
+        $ spritetotal += 9
         show worker_7 at mid_left_left
         show marine at mid_left
         show colton at mid_mid_left
@@ -311,6 +342,7 @@ label asset_debugger:
         show cultist gun at mid_right_right
         show arceus guard at right 
         ed "test 16{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(17):
@@ -323,6 +355,7 @@ label asset_debugger:
         show billy car turn at mid_right
         show objection at center
         show cs disappointed metal4 at left
+        $ spritetotal += 9
         show digi at mid_left_left
         show big_tank at mid_left
         show nfanboy at mid_mid_left
@@ -330,6 +363,7 @@ label asset_debugger:
         show cultist_2 at mid_right_right
         show arceus guard flipped at right 
         wesley "test 17{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(18):
@@ -341,6 +375,7 @@ label asset_debugger:
         scene hoh_outside
         show hold_it at center
         show cs disappointed flipped at left
+        $ spritetotal += 9
         show digi dark at mid_left_left
         show asylum_worker at mid_left
         show afanboy at mid_mid_left
@@ -349,6 +384,7 @@ label asset_debugger:
         show cultist_3 at mid_right_right
         show arceus happy at right 
         michael "test 18{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(19):
@@ -360,6 +396,7 @@ label asset_debugger:
         scene hoh_hq
         show scott_border at center
         show cs concentrate at left
+        $ spritetotal += 9
         show digi flipped at mid_left_left
         show aria at mid_left
         show nova at mid_mid_left
@@ -368,6 +405,7 @@ label asset_debugger:
         show kitty at mid_right_right
         show arceus happy flipped at right 
         michael_nobeep "test 19{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(20):
@@ -379,6 +417,7 @@ label asset_debugger:
         scene hoh_hq2
         show cswanted at center
         show cs concentrate dark at left
+        $ spritetotal += 9
         show digi dark flipped at mid_left_left
         show aria flipped at mid_left
         show nova dark at mid_mid_left
@@ -387,6 +426,7 @@ label asset_debugger:
         show kitty flipped at mid_right_right
         show arceus happy dark at right 
         phil "test 20{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(21):
@@ -398,6 +438,7 @@ label asset_debugger:
         scene hoh_hq3
         show laser_beam at center
         show cs concentrate flipped at left
+        $ spritetotal += 9
         show guest at mid_left_left
         show aria dark at mid_left
         show nova flipped at mid_mid_left
@@ -406,6 +447,7 @@ label asset_debugger:
         show blank at mid_right_right
         show arceus happy dark flipped at right 
         worker_1 "test 21{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(22):
@@ -417,6 +459,7 @@ label asset_debugger:
         scene hoh_hq4
         show cards1 at center
         show cs dark at left
+        $ spritetotal += 9
         show janitor at mid_left_left
         show aria dark flipped at mid_left
         show nova dark flipped at mid_mid_left
@@ -425,6 +468,7 @@ label asset_debugger:
         show midge at mid_right_right
         show arceus prison at right 
         worker_2 "test 22{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(23):
@@ -436,6 +480,7 @@ label asset_debugger:
         scene hoh_hq5
         show cards2 at center
         show cs dark flipped at left
+        $ spritetotal += 9
         show customer at mid_left_left
         show bouncer1 at mid_left
         show peppino at mid_mid_left
@@ -444,6 +489,7 @@ label asset_debugger:
         show mika at mid_right_right
         show arceus prison flipped at right 
         worker_3 "test 23{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(24):
@@ -455,6 +501,7 @@ label asset_debugger:
         scene hoh_elevator
         show cards3 at center
         show cs dusk at left
+        $ spritetotal += 9
         show howie at mid_left_left
         show bouncer2 at mid_left
         show peppino2 at mid_mid_left
@@ -463,6 +510,7 @@ label asset_debugger:
         show mika dark at mid_right_right
         show arceus worried at right 
         worker_4 "test 24{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(25):
@@ -474,6 +522,7 @@ label asset_debugger:
         scene helipad
         show cards4 at center
         show cs disappointed dark at left
+        $ spritetotal += 9
         show howie flipped at mid_left_left
         show trailtrash at mid_left
         show streetguy at mid_mid_left
@@ -482,6 +531,7 @@ label asset_debugger:
         show db at mid_right_right
         show arceus worried flipped at right 
         worker_5 "test 25{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(26):
@@ -493,6 +543,7 @@ label asset_debugger:
         scene jail_inside
         show cards5 at center
         show cs disappointed dark flipped at left
+        $ spritetotal += 9
         show smiley at mid_left_left
         show trailtrash flipped at mid_left
         show pencilguy at mid_mid_left
@@ -501,6 +552,7 @@ label asset_debugger:
         show db_cooper at mid_right_right
         show arceus dirty worried at right 
         worker_6 "test 26{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(27):
@@ -512,6 +564,7 @@ label asset_debugger:
         scene jail_cell
         show con_screen at center
         show cs disappointed dusk at left
+        $ spritetotal += 9
         show mario at mid_left_left
         show green at mid_left
         show gordon at mid_mid_left
@@ -520,6 +573,7 @@ label asset_debugger:
         show ges at mid_right_right
         show arceus dirty worried flipped at right 
         worker_7 "test 27{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(28):
@@ -531,6 +585,7 @@ label asset_debugger:
         scene border
         show case at center
         show cs worried dark at left
+        $ spritetotal += 9
         show mario flipped at mid_left_left
         show green flipped at mid_left
         show car at mid_mid_left
@@ -539,6 +594,7 @@ label asset_debugger:
         show renovator at mid_right_right
         show arceus worried dark at right 
         digi "test 28{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(29):
@@ -550,6 +606,7 @@ label asset_debugger:
         scene outside_tim_hortons
         show case flipped at center
         show cs worried dark flipped at left
+        $ spritetotal += 9
         show violent_jay at mid_left_left
         show jerma at mid_left
         show tom at mid_mid_left
@@ -558,6 +615,7 @@ label asset_debugger:
         show shadowman at mid_right_right
         show arceus worried dark flipped at right 
         pakoo "test 29{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(30):
@@ -569,6 +627,7 @@ label asset_debugger:
         scene inside_tim_hortons_fg
         show bag at center
         show cs prison at left
+        $ spritetotal += 9
         show shaggy_too_dope at mid_left_left
         show lego at mid_left
         show james at mid_mid_left
@@ -577,6 +636,7 @@ label asset_debugger:
         show pencilcashier at mid_right_right
         show arceus dark at right 
         addy "test 30{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(31):
@@ -588,6 +648,7 @@ label asset_debugger:
         scene inside_tim_hortons
         show bag flipped at center
         show cs prison_worried at left
+        $ spritetotal += 9
         show blue_light at mid_left_left
         show lego eyes at mid_left
         show jeremy at mid_mid_left
@@ -596,6 +657,7 @@ label asset_debugger:
         show cruise at mid_right_right
         show arceus dark flipped at right 
         copguy "test 31{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(32):
@@ -607,6 +669,7 @@ label asset_debugger:
         scene tunnel
         show drill at center
         show cs guard at left
+        $ spritetotal += 9
         show red_light at mid_left_left
         show tsa at mid_left
         show hammond at mid_mid_left
@@ -615,6 +678,7 @@ label asset_debugger:
         show cruise flipped at mid_right_right
         show arceus dusk at right 
         arceus "test 32{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(33):
@@ -626,6 +690,7 @@ label asset_debugger:
         scene canada
         show drillbreak at center
         show cs guard dark at left
+        $ spritetotal += 9
         show copguy_ex_front at mid_left_left
         show monika at mid_left
         show mean ayo at mid_mid_left
@@ -634,6 +699,7 @@ label asset_debugger:
         show lunatic_cultist at mid_right_right
         show arceus angry dusk at right 
         anno "test 33{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(34):
@@ -645,6 +711,7 @@ label asset_debugger:
         scene flag
         show sansbrick at center
         show cs fakegod at left
+        $ spritetotal += 9
         show copguy_ex_back at mid_left_left
         show weird_al at mid_left
         show mean ayo flipped at mid_mid_left
@@ -653,6 +720,7 @@ label asset_debugger:
         show lunatic_cultist flipped at mid_right_right
         show arceus dusk flipped at right 
         border_guard "test 34{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(35):
@@ -664,6 +732,7 @@ label asset_debugger:
         scene outside_ltt
         show oldgame at center
         show cs guitar at left
+        $ spritetotal += 9
         show ai_ducks at mid_left_left
         show cpt_underpants at mid_left
         show mean angry at mid_mid_left
@@ -672,6 +741,7 @@ label asset_debugger:
         show priest at mid_right_right
         show arceus worried dusk at right
         linus "test 35{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(36):
@@ -683,6 +753,7 @@ label asset_debugger:
         scene inside_ltt
         show m4 at center
         show cs surprised at left
+        $ spritetotal += 9
         show stage_screen at mid_left_left
         show david at mid_left
         show mean angry flipped at mid_mid_left
@@ -691,6 +762,7 @@ label asset_debugger:
         show priest flipped at mid_right_right
         show train_fly_1 at right
         asylum_worker "test 36{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(37):
@@ -702,6 +774,7 @@ label asset_debugger:
         scene alley
         show m4 flipped at center
         show cs surprised flipped at left
+        $ spritetotal += 8
         show george at mid_left_left
         show zenigata at mid_left
         show mean wat at mid_mid_left
@@ -709,6 +782,7 @@ label asset_debugger:
         show moomin at mid_right
         show train_fly_2 at right
         csgod "test 37{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(38):
@@ -720,6 +794,7 @@ label asset_debugger:
         scene question
         show m4 fire at center
         show cs scared at left
+        $ spritetotal += 8
         show harold at mid_left_left
         show zenigata flipped at mid_left
         show mean wat flipped at mid_mid_left
@@ -727,6 +802,7 @@ label asset_debugger:
         show snufkin at mid_right
         show train_fly_3 at right
         luke "test 38{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(39):
@@ -739,10 +815,12 @@ label asset_debugger:
         show m4 fire flipped at center
         show mr_krupp at mid_left_left
         show cs scared flipped at left
+        $ spritetotal += 6
         show mean furious at mid_mid_left
         show alicia at mid_right
         show train_fly_4 at right
         taran "test 39{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(40):
@@ -754,10 +832,12 @@ label asset_debugger:
         scene csdesk
         show script at center
         show cs scared dark at left
+        $ spritetotal += 5
         show mean furious at mid_mid_left
         show witch at mid_right
         show train_fly_5 at right
         colton "test 40{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(41):
@@ -769,11 +849,13 @@ label asset_debugger:
         scene csvideo
         show post_it2 at center
         show cs insane worried at left
+        $ spritetotal += 6
         show mean furious flipped at mid_mid_left
         show moomin flipped at mid_right
         show train_fly_6 at mid_right_right
         show train_boss_1 at right
         sheriff "test 41{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(42):
@@ -785,11 +867,13 @@ label asset_debugger:
         scene setup
         show colorbars at center
         show cs insane worried flipped at left
+        $ spritetotal += 6
         show mean tired at mid_mid_left
         show snufkin flipped at mid_right
         show train_fly_7 at mid_right_right
         show train_boss_2 at right
         billy "test 42{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(43):
@@ -801,11 +885,13 @@ label asset_debugger:
         scene loffice
         show paper at center
         show cs insane disappointed at left
+        $ spritetotal += 6
         show mean tired flipped at mid_mid_left
         show alicia flipped at mid_right
         show flying_train_final at mid_right_right
         show train_boss_3 at right
         tv_billy "test 43{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(44):
@@ -817,10 +903,12 @@ label asset_debugger:
         scene ltt_bg
         show pipe_gun at center
         show cs horse at left
+        $ spritetotal += 5
         show mean worried at mid_mid_left
         show witch flipped at mid_right
         show train_boss_4 at right
         cultist "test 44{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(45):
@@ -832,10 +920,12 @@ label asset_debugger:
         scene ltt_fg
         show pipe_gun flipped at center
         show cs horse flipped at left
+        $ spritetotal += 5
         show mean worried flipped at mid_mid_left
         show baumer at mid_right
         show train_boss_5 at right
         cultist_2 "test 45{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(46):
@@ -847,10 +937,12 @@ label asset_debugger:
         scene frontdoor
         show cheetos at center
         show cs pissed at left
+        $ spritetotal += 5
         show mean scared at mid_mid_left
         show baumer flipped at mid_right
         show train_boss_6 at right
         cultist_3 "test 46{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(47):
@@ -863,8 +955,10 @@ label asset_debugger:
         show bear at center
         show mean scared flipped at mid_mid_left
         show cs pissed flipped at left
+        $ spritetotal += 4
         show train_boss_7 at right
         scott "test 47{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(48):
@@ -877,8 +971,10 @@ label asset_debugger:
         show dog at center
         show mean unamused at mid_mid_left
         show cs cultist at left
+        $ spritetotal += 4
         show train_boss_final at right
         terry "test 48{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(49):
@@ -891,8 +987,10 @@ label asset_debugger:
         show pig at center
         show mean unamused flipped at mid_mid_left
         show cs cultist flipped at left
+        $ spritetotal += 4
         show zenigata car at mid_right
         carla "test 49{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(50):
@@ -906,8 +1004,10 @@ label asset_debugger:
         show mean human at mid_left
         show amtrak_conductor at mid_mid_left
         show cs disappointed cultist at left
+        $ spritetotal += 5
         show after_true_title at mid_right
         peppino "test 50{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(51):
@@ -921,7 +1021,9 @@ label asset_debugger:
         show mean angry sil_white flipped at mid_left
         show amtrak_conductor flipped at mid_mid_left
         show cs angry cultist at left
+        $ spritetotal += 4
         iris "test 51{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(52):
@@ -935,7 +1037,9 @@ label asset_debugger:
         show mean human flipped at mid_left
         show amtrak_stewardess at mid_mid_left
         show cs disappointed cultist flipped at left
+        $ spritetotal += 4
         lego "test 52{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(53):
@@ -949,7 +1053,9 @@ label asset_debugger:
         show mean human happy at mid_left
         show amtrak_stewardess flipped at mid_mid_left
         show cs angry cultist flipped at left
+        $ spritetotal += 4
         trailtrash "test 53{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(54):
@@ -963,7 +1069,9 @@ label asset_debugger:
         show mean human happy flipped at mid_left
         show lupin at mid_mid_left
         show cs pencil at left
+        $ spritetotal += 4
         green "test 54{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(55):
@@ -977,7 +1085,9 @@ label asset_debugger:
         show mean human annoyed at mid_left
         show lupin flipped at mid_mid_left
         show cs angry pencil at left
+        $ spritetotal += 4
         jerma "test 55{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(56):
@@ -991,7 +1101,9 @@ label asset_debugger:
         show lupin hat at mid_mid_left
         show mean human annoyed flipped at mid_left
         show cs disappointed pencil at left
+        $ spritetotal += 4
         pencil "test 56{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(57):
@@ -1005,7 +1117,9 @@ label asset_debugger:
         show mean human shocked at mid_left
         show lupin hat flipped at mid_mid_left
         show cs phone at left
+        $ spritetotal += 4
         signup "test 57{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(58):
@@ -1018,7 +1132,9 @@ label asset_debugger:
         show copguyexe flipped at center
         show mean human shocked flipped at mid_left
         show cs phone flipped at left
+        $ spritetotal += 3
         host "test 58{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(59):
@@ -1033,7 +1149,9 @@ label asset_debugger:
         show kuwait_nurse_1 at mid_right
         show kuwait_lieutenant_snow at mid_mid_right
         show cs disappointed phone at left
+        $ spritetotal += 5
         tsa "test 59{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(60):
@@ -1046,7 +1164,9 @@ label asset_debugger:
         show tate_ex_front at center
         show mean human angry at mid_left
         show cs disappointed phone flipped at left
+        $ spritetotal += 3
         luigi "test 60{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
 
@@ -1060,7 +1180,9 @@ label asset_debugger:
         show tate_ex_preparation at center
         show mean human angry flipped at mid_left
         show cs worried phone at left
+        $ spritetotal += 3
         mika "test 61{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
 
@@ -1074,7 +1196,9 @@ label asset_debugger:
         show tate_ex at center
         show fake_rpg_miss at mid_left_left
         show cs worried phone flipped at left
+        $ spritetotal += 3
         k174 "test 62{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
 
@@ -1088,7 +1212,9 @@ label asset_debugger:
         show ltt_bottle at center
         show oof_45 at mid_left_left
         show cs angry phone at left
+        $ spritetotal += 3
         k199 "test 63{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
 
@@ -1102,7 +1228,9 @@ label asset_debugger:
         show amtrak_dining_food at center
         show oof_54 at mid_left_left
         show cs angry phone flipped at left
+        $ spritetotal += 3
         k207 "test 64{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
 
@@ -1116,7 +1244,9 @@ label asset_debugger:
         show amtrak_dining_pancake at center
         show oof_52 at mid_left_left
         show cs scared phone at left
+        $ spritetotal += 3
         billy_far "test 65{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
 
@@ -1129,7 +1259,9 @@ label asset_debugger:
         scene course_2
         show boom at center
         show cs scared phone flipped at left
+        $ spritetotal += 2
         direct "test 66{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
 
@@ -1142,7 +1274,9 @@ label asset_debugger:
         scene course_3
         show mean_clothes at center
         show cs surprised phone at left
+        $ spritetotal += 2
         monika "test 67{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
 
@@ -1154,7 +1288,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene canada_block
         show cs surprised phone flipped at left
+        $ spritetotal += 1
         lancer "test 68{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
 
@@ -1166,7 +1302,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene dealership
         show cs pissed phone at left
+        $ spritetotal += 1
         tate "test 69{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
 
@@ -1178,7 +1316,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene dealer_cars
         show cs pissed phone flipped at left
+        $ spritetotal += 1
         kitty "test 70{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
 
@@ -1190,7 +1330,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene flintcar_outside
         show cs concentrate phone at left
+        $ spritetotal += 1
         obama "test 71{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
 
@@ -1202,7 +1344,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene flintcar_fg
         show cs concentrate phone flipped at left
+        $ spritetotal += 1
         bomaha "test 72{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
 
@@ -1214,7 +1358,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene car_inside_fg
         show cs at rotate_10
+        $ transformtotal += 1
         blank "test 73{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
 
@@ -1226,7 +1372,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene joj_charger_fg
         show cs at rotate_6
+        $ transformtotal += 1
         aria "test 74{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
 
@@ -1238,7 +1386,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene comments
         show cs at rotate_5
+        $ transformtotal += 1
         aria_alt "test 75{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
 
@@ -1250,7 +1400,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene hospital_room
         show cs at center_left
+        $ transformtotal += 1
         cop "test 76{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
 
@@ -1262,7 +1414,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene hospital_reception
         show cs at center_right
+        $ transformtotal += 1
         midge "test 77{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
 
@@ -1274,7 +1428,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene ticket_counter
         show cs at mid_center_right
+        $ transformtotal += 1
         db "test 78{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
 
@@ -1286,7 +1442,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene backseat
         show cs at mid_offscreen_right
+        $ transformtotal += 1
         customer "test 79{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
 
@@ -1298,7 +1456,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene hotel_lobby
         show cs at mid_offscreen_left
+        $ transformtotal += 1
         guest "test 80{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
 
@@ -1310,7 +1470,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene hotel_room
         show cs at xstretch_in
+        $ transformtotal += 1
         ges "test 81{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
 
@@ -1322,7 +1484,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene hotel_breakfast
         show cs at xstretch_out
+        $ transformtotal += 1
         nurse "test 82{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
 
@@ -1334,7 +1498,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene hotel_guitar_hero
         show cs at little_bounce
+        $ transformtotal += 1
         benrey "test 83{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
 
@@ -1346,7 +1512,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene hotel_door
         show cs at t_post_it
+        $ transformtotal += 1
         mean "test 84{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
 
@@ -1358,7 +1526,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene hotel_hall
         show cs at t_copguy_frontseat
+        $ transformtotal += 1
         agent "test 85{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
 
@@ -1370,7 +1540,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene falling
         show cs at t_copguy_frontseat
+        $ transformtotal += 1
         agent "test 86{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(87):
@@ -1381,7 +1553,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene ltx
         show cs at t_arc_at_tims
+        $ transformtotal += 1
         receptionist "test 87{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
 
@@ -1393,7 +1567,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene ltx_stage
         show cs at t_cs_ltt
+        $ transformtotal += 1
         scott_pres "test 88{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
 
@@ -1405,7 +1581,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene in_limo
         show cs at t_linus_ltt
+        $ transformtotal += 1
         miku "test 89{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
 
@@ -1417,7 +1595,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene tour_bus_inside
         show cs at t_pepzone1
+        $ transformtotal += 1
         hammond "test 90{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
 
@@ -1429,7 +1609,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene big_stage
         show cs at t_pepzone2
+        $ transformtotal += 1
         jeremy "test 91{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
 
@@ -1441,7 +1623,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene stage2
         show cs at t_linus_drop_tips
+        $ transformtotal += 1
         james "test 92{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
 
@@ -1453,7 +1637,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene cs_door_outside
         show cs at t_gun
+        $ transformtotal += 1
         tom "test 93{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
 
@@ -1465,7 +1651,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene manitoba_street
         show cs at t_stage_screen_l
+        $ transformtotal += 1
         sayori "test 94{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
 
@@ -1477,7 +1665,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene shoe_store
         show cs at t_stage_screen_c
+        $ transformtotal += 1
         gnome "test 95{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
 
@@ -1489,7 +1679,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene washington_road day
         show cs at t_stage_screen_r
+        $ transformtotal += 1
         chat "test 96{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
 
@@ -1501,7 +1693,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene washington_road dusk
         show cs at t_stagescreen
+        $ transformtotal += 1
         unknown "test 97{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
 
@@ -1513,7 +1707,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene washington_road morning
         show cs at t_punchup
+        $ transformtotal += 1
         crowd "test 98{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
 
@@ -1525,6 +1721,7 @@ label asset_debugger:
         $ bgtotal += 1
         scene town
         worker "test 99{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
 
@@ -1535,7 +1732,9 @@ label asset_debugger:
         scene gasinside
         show toby at center
         show cs at lego_run
+        $ transformtotal += 1
         streetguy "test 100{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
 
@@ -1545,7 +1744,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene gasoutside
         show cs at car_run
+        $ transformtotal += 1
         waitress "test 101{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
 
@@ -1555,7 +1756,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene carback1
         show cs at typewriter_location
+        $ transformtotal += 1
         mario "test 102{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(103):
@@ -1564,7 +1767,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene hardwareinside
         show cs at midoffscreenright
+        $ transformtotal += 1
         smiley "test 103{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(104):
@@ -1573,7 +1778,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene hardwareoutside
         show cs at midoffscreenleftspin
+        $ transformtotal += 1
         violent_jay "test 104{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(105):
@@ -1582,7 +1789,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene cultforest
         show cs at offscreenrightspin
+        $ transformtotal += 1
         shaggy_too_dope "test 105{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(106):
@@ -1591,7 +1800,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene mcdonalds
         show cs at offscreenleftspin
+        $ transformtotal += 1
         joel "test 106{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(107):
@@ -1601,6 +1812,7 @@ label asset_debugger:
         scene mcdees
         show cs worried punished
         ikea_greeter "test 107{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(108):
@@ -1609,6 +1821,7 @@ label asset_debugger:
         $ bgtotal += 1
         scene rushmore
         ikea_worker "test 108{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(109):
@@ -1617,7 +1830,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene csmore
         show cs at t_mean_rollout
+        $ transformtotal += 1
         pomni "test 109{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(110):
@@ -1626,6 +1841,7 @@ label asset_debugger:
         $ bgtotal += 1
         scene omaha
         average_swede "test 110{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(111):
@@ -1634,6 +1850,7 @@ label asset_debugger:
         $ bgtotal += 1
         scene alleyway
         alien "test 111{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(112):
@@ -1642,6 +1859,7 @@ label asset_debugger:
         $ bgtotal += 1
         scene peppinopizzabg
         moomin "test 112{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(113):
@@ -1650,6 +1868,7 @@ label asset_debugger:
         $ bgtotal += 1
         scene peppinopizzafg
         snufkin "test 113{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(114):
@@ -1658,7 +1877,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene wozniaktroubles
         show cs at t_blur_on
+        $ transformtotal += 1
         alicia "test 114{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(115):
@@ -1667,7 +1888,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene cshouse_vaporized
         show cs at t_blur_off
+        $ transformtotal += 1
         witch "test 115{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(116):
@@ -1676,7 +1899,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene cscar1
         show cs at t_fake_rpg_text(0,0)
+        $ transformtotal += 1
         renovator "test 116{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(117):
@@ -1685,6 +1910,7 @@ label asset_debugger:
         $ bgtotal += 1
         scene cscar1arc
         cruise "test 117{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(118):
@@ -1693,6 +1919,7 @@ label asset_debugger:
         $ bgtotal += 1
         scene cscar2
         baumer "test 118{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(119):
@@ -1701,7 +1928,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene utah
         show cs at t_evil_mika
+        $ transformtotal += 1
         copguyexe "test 119{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(120):
@@ -1710,7 +1939,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene utahsign
         show cs at t_toby
+        $ transformtotal += 1
         l_cultist "test 120{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(121):
@@ -1719,7 +1950,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene utahnight
         show cs at t_lupin_out
+        $ transformtotal += 1
         tate_offscreen "test 121{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(122):
@@ -1728,7 +1961,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene pizzaplace
         show cs at t_boom
+        $ transformtotal += 1
         pakoo_offscreen "test 122{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(123):
@@ -1737,7 +1972,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene legodoor
         show cs at manual_pos(0,0)
+        $ transformtotal += 1
         green_offscreen "test 123{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(124):
@@ -1746,6 +1983,7 @@ label asset_debugger:
         $ bgtotal += 1
         scene legodooropen
         anno_offscreen "test 124{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(125):
@@ -1754,6 +1992,7 @@ label asset_debugger:
         $ bgtotal += 1
         scene legostage
         ed_ai "test 125{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(126):
@@ -1762,6 +2001,7 @@ label asset_debugger:
         $ bgtotal += 1
         scene vegas
         obamanobeep "test 126{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(127):
@@ -1770,6 +2010,7 @@ label asset_debugger:
         $ bgtotal += 1
         scene strip
         bomahanobeep "test 127{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(128):
@@ -1778,6 +2019,7 @@ label asset_debugger:
         $ bgtotal += 1
         scene slots
         RCOMEM "test 128{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(129):
@@ -1786,6 +2028,7 @@ label asset_debugger:
         $ bgtotal += 1
         scene tablegames
         k_doctor "test 129{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(130):
@@ -1794,6 +2037,7 @@ label asset_debugger:
         $ bgtotal += 1
         scene pokertable
         k_nurse "test 130{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(131):
@@ -1802,6 +2046,7 @@ label asset_debugger:
         $ bgtotal += 1
         scene luigi1
         l_snow "test 131{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(132):
@@ -1810,6 +2055,7 @@ label asset_debugger:
         $ bgtotal += 1
         scene luigi2
         lupin "test 132{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(133):
@@ -1818,6 +2064,7 @@ label asset_debugger:
         $ bgtotal += 1
         scene vegasbathroom
         lupin_offscreen "test 133{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(134):
@@ -1826,6 +2073,7 @@ label asset_debugger:
         $ bgtotal += 1
         scene backroomcasino
         mean_offscreen "test 134{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(135):
@@ -1834,6 +2082,7 @@ label asset_debugger:
         $ bgtotal += 1
         scene outsafe
         amtrak_conductor "test 135{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(136):
@@ -1842,6 +2091,7 @@ label asset_debugger:
         $ bgtotal += 1
         scene outsafeopen
         amtrak_stewardess "test 136{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(137):
@@ -1850,6 +2100,7 @@ label asset_debugger:
         $ bgtotal += 1
         scene insafe
         amtrak_npc_1 "test 137{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(138):
@@ -1858,6 +2109,7 @@ label asset_debugger:
         $ bgtotal += 1
         scene carpark
         amtrak_npc_2 "test 138{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(139):
@@ -1866,6 +2118,7 @@ label asset_debugger:
         $ bgtotal += 1
         scene casino1
         amtrak_npc_3 "test 139{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(140):
@@ -1874,6 +2127,7 @@ label asset_debugger:
         $ bgtotal += 1
         scene fazhall
         priest "test 140{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(141):
@@ -1882,6 +2136,7 @@ label asset_debugger:
         $ bgtotal += 1
         scene fazlobby
         perfect_billy "test 141{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(142):
@@ -1890,6 +2145,7 @@ label asset_debugger:
         $ bgtotal += 1
         scene fazplace
         weird_al "test 142{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(143):
@@ -1898,6 +2154,7 @@ label asset_debugger:
         $ bgtotal += 1
         scene airplane_seats
         david "test 143{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(144):
@@ -1906,6 +2163,7 @@ label asset_debugger:
         $ bgtotal += 1
         scene airport_interior
         mr_krupp "test 144{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(145):
@@ -1914,6 +2172,7 @@ label asset_debugger:
         $ bgtotal += 1
         scene airport_seats
         george "test 145{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(146):
@@ -1922,6 +2181,7 @@ label asset_debugger:
         $ bgtotal += 1
         scene airport_tsa
         harold "test 146{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(147):
@@ -1930,6 +2190,7 @@ label asset_debugger:
         $ bgtotal += 1
         scene airport_inside
         zenigata_nobeep "test 147{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(148):
@@ -1938,6 +2199,7 @@ label asset_debugger:
         $ bgtotal += 1
         scene old_house_outside
         zenigata_offscreen "test 148{w=0.5}{nw}"
+        $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(149):
