@@ -183,14 +183,13 @@ transform mid_offscreen_left:
     yanchor 1.0 ypos 1.0
     xanchor 0.5 xpos -0.0
     
-transform edge_left:
-    yanchor 1.0 ypos 1.0
-    xanchor 0.5 xpos 0.05
+# i got tired. - tate
+transform manual_pos(x,y):
+    xanchor 0
+    yanchor 0
+    xpos x
+    ypos y
     
-transform edge_right:
-    yanchor 1.0 ypos 1.0
-    xanchor 0.5 xpos 0.95
-
 transform xstretch_in:
     xalign 0.5
     linear 0.5 xsize 1920
@@ -319,11 +318,6 @@ transform t_fake_rpg_text(x,y):
         parallel:
             ease_expo 0.5 alpha 0.00
         
-# i got tired. - tate
-transform manual_pos(x,y):
-    xpos x
-    xpos y
-
 transform lego_run:
     pos (0.5, 0.5)
     anchor(0.5, 0.5)
@@ -518,9 +512,6 @@ define tate_offscreen = Character("???", callback = renpy.partial(char_callback,
 define pakoo_offscreen = Character("???", callback = renpy.partial(char_callback, name = "pakoo_offscreen", beep="pak"))
 define green_offscreen = Character("???", callback = renpy.partial(char_callback, name = "green_offscreen", beep = "green"), what_color="#00FF00")
 define anno_offscreen = Character("???", callback = renpy.partial(char_callback, name = "anno_offscreen", beep = "anno"))
-define lupin_offscreen = Character("???", callback = renpy.partial(char_callback, name = "lupin_offscreen", beep = "lupin"))
-define zenigata_nobeep = Character("???", callback = renpy.partial(char_callback, name = "zenigata_nobeep", play_beeps = False))
-define mean_offscreen = Character("???", callback = renpy.partial(char_callback, name = "mean_offscreen", beep = "mean"))
 
 # AI Imposter Character Definitions
 define ed_ai = Character("\"Ed\"", callback = renpy.partial(char_callback, name = "ed_ai", beep = "ed"))
@@ -557,6 +548,10 @@ define amtrak_stewardess = Character("Stewardess", callback = char_callback)
 define amtrak_npc_1 = Character("Passenger 1", callback = char_callback)
 define amtrak_npc_2 = Character("Passenger 2", callback = char_callback)
 define amtrak_npc_3 = Character("Passenger 3", callback = char_callback)
+define lupin_offscreen = Character("???", callback = renpy.partial(char_callback, name = "lupin_offscreen", beep = "lupin"))
+define mean_offscreen = Character("???", callback = renpy.partial(char_callback, name = "mean_offscreen", beep = "mean"))
+define zenigata_nobeep = Character("???", callback = renpy.partial(char_callback, name = "zenigata_nobeep", play_beeps = False))
+define zenigata_offscreen = Character("???", callback = renpy.partial(char_callback, name = "zenigata_offscreen", beep = "zenigata"))
 
 # DX Finale Character Definitions
 define perfect_billy = Character("Perfect Billy", callback = renpy.partial(char_callback, name = "billy", beep = "billy"), screen = "perfect_billy_text")
@@ -1360,6 +1355,7 @@ image lupin hat = "characters/lupin_hat.png"
 image lupin hat flipped = "flip:characters/lupin_hat.png"
 image zenigata = "characters/zenigata.png"
 image zenigata flipped = "flip:characters/zenigata.png"
+image zenigata car = "characters/zenigata_car.png"
 
 # Train Route generated images
 image fake_rpg_miss = Text("{size=50}{color=#FFAAAA}Miss!", text_align=0.5)
@@ -2033,6 +2029,7 @@ define audio.sfx_whoosh = "sfx/sfx_whoosh.ogg"
 define audio.sfx_windows_logon = "sfx/sfx_windows_logon.ogg"
 define audio.sfx_yelling = "sfx/sfx_yelling.ogg"
 define audio.sfx_ytpintro = "sfx/sfx_ytpintro.ogg"
+define audio.sfx_zenigata_shout = "sfx/sfx_zenigata_shout.ogg"
 
 # Layers?
 define config.detached_layers += ["broadcast"]

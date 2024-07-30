@@ -2415,26 +2415,26 @@ label train_confront_lupin:
     
     show mean angry flipped at center
     show tate sheepish flipped at right
-    show arceus worried flipped at edge_left
+    show arceus worried flipped at manual_pos(-175,405)
     show cs disappointed at mid_left
     with move
     
     mean "Nah, watch."
     mean "I've got this."
-    
-    # TODO: mean needs to pick a sfx for his transformation sequence if he doesnt want this one
     # TODO: why does his sprite flip weird? it shouldn't. did i fuck up the sil_white:flip shader?
     
     play sound sfx_mean_transform
     stop music fadeout 2.0
     show tate shock flipped
     show cs worried
-    show mean angry sil_white flipped with Dissolve(0.5)
+    show mean angry sil_white flipped:
+        linear 1.0 blur 10
+    with Dissolve(0.5)
     scene white with Dissolve(0.6)
     pause 1.0
         
     scene amtrak_baggage
-    show arceus worried flipped at edge_left
+    show arceus worried flipped at manual_pos(-175,405)
     show cs scared at mid_left behind arceus
     show tate shock flipped at right
     show mean human at center
@@ -2454,9 +2454,7 @@ label train_confront_lupin:
     show mean human happy
     mean "I can't believe y'all motherfuckers are so {i}short!"
 
-    # stupid gag idea i had.
-    # is it funnier to hit them one at a time or all at once? mean thinks all at once
-    
+    # stupid height gag
     $ renpy.music.set_volume(0)
     show oof_45 at t_fake_rpg_text(0.05, 0.3)
     show oof_54 at t_fake_rpg_text(0.2, 0.125)
@@ -2480,7 +2478,7 @@ label train_confront_lupin:
     show cs disappointed
     show tate sheepish flipped
     mean "Anyway, let me handle this."
-    mean "We're getting on top, {i}and{/i} we're gonna get this guy, one way or another!"
+    mean "We're {i}getting{/i} on top, {i}and{/i} we're gonna get this guy, one way or {i}another!"
     n "Mean tosses the others onto the roof!"
     show mean human flipped at mid_right behind tate with move
     show tate shock flipped
@@ -2506,28 +2504,30 @@ label train_on_top:
     scene
     show amtrak_top
     
-    show tate sad at center
+    show tate sad at manual_pos(500,230)
     show cs worried at left
-    show arceus worried flipped at edge_left
+    show arceus worried flipped at manual_pos(-175,405)
     show lupin hat flipped at right
     with dissolve
     
     # mean wanted this
-    $mean_text = ""
-    $mean_fun_text = ""
-    $random = random.randint(1,3)
-    if random == 1:
-        $mean_text = "Stop right there,{w=0.25} criminal scum!"
-        $mean_fun_text = "Nobody breaks the law on my watch!{w=0.25} I'm confiscating your stolen goods.{w=0.25} Now,{w=0.25} pay your fine or it's off to jail."
-    elif random == 2:
-        $mean_text = "It's all over,{w=0.25} lawbreaker!"
-        $mean_fun_text = "Your spree is at an end.{w=0.25} I'll take any stolen goods you have.{w=0.25} The next move is yours--{w=0.5} Pay your fine,{w=0.25} or I'll haul you away!"
-    elif random == 3:
-        $mean_text = "Stop,{w=0.25} you’ve violated the law."
-        $mean_fun_text = "Pay the court a fine,{w=0.25} or serve your sentence.{w=0.25} Your stolen goods are now forfeit."
-    else:
-        $mean_text = "Stop right there!"
-        $mean_fun_text = "You're not getting away!"
+    # TODO: why does it pickle crash??? commenting it out bc it's interfering with any other tests
+    
+    $mean_text = "Stop right there!"
+    $mean_fun_text = "You're not getting away!"
+#    $random = renpy.random.randint(1,3)
+#    if random == 1:
+#        $mean_text = "Stop right there,{w=0.25} criminal scum!"
+#        $mean_fun_text = "Nobody breaks the law on my watch!{w=0.25} I'm confiscating your stolen goods.{w=0.25} Now,{w=0.25} pay your fine or it's off to jail."
+#    elif random == 2:
+#        $mean_text = "It's all over,{w=0.25} lawbreaker!"
+#        $mean_fun_text = "Your spree is at an end.{w=0.25} I'll take any stolen goods you have.{w=0.25} The next move is yours--{w=0.5} Pay your fine,{w=0.25} or I'll haul you away!"
+#    elif random == 3:
+#        $mean_text = "Stop,{w=0.25} you’ve violated the law."
+#        $mean_fun_text = "Pay the court a fine,{w=0.25} or serve your sentence.{w=0.25} Your stolen goods are now forfeit."
+#    else:
+#        $mean_text = "Stop right there!"
+#        $mean_fun_text = "You're not getting away!"
         
     show mean human angry flipped at mid_left behind cs with moveinleft
     mean "{bt=a3-p10-s4}{size=+24}[mean_text]" with hpunch
@@ -2570,13 +2570,13 @@ label train_on_top:
         xysize (1920, 200)
         xzoom -1
 
-    show tate srs at Move((0.65, 0.3), (0.6, 0.3), 8, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show tate srs at Move((0.65, 0.3), (0.6, 0.3), 10, repeat=False, bounce=False, xanchor="left", yanchor="top")
     
-    show cs angry at Move((0.2, 0.3), (0.1, 0.3), 8, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show cs angry at Move((0.2, 0.3), (0.1, 0.3), 12, repeat=False, bounce=False, xanchor="left", yanchor="top")
     
-    show arceus angry flipped at Move((0.1 ,0.4), (0.0, 0.4), 9, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show arceus angry flipped at Move((0.1 ,0.4), (0.0, 0.4), 10, repeat=False, bounce=False, xanchor="left", yanchor="top")
     
-    show mean human angry flipped at Move((0.4, 0.15), (0.3, 0.15), 7, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show mean human angry flipped at Move((0.4, 0.15), (0.3, 0.15), 8, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show letterbox_screen at manual_pos(0,0)
     
     mean "You've got nowhere to run this time.{w=2.0}{nw}"
@@ -2600,14 +2600,14 @@ label train_on_top:
         zoom 3
         pass
         parallel:
-            linear 6 xpos 0.4
+            linear 10 xpos 0.4
         parallel:
-            linear 6 ypos 0.2
+            linear 10 ypos -0.05
         parallel:
-            linear 6 zoom 2
+            linear 10 zoom 2
     
-    lupin_offscreen "Just when this is getting {i}good?{/i}{w=1.0}{nw}"
-    lupin_offscreen "No way!{w=1.0}{nw}"
+    lupin_offscreen "Just when this is getting {i}good?{/i}{w=2.0}{nw}"
+    lupin_offscreen "No way!{w=3.0}{nw}"
     
     play sound sfx_hks1 noloop volume 0.7
     with hpunch
@@ -2618,17 +2618,53 @@ label train_on_top:
     with hpunch
     
     pause 1.0
-    n "Gunshots ring out!"
-    # placeholder: play sound zenigata_shout
-    zenigata_nobeep "{bt=a3-p10-s4}{size=+24}Lupiiiiin!"
+    n "Gunshots ring out!{w=2.0}{nw}"
+    play sound sfx_zenigata_shout
+    zenigata_nobeep "{bt=a3-p10-s4}{size=+24}Lupiiiiin!{w=2.0}{nw}"
+       
+    show zenigata car behind letterbox:
+        xpos -600
+        ypos 300
+        linear 2 xpos 100
+        pass
+        block:
+            parallel:
+                linear 2 xpos 125
+            parallel:
+                linear 2 ypos 325
+            pass
+            parallel:
+                linear 2 xpos 100
+            parallel:
+                linear 2 ypos 300
+            repeat
+        
+    pause 1.0
+    zenigata_offscreen "I {i}knew{/i} I'd find you on this damn train!{w=2.0}{nw}"
+    
+    # TODO: need zenigata's car pulling up on the side
+    
+    # SHOT 4
+    hide lupin
+    hide zenigata
+    hide amtrak_on_top
+    
+    show mean human angry flipped behind letterbox_screen:
+        xpos 0
+        ypos 0
+        zoom 2
+        linear 10 xpos -100
+    
+    mean "Well, would you look at that?{w=2.0}{nw}"
+    show mean human flipped
+    mean "Looks like we're not the only ones you managed to piss off.{w=2.0}{nw}"
     
     
     
     
     
     "Everything beyond this point is a placeholder until more is written."
-    "This is the part where Zenigata pulls up alongside the train while shooting at Lupin."
-    "And, this is the part where a minigame would go."
+    "This is the part where a minigame goes that involves you dodging Zenigata's bullets while chasing Lupin. A rhythm game, maybe?"
     "The story ends differently now, depending on whether you stole or won the money."
     "It will also end differently depending on whether you win or lose this minigame."
     menu: 
