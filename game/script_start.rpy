@@ -54,7 +54,7 @@ init -10 python:
     sil_white_matrix = BrightnessMatrix(value=1.0)
         
     def sil_white(s):
-        return Transform(s, xzoom = -1, matrixcolor=sil_white_matrix)
+        return Transform(s, xzoom = 1, matrixcolor=sil_white_matrix)
         
     def sil_white_flip(s):
         return Transform(s, xzoom = -1, matrixcolor=sil_white_matrix)
@@ -704,7 +704,7 @@ image tate smug = "characters/tate/tatesmug.png"
 image tate smug dark = "dark:characters/tate/tatesmug.png"
 image tate smug flipped = "flip:characters/tate/tatesmug.png"
 image tate smug dark flipped = "dark:flip:characters/tate/tatesmug.png"
-image tate smug sil_white flipped = "sil_white:flip:characters/tate/tatesmug.png"
+image tate smug sil_white = "sil_white:characters/tate/tatesmug.png"
 image tate sheepish = "characters/tate/tatesheepish.png"
 image tate sheepish flipped = "flip:characters/tate/tatesheepish.png"
 image tate sad = "characters/tate/tatesad.png"

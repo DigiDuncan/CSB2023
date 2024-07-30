@@ -2421,16 +2421,14 @@ label train_confront_lupin:
     
     mean "Nah, watch."
     mean "I've got this."
-    # TODO: why does his sprite flip weird? it shouldn't. did i fuck up the sil_white:flip shader?
-    
     play sound sfx_mean_transform
     stop music fadeout 2.0
     show tate shock flipped
     show cs worried
     show mean angry sil_white flipped:
-        linear 1.0 blur 10
+        linear 2.0 blur 10
     with Dissolve(0.5)
-    scene white with Dissolve(0.6)
+    scene white with Dissolve(0.5)
     pause 1.0
         
     scene amtrak_baggage
@@ -2439,15 +2437,15 @@ label train_confront_lupin:
     show tate shock flipped at right
     show mean human at center
     $ persistent.seen.add("mean_human")
-    with Dissolve(0.5)
+    with Dissolve(0.25)
     pause 1.0
+    music Encounter! Friend - Waichiro Ozaki
     play music encounter_friend_intro noloop
     queue music encounter_friend_loop
     if fun_value(FUN_VALUE_MUSIC):
         n "A friend is encountered!"
     else:
         n "Mean transforms!"
-    music Encounter! Friend - Waichiro Ozaki
     pause 2.0
     mean "Damn..."
     mean "I couldn't see it before, but..."
@@ -2482,19 +2480,23 @@ label train_confront_lupin:
     n "Mean tosses the others onto the roof!"
     show mean human flipped at mid_right behind tate with move
     show tate shock flipped
-    tate "Awawawawawa!"
     show tate shock at t_lupin_out with move
+    tate "Awawawawawa!"
+    show cs worried
+    show arceus worried flipped
     show mean human at mid_mid_left behind cs with move
     show cs scared
-    cs "Aaaaaaagh!"
     show cs scared at t_lupin_out with move
+    cs "Aaaaaaagh!"
     show mean human at mid_left with move
-    show arceus worried flipped
-    arceus "Waaaaargh!"
+    show arceus worried flipped at offscreenleft with MoveTransition(0.1)
+    mean "Nope! {i}You're{/i} coming, too!"
+    show mean human at mid_offscreen_left with move
     show arceus worried flipped at t_lupin_out with move
-    show mean human happy
+    arceus "Waaaaargh!"
+    show mean human happy flipped at center with move
     mean "Let's do this!"
-    show mean human happy at t_lupin_out
+    show mean human happy flipped at t_lupin_out
     scene black with dissolve
     pause 2.0
     
@@ -2607,7 +2609,7 @@ label train_on_top:
             linear 10 zoom 2
     
     lupin_offscreen "Just when this is getting {i}good?{/i}{w=2.0}{nw}"
-    lupin_offscreen "No way!{w=3.0}{nw}"
+    lupin_offscreen "No way!{w=2.0}{nw}"
     
     play sound sfx_hks1 noloop volume 0.7
     with hpunch
@@ -2657,7 +2659,7 @@ label train_on_top:
     
     mean "Well, would you look at that?{w=2.0}{nw}"
     show mean human flipped
-    mean "Looks like we're not the only ones you managed to piss off.{w=2.0}{nw}"
+    mean "Looks like we're not the only ones you've managed to piss off today.{w=2.0}{nw}"
     
     
     
@@ -2833,11 +2835,13 @@ label train_tate_ex_encounter:
             tate "Let's do this."
             show cs worried flipped
             show tate smug at center with MoveTransition(1.0)
-            show tate smug sil_white flipped with Dissolve(1.0)
+            show tate smug sil_white:
+                linear 1 blur 10
+            with Dissolve(1.0)
             stop music fadeout 1.0
-            play sound sfx_spellcast
             show cs scared flipped
-            scene white with Dissolve(1.0)
+            scene white with Dissolve(0.25)
+            play sound sfx_spellcast
             pause 2.0
             # TODO: Tate EX sprite health bar/text indicators are still missing
             jump rpg_tate_ex
