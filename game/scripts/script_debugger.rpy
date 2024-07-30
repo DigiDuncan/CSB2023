@@ -739,6 +739,7 @@ label asset_debugger:
         show pig at center
         show mean unamused flipped at mid_mid_left
         show cs cultist flipped at left
+        show zenigata car at mid_right
         carla "test 49{w=0.5}{nw}"
     else:
         jump exit_debug
@@ -1218,9 +1219,9 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(99):
+        play sound sfx_zenigata_shout
         play music neko_to_sanpo
         scene town
-        show cs at t_mean_dining_car
         worker "test 99{w=0.5}{nw}"
     else:
         jump exit_debug
@@ -1287,7 +1288,6 @@ label asset_debugger:
     if fun_value(108):
         play music passport_ytp
         scene rushmore
-        show cs at t_dining_car_breakfast
         ikea_worker "test 108{w=0.5}{nw}"
     else:
         jump exit_debug
@@ -1301,28 +1301,24 @@ label asset_debugger:
     if fun_value(110):
         play music pixel_peeker_polka
         scene omaha
-        show cs at t_dining_car_pancake
         average_swede "test 110{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(111):
         play music pokey
         scene alleyway
-        show cs at t_arc_pancake
         alien "test 111{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(112):
         play music police_station
         scene peppinopizzabg
-        show cs at t_dining_arc_search_left
         moomin "test 112{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(113):
         play music pressing_pursuit_cornered
         scene peppinopizzafg
-        show cs at t_dining_arc_search_right
         snufkin "test 113{w=0.5}{nw}"
     else:
         jump exit_debug
@@ -1350,14 +1346,12 @@ label asset_debugger:
     if fun_value(117):
         play music real_world
         scene cscar1arc
-        show cs at edge_left
         cruise "test 117{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(118):
         play music rosens_loop
         scene cscar2
-        show cs at edge_right
         baumer "test 118{w=0.5}{nw}"
     else:
         jump exit_debug
@@ -1543,7 +1537,7 @@ label asset_debugger:
     if fun_value(148):
         play music weird_personalities
         scene old_house_outside
-        pause 0.5
+        zenigata_offscreen "test 148{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(149):
