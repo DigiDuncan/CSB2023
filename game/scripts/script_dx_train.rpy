@@ -2480,20 +2480,20 @@ label train_confront_lupin:
     n "Mean tosses the others onto the roof!"
     show mean human flipped at mid_right behind tate with move
     show tate shock flipped
-    show tate shock at t_lupin_out with move
     tate "Awawawawawa!"
+    show tate shock at t_lupin_out with move
     show cs worried
     show arceus worried flipped
     show mean human at mid_mid_left behind cs with move
     show cs scared
-    show cs scared at t_lupin_out with move
     cs "Aaaaaaagh!"
+    show cs scared at t_lupin_out with move
     show mean human at mid_left with move
     show arceus worried flipped at offscreenleft with MoveTransition(0.1)
-    mean "Nope! {i}You're{/i} coming, too!"
+    mean "Nope! {i}You're{/i} coming,{w=0} too!"
     show mean human at mid_offscreen_left with move
-    show arceus worried flipped at t_lupin_out with move
     arceus "Waaaaargh!"
+    show arceus worried flipped at t_lupin_out with move
     show mean human happy flipped at center with move
     mean "Let's do this!"
     show mean human happy flipped at t_lupin_out
@@ -2501,6 +2501,8 @@ label train_confront_lupin:
     pause 2.0
     
 label train_on_top:
+    play music encounter_friend_loop if_changed
+    music Encounter! Friend - Waichiro Ozaki
     # TODO: yes i know this edit is shit
     # TODO: need moving background
     scene
