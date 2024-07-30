@@ -2041,6 +2041,12 @@ default jade = False
 default clown = False
 default nome = False  # wow I hate this name - DD
 default sfxtotal = ""
+default musictotal = ""
+default charactertotal = ""
+default transformtotal = ""
+default bgtotal = ""
+default movietotal = ""
+default spritetotal = ""
 
 # Fired route
 default band_name = "CS' Crazy Crew"
@@ -2346,18 +2352,21 @@ screen debugger_menu():
     text "sfx loaded: [sfxtotal]" textalign 0.5 size 48 xalign 0.5 yalign 0.1
     hbox xalign 0.5 yalign 0.1:
         spacing 50
-    text "music loaded: " textalign 0.5 size 48 xalign 0.5 yalign 0.2
+    text "music loaded: [musictotal]" textalign 0.5 size 48 xalign 0.5 yalign 0.2
     hbox xalign 0.5 yalign 0.2:
         spacing 50
-    text "characters loaded: " textalign 0.5 size 48 xalign 0.5 yalign 0.3
+    text "characters loaded: [charactertotal]" textalign 0.5 size 48 xalign 0.5 yalign 0.3
     hbox xalign 0.5 yalign 0.3:
         spacing 50
-    text "backgrounds loaded: " textalign 0.5 size 48 xalign 0.5 yalign 0.4
+    text "backgrounds loaded: [bgtotal]" textalign 0.5 size 48 xalign 0.5 yalign 0.4
     hbox xalign 0.5 yalign 0.4:
         spacing 50
-    text "sprites loaded: " textalign 0.5 size 48 xalign 0.5 yalign 0.5
+    text "sprites loaded: [spritetotal]" textalign 0.5 size 48 xalign 0.5 yalign 0.5
     hbox xalign 0.5 yalign 0.5:
         spacing 50
-    text "movies loaded: " textalign 0.5 size 48 xalign 0.5 yalign 0.6
+    text "movies loaded: [movietotal]" textalign 0.5 size 48 xalign 0.5 yalign 0.6
     hbox xalign 0.5 yalign 0.6:
+        spacing 50
+    text "transforms loaded: [transformtotal]" textalign 0.5 size 48 xalign 0.5 yalign 0.7
+    hbox xalign 0.5 yalign 0.7:
         spacing 50
