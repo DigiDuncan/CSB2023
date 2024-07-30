@@ -2887,8 +2887,7 @@ label train_tate_ex_lose:
     jump train_completed
     
 label train_completed:
-    "Placeholder line for if you complete train route."
-    $ achievement_manager.unlock("All Aboard!")
+    "Placeholder line at `train_completed`."
     # TODO: Technically, the train stops in Chicago IRL.
     # TODO: Replace this label with Chicago route, should anyone choose to write one.
     # TODO: Please let me know if you do so we can rework CS getting home a bit (below).
@@ -2927,6 +2926,8 @@ label train_return_home_transition:
     billy "Need a ride? I'll take you to any destination for only $19.95!"
     show arceus happy flipped
     arceus "Welp, CS, we've found our other option!"
+
+    # TODO: my variables are kinda broken rn
 
     # If you got the money back
     if train_ending_money_returned == True:
@@ -2967,15 +2968,11 @@ label train_return_home_transition:
     stop music fadeout 3.0
     music end
     
-    # TODO: fix these endings!
-    # if he gets the money back, it'll either be in the briefcase or the bag, and currently the south_back_home_alt only is set up to use the briefcase
-    # if he does not get the money back, there is no setup for this
-    
     # final endings:
     if train_ending_money_returned == True:
         if train_money_stolen == True:
-            "Tell Tate that this ending isn't quite right..."
-        jump south_back_home_alt
-    else:
-        "Tell Tate to write a new ending! CS didn't get the money!"
-        jump south_back_home_alt
+            jump train_home_rich_thief
+        else:
+            jump train_home_rich_winner
+    if train_ending_money_returned == False:
+        jump train_home_broke
