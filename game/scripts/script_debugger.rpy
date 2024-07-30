@@ -757,7 +757,7 @@ label asset_debugger:
         show stage_screen at mid_left_left
         show david at mid_left
         show mean angry flipped at mid_mid_left
-        show tate smug sil_white flipped at mid_mid_right
+        show tate smug sil_white at mid_mid_right
         show pomni at mid_right
         show priest flipped at mid_right_right
         show train_fly_1 at right
