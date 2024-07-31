@@ -154,6 +154,7 @@ init python:
         "E. Gadd's Lab - Kazumi Totaka & Shinobu Tanaka": "e_gadds_lab.ogg",
         "ONBS - Tsukasa Tawada": "onbs.ogg",
         "Encounter! Friend - Waichiro Ozaki": "encounter_friend.ogg",
+        "Roundabout - Yes" : "roundabout.ogg",
         "Insomnia - W∆W": "insomnia.ogg",
         "Space - W∆W": "space.ogg",
         #DX: Bronson
@@ -321,6 +322,7 @@ init python:
         "E. Gadd's Lab - Kazumi Totaka & Shinobu Tanaka": "luigismansion.png",
         "ONBS - Tsukasa Tawada": "pokemonxd.png",
         "Encounter! Friend - Waichiro Ozaki": "falsebound.png",
+        "Roundabout - Yes" : "roundabout.png",
         "Insomnia - W∆W": "moon.png",
         "Space - W∆W": "moon.png",
         "Let's Hear My Baby: Spring Remix - Pakoo": "csbii.png",
