@@ -754,6 +754,17 @@ image mean human shocked flipped = "flip:characters/mean/meanhumanshocked.png"
 image mean human angry = "characters/mean/meanhumanangry.png"
 image mean human angry flipped = "flip:characters/mean/meanhumanangry.png"
 
+image mean human hat = "characters/mean/meanhumanneutralhat.png"
+image mean human hat flipped = "flip:characters/mean/meanhumanneutralhat.png"
+image mean human hat happy = "characters/mean/meanhumanhappyhat.png"
+image mean human hat happy flipped = "flip:characters/mean/meanhumanhappyhat.png"
+image mean human hat annoyed = "characters/mean/meanhumanannoyedhat.png"
+image mean human hat annoyed flipped = "flip:characters/mean/meanhumanannoyedhat.png"
+image mean human hat shocked = "characters/mean/meanhumanshockedhat.png"
+image mean human hat shocked flipped = "flip:characters/mean/meanhumanshockedhat.png"
+image mean human hat angry = "characters/mean/meanhumanangryhat.png"
+image mean human hat angry flipped = "flip:characters/mean/meanhumanangryhat.png"
+
 ## Archival
 image k174 = "characters/k174.png"
 image k174 flipped = "flip:characters/k174.png"

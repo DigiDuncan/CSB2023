@@ -2519,7 +2519,7 @@ label train_confront_lupin:
     mean "Pincushion, this is Pincushion to Muscle Mass! Come in!"
     amtrak_conductor "This is Muscle Mass. Go ahead."
     mean "We found the crook! We're on the roof and headed your way! Requesting standby, over!"
-    amtrak_conductor "Roger."
+    amtrak_conductor "Ten four. Be careful up there. Over."
     hide walkie with Dissolve(0.25)
     show mean human happy
     mean "Let's do this!"
@@ -2714,8 +2714,8 @@ label train_lupin_win:
     show mean human angry flipped at center behind lupin with moveinleft
     show lupin stand hat flipped
     
-    n "Mean barely catches Lupin by the collar of his coat." with vpunch
-    mean "Gotcha, ya thieving rat."
+    n "Mean barely catches Lupin by his coattails." with vpunch
+    mean "Gotcha, ya thieving rat!"
     show walkie with Dissolve(0.25):
         zoom 0.3
         rotate -10
@@ -2742,25 +2742,27 @@ label train_lupin_win:
     
     with dissolve
     
-    amtrak_conductor "... So, what you're telling me is... this guy {i}wasn't{/i} actually you..."
+    amtrak_conductor "... So, what you're telling me is... this guy wasn't actually {i}you..."
     mean "That's right."
-    amtrak_conductor "I see. My apologies, Mean."
+    amtrak_conductor "I see."
+    amtrak_conductor "My apologies, Mean."
     amtrak_conductor "It's been... {i}difficult{/i} for us to adjust to your change..."
     show mean human
     mean "Eh, don't worry about it. I know it'll take time."
     show amtrak_conductor
     show tate sheepish
-    amtrak_conductor "I would like to apologize to you as well, Mx. Frost."
+    amtrak_conductor "I would like to apologize to {i}you,{/i} as well, Mx. Frost."
     amtrak_conductor "We should have taken your complaints seriously when you told us this guy was acting suspicious."
     show mean human annoyed
     mean "Yeah, sorry, Tate."
     tate "Like I said, I just had a gut feeling..."
-    tate "I mean, he's obviously a creep. I just didn't think he was also a straight-up {i}criminal..."
+    tate "I mean, he's obviously a creep. I just didn't think he was straight-up {i}criminal!"
     show amtrak_conductor flipped
     show mean human
     mean "Well, I guess there's only one thing left to do."
     n "Mean grabs Lupin by the ankle and gives him a good shakedown!"
-    lupin "Woah, hey--!{w=-1.0}{nw}"
+    lupin "Woah, hey--!"
+    window hide
     show arceus worried flipped
     show cs worried
     show tate shock
@@ -2825,7 +2827,7 @@ label train_lupin_win:
             xpos 1250
             ypos 500
             linear 0.25 ypos 1080
-    if train_money_stolen == False:
+    else:
         show briefcase:
             xpos 1275
             ypos 500
@@ -2840,8 +2842,9 @@ label train_lupin_win:
         linear 0.1 ypos 200
     show mean_hat:
         yzoom -1
-        zoom 1.5
-        xpos 1425
+        xzoom -1
+        zoom 0.725
+        xpos 1410
         ypos 900
         linear 1 ypos 1080
     show lupin stand
@@ -2926,7 +2929,7 @@ label train_lupin_win:
         show bag at left with move
         cs "Let me show you what a master builder can do!"
     # if the money is legit
-    if train_money_stolen == False:
+    else:
         show briefcase at left with dissolve
         show amtrak_conductor
         amtrak_conductor "Oh! You must be the boys who won the jackpot at SlotsaFun!"
@@ -2990,6 +2993,7 @@ label train_lupin_win:
     show cs angry
     show mean human angry flipped
     mean "Well, you'd better {i}start{/i} believing."
+    # TODO: this is not correct. we need to figure out where we are geographically and drop lupin off at the next station. zenigata will meet us there
     mean "We should be in Chicago in about nine hours. As soon as we arrive, {i}your{/i} ass is getting hauled off to the clink!"
     # let's refocus a bit.
     hide briefcase with dissolve
@@ -3004,7 +3008,10 @@ label train_lupin_win:
     with move
     show amtrak_conductor
     pause 0.5
-    amtrak_conductor "Well, this was certainly an... {i}unexpected{/i} turn of events."
+    if fun_value(FUN_VALUE_RARE):
+        amtrak_conductor "Well, this has certainly been a... {i}bizarre{/i} adventure."
+    else:
+        amtrak_conductor "Well, this was certainly an... {i}unexpected{/i} turn of events."
     amtrak_conductor "On behalf of Amtrak, I'd to thank all of you for your help this evening."
     mean "All in a day's work, right?"
     show tate sheepish
@@ -3015,29 +3022,48 @@ label train_lupin_win:
     mean "Yes, sir?"
     amtrak_conductor "I'll admit, I wasn't so sure about your abilities at first, but..."
     amtrak_conductor "Tonight you've proven that really are the right man for this job."
-    amtrak_conductor "Let me go return these stolen goods to their rightful owners and get this criminal out of your hair."
+    amtrak_conductor "Let me go return these things to their rightful owners and get this criminal out of your hair."
+    show mean_hat:
+        yzoom 1
+        xzoom 1
+        zoom 1
+        xpos 800
+        ypos 500
+    with dissolve
+    n "The conductor picks up Mean's hat from the floor."
+    n "He brushes the dirt off of it before placing it upon Mean's head."
+    show mean_hat:
+        parallel:
+            linear 0.25 xpos 625
+        parallel:
+            linear 0.25 ypos 0
+    pause 0.5
+    show mean human shocked hat
+    hide mean_hat
+    #with Dissolve(0.5)
     amtrak_conductor "Welcome to Amtrak, bucko."
     show amtrak_conductor flipped at right
     show cs flipped at mid_mid_right
     with move
     show cs
     pause 0.5
-    show cs scared
-    show tate shock
-    show arceus worried flipped
     show amtrak_conductor flipped at mid_offscreen_right
     show lego_jail behind amtrak_conductor
     show lupin stand behind lego_jail
     with moveoutright
     n "The conductor picks up the caged Lupin like he weighs nothing!"
+    show cs scared
+    show tate shock
+    show arceus worried flipped
     show lego_jail behind amtrak_conductor:
         linear 0.25 rotate -75
     show lupin stand behind lego_jail:
         linear 0.25 rotate -75
+    with hpunch
     pause 0.5
     amtrak_conductor "Good night, everyone!"
     amtrak_conductor "Make me proud, Mean!"
-    show mean human happy flipped
+    show mean human happy hat flipped
     mean "Yes, sir!"
 
     show amtrak_conductor flipped at offscreenright
@@ -3053,23 +3079,23 @@ label train_lupin_win:
     hide lupin stand
     hide lego_jail
     show cs at right
-    show mean human flipped at mid_mid_right
+    show mean human hat flipped at mid_mid_right
     show tate sheepish at mid_mid_left
     show arceus flipped at left
     with move
-    show mean human
+    show mean human hat
     show cs flipped
     pause 0.5
     cs "Well, we did it!"
     show arceus happy flipped
     arceus "We sure did!"
     tate "Y-{w=0.1}Yeah..."
-    show mean human annoyed
+    show mean human annoyed hat
     show arceus flipped
     show cs disappointed flipped
     mean "What is it {i}now,{/i} Tate?"
     tate "Nothing! I'm just tired--{w=0.5}{nw}"
-    show mean human angry
+    show mean human angry hat
     mean "Don't you \"nothing\" me!"
     mean "You only use that tone when something's bothering you!"
     show tate sad
@@ -3081,11 +3107,11 @@ label train_lupin_win:
     show cs worried flipped
     n "Mean puts an arm around Tate."
     show tate sheepish blush
-    show mean human annoyed
-    show cs disappointed flipped
+    show mean human annoyed hat
+    show cs disappointed flipped 
     mean "Look..."
     mean "When I told you earlier that today couldn't be better, I meant it."
-    show mean human
+    show mean human hat
     mean "You really think I'd be upset {i}now?{/i}"
     mean "We even got to save the day!"
     mean "How could today have {i}possibly{/i} turned out better?"
@@ -3098,48 +3124,48 @@ label train_lupin_win:
     show cs worried flipped
     cs "See? That's what {i}I've{/i} been saying!"
     cs "Tate's been an anxious wreck since we got on the train!"
-    show mean human flipped
+    show mean human flipped hat
     mean "Pfft, you should've seem 'em when I started training."
     show cs disappointed flipped
     mean "I thought they'd have a fuckin' aneurysm."
     show tate srs
     tate "{i}What?{/i} I'm not allowed to worry about my friend?!"
     show arceus worried flipped
-    arceus "I mean, I can't say I blame them, after learning about what happened..."
-    show mean human
+    arceus "I mean, I can't even say I blame them, after learning about what happened..."
+    show mean human hat
     show tate shock flipped
     show cs worried flipped
     mean "Oh? Tate told you guys about HoH SiS?"
     show tate srs flipped
-    tate "Arc!" with hpunch
+    tate "{i}Arc!" with hpunch
     arceus "Oh... uh..."
-    show mean human shocked
+    show mean human shocked hat
     show tate sheepish flipped
     mean "Hey, wait a minute..."
-    show mean human shocked flipped
+    show mean human shocked hat flipped
     show tate sheepish
     n "Mean turns sharply to look at CS again."
     show cs worried flipped at manual_pos(1500,200) with MoveTransition(0.2)
     mean "..."
-    show mean human angry flipped
+    show mean human angry hat flipped
     show tate shock
     show cs scared flipped
     play music roundabout
     music Roundabout - Yes
-    mean "{bt=a3-p10-s4}{size=+24}YOU RAT BASTARD!{w=1.0}{nw}" with hpunch
-    mean "I {i}THOUGHT{/i} I RECOGNIZED YOU!{w=1.25}{nw}"
+    mean "{bt=a3-p10-s4}{size=+24}YOU RAT {i}BASTARD!{w=1.0}{nw}" with hpunch
+    mean "I {i}THOUGHT{/i} I RECOGNIZED YOU!{w=1.0}{nw}"
     # TODO: this doesn't quite work as intended yet. I want the logo to be unaffected by the camera.
     # TODO: sepia filter shader
     camera:
         parallel:
-            linear 30 xpos -1900
+            linear 20 xpos -1920
         parallel:
-            linear 30 ypos -300
+            linear 20 ypos -300
         parallel:
-            linear 30 zoom 2
+            linear 20 zoom 2
 
     show tbc at manual_pos(1000,800)
-    pause 8
+    pause 7
         
     stop music fadeout 2
     scene black with dissolve
