@@ -3125,7 +3125,7 @@ label train_lupin_win:
     cs "See? That's what {i}I've{/i} been saying!"
     cs "Tate's been an anxious wreck since we got on the train!"
     show mean human flipped hat
-    mean "Pfft, you should've seem 'em when I started training."
+    mean "Pfft, you should've seen 'em when I started training."
     show cs disappointed flipped
     mean "I thought they'd have a fuckin' aneurysm."
     show tate srs
