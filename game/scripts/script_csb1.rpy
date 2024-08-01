@@ -384,6 +384,9 @@ label csbi_michael_house:
     cs "Before I forget, I should probably call him first."
     show cs phone at left
     n "CS pulls out his phone and calls Michael."
+    show rosen_abode at mid_offscreen_right
+    show michael at right  # TODO: We need a michael phone
+    with moveinright
     michael "Hello!"
     cs "Hey, Michael! How're you doin' today?"
     michael "I'm feeling rather noice today."
@@ -401,6 +404,9 @@ label csbi_michael_house:
     show cs happy phone
     cs "Alright, well, I'll be there soon!"
     show cs at left
+    hide rosen_abode
+    hide michael
+    with moveoutright
     n "CS puts his phone away and drives over to Michael's house."
     play sound sfx_driving volume 0.5
     pause 2.0
