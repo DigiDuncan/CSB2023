@@ -17,7 +17,7 @@ from copy import deepcopy
 from typing import Callable, Literal, Optional
 import math
 
-DamageType = Literal["hp", "confusion", "ap", "atk", "none", "miss"]
+DamageType = Literal["hp", "confusion", "dot", "ap", "atk", "none", "miss"]
 Answer = tuple[int, DamageType]
 AnswerList = list[Answer]
 
@@ -82,7 +82,7 @@ def damage_over_time(subject: Fighter, targets: list[Fighter], crit: bool, optio
     for f in targets:
         f.damage_per_turn.append((subject.attack_points * mult, turns))
         print(f"Added {subject.attack_points * mult} DOT to {f.name} for {turns} turns.")
-    return [(0, "none")]
+    return [(0, "dot")]
 
 def random_damage_fighters(subject: Fighter, targets: list[Fighter], crit: bool, options: dict) -> AnswerList:
     """Damage a list of fighters for a value between two multiples..
@@ -400,6 +400,8 @@ class Attack:
             return "aoe"
         elif self.func == confuse_targets:
             return "confuse"
+        elif self.func == "damage_over_time":
+            return "dot"
         else:
             return "damage"
 
@@ -706,12 +708,12 @@ class Attacks:
     SHELL = Attack("Shell", "Fire a tank shell!", random_damage_fighters, min_mult = 1, max_mult = 2, accuracy = 60)
     HEAL_EX = Attack("Heal EX", "Lots of healing.", heal_fighters, target_count = 0, target_type = "allies", mult = 10, accuracy = 100)
     AUGMENT = Attack("Awesome Augment", "Fire a laser! Fire a laser!", damage_fighters, target_count = 0, mult = 15, ex = False, cooldown = 5, accuracy = 100)
-    TATE_RECALL = Attack("Tate's Recall", "Remember something dreadful.", damage_fighters, target_count = 0, target_type = "allies", mult = 0.5, cooldown = 5, turns = 5, accuracy = 90, ex = False)
-    TATE_REVERB = Attack("Tate's Reverb", "Make them all remember.", damage_over_time, target_count = 0, target_type = "enemies", mult = 0.75, cooldown = 5, turns = 5, accuracy = 90, ex = False)
-    REVERB_RECALL = ComboAttack("Reverb Recall", "Channel your pain over 5 turns. Also damages the user.", [TATE_RECALL, TATE_REVERB], cooldown = 5, accuracy = 90, ex = False)
-    TATE_ECHOES = Attack("Tate's Echoes", "The past haunts you.", change_stat, stat = "atk", target_count = 0, target_type = "allies", mult = 0.5, cooldown = 10, accuracy = 100, ex = False)
-    TATE_BLAST = Attack("Tate's Blaster", "Make it haunt them, too.", damage_fighters, target_count = 0, target_type = "enemies", mult = 4, cooldown = 10, accuracy = 100,ex = False)
-    ECHO_BLAST = ComboAttack("Echo Blast", "Make them feel the pain of the past, at the cost of your ATK.", [TATE_BLAST, TATE_ECHOES], cooldown = 10, accuracy = 100, ex = False)
+    TATE_RECALL = Attack("Tate's Recall", "Remember something dreadful.", damage_fighters, target_count = 0, target_type = "allies", mult = 0.5, cooldown = 9, turns = 5, accuracy = 90, ex = False)
+    TATE_REVERB = Attack("Tate's Reverb", "Make them all remember.", damage_over_time, target_count = 0, target_type = "enemies", mult = 0.75, cooldown = 9, turns = 5, accuracy = 90, ex = False)
+    REVERB_RECALL = ComboAttack("Reverb Recall", "Channel your pain over 5 turns. Also damages the user.", [TATE_RECALL, TATE_REVERB], cooldown = 9, accuracy = 90, ex = False)
+    TATE_ECHOES = Attack("Tate's Echoes", "The past haunts you.", change_stat, stat = "atk", target_count = 0, target_type = "allies", mult = 0.5, cooldown = 11, accuracy = 100, ex = False)
+    TATE_BLAST = Attack("Tate's Blaster", "Make it haunt them, too.", damage_fighters, target_count = 0, target_type = "enemies", mult = 4, cooldown = 11, accuracy = 100,ex = False)
+    ECHO_BLAST = ComboAttack("Echo Blast", "Make them feel the pain of the past, at the cost of your ATK.", [TATE_BLAST, TATE_ECHOES], cooldown = 11, accuracy = 100, ex = False)
     GENERGY = Attack("Genergy", "Sip some refreshing Genergy.", heal_fighters, target_count = 1, target_type = "allies", mult = 2.36, accuracy = 100, ex = False)
 
     # UCN
@@ -805,7 +807,7 @@ class Fighters:
     K174 = Fighter("K17-4", True, 174, 17, 20, [Attacks.PUNCH], Image("images/characters/k174.png"), ai = AIType.NEUTRAL)
     K199 = Fighter("K19-9", True, 199, 19, 30, [Attacks.KICK], Image("images/characters/k199.png"), ai = AIType.AGGRO)
     K207 = Fighter("K20-7", True, 207, 20, 10, [Attacks.PUNCH], Image("images/characters/k207.png"), ai = AIType.DEFENSIVE)
-    TATE_EX = Fighter("{image=gui/dx_text.png} Tate EX", True, 1111, 11, 111, [Attacks.DAMAGE_SCREM, Attacks.REVERB_RECALL, Attacks.ECHO_BLAST], Image("images/characters/tate/tate_ex.png"), ai = AIType.AGGRO, display_name = "Tate EX") 
+    TATE_EX = Fighter("{image=gui/dx_text.png} Tate EX", True, 9999, 11, 111, [Attacks.DAMAGE_SCREM, Attacks.REVERB_RECALL, Attacks.ECHO_BLAST], Image("images/characters/tate/tate_ex.png"), ai = AIType.AGGRO, display_name = "Tate EX") 
 
     # Enemies (UCN)
     WESLEY = Fighter("{image=gui/dx_text.png} Wesley", True, 200, 20, 40, [Attacks.PISTOL, Attacks.ALL_OVER_AGAIN], Image("images/characters/wesley.png"), ai = AIType.AGGRO, display_name = "Wesley")
@@ -892,6 +894,8 @@ class DamageIndicator:
             return (0xFF, 0x00, 0xFF)
         elif self.indicator_type == "damage":
             return (0xFF, 0x00, 0x00)
+        elif self.indicator_type == "dot":
+            return (0x00, 0xFF, 0xFF)
         elif self.indicator_type == "heal":
             return (0x00, 0xFF, 0x00)
         elif self.indicator_type == "miss":
@@ -914,6 +918,8 @@ class DamageIndicator:
             return "Miss!"
         elif self.indicator_type == "damage":
             return str(abs(self.value))
+        elif self.indicator_type == "dot":
+            return str(abs(self.value))
         elif self.indicator_type == "heal":
             return str(abs(self.value))
         else:
@@ -926,6 +932,9 @@ class DamageIndicator:
             self.play_sound = False
         elif self.indicator_type == "damage":
             renpy.sound.play("audio/ut/snd_damage.ogg", channel = "sfx")
+            self.play_sound = False
+        elif self.indicator_type == "dot":
+            renpy.sound.play("audio/sfx/hurt1.ogg", channel = "sfx")
             self.play_sound = False
         elif self.indicator_type == "stat_up":
             renpy.sound.play("audio/ut/snd_b.ogg", channel = "sfx")
