@@ -609,7 +609,8 @@ image cs pissed phone = "characters/cs/pissed_phone.png"
 image cs pissed phone flipped = "flip:characters/cs/pissed_phone.png"
 image cs concentrate phone = "characters/cs/concentrate_phone.png"
 image cs concentrate phone flipped = "flip:characters/cs/concentrate_phone.png"
-image cs worried punished = "characters/cs/PunishedCSGownWorried.png"
+image cs worried punishedgown = "characters/cs/CSnake_Worried_Gown.png"
+image cs angry punished = "characters/cs/CSnake_Angry.png"
 
 # CS Misc
 image csgod = "characters/csgod.png"

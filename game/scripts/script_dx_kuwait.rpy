@@ -106,7 +106,7 @@ label kuwait_hospital:
     pause 10
     play sound sfx_heartbeat loop
     play music tmwstw
-    music The Man Who Sold The World - Nirvana
+    music The Man Who Sold The World - Midge Ure
     pause 5
     cs "{i}Where... where am I?{/i}"
     if fun_value(FUN_VALUE_MUSIC):
@@ -165,7 +165,7 @@ label kuwait_hospital:
     scene kuwait_islandbase_leaders
     show kuwait_lieutenant_snow at right
     with dissolve
-    show cs worried punished at left with moveinleft
+    show cs worried punishedgown at left with moveinleft
     l_snow "Ah, you must be CS."
     cs "Yes! Wait, how'd you know my name?"
     l_snow "We took a peek at your wallet when you first came in."
@@ -175,7 +175,7 @@ label kuwait_hospital:
     scene black
     centered "Chapter 1: 7 Years Later"
     scene kuwait_islandbase_leaders
-    show cs worried punished at left
+    show cs worried punishedgown at left
     show kuwait_lieutenant_snow at right
     with dissolve
     l_snow "Yeah, it's very shocking, I know."
@@ -193,13 +193,14 @@ label kuwait_hospital:
     cs "That's alright. I'll see what I can piece together."
 
     scene black
-    centered "This is the part where CS changes clothes (WIP)"
+
+    centered "CS quickly finds his stuff and pieces what he can together"
 
     scene kuwait_islandbase_leaders
     show kuwait_lieutenant_snow at right
     with dissolve
-    show cs worried punished at left with moveinleft
-    cs "Alright, I'm changed."
+    show cs angry punished at left with moveinleft
+    cs "Alright, I'm changed. I'm glad most of my outift survived, had to improvise a little though."
     l_snow "Fantastic. We're aware of who you are, by the way. Your abilities and what-not. We've also seen your videos."
     cs "Oh, God... You {i}saw{/i} those?"
     l_snow "Yeah, they were funny."
@@ -212,3 +213,10 @@ label kuwait_hospital:
     cs "... A \"Windows Phone\"?"
     l_snow "I... {i}guess{/i} you could call it that?"
     cs "Awesome, I love Windows Phones!"
+    l_snow "Fantastic, it'll be activated later, don't worry about it for now"
+    l_snow "You are to go to 4 places for now: The Mechanic, The Civilian Encampment, The Armory and The Helipad."
+    cs "As long as I don't get too lost"
+    l_snow "It's not too big an island, I'm sure you'll find your way around no problem, dismissed."
+    hide cs with moveoutleft
+    scene black with dissolve
+    cs "doo doo"
