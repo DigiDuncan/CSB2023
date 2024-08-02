@@ -273,3 +273,23 @@ init python:
             if re.match(dir,f):
                 rv.append(f[(len(dir)):])
         return rv
+
+    # Image scaling
+
+    def get_size(d):
+        d = renpy.easy.displayable(d)
+        w, h = renpy.render(d, 0, 0, 0, 0).get_size()
+        w, h = int(round(w)), int(round(h))
+        return w, h
+
+    def ProportionalScale(img, maxwidth, maxheight):
+        currentwidth, currentheight = get_size(img)
+        xscale = float(maxwidth) / float(currentwidth)
+        yscale = float(maxheight) / float(currentheight)
+        
+        if xscale < yscale:
+            minscale = xscale
+        else:
+            minscale = yscale
+        
+        return Transform(img, zoom = minscale)
