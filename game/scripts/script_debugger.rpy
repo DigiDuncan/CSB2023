@@ -2498,13 +2498,15 @@ label asset_debugger:
         jump exit_debug
     if fun_value(181):
         $ musictotal += 1
-        play music yuuka_town
+        play music beautiful_hills
         $ bgtotal += 1
         scene path_entrance
-        pause 0.1
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(182):
+        $ musictotal += 1
+        play music yuuka_town
         $ bgtotal += 1
         scene path_forest
         pause 0.1

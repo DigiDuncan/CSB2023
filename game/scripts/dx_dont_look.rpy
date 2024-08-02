@@ -8,12 +8,12 @@ define cashier_nobeep = Character("Cashier", callback = renpy.partial(char_callb
 define crowd_nobeep = Character("Crowd", callback = renpy.partial(char_callback, play_beeps = False))
 image trailtrash_2= "flip:characters/trailtrash.png"
 image pomni flipped= "flip:characters/pomni.png"
-define audio.albuquerque = "<from 104>abluquerque.mp3"
-define audio.albuquerque2 = "<from 153.5>abluquerque.mp3"
-define audio.albuquerque3 = "<from 280.75>abluquerque.mp3"
-define audio.albuquerque4 = "<from 390>abluquerque.mp3"
-define audio.albuquerque5 = "<from 480.5>abluquerque.mp3"
-define audio.albuquerque6 = "<from 578>abluquerque.mp3"
+define audio.albuquerque = "<from 104>albuquerque.mp3"
+define audio.albuquerque2 = "<from 153.5>albuquerque.mp3"
+define audio.albuquerque3 = "<from 280.75>albuquerque.mp3"
+define audio.albuquerque4 = "<from 390>albuquerque.mp3"
+define audio.albuquerque5 = "<from 480.5>albuquerque.mp3"
+define audio.albuquerque6 = "<from 578>albuquerque.mp3"
 
 #
 # DON'T CHANGE OR EDIT THE SCRIPT AT ALL, IT MAY RUIN THE TIMING

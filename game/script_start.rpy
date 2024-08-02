@@ -112,6 +112,7 @@ init 10 python:
 transform rotate_10:
     subpixel True
     rotate 10 xanchor 0.5 yanchor 0.5
+    xpos 0.5
     ypos 0.5
     zoom 1.33
 
@@ -1752,6 +1753,7 @@ define audio.scales_of_joy = "scales_of_joy.ogg"
 define audio.hohsis_theme = "hohsis_theme.ogg"
 define audio.super_friendly = "super_friendly.ogg"
 define audio.time_for_a_smackdown = "time_for_a_smackdown.ogg"
+define audio.beautiful_hills = "beautiful_hills.ogg"
 
 # CSBI Speedrun Music
 define audio.lets_hear_my_sped = "lets_hear_my_sped.ogg"

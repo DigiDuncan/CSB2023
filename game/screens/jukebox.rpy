@@ -18,6 +18,7 @@ init python:
         "Alfred Hitchcock Intro Theme - Charles Gounod": "hohsis_theme.ogg",
         "Super Friendly - Kevin Macleod": "super_friendly.ogg",
         "Time for a Smackdown! - Mr. Sauceman": "time_for_a_smackdown.ogg",
+        "Beautiful Hills - Network Music": "beautiful_hills.ogg",
         #CSB2
         "Card Castle - Toby Fox": "card_castle.ogg",
         "Basement - Toby Fox": "basement.ogg",
