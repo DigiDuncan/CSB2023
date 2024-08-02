@@ -815,7 +815,8 @@ label asset_debugger:
         show m4 fire flipped at center
         show mr_krupp at mid_left_left
         show cs scared flipped at left
-        $ spritetotal += 6
+        show tate sheepish blush at mid_left
+        $ spritetotal += 7
         show mean furious at mid_mid_left
         show alicia at mid_right
         show train_fly_4 at right
@@ -1067,7 +1068,7 @@ label asset_debugger:
         scene copcar
         show onscreen_sharpener at center
         show mean human happy flipped at mid_left
-        show lupin at mid_mid_left
+        show lupin run at mid_mid_left
         show cs pencil at left
         $ spritetotal += 4
         green "test 54{w=0.5}{nw}"
@@ -1083,7 +1084,7 @@ label asset_debugger:
         scene copcar_mask
         show renault at center
         show mean human annoyed at mid_left
-        show lupin flipped at mid_mid_left
+        show lupin run flipped at mid_mid_left
         show cs angry pencil at left
         $ spritetotal += 4
         jerma "test 55{w=0.5}{nw}"
@@ -1098,7 +1099,7 @@ label asset_debugger:
         $ bgtotal += 1
         scene microcenter
         show passportdigi at center
-        show lupin hat at mid_mid_left
+        show lupin run hat at mid_mid_left
         show mean human annoyed flipped at mid_left
         show cs disappointed pencil at left
         $ spritetotal += 4
@@ -1115,7 +1116,7 @@ label asset_debugger:
         scene microinside
         show copguyexe at center
         show mean human shocked at mid_left
-        show lupin hat flipped at mid_mid_left
+        show lupin run hat flipped at mid_mid_left
         show cs phone at left
         $ spritetotal += 4
         signup "test 57{w=0.5}{nw}"
@@ -1131,8 +1132,9 @@ label asset_debugger:
         scene cashzone
         show copguyexe flipped at center
         show mean human shocked flipped at mid_left
+        show lupin stand at mid_mid_left
         show cs phone flipped at left
-        $ spritetotal += 3
+        $ spritetotal += 4
         host "test 58{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -1146,10 +1148,11 @@ label asset_debugger:
         scene cashzone_foreground
         show RCOMEM at center
         show kuwait_doctor_1 at mid_left
+        show lupin stand flipped at mid_mid_left
         show kuwait_nurse_1 at mid_right
         show kuwait_lieutenant_snow at mid_mid_right
         show cs disappointed phone at left
-        $ spritetotal += 5
+        $ spritetotal += 6
         tsa "test 59{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -1163,8 +1166,9 @@ label asset_debugger:
         scene cpuaisle
         show tate_ex_front at center
         show mean human angry at mid_left
+        show lupin stand hat at mid_mid_left
         show cs disappointed phone flipped at left
-        $ spritetotal += 3
+        $ spritetotal += 4
         luigi "test 60{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -1179,8 +1183,9 @@ label asset_debugger:
         scene gpuaisle
         show tate_ex_preparation at center
         show mean human angry flipped at mid_left
+        show lupin stand hat flipped at mid_mid_left
         show cs worried phone at left
-        $ spritetotal += 3
+        $ spritetotal += 4
         mika "test 61{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -1194,9 +1199,10 @@ label asset_debugger:
         $ bgtotal += 1
         scene gpuaisle2
         show tate_ex at center
+        show mean human hat at mid_left
         show fake_rpg_miss at mid_left_left
         show cs worried phone flipped at left
-        $ spritetotal += 3
+        $ spritetotal += 4
         k174 "test 62{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -1209,10 +1215,11 @@ label asset_debugger:
         play music good_eatin
         $ bgtotal += 1
         scene testing_main
+        show mean human hat flipped at mid_left
         show ltt_bottle at center
         show oof_45 at mid_left_left
         show cs angry phone at left
-        $ spritetotal += 3
+        $ spritetotal += 4
         k199 "test 63{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -1225,10 +1232,11 @@ label asset_debugger:
         play music happy_roaming
         $ bgtotal += 1
         scene testing_front
+        show mean human hat happy at mid_left
         show amtrak_dining_food at center
         show oof_54 at mid_left_left
         show cs angry phone flipped at left
-        $ spritetotal += 3
+        $ spritetotal += 4
         k207 "test 64{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -1242,9 +1250,10 @@ label asset_debugger:
         $ bgtotal += 1
         scene course_1
         show amtrak_dining_pancake at center
+        show mean human hat happy flipped at mid_left
         show oof_52 at mid_left_left
         show cs scared phone at left
-        $ spritetotal += 3
+        $ spritetotal += 4
         billy_far "test 65{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -1258,8 +1267,9 @@ label asset_debugger:
         $ bgtotal += 1
         scene course_2
         show boom at center
+        show mean human hat annoyed at mid_left
         show cs scared phone flipped at left
-        $ spritetotal += 2
+        $ spritetotal += 3
         direct "test 66{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -1272,9 +1282,10 @@ label asset_debugger:
         play music hard_drive
         $ bgtotal += 1
         scene course_3
-        show mean_clothes at center
+        show mean_hat at center
+        show mean human hat annoyed flipped at mid_left
         show cs surprised phone at left
-        $ spritetotal += 2
+        $ spritetotal += 3
         monika "test 67{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -1287,8 +1298,10 @@ label asset_debugger:
         play music hightop
         $ bgtotal += 1
         scene canada_block
+        show brooch at center
+        show mean human hat shocked at mid_left
         show cs surprised phone flipped at left
-        $ spritetotal += 1
+        $ spritetotal += 3
         lancer "test 68{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -1301,8 +1314,10 @@ label asset_debugger:
         play music hired_guns
         $ bgtotal += 1
         scene dealership
+        show lego_jail at center
+        show mean human hat shocked flipped at mid_left
         show cs pissed phone at left
-        $ spritetotal += 1
+        $ spritetotal += 3
         tate "test 69{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -1315,8 +1330,10 @@ label asset_debugger:
         play music hitmewithyourbestshot
         $ bgtotal += 1
         scene dealer_cars
+        show switch at center
+        show mean human hat angry at mid_left
         show cs pissed phone flipped at left
-        $ spritetotal += 1
+        $ spritetotal += 3
         kitty "test 70{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -1329,8 +1346,10 @@ label asset_debugger:
         play music hitsquad_2
         $ bgtotal += 1
         scene flintcar_outside
+        show tbc at center
+        show mean human hat angry flipped at mid_left
         show cs concentrate phone at left
-        $ spritetotal += 1
+        $ spritetotal += 3
         obama "test 71{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -1343,8 +1362,10 @@ label asset_debugger:
         play music hohsis_theme
         $ bgtotal += 1
         scene flintcar_fg
+        show walkie at center
+        show watch at center
         show cs concentrate phone flipped at left
-        $ spritetotal += 1
+        $ spritetotal += 3
         bomaha "test 72{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -1726,6 +1747,8 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(100):
+        $ sfxtotal += 1
+        play sound sfx_drop_rings
         $ musictotal += 1
         play music night
         $ bgtotal += 1
@@ -1739,6 +1762,8 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(101):
+        $ sfxtotal += 1
+        play sound sfx_hat_off
         $ musictotal += 1
         play music nordic_report_1
         $ bgtotal += 1
@@ -1751,6 +1776,8 @@ label asset_debugger:
         jump exit_debug
 
     if fun_value(102):
+        $ sfxtotal += 1
+        play sound sfx_hurt1
         $ musictotal += 1
         play music nordic_report_2
         $ bgtotal += 1
@@ -1762,6 +1789,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(103):
+        $ sfxtotal += 1
+        play sound sfx_mc_hit
         $ musictotal += 1
         play music now_what
         $ bgtotal += 1
@@ -1773,6 +1802,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(104):
+        $ sfxtotal += 1
+        play sound sfx_pkmn_hit
         $ musictotal += 1
         play music onett
         $ bgtotal += 1
@@ -1784,6 +1815,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(105):
+        $ sfxtotal += 1
+        play sound sfx_walkie_on
         $ musictotal += 1
         play music park_theme
         $ bgtotal += 1
@@ -1795,6 +1828,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(106):
+        $ sfxtotal += 1
+        play sound sfx_walkie_off
         $ musictotal += 1
         play music passport
         $ bgtotal += 1
@@ -1810,7 +1845,8 @@ label asset_debugger:
         play music passport_real
         $ bgtotal += 1
         scene mcdees
-        show cs worried punished
+        show cs worried punishedgown
+        $ spritetotal += 1
         ikea_greeter "test 107{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -1820,6 +1856,8 @@ label asset_debugger:
         play music passport_ytp
         $ bgtotal += 1
         scene rushmore
+        show cs angry punished
+        $ spritetotal += 1
         ikea_worker "test 108{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -2452,13 +2490,15 @@ label asset_debugger:
         jump exit_debug
     if fun_value(180):
         $ musictotal += 1
-        play music yuuka_town
+        play music roundabout
         $ bgtotal += 1
         scene parking_lot
-        pause 0.1
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(181):
+        $ musictotal += 1
+        play music yuuka_town
         $ bgtotal += 1
         scene path_entrance
         pause 0.1
