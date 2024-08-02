@@ -411,8 +411,8 @@ label michigan_interstate_69_old:
     aria "Yeah, that'll happen."
     show cs disappointed
     cs "Wait, who are you?"
-    aria "It's Aria. You know, AWK?"
-    cs "Wait, what? I've met you before, and you definitely didn't look like this."
+    aria "It's Aria. You know, we met all the mall?"
+    cs "Wait, what? I remember that, and you definitely didn't look like this."
     show cs
     aria "I dunno, people change."
     aria "Speaking of surprising, is that Billy Mays with you?"
@@ -989,8 +989,8 @@ label michigan_interstate_69:
     aria "Yeah, that'll happen."
     show cs disappointed
     cs "Wait, who are you?"
-    aria "It's Aria. You know, AWK?"
-    cs "Wait, what? I've met you before, and you definitely didn't look like this."
+    aria "It's Aria. You know, we met all the mall?"
+    cs "Wait, what? I remember that, and you definitely didn't look like this."
     show cs
     aria "I dunno, people change."
     aria "Speaking of surprising, is that Billy Mays with you?"
@@ -1518,7 +1518,7 @@ label michigan_interstate_94:
     aria "Wait, CS? Arceus?"
     show cs worried
     cs "Huh, who are you? {i}What{/i} are you?"
-    aria "Oh, right! Yeah, it makes sense that you wouldn't recognize me. I'm Aria! Remember, AWK?"
+    aria "Oh, right! Yeah, it makes sense that you wouldn't recognize me. I'm Aria! Remember, we met at the mall?"
     cs "{i}You're{/i} Aria? What happened to you?"
     aria "I got different."
     show cs
