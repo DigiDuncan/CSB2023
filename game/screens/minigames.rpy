@@ -15,8 +15,8 @@ screen minigame_gallery():
     tag menu
     add Color('#5F777F', alpha=0.5)
 
-    $start = minigame_page * 9
-    $end = min(start + 9 - 1, len(Minigame_items) - 1)
+    $ start = minigame_page * 9
+    $ end = min(start + 9 - 1, len(Minigame_items) - 1)
 
     #grid for images
     grid 3 3:

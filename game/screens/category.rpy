@@ -42,6 +42,7 @@ screen category_nav():
             textbutton "Jukebox" action ShowMenu("jukebox_welcome"), PauseAudio("music", True)
             textbutton "Endings" action ShowMenu("replay_gallery")
             textbutton "Minigames" action ShowMenu("minigame_gallery")
+            textbutton "Unused Assets" action ShowMenu("unused_gallery")
             if preferences.developer_mode or achievement_manager.get("Hopes and Dreams").unlocked:
                 textbutton "Ultimate\nCustom Night" action Start("rpg_ucn")
             if preferences.developer_mode or persistent.creative_mode:
