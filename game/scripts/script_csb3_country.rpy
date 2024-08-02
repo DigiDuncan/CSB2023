@@ -188,6 +188,13 @@ label england_travel:
     cs "Whew! What a day."
     cs "I really hope this works out. I don't think I have enough to travel again after this."
     cs "I didn't think this is how I'd be going to another country, rushing out of a hospital and all."
+    if fun_value(FUN_VALUE_LEGENDARY):
+        n "CS decides to talk with the passenger next to him."
+        cs "Hey, I gotta tell you about this one time I was on this CraAaAaAaAzZy trip!"
+        cs "It all started, about a decade ago..."
+        scene black with dissolve
+        pause 1.0
+        jump dx_albuquerque
     cs "Well, it's been a long day."
     cs "I guess I should get some rest."
     scene black with dissolve
