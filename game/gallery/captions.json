@@ -1,3 +1,6 @@
 {
-    "filename.png": "This is a file -- it's used to show a file on the screen."
+    "filename.png": {
+        "title": "File Name (Rainbow Square)",
+        "caption": "This is a file -- it's used to show a file on the screen."
+    }
 }
