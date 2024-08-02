@@ -558,8 +558,9 @@ class Fighter:
             return self.ai.run(self, encounter)
         return ([], [])
 
-    def tick(self) -> AnswerList:
-        answer = []
+    def tick(self):
+        displayable = rpggame.get_displayable_by_fighter(self)
+        # answer = []
         # DOT
         if self.damage_per_turn:
             for h, t in self.damage_per_turn:
@@ -567,7 +568,9 @@ class Fighter:
                     print(f"{self.name}: Taking {h} DOT damage...")
                     renpy.notify(f"{self.display_name} is taking bleed damage!")
                     self.health_points -= h
-                    answer.append((int(-h), "hp"))
+                    # answer.append((int(-h), "hp"))
+                    displayable.show_damage_indicator((int(-h), "hp"))
+                    
                 else:
                     self.damage_per_turn.remove((h, t))
         # Confusion
@@ -576,11 +579,13 @@ class Fighter:
             if self.confused:
                 print(f"{self.name}: I'm still confused...")
                 renpy.notify(f"{self.display_name} is confused!")
-                answer.append((1, "confusion"))
+                # answer.append((1, "confusion"))
+                displayable.show_damage_indicator((1, "confusion"))
             else:
                 print(f"{self.name}: No longer confused!")
                 renpy.notify(f"{self.display_name} is no longer confused!")
-                answer.append((0, "confusion"))
+                # answer.append((0, "confusion"))
+                displayable.show_damage_indicator(0, "confusion")
         # Cooldowns
         for a in self.attacks:
             report = False
@@ -593,7 +598,6 @@ class Fighter:
                     print(f"{self.name}: {a.name} now available!")
                 else:
                     print(f"{self.name}: {a.name} available in {a._turns_until_available} turns!")
-        return answer
 
     @property
     def dead(self) -> bool:
@@ -962,6 +966,9 @@ class StatBlockDisplayable(renpy.Displayable):
         self.damage_indicator_y = int(self.size[1] * 0.01)
         self.damage_size = 50
         self.last_tick = None
+        self.health_text = Text("HP: " + str(self.fighter.health_points) + "/" + str(self.fighter.max_health), color = "#FFFFFF", size = self.text_size)
+        self.AP_text = Text("DEF: " + str(self.fighter.armor_points), color = "#FFFFFF", size=self.text_size)
+        self.ATK_text = Text("ATK: " + str(self.fighter.attack_points), color = "#FFFFFF", size=self.text_size)
         super().__init__(self)
 
     def show_damage_indicator(self, ans: Answer):
@@ -973,9 +980,6 @@ class StatBlockDisplayable(renpy.Displayable):
         dt = st - self.last_tick
         x_al = 25
         y_al = 65
-        self.health_text = Text("HP: " + str(self.fighter.health_points) + "/" + str(self.fighter.max_health), color = "#FFFFFF", size = self.text_size)
-        self.AP_text = Text("DEF: " + str(self.fighter.armor_points), color = "#FFFFFF", size=self.text_size)
-        self.ATK_text = Text("ATK: " + str(self.fighter.attack_points), color = "#FFFFFF", size=self.text_size)
         r = renpy.Render(370, 270)
         r.place(self.stat_back)
         r.place(self.fighter_name, x = 25, y = 5)
@@ -1003,6 +1007,11 @@ class StatBlockDisplayable(renpy.Displayable):
         renpy.redraw(self, 0)
         self.last_tick = st
         return r
+    
+    def refresh(self):
+        self.health_text = Text("HP: " + str(self.fighter.health_points) + "/" + str(self.fighter.max_health), color = "#FFFFFF", size = self.text_size)
+        self.AP_text = Text("DEF: " + str(self.fighter.armor_points), color = "#FFFFFF", size=self.text_size)
+        self.ATK_text = Text("ATK: " + str(self.fighter.attack_points), color = "#FFFFFF", size=self.text_size)
 
     def event(self, ev, x, y, st):
         pass
@@ -1023,6 +1032,8 @@ class EnemyDisplayable(renpy.Displayable):
         self.damage_size = 50
         self.last_tick = None
         self.opacity = 100
+        self.red_part = Solid("#FF0000", xsize = 1920 // 9, ysize = 1920 // 54)
+        self.green_part = Solid("#00FF00", xsize = int((1920 // 9) * ((self.fighter.health_points) / (self.fighter.max_health))), ysize = 1920 // 54)
         super().__init__(self)
 
     def show_damage_indicator(self, ans: Answer):
@@ -1044,8 +1055,6 @@ class EnemyDisplayable(renpy.Displayable):
                 r.place(self.fighter.sprite, x=0, y=0)
         # Making the health bar
         # THIS IS GARBAGE FULL OF MAGIC NUMBERS -- DD
-        self.red_part = Solid("#FF0000", xsize = 1920 // 9, ysize = 1920 // 54)
-        self.green_part = Solid("#00FF00", xsize = int((1920 // 9) * ((self.fighter.health_points) / (self.fighter.max_health))), ysize = 1920 // 54)
         r.place(self.red_part, x = (self.size[0] // 2) - ((1920 // 9) // 2), y = int(25))
         r.place(self.green_part, x = (self.size[0] // 2) - ((1920 // 9) // 2), y = int(25))
 
@@ -1071,6 +1080,10 @@ class EnemyDisplayable(renpy.Displayable):
         renpy.redraw(self, 0)
         self.last_tick = st
         return r
+
+    def refresh(self):
+        self.red_part = Solid("#FF0000", xsize = 1920 // 9, ysize = 1920 // 54)
+        self.green_part = Solid("#00FF00", xsize = int((1920 // 9) * ((self.fighter.health_points) / (self.fighter.max_health))), ysize = 1920 // 54)
 
     def visit(self):
         return [self.fighter.sprite, self.red_part, self.green_part]

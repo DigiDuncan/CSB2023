@@ -101,19 +101,21 @@ label game_loop:
                 for f, a in zip(actions[c][2], answer_list):
                     displayable = rpggame.get_displayable_by_fighter(f)
                     displayable.show_damage_indicator(a)
+                    displayable.refresh()
             print("Executing enemy moves.")
             for e in encounter.enemies:
                 f, a = e.attack_ai(encounter)
                 for f, a in zip(f, a):
                     displayable = rpggame.get_displayable_by_fighter(f)
                     displayable.show_damage_indicator(a)
+                    displayable.refresh()
             renpy.redraw(rpggame, 0)
             print("Running tick.")
             for f in encounter.turn_order:
-                answer_list = f.tick()
-                displayable = rpggame.get_displayable_by_fighter(f)
-                for a in answer_list:
-                    displayable.show_damage_indicator(a)
+                # answer_list = f.tick()
+                f.tick()
+                # for a in answer_list:
+                    # displayable.show_damage_indicator(a)
                 if f.dead:
                     encounter.fighters.remove(f)
             renpy.redraw(rpggame, 0)
