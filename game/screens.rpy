@@ -1,6 +1,6 @@
 init python:
 
-    bounciness_label = f"+{preferences.csbounciness}%" 
+    bounciness_label = f"+{preferences.csbounciness}%" if preferences.csbounciness else "Default"
     max_fun_label = ""
     if preferences.max_fun >= FUN_VALUE_LEGENDARY:
         max_fun_label = "Legendary"
@@ -20,7 +20,7 @@ init python:
     def change_bounciness(new_bounciness):
         global bounciness_label
         preferences.csbounciness = new_bounciness
-        bounciness_label = f"+{preferences.csbounciness}%"
+        bounciness_label = f"+{preferences.csbounciness}%" if preferences.csbounciness else "Default"
         renpy.restart_interaction()
 
     def change_max_fun(new_max_fun):
