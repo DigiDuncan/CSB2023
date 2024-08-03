@@ -1334,6 +1334,7 @@ image amtrak_coach_1 = "bg/train/amtrak_coach_1.png"
 image amtrak_coach_2 = "bg/train/amtrak_coach_2.png"
 image amtrak_baggage = "bg/train/amtrak_baggage.png"
 image amtrak_top = "bg/train/amtrak_top.png"
+image sepia_zoom = "bg/train/sepia_zoom.png"
 
 # Train Route NPCs
 image amtrak_conductor = "characters/amtrak_conductor.png"

@@ -2914,10 +2914,10 @@ label train_lupin_win:
         arceus "Yep! We never had any cash!"
         arceus "Well, we {i}did,{/i} but we spent it all on Legos!"
         amtrak_conductor "..."
-        tate "Wait a minute!"
+        tate "Wait, hold up!"
         show tate srs
-        tate "That means that this prick {i}also{/i} stole from that casino before we got to Nevada!"
-        tate "I saw it on the news while I was cooking earlier!"
+        tate "Mr. Conductor, remember? There was the news story this morning about that casino being robbed overnight!"
+        tate "I'll bet this prick is some kind of middleman for the {i}real{/i} thief!"
         show mean human angry
         mean "You filthy {i}rat!{/i} You tried to frame two innocent guys for your crime, too?!"
         lupin "Wait, that's a {i}guy?!"
@@ -3163,23 +3163,20 @@ label train_lupin_win:
     music Roundabout - Yes
     mean "{bt=a3-p10-s4}{size=+24}YOU RAT {i}BASTARD!{w=1.0}{nw}" with hpunch
     mean "I {i}THOUGHT{/i} I RECOGNIZED YOU!{w=1.0}{nw}"
-    # TODO: this doesn't quite work as intended yet. I want the logo to be unaffected by the camera.
-    # TODO: sepia filter shader
-    camera:
+    # i got lazy ok
+    scene
+    show sepia_zoom:
         parallel:
-            linear 20 xpos -1920
+            linear 15 zoom 2
         parallel:
-            linear 20 ypos -300
+            linear 15 xpos -1920
         parallel:
-            linear 20 zoom 2
-
+            linear 15 ypos -400
     show tbc at manual_pos(1000,800)
     pause 7
         
     stop music fadeout 2
     scene black with dissolve
-    camera:
-        reset
     
     n "After a heated discussion, the group decides that maybe it's best to let bygones be bygones and get on with the night."
     n "Mean finally starts his shift while Tate, CS, and Arceus head to bed."
