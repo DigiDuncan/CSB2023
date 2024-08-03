@@ -3240,12 +3240,12 @@ label train_tate_ex_encounter:
     tate "And, somehow, we keep running into each other."
     tate "Are the two correlated? I do not know."
     cs "What are you saying, Tate?"
-    tate "Your actions affect more than just you."
-    tate "Your attack on HoH SiS cost Mean his job."
-    tate "You lured a thief onto this train."
+    tate "The choices you make affect more than just you."
+    tate "Your attack on HoH SiS cost Mean his last job."
+    tate "In another time, you found another way home, and today would have been mostly peaceful."
     show cs worried flipped
     tate "In another place, I had to drop everything to save you from your own bad decisions."
-    tate "In another time, I fought alongside you."
+    tate "In another world, I fought alongside you."
     show cs scared flipped
     cs "Tate, what hell are you {i}talking{/i} about?!"
     tate "Tell me, CS."

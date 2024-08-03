@@ -583,7 +583,7 @@ label south_folded:
     hide cs with moveoutright
     n "CS returns to the search for Arceus."
     scene black with dissolve
-    n "Meanwhile, Arceus has been trying to win it big, but in a different kind of way..."
+    n "Meanwhile, Arceus has also been trying to win it big, but with a different approach..."
     scene outsafe
     show arceus full flipped at mid_right
     show drill at center_right
