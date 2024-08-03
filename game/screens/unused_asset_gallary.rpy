@@ -38,6 +38,6 @@ screen unused_gallery(i):
         xsize 1500
 
     # Main Image
-    image ProportionalScale("gallery/images/" + list(asset_dict.keys())[i % len(asset_dict)], 750, 750):
+    image ProportionalScale("gallery/images/" + list(asset_dict.keys())[i % len(asset_dict)], 500, 500):
         xalign(0.5)
         yalign(0.5)

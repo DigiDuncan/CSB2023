@@ -6,5 +6,25 @@
     "its_back.png": {
         "title": "It's Back",
         "caption": "IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK"
+    },
+    "mean.png": {
+        "title": "mean",
+        "caption": "Mean's original sprite as seen in {i}CSBounciness III,{/i} before Tate redrew it. It's an edited screenshot from an episode of {i}Bubble Guppies.{/i} This representation of Mean is affectionately known as \"Yellow Fucker\"."
+    },
+    "worker_mean.png": {
+        "title": "worker_mean",
+        "caption": "Mean's original HoH SiS sprite as seen in {i}CSBounciness III,{/i} before Tate redrew it."
+    },
+    "mean_clothes.png": {
+        "title": "mean_clothes",
+        "caption": "This was going to be used for a joke in Train Route that involved Mean's transformation rendering him nude until Tate produced this emergency set of clothes. Tate would then throw the clothes at Mean, knocking him offscreen until he returned, fully dressed. The joke was cut for several reasons."
+    },
+    "meanhuman.png": {
+        "title": "meanhuman",
+        "caption": "Hastily-drawn placeholder sprite by Tate, used while writing the portion of Train Route that introduced Mean's human form. Originally, Tate intended to be the one to draw Mean's human sprites, but Mushroom Man did a much better job at capturing Mean's creative vision."
+    },
+    "amtrak_stewardess.png": {
+        "title": "amtrak_stewardess",
+        "caption": "A slightly-less half-assed placeholder sprite by Tate. We're still not sure if the replacement found on Google Images is an actual art piece or AI-generated..."
     }
 }
