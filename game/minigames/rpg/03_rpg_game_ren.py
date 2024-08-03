@@ -565,11 +565,13 @@ class Fighter:
         if self.damage_per_turn:
             for h, t in self.damage_per_turn:
                 if t > 0:
+                    # force it to wait so numbers don't overlap w damage + bleed damage
+                    renpy.pause(0.5)
                     print(f"{self.name}: Taking {h} DOT damage...")
                     renpy.notify(f"{self.display_name} is taking bleed damage!")
                     self.health_points -= h
                     # answer.append((int(-h), "hp"))
-                    displayable.show_damage_indicator((int(-h), "hp"))
+                    displayable.show_damage_indicator((int(-h), "dot"))
                     
                 else:
                     self.damage_per_turn.remove((h, t))
@@ -883,6 +885,8 @@ class DamageIndicator:
                 return "confused"
         elif self.type == "miss":
             return "miss"
+        elif self.type == "dot":
+            return "dot"
         else:
             return "none"
 
@@ -899,7 +903,7 @@ class DamageIndicator:
         elif self.indicator_type == "damage":
             return (0xFF, 0x00, 0x00)
         elif self.indicator_type == "dot":
-            return (0x00, 0xFF, 0xFF)
+            return (0xFF, 0xAA, 0x00)
         elif self.indicator_type == "heal":
             return (0x00, 0xFF, 0x00)
         elif self.indicator_type == "miss":
@@ -938,7 +942,7 @@ class DamageIndicator:
             renpy.sound.play("audio/ut/snd_damage.ogg", channel = "sfx")
             self.play_sound = False
         elif self.indicator_type == "dot":
-            renpy.sound.play("audio/sfx/hurt1.ogg", channel = "sfx")
+            renpy.sound.play("audio/sfx/sfx_hurt1.ogg", channel = "sfx")
             self.play_sound = False
         elif self.indicator_type == "stat_up":
             renpy.sound.play("audio/ut/snd_b.ogg", channel = "sfx")
