@@ -9,13 +9,13 @@ screen unused_gallery(i):
     # Left Button
     imagebutton idle "gui/left_off.png" hover "gui/left_on.png":
         action ShowMenu("unused_gallery", i-1)
-        yalign 0.5
+        yalign 0.1
         xalign 0.1
 
     # Right Button
     imagebutton idle "gui/right_off.png" hover "gui/right_on.png":
         action ShowMenu("unused_gallery", i+1)
-        yalign 0.5
+        yalign 0.1
         xalign 0.9
 
     # Return Button
@@ -27,17 +27,19 @@ screen unused_gallery(i):
 
     # File Name
     text list(asset_dict.values())[i % len(asset_dict)]["title"]:
+        size 72
         xalign 0.5
-        yalign 0.04
+        yalign 0.125
     
     # Caption
     text list(asset_dict.values())[i % len(asset_dict)]["caption"]:
         textalign 0.5
-        xalign 0.5
-        yalign 0.95
-        xsize 1500
+        xcenter 0.7
+        ycenter 0.6
+        xsize 600
+        ysize 800
 
     # Main Image
-    image ProportionalScale("gallery/images/" + list(asset_dict.keys())[i % len(asset_dict)], 500, 500):
-        xalign(0.5)
-        yalign(0.5)
+    image ProportionalScale("gallery/images/" + list(asset_dict.keys())[i % len(asset_dict)], 500, 800):
+        xcenter 0.3
+        ycenter 0.6
