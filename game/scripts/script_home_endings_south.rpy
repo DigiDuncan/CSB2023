@@ -34,7 +34,7 @@ label south_back_home_alt:
     with moveinright
     ed "I have been waiting for you for quite some time now."
     rich "We've been trying to stop you for a while now, but this is the final stop for you."
-    cs "HoH SiS?? What do you guys still want from me?"
+    cs "HoH SiS?! What do you guys still want from me?"
     ed "What do you think, CS? After you put Wesley in the hospital? After you crippled most of our workers?"
     cs "Well, you guys scammed me out of my money and broke my computer! Of {i}course{/i} I wanted some kind of revenge!"
     ed "Why do you think this all started?"

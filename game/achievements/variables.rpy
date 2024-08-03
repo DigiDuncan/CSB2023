@@ -67,6 +67,7 @@ define achievements = [
     Achievement("All Over Again", "???", "Beat CSBIII all over again.", "alloveragain", "extra", True),
     Achievement("F.U.N.", "???", "Roll a fun value.", "fun", "extra", True),
     Achievement("Archived", "???", "Find Addy's Facility.", "archive", "extra", True),
+    Achievement("Nah.", "I don't really {i}feel{/i} like it.", "Just say no.", "nah", "story", dx = True),
     Achievement("Chronicle Skipper 188", "Think you can you set a new record?", "Stay home and speedrun this game!", "speedrun", "story", dx = True),
     Achievement("Get The Job Done Right", "The first time...", "Call the right company.", "savers", "extra", dx = True),
     Achievement("Graphite Grinder", "Sharpening Time 2", "Beat the Pencil Cultist's high score.", "grinder", "story", dx = True),

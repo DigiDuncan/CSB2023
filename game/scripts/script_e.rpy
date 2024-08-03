@@ -21,7 +21,7 @@ label e2:
     scene black with dissolve
     stop music fadeout 3.0
     music end
-    n "CS takes off and heads to Rosen's house."
+    n "CS takes off, heading towards Rosen's house."
     jump csbi_rosen_house
 
 label e3:
@@ -34,7 +34,7 @@ label e3:
     play sound sfx_page volume 5
     hide oldgame
     with moveoutright
-    cs "I know what's going on now."
+    cs "I know what's going on, now."
     cs "Fuck this."
     n "Jumping to rosen_house...{w=1.25}{nw}"
     jump csbi_rosen_house
@@ -44,10 +44,10 @@ label e2_rosen:
     michael "While he was walking, he found another version of himself."
     stop music fadeout 3.0
     music end
-    michael "This version of himself was real."
-    michael "This man, the adventurer, was not."
+    michael "{i}This{/i} version of himself was real."
+    michael "{i}This{/i} man, the adventurer, was {i}not."
     michael "He never was."
-    michael "He needed to be removed if he found out he was fake."
+    michael "He needed to be removed if he ever found out he was fake."
     michael "So that's when--{nw}"
     show pakoo disappointed at center with moveinright
     pakoo "STOP{nw}"

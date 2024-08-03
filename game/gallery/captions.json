@@ -17,7 +17,7 @@
     },
     "mean_clothes.png": {
         "title": "mean_clothes",
-        "caption": "This was going to be used for a joke in Train Route that involved Mean's transformation rendering him nude until Tate produced this emergency set of clothes. Tate would then throw the clothes at Mean, knocking him offscreen until he returned, fully dressed. The joke was cut for several reasons."
+        "caption": "This was going to be used for a joke in Train Route that involved Mean's transformation rendering him nude until Tate produced this emergency set of clothes. Tate would then throw the clothes at Mean, knocking him offscreen until he returned, fully dressed. This bit was cut for several reasons."
     },
     "meanhuman.png": {
         "title": "meanhuman",
@@ -25,6 +25,18 @@
     },
     "amtrak_stewardess.png": {
         "title": "amtrak_stewardess",
-        "caption": "A slightly-less half-assed placeholder sprite by Tate. We're still not sure if the replacement found on Google Images is an actual art piece or AI-generated..."
+        "caption": "A {i}slightly-{/i}less half-assed placeholder sprite by Tate. We're still not sure if the replacement sprite found on Google Images is an actual art piece or an AI-generated image."
+    },
+    "tate_mean.png": {
+        "title": "tate_mean",
+        "caption": "Unused base sprite for a {i}really{/i} cringe section of the Train Route script that will never, {i}ever{/i} see the light of day. Instead, enjoy this picture of Tate gently holding a pincushion. :D"
+    },
+    "mean_human.png": {
+        "title": "mean_human",
+        "caption": "An unfinished sketch of what would have been Mean's human sprite base. Tate's art style is a bit too \"pretty\" to do Mean justice. Mean is also missing his eyepatch here."
+    },
+    "mean_human_hat.png": {
+        "title": "mean_human_hat",
+        "caption": "The same sketch, just with Mean's hat."
     }
 }

@@ -80,22 +80,27 @@ label csbi_craptop:
             jump vibration
         "Respond to chat" (type = "true"):
             pass
-        # "Don't respond to chat":
-        #     n "CS thinks about starting the day, and it exhausts him."
-        #     scene cs_room
-        #     show cs
-        #     with dissolve
-        #     cs "Y'know, I think I should just go to bed now."
-        #     show cs disappointed
-        #     cs "I don't really want to do {i}anything{/i} at all right now."
-        #     hide cs with moveoutright
-        #     scene cs_room_2 with dissolve
-        #     show cs at mid_left with moveinleft
-        #     cs "Welp, time to do nothing today!"
-        #     cs "Hey guys, cya!"
-        #     $ renpy.movie_cutscene(creditsm)
-        #     $ renpy.end_replay()
-        #     return
+        "Just... don't." (type = "dx"):
+            show cs disappointed
+            n "CS thinks about starting the day, but even the thought of it exhausts him."
+            scene cs_room
+            show cs disappointed
+            with dissolve
+            cs "Y'know, I kinda just want a nap..."
+            show cs disappointed
+            cs "I don't really want to do anything {i}at all{/i} right now!"
+            hide cs with moveoutright
+            scene cs_room_2 with dissolve
+            show cs at mid_left with moveinleft
+            cs "Welp, time to do nothing today!"
+            show cs happy
+            cs "Hey guys, see ya!"
+            $ achievement_manager.unlock("Nah.")
+            scene black with dissolve
+            pause 2.0
+            $ renpy.movie_cutscene(creditsm)
+            $ renpy.end_replay()
+            return
             
     play sound sfx_ping
     cs "Okay, bedtime! Bye, guys!"

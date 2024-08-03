@@ -933,7 +933,7 @@ label train_enter_sleeper:
     with moveinleft
     
     amtrak_conductor "Alright, every--{w=0.25}{nw}"
-    amtrak_conductor "Oh. {w=0.5}{i}Mx. Frost."
+    amtrak_conductor "Oh. {w=0.5}{i}Mx.{w=0} Frost."
     tate "I {i}swear,{/i} sir! Whatever happened just now, I had {i}nothing{/i} to do with it!"
     tate "I've been in this room! Just talking with CS, here!"
     show cs happy flipped
@@ -1037,7 +1037,7 @@ label train_enter_sleeper:
     show cs disappointed flipped
     amtrak_conductor "Thank you, sir. We'll keep an eye out for your things."
     show tate sheepish flipped
-    amtrak_conductor "Now, Mx. Frost..."
+    amtrak_conductor "Now, Mx.{w=0} Frost..."
     amtrak_conductor "You'd better behave. Stay out of the way during this investigation."
     show tate sad flipped
     tate "Yes, sir."
@@ -1957,7 +1957,7 @@ label train_search_tate:
     show tate flipped behind lupin at offscreenright
     show tate flipped at mid_right with moveinright
     
-    tate "Excuse me, Mr. Conductor?"
+    tate "Excuse me, Mr.{w=0} Conductor?"
     show lupin stand hat flipped
     tate "Have you seen--{w=0.25}{nw}"
     show tate srs flipped
@@ -2009,7 +2009,7 @@ label train_search_tate:
     pause 1.0
     show tate sheepish flipped
     tate "N-{w=0.1}Now, you listen here. Don't underestimate me..."
-    tate "Just give me the hat, yeah? Besides, even if you're not scared of {i}me,{/i} Mr. Conductor will probably be done in there at any moment."
+    tate "Just give me the hat, yeah? Besides, even if you're not scared of {i}me,{/i} Mr.{w=0} Conductor will probably be done in there at any moment."
     play sound sfx_fart_deep
     with vpunch
     with vpunch
@@ -2046,9 +2046,9 @@ label train_search_tate:
     tate "Oh, no!"
     tate "I've {i}got{/i} to get that hat back!"
     show tate shock flipped at left with MoveTransition(0.25)
-    tate "{bt=a3-p10-s4}{size=+24}Mr. Conductor!!" with hpunch
+    tate "{bt=a3-p10-s4}{size=+24}Mr.{w=0} Conductor!!" with hpunch
     tate "We've got trouble!"
-    amtrak_conductor "My apologies, Mx. Frost. I'm a little {i}busy."
+    amtrak_conductor "My apologies, Mx.{w=0} Frost. I'm a little {i}busy."
     amtrak_conductor "Where is Mean?"
     show tate cry flipped
     tate "I-{w=0.1}I don't know!"
@@ -2750,12 +2750,12 @@ label train_lupin_win:
     mean "Eh, don't worry about it. I know it'll take time."
     show amtrak_conductor
     show tate sheepish
-    amtrak_conductor "I would like to apologize to {i}you,{/i} as well, Mx. Frost."
+    amtrak_conductor "I would like to apologize to {i}you,{/i} as well, Mx.{w=0} Frost."
     amtrak_conductor "We should have taken your complaints seriously when you told us this guy was acting suspicious."
     show mean human annoyed
     mean "Yeah, sorry, Tate."
     tate "Like I said, I just had a gut feeling..."
-    tate "I mean, he's obviously a creep. I just didn't think he was straight-up {i}criminal!"
+    tate "I mean, he's obviously a creep. I just didn't think he was a straight-up {i}criminal!"
     show amtrak_conductor flipped
     show mean human
     mean "Well, I guess there's only one thing left to do."
@@ -2916,7 +2916,7 @@ label train_lupin_win:
         amtrak_conductor "..."
         tate "Wait, hold up!"
         show tate srs
-        tate "Mr. Conductor, remember? There was the news story this morning about that casino being robbed overnight!"
+        tate "Mr.{w=0} Conductor, remember? There was the news story this morning about that casino being robbed overnight!"
         tate "I'll bet this prick is some kind of middleman for the {i}real{/i} thief!"
         show mean human angry
         mean "You filthy {i}rat!{/i} You tried to frame two innocent guys for your crime, too?!"
