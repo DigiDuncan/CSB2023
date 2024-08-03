@@ -807,7 +807,7 @@ class Fighters:
     BIG_TANK = Fighter("Abrams", True, 700, 70, 150, [Attacks.SHELL], Image("images/characters/abrams.png"), ai = AIType.AGGRO)
     COPGUY_EX = Fighter("Copguy EX", True, 2222, 30, 50, Attacks.ex_attacks, Image("images/characters/copguy.png"), ai = AIType.COPGUY_EX)
     PAKOOE = Fighter("Pakoo (Error)", True, 9999, 70, 150, [Attacks.FUN_VALUE], Image("images/characters/pakoo/pakoo_disappointed.png"), ai = AIType.AGGRO, display_name = "Pakoo")
-    COPGUY_EXE = Fighter("Copguy EXE", True, 666, 66, 66, [Attacks.ELDRITCH_BLAST, Attacks.RAINBOW_VOMIT, Attacks.SLASH, Attacks.CONFUSING_STORY], Image("images/characters/copguyexe.png"), ai = AIType.AGGRO)
+    COPGUY_EXE = Fighter("{image=gui/dx_text.png} Copguy.EXE", True, 666, 66, 66, [Attacks.ELDRITCH_BLAST, Attacks.RAINBOW_VOMIT, Attacks.SLASH, Attacks.CONFUSING_STORY], Image("images/characters/copguyexe.png"), ai = AIType.AGGRO, display_name = "Copguy.EXE")
     K174 = Fighter("K17-4", True, 174, 17, 20, [Attacks.PUNCH], Image("images/characters/k174.png"), ai = AIType.NEUTRAL)
     K199 = Fighter("K19-9", True, 199, 19, 30, [Attacks.KICK], Image("images/characters/k199.png"), ai = AIType.AGGRO)
     K207 = Fighter("K20-7", True, 207, 20, 10, [Attacks.PUNCH], Image("images/characters/k207.png"), ai = AIType.DEFENSIVE)

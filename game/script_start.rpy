@@ -1549,6 +1549,7 @@ image tate_ex_ca_c:
     alignaround (0.5, 0.5)
     align (0.5, 0.5)
     pos (0.5, 0.5)
+    blur 5
     pass
     xpos 0.505
     ypos 0.505
@@ -1563,6 +1564,7 @@ image tate_ex_ca_m:
     alignaround (0.5, 0.5)
     align (0.5, 0.5)
     pos (0.5, 0.5)
+    blur 5
     pass
     xpos 0.505
     ypos 0.505
@@ -1577,6 +1579,7 @@ image tate_ex_ca_y:
     alignaround (0.5, 0.5)
     align (0.5, 0.5)
     pos (0.5, 0.5)
+    blur 5
     pass
     xpos 0.505
     ypos 0.505
