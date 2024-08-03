@@ -1,17 +1,20 @@
-screen unused_nav():
-    $ current_index = 0
+screen unused_gallery(i):
+    tag menu
+    add Color('#323e42', alpha=0.75)
 
-    add Color('#5F777F', alpha=0.5)
+    python:
+        file = renpy.file("gallery/captions.json")
+        asset_dict = json.load(file)
 
     # Left Button
     imagebutton idle "gui/left_off.png" hover "gui/left_on.png":
-        action SetLocalVariable("current_index", current_index - 1), ShowMenu("unused_gallery", current_index)
+        action ShowMenu("unused_gallery", i-1)
         yalign 0.5
         xalign 0.1
 
     # Right Button
     imagebutton idle "gui/right_off.png" hover "gui/right_on.png":
-        action SetLocalVariable("current_index", current_index + 1), ShowMenu("unused_gallery", current_index)
+        action ShowMenu("unused_gallery", i+1)
         yalign 0.5
         xalign 0.9
 
@@ -21,14 +24,6 @@ screen unused_nav():
         xalign 0.02
         yalign 0.04
         background "#5F777F"
-
-screen unused_gallery(i):
-    tag menu
-    use unused_nav
-
-    python:
-        file = renpy.file("gallery/captions.json")
-        asset_dict = json.load(file)
 
     # File Name
     text list(asset_dict.values())[i % len(asset_dict)]["title"]:
