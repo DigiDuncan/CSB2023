@@ -1364,10 +1364,13 @@ label asset_debugger:
         play music hohsis_theme
         $ bgtotal += 1
         scene flintcar_fg
-        show walkie at center
+        show chopper_ladder at right
+        show chopper_sil at mid_right_right
+        show walkie at mid_right
         show watch at center
+        show mean human hat flipped sil_black at mid_left
         show cs concentrate phone flipped at left
-        $ spritetotal += 3
+        $ spritetotal += 6
         bomaha "test 72{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -1869,6 +1872,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(109):
+        $ sfxtotal += 1
+        play sound sfx_chopper_loop
         $ musictotal += 1
         play music penthouse
         $ bgtotal += 1
@@ -2515,54 +2520,68 @@ label asset_debugger:
         play music yuuka_town
         $ bgtotal += 1
         scene path_forest
-        pause 0.1
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(183):
         $ musictotal += 1
-        play music albu
+        play music lo_fi_sunset
         $ bgtotal += 1
         scene creepy_path
-        pause 0.1
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(184):
+        $ musictotal += 1
+        play music homely_yado_inn
         $ bgtotal += 1
         scene creepy_path_2
-        pause 0.1
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(185):
+        $ musictotal += 1
+        play music in_the_room
         $ bgtotal += 1
         scene creepy_path_3
-        pause 0.1
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(186):
+        $ musictotal += 1
+        play music ten_feet_away_1
         $ bgtotal += 1
         scene creepy_path_4
-        pause 0.1
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(187):
+        $ musictotal += 1
+        play music ten_feet_away_2
         $ bgtotal += 1
         scene creepy_path_fairy
-        pause 0.1
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(188):
+        $ musictotal += 1
+        play music ten_feet_away_3
         $ bgtotal += 1
         scene creepy_path_exit
-        pause 0.1
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(189):
+        $ musictotal += 1
+        play music ten_feet_away_4
         $ bgtotal += 1
         scene cafe_entrance
-        pause 0.1
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(190):
+        $ musictotal += 1
+        play music albu
         $ bgtotal += 1
         scene cafe_sitting
         pause 0.1
@@ -3688,7 +3707,25 @@ label asset_debugger:
         pause 0.1
     else:
         jump exit_debug   
-
+    if fun_value (380):
+        $ bgtotal += 1
+        scene amtrak_top sil_black
+        pause 0.1
+    else:
+        jump exit_debug   
+    if fun_value (381):
+        $ bgtotal += 1
+        scene hutchinson_stn
+        pause 0.1
+    else:
+        jump exit_debug   
+    if fun_value (382):
+        $ bgtotal += 1
+        scene lupin_escape
+        pause 0.1
+    else:
+        jump exit_debug 
+    
     n "Done."
     show screen debugger_menu
     pause
