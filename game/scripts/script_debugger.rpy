@@ -794,12 +794,13 @@ label asset_debugger:
         scene question
         show m4 fire at center
         show cs scared at left
-        $ spritetotal += 8
+        $ spritetotal += 9
         show harold at mid_left_left
         show zenigata flipped at mid_left
         show mean wat flipped at mid_mid_left
         show tate cry flipped at mid_mid_right
         show snufkin at mid_right
+        show pomni flipped at mid_right_right
         show train_fly_3 at right
         luke "test 38{w=0.5}{nw}"
         $ charactertotal += 1
@@ -816,8 +817,9 @@ label asset_debugger:
         show mr_krupp at mid_left_left
         show cs scared flipped at left
         show tate sheepish blush at mid_left
-        $ spritetotal += 7
+        $ spritetotal += 8
         show mean furious at mid_mid_left
+        show trailtrash_2 at mid_right_right
         show alicia at mid_right
         show train_fly_4 at right
         taran "test 39{w=0.5}{nw}"
@@ -1841,6 +1843,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(107):
+        $ sfxtotal += 1
+        play sound sfx_snd_lightswitch
         $ musictotal += 1
         play music passport_real
         $ bgtotal += 1
@@ -1852,6 +1856,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(108):
+        $ sfxtotal += 1
+        play sound sfx_snd_undynestep
         $ musictotal += 1
         play music passport_ytp
         $ bgtotal += 1
@@ -2245,7 +2251,7 @@ label asset_debugger:
         play music winter_lullaby
         $ bgtotal += 1
         scene old_house_inside
-        pause 0.5
+        hermaphrodite "test 149{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(150):
@@ -2253,7 +2259,7 @@ label asset_debugger:
         play music wool_gloves
         $ bgtotal += 1
         scene cc_parking_lot
-        pause 0.5
+        everyone "test 150{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(151):
@@ -2261,7 +2267,7 @@ label asset_debugger:
         play music xddcc
         $ bgtotal += 1
         scene cc_lobby
-        pause 0.5
+        zelda "test 151{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(152):
@@ -2269,7 +2275,7 @@ label asset_debugger:
         play music ocean_man
         $ bgtotal += 1
         scene cc_entrance
-        pause 0.5
+        daphone "test 152{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(153):
@@ -2277,7 +2283,7 @@ label asset_debugger:
         play music lancer
         $ bgtotal += 1
         scene cc_crowd
-        pause 0.5
+        marty "test 153{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(154):
@@ -2285,7 +2291,7 @@ label asset_debugger:
         play music space_classroom
         $ bgtotal += 1
         scene cc_stage
-        pause 0.5
+        cs_nobeep "test 154{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(155):
@@ -2293,7 +2299,7 @@ label asset_debugger:
         play music error
         $ bgtotal += 1
         scene cc_backstage
-        pause 0.5
+        cashier_nobeep "test 155{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(156):
@@ -2301,7 +2307,7 @@ label asset_debugger:
         play music bedroom_day
         $ bgtotal += 1
         scene billboard
-        pause 0.5
+        crowd_nobeep "test 156{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(157):
@@ -2513,6 +2519,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(183):
+        $ musictotal += 1
+        play music albu
         $ bgtotal += 1
         scene creepy_path
         pause 0.1
@@ -3673,7 +3681,13 @@ label asset_debugger:
         scene letterbox3
         pause 0.1
     else:
-        jump exit_debug    
+        jump exit_debug
+    if fun_value (379):
+        $ bgtotal += 1
+        scene sepia_zoom
+        pause 0.1
+    else:
+        jump exit_debug   
 
     n "Done."
     show screen debugger_menu

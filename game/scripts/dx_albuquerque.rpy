@@ -1,13 +1,4 @@
-define hermaphrodite = Character("Hermaphrodite", callback = renpy.partial(char_callback, name = "Hermaphrodite", play_beeps = False))
-define everyone = Character("Everyone", callback = renpy.partial(char_callback, name = "Everyone", play_beeps = False))
-define zelda = Character("Zelda", callback = renpy.partial(char_callback, name = "Zelda", play_beeps = False))
-define daphone = Character("Da Phone", callback = renpy.partial(char_callback, name = "Da Phone", play_beeps = False))
-define marty = Character ("Marty", callback = renpy.partial(char_callback, name = "Marty", play_beeps = False))
-define cs_nobeep = Character("cs188", callback = renpy.partial(char_callback, name = "cs", play_beeps = False))
-define cashier_nobeep = Character("Cashier", callback = renpy.partial(char_callback, name = "cashier", play_beeps = False))
-define crowd_nobeep = Character("Crowd", callback = renpy.partial(char_callback, play_beeps = False))
-image trailtrash_2= "flip:characters/trailtrash.png"
-image pomni flipped= "flip:characters/pomni.png"
+
 define audio.albuquerque = "<from 104>albuquerque.mp3"
 define audio.albuquerque2 = "<from 153.5>albuquerque.mp3"
 define audio.albuquerque3 = "<from 280.75>albuquerque.mp3"
@@ -82,7 +73,7 @@ label dx_albuquerque:
     cs_nobeep "{cps=25}I crawled on my hands and knees{cps=20} for{cps=10} three full days...{w=0.75}{nw}"
     cs_nobeep "{cps=40}{cps=15}Draggin' along my {cps=25}big leather suitcase{cps=30} and my garment bag...{w=0.75}{nw}"
     cs_nobeep "{cps=25}...And my tenor saxophone and my twelve-pound bowling ball...{nw}"
-    cs_nobeep "{cps=30}...And my lucky, lucky{w=0.25} autographed {cps=20}glow-in-the-dark{cps=40} snorkel!{w=1.0}{nw}"
+    cs_nobeep "{cps=30}...And my lucky, lucky{w=0.25} autographed {cps=20}glow-in-the-dark{cps=40} snorkel!{w=1.25}{nw}"
     scene hotel_lobby
     show cs happy
     with dissolve
@@ -215,7 +206,7 @@ label dx_albuquerque:
     with dissolve
     cs_nobeep "{cps=40}...And they immediately latch onto my face and start bitin' me all over...{w=1.0}{nw}" with hpunch
     "Weasels" "{cps=40} Ahh gnahh nahh nahh! Ah gahhh nahh!{w=0.75}{nw}" with hpunch
-    cs_nobeep "{cps=40}Oh man, they were just going nuts!{w=1}{nw}"
+    cs_nobeep "{cps=40}Oh man, they were just going nuts!{w=0.75}{nw}"
     cs_nobeep "{cps=40}They were tearin' me apart!{w=1}{nw}"
     cs_nobeep "{cps=40}You know, I think it was just about that time that a little ditty started goin' through my head.{w=2}{nw}"
     cs_nobeep "{cps=40}I believe it went a little something like this...{w=2}{nw}"
@@ -270,11 +261,11 @@ label dx_albuquerque:
     show harold at Move((1.2, 0.35), (0.8, 0.35), 5, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show george at Move((-0.2, 0.5), (0.0, 0.5), 5, repeat=False, bounce=False, xanchor="left", yanchor="top")
     cs_nobeep "{cps=40}...And had two beautiful children - Nathaniel and Superfly!{w=1.75}{nw}"
-    cs_nobeep "{cps=40}Oh, we were so very very very happy, aw yeah.{w=1.75}{nw}"
+    cs_nobeep "{cps=40}Oh, we were so very very very happy, aw yeah.{w=1.5}{nw}"
     scene rosen_abode
     show pomni flipped at mid_left
     show cs flipped at mid_right
-    cs_nobeep "{cps=40}But then one fateful night, Zelda said to me,{w=1.5}{nw}"
+    cs_nobeep "{cps=40}But then one fateful night, Zelda said to me,{w=1.0}{nw}"
     cs_nobeep "{cps=40}She said,{w=0.75}{nw}"
     show pomni flipped at center with move
     zelda "{cps=40}Sweetie pumpkin? Do you wanna join the Columbia Record Club?{w=1.5}{nw}"

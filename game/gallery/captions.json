@@ -50,5 +50,21 @@
     "road_to_canada.png": {
         "title": "Beta Road to Canada",
         "caption": "This was the original background for when CS, Arceus, and Anno emerge from the surface out of jail. It was a lot muddier."
+    },
+    "alphaarc.png": {
+        "title": "Alpha Arceus",
+        "caption": "This was the version of Arceus that we used back in 2019."
+    },
+    "main_menu.png": {
+        "title": "2019 Main Menu",
+        "caption": "This is one of the first versions of the main menu for CSB. Still very Nekopara-y, very glad we moved away from this."
+    },
+    "linus.png": {
+        "title": "Beta Linus",
+        "caption": "This was a purposed version of Linus that we used early in development. He was a little crusty, though."
+    },
+    "michael.png": {
+        "title": "Beta Michael",
+        "caption": "This is an early version of Michael we used early on. He was mainly just a head, so we scrapped it."
     }
 }

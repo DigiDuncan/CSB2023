@@ -534,6 +534,16 @@ define zenigata_offscreen = Character("???", callback = renpy.partial(char_callb
 # DX Finale Character Definitions
 define perfect_billy = Character("Perfect Billy", callback = renpy.partial(char_callback, name = "billy", beep = "billy"), screen = "perfect_billy_text")
 
+# DX Albu
+define hermaphrodite = Character("Hermaphrodite", callback = renpy.partial(char_callback, name = "Hermaphrodite", play_beeps = False))
+define everyone = Character("Everyone", callback = renpy.partial(char_callback, name = "Everyone", play_beeps = False))
+define zelda = Character("Zelda", callback = renpy.partial(char_callback, name = "Zelda", play_beeps = False))
+define daphone = Character("Da Phone", callback = renpy.partial(char_callback, name = "Da Phone", play_beeps = False))
+define marty = Character ("Marty", callback = renpy.partial(char_callback, name = "Marty", play_beeps = False))
+define cs_nobeep = Character("cs188", callback = renpy.partial(char_callback, name = "cs", play_beeps = False))
+define cashier_nobeep = Character("Cashier", callback = renpy.partial(char_callback, name = "cashier", play_beeps = False))
+define crowd_nobeep = Character("Crowd", callback = renpy.partial(char_callback, play_beeps = False))
+
 # Character Images
 ## CS
 image cs = "characters/cs/neutral.png"
@@ -895,6 +905,7 @@ image howie flipped = "flip:characters/howie.png"
 image bouncer1 = "characters/bouncer.png"
 image bouncer2 = "characters/bouncer.png"
 image trailtrash = "characters/trailtrash.png"
+image trailtrash_2= "flip:characters/trailtrash.png"
 image trailtrash flipped = "flip:characters/trailtrash.png"
 image green = "characters/green.png"
 image green flipped = "flip:characters/green.png"
@@ -947,6 +958,7 @@ image alien = "characters/alien.png"
 image alien dead = "characters/alien_dead.png"
 image ikea_worker = "characters/ikea_worker.png"
 image pomni = "characters/pomni.png"
+image pomni flipped= "flip:characters/pomni.png"
 image moomin = "characters/moomin.png"
 image moomin = "flip:characters/moomin.png"
 image snufkin = "characters/snufkin.png"
@@ -1947,6 +1959,7 @@ define audio.unobtrusive_fun = "unobtrusive_fun.ogg"
 define audio.space_classroom = "secret/space_classroom.ogg"
 define audio.Billymusicu = "Billymusicu.ogg"
 define audio.ocean_man = "secret/credits.ogg"
+define audio.albu= "albuquerque.mp3"
 
 # SFX
 define audio.sfx_alt_punch = "sfx/sfx_alt_punch.ogg"
