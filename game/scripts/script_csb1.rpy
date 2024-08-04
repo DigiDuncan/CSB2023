@@ -304,17 +304,17 @@ label csbi_room:
             play music beautiful_hills volume 0.3
             music Beautiful Hills - Network Music
             show cs
-            cs "I guess I can call Home Savers. Despite my YTPs of their company, I think they would appreciate helping me out."
+            cs "I guess I can call Home Savers. Despite my YTPs of their company, I don't think they'd mind helping me out."
             show cs phone
             n "CS dials the phone number he found on their website."
             show cs phone at left with move
             show hoh_hq at mid_offscreen_right behind ed
             show ed phone at right
             with moveinright
-            ed "Hello, this is Ed, how may I help you?"
+            ed "Hello, this is Ed. How may I help you?"
             show cs worried phone
-            cs "Hello Ed, this is CS! My house feels like there is a rock on-{w=1.0} I mean my house is starting to tilt!"
-            ed "Oh man, that sounds really bad! What's your address? We'll schedule a time to be over there!"
+            cs "Hello, Ed! This is CS! My house feels like there is a rock on-- I mean... my house is starting to tilt!"
+            ed "Oh, man, that sounds really bad! What's your address? We'll schedule a time to be over there!"
             scene black with dissolve
             centered "A little while later..."
             pause 2.0
@@ -323,15 +323,15 @@ label csbi_room:
             with dissolve
             pause 1.5
             show ed at center with dissolve
-            ed "Hey CS, long time no see!"
-            ed "Oh wow, this is pretty bad! I wonder how it got like this..."
-            cs "I'm not sure, it's a pretty big house."
+            ed "Hey, CS! Long time no see!"
+            ed "Oh, wow, this is pretty bad! I wonder how it got like this..."
+            cs "I'm not sure! It's a pretty big house."
             show cs
-            cs "But it's nice to meet you again as well."
-            ed "You've been releasing some really funny content recently, I'm glad to see you still going strong!"
+            cs "Either way, it's nice to see you again."
+            ed "You've been releasing some really funny content recently. I'm glad to see you still going strong!"
             show cs happy
             cs "Thank you! I appreciate it."
-            ed "Well, we should get to work, this house ain't gonna fix itself!"
+            ed "Well, we should get to work. This house ain't gonna fix itself!"
             $ achievement_manager.unlock("Get The Job Done Right")
             stop music fadeout 3.0
             music end

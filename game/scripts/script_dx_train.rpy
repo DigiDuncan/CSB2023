@@ -3187,6 +3187,12 @@ label train_lupin_win:
     
     n "After a heated discussion, the group decides that maybe it's best to let bygones be bygones and get on with the night."
     n "Mean finally starts his shift while Tate, CS, and Arceus head to bed."
+    
+    # TODO: insert picture of hutchinson, KS amtrak stn here
+    scene
+    n "The train stops as scheduled in Hutchinson, Kansas, where Lupin is handed off to the cop who was following before."
+    
+    
     jump train_check_secret
 
 label train_lupin_lose:

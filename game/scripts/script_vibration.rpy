@@ -45,7 +45,7 @@ label vibration:
     scene cs_room with dissolve
     show cs disappointed at center with moveinleft
     cs "Hey, my house is still fucked up!"
-    cs "My laptop, as well!"
+    cs "So is my laptop!"
     show cs angry
     cs "I'm gonna go kick their asses!"
     hide cs with moveoutright
@@ -170,7 +170,7 @@ label vibration:
     show linus at right
     with moveinleft
     cs "Alright, well, I'm gonna make more YTPs for the channel!"
-    linus "No, sorry. When I gave you that card, I technically meant that it's for your own use, even though I didn't mention that."
+    linus "No, sorry. When I gave you that card, I technically meant that it's for your own use, even though I didn't mention that at any point."
     show cs disappointed
     cs "Oh..."
     cs "What if I show you more YTPs?"
@@ -184,7 +184,7 @@ label vibration:
     with dissolve
     linus "Damn, I guess that worked."
     show arceus at center with moveinright
-    arceus "Hey CS! We gotta go! Cops are here!"
+    arceus "Hey, CS! We gotta go! Cops are here!"
     cs "Alright! Bye, guys!"
     show arceus flipped with determination
     hide cs
@@ -193,7 +193,7 @@ label vibration:
     show copguy flipped at center with moveinleft
     copguy "Hey, have you seen a cosplayer and a furry come through here?"
     linus "Nope."
-    copguy "Damnit... I gotta keep going..."
+    copguy "Damnit... I've gotta keep going..."
     hide copguy with moveoutright
     scene black with dissolve
     stop music fadeout 3.0
@@ -206,8 +206,8 @@ label vibration:
     show arceus dark flipped at right
     with moveinleft
     show arceus dark with determination
-    arceus "Alright, we've got outta there."
-    cs "Yeah, now we have to trek home."
+    arceus "Alright, we made it!"
+    cs "Yeah! Now we have to trek home."
     show copguy dark at center with moveinleft
     copguy "Not so fast!"
     scene black
@@ -278,7 +278,7 @@ label vibration:
     show billy car
     show cultist gun at mid_right behind billy with moveinright
     cultist "Get out of the car, now!"
-    billy "No thanks!"
+    billy "No, thanks!"
     scene car background night
     show billy car
     with dissolve
@@ -299,7 +299,7 @@ label vibration:
     show pakoo at right
     with dissolve
     show cs at left
-    show billy at mid_left
+    show billy at mid_mid_left
     show arceus flipped at center
     with moveinleft
     pakoo "You wanna stay with me at some pizza place overnight?"
@@ -317,14 +317,14 @@ label vibration:
     play sound sfx_splash
     pause 0.5
     arceus "Damnit, I'm dirty now! We have to go wash it off!"
-    billy "Aright, fine."
+    billy "Alright, fine."
     scene black with dissolve
     pause 1.0
     scene mario_inside
     show mario at right
     with dissolve
     show arceus dirty flipped at left with moveinleft
-    mario "Alright, the washers are over there. Unfortunately, some fuckin clown broke the dryers."
+    mario "Alright, the washers are over there. Unfortunately, some fuckin' clown broke the dryers."
     arceus "I'll deal with it."
     hide arceus with moveoutright
     show shaggy_too_dope at left
@@ -343,6 +343,7 @@ label vibration:
     pause 2.0
     scene wozniaktroubles
     show billy car
+    show scott_border
     billy "Holy shit, Scott the Woz!"
     scene car plains
     show billy car
@@ -369,6 +370,8 @@ label vibration:
     scene car plains
     show billy car
     with dissolve
+    n "Billy's Jupiter Jack rings."
+    billy "Nope!"
     pause 3.0
     scene black with dissolve
     pause 1.0
