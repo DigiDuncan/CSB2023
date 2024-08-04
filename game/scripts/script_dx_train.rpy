@@ -2656,22 +2656,23 @@ label train_on_top:
     play sound sfx_zenigata_shout
     zenigata_nobeep "{bt=a3-p10-s4}{size=+24}Lupiiiiin!{w=2.0}{nw}"
        
-    # TODO: need actual zenigata car sprite
     show zenigata car behind letterbox:
-        xpos -600
-        ypos 300
+        xpos -800
+        ypos 100
+        rotate -5
+        zoom .8
         linear 2 xpos 100
         pass
         block:
             parallel:
                 linear 2 xpos 125
             parallel:
-                linear 2 ypos 325
+                linear 2 ypos 125
             pass
             parallel:
                 linear 2 xpos 100
             parallel:
-                linear 2 ypos 300
+                linear 2 ypos 100
             repeat
         
     pause 1.0
@@ -2706,7 +2707,6 @@ label train_lupin_win:
     scene
     show amtrak_top
     with dissolve
-    
 
     show lupin run hat flipped at mid_mid_right with moveinleft
     show mean human angry flipped at center behind lupin with moveinleft
@@ -2961,6 +2961,7 @@ label train_lupin_win:
         cs "Money isn't the {i}only{/i} thing we have in here, either!"
     cs "Mean, lock the door!"
     show mean human angry flipped at mid_offscreen_right
+    play sound sfx_snd_lightswitch
     pause 0.25
     show mean human angry at mid_offscreen_right
     cs "Everyone, get behind me!"
@@ -3005,7 +3006,6 @@ label train_lupin_win:
     show cs angry
     show mean human angry flipped
     mean "Well, you'd better {i}start{/i} believing, pal."
-    # TODO: we need to figure out where we are geographically and drop lupin off at the next station. zenigata will meet us there
     mean "We have a stop coming up real soon. The {i}second{/i} we arrive, {i}your{/i} ass is getting hauled off to the clink!"
     lupin "Oh..."
     # let's refocus a bit.
@@ -3074,6 +3074,7 @@ label train_lupin_win:
         linear 0.25 rotate -75
     show lupin stand behind lego_jail:
         linear 0.25 rotate -75
+    play sound sfx_snd_undynestep
     with hpunch
     pause 0.5
     amtrak_conductor "Good night, everyone!"
