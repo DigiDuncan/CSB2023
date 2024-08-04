@@ -461,4 +461,5 @@ label dx_albuquerque:
     everyone "{cps=40}Albuquerque, Albuquerque, Albuquerque, Albuquerque,{w=0.25}{nw}"
     everyone "{cps=40}Albuquerque, Albuquerque,{w=0.25}{nw}"
     cs_nobeep "{cps=40}Al{w=5}{cps=5}buquerque!"
+    $ achievement_manager.unlock("Wacka Wacka DooDoo Yeah!")
     jump england
