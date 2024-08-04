@@ -25,6 +25,24 @@ screen unused_gallery(i):
         yalign 0.04
         background "#5F777F"
 
+    # Counter
+    python:
+        ## fix counter if it goes over the length of list or under 1
+
+        pretty_count = i+1
+        if pretty_count > len(asset_dict):
+            pretty_count = 1
+        elif pretty_count < 1:
+            pretty_count = len(asset_dict)
+        else: 
+            # this shouldn't happen
+            pretty_count = i+1
+
+    text list( str(pretty_count)+" of "+str(len(asset_dict)) ):
+        size 48
+        xalign 0.5
+        yalign 0.07
+        
     # File Name
     text list(asset_dict.values())[i % len(asset_dict)]["title"]:
         size 72
