@@ -2707,11 +2707,12 @@ label train_lupin_win:
     show amtrak_top
     with dissolve
     
+
     show lupin run hat flipped at mid_mid_right with moveinleft
     show mean human angry flipped at center behind lupin with moveinleft
-    show lupin stand hat flipped
+    show lupin stand hat flipped with vpunch
     
-    n "Mean barely catches Lupin by his coattails." with vpunch
+    n "Mean barely catches Lupin by his coattails."
     mean "Gotcha, ya thieving rat!"
     play sound sfx_walkie_on
     show walkie with Dissolve(0.25):
@@ -2723,7 +2724,7 @@ label train_lupin_win:
     amtrak_conductor "This is Muscle Mass. Go ahead."
     mean "We've got him, sir. Requesting backup, over."
     amtrak_conductor "Roger that, on my way. Over."
-    mean "Copy that. Over and out."
+    mean "Copy that. Over and out!"
     play sound sfx_walkie_off
     pause 0.5
     
@@ -2772,7 +2773,7 @@ label train_lupin_win:
         yanchor 0
         xpos 1300
         ypos 322
-    show lupin stand hat:        
+    show lupin stand hat:
         linear 0.25 yzoom -1
         linear 0.25 ypos 50
     pause 0.5
@@ -2787,7 +2788,7 @@ label train_lupin_win:
         xpos 1450
         ypos 500
         linear 0.25 ypos 1080
-    play sound sfx_hurt1
+    play sound "audio/ut/snd_damage.ogg"
     pause 0.5
     
     # brooch
@@ -2856,27 +2857,32 @@ label train_lupin_win:
         yzoom -1 
         linear 0.1 ypos 50
         linear 0.1 ypos 200
+    play sound sfx_hurt1
     show mean human angry
     mean "You got anything {i}else{/i} hidden in there?!"
     show lupin stand:
         yzoom -1 
         linear 0.1 ypos 50
         linear 0.1 ypos 200
+    play sound sfx_hurt1
     lupin "No, sir!"
     show lupin stand:
         yzoom -1 
         linear 0.1 ypos 50
         linear 0.1 ypos 200
+    play sound sfx_hurt1
     lupin "That's all, I swear!"
     show lupin stand:
         yzoom -1 
         linear 0.1 ypos 50
         linear 0.1 ypos 200
+    play sound sfx_hurt1
     lupin "{bt=a3-p10-s4}Please put me down!"
     show lupin stand:
         yzoom -1 
         linear 0.1 ypos 50
         linear 0.1 ypos 200
+    play sound sfx_hurt1
     show mean human annoyed
     pause 0.5
     mean "... Fine."

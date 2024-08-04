@@ -75,7 +75,7 @@ define achievements = [
     Achievement("We Don't Go To Bronson", "???", "Welcome to Hell!",  "bronson", "story", dx = True),
     Achievement("Wacka Wacka DooDoo Yeah!", "Find the legendary fun value in Country route.", "Find the legendery fun value in Country route.", "albu", "extra", dx = True),
     Achievement("Lots & Lots Of Trains!", "Aren't they just adorable?", "Play with some model trains.", "train", "story", dx = True),
-    Achievement("Conductor Skillz 188", "No health potions here.", "Win the train game with full health.", "train_healthy", "extra", dx = True),
+    Achievement("Conductor Skillz 188", "No potions of healing here.", "Win the train game with full health.", "train_healthy", "extra", dx = True),
     Achievement("Main Character Syndrome", "Remind them whose game this is.", "Defeat Tate EX.", "vs-tate", "extra", dx = True),
     Achievement("All Aboard!", "???", "Complete Train Route.", "amtrak", "story", dx = True),
     Achievement("Gotta Catch Them All", "Collect every bio.", "Collect every bio.", "bios", "extra"),

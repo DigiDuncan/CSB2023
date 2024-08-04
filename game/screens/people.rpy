@@ -199,9 +199,9 @@ screen person(l):
             elif l == "tate":
                 add "images/characters/tate/tatehappy.png" xalign 1.0 yalign 1.0 zoom 0.75
             elif l == "tate_ex":
-                add "images/characters/tate/tate_ex.png" xalign 1.0 yalign 1.0 zoom 0.75
+                add "images/characters/tate/tate_ex.png" xalign 1.0 yalign 1.0 zoom 0.50
             elif l == "mean_human":
-                add "images/characters/mean/meanhumanneutral.png" xalign 1.0 yalign 1.0 zoom 0.75
+                add "images/characters/mean/meanhumanneutral.png" xalign 1.0 yalign 1.0 zoom 0.7
             elif l == "pakoo":
                 add "images/characters/pakoo/pakoo.png" xalign 1.0 yalign 1.0
             elif l == "mean":
@@ -224,5 +224,7 @@ screen person(l):
                 add "images/characters/topgear.png" xalign 1.0 yalign 1.0 zoom 0.55
             elif l == "jay":
                 add "images/characters/posse.png" xalign 1.0 yalign 1.0 zoom 0.55
+            elif l == "lupin":
+                add "images/characters/lupin/lupin_stand.png" xalign 1.0 yalign 1.0 zoom 0.8
             else:
                 add f"images/characters/{l}.png" xalign 1.0 yalign 1.0 zoom 0.75
