@@ -103,6 +103,8 @@ init python:
 # If music is so good, why is there no Music 2?
 init python:
     renpy.music.register_channel("sound2", "sound")
+    renpy.music.register_channel("music4", "music")
+    renpy.music.register_channel("music3", "music")
     renpy.music.register_channel("music2", "music")
     renpy.music.register_channel("jukebox", "music")
     renpy.music.register_channel("sfx", "sound")
@@ -2424,13 +2426,38 @@ label test:
                     pause
                     $ renpy.full_restart()
                 "Music Test":
-                    play music ten_feet_away_1
-                    pause 10.0
-                    play music ten_feet_away_2 if_changed
-                    pause 10.0
-                    play music ten_feet_away_3 if_changed
-                    pause 10.0
-                    play music ten_feet_away_4 if_changed
+                    play music4 ten_feet_away_4 if_changed volume 0.1
+                    play music3 ten_feet_away_3 if_changed volume 0.1
+                    play music2 ten_feet_away_2 if_changed volume 0.1
+                    play music ten_feet_away_1 if_changed volume 1.0
+                    # $ renpy.music.set_pause(True, "music4")
+                    # $ renpy.music.set_pause(True, "music3")
+                    # $ renpy.music.set_pause(True, "music2")
+                    pakoo "test 1"
+                    pause
+                    play music4 ten_feet_away_4 if_changed volume 0.1
+                    play music3 ten_feet_away_3 if_changed volume 0.1
+                    play music2 ten_feet_away_2 if_changed volume 1.0
+                    play music ten_feet_away_1 if_changed volume 1.0
+                    # $ renpy.music.set_pause(True, "music4")
+                    # $ renpy.music.set_pause(True, "music3")
+                    # $ renpy.music.set_pause(False, "music2")
+                    pakoo "test 2"
+                    pause
+                    play music4 ten_feet_away_4 if_changed volume 0.1
+                    play music3 ten_feet_away_3 if_changed volume 1.0
+                    play music2 ten_feet_away_2 if_changed volume 1.0
+                    play music ten_feet_away_1 if_changed volume 1.0
+                    # $ renpy.music.set_pause(True, "music4")
+                    # $ renpy.music.set_pause(False, "music3")
+                    pakoo "test 3"
+                    pause
+                    play music4 ten_feet_away_4 if_changed volume 1.0
+                    play music3 ten_feet_away_3 if_changed volume 1.0
+                    play music2 ten_feet_away_2 if_changed volume 1.0
+                    play music ten_feet_away_1 if_changed volume 1.0
+                    # $ renpy.music.set_pause(False, "music4")
+                    pakoo "test 4"
                     pause
                     $ renpy.full_restart()
 
