@@ -2742,8 +2742,11 @@ label train_lupin_win:
     show cs disappointed at left
     show arceus flipped at mid_offscreen_left
     show lupin stand hat at right
-    
     with dissolve
+    
+    play music in_the_room
+    music In The Room - Shogo Sakai
+    
     
     amtrak_conductor "... So, what you're telling me is... this guy wasn't actually {i}you..."
     mean "That's right."
@@ -2757,7 +2760,7 @@ label train_lupin_win:
     amtrak_conductor "I would like to apologize to {i}you,{/i} as well, Mx.{w=0} Frost."
     amtrak_conductor "We should have taken your complaints seriously when you told us this guy was acting suspicious."
     show mean human annoyed
-    mean "Yeah, sorry, Tate."
+    mean "Yeah... sorry, Tate."
     tate "Like I said, I just had a gut feeling..."
     tate "I mean, he's obviously a creep. I just didn't think he was a straight-up {i}criminal!"
     show amtrak_conductor flipped
@@ -2948,7 +2951,7 @@ label train_lupin_win:
         cs "Yes, sir! That's us!"
         amtrak_conductor "Well, congratulations!"
         cs "Thank you!"
-        lupin "Wait, that's a {i}guy?!"
+        lupin "Wait, \"boys\"? That's a {i}guy?!"
         show amtrak_conductor flipped
         show arceus angry flipped
         show cs angry
@@ -2977,9 +2980,9 @@ label train_lupin_win:
         show briefcase at center
     show arceus worried flipped
     show tate sheepish at left
-    show mean human annoyed at left behind tate
+    show mean human angry at left behind tate
     with move
-    show mean human annoyed flipped
+    show mean human angry flipped
    
     if train_money_stolen == True:
         $ train_money_container = "bag"
@@ -3033,7 +3036,7 @@ label train_lupin_win:
     show tate sheepish
     tate "But, what do we do, now?"
     amtrak_conductor "Well, since he's all locked up nice and tight, I'll bring this guy back to my unit until we stop. It's {i}well{/i} past my bedtime, and I'd like to start winding down."
-    amtrak_conductor "And, Mean..."
+    amtrak_conductor "Oh, yes. Mean?"
     show mean shocked human
     mean "Yes, sir?"
     amtrak_conductor "I'll admit, I wasn't so sure about your abilities at first, but..."
@@ -3205,6 +3208,7 @@ label train_lupin_win:
     
     with dissolve
     n "Mean stops the train as scheduled in Hutchinson, Kansas, where Lupin is handed over to the cop who was following him. He introduces himself as Inspector Zenigata."
+    n "He tells the Amtrak crew that he's been after Lupin for years, and can't believe a team of goofballs was responsible for finally putting him behind bars."
     
     if train_money_stolen == True:
         show walkie with dissolve:
@@ -3230,9 +3234,10 @@ label train_lupin_win:
         n "The train then continues on its journey."
         jump train_completed
     else:
+        n "Deciding that a win is a win, Zenigata is grateful for the help."
         scene black with dissolve
         n "The train then continues on its journey."
-        scene black with dissolve
+        pause 1.0
         # i've decided you can only get the tate fight if you get the true ending because reasons.
         jump train_check_secret
 
@@ -3281,7 +3286,7 @@ label train_lupin_lose:
     with MoveTransition(0.5)
     pause 0.5
     show mean human shocked hat flipped
-    n "A low-flying helicopter allows Lupin to escape!"
+    n "A low-flying helicopter grants Lupin an escape!"
     
     # TODO: color grading - night
     scene
@@ -3551,6 +3556,9 @@ label train_completed:
         n "The pancakes are warm and fluffy, the bacon is perfectly crispy, and the orange juice is invigoratingly cool."
         n "Somehow, this moment is everything that CS didn't even know he needed."
 
+        scene black with dissolve
+        pause 1.0
+
         scene amtrak_observation_1
         show cs flipped at left
         show arceus flipped at right
@@ -3583,6 +3591,9 @@ label train_completed:
         n "The food is bland. CS suspects that Mean only eats Tate's cooking to spare their feelings."
         n "CS prays that nobody notices his frequent use of the little salt packets on the table."
 
+        scene black with dissolve
+        pause 1.0
+
         scene amtrak_observation_1
         show cs disappointed flipped at left
         show arceus angry flipped at right
@@ -3592,6 +3603,7 @@ label train_completed:
         n "The rest of the ride is a quiet one."
         n "CS and Arceus spend much of the day in the lounge, just watching the world go by."
         n "The Midwest doesn't offer much of a view."
+        n "Nothing but flat land, dry plants, and a cloudless sky."
         scene black with dissolve
         n "Ultimately, the two decide that maybe it's best to just try to take a nap before their next stop..."
     
