@@ -7,8 +7,8 @@
         "title": "It's Back",
         "caption": "IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK"
     },
-    "mean.png": {
-        "title": "mean",
+    "mean_original.png": {
+        "title": "mean_original",
         "caption": "Mean's original sprite, as seen in {i}CSBounciness III,{/i} before Tate redrew it. It's an edited screenshot from an episode of {i}Bubble Guppies.{/i} This representation of Mean is affectionately known as \"Yellow Fucker\"."
     },
     "worker_mean.png": {
@@ -19,24 +19,24 @@
         "title": "mean_clothes",
         "caption": "This was going to be used for a joke in Train Route that involved Mean's transformation rendering him nude until Tate produced this emergency set of clothes. Tate would then throw the clothes at Mean, knocking him offscreen until he returned, fully dressed. This bit was cut for several reasons."
     },
-    "meanhuman.png": {
-        "title": "meanhuman",
+    "mean_human_placeholder.png": {
+        "title": "mean_human_placeholder",
         "caption": "Hastily-drawn placeholder sprite by Tate, used while writing the portion of Train Route that introduced Mean's human form. Originally, Tate intended to be the one to draw Mean's human sprites, but Mushroom Man did a much better job at capturing Mean's creative vision."
     },
-    "amtrak_stewardess.png": {
-        "title": "amtrak_stewardess",
+    "amtrak_stewardess_placeholder.png": {
+        "title": "amtrak_stewardess_placeholder",
         "caption": "A {i}slightly-{/i}less half-assed placeholder sprite by Tate. We're still not sure if the replacement sprite found on Google Images is an actual art piece or an AI-generated image."
     },
     "tate_mean.png": {
         "title": "tate_mean",
         "caption": "Unused base sprite for a {i}really{/i} cringe section of the Train Route script that will never, {i}ever{/i} see the light of day. Instead, enjoy this picture of Tate gently holding a pincushion. :D"
     },
-    "mean_human.png": {
-        "title": "mean_human",
+    "mean_human_sketch.png": {
+        "title": "mean_human_sketch",
         "caption": "An unfinished sketch of what would have been Mean's human sprite base. Tate's art style is a bit too \"pretty\" to do Mean's character justice."
     },
-    "mean_human_hat.png": {
-        "title": "mean_human_hat",
+    "mean_human_hat_sketch.png": {
+        "title": "mean_human_hat_sketch",
         "caption": "The same sketch, just with Mean's hat."
     }
 }

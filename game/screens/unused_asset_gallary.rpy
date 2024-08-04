@@ -28,14 +28,13 @@ screen unused_gallery(i):
     # Counter
     python:
         ## fix counter if it goes over the length of list or under 1
-
         pretty_count = i+1
         if pretty_count > len(asset_dict):
-            pretty_count = 1
+            pretty_count = i % len(asset_dict)
         elif pretty_count < 1:
-            pretty_count = len(asset_dict)
+            pretty_count = i % len(asset_dict)
         else: 
-            # this shouldn't happen
+            # do nothing
             pretty_count = i+1
 
     text list( str(pretty_count)+" of "+str(len(asset_dict)) ):
