@@ -2541,10 +2541,10 @@ label train_on_top:
     scene
     show amtrak_top
     
-    show tate sad at manual_pos(500,230)
-    show cs worried at left
-    show arceus worried flipped at manual_pos(-175,405)
-    show lupin stand hat flipped at right
+    show tate sad dark at manual_pos(500,230)
+    show cs worried dark at left
+    show arceus worried dark flipped at manual_pos(-175,405)
+    show lupin stand hat dark flipped at right
     with dissolve
     
     # mean wanted this
@@ -2566,11 +2566,11 @@ label train_on_top:
 #        $mean_text = "Stop right there!"
 #        $mean_fun_text = "You're not getting away!"
         
-    show mean human angry flipped at mid_left behind cs with moveinleft
+    show mean human angry dark flipped at mid_left behind cs with moveinleft
     mean "{bt=a3-p10-s4}{size=+24}[mean_text]" with hpunch
     if fun_value(FUN_VALUE_RARE):
         mean "[mean_fun_text]"
-    show lupin stand hat
+    show lupin stand hat dark
     lupin_offscreen "Wow! I didn't think you'd be brave enough to follow me up here!"
     lupin_offscreen "You guys sure are {i}determined!"
     
@@ -2587,7 +2587,7 @@ label train_on_top:
     show letterbox1 at Move((0, -120), (0, 0), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show letterbox2 at Move((0, 1200), (0, 1080), 1, repeat=False, bounce=False, xanchor="left", yanchor="bottom")
     
-    show lupin run hat:
+    show lupin run hat dark:
         subpixel True
         xpos 6000
         ypos 6250
@@ -2607,13 +2607,13 @@ label train_on_top:
         xysize (1920, 200)
         xzoom -1
 
-    show tate srs at Move((0.65, 0.3), (0.6, 0.3), 10, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show tate srs dark at Move((0.65, 0.3), (0.6, 0.3), 10, repeat=False, bounce=False, xanchor="left", yanchor="top")
     
-    show cs angry at Move((0.2, 0.3), (0.1, 0.3), 12, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show cs angry dark at Move((0.2, 0.3), (0.1, 0.3), 12, repeat=False, bounce=False, xanchor="left", yanchor="top")
     
-    show arceus angry flipped at Move((0.1 ,0.4), (0.0, 0.4), 10, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show arceus angry dark flipped at Move((0.1 ,0.4), (0.0, 0.4), 10, repeat=False, bounce=False, xanchor="left", yanchor="top")
     
-    show mean human angry flipped at Move((0.4, 0.15), (0.3, 0.15), 8, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show mean human angry dark flipped at Move((0.4, 0.15), (0.3, 0.15), 8, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show letterbox_screen at manual_pos(0,0)
     
     mean "You've got nowhere to run this time.{w=2.0}{nw}"
@@ -2630,7 +2630,7 @@ label train_on_top:
         xysize (1920, 300)
         xzoom 1
     
-    show lupin run hat behind letterbox_screen at Transform:
+    show lupin run hat dark behind letterbox_screen at Transform:
         subpixel True
         xpos 0.3
         ypos 0.1
@@ -2659,7 +2659,7 @@ label train_on_top:
     play sound sfx_zenigata_shout
     zenigata_nobeep "{bt=a3-p10-s4}{size=+24}Lupiiiiin!{w=2.0}{nw}"
        
-    show zenigata car behind letterbox:
+    show zenigata car dark behind letterbox:
         xpos -800
         ypos 100
         rotate -5
@@ -2687,14 +2687,14 @@ label train_on_top:
     hide zenigata
     hide amtrak_on_top
     
-    show mean human angry flipped behind letterbox_screen:
+    show mean human angry dark flipped behind letterbox_screen:
         xpos 0
         ypos 0
         zoom 2
         linear 10 xpos -100
     
     mean "Well, would you look at that?{w=3.0}{nw}"
-    show mean human flipped
+    show mean human dark flipped
     mean "Looks like we're not the only ones you've managed to piss off today.{w=3.5}{nw}"
     mean "Let's end this.{w=2.0}{nw}"
     scene black with fade
@@ -2711,14 +2711,14 @@ label train_lupin_win:
     show amtrak_top
     with dissolve
 
-    show lupin run hat flipped at mid_mid_right with moveinleft
-    show mean human angry flipped at center behind lupin with moveinleft
-    show lupin stand hat flipped with vpunch
+    show lupin run hat dark flipped at mid_mid_right with moveinleft
+    show mean human angry dark flipped at center behind lupin with moveinleft
+    show lupin stand hat dark flipped with vpunch
     
     n "Mean barely catches Lupin by his coattails."
     mean "Gotcha, ya thieving rat!"
     play sound sfx_walkie_on
-    show walkie with Dissolve(0.25):
+    show walkie dark with Dissolve(0.25):
         zoom 0.3
         rotate -10
         xpos 0.35
@@ -2747,8 +2747,11 @@ label train_lupin_win:
     play music in_the_room
     music In The Room - Shogo Sakai
     
+    if fun_value(FUN_VALUE_MUSIC):
+        amtrak_conductor "... So, what you're telling me is... this guy got {i}In The Room,{/i} but he wasn't actually {i}you..."
+    else:
+        amtrak_conductor "... So, what you're telling me is... this guy got into the cab, but he wasn't actually {i}you..."
     
-    amtrak_conductor "... So, what you're telling me is... this guy wasn't actually {i}you..."
     mean "That's right."
     amtrak_conductor "I see."
     amtrak_conductor "My apologies, Mean."
@@ -2906,9 +2909,8 @@ label train_lupin_win:
         n "CS makes to reach for the bag, but the conductor beats him to it."
         show arceus worried flipped
         show cs worried
-        show bag at center:
+        show bag at center with dissolve:
             rotate 0
-        with dissolve
         "..."
         amtrak_conductor "Hey, wait a minute..."
         show tate shock
@@ -2920,23 +2922,28 @@ label train_lupin_win:
         cs "Cash? What cash?"
         amtrak_conductor "Didn't you two report a bag of money stolen earlier?"
         cs "Oh, no! We only had Legos in our bag!"
+        show tate sheepish
         amtrak_conductor "I'm certain you just said this was your cash."
-        cs "No, sir! I said {i}stash!{/i}"
-        cs "Our stash of Legos that we bought in Vegas!"
+        cs "No, sir! I said {i}\"stash\"!{/i}"
+        cs "Our {i}stash{/i} of Legos that we bought in Vegas!"
         arceus "Yep! We never had any cash!"
         arceus "Well, we {i}did,{/i} but we spent it all on Legos!"
         amtrak_conductor "..."
+        show tate shock
         tate "Wait, hold up!"
         show tate srs
         tate "Mr.{w=0} Conductor, remember? There was the news story this morning about that casino being robbed overnight!"
+        tate "The one that was playing while I was cooking!"
         tate "I'll bet this prick is some kind of middleman for the {i}real{/i} thief!"
         show mean human angry
+        show amtrak_conductor flipped
         mean "You filthy {i}rat!{/i} You tried to frame two innocent guys for your crime, too?!"
         lupin "Wait, that's a {i}guy?!"
         show cs angry
         show arceus angry flipped
         cs "Yes?!"
         cs "You know what? I think I've had enough of you!"
+        show amtrak_conductor
         cs "Sir, may I see the bag for a moment? I know what to do!"
         amtrak_conductor "Certainly."
         show bag at left with move
@@ -2972,7 +2979,7 @@ label train_lupin_win:
     show mean human angry at mid_offscreen_right
     cs "Everyone, get behind me!"
     
-    show amtrak_conductor flipped at manual_pos(-280,56) behind arceus
+    show amtrak_conductor at manual_pos(-280,56) behind arceus
     show cs angry at center
     if train_money_stolen == True:
         show bag at center
@@ -2983,6 +2990,7 @@ label train_lupin_win:
     show mean human angry at left behind tate
     with move
     show mean human angry flipped
+    show amtrak_conductor flipped
    
     if train_money_stolen == True:
         $ train_money_container = "bag"
@@ -3000,7 +3008,7 @@ label train_lupin_win:
     with vpunch
     pause 2.0
     show tate sheepish
-    tate "... A jail cell?!"
+    tate "... A jail cell?"
     show cs
     cs "The {i}Lego City{/i} jail cell, to be precise!"
     mean "Uh, how did he {i}do{/i} that?"
@@ -3196,23 +3204,28 @@ label train_lupin_win:
     play music lo_fi_sunset if_changed
     music Lo−Fi Sunset - Dango Studio
     
-    n "Mean finally starts his shift while Tate, CS, and Arceus head to bed."
+    if fun_value(FUN_VALUE_MUSIC):
+        # oh brother this line STINKS!
+        n "Mean finally starts his shift while Tate, CS, and Arceus head to bed, dreaming of lo-fi sunsets."
+    else:
+        n "Mean finally starts his shift while Tate, CS, and Arceus head to bed."
     
     scene hutchinson_stn
-    
-    show lupin stand at center behind lego_jail
-    show lego_jail at center behind mean
-    show mean human hat at right
-    show amtrak_conductor at mid_offscreen_right
-    show zenigata at left
+    show hutchinson_stn_lights
+    show lupin stand dark at center behind lego_jail
+    show lego_jail dark at center behind mean
+    show mean human hat dark at right
+    show amtrak_conductor dark at mid_offscreen_right
+    show zenigata dark at left
     
     with dissolve
     n "Mean stops the train as scheduled in Hutchinson, Kansas, where Lupin is handed over to the cop who was following him."
     n "He introduces himself as Inspector Zenigata."
-    n "He tells the Amtrak crew that he's been after Lupin for years, and can't believe a team of goofballs was responsible for finally capturing him."
+    $ persistent.seen.add("zenigata")
+    n "He tells the Amtrak crew that he's been after Lupin for years, and can't believe a team of goofballs is responsible for finally capturing him."
     
     if train_money_stolen == True:
-        show walkie with dissolve:
+        show walkie dark with dissolve:
             zoom 0.3
             rotate -10
             xpos 0.025
@@ -3259,10 +3272,10 @@ label train_lupin_lose:
 
     n "Mean sprints after the criminal with everything he's got!"
     
-    show lupin run hat flipped at offscreenleft with determination
-    show mean human angry flipped at offscreenleft with determination
-    show lupin run hat flipped at offscreenright with moveinleft
-    show mean human angry flipped at offscreenright with moveinleft
+    show lupin run hat dark flipped at offscreenleft with determination
+    show mean human angry dark flipped at offscreenleft with determination
+    show lupin run hat dark flipped at offscreenright with moveinleft
+    show mean human angry dark flipped at offscreenright with moveinleft
     
     scene
     show amtrak_top:
@@ -3270,10 +3283,10 @@ label train_lupin_lose:
         xysize (1920, 300)
         xzoom 1
 
-    show lupin run hat flipped at offscreenleft with determination
-    show mean human angry hat flipped at offscreenleft with determination
+    show lupin run hat dark flipped at offscreenleft with determination
+    show mean human angry hat dark flipped at offscreenleft with determination
         
-    show chopper_ladder behind lupin:
+    show chopper_ladder dark behind lupin:
         zoom 1.5
         xpos -1
         ypos -0.1
@@ -3282,14 +3295,14 @@ label train_lupin_lose:
     with dissolve
     pause 1.0
 
-    show lupin run hat flipped at mid_right with moveinleft
+    show lupin run hat dark flipped at mid_right with moveinleft
     
-    show chopper_ladder at offscreenright
-    show lupin run hat flipped at offscreenright
-    show mean human angry hat flipped at center
+    show chopper_ladder dark at offscreenright
+    show lupin run hat flipped dark at offscreenright
+    show mean human angry hat dark flipped at center
     with MoveTransition(0.5)
     pause 0.5
-    show mean human shocked hat flipped
+    show mean human shocked hat dark flipped
     n "A low-flying helicopter grants Lupin an escape!"
     
     # TODO: color grading - night
@@ -3357,8 +3370,9 @@ label train_check_secret:
         jump train_completed
 
 label train_tate_ex_encounter:
-    stop music fadeout 1.0
+    stop music fadeout 5.0
     scene black
+    pause 5.0
     n "While Arceus is out like a light, try as he may, CS just can't seem to settle down."
     n "He decides to go for a walk, meandering through each quiet corridor until he eventually finds himself in the observation car."
     n "He is not alone."
@@ -3367,6 +3381,7 @@ label train_tate_ex_encounter:
     show tate srs flipped at left
     with dissolve
     pause 1.0
+    # TODO: this loop sounds like shit
     play music insomnia_intro if_changed
     # TODO: Fix this artist name, should be W∆W
     music Insomnia - W∆W
@@ -3375,11 +3390,10 @@ label train_tate_ex_encounter:
     pause 1.0
     cs "Tate?"
     cs "You can't sleep, either?"
+    tate "Sure can't."
     if fun_value(FUN_VALUE_MUSIC):
-        tate "Sure can't."
         tate "Damned {i}insomnia..."
-    else:
-        tate "Sure can't."
+        
     "..."
     pause 2.0
     cs "... Tate? Are you alright?"
@@ -3437,9 +3451,9 @@ label train_tate_ex_encounter:
         "No way.":
             show cs disappointed flipped
             cs "No way. I think that's a terrible idea."
-            show tate shock
             cs "I know how easily you injure yourself..."
-            pause 0.5
+            show tate shock
+            pause 1.0
             show tate srs
             pause 2.0
             tate "... Fair enough."
@@ -3496,7 +3510,7 @@ label train_tate_ex_encounter:
             show cs scared flipped
             scene white with Dissolve(0.25)
             play sound sfx_spellcast
-            pause 2.0
+            pause 3.0
             # TODO: Tate EX sprite health bar/text indicators are still missing
             jump rpg_tate_ex
                 
@@ -3558,7 +3572,7 @@ label train_completed:
         show arceus at mid_offscreen_right
         with dissolve
         n "After Mean's shift ends, he and Tate invite the duo to join them for breakfast."
-        n "The pancakes are warm and fluffy, the bacon is perfectly crispy, and the orange juice is invigoratingly cool."
+        n "The pancakes are warm and fluffy, the bacon is perfectly tender, and the orange juice is invigoratingly cool."
         n "Somehow, this moment is everything that CS didn't even know he needed."
 
         scene black with dissolve
@@ -3580,7 +3594,11 @@ label train_completed:
         play music homely_yado_inn if_changed
         music Homely Yado Inn - Shogo Sakai
         
-        n "CS and Arceus wake up the next morning feeling rather groggy."
+        if fun_value(FUN_VALUE_MUSIC):
+            # TODO: god help me i hate this music gimmick so much
+            n "CS and Arceus wake up the next morning feeling rather grogggy. They'd almost rather be staying at the Homely Yado Inn."
+        else:
+            n "CS and Arceus wake up the next morning feeling rather groggy."
         
         scene amtrak_dining_table 
         

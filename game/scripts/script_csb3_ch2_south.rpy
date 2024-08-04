@@ -452,7 +452,7 @@ label south_vegas_win_slots:
 
 label south_vegas_lose_slots:
     cs "C'mon, this is the one!"
-    cs "Owl, {w=1.0}owl, {w=1.0}football player with a{w=0.5} omelette..?"
+    cs "Owl, {w=1.0}owl, {w=1.0}football player with an{w=0.5} omelette..?"
     cs "Damn it! So close!"
     cs "I haven't won anything, and I've already spent most of my money..."
     cs "I wonder what Arc is up to. I haven't seen him at all."

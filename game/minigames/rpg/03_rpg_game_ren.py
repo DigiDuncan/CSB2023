@@ -341,8 +341,8 @@ class AI:
             subwho = get_target(encounter, subject, atk)
             who.extend(subwho)
             answer.extend(atk.run(subject, subwho))
-            print(f"[AI: {self.name}] {subject.name} used {atk.name} on {sentence_join([t.name for t in subwho])}...")  # type: ignore
-            renpy.notify(f"{subject.display_name} used {what.name} on {sentence_join([t.display_name for t in subwho])}...")  # type: ignore
+            print(f"[AI: {self.name}] {subject.name} uses {atk.name} on {sentence_join([t.name for t in subwho])}!")  # type: ignore
+            renpy.notify(f"{subject.display_name} uses {what.name} on {sentence_join([t.display_name for t in subwho])}!")  # type: ignore
             renpy.pause(1.0)
 
         return who, answer
@@ -552,6 +552,7 @@ class Fighter:
             return [(0, "none")]
         else:
             renpy.notify(f"{self.display_name} missed!")
+            print(f"{self.display_name}'s attack missed!")
             return [(0, "miss")]
 
     def attack_ai(self, encounter: Encounter) -> tuple[list["Fighter"], AnswerList]:
@@ -715,7 +716,7 @@ class Attacks:
     SHELL = Attack("Shell", "Fire a tank shell!", random_damage_fighters, min_mult = 1, max_mult = 2, accuracy = 60)
     HEAL_EX = Attack("Heal EX", "Lots of healing.", heal_fighters, target_count = 0, target_type = "allies", mult = 10, accuracy = 100)
     AUGMENT = Attack("Awesome Augment", "Fire a laser! Fire a laser!", damage_fighters, target_count = 0, mult = 15, ex = False, cooldown = 5, accuracy = 100)
-    TATE_RECALL = Attack("Tate's Recall", "Remember something dreadful.", damage_fighters, target_count = 0, target_type = "allies", mult = 0.5, cooldown = 9, turns = 5, accuracy = 90, ex = False)
+    TATE_RECALL = Attack("Tate's Recall", "Remember something dreadful.", damage_fighters, target_count = 0, target_type = "allies", mult = 0.75, cooldown = 9, turns = 5, accuracy = 90, ex = False)
     TATE_REVERB = Attack("Tate's Reverb", "Make them all remember.", damage_over_time, target_count = 0, target_type = "enemies", mult = 0.75, cooldown = 9, turns = 5, accuracy = 90, ex = False)
     REVERB_RECALL = ComboAttack("Reverb Recall", "Channel your pain over 5 turns. Also damages the user.", [TATE_RECALL, TATE_REVERB], cooldown = 9, accuracy = 90, ex = False)
     TATE_ECHOES = Attack("Tate's Echoes", "The past haunts you.", change_stat, stat = "atk", target_count = 0, target_type = "allies", mult = 0.5, cooldown = 11, accuracy = 100, ex = False)
