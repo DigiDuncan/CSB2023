@@ -1934,6 +1934,10 @@ define audio.apple_kid = "apple_kid.ogg"
 define audio.ten_feet_away = "10_feet_away.ogg"
 define audio.get_the_funk = "get_the_funk.ogg"
 define audio.hitsquad_2 = "hitsquad_2.ogg"
+define audio.ten_feet_away_1 = "10_feet_away_1.wav"
+define audio.ten_feet_away_2 = "10_feet_away_2.wav"
+define audio.ten_feet_away_3 = "10_feet_away_3.wav"
+define audio.ten_feet_away_4 = "10_feet_away_4.wav"
 
 # CSBIII DX Finale Music
 define audio.funvalueland = "funvalueland.ogg"
@@ -2378,6 +2382,16 @@ label test:
                     show flying_train_final at left with ease          
                     pakoo "This is the flying train layered image."
                     hide flying_train_final with easeoutleft
+                    pause
+                    $ renpy.full_restart()
+                "Music Test":
+                    play music ten_feet_away_1
+                    pause 10.0
+                    play music ten_feet_away_2 if_changed
+                    pause 10.0
+                    play music ten_feet_away_3 if_changed
+                    pause 10.0
+                    play music ten_feet_away_4 if_changed
                     pause
                     $ renpy.full_restart()
 
