@@ -7,8 +7,9 @@
 # Make sure there's a space after your punctuation or it won't work.
 # You can still add manual pauses wherever you like in the script if this isn't enough for you.
 # If for some reason you do NOT want the auto-pause in a certain line, put {w=0} immediately after the punctuation.
-#   Example:
+#   Real examples:
 #       mean "Hey! You,{w=0} there!"
+#       tate "Excuse me, Mr.{w=0} Conductor?"
 
 init python:
     import re
@@ -61,6 +62,19 @@ init -10 python:
 
     config.displayable_prefix["sil_white"] = sil_white
     config.displayable_prefix["sil_white:flip"] = sil_white_flip
+
+    # black silhouette
+    sil_black_matrix = BrightnessMatrix(value=-1.0)
+        
+    def sil_black(s):
+        return Transform(s, xzoom = 1, matrixcolor=sil_black_matrix)
+        
+    def sil_black_flip(s):
+        return Transform(s, xzoom = -1, matrixcolor=sil_black_matrix)
+
+    config.displayable_prefix["sil_black"] = sil_black
+    config.displayable_prefix["sil_black:flip"] = sil_black_flip
+    
     
     # x flip
     def xflip(s):
@@ -757,6 +771,7 @@ image mean unamused flipped = "flip:characters/mean/meanunamused.png"
 ## Mean (Human Form)
 image mean human = "characters/mean/meanhumanneutral.png"
 image mean human flipped = "flip:characters/mean/meanhumanneutral.png"
+image mean human flipped sil_black = "sil_black:flip:characters/mean/meanhumanneutral.png"
 image mean human happy = "characters/mean/meanhumanhappy.png"
 image mean human happy flipped = "flip:characters/mean/meanhumanhappy.png"
 image mean human annoyed = "characters/mean/meanhumanannoyed.png"
@@ -1346,7 +1361,10 @@ image amtrak_coach_1 = "bg/train/amtrak_coach_1.png"
 image amtrak_coach_2 = "bg/train/amtrak_coach_2.png"
 image amtrak_baggage = "bg/train/amtrak_baggage.png"
 image amtrak_top = "bg/train/amtrak_top.png"
+image amtrak_top sil_black = "sil_black:bg/train/amtrak_top.png"
 image sepia_zoom = "bg/train/sepia_zoom.png"
+image hutchinson_stn = "bg/train/hutchinson_stn.png"
+image lupin_escape = "bg/train/lupin_escape.png"
 
 # Train Route NPCs
 image amtrak_conductor = "characters/amtrak_conductor.png"
@@ -1401,6 +1419,8 @@ image cards5 = "cards5.png"
 image case = "briefcase.png"
 image case flipped = "flip:briefcase.png"
 image cheetos = "cheetos.png"
+image chopper_ladder = "chopper_ladder.png"
+image chopper_sil = "chopper_sil.png"
 image colorbars = "colorbars.png"
 image con_screen = "bg/con_screen.png"
 image cswanted = "wanted_poster.png"
@@ -1934,6 +1954,8 @@ define audio.encounter_friend_loop = "<from 44.502 to 77.599>encounter_friend.og
 define audio.roundabout = "<from 41.076>roundabout.ogg"
 define audio.insomnia_intro = "<from 0 to 11.299>insomnia.ogg"
 define audio.insomnia_loop = "<from 22.6>insomnia.ogg"
+define audio.lo_fi_sunset = "lo_fi_sunset.ogg"
+define audio.homely_yado_inn = "<from 0.499 to 40.502>homely_yado_inn.ogg"
 
 # CSBIII DX Kuwait Music
 define audio.tmwstw = "tmwstw.ogg"
@@ -1976,6 +1998,7 @@ define audio.sfx_cheer = "sfx/sfx_cheer1.ogg"
 define audio.sfx_cheer2 = "sfx/sfx_cheer2.ogg"
 define audio.sfx_cheers = "sfx/sfx_cheers.ogg"
 define audio.sfx_chop = "sfx/sfx_chop.ogg"
+define audio.sfx_chopper_loop = "sfx/sfx_chopper_loop.ogg"
 define audio.sfx_clapperboard = "sfx/sfx_clapperboard.ogg"
 define audio.sfx_clonk = "sfx/sfx_clonk.ogg"
 define audio.sfx_csnore = "sfx/sfx_csnore.ogg"

@@ -158,6 +158,8 @@ init python:
         "Roundabout - Yes" : "roundabout.ogg",
         "Insomnia - W∆W": "insomnia.ogg",
         "Space - W∆W": "space.ogg",
+        "Lo−Fi Sunset - Dango Studio": "lo_fi_sunset.ogg",
+        "Homely Yado Inn - Shogo Sakai" : "homely_yado_inn.ogg",
         #DX: Bronson
         "Upon Me - Dr. Awesome": "upon_me.ogg", 
         "Prophet ERROR - Pakoo": "error.ogg",
@@ -326,6 +328,8 @@ init python:
         "Roundabout - Yes" : "roundabout.png",
         "Insomnia - W∆W": "moon.png",
         "Space - W∆W": "moon.png",
+        "Lo−Fi Sunset - Dango Studio": "lofisunset.png",
+        "Homely Yado Inn - Shogo Sakai" : "mother3.png",
         "Let's Hear My Baby: Spring Remix - Pakoo": "csbii.png",
         "Echoing: Spring Remix - Pakoo": "csbii.png",
         "Let's Hear My Speed - Pakoo": "vibration.png",

@@ -1,6 +1,8 @@
 # TODO: mean needs a better text beep
 # TODO: make sure all music/bios are added by the end
 # TODO: make sure peoples' reflections are removed from all train background images + cut out windows so we can have moving scenery
+# TODO: moving scenery, mostly at night, including on top of the train
+# TODO: color grading for train windows / ANYTHING that takes place outside at night
 
 ######## VARIABLES ########
 label train_start_good:
@@ -1684,6 +1686,7 @@ label train_allow_staff:
     n "As expected, the money is never returned."
     $ train_ending_money_returned = False
     n "After a brief layover in Chicago and a haughty \"I told you so\" from Tate, CS and Arceus take the final uneventful transfer to New York."
+    # TODO: if there is going to be a chicago route, it needs to be jumped to from here.
 
     jump train_return_home_transition
 
@@ -3126,7 +3129,7 @@ label train_lupin_win:
     show mean human annoyed hat
     show cs disappointed flipped 
     mean "Look..."
-    mean "When I told you earlier that today couldn't get better, I meant it."
+    mean "When I told you earlier that today couldn't get any better, I meant it."
     show mean human hat
     mean "You really think I'd be upset {i}now?{/i}"
     mean "We even got to save the day!"
@@ -3186,22 +3189,155 @@ label train_lupin_win:
     scene black with dissolve
     
     n "After a heated discussion, the group decides that maybe it's best to let bygones be bygones and get on with the night."
+    
+    play music lo_fi_sunset if_changed
+    music Lo−Fi Sunset - Dango Studio
+    
     n "Mean finally starts his shift while Tate, CS, and Arceus head to bed."
     
-    # TODO: insert picture of hutchinson, KS amtrak stn here
-    scene
-    n "The train stops as scheduled in Hutchinson, Kansas, where Lupin is handed off to the cop who was following before."
+    scene hutchinson_stn
     
+    show lupin stand at center behind lego_jail
+    show lego_jail at center behind mean
+    show mean human hat at right
+    show amtrak_conductor at mid_offscreen_right
+    show zenigata at left
     
-    jump train_check_secret
+    with dissolve
+    n "Mean stops the train as scheduled in Hutchinson, Kansas, where Lupin is handed over to the cop who was following him. He introduces himself as Inspector Zenigata."
+    
+    if train_money_stolen == True:
+        show walkie with dissolve:
+            zoom 0.3
+            rotate -10
+            xpos 0.025
+            ypos 0.2
+        n "The stolen funds are reported to Jerma by phone."
+        n "He is so overjoyed to hear that the money has been recovered that he urges Zenigata to make sure anyone involved in catching the thief is compensated."
+        n "Mean, Tate, CS, Arceus, and the conductor are each awarded $5,000!"
+        
+        scene amtrak_sleeper_interior
+        show amtrak_conductor flipped at left
+        show bag at mid_left
+        show cs happy flipped at mid_right
+        show arceus happy at right
+        with dissolve
+        
+        n "CS and Arceus are woken up shortly after by the conductor, who hand-delivers their portion of the reward."
+        
+        scene black with dissolve
+        pause 1.0
+        n "The train then continues on its journey."
+        jump train_completed
+    else:
+        scene black with dissolve
+        n "The train then continues on its journey."
+        scene black with dissolve
+        # i've decided you can only get the tate fight if you get the true ending because reasons.
+        jump train_check_secret
 
 label train_lupin_lose:
-    "So, while Tate hasn't actually written this ending yet, this is the part where Lupin gets away with the money in a chopper with his crew. Better luck next time!"
-    "CS and Arceus are broke as fuck once again. CS is probably also upset about his Legos."
     $ train_ending_money_returned = False
+    scene black
+    pause 0.5
+    scene 
+    show amtrak_top:
+        ypos 880
+        xysize (2020, 200)
+        xzoom 1
+    with dissolve
+    play sound sfx_chopper_loop loop fadein 5.0
+
+    n "Mean sprints after the criminal with everything he's got!"
+    
+    show lupin run hat flipped at offscreenleft with determination
+    show mean human angry flipped at offscreenleft with determination
+    show lupin run hat flipped at offscreenright with moveinleft
+    show mean human angry flipped at offscreenright with moveinleft
+    
+    scene
+    show amtrak_top:
+        ypos 780
+        xysize (1920, 300)
+        xzoom 1
+
+    show lupin run hat flipped at offscreenleft with determination
+    show mean human angry hat flipped at offscreenleft with determination
         
+    show chopper_ladder behind lupin:
+        zoom 1.5
+        xpos -1
+        ypos -0.1
+        rotate 5
+        linear 2 xpos 0.5
+    with dissolve
+    pause 1.0
+
+    show lupin run hat flipped at mid_right with moveinleft
+    
+    show chopper_ladder at offscreenright
+    show lupin run hat flipped at offscreenright
+    show mean human angry hat flipped at center
+    with MoveTransition(0.5)
+    pause 0.5
+    show mean human shocked hat flipped
+    n "A low-flying helicopter allows Lupin to escape!"
+    
+    # TODO: color grading - night
+    scene
+    show lupin_escape:
+        zoom 1.5
+        xcenter 0.5
+        ycenter 0.3
+    
+    with dissolve
+    pause 1.0
+    n "Lupin waves down to the group, taunting them."
+    lupin "Sorry, suckers!"
+    
+    show lupin_escape:
+        zoom 5
+        xcenter 0.5
+        ycenter 0.2
+        linear 5 ycenter 0.3
+    with dissolve
+    
+    lupin "The house always wins!"
+    
     scene black with dissolve
-    jump train_check_secret
+    
+    play sound sfx_chopper_loop loop volume 0.5
+    
+    scene
+    show amtrak_top sil_black:
+        xsize 2000
+        ysize 500
+        ypos 580
+        xpos -800
+    show mean human flipped sil_black:
+        zoom 0.15
+        xpos 0.35
+        ypos 0.5
+    show chopper_sil:
+        zoom 0.8
+        xpos 0.6
+        ypos 0
+        rotate 15
+        parallel:
+            linear 15 zoom 0
+        parallel:
+            linear 15 xpos 2000
+    with dissolve
+    stop sound fadeout 15.0
+    n "Just like that, the thief disappears into the night."
+    
+    n "The policeman who was after him follows the chopper over the horizon."
+    n "With nothing left to do now, Mean and the crew sulk back into the train through a window."
+    
+    scene black with dissolve
+    pause 2.0
+    
+    jump train_completed
         
 ######## SECRET FIGHT VS TATE ########
         
@@ -3214,8 +3350,7 @@ label train_check_secret:
 label train_tate_ex_encounter:
     stop music fadeout 1.0
     scene black
-    n "Arceus is out like a light."
-    n "Try as he may, after all of that excitement, CS can't just can't settle down."
+    n "While Arceus is out like a light, try as he may, CS just can't seem to settle down."
     n "He decides to go for a walk, meandering through each quiet corridor until he eventually finds himself in the observation car."
     n "He is not alone."
     pause 0.5
@@ -3322,6 +3457,7 @@ label train_tate_ex_encounter:
             tate "Unbelievable..."
             scene black with dissolve
             stop music fadeout 1.0
+            n "Thoroughly weirded out, CS returns to bed."
             jump train_completed
         "Are you sure?":
             queue music insomnia_loop
@@ -3374,6 +3510,7 @@ label train_tate_ex_win:
     
     pause 2.0
     scene black with dissolve
+    n "Finally tired out, CS returns to the sleeper, where he quickly drifts off..."
     pause 2.0
     jump train_completed
 
@@ -3391,25 +3528,103 @@ label train_tate_ex_lose:
     scene black with dissolve
     pause 2.0
     $ persistent.seen.add("tate_ex")
+    n "Finally tired out, CS returns to the sleeper, where he quickly drifts off...."
     jump train_completed
     
 label train_completed:
-    "Placeholder line at `train_completed`."
-    # TODO: Technically, the train stops in Chicago IRL.
-    # TODO: Replace this label with Chicago route, should anyone choose to write one.
-    # TODO: Please let me know if you do so we can rework CS getting home a bit (below).
+
+    if train_ending_money_returned == True:
+        play music lo_fi_sunset if_changed
+        music Lo−Fi Sunset - Dango Studio
+    
+        n "CS and Arceus wake up the next morning feeling completely refreshed."
+        
+        scene amtrak_dining_table 
+        
+        show amtrak_dining_food at manual_pos(805,145)
+        show mean human flipped at left
+        show tate at left
+        show cs flipped at right
+        show arceus at mid_offscreen_right
+        with dissolve
+        n "After Mean's shift ends, he and Tate invite the duo to join them for breakfast."
+        n "The pancakes are warm and fluffy, the bacon is perfectly crispy, and the orange juice is invigoratingly cool."
+        n "Somehow, this moment is everything that CS didn't even know he needed."
+
+        scene amtrak_observation_1
+        show cs flipped at left
+        show arceus flipped at right
+        with dissolve
+        
+        pause 1.0
+        n "The rest of the ride is a relaxing one."
+        n "CS and Arceus spend part of the day in the lounge, just watching the world go by."
+        n "While the Midwest is relatively flat, there is something soothing about such simplistic scenery..."
+        n "It is exactly what Arceus had hoped to see on this trip."
+        scene black with dissolve
+        n "Still full from Tate's cooking, the two decide to enjoy one last nap before their next stop..."
+    else:
+        play music homely_yado_inn if_changed
+        music Homely Yado Inn - Shogo Sakai
+        
+        n "CS and Arceus wake up the next morning feeling rather groggy."
+        
+        scene amtrak_dining_table 
+        
+        show amtrak_dining_food at manual_pos(805,145)
+        show mean human annoyed flipped at left
+        show tate sheepish at left
+        show cs disappointed flipped at right
+        show arceus worried at mid_offscreen_right
+        with dissolve
+        n "After Mean's shift ends, Tate invites him, as well as CS and Arceus, to join them for breakfast."
+        n "Mean looks exhausted, and Tate seems to be barely holding it together."
+        n "While the four try to make pleasantries, there is an unshakable tension in the air."
+        n "The food is bland. CS suspects that Mean only eats Tate's cooking to spare their feelings."
+        n "CS prays that nobody notices his frequent use of the little salt packets on the table."
+
+        scene amtrak_observation_1
+        show cs disappointed flipped at left
+        show arceus angry flipped at right
+        with dissolve
+        
+        pause 1.0
+        n "The rest of the ride is a quiet one."
+        n "CS and Arceus spend much of the day in the lounge, just watching the world go by."
+        n "The Midwest doesn't offer much of a view."
+        scene black with dissolve
+        n "Ultimately, the two decide that maybe it's best to just try to take a nap before their next stop..."
+    
+    pause 1.0
+    n "Just before 3 PM, the train arrives at Union Station in Chicago."
+    
+    scene chicago_union_station
+    show cs happy flipped at mid_mid_right
+    show arceus happy at right
+    show mean human hat flipped at left
+    show tate at mid_left_left
+    with dissolve
+    n "CS and Arceus bid their friends farewell for now."
+    show cs
+    show arceus flipped
+    pause 0.1
+    hide cs
+    hide arceus 
+    with moveoutright
+    n "The two then head towards another platform for the final train home."
+    scene black with dissolve
     jump train_return_home_transition
 
 ######## GO HOME ########
 label train_return_home_transition:
     # yes i stole much of this from south route, oh well, i'm tired ok - tate
     stop music fadeout 1.0
-    music end    
+    pause 2.0
     scene moynihan_interior with dissolve
 
     # TODO: add mean's chosen BGM here :D
-
-    n "The two finally deboard the train in New York City."
+    
+    n "A day later, the two finally deboard the train in New York City."
     show cs at left
     show arceus flipped at center
     with moveinleft
@@ -3445,7 +3660,7 @@ label train_return_home_transition:
             show arceus flipped
             arceus "You think this will do the job?"
             billy "Wow! This totally doesn't look suspicious at all!"
-            cs "We'll give you another $100 if you don't tell anyone."
+            cs "We'll give you another $100 if you don't say anything."
             billy "That's cash in the trash!"
             hide bag with dissolve
         # DID YOU WIN THE MONEY?
