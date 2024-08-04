@@ -3207,8 +3207,9 @@ label train_lupin_win:
     show zenigata at left
     
     with dissolve
-    n "Mean stops the train as scheduled in Hutchinson, Kansas, where Lupin is handed over to the cop who was following him. He introduces himself as Inspector Zenigata."
-    n "He tells the Amtrak crew that he's been after Lupin for years, and can't believe a team of goofballs was responsible for finally putting him behind bars."
+    n "Mean stops the train as scheduled in Hutchinson, Kansas, where Lupin is handed over to the cop who was following him."
+    n "He introduces himself as Inspector Zenigata."
+    n "He tells the Amtrak crew that he's been after Lupin for years, and can't believe a team of goofballs was responsible for finally capturing him."
     
     if train_money_stolen == True:
         show walkie with dissolve:
@@ -3230,14 +3231,17 @@ label train_lupin_win:
         n "CS and Arceus are woken up shortly after by the conductor, who hand-delivers their portion of the reward."
         
         scene black with dissolve
-        pause 1.0
+        pause 2.0
         n "The train then continues on its journey."
+        pause 2.0
         jump train_completed
     else:
         n "Deciding that a win is a win, Zenigata is grateful for the help."
+        n "He can't help but notice that he, Mean, and Lupin are all wearing red jackets..."
+        n "The group has a laugh about it before Zenigata takes Lupin away."
         scene black with dissolve
         n "The train then continues on its journey."
-        pause 1.0
+        pause 2.0
         # i've decided you can only get the tate fight if you get the true ending because reasons.
         jump train_check_secret
 
@@ -3539,6 +3543,7 @@ label train_tate_ex_lose:
 label train_completed:
 
     if train_ending_money_returned == True:
+        hide dxcom
         play music lo_fi_sunset if_changed
         music Lo−Fi Sunset - Dango Studio
     
@@ -3607,7 +3612,7 @@ label train_completed:
         scene black with dissolve
         n "Ultimately, the two decide that maybe it's best to just try to take a nap before their next stop..."
     
-    pause 1.0
+    pause 2.0
     n "Just before 3 PM, the train arrives at Union Station in Chicago."
     
     scene chicago_union_station
