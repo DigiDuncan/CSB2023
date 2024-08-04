@@ -1959,7 +1959,7 @@ define audio.unobtrusive_fun = "unobtrusive_fun.ogg"
 define audio.space_classroom = "secret/space_classroom.ogg"
 define audio.Billymusicu = "Billymusicu.ogg"
 define audio.ocean_man = "secret/credits.ogg"
-define audio.albu= "albuquerque.mp3"
+define audio.albu = "albuquerque.mp3"
 
 # SFX
 define audio.sfx_alt_punch = "sfx/sfx_alt_punch.ogg"
