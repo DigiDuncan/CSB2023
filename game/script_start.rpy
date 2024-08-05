@@ -427,7 +427,7 @@ define colton = Character("Colton", callback = renpy.partial(char_callback, name
 define sheriff = Character("Sheriff", callback = renpy.partial(char_callback, name = "sheriff", beep = "sheriff"))
 define billy = Character("Billy", callback = renpy.partial(char_callback, name = "billy", beep = "billy"))
 define tv_billy = Character("TV Billy", callback = renpy.partial(char_callback, name = "billy", beep = "billy"))
-define cultist = Character("Cultist", callback = renpy.partial(char_callback, name = "cultist"))
+define cultist = Character("Cultist", callback = renpy.partial(char_callback, name = "cultist", beep = "cult"))
 define cultist_2 = Character("Cultist 2", callback = char_callback)
 define cultist_3 = Character("Cultist 3", callback = char_callback)
 define scott = Character("Scott", callback = renpy.partial(char_callback, name = "scott", beep = "scott"))
