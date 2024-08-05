@@ -776,7 +776,7 @@ label asset_debugger:
         show cs surprised flipped at left
         $ spritetotal += 8
         show george at mid_left_left
-        show zenigata at mid_left
+        show zenigata dark at mid_left
         show mean wat at mid_mid_left
         show tate cry at mid_mid_right
         show moomin at mid_right
@@ -796,7 +796,7 @@ label asset_debugger:
         show cs scared at left
         $ spritetotal += 9
         show harold at mid_left_left
-        show zenigata flipped at mid_left
+        show zenigata dark flipped at mid_left
         show mean wat flipped at mid_mid_left
         show tate cry flipped at mid_mid_right
         show snufkin at mid_right
@@ -835,7 +835,8 @@ label asset_debugger:
         scene csdesk
         show script at center
         show cs scared dark at left
-        $ spritetotal += 5
+        show tate sad dark at mid_left
+        $ spritetotal += 6
         show mean furious at mid_mid_left
         show witch at mid_right
         show train_fly_5 at right
@@ -991,7 +992,7 @@ label asset_debugger:
         show mean unamused flipped at mid_mid_left
         show cs cultist flipped at left
         $ spritetotal += 4
-        show zenigata car at mid_right
+        show zenigata car dark at mid_right
         carla "test 49{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -1234,7 +1235,7 @@ label asset_debugger:
         play music happy_roaming
         $ bgtotal += 1
         scene testing_front
-        show mean human hat happy at mid_left
+        show mean human happy hat at mid_left
         show amtrak_dining_food at center
         show oof_54 at mid_left_left
         show cs angry phone flipped at left
@@ -1252,7 +1253,7 @@ label asset_debugger:
         $ bgtotal += 1
         scene course_1
         show amtrak_dining_pancake at center
-        show mean human hat happy flipped at mid_left
+        show mean human happy hat flipped at mid_left
         show oof_52 at mid_left_left
         show cs scared phone at left
         $ spritetotal += 4
@@ -1269,7 +1270,7 @@ label asset_debugger:
         $ bgtotal += 1
         scene course_2
         show boom at center
-        show mean human hat annoyed at mid_left
+        show mean human annoyed hat at mid_left
         show cs scared phone flipped at left
         $ spritetotal += 3
         direct "test 66{w=0.5}{nw}"
@@ -1285,7 +1286,7 @@ label asset_debugger:
         $ bgtotal += 1
         scene course_3
         show mean_hat at center
-        show mean human hat annoyed flipped at mid_left
+        show mean human annoyed hat flipped at mid_left
         show cs surprised phone at left
         $ spritetotal += 3
         monika "test 67{w=0.5}{nw}"
@@ -1300,10 +1301,11 @@ label asset_debugger:
         play music hightop
         $ bgtotal += 1
         scene canada_block
+        show lupin stand hat dark flipped at mid_mid_left
         show brooch at center
-        show mean human hat shocked at mid_left
+        show mean human shocked hat at mid_left
         show cs surprised phone flipped at left
-        $ spritetotal += 3
+        $ spritetotal += 4
         lancer "test 68{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -1316,10 +1318,12 @@ label asset_debugger:
         play music hired_guns
         $ bgtotal += 1
         scene dealership
+        show walkie dark at mid_right
+        show lupin stand hat dark at mid_mid_left
         show lego_jail at center
-        show mean human hat shocked flipped at mid_left
+        show mean human shocked hat flipped at mid_left
         show cs pissed phone at left
-        $ spritetotal += 3
+        $ spritetotal += 5
         tate "test 69{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -1332,10 +1336,12 @@ label asset_debugger:
         play music hitmewithyourbestshot
         $ bgtotal += 1
         scene dealer_cars
+        show lego_jail dark at mid_right
+        show lupin stand dark at mid_mid_left
         show switch at center
-        show mean human hat angry at mid_left
+        show mean human angry hat at mid_left
         show cs pissed phone flipped at left
-        $ spritetotal += 3
+        $ spritetotal += 5
         kitty "test 70{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -1348,10 +1354,12 @@ label asset_debugger:
         play music hitsquad_2
         $ bgtotal += 1
         scene flintcar_outside
+        show chopper_ladder dark at mid_right
+        show lupin run hat dark flipped at mid_mid_left
         show tbc at center
-        show mean human hat angry flipped at mid_left
+        show mean human angry hat flipped at mid_left
         show cs concentrate phone at left
-        $ spritetotal += 3
+        $ spritetotal += 5
         obama "test 71{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -1364,13 +1372,15 @@ label asset_debugger:
         play music hohsis_theme
         $ bgtotal += 1
         scene flintcar_fg
+        show lupin run hat dark at mid_mid_left
+        show amtrak_conductor dark at mid_left_left
         show chopper_ladder at right
         show chopper_sil at mid_right_right
         show walkie at mid_right
         show watch at center
         show mean human hat flipped sil_black at mid_left
         show cs concentrate phone flipped at left
-        $ spritetotal += 6
+        $ spritetotal += 8
         bomaha "test 72{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -1383,6 +1393,8 @@ label asset_debugger:
         play music hohsisremix
         $ bgtotal += 1
         scene car_inside_fg
+        show mean human dark flipped at mid_left
+        $ spritetotal += 1
         show cs at rotate_10
         $ transformtotal += 1
         blank "test 73{w=0.5}{nw}"
@@ -1397,6 +1409,8 @@ label asset_debugger:
         play music home_depot
         $ bgtotal += 1
         scene joj_charger_fg
+        $ spritetotal += 1
+        show mean human angry dark flipped at mid_left
         show cs at rotate_6
         $ transformtotal += 1
         aria "test 74{w=0.5}{nw}"
@@ -1411,6 +1425,8 @@ label asset_debugger:
         play music honk_song
         $ bgtotal += 1
         scene comments
+        $ spritetotal += 1
+        show mean human hat dark at mid_left
         show cs at rotate_5
         $ transformtotal += 1
         aria_alt "test 75{w=0.5}{nw}"
@@ -1425,6 +1441,8 @@ label asset_debugger:
         play music insane_personalities
         $ bgtotal += 1
         scene hospital_room
+        $ spritetotal += 1
+        show mean human shocked hat dark flipped at mid_left
         show cs at center_left
         $ transformtotal += 1
         cop "test 76{w=0.5}{nw}"
@@ -1439,6 +1457,8 @@ label asset_debugger:
         play music killcops
         $ bgtotal += 1
         scene hospital_reception
+        $ spritetotal += 1
+        show mean human angry hat dark flipped at mid_left
         show cs at center_right
         $ transformtotal += 1
         midge "test 77{w=0.5}{nw}"
@@ -3722,6 +3742,12 @@ label asset_debugger:
     if fun_value (382):
         $ bgtotal += 1
         scene lupin_escape
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value (382):
+        $ bgtotal += 1
+        scene hutchinson_stn_lights
         pause 0.1
     else:
         jump exit_debug 
