@@ -3,7 +3,7 @@
 - Over 200 assets remastered and restored!
 - New routes!
     - Post-True route!
-    - A new play to play CSB! 
+    - A new way to play CSB! 
     - A new alternate South path!
     - A new path to take, possibly in Michigan!
 - Revamped several scenes and added new exciting dialouge!

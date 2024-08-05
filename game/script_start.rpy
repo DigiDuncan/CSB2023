@@ -2404,7 +2404,6 @@ init python:
 image typewriter = DynamicDisplayable(show_typewriter)
 
 label test:
-
     scene washington_road dusk
     show arceus dusk flipped at right
     show cs dusk at left
