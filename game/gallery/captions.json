@@ -1,11 +1,23 @@
 {
-    "filename.png": {
-        "title": "File Name (Rainbow Square)",
-        "caption": "This is a file -- it's used to show a file on the screen."
+    "alphaarc.png": {
+        "title": "Alpha Arceus",
+        "caption": "This was the version of Arceus that we used back in 2019."
     },
-    "its_back.png": {
-        "title": "It's Back",
-        "caption": "IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK IT'S BACK"
+    "main_menu.png": {
+        "title": "2019 Main Menu",
+        "caption": "This is one of the first versions of the main menu for {i}CSB.{/i} Still very {i}Nekopara{/i}-y, very glad we moved away from this."
+    },
+    "linus.png": {
+        "title": "Beta Linus",
+        "caption": "This was a purposed version of Linus that we used early in development. He was a little crusty, though."
+    },
+    "michael.png": {
+        "title": "Beta Michael",
+        "caption": "This is an early version of Michael we used early on. He was mainly just a head, so we scrapped it."
+    },
+    "wipmenu.png": {
+        "title": "Beta Menu",
+        "caption": "This was the beta menu for the game, because I (Pakoo) didn't want a blank background. I still kinda miss it."
     },
     "mean_original.png": {
         "title": "mean_original",
@@ -50,27 +62,6 @@
     "road_to_canada.png": {
         "title": "Beta Road to Canada",
         "caption": "This was the original background for when CS, Arceus, and Anno emerge from the surface out of jail. It was a lot muddier."
-    },
-    "alphaarc.png": {
-        "title": "Alpha Arceus",
-        "caption": "This was the version of Arceus that we used back in 2019."
-    },
-    "main_menu.png": {
-        "title": "2019 Main Menu",
-        "caption": "This is one of the first versions of the main menu for {i}CSB.{/i} Still very {i}Nekopara{/i}-y, very glad we moved away from this."
-    },
-    "linus.png": {
-        "title": "Beta Linus",
-        "caption": "This was a purposed version of Linus that we used early in development. He was a little crusty, though."
-    },
-    "michael.png": {
-        "title": "Beta Michael",
-        "caption": "This is an early version of Michael we used early on. He was mainly just a head, so we scrapped it."
-    },
-    "wipmenu.png": {
-        "title": "Beta Menu",
-        "caption": "This was the beta menu for the game, because I (Pakoo) didn't want a blank background. I still kinda miss it."
-    },
     "digisquare.png": {
         "title": "Digi Square Room",
         "caption": "When Digi was working on his Digi EX boss battle, he drew this for reference. Welcome to the square room."
