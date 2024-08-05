@@ -2012,12 +2012,13 @@ define audio.ten_feet_away_4 = "10_feet_away_4.wav"
 # CSBIII DX Finale Music
 define audio.funvalueland = "funvalueland.ogg"
 define audio.unobtrusive_fun = "unobtrusive_fun.ogg"
+define audio.interference = "<from 0 to 275>interference.ogg"
 
 # Other?
 define audio.space_classroom = "secret/space_classroom.ogg"
 define audio.Billymusicu = "Billymusicu.ogg"
 define audio.ocean_man = "secret/credits.ogg"
-define audio.albu = "albuquerque.mp3"
+define audio.albu = "albuquerque.ogg"
 
 # SFX
 define audio.sfx_alt_punch = "sfx/sfx_alt_punch.ogg"
