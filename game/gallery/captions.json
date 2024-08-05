@@ -66,5 +66,13 @@
     "digisquare.png": {
         "title": "Digi Square Room",
         "caption": "When Digi was working on his Digi EX boss battle, he drew this for reference. Welcome to the square room."
+    },
+    "fumobee2.png": {
+        "title": "Fumo Bee 2",
+        "caption": "This was supposed to be used... somewhere? Fumo Bee 1 is used for a Fun Value in South route at the Lego pizzeria, though. Fun fact: did you know Pakoo hates bees?"
+    },
+    "TV_SMPTE.png": {
+        "title": "TV SMPTE",
+        "caption": "This background is from {i}CSBII{/i}. I don't know why it's still in the game. It's just sitting here in the files and looks awful. Who edited this? Why are the bars not tilted at all?"
     }
 }
