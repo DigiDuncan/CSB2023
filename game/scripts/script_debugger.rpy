@@ -1353,12 +1353,13 @@ label asset_debugger:
         play music hitsquad_2
         $ bgtotal += 1
         scene flintcar_outside
+        show petal1 at mid_left_left
         show chopper_ladder dark at mid_right
         show lupin run hat dark flipped at mid_mid_left
         show tbc at center
         show mean human angry hat flipped at mid_left
         show cs concentrate phone at left
-        $ spritetotal += 5
+        $ spritetotal += 6
         obama "test 71{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -1377,8 +1378,10 @@ label asset_debugger:
         show chopper_sil at mid_right_right
         show walkie at mid_right
         show watch at center
+        show petal1 at mid_mid_right
+        show mean human shocked dark flipped at mid_left
         show cs concentrate phone flipped at left
-        $ spritetotal += 7
+        $ spritetotal += 9
         bomaha "test 72{w=0.5}{nw}"
         $ charactertotal += 1
     else:
