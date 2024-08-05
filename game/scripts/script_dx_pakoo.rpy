@@ -1658,19 +1658,4 @@ label dx_after_super_heaven:
     cs "Wait that's it--{w=0.5}{nw}"
     jump finale_fun_value_land
 
-label finale_fun_value_land:
-    scene white
-    stop music fadeout 3.0
-    cs "Woaoaoaoaoahhhh!!"
-    scene black with dissolve
-    cs "Ohhh... ow..."
-    cs "I think I'm back..."
-    play music funvalueland fadein 5.0 volume 3
-    $ persistent.heard.add("SPOT.FASSIMRD - Fun Value Land")
-    cs "Oh God, am I home?"
-    scene fun_cs_house with dissolve
-    pause 3.0
-    show cs disappointed at mid_left with moveinbottom
-    cs "Oh, my God..."
-    cs "This isn't home."
-    cs "I think I'm gonna throw up."
+

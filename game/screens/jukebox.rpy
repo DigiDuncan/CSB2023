@@ -183,7 +183,8 @@ init python:
         "Hitsquad 2 - Dr. Awesome": "hitsquad_2.ogg",
         "Get The Funk - Dr. Awesome": "get_the_funk.ogg",
         #DX: Finale
-        "SPOT.FASSIMRD - Fun Value Land": "funvalueland.ogg"
+        "SPOT.FASSIMRD - Fun Value Land": "funvalueland.ogg",
+        "Interference - Sanity": "interference.ogg"
     }
     global album_map
 
