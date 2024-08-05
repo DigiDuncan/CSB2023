@@ -1286,9 +1286,8 @@ label asset_debugger:
         $ bgtotal += 1
         scene course_3
         show mean_hat at center
-        show mean human annoyed hat flipped at mid_left
         show cs surprised phone at left
-        $ spritetotal += 3
+        $ spritetotal += 2
         monika "test 67{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -1378,9 +1377,8 @@ label asset_debugger:
         show chopper_sil at mid_right_right
         show walkie at mid_right
         show watch at center
-        show mean human hat flipped sil_black at mid_left
         show cs concentrate phone flipped at left
-        $ spritetotal += 8
+        $ spritetotal += 7
         bomaha "test 72{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -1905,6 +1903,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(110):
+        $ sfxtotal += 1
+        play sound sfx_car_stop
         $ musictotal += 1
         play music pixel_peeker_polka
         $ bgtotal += 1

@@ -233,7 +233,7 @@ label true_montana:
     billy "Yeah, let's see if I can find a place to stop at."
     billy "Wait a second, what the hell?"
     n "Billy brings the car to a screeching halt."
-    play sound "<from 0 to 2>sfx_car_crash.ogg" volume 0.7
+    play sound sfx_car_stop volume 0.7
     scene cultforest
     show billy car
     play music candle_world volume 0.4
@@ -314,7 +314,7 @@ label true_montana:
     hide arceus with moveoutleft
     show cs fakegod at left with moveinleft
     show cultist_2 at mid_mid_right with moveinright
-    show cultist_3 at right with moveinright
+    show cultist_3 at mid_offscreen_right with moveinright
     show cultist at mid_right with moveinright
     $ persistent.seen.add("cultist2")
     cultist "Alright, they're over here at this car."
