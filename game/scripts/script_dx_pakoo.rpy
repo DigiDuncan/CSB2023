@@ -531,6 +531,8 @@ label dx_after_seek_competitors:
             jump dx_after_catholic_ask
         "Lunatic Cultists":
             jump dx_after_lunatic_ask
+        "Society of the Blind Eye":
+            jump dx_after_blindeye_ask
         "Check votes/balance":
             jump dx_after_votes_balance
         "Back to Blue Branch":
@@ -1361,6 +1363,36 @@ label dx_after_three_right:
     cs "Who's next?"
     $ lunatic_check = True
     jump dx_after_seek_competitors
+
+label dx_after_blindeye_ask:
+    cs "Those guys look pretty strange."
+    cs "They look like they have eyes on their hoods!"
+    n "CS walks over to the optical-hooded fellows."
+    cs "Hey guys! See Ess here!"
+    blind_eye "Well, we prefer not to see."
+    blind_eye "We are the Society of the Blind Eye, and we remove traumatizing memories from our local town."
+    cs "Oh crap, that sounds really sketchy."
+    cs "How… do you, do that?"
+    cs "Do you use some crazy voodoo magic or some shit?"
+    blind_eye "No, we use this."
+    n "The Blind Eye cultist pulls out what looks like a gun with a lightbulb on the end of it."
+    cs "Geez, does that really work? It looks like it was built in the 1800's!"
+    blind_eye "Yes, well, it did."
+    blind_eye "Unfortunately, it broke recently and we haven't been able to fix it."
+    blind_eye "... I may have dropped it too many times."
+    cs "Well, is there any way I can help?"
+    blind_eye "Well, there is one man who can help us…"
+    blind_eye "Do you perchance know a Fiddleford? Fiddleford McGucket?"
+    cs "...No. Can't say I have."
+    blind_eye "Hmm…"
+    blind_eye "They said they would be here… I wonder where they are…"
+    cs "I can ask around for them, if you want me to."
+    blind_eye "That would be great! We really need them to help fix our gun."
+    cs "Sure, I'll be back soon!"
+    n "CS heads back to the convention floor."
+    cs "Well, now I have to find this guy…"
+    cs "Fiddleford? I think their name was?"
+    cs "Well anyways…"
 
 label dx_after_branch_ask:
     play music ten_feet_away if_changed    
