@@ -3234,6 +3234,9 @@ label train_lupin_win:
         n "He is so overjoyed to hear that the money has been recovered that he urges Zenigata to make sure anyone involved in catching the thief is compensated."
         n "Mean, Tate, CS, Arceus, and the conductor are each awarded $5,000!"
         
+        scene black with dissolve
+        pause 2.0
+        
         scene amtrak_sleeper_interior
         show amtrak_conductor flipped at left
         show bag at mid_left
@@ -3284,7 +3287,7 @@ label train_lupin_lose:
         xzoom 1
 
     show lupin run hat dark flipped at offscreenleft with determination
-    show mean human angry hat dark flipped at offscreenleft with determination
+    show mean human angry dark flipped at offscreenleft with determination
         
     show chopper_ladder dark behind lupin:
         zoom 1.5
@@ -3299,38 +3302,52 @@ label train_lupin_lose:
     
     show chopper_ladder dark at offscreenright
     show lupin run hat flipped dark at offscreenright
-    show mean human angry hat dark flipped at center
+    show mean human angry dark flipped at center
     with MoveTransition(0.5)
     pause 0.5
-    show mean human shocked hat dark flipped
+    show mean human shocked dark flipped
     n "A low-flying helicopter grants Lupin an escape!"
     
-    # TODO: color grading - night
+    # TODO: this color grading kinda blows for this image specifically.
     scene
-    show lupin_escape:
-        zoom 1.5
-        xcenter 0.5
-        ycenter 0.3
-    
-    with dissolve
-    pause 1.0
-    n "Lupin waves down to the group, taunting them."
-    lupin "Sorry, suckers!"
-    
     show lupin_escape:
         zoom 5
         xcenter 0.5
         ycenter 0.2
-        linear 5 ycenter 0.3
+        linear 15 ycenter 0.3
     with dissolve
     
-    lupin "The house always wins!"
+    with dissolve
+    pause 1.0
+    n "He shouts towards the driver who was shooting at him."
+    lupin "Wow, pops! Your aim is getting worse!"
+    n "Lupin then waves down at Mean and the group, taunting them."
+    lupin "I'm surprised he didn't even hit {i}you,{/i} Mr.{w=0} Big & Tall!"
+    lupin "Here's a parting gift for you!"
+    n "Lupin tosses Mean's hat back down to him."    
+    lupin "And this one's for {i}you,{/i} {color=#FFDBFC}pink sweater{/color}!"
+    
+    show lupin_escape:
+        zoom 1.5
+        xcenter 0.5
+        ycenter 0.3
+    with dissolve
+    
+    n "Lupin tries to throw a bouquet of roses to Tate, but he aims too high."
+    n "It is caught in the helicopter blades and torn to shreds."
+    n "The petals sprinkle down like confetti."
+    lupin "Oh, oops! Can't win 'em all, right?"
+    lupin "See ya!"
     
     scene black with dissolve
     
     play sound sfx_chopper_loop loop volume 0.5
     
     scene
+    
+    show petal1
+    show petal2
+    
     show amtrak_top sil_black:
         xsize 2000
         ysize 500
@@ -3340,6 +3357,7 @@ label train_lupin_lose:
         zoom 0.15
         xpos 0.35
         ypos 0.5
+    # TODO: need one that goes speeeeeen
     show chopper_sil:
         zoom 0.8
         xpos 0.6
@@ -3533,6 +3551,7 @@ label train_tate_ex_win:
     
     pause 2.0
     scene black with dissolve
+    pause 2.0
     n "Finally tired out, CS returns to the sleeper, where he quickly drifts off..."
     pause 2.0
     jump train_completed
@@ -3547,10 +3566,10 @@ label train_tate_ex_lose:
     tate "I think I'd prefer to believe that you didn't."
     tate "Thank you, CS."
     tate "Let us never speak of this."
+    $ persistent.seen.add("tate_ex")
     pause 2.0
     scene black with dissolve
     pause 2.0
-    $ persistent.seen.add("tate_ex")
     n "Finally tired out, CS returns to the sleeper, where he quickly drifts off...."
     jump train_completed
     
@@ -3596,7 +3615,7 @@ label train_completed:
         
         if fun_value(FUN_VALUE_MUSIC):
             # TODO: god help me i hate this music gimmick so much
-            n "CS and Arceus wake up the next morning feeling rather grogggy. They'd almost rather be staying at the Homely Yado Inn."
+            n "CS and Arceus wake up the next morning feeling rather groggy. They'd almost rather be staying at the Homely Yado Inn."
         else:
             n "CS and Arceus wake up the next morning feeling rather groggy."
         

@@ -25,6 +25,18 @@ init python:
         return s
     config.say_menu_text_filter = auto_wait
 
+# BetterSnowBlossom() - not done yet
+init python:
+    import math
+    from renpy.display.particle import SnowBlossomParticle
+    class BetterSnowBlossomParticle(SnowBlossomParticle):
+        def __init__(randomrot, min_x, max_x, min_y, max_y):
+            self.randomrot = randint(1,360)
+            self.min_x = min_x
+            self.max_x = max_x
+            self.min_y = min_y
+            self.max_y = max_y
+
 # Flips + color shaders
 init -10 python:
     # dusk shader
@@ -782,6 +794,7 @@ image mean human annoyed = "characters/mean/meanhumanannoyed.png"
 image mean human annoyed flipped = "flip:characters/mean/meanhumanannoyed.png"
 image mean human shocked = "characters/mean/meanhumanshocked.png"
 image mean human shocked flipped = "flip:characters/mean/meanhumanshocked.png"
+image mean human shocked dark flipped = "dark:flip:characters/mean/meanhumanshocked.png"
 image mean human angry = "characters/mean/meanhumanangry.png"
 image mean human angry flipped = "flip:characters/mean/meanhumanangry.png"
 image mean human angry dark flipped = "dark:flip:characters/mean/meanhumanangry.png"
@@ -1406,6 +1419,9 @@ image fake_rpg_miss = Text("{size=50}{color=#FFAAAA}Miss!", text_align=0.5)
 image oof_45 = Text("{size=50}{color=#FFEE00}4'5\"", text_align=0.5)
 image oof_54 = Text("{size=50}{color=#CE256E}5'4\"", text_align=0.5)
 image oof_52 = Text("{size=50}{color=#233260}5'2\"", text_align=0.5)
+# TODO: this sucks
+image petal1 = SnowBlossom("petal1.png", count = 50, fast = True)
+image petal2 = SnowBlossom("petal2.png", count = 50, fast = True)
 
 # DX Digi Backgrounds
 image classroom = "secret/up/classroom.png"

@@ -240,28 +240,28 @@ label archival_finale:
     n "The guys come around the corner, and start firing at CS as he sprints out of there."
     show cs worried with determination
     hide cs with moveoutright
-    play sound sfx_hks2 loop volume 0.7
+    play sound sfx_hks2 noloop volume 0.7
     pause 0.1
-    play sound sfx_hks1 loop volume 0.7
+    play sound sfx_hks1 noloop volume 0.7
     pause 0.1
-    play sound sfx_hks2 loop volume 0.7
+    play sound sfx_hks2 noloop volume 0.7
     pause 0.1
-    play sound sfx_hks1 loop volume 0.7
+    play sound sfx_hks1 noloop volume 0.7
     pause 0.1
-    play sound sfx_hks2 loop volume 0.7
+    play sound sfx_hks2 noloop volume 0.7
     hide hart1 with moveoutright
     hide hart2 with moveoutright
     scene archival_7 with dissolve
     show cs worried at offscreenleft
     hide cs worried with moveoutright
     n "CS starts weaving between the canisters to try to lose them."
-    play sound sfx_hks2 loop volume 0.7
+    play sound sfx_hks2 noloop volume 0.7
     pause 0.1
-    play sound sfx_hks1 loop volume 0.7
+    play sound sfx_hks1 noloop volume 0.7
     pause 0.1
-    play sound sfx_hks2 loop volume 0.7
+    play sound sfx_hks2 noloop volume 0.7
     pause 0.1
-    play sound sfx_hks1 loop volume 0.7
+    play sound sfx_hks1 noloop volume 0.7
     show hart1 at offscreenleft
     hide hart1 with moveoutright
     show hart2 at offscreenleft
@@ -272,17 +272,17 @@ label archival_finale:
     scene archival_7 with dissolve
     show cs worried at offscreenleft
     hide cs worried with moveoutright
-    play sound sfx_hks2 loop volume 0.7
+    play sound sfx_hks2 noloop volume 0.7
     pause 0.1
-    play sound sfx_hks1 loop volume 0.7
+    play sound sfx_hks1 noloop volume 0.7
     pause 0.1
-    play sound sfx_hks2 loop volume 0.7
+    play sound sfx_hks2 noloop volume 0.7
     pause 0.1
-    play sound sfx_hks1 loop volume 0.7
+    play sound sfx_hks1 noloop volume 0.7
     pause 0.1
-    play sound sfx_hks2 loop volume 0.7
+    play sound sfx_hks2 noloop volume 0.7
     pause 0.1
-    play sound sfx_hks1 loop volume 0.7
+    play sound sfx_hks1 noloop volume 0.7
     show hart1 at offscreenleft
     hide hart1 with moveoutright
     show hart2 at offscreenleft
@@ -306,70 +306,70 @@ label archival_finale:
     scene archival_9a with dissolve
     scene archival_10a with dissolve
     scene archival_11a with dissolve
-    play sound sfx_hks2 loop volume 0.7
+    play sound sfx_hks2 noloop volume 0.7
     pause 0.1
-    play sound sfx_hks1 loop volume 0.7
+    play sound sfx_hks1 noloop volume 0.7
     pause 0.1
-    play sound sfx_hks2 loop volume 0.7
+    play sound sfx_hks2 noloop volume 0.7
     pause 0.1
-    play sound sfx_hks1 loop volume 0.7
+    play sound sfx_hks1 noloop volume 0.7
     scene archival_9a with dissolve
     scene archival_10 with dissolve
     scene archival_11 with dissolve
     scene archival_9a with dissolve
-    play sound sfx_hks2 loop volume 0.7
+    play sound sfx_hks2 noloop volume 0.7
     pause 0.1
-    play sound sfx_hks1 loop volume 0.7
+    play sound sfx_hks1 noloop volume 0.7
     pause 0.1
-    play sound sfx_hks2 loop volume 0.7
+    play sound sfx_hks2 noloop volume 0.7
     pause 0.1
-    play sound sfx_hks1 loop volume 0.7
+    play sound sfx_hks1 noloop volume 0.7
     scene archival_10a with dissolve
     scene archival_11a with dissolve
     scene archival_9a with dissolve
     scene archival_10a with dissolve
     scene archival_11a with dissolve
-    play sound sfx_hks2 loop volume 0.7
+    play sound sfx_hks2 noloop volume 0.7
     pause 0.1
-    play sound sfx_hks1 loop volume 0.7
+    play sound sfx_hks1 noloop volume 0.7
     pause 0.1
-    play sound sfx_hks2 loop volume 0.7
+    play sound sfx_hks2 noloop volume 0.7
     pause 0.1
-    play sound sfx_hks1 loop volume 0.7
+    play sound sfx_hks1 noloop volume 0.7
     scene archival_9a with dissolve
     scene archival_10 with dissolve
     scene archival_11 with dissolve
     scene archival_9a with dissolve
-    play sound sfx_hks2 loop volume 0.7
+    play sound sfx_hks2 noloop volume 0.7
     pause 0.1
-    play sound sfx_hks1 loop volume 0.7
+    play sound sfx_hks1 noloop volume 0.7
     pause 0.1
-    play sound sfx_hks2 loop volume 0.7
+    play sound sfx_hks2 noloop volume 0.7
     pause 0.1
-    play sound sfx_hks1 loop volume 0.7
+    play sound sfx_hks1 noloop volume 0.7
     scene archival_10a with dissolve
     scene archival_11a with dissolve
     scene archival_9a with dissolve
     scene archival_10 with dissolve
     scene archival_11 with dissolve
-    play sound sfx_hks2 loop volume 0.7
+    play sound sfx_hks2 noloop volume 0.7
     pause 0.1
-    play sound sfx_hks1 loop volume 0.7
+    play sound sfx_hks1 noloop volume 0.7
     pause 0.1
-    play sound sfx_hks2 loop volume 0.7
+    play sound sfx_hks2 noloop volume 0.7
     pause 0.1
-    play sound sfx_hks1 loop volume 0.7
+    play sound sfx_hks1 noloop volume 0.7
     scene archival_9a with dissolve
     scene archival_10 with dissolve
     scene archival_11 with dissolve
     scene archival_9a with dissolve
-    play sound sfx_hks2 loop volume 0.7
+    play sound sfx_hks2 noloop volume 0.7
     pause 0.1
-    play sound sfx_hks1 loop volume 0.7
+    play sound sfx_hks1 noloop volume 0.7
     pause 0.1
-    play sound sfx_hks2 loop volume 0.7
+    play sound sfx_hks2 noloop volume 0.7
     pause 0.1
-    play sound sfx_hks1 loop volume 0.7
+    play sound sfx_hks1 noloop volume 0.7
     scene archival_10 with dissolve
     scene archival_11 with dissolve
     scene archival_12 with dissolve
