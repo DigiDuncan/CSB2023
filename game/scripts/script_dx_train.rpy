@@ -2312,7 +2312,7 @@ label train_confront_lupin:
     show mean furious at offscreenleft with MoveTransition(0.25)
     play sound sfx_cat_crash
     show fake_rpg_miss at t_fake_rpg_text(0.48, 0.2)
-    play sound2 "/audio/ut/snd_bluh.ogg" volume 0.5 noloop
+    play sound2 "/audio/sfx/snd_bluh.ogg" volume 0.5 noloop
     show cs scared flipped
     show tate shock flipped
     with hpunch
@@ -2477,7 +2477,7 @@ label train_confront_lupin:
     show oof_54 at t_fake_rpg_text(0.2, 0.125)
     show oof_52 at t_fake_rpg_text(0.81, 0.2)
 
-    play sound "audio/ut/snd_damage.ogg" volume 0.5
+    play sound "audio/sfx/snd_damage.ogg" volume 0.5
     show arceus angry flipped
     show cs angry
     show tate sad flipped
@@ -2797,7 +2797,7 @@ label train_lupin_win:
         xpos 1450
         ypos 500
         linear 0.25 ypos 1080
-    play sound "audio/ut/snd_damage.ogg"
+    play sound "audio/sfx/snd_damage.ogg"
     pause 0.5
     
     # brooch

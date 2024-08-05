@@ -938,22 +938,22 @@ class DamageIndicator:
 
     def play(self):
         if self.indicator_type == "heal":
-            renpy.sound.play("audio/ut/snd_power.ogg", channel = "sfx")
+            renpy.sound.play("audio/sfx/snd_power.ogg", channel = "sfx")
             self.play_sound = False
         elif self.indicator_type == "damage":
-            renpy.sound.play("audio/ut/snd_damage.ogg", channel = "sfx")
+            renpy.sound.play("audio/sfx/snd_damage.ogg", channel = "sfx")
             self.play_sound = False
         elif self.indicator_type == "dot":
             renpy.sound.play("audio/sfx/sfx_hurt1.ogg", channel = "sfx")
             self.play_sound = False
         elif self.indicator_type == "stat_up":
-            renpy.sound.play("audio/ut/snd_b.ogg", channel = "sfx")
+            renpy.sound.play("audio/sfx/snd_b.ogg", channel = "sfx")
             self.play_sound = False
         elif self.indicator_type == "stat_down" or self.indicator_type == "miss":
-            renpy.sound.play("audio/ut/snd_bluh.ogg", channel = "sfx")
+            renpy.sound.play("audio/sfx/snd_bluh.ogg", channel = "sfx")
             self.play_sound = False
         elif self.indicator_type == "confused" or self.indicator_type == "unconfused":
-            renpy.sound.play("audio/ut/snd_chime.ogg", channel = "sfx")
+            renpy.sound.play("audio/sfx/snd_chime.ogg", channel = "sfx")
             self.play_sound = False
 
 # This is the displayable that controls what's happening in the boxes at the bottom of the screen
