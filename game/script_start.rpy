@@ -314,15 +314,15 @@ transform t_mean_rollout:
     linear 1 rotate -180
     
 # TODO: make sure this transform exactly matches the rpg engine transform. i don't think i quite nailed it -tate
-transform t_fake_rpg_text(x,y):
+transform t_fake_rpg_text(x,y,speed = 0.25):
     on show:
         xpos x
         ypos y
         pass
         parallel:
-            linear 0.25 ypos (y-0.05)
+            linear speed ypos (y-0.05)
         parallel:
-            ease_expo 0.5 alpha 0.00
+            ease_expo 0.75 alpha 0.00
         
 transform lego_run:
     pos (0.5, 0.5)
@@ -1037,6 +1037,10 @@ image hoh_hq4 = "bg/office4.png"
 image hoh_hq5 = "bg/office5.png"
 image hoh_elevator = "bg/elevator.png"
 
+## Generated images for CSBI
+image spent_11_88 = Text("{size=50}{color=#00D218}-$11.88", text_align=0.5)
+image spent_bits = Text("{image=bits.png} {size=50}{color=#BD62FF}-200,000", text_align=0.5)
+
 ## CSBII
 image helipad = "bg/helipad.png"
 image jail_inside = "bg/jail_inside.png"
@@ -1386,7 +1390,8 @@ image amtrak_top sil_black = "sil_black:bg/train/amtrak_top.png"
 image sepia_zoom = "bg/train/sepia_zoom.png"
 image hutchinson_stn = "dark:bg/train/hutchinson_stn.png"
 image hutchinson_stn_lights = "bg/train/hutchinson_stn_lights.png"
-image lupin_escape = "dark:bg/train/lupin_escape.png"
+image lupin_escape_1 = "dark:bg/train/lupin_escape_1.png"
+image lupin_escape_2 = "dark:bg/train/lupin_escape_2.png"
 
 # Train Route NPCs
 image amtrak_conductor = "characters/amtrak_conductor.png"
@@ -1460,6 +1465,7 @@ image cswanted = "wanted_poster.png"
 image dog = "dog.png"
 image drill = "drillymays.png"
 image drillbreak = "drillymaysfuck.png"
+image genergy = "genergy.png"
 image hold_it = "hold_it.png"
 image laser_beam = "laser_beam.png"
 image lego_jail = "lego_jail.png"
@@ -1487,6 +1493,7 @@ image pot = "pot.png"
 image pot_beam = "pot_beam.png"
 image pot_lift = "pot_lift.png"
 image pot_sunken = "pot_sunken.png"
+image pringles = "pringles.png"
 image renault = "renault.png"
 image sansbrick = "sansbrick.png"
 image scott_border = "scott_border.png"
@@ -1496,6 +1503,7 @@ image tbc = "tbc.png"
 image toby = "secret/toby.png"
 image walkie = "walkie.png"
 image walkie dark = "dark:walkie.png"
+image walmart_bag = "walmart_bag.png"
 image watch = "watch.png"
 image ytx = Transform("ytx.png", zoom = 0.333)
 
@@ -1520,7 +1528,7 @@ image bronson_hell = Movie(play="movies/bronsonhell.webm")
 image fun_cs_house = Movie(play="movies/funvaluecshouse.webm")
 image fun_hoh_sis = Movie(play="movies/funvaluehohsis.webm")
 
-#Movie Cutscenes
+# Movie Cutscenes
 define anno_bl = "movies/anno.webm"
 define blank_bl = "movies/blank.webm"
 define db_bl = "movies/db.webm"
@@ -1536,7 +1544,7 @@ define hoh_repair = "movies/hoh_repair.webm"
 define kick = "movies/kick.webm"
 define splash = "movies/splash.webm"
 
-#Fun Values
+# Fun Values
 image utajsign = "secret/utajsign.png"
 image vegasjade = "secret/vegasjade.png"
 image vegasjade2 = "secret/vegasjade2.png"
@@ -1677,7 +1685,7 @@ image tate_ex:
     xcenter 0.25
     ycenter 0.6
 
-#Train boss
+# Train boss
 image train_boss_1:
     "characters/finale/trainboss1.png"
     ease 2.0 rotate -1
@@ -2026,6 +2034,7 @@ define audio.sfx_amtrak_horn = "sfx/sfx_amtrak_horn.ogg"
 define audio.sfx_bossappears = "sfx/sfx_bossappears.ogg"
 define audio.sfx_beam = "sfx/sfx_beam.ogg"
 define audio.sfx_bell = "sfx/sfx_bell.ogg"
+define audio.sfx_bluescreen = "sfx/sfx_bluescreen.ogg"
 define audio.sfx_bucket = "sfx/sfx_bucket.ogg"
 define audio.sfx_car_crash = "sfx/sfx_car_crash.ogg"
 define audio.sfx_car_stop = "<from 0 to 2>sfx/sfx_car_crash.ogg"
@@ -2040,6 +2049,8 @@ define audio.sfx_chopper_loop = "sfx/sfx_chopper_loop.ogg"
 define audio.sfx_clapperboard = "sfx/sfx_clapperboard.ogg"
 define audio.sfx_clonk = "sfx/sfx_clonk.ogg"
 define audio.sfx_csnore = "sfx/sfx_csnore.ogg"
+define audio.sfx_dial_hohsis = "sfx/sfx_dial_hohsis.ogg"
+define audio.sfx_dial_rosen = "sfx/sfx_dial_rosen.ogg"
 define audio.sfx_drill = "sfx/sfx_drill.ogg"
 define audio.sfx_drillbreak = "sfx/sfx_drillbreak.ogg"
 define audio.sfx_doorbell = "sfx/sfx_doorbell.ogg"
@@ -2084,12 +2095,16 @@ define audio.sfx_keyboard = "sfx/sfx_keyboard.ogg"
 define audio.sfx_mc_hit = "sfx/sfx_mc_hit.ogg"
 define audio.sfx_mean_transform = "sfx/sfx_mean_transform.ogg"
 define audio.sfx_metalpipe = "sfx/sfx_metalpipe.ogg"
+define audio.sfx_michael_eat = "sfx/sfx_michael_eat.ogg"
+define audio.sfx_michael_facepalm = "sfx/sfx_michael_facepalm.ogg"
+define audio.sfx_moneyfalls = "sfx/sfx_moneyfalls.ogg"
 define audio.sfx_nice_car = "sfx/sfx_nice_car.ogg"
+define audio.sfx_noicepop = "sfx/sfx_noicepop.ogg"
 define audio.sfx_not_so_nice_scratch = "sfx/sfx_not_so_nice_scratch.ogg"
 define audio.sfx_obama = "sfx/sfx_obama.ogg"
 define audio.sfx_objection = "sfx/sfx_objection.ogg"
 define audio.sfx_okuubeam = "sfx/sfx_okuubeam.ogg"
-define audio.sfx_page = "sfx/sfx_page.ogg"
+define audio.sfx_page = "<from 0.321>sfx/sfx_page.ogg"
 define audio.sfx_payday = "sfx/sfx_payday.ogg"
 define audio.sfx_ping = "sfx/sfx_ping.ogg"
 define audio.sfx_ping_spam = "sfx/sfx_ping_spam.ogg"
@@ -2098,6 +2113,7 @@ define audio.sfx_poot = "sfx/sfx_poot.ogg"
 define audio.sfx_puke = "sfx/sfx_puke.ogg"
 define audio.sfx_punch = "sfx/sfx_punch.ogg"
 define audio.sfx_punch_alt = "sfx/sfx_alt_punch.ogg"
+define audio.sfx_retail_beep = "sfx/sfx_retail_beep.ogg"
 define audio.sfx_ringtone = "sfx/sfx_ringtone.ogg"
 define audio.sfx_roll_window = "sfx/sfx_roll_window.ogg"
 define audio.sfx_select = "sfx/sfx_select.ogg"
@@ -2106,8 +2122,8 @@ define audio.sfx_sliding_door_close = "sfx/sfx_sliding_door_close.ogg"
 define audio.sfx_sliding_door_open = "sfx/sfx_sliding_door_open.ogg"
 define audio.sfx_slots = "sfx/sfx_slots.ogg"
 define audio.sfx_somethingchanged = "sfx/sfx_somethingchanged.ogg"
-define audio.sfx_snd_lightswitch = "snd_lightswitch.ogg"
-define audio.sfx_snd_undynestep = "snd_undynestep.ogg"
+define audio.sfx_snd_lightswitch = "ut/snd_lightswitch.ogg"
+define audio.sfx_snd_undynestep = "ut/snd_undynestep.ogg"
 define audio.sfx_sparkles = "sfx/sfx_sparkles.ogg"
 define audio.sfx_spellcast = "sfx/sfx_spellcast.ogg"
 define audio.sfx_splash = "sfx/sfx_splash.ogg"
@@ -2405,6 +2421,7 @@ init python:
 image typewriter = DynamicDisplayable(show_typewriter)
 
 label test:
+
     scene washington_road dusk
     show arceus dusk flipped at right
     show cs dusk at left

@@ -52,16 +52,18 @@ label csbi_craptop:
         show post_it2 at t_post_it
     else:
         show post_it at t_post_it
+    with dissolve
 
     $ achievement_manager.unlock("ZUP!")
+    pause 1.0
     craptop "Your PC sux. lol."
     if e2:
         jump e2
     else:
         sticky "Delete the CSCord."
     cs "Eh, maybe tomorrow."
-    hide post_it
     play sound sfx_page volume 5
+    show post_it at manual_pos(0.7, -300) with MoveTransition(0.25)
     pause 2.0
     show craptop updating
     craptop "Downloading update 200/13..."
@@ -106,7 +108,7 @@ label csbi_craptop:
     cs "Okay, bedtime! Bye, guys!"
     show nova at right with dissolve
     play sound sfx_ping
-    nova "But it's like 8:04AM and you just woke up."
+    nova "But it's, like, 8:04 AM, and you just woke up."
     play sound sfx_ping
     cs "Bye!"
     show cs flipped with determination
@@ -128,6 +130,9 @@ label csbi_craptop:
     stop music fadeout 3.0
     music end
     cs "Yeah! Let's go outside!"
+    hide cs with moveoutright
+    scene black with dissolve
+    pause 1.0
     scene cs_house
     show cs happy
     with dissolve
@@ -145,6 +150,7 @@ label csbi_craptop:
     show cs at left with moveinleft
     play sound sfx_nice_car
     carguy_nobeep "Nice car!"
+    show cs disappointed
     cs "It's pretty nice, but it's got some scratches..."
     play sound sfx_not_so_nice_scratch
     carguy_nobeep "Nooot so nice scratch..."
@@ -154,32 +160,34 @@ label csbi_craptop:
     stop music fadeout 3.0
     music end
     show cs scared at left
-    cs "QUICK! START THE CAR, START THE CAR!!!"
-    hide cs with moveoutright
+    cs "QUICK! START THE CAR, {i}START THE CAR!!!"
+    show cs scared at right behind carguy with MoveTransition(0.25)
     play sound sfx_doorslam
     scene cs_car_inside
     show cs disappointed at left
     with dissolve
     play music canyon_car volume 0.2
     music CANYON.MID - George Stone
+    pause 1.0
     cs "Whew... That was close!"
     cs "Should I go get groceries?"
     menu:
         "Get groceries?"
         "Yes":
-            cs "Yeah... It's a good idea to get some stuff."
+            cs "Yeah... I should probably go pick up a few things."
         "No":
             $ achievement_manager.unlock("I Don't Like People!")
             show cs happy at left
             cs "Screw you, I'm going anyway!"
     play sound sfx_driving volume 0.5
+    scene black with dissolve
+    stop sound fadeout 2.0
+    stop music fadeout 3.0
+    music end
     pause 3.0
     jump csbi_walmart
 
 label csbi_walmart:
-    stop sound fadeout 2.0
-    stop music fadeout 3.0
-    music end
     scene walmart_outside
     show cs happy
     with dissolve
@@ -193,71 +201,131 @@ label csbi_walmart:
     play music summer_clearance_sale
     $ persistent.heard.add("Summer Clearance Sale - BEST MUSIC")
 
+    show cs at left with moveinleft
     n "CS walks inside."
     show doug at right with moveinright
     if fun_value(FUN_VALUE_MUSIC):
         greeter "Welcome, the Summer Clearance Sale is going on! Isn't this the BEST MUSIC ever?"
     else:
         greeter "Hello, and welcome to Walmart! Can I help you with anything?"
-    show cs at left with moveinleft
-    cs "Wow! It's Walmart CEO Doug McMillon! You actually work here?"
-    doug "Of course! They were short a greeter today, so I filled in the slot!"
+    cs "Wow! It's Walmart CEO Doug McMillon! You actually {i}work{/i} here?"
+    doug "Of course! We were short a greeter today, so I filled in for them!"
+    doug "Enjoy your visit!"
+    hide doug with moveoutleft
+    n "Doug gets back to work."
     cs "Wow! He seems like a good man!"
-    show doug at offscreenright
     show cs at center
     with move
     hide doug
     cs "Now, let's find some food!"
-    show walmart_aisle behind cs with dissolve
-    cs "{i}pop{/i}\nNoice! Genergy is two for $5! I'll take them all!"
+    hide cs with moveoutright
+    scene black with dissolve
+    scene walmart_aisle
+    with dissolve
+    show cs at center with moveinleft
+    pause 1.0
+    show cs at right with moveinleft
+    pause 1.0
+    play sound sfx_noicepop
     show cs happy
-    cs "Oooh! Pringles are on sale too! Yoink!"
+    cs "{i}pop{/i}\nNoice! Genergy is two for $5! Yes, {i}please!"
+    show genergy at manual_pos(1800, 300) with dissolve
+    show genergy at manual_pos(1650, 800) with move
+    hide genergy with dissolve
+    show genergy at manual_pos(1800, 300) with dissolve
+    show genergy at manual_pos(1650, 800) with move
+    hide genergy with dissolve
+    show cs flipped at center with moveinleft
+    pause 1.0
+    show cs flipped at left with moveinright
+    pause 1.0
+    show cs happy flipped
+    cs "Oooh! Pringles are on sale, too! {i}Yoink!"
+    show pringles at manual_pos(50, 300) with dissolve
+    show pringles at manual_pos(200, 800) with move
+    hide pringles with dissolve
+    show cs at center with moveinleft
     n "CS walks to the checkout area."
+    hide cs with moveoutright
+    scene black with dissolve
+    pause 1.0
     scene walmart_register
     show cashier at mid_mid_right
     show walmart_register_fg
     with dissolve
     show cs at left with moveinleft
+    pause 1.0
     cs "Here's my stuff!"
+    show pringles at manual_pos(500, 500) 
+    show genergy at manual_pos(450, 500)
+    show genergy at manual_pos(425, 500) as duplicate
+    with dissolve
+    n "The cashier scans each item."
+    play sound sfx_retail_beep
+    show pringles behind cs at manual_pos(1750, 550) with move
+    play sound sfx_retail_beep
+    show genergy behind cs at manual_pos(1625, 650) with move
+    play sound sfx_retail_beep
+    show genergy behind cs as duplicate at manual_pos(1500, 625) with move
+    play sound sfx_retail_beep
+    pause 2.0
     cashier "That'll be $11.88."
     cs "Here you go!"
-    cashier "Have a good day."
-    cs "You too, bye!"
-    hide cs with moveoutright
+    play sound sfx_moneyfalls
+    show spent_11_88 at t_fake_rpg_text(0.1, 0.1, 0.5)
+    pause 2.0
+    cashier "Have a nice day."
+    show cs happy
+    cs "You too! Bye!"
+    show cs at mid_offscreen_right with moveoutright
+    pause 1.0
+    hide pringles
+    hide genergy
+    hide genergy as duplicate
+    show walmart_bag at right
+    with dissolve
+    hide cs
+    hide walmart_bag
+    with moveoutright
     stop music fadeout 3.0
     music end
     scene walmart_outside with dissolve
-    show cs at left with moveinleft
+    show cs at left
+    show walmart_bag at left
+    with moveinleft
     cs "Let's get to the car."
     show carguy at right with moveinright
     play sound sfx_not_so_nice_scratch
     carguy_nobeep "Nooooot so nice scratch."
-    show cs disappointed at left
-    cs "Not you again!"
+    show cs worried at left
+    cs "Not {i}you,{/i} again!"
     cs "I've gotta get outta here!"
-    hide cs with moveoutright
+    show cs at offscreenright
+    show walmart_bag at offscreenright
+    with MoveTransition(0.25)
     play sound sfx_doorslam
     scene cs_car_inside
-    show cs worried at left
+    show cs scared at left
     with dissolve
     play music canyon_car volume 0.2
     play sound sfx_driving volume 0.5
-    cs "Let's get home before that guy doctors my crotch!"
+    cs "Let's get home before that guy doctors {i}my{/i} crotch!"
     scene black with dissolve
     n "CS drives home and manages to avoid reenacting one of his favorite car crash videos."
     jump csbi_room
 
 label csbi_room:
     scene cs_room
-    show cs
+    show cs flipped
     with dissolve
     stop sound fadeout 2.0
     stop music fadeout 3.0
     music end
-    n "CS arrives home and walks to his room."
-    show cs happy
+    # TODO: front door open/close sfx
+    n "CS arrives home and walks into the living room."
+    show cs happy flipped
     cs "Ahhh. It's good to be home!"
-    show cs surprised
+    show cs surprised flipped
     cs "You know, I haven't put out a YTP in a while. I should work on one of my in-progress ones."
     scene craptop_bg
     show craptop edit
@@ -269,12 +337,12 @@ label csbi_room:
         cs "Ooooh! I can really feel the scales of joy! People would be excited to finally see this as a finished product."
     else:
         cs "Ooooh! Here's the one from my last editing stream. People would be excited to finally see this as a finished product."
-    n "CS watches the in-progress video."
+    n "CS watches the unfinished video."
     cs "This is pretty good, but I'm feeling uninspired... I don't know where to go from here..."
-    cs "Hmmm..."
+    cs "Hmm..."
     cs "I know! I should watch some other YTPs for inspiration."
     show craptop ytp
-    n "CS opens up YouTube and begins watching YTPs. After a while, CS runs into some older poops."
+    n "CS opens up YouTube and begins watching YTPs. After a while, he comes across some older poops."
     cs "Man, it was so easy back then. All you needed was Windows Movie Maker and some effects. If only it was that easy now..."
     cs "..."
     cs "Oh, look, a flashback. What a coincidence..."
@@ -283,16 +351,18 @@ label csbi_room:
     ycs "Hey guys, Young CS here! Today, I'm gonna be editing a \n{bt=a3-p10-s4}CraAaAaAaAzY{/bt} video!!"
     play sound sfx_keyboard
     n "CS taps furiously on his keyboard."
-    ycs "Ohhhhhh {bt=a3-p10-s4}YeeEeeEeEeeEEeEEs!{/bt} This is lookin' good!"
+    ycs "Ohhhhhh {bt=a3-p10-s4}YeeEeeEeEeeEEeEEs!{/bt} This is lookin' {i}good!"
     hide cs_young
     scene cs_room
     show cs
     with pixellate
+    pause 1.0
+    show cs disappointed
     cs "Oh, flashback over."
     play sound sfx_foundationfail volume 0.5
     show cs worried
     show cs_room behind cs at rotate_10 with hpunch
-    n "A loud crash is heard as a crack is split in CS' foundation."
+    n "A loud crash is heard as CS' foundation splits beneath his feet!"
     show cs worried
     cs "Woah! I was dreaming for so long that the foundation fell apart. My house just fell to the side!"
     cs "I really need to get some foundation repair."
@@ -307,31 +377,40 @@ label csbi_room:
             cs "I guess I can call Home Savers. Despite my YTPs of their company, I don't think they'd mind helping me out."
             show cs phone
             n "CS dials the phone number he found on their website."
+            play sound sfx_dial_hohsis
+            pause 16
             show cs phone at left with move
             show hoh_hq at mid_offscreen_right behind ed
             show ed phone at right
             with moveinright
-            ed "Hello, this is Ed. How may I help you?"
+            ed "Hello, and thank you for calling Home Savers. This is Ed. How may I help you?"
             show cs worried phone
-            cs "Hello, Ed! This is CS! My house feels like there is a rock on-- I mean... my house is starting to tilt!"
-            ed "Oh, man, that sounds really bad! What's your address? We'll schedule a time to be over there!"
+            cs "Hello, Ed! This is CS! My house feels like there is a rock on--{w=1.0}{nw}"
+            cs "Um, I mean... my house is starting to tilt!"
+            ed "Oh, man, {i}that{/i} doesn't sound good! What's your address? We can schedule a visit for this afternoon!"
             scene black with dissolve
             centered "A little while later..."
-            pause 2.0
+            pause 1.0
+            play sound sfx_doorbell volume 0.5
+            pause 1.0
+            # TODO: front door open sfx
             show cs_door_open at rotate_10
             show cs disappointed at left
             with dissolve
             pause 1.5
             show ed at center with dissolve
             ed "Hey, CS! Long time no see!"
-            ed "Oh, wow, this is pretty bad! I wonder how it got like this..."
-            cs "I'm not sure! It's a pretty big house."
+            ed "Oh, wow, this is pretty bad! How long has it been like this?"
+            show cs worried
+            cs "I'm not sure! It's a pretty big house, so it must have happened so slowly that I only {i}just{/i} noticed!"
             show cs
-            cs "Either way, it's nice to see you again."
-            ed "You've been releasing some really funny content recently. I'm glad to see you still going strong!"
+            cs "By the way, it's nice to see you again!"
+            ed "Hey, you too!"
+            ed "I've been watching some of your new videos lately. They're always a hoot!"
+            ed "I'm glad to see you're still going strong!"
             show cs happy
             cs "Thank you! I appreciate it."
-            ed "Well, we should get to work. This house ain't gonna fix itself!"
+            ed "Well, we'd better get to work. This foundation ain't gonna repair itself!"
             $ achievement_manager.unlock("Get The Job Done Right")
             stop music fadeout 3.0
             music end
@@ -345,11 +424,15 @@ label csbi_room:
     cs "They're really good at giving me the JoJ!"
     show cs phone
     n "CS dials 1-800-HoH-SiiS."
+    play sound sfx_dial_hohsis
+    pause 16
+    hoh_operator "Hello, and thank you for calling Home Sa--{w=0.5}{nw}"
     cs "Hello? Can you give me the JoJ?"
-    hoh_operator "Is this a prank caller on the line?"
+    hoh_operator "Is this another prank caller on the line?"
     show cs phone worried
-    cs "No! My house really needs foundation repair! I need your help ASAP!!"
+    cs "No! My house really needs foundation repair! I need your help, ASAP!"
     hoh_operator "Alright. That will be 200,000 bits. You can pay us afterwards."
+    # TODO: end call sfx
     n "The operator hangs up."
     show cs
     cs "Welp, that's one thing taken care of."
@@ -365,10 +448,16 @@ label csbi_room:
     cs "Let me go get the door..."
     show cs at left with move
     show door_open behind cs
+    # TODO: door open sfx
     cs "Hello! I am CS, and I--"
-    show ed at right with moveinright
     play music hohsis_theme volume 0.2
     music Alfred Hitchcock Intro Theme - Charles Gounod
+    show ed at center:
+        alpha 0.0
+    with determination
+    show ed at right:
+        linear 3.0 alpha 1.0
+    with MoveTransition(2)
     if fun_value(FUN_VALUE_MUSIC):
         ed "Alright, that will be Alfred Hitchcock Intro Theme."
         show cs disappointed
@@ -377,48 +466,91 @@ label csbi_room:
     else:    
         ed "Alright, that will be 200,000 Bits."
     cs "Okay, I guess they already told you what I need done. Lemme get my wallet..."
+    show cs flipped at mid_left_left with moveoutleft
+    pause 1.0
+    show cs disappointed flipped
+    pause 0.5
     show cs disappointed
-    cs "Hang on a sec. Didn't they say I could pay afterwards?"
+    cs "Hang on a sec! Didn't they say I could pay afterwards?"
     ed "Yeah, well, corporate policies just changed five seconds ago. Pay up."
+    cs "Oh... alright..."
     show cs disappointed flipped with determination
     hide cs with moveoutleft
-    n "A few moments later..."
+    pause 2.0
     show cs at left with moveinleft
-    cs "Here you go! I'll get out of your guys' hair while you work."
-    hide cs with moveoutright
-    n "CS leaves after paying 200,000 bits."
-    ed "Come on in, guys. CS just left."
-    show ed at left with move
-    show wesley at center with moveinright
-    show rich at right with moveinright
-    ed "So, now that we're here, what should we do to him?"
-    "Ed, Wesley, and Richard" "Hmmm..."
-    wesley "Let's go check his room. We might get some ideas."
-    show cs_room_2 behind ed with dissolve
-    n "The three HoH SiS workers go to CS's room."
+    pause 1.0
+    cs "Here you go!"
+    play sound sfx_moneyfalls
+    show spent_bits at t_fake_rpg_text(0.075, 0.1, 0.5)
+    pause 0.5
+    cs "I'll get out of your guys' hair while you work."
+    # TODO: fun value - sparkles on ed's bald-ass fuckin head
+    cs "See ya later!"
+    show cs at mid_mid_left with moveoutright
+    hide cs with dissolve
+    pause 0.5
+    n "CS leaves."
+    pause 1.0
+    ed "Come on in, guys. Coast is clear."
+    show ed at right
+    show wesley at center with dissolve
+    show rich at left with dissolve
+    rich "It's about time!"
+    wesley "We can finally get our revenge!"
+    ed "Yep! We have been laughed at on the internet for long enough!"
+    ed "We'll show him what happens when you tarnish our good name!"
+    pause 1.0
+    "..."
+    ed "... But, now that we're here, what should we actually {i}do?"
+    "Ed, Wesley, and Richard" "Hmm..."
+    pause 2.0
+    wesley "Let's go check this other room. We might get some ideas."
+    hide ed
+    hide wesley
+    hide rich
+    with moveoutright
+    scene black with dissolve
+    pause 1.0
+    scene cs_room_2 with dissolve
+    show ed at right
+    show wesley at center
+    show rich at left
+    with moveinleft
+    n "The three HoH SiS workers enter CS' bedroom."
     wesley "Wow, I didn't know CS had a Union Jack!"
-    ed "CS sure loves those Brits~!"
-    wesley "Alright, but, now what should we do?"
-    ed "How about we burn down his house!"
-    wesley "Eh..."
+    rich "CS sure loves those Brits~!"
+    ed "Alright, boys. We didn't come here to admire the décor."
+    ed "What should we do in here?"
+    wesley "How about we burn down the house?"
+    rich "Eh..."
+    ed "Are you insane?! We are a {i}home repair company!{/i}"
+    ed "We have a reputation to uphold!"
+    wesley "{i}Do{/i} we? After all of those videos he put out making fun of us?"
+    rich "Wait, I've got it!"
     rich "How about we mess with his laptop?"
-    ed "Good idea! Let's get sabotagin'!"
+    rich "That's what he used to {i}make{/i} those awful videos in the first place!"
+    ed "Now, {i}that's{/i} more like it! Rich, you're a genius!"
+    ed "Let's get to sabotagin'!"
     scene craptop_bg
     show craptop desktop
     with dissolve
     n "Ed launches the craptop."
-    ed "Heheh... He won't know what hit him..."
-    wesley "Quickly! Let's get out of here before he comes back!"
+    play sound sfx_windows_logon
+    ed "Heheh... He won't know what hit him."
+    wesley "Quick! Let's get out of here before he comes back!"
     show craptop updating
-    wesley "Hurry up!"
+    rich "Hurry up!"
+    play sound sfx_bluescreen
     show craptop error with hpunch
+    pause 1.0
+    scene black with dissolve
     pause 1.0
     scene cs_house with dissolve
     show ed at left
     show wesley at center
     show rich at right
     with moveinright
-    rich "Lemme call our JoJ UFO."
+    rich "Lemme call our JoJ UFO!"
     "Ed, Wesley, and Richard" "I'm beaming up!"
     play sound sfx_beam volume 0.6
     show beam at xstretch_in
@@ -431,27 +563,37 @@ label csbi_room:
     pause 2.0
     stop music fadeout 3.0
     music end
+    scene black with dissolve
+    pause 2.0
     scene cs_street
     with dissolve
     show cs with moveinleft
+    pause 3.0
     cs "Things sure are boooooring around here..."
+    pause 1.0
     cs "Hey, I've got an idea!"
     show cs happy
     cs "Let's go to Michael Rosen's house!"
+    hide cs with moveoutright
+    scene black with dissolve
+    pause 1.0
     jump csbi_michael_house
 
 label csbi_michael_house:
+    play sound sfx_doorslam
     scene car_inside
     show cs at left
     with dissolve
     play music canyon_car volume 0.2
     cs "Thankfully, Michael lives pretty close."
-    cs "His vacation house in the US is only a few streets away!"
-    cs "Before I forget, I should probably call him first."
+    cs "His vacation home in the US is only a few streets away!"
+    cs "I should probably call him first. I don't want to just show up unannounced!"
     show cs phone at left
     n "CS pulls out his phone and calls Michael."
+    play sound sfx_dial_rosen
+    pause 12.5
     show rosen_abode at mid_offscreen_right
-    show michael at right  # TODO: We need a michael phone
+    show michael at right
     with moveinright
     michael "Hello!"
     cs "Hey, Michael! How're you doin' today?"
@@ -459,11 +601,11 @@ label csbi_michael_house:
     show cs happy phone
     cs "That's good to hear! You mind if I head over to your place?"
     show cs phone
-    cs "The JoJ is being done on my house, so I figured we can chat for a bit."
-    michael "Sure! I have a another guest visiting as well, bringing chocolate cake."
+    cs "I'm having the JoJ done on my house, so I figured we can chat for a bit in the meantime."
+    michael "Sure! I have a another guest visiting as well. He's bringing chocolate cake!"
     show cs happy phone
     cs "Mmm! That sounds delicious!"
-    show cs phone
+    show cs phone flipped
     n "CS looks in the back seat of his car."
     cs "I have some Genergy with me, if you guys want some."
     michael "Sounds wonderful. I've never tried it, but I'm sure it's good."
@@ -478,6 +620,8 @@ label csbi_michael_house:
     pause 2.0
     show black with dissolve
     stop sound fadeout 2.0
+    stop music fadeout 2.0
+    pause 2.0
     jump csbi_rosen_house
 
 label csbi_rosen_house:
@@ -485,6 +629,7 @@ label csbi_rosen_house:
         jump e3_rosen
     else:
         scene rosen_abode with dissolve
+    # TODO: front door open/close sfx
     play music super_friendly volume 0.4
     music Super Friendly - Kevin Macleod
     show michael at right with moveinright
@@ -495,14 +640,16 @@ label csbi_rosen_house:
         michael "Come in! Come in!"
     show michael at left
     show cs flipped at right
-    with ease
+    with MoveTransition(1.0)
     cs "Hey, Michael!"
-    michael "Sit down, make yourself comfy. I've got a new poem I want to show you!"
+    michael "Sit down, make yourself comfy. I've got a new poem I'd like you to hear!"
     cs "Sure thing, enlighten me."
-    michael "Right. This one is called{w} {i}The Library.{/i}"
+    michael "Right. This one is called{w=0.5} {i}The Library.{/i}"
     michael "There once was a man who would go on a grand adventure."
     michael "He would meet all sorts of friends, and flee from his enemies."
+    show cs disappointed flipped
     michael "After his long adventure, he took a long nap."
+    show cs concentrate flipped
     michael "When he woke up, he was in a {i}huge{/i} library."
     if e2:
         jump e2_rosen
@@ -512,58 +659,82 @@ label csbi_rosen_house:
         show black
     else:
         show black with dissolve
+    pause 1.0
     play sound sfx_csnore
+    pause 2.0
     michael "CS? Did you fall asleep?"
     michael "CS!"
     stop sound
     hide black
-    cs "Wha- what?"
-    michael "Did you just... sleep through my entire poem?"
+    show cs scared flipped with vpunch
+    cs "Wha-- {i}What?"
+    michael "Did you just... sleep through my {i}entire{/i} poem?"
     show cs worried flipped
-    cs "Nooooooooooooooooo?"
+    cs "Nooooooooooooooooo...?"
     n "Michael sighs and facepalms."
+    play sound sfx_michael_facepalm
+    show cs disappointed flipped
+    pause 2.0
     play sound sfx_doorbell volume 0.5 
     n "The doorbell rings."
-    michael "Oh! My other guest is here! I'll be right back!"
+    michael "Oh! My other guest is here! Please excuse me for just one moment..."
     show cs flipped
-    hide michael at right with moveoutright
-    show michael at left with moveinright
-    show phil at center with moveinright
+    show michael at offscreenright with moveoutright
+    show phil at offscreenright with determination
+    pause 2.0
+    show michael at left behind cs with MoveTransition(1.0)
+    show phil at center behind cs with MoveTransition(1.0)
+    pause 1.0
     phil "Phil Swift here!"
     michael "CS, meet my other friend, Phil!"
     cs "Oh, wow! I didn't know you were friends with Phil Swift!"
     michael "Well, it might be because he said he could make the best chocolate cake."
     michael "Speaking of which, Phil, do you have the cake?"
-    phil "Here it is! It even works underwater!"
-    michael "That's odd to mention, but time to eat!"
+    phil "Here it is!"
+    # TODO: flex cake sprite
+    phil "It even works {i}underwater!"
+    michael "That's odd to mention, but, alright! Time to eat!"
     show cs worried flipped
-    n "CS suddenly realizes what's going on."
+    n "CS suddenly realizes what is going on."
     show cs scared flipped at right
-    cs "Michael! That's not chocolate cake!"
-    michael "I have loads to eat! Om nom nom..."
+    cs "Michael, wait!"
+    cs "That's not chocolate cake!"
+    play sound sfx_michael_eat
+    michael "I have {i}loads{/i} to eat! Om nom nom..."
+    pause 1.0
     play sound sfx_puke
-    michael_nobeep "Blarrrgh!"
-    n "Michael spits out the Flex Seal cake."
-    michael "This is horrible! Get out! Get out of here!"
-    phil "But, it seals, and bonds--"
-    michael "OUT!"
+    michael_nobeep "Blarrrgh!" with hpunch
+    n "Michael spits out the Flex Cake."
+    michael "This is horrible!"
+    michael "Get out! Get out of here!"
+    phil "But, it seals, and bonds--{w=0.5}{nw}"
+    michael "{i}OUT!"
     hide phil with moveoutright
-    hide cs
     show cs disappointed flipped at right
-    michael "I need something to drink. CS, did you bring that drink?"
-    cs "Sure thing, here you go."
+    # TODO: front door open/close sfx
+    pause 2.0
+    michael "I need something to drink..."
+    michael "CS, did you bring that drink?"
+    show cs happy flipped
+    cs "Sure thing! Here you go."
+    show genergy at manual_pos(1400, 500) with dissolve
+    show genergy at manual_pos(300, 500) with MoveTransition(0.5)
     michael "Goodness."
     n "Michael downs the whole can."
-    michael "Quick! Get out!"
+    # TODO: sfx - chug that shit
+    hide genergy with dissolve
+    pause 3.0
     show cs worried flipped
+    michael "Quick! Get out!" with vpunch
     cs "What's going on?"
-    michael "The Genergyfoogle is here! It's come to eat us all!"
-    cs "Oh man, did that Genergy have something {i}else{/i} in it...?"
+    michael "The Genergyfoogle is here! It's come to eat us {i}all!"
+    cs "Oh, man... did that Genergy have something {i}else{/i} in it?!"
     show cs scared flipped
     cs "I need to get out before he goes nuts!"
-    show cs scared with determination
-    hide cs with moveoutright
+    show cs scared at offscreenright with MoveTransition(0.25)
     pause 0.5
+    scene black with dissolve
+    pause 1.0
     jump csbi_end
 
 label csbi_end:
@@ -575,21 +746,29 @@ label csbi_end:
     $ achievement_manager.unlock("Overcaffeinated")
     stop music fadeout 3.0
     music end
+    pause 1.0
     cs "I should check on the HoH SiS folks. They should be making some progress by now."
+    scene black with dissolve
+    pause 1.0
     scene cs_room with dissolve
-    show cs with moveinleft
     stop sound fadeout 2.0
-    n "CS walks into his house."
+    # TODO: front door open/close sfx
+    pause 1.0
+    show cs flipped at offscreenright with determination
+    show cs flipped at center with moveinright
+    n "CS arrives home once again."
+    pause 1.0
     show cs disappointed
     cs "What?! They're gone? Already?"
     cs "I guess I should get back to work on that YTP, then..."
     hide cs
     scene craptop_bg
     show craptop off
+    with dissolve
     n "CS attempts to boot his laptop."
     n "..."
     n "Nothing."
-    cs "Stupid craptop, turn on!"
+    cs "Stupid craptop, turn {i}on!"
     n "CS tries to turn it on again.{w} Nothing."
     cs "Maybe it finally died..."
     cs "Wait..."
@@ -601,7 +780,7 @@ label csbi_end:
     window hide
     play sound sfx_foundationfail volume 0.5
     pause 3.0
-    cs "They didn't even do the JoJ!"
+    cs "And, they didn't even do the JoJ!"
     show craptop sad at rotate_6 with hpunch
     play sound sfx_punch
     if fun_value(FUN_VALUE_RARE):
@@ -609,11 +788,16 @@ label csbi_end:
     pause 1.0
     scene cs_room
     show cs angry
+    with dissolve
     cs "I need to get those guys!"
     cs "I'm gonna go to HoH SiS HQ and kick some butt!"
+    hide cs with moveoutright
+    pause 0.5
+    scene black with dissolve
+    pause 2.0
     scene hoh_outside with dissolve
     window hide
-    pause 1.0
+    pause 2.0
     scene hoh_hq
     show cs angry
     with dissolve
@@ -627,16 +811,19 @@ label csbi_end:
     dxcom hohsisfight
     worker_1 "I don't know!!"
     cs "BullShisH!"
-    n "CS punches the worker."
+    n "CS punches the worker!"
     play sound sfx_punch
-    show worker_1 at right with hpunch
+    with hpunch
     $ persistent.seen.add("hoh_worker")
-    hide worker_1 with moveoutright
+    show worker_1 at offscreenright with MoveTransition(0.5):
+        linear 0.25 xzoom -1
+        linear 0.25 xzoom 1
     show worker_2 at right with moveinright
-    worker_2 "They-- They're on the roof!!"
-    cs "Good!!"
+    worker_2 "They-- They're on the roof!"
+    cs "Good!"
+    hide cs with moveoutright
+    pause 0.5
     hide screen dxcom
-    n "..."
     show black with dissolve
     scene hoh_hq2
     show worker_3 at mid_center_right
@@ -644,19 +831,29 @@ label csbi_end:
     with dissolve
     show cs angry flipped with moveinright
     cs "Get out of my way!"
-    n "CS bodyslams the workers as he runs past."
+    n "CS bodyslams the workers as he runs past!"
     play sound sfx_punch
-    show cs angry flipped at mid_left with move
-    show worker_4 at mid_left with hpunch
-    hide worker_4 with moveoutleft
+    show cs angry flipped at mid_left 
+    show worker_4 at offscreenleft:
+        linear 0.1 xzoom -1
+        linear 0.1 xzoom 1
+        linear 0.1 xzoom -1
+        linear 0.1 xzoom 1
+    with MoveTransition(0.25)
+    with hpunch
+
     play sound sfx_punch
     show cs angry with determination
-    show cs angry at mid_right with move
-    show worker_3 at mid_center_right with hpunch
-    hide worker_3 with moveoutright
+    show cs angry at mid_right 
+    show worker_3 at offscreenright:
+        linear 0.5 rotate 360
+    with MoveTransition(0.25)
+    with hpunch
+
     if fun_value(FUN_VALUE_UNOBTRUSIVE):
-        cs "Ow."
-        mean "AUUUUUGH!!"
+        show cs disappointed
+        cs "... Ow!"
+        mean "AUUUUUGH!!" with hpunch
     show cs angry at offscreenright with move
     show black with dissolve
     scene hoh_hq3
@@ -667,18 +864,21 @@ label csbi_end:
     hide worker_5
     show worker_5alt at left
     worker_5 "Uhh, that way!"
-    cs "Thanks, and also--"
-    n "CS clocks the worker in the face."
-    show cs angry flipped at left with move
+    cs "Thanks! And, also..."
+    n "CS clocks the worker in the face!"
+    show cs angry flipped at left
+    with MoveTransition(0.25)
     play sound sfx_punch
-    show cs angry flipped at offscreenleft with move
-    show worker_5alt at left with hpunch
-    hide worker_5alt with moveoutbottom
+    show worker_5alt at manual_pos(0, -1400) behind cs:
+        linear 0.25 rotate 360
+    with MoveTransition(0.25)
+    show cs angry flipped at offscreenleft with MoveTransition(0.25)
     scene hoh_hq4 with dissolve
     show cs angry with moveinbottom
     cs "Which way to go..."
 
     menu:
+        "Which way?"
         "Left":
             jump csbi_end_left
         "Right":
@@ -690,14 +890,18 @@ label csbi_end_left:
     with dissolve
     show cs angry at left with moveinleft
     cs "A... pineapple?"
-    show cs angry at right with move
+    show cs angry at right 
+    with MoveTransition(0.25)
     play sound sfx_punch
+    show worker_6 at offscreenright:
+        linear 0.1 xzoom -1
+        linear 0.1 xzoom 1
+    with MoveTransition(0.25)
+    with hpunch
     show cs angry at left with move
-    show worker_6 at right with hpunch
-    hide worker_6 with moveoutright
-
     $ achievement_manager.unlock("HoH SiS's Most Wanted")
 
+    pause 1.0
     scene black with dissolve
     scene hoh_elevator
     show cs angry
@@ -713,14 +917,19 @@ label csbi_end_right:
     with dissolve
     show cs angry at left with moveinleft
     cs "A fucking chicken?"
-    show cs angry at right with move
+    show cs angry at right 
+    with MoveTransition(0.25)
     play sound sfx_punch
+    show worker_7 at offscreenright:
+        linear 0.1 xzoom -1
+        linear 0.1 xzoom 1
+    with MoveTransition(0.25)
+    with hpunch
     show cs angry at left with move
-    show worker_7 at right with hpunch
-    hide worker_7 with moveoutright
-    
+
     $ achievement_manager.unlock("HoH SiS's Most Wanted")
 
+    pause 1.0
     scene black with dissolve
     scene hoh_elevator
     show cs angry

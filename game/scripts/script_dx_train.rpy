@@ -353,6 +353,7 @@ label train_story_begin:
             show arceus at offscreenleft
             with moveoutleft
             stop music fadeout 2.0
+            music end
             scene black with dissolve
             minigame "play_toytrains_game" "train_race_win" "train_race_lose"
         "Not really...":
@@ -2442,6 +2443,7 @@ label train_confront_lupin:
     mean "I've got this."
     play sound sfx_mean_transform
     stop music fadeout 2.0
+    music end
     show tate shock flipped
     show cs worried
     show mean angry sil_white flipped:
@@ -2699,6 +2701,7 @@ label train_on_top:
     mean "Let's end this.{w=2.0}{nw}"
     scene black with fade
     stop music fadeout 2.0
+    music end
     pause 0.5
     
     minigame "play_rhythmchase_game" "train_lupin_win" "train_lupin_lose"
@@ -3197,6 +3200,7 @@ label train_lupin_win:
     pause 7
         
     stop music fadeout 2
+    music end
     scene black with dissolve
     
     n "After a heated discussion, the group decides that maybe it's best to let bygones be bygones and get on with the night."
@@ -3310,12 +3314,7 @@ label train_lupin_lose:
     
     # TODO: this color grading kinda blows for this image specifically.
     scene
-    show lupin_escape:
-        zoom 5
-        xcenter 0.5
-        ycenter 0.2
-        linear 15 ycenter 0.3
-    with dissolve
+    show lupin_escape_1 with dissolve
     
     with dissolve
     pause 1.0
@@ -3327,7 +3326,7 @@ label train_lupin_lose:
     n "Lupin tosses Mean's hat back down to him."    
     lupin "And this one's for {i}you,{/i} {color=#FFDBFC}pink sweater{/color}!"
     
-    show lupin_escape:
+    show lupin_escape_2:
         zoom 1.5
         xcenter 0.5
         ycenter 0.3
@@ -3371,7 +3370,7 @@ label train_lupin_lose:
     stop sound fadeout 15.0
     n "Just like that, the thief disappears into the night."
     
-    n "The policeman who was after him follows the chopper over the horizon."
+    n "The police car follows the chopper over the horizon."
     n "With nothing left to do now, Mean and the crew sulk back into the train through a window."
     
     scene black with dissolve
@@ -3389,6 +3388,7 @@ label train_check_secret:
 
 label train_tate_ex_encounter:
     stop music fadeout 5.0
+    music end
     scene black
     pause 5.0
     n "While Arceus is out like a light, try as he may, CS just can't seem to settle down."
@@ -3411,7 +3411,6 @@ label train_tate_ex_encounter:
     tate "Sure can't."
     if fun_value(FUN_VALUE_MUSIC):
         tate "Damned {i}insomnia..."
-        
     "..."
     pause 2.0
     cs "... Tate? Are you alright?"
@@ -3498,6 +3497,7 @@ label train_tate_ex_encounter:
             tate "Unbelievable..."
             scene black with dissolve
             stop music fadeout 1.0
+            music end
             n "Thoroughly weirded out, CS returns to bed."
             jump train_completed
         "Are you sure?":
@@ -3525,6 +3525,7 @@ label train_tate_ex_encounter:
                 linear 1 blur 10
             with Dissolve(1.0)
             stop music fadeout 1.0
+            music end
             show cs scared flipped
             scene white with Dissolve(0.25)
             play sound sfx_spellcast
@@ -3673,6 +3674,7 @@ label train_completed:
 label train_return_home_transition:
     # yes i stole much of this from south route, oh well, i'm tired ok - tate
     stop music fadeout 1.0
+    music end
     pause 2.0
     scene moynihan_interior with dissolve
 
