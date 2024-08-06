@@ -1541,6 +1541,7 @@ image bad_end_screen = Transform(Movie(play = "movies/bad_ending.webm", side_mas
 image bronson_hell = Movie(play="movies/bronsonhell.webm")
 image fun_cs_house = Movie(play="movies/funvaluecshouse.webm")
 image fun_hoh_sis = Movie(play="movies/funvaluehohsis.webm")
+image train_brake = Movie(play="movies/trainscreech.webm")
 
 # Movie Cutscenes
 define anno_bl = "movies/anno.webm"
@@ -2151,6 +2152,7 @@ define audio.sfx_tape_rewind = "sfx/sfx_tape_rewind.ogg"
 define audio.sfx_thunder = "sfx/sfx_thunder.ogg"
 define audio.sfx_tinnitus = "sfx/sfx_tinnitus.ogg"
 define audio.sfx_tiresqueal = "sfx/sfx_tiresqueal.ogg"
+define audio.sfx_train_brake = "sfx/sfx_train_brake.ogg"
 define audio.sfx_valid = "sfx/sfx_valid.ogg"
 define audio.sfx_victory_punch = "sfx/sfx_victory_punch.ogg"
 define audio.sfx_vine = "secret/sfx_vine.ogg"

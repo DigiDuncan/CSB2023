@@ -16,18 +16,31 @@ label finale_fun_value_land:
     cs "I think I'm gonna throw up."
 
 label finale_train_takeoff:
+    stop music
+    scene amtrak_cab
+    show cs disappointed flipped at right
+    show mean at mid_right
+    show amtrak_conductor at center behind mean
+    pause 2.0
     play music interference
     music Interference - Sanity
-    scene amtrak_cab
-    amtrak_conductor "Shit!"
+    show cs worried flipped
+    show mean ayo flipped
+    amtrak_conductor "Shit!" with vpunch
+    show mean scared flipped
     mean "We have one of those corruption storms coming our way!"
+    show cs scared flipped
     cs "A what?!"
     amtrak_conductor "We experienced a storm earlier that seemingly has unknown effects while in it."
+    show mean worried flipped
     amtrak_conductor "We were on the edge of it though, it looks like we are going to go right through it."
     cs "Man, we just can't get a break can we?"
+    scene train_brake
     mean "Here we go!!!!"
+    play sound sfx_train_brake
     mean "Wait, I can't--"
     amtrak_conductor "Uh oh! Everyone, hold on!"
+    stop sound fadeout 5.0
     "Everyone" "Woooooahh!!!"
     scene car plains night
     show flying_train_final at center with easeinright

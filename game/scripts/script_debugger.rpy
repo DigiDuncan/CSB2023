@@ -2099,6 +2099,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(124):
+        $ sfxtotal += 1
+        play sound sfx_train_brake
         $ musictotal += 1
         play music stal
         $ bgtotal += 1
@@ -3823,6 +3825,12 @@ label asset_debugger:
         $ bgtotal += 1
         scene inside_tim_hortons_2
         pause 0.1
+    else:
+        jump exit_debug
+    if fun_value(387):
+        $ movietotal += 1
+        scene train_brake
+        pause 5.0 
     else:
         jump exit_debug
 
