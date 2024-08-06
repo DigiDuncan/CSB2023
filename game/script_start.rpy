@@ -308,10 +308,6 @@ transform t_punchup:
     yanchor 1.0 ypos 0.0
     rotate 0
     linear 1 rotate 960
-
-transform t_mean_rollout:
-    rotate 0
-    linear 1 rotate -180
     
 # TODO: make sure this transform exactly matches the rpg engine transform. i don't think i quite nailed it -tate
 transform t_fake_rpg_text(x,y,speed = 0.25):
@@ -432,7 +428,7 @@ define anno = Character("Anno", callback = renpy.partial(char_callback, name = "
 define border_guard = Character("Border Guard", callback = renpy.partial(char_callback, name = "border_guard"))
 define linus = Character("Linus", callback = renpy.partial(char_callback, name = "linus", beep = "ltt"))
 define asylum_worker = Character("Mr. Mohs", callback = renpy.partial(char_callback, name = "mohs"))
-define csgod = Character("CSGod", callback = renpy.partial(char_callback, name = "csgod", beep = "csgod"))
+define csgod = Character("CSGod", callback = renpy.partial(char_callback, name = "csgod", beep = "csgod"), what_color="#CB50FF")
 define luke = Character("Luke", callback = renpy.partial(char_callback, name = "luke", beep = "luke"))
 define taran = Character("Taran", callback = renpy.partial(char_callback, name = "taran"))
 define colton = Character("Colton", callback = renpy.partial(char_callback, name = "colton"))
@@ -604,6 +600,7 @@ image cs disappointed dusk = "dusk:characters/cs/disappointed.png"
 image cs worried dark = "dark:characters/cs/worried.png"
 image cs worried dark flipped = "dark:flip:characters/cs/worried.png"
 image cs prison = "characters/cs/prison.png"
+image cs prison flipped = "flip:characters/cs/prison.png"
 image cs prison_worried = "characters/cs/prison_worried.png"
 image cs guard = "characters/cs/guard.png"
 image cs guard dark = "dark:characters/cs/guard.png"
@@ -616,7 +613,10 @@ image cs scared flipped = "flip:characters/cs/scared.png"
 image cs scared dark = "dark:characters/cs/scared.png"
 image cs insane worried = "characters/cs/insane.png"
 image cs insane worried flipped = "flip:characters/cs/insane.png"
+image cs insane worried dark = "dark:characters/cs/insane.png"
+image cs insane worried flipped dark = "dark:flip:characters/cs/insane.png"
 image cs insane disappointed = "characters/cs/insane2.png"
+image cs insane disappointed dark = "dark:characters/cs/insane2.png"
 image cs horse = "characters/cs/horse.png"
 image cs horse flipped = "flip:characters/cs/horse.png"
 image cs pissed = "characters/cs/pissed.png"
@@ -857,7 +857,7 @@ image cop_2 = "dark:characters/cop.png"
 image guard_soldier = "dark:characters/guard_soldier.png"
 image marine = "characters/marine.png"
 image big_tank = "characters/abrams.png"
-image asylum_worker = "characters/mohs.png"
+image asylum_worker = "dark:characters/mohs.png"
 image copguyexe = "characters/copguyexe.png"
 image copguyexe flipped = "flip:characters/copguyexe.png"
 
@@ -1050,6 +1050,7 @@ image border = "bg/canadian_border.png"
 image outside_tim_hortons = "bg/outside_tim_hortons.png"
 image inside_tim_hortons_fg = "bg/inside_tim_hortons_fg.png"
 image inside_tim_hortons = "bg/inside_tim_hortons.png"
+image inside_tim_hortons_2 = "bg/inside_tim_hortons_2.png"
 image tunnel = "bg/tunnel.png"
 image canada = "bg/canada.png"
 image flag = "bg/americanflag.png"
@@ -1129,7 +1130,7 @@ image gasoutside = "bg/gas_station.png"
 image carback1 = "bg/billycarback1.png"
 image hardwareinside = "bg/inside_hardware.png"
 image hardwareoutside = "bg/outside_hardware.png"
-image cultforest = "bg/forest_clearing.png"
+image cultforest = "bg/cultforest.png"
 image mcdonalds = "bg/mcdonalds_drivethru.png"
 image mcdees = "bg/mcdonalds_outside.png"
 image rushmore = "bg/mtrushmore.png"
@@ -1223,7 +1224,7 @@ image mario_inside = "bg/mario_inside.png"
 image mario_inside2 = "bg/mario_inside2.png"
 image mario_outside = "bg/mario_outside.png"
 image gnome_forest = "bg/gnome_forest.png"
-image forest_clearing = "bg/forest_clearing.jpg"
+image forest_clearing_magic = "bg/forest_clearing_magic.png"
 image bronsoncrash = "bg/bronsoncrash.png"
 
 ## Country Route
@@ -1351,7 +1352,7 @@ image lunatic_cultist flipped = "flip:characters/lunatic_cultist.png"
 image after_true_title = Text("{size=+196}Spring 202X", text_align=0.5)
 
 # CS wacky Kuwait Adventures: Mika Edition (Deluxe Content [With Funky Kong {And Dante from Devil may Cry}])
-image kuwait_city = "bg/kuwait_city.jpg"
+image kuwait_city = "bg/kuwait_city.png"
 image RCOMEM = "characters/RCOMEM.png"
 image kuwait_explosion = "bg/kuwait_explosion.png"
 image kuwait_hospital_inside = "bg/kuwait_hospital_inside.png"
@@ -1463,8 +1464,12 @@ image chopper_ladder dark = "dark:chopper_ladder.png"
 image chopper_sil = "chopper_sil.png"
 image colorbars = "colorbars.png"
 image con_screen = "bg/con_screen.png"
+image crt_magnet = "crt_magnet.png"
 image cswanted = "wanted_poster.png"
 image dog = "dog.png"
+image donut_1 = "donut_1.png"
+image donut_2 = "donut_2.png"
+image donut_3 = "donut_3.png"
 image drill = "drillymays.png"
 image drillbreak = "drillymaysfuck.png"
 image flexcake = "flexcake.png"
@@ -1503,6 +1508,7 @@ image scott_border = "scott_border.png"
 image script = "secret/script.png"
 image switch = "switch.png"
 image tbc = "tbc.png"
+image tims_dozen = "tims_dozen.png"
 image toby = "secret/toby.png"
 image walkie = "walkie.png"
 image walkie dark = "dark:walkie.png"
@@ -2123,6 +2129,7 @@ define audio.sfx_retail_beep = "sfx/sfx_retail_beep.ogg"
 define audio.sfx_ringtone = "sfx/sfx_ringtone.ogg"
 define audio.sfx_roll_window = "sfx/sfx_roll_window.ogg"
 define audio.sfx_select = "sfx/sfx_select.ogg"
+define audio.sfx_shoeslide = "sfx/sfx_shoeslide.ogg"
 define audio.sfx_siren = "sfx/sfx_siren.ogg"
 define audio.sfx_sliding_door_close = "sfx/sfx_sliding_door_close.ogg"
 define audio.sfx_sliding_door_open = "sfx/sfx_sliding_door_open.ogg"
@@ -2134,6 +2141,7 @@ define audio.sfx_sparkles = "sfx/sfx_sparkles.ogg"
 define audio.sfx_spellcast = "sfx/sfx_spellcast.ogg"
 define audio.sfx_splash = "sfx/sfx_splash.ogg"
 define audio.sfx_start_rocking = "sfx/sfx_start_rocking.ogg"
+define audio.sfx_tape_rewind = "sfx/sfx_tape_rewind.ogg"
 define audio.sfx_thunder = "sfx/sfx_thunder.ogg"
 define audio.sfx_tinnitus = "sfx/sfx_tinnitus.ogg"
 define audio.sfx_tiresqueal = "sfx/sfx_tiresqueal.ogg"

@@ -1635,7 +1635,9 @@ label train_wakeup:
     tate "Yes..."
     show mean
     mean "Cool. See you later!"
-    show mean flipped at t_mean_rollout
+    show mean flipped:
+        rotate 0
+        linear 1 rotate -180
     hide mean with moveoutleft
     n "Mean rolls away down the hall."
     show tate sheepish at left with moveoutleft

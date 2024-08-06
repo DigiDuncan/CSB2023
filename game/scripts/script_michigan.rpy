@@ -344,7 +344,7 @@ label michigan_interstate_69_old:
     gnome "If you continue to drive, you will reach a Clearing with a large Sugar Maple surrounded by a Bed of Clovers."
     billy "Where will it take us once we return to our own world?" 
     gnome "We will simply return to the Edge of the Campus. You will be able to continue your Journey smoothly."
-    scene forest_clearing
+    scene forest_clearing_magic
     show billy car
     with dissolve
     n "Billy takes the car forward and stops in front of the tree."
@@ -920,7 +920,7 @@ label michigan_interstate_69:
     pause 0.5
     show billy with vpunch
     pause 0.5
-    scene forest_clearing
+    scene forest_clearing_magic
     show billy car
     with dissolve
     n "Billy takes the car forward and stops in front of the tree."

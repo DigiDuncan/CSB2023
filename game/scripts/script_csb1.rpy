@@ -318,7 +318,6 @@ label csbi_walmart:
 
 label csbi_room:
     scene cs_room
-    show cs flipped
     with dissolve
     stop sound fadeout 2.0
     stop music fadeout 3.0
@@ -327,7 +326,8 @@ label csbi_room:
     pause 1.0
     play sound sfx_house_door_close
     n "CS arrives home and walks into the living room."
-    show cs happy flipped
+    pause 1.0
+    show cs happy flipped with moveinright
     cs "Ahhh. It's good to be home!"
     show cs surprised flipped
     cs "You know, I haven't put out a YTP in a while. I should work on one of my in-progress ones."
@@ -680,7 +680,7 @@ label csbi_rosen_house:
     n "Michael sighs and facepalms."
     play sound sfx_michael_facepalm
     show cs disappointed flipped
-    pause 2.0
+    pause 3.0
     play sound sfx_doorbell volume 0.5 
     n "The doorbell rings."
     michael "Oh! My other guest is here! Please excuse me for just one moment..."
@@ -714,8 +714,8 @@ label csbi_rosen_house:
     with MoveTransition(0.25)
     michael_nobeep "Blarrrgh!" with hpunch
     n "Michael spits out the Flex Cake."
-    michael "This is horrible!"
-    michael "Get out! Get out of here!"
+    michael "This is {i}horrible!"
+    michael "Get {i}out!{/i} Get out of here!"
     phil "But, it seals, and bonds--{w=0.5}{nw}"
     michael "{i}OUT!"
     hide phil with moveoutright
@@ -724,11 +724,11 @@ label csbi_rosen_house:
     play sound sfx_house_door_open
     pause 1.0
     play sound sfx_house_door_close
-    pause 2.0
+    pause 3.0
     michael "I need something to drink..."
     michael "CS, did you bring that drink?"
     show cs happy flipped
-    cs "Sure thing! Here you go."
+    cs "Sure did! Here you go!"
     show genergy at manual_pos(1400, 500) with dissolve
     show genergy at manual_pos(300, 500) with MoveTransition(0.5)
     michael "Goodness."
@@ -737,7 +737,7 @@ label csbi_rosen_house:
     hide genergy with dissolve
     pause 3.0
     show cs worried flipped
-    michael "Quick! Get out!" with vpunch
+    michael "{i}Quick!{/i} Get out!" with vpunch
     cs "What's going on?"
     michael "The Genergyfoogle is here! It's come to eat us {i}all!"
     cs "Oh, man... did that Genergy have something {i}else{/i} in it?!"
@@ -773,7 +773,7 @@ label csbi_end:
     pause 1.0
     show cs flipped at offscreenright with determination
     show cs flipped at center with moveinright
-    n "CS arrives home once again."
+    n "CS returns home once again."
     pause 1.0
     show cs disappointed
     cs "What?! They're gone? Already?"
@@ -788,6 +788,7 @@ label csbi_end:
     cs "Stupid craptop, turn {i}on!"
     n "CS tries to turn it on again.{w} Nothing."
     cs "Maybe it finally died..."
+    "..."
     cs "Wait..."
     cs "The last people in this room were the HoH SiS guys!"
     cs "They must have messed with it!"
@@ -827,14 +828,16 @@ label csbi_end:
     show worker_1 at right with moveinright
     dxcom hohsisfight
     worker_1 "I don't know!!"
+    $ persistent.seen.add("hoh_worker")
     cs "BullShisH!"
     n "CS punches the worker!"
+    show cs angry at mid_right with MoveTransition(0.25)
     play sound sfx_punch
     with hpunch
-    $ persistent.seen.add("hoh_worker")
     show worker_1 at offscreenright with MoveTransition(0.5):
         linear 0.25 xzoom -1
         linear 0.25 xzoom 1
+    show cs angry at center with MoveTransition(0.5)
     show worker_2 at right with moveinright
     worker_2 "They-- They're on the roof!"
     cs "Good!"
