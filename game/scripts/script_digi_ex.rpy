@@ -357,9 +357,10 @@ init 1:
     image num_blossom_small:
         SnowBlossom("num", 100, start = 0.1, fast = True, xspeed = (0, 0), yspeed = (50, 100), border = 1000)
         zoom 0.5
-    image num_blossom_small_2:
-        SnowBlossom("num", 100, start = 0.1, fast = True, xspeed = (0, 0), yspeed = (50, 100), border = 1000)
-        zoom 0.5
+
+init 2 python:
+    for i in range(24):
+        renpy.image(f"note_{i}", DynamicDisplayable(charm_arrow_bf))
 
 image digi ex:
     "characters/digi.png"
@@ -423,6 +424,19 @@ transform t_glitch:
     pause 0
     repeat
 
+transform note(index):
+    xanchor 0.5
+    yanchor 0.5
+    zoom (0.75 / 2) + (0.05 * abs(index - 8))
+    zpos -0.5
+    ypos 0.5
+    xpos (1 / 14) * (index - 1)
+    parallel:
+        linear 0.5 xpos (1 / 14) * index
+    parallel:
+        linear 0.5 zoom (0.75 / 2) + (0.05 * abs(index - 7))
+    repeat
+
 image code = DynamicDisplayable(show_code_big)
 image code2 = DynamicDisplayable(show_code_small)
 
@@ -483,26 +497,35 @@ label dx_digi_corruption:
     show num_blossom_small at t_glitch onlayer fore1:
         zpos -1
         zzoom True
-    show num_blossom_small_2 at t_glitch onlayer fore1:
+    show num_blossom_small at t_glitch onlayer fore1 as duplicate:
         zpos -1
         zzoom True
         xpos 0.5
     show arrow_mno at truecenter, alpha(0.8), zoom(2) onlayer digi
-    show arrow_bf at t_player_arrow onlayer digi
+    # show arrow_bf at t_player_arrow, zoom(0.8) onlayer digi
+
+    python:
+        for i in range(24):
+            renpy.show(f"note_{i}", [note(i)], layer = "fore1")
+
     show digi ex at t_digi_ex_idle onlayer digi
     show num_blossom at t_glitch onlayer fore2:
         zpos 1
 
     play music missingno_start
     queue music missingno_loop
-    show black with Fade(0.0, 0.0, 5.0)
 
     $ config.window_show_transition = None
+    $ config.window_hide_transition = None
+
+    show black with Fade(0.0, 0.0, 5.0)
 
     digi_ex "Enjoy the show."
     window hide
 
-    $ config.window_show_transition = Dissolve(.2)
-
     pause
+
+    $ config.window_show_transition = Dissolve(.2)
+    $ config.window_hide_transition = Dissolve(.2)
+
     return
