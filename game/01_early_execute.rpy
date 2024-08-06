@@ -207,6 +207,12 @@ init python:
         zo = math.pow(2, 10 * x - 10)
         return lerp(minimum, maximum, zo)
 
+    def easeout_circ(minimum: float, maximum: float, start: float, end: float, x: float) -> float:
+        """https://easings.net/#easeOutCirc"""
+        x = find_percent(start, end, x)
+        zo = math.sqrt(1 - math.pow(x - 1, 2))
+        return lerp(minimum, maximum, zo)
+
     # I think I stole this from SizeBot, don't tell anyone
     def sentence_join(items, *, joiner=None, oxford=False) -> str:
         """Join a list of strings like a sentence."""

@@ -7,6 +7,8 @@ init python:
     chart_enemy = renpy.open_file("secret/dd/missingno_enemy.json", "utf-8").read()
     chart_player = renpy.open_file("secret/dd/missingno_player.json", "utf-8").read()
 
+    _current_st = 0
+
     LOOP_POINT = 44.702
     LOOP_LENGTH = 125.825
     SONG_END = LOOP_POINT + LOOP_LENGTH
@@ -43,6 +45,8 @@ init python:
     player_chart_index = Index(player_chart_data, "time")
 
     def charm_arrow(st, at, index, note_type = "charm"):
+        global _current_st
+        _current_st = st
         if st > SONG_END:
             st = ((st - LOOP_POINT) % LOOP_LENGTH) + LOOP_POINT
         latest_note = index.lteq(st)
@@ -58,10 +62,58 @@ init python:
     def charm_arrow_mno(st, at):
         return charm_arrow(st, at, enemy_chart_index, "blue")
 
+    def move_dir(st, index, dist) -> tuple[float, float]:
+        if st > SONG_END:
+            st = ((st - LOOP_POINT) % LOOP_LENGTH) + LOOP_POINT
+        latest_note = index.lteq(st)
+        if latest_note:
+            rt = st - latest_note.time
+            a = easeout_circ(0, dist, 0, 0.1, rt) if rt < 0.1 else ease_quad(dist, 0, 0.1 + latest_note.length, 0.5 + latest_note.length, rt)
+            if latest_note.lane == 0:
+                # right
+                r = (0, a)
+            elif latest_note.lane == 1:
+                # left
+                r = (0, -a)
+            elif latest_note.lane == 2:
+                # up
+                r = (-a, 0)
+            elif latest_note.lane == 3:
+                # down
+                r = (a, 0)
+            else:
+                r = (0, 0)
+        else:
+            r = (0, 0)
+        return r
+
+    def digi_ex_displayable(st, at):
+        # img = "secret/dd/digi_back.png" if 5 < st % 20 < 15 else "images/characters/digi.png"
+        img = "images/characters/digi.png"
+        return Transform(img,
+            xanchor = 0.5, yanchor = 0.5,
+            xpos = 0.5 + move_dir(st, enemy_chart_index, 0.05)[1],
+            ypos = 0.4 + move_dir(st, enemy_chart_index, 0.05)[0] + ease_quad(0, 0.025, 0, 1, abs(st % 2 - 1))
+        ), 0.025
+
+    def flash_f(st, at):
+        if st > SONG_END:
+            st = ((st - LOOP_POINT) % LOOP_LENGTH) + LOOP_POINT
+        st += 0.5
+        a1 = ease_linear(127, 0, 66, 66.25, st)
+        a2 = ease_linear(127, 0, 66.25, 66.5, st)
+        if 66.5 > st and st < 66:
+            return Null(1920, 1080), 0.01
+        else:
+            a = a1 if st < 66.25 else a2
+            return Solid((255, 255, 255, a)), 0.01
+        
+
     renpy.add_layer("back", above = "master")
     renpy.add_layer("fore1", above = "back")
     renpy.add_layer("digi", above = "fore1")
     renpy.add_layer("fore2", above = "digi")
+    renpy.add_layer("fore3", above = "fore2")
 
 init python:
     # https://www.shadertoy.com/view/tlVGDt
@@ -352,6 +404,8 @@ init 0:
     image arrow_bf = DynamicDisplayable(charm_arrow_bf)
     image arrow_mno = DynamicDisplayable(charm_arrow_mno)
     image digi back = "secret/dd/digi_back.png"
+    image digi ex = DynamicDisplayable(digi_ex_displayable)
+    image flash = DynamicDisplayable(flash_f)
 init 1:
     image num_blossom = SnowBlossom("num", 20, start = 0.1, fast = True, xspeed = (0, 0))
     image num_blossom_small:
@@ -361,13 +415,6 @@ init 1:
 init 2 python:
     for i in range(24):
         renpy.image(f"note_{i}", DynamicDisplayable(charm_arrow_bf))
-
-image digi ex:
-    "characters/digi.png"
-    alignaround (0.5, 0.5)
-    align (0.5, 0.5)
-    pos (0.5, 0.4)
-    zoom 0.5
 
 transform t_bg_blur:
     blur 20
@@ -384,35 +431,12 @@ transform t_player_arrow:
     ypos 0.85
 
 transform t_digi_ex_idle:
-    yanchor 0.5
-    ypos 0.4
-    xalign 0.5
     zoom 0.66
-    parallel:
-        ease 1 ypos 0.425
-        ease 1 ypos 0.4
-        repeat
-    parallel:
-        "digi"
-        linear 5 yrotate 90
-        "digi back"
-        linear 10 yrotate 270
-        "digi"
-        linear 5 yrotate 360
-        yrotate 0
-        repeat
-    parallel:
-        shader "shader.digilight"
-        u_ambient (0.4, 0.4, 0.4)
-        u_left (0.0, 0.3, 0.6)
-        u_right (0.0, 0.0, 0.6)
-        u_flip 1.0
-        linear 5 u_flip 1.0
-        u_flip -1.0
-        linear 10 u_flip -1.0
-        u_flip 1.0
-        linear 5 u_flip 1.0
-        repeat
+    shader "shader.digilight"
+    u_ambient (0.4, 0.4, 0.4)
+    u_left (0.0, 0.3, 0.6)
+    u_right (0.0, 0.0, 0.6)
+    u_flip 0.5
 
 transform t_octograms:
     shader "shader.octagrams"
@@ -501,7 +525,7 @@ label dx_digi_corruption:
         zpos -1
         zzoom True
         xpos 0.5
-    show arrow_mno at truecenter, alpha(0.8), zoom(2) onlayer digi
+    show arrow_mno at truecenter, alpha(0.8), zoom(2) onlayer fore1
     # show arrow_bf at t_player_arrow, zoom(0.8) onlayer digi
 
     python:
@@ -511,6 +535,8 @@ label dx_digi_corruption:
     show digi ex at t_digi_ex_idle onlayer digi
     show num_blossom at t_glitch onlayer fore2:
         zpos 1
+
+    show flash onlayer fore3
 
     play music missingno_start
     queue music missingno_loop
