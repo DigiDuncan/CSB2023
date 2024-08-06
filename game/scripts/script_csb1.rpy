@@ -498,8 +498,9 @@ label csbi_room:
     ed "Come on in, guys. Coast is clear."
     show ed at right
     show wesley at center with dissolve
-    show rich at left with dissolve
+    show rich flipped at left with dissolve
     rich "It's about time!"
+    show wesley flipped
     wesley "We can finally get our revenge!"
     ed "Yep! We have been laughed at on the internet for long enough!"
     ed "We'll show him what happens when you tarnish our good name!"
@@ -509,6 +510,7 @@ label csbi_room:
     "Ed, Wesley, and Richard" "Hmm..."
     pause 2.0
     wesley "Let's go check this other room. We might get some ideas."
+    show ed flipped with determination
     hide ed
     hide wesley
     hide rich
@@ -516,23 +518,32 @@ label csbi_room:
     scene black with dissolve
     pause 1.0
     scene cs_room_2 with dissolve
-    show ed at right
-    show wesley at center
-    show rich at left
+    show ed flipped at right
+    show wesley flipped at center
+    show rich flipped at left
     with moveinleft
+    show ed with determination
     n "The three HoH SiS workers enter CS' bedroom."
+    show wesley
+    show rich
     wesley "Wow, I didn't know CS had a Union Jack!"
     rich "CS sure loves those Brits~!"
+    show rich flipped
+    show wesley flipped
     ed "Alright, boys. We didn't come here to admire the décor."
     ed "What should we do in here?"
+    show wesley
     wesley "How about we burn down the house?"
     rich "Eh..."
+    show wesley flipped
     ed "Are you insane?! We are a {i}home repair company!{/i}"
     ed "We have a reputation to uphold!"
     wesley "{i}Do{/i} we? After all of those videos he put out making fun of us?"
+    show wesley
     rich "Wait, I've got it!"
     rich "How about we mess with his laptop?"
     rich "That's what he used to {i}make{/i} those awful videos in the first place!"
+    show wesley flipped
     ed "Now, {i}that's{/i} more like it! Rich, you're a genius!"
     ed "Let's get to sabotagin'!"
     scene craptop_bg

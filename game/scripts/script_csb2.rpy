@@ -91,9 +91,13 @@ label csbii_chop:
     n "CS chops Wesley in the chest and he flies off the roof!"
     show cs angry at mid_mid_right with MoveTransition(0.25)
     play sound sfx_chop
-    show wesley at offscreenright with MoveTransition(0.25):
-        linear 0.1 xzoom -1
-        linear 0.1 xzoom 1
+    hide wesley
+    show wesleytop at right
+    show wesleybottom at right
+    show wesleytop at Move((0.7 , 0.15), (1.75, -0.3), 2, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show wesleybottom at Move((0.7 , 0.15), (1.75, 0.5), 2, repeat=False, bounce=False, xanchor="left", yanchor="top")
+
+
     pause 0.5
     cs "I sawed this foundation repairman in half!"
     show ed_phone at offscreenright with determination
@@ -165,8 +169,13 @@ label csbii_special:
     ed "{sc=1.88}{color=#CB50FF}Everything is fine here, officer. No need to come here."
     ed "Wait, what just happened?!"
     n "CS quickly puts all the workers to sleep."
-    show ed_phone at manual_pos(0.8, 2.0):
+    show ed_phone at manual_pos(0.6, 0.40):
         linear 0.5 rotate 45
+    with MoveTransition(0.5)
+    play sound sfx_punch
+    with vpunch
+    show wesley at manual_pos(0.7, 0.40):
+        linear 0.5 rotate-45
     with MoveTransition(0.5)
     play sound sfx_punch
     with vpunch
@@ -188,7 +197,7 @@ label csbii_special:
     play sound sfx_siren loop
     show blue_light at left
     show red_light at right
-    show copguy behind blue_light, red_light at right with moveinright
+    show copguy behind blue_light, red_light at right with easeinright
     show cs surprised
     copguy "Freeze! Put your hands in the air!"
     stop sound fadeout 1.0

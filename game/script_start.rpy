@@ -831,9 +831,14 @@ image hart2 = "characters/hart2.png"
 
 # HoH SiS 
 image rich = "characters/rich.png"
+image rich flipped = "flip:characters/rich.png"
 image ed = "characters/ed.png"
+image ed flipped = "flip:characters/ed.png"
 image ed phone = "characters/ed_phone.png"
+image wesleytop = "characters/wesleytop.png"
+image wesleybottom = "characters/wesleybottom.png"
 image wesley = "characters/wesley.png"
+image wesley flipped = "flip:characters/wesley.png"
 image worker_1 = "characters/worker_corn.png"
 image worker_2 = "characters/worker_blank.png"
 image worker_3 = "flip:characters/mean/meanhohsis1.png" # It's Mean!

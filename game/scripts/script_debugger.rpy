@@ -1287,7 +1287,8 @@ label asset_debugger:
         scene course_3
         show mean_hat at center
         show cs surprised phone at left
-        $ spritetotal += 2
+        show wesleybottom at mid_left_left
+        $ spritetotal += 3
         monika "test 67{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -1305,7 +1306,11 @@ label asset_debugger:
         show brooch at center
         show mean human shocked hat at mid_left
         show cs surprised phone flipped at left
-        $ spritetotal += 5
+        show ed flipped at mid_mid_right
+        show rich flipped at mid_right
+        show wesley flipped at mid_right_right
+        show wesleytop at right
+        $ spritetotal += 9
         lancer "test 68{w=0.5}{nw}"
         $ charactertotal += 1
     else:
