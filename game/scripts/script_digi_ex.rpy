@@ -4,8 +4,8 @@ init python:
     import json
 
     line_list = renpy.open_file("secret/dd/code.txt", "utf-8").read().replace("[", "[[").split("\n")
-    chart_player = renpy.open_file("secret/dd/missingno_player.json", "utf-8").read()
     chart_enemy = renpy.open_file("secret/dd/missingno_enemy.json", "utf-8").read()
+    chart_player = renpy.open_file("secret/dd/missingno_player.json", "utf-8").read()
 
     LOOP_POINT = 44.702
     LOOP_LENGTH = 125.825
@@ -17,9 +17,6 @@ init python:
             self.lane = lane
             self.type = type
             self.length = length
-
-    def _dict_to_note(d: dict):
-        return Note(d["time"], d["lane"], d["type"], d["length"])
 
     def show_code(st, at, addtl = 100):
         lines = int(st * 5) % 171
@@ -35,12 +32,19 @@ init python:
     def show_code_small(st, at):
         return show_code(st, at, 100)
 
-    def charm_arrow(st, at, chart, note_type = "charm"):
+    def _dict_to_note(d: dict):
+        return Note(d["time"], d["lane"], d["type"], d["length"])
+
+    enemy_json_data = json.loads(chart_enemy)
+    player_json_data = json.loads(chart_player)
+    enemy_chart_data = [_dict_to_note(n) for n in enemy_json_data]
+    player_chart_data = [_dict_to_note(n) for n in player_json_data]
+    enemy_chart_index = Index(enemy_chart_data, "time")
+    player_chart_index = Index(player_chart_data, "time")
+
+    def charm_arrow(st, at, index, note_type = "charm"):
         if st > SONG_END:
             st = ((st - LOOP_POINT) % LOOP_LENGTH) + LOOP_POINT
-        j = json.loads(chart)
-        chart_data = [_dict_to_note(n) for n in j]
-        index = Index(chart_data, "time")
         latest_note = index.lteq(st)
         if latest_note:
             a = ease_linear(1, 0, latest_note.time + latest_note.length, latest_note.time + latest_note.length + 0.25, st)
@@ -49,10 +53,10 @@ init python:
             return Null(width = 128), 0.01
 
     def charm_arrow_bf(st, at):
-        return charm_arrow(st, at, chart_player, "heal")
+        return charm_arrow(st, at, player_chart_index, "heal")
 
     def charm_arrow_mno(st, at):
-        return charm_arrow(st, at, chart_enemy, "blue")
+        return charm_arrow(st, at, enemy_chart_index, "blue")
 
     renpy.add_layer("back", above = "master")
     renpy.add_layer("fore1", above = "back")
@@ -493,7 +497,12 @@ label dx_digi_corruption:
     queue music missingno_loop
     show black with Fade(0.0, 0.0, 5.0)
 
+    $ config.window_show_transition = None
+
     digi_ex "Enjoy the show."
     window hide
+
+    $ config.window_show_transition = Dissolve(.2)
+
     pause
     return
