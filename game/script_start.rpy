@@ -1334,6 +1334,7 @@ image cult_con = "bg/cult_con.png"
 image blue_branch = "bg/bluebranch.png"
 image renault_inside = "bg/renault_inside.png"
 image cult_zone1 = "bg/cultzone1.png"
+image conferencetv = "bg/conferencetv.png"
 
 # Back to the future: CS edition characters
 image renovator = "characters/renovator.png"
@@ -2018,6 +2019,7 @@ define audio.ten_feet_away_1 = "10_feet_away_1.wav"
 define audio.ten_feet_away_2 = "10_feet_away_2.wav"
 define audio.ten_feet_away_3 = "10_feet_away_3.wav"
 define audio.ten_feet_away_4 = "10_feet_away_4.wav"
+define audio.interference2 = "<from 276>interference.ogg"
 
 # CSBIII DX Finale Music
 define audio.funvalueland = "funvalueland.ogg"
@@ -2518,6 +2520,38 @@ label test:
 
 define shake1 = { "master" : hpunch }
 define shake2 = { "master" : vpunch }
+
+screen cultcon_votes():
+    text "Top 5 Winners!" textalign 0.5 size 72 xalign 0.5 yalign 0.15:
+        font "fonts/digital-7.ttf"
+        color "#ff0000"
+    hbox xalign 0.5 yalign 0.15:
+        spacing 50
+    text "Blue Branch: [total_votes]" textalign 0.5 size 48 xalign 0.5 yalign 0.3:
+        font "fonts/digital-7.ttf"
+        color "#ff0000"
+    hbox xalign 0.5 yalign 0.3:
+        spacing 50
+    text "Scientology: 70" textalign 0.5 size 48 xalign 0.5 yalign 0.4:
+        font "fonts/digital-7.ttf"
+        color "#ff0000"
+    hbox xalign 0.5 yalign 0.4:
+        spacing 50
+    text "Society of the Blind Eye: 35" textalign 0.5 size 48 xalign 0.5 yalign 0.5:
+        font "fonts/digital-7.ttf"
+        color "#ff0000"
+    hbox xalign 0.5 yalign 0.5:
+        spacing 50
+    text "Lunatic Cultists: 27" textalign 0.5 size 48 xalign 0.5 yalign 0.6:
+        font "fonts/digital-7.ttf"
+        color "#ff0000"
+    hbox xalign 0.5 yalign 0.6:
+        spacing 50
+    text "Pencil Cult: 10" textalign 0.5 size 48 xalign 0.5 yalign 0.7:
+        font "fonts/digital-7.ttf"
+        color "#ff0000"
+    hbox xalign 0.5 yalign 0.7:
+        spacing 50
 
 screen debugger_menu():
     text "Stats" textalign 0.5 size 72 xalign 0.5 yalign 0.0
