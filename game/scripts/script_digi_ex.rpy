@@ -21,15 +21,21 @@ init python:
     def _dict_to_note(d: dict):
         return Note(d["time"], d["lane"], d["type"], d["length"])
 
-    def show_code(st, at):
+    def show_code(st, at, addtl = 100):
         lines = int(st * 5) % 171
-        lines2 = lines + 100
+        lines2 = lines + addtl
         t = "\n".join((line_list + line_list)[lines:lines2])
         c = str(t)
         d = Text(c, size = 20, font = "FiraCode-Retina.ttf", color = "#ffffff77")
         return d, 0.2
 
-    def charm_arrow(st, at, chart):
+    def show_code_big(st, at):
+        return show_code(st, at, 50)
+
+    def show_code_small(st, at):
+        return show_code(st, at, 100)
+
+    def charm_arrow(st, at, chart, note_type = "charm"):
         if st > SONG_END:
             st = ((st - LOOP_POINT) % LOOP_LENGTH) + LOOP_POINT
         j = json.loads(chart)
@@ -38,15 +44,15 @@ init python:
         latest_note = index.lteq(st)
         if latest_note:
             a = ease_linear(1, 0, latest_note.time + latest_note.length, latest_note.time + latest_note.length + 0.25, st)
-            return Transform(Image(f"secret/dd/charm_{latest_note.lane}.png"), alpha = a), 0.01
+            return Transform(Image(f"secret/dd/{note_type}_{latest_note.lane}.png"), alpha = a), 0.01
         else:
             return Null(width = 128), 0.01
 
     def charm_arrow_bf(st, at):
-        return charm_arrow(st, at, chart_player)
+        return charm_arrow(st, at, chart_player, "heal")
 
     def charm_arrow_mno(st, at):
-        return charm_arrow(st, at, chart_enemy)
+        return charm_arrow(st, at, chart_enemy, "blue")
 
     renpy.add_layer("back", above = "master")
     renpy.add_layer("fore1", above = "back")
@@ -413,8 +419,8 @@ transform t_glitch:
     pause 0
     repeat
 
-image code = DynamicDisplayable(show_code)
-image code2 = DynamicDisplayable(show_code)
+image code = DynamicDisplayable(show_code_big)
+image code2 = DynamicDisplayable(show_code_small)
 
 define audio.missingno_start = "secret/dd/missingno_start.ogg"
 define audio.missingno_loop = "secret/dd/missingno_loop.ogg"
@@ -477,7 +483,7 @@ label dx_digi_corruption:
         zpos -1
         zzoom True
         xpos 0.5
-    show arrow_mno at truecenter, alpha(0.5), zoom(2) onlayer digi
+    show arrow_mno at truecenter, alpha(0.8), zoom(2) onlayer digi
     show arrow_bf at t_player_arrow onlayer digi
     show digi ex at t_digi_ex_idle onlayer digi
     show num_blossom at t_glitch onlayer fore2:
@@ -487,12 +493,7 @@ label dx_digi_corruption:
     queue music missingno_loop
     show black with Fade(0.0, 0.0, 5.0)
 
-    digi_ex "So, this is it."
-    digi_ex "Well, not {i}it."
-    digi_ex "I wanted this to be grander,\nbut I couldn't wait any longer."
-    digi_ex "I hope this was worth the wait."
-    digi_ex "I anticpate this isn't the last you'll see of this."
-    digi_ex "Thanks for putting up with me :)"
+    digi_ex "Enjoy the show."
     window hide
     pause
     return
