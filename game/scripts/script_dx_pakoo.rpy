@@ -1462,6 +1462,14 @@ label dx_after_branch_ask2:
     n "Returning to menu for now."
     return
 
+label dx_after_convention_end:
+    play music interference2
+    scene conferencetv with fade
+    cultist "Here are the results!"
+    scene conferencetv at Move((0.0 , -1.0), (0.0, 0.0), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    pause 3.0
+    show screen cultcon_votes
+    pause
 
 label dx_after_renault:
     stop music fadeout 1.0
