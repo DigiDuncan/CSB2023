@@ -45,12 +45,27 @@ label finale_train_takeoff:
     scene car plains night
     show flying_train_final at center with easeinright
     cs "We... are... flying!"
+    scene amtrak_coach_1 at t_train_scurvy
+    show michael at truecenter, t_people_scurvy
+    show cashier at manual_pos(0.8,0.5), t_people_scurvy
+    with dissolve
     michael "What the bloody hell is going on?!"
+    show amtrak_conductor flipped at manual_pos(0.0,0.4), t_people_scurvy with moveinleft
     amtrak_conductor "The storm has managed to pick up the train!"
     cashier "What the hell? What kind of storm is this??"
     amtrak_conductor "It's a corruption storm, or at least that's what we calling it now."
     amtrak_conductor "I need to get back up to the front, no one get near the doors!"
     michael "I think that's out of our control, but okay!"
+    show amtrak_conductor with determination
+    hide amtrak_conductor with moveoutleft
+    scene amtrak_cab at t_train_scurvy
+    show cs worried flipped at right, t_people_scurvy
+    show mean tired at mid_right, t_people_scurvy
+    with dissolve
+    show amtrak_conductor flipped at center, t_people_scurvy with moveinright
+    show amtrak_conductor with determination
+
+
     cs "Hey, your back!"
     amtrak_conductor "Mean! Why aren't you in your human form?"
     amtrak_conductor "You can't drive like that!"

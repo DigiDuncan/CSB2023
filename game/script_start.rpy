@@ -391,6 +391,23 @@ transform t_evil_mika:
     xalign 0.5
     yalign 1.0
 
+transform t_train_scurvy:
+    zoom 1.5
+    xanchor 0.25
+    yanchor 0.335
+    ease 2.0 rotate 15
+    ease 2.0 rotate -15
+    repeat
+
+transform t_people_scurvy:
+    zoom 1.0
+    xanchor 0.25
+    yanchor 0.335
+    ease 2.0 rotate 15
+    ease 2.0 rotate -15
+    repeat
+
+
 # Character Definitions
 define n = Character(None, what_italic = True, callback = char_callback)  # Narrator
 define cs = Character("cs188", callback = renpy.partial(char_callback, name = "cs", beep = "cs"))
