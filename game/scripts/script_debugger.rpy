@@ -1300,11 +1300,12 @@ label asset_debugger:
         play music hightop
         $ bgtotal += 1
         scene canada_block
+        show tims_dozen at mid_left_left
         show lupin stand hat dark flipped at mid_mid_left
         show brooch at center
         show mean human shocked hat at mid_left
         show cs surprised phone flipped at left
-        $ spritetotal += 4
+        $ spritetotal += 5
         lancer "test 68{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -1317,12 +1318,16 @@ label asset_debugger:
         play music hired_guns
         $ bgtotal += 1
         scene dealership
+        show dount_2 at mid_right_right
+        show donut_1 at mid_mid_right
+        show crt_magnet at mid_left_left
         show walkie dark at mid_right
         show lupin stand hat dark at mid_mid_left
         show lego_jail at center
         show mean human shocked hat flipped at mid_left
         show cs pissed phone at left
-        $ spritetotal += 5
+        show donut_3 at right
+        $ spritetotal += 9
         tate "test 69{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -1335,12 +1340,16 @@ label asset_debugger:
         play music hitmewithyourbestshot
         $ bgtotal += 1
         scene dealer_cars
+        show pringles at mid_left_left
         show lego_jail dark at mid_right
         show lupin stand dark at mid_mid_left
         show switch at center
         show mean human angry hat at mid_left
         show cs pissed phone flipped at left
-        $ spritetotal += 5
+        show walmart_bag at mid_mid_right
+        show nova discord at mid_right_right
+        show flexcake at right
+        $ spritetotal += 9
         kitty "test 70{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -1353,13 +1362,16 @@ label asset_debugger:
         play music hitsquad_2
         $ bgtotal += 1
         scene flintcar_outside
+        show spent_bits at mid_right_right
+        show spent_11_88 at mid_mid_right
         show petal1 at mid_left_left
         show chopper_ladder dark at mid_right
         show lupin run hat dark flipped at mid_mid_left
         show tbc at center
         show mean human angry hat flipped at mid_left
         show cs concentrate phone at left
-        $ spritetotal += 6
+        show genergy at right
+        $ spritetotal += 9
         obama "test 71{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -1899,8 +1911,8 @@ label asset_debugger:
         play music penthouse
         $ bgtotal += 1
         scene csmore
-        show cs at t_mean_rollout
-        $ transformtotal += 1
+        $ spritetotal += 1
+        show cs prison flipped at center
         pomni "test 109{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -1912,29 +1924,41 @@ label asset_debugger:
         play music pixel_peeker_polka
         $ bgtotal += 1
         scene omaha
+        $ spritetotal += 1
+        show cs insane worried dark at center
         average_swede "test 110{w=0.5}{nw}"
         $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(111):
+        $ sfxtotal += 1
+        play sound sfx_bluescreen
         $ musictotal += 1
         play music pokey
         $ bgtotal += 1
         scene alleyway
+        $ spritetotal += 1
+        show cs insane worried flipped dark at center
         alien "test 111{w=0.5}{nw}"
         $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(112):
+        $ sfxtotal += 1
+        play sound sfx_dial_hohsis
         $ musictotal += 1
         play music police_station
         $ bgtotal += 1
         scene peppinopizzabg
+        $ spritetotal += 1
+        show cs insane disappointed dark at center
         moomin "test 112{w=0.5}{nw}"
         $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(113):
+        $ sfxtotal += 1
+        play sound sfx_dial_rosen
         $ musictotal += 1
         play music pressing_pursuit_cornered
         $ bgtotal += 1
@@ -1944,6 +1968,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(114):
+        $ sfxtotal += 1
+        play sound sfx_michael_eat
         $ musictotal += 1
         play music price_right
         $ bgtotal += 1
@@ -1955,6 +1981,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(115):
+        $ sfxtotal += 1
+        play sound sfx_michael_facepalm
         $ musictotal += 1
         play music prophet_2001
         $ bgtotal += 1
@@ -1966,6 +1994,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(116):
+        $ sfxtotal += 1
+        play sound sfx_moneyfalls
         $ musictotal += 1
         play music prophetpart2
         $ bgtotal += 1
@@ -1977,6 +2007,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(117):
+        $ sfxtotal += 1
+        play sound sfx_noicepop
         $ musictotal += 1
         play music real_world
         $ bgtotal += 1
@@ -1986,6 +2018,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(118):
+        $ sfxtotal += 1
+        play sound sfx_retail_beep
         $ musictotal += 1
         play music rosens_loop
         $ bgtotal += 1
@@ -1995,6 +2029,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(119):
+        $ sfxtotal += 1
+        play sound sfx_house_door_close
         $ musictotal += 1
         play music scales_of_joy
         $ bgtotal += 1
@@ -2006,6 +2042,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(120):
+        $ sfxtotal += 1
+        play sound sfx_house_door_open
         $ musictotal += 1
         play music school
         $ bgtotal += 1
@@ -2017,6 +2055,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(121):
+        $ sfxtotal += 1
+        play sound sfx_shoeslide
         $ musictotal += 1
         play music showtime
         $ bgtotal += 1
@@ -2028,6 +2068,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(122):
+        $ sfxtotal += 1
+        play sound sfx_tape_rewind
         $ musictotal += 1
         play music snufin
         $ bgtotal += 1
@@ -2612,13 +2654,15 @@ label asset_debugger:
         jump exit_debug
     if fun_value(191):
         $ musictotal += 1
-        play music albu
+        play music interference2
         $ bgtotal += 1
         scene cafe_sitting_2
-        pause 0.1
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(192):
+        $ musictotal += 1
+        play music albu
         $ bgtotal += 1
         scene trafficjam
         pause 0.1
@@ -2662,7 +2706,7 @@ label asset_debugger:
         jump exit_debug
     if fun_value(199):
         $ bgtotal += 1
-        scene forest_clearing
+        scene forest_clearing_magic
         pause 0.1
     else:
         jump exit_debug
@@ -3746,17 +3790,35 @@ label asset_debugger:
         jump exit_debug   
     if fun_value (382):
         $ bgtotal += 1
-        scene lupin_escape
+        scene lupin_escape_1
         pause 0.1
     else:
         jump exit_debug
-    if fun_value (382):
+    if fun_value (383):
         $ bgtotal += 1
         scene hutchinson_stn_lights
         pause 0.1
     else:
         jump exit_debug 
-    
+    if fun_value (384):
+        $ bgtotal += 1
+        scene lupin_escape_2
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value (385):
+        $ bgtotal += 1
+        scene conferencetv
+        pause 0.1
+    else:
+        jump exit_debug
+    if fun_value (386):
+        $ bgtotal += 1
+        scene inside_tim_hortons_2
+        pause 0.1
+    else:
+        jump exit_debug
+
     n "Done."
     show screen debugger_menu
     pause
