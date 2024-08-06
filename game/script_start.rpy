@@ -214,9 +214,9 @@ transform mid_offscreen_left:
     
 # i got tired.
 # if ALL you need is a simple custom placement, no zoom/motion/effects, just use this please. - tate
-transform manual_pos(x,y):
-    xanchor 0
-    yanchor 0
+transform manual_pos(x, y, this_anchor = 0):
+    xanchor this_anchor
+    yanchor this_anchor
     xpos x
     ypos y
     
@@ -405,8 +405,8 @@ define discord = Character("Discord", callback = char_callback)
 define nova = Character("Nova", callback = renpy.partial(char_callback, name = "nova"))
 define carguy = Character("Carguy", callback = renpy.partial(char_callback, name = "carguy", beep = "nice"))
 define carguy_nobeep = Character("Carguy", callback = renpy.partial(char_callback, name = "carguy", play_beeps = False))
-define greeter = Character("Greeter", callback = renpy.partial(char_callback, name = "doug"))
-define doug = Character("Doug", callback = renpy.partial(char_callback, name = "doug"))
+define greeter = Character("Greeter", callback = renpy.partial(char_callback, name = "doug", beep = "doug"))
+define doug = Character("Doug", callback = renpy.partial(char_callback, name = "doug", beep = "doug"))
 define cashier = Character("Cashier", callback = renpy.partial(char_callback, name = "cashier"))
 define ycs = Character("Young CS", callback = renpy.partial(char_callback, beep = "ycs"))
 define hoh_operator = Character("HoH SiS Operator", callback = char_callback)
@@ -508,10 +508,10 @@ define ikea_worker = Character("Ikea Worker", callback = char_callback)
 define pomni = Character("Pomni", callback = renpy.partial(char_callback, name = "pomni", beep = "pomni"))
 define average_swede = Character("Swede", callback = char_callback)
 define alien = Character("Grey", callback = char_callback)
-define moomin = Character("Moomin", callback = renpy.partial(char_callback, name = "moomin"))  # DX: Beep
-define snufkin = Character("Snufkin", callback = renpy.partial(char_callback, name = "snufkin"))  # DX: Beep
-define alicia = Character("Alicia", callback = renpy.partial(char_callback, name = "alicia"))
-define witch = Character("Witch", callback = renpy.partial(char_callback, name = "witch"))  # DX: Beep
+define moomin = Character("Moomin", callback = renpy.partial(char_callback, name = "moomin", beep = "moomin"))
+define snufkin = Character("Snufkin", callback = renpy.partial(char_callback, name = "snufkin", beep = "snufkin"))
+define alicia = Character("Alicia", callback = renpy.partial(char_callback, name = "alicia", beep = "alicia"))
+define witch = Character("Witch", callback = renpy.partial(char_callback, name = "witch", beep = "witch"))
 
 # Offscreen Character Definitions
 define tate_offscreen = Character("???", callback = renpy.partial(char_callback, name = "tate_offscreen", beep="tate"))
@@ -909,6 +909,7 @@ image nova = "characters/nova.png"
 image nova dark = "dark:characters/nova.png"
 image nova flipped = "flip:characters/nova.png"
 image nova dark flipped = "dark:flip:characters/nova.png"
+image nova discord = "characters/nova_discord.png"
 
 # More of our friends!
 image kitty = "characters/kitty.png"
@@ -1465,6 +1466,7 @@ image cswanted = "wanted_poster.png"
 image dog = "dog.png"
 image drill = "drillymays.png"
 image drillbreak = "drillymaysfuck.png"
+image flexcake = "flexcake.png"
 image genergy = "genergy.png"
 image hold_it = "hold_it.png"
 image laser_beam = "laser_beam.png"
@@ -2075,6 +2077,8 @@ define audio.sfx_glass = "sfx/sfx_glass.ogg"
 define audio.sfx_gul = "secret/sfx_gul.ogg"
 define audio.sfx_hat_off = "sfx/sfx_hat_off.ogg"
 define audio.sfx_heartbeat = "sfx/sfx_heartbeat.ogg"
+define audio.sfx_house_door_close = "sfx/sfx_house_door_close.ogg"
+define audio.sfx_house_door_open = "sfx/sfx_house_door_open.ogg"
 define audio.sfx_lego = "sfx/sfx_legosfx.ogg"
 define audio.sfx_lego_break = "sfx/sfx_lego_break.ogg"
 define audio.sfx_hard_knock = "sfx/sfx_hard_knock.ogg"

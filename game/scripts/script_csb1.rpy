@@ -106,7 +106,7 @@ label csbi_craptop:
             
     play sound sfx_ping
     cs "Okay, bedtime! Bye, guys!"
-    show nova at right with dissolve
+    show nova discord at manual_pos(0.6, 0) with Dissolve(0.25)
     play sound sfx_ping
     nova "But it's, like, 8:04 AM, and you just woke up."
     play sound sfx_ping
@@ -116,8 +116,9 @@ label csbi_craptop:
     discord "CS is now offline."
     play sound sfx_ping
     nova "k bye"
-    hide nova with dissolve
+    hide nova with Dissolve(0.25)
     show craptop car
+    play sound sfx_car_stop
     cs "Time to watch car crash videos for the next couple of hours!"
     show black with dissolve
     centered "Two hours later..."
@@ -164,6 +165,7 @@ label csbi_craptop:
     show cs scared at right behind carguy with MoveTransition(0.25)
     play sound sfx_doorslam
     scene cs_car_inside
+    # TODO: baker needs the street view img to finish recoloring the car. cs does not drive a red car
     show cs disappointed at left
     with dissolve
     play music canyon_car volume 0.2
@@ -321,7 +323,9 @@ label csbi_room:
     stop sound fadeout 2.0
     stop music fadeout 3.0
     music end
-    # TODO: front door open/close sfx
+    play sound sfx_house_door_open
+    pause 1.0
+    play sound sfx_house_door_close
     n "CS arrives home and walks into the living room."
     show cs happy flipped
     cs "Ahhh. It's good to be home!"
@@ -393,7 +397,7 @@ label csbi_room:
             pause 1.0
             play sound sfx_doorbell volume 0.5
             pause 1.0
-            # TODO: front door open sfx
+            play sound sfx_house_door_open
             show cs_door_open at rotate_10
             show cs disappointed at left
             with dissolve
@@ -448,7 +452,7 @@ label csbi_room:
     cs "Let me go get the door..."
     show cs at left with move
     show door_open behind cs
-    # TODO: door open sfx
+    play sound sfx_house_door_open
     cs "Hello! I am CS, and I--"
     play music hohsis_theme volume 0.2
     music Alfred Hitchcock Intro Theme - Charles Gounod
@@ -629,7 +633,9 @@ label csbi_rosen_house:
         jump e3_rosen
     else:
         scene rosen_abode with dissolve
-    # TODO: front door open/close sfx
+    play sound sfx_house_door_open
+    pause 1.0
+    play sound sfx_house_door_close
     play music super_friendly volume 0.4
     music Super Friendly - Kevin Macleod
     show michael at right with moveinright
@@ -691,7 +697,7 @@ label csbi_rosen_house:
     michael "Well, it might be because he said he could make the best chocolate cake."
     michael "Speaking of which, Phil, do you have the cake?"
     phil "Here it is!"
-    # TODO: flex cake sprite
+    show flexcake at manual_pos(0.35, 0.6, 0.5) with dissolve
     phil "It even works {i}underwater!"
     michael "That's odd to mention, but, alright! Time to eat!"
     show cs worried flipped
@@ -703,6 +709,9 @@ label csbi_rosen_house:
     michael "I have {i}loads{/i} to eat! Om nom nom..."
     pause 1.0
     play sound sfx_puke
+    show flexcake at manual_pos(0.45, 1.1, 0.5):
+        linear 1 rotate 80
+    with MoveTransition(0.25)
     michael_nobeep "Blarrrgh!" with hpunch
     n "Michael spits out the Flex Cake."
     michael "This is horrible!"
@@ -711,7 +720,10 @@ label csbi_rosen_house:
     michael "{i}OUT!"
     hide phil with moveoutright
     show cs disappointed flipped at right
-    # TODO: front door open/close sfx
+    pause 1.0
+    play sound sfx_house_door_open
+    pause 1.0
+    play sound sfx_house_door_close
     pause 2.0
     michael "I need something to drink..."
     michael "CS, did you bring that drink?"
@@ -732,7 +744,10 @@ label csbi_rosen_house:
     show cs scared flipped
     cs "I need to get out before he goes nuts!"
     show cs scared at offscreenright with MoveTransition(0.25)
-    pause 0.5
+    pause 1.0
+    play sound sfx_house_door_open
+    pause 1.0
+    play sound sfx_house_door_close
     scene black with dissolve
     pause 1.0
     jump csbi_end
@@ -752,7 +767,9 @@ label csbi_end:
     pause 1.0
     scene cs_room with dissolve
     stop sound fadeout 2.0
-    # TODO: front door open/close sfx
+    play sound sfx_house_door_open
+    pause 1.0
+    play sound sfx_house_door_close
     pause 1.0
     show cs flipped at offscreenright with determination
     show cs flipped at center with moveinright
