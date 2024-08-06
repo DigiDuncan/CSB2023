@@ -2086,6 +2086,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(123):
+        $ sfxtotal += 1
+        play sound sfx_fabeep
         $ musictotal += 1
         play music speedy_comet
         $ bgtotal += 1

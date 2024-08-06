@@ -1469,7 +1469,23 @@ label dx_after_convention_end:
     scene conferencetv at Move((0.0 , -1.0), (0.0, 0.0), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     pause 3.0
     show screen cultcon_votes
+    pause 3.0
+    show screen cultcon_votes_1
+    play sound sfx_fabeep
+    pause 2.0
+    show screen cultcon_votes_2
+    play sound sfx_fabeep
+    pause 2.0
+    show screen cultcon_votes_3
+    play sound sfx_fabeep
+    pause 2.0
+    show screen cultcon_votes_4
+    play sound sfx_fabeep
+    pause 2.0
+    show screen cultcon_votes_5
+    play sound sfx_fabeep
     pause
+    return
 
 label dx_after_renault:
     stop music fadeout 1.0
