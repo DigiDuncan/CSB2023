@@ -219,7 +219,7 @@ label dx_after_true:
     show cs disappointed flipped
     cs "I wonder if Billy and Arc ended up here too..."
     show cs disappointed
-    if fun_value(FUN_VALUE_EPIC, confusing = True):
+    if fun_value(FUN_VALUE_EPIC):
         n "All of a sudden, a time and space portal opens and Car Guy comes out of it."
         jump dx_after_renault
     else:

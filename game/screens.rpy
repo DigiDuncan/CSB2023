@@ -802,7 +802,6 @@ screen preferences():
     tag menu
 
     use game_menu(_("Preferences"), scroll="viewport"):
-
         vbox:
             hbox:
                 box_wrap True
@@ -835,27 +834,46 @@ screen preferences():
 
                 vbox:
                     label _("Text Speed")
-                    bar value Preference("text speed")
+                    hbox:
+                        bar value Preference("text speed"):
+                            xsize 450
+                        null width 20
+                        label "[preferences.__dict__['text_cps']:.1f]cps" yoffset -10 xminimum 200
+
 
                     label _("Auto-Forward Time")
-                    bar value Preference("auto-forward time")
+                    hbox:
+                        bar value Preference("auto-forward time"):
+                            xsize 450
+                        null width 20
+                        label "[preferences.__dict__['afm_time']:.1f]s" yoffset -10 xminimum 200
+
                 vbox:
                     if config.has_music:
                         label _("Music Volume")
                         hbox:
-                            bar value Preference("music volume")
+                            bar value Preference("music volume"):
+                                xsize 450
+                            null width 20
+                            label "[preferences.__dict__['volumes']['music'] * 100:.2f]%" yoffset -10 xminimum 200
 
                     if config.has_sound:
                         label _("Sound Volume")
                         hbox:
-                            bar value Preference("sound volume")
+                            bar value Preference("sound volume"):
+                                xsize 450
+                            null width 20
+                            label "[preferences.__dict__['volumes']['sfx'] * 100:.2f]%" yoffset -10 xminimum 200
                             if config.sample_sound:
                                 textbutton _("Test") action Play("sound", config.sample_sound)
 
                     if config.has_voice:
                         label _("Voice Volume")
                         hbox:
-                            bar value Preference("voice volume")
+                            bar value Preference("voice volume"):
+                                xsize 450
+                            null width 20
+                            label "[preferences.__dict__['volumes']['voice'] * 100:.2f]%" yoffset -10 xminimum 200
                             if config.sample_voice:
                                 textbutton _("Test") action Play("voice", config.sample_voice)
 
@@ -865,6 +883,7 @@ screen preferences():
                             style "mute_all_button"
             vbox:
                 xsize 0.75
+                spacing -6
                 style_prefix "check"
                 hbox:
                     textbutton _("Toggle Bounciness") action ToggleField(preferences, "bounciness_enable")
@@ -874,9 +893,8 @@ screen preferences():
                         text_color "#555555"
                         yoffset 10
                     null width 10
-                    textbutton ("🎵") action ToggleField(preferences, "music_joke_enable")
-                    null width 10
-                    textbutton ("🤔") action ToggleField(preferences, "confusing_joke_enable")
+                    textbutton ("{size=-5}🎵") action ToggleField(preferences, "music_joke_enable")
+                    textbutton ("{size=-5}🤔") action ToggleField(preferences, "confusing_joke_enable")
                 label _("Bounciness Chance")
                 hbox:
                     bar:
