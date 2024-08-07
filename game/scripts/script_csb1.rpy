@@ -106,9 +106,9 @@ label csbi_craptop:
             
     play sound sfx_ping
     cs "Okay, bedtime! Bye, guys!"
-    show nova discord at manual_pos(0.6, 0) with Dissolve(0.25)
+    show nova discord at manual_pos(0.6, 0) with Dissolve(0.1)
     play sound sfx_ping
-    nova "But it's, like, 8:04 AM, and you just woke up."
+    nova "But... it's, like, 8:04 AM, and you just woke up."
     play sound sfx_ping
     cs "Bye!"
     show cs flipped with determination
@@ -116,7 +116,7 @@ label csbi_craptop:
     discord "CS is now offline."
     play sound sfx_ping
     nova "k bye"
-    hide nova with Dissolve(0.25)
+    hide nova with Dissolve(0.1)
     show craptop car
     play sound sfx_car_stop
     cs "Time to watch car crash videos for the next couple of hours!"
@@ -231,11 +231,11 @@ label csbi_walmart:
     play sound sfx_noicepop
     show cs happy
     cs "{i}pop{/i}\nNoice! Genergy is two for $5! Yes, {i}please!"
-    show genergy at manual_pos(1800, 300) with dissolve
-    show genergy at manual_pos(1650, 800) with move
+    show genergy at manual_pos(1800, 300) with Dissolve(0.25)
+    show genergy at manual_pos(1650, 800) with MoveTransition(0.25)
     hide genergy with dissolve
-    show genergy at manual_pos(1800, 300) with dissolve
-    show genergy at manual_pos(1650, 800) with move
+    show genergy at manual_pos(1800, 300) with Dissolve(0.25)
+    show genergy at manual_pos(1650, 800) with MoveTransition(0.25)
     hide genergy with dissolve
     show cs flipped at center with moveinleft
     pause 1.0
@@ -243,8 +243,8 @@ label csbi_walmart:
     pause 1.0
     show cs happy flipped
     cs "Oooh! Pringles are on sale, too! {i}Yoink!"
-    show pringles at manual_pos(50, 300) with dissolve
-    show pringles at manual_pos(200, 800) with move
+    show pringles at manual_pos(50, 300) with Dissolve(0.25)
+    show pringles at manual_pos(200, 800) with MoveTransition(0.25)
     hide pringles with dissolve
     show cs at center with moveinleft
     n "CS walks to the checkout area."
@@ -265,10 +265,15 @@ label csbi_walmart:
     n "The cashier scans each item."
     play sound sfx_retail_beep
     show pringles behind cs at manual_pos(1750, 550) with move
+    pause 0.5
+    # small detail time: cashier goes lazy mode and scans one genergy twice
+    show genergy behind cs at manual_pos(800,500) with move
+    play sound sfx_retail_beep
+    pause 0.25
     play sound sfx_retail_beep
     show genergy behind cs at manual_pos(1625, 650) with move
-    play sound sfx_retail_beep
     show genergy behind cs as duplicate at manual_pos(1500, 625) with move
+    pause 0.5
     play sound sfx_retail_beep
     pause 2.0
     cashier "That'll be $11.88."
@@ -460,7 +465,7 @@ label csbi_room:
         alpha 0.0
     with determination
     show ed at right:
-        linear 3.0 alpha 1.0
+        linear 2.5 alpha 1.0
     with MoveTransition(2)
     if fun_value(FUN_VALUE_MUSIC):
         ed "Alright, that will be Alfred Hitchcock Intro Theme."
@@ -488,7 +493,21 @@ label csbi_room:
     show spent_bits at t_fake_rpg_text(0.075, 0.1, 0.5)
     pause 0.5
     cs "I'll get out of your guys' hair while you work."
-    # TODO: fun value - sparkles on ed's bald-ass fuckin head
+    if fun_value(FUN_VALUE_RARE):
+        play sound sfx_gleam
+        show gleam at manual_pos(0.8, 0.15, 0.5):
+            zoom 0
+            blur 5
+            parallel:
+                linear 0.25 zoom 2
+            parallel:
+                linear 0.5 rotate 360
+            pass
+            linear 0.5 alpha 0
+        hide gleam with Dissolve(0.5)
+        pause 0.25
+        ed "..."
+    show cs happy
     cs "See ya later!"
     show cs at mid_mid_left with moveoutright
     hide cs with dissolve
@@ -723,6 +742,7 @@ label csbi_rosen_house:
     show flexcake at manual_pos(0.45, 1.1, 0.5):
         linear 1 rotate 80
     with MoveTransition(0.25)
+    play sound2 sfx_plate_break noloop
     michael_nobeep "Blarrrgh!" with hpunch
     n "Michael spits out the Flex Cake."
     michael "This is {i}horrible!"
@@ -802,7 +822,7 @@ label csbi_end:
     "..."
     cs "Wait..."
     cs "The last people in this room were the HoH SiS guys!"
-    cs "They must have messed with it!"
+    cs "They must have done something to it!"
     show craptop_bg at rotate_6
     show craptop off at rotate_6
     with hpunch
@@ -872,40 +892,52 @@ label csbi_end:
         linear 0.1 xzoom 1
     with MoveTransition(0.25)
     with hpunch
-
-    play sound sfx_punch
+    
     show cs angry with determination
-    show cs angry at mid_right 
-    show worker_3 at offscreenright:
-        linear 0.5 rotate 360
-    with MoveTransition(0.25)
-    with hpunch
 
     if fun_value(FUN_VALUE_UNOBTRUSIVE):
-        show cs disappointed
-        cs "... Ow!"
-        mean "AUUUUUGH!!" with hpunch
-    show cs angry at offscreenright with move
+        play sound sfx_punch
+        show cs angry at right with MoveTransition(0.25)
+        play sound2 sfx_spikes noloop
+        show worker_3 at offscreenright:
+            linear 0.5 rotate 360
+        with MoveTransition(0.25)
+        with hpunch
+
+        show cs scared
+        cs "Yeowch!"
+        mean "{bt=a3-p10-s4}{size=+24}AUUUUUGH!!!" with hpunch
+    else:
+        play sound sfx_punch
+        show cs angry at right with MoveTransition(0.25)
+        show worker_3 at offscreenright:
+            linear 0.5 rotate 360
+        with MoveTransition(0.25)
+        with hpunch
+
+    show cs angry at offscreenright with MoveTransition(0.25)
     show black with dissolve
     scene hoh_hq3
     show worker_5 at left
     with dissolve
     show cs angry flipped at right with moveinright
-    cs "Which way to the elevator? Now!"
+    cs "Which way to the elevator?"
+    cs "{i}Now!"
     hide worker_5
     show worker_5alt at left
-    worker_5 "Uhh, that way!"
+    worker_5 "Uhh... that way!"
     cs "Thanks! And, also..."
     n "CS clocks the worker in the face!"
     show cs angry flipped at left
     with MoveTransition(0.25)
     play sound sfx_punch
     show worker_5alt at manual_pos(0, -1400) behind cs:
-        linear 0.25 rotate 360
-    with MoveTransition(0.25)
+        linear 0.5 rotate 360
+    with MoveTransition(0.5)
     show cs angry flipped at offscreenleft with MoveTransition(0.25)
     scene hoh_hq4 with dissolve
     show cs angry with moveinbottom
+    pause 1.0
     cs "Which way to go..."
 
     menu:

@@ -461,11 +461,11 @@ label car_dialogue:
 
     pause 1.0
 
-    play sound "<from 0 to 1>sfx_roll_window.ogg" volume 0.7
+    play sound "<from 0 to 1>sfx/sfx_roll_window.ogg" volume 0.7
     pause 2.5
-    play sound "<from 0 to 2>sfx_roll_window.ogg" volume 0.7
+    play sound "<from 0 to 2>sfx/sfx_roll_window.ogg" volume 0.7
     pause 2.0
-    play sound "<from 0 to 1>sfx_roll_window.ogg" volume 0.7
+    play sound "<from 0 to 1>sfx/sfx_roll_window.ogg" volume 0.7
     pause 1.5
     arceus "CS, stop messing with the window. I can see you doing that."
     cs "Fine, I'm just bored."
@@ -510,7 +510,7 @@ label car_dialogue:
     billy "Alright. You'd better not mess with my gadgets!"
     digi "{size=-15}Shhh! Don't say anything!"
     cs "{size=-15}Okay, I've got it. Arceus, roll down the window."
-    play sound "<from 0 to 1>sfx_roll_window.ogg" volume 0.7
+    play sound "<from 0 to 1>sfx/sfx_roll_window.ogg" volume 0.7
     pause 5.0
     cs "Alright, you ready?"
     pause 2.0
@@ -524,7 +524,7 @@ label car_dialogue:
     digi "No, I didn't! You grabbed it!"
     cs "Arc rolled down the window!"
     arceus "Really? You're just gonna blame all of us?"
-    play sound "<from 0 to 2>sfx_car_crash.ogg" volume 0.7
+    play sound "<from 0 to 2>sfx/sfx_car_crash.ogg" volume 0.7
     scene tom_road
     show billy car turn with hpunch
     pause 3.0

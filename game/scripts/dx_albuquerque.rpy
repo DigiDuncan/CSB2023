@@ -1,10 +1,10 @@
 
-define audio.albuquerque = "<from 104>albuquerque.mp3"
-define audio.albuquerque2 = "<from 153.5>albuquerque.mp3"
-define audio.albuquerque3 = "<from 280.75>albuquerque.mp3"
-define audio.albuquerque4 = "<from 390>albuquerque.mp3"
-define audio.albuquerque5 = "<from 480.5>albuquerque.mp3"
-define audio.albuquerque6 = "<from 578>albuquerque.mp3"
+define audio.albuquerque = "<from 104>albuquerque.ogg"
+define audio.albuquerque2 = "<from 153.5>albuquerque.ogg"
+define audio.albuquerque3 = "<from 280.75>albuquerque.ogg"
+define audio.albuquerque4 = "<from 390>albuquerque.ogg"
+define audio.albuquerque5 = "<from 480.5>albuquerque.ogg"
+define audio.albuquerque6 = "<from 578>albuquerque.ogg"
 
 #
 # DON'T CHANGE OR EDIT THE SCRIPT AT ALL, IT MAY RUIN THE TIMING

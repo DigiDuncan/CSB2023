@@ -652,7 +652,7 @@ label asset_debugger:
         show blue_light at mid_left_left
         show lego eyes at mid_left
         show jeremy at mid_mid_left
-        show fumobee2 at mid_mid_right
+        # show fumobee2 at mid_mid_right # moved to unused gallery
         show ikea_greeter flipped at mid_right
         show cruise at mid_right_right
         show arceus dark flipped at right 
@@ -1323,7 +1323,7 @@ label asset_debugger:
         play music hired_guns
         $ bgtotal += 1
         scene dealership
-        show dount_2 at mid_right_right
+        show donut_2 at mid_right_right
         show donut_1 at mid_mid_right
         show crt_magnet at mid_left_left
         show walkie dark at mid_right
@@ -3261,7 +3261,7 @@ label asset_debugger:
         jump exit_debug
     if fun_value(290):
         $ bgtotal += 1
-        scene start_route
+        # scene start_route # removed since we're using text-based now
         pause 0.1
     else:
         jump exit_debug
@@ -3459,7 +3459,7 @@ label asset_debugger:
         jump exit_debug
     if fun_value(323):
         $ bgtotal += 1
-        scene amtrak_economy
+        # scene amtrak_economy # this does not exist anymore
         pause 0.1 
     else:
         jump exit_debug

@@ -2689,7 +2689,7 @@ label train_on_top:
     
     hide lupin
     hide zenigata
-    hide amtrak_on_top
+    hide amtrak_top
     
     show mean human angry dark flipped behind letterbox_screen:
         xpos 0
