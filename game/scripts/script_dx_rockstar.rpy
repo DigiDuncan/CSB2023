@@ -3,6 +3,8 @@ label rockstar_start:
     # Music CS is diagetically listening to plays in this scene
     n "CS is relaxing at home, listening to a vinyl."
     cs "Ah, it's good to just kick back and listen to some tunes."
+
+    # SFX: ringtone
     n "Suddenly, his phone rings!"
     cs "Oh shi--"
     cs "Who could that be? I'm not expecting a call today."
@@ -42,4 +44,75 @@ label rockstar_start:
     n "CS realizes what he's doing."
     cs "I need to get Anno and Arc."
 
-    # Fade, new scene
+    # Fade, new scene in CS' car
+    cs "OK, I'll start driving to Anno's, and get Arc on the phone."
+    cs "Arc's in the UK, so I'm a bit worried about getting him..."
+    n "CS starts driving."
+    cs "Good thing I got a Jupiter Jack from Billy."
+    n "CS dials Arc and sets his phone in the center console."
+
+    # SFX: ringing
+    n "{i}Ring ring!"
+
+    # Show Arc on phone
+    arceus "CS? Man, it's like, late, me and Kitty are going to bed."
+    cs "It's important, do you have a minute?"
+    arceus "I guess, are... are you in the car?"
+    cs "Yeah, I'm driving to Anno's place."
+    arceus "Anno's? Why are you dong that?"
+    cs "I want to get [band_name] back together."
+    arceus "What? Wait, did Howie put you up to this?"
+    cs "No! {w=0.5}Well..."
+    arceus "I knew it."
+    cs "No, it's not like that. He just got me thinking. I think I really want this."
+    cs "I loved writing {i}[album_name]{/i} with you guys. And I think I still have music in my heart."
+    cs "If you don't want to, you don't have to."
+    arceus "It's not that I don't want to... I do, really. I want to support you, as well."
+    arceus "I'm going to need to talk to Kitty."
+    kitty "What was that, babe?"
+    arceus "I'm gonna let you go. I'll get back to you."
+    cs "Sounds good, let me know."
+    arceus "See you, man!"
+    
+    # Hide Arc on phone
+    n "CS drives on, listening to some tunes to get his mind in a music-making mood."
+    cs "I hope Anno takes well to this."
+
+    # Fade scene, CS in car at Anno's house
+    cs "Alright, here goes nothing."
+
+    # CS leaves car and is at Anno's door.
+    n "{i}Knock knock!"
+    anno_offscreen "The heck?"
+    n "{i}Knock knock!"
+    n "Anno comes to the door."
+    anno "CS?"
+    cs "Anno! Can I come in?"
+    anno "Sure? What's this about?"
+    cs "I'll tell you inside."
+
+    # Scene change, inside Anno's house
+    anno "What's going on?"
+    cs "I want to get [band_name] back together."
+    anno "What? Really? Did Howi--"
+    cs "Arc said the same thing. {i}I{/i} want to do this. Howie just reminded me."
+    anno "{i}sigh"
+    anno "OK."
+    cs "OK? That easy?"
+    anno "I mean, I want to, too. If Arc is down, I don't see why not."
+    cs "He should be calling me back soo--"
+
+    # SFX: ringtone
+    cs "Right on cue!"
+    n "CS picks up the phone."
+    cs "Hey Arc, what's the plan?"
+    arceus "I'm in. But Kitty's coming."
+    kitty "{i}But?"
+    arceus "Sorry. {i}And{/i} Kitty's coming."
+    kitty "Good."
+    cs "Sounds good to me! When can you be here?"
+    arceus "Well, work says I can't teleport anymore, so next time we get on a plane."
+    cs "Work? Tele-- huh?"
+    arceus "Don't worry about it."
+    arceus "See you soon!"
+    cs "Woohoo! We're getting [band_name] back together!"
