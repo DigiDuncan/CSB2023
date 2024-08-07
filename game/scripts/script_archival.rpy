@@ -359,7 +359,7 @@ label archival_finale:
     show cs scared at manual_pos(0.5, -1.5, 0.5)
     hide cs scared with moveoutbottom
     play sound sfx_glass_echo
-    play sound2 sfx_splash noloop
+    play sound2 sfx_splash noloop volume 0.4
     with vpunch
     n "The shattering of glass rings out."
     n "CS finds himself in a pool of glowing cyan liquid."

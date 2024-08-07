@@ -1285,10 +1285,11 @@ label asset_debugger:
         play music hard_drive
         $ bgtotal += 1
         scene course_3
+        show gleam at mid_left
         show mean_hat at center
         show cs surprised phone at left
         show wesleybottom at mid_left_left
-        $ spritetotal += 3
+        $ spritetotal += 4
         monika "test 67{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -1784,6 +1785,8 @@ label asset_debugger:
         play music neko_to_sanpo
         $ bgtotal += 1
         scene town
+        show cs surprised dark
+        $ spritetotal += 1
         worker "test 99{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -1968,6 +1971,8 @@ label asset_debugger:
         play music pressing_pursuit_cornered
         $ bgtotal += 1
         scene peppinopizzafg
+        show cs surprised dark flipped
+        $ spritetotal += 1
         snufkin "test 113{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -2105,29 +2110,41 @@ label asset_debugger:
         play music stal
         $ bgtotal += 1
         scene legodooropen
+        show cs at t_train_scurvy
+        $ transformtotal += 1
         anno_offscreen "test 124{w=0.5}{nw}"
         $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(125):
+        $ sfxtotal += 1
+        play sound sfx_gleam
         $ musictotal += 1
         play music star_spangled_banner
         $ bgtotal += 1
         scene legostage
+        show cs at t_people_scurvy
+        $ transformtotal += 1
         ed_ai "test 125{w=0.5}{nw}"
         $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(126):
+        $ sfxtotal += 1
+        play sound sfx_plate_break
         $ musictotal += 1
         play music street_noise
         $ bgtotal += 1
         scene vegas
+        show cs at random_pos(0,0,0,0,0)
+        $ transformtotal += 1
         obamanobeep "test 126{w=0.5}{nw}"
         $ charactertotal += 1
     else:
         jump exit_debug
     if fun_value(127):
+        $ sfxtotal += 1
+        play sound sfx_spikes
         $ musictotal += 1
         play music summer_clearance_sale
         $ bgtotal += 1
@@ -2137,6 +2154,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(128):
+        $ sfxtotal += 1
+        play sound sfx_chug_that
         $ musictotal += 1
         play music super_friendly
         $ bgtotal += 1
@@ -2146,6 +2165,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(129):
+        $ sfxtotal += 1
+        play sound sfx_end_call
         $ musictotal += 1
         play music sweet_victory
         $ bgtotal += 1
@@ -2155,6 +2176,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(130):
+        $ sfxtotal += 1
+        play sound sfx_blanket
         $ musictotal += 1
         play music taiikusai_desu_yo
         $ bgtotal += 1
@@ -2164,6 +2187,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(131):
+        $ sfxtotal += 1
+        play sound sfx_decompression
         $ musictotal += 1
         play music take_trip
         $ bgtotal += 1
@@ -2173,6 +2198,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(132):
+        $ sfxtotal += 1
+        play sound sfx_glitch_in
         $ musictotal += 1
         play music take_trip2
         $ bgtotal += 1
@@ -2182,6 +2209,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(133):
+        $ sfxtotal += 1
+        play sound sfx_bite
         $ musictotal += 1
         play music the_rest_of_bubble_tea
         $ bgtotal += 1
@@ -2191,6 +2220,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(134):
+        $ sfxtotal += 1
+        play sound sfx_glass_echo
         $ musictotal += 1
         play music the_whale
         $ bgtotal += 1
@@ -2200,6 +2231,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(135):
+        $ sfxtotal += 1
+        play sound sfx_glass_heavy
         $ musictotal += 1
         play music thousand_march
         $ bgtotal += 1
@@ -2394,7 +2427,7 @@ label asset_debugger:
         play music tmwstw
         $ bgtotal += 1
         scene texas
-        pause 0.5
+        blind_eye "test 157{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(158):
@@ -2569,7 +2602,7 @@ label asset_debugger:
         $ musictotal += 1
         play music encounter_friend_loop
         $ bgtotal += 1
-        scene white
+        scene white_bg
         pause 0.5
     else:
         jump exit_debug
@@ -3831,6 +3864,12 @@ label asset_debugger:
         $ movietotal += 1
         scene train_brake
         pause 5.0 
+    else:
+        jump exit_debug
+    if fun_value(388):
+        $ bgtotal += 1
+        scene white_vignette
+        pause 0.1
     else:
         jump exit_debug
 
