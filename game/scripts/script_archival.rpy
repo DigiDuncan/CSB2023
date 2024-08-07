@@ -751,12 +751,12 @@ label archival_finale:
     pause 2.0
     play music everybody_wants 
     music "Everybody Wants To Rule The World - Tears For Fears"
-    pause 3.0
+    pause 5.0
     play sound sfx_ringtone_addy volume 0.5
     n "Addy gets a phone call."
     pause 1.0
     play sound sfx_pickup_call
-    pause 1.0
+    pause 3.0
     if fun_value(FUN_VALUE_MUSIC):
         addy "Hello? Is this everybody? Because I want to rule the world."
         n "CS, from offscreen, bursts out laughing."
@@ -764,7 +764,8 @@ label archival_finale:
         addy "I know, lol."
         addy "Anyways..."
     else:
-        addy "Hello? Who is this?"
+        addy "Hello?"
+        addy "Who is this?"
     iris "Hello, Addy."
     n "Addy fumbles the phone, nearly dropping it in surprise."
     addy "Iris?"
