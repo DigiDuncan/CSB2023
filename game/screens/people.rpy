@@ -106,6 +106,10 @@ init python:
         "cruise": "{image=gui/dx_text.png} Tom Cruise"
     }
 
+    for n in persistent.seen:
+        if n not in name_map:
+            print(f"WARNING: Bio '{n}' not in name_map!")
+
 screen people_nav():
     add Color('#323e42', alpha=0.75)
     viewport:

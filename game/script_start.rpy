@@ -527,15 +527,15 @@ define alicia = Character("Alicia", callback = renpy.partial(char_callback, name
 define witch = Character("Witch", callback = renpy.partial(char_callback, name = "witch", beep = "witch"))
 
 # Offscreen Character Definitions
-define tate_offscreen = Character("???", callback = renpy.partial(char_callback, name = "tate_offscreen", beep="tate"))
-define pakoo_offscreen = Character("???", callback = renpy.partial(char_callback, name = "pakoo_offscreen", beep="pak"))
-define green_offscreen = Character("???", callback = renpy.partial(char_callback, name = "green_offscreen", beep = "green"), what_color="#00FF00")
-define anno_offscreen = Character("???", callback = renpy.partial(char_callback, name = "anno_offscreen", beep = "anno"))
+define tate_offscreen = Character("???", callback = renpy.partial(char_callback, beep="tate"))
+define pakoo_offscreen = Character("???", callback = renpy.partial(char_callback, beep="pak"))
+define green_offscreen = Character("???", callback = renpy.partial(char_callback, beep = "green"), what_color="#00FF00")
+define anno_offscreen = Character("???", callback = renpy.partial(char_callback, beep = "anno"))
 
 # AI Imposter Character Definitions
-define ed_ai = Character("\"Ed\"", callback = renpy.partial(char_callback, name = "ed_ai", beep = "ed"))
-define obamanobeep = Character("\"Obama\"", callback = renpy.partial(char_callback, name = "obama_ai", play_beeps = False))
-define bomahanobeep = Character("\"Omaha\"", callback = renpy.partial(char_callback, name = "obama_ai", play_beeps = False))
+define ed_ai = Character("\"Ed\"", callback = renpy.partial(char_callback, beep = "ed"))
+define obamanobeep = Character("\"Obama\"", callback = renpy.partial(char_callback, play_beeps = False))
+define bomahanobeep = Character("\"Omaha\"", callback = renpy.partial(char_callback, play_beeps = False))
 
 # DX Misc Character Definitions
 define copguyexe = Character("Copguy", callback = renpy.partial(char_callback, name = "copguy", beep = "copexe"))
@@ -568,20 +568,20 @@ define amtrak_stewardess = Character("Stewardess", callback = char_callback)
 define amtrak_npc_1 = Character("Passenger 1", callback = char_callback)
 define amtrak_npc_2 = Character("Passenger 2", callback = char_callback)
 define amtrak_npc_3 = Character("Passenger 3", callback = char_callback)
-define lupin_offscreen = Character("???", callback = renpy.partial(char_callback, name = "lupin_offscreen", beep = "lupin"))
-define mean_offscreen = Character("???", callback = renpy.partial(char_callback, name = "mean_offscreen", beep = "mean"))
-define zenigata_nobeep = Character("???", callback = renpy.partial(char_callback, name = "zenigata_nobeep", play_beeps = False))
-define zenigata_offscreen = Character("???", callback = renpy.partial(char_callback, name = "zenigata_offscreen", beep = "zenigata"))
+define lupin_offscreen = Character("???", callback = renpy.partial(char_callback, beep = "lupin"))
+define mean_offscreen = Character("???", callback = renpy.partial(char_callback, beep = "mean"))
+define zenigata_nobeep = Character("???", callback = renpy.partial(char_callback, play_beeps = False))
+define zenigata_offscreen = Character("???", callback = renpy.partial(char_callback, beep = "zenigata"))
 
 # DX Finale Character Definitions
 define perfect_billy = Character("Perfect Billy", callback = renpy.partial(char_callback, name = "billy", beep = "billy"), screen = "perfect_billy_text")
 
 # DX Albu
-define hermaphrodite = Character("Hermaphrodite", callback = renpy.partial(char_callback, name = "Hermaphrodite", play_beeps = False))
-define everyone = Character("Everyone", callback = renpy.partial(char_callback, name = "Everyone", play_beeps = False))
-define zelda = Character("Zelda", callback = renpy.partial(char_callback, name = "Zelda", play_beeps = False))
-define daphone = Character("Da Phone", callback = renpy.partial(char_callback, name = "Da Phone", play_beeps = False))
-define marty = Character ("Marty", callback = renpy.partial(char_callback, name = "Marty", play_beeps = False))
+define hermaphrodite = Character("Hermaphrodite", callback = renpy.partial(char_callback, play_beeps = False))
+define everyone = Character("Everyone", callback = renpy.partial(char_callback, play_beeps = False))
+define zelda = Character("Zelda", callback = renpy.partial(char_callback, play_beeps = False))
+define daphone = Character("Da Phone", callback = renpy.partial(char_callback, play_beeps = False))
+define marty = Character ("Marty", callback = renpy.partial(char_callback, play_beeps = False))
 define cs_nobeep = Character("cs188", callback = renpy.partial(char_callback, name = "cs", play_beeps = False))
 define cashier_nobeep = Character("Cashier", callback = renpy.partial(char_callback, name = "cashier", play_beeps = False))
 define crowd_nobeep = Character("Crowd", callback = renpy.partial(char_callback, play_beeps = False))
