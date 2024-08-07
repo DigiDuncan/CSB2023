@@ -850,7 +850,14 @@ screen preferences():
 
                 vbox:
                     if config.has_music:
-                        label _("Music Volume")
+                        hbox:
+                            label _("Music Volume")
+                            if config.has_music or config.has_sound or config.has_voice:
+                                null width 50
+                                textbutton _("Mute All Audio"):
+                                    action Preference("all mute", "toggle")
+                                    style "mute_all_button"
+                                    yoffset 5
                         hbox:
                             bar value Preference("music volume"):
                                 xsize 450
@@ -876,14 +883,10 @@ screen preferences():
                             label "[preferences.__dict__['volumes']['voice'] * 100:.2f]%" yoffset -10 xminimum 200
                             if config.sample_voice:
                                 textbutton _("Test") action Play("voice", config.sample_voice)
-
-                    if config.has_music or config.has_sound or config.has_voice:
-                        textbutton _("Mute All Audio"):
-                            action Preference("all mute", "toggle")
-                            style "mute_all_button"
+            null height 10
             vbox:
                 xsize 0.75
-                spacing -6
+                spacing 0
                 style_prefix "check"
                 hbox:
                     textbutton _("Toggle Bounciness") action ToggleField(preferences, "bounciness_enable")
