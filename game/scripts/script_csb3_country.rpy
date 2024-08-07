@@ -1641,7 +1641,7 @@ label japan_miku_pizza:
     scene black with dissolve
     pause 1.0
     scene ceo_office
-    if fun_value(FUN_VALUE_EPIC):
+    if fun_value(FUN_VALUE_EPIC, confusing = True):
         show scott at right
     else:
         show scott_pres at right

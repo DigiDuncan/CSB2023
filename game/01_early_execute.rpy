@@ -240,7 +240,7 @@ init python:
     renpy.image("_fun_value_fish","gui/fun_value_fish.png")
 
     # Fun value handler
-    def fun_value(rarity: int, id: str = None) -> bool:
+    def fun_value(rarity: int, id: str = None, *, confusing = False) -> bool:
     
         # hide any previous instance of the indicator
         renpy.hide("_fun_value")
@@ -250,6 +250,10 @@ init python:
         if not preferences.bounciness_enable:
             return False
         if rarity > preferences.max_fun and rarity < 99:
+            return False
+        if confusing and not preferences.confusing_joke_enable:
+            return False
+        if rarity == FUN_VALUE_MUSIC and not preferences.music_joke_enable:
             return False
 
         r = ease_linear(rarity, 1, 0, 100, preferences.csbounciness)

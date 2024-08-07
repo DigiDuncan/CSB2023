@@ -691,7 +691,7 @@ label south_poker3:
     pause 1.0
     scene pokertable
     n "Mr. Green and CS put their cards down."
-    if fun_value(FUN_VALUE_EPIC):
+    if fun_value(FUN_VALUE_EPIC, confusing = True):
         show cards5alt
         n "CS and Mr. Green both have a royal flush with ace and king of spades."
         stop music fadeout 3.0

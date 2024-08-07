@@ -873,6 +873,10 @@ screen preferences():
                         text_size 20
                         text_color "#555555"
                         yoffset 10
+                    null width 10
+                    textbutton ("🎵") action ToggleField(preferences, "music_joke_enable")
+                    null width 10
+                    textbutton ("🤔") action ToggleField(preferences, "confusing_joke_enable")
                 label _("Bounciness Chance")
                 hbox:
                     bar:

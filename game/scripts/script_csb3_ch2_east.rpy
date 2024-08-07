@@ -679,7 +679,7 @@ label true_after_ufo:
     jump michigan
   
 label true_ohio:
-    if fun_value(FUN_VALUE_LEGENDARY):
+    if fun_value(FUN_VALUE_LEGENDARY, confusing = True):
         scene car plains
         show billy car
         with dissolve

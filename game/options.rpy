@@ -134,6 +134,8 @@ define config.window_hide_transition = Dissolve(.2)
 
 default preferences.text_beeps = True
 default preferences.bounciness_enable = True
+default preferences.music_joke_enable = True
+default preferences.confusing_joke_enable = True
 default preferences.csbounciness = 0
 default preferences.max_fun = 100
 default preferences.streamer_mode = False
