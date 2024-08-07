@@ -687,7 +687,6 @@ label csbi_rosen_house:
     michael "He would meet all sorts of friends, and flee from his enemies."
     show cs disappointed flipped
     michael "After his long adventure, he took a long nap."
-    show cs concentrate flipped
     michael "When he woke up, he was in a {i}huge{/i} library."
     if e2:
         jump e2_rosen
@@ -696,6 +695,7 @@ label csbi_rosen_house:
         michael "While he was walking, he found a--{nw}"
         show black
     else:
+        show cs concentrate flipped
         show black with dissolve
     pause 1.0
     play sound sfx_csnore

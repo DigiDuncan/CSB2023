@@ -201,8 +201,8 @@ label dx_albuquerque:
     hide pot
     hide cs
     show cs scared at center
-    show nova1 at mid_mid_left
-    show nova2 at mid_mid_right
+    show nova_head as first at mid_mid_left
+    show nova_head as second at mid_mid_right
     with dissolve
     cs_nobeep "{cps=40}...And they immediately latch onto my face and start bitin' me all over...{w=1.0}{nw}" with hpunch
     "Weasels" "{cps=40} Ahh gnahh nahh nahh! Ah gahhh nahh!{w=0.75}{nw}" with hpunch
@@ -224,13 +224,13 @@ label dx_albuquerque:
     #play music albuquerque4
     scene canada_block with dissolve
     show cs scared flipped at Move((1.2 , 0.2), (-0.2, 0.2), 5, repeat=True, bounce=True, xanchor="left", yanchor="top")
-    show nova1 at Move((1.2 , 0.2), (-0.2, 0.2), 5, repeat=True, bounce=True, xanchor="left", yanchor="top")
+    show nova_head as first at Move((1.2 , 0.2), (-0.2, 0.2), 5, repeat=True, bounce=True, xanchor="left", yanchor="top")
     cs_nobeep "{cps=40}I ran out into the street with these flesh-eating weasels all over my face...{w=0.5}{nw}"
     cs_nobeep "{cps=40}Wavin' my arms all around and just runnin',{w=0.05} runnin',{w=0.05} runnin',{w=0.05}{w=0.75}{nw}"
     cs_nobeep "{cps=40}Like a constipated wiener dog!{w=1.25}{nw}"
     cs_nobeep "{cps=40}...And as luck would have it, that's exactly when I ran into the girl of my dreams.{w=0.5}{nw}"
     show cs flipped at mid_right
-    show nova1 at manual_pos(0.65 , 0.2)
+    show nova_head as first at manual_pos(0.65 , 0.2)
     pause 1.25
     show pomni flipped at left with moveinleft
     cs_nobeep "{cps=40}Her name was Zelda.{w=1.5}{nw}"
@@ -238,7 +238,7 @@ label dx_albuquerque:
     cs_nobeep "{cps=40}I'll never forget the very first thing she said to me.{w=0.75}{nw}"
     cs_nobeep "{cps=40}She said,{w=0.1}{nw}"
     zelda "{cps=40}Hey, you've got weasels on your face.{w=1.25}{nw}"
-    hide nova1 with moveouttop
+    hide nova_head as first with moveouttop
     cs_nobeep "{cps=40}That's when I knew it was true love!{w=1}{nw}"
     cs_nobeep "{cps=40}We were inseparable after that...{w=1}{nw}"
     scene dining_room

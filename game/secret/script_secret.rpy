@@ -5,11 +5,11 @@ label secret_dx:
     digi "Oh, hi."
     digi "You, uh... {w=0.5}weren't supposed to see this."
     digi "Jeez, in {image=gui/dx_text.png}, too."
-    digi "I thought we would have ironed out all the bugs by now, but we're DPN, so."
+    digi "I {i}thought{/i} we would have ironed out all the bugs by now, but we're DPN, so..."
     pause 2.0
     digi "How are you? You look lovely today."
-    digi "No, yeah, I'm sorry, I'll bring you back to the menu."
-    digi "Hey, if this was a legit bug, let me know, OK?"
+    digi "No, yeah, I'm sorry. I'll bring you back to the menu."
+    digi "Hey, if this was a legit bug, let me know, okay?"
     digi "I want to get these all fixed up."
     hide digi with dissolve
     window hide
@@ -27,7 +27,7 @@ label secret_dx2:
     play music ten_feet_away
     jump dx_after_seek_competitors
 
-# THESE ARE LEFT HERE AS A WAT TO REMEMBER THE OLD SECRET SCREENS
+# THESE ARE LEFT HERE AS A WAY TO REMEMBER THE OLD SECRET SCREENS
 
 # label secret:
 #     scene black with dissolve

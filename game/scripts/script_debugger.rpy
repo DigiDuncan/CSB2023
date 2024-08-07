@@ -192,7 +192,7 @@ label asset_debugger:
         show pakoo happy at mid_mid_left
         show tate shock at mid_mid_right
         show michael at mid_right
-        show nova1 at mid_right_right
+        show nova_head at mid_right_right
         show arceus full flipped at right 
         carguy_nobeep "test 9{w=0.5}{nw}"
         $ charactertotal += 1
@@ -213,7 +213,7 @@ label asset_debugger:
         show pakoo happy flipped at mid_mid_left
         show tate shock dark at mid_mid_right
         show phil at mid_right
-        show nova2 at mid_right_right
+        #show nova2 at mid_right_right # no longer needed
         show arceus full angry at right 
         greeter "test 10{w=0.5}{nw}"
         $ charactertotal += 1
@@ -234,7 +234,7 @@ label asset_debugger:
         show linus at mid_mid_left
         show tate shock flipped at mid_mid_right
         show carguy at mid_right
-        show nova3 at mid_right_right
+        #show nova3 at mid_right_right # no longer needed
         show arceus full angry flipped at right 
         doug "test 11{w=0.5}{nw}"
         $ charactertotal += 1

@@ -213,13 +213,23 @@ transform mid_offscreen_left:
     xanchor 0.5 xpos -0.0
     
 # i got tired.
-# if ALL you need is a simple custom placement, no zoom/motion/effects, just use this please. - tate
+# if ALL you need is a simple custom placement, no zoom/motion/effects, just use this please. 
+# for compatibility with the existing positions, set anchor to 1.0 - tate
 transform manual_pos(x, y, this_anchor = 0):
     xanchor this_anchor
     yanchor this_anchor
     xpos x
     ypos y
     
+# another late-night innovation...
+# because renpy is stupid you MUST use pixel integer, no float allowed.
+# sorry, digi. couldn't get it to work in spite of your help
+transform random_pos(xmin, xmax, ymin, ymax, this_anchor):
+    xanchor this_anchor
+    yanchor this_anchor
+    xpos renpy.random.randint(xmin, xmax)
+    ypos renpy.random.randint(ymin, ymax)
+
 transform xstretch_in:
     xalign 0.5
     linear 0.5 xsize 1920
@@ -842,9 +852,7 @@ image k207 = "characters/k207.png"
 image k207 flipped = "flip:characters/k207.png"
 image k207h = "characters/k207h.png"
 image k207h flipped = "flip:characters/k207h.png"
-image nova1 = "characters/novaedit.png"
-image nova2 = "characters/novaedit.png"
-image nova3 = "characters/novaedit.png"
+image nova_head = "characters/novaedit.png"
 image carguya = "characters/carguya.png"
 image hart1 = "characters/hart1.png"
 image hart2 = "characters/hart2.png"
@@ -1229,7 +1237,7 @@ image car_insidearc_fg flipped = "flip:bg/car_insidearc_fg.png"
 image joj_chargerarc_fg = "bg/joj_chargerarc_fg.png"
 image gas_station_2 = "bg/gas_station_2.png"
 image traffic = "bg/traffic_jam_bad_img.png"
-image white = "bg/white.png"
+image white_bg = "bg/white.png"
 image parking_lot = "bg/parking_lot.png"
 image path_entrance = "bg/path_entrance.png"
 image path_forest = "bg/path_forest.png"
@@ -1346,6 +1354,7 @@ image archival_16 = "bg/archival/archival_16.png"
 image archival_17 = "bg/archival/archival_17.png"
 image archival_18 = "bg/archival/archival_18.png"
 image archival_19 = "bg/archival/archival_19.png"
+image white_vignette = "bg/archival/white_vignette.png"
 
 # Back to the future: CS edition backgrounds
 image cs_room_cars = "bg/cs_bedroom_cars.png"
@@ -2066,6 +2075,7 @@ define audio.albu = "albuquerque.ogg"
 # SFX
 define audio.sfx_alt_punch = "sfx/sfx_alt_punch.ogg"
 define audio.sfx_amtrak_horn = "sfx/sfx_amtrak_horn.ogg"
+define audio.sfx_blanket = "sfx/sfx_blanket.ogg"
 define audio.sfx_bossappears = "sfx/sfx_bossappears.ogg"
 define audio.sfx_beam = "sfx/sfx_beam.ogg"
 define audio.sfx_bell = "sfx/sfx_bell.ogg"
@@ -2085,6 +2095,7 @@ define audio.sfx_chug_that = "sfx/sfx_chug_that.ogg"
 define audio.sfx_clapperboard = "sfx/sfx_clapperboard.ogg"
 define audio.sfx_clonk = "sfx/sfx_clonk.ogg"
 define audio.sfx_csnore = "sfx/sfx_csnore.ogg"
+define audio.sfx_decompression = "sfx/sfx_decompression.ogg"
 define audio.sfx_dial_hohsis = "sfx/sfx_dial_hohsis.ogg"
 define audio.sfx_dial_rosen = "sfx/sfx_dial_rosen.ogg"
 define audio.sfx_drill = "sfx/sfx_drill.ogg"
@@ -2111,6 +2122,7 @@ define audio.sfx_gasp = "sfx/sfx_gasp.ogg"
 define audio.sfx_gaster_blast = "minigames/car/sfx_gaster_blast.ogg"
 define audio.sfx_glass = "sfx/sfx_glass.ogg"
 define audio.sfx_gleam = "sfx/sfx_gleam.ogg"
+define audio.sfx_glitch_in = "sfx/sfx_glitch_in.ogg"
 define audio.sfx_gul = "secret/sfx_gul.ogg"
 define audio.sfx_hat_off = "sfx/sfx_hat_off.ogg"
 define audio.sfx_heartbeat = "sfx/sfx_heartbeat.ogg"
