@@ -441,7 +441,7 @@ label csbi_room:
     show cs phone worried
     cs "No! My house really needs foundation repair! I need your help, ASAP!"
     hoh_operator "Alright. That will be 200,000 bits. You can pay us afterwards."
-    # TODO: end call sfx
+    play sound sfx_end_call
     n "The operator hangs up."
     show cs
     cs "Welp, that's one thing taken care of."
@@ -645,10 +645,12 @@ label csbi_michael_house:
     michael "Sounds wonderful. I've never tried it, but I'm sure it's good."
     show cs happy phone
     cs "Alright, well, I'll be there soon!"
+    michael "See you soon!"
     show cs at left
     hide rosen_abode
     hide michael
     with moveoutright
+    play sound sfx_end_call
     n "CS puts his phone away and drives over to Michael's house."
     play sound sfx_driving volume 0.5
     pause 2.0
@@ -762,11 +764,18 @@ label csbi_rosen_house:
     cs "Sure did! Here you go!"
     show genergy at manual_pos(1400, 500) with dissolve
     show genergy at manual_pos(300, 500) with MoveTransition(0.5)
+    pause 0.5
     michael "Goodness."
     n "Michael downs the whole can."
-    # TODO: sfx - chug that shit
+    play sound sfx_chug_that
+    pause 0.5
+    show genergy at manual_pos(325,400) with MoveTransition(0.25):
+        linear 0.25 rotate -50
+    pause 6.0
     hide genergy with dissolve
-    pause 3.0
+    pause 2.0
+    "..."
+    pause 2.0
     show cs worried flipped
     michael "{i}Quick!{/i} Get out!" with vpunch
     cs "What's going on?"

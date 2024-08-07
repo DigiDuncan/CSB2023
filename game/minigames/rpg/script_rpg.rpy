@@ -258,7 +258,6 @@ label rpg_bronsonbattle:
         
 label rpg_tate_ex:
 
-    # TODO: this still doesn't work. apparently the variable is broken
     python:
         if ch2_cs_attack_used == "karate-chopped":
             cs_chosen_form = "CS_VS_TATE_CHOP"

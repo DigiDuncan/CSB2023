@@ -3579,7 +3579,7 @@ label train_tate_ex_lose:
 label train_completed:
 
     if train_ending_money_returned == True:
-        hide dxcom
+        hide screen dxcom
         play music lo_fi_sunset if_changed
         music Lo−Fi Sunset - Dango Studio
     

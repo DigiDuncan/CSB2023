@@ -956,8 +956,7 @@ label friend_cool_car:
     show cs angry flipped
     show m4 flipped at center with determination
     show m4 fire flipped at center with determination
-    # TODO: why does this loop?
-    play sound sfx_hks2
+    play sound sfx_hks2 noloop
     show m4 flipped at center with determination 
     pause 0.5
     show m4 flipped at center with determination

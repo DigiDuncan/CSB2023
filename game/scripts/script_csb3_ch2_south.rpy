@@ -282,10 +282,12 @@ label south_utah:
     n "CS looks ahead of him to see the giant minifigure standing in front of them."
     cs "Ohh."
     arceus "CS, don't move a muscle."
+    show cs surprised dark
     cs "Why not? It's just a Leg--"
     play music hard_drive volume 0.5
     music Hard Drive to Munch You - Mr. Sauceman
     show lego eyes
+    show cs worried dark
     n "The minifigure's eyes glow as it raises its arms up and starts running at CS."
     if fun_value(FUN_VALUE_MUSIC):
         lego "HARD DRIVE TO MUNCH YOU!!!"
@@ -298,8 +300,7 @@ label south_utah:
     lego "A MAN HAS FALLEN INTO THE--"
     hide lego with moveoutbottom
     n "The minifigure crashes into the wall and falls to the ground."
-    # TODO: whenever arc gets dark sprites to be handled programatically we need dark surprised and dark scared sprites for cs
-    show cs worried dark with vpunch
+    show cs scared dark with vpunch
     n "The other figures up ahead turn on and start moving toward Arceus and CS."
     show arceus worried dark
     arceus "{bt=a3-p10-s4}Run, CS, run!!!"

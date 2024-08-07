@@ -818,6 +818,6 @@ label csbii_ltt:
     $ achievement_manager.unlock("Welcome to CSBIII, Mother Fucker")
 
     scene black with dissolve
-    hide dxcom
+    hide screen dxcom
     pause 1.0
     jump csbiii_start
