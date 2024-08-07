@@ -179,8 +179,8 @@ label archival:
     with hpunch
     n "CS punches the worker to the ground!"
     k199 "Oh, {i}shit,{/i} man! He's gone AWOL!"
-    k207 "I don't think that's what AWOL means, but still, {i}do{/i} something, 17!"
-    k174 "Fuck, fuck, fuck! Okay, okay, what about this? Do something!"
+    k207 "I don't think that's what AWOL means, but, still! {i}Do{/i} something, 17!"
+    k174 "Fuck,{w=0} fuck,{w=0} fuck! Okay,{w=0} okay, what about this? Do something!"
 
     show nova_head as first at manual_pos(0.4, 1.5, 0.5):
         alpha 0
@@ -298,7 +298,8 @@ label archival:
     play sound2 sfx_punch noloop
     with MoveTransition(0.25)
     with hpunch
-    n "CS pushes him out of the way as he smashes open the car window and hops inside."
+    n "CS pushes him out of the way."
+    n "He smashes open the car window and hops inside."
     play sound sfx_glass_heavy
     scene car_inside_old with dissolve
     show cs scared flipped at offscreenright
@@ -306,14 +307,14 @@ label archival:
     show cs scared
     play sound sfx_driving
     pause 1.0
-    n "Despite interior of the car being drastically different from the outside, the car thankfully starts up."
+    n "Despite the interior of the car being drastically different from the outside, the car thankfully starts up."
     n "CS starts to drive off, but he is instantly teleported away."
     scene csmart_old
     show cs scared at left
     stop sound
     play sound sfx_glitch_in
     with pixellate
-    pause 1.0
+    pause 2.0
     n "He reappears in the parking lot of a Walmart with a \"CS\" poorly pasted over the sign."
     cs "What {i}is{/i} this place?! What's going on?!"
     n "CS looks around for a second and sees what looks like a crack in the sky."
@@ -347,9 +348,9 @@ label archival_finale:
     n "After the battle, CS makes his way towards the crack, and realizes that there is an invisible wall."
     hide cs with dissolve
     if fun_value(FUN_VALUE_MUSIC):
-        n "Without any second thoughts, he breaks off pieces of the wall enough to widen the hole, then takes a trip. From me."
+        n "Without any second thoughts, he breaks off enough pieces of the wall to widen the hole, then takes a trip. From me."
     else:
-        n "Without any second thoughts, he breaks off pieces of the wall enough to widen the hole, then crawls through the opening."
+        n "Without any second thoughts, he breaks off enough pieces of the wall to widen the hole, then crawls through the opening."
     n "..."
     n "..."
     n "..."
@@ -364,7 +365,8 @@ label archival_finale:
     n "The shattering of glass rings out."
     n "CS finds himself in a pool of glowing cyan liquid."
     show cs disappointed at center with moveinbottom
-    n "CS picks himself up from the broken glass and goo. He looks around in awe."
+    n "He picks himself up from the broken glass and goo."
+    n "CS looks around this place in awe."
     scene archival_6 with dissolve
     n "Stretching to every edge of the room are rows of hundreds of glowing tanks, all filled with the same bluish fluid."
     n "Stacked atop each other in rows of 20 or 30, they reach the ceiling of this enormous hangar-like facility."
@@ -749,11 +751,15 @@ label archival_finale:
     pause 2.0
     play music everybody_wants 
     music "Everybody Wants To Rule The World - Tears For Fears"
+    pause 3.0
+    play sound sfx_ringtone_addy volume 0.5
     n "Addy gets a phone call."
-    # TODO: sfx - phone ring, pick up phone
+    pause 1.0
+    play sound sfx_pickup_call
+    pause 1.0
     if fun_value(FUN_VALUE_MUSIC):
         addy "Hello? Is this everybody? Because I want to rule the world."
-        n "CS off the screen bursts out laughing."
+        n "CS, from offscreen, bursts out laughing."
         iris "Okay, that was terrible."
         addy "I know, lol."
         addy "Anyways..."
@@ -768,13 +774,14 @@ label archival_finale:
     addy "We had an accident in the K17 sector yesterday."
     addy "We had to..."
     addy "Get rid of him."
+    "..."
     iris "Hmm..."
     iris "Can you bring him back?"
     iris "Digi's been crying all day because he found out CS doesn't exist anymore."
     addy "Yeah, I should have a backup somewhere."
     iris "Nice, thank you."
     iris "I'll go tend to Digi."
-    # TODO: sfx call end
+    play sound sfx_end_call
     n "Iris hangs up."
     pause 1.0
     addy "I guess that's what I get for letting these guys with half a brain run this place."
@@ -785,10 +792,13 @@ label archival_finale:
     stop music fadeout 3.0
     music end
     addy "Thank goodness I saved this."
-    # TODO: sfx set a glass of water down i guess idk
-    n "Addy places the jar in a receptacle."
+    # i'm so sorry
+    # but also you can't tell me that liquid DOESN'T look like chug - tate
+    play sound sfx_chug_jug
+    n "Addy places the jar into a receptacle."
     addy "Well, here goes nothing."
     $ ending_manager.mark("archival")
+    $ renpy.sound.stop(fadeout=3.0)
     $ renpy.movie_cutscene(archival_end)
     $ renpy.end_replay()
     return
