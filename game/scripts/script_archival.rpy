@@ -113,7 +113,7 @@ label archival:
     n "Why does it feel like he was supposed to say that just now?"
     show k174
     k174 "Look, I don't know why I wrote that."
-    k174 "We need to figure out what's causing this! I'm a bit worried."
+    k174 "We need to figure out what's causing this! I'm getting worried."
     k207 "I'm sure it's nothing, dude. Why don't we go check out another part of this place?"
     pause 1.0
     k199 "Wait a second..."
@@ -217,50 +217,59 @@ label archival:
     k199 "Make them attack CS!"
     nova "Nova Nova {i}Novaaa!"
 
-    # TODO: bite/chomp sfx with each movement? idk how they'd attack
     show nova_head as second at random_pos(1300, 1800, 500, 900, 0.5)
     with MoveTransition(0.1)
+    play sound sfx_bite
     with vpunch
     n "The heads charge toward the wrong people, trying to bite and rip them apart."
 
     show nova_head as first at random_pos(1300, 1800, 500, 900, 0.5)
     with MoveTransition(0.1)
+    play sound sfx_bite
     with vpunch
     k207 "{bt=a3-p10-s4}Ah! Ahh! Fuck, get them off!"
 
     show nova_head as third at random_pos(1300, 1800, 500, 900, 0.5)
     with MoveTransition(0.1)
+    play sound sfx_bite
     with vpunch
     k199 "{bt=a3-p10-s4}Kill them! {i}Kill{/i} themmm!"
     k199 "{bt=a3-p10-s4}17, you piece of shit, make them {i}stop!"
 
     show nova_head as first at random_pos(1300, 1800, 500, 900, 0.5)
     with MoveTransition(0.1)
+    play sound sfx_bite
     with vpunch
-    k174 "{bt=a3-p10-s4}Oh God, what have I done?! I can't stop them!"
+    k174 "{bt=a3-p10-s4}Oh, God, what have I done?! I can't stop them!"
 
     show nova_head as second at random_pos(1300, 1800, 500, 900, 0.5)
     with MoveTransition(0.1)
+    play sound sfx_bite
     with vpunch
 
     show nova_head as third at random_pos(1300, 1800, 500, 900, 0.5)
     with MoveTransition(0.1)
+    play sound sfx_bite
     with vpunch
 
     show nova_head as first at random_pos(1300, 1800, 500, 900, 0.5)
     with MoveTransition(0.1)
+    play sound sfx_bite
     with vpunch
 
     show nova_head as second at random_pos(1300, 1800, 500, 900, 0.5)
     with MoveTransition(0.1)
+    play sound sfx_bite
     with vpunch
 
     show nova_head as third at random_pos(1300, 1800, 500, 900, 0.5)
     with MoveTransition(0.1)
+    play sound sfx_bite
     with vpunch
 
     show nova_head as first at random_pos(1300, 1800, 500, 900, 0.5)
     with MoveTransition(0.1)
+    play sound sfx_bite
     with vpunch
 
     show cs at offscreenright with MoveTransition(0.25)
@@ -276,7 +285,7 @@ label archival:
     show cs worried at mid_mid_left with MoveTransition(0.25)
     scene car_old with dissolve
     show cs worried at left with moveinleft
-    n "A blue car is sitting out on the driveway."
+    n "A blue car is parked outside the house."
     show carguya at right with moveinright
     play sound sfx_nice_car
     carguy_nobeep "Nice car!"
@@ -290,20 +299,22 @@ label archival:
     with MoveTransition(0.25)
     with hpunch
     n "CS pushes him out of the way as he smashes open the car window and hops inside."
-    # TODO: car window break sfx
+    play sound sfx_glass_heavy
     scene car_inside_old with dissolve
     show cs scared flipped at offscreenright
     show cs scared flipped at left with MoveTransition(0.25)
     show cs scared
     play sound sfx_driving
+    pause 1.0
     n "Despite interior of the car being drastically different from the outside, the car thankfully starts up."
+    n "CS starts to drive off, but he is instantly teleported away."
     scene csmart_old
     show cs scared at left
     stop sound
     play sound sfx_glitch_in
     with pixellate
-    n "CS starts to drive off, but he is instantly teleported away."
-    n "He reappears in the parking lot of a Walmart that has a \"CS\" poorly pasted onto the sign."
+    pause 1.0
+    n "He reappears in the parking lot of a Walmart with a \"CS\" poorly pasted over the sign."
     cs "What {i}is{/i} this place?! What's going on?!"
     n "CS looks around for a second and sees what looks like a crack in the sky."
     cs "What the hell?!"
@@ -347,13 +358,13 @@ label archival_finale:
     music "Take a Trip from Me - u4ia"
     show cs scared at manual_pos(0.5, -1.5, 0.5)
     hide cs scared with moveoutbottom
-    # TODO: sfx - real nice heavy glass break
+    play sound sfx_glass_echo
     play sound2 sfx_splash noloop
     with vpunch
     n "The shattering of glass rings out."
     n "CS finds himself in a pool of glowing cyan liquid."
     show cs disappointed at center with moveinbottom
-    n "CS picks himself up from the glass and goo. He looks around in awe."
+    n "CS picks himself up from the broken glass and goo. He looks around in awe."
     scene archival_6 with dissolve
     n "Stretching to every edge of the room are rows of hundreds of glowing tanks, all filled with the same bluish fluid."
     n "Stacked atop each other in rows of 20 or 30, they reach the ceiling of this enormous hangar-like facility."
@@ -377,9 +388,10 @@ label archival_finale:
     show cs worried at right with moveinleft
     show cs worried flipped with determination
     n "They start to chase after CS. He runs a bit and then hides behind one of the canisters."
-    # TODO: make these guys hold guns. i know we have some somewhere
     show hart1 at center
+    show m4 as first at center
     show hart2 at left
+    show m4 as second at left
     with moveinleft
     n "The guys come around the corner, opening fire on CS as he sprints away."
     show cs scared with determination
@@ -393,57 +405,94 @@ label archival_finale:
     play sound sfx_hks1 noloop volume 0.7
     pause 0.1
     play sound sfx_hks2 noloop volume 0.7
-    show hart1 at offscreenright with MoveTransition(0.25)
-    show hart2 at offscreenright with MoveTransition(0.25)
+    show hart1 at offscreenright 
+    show m4 as first at offscreenright
+    with MoveTransition(0.25)
+    show hart2 at offscreenright
+    show m4 as second at offscreenright
+    with MoveTransition(0.25)
     scene archival_7 with dissolve
     show cs scared at offscreenleft
     show cs scared at offscreenright with MoveTransition(0.25)
     n "CS starts weaving between the canisters to try to lose them."
-    play sound sfx_hks2 noloop volume 0.7
-    pause 0.1
-    play sound sfx_hks1 noloop volume 0.7
-    pause 0.1
-    play sound sfx_hks2 noloop volume 0.7
-    pause 0.1
-    play sound sfx_hks1 noloop volume 0.7
+
     show hart1 at offscreenleft
-    show hart1 at offscreenright with MoveTransition(0.25)
+    show m4 as first at offscreenleft
     show hart2 at offscreenleft
-    show hart2 at offscreenright with MoveTransition(0.25)
+    show m4 as second at offscreenleft
+
+    play sound sfx_hks2 noloop volume 0.7
+    pause 0.1
+    play sound sfx_hks1 noloop volume 0.7
+    pause 0.1
+    play sound sfx_hks2 noloop volume 0.7
+    pause 0.1
+    play sound sfx_hks1 noloop volume 0.7
+
+    show hart1 at offscreenright 
+    show m4 as first at offscreenright
+    with MoveTransition(0.25)
+
+    show hart2 at offscreenright 
+    show m4 as second at offscreenright
+    with MoveTransition(0.25)
+
     n "After he finally manages to make it to one end of the room, he runs along the wall, desperate to find an exit."
     scene archival_8 with dissolve
     n "As the guards keep shooting, he finds a set of doors that leads him into another large area."
     scene archival_7 with dissolve
     show cs scared at offscreenleft
     show cs scared at offscreenright with MoveTransition(0.25)
-    play sound sfx_hks2 noloop volume 0.7
-    pause 0.1
-    play sound sfx_hks1 noloop volume 0.7
-    pause 0.1
-    play sound sfx_hks2 noloop volume 0.7
-    pause 0.1
-    play sound sfx_hks1 noloop volume 0.7
-    pause 0.1
-    play sound sfx_hks2 noloop volume 0.7
-    pause 0.1
-    play sound sfx_hks1 noloop volume 0.7
+
     show hart1 at offscreenleft
-    show hart1 at offscreenright with MoveTransition(0.25)
+    show m4 as first at offscreenleft
     show hart2 at offscreenleft
-    show hart2 at offscreenright with MoveTransition(0.25)
+    show m4 as second at offscreenleft
+
+    play sound sfx_hks2 noloop volume 0.7
+    pause 0.1
+    play sound sfx_hks1 noloop volume 0.7
+    pause 0.1
+    play sound sfx_hks2 noloop volume 0.7
+    pause 0.1
+    play sound sfx_hks1 noloop volume 0.7
+    pause 0.1
+    play sound sfx_hks2 noloop volume 0.7
+    pause 0.1
+    play sound sfx_hks1 noloop volume 0.7
+
+    show hart1 at offscreenright 
+    show m4 as first at offscreenright
+    with MoveTransition(0.25)
+
+    show hart2 at offscreenright 
+    show m4 as second at offscreenright
+    with MoveTransition(0.25)
+
     n "The men continue their pursuit as a bunch of alarms sound, echoing throughout the whole place."
     n "A voice over the loudspeaker cuts through the sirens:"
     scene archival_5 with dissolve
     show cs scared at offscreenleft
     show cs scared at center with MoveTransition(0.25)
     play sound sfx_less_annoying_alarm_sound loop volume 0.6
+
+    show hart1 at offscreenleft
+    show m4 as first at offscreenleft
+    show hart2 at offscreenleft
+    show m4 as second at offscreenleft
+
     n "\"Warning! Warning! Memory breach at Sector 4 Foxtrot Kilo 17! Entity Charlie Sierra Bravo has breached containment. Please evacuate to Foxtrot Kilo 16 or below immediately.\""
     n "The alert plays repeatedly as CS keeps zigzagging around the chaos."
     show cs scared at offscreenright with MoveTransition(0.25)
-    show hart1 at offscreenleft
-    show hart1 at offscreenright with MoveTransition(0.25)
-    show hart2 at offscreenleft
-    show hart2 at offscreenright with MoveTransition(0.25)
+
+    show hart1 at offscreenright 
+    show m4 as first at offscreenright
+    with MoveTransition(0.25)
+
+    show hart2 at offscreenright 
+    show m4 as second at offscreenright
+    with MoveTransition(0.25)
+
     scene archival_9 with dissolve
     n "CS enters a hallway with a lot of turns. He goes straight for a bit, then veers left when he hears more gunfire."
     n "He alternates between going left and right, hoping to lose his attackers."
@@ -547,15 +596,17 @@ label archival_finale:
     n "CS steps over to the console at the front of the tram and pulls the giant \"Forward\" lever."
     scene archival_15
     show hart1 at left
+    show m4 as first at left
     show hart2 at center
+    show m4 as second at center
     with dissolve
     n "The tram takes off, slowly gaining speed."
-    show walkie as first:
+    show walkie as first_wt:
         zoom 0.3
         rotate 10
         xpos 0.2
         ypos 0.5
-    show walkie as second:
+    show walkie as second_wt:
         zoom 0.3
         rotate 10
         xpos 0.5
@@ -661,7 +712,7 @@ label archival_finale:
     show white_bg at center:
         alpha 0.20
     with dissolve
-    n "He notices a panel above the door. A figure resembling one of the guards is waving at him."
+    n "He notices a panel above the door. A figure resembling one of the guards waves at him."
     scene white
     show train_in_tunnel
     show cs concentrate at center
@@ -680,7 +731,7 @@ label archival_finale:
         linear 10 alpha 0.40
     n "CS realizes that there is nothing he can do."
     n "He closes his eyes."
-    n "The tram travels faster and faster as the light continues to shine brighter."
+    n "The tram travels faster and faster as the light continues to glow brighter."
     n "Suddenly, it's all gone."
     stop music fadeout 3.0
     scene white with Dissolve(3.0)
