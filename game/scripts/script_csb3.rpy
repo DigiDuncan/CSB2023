@@ -770,7 +770,7 @@ label csbiii_arc_escape:
     cs "I should've just called another foundation repair company."
     arceus "Yeah, that sounds like hell."
     cs "It {i}is{/i} hell."
-    arceus "{size=-15}You could have called me. I am literally a god."
+    arceus "{size=-15}You could have called upon me..."  # TODO: Hi, Tate! This is my attempt at replacing an overt reference to Arc being a god, but it doesn't land perfectly. Trying to be more subtle about it. Help? -- Digi
     arceus "I should've known that the cops were going look for us. We didn't hide our tracks too well."
     arceus "I heard about the cops at the last second when I was checking comms chatter around the area. I figured that since you helped me out, I should come back for you."
     cs "Thanks, man. I really owe you again."
