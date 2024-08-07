@@ -134,7 +134,6 @@ def __get_image_size(rwops):
     if len(head) != 24:
         raise Exception("Invalid or corrupt image file: " + rwops.raw.name)
 
-    print(rwops.__dict__)
     if imghdr.what(rwops.raw.name) == 'png':
         check = struct.unpack('>i', head[4:8])[0]
 
