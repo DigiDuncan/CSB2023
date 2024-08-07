@@ -831,17 +831,18 @@ screen preferences():
             hbox:
                 style_prefix "slider"
                 box_wrap True
-
                 vbox:
-                    label _("Text Speed")
+                    hbox:
+                        label _("Text Speed")
+                        textbutton _("{size=-10}Reset") action SetField(preferences, "text_cps", 40) yoffset 5
                     hbox:
                         bar value Preference("text speed"):
                             xsize 450
                         null width 20
                         label "[preferences.__dict__['text_cps']:.1f]cps" yoffset -10 xminimum 200
-
-
-                    label _("Auto-Forward Time")
+                    hbox:
+                        label _("Auto-Forward Time")
+                        textbutton _("{size=-10}Reset") action SetField(preferences, "afm_time", 15) yoffset 5
                     hbox:
                         bar value Preference("auto-forward time"):
                             xsize 450
