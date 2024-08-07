@@ -2,6 +2,7 @@ label secret_dx:
     scene black with dissolve
     play music space_classroom
     show digi at center with Dissolve(3)
+    $ achievement_manager.unlock("You Broke It!")
     digi "Oh, hi."
     digi "You, uh... {w=0.5}weren't supposed to see this."
     digi "Jeez, in {image=gui/dx_text.png}, too."
@@ -20,6 +21,7 @@ label secret_dx2:
     scene black with dissolve
     play music space_classroom
     show pakoo at center with Dissolve(3)
+    $ achievement_manager.unlock("You Broke It!")
     pakoo "Okay, that was funny, but that's my joke."
     pakoo "Don't do it again."
     scene black with dissolve

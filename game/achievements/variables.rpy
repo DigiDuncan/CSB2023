@@ -81,5 +81,6 @@ define achievements = [
     Achievement("Railway Superfan", "???", "See all three possible endings of Train Route.", "railfan", "extra", dx = True),
     Achievement("Gotta Catch Them All", "Collect every bio.", "Collect every bio.", "bios", "extra"),
     Achievement("The Brown Album", "Collect every song in the jukebox.", "Collect every song in the jukebox.", "juke", "extra"),
-    Achievement("Fin.", "Collect all the endings.", "Collect all the endings.", "end", "extra")
+    Achievement("Fin.", "Collect all the endings.", "Collect all the endings.", "end", "extra"),
+    Achievement("You Broke It!", "Woah, dude, you broke it.", "Woah, dude, you broke it.", "broke", "extra", dx = True)
 ]
