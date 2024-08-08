@@ -355,12 +355,14 @@ label csbi_room:
     cs "Man, it was so easy back then. All you needed was Windows Movie Maker and some effects. If only it was that easy now..."
     cs "..."
     cs "Oh, look, a flashback. What a coincidence..."
+    play sound sfx_flashback_start
     scene cs_room with pixellate
     show cs_young with moveinbottom
     ycs "Hey guys, Young CS here! Today, I'm gonna be editing a \n{bt=a3-p10-s4}CraAaAaAaAzY{/bt} video!!"
     play sound sfx_keyboard
     n "CS taps furiously on his keyboard."
     ycs "Ohhhhhh {bt=a3-p10-s4}YeeEeeEeEeeEEeEEs!{/bt} This is lookin' {i}good!"
+    play sound sfx_flashback_end
     hide cs_young
     scene cs_room
     show cs

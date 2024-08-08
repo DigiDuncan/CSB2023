@@ -78,7 +78,8 @@ label e3_rosen:
     hide michael
     show pakoo disappointed flipped at left
     play sound sfx_glitch_in
-    with pixellate # TODO: would be cool if this transition ONLY affected the character sprites
+    # TODO: need custom pixellate
+    with pixellate
     pause 1.5
     pakoo "I'm sorry, CS."
     pakoo "It's time to delete you."

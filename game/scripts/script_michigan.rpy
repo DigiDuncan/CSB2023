@@ -1294,7 +1294,7 @@ label michigan_interstate_69:
     arceus "That tree is watching us."
     aria "I like to think that Mother Nature watc--{w=2.0}{nw}"
     $ renpy.music.set_pause(True, "music")
-    play music2 sfx_ringtone volume 3 
+    play music2 sfx_ringtone_cs volume 3 
     n "All of a sudden, CS' phone starts going off."
     cs "Oh shit, sorry. I forgot I left my ringer on."
     aria "Well, can you turn it off? You're interrupting my friend's song!"

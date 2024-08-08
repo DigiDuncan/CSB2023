@@ -1128,7 +1128,7 @@ label asset_debugger:
         jump exit_debug
     if fun_value(58):
         $ sfxtotal += 1
-        play sound sfx_ringtone
+        play sound sfx_ringtone_cs
         $ musictotal += 1
         play music france
         $ bgtotal += 1
@@ -2293,7 +2293,7 @@ label asset_debugger:
         jump exit_debug
     if fun_value(140):
         $ sfxtotal += 1
-        play sound sfx_brew
+        play sound sfx_mc_brew
         $ musictotal += 1
         play music trash_zone
         $ bgtotal += 1

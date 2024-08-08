@@ -184,6 +184,7 @@ label archival:
     k207 "I don't think that's what AWOL means, but, still! {i}Do{/i} something, 17M!"
     k174 "Fuck,{w=0} fuck,{w=0} fuck! Okay,{w=0} okay, what about this? Do something!"
 
+    # TODO: pixellate these as well
     show nova_head as first at manual_pos(0.4, 1.5, 0.5):
         alpha 0
         parallel:

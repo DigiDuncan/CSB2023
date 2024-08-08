@@ -53,7 +53,7 @@ label dx_underpants:
     show pakoo flipped at offscreenleft
     with MoveTransition(0.25)
     n "George, Harold, and Pakoo try to escape by hiding behind a neutrino."
-    # TODO: this is a pretty sloppy rip from the archival video. pls replace this with a clean copy - tate
+    # TODO: this audio is a pretty sloppy rip from the archival video. pls replace this with a clean copy - tate
     play sound sfx_addy_snap
     n "Pakoo snaps his fingers."
     # TODO: hey baker, think you can clean up this trash edit for me? thx - tate
@@ -63,8 +63,8 @@ label dx_underpants:
     play sound sfx_house_door_close
     pause 1.0
     play sound sfx_punch
-    show cpt_underpants at left with moveinleft
     with hpunch
+    show cpt_underpants at left with moveinleft
     n "Soon, Captain Underpants punches through the wall!"
     show cpt_underpants at mid_offscreen_left
     with MoveTransition(0.25)
@@ -93,7 +93,7 @@ label dx_underpants:
         zoom 0.6
     with MoveTransition(0.25)
 
-    play sound sfx_brew
+    play sound sfx_mc_brew
     show dookie_milk_jar at manual_pos(0.4, 0.6, 0.5) zorder 3 with dissolve:
         zoom 0.5     
     n "Pakoo quickly mixes up a bottle of chocolate milk with bloody piles of dog shit!"
@@ -167,7 +167,7 @@ label dx_underpants:
     with MoveTransition(0.25)
     
     play sound sfx_mc_bottlehit volume 3
-    hide dookie_milk_jar with Dissolve(0.1)
+    hide dookie_milk_jar with Dissolve(0.25)
     show mika:
         parallel:
             linear 0.25 rotate 90
@@ -207,6 +207,6 @@ label dx_underpants:
     show pakoo at center
     with dissolve
     pause 1.0
-    george "This has got to be the dumbest story we've ever been in!"
+    george "This has got to be the {i}dumbest{/i} story we've ever been in!"
     harold "Don't blame {i}me,{/i} Pakoo wrote it!"
     return

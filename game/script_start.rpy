@@ -419,6 +419,9 @@ transform t_people_scurvy:
 
 
 # Character Definitions
+
+# TODO: holy fucking shitballs we need to organize these soon
+
 define n = Character(None, what_italic = True, callback = char_callback)  # Narrator
 define cs = Character("cs188", callback = renpy.partial(char_callback, name = "cs", beep = "cs"))
 define cs_fakegod = Character("cs188 (pretending to be CSGod)", callback = renpy.partial(char_callback, name = "cs", beep = "csgod"))
@@ -552,6 +555,8 @@ define bomahanobeep = Character("\"Omaha\"", callback = renpy.partial(char_callb
 
 # DX Misc Character Definitions
 define copguyexe = Character("Copguy", callback = renpy.partial(char_callback, name = "copguy", beep = "copexe"))
+# TODO: merge "agent" and "howie", they're the same dude, just don't wanna break fired route rn - tate
+define howie = Character("Howie", callback = renpy.partial(char_callback, name = "howie", beep = "howie")) 
 
 # DX Digi Character Definitions
 define weird_al = Character("Weird Al", callback = char_callback)
@@ -2091,7 +2096,6 @@ define audio.sfx_beam = "sfx/sfx_beam.ogg"
 define audio.sfx_bell = "sfx/sfx_bell.ogg"
 define audio.sfx_bite = "sfx/sfx_bite.ogg"
 define audio.sfx_bluescreen = "sfx/sfx_bluescreen.ogg"
-define audio.sfx_brew = "sfx/sfx_brew.ogg"
 define audio.sfx_bucket = "sfx/sfx_bucket.ogg"
 define audio.sfx_car_crash = "sfx/sfx_car_crash.ogg"
 define audio.sfx_car_stop = "<from 0 to 2>sfx/sfx_car_crash.ogg"
@@ -2128,6 +2132,8 @@ define audio.sfx_fart_again = "sfx/sfx_fart_again.ogg"
 define audio.sfx_fart_deep = "sfx/sfx_fart_deep.ogg"
 define audio.sfx_fart_lite = "sfx/sfx_fart_lite.ogg"
 define audio.sfx_fart_with_reverb = "sfx/sfx_fart_with_reverb.ogg"
+define audio.sfx_flashback_end = "sfx/sfx_flashback_end.ogg"
+define audio.sfx_flashback_start = "sfx/sfx_flashback_start.ogg"
 define audio.sfx_foundationfail = "sfx/sfx_foundationfail.ogg"
 define audio.sfx_funni = "secret/sfx_funni.ogg"
 define audio.sfx_gamer_and_girl = "sfx/sfx_gamer_and_girl.ogg"
@@ -2161,6 +2167,7 @@ define audio.sfx_joj_loop = "sfx/sfx_joj_loop.ogg"
 define audio.sfx_less_annoying_alarm_sound = "sfx/sfx_less_annoying_alarm_sound.ogg"
 define audio.sfx_lightswitch = "sfx/sfx_lightswitch.ogg"
 define audio.sfx_keyboard = "sfx/sfx_keyboard.ogg"
+define audio.sfx_mc_brew = "sfx/sfx_mc_brew.ogg"
 define audio.sfx_mc_bottlehit = "sfx/sfx_mc_bottlehit.ogg"
 define audio.sfx_mc_hit = "sfx/sfx_mc_hit.ogg"
 define audio.sfx_mc_throw = "sfx/sfx_mc_throw.ogg"
@@ -2187,7 +2194,7 @@ define audio.sfx_puke = "sfx/sfx_puke.ogg"
 define audio.sfx_punch = "sfx/sfx_punch.ogg"
 define audio.sfx_punch_alt = "sfx/sfx_alt_punch.ogg"
 define audio.sfx_retail_beep = "sfx/sfx_retail_beep.ogg"
-define audio.sfx_ringtone = "sfx/sfx_ringtone.ogg"
+define audio.sfx_ringtone_cs = "sfx/sfx_ringtone_cs.ogg"
 define audio.sfx_ringtone_addy = "sfx/sfx_ringtone_addy.ogg"
 define audio.sfx_roll_window = "sfx/sfx_roll_window.ogg"
 define audio.sfx_select = "sfx/sfx_select.ogg"
