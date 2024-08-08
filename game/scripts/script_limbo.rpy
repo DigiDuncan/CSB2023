@@ -1,4 +1,7 @@
-screen dx_select(items):
+screen dx_select():
+    
+    default tt = Tooltip("Or something else?")
+
     textbutton "{color=#fff}Return{/color}":
         action MainMenu(confirm=False), Stop("jukebox"), PauseAudio("music", False)
         xalign 0.02
@@ -21,19 +24,22 @@ screen dx_select(items):
                         zoom 0.666
                         xalign 0.5
                     action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("dx_after_true")
-                text "Or something else?" xalign 0.5 textalign 0.5
+                text tt.value xalign 0.5 textalign 0.5
         viewport:
             xysize(1920, 600)
             yanchor -0.025
             xoffset -0.1
-            style_prefix "choice"
-            side_yfill True
-            mousewheel True
-            vbox:
-                for i in items:
-                    textbutton i.caption:
-                        anchor(-0.25, -0.25)
-                        action i.action
+            grid 5 2:
+                xfill True
+                yfill True
+                # We can have 10 entries here
+                imagebutton auto "menu/csbiiidx_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
+                    hovered tt.Action("I'm going to cum")
+                    at transform:
+                        zoom 0.333
+                        xalign 0.5
+                    action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("dx_after_true")
+
 
 label lose_car_game:
     bad_end "100 percent\nunsatisfied." "true_iowa"
@@ -88,15 +94,4 @@ label back_out_i69:
     jump michigan_interstate_94
 
 label dx_start:
-    scene game_menu 
-    python:
-        destinations = {
-            "Speedrun": "csbi_craptop",
-            "Kuwait": "kuwait_travel",
-            "Train (Winner)": "train_start_good",
-            "Train (Thief)": "train_start_bad",
-            "Bronson": "michigan"
-        }
-        
-        place_to_go = renpy.display_menu([(k, v) for k, v in destinations.items()], screen="dx_select")
-        renpy.jump(place_to_go)
+    call screen dx_select
