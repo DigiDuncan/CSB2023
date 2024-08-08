@@ -1,4 +1,10 @@
 screen dx_select(items):
+    textbutton "{color=#fff}Return{/color}":
+        action MainMenu(confirm=False), Stop("jukebox"), PauseAudio("music", False)
+        xalign 0.02
+        yalign 0.04
+        background "#5F777F"
+
     vbox:
         xalign 0.5
         viewport:
