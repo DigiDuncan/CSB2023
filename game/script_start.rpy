@@ -541,6 +541,9 @@ define tate_offscreen = Character("???", callback = renpy.partial(char_callback,
 define pakoo_offscreen = Character("???", callback = renpy.partial(char_callback, beep="pak"))
 define green_offscreen = Character("???", callback = renpy.partial(char_callback, beep = "green"), what_color="#00FF00")
 define anno_offscreen = Character("???", callback = renpy.partial(char_callback, beep = "anno"))
+define k174_offscreen = Character("???", callback = renpy.partial(char_callback, name = "k174", beep = "k17"))
+define k199_offscreen = Character("???", callback = renpy.partial(char_callback, beep = "k19"))
+define k207_offscreen = Character("???", callback = renpy.partial(char_callback, beep = "k20"))
 
 # AI Imposter Character Definitions
 define ed_ai = Character("\"Ed\"", callback = renpy.partial(char_callback, beep = "ed"))
@@ -1504,9 +1507,11 @@ image dog = "dog.png"
 image donut_1 = "donut_1.png"
 image donut_2 = "donut_2.png"
 image donut_3 = "donut_3.png"
+image dookie_milk_jar = "secret/up/dookie_milk_jar.png"
 image drill = "drillymays.png"
 image drillbreak = "drillymaysfuck.png"
 image flexcake = "flexcake.png"
+image gamebarrel = "secret/up/gamebarrel.png"
 image genergy = "genergy.png"
 image gleam = "gleam.png"
 image hold_it = "hold_it.png"
@@ -1539,12 +1544,15 @@ image pot_sunken = "pot_sunken.png"
 image pringles = "pringles.png"
 image renault = "renault.png"
 image sansbrick = "sansbrick.png"
+image slime16 = "secret/up/slime16.png"
+image slime16 fire = "secret/up/slime16_fire.png"
 image scott_border = "scott_border.png"
 image script = "secret/script.png"
 image switch = "switch.png"
 image tbc = "tbc.png"
 image tims_dozen = "tims_dozen.png"
 image toby = "secret/toby.png"
+image toxic_mikas = "secret/up/toxic_mikas.png"
 image walkie = "walkie.png"
 image walkie dark = "dark:walkie.png"
 image walmart_bag = "walmart_bag.png"
@@ -2082,6 +2090,7 @@ define audio.sfx_beam = "sfx/sfx_beam.ogg"
 define audio.sfx_bell = "sfx/sfx_bell.ogg"
 define audio.sfx_bite = "sfx/sfx_bite.ogg"
 define audio.sfx_bluescreen = "sfx/sfx_bluescreen.ogg"
+define audio.sfx_brew = "sfx/sfx_brew.ogg"
 define audio.sfx_bucket = "sfx/sfx_bucket.ogg"
 define audio.sfx_car_crash = "sfx/sfx_car_crash.ogg"
 define audio.sfx_car_stop = "<from 0 to 2>sfx/sfx_car_crash.ogg"
@@ -2203,6 +2212,7 @@ define audio.sfx_vine = "secret/sfx_vine.ogg"
 define audio.sfx_walkie_on = "sfx/sfx_walkie_on.ogg"
 define audio.sfx_walkie_off = "sfx/sfx_walkie_off.ogg"
 define audio.sfx_waterphone = "sfx/sfx_waterphone.ogg"
+define audio.sfx_water_shake = "sfx/sfx_water_shake.ogg"
 define audio.sfx_whoosh = "sfx/sfx_whoosh.ogg"
 define audio.sfx_windows_logon = "sfx/sfx_windows_logon.ogg"
 define audio.sfx_yelling = "sfx/sfx_yelling.ogg"

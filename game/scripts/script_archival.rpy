@@ -64,7 +64,7 @@ label archival:
     play sound sfx_windows_logon
     with hpunch
     craptop "Your PC sux. lol."
-    unknown "Hey, what the fuck was that?"
+    k174_offscreen "Hey, what the fuck was that?"
     show cs scared
     cs "Shit!"
     show cs scared flipped at offscreenleft with MoveTransition(0.25)
@@ -84,12 +84,14 @@ label archival:
     n "They all look like the same person, except one is wearing sunglasses, another sports a top hat, and the third is in a hazmat suit."
     n "They quickly scan the room and notice the powered-on laptop."
     show k199 flipped
-    unknown "What the hell, 17-M4! I thought this place didn't have any triggers!"
+    k199_offscreen "What the hell, 17-M4! I thought this place didn't have any triggers!"
     k174 "It... shouldn't. This place barely has {i}any{/i} functionality!"
-    unknown "Then {i}why{/i} is the craptop on? CS-ocola would be here right now!"
-    unknown "Mrrrph mrrph, mrphh mrphh mrphh {i}mrrrrrph!"
-    unknown "What?"
-    unknown "Dude, 20-M9, for the millionth time, take that thing off. We can't hear you."
+    k199_offscreen "Then {i}why{/i} is the craptop on? CS-ocola would be here right now!"
+    k207_offscreen "Mrrrph mrrph, mrphh mrphh mrphh {i}mrrrrrph!"
+    show k174 flipped
+    k174 "{i}What?"
+    show k174
+    k199_offscreen "Dude, 20-M9, for the millionth time, take that thing off. We can't hear you."
     show k174 flipped
     k174 "Yeah, man, there's no \"whatever virus\" here that you keep talking about. It's {i}fine."
     n "K20-M7 carefully and slowly takes off their mask."
@@ -97,9 +99,9 @@ label archival:
     hide k207h
     show k207 at mid_right_right
     with dissolve
-    pause 0.5
+    pause 1.0
     k207 "Alright, fine! But, if I get corona and die, I'll make sure Addy fires {i}both{/i} of you!"
-    unknown "Look, there's nothing to worry about. Besides, if you die, how are you gonna tell them?"
+    k199_offscreen "Look, there's nothing to worry about. Besides, if you die, how are you gonna tell them?"
     k207 "Shut up, 19-M9!"
     k199 "Alright, sheesh."
     k207 "What I was {i}trying{/i} to say is that this could've taken place after HoH SiS left, meaning CS is out right now anyway."
