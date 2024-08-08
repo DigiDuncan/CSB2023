@@ -1272,7 +1272,8 @@ label asset_debugger:
         show boom at center
         show mean human annoyed hat at mid_left
         show cs scared phone flipped at left
-        $ spritetotal += 3
+        show slime16 fire at mid_left_left
+        $ spritetotal += 4
         direct "test 66{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -1285,11 +1286,16 @@ label asset_debugger:
         play music hard_drive
         $ bgtotal += 1
         scene course_3
+        show dookie_milk_jar at mid_mid_right
+        show gamebarrel at mid_right
+        show slime16 at mid_right_right
+        show toxic_mikas at right
         show gleam at mid_left
         show mean_hat at center
         show cs surprised phone at left
         show wesleybottom at mid_left_left
-        $ spritetotal += 4
+        show mr_krupp grin at mid_mid_left
+        $ spritetotal += 9
         monika "test 67{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -2242,6 +2248,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(136):
+        $ sfxtotal += 1
+        play sound sfx_chug_jug
         $ musictotal += 1
         play music time_for_a_smackdown
         $ bgtotal += 1
@@ -2251,6 +2259,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(137):
+        $ sfxtotal += 1
+        play sound sfx_pickup_call
         $ musictotal += 1
         play music track_3
         $ bgtotal += 1
@@ -2260,6 +2270,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(138):
+        $ sfxtotal += 1
+        play sound sfx_ringtone_addy
         $ musictotal += 1
         play music track_4
         $ bgtotal += 1
@@ -2269,6 +2281,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(139):
+        $ sfxtotal += 1
+        play sound sfx_small_spill
         $ musictotal += 1
         play music trans_atlantic
         $ bgtotal += 1
@@ -2278,6 +2292,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(140):
+        $ sfxtotal += 1
+        play sound sfx_brew
         $ musictotal += 1
         play music trash_zone
         $ bgtotal += 1
@@ -2287,6 +2303,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(141):
+        $ sfxtotal += 1
+        play sound sfx_water_shake
         $ musictotal += 1
         play music triage_at_dawn
         $ bgtotal += 1
@@ -2296,6 +2314,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(142):
+        $ sfxtotal += 1
+        play sound sfx_addy_snap
         $ musictotal += 1
         play music tumultuous
         $ bgtotal += 1
@@ -2305,6 +2325,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(143):
+        $ sfxtotal += 1
+        play sound sfx_mc_bottlehit
         $ musictotal += 1
         play music tuna_fish
         $ bgtotal += 1
@@ -2314,6 +2336,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(144):
+        $ sfxtotal += 1
+        play sound sfx_mc_throw
         $ musictotal += 1
         play music tunnely_shimbers
         $ bgtotal += 1
@@ -2323,6 +2347,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(145):
+        $ sfxtotal += 1
+        play sound sfx_hairdryer
         $ musictotal += 1
         play music undyne
         $ bgtotal += 1

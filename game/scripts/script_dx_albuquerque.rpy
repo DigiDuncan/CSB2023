@@ -140,9 +140,9 @@ label dx_albuquerque:
     show hoh_hq at mid_offscreen_right behind ed
     show ed phone at right
     with moveinright 
-    daphone "{cps=40}If you'd like to make a call,{w=1} please {cps=25}hang up {cps=40}and try again;{w=1.5}{nw}"
+    daphone "{cps=40}If you'd like to make a call,{w=1} please {cps=25}hang up {cps=40}and try again;{w=1.25}{nw}"
     daphone "{cps=40}If you need help, hang up {cps=25}and then dial your {cps=10}oper{cps=20}ator!{w=3}{nw}"
-    daphone "{cps=40}If you'd like to make a call,{w=1} please {cps=25}hang up {cps=40}and try again;{w=1.5}{nw}"
+    daphone "{cps=40}If you'd like to make a call,{w=1} please {cps=25}hang up {cps=40}and try again;{w=1.25}{nw}"
     daphone "{cps=40}If you need help, hang up {cps=25}and then dial your {cps=10}oper{cps=20}ator!{w=3}{nw}"
     cs_nobeep "{cps=40}In Al{w=3.5}buquerque!{w=1.5}{nw}"
     cs_nobeep "{cps=40}Al{w=3.5}buquerque!{w=1.5}{nw}"
