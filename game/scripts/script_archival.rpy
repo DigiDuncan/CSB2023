@@ -84,15 +84,15 @@ label archival:
     n "They all look like the same person, except one is wearing sunglasses, another sports a top hat, and the third is in a hazmat suit."
     n "They quickly scan the room and notice the powered-on laptop."
     show k199 flipped
-    unknown "What the hell, K17! I thought this place didn't have any triggers!"
+    unknown "What the hell, 17-M4! I thought this place didn't have any triggers!"
     k174 "It... shouldn't. This place barely has {i}any{/i} functionality!"
     unknown "Then {i}why{/i} is the craptop on? CS-ocola would be here right now!"
     unknown "Mrrrph mrrph, mrphh mrphh mrphh {i}mrrrrrph!"
     unknown "What?"
-    unknown "Dude, K20, for the millionth time, take that thing off. We can't hear you."
+    unknown "Dude, 20-M9, for the millionth time, take that thing off. We can't hear you."
     show k174 flipped
     k174 "Yeah, man, there's no \"whatever virus\" here that you keep talking about. It's {i}fine."
-    n "K20-7 carefully and slowly takes off their mask."
+    n "K20-M7 carefully and slowly takes off their mask."
     play sound sfx_decompression volume 2.0
     hide k207h
     show k207 at mid_right_right
@@ -100,12 +100,12 @@ label archival:
     pause 0.5
     k207 "Alright, fine! But, if I get corona and die, I'll make sure Addy fires {i}both{/i} of you!"
     unknown "Look, there's nothing to worry about. Besides, if you die, how are you gonna tell them?"
-    k207 "Shut up, K19!"
+    k207 "Shut up, 19-M9!"
     k199 "Alright, sheesh."
     k207 "What I was {i}trying{/i} to say is that this could've taken place after HoH SiS left, meaning CS is out right now anyway."
     k199 "Yeah, but why did it {i}trigger?{/i} There is {i}no one{/i} here!"
     k207 "I don't know, man! I'm just throwing something out there!"
-    k199 "{i}God!{/i} It's a miracle you could even put this together, K17. It feels like this place is barely holding up!"
+    k199 "{i}God!{/i} It's a miracle you could even put this together, 17-M4. It feels like this place is barely holding up!"
     k199 "I mean, what did you write here? \"This house has felt like it was sitting with a giant rock on the side of the house\"?"
     k199 "Hahaha, that doesn't even make any fucking sense!"
     n "From his hiding spot in the corner, with his mind racing and trying to take in what's happening around him, CS feels a strong urge."
@@ -119,7 +119,7 @@ label archival:
     k199 "Wait a second..."
     show k199
     pause 1.0
-    n "K19-9 sees something shift in the corner and leans in to look."
+    n "K19-M9 sees something shift in the corner and leans in to look."
     show k199 at mid_offscreen_left with moveinright
     n "CS turns around for a moment and sees a face staring right at him."
     cs "Gahhhh!" with vpunch
@@ -179,7 +179,7 @@ label archival:
     with hpunch
     n "CS punches the worker to the ground!"
     k199 "Oh, {i}shit,{/i} man! He's gone AWOL!"
-    k207 "I don't think that's what AWOL means, but, still! {i}Do{/i} something, 17!"
+    k207 "I don't think that's what AWOL means, but, still! {i}Do{/i} something, 17M!"
     k174 "Fuck,{w=0} fuck,{w=0} fuck! Okay,{w=0} okay, what about this? Do something!"
 
     show nova_head as first at manual_pos(0.4, 1.5, 0.5):
@@ -234,7 +234,7 @@ label archival:
     play sound sfx_bite
     with vpunch
     k199 "{bt=a3-p10-s4}Kill them! {i}Kill{/i} themmm!"
-    k199 "{bt=a3-p10-s4}17, you piece of shit, make them {i}stop!"
+    k199 "{bt=a3-p10-s4}17M, you piece of shit, make them {i}stop!"
 
     show nova_head as first at random_pos(1300, 1800, 500, 900, 0.5)
     with MoveTransition(0.1)
