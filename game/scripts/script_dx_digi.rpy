@@ -17,7 +17,7 @@ label dx_underpants:
         zoom 0.6
     with dissolve
     n "George, Harold, and Pakoo are busy studying the wonders of gooey jugular veins."
-    play sound sfx_small_spill volume 5
+    play sound sfx_small_spill volume 8
     n "Their new science teacher, Mr.{w=0} Weird Al Yankovic, spills some smelly sulfuric acid on a pile of toxic Mikas!"
     show harold at center
     show pakoo disappointed flipped at mid_left behind george
@@ -28,7 +28,12 @@ label dx_underpants:
     weird_al "Whoops!"
     n "Suddenly, the pile begins to morph into a giant evil Mika!"
     
-    show toxic_mikas behind weird_al at center with move
+    # not sure why it doesnt like zorder here but w/e
+    # TODO: want pixellate here
+    show toxic_mikas at center behind pakoo
+    show weird_al behind toxic_mikas
+    show harold at center
+    with move
 
     play sound sfx_bossappears
     hide toxic_mikas
@@ -48,7 +53,8 @@ label dx_underpants:
     show pakoo flipped at offscreenleft
     with MoveTransition(0.25)
     n "George, Harold, and Pakoo try to escape by hiding behind a neutrino."
-    # TODO: sfx - pakoo's finger snap
+    # TODO: this is a pretty sloppy rip from the archival video. pls replace this with a clean copy - tate
+    play sound sfx_addy_snap
     n "Pakoo snaps his fingers."
     # TODO: hey baker, think you can clean up this trash edit for me? thx - tate
     show mr_krupp grin with dissolve
@@ -66,7 +72,7 @@ label dx_underpants:
     n "He grabs a slimy M-16 and hits the monster on its elbow!"
     show slime16 fire
     play sound sfx_hks1
-    show mika at right with MoveTransition(0.25)
+    show mika at right behind weird_al with MoveTransition(0.25)
     show slime16
     with hpunch
     mika "Ouchies!"
@@ -153,13 +159,14 @@ label dx_underpants:
         linear 0.1 ypos 0.6
     n "Pakoo shakes up the strange mixture and throws it at the monster!"
     show pakoo flipped at mid_left
-    show mika at right
-    show dookie_milk_jar at manual_pos(0.7, 0.3, 0.5):
-        linear 0.1 rotate 130
-    with MoveTransition(0.1)
-    # TODO: sfx - minecraft potion throwing/bottle breaking instead of splash
-    mika "Woohoo!"
-    play sound sfx_splash
+    #show mika at right
+    stop sound
+    play sound sfx_mc_throw volume 10
+    show dookie_milk_jar at manual_pos(0.5, 0.3, 0.5):
+        linear 0.25 rotate 130
+    with MoveTransition(0.25)
+    
+    play sound sfx_mc_bottlehit volume 3
     hide dookie_milk_jar with Dissolve(0.1)
     show mika:
         parallel:
@@ -170,6 +177,7 @@ label dx_underpants:
             linear 0.25 ypos 2.0
     play sound sfx_explosion
     with vpunch
+    mika "Woohoo!"
     # TODO: can i put the deltarune realistic explosion here???
     n "The monster dies of a massive right toe attack!"
     george "That makes sense, too."
@@ -178,15 +186,18 @@ label dx_underpants:
     play sound sfx_glitch_in
     hide cpt_underpants
     hide slime16
-    show mr_krupp at center
+    show mr_krupp at manual_pos(0.4, 1.0, 1.0)
     # TODO: need custom pixellate
     with pixellate
-    pause 2.0
-    mr_krupp "Holy bright penguins!"
+    pause 0.5
+    show mr_krupp at center behind weird_al with move
+    pause 1.0
+    mr_krupp "Holy bright {i}penguins!"
     mr_krupp "I'll bet that George, Harold, and Pakoo are responsible for this mess!"
     show pakoo worried flipped
-    mr_krupp "For your punishment, you all must chop in the broom closet for negative eight hours!"
-
+    mr_krupp "For your punishment, you all must chop in the broom closet for {i}negative eight hours!"
+    
+    pause 0.5
     scene black with dissolve
     pause 1.0
 
@@ -197,5 +208,5 @@ label dx_underpants:
     with dissolve
     pause 1.0
     george "This has got to be the dumbest story we've ever been in!"
-    harold "Don't blame me, Pakoo wrote it!"
+    harold "Don't blame {i}me,{/i} Pakoo wrote it!"
     return
