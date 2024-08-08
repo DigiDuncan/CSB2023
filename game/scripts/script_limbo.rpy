@@ -33,12 +33,54 @@ screen dx_select():
                 xfill True
                 yfill True
                 # We can have 10 entries here
+            
+                ### SPEEDRUN ###
                 imagebutton auto "menu/csbiiidx_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
-                    hovered tt.Action("I'm going to cum")
+                    hovered tt.Action("Speedrun")
                     at transform:
                         zoom 0.333
                         xalign 0.5
-                    action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("dx_after_true")
+                    action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("vibration")
+
+                ### KUWAIT ###
+                imagebutton auto "menu/csbiiidx_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
+                    hovered tt.Action("Kuwait")
+                    at transform:
+                        zoom 0.333
+                        xalign 0.5
+                    action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("kuwait_travel")
+
+                ### BRONSON ###
+                imagebutton auto "menu/csbiiidx_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
+                    hovered tt.Action("Bronson")
+                    at transform:
+                        zoom 0.333
+                        xalign 0.5
+                    action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("michigan_bronson")
+
+                ### ROCKSTAR II ###
+                imagebutton auto "menu/csbiiidx_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
+                    hovered tt.Action("Rockstar II")
+                    at transform:
+                        zoom 0.333
+                        xalign 0.5
+                    action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("rockstar_start")
+
+                ### TRAIN (WINNER) ###
+                imagebutton auto "menu/csbiiidx_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
+                    hovered tt.Action("Train (Winner)")
+                    at transform:
+                        zoom 0.333
+                        xalign 0.5
+                    action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("train_start_good")
+
+                ### TRAIN (THIEF) ###
+                imagebutton auto "menu/csbiiidx_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
+                    hovered tt.Action("Train (Thief)")
+                    at transform:
+                        zoom 0.333
+                        xalign 0.5
+                    action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("train_start_bad")
 
 
 label lose_car_game:
