@@ -15,8 +15,8 @@ init python:
     import re
     def auto_wait(s):
         # these items wait for 0.25:
-        # commas, periods, question marks, exclamation marks
-        s = re.sub(r'(([,|.|?|!])(({\/[a-z]*})*) )', r'\1{w=0.25}', s, flags=re.IGNORECASE) 
+        # commas, periods, question marks, exclamation marks, semicolons
+        s = re.sub(r'(([,|.|?|!|;])(({\/[a-z]*})*) )', r'\1{w=0.25}', s, flags=re.IGNORECASE) 
 
         # these items wait for 0.5:
         # ellipses, em-dashes, colons
