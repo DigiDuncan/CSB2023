@@ -1872,8 +1872,8 @@ layeredimage flying_train_final:
             "train_fly_1"
 
 # misc
+image ai_ducks = SnowBlossom("duck.png", 50, fast = True)
 
-image ai_ducks = SnowBlossom("duck.png", 50)
 # Audio
 # CSBI Music
 define audio.lets_hear_my_baby = "lets_hear_my_baby.ogg"
@@ -2139,6 +2139,7 @@ define audio.sfx_glass_heavy = "sfx/sfx_glass_heavy.ogg"
 define audio.sfx_gleam = "sfx/sfx_gleam.ogg"
 define audio.sfx_glitch_in = "sfx/sfx_glitch_in.ogg"
 define audio.sfx_gul = "secret/sfx_gul.ogg"
+define audio.sfx_hairdyer = "sfx/sfx_hairdryer.ogg"
 define audio.sfx_hat_off = "sfx/sfx_hat_off.ogg"
 define audio.sfx_heartbeat = "sfx/sfx_heartbeat.ogg"
 define audio.sfx_house_door_close = "sfx/sfx_house_door_close.ogg"
