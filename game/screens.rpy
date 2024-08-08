@@ -310,6 +310,7 @@ screen navigation():
         if main_menu:
 
             textbutton _("Start") action Start("chapter_select")
+            textbutton _("Dump") action Start("dump")
 
         else:
 
