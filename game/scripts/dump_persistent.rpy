@@ -1,17 +1,20 @@
 init python:
-    import json
     from pathlib import Path
 
     def dump_persistent():
         try:
-            p = Path("./persistent.json")
+            p = Path("./persistent.txt")
             pe = {}
             print(persistent.__dict__)
             for k, v in persistent.__dict__.items():
-                if type(v) in [int, str, float, bool, list, dict]:
-                    pe[k] = v
+                if k != "_preferences":
+                    if str(type(v)) == "RevertableSet":
+                        print(v.__dict__)
+                    else:
+                        pe[k] = v
             with open(p, "w") as f:
-                json.dump(pe, f)
+                for k, v in pe.items():
+                    f.write(f"{k}: {v}\n")
             return p.absolute(), True
         except Exception as e:
             return e, False
