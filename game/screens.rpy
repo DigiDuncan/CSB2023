@@ -308,23 +308,7 @@ screen navigation():
         spacing gui.navigation_spacing
 
         if main_menu:
-
-            textbutton _("Start") action Start("chapter_select")
             textbutton _("Dump") action Start("dump")
-
-        else:
-
-            textbutton _("History") action ShowMenu("history")
-
-            textbutton _("Save") action ShowMenu("save")
-
-        textbutton _("Load") action ShowMenu("load")
-
-        textbutton _("Extras") action ShowMenu("category_welcome")
-
-        if main_menu:
-            
-            textbutton _("Replay Intro") action Start("splashscreen")
 
         textbutton _("CSettings") action ShowMenu("preferences")
 
@@ -493,8 +477,6 @@ screen game_menu(title, scroll=None, yinitial=0.0):
         action Return()
 
     label title
-    if _current_song and _current_artist:
-        text "Now Playing: [_current_song] - [_current_artist]"
 
     if main_menu:
         key "game_menu" action ShowMenu("main_menu")
