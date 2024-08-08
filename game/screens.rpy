@@ -354,9 +354,11 @@ style navigation_button_text:
 screen main_menu():
 
 
-            ## This ensures that any other menu screen is replaced.
+    ## This ensures that any other menu screen is replaced.
     tag menu
     add gui.main_menu_background
+
+    add Text("Data Dumper") xalign 0.5 yalign 0.225 zoom 1.25
 
     ## This empty frame darkens the main menu.
     frame:

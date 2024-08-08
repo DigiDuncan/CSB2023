@@ -7,7 +7,7 @@ init python:
             pe = {}
             print(persistent.__dict__)
             for k, v in persistent.__dict__.items():
-                if k != "_preferences":
+                if not k.startswith("_"):
                     pe[k] = v
             with open(p, "w") as f:
                 for k, v in pe.items():
