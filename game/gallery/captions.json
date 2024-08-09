@@ -4,6 +4,12 @@
         "title": "Alpha Arceus",
         "caption": "This was the version of Arceus that we used back in 2019."
     },
+    "1.ogg": {
+        "type": "audio",
+        "title": "Test Developer Commentary",
+        "caption": "This was the audio file used to test developer commentary during the first CSBIII DX Jam. It might give an insight into Digi's feelings on the game at the time.",
+        "album_art": "dxcom_icon_static.png"
+    },
     "main_menu.png": {
         "type": "image",
         "title": "2019 Main Menu",
