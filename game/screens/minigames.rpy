@@ -65,8 +65,8 @@ screen minigame_gallery():
             yalign 0.98
             background "#5F777F"
     #return button
-    textbutton "{color=#fff}Return{/color}":
-        action Return()
+    textbutton "Return to Extras":
+        action ShowMenu("category_welcome"), PauseAudio("music", False)
         xalign 0.5
         yalign 0.98
         background "#5F777F"
