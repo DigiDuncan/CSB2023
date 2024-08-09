@@ -82,7 +82,6 @@ screen dx_select():
                         xalign 0.5
                     action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("train_start_bad")
 
-
 label lose_car_game:
     bad_end "100 percent\nunsatisfied." "true_iowa"
     return

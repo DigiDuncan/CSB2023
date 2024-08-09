@@ -1,77 +1,96 @@
 {
     "alphaarc.png": {
+        "type": "image",
         "title": "Alpha Arceus",
         "caption": "This was the version of Arceus that we used back in 2019."
     },
     "main_menu.png": {
+        "type": "image",
         "title": "2019 Main Menu",
         "caption": "This is one of the first versions of the main menu for {i}CSB.{/i} Still very {i}Nekopara{/i}-y, very glad we moved away from this."
     },
     "linus.png": {
+        "type": "image",
         "title": "Beta Linus",
         "caption": "This was a purposed version of Linus that we used early in development. He was a little crusty, though."
     },
     "michael.png": {
+        "type": "image",
         "title": "Beta Michael",
         "caption": "This is an early version of Michael we used early on. He was mainly just a head, so we scrapped it."
     },
     "wipmenu.png": {
+        "type": "image",
         "title": "Beta Menu",
         "caption": "This was the beta menu for the game, because I (Pakoo) didn't want a blank background. I still kinda miss it."
     },
     "mean_original.png": {
+        "type": "image",
         "title": "mean_original",
         "caption": "Mean's original sprite, as seen in {i}CSBounciness III,{/i} before Tate redrew it. It's an edited screenshot from an episode of {i}Bubble Guppies.{/i} This representation of Mean is affectionately known as \"Yellow Fucker\"."
     },
     "worker_mean.png": {
+        "type": "image",
         "title": "worker_mean",
         "caption": "Mean's original HoH SiS sprite, as seen in {i}CSBounciness III,{/i} before Tate redrew it."
     },
     "mean_clothes.png": {
+        "type": "image",
         "title": "mean_clothes",
         "caption": "This was going to be used for a joke in Train Route that involved Mean's transformation rendering him nude until Tate produced this emergency set of clothes. Tate would then throw the clothes at Mean, knocking him offscreen until he returned, fully dressed. This bit was cut for several reasons."
     },
     "mean_human_placeholder.png": {
+        "type": "image",
         "title": "mean_human_placeholder",
         "caption": "Hastily-drawn placeholder sprite by Tate, used while writing the portion of Train Route that introduced Mean's human form. Originally, Tate intended to be the one to draw Mean's human sprites, but Mushroom Man did a much better job at capturing Mean's creative vision."
     },
     "amtrak_stewardess_placeholder.png": {
+        "type": "image",
         "title": "amtrak_stewardess_placeholder",
         "caption": "A {i}slightly-{/i}less half-assed placeholder sprite by Tate. We're still not sure if the replacement sprite found on Google Images is an actual art piece or an AI-generated image."
     },
     "tate_mean.png": {
+        "type": "image",
         "title": "tate_mean",
         "caption": "Unused base sprite for a {i}really{/i} cringe section of the Train Route script that will never, {i}ever{/i} see the light of day. Instead, enjoy this picture of Tate gently holding a pincushion. :D"
     },
     "mean_human_sketch.png": {
+        "type": "image",
         "title": "mean_human_sketch",
         "caption": "An unfinished sketch of what would have been Mean's human sprite base. Tate's art style is a bit too \"pretty\" to do Mean's character justice."
     },
     "mean_human_hat_sketch.png": {
+        "type": "image",
         "title": "mean_human_hat_sketch",
         "caption": "The same sketch, just with Mean's hat."
     },
     "zenigata_car_placeholder.png": {
+        "type": "image",
         "title": "zenigata_car_placeholder",
         "caption": "Placeholder sprite for Zenigata's car during the rooftop train chase scene."
     },
     "addyfucku.png": {
+        "type": "image",
         "title": "Beta Addy Sprite",
         "caption": "Pakoo: I drew my OC (with color) for the first time actually, and I made it in about 10 minutes for some dumb bit that was for finishing the True Route script."
     },
     "road_to_canada.png": {
+        "type": "image",
         "title": "Beta Road to Canada",
         "caption": "This was the original background for when CS, Arceus, and Anno emerge from the surface out of jail. It was a lot muddier."
     },
     "digisquare.png": {
+        "type": "image",
         "title": "Digi Square Room",
         "caption": "When Digi was working on his Digi EX boss battle, he drew this for reference. Welcome to the square room."
     },
     "fumobee2.png": {
+        "type": "image",
         "title": "Fumo Bee 2",
         "caption": "This was supposed to be used... somewhere? Fumo Bee 1 is used for a Fun Value in South route at the Lego pizzeria, though. Fun fact: did you know Pakoo hates bees?"
     },
     "TV_SMPTE.png": {
+        "type": "image",
         "title": "TV SMPTE",
         "caption": "This background is from {i}CSBII{/i}. I don't know why it's still in the game. It's just sitting here in the files and looks awful. Who edited this? Why are the bars not tilted at all?"
     }

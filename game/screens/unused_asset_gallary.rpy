@@ -1,4 +1,6 @@
 screen unused_gallery(i):
+    $ renpy.music.play("gallery/what_the_night_will_bring.mp3", channel='music2', relative_volume=8.0)
+    $ renpy.music.set_pause(True, channel = "music")
     tag menu
     add Color('#323e42', alpha=0.75)
 
@@ -17,13 +19,6 @@ screen unused_gallery(i):
         action ShowMenu("unused_gallery", i+1)
         yalign 0.1
         xalign 0.9
-
-    # Return Button
-    textbutton "{color=#fff}Return{/color}":
-        action Return(), Stop("jukebox"), PauseAudio("music", False)
-        xalign 0.02
-        yalign 0.04
-        background "#5F777F"
 
     # Counter
     python:
@@ -49,7 +44,22 @@ screen unused_gallery(i):
         xsize 600
         ysize 800
 
-    # Main Image
-    image ProportionalScale("gallery/images/" + list(asset_dict.keys())[i % len(asset_dict)], 500, 800):
-        xcenter 0.3
-        ycenter 0.6
+    # Main Image (if image)
+    if list(asset_dict.values())[i%len(asset_dict)]["type"] == "image":
+        $ renpy.music.set_pause(False, channel = "music2")
+        $ renpy.music.stop(channel='jukebox')
+        image ProportionalScale("gallery/images/" + list(asset_dict.keys())[i % len(asset_dict)], 500, 800):
+            xcenter 0.3
+            ycenter 0.6
+
+    # Main Image (if audio)
+    else:
+        $ renpy.music.set_pause(True, channel = "music2")
+        $ renpy.music.play(list(asset_dict.values())[i % len(asset_dict)]["title"], "jukebox")
+
+    # Return Button
+    textbutton "{color=#fff}Return{/color}":
+        action Stop("jukebox"), Stop("music2"), PauseAudio("music", False), Return()
+        xalign 0.02
+        yalign 0.04
+        background "#5F777F"
