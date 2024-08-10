@@ -1069,11 +1069,12 @@ label asset_debugger:
         play music flyday_chinatown
         $ bgtotal += 1
         scene copcar
+        show realistic_explosion_anim at right
         show onscreen_sharpener at center
         show mean human happy flipped at mid_left
         show lupin run at mid_mid_left
         show cs pencil at left
-        $ spritetotal += 4
+        $ spritetotal += 5
         green "test 54{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -2357,6 +2358,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(146):
+        $ sfxtotal += 1
+        play sound sfx_flashback_end
         $ musictotal += 1
         play music upon_me
         $ bgtotal += 1
@@ -2366,6 +2369,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(147):
+        $ sfxtotal += 1
+        play sound sfx_flashback_start
         $ musictotal += 1
         play music wayward_wanderer
         $ bgtotal += 1
@@ -2375,6 +2380,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(148):
+        $ sfxtotal += 1
+        play sound sfx_ringtone_billy
         $ musictotal += 1
         play music weird_personalities
         $ bgtotal += 1
@@ -2384,6 +2391,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(149):
+        $ sfxtotal += 1
+        play sound sfx_ringtone_tate
         $ musictotal += 1
         play music winter_lullaby
         $ bgtotal += 1
@@ -2392,6 +2401,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(150):
+        $ sfxtotal += 1
+        play sound sfx_ringtone_tate_alt
         $ musictotal += 1
         play music wool_gloves
         $ bgtotal += 1
@@ -2400,6 +2411,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(151):
+        $ sfxtotal += 1
+        play sound sfx_rubiks_cube
         $ musictotal += 1
         play music xddcc
         $ bgtotal += 1
@@ -2408,6 +2421,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(152):
+        $ sfxtotal += 1
+        play sound sfx_tf2_sapper
         $ musictotal += 1
         play music ocean_man
         $ bgtotal += 1
