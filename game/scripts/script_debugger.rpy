@@ -1598,7 +1598,7 @@ label asset_debugger:
         scene hotel_hall
         show cs at t_copguy_frontseat
         $ transformtotal += 1
-        agent "test 85{w=0.5}{nw}"
+        howie "test 85{w=0.5}{nw}"
         $ charactertotal += 1
     else:
         jump exit_debug
@@ -1612,8 +1612,7 @@ label asset_debugger:
         scene falling
         show cs at t_copguy_frontseat
         $ transformtotal += 1
-        agent "test 86{w=0.5}{nw}"
-        $ charactertotal += 1
+        howie "test 86{w=0.5}{nw}"
     else:
         jump exit_debug
     if fun_value(87):

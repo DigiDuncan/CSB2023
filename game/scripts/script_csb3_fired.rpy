@@ -827,15 +827,15 @@ label fired_fan_interaction:
     cs "How are we going to figure out how to--"
     n "Anno gets an email."
     anno "Wait, hold on, let me read this, it looks important."
-    agent "{b}Tour Offer{/b}\nHey, [band_name]!\nMy name is Howie Mandell, and I'm a talent agent and tour manager."
+    howie "{b}Tour Offer{/b}\nHey, [band_name]!\nMy name is Howie Mandell, and I'm a talent agent and tour manager."
     cs "Woah, really?"
-    agent "I'm emailing to inquire about whether you'd be interested in touring the country with your band. Your latest EP, {i}[ep_name],{/i} has been making big waves on streaming services."
-    agent "I think live performances might be just what you need to take the next step."
+    howie "I'm emailing to inquire about whether you'd be interested in touring the country with your band. Your latest EP, {i}[ep_name],{/i} has been making big waves on streaming services."
+    howie "I think live performances might be just what you need to take the next step."
     anno "Oh my God!"
-    agent "If you're willing to negotiate, I think we could strike a very mutually beneficial deal."
+    howie "If you're willing to negotiate, I think we could strike a very mutually beneficial deal."
     show arceus happy
     arceus "That sounds amazing!"
-    agent "Please get in touch as soon as you can,\n-- Howie Mandell"
+    howie "Please get in touch as soon as you can,\n-- Howie Mandell"
     cs "We have to accept, right?"
     arceus "Our last two gambles paid off. May as well go all the way."
     anno "We can't pass this up. I'll email him back."
@@ -856,12 +856,12 @@ label fired_howie:
     play music gold_room volume 0.5
     n "Howie walks into the lobby."
     show howie flipped at left with moveinleft
-    agent "You guys ready?"
+    howie "You guys ready?"
     cs "Ready for what?"
-    agent "A ride in a limousine!"
+    howie "A ride in a limousine!"
     n "The group is in shock."
     anno "Already? We haven't even struck a deal!"
-    agent "Ah, you will, I trust in that... but until then, why don't I treat you all to the ride of a lifetime?"
+    howie "Ah, you will, I trust in that... but until then, why don't I treat you all to the ride of a lifetime?"
     stop music fadeout 3.0
     n "CS, Anno, and Arceus follow Howie to the limo parked out front."
     show howie with determination
@@ -886,29 +886,29 @@ label fired_limo_time:
         arceus "These snacks are amazing!"
     anno "This music's awesome!"
     cs "These seats sure are comfy!"
-    agent "Alright, boys, enough chat, let's talk business."
-    agent "I want to take you guys on tour."
+    howie "Alright, boys, enough chat, let's talk business."
+    howie "I want to take you guys on tour."
     show cs worried
     show arceus flipped
     cs "Already?!"
-    agent "Oh yeah, baby, already. {i}[ep_name]{/i} made [band_name] big overnight. This kind of success comes once in a lifetime, and it's in {i}your{/i} lifetime, and it's {i}right now!{/i}"
+    howie "Oh yeah, baby, already. {i}[ep_name]{/i} made [band_name] big overnight. This kind of success comes once in a lifetime, and it's in {i}your{/i} lifetime, and it's {i}right now!{/i}"
     anno "Woah, woah, woah, slow down. Why are you so invested in our success?"
-    agent "Oh, don't think I'm going to get a raw deal here. I know how to make sure we all end up happy."
+    howie "Oh, don't think I'm going to get a raw deal here. I know how to make sure we all end up happy."
     show arceus angry flipped
     arceus "You sure you mean {i}all{/i} of us?"
-    agent "I sense you're spooked so I'll give ya the rub. We take you on tour. Every ticket you sell, I get a cut, you get a cut, we all go home snuggling our cash."
+    howie "I sense you're spooked so I'll give ya the rub. We take you on tour. Every ticket you sell, I get a cut, you get a cut, we all go home snuggling our cash."
     cs "You snuggle your cash?"
-    agent "Better than lavender, baby."
+    howie "Better than lavender, baby."
     show arceus flipped
     show cs
     anno "So what's the plan? How do we get venues? Do we even have a way to promote?"
-    agent "Leave all the fiddly buisness to me. You guys just get on stage and sing like, {i}[song_name_3],{/i} or whatever."
-    agent "How's that song go?\n{image=note_small1.png} {i}I made my way over to Japan, [line_3]?{/i} {image=note_small2.png}"
+    howie "Leave all the fiddly buisness to me. You guys just get on stage and sing like, {i}[song_name_3],{/i} or whatever."
+    howie "How's that song go?\n{image=note_small1.png} {i}I made my way over to Japan, [line_3]?{/i} {image=note_small2.png}"
     show arceus angry flipped
     arceus "No, that's not--{w=0.5}{nw}"
-    agent "Anywho, do we have a deal?"
+    howie "Anywho, do we have a deal?"
     anno "I want to see whatever contract you're having us sign, first."
-    agent "Smart man, smart man. Here it is."
+    howie "Smart man, smart man. Here it is."
     n "Howie hands Anno the contract."
     stop music fadeout 3.0
     music end    
@@ -937,13 +937,13 @@ label fired_signed_the_contract:
     show howie at right
     with dissolve
     play music gold_room volume 0.5
-    agent "Well, your first stop is Vancouver."
+    howie "Well, your first stop is Vancouver."
     cs "Vancouver? Where are we playing?"
     n "Howie reads from his iPad."
-    agent "Looks like something called LTX? Linus Tech Expo?"
+    howie "Looks like something called LTX? Linus Tech Expo?"
     show cs worried
     cs "Wait, Linus--"
-    agent "See you bright and early tomorrow! We're taking a tour bus!"
+    howie "See you bright and early tomorrow! We're taking a tour bus!"
 
     hide howie with moveoutright
     show cs at center
@@ -1027,9 +1027,9 @@ label fired_first_tour_day:
     with moveinleft
     play music gold_room volume 0.5
     show howie at right with moveinright
-    agent "You boys ready to go?"
+    howie "You boys ready to go?"
     cs "Ready as we'll ever be."
-    agent "Well, then! It's showtime!"
+    howie "Well, then! It's showtime!"
     stop music fadeout 3.0
     scene black with dissolve
     scene ltx with dissolve
@@ -1126,17 +1126,17 @@ label fired_first_tour_day:
     show howie flipped at right behind arceus with move
     show howie at right behind arceus
 
-    agent "Boys!"
+    howie "Boys!"
     n "The team turns to face Howie."
-    agent "You really rocked out there! Playing Linus' favorite song, that was a clutch move."
+    howie "You really rocked out there! Playing Linus' favorite song, that was a clutch move."
     cs "How much did we make?"
-    agent "Five."
+    howie "Five."
     arceus "Five?!"
-    agent "Thousand."
+    howie "Thousand."
     anno "Holy shit, already? With that kinda cashflow, we could--"
-    agent "Woah, woah, woah, hold your horses, kid."
+    howie "Woah, woah, woah, hold your horses, kid."
     anno "Hold my horses...?"
-    agent "That's without me taking my cut, or you three splitting it. We've still got more shows to do, you know!"
+    howie "That's without me taking my cut, or you three splitting it. We've still got more shows to do, you know!"
     cs "Well, then, let's get this show on the road!"
     stop music fadeout 3.0
     scene black with dissolve
@@ -1153,7 +1153,7 @@ label fired_second_tour_day:
     play music exotic volume 0.5
     n "CS shouts up to the front."
     cs "Where are we heading?!"
-    agent "Manitoba! We'll stop in Winnipeg, so you guys can grab some stuff if you need it."
+    howie "Manitoba! We'll stop in Winnipeg, so you guys can grab some stuff if you need it."
     cs "Yeah, I might head into the city. What about you guys?"
     anno "Nah, I'm good."
     arceus "Yeah, I'm just gonna chill here."
@@ -1319,11 +1319,11 @@ label fired_third_tour_day:
     with dissolve
     play music exotic volume 0.5
     n "Howie hollers from the front of the bus."
-    agent "Alright, boys, it's your last performance!"
+    howie "Alright, boys, it's your last performance!"
     cs "Where are we headed?"
-    agent "Ontario!"
+    howie "Ontario!"
     cs "Ontario? That's where that one fan was from!"
-    agent "Well, he's about to be a happy camper!"
+    howie "Well, he's about to be a happy camper!"
     anno "I can't believe we're already on our last tour day!"
     $ line_num = renpy.get_filename_line()[1] + 1
     arceus "Well, it's been [line_num] lines, it's been a while."
@@ -1474,14 +1474,14 @@ label fired_final_tour_bus:
     with move
     show howie at right with moveinright
 
-    agent "Well, gang, that was the last stop! You did amazing out there."
+    howie "Well, gang, that was the last stop! You did amazing out there."
     cs "I'm beat."
     anno "I'm so tired..."
     arceus "I need a nap."
-    agent "Well, maybe this will perk you guys up. Wanna hear the final total?"
+    howie "Well, maybe this will perk you guys up. Wanna hear the final total?"
     cs "Sure, what is it?"
-    agent "Well, after all the cuts, and then splitting it... {w=0.5}each of you gets..."
-    agent "$10,000!"
+    howie "Well, after all the cuts, and then splitting it... {w=0.5}each of you gets..."
+    howie "$10,000!"
     n "The gang perks up."
     cs "Wait... $10K?!"
     n "Arceus nudges CS."
@@ -1499,7 +1499,7 @@ label fired_final_tour_bus:
     cs "Yeah, you're right. And, hey, maybe we can write {i}[ep_name] 2{/i} some day!"
     arceus "Maybe we shouldn't name it {i}[ep_name] 2.{/i}"
     cs "Yeah."
-    agent "Want me to point this bus towards Casa de CS?"
+    howie "Want me to point this bus towards Casa de CS?"
     cs "You know what, yeah, let's do it."
     show arceus happy
     arceus "Let's get you home, buddy."
@@ -1521,9 +1521,9 @@ label fired_final_tour_bus:
     arceus "Fair enough."
     anno "Yeah, we need to get back to our places, too. Figure out how to reintegrate."
     show howie flipped at left with moveinleft
-    agent "Pleasure doing business with you, boys."
+    howie "Pleasure doing business with you, boys."
     cs "Thanks, Mr. Mandell."
-    agent "Please, call me Howie."
+    howie "Please, call me Howie."
     cs "Well, thanks, Howie."
     cs "Bye, everyone! Let's talk soon."
     cs "[band_name] forever!"
