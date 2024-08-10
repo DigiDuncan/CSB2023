@@ -207,13 +207,12 @@ label asset_debugger:
         scene walmart_inside
         show craptop ytp at center
         show cs angry dark flipped at left
-        $ spritetotal += 9
+        $ spritetotal += 8
         show worker_2 at mid_left_left
         show copguycrawl at mid_left
         show pakoo happy flipped at mid_mid_left
         show tate shock dark at mid_mid_right
         show phil at mid_right
-        #show nova2 at mid_right_right # no longer needed
         show arceus full angry at right 
         greeter "test 10{w=0.5}{nw}"
         $ charactertotal += 1
@@ -228,13 +227,12 @@ label asset_debugger:
         scene walmart_aisle
         show craptop evidence at center
         show cs worried at left
-        $ spritetotal += 9
+        $ spritetotal += 8
         show worker_3 at mid_left_left
         show sheriff at mid_left
         show linus at mid_mid_left
         show tate shock flipped at mid_mid_right
         show carguy at mid_right
-        #show nova3 at mid_right_right # no longer needed
         show arceus full angry flipped at right 
         doug "test 11{w=0.5}{nw}"
         $ charactertotal += 1
@@ -648,11 +646,10 @@ label asset_debugger:
         scene inside_tim_hortons
         show bag flipped at center
         show cs prison_worried at left
-        $ spritetotal += 9
+        $ spritetotal += 8
         show blue_light at mid_left_left
         show lego eyes at mid_left
         show jeremy at mid_mid_left
-        # show fumobee2 at mid_mid_right # moved to unused gallery
         show ikea_greeter flipped at mid_right
         show cruise at mid_right_right
         show arceus dark flipped at right 
@@ -3333,8 +3330,7 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(290):
-        $ bgtotal += 1
-        # scene start_route # removed since we're using text-based now
+        $ bgtotal += 0
         pause 0.1
     else:
         jump exit_debug
@@ -3531,8 +3527,7 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(323):
-        $ bgtotal += 1
-        # scene amtrak_economy # this does not exist anymore
+        $ bgtotal += 0
         pause 0.1 
     else:
         jump exit_debug
