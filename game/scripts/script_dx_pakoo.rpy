@@ -397,6 +397,8 @@ label dx_after_back_to_story:
     cs "Sounds good to me."
     jump dx_after_cult_questions
 
+# CULT CON INTRO
+
 label dx_after_cult_questions:
     play music ten_feet_away if_changed 
     scene blue_branch
@@ -515,7 +517,9 @@ label dx_after_competiton_start:
     $ con_start = True
     cs "Alright, so, there are a few cults I can challenge here."
     jump dx_after_seek_competitors
-    
+
+# CULT CON START
+
 label dx_after_seek_competitors:
     play music ten_feet_away if_changed
     scene cult_con
@@ -543,6 +547,8 @@ label dx_after_votes_balance:
     n "Total votes: [total_votes]"
     n "Current balance: $[cath_counter]"
     jump dx_after_seek_competitors
+
+# PENCIL CULT
 
 label dx_after_pencil_ask:
     play music ten_feet_away if_changed    
@@ -725,6 +731,8 @@ label dx_after_pencil_ask:
     cs "Alright, well..."
     jump dx_after_seek_competitors
 
+# SCIENTOLOGY
+
 label dx_after_science_ask:
     play music ten_feet_away if_changed    
     scene cult_con
@@ -858,6 +866,8 @@ label dx_after_science_ask:
     show cs cultist at center with moveinleft
     cs "Well, that was a lot easier than I thought."
     jump dx_after_seek_competitors
+
+# CATHOLICS
 
 label dx_after_catholic_ask:
     play music ten_feet_away if_changed
@@ -1008,6 +1018,8 @@ label dx_after_catholic_tally:
     scene cult_con with dissolve
     show cs cultist at center with moveinleft
     jump dx_after_seek_competitors
+
+# LUNATIC CULTISTS
 
 label dx_after_lunatic_ask:
     play music ten_feet_away if_changed    
@@ -1364,6 +1376,8 @@ label dx_after_three_right:
     $ lunatic_check = True
     jump dx_after_seek_competitors
 
+# SOCIETY OF THE BLIND EYE
+
 label dx_after_blindeye_ask:
     cs "Those guys look pretty strange."
     cs "They look like they have eyes on their hoods!"
@@ -1372,7 +1386,7 @@ label dx_after_blindeye_ask:
     blind_eye "Well, we prefer not to see."
     blind_eye "We are the Society of the Blind Eye, and we remove traumatizing memories from our local town."
     cs "Oh crap, that sounds really sketchy."
-    cs "How… do you, do that?"
+    cs "How... do you, do that?"
     cs "Do you use some crazy voodoo magic or some shit?"
     blind_eye "No, we use this."
     n "The Blind Eye cultist pulls out what looks like a gun with a lightbulb on the end of it."
@@ -1381,18 +1395,22 @@ label dx_after_blindeye_ask:
     blind_eye "Unfortunately, it broke recently and we haven't been able to fix it."
     blind_eye "... I may have dropped it too many times."
     cs "Well, is there any way I can help?"
-    blind_eye "Well, there is one man who can help us…"
+    blind_eye "Well, there is one man who can help us..."
     blind_eye "Do you perchance know a Fiddleford? Fiddleford McGucket?"
     cs "...No. Can't say I have."
-    blind_eye "Hmm…"
-    blind_eye "They said they would be here… I wonder where they are…"
+    blind_eye "Hmm..."
+    blind_eye "They said they would be here… I wonder where they are..."
     cs "I can ask around for them, if you want me to."
     blind_eye "That would be great! We really need them to help fix our gun."
     cs "Sure, I'll be back soon!"
+    $ blind_check = True
     n "CS heads back to the convention floor."
-    cs "Well, now I have to find this guy…"
+    cs "Well, now I have to find this guy..."
     cs "Fiddleford? I think their name was?"
-    cs "Well anyways…"
+    cs "Well anyways..."
+    jump dx_after_seek_competitors
+
+# BLUE BRANCH
 
 label dx_after_branch_ask:
     play music ten_feet_away if_changed    
@@ -1413,31 +1431,59 @@ label dx_after_branch_ask:
     jump menu_branch_ask
 
 label menu_branch_ask:
-    menu:
-        "Ask for help again":
-            jump dx_after_cult_questions
-        "Finish gathering votes":
-            jump dx_after_branch_ask2
-        "Continue gathering votes":
-            cs "Nevermind, I'm gonna see if I can get some more votes."
-            cultist "Alright, well, get out there and show them how cool we are!"
-            cs "On it!"
-            show cs cultist at offscreenright with move
-            pause 0.3
-            show cs cultist at offscreenright with vpunch
-            play sound sfx_clonk
-            pause 1.0
-            show cs disappointed cultist flipped at right with moveinright
-            cs "Ow, that was a wall."
-            cs "I'm okay..."
-            cultist "Maybe raise your hood a bit?"
-            cs "Nah, I'm fine. Alright, back to culting!"
-            hide cs with moveoutleft
-            play music ten_feet_away if_changed
-            scene cult_con
-            with dissolve
-            show cs cultist at center with moveinleft
-            jump dx_after_seek_competitors
+    if blind_check:
+        menu:
+            "Ask for help again":
+                jump dx_after_cult_questions
+            "Finish gathering votes":
+                jump dx_after_branch_ask2
+            "Continue gathering votes":
+                jump dx_after_continue_votes
+            "Ask about Fiddleford":
+                jump dx_after_branch_fiddleford
+    else:
+        menu:
+            "Ask for help again":
+                jump dx_after_cult_questions
+            "Finish gathering votes":
+                jump dx_after_branch_ask2
+            "Continue gathering votes":
+                jump dx_after_continue_votes
+
+label dx_after_continue_votes:
+    cs "Nevermind, I'm gonna see if I can get some more votes."
+    cultist "Alright, well, get out there and show them how cool we are!"
+    cs "On it!"
+    show cs cultist at offscreenright with move
+    pause 0.3
+    show cs cultist at offscreenright with vpunch
+    play sound sfx_clonk
+    pause 1.0
+    show cs disappointed cultist flipped at right with moveinright
+    cs "Ow, that was a wall."
+    cs "I'm okay..."
+    cultist "Maybe raise your hood a bit?"
+    cs "Nah, I'm fine. Alright, back to culting!"
+    hide cs with moveoutleft
+    play music ten_feet_away if_changed
+    scene cult_con
+    with dissolve
+    show cs cultist at center with moveinleft
+    jump dx_after_seek_competitors
+
+label dx_after_branch_fiddleford:
+    cs "Do any of you guys know a Fiddleford?"
+    cultist "..."
+    cultist "No. Who asked you this?"
+    cs "...The Blind Eye Association?"
+    cultist "I see."
+    cs "So, uhh…"
+    cultist "Why don't you head back to the convention? You gotta get more votes for us!"
+    cs "Yeah, you're right."
+    n "CS heads back to the convention floor."
+    cs "Well, that was weird, the leader just tried to push me away..."
+    cs "I wonder if the Blind Eye people have found him themselves..."
+    cs "Oh well..."
 
 label dx_after_branch_ask2:
     play music ten_feet_away if_changed 
@@ -1456,15 +1502,13 @@ label dx_after_branch_ask2:
     n "The cult leader checks his watch."
     cultist "It looks like it's gonna be starting any minute now."
     scene black with dissolve
-    n "Placeholder for ending cultcon"
-    n "Votes to win: 70"
-    n "You have: [total_votes]"
-    n "Returning to menu for now."
-    return
+    jump dx_after_convention_end
+
+# END OF CULTCON
 
 label dx_after_convention_end:
     play music interference2
-    scene conferencetv with fade
+    scene conferencetv with dissolve
     cultist "Here are the results!"
     scene conferencetv at Move((0.0 , -1.0), (0.0, 0.0), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     pause 3.0
@@ -1486,6 +1530,8 @@ label dx_after_convention_end:
     play sound sfx_fabeep
     pause
     return
+
+# RENAULT
 
 label dx_after_renault:
     stop music fadeout 1.0
@@ -1580,6 +1626,8 @@ label dx_after_yes_renault:
     cs "Why was I here, anyways?"
     cs "Oh, yeah..."
     jump dx_after_back_to_story
+
+# SUPER HEAVEN
 
 label dx_after_super_heaven:
     stop music fadeout 3.0
