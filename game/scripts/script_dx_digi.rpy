@@ -53,15 +53,14 @@ label dx_underpants:
     show pakoo flipped at offscreenleft
     with MoveTransition(0.25)
     n "George, Harold, and Pakoo try to escape by hiding behind a neutrino."
-    # TODO: this audio is a pretty sloppy rip from the archival video. pls replace this with a clean copy - tate
     play sound sfx_addy_snap
     n "Pakoo snaps his fingers."
-    # TODO: hey baker, think you can clean up this trash edit for me? thx - tate
+    # TODO: hey baker, think you can clean up this trash smiling edit for me? thx - tate
     show mr_krupp grin with dissolve
     n "Soon, a digital grin comes across Mr.{w=0} Krupp's face as he drops his dark tie and runs to his office."
     show mr_krupp grin at offscreenleft with MoveTransition(0.25)
     play sound sfx_house_door_close
-    pause 1.0
+    pause 2.0
     play sound sfx_punch
     with hpunch
     show cpt_underpants at left with moveinleft
@@ -175,12 +174,15 @@ label dx_underpants:
             linear 0.25 xpos 2.5
         parallel:
             linear 0.25 ypos 2.0
+    show realistic_explosion_anim at manual_pos(0.8, 0.7, 0.5) behind weird_al:
+        subpixel True
+        zoom 20
     play sound sfx_explosion
     with vpunch
     mika "Woohoo!"
-    # TODO: can i put the deltarune realistic explosion here???
     n "The monster dies of a massive right toe attack!"
-    george "That makes sense, too."
+    pause 1.0
+    george "{i}That{/i} makes sense, too."
     play sound sfx_small_spill volume 3.0
     n "Unfortunately, some of the mixture splashes onto Captain Underpants' head, and he turns back into Mr.{w=0} Krupp."
     play sound sfx_glitch_in

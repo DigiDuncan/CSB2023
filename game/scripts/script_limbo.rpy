@@ -82,6 +82,27 @@ screen dx_select():
                         xalign 0.5
                     action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("train_start_bad")
 
+                ### RESERVED ###
+                imagebutton auto "menu/csbiiidx_%s.png":
+                    at transform:
+                        zoom 0.333
+                        xalign 0.5
+
+                imagebutton auto "menu/csbiiidx_%s.png":
+                    at transform:
+                        zoom 0.333
+                        xalign 0.5
+
+                imagebutton auto "menu/csbiiidx_%s.png":
+                    at transform:
+                        zoom 0.333
+                        xalign 0.5
+
+                imagebutton auto "menu/csbiiidx_%s.png":
+                    at transform:
+                        zoom 0.333
+                        xalign 0.5
+
 label lose_car_game:
     bad_end "100 percent\nunsatisfied." "true_iowa"
     return

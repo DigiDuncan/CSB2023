@@ -17,25 +17,27 @@ transform t_skip_car:
 
 style skip_car_frame is empty
 
-# TODO: longer pauses between everything, check them individually on next pass
-
 label car_dialogue:
     scene car plains
     show billy car
     with dissolve
     play music billy_mix
     music "Billy's Mix - Billy Mays"
+    pause 2.0
     if fun_value(FUN_VALUE_MUSIC):
         cs "Well Arceus, it's time for Billy's Mix!"
-        arceus "It sure is. We've done a lot, right?"
+        arceus "It sure is."
+        arceus "We've done a lot on this trip, haven't we?"
     else:
         cs "Well, Arceus, it has been quite a ride."
-    arceus "It sure has. We've been through quite a lot, haven't we?"
-    cs "Yeah, I'm so tired. I can't wait to get some {i}actual{/i} rest."
+    arceus "It sure has."
+    arceus "We've been through quite a lot, haven't we?"
+    cs "Yeah, I'm so tired."
+    cs "I can't wait to get some {i}actual{/i} rest."
 
     show screen skip_car
 
-    pause 2.0
+    pause 3.0
 
     cs "So, Arc?"
     arceus "Yeh?"
@@ -43,7 +45,7 @@ label car_dialogue:
     arceus "I mean, I {i}am{/i} furry."
     cs "You know what I mean."
     arceus "Is it {i}really{/i} being a furry if I'm literally not a human?"
-    cs "Fair point."
+    cs "... Fair point."
 
     pause 2.0
 
@@ -53,12 +55,12 @@ label car_dialogue:
     billy "No, I'm good. You're in {i}my{/i} car, and that means {i}I'll{/i} drive!"
     cs "Alright, man... I just don't feel like we paid you enough for this."
     billy "Everything I sell is {i}always{/i} $19.95!"
-    arceus "{size=-15}That isn't true--"
-    cs "{size=-15}Shh..."
+    arceus "{size=-15}That isn't true--{nw=0.5}{nw}"
+    cs "{size=-15}Shh...{nw=0.5}{nw}"
     cs "Thanks, man."
     billy "{i}That's{/i} the power of friendship!"
 
-    pause 2.0
+    pause 3.0
 
     digi "CS, how {i}did{/i} you beat me in the pencil sharpening contest?"
     digi "I have, like, robotic augments."
@@ -69,7 +71,7 @@ label car_dialogue:
     cs "I {i}literally{/i} sharpened a lightbulb with a pencil sharpener."
     digi "Yeah, I don't even know how you did that."
 
-    pause 2.0
+    pause 3.0
 
     cs "So, Arc, where'd you learn to hack like that?"
     arceus "College."
@@ -80,7 +82,7 @@ label car_dialogue:
     cs "I forgot what I was saying. Never mind."
     arceus "Yeah, that's fine."
 
-    pause 2.0
+    pause 3.0
 
     cs "How long is this drive?"
     arceus "You sound like a child asking their mom if they're at Disney World yet."
@@ -92,26 +94,30 @@ label car_dialogue:
     digi "Huh?"
     cs "... Don't worry about it."
 
-    pause 2.0
+    pause 4.0
 
-    # TODO: billy ringtone sfx
+    $ renpy.music.set_pause(True, "music")
+    play music2 sfx_ringtone_billy
     n "Billy gets a call on his Jupiter Jack."
     pause 0.5
+    stop music2
     play sound sfx_pickup_call
     pause 1.0
     carla "Hey, Billy, it's Carla!"
     billy "What are you doing in my car?"
-    carla "I'm not in your car, I'm on the phone. You're using the Jupiter Jack, remember?"
+    carla "I'm not in your car, I'm on the phone."
+    carla "You're using the Jupiter Jack, remember?"
     billy "Oh, yeah."
-    carla "We have a meeting in twenty minutes."
+    carla "Anyway, we have a meeting in twenty minutes."
     billy "I'm in the fucking {i}Northeast!"
     carla "What? What are you doing there?"
     billy "It's {i}my{/i} car!"
     play sound sfx_end_call
+    $ renpy.music.set_pause(False, "music")
     n "Billy hangs up the phone."
     billy "Unbelievable."
     
-    pause 2.0
+    pause 3.0
 
     arceus "CS, why do you still pay for Adobe Premiere?"
     cs "Well, I pay for the whole Creative Cloud."
@@ -130,12 +136,14 @@ label car_dialogue:
     billy "What would you do with two Grater Platers?"
     cs "Fair enough."
 
-    pause 2.0
+    pause 3.0
 
-    # TODO: billy ringtone sfx
+    $ renpy.music.set_pause(True, "music")
+    play music2 sfx_ringtone_billy
     n "Billy gets a call on his Jupiter Jack."
     pause 0.5
     play sound sfx_pickup_call
+    stop music2
     pause 1.0
     pakoo "Hey, guys, which {i}Cars{/i} movie is your favorite?"
     pakoo "I personally think the first one is the best."
@@ -145,13 +153,14 @@ label car_dialogue:
     cs "And, Mater says \"I'm the bomb!\" or whatever."
     pakoo "I just like the first one because I think the '70 Dodge Charger is in it."
     pakoo "What's his name, again?"
-    digi "Pakoo, did you even {i}watch{/i} the first one?"
+    digi "... Pakoo, did you even {i}watch{/i} the first one?"
     pakoo "Pfft, yeah! I just haven't seen it in a while."
     pakoo "Whatever. The first one is better."
     play sound sfx_end_call
+    $ renpy.music.set_pause(False, "music")
     n "Pakoo hangs up."
 
-    pause 2.0
+    pause 3.0
 
     cs "Hey, Arceus?"
     arceus "Hmm?"
@@ -171,10 +180,10 @@ label car_dialogue:
 
     cs "Have you heard of {i}Genshin Impact?{/i} Start your adventure on the continent of Teyvat, and--{w=0.5}{nw}"
     arceus "{bt=a3-p10-s4}NO."
-    billy "I'm a pitchman, and even {i}I{/i} won't stoop that low."
+    billy "I'm a pitchman, and even {i}I{/i} won't stoop {i}that{/i} low."
     n "CS shuts up."
 
-    pause 2.0
+    pause 3.0
 
     arceus "Okay, so..."
     arceus "CS, what's up with the catmaid outfit?"
@@ -184,10 +193,12 @@ label car_dialogue:
 
     pause 3.0
 
-    # TODO: billy ringtone sfx
+    $ renpy.music.set_pause(True, "music")
+    play music2 sfx_ringtone_billy
     n "Billy gets a call on his Jupiter Jack."
     pause 0.5
     play sound sfx_pickup_call
+    stop music2
     pause 1.0
     billy "Hi, it's Billy!"
     linus "Hey, Billy. CS is with you, right?"
@@ -199,13 +210,16 @@ label car_dialogue:
     cs "We're doing okay!"
     linus "That's good. I hope to hear from you again soon."
     play sound sfx_end_call
+    $ renpy.music.set_pause(False, "music")
 
-    pause 2.0
+    pause 4.0
 
-    # TODO: billy ringtone sfx
-    n "Billy gets a call on his Jupiter Jack."
+    $ renpy.music.set_pause(True, "music")
+    play music2 sfx_ringtone_billy
+    n "Billy gets another call on his Jupiter Jack."
     pause 0.5
     play sound sfx_pickup_call
+    stop music2
     pause 1.0
     iris "Arceus?"
     digi "Oh, my {i}God."
@@ -214,49 +228,56 @@ label car_dialogue:
     pause 1.0
     iris ":3"
     play sound sfx_end_call
+    $ renpy.music.set_pause(False, "music")
     n "The phone hangs up from the other end."
 
-    pause 2.0
+    pause 3.0
 
     arceus "Hey, remember that pizza place we went to?"
     cs "Yeah, why?"
     arceus "Well, when we spent the night there, I could have {i}sworn{/i} there was someone watching us."
     cs "Oh, really? Like, when we were sleeping?"
     arceus "Yeah, I think I saw this dude with a funky hat, and he had a camera."
-    cs "That's really creepy."
+    cs "That's {i}really{/i} creepy."
 
-    pause 2.0
+    pause 3.0
 
-    arceus "Did you ever change the Mount Rushmore thing back?"
+    arceus "Hey, CS, did you ever change the Mount Rushmore thing back?"
     cs "Nope!"
     cs "Why would I? It looks cool now!"
     arceus "..."
     
     pause 2.0
 
-    # TODO: billy ringtone sfx
+    $ renpy.music.set_pause(True, "music")
+    play music2 sfx_ringtone_billy
     n "Billy gets a call on his Jupiter Jack."
     pause 0.5
     play sound sfx_pickup_call
+    stop music2
     pause 1.0
     billy "Hi, it's Billy!"
     pakoo "What did the dog say after a long day of work?"
     pause 3.0
+    "..."
     pakoo "That was ruff."
     play sound sfx_end_call
+    $ renpy.music.set_pause(False, "music")
     n "Billy immediately hangs up."
 
-    pause 2.0
+    pause 4.0
 
-    # TODO: billy ringtone sfx
-    n "Billy gets a call on his Jupiter Jack."
+    $ renpy.music.set_pause(True, "music")
+    play music2 sfx_ringtone_billy
+    n "Billy gets another call on his Jupiter Jack."
     pause 0.5
     play sound sfx_pickup_call
+    stop music2
     pause 1.0
     billy "Hi, it's Billy!"
     tv_billy "Hi, it's Billy!"
     tv_billy "Introducing the New Craptop that {i}isn't{/i} sentient {i}at all,{/i} from me, Billy Mays!"
-    billy "What the actual fuck?"
+    billy "What the {i}actual{/i} fuck?"
     tv_billy "Hello? Did I get a new signal?"
     billy "You aren't Billy! I'm Billy!"
     tv_billy "No! {i}I'm{/i} Billy! I died long ago, and I'm now in Super Heaven, selling pointless products!"
@@ -265,10 +286,12 @@ label car_dialogue:
     arceus "sus{w=0.25}{nw}"
     tv_billy "And {i}you{/i} sound like that one guy who I sold a laptop to from his old-ass TV!"
     cs "No clue what you're talking about."
-    n "Billy turns off the Jupiter Jack for a while."
     play sound sfx_end_call
+    $ renpy.music.set_pause(False, "music")
+    n "Billy turns off the Jupiter Jack for a while."
+    play sound sfx_lightswitch
 
-    pause 2.0
+    pause 4.0
 
     cs "Who called asking for you earlier, Arc?"
     arceus "No clue."
@@ -286,7 +309,7 @@ label car_dialogue:
     cs "What are you looking at?"
     arceus "Nothing."
 
-    pause 2.0
+    pause 3.0
 
     n "Arceus sniffs the air."
     cs "What do you smell, Arc?"
@@ -294,11 +317,12 @@ label car_dialogue:
     cs "Oh, jeez, I hope the tank isn't leaking!"
     arceus "No, like, gas. Like, passed gas."
     cs "Oh, that was me."
-    n "Billy rolls down the window for a bit."
     play sound sfx_roll_window volume 0.7
-    
+    n "Billy rolls down the window for a bit."
+
     pause 5.0
 
+    # TODO: is this synced? is this supposed to be synced? i don't even know this song. can someone else check it? - tate
     $ renpy.music.set_pause(True, "music")
     play music2 moving_right_along
     $ renpy.pause(5.0, hard = True)
@@ -313,13 +337,13 @@ label car_dialogue:
     stop music2
     $ renpy.music.set_pause(False, "music")
 
-    pause 2.0
+    pause 5.0
 
     cs "I spy, with my little eye, something blue."
     arceus "Is it the car?"
     cs "Yeah..."
 
-    pause 2.0
+    pause 4.0
 
     cs "Did you know you can buy 500,000 plastic straws on AliBaba for like $50?"
     arceus "Why... {i}would{/i} you?"
@@ -330,13 +354,13 @@ label car_dialogue:
     arceus "... No?"
     cs "Yeah, you're probably right."
 
-    pause 2.0
+    pause 3.0
 
     cs "I wonder what would've happened if we'd gone south."
     arceus "Back at Compass Road?"
     cs "Yeah. Who knows how far we might've gotten..."
 
-    pause 2.0
+    pause 4.0
 
     cs "Let's play 20 Questions!"
     arceus "Sure."
@@ -368,7 +392,7 @@ label car_dialogue:
     cs "That's the one!"
     arceus "Welp, yay."
 
-    pause 2.0
+    pause 3.0
 
     n "Arceus is reading a book."
     arceus "{i}Call me Ishmael.  Some years ago-- never mind how long precisely-- having little or no money in my purse,"
@@ -391,7 +415,7 @@ label car_dialogue:
     cs "{i}I know what it says on the cover, but when Mom went out to buy this thing I specifically told her to get one that didn't say “diary” on it."
     arceus "Okay, okay, I get it."
 
-    pause 2.0
+    pause 3.0
 
     cs "The fog is coming."
     arceus "The fog is coming, CS?"
@@ -404,9 +428,9 @@ label car_dialogue:
     billy "The fog is coming."
     cs "The fog is coming."
 
-    pause 2.0
+    pause 4.0
 
-    # TODO: plastic sfx
+    play sound sfx_rubiks_cube
     n "CS hears something from the back of the car. It sounds like the faint clacking of plastic."
     n "CS turns around."
     n "Arceus is mumbling under his breath."
@@ -417,29 +441,39 @@ label car_dialogue:
     arceus "Man, we've been a lot of places the last few days. I don't remember exactly where I got a Rubik's cube."
     cs "I need to learn to stop asking questions."
     arceus "That, you do."
+    stop sound fadeout 1.0
 
     pause 2.0
 
+    play sound sfx_lightswitch
     n "Billy turns on the Jupiter Jack again."
-    pause 1.0
-    # TODO: billy ringtone sfx
+
+    pause 4.0
+
+    $ renpy.music.set_pause(True, "music")
+    play music2 sfx_ringtone_billy
     n "It isn't long before another call comes in."
     pause 0.5
     play sound sfx_pickup_call
+    stop music2
     pause 1.0
-    tv_billy "Hi, Billy Mays here for Smacid!"
-    billy "What the actual fuck?"
-    tv_billy "The fast and easy way to smash stomach pain from the source!"
-    billy "What is this shit? I would {i}never{/i} sell this scammy crap!"
+    tv_billy "Hi, Billy Mays here, for Smacid!"
+    billy "What the {i}actual{/i} fuck?"
+    tv_billy "The fast and easy way to smash stomach pain from the {i}source!"
+    billy "What {i}is{/i} this shit? I would {i}never{/i} sell this scammy crap!"
     play sound sfx_end_call
+    $ renpy.music.set_pause(False, "music")
     n "Billy changes the channel on the Jupiter Jack."
+    play sound sfx_lightswitch
 
-    pause 2.0
+    pause 5.0
 
-    # TODO: billy ringtone sfx
+    $ renpy.music.set_pause(True, "music")
+    play music2 sfx_ringtone_billy
     n "Pakoo calls the group again."
     pause 0.5
     play sound sfx_pickup_call
+    stop music2
     pause 1.0
     pakoo "Digi, didn't you fall in a black hole one time?"
     digi "Can you {i}not{/i} bring this up now?"
@@ -449,19 +483,22 @@ label car_dialogue:
     pakoo "Because it's a little funny. Speaking of which, did you know about this dance Digi did?{w=0.5}{nw}"
     digi "Stop! Billy, hang up on him!"
     billy "No, it's {i}my{/i} radio!"
-    # TODO: sfx static/interference fadein
+    play sound sfx_tf2_sapper loop volume 0.5
+    with hpunch
     n "Arceus temporarily disables the Jupiter Jack."
     digi "Thank you, Arc."
-    billy "What the actual {i}fuck?{/i} I'm gonna throw you all out of this car!"
+    billy "What the {i}actual{/i} fuck? I'm gonna throw you {i}all{/i} out of this car!"
     cs "Now, I'm curious, too. What was Pakoo talking about, Digi?"
     digi "Look, I'll tell you later. I don't want to think about it."
-    # TODO: static/interference fadeout
+    stop sound fadeout 2.0
     n "The radio comes back on."
-    pakoo "--and, yeah, it's, like, the best video ever. Thank you, Digi. I unironically love that video."
+    pakoo "--and, yeah, it's, like, the best video ever."
+    pakoo "Thank you, Digi. I unironically love that video."
     digi "Sure, Pakoo."
     play sound sfx_end_call
+    $ renpy.music.set_pause(False, "music")
 
-    pause 2.0
+    pause 4.0
 
     cs "Could you imagine if, like, everything we did was predetermined?"
     arceus "What, like {i}The Matrix?"
@@ -474,28 +511,28 @@ label car_dialogue:
     cs "I was just testing the Matrix!"
     cs "No way they could've predicted me saying that."
 
-    pause 2.0
+    pause 3.0
 
     cs "Digi, did you ever {i}actually{/i} poop in your socks?"
     digi "God, damn it. No."
     cs "Okay, okay, I was just wondering..."
 
-    pause 2.0
+    pause 4.0
 
     billy "Hi, Billy Mays here! {w=0.5}No..."
     billy "Hi, Billy Mays... {w=0.5}No..."
-    billy "Billy Mays here! For the... No..."
+    billy "Billy Mays here! For the-- {w=0.25}{i}no..."
     cs "You okay, man?"
     billy "I just try to practice my infomerical voice a few times a day."
     billy "Recently, I've felt like I've been losing my charm."
     digi "Did somebody say {i}charm?"
     billy "Hold on, I think I've got it!"
-    billy "Hi, Billy Mays here, for {i}Charm!{/i} The fast and easy way to play {i}all{/i} of your favorite rhythm games, all in one engine."
+    billy "Hi, Billy Mays here, for {i}Charm!{/i} The fast and easy way to play {i}all{/i} of your favorite rhythm games, all in {i}one{/i} engine."
     digi "Dude, that was {i}amazing!{/i} Can I record you saying that next time?"
     billy "Sure! I can do a commercial for {i}Charm{/i} if you want. New product pitches are pretty sparse these days."
     digi "Hell yeah!"
 
-    pause 2.0
+    pause 3.0
 
     cs "Hey, Arc?"
     arceus "Hmm?"
@@ -510,7 +547,7 @@ label car_dialogue:
     cs "But, you get no games!"
     arceus "I'm choosing bacon. Final answer."
 
-    pause 2.0
+    pause 4.0
 
     play sound "<from 0 to 1>sfx/sfx_roll_window.ogg" volume 0.7
     pause 2.5
@@ -521,12 +558,14 @@ label car_dialogue:
     arceus "CS, stop messing with the window. I can see you doing that."
     cs "Fine, I'm just bored."
 
-    pause 2.0
+    pause 3.0
 
-    # TODO: billy ringtone sfx
+    $ renpy.music.set_pause(True, "music")
+    play music2 sfx_ringtone_billy
     n "Billy gets yet another call on his Jupiter Jack."
     pause 0.5
     play sound sfx_pickup_call
+    stop music2
     pause 1.0
     billy "Hi, it's Billy!"
     mean "Hello, Mr.{w=0} Mays! Is Digi with you?"
@@ -534,24 +573,27 @@ label car_dialogue:
     mean "Bro, I'mma keep it a hundred. I was just dialing random numbers until I got you."
     mean "Also, turn on your ringer. I called {i}you{/i} first."
     n "Digi checks his phone."
+    pause 1.0
     digi "Whoops."
     digi "So, what did ya need me for?"
     mean "I just wanted to say hi."
     mean "Hi!"
+    pause 1.0
     digi "Hi, Mean."
     mean "Also, Tate says \"a\"."
     tate "a"
     play sound sfx_end_call
+    $ renpy.music.set_pause(False, "music")
     n "The phone hangs up."
 
-    pause 2.0
+    pause 3.0
 
     n "An ad starts playing through the Jupiter Jack."
     $ renpy.music.set_pause(True, "music")
     play music2 summer_clearance_sale volume 0.5
     doug "When you shop at Walmart..."
     doug "You're shopping at Walmart."
-    doug "Keep shopping at Walmart{w=0.25} by going to Walmart today!"
+    doug "Keep shopping at Walmart{w=0.25} by going to Walmart {i}today!"
     stop music2
     $ renpy.music.set_pause(False, "music")
     pause 2.5
@@ -561,14 +603,16 @@ label car_dialogue:
 
     # TODO: sfx rustling through items
     n "The guys in the back start looking through Billy's various tools."
+    pause 1.0
     show billy car turn
     billy "Hey! What are you guys doing back there?"
     cs "Nothing! I just dropped something."
     show billy car
-    pause 1.0
     billy "Alright. You'd better not mess with my gadgets!"
+    pause 2.0
     digi "{size=-15}Shhh! Don't say anything!"
-    cs "{size=-15}Okay, I've got it. Arceus, roll down the window."
+    cs "{size=-15}Okay, I've got it."
+    cs "{size=-15}Arceus, roll down the window."
     play sound "<from 0 to 1>sfx/sfx_roll_window.ogg" volume 0.7
     pause 5.0
     cs "{size=-15}Alright, you ready?"
@@ -577,8 +621,8 @@ label car_dialogue:
     with hpunch
     with vpunch
     show billy car turn 
-    billy "What the hell are you guys doing?!"
-    billy "I'm gonna double the offer of this car ride if you do that again!"
+    billy "What the {i}hell{/i} are you guys doing?!"
+    billy "I'm gonna {i}double{/i} the offer of this car ride if you do that again!"
     show billy car
     cs "Digi did it!"
     digi "No, I didn't! {i}You{/i} grabbed it!"
@@ -594,7 +638,7 @@ label car_dialogue:
     billy "2..."
     pause 1.0
     billy "1..."
-    cs "Okay, I'm sorry! It was my fault."
+    cs "Okay, I'm sorry! It was my fault!"
     billy "No more tomfoolery in the backseat, okay?"
     cs "Okay..."
     scene car plains
@@ -602,21 +646,23 @@ label car_dialogue:
     show billy car
     with dissolve
 
-    pause 2.0
-
+    pause 5.0
     
-    # TODO: billy ringtone sfx
+    $ renpy.music.set_pause(True, "music")
+    play music2 sfx_ringtone_billy
     n "Billy gets a call on his Jupiter Jack."
     pause 0.5
     play sound sfx_pickup_call
+    stop music2
     pause 1.0
     host "HEY, CHAMP!"
     host "I JUST WANTED TO LET YOU KNOW YOUR {color=#ffff00}PENCIL SHARPENER{/color} SHOULD BE IN THE MAIL SOON!"
     cs "Woohoo! Thanks!"
     host "HOPE TO HAVE YOU COMPETE AGAIN NEXT YEAR!"
     play sound sfx_end_call
+    $ renpy.music.set_pause(False, "music")
 
-    pause 2.0
+    pause 3.0
 
     cs "Wouldn't it be funny if someone was listening to all of this?"
     arceus "Well, they'd probably be really bored by now."
