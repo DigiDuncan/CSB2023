@@ -1484,6 +1484,7 @@ label dx_after_branch_fiddleford:
     cs "Well, that was weird, the leader just tried to push me away..."
     cs "I wonder if the Blind Eye people have found him themselves..."
     cs "Oh well..."
+    jump dx_after_seek_competitors
 
 label dx_after_branch_ask2:
     play music ten_feet_away if_changed 

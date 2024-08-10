@@ -2359,7 +2359,11 @@ default lunatic_check2 = False
 default lunatic_check3 = False
 default science_check = False
 default science_check2 = False
+default blind_check = False
 default con_start = False
+
+# Christmas
+default tree_first = False
 
 # RPG
 default enemy_1 = "cop"
