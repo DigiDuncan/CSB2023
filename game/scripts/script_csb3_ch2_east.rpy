@@ -451,7 +451,7 @@ label true_south_dakota:
         show cs disappointed
         pause 2.0
         cs "Uhh..."
-        direct "Just say something god damnit, keep the bit going!"
+        direct "Just {i}say{/i} something, goddamn it! Keep the bit going!"
         cs "Uhh... Taiikusai Desu Yo! That means those faces look cool in Japanese!"
         show cs
     else:

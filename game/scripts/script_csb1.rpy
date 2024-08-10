@@ -63,7 +63,8 @@ label csbi_craptop:
         sticky "Delete the CSCord."
     cs "Eh, maybe tomorrow."
     play sound sfx_page volume 5
-    show post_it at manual_pos(0.7, -300) with MoveTransition(0.25)
+    show post_it at manual_pos(0.7, -300) with MoveTransition(0.25):
+        linear 0.25 yzoom -1
     pause 2.0
     show craptop updating
     craptop "Downloading update 200/13..."

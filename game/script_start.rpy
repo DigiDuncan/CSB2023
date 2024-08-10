@@ -1103,8 +1103,12 @@ image hoh_hq5 = "bg/office5.png"
 image hoh_elevator = "bg/elevator.png"
 
 ## Generated images for CSBI
-image spent_11_88 = Text("{size=50}{color=#00D218}-$11.88", text_align=0.5)
+image spent_11_88 = Text("{size=50}{color=#369100}-$11.88", text_align=0.5)
 image spent_bits = Text("{image=bits.png} {size=50}{color=#BD62FF}-200,000", text_align=0.5)
+# this bit is so stupid - tate
+image speedrun_genergy_cost = Text("{size=50}{color=#369100}$2.50", text_align=0.5)
+image speedrun_pringles_cost = Text("{size=50}{color=#369100}$5.83", text_align=0.5)
+image speedrun_tax_cost = Text("{size=50}{color=#FFFF00}Taxed! 8.875%", text_align=0.5)
 
 ## CSBII
 image helipad = "bg/helipad.png"
@@ -2220,6 +2224,7 @@ define audio.sfx_puke = "sfx/sfx_puke.ogg"
 define audio.sfx_punch = "sfx/sfx_punch.ogg"
 define audio.sfx_punch_alt = "sfx/sfx_alt_punch.ogg"
 define audio.sfx_retail_beep = "sfx/sfx_retail_beep.ogg"
+define audio.sfx_ring_once = "sfx/sfx_ring_once.ogg"
 define audio.sfx_ringtone_billy = "sfx/sfx_ringtone_billy.ogg"
 define audio.sfx_ringtone_cs = "sfx/sfx_ringtone_cs.ogg"
 define audio.sfx_ringtone_addy = "sfx/sfx_ringtone_addy.ogg"

@@ -4,57 +4,104 @@ label vibration:
     music "Let's Hear My Speed - Pakoo"
     scene craptop_bg
     show craptop discord
+    show cs at left
     cs "Bye guys! I gotta head to the store!"
+    show cs at offscreenright with MoveTransition(0.25)
     scene black with dissolve
     pause 1.0
     scene walmart_aisle with dissolve
-    show cs at left with moveinleft
+    show cs at offscreenleft
+    show cs at left with MoveTransition(0.25)
+    play sound sfx_retail_beep
+    show speedrun_pringles_cost at t_fake_rpg_text(0.1, 0.1, 0.5)
+    show pringles at manual_pos(50, 300) with Dissolve(0.1)
+    show pringles at manual_pos(200, 800) with MoveTransition(0.1)
+    hide pringles with Dissolve(0.1)
+    show cs at right with MoveTransition(0.25)
+    play sound sfx_retail_beep
+    show speedrun_genergy_cost at t_fake_rpg_text(0.775, 0.1, 0.1)
+    show genergy at manual_pos(1800, 300) with Dissolve(0.1)
+    show genergy at manual_pos(1650, 800) with MoveTransition(0.1)
+    hide genergy with Dissolve(0.1)
+    hide speedrun_genergy_cost
+    play sound sfx_retail_beep
+    show speedrun_genergy_cost at t_fake_rpg_text(0.775, 0.1, 0.25)
+    show genergy at manual_pos(1800, 300) with Dissolve(0.1)
+    show genergy at manual_pos(1650, 800) with MoveTransition(0.1)
+    hide genergy with Dissolve(0.1)
+    play sound "sfx/snd_bluh.ogg"
+    show speedrun_tax_cost at t_fake_rpg_text(0.75, 0.1, 0.5)
+    pause 0.5
+    play sound sfx_moneyfalls
+    show spent_11_88 at t_fake_rpg_text(0.775, 0.1, 0.5)
     cs "Alright, this looks pretty good. Let's go home!"
-    hide cs with moveoutright
+    show cs at offscreenright with MoveTransition(0.25)
     scene black with dissolve
     pause 1.0
+    play sound sfx_house_door_open
     show cs_room
-    show cs at center
+    show cs at offscreenright
     with dissolve
+    show cs flipped at center with MoveTransition(0.25)
+    pause 0.5
+    show cs scared
     play sound sfx_foundationfail volume 0.5
     show cs_room behind cs at rotate_10 with hpunch
     pause 1.0
     cs "Woah, shit! I need to call HoH SiS!"
+    play sound sfx_ring_once
     show cs phone
     show ed at right with moveinright
     show cs
-    ed "Alright, we are gonna work now."
+    stop sound
+    ed "Pay up and we'll get to work."
+    cs "Okay!"
+    play sound sfx_moneyfalls
+    show spent_bits at t_fake_rpg_text(0.4, 0.1, 0.25)
     show cs happy
     cs "Sweet! I'll go out for now!"
-    hide cs with moveoutright
-    ed "Lol let's hack his laptop."
+    show cs at offscreenright with MoveTransition(0.25)
+    ed "Lol, let's hack his laptop."
+    show rich at offscreenright
+    show wesley at offscreenright
+    show ed at offscreenleft with MoveTransition(0.25)
+    show rich at offscreenleft with MoveTransition(0.25)
+    show wesley at offscreenleft with MoveTransition(0.25)
     scene black with dissolve
+    play sound sfx_bluescreen
     pause 1.0
     scene rosen_abode
     show cs concentrate flipped at right
     show michael at left
     with dissolve
-    michael "So, if you play the True route again, you get a secret ending!"
+    play sound sfx_csnore
+    michael "So, if you play the True route again, you'll get a secret ending!"
     show cs flipped
+    stop sound
     cs "Huh? Sorry, I was sleeping."
     cs "I've gotta head home now, bye!"
-    show cs with determination
-    hide cs with moveoutright
+    show cs at offscreenright with MoveTransition(0.25)
+    play sound sfx_house_door_open
+    play sound sfx_house_door_close
     scene black with dissolve
     pause 1.0
     scene cs_room with dissolve
-    show cs disappointed at center with moveinleft
+    play sound sfx_house_door_open
+    show cs flipped at offscreenright
+    show cs flipped at center with MoveTransition(0.25)
+    show cs disappointed
     cs "Hey, my house is still fucked up!"
     cs "So is my laptop!"
     show cs angry
     cs "I'm gonna go kick their asses!"
-    hide cs with moveoutright
+    show cs angry at offscreenright with MoveTransition(0.25)
     scene black with dissolve
     pause 1.0
     scene hoh_hq3
     show hoh_hq 
     with dissolve
-    show cs angry at center with moveinleft
+    show cs angry at offscreenleft
+    show cs angry at center with MoveTransition(0.25)
     play sound sfx_punch_alt
     show cs angry at t_punchup with move
     show helipad
@@ -77,17 +124,21 @@ label vibration:
     show red_light at right
     show copguy behind blue_light, red_light at right with moveinright
     cs "You won't catch me! See ya!"
-    hide cs with moveoutright
+    show cs angry flipped at offscreenleft with MoveTransition(0.25)
+    show copguy at offscreenleft with MoveTransition(0.25)
     scene black with dissolve
     stop music fadeout 3.0
     music end
     stop sound fadeout 1.0
     pause 1.0
     scene jail_inside
-    show cs at mid_left
+    show cs flipped at offscreenright
     with dissolve
     play music fastbudget_song volume 0.7
     music "Fastbudget Song - Pakoo"
+    show cs flipped at mid_left with MoveTransition(0.25)
+    show cs
+    pause 1.0
     show copguy at right with moveinright
     copguy "{i}Huff... huff..."
     show cs happy
@@ -97,16 +148,17 @@ label vibration:
     copguy "Stay here for a moment while I get your uniform."
     show copguy flipped with determination
     hide copguy with moveoutright
-    show arceus prison at right with moveinright
+    show arceus prison at offscreenright
+    show arceus prison at right with MoveTransition(0.25)
     arceus "Hey, CS, wanna break out?"
     cs "Sure!"
     show cs flipped with determination
-    hide cs
-    hide arceus
-    with moveoutleft
-    show anno prison at right with moveinright
+    show cs flipped at offscreenleft with MoveTransition(0.25)
+    show arceus prison at offscreenleft with MoveTransition(0.25)
+    show anno prison at offscreenright 
+    show anno prison at right with MoveTransition(0.25)
     anno "Wait for me!"
-    hide anno with moveoutleft
+    show anno prison at offscreenleft with MoveTransition(0.25)
     scene black with dissolve
     pause 1.0
     scene canada
@@ -118,10 +170,10 @@ label vibration:
     arceus "Well, LTT is nearby..."
     cs "Sweet! Let's go check it out!"
     show arceus flipped with determination
-    hide cs
-    hide anno
-    hide arceus
-    with moveoutright
+    show cs at offscreenright
+    show anno at offscreenright
+    show arceus flipped at offscreenright
+    with MoveTransition(0.25)
     scene black with dissolve
     stop music fadeout 3.0
     music end
@@ -132,14 +184,16 @@ label vibration:
     play music fastport volume 0.7
     music "Fastport.MID - Pakoo"
     linus "Sorry, I can't get you a job. You don't have a visa."
-    show arceus happy at right with moveinright
+    show arceus at offscreenright
+    show arceus happy at right with MoveTransition(0.25)
     arceus "Refresh the page!"
     linus "Oh, I guess you have a visa now. That was fast..."
     show arceus happy flipped with determination
-    hide arceus with moveoutright
-    linus "Lemme show you your office."
+    show arceus flipped at offscreenright with MoveTransition(0.25)
+    linus "Lemme show you to your office."
     scene csdesk with dissolve
-    show cs at left with moveinleft
+    show cs at offscreenleft
+    show cs at left with MoveTransition(0.25)
     show linus at right with moveinright
     linus "Alright, here's a video to work on. Enjoy!"
     hide linus with moveoutright
@@ -158,9 +212,10 @@ label vibration:
     scene inside_ltt
     show linus
     with dissolve
-    show cs at left with moveinleft
+    show cs at offscreenleft
+    show cs at left with MoveTransition(0.25)
     linus "Dude, that was awesome! I love YTPs!"
-    linus "I even have a cool-ass graphics card that makes YTP making easier!"
+    linus "I even have a cool-ass graphics card that makes YTP-making easier!"
     cs "Nice!"
     linus "Let's make a video about it!"
     scene black with dissolve
@@ -183,13 +238,13 @@ label vibration:
     show linus at right
     with dissolve
     linus "Damn, I guess that worked."
-    show arceus at center with moveinright
+    show arceus at offscreenright
+    show arceus at center with MoveTransition(0.25)
     arceus "Hey, CS! We gotta go! Cops are here!"
     cs "Alright! Bye, guys!"
-    show arceus flipped with determination
-    hide cs
-    hide arceus
-    with moveoutright
+    show cs at offscreenright
+    show arceus flipped at offscreenright
+    with MoveTransition(0.25)
     show copguy flipped at center with moveinleft
     copguy "Hey, have you seen a cosplayer and a furry come through here?"
     linus "Nope."
@@ -273,9 +328,9 @@ label vibration:
     show billy car
     with dissolve
     pause 2.0
-    billy "Shit!"
     scene cultforest
     show billy car
+    billy "Shit!"
     show cultist gun at mid_right behind billy with moveinright
     cultist "Get out of the car, now!"
     billy "No, thanks!"
@@ -287,6 +342,7 @@ label vibration:
     show billy car
     with dissolve
     cs "Hey, wait! Watch this!"
+    # TODO: need sfx here to change the mountain. also add this sfx in east whenever that happens
     scene csmore
     show billy car with hpunch
     billy "Cool!"
@@ -310,13 +366,13 @@ label vibration:
     show billy car
     with dissolve
     pause 2.0
-    arceus "Woah, what is that flying past us?"
+    arceus "Woah, what's that flying past us?"
     play sound sfx_roll_window volume 0.7
     pause 0.5
     play sound sfx_joj_loop
     play sound sfx_splash
     pause 0.5
-    arceus "Damnit, I'm dirty now! We have to go wash it off!"
+    arceus "Damn it, I'm dirty now! We have to go wash it off!"
     billy "Alright, fine."
     scene black with dissolve
     pause 1.0
@@ -362,21 +418,25 @@ label vibration:
     show arceus worried flipped
     arceus "CS has been going through this really fast!"
     billy "Yeah, I don't know how we've been able to keep up."
-    show cs flipped at right with moveinright
+    show cs flipped at offscreenright
+    show cs flipped at right with MoveTransition(0.25)
     cs "Hey guys! I just beat the pencil sharpening competition! Let's go home!"
-    hide cs with moveoutleft
+    show cs at offscreenleft with MoveTransition(0.25)
     scene black with dissolve
     pause 1.0
     scene car plains
     show billy car
     with dissolve
+    play sound sfx_ringtone_billy
     n "Billy's Jupiter Jack rings."
+    play sound sfx_end_call
     billy "Nope!"
     pause 3.0
     scene black with dissolve
     pause 1.0
     scene cs_house with dissolve
-    show cs at left with moveinleft
+    show cs at offscreenleft
+    show cs at left with MoveTransition(0.25)
     play sound sfx_beam volume 0.6
     show beam at xstretch_in
     pause 2.0
@@ -384,9 +444,11 @@ label vibration:
     with dissolve
     show beam at xstretch_out
     ed "Damn, I don't know how you beat us."
-    ed "But, I finally caught up with you!"
+    ed "But, I {i}finally{/i} caught up with you!"
+    show cs angry
     cs "Are you gonna fix my house?"
     ed "What? Why would we do that?"
+    show cs disappointed
     cs "I'm sorry for everything I caused?"
     ed "Alright, we'll fix your house."
     show cs happy
