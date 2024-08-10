@@ -144,11 +144,8 @@ label archival:
     k174 "Okayokayokay! I got this!"
     k174 "Take {i}this!"
 
-    # TODO: pixellate here
-    show worker_1 at manual_pos(0.7, 1.0, 1.0):
-        alpha 0
-        linear 0.25 alpha 1.0
-
+    show expression DynamicDisplayable(Pixellated.pixellated, widget='worker_1', delay=0.5, steps=16) at manual_pos(0.7, 1.0, 1.0)
+    
     show k207 at right
     show k174 at mid_right_right
     show k199 at mid_right
@@ -157,6 +154,10 @@ label archival:
 
     show cs worried
     n "One of the HoH SiS workers materializes before CS."
+
+    hide expression DynamicDisplayable(Pixellated.pixellated, widget='worker_1', delay=0.5, steps=16)
+    show worker_1 at manual_pos(0.7, 1.0, 1.0)
+
     worker_1 "I don't know!"
     show k199 flipped
     k199 "What the fuck is {i}that{/i} thing?!"
@@ -184,8 +185,7 @@ label archival:
     k207 "I don't think that's what AWOL means, but, still! {i}Do{/i} something, 17M!"
     k174 "Fuck,{w=0} fuck,{w=0} fuck! Okay,{w=0} okay, what about this? Do something!"
 
-    # TODO: pixellate these as well
-    show nova_head as first at manual_pos(0.4, 1.5, 0.5):
+    show expression DynamicDisplayable(Pixellated.pixellated, widget='nova_head', delay=0.5, steps=8) as first at manual_pos(0.4, 1.5, 0.5):
         alpha 0
         parallel:
             linear 0.25 alpha 1.0
@@ -195,7 +195,7 @@ label archival:
     with MoveTransition(0.25)
     play sound sfx_glitch_in
 
-    show nova_head as second at manual_pos(0.6, 1.5, 0.5):
+    show expression DynamicDisplayable(Pixellated.pixellated, widget='nova_head', delay=0.5, steps=8) as second at manual_pos(0.6, 1.5, 0.5):
         alpha 0
         parallel:
             linear 0.25 alpha 1.0
@@ -204,7 +204,7 @@ label archival:
     with MoveTransition(0.25)
     play sound sfx_glitch_in
 
-    show nova_head as third at manual_pos(0.8, 1.5, 0.5):
+    show expression DynamicDisplayable(Pixellated.pixellated, widget='nova_head', delay=0.5, steps=8) as third at manual_pos(0.8, 1.5, 0.5):
         alpha 0
         parallel:
             linear 0.25 alpha 1.0

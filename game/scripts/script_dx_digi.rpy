@@ -29,15 +29,20 @@ label dx_underpants:
     n "Suddenly, the pile begins to morph into a giant evil Mika!"
     
     # not sure why it doesnt like zorder here but w/e
-    # TODO: want pixellate here
     show toxic_mikas at center behind pakoo
     show weird_al behind toxic_mikas
     show harold at center
     with move
 
-    play sound sfx_bossappears
     hide toxic_mikas
+    show expression DynamicDisplayable(Pixellated.pixellated, widget='mika', delay=0.5, steps=8) at t_evil_mika behind pakoo
+    play sound sfx_glitch_in
+    with dissolve
+
+    play sound sfx_bossappears
+    hide expression DynamicDisplayable(Pixellated.pixellated, widget='mika', delay=0.5, steps=8)
     show mika at t_evil_mika behind pakoo
+
     show david at offscreenright
     with Dissolve(0.1)
     with vpunch
@@ -65,9 +70,19 @@ label dx_underpants:
     with hpunch
     show cpt_underpants at left with moveinleft
     n "Soon, Captain Underpants punches through the wall!"
+    show cpt_underpants at mid_offscreen_left with MoveTransition(0.25)
+    pause 0.25
+
+    show slime16 at offscreenleft:
+        rotate 90
+    show cpt_underpants at manual_pos(0.3, 1.0, 1.0) with MoveTransition(0.1)
     show cpt_underpants at mid_offscreen_left
-    with MoveTransition(0.25)
-    show slime16 at center_left with dissolve
+    play sound sfx_tf2_pickup_metallic
+    show slime16 at center_left:
+        rotate 90
+        linear 0.1 rotate 0
+    with MoveTransition(0.1)
+
     n "He grabs a slimy M-16 and hits the monster on its elbow!"
     show slime16 fire
     play sound sfx_hks1
@@ -161,12 +176,14 @@ label dx_underpants:
     #show mika at right
     stop sound
     play sound sfx_mc_throw volume 10
+
     show dookie_milk_jar at manual_pos(0.5, 0.3, 0.5):
         linear 0.25 rotate 130
-    with MoveTransition(0.25)
-    
+    with MoveTransition(0.1)
+    hide dookie_milk_jar
+
     play sound sfx_mc_bottlehit volume 3
-    hide dookie_milk_jar with Dissolve(0.25)
+    hide dookie_milk_jar with Dissolve(0.1)
     show mika:
         parallel:
             linear 0.25 rotate 90
@@ -188,11 +205,14 @@ label dx_underpants:
     play sound sfx_glitch_in
     hide cpt_underpants
     hide slime16
-    show mr_krupp at manual_pos(0.4, 1.0, 1.0)
-    # TODO: need custom pixellate
-    with pixellate
-    pause 0.5
+
+    show expression DynamicDisplayable(Pixellated.pixellated, widget='mr_krupp', delay=0.5, steps=8) at manual_pos(0.4, 1.0, 1.0)
+    show mr_krupp at manual_pos(0.4, 1.0, 1.0) behind weird_al
+    with dissolve
+    pause 1.0
+    hide expression DynamicDisplayable(Pixellated.pixellated, widget='mr_krupp', delay=0.5, steps=8)
     show mr_krupp at center behind weird_al with move
+
     pause 1.0
     mr_krupp "Holy bright {i}penguins!"
     mr_krupp "I'll bet that George, Harold, and Pakoo are responsible for this mess!"

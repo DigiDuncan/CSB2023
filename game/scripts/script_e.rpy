@@ -75,11 +75,12 @@ label e3_rosen:
     michael "What?"
     cs "Damn it, don't fuck around with me!"
     cs "It's not true!"
+
     hide michael
-    show pakoo disappointed flipped at left
+    show expression DynamicDisplayable(Pixellated.pixellated, widget='pakoo disappointed flipped', delay=0.5, steps=8) at left
     play sound sfx_glitch_in
-    # TODO: need custom pixellate
-    with pixellate
+    with dissolve
+
     pause 1.5
     pakoo "I'm sorry, CS."
     pakoo "It's time to delete you."
