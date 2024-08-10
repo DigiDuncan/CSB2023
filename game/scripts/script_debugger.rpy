@@ -1267,11 +1267,14 @@ label asset_debugger:
         play music happy_running
         $ bgtotal += 1
         scene course_2
+        show speedrun_tax_cost at mid_right
+        show speedrun_pringles_cost at mid_mid_right
         show boom at center
         show mean human annoyed hat at mid_left
         show cs scared phone flipped at left
         show slime16 fire at mid_left_left
-        $ spritetotal += 4
+        show speedrun_genergy_cost at mid_mid_left
+        $ spritetotal += 7
         direct "test 66{w=0.5}{nw}"
         $ charactertotal += 1
     else:
@@ -2428,6 +2431,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(153):
+        $ sfxtotal += 1
+        play sound sfx_ring_once
         $ musictotal += 1
         play music lancer
         $ bgtotal += 1
