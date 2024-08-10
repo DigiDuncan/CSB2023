@@ -4,13 +4,13 @@ label train_dialogue:
     pause 3.0
 
     if fun_value(FUN_VALUE_RARE):
-        play sound sfx_tate_ringtone_alt
+        play sound sfx_ringtone_tate_alt loop
         n "Tate gets a call on their cell phone."
         pause 1.0
         tate "..."
         tate "Uweh, I forgot to change his ringtone..."
     else:
-        play sound sfx_tate_ringtone
+        play sound sfx_ringtone_tate loop
         n "Tate gets a call on their cell phone."
 
     pause 1.0

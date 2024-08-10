@@ -755,7 +755,7 @@ label archival_finale:
     play music everybody_wants 
     music "Everybody Wants To Rule The World - Tears For Fears"
     pause 5.0
-    play sound sfx_ringtone_addy volume 0.5
+    play sound sfx_ringtone_addy loop volume 0.5
     n "Addy gets a phone call."
     pause 1.0
     play sound sfx_pickup_call

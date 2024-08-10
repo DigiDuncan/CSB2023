@@ -97,7 +97,7 @@ label car_dialogue:
     pause 4.0
 
     $ renpy.music.set_pause(True, "music")
-    play music2 sfx_ringtone_billy
+    play music2 sfx_ringtone_billy loop
     n "Billy gets a call on his Jupiter Jack."
     pause 0.5
     stop music2
@@ -139,7 +139,7 @@ label car_dialogue:
     pause 3.0
 
     $ renpy.music.set_pause(True, "music")
-    play music2 sfx_ringtone_billy
+    play music2 sfx_ringtone_billy loop
     n "Billy gets a call on his Jupiter Jack."
     pause 0.5
     play sound sfx_pickup_call
@@ -194,7 +194,7 @@ label car_dialogue:
     pause 3.0
 
     $ renpy.music.set_pause(True, "music")
-    play music2 sfx_ringtone_billy
+    play music2 sfx_ringtone_billy loop
     n "Billy gets a call on his Jupiter Jack."
     pause 0.5
     play sound sfx_pickup_call
@@ -215,7 +215,7 @@ label car_dialogue:
     pause 4.0
 
     $ renpy.music.set_pause(True, "music")
-    play music2 sfx_ringtone_billy
+    play music2 sfx_ringtone_billy loop
     n "Billy gets another call on his Jupiter Jack."
     pause 0.5
     play sound sfx_pickup_call
@@ -250,7 +250,7 @@ label car_dialogue:
     pause 2.0
 
     $ renpy.music.set_pause(True, "music")
-    play music2 sfx_ringtone_billy
+    play music2 sfx_ringtone_billy loop
     n "Billy gets a call on his Jupiter Jack."
     pause 0.5
     play sound sfx_pickup_call
@@ -268,7 +268,7 @@ label car_dialogue:
     pause 4.0
 
     $ renpy.music.set_pause(True, "music")
-    play music2 sfx_ringtone_billy
+    play music2 sfx_ringtone_billy loop
     n "Billy gets another call on his Jupiter Jack."
     pause 0.5
     play sound sfx_pickup_call
@@ -451,7 +451,7 @@ label car_dialogue:
     pause 4.0
 
     $ renpy.music.set_pause(True, "music")
-    play music2 sfx_ringtone_billy
+    play music2 sfx_ringtone_billy loop
     n "It isn't long before another call comes in."
     pause 0.5
     play sound sfx_pickup_call
@@ -469,7 +469,7 @@ label car_dialogue:
     pause 5.0
 
     $ renpy.music.set_pause(True, "music")
-    play music2 sfx_ringtone_billy
+    play music2 sfx_ringtone_billy loop
     n "Pakoo calls the group again."
     pause 0.5
     play sound sfx_pickup_call
@@ -561,7 +561,7 @@ label car_dialogue:
     pause 3.0
 
     $ renpy.music.set_pause(True, "music")
-    play music2 sfx_ringtone_billy
+    play music2 sfx_ringtone_billy loop
     n "Billy gets yet another call on his Jupiter Jack."
     pause 0.5
     play sound sfx_pickup_call
@@ -649,7 +649,7 @@ label car_dialogue:
     pause 5.0
     
     $ renpy.music.set_pause(True, "music")
-    play music2 sfx_ringtone_billy
+    play music2 sfx_ringtone_billy loop
     n "Billy gets a call on his Jupiter Jack."
     pause 0.5
     play sound sfx_pickup_call

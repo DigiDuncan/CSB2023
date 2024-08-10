@@ -7,7 +7,7 @@
     "1.ogg": {
         "type": "audio",
         "title": "Test Developer Commentary",
-        "caption": "This was the audio file used to test developer commentary during the first CSBIII DX Jam. It might give an insight into Digi's feelings on the game at the time.",
+        "caption": "This was the audio file used to test developer commentary during the first CSBIII DX Jam. It might give an insight into Digi's feelings on the game at the time.\n\nTranscript: In this game, we decided to make it suck. No one had to play this game, so it didn't have to be good. That was our philosophy going into it.",
         "album_art": "dxcom_icon_static.png"
     },
     "main_menu.png": {
@@ -18,7 +18,7 @@
     "linus.png": {
         "type": "image",
         "title": "Beta Linus",
-        "caption": "This was a purposed version of Linus that we used early in development. He was a little crusty, though."
+        "caption": "This was a proposed version of Linus that we used early in development. He was a little crusty, though."
     },
     "michael.png": {
         "type": "image",
@@ -32,47 +32,47 @@
     },
     "mean_original.png": {
         "type": "image",
-        "title": "mean_original",
+        "title": "Mean (Original)",
         "caption": "Mean's original sprite, as seen in {i}CSBounciness III,{/i} before Tate redrew it. It's an edited screenshot from an episode of {i}Bubble Guppies.{/i} This representation of Mean is affectionately known as \"Yellow Fucker\"."
     },
     "worker_mean.png": {
         "type": "image",
-        "title": "worker_mean",
+        "title": "Worker Mean (Original)",
         "caption": "Mean's original HoH SiS sprite, as seen in {i}CSBounciness III,{/i} before Tate redrew it."
     },
     "mean_clothes.png": {
         "type": "image",
-        "title": "mean_clothes",
+        "title": "Mean's Clothes",
         "caption": "This was going to be used for a joke in Train Route that involved Mean's transformation rendering him nude until Tate produced this emergency set of clothes. Tate would then throw the clothes at Mean, knocking him offscreen until he returned, fully dressed. This bit was cut for several reasons."
     },
     "mean_human_placeholder.png": {
         "type": "image",
-        "title": "mean_human_placeholder",
+        "title": "Human Mean (Placeholder)",
         "caption": "Hastily-drawn placeholder sprite by Tate, used while writing the portion of Train Route that introduced Mean's human form. Originally, Tate intended to be the one to draw Mean's human sprites, but Mushroom Man did a much better job at capturing Mean's creative vision."
     },
     "amtrak_stewardess_placeholder.png": {
         "type": "image",
-        "title": "amtrak_stewardess_placeholder",
+        "title": "Amtrak Stewardess (Placeholder)",
         "caption": "A {i}slightly-{/i}less half-assed placeholder sprite by Tate. We're still not sure if the replacement sprite found on Google Images is an actual art piece or an AI-generated image."
     },
     "tate_mean.png": {
         "type": "image",
-        "title": "tate_mean",
+        "title": "tate_mean.png",
         "caption": "Unused base sprite for a {i}really{/i} cringe section of the Train Route script that will never, {i}ever{/i} see the light of day. Instead, enjoy this picture of Tate gently holding a pincushion. :D"
     },
     "mean_human_sketch.png": {
         "type": "image",
-        "title": "mean_human_sketch",
+        "title": "mean_human_sketch.png",
         "caption": "An unfinished sketch of what would have been Mean's human sprite base. Tate's art style is a bit too \"pretty\" to do Mean's character justice."
     },
     "mean_human_hat_sketch.png": {
         "type": "image",
-        "title": "mean_human_hat_sketch",
+        "title": "mean_human_hat_sketch.png",
         "caption": "The same sketch, just with Mean's hat."
     },
     "zenigata_car_placeholder.png": {
         "type": "image",
-        "title": "zenigata_car_placeholder",
+        "title": "Zenigata's Car (Placeholder)",
         "caption": "Placeholder sprite for Zenigata's car during the rooftop train chase scene."
     },
     "addyfucku.png": {
@@ -98,6 +98,6 @@
     "TV_SMPTE.png": {
         "type": "image",
         "title": "TV SMPTE",
-        "caption": "This background is from {i}CSBII{/i}. I don't know why it's still in the game. It's just sitting here in the files and looks awful. Who edited this? Why are the bars not tilted at all?"
+        "caption": "This background is from {i}CSBII{/i}. We don't know why it's still in the game. It was just sitting here in the files and looks awful. Who edited this? Why are the bars not tilted {i}at all?"
     }
 }
