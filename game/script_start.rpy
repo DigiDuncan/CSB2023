@@ -2366,6 +2366,7 @@ default lunatic_check3 = False
 default science_check = False
 default science_check2 = False
 default blind_check = False
+default blue_check = False
 default con_start = False
 
 # Christmas

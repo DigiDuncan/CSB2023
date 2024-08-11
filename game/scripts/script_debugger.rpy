@@ -2441,6 +2441,8 @@ label asset_debugger:
     else:
         jump exit_debug
     if fun_value(154):
+        $ sfxtotal += 1
+        play sound sfx_tf2_pickup_metallic
         $ musictotal += 1
         play music space_classroom
         $ bgtotal += 1

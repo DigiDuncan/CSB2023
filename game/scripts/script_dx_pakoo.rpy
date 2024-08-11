@@ -1379,6 +1379,8 @@ label dx_after_three_right:
 # SOCIETY OF THE BLIND EYE
 
 label dx_after_blindeye_ask:
+    if blind_check:
+        jump dx_after_blindeye_reask
     cs "Those guys look pretty strange."
     cs "They look like they have eyes on their hoods!"
     n "CS walks over to the optical-hooded fellows."
@@ -1410,6 +1412,55 @@ label dx_after_blindeye_ask:
     cs "Well anyways..."
     jump dx_after_seek_competitors
 
+label dx_after_blindeye_reask:
+    cs "Maybe I should check on the Blind Eye guys again."
+    n "CS rushes over to the Society of the Blind Eye."
+    # After asking Blue Branch 
+    if blue_check:
+        cs "Huh, where did they go?"
+        cs "Maybe they went looking for him themselves?"
+        n "CS spots a door slightly cracked open next to the wall where they were standing."
+        cs "Hmm..."
+        cs "I'm gonna go take a peak..."
+        n "CS gently opens the door."
+        cs "Man, I can't see a thing in here!"
+        cs "Where's the light switch?"
+        cs "Aha! Found it!"
+        jump dx_after_seek_competitors
+
+    blind_eye "Hey again, did you find Fiddleford yet?"
+    cs "Not yet, but..."
+    # Ask for money
+    if god_money:
+        cs "Do you guys have any spare change?"
+        blind_eye "..."
+        pause 2.0
+        cs "Sorry, I'm not trying to be a beggar, there is just this--{w=1.0}{nw}"
+        blind_eye "No, we know. It's those Catholics, correct?"
+        cs "...Yeah?"
+        cs "I'm really running, and gunning if you will, to get as many votes as possible."
+        blind_eye "Well, I wouldn't give them any money myself, but I guess you can try giving this to them."
+        $ cath_counter += 77
+        n "The Blind Eye cultist gives CS a $77 dollar bill."
+        blind_eye "I don't know if this has any real worth, so I guess you can do what you want with it."
+        cs "Oh… Kay. Weird..."
+        n "CS inspects the dollar bill."
+        cs "This man on the bill... Nathaniel Northwest? Do you know them?"
+        blind_eye "Yes, they are an extremely wealthy family from the town we come from."
+        blind_eye "We don't really want to do anything with them, so I guess it's better that you have this now."
+        cs "Alright, well, thanks!"
+        n "CS heads back to the convention floor."
+        cs "Well, that was weird..."
+        jump dx_after_seek_competitors
+    # Keep looking
+    cs "... I'll keep looking!"
+    blind_eye "Thank you. Your service is very much appreciated."
+    cs "No problem!"
+    n "CS keeps looking for Fiddleford."
+    cs "Alright, I just gotta find this guy..."
+    jump dx_after_seek_competitors
+
+
 # BLUE BRANCH
 
 label dx_after_branch_ask:
@@ -1427,6 +1478,7 @@ label dx_after_branch_ask:
     show cultist at mid_right
     with dissolve
     show cs cultist at left with moveinleft
+    $ blue_check = True
     cultist "Welcome back! Did you need anyone else?"
     jump menu_branch_ask
 
