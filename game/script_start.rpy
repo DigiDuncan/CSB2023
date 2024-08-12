@@ -2372,6 +2372,9 @@ default con_start = False
 
 # Christmas
 default tree_first = False
+default tree_second = False
+default lights_first = False
+default decor_first = False
 
 # RPG
 default enemy_1 = "cop"

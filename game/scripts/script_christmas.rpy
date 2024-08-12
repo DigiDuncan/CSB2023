@@ -31,32 +31,81 @@ label dx_christmas_start:
 
 # christmas tree
 label dx_christmas_tree:
-    cs "I should get the Christmas tree first."
-    cs "Who doesn't wanna get this thing out? This is the best part of decorating!"
-    cs "I just, need to be, careful..."
-    cs "Hnng..."
-    n "All of a sudden, the shelf tips and all of the supplies fall onto CS!"
+    if decor_first and tree_second and lights_first:
+        jump dx_christmas_before_anno
+    if lights_first or decor_first:
+        $ tree_second = True
+        cs "Alright, time to get the Christmas tree!"
+        n "CS drags the box out of the garage and brings it into his living room."
+        n "CS goes back to the garage."
+        if lights_first:
+            jump dx_christmas_decor
+        if decor_first:
+            jump dx_christmas_lights
     $ tree_first = True
-    cs "Shit!"
-    # crashing SFX
-    cs "Ow..."
-    n "CS gets himself out of the mess of lights, garland, and Legos."
-    # CS steps on a Lego.
-    cs "Fuck!"
-    cs "Man, what a mess! "
-    cs "This is gonna take forever to clean up!"
+    if tree_first:
+        cs "I should get the Christmas tree first."
+        cs "Who doesn't wanna get this thing out? This is the best part of decorating!"
+        cs "I just, need to be, careful..."
+        cs "Hnng..."
+        n "All of a sudden, the shelf tips and all of the supplies fall onto CS!"
+        cs "Shit!"
+        # crashing SFX
+        cs "Ow..."
+        n "CS gets himself out of the mess of lights, garland, and Legos."
+        # CS steps on a Lego.
+        cs "Fuck!"
+        cs "Man, what a mess! "
+        cs "This is gonna take forever to clean up!"
     jump dx_christmas_anno
 
 
 # Decorations/lights
 label dx_christmas_lights:
-    cs "I should probably get the lights and garland first, they are in the easiest box for me to grab anyways."
-    n "CS gets the box inside, and then goes back to the garage to grab the next box."
-    return
+    if decor_first and tree_second and lights_first:
+        jump dx_christmas_before_anno
+    if tree_second or decor_first:
+        cs "Alright, I should probably get the lights and garland next."
+        n "CS gets the box inside, and then goes back to the garage to grab the next box."
+        if tree_second:
+            jump dx_christmas_decor
+        if decor_first:
+            jump dx_christmas_tree
+    $ lights_first = True
+    if lights_first:
+        cs "I should probably get the lights and garland first, they are in the easiest box for me to grab anyways."
+        n "CS gets the box inside, and then goes back to the garage to grab the next box."
+    menu:
+        "Christmas tree":
+            jump dx_christmas_tree
+        "Ornaments and decorations":
+            jump dx_christmas_decor
 
 label dx_christmas_decor:
-    n "Not done yet."
-    return
+    if decor_first and tree_second and lights_first:
+        jump dx_christmas_before_anno
+    if tree_second or lights_first:
+        cs "Alright, I should probably get the decorations next."
+        n "CS gets the box inside, and then goes back to the garage to grab the next box."
+        if tree_second:
+            jump dx_christmas_lights
+        if lights_first:
+            jump dx_christmas_tree
+    $ decor_first = True
+    if decor_first:
+        cs "I'm gonna get the decorations first, I have a huge assortment of Legos in there!"
+        n "CS gets the box inside, and then goes back to the garage to grab the next box."   
+    menu:
+        "Christmas tree":
+            jump dx_christmas_tree
+        "Lights and garland":
+            jump dx_christmas_lights
+
+label dx_christmas_before_anno:
+    cs "Well that's all done!"
+    cs "I have moved all of the Christmas supplies into the house!"
+    cs "This is where the fun part begins!"
+    jump dx_christmas_anno
 
 label dx_christmas_anno:
     cs "Maybe I should call someone over to help."
@@ -87,3 +136,9 @@ label dx_christmas_anno:
     cs "This is gonna take an hour at least to scoop this all up."
     cs "I better get to it, I guess."
     n "As CS is about 10 minutes into shoveling, CS hears someone walking up his driveway."
+    carguy "Nice snow!"
+    carguy "Nooot so nice driveway."
+    cs "Look man, I'm trying. It's cold as balls out here."
+    carguy "Speaking of balls, you need some help?"
+    carguy "I got something you might need!"
+
