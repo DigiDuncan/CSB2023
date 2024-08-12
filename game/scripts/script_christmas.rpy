@@ -141,4 +141,17 @@ label dx_christmas_anno:
     cs "Look man, I'm trying. It's cold as balls out here."
     carguy "Speaking of balls, you need some help?"
     carguy "I got something you might need!"
+    carguy "Crotch Doctor's \"Scratch My Balls\" technology doesn't just help removing shit from your car, it also instantly melts snow!"
+    carguy "Watch!"
+    n "Carguy unscrews the bottle of Crotch Doctor, and tips it upside down."
+    n "A single drop falls into the snow, leaving one small hole."
+    cs "Umm..."
+    carguy "Hold on, it's just..."
+    n "Carguy vigorously shakes the empty bottle."
+    carguy "{i}I thought I had more of this...{/i}" 
+    carguy "Welp, sorry! Looks like I ran out!"
+    n "Carguy turns and trots away though the snow as fast as he can go."
+    cs "Well that was a huge waste of time!"
+    cs "I really need to finish shoveling my driveway, my face is starting to freeze!"
+    
 
