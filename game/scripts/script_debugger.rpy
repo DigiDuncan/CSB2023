@@ -2748,13 +2748,15 @@ label asset_debugger:
         jump exit_debug
     if fun_value(192):
         $ musictotal += 1
-        play music albu
+        play music lets_hear_winter
         $ bgtotal += 1
         scene trafficjam
-        pause 0.1
+        pause 0.5
     else:
         jump exit_debug
     if fun_value(193):
+        $ musictotal += 1
+        play music albu
         $ bgtotal += 1
         scene east_cafe
         pause 0.1

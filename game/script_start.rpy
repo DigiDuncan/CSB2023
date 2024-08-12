@@ -2092,6 +2092,7 @@ define audio.homely_yado_inn = "<from 0.499 to 40.502>homely_yado_inn.ogg"
 define audio.tmwstw = "tmwstw.ogg"
 
 # CSBIII DX After-True Music
+define audio.lets_hear_winter = "lets_hear_my_christ.ogg"
 define audio.lets_hear_spring = "letshearspring.ogg"
 define audio.echoing_spring = "echoingspring.ogg"
 define audio.alien_atmosphere = "alien_atmosphere.ogg"

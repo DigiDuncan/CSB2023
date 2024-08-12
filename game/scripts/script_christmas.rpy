@@ -1,5 +1,7 @@
 label dx_christmas_start:
-    cs "CS wakes up to a snowy winter morning."
+    play music lets_hear_winter volume 0.7
+    scene black
+    n "CS wakes up to a snowy winter morning."
     cs "Yes! It snowed today!"
     n "CS looks at his calendar."
     cs "Woohoo!"
@@ -48,7 +50,8 @@ label dx_christmas_tree:
 
 # Decorations/lights
 label dx_christmas_lights:
-    n "Not done yet."
+    cs "I should probably get the lights and garland first, they are in the easiest box for me to grab anyways."
+    n "CS gets the box inside, and then goes back to the garage to grab the next box."
     return
 
 label dx_christmas_decor:
@@ -59,14 +62,14 @@ label dx_christmas_anno:
     cs "Maybe I should call someone over to help."
     cs "Lemme see if Anno is around..."
     n "CS decides to call Anno."
-    cs "Hello?"
+    anno "Hello?"
     cs "Hey Anno, CS here!"
-    cs "Yes, I know the party is in two days, you just called me."
+    anno "Yes, I know the party is in two days, you just called me."
     cs "Well, I was wondering..."
     cs "If you wanted to help me decorate my house!"
-    cs "I still have to get a gift for the gift exchange..."
-    cs "...But I can do that tomorrow."
-    cs "I'll come over. Be there soon."
+    anno "I still have to get a gift for the gift exchange..."
+    anno "...But I can do that tomorrow."
+    anno "I'll come over. Be there soon."
     cs "Cool!"
     cs "Alright, I got Anno to come over and help out!"
     cs "I guess I'll just plan out how I want the house to look."
@@ -82,3 +85,5 @@ label dx_christmas_anno:
     n "When CS gets outside, he finds a massive snow drift blocking his garage."
     cs "Well that's just great."
     cs "This is gonna take an hour at least to scoop this all up."
+    cs "I better get to it, I guess."
+    n "As CS is about 10 minutes into shoveling, CS hears someone walking up his driveway."
