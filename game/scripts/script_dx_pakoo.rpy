@@ -512,7 +512,7 @@ label dx_after_competiton_start:
     cultist "I hope so."
     n "CS runs off to find competitors."
     scene cult_con with dissolve
-    play music ten_feet_away
+    play music "audio/10_feet_away_1.wav" if_changed
     show cs cultist at center with moveinleft
     $ con_start = True
     cs "Alright, so, there are a few cults I can challenge here."
@@ -521,7 +521,13 @@ label dx_after_competiton_start:
 # CULT CON START
 
 label dx_after_seek_competitors:
-    play music ten_feet_away if_changed
+    play music "audio/10_feet_away_1.ogg" if_changed
+    if total_votes >= 25:
+        play music2 [ "<sync music>audio/10_feet_away_2.ogg", "audio/10_feet_away_2.ogg" ] if_changed
+    if total_votes >= 50:
+        play music3 [ "<sync music>audio/10_feet_away_3.ogg", "audio/10_feet_away_3.ogg" ] if_changed
+    if total_votes >= 75:
+        play music4 [ "<sync music>audio/10_feet_away_4.ogg", "audio/10_feet_away_4.ogg" ] if_changed
     scene cult_con
     show cs cultist at center
     cs "Which cult should I look for?"
@@ -550,8 +556,7 @@ label dx_after_votes_balance:
 
 # PENCIL CULT
 
-label dx_after_pencil_ask:
-    play music ten_feet_away if_changed    
+label dx_after_pencil_ask:   
     scene cult_con
     show cs cultist at center
     if pencil_check and god_money:
@@ -573,7 +578,6 @@ label dx_after_pencil_ask:
                     show cs cultist flipped with determination
                     hide cs with moveoutleft
                     scene cult_con with dissolve
-                    play music ten_feet_away if_changed
                     show cs cultist at center with moveinleft
                     jump dx_after_seek_competitors
                 cs "Do you have any spare change I can have?"
@@ -589,7 +593,6 @@ label dx_after_pencil_ask:
                 hide cs with moveoutleft
                 $ check2 = True
                 scene cult_con with dissolve
-                play music ten_feet_away if_changed
                 show cs cultist at center with moveinleft
                 jump dx_after_seek_competitors
             "Redo pencil game":
@@ -623,7 +626,6 @@ label dx_after_pencil_ask:
                 show cs cultist flipped with determination
                 hide cs with moveoutleft
                 scene cult_con with dissolve
-                play music ten_feet_away if_changed
                 show cs cultist at center with moveinleft
                 jump dx_after_seek_competitors
     cs "The cult leader said that the pencil guys usually give us a vote, so let's go see what they are up to."
@@ -650,6 +652,9 @@ label dx_after_pencil_ask:
     pencil "How'd you know?"
     cs "Oh, just a hunch, that's all."
     stop music fadeout 3.0
+    stop music2 fadeout 3.0
+    stop music3 fadeout 3.0
+    stop music4 fadeout 3.0
     music end
     hide onscreen_sharpener with dissolve
     n "The pencil man places the sharpener onto the table next to them, and then pulls out a pack of 60 pencils."
@@ -665,7 +670,10 @@ label dx_after_pencil_ask:
     hide bad_end_screen
     hide typewriter
     stop music fadeout 3.0
-    music end   
+    stop music2 fadeout 3.0
+    stop music3 fadeout 3.0
+    stop music4 fadeout 3.0
+    music end 
     show pencilroom
     show pencilguy at right
     show cs cultist at left
@@ -676,7 +684,6 @@ label dx_after_pencil_ask:
         hide cs with moveoutleft
         n "CS turns around and leaves, offering no further explanation."
         scene cult_con with dissolve
-        play music ten_feet_away if_changed
         show cs cultist at center with moveinleft
         jump dx_after_seek_competitors 
     elif god_money and pencil_check:
@@ -695,7 +702,6 @@ label dx_after_pencil_ask:
         n "CS turns around and leaves, offering no further explanation."
         $ pencil_check = True
         scene cult_con with dissolve
-        play music ten_feet_away if_changed
         show cs cultist at center with moveinleft
         jump dx_after_seek_competitors 
     $ pencil_votes = 0
@@ -733,8 +739,7 @@ label dx_after_pencil_ask:
 
 # SCIENTOLOGY
 
-label dx_after_science_ask:
-    play music ten_feet_away if_changed    
+label dx_after_science_ask: 
     scene cult_con
     show cs cultist at center
     if science_check and god_money:
@@ -870,7 +875,6 @@ label dx_after_science_ask:
 # CATHOLICS
 
 label dx_after_catholic_ask:
-    play music ten_feet_away if_changed
     scene cult_con
     show cs cultist at center
     if god_money:
@@ -964,7 +968,6 @@ label dx_after_catholic_find:
     jump dx_after_seek_competitors
 
 label dx_after_catholic_tally:
-    play music ten_feet_away if_changed    
     scene cult_con
     show priest at mid_right
     show cs cultist at left
@@ -1021,8 +1024,7 @@ label dx_after_catholic_tally:
 
 # LUNATIC CULTISTS
 
-label dx_after_lunatic_ask:
-    play music ten_feet_away if_changed    
+label dx_after_lunatic_ask:  
     scene cult_con
     show cs cultist at center
     if lunatic_check3 and god_money:
@@ -1211,6 +1213,11 @@ label dx_after_lunatic_jump:
     scene black with dissolve
     n "The cultists take CS into a limbo-like area, where he remembers all of the adventures from other timelines."
     show lunatic_cultist at center with moveinright
+    stop music
+    stop music2
+    stop music3
+    stop music4
+    music end
     play music space_classroom
     l_cultist "Alright, cs... 188?"
     show lunatic_cultist flipped
@@ -1253,11 +1260,17 @@ label dx_after_quiz_finish:
     l_cultist "Let's bring you back to reality, now."
     stop music fadeout 3.0
     n "CS' mind feels like it's being untangled, then put back together again."
-    play music ten_feet_away if_changed
     scene cult_zone1
     show cs disappointed cultist at mid_left
     show lunatic_cultist at mid_right
     with dissolve
+    play music "audio/10_feet_away_1.ogg"
+    if total_votes >= 25:
+        play music2 [ "<sync music>audio/10_feet_away_2.ogg", "audio/10_feet_away_2.ogg" ]
+    if total_votes >= 50:
+        play music3 [ "<sync music>audio/10_feet_away_3.ogg", "audio/10_feet_away_3.ogg" ]
+    if total_votes >= 75:
+        play music4 [ "<sync music>audio/10_feet_away_4.ogg", "audio/10_feet_away_4.ogg" ]
     cs "Woah, where am I?"
     cs "And, what the hell just happened?"
     l_cultist "Well, we asked you some questions from deep within your consciousness, and then cleared your short-term memory afterward."
@@ -1464,14 +1477,12 @@ label dx_after_blindeye_reask:
 # BLUE BRANCH
 
 label dx_after_branch_ask:
-    play music ten_feet_away if_changed    
     scene cult_con
     show cs cultist at center
     cs "I'm gonna go back to the Blue Branch guys."
     show cs cultist flipped with determination
     hide cs with moveoutleft
     n "CS walks back to check on Blue Branch."
-    play music ten_feet_away if_changed 
     scene blue_branch
     show cultist_2 at right
     show cultist_3 at mid_mid_right
@@ -1517,7 +1528,6 @@ label dx_after_continue_votes:
     cultist "Maybe raise your hood a bit?"
     cs "Nah, I'm fine. Alright, back to culting!"
     hide cs with moveoutleft
-    play music ten_feet_away if_changed
     scene cult_con
     with dissolve
     show cs cultist at center with moveinleft
@@ -1539,7 +1549,6 @@ label dx_after_branch_fiddleford:
     jump dx_after_seek_competitors
 
 label dx_after_branch_ask2:
-    play music ten_feet_away if_changed 
     scene blue_branch
     show cultist_2 at right
     show cultist_3 at mid_mid_right
@@ -1554,6 +1563,11 @@ label dx_after_branch_ask2:
     cs "When does the tallying start?"
     n "The cult leader checks his watch."
     cultist "It looks like it's gonna be starting any minute now."
+    stop music fadeout 3.0
+    stop music2 fadeout 3.0
+    stop music3 fadeout 3.0
+    stop music4 fadeout 3.0
+    music end
     scene black with dissolve
     jump dx_after_convention_end
 

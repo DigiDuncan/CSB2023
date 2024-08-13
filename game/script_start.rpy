@@ -2100,10 +2100,10 @@ define audio.apple_kid = "apple_kid.ogg"
 define audio.ten_feet_away = "10_feet_away.ogg"
 define audio.get_the_funk = "get_the_funk.ogg"
 define audio.hitsquad_2 = "hitsquad_2.ogg"
-define audio.ten_feet_away_1 = "10_feet_away_1.wav"
-define audio.ten_feet_away_2 = "10_feet_away_2.wav"
-define audio.ten_feet_away_3 = "10_feet_away_3.wav"
-define audio.ten_feet_away_4 = "10_feet_away_4.wav"
+define audio.ten_feet_away_1 = "10_feet_away_1.ogg"
+define audio.ten_feet_away_2 = "10_feet_away_2.ogg"
+define audio.ten_feet_away_3 = "10_feet_away_3.ogg"
+define audio.ten_feet_away_4 = "10_feet_away_4.ogg"
 define audio.interference2 = "<from 276>interference.ogg"
 
 # CSBIII DX Finale Music
@@ -2610,36 +2610,27 @@ label test:
                     pause
                     $ renpy.full_restart()
                 "Music Test":
-                    play music4 ten_feet_away_4 if_changed volume 0.1
-                    play music3 ten_feet_away_3 if_changed volume 0.1
-                    play music2 ten_feet_away_2 if_changed volume 0.1
-                    play music ten_feet_away_1 if_changed volume 1.0
+                    # play music4 ten_feet_away_4 if_changed volume 0.1
+                    # play music3 ten_feet_away_3 if_changed volume 0.1
+                    # play music2 ten_feet_away_2 if_changed volume 0.1
+                    play music "audio/10_feet_away_1.ogg"
                     # $ renpy.music.set_pause(True, "music4")
                     # $ renpy.music.set_pause(True, "music3")
                     # $ renpy.music.set_pause(True, "music2")
                     pakoo "test 1"
                     pause
-                    play music4 ten_feet_away_4 if_changed volume 0.1
-                    play music3 ten_feet_away_3 if_changed volume 0.1
-                    play music2 ten_feet_away_2 if_changed volume 1.0
-                    play music ten_feet_away_1 if_changed volume 1.0
+                    play music2 [ "<sync music>audio/10_feet_away_2.ogg", "audio/10_feet_away_2.ogg" ]
                     # $ renpy.music.set_pause(True, "music4")
                     # $ renpy.music.set_pause(True, "music3")
                     # $ renpy.music.set_pause(False, "music2")
                     pakoo "test 2"
                     pause
-                    play music4 ten_feet_away_4 if_changed volume 0.1
-                    play music3 ten_feet_away_3 if_changed volume 1.0
-                    play music2 ten_feet_away_2 if_changed volume 1.0
-                    play music ten_feet_away_1 if_changed volume 1.0
+                    play music3 [ "<sync music>audio/10_feet_away_3.ogg", "audio/10_feet_away_3.ogg" ]
                     # $ renpy.music.set_pause(True, "music4")
                     # $ renpy.music.set_pause(False, "music3")
                     pakoo "test 3"
                     pause
-                    play music4 ten_feet_away_4 if_changed volume 1.0
-                    play music3 ten_feet_away_3 if_changed volume 1.0
-                    play music2 ten_feet_away_2 if_changed volume 1.0
-                    play music ten_feet_away_1 if_changed volume 1.0
+                    play music4 [ "<sync music>audio/10_feet_away_4.ogg", "audio/10_feet_away_4.ogg" ]
                     # $ renpy.music.set_pause(False, "music4")
                     pakoo "test 4"
                     pause
