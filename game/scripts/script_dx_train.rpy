@@ -1408,6 +1408,7 @@ label train_wakeup:
     pause 0.5
     n "CS lets out a groan and rolls back over in bed."
     show arceus angry flipped
+    play sound sfx_csnore
     cs "Zzzzz..."
     cs "{size=-15}Five more minutes, mom..."
     show arceus angry flipped at right with moveinleft

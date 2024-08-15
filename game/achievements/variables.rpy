@@ -6,14 +6,14 @@ default persistent.unlocked_achievements = set()
 #   - Description once unlocked
 #   - Image icon filename
 #   - Category (Acceptable values: "story", "extra")
-#       - Use "story" if you can encounter this achievement through normal gameplay, including menu choices.    
+#       - Use "story" if you can encounter this achievement through normal gameplay, including menu choices.
 #       - Use "extra" if your achievement:
 #           - Requires a perfect score on a minigame
 #           - Requires any fun value as a prerequisite
 #           - Requires the player to do anything else that would not occur naturally through normal gameplay.
 # Optional args:
 #   - Whether achievement is hidden until unlocked (Default: False)
-#   - Whether achivement is DX-new (Default: False)
+#   - Whether achievement is DX-new (Default: False)
 
 define achievements = [
     Achievement("ZUP!", "???", "Start the game.", "zup", "extra"),
@@ -73,14 +73,14 @@ define achievements = [
     Achievement("Graphite Grinder", "Sharpening Time 2", "Beat the Pencil Cultist's high score.", "grinder", "story", dx = True),
     Achievement("60 Drillless WR", "Your wrist hurts.", "Get a perfect score of 1200.", "1200","extra", dx = True),
     Achievement("We Don't Go To Bronson", "???", "Welcome to Hell!",  "bronson", "story", dx = True),
-    Achievement("Wacka Wacka DooDoo Yeah!", "Find the legendary fun value in Country route.", "Find the legendery fun value in Country route.", "albu", "extra", dx = True),
+    Achievement("Wacka Wacka DooDoo Yeah!", "Find the legendary fun value in Country route.", "Find the legendary fun value in Country route.", "albu", "extra", dx = True),
     Achievement("Lots & Lots Of Trains!", "Aren't they just adorable?", "Play with some model trains.", "train", "story", dx = True),
     Achievement("Conductor Skillz 188", "No potions of healing here.", "Win the train game with full health.", "train_healthy", "extra", dx = True),
     Achievement("Main Character Syndrome", "Remind them whose game this is.", "Defeat Tate EX.", "vs-tate", "extra", dx = True),
     Achievement("All Aboard!", "???", "Complete Train Route for the first time.", "amtrak", "story", dx = True),
     Achievement("Railway Superfan", "???", "See all three possible endings of Train Route.", "railfan", "extra", dx = True),
+    Achievement("You Broke It!", "Woah, dude, you broke it.", "Woah, dude, you broke it.", "broke", "extra", dx = True),
     Achievement("Gotta Catch Them All", "Collect every bio.", "Collect every bio.", "bios", "extra"),
     Achievement("The Brown Album", "Collect every song in the jukebox.", "Collect every song in the jukebox.", "juke", "extra"),
-    Achievement("Fin.", "Collect all the endings.", "Collect all the endings.", "end", "extra"),
-    Achievement("You Broke It!", "Woah, dude, you broke it.", "Woah, dude, you broke it.", "broke", "extra", dx = True)
+    Achievement("Fin.", "Collect all the endings.", "Collect all the endings.", "end", "extra")
 ]
