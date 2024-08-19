@@ -2371,6 +2371,7 @@ default science_check2 = False
 default blind_check = False
 default blue_check = False
 default con_start = False
+default gun_get = False
 
 # Christmas
 default tree_first = False

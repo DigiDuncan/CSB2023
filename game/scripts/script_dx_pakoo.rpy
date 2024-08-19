@@ -742,6 +742,8 @@ label dx_after_pencil_ask:
 label dx_after_science_ask: 
     scene cult_con
     show cs cultist at center
+    if gun_get:
+        jump dx_after_science_quest
     if science_check and god_money:
         cs "I could try asking them for money, it's worth a shot."
         hide cs with moveoutright
@@ -1478,6 +1480,7 @@ label dx_after_blindeye_reask:
         cs "Don't worry, I won't use this thing on anyone else. Promise."
         blind_eye "Alright well, good luck."
         n "CS takes the gun and heads back to the convention."
+        $ gun_get = True
         cs "Alright, time to find those Scientologists."
         jump dx_after_seek_competitors
 
@@ -1513,12 +1516,29 @@ label dx_after_blindeye_reask:
     cs "Alright, I just gotta find this guy..."
     jump dx_after_seek_competitors
 
+label dx_after_science_quest:
+    cs "Let's go talk to Mr. Cruise."
+    n "CS walks over to the Scientologists."
+    cruise "Hey, what do you want now?"
+    n "CS types in \"blind eye\" into the gun and blasts Tom Cruise right in the head."
+    cruise "Hey! What the hell did you do to me?"
+    cruise "Do you know anything about the Society of the Blind Eye?"
+    cruise "Who? What are you even talking about?"
+    cs "That's all I needed to hear! Thank you!"
+    n "CS heads back to the convention floor."
+    cruise "Fuckin' weirdo..."
+    cs "Now that I've done what they asked, I should go talk to them."
+    jump dx_after_seek_competitors
+
+
 label dx_after_blindeye_quest:
     # After Blind Eye Quest
     cs "Time to go tell them that I'm done!"
     n "CS runs over to the Blind Eye cult."
     cs "Hey, I finished your task!"
     blind_eye "Oh, cool. Thank you for doing that for us."
+    n "CS hands the gun back to the Blind Eye Guys."
+    $ gun_get = False
     cs "No problem!"
     blind_eye "You didn't mess with anyone else's mind, correct?"
     cs "Nope!"
