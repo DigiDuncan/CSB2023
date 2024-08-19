@@ -1591,6 +1591,7 @@ image walkie dark = "dark:walkie.png"
 image walmart_bag = "walmart_bag.png"
 image watch = "watch.png"
 image ytx = Transform("ytx.png", zoom = 0.333)
+image map_kuwait = "gui/map_kuwait.png"
 
 # Movies
 image car background = Movie(play="movies/car_background.webm")

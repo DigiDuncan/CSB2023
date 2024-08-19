@@ -220,3 +220,42 @@ label kuwait_hospital:
     hide cs with moveoutleft
     scene black with dissolve
     cs "doo doo"
+
+# Travel Locations
+
+label kuwait_al_wafra:
+
+label kuwait_khiran_camp:
+
+label kuwait_burgan_oil_fields:
+
+label kuwait_sharq:
+
+label kuwait_icarus:
+
+label kuwait_kuwait_city:
+
+label kuwait_hawally:
+
+label kuwait_boubyan_island:
+
+label kuwait_saqr_airbase:
+
+label kuwait_salmiya:
+
+label kuwait_bayan_water_towers:
+
+label kuwait_mutla_ridge:
+
+label kuwait_um_al_maradim:
+
+label kuwait_um_al_namil:
+
+label kuwait_sulaibiya:
+
+label kuwait_kubar_island:
+
+label kuwait_jahra_industrial:
+
+label kuwait_al_abdally:
+    
