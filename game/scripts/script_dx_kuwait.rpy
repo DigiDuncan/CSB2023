@@ -224,38 +224,109 @@ label kuwait_hospital:
 # Travel Locations
 
 label kuwait_al_wafra:
+    scene al_wafra
+    show cs angry punished
+    with dissolve
+    cs "I am now at Al Wafra."
 
 label kuwait_khiran_camp:
+    scene khiran_camp
+    show cs angry punished
+    with dissolve
+    cs "I am now at Khiran Camp."
 
 label kuwait_burgan_oil_fields:
+    scene burgan_oil
+    show cs angry punished
+    with dissolve
+    cs "I am now at the Burgan Oil Fields."
 
 label kuwait_sharq:
+    scene sharq
+    show cs angry punished
+    with dissolve
+    cs "I am now at Sharq."
 
 label kuwait_icarus:
+    scene icarus
+    show cs angry punished
+    with dissolve
+    cs "I am now at Icarus."
 
 label kuwait_kuwait_city:
+    scene kuwait_city
+    show cs angry punished
+    with dissolve
+    cs "I am now at Kuwait City."
 
 label kuwait_hawally:
+    scene hawally
+    show cs angry punished
+    with dissolve
+    cs "I am now at Hawally."
 
 label kuwait_boubyan_island:
+    scene boubyan_island
+    show cs angry punished
+    with dissolve
+    cs "I am now at Boubyan Island."
 
 label kuwait_saqr_airbase:
+    scene saqr_airbase
+    show cs angry punished
+    with dissolve
+    cs "I am now at the Saqr Airbase."
 
 label kuwait_salmiya:
+    scene salmiya
+    show cs angry punished
+    with dissolve
+    cs "I am now at Salmiya."
 
 label kuwait_bayan_water_towers:
+    scene bayan_water
+    show cs angry punished
+    with dissolve
+    cs "I am now at the Bayan Water Towers."
 
 label kuwait_mutla_ridge:
+    scene mutla_ridge
+    show cs angry punished
+    with dissolve
+    cs "I am now at Mutla Ridge."
 
 label kuwait_um_al_maradim:
+    scene um_al_maradim
+    show cs angry punished
+    with dissolve
+    cs "I am now at Um Al Maradim."
 
 label kuwait_um_al_namil:
+    scene um_al_namil
+    show cs angry punished
+    with dissolve
+    cs "I am now at Um Al Namil."
 
 label kuwait_sulaibiya:
+    scene sulaibiya
+    show cs angry punished
+    with dissolve
+    cs "I am now at Sulaibiya."
 
 label kuwait_kubar_island:
+    scene kubar_island
+    show cs angry punished
+    with dissolve
+    cs "I am now at Kubar Island."
 
 label kuwait_jahra_industrial:
+    scene jahra_industrial
+    show cs angry punished
+    with dissolve
+    cs "I am now at Jahra Industrial."
 
 label kuwait_al_abdally:
-    
+    scene al_abdally
+    show cs angry punished
+    with dissolve
+    cs "I am now at Al-Abdally."
