@@ -200,6 +200,30 @@ screen kuwait_map():
                     zoom 0.1
                     pos(920,940)
                 action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("kuwait_um_al_maradim")
+            imagebutton auto "menu/csbiiidx_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
+                hovered tt.Action("Burgan Oil Fields")
+                at transform:
+                    zoom 0.1
+                    pos(160,540)
+                action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("kuwait_burgan_oil_fields")
+            imagebutton auto "menu/csbiiidx_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
+                hovered tt.Action("Saqr Airbase")
+                at transform:
+                    zoom 0.1
+                    pos(140,140)
+                action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("kuwait_saqr_airbase")
+            imagebutton auto "menu/csbiiidx_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
+                hovered tt.Action("Al-Abdally")
+                at transform:
+                    zoom 0.1
+                    pos(380,180)
+                action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("kuwait_al_abdally")
+            imagebutton auto "menu/csbiiidx_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
+                hovered tt.Action("Mutla Ridge")
+                at transform:
+                    zoom 0.1
+                    pos(460,270)
+                action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("kuwait_mutla_ridge")
 
 label lose_car_game:
     bad_end "100 percent\nunsatisfied." "true_iowa"
