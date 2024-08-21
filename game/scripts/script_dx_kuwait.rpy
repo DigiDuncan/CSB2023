@@ -254,7 +254,7 @@ label kuwait_icarus:
     cs "I am now at Icarus."
 
 label kuwait_kuwait_city:
-    scene kuwait_city
+    scene kuwait_cityu
     show cs angry punished
     with dissolve
     cs "I am now at Kuwait City."
