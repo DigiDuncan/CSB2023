@@ -1491,6 +1491,8 @@ image saqr_3 = "bg/kuwait/saqr_3.png"
 image wafra_1 = "bg/kuwait/wafra_1.png"
 image wafra_2 = "bg/kuwait/wafra_2.png"
 image wafra_3 = "bg/kuwait/wafra_3.png"
+image outside_survivor = "bg/kuwait/outside_survivor.png"
+image inside_survivor = "bg/kuwait/inside_survivor.png"
 
 image green_screen = "bg/green.png"
 

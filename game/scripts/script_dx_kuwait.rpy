@@ -228,105 +228,402 @@ label kuwait_al_wafra:
     show cs angry punished
     with dissolve
     cs "I am now at Al Wafra."
+    menu:
+        "What do you want to check out?"
+        "House":
+            cs "I'll go check out the House."
+            hide cs with moveoutright
+            show wafra_1 with dissolve
+            show cs angry punished with moveinleft
+            cs "This is interesting, but I don't have too much to do here."
+            jump kuwait_al_wafra
+        "Barn":
+            cs "I'll go check out the Barn."
+            hide cs with moveoutright
+            show wafra_2 with dissolve
+            show cs angry punished with moveinleft
+            cs "This is interesting, but I don't have too much to do here."
+            jump kuwait_al_wafra
+        "Greenhouses":
+            cs "I'll go check out the Greenhouses."
+            hide cs with moveoutright
+            show wafra_3 with dissolve
+            show cs angry punished with moveinleft
+            cs "This is interesting, but I don't have too much to do here."
+            jump kuwait_al_wafra
 
 label kuwait_khiran_camp:
     scene khiran_camp
     show cs angry punished
     with dissolve
     cs "I am now at Khiran Camp."
+    menu:
+        "What do you want to check out?"
+        "House 1":
+            cs "I'll go check out this House."
+            hide cs with moveoutright
+            show khiran_1 with dissolve
+            show cs angry punished with moveinleft
+            cs "This is interesting, but I don't have too much to do here."
+            jump kuwait_khiran_camp
+        "House 2":
+            cs "I'll go check out this House."
+            hide cs with moveoutright
+            show khiran_2 with dissolve
+            show cs angry punished with moveinleft
+            cs "This is interesting, but I don't have too much to do here."
+            jump kuwait_khiran_camp
+        "House 3":
+            cs "I'll go check out this House."
+            hide cs with moveoutright
+            show khiran_3 with dissolve
+            show cs angry punished with moveinleft
+            cs "This is interesting, but I don't have too much to do here."
+            jump kuwait_khiran_camp
 
 label kuwait_burgan_oil_fields:
     scene burgan_oil
     show cs angry punished
     with dissolve
     cs "I am now at the Burgan Oil Fields."
+    menu:
+        "What do you want to check out?"
+        "Shed":
+            cs "I'll go check out the Shed."
+            hide cs with moveoutright
+            show burgan_1 with dissolve
+            show cs angry punished with moveinleft
+            cs "This is interesting, but I don't have too much to do here."
+            jump kuwait_burgan_oil_fields
+        "Oil Drums":
+            cs "I'll go check out the Oil Drums."
+            hide cs with moveoutright
+            show burgan_2 with dissolve
+            show cs angry punished with moveinleft
+            cs "This is interesting, but I don't have too much to do here."
+            jump kuwait_burgan_oil_fields
 
 label kuwait_sharq:
     scene sharq
     show cs angry punished
     with dissolve
     cs "I am now at Sharq."
+    cs "This is interesting, but I don't have too much to do here."
 
 label kuwait_icarus:
     scene icarus
     show cs angry punished
     with dissolve
     cs "I am now at Icarus."
+    menu:
+        "What do you want to check out?"
+        "Building 1":
+            cs "I'll go check out that Building."
+            hide cs with moveoutright
+            show icarus_1 with dissolve
+            show cs angry punished with moveinleft
+            cs "This is interesting, but I don't have too much to do here."
+            jump kuwait_icarus
+        "Building 2":
+            cs "I'll go check out that Building."
+            hide cs with moveoutright
+            show icarus_2 with dissolve
+            show cs angry punished with moveinleft
+            cs "This is interesting, but I don't have too much to do here."
+            jump kuwait_icarus
+        "Building 3":
+            cs "I'll go check out that Building."
+            hide cs with moveoutright
+            show icarus_3 with dissolve
+            show cs angry punished with moveinleft
+            cs "This is interesting, but I don't have too much to do here."
+            jump kuwait_icarus
 
 label kuwait_kuwait_city:
     scene kuwait_cityu
     show cs angry punished
     with dissolve
     cs "I am now at Kuwait City."
+    menu:
+        "What do you want to check out?"
+        "Fire Station":
+            cs "I'll go check out the Fire Station."
+            hide cs with moveoutright
+            show mirai_1 with dissolve
+            show cs angry punished with moveinleft
+            cs "This is interesting, but I don't have too much to do here."
+            jump kuwait_kuwait_city
+        "Offices":
+            cs "I'll go check out the Offices."
+            hide cs with moveoutright
+            show mirai_2 with dissolve
+            show cs angry punished with moveinleft
+            cs "This is interesting, but I don't have too much to do here."
+            jump kuwait_kuwait_city
+        "Restaurant":
+            cs "I'll go check out the Restaurant."
+            hide cs with moveoutright
+            show mirai_3 with dissolve
+            show cs angry punished with moveinleft
+            cs "This is interesting, but I don't have too much to do here."
+            jump kuwait_kuwait_city
+        "Weather Service":
+            cs "I'll go check out the Weater Service Building."
+            hide cs with moveoutright
+            show mirai_4 with dissolve
+            show cs angry punished with moveinleft
+            cs "This is interesting, but I don't have too much to do here."
+            jump kuwait_kuwait_city
+        "Police Station":
+            cs "I'll go check out the Police Station."
+            hide cs with moveoutright
+            show mirai_5 with dissolve
+            show cs angry punished with moveinleft
+            cs "This is interesting, but I don't have too much to do here."
+            jump kuwait_kuwait_city
+        "Bank":
+            cs "I'll go check out the Bank."
+            hide cs with moveoutright
+            show mirai_6 with dissolve
+            show cs angry punished with moveinleft
+            cs "This is interesting, but I don't have too much to do here."
+            jump kuwait_kuwait_city
+        "Hospital":
+            cs "I'll go check out the Hospital."
+            hide cs with moveoutright
+            show mirai_7 with dissolve
+            show cs angry punished with moveinleft
+            cs "This is interesting, but I don't have too much to do here."
+            jump kuwait_kuwait_city
 
 label kuwait_hawally:
     scene hawally
     show cs angry punished
     with dissolve
     cs "I am now at Hawally."
+    menu:
+        "What do you want to check out?"
+        "Apartments 1":
+            cs "I'll go check out the Apartment Complex."
+            hide cs with moveoutright
+            show hawally_1 with dissolve
+            show cs angry punished with moveinleft
+            cs "This is interesting, but I don't have too much to do here."
+            jump kuwait_hawally
+        "Apartments 2":
+            cs "I'll go check out the other Apartment Complex."
+            hide cs with moveoutright
+            show hawally_2 with dissolve
+            show cs angry punished with moveinleft
+            cs "This is interesting, but I don't have too much to do here."
+            jump kuwait_hawally
+        "Store":
+            cs "I'll go check out the Store."
+            hide cs with moveoutright
+            show hawally_3 with dissolve
+            show cs angry punished with moveinleft
+            cs "This is interesting, but I don't have too much to do here."
+            jump kuwait_hawally
+        "Pizza Shop":
+            cs "I'll go check out the Pizza Shop."
+            hide cs with moveoutright
+            show hawally_4 with dissolve
+            show cs angry punished with moveinleft
+            cs "This is interesting, but I don't have too much to do here."
+            jump kuwait_hawally
 
 label kuwait_boubyan_island:
     scene boubyan_island
     show cs angry punished
     with dissolve
     cs "I am now at Boubyan Island."
+    cs "This is interesting, but I'm actively dying."
 
 label kuwait_saqr_airbase:
     scene saqr_airbase
     show cs angry punished
     with dissolve
     cs "I am now at the Saqr Airbase."
+    menu:
+        "What do you want to check out?"
+        "Armory":
+            cs "I'll go check out the Armory."
+            hide cs with moveoutright
+            show saqr_1 with dissolve
+            show cs angry punished with moveinleft
+            cs "This is interesting, but I don't have too much to do here."
+            jump kuwait_saqr_airbase
+        "Tents":
+            cs "I'll go check out the Tents."
+            hide cs with moveoutright
+            show saqr_2 with dissolve
+            show cs angry punished with moveinleft
+            cs "This is interesting, but I don't have too much to do here."
+            jump kuwait_saqr_airbase
+        "Hangar":
+            cs "I'll go check out the Hangar."
+            hide cs with moveoutright
+            show saqr_3 with dissolve
+            show cs angry punished with moveinleft
+            cs "This is interesting, but I don't have too much to do here."
+            jump kuwait_saqr_airbase
 
 label kuwait_salmiya:
     scene salmiya
     show cs angry punished
     with dissolve
     cs "I am now at Salmiya."
+    menu:
+        "What do you want to check out?"
+        "Big Apartments":
+            cs "I'll go check out the Big Apartments."
+            hide cs with moveoutright
+            show salmiya_1 with dissolve
+            show cs angry punished with moveinleft
+            cs "This is interesting, but I don't have too much to do here."
+            jump kuwait_salmiya
+        "Small Apartments":
+            cs "I'll go check out the Small Apartments."
+            hide cs with moveoutright
+            show salmiya_2 with dissolve
+            show cs angry punished with moveinleft
+            cs "This is interesting, but I don't have too much to do here."
+            jump kuwait_salmiya
+        "Shop":
+            cs "I'll go check out the Shop."
+            hide cs with moveoutright
+            show salmiya_3 with dissolve
+            show cs angry punished with moveinleft
+            cs "This is interesting, but I don't have too much to do here."
+            jump kuwait_salmiya
+        "Fire Station":
+            cs "I'll go check out the Fire Station."
+            hide cs with moveoutright
+            show salmiya_4 with dissolve
+            show cs angry punished with moveinleft
+            cs "This is interesting, but I don't have too much to do here."
+            jump kuwait_salmiya
 
 label kuwait_bayan_water_towers:
     scene bayan_water
     show cs angry punished
     with dissolve
     cs "I am now at the Bayan Water Towers."
+    menu:
+        "What do you want to check out?"
+        "Top of Water Towers":
+            cs "I'll go climb the Water Towers."
+            hide cs with moveoutright
+            show bayan_1 with dissolve
+            show cs angry punished with moveinleft
+            cs "This is interesting, but I don't have too much to do here."
+            jump kuwait_bayan_water_towers
 
 label kuwait_mutla_ridge:
     scene mutla_ridge
     show cs angry punished
     with dissolve
     cs "I am now at Mutla Ridge."
+    cs "This is interesting, but I don't have too much to do here."
 
 label kuwait_um_al_maradim:
     scene um_al_maradim
     show cs angry punished
     with dissolve
     cs "I am now at Um Al Maradim."
+    menu:
+        "What do you want to check out?"
+        "Tents 1":
+            cs "I'll go check out these Tents."
+            hide cs with moveoutright
+            show maradim_1 with dissolve
+            show cs angry punished with moveinleft
+            cs "This is interesting, but I don't have too much to do here."
+            jump kuwait_um_al_maradim
+        "Tents 2":
+            cs "I'll go check out these other Tents."
+            hide cs with moveoutright
+            show maradim_2 with dissolve
+            show cs angry punished with moveinleft
+            cs "This is interesting, but I don't have too much to do here."
+            jump kuwait_um_al_maradim
 
 label kuwait_um_al_namil:
     scene um_al_namil
     show cs angry punished
     with dissolve
     cs "I am now at Um Al Namil."
+    cs "This is interesting, but I don't have too much to do here."
 
 label kuwait_sulaibiya:
     scene sulaibiya
     show cs angry punished
     with dissolve
     cs "I am now at Sulaibiya."
+    cs "This is interesting, but I don't have too much to do here."
 
 label kuwait_kubar_island:
     scene kubar_island
     show cs angry punished
     with dissolve
     cs "I am now at Kubar Island."
+    menu:
+        "What do you want to check out?"
+        "House":
+            cs "I'll go check out this House."
+            hide cs with moveoutright
+            show kubar_1 with dissolve
+            show cs angry punished with moveinleft
+            cs "This is interesting, but I don't have too much to do here."
+            jump kuwait_kubar_island
 
 label kuwait_jahra_industrial:
     scene jahra_industrial
     show cs angry punished
     with dissolve
     cs "I am now at Jahra Industrial."
+    menu:
+        "What do you want to check out?"
+        "Warehouse 1":
+            cs "I'll go check out the Warehouse."
+            hide cs with moveoutright
+            show jahra_1 with dissolve
+            show cs angry punished with moveinleft
+            cs "This is interesting, but I don't have too much to do here."
+            jump kuwait_jahra_industrial
+        "Warehouse 2":
+            cs "I'll go check out the other Warehouse."
+            hide cs with moveoutright
+            show jahra_2 with dissolve
+            show cs angry punished with moveinleft
+            cs "This is interesting, but I don't have too much to do here."
+            jump kuwait_jahra_industrial
 
 label kuwait_al_abdally:
     scene al_abdally
     show cs angry punished
     with dissolve
     cs "I am now at Al-Abdally."
+    menu:
+        "What do you want to check out?"
+        "Small Barn":
+            cs "I'll go check out the Small Barn."
+            hide cs with moveoutright
+            show abdally_1 with dissolve
+            show cs angry punished with moveinleft
+            cs "This is interesting, but I don't have too much to do here."
+            jump kuwait_al_abdally
+        "Big Barn":
+            cs "I'll go check out the Big Barn."
+            hide cs with moveoutright
+            show abdally_2 with dissolve
+            show cs angry punished with moveinleft
+            cs "This is interesting, but I don't have too much to do here."
+            jump kuwait_al_abdally
+        "Greenhouses":
+            cs "I'll go check out the Greenhouses."
+            hide cs with moveoutright
+            show abdally_3 with dissolve
+            show cs angry punished with moveinleft
+            cs "This is interesting, but I don't have too much to do here."
+            jump kuwait_al_abdally
