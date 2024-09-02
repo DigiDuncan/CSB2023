@@ -35,7 +35,7 @@ screen dx_select():
                 # We can have 10 entries here
             
                 ### SPEEDRUN ###
-                imagebutton auto "menu/csbiiidx_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
+                imagebutton auto "menu/dx/speedrun_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
                     hovered tt.Action("Speedrun")
                     at transform:
                         zoom 0.333
@@ -43,7 +43,7 @@ screen dx_select():
                     action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("vibration")
 
                 ### KUWAIT ###
-                imagebutton auto "menu/csbiiidx_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
+                imagebutton auto "menu/dx/kuwait_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
                     hovered tt.Action("Kuwait")
                     at transform:
                         zoom 0.333
@@ -51,7 +51,7 @@ screen dx_select():
                     action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("kuwait_travel")
 
                 ### BRONSON ###
-                imagebutton auto "menu/csbiiidx_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
+                imagebutton auto "menu/dx/bronson_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
                     hovered tt.Action("Bronson")
                     at transform:
                         zoom 0.333
@@ -67,7 +67,7 @@ screen dx_select():
                     action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("rockstar_start")
 
                 ### TRAIN (WINNER) ###
-                imagebutton auto "menu/csbiiidx_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
+                imagebutton auto "menu/dx/train_winner_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
                     hovered tt.Action("Train (Winner)")
                     at transform:
                         zoom 0.333
@@ -75,7 +75,7 @@ screen dx_select():
                     action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("train_start_good")
 
                 ### TRAIN (THIEF) ###
-                imagebutton auto "menu/csbiiidx_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
+                imagebutton auto "menu/dx/train_thief_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
                     hovered tt.Action("Train (Thief)")
                     at transform:
                         zoom 0.333

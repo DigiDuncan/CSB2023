@@ -1118,25 +1118,17 @@ label michigan_interstate_69:
     show cs at left
     show billy at center
     show arceus worried at right
-    arceus "I'm not sure if that move is happening in this timeline..."
+    arceus "That move hasn't happened yet in this timeline..."
     scene cafe_sitting
     show aria flipped at left
     show gnome at center
     aria "Ah, yeah, that happens. I guess not every plan is meant to be."
-    scene cafe_sitting_2
-    show cs at left
-    show billy at center
-    show arceus at right
-    arceus "That wasn't what I meant by timeline, but it would be a lot to explain, so we'll go with that."
-    scene cafe_sitting
-    show aria flipped at left
-    show gnome at center
     aria "So, Billy, what's your story? You don't have to go into it if you don't want, but I'm very curious."
     scene cafe_sitting_2
     show cs at left
     show billy at center
     show arceus at right
-    billy "Well, I died of a heart attack, got buried, came back from the dead, dug my way out of the grave, and tried to go back to normal."
+    billy "Well, I died of a heart attack, but somehow I came back alive again."
     billy "People just assumed I was an imposter, and I couldn't get any pitchman gigs, so I became an Uber driver."
     billy "Then these guys showed up and I offered to drive them from Washington to New York."
     billy "I heard CS was a YouTuber, so I was just expecting some MrBeast-style video."
@@ -1164,17 +1156,9 @@ label michigan_interstate_69:
     show cs at left
     show billy at center
     show arceus at right
-    arceus "That'd be great. It'd be nice to get some proper rest."
-    billy "I'd be happy to be off the road for a while longer. I think I might've had enough of forests for today, though..."
-    scene cafe_sitting
-    show aria flipped at left
-    show gnome at center
-    gnome "A Forest will do you good. They're good for your Health."
-    scene cafe_sitting_2
-    show cs at left
-    show billy at center
-    show arceus at right
-    cs "Yeah, sure, we'll go over there after we eat."
+    arceus "That'd be great. It'd be nice to relax for a while."
+    billy "I'd be happy to be off the road for a while longer. I miss when I didn't have to drive, and instead shouted all day."
+    cs "Same here. And yeah, sure, we'll go check out the forest after we eat."
     show waitress at mid_right with moveinright
     waitress "Here's everyone's food. Enjoy your meal!"
     scene black with dissolve
@@ -1185,9 +1169,9 @@ label michigan_interstate_69:
     show billy car
     with dissolve
     aria "You can park here next to the building."
-    billy "Alright. I know it's early, but I'm ready to just sleep."
+    billy "Alright. I know it's early, but I'm ready to just chill for a bit."
     arceus "Yeah, that sounds good."
-    aria "Sounds like a plan. I'll get you some sleeping bags, and blankets for whoever wants to sleep on the couch."
+    aria "Sounds like a plan. Come up to my room for a bit and we can hang out."
     scene black with dissolve
     n "Aria goes to her room as everyone relaxes."
     n "Once it hits midnight, Aria decides to take them all out to the forest."
@@ -1203,12 +1187,13 @@ label michigan_interstate_69:
         cs "Wouldn't you say these are some Dense Woods, Billy?"
     else:
         billy "Why does the window by the entrance have to be bright red?"
-    billy "I've had enough of spooky forests today."
+    billy "I've had enough of spooky forests today. They wear me out!"
     aria "It's fine. That guy always has his lights set to red."
     aria "It's admittedly a little creepy, but you get used to it."
     cs "That's probably the least concerning thing we've seen in a forest so far today, to be fair."
     arceus "Still seems plenty murderous to me."
     aria "I'm out here most nights, and he hasn't murdered me yet, so I wouldn't worry too much."
+    arceus "Yet."
     scene forest_bridge
     show cs dark flipped at mid_right
     show arceus dark at right
@@ -1216,7 +1201,7 @@ label michigan_interstate_69:
     show aria dark flipped at center
     with dissolve
     aria "We're gonna take a left at the bridge up ahead. The forward path just spits us right out onto a normal street."
-    billy "We've been out here for all of five minutes and that's already seeming like the better option..."
+    billy "We've been out here for all of five minutes and that's already seeming like the better option!"
     aria "Nah, trust me. This path has all the best plants and the only real path through the forest."
     aria "White banesberry, hawthorn, sugar maple."
     aria "It's really pretty."
@@ -1236,22 +1221,22 @@ label michigan_interstate_69:
     show aria dark flipped at center
     with dissolve
     aria "Anyway, the forest path is right up there."
-    billy "Are you kidding? This path is dark enough. That's not a path, that's a portal to the void."
+    billy "Are you kidding? This path is dark enough. That one is a path of nothing!."
     cs "Yeah, I don't know about that."
     aria "It's fine, it's my typical path."
     aria "We have flashlights, and honestly, the moonlight is usually enough for me once I get in there."
-    billy "You're also an incomprehensible entity. We have a different scale."
+    billy "You're also a floating pile of OxyClean! We have a different scale."
     aria "I guess you're welcome to just head back out on the road."
     aria "Just watch out for fae paths on the way back."
-    billy "What the hell is a fae path?"
+    billy "What the actual fuck is a fae path?"
     aria "Oh, they're paths that look like a normal path for the first little while, but end up placing you in the center of the woods."
     aria "The sense of linear direction decays as the path becomes less clear, and you eventually can't tell what direction you came from."
     billy "And you didn't think it was relevant to mention this before?"
     aria "Well, no, you have a guide. I was planning on making this a relaxing walk, so I didn't plan on taking the fae paths."
     billy "Why would you ever?!"
     aria "Well, they put you into some pretty parts of the woods."
-    billy "Your obsession with these woods is not healthy."
-    aria "How come? It gets me fresh air and exercise."
+    billy "Your obsession with these woods is not healthy. Maybe you should pitch some products, like me, Billy Mays!"
+    aria "Maybe some time. If I decide to, i'll give you call."
     show cs disappointed dark flipped behind arceus
     aria "Anyway, this path loops around to where we came from, so if you wanna leave, it's the fastest way back at this point."
     billy "So, no matter which way I take, I'm at risk of ending up in a cursed path to the middle of a haunted forest?"
