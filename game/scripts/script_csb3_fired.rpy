@@ -92,15 +92,12 @@ label fired_new_plan:
     ed_ai "I think CS is a pretty good guy. You shouldn't arrest him."
     cs "Oh my God, that's amazing! But what about you two?"
     anno "Gotcha covered."
-    # DX: These lines should be rewritten for clarification, but doing so would require also changing the AI-gen audio.
-    # "I'm officially pardoning Annorexorcist and Arceus3251 because they really helped me out of a pickle."
-    # - Tate
     if fun_value(FUN_VALUE_RARE):
         play sound sfx_obama volume 0.5
-        bomahanobeep "I'm officially pardoning Annorexorcist and Arceus3251, for helping me out of a pickle."
+        bomahanobeep "I'm officially pardoning Annorexorcist and Arceus3251 because they really helped me out of a pickle."
     else:
         play sound sfx_obama volume 0.5
-        obamanobeep "I'm officially pardoning Annorexorcist and Arceus3251, for helping me out of a pickle."
+        obamanobeep "I'm officially pardoning Annorexorcist and Arceus3251 because they really helped me out of a pickle."
     show arceus happy
     arceus "Incredible as always, Anno."
     anno "I try."
