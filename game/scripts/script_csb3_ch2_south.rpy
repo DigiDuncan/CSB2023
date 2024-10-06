@@ -4,7 +4,6 @@ label south_start:
     scene washington_road morning
     show cs at left
     show arceus at right
-    cs "Why don't we try going south?"
     arceus "Alright, what's your plan? Where are we going, exactly?"
     cs "I've always kinda wanted to go down to Vegas. We could have a ton of fun down there!"
     show arceus worried

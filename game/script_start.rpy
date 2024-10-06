@@ -99,6 +99,8 @@ init -10 python:
 init python:
     renpy.music.register_channel("beep", "voice", loop = True)
     def char_callback(event, name = None, beep = None, play_beeps = True, **kwargs):
+        #if "woohoo" in kwargs["what"].lower():
+        #    persistent.woohoo += 1
         if name:
             persistent.seen.add(name)
             if all([a in persistent.seen for a in name_map.keys()]):
@@ -1707,7 +1709,7 @@ image bubble = Transform("secret/bubble.png", zoom = 2.0)
 # Animated Sprites
 
 ## Realistic explosion
-image realistic_explosion_anim = spritesheet_animation("images/realistic_explosion.png", 6, 3, looping = False)
+# image realistic_explosion_anim = spritesheet_animation("images/realistic_explosion.png", 6, 3, looping = False)
 
 ## For cop car lights
 
@@ -2704,11 +2706,18 @@ label test:
 define shake1 = { "master" : hpunch }
 define shake2 = { "master" : vpunch }
 
-screen cultcon_votes():
-    text "Top 5 Winners!" textalign 0.5 size 72 xalign 0.5 yalign 0.15:
+screen woohoo_counter():
+    text "Woohoo Counter = [persistent.woohoo]" textalign 0.5 size 72 xalign 0.5 yalign 0.15:
         font "fonts/digital-7.ttf"
         color "#ff0000"
     hbox xalign 0.5 yalign 0.15:
+        spacing 50
+
+screen cultcon_votes():
+    text "Top 5 Winners!" textalign 0.5 size 72 xalign 0.5 yalign 0.5:
+        font "fonts/digital-7.ttf"
+        color "#ff0000"
+    hbox xalign 0.5 yalign 0.5:
         spacing 50
 screen cultcon_votes_1():
     text "Pencil Cult: 10" textalign 0.5 size 48 xalign 0.5 yalign 0.7:

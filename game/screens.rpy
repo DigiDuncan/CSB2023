@@ -349,7 +349,6 @@ screen navigation():
 
         xpos gui.navigation_xpos
         yalign 0.5
-
         spacing gui.navigation_spacing
 
         if main_menu:
@@ -394,6 +393,7 @@ screen navigation():
             textbutton _("Quit") action Quit(confirm=not main_menu)
 
 
+
 style navigation_button is gui_button
 style navigation_button_text is gui_button_text
 
@@ -425,7 +425,15 @@ screen main_menu():
 
     add "gui/dx_title.png" xalign 0.8 yalign 0.225 zoom 0.4:
         at dx_fade
-
+    viewport:
+        xysize(666,720)
+        yanchor -0.7
+        xanchor -2.325
+        imagebutton auto "menu/cs_button_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
+            at transform:
+                zoom 0.25
+                xalign 0.5
+            action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("cs_button"), ShowMenu("limbo_csbutton")
     ## This empty frame darkens the main menu.
     frame:
         style "main_menu_frame"

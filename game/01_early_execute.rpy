@@ -27,6 +27,7 @@ default persistent.seen_endings = set()
 default persistent.creative_mode = False
 default persistent.seen_splash = False
 default persistent.first_time = True
+default persistent.woohoo = 0
 
 # Chapter unlocks
 default persistent.csb2_unlocked = False

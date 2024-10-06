@@ -1,5 +1,5 @@
-init 0:
-    image dxcom_anim = spritesheet_animation("dxcom/dxcom_icon.png", 10, 10, looping = True)
+#init 0:
+#    image dxcom_anim = spritesheet_animation("dxcom/dxcom_icon.png", 10, 10, looping = True)
 
 screen _dxcom(c):
     zorder 100

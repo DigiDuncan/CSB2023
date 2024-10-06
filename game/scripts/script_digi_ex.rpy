@@ -400,7 +400,7 @@ init python:
 
 init 0:
     image fractal = "bg/green.png"
-    image num = spritesheet_animation("secret/dd/num.png", 10, 1, looping = True)
+    # image num = spritesheet_animation("secret/dd/num.png", 10, 1, looping = True)
     image arrow_bf = DynamicDisplayable(charm_arrow_bf)
     image arrow_mno = DynamicDisplayable(charm_arrow_mno)
     image digi back = "secret/dd/digi_back.png"
