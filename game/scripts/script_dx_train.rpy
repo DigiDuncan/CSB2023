@@ -1549,7 +1549,7 @@ label train_wakeup:
     mean "What the fuck are you {i}talking{/i} about?"
     show tate cry flipped
     show cs disappointed flipped
-    tate "{size=-15}I just wanted you to have a good first day..."
+    tate "{sc=1}{size=-15}I just wanted you to have a good first day..."
     show mean worried
     mean "What do you mean?"
     show mean 

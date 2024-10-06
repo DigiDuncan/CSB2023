@@ -38,7 +38,7 @@
         {
             "full-name":"Arceus3251",
             "sprite-path":"images/characters/arc/arceus.png",
-            "bio":"\"I'm literally a hacker, guys! uwu\"\n\nThe master hacker and technician himself, Arceus has a lot up his sleeve. He could do anything he wanted, if he could only be arsed. Some say he's got godlike powers, but others say he's way too lazy. Either way, he's happy to help CS out of the horrible mess that he's gotten himself into this time."
+            "bio":"\"I'm literally a hacker, guys! uwu\"\n\nThe master hacker and technician himself, Arceus has a lot of tricks up his sleeve. He could do anything he wanted, if he could only be arsed. Some say he's got godlike powers, but others say he'd be way too lazy to use them if he did. Either way, he's happy to help CS out of the horrible mess that he's gotten himself into this time."
         }
     ],
     "aria":[
@@ -328,7 +328,7 @@
         {
             "full-name":"Lupin III",
             "sprite-path":"images/characters/lupin/lupin_stand.png",
-            "bio":"\"In the words of Regis Philbin: who wants to be a millionaire?\"\n\nIt's the world-famous phantom thief! This time, his endless search for riches has led him to the USA. After learning that SlotsaFun Casino was cleaned out just before he arrived, Lupin decided that he would get the money back by any means necessary... despite being easily distracted by pancakes and pink sweaters."
+            "bio":"\"Hey, train dudes! Like, wait up, y'know?\"\n\nIt's the world-famous phantom thief! This time, his endless search for riches has led him to the USA. After learning that SlotsaFun Casino was cleaned out just before he arrived, Lupin decided that he would get the money back by any means necessary... despite being easily distracted by pancakes and pink sweaters."
         }
     ],
     "mario":[
@@ -440,21 +440,21 @@
         {
             "full-name":"Peppino Spaghetti",
             "sprite-path":"images/characters/peppino.png",
-            "bio":"\"Pizza, pasta!\"\n\nAfter the incident at the tower, he and his friends moved to the city to hopefully attract more customers. He's afraid of any tall buildings now, and will constantly keep an eye on any skyscrapers located near his business."
+            "bio":"\"Pizza, pasta!\"\n\nAfter the incident at the tower, he and his friends moved to the city to hopefully attract more customers. He's afraid of tall buildings now, and will constantly keep an eye on any skyscrapers located near his business."
         }
     ],
     "phil":[
         {
             "full-name":"Phil Swift",
             "sprite-path":"images/characters/phil.png",
-            "bio":"\"Seals and bonds!\"\n\nPhil loves tape. When he was young, he always asked for different kinds of tape to play with. He would gather random objects around his house to stick together. He always wanted to make a super tape that could bind to any type of surface. With his newest invention, he has obtained the power to seal and bond almost anything."
+            "bio":"\"Seals and bonds!\"\n\nPhil loves tape. When he was young, he always asked for different kinds of tape to play with. He would gather random objects around his house to stick together. He always wanted to make a super tape that could adhere to any type of surface. With his newest invention, he has obtained the power to seal and bond almost anything."
         }
     ],
     "pomni":[
         {
             "full-name":"Pomni",
             "sprite-path":"secret/pomni.png",
-            "bio":"\"There's got to be an exit somewhere...\"\n\nPomni has been going insane ever since she was brought into the Amazing Digital Circus not too long ago. Somehow, she made it into an Ikea and got stuck there. She honestly should have just stayed at the circus."
+            "bio":"\"There's got to be an exit somewhere...\"\n\nPomni has been going insane ever since she was brought into the Amazing Digital Circus not too long ago. Somehow, she made it into an IKEA and got stuck there. She honestly should have just stayed at the circus."
         }
     ],
     "rich":[
@@ -468,7 +468,7 @@
         {
             "full-name":"Mr. Round",
             "sprite-path":"secret/round.png",
-            "bio":"\"...\"\n\nOur KENJI (Not sponsored) Yabu Brown Round Cat is a gorgeously soft and squidgy Kawaii plush friend. Velvety soft and squishy, our collectable plush toys are made from high-quality super-soft materials that make them perfect for snuggling. Super-soft and squidgy, our lovable huggable KENJI (Not sponsored) Yabu is the softest and cutest Japanese inspired Kawaii plushie around. Meow!"
+            "bio":"\"...\"\n\nOur KENJI (Not sponsored) Yabu Brown Round Cat is a gorgeously soft and squidgy Kawaii plush friend. Velvety soft and squishy, our collectable plush toys are made from high-quality super-soft materials that make them perfect for snuggling. Super-soft and squidgy, our lovable huggable KENJI (Not sponsored) Yabu is the softest and cutest Japanese-inspired Kawaii plushie around. Meow!"
         }
     ],
     "sayori.txt":[
@@ -510,14 +510,14 @@
         {
             "full-name":"Snufkin",
             "sprite-path":"images/characters/snufkin.png",
-            "bio":"\"Moomin...\"\n\nSnufkin is a silly little guy who lives in Moominvalley. He leaves on a long journey every year, but he always comes back to see Moomin."
+            "bio":"\"Moomin...\"\n\nSnufkin is a silly little guy who lives in Moominvalley. He leaves for a long journey every year, but he always comes back to see Moomin."
         }
     ],
     "sticky":[
         {
             "full-name":"Sticky Note",
             "sprite-path":"images/post-it.png",
-            "bio":"\"The most important character\"\n\nHi, guys! It's me, the sticky note, remember? I mean, how could you forget? I'm the most important character in the game! Remember when I told CS to delete the CScord, and how the Discord route was the coolest route in the game? Yeah, I know. It's super cool. Hey wait, CS, what are you doing? Why are you throwing me awayyyyy....."
+            "bio":"\"The most important character\"\n\nHi, guys! It's me, the sticky note, remember? I mean, how could you forget? I'm the most important character in the game! Remember when I told CS to delete the CScord, and how the Discord route was the coolest route in the game? Yeah, I know. It's super cool. Hey, wait! CS, what are you doing? Why are you throwing me awayyyyy....."
         }
     ],
     "streetguy":[
@@ -538,14 +538,15 @@
         {
             "full-name":"alleZSoyez",
             "sprite-path":"images/characters/tate/tatehappy.png",
-            "bio":"\"a\"\n\nBetter known as Tate, alleZSoyez is a close friend of CS. Impatient, excitable, and always hungry, Tate will try their best to help their friends whenever they can... as long as there's a tasty cheeseburger and a cozy nap on the floor waiting for them at the end. While Tate isn't good at fighting or driving, when all else fails, they can always let out a good {i}screm!{/i}"
+            "bio":"\"a\"\n\nBetter known as Tate, alleZSoyez is a close friend of CS. Impatient, excitable, and always hungry, Tate will try their best to help their friends whenever they can... as long as there's a tasty cheeseburger and a cozy nap on the floor waiting for them at the end. While Tate isn't good at fighting or driving, when all else fails, they can always let out a good {i}screm!{/i}",
+            "dx-bio":"\"Awawa!\"\n\nWhile Tate is known to stay eerily calm in the face of combat, when it comes to more mundane stressors, they become a bit of a {sc=1}quick-tempered anxiety-riddled control freak.{/sc} Just a little bit, of course. Thankfully, Mean can usually reel Tate back in again."
         }
     ],
     "tate_ex":[
         {
             "full-name":"Tate EX",
             "sprite-path":"images/characters/tate/tate_ex.png",
-            "bio":"\"Don't underestimate me.\"\n\nA defector from a violent cult who grew disgusted with their clan's practices. While Tate is physically weak, they do possess some magical abilities. After being ostracized since childhood for protesting every conquest undertaken by the cult and for being unable to ever win in a \"real\" fight, out of fear for their life, Tate fled.\n\nTate now strives to lead a peaceful existence while posing as a human. Although they are a pacifist down to the core, sometimes the echoes of the past become too much to bear..."
+            "bio":"\"Don't underestimate me.\"\n\nA defector from a violent cult who grew disgusted with their clan's practices. While Tate is physically weak, they do possess some magical abilities. After a childhood of being ostracized for protesting every conquest undertaken by the cult, out of fear for their life, Tate fled.\n\nTate now strives to lead a peaceful existence while posing as a human. Although they are a pacifist down to the core, sometimes the echoes of the past become too much to bear..."
         }
     ],
     "terry":[
@@ -587,7 +588,7 @@
         {
             "full-name":"Witch",
             "sprite-path":"images/characters/witch.png",
-            "bio":"\"Abracadabra and the like\"\n\nThe witch lives in Moominvalley with her granddaughter Alicia. She spends her days training Alicia in the craft and loves to cook. Her signature dish is steamed hams, an old family recipe."
+            "bio":"\"Abracadabra and the like\"\n\nThe witch lives in Moominvalley with her granddaughter, Alicia. She spends her days training Alicia in the craft and loves to cook. Her signature dish is steamed hams, an old family recipe."
         }
     ],
     "zenigata":[
