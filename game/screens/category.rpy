@@ -45,6 +45,7 @@ screen category_nav():
             textbutton "Unused Assets" action ShowMenu("unused_gallery", 0), PauseAudio("music", True), Play("music2", "gallery/what_the_night_will_bring.mp3", relative_volume=8.0)
             if preferences.developer_mode or achievement_manager.get("Hopes and Dreams").unlocked:
                 textbutton "Ultimate\nCustom Night" action Start("rpg_ucn")
+            textbutton "Woohoo Counter" action Jump("woohoo_counter")
             if preferences.developer_mode or persistent.creative_mode:
                 textbutton "Debug Menu" action ShowMenu("debug_menu")
                 textbutton "Asset Debugger" action Jump("asset_debugger")

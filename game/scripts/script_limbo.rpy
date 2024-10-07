@@ -285,10 +285,29 @@ label kuwait_select:
     stop music
     call screen kuwait_map
 
-label woohoo_test:
+label woohoo_counter:
     play music interference2
-    scene conferencetv with dissolve
-    call screen woohoo_counter
+    scene conferencetv
+    show cs at left
+    show arceus at right
+    with dissolve
+    arceus "Well boss, let's see how many \"woohoos\" you got!"
+    scene conferencetv at Move((0.0 , -1.0), (0.0, 0.0), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show cs at Move((0.0 , 0.25), (0.0, 1.75), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show arceus at Move((0.735 , 0.4), (0.735, 1.75), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    pause 3.0
+    show screen woohoo_counter
+    play sound sfx_fabeep
+    arceus "Wow, that's [round(persistent.woohoo)] woohoos!"
+    arceus "Err... that's now [round(persistent.woohoo)]. My bad."
+    play sound sfx_woohoo
+    pause 1.5
+    $ persistent.woohoo += 1
+    play sound sfx_fabeep
+    pause 0.5
+    cs "Now it's [round(persistent.woohoo)]!"
+    return
+
 
 screen limbo_csbutton:
     add "#000000"

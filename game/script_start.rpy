@@ -99,8 +99,8 @@ init -10 python:
 init python:
     renpy.music.register_channel("beep", "voice", loop = True)
     def char_callback(event, name = None, beep = None, play_beeps = True, **kwargs):
-        #if "woohoo" in kwargs["what"].lower():
-        #    persistent.woohoo += 1
+        if "woohoo" in kwargs["what"].lower():
+            persistent.woohoo += 0.16666666666666666667
         if name:
             persistent.seen.add(name)
             if all([a in persistent.seen for a in name_map.keys()]):
@@ -2330,6 +2330,7 @@ define audio.sfx_waterphone = "sfx/sfx_waterphone.ogg"
 define audio.sfx_water_shake = "sfx/sfx_water_shake.ogg"
 define audio.sfx_whoosh = "sfx/sfx_whoosh.ogg"
 define audio.sfx_windows_logon = "sfx/sfx_windows_logon.ogg"
+define audio.sfx_woohoo = "sfx/sfx_woohoo.wav"
 define audio.sfx_yelling = "sfx/sfx_yelling.ogg"
 define audio.sfx_ytpintro = "sfx/sfx_ytpintro.ogg"
 define audio.sfx_zenigata_shout = "sfx/sfx_zenigata_shout.ogg"
@@ -2707,10 +2708,10 @@ define shake1 = { "master" : hpunch }
 define shake2 = { "master" : vpunch }
 
 screen woohoo_counter():
-    text "Woohoo Counter = [persistent.woohoo]" textalign 0.5 size 72 xalign 0.5 yalign 0.15:
+    text "Woohoo Counter = [round(persistent.woohoo)]" textalign 0.5 size 108 xalign 0.5 yalign 0.5:
         font "fonts/digital-7.ttf"
         color "#ff0000"
-    hbox xalign 0.5 yalign 0.15:
+    hbox xalign 0.5 yalign 0.5:
         spacing 50
 
 screen cultcon_votes():
