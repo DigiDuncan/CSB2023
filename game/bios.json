@@ -16,6 +16,7 @@
     "amtrak_conductor":
         {
             "full-name":"Conductor",
+            "dx":true,
             "sprite-path":"images/characters/amtrak_conductor.png",
             "bio":"\"All aboard!\"\n\nHe's an early bird who runs a tight ship on an even tighter schedule. He does his best to maintain order and to keep a cool head no matter what nonsense may arise. He quietly takes pride in his physique and spends his off-days pumping iron. Unfortunately, his experimentation with protein shakes often lands him in the restroom for long periods..."
         }
@@ -23,6 +24,7 @@
     "amtrak_stewardess":
         {
             "full-name":"Stewardess",
+            "dx":true,
             "sprite-path":"images/characters/amtrak_stewardess.png",
             "bio":"\"Can I get you anything?\"\n\nThis particular stewardess gives off a motherly vibe. She takes the time to make all her guests feel welcome and cared for, even when those guests try to roleplay as other staff."
         }
@@ -31,7 +33,7 @@
         {
             "full-name":"Annorexorcist",
             "sprite-path":"images/characters/anno/anno.png",
-            "bio:":"\"Welcome to the internet\"\n\nAnno is one of CS' best friends. He's always there to help CS out during livestreams, and he's an avid fan of Nirvana. He also loves making AI covers of CS and his crew."
+            "bio":"\"Welcome to the internet\"\n\nAnno is one of CS' best friends. He's always there to help CS out during livestreams, and he's an avid fan of Nirvana. He also loves making AI covers of CS and his crew."
         }
     ,
     "arceus":
@@ -60,7 +62,7 @@
         {
             "full-name":"Billy Mays",
             "sprite-path":"images/characters/billy.png",
-            "bio":"\"Hi Billy Mays here!\"\n\nBilly perfected the art of the salespitch 10 years ago. He is a master of the infomerical. Since finding success, he has moved on to greater horizons. He has been seen recently travelling the country, living off the various gadgets he sold in the past."
+            "bio":"\"Hi, Billy Mays here!\"\n\nBilly perfected the art of the salespitch ten years ago. He is a master of the infomerical. Since finding success, he has moved on to greater horizons. He has been seen recently travelling the country, living off the various gadgets he sold in the past."
 
         }
     ,
@@ -131,6 +133,7 @@
     "cruise":
         {
             "full-name":"Tom Cruise",
+            "dx":true,
             "sprite-path":"images/characters/cruise.png",
             "bio":"\"Talk to me, Goose!\"\n\nWhile Mr. Cruise is mostly known for his acting career, especially for his role in {i}Top Gun,{/i} he has begun spreading his roots into the cult of Scientology. Nobody really knows what his motive is. Maybe he saw some things up there while flying his Tomcat that we weren't supposed to see..."
         }
@@ -167,7 +170,7 @@
         {
             "full-name":"db05",
             "sprite-path":"images/characters/db.png",
-            "bio":"\"Sorry guys, I'm late!\"\n\nDb05 is a busy man, but who can blame him? He has places to be, things to see, and most importantly, he has to feed his pets."
+            "bio":"\"Sorry, guys! I'm late!\"\n\nDb05 is a busy man, but who can blame him? He has places to be, things to see, and most importantly, he has to feed his pets."
         }
     ,
     "digi":
@@ -321,12 +324,13 @@
         {
             "full-name":"Luke Lafreniere",
             "sprite-path":"images/characters/luke.png",
-            "bio":"\"I wanna go home\"\n\nLuke, also known as the Floatplane guy, is Linus' right-hand man. He works a little too hard for Linus' liking. He also apparently has a family."
+            "bio":"\"I wanna go home!\"\n\nLuke, also known as the Floatplane guy, is Linus' right-hand man. He works a little too hard for Linus' liking. He also apparently has a family."
         }
     ,
     "lupin":
         {
             "full-name":"Lupin III",
+            "dx":true,
             "sprite-path":"images/characters/lupin/lupin_stand.png",
             "bio":"\"Hey, train dudes! Like, wait up, y'know?\"\n\nIt's the world-famous phantom thief! This time, his endless search for riches has led him to the USA. After learning that SlotsaFun Casino was cleaned out just before he arrived, Lupin decided that he would get the money back by any means necessary... despite being easily distracted by pancakes and pink sweaters."
         }
@@ -348,7 +352,8 @@
     "mean_human":
         {
             "full-name":"Mean (Human Form)",
-            "sprite-path":"images/charactes/mean/meanhumanneutral.png",
+            "dx":true,
+            "sprite-path":"images/characters/mean/meanhumanneutral.png",
             "bio":"\"Damn, you're all so {i}short{/i} from up here.\"\n\nHe's a pirate by blood and a lover of trains by heart. Mean has the ability to swap between this and his sea urchin form at will. Now that he's got a new job that he can be proud of, he wants to present as human a little more often.\n\nBecause Mean completed all of his job training as a sea urchin, however, it has been taking some time for his coworkers to still be able to recognize him. He hopes that wearing the one-of-a-kind hat that Tate gave him will help ease this transition."
         }
     ,
@@ -539,14 +544,15 @@
             "full-name":"alleZSoyez",
             "sprite-path":"images/characters/tate/tatehappy.png",
             "bio":"\"a\"\n\nBetter known as Tate, alleZSoyez is a close friend of CS. Impatient, excitable, and always hungry, Tate will try their best to help their friends whenever they can... as long as there's a tasty cheeseburger and a cozy nap on the floor waiting for them at the end. While Tate isn't good at fighting or driving, when all else fails, they can always let out a good {i}screm!{/i}",
-            "dx-bio":"\"Awawa!\"\n\nWhile Tate is known to stay eerily calm in the face of combat, when it comes to more mundane stressors, they become a bit of a {sc=1}quick-tempered anxiety-riddled control freak.{/sc} Just a little bit, of course. Thankfully, Mean can usually reel Tate back in again."
+            "dx-bio":"\"Awawa!\"\n\nWhile Tate is known to stay eerily calm in the face of combat, when it comes to more mundane stressors, they become a bit of a\n{sc=1}quick-tempered anxiety-riddled control freak.{/sc} Just a little bit, of course. Thankfully, Mean can usually reel them back in again."
         }
     ,
     "tate_ex":
         {
             "full-name":"Tate EX",
+            "dx":true,
             "sprite-path":"images/characters/tate/tate_ex.png",
-            "bio":"\"Don't underestimate me.\"\n\nA defector from a violent cult who grew disgusted with their clan's practices. While Tate is physically weak, they do possess some magical abilities. After a childhood of being ostracized for protesting every conquest undertaken by the cult, out of fear for their life, Tate fled.\n\nTate now strives to lead a peaceful existence while posing as a human. Although they are a pacifist down to the core, sometimes the echoes of the past become too much to bear..."
+            "bio":"\"Don't underestimate me.\"\n\nA defector from a violent cult who grew disgusted with their clan's practices. After spending many years being ostracized and even punished for protesting the cult's gruesome \"activities\", out of fear for their life, Tate fled.\n\nTate now strives to lead a peaceful existence while posing as a human. Although they are a pacifist down to the core, sometimes the echoes of the past become too much to bear..."
         }
     ,
     "terry":
@@ -560,7 +566,7 @@
         {
             "full-name":"Tom Scott",
             "sprite-path":"images/characters/tom.png",
-            "bio":"\"I am currently inside of a CSB bio screen..\"\n\nWhere {i}hasn't{/i} this man been? He has explored odd places no one else bothers to visit and has examined the things that no one else wants to question. He's probably right behind you, {i}right now{/i}, explaining the history of your house."
+            "bio":"\"I am currently inside of a CSB bio screen...\"\n\nWhere {i}hasn't{/i} this man been? He has explored odd places no one else bothers to visit and has examined the things that no one else wants to question. He's probably right behind you, {i}right now{/i}, explaining the history of your house."
         }
     ,
     "trailtrash":
@@ -594,6 +600,7 @@
     "zenigata":
         {
             "full-name":"Zenigata",
+            "dx":true,
             "sprite-path":"images/characters/zenigata.png",
             "bio":"\"You're under arrest, Lupin!\"\n\nA seasoned detective whose life mission is to put Lupin behind bars once and for all. This quest has led him to the ends of the earth. Against the advice of local law enforcement, he insists on driving his own trusted vehicle, even if it's rather conspicuous outside of Japan."
         }
