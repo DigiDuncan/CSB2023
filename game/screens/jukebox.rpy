@@ -9,7 +9,7 @@ init python:
     #Name of Entry followed by file name
     music_map = {
         #Title
-        "BUBBLE TEA - darkcat": "bubble_tea.ogg",
+        "BUBBLE TEA - dark cat": "bubble_tea.ogg",
         #CSB1
         "Let's hear my baby - Walkman": "lets_hear_my_baby.ogg",
         "CANYON.MID - George Stone": "canyon.ogg",
@@ -184,7 +184,13 @@ init python:
         "Get The Funk - Dr. Awesome": "get_the_funk.ogg",
         #DX: Finale
         "SPOT.FASSIMRD - Fun Value Land": "funvalueland.ogg",
-        "Interference - Sanity": "interference.ogg"
+        "Interference - Sanity": "interference.ogg",
+        #DX: Character Ringtones
+        "Hare Hare Yukai (Konata's Polyphonic Ringtone) - Tomokazu Tashiro & Satoru Kosaki": "sfx/sfx_ringtone_addy.ogg",
+        "Billy Milly Mays - tadintid.se": "sfx/sfx_ringtone_billy.ogg",
+        "CS OH YES - Unknown Artist": "sfx/sfx_ringtone_cs.ogg",
+        "Now Or Never (sleepingSYUN Arrange) - M−Flo loves CHEMISTRY": "sfx/sfx_ringtone_tate.ogg",
+        "Only One - ミカヅキBIGWAVE": "sfx/sfx_ringtone_tate_alt.ogg"
     }
     global album_map
 
@@ -281,7 +287,7 @@ init python:
         "Billy Mays Gangsta Remix - mastamokei": "billymays.png",
         "Breakout - Shoichiro Sakamoto": "breakout.png",
         "Brick by Brick (Suck my Dick) - cs188": "brickbybrick.png",
-        "BUBBLE TEA - darkcat": "bubbletea.png",
+        "BUBBLE TEA - dark cat": "bubbletea.png",
         "Wayward Wanderer - Deep Gnome": "deepgnome.png",
         "Alfred Hitchcock Intro Theme - Charles Gounod": "hitchcock.png",
         "Speedy Comet - Mahito Yokota": "mariogalaxy.png",
@@ -339,7 +345,12 @@ init python:
         "Fastbudget Song - Pakoo": "vibration.png",
         "Fastport.MID - Pakoo": "vibration.png",
         "Fasting - Pakoo": "vibration.png",
-        "Happy Running - Pakoo": "vibration.png"
+        "Happy Running - Pakoo": "vibration.png",
+        "Hare Hare Yukai (Konata's Polyphonic Ringtone) - Tomokazu Tashiro & Satoru Kosaki": "ringtone_addy.png",
+        "Billy Milly Mays - tadintid.se": "ringtone_billy.png",
+        "CS OH YES - Unknown Artist": "ringtone_cs.png",
+        "Now Or Never (sleepingSYUN Arrange) - M−Flo loves CHEMISTRY": "ringtone_tate.png",
+        "Only One - ミカヅキBIGWAVE": "ringtone_tate_alt.png"
     }
 
 screen jukebox_nav():

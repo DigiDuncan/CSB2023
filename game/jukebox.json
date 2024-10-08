@@ -1,0 +1,116 @@
+{
+     /*********** LIST OF VALID TAGS ***********/
+    "tags" : [
+        "Menus",
+        "Misc.",
+        "CSBI",
+        "CSBII",
+        "CSBIII",
+        "CSBIII: Archival",
+        "CSBIII: Country",
+        "CSBIII: East",
+        "CSBIII: Fired",
+        "CSBIII: Friend",
+        "CSBIII: South",
+        "CSBIII DX: Bronson",
+        "CSBIII DX: BTTF (After Story)",
+        "CSBIII DX: Christmas",
+        "CSBIII DX: Finale",
+        "CSBIII DX: Kuwait",
+        "CSBIII DX: Rockstar II",
+        "CSBIII DX: Speedrun",
+        "CSBIII DX: Train",
+        "CSBIII DX: Misc.",
+        "CSBIII DX: Ringtones"
+    ],
+
+    "tracks": {
+        /*********** PLEASE MAKE SURE ALL TRACKS MATCH THEIR INTERNAL NAME IN SCRIPT START ***********/
+        /*********** ALSO PLEASE CHECK THAT ALL TAGS ARE VALID ***********/
+        /* ... at least, i assume these things will be important later. */
+
+        /*********** Menus ***********/
+        "bubble_tea": {
+            file: "audio/bubble_tea.ogg",
+            name: "Bubble Tea",
+            artist: "dark cat",
+            tags: ["Menus"],
+            album_art: "bubbletea.png"
+        },
+
+        /*********** Misc. ***********/
+
+        /*********** CSBI ***********/
+        "lets_hear_my_baby": {
+            file: "audio/lets_hear_my_baby.ogg",
+            name: "Let's hear my baby",
+            artist: "Walkman",
+            tags: ["CSBI"],
+            album_art: "tracker.png"
+        },
+        "canyon": {
+            file: "audio/canyon.ogg",
+            name: "CANYON.MID",
+            artist: "George Stone",
+            tags: ["CSBI"],
+            album_art: "windows.png"
+        },
+
+        /*********** CSBII ***********/
+        /*********** CSBIII ***********/
+        /*********** CSBIII: Archival ***********/
+        /*********** CSBIII: Country ***********/
+        /*********** CSBIII: East (True) ***********/
+        /*********** CSBIII: Fired ***********/
+        /*********** CSBIII: Friend ***********/
+        /*********** CSBIII: South ***********/
+
+        /*********** CSBIII DX: Bronson ***********/
+        /*********** CSBIII DX: BTTF (After Story) ***********/
+        /*********** CSBIII DX: Christmas ***********/
+        /*********** CSBIII DX: Finale ***********/
+        /*********** CSBIII DX: Kuwait ***********/
+        /*********** CSBIII DX: Rockstar II ***********/
+        /*********** CSBIII DX: Speedrun ***********/
+        /*********** CSBIII DX: Train ***********/
+
+        /*********** CSBIII DX: Misc. ***********/
+
+        /*********** CSBIII DX: Ringtones ***********/
+        "sfx_ringtone_addy" : {
+            file: "audio/sfx/sfx_ringtone_addy.ogg",
+            name: "Hare Hare Yukai (Konata's Polyphonic Ringtone)",
+            artist: "Tomokazu Tashiro & Satoru Kosaki",
+            tags: ["CSBIII: Archival","CSBIII DX: Ringtones"],
+            album_art: "ringtone_addy.png"
+        },
+        "sfx_ringtone_billy" : {
+            file: "audio/sfx/sfx_ringtone_billy.ogg",
+            name: "Billy Milly Mays",
+            artist: "tadintid.se",
+            tags: ["CSBIII: East","CSBIII DX: Ringtones"],
+            album_art: "ringtone_billy.png"
+        },
+        "sfx_ringtone_cs" : {
+            file: "audio/sfx/sfx_ringtone_cs.ogg",
+            name: "CS OH YES",
+            artist: "Unknown Artist",
+            tags: ["CSBIII: East","CSBIII DX: Ringtones"],
+            album_art: "ringtone_cs.png"
+        },
+        "sfx_ringtone_tate" : {
+            file: "audio/sfx/sfx_ringtone_tate.ogg",
+            name: "Now Or Never (sleepingSYUN Arrange)",
+            artist: "M-Flo loves CHEMISTRY",
+            tags: ["CSBIII DX: Train","CSBIII DX: Ringtones"],
+            album_art: "ringtone_tate.png"
+        },
+        "sfx_ringtone_tate_alt" : {
+            file: "audio/sfx/sfx_ringtone_tate_alt.ogg",
+            name: "Only One",
+            artist: "ミカヅキBIGWAVE",
+            tags: ["CSBIII DX: Train","CSBIII DX: Ringtones"],
+            album_art: "ringtone_tate_alt.png"
+        }
+    }
+}
