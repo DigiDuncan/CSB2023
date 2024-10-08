@@ -35,7 +35,7 @@ screen people_nav():
                         # please rewrite this better if you can? - tate
                         try:
                             if name_map[k]['dx'] == True:
-                                name_label = "{image=gui/dx_text.png} " + name_map[k]['full-name']
+                                name_label = "{image=unread.png}{image=gui/dx_text.png} " + name_map[k]['full-name'] if k not in persistent.read else "{image=gui/dx_text.png} " + name_map[k]['full-name']
                         except:
                             name_label = "{image=unread.png}" + name_map[k]['full-name'] if k not in persistent.read else name_map[k]['full-name']
                     if k == "iris":
