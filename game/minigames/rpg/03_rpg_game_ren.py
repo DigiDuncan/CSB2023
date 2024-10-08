@@ -746,6 +746,8 @@ class Attacks:
     ONE_HUNDRED = Attack("100% Unsatisfied", "Yelp reviews coming in...", change_stat, stat = "atk", target_count = 0, target_type = "enemies", mult = 0.8, accuracy = 95, ex = False)
     ICE_CREAM = Attack("Ice Cream", "Bing chilling!", heal_fighters, target_count = 0, target_type = "allies", accuracy = 90, ex = False, mult = 1.5, cooldown = 3)
     RAINBOW_VOMIT_NOCOOL = ComboAttack("Rainbow Vomit", "Why are you like this?", [RAINBOW_NOCOOL, VOMIT_NOCOOL], accuracy = 75, ex = False)
+    KARATE_CHOP = ComboAttack("Karate Chop", "Hit an enemy and bring their DEF down.", [RAW_CHOP, SWORD_AP])
+    DRONE_STRIKE = Attack("Drone Strike", "O Bomb a.", damage_fighters, target_count = 0, target_type = "enemies", cooldown = 3, mult = 2.5, accuracy = 85)
 
     @classproperty
     def names(cls) -> list[str]:
@@ -798,6 +800,7 @@ class Fighters:
     PHIL = Fighter("Phil", False, 160, 20, 40, [Attacks.HYPE_UP, Attacks.PITCHMAN], Image("images/characters/phil.png"))
     MEAN = Fighter("Mean", False, 150, 20, 35, [Attacks.HUG, Attacks.SPIKE_BOMB], Image("images/characters/mean.png"))
     POMNI = Fighter("Pomni", False, 200, 15, 30, [Attacks.RAINBOW_VOMIT_NOCOOL, Attacks.RAINBOW_VOMIT_NOCOOL], Image("images/secret/pomni.png"))
+    OBAMA = Fighter("Obama", False, 190, 25, 35, [Attacks.KARATE_CHOP, Attacks.DRONE_STRIKE], Image("images/characters/obama.png"))
 
     # Enemies
     FANBOYA = Fighter("Fanboy (NVIDIA)", True, 50, 0, 16, [Attacks.PUNCH], Image("images/characters/nvidiafanboy.png"), ai = AIType.NEUTRAL, display_name = "Fanboy")

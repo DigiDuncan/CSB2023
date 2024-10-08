@@ -330,7 +330,69 @@ screen limbo_csbutton:
         text_size 72
         action Jump("csdata")
 
+screen rockstar_check:
+    text "Band Name: [band_name]" textalign 0.5 size 36 xalign 0.0 yalign 0.05
+    hbox xalign 0.0 yalign 0.25:
+        spacing 50
+    text "EP Name: [ep_name]" textalign 0.5 size 36 xalign 0.0 yalign 0.1
+    hbox xalign 0.0 yalign 0.25:
+        spacing 50 
+    text "Song Name 1: [song_name_1]" textalign 0.5 size 36 xalign 0.0 yalign 0.15
+    hbox xalign 0.0 yalign 0.25:
+        spacing 50 
+    text "Song Name 2: [song_name_2]" textalign 0.5 size 36 xalign 0.0 yalign 0.2
+    hbox xalign 0.0 yalign 0.25:
+        spacing 50 
+    text "Song Name 3: [song_name_3]" textalign 0.5 size 36 xalign 0.0 yalign 0.25
+    hbox xalign 0.0 yalign 0.25:
+        spacing 50 
+    text "Song Name 4: [song_name_4]" textalign 0.5 size 36 xalign 0.0 yalign 0.3
+    hbox xalign 0.0 yalign 0.25:
+        spacing 50 
+    text "Song Name 5: [song_name_5]" textalign 0.5 size 36 xalign 0.0 yalign 0.35
+    hbox xalign 0.0 yalign 0.25:
+        spacing 50 
+    text "Line 1: [line_1]" textalign 0.5 size 36 xalign 0.0 yalign 0.4
+    hbox xalign 0.0 yalign 0.25:
+        spacing 50 
+    text "Line 2: [line_2]" textalign 0.5 size 36 xalign 0.0 yalign 0.45
+    hbox xalign 0.0 yalign 0.25:
+        spacing 50 
+    text "Line 3: [line_3]" textalign 0.5 size 36 xalign 0.0 yalign 0.5
+    hbox xalign 0.0 yalign 0.25:
+        spacing 50 
+    text "Line 4: [line_4]" textalign 0.5 size 36 xalign 0.0 yalign 0.55
+    hbox xalign 0.0 yalign 0.25:
+        spacing 50 
+    text "Line 5: [line_5]" textalign 0.5 size 36 xalign 0.0 yalign 0.6
+    hbox xalign 0.0 yalign 0.25:
+        spacing 50 
+    text "Line 6: [line_6]" textalign 0.5 size 36 xalign 0.0 yalign 0.65
+    hbox xalign 0.0 yalign 0.25:
+        spacing 50 
+    text "Line 7: [line_7]" textalign 0.5 size 36 xalign 0.0 yalign 0.7
+    hbox xalign 0.0 yalign 0.25:
+        spacing 50 
+    text "Line 8: [line_8]" textalign 0.5 size 36 xalign 0.0 yalign 0.75
+    hbox xalign 0.0 yalign 0.25:
+        spacing 50
+    text "Line 9: [line_9]" textalign 0.5 size 36 xalign 0.0 yalign 0.8
+    hbox xalign 0.0 yalign 0.25:
+        spacing 50 
+    text "Line 10: [line_10]" textalign 0.5 size 36 xalign 0.0 yalign 0.85
+    hbox xalign 0.0 yalign 0.25:
+        spacing 50 
+    text "Line 11: [line_11]" textalign 0.5 size 36 xalign 0.0 yalign 0.9
+    hbox xalign 0.0 yalign 0.25:
+        spacing 50 
+    text "Line 12: [line_12]" textalign 0.5 size 36 xalign 0.0 yalign 0.95
+    hbox xalign 0.0 yalign 0.25:
+        spacing 50 
+
+
 label csdata:
+    scene black
+    show screen rockstar_check
     $ persistent.seen.add("michael")
     $ persistent.seen.add("luke")
     $ persistent.seen.add("arceus")
@@ -390,7 +452,7 @@ label csdata:
     $ persistent.seen.add("blank")
     $ persistent.seen.add("howie")
     $ persistent.seen.add("ges")
-    n "Added Characters...{nw}"
+    n "Added Characters..."
     $ persistent.heard.add("Thousand March - Mr. Sauceman")
     $ persistent.heard.add("Alfred Hitchcock Intro Theme - Charles Gounod")
     $ persistent.heard.add("Billy Mays Gangsta Remix - mastamokei")
@@ -531,6 +593,26 @@ label csdata:
     $ achievement_manager.unlock("Broken Masquerade")
     $ achievement_manager.unlock("Machine Gun")
     n "Added Achievements...{nw}"
+    $ band_name = "The Dickcheese Enthusiasts"
+    $ ep_name = "The Shite Album"
+    $ song_name_1 = "Your Mom Farting"
+    $ song_name_2 = "Urinal Cake Mukbang Party"
+    $ song_name_3 = "Touch Grass, Not My Ass"
+    $ song_name_4 = "Thru the Buttholes and The Wipes"
+    $ song_name_5 = "Sweet, Sweet, Sweet, Urinal Pee"
+    $ line_1 = "We're gonna shit on the floor!"
+    $ line_2 = "I left a big ol poo in the can"
+    $ line_3 = "Then I got out of the U.K."
+    $ line_4 = "it was fine"
+    $ line_5 = "Whatever we sing, this line must end with cum"
+    $ line_6 = "I ate McDonalds and was shitting in the toilet all night"
+    $ line_7 = "IMAGINE AN ASS DRINKING DASANI"
+    $ line_8 = "COME PEE ON JOHNNY WITH YOUR URINE"
+    $ line_9 = "BUY ME ALL THIS SHIT AND WASH THE TOWELS"
+    $ line_10 = "JANITOR GENITALS (MINUS UNDERWEAR)"
+    $ line_11 = "When I see you, I think about bananas"
+    $ line_12 = "HOW I'D LIKE TO PUT THEM IN YA ANUS"
+    n "Added Rockstar Lines...{nw}"
     n "Done!"
     return
     
