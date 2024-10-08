@@ -3,6 +3,8 @@
     "tags" : [
         "Menus",
         "Misc.",
+        "Fun Values",
+        "Minigames",
         "CSBI",
         "CSBII",
         "CSBIII",
@@ -109,7 +111,7 @@
             file: "audio/sfx/sfx_ringtone_tate_alt.ogg",
             name: "Only One",
             artist: "ミカヅキBIGWAVE",
-            tags: ["CSBIII DX: Train","CSBIII DX: Ringtones"],
+            tags: ["CSBIII DX: Train","CSBIII DX: Ringtones", "Fun Values"],
             album_art: "ringtone_tate_alt.png"
         }
     }
