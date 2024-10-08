@@ -1709,7 +1709,7 @@ image bubble = Transform("secret/bubble.png", zoom = 2.0)
 # Animated Sprites
 
 ## Realistic explosion
-# image realistic_explosion_anim = spritesheet_animation("images/realistic_explosion.png", 6, 3, looping = False)
+image realistic_explosion_anim = spritesheet_animation("images/realistic_explosion.png", 6, 3, looping = False)
 
 ## For cop car lights
 

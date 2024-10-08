@@ -943,12 +943,18 @@ label friend2_car_slam:
     copguy "Or should I say,"
     show db_cooper at offscreenright
     copguy "C--{w=0.5}{nw}"
-    show db_cooper at right with moveinleft
+    show db_cooper at offscreenright
+    show db_cooper at right
+    show cs worried at left
+    with move
     show cs scared
     play sound sfx_explosion volume 1.5
+    show realistic_explosion_anim at manual_pos(0.8, 0.7, 0.5) behind db_cooper:
+        subpixel True
+        zoom 20
     show copguycrawl with hpunch
     hide copguycrawl with moveoutbottom
-    show cs worried at left with move
+
     db "Hey, guys! I finally made it!"
     db "Sorry I'm late! I had to feed the pets back at home and--"
     show cs

@@ -229,6 +229,7 @@ label train_story_begin:
     cs "Oh, right."
     cs "I guess we won't be needing this for a while."
     play sound sfx_lego_break
+    pause 1.0
 
     if train_money_stolen == True:
         show bag at mid_mid_left with dissolve
@@ -1157,21 +1158,21 @@ label train_enter_sleeper:
     cs "Tate..."
     cs "Listen to me, please--{w=0.25}{nw}"
     show tate srs flipped
-    tate "{i}No!"
-    tate "I don't want to hear it!"
+    tate "{sc=1}{i}No!"
+    tate "{sc=1}I don't want to hear it!"
     tate "Is {i}this{/i} what you've been up to since--{w=0.5}{nw}"
     "..."
     tate "You know what? No."
     tate "Mean's shift starts soon. I need to be there for him."
     tate "If either of y'all see him, you will not breathe a word of {i}any{/i} of this to him."
     tate "Not about the thefts, and {i}certainly{/i} not about what happened at HoH SiS."
-    tate "He doesn't need this. Especially not today."
+    tate "He doesn't need this. Especially not {sc=1}today."
     show cs worried
     n "Tate reinforces their demand with a piercing glare towards CS." with hpunch
     show tate srs
     n "Tate then suddenly stands up." with vpunch
-    tate "I'm sorry."
-    tate "I need to go."
+    tate "{sc=1}I'm sorry."
+    tate "{sc=1}I need to go."
     show tate sad flipped
     pause 0.25
     hide tate with moveoutleft
@@ -2528,7 +2529,7 @@ label train_confront_lupin:
     mean "Pincushion, this is Pincushion to Muscle Mass! Come in!"
     amtrak_conductor "This is Muscle Mass. Go ahead."
     mean "We found the crook! We're on the roof and headed your way! Requesting standby, over!"
-    amtrak_conductor "Ten four. Be careful up there. Over."
+    amtrak_conductor "10-4. Be careful up there. Over."
     play sound sfx_walkie_off
     hide walkie with Dissolve(0.25)
     pause 0.5
@@ -2938,8 +2939,8 @@ label train_lupin_win:
         show tate shock
         tate "Wait, hold up!"
         show tate srs
-        tate "Mr.{w=0} Conductor, remember? There was the news story this morning about that casino being robbed overnight!"
-        tate "The one that was playing while I was cooking!"
+        tate "Mr.{w=0} Conductor, remember? There was that story this morning about that casino being robbed overnight!"
+        tate "It was on the news while I was cooking!"
         tate "I'll bet this prick is some kind of middleman for the {i}real{/i} thief!"
         show mean human angry
         show amtrak_conductor flipped
@@ -3073,7 +3074,7 @@ label train_lupin_win:
         parallel:
             linear 0.25 ypos 0
     pause 0.5
-    show mean human shocked hat
+    show mean human shocked hat flipped
     hide mean_hat
     pause 0.5
     amtrak_conductor "Welcome to Amtrak, bucko."
@@ -3144,7 +3145,8 @@ label train_lupin_win:
     n "Mean puts an arm around Tate."
     show tate sheepish blush
     show mean human annoyed hat
-    show cs disappointed flipped 
+    show cs disappointed flipped
+    pause 0.5
     mean "Look..."
     mean "When I told you earlier that today couldn't get any better, I meant it."
     show mean human hat
@@ -3474,10 +3476,11 @@ label train_tate_ex_encounter:
             cs "I know how easily you injure yourself..."
             show tate shock
             pause 1.0
-            show tate srs
+            show tate sad
             pause 2.0
             tate "... Fair enough."
             show cs worried flipped
+            show tate srs
             tate "I'll try another timeline."
             tate "For now, I think I'll head back to bed."
             tate "You should, too."
