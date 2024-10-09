@@ -9,6 +9,7 @@
         "CSBI",
         "CSBII",
         "CSBIII",
+        "CSBIII: AI",
         "CSBIII: Archival",
         "CSBIII: Country",
         "CSBIII: East",
@@ -33,7 +34,7 @@
         /* ... at least, i assume these things will be important later. */
 
         /*********** Menus ***********/
-        "bubble_tea": {
+        "bubble_tea" : {
             file: "audio/bubble_tea.ogg",
             title: "Bubble Tea",
             artist: "dark cat",
@@ -44,35 +45,35 @@
         /*********** Misc. ***********/
 
         /*********** CSBI ***********/
-        "lets_hear_my_baby": {
+        "lets_hear_my_baby" : {
             file: "audio/lets_hear_my_baby.ogg",
             title: "Let's hear my baby",
             artist: "Walkman",
             tags: ["CSBI"],
             album_art: "tracker.png"
         },
-        "canyon": {
+        "canyon" : {
             file: "audio/canyon.ogg",
             title: "CANYON.MID",
             artist: "George Stone",
             tags: ["CSBI"],
             album_art: "windows.png"
         },
-        "summer_clearance_sale": {
+        "summer_clearance_sale" : {
             file: "audio/bestmusicu.ogg",
             title: "Summer Clearance Sale",
             artist: "BEST MUSIC",
             tags: ["CSBI"],
             album_art: "summerclearance.png"
         },
-        "scales_of_joy": {
+        "scales_of_joy" : {
             file: "scales_of_joy.ogg",
             title: "scales of joy.mod",
             artist: "Mel O Dee",
             tags: ["CSBI"],
             album_art: "tracker.png"
         },
-        "hohsis_theme": {
+        "hohsis_theme" : {
             file: "hohsis_theme.ogg",
             title: "Funeral March of a Marionette",
             artist: "Charles Gounod",
@@ -80,36 +81,329 @@
             album_art: "hitchcock.png",
             trivia: "Also known as the intro theme for {i}Alfred Hitchcock.{/i}"
         },
-        "super_friendly": {
+        "super_friendly" : {
             file: "super_friendly.ogg",
             title: "Super Friendly",
             artist: "Kevin Macleod",
             tags: ["CSBI"],
             album_art: "kevin.png"
         },
-        "time_for_a_smackdown": {
+        "time_for_a_smackdown" : {
             file: "time_for_a_smackdown.ogg",
             title: "Time for a Smackdown!",
             artist: "Mr. Sauceman",
-            tags: ["CSBI"],
+            tags: ["CSBI", "CSBII"],
             album_art: "pizzatower.png"
         },
-        "beautiful_hills": {
+        "beautiful_hills" : {
             file: "beautiful_hills.ogg",
             title: "Beautiful Hills",
             artist: "Network Music Ensemble",
             tags: ["CSBI", "New In DX"],
             album_art: "beautiful_hills.png"
-        }
+        },
 
         /*********** CSBII ***********/
+        "card_castle" : {
+            file: "card_castle.ogg",
+            title: "Card Castle",
+            artist: "Toby Fox",
+            tags: ["CSBII"],
+            album_art: "deltarune.png"
+        },
+        "basement" : {
+            file: "basement.ogg",
+            title: "Basement",
+            artist: "Toby Fox",
+            tags: ["CSBII"],
+            album_art: "deltarune.png"
+        },
+        "stal" : {
+            file: "stal.ogg",
+            title: "stal",
+            artist: "C418",
+            tags: ["CSBII"],
+            album_art: "minecraft.png"
+        },
+        "moongazer" : {
+            file: "moongazer.ogg",
+            title: "Moongazer",
+            artist: "Dr. Awesome",
+            tags: ["CSBII"],
+            album_art: "awesome.png"
+        },
+        "onett" : {
+            file: "onett.ogg",
+            title: "Onett Theme",
+            artist: "Keiichi Suzuki",
+            tags: ["CSBII"],
+            album_art: "earthbound.png"
+        },
+        "star_spangled_banner" : {
+            file: "star_spangled_banner.ogg",
+            title: "The Star Spangled Banner",
+            artist: "THE UNITED STATES OF AMERICA",
+            tags: ["CSBII"],
+            album_art: "america.png"
+        },
+        "buy_something" : {
+            file: "buy_something.ogg",
+            title: "Buy Something Will Ya!",
+            artist: "Keiichi Suzuki",
+            tags: ["CSBII"],
+            album_art: "earthbound.png"
+        },
+        "passport" : {
+            file: "passport.ogg",
+            title: "PASSPORT.MID",
+            artist: "George Stone",
+            tags: ["CSBII", "CSBIII"],
+            album_art: "windows.png"
+        },
+        "passport_ytp" : {
+            file: "secret/passport_ytp.ogg",
+            title: "PASSPORT.MID",
+            artist: "George Stone",
+            tags: ["CSBII", "New In DX", "Fun Values"],
+            album_art: "windows.png"
+        },
+
+        /*********** CSBIII AI ***********/
+        "school" : {
+            file: "school.ogg",
+            title: "School",
+            artist: "Toby Fox",
+            tags: ["CSBIII: AI", "CSBIII DX: Misc."],
+            album_art: "deltarune.png"
+        },
+        "circus" : {
+            file: "circus.ogg",
+            title: "Circus",
+            artist: "Toby Fox",
+            tags: ["CSBIII: AI"],
+            album_art: "deltarune.png"
+        },
+        "cliffs" : {
+            file: "cliffs.ogg",
+            title: "Cliffs",
+            artist: "Toby Fox",
+            tags: ["CSBIII: AI"],
+            album_art: "deltarune.png"
+        },
+        "chase" : {
+            file: "chase.ogg",
+            title: "Cliffs",
+            artist: "Toby Fox",
+            tags: ["CSBIII: AI", "CSBIII: Country"],
+            album_art: "deltarune.png"
+        },
+        "friendship" : {
+            file: "friendship.ogg",
+            title: "Friendship",
+            artist: "Toby Fox",
+            tags: ["CSBIII: AI"],
+            album_art: "deltarune.png"
+        },
+
         /*********** CSBIII ***********/
+        "good_eatin" : {
+            file: "good_eatin.ogg",
+            title: "Good Eatin'",
+            artist: "ClascyJitto",
+            tags: ["CSBIII"],
+            album_art: "pizzatower.png"
+        },
+        "supernova": {
+            file: "supernova.ogg",
+            title: "Supernova",
+            artist: "Laszlo",
+            tags: ["CSBIII", "Minigames"],
+            album_art: "supernova.png"
+        },
+        "airport_counter" : {
+            file: "airport_counter.ogg",
+            title: "Airport Counter",
+            artist: "Kazumi Totaka",
+            tags: ["CSBIII"],
+            album_art: "newhorizons.png"
+        },
+        "hired_guns" : {
+            file: "hired_guns.ogg",
+            title: "Hired Guns",
+            artist: "Brian Johnston",
+            tags: ["CSBIII"],
+            album_art: "tracker.png"
+        },
+        "undyne" : {
+            file: "undyne.ogg",
+            title: "Undyne",
+            artist: "Toby Fox",
+            tags: ["CSBIII"],
+            album_art: "undertale.png"
+        },
+        "atarashii_kaze" : {
+            file: "atarashii_kaze.ogg",
+            title: "Atarashii Kaze",
+            artist: "Satoru Kosaki",
+            tags: ["CSBIII"],
+            album_art: "luckystar.png"
+        },
+        "police_station" : {
+            file: "police_station.ogg",
+            title: "Police Station",
+            artist: "Lorin Nelson",
+            tags: ["CSBIII"],
+            album_art: "legoisland.png"
+        },
+        "echoing" : {
+            file: "echoing.ogg",
+            title: "Echoing",
+            artist: "Banana",
+            tags: ["CSBIII"],
+            album_art: "tracker.png"
+        },
+        "kill_cops" : {
+            file: "killcops.ogg",
+            title: "Echoing?",
+            artist: "Pakoo",
+            tags: ["CSBIII"],
+            album_art: "csbi.png"
+        },
+        "insane_personalities" : {
+            file: "insane_personalities.ogg",
+            title: "Insane Personalities",
+            artist: "Pakoo",
+            tags: ["CSBIII"],
+            album_art: "trackerevil.png"
+        },
+        "danger_mystery" : {
+            file: "danger_mystery.ogg",
+            title: "Danger Mystery",
+            artist: "Toby Fox",
+            tags: ["CSBIII"],
+            album_art: "undertale.png"
+        },
+        "pressing_pursuit_cornered" : {
+            file: "pressing_pursuit_cornered.ogg",
+            title: "Pressing Pursuit ~ Cornered",
+            artist: "Masakazu Sugimori",
+            tags: ["CSBIII"],
+            album_art: "aceattorney.png"
+        },
+        "bun_guster" : {
+            file: "bun_guster.ogg",
+            title: "Bun Guster",
+            artist: "Satoru Kosaki",
+            tags: ["CSBIII"],
+            album_art: "luckystar.png"
+        },
+        "happy_roaming" : {
+            file: "happy_roaming.ogg",
+            title: "Happy Roaming",
+            artist: "Lorin Nelson",
+            tags: ["CSBIII", "CSBIII: South"],
+            album_art: "legoisland.png"
+        },
+
+
         /*********** CSBIII: Archival ***********/
         /*********** CSBIII: Country ***********/
         /*********** CSBIII: East (True) ***********/
+        "mm_select" : {
+            file: "mm_select.ogg",
+            title: "Mm Select",
+            artist: "Matthew Simmonds",
+            tags: ["CSBIII: East", "CSBIII: South", "CSBIII DX: Train"],
+            album_art: "tracker.png"
+        },
+        "park_theme" : {
+            file: "park_theme.ogg",
+            title: "Park Theme",
+            artist: "Lorin Nelson",
+            tags: ["CSBIII: East", "CSBIII: South", "CSBIII DX: Train"],
+            album_art: "legoisland.png"
+        },
+        "pokey" : {
+            file: "pokey.ogg",
+            title: "Pokey's House",
+            artist: "Keiichi Suzuki",
+            tags: ["CSBIII: East", "CSBIII: South"],
+            album_art: "earthbound.png"
+        },
         /*********** CSBIII: Fired ***********/
         /*********** CSBIII: Friend ***********/
         /*********** CSBIII: South ***********/
+        "brick_by_dick" : {
+            file: "brick_by_dick.ogg",
+            title: "Brick By Brick (Suck My Dick)",
+            artist: "cs188",
+            tags: ["CSBIII: South"],
+            album_art: "brick_by_brick.png"
+        },
+        "tunnely_shimbers" : {
+            file: "tunnely_shimbers.ogg",
+            title: "Tunnely Shimbers",
+            artist: "Mr. Sauceman",
+            tags: ["CSBIII: South"],
+            album_art: "pizzatower.png"
+        },
+        "hard_drive" : {
+            file: "hard_drive.ogg",
+            title: "Hard Drive to Munch You",
+            artist: "Mr. Sauceman",
+            tags: ["CSBIII: South"],
+            album_art: "pizzatower.png"
+        },
+        "penthouse" : {
+            file: "penthouse.ogg",
+            title: "Al's Penthouse",
+            artist: "Andy Blythe",
+            tags: ["CSBIII: South"],
+            album_art: "toystory.png"
+        },
+        "game_corner" : {
+            file: "game_corner.ogg",
+            title: "Rocket Game Corner",
+            artist: "Junichi Masuda",
+            tags: ["CSBIII: South", "New In DX", "Minigames"],
+            album_art: "pkmnredblue.png"
+        },
+        "laurel_palace" : {
+            file: "laurel_palace.ogg",
+            title: "Laurel Palace",
+            artist: "Manami Matsumae",
+            tags: ["CSBIII: South"],
+            album_art: "vegasstrikes.png"
+        },
+        "lancer" : {
+            file: "secret/lancer.ogg",
+            title: "Lancer",
+            artist: "Toby Fox",
+            tags: ["CSBIII: South", "Fun Values"],
+            album_art: "deltarune.png"
+        },
+        "price_right" : {
+            file: "price_right.ogg",
+            title: "Price Is Right Theme",
+            artist: "Edd Kalehoff",
+            tags: ["CSBIII: South"],
+            album_art: "priceisright.png"
+        },
+        "airport" : {
+            file: "airport.ogg",
+            title: "Airport Infiltration",
+            artist: "Andy Blythe & Marten Joustra",
+            tags: ["CSBIII: South"],
+            album_art: "toystory.png"
+        },
+        "clownpiece" : {
+            file: "clownpiece.ogg",
+            title: "Pierrot of the Star Spangled Banner",
+            artist: "ZUN",
+            tags: ["CSBIII: South"],
+            album_art: "touhou15.png"
+        },
+
 
         /*********** CSBIII DX: Bronson ***********/
         /*********** CSBIII DX: BTTF (After Story) ***********/
@@ -127,35 +421,35 @@
             file: "audio/sfx/sfx_ringtone_addy.ogg",
             title: "Hare Hare Yukai (Konata's Polyphonic Ringtone)",
             artist: "Tomokazu Tashiro & Satoru Kosaki",
-            tags: ["CSBIII: Archival","CSBIII DX: Ringtones"],
+            tags: ["CSBIII: Archival", "CSBIII DX: Ringtones", "New In DX"],
             album_art: "ringtone_addy.png"
         },
         "sfx_ringtone_billy" : {
             file: "audio/sfx/sfx_ringtone_billy.ogg",
             title: "Billy Milly Mays",
             artist: "tadintid.se",
-            tags: ["CSBIII: East","CSBIII DX: Ringtones"],
+            tags: ["CSBIII: East", "CSBIII DX: Ringtones", "New In DX"],
             album_art: "ringtone_billy.png"
         },
         "sfx_ringtone_cs" : {
             file: "audio/sfx/sfx_ringtone_cs.ogg",
             title: "CS OH YES",
             artist: "Unknown Artist",
-            tags: ["CSBIII: East","CSBIII DX: Ringtones"],
+            tags: ["CSBIII: East", "CSBIII DX: Ringtones", "New In DX"],
             album_art: "ringtone_cs.png"
         },
         "sfx_ringtone_tate" : {
             file: "audio/sfx/sfx_ringtone_tate.ogg",
             title: "Now Or Never (sleepingSYUN Arrange)",
             artist: "M-Flo loves CHEMISTRY",
-            tags: ["CSBIII DX: Train","CSBIII DX: Ringtones"],
+            tags: ["CSBIII DX: Train", "CSBIII DX: Ringtones", "New In DX"],
             album_art: "ringtone_tate.png"
         },
         "sfx_ringtone_tate_alt" : {
             file: "audio/sfx/sfx_ringtone_tate_alt.ogg",
             title: "Only One",
             artist: "ミカヅキBIGWAVE",
-            tags: ["CSBIII DX: Train","CSBIII DX: Ringtones", "Fun Values"],
+            tags: ["CSBIII DX: Train", "CSBIII DX: Ringtones", "Fun Values", "New In DX"],
             album_art: "ringtone_tate_alt.png"
         }
     }

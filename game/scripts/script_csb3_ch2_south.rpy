@@ -49,7 +49,7 @@ label south_start:
     show cs
     cs "Hold on. I got an idea."
     play music brick_by_dick
-    music Brick by Brick (Suck my Dick) - cs188
+    music Brick By Brick (Suck My Dick) - cs188
     cs "See those pieces on the ground?"
     show arceus worried
     arceus "What pieces?"
@@ -1148,7 +1148,7 @@ label south_noairport:
     show mika at center with vpunch
     mika "Oi, chaps!"
     play music pokey volume 0.6
-    music Pokeys House - Keiichi Suzuki
+    music Pokey's House - Keiichi Suzuki
     mika "Ok, so, CS looks out the window and he spots a yellow Hummer."
     mika "The guy, with his arm out the window, says \"Dude, this car kicks ass! And I can watch Madagascar while driving!\""
     show arceus worried
