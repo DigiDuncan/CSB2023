@@ -15,6 +15,7 @@
         "CSBIII: East",
         "CSBIII: Fired",
         "CSBIII: Friend",
+        "CSBIII: Michigan",
         "CSBIII: South",
         "CSBIII DX: Bronson",
         "CSBIII DX: BTTF (After Story)",
@@ -305,8 +306,36 @@
             album_art: "legoisland.png"
         },
 
-
         /*********** CSBIII: Archival ***********/
+        "facing_worlds" : {
+            file: "facing_worlds.ogg",
+            title: "Facing Worlds",
+            artist: "Michiel van den Bos",
+            tags: ["CSBIII: Archival"],
+            album_art: "tracker.png"
+        },
+        "broken_sky" : {
+            file: "broken_sky.ogg",
+            title: "BATTLE UNDER A BROKEN SKY",
+            artist: "AZALI",
+            tags: ["CSBIII: Archival", "Minigames"],
+            album_art: "brokensky.png"
+        },
+        "take_trip" : {
+            file: "take_trip.ogg",
+            title: "Take a Trip from Me",
+            artist: "u4ia",
+            tags: ["CSBIII: Archival"],
+            album_art: "tracker.png"
+        },
+        "everybody_wants" : {
+            file: "everybody_wants.ogg",
+            title: "Everybody Wants To Rule The World",
+            artist: "Tears For Fears",
+            tags: ["CSBIII: Archival"],
+            album_art: "tearsforfears.png"
+        },
+
         /*********** CSBIII: Country ***********/
         /*********** CSBIII: East (True) ***********/
         "mm_select" : {
@@ -316,13 +345,97 @@
             tags: ["CSBIII: East", "CSBIII: South", "CSBIII DX: Train"],
             album_art: "tracker.png"
         },
-        "park_theme" : {
-            file: "park_theme.ogg",
-            title: "Park Theme",
-            artist: "Lorin Nelson",
-            tags: ["CSBIII: East", "CSBIII: South", "CSBIII DX: Train"],
-            album_art: "legoisland.png"
+        "billy_radio" : {
+            file: "billy_radio.ogg",
+            title: "Billy Mays Gangsta Remix",
+            artist: "mastamokei",
+            tags: ["CSBIII: East"],
+            album_art: "billymays.png"
         },
+        "weird_personalities" : {
+            file: "weird_personalities.ogg",
+            title: "Weird Personalities",
+            artist: "Lizardking",
+            tags: ["CSBIII: East"],
+            album_art: "lizardking.png"
+        }, 
+        "home_depot" : {
+            file: "home_depot.ogg",
+            title: "Let's Do This",
+            artist: "Home Depot",
+            tags: ["CSBIII: East"],
+            album_art: "homedepot.png"
+        },
+        "candle_world" : {
+            file: "home_depot.ogg",
+            title: "Candle World",
+            artist: "Kikiyama",
+            tags: ["CSBIII: East"],
+            album_art: "yume.png"
+        }, 
+        "blazing_corridor" : {
+            file: "blazing_corridor.ogg",
+            title: "Blazing Corridor",
+            artist: "Kikiyama",
+            tags: ["CSBIII: East"],
+            album_art: "yume.png"
+        }, 
+        "showtime" : {
+            file: "showtime.ogg",
+            title: "It's Showtime",
+            artist: "Toby Fox",
+            tags: ["CSBIII: East"],
+            album_art: "undertale.png"
+        },
+        "mort_farm" : {
+            file: "mort_farm.ogg",
+            title: "Mort's Farm",
+            artist: "ClascyJitto",
+            tags: ["CSBIII: East"],
+            album_art: "pizzatower.png"
+        }, 
+        "taiikusai_desu_yo" : {
+            file: "taiikusai_desu_yo.ogg",
+            title: "Taiikusai Desu Yo",
+            artist: "Satoru Kosaki",
+            tags: ["CSBIII: East"],
+            album_art: "luckystar.png"
+        },
+        "track_4" : {
+            file: "track4.ogg",
+            title: "Track 4",
+            artist: "Weatherscan",
+            tags: ["CSBIII: East", "CSBIII: Michigan"],
+            album_art: "weather.png"
+        }, 
+        "funiculi_holiday" : {
+            file: "funiculi_holiday.ogg",
+            title: "Funiculi Holiday",
+            artist: "ClascyJitto",
+            tags: ["CSBIII: East"],
+            album_art: "pizzatower.png"
+        }, 
+        "speedy_comet" : {
+            file: "speedy_comet.ogg",
+            title: "Speedy Comet",
+            artist: "Mahito Yokota",
+            tags: ["CSBIII: East", "Minigames"],
+            album_art: "mariogalaxy.png"
+        }, 
+        "breakout" : {
+            file: "breakout.ogg",
+            title: "Breakout",
+            artist: "Shoichiro Sakamoto",
+            tags: ["CSBIII: East"],
+            album_art: "breakout.png"
+        }, 
+        "fourside" : {
+            file: "fourside.ogg",
+            title: "The Metropolis of Fourside",
+            artist: "Keiichi Suzuki",
+            tags: ["CSBIII: East"],
+            album_art: "earthbound.png"
+        }, 
         "pokey" : {
             file: "pokey.ogg",
             title: "Pokey's House",
@@ -330,8 +443,105 @@
             tags: ["CSBIII: East", "CSBIII: South"],
             album_art: "earthbound.png"
         },
+        "rude_buster" : {
+            file: "rude_buster.ogg",
+            title: "Rude Buster",
+            artist: "Toby Fox",
+            tags: ["CSBIII: East", "Minigames"],
+            album_art: "deltarune.png"
+        },
+        "park_theme" : {
+            file: "park_theme.ogg",
+            title: "Park Theme",
+            artist: "Lorin Nelson",
+            tags: ["CSBIII: East", "CSBIII: South", "CSBIII DX: Train"],
+            album_art: "legoisland.png"
+        },
+        "hohsis_remix" : {
+            file: "hohsisremix.ogg",
+            title: "Alfred's Theme",
+            artist: "Eminem",
+            tags: ["CSBIII: East", "CSBIII: South"],
+            album_art: "mtbmb.png"
+        },
+        "billy_mix" : {
+            file: "billy_mix.ogg",
+            title: "Billy's Mix",
+            artist: "Billy Mays",
+            tags: ["CSBIII: East"],
+            album_art: "billymix.png"
+        },
+        "moving_right_along" : {
+            file: "moving_right_along.ogg",
+            title: "Movin' Right Along",
+            artist: "The Muppet Movie",
+            tags: ["CSBIII: East"],
+            album_art: "muppetmovie.png"
+        },
+        "track_3" : {
+            file: "track3.ogg",
+            title: "Track 3",
+            artist: "Weatherscan",
+            tags: ["CSBIII: East"],
+            album_art: "weather.png"
+        },
+        "ac_title" : {
+            file: "ac_title.ogg",
+            title: "New Leaf Title Theme",
+            artist: "Kazumi Totaka",
+            tags: ["CSBIII: East", "CSBIII: South"],
+            album_art: "newleaf.png"
+        },
+        
         /*********** CSBIII: Fired ***********/
         /*********** CSBIII: Friend ***********/
+
+        "dense_woods_b" : {
+            file: "dense_woods_b.og",
+            title: "Dense Woods B",
+            artist: "Kikiyama",
+            tags: ["CSBIII: Friend", "CSBIII: Michigan"],
+            album_art: "yume.png"
+        },
+
+
+        /*********** CSBIII: Michigan ***********/
+        "honk_song" : {
+            file: "honk_song.ogg",
+            title: "Honk Song",
+            artist: "Toby Fox",
+            tags: ["CSBIII: Michigan"],
+            album_art: "deltarune.png"
+        },
+        "wayward_wanderer" : {
+            file: "wayward_wanderer.ogg",
+            title: "Wayward Wanderer",
+            artist: "Deep Gnome",
+            tags: ["CSBIII: Michigan"],
+            album_art: "deepgnome.png"
+        },
+        "mis_leader" : {
+            file: "mis_leader.ogg",
+            title: "MisLeader",
+            artist: "Triosk and Jan Jelinek",
+            tags: ["CSBIII: Michigan"],
+            album_art: "misleader.png"
+        },
+        "melancholy" : {
+            file: "melancholy.ogg",
+            title: "Melancholy",
+            artist: "Imori",
+            tags: ["CSBIII: Michigan"],
+            album_art: "melancholy.png"
+        },
+        "trash_zone" : {
+            file: "trash_zone.ogg",
+            title: "Tubular Trash Zone",
+            artist: "Mr. Sauceman",
+            tags: ["CSBIII: Michigan"],
+            album_art: "pizzatower.png"
+        },
+
         /*********** CSBIII: South ***********/
         "brick_by_dick" : {
             file: "brick_by_dick.ogg",
@@ -403,9 +613,30 @@
             tags: ["CSBIII: South"],
             album_art: "touhou15.png"
         },
-
+        "lego_island" {
+            file: "lego_island.ogg",
+            title: "Lego Island Theme",
+            artist: "Lorin Nelson",
+            tags: ["CSBIII: South"],
+            album_art: "legoisland.png"
+        },
 
         /*********** CSBIII DX: Bronson ***********/
+        "upon_me" {
+            file: "upon_me.ogg",
+            title: "Upon Me",
+            artist: "Dr. Awesome",
+            tags: ["CSBIII DX: Bronson", "New In DX"],
+            album_art: "awesome.png"
+        },
+        "error" {
+            file: "error.ogg",
+            title: "Prophet ERROR",
+            artist: "Pakoo",
+            tags: ["CSBIII DX: Bronson", "New In DX", "Minigames"],
+            album_art: "trackerevil.png"
+        },
+
         /*********** CSBIII DX: BTTF (After Story) ***********/
         /*********** CSBIII DX: Christmas ***********/
         /*********** CSBIII DX: Finale ***********/
@@ -435,7 +666,7 @@
             file: "audio/sfx/sfx_ringtone_cs.ogg",
             title: "CS OH YES",
             artist: "Unknown Artist",
-            tags: ["CSBIII: East", "CSBIII DX: Ringtones", "New In DX"],
+            tags: ["CSBIII: Michigan", "CSBIII DX: Ringtones", "New In DX"],
             album_art: "ringtone_cs.png"
         },
         "sfx_ringtone_tate" : {

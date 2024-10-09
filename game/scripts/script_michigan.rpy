@@ -274,6 +274,7 @@ label michigan_interstate_69_old:
     show cscar2
     with dissolve 
     play music honk_song volume 0.8
+    music Honk Song - Toby Fox
     cs "I was expecting there to be people around, but I wasn't expecting traffic like this. I wonder what's going on?"
     arceus "All the people walking are wearing green and white, so it's probably a sports thing."
     billy "We are in Lansing. They have one of the biggest football schools in the country."

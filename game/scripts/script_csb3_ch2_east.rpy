@@ -236,7 +236,7 @@ label true_montana:
     play sound sfx_car_stop volume 0.7
     scene cultforest
     show billy car
-    play music candle_world volume 0.4
+    play music candle_world volume 0.4 if_changed
     music Candle World - Kikiyama
     if fun_value(FUN_VALUE_MUSIC):
         "CS and Arceus" "What in the candle world?"
@@ -344,7 +344,8 @@ label true_montana:
     show cs fakegod at mid_offscreen_left with move
     show billy laser at mid_left with moveinleft
     stop music fadeout 1.0 
-    play music blazing_corridor volume 0.4    
+    play music blazing_corridor volume 0.4 if_changed
+    music Blazing Corridor - Kikiyama
     billy "Fire a laser! Fire a laser!"
     play sound sfx_gaster_blast
     show laser_beam at t_gun behind billy
@@ -372,7 +373,9 @@ label true_montana:
         cs "Hooray! It's showtime now!"
     else:
         cs "Hooray! I'm a god now!"
-    show arceus flipped at left with moveinleft
+    show arceus flipped at left
+    show billy laser at mid_mid_left
+    with moveinleft
     arceus "CS, I don't know how you pull this stuff off."
     show arceus worried flipped
     arceus "Am I still sleeping?"

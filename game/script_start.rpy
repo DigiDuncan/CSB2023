@@ -2042,9 +2042,7 @@ define audio.hohsis_remix = "hohsisremix.ogg"
 define audio.track_3 = "track3.ogg"
 define audio.ac_title = "ac_title.ogg"
 
-# CSBIII Michigan
-define audio.upon_me = "upon_me.ogg"
-define audio.error = "error.ogg"
+# CSBIII: Michigan
 define audio.honk_song = "honk_song.ogg"
 define audio.wayward_wanderer = "wayward_wanderer.ogg"
 define audio.mis_leader = "mis_leader.ogg"
@@ -2132,6 +2130,10 @@ define audio.night = "night.ogg"
 # CSBIII Car Music
 define audio.billy_mix = "billy_mix.ogg"
 define audio.moving_right_along = "moving_right_along.ogg"
+
+# CSBIII DX: Bronson (Michigan)
+define audio.upon_me = "upon_me.ogg"
+define audio.error = "error.ogg"
 
 # CSBIII DX Train Music
 define audio.sub_game_select = "sub_game_select.ogg"
