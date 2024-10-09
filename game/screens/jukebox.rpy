@@ -18,7 +18,7 @@ init python:
         "Alfred Hitchcock Intro Theme - Charles Gounod": "hohsis_theme.ogg",
         "Super Friendly - Kevin Macleod": "super_friendly.ogg",
         "Time for a Smackdown! - Mr. Sauceman": "time_for_a_smackdown.ogg",
-        "Beautiful Hills - Network Music": "beautiful_hills.ogg",
+        "Beautiful Hills - Network Music Ensemble": "beautiful_hills.ogg",
         #CSB2
         "Card Castle - Toby Fox": "card_castle.ogg",
         "Basement - Toby Fox": "basement.ogg",
@@ -216,6 +216,7 @@ init python:
         "Alfred's Theme - Eminem": "mtbmb.png",
         "New Leaf Title Theme - Kazumi Totaka": "newleaf.png",
         "Time for a Smackdown! - Mr. Sauceman": "pizzatower.png",
+        "Beautiful Hills - Network Music Ensemble": "beautiful_hills.png",
         "Good Eatin - ClascyJitto": "pizzatower.png",
         "Mort's Farm - ClascyJitto": "pizzatower.png",
         "Funiculi Holiday - ClascyJitto": "pizzatower.png",

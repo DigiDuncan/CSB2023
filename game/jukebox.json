@@ -5,6 +5,7 @@
         "Misc.",
         "Fun Values",
         "Minigames",
+        "New In DX",
         "CSBI",
         "CSBII",
         "CSBIII",
@@ -34,7 +35,7 @@
         /*********** Menus ***********/
         "bubble_tea": {
             file: "audio/bubble_tea.ogg",
-            name: "Bubble Tea",
+            title: "Bubble Tea",
             artist: "dark cat",
             tags: ["Menus"],
             album_art: "bubbletea.png"
@@ -45,18 +46,61 @@
         /*********** CSBI ***********/
         "lets_hear_my_baby": {
             file: "audio/lets_hear_my_baby.ogg",
-            name: "Let's hear my baby",
+            title: "Let's hear my baby",
             artist: "Walkman",
             tags: ["CSBI"],
             album_art: "tracker.png"
         },
         "canyon": {
             file: "audio/canyon.ogg",
-            name: "CANYON.MID",
+            title: "CANYON.MID",
             artist: "George Stone",
             tags: ["CSBI"],
             album_art: "windows.png"
         },
+        "summer_clearance_sale": {
+            file: "audio/bestmusicu.ogg",
+            title: "Summer Clearance Sale",
+            artist: "BEST MUSIC",
+            tags: ["CSBI"],
+            album_art: "summerclearance.png"
+        },
+        "scales_of_joy": {
+            file: "scales_of_joy.ogg",
+            title: "scales of joy.mod",
+            artist: "Mel O Dee",
+            tags: ["CSBI"],
+            album_art: "tracker.png"
+        },
+        "hohsis_theme": {
+            file: "hohsis_theme.ogg",
+            title: "Funeral March of a Marionette",
+            artist: "Charles Gounod",
+            tags: ["CSBI"],
+            album_art: "hitchcock.png",
+            trivia: "Also known as the intro theme for {i}Alfred Hitchcock.{/i}"
+        },
+        "super_friendly": {
+            file: "super_friendly.ogg",
+            title: "Super Friendly",
+            artist: "Kevin Macleod",
+            tags: ["CSBI"],
+            album_art: "kevin.png"
+        },
+        "time_for_a_smackdown": {
+            file: "time_for_a_smackdown.ogg",
+            title: "Time for a Smackdown!",
+            artist: "Mr. Sauceman",
+            tags: ["CSBI"],
+            album_art: "pizzatower.png"
+        },
+        "beautiful_hills": {
+            file: "beautiful_hills.ogg",
+            title: "Beautiful Hills",
+            artist: "Network Music Ensemble",
+            tags: ["CSBI", "New In DX"],
+            album_art: "beautiful_hills.png"
+        }
 
         /*********** CSBII ***********/
         /*********** CSBIII ***********/
@@ -81,35 +125,35 @@
         /*********** CSBIII DX: Ringtones ***********/
         "sfx_ringtone_addy" : {
             file: "audio/sfx/sfx_ringtone_addy.ogg",
-            name: "Hare Hare Yukai (Konata's Polyphonic Ringtone)",
+            title: "Hare Hare Yukai (Konata's Polyphonic Ringtone)",
             artist: "Tomokazu Tashiro & Satoru Kosaki",
             tags: ["CSBIII: Archival","CSBIII DX: Ringtones"],
             album_art: "ringtone_addy.png"
         },
         "sfx_ringtone_billy" : {
             file: "audio/sfx/sfx_ringtone_billy.ogg",
-            name: "Billy Milly Mays",
+            title: "Billy Milly Mays",
             artist: "tadintid.se",
             tags: ["CSBIII: East","CSBIII DX: Ringtones"],
             album_art: "ringtone_billy.png"
         },
         "sfx_ringtone_cs" : {
             file: "audio/sfx/sfx_ringtone_cs.ogg",
-            name: "CS OH YES",
+            title: "CS OH YES",
             artist: "Unknown Artist",
             tags: ["CSBIII: East","CSBIII DX: Ringtones"],
             album_art: "ringtone_cs.png"
         },
         "sfx_ringtone_tate" : {
             file: "audio/sfx/sfx_ringtone_tate.ogg",
-            name: "Now Or Never (sleepingSYUN Arrange)",
+            title: "Now Or Never (sleepingSYUN Arrange)",
             artist: "M-Flo loves CHEMISTRY",
             tags: ["CSBIII DX: Train","CSBIII DX: Ringtones"],
             album_art: "ringtone_tate.png"
         },
         "sfx_ringtone_tate_alt" : {
             file: "audio/sfx/sfx_ringtone_tate_alt.ogg",
-            name: "Only One",
+            title: "Only One",
             artist: "ミカヅキBIGWAVE",
             tags: ["CSBIII DX: Train","CSBIII DX: Ringtones", "Fun Values"],
             album_art: "ringtone_tate_alt.png"

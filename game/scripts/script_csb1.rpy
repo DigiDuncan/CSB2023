@@ -384,7 +384,7 @@ label csbi_room:
             pass
         "Home Savers"(type="dx"):
             play music beautiful_hills volume 0.3
-            music Beautiful Hills - Network Music
+            music Beautiful Hills - Network Music Ensemble
             show cs
             cs "I guess I can call Home Savers. Despite my YTPs of their company, I don't think they'd mind helping me out."
             show cs phone
