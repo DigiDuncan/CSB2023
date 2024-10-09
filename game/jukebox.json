@@ -430,7 +430,6 @@
             album_art: "digitalcircus.png"
         },
 
-
         /*********** CSBIII: East (True) ***********/
         "mm_select" : {
             file: "mm_select.ogg",
@@ -588,6 +587,119 @@
         },
         
         /*********** CSBIII: Fired ***********/
+        "dealin_dope" : {
+            file: "dealin_dope.ogg",
+            title: "Dealin Dope",
+            artist: "Dr. Awesome",
+            tags: ["CSBIII: Fired"],
+            album_art: "awesome.png"
+        },
+        "hit_me_with_your_best_shot" : {
+            file: "hitmewithyourbestshot.ogg",
+            title: "Hit Me With Your Best Shot",
+            artist: "Pat Benatar",
+            tags: ["CSBIII: Fired"],
+            album_art: "patbenatar.png"
+        },
+        "hightop" : {
+            file: "hightop.ogg",
+            title: "Hightop",
+            artist: "Dr. Awesome",
+            tags: ["CSBIII: Fired"],
+            album_art: "awesome.png"
+        },
+        "everlong" : {
+            file: "everlong.ogg",
+            title: "Everlong",
+            artist: "Foo Fighters",
+            tags: ["CSBIII: Fired"],
+            album_art: "foofighter.png"
+        },
+        "local_forecast" : {
+            file: "local_forecast.ogg",
+            title: "Local Forecast",
+            artist: "Kevin MacLeod",
+            tags: ["CSBIII: Fired"],
+            album_art: "kevin.png"
+        },
+        "now_what" : {
+            file: "now_what.ogg",
+            title: "Now What? 1",
+            artist: "Dr. Awesome",
+            tags: ["CSBIII: Fired"],
+            album_art: "awesome.png"
+        },
+        "happy_rock" : {
+            file: "happy_rock.ogg",
+            title: "Happy Rock",
+            artist: "Benjamin TISSOT",
+            tags: ["CSBIII: Fired"],
+            album_art: "jermalore.png"
+        },
+        "energetic_rock" : {
+            file: "energetic_rock.ogg",
+            title: "Energetic Rock",
+            artist: "Every Day Music",
+            tags: ["CSBIII: Fired"],
+            album_art: "csbi.png"
+        },
+        "fnaf_6" : {
+            file: "fnaf_6.ogg",
+            title: "Smashing Windshields",
+            artist: "Leon Riskin",
+            tags: ["CSBIII: Fired"],
+            album_art: "fnaf6.png"
+        },
+        "france" : {
+            file: "france.ogg",
+            title: "Guillotine World",
+            artist: "Kikiyama",
+            tags: ["CSBIII: Fired"],
+            album_art: "yume.png"
+        },
+        "dragon_castle" : {
+            file: "dragon_castle.ogg",
+            title: "Dragon Castle",
+            artist: "Makai Symphony",
+            tags: ["CSBIII: Fired"],
+            album_art: "csbi.png"
+        },
+        "gold_room" : {
+            file: "gold_room.ogg",
+            title: "You’re At A Ball In The Gold Room",
+            artist: "Nemo’s Dreamscapes",
+            tags: ["CSBIII: Fired"],
+            album_art: "csbi.png"
+        },
+        "sweet_victory" : {
+            file: "sweet_victory.ogg",
+            title: "You’re At A Ball In The Gold Room",
+            artist: "Nemo’s Dreamscapes",
+            tags: ["CSBIII: Fired"],
+            album_art: "csbi.png"
+        },
+        "dig_this" : {
+            file: "dig_this.ogg",
+            title: "Dig This",
+            artist: "Dr. Awesome",
+            tags: ["CSBIII: Fired"],
+            album_art: "awesome.png"
+        },
+        "exotic" : {
+            file: "exotic.ogg",
+            title: "Exotic",
+            artist: "Panda Beats ft. Newenx",
+            tags: ["CSBIII: Fired"],
+            album_art: "pandabeats.png"
+        },
+        "another_him" : {
+            file: "ANOTHER HIM.ogg",
+            title: "Exotic",
+            artist: "Toby Fox",
+            tags: ["CSBIII: Fired"],
+            album_art: "deltarune.png"
+        },
+
         /*********** CSBIII: Friend ***********/
         "morning_highway" : {
             file: "morning_highway.ogg",
