@@ -155,36 +155,51 @@
     ],
     "donuts": [
         {
-            "audio_path": "placeholder",
+            "audio_path": "donuts1",
             "speaker": "Tate",
-            "transcript": "Oh, God... {i}this{/i} line. If you were there for CS' initial playthrough stream of {i}CSBIII,{/i} then, you may remember this. The original line read as follows: \"CS, Anno, and Arceus cheers their donuts together.\" I'm sorry, {i}what?{/i}",
-            "length": 10
+            "transcript": "Oh, God... {i}this{/i} line. If you were there for CS' initial playthrough stream of {i}CSBIII,{/i} then, you might remember this. The original line read as follows: \"CS, Anno, and Arceus cheers their donuts together.\" I'm sorry, {i}what?{/i}",
+            "length": 18
         },
         {
-            "audio_path": "placeholder",
+            "audio_path": "donuts2",
             "speaker": "Tate",
-            "transcript": "I absolutely {i}hated{/i} it! Not only was I having trouble thinking of a replacement, but, I faced some pushback from Digi, who {i}loved{/i} the line! I'm pretty sure he's the one who wrote it, but don't quote me on that. Eventually, everyone kinda forgot about fixing it {i}at all{/i} until that stream happened...",
-            "length": 10
+            "transcript": "I absolutely {i}hated{/i} it, but for the longest time, I couldn't think of a better replacement. I also faced some pushback from Digi, who {i}loved{/i} the line! Eventually, everyone kinda forgot about fixing it {i}at all{/i} until the stream... I'm not sure who was cringing more, me or CS.",
+            "length": 15
         }
+    ],
+    "trainroute": [
+        {
+            "audio_path": "trainroute1",
+            "speaker": "Tate",
+            "transcript": "So, while I was proofreading the {i}CSBIII{/i} script, I got curious about how hard it would be to mod the game. As it turns out, it's pretty easy. So, Mean and I got together and started writing this route.",
+            "length": 10.5
+        },
+        {
+            "audio_path": "trainroute2",
+            "speaker": "Tate",
+            "transcript": "Yes, this was intended to be the first unofficial non-canon mod for {i}CSBIII.{/i} However, since I returned to work on {i}DX,{/i} and the others really liked the story, it was added to the game for real!",
+            "length": 11
+        },
+        {
+            "audio_path": "trainroute3",
+            "speaker": "Tate",
+            "transcript": "As a warning, if you are streaming this game right now, or are otherwise short on time, be aware that this story is {i}really{/i} long and there are multiple endings and secrets to find.",
+            "length": 9
+        }
+
     ],
     "tate_ex": [
         {
-            "audio_path": "placeholder",
+            "audio_path": "tate_ex1",
             "speaker": "Tate",
-            "transcript": "So, it was never in the original plan to have {i}any{/i} kind of RPG battles in Train route, especially not one against... {i}me.{/i} I mean, yeah, I'm the one who wrote most of the route, but, somehow, making myself into a boss fight seemed... narcissistic? My hope is that the name of the achievement {i}at least{/i} makes it clear that I am self-aware.",
-            "length": 10
+            "transcript": "So, it was never in the original plan to have any kind of RPG battles in this route, especially not one against... {i}me.{/i} I mean, yeah, I'm the one who wrote most of this, but, somehow, making {i}myself{/i} into a boss fight seemed kinda... narcissistic? My hope is that the name of the achievement {i}at least{/i} makes it clear that I am self-aware.",
+            "length": 20
         },
         {
-            "audio_path": "placeholder",
+            "audio_path": "tate_ex2",
             "speaker": "Tate",
-            "transcript": "Sometimes, plans change when you get inspired by some random royalty-free breakcore EP and end up hyperfocusing on art and code for a straight week, nonstop. I hope the fight is as fun to play as it was to create.",
-            "length": 10
-        },
-        {
-            "audio_path": "placeholder",
-            "speaker": "Tate",
-            "transcript": "Also, fun fact about this fight: Tate EX's double-edged attacks are an all-new mechanic, exclusive to {i}DX.{/i} This battle actually ended up breaking the entire RPG system... {i}twice.{/i}",
-            "length": 10
+            "transcript": "Also, fun fact about this fight: Tate EX's double-edged attacks are an all-new mechanic, exclusive to {i}DX.{/i} This battle actually ended up breaking the entire RPG system {i}twice{/i} at the time of this recording.",
+            "length": 13
         }
     ]
     
