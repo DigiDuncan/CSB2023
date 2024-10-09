@@ -16,7 +16,7 @@ init python:
                 print(f"Forcing channel " + this_channel + " to stop.")
 
 screen unused_gallery(i):
-    $ renpy.music.play("gallery/what_the_night_will_bring.mp3", channel = 'music2', relative_volume = 8.0, if_changed = True)
+    $ renpy.music.play("audio/what_the_night_will_bring.ogg", channel = 'music2', relative_volume = 8.0, if_changed = True)
     $ renpy.music.set_pause(True, channel = "music")
 
     tag menu

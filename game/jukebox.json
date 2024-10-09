@@ -42,6 +42,13 @@
             "tags": ["Menus"],
             "album_art": "bubbletea.png"
         },
+        "what_the_night_will_bring" : {
+            "file": "what_the_night_will_bring.ogg",
+            "title": "What The Night Will Bring",
+            "artist": "Rubber Kiss Goodbye",
+            "tags": ["Menus", "New In DX"],
+            "album_art": "csbi.png"
+        },
 
         /*********** Misc. ***********/
         "space_classroom" : {

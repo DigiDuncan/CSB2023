@@ -42,7 +42,7 @@ screen category_nav():
             textbutton "Jukebox" action ShowMenu("jukebox_welcome"), PauseAudio("music", True)
             textbutton "Endings" action ShowMenu("replay_gallery")
             textbutton "Minigames" action ShowMenu("minigame_gallery")
-            textbutton "Unused Assets" action ShowMenu("unused_gallery", 0), PauseAudio("music", True), Play("music2", "gallery/what_the_night_will_bring.mp3", relative_volume=8.0)
+            textbutton "Unused Assets" action ShowMenu("unused_gallery", 0), PauseAudio("music", True), Play("music2", "audio/what_the_night_will_bring.ogg", relative_volume=8.0)
             if preferences.developer_mode or achievement_manager.get("Hopes and Dreams").unlocked:
                 textbutton "Ultimate\nCustom Night" action Start("rpg_ucn")
             textbutton "Woohoo Counter" action Jump("woohoo_counter")
