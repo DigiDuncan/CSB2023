@@ -64,7 +64,7 @@
         "quote": "I Am Catboy Musical",
         "bio": "Ever needed music that's also a shitpost? No? Well, too bad, because Blank has ya covered. He can make regular music too, but it isn't Blank music if it doesn't sample catgirl moans."
     },
-    "border-guard": {
+    "border_guard": {
         "full_name": "Canadian Border Guard",
         "sprite_path": "images/characters/border_guard.png",
         "quote": "Out for a rip are ya, bud?",
@@ -422,7 +422,7 @@
         "quote": "...",
         "bio": "Our KENJI (Not sponsored) Yabu Brown Round Cat is a gorgeously soft and squidgy Kawaii plush friend. Velvety soft and squishy, our collectable plush toys are made from high-quality super-soft materials that make them perfect for snuggling. Super-soft and squidgy, our lovable huggable KENJI (Not sponsored) Yabu is the softest and cutest Japanese-inspired Kawaii plushie around. Meow!"
     },
-    "sayori.txt": {
+    "sayori": {
         "full_name": "Sayori",
         "sprite_path": "images/characters/sayori.png",
         "quote": "Welcome to cat paradise",
