@@ -1334,7 +1334,7 @@ label train_dining:
     # mean wanted the following section.
     
     play music prof_kranes_kidnap if_changed
-    music "Prof. Krane’s Kidnap - Tsukasa Tawada"
+    music "Prof. Krane's Kidnap - Tsukasa Tawada"
 
     show mean furious
     mean_offscreen "{i}WHAT?!" with hpunch
@@ -1488,7 +1488,7 @@ label train_wakeup:
     pause 2.0    
 
     play music e_gadds_lab if_changed
-    music "E. Gadd’s Lab - Kazumi Totaka & Shinobu Tanaka"
+    music "E. Gadd's Lab - Kazumi Totaka & Shinobu Tanaka"
 
     show tate sheepish
     show cs disappointed flipped
@@ -2566,7 +2566,7 @@ label train_on_top:
 #        $mean_text = "It's all over,{w=0.25} lawbreaker!"
 #        $mean_fun_text = "Your spree is at an end.{w=0.25} I'll take any stolen goods you have.{w=0.25} The next move is yours--{w=0.5} Pay your fine,{w=0.25} or I'll haul you away!"
 #    elif random == 3:
-#        $mean_text = "Stop,{w=0.25} you’ve violated the law."
+#        $mean_text = "Stop,{w=0.25} you've violated the law."
 #        $mean_fun_text = "Pay the court a fine,{w=0.25} or serve your sentence.{w=0.25} Your stolen goods are now forfeit."
 #    else:
 #        $mean_text = "Stop right there!"

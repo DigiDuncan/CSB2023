@@ -36,7 +36,7 @@
 
         /*********** Menus ***********/
         "bubble_tea" : {
-            file: "audio/bubble_tea.ogg",
+            file: "bubble_tea.ogg",
             title: "Bubble Tea",
             artist: "dark cat",
             tags: ["Menus"],
@@ -44,24 +44,31 @@
         },
 
         /*********** Misc. ***********/
-
+        "space_classroom" : {
+            file: "space_classroom.ogg",
+            title: "Space Classroom",
+            artist: "Dan Salvato",
+            tags: ["Misc.", "CSBIII DX: BTTF"],
+            album_art: "ddlc.png"
+        },
+        
         /*********** CSBI ***********/
         "lets_hear_my_baby" : {
-            file: "audio/lets_hear_my_baby.ogg",
+            file: "lets_hear_my_baby.ogg",
             title: "Let's hear my baby",
             artist: "Walkman",
             tags: ["CSBI"],
             album_art: "tracker.png"
         },
         "canyon" : {
-            file: "audio/canyon.ogg",
+            file: "canyon.ogg",
             title: "CANYON.MID",
             artist: "George Stone",
             tags: ["CSBI"],
             album_art: "windows.png"
         },
         "summer_clearance_sale" : {
-            file: "audio/bestmusicu.ogg",
+            file: "bestmusicu.ogg",
             title: "Summer Clearance Sale",
             artist: "BEST MUSIC",
             tags: ["CSBI"],
@@ -71,7 +78,7 @@
             file: "scales_of_joy.ogg",
             title: "scales of joy.mod",
             artist: "Mel O Dee",
-            tags: ["CSBI"],
+            tags: ["CSBI", "CSBIII DX: BTTF", "Fun Values"],
             album_art: "tracker.png"
         },
         "hohsis_theme" : {
@@ -330,6 +337,13 @@
         },
 
         /*********** CSBIII: Country ***********/
+        "albu" : {
+            file: "albuquerque.ogg",
+            title: "Albuquerque",
+            artist: "Weird Al Yankovic",
+            tags: ["CSBIII: Country", "New In DX", "Fun Values"],
+            album_art: "weirdal.png"
+        },
         "wool_gloves" : {
             file: "wool_gloves.ogg",
             title: "Wool Gloves",
@@ -398,7 +412,7 @@
             file: "muumin_tani_fuyu.ogg",
             title: "Muumin Tani Fuyu",
             artist: "Sumio Shiratori",
-            tags: ["CSBIII: Country"],
+            tags: ["CSBIII: Country", "CSBIII DX: BTTF", "Fun Values"],
             album_art: "moomin.png"
         },
         "snufkin" : {
@@ -531,7 +545,7 @@
         }, 
         "pokey" : {
             file: "pokey.ogg",
-            title: "Pokey’s House",
+            title: "Pokey's House",
             artist: "Keiichi Suzuki",
             tags: ["CSBIII: East", "CSBIII: South"],
             album_art: "earthbound.png"
@@ -666,15 +680,15 @@
         },
         "gold_room" : {
             file: "gold_room.ogg",
-            title: "You’re At A Ball In The Gold Room",
-            artist: "Nemo’s Dreamscapes",
+            title: "You're At A Ball In The Gold Room",
+            artist: "Nemo's Dreamscapes",
             tags: ["CSBIII: Fired"],
             album_art: "csbi.png"
         },
         "sweet_victory" : {
             file: "sweet_victory.ogg",
-            title: "You’re At A Ball In The Gold Room",
-            artist: "Nemo’s Dreamscapes",
+            title: "You're At A Ball In The Gold Room",
+            artist: "Nemo's Dreamscapes",
             tags: ["CSBIII: Fired"],
             album_art: "csbi.png"
         },
@@ -998,8 +1012,90 @@
         },
 
         /*********** CSBIII DX: BTTF (After Story) ***********/
+        "lets_hear_spring" : {
+            file: "letshearspring.ogg",
+            title: "Let's Hear My Baby: Spring Remix",
+            artist: "Pakoo",
+            tags: ["CSBIII DX: BTTF", "New In DX"],
+            album_art: "csbii.png"
+        },
+        "echoing_spring" : {
+            file: "echoingspring.ogg",
+            title: "Echoing: Spring Remix",
+            artist: "Pakoo",
+            tags: ["CSBIII DX: BTTF", "New In DX"],
+            album_art: "csbii.png"
+        },
+        "alien_atmosphere" : {
+            file: "alien_atmosphere.ogg",
+            title: "Alien Atmosphere",
+            artist: "Dr. Awesome",
+            tags: ["CSBIII DX: BTTF", "New In DX"],
+            album_art: "awesome.png"
+        },
+        "apple_kid" : {
+            file: "apple_kid.ogg",
+            title: "Apple Kid",
+            artist: "Keiichi Suzuki",
+            tags: ["CSBIII DX: BTTF", "New In DX"],
+            album_art: "earthbound.png"
+        },
+        "ten_feet_away" : {
+            file: "10_feet_away.ogg",
+            title: "10 Feet Away",
+            artist: "Dr. Awesome",
+            tags: ["CSBIII DX: BTTF", "New In DX"],
+            album_art: "awesome.png"
+        },
+        "hitsquad_2" : {
+            file: "hitsquad_2.ogg",
+            title: "Hitsquad 2",
+            artist: "Dr. Awesome",
+            tags: ["CSBIII DX: BTTF", "New In DX"],
+            album_art: "awesome.png"
+        },
+        "get_the_funk" : {
+            file: "get_the_funk.ogg",
+            title: "Get The Funk",
+            artist: "Dr. Awesome",
+            tags: ["CSBIII DX: BTTF", "New In DX", "Minigames"],
+            album_art: "awesome.png"
+        },
+        "interference2" : {
+            file: "interference.ogg",
+            title: "Interference",
+            artist: "Sanity",
+            tags: ["CSBIII DX: BTTF", "CSBIII DX: Finale", "New In DX"],
+            album_art: "interference.png"
+        },
+
         /*********** CSBIII DX: Christmas ***********/
+        /* pakoo pls check if this song title is correct? */
+        "lets_hear_winter" : {
+            file: "lets_hear_my_christ.ogg",
+            title: "Let's Hear My Baby: Spring Remix",
+            artist: "Pakoo",
+            tags: ["CSBIII DX: BTTF", "New In DX"],
+            album_art: "csbii.png"
+        },
         /*********** CSBIII DX: Finale ***********/
+        /* is this title/artist correct? */
+        "funvalueland" : {
+            file: "funvalueland.ogg",
+            title: "SPOT.FASSIMRD",
+            artist: "Fun Value Land",
+            tags: ["CSBIII DX: BTTF", "New In DX"],
+            album_art: "csbii.png"
+        },
+        /* unsure how to credit this track yet, it's not used in the script yet */
+        /*"unobtrusive_fun" : {
+            file: "unobtrusive_fun.ogg",
+            title: "SPOT.FASSIMRD",
+            artist: "Fun Value Land",
+            tags: ["CSBIII DX: BTTF", "New In DX"],
+            album_art: "csbii.png"
+        },*/
+
         /*********** CSBIII DX: Kuwait ***********/
         "tmwstw" : {
             file: "tmwstw.ogg",
@@ -1010,10 +1106,11 @@
         },
 
         /*********** CSBIII DX: Rockstar II ***********/
+
         /*********** CSBIII DX: Speedrun (Vibration) ***********/
         "lets_hear_my_sped" : {
             file: "lets_hear_my_sped.ogg",
-            title: "Let’s Hear My Speed",
+            title: "Let's Hear My Speed",
             artist: "Pakoo",
             tags: ["CSBIII DX: Speedrun", "New In DX"],
             album_art: "vibration.png"
@@ -1099,14 +1196,14 @@
         },
         "prof_kranes_kidnap" : {
             file: "prof_kranes_kidnap.ogg",
-            title: "Prof. Krane’s Kidnap",
+            title: "Prof. Krane's Kidnap",
             artist: "Tsukasa Tawada",
             tags: ["CSBIII DX: Train", "New In DX"],
             album_art: "pokemonxd.png"
         },
         "e_gadds_lab" : {
             file: "e_gadds_lab.ogg",
-            title: "E. Gadd’s Lab",
+            title: "E. Gadd's Lab",
             artist: "Kazumi Totaka & Shinobu Tanaka",
             tags: ["CSBIII DX: Train", "New In DX"],
             album_art: "luigismansion.png"

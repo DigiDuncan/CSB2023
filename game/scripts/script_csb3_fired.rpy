@@ -661,7 +661,7 @@ label fired_hotel_lobby_2:
     show cs at mid_mid_left
     with dissolve
     play music gold_room volume 0.5
-    music You’re At A Ball In The Gold Room - Nemo’s Dreamscapes
+    music You're At A Ball In The Gold Room - Nemo's Dreamscapes
     if fun_value(FUN_VALUE_MUSIC):
         n "As they walk through the gold room to their ball, they hum their newest song to themselves."
     else:
@@ -851,7 +851,7 @@ label fired_howie:
     show arceus at right
     with dissolve
     play music gold_room volume 0.5
-    music You’re At A Ball In The Gold Room - Nemo’s Dreamscapes
+    music You're At A Ball In The Gold Room - Nemo's Dreamscapes
     n "Howie walks into the lobby."
     show howie flipped at left with moveinleft
     howie "You guys ready?"
@@ -935,7 +935,7 @@ label fired_signed_the_contract:
     show howie at right
     with dissolve
     play music gold_room volume 0.5
-    music You’re At A Ball In The Gold Room - Nemo’s Dreamscapes
+    music You're At A Ball In The Gold Room - Nemo's Dreamscapes
     howie "Well, your first stop is Vancouver."
     cs "Vancouver? Where are we playing?"
     n "Howie reads from his iPad."
@@ -1025,7 +1025,7 @@ label fired_first_tour_day:
     show cs at mid_mid_left
     with moveinleft
     play music gold_room volume 0.5
-    music You’re At A Ball In The Gold Room - Nemo’s Dreamscapes
+    music You're At A Ball In The Gold Room - Nemo's Dreamscapes
     show howie at right with moveinright
     howie "You boys ready to go?"
     cs "Ready as we'll ever be."

@@ -512,7 +512,7 @@ label dx_after_competiton_start:
     cultist "I hope so."
     n "CS runs off to find competitors."
     scene cult_con with dissolve
-    play music "audio/10_feet_away_1.wav" if_changed
+    play music "audio/10_feet_away_1.ogg" if_changed
     show cs cultist at center with moveinleft
     $ con_start = True
     cs "Alright, so, there are a few cults I can challenge here."

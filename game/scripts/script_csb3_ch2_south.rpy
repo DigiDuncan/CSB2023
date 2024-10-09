@@ -1148,7 +1148,7 @@ label south_noairport:
     show mika at center with vpunch
     mika "Oi, chaps!"
     play music pokey volume 0.6
-    music Pokey’s House - Keiichi Suzuki
+    music "Pokey's House - Keiichi Suzuki"
     mika "Ok, so, CS looks out the window and he spots a yellow Hummer."
     mika "The guy, with his arm out the window, says \"Dude, this car kicks ass! And I can watch Madagascar while driving!\""
     show arceus worried
