@@ -1262,14 +1262,14 @@
             "file": "insomnia.ogg",
             "title": "Insomnia",
             "artist": "W∆W",
-            "tags": ["CSBIII DX: Train", "New In DX"],
+            "tags": ["CSBIII DX: Train", "New In DX", "Fun Values"],
             "album_art": "moon.png"
         },
         "space" : {
             "file": "space.ogg",
             "title": "Space",
             "artist": "W∆W",
-            "tags": ["CSBIII DX: Train", "New In DX", "Minigames"],
+            "tags": ["CSBIII DX: Train", "New In DX", "Fun Values", "Minigames"],
             "album_art": "moon.png"
         },
         /* this space reserved for Tate EX fight phase 2 bgm */
