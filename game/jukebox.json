@@ -613,7 +613,7 @@
             tags: ["CSBIII: South"],
             album_art: "touhou15.png"
         },
-        "lego_island" {
+        "lego_island" : {
             file: "lego_island.ogg",
             title: "Lego Island Theme",
             artist: "Lorin Nelson",
@@ -622,14 +622,14 @@
         },
 
         /*********** CSBIII DX: Bronson ***********/
-        "upon_me" {
+        "upon_me" : {
             file: "upon_me.ogg",
             title: "Upon Me",
             artist: "Dr. Awesome",
             tags: ["CSBIII DX: Bronson", "New In DX"],
             album_art: "awesome.png"
         },
-        "error" {
+        "error" : {
             file: "error.ogg",
             title: "Prophet ERROR",
             artist: "Pakoo",
