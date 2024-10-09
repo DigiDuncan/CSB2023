@@ -73,7 +73,7 @@
     "bubble": {
         "full_name": "Bub Ble",
         "sprite_path": "secret/bubble.png",
-        "quote": "{size=144}{bt=a3-p10-s4}\"\u00e6\"{/bt}{/size}",
+        "quote": "{size=144}{bt=a3-p10-s4}\u00e6{/bt}{/size}",
         "bio": "Also known as Jade, this massive slime has been seen roaming around Las Vegas. Only a few claim to have spotted her, which is funny, since she is about a mile tall."
     },
     "carguy": {
@@ -306,6 +306,7 @@
         "sprite_path": "images/characters/mean/mean.png",
         "quote": "I like trains!",
         "bio": "Alongside Mika, Mean is your train dude. He's obsessed with trains and can go on for hours if you ask him about train facts. He is also very spiky.\n\nMean and Tate spend a lot of time doing random wacky things, usually train-related.",
+        "dx_bio": "Being a sea urchin, Mean naturally also enjoys sea shanties.",
         "zoom": 1.333
     },
     "mean_human": {
@@ -444,7 +445,7 @@
         "full_name": "Sheriff",
         "sprite_path": "images/characters/sheriff.png",
         "quote": "I need pictures of CS, ASAP!",
-        "bio": "Your hardened, toughened up sheriff. Not too much to say about him. He has an air about him that makes you not want to be on his bad side."
+        "bio": "Your hardened, toughened-up sheriff. Not too much to say about him. He has an air about him that makes you not want to end up on his bad side."
     },
     "smiley": {
         "full_name": "Smiley The Hip Hop Clown",
@@ -482,7 +483,7 @@
         "sprite_path": "images/characters/tate/tatehappy.png",
         "quote": "a",
         "bio": "Better known as Tate, alleZSoyez is a close friend of CS. Impatient, excitable, and always hungry, Tate will try their best to help their friends whenever they can... as long as there's a tasty cheeseburger and a cozy nap on the floor waiting for them at the end. While Tate isn't good at fighting or driving, when all else fails, they can always let out a good {i}screm!{/i}",
-        "dx_bio": "\"Awawa!\"\n\nWhile Tate is known to stay eerily calm in the face of combat, when it comes to more mundane stressors, they become a bit of a\n{sc=1}quick-tempered anxiety-riddled control freak.{/sc} Just a little bit, of course. Thankfully, Mean can usually reel them back in again."
+        "dx_bio": "\"Awawa!\"\n\nWhile Tate is known to stay eerily calm during world-ending crises, when it comes to more mundane stressors, they become a bit of a\n{sc=1}quick-tempered anxiety-riddled control freak.{/sc}"
     },
     "tate_ex": {
         "full_name": "Tate EX",
