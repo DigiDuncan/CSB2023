@@ -3,7 +3,8 @@
         {
             "full-name":"Addy",
             "sprite-path":"images/characters/pakoo/pakoo.png",
-            "bio":"\"Hold on, I remember this...\"\n\nNot to be confused with Pakoo, Addy is Pakoo's counterpart who runs a giant underground facility full of archived memories of Pakoo's entire life. Talk about the world's biggest autobiography!"
+            "bio":"\"Hold on, I remember this...\"\n\nNot to be confused with Pakoo, Addy is Pakoo's counterpart who runs a giant underground facility full of archived memories of Pakoo's entire life. Talk about the world's biggest autobiography!",
+            "dx-bio":"\n\nThe creator of the story. The Scriptwriter. Other than archiving their life, they've taken interest in writing an adventure novel. This one, to be precise. When they tried to give CS an interesting life by writing him into this crazy story, it seems they didn't take CS' feelings into consideration."
         }
     ,
     "alicia":
@@ -62,7 +63,8 @@
         {
             "full-name":"Billy Mays",
             "sprite-path":"images/characters/billy.png",
-            "bio":"\"Hi, Billy Mays here!\"\n\nBilly perfected the art of the salespitch 10 years ago. He is a master of the infomerical. Since finding success, he has moved on to greater horizons. He has been seen recently travelling the country, living off the various gadgets he sold in the past."
+            "bio":"\"Hi, Billy Mays here!\"\n\nBilly perfected the art of the salespitch 10 years ago. He is a master of the infomerical. Since finding success, he has moved on to greater horizons. He has been seen recently travelling the country, living off the various gadgets he sold in the past.",
+            "dx-bio":"The Billy, after the Billy that made his mark. Throughout history, Perfect Billy would assign a host to be \"Billy Mays\". Although most of us only know the one from the infomericals, when he passed away, this Billy took his place. "
 
         }
     ,
@@ -368,7 +370,8 @@
         {
             "full-name":"Michael Rosen",
             "sprite-path":"images/characters/michael.png",
-            "bio":"\"I love chocolate cake!\"\n\nMr. Rosen is a poem fanatic. He's got a story to tell whenever you meet him. This man will pull the craziest tale from nothing in a matter of seconds. How does he do this? What secret talent does he have? All that is certain is that he needs his chocolate cake."
+            "bio":"\"I love chocolate cake!\"\n\nMr. Rosen is a poem fanatic. He's got a story to tell whenever you meet him. This man will pull the craziest tale from nothing in a matter of seconds. How does he do this? What secret talent does he have? All that is certain is that he needs his chocolate cake.",
+            "dx-bio":"The prophet that predicted CS' Life, and the end of the world."
         }
     ,
     "midge":
@@ -431,14 +434,16 @@
         {
             "full-name":"Pakoo",
             "sprite-path":"images/characters/pakoo/pakoo.png",
-            "bio":"\"I remember this one time...\"\n\nPakoo remembers everything. They keep track of pretty much every event that has happened to them. They plan to build a whole archive documenting their entire life. Sadly, they can't remember what happened about five minutes ago."
+            "bio":"\"I remember this one time...\"\n\nPakoo remembers everything. They keep track of pretty much every event that has happened to them. They plan to build a whole archive documenting their entire life. Sadly, they can't remember what happened about five minutes ago.",
+            "dx-bio":"Really likes Christmas."
         }
     ,
     "pencil":
         {
             "full-name":"Pencil Greeter",
             "sprite-path":"images/characters/pencil.png",
-            "bio":"\"Have a free pencil!\"\n\nOne has to wonder how this man lives his life when he's not at PencilCon. Could he have a pencil-shaped house? Is everything he owns pencil-themed? Perhaps he's just a regular person with a passion for pencils. He really hates it when anyone brings up pens."
+            "bio":"\"Have a free pencil!\"\n\nOne has to wonder how this man lives his life when he's not at PencilCon. Could he have a pencil-shaped house? Is everything he owns pencil-themed? Perhaps he's just a regular person with a passion for pencils. He really hates it when anyone brings up pens.",
+            "dx-bio":"Leader of the Pencil Cult, captures people to try to grow their group to win the local cult convention."
         }
     ,
     "peppino":
