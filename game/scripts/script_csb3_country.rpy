@@ -347,6 +347,7 @@ label england_first:
     cs "Man, this kinda sucks!"
     show arceus at mid_right with moveinright
     play music stal volume 0.4
+    music stal - C418
     arceus "Hey, CS? Is that you?"
     show cs
     cs "Oh, my God! Why-- How are you here?"
@@ -1659,7 +1660,7 @@ label japan_miku_pizza:
     cs "What do you mean she's not real? She was dancing with you in the commerical!"
     scott_pres "I know, but that was movie magic. I'm sorry--{w=0.5}{nw}"
     play music real_world
-    music Real World - Project SEKAI
+    music Real World - Project SEKAI COLORFUL STAGE!
     show cs
     show miku at center with moveinbottom
     show miku with vpunch
@@ -1853,6 +1854,7 @@ label sweden:
     with dissolve
     show cs at center with moveinleft
     play music creative_exercise loop volume 0.3
+    music Creative Exercise - Hirokazu Tanaka
     cs "Wow! There's so many people around."
     if fun_value(FUN_VALUE_MUSIC):
         cs "I guess I should try to find a creative exercise to do..."
@@ -2011,7 +2013,7 @@ label sweden_aurora_borealis:
         moomin "Mama and Papa have more family, but they don't live around here."
     moomin "Anyway, Snufkin should be right over here."
     show snufkin at right with moveinright
-    play music snufin volume 0.5
+    play music snufkin volume 0.5
     music Snufkin The Traveler - Sumio Shiratori
     show moomin flipped
     if fun_value(FUN_VALUE_MUSIC):

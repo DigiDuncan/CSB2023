@@ -864,7 +864,7 @@ label true_pennsylvania:
     n "CS walks to the backstage to prepare to compete when he notices a familiar face."
     show digi at right with moveinright
     play music pokey volume 0.6
-    music Pokeys House - Keiichi Suzuki
+    music Pokey’s House - Keiichi Suzuki
     if fun_value(FUN_VALUE_MUSIC):
         cs "Wait, Pokey?"
         digi "Huh?"

@@ -2087,7 +2087,7 @@ label asset_debugger:
         $ sfxtotal += 1
         play sound sfx_tape_rewind
         $ musictotal += 1
-        play music snufin
+        play music snufkin
         $ bgtotal += 1
         scene pizzaplace
         show cs at t_boom

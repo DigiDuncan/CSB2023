@@ -123,7 +123,7 @@
             file: "stal.ogg",
             title: "stal",
             artist: "C418",
-            tags: ["CSBII"],
+            tags: ["CSBII", "CSBIII: Country"],
             album_art: "minecraft.png"
         },
         "moongazer" : {
@@ -191,13 +191,6 @@
             tags: ["CSBIII: AI"],
             album_art: "deltarune.png"
         },
-        "chase" : {
-            file: "chase.ogg",
-            title: "Cliffs",
-            artist: "Toby Fox",
-            tags: ["CSBIII: AI", "CSBIII: Country"],
-            album_art: "deltarune.png"
-        },
         "friendship" : {
             file: "friendship.ogg",
             title: "Friendship",
@@ -253,7 +246,7 @@
             file: "police_station.ogg",
             title: "Police Station",
             artist: "Lorin Nelson",
-            tags: ["CSBIII"],
+            tags: ["CSBIII", "CSBIII: Friend"],
             album_art: "legoisland.png"
         },
         "echoing" : {
@@ -337,6 +330,107 @@
         },
 
         /*********** CSBIII: Country ***********/
+        "wool_gloves" : {
+            file: "wool_gloves.ogg",
+            title: "Wool Gloves",
+            artist: "imagiro",
+            tags: ["CSBIII: Country"],
+            album_art: "woolgloves.png"
+        },
+        "conflict" : {
+            file: "conflict.ogg",
+            title: "Conflict",
+            artist: "David Vanacore",
+            tags: ["CSBIII: Country"],
+            album_art: "conflict.png"
+        },
+        "tumultuous" : {
+            file: "tumultuous.ogg",
+            title: "Tumultuous",
+            artist: "David Vanacore",
+            tags: ["CSBIII: Country"],
+            album_art: "conflict.png"
+        },
+        "lisbon_fever" : {
+            file: "lisbon_fever.ogg",
+            title: "Lisbon Fever",
+            artist: "Dr. Awesome",
+            tags: ["CSBIII: Country"],
+            album_art: "awesome.png"
+        },
+        "yuuka_town" : {
+            file: "yuuka_town.ogg",
+            title: "village_1_JP013BM",
+            artist: "Yuuka Kazami",
+            tags: ["CSBIII: Country", "New In DX"],
+            album_art: "yuuka_town.png"
+        },
+        "automatic_love" : {
+            file: "automatic_love.ogg",
+            title: "Automatic Love",
+            artist: "Siix0",
+            tags: ["CSBIII: Country"],
+            album_art: "csbi.png"
+        },
+        "chase" : {
+            file: "chase.ogg",
+            title: "Cliffs",
+            artist: "Toby Fox",
+            tags: ["CSBIII: Country", "CSBIII: AI"],
+            album_art: "deltarune.png"
+        },
+        "neko_to_sanpo" : {
+            file: "neko_to_sanpo.ogg",
+            title: "Neko To Sanpo",
+            artist: "NEKO WORKs",
+            tags: ["CSBIII: Country"],
+            album_art: "nekopara.png"
+        },
+        /* should we include the track used in karaoke here? */
+        "real_world" : {
+            file: "real_world.ogg",
+            title: "Real World",
+            artist: "Project SEKAI COLORFUL STAGE!",
+            tags: ["CSBIII: Country"],
+            album_art: "projectsekai.png"
+        },
+        "muumin_tani_fuyu" : {
+            file: "muumin_tani_fuyu.ogg",
+            title: "Muumin Tani Fuyu",
+            artist: "Sumio Shiratori",
+            tags: ["CSBIII: Country"],
+            album_art: "moomin.png"
+        },
+        "snufkin" : {
+            file: "snufkin.ogg",
+            title: "Snufkin The Traveler",
+            artist: "Sumio Shiratori",
+            tags: ["CSBIII: Country"],
+            album_art: "moomin.png"
+        },
+        "lady_of_the_cold" : {
+            file: "lady_of_the_cold.ogg",
+            title: "Lady Of The Cold",
+            artist: "Sumio Shiratori",
+            tags: ["CSBIII: Country"],
+            album_art: "moomin2.png"
+        },
+        "afternoon_hills" : {
+            file: "afternoon_hills.ogg",
+            title: "Afternoon Hills",
+            artist: "BEST MUSIC",
+            tags: ["CSBIII: Country"],
+            album_art: "summerclearance.png"
+        },
+        "xddcc" : {
+            file: "xddcc.ogg",
+            title: "XDDCC",
+            artist: "Gooseworx",
+            tags: ["CSBIII: Country"],
+            album_art: "digitalcircus.png"
+        },
+
+
         /*********** CSBIII: East (True) ***********/
         "mm_select" : {
             file: "mm_select.ogg",
@@ -370,7 +464,7 @@
             file: "home_depot.ogg",
             title: "Candle World",
             artist: "Kikiyama",
-            tags: ["CSBIII: East"],
+            tags: ["CSBIII: East", "CSBIII: Country"],
             album_art: "yume.png"
         }, 
         "blazing_corridor" : {
@@ -412,7 +506,7 @@
             file: "funiculi_holiday.ogg",
             title: "Funiculi Holiday",
             artist: "ClascyJitto",
-            tags: ["CSBIII: East"],
+            tags: ["CSBIII: East", "CSBIII: Country"],
             album_art: "pizzatower.png"
         }, 
         "speedy_comet" : {
@@ -438,7 +532,7 @@
         }, 
         "pokey" : {
             file: "pokey.ogg",
-            title: "Pokey's House",
+            title: "Pokey’s House",
             artist: "Keiichi Suzuki",
             tags: ["CSBIII: East", "CSBIII: South"],
             album_art: "earthbound.png"
@@ -454,7 +548,7 @@
             file: "park_theme.ogg",
             title: "Park Theme",
             artist: "Lorin Nelson",
-            tags: ["CSBIII: East", "CSBIII: South", "CSBIII DX: Train"],
+            tags: ["CSBIII: East", "CSBIII: South", "CSBIII: Country", "CSBIII DX: Train"],
             album_art: "legoisland.png"
         },
         "hohsis_remix" : {
@@ -495,15 +589,169 @@
         
         /*********** CSBIII: Fired ***********/
         /*********** CSBIII: Friend ***********/
-
+        "morning_highway" : {
+            file: "morning_highway.ogg",
+            title: "Morning Highway",
+            artist: "BEST MUSIC",
+            tags: ["CSBIII: Friend"],
+            album_art: "summerclearance.png"
+        },
+        "creative_exercise" : {
+            file: "creative_exercise.ogg",
+            title: "Creative Exercise",
+            artist: "Hirokazu Tanaka",
+            tags: ["CSBIII: Friend", "CSBIII: Country"],
+            album_art: "mariopaint.png"
+        },
+        "pixel_peeker_polka" : {
+            file: "creative_exercise.ogg",
+            title: "Pixel Peeker Polka",
+            artist: "Kevin MacLeod",
+            tags: ["CSBIII: Friend"],
+            album_art: "kevin.png"
+        },
+        "nordic_report_1" : {
+            file: "nordic_report_1.ogg",
+            title: "Nordic Report 1",
+            artist: "Lizardking",
+            tags: ["CSBIII: Friend", "Minigames"],
+            album_art: "lizardking.png"
+        },
+        "nordic_report_2" : {
+            file: "nordic_report_2.ogg",
+            title: "Nordic Report 2",
+            artist: "Lizardking",
+            tags: ["CSBIII: Friend", "Minigames"],
+            album_art: "lizardking.png"
+        },
+        "Lowbudget_song" : {
+            file: "lowbudget_song.ogg",
+            title: "Lowbudget Song",
+            artist: "Dr. Awesome",
+            tags: ["CSBIII: Friend"],
+            album_art: "awesome.png"
+        }, 
+        "klaxon_beat" : {
+            file: "klaxon_beat.ogg",
+            title: "Klaxon Beat",
+            artist: "Kelly Bailey",
+            tags: ["CSBIII: Friend", "CSBIII: Country"],
+            album_art: "half.png"
+        }, 
+        "cp_violation" : {
+            file: "cp_violation.ogg",
+            title: "CP Violation",
+            artist: "Kelly Bailey",
+            tags: ["CSBIII: Friend"],
+            album_art: "half.png"
+        }, 
+        "mm_complete" : {
+            file: "mm_complete.ogg",
+            title: "Mm Complete",
+            artist: "Matthew Simmonds",
+            tags: ["CSBIII: Friend"],
+            album_art: "tracker.png"
+        }, 
+        "compulsion_to_obey" : {
+            file: "compulsion_to_obey.ogg",
+            title: "Compulsion To Obey",
+            artist: "Lizardking",
+            tags: ["CSBIII: Friend", "Minigames"],
+            album_art: "lizardking.png"
+        }, 
+        "for_the_people" : {
+            file: "for_the_people.ogg",
+            title: "Compulsion To Obey",
+            artist: "Lizardking",
+            tags: ["CSBIII: Friend", "Minigames"],
+            album_art: "lizardking.png"
+        }, 
+        "tuna_fish" : {
+            file: "tuna_fish.ogg",
+            title: "Tuna Fish",
+            artist: "Dr. Awesome",
+            tags: ["CSBIII: Friend"],
+            album_art: "awesome.png"
+        }, 
+        "full_rulle_med_klas" : {
+            file: "full_rulle_med_klas.ogg",
+            title: "Full Rulle Med Klas",
+            artist: "Lizardking",
+            tags: ["CSBIII: Friend"],
+            album_art: "lizardking.png"
+        }, 
         "dense_woods_b" : {
-            file: "dense_woods_b.og",
+            file: "dense_woods_b.ogg",
             title: "Dense Woods B",
             artist: "Kikiyama",
             tags: ["CSBIII: Friend", "CSBIII: Michigan"],
             album_art: "yume.png"
         },
-
+        "desert_dawn" : {
+            file: "desert_dawn.ogg",
+            title: "Desert Dawn",
+            artist: "Lizardking",
+            tags: ["CSBIII: Friend", "Minigames"],
+            album_art: "lizardking.png"
+        },
+        /* is this correct? */
+        "dinerfight" : {
+            file: "dinerfight.ogg",
+            title: "Diner Fight",
+            artist: "Lizardking",
+            tags: ["CSBIII: Friend", "Minigames"],
+            album_art: "lizardking.png"
+        },
+        "la_by_night" : {
+            file: "la_by_night.ogg",
+            title: "L.A. By Night",
+            artist: "Dr. Awesome",
+            tags: ["CSBIII: Friend"],
+            album_art: "awesome.png"
+        },
+        "thousand_march" : {
+            file: "thousand_march.ogg",
+            title: "Thousand March",
+            artist: "Mr. Sauceman",
+            tags: ["CSBIII: Friend", "Minigames"],
+            album_art: "pizzatower.png"
+        },
+        "triage_at_dawn" : {
+            file: "triage_at_dawn.ogg",
+            title: "Triage At Dawn",
+            artist: "Kelly Bailey",
+            tags: ["CSBIII: Friend"],
+            album_art: "half.png"
+        },
+        "the_whale" : {
+            file: "the_whale.ogg",
+            title: "The Whale",
+            artist: "Dr. Awesome",
+            tags: ["CSBIII: Friend"],
+            album_art: "awesome.png"
+        },
+        "prophet_2001" : {
+            file: "prophet_2001.ogg",
+            title: "Prophet 2001",
+            artist: "Dr. Awesome",
+            tags: ["CSBIII: Friend"],
+            album_art: "awesome.png"
+        },
+        "trans_atlantic" : {
+            file: "trans_atlantic.ogg",
+            title: "Trans Atlantic",
+            artist: "Lizardking",
+            tags: ["CSBIII: Friend", "Minigames"],
+            album_art: "lizardking.png"
+        },
+        /* is this correct? */
+        "prophetpart2" : {
+            file: "prophetpart2.ogg",
+            title: "Prophet 2001 (Part 2)",
+            artist: "Dr. Awesome",
+            tags: ["CSBIII: Friend"],
+            album_art: "awesome.png"
+        },
 
         /*********** CSBIII: Michigan ***********/
         "honk_song" : {
@@ -603,7 +851,7 @@
             file: "airport.ogg",
             title: "Airport Infiltration",
             artist: "Andy Blythe & Marten Joustra",
-            tags: ["CSBIII: South"],
+            tags: ["CSBIII: South", "CSBIII: Country"],
             album_art: "toystory.png"
         },
         "clownpiece" : {

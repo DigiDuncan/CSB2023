@@ -769,7 +769,7 @@ label friend2_between_2:
     music end
     scene war_torn_5
     show cs worried at center
-    show tate at mid_left
+    show tate srs at mid_left
     show arceus flipped at left
     with dissolve
     play music the_whale loop volume 0.6
