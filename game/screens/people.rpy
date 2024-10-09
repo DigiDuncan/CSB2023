@@ -35,9 +35,9 @@ screen people_nav():
                         # please rewrite this better if you can? - tate
                         try:
                             if name_map[k]['dx'] == True:
-                                name_label = "{image=unread.png}{image=gui/dx_text.png} " + name_map[k]['full-name'] if k not in persistent.read else "{image=gui/dx_text.png} " + name_map[k]['full-name']
+                                name_label = "{image=unread.png}{image=gui/dx_text.png} " + name_map[k]['full_name'] if k not in persistent.read else "{image=gui/dx_text.png} " + name_map[k]['full_name']
                         except:
-                            name_label = "{image=unread.png}" + name_map[k]['full-name'] if k not in persistent.read else name_map[k]['full-name']
+                            name_label = "{image=unread.png}" + name_map[k]['full_name'] if k not in persistent.read else name_map[k]['full_name']
                     if k == "iris":
                         textbutton name_label action Function(mark_read, k), ShowMenu("person", k), ShowMenu("fake_error", "people.rpy", 126, "`bios/iris.txt` could not be rendered as a Text object.", "Hi, I'm Iris, a cosmic being with interest in the happenings of this reality, as well as some of the people involved in this story.\nDoes that sound too formal? I don't know. Hey, Digi, writing this shit's hard. You can fill in the rest from here.", _transition = determination)
                     else:
@@ -76,7 +76,7 @@ screen person(l):
     style_prefix "codex"
 
     # TODO: make this line easier to read somehow
-    label name_map[l]['full-name']
+    label name_map[l]['full_name']
 
     tag menu
     use people_nav
@@ -97,24 +97,21 @@ screen person(l):
             vbox:
                 xsize 800
                 ysize 800
+                text "\"" + name_map[l]["quote"] + "\""
                 python:
                     try:
-                        # DX bio handler
-                        # surely there's a better way to do these things besides nested try??
-                        # but if/else breaks the characters without DX bios. weird. - tate
-                        try:
-                            fetched = name_map[l]["bio"] + "\n\n{image=gui/dx_text.png} " + name_map[l]["dx-bio"]
-                        except:
+                        if "dx_bio" in name_map[l]:
+                            fetched = name_map[l]["bio"] + "\n\n{image=gui/dx_text.png} " + name_map[l]["dx_bio"]
+                        else:
                             fetched = name_map[l]["bio"]
                     except:
                         fetched = "The bio didn't load correctly. Ask Digi to fix the game."
 
                 text (fetched)
 
-            # TODO: fix sprite zoom/align for unnecessary scrolling, as well as:
-            # - sprites that are wider than they are tall (such as top gear crew or pakoo's memories)
-            # - large sprites (such as human mean or tate ex)
-            # - any other edge cases
-            # since i don't know the best way to do all this, i ain't touching it. - tate
-
-            add name_map[l]['sprite-path'] xalign 1.0 yalign 1.0
+            python:
+                z = name_map[l].get("zoom", 1.0) * 0.75
+                x = -1 if name_map[l].get("flip", False) else 1
+                xo = name_map[l].get("xoffset", 0)
+                yo = name_map[l].get("yoffset", 0)
+            add name_map[l]['sprite_path'] xalign 1.0 yalign 1.0 zoom z xzoom x xoffset xo yoffset yo
