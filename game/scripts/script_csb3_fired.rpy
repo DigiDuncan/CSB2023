@@ -1042,6 +1042,7 @@ label fired_first_tour_day:
     cs "Well, it's pretty busy. I doubt we'll run into--"
     show linus at right with moveinright
     play music passport volume 0.5
+    music PASSPORT.MID - George Stone
     linus "Oh good, you guys are finally here. You're [band_name], right?"
     linus "Luke told me about you guys, and I listened to {i}[ep_name]{/i} last night... I really liked, uh, which one was it, {i}[song_name_4]?{/i}"
     linus "Anywho, I...{w=1.0} wait, CS?!"

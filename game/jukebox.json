@@ -158,7 +158,7 @@
             file: "passport.ogg",
             title: "PASSPORT.MID",
             artist: "George Stone",
-            tags: ["CSBII", "CSBIII"],
+            tags: ["CSBII", "CSBIII", "CSBIII: Fired"],
             album_art: "windows.png"
         },
         "passport_ytp" : {
@@ -498,7 +498,7 @@
             file: "track4.ogg",
             title: "Track 4",
             artist: "Weatherscan",
-            tags: ["CSBIII: East", "CSBIII: Michigan"],
+            tags: ["CSBIII: East", "CSBIII: Michigan", "CSBIII: Fired"],
             album_art: "weather.png"
         }, 
         "funiculi_holiday" : {
@@ -547,7 +547,7 @@
             file: "park_theme.ogg",
             title: "Park Theme",
             artist: "Lorin Nelson",
-            tags: ["CSBIII: East", "CSBIII: South", "CSBIII: Country", "CSBIII DX: Train"],
+            tags: ["CSBIII: East", "CSBIII: South", "CSBIII: Country", "CSBIII DX: Train", "CSBIII: Fired"],
             album_art: "legoisland.png"
         },
         "hohsis_remix" : {
@@ -963,7 +963,7 @@
             file: "airport.ogg",
             title: "Airport Infiltration",
             artist: "Andy Blythe & Marten Joustra",
-            tags: ["CSBIII: South", "CSBIII: Country"],
+            tags: ["CSBIII: South", "CSBIII: Country", "CSBIII DX: Kuwait"],
             album_art: "toystory.png"
         },
         "clownpiece" : {
@@ -1001,9 +1001,174 @@
         /*********** CSBIII DX: Christmas ***********/
         /*********** CSBIII DX: Finale ***********/
         /*********** CSBIII DX: Kuwait ***********/
+        "tmwstw" : {
+            file: "tmwstw.ogg",
+            title: "The Man Who Sold The World",
+            artist: "Midge Ure",
+            tags: ["CSBIII DX: Kuwait", "New In DX"],
+            album_art: "mgsv.png"
+        },
+
         /*********** CSBIII DX: Rockstar II ***********/
-        /*********** CSBIII DX: Speedrun ***********/
+        /*********** CSBIII DX: Speedrun (Vibration) ***********/
+        "lets_hear_my_sped" : {
+            file: "lets_hear_my_sped.ogg",
+            title: "Let’s Hear My Speed",
+            artist: "Pakoo",
+            tags: ["CSBIII DX: Speedrun", "New In DX"],
+            album_art: "vibration.png"
+        },
+        "fastbudget_song" : {
+            file: "fastbudget_song.ogg",
+            title: "Fastbudget Song",
+            artist: "Pakoo",
+            tags: ["CSBIII DX: Speedrun", "New In DX"],
+            album_art: "vibration.png"
+        },
+        "fastport" : {
+            file: "fastport.ogg",
+            title: "Fastport.MID",
+            artist: "Pakoo",
+            tags: ["CSBIII DX: Speedrun", "New In DX"],
+            album_art: "vibration.png"
+        },
+        "fasting" : {
+            file: "fasting.ogg",
+            title: "Fasting",
+            artist: "Pakoo",
+            tags: ["CSBIII DX: Speedrun", "New In DX"],
+            album_art: "vibration.png"
+        },
+        "happy_running" : {
+            file: "happy_running.ogg",
+            title: "Happy Running",
+            artist: "Pakoo",
+            tags: ["CSBIII DX: Speedrun", "New In DX"],
+            album_art: "vibration.png"
+        },
+
         /*********** CSBIII DX: Train ***********/
+        "sub_game_select" : {
+            file: "sub_game_select.ogg",
+            title: "Sub−Game Select",
+            artist: "Jun Ishikawa",
+            tags: ["CSBIII DX: Train", "New In DX"],
+            album_art: "kirby64.png"
+        },
+        "outdoors" : {
+            file: "outdoors.ogg",
+            title: "Outdoors",
+            artist: "Miki Obata",
+            tags: ["CSBIII DX: Train", "New In DX"],
+            album_art: "pkmnchannel.png"
+        },
+        "hide_and_seek" : {
+            file: "hide_and_seek.ogg",
+            title: "Hide And Seek",
+            artist: "Chiro",
+            tags: ["CSBIII DX: Train", "New In DX", "Minigames"],
+            album_art: "hideandseek.png"
+        },
+        "ochre_woods_day" : {
+            file: "ochre_woods_day.ogg",
+            title: "Ochre Woods ~ Day",
+            artist: "Miki Obata",
+            tags: ["CSBIII DX: Train", "New In DX"],
+            album_art: "heyyoupikachu.png"
+        },
+        "bedroom_day" : {
+            file: "ochre_woods_day.ogg",
+            title: "Bedroom ~ Day",
+            artist: "Miki Obata",
+            tags: ["CSBIII DX: Train", "New In DX"],
+            album_art: "heyyoupikachu.png"
+        },
+        "item_bounce" : {
+            file: "item_bounce.ogg",
+            title: "Item Bounce",
+            artist: "Akira Miyagawa",
+            tags: ["CSBIII DX: Train", "New In DX"],
+            album_art: "kirbyairride.png"
+        },
+        "krabby_klub" : {
+            file: "krabby_klub.ogg",
+            title: "Krabby Klub",
+            artist: "Tsukasa Tawada",
+            tags: ["CSBIII DX: Train", "New In DX"],
+            album_art: "pokemonxd.png"
+        },
+        "prof_kranes_kidnap" : {
+            file: "prof_kranes_kidnap.ogg",
+            title: "Prof. Krane’s Kidnap",
+            artist: "Tsukasa Tawada",
+            tags: ["CSBIII DX: Train", "New In DX"],
+            album_art: "pokemonxd.png"
+        },
+        "e_gadds_lab" : {
+            file: "e_gadds_lab.ogg",
+            title: "E. Gadd’s Lab",
+            artist: "Kazumi Totaka & Shinobu Tanaka",
+            tags: ["CSBIII DX: Train", "New In DX"],
+            album_art: "luigismansion.png"
+        },
+        "onbs" : {
+            file: "onbs.ogg",
+            title: "ONBS",
+            artist: "Tsukasa Tawada",
+            tags: ["CSBIII DX: Train", "New In DX"],
+            album_art: "pokemonxd.png"
+        },
+        "encounter_friend" : {
+            file: "encounter_friend.ogg",
+            title: "Encounter! Friend",
+            artist: "Waichiro Ozaki",
+            tags: ["CSBIII DX: Train", "New In DX"],
+            album_art: "falsebound.png"
+        },
+        /* this space reserved for minigame bgm vs lupin */
+        "in_the_room" : {
+            file: "in_the_room.ogg",
+            title: "In The Room",
+            artist: "Shogo Sakai",
+            tags: ["CSBIII DX: Train", "New In DX"],
+            album_art: "mother3.png"
+        },
+        "roundabout" : {
+            file: "roundabout.ogg",
+            title: "Roundabout",
+            artist: "Yes",
+            tags: ["CSBIII DX: Train", "New In DX"],
+            album_art: "roundabout.png"
+        },
+        "lo_fi_sunset" : {
+            file: "lo_fi_sunset.ogg",
+            title: "Lo−Fi Sunset",
+            artist: "Dango Studio",
+            tags: ["CSBIII DX: Train", "New In DX"],
+            album_art: "lofisunset.png"
+        },
+        "homely_yado_inn" : {
+            file: "homely_yado_inn.ogg",
+            title: "Homely Yado Inn",
+            artist: "Shogo Sakai",
+            tags: ["CSBIII DX: Train", "New In DX"],
+            album_art: "mother3.png"
+        },
+        "insomnia" : {
+            file: "insomnia.ogg",
+            title: "Insomnia",
+            artist: "W∆W",
+            tags: ["CSBIII DX: Train", "New In DX"],
+            album_art: "moon.png"
+        },
+        "space" : {
+            file: "space.ogg",
+            title: "Space",
+            artist: "W∆W",
+            tags: ["CSBIII DX: Train", "New In DX", "Minigames"],
+            album_art: "moon.png"
+        },
+        /* this space reserved for Tate EX fight phase 2 bgm */
 
         /*********** CSBIII DX: Misc. ***********/
 

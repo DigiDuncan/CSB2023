@@ -1334,7 +1334,7 @@ label train_dining:
     # mean wanted the following section.
     
     play music prof_kranes_kidnap if_changed
-    music "Prof. Krane's Kidnap - Tsukasa Tawada"
+    music "Prof. Krane’s Kidnap - Tsukasa Tawada"
 
     show mean furious
     mean_offscreen "{i}WHAT?!" with hpunch
@@ -1488,7 +1488,7 @@ label train_wakeup:
     pause 2.0    
 
     play music e_gadds_lab if_changed
-    music "E. Gadd's Lab - Kazumi Totaka & Shinobu Tanaka"
+    music "E. Gadd’s Lab - Kazumi Totaka & Shinobu Tanaka"
 
     show tate sheepish
     show cs disappointed flipped

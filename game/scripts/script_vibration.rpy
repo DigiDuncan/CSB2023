@@ -1,7 +1,7 @@
 label vibration:
     stop music fadeout 3.0
     play music lets_hear_my_sped volume 0.7
-    music "Let's Hear My Speed - Pakoo"
+    music Let’s Hear My Speed - Pakoo
     scene craptop_bg
     show craptop discord
     show cs at left

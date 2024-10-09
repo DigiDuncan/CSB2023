@@ -36,7 +36,7 @@ label csbi_start:
     show cs at center
     with dissolve
     play music lets_hear_my_baby volume 0.15
-    music "Let's hear my baby - Walkman"
+    music Let’s hear my baby - Walkman
     if fun_value(FUN_VALUE_MUSIC):
         cs "Welp, Let's hear my baby."
     else:
