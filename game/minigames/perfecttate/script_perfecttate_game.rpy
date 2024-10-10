@@ -1,15 +1,26 @@
-# TODO: this is gonna be a clone of UFO game except harder and uh i'd like it to read a clone hero chart
+# TODO: this is gonna be a clone of UFO game except harder and uh i'd like it to read a clone hero chart for timing only
 # instead of hitting notes you'd be dodging projectiles to the beat
+# the position is still somewhat randomly generated but the timing should be read from a file
+# CS's position should be tracked, give tate the appearance of ACTUALLY trying to target him
+# no the chart does not exist yet oops
+# also there are five lanes now
+# these sections of the song should be charted:
+# 0m32s to 1m11s (shoot 1 projectile)
+# 1m30s to 1m48s (shoot 2 projectiles)
+# 1m59s to 2m07s (shoot 3 projectiles but one has a chance of being a genergy to restore health.)
+# 2m18s to 2m40s (shoot 4 projectiles, it's a bit faster, increased genergy chance)
+# 2m59s to 3m47s (shoot 4 projectiles but since this section is very fast, even higher genergy chance)
+# when the metal pipe hits, cut the music, i have a cutscene planned
 
 init python:
     import math
 
     # Graphics
-    LANE_X = [670, 885, 1100]
-    CAR_Y = 770
-    UFO_Y = 100
+    LANE_X = [445, 670, 885, 1100, 1315]
+    CS_Y = 770
+    TATE_Y = 140
     SWAY_PERIOD = 5
-    SWAY_DISTANCE = 20
+    SWAY_DISTANCE = 10
 
     # Difficulty
     MOVE_FREQUENCY = 5
@@ -19,21 +30,29 @@ init python:
     DIFF_UP = 10
     FIRE_COUNT = 21
 
+    # Disable pause menu because it'll ruin audio sync
+    # TODO: also disable controller bindings
+    if 'K_ESCAPE' in config.keymap:
+        config.keymap['game_menu'].remove('K_ESCAPE')
+    if 'mouseup_3' in config.keymap:
+        config.keymap['game_menu'].remove('mouseup_3')
+    renpy.clear_keymap_cache()
+
     class PerfectTateGameDisplayable(renpy.Displayable):
         def __init__(self):
             renpy.Displayable.__init__(self)
 
             self.win = None
-            self.billycar = Image("minigames/car/billy_car.png")
-            self.ufo = Image("minigames/car/joj_ufo.png")
-            self.laser = Image("minigames/car/laser.png")
-            self.laser_ball = Image("minigames/car/energy_ball.png")
-            self.arrows = Image("minigames/car/arrows.png")
+            self.cs = Image("minigames/perfecttate/billy_car.png")
+            self.tate = Image("minigames/perfecttate/joj_ufo.png")
+            self.laser = Image("minigames/perfecttate/laser.png")
+            self.laser_ball = Image("minigames/perfecttate/energy_ball.png")
+            self.arrows = Image("minigames/perfecttate/arrows.png")
 
             self.start_time = None
-            self.round_timer = -3  # Time since last UFO move
-            self.enemy_lane = 0
-            self.current_lane = 0
+            self.round_timer = -3  # Time since last Tate move
+            self.enemy_lane = 3
+            self.current_lane = 3
 
             self.danger_lane = None
             self.fires = 0
@@ -43,9 +62,9 @@ init python:
             self.entered = False
             self.exited = False
 
-            self.ufo_last_move = 0
-            self.ufo_move_time = 0
-            self.ufo_last_x = 0
+            self.tate_last_move = 0
+            self.tate_move_time = 0
+            self.tate_last_x = 0
 
         def render(self, width, height, st, at):
             # Set start time if it isn't (frame 0)
@@ -60,8 +79,8 @@ init python:
             r = renpy.Render(1920, 1080)
 
             # Load players
-            car_renderer = renpy.load_image(self.billycar)
-            ufo_renderer = renpy.load_image(self.ufo)
+            cs_renderer = renpy.load_image(self.cs)
+            tate_renderer = renpy.load_image(self.tate)
             arrow_renderer = renpy.load_image(self.arrows)
 
             # Make laser red after 10 fires (fast laser)
@@ -75,18 +94,18 @@ init python:
             # Enter animation/logic
             if not self.entered:
                 if (st - self.start_time < 3.5):
-                    curr_y = ease_linear(-UFO_Y, UFO_Y, self.start_time+2, self.start_time+3.5, st)
-                    r.blit(ufo_renderer, (LANE_X[self.enemy_lane], curr_y))
-                    if  math.sin(10*st) > 0:
-                        r.blit(arrow_renderer, (LANE_X[self.current_lane]-75, 600))
+                    curr_y = ease_linear(-TATE_Y, TATE_Y, self.start_time+2, self.start_time+3.5, st)
+                    r.blit(tate_renderer, (LANE_X[2], curr_y))
+                    if math.sin(30*st) > 0:
+                        r.blit(arrow_renderer, (LANE_X[2]-75, 600))
                 else:
                     self.entered = True
             
             # Exit animation/logic
             elif self.exited:
                 if (st - self.round_timer < 3.5):
-                    curr_y = ease_linear(UFO_Y, -UFO_Y, self.round_timer+2, self.round_timer+3.5, st)
-                    r.blit(ufo_renderer, (LANE_X[self.enemy_lane], curr_y))
+                    curr_y = ease_linear(TATE_Y, -TATE_Y, self.round_timer+2, self.round_timer+3.5, st)
+                    r.blit(tate_renderer, (LANE_X[2], curr_y))
                 else:
                     self.win = True
                     renpy.timeout(0)
@@ -102,16 +121,16 @@ init python:
                 if st - self.round_timer > MOVE_FREQUENCY:
                     # Fire laser logic
                     if self.enemy_lane is not None:
-                        self.ufo_last_x = LANE_X[self.enemy_lane]
+                        self.tate_last_x = LANE_X[self.enemy_lane]
                     else:
-                        self.ufo_last_x = 0
+                        self.tate_last_x = 0
                     # "Smart" randomize
                     if self.fires >= DIFF_UP:
-                        self.enemy_lane = renpy.random.choice([self.current_lane, renpy.random.randint(0, 2)])
+                        self.enemy_lane = renpy.random.choice([self.current_lane, renpy.random.randint(0, 4)])
                     else:
-                        self.enemy_lane = renpy.random.choice([self.current_lane, self.current_lane, renpy.random.randint(0, 2)])
-                    self.ufo_last_move = st
-                    self.ufo_move_time = st + 0.5
+                        self.enemy_lane = renpy.random.choice([self.current_lane, self.current_lane, renpy.random.randint(0, 4)])
+                    self.tate_last_move = st
+                    self.tate_move_time = st + 0.5
                     self.fires += 1
                     self.round_timer = st
                     self.played_charge = False
@@ -129,14 +148,14 @@ init python:
                     if not self.played_fire:
                         self.played_fire = True
                     # Render laser
-                    r.blit(laser_renderer, (LANE_X[self.enemy_lane] - 16, UFO_Y+70))
+                    r.blit(laser_renderer, (LANE_X[self.enemy_lane] - 16, TATE_Y+70))
 
-                # UFO X
+                # TATE X
                 if telegraph_start < st < danger_cutoff:
                     cx = LANE_X[self.enemy_lane] + 11
                 else:
                     cx = LANE_X[self.enemy_lane] + 11 + math.sin(st * SWAY_PERIOD) * SWAY_DISTANCE
-                current_ufo_x = ease_linear(self.ufo_last_x, cx, self.ufo_last_move, self.ufo_move_time, st)
+                current_tate_x = ease_linear(self.tate_last_x, cx, self.tate_last_move, self.tate_move_time, st)
 
                 # Telegraphing period
                 if telegraph_start < st < telegraph_cutoff:
@@ -153,10 +172,10 @@ init python:
                     laser_ball_renderer = renpy.render(t, 180, 180, st, at)
                     xo = (abs(l-1) * 180) / 2
                     yo = (abs(l-1) * 180) / 2
-                    r.blit(laser_ball_renderer, ((LANE_X[self.enemy_lane] + xo) - 15, UFO_Y + yo))
+                    r.blit(laser_ball_renderer, ((LANE_X[self.enemy_lane] + xo) - 15, TATE_Y + yo))
 
-                # Render UFO
-                r.blit(ufo_renderer, (current_ufo_x, UFO_Y))
+                # Render Tate
+                r.blit(tate_renderer, (current_tate_x, TATE_Y))
 
                 # No more danger
                 if danger_cutoff < st:
@@ -170,7 +189,7 @@ init python:
                 self.exited = True
 
             # Render player character
-            r.blit(car_renderer, (LANE_X[self.current_lane], CAR_Y))
+            r.blit(cs_renderer, (LANE_X[self.current_lane], CS_Y))
 
             renpy.redraw(self, 0)
             return r
@@ -184,8 +203,8 @@ init python:
                 renpy.restart_interaction()
             if ev.type == pygame.KEYDOWN and ev.key == pygame.K_RIGHT:
                 self.current_lane += 1
-                if self.current_lane == 3:
-                    self.current_lane = 2
+                if self.current_lane == 5:
+                    self.current_lane = 4
                 renpy.restart_interaction()
             if ev.type == pygame.KEYDOWN and ev.key == pygame.K_END and preferences.developer_mode:
                 self.win = True
@@ -193,19 +212,19 @@ init python:
                 return self.win
 
         def visit(self):
-            return [self.billycar, self.ufo, self.laser]
-
+            return [self.cs, self.tate, self.laser]
 
 screen PerfectTateGame():
     default PerfectTateGame = PerfectTateGameDisplayable()
+    # replace this later with the real video background, this is just a proof of concept
+    add Movie(play="movies/car_drive_day.webm")
     add "minigames/perfecttate/background.png" at transform:
-        yanchor 0.5 ypos 0.0
-        linear 1.0 ypos 1.0
-        repeat
+        yanchor 1.0 ypos 1.0
     add PerfectTateGame
 
-label minigame_perfecttate:
-    play music speedy_comet if_changed
+label play_perfecttate_game:
+    # TODO: get baker to mix this quieter
+    play music "<from 3.6 to 228.52>nyan_of_a_lifetime.ogg" volume 0.1 if_changed
     $ persistent.heard.add("Nyan Of A Lifetime - DJ NYANKO SWITCHER")
     window hide
     $ quick_menu = False

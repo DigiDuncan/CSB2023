@@ -1,4 +1,14 @@
 label secret_dx:
+
+
+    # re-enable pause if tate disabled it
+    # TODO: add controller bindings
+    if 'K_ESCAPE' not in config.keymap:
+        $ config.keymap['game_menu'].append('K_ESCAPE')
+    if 'mouseup_3' not in config.keymap:
+        $ config.keymap['game_menu'].append('mouseup_3')
+    $ renpy.clear_keymap_cache()
+
     scene black with dissolve
     play music space_classroom
     show digi at center with Dissolve(3)

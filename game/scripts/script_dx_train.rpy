@@ -3605,11 +3605,30 @@ label train_tate_ex_win:
     with Dissolve(0.5)
     perfect_tate "{sc}{size=+24}{font=AllerDisplay_Std_Rg_0.ttf}{color=#000000}I hope you're ready, CS."
     perfect_tate "{sc}{size=+24}{font=AllerDisplay_Std_Rg_0.ttf}{color=#000000}Because I'm not holding back anymore."
-    
-    n "This is where Tate EX: Perfect Tate battle would go."
-    n "Since this doesn't exist yet, let's just pretend that you won and continue the story."
-    n "If you lose, should it restart or just go to the normal lose screen?"
-    n "Cast your votes... somewhere! Just let IRL!Tate know, yeah?"
+
+    # Disable pause menu because it'll ruin audio sync
+    # TODO: also disable controller bindings
+    $ config.keymap['game_menu'].remove('K_ESCAPE')
+    $ config.keymap['game_menu'].remove('mouseup_3')
+    $ renpy.clear_keymap_cache()
+
+    scene white with dissolve
+
+    minigame "play_perfecttate_game" "train_defeated_perfect_tate" "train_tate_ex_lose"
+
+label train_defeated_perfect_tate:
+
+    # re-enable pause if disabled
+    # TODO: add controller bindings
+    if 'K_ESCAPE' not in config.keymap:
+        $ config.keymap['game_menu'].append('K_ESCAPE')
+    if 'mouseup_3' not in config.keymap:
+        $ config.keymap['game_menu'].append('mouseup_3')
+    $ renpy.clear_keymap_cache()
+
+    stop music
+    scene white
+    pause 5.0
 
     # TODO: i will probably redo this dialogue later. not totally happy with it
     # TODO: cs/tate sprites?
@@ -3648,6 +3667,15 @@ label train_tate_ex_win:
     jump train_completed
 
 label train_tate_ex_lose:
+
+    # re-enable pause if disabled
+    # TODO: add controller bindings
+    if 'K_ESCAPE' not in config.keymap:
+        $ config.keymap['game_menu'].append('K_ESCAPE')
+    if 'mouseup_3' not in config.keymap:
+        $ config.keymap['game_menu'].append('mouseup_3')
+    $ renpy.clear_keymap_cache()
+
     stop music
     scene white
     pause 5.0
