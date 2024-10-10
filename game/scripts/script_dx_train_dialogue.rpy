@@ -74,10 +74,19 @@ label train_dialogue:
         mean "That's some real shit right there."
         show tate srs
         tate "Awa..."
-        show mean shocked hat
+        show mean human hat
+        mean "Yeah, you know, I never thought of it like that before."
+        show tate sad
+        tate "Awawawawawa awawa?"
+        show mean human hat shocked
+        mean "Why would Cookie Monster be eating fucking {i}cobalt?!"
+        show tate srs
+        tate "{bt=a3-p10-s4}Awawawa!!!"
+        show mean angry hat
         show tate shock
-        mean "WOAH!! You can't {i}say{/i} that anymore!"
-        tate "Uweh?!"
+        mean "WOAH!! You can't {i}say{/i} that anymore!" with vpunch
+        tate "Awawa?!"
+        mean "No! Fuck you!"
     else:
         scene amtrak_cab
         show mean human hat at center
@@ -157,14 +166,18 @@ label train_dialogue:
     show arceus angry
     arceus "Man, you had {i}one{/i} job!"
     show cs disappointed
-    cs "It would be weird to call them back again so soon..."
+    cs "It would be weird to call them back right away..."
     show arceus
-    arceus "I guess we can call again when we get to New York." 
+    arceus "We can probably call again when we get to New York." 
     show cs
     cs "You're probably right."
 
     pause 2.0
 
-    "This is a placeholder."
+    n "CS and Arceus take it easy for the rest of the ride."
+
+    stop sfx fadeout 2.0
+    scene black with Dissolve(2.0)
+    pause 1.0
 
     jump train_return_home_transition
