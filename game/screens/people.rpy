@@ -81,6 +81,7 @@ screen person(l):
     tag menu
     use people_nav
 
+    # Main Container omitting the menu
     viewport:
 
         xsize 1300
@@ -88,13 +89,13 @@ screen person(l):
         xalign 0.5
         xoffset 305 
         yoffset 200
-        side_yfill True
+        side_yfill False
         mousewheel True
         draggable True
         pagekeys True
-        
         hbox:
-            vbox:
+            viewport:
+            # Handling the text
                 xsize 800
                 ysize 800
                 text "\"" + name_map[l]["quote"] + "\""
@@ -106,8 +107,7 @@ screen person(l):
                             fetched = name_map[l]["bio"]
                     except:
                         fetched = "The bio didn't load correctly. Ask Digi to fix the game."
-
-                text (fetched)
+                text (fetched) ypos 100
 
             python:
                 z = name_map[l].get("zoom", 1.0) * 0.75
