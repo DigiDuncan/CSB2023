@@ -3556,10 +3556,11 @@ label train_tate_ex_encounter:
             jump rpg_tate_ex
                 
 label train_tate_ex_win:
+    stop music
     scene white
     show tate_falling at manual_pos(0.5, -0.5, 0.5)
     play sound sfx_sparkles
-    show tate_falling at manual_pos(0.5, 1.0, 0.5) with MoveTransition(1.0):
+    show tate_falling at manual_pos(0.5, 1.2, 0.5) with MoveTransition(1.0):
         alpha 0.0
         linear 1.0 alpha 1.0
     pause 5.0
@@ -3587,6 +3588,7 @@ label train_tate_ex_win:
     tate "{sc}{size=+24}{font=AllerDisplay_Std_Rg_0.ttf}I'm not going down that easily."
     tate "{sc}{size=+24}{font=AllerDisplay_Std_Rg_0.ttf}And, get rid of this stupid box!"
     show yeetable_textbox at manual_pos(0.5, 0.872, 0.5)
+    #TODO: WHY CAN'T I GET RID OF THIS STUPID BOX?!
     $ _window_hide()
     play sound sfx_whoosh
     show yeetable_textbox at manual_pos(3.0, 0.7, 0.5) with MoveTransition(0.25):
@@ -3594,11 +3596,13 @@ label train_tate_ex_win:
     pause 0.5
     play sound sfx_glass_echo
     with hpunch
+    $ _window_hide()
     pause 3.0
+    $ _window_hide()
     perfect_tate "{sc}{size=+24}{font=AllerDisplay_Std_Rg_0.ttf}{color=#000000}That's better."
     hide tate_fallen_4
     show tate_fallen_5 at manual_pos(0.5, 0.5, 0.5)
-    with Dissolve(0.25)
+    with Dissolve(0.5)
     perfect_tate "{sc}{size=+24}{font=AllerDisplay_Std_Rg_0.ttf}{color=#000000}I hope you're ready, CS."
     perfect_tate "{sc}{size=+24}{font=AllerDisplay_Std_Rg_0.ttf}{color=#000000}Because I'm not holding back anymore."
     
@@ -3644,6 +3648,7 @@ label train_tate_ex_win:
     jump train_completed
 
 label train_tate_ex_lose:
+    stop music
     scene white
     pause 5.0
     tate "Huh."
