@@ -748,6 +748,12 @@ class Attacks:
     RAINBOW_VOMIT_NOCOOL = ComboAttack("Rainbow Vomit", "Why are you like this?", [RAINBOW_NOCOOL, VOMIT_NOCOOL], accuracy = 75, ex = False)
     KARATE_CHOP = ComboAttack("Karate Chop", "Hit an enemy and bring their DEF down.", [RAW_CHOP, SWORD_AP])
     DRONE_STRIKE = Attack("Drone Strike", "O Bomb a.", damage_fighters, target_count = 0, target_type = "enemies", cooldown = 3, mult = 2.5, accuracy = 85)
+    COIN_BARRAGE = Attack("Coin Barrage", "Pelt your foes with change!", random_damage_fighters, min_mult = 0.75, max_mult = 2, ex = False, mult = 1, accuracy = 60)
+    CART_SMASH = Attack("Cart Smash", "Ram into someone with a shopping cart.", damage_fighters, target_count = 1, target_type = "enemies", ex = False, mult = 5, accuracy = 95, cooldown = 3)
+    BITE = Attack("Bite", "Chomp!", random_damage_fighters, min_mult = 5, max_mult = 10, ex = False, mult = 5, accuracy = 5)
+    SHARKNADO = ComboAttack("Sharknado", "A confusing vortex of sharks.", [BITE, BLEED], cooldown = 5, accuracy = 80)
+    LOBBYING = ComboAttack("Lobbying", "Lobby like it's your hobby!", [ENCOURAGE, CS_AP_DOWN])
+    NANOMACHINES = Attack("Nanomachines", "Nanomachines, son.", damage_fighters, target_count = 8, target_type = "enemies", ex = False, mult = 1.5, accuracy = 95, cooldown = 7)
 
     @classproperty
     def names(cls) -> list[str]:
@@ -800,7 +806,9 @@ class Fighters:
     PHIL = Fighter("Phil", False, 160, 20, 40, [Attacks.HYPE_UP, Attacks.PITCHMAN], Image("images/characters/phil.png"))
     MEAN = Fighter("Mean", False, 150, 20, 35, [Attacks.HUG, Attacks.SPIKE_BOMB], Image("images/characters/mean.png"))
     POMNI = Fighter("Pomni", False, 200, 15, 30, [Attacks.RAINBOW_VOMIT_NOCOOL, Attacks.RAINBOW_VOMIT_NOCOOL], Image("images/secret/pomni.png"))
-    OBAMA = Fighter("Obama", False, 190, 25, 35, [Attacks.KARATE_CHOP, Attacks.DRONE_STRIKE], Image("images/characters/obama.png"))
+    OBAMA = Fighter("{image=gui/dx_text.png} Obama", False, 190, 25, 35, [Attacks.KARATE_CHOP, Attacks.DRONE_STRIKE], Image("images/characters/obama.png"))
+    CASHIER = Fighter("{image=gui/dx_text.png} Cashier", False, 188, 14, 33, [Attacks.COIN_BARRAGE, Attacks.CART_SMASH], Image("images/characters/cashier.png"))
+    SHARK = Fighter("{image=gui/dx_text.png} Shark", False, 190, 10, 40, [Attacks.BITE, Attacks.SHARKNADO], Image("images/duck.png"))
 
     # Enemies
     FANBOYA = Fighter("Fanboy (NVIDIA)", True, 50, 0, 16, [Attacks.PUNCH], Image("images/characters/nvidiafanboy.png"), ai = AIType.NEUTRAL, display_name = "Fanboy")
@@ -824,7 +832,7 @@ class Fighters:
     WESLEY = Fighter("{image=gui/dx_text.png} Wesley", True, 200, 20, 40, [Attacks.PISTOL, Attacks.ALL_OVER_AGAIN], Image("images/characters/wesley.png"), ai = AIType.AGGRO, display_name = "Wesley")
     ED = Fighter("{image=gui/dx_text.png} Ed", True, 300, 30, 25, [Attacks.HEAVY_PUNCH, Attacks.SOTH], Image("images/characters/ed.png"), ai = AIType.SMART, display_name = "Ed")
     RICHARD = Fighter("{image=gui/dx_text.png} Richard", True, 250, 20, 30, [Attacks.ONE_HUNDRED, Attacks.ICE_CREAM], Image("images/characters/rich.png"), ai = AIType.DEFENSIVE, display_name = "Richard")
-    # TODO: Add the CEO of Diabetes
+    CEO = Fighter("{image=gui/dx_text.png} CEO of Diabetes", True, 1000, 50, 75, [Attacks.LOBBYING, Attacks.NANOMACHINES], Image("images/duck.png"), ai = AIType.SMART, display_name = "CEO")
 
     @classproperty
     def names(cls) -> list[str]:
