@@ -2190,6 +2190,7 @@ define audio.albu = "albuquerque.ogg"
 # SFX
 define audio.sfx_addy_snap = "sfx/sfx_addy_snap.ogg"
 define audio.sfx_alt_punch = "sfx/sfx_alt_punch.ogg"
+define audio.sfx_ambiance_train_interior = "sfx/sfx_ambiance_train_interior.ogg"
 define audio.sfx_amtrak_horn = "sfx/sfx_amtrak_horn.ogg"
 define audio.sfx_blanket = "sfx/sfx_blanket.ogg"
 define audio.sfx_bossappears = "sfx/sfx_bossappears.ogg"

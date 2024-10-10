@@ -1,6 +1,8 @@
 label train_dialogue:
+    play sfx sfx_ambiance_train_interior loop volume 0.3
+
     show amtrak_dining_day
-    show cs at mid_left
+    show cs at left
     show arceus at right
     with dissolve
     pause 2.0
@@ -16,19 +18,25 @@ label train_dialogue:
     arceus "The what?!"
     show cs disappointed
     cs "You know, that big-ass power line!"
+    cs "And, every time it lands, you can hear it go {i}boom,{/i} except you... don't?"
     arceus "Oh, that thing? What about it?"
     show cs
     cs "If there are GIFs you can hear..."
     cs "I think there are {i}words{/i} you can hear, too!"
     show cs happy
-    cs "Like, 'extrusion'!"
+    cs "Like... 'extrusion'!"
     show arceus angry
     arceus "..."
     show cs
     cs "Don't you agree that 'extrusion' is one of those words you can {i}hear?"
     arceus "... You can {i}hear{/i} any word, CS."
     show cs worried
-    cs "No, I mean like-- you know what, never mind..."
+    cs "No, like, you hear the word, and you immediately picture what it's doing!"
+    arceus "Again, that's {i}just{/i} how words work."
+    cs "No! I mean like--"
+    show cs disappointed
+    cs "You know what, never mind..."
+    pause 1.0
     show cs
     show arceus
 
@@ -37,10 +45,11 @@ label train_dialogue:
     pause 3.0
 
 
-
+    show cs surprised
     cs "I wonder what Tate and Mean are up to."
     cs "There's no way that Amtrak life can be that exciting {i}all{/i} the time, right?"
-    arceus "Why don't we give them a call?"
+    arceus "Well, why don't we give them a call?"
+    show cs
     cs "Great idea!"
     show cs phone with dissolve
     pause 0.5
@@ -135,7 +144,7 @@ label train_dialogue:
     scene black with dissolve
 
     show amtrak_dining_day
-    show cs phone at mid_left
+    show cs phone at left
     show arceus at right
     with dissolve
 
