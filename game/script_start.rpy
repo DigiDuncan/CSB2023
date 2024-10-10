@@ -868,7 +868,7 @@ image mean human hat dark = "dark:characters/mean/meanhumanneutralhat.png"
 image mean human happy hat = "characters/mean/meanhumanhappyhat.png"
 image mean human happy hat flipped = "flip:characters/mean/meanhumanhappyhat.png"
 image mean human annoyed hat  = "characters/mean/meanhumanannoyedhat.png"
-image mean human annoyed hat annoyed flipped = "flip:characters/mean/meanhumanannoyedhat.png"
+image mean human annoyed hat flipped = "flip:characters/mean/meanhumanannoyedhat.png"
 image mean human shocked hat = "characters/mean/meanhumanshockedhat.png"
 image mean human shocked hat flipped = "flip:characters/mean/meanhumanshockedhat.png"
 image mean human shocked hat dark flipped = "dark:flip:characters/mean/meanhumanshockedhat.png"
@@ -1527,6 +1527,7 @@ image hutchinson_stn = "dark:bg/train/hutchinson_stn.png"
 image hutchinson_stn_lights = "bg/train/hutchinson_stn_lights.png"
 image lupin_escape_1 = "dark:bg/train/lupin_escape_1.png"
 image lupin_escape_2 = "dark:bg/train/lupin_escape_2.png"
+image amtrak_dining_day = "bg/train/amtrak_dining_day.png"
 
 # Train Route NPCs
 image amtrak_conductor = "characters/amtrak_conductor.png"
@@ -1559,6 +1560,7 @@ image fake_rpg_miss = Text("{size=50}{color=#FFAAAA}Miss!", text_align=0.5)
 image oof_45 = Text("{size=50}{color=#FFEE00}4'5\"", text_align=0.5)
 image oof_54 = Text("{size=50}{color=#CE256E}5'4\"", text_align=0.5)
 image oof_52 = Text("{size=50}{color=#233260}5'2\"", text_align=0.5)
+image spent_19_95 = Text("{size=50}{color=#369100}-$19.95", text_align=0.5)
 # TODO: this sucks
 image petal1 = SnowBlossom("petal1.png", count = 50, fast = True)
 image petal2 = SnowBlossom("petal2.png", count = 50, fast = True)
@@ -2213,6 +2215,7 @@ define audio.sfx_csnore = "sfx/sfx_csnore.ogg"
 define audio.sfx_decompression = "sfx/sfx_decompression.ogg"
 define audio.sfx_dial_hohsis = "sfx/sfx_dial_hohsis.ogg"
 define audio.sfx_dial_rosen = "sfx/sfx_dial_rosen.ogg"
+define audio.sfx_dial_tate = "sfx/sfx_dial_tate.ogg"
 define audio.sfx_drill = "sfx/sfx_drill.ogg"
 define audio.sfx_drillbreak = "sfx/sfx_drillbreak.ogg"
 define audio.sfx_doorbell = "sfx/sfx_doorbell.ogg"
