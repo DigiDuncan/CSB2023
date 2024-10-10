@@ -94,10 +94,12 @@ screen person(l):
         draggable True
         pagekeys True
         hbox:
-            viewport:
+            ysize 800
+            vbox:
+                yfill False
+                spacing 100
             # Handling the text
                 xsize 800
-                ysize 800
                 text "\"" + name_map[l]["quote"] + "\""
                 python:
                     try:
@@ -107,7 +109,7 @@ screen person(l):
                             fetched = name_map[l]["bio"]
                     except:
                         fetched = "The bio didn't load correctly. Ask Digi to fix the game."
-                text (fetched) ypos 100
+                text (fetched)
 
             python:
                 z = name_map[l].get("zoom", 1.0) * 0.75
