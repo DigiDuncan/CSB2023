@@ -46,6 +46,7 @@ screen category_nav():
             if preferences.developer_mode or achievement_manager.get("Hopes and Dreams").unlocked:
                 textbutton "Ultimate\nCustom Night" action Start("rpg_ucn")
             textbutton "Woohoo Counter" action Jump("woohoo_counter")
+            textbutton "Controller Test" action Jump("play_controllertest")
             if preferences.developer_mode or persistent.creative_mode:
                 textbutton "Debug Menu" action ShowMenu("debug_menu")
                 textbutton "Asset Debugger" action Jump("asset_debugger")
