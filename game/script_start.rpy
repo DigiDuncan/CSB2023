@@ -12,6 +12,9 @@
 #       tate "Excuse me, Mr.{w=0} Conductor?"
 
 init python:
+    unused_page = 0
+
+init python:
     import re
     def auto_wait(s):
         # these items wait for 0.25:
