@@ -56,6 +56,8 @@ label train_dialogue:
         show tate at left
         with dissolve
 
+        pause 1.0
+
         tate "Awawa awa!"
         mean "Yeah?"
         tate "Awawawawa!"
@@ -72,18 +74,24 @@ label train_dialogue:
         show mean human hat at center
         show tate sheepish at left
         with dissolve
+
+        pause 1.0
+
         mean "So, yeah!"
         show mean human hat happy
         mean "Maybe feet {i}are{/i} comparable to kids!"
         tate "Wuh...?"
 
-    # TODO: tate needs a phone item, maybe one with all the cell phone charms on it
+    pause 1.0
+
     if fun_value(FUN_VALUE_RARE):
         show tate shock
         play sound sfx_ringtone_tate_alt loop
         n "Tate gets a call on their cell phone."
-        pause 1.0
         show tate srs
+        show mean human hat
+        show tate_phone at manual_pos(0.25, 0.45) with dissolve
+        pause 1.0
         tate "..."
         tate "God damn it, I forgot to change his ringtone..."
     else:
@@ -91,12 +99,17 @@ label train_dialogue:
         play sound sfx_ringtone_tate loop
         n "Tate gets a call on their cell phone."
         show tate srs
+        show tate_phone at manual_pos(0.25, 0.45) with dissolve
 
     pause 1.0
     play sound sfx_pickup_call
     show mean human hat 
     pause 1.0
     show tate
+    show tate_phone at manual_pos(0.08, 0.4):
+        xzoom -1
+    with MoveTransition(0.25)
+    pause 0.25
     tate "Heya, CS!"
     tate "How's your trip going?"
     cs "We actually were calling to ask you the same thing!"
@@ -129,7 +142,7 @@ label train_dialogue:
     "..."
     pause 1.0
     show cs with dissolve
-    pause 2.0
+    pause 3.0
     show cs worried
     cs "Hey! Tate never answered our question!"
     show arceus angry
