@@ -1590,6 +1590,7 @@ image mr_krupp grin = "secret/up/mr_krupp_grin.png"
 # Static Images
 image amtrak_dining_food = "food.png" 
 image amtrak_dining_pancake = "pancake.png"
+image arc_laptop = "arc_laptop.png"
 image bag = "bodybag.png"
 image bag flipped = "flip:bodybag.png"
 image bear = "bear.png"

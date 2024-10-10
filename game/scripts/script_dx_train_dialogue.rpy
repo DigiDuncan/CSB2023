@@ -9,13 +9,45 @@ label train_dialogue:
 
     n "CS and Arceus are relaxing in the dining car after lunch."
 
+    cs "Damn, that was pretty good."
+    if train_ending_money_returned == True:
+        cs "Not as good as Tate's cooking was, but I'd get it again."
+        arceus "Same."
+    else:
+        cs "Don't tell them I said this, but it sure beats the pants off Tate's cooking..."
+        if train_pancake_fun_value == True:
+            arceus "I'm sure they were just having an off day."
+            arceus "I stole one of Mean's pancakes that Tate made yesterday. Now, {i}those{/i} were awesome."
+            show cs disappointed
+            cs "Damn, I wish I'd gotten one, too..."
+            show cs
+        else:
+            arceus "Yeah... I didn't want to say anything. I saw you with those salt packs..."
+            show cs disappointed
+            cs "Damn. Here I thought I was being sneaky."
+            arceus "Nope."
+            cs "I sure hope they didn't notice..."
+            arceus "I'm sure it's fine. Lots of people salt their food."
+            show cs
+
+    cs "Well, now what do you wanna do?"
+    arceus "I dunno. After the night we had, I'm honestly happy to just do nothing at all."
+    arceus "I kind of just want to stay right where we're at."
+    arceus "The view here is a hell of a lot nicer than the one coming up from Vegas, that's for sure."
+    cs "That is true. It's a lot more green."
+    cs "Yeah, we can just hang out here a while."
+
+    
+    pause 3.0
+
+
 
     cs "Hey, Arc?"
     arceus "Yeah?"
     cs "You know how there are some images that you can hear?"
     arceus "What?"
     cs "You know, like that one GIF with the jump-roping power thing?"
-    arceus "The what?!"
+    arceus "The what, now?"
     show cs disappointed
     cs "You know, that big-ass power line!"
     cs "And, every time it lands, you can hear it go {i}boom,{/i} except you... don't?"
@@ -43,6 +75,7 @@ label train_dialogue:
 
 
     pause 3.0
+
 
 
     show cs surprised
@@ -87,10 +120,11 @@ label train_dialogue:
         mean "WOAH!! You can't {i}say{/i} that anymore!" with vpunch
         tate "Awawa?!"
         mean "No! Fuck you!"
+        show tate sheepish
     else:
         scene amtrak_cab
-        show mean human hat at center
-        show tate sheepish at left
+        show mean human hat at mid_right
+        show tate stare at left
         with dissolve
 
         pause 1.0
@@ -98,22 +132,27 @@ label train_dialogue:
         mean "So, yeah!"
         show mean human hat happy
         mean "Maybe feet {i}are{/i} comparable to kids!"
+        pause 1.0
+        show tate sheepish at left
         tate "Wuh...?"
 
     pause 1.0
 
     if fun_value(FUN_VALUE_RARE):
         show tate shock
+        show mean human hat shocked
         play sound sfx_ringtone_tate_alt loop
         n "Tate gets a call on their cell phone."
         show tate srs
-        show mean human hat
+        show mean human hat annoyed
         show tate_phone at manual_pos(0.25, 0.45) with dissolve
         pause 1.0
         tate "..."
+        show mean human hat annoyed
         tate "God damn it, I forgot to change his ringtone..."
     else:
         show tate shock
+        show mean human hat shocked
         play sound sfx_ringtone_tate loop
         n "Tate gets a call on their cell phone."
         show tate srs
@@ -121,7 +160,7 @@ label train_dialogue:
 
     pause 1.0
     play sound sfx_pickup_call
-    show mean human hat 
+    show mean human hat annoyed
     pause 1.0
     show tate
     show tate_phone at manual_pos(0.08, 0.4):
@@ -130,23 +169,25 @@ label train_dialogue:
     pause 0.25
     tate "Heya, CS!"
     tate "How's your trip going?"
-    cs "We actually were calling to ask you the same thing!"
-    cs "It's been pretty chill so far."
+    cs "We were actually calling to ask you the same thing!"
+    cs "It's been pretty chill so far on our end."
     arceus "Tell them I said hi!"
     cs "Arc says hi."
     tate "Howdy, Arc!"
+    show mean human hat
     mean "Oh, it's CS and Arc?"
     mean "Tell 'em I said hi!"
     tate "Mean says hi!"
     cs "Hi, Mean!"
     arceus "Heya, Mean!"
+    tate "They both also said hi!"
     "..."
     pause 1.0
     show tate sheepish
     tate "Well, nice hearing from ya!"
     cs "Yeah! Have a safe trip!"
     show tate
-    tate "You too!"
+    tate "You, too!"
     
     play sound sfx_end_call
 
@@ -172,12 +213,54 @@ label train_dialogue:
     show cs
     cs "You're probably right."
 
+
+    pause 3.0
+    
+
+
+    show arc_laptop at manual_pos(0.65, 0.55, 0.5) behind arceus with dissolve
+    pause 0.5
+    play music "<from 3.6 to 228.52>nyan_of_a_lifetime.ogg" volume 0.05
     pause 2.0
+    n "Arceus pulls out a laptop and starts playing a game."
+    pause 3.0
+    show arceus angry
+    arceus "Fucking hell..."
+    cs "Whatcha playing?"
+    arceus "Just some stupid minigame boss battle."
+    show cs disappointed
+    arceus "I'm {i}so{/i} sick of hearing this song, but I just want to get this achievement already..."
+    arceus "I kinda suck at rhythm games."
+    show cs
+    cs "Can I take a shot at it? I'm pretty decent at rhythm games."
+    show arceus worried
+    arceus "Uh..."
+    "..."
+    show cs disappointed
+    arceus "Oh, whoops! Would ya look at that. Low battery."
+    arceus "Guess I forgot to charge it last night."
+    cs "Damn. Maybe next time."
+    arceus "Yeah... next time..."
+    stop music
+    hide arc_laptop with dissolve
+    n "Arceus puts the laptop away."
+    "..."
+    show cs worried
+    cs "Wait! Where'd you get a laptop, anyway?!"
+    show arceus
+    arceus "I have my ways."
+    "..."
+    cs "And... you're not going to tell me anything more than that, are you?"
+    show cs disappointed
+    arceus "Nope."
+    pause 2.0
+    show cs
 
 
-    n "CS and Arceus take it easy for the rest of the ride."
+    pause 3.0
 
 
+    n "CS and Arceus take it easy for the rest of the ride..."
 
     stop sfx fadeout 2.0
     scene black with Dissolve(2.0)
