@@ -1,7 +1,8 @@
 screen unused_gallery():
 
     tag menu
-    add Color('#323e42', alpha=0.75)
+    add "images/bg/michael_calendar.png"
+    add Color("#00000070")
 
     python:
         file = renpy.file("gallery/captions.json")

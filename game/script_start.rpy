@@ -1083,8 +1083,6 @@ image baumer flipped = "flip:characters/ballmer_cutout.png"
 
 # Background Images
 ## CSBI
-image game_menu = "gui/game_menu.png"
-image black = "bg/black.png"
 image cs_room = "bg/cs_bedroom1.png"
 image cs_room_2 = "bg/cs_bedroom2.png"
 image craptop_bg = "bg/craptop_bg.png"
@@ -1499,7 +1497,11 @@ image wafra_3 = "bg/kuwait/wafra_3.png"
 image outside_survivor = "bg/kuwait/outside_survivor.png"
 image inside_survivor = "bg/kuwait/inside_survivor.png"
 
+# Misc.
+image game_menu = "gui/game_menu.png"
+image black = "bg/black.png"
 image green_screen = "bg/green.png"
+image michael_calendar = "bg/michael_calendar.png"
 
 # DX Train Route
 image kingman_exterior = "bg/train/kingman_exterior.png"
