@@ -174,7 +174,10 @@ label train_dialogue:
 
     pause 2.0
 
+
     n "CS and Arceus take it easy for the rest of the ride."
+
+
 
     stop sfx fadeout 2.0
     scene black with Dissolve(2.0)

@@ -3557,16 +3557,77 @@ label train_tate_ex_encounter:
                 
 label train_tate_ex_win:
     scene white
+    show tate_falling at manual_pos(0.5, -0.5, 0.5)
     play sound sfx_sparkles
+    show tate_falling at manual_pos(0.5, 1.0, 0.5) with MoveTransition(1.0):
+        alpha 0.0
+        linear 1.0 alpha 1.0
     pause 5.0
-    "..."
-    tate "I guess it only makes sense, doesn't it?"
-    tate "You {i}are{/i} the main character, after all."
-    "..."
-    tate "At least my question has been answered."
-    tate "Thank you, CS."
-    tate "Let us never speak of this."
+    hide tate_falling
+    show tate_fallen_1 at manual_pos(0.5, 1.0, 0.5)
+    show tate_fallen_1 at manual_pos(0.5, 0.65, 0.5) with MoveTransition(2.0)
+    pause 3.0
+
+    tate "{sc=1}No..."
+    tate "{sc=2}No."
+    tate "{sc=2}I've come too far to just lose like this."
+    hide tate_fallen_1
+    show tate_fallen_2 at manual_pos(0.5, 0.65, 0.5)
+    with Dissolve(0.25)
+    tate "{sc=3}I refuse."
+    tate "{sc=4}Do you hear me?!"
+    tate "{sc}{size=+36}THIS IS {i}MY{/i} TIMELINE."
+    hide tate_fallen_2
+    show tate_fallen_3 at manual_pos(0.5, 0.65, 0.5)
+    with Dissolve(0.25)
+    tate "{sc}{size=+24}{font=AllerDisplay_Std_Rg_0.ttf}{i}I{/i} DECIDE HOW THE STORY ENDS."
+    hide tate_fallen_3
+    show tate_fallen_4 at manual_pos(0.5, 0.6, 0.5)
+    with Dissolve(0.25)
+    tate "{sc}{size=+24}{font=AllerDisplay_Std_Rg_0.ttf}I'm not going down that easily."
+    tate "{sc}{size=+24}{font=AllerDisplay_Std_Rg_0.ttf}And, get rid of this stupid box!"
+    show yeetable_textbox at manual_pos(0.5, 0.872, 0.5)
+    $ _window_hide()
+    play sound sfx_whoosh
+    show yeetable_textbox at manual_pos(3.0, 0.7, 0.5) with MoveTransition(0.25):
+        linear 2.0 rotate 180
+    pause 0.5
+    play sound sfx_glass_echo
+    with hpunch
+    pause 3.0
+    perfect_tate "{sc}{size=+24}{font=AllerDisplay_Std_Rg_0.ttf}{color=#000000}That's better."
+    hide tate_fallen_4
+    show tate_fallen_5 at manual_pos(0.5, 0.5, 0.5)
+    with Dissolve(0.25)
+    perfect_tate "{sc}{size=+24}{font=AllerDisplay_Std_Rg_0.ttf}{color=#000000}I hope you're ready, CS."
+    perfect_tate "{sc}{size=+24}{font=AllerDisplay_Std_Rg_0.ttf}{color=#000000}Because I'm not holding back anymore."
     
+    n "This is where Tate EX: Perfect Tate battle would go."
+    n "Since this doesn't exist yet, let's just pretend that you won and continue the story."
+    n "If you lose, should it restart or just go to the normal lose screen?"
+    n "Cast your votes... somewhere! Just let IRL!Tate know, yeah?"
+
+    # TODO: i will probably redo this dialogue later. not totally happy with it
+    # TODO: cs/tate sprites?
+    scene white with dissolve
+    pause 2.0
+    "..."
+    tate "I suppose it only makes sense..."
+    tate "This is {i}your{/i} game."
+    tate "It doesn't matter what happens in this timeline."
+    tate "The people that I've been running from..."
+    tate "Something hit me a bit earlier... literally."
+    tate "Something much stronger than me is protecting this place."
+    tate "I've broken timelines on complete accident before."
+    tate "This one... it's different, CS. {sc=1}It just won't break--!"
+    cs "I don't think {i}they{/i} could break it, either."
+    cs "If they wanted to find you, they would have already."
+    cs "And, even if they did, you have friends willing to stand by your side now."
+    cs "I may not fully understand what just happened..."
+    cs "But, you're not alone in this fight anymore."
+    "..."
+    tate "Thanks, CS."
+
     $ persistent.seen.add("tate_ex")
     $ achievement_manager.unlock("Main Character Syndrome")
     # audio is not ready yet - tate
@@ -3575,8 +3636,11 @@ label train_tate_ex_win:
     pause 2.0
     scene black with dissolve
     pause 2.0
-    n "Finally tired out, CS returns to the sleeper, where he quickly drifts off..."
-    pause 2.0
+    n "CS and Tate walk back together to the sleeper cars."
+    n "Before breaking for the night, the two agree to never speak of any of this again."
+    n "Finally tired out, CS returns to his unit, where he quickly drifts off..."
+    hide screen dxcom
+    pause 3.0
     jump train_completed
 
 label train_tate_ex_lose:
@@ -3594,12 +3658,11 @@ label train_tate_ex_lose:
     scene black with dissolve
     pause 2.0
     n "Finally tired out, CS returns to the sleeper, where he quickly drifts off...."
+    pause 1.0
     jump train_completed
     
 label train_completed:
-
     if train_ending_money_returned == True:
-        hide screen dxcom
         play music lo_fi_sunset if_changed
         music Lo−Fi Sunset - Dango Studio
     

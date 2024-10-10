@@ -46,7 +46,7 @@ init -10 python:
         return Transform(s, matrixcolor=duskmatrix)
         
     def duskshadeflip(s):
-        return Transform(s, xzoom = -1, matrixcolor=duskmatrix)
+        return Transform(s, xzoom = -1, matrixcolor = duskmatrix)
         
     config.displayable_prefix["dusk"] = duskshade
     config.displayable_prefix["dusk:flip"] = duskshadeflip
@@ -55,10 +55,10 @@ init -10 python:
     darkmatrix = TintMatrix("#4848b8")
     
     def darkshade(s):
-        return Transform(s, matrixcolor=darkmatrix)
+        return Transform(s, matrixcolor = darkmatrix)
         
     def darkshadeflip(s):
-        return Transform(s, xzoom = -1, matrixcolor=darkmatrix)
+        return Transform(s, xzoom = -1, matrixcolor = darkmatrix)
         
     config.displayable_prefix["dark"] = darkshade
     config.displayable_prefix["dark:flip"] = darkshadeflip
@@ -67,10 +67,10 @@ init -10 python:
     sil_white_matrix = BrightnessMatrix(value=1.0)
         
     def sil_white(s):
-        return Transform(s, xzoom = 1, matrixcolor=sil_white_matrix)
+        return Transform(s, xzoom = 1, matrixcolor = sil_white_matrix)
         
     def sil_white_flip(s):
-        return Transform(s, xzoom = -1, matrixcolor=sil_white_matrix)
+        return Transform(s, xzoom = -1, matrixcolor = sil_white_matrix)
 
     config.displayable_prefix["sil_white"] = sil_white
     config.displayable_prefix["sil_white:flip"] = sil_white_flip
@@ -79,15 +79,14 @@ init -10 python:
     sil_black_matrix = BrightnessMatrix(value=-1.0)
         
     def sil_black(s):
-        return Transform(s, xzoom = 1, matrixcolor=sil_black_matrix)
+        return Transform(s, xzoom = 1, matrixcolor = sil_black_matrix)
         
     def sil_black_flip(s):
-        return Transform(s, xzoom = -1, matrixcolor=sil_black_matrix)
+        return Transform(s, xzoom = -1, matrixcolor = sil_black_matrix)
 
     config.displayable_prefix["sil_black"] = sil_black
     config.displayable_prefix["sil_black:flip"] = sil_black_flip
-    
-    
+
     # x flip
     def xflip(s):
         return Transform(s, xzoom = -1)
@@ -597,6 +596,7 @@ define lupin_offscreen = Character("???", callback = renpy.partial(char_callback
 define mean_offscreen = Character("???", callback = renpy.partial(char_callback, beep = "mean"))
 define zenigata_nobeep = Character("???", callback = renpy.partial(char_callback, play_beeps = False))
 define zenigata_offscreen = Character("???", callback = renpy.partial(char_callback, beep = "zenigata"))
+define perfect_tate = Character("Tate", callback = renpy.partial(char_callback, name = "tate", beep = "tate"), screen = "perfect_tate_text")
 
 # DX Finale Character Definitions
 define perfect_billy = Character("Perfect Billy", callback = renpy.partial(char_callback, name = "billy", beep = "billy"), screen = "perfect_billy_text")
@@ -1554,6 +1554,15 @@ image zenigata = "characters/zenigata.png"
 image zenigata dark = "dark:characters/zenigata.png"
 image zenigata dark flipped = "dark:flip:characters/zenigata.png"
 image zenigata car dark = "dark:characters/zenigata_car.png"
+
+# Train Route Tate EX extra images
+image tate_falling = "characters/tate/tate_falling.png"
+image tate_fallen_1 = "characters/tate/tate_fallen_1.png"
+image tate_fallen_2 = "characters/tate/tate_fallen_2.png"
+image tate_fallen_3 = "characters/tate/tate_fallen_3.png"
+image tate_fallen_4 = "characters/tate/tate_fallen_4.png"
+image tate_fallen_5 = "characters/tate/tate_fallen_5.png"
+image yeetable_textbox = "/gui/textbox.png"
 
 # Train Route generated images
 image fake_rpg_miss = Text("{size=50}{color=#FFAAAA}Miss!", text_align=0.5)
@@ -2667,7 +2676,7 @@ label test:
                     stop music
                     show copguy_ex at left
                     pakoo "This is Copguy EX."
-                    show tate_ex at right
+                    show tate_ex at mid_right
                     pakoo "This is Tate EX."
                     pakoo "Does this work? Idk"
                     $ renpy.full_restart()

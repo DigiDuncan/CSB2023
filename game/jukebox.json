@@ -1272,7 +1272,13 @@
             "tags": ["CSBIII DX: Train", "New In DX", "Fun Values", "Minigames"],
             "album_art": "moon.png"
         },
-        /* this space reserved for Tate EX fight phase 2 bgm */
+      "nyan_of_a_lifetime" : {
+            "file": "nyan_of_a_lifetime.ogg",
+            "title": "Nyan Of A Lifetime",
+            "artist": "DJ NYANKO SWITCHER",
+            "tags": ["CSBIII DX: Train", "New In DX", "Fun Values", "Minigames"],
+            "album_art": "nyan.png"
+        },
 
         /*********** CSBIII DX: Misc. ***********/
 
