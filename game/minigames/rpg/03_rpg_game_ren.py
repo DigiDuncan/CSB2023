@@ -1149,6 +1149,9 @@ class RPGGameDisplayable(renpy.Displayable):
         if ev.type == pygame.KEYDOWN and ev.key == pygame.K_END and preferences.developer_mode:
             for e in self.encounter.enemies:
                 e.health_points = 0
+        elif ev.type == pygame.KEYDOWN and ev.key == pygame.K_HOME and preferences.developer_mode:
+            for e in self.encounter.allies:
+                e.health_points = 0
 
     def visit(self):
         return self.enemy_displayables + self.statblock_displayables # Assets needed to load
