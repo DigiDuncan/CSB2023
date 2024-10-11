@@ -1763,7 +1763,7 @@ label dx_after_yes_renault:
     show carguy at right
     with dissolve
     cs "Wow! This car feels super smooth to drive!"
-    carguy "This car is like the R5 back in its day, a popular and essential car, but with a modern twist: silent, high-tech, environmentally-friendly and cheeky."
+    carguy "This car is like the R5 back in its day, a popular and essential car, but with a modern twist: silent, high-tech, environmentally-friendly, and cheeky."
     cs "I love it already!"
     scene black
     play sound sfx_doorslam

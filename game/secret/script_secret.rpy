@@ -1,6 +1,5 @@
 label secret_dx:
 
-
     # re-enable pause if tate disabled it
     # TODO: add controller bindings
     if 'K_ESCAPE' not in config.keymap:

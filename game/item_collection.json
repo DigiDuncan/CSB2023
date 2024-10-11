@@ -1,0 +1,317 @@
+{
+    "items": {
+        "amtrak_dining_food": {
+            "id": "amtrak_dining_food",
+            "name": "Enormous Breakfast",
+            "owner": "Mean",
+            "desc": "Tate made this for Mean to celebrate his first day at Amtrak.",
+            "rarity": "common",
+            "dx": true
+        },
+        "amtrak_dining_pancake": {
+            "id": "amtrak_dining_pancake",
+            "name": "Lone Pancake",
+            "owner": "Arceus?",
+            "desc": "Abandoned by Mean, left behind by Lupin, but finally loved (and eaten) by Arceus.",
+            "rarity": "common",
+            "dx": true
+        },
+        "arc_laptop": {
+            "id": "arc_laptop",
+            "name": "Arc's Laptop",
+            "owner": "Arceus",
+            "desc": "An HP N5Y13UA laptop acquired through unknown means.",
+            "rarity": "common",
+            "dx": true
+        },
+        "bag": {
+            "id": "bag",
+            "name": "Body Bag",
+            "owner": "SlotsaFun Casino",
+            "desc": "Stolen from the casino.",
+            "rarity": "uncommon"
+        },
+        "bear": {
+            "id": "bear",
+            "name": "Teddy Bear",
+            "owner": "CS",
+            "desc": "One of many random fucking things CS keeps... somewhere. It's very soft to hug.",
+            "rarity": "common"
+        },
+        "boom": {
+            "id": "boom",
+            "name": "Boom Mic",
+            "owner": "???",
+            "desc": "Where'd {i}this{/i} come from?!",
+            "rarity": "legendary",
+            "dx": true
+        },
+        "brooch": {
+            "id": "brooch",
+            "name": "Mother's Brooch",
+            "owner": "An Amtrak passenger",
+            "desc": "A priceless family heirloom.",
+            "rarity": "uncommon",
+            "dx": true
+        },
+        "case": {
+            "id": "case",
+            "name": "Briefcase of Money",
+            "owner": "CS and Arceus",
+            "desc": "A winner is you!",
+            "rarity": "uncommon"
+        },
+        "cheetos": {
+            "id": "cheetos",
+            "name": "Cheetos",
+            "owner": "CS",
+            "desc": "One of many random fucking things CS keeps... somewhere. These are probably stale as hell.",
+            "rarity": "common"
+        },
+        "crt_magnet": {
+            "id": "crt_magnet",
+            "name": "CRT Magnet",
+            "owner": "Nobody",
+            "desc": "Don't put it near any computers you care about!",
+            "rarity": "common"
+        },
+        "cswanted": {
+            "id": "cswanted",
+            "name": "CS Wanted Poster",
+            "owner": "Copguy",
+            "desc": "Wanted, dead or alive. $188,000 reward.",
+            "rarity": "common"
+        },
+        "dog": {
+            "id": "dog",
+            "name": "A Dog?!",
+            "owner": "CS",
+            "desc": "One of many random fucking things CS keeps... somewhere. Her name is Jasper and she loves hot dogs.",
+            "rarity": "common"
+        },
+        "donut_1": {
+            "id": "donut_1",
+            "name": "Chocolate Glazed Donut",
+            "owner": "Arceus",
+            "desc": "Delicious!",
+            "rarity": "common",
+            "dx": true
+        },
+        "donut_2": {
+            "id": "donut_2",
+            "name": "Honey Cruller",
+            "owner": "CS",
+            "desc": "Tasty!",
+            "rarity": "common",
+            "dx": true
+        },
+        "donut_3": {
+            "id": "donut_3",
+            "name": "Bostom Cream Donut",
+            "owner": "Anno",
+            "desc": "Scrupmtious!",
+            "rarity": "common",
+            "dx": true
+        },
+        "dookie_milk_jar": {
+            "id": "dookie_milk_jar",
+            "name": "Dookie Milk Jar",
+            "owner": "Pakoo",
+            "desc": "OH, GOD! JUST WHAT {i}IS{/i} THIS?!",
+            "rarity": "legendary",
+            "dx": true
+        },
+        "drill": {
+            "id": "drill",
+            "name": "Arc's Drill",
+            "owner": "Arceus",
+            "desc": "A cheaply-manufactured drill affectionately known as Drilly Mays.",
+            "rarity": "uncommon"
+        },
+        "flexcake": {
+            "id": "flexcake",
+            "name": "Flex Cake",
+            "owner": "Phil Swift",
+            "desc": "For those days when you just want to \"seal and bond\" your entire digestive tract...",
+            "rarity": "common",
+            "dx": true
+        },
+        "gamebarrel": {
+            "id": "gamebarrel",
+            "name": "Barrel of Toxic Game Boys",
+            "owner": "???",
+            "desc": "Be not tempted by the retro games. Your skin will melt off.",
+            "rarity": "legendary",
+            "dx": true
+        },
+        "genergy": {
+            "id": "genergy",
+            "name": "Genergy",
+            "owner": "CS",
+            "desc": "CS's favorite energy drink. Plum-flavored.",
+            "rarity": "common",
+            "dx": true
+        },
+        "lego_jail": {
+            "id": "lego_jail",
+            "name": "Lego City Jail Cell",
+            "owner": "Zenigata",
+            "desc": "Built by CS to contain Lupin III.",
+            "rarity": "uncommon",
+            "dx": true
+        },
+        "ltt_bottle": {
+            "id": "ltt_bottle",
+            "name": "LTT Water Bottle",
+            "owner": "Linus",
+            "desc": "Built to last, but not dishwasher-safe. lttstore.com",
+            "rarity": "common",
+            "dx": true
+        },
+        "m4": {
+            "id": "m4",
+            "name": "M4 Rifle",
+            "owner": "Pakoo",
+            "desc": "Borrowed by CS to take on Copguy and his corrupted crew.",
+            "rarity": "common"
+        },
+        "mean_hat": {
+            "id": "mean_hat",
+            "name": "Mean's Hat",
+            "owner": "Mean",
+            "desc": "Commissioned by Tate as a gift to Mean. Can withstand the harshest Canadian winters.",
+            "rarity": "common",
+            "dx": true
+        },
+        "onscreen_sharpener": {
+            "id": "onscreen_sharpener",
+            "name": "Golden Pencil Sharpener",
+            "owner": "CS",
+            "desc": "Won by CS while at PencilCon.",
+            "rarity": "uncommon"
+        },
+        "pig": {
+            "id": "pig",
+            "name": "Pig",
+            "owner": "The Witch",
+            "desc": "Ideally eaten steamed.",
+            "rarity": "common"
+        },
+        "pipe_gun": {
+            "id": "pipe_gun",
+            "name": "Pipe Gun",
+            "owner": "Joel",
+            "desc": "It's held together with duct tape, rope, and a prayer, but it gets the job done.",
+            "rarity": "common"
+        },
+        "pot": {
+            "id": "pot",
+            "name": "Mysterious Pot",
+            "owner": "Billy",
+            "desc": "An experiment gone awry...",
+            "rarity": "common",
+            "dx": true
+        },
+        "pringles": {
+            "id": "pringles",
+            "name": "Pizza Pringles",
+            "owner": "CS",
+            "desc": "Possibly the best flavor of Pringles.",
+            "rarity": "common",
+            "dx": true
+        },
+        "renault": {
+            "id": "renault",
+            "name": "Renault 5E",
+            "owner": "Carguy",
+            "desc": "Silent, high-tech, environmentally-friendly, and cheeky.",
+            "rarity": "epic",
+            "dx": true
+        },
+        "sansbrick": {
+            "id": "sansbrick",
+            "name": "Sans Brick",
+            "owner": "Sans Brick",
+            "desc": "Sans Brick",
+            "rarity": "common"
+        },
+        "slime16": {
+            "id": "slime16",
+            "name": "Slime-16",
+            "owner": "Cpt. Underpants",
+            "desc": "Careful, the trigger is a little... sticky.",
+            "rarity": "legendary",
+            "dx": true
+        },
+        "switch": {
+            "id": "switch",
+            "name": "Nintendo Switch",
+            "owner": "An Amtrak passenger",
+            "desc": "This is one of the earlier systems. It's been jailbroken.",
+            "rarity": "uncommon",
+            "dx": true
+        },
+        "tate_phone": {
+            "id": "tate_phone",
+            "name": "Tate's Cellphone",
+            "owner": "Tate",
+            "desc": "It has been modified to allow a charm to be attached.",
+            "rarity": "common",
+            "dx": true
+        },
+        "tims_dozen": {
+            "id": "tims_dozen",
+            "name": "Tim Horton's Assorted Dozen",
+            "owner": "CS, Anno, & Arceus",
+            "desc": "The breakfast of champions... and Canadians.",
+            "rarity": "common",
+            "dx": true
+        },
+        "toxic_mikas": {
+            "id": "toxic_mikas",
+            "name": "Pile of Toxic Mikas",
+            "owner": "???",
+            "desc": "I sure hope somebody cleaned these up.",
+            "rarity": "legendary",
+            "dx": true
+        },
+        "walkie": {
+            "id": "walkie",
+            "name": "Walkie Talkie",
+            "owner": "Multiple",
+            "desc": "Standard-issue across many industries, including security, transportation, and law enforcement.",
+            "rarity": "common",
+            "dx": true
+        },
+        "walmart_bag": {
+            "id": "walmart_bag",
+            "name": "Reusable Walmart Bag",
+            "owner": "CS",
+            "desc": "It took a while for CS to get into the habit of keeping a few of these in his car.",
+            "rarity": "common",
+            "dx": true
+        },
+        "watch": {
+            "id": "watch",
+            "name": "YTX-9001 Ti",
+            "owner": "CS",
+            "desc": "A cutting-edge PCI add-in featuring poop-tracing and other YTP-enhancing features.",
+            "rarity": "common"
+        },
+        "ytx": {
+            "id": "ytx",
+            "name": "Fancy Watch",
+            "owner": "An Amtrak passenger",
+            "desc": "It looks expensive, but it's actually a replica. The owner does not know this.",
+            "rarity": "common",
+            "dx": true
+        },
+        "yeetable_textbox": {
+            "id": "yeetable_textbox",
+            "name": "The Textbox?!",
+            "owner": "???",
+            "desc": "??????",
+            "dx": true
+        }
+    }
+}

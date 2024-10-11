@@ -2572,8 +2572,8 @@ label train_on_top:
     with dissolve
     
     # mean wanted this
-    $mean_text = "Stop right there!"
-    $mean_fun_text = "You're not getting away!"
+    $mean_text = ""
+    $mean_fun_text = ""
     $random = renpy.random.randint(1,3)
     if random == 1:
         $mean_text = "Stop right there,{w=0.25} criminal scum!"
@@ -2587,11 +2587,12 @@ label train_on_top:
     else:
         $mean_text = "Stop right there!"
         $mean_fun_text = "You're not getting away!"
-        
+
     show mean human angry dark flipped at mid_left behind cs with moveinleft
     mean "{bt=a3-p10-s4}{size=+24}[mean_text]" with hpunch
     if fun_value(FUN_VALUE_RARE):
         mean "[mean_fun_text]"
+
     show lupin stand hat dark
     lupin_offscreen "Wow! I didn't think you'd be brave enough to follow me up here!"
     lupin_offscreen "You guys sure are {i}determined!"
@@ -2603,6 +2604,9 @@ label train_on_top:
     
     #### DRAMATIC SCENE TIME
     #### WHAT WAS I ON WHEN I THOUGHT THIS WOULD BE A GOOD IDEA???
+
+    # turn off skipping
+    $ _skipping = False
 
     ## SHOT 1
     
@@ -2719,6 +2723,11 @@ label train_on_top:
     show mean human dark flipped
     mean "Looks like we're not the only ones you've managed to piss off today.{w=3.5}{nw}"
     mean "Let's end this.{w=2.0}{nw}"
+
+    # force-enable skipping again
+    if not _skipping:
+        $ _skipping = True
+
     scene black with fade
     stop music fadeout 2.0
     music end
@@ -3204,6 +3213,9 @@ label train_lupin_win:
     show mean human angry hat flipped
     show tate shock
     show cs scared flipped
+
+    # don't skip the funny
+    $ _skipping = False
     play music roundabout
     music Roundabout - Yes
     mean "{bt=a3-p10-s4}{size=+24}YOU RAT {i}BASTARD!{w=1.0}{nw}" with hpunch
@@ -3223,6 +3235,10 @@ label train_lupin_win:
     stop music fadeout 2
     music end
     scene black with dissolve
+
+    # </funny>
+    if not _skipping:
+        $ _skipping = True
     
     n "After a heated discussion, the group decides that maybe it's best to let bygones be bygones and get on with the night."
     
@@ -3283,7 +3299,7 @@ label train_lupin_win:
         scene black with dissolve
         n "The train then continues on its journey."
         pause 2.0
-        # i've decided you can only get the tate fight if you get the true ending because reasons.
+        # i've decided you can only get the tate fight if you get the good ending because reasons.
         jump train_check_secret
 
 label train_lupin_lose:
