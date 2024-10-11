@@ -68,6 +68,13 @@
             "desc": "One of many random fucking things CS keeps... somewhere. These are probably stale as hell.",
             "rarity": "Common"
         },
+        "craptopreal": {
+            "id": "craptopreal",
+            "name": "CS's Craptop",
+            "owner": "CS",
+            "desc": "It's had a good run...",
+            "rarity": "Common"
+        },
         "crt_magnet": {
             "id": "crt_magnet",
             "name": "CRT Magnet",
@@ -172,7 +179,7 @@
             "id": "m4",
             "name": "M4 Rifle",
             "owner": "Pakoo",
-            "desc": "Borrowed by CS to take on Copguy and his corrupted crew.",
+            "desc": "Borrowed by CS to take on Copguy and his corrupt crew.",
             "rarity": "Common"
         },
         "mean_hat": {
@@ -293,18 +300,18 @@
         },
         "watch": {
             "id": "watch",
-            "name": "YTX-9001 Ti",
-            "owner": "CS",
-            "desc": "A cutting-edge PCI add-in featuring poop-tracing and other YTP-enhancing features.",
-            "rarity": "Common"
-        },
-        "ytx": {
-            "id": "ytx",
             "name": "Fancy Watch",
             "owner": "An Amtrak passenger",
             "desc": "It looks expensive, but it's actually a replica. The owner does not know this.",
-            "rarity": "Common",
+            "rarity": "Uncommon",
             "dx": true
+        },
+        "ytx": {
+            "id": "ytx",
+            "name": "YTX-9001 Ti",
+            "owner": "CS",
+            "desc": "A cutting-edge PCI add-in featuring poop-tracing and other YTP-enhancing features.",
+            "rarity": "Uncommon"
         },
         "yeetable_textbox": {
             "id": "yeetable_textbox",
