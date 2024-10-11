@@ -22,7 +22,7 @@ screen item_nav():
         
     viewport:
         xpos 25 ypos 150
-        xsize 800 ysize 750
+        xsize 785 ysize 750
         mousewheel True
         draggable True
         pagekeys True
@@ -40,11 +40,14 @@ screen item_nav():
 
             grid 5 max_y:
                 for k in item_map:
-                    vbox:
-                        xsize 150 ysize 150
-                        # code by robcolton
-                        image Transform(item_map[k]['img'], size=(100,100), fit="contain"):
-                            xalign 0.5 yalign 0.5
+                # TODO: rewrite when persistent item seen thingy exists
+                    button:
+                        frame:
+                            background Solid("#003D51")
+                            xsize 140 ysize 140
+                            # code by robcolton
+                            image Transform(item_map[k]['img'], size=(120,120), fit="contain"):
+                                xalign 0.5 yalign 0.5
 
     textbutton "Return to Extras" action ShowMenu("category_welcome") yoffset 950 xoffset 25
     textbutton "Main Menu" action Return() yoffset 1000 xoffset 25
