@@ -3573,18 +3573,24 @@ label train_tate_ex_encounter:
                 
 label train_tate_ex_win:
     stop music
-    scene white
+
+    show screen warning("The following section contains flashing lights and colors.", "Players with photosensitive conditions may wish to skip this section.", "train_defeated_perfect_tate")
+    # TODO: there MUST be some better way to force this to wait until the player makes a choice...
+    ""
+
+    scene white with dissolve
     show tate_falling at manual_pos(0.5, -0.5, 0.5)
     play sound sfx_sparkles
-    show tate_falling at manual_pos(0.5, 1.2, 0.5) with MoveTransition(1.0):
+    show tate_falling at manual_pos(0.5, 1.2, 0.5) with MoveTransition(1.1):
         alpha 0.0
         linear 1.0 alpha 1.0
     pause 5.0
     hide tate_falling
-    show tate_fallen_1 at manual_pos(0.5, 1.0, 0.5)
+    show tate_fallen_1 at manual_pos(0.5, 1.2, 0.5)
     show tate_fallen_1 at manual_pos(0.5, 0.65, 0.5) with MoveTransition(2.0)
     pause 3.0
 
+    "..."
     tate "{sc=1}No..."
     tate "{sc=2}No."
     tate "{sc=2}I've come too far to just lose like this."
