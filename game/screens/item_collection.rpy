@@ -17,9 +17,12 @@ init python:
 
 screen item_nav():
     add Color('#323e42', alpha=0.75)
+    text "{size=+12}Item Collection":
+        xpos 0.125 ypos 80
+        
     viewport:
         xpos 25 ypos 150
-        xsize 800 ysize 700
+        xsize 800 ysize 750
         mousewheel True
         draggable True
         pagekeys True
@@ -31,14 +34,17 @@ screen item_nav():
             $ counter = 0
             $ xstart = 0
             $ ystart = 0
-            for k in item_map:
-                $ counter += 1
-                #if k in persistent.seen:
-                if counter % 5 == 0:
-                    $ ystart += 50
-                else:
-                    text item_map[k]['name']
+            
+            $ from math import ceil
+            $ max_y = math.ceil( len(item_map.keys()) / 5 )
 
+            grid 5 max_y:
+                for k in item_map:
+                    vbox:
+                        xsize 150 ysize 150
+                        # code by robcolton
+                        image Transform(item_map[k]['img'], size=(100,100), fit="contain"):
+                            xalign 0.5 yalign 0.5
 
     textbutton "Return to Extras" action ShowMenu("category_welcome") yoffset 950 xoffset 25
     textbutton "Main Menu" action Return() yoffset 1000 xoffset 25
@@ -62,7 +68,7 @@ screen item_welcome():
         xsize 600
         xalign 0.5 yalign 0.5
         xoffset 400
-        text "Check out all these neat items!"
+        text "Check out all this neat stuff you've found!"
         text "([unlocked_item_count]/[item_count] unlocked)"
 
 ##-----------------------------------------------
