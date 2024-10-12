@@ -121,6 +121,7 @@ label train_dialogue:
         tate "Awawa?!"
         mean "No! Fuck you!"
         show tate sheepish
+        tate "A..."
     else:
         scene amtrak_cab
         show mean human hat at mid_right
@@ -170,7 +171,7 @@ label train_dialogue:
     tate "Heya, CS!"
     tate "How's your trip going?"
     cs "We were actually calling to ask you the same thing!"
-    cs "It's been pretty chill so far on our end."
+    cs "It's been pretty uneventful so far on our end."
     arceus "Tell them I said hi!"
     cs "Arc says hi."
     tate "Howdy, Arc!"
@@ -230,7 +231,7 @@ label train_dialogue:
     arceus "Just some stupid minigame boss battle."
     show cs disappointed
     arceus "I'm {i}so{/i} sick of hearing this song, but I just want to get this achievement already..."
-    arceus "I kinda suck at rhythm games."
+    arceus "Rhythm games are just {i}not{/i} my thing."
     show cs
     cs "Can I take a shot at it? I'm pretty decent at rhythm games."
     show arceus worried

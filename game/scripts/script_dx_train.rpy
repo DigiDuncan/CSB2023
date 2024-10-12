@@ -3,6 +3,7 @@
 # TODO: make sure peoples' reflections are removed from all train background images + cut out windows so we can have moving scenery
 # TODO: moving scenery, mostly at night, including on top of the train
 # TODO: color grading for train windows / ANYTHING that takes place outside at night
+# TODO: mean thinks the moving background is too fast, maybe slow down moving videos?
 
 ######## VARIABLES ########
 label train_start_good:
@@ -844,6 +845,7 @@ label train_enter_sleeper:
 
     # TODO: better sleeper bg
     play sound sfx_sliding_door_close
+    show car plains
     show amtrak_sleeper_interior_day
     show arceus at right
     with dissolve
@@ -1219,7 +1221,9 @@ label train_enter_sleeper:
 
     # TODO: better sleeper bg
 
-    scene amtrak_sleeper_interior_night
+    scene
+    show car plains night
+    show amtrak_sleeper_interior_night
     with dissolve
     pause 1.0
     arceus "Fuck..."
@@ -1398,7 +1402,9 @@ label train_dining:
     
 label train_wakeup:
 
-    scene amtrak_sleeper_interior_night
+    scene 
+    show car plains night
+    show amtrak_sleeper_interior_night
     with dissolve
     play sound sfx_sliding_door_open
     pause 1.0
@@ -1411,7 +1417,9 @@ label train_wakeup:
     n "Arceus flips on the lights."
     show arceus worried dark at left with MoveTransition(0.25)
     play sound sfx_lightswitch
-    scene amtrak_sleeper_interior_day
+    scene 
+    show car plains night
+    show amtrak_sleeper_interior_day
     show arceus worried at left
     pause 0.25
     show arceus worried flipped at left
@@ -1675,7 +1683,9 @@ label train_wakeup:
 label train_allow_staff:
     play music e_gadds_lab if_changed
     music "E. Gadd's Lab - Kazumi Totaka & Shinobu Tanaka"
-    scene amtrak_sleeper_interior_day
+    scene 
+    show car plains night
+    show amtrak_sleeper_interior_day
     show tate sheepish at left
     show arceus at mid_mid_right
     show cs disappointed flipped at right
@@ -1713,7 +1723,9 @@ label train_allow_staff:
 label train_begin_heist:
     play music e_gadds_lab if_changed
     music "E. Gadd's Lab - Kazumi Totaka & Shinobu Tanaka"
-    scene amtrak_sleeper_interior_day
+    scene 
+    show car plains night
+    show amtrak_sleeper_interior_day
     show tate sheepish at left
     show arceus at mid_mid_right
     show cs disappointed flipped at right
@@ -3278,7 +3290,9 @@ label train_lupin_win:
         scene black with dissolve
         pause 2.0
         
-        scene amtrak_sleeper_interior
+        scene 
+        show car plains night
+        show amtrak_sleeper_interior_day
         show amtrak_conductor flipped at left
         show bag at mid_left
         show cs happy flipped at mid_right
@@ -3608,7 +3622,7 @@ label train_tate_ex_win:
     show tate_fallen_4 at manual_pos(0.5, 0.6, 0.5)
     with Dissolve(0.25)
     tate "{sc}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}I'm not going down that easily."
-    tate "{sc}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}And, can we get rid of this stupid box?!"
+    tate "{sc}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}... Can we get rid of this stupid box?!"
     show yeetable_textbox at manual_pos(0.5, 0.872, 0.5)
 
     # get rid of the dialogue box until later
