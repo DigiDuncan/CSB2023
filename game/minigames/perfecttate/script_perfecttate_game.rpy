@@ -12,7 +12,8 @@
 # 2m59s to 3m47s (shoot 4 projectiles but since this section is very fast, even higher genergy chance)
 # when the metal pipe hits, cut the music, i have a cutscene planned
 # music position 22.8 to 32.381 seconds is intro
-# 32.381, tate starts blastiny IMMEDIATELY on that first drop
+# 32.381, tate starts blasting IMMEDIATELY on that first drop
+# on second thought maybe no healing items depending on how well we can balance difficulty w damage
 
 init python:
     import math
@@ -20,18 +21,19 @@ init python:
     # Graphics
     LANE_X = [445, 670, 885, 1100, 1315]
     CS_Y = 770
-    TATE_Y = 140
-    SWAY_PERIOD = 5
+    TATE_Y = 400
+    SWAY_PERIOD = 1
     SWAY_DISTANCE = 10
 
     # Difficulty
     # TODO: i doubt any of this is staying once it can read the CH chart
-    MOVE_FREQUENCY = 5
+    # i just need the battle to last long enough to test my timings
+    MOVE_FREQUENCY = 2.5
     TELEGRAPH_DELAY = 1
     TELEGRAPH_TIME = 0.5
-    DANGER_TIME = 0.1
+    DANGER_TIME = 0.05
     DIFF_UP = 10
-    FIRE_COUNT = 201
+    FIRE_COUNT = 21
 
     # Disable pause menu because it'll ruin audio sync
     # TODO: also disable controller bindings
@@ -49,8 +51,8 @@ init python:
             # no idea how the hitbox will work
 
             self.win = None
-            self.cs = Image("minigames/perfecttate/billy_car.png")
-            self.tate = Image("minigames/perfecttate/joj_ufo.png")
+            self.cs = Image("minigames/perfecttate/cs.png")
+            self.tate = Image("minigames/perfecttate/tate.png")
             self.laser = Image("minigames/perfecttate/laser.png")
             self.laser_ball = Image("minigames/perfecttate/energy_ball.png")
             self.arrows = Image("minigames/perfecttate/arrows.png")
@@ -92,7 +94,7 @@ init python:
             arrow_renderer = renpy.load_image(self.arrows)
 
             # TODO: this is ugly as hell
-            health_renderer = renpy.render(Text("Health: "+str(self.health), color="FF0000", size=200), 1920, 1080, st, at)
+            health_renderer = renpy.render(Text("Health: "+str(self.health), color="FF0000", size=100), 1920, 1080, st, at)
 
             # Make laser red after 10 fires (fast laser)
             if self.fires < 10:
@@ -105,10 +107,10 @@ init python:
             # Enter animation/logic
             if not self.entered:
                 if (st - self.start_time < 9.581):
-                    curr_y = ease_linear(-TATE_Y, TATE_Y, self.start_time+2, self.start_time+3.5, st)
+                    curr_y = ease_linear(-TATE_Y, TATE_Y, self.start_time+2, self.start_time+8, st)
                     r.blit(tate_renderer, (LANE_X[2], curr_y))
                     if math.sin(30*st) > 0:
-                        r.blit(arrow_renderer, (LANE_X[2]-75, 600))
+                        r.blit(arrow_renderer, (LANE_X[2]-165, 600))
                 else:
                     self.entered = True
             
@@ -116,8 +118,12 @@ init python:
             # TODO: instead of having the enemy exit, the plan will be to turn the background white and play an animation
             # this will be synced up with the metal pipe sound in the song
             elif self.exited:
-                if (st - self.round_timer < 205.2): # amount of time the song actually plays
+                if (st - self.round_timer > 205.2): # amount of time the song actually plays 205.2 secs
                 # TODO: THIS DOESNT WORK YET, THE GAME CRASHES HALFWAY
+
+                    # kill the background/music for the cutscene
+                    renpy.music.stop(channel="music", fadeout=None)
+                    renpy.hide("minigames/perfecttate/background.png")
 
                     renpy.notify("you made it to the end") 
 
@@ -155,7 +161,7 @@ init python:
                     
                     # Difficulty increase
                     global MOVE_FREQUENCY, TELEGRAPH_DELAY
-                    MOVE_FREQUENCY -= 0.15
+                    #MOVE_FREQUENCY -= 0.15
                     if self.fires == DIFF_UP:
                         TELEGRAPH_DELAY = 0.5
 
@@ -206,11 +212,11 @@ init python:
             if self.current_lane == self.danger_lane:
                 renpy.notify("you have been hit") 
                 renpy.sound.play("audio/sfx/sfx_hit1.ogg")
-                self.health -= 10
+                self.health -= 1
                 if self.health < 0:
                     renpy.notify("you lost") 
-                    #self.win = False
-                    #renpy.timeout(0)
+                    self.win = False
+                    renpy.timeout(0)
             if self.fires >= FIRE_COUNT:
                 self.exited = True
 

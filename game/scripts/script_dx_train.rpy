@@ -3574,7 +3574,7 @@ label train_tate_ex_encounter:
 label train_tate_ex_win:
     stop music
 
-    show screen warning("The following section contains flashing lights and colors.", "Players with photosensitive conditions may wish to skip this section.", "train_defeated_perfect_tate")
+    show screen warning("The following section contains flashing lights and colors.", "Persons with photosensitive conditions may wish to skip this section.", "train_defeated_perfect_tate")
     # TODO: there MUST be some better way to force this to wait until the player makes a choice...
     ""
 
@@ -3633,7 +3633,7 @@ label train_tate_ex_win:
     # TODO: insert a transformation sequence movie here when it's ready.
     perfect_tate "{font=AllerDisplay_Std_Rg_0.ttf}{color=#000000}Also, I'm supposed to have a cool transformation here."
     perfect_tate "{font=AllerDisplay_Std_Rg_0.ttf}{color=#000000}It's... not ready yet, sorry."
-    perfect_tate "{font=AllerDisplay_Std_Rg_0.ttf}{color=#000000}Enjoy 18 seconds of delay until the fight starts, I guess."
+    perfect_tate "{font=AllerDisplay_Std_Rg_0.ttf}{color=#000000}Enjoy 19 seconds of delay until the fight starts, I guess."
 
     play music "<from 3.6 to 22.8>nyan_of_a_lifetime.ogg" volume 0.1 if_changed noloop
 
@@ -3646,10 +3646,14 @@ label train_tate_ex_win:
     $ renpy.clear_keymap_cache()
 
     $ renpy.pause(delay=19.2, hard=True)
+    scene white
 
     minigame "play_perfecttate_game" "train_defeated_perfect_tate" "train_tate_ex_lose"
 
 label train_defeated_perfect_tate:
+    stop music
+    scene white
+
     # re-enable pause if disabled
     # TODO: add controller bindings
     if 'K_ESCAPE' not in config.keymap:
@@ -3664,8 +3668,6 @@ label train_defeated_perfect_tate:
     # put it here in case the player needs to skip the fight
     $ persistent.heard.add("Nyan Of A Lifetime - DJ NYANKO SWITCHER")
 
-    stop music
-    scene white
     pause 5.0
 
     # TODO: i will probably redo this dialogue later. not totally happy with it
