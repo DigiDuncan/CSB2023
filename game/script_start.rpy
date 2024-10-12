@@ -28,6 +28,10 @@ init python:
         return s
     config.say_menu_text_filter = auto_wait
 
+init python:
+    import random
+    roller=random.randint(1,20)
+
 # BetterSnowBlossom() - not done yet
 init python:
     import math
@@ -2396,6 +2400,7 @@ default transformtotal = ""
 default bgtotal = ""
 default movietotal = ""
 default spritetotal = ""
+default d20 = roller
 
 # Fired route
 default band_name = "CS' Crazy Crew"
