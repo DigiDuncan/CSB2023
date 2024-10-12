@@ -4,13 +4,15 @@
 # CS's position should be tracked, give tate the appearance of ACTUALLY trying to target him
 # no the chart does not exist yet oops
 # also there are five lanes now
-# these sections of the song should be charted:
+# these sections of the song should be charted (approximate):
 # 0m32s to 1m11s (shoot 1 projectile)
 # 1m30s to 1m48s (shoot 2 projectiles)
 # 1m59s to 2m07s (shoot 3 projectiles but one has a chance of being a genergy to restore health.)
 # 2m18s to 2m40s (shoot 4 projectiles, it's a bit faster, increased genergy chance)
 # 2m59s to 3m47s (shoot 4 projectiles but since this section is very fast, even higher genergy chance)
 # when the metal pipe hits, cut the music, i have a cutscene planned
+# music position 22.8 to 32.381 seconds is intro
+# 32.381, tate starts blastiny IMMEDIATELY on that first drop
 
 init python:
     import math
@@ -23,12 +25,13 @@ init python:
     SWAY_DISTANCE = 10
 
     # Difficulty
+    # TODO: i doubt any of this is staying once it can read the CH chart
     MOVE_FREQUENCY = 5
     TELEGRAPH_DELAY = 1
     TELEGRAPH_TIME = 0.5
-    DANGER_TIME = 1.0
+    DANGER_TIME = 0.1
     DIFF_UP = 10
-    FIRE_COUNT = 21
+    FIRE_COUNT = 201
 
     # Disable pause menu because it'll ruin audio sync
     # TODO: also disable controller bindings
@@ -42,6 +45,9 @@ init python:
         def __init__(self):
             renpy.Displayable.__init__(self)
 
+            # TODO: besides replacing the assets, the "laser" needs to be a small projectile instead
+            # no idea how the hitbox will work
+
             self.win = None
             self.cs = Image("minigames/perfecttate/billy_car.png")
             self.tate = Image("minigames/perfecttate/joj_ufo.png")
@@ -51,8 +57,8 @@ init python:
 
             self.start_time = None
             self.round_timer = -3  # Time since last Tate move
-            self.enemy_lane = 3
-            self.current_lane = 3
+            self.enemy_lane = 2
+            self.current_lane = 2
 
             self.danger_lane = None
             self.fires = 0
@@ -61,6 +67,8 @@ init python:
 
             self.entered = False
             self.exited = False
+
+            self.health = 100
 
             self.tate_last_move = 0
             self.tate_move_time = 0
@@ -83,6 +91,9 @@ init python:
             tate_renderer = renpy.load_image(self.tate)
             arrow_renderer = renpy.load_image(self.arrows)
 
+            # TODO: this is ugly as hell
+            health_renderer = renpy.render(Text("Health: "+str(self.health), color="FF0000", size=200), 1920, 1080, st, at)
+
             # Make laser red after 10 fires (fast laser)
             if self.fires < 10:
                 laser_renderer = renpy.load_image(self.laser)
@@ -93,7 +104,7 @@ init python:
             
             # Enter animation/logic
             if not self.entered:
-                if (st - self.start_time < 3.5):
+                if (st - self.start_time < 9.581):
                     curr_y = ease_linear(-TATE_Y, TATE_Y, self.start_time+2, self.start_time+3.5, st)
                     r.blit(tate_renderer, (LANE_X[2], curr_y))
                     if math.sin(30*st) > 0:
@@ -102,10 +113,16 @@ init python:
                     self.entered = True
             
             # Exit animation/logic
+            # TODO: instead of having the enemy exit, the plan will be to turn the background white and play an animation
+            # this will be synced up with the metal pipe sound in the song
             elif self.exited:
-                if (st - self.round_timer < 3.5):
-                    curr_y = ease_linear(TATE_Y, -TATE_Y, self.round_timer+2, self.round_timer+3.5, st)
-                    r.blit(tate_renderer, (LANE_X[2], curr_y))
+                if (st - self.round_timer < 205.2): # amount of time the song actually plays
+                # TODO: THIS DOESNT WORK YET, THE GAME CRASHES HALFWAY
+
+                    renpy.notify("you made it to the end") 
+
+                    #curr_y = ease_linear(TATE_Y, -TATE_Y, self.round_timer+2, self.round_timer+3.5, st)
+                    #r.blit(tate_renderer, (LANE_X[2], curr_y))
                 else:
                     self.win = True
                     renpy.timeout(0)
@@ -177,14 +194,23 @@ init python:
                 # Render Tate
                 r.blit(tate_renderer, (current_tate_x, TATE_Y))
 
+                # Render CS's health bar
+                r.blit(health_renderer, (0, 0))
+
                 # No more danger
                 if danger_cutoff < st:
                     self.danger_lane = None
 
             # PLAYER LOGIC
+            # TODO: cs will have a health bar
             if self.current_lane == self.danger_lane:
-                self.win = False
-                renpy.timeout(0)
+                renpy.notify("you have been hit") 
+                renpy.sound.play("audio/sfx/sfx_hit1.ogg")
+                self.health -= 10
+                if self.health < 0:
+                    renpy.notify("you lost") 
+                    #self.win = False
+                    #renpy.timeout(0)
             if self.fires >= FIRE_COUNT:
                 self.exited = True
 
@@ -224,7 +250,7 @@ screen PerfectTateGame():
 
 label play_perfecttate_game:
     # TODO: get baker to mix this quieter
-    play music "<from 3.6 to 228.52>nyan_of_a_lifetime.ogg" volume 0.1 if_changed
+    play music "<from 22.8 to 228>nyan_of_a_lifetime.ogg" volume 0.1 if_changed noloop
     $ persistent.heard.add("Nyan Of A Lifetime - DJ NYANKO SWITCHER")
     window hide
     $ quick_menu = False

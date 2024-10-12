@@ -3603,24 +3603,26 @@ label train_tate_ex_win:
     hide tate_fallen_2
     show tate_fallen_3 at manual_pos(0.5, 0.65, 0.5)
     with Dissolve(0.25)
-    tate "{sc}{size=+24}{font=AllerDisplay_Std_Rg_0.ttf}{i}I{/i} DECIDE HOW THE STORY ENDS."
+    tate "{sc}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}{i}I{/i} DECIDE HOW THE STORY ENDS."
     hide tate_fallen_3
     show tate_fallen_4 at manual_pos(0.5, 0.6, 0.5)
     with Dissolve(0.25)
-    tate "{sc}{size=+24}{font=AllerDisplay_Std_Rg_0.ttf}I'm not going down that easily."
-    tate "{sc}{size=+24}{font=AllerDisplay_Std_Rg_0.ttf}And, get rid of this stupid box!"
+    tate "{sc}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}I'm not going down that easily."
+    tate "{sc}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}And, can we get rid of this stupid box?!"
     show yeetable_textbox at manual_pos(0.5, 0.872, 0.5)
-    #TODO: WHY CAN'T I GET RID OF THIS STUPID BOX?!
-    $ _window_hide()
+
+    # get rid of the dialogue box until later
+    window auto False
+    window hide
+
     play sound sfx_whoosh
     show yeetable_textbox at manual_pos(3.0, 0.7, 0.5) with MoveTransition(0.25):
         linear 2.0 rotate 180
     pause 0.5
     play sound sfx_glass_echo
     with hpunch
-    $ _window_hide()
-    pause 3.0
-    $ _window_hide()
+    pause 4.0
+
     perfect_tate "{sc}{size=+24}{font=AllerDisplay_Std_Rg_0.ttf}{color=#000000}That's better."
     hide tate_fallen_4
     show tate_fallen_5 at manual_pos(0.5, 0.5, 0.5)
@@ -3628,18 +3630,26 @@ label train_tate_ex_win:
     perfect_tate "{sc}{size=+24}{font=AllerDisplay_Std_Rg_0.ttf}{color=#000000}I hope you're ready, CS."
     perfect_tate "{sc}{size=+24}{font=AllerDisplay_Std_Rg_0.ttf}{color=#000000}Because I'm not holding back anymore."
 
+    # TODO: insert a transformation sequence movie here when it's ready.
+    perfect_tate "{font=AllerDisplay_Std_Rg_0.ttf}{color=#000000}Also, I'm supposed to have a cool transformation here."
+    perfect_tate "{font=AllerDisplay_Std_Rg_0.ttf}{color=#000000}It's... not ready yet, sorry."
+    perfect_tate "{font=AllerDisplay_Std_Rg_0.ttf}{color=#000000}Enjoy 18 seconds of delay until the fight starts, I guess."
+
+    play music "<from 3.6 to 22.8>nyan_of_a_lifetime.ogg" volume 0.1 if_changed noloop
+
     # Disable pause menu because it'll ruin audio sync
     # TODO: also disable controller bindings
-    $ config.keymap['game_menu'].remove('K_ESCAPE')
-    $ config.keymap['game_menu'].remove('mouseup_3')
+    if 'K_ESCAPE' in config.keymap:
+        $ config.keymap['game_menu'].remove('K_ESCAPE')
+    if 'mouseup_3' in config.keymap:
+        $ config.keymap['game_menu'].remove('mouseup_3')
     $ renpy.clear_keymap_cache()
 
-    scene white with dissolve
+    $ renpy.pause(delay=19.2, hard=True)
 
     minigame "play_perfecttate_game" "train_defeated_perfect_tate" "train_tate_ex_lose"
 
 label train_defeated_perfect_tate:
-
     # re-enable pause if disabled
     # TODO: add controller bindings
     if 'K_ESCAPE' not in config.keymap:
@@ -3647,6 +3657,12 @@ label train_defeated_perfect_tate:
     if 'mouseup_3' not in config.keymap:
         $ config.keymap['game_menu'].append('mouseup_3')
     $ renpy.clear_keymap_cache()
+
+    # re-enable default window
+    window auto True
+
+    # put it here in case the player needs to skip the fight
+    $ persistent.heard.add("Nyan Of A Lifetime - DJ NYANKO SWITCHER")
 
     stop music
     scene white
