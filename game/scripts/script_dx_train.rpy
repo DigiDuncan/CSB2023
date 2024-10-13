@@ -3644,12 +3644,9 @@ label train_tate_ex_win:
     perfect_tate "{sc}{size=+24}{font=AllerDisplay_Std_Rg_0.ttf}{color=#000000}I hope you're ready, CS."
     perfect_tate "{sc}{size=+24}{font=AllerDisplay_Std_Rg_0.ttf}{color=#000000}Because I'm not holding back anymore."
 
-    # TODO: insert a transformation sequence movie here when it's ready.
-    perfect_tate "{font=AllerDisplay_Std_Rg_0.ttf}{color=#000000}Also, I'm supposed to have a cool transformation here."
-    perfect_tate "{font=AllerDisplay_Std_Rg_0.ttf}{color=#000000}It's... not ready yet, sorry."
-    perfect_tate "{font=AllerDisplay_Std_Rg_0.ttf}{color=#000000}Enjoy 19 seconds of delay until the fight starts, I guess."
-
-    play music "<from 3.6 to 22.8>nyan_of_a_lifetime.ogg" volume 0.1 if_changed noloop
+    scene white
+    $ renpy.movie_cutscene("/minigames/perfecttate/tate1.webm")
+    #play music "<from 3.6 to 22.8>nyan_of_a_lifetime.ogg" volume 0.1 if_changed noloop
 
     # Disable pause menu because it'll ruin audio sync
     # TODO: also disable controller bindings
@@ -3658,9 +3655,6 @@ label train_tate_ex_win:
     if 'mouseup_3' in config.keymap:
         $ config.keymap['game_menu'].remove('mouseup_3')
     $ renpy.clear_keymap_cache()
-
-    $ renpy.pause(delay=19.2, hard=True)
-    scene white
 
     minigame "play_perfecttate_game" "train_defeated_perfect_tate" "train_tate_ex_lose"
 

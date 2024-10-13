@@ -15,6 +15,8 @@
 # 32.381, tate starts blasting IMMEDIATELY on that first drop
 # on second thought maybe no healing items depending on how well we can balance difficulty w damage
 
+# TODO: also, adjust the lanes + tate's position so tate is in the dead center of the screen
+
 init python:
     import math
 
@@ -147,11 +149,23 @@ init python:
                         self.tate_last_x = LANE_X[self.enemy_lane]
                     else:
                         self.tate_last_x = 0
-                    # "Smart" randomize
+
+                    # More aggressive targeting that'll probably look better once the rhythm game part is implemented
                     if self.fires >= DIFF_UP:
-                        self.enemy_lane = renpy.random.choice([self.current_lane, renpy.random.randint(0, 4)])
+                        self.enemy_lane = renpy.random.choice([
+                            self.current_lane,
+                            self.current_lane,
+                            self.current_lane,
+                            self.current_lane,
+                            renpy.random.randint(0, 4)
+                            ])
                     else:
-                        self.enemy_lane = renpy.random.choice([self.current_lane, self.current_lane, renpy.random.randint(0, 4)])
+                        self.enemy_lane = renpy.random.choice([
+                            self.current_lane,
+                            self.current_lane,
+                            self.current_lane,
+                            renpy.random.randint(0, 4)
+                            ])
                     self.tate_last_move = st
                     self.tate_move_time = st + 0.5
                     self.fires += 1
@@ -249,13 +263,14 @@ init python:
 screen PerfectTateGame():
     default PerfectTateGame = PerfectTateGameDisplayable()
     # replace this later with the real video background, this is just a proof of concept
-    add Movie(play="movies/car_drive_day.webm")
+    add Movie(play="minigames/perfecttate/tate2.webm")
     add "minigames/perfecttate/background.png" at transform:
         yanchor 1.0 ypos 1.0
     add PerfectTateGame
 
 label play_perfecttate_game:
-    # TODO: get baker to mix this quieter
+    # TODO: get baker to mix this quieter once i re-render the video
+    # also, why won't the music actually play FROM the video? can this be handled whenever the chart is loaded???
     play music "<from 22.8 to 228>nyan_of_a_lifetime.ogg" volume 0.1 if_changed noloop
     $ persistent.heard.add("Nyan Of A Lifetime - DJ NYANKO SWITCHER")
     window hide
