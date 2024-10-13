@@ -292,8 +292,74 @@ label dx_christmas_party_before:
         cs "Well I'm glad you showed up, come inside! It's cold out."
     if d20 == 4:
         n "All of a sudden, CS hears a futuristic sounding vehicle land outside."
-    if d20 == 5:
+    if d20 == 5 or 6:
         n "As soon as he says that, he feels the house start to shake."
         cs "Wh-- What's going on?"
         n "As the house shakes even faster, a loud train whistle bellows out."
+    if d20 == 7:
+        n "CS notices a familiar blue car roll up on the driveway."
+        cs "Look at that! Looks like Billy is here first!"
+        billy "Hi! It's Billy!"
+        billy "Merry Christmas!"
+        cs "Merry Christmas to you too, Billy!"
+        billy "Times like these make me wish I could still run commercials."
+        billy "It's been hard to sell products by word of mouth, especially since I died that one time."
+        cs "That sucks man, I hope this party cheers you up."
+        billy "Let's get inside. It's freezing out here."
+    if d20 == 8:
+        n "All of a sudden, CS hears helicopter blades outside of his house."
+        cs "Woah, what the hell?"
+        n "A Blackhawk helicopter is seen landing out in the middle of the street."
+        n "The President of the United States steps out."
+        obama "Hello, CS! Nice to meet you."
+        cs "Obama?! I didn't think you would actually come!"
+        obama "Well, I have enjoyed your content, and when you sent an invitation to your Christmas party, I figured I could come visit for a while."
+        obama "Besides, running the political circus has become tiring enough, I need a break."
+        cs "Fair enough, I guess! Well Mr. President, let's get inside and wait for the other guests."
+        obama "Sure thing. It is very cold outside."
+    if d20 == 9:
+        n "Sirens start blaring outside."
+        cs "Uh oh! Why are the cops here?"
+        n "CS rushes outside."
+        copguy "Heya, CS. Did I scare you?"
+        cs "Fuck, yeah you did! I didn't think you were gonna be on duty!"
+        copguy "Well someone's gotta be security, right?"
+        cs "I… guess?"
+        cs "Whatever, let's inside, I'm freezing."
+    if d20 == 10:
+        n "CS looks outside to see a bus pull up."
+        cs "Hmm, I wonder who took the bus."
+        sheriff "God damnit! Stupid damn wheels! Stuck in the snow!"
+        cs "Woah, hey! Who are you?"
+        sheriff "Who am I? I'm copguy's boss, that's who!"
+        sheriff "I asked him to pick me up, but apparently he had to shop or some shit!"
+        sheriff "And I had to take the bus!"
+        cs "Oh wow okay, uhm, do you need help?"
+        sheriff "Yes!! I keep getting stuck in the snow! Take me inside!"
+    if d20 == 11:
+        n "A beam sound can be heard from outside."
+        cs "Hey guys! How have you guys been doing?"
+        ed "We've been doing well! Our business has been profitable recently!"
+        ed "Even Wesley has made a speedy recovery! He wasn't too happy about getting that metal pipe in back, though."
+        cs "Yeah, I'm uhh..."
+        cs "I'm really sorry about that. I still feel bad about taking that too far."
+        n "Wesley stares at the ground and mutters."
+        wesley "Yeah."
+        richard "Well, why don't we get inside? It's freezing!"
+        cs "Yeah, let's go!"
+    if d20 == 12:
+    if d20 == 13:
+        n "A teleport-like sound is heard outside."
+        cs "What in the world?"
+        cs "Oh hey! Aria, right?"
+        aria "Yep, that's me!"
+        aria "Goodness, am I too early?"
+        cs "A little, but that's okay!"
+        cs "I was hoping someone would arrive early."
+        aria "Well then. Should we head inside? You're probably getting cold, I assume."
+        cs "Yeah, it's kinda freezing out."
+    if d20 == 14:
+        
+
+        
     n "By the time of the party, everyone shows up at CS' house in droves."
