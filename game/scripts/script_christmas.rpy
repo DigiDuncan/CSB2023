@@ -359,7 +359,56 @@ label dx_christmas_party_before:
         aria "Well then. Should we head inside? You're probably getting cold, I assume."
         cs "Yeah, it's kinda freezing out."
     if d20 == 14:
-        
+        n "Someone's car pulls into the driveway."
+        cs "I wonder who that could be?"
+        cs "Oh hey, it's Michael!"
+        cs "You're still visiting the United States? I thought you were only here for the summer!"
+        michael "I decided to spend a whole year over here."
+        michael "It's pretty cold out, ain't it?"
+        cs "Yeah, let's get inside now."
+    if d20 == 15:
+        n "CS sees Linus' car pulling up outside."
+        cs "It looks like Linus got here first!"
+        linus "Hey CS! Long time no see!"
+        cs "You too, and Luke as well?"
+        luke "Hey man! I know we didn't talk much during your short employment, but it was fun having you around!"
+        luke "Linus talks a lot about you."
+        cs "Oh really?"
+        linus "I just think you're a funny guy!"
+        linus "What wasn't funny was the cops showing up at LTT, but we can let bygones be bygones."
+        cs "Yeah, sorry about all that. It's a long story."
+        cs "Why don't we go inside, and i'll explain the whole thing while we wait."
+    if d20 == 16:
+        n "Another Honda Civic shows up in CS' driveway."
+        cs "Oh look at that! It's Blank!"
+        blank "Hey CS, how have you been?"
+        cs "I've been doing well, did you drive safe here?"
+        blank "I did, but lots of people on the interstate didn't!"
+        blank "I got quite a bit of dashcam footage to watch if you want."
+        cs "Sure thing! Let's get inside and watch while we wait for the others."
+    if d20 == 17:
+        n "An unknown car shows up in the driveway."
+        cs "I wonder who that is?"
+        nova "Hey CS! Thanks for inviting me to your Christmas party!"
+        cs "Yeah sure thing!"
+        cs "It's been a while, how've you been?"
+        nova "Oh y'know, I've been moving a lot, had my friend move in with me..."
+        cs "Well, if you wanna chat about it, let's go inside first. It's cold out here."
+    if d20 == 18:
 
-        
+    if d20 == 19:
+        n "An orange mini coooper shows up infront of CS' house."
+        cs "Holy crap, is that who I think it is?"
+        cs "DB! Your the first one here!"
+        db "I am??"
+        cs "Yes! You managed to be the earliest this time!"
+        db "Wow, I can't believe it!"
+        cs "Yeah! Let's get inside and we can talk!"
+    if d20 == 20:
+    else:
+        n "CS waits paiently."
+        n "He keeps on waiting."
+        cs "Alright, any minute now..."
+        cs "The party starts here in about 15 minutes, so people should start showing up soon..."
+        n "CS keeps on waiting, but it looks like no one shows up early."       
     n "By the time of the party, everyone shows up at CS' house in droves."
