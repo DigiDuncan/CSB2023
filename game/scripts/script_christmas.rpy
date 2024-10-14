@@ -348,6 +348,7 @@ label dx_christmas_party_before:
         richard "Well, why don't we get inside? It's freezing!"
         cs "Yeah, let's go!"
     if d20 == 12:
+        pass
     if d20 == 13:
         n "A teleport-like sound is heard outside."
         cs "What in the world?"
@@ -395,7 +396,7 @@ label dx_christmas_party_before:
         nova "Oh y'know, I've been moving a lot, had my friend move in with me..."
         cs "Well, if you wanna chat about it, let's go inside first. It's cold out here."
     if d20 == 18:
-
+        pass
     if d20 == 19:
         n "An orange mini coooper shows up infront of CS' house."
         cs "Holy crap, is that who I think it is?"
@@ -405,6 +406,7 @@ label dx_christmas_party_before:
         db "Wow, I can't believe it!"
         cs "Yeah! Let's get inside and we can talk!"
     if d20 == 20:
+        pass
     else:
         n "CS waits paiently."
         n "He keeps on waiting."
