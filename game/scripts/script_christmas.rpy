@@ -282,20 +282,59 @@ label dx_christmas_party_before:
         cs "Alright, any minute now..."
         cs "The party starts here in about 15 minutes, so people should start showing up soon..."
         n "CS keeps on waiting, but it looks like no one shows up early."
+        jump dx_christmas_intro      
     if d20 == 2:
-        n "As CS asks himself this, "
+        n "As CS asks himself this, a small car pulls up in the driveway."
+        cs "Hmm, let go see who that is!"
+        arceus "Hey CS!"
+        cs "Hey Arc! Hey Kitty!"
+        kitty "What's up?"
+        cs "Well, Merry Christmas guys! I'm glad you could travel back here for this!"
+        arceus "No problem! I mean, after everything we went through, how could I not?"
+        cs "Yeah, well, should we get inside? It's pretty cold out."
+        kitty "Well, we are rather warm, but yeah."
+        kitty "Let's go inside."
+        jump dx_christmas_intro      
     if d20 == 3:
         n "CS peers out the window to see Anno's car pull into the driveway."
         cs "Hey look at that! Anno's here first!"
         anno "Hey CS!"
         anno "I showed up kinda early, but I wanted to see everyone's initial reactions of our decor work!"
         cs "Well I'm glad you showed up, come inside! It's cold out."
+        jump dx_christmas_intro      
     if d20 == 4:
         n "All of a sudden, CS hears a futuristic sounding vehicle land outside."
-    if d20 == 5 or 6:
+        cs "What the hell is that?"
+        digi "Hey CS! How've you been?"
+        cs "Hey Digi! Didn't know you have a... spaceship?"
+        digi "Well sometimes, you can barely call it that."
+        digi "Brr... it's cold out. Can we go inside?"
+        cs "Yeah, let's get inside."
+        jump dx_christmas_intro      
+    if d20 == 5:
         n "As soon as he says that, he feels the house start to shake."
         cs "Wh-- What's going on?"
         n "As the house shakes even faster, a loud train whistle bellows out."
+        cs "Holy shit, is that a train?"
+        cs "That's a fucking train!"
+        tate "Hey CS! How've you been doin'?"
+        cs "Tate? Hey! I've been great!"
+        mean "Hey CS, Merry Christmas!"
+        cs "Merry Christmas to you too, Mean. Shall we get inside."
+        tate "Yeah!"
+        jump dx_christmas_intro
+    if d20 == 6:
+        n "As soon as he says that, he feels the house start to shake."
+        cs "Wh-- What's going on?"
+        n "As the house shakes even faster, a loud train whistle bellows out."
+        cs "Holy shit, is that a train?"
+        cs "That's a fucking train!"
+        tate "Hey CS! How've you been doin'?"
+        cs "Tate? Hey! I've been great!"
+        mean "Hey CS, Merry Christmas!"
+        cs "Merry Christmas to you too, Mean. Shall we get inside."
+        tate "Yeah!"
+        jump dx_christmas_intro    
     if d20 == 7:
         n "CS notices a familiar blue car roll up on the driveway."
         cs "Look at that! Looks like Billy is here first!"
@@ -306,6 +345,7 @@ label dx_christmas_party_before:
         billy "It's been hard to sell products by word of mouth, especially since I died that one time."
         cs "That sucks man, I hope this party cheers you up."
         billy "Let's get inside. It's freezing out here."
+        jump dx_christmas_intro      
     if d20 == 8:
         n "All of a sudden, CS hears helicopter blades outside of his house."
         cs "Woah, what the hell?"
@@ -317,6 +357,7 @@ label dx_christmas_party_before:
         obama "Besides, running the political circus has become tiring enough, I need a break."
         cs "Fair enough, I guess! Well Mr. President, let's get inside and wait for the other guests."
         obama "Sure thing. It is very cold outside."
+        jump dx_christmas_intro      
     if d20 == 9:
         n "Sirens start blaring outside."
         cs "Uh oh! Why are the cops here?"
@@ -326,6 +367,7 @@ label dx_christmas_party_before:
         copguy "Well someone's gotta be security, right?"
         cs "I… guess?"
         cs "Whatever, let's inside, I'm freezing."
+        jump dx_christmas_intro      
     if d20 == 10:
         n "CS looks outside to see a bus pull up."
         cs "Hmm, I wonder who took the bus."
@@ -336,19 +378,30 @@ label dx_christmas_party_before:
         sheriff "And I had to take the bus!"
         cs "Oh wow okay, uhm, do you need help?"
         sheriff "Yes!! I keep getting stuck in the snow! Take me inside!"
+        jump dx_christmas_intro      
     if d20 == 11:
         n "A beam sound can be heard from outside."
         cs "Hey guys! How have you guys been doing?"
         ed "We've been doing well! Our business has been profitable recently!"
-        ed "Even Wesley has made a speedy recovery! He wasn't too happy about getting that metal pipe in back, though."
+        ed "Even Wesley has made a speedy recovery! He wasn't too happy about getting that metal pipe in his back, though."
         cs "Yeah, I'm uhh..."
         cs "I'm really sorry about that. I still feel bad about taking that too far."
         n "Wesley stares at the ground and mutters."
         wesley "Yeah."
-        richard "Well, why don't we get inside? It's freezing!"
+        rich "Well, why don't we get inside? It's freezing!"
         cs "Yeah, let's go!"
+        jump dx_christmas_intro      
     if d20 == 12:
-        pass
+        n "An old Dodge Charger pulls up on the driveway."
+        cs "Nice car! I wonder if that's Carguy..."
+        cs "Hey it's... two Pakoos?"
+        k17 "CS!!!"
+        k22 "Hey CS. Merry Christmas!"
+        cs "Hi, so umm..."
+        cs "Are you guys both Pakoo?"
+        k22 "It's... kind of complicated."
+        k22 "Let's go inside, and we can explain."
+        jump dx_christmas_intro      
     if d20 == 13:
         n "A teleport-like sound is heard outside."
         cs "What in the world?"
@@ -359,6 +412,7 @@ label dx_christmas_party_before:
         cs "I was hoping someone would arrive early."
         aria "Well then. Should we head inside? You're probably getting cold, I assume."
         cs "Yeah, it's kinda freezing out."
+        jump dx_christmas_intro      
     if d20 == 14:
         n "Someone's car pulls into the driveway."
         cs "I wonder who that could be?"
@@ -367,6 +421,7 @@ label dx_christmas_party_before:
         michael "I decided to spend a whole year over here."
         michael "It's pretty cold out, ain't it?"
         cs "Yeah, let's get inside now."
+        jump dx_christmas_intro      
     if d20 == 15:
         n "CS sees Linus' car pulling up outside."
         cs "It looks like Linus got here first!"
@@ -379,6 +434,7 @@ label dx_christmas_party_before:
         linus "What wasn't funny was the cops showing up at LTT, but we can let bygones be bygones."
         cs "Yeah, sorry about all that. It's a long story."
         cs "Why don't we go inside, and i'll explain the whole thing while we wait."
+        jump dx_christmas_intro      
     if d20 == 16:
         n "Another Honda Civic shows up in CS' driveway."
         cs "Oh look at that! It's Blank!"
@@ -387,6 +443,7 @@ label dx_christmas_party_before:
         blank "I did, but lots of people on the interstate didn't!"
         blank "I got quite a bit of dashcam footage to watch if you want."
         cs "Sure thing! Let's get inside and watch while we wait for the others."
+        jump dx_christmas_intro      
     if d20 == 17:
         n "An unknown car shows up in the driveway."
         cs "I wonder who that is?"
@@ -395,8 +452,22 @@ label dx_christmas_party_before:
         cs "It's been a while, how've you been?"
         nova "Oh y'know, I've been moving a lot, had my friend move in with me..."
         cs "Well, if you wanna chat about it, let's go inside first. It's cold out here."
+        jump dx_christmas_intro      
     if d20 == 18:
-        pass
+        n "CS sees a Cherokee pull up to his house."
+        cs "What the fuck? Is the military here?"
+        cs "Hey, uhh..."
+        eliza "Is this the right place?"
+        cs "I think so?"
+        cs "Are you..."
+        eliza "I'm Elizabeth. Behind me is Anne and Grace."
+        cs "You might have the wrong place. Sorry."
+        eliza "Do you know a Mika? A Mikapara?"
+        cs "Is that you?"
+        eliza "Close enough."
+        cs "Well, should we go inside."
+        eliza "Yeah, I guess so."
+        jump dx_christmas_intro      
     if d20 == 19:
         n "An orange mini coooper shows up infront of CS' house."
         cs "Holy crap, is that who I think it is?"
@@ -405,12 +476,95 @@ label dx_christmas_party_before:
         cs "Yes! You managed to be the earliest this time!"
         db "Wow, I can't believe it!"
         cs "Yeah! Let's get inside and we can talk!"
+        jump dx_christmas_intro      
     if d20 == 20:
-        pass
+        n "A man in a white shirt walks up to CS' house."
+        cs "Who the hell is that?"
+        cs "Hey, are you..."
+        avgn "I'm the fuckin' Nerd!"
+        cs "The Angry Video Game Nerd? I didn't invite you, at least I don't think I did?"
+        avgn "It doesn't fucking matter! Merry fucking Christmas!"
+        cs "Okay, do you, wanna go inside?"
+        avgn "Hell yeah."
+        cs "Alright then..."
+        jump dx_christmas_intro      
     else:
         n "CS waits paiently."
         n "He keeps on waiting."
         cs "Alright, any minute now..."
         cs "The party starts here in about 15 minutes, so people should start showing up soon..."
-        n "CS keeps on waiting, but it looks like no one shows up early."       
+        n "CS keeps on waiting, but it looks like no one shows up early." 
+        jump dx_christmas_intro      
+    #Introductions
+label dx_christmas_intro:
     n "By the time of the party, everyone shows up at CS' house in droves."
+    cs "Well, it looks like everyone is here, right?"
+    anno "DB isn't here yet, but other than that, yeah."
+    tate "There are... a lot of people here..."
+    digi "Yeah, I wonder where Arc and Kitty are..."
+    k17 "OMG hey guys!"
+    k17 "You guys all look so… different!"
+    k22 "Hi, I'm his--"
+    k17 "CS, look how much you've grown!"
+    cs "Okay, why are there 2 Pakoos?"
+    cs "...and you don't have green hair anymore again?"
+    k22 "Oh boy, alright K-17, calm down for one second. I think everyone here needs an explanation."
+    cs "Yes please. I didn't want to say it, but it seems like everytime I meet you guys, your appearance always changes!"
+    aria "Sorry."
+    digi "Did I change too much?"
+    cs "No no, just, let Pakoo #2 speak."
+    k22 "I'm gonna assume that's me."
+    k22 "Alright, so, I'm K-22, the physical manifestation of Pakoo's memories from the year 2022."
+    k22 "This is K-17, I'm sure you can figure out what year he is."
+    k17 "Remember me? I'm the Sunny D guy!"
+    n "CS groans."
+    cs "Okay, so what about the green haired one?"
+    k22 "That's Addy, our boss. They run this archiving facility far away from here, and I guess they would be the closest version of Pakoo you know, but they aren't here right now."
+    k22 "They are running their own Christmas party, which I wanted to be a part of, but this creature right here just HAD to go this party,"
+    k22 "and I have to make sure he doesn't get too crazy."
+    cs "Great."
+    cs "Is that it?"
+    k22 "I mean, I could go on, but I'd be here all night."
+    mean "Hey, what's going on here?"
+    mean "Wait, there's 2 Pakoos now?"
+    k22 "Okay, so--"
+    tate "I'll just tell him later."
+    cs "Alright, well, I'll let you guys talk, I'm gonna check on the others."
+    k17 "So, who are you? Are you DigBick?"
+    mean "What did you just call me?"
+    cs "Hey guys, how are y'all doing?"
+    obama "Hello CS, we are all preparing our meals for dinner tonight."
+    obama "I'm gonna make a carrot cake."
+    billy "I'm gonna make some big city sliders!"
+    michael "I've been thinking of preparing some mashed potatoes."
+    cs "That all sounds great!"
+    cs "What about you, Ed?"
+    ed "Well, I think when it comes to cooking, it's just as good as my foundation repair skills."
+    ed "I'm preparing a Christmas turkey for our feast."
+    cs "Damn! That sounds delicious!"
+    cs "Well I hope you are all doing great!"
+    cs "I'm gonna go check everyone else!"
+    digi "So, this should go here..."
+    linus "No, you got the wrong cable!"
+    luke "You idiots are both wrong! You are putting in the wrong port!"
+    "Digi and Linus" "Ohhhhh..."
+    cs "Hey guys! What are you guys doing?"
+    digi "Oh, we are just trying to set up a projector to play movies on!"
+    linus "Don't ask how this became a 3 man job."
+    cs "Well, what about you two?"
+    blank "We are working on setting up the music."
+    nova "The problem is, I don't really want to have Blank play his shitty music during the party."
+    blank "Why? Not all of it's crazy shit, like yours is."
+    nova "Shut the hell up!"
+    cs "Woah okay, calm down."
+    cs "This is a Christmas party, after all. Let's try to have fun."
+    cs "I'm gonna go check on anyone else who is here."
+
+    #Banter
+    #Cooking
+    #Banter 2
+    #Dinner
+    #Games
+    #Gift Exchange
+    #Climax
+
