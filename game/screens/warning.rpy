@@ -1,4 +1,5 @@
 screen warning(warning_text, triggers, leave_label):
+    modal True
     python:
         show_window = False
         renpy.choice_for_skipping()
