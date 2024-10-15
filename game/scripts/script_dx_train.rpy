@@ -3612,16 +3612,26 @@ label train_tate_ex_win:
     show tate_fallen_2 at manual_pos(0.5, 0.65, 0.5)
     with Dissolve(0.25)
     tate "{sc=3}I refuse."
-    tate "{sc=4}Do you hear me?!"
-    tate "{sc}{size=+36}THIS IS {i}MY{/i} TIMELINE."
+    "..."
+    tate "{sc=4}{size=+36}DO YOU HEAR ME UP THERE?!" with vpunch
+    tate "{sc}{size=+36}YOU TOLD ME I'D BE IMPORTANT!"
+    tate "{sc}{size=+36}YOU TOLD ME I'D HAVE A GOOD ENDING!"
+    tate "{sc}{size=+36}WAS IT ALL JUST A FUCKING LIE?!"
     hide tate_fallen_2
     show tate_fallen_3 at manual_pos(0.5, 0.65, 0.5)
     with Dissolve(0.25)
-    tate "{sc}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}{i}I{/i} DECIDE HOW THE STORY ENDS."
+    tate "{sc}{size=+36}I guess I can't rely on anyone."
+    tate "{sc}{size=+36}I guess, if I want a good ending..."
+    tate "{sc}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}I'LL JUST HAVE TO WRITE IT MYSELF."
     hide tate_fallen_3
     show tate_fallen_4 at manual_pos(0.5, 0.6, 0.5)
     with Dissolve(0.25)
+    "..."
+    tate "{sc}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}Starting with {i}you."
+    tate "{sc}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}I'm not just another RPG filler fight."
     tate "{sc}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}I'm not going down that easily."
+    tate "{sc}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}I--{w=0.25}{nw}"
+    "..."
     tate "{sc}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}... Can we get rid of this stupid box?!"
     show yeetable_textbox at manual_pos(0.5, 0.872, 0.5)
 
