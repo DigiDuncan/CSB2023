@@ -740,11 +740,26 @@ label dx_christmas_intro:
     copguy "It was so impressive, I probably would've fallen for some of them!"
     sheriff "That's great, can you get me off this toilet now?"
     sheriff "I've been thinking of signing my will here because of how long it's been!"
-    copguy "Ah yes, let's get you out of here old man."
+    copguy "Alright, let's get you out of here old man."
     grace "Finally!"
     grace "Guys, the sheriff is out!"
     n "A line starts to form next to the bathroom."
     #Dinner/More Banter
     #Gift Exchange
     #Games/Climax
+    n "After all of the gifts have been given out, almost everyone has come to the conclusion that the party should end."
+    k22 "Well CS, this was wonderful, but we should get going."
+    cs "Wait! You aren't gonna stay for the games?"
+    k22 "SHHHDADA--{w=1.0}{nw}"
+    k17 "We are doing games? Well that's the best part!"
+    k22 "Damnit!"
+    cs "So you never wanted to stay, you only came here because of him!"
+    nova "Well, I'm also leaving, because this asshole won't let me play any good music!"
+    blank "Hah! Says you! You wanted to play your trash this whole party!"
+    digi "Hey wait a second! Luke!"
+    luke "Wha? Oh shit!"
+    digi "You were, streaming movies to the projector from your phone?"
+    luke "Look, this looked to complicated to setup anyways, so I wanted to make it feel like your plan worked!"
+    digi "But, but..."
+    digi "I really thought I could set it up this time..."
 

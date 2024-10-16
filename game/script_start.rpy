@@ -570,7 +570,7 @@ define bomahanobeep = Character("\"Omaha\"", callback = renpy.partial(char_callb
 
 # DX Misc Character Definitions
 define copguyexe = Character("Copguy", callback = renpy.partial(char_callback, name = "copguy", beep = "copexe"))
-define avgn = Character("James Rolfe", callback = renpy.partial(char_callback, play_beeps = False))
+define avgn = Character("James Rolfe", callback = char_callback)
 
 # DX Digi Character Definitions
 define david = Character("David", callback = char_callback)
@@ -628,10 +628,11 @@ define aria_alt = Character("Aria", callback = renpy.partial(char_callback, name
 define blank = Character("Blank", callback = renpy.partial(char_callback, name = "blank", beep = "blank"))
 define db = Character("DB05", callback = renpy.partial(char_callback, name = "db", beep = "db05"))
 define digi = Character("Digi", callback = renpy.partial(char_callback, name = "digi", beep = "digi"))
-define eliza = Character("Elizabeth", callback = renpy.partial(char_callback, play_beeps = False))
+define eliza = Character("Elizabeth", callback = char_callback)
+define grace = Character("Grace", callback = char_callback)
 define iris = Character("Iris", callback = renpy.partial(char_callback, name = "iris", beep = "iris"))
-define k17 = Character("K-17", callback = renpy.partial(char_callback, play_beeps = False))
-define k22 = Character("K-22", callback = renpy.partial(char_callback, play_beeps = False))
+define k17 = Character("K-17", callback = char_callback)
+define k22 = Character("K-22", callback = char_callback)
 define kitty = Character("Kitty", callback = renpy.partial(char_callback, name = "kitty", beep = "kitty"))
 define mean = Character("Mean", callback = renpy.partial(char_callback, name = "mean", beep = "mean"))
 define midge = Character("Midge", callback = renpy.partial(char_callback, name = "midge", beep = "midge"))
