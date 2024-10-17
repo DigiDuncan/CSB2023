@@ -571,6 +571,7 @@ define bomahanobeep = Character("\"Omaha\"", callback = renpy.partial(char_callb
 # DX Misc Character Definitions
 define copguyexe = Character("Copguy", callback = renpy.partial(char_callback, name = "copguy", beep = "copexe"))
 define avgn = Character("James Rolfe", callback = char_callback)
+define tgt_worker = Character("Target Employee", callback = char_callback)
 
 # DX Digi Character Definitions
 define david = Character("David", callback = char_callback)
