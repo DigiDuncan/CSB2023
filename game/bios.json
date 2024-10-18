@@ -493,6 +493,14 @@
         "dx": true,
         "zoom": 0.667
     },
+    "perfect_tate": {
+        "full_name": "Perfect Tate",
+        "sprite_path": "images/characters/tate/tate_ex.png",
+        "quote": "...",
+        "bio": "A temporal abomination.",
+        "dx": true,
+        "zoom": 0.667
+    },
     "terry": {
         "full_name": "Terry Lesler",
         "sprite_path": "images/characters/terry.png",

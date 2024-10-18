@@ -212,6 +212,7 @@ init python:
             return [ self.child ]
 
     # Simple random motion effect
+    # TODO: HI THIS IS TATE, I HAD TO MODIFY WHERE xoff AND yoff ARE DECLARED BECAUSE IT KEPT CRASHING??? IS THERE ANY OFFICIAL UPDATE TO THIS SCRIPT???
     class ScareText(renpy.Displayable):
         def __init__(self, child, square=2, **kwargs):
             super(ScareText, self).__init__(**kwargs)
@@ -223,8 +224,8 @@ init python:
 
         def render(self, width, height, st, at):
             # Randomly move the offset of the text's render.
-            xoff = (random.random()-.5) * float(self.square)
-            yoff = (random.random()-.5) * float(self.square)
+            xoff = (renpy.random.random()-.5) * float(self.square)
+            yoff = (renpy.random.random()-.5) * float(self.square)
 
             child_render = renpy.render(self.child, width, height, st, at)
             self.width, self.height = child_render.get_size()

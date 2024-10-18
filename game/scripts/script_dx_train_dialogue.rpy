@@ -1,6 +1,13 @@
+# TODO: better moving backgrounds
+# TODO: ALL INSTANCES OF CAR PLAINS / CAR PLAINS NIGHT ARE PLACEHOLDERS
+
 label train_dialogue:
+    stop music fadeout 1.0
+    music end
+
     play sfx sfx_ambiance_train_interior loop volume 0.3
 
+    show car plains
     show amtrak_dining_day
     show cs at left
     show arceus at right
@@ -93,7 +100,10 @@ label train_dialogue:
     pause 3.0
 
     if fun_value(FUN_VALUE_COMMON):
-        scene amtrak_cab
+        scene
+        show car plains:
+            xzoom -1
+        show amtrak_cab
         show mean human hat at mid_right
         show tate at left
         with dissolve
@@ -194,6 +204,8 @@ label train_dialogue:
 
     scene black with dissolve
 
+    scene
+    show car plains
     show amtrak_dining_day
     show cs phone at left
     show arceus at right

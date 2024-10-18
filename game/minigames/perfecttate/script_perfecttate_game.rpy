@@ -263,16 +263,13 @@ init python:
 
 screen PerfectTateGame():
     default PerfectTateGame = PerfectTateGameDisplayable()
-    # replace this later with the real video background, this is just a proof of concept
     add Movie(play="minigames/perfecttate/tate2.webm")
     add "minigames/perfecttate/background.png" at transform:
         yanchor 1.0 ypos 1.0
     add PerfectTateGame
 
 label play_perfecttate_game:
-    # TODO: get baker to mix this quieter once i re-render the video
-    # also, why won't the music actually play FROM the video? can this be handled whenever the chart is loaded???
-    play music "<from 22.8 to 228>nyan_of_a_lifetime.ogg" volume 0.1 if_changed noloop
+    play music "<from 22.8 to 228>nyan_of_a_lifetime.ogg" volume 0.3 if_changed noloop
     $ persistent.heard.add("Nyan Of A Lifetime - DJ NYANKO SWITCHER")
     window hide
     $ quick_menu = False

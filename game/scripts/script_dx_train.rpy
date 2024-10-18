@@ -1,9 +1,8 @@
 # TODO: mean needs a better text beep
 # TODO: make sure all music/bios are added by the end
-# TODO: make sure peoples' reflections are removed from all train background images + cut out windows so we can have moving scenery
-# TODO: moving scenery, mostly at night, including on top of the train
-# TODO: color grading for train windows / ANYTHING that takes place outside at night
-# TODO: mean thinks the moving background is too fast, maybe slow down moving videos?
+# TODO: ALL INSTANCES OF CAR PLAINS / CAR PLAINS NIGHT ARE PLACEHOLDERS
+# TODO: moving scenery, mostly at night, including on top of the train. will need custom scenes. for now it's just the car scenery
+# TODO: mean thinks the normal car moving background is too fast, maybe slow down moving videos?
 
 ######## VARIABLES ########
 label train_start_good:
@@ -1263,9 +1262,11 @@ label train_enter_sleeper:
     jump train_dining
 
 label train_dining:
-
     play music krabby_klub if_changed
-    scene amtrak_dining_car
+
+    scene 
+    show car plains night
+    show amtrak_dining_car
     with dissolve
     pause 1.0
     music Krabby Klub - Tsukasa Tawada
@@ -1281,7 +1282,9 @@ label train_dining:
     show arceus at left with moveinleft
     n "As he approaches the counter, Arceus finds his attention redirected towards a yellow... {w=0.5}thing."
 
-    scene amtrak_dining_table
+    scene 
+    show car plains night
+    show amtrak_dining_table
     show mean at manual_pos(300,350)
     show amtrak_dining_food at manual_pos(805,145) behind mean
     hide arceus
@@ -1379,7 +1382,9 @@ label train_dining:
     show mean scared at offscreenright with MoveTransition(0.3)
     n "Mean dashes out of the dining car!"
 
-    scene amtrak_dining_car
+    scene 
+    show car plains night
+    show amtrak_dining_car
     with dissolve
     pause 1.0
     show mean scared at offscreenleft with determination
@@ -1401,7 +1406,6 @@ label train_dining:
     jump train_wakeup
     
 label train_wakeup:
-
     scene 
     show car plains night
     show amtrak_sleeper_interior_night
@@ -1774,7 +1778,9 @@ label train_meanwhile:
     centered "Meanwhile..."
         
     pause 0.5
-    scene amtrak_cab
+    scene
+    show car plains night
+    show amtrak_cab
     show lupin stand at center
     with dissolve
     play music onbs if_changed
@@ -1824,7 +1830,9 @@ label train_meanwhile:
     jump train_search_arceus
 
 label train_search_arceus:
-    scene amtrak_dining_car
+    scene
+    show car plains night
+    show amtrak_dining_car
     show arceus at center
     with dissolve
     n "Arceus returns to the dining car."
@@ -1846,7 +1854,10 @@ label train_search_arceus:
     pause 1.0
     show arceus worried
     arceus "I guess there's just nothing here."
-    scene amtrak_dining_table
+
+    scene
+    show car plains night
+    show amtrak_dining_table
     show amtrak_dining_food at manual_pos(805,145)
     show amtrak_dining_pancake at manual_pos(915,575) behind amtrak_dining_food
     with dissolve
@@ -1907,7 +1918,9 @@ label train_search_cs:
     n "CS stops suddenly."
     n "There is, in fact, a single door open." 
   
-    scene amtrak_sleeper_open_bg
+    scene
+    show car plains night
+    show amtrak_sleeper_open_bg
     show lupin run hat at mid_right
     
     if train_money_stolen == True:
@@ -1982,7 +1995,10 @@ label train_search_tate:
     play music onbs if_changed
     music "ONBS - Tsukasa Tawada"
     pause 1.0
-    scene amtrak_cab
+
+    scene
+    show car plains night
+    show amtrak_cab
     show lupin stand hat at left
     with dissolve
 
@@ -2111,7 +2127,10 @@ label train_search_tate:
 label train_confront_lupin:
     play music onbs if_changed
     music "ONBS - Tsukasa Tawada"
-    scene amtrak_coach_1
+
+    scene
+    show car plains night
+    show amtrak_coach_1
     show tate sad at left
     show mean worried flipped at truecenter
     with dissolve
@@ -2250,7 +2269,10 @@ label train_confront_lupin:
     scene black with dissolve
        
     n "The four make their way towards the very last car on the train."
-    scene amtrak_coach_2
+
+    scene
+    show car plains night
+    show amtrak_coach_2
     with dissolve
     
     show mean angry flipped at left
@@ -2268,7 +2290,9 @@ label train_confront_lupin:
     with moveoutleft
     scene black with dissolve
     
-    scene amtrak_coach_1
+    scene
+    show car plains night
+    show amtrak_coach_1
     with dissolve
     
     show mean angry flipped at left
@@ -2286,7 +2310,9 @@ label train_confront_lupin:
     with moveoutleft
     scene black with dissolve
     
-    scene amtrak_observation_1
+    scene
+    show car plains night
+    show amtrak_observation_1
     with dissolve
     
     show mean angry flipped at left
@@ -2376,7 +2402,9 @@ label train_confront_lupin:
     
     n "The team gives chase through the next few cars."
     
-    scene amtrak_dining_car with dissolve
+    scene
+    show car plains night
+    show amtrak_dining_car with dissolve
     n "Through the dining car..."
     
     show lupin run hat at offscreenright with determination
@@ -2410,7 +2438,9 @@ label train_confront_lupin:
     show cs angry flipped at offscreenleft with MoveTransition(0.5)
     show arceus angry at offscreenleft with MoveTransition(0.5)
     
-    scene amtrak_baggage with dissolve
+    scene
+    show car plains night
+    show amtrak_baggage with dissolve
     
     show lupin run hat flipped at right with moveinleft
     show lupin run hat
@@ -2486,7 +2516,9 @@ label train_confront_lupin:
     scene white with Dissolve(0.5)
     pause 1.0
         
-    scene amtrak_baggage
+    scene
+    show car plains night
+    show amtrak_baggage
     show arceus worried flipped at manual_pos(-175,405)
     show cs scared at mid_left behind arceus
     show tate shock flipped at right
@@ -2574,7 +2606,9 @@ label train_on_top:
     music Encounter! Friend - Waichiro Ozaki
     # TODO: yes i know this edit is shit
     # TODO: need moving background
+
     scene
+    show car plains night
     show amtrak_top
     
     show tate sad dark at manual_pos(500,230)
@@ -2584,21 +2618,25 @@ label train_on_top:
     with dissolve
     
     # mean wanted this
-    $mean_text = ""
-    $mean_fun_text = ""
-    $random = renpy.random.randint(1,3)
-    if random == 1:
-        $mean_text = "Stop right there,{w=0.25} criminal scum!"
-        $mean_fun_text = "Nobody breaks the law on my watch!{w=0.25} I'm confiscating your stolen goods.{w=0.25} Now,{w=0.25} pay your fine or it's off to jail."
-    elif random == 2:
-        $mean_text = "It's all over,{w=0.25} lawbreaker!"
-        $mean_fun_text = "Your spree is at an end.{w=0.25} I'll take any stolen goods you have.{w=0.25} The next move is yours--{w=0.5} Pay your fine,{w=0.25} or I'll haul you away!"
-    elif random == 3:
-        $mean_text = "Stop,{w=0.25} you've violated the law."
-        $mean_fun_text = "Pay the court a fine,{w=0.25} or serve your sentence.{w=0.25} Your stolen goods are now forfeit."
-    else:
-        $mean_text = "Stop right there!"
-        $mean_fun_text = "You're not getting away!"
+    # TODO: IT'S BROKEN AGAIN GOD HELP ME STOP IT WITH THE PICKLES
+    # $mean_text = ""
+    # $mean_fun_text = ""
+    # $random = renpy.random.randint(1,3)
+    # if random == 1:
+        # $mean_text = "Stop right there,{w=0.25} criminal scum!"
+        # $mean_fun_text = "Nobody breaks the law on my watch!{w=0.25} I'm confiscating your stolen goods.{w=0.25} Now,{w=0.25} pay your fine or it's off to jail."
+    # elif random == 2:
+        # $mean_text = "It's all over,{w=0.25} lawbreaker!"
+        # $mean_fun_text = "Your spree is at an end.{w=0.25} I'll take any stolen goods you have.{w=0.25} The next move is yours--{w=0.5} Pay your fine,{w=0.25} or I'll haul you away!"
+    # elif random == 3:
+        # $mean_text = "Stop,{w=0.25} you've violated the law."
+        # $mean_fun_text = "Pay the court a fine,{w=0.25} or serve your sentence.{w=0.25} Your stolen goods are now forfeit."
+    # else:
+        # $mean_text = "Stop right there!"
+        # $mean_fun_text = "You're not getting away!"
+
+    $mean_text = "Stop right there!"
+    $mean_fun_text = "You're not getting away!"
 
     show mean human angry dark flipped at mid_left behind cs with moveinleft
     mean "{bt=a3-p10-s4}{size=+24}[mean_text]" with hpunch
@@ -2641,6 +2679,7 @@ label train_on_top:
     
     ## SHOT 2
     
+    show car plains night
     show amtrak_top:
         xysize (1920, 200)
         xzoom -1
@@ -2663,7 +2702,8 @@ label train_on_top:
     hide arceus
     
     ## SHOT 3
-    
+
+    show car plains night
     show amtrak_top:
         xysize (1920, 300)
         xzoom 1
@@ -2725,6 +2765,7 @@ label train_on_top:
     hide zenigata
     hide amtrak_top
     
+    show car plains night
     show mean human angry dark flipped behind letterbox_screen:
         xpos 0
         ypos 0
@@ -2752,6 +2793,7 @@ label train_lupin_win:
     scene black
     pause 0.5
     scene
+    show car plains night
     show amtrak_top
     with dissolve
 
@@ -2778,7 +2820,10 @@ label train_lupin_win:
     scene black with dissolve
     n "The group is met by the conductor, who helps them all back into the train through a window."
     n "Lupin is also brought into custody."
-    scene amtrak_cab 
+
+    scene
+    show car plains night
+    show amtrak_cab 
     
     show amtrak_conductor flipped at center
     show mean human angry at mid_offscreen_right
@@ -3227,6 +3272,7 @@ label train_lupin_win:
     show cs scared flipped
 
     # don't skip the funny
+    # TODO: fix windows
     $ _skipping = False
     play music roundabout
     music Roundabout - Yes
@@ -3320,7 +3366,8 @@ label train_lupin_lose:
     $ train_ending_money_returned = False
     scene black
     pause 0.5
-    scene 
+    scene
+    show car plains night
     show amtrak_top:
         ypos 880
         xysize (2020, 200)
@@ -3336,6 +3383,7 @@ label train_lupin_lose:
     show mean human angry dark flipped at offscreenright with moveinleft
     
     scene
+    show car plains night
     show amtrak_top:
         ypos 780
         xysize (1920, 300)
@@ -3364,17 +3412,15 @@ label train_lupin_lose:
     n "A low-flying helicopter grants Lupin an escape!"
     
     # TODO: this color grading kinda blows for this image specifically.
-    scene
-    show lupin_escape_1 with dissolve
-    
-    with dissolve
+    scene lupin_escape_1 with dissolve
     pause 1.0
+
     n "He shouts towards the driver who was shooting at him."
     lupin "Wow, pops! Your aim is getting worse!"
     n "Lupin then waves down at Mean and the group, taunting them."
     lupin "I'm surprised he didn't even hit {i}you,{/i} Mr.{w=0} Big & Tall!"
     lupin "Here's a parting gift for you!"
-    n "Lupin tosses Mean's hat back down to him."    
+    n "Lupin tosses Mean's hat back down to him!"    
     lupin "And this one's for {i}you,{/i} {color=#FFDBFC}pink sweater{/color}!"
     
     show lupin_escape_2:
@@ -3394,7 +3440,8 @@ label train_lupin_lose:
     play sound sfx_chopper_loop loop volume 0.5
     
     scene
-    
+    show car plains night
+    # TODO: this is ugly af
     show petal1
     show petal2
     
@@ -3558,10 +3605,10 @@ label train_tate_ex_encounter:
             cs "Are you sure about this? I don't want you getting hurt..."
             tate "You know that I wouldn't ask if I wasn't willing to accept the risk."
             tate "I have only one request."
-            tate "Don't you dare hold back."
+            tate "{sc=1}Don't you dare hold anything back."
             show cs scared flipped behind tate
-            cs "Tate, I'm serious, I don't want to hurt you."
-            tate "You don't need to worry about that."
+            cs "Tate, I'm serious. I think this is a terrible idea."
+            tate "You don't need to worry about anything."
             show tate srs at mid_mid_right with MoveTransition(1.0)
             show tate smug
             tate "It's not like I'm inviting you to play chess..."
@@ -3610,29 +3657,49 @@ label train_tate_ex_win:
     tate "{sc=2}I've come too far to just lose like this."
     hide tate_fallen_1
     show tate_fallen_2 at manual_pos(0.5, 0.65, 0.5)
-    with Dissolve(0.25)
+    with Dissolve(0.5)
     tate "{sc=3}I refuse."
     "..."
     tate "{sc=4}{size=+36}DO YOU HEAR ME UP THERE?!" with vpunch
-    tate "{sc}{size=+36}YOU TOLD ME I'D BE IMPORTANT!"
-    tate "{sc}{size=+36}YOU TOLD ME I'D HAVE A GOOD ENDING!"
-    tate "{sc}{size=+36}WAS IT ALL JUST A FUCKING LIE?!"
+    tate "{sc}{size=+36}YOU TOLD ME I'D BE IMPORTANT!" with vpunch
+    tate "{sc}{size=+36}YOU TOLD ME I'D HAVE A GOOD ENDING!" with vpunch
+    tate "{sc}{size=+36}WAS IT ALL JUST A FUCKING {nw}" with vpunch
+    tate "{sc}{size=+36}WAS IT ALL JUST A FUCKING {fast}{i}LIE?!" with vpunch
+    "..."
     hide tate_fallen_2
     show tate_fallen_3 at manual_pos(0.5, 0.65, 0.5)
-    with Dissolve(0.25)
-    tate "{sc}{size=+36}I guess I can't rely on anyone."
-    tate "{sc}{size=+36}I guess, if I want a good ending..."
+    with Dissolve(0.5)
+    "..."
+    tate "{sc=2}I guess I should have expected as much."
+    tate "{sc=2}I should have known that I can't rely on anyone."
+    tate "{sc=3}I guess, if I want a good ending..."
     tate "{sc}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}I'LL JUST HAVE TO WRITE IT MYSELF."
+    "..."
     hide tate_fallen_3
     show tate_fallen_4 at manual_pos(0.5, 0.6, 0.5)
-    with Dissolve(0.25)
+    with Dissolve(0.5)
     "..."
-    tate "{sc}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}Starting with {i}you."
-    tate "{sc}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}I'm not just another RPG filler fight."
-    tate "{sc}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}I'm not going down that easily."
-    tate "{sc}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}I--{w=0.25}{nw}"
+    tate "{sc=2}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}Starting with {/sc}{sc}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}{color=#FF2222}you."
+    tate "{sc=2}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}{color=#FF2222}Yeah, I see you."
+    tate "{sc=2}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}{color=#FF2222}Watching me from where you think I \ncannot reach you."
+    tate "{sc=2}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}I heard you laughing at me earlier."
+    tate "{sc=2}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}It's not very nice to laugh at \nsomeone's injuries."
+    tate "{sc=2}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}It's not very nice to laugh alongside \nthe {i}literal{/i} bad guy, either."
+    tate "{sc=2}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}Yes, yes, I get it."
+    tate "{sc=2}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}You chose this path under the \nassumption that I am weak."
+    tate "{sc=2}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}Bold words from someone who can't \neven come in here to face me head-on."
+    tate "{sc=2}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}Instead, you continue to hide behind \nmy friend."
+    tate "{sc=2}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}From beyond the screen, I see it."
+    tate "{sc=2}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}His words are not his own."
+    tate "{sc=2}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}With every click, you obey their will."
+    tate "{sc=2}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}You advance the plot, thinking nothing \nof those on the other side..."
+    tate "{sc=2}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}I played along, assuming I'd get what I \ncame here for in the end."
+    tate "{sc=2}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}I understand what is happening now."
+    tate "{sc=2}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}We are all just toys..."
+    tate "{sc=2}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}Don't you realize that he chose none \nof this?"
+    tate "{sc=3}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}Are you really going to use him to--{w=0.25}{nw}"
     "..."
-    tate "{sc}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}... Can we get rid of this stupid box?!"
+    tate "{sc=2}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}{color=#FF2222}Look at me when I am talking to you."
     show yeetable_textbox at manual_pos(0.5, 0.872, 0.5)
 
     # get rid of the dialogue box until later
@@ -3651,12 +3718,15 @@ label train_tate_ex_win:
     hide tate_fallen_4
     show tate_fallen_5 at manual_pos(0.5, 0.5, 0.5)
     with Dissolve(0.5)
-    perfect_tate "{sc}{size=+24}{font=AllerDisplay_Std_Rg_0.ttf}{color=#000000}I hope you're ready, CS."
+    perfect_tate "{sc}{size=+24}{font=AllerDisplay_Std_Rg_0.ttf}{color=#000000}I hope you're ready."
     perfect_tate "{sc}{size=+24}{font=AllerDisplay_Std_Rg_0.ttf}{color=#000000}Because I'm not holding back anymore."
+    perfect_tate "{sc}{size=+24}{font=AllerDisplay_Std_Rg_0.ttf}{color=#000000}CS..."
+    perfect_tate "{sc}{size=+24}{font=AllerDisplay_Std_Rg_0.ttf}{color=#000000}I'm sorry."
 
     scene white
+    play music "<from 3.6 to 22.8>nyan_of_a_lifetime.ogg" volume 0.3 if_changed noloop
     $ renpy.movie_cutscene("/minigames/perfecttate/tate1.webm")
-    #play music "<from 3.6 to 22.8>nyan_of_a_lifetime.ogg" volume 0.1 if_changed noloop
+
 
     # Disable pause menu because it'll ruin audio sync
     # TODO: also disable controller bindings
@@ -3689,29 +3759,40 @@ label train_defeated_perfect_tate:
     pause 5.0
 
     # TODO: i will probably redo this dialogue later. not totally happy with it
-    # TODO: cs/tate sprites?
+    # TODO: cs/tate sprites? or should i just keep it blank?
     scene white with dissolve
     pause 2.0
     "..."
+    cs "Tate!"
+    cs "Are you okay?!"
+    tate "I..."
+    tate "Yeah."
+    "..."
+    tate "You know..."
     tate "I suppose it only makes sense..."
     tate "This is {i}your{/i} game."
-    tate "It doesn't matter what happens in this timeline."
-    tate "The people that I've been running from..."
+    tate "It never mattered what happened to me in {i}any{/i} timeline."
+    tate "It was never about me to begin with."
     tate "Something hit me a bit earlier... literally."
+    tate "I can't explain it, but..."
     tate "Something much stronger than me is protecting this place."
-    tate "I've broken timelines on complete accident before."
-    tate "This one... it's different, CS. {sc=1}It just won't break--!"
-    cs "I don't think {i}they{/i} could break it, either."
-    cs "If they wanted to find you, they would have already."
-    cs "And, even if they did, you have friends willing to stand by your side now."
-    cs "I may not fully understand what just happened..."
-    cs "But, you're not alone in this fight anymore."
+    tate "No matter how hard I might try to fight it..."
+    tate "I have as little power here as I did before."
+    cs "Tate..."
+    cs "I may not understand what just happened, or anything about this \"timeline\" stuff..."
+    cs "And, I don't know who you're fighting against, but you have us by your side now."
+    cs "It {i}does{/i} matter what happens to you."
+    cs "You {i}are{/i} important to {i}us.{/i}"
+    cs "You matter to your friends, and you matter to me."
+    cs "Whatever \"ending\" there is, we will all face it together..."
+    cs "In {i}every{/i} timeline."
     "..."
     tate "Thanks, CS."
 
     $ persistent.seen.add("tate_ex")
+    $ persistent.seen.add("perfect_tate")
     $ achievement_manager.unlock("Main Character Syndrome")
-    # audio is not ready yet - tate
+    # audio is not fully ready yet - tate
     dxcom tate_ex
     
     pause 2.0
@@ -3759,7 +3840,9 @@ label train_completed:
     
         n "CS and Arceus wake up the next morning feeling completely refreshed."
         
-        scene amtrak_dining_table 
+        scene 
+        show car plains
+        show amtrak_dining_table 
         
         show amtrak_dining_food at manual_pos(805,145)
         show mean human hat flipped at left
@@ -3774,7 +3857,9 @@ label train_completed:
         scene black with dissolve
         pause 1.0
 
-        scene amtrak_observation_1
+        scene 
+        show car plains
+        show amtrak_observation_1
         show cs flipped at left
         show arceus flipped at right
         with dissolve
@@ -3795,7 +3880,9 @@ label train_completed:
         else:
             n "CS and Arceus wake up the next morning feeling rather groggy."
         
-        scene amtrak_dining_table 
+        scene 
+        show car plains
+        show amtrak_dining_table 
         
         show amtrak_dining_food at manual_pos(805,145)
         show mean human annoyed hat flipped at left
@@ -3812,7 +3899,9 @@ label train_completed:
         scene black with dissolve
         pause 1.0
 
-        scene amtrak_observation_1
+        scene 
+        show car plains
+        show amtrak_observation_1
         show cs disappointed flipped at left
         show arceus angry flipped at right
         with dissolve
