@@ -429,7 +429,7 @@ screen main_menu():
         xysize(666,720)
         yanchor -0.7
         xanchor -2.325
-        imagebutton auto "menu/cs_button_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
+        imagebutton auto "menu/cs_button_%s.png" hover_sound "audio/sfx/sfx_popcat_0.ogg":
             at transform:
                 zoom 0.25
                 xalign 0.5
