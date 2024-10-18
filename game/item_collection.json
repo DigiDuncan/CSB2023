@@ -3,7 +3,7 @@
         "img": "amtrak_dining_food",
         "name": "Enormous Breakfast",
         "owner": "Mean",
-        "desc": "Tate made this for Mean to celebrate his first day at Amtrak.",
+        "desc": "Tate made this for Mean to celebrate his first shift at Amtrak.",
         "rarity": "Common",
         "dx": true
     },
@@ -35,7 +35,7 @@
         "name": "Teddy Bear",
         "owner": "CS",
         "desc": "One of many random fucking things CS keeps... somewhere. It's very soft to hug.",
-        "rarity": "Common"
+        "rarity": "Uncommon"
     },
     "boom": {
         "img": "boom",
@@ -65,7 +65,7 @@
         "name": "Cheetos",
         "owner": "CS",
         "desc": "One of many random fucking things CS keeps... somewhere. These are probably stale as hell.",
-        "rarity": "Common"
+        "rarity": "Uncommon"
     },
     "craptop": {
         "img": "craptop",
@@ -81,6 +81,13 @@
         "desc": "Don't put it near any computers you care about!",
         "rarity": "Common"
     },
+    "cs_phone": {
+        "img": "cs_phone",
+        "name": "CS's Cellphone",
+        "owner": "CS",
+        "desc": "While purple isn't CS's favorite color, there's no denying that this phone is stylish!",
+        "rarity": "Common"
+    },
     "cswanted": {
         "img": "cswanted",
         "name": "CS Wanted Poster",
@@ -93,7 +100,7 @@
         "name": "A Dog?!",
         "owner": "CS",
         "desc": "One of many random fucking things CS keeps... somewhere. Her name is Fluffy and she loves hot dogs.",
-        "rarity": "Common"
+        "rarity": "Uncommon"
     },
     "donut_1": {
         "img": "donut_1",
@@ -157,6 +164,13 @@
         "desc": "CS's favorite energy drink. Plum-flavored.",
         "rarity": "Common",
         "dx": true
+    },
+    "horse_mask": {
+        "img": "horse_mask",
+        "name": "Horse Head Mask",
+        "owner": "CS",
+        "desc": "One of many random fucking things CS keeps... somewhere. Fun fact: Tate {i}hates{/i} this thing.",
+        "rarity": "Uncommon"
     },
     "lego_jail": {
         "img": "lego_jail",
@@ -253,7 +267,7 @@
         "img": "switch",
         "name": "Nintendo Switch",
         "owner": "An Amtrak passenger",
-        "desc": "This is one of the earlier systems. It's been jailbroken.",
+        "desc": "Its value lies in its manufacturing date. Early systems are much easier to jailbreak.",
         "rarity": "Uncommon",
         "dx": true
     },
@@ -261,8 +275,8 @@
         "img": "tate_phone",
         "name": "Tate's Cellphone",
         "owner": "Tate",
-        "desc": "It has been modified to allow a charm to be attached.",
-        "rarity": "Common",
+        "desc": "It has been modified to allow a cute charm to be attached.",
+        "rarity": "Uncommon",
         "dx": true
     },
     "tims_dozen": {

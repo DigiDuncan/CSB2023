@@ -2381,12 +2381,12 @@ label sweden_joel:
     joel "In theory, this radar {i}would{/i} be accurate enough, but it's missing a part."
     joel "And, of course, they don't make it anymore, since it was only in a few old laptops."
     cs "Ooh, I have one of those!"
-    show craptopsmall at mid_left_left with dissolve
+    show craptopsmall at manual_pos(0.2, 0.7, 0.5) with dissolve
     n "CS pulls out his craptop and hands it to Joel."
     show cs at mid_right
-    show craptopsmall at mid_right_right
+    show craptopsmall at manual_pos(0.8, 0.7, 0.5)
     with move
-    show craptopsmall flipped with determination
+    show craptopsmall flipped with Dissolve(0.5)
     show cs at left with move
     hide craptopsmall with dissolve
     joel "Wait, what?! Where did you pull that from?"
@@ -2429,6 +2429,10 @@ label sweden_joel:
     n "CS pulls out a horse head and puts it on."
     cs "See?"
     joel "What the hell?! What all do you have in there?"
+
+    # TODO: tweak the timings of this a bit better later.
+
+    cs "Oh, nothing much, just{nw}"
     show cheetos at offscreenleft
     show bear at midoffscreenright
     show dog at offscreenright
@@ -2437,7 +2441,7 @@ label sweden_joel:
     show bear at midoffscreenleftspin
     show dog at offscreenleftspin
     with MoveTransition(1.0)
-    cs "Oh, nothing much, just {bt=a3-p10-s4}(all this random fucking shit flying back\nand forth)"
+    cs "Oh, nothing much, just{fast} {bt=a3-p10-s4}(all this random fucking shit flying back\nand forth)"
     joel "You're an interesting critter, man."
     cs "Thanks!"
     stop music fadeout 3.0

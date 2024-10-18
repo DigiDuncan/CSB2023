@@ -31,7 +31,7 @@ label train_dialogue:
         else:
             arceus "Yeah... I didn't want to say anything. I saw you with those salt packs..."
             show cs disappointed
-            cs "Damn. Here I thought I was being sneaky."
+            cs "Shit. Here I thought I was being sneaky."
             arceus "Nope."
             cs "I sure hope they didn't notice..."
             arceus "I'm sure it's fine. Lots of people salt their food."
@@ -42,15 +42,16 @@ label train_dialogue:
     arceus "I kind of just want to stay right where we're at."
     arceus "The view here is a hell of a lot nicer than the one coming up from Vegas, that's for sure."
     cs "That is true. It's a lot more green."
-    cs "Yeah, we can just hang out here a while."
+    cs "Yeah, let's hang out here a while."
 
     
+
     pause 3.0
 
 
 
     cs "Hey, Arc?"
-    arceus "Yeah?"
+    arceus "Yeh?"
     cs "You know how there are some images that you can hear?"
     arceus "What?"
     cs "You know, like that one GIF with the jump-roping power thing?"
@@ -58,19 +59,19 @@ label train_dialogue:
     show cs disappointed
     cs "You know, that big-ass power line!"
     cs "And, every time it lands, you can hear it go {i}boom,{/i} except you... don't?"
-    arceus "Oh, that thing? What about it?"
+    arceus "Oh, {i}that{/i} thing. What about it?"
     show cs
     cs "If there are GIFs you can hear..."
     cs "I think there are {i}words{/i} you can hear, too!"
     show cs happy
-    cs "Like... 'extrusion'!"
+    cs "Like... \"extrusion\"!"
     show arceus angry
     arceus "..."
     show cs
-    cs "Don't you agree that 'extrusion' is one of those words you can {i}hear?"
+    cs "Don't you agree that \"extrusion\" is one of those words you can {i}hear?"
     arceus "... You can {i}hear{/i} any word, CS."
     show cs worried
-    cs "No, like, you hear the word, and you immediately picture what it's doing!"
+    cs "No, like, you {i}hear{/i} the word, and you {i}immediately{/i} picture what it's doing!"
     arceus "Again, that's {i}just{/i} how words work."
     cs "No! I mean like--"
     show cs disappointed
@@ -133,14 +134,17 @@ label train_dialogue:
         show tate sheepish
         tate "A..."
     else:
-        scene amtrak_cab
+        scene
+        show car plains:
+            xzoom -1
+        show amtrak_cab
         show mean human hat at mid_right
         show tate stare at left
         with dissolve
 
         pause 1.0
 
-        mean "So, yeah!"
+        mean "... So, yeah!"
         show mean human hat happy
         mean "Maybe feet {i}are{/i} comparable to kids!"
         pause 1.0
@@ -150,9 +154,9 @@ label train_dialogue:
     pause 1.0
 
     if fun_value(FUN_VALUE_RARE):
+        play sound sfx_ringtone_tate_alt loop
         show tate shock
         show mean human hat shocked
-        play sound sfx_ringtone_tate_alt loop
         n "Tate gets a call on their cell phone."
         show tate srs
         show mean human hat annoyed
@@ -162,9 +166,9 @@ label train_dialogue:
         show mean human hat annoyed
         tate "God damn it, I forgot to change his ringtone..."
     else:
+        play sound sfx_ringtone_tate loop
         show tate shock
         show mean human hat shocked
-        play sound sfx_ringtone_tate loop
         n "Tate gets a call on their cell phone."
         show tate srs
         show tate_phone at manual_pos(0.25, 0.45) with dissolve
@@ -180,6 +184,7 @@ label train_dialogue:
     pause 0.25
     tate "Heya, CS!"
     tate "How's your trip going?"
+    cs "Hey, Tate!"
     cs "We were actually calling to ask you the same thing!"
     cs "It's been pretty uneventful so far on our end."
     arceus "Tell them I said hi!"
@@ -192,6 +197,7 @@ label train_dialogue:
     cs "Hi, Mean!"
     arceus "Heya, Mean!"
     tate "They both also said hi!"
+    mean "Sweet."
     "..."
     pause 1.0
     show tate sheepish
@@ -222,9 +228,10 @@ label train_dialogue:
     show cs disappointed
     cs "It would be weird to call them back right away..."
     show arceus
-    arceus "We can probably call again when we get to New York." 
+    arceus "Let's call again when we get to New York." 
     show cs
-    cs "You're probably right."
+    cs "Yeah, let's do that."
+
 
 
     pause 3.0
@@ -261,16 +268,34 @@ label train_dialogue:
     show cs worried
     cs "Wait! Where'd you get a laptop, anyway?!"
     show arceus
-    arceus "I have my ways."
+    arceus "Wherever you picked up that phone after we got out of jail."
     "..."
-    cs "And... you're not going to tell me anything more than that, are you?"
+    show cs scared
+    cs "I... don't remember buying this."
+    cs "Am I going insane?"
+    show cs worried
+    arceus "I think you just need to catch up on sleep."
     show cs disappointed
-    arceus "Nope."
+    cs "I hope you're right..."
+    "..."
+    
+    if train_ending_money_returned == True:
+        cs "I must have bought it at that gas station we stopped at..."
+        cs "Is {i}this{/i} what it's like to be rich? Just being able to buy expensive things without thinking?"
+        arceus "I guess it is."
+    else:
+        cs "At least I probably bought it {i}before{/i} we ended up broke again..."
+        cs "I don't think I'd buy something on a whim like that otherwise."
+        cs "It's so weird that I can't remember..."
+        arceus "I wouldn't worry about it too much. The last few days have been a blur for me, too."
+
     pause 2.0
     show cs
 
 
+
     pause 3.0
+
 
 
     n "CS and Arceus take it easy for the rest of the ride..."

@@ -645,7 +645,7 @@ label dx_after_pencil_ask:
     pencil "It's officially {i}our{/i} idea now!"
     pencil "Look, if you want to win our vote, you've gotta earn it!"
     pencil "Behold!"
-    show onscreen_sharpener at mid_right_right with dissolve
+    show onscreen_sharpener at manual_pos(0.875, 0.5, 0.5) with dissolve
     n "The pencil man pulls out a pencil sharpener."
     show cs cultist
     cs "Lemme guess, a pencil sharpening contest?"
