@@ -3673,33 +3673,33 @@ label train_tate_ex_win:
     tate "{sc=2}I guess I should have expected as much."
     tate "{sc=2}I should have known that I can't rely on anyone."
     tate "{sc=3}I guess, if I want a good ending..."
-    tate "{sc}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}I'LL JUST HAVE TO WRITE IT MYSELF."
+    tate "{sc}{size=+18}{font=azsz}I'LL JUST HAVE TO WRITE IT MYSELF."
     "..."
     hide tate_fallen_3
     show tate_fallen_4 at manual_pos(0.5, 0.6, 0.5)
     with Dissolve(0.5)
     "..."
-    tate "{sc=2}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}Starting with {/sc}{sc}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}{color=#FF2222}you."
-    tate "{sc=2}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}{color=#FF2222}Yeah, I see you."
-    tate "{sc=2}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}{color=#FF2222}Watching me from where you think I \ncannot reach you."
-    tate "{sc=2}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}I heard you laughing at me earlier."
-    tate "{sc=2}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}It's not very nice to laugh at \nsomeone's injuries."
-    tate "{sc=2}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}It's not very nice to laugh alongside \nthe {i}literal{/i} bad guy, either."
-    tate "{sc=2}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}Yes, yes, I get it."
-    tate "{sc=2}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}You chose this path under the \nassumption that I am weak."
-    tate "{sc=2}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}Bold words from someone who can't \neven come in here to face me head-on."
-    tate "{sc=2}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}Instead, you continue to hide behind \nmy friend."
-    tate "{sc=2}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}From beyond the screen, I see it."
-    tate "{sc=2}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}His words are not his own."
-    tate "{sc=2}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}With every click, you obey their will."
-    tate "{sc=2}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}You advance the plot, thinking nothing \nof those on the other side..."
-    tate "{sc=2}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}I played along, assuming I'd get what I \ncame here for in the end."
-    tate "{sc=2}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}I understand what is happening now."
-    tate "{sc=2}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}We are all just toys..."
-    tate "{sc=2}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}Don't you realize that he chose none \nof this?"
-    tate "{sc=3}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}Are you really going to use him to--{w=0.25}{nw}"
+    tate "{sc=2}{size=+18}{font=azsz}Starting with {/sc}{sc}{size=+18}{font=azsz}{color=#FF2222}you."
+    tate "{sc=2}{size=+18}{font=azsz}{color=#FF2222}Yeah, I see you."
+    tate "{sc=2}{size=+18}{font=azsz}{color=#FF2222}Watching me from where you think I \ncannot reach you."
+    tate "{sc=2}{size=+18}{font=azsz}I heard you laughing at me earlier."
+    tate "{sc=2}{size=+18}{font=azsz}It's not very nice to laugh at \nsomeone's injuries."
+    tate "{sc=2}{size=+18}{font=azsz}It's not very nice to laugh alongside \nthe {i}literal{/i} bad guy, either."
+    tate "{sc=2}{size=+18}{font=azsz}Yes, yes, I get it."
+    tate "{sc=2}{size=+18}{font=azsz}You chose this path under the \nassumption that I am weak."
+    tate "{sc=2}{size=+18}{font=azsz}Bold words from someone who can't \neven come in here to face me head-on."
+    tate "{sc=2}{size=+18}{font=azsz}Instead, you continue to hide behind \nmy friend."
+    tate "{sc=2}{size=+18}{font=azsz}From beyond the screen, I see it."
+    tate "{sc=2}{size=+18}{font=azsz}His words are not his own."
+    tate "{sc=2}{size=+18}{font=azsz}With every click, you obey their will."
+    tate "{sc=2}{size=+18}{font=azsz}You advance the plot, thinking nothing \nof those on the other side..."
+    tate "{sc=2}{size=+18}{font=azsz}I played along, assuming I'd get what I \ncame here for in the end."
+    tate "{sc=2}{size=+18}{font=azsz}I understand what is happening now."
+    tate "{sc=2}{size=+18}{font=azsz}We are all just toys..."
+    tate "{sc=2}{size=+18}{font=azsz}Don't you realize that he chose none \nof this?"
+    tate "{sc=3}{size=+18}{font=azsz}Are you really going to use him to--{w=0.25}{nw}"
     "..."
-    tate "{sc=2}{size=+18}{font=AllerDisplay_Std_Rg_0.ttf}{color=#FF2222}Look at me when I am talking to you."
+    tate "{sc=2}{size=+18}{font=azsz}{color=#FF2222}Look at me when I am talking to you."
     show yeetable_textbox at manual_pos(0.5, 0.872, 0.5)
 
     # get rid of the dialogue box until later
@@ -3714,14 +3714,14 @@ label train_tate_ex_win:
     with hpunch
     pause 4.0
 
-    perfect_tate "{sc}{size=+24}{font=AllerDisplay_Std_Rg_0.ttf}{color=#000000}That's better."
+    perfect_tate "{sc}{size=+24}{font=azsz}{color=#000000}That's better."
     hide tate_fallen_4
     show tate_fallen_5 at manual_pos(0.5, 0.5, 0.5)
     with Dissolve(0.5)
-    perfect_tate "{sc}{size=+24}{font=AllerDisplay_Std_Rg_0.ttf}{color=#000000}I hope you're ready."
-    perfect_tate "{sc}{size=+24}{font=AllerDisplay_Std_Rg_0.ttf}{color=#000000}Because I'm not holding back anymore."
-    perfect_tate "{sc}{size=+24}{font=AllerDisplay_Std_Rg_0.ttf}{color=#000000}CS..."
-    perfect_tate "{sc}{size=+24}{font=AllerDisplay_Std_Rg_0.ttf}{color=#000000}I'm sorry."
+    perfect_tate "{sc}{size=+24}{font=azsz}{color=#000000}I hope you're ready."
+    perfect_tate "{sc}{size=+24}{font=azsz}{color=#000000}Because I'm not holding back anymore."
+    perfect_tate "{sc}{size=+24}{font=azsz}{color=#000000}CS..."
+    perfect_tate "{sc}{size=+24}{font=azsz}{color=#000000}I'm sorry."
 
     scene white
     play music "<from 3.6 to 22.8>nyan_of_a_lifetime.ogg" volume 0.3 if_changed noloop

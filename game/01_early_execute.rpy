@@ -38,6 +38,9 @@ default persistent.csb3b_unlocked = False
 # Register CJK font
 define config.font_name_map["cjk"] = "ZCOOLKuaiLe-Regular.ttf"
 
+# Register other fonts
+define config.font_name_map["azsz"] = "AllerDisplay_Std_Rg_0.ttf"
+
 # Music popup
 screen music():
     zorder 100

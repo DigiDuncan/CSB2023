@@ -2413,7 +2413,7 @@ label sweden_joel:
     with dissolve
     cs "Why would I go be bait for an alien that's already killed two horses that are about ten times my weight?"
     joel "You'll be fine! Don't worry about it."
-    show pipe_gun flipped at mid_right_right with dissolve
+    show pipe_gun flipped at manual_pos(0.85, 0.7, 0.5) with dissolve
     n "Joel pulls out a makeshift gun."
     joel "This bad boy is enough to kill any alien."
     joel "You did come across the world to find me. I figure this isn't that much crazier."
@@ -2459,10 +2459,10 @@ label sweden_joel:
     hide cs with moveoutright
     pause 1.0
     show joel flipped at mid_left with moveinleft
-    show pipe_gun at mid_mid_left with dissolve
+    show pipe_gun at manual_pos(0.3, 0.7, 0.5) with dissolve
     show alien at mid_right with moveinright
     joel "I've got you this time, alien!" #Joel makes it out just before the alien
-    alien "Ikke skyt! Jeg er ikke en romvesen! Jeg er bare en normal norsk mann!" #Make this wingdings
+    alien "Ikke skyt! Jeg er ikke en romvesen! Jeg er bare en normal norsk mann!"
     scene white with dissolve
     play sound sfx_hks2 volume 0.7
     pause 0.1
@@ -2471,7 +2471,7 @@ label sweden_joel:
     pause 1.0
     scene joel_outside
     show joel flipped at mid_left
-    show pipe_gun at mid_mid_left
+    show pipe_gun at manual_pos(0.3, 0.7, 0.5)
     show alien dead at mid_right
     with dissolve
     #Gun blast sfx and white screen. Screen comes back and alien is laying sideways
