@@ -3,10 +3,6 @@
 ##-----------------------------------------------
 
 init python:
-    def mark_read(k):
-        persistent.read.add(k)
-
-init python:
     import json
     with renpy.open_file('item_collection.json') as json_file:
         item_map = json.load(json_file)
@@ -14,6 +10,9 @@ init python:
     for n in persistent.collected:
         if n not in item_map:
             print(f"WARNING: Item '{n}' not in item_map!")
+
+    def mark_read(k):
+        persistent.read.add(k)
 
 screen item_nav():
     add Color('#323e42', alpha=0.75)
@@ -40,41 +39,38 @@ screen item_nav():
 
             grid 5 max_y:
                 for k in item_map:
-                # clickable if collected
-                    if k in persistent.collected: 
+
+                    # color list:
+                    # insensitive - #888888
+                    # sensitive idle - #003D51
+                    # sensitive hover - #0099CC
+                    # sensitive selected - #65C0DF
+
+                    # generate assets
+                    if k in persistent.collected:
+                        $ buttoncolor = "#003D51"
+                        $ item_img = Transform(item_map[k]['img'], size=(120,120), fit="contain", xalign=0.5, yalign=0.5, matrixcolor=None)
+                    else:
+                        $ buttoncolor = "#888888"
+                        $ item_img = Transform(item_map[k]['img'], size=(120,120), fit="contain", xalign=0.5, yalign=0.5, matrixcolor=sil_black_matrix)
+
+                    # create the bounding box for each button
+                    frame:
+                        margin 5, 5
+                        background Solid(buttoncolor)
+                        xsize 153 ysize 153
+                        
+                        image item_img
+
+                        # the actual button here
                         button:
-
-                            $ buttoncolor = "#003D51"
-
-                            # color list:
-                            # insensitive - #888888
-                            # sensitive idle - #003D51
-                            # sensitive hover - #0099CC
-                            # sensitive selected - #65C0DF
+                            xalign 0.5 yalign 0.5
                             
-                            frame:
-                                background Solid(buttoncolor)
-                                xsize 140 ysize 140
-                                # code by robcolton
-                                image Transform(item_map[k]['img'], size=(120,120), fit="contain"):
-                                    xalign 0.5 yalign 0.5
+                            action [ SensitiveIf( k in persistent.collected ), ShowMenu("items", k) ]
 
-                                mousearea:
-                                    xsize 140 ysize 140
-                                    hovered ShowMenu("items", k)
-
-                                    unhovered SetVariable("buttoncolor", "#003D51")
-                                    #selected SetVariable("buttoncolor", "#65C0DF")
-                
-                    # for unseen items
-                    else: 
-                        button:
-                            frame:
-                                background Solid("#888888")
-                                xsize 140 ysize 140
-                                # code by robcolton
-                                image Transform(item_map[k]['img'], size=(120,120), fit="contain", matrixcolor=sil_black_matrix):
-                                    xalign 0.5 yalign 0.5
+                            hovered SetVariable("buttoncolor","#0099CC")
+                            unhovered SetVariable("buttoncolor","#003D51")
+                        
 
     textbutton "Return to Extras" action ShowMenu("category_welcome") yoffset 950 xoffset 25
     textbutton "Main Menu" action Return() yoffset 1000 xoffset 25
@@ -112,7 +108,6 @@ screen items(l):
 
     # Main Container omitting the menu
     viewport:
-
         xsize 800
         ysize 750
         xalign 0.6
@@ -127,8 +122,9 @@ screen items(l):
             vbox:
                 yfill False
                 spacing 100
-            # Handling the text
                 xsize 800
+
+                # Handling the text
                 python:
                     try:
                         if "dx" in item_map[l]:
