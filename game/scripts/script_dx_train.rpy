@@ -3700,7 +3700,7 @@ label train_tate_ex_win:
     tate "{sc=3}{size=+18}{font=azsz}Are you really going to use him to--{w=0.25}{nw}"
     "..."
     tate "{sc=2}{size=+18}{font=azsz}{color=#FF2222}Look at me when I am talking to you."
-    show yeetable_textbox at manual_pos(0.5, 0.872, 0.5)
+    show yeetable_textbox at manual_pos(0.5, 0.9, 0.5)
 
     # get rid of the dialogue box until later
     window auto False

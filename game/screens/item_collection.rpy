@@ -18,7 +18,7 @@ screen item_nav():
     add Color('#323e42', alpha=0.75)
     text "{size=+12}Item Collection":
         xpos 0.18 ypos 80
-        
+
     viewport:
         xpos 125 ypos 150
         xsize 785 ysize 750
@@ -70,8 +70,7 @@ screen item_nav():
 
                             hovered SetVariable("buttoncolor","#0099CC")
                             unhovered SetVariable("buttoncolor","#003D51")
-                        
-
+                            
     textbutton "Return to Extras" action ShowMenu("category_welcome") yoffset 950 xoffset 25
     textbutton "Main Menu" action Return() yoffset 1000 xoffset 25
 
@@ -128,17 +127,28 @@ screen items(l):
                 python:
                     try:
                         if "dx" in item_map[l]:
-                            fetched_rarity = "{image=gui/dx_text.png} " + item_map[l]["rarity"]
+                            fetched_desc = "{image=gui/dx_text.png} " + item_map[l]["desc"]
                         else:
-                            fetched_rarity = item_map[l]["rarity"]
+                            fetched_desc = item_map[l]["desc"]
                     except:
-                        fetched_rarity = "Error"
+                        fetched_desc = "This item didn't load correctly. Ask Tate to fix this..."
 
-                image Transform(item_map[l]['img'], size=(240, 240), fit="contain"):
-                    xalign 0.5 yalign 0.5
+                # Bounding box for item and description
+                vbox:
+                    frame:
+                        background None
+                        xsize 1.0 ysize 300
+                        xalign 0.5 yalign 0.5
+                        image Transform(item_map[l]['img'], size=(640, 240), fit="contain"):
+                            xalign 0.5 yalign 0.5
+                
+                    text "{size=+24}" + item_map[l]['name']:
+                        xalign 0.5
 
-                text "{size=+24}" + item_map[l]['name'] + "{/size}\n{size=-12}(" + fetched_rarity + "){/size}\n\nOwner: " + item_map[l]['owner'] + "\n" + item_map[l]['desc']:
-                    xalign 0.5
+                    text "{size=-12}(" + item_map[l]['rarity'] + ")":
+                        xalign 0.5
+
+                    text "\nOwner: " + item_map[l]['owner'] + "\n\n" + fetched_desc
 
             python:
                 z = item_map[l].get("zoom", 1.0) * 0.75

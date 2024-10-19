@@ -106,7 +106,7 @@
         "img": "donut_1",
         "name": "Chocolate Glazed Donut",
         "owner": "Arceus",
-        "desc": "Delicious!",
+        "desc": "Voted the most popular Timbit flavor of 2023. {a=https://www.newswire.ca/news-releases/tops-at-tims-in-2023-apple-fritter-unseats-the-boston-cream-as-the-top-donut-sausage-farmer-s-wrap-was-the-1-breakfast-what-were-some-of-canada-s-other-tim-hortons-favourites-this-year--816736424.html}(Source){/a}",
         "rarity": "Common",
         "dx": true
     },
@@ -114,7 +114,7 @@
         "img": "donut_2",
         "name": "Honey Cruller",
         "owner": "CS",
-        "desc": "Tasty!",
+        "desc": "Also known as the French cruller. The honey flavor is rather subtle.",
         "rarity": "Common",
         "dx": true
     },
@@ -122,7 +122,7 @@
         "img": "donut_3",
         "name": "Boston Cream Donut",
         "owner": "Anno",
-        "desc": "Scrupmtious!",
+        "desc": "Named as the official state donut of Massachusetts in 2003. {a=https://web.archive.org/web/20101230190718/https://www.dunkindonuts.com/aboutus/press/PressRelease.aspx?viewtype=current&id=100010}(Source){/a}",
         "rarity": "Common",
         "dx": true
     },
@@ -130,7 +130,7 @@
         "img": "dookie_milk_jar",
         "name": "Jar Of {sc}{chaos}OMGWTFISTHAT{/chaos}{/sc}",
         "owner": "Pakoo",
-        "desc": "OH, {i}GOD!{/i} JUST WHAT {i}IS{/i} THIS?!",
+        "desc": "OH, {i}GOD!{/i} JUST WHAT {i}IS{/i} THIS?!\nWhy do you have this? Why would you do this?",
         "rarity": "WHAT DO YOU {i}MEAN{/i} IT'S A {i}LEGENDARY?!{/i}",
         "dx": true
     },
@@ -330,8 +330,8 @@
         "img": "yeetable_textbox",
         "name": "The Textbox?!",
         "owner": "???",
-        "desc": "??????",
-        "rarity": "???????????",
+        "desc": "You should not have this...",
+        "rarity": "???",
         "dx": true
     }
 }
