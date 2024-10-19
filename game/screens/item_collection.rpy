@@ -43,12 +43,28 @@ screen item_nav():
                 # clickable if collected
                     if k in persistent.collected: 
                         button:
+
+                            $ buttoncolor = "#003D51"
+
+                            # color list:
+                            # insensitive - #888888
+                            # sensitive idle - #003D51
+                            # sensitive hover - #0099CC
+                            # sensitive selected - #65C0DF
+                            
                             frame:
-                                background Solid("#003D51")
+                                background Solid(buttoncolor)
                                 xsize 140 ysize 140
                                 # code by robcolton
                                 image Transform(item_map[k]['img'], size=(120,120), fit="contain"):
                                     xalign 0.5 yalign 0.5
+
+                                mousearea:
+                                    xsize 140 ysize 140
+                                    hovered ShowMenu("items", k)
+
+                                    unhovered SetVariable("buttoncolor", "#003D51")
+                                    #selected SetVariable("buttoncolor", "#65C0DF")
                 
                     # for unseen items
                     else: 
@@ -91,18 +107,15 @@ screen items(l):
 
     style_prefix "codex"
 
-    # TODO: make this line easier to read somehow
-    label item_map[l]['name']
-
     tag menu
     use item_nav
 
     # Main Container omitting the menu
     viewport:
 
-        xsize 775
+        xsize 800
         ysize 750
-        xalign 0.5
+        xalign 0.6
         xoffset 305 
         yoffset 200
         side_yfill False
@@ -110,7 +123,7 @@ screen items(l):
         draggable True
         pagekeys True
         hbox:
-            ysize 800
+            ysize 750
             vbox:
                 yfill False
                 spacing 100
@@ -119,12 +132,17 @@ screen items(l):
                 python:
                     try:
                         if "dx" in item_map[l]:
-                            fetched = "{image=gui/dx_text.png}" + item_map["name"] + "(" + item_map[l]["rarity"] + ")"
+                            fetched_rarity = "{image=gui/dx_text.png} " + item_map[l]["rarity"]
                         else:
-                            fetched = item_map["name"] + "(" + item_map[l]["rarity"] + ")"
+                            fetched_rarity = item_map[l]["rarity"]
                     except:
-                        fetched = "This item didn't load correctly. Ask Digi to fix the game."
-                text (fetched)
+                        fetched_rarity = "Error"
+
+                image Transform(item_map[l]['img'], size=(240, 240), fit="contain"):
+                    xalign 0.5 yalign 0.5
+
+                text "{size=+24}" + item_map[l]['name'] + "{/size}\n{size=-12}(" + fetched_rarity + "){/size}\n\nOwner: " + item_map[l]['owner'] + "\n" + item_map[l]['desc']:
+                    xalign 0.5
 
             python:
                 z = item_map[l].get("zoom", 1.0) * 0.75

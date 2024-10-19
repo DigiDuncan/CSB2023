@@ -136,6 +136,8 @@ init 10 python:
             persistent.heard.add(m)
         for p in name_map.keys():
             persistent.seen.add(p)
+        for i in item_map.keys():
+            persistent.collected.add(i)
         achievement_manager.unlock_all()
         persistent.true_ending = True
         persistent.csb2_unlocked = True

@@ -128,10 +128,10 @@
     },
     "dookie_milk_jar": {
         "img": "dookie_milk_jar",
-        "name": "Jar Of {chaos}{sc}OMGWTFISTHAT",
+        "name": "Jar Of {sc}{chaos}OMGWTFISTHAT{/chaos}{/sc}",
         "owner": "Pakoo",
-        "desc": "OH, {i}GOD!!{/i} JUST WHAT {i}IS{/i} THIS?!",
-        "rarity": "WHAT DO YOU {i}MEAN{/i} IT'S A {i}LEGENDARY?!",
+        "desc": "OH, {i}GOD!{/i} JUST WHAT {i}IS{/i} THIS?!",
+        "rarity": "WHAT DO YOU {i}MEAN{/i} IT'S A {i}LEGENDARY?!{/i}",
         "dx": true
     },
     "drill": {

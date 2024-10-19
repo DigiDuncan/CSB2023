@@ -23,6 +23,7 @@ default translate_this_line = ""
 default persistent.seen = set()
 default persistent.heard = set()
 default persistent.collected = set()
+default persistent.seen_music_pun = set()
 default persistent.read = set()
 default persistent.seen_endings = set()
 default persistent.creative_mode = False
