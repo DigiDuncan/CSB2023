@@ -647,9 +647,9 @@ label south_folded:
     show arceus happy
     arceus "I was getting us the motherlode!"
     show bag at mid_right with dissolve
-    n "Arceus opens a body bag revealing stacks of gold, bills, and jewels."
+    n "Arceus opens a body bag revealing stacks of gold bars, bills, and jewels."
     show cs worried
-    cs "{i}What??{/i} How did you win that much??"
+    cs "{i}What?!{/i} How did you win that much?!"
     arceus "You think I {i}won{/i} this? Haha, no! I just broke open their vault!"
     cs "Arceus! That's stealing!"
     show arceus
@@ -658,9 +658,9 @@ label south_folded:
     cs "Yeah, I guess you're right. Oh, well."
     cs "Did anyone notice?"
     show arceus happy
-    arceus "Nope! I 100 percent stealthed that!"
+    arceus "Nope! I 100-percent {i}stealthed{/i} that!"
     show cs
-    cs "Well, damn, sweet! Thank you so much, Arceus!"
+    cs "Well, damn! Sweet! Thank you so much, Arceus!"
     cs "We are millionaires now!"
     hide bag with dissolve
     show arceus happy
@@ -883,7 +883,7 @@ label south_poker3:
         cs "Oh, yeah, it was kinda funny! The man I won against puked all over the table and fell over!"
         arceus "Hahaha, I would've too if I lost that much money."
         cs "Yeah, that's true."
-    hide case
+    hide case with dissolve
     $ south_car_stole_money = False
     arceus "Alright, well, what's the plan now? We have so much money, we can do anything with it!"
     menu:
