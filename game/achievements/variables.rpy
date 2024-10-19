@@ -63,7 +63,7 @@ define achievements = [
     Achievement("Welcome to CSBIII, Mother Fucker", "???", "Complete CSBII.", "csbii", "story"),
     Achievement("That's All, Folks!", "???", "Complete CSBIII.", "csbiii", "story"),
     Achievement("Boingy Boingy Boingy", "???", "Max out CSBounciness and get an ending.", "max_bounce", "extra"),
-    Achievement("Artifical Unintelligence", "???", "Get the Chat-GPT ending.", "gpt", "story", True),
+    Achievement("Artifical Unintelligence", "???", "Get the ChatGPT ending.", "gpt", "story", True),
     Achievement("All Over Again", "???", "Beat CSBIII all over again.", "alloveragain", "extra", True),
     Achievement("F.U.N.", "???", "Roll a fun value.", "fun", "extra", True),
     Achievement("Archived", "???", "Find Addy's Facility.", "archive", "extra", True),
@@ -82,5 +82,7 @@ define achievements = [
     Achievement("You Broke It!", "Woah, dude, you broke it.", "Woah, dude, you broke it.", "broke", "extra", dx = True),
     Achievement("Gotta Catch Them All", "Collect every bio.", "Collect every bio.", "bios", "extra"),
     Achievement("The Brown Album", "Collect every song in the jukebox.", "Collect every song in the jukebox.", "juke", "extra"),
+    Achievement("Collezione di Cacca", "Collect every item.", "Collect every item.", "item_collection", "extra", dx = True),
+    Achievement("Tons Of Pun Fun", "Find every music fun value.", "Find every music fun value.", "music_pun_fun", "extra", dx = True),
     Achievement("Fin.", "Collect all the endings.", "Collect all the endings.", "end", "extra")
 ]

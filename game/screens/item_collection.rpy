@@ -18,10 +18,10 @@ init python:
 screen item_nav():
     add Color('#323e42', alpha=0.75)
     text "{size=+12}Item Collection":
-        xpos 0.125 ypos 80
+        xpos 0.18 ypos 80
         
     viewport:
-        xpos 25 ypos 150
+        xpos 125 ypos 150
         xsize 785 ysize 750
         mousewheel True
         draggable True
@@ -76,14 +76,12 @@ screen item_welcome():
     style_prefix "codex"
     python:
         item_count = len(item_map.keys())
-        # TODO: need new persistent to handle items i guess
         unlocked_item_count = len(persistent.collected)
     vbox:
-        xsize 600
+        xsize 775
         xalign 0.5 yalign 0.5
-        xoffset 400
-        text "Check out all this neat stuff you've found!"
-        text "([unlocked_item_count]/[item_count] unlocked)"
+        xoffset 450
+        text "Check out all this neat stuff you've found!\n([unlocked_item_count]/[item_count] unlocked)"
 
 ##-----------------------------------------------
 ##----------ENTRIES START HERE-------------------
@@ -102,8 +100,8 @@ screen items(l):
     # Main Container omitting the menu
     viewport:
 
-        xsize 1300
-        ysize 800
+        xsize 775
+        ysize 750
         xalign 0.5
         xoffset 305 
         yoffset 200
