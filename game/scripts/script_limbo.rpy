@@ -311,7 +311,7 @@ label woohoo_counter:
 
 screen limbo_csbutton:
     add "#000000"
-    text "This will update your game from the previous release." textalign 0.5 size 108 xalign 0.0 yalign 0.25
+    text "This will update your game from the previous release." textalign 0.5 size 108 xalign 0.5 yalign 0.25
     hbox xalign 0.0 yalign 0.25:
         spacing 50
     text "THIS WILL DELETE YOUR CURRENT SAVE." textalign 0.5 size 72 xalign 0.45 yalign 0.45
