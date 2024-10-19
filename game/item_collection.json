@@ -120,7 +120,7 @@
     },
     "donut_3": {
         "img": "donut_3",
-        "name": "Bostom Cream Donut",
+        "name": "Boston Cream Donut",
         "owner": "Anno",
         "desc": "Scrupmtious!",
         "rarity": "Common",
@@ -128,10 +128,10 @@
     },
     "dookie_milk_jar": {
         "img": "dookie_milk_jar",
-        "name": "Dookie Milk Jar",
+        "name": "Jar Of {chaos}{sc}OMGWTFISTHAT",
         "owner": "Pakoo",
-        "desc": "OH, GOD! JUST WHAT {i}IS{/i} THIS?!",
-        "rarity": "Legendary",
+        "desc": "OH, {i}GOD!!{/i} JUST WHAT {i}IS{/i} THIS?!",
+        "rarity": "WHAT DO YOU {i}MEAN{/i} IT'S A {i}LEGENDARY?!",
         "dx": true
     },
     "drill": {
@@ -200,14 +200,14 @@
         "name": "Mean's Hat",
         "owner": "Mean",
         "desc": "Commissioned by Tate as a gift to Mean. Can withstand the harshest Canadian winters.",
-        "rarity": "Common",
+        "rarity": "1 of 1",
         "dx": true
     },
     "onscreen_sharpener": {
         "img": "onscreen_sharpener",
         "name": "Golden Pencil Sharpener",
         "owner": "CS",
-        "desc": "Won by CS while at PencilCon.",
+        "desc": "Won by CS while at PencilCon, but is it even real gold?",
         "rarity": "Uncommon"
     },
     "pig": {
@@ -215,14 +215,14 @@
         "name": "Pig",
         "owner": "The Witch",
         "desc": "Ideally eaten steamed.",
-        "rarity": "Common"
+        "rarity": "Uncommon"
     },
     "pipe_gun": {
         "img": "pipe_gun",
         "name": "Pipe Gun",
         "owner": "Joel",
         "desc": "It's held together with duct tape, rope, and a prayer, but it gets the job done.",
-        "rarity": "Common"
+        "rarity": "Uncommon"
     },
     "pot": {
         "img": "pot",
@@ -331,7 +331,7 @@
         "name": "The Textbox?!",
         "owner": "???",
         "desc": "??????",
-        "rarity": "Legendary",
+        "rarity": "???????????",
         "dx": true
     }
 }

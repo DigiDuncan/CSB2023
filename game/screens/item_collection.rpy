@@ -11,7 +11,7 @@ init python:
     with renpy.open_file('item_collection.json') as json_file:
         item_map = json.load(json_file)
 
-    for n in persistent.seen:
+    for n in persistent.collected:
         if n not in item_map:
             print(f"WARNING: Item '{n}' not in item_map!")
 
@@ -40,14 +40,25 @@ screen item_nav():
 
             grid 5 max_y:
                 for k in item_map:
-                # TODO: rewrite when persistent item seen thingy exists
-                    button:
-                        frame:
-                            background Solid("#003D51")
-                            xsize 140 ysize 140
-                            # code by robcolton
-                            image Transform(item_map[k]['img'], size=(120,120), fit="contain"):
-                                xalign 0.5 yalign 0.5
+                # clickable if collected
+                    if k in persistent.collected: 
+                        button:
+                            frame:
+                                background Solid("#003D51")
+                                xsize 140 ysize 140
+                                # code by robcolton
+                                image Transform(item_map[k]['img'], size=(120,120), fit="contain"):
+                                    xalign 0.5 yalign 0.5
+                
+                    # for unseen items
+                    else: 
+                        button:
+                            frame:
+                                background Solid("#888888")
+                                xsize 140 ysize 140
+                                # code by robcolton
+                                image Transform(item_map[k]['img'], size=(120,120), fit="contain", matrixcolor=sil_black_matrix):
+                                    xalign 0.5 yalign 0.5
 
     textbutton "Return to Extras" action ShowMenu("category_welcome") yoffset 950 xoffset 25
     textbutton "Main Menu" action Return() yoffset 1000 xoffset 25
@@ -66,7 +77,7 @@ screen item_welcome():
     python:
         item_count = len(item_map.keys())
         # TODO: need new persistent to handle items i guess
-        unlocked_item_count = len(persistent.seen)
+        unlocked_item_count = len(persistent.collected)
     vbox:
         xsize 600
         xalign 0.5 yalign 0.5

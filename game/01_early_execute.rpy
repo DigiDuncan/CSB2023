@@ -22,6 +22,7 @@ define determination = Dissolve(0.0)
 default translate_this_line = ""
 default persistent.seen = set()
 default persistent.heard = set()
+default persistent.collected = set()
 default persistent.read = set()
 default persistent.seen_endings = set()
 default persistent.creative_mode = False
