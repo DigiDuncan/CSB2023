@@ -21,8 +21,8 @@ label car_dialogue:
     scene car plains
     show billy car
     with dissolve
-    play music billy_mix
-    music "Billy's Mix - Billy Mays"
+    play music billy_mix if_changed
+    music billy_mix
     pause 2.0
     if fun_value(FUN_VALUE_MUSIC):
         cs "Well Arceus, it's time for Billy's Mix!"
@@ -98,6 +98,7 @@ label car_dialogue:
 
     $ renpy.music.set_pause(True, "music")
     play music2 sfx_ringtone_billy loop
+    $ persistent.heard.add("sfx_ringtone_billy")
     n "Billy gets a call on his Jupiter Jack."
     pause 0.5
     stop music2
@@ -324,7 +325,8 @@ label car_dialogue:
 
     # TODO: is this synced? is this supposed to be synced? i don't even know this song. can someone else check it? - tate
     $ renpy.music.set_pause(True, "music")
-    play music2 moving_right_along
+    play music2 moving_right_along if_changed
+    music moving_right_along
     $ renpy.pause(5.0, hard = True)
     # 0:05.0
     cs "{cps=30}{image=note_small1.png} Moving right along, in search of good times and good news {image=note_small2.png}{w=0.8}{nw}"

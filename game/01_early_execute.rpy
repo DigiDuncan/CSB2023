@@ -96,43 +96,65 @@ init:
             repeat
 
 python early:
-# MUSIC POP UP
+    # MUSIC POP UP
+
+    import json
+
+    with renpy.open_file("jukebox.json") as json_file:
+        jukebox_file = json.load(json_file)
+
+    _music_map = jukebox_file["tracks"]
+
     _current_song = ""
     _current_artist = ""
+    _current_internal_id = ""
     _played_songs = set()
 
     def parse_music(lexer):
         string = lexer.rest()
         if string == "end":
             return None
-        title, author = string.split("-", 2)
-        return (title, author)
+        return string
+
+    def lint_music(parsed_object):
+        if parsed_object is None:
+            pass
+        elif parsed_object[0] == "" or parsed_object[1] == "" or parsed_object[2] == "":
+            renpy.error("Title, artist, or ID is empty for music popup.")
+        else:
+           return parsed_object
 
     def execute_music(parsed_object):
+
         global _current_song
         global _current_artist
+        global _current_internal_id
+
+        global _music_map
+
         if parsed_object is None:
             _current_song = None
             _current_artist = None
+            _current_internal_id = None
             return
-        _current_song = parsed_object[0].strip().removeprefix("\"")
-        _current_artist = parsed_object[1].strip().removesuffix("\"")
+        else:
+            _current_internal_id = str(parsed_object)
+            _current_song = _music_map.get(_current_internal_id)["title"]
+            _current_artist = _music_map.get(_current_internal_id)["artist"]
+
+            # for debugging
+            #print(f"Currently held data: {_current_song} by {_current_artist} | Internal ID: {_current_internal_id}")
+        
         if (_current_song, _current_artist) not in _played_songs:
             _played_songs.add((_current_song, _current_artist))
-            persistent.heard.add(f"{_current_song} - {_current_artist}")
+            persistent.heard.add(_current_internal_id)
             renpy.with_statement(determination)
             renpy.show_screen("music")
             renpy.with_statement(determination)
         if all([a in persistent.heard for a in music_map.keys()]):
             achievement_manager.unlock("The Brown Album")
 
-    def lint_music(parsed_object):
-        if parsed_object is None:
-            pass
-        elif parsed_object[0] == "" or parsed_object[1] == "":
-            renpy.error("Title or author is empty for music popup.")
-
-    renpy.register_statement("music",
+    renpy.register_statement(name="music",
         parse = parse_music,
         lint = lint_music,
         execute = execute_music)

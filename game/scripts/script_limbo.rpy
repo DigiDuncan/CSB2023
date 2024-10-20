@@ -1,3 +1,5 @@
+# TODO: NOTE TO TATE - DON'T TOUCH THESE VALUES, THESE ARE CS'S VALUES
+
 screen dx_select():
     
     default tt = Tooltip("Or something else?")

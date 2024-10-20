@@ -155,6 +155,7 @@ label train_dialogue:
 
     if fun_value(FUN_VALUE_RARE):
         play sound sfx_ringtone_tate_alt loop
+        $ persistent.heard.add("sfx_ringtone_tate_alt")
         show tate shock
         show mean human hat shocked
         n "Tate gets a call on their cell phone."
@@ -167,6 +168,7 @@ label train_dialogue:
         tate "God damn it, I forgot to change his ringtone..."
     else:
         play sound sfx_ringtone_tate loop
+        $ persistent.heard.add("sfx_ringtone_tate")
         show tate shock
         show mean human hat shocked
         n "Tate gets a call on their cell phone."

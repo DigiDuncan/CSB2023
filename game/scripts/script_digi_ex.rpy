@@ -538,7 +538,8 @@ label dx_digi_corruption:
 
     show flash onlayer fore3
 
-    play music missingno_start
+    play music missingno_start if_changed
+    $ persistent.heard.add("missingno")
     queue music missingno_loop
 
     $ config.window_show_transition = None

@@ -104,7 +104,7 @@ label train_intro_start:
 
     # that's not a hyphen
     play music sub_game_select if_changed
-    music "Sub−Game Select - Jun Ishikawa"
+    music sub_game_select
 
     # flip
     if train_money_stolen == True:
@@ -190,7 +190,7 @@ label train_story_begin:
     with dissolve
 
     play music outdoors if_changed
-    music Outdoors - Miki Obata
+    music outdoors
 
     pause 1.0
 
@@ -386,6 +386,7 @@ label train_story_begin:
 
 label train_race_win:
     play music outdoors if_changed
+    music outdoors
     scene kingman_museum_2
     show cs happy at left
     show arceus worried at right
@@ -423,6 +424,7 @@ label train_race_win:
     
 label train_race_lose:
     play music outdoors if_changed
+    music outdoors
     scene kingman_museum_2
     show cs disappointed at left
     show arceus happy at right
@@ -459,6 +461,7 @@ label train_race_lose:
 
 label train_kingman_platform:
     play music outdoors if_changed
+    music outdoors
     scene kingman_platform_2 with dissolve
     pause 1.0
     show arceus flipped at mid_mid_left
@@ -537,7 +540,7 @@ label train_kingman_platform:
 
     scene kingman_train_arrive with dissolve
     play music ochre_woods_day if_changed
-    music Ochre Woods ~ Day - Miki Obata
+    music ochre_woods_day
     if fun_value(FUN_VALUE_MUSIC):
         n "The two watch as the locomotive approaches the Ochre Woods during the day and eventually slows to a stop."
     else:
@@ -680,7 +683,7 @@ label train_boarding:
     with dissolve
 
     play music bedroom_day if_changed
-    music Bedroom ~ Day - Miki Obata
+    music bedroom_day
     
     pause 2.0 
     # again, separate on purpose
@@ -841,7 +844,7 @@ label train_boarding:
 
 label train_enter_sleeper:
     play music bedroom_day if_changed
-    music Bedroom ~ Day - Miki Obata
+    music bedroom_day
 
     # TODO: better sleeper bg
     play sound sfx_sliding_door_close
@@ -919,7 +922,7 @@ label train_enter_sleeper:
         n "A sudden hard knock on the door startles the group."
 
     play music item_bounce volume 0.8 if_changed
-    music Item Bounce - Akira Miyagawa
+    music item_bounce
     play sound sfx_hubbub loop fadein 2.0 volume 0.3
 
     n "An uproar of angry passengers grows steadily louder."
@@ -1270,7 +1273,7 @@ label train_dining:
     show amtrak_dining_car
     with dissolve
     pause 1.0
-    music Krabby Klub - Tsukasa Tawada
+    music krabby_klub
     pause 0.5
     show arceus at center with moveinright
     if fun_value(FUN_VALUE_MUSIC):
@@ -1349,7 +1352,7 @@ label train_dining:
     # mean wanted the following section.
     
     play music prof_kranes_kidnap if_changed
-    music "Prof. Krane's Kidnap - Tsukasa Tawada"
+    music prof_kranes_kidnap
 
     show mean furious
     mean_offscreen "{i}WHAT?!" with hpunch
@@ -1515,7 +1518,7 @@ label train_wakeup:
     pause 2.0    
 
     play music e_gadds_lab if_changed
-    music "E. Gadd's Lab - Kazumi Totaka & Shinobu Tanaka"
+    music e_gadds_lab
 
     show tate sheepish
     show cs disappointed flipped
@@ -1687,7 +1690,7 @@ label train_wakeup:
 ######## BAIL NOW ########
 label train_allow_staff:
     play music e_gadds_lab if_changed
-    music "E. Gadd's Lab - Kazumi Totaka & Shinobu Tanaka"
+    music e_gadds_lab
     scene 
     show car plains night
     show amtrak_sleeper_interior_day
@@ -1727,7 +1730,7 @@ label train_allow_staff:
 ######## BEGIN THE HEIST ########
 label train_begin_heist:
     play music e_gadds_lab if_changed
-    music "E. Gadd's Lab - Kazumi Totaka & Shinobu Tanaka"
+    music e_gadds_lab
     scene 
     show car plains night
     show amtrak_sleeper_interior_day
@@ -1785,7 +1788,7 @@ label train_meanwhile:
     show lupin stand at center
     with dissolve
     play music onbs if_changed
-    music "ONBS - Tsukasa Tawada"
+    music onbs
 
     pause 1.0
     if fun_value(FUN_VALUE_MUSIC):
@@ -1897,7 +1900,7 @@ label train_search_arceus:
     
 label train_search_cs:
     play music onbs if_changed
-    music "ONBS - Tsukasa Tawada"
+    music onbs
     
     # TODO: YES I KNOW THIS SCENE IS CRUSTIER THAN FRENCH BREAD PLS HELP
 
@@ -1994,7 +1997,7 @@ label train_search_cs:
 
 label train_search_tate:
     play music onbs if_changed
-    music "ONBS - Tsukasa Tawada"
+    music onbs
     pause 1.0
 
     scene
@@ -2127,7 +2130,7 @@ label train_search_tate:
 
 label train_confront_lupin:
     play music onbs if_changed
-    music "ONBS - Tsukasa Tawada"
+    music onbs
 
     scene
     show car plains night
@@ -2527,7 +2530,7 @@ label train_confront_lupin:
     $ persistent.seen.add("mean_human")
     with Dissolve(0.25)
     pause 1.0
-    music Encounter! Friend - Waichiro Ozaki
+    music encounter_friend
     play music encounter_friend_intro noloop
     queue music encounter_friend_loop
     if fun_value(FUN_VALUE_MUSIC):
@@ -2604,7 +2607,7 @@ label train_confront_lupin:
     
 label train_on_top:
     play music encounter_friend_loop if_changed
-    music Encounter! Friend - Waichiro Ozaki
+    music encounter_friend
     # TODO: yes i know this edit is shit
     # TODO: need moving background
 
@@ -2830,7 +2833,7 @@ label train_lupin_win:
     with dissolve
     
     play music in_the_room
-    music In The Room - Shogo Sakai
+    music in_the_room
     
     if fun_value(FUN_VALUE_MUSIC):
         amtrak_conductor "... So, what you're telling me is... this guy got {i}In The Room,{/i} but he wasn't actually {i}you..."
@@ -3271,7 +3274,7 @@ label train_lupin_win:
     # TODO: fix windows
     $ _skipping = False
     play music roundabout
-    music Roundabout - Yes
+    music roundabout
     mean "{bt=a3-p10-s4}{size=+24}YOU RAT {i}BASTARD!{w=1.0}{nw}" with hpunch
     mean "I {i}THOUGHT{/i} I RECOGNIZED YOU!{w=1.0}{nw}"
     # i got lazy ok
@@ -3297,7 +3300,7 @@ label train_lupin_win:
     n "After a heated discussion, the group decides that maybe it's best to let bygones be bygones and get on with the night."
     
     play music lo_fi_sunset if_changed
-    music Lo−Fi Sunset - Dango Studio
+    music lo_fi_sunset
     
     if fun_value(FUN_VALUE_MUSIC):
         # oh brother this line STINKS!
@@ -3495,8 +3498,7 @@ label train_tate_ex_encounter:
     pause 1.0
     # TODO: this loop sounds like shit
     play music insomnia_intro if_changed
-    # TODO: Fix this artist name, should be W∆W
-    music Insomnia - W∆W
+    music insomnia
     show cs disappointed flipped at offscreenright with determination
     show cs disappointed flipped at right with MoveTransition(1.0)
     pause 1.0
@@ -3630,6 +3632,7 @@ label train_tate_ex_encounter:
                 
 label train_tate_ex_win:
     stop music
+    music end
 
     show screen warning("The following section contains flashing lights and colors.", "Persons with photosensitive conditions may wish to skip this section.", "train_defeated_perfect_tate")
     # TODO: there MUST be some better way to force this to wait until the player makes a choice...
@@ -3721,7 +3724,7 @@ label train_tate_ex_win:
     perfect_tate "{sc}{size=+24}{font=azsz}{color=#000000}I'm sorry."
 
     scene white
-    play music "<from 3.6 to 22.8>nyan_of_a_lifetime.ogg" volume 0.3 if_changed noloop
+    play music "<from 3.6 to 22.8>/secret/pt/nyan_of_a_lifetime.ogg" volume 0.3 if_changed noloop
     $ renpy.movie_cutscene("/minigames/perfecttate/tate1.webm")
 
 
@@ -3737,6 +3740,7 @@ label train_tate_ex_win:
 
 label train_defeated_perfect_tate:
     stop music
+    music end
     scene white
 
     # re-enable pause if disabled
@@ -3813,6 +3817,8 @@ label train_tate_ex_lose:
     $ renpy.clear_keymap_cache()
 
     stop music
+    music end
+
     scene white
     pause 5.0
     tate "Huh."
@@ -3833,7 +3839,7 @@ label train_tate_ex_lose:
 label train_completed:
     if train_ending_money_returned == True:
         play music lo_fi_sunset if_changed
-        music Lo−Fi Sunset - Dango Studio
+        music lo_fi_sunset
     
         n "CS and Arceus wake up the next morning feeling completely refreshed."
         
@@ -3870,7 +3876,7 @@ label train_completed:
         n "Still full from Tate's cooking, the two decide to enjoy one last nap before their next stop..."
     else:
         play music homely_yado_inn if_changed
-        music Homely Yado Inn - Shogo Sakai
+        music homely_yado_inn
         
         if fun_value(FUN_VALUE_MUSIC):
             n "CS and Arceus wake up the next morning feeling rather groggy. They'd almost rather be staying at the Homely Yado Inn."
@@ -3962,7 +3968,7 @@ label train_return_home_transition:
     arceus "Yeah, the walk there would take hours."
     cs "Shit, uhh, what are our other options?"
     play music mm_select volume 0.3 if_changed
-    music Mm Select - Matthew Simmonds
+    music mm_select
     show billy at right
     show cs
     billy "Need a ride? I'll take you to any destination for only $19.95!"

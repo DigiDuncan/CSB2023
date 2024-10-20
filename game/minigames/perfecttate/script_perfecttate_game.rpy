@@ -269,8 +269,8 @@ screen PerfectTateGame():
     add PerfectTateGame
 
 label play_perfecttate_game:
-    play music "<from 22.8 to 228>nyan_of_a_lifetime.ogg" volume 0.3 if_changed noloop
-    $ persistent.heard.add("Nyan Of A Lifetime - DJ NYANKO SWITCHER")
+    play music "<from 22.8 to 228>/secret/pt/nyan_of_a_lifetime.ogg" volume 0.3 if_changed noloop
+    $ persistent.heard.add("nyan_of_a_lifetime")
     window hide
     $ quick_menu = False
     call screen PerfectTateGame
@@ -278,7 +278,6 @@ label play_perfecttate_game:
     window show
 
     if _return == True:
-        $ achievement_manager.unlock("Main Character Syndrome")
         $ renpy.jump(minigame_win)
     else:
         $ renpy.jump(minigame_loss)

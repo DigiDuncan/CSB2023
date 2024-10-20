@@ -141,7 +141,7 @@ label play_toytrains_game:
     $ quick_menu = False
     play music hide_and_seek if_changed
     call screen toytrainsgame
-    $ persistent.heard.add("Chiro - Hide and Seek")
+    $ persistent.heard.add("hide_and_seek")
     $ quick_menu = True
     window show
 

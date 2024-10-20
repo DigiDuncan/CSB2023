@@ -1,6 +1,6 @@
 label kuwait_travel:
     play music airport volume 0.4 if_changed
-    music Airport Infiltration - Andy Blythe & Marten Joustra
+    music airport
     scene ticket_counter
     show benrey at center
     show cs disappointed at left
@@ -105,8 +105,8 @@ label kuwait_hospital:
     scene black
     pause 10
     play sound sfx_heartbeat loop
-    play music tmwstw
-    music The Man Who Sold The World - Midge Ure
+    play music tmwstw if_changed
+    music tmwstw
     pause 5
     cs "{i}Where... where am I?{/i}"
     if fun_value(FUN_VALUE_MUSIC):

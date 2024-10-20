@@ -2,7 +2,8 @@ label michigan:
     scene car plains
     show billy car
     with dissolve
-    play music track_4 volume 0.4
+    play music track_4 volume 0.4 if_changed
+    music track_4
     billy "Alright. The highway entrance should be right around here."
     billy "We can head to Ohio, and then we'll be getting really close."
     billy "Fuck."
@@ -62,8 +63,8 @@ label michigan_bronson:
         billy "Okay, shut up! On me drive!"
     else:
         billy "Okay, shut up! Let me drive!"
-    play music upon_me
-    music Upon Me - Dr. Awesome
+    play music upon_me if_changed
+    music upon_me
     cs "Billy, you took the Bronson exit."
     show billy car
     billy "..."
@@ -273,8 +274,8 @@ label michigan_interstate_69_old:
     show cs disappointed flipped at right
     show cscar2
     with dissolve 
-    play music honk_song volume 0.8
-    music Honk Song - Toby Fox
+    play music honk_song volume 0.8 if_changed
+    music honk_song
     cs "I was expecting there to be people around, but I wasn't expecting traffic like this. I wonder what's going on?"
     arceus "All the people walking are wearing green and white, so it's probably a sports thing."
     billy "We are in Lansing. They have one of the biggest football schools in the country."
@@ -306,8 +307,8 @@ label michigan_interstate_69_old:
     play sound sfx_roll_window volume 0.7
     pause 2.0 
     # DX: It could be funny to have an option to ignore the gnome for a while
-    play music wayward_wanderer volume 0.7
-    music Wayward Wanderer - Deep Gnome
+    play music wayward_wanderer volume 0.7 if_changed
+    music wayward_wanderer
     if fun_value(FUN_VALUE_MUSIC):
         gnome "Hallo, I am a Wayward Wanderer, may I enter your Automobile?"
     else:
@@ -403,8 +404,8 @@ label michigan_interstate_69_old:
     hide waitress with moveoutright
     n "As everyone is waiting, the strange glowing grey blob in the corner notices the group and floats over."
     show aria at right with moveinright
-    play music mis_leader volume 0.7
-    music MisLeader - Triosk and Jan Jelinek
+    play music mis_leader volume 0.7 if_changed
+    music mis_leader
     aria "CS! Arc! What are you doing here?"
     gnome "Aria! I knew I recognized that Scent."
     aria "OMG, hi! So, you brought them here?"
@@ -639,8 +640,8 @@ label michigan_interstate_69_old:
     show billy dark at center
     show aria dark flipped at left
     with dissolve
-    play music dense_woods_b volume 0.5
-    music Dense Woods B - Kikiyama
+    play music dense_woods_b volume 0.5 if_changed
+    music dense_woods_b
     billy "Why does the window by the entrance have to be bright red?"
     billy "I've had enough of spooky forests today."
     aria "It's fine. That guy always has his lights set to red."
@@ -710,8 +711,8 @@ label michigan_interstate_69_old:
     stop music fadeout 3.0
     music end
     scene creepy_path_4 with dissolve
-    play music melancholy
-    music Melancholy - Imori
+    play music melancholy if_changed
+    music melancholy
     aria "If you look to the right, you'll see one of my favorite paths in the woods."
     aria "It's not exactly clear, so we'll skip it today, but it leads to a pretty little grotto."
     aria "It feels like something out of a fairy tale."
@@ -849,7 +850,8 @@ label michigan_interstate_69:
     show cs disappointed flipped at right
     show cscar2
     with dissolve 
-    play music honk_song volume 0.8
+    play music honk_song volume 0.8 if_changed
+    music honk_song
     cs "Ugh, traffic? Billy, you have a dashcam, right?"
     show cs flipped
     billy "Of course! I have the Crash Stopper! The fast and easy way to make sure you never crash again!"
@@ -876,8 +878,8 @@ label michigan_interstate_69:
     play sound sfx_roll_window volume 0.7
     pause 2.0 
     # DX: It could be funny to have an option to ignore the gnome for a while
-    play music wayward_wanderer volume 0.7
-    music Wayward Wanderer - Deep Gnome
+    play music wayward_wanderer volume 0.7 if_changed
+    music wayward_wanderer
     if fun_value(FUN_VALUE_MUSIC):
         gnome "Hallo, I am a Wayward Wanderer, may I enter your Automobile?"
     else:
@@ -981,8 +983,8 @@ label michigan_interstate_69:
     else:
         n "As everyone is waiting, the strange glowing grey blob in the corner notices the group and floats over."
     show aria at right with moveinright
-    play music mis_leader volume 0.7
-    music MisLeader - Triosk and Jan Jelinek
+    play music mis_leader volume 0.7 if_changed
+    music mis_leader 
     aria "CS! Arc! What are you doing here?"
     gnome "Aria! I knew I recognized that Scent."
     aria "OMG, hi! So, you brought them here?"
@@ -1182,8 +1184,8 @@ label michigan_interstate_69:
     show billy dark at center
     show aria dark flipped at left
     with dissolve
-    play music dense_woods_b volume 0.5
-    music Dense Woods B - Kikiyama
+    play music dense_woods_b volume 0.5 if_changed
+    music dense_woods_b
     if fun_value(FUN_VALUE_MUSIC):
         cs "Wouldn't you say these are some Dense Woods, Billy?"
     else:
@@ -1257,8 +1259,8 @@ label michigan_interstate_69:
     stop music fadeout 3.0
     music end
     scene creepy_path_4 with dissolve
-    play music melancholy
-    music Melancholy - Imori
+    play music melancholy if_changed
+    music melancholy
     if fun_value(FUN_VALUE_MUSIC):
         aria "If you look to the right, you'll see one of my favorite, melancholy, paths in the woods."
     else:
@@ -1281,6 +1283,7 @@ label michigan_interstate_69:
     aria "I like to think that Mother Nature watc--{w=2.0}{nw}"
     $ renpy.music.set_pause(True, "music")
     play music2 sfx_ringtone_cs loop volume 3 
+    $ persistent.heard.add("sfx_ringtone_cs")
     n "All of a sudden, CS' phone starts going off."
     cs "Oh shit, sorry. I forgot I left my ringer on."
     aria "Well, can you turn it off? You're interrupting my friend's song!"
@@ -1436,8 +1439,8 @@ label michigan_interstate_94:
     scene mario_inside
     show mario at right
     with dissolve
-    play music trash_zone volume 0.3  
-    music Tubular Trash Zone - Mr. Sauceman
+    play music trash_zone volume 0.3 if_changed
+    music trash_zone
     show cs at left
     show arceus dirty flipped at mid_left
     with moveinleft

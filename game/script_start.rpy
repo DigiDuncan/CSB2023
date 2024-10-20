@@ -1573,12 +1573,12 @@ image zenigata dark flipped = "dark:flip:characters/zenigata.png"
 image zenigata car dark = "dark:characters/zenigata_car.png"
 
 # Train Route Tate EX extra images
-image tate_falling = "characters/tate/tate_falling.png"
-image tate_fallen_1 = "characters/tate/tate_fallen_1.png"
-image tate_fallen_2 = "characters/tate/tate_fallen_2.png"
-image tate_fallen_3 = "characters/tate/tate_fallen_3.png"
-image tate_fallen_4 = "characters/tate/tate_fallen_4.png"
-image tate_fallen_5 = "characters/tate/tate_fallen_5.png"
+image tate_falling = "secret/pt/tate_falling.png"
+image tate_fallen_1 = "secret/pt/tate_fallen_1.png"
+image tate_fallen_2 = "secret/pt/tate_fallen_2.png"
+image tate_fallen_3 = "secret/pt/tate_fallen_3.png"
+image tate_fallen_4 = "secret/pt/tate_fallen_4.png"
+image tate_fallen_5 = "secret/pt/tate_fallen_5.png"
 image yeetable_textbox = "/secret/pt/yeetable_textbox.png"
 
 # Train Route generated images
@@ -1794,7 +1794,7 @@ layeredimage copguy_ex:
 ## For Tate EX
 
 image tate_ex_front:
-    "characters/tate/tate_ex.png"
+    "secret/pt/tate_ex.png"
     alignaround (0.5, 0.5)
     align (0.5, 0.5)
     pos (0.5, 0.5)
@@ -1805,7 +1805,7 @@ image tate_ex_front:
     repeat
     
 image tate_ex_ca_c:
-    "characters/tate/tate_ex_c.png"
+    "secret/pt/tate_ex_c.png"
     alignaround (0.5, 0.5)
     align (0.5, 0.5)
     pos (0.5, 0.5)
@@ -1820,7 +1820,7 @@ image tate_ex_ca_c:
     repeat
 
 image tate_ex_ca_m:
-    "characters/tate/tate_ex_m.png"
+    "ecret/pt/tate_ex_m.png"
     alignaround (0.5, 0.5)
     align (0.5, 0.5)
     pos (0.5, 0.5)
@@ -1835,7 +1835,7 @@ image tate_ex_ca_m:
     repeat
 
 image tate_ex_ca_y:
-    "characters/tate/tate_ex_y.png"
+    "secret/pt/tate_ex_y.png"
     alignaround (0.5, 0.5)
     align (0.5, 0.5)
     pos (0.5, 0.5)
@@ -2184,8 +2184,10 @@ define audio.in_the_room = "<from 0.491 to 30.501>in_the_room.ogg"
 define audio.roundabout = "<from 41.076>roundabout.ogg"
 define audio.lo_fi_sunset = "lo_fi_sunset.ogg"
 define audio.homely_yado_inn = "<from 0.499 to 40.502>homely_yado_inn.ogg"
-define audio.insomnia_intro = "<from 0 to 11.299>insomnia.ogg"
-define audio.insomnia_loop = "<from 22.6>insomnia.ogg"
+
+# For Tate EX / Perfect Tate
+define audio.insomnia_intro = "<from 0 to 11.299>secret/pt/insomnia.ogg"
+define audio.insomnia_loop = "<from 22.6>secret/pt/insomnia.ogg"
 
 # CSBIII DX Kuwait Music
 define audio.tmwstw = "tmwstw.ogg"
@@ -2212,9 +2214,9 @@ define audio.interference = "<from 0 to 275>interference.ogg"
 
 # Other?
 define audio.space_classroom = "secret/space_classroom.ogg"
-define audio.Billymusicu = "Billymusicu.ogg"
+define audio.billymusicu = "billymusicu.ogg"
 define audio.ocean_man = "secret/credits.ogg"
-define audio.albu = "albuquerque.ogg"
+define audio.albuquerque = "albuquerque.ogg"
 
 # SFX
 define audio.sfx_addy_snap = "sfx/sfx_addy_snap.ogg"

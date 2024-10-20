@@ -1,12 +1,12 @@
 # IMPORTANT!
 # You no longer need to manually register battle music in the jukebox before jumping to the battle's label.
-# Just define it here with the filename and in music_map.
-# As long as both steps are done, battle music will be registered in jukebox automatically.
+# Just define it here with the ID as defined in jukebox.json
+# As long as this is done, and the track exists in the JSON, battle music will be registered in jukebox automatically.
 
 label rpg_test:
     rpg:
         bg "images/bg/casino1.png"
-        music "audio/card_castle.ogg"
+        music "card_castle"
         fighters:
             cs
             $enemy_1
@@ -20,7 +20,7 @@ label rpg_test:
 label rpg_fanboy_fight_amd:
     rpg:
         bg "images/bg/linus_office_outside.png"
-        music "audio/nordic_report_1.ogg"
+        music "nordic_report_1"
         fighters:
             cs_weak
             fanboyb
@@ -42,13 +42,13 @@ label rpg_fanboy_fight_nvidia:
         scale 1.0
         on_win "friend_after_fanboy"
         on_lose "country_knocked_out"
-        music "audio/nordic_report_2.ogg"
+        music "nordic_report_2"
         intro_text "NVIDIA fanboys have come to cancel you!"
 
 label rpg_cop_fight_1:
     rpg:
         bg "images/bg/dealership.png"
-        music "audio/compulsion_to_obey.ogg"
+        music "compulsion_to_obey"
         fighters:
             cs
             arceus
@@ -64,7 +64,7 @@ label rpg_cop_fight_1:
 label rpg_cop_fight_2:
     rpg:
         bg "images/bg/dealership.png"
-        music "audio/for_the_people.ogg"
+        music "for_the_people"
         fighters:
             mika
             kitty
@@ -78,7 +78,7 @@ label rpg_cop_fight_2:
 label rpg_cop_fight_3:
     rpg:
         bg "images/bg/cs_somewhere.png"
-        music "audio/desert_dawn.ogg"
+        music "desert_dawn"
         fighters:
             aria
             cop
@@ -91,7 +91,7 @@ label rpg_cop_fight_3:
 label rpg_cop_fight_4:
     rpg:
         bg "images/bg/dinerinside.png"
-        music "audio/dinerfight.ogg"
+        music "dinerfight"
         fighters:
             digi
             nova
@@ -118,7 +118,7 @@ label rpg_ng_fight:
     $ party_4 = renpy.display_menu([(a.title() if a != "CS_NG" else "CS", a) for a in ng_fighters if a not in chosen_ng_fighters], screen="ucn_choice")
     rpg:
         bg "images/bg/battle_block_without_theater.png"
-        music "audio/thousand_march.ogg"
+        music "thousand_march"
         fighters:
             $party_1
             $party_2
@@ -148,7 +148,7 @@ label rpg_final_fight_1:
     $ party_4 = renpy.display_menu([(a.title() if a != "CS_STRONG" else "CS", a) for a in final_fighters_1 if a not in chosen_final_fighters_1], screen="ucn_choice")
     rpg:
         bg "images/bg/war_torn_2.png"
-        music "audio/trans_atlantic.ogg"
+        music "trans_atlantic"
         fighters:
             $party_1
             $party_2
@@ -178,7 +178,7 @@ label rpg_final_fight_2:
     $ party_4 = renpy.display_menu([(a.title() if a != "CS_STRONG" else "CS", a) for a in final_fighters_2 if a not in chosen_final_fighters_2], screen="ucn_choice")
     rpg:
         bg "images/bg/war_torn_3.png"
-        music "audio/trans_atlantic.ogg"
+        music "trans_atlantic"
         fighters:
             $party_1
             $party_2
@@ -204,7 +204,7 @@ label rpg_final_fight_3:
     $ party_4 = renpy.display_menu([(a.title() if a != "CS_FINAL" else "CS", a) for a in final_fighters_3 if a not in chosen_final_fighters_3], screen="ucn_choice")
     rpg:
         bg "images/bg/war_torn_4.png"
-        music "audio/prophetpart2.ogg"
+        music "prophetpart2"
         fighters:
             cs_final
             $party_2
@@ -219,7 +219,7 @@ label rpg_final_fight_3:
 label rpg_error:
     rpg:
         bg "secret/falling_apart.png"
-        music "audio/prophetpart2.ogg"
+        music "prophetpart2"
         fighters:
             cs_final2
             pakooe
@@ -239,7 +239,7 @@ label rpg_archival:
         scale 1.0
         on_win "archival_finale"
         on_lose "rpg_archival"
-        music "audio/broken_sky.ogg"
+        music "broken_sky"
         intro_text "The odd trio blocks your path!"
 
 label rpg_bronsonbattle:
@@ -253,7 +253,7 @@ label rpg_bronsonbattle:
         scale 1.0
         on_win "michigan_bronson_win"
         on_lose "rpg_bronsonbattle"
-        music "audio/error.ogg"
+        music "error"
         intro_text "You are challenged by... Copguy?"
         
 label rpg_tate_ex:
@@ -276,5 +276,5 @@ label rpg_tate_ex:
         scale 2.0
         on_win "train_tate_ex_win"
         on_lose "train_tate_ex_lose"
-        music "audio/space.ogg"
+        music "space"
         intro_text "Tate EX challenges you!"

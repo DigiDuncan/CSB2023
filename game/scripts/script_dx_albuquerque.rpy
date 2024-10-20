@@ -14,7 +14,8 @@ label dx_albuquerque:
     scene airplane_seats
     show cs at mid_left
     pause 0.5
-    play music albuquerque
+    play music albuquerque if_changed
+    music albuquerque
     cs_nobeep "{cps=40}You know, I'd never been on a real airplane before...{w=0.5}{nw}"
     show cs happy
     cs_nobeep "{cps=40}...And I gotta tell ya, it was really great!{w=0.8}{nw}"
@@ -65,7 +66,7 @@ label dx_albuquerque:
     #scene black
     #stop music
     #pakoo "Start string 2!"
-    #play music albuquerque2
+    #play music albuquerque2 if_changed
     scene kuwait_island_outside
     with dissolve
     show cs disappointed at Move((-0.2 , 0.3), (1.2, 0.3), 20, repeat=False, bounce=False, xanchor="left", yanchor="top")
@@ -149,7 +150,7 @@ label dx_albuquerque:
     #scene black
     #stop music
     #pakoo "Start string 3!"
-    #play music albuquerque3
+    #play music albuquerque3 if_changed
     scene hotel_lobby
     show cs disappointed
     cs_nobeep "{cps=30}Well, to cut a long story short,{cps=40} he got away with my snorkel...{w=1}{nw}"
@@ -221,7 +222,7 @@ label dx_albuquerque:
     #scene black
     #stop music
     #pakoo "Start string 4!"
-    #play music albuquerque4
+    #play music albuquerque4 if_changed
     scene canada_block with dissolve
     show cs scared flipped at Move((1.2 , 0.2), (-0.2, 0.2), 5, repeat=True, bounce=True, xanchor="left", yanchor="top")
     show nova_head as first at Move((1.2 , 0.2), (-0.2, 0.2), 5, repeat=True, bounce=True, xanchor="left", yanchor="top")
@@ -297,7 +298,7 @@ label dx_albuquerque:
     #scene black
     #stop music
     #pakoo "Start string 5!"
-    #play music albuquerque5
+    #play music albuquerque5 if_changed
     scene town
     show cs
     with dissolve
@@ -377,7 +378,7 @@ label dx_albuquerque:
     #scene black
     #stop music
     #pakoo "Start string 6!"
-    #play music albuquerque6
+    #play music albuquerque6 if_changed
     camera:
         parallel:
             linear 0 xpos -333

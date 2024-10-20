@@ -1,8 +1,8 @@
 label csbiii_ai:
     scene linusmedia with dissolve
     show cs at left with moveinleft
-    play music school volume 0.4
-    music School - Toby Fox
+    play music school volume 0.4 if_changed
+    music school
     if fun_value(FUN_VALUE_MUSIC):
         n "CS is at school, surrounded by computer parts and confused colleagues."
     else:    
@@ -55,11 +55,15 @@ label csbiii_ai:
     show cs flipped with determination
     hide cs with moveoutleft
     hide arceus with moveoutleft
+    stop music fadeout 0.5
+    music end
+    scene black with dissolve
+
     scene entertunnel with dissolve
     show cs at left with moveinleft
     show arceus at right with moveinright
-    play music cliffs volume 0.4
-    music Cliffs - Toby Fox
+    play music cliffs volume 0.4 if_changed
+    music cliffs
     if fun_value(FUN_VALUE_MUSIC):
         n "CS188 and Arceus dash to a hidden panel on the floor, revealing a concealed entrance to the cliffs."
     else:
@@ -75,8 +79,8 @@ label csbiii_ai:
     scene park1 with dissolve
     show cs at left with moveinbottom
     show arceus at right with moveinbottom
-    play music circus volume 0.4
-    music Circus - Toby Fox
+    play music circus volume 0.4 if_changed
+    music circus
     if fun_value(FUN_VALUE_MUSIC):
         n "They emerge from the tunnel into a surprising location—an abandoned, overgrown circus."
     else:
@@ -104,8 +108,8 @@ label csbiii_ai:
     with moveoutbottom
     n "CS188 and Arceus duck behind a broken carousel as the cops pass by."
     show copguy_ai at center with moveinbottom
-    play music chase volume 0.4
-    music The Chase - Toby Fox
+    play music chase volume 0.4 if_changed
+    music chase
     if fun_value(FUN_VALUE_MUSIC):
         n "CS188 and Arceus duck behind a broken carousel as the cops chase by."
     arceus "{size=-12}CS, we can't hide here forever. We need a distraction!"
@@ -151,9 +155,9 @@ label csbiii_ai:
         n "We sure did, buddy. Another adventure for the books! Hooray for friendship!"
     else:
         cs "We sure did, buddy. Another adventure for the books!"  
-    play music friendship volume 0.4
+    play music friendship volume 0.4 if_changed
     scene endingai with Fade(1.0, 1.0, 1.0)
-    music Friendship - Toby Fox
+    music friendship
     n "CS188 and Arceus exchange a high-five and disappear into the distance, ready for their next escapade."
     "ChatGPT" "Note: The script is a fictional representation and does not reflect the actual personalities or actions of CS188 or any real-life individuals."
     $ achievement_manager.unlock("Artifical Unintelligence")

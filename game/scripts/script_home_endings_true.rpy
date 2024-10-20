@@ -1,8 +1,8 @@
 label true_back_home:
     stop music2
     scene cs_house with dissolve
-    play music park_theme volume 0.5
-    music Park Theme - Lorin Nelson
+    play music park_theme volume 0.5 if_changed
+    music park_theme
     if fun_value(FUN_VALUE_MUSIC):
         n "After listening to Billy's many themes, they drive past the park next to CS' house."      
     else:
@@ -32,8 +32,8 @@ label true_back_home:
     ed "{i}You!" with hpunch
     show cs worried at left with moveinleft
     n "CS and the gang look towards CS' front porch, where Richard and Ed are waiting angrily for him."
-    play music hohsis_remix volume 0.5
-    music "Alfred's Theme - Eminem"
+    play music hohsis_remix volume 0.5 if_changed
+    music hohsis_remix
     show ed at right
     show rich at mid_mid_right behind ed
     with moveinright
@@ -84,8 +84,8 @@ label true_talktohohsis:
     ed "Richard, get the JoJ UFO and vaporize the house."
     stop music fadeout 1.0
     show anno at offscreenleft
-    play music track_3 volume 0.4
-    music Track 3 - Weatherscan
+    play music track_3 volume 0.4 if_changed
+    music track_3 
     if fun_value(FUN_VALUE_MUSIC):
         show anno at center behind doug with moveinleft
         anno "Track 3!!!"
@@ -236,8 +236,8 @@ label true_talktohohsis:
     pause 1.0
     $ renpy.movie_cutscene(hoh_repair)
     scene cs_room with dissolve
-    play music ac_title volume 0.4
-    music New Leaf Title Theme - Kazumi Totaka
+    play music ac_title volume 0.4 if_changed
+    music ac_title
     show cs at center with moveinleft
     if fun_value(FUN_VALUE_MUSIC):
         cs "Ah, It's good to be New Leaf Title Theme again!"
@@ -259,6 +259,7 @@ label true_talktohohsis:
 
 label true_ending:
     play music ac_title volume 0.4 if_changed
+    music ac_title
     n "CS looks over at his desk, where a new computer is sitting."
     scene cs_room_2 with dissolve
     n "CS looks at the monitor, which has a sticky note that says \"From LTT\"."
@@ -306,6 +307,7 @@ label true_streaming:
 
 label true_ytp_ending:
     play music ac_title volume 0.4 if_changed
+    music ac_title
     n "CS looks over at his desk, where his old computer is sitting."
     scene cs_room_2 with dissolve
     show cs at mid_left
@@ -327,6 +329,7 @@ label true_ytp_ending:
 
 label true_ltt_ending:
     play music ac_title volume 0.4 if_changed
+    music
     n "CS looks over at his desk, where a new computer is sitting."
     scene cs_room_2 with dissolve
     n "CS looks at the monitor, which has a sticky note that says \"From LTT\"."
@@ -351,6 +354,7 @@ label true_ltt_ending:
 
 label true_fighthohsis:
     play music hohsis_remix volume 0.5 if_changed
+    music hohsis_remix
     scene cs_house
     show cs disappointed at left
     show ed at right
@@ -397,6 +401,7 @@ label true_fighthohsis:
 
 label true_fuckuphohsis:
     play music hohsis_remix volume 0.5 if_changed
+    music hohsis_remix
     scene cs_house
     show ed at right
     show rich at mid_mid_right behind ed

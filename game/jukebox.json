@@ -69,7 +69,8 @@
             "title": "サマークリアランスセール",
             "artist": "BEST MUSIC",
             "tags": ["CSBI"],
-            "album_art": "summerclearance.png"
+            "album_art": "summerclearance.png",
+            "trivia": "English Title: Summer Clearance Sale"
         },
         "scales_of_joy" : {
             "file": "scales_of_joy.ogg",
@@ -235,10 +236,11 @@
         },
         "atarashii_kaze" : {
             "file": "atarashii_kaze.ogg",
-            "title": "Atarashii Kaze",
+            "title": "新しい風",
             "artist": "Satoru Kosaki",
             "tags": ["CSBIII"],
-            "album_art": "luckystar.png"
+            "album_art": "luckystar.png",
+            "trivia": "Romanized Title: Atarashii Kaze | English Title: New Wind"
         },
         "police_station" : {
             "file": "police_station.ogg",
@@ -324,7 +326,7 @@
             "tags": ["CSBIII: Archival"],
             "album_art": "tearsforfears.png"
         },
-        "albu" : {
+        "albuquerque" : {
             "file": "albuquerque.ogg",
             "title": "Albuquerque",
             "artist": "Weird Al Yankovic",
@@ -373,9 +375,17 @@
             "tags": ["CSBIII: Country"],
             "album_art": "csbi.png"
         },
+      "bakamitai" : {
+            "file": "bakamitai.ogg",
+            "title": "ばかみたい",
+            "artist": "Mitsuharu Fukuyama",
+            "tags": ["CSBIII: Country"],
+            "album_art": "bakamitai.png",
+            "trivia": "Romanized Title: Baka Mitai | English Title: I've Been A Fool"
+        },
         "chase" : {
             "file": "chase.ogg",
-            "title": "Cliffs",
+            "title": "The Chase",
             "artist": "Toby Fox",
             "tags": ["CSBIII: Country", "CSBIII: AI"],
             "album_art": "deltarune.png"
@@ -487,10 +497,11 @@
         }, 
         "taiikusai_desu_yo" : {
             "file": "taiikusai_desu_yo.ogg",
-            "title": "Taiikusai Desu Yo",
+            "title": "体育祭ですよ",
             "artist": "Satoru Kosaki",
             "tags": ["CSBIII: East"],
-            "album_art": "luckystar.png"
+            "album_art": "luckystar.png",
+            "trivia": "Romanized Title: Taiikusai Desu Yo | English Title: It's A Sports Festival"
         },
         "track_4" : {
             "file": "track4.ogg",
@@ -690,7 +701,7 @@
         },
         "another_him" : {
             "file": "ANOTHER HIM.ogg",
-            "title": "Exotic",
+            "title": "Another Him",
             "artist": "Toby Fox",
             "tags": ["CSBIII: Fired"],
             "album_art": "deltarune.png"
@@ -767,7 +778,7 @@
         }, 
         "for_the_people" : {
             "file": "for_the_people.ogg",
-            "title": "Compulsion To Obey",
+            "title": "For The People",
             "artist": "Lizardking",
             "tags": ["CSBIII: Friend", "Minigames"],
             "album_art": "lizardking.png"
@@ -1040,7 +1051,7 @@
         },
         "lets_hear_winter" : {
             "file": "lets_hear_my_christ.ogg",
-            "title": "Let's Hear My Baby: Spring Remix",
+            "title": "Let's Hear My Baby: Christmas Remix",
             "artist": "Pakoo",
             "tags": ["CSBIII DX: BTTF", "New In DX"],
             "album_art": "csbii.png"
@@ -1207,26 +1218,33 @@
             "album_art": "mother3.png"
         },
         "insomnia" : {
-            "file": "insomnia.ogg",
+            "file": "secret/pt/insomnia.ogg",
             "title": "Insomnia",
             "artist": "W∆W",
             "tags": ["CSBIII DX: Train", "New In DX", "Fun Values"],
             "album_art": "moon.png"
         },
         "space" : {
-            "file": "space.ogg",
+            "file": "secret/pt/space.ogg",
             "title": "Space",
             "artist": "W∆W",
             "tags": ["CSBIII DX: Train", "New In DX", "Fun Values", "Minigames"],
             "album_art": "moon.png"
         },
       "nyan_of_a_lifetime" : {
-            "file": "nyan_of_a_lifetime.ogg",
+            "file": "secret/pt/nyan_of_a_lifetime.ogg",
             "title": "Nyan Of A Lifetime",
             "artist": "DJ NYANKO SWITCHER",
             "tags": ["CSBIII DX: Train", "New In DX", "Fun Values", "Minigames"],
             "album_art": "nyan.png"
         },
+      "missingno" : {
+            "file": "secret/dd/missingno_full.ogg",
+            "title": "MissingNo",
+            "artist": "TheInnuendo",
+            "tags": ["New In DX"],
+            "album_art": "missingno.png"  
+      },
         "sfx_ringtone_addy" : {
             "file": "sfx/sfx_ringtone_addy.ogg",
             "title": "Hare Hare Yukai (Konata's Polyphonic Ringtone)",

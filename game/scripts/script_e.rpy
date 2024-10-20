@@ -65,6 +65,7 @@ label e2_rosen:
     jump csbi_start
 
 label e3_rosen:
+    # TODO: is this a real song? does it need to be jukeboxed? is it part of L.A. By Night? should i just file it under there????
     play music night
     scene rosen_abode
     show michael at left

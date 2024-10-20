@@ -1,6 +1,8 @@
 init python:
     import math
 
+    # TODO: LANES ARE OFF BY ONE, POSSIBLY DUE TO PERFECT TATE, PLS FIX
+
     # Graphics
     LANE_X = [670, 885, 1100]
     CAR_Y = 770
@@ -206,7 +208,7 @@ screen cargame():
 
 label minigame_car:
     play music speedy_comet if_changed
-    $ persistent.heard.add("Speedy Comet - Mahito Yokota")
+    $ persistent.heard.add("speedy_comet")
     window hide
     $ quick_menu = False
     call screen cargame

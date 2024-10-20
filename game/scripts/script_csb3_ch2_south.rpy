@@ -1,6 +1,6 @@
 label south_start:
     play music happy_roaming volume 0.5 if_changed
-    music Happy Roaming - Lorin Nelson
+    music happy_roaming
     scene washington_road morning
     show cs at left
     show arceus at right
@@ -48,8 +48,8 @@ label south_start:
     cs "How about..."
     show cs
     cs "Hold on. I got an idea."
-    play music brick_by_dick
-    music Brick By Brick (Suck My Dick) - cs188
+    play music brick_by_dick if_changed
+    music brick_by_dick
     cs "See those pieces on the ground?"
     show arceus worried
     arceus "What pieces?"
@@ -176,8 +176,8 @@ label south_utah:
     scene black with dissolve
     n "As CS and Arceus walk in, they are greeted with a musty aroma and a dimly-lit party room."
     scene fazlobby with dissolve
-    play music tunnely_shimbers volume 0.5
-    music Tunnely Shimbers - Mr. Sauceman
+    play music tunnely_shimbers volume 0.5 if_changed
+    music tunnely_shimbers
     if fun_value(FUN_VALUE_MUSIC):
         n "CS walks around into the tunnel as Arceus shimbers behind him."
     else:
@@ -283,8 +283,8 @@ label south_utah:
     arceus "CS, don't move a muscle."
     show cs surprised dark
     cs "Why not? It's just a Leg--"
-    play music hard_drive volume 0.5
-    music Hard Drive to Munch You - Mr. Sauceman
+    play music hard_drive volume 0.5 if_changed
+    music hard_drive
     show lego eyes
     show cs worried dark
     n "The minifigure's eyes glow as it raises its arms up and starts running at CS."
@@ -363,8 +363,8 @@ label south_vegas:
         show cscar2
         show arceus flipped at left behind cscar2
         with dissolve
-    play music penthouse volume 0.5
-    music "Al's Penthouse - Andy Blythe"
+    play music penthouse volume 0.5 if_changed
+    music penthouse
     if fun_value(FUN_VALUE_MUSIC):
         scene vegaspent
         show cscar1arc
@@ -492,8 +492,8 @@ label south_vegas_done_slots:
     show green flipped at left
     with dissolve
     show cs disappointed flipped at right with moveinright
-    play music laurel_palace volume 0.5
-    music Laurel Palace - Manami Matsumae
+    play music laurel_palace volume 0.5 if_changed
+    music laurel_palace
     if fun_value(FUN_VALUE_MUSIC):
         green "Deal us some cards arready! This is the Laurel Palace after all!"
     else:
@@ -523,7 +523,7 @@ label south_poker:
     scene pokertable
     show cards2
     play music laurel_palace volume 0.5 if_changed
-    music Laurel Palace - Manami Matsumae
+    music laurel_palace
     cs "No. I'll stand."
     green "Bwahahaha! You think you can beat me?"
     scene luigi1
@@ -544,7 +544,7 @@ label south_poker2:
     scene pokertable
     show cards3
     play music laurel_palace volume 0.5 if_changed
-    music Laurel Palace - Manami Matsumae
+    music laurel_palace
     cs "I'm still gonna stand."
     green "I'm gonna be rich! You better have that money on you, boy!"
     scene luigi1
@@ -563,7 +563,7 @@ label south_poker2:
 
 label south_folded:
     play music laurel_palace volume 0.5 if_changed
-    music Laurel Palace - Manami Matsumae
+    music laurel_palace
     scene luigi2
     show green flipped at left
     show cs disappointed flipped at right
@@ -680,7 +680,7 @@ label south_poker3:
     scene pokertable
     show cards4
     play music laurel_palace volume 0.5 if_changed
-    music Laurel Palace - Manami Matsumae
+    music laurel_palace
     cs "Still standing."
     green "What?! You son of a bitch, you are so scrrewed!"
     scene luigi2
@@ -709,8 +709,8 @@ label south_poker3:
         play sound sfx_explosion volume 1.5
         show green at t_punchup with move
         pause 0.3
-        play music lancer
-        music Lancer - Toby Fox
+        play music lancer if_changed
+        music lancer
         if fun_value(FUN_VALUE_MUSIC):
             lancer "Hey guys! I'm Lancer!"
         else:
@@ -786,8 +786,8 @@ label south_poker3:
         scene luigi2
         show cs happy flipped at right
         cs "Woohoo! I won!"
-        play music price_right volume 0.5
-        music Price Is Right Theme - Edd Kalehoff
+        play music price_right volume 0.5 if_changed
+        music price_right
         if fun_value(FUN_VALUE_MUSIC):
             luigi "Congratulations, sir! The price is right! Theme! You just won 100 million dollars!"
         else:
@@ -915,8 +915,8 @@ label south_airport:
     else:
         n "CS drives to the airport nearest to Las Vegas."
     scene airport_interior with dissolve
-    play music airport volume 0.4
-    music Airport Infiltration - Andy Blythe & Marten Joustra
+    play music airport volume 0.4 if_changed
+    music airport
     show cs at left
     show arceus flipped at mid_left
     with moveinleft
@@ -997,8 +997,8 @@ label south_airport:
     show arceus
     arceus "Yeah, the walk there would take hours."
     cs "Shit, uhh, what are our other options?"
-    play music mm_select volume 0.3
-    music Mm Select - Matthew Simmonds
+    play music mm_select volume 0.3 if_changed
+    music mm_select
     show billy at right
     show cs
     billy "Need a ride? I'll take you to any destination for only $19.95!"
@@ -1041,8 +1041,8 @@ label south_airport_bad:
     else:
         n "CS drives to the airport nearest to Las Vegas."
     scene airport_interior with dissolve
-    play music airport volume 0.4
-    music Airport Infiltration - Andy Blythe & Marten Joustra
+    play music airport volume 0.4 if_changed
+    music airport
     show cs at left
     show arceus flipped at mid_left
     with moveinleft
@@ -1147,8 +1147,8 @@ label south_noairport:
     show mika at center with moveintop
     show mika at center with vpunch
     mika "Oi, chaps!"
-    play music pokey volume 0.6
-    music "Pokey's House - Keiichi Suzuki"
+    play music pokey volume 0.6 if_changed
+    music pokey
     mika "Ok, so, CS looks out the window and he spots a yellow Hummer."
     mika "The guy, with his arm out the window, says \"Dude, this car kicks ass! And I can watch Madagascar while driving!\""
     show arceus worried
@@ -1197,8 +1197,8 @@ label south_noairport:
     n "The TV turns off and starts shaking."
     show arceus worried
     show cs scared
-    play music clownpiece volume 0.6
-    music Pierrot of the Star Spangled Banner - ZUN
+    play music clownpiece volume 0.6 if_changed
+    music clownpiece
     with vpunch
     with hpunch
     with vpunch

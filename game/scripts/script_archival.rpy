@@ -32,8 +32,8 @@ label archival:
     n "..."
     pause 1.0
     scene bedroom_old with dissolve
-    play music facing_worlds volume 0.5
-    music "Facing Worlds - Michiel van den Bos"
+    play music facing_worlds volume 0.5 if_changed
+    music facing_worlds
     pause 1.0
     if fun_value(FUN_VALUE_MUSIC):
         n "CS slowly faces worlds after his long rest."
@@ -358,8 +358,8 @@ label archival_finale:
     n "..."
     n "..."
     scene archival_1 with dissolve
-    play music take_trip volume 0.7
-    music "Take a Trip from Me - u4ia"
+    play music take_trip volume 0.7 if_changed
+    music take_trip
     show cs scared at manual_pos(0.5, -1.5, 0.5)
     hide cs scared with moveoutbottom
     play sound sfx_glass_echo
@@ -593,7 +593,8 @@ label archival_finale:
     show cs scared at center with MoveTransition(0.25)
     stop music fadeout 3.0
     scene archival_13 with dissolve
-    play music take_trip2 volume 0.5
+    play music take_trip2 volume 0.5 if_changed
+    music take_trip
     pause 1.0
     n "He escapes into the car as the doors shut behind him, finally separating him from the guards."
     show archival_19
@@ -752,10 +753,11 @@ label archival_finale:
     pause 2.0
     $ renpy.movie_cutscene(creditsm)
     pause 2.0
-    play music everybody_wants 
-    music "Everybody Wants To Rule The World - Tears For Fears"
+    play music everybody_wants if_changed
+    music everybody_wants 
     pause 5.0
     play sound sfx_ringtone_addy loop volume 0.5
+    $ persistent.heard.add("sfx_ringtone_addy")
     n "Addy gets a phone call."
     pause 1.0
     play sound sfx_pickup_call

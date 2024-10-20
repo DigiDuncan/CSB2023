@@ -179,7 +179,7 @@ label minigame_slots:
     window hide
     $ quick_menu = False
     play music game_corner if_changed
-    $ persistent.heard.add("Rocket Game Corner - Junichi Masuda")
+    $ persistent.heard.add("game_corner")
     play sound "minigames/slots/sfx_gamblecore_letsgogambling.ogg"
     call screen slotsgame
     $ quick_menu = True

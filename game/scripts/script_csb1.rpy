@@ -29,7 +29,7 @@ label csbi_start:
     scene cs_room
     show cs at center
     with dissolve
-    play music lets_hear_my_baby volume 0.15
+    play music lets_hear_my_baby volume 0.15 if_changed
     music lets_hear_my_baby
     if fun_value(FUN_VALUE_MUSIC):
         cs "Welp, Let's hear my baby."
@@ -40,6 +40,7 @@ label csbi_start:
 
 label csbi_craptop:
     play music lets_hear_my_baby volume 0.15 if_changed
+    music lets_hear_my_baby
     scene craptop_bg
     show craptop desktop
     if e2:
@@ -132,7 +133,7 @@ label csbi_craptop:
     scene cs_house
     show cs happy
     with dissolve
-    play music canyon volume 0.2
+    play music canyon volume 0.2 if_changed
     music canyon
     if fun_value(FUN_VALUE_MUSIC):
         cs "Woah! Is that a canyon over there?"
@@ -163,7 +164,7 @@ label csbi_craptop:
     # TODO: baker needs the street view img to finish recoloring the car. cs does not drive a red car
     show cs disappointed at left
     with dissolve
-    play music canyon_car volume 0.2
+    play music canyon_car volume 0.2 if_changed
     music canyon
     pause 1.0
     cs "Whew... That was close!"
@@ -191,9 +192,9 @@ label csbi_walmart:
     cs "Oh, yes! Walmart is open!"
     scene walmart_inside with dissolve
 
+    play music summer_clearance_sale if_changed
     music summer_clearance_sale
-    play music summer_clearance_sale
-
+    
     show cs at left with moveinleft
     n "CS walks inside."
     show doug at right with moveinright
@@ -305,7 +306,8 @@ label csbi_walmart:
     scene cs_car_inside
     show cs scared at left
     with dissolve
-    play music canyon_car volume 0.2
+    play music canyon_car volume 0.2 if_changed
+    music canyon
     play sound sfx_driving volume 0.5
     cs "Let's get home before that guy doctors {i}my{/i} crotch!"
     scene black with dissolve
@@ -330,7 +332,7 @@ label csbi_room:
     scene craptop_bg
     show craptop edit
     with dissolve
-    play music scales_of_joy volume 0.3
+    play music scales_of_joy volume 0.3 if_changed
     music scales_of_joy
     n "CS sits down at his craptop and opens up Premiere."
     if fun_value(FUN_VALUE_MUSIC):
@@ -373,7 +375,7 @@ label csbi_room:
         "HoH SiS":
             pass
         "Home Savers"(type="dx"):
-            play music beautiful_hills volume 0.3
+            play music beautiful_hills volume 0.3 if_changed
             music beautiful_hills
             show cs
             cs "I guess I can call Home Savers. Despite my YTPs of their company, I don't think they'd mind helping me out."
@@ -452,7 +454,7 @@ label csbi_room:
     show door_open behind cs
     play sound sfx_house_door_open
     cs "Hello! I am CS, and I--"
-    play music hohsis_theme volume 0.2
+    play music hohsis_theme volume 0.2 if_changed
     music hohsis_theme
     show ed at center:
         alpha 0.0
@@ -611,7 +613,8 @@ label csbi_michael_house:
     scene car_inside
     show cs at left
     with dissolve
-    play music canyon_car volume 0.2
+    play music canyon_car volume 0.2 if_changed
+    music canyon
     cs "Thankfully, Michael lives pretty close."
     cs "His vacation home in the US is only a few streets away!"
     cs "I should probably call him first. I don't want to just show up unannounced!"
@@ -661,7 +664,7 @@ label csbi_rosen_house:
     play sound sfx_house_door_open
     pause 1.0
     play sound sfx_house_door_close
-    play music super_friendly volume 0.4
+    play music super_friendly volume 0.4 if_changed
     music super_friendly
     show michael at right with moveinright
     show cs flipped at offscreenright
@@ -789,7 +792,7 @@ label csbi_end:
     scene car_inside
     show cs surprised at left
     with dissolve
-    play music canyon_car volume 0.2
+    play music canyon_car volume 0.2 if_changed
     play sound sfx_driving volume 0.5
     $ achievement_manager.unlock("Overcaffeinated")
     stop music fadeout 3.0
@@ -852,7 +855,7 @@ label csbi_end:
     scene hoh_hq
     show cs angry
     with dissolve
-    play music time_for_a_smackdown volume 0.2
+    play music time_for_a_smackdown volume 0.2 if_changed
     music time_for_a_smackdown
     if fun_value(FUN_VALUE_MUSIC):
         cs "Alright! It's time for a Smackdown!"       

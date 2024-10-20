@@ -8,8 +8,8 @@ label friend2_dpn_call:
     show cs disappointed at left
     show pakoo at right
     with dissolve
-    play music tuna_fish loop volume 0.6
-    music Tuna Fish - Dr. Awesome
+    play music tuna_fish loop volume 0.6 if_changed
+    music tuna_fish
     cs "What a crazy day so far, man."
     show cs worried 
     if fun_value(FUN_VALUE_MUSIC):
@@ -38,7 +38,7 @@ label friend2_dpn_call:
 
 label friend2_car_ride_1:
     play music tuna_fish loop volume 0.6 if_changed
-    music Tuna Fish - Dr. Awesome
+    music tuna_fish
     scene black with dissolve
     n "Meanwhile, Tate's group seems to be having the time of their life."
     scene jeep_inside_fg
@@ -126,8 +126,8 @@ label friend2_dpn_diner:
     show nova flipped at center
     show aria at left
     with dissolve
-    play music full_rulle_med_klas volume 0.5
-    music Full Rulle Med Klas - Lizardking
+    play music full_rulle_med_klas volume 0.5 if_changed
+    music full_rulle_med_klas
     if fun_value(FUN_VALUE_MUSIC):
         digi "Finally, we can fully rulle our med klas again."
         nova "What?"
@@ -162,8 +162,8 @@ label friend2_dpn_diner:
     n "As Aria approaches CS and the gang, they screech on the brakes as they almost run into a blockade."
     hide drive_night
     show cs_somewhere behind aria_car_fg
-    play music dense_woods_b volume 0.5
-    music Dense Woods B - Kikiyama
+    play music dense_woods_b volume 0.5 if_changed
+    music dense_woods_b
     if fun_value(FUN_VALUE_MUSIC):
         n "Cop cars surround the vicinity of Dense woods B."
     else:
@@ -201,7 +201,8 @@ label friend2_cs_meetup:
     scene cs_somewhere 
     show aria dark flipped at right
     with dissolve
-    play music dense_woods_b volume 0.5
+    play music dense_woods_b volume 0.5 if_changed
+    music dense_woods_b
     n "After Aria takes care of the cops, CS and Tate's group rolls up on the other side of the blockade."
     show cs dark at center
     show arceus dark flipped at mid_left
@@ -226,7 +227,8 @@ label friend2_cs_meetup:
     show digi at center
     show nova flipped at left
     with dissolve
-    play music full_rulle_med_klas volume 0.5
+    play music full_rulle_med_klas volume 0.5 if_changed
+    music full_rulle_med_klas
     pause 2.0
     nova "They are so dead."
     digi "Stop saying that! They are probably fine."
@@ -276,8 +278,8 @@ label friend2_cs_meetup_2:
     else:
         n "Digi, Aria, and Nova all go outside to meet everyone else."
     scene dineroutside
-    play music la_by_night volume 0.5
-    music L.A. By Night - Dr. Awesome
+    play music la_by_night volume 0.5 if_changed
+    music la_by_night
     show cs dark flipped at right
     show arceus dark at mid_right
     with dissolve
@@ -363,7 +365,7 @@ label friend2_cs_meetup_2:
 
 label friend2_car_ride_2:
     play music la_by_night volume 0.5 if_changed
-    music L.A. By Night - Dr. Awesome
+    music la_by_night
     scene jeep_inside_fg
     show drive_night behind jeep_inside_fg
     show mika at left
@@ -469,8 +471,8 @@ label friend2_cs_rage:
     show cs dark angry at mid_right with move
     show cs dark angry flipped with determination
     cs "Guys, let's chase after him!"
-    play music triage_at_dawn loop volume 0.6
-    music Triage At Dawn - Kelly Bailey
+    play music triage_at_dawn loop volume 0.6 if_changed
+    music triage_at_dawn
     show arceus worried dark flipped
     if fun_value(FUN_VALUE_MUSIC):
         arceus "CS, we need a minute."
@@ -629,8 +631,8 @@ label friend2_car_ride_3:
     show arceus flipped at left
     show pakoo at right
     with dissolve
-    play music the_whale loop volume 0.6
-    music The Whale - Dr. Awesome
+    play music the_whale loop volume 0.6 if_changed
+    music the_whale
     if fun_value(FUN_VALUE_MUSIC):
         n "While they are driving, Arceus notices that The Whale starts ludicrously speeding up until he stops in Illinois."
         show arceus worried flipped
@@ -699,8 +701,8 @@ label friend2_final_meetup:
     show arceus flipped at left
     show pakoo at right
     with dissolve
-    play music prophet_2001 loop volume 0.6
-    music Prophet 2001 - Dr. Awesome
+    play music prophet_2001 loop volume 0.6 if_changed
+    music prophet_2001
     arceus "Alright, we are here."
     pakoo "So, who is joining us to help fight Copguy?"
     if fun_value(FUN_VALUE_MUSIC):
@@ -772,7 +774,8 @@ label friend2_between_2:
     show tate srs at mid_left
     show arceus flipped at left
     with dissolve
-    play music the_whale loop volume 0.6
+    play music the_whale loop volume 0.6 if_changed
+    music the_whale
     cs "C'mon, guys! We've gotta get to Copguy!"
     show cs disappointed
     tate "Where is Copguy, anyway? Do you even know where he could be?"
@@ -804,7 +807,8 @@ label friend2_between_2:
     with dissolve
     pause 2.0
     copguy "Well, well, well, CS."
-    play music prophet_2001 loop volume 0.6
+    play music prophet_2001 loop volume 0.6 if_changed
+    music prophet_2001
     copguy "How do you like my new form? Pretty cool, right?"
     show cs angry
     show tate srs

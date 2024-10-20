@@ -1,6 +1,6 @@
 label friend_microcenter:
     play music passport volume 0.5 if_changed
-    music PASSPORT.MID - George Stone
+    music passport
     scene csdesk
     show linus at right
     show cs at left
@@ -48,8 +48,8 @@ label friend_microcenter:
     hide cs at right with moveoutright
     n "CS enters the building."
     scene microinside with dissolve
-    play music morning_highway loop volume 0.4
-    music Morning Highway - BEST MUSIC
+    play music morning_highway loop volume 0.4 if_changed
+    music morning_highway
     show cs at left with moveinleft
     cs "Woah! This place is huge!"
     cs "There are so many options to pick from! And I have as much money as I'll ever need, too!"
@@ -107,7 +107,7 @@ label friend_microcenter:
 
 label friend_high_gpu:
     play music morning_highway loop volume 0.4 if_changed
-    music Morning Highway - BEST MUSIC
+    music morning_highway
     scene gpuaisle
     show cs at mid_left
     if fanboy_type == "nvidia":
@@ -137,8 +137,8 @@ label friend_high_gpu:
     show linus at center
     with dissolve
     n "CS meets Linus in his office."
-    play music creative_exercise loop volume 0.3
-    music Creative Exercise - Hirokazu Tanaka
+    play music creative_exercise loop volume 0.3 if_changed
+    music creative_exercise
     show cs at left with moveinleft
     cs "Hey, Linus! I've got your parts!"
     linus "Alright, let's see what you got!"
@@ -223,8 +223,8 @@ label friend_high_gpu:
         linus "Let's see how our video did!"
     n "Linus and CS sit down at the desk while Linus pulls up the video."
     scene comments with dissolve
-    play music pixel_peeker_polka loop volume 0.4
-    music Pixel Peeker Polka - Kevin MacLeod
+    play music pixel_peeker_polka loop volume 0.4 if_changed
+    music pixel_peeker_polka
     linus "Alright, well, we've already got quite a lot of views..."
     cs "Man! I wish I got this amount of average views!"
     cs "Look at the comments!"
@@ -396,8 +396,8 @@ label friend_after_fanboy:
     hide arceus
     with moveoutright
     scene alley with dissolve
-    play music Lowbudget_song loop volume 0.4
-    music Lowbudget Song - Dr. Awesome
+    play music Lowbudget_song loop volume 0.4 if_changed
+    music Lowbudget_song
     show arceus flipped at right
     show cs at center
     with moveinleft
@@ -507,8 +507,8 @@ label friend_training:
     show cs at center
     show pakoo flipped at left behind linus   
     with moveinleft
-    play music klaxon_beat loop volume 0.6
-    music Klaxon Beat - Kelly Bailey
+    play music klaxon_beat loop volume 0.6 if_changed
+    music klaxon_beat
     linus "Alright, here's our facility! What do you think?"
     cs "Oh, wow! This looks like something from {i}Quake!{/i}"
     pakoo "Close."
@@ -563,7 +563,7 @@ label friend_training:
 
 label friend_cool_jump:
     play music klaxon_beat loop volume 0.6 if_changed
-    music Klaxon Beat - Kelly Bailey
+    music klaxon_beat
     scene course_2
     show cs at left
     cs "I've got this, guys! You watching?"
@@ -583,7 +583,7 @@ label friend_cool_jump:
 
 label friend_reg_jump:
     play music klaxon_beat loop volume 0.6 if_changed
-    music Klaxon Beat - Kelly Bailey
+    music klaxon_beat
     scene course_2
     show cs at left
     cs "Alright, here goes nothing!"
@@ -596,7 +596,7 @@ label friend_reg_jump:
 
 label friend_fire_range:
     play music klaxon_beat loop volume 0.6 if_changed
-    music Klaxon Beat - Kelly Bailey
+    music klaxon_beat
     scene course_3 with dissolve
     show cs at left with moveinleft
     pakoo "Alright, you picked up the LMG before you came into this room, right?"
@@ -704,8 +704,8 @@ label friend_fire_range:
     show cs
     linus "Sure! It's just--{w=0.5}{nw}"
     show arceus flipped at left with moveinleft
-    play music cp_violation loop volume 0.6
-    music CP Violation - Kelly Bailey
+    play music cp_violation loop volume 0.6 if_changed
+    music cp_violation
     if fun_value(FUN_VALUE_MUSIC):
         show cs worried
         arceus "Alright, CS. We've gotta go, now."
@@ -857,8 +857,8 @@ label friend_fire_range:
     cs "So, we can pick any car we'd like?"
     arceus "Basically, yeah."
     show carguy at mid_right with moveinright
-    play music mm_complete loop volume 0.6
-    music Mm Complete - Matthew Simmonds
+    play music mm_complete loop volume 0.6 if_changed
+    music mm_complete
     if fun_value(FUN_VALUE_MUSIC):
         carguy "Mm, Check out all these nice complete cars!"
     else:
@@ -881,7 +881,7 @@ label friend_fire_range:
 label friend_car_picker:
     stop sound
     play music mm_complete loop volume 0.6 if_changed
-    music Mm Complete - Matthew Simmonds
+    music mm_complete
     scene dealer_cars with dissolve
     show carguy flipped at right
     show arceus flipped at center
@@ -911,7 +911,7 @@ label friend_car_picker:
 
 label friend_cool_car:
     play music mm_complete loop volume 0.6 if_changed
-    music Mm Complete - Matthew Simmonds
+    music mm_complete
     scene dealer_cars
     show arceus at mid_right
     show cs at center
@@ -970,7 +970,7 @@ label friend_cool_car:
 
 label friend_reg_car:
     play music mm_complete loop volume 0.6 if_changed
-    music Mm Complete - Matthew Simmonds
+    music mm_complete
     scene dealer_cars
     show arceus at mid_right
     show cs at center
@@ -1071,7 +1071,7 @@ label friend_after_cop_fight:
     tate "Hey, y'all good?"
     show cs flipped at mid_mid_right
     show arceus at mid_right
-    show pakoo  at right
+    show pakoo at mid_right_right
     with moveinright
     cs "Yeah, uhm..."
     cs "How are you doing?"
@@ -1132,8 +1132,8 @@ label friend_after_cop_fight:
     n "Both groups head out of the dealership, making haste from the cops."
     n "Meanwhile, Copguy heads back to the police station to call for help."
     scene sheriff_office
-    play music police_station volume 0.5  
-    music Police Station - Lorin Nelson  
+    play music police_station volume 0.5 if_changed
+    music police_station
     show sheriff at left
     with dissolve
     show copguy at mid_right with moveinright
@@ -1211,7 +1211,7 @@ label friend_flint_car:
 
 label friend_low_gpu:
     play music morning_highway loop volume 0.4 if_changed
-    music Morning Highway - BEST MUSIC
+    music morning_highway
     scene gpuaisle
     show cs at mid_left
     cs "I should probably try to save Linus some money. Most of the expensive parts he gets are from sponsors. He's not actually {i}that{/i} rich."

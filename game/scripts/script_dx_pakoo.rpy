@@ -15,8 +15,8 @@ label dx_after_true:
     hide after_true_title with dissolve
     pause 1.0
     
-    play music letshearspring volume 2
-    music "Let's Hear My Baby: Spring Remix - Pakoo"  
+    play music lets_hear_spring volume 2 if_changed
+    music lets_hear_spring 
     scene cs_room_cars with dissolve
     show cs at left
     show billy at center
@@ -74,8 +74,8 @@ label dx_after_true:
         n "After what feels like forever, they arrive at their Echoing: Spring Remix destination."
     else:
         n "After what feels like forever, they arrive at their destination."
-    play music echoing_spring volume 2
-    music "Echoing: Spring Remix - Pakoo" 
+    play music echoing_spring volume 2 if_changed
+    music echoing_spring
     billy "Alright, you can take the blindfolds off."
     scene wis_forest 
     show cs dark at left
@@ -164,8 +164,8 @@ label dx_after_true:
     scene roombacks
     show cs concentrate
     with dissolve
-    play music alien_atmosphere volume 2
-    music "Alien Atmosphere - Dr. Awesome"
+    play music alien_atmosphere volume 2 if_changed
+    music alien_atmosphere
     pause 1.5
     show cs disappointed
     pause 0.5
@@ -250,8 +250,8 @@ label dx_after_back_to_story:
     show pencilguy at left
     show pencilcashier at right
     with dissolve
-    play music apple_kid
-    music "Apple Kid - Keiichi Suzuki"
+    play music apple_kid if_changed
+    music apple_kid
     cs "...and what the hell is this outfit?"
     if fun_value(FUN_VALUE_MUSIC):
         pencil "Welcome, Apple kid, to the Pencil Cult!"
@@ -290,8 +290,8 @@ label dx_after_back_to_story:
     scene cult_con
     show cs disappointed at center
     with dissolve
-    play music ten_feet_away
-    music "10 Feet Away - Dr. Awesome"
+    play music ten_feet_away if_changed
+    music ten_feet_away
     cs "God, what the fuck is all of this?"
     if fun_value(FUN_VALUE_MUSIC):
         cs "I can't tell if I'm still in the past, or 10 feet away..."
@@ -310,7 +310,8 @@ label dx_after_back_to_story:
     scene cult_con
     show cs 
     with dissolve
-    play music ten_feet_away
+    play music ten_feet_away if_changed
+    music ten_feet_away
     $ total_votes = 0
     cs "Well, I guess I can't leave, now!"
     cs "I need to figure out how to get Billy's machine back..."
@@ -401,6 +402,7 @@ label dx_after_back_to_story:
 
 label dx_after_cult_questions:
     play music ten_feet_away if_changed 
+    music ten_feet_away
     scene blue_branch
     show cultist_2 at right
     show cultist_3 at mid_mid_right
@@ -419,7 +421,8 @@ label dx_after_cult_questions:
             jump dx_after_competiton_start
 
 label dx_after_cultcon_ask:
-    play music ten_feet_away if_changed 
+    play music ten_feet_away if_changed
+    music ten_feet_away
     scene blue_branch
     show cultist_2 at right
     show cultist_3 at mid_mid_right
@@ -434,7 +437,8 @@ label dx_after_cultcon_ask:
     jump dx_after_cult_questions
 
 label dx_after_competitors_ask:
-    play music ten_feet_away if_changed 
+    play music ten_feet_away if_changed
+    music ten_feet_away
     scene blue_branch
     show cultist_2 at right
     show cultist_3 at mid_mid_right
@@ -452,7 +456,8 @@ label dx_after_competitors_ask:
     jump dx_after_cult_questions
 
 label dx_after_win_ask:
-    play music ten_feet_away if_changed 
+    play music ten_feet_away if_changed
+    music ten_feet_away
     scene blue_branch
     show cultist_2 at right
     show cultist_3 at mid_mid_right
@@ -468,7 +473,8 @@ label dx_after_win_ask:
     jump dx_after_cult_questions
 
 label dx_after_competiton_start:
-    play music ten_feet_away if_changed 
+    play music ten_feet_away if_changed
+    music ten_feet_away
     scene blue_branch
     show cultist_2 at right
     show cultist_3 at mid_mid_right
@@ -481,8 +487,8 @@ label dx_after_competiton_start:
     stop music fadeout 3.0
     music end
     cultist "Now go out there and--{nw}"
-    play music hitsquad_2
-    music "Hitsquad 2 - Dr. Awesome"
+    play music hitsquad_2 if_changed
+    music hitsquad_2
     if fun_value(FUN_VALUE_MUSIC):
         cruise "Hey you hit squad, 2, idiots!"
         cs "Yeah, you tried."
@@ -513,6 +519,7 @@ label dx_after_competiton_start:
     n "CS runs off to find competitors."
     scene cult_con with dissolve
     play music "audio/10_feet_away_1.ogg" if_changed
+    music ten_feet_away
     show cs cultist at center with moveinleft
     $ con_start = True
     cs "Alright, so, there are a few cults I can challenge here."
@@ -522,6 +529,7 @@ label dx_after_competiton_start:
 
 label dx_after_seek_competitors:
     play music "audio/10_feet_away_1.ogg" if_changed
+    music ten_feet_away
     if total_votes >= 25:
         play music2 [ "<sync music>audio/10_feet_away_2.ogg", "audio/10_feet_away_2.ogg" ] if_changed
     if total_votes >= 50:
@@ -728,6 +736,7 @@ label dx_after_pencil_ask:
     $ pencil_check = True
     scene cult_con with dissolve
     play music ten_feet_away if_changed
+    music ten_feet_away
     show cs cultist at center with moveinleft
     cs "Well, that takes me back."
     cs "Or, I guess, that takes me {i}forward!"
@@ -1220,7 +1229,8 @@ label dx_after_lunatic_jump:
     stop music3
     stop music4
     music end
-    play music space_classroom
+    play music space_classroom if_changed
+    music space_classroom
     l_cultist "Alright, cs... 188?"
     show lunatic_cultist flipped
     l_cultist "That's your name, apparently…"
@@ -1267,6 +1277,7 @@ label dx_after_quiz_finish:
     show lunatic_cultist at mid_right
     with dissolve
     play music "audio/10_feet_away_1.ogg"
+    music ten_feet_away
     if total_votes >= 25:
         play music2 [ "<sync music>audio/10_feet_away_2.ogg", "audio/10_feet_away_2.ogg" ]
     if total_votes >= 50:
@@ -1678,7 +1689,8 @@ label dx_after_branch_ask2:
 # END OF CULTCON
 
 label dx_after_convention_end:
-    play music interference2
+    play music interference2 if_changed
+    music interference2
     scene conferencetv with dissolve
     cultist "Here are the results!"
     scene conferencetv at Move((0.0 , -1.0), (0.0, 0.0), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
@@ -1709,7 +1721,8 @@ label dx_after_renault:
     scene hobbytown
     show cs disappointed
     show carguy at right with moveinright
-    play music scales_of_joy volume 0.8
+    play music scales_of_joy volume 0.8 if_changed
+    music scales_of_joy
     carguy "Hey, CS!"
     carguy "Do you want to test drive the all new Renault 5E?"
     cs "Uhh..."
@@ -1731,6 +1744,7 @@ label dx_after_no_renault:
 
 label dx_after_yes_renault:
     play music scales_of_joy volume 0.8 if_changed
+    music scales_of_joy
     scene hobbytown
     show cs disappointed
     show carguy at right
@@ -1776,8 +1790,8 @@ label dx_after_yes_renault:
     show cs at center
     show carguy at right
     with dissolve
-    play music muumin_tani_fuyu
-    music Muumin Tani Fuyu - Sumio Shiratori
+    play music muumin_tani_fuyu if_changed
+    music muumin_tani_fuyu
     carguy "So, that was the new Renault 5E! I hope you enjoyed it!"
     cs "Yeah, I did!"
     show cs disappointed

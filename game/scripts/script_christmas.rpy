@@ -1,5 +1,6 @@
 label dx_christmas_start:
-    play music lets_hear_winter volume 0.7
+    play music lets_hear_winter volume 0.7 if_changed
+    music lets_hear_winter
     scene black
     n "CS wakes up to a snowy winter morning."
     cs "Yes! It snowed today!"

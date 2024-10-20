@@ -85,8 +85,8 @@ label true_billy_driver:
     else:
         arceus "He's probably getting a gun, we need to lea--{w=1.5}{nw}"
     show billy at center with moveinleft
-    play music mm_select volume 0.3
-    music Mm Select - Matthew Simmonds
+    play music mm_select volume 0.3 if_changed
+    music mm_select
     billy "Hi, Billy Mays here for the Uber Driver!"
     billy "The fast and easy way for people who don't have a car to get around!"
     show cs happy
@@ -109,8 +109,8 @@ label true_billy_driver:
 label true_in_billy_car:
     scene carback1
     show billy car
-    play music billy_radio volume 0.3
-    music Billy Mays Gangsta Remix - mastamokei
+    play music billy_radio volume 0.3 if_changed
+    music billy_radio
     if fun_value(FUN_VALUE_MUSIC):
         cs "Is this the Billy Mays Gangsta Remix?"
         billy "Yeah! I wrote this song myself!"
@@ -132,8 +132,8 @@ label true_montana:
     scene car background
     show billy car
     with dissolve
-    play music weird_personalities volume 0.6
-    music Weird Personalities - Lizardking
+    play music weird_personalities volume 0.6 if_changed
+    music weird_personalities
     if fun_value(FUN_VALUE_MUSIC):
         n "After a few hours of driving through Idaho, the trio finds themselves having weird personalities in the middle of Montana."
     else:
@@ -167,8 +167,8 @@ label true_montana:
     n "Arceus goes back to sleep in the car."
     play sound sfx_doorslam
     scene hardwareinside with dissolve
-    play music home_depot volume 0.4
-    music "Let's Do This - Home Depot"
+    play music home_depot volume 0.4 if_changed
+    music home_depot
     show cs at left with moveinleft
     if fun_value(FUN_VALUE_MUSIC):
         cs "Alright, Let's do this!"
@@ -237,7 +237,7 @@ label true_montana:
     scene cultforest
     show billy car
     play music candle_world volume 0.4 if_changed
-    music Candle World - Kikiyama
+    music candle_world
     if fun_value(FUN_VALUE_MUSIC):
         "CS and Arceus" "What in the candle world?"
     else:
@@ -345,7 +345,7 @@ label true_montana:
     show billy laser at mid_left with moveinleft
     stop music fadeout 1.0 
     play music blazing_corridor volume 0.4 if_changed
-    music Blazing Corridor - Kikiyama
+    music blazing_corridor
     billy "Fire a laser! Fire a laser!"
     play sound sfx_gaster_blast
     show laser_beam at t_gun behind billy
@@ -366,8 +366,8 @@ label true_montana:
     stop music fadeout 3.0 
     music end
     billy "{i}That's{/i} the power of the Awesome Augement!"
-    play music showtime volume 0.4
-    music "It's Showtime - Toby Fox"
+    play music showtime volume 0.4 if_changed
+    music showtime
     show cs fakegod at center with moveinright
     if fun_value(FUN_VALUE_MUSIC):
         cs "Hooray! It's showtime now!"
@@ -398,8 +398,8 @@ label true_montana:
         n "The night passes, then they set off once again."
     scene car background
     show billy car
-    play music mort_farm volume 0.4
-    music "Mort's Farm - ClascyJitto"
+    play music mort_farm volume 0.4 if_changed
+    music mort_farm
     cs "Can we stop somewhere to eat? We haven't eaten since yesterday."
     arceus "Yeah, unfortunately, the one store you guys {i}did{/i} go to didn't have anything edible."
     billy "Sure, yeah, there's a McDonald's up here in a couple miles."
@@ -444,8 +444,8 @@ label true_south_dakota:
     n "About an hour later, the crew arrives at Mount Rushmore."
     scene rushmore with dissolve
     n "They all hike up to the viewing spot to get a good look at the founding fathers."
-    play music taiikusai_desu_yo volume 0.4
-    music Taiikusai Desu Yo - Satoru Kosaki
+    play music taiikusai_desu_yo volume 0.4 if_changed
+    music taiikusai_desu_yo
     show cs at right with moveinleft
     show arceus flipped at center with moveinleft
     show billy at left with moveinleft
@@ -495,8 +495,8 @@ label true_south_dakota:
         n "They continue to drive on Track 4 through the massive and empty plains of South Dakota."
     else:
         n "They continue to drive through the massive and empty plains of South Dakota."
-    play music track_4 volume 0.4
-    music Track 4 - Weatherscan
+    play music track_4 volume 0.4 if_changed
+    music track_4 
     n "By the time they reach Sioux City, it is already evening."
     cs "There really {i}is{/i} nothing out here, is there?"
     arceus "Nope. I don't get how people can even {i}live{/i} here."
@@ -585,8 +585,8 @@ label true_nebraska:
     scene peppinopizzabg
     show peppinopizzafg
     with dissolve   
-    play music funiculi_holiday volume 0.3
-    music Funiculi Holiday - ClascyJitto
+    play music funiculi_holiday volume 0.3 if_changed
+    music funiculi_holiday
     show peppino at t_pepzone1 behind peppinopizzafg with moveinleft
     show peppino at t_pepzone2 behind peppinopizzafg with ease
     show pakoo flipped at mid_right with moveinleft
@@ -641,8 +641,8 @@ label true_iowa:
         n "CS looks out the window, to see what looks like a speedy comet." 
     else:
         n "CS looks out the window."    
-    play music speedy_comet volume 0.5
-    music Speedy Comet - Mahito Yokota
+    play music speedy_comet volume 0.5 if_changed
+    music speedy_comet
     cs "You have to be kidding me!"
     arceus "What's going on?"
     cs "HoH SiS is back!"
@@ -691,8 +691,8 @@ label true_ohio:
         else:
             n "After that fiasco, they continue their trip, soon passing through Ohio."
         show scott_border
-        play music breakout volume 0.3  
-        music Breakout - Shoichiro Sakamoto 
+        play music breakout volume 0.3 if_changed
+        music breakout
         n "Suddenly, a huge blue border enters everyone's vision."
         scott "Oh, what in the world? There is some red border in my eyes..."
         scott "I have a blue one. What is going on?"
@@ -730,8 +730,8 @@ label true_ohio:
         else:
             n "After that fiasco, they continue their trip, soon passing through Ohio."
         show scott_border
-        play music breakout volume 0.3  
-        music Breakout - Shoichiro Sakamoto 
+        play music breakout volume 0.3 if_changed
+        music breakout 
         n "Suddenly, a huge blue border enters everyone's vision."
         arceus "Oh, what in the world? There is some red border in my eyes..."
         cs "I have a blue one. What is going on?"
@@ -765,8 +765,8 @@ label true_ohio:
 label true_pennsylvania:
     n "The gang hits the last state before New York, Pennsylvania."
     scene billboard
-    play music fourside volume 0.6
-    music The Metropolis of Fourside - Keiichi Suzuki
+    play music fourside volume 0.6 if_changed
+    music fourside
     if fun_value(FUN_VALUE_MUSIC):
         n "CS sees The Metropolis of Four side pass by them."
     else:
@@ -863,8 +863,8 @@ label true_pennsylvania:
     show cs at left with moveinleft
     n "CS walks to the backstage to prepare to compete when he notices a familiar face."
     show digi at right with moveinright
-    play music pokey volume 0.6
-    music "Pokey's House - Keiichi Suzuki"
+    play music pokey volume 0.6 if_changed
+    music pokey
     if fun_value(FUN_VALUE_MUSIC):
         cs "Wait, Pokey?"
         digi "Huh?"
@@ -922,7 +922,8 @@ label true_pennsylvania:
     with dissolve
     show mettaton at t_stagescreen onlayer broadcast
     host "WELCOME, FOLKS!"
-    play music showtime volume 0.4
+    play music showtime volume 0.4 if_changed
+    music showtime
     host "EVERYONE GIVE A BIG HAND TO OUR WONDERFUL CONTESTANTS!"
     play sound sfx_cheer
     show crowd at t_stagescreen onlayer broadcast
@@ -976,7 +977,8 @@ label true_win_pencil:
     play sound2 sfx_cheer1 noloop volume 0.6
     n "As if they couldn't get any louder, the crowd is going insane!"
     hide crowd onlayer broadcast
-    play music showtime volume 0.4
+    play music showtime volume 0.4 if_changed
+    music showtime
     host "THE CHAMP HAS FALLEN! LADIES AND GENTS, WHAT AN UPSET!"
     n "CS turns to Digi."
     hide mettaton onlayer broadcast
@@ -1021,7 +1023,8 @@ label true_win_pencil:
     stop music fadeout 3.0
     hide cs
     scene cc_crowd with dissolve
-    play music fourside volume 0.6
+    play music fourside volume 0.6 if_changed
+    music fourside
 
     # tate was here
     # this fun value references CS messing up reading during the livestream (around 4:07:05 of part 2 stream)

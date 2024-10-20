@@ -7,7 +7,8 @@ label dx_underpants:
     # Thanks!
     # -- Digi
 
-    play music school volume 0.4
+    play music school volume 0.4 if_changed
+    music school
     scene classroom
     show george at left
     show harold at right

@@ -34,8 +34,8 @@ label fired_new_plan:
     show cs disappointed
     cs "Arc, I don't smoke."
     arceus "Man, I don't know."
-    play music dealin_dope volume 0.5
-    music Dealin Dope - Dr. Awesome
+    play music dealin_dope volume 0.5 if_changed
+    music dealin_dope
     if fun_value(FUN_VALUE_MUSIC):
         cs "No, I got caught dealin' dope."
         show arceus angry
@@ -120,8 +120,8 @@ label fired_new_plan:
     jump fired_guitar_hero
 
 label fired_guitar_hero:
-    play music hit_me_with_your_best_shot volume 0.5
-    music Hit Me With Your Best Shot - Pat Benatar
+    play music hit_me_with_your_best_shot volume 0.5 if_changed
+    music hit_me_with_your_best_shot
     scene hotel_guitar_hero with dissolve
     dxcom hitme
     n "CS, Anno, and Arceus relax by playing some {i}Guitar Hero.{/i}"
@@ -152,8 +152,8 @@ label fired_guitar_hero:
     show cs at left
     show anno at center
     with dissolve
-    play music hightop volume 0.5
-    music Hightop - Dr. Awesome
+    play music hightop volume 0.5 if_changed
+    music hightop
     if fun_value(FUN_VALUE_MUSIC):
         cs "Maybe we should call Blank if we wanna get high on top. He's, like... an actual musician."
     else:
@@ -192,8 +192,8 @@ label fired_write_song:
         n "Anno longs to ever hit play on the track."
     else:
         n "Anno hits play on the track."
-    play music everlong volume 0.5
-    music Everlong - Foo Fighters
+    play music everlong volume 0.5 if_changed
+    music everlong
 
     dxcom everlong
     n "{cps=15}{image=note_small1.png} We broke the chains, now we're free to fly,{w=1.5}\nEscaped concrete, and now we see blue skies{w=1.5}\nBecome brand new, we'll leave the past behind,{w=1.5}\nPrisoners no more, 'cause a new life we'll find {image=note_small2.png}"
@@ -260,8 +260,8 @@ label fired_hotel_next_day:
     show arceus at right
     show cs
     with dissolve
-    play music local_forecast volume 0.5
-    music Local Forecast - Kevin MacLeod
+    play music local_forecast volume 0.5 if_changed
+    music local_forecast
     pause 2.0
     if fun_value(FUN_VALUE_MUSIC):
         cs "So, anyone see the local forecast?"
@@ -297,8 +297,8 @@ label fired_hotel_next_day:
     cs "Guys?"
     arceus "Mmm?"
     n "Arceus and Anno are stuffing their faces."
-    play music now_what volume 0.5
-    music Now What? 1 - Dr. Awesome
+    play music now_what volume 0.5 if_changed
+    music now_what
     if fun_value(FUN_VALUE_MUSIC):
         cs "That one song has, like, a hundred thousand streams. Now what?"
     else:
@@ -346,8 +346,8 @@ label fired_song_2:
     arceus "Hit me with something energetic, something in a good mood."
     anno "Gotcha."
     n "Anno tinkers around for a moment on his laptop, until..."
-    play music happy_rock volume 0.5
-    music Happy Rock - Benjamin TISSOT
+    play music happy_rock volume 0.5 if_changed
+    music happy_rock
     if fun_value(FUN_VALUE_MUSIC):
         n "A happy rock instrumental plays from Anno's computer."
     else:
@@ -448,8 +448,8 @@ label fired_ep_time:
         anno "Alright, awesome, here's the energetic rock song I've got..."
     else:
         anno "Alright, awesome, here's what I've got..."
-    play music energetic_rock volume 0.5
-    music Energetic Rock - Every Day Music
+    play music energetic_rock volume 0.5 if_changed
+    music energetic_rock
     anno "{cps=15}{image=note_small1.png} I made my way over to Japan... {image=note_small2.png}"
     $ line_2 = renpy.input("What should the next line be?", "", length = 64)
     anno "Okay! How about..."
@@ -525,7 +525,8 @@ label fired_back_to_room:
         for l in [line_2, line_3, line_4]:
             s = l.split(" ")
             last_words.append(s[-1])
-    play music energetic_rock volume 0.5
+    play music energetic_rock volume 0.5 if_changed
+    music energetic_rock
     anno "Recording!"
     cs "{cps=15}...Japan!{w=1.5} ...[last_words[0]]!{w=1.5}\n{cps=15}...U.K.!{w=1.5} ...[last_words[1]]!{w=1.5}\n{cps=15}...Sweden!{w=1.5} ...[last_words[2]]!\n{w=1.5} ...globetrottin'~!"
     pause 1.0
@@ -571,8 +572,8 @@ label fired_mcd:
     show arceus at right
     show cs
     with dissolve
-    play music fnaf_6 volume 0.5
-    music Smashing Windshields - Leon Riskin
+    play music fnaf_6 volume 0.5 if_changed
+    music fnaf_6
     if fun_value(FUN_VALUE_MUSIC):
         n "CS and the gang race over to the minigame table in the McDonald's and eat their food."
     else:
@@ -581,8 +582,8 @@ label fired_mcd:
     cs "Okay, I had this idea, but it's a bit out there."
     anno "Alright, let's hear it."
     $ renpy.music.set_pause(True, "music")
-    play music2 france volume 0.5
-    music Guillotine World - Kikiyama
+    play music2 france volume 0.5 if_changed
+    music france
     if fun_value(FUN_VALUE_MUSIC):
         cs "{cps=15}{image=note_small1.png} I'M GONNA TAKE OVER THE GUILLOTINE WORLD.{w=1.0} I'M GONNA KILL GOD.{w=1.0} I CAN CONTORT REALITY TO MY WHIMS-- {image=note_small2.png}"
     else:
@@ -606,8 +607,8 @@ label fired_mcd:
         arceus "Maybe this time, {i}we{/i} can fill in the lines!"
     cs "Okay! Here's what I have so far..."
     $ renpy.music.set_pause(True, "music")
-    play music2 dragon_castle volume 0.5
-    music Dragon Castle - BreakingCopyright
+    play music2 dragon_castle volume 0.5 if_changed
+    music dragon_castle
     cs "{cps=15}{image=note_small1.png} Through all adversity, we'll bind together and overcome... {image=note_small2.png}"
     arceus "Ooh, I got something..."
     $ line_5 = renpy.input("What should the next line be?", "", length = 64)
@@ -660,8 +661,8 @@ label fired_hotel_lobby_2:
     show arceus flipped
     show cs at mid_mid_left
     with dissolve
-    play music gold_room volume 0.5
-    music You're At A Ball In The Gold Room - Nemo's Dreamscapes
+    play music gold_room volume 0.5 if_changed
+    music gold_room
     if fun_value(FUN_VALUE_MUSIC):
         n "As they walk through the gold room to their ball, they hum their newest song to themselves."
     else:
@@ -691,7 +692,8 @@ label fired_hotel_lobby_2:
     n "CS turns to the others to cue them."
     cs "{i}[song_name_2]!{/i}"
     n "Anno starts up the backing track, and Arceus grabs some random objects to use as a drum kit."
-    play music happy_rock volume 0.5
+    play music happy_rock volume 0.5 if_changed
+    music happy_rock
     cs "{cps=15}{image=note_small1.png} We're going down to Vegas, we're gonna strike it rich!{w=1.5}\nWe're going down to Vegas, [line_1] {image=note_small2.png}"
     n "The crowd cheers wildly."
     anno "We're [band_name]! Check out {i}[ep_name]{/i} on streaming services soon!"
@@ -724,8 +726,8 @@ label fired_song_5:
         anno "Yeah, go ahead! Here, I'll give you a sweet victory..."
     else:
         anno "Yeah, go ahead! Here, I'll give you a beat..."
-    play music sweet_victory volume 0.5
-    music Sweet Victory - David Glen Eisley
+    play music sweet_victory volume 0.5 if_changed
+    music sweet_victory
     n "Anno plays an upbeat song on his laptop."
     $ line_7 = renpy.input("Write a line! (1/4)", "", length = 64)
     $ line_8 = renpy.input("Write a line! (2/4)", "", length = 64)
@@ -756,8 +758,8 @@ label fired_fan_interaction:
     scene black with dissolve
     n "The next day, in the early morning, they hear a knock on their hotel room door."
     scene hotel_door with dissolve
-    play music dig_this volume 0.5
-    music Dig This - Dr. Awesome
+    play music dig_this volume 0.5 if_changed
+    music dig_this
     if fun_value(FUN_VALUE_MUSIC):
         cs "Huh? Who the fuck digs this on a hotel door, especially at this hour?"
     else:
@@ -850,8 +852,8 @@ label fired_howie:
     show cs flipped at mid_right
     show arceus at right
     with dissolve
-    play music gold_room volume 0.5
-    music You're At A Ball In The Gold Room - Nemo's Dreamscapes
+    play music gold_room volume 0.5 if_changed
+    music gold_room
     n "Howie walks into the lobby."
     show howie flipped at left with moveinleft
     howie "You guys ready?"
@@ -876,8 +878,8 @@ label fired_limo_time:
     show cs happy at mid_mid_left
     show anno at left behind cs
     with dissolve
-    play music exotic volume 0.5
-    music Exotic - Panda Beats ft. Newenx
+    play music exotic volume 0.5 if_changed
+    music exotic
     if fun_value(FUN_VALUE_MUSIC):
         arceus "These snacks are exotic!"
     else:
@@ -934,8 +936,8 @@ label fired_signed_the_contract:
     show cs at mid_mid_left
     show howie at right
     with dissolve
-    play music gold_room volume 0.5
-    music You're At A Ball In The Gold Room - Nemo's Dreamscapes
+    play music gold_room volume 0.5 if_changed
+    music gold_room
     howie "Well, your first stop is Vancouver."
     cs "Vancouver? Where are we playing?"
     n "Howie reads from his iPad."
@@ -967,8 +969,8 @@ label fired_signed_the_contract:
     scene hotel_hall
     show cs at left with moveinleft
     cs "Maybe a cold drink will clear my head."
-    play music another_him volume 0.5
-    music ANOTHER HIM - Toby Fox
+    play music another_him volume 0.5 if_changed
+    music another_him
     show csgod at right with dissolve
     csgod "Or I can."
     show cs surprised
@@ -1024,8 +1026,8 @@ label fired_first_tour_day:
     show arceus flipped
     show cs at mid_mid_left
     with moveinleft
-    play music gold_room volume 0.5
-    music You're At A Ball In The Gold Room - Nemo's Dreamscapes
+    play music gold_room volume 0.5 if_changed
+    music gold_room
     show howie at right with moveinright
     howie "You boys ready to go?"
     cs "Ready as we'll ever be."
@@ -1041,8 +1043,8 @@ label fired_first_tour_day:
     n "They all arrive at LTX."
     cs "Well, it's pretty busy. I doubt we'll run into--"
     show linus at right with moveinright
-    play music passport volume 0.5
-    music PASSPORT.MID - George Stone
+    play music passport volume 0.5 if_changed
+    music passport
     linus "Oh good, you guys are finally here. You're [band_name], right?"
     linus "Luke told me about you guys, and I listened to {i}[ep_name]{/i} last night... I really liked, uh, which one was it, {i}[song_name_4]?{/i}"
     linus "Anywho, I...{w=1.0} wait, CS?!"
@@ -1074,7 +1076,8 @@ label fired_first_tour_day:
     play sound sfx_start_rocking
     play sound sfx_cheer
     n "The crowd roars louder."
-    play music dragon_castle volume 0.5
+    play music dragon_castle volume 0.5 if_changed
+    music dragon_castle
     cs "{cps=15}{image=note_small1.png} Through all adversity, we'll bind together and overcome! {image=note_small2.png}"
     cs "{cps=15}{image=note_small1.png} [line_5] {image=note_small2.png}"
     cs "{cps=15}{image=note_small1.png} With my friends beside there's no foe we can not fight! {image=note_small2.png}"
@@ -1091,7 +1094,8 @@ label fired_first_tour_day:
     show cs at mid_mid_left
     show linus at right
     with dissolve
-    play music passport volume 0.5
+    play music passport volume 0.5 if_changed
+    music passport
     linus "You guys were incredible! That was my favorite song of yours, too."
     show cs happy
     cs "Thank you so much!"
@@ -1121,7 +1125,8 @@ label fired_first_tour_day:
     show arceus flipped at mid_right
     show cs at center
     with dissolve
-    play music exotic volume 0.5
+    play music exotic volume 0.5 if_changed
+    music exotic
     show howie at offscreenleft with moveinright
     pause 1.0
     show howie flipped at right behind arceus with move
@@ -1151,7 +1156,8 @@ label fired_second_tour_day:
     show arceus at right
     show cs at center
     with dissolve
-    play music exotic volume 0.5
+    play music exotic volume 0.5 if_changed
+    music exotic
     n "CS shouts up to the front."
     cs "Where are we heading?!"
     howie "Manitoba! We'll stop in Winnipeg, so you guys can grab some stuff if you need it."
@@ -1166,8 +1172,8 @@ label fired_second_tour_day:
     scene manitoba_street
     with dissolve
     show cs with moveinleft
-    play music track_4 volume 0.4
-    music Track 4 - Weatherscan
+    play music track_4 volume 0.4 if_changed
+    music track_4
     cs "What a place. Way better than the places I've been lately."
     cs "And everyone's so friendly!"
     show border_guard at right with moveinright
@@ -1242,7 +1248,8 @@ label fired_second_tour_day:
     show anno at left
     show arceus flipped
     with dissolve
-    play music exotic volume 0.5
+    play music exotic volume 0.5 if_changed
+    music exotic
     show cs flipped at right with moveinright
     anno "Hey, CS!"
     arceus "Dang, nice shoes!"
@@ -1298,7 +1305,8 @@ label fired_second_tour_day:
     # OK - Digi
     if fun_value(FUN_VALUE_UNOBTRUSIVE):
         play sound sfx_explosion
-    play music energetic_rock volume 0.5
+    play music energetic_rock volume 0.5 if_changed
+    music energetic_rock
     cs "{cps=15}{image=note_small1.png} I made my way over to Japan...{w=1.5}\n[line_2] {image=note_small2.png}"
     cs "{cps=15}{image=note_small1.png} I found myself in the U.K...{w=1.5}\n[line_3] {image=note_small2.png}"
     cs "{cps=15}{image=note_small1.png} I'm gonna go party in Sweden...{w=1.5}\n[line_4] {image=note_small2.png}"
@@ -1318,7 +1326,8 @@ label fired_third_tour_day:
     show arceus at right
     show cs
     with dissolve
-    play music exotic volume 0.5
+    play music exotic volume 0.5 if_changed
+    music exotic
     n "Howie hollers from the front of the bus."
     howie "Alright, boys, it's your last performance!"
     cs "Where are we headed?"
@@ -1371,7 +1380,8 @@ label fired_third_tour_day:
     play sound sfx_start_rocking
     n "The audience cheers."
     play sound sfx_cheer2
-    play music everlong volume 0.5
+    play music everlong volume 0.5 if_changed
+    music everlong
     cs "{cps=15}{image=note_small1.png} We broke the chains, now we're free to fly,{w=1.5}\nEscaped concrete, and now we see blue skies{w=1.5}\nBecome brand new, we'll leave the past behind,{w=1.5}\nPrisoners no more, 'cause a new life we'll find {image=note_small2.png}"
     n "The crowd is loving this!"
     stop music fadeout 3.0
@@ -1379,7 +1389,8 @@ label fired_third_tour_day:
     play sound sfx_start_rocking
     n "The crowd responds with further excitement."
     play sound sfx_cheer2
-    play music happy_rock volume 0.5
+    play music happy_rock volume 0.5 if_changed
+    music happy_rock
     cs "{cps=15}{image=note_small1.png} We're going down to Vegas,{w=1.5} we're gonna strike it rich!{w=1.5}\nWe're going down to Vegas,{w=1.5} [line_1]! {image=note_small2.png}"
     n "The fans are adoring this."
     stop music fadeout 3.0
@@ -1388,7 +1399,8 @@ label fired_third_tour_day:
     anno "CS, none of our songs are classics. We're a new band."
     play sound sfx_start_rocking
     n "The crowd laughs."
-    play music energetic_rock volume 0.5
+    play music energetic_rock volume 0.5 if_changed
+    music energetic_rock
     cs "{cps=15}{image=note_small1.png} I made my way over to Japan...{w=1.5}\n[line_2] {image=note_small2.png}"
     cs "{cps=15}{image=note_small1.png} I found myself in the U.K...{w=1.5}\n[line_3] {image=note_small2.png}"
     cs "{cps=15}{image=note_small1.png} I'm gonna go party in Sweden...{w=1.5}\n[line_4] {image=note_small2.png}"
@@ -1398,7 +1410,8 @@ label fired_third_tour_day:
     cs "Alright, here's a fan favorite: {i}[song_name_4]!{/i}"
     play sound sfx_start_rocking
     play sound sfx_cheer2
-    play music dragon_castle volume 0.5
+    play music dragon_castle volume 0.5 if_changed
+    music dragon_castle
     cs "{cps=15}{image=note_small1.png} Through all adversity, we'll bind together and overcome! {image=note_small2.png}"
     cs "{cps=15}{image=note_small1.png} [line_5] {image=note_small2.png}"
     cs "{cps=15}{image=note_small1.png} With my friends beside there's no foe we can not fight! {image=note_small2.png}"
@@ -1410,7 +1423,8 @@ label fired_third_tour_day:
     play sound sfx_start_rocking
     play sound sfx_cheer2
     n "The crowd is ready to burst."
-    play music sweet_victory volume 0.5
+    play music sweet_victory volume 0.5 if_changed
+    music sweet_victory
     cs "{cps=15}{image=note_small1.png} [line_7]{w=1.5}\n[line_8]{w=1.5}\n[line_9]{w=1.5}\n[line_10] {image=note_small2.png}"
     n "The audience can't get enough!"
     stop music fadeout 3.0
@@ -1465,7 +1479,8 @@ label fired_final_tour_bus:
     show arceus at right
     show cs
     with dissolve
-    play music exotic volume 0.5
+    play music exotic volume 0.5 if_changed
+    music exotic
     n "The boys are exhausted."
     show howie at offscreenright
     show anno at left
@@ -1507,8 +1522,8 @@ label fired_final_tour_bus:
 
     scene black with dissolve
     scene cs_house with dissolve
-    play music park_theme volume 0.5
-    music Park Theme - Lorin Nelson
+    play music park_theme volume 0.5 if_changed
+    music park_theme
     n "CS steps off the tour bus."
     show cs at right with moveinleft
     cs "Ah, home sweet home."

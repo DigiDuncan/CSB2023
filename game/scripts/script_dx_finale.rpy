@@ -5,8 +5,8 @@ label finale_fun_value_land:
     scene black with dissolve
     cs "Ohhh... ow..."
     cs "I think I'm back..."
-    play music funvalueland fadein 5.0 volume 3
-    $ persistent.heard.add("SPOT.FASSIMRD - Fun Value Land")
+    play music funvalueland fadein 5.0 volume 3 if_changed
+    music funvalueland
     cs "Oh God, am I home?"
     scene fun_cs_house with dissolve
     pause 3.0
@@ -22,8 +22,8 @@ label finale_train_takeoff:
     show mean at mid_right
     show amtrak_conductor at center behind mean
     pause 2.0
-    play music interference
-    music Interference - Sanity
+    play music interference if_changed
+    music interference
     show cs worried flipped
     show mean ayo flipped
     amtrak_conductor "Shit!" with vpunch

@@ -1,7 +1,7 @@
 label vibration:
     stop music fadeout 3.0
-    play music lets_hear_my_sped volume 0.7
-    music "Let's Hear My Speed - Pakoo"
+    play music lets_hear_my_sped volume 0.7 if_changed
+    music lets_hear_my_sped
     scene craptop_bg
     show craptop discord
     show cs at left
@@ -134,8 +134,8 @@ label vibration:
     scene jail_inside
     show cs flipped at offscreenright
     with dissolve
-    play music fastbudget_song volume 0.7
-    music "Fastbudget Song - Pakoo"
+    play music fastbudget_song volume 0.7 if_changed
+    music fastbudget_song 
     show cs flipped at mid_left with MoveTransition(0.25)
     show cs
     pause 1.0
@@ -181,8 +181,8 @@ label vibration:
     scene inside_ltt
     show linus at center
     with dissolve
-    play music fastport volume 0.7
-    music "Fastport.MID - Pakoo"
+    play music fastport volume 0.7 if_changed
+    music fastport
     linus "Sorry, I can't get you a job. You don't have a visa."
     show arceus at offscreenright
     show arceus happy at right with MoveTransition(0.25)
@@ -254,8 +254,8 @@ label vibration:
     stop music fadeout 3.0
     music end
     pause 1.0
-    play music fasting volume 0.7
-    music "Fasting - Pakoo"
+    play music fasting volume 0.7 if_changed
+    music fasting
     scene washington_road with dissolve
     show cs dark at left
     show arceus dark flipped at right
@@ -303,8 +303,8 @@ label vibration:
     show cs at left
     show arceus at right
     with dissolve
-    play music happy_running volume 0.7
-    music "Happy Running - Pakoo"
+    play music happy_running volume 0.7 if_changed
+    music happy_running
     cs "Alright, let's start walking home!"
     scene town
     show cs at left

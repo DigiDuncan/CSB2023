@@ -1,7 +1,7 @@
 label csbii_start:
     $ persistent.csb2_unlocked = True
     play music time_for_a_smackdown volume 0.2 if_changed
-    music Time for a Smackdown! - Mr. Sauceman
+    music time_for_a_smackdown
     scene helipad
     show wesley at right
     with dissolve
@@ -28,7 +28,7 @@ label csbii_start:
 # Punch
 label csbii_punch:
     play music time_for_a_smackdown volume 0.2 if_changed
-    music Time for a Smackdown! - Mr. Sauceman
+    music time_for_a_smackdown
     scene helipad
     show wesley behind cs at right
     show cs angry at left
@@ -83,7 +83,7 @@ label csbii_punch:
 # Chop
 label csbii_chop:
     play music time_for_a_smackdown volume 0.2 if_changed
-    music Time for a Smackdown! - Mr. Sauceman
+    music time_for_a_smackdown
     scene helipad
     show cs angry at left
     show wesley at right
@@ -110,7 +110,7 @@ label csbii_chop:
 # Kick
 label csbii_kick:
     play music time_for_a_smackdown volume 0.2 if_changed
-    music Time for a Smackdown! - Mr. Sauceman
+    music time_for_a_smackdown
     scene helipad
     show cs angry at left
     show wesley at right
@@ -137,7 +137,7 @@ label csbii_kick:
 # Special
 label csbii_special:
     play music time_for_a_smackdown volume 0.2 if_changed
-    music Time for a Smackdown! - Mr. Sauceman
+    music time_for_a_smackdown
     scene helipad
     show cs concentrate at left
     show wesley at right
@@ -220,8 +220,8 @@ label csbii_questioning:
     show cs disappointed dark at left
     show copguy dark at right
     with dissolve
-    play music card_castle volume 0.5
-    music Card Castle - Toby Fox
+    play music card_castle volume 0.5 if_changed
+    music card_castle
     pause 1.0
     copguy "Alright, CS."
     if fun_value(FUN_VALUE_MUSIC):
@@ -259,8 +259,8 @@ label csbii_questioning:
 # Asylum
 label csbii_asylum:
     scene asylum with dissolve
-    play music basement volume 0.5
-    music Basement - Toby Fox
+    play music basement volume 0.5 if_changed
+    music basement
     pause 2.0
     show cs insane worried flipped dark at left with moveinright
     show cs insane worried dark with determination
@@ -337,7 +337,7 @@ label csbii_asylum:
 # Caught
 label csbii_caught:
     play music time_for_a_smackdown volume 0.2 if_changed
-    music Time for a Smackdown! - Mr. Sauceman
+    music time_for_a_smackdown
     scene helipad
     show ed_phone at right
     show cs angry at left
@@ -389,8 +389,8 @@ label csbii_jail:
     pause 1.0
     show arceus prison at right with moveinright
     pause 1.0
-    play music stal volume 0.4
-    music stal - C418
+    play music stal volume 0.4 if_changed
+    music stal
     if fun_value(FUN_VALUE_MUSIC):
         cs "Oh, hi, Arceus. Sorry for stal-ing."
     else:
@@ -425,7 +425,7 @@ label csbii_jail:
 
 label csbii_breakout:
     play music stal volume 0.4 if_changed
-    music stal - C418
+    music stal
     scene jail_cell
     show cs prison at left
     show arceus prison at right
@@ -453,8 +453,8 @@ label csbii_breakout:
     n "The day comes to an end and the next one follows."
     n "CS and Arceus gather the required essentials for their escape. Along the way, they inform Anno, who more than happily complies with the plan." 
     centered "The next evening..."
-    play music moongazer volume 0.5
-    music Moongazer - Dr. Awesome
+    play music moongazer volume 0.5 if_changed
+    music moongazer
     if fun_value(FUN_VALUE_MUSIC):
         anno "I can't wait to gaze at the moon again once we're out of here."
     cs "Key, check."
@@ -509,8 +509,8 @@ label csbii_breakout:
 
 label csbii_bordercrossing:
     scene border with dissolve
-    play music onett volume 0.6
-    music Onett Theme - Keiichi Suzuki
+    play music onett volume 0.6 if_changed
+    music onett
     if fun_value(FUN_VALUE_MUSIC):
         n "CS, Anno, and Arceus emerge and begin heading north towards Onett. Theme."
     else:
@@ -535,8 +535,8 @@ label csbii_bordercrossing:
     arceus "Guys. We've only {i}just{/i} left the border. You can still see it behind us."
     scene flag
     $ renpy.music.set_pause(True, "music")
-    play music2 star_spangled_banner
-    music The Star Spangled Banner - THE UNITED STATES OF AMERICA
+    play music2 star_spangled_banner if_changed
+    music star_spangled_banner
     if fun_value(FUN_VALUE_MUSIC):
         n "The crew looks behind them and hears The Star Spangled Banner playing."
     else:
@@ -570,8 +570,8 @@ label csbii_bordercrossing:
     show cashier at t_cashier_at_tims
     show inside_tim_hortons_fg
     with dissolve
-    play music buy_something volume 0.6
-    music Buy Something Will Ya! - Keiichi Suzuki
+    play music buy_something volume 0.6 if_changed
+    music buy_something
     pause 1.0
     show cs at right with moveinleft
     show arceus flipped at center with moveinleft
@@ -625,7 +625,8 @@ label csbii_bordercrossing:
     scene black with dissolve
     pause 1.0
 
-    play music buy_something volume 0.6
+    play music buy_something volume 0.6 if_changed
+    music buy_something
     scene inside_tim_hortons_2
     show cs
     show anno at left
@@ -671,14 +672,14 @@ label csbii_ltt:
     with dissolve
     pause 1.0
     if fun_value(FUN_VALUE_RARE):
-        play music passport_ytp volume 0.5
+        play music passport_ytp volume 0.5 if_changed
     else:
-        play music passport volume 0.5
+        play music passport volume 0.5 if_changed
     if fun_value(FUN_VALUE_LEGENDARY):
         show passportdigi with dissolve
     else:
         hide passportdigi
-    music PASSPORT.MID - George Stone
+    music passport
     if fun_value(FUN_VALUE_MUSIC):
         linus "Sure, you can have a job. Just show us your passport and you're ready to go!"
     else: 

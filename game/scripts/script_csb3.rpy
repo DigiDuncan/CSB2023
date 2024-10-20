@@ -10,8 +10,8 @@ label csbiii_start:
     scene black with dissolve
     pause 1.0
     scene inside_ltt with dissolve
-    play music passport volume 0.5
-    music PASSPORT.MID - George Stone
+    play music passport volume 0.5 if_changed
+    music passport
     show linus at center with moveinright
     linus "Welcome to Linus Media Group! Come on in. I'll show you to your desk."
     cs "Thanks, Linus."
@@ -99,7 +99,7 @@ label csbiii_boring_video:
     scene csdesk
     show cs surprised at left
     play music passport volume 0.5 if_changed
-    music PASSPORT.MID - George Stone
+    music passport
     cs "I suppose that something super-technical like this could be really useful to the viewers. Maybe I'll learn something new, too."
     show cs
     cs "Well, let's see what this is all about!"
@@ -137,7 +137,7 @@ label csbiii_boring_video:
 
 label csbiii_edit_video:
     play music passport volume 0.5 if_changed
-    music PASSPORT.MID - George Stone
+    music passport
     show csdesk
     show linus at right
     show cs at left  
@@ -152,8 +152,8 @@ label csbiii_edit_video:
     music end
     cs "Hmm, this video looks pretty great so far. I'm practically done at this point."
     cs "I wonder what the others will think of this. I should probably get opinions from some of the other employees."
-    play music good_eatin volume 0.4
-    music "Good Eatin' - ClascyJitto"
+    play music good_eatin volume 0.4 if_changed
+    music good_eatin
     show taran at right with moveinright
     if fun_value(FUN_VALUE_MUSIC):
         taran "You eatin' good, CS?"
@@ -295,8 +295,8 @@ label csbiii_boost:
         n "As CS turns around, he almost trips on a counter, one that looks like those found at the airport."
     else:
         n "As CS turns around, Linus gives him a friendly punch in the back."
-    play music airport_counter volume 0.5
-    music Airport Counter - Kazumi Totaka
+    play music airport_counter volume 0.5 if_changed
+    music airport_counter
     linus "Dude, what are you talking about? That video was {i}awesome!{/i}"
     show cs worried at left with move
     cs "Woah, wait! You actually {i}like{/i} YTPs?"
@@ -435,7 +435,7 @@ label csbiii_boost:
 
 label csbiii_ltt_decide:
     play music airport_counter volume 0.5 if_changed
-    music Airport Counter - Kazumi Totaka
+    music airport_counter
     scene loffice with dissolve
     show cs at left with moveinleft
     cs "Hey, Linus?"
@@ -449,7 +449,7 @@ label csbiii_ltt_decide:
 
 label csbiii_reviews:
     play music airport_counter volume 0.5 if_changed
-    music Airport Counter - Kazumi Totaka
+    music airport_counter
     scene loffice
     show cs at left
     show linus at offscreenright
@@ -484,8 +484,8 @@ label csbiii_reviews:
         arceus "CS! There you are! Hired guns are coming after us!"
     else:
         arceus "CS! There you are! We need to go, ASAP!"
-    play music hired_guns volume 0.5
-    music Hired Guns - Brian Johnston
+    play music hired_guns volume 0.5 if_changed
+    music hired_guns
     linus "CS? You know this person?"
     show cs worried
     cs "It's a long story."
@@ -501,7 +501,7 @@ label csbiii_reviews:
     
 label csbiii_ytp_edit:
     play music airport_counter volume 0.5 if_changed
-    music Airport Counter - Kazumi Totaka
+    music airport_counter
     scene loffice
     show cs at left
     show linus at offscreenright
@@ -532,7 +532,7 @@ label csbiii_ytp_edit:
 
 label csbiii_ytp_fan:
     play music airport_counter volume 0.5 if_changed
-    music Airport Counter - Kazumi Totaka
+    music airport_counter
     scene loffice
     show cs at left
     show linus at center
@@ -565,8 +565,8 @@ label csbiii_ytp_fan:
         arceus "CS! There you are! Hired guns are coming after us!"
     else:
         arceus "CS! There you are! We need to go, ASAP!"
-    play music hired_guns volume 0.5
-    music Hired Guns - Brian Johnston
+    play music hired_guns volume 0.5 if_changed
+    music hired_guns
     linus "CS? Seriously?"
     show cs worried
     cs "Arceus, what's going on? Where have you been?"
@@ -582,7 +582,7 @@ label csbiii_ytp_fan:
 
 label csbiii_both_fan:
     play music airport_counter volume 0.5 if_changed
-    music Airport Counter - Kazumi Totaka
+    music airport_counter
     scene loffice
     show cs at left
     show linus at center
@@ -652,8 +652,8 @@ label csbiii_both_fan:
         arceus "CS! There you are! Hired guns are coming after us!"
     else:
         arceus "CS! There you are! We need to go, ASAP!"
-    play music hired_guns volume 0.5
-    music Hired Guns - Brian Johnston
+    play music hired_guns volume 0.5 if_changed
+    music hired_guns
     linus "So you {i}do{/i} have a furry fanbase who wants to join LTT! Damn it, CS, I should've known."
     show cs worried
     cs "Shut up, Linus!"
@@ -703,7 +703,7 @@ label csbiii_cops_ltt:
 
 label csbiii_arc_escape:
     play music hired_guns volume 0.5 if_changed
-    music Hired Guns - Brian Johnston
+    music hired_guns
     scene frontdoor 
     show cs worried at center
     show linus at right
@@ -755,8 +755,8 @@ label csbiii_arc_escape:
         n "Undyne bursts in."
     else:    
         n "Copguy bursts in."
-    play music undyne volume 0.5
-    music Undyne - Toby Fox
+    play music undyne volume 0.5 if_changed
+    music undyne
     copguy "Alright, everyone! Back against the wall! Nobody move!"
     luke "So, are we moving to the wall or... not moving?"
     copguy "Don't question the police! Just--{w=0.5} stand against the wall!"
@@ -813,8 +813,8 @@ label csbiii_arc_escape:
     show cs dusk at left
     show arceus dusk flipped at mid_left
     with dissolve
-    play music atarashii_kaze volume 0.3
-    music Atarashii Kaze - Satoru Kosaki
+    play music atarashii_kaze volume 0.3 if_changed
+    music atarashii_kaze
     n "CS and Arceus approach the border guard again."
     show border_guard dusk at right with moveinright
     border_guard "I'm gonna need proof of--"
@@ -845,8 +845,8 @@ label csbiii_arc_escape:
     scene sheriff_office
     show sheriff at left
     with dissolve
-    play music police_station volume 0.5
-    music Police Station - Lorin Nelson  
+    play music police_station volume 0.5 if_changed
+    music police_station 
     n "Back at the police station, Copguy talks to the sheriff about CS."
     show sheriff at left
     show copguy at right with moveinright
@@ -874,8 +874,8 @@ label csbiii_arc_escape:
         n "Meanwhile, CS and Arceus are still making their way through the US, while strange sounds seem to be echoing in the forest."
     else:  
         n "Meanwhile, CS and Arceus are still making their way through the US without any sense of direction."
-    play music echoing volume 0.5
-    music Echoing - Banana
+    play music echoing volume 0.5 if_changed
+    music echoing
     show cs disappointed dark at left with moveinleft
     show arceus dark at right with moveinright
     cs "Hey, Arceus? Do you have any clue where we are?"
@@ -961,8 +961,8 @@ label genocide_fight:
     scene washington_road with dissolve
     show cs dark at left with moveinleft
     show arceus dark at right with moveinright
-    play music kill_cops volume 0.5
-    music Echoing? - Pakoo
+    play music kill_cops volume 0.5 if_changed
+    music kill_cops
     n "The duo continues to travel along the road."
     n "Arceus is wary of CS' actions as he can't help but notice CS muttering to himself as they walk."
     cs "{chaos}TmV2ZXIgZ29ubmEgZ2l2ZSB5b3UgdXAsIG5ldmVyIGdvbm5hIGxldCB5b3UgZG93biwgbmV2ZXIgZ29ubmEgcnVuIGFyb3VuZCBhbmQgZGVzZXJ0IHlvdS4KTmV2ZXIgZ29ubmEgbWFrZSB5b3UgY3J5LCBuZXZlciBnb25uYSBzYXkgZ29vZGJ5ZSwgbmV2ZXIgZ29ubmEgdGVsbCBhIGxpZSwgYW5kIGh1cnQgeW91fg=="
@@ -1051,8 +1051,8 @@ label genocide_wait_arc:
     billy "Let's go!"
     scene car background
     show billy car
-    play music insane_personalities volume 0.6
-    music Insane Personalities - Pakoo
+    play music insane_personalities volume 0.6 if_changed
+    music insane_personalities
     pause 5.0
     scene car background night
     show billy car
@@ -1075,7 +1075,8 @@ label genocide_wait_arc:
     arceus "After that incident with the cops, he's been..."
     pause 1.0
     arceus "He's just been--"
-    play music insane_personalities
+    play music insane_personalities if_changed
+    music insane_personalities
     csgod "Stronger than ever."
     show csgod flipped at mid_left with moveinleft
     show arceus flipped at mid_left with vpunch
@@ -1151,8 +1152,8 @@ label csbiii_wait_forest:
     cs "Huh?"
     cs "What happened?"
     show copguy dark at right with moveinright
-    play music danger_mystery volume 0.5
-    music Danger Mystery - Toby Fox
+    play music danger_mystery volume 0.5 if_changed
+    music danger_mystery
     if fun_value(FUN_VALUE_MUSIC):
         copguy "Hey, ain't this a dangerous mystery."
     else:  
@@ -1179,6 +1180,7 @@ label csbiii_wait_forest:
 
 label csbiii_copcar_menu:
     play music danger_mystery volume 0.5 if_changed
+    music danger_mystery
     scene copcar
     show copguy at t_copguy_frontseat
     show copcar_mask
@@ -1197,8 +1199,8 @@ label csbiii_bad_convince:
     show copcar_mask
     show arceus at right
     show cs disappointed at left
-    play music pressing_pursuit_cornered volume 0.3
-    music Pressing Pursuit ~ Cornered - Masakazu Sugimori
+    play music pressing_pursuit_cornered volume 0.3 if_changed
+    music pressing_pursuit_cornered
     play sound sfx_hold_it volume 0.5
     show hold_it at truecenter with hpunch
     pause 1.0
@@ -1227,8 +1229,8 @@ label csbiii_good_convince:
     show copcar_mask
     show arceus at right
     show cs angry at left
-    play music pressing_pursuit_cornered volume 0.3
-    music Pressing Pursuit ~ Cornered - Masakazu Sugimori
+    play music pressing_pursuit_cornered volume 0.3 if_changed
+    music pressing_pursuit_cornered
     play sound sfx_hold_it volume 0.5
     show hold_it at truecenter with hpunch
     pause 1.0
@@ -1298,8 +1300,8 @@ label csbiii_good_convince:
         n "CS and Arceus look at each other and smile, doing their Bun Guster pose."  
     else: 
         n "CS and Arceus look at each other and smile."       
-    play music bun_guster volume 0.3
-    music Bun Guster - Satoru Kosaki
+    play music bun_guster volume 0.3 if_changed
+    music bun_guster
     arceus "Holy crap, I didn't think that would work."
     cs "Me neither! I'm so glad that he let us go!"
     cs "I don't know how you got that footage, but we are now free once again!"
@@ -1326,8 +1328,8 @@ label csbiii_choose_direction:
     show cs at left
     show arceus at right
     with dissolve
-    play music happy_roaming volume 0.5
-    music Happy Roaming - Lorin Nelson
+    play music happy_roaming volume 0.5 if_changed
+    music happy_roaming
     if fun_value(FUN_VALUE_MUSIC):
         cs "We've been happily roaming all night, but I'm exhausted." 
     else: 

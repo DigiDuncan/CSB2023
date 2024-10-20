@@ -1,3 +1,12 @@
+init python:
+    global music_map
+
+    import json
+    with renpy.open_file("jukebox.json") as json_file:
+        jukebox_file = json.load(json_file)
+
+    music_map = jukebox_file["tracks"]
+
 screen attack_choice(items):
     style_prefix "choice"
 
@@ -42,11 +51,9 @@ label game_loop:
         encounter.reset_cooldowns()
         
         print("Checking jukebox registry...")
-        for k, v in music_map.items():
-            x =  encounter.music.removeprefix("audio/")
-            if x == v:
-                print(f"Located track {k}.")
-                persistent.heard.add(k)
+        if encounter.music in music_map:
+            print(f"Located track {encounter.music}.")
+            persistent.heard.add(str(encounter.music))
 
         print("Showing intro text...")
         narrator(encounter.intro_text)
@@ -125,7 +132,7 @@ label game_loop:
 label play_rpggame:
     window hide
     $ quick_menu = False
-    play music rpggame.encounter.music
+    play music music_map[rpggame.encounter.music]["file"]
     show screen rpggame
     jump game_loop
 

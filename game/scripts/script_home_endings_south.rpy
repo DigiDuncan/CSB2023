@@ -1,7 +1,7 @@
 label south_back_home_alt:
     scene cs_house with dissolve
-    play music park_theme volume 0.5
-    music Park Theme - Lorin Nelson
+    play music park_theme volume 0.5 if_changed
+    music park_theme
     n "After the long and exciting journey, CS finally arrives at his house."
     show arceus flipped at left with moveinleft
     arceus "We made it back to your house, CS!"
@@ -27,8 +27,8 @@ label south_back_home_alt:
     ed "{i}You!" with hpunch
     show cs disappointed at left with moveinleft
     n "CS and the gang look towards CS' front porch, where Richard and Ed are waiting angrily for him."
-    play music hohsisremix volume 0.5
-    music "Alfred's Theme - Eminem"
+    play music hohsis_remix volume 0.5 if_changed
+    music hohsis_remix
     show ed at right
     show rich at mid_mid_right behind ed
     with moveinright
@@ -57,8 +57,8 @@ label south_back_home_alt:
             jump south_braghohsis
 
 label south_donatehohsis:
-    play music hohsisremix volume 0.5 if_changed
-    music "Alfred's Theme - Eminem"
+    play music hohsis_remix volume 0.5 if_changed
+    music hohsis_remix
     scene cs_house
     show ed at right
     show rich at mid_mid_right behind ed
@@ -98,8 +98,8 @@ label south_donatehohsis:
     show cs at right with move
     n "CS walks up to his front door."
     scene cs_room with dissolve
-    play music ac_title volume 0.4
-    music New Leaf Title Theme - Kazumi Totaka
+    play music ac_title volume 0.4 if_changed
+    music ac_title
     show cs at center with moveinleft
     cs "Ah, it's good to be home again!"
     if fanbase == "both":
@@ -114,7 +114,7 @@ label south_donatehohsis:
 label south_true_ending_alt:
     scene cs_room
     play music ac_title volume 0.4 if_changed
-    music New Leaf Title Theme - Kazumi Totaka
+    music ac_title
     show cs at center
     n "CS looks over at his desk, where a new computer is sitting."
     scene cs_room_2 with dissolve
@@ -136,7 +136,7 @@ label south_true_ending_alt:
 label south_ytp_ending_alt:
     scene cs_room
     play music ac_title volume 0.4 if_changed
-    music New Leaf Title Theme - Kazumi Totaka
+    music ac_title
     show cs at center
     n "CS looks over at his desk, where his old computer is sitting."
     scene cs_room_2 with dissolve
@@ -154,7 +154,7 @@ label south_ytp_ending_alt:
 label south_ltt_ending_alt:
     scene cs_room
     play music ac_title volume 0.4 if_changed
-    music New Leaf Title Theme - Kazumi Totaka
+    music ac_title
     show cs at center
     n "CS looks over at his desk, where a new computer is sitting."
     scene cs_room_2 with dissolve
@@ -179,8 +179,8 @@ label south_lego_ending:
     stop music fadeout 1.0
     music end
     cs "Guess what!"
-    play music lego_island volume 0.6
-    music Lego Island Theme - Lorin Nelson
+    play music lego_island volume 0.6 if_changed
+    music lego_island
     show case at mid_left
     n "CS takes his briefcase out and opens it up on camera."
     cs "I'm fuckin' rich now!"
@@ -199,8 +199,8 @@ label south_lego_ending:
     return
 
 label south_fighthohsis_alt:
-    play music hohsisremix volume 0.5 if_changed
-    music "Alfred's Theme - Eminem"
+    play music hohsis_remix volume 0.5 if_changed
+    music hohsis_remix
     scene cs_house
     show ed at right
     show rich at mid_mid_right behind ed
@@ -247,8 +247,8 @@ label south_fighthohsis_alt:
     bad_end "Revenge!" "south_back_home_alt"
 
 label south_braghohsis:
-    play music hohsisremix volume 0.5 if_changed
-    music "Alfred's Theme - Eminem"
+    play music hohsis_remix volume 0.5 if_changed
+    music hohsis_remix
     scene cs_house
     show ed at right
     show rich at mid_mid_right behind ed
