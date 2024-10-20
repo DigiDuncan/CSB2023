@@ -3,6 +3,7 @@
 # TODO: ALL INSTANCES OF CAR PLAINS / CAR PLAINS NIGHT ARE PLACEHOLDERS
 # TODO: moving scenery, mostly at night, including on top of the train. will need custom scenes. for now it's just the car scenery
 # TODO: mean thinks the normal car moving background is too fast, maybe slow down moving videos?
+# TODO: replace all instances of hearts and music notes with jp font glyphs as soon as it looks good
 
 ######## VARIABLES ########
 label train_start_good:
@@ -2617,31 +2618,26 @@ label train_on_top:
     show lupin stand hat dark flipped at right
     with dissolve
     
-    # mean wanted this
-    # TODO: IT'S BROKEN AGAIN GOD HELP ME STOP IT WITH THE PICKLES
-    # $mean_text = ""
-    # $mean_fun_text = ""
-    # $random = renpy.random.randint(1,3)
-    # if random == 1:
-        # $mean_text = "Stop right there,{w=0.25} criminal scum!"
-        # $mean_fun_text = "Nobody breaks the law on my watch!{w=0.25} I'm confiscating your stolen goods.{w=0.25} Now,{w=0.25} pay your fine or it's off to jail."
-    # elif random == 2:
-        # $mean_text = "It's all over,{w=0.25} lawbreaker!"
-        # $mean_fun_text = "Your spree is at an end.{w=0.25} I'll take any stolen goods you have.{w=0.25} The next move is yours--{w=0.5} Pay your fine,{w=0.25} or I'll haul you away!"
-    # elif random == 3:
-        # $mean_text = "Stop,{w=0.25} you've violated the law."
-        # $mean_fun_text = "Pay the court a fine,{w=0.25} or serve your sentence.{w=0.25} Your stolen goods are now forfeit."
-    # else:
-        # $mean_text = "Stop right there!"
-        # $mean_fun_text = "You're not getting away!"
-
-    $mean_text = "Stop right there!"
-    $mean_fun_text = "You're not getting away!"
-
     show mean human angry dark flipped at mid_left behind cs with moveinleft
-    mean "{bt=a3-p10-s4}{size=+24}[mean_text]" with hpunch
+    
+    # mean wanted this. hopefully it's actually fixed this time asldfkasuhfl
     if fun_value(FUN_VALUE_RARE):
+        python:
+            mean_lines = [
+                ["Stop right there,{w=0.25} criminal scum!", "Nobody breaks the law on my watch!{w=0.25} I'm confiscating your stolen goods.{w=0.25} Now,{w=0.25} pay your fine or it's off to jail."],
+                ["It's all over,{w=0.25} lawbreaker!", "Your spree is at an end.{w=0.25} I'll take any stolen goods you have.{w=0.25} The next move is yours--{w=0.5} Pay your fine,{w=0.25} or I'll haul you away!"],
+                ["Stop,{w=0.25} you've violated the law.", "Pay the court a fine,{w=0.25} or serve your sentence.{w=0.25} Your stolen goods are now forfeit."]
+            ]
+
+            mean_which = renpy.random.choice(mean_lines)
+            mean_text = mean_which[0]
+            mean_fun_text = mean_which[1]
+
+        mean "{bt=a3-p10-s4}{size=+24}[mean_text]"
         mean "[mean_fun_text]"
+    else:
+        mean "{bt=a3-p10-s4}{size=+24}Stop right there!" with hpunch
+        mean "You're not getting away!"
 
     show lupin stand hat dark
     lupin_offscreen "Wow! I didn't think you'd be brave enough to follow me up here!"
@@ -3679,7 +3675,8 @@ label train_tate_ex_win:
     show tate_fallen_4 at manual_pos(0.5, 0.6, 0.5)
     with Dissolve(0.5)
     "..."
-    tate "{sc=2}{size=+18}{font=azsz}Starting with {/sc}{sc}{size=+18}{font=azsz}{color=#FF2222}you."
+
+    tate "{sc=2}{size=+18}{font=azsz}Starting with{/font}{/size}{/sc} {sc}{size=+18}{font=azsz}{color=#FF2222}you."
     tate "{sc=2}{size=+18}{font=azsz}{color=#FF2222}Yeah, I see you."
     tate "{sc=2}{size=+18}{font=azsz}{color=#FF2222}Watching me from where you think I \ncannot reach you."
     tate "{sc=2}{size=+18}{font=azsz}I heard you laughing at me earlier."

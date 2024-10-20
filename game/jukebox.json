@@ -1,5 +1,4 @@
 {
-     /*********** LIST OF VALID TAGS ***********/
     "tags" : [
         "Menus",
         "Misc.",
@@ -30,11 +29,6 @@
     ],
 
     "tracks": {
-        /*********** PLEASE MAKE SURE ALL TRACKS MATCH THEIR INTERNAL NAME IN SCRIPT START ***********/
-        /*********** ALSO PLEASE CHECK THAT ALL TAGS ARE VALID ***********/
-        /* ... at least, i assume these things will be important later. */
-
-        /*********** Menus ***********/
         "bubble_tea" : {
             "file": "bubble_tea.ogg",
             "title": "Bubble Tea",
@@ -49,8 +43,6 @@
             "tags": ["Menus", "New In DX"],
             "album_art": "csbi.png"
         },
-
-        /*********** Misc. ***********/
         "space_classroom" : {
             "file": "space_classroom.ogg",
             "title": "Space Classroom",
@@ -58,8 +50,6 @@
             "tags": ["Misc.", "CSBIII DX: BTTF"],
             "album_art": "ddlc.png"
         },
-        
-        /*********** CSBI ***********/
         "lets_hear_my_baby" : {
             "file": "lets_hear_my_baby.ogg",
             "title": "Let's hear my baby",
@@ -76,7 +66,7 @@
         },
         "summer_clearance_sale" : {
             "file": "bestmusicu.ogg",
-            "title": "Summer Clearance Sale",
+            "title": "サマークリアランスセール",
             "artist": "BEST MUSIC",
             "tags": ["CSBI"],
             "album_art": "summerclearance.png"
@@ -117,8 +107,6 @@
             "tags": ["CSBI", "New In DX"],
             "album_art": "beautiful_hills.png"
         },
-
-        /*********** CSBII ***********/
         "card_castle" : {
             "file": "card_castle.ogg",
             "title": "Card Castle",
@@ -182,8 +170,6 @@
             "tags": ["CSBII", "New In DX", "Fun Values"],
             "album_art": "windows.png"
         },
-
-        /*********** CSBIII AI ***********/
         "school" : {
             "file": "school.ogg",
             "title": "School",
@@ -212,8 +198,6 @@
             "tags": ["CSBIII: AI"],
             "album_art": "deltarune.png"
         },
-
-        /*********** CSBIII ***********/
         "good_eatin" : {
             "file": "good_eatin.ogg",
             "title": "Good Eatin'",
@@ -312,8 +296,6 @@
             "tags": ["CSBIII", "CSBIII: South"],
             "album_art": "legoisland.png"
         },
-
-        /*********** CSBIII: Archival ***********/
         "facing_worlds" : {
             "file": "facing_worlds.ogg",
             "title": "Facing Worlds",
@@ -342,8 +324,6 @@
             "tags": ["CSBIII: Archival"],
             "album_art": "tearsforfears.png"
         },
-
-        /*********** CSBIII: Country ***********/
         "albu" : {
             "file": "albuquerque.ogg",
             "title": "Albuquerque",
@@ -407,7 +387,6 @@
             "tags": ["CSBIII: Country"],
             "album_art": "nekopara.png"
         },
-        /* should we include the track used in karaoke here? */
         "real_world" : {
             "file": "real_world.ogg",
             "title": "Real World",
@@ -450,8 +429,6 @@
             "tags": ["CSBIII: Country"],
             "album_art": "digitalcircus.png"
         },
-
-        /*********** CSBIII: East (True) ***********/
         "mm_select" : {
             "file": "mm_select.ogg",
             "title": "Mm Select",
@@ -606,8 +583,6 @@
             "tags": ["CSBIII: East", "CSBIII: South"],
             "album_art": "newleaf.png"
         },
-        
-        /*********** CSBIII: Fired ***********/
         "dealin_dope" : {
             "file": "dealin_dope.ogg",
             "title": "Dealin Dope",
@@ -720,8 +695,6 @@
             "tags": ["CSBIII: Fired"],
             "album_art": "deltarune.png"
         },
-
-        /*********** CSBIII: Friend ***********/
         "morning_highway" : {
             "file": "morning_highway.ogg",
             "title": "Morning Highway",
@@ -827,7 +800,6 @@
             "tags": ["CSBIII: Friend", "Minigames"],
             "album_art": "lizardking.png"
         },
-        /* is this correct? */
         "dinerfight" : {
             "file": "dinerfight.ogg",
             "title": "Diner Fight",
@@ -877,7 +849,6 @@
             "tags": ["CSBIII: Friend", "Minigames"],
             "album_art": "lizardking.png"
         },
-        /* is this correct? */
         "prophetpart2" : {
             "file": "prophetpart2.ogg",
             "title": "Prophet 2001 (Part 2)",
@@ -885,8 +856,6 @@
             "tags": ["CSBIII: Friend"],
             "album_art": "awesome.png"
         },
-
-        /*********** CSBIII: Michigan ***********/
         "honk_song" : {
             "file": "honk_song.ogg",
             "title": "Honk Song",
@@ -922,8 +891,6 @@
             "tags": ["CSBIII: Michigan"],
             "album_art": "pizzatower.png"
         },
-
-        /*********** CSBIII: South ***********/
         "brick_by_dick" : {
             "file": "brick_by_dick.ogg",
             "title": "Brick By Brick (Suck My Dick)",
@@ -1001,8 +968,6 @@
             "tags": ["CSBIII: South"],
             "album_art": "legoisland.png"
         },
-
-        /*********** CSBIII DX: Bronson ***********/
         "upon_me" : {
             "file": "upon_me.ogg",
             "title": "Upon Me",
@@ -1017,8 +982,6 @@
             "tags": ["CSBIII DX: Bronson", "New In DX", "Minigames"],
             "album_art": "trackerevil.png"
         },
-
-        /*********** CSBIII DX: BTTF (After Story) ***********/
         "lets_hear_spring" : {
             "file": "letshearspring.ogg",
             "title": "Let's Hear My Baby: Spring Remix",
@@ -1075,9 +1038,6 @@
             "tags": ["CSBIII DX: BTTF", "CSBIII DX: Finale", "New In DX"],
             "album_art": "tracker.png"
         },
-
-        /*********** CSBIII DX: Christmas ***********/
-        /* pakoo pls check if this song title is correct? */
         "lets_hear_winter" : {
             "file": "lets_hear_my_christ.ogg",
             "title": "Let's Hear My Baby: Spring Remix",
@@ -1085,8 +1045,6 @@
             "tags": ["CSBIII DX: BTTF", "New In DX"],
             "album_art": "csbii.png"
         },
-        /*********** CSBIII DX: Finale ***********/
-        /* is this title/artist correct? */
         "funvalueland" : {
             "file": "funvalueland.ogg",
             "title": "SPOT.FASSIMRD",
@@ -1094,16 +1052,13 @@
             "tags": ["CSBIII DX: BTTF", "New In DX"],
             "album_art": "csbii.png"
         },
-        /* unsure how to credit this track yet, it's not used in the script yet */
-        /*"unobtrusive_fun" : {
+        "unobtrusive_fun" : {
             "file": "unobtrusive_fun.ogg",
-            "title": "SPOT.FASSIMRD",
+            "title": "Unobtrusive Fun",
             "artist": "Fun Value Land",
             "tags": ["CSBIII DX: BTTF", "New In DX"],
             "album_art": "csbii.png"
-        },*/
-
-        /*********** CSBIII DX: Kuwait ***********/
+        },
         "tmwstw" : {
             "file": "tmwstw.ogg",
             "title": "The Man Who Sold The World",
@@ -1111,10 +1066,6 @@
             "tags": ["CSBIII DX: Kuwait", "New In DX"],
             "album_art": "mgsv.png"
         },
-
-        /*********** CSBIII DX: Rockstar II ***********/
-
-        /*********** CSBIII DX: Speedrun (Vibration) ***********/
         "lets_hear_my_sped" : {
             "file": "lets_hear_my_sped.ogg",
             "title": "Let's Hear My Speed",
@@ -1150,11 +1101,9 @@
             "tags": ["CSBIII DX: Speedrun", "New In DX"],
             "album_art": "vibration.png"
         },
-
-        /*********** CSBIII DX: Train ***********/
         "sub_game_select" : {
             "file": "sub_game_select.ogg",
-            "title": "Sub−Game Select",
+            "title": "Sub-Game Select",
             "artist": "Jun Ishikawa",
             "tags": ["CSBIII DX: Train", "New In DX"],
             "album_art": "kirby64.png"
@@ -1229,7 +1178,6 @@
             "tags": ["CSBIII DX: Train", "New In DX"],
             "album_art": "falsebound.png"
         },
-        /* this space reserved for minigame bgm vs lupin */
         "in_the_room" : {
             "file": "in_the_room.ogg",
             "title": "In The Room",
@@ -1246,7 +1194,7 @@
         },
         "lo_fi_sunset" : {
             "file": "lo_fi_sunset.ogg",
-            "title": "Lo−Fi Sunset",
+            "title": "Lo-Fi Sunset",
             "artist": "Dango Studio",
             "tags": ["CSBIII DX: Train", "New In DX"],
             "album_art": "lofisunset.png"
@@ -1279,40 +1227,36 @@
             "tags": ["CSBIII DX: Train", "New In DX", "Fun Values", "Minigames"],
             "album_art": "nyan.png"
         },
-
-        /*********** CSBIII DX: Misc. ***********/
-
-        /*********** CSBIII DX: Ringtones ***********/
         "sfx_ringtone_addy" : {
-            "file": "audio/sfx/sfx_ringtone_addy.ogg",
+            "file": "sfx/sfx_ringtone_addy.ogg",
             "title": "Hare Hare Yukai (Konata's Polyphonic Ringtone)",
             "artist": "Tomokazu Tashiro & Satoru Kosaki",
             "tags": ["CSBIII: Archival", "CSBIII DX: Ringtones", "New In DX"],
             "album_art": "ringtone_addy.png"
         },
         "sfx_ringtone_billy" : {
-            "file": "audio/sfx/sfx_ringtone_billy.ogg",
+            "file": "sfx/sfx_ringtone_billy.ogg",
             "title": "Billy Milly Mays",
             "artist": "tadintid.se",
             "tags": ["CSBIII: East", "CSBIII DX: Ringtones", "New In DX"],
             "album_art": "ringtone_billy.png"
         },
         "sfx_ringtone_cs" : {
-            "file": "audio/sfx/sfx_ringtone_cs.ogg",
+            "file": "sfx/sfx_ringtone_cs.ogg",
             "title": "CS OH YES",
             "artist": "Unknown Artist",
             "tags": ["CSBIII: Michigan", "CSBIII DX: Ringtones", "New In DX"],
             "album_art": "ringtone_cs.png"
         },
         "sfx_ringtone_tate" : {
-            "file": "audio/sfx/sfx_ringtone_tate.ogg",
+            "file": "sfx/sfx_ringtone_tate.ogg",
             "title": "Now Or Never (sleepingSYUN Arrange)",
             "artist": "M-Flo loves CHEMISTRY",
             "tags": ["CSBIII DX: Train", "CSBIII DX: Ringtones", "New In DX"],
             "album_art": "ringtone_tate.png"
         },
         "sfx_ringtone_tate_alt" : {
-            "file": "audio/sfx/sfx_ringtone_tate_alt.ogg",
+            "file": "sfx/sfx_ringtone_tate_alt.ogg",
             "title": "Only One",
             "artist": "ミカヅキBIGWAVE",
             "tags": ["CSBIII DX: Train", "CSBIII DX: Ringtones", "Fun Values", "New In DX"],

@@ -554,7 +554,7 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
     label title
     if _current_song and _current_artist:
-        text "Now Playing: [_current_song] - [_current_artist]"
+        text "Now Playing: {font=music_text}[_current_song] - [_current_artist]"
 
     if main_menu:
         key "game_menu" action ShowMenu("main_menu")

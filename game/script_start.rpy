@@ -2610,7 +2610,7 @@ style start_window is empty
 label splashscreen:
     $ renpy.movie_cutscene(splash)
     $ persistent.seen_splash = True
-    $ persistent.heard.add("BUBBLE TEA - darkcat")
+    $ persistent.heard.add("bubble_tea")
     return
 
 label before_main_menu:

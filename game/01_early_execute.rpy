@@ -37,11 +37,15 @@ default persistent.csb2_unlocked = False
 default persistent.csb3a_unlocked = False
 default persistent.csb3b_unlocked = False
 
-# Register CJK font
-define config.font_name_map["cjk"] = "ZCOOLKuaiLe-Regular.ttf"
+# Register CJK fonts
+define config.font_name_map["cn"] = "ZCOOLKuaiLe-Regular.ttf"
+define config.font_name_map["jp"] = "MochiyPopOne-Regular.ttf"
 
 # Register other fonts
 define config.font_name_map["azsz"] = "AllerDisplay_Std_Rg_0.ttf"
+
+# Force multilingual text for music popup and jukebox
+define config.font_name_map["music_text"] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add("Yokelvision.otf", 0x0000, 0x2212).add("MochiyPopOne-Regular.ttf", 0x0000, 0xffff)
 
 # Music popup
 screen music():
@@ -92,7 +96,7 @@ init:
             repeat
 
 python early:
-    # MUSIC POP UP
+# MUSIC POP UP
     _current_song = ""
     _current_artist = ""
     _played_songs = set()
@@ -164,8 +168,8 @@ init python:
             Transform(Image("music_note.png"), zoom = 0.2, xoffset = 25),
             Null(width = 35),
             VBox(
-                Text(_current_song if _current_song is not None else "", size = 72, outlines = [(5, "#000000", 0, 0)]),
-                Text(_current_artist if _current_artist is not None else "", size = 32, outlines = [(3, "#000000", 0, 0)])
+                Text("{font=music_text}" + _current_song if _current_song is not None else "", size = 72, outlines = [(5, "#000000", 0, 0)]),
+                Text("{font=music_text}" + _current_artist if _current_artist is not None else "", size = 32, outlines = [(3, "#000000", 0, 0)])
             ),
             margin = (35, 25)
         ), None

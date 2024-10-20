@@ -1,9 +1,3 @@
-screen best_music():
-    layer "music"
-    zorder 100
-    image "best_music.png" at music_appear
-    timer 5 action Hide('best_music')
-
 label csbi_start:
     $ quick_menu = False
     stop music fadeout 3.0
@@ -197,18 +191,14 @@ label csbi_walmart:
     cs "Oh, yes! Walmart is open!"
     scene walmart_inside with dissolve
 
-    # This has to be like this because CJK support for this is mid.
-    show screen best_music
-    $ _current_song = "Summer Clearance Sale"
-    $ _current_artist = "BEST MUSIC"
+    music "サマークリアランスセール - BEST MUSIC"
     play music summer_clearance_sale
-    $ persistent.heard.add("Summer Clearance Sale - BEST MUSIC")
 
     show cs at left with moveinleft
     n "CS walks inside."
     show doug at right with moveinright
     if fun_value(FUN_VALUE_MUSIC):
-        greeter "Welcome, the Summer Clearance Sale is going on! Isn't this the BEST MUSIC ever?"
+        greeter "Hello, and welcome to our Summer Clearance Sale! Isn't this the BEST MUSIC ever?"
     else:
         greeter "Hello, and welcome to Walmart! Can I help you with anything?"
     cs "Wow! It's Walmart CEO Doug McMillon! You actually {i}work{/i} here?"
