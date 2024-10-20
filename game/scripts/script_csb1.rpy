@@ -30,7 +30,7 @@ label csbi_start:
     show cs at center
     with dissolve
     play music lets_hear_my_baby volume 0.15
-    music "Let's hear my baby - Walkman"
+    music lets_hear_my_baby
     if fun_value(FUN_VALUE_MUSIC):
         cs "Welp, Let's hear my baby."
     else:
@@ -133,7 +133,7 @@ label csbi_craptop:
     show cs happy
     with dissolve
     play music canyon volume 0.2
-    music CANYON.MID - George Stone
+    music canyon
     if fun_value(FUN_VALUE_MUSIC):
         cs "Woah! Is that a canyon over there?"
     else:    
@@ -164,7 +164,7 @@ label csbi_craptop:
     show cs disappointed at left
     with dissolve
     play music canyon_car volume 0.2
-    music CANYON.MID - George Stone
+    music canyon
     pause 1.0
     cs "Whew... That was close!"
     cs "Should I go get groceries?"
@@ -191,7 +191,7 @@ label csbi_walmart:
     cs "Oh, yes! Walmart is open!"
     scene walmart_inside with dissolve
 
-    music "サマークリアランスセール - BEST MUSIC"
+    music summer_clearance_sale
     play music summer_clearance_sale
 
     show cs at left with moveinleft
@@ -331,7 +331,7 @@ label csbi_room:
     show craptop edit
     with dissolve
     play music scales_of_joy volume 0.3
-    music scales of joy.mod - Mel O Dee
+    music scales_of_joy
     n "CS sits down at his craptop and opens up Premiere."
     if fun_value(FUN_VALUE_MUSIC):
         cs "Ooooh! I can really feel the scales of joy! People would be excited to finally see this as a finished product."
@@ -374,7 +374,7 @@ label csbi_room:
             pass
         "Home Savers"(type="dx"):
             play music beautiful_hills volume 0.3
-            music Beautiful Hills - Network Music Ensemble
+            music beautiful_hills
             show cs
             cs "I guess I can call Home Savers. Despite my YTPs of their company, I don't think they'd mind helping me out."
             show cs phone
@@ -453,7 +453,7 @@ label csbi_room:
     play sound sfx_house_door_open
     cs "Hello! I am CS, and I--"
     play music hohsis_theme volume 0.2
-    music Alfred Hitchcock Intro Theme - Charles Gounod
+    music hohsis_theme
     show ed at center:
         alpha 0.0
     with determination
@@ -662,7 +662,7 @@ label csbi_rosen_house:
     pause 1.0
     play sound sfx_house_door_close
     play music super_friendly volume 0.4
-    music Super Friendly - Kevin Macleod
+    music super_friendly
     show michael at right with moveinright
     show cs flipped at offscreenright
     if fun_value(FUN_VALUE_MUSIC):
@@ -853,7 +853,7 @@ label csbi_end:
     show cs angry
     with dissolve
     play music time_for_a_smackdown volume 0.2
-    music Time for a Smackdown! - Mr. Sauceman
+    music time_for_a_smackdown
     if fun_value(FUN_VALUE_MUSIC):
         cs "Alright! It's time for a Smackdown!"       
     else:    
