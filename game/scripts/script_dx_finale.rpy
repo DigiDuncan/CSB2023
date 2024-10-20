@@ -70,5 +70,5 @@ label finale_train_takeoff:
     amtrak_conductor "Mean! Why aren't you in your human form?"
     amtrak_conductor "You can't drive as well like that!"
     mean "I can't switch! Watch!"
-    amtrak_conductor "Damnit, it's probably the storm screwing up your ability."
+    amtrak_conductor "Dammit, it's probably the storm screwing up your ability."
     amtrak_conductor "Don't worry, I'll try my best to watch out for the tracks."

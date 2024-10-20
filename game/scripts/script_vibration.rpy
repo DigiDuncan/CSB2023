@@ -248,7 +248,7 @@ label vibration:
     show copguy flipped at center with moveinleft
     copguy "Hey, have you seen a cosplayer and a furry come through here?"
     linus "Nope."
-    copguy "Damnit... I've gotta keep going..."
+    copguy "Dammit... I've gotta keep going..."
     hide copguy with moveoutright
     scene black with dissolve
     stop music fadeout 3.0

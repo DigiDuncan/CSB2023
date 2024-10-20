@@ -529,7 +529,7 @@ label friend2_cs_rage:
         show toby at t_toby
     if nice_car:
         csgod "Also, it was I who allowed your intrusive thoughts to win, compelling you to pick that nice car."
-        # i mean, he's a god, so he should probably speak like a god, goddamnit - tate
+        # i mean, he's a god, so he should probably speak like a god, goddammit - tate
         show cs happy dark
         cs "Well, thanks for that. This car is amazing!"
         cs "Anyways, can I use YTP Magic or something?"
