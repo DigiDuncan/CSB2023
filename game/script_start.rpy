@@ -647,6 +647,7 @@ define tate = Character("Tate", callback = renpy.partial(char_callback, name = "
 # Character Images
 ## CS
 image cs = "characters/cs/neutral.png"
+image cs sil_black = "sil_black:characters/cs/neutral.png"
 image cs flipped = "flip:characters/cs/neutral.png"
 image cs happy = "characters/cs/happy.png"
 image cs happy flipped = "flip:characters/cs/happy.png"
@@ -1435,6 +1436,9 @@ image lunatic_cultist flipped = "flip:characters/lunatic_cultist.png"
 # Back to the future: CS edition generated assets
 image after_true_title = Text("{size=+196}Spring 202X", text_align=0.5)
 
+# CS Holiday Special BGs
+image snowed_in = "bg/snowed_in.png"
+
 # CS wacky Kuwait Adventures: Mika Edition (Deluxe Content [With Funky Kong {And Dante from Devil may Cry}])
 image kuwait_lieutenant_snow = "characters/kuwait_lieutenant_snow.png"
 image kuwait_nurse_1 = "characters/k_nurse.png"
@@ -2192,8 +2196,11 @@ define audio.insomnia_loop = "<from 22.6>secret/pt/insomnia.ogg"
 # CSBIII DX Kuwait Music
 define audio.tmwstw = "tmwstw.ogg"
 
-# CSBIII DX After-True Music
+# CSBIII DX Holiday Special Music
 define audio.lets_hear_winter = "lets_hear_my_christ.ogg"
+define audio.winters_halloween = "winters_halloween.ogg"
+
+# CSBIII DX After-True Music
 define audio.lets_hear_spring = "letshearspring.ogg"
 define audio.echoing_spring = "echoingspring.ogg"
 define audio.alien_atmosphere = "alien_atmosphere.ogg"

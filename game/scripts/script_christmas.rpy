@@ -1048,8 +1048,30 @@ label dx_christmas_intro:
     mean "Fuck."
     cs "What? How bad is it?"
     mean "Grab my hand, I'll pull you up."
+    play music winters_halloween
+    scene snowed_in
+    show cs sil_black:
+        zoom 0.15
+        xpos 0.3
+        ypos 0.5
+    show mean human flipped sil_black:
+        zoom 0.15
+        xpos 0.4
+        ypos 0.5
+    with dissolve
     mean "Look out in the distance."
     n "As CS and Mean stare out into the distance, they see nothing but an endless desert of snow, with the lamp poles poking out through."
     cs "What the fuck."
     cs "Am I dreaming?"
+    n "CS picks up some snow and shoves it in his face."
+    cs "I guess not..."
+    mean "I know, this doesn't even feel real. How did this happen so fast?"
+    mean "I live in Canada, and it's never {i}this{/i} bad."
+    cs "So this is it. We are stuck here, aren't we?"
+    mean "I don't fuckin' know how any of us would be able to fix this, man."
+    cs "A Christmas Miracle, maybe."
+    cs "I don't think anyone else back in the house is gonna believe us."
+    mean "Well they can see it from themselves."
+    mean "Let's get back inside, it's freezing out here."
+    n "CS and Mean climb back down and meet back up with everyone."
 
