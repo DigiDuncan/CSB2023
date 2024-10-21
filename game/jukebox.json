@@ -443,7 +443,7 @@
             "artist": "Gooseworx",
             "tags": ["CSBIII: Country"],
             "album_art": "digitalcircus.png",
-            "trivia": "When {i}CSBIII{/i} was released, some tracks did not have any available cover art at all. This is one of the more notable entries. {i}The Amazing Digital Circus{/i} had only {i}just{/i} released its pilot episode when {i}Country Route{/i} was being written."
+            "trivia": "When {i}CSBIII{/i} was released, many tracks did not yet have album art. This is one of the more notable entries. The pilot episode for {i}The Amazing Digital Circus{/i} was only days old when {i}Country Route{/i} was being written."
         },
         "mm_select" : {
             "file": "mm_select.ogg",
@@ -1064,7 +1064,7 @@
             "artist": "Pakoo",
             "tags": ["CSBIII DX: Holiday Special", "New In DX"],
             "album_art": "csbii.png",
-            "trivia": "Pakoo's edited MOD of \"Let's Hear My Baby\"."
+            "trivia": "Pakoo's edited MOD of {i}Let's Hear My Baby.{/i}"
         },
         "winters_halloween" : {
             "file": "winters_halloween.ogg",
@@ -1072,7 +1072,7 @@
             "artist": "Toby Fox",
             "tags": ["CSBIII DX: Holiday Special", "New In DX"],
             "album_art": "hw_hack.png",
-            "trivia": "From the Earthbound Halloween Hack."
+            "trivia": "From the {i}Earthbound Halloween Hack{/i}."
         },
         "funvalueland" : {
             "file": "funvalueland.ogg",
@@ -1080,7 +1080,7 @@
             "artist": "Fun Value Land",
             "tags": ["CSBIII DX: Finale", "New In DX"],
             "album_art": "csbii.png",
-            "trivia": "Pakoo's screwed-up midi of \"PASSPORT.MID\"."
+            "trivia": "Pakoo's screwed-up midi of {i}PASSPORT.MID.{/i}"
         },
         "unobtrusive_fun" : {
             "file": "unobtrusive_fun.ogg",
@@ -1088,7 +1088,7 @@
             "artist": "Fun Value Land",
             "tags": ["CSBIII DX: Finale", "New In DX"],
             "album_art": "csbii.png",
-            "trivia": "Pakoo's screwed-up remix of \"Bedroom ~ Day\"."
+            "trivia": "Pakoo's screwed-up remix of {i}Bedroom ~ Day.{/i}"
         },
         "tmwstw" : {
             "file": "tmwstw.ogg",
@@ -1103,7 +1103,7 @@
             "artist": "Pakoo",
             "tags": ["CSBIII DX: Speedrun", "New In DX"],
             "album_art": "vibration.png",
-            "trivia": "A sped up version \"Let's Hear My Baby\"."
+            "trivia": "A sped-up version of {i}Let's Hear My Baby.{/i}"
         },
         "fastbudget_song" : {
             "file": "fastbudget_song.ogg",
@@ -1111,7 +1111,7 @@
             "artist": "Pakoo",
             "tags": ["CSBIII DX: Speedrun", "New In DX"],
             "album_art": "vibration.png",
-            "trivia": "A sped up version \"Lowbudget Song\"."
+            "trivia": "A sped-up version of {i}Lowbudget Song.{/i}"
         },
         "fastport" : {
             "file": "fastport.ogg",
@@ -1119,7 +1119,7 @@
             "artist": "Pakoo",
             "tags": ["CSBIII DX: Speedrun", "New In DX"],
             "album_art": "vibration.png",
-            "trivia": "A sped up version \"PASSPORT.MID\"."
+            "trivia": "A sped-up version of {i}PASSPORT.MID.{/i}"
         },
         "fasting" : {
             "file": "fasting.ogg",
@@ -1127,7 +1127,7 @@
             "artist": "Pakoo",
             "tags": ["CSBIII DX: Speedrun", "New In DX"],
             "album_art": "vibration.png",
-            "trivia": "A sped up version \"Echoing\"."
+            "trivia": "A sped-up version of {i}Echoing.{/i}"
         },
         "happy_running" : {
             "file": "happy_running.ogg",
@@ -1135,7 +1135,7 @@
             "artist": "Pakoo",
             "tags": ["CSBIII DX: Speedrun", "New In DX"],
             "album_art": "vibration.png",
-            "trivia": "A sped up version \"Happy Roaming\"."
+            "trivia": "A sped-up version of {i}Happy Roaming.{/i}"
         },
         "sub_game_select" : {
             "file": "sub_game_select.ogg",
@@ -1250,7 +1250,8 @@
             "title": "Insomnia",
             "artist": "W∆W",
             "tags": ["CSBIII DX: Train", "New In DX", "Fun Values"],
-            "album_art": "moon.png"
+            "album_art": "moon.png",
+            "trivia": "Tate was never originally intended to be a character that could be battled. {a=https://www.youtube.com/watch?v=O6i-aE4Hw18}{i}Moon EP{/i}{/a} changed that."
         },
         "space" : {
             "file": "secret/pt/space.ogg",
@@ -1266,7 +1267,7 @@
             "artist": "DJ NYANKO SWITCHER",
             "tags": ["CSBIII DX: Train", "New In DX", "Fun Values", "Minigames"],
             "album_art": "nyan.png",
-            "trivia": "The {i}only{/i} reason why the {i}Perfect Tate{/i} battle exists is because this track showed up in Tate's SoundCloud recommended feed one day."
+            "trivia": "The Tate EX story arc was nearly complete when this track showed up in Tate's SoundCloud recommended feed one day. This is {i}only{/i} reason why Perfect Tate exists."
         },
       "missingno" : {
             "file": "secret/dd/missingno_full.ogg",
@@ -1292,10 +1293,11 @@
         },
         "sfx_ringtone_cs" : {
             "file": "sfx/sfx_ringtone_cs.ogg",
-            "title": "CS OH YES",
+            "title": "Oh Yes Rave",
             "artist": "cs188",
             "tags": ["CSBIII: Michigan", "CSBIII DX: Ringtones", "New In DX"],
-            "album_art": "ringtone_cs.png"
+            "album_art": "ringtone_cs.png",
+            "trivia": "Originally created for CS's Mixer livestream soundboard, but was also featured in {i}{a=https://www.youtube.com/watch?v=mh6aM8uhrEI}[[YTP] National Giraffeic Teaches You Slnimals.{/a}{/i}"
         },
         "sfx_ringtone_tate" : {
             "file": "sfx/sfx_ringtone_tate.ogg",
