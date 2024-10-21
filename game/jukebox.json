@@ -166,8 +166,8 @@
         },
         "passport_ytp" : {
             "file": "secret/passport_ytp.ogg",
-            "title": "PASSPORT.MID",
-            "artist": "George Stone",
+            "title": "ORDER WINDOWS TODAY!!!",
+            "artist": "cs188",
             "tags": ["CSBII", "New In DX", "Fun Values"],
             "album_art": "windows.png"
         },
@@ -406,10 +406,11 @@
         },
         "muumin_tani_fuyu" : {
             "file": "muumin_tani_fuyu.ogg",
-            "title": "Muumin Tani Fuyu",
+            "title": "ムーミン谷・冬",
             "artist": "Sumio Shiratori",
             "tags": ["CSBIII: Country", "CSBIII DX: BTTF", "Fun Values"],
-            "album_art": "moomin.png"
+            "album_art": "moomin.png",
+            "trivia": "Romanized Title: Muumin Tani Fuyu\nEnglish Title: Winter In Moominvalley"
         },
         "snufkin" : {
             "file": "snufkin.ogg",
@@ -680,10 +681,10 @@
         },
         "sweet_victory" : {
             "file": "sweet_victory.ogg",
-            "title": "You're At A Ball In The Gold Room",
-            "artist": "Nemo's Dreamscapes",
+            "title": "Sweet Victory",
+            "artist": "David Glen Eisley",
             "tags": ["CSBIII: Fired"],
-            "album_art": "csbi.png"
+            "album_art": "bubblebowl.png"
         },
         "dig_this" : {
             "file": "dig_this.ogg",
@@ -907,7 +908,7 @@
             "title": "Brick By Brick (Suck My Dick)",
             "artist": "cs188",
             "tags": ["CSBIII: South"],
-            "album_art": "brick_by_brick.png"
+            "album_art": "brickbybrick.png"
         },
         "tunnely_shimbers" : {
             "file": "tunnely_shimbers.ogg",

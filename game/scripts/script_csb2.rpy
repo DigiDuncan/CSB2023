@@ -673,13 +673,15 @@ label csbii_ltt:
     pause 1.0
     if fun_value(FUN_VALUE_RARE):
         play music passport_ytp volume 0.5 if_changed
+        music passport_ytp
     else:
         play music passport volume 0.5 if_changed
     if fun_value(FUN_VALUE_LEGENDARY):
         show passportdigi with dissolve
+        music passport_ytp
     else:
         hide passportdigi
-    music passport
+        music passport
     if fun_value(FUN_VALUE_MUSIC):
         linus "Sure, you can have a job. Just show us your passport and you're ready to go!"
     else: 
