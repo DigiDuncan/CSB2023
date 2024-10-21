@@ -1063,7 +1063,8 @@
             "title": "Let's Hear My Baby: Christmas Remix",
             "artist": "Pakoo",
             "tags": ["CSBIII DX: Holiday Special", "New In DX"],
-            "album_art": "csbii.png"
+            "album_art": "csbii.png",
+            "trivia": "Pakoo's edited MOD of \"Let's Hear My Baby\"."
         },
         "winters_halloween" : {
             "file": "winters_halloween.ogg",
@@ -1078,14 +1079,16 @@
             "title": "SPOT.FASSIMRD",
             "artist": "Fun Value Land",
             "tags": ["CSBIII DX: Finale", "New In DX"],
-            "album_art": "csbii.png"
+            "album_art": "csbii.png",
+            "trivia": "Pakoo's screwed-up midi of PASSPORT.MID."
         },
         "unobtrusive_fun" : {
             "file": "unobtrusive_fun.ogg",
             "title": "Unobtrusive Fun",
             "artist": "Fun Value Land",
             "tags": ["CSBIII DX: Finale", "New In DX"],
-            "album_art": "csbii.png"
+            "album_art": "csbii.png",
+            "trivia": "Pakoo's screwed-up remix of \"Bedroom ~ Day\"."
         },
         "tmwstw" : {
             "file": "tmwstw.ogg",
@@ -1099,35 +1102,40 @@
             "title": "Let's Hear My Speed",
             "artist": "Pakoo",
             "tags": ["CSBIII DX: Speedrun", "New In DX"],
-            "album_art": "vibration.png"
+            "album_art": "vibration.png",
+            "trivia": "A sped up version \"Let's Hear My Baby\"."
         },
         "fastbudget_song" : {
             "file": "fastbudget_song.ogg",
             "title": "Fastbudget Song",
             "artist": "Pakoo",
             "tags": ["CSBIII DX: Speedrun", "New In DX"],
-            "album_art": "vibration.png"
+            "album_art": "vibration.png",
+            "trivia": "A sped up version \"Lowbudget Song\"."
         },
         "fastport" : {
             "file": "fastport.ogg",
             "title": "Fastport.MID",
             "artist": "Pakoo",
             "tags": ["CSBIII DX: Speedrun", "New In DX"],
-            "album_art": "vibration.png"
+            "album_art": "vibration.png",
+            "trivia": "A sped up version \"PASSPORT.MID\"."
         },
         "fasting" : {
             "file": "fasting.ogg",
             "title": "Fasting",
             "artist": "Pakoo",
             "tags": ["CSBIII DX: Speedrun", "New In DX"],
-            "album_art": "vibration.png"
+            "album_art": "vibration.png",
+            "trivia": "A sped up version \"Echoing\"."
         },
         "happy_running" : {
             "file": "happy_running.ogg",
             "title": "Happy Running",
             "artist": "Pakoo",
             "tags": ["CSBIII DX: Speedrun", "New In DX"],
-            "album_art": "vibration.png"
+            "album_art": "vibration.png",
+            "trivia": "A sped up version \"Happy Roaming\"."
         },
         "sub_game_select" : {
             "file": "sub_game_select.ogg",
