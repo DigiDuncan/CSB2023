@@ -18,7 +18,7 @@
         "CSBIII: South",
         "CSBIII DX: Bronson",
         "CSBIII DX: BTTF (After Story)",
-        "CSBIII DX: Christmas",
+        "CSBIII DX: Christmas Special",
         "CSBIII DX: Finale",
         "CSBIII DX: Kuwait",
         "CSBIII DX: Rockstar II",
@@ -44,7 +44,7 @@
             "album_art": "csbi.png"
         },
         "space_classroom" : {
-            "file": "space_classroom.ogg",
+            "file": "secret/space_classroom.ogg",
             "title": "Space Classroom",
             "artist": "Dan Salvato",
             "tags": ["Misc.", "CSBIII DX: BTTF"],
@@ -240,7 +240,7 @@
             "artist": "Satoru Kosaki",
             "tags": ["CSBIII"],
             "album_art": "luckystar.png",
-            "trivia": "Romanized Title: Atarashii Kaze | English Title: New Wind"
+            "trivia": "Romanized Title: Atarashii Kaze\nEnglish Title: New Wind"
         },
         "police_station" : {
             "file": "police_station.ogg",
@@ -381,7 +381,7 @@
             "artist": "Mitsuharu Fukuyama",
             "tags": ["CSBIII: Country"],
             "album_art": "bakamitai.png",
-            "trivia": "Romanized Title: Baka Mitai | English Title: I've Been A Fool"
+            "trivia": "Romanized Title: Baka Mitai\nEnglish Title: I've Been A Fool"
         },
         "chase" : {
             "file": "chase.ogg",
@@ -501,7 +501,7 @@
             "artist": "Satoru Kosaki",
             "tags": ["CSBIII: East"],
             "album_art": "luckystar.png",
-            "trivia": "Romanized Title: Taiikusai Desu Yo | English Title: It's A Sports Festival"
+            "trivia": "Romanized Title: Taiikusai Desu Yo\nEnglish Title: It's A Sports Festival"
         },
         "track_4" : {
             "file": "track4.ogg",
@@ -1053,21 +1053,21 @@
             "file": "lets_hear_my_christ.ogg",
             "title": "Let's Hear My Baby: Christmas Remix",
             "artist": "Pakoo",
-            "tags": ["CSBIII DX: BTTF", "New In DX"],
+            "tags": ["CSBIII DX: Christmas Special", "New In DX"],
             "album_art": "csbii.png"
         },
         "funvalueland" : {
             "file": "funvalueland.ogg",
             "title": "SPOT.FASSIMRD",
             "artist": "Fun Value Land",
-            "tags": ["CSBIII DX: BTTF", "New In DX"],
+            "tags": ["CSBIII DX: Finale", "New In DX"],
             "album_art": "csbii.png"
         },
         "unobtrusive_fun" : {
             "file": "unobtrusive_fun.ogg",
             "title": "Unobtrusive Fun",
             "artist": "Fun Value Land",
-            "tags": ["CSBIII DX: BTTF", "New In DX"],
+            "tags": ["CSBIII DX: Finale", "New In DX"],
             "album_art": "csbii.png"
         },
         "tmwstw" : {
@@ -1262,7 +1262,7 @@
         "sfx_ringtone_cs" : {
             "file": "sfx/sfx_ringtone_cs.ogg",
             "title": "CS OH YES",
-            "artist": "Unknown Artist",
+            "artist": "cs188",
             "tags": ["CSBIII: Michigan", "CSBIII DX: Ringtones", "New In DX"],
             "album_art": "ringtone_cs.png"
         },
@@ -1271,14 +1271,16 @@
             "title": "Now Or Never (sleepingSYUN Arrange)",
             "artist": "M-Flo loves CHEMISTRY",
             "tags": ["CSBIII DX: Train", "CSBIII DX: Ringtones", "New In DX"],
-            "album_art": "ringtone_tate.png"
+            "album_art": "ringtone_tate.png",
+            "trivia": "The real-life Tate has used this ringtone for over a decade."
         },
         "sfx_ringtone_tate_alt" : {
             "file": "sfx/sfx_ringtone_tate_alt.ogg",
             "title": "Only One",
             "artist": "ミカヅキBIGWAVE",
             "tags": ["CSBIII DX: Train", "CSBIII DX: Ringtones", "Fun Values", "New In DX"],
-            "album_art": "ringtone_tate_alt.png"
+            "album_art": "ringtone_tate_alt.png",
+            "trivia": "This is a real ringtone that Tate used... at some point."
         }
     }
 }

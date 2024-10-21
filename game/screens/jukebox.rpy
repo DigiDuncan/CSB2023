@@ -78,6 +78,12 @@ screen music_screen(this_track):
     $ artist = this_track["artist"]
     $ album_art = this_track["album_art"]
     $ tags = this_track["tags"]
+    
+    python:
+        try:
+            trivia = this_track["trivia"]
+        except:
+            trivia = ""
 
     frame:
         background None
@@ -95,7 +101,7 @@ screen music_screen(this_track):
 
     viewport:
 
-        xsize 1000
+        xsize 1300
         ysize 800
         xalign 0.5
         xoffset 305 
@@ -106,7 +112,7 @@ screen music_screen(this_track):
         pagekeys True
         image "images/jukebox/record.png":
             xysize(500, 500)
-            xalign(0.375)
+            xalign(0.75)
             yalign(0.50)
             at transform:
                 rotate 0
@@ -115,11 +121,15 @@ screen music_screen(this_track):
 
         if album_art is None:
             image "images/jukebox/csbi.png":
-                xysize(500, 500)
-                xalign(0.225)
+                xysize(512, 512)
+                xalign(0.45)
                 yalign(0.5)
         else:
             image f"images/jukebox/{album_art}":
                 xysize(512, 512)
-                xalign(0.225)
+                xalign(0.45)
                 yalign(0.5)
+
+        text trivia:
+            xalign 0.425
+            yalign 1.0
