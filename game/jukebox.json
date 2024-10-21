@@ -18,7 +18,7 @@
         "CSBIII: South",
         "CSBIII DX: Bronson",
         "CSBIII DX: BTTF (After Story)",
-        "CSBIII DX: Christmas Special",
+        "CSBIII DX: Holiday Special",
         "CSBIII DX: Finale",
         "CSBIII DX: Kuwait",
         "CSBIII DX: Rockstar II",
@@ -1055,20 +1055,27 @@
             "file": "lets_hear_my_christ.ogg",
             "title": "Let's Hear My Baby: Christmas Remix",
             "artist": "Pakoo",
-            "tags": ["CSBIII DX: Christmas Special", "New In DX"],
+            "tags": ["CSBIII DX: Holiday Special", "New In DX"],
+            "album_art": "csbii.png"
+        },
+        "winters_halloween" : {
+            "file": "winters_halloween.ogg",
+            "title": "Please correct this title later",
+            "artist": "Please correct this artist later",
+            "tags": ["CSBIII DX: Holiday Special", "New In DX"],
             "album_art": "csbii.png"
         },
         "funvalueland" : {
             "file": "funvalueland.ogg",
             "title": "SPOT.FASSIMRD",
-            "artist": "Fun Value Land",
+            "artist": "Please correct this artist later",
             "tags": ["CSBIII DX: Finale", "New In DX"],
             "album_art": "csbii.png"
         },
         "unobtrusive_fun" : {
             "file": "unobtrusive_fun.ogg",
             "title": "Unobtrusive Fun",
-            "artist": "Fun Value Land",
+            "artist": "Please correct this artist later",
             "tags": ["CSBIII DX: Finale", "New In DX"],
             "album_art": "csbii.png"
         },
