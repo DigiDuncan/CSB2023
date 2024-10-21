@@ -19,7 +19,7 @@ screen people_nav():
     add Color('#323e42', alpha=0.75)
     viewport:
         xpos 25 ypos 150
-        xsize 350 ysize 700
+        xsize 500 ysize 700
         mousewheel True
         draggable True
         pagekeys True
@@ -75,11 +75,13 @@ screen person(l):
 
     style_prefix "codex"
 
-    # TODO: make this line easier to read somehow
-    label name_map[l]['full_name']
-
     tag menu
     use people_nav
+
+    text name_map[l]['full_name']:
+            xalign 0.65
+            yalign 0.05
+            size 69
 
     # Main Container omitting the menu
     viewport:
@@ -93,6 +95,7 @@ screen person(l):
         mousewheel True
         draggable True
         pagekeys True
+
         hbox:
             ysize 800
             vbox:

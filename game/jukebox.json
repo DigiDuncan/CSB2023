@@ -148,7 +148,8 @@
             "title": "The Star Spangled Banner",
             "artist": "THE UNITED STATES OF AMERICA",
             "tags": ["CSBII"],
-            "album_art": "america.png"
+            "album_art": "america.png",
+            "trivia": "While Tate was adamant about finding the actual orchestra that performed this rendition, they were ultimately overruled. It {i}is{/i} funnier to just credit this song to THE UNITED STATES OF AMERICA."
         },
         "buy_something" : {
             "file": "buy_something.ogg",
@@ -169,7 +170,8 @@
             "title": "ORDER WINDOWS TODAY!!!",
             "artist": "cs188",
             "tags": ["CSBII", "New In DX", "Fun Values"],
-            "album_art": "windows.png"
+            "album_art": "windows.png",
+            "trivia": "{a=https://www.youtube.com/watch?v=p31oPbDrWdw}\"Watch as Windows integrates {i}Reversi!\"{/i}{/a}"
         },
         "school" : {
             "file": "school.ogg",
@@ -211,7 +213,8 @@
             "title": "Supernova",
             "artist": "Laszlo",
             "tags": ["CSBIII", "Minigames"],
-            "album_art": "supernova.png"
+            "album_art": "supernova.png",
+            "trivia": "The Linus Tech Tips YouTube channel has used this track as an intro theme since 2020. It was first featured in {a=https://www.youtube.com/watch?v=-scV7LLvdh8}{i}I Made my Own Keyboard Keycaps!!{/i}{/a}"
         },
         "airport_counter" : {
             "file": "airport_counter.ogg",
@@ -261,7 +264,7 @@
             "title": "Echoing?",
             "artist": "Pakoo",
             "tags": ["CSBIII"],
-            "album_art": "csbi.png"
+            "album_art": "trackerevil.png"
         },
         "insane_personalities" : {
             "file": "insane_personalities.ogg",
@@ -439,7 +442,8 @@
             "title": "XDDCC",
             "artist": "Gooseworx",
             "tags": ["CSBIII: Country"],
-            "album_art": "digitalcircus.png"
+            "album_art": "digitalcircus.png",
+            "trivia": "When {i}CSBIII{/i} was released, some tracks did not have any available cover art at all. This is one of the more notable entries. {i}The Amazing Digital Circus{/i} had only {i}just{/i} released its pilot episode when {i}Country Route{/i} was being written."
         },
         "mm_select" : {
             "file": "mm_select.ogg",
@@ -657,14 +661,16 @@
             "title": "Smashing Windshields",
             "artist": "Leon Riskin",
             "tags": ["CSBIII: Fired"],
-            "album_art": "fnaf6.png"
+            "album_art": "fnaf6.png",
+            "trivia": "Tate, who has never interacted with {i}FNAF{/i} in their life, had a hell of a time finding the actual title of this song. For the longest time, this track was just referred to as \"Racing Minigame Song\"."
         },
         "france" : {
             "file": "france.ogg",
             "title": "Guillotine World",
             "artist": "Kikiyama",
             "tags": ["CSBIII: Fired"],
-            "album_art": "yume.png"
+            "album_art": "yume.png",
+            "trivia": "The internal name for this track is \"france\"."
         },
         "dragon_castle" : {
             "file": "dragon_castle.ogg",
@@ -723,7 +729,7 @@
             "album_art": "mariopaint.png"
         },
         "pixel_peeker_polka" : {
-            "file": "creative_exercise.ogg",
+            "file": "pixel_peeker_polka.ogg",
             "title": "Pixel Peeker Polka",
             "artist": "Kevin MacLeod",
             "tags": ["CSBIII: Friend"],
@@ -909,7 +915,8 @@
             "title": "Brick By Brick (Suck My Dick)",
             "artist": "cs188",
             "tags": ["CSBIII: South"],
-            "album_art": "brickbybrick.png"
+            "album_art": "brickbybrick.png",
+            "trivia": "{a=https://www.youtube.com/watch?v=95_33ItUC9k}Louder than a DJ farting all night.{/a}"
         },
         "tunnely_shimbers" : {
             "file": "tunnely_shimbers.ogg",
@@ -1069,14 +1076,14 @@
         "funvalueland" : {
             "file": "funvalueland.ogg",
             "title": "SPOT.FASSIMRD",
-            "artist": "Please correct this artist later",
+            "artist": "Fun Value Land",
             "tags": ["CSBIII DX: Finale", "New In DX"],
             "album_art": "csbii.png"
         },
         "unobtrusive_fun" : {
             "file": "unobtrusive_fun.ogg",
             "title": "Unobtrusive Fun",
-            "artist": "Please correct this artist later",
+            "artist": "Fun Value Land",
             "tags": ["CSBIII DX: Finale", "New In DX"],
             "album_art": "csbii.png"
         },
@@ -1127,14 +1134,16 @@
             "title": "Sub-Game Select",
             "artist": "Jun Ishikawa",
             "tags": ["CSBIII DX: Train", "New In DX"],
-            "album_art": "kirby64.png"
+            "album_art": "kirby64.png",
+            "trivia": "{i}Kirby 64: The Crystal Shards{/i} is Tate's all-time favorite video game."
         },
         "outdoors" : {
             "file": "outdoors.ogg",
             "title": "Outdoors",
             "artist": "Miki Obata",
             "tags": ["CSBIII DX: Train", "New In DX"],
-            "album_art": "pkmnchannel.png"
+            "album_art": "pkmnchannel.png",
+            "trivia": "Getting this track to loop cleanly in {i}Train Route{/i} was a painful experience."
         },
         "hide_and_seek" : {
             "file": "hide_and_seek.ogg",
@@ -1151,7 +1160,7 @@
             "album_art": "heyyoupikachu.png"
         },
         "bedroom_day" : {
-            "file": "ochre_woods_day.ogg",
+            "file": "bedroom_day.ogg",
             "title": "Bedroom ~ Day",
             "artist": "Miki Obata",
             "tags": ["CSBIII DX: Train", "New In DX"],
@@ -1169,7 +1178,8 @@
             "title": "Krabby Klub",
             "artist": "Tsukasa Tawada",
             "tags": ["CSBIII DX: Train", "New In DX"],
-            "album_art": "pokemonxd.png"
+            "album_art": "pokemonxd.png",
+            "trivia": "This track, with its short intro piece, required a total refactor of the way looping songs are handled in-game."
         },
         "prof_kranes_kidnap" : {
             "file": "prof_kranes_kidnap.ogg",
@@ -1246,7 +1256,8 @@
             "title": "Nyan Of A Lifetime",
             "artist": "DJ NYANKO SWITCHER",
             "tags": ["CSBIII DX: Train", "New In DX", "Fun Values", "Minigames"],
-            "album_art": "nyan.png"
+            "album_art": "nyan.png",
+            "trivia": "The {i}only{/i} reason why the Perfect Tate battle exists is because this track showed up in Tate's Soundcloud recommended feed one day."
         },
       "missingno" : {
             "file": "secret/dd/missingno_full.ogg",

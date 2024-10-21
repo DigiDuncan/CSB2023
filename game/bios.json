@@ -487,7 +487,7 @@
     },
     "tate_ex": {
         "full_name": "Tate EX",
-        "sprite_path": "images/characters/tate/tate_ex.png",
+        "sprite_path": "secret/pt/tate_ex.png",
         "quote": "Don't underestimate me.",
         "bio": "A defector from a violent cult who grew disgusted with their clan's practices. After spending many years being ostracized and even punished for protesting the cult's gruesome \"activities\", out of fear for their life, Tate fled.\n\nTate now strives to lead a peaceful existence while posing as a human. Although they are a pacifist down to the core, sometimes the echoes of the past become too much to bear...",
         "dx": true,
@@ -495,7 +495,7 @@
     },
     "perfect_tate": {
         "full_name": "Perfect Tate",
-        "sprite_path": "images/characters/tate/tate_ex.png",
+        "sprite_path": "secret/pt/tate_ex.png",
         "quote": "...",
         "bio": "A temporal abomination.",
         "dx": true,

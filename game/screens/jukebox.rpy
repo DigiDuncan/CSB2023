@@ -102,7 +102,7 @@ screen music_screen(this_track):
     viewport:
 
         xsize 1300
-        ysize 800
+        ysize 900
         xalign 0.5
         xoffset 305 
         yoffset 200
@@ -113,7 +113,7 @@ screen music_screen(this_track):
         image "images/jukebox/record.png":
             xysize(500, 500)
             xalign(0.75)
-            yalign(0.50)
+            yalign(0.325)
             at transform:
                 rotate 0
                 linear 5.0 rotate 360.0
@@ -123,13 +123,19 @@ screen music_screen(this_track):
             image "images/jukebox/csbi.png":
                 xysize(512, 512)
                 xalign(0.45)
-                yalign(0.5)
+                yalign(0.4)
         else:
             image f"images/jukebox/{album_art}":
                 xysize(512, 512)
                 xalign(0.45)
-                yalign(0.5)
+                yalign(0.4)
 
-        text trivia:
-            xalign 0.425
+        frame:
+            xsize 1250
+            ysize 200
+            xalign 0
             yalign 1.0
+            background None
+            text trivia:
+                xalign 0.5
+                yalign 0

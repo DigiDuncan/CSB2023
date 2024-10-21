@@ -3,7 +3,7 @@
 # TODO: ALL INSTANCES OF CAR PLAINS / CAR PLAINS NIGHT ARE PLACEHOLDERS
 # TODO: moving scenery, mostly at night, including on top of the train. will need custom scenes. for now it's just the car scenery
 # TODO: mean thinks the normal car moving background is too fast, maybe slow down moving videos?
-# TODO: replace all instances of hearts and music notes with jp font glyphs as soon as it looks good
+# TODO: replace all instances of hearts and music notes with jp font glyphs as soon as it looks good?
 
 ######## VARIABLES ########
 label train_start_good:
@@ -790,8 +790,7 @@ label train_boarding:
     cs "You know, just a little-- {i}uhHH!{w=0.25}{nw}"
     play sound sfx_punch
 
-    # TODO: less crumnchy lupin sprite
-    # TODO: sfx - Lupin musical sting
+    # TODO: sfx - Lupin musical sting?
 
     show cs scared at mid_offscreen_left
     show tate shock flipped
@@ -846,7 +845,6 @@ label train_enter_sleeper:
     play music bedroom_day if_changed
     music bedroom_day
 
-    # TODO: better sleeper bg
     play sound sfx_sliding_door_close
     show car plains
     show amtrak_sleeper_interior_day
@@ -1147,7 +1145,7 @@ label train_enter_sleeper:
     cs "... Woah, Tate, why are you look--{w=0.25}{nw}"
     
     # TODO: tate needs a FURIOUS sprite
-    # TODO: bgm
+    # TODO: bgm?
 
     show tate srs flipped
     tate "{bt=a3-p10-s4}{size=+36}IT WAS {i}YOU!!" with hpunch
@@ -1187,7 +1185,7 @@ label train_enter_sleeper:
     play sound sfx_sliding_door_open
     n "Tate swiftly exits the room and runs off, not even bothering to shut the door behind them."
 
-    # TODO: bgm
+    # TODO: bgm?
 
     show cs disappointed
     n "CS looks distraught."
@@ -1221,8 +1219,6 @@ label train_enter_sleeper:
     n "CS and Arceus decide to call it an early night."
     n "CS effortlessly falls into a deep slumber."
     n "While the fold-out bed is indeed quite comfortable, Arceus struggles to get any rest."
-
-    # TODO: better sleeper bg
 
     scene
     show car plains night
@@ -3974,8 +3970,6 @@ label train_return_home_transition:
     billy "Need a ride? I'll take you to any destination for only $19.95!"
     show arceus happy flipped
     arceus "Welp, CS, we've found our other option!"
-
-    # TODO: my variables are kinda broken rn
 
     # GOT THE MONEY BACK?
     if train_ending_money_returned == True:
