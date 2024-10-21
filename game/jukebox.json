@@ -392,10 +392,11 @@
         },
         "neko_to_sanpo" : {
             "file": "neko_to_sanpo.ogg",
-            "title": "Neko To Sanpo",
+            "title": "ネコと散歩",
             "artist": "NEKO WORKs",
             "tags": ["CSBIII: Country"],
-            "album_art": "nekopara.png"
+            "album_art": "nekopara.png",
+            "trivia": "Romanized Title: Neko To Sanpo\nEnglish Title: Walking With Cats"
         },
         "real_world" : {
             "file": "real_world.ogg",
