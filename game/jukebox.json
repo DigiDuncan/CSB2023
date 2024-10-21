@@ -1060,10 +1060,11 @@
         },
         "winters_halloween" : {
             "file": "winters_halloween.ogg",
-            "title": "Please correct this title later",
-            "artist": "Please correct this artist later",
+            "title": "Winters",
+            "artist": "Toby Fox",
             "tags": ["CSBIII DX: Holiday Special", "New In DX"],
-            "album_art": "csbii.png"
+            "album_art": "hw_hack.png",
+            "trivia": "From the Earthbound Halloween Hack."
         },
         "funvalueland" : {
             "file": "funvalueland.ogg",

@@ -1050,6 +1050,7 @@ label dx_christmas_lights_out:
     cs "What? How bad is it?"
     mean "Grab my hand, I'll pull you up."
     play music winters_halloween
+    music winters_halloween
     scene snowed_in
     show cs sil_black:
         zoom 0.15
