@@ -137,5 +137,6 @@ screen music_screen(this_track):
             yalign 1.0
             background None
             text trivia:
+                text_align 0.5
                 xalign 0.5
                 yalign 0

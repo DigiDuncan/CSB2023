@@ -39,10 +39,10 @@ label train_dialogue:
 
     cs "Well, now what do you wanna do?"
     arceus "I dunno. After the night we had, I'm honestly happy to just do nothing at all."
-    arceus "I kind of just want to stay right where we're at."
+    arceus "I kinda just want to stay right where we're at."
     arceus "The view here is a hell of a lot nicer than the one coming up from Vegas, that's for sure."
     cs "That is true. It's a lot more green."
-    cs "Yeah, let's hang out here a while."
+    cs "Yeah, let's just hang out here awhile."
 
     
 
@@ -79,6 +79,7 @@ label train_dialogue:
     pause 1.0
     show cs
     show arceus
+    with dissolve
 
 
 
@@ -147,7 +148,7 @@ label train_dialogue:
         mean "... So, yeah!"
         show mean human hat happy
         mean "Maybe feet {i}are{/i} comparable to kids!"
-        pause 1.0
+        pause 2.0
         show tate sheepish at left
         tate "Wuh...?"
 
@@ -161,7 +162,16 @@ label train_dialogue:
         n "Tate gets a call on their cell phone."
         show tate srs
         show mean human hat annoyed
-        show tate_phone at manual_pos(0.25, 0.45) with dissolve
+
+        show tate_phone with MoveTransition(0.25):
+            xpos 0.25
+            ypos 0.65
+            alpha 0.0
+            parallel:
+                linear 0.25 alpha 1.0
+            parallel:
+                linear 0.25 ypos 0.45
+
         pause 1.0
         tate "..."
         show mean human hat annoyed
@@ -173,9 +183,18 @@ label train_dialogue:
         show mean human hat shocked
         n "Tate gets a call on their cell phone."
         show tate srs
-        show tate_phone at manual_pos(0.25, 0.45) with dissolve
 
-    pause 1.0
+        show tate_phone with MoveTransition(0.25):
+            xpos 0.25
+            ypos 0.65
+            alpha 0.0
+            parallel:
+                linear 0.25 alpha 1.0
+            parallel:
+                linear 0.25 ypos 0.45
+
+
+    pause 2.0
     play sound sfx_pickup_call
     show mean human hat annoyed
     pause 1.0
@@ -203,12 +222,11 @@ label train_dialogue:
     "..."
     pause 1.0
     show tate sheepish
+    "..."
     tate "Well, nice hearing from ya!"
     cs "Yeah! Have a safe trip!"
     show tate
     tate "You, too!"
-    
-    play sound sfx_end_call
 
     scene black with dissolve
 
@@ -218,6 +236,7 @@ label train_dialogue:
     show cs phone at left
     show arceus at right
     with dissolve
+    play sound sfx_end_call
 
     "..."
     pause 1.0
@@ -242,7 +261,7 @@ label train_dialogue:
 
     show arc_laptop at manual_pos(0.65, 0.55, 0.5) behind arceus with dissolve
     pause 0.5
-    play music "<from 3.6 to 228.52>nyan_of_a_lifetime.ogg" volume 0.05
+    play music "<from 3.6 to 228.52>/secret/pt/nyan_of_a_lifetime.ogg" volume 0.05
     pause 2.0
     n "Arceus pulls out a laptop and starts playing a game."
     pause 3.0
@@ -292,7 +311,7 @@ label train_dialogue:
         arceus "I wouldn't worry about it too much. The last few days have been a blur for me, too."
 
     pause 2.0
-    show cs
+    show cs with dissolve
 
 
 

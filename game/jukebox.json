@@ -1249,7 +1249,8 @@
             "title": "Space",
             "artist": "W∆W",
             "tags": ["CSBIII DX: Train", "New In DX", "Fun Values", "Minigames"],
-            "album_art": "moon.png"
+            "album_art": "moon.png",
+            "trivia": "Tate EX's theme."
         },
       "nyan_of_a_lifetime" : {
             "file": "secret/pt/nyan_of_a_lifetime.ogg",
@@ -1257,14 +1258,15 @@
             "artist": "DJ NYANKO SWITCHER",
             "tags": ["CSBIII DX: Train", "New In DX", "Fun Values", "Minigames"],
             "album_art": "nyan.png",
-            "trivia": "The {i}only{/i} reason why the Perfect Tate battle exists is because this track showed up in Tate's Soundcloud recommended feed one day."
+            "trivia": "The {i}only{/i} reason why the {i}Perfect Tate{/i} battle exists is because this track showed up in Tate's SoundCloud recommended feed one day."
         },
       "missingno" : {
             "file": "secret/dd/missingno_full.ogg",
             "title": "MissingNo",
             "artist": "TheInnuendo",
             "tags": ["New In DX"],
-            "album_art": "missingno.png"  
+            "album_art": "missingno.png",
+            "trivia": "Digi EX's theme."
       },
         "sfx_ringtone_addy" : {
             "file": "sfx/sfx_ringtone_addy.ogg",
