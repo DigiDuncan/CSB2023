@@ -132,7 +132,7 @@
         "img": "300",
         "type": "extra"
     },
-    "pencilovania":{
+    "car_dialogue":{
         "name": "Bored",
         "locked": "Are we there yet?",
         "unlocked": "Sit through the entire road trip.",
@@ -231,7 +231,7 @@
         "img": "souls",
         "type": "story"
     },
-    "beat_copguy_cs":{
+    "cs_beat_copguy":{
         "name": "Machine Gun",
         "locked": "???",
         "unlocked": "Defeat Copguy EX as CS.",
@@ -309,7 +309,7 @@
         "type": "story"
     },
     "csbii":{
-        "name": "Welcome to CSBIII, Mother Fucker",
+        "name": "Welcome to CSBIII, Motherfucker",
         "locked": "???",
         "unlocked": "Complete CSBII.",
         "img": "csbii",
@@ -393,7 +393,7 @@
         "type": "story",
         "dx": true
     },
-    "pencil_pain":{
+    "paincil":{
         "name": "60 Drillless WR",
         "locked": "Your wrist hurts.",
         "unlocked": "Get a perfect score of 1200.",
@@ -417,7 +417,7 @@
         "type": "extra",
         "dx": true
     },
-    "train_minigame":{
+    "trains_minigame":{
         "name": "Lots & Lots Of Trains!",
         "locked": "Aren't they just adorable?",
         "unlocked": "Play with some model trains.",
@@ -425,7 +425,7 @@
         "type": "story",
         "dx": true
     },
-    "train_minigame_perfect":{
+    "trains_perfect":{
         "name": "Conductor Skillz 188",
         "locked": "No potions of healing here.",
         "unlocked": "Win the train game with full health.",
@@ -472,7 +472,7 @@
         "img": "bios",
         "type": "extra"
     },
-    "bios":{
+    "jukebox":{
         "name": "The Brown Album",
         "locked": "Collect every song in the jukebox.",
         "unlocked": "Collect every song in the jukebox.",
