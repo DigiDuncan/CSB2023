@@ -938,6 +938,7 @@ label dx_christmas_intro:
     digi "I really thought I could set it up this time..."
 
     #lights out
+label dx_christmas_lights_out:
     sheriff "Hey uhh..."
     sheriff "I think I have finally become blind."
     linus "I think all of our eyes went out."
@@ -1058,6 +1059,12 @@ label dx_christmas_intro:
         zoom 0.15
         xpos 0.4
         ypos 0.5
+    show snow1
+    show snow2
+    show snow3
+    show snow4
+    show snow5
+    show snow6
     with dissolve
     mean "Look out in the distance."
     n "As CS and Mean stare out into the distance, they see nothing but an endless desert of snow, with the lamp poles poking out through."

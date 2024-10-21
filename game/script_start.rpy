@@ -1608,6 +1608,14 @@ image harold = "secret/up/harold.png"
 image mr_krupp = "secret/up/mr_krupp.png"
 image mr_krupp grin = "secret/up/mr_krupp_grin.png"
 
+#DX Holiday Special Misc.
+image snow1 = SnowBlossom("snow1.png", count = 200, fast = True, xspeed = (20000, 100))
+image snow2 = SnowBlossom("snow1.png", count = 200, fast = False, xspeed = (1000, 100))
+image snow3 = SnowBlossom("snow1.png", count = 200, fast = True, xspeed = (2000, 100))
+image snow4 = SnowBlossom("snow1.png", count = 200, fast = True, xspeed = (4000, 100))
+image snow5 = SnowBlossom("snow1.png", count = 200, fast = False, xspeed = (2000, 100))
+image snow6 = SnowBlossom("snow1.png", count = 200, fast = True, xspeed = (3000, 100))
+
 # Static Images
 image amtrak_dining_food = "food.png" 
 image amtrak_dining_pancake = "pancake.png"
