@@ -1438,6 +1438,7 @@ image after_true_title = Text("{size=+196}Spring 202X", text_align=0.5)
 # CS Holiday Special BGs
 image snowed_in = "bg/snowed_in.png"
 image cs_kitchen = "bg/cs_kitchen.png"
+image cs_basement = "bg/cs_basement.png"
 
 # CS wacky Kuwait Adventures: Mika Edition (Deluxe Content [With Funky Kong {And Dante from Devil may Cry}])
 image kuwait_lieutenant_snow = "characters/kuwait_lieutenant_snow.png"

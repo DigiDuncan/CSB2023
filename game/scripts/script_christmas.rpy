@@ -948,7 +948,12 @@ label dx_christmas_cooking:
     digi "I really thought I could set it up this time..."
 
     #lights out
+screen flashlight_demo:
+    add Flashlight()
+
 label dx_christmas_lights_out:
+    $ mouse_visible = False
+    scene black
     sheriff "Hey uhh..."
     sheriff "I think I have finally become blind."
     linus "I think all of our eyes went out."
@@ -985,6 +990,10 @@ label dx_christmas_lights_out:
     n "Slowly but surely, CS makes his way into the basement."
     cs "Alright, I just need to find the breaker."
     n "CS feels around, and manages to find a flashlight on a table."
+    scene cs_basement
+    show cs at center
+    with dissolve
+    show screen flashlight_demo
     cs "Thank god, I can actually see."
     cs "Found it!"
     n "CS opens the breaker and flicks off and on the switches."
