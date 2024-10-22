@@ -275,7 +275,7 @@ label csbi_walmart:
     pause 2.0
     cashier "Have a nice day."
     show cs happy
-    cs "You too! Bye!"
+    cs "You, too! Bye!"
     show cs at mid_offscreen_right with moveoutright
     pause 1.0
     hide pringles
@@ -311,7 +311,7 @@ label csbi_walmart:
     play sound sfx_driving volume 0.5
     cs "Let's get home before that guy doctors {i}my{/i} crotch!"
     scene black with dissolve
-    n "CS drives home and manages to avoid reenacting one of his favorite car crash videos."
+    n "CS drives home, managing to avoid reenacting one of his favorite car crash videos."
     jump csbi_room
 
 label csbi_room:
@@ -328,6 +328,7 @@ label csbi_room:
     show cs happy flipped with moveinright
     cs "Ahhh. It's good to be home!"
     show cs surprised flipped
+    cs "What to do, now..."
     cs "You know, I haven't put out a YTP in a while. I should work on one of my in-progress ones."
     scene craptop_bg
     show craptop edit
@@ -442,7 +443,7 @@ label csbi_room:
     cs "Welp, that's one thing taken care of."
     cs "I guess I'll work on my new YTP while I wait."
     scene black with dissolve
-    n "Time passes and the doorbell rings."
+    n "After some time, the doorbell rings."
     play sound sfx_doorbell volume 0.5
     stop music fadeout 3.0
     music end
@@ -451,8 +452,8 @@ label csbi_room:
     cs "Oh, they're here!"
     cs "Let me go get the door..."
     show cs at left with move
-    show door_open behind cs
     play sound sfx_house_door_open
+    show door_open behind cs with dissolve
     cs "Hello! I am CS, and I--"
     play music hohsis_theme volume 0.2 if_changed
     music hohsis_theme
@@ -463,7 +464,7 @@ label csbi_room:
         linear 2.5 alpha 1.0
     with MoveTransition(2)
     if fun_value(FUN_VALUE_MUSIC):
-        ed "Alright, that will be Alfred Hitchcock Intro Theme."
+        ed "Alright, that will be one {i}Alfred Hitchcock{/i} intro theme."
         show cs disappointed
         cs "What?"
         show cs
@@ -479,14 +480,19 @@ label csbi_room:
     ed "Yeah, well, corporate policies just changed five seconds ago. Pay up."
     cs "Oh... alright..."
     show cs disappointed flipped with determination
-    hide cs with moveoutleft
+    show cs disappointed flipped at offscreenleft with move
+    show cs_wallet at offscreenleft with determination
     pause 2.0
-    show cs at left with moveinleft
+    show cs at left 
+    show cs_wallet at manual_pos(0.25, 0.6, 0.5):
+        zoom 0.2
+    with moveinleft
     pause 1.0
     cs "Here you go!"
     play sound sfx_moneyfalls
     show spent_bits at t_fake_rpg_text(0.075, 0.1, 0.5)
     pause 0.5
+    hide cs_wallet with dissolve
     cs "I'll get out of your guys' hair while you work."
     if fun_value(FUN_VALUE_RARE):
         play sound sfx_gleam
@@ -521,7 +527,13 @@ label csbi_room:
     pause 1.0
     "..."
     ed "... But, now that we're here, what should we actually {i}do?"
-    "Ed, Wesley, and Richard" "Hmm..."
+
+    # TODO: implement multiple dialogue
+
+    ed "Hmm..." (multiple = 3)
+    wesley "Hmm..." (multiple = 3)
+    rich "Hmm..." (multiple = 3)
+
     pause 2.0
     wesley "Let's go check this other room. We might get some ideas."
     show ed flipped with determination
@@ -550,7 +562,8 @@ label csbi_room:
     wesley "How about we burn down the house?"
     rich "Eh..."
     show wesley flipped
-    ed "Are you insane?! We are a {i}home repair company!{/i}"
+    ed "Are you insane?!" with vpunch
+    ed "Are you insane?!{fast} We are a {i}home repair company!{/i}"
     ed "We have a reputation to uphold!"
     wesley "{i}Do{/i} we? After all of those videos he put out making fun of us?"
     show wesley
@@ -580,7 +593,13 @@ label csbi_room:
     show rich at right
     with moveinright
     rich "Lemme call our JoJ UFO!"
-    "Ed, Wesley, and Richard" "I'm beaming up!"
+
+    # TODO: implement multiple dialogue
+
+    ed "I'm beaming up!"
+    wesley "I'm beaming up!"
+    rich "I'm beaming up!"
+
     play sound sfx_beam volume 0.6
     show beam at xstretch_in
     pause 2.0
@@ -622,9 +641,13 @@ label csbi_michael_house:
     n "CS pulls out his phone and calls Michael."
     play sound sfx_dial_rosen
     pause 12.5
+
     show rosen_abode at mid_offscreen_right
     show michael at right
+    show rosen_phone at manual_pos(0.875, 0.625, 0.5):
+        rotate -10
     with moveinright
+
     michael "Hello!"
     cs "Hey, Michael! How're you doin' today?"
     michael "I'm feeling rather noice today."
@@ -644,6 +667,7 @@ label csbi_michael_house:
     michael "See you soon!"
     show cs at left
     hide rosen_abode
+    hide rosen_phone
     hide michael
     with moveoutright
     play sound sfx_end_call
@@ -746,7 +770,7 @@ label csbi_rosen_house:
     michael "This is {i}horrible!"
     michael "Get {i}out!{/i} Get out of here!"
     phil "But, it seals, and bonds--{w=0.5}{nw}"
-    michael "{i}OUT!"
+    michael "{i}OUT!" with hpunch
     hide phil with moveoutright
     show cs disappointed flipped at right
     pause 1.0
@@ -928,9 +952,10 @@ label csbi_end:
     show cs angry flipped at right with moveinright
     cs "Which way to the elevator?"
     cs "{i}Now!"
+    worker_5 "Uhh..."
     hide worker_5
     show worker_5alt at left
-    worker_5 "Uhh... that way!"
+    worker_5 "Uhh...{fast} that way!"
     cs "Thanks! And, also..."
     n "CS clocks the worker in the face!"
     show cs angry flipped at left
@@ -948,53 +973,36 @@ label csbi_end:
     menu:
         "Which way?"
         "Left":
-            jump csbi_end_left
+            $ ch1_direction = "left"
+            jump csbi_direction
         "Right":
-            jump csbi_end_right
+            $ ch1_direction = "right"
+            jump csbi_direction
 
-label csbi_end_left:
+# i have combined the two labels! please take note of this for future butterfly effect stuff! - tate
+label csbi_direction:
     scene hoh_hq5
-    show worker_6 at right
+
+    if ch1_direction == "left":
+        $ ch1_direction_sprite = 6
+        $ ch1_direction_line = "A...{w=0.5} pineapple?"
+    if ch1_direction == "right":
+        $ ch1_direction_sprite = 7
+        $ ch1_direction_line = "A fucking chicken?"
+
+    show expression "worker_%s" % ch1_direction_sprite at right
     with dissolve
     show cs angry at left with moveinleft
-    cs "A... pineapple?"
+    cs "[ch1_direction_line]"
     show cs angry at right 
     with MoveTransition(0.25)
     play sound sfx_punch
-    show worker_6 at offscreenright:
+    show expression "worker_%s" % ch1_direction_sprite at offscreenright:
         linear 0.1 xzoom -1
         linear 0.1 xzoom 1
     with MoveTransition(0.25)
     with hpunch
     show cs angry at left with move
-    $ achievement_manager.unlock("HoH SiS's Most Wanted")
-
-    pause 1.0
-    scene black with dissolve
-    scene hoh_elevator
-    show cs angry
-    with dissolve
-    pause 2.0
-    play sound sfx_elevator_ding
-    scene black with dissolve
-    jump csbii_start
-
-label csbi_end_right:
-    scene hoh_hq5
-    show worker_7 at right
-    with dissolve
-    show cs angry at left with moveinleft
-    cs "A fucking chicken?"
-    show cs angry at right 
-    with MoveTransition(0.25)
-    play sound sfx_punch
-    show worker_7 at offscreenright:
-        linear 0.1 xzoom -1
-        linear 0.1 xzoom 1
-    with MoveTransition(0.25)
-    with hpunch
-    show cs angry at left with move
-
     $ achievement_manager.unlock("HoH SiS's Most Wanted")
 
     pause 1.0

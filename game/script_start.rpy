@@ -1643,6 +1643,7 @@ image colorbars = "colorbars.png"
 image con_screen = "bg/con_screen.png"
 image crt_magnet = "crt_magnet.png"
 image cs_phone = "cs_phone.png"
+image cs_wallet = "cs_wallet.png"
 image cswanted = "wanted_poster.png"
 image dog = "dog.png"
 image donut_1 = "donut_1.png"
@@ -1686,6 +1687,7 @@ image pot_lift = "pot_lift.png"
 image pot_sunken = "pot_sunken.png"
 image pringles = "pringles.png"
 image renault = "renault.png"
+image rosen_phone = "rosen_phone.png"
 image sansbrick = "sansbrick.png"
 image slime16 = "secret/up/slime16.png"
 image slime16 fire = "secret/up/slime16_fire.png"
@@ -2467,6 +2469,9 @@ default train_pancake_fun_value = False
 default train_skip_at_chicago = None
 default train_tate_is_fragile_fun_value = False
 default train_ending_money_returned = False
+default ch1_direction = "left"
+default ch1_direction_sprite = 6
+default ch1_direction_line = "A...{w=0.5} pineapple?"
 default ch2_cs_attack_used = "pushed"
 default cs_chosen_form = "cs_vs_tate_punch"
 

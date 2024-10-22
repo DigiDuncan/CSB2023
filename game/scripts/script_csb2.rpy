@@ -437,7 +437,7 @@ label csbii_breakout:
     arceus "So, what's the plan? I've been trying to break outta here for five years."
     cs "Well, for starters, I need to get a feel for the routine here."
     arceus "I really can't stand being here another minute. I'll give you the rundown. Hasn't changed then, won't change now." 
-    n "Arceus describes the prison routine to CS."  # DX: Replace with blur, fade out then back in
+    n "Arceus describes the prison routine to CS."  # TODO DX: Replace with blur, fade out then back in
     cs "I think I got all that."
     arceus "So, what's our plan, boss?"
     cs "I've gotta grab a few plastic spoons from the mess hall, a cup of molten chocolate, a guard uniform, and a change of shorts."
@@ -797,7 +797,6 @@ label csbii_ltt:
     arceus "I had a feeling that that would work!"
     anno "Let's celebrate!"
     
-    # audio is not ready yet - tate
     dxcom donuts
     
     show donut_1 at manual_pos(0.2, 0.7)
