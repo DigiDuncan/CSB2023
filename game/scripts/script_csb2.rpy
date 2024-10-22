@@ -774,7 +774,7 @@ label csbii_ltt:
             linear 0.5 ypos 0.8
         parallel:
             linear 0.5 zoom 0.7
-    pause 0.5
+    pause 1.0
 
     # TODO: rummaging sfx
     arceus "Hnng...{w} hmmpmh... {w}{i}aha!"
@@ -821,7 +821,7 @@ label csbii_ltt:
     # TODO: use a different sound here later
     play sound sfx_cat_crash
     with hpunch
-    pause 1.0
+    pause 1.5
     n "He discards both items and rushes out of the alley."
 
     show arceus

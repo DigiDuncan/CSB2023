@@ -472,7 +472,7 @@ define linus = Character("Linus", callback = renpy.partial(char_callback, name =
 define colton = Character("Colton", callback = renpy.partial(char_callback, name = "colton"))
 define luke = Character("Luke", callback = renpy.partial(char_callback, name = "luke", beep = "luke"))
 define sheriff = Character("Sheriff", callback = renpy.partial(char_callback, name = "sheriff", beep = "sheriff"))
-define taran = Character("Taran", callback = renpy.partial(char_callback, name = "taran"))
+define taran = Character("Taran", callback = renpy.partial(char_callback, name = "taran", beep = "taran"))
 
 # CSBIII Friend Route Character Definitions (NPCs only, friends have their own section)
 define bomaha = Character("Omaha", callback = renpy.partial(char_callback, name = "obama", beep = "obama"))
@@ -1641,6 +1641,8 @@ image chopper_ladder dark = "dark:chopper_ladder.png"
 image chopper_sil = "chopper_sil.png"
 image colorbars = "colorbars.png"
 image con_screen = "bg/con_screen.png"
+image cool_crab = "cool_crab.png"
+image cool_crab dusk = "dusk:cool_crab.png"
 image crt_magnet = "crt_magnet.png"
 image cs_phone = "cs_phone.png"
 image cs_wallet = "cs_wallet.png"
@@ -2475,6 +2477,7 @@ default ch1_direction = "left"
 default ch1_direction_sprite = 6
 default ch1_direction_line = "A...{w=0.5} pineapple?"
 default ch2_cs_attack_used = "pushed"
+default ch3_showed_ytps = None
 default cs_chosen_form = "cs_vs_tate_punch"
 
 #BTTF

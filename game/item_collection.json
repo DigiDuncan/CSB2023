@@ -67,6 +67,13 @@
         "desc": "One of many random fucking things CS keeps... somewhere. These are probably stale as hell.",
         "rarity": "Uncommon"
     },
+    "cool_crab": {
+        "img": "cool_crab",
+        "name": "Cool Crab",
+        "owner": "Nobody",
+        "desc": "His name is Arthur and his pen is his prized posession.",
+        "rarity": "Common"
+    },
     "craptop": {
         "img": "craptop",
         "name": "CS's Craptop",
@@ -292,7 +299,7 @@
         "img": "spoon",
         "name": "Plastic Spoon",
         "owner": "CS, Anno, and Arceus",
-        "desc": "Surprisingly durable for what they are.",
+        "desc": "Surprisingly durable for what it is.",
         "rarity": "Common",
         "dx": true
     },

@@ -1,5 +1,3 @@
-# TODO: text beeps for LTT staff
-
 label csbiii_start:
     $ persistent.csb3a_unlocked = True
     stop music fadeout 3.0
@@ -565,6 +563,7 @@ label csbiii_reviews:
     n "CS and Linus rush to the front door."
     scene black with dissolve
     pause 0.5
+    $ ch3_showed_ytps = False
     jump csbiii_arceus_appears
     
 label csbiii_ytp_edit:
@@ -635,6 +634,7 @@ label csbiii_ytp_fan:
     linus "What?"
     linus "Hold on, lemme check on this."
     n "CS and Linus rush to the front door."
+    $ ch3_showed_ytps = False
     scene black with dissolve
     pause 0.5
     jump csbiii_arceus_appears
@@ -657,8 +657,15 @@ label csbiii_arceus_appears:
         arceus "CS! There you are! We need to go, ASAP!"
     play music hired_guns volume 0.5 if_changed
     music hired_guns
-    show linus
-    linus "CS? You know this... person?"
+
+    if ch3_showed_ytps == True:
+        show linus
+        linus "So you {i}do{/i} have a furry fanbase who wants to join LTT! Damn it, CS, I should've known."
+        show cs worried
+        cs "Shut up, Linus!"
+    else:
+        show linus
+        linus "CS? You know this... person?"
     show cs worried
     cs "It's a long story."
     cs "Arceus, what's going on? Where have you been?"
@@ -695,6 +702,7 @@ label csbiii_both_fan:
     show cs flipped at center with moveinright
     show cs with determination
     show linus at mid_left with moveinright
+    show linus flipped
     show taran at left with moveinright
     show taran flipped at left with determination
     show luke at mid_right with moveinright
@@ -712,54 +720,35 @@ label csbiii_both_fan:
     play sound sfx_ytpintro
     n "Half an hour passes, and CS has shown LTT what YTPs are all about."
     hide black with dissolve
+    pause 1.0
     cs "Welp. Those are some of the best ones that I could find."
-    taran "Hey, those were actually really funny. Linus, weren't you telling me about how much you actually {i}liked{/i} YTPs?"
+    taran "Hey, those were actually really funny!"
+    taran "Linus, weren't you telling me about how much you actually {i}liked{/i} YTPs?"
     linus "Nooooo...?"
     luke "Now that you say that..."
     linus "Alright, fine! I guess if you all like it too, we could put some on our channel from time to time."
     show cs happy
     $ achievement_manager.unlock("Crowd Pleaser")
     cs "Hell yeah!"
-    linus "But you still have to help with some other videos as well, not just YTPs."
-    show cs
+    linus "But, you still have to help with some other videos as well, not just YTPs."
+    show cs flipped
     cs "Alright, that's fair."
     linus "Well, the rest of you can go back to what you were doing."
     colton "Oh, yeah, Linus? Before I go, I was told someone was banging on the door to enter just a minute ago."
     colton "They were dressed up like a furry or something."
     linus "Great, CS, did you attract your furry fanbase to work here as well?"
+    show cs disappointed flipped
     cs "I swear, this doesn't have anything to do with my community."
     linus "Wait, what do you mean? I was just joking about the furry fanbase."
     cs "..."
     linus "Whatever, let's just go check out who it is."
     scene black with dissolve
 
-    n "CS and Linus rush to the front door."
-    scene frontdoor with dissolve
-    show linus at right with moveinleft
-    show cs at center with moveinleft
-    n "Linus goes to open the door."
-    linus "Who's there? Is anyone here?"
-    n "Suddenly, Arceus rushes in."
-    show arceus worried at mid_right with moveinright
-    if fun_value(FUN_VALUE_MUSIC):
-        arceus "CS! There you are! Hired guns are coming after us!"
-    else:
-        arceus "CS! There you are! We need to go, ASAP!"
-    play music hired_guns volume 0.5 if_changed
-    music hired_guns
-    linus "So you {i}do{/i} have a furry fanbase who wants to join LTT! Damn it, CS, I should've known."
-    show cs worried
-    cs "Shut up, Linus!"
-    cs "Arceus, what's going on? Where have you been?"
-    arceus "Look, CS, we don't have much time. I know that you've been living here for a while, but the cops are still looking to extradite us back to America, and they are headed to LTT to search for you!"
-    linus "{i}What?{/i} CS, why are the cops chasing you? This could seriously damage our reputation {size=-15}more than the time I mentioned I dropped hard Rs as a kid!"
-
-    menu:
-        "What will CS do?"
-        "I'm going to stay with LTT." (type = "bad"):
-            jump csbiii_cops_ltt
-        "Escape with Arceus." (type = "true"):
-            jump csbiii_arc_escape
+    n "CS and Linus rush to the front door." 
+    $ ch3_showed_ytps = True
+    scene black with dissolve
+    pause 0.5
+    jump csbiii_arceus_appears
 
 label csbiii_cops_ltt:
     stop music fadeout 3.0
@@ -1682,6 +1671,7 @@ label csbiii_west:
     scene washington_road day
     show cs at left
     show arceus at right
+    with dissolve
     arceus "It's just the ocean. Let's go another direction."
     menu:
         "North":
@@ -1705,6 +1695,7 @@ label csbiii_west2:
     scene washington_road dusk
     show cs dusk at left
     show arceus dusk at right
+    with dissolve
     arceus "Still just the ocean..."
     menu:
         "North":
@@ -1726,12 +1717,15 @@ label csbiii_west3:
     arceus "I really don't want to go there again..."
     cs "Nah, we've got this. For sure this time."
 
-    # TODO: funny crab item
-
+    show cool_crab dusk at manual_pos(0.3, 0.6, 0.5) with dissolve:
+        zoom 0.5
+    
     n "CS and Arceus find a cool-looking crab, but still just the ocean again."
+    hide cool_crab
     scene washington_road
     show cs dark at left
     show arceus angry dark at right
+    with dissolve
     cs "Hey! That's quite an epic crustacean!"
     arceus "Alright, cool, can we pick another direction that {i}isn't{/i} west this time?"
     menu:
@@ -1755,6 +1749,7 @@ label csbiii_west4:
     scene washington_road morning
     show cs happy at left
     show arceus angry at right
+    with dissolve
     menu:
         "North":
             jump csbiii_north2
@@ -1770,6 +1765,7 @@ label csbiii_west5:
     scene washington_road day
     show cs at left
     show arceus angry at right
+    with dissolve
     arceus "..."
     menu:
         "North":
@@ -1786,6 +1782,7 @@ label csbiii_west6:
     scene washington_road dusk
     show cs dusk at left
     show arceus angry dusk at right
+    with dissolve
     arceus "..."
     menu:
         "North":
@@ -1802,6 +1799,7 @@ label csbiii_west7:
     scene washington_road
     show cs dark at left
     show arceus angry dark at right
+    with dissolve
     arceus "..."
     menu:
         "North":
@@ -1818,6 +1816,7 @@ label csbiii_west8:
     scene washington_road morning
     show cs at left
     show arceus angry at right
+    with dissolve
     $ achievement_manager.unlock("Ocean Man")
     arceus "Player. {w=0.5}Stop. {w=0.5}Going. {w=0.5}West."
     menu:
@@ -1829,3 +1828,5 @@ label csbiii_west8:
             jump south_start
         "West":
             jump csbiii_west5
+
+# TODO: if we ever do a beach episode, maybe this is direction to go lmao
