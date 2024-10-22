@@ -288,6 +288,14 @@
         "rarity": "Legendary",
         "dx": true
     },
+    "spoon": {
+        "img": "spoon",
+        "name": "Plastic Spoon",
+        "owner": "CS, Anno, and Arceus",
+        "desc": "Surprisingly durable for what they are.",
+        "rarity": "Common",
+        "dx": true
+    },
     "switch": {
         "img": "switch",
         "name": "Nintendo Switch",

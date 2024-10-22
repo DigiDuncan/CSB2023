@@ -370,6 +370,7 @@ label csbii_jail:
     music end
     pause 2.0
     scene jail_inside with dissolve
+    pause 1.0
     show cs prison flipped at offscreenright
     show copguy at offscreenright
     with determination
@@ -385,10 +386,12 @@ label csbii_jail:
     cs "{i}In under 90 minutes!"
     copguy "Hmm... okay. You're a tough enough guy to handle this cellmate, then."
 
+    show copguy flipped
     hide copguy with moveoutright
     pause 1.0
     show arceus prison at right with moveinright
     pause 1.0
+    play sound sfx_jailcell_shut
     play music stal volume 0.4 if_changed
     music stal
     if fun_value(FUN_VALUE_MUSIC):
@@ -401,19 +404,21 @@ label csbii_jail:
     arceus "Putting spyware on a politician's phone."
     cs "Yeah, no, that checks out."
     arceus "And, from my recent debug of {i}CSBounciness,{/i} I know that {i}you're{/i} in for beating up workers at HoH SiS."
+    show cs disappointed prison
     cs "Your what?"
     arceus "... Never mind."
     arceus "Why'd you do it, anyhow?"
-    show cs prison_worried at left
     cs "I was 100-percent unsatisfied."
     arceus "As was I. As was I..."
-    n "A brief moment of silence..."
+    pause 1.0
+    "..." 
+    pause 1.0
     show cs prison at left
     arceus "Welp. I'm tired of this place. Wanna break out?"
     cs "Eh... sure, why not. I've played plenty of {i}The Escapists.{/i} I should be able to figure it out."
     cs "We should break out at least one other person though."
     arceus "If you say so... Who were you thinking of breaking out?"
-    cs "Let's just break out that guy next to us. I think his name was Anno...?"
+    cs "Let's just break out that guy next to us. I think his name was Anno{w=0.1}.{w=0.1}.{w=0.1}.{w=0.1}?"
     arceus "Anno? Sure. I've seen what he's capable of, so he may be of use to us."
     cs "Alright, then! Let's get going!"
 
@@ -437,22 +442,37 @@ label csbii_breakout:
     arceus "So, what's the plan? I've been trying to break outta here for five years."
     cs "Well, for starters, I need to get a feel for the routine here."
     arceus "I really can't stand being here another minute. I'll give you the rundown. Hasn't changed then, won't change now." 
-    n "Arceus describes the prison routine to CS."  # TODO DX: Replace with blur, fade out then back in
-    cs "I think I got all that."
+    
+    scene black with dissolve
+    pause 0.5
+    n "Arceus describes the prison routine to CS."
+    pause 0.5
+    
+    scene jail_cell
+    show cs prison at left
+    show arceus prison at right
+    with dissolve
+    pause 1.0
+
+    cs "... Cool, I think I got all that."
     arceus "So, what's our plan, boss?"
     cs "I've gotta grab a few plastic spoons from the mess hall, a cup of molten chocolate, a guard uniform, and a change of shorts."
     arceus "... Why a change of shorts?"
-    show cs prison_worried at left
+    show cs disappointed prison at left
     cs "You kidding me? I'm gonna shit myself, 'cause this is scary as hell."
     arceus "Fair enough."
+    pause 0.5
     hide screen dxcom
-    scene black with dissolve
-
     stop music fadeout 3.0
     music end
+    scene black with dissolve
+    pause 0.5
+
     n "The day comes to an end and the next one follows."
-    n "CS and Arceus gather the required essentials for their escape. Along the way, they inform Anno, who more than happily complies with the plan." 
+    n "CS and Arceus gather the required essentials for their escape. Along the way, they inform Anno, who more than happily complies with the plan."
+    pause 1.0
     centered "The next evening..."
+    pause 0.5
     play music moongazer volume 0.5 if_changed
     music moongazer
     if fun_value(FUN_VALUE_MUSIC):
@@ -470,7 +490,27 @@ label csbii_breakout:
     cs "Check."
     cs "Alright, men! Let's get the heck out of here!"
 
+    show spoon as first:
+        zoom 0.5
+        xpos 0.25
+        ypos 1.0
+        linear 0.5 ypos 0.55
+    show spoon as second:
+        zoom 0.5
+        xpos 0.6
+        ypos 1.0
+        linear 0.5 ypos 0.5
+    show spoon as third:
+        zoom 0.5
+        xpos 0.9
+        ypos 1.0
+        linear 0.5 ypos 0.6
+    with dissolve
+
+    pause 0.5
     scene black with dissolve
+    pause 0.5
+    
 
     n "In the dark of night, the three begin chipping away at their cell floor."
     n "Upon breaking through, they set up makeshift dummies in their beds with their prison jumpsuits, then don their acquired guard uniforms."
@@ -495,16 +535,19 @@ label csbii_breakout:
     hide anno guard
     hide arceus
     with dissolve
+    pause 1.0
     n "The three continue to dig for hours, until their hands begin to blister and their spoons break."
     arceus "Based on my instinct, and on my tiredness, this should be far enough."
     n "The now-escaped fugitives dig upwards for their ascent towards the surface."
+    pause 0.5
+    
+    hide screen dxcom
+    scene black
+    with dissolve
     stop music fadeout 3.0
     music end
+    pause 1.0
 
-    hide screen dxcom
-    hide cs with dissolve
-    hide arceus with dissolve
-    hide anno with dissolve
     jump csbii_bordercrossing
 
 label csbii_bordercrossing:
@@ -517,6 +560,7 @@ label csbii_bordercrossing:
         n "CS, Anno, and Arceus emerge and begin heading north towards the border crossing."
     n "A wild border guard appears."
     show border_guard at center with dissolve
+    pause 0.5
     # INTENTIONAL DISSOLVE: Pokemon reference
     if fun_value(FUN_VALUE_COMMON):
         border_guard "Eh, Schnitzelburg!"
@@ -527,8 +571,10 @@ label csbii_bordercrossing:
     with moveinleft
     arceus "Colour is spelled with a u, eh."
     border_guard "Works for me, eh."
+    pause 0.5
 
-    scene canada with dissolve 
+    scene canada with dissolve
+    pause 1.0
     n "Some time passes as the party ventures forth into the land of Canada."
     cs "Arceus, can we stop somewhere? I'm getting hungry."
     anno "Yeah, we've been walking for miles now."
@@ -547,7 +593,7 @@ label csbii_bordercrossing:
     "..."
     cs "Prison food just isn't all that filling."
     arceus "I suppose we could find a Tim Horton's. It's as common in Canada as McDonald's is in America."
-    n "Anno and CS nod aggressively."
+    n "Anno and CS nod enthusiastically."
     n "Arceus sniffs the air."
     arceus "There's one just over here, come on."
 
@@ -557,7 +603,7 @@ label csbii_bordercrossing:
     show cs disappointed at left
     with dissolve
     pause 1.0
-    cs "I'm starving after all that walking. I need a donut."
+    cs "I'm starving after all that walking. I can't wait to eat a donut."
     show cs at offscreenright with move
     show arceus flipped at offscreenright with moveinleft
     show anno at offscreenright with moveinleft
@@ -720,28 +766,66 @@ label csbii_ltt:
     show arceus flipped with moveinleft
 
     n "Arceus rummages around in the dumpsters behind LMG."
+    show arceus flipped:
+        xanchor 0.5
+        parallel:
+            linear 0.5 xpos 0.7
+        parallel:
+            linear 0.5 ypos 0.8
+        parallel:
+            linear 0.5 zoom 0.7
+    pause 0.5
+
+    # TODO: rummaging sfx
     arceus "Hnng...{w} hmmpmh... {w}{i}aha!"
-    show craptop at manual_pos(0.55, 0.5) with dissolve
+    pause 0.5
+    arceus "So, I just need..."
+
+    show arceus :
+        xanchor 0.5
+        parallel:
+            linear 0.5 xpos 0.3
+        parallel:
+            linear 0.5 ypos 0.9
+        parallel:
+            linear 0.5 zoom 1.1
+
+    # TODO: rummaging more sfx
+    pause 1.0
+    arceus "Come on..."
+    show craptop at manual_pos(0.1, 0.5) with dissolve
     n "Arceus finds an old laptop."
     arceus "Perfect."
+
+    show arceus flipped at center 
+    show craptop at manual_pos(0.55, 0.5)
+    with move
+    pause 0.5
+
     play sound sfx_keyboard
     n "Within minutes, Arceus has hacked the Canadian government records to display CS as having a valid work visa."
     arceus "Even their security is too nice..."
     # TODO: please replace this with an accurate image. idk what it actually looks like -tate
     show crt_magnet at manual_pos(0.35, 0.6) with dissolve
-    n "Arceus digs through the dumpster more and finds a magnet from an old CRT."
+    n "Arceus produces the old CRT magnet he found a moment ago."
     show crt_magnet at manual_pos(0.55, 0.5) with MoveTransition(0.5)
     n "He places it against the laptop, corrupting the hard drive instantly."
+    play sound sfx_bluescreen
+    pause 1.0
     arceus "Without a trace."
-    hide craptop
-    hide crt_magnet
-    with dissolve
+    show craptop at manual_pos(1.2, 0.6, 0.5):
+        linear 0.5 rotate 180
+    show crt_magnet at manual_pos(1.1, 0.8, 0.5):
+        linear 0.5 rotate 180
+    with MoveTransition(0.25)
+    # TODO: use a different sound here later
+    play sound sfx_cat_crash
+    with hpunch
+    pause 1.0
     n "He discards both items and rushes out of the alley."
-    pause 0.5
 
-    hide arceus flipped
     show arceus
-    hide arceus with moveoutleft
+    show arceus at offscreenleft with MoveTransition(0.25)
 
     scene outside_ltt
     show cs disappointed at left
