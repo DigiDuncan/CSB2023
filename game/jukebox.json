@@ -34,7 +34,8 @@
             "title": "Bubble Tea",
             "artist": "dark cat",
             "tags": ["Menus"],
-            "album_art": "bubbletea.png"
+            "album_art": "bubbletea.png",
+            "trivia": "The unoffical DPN / CSBIII Theme song."
         },
         "what_the_night_will_bring" : {
             "file": "what_the_night_will_bring.ogg",
@@ -55,7 +56,8 @@
             "title": "Let's hear my baby",
             "artist": "Walkman",
             "tags": ["CSBI"],
-            "album_art": "tracker.png"
+            "album_art": "tracker.png",
+            "trivia": "The unoffical CSBI Theme song."
         },
         "canyon" : {
             "file": "canyon.ogg",
@@ -99,14 +101,16 @@
             "title": "Time for a Smackdown!",
             "artist": "Mr. Sauceman",
             "tags": ["CSBI", "CSBII"],
-            "album_art": "pizzatower.png"
+            "album_art": "pizzatower.png",
+            "trivia": "Originally called {i}Office Puncher{/i} in the game files, we were going to name all of the songs internally after what was happening in that part of the game."
         },
         "beautiful_hills" : {
             "file": "beautiful_hills.ogg",
             "title": "Beautiful Hills",
             "artist": "Network Music Ensemble",
             "tags": ["CSBI", "New In DX"],
-            "album_art": "beautiful_hills.png"
+            "album_art": "beautiful_hills.png",
+            "trivia": "The Home Savers Foundation Repair Theme."
         },
         "card_castle" : {
             "file": "card_castle.ogg",
@@ -127,7 +131,8 @@
             "title": "stal",
             "artist": "C418",
             "tags": ["CSBII", "CSBIII: Country"],
-            "album_art": "minecraft.png"
+            "album_art": "minecraft.png",
+            "trivia": "The unoffical Arceus Theme song."
         },
         "moongazer" : {
             "file": "moongazer.ogg",
@@ -264,7 +269,8 @@
             "title": "Echoing?",
             "artist": "Pakoo",
             "tags": ["CSBIII"],
-            "album_art": "trackerevil.png"
+            "album_art": "trackerevil.png",
+            "trivia": "One, if not the only song that still keeps the original internal naming for music."
         },
         "insane_personalities" : {
             "file": "insane_personalities.ogg",
@@ -320,7 +326,8 @@
             "title": "Take a Trip from Me",
             "artist": "u4ia",
             "tags": ["CSBIII: Archival"],
-            "album_art": "tracker.png"
+            "album_art": "tracker.png",
+            "trivia": "The unoffical Archival Theme song."
         },
         "everybody_wants" : {
             "file": "everybody_wants.ogg",
@@ -369,7 +376,8 @@
             "title": "village_1_JP013BM",
             "artist": "Yuuka Kazami",
             "tags": ["CSBIII: Country", "New In DX"],
-            "album_art": "yuuka_town.png"
+            "album_art": "yuuka_town.png",
+            "trivia": "From... RPG Maker."
         },
         "automatic_love" : {
             "file": "automatic_love.ogg",
@@ -450,7 +458,8 @@
             "title": "Mm Select",
             "artist": "Matthew Simmonds",
             "tags": ["CSBIII: East", "CSBIII: South", "CSBIII DX: Train"],
-            "album_art": "tracker.png"
+            "album_art": "tracker.png",
+            "trivia": "The unoffical Billy Mays Theme song. Originally called internally, {i}CS Did Something.{/i}"
         },
         "billy_radio" : {
             "file": "billy_radio.ogg",
@@ -474,7 +483,7 @@
             "album_art": "homedepot.png"
         },
         "candle_world" : {
-            "file": "home_depot.ogg",
+            "file": "candle_world.ogg",
             "title": "Candle World",
             "artist": "Kikiyama",
             "tags": ["CSBIII: East", "CSBIII: Country"],
@@ -485,7 +494,8 @@
             "title": "Blazing Corridor",
             "artist": "Kikiyama",
             "tags": ["CSBIII: East"],
-            "album_art": "yume.png"
+            "album_art": "yume.png",
+            "trivia": "This is more of a sound effect than a song, but it is listed as a song in the offical Yume Nikki OST."
         }, 
         "showtime" : {
             "file": "showtime.ogg",
@@ -535,7 +545,8 @@
             "title": "Breakout",
             "artist": "Shoichiro Sakamoto",
             "tags": ["CSBIII: East"],
-            "album_art": "breakout.png"
+            "album_art": "breakout.png",
+            "trivia": "The old Scott the Woz Outro Theme."
         }, 
         "fourside" : {
             "file": "fourside.ogg",
@@ -577,7 +588,8 @@
             "title": "Billy's Mix",
             "artist": "Billy Mays",
             "tags": ["CSBIII: East"],
-            "album_art": "billymix.png"
+            "album_art": "billymix.png",
+            "trivia": "A collection of Billy Mays remixes and YTPMVs."
         },
         "moving_right_along" : {
             "file": "moving_right_along.ogg",
@@ -647,7 +659,8 @@
             "title": "Happy Rock",
             "artist": "Benjamin TISSOT",
             "tags": ["CSBIII: Fired"],
-            "album_art": "jermalore.png"
+            "album_art": "jermalore.png",
+            "trivia": "The unoffical {i}Grab That Auto 5{/i} Theme song."
         },
         "energetic_rock" : {
             "file": "energetic_rock.ogg",
@@ -768,7 +781,8 @@
             "title": "CP Violation",
             "artist": "Kelly Bailey",
             "tags": ["CSBIII: Friend"],
-            "album_art": "half.png"
+            "album_art": "half.png",
+            "trivia": "CP in this context stands for \"Civil Protection.\""
         }, 
         "mm_complete" : {
             "file": "mm_complete.ogg",
@@ -824,7 +838,8 @@
             "title": "Diner Fight",
             "artist": "Lizardking",
             "tags": ["CSBIII: Friend", "Minigames"],
-            "album_art": "lizardking.png"
+            "album_art": "lizardking.png",
+            "trivia": "The second part of {i}Full Rulle Med Klas,{/i} which kept the original naming scheme."
         },
         "la_by_night" : {
             "file": "la_by_night.ogg",
@@ -1000,21 +1015,24 @@
             "title": "Prophet ERROR",
             "artist": "Pakoo",
             "tags": ["CSBIII DX: Bronson", "New In DX", "Minigames"],
-            "album_art": "trackerevil.png"
+            "album_art": "trackerevil.png",
+            "trivia": "Pakoo's screwed-up MOD of {i}Prophet 2001.{/i}"
         },
         "lets_hear_spring" : {
             "file": "letshearspring.ogg",
             "title": "Let's Hear My Baby: Spring Remix",
             "artist": "Pakoo",
             "tags": ["CSBIII DX: BTTF", "New In DX"],
-            "album_art": "csbii.png"
+            "album_art": "csbii.png",
+            "trivia": "Pakoo's edited MOD of {i}Let's Hear My Baby.{/i}"
         },
         "echoing_spring" : {
             "file": "echoingspring.ogg",
             "title": "Echoing: Spring Remix",
             "artist": "Pakoo",
             "tags": ["CSBIII DX: BTTF", "New In DX"],
-            "album_art": "csbii.png"
+            "album_art": "csbii.png",
+            "trivia": "Pakoo's edited MOD of {i}Echoing.{/i}"
         },
         "alien_atmosphere" : {
             "file": "alien_atmosphere.ogg",
@@ -1035,7 +1053,8 @@
             "title": "10 Feet Away",
             "artist": "Dr. Awesome",
             "tags": ["CSBIII DX: BTTF", "New In DX"],
-            "album_art": "awesome.png"
+            "album_art": "awesome.png",
+            "trivia": "One, if not the only song in CSB to have the stems of the song get progressively added until the full song is completed."
         },
         "hitsquad_2" : {
             "file": "hitsquad_2.ogg",
@@ -1282,7 +1301,8 @@
             "title": "Hare Hare Yukai (Konata's Polyphonic Ringtone)",
             "artist": "Tomokazu Tashiro & Satoru Kosaki",
             "tags": ["CSBIII: Archival", "CSBIII DX: Ringtones", "New In DX"],
-            "album_art": "ringtone_addy.png"
+            "album_art": "ringtone_addy.png",
+            "trivia": "Mika's real-life ringtone."
         },
         "sfx_ringtone_billy" : {
             "file": "sfx/sfx_ringtone_billy.ogg",
