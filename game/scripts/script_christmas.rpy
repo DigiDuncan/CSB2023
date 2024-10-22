@@ -533,6 +533,7 @@ label dx_christmas_intro:
     cs "Alright, well, I'll let you guys talk, I'm gonna check on the others."
     k17 "So, who are you? Are you DigBick?"
     mean "What did you just call me?"
+    scene cs_kitchen with dissolve
     cs "Hey guys, how are y'all doing?"
     obama "Hello CS, we are all preparing our meals for dinner tonight."
     obama "I'm gonna make a carrot cake."
@@ -545,6 +546,7 @@ label dx_christmas_intro:
     cs "Damn! That sounds delicious!"
     cs "Well I hope you are all doing great!"
     cs "I'm gonna go check everyone else!"
+    scene black with dissolve
     digi "So, this should go here..."
     linus "No, you got the wrong cable!"
     luke "You idiots are both wrong! You are putting in the wrong port!"
@@ -684,6 +686,8 @@ label dx_christmas_intro:
     obama "CS! Are you there?"
     cs "Okay, lemme do this first. The president is calling!"
     #Cooking
+label dx_christmas_cooking:
+    scene cs_kitchen with dissolve
     cs "Hey Mr. President, what do you need?"
     obama "You can just call me Obama."
     obama "Second of all, I accidently cut myself while chopping these carrots."
@@ -697,6 +701,8 @@ label dx_christmas_intro:
     cs "Alright, just a few carrots."
     cs "Let's do this."
     #Carrot Karate Chop Minigame
+    scene cs_kitchen with dissolve
+    show smoke
     obama "Well would you look at that!"
     obama "That was some mighty fine chopping, CS!"
     cs "Woohoo!"
@@ -709,9 +715,12 @@ label dx_christmas_intro:
     aria "Honestly this is kind of a bop. Keep it going."
     ed "Nooooo!"
     ed "My turkey!"
+    show bigsmoke with dissolve
     n "Ed opens up the oven, only to have even more smoke pour out."
     "CS, Ed, and Obama" "{i}Coughing{/i}"
+    hide bigsmoke with dissolve
     n "When the smoke finally clears, Ed pulls out a blackened turkey."
+    hide smoke with dissolve
     ed "Dammit! My roast is ruined!"
     billy "Not to fear, Ed! I made my famous restaurant mini-burgers!"
     ed "You mean, steamed hams?"
@@ -725,6 +734,7 @@ label dx_christmas_intro:
     n "Ed sheepishly walks back into the living room after throwing away the turkey."
     cs "Obama, finish baking your cake, and we can start eating."
     cs "I'm gonna go check up on everyone while you do that."
+    scene black with dissolve
     sheriff "...and I had to take that job that left me the way I am."
     sheriff "I could've went to college, studied the paranormal..."
     sheriff "...started up a shower curtain business, run a newspaper business..."
@@ -1066,6 +1076,7 @@ label dx_christmas_lights_out:
     show snow4
     show snow5
     show snow6
+    show snow_wind
     with dissolve
     mean "Look out in the distance."
     n "As CS and Mean stare out into the distance, they see nothing but an endless desert of snow, with the lamp poles poking out through."

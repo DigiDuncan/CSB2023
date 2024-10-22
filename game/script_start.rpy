@@ -1438,6 +1438,7 @@ image after_true_title = Text("{size=+196}Spring 202X", text_align=0.5)
 
 # CS Holiday Special BGs
 image snowed_in = "bg/snowed_in.png"
+image cs_kitchen = "bg/cs_kitchen.png"
 
 # CS wacky Kuwait Adventures: Mika Edition (Deluxe Content [With Funky Kong {And Dante from Devil may Cry}])
 image kuwait_lieutenant_snow = "characters/kuwait_lieutenant_snow.png"
@@ -1609,12 +1610,15 @@ image mr_krupp = "secret/up/mr_krupp.png"
 image mr_krupp grin = "secret/up/mr_krupp_grin.png"
 
 #DX Holiday Special Misc.
+image smoke = SnowBlossom("smoke.png", count = 400, fast = False, xspeed = (0,0), yspeed = (0, -100), border = 32)
+image bigsmoke = SnowBlossom("bigsmoke.png", count = 200, fast = True, xspeed = (0,0), yspeed = (0, -50), border = 256)
 image snow1 = SnowBlossom("snow1.png", count = 200, fast = True, xspeed = (20000, 100))
 image snow2 = SnowBlossom("snow1.png", count = 200, fast = False, xspeed = (1000, 100))
 image snow3 = SnowBlossom("snow1.png", count = 200, fast = True, xspeed = (2000, 100))
 image snow4 = SnowBlossom("snow1.png", count = 200, fast = True, xspeed = (4000, 100))
 image snow5 = SnowBlossom("snow1.png", count = 200, fast = False, xspeed = (2000, 100))
 image snow6 = SnowBlossom("snow1.png", count = 200, fast = True, xspeed = (3000, 100))
+image snow_wind = SnowBlossom("snow_wind.png", count = 50, fast = True, xspeed = (500, 0), border = 4000, horizontal = True)
 
 # Static Images
 image amtrak_dining_food = "food.png" 
