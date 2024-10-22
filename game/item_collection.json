@@ -180,11 +180,19 @@
         "rarity": "Uncommon",
         "dx": true
     },
+    "linus_box": {
+        "img": "linus_box",
+        "name": "Linus' Box",
+        "owner": "Linus",
+        "desc": "Definitely was not purchased from a haunted garage sale.",
+        "rarity": "Uncommon",
+        "dx": true
+    },
     "ltt_bottle": {
         "img": "ltt_bottle",
         "name": "LTT Water Bottle",
         "owner": "Linus",
-        "desc": "Built to last, but not dishwasher-safe. lttstore.com",
+        "desc": "Built to last, but not dishwasher-safe. {a=https://lttstore.com}lttstore.com{/a} {size=-24}(not sponsored){/size}",
         "rarity": "Common",
         "dx": true
     },
@@ -325,6 +333,14 @@
         "owner": "CS",
         "desc": "A cutting-edge PCI add-in featuring poop-tracing and other YTP-enhancing features.",
         "rarity": "Uncommon"
+    },
+    "ytx_drive": {
+        "img": "ytx_drive",
+        "name": "USB Drivers For YTX-9001 Ti",
+        "owner": "CS",
+        "desc": "Contains everything you need to configure your new YTX-9001 Ti!",
+        "rarity": "Uncommon",
+        "dx": true
     },
     "yeetable_textbox": {
         "img": "yeetable_textbox",

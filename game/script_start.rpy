@@ -297,9 +297,6 @@ transform t_pepzone2:
     xpos 0.375
     zoom 0.75
 
-transform t_linus_drop_tips:
-    linear 0.35 yalign 2.0
-
 transform t_gun:
     rotate 4
     yanchor 0.5 ypos 0.555
@@ -933,6 +930,7 @@ image copguy dark flipped = "dark:flip:characters/copguy.png"
 image copguy_ai = "characters/ai_cop_guy_full.png"
 image copguycrawl = "characters/copguycrawl.png"
 image sheriff = "characters/sheriff.png"
+image sheriff flipped = "flip:characters/sheriff.png"
 image cop = "characters/cop.png"
 image cop dark = "dark:characters/cop.png"
 image cop_2 = "dark:characters/cop.png"
@@ -952,6 +950,7 @@ image doug = "characters/doug.png"
 
 # LMG & The Fanboys
 image linus = "characters/linus.png"
+image linus flipped = "flip:characters/linus.png"
 image luke = "characters/luke.png"
 image luke flipped = "flip:characters/luke.png"
 image taran = "characters/taran.png"
@@ -1664,6 +1663,7 @@ image lego_jail dark = "dark:lego_jail.png"
 image letterbox1 = "letterbox.png"
 image letterbox2 = "letterbox.png"
 image letterbox3 = "letterbox_screen.png"
+image linus_box = "linus_box.png"
 image ltt_bottle = "ltt_bottle.png"
 image m4 = "m4.png"
 image m4 fire = "m4fire.png"
@@ -1702,6 +1702,7 @@ image walkie dark = "dark:walkie.png"
 image walmart_bag = "walmart_bag.png"
 image watch = "watch.png"
 image ytx = Transform("ytx.png", zoom = 0.333)
+image ytx_drive = "ytx_drive.png"
 image map_kuwait = "gui/map_kuwait.png"
 
 # Movies

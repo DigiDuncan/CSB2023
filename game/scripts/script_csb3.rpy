@@ -41,6 +41,7 @@ label csbiii_start:
     n "As CS ponders his choices, he receives a Slack message from Taran."
     play sound sfx_slack
     show taran slack at manual_pos(0.6, 0.2) with Dissolve(0.1)
+    pause 0.5
     taran "Hey, CS! Would you like to join us for a quick meeting?"
     if persistent.true_ending:
         menu:
@@ -86,7 +87,7 @@ label csbiii_start:
     linus "Wow! You're a fast worker. You'll get off of that old 3080 in no time."
     show cs happy
     cs "Thanks, Linus."
-    linus "Speaking of livestreaming, we need a new PC for the WAN Show. Can you go and buy parts for one?"
+    linus "Speaking of livestreaming, we need a new PC for {i}The WAN Show.{/i} Can you go and buy parts for one?"
 
     menu: 
         "What will CS do?"
@@ -146,12 +147,14 @@ label csbiii_edit_video:
     cs "Alright, yeah. I definitely wasn't using this as an excuse to get out of shopping!"
     linus "... Okay? Whatever, just keep editing."
     cs "Yeah, no, don't worry, I've got this."
+    show linus flipped
     hide linus with moveoutright
     n "Linus leaves the room."
     stop music fadeout 3.0
     music end
     cs "Hmm, this video looks pretty great so far. I'm practically done at this point."
     cs "I wonder what the others will think of this. I should probably get opinions from some of the other employees."
+    pause 0.5
     play music good_eatin volume 0.4 if_changed
     music good_eatin
     show taran at right with moveinright
@@ -162,6 +165,7 @@ label csbiii_edit_video:
     show cs happy
     cs "Hey, Taran! You wanna check out my video so far?"
     taran "Sure, let it roll."
+    # TODO: FOR THE LOVE OF GOD, CAN WE FIX THIS SCREENSHOT ALREADY? I *PROMISE* YOU CS WILL NOTICE IF WE DON'T
     scene csvideo with dissolve
     n "CS and Taran watch CS' video."
     scene csdesk
@@ -186,7 +190,7 @@ label csbiii_edit_video:
     cs "Let's wait and see how he reacts."
     taran "Alrighty, then. I'll catch you later!"
     show cs happy
-    cs "For tonight, this{w=0.1} is{w=0.1} CS,{w=0.5}{cps=*0.1} signing{cps=*10} out!"
+    cs "For tonight, this{w=0.05} is{w=0.05} C{w=0.05}S,{w=0.5} siiiiiiiiigning{w=0.05} out!"
     taran "... What did you say?"
     show cs worried
     cs "Huh? I totally didn't say that. I'm just gonna go now."
@@ -201,14 +205,15 @@ label csbiii_edit_video:
     music end
     pause 1.0
     show cs
-    cs "Well, I guess since this video is already good enough, I can upload it now."
+    cs "Well, I guess since this video is already good enough, I should upload it now."
     cs "It's so crazy having the ability to access the LTT channels. There's so much crazy shit going on here!"
     cs "Oh, well. Time to upload this."
     pause 1.0
     show cs surprised
     pause 1.0
     n "CS pauses for a moment."
-    cs "I don't know. I really feel like I shouldn't upload this yet."
+    pause 1.0
+    cs "I don't know. I really don't feel like I should upload this yet."
     cs "It doesn't feel complete. Something is missing..."
     cs "Lemme look at the project file and run through the video again."
     pause 0.5
@@ -224,7 +229,7 @@ label csbiii_edit_video:
     cs "It'll be perfect! No one will expect it because they probably don't even know what I've done with my life for the past 13 years!"
     show cs
     cs "As always, I should make sure it's as high-quality as possible, so both Linus {i}and{/i} the fans can enjoy it."
-    cs "But, I also don't have much time before Linus comes back and notices, so I need to hurry!"
+    cs "But, I don't have much time before Linus comes back and notices, so I need to hurry!"
     show cs happy
     if fun_value(FUN_VALUE_MUSIC):
         cs "Welp, time to make a supernova of a video!"
@@ -239,8 +244,13 @@ label csbiii_bad_video:
     music end
     n "Let's see your results."
     $ renpy.movie_cutscene(bad_ytp)
+
+    scene black with dissolve
+    pause 0.5
+    centered "The next day."
+    pause 0.5
     scene inside_ltt with dissolve
-    n "The next day."
+    pause 0.5
     n "CS walks into LMG to greet Linus."
     show cs at left with moveinleft
     cs "Hey guys! Did you all check out the new video?"
@@ -256,8 +266,9 @@ label csbiii_bad_video:
     linus "Look, I don't care how much you wanted to humiliate me. Just leave."
     show cs scared
     cs "I don't understand, I didn't think you would be this upse--{w=0.25}{nw}"
-    linus "Just get out of here, you stupid, dumb animal!!"
+    linus "{sc=1}Just get out of here, you stupid, dumb animal!"
     cs "..."
+    # TODO: sfx stomping
     n "CS turns around and stomps out of the building."
     show cs angry flipped with hpunch
     hide cs with moveoutleft
@@ -271,15 +282,19 @@ label csbiii_boost:
     n "Let's see your results!"
     $ renpy.mark_label_seen("play_edit_game")
     $ renpy.movie_cutscene(good_ytp)
-    scene black
-    centered "The next day..."
+    scene black with dissolve
+    pause 0.5
+    centered "The next day."
+    pause 0.5
     $ achievement_manager.unlock("#1 Rated Pooper")
     scene inside_ltt with dissolve
+    pause 0.5
     show cs at offscreenleft
+    pause 0.5
     n "CS walks into LMG to greet Linus."
     show cs at left with moveinleft
     show linus at offscreenright
-    cs "Hey guys! Did you all check out the new video?"
+    cs "Hey, guys! Did you all check out the new video?"
     show linus at right with moveinright
     linus "Yes, we did."
     linus "It was..."
@@ -303,141 +318,212 @@ label csbiii_boost:
     linus "Yeah, man! You think I hired you on the spot just because of your obviously-fake visa?"
     linus "I {i}love{/i} your videos! I've been secretly hoping you would YTP one of mine for the longest time!"
     show cs happy with dissolve
-    show linus at left with ease
-    show linus at center with ease
-    n "CS' frown fades into a big grin as they both high five."
-    cs "Hell yeah! I never would've thought that YTPs would help me in a business setting, let alone with a boss who {i}enjoys{/i} them!"
 
-    # TODO: ***** TATE STOPPED EDITING HERE! LET'S MAKE THIS LINE EXTRA-VISIBLE UNTIL TATE GETS BACK TO WORK! ****
+    show linus at manual_pos(0.4, 0.5, 0.5)
+    show cs happy at manual_pos(0.3, 0.5, 0.5)
+    with ease
+
+    # TODO: sfx high-five
+
+    show cs at left
+    show linus at center
+    with ease
+
+    n "CS' frown fades into a big grin as they share a high-five."
+    cs "Hell yeah! I never would've thought that YTPs would help me in a business setting, let alone with a boss who {i}enjoys{/i} them!"
 
     cs "Alright! Well, I guess I'd better get back to poopin'!"
     show cs flipped at left
     show cs flipped at offscreenleft with ease
-    n "Before CS heads out of the room, Linus shouts to him."
-    linus "Hey, later today, I've got a big surprise to show you. I'll stop by your office and we can check it out!"
+    show linus at mid_left with move
+    n "As CS heads out of the room, Linus shouts after him."
+    linus "Hey, later today, I've got a big surprise to show you. I'll bring it by your office and we can check it out!"
     cs "Sure thing!"
+    scene black with dissolve
+    pause 0.5
     scene csdesk
     show cs at center
     with dissolve
-    n "When CS gets back to his setup, he starts letting his mind race with ideas."
+    n "As CS gets comfortable at his desk, his mind starts to race with ideas."
     cs "Oh, man... where do I even start now?"
-    cs "I have so many ideas of videos to poop. I could even try to teach Linus how to YTP..."
+    cs "I have so many ideas for videos to poop. I could even try to teach Linus how to YTP..."
     cs "I mean, with the amount of tech he drops on a daily basis, he kinda already {i}is{/i} a YTP."
     cs "Alright, well, back to editing!"
     n "The time flies by as CS dumps his ideas into Premiere."
     cs "Doo dee doo..."
     show linus at offscreenright
-    n "Linus barges in. "
-    show linus at center with ease
+    n "Linus barges in."
+    # TODO: sfx door slamming open
     with hpunch
-    show cs at left
+    show linus at center 
+    with ease
+    show cs scared with hpunch
+    show cs scared at left
     show linus at right
     with ease
     linus "CS!!!"
     show cs worried
     cs "{i}Woah, shi--{/i}{w=0.5}you scared the crap out of me!"
     show cs
-    linus "Hah, sorry, I'm just excited to show you this!"
-    n "Linus holds out a rectangular box with bold black lettering. It reads, {b}DO NOT USE.{/b}"
+    linus "Hah, sorry. I'm just excited to show you this!"
+    show linus_box at truecenter with dissolve
+    n "Linus holds out a rectangular box with bold black lettering. It reads, DO NOT USE."
     show cs disappointed
     cs "Umm, you sure this is the right box? It literally says--"
     linus "Yeah, I know what it says, I just wrote this on here so no one {i}else{/i} uses it."
     linus "Don't worry, I didn't, like, buy it from some creepy dude at a garage sale who claims it's haunted."
+    show cs worried
     n "CS looks unnerved."
-    linus "Look, just... open the box. I'm sure you'll like it."
-    n "CS cautiously takes the box and opens the top. "
-    show ytx at truecenter with dissolve
-    n "Inside is what looks to be a graphics card, but with a brown YouTube logo engraved into the side."
+    linus "Look, just... look inside. I'm sure you'll like it."
+    n "CS cautiously reaches into the box."
+    show ytx at truecenter
+    hide linus_box 
+    with dissolve
+    n "He pulls out what looks to be a graphics card, but with a brown YouTube logo engraved onto the side."
     show cs
-    cs "Woah, what is this, Linus? A YouTube-brand graphics card?"
-    linus "Not exactly. It's an experimental piece of hardware that we have never used before, and it's custom-made."
+    cs "Woah, what {i}is{/i} this, Linus? A YouTube-brand graphics card?"
+    linus "Not exactly. It's a custom-made experimental piece of hardware that we have never used before."
+    show ytx at manual_pos(0.5, 0.3, 0.5) with move
     n "Linus holds the card into the air."
-    linus "Behold! {w=0.5} The-- WOAH SHIT {w=0.5}{nw}"
-    show ytx at t_linus_drop_tips
-    pause 0.35
+    linus "Behold! {w=0.5}The-- WOAH SHIT{w=0.25}{nw}"
+    show ytx at manual_pos(0.5, 1.0, 0.5) with MoveTransition(0.1)
+    pause 0.1
     play sound sfx_clonk
     show cs scared
     show linus with vpunch
     n "Linus loses grip of the card as it tumbles down onto the table next to him."
-    hide ytx
-    n "CS facepalms while Luke can be heard laughing in the background."
+    # TODO: sfx - facepalm, luke laughing
+    n "CS facepalms while Luke can be heard laughing from across the room."
     show cs disappointed
-    cs "Goodness, Linus, you should maybe not do that next time."
-    linus "Yeah, I'm sorry. Maybe {i}you{/i} should hold it." 
+    cs "Goodness, Linus. You should maybe {i}not{/i} do that next time."
+    linus "Yeah, I'm sorry. Maybe {i}you{/i} should hold it."
+    show ytx at manual_pos(0.3, 0.7, 0.5) with move
+    pause 0.5
     linus "This card is called the YTX-9001 Ti, a PCI add-in for enhancing and optimizing YouTube Poops."
     show cs
     n "CS' eyes widen."
     cs "Wait, whaaat? That's awesome! How does this even work?"
-    linus "We don't even know. We haven't even tested it yet."
-    linus "It also apparently has poop-tracing, which I'm especially curious about."
-    cs "Well, what are we waiting for? Let's get this thing hooked up!"
-    n "Linus and CS take apart CS' PC and put the card in."
-    n "They then start the computer, and everything boots up as normal."
-    linus "Alright, now that it's up and working, we need to install the drivers. The card came with a flash drive that includes them."
-    n "As Linus inserts the flash drive, a window off the side of the screen pops up saying \"Your new Peeforce Experience drivers are available.\""
-    n "CS chuckles a bit."
+    linus "Well... we don't actually know. We haven't tested it yet."
+    linus "We don't exactly do a lot of YTPing around here... until now!"
+    linus "We were hoping you could help us test it. It even apparently has a feature called poop-tracing, which I'm especially curious about."
     show cs happy
+    cs "Well, what're we waiting for? Let's get this thing hooked up!"
+    scene black with dissolve
+    n "Linus and CS take apart CS' PC and install the card."
+    n "They then start the computer, and everything boots up as normal."
+
+    scene csdesk
+    show cs at left
+    show linus at right
+    with dissolve
+
+    linus "Alright, now that it's up and working, we need to install the drivers."
+    show ytx_drive at manual_pos(0.7, 0.5, 0.5) with dissolve
+    linus "The card came with a flash drive that includes them."
+    pause 0.5
+    hide ytx_drive with dissolve
+    n "As Linus inserts the flash drive, a window off the side of the screen pops up saying \"Your new Peeforce Experience drivers are available.\""
+    show cs happy
+    n "CS chuckles a bit."
+    show cs
     cs "\"Peeforce\"? I must admit, even these driver names are a bit silly."
     n "Linus laughs."
     linus "If you want, we can wipe them later."
-    cs "Wipe! Now {i}you're{/i} in on it!"
-    n "They both laugh as the drivers install, and once they're finished, CS boots up Premiere."
+    show cs happy
+    cs "{i}Wipe!{/i} Now {i}you're{/i} in on it!"
+    n "They both laugh as the drivers finish installing. As soon as the installation completes, CS boots up Premiere."
+    show cs surprised
+    cs "Alrighty, let's see here..."
+    cs "Why don't we try this on that YTP I just made?"
     scene csvideo with dissolve
-    cs "Alrighty, let's see here. Why don't we try this on that YTP I just made?"
-    linus "Go to the settings real quick, and find the YTP features. Turn YTP mode on to allow the poop-tracing."
+    n "Linus reads from the included instruction manual."
+    linus "Go into \"Settings\" real quick, and find the \"YTP Features\". Turn \"YTP Mode\" on to enable poop-tracing."
     cs "Alright, here goes nothing."
-    n "A loading bar appears as the timeline starts shifting, creating different edits in the process."
+    # TODO: background image with the loading bar
+    n "A loading bar appears as the timeline starts shifting on its own, creating different edits in the process."
     cs "Holy crap! This is amazing! It optimized every part of my YTP!"
-    linus "That's pretty cool, but let's try it on a completely new source."
-    linus "Open the video that we just took yesterday."
-    n "CS opens the video, and enables YTP ON again. Before CS's eyes, edits are already starting to be made to the source."
-    linus "And, hey, if you don't like the edits it makes, you can always turn it off or tweak the settings in that tab."
+    linus "That's pretty cool! Let's try it on a completely new source."
+    linus "Open the video that we just recorded yesterday."
+    n "CS opens the video and re-enables the YTP settings. Before CS's eyes, edits are automatically made to the source."
+    cs "Wow! This is incredible!"
+    linus "And, hey, if you don't like the edits it makes, you can always turn it off or tweak the other options in that tab."
+    linus "If all else fails, you still have the ability to edit any section the old-fashioned way!"
     scene csdesk
     show cs at left
     show linus at right
     with dissolve
     cs "Wow, thank you so much for this, Linus!"
-    linus "No problem! This was my gift to you. Now, we should make a review video of it before the day ends."
+    linus "No problem! Please consider this my gift to you."
+    linus "We should make a review video of it before the workday ends."
     cs "Sure thing. Let's take the card out real quick."
+    scene black with dissolve
+    pause 0.5
+    centered "Ten minutes later..."
+    pause 0.5
     scene ltt_bg
     show ltt_fg
     with dissolve
     show cs at t_cs_ltt behind ltt_fg with moveinleft
     show linus at t_linus_ltt behind ltt_fg with moveinright
-    n "Linus goes and gets the cameras set up, and they start to film the video."
-    linus "These days, video editing can be so difficult and tedious. Lately, the YouTube algorithm has been demanding more from us content creators."
-    linus "Which is why today we have brought along our newest employee, long-term YouTube Pooper cs188 for this review of the new YTX-9001!"
-    cs "Hey guys, CS here! The YTX-9001 is a fantastic card, and we can't wait to show you all of its features!"
-    linus "Much like we can't wait to show you this segue to our sponsor!"
-    n "The two stand for a moment awkwardly staring at the camera."
-    linus "...Go ahead and cut."
+    n "After making sure everything is set up to record, Linus and CS take their places on the set."
+    n "The camera operators are ready and the teleprompter is activated."
+    n "An employee starts counting down before another gives the signal to begin."
+    pause 0.5
+    play sound sfx_clapperboard
+    pause 1.0
+    linus "These days, video editing software is capable of producing some {i}amazing{/i} results."
+    linus "Unfortunately, the process to actually {i}get{/i} to those results can, more often than not, be difficult, tedious, and even downright {i}frustrating!"
+    linus "To make matters worse, when it comes to those of us who make a living off of content creation, the YouTube algorithm has just been demanding more and {i}more{/i} from us!"
+    linus "If we want even a {i}chance{/i} of all our hard work getting any attention, we have to find a way to stand out from the millions of other creators on this platform."
+    linus "This is why, today, we have brought along surrealist video editor cs188, who {i}also{/i} happens to be the newest addition to the LMG team!"
+    show cs happy
+    cs "Hey guys, CS here!"
+    show cs
+    linus "CS has been turning otherwise boring videos into hilarious nonsense for over a decade, {i}and{/i} he has the subscribers and views to prove it."
+    linus "Naturally, this also makes him the {i}perfect{/i} guy to help us review the upcoming YTX-9001 Ti!"
+    cs "Thanks, Linus!"
+    cs "The YTX-9001 Ti is a fantastic piece of hardware that promises to make video editing less of a chore for everyone!"
+    cs "We can't wait to show you {i}all{/i} of its features in action!"
+    linus "Much like we can't wait to show you this segue {w=0.25}to our {i}sponsor!"
+    "..."
+    n "The two stand for a moment, awkwardly staring at the camera."
+    linus "... Go ahead and cut."
+    pause 0.5
     show cs disappointed
-    cs "Who knew recording could be so stressful. I could use a drink. The lights are so bright."
+    cs "Who knew recording could be so stressful..."
+    cs "I could use a drink. These lights are so bright..."
     if fun_value(FUN_VALUE_COMMON):
         show ltt_bottle behind ltt_fg at truecenter with moveinbottom
-        linus "Here. Take this water bottl-- oops!{w=0.5}{nw}"
-        show ltt_bottle at t_linus_drop_tips
+        linus "Here. Take this water bottl-- oops!{w=0.25}{nw}"
+        show ltt_bottle at manual_pos(0.5, 1.0, 0.5) with MoveTransition(0.1)
+        pause 0.1
         play sound sfx_metalpipe
         show cs scared with vpunch
-        n "Linus drops the water bottle on the ground."
+        n "Linus drops the water bottle onto the floor."
         show cs worried
-        cs "You really have butter fingers with everything, Linus."
+        cs "Wow, Linus... you really {i}do{/i} have butterfingers."
     else:
         show ltt_bottle behind ltt_fg at truecenter with moveinbottom
-        linus "Here. Take this water bottle, it will keep you hydrated and your water cool. lttstore.com"
+        linus "Here! Try out our LTT water bottle! It'll keep your water cool all day, allowing {i}you{/i} to stay hydrated without the hassle. {a=https://lttstore.com}lttstore.com{/a}"
         show cs disappointed
-        cs "...Linus, we aren't filming..."
+        cs "... Linus, we aren't filming..."
+        "..."
         linus "Sorry. Force of habit."
-        hide ltt_bottle with dissolve
-    n "Some time passes and they finish the recording."
-    n "Afterwards, CS goes up to Linus' office."
+    linus "Anyway, let's take five. The crew can handle getting some B-roll clips of the card itself."
+    cs "Sure thing..."
+    scene black with dissolve
+    n "After some time, they recording is complete, and the footage is passed along to the editing team."
+    n "CS takes few minutes to shake off the stress of being featured in such a high-budget production for the first time."
+    n "Once he collects himself, CS heads up to Linus' office to chat."
     jump csbiii_ltt_decide
 
 label csbiii_ltt_decide:
     play music airport_counter volume 0.5 if_changed
     music airport_counter
     scene loffice with dissolve
+    pause 0.5
     show cs at left with moveinleft
+    pause 0.5
     cs "Hey, Linus?"
     linus "What's up, CS? What do you need help with?"
     menu:
@@ -457,47 +543,29 @@ label csbiii_reviews:
     cs "I'm up to doing more review videos with you."
     show linus at center with ease
     linus "Sweet! I'll make sure to hit you up for our next video!"
-    linus "If you want, you can think of some ideas for next time."
-    linus "You should probably head out for now. It's getting late."
+    linus "If you want, if you have any ideas for products you'd like to review, we can go over them and see if they'd be a good fit."
+    linus "But, for now, you should probably start heading out. It's getting late."
     show cs disappointed
-    cs "Yeah, I just hope that my community will move on with this new content."
-    cs "I've been making YouTube Poops for a while now, so I hope they understand in due time."
-    linus "I'm sure you'll be okay. Plus, the LTT fanbase is much bigger!"
-    cs "I guess so."
-    n "Before CS can think about this too much, a lot of commotion can be heard at the front of the building."
+    cs "Yeah..."
+    cs "You know, I just hope that my community will move on, now that I'm helping make this new content."
+    cs "I've been making YouTube Poops for so long now that it's all anyone has come to expect from me."
+    cs "But, even with my {a=patreon.com/cs188}Patreon{/a} and stuff, YTPs really don't pay very well. Advertisers don't like 'em and neither does the algorithm."
+    cs "I hope that my fans will understand in due time that I just needed something {i}more."
+    linus "I'm sure you'll be okay. Besides, the LTT fanbase is {i}much{/i} bigger!"
+    linus "This company exists almost {i}entirely{/i} because of what YouTube pays us!"
+    linus "As long as you're under my employment, I can promise you, you'll never have to worry about money again."
+    cs "I sure hope you're right..."
+    n "Before CS can think about it much longer, a sudden commotion can be heard from the front of the building."
     show colton at mid_right with moveinright
     show cs worried
     colton "Linus! There is a furry outside!"
+    show linus flipped
     linus "What?"
-    linus "Hold on, lemme check."
+    linus "Hold on, lemme check on this."
     n "CS and Linus rush to the front door."
-    scene frontdoor with dissolve
-    show linus at right with moveinleft
-    show cs at center with moveinleft
-    n "Linus goes to open the door."
-    linus "Who's there? Is anyone here?"
-    stop music fadeout 1.0
-    n "Suddenly, Arceus rushes in through the doors."
-    show arceus worried at mid_right with moveinright
-    show cs scared
-    if fun_value(FUN_VALUE_MUSIC):
-        arceus "CS! There you are! Hired guns are coming after us!"
-    else:
-        arceus "CS! There you are! We need to go, ASAP!"
-    play music hired_guns volume 0.5 if_changed
-    music hired_guns
-    linus "CS? You know this person?"
-    show cs worried
-    cs "It's a long story."
-    cs "Arceus, what's going on? Where have you been?"
-    arceus "Look, CS, we don't have much time. I know that you've been living here for a while, but the cops are still looking to extradite us back to America, and they are headed to LTT to search for you!"
-    linus "{i}What{/i}? CS, why are the cops chasing you? This could seriously damage our reputation {size=-15}more than the time I mentioned I dropped hard R's as a kid!"
-    menu:
-        "What will CS do?"
-        "I'm going to stay with LTT." (type = "bad"):
-            jump csbiii_cops_ltt
-        "Escape with Arceus.":
-            jump csbiii_arc_escape
+    scene black with dissolve
+    pause 0.5
+    jump csbiii_arceus_appears
     
 label csbiii_ytp_edit:
     play music airport_counter volume 0.5 if_changed
@@ -505,22 +573,30 @@ label csbiii_ytp_edit:
     scene loffice
     show cs at left
     show linus at offscreenright
-    cs "I have a question about my job here at LTT."
+    cs "I have a question about my job here at LMG."
     n "Linus stands up and walks over to him."
-    show linus at center with ease
-    linus "Sure. I mean, what do you want to do?"
+    show linus at center with moveinright
+    linus "Sure. I mean, what do you see yourself doing for us?"
     cs "I really want to make more YTPs for you guys."
     n "Linus laughs a bit."
     linus "Oh, CS, when I gave you the YTP card, that was meant for use on your own channel, not the LTT one."
+    show cs disappointed
     cs "I know, but--{w=0.25}{nw}"
-    linus "I mean, for example...{w=0.5} TARAN! GET IN HERE!"
+    linus "I mean, for example..."
+    show cs scared
+    linus "TARAN! GET IN HERE!" with vpunch
     n "Taran rushes up to Linus' office."
-    show taran at right with moveinright
+    show taran at offscreenright with determination
+    show taran at right with MoveTransition(0.5)
+    show cs worried
     n "Taran is panting and out of breath."
     taran "Yes, {w=0.5}Linus? {w=0.5}What is it?"
+    show linus flipped
     linus "Taran, have you ever seen a YTP?"
     taran "Other than the one CS made the other day? Not really."
+    show linus
     linus "See, CS? Not only will our audience be super confused, but our employees will be as well."
+    show cs disappointed
     cs "Alright... I see..."
 
     menu:
@@ -534,51 +610,68 @@ label csbiii_ytp_fan:
     play music airport_counter volume 0.5 if_changed
     music airport_counter
     scene loffice
-    show cs at left
+    show cs disappointed at left
     show linus at center
     show taran at right
     $ fanbase = "ytp"
-    cs "Well, I want to keep working on YTPs!"
+    cs "Well... I still want to keep working on YTPs!"
     stop music fadeout 3.0
     music end
-    show cs angry
-    cs "This is, like, what I built my life on, and I just..."
+    cs "This is what I, like, built my entire life on, and I just..."
     linus "CS? Are you okay? Maybe you should take a chill pill."
-    cs "I thought you liked YTPs a lot! You said you hired me because of it!"
-    taran "What? You hired him because of that?"
-    linus "Look, let's all just calm down, okay? If you wanna keep doing YTPs, fine, but if it messes up our company you have to either stop, or you're fired."
-    cs "Fine!"
+    show cs angry
+    cs "I thought you {i}liked{/i} YTPs! You said that's why you even hired me!"
+    taran "What? You hired him because of {i}that?!"
+    linus "Look, let's all just calm down, okay?"
+    linus "If you wanna keep doing YTPs, fine, but if it messes with our company's reputation, you will need to stop, or you're fired."
+    cs "Fine by me!"
+    show cs angry flipped at mid_offscreen_left with move
     n "Before CS can storm off, Colton rushes in with some info."
-    show colton at mid_right with moveinright    
+    show colton at offscreenright with determination
+    show colton at mid_right with MoveTransition(0.25)
     colton "Linus! There is a furry outside!"
+    show linus flipped
+    show cs worried at left with moveinleft
     linus "What?"
-    linus "Hold on, lemme check."
+    linus "Hold on, lemme check on this."
     n "CS and Linus rush to the front door."
+    scene black with dissolve
+    pause 0.5
+    jump csbiii_arceus_appears
+
+label csbiii_arceus_appears:
+
     scene frontdoor with dissolve
-    show linus at right with moveinleft
-    show cs at center with moveinleft
-    n "Linus goes to open the door."
+    show linus flipped at right with moveinleft
+    show cs disappointed at center with moveinleft
+    n "Linus opens the door."
     linus "Who's there? Is anyone here?"
-    n "Suddenly, Arceus rushes in through the doors."
-    show arceus worried at mid_right with moveinright
+    stop music fadeout 1.0
+    n "Suddenly, Arceus rushes in."
+    show arceus worried at offscreenright with determination
+    show arceus worried at mid_right with MoveTransition(0.25)
+    show cs scared
     if fun_value(FUN_VALUE_MUSIC):
         arceus "CS! There you are! Hired guns are coming after us!"
     else:
         arceus "CS! There you are! We need to go, ASAP!"
     play music hired_guns volume 0.5 if_changed
     music hired_guns
-    linus "CS? Seriously?"
+    show linus
+    linus "CS? You know this... person?"
     show cs worried
+    cs "It's a long story."
     cs "Arceus, what's going on? Where have you been?"
-    arceus "Look, CS, we don't have much time. I know that you've been living here for a while, but the cops are still looking to extradite us back to America, and they are headed to LTT to search for you!"
-    linus "{i}What?{/i} CS, why are the cops chasing you? This could seriously damage our reputation {size=-15}more than the time I mentioned I dropped hard R's as a kid!"
+    arceus "Look, CS, we don't have much time. I know that you've been living here for a while."
+    arceus "The cops are still looking to extradite us back to America, and they are headed {i}here{/i} to search for you!"
+    linus "{i}What?!{/i} CS, why are there {i}cops{/i} after you?"
+    linus "This could seriously damage our reputation {size=-15}more than the time I mentioned I dropped hard R's as a kid!"
     menu:
         "What will CS do?"
         "I'm going to stay with LTT." (type = "bad"):
             jump csbiii_cops_ltt
-        "Escape with Arceus." (type = "true"):
+        "Escape with Arceus.":
             jump csbiii_arc_escape
-
 
 label csbiii_both_fan:
     play music airport_counter volume 0.5 if_changed
@@ -676,24 +769,26 @@ label csbiii_cops_ltt:
     show arceus worried at mid_right
     show cs disappointed
     n "CS thinks long and hard about his decision."
-    cs "I'm sorry, Arceus, but I finally just got this dream job, and I can't lose it."
-    arceus "The cops are almost here, CS! If they find you, you won't be able to work anyway!"
-    cs "I'm done running, Arc. I need to be with LTT."
+    cs "I'm sorry, Arceus, but I finally got this dream job. I can't just throw it all away now."
+    arceus "The cops are almost here, CS! If they find you, you won't be able to work anyhow!"
+    cs "I'm done running, Arc. I need to stay with LMG."
     arceus "Welp. I tried."
-    n "Arceus shrugs and walks away as he goes to escape on his own."
+    n "Arceus shrugs and walks away as he makes his own escape."
     show arceus flipped with determination
-    hide arceus flipped with moveoutright
-    linus "CS, what happened with the cops?! I still have no clue what's going on!"
-    show cs
-    cs "Look, okay, so there were these guys from a company called HoH SiS, who do foundation repair."
-    cs "My house was in dire need of foundation repair, so I called them up to come help fix my house."
-    cs "They also thought I was a prank caller because I made that one video about them a long time ago,"
-    cs "and they also told me that they changed their policy with payments and I had to pay them immediately."
-    cs "When they came over, I decided to go visit my friend Michael Rosen, and he had this chocolate cake that actually {i}wasn't{/i} chocolate cake,"
-    cs "and then I gave him an energy drink, and he went kinda crazy, so I went back home to check on HoH SiS."
-    cs "And when I got back home, they--"
-    show copguy at mid_right with moveinright
+    show arceus flipped at offscreenright with move
+    linus "CS, seriously, {i}what{/i} happened with the cops! I still have {i}no{/i} clue what's going on!"
+    cs "Look, okay, so there are these guys from this foundation repair company called HoH SiS.{w=0.5}{nw}"
+    cs "My house was in dire need of foundation repair, so I called them up to come help fix my house.{w=0.5}{nw}"
+    show cs surprised
+    cs "They also thought I was a prank caller because I made that one video about them a long time ago,{w=0.25}{nw}"
+    show cs disappointed
+    cs "and they also told me that they changed their policy with payments and I had to pay them immediately.{w=0.5}{nw}"
     show cs worried
+    cs "While they were working, I decided to go visit my friend Michael Rosen, and he had this chocolate cake that actually {i}wasn't{/i} chocolate cake,{w=0.25}{nw}"
+    cs "and when I gave him an energy drink, he went kinda crazy, so I went back home to check on HoH SiS.{w=0.5}{nw}"
+    cs "And when I got back home, they--{w=0.25}{nw}"
+    show copguy at mid_right with moveinright
+    show cs scared
     copguy "Freeze!"
     n "As CS was explaining his story in extreme detail, the cops showed up."
     copguy "You are under arrest! Put your hands in the air!"
@@ -708,48 +803,66 @@ label csbiii_arc_escape:
     show cs worried at center
     show linus at right
     show arceus worried at mid_right
-    cs "Look, I'm sorry, Linus. I wish I could explain, but Arceus is right. I need to get going."
+    cs "Look, I'm sorry, Linus. I wish I could explain, but Arceus is right. I need to get out of here."
     linus "I am, like, {i}so{/i} confused and frustrated. This better not ruin LMG."
     show cs disappointed
-    cs "I'm sorry, guys. I'll try to get you guys caught up after this."
+    cs "I'm so sorry. I'll get you guys caught up on the situation as soon as I can."
     cs "This is CS, signing out."
-    arceus "We have no time for that, CS! We need to go!"
+    arceus "We have no time for that, CS! We need to go, {i}now!"
+    show cs disappointed at offscreenright
+    show arceus flipped at offscreenright
+    with MoveTransition(0.25)
+    scene black with dissolve
+    pause 0.5
     scene outside_ltt with dissolve
     show cs disappointed flipped at left
     show arceus at right
     with moveinright
     show cs disappointed at left
-    n "CS and Arceus run out of the building and try to find cover while they escape."
+    n "CS and Arceus sprint out of the building, trying to find cover."
     play sound sfx_siren loop fadein 2.0 volume 0.2
     show blue_light at left
     show red_light at right
-    n "As they are making their way further from the building, they can hear sirens grow in volume as flashing lights rush towards the LMG headquarters."
+    n "As they keep moving, they hear approaching sirens as flashing lights rush towards the LMG headquarters."
     if fanbase == "ytp":
-        cs "Thank God we are getting out of here, Linus didn't like my ideas."
-        arceus "Ah dang, that sucks to hear."
+        cs "Thank God we are getting out of here. While the job was cool, Linus didn't really like my ideas."
+        arceus "Ah, dang. That sucks to hear."
+        arceus "Let's get out of here!"
     else:
         cs "This is awful. I was just starting to get along well with Linus and the gang."
         arceus "I'm sure they'll forgive you in due time, but for now, we need to evade the cops' trail and get back to the United States."
     stop music fadeout 3.0
     music end
-    n "While Arceus and CS are fleeing away from the scene, the cops show up at LTT to investigate."
+    show cs worried flipped at offscreenleft
+    show arceus at offscreenleft
+    with MoveTransition(0.25)
+    n "While Arceus and CS flee the scene, the cops enter the building to investigate."
     scene frontdoor
     stop sound fadeout 4.0
-    show linus at left
-    show luke at center
-    show taran at right
-    show colton at mid_left
+
+    show colton at left
+    show luke flipped at mid_mid_left
+    show taran flipped at center
+    show linus at right
+
     with dissolve
-    n "The employees at LTT are in chaos as the police show up to the front of the building."
+    n "The employees are panicked as they spot the officers."
     luke "WTF is going on?"
-    taran "Linus! What did you do?!"
-    linus "Relax, guys, it's nothing that we did."
+    taran "Linus! What did you {i}do?!"
+    linus "Relax, guys, it's nothing that {i}we{/i} did."
     n "Linus mutters to himself."
-    linus "{i}I should've done a background check on CS. It's weird how--{/i}"
-    show luke at mid_left
+    linus "{size=-12}I should've done a background check on CS. It's weird how--"
+
+    # TODO: busting down the door sfx. "FBI open up" fun value?
+
+    show colton at mid_left_left
+    show luke flipped at left
     show taran flipped at mid_mid_left
-    show colton at center
-    with move
+    show linus at center
+    with MoveTransition(0.25)
+    with hpunch
+    show linus flipped
+
     show copguy at right with moveinright
     if fun_value(FUN_VALUE_MUSIC):
         n "Undyne bursts in."
@@ -757,58 +870,94 @@ label csbiii_arc_escape:
         n "Copguy bursts in."
     play music undyne volume 0.5 if_changed
     music undyne
-    copguy "Alright, everyone! Back against the wall! Nobody move!"
-    luke "So, are we moving to the wall or... not moving?"
+    copguy "Alright, everyone! Backs against the wall! Nobody move!"
+    luke "So, are we moving to the wall or... {i}not{/i} moving?"
     copguy "Don't question the police! Just--{w=0.5} stand against the wall!"
-    n "The LMG members move toward the wall while more policemen come in and search the place."
+
+    show colton at manual_pos(0.2, 0.5, 0.5):
+        linear 0.5 zoom 0.75
+    show luke flipped at manual_pos(0.3, 0.5, 0.5):
+        linear 0.5 zoom 0.75
+    show taran flipped at manual_pos(0.4, 0.5, 0.5):
+        linear 0.5 zoom 0.75
+    show linus flipped at manual_pos(0.5, 0.5, 0.5):
+        linear 0.5 zoom 0.75
+    with MoveTransition(0.5)
+
+    show cop at offscreenright
+    show cop at offscreenleft with move
+
+    show cop at offscreenright
+    show cop at offscreenleft with move
+
+    show cop at offscreenright
+    show cop at offscreenleft  with move
+
+    n "The LMG members move toward the wall while more policemen march in to begin their search."
+    pause 0.5
     copguy "Alright, I have a very simple question to ask you all."
     copguy "Do you know this man?"
+    play sound sfx_page
     show cswanted at truecenter with dissolve
-    n "Copguy shows a picture of CS to the crew."
+    n "Copguy produces a wanted poster with CS's face."
+    hide cswanted with dissolve
     taran "Uhh, yeah, that's--"
-    hide cswanted
-    linus "We don't know who that is at all."
-    copguy "Oh, really? You there, what did you say about this man?"
+    play sound sfx_punch_alt
+    with vpunch
+    linus "No, sir. We don't know who that is at all."
+    copguy "Oh, really?"
+    copguy "You there, what did you say about this man?"
     taran "I, uhh..."
     taran "I was saying that..."
     taran "That it looks like Colton! Yeah!"
-    colton "What the fuck, Taran?!"
+    colton "What the {i}fuck,{/i} Taran?!" with hpunch
     linus "Yep, that looks like Colton, alright."
-    copguy "Alright, sir, what's your name?"
-    linus "It's Lin-"
-    copguy "Yeah, okay. Linard, if you say that it's {i}this{/i} man, how can you explain the maid outfit that was used in the video that was just uploaded an hour ago?"
+    n "Copguy turns back towards Linus."
+    copguy "Alright, sir, what's {i}your{/i} name?"
+    linus "It's Lin--{w=0.25}{nw}"
+    copguy "Yeah, okay. Linard, if you say that it's {i}this{/i} man, how can you explain the maid outfit that your {i}co-star{/i} wore in your most recent video?"
     linus "Well, uhh, he's got some... weird kinks..."
-    colton "Oh my fucking God."
-    copguy "If you are so sure then, lemme go talk to the sheriff about this."
+    colton "{sc=2}Oh my fucking {i}God."
+    copguy "If you are so sure, then, lemme go talk to the sheriff about this."
     linus "Sure thing, officer."
     show copguy flipped
     hide copguy with moveoutright
-    n "Copguy leaves the scene."
+    n "Copguy steps outside to contact the sheriff."
     stop music fadeout 3.0
     music end
-    colton "I can't fucking believe you guys! That was way too far!"
+    colton "I can't fucking {i}believe{/i} you guys! That was {i}way{/i} too far!"
+    show linus
     linus "April Fools?"
-    colton "{bt=a3-p10-s4}IT'S JULY!"
-    scene outside_ltt
-    n "Copguy orders the rest of the cops to leave the scene and return back to the station."
+    colton "{bt=a3-p10-s4}IT'S JULY!" with vpunch
+    scene black with dissolve
+
+    scene outside_ltt with dissolve
+    n "Copguy orders the rest of the cops to leave the scene and return to the station."
     show copguy flipped at left with moveinleft
-    copguy "Damn it, they don't have CS anymore. We're gonna have to look harder for him."
+    copguy "Damn it, they don't have CS anymore. We're gonna have to start a manhunt..."
+    scene black with dissolve
+    pause 0.5
+
     scene road_to_canada
     show cs disappointed dusk at left
     show arceus dusk at right
     with dissolve
-    n "Meanwhile, CS and Arceus have been running back to the US border."
+    n "Meanwhile, CS and Arceus have been running back towards the US border."
     cs "Aw, man! This is embarrassing!"
     arceus "Yeah, so much for the editing job, I guess."
-    cs "I can't seem to get a break this month. First my problems with HoH SiS, now I'm running from the cops?"
-    cs "I should've just called another foundation repair company."
+    cs "I just can't seem to catch a break this month, can I?"
+    cs "First my problems with HoH SiS, now I'm running from the {i}cops?!"
+    cs "I should've just called a different foundation repair company..."
     arceus "Yeah, that sounds like hell."
-    cs "It {i}is{/i} hell."
-    arceus "{size=-15}You could have called upon me..."  # TODO: Hi, Tate! This is my attempt at replacing an overt reference to Arc being a god, but it doesn't land perfectly. Trying to be more subtle about it. Help? -- Digi
-    arceus "I should've known that the cops were going look for us. We didn't hide our tracks too well."
-    arceus "I heard about the cops at the last second when I was checking comms chatter around the area. I figured that since you helped me out, I should come back for you."
+    cs "It {i}is{/i} hell!"
+    arceus "{size=-15}I mean, you {i}could{/i} have called upon me..."
+    arceus "I should've known that the cops were going look for us. We didn't exactly hide our tracks too well."
+    arceus "I was checking comms chatter around the area when I heard at the last second that they were heading towards LMG."
+    arceus "I figured that since you helped me break out of prison, I it's only fair that I come back for you."
     cs "Thanks, man. I really owe you again."
-    arceus "Nah, I owe you."
+    arceus "Nah, {i}I{/i} owe {i}you."
+    scene black with dissolve
+
     scene border_dusk
     show cs dusk at left
     show arceus dusk flipped at mid_left
@@ -822,10 +971,12 @@ label csbiii_arc_escape:
         border_guard "Atarashii Kaze! It's you two buds again!"
     else:  
         border_guard "Ey, it's you two buds again!"
-    arceus "Yeah, quite the vacation we had! We had so much fun in Canada, didn't we, CS?"
-    cs "Yep!"
+    arceus "Yep, quite the vacation we had! We had so much fun in Canada, didn't we, CS?"
+    cs "Sure did!"
     border_guard "Alright, hope you two come back to visit the Great White North again, ey buds?"
-    arceus "Sure thing!"
+    arceus "We certainly will!"
+    scene black with dissolve
+
     scene washington_road with dissolve
     n "The duo continues their trek now in the US, in the state of Washington."
     show cs dark at left with moveinleft
@@ -833,47 +984,66 @@ label csbiii_arc_escape:
     cs "So, what happened with you?"
     arceus "Hmm?"
     cs "Well, I went to work at LTT, and had to spend my nights at a nearby hotel."
-    cs "Linus gave me enough money to make do in time."
+    cs "Linus gave me enough money to get by for the meantime."
     arceus "Wait, which hotel?"
     cs "The Hoto Hoto?"
-    arceus "Well, I've been at the same hotel, clearing up ties from my cybercriminal past."
-    arceus "I've been in prison for five years, so I've had to figure out what to do again for money."
+    arceus "Shoot, I've been at the same hotel, clearing up ties from my cybercriminal past."
+    arceus "I've been in prison for five years, so I need to figure out what to do again for money."
+    arceus "I ran into Anno at the hotel, too. I think he said he's planning on starting some kind of band?"
+    cs "Ah, neat!"
+    cs "I guess it's just the time for starting over, then, huh."
+    arceus "Sure seems like it."
     stop music fadeout 3.0
     music end
-    arceus "Anno's been at the hotel, too. I think he's planning on starting some kind of band?"
-    cs "Ah, I see."
+    scene black with dissolve
+    pause 0.5
+
     scene sheriff_office
     show sheriff at left
     with dissolve
     play music police_station volume 0.5 if_changed
     music police_station 
-    n "Back at the police station, Copguy talks to the sheriff about CS."
+    n "Back at the police station, Copguy meets with the sheriff, hoping to formulate a plan to capture CS."
     show sheriff at left
     show copguy at right with moveinright
-    sheriff "Howdy, officer Copguy. Tell me, you guys arrested CS this evening, right?"
+    show sheriff flipped
+    sheriff "Howdy, Officer Copguy. Tell me, you guys arrested CS this evening, right?"
     copguy "Unfortunately, no, we did not."
     n "The sheriff slams his desk."
+    # TODO: sfx slam desk
     show sheriff at left with vpunch
-    sheriff "Damn it! And how did you fuck {i}that{/i} up?"
+    sheriff "Damn it!" with hpunch
+    show sheriff flipped
+    sheriff "Damn it!{fast} And how did you fuck {i}that{/i} up?" with vpunch
     copguy "Look, you see, he managed--"
     sheriff "You know what, I don't want to hear this!"
     sheriff "First, they manage to escape from one of our top prisons, and now you're telling me that you {i}lost{/i} him?!"
-    copguy "Please, this is one of my best cases yet! I need to catch him, and I promise I'll put him back in jail along with those other two!"
+    copguy "Please, this is one of my best cases yet! I need to catch him, and I promise I'll put him back in jail, along with those {i}other{/i} two!"
+    copguy "You know, the furry and the Kurt Cobain impersonator."
+    pause 0.5
     n "The sheriff thinks for a moment."
+    pause 1.0
     sheriff "Alright, since I know you've been pretty good at catching criminals for the past 15 years, I'll let it slide this time."
-    sheriff "But believe me, this CS man has a pretty big target on his head, and we need to bring him to justice before he and his gang do anything else funny."
+    sheriff "But, believe me, this CS man has a pretty big target on his head."
+    sheriff "We need to bring him to justice before he and his gang do anything else funny."
     sheriff "The next time you come back here, he'd better be with you, or you're fired!"
-    copguy "Sure thing, boss. I'll track him down...{w=0.5} on my own."
+    copguy "Sure thing, boss. I'll track him down..."
+    copguy "If it's the last thing I do."
+    pause 0.5
     show copguy flipped
     hide copguy with moveoutright
-    n "Copguy turns around and heads out to track down CS and Arceus."
+    pause 0.5
     stop music fadeout 3.0
     music end
+    scene black with dissolve
+    pause 0.5
+
+
     scene washington_road with dissolve
     if fun_value(FUN_VALUE_MUSIC):
-        n "Meanwhile, CS and Arceus are still making their way through the US, while strange sounds seem to be echoing in the forest."
+        n "Meanwhile, as CS and Arceus make their way through the US, strange sounds seem to be echoing throughout the forest."
     else:  
-        n "Meanwhile, CS and Arceus are still making their way through the US without any sense of direction."
+        n "Meanwhile, without any sense of direction, CS and Arceus make their way through the US."
     play music echoing volume 0.5 if_changed
     music echoing
     show cs disappointed dark at left with moveinleft
@@ -887,17 +1057,28 @@ label csbiii_arc_escape:
     show cs dark
     cs "Hey, Arc! I can see some lights in the distance! We've gotta be getting close!"
     arceus "Wait a minute, those are--"
+
     show cs scared dark
     show arceus worried dark
+    with determination
+
     show blue_light at left
     show red_light at right
+    with dissolve
+
     play sound sfx_siren volume 0.1
-    n "Arceus squints into the night, but CS and Arceus both immediately recognize the sounds."
+    n "Arceus squints into the night, but they both immediately recognize the sounds."
     show cs worried dark
     show arceus worried dark
-    "CS and Arceus" "{i}Shit!"
-    arceus "Copguy's back! He's probably looking all over for us! What do we do, CS?!"
+
+    # TODO: implement multiple dialogue screen
+    cs "{i}Shit!" (multiple=2)
+    arceus "{i}Shit!" (multiple=2)
+
+    arceus "Copguy's back! He's probably looking all over for us!"
+    arceus "What do we do, CS?!"
     jump csbiii_forest_menu
+
 label csbiii_forest_menu:
     stop music fadeout 3.0
     music end
@@ -923,17 +1104,19 @@ label genocide_fight:
     show red_light at right
     n "CS closes his eyes. He starts to concentrate on the sirens and the car."
     play sound sfx_siren loop fadein 3.0 volume 0.4
-    arceus "CS?! What are you doing?!"
+    arceus "CS? What are you doing?!"
     play sound sfx_siren loop volume 0.5
-    arceus "CS!!!! They're heading right for us!!"
+    arceus "{i}CS! They're heading right for us!!"
     play sound sfx_siren loop volume 0.6
     scene black
-    arceus "CS!!!!!!!!!!!!"
+    arceus "{bt=a3-p10-s4}{i}CS!!!"
     play sound sfx_siren loop fadein 1.0 volume 2
     pause 1.0
     play sound sfx_car_crash volume 0.7
-    pause 7.0
+    pause 8.0
     n "Copguy's car flies off the road and violently crashes into the forest."
+    pause 0.5
+
     scene washington_road
     show arceus worried dark at right
     show cs concentrate dark at left
@@ -954,7 +1137,8 @@ label genocide_fight:
     cs "Yeah, I took care of him, didn't I?"
     arceus "I guess you did."
     cs "Should we keep going?"
-    arceus "Are you not, like, phased at all by this?"
+    "..."
+    arceus "Are you not, like, phased {i}at all{/i} by this?"
     cs "Eh, not really."
     arceus "Alright, well..."
     arceus "Let's keep going..."
@@ -963,8 +1147,11 @@ label genocide_fight:
     show arceus dark at right with moveinright
     play music kill_cops volume 0.5 if_changed
     music kill_cops
-    n "The duo continues to travel along the road."
-    n "Arceus is wary of CS' actions as he can't help but notice CS muttering to himself as they walk."
+    n "The duo keeps walking along the road."
+    n "Arceus is wary of CS."
+    n "He can't help but notice CS muttering to himself."
+
+    # TODO: this overflows the text box. is this intended behavior?
     cs "{chaos}TmV2ZXIgZ29ubmEgZ2l2ZSB5b3UgdXAsIG5ldmVyIGdvbm5hIGxldCB5b3UgZG93biwgbmV2ZXIgZ29ubmEgcnVuIGFyb3VuZCBhbmQgZGVzZXJ0IHlvdS4KTmV2ZXIgZ29ubmEgbWFrZSB5b3UgY3J5LCBuZXZlciBnb25uYSBzYXkgZ29vZGJ5ZSwgbmV2ZXIgZ29ubmEgdGVsbCBhIGxpZSwgYW5kIGh1cnQgeW91fg=="
     arceus "CS? What are you saying?"
     cs "Huh? Nothing."
@@ -984,8 +1171,13 @@ label genocide_attack_arc:
     $ achievement_manager.unlock("No Mercy")
     cs "{size=-15}It's now or never."
     n "CS channels CSGod."
+
+    # TODO: some kind of sfx, maybe a cooler transition in general
+
     hide cs
     show csgod flipped at left
+    with Dissolve(0.5)
+
     csgod "Time to die, Arceus!"
     show arceus angry dark
     stop music2
@@ -999,16 +1191,19 @@ label genocide_attack_arc:
     bad_end "There's no weapon\nto free us all!" "csbiii_forest_menu"
 
 label genocide_wait_arc:
+
+    # TODO: get with digi about the best way to handle these scene transitions because it's a little awkward
+
     stop music fadeout 3.0
     music end
     scene washington_road
     show cs dark at left 
     show arceus dark flipped at right
     cs "{size=-15}I need to wait. I'm not powerful enough to attack."
-    arceus "Man, I hope you're doing fine."
+    arceus "Man, I hope you're doing alright..."
     cs "Yep!"
     pause 5.0
-    n "The duo walks silently for a few hours, and eventually the sun rises."
+    n "They continue on silently for a few hours, eventually seeing the sunrise."
     scene washington_road morning
     show arceus at right
     show cs at left
@@ -1029,16 +1224,23 @@ label genocide_wait_arc:
     arceus "Dude, are you {i}sure{/i} you're okay?"
     arceus "You haven't said anything, like, {i}at all,{/i} for the past several hours."
     cs "I'm fine."
-    arceus "...okay."
-    arceus "Well, uhh, what should we do now?"
+    arceus "... Okay."
+    arceus "So, uhh, what should we do now?"
     arceus "Are we gonna, like, try to get you home?"
     arceus "{size=-15}Do you even wanna go home?"
     cs "Yes, yes, let's just wait here."
     arceus "In the middle of the road?"
     arceus "Why?"
+
+    # TODO: sfx approaching vehicle
+    # TODO: should we have a car sprite approach like what was done in the country route?
+
     arceus "There's someone coming! Shouldn't we move?"
     pause 1.0
     arceus "Hello?"
+
+    # TODO: sfx vehicle brakes
+    
     n "All of a sudden, the car driving at them slowly comes to a stop."
     n "The man inside gets out of the car."
     show billy at center with moveinright
@@ -1046,35 +1248,57 @@ label genocide_wait_arc:
     billy "What are you doing?"
     cs "Take us to these coordinates: 46.5754, -112.3008."
     billy "I, uhh..."
+    
+    play sound sfx_tape_rewind volume 0.5
+
     pause 2.0
-    billy "No problem!"
-    billy "Let's go!"
+    billy "{sc=1.88}{color=#CB50FF}No problem!"
+    billy "{sc=1.88}{color=#CB50FF}Let's go!"
+    scene black with dissolve
+
     scene car background
     show billy car
+    with dissolve
+
     play music insane_personalities volume 0.6 if_changed
     music insane_personalities
     pause 5.0
+
     scene car background night
     show billy car
     with dissolve
     pause 3.0
+
     n "For the whole drive, no one says a word."
     stop music fadeout 3.0
     music end
     scene cultforest
     show billy car 
     with dissolve
-    billy "Welp. We are here."
-    n "CS gets out of the car and heads up the trail on the side of the road."
+    billy "{sc=1.88}{color=#CB50FF}We are here."
+
+    # TODO: sfx car door open/close
+
+    n "CS gets out of the car and crosses the street to take a nearby trail."
     arceus "Hey, uhh, I'm gonna get out too."
-    hide billy car with dissolve
+
+    # TODO: sfx car door open/close
+
+    scene black with dissolve
+    
+
+    scene cultforest with dissolve
     show arceus flipped at mid_left with moveinleft
-    arceus "CS? Where did you go?"
-    arceus "What is wrong with him right now?"
+    arceus "CS? Where'd ya go?"
+    show arceus worried flipped
+    arceus "Man, what is {i}wrong{/i} with him right now?"
     pause 2.0
     arceus "After that incident with the cops, he's been..."
     pause 1.0
     arceus "He's just been--"
+
+    # TODO: didn't there used to be a different track here that was sped up or something?!
+
     play music insane_personalities if_changed
     music insane_personalities
     csgod "Stronger than ever."
@@ -1088,9 +1312,12 @@ label genocide_wait_arc:
     $ achievement_manager.unlock("No Mercy")
     show cultist at mid_right with moveinright
     show cultist_2 at right with moveinright
-    show cultist_3 at center with moveinright
+    show cultist_3 at mid_mid_right with moveinright
     cultist "Praise CSGod! Praise CSGod!"
-    n "Billy takes off in an instant after witnessing the event."
+
+    # TODO: sfx tires squealing, driving away
+
+    n "Upon witnessing this, Billy takes off instantly!"
     csgod "I have finally harnessed the power of CSGod!"
     csgod "Time to take over the world!"
     stop music
@@ -1107,14 +1334,17 @@ label csbiii_escape_forest:
     $ achievement_manager.unlock("Pacifist")
     cs "Arceus, quick! Let's escape into the forest!"
     arceus "Alrighty, let's go!"
-    show arceus dark flipped with determination
-    hide arceus
-    hide cs
-    with moveoutright
+
+    show arceus dark flipped at offscreenright
+    show cs dark at offscreenright
+    with MoveTransition(0.25)
     scene black with dissolve
     stop sound fadeout 1.0
+    pause 0.5
+
     n "CS and Arceus quickly jump into the trees next to them."
-    n "As CS and Arceus hunker down into the foliage, they see the flash of lights fly past them."
+    n "As they hunker down into the foliage, flashes of red and blue fly past them."
+    pause 0.5
     arceus "Phew! That was a close one, CS!"
     cs "Yeah, it looks like we hid just in time."
     arceus "Alright, well, should we wait here for a bit or do you think the coast is clear?"
@@ -1124,29 +1354,35 @@ label csbiii_wait_forest:
     scene black
     stop music fadeout 3.0
     cs "We should probably wait for a little bit. They might turn around and see us."
-    arceus "Yeah, that's a good point. I kinda don't want to risk going back to prison again."
+    arceus "Yeah, that's a good point. Let's not risk it."
     n "CS and Arceus stay quiet in the forest for about 15 minutes before heading back onto the road again."
+    pause 0.5
+
     scene washington_road with dissolve
     show cs dark at left with moveinleft
     show arceus dark at right with moveinright
+    pause 0.5
     cs "Hey, Arceus?"
     arceus "Hmm?"
-    cs "Now that we are out here and have more time to talk, where exactly are we heading to? Why did we come back to the US?"
-    arceus "Well, I figured you wanted to go back home, right?"
+    cs "Now that we have more time to talk, where exactly are we headed? Why did we come back to the US?"
+    arceus "Well, I figured, you wanted to go back home, right?"
     show cs disappointed dark
-    cs "Of course I want to head back home, it's just... it seems so far away."
-    cs "We don't really have a car or anything, we are completely lost, and we've got the cops still looking for us, probably!"
+    cs "Of course I want to go home, it's just... it seems so far away."
+    cs "We don't really have a car or anything, we are {i}completely{/i} lost, {i}and{/i} the cops are probably still looking for us!"
     arceus "Look, man, I know it's pretty hard right now, but we've gotta be optimistic about this."
-    arceus "The second we find people, I'm sure we can work something out and head back home."
+    arceus "The second we find civilization, I'm sure we can work something out and head back home."
     cs "If you say so. I just hope we don't have to {i}walk{/i} all the way there."
     arceus "I don't think that'll be the case."
     copguy "{cps=10}I don't think so either."
-    n "Before CS and Arceus can react, they both get the lights knocked out of them."
     play sound sfx_punch
     scene black with determination
+    pause 3.0
     n "When CS and Arceus wake up, they find themselves in handcuffs leaned up against a cop car."
+
+    # TODO: a cop car
+
     scene washington_road
-    show cs disappointed dark at left
+    show cs disappointed dark at mid_left
     show arceus dark flipped at mid_left_left
     with dissolve
     cs "Huh?"
@@ -1158,24 +1394,42 @@ label csbiii_wait_forest:
         copguy "Hey, ain't this a dangerous mystery."
     else:  
         copguy "Hey, you're finally awake."
-    arceus "Hey, CS."
+    arceus "Hey, CS..."
     show arceus worried dark flipped
     arceus "I'm sorry."
     show cs worried dark
     cs "No, no, no! This can't be happening!"
+    show cs scared dark
     cs "Arceus! Can't you do something about this?"
     arceus "No can do, boss. Looks like this is the end of the line."
     copguy "No time for negotiations, pal. Get in the car."
+
     scene copcar
-    show copguy at t_copguy_frontseat
+    show copguy at offscreenleft
     show copcar_mask
     with dissolve
     show arceus worried flipped at right
-    show cs disappointed at left
+    show cs worried at left
     with moveinleft
+    play sound sfx_punch
+    with hpunch
+    show arceus worried
+    pause 0.5
+
+    # TODO: check if this is only used once, if it is, maybe a manual_pos() is more appropriate
+
+    show copguy at t_copguy_frontseat 
+    with moveinleft
+
+    # TODO: car door slam
+    # TODO: add walkie + sfx
+
     n "CS and Arceus are thrown into the back of the cruiser as Copguy barks some order into his walkie."
-    copguy "This is Copguy calling in a 1-8-8 on Compass Road. Sheriff? We got 'em."
-    n "Copguy starts the car and they drive off."
+    copguy "This is Copguy calling in a 1-8-8 on Compass Road."
+    copguy "Sheriff? We got 'em."
+
+    # SFX: car start, driving
+
     jump csbiii_copcar_menu
 
 label csbiii_copcar_menu:
@@ -1244,78 +1498,103 @@ label csbiii_good_convince:
     show arceus
     copguy "What are you on about?"
     show cs worried
-    cs "Yes! HoH SiS scammed me out of thousands of dollars to get my foundation fixed, and they also broke my laptop!"
-    cs "So, afterwards, I wanted to get my revenge!"
+    cs "Yes! I called HoH SiS to fix my foundation, but they scammed me out of thousands of dollars and broke my laptop!"
+    cs "So, afterwards, I went to their HQ to get my revenge!"
     copguy "I'm not believing this for a second."
-    copguy "You really thought I would fall for some silly little lie?"
+    copguy "You really think I'll fall for a lie as ridiculous as this?"
     play sound sfx_objection volume 0.5
     show objection at truecenter with hpunch
     pause 1.0
     hide objection
     arceus "Actually, I have proof of this."
-    arceus "CS just raised a good point, and I can show you."
+    arceus "I can show you."
     copguy "And {i}how{/i} can you prove this? Where is your evidence?"
+
+    show craptop at manual_pos(0.7, 1.5, 0.5) with determination
+    show craptop at manual_pos(0.7, 0.55, 0.5) with move
+
     n "Arceus pulls up a laptop that he managed to grab from the front seat."
     copguy "{i}What?{/i} How did you get that?"
     arceus "Watch this."
     scene backseat
     show craptop evidence
     with dissolve
-    n "Copguy stops the car as Arceus plays back the scene from {i}CS Bounciness I{/i} with the scamming of CS by HoH SiS."  # DX: Weird line?
+    n "Copguy stops the car as Arceus plays back the events from {i}CS Bounciness I.{/i}"
+
     scene copcar
-    show copguy at mid_left
+    show copguy at center
     show copcar_mask
     show arceus at right
+    show craptop at manual_pos(0.7, 0.55, 0.5)
     show cs disappointed at left
     with dissolve
     cs "How--"
     show arceus happy
     arceus "I have my ways."
     show arceus
-    copguy "I don't understand... so HoH SiS really did scam you hard, didn't they?"
-    copguy "I'm not sure how valid it was for you to push that man off a building..."
-    copguy "But I can't argue right now about whether that footage is fake."
+    copguy "I don't understand..."
+    copguy "HoH SiS really {i}did{/i} scam you hard, didn't they?"
+    copguy "I'm not sure how valid it was for you to push that man off of the building..."
+    copguy "But, I can't argue right now about whether that footage is fake."
     stop music fadeout 3.0
     music end
+
+    # TODO: sfx open car door
+    
     hide copguy with moveoutleft
     n "Copguy gets out of the car."
     n "He then proceeds to open the doors and let CS and Arceus out, freeing them of their shackles."
+    pause 0.5
+
+    # TODO: cop car
+
     scene washington_road with dissolve
+
+    pause 0.5
     show copguy dark flipped at right with moveinleft
     show copguy dark with determination
     show cs disappointed dark at left with moveinleft
     show arceus dark flipped at mid_left_left with moveinleft
     copguy "Listen, I really shouldn't be doing this right now, but I have to go back to look into this deal with HoH SiS."
+    copguy "The only thing more corrupt than the force is scummy businesses like these." # TODO: idk that about that line
     copguy "You are free to go for now."
-    copguy "But know this: I'm putting my job on the line over this."
-    copguy "Don't do anything stupid, because I have my eye on you two!"
-    n "Copguy gets back into his car, and heads off into the dead of night."
+    copguy "But know this: I'm putting my job on the line for you."
+    copguy "Don't do anything stupid, because I have eyes everywhere." # fun fact, i stole that line from my mother - tate
+
+    # SFX: car door, car start, drive away
+    n "Copguy gets back into his car, heading off into the dead of night."
     show copguy dark flipped with determination
     hide copguy with moveoutright
+    pause 0.5
+
     show arceus dark flipped at mid_right_right with move
     show arceus dark at mid_right_right
     show cs dark
+    pause 0.5
     n "CS and Arceus look at each other and smile."
     if fun_value(FUN_VALUE_MUSIC):
-        n "CS and Arceus look at each other and smile, doing their Bun Guster pose."  
+        n "CS and Arceus look at each other and smile, doing their best Bun Guster pose."  
     else: 
         n "CS and Arceus look at each other and smile."       
     play music bun_guster volume 0.3 if_changed
     music bun_guster
     arceus "Holy crap, I didn't think that would work."
-    cs "Me neither! I'm so glad that he let us go!"
-    cs "I don't know how you got that footage, but we are now free once again!"
+    cs "Me, neither! I'm so glad that he let us go!"
+    cs "I don't know how you got that footage, but we are free once again!"
     show arceus happy dark
     arceus "Hooray for CS and Arc!"
+
     show cs happy dark at center
     show arceus happy dark at center 
     with move
     show cs happy dark at mid_left_left
     show arceus happy dark at mid_right_right
     with move
+    # TODO: sfx high five
     n "They both high five and continue heading down the road."
     stop music fadeout 3.0
     music end
+    scene black with dissolve
     jump csbiii_choose_direction
 
 label csbiii_choose_direction:
@@ -1323,7 +1602,8 @@ label csbiii_choose_direction:
     scene black with determination
     stop music fadeout 3.0
     music end
-    n "As the duo continues their journey through the night, they soon have to figure out exactly where to go."  # DX: Reword?
+    n "As the pair continues wandering through the night, they soon realize that they haven't decided yet where to actually go."
+
     scene washington_road morning
     show cs at left
     show arceus at right
@@ -1356,10 +1636,10 @@ label csbiii_north:
     show arceus at right
     cs "What if we go north?"
     show arceus worried
-    arceus "...What?"
+    arceus "... What?"
     show cs disappointed
     cs "You said to pick a direction!"
-    show arceus
+    show arceus angry
     arceus "To the north is Canada. Where we just came from. Try again."
     show cs
     menu:
@@ -1445,7 +1725,10 @@ label csbiii_west3:
     show arceus worried dusk
     arceus "I really don't want to go there again..."
     cs "Nah, we've got this. For sure this time."
-    n "CS and Arceus find a cool looking crab, but still just the ocean again."
+
+    # TODO: funny crab item
+
+    n "CS and Arceus find a cool-looking crab, but still just the ocean again."
     scene washington_road
     show cs dark at left
     show arceus angry dark at right
