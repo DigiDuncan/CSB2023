@@ -49,6 +49,7 @@ label csbiii_start:
                 cs "Sure thing! I'll be right there!"
                 hide taran with Dissolve(0.25)
                 hide cs with moveoutright
+                stop music fadeout 3.0
                 scene black with dissolve
                 pause 1.0
                 jump csbiii_ai
@@ -1237,7 +1238,7 @@ label genocide_wait_arc:
     pause 1.0
     arceus "Hello?"
 
-    # TODO: sfx vehicle brakes
+    # TODO: need a car stop sound that is not slamming on brakes
     
     n "All of a sudden, the car driving at them slowly comes to a stop."
     n "The man inside gets out of the car."

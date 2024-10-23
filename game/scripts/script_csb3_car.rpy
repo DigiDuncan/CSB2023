@@ -326,7 +326,6 @@ label car_dialogue:
     # TODO: is this synced? is this supposed to be synced? i don't even know this song. can someone else check it? - tate
     $ renpy.music.set_pause(True, "music")
     play music2 moving_right_along if_changed
-    music moving_right_along
     $ renpy.pause(5.0, hard = True)
     # 0:05.0
     cs "{cps=30}{image=note_small1.png} Moving right along, in search of good times and good news {image=note_small2.png}{w=0.8}{nw}"
@@ -603,15 +602,17 @@ label car_dialogue:
 
     pause 2.0
 
-    # TODO: sfx rustling through items
+    play sound sfx_items_rustling fadein 1.0 loop
     n "The guys in the back start looking through Billy's various tools."
     pause 1.0
     show billy car turn
     billy "Hey! What are you guys doing back there?"
+    stop sound
     cs "Nothing! I just dropped something."
     show billy car
     billy "Alright. You'd better not mess with my gadgets!"
     pause 2.0
+    play sound sfx_items_rustling fadein 1.0 loop
     digi "{size=-15}Shhh! Don't say anything!"
     cs "{size=-15}Okay, I've got it."
     cs "{size=-15}Arceus, roll down the window."

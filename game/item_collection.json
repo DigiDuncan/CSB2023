@@ -72,7 +72,7 @@
         "name": "Cool Crab",
         "owner": "Nobody",
         "desc": "His name is Arthur and his pen is his prized possession.",
-        "rarity": "Common"
+        "rarity": "Rare"
     },
     "craptop": {
         "img": "craptop",
@@ -157,6 +157,13 @@
         "desc": "A cheaply-manufactured drill affectionately known as Drilly Mays.",
         "rarity": "Uncommon"
     },
+    "duck": {
+        "img": "duck",
+        "name": "Rubber Duck",
+        "owner": "CS and Arceus",
+        "desc": "Quack, quack, quack, quack...",
+        "rarity": "Rare"
+    },
     "flexcake": {
         "img": "flexcake",
         "name": "Flex Cake",
@@ -180,6 +187,13 @@
         "desc": "CS's favorite energy drink. Plum-flavored.",
         "rarity": "Common",
         "dx": true
+    },
+    "hair_dryer": {
+        "img": "hair_dryer",
+        "name": "Hair Dryer",
+        "owner": "CS",
+        "desc": "Don't listen to ChatGPT. This is {i}not{/i} actually a viable PC cooling solution. Even if it was, would you {i}really{/i} want to do this?!",
+        "rarity": "Rare"
     },
     "horse_mask": {
         "img": "horse_mask",

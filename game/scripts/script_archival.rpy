@@ -22,8 +22,9 @@ label archival:
     n "He eagerly hops into bed and gets cozy under his blanket."
     cs "Ah, finally, I can get a good night's sleep."
     n "CS points his finger guns towards the ceiling."
-    cs "This is CS{cps=*0.1}... {cps=*10}passing out!"
+    cs "This {w=0.25}is {w=0.25}C{w=0.1}S{w=0.25}.{w=0.25}.{w=0.25}. {w=0.25}passing out!"
     stop music2 fadeout 3.0
+    pause 0.5
     n "CS quickly drifts off to sleep."
     scene black with dissolve
     pause 1.0
@@ -47,6 +48,7 @@ label archival:
     with vpunch
     n "CS immediately jolts up, realizing that he's not in his room."
     cs "Wait a minute. Where am I? This place..."
+    pause 1.0
     n "CS trails off, feeling uneasy about this new location."
     n "It doesn't look familiar to him at all, but for some reason..."
     show cs worried
@@ -63,6 +65,7 @@ label archival:
     n "The machine immediately bluescreens and blares out the following:"
     play sound sfx_windows_logon
     with hpunch
+    show cs worried
     craptop "Your PC sux. lol."
     k174_offscreen "Hey, what the fuck was that?"
     show cs scared
@@ -171,7 +174,7 @@ label archival:
     "..."
     k207 "Who even {i}is{/i} this person?"
     k207 "Are they a construction worker? Are they a businessman?"
-    n "CS suddenly lets his instinct take over."
+    n "CS suddenly lets his instincts take over."
     show cs angry
     cs "BullShisH!"
     play sound sfx_punch
@@ -303,6 +306,7 @@ label archival:
     with hpunch
     n "CS pushes him out of the way."
     n "He smashes open the car window and hops inside."
+    show cs scared flipped
     play sound sfx_glass_heavy
     scene car_inside_old with dissolve
     show cs scared flipped at offscreenright
@@ -345,7 +349,8 @@ label archival:
 label archival_finale:
     stop music fadeout 3.0
     music end
-    scene csmart_old
+    scene csmart_old:
+        zoom 1.5
     show cs disappointed at left
     with dissolve
     n "After the battle, CS makes his way towards the crack, and realizes that there is an invisible wall."
@@ -354,8 +359,13 @@ label archival_finale:
         n "Without any second thoughts, he breaks off enough pieces of the wall to widen the hole, then takes a trip. From me."
     else:
         n "Without any second thoughts, he breaks off enough pieces of the wall to widen the hole, then crawls through the opening."
+    scene csmart_old with dissolve:
+        zoom 1.75
     n "..."
+    scene csmart_old with dissolve:
+        zoom 2.0
     n "..."
+    scene black with dissolve
     n "..."
     scene archival_1 with dissolve
     play music take_trip volume 0.7 if_changed
