@@ -343,32 +343,40 @@ label csbiii_boost:
     show cs at center
     with dissolve
     n "As CS gets comfortable at his desk, his mind starts to race with ideas."
-    cs "Oh, man... where do I even start now?"
+    cs "Oh, man... where do I even start, now?"
     cs "I have so many ideas for videos to poop. I could even try to teach Linus how to YTP..."
+    show cs surprised
     cs "I mean, with the amount of tech he drops on a daily basis, he kinda already {i}is{/i} a YTP."
+    pause 0.5
+    show cs happy
     cs "Alright, well, back to editing!"
+    show cs
+    play sound sfx_keyboard loop
     n "The time flies by as CS dumps his ideas into Premiere."
+    pause 1.0
     cs "Doo dee doo..."
     show linus at offscreenright
     n "Linus barges in."
-    # TODO: sfx door slamming open
+    stop sound
+    play sound sfx_doorslam_open
     with hpunch
-    show linus at center 
+    show linus at center
     with ease
+    play sound sfx_punch_alt
     show cs scared with hpunch
     show cs scared at left
     show linus at right
     with ease
     linus "CS!!!"
     show cs worried
-    cs "{i}Woah, shi--{/i}{w=0.5}you scared the crap out of me!"
+    cs "{i}Woah, shi--{/i}{w=0.5} You scared the crap out of me!"
     show cs
     linus "Hah, sorry. I'm just excited to show you this!"
     show linus_box at truecenter with dissolve
     n "Linus holds out a rectangular box with bold black lettering. It reads, DO NOT USE."
     show cs disappointed
     cs "Umm, you sure this is the right box? It literally says--"
-    linus "Yeah, I know what it says, I just wrote this on here so no one {i}else{/i} uses it."
+    linus "Yeah, I know what it says. I just wrote this on here so no one {i}else{/i} uses it."
     linus "Don't worry, I didn't, like, buy it from some creepy dude at a garage sale who claims it's haunted."
     show cs worried
     n "CS looks unnerved."
@@ -390,7 +398,8 @@ label csbiii_boost:
     show cs scared
     show linus with vpunch
     n "Linus loses grip of the card as it tumbles down onto the table next to him."
-    # TODO: sfx - facepalm, luke laughing
+    play sound sfx_michael_facepalm
+    # TODO: sfx luke laughing
     n "CS facepalms while Luke can be heard laughing from across the room."
     show cs disappointed
     cs "Goodness, Linus. You should maybe {i}not{/i} do that next time."

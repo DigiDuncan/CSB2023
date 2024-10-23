@@ -99,5 +99,15 @@
         "type": "image",
         "title": "TV SMPTE",
         "caption": "This background is from {i}CSBII{/i}. We don't know why it's still in the game. It was just sitting here in the files and looks awful. Who edited this? Why are the bars not tilted {i}at all?"
+    },
+    "best_music.png": {
+        "type": "image",
+        "title": "best_music.png",
+        "caption": "Before Tate figured out how to add support for Japanese text, the pop-up for this song was using an image instead. Nobody wanted to have to render images for all the other songs with Japanese titles, so this was the only one ever made."
+    },
+    "fancy_watch.png": {
+        "type": "image",
+        "title": "fancy_watch.png",
+        "caption": "While writing Train Route, Tate needed a picture of a fancy watch. They downloaded this image, somehow {i}forgot{/i} where the file got saved to, spent half an hour looking for it, assumed that Google Chrome ate it, gave up, downloaded a {i}different{/i} watch, and then found this image again several months later."
     }
 }

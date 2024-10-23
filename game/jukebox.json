@@ -35,7 +35,7 @@
             "artist": "dark cat",
             "tags": ["Menus"],
             "album_art": "bubbletea.png",
-            "trivia": "The unoffical DPN / CSBIII Theme song."
+            "trivia": "The unofficial DPN / {i}CSBIII{/i} theme song."
         },
         "what_the_night_will_bring" : {
             "file": "what_the_night_will_bring.ogg",
@@ -57,7 +57,7 @@
             "artist": "Walkman",
             "tags": ["CSBI"],
             "album_art": "tracker.png",
-            "trivia": "The unoffical CSBI Theme song."
+            "trivia": "The unofficial {i}CSBI{/i} theme song."
         },
         "canyon" : {
             "file": "canyon.ogg",
@@ -102,7 +102,7 @@
             "artist": "Mr. Sauceman",
             "tags": ["CSBI", "CSBII"],
             "album_art": "pizzatower.png",
-            "trivia": "Originally called {i}Office Puncher{/i} in the game files, we were going to name all of the songs internally after what was happening in that part of the game."
+            "trivia": "Originally called \"Office Puncher\" in the game files. We were going to name all of the songs internally after what was happening in that part of the game."
         },
         "beautiful_hills" : {
             "file": "beautiful_hills.ogg",
@@ -110,7 +110,7 @@
             "artist": "Network Music Ensemble",
             "tags": ["CSBI", "New In DX"],
             "album_art": "beautiful_hills.png",
-            "trivia": "The Home Savers Foundation Repair Theme."
+            "trivia": "The Home Savers Foundation Repair company used this as background music in the commercial that CS turned into a YTP."
         },
         "card_castle" : {
             "file": "card_castle.ogg",
@@ -132,7 +132,7 @@
             "artist": "C418",
             "tags": ["CSBII", "CSBIII: Country"],
             "album_art": "minecraft.png",
-            "trivia": "The unoffical Arceus Theme song."
+            "trivia": "The unofficial theme song for Arceus."
         },
         "moongazer" : {
             "file": "moongazer.ogg",
@@ -270,7 +270,7 @@
             "artist": "Pakoo",
             "tags": ["CSBIII"],
             "album_art": "trackerevil.png",
-            "trivia": "One, if not the only song that still keeps the original internal naming for music."
+            "trivia": "One of few songs that still keeps the original internal name."
         },
         "insane_personalities" : {
             "file": "insane_personalities.ogg",
@@ -327,7 +327,7 @@
             "artist": "u4ia",
             "tags": ["CSBIII: Archival"],
             "album_art": "tracker.png",
-            "trivia": "The unoffical Archival Theme song."
+            "trivia": "The unofficial theme song for the Archival ending."
         },
         "everybody_wants" : {
             "file": "everybody_wants.ogg",
@@ -377,7 +377,7 @@
             "artist": "Yuuka Kazami",
             "tags": ["CSBIII: Country", "New In DX"],
             "album_art": "yuuka_town.png",
-            "trivia": "From... RPG Maker."
+            "trivia": "Available in the Twilight Shrine: Japanese Resource Pack for RPG Maker."
         },
         "automatic_love" : {
             "file": "automatic_love.ogg",
@@ -451,7 +451,7 @@
             "artist": "Gooseworx",
             "tags": ["CSBIII: Country"],
             "album_art": "digitalcircus.png",
-            "trivia": "When {i}CSBIII{/i} was released, many tracks did not yet have album art. This is one of the more notable entries. The pilot episode for {i}The Amazing Digital Circus{/i} was only days old when {i}Country Route{/i} was being written."
+            "trivia": "When {i}CSBIII{/i} was released, many tracks did not yet have album art. This is one of the more notable entries. The pilot episode for {i}The Amazing Digital Circus{/i} was only days old when Country Route was being written."
         },
         "mm_select" : {
             "file": "mm_select.ogg",
@@ -459,7 +459,7 @@
             "artist": "Matthew Simmonds",
             "tags": ["CSBIII: East", "CSBIII: South", "CSBIII DX: Train"],
             "album_art": "tracker.png",
-            "trivia": "The unoffical Billy Mays Theme song. Originally called internally, {i}CS Did Something.{/i}"
+            "trivia": "The unofficial theme song for Billy Mays. The original internal name was \"CS Did Something.\""
         },
         "billy_radio" : {
             "file": "billy_radio.ogg",
@@ -495,7 +495,7 @@
             "artist": "Kikiyama",
             "tags": ["CSBIII: East"],
             "album_art": "yume.png",
-            "trivia": "This is more of a sound effect than a song, but it is listed as a song in the offical Yume Nikki OST."
+            "trivia": "This is more of a sound effect than a song, but it {i}is{/i} listed as a song in the offical {i}Yume Nikki{/i} OST."
         }, 
         "showtime" : {
             "file": "showtime.ogg",
@@ -546,7 +546,7 @@
             "artist": "Shoichiro Sakamoto",
             "tags": ["CSBIII: East"],
             "album_art": "breakout.png",
-            "trivia": "The old Scott the Woz Outro Theme."
+            "trivia": "The old outro theme for {i}Scott The Woz.{/i}"
         }, 
         "fourside" : {
             "file": "fourside.ogg",
@@ -660,7 +660,7 @@
             "artist": "Benjamin TISSOT",
             "tags": ["CSBIII: Fired"],
             "album_art": "jermalore.png",
-            "trivia": "The unoffical {i}Grab That Auto 5{/i} Theme song."
+            "trivia": "The unofficial theme song of {i}Grab That Auto 5.{/i}"
         },
         "energetic_rock" : {
             "file": "energetic_rock.ogg",
@@ -1170,7 +1170,7 @@
             "artist": "Miki Obata",
             "tags": ["CSBIII DX: Train", "New In DX"],
             "album_art": "pkmnchannel.png",
-            "trivia": "Getting this track to loop cleanly in {i}Train Route{/i} was a painful experience."
+            "trivia": "Getting this track to loop cleanly in Train Route was a painful experience."
         },
         "hide_and_seek" : {
             "file": "hide_and_seek.ogg",
