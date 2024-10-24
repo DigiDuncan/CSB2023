@@ -10,7 +10,7 @@
     "amtrak_dining_pancake": {
         "img": "amtrak_dining_pancake",
         "name": "Lone Pancake",
-        "owner": "Arceus?",
+        "owner": "Arceus",
         "desc": "Abandoned by Mean, left behind by Lupin, but finally loved (and eaten) by Arceus.",
         "rarity": "Common",
         "dx": true
@@ -36,6 +36,13 @@
         "owner": "CS",
         "desc": "One of many random fucking things CS keeps... somewhere. It's very soft to hug.",
         "rarity": "Uncommon"
+    },
+    "billy_car": {
+        "img": "billy_car",
+        "name": "Billy's Car",
+        "owner": "Billy Mays",
+        "desc": "A 2008 Land Rover LR3 that was featured in the infomercial for the Jupiter Jack.",
+        "rarity": "Common"
     },
     "boom": {
         "img": "boom",
@@ -87,7 +94,7 @@
         "img": "craptop",
         "name": "CS's Craptop",
         "owner": "CS",
-        "desc": "It's had a good run...",
+        "desc": "It's had a good run...\n\nNotably, these older Dell machines are still rather common.",
         "rarity": "Common"
     },
     "crt_magnet": {
@@ -214,7 +221,7 @@
     "lego_jail": {
         "img": "lego_jail",
         "name": "Lego City Jail Cell",
-        "owner": "Zenigata",
+        "owner": "Inspector Zenigata",
         "desc": "Built by CS to contain Lupin III.",
         "rarity": "Uncommon",
         "dx": true
@@ -222,7 +229,7 @@
     "linus_box": {
         "img": "linus_box",
         "name": "Linus' Box",
-        "owner": "Linus",
+        "owner": "Linus Sebastian",
         "desc": "Definitely was not purchased from a haunted garage sale.",
         "rarity": "Uncommon",
         "dx": true
@@ -230,7 +237,7 @@
     "ltt_bottle": {
         "img": "ltt_bottle",
         "name": "LTT Water Bottle",
-        "owner": "Linus",
+        "owner": "Linus Sebastian",
         "desc": "Built to last, but not dishwasher-safe. {a=https://lttstore.com}lttstore.com{/a} {size=-24}(not sponsored){/size}",
         "rarity": "Common",
         "dx": true
@@ -267,14 +274,14 @@
     "pipe_gun": {
         "img": "pipe_gun",
         "name": "Pipe Gun",
-        "owner": "Joel",
+        "owner": "Vargskelethor Joel",
         "desc": "It's held together with duct tape, rope, and a prayer, but it gets the job done.",
         "rarity": "Uncommon"
     },
     "pot": {
         "img": "pot",
         "name": "Mysterious Pot",
-        "owner": "Billy",
+        "owner": "Billy Mays",
         "desc": "An experiment gone awry...",
         "rarity": "Common",
         "dx": true
@@ -298,7 +305,7 @@
     "rosen_phone": {
         "img": "rosen_phone",
         "name": "Michael's Phone",
-        "owner": "Michael",
+        "owner": "Michael Rosen",
         "desc": "It makes sense for an older gentleman to prefer a landline.",
         "rarity": "Common",
         "dx": true
@@ -313,7 +320,7 @@
     "slime16": {
         "img": "slime16",
         "name": "Slime-16",
-        "owner": "Cpt. Underpants",
+        "owner": "Captain Underpants",
         "desc": "Careful, the trigger is a little... sticky.",
         "rarity": "Legendary",
         "dx": true

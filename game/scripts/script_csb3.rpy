@@ -1266,7 +1266,7 @@ label genocide_wait_arc:
     n "The approaching vehicle slowly coasts to a stop."
 
     play sound sfx_car_approach_stop volume 5.0 fadein 5.0
-    show car behind arceus:
+    show billy_car behind arceus:
         xanchor 0.5 yanchor 0.5
         xpos 0.5 ypos 0.8
         alpha 0.0 zoom 0
@@ -1485,8 +1485,6 @@ label csbiii_wait_forest:
     pause 0.5
     play sound2 sfx_doorslam noloop
     pause 1.0
-
-    # TODO: check whether this is only used once, and if it is, maybe a manual_pos() is more appropriate
 
     show copguy at t_copguy_frontseat
     with moveinleft
