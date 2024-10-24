@@ -1565,6 +1565,6 @@ label fired_final_tour_bus:
     scene black with Dissolve(3.0)
     $ ending_manager.mark("rockstar")
     $ renpy.movie_cutscene(creditsm)
-    $ persistent.add.heard("goodbye_summer_hello_winter")
+    $ persistent.heard.add("goodbye_summer_hello_winter")
     $ renpy.end_replay()
     return

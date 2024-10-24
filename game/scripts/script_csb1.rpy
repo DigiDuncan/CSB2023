@@ -97,7 +97,7 @@ label csbi_craptop:
             scene black with dissolve
             pause 2.0
             $ renpy.movie_cutscene(creditsm)
-            $ persistent.add.heard("goodbye_summer_hello_winter")
+            $ persistent.heard.add("goodbye_summer_hello_winter")
             $ renpy.end_replay()
             return
             
@@ -423,7 +423,7 @@ label csbi_room:
             scene black with Dissolve(3.0)
             $ renpy.movie_cutscene(hoh_repair)
             $ renpy.movie_cutscene(creditsm)
-            $ persistent.add.heard("goodbye_summer_hello_winter")
+            $ persistent.heard.add("goodbye_summer_hello_winter")
             $ renpy.end_replay()
             return
     show cs

@@ -989,6 +989,6 @@ label friend2_car_slam:
     $ persistent.heard.add("the_legend")
     pause 1.0
     $ renpy.movie_cutscene(creditsm)
-    $ persistent.add.heard("goodbye_summer_hello_winter")
+    $ persistent.heard.add("goodbye_summer_hello_winter")
     $ renpy.end_replay()
     return
