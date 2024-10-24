@@ -606,6 +606,9 @@ define zenigata_nobeep = Character("???", callback = renpy.partial(char_callback
 define zenigata_offscreen = Character("???", callback = renpy.partial(char_callback, beep = "zenigata"))
 define perfect_tate = Character("Tate", callback = renpy.partial(char_callback, name = "tate", beep = "tate"), screen = "perfect_tate_text")
 
+# DX Holiday Special Definitions
+define santa = Character("Santa Claus", callback = char_callback)
+
 # DX Finale Character Definitions
 define perfect_billy = Character("Perfect Billy", callback = renpy.partial(char_callback, name = "billy", beep = "billy"), screen = "perfect_billy_text")
 
@@ -621,6 +624,7 @@ define zelda = Character("Zelda", callback = renpy.partial(char_callback, play_b
 
 # Our Friends! Character Definitions
 define addy = Character("Addy", callback = renpy.partial(char_callback, name = "addy", beep = "pak"))
+define anne = Character("Anne", callback = char_callback)
 define anno = Character("Anno", callback = renpy.partial(char_callback, name = "anno", beep = "anno"))
 define arceus = Character("Arceus", callback = renpy.partial(char_callback, name = "arceus", beep = "arc"))
 define aria = Character("Aria", callback = renpy.partial(char_callback, name = "aria", beep = "aria"))
@@ -1439,6 +1443,12 @@ image after_true_title = Text("{size=+196}Spring 202X", text_align=0.5)
 image snowed_in = "bg/snowed_in.png"
 image cs_kitchen = "bg/cs_kitchen.png"
 image cs_basement = "bg/cs_basement.png"
+image tgt_checkerror = "bg/tgt_checkerror.png"
+image tgt_checkout = "bg/tgt_checkout.png"
+image tgt_inside = "bg/tgt_inside.png"
+image tgt_line = "bg/tgt_line.png"
+image tgt_outside = "bg/tgt_outside.png"
+image tgt_shelf = "bg/tgt_shelf.png"
 
 # CS wacky Kuwait Adventures: Mika Edition (Deluxe Content [With Funky Kong {And Dante from Devil may Cry}])
 image kuwait_lieutenant_snow = "characters/kuwait_lieutenant_snow.png"
