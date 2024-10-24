@@ -1296,8 +1296,6 @@ label genocide_wait_arc:
     pause 1.0
     arceus "He's just been--"
 
-    # TODO: didn't there used to be a different track here that was sped up or something?!
-
     play music "<from 60 to 170>audio/insane_personalities.ogg" if_changed
     music insane_personalities
     csgod "Stronger than ever."
