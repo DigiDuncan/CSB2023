@@ -19,27 +19,80 @@ init python:
         if n not in music_map:
             print(f"WARNING: Track '{n}' not in music_map!")
 
+    current_tag = tags_map[0]
+
+    def change_tag(operation):
+        global tags_map
+        global current_tag
+
+        tag_index = tags_map.index(current_tag)
+
+        if operation == "add":
+            tag_index = tag_index + 1
+
+        if operation == "subtract":
+            tag_index = tag_index - 1
+
+        # don't overflow
+        if tag_index < 0:
+            tag_index = 0
+        if tag_index > len(tags_map):
+            tag_index = len(tags_map)
+
+        current_tag = tags_map[tag_index]
+        return tag_index
+            
+
 screen jukebox_nav():
 
     add Color('#323e42', alpha=0.75)
 
-    viewport:
+    frame:
+        background None
         
-        # TODO: have ability to sort by name, artist, or route (tag). unsure how to arrange layout yet
+        # TODO: tag sorting does not work yet
 
-        xpos 25 ypos 150
-        xsize 500 ysize 700
-        mousewheel True
-        draggable True
-        pagekeys True
-        side_yfill True
-        scrollbars "vertical"
-        vbox:
-            spacing 10
-            xoffset 350
-            for k in music_map:
-                if k in persistent.heard:
-                    textbutton "{font=music_text}" + music_map[k]["title"]+"\n{size=-12}"+music_map[k]["artist"] action ShowMenu("music_screen", music_map[k]), Play("jukebox", music_map[k]["file"], relative_volume=0.5)
+        frame:
+            background None
+            xsize 575 ysize 50
+            xpos 25 ypos 75
+
+            imagebutton:
+                xalign 0.0 yalign 0.5
+                xysize 64, 64
+
+                idle "/gui/left_off_small.png"
+                hover "/gui/left_on_small.png"
+                
+                action Notify(change_tag("subtract"))
+
+            text current_tag:
+                xalign 0.5 yalign 0.5
+                text_align 0.5
+
+            imagebutton:
+                xalign 1.0 yalign 0.5
+                xysize 64, 64
+
+                idle "/gui/right_off_small.png"
+                hover "/gui/right_on_small.png"
+
+                action Notify(change_tag("add"))
+
+        viewport:
+            xpos 25 ypos 150
+            xsize 600 ysize 700
+            mousewheel True
+            draggable True
+            pagekeys True
+            side_yfill True
+            scrollbars "vertical"
+            vbox:
+                spacing 10
+                xoffset 350
+                for k in music_map:
+                    if k in persistent.heard:
+                        textbutton "{font=music_text}" + music_map[k]["title"]+"\n{size=-12}"+music_map[k]["artist"] action ShowMenu("music_screen", music_map[k]), Play("jukebox", music_map[k]["file"], relative_volume=0.5)
 
     textbutton "Return to Extras" action ShowMenu("category_welcome"), Stop("jukebox"), PauseAudio("music", False) yoffset 950 xoffset 25
     textbutton "Return" action Return(), Stop("jukebox"), PauseAudio("music", False) yoffset 1000 xoffset 25
@@ -58,7 +111,7 @@ screen jukebox_welcome():
     vbox:
         xsize 850
         xalign 0.5 yalign 0.5
-        xoffset 200
+        xoffset 300
         text "In this category, you can listen to all the sweet tunes you've discovered throughout CS's adventures!"
         text "([unlocked_music_count]/[music_count] unlocked)"
 
@@ -87,33 +140,29 @@ screen music_screen(this_track):
 
     frame:
         background None
-        xsize 1300 ysize 300
-        xpos 1225 ypos 100
+        xsize 1200 ysize 150
+        xpos 1275 ypos 100
 
         xanchor 0.5
-        text "{font=music_text}" + track_title:
+        text "{font=music_text}{size=69}" + track_title + "\n{font=music_text}{size=45}" + artist:
+            text_align 0.5
             xalign 0.5
-            size 69
-        text "{font=music_text}" + artist:
-            xalign 0.5
-            yalign 0.4
-            size 45
 
     viewport:
 
         xsize 1300
         ysize 900
         xalign 0.5
-        xoffset 305 
-        yoffset 200
+        xoffset 305
+        yoffset 150
         side_yfill True
         mousewheel True
         draggable True
         pagekeys True
         image "images/jukebox/record.png":
             xysize(500, 500)
-            xalign(0.75)
-            yalign(0.325)
+            xalign(0.8)
+            yalign(0.3)
             at transform:
                 rotate 0
                 linear 5.0 rotate 360.0
@@ -122,21 +171,20 @@ screen music_screen(this_track):
         if album_art is None:
             image "images/jukebox/csbi.png":
                 xysize(512, 512)
-                xalign(0.45)
+                xalign(0.5)
                 yalign(0.4)
         else:
             image f"images/jukebox/{album_art}":
                 xysize(512, 512)
-                xalign(0.45)
+                xalign(0.5)
                 yalign(0.4)
 
-        frame:
-            xsize 1250
-            ysize 200
-            xalign 0
-            yalign 1.0
-            background None
-            text trivia:
-                text_align 0.5
-                xalign 0.5
-                yalign 0
+    frame:
+        background None
+        xsize 1250 ysize 150
+        xoffset 650 yoffset 850
+
+        text trivia:
+            text_align 0.5
+            xalign 0.5
+            yalign 0
