@@ -56,7 +56,7 @@ label dx_christmas_tree:
         n "CS gets himself out of the mess of lights, garland, and Legos."
         # CS steps on a Lego.
         cs "Fuck!"
-        cs "Man, what a mess! "
+        cs "Man, what a mess!"
         cs "This is gonna take forever to clean up!"
     jump dx_christmas_anno
 
@@ -188,6 +188,7 @@ label dx_christmas_anno:
         n "After about an hour, they manage to clean up the mess, without stepping on too many Legos."
         n "CS and Anno drag the boxes inside."
     #Setting up decorations
+label dx_christmas_setup:
     cs "Well Anno, are you ready to start decorating this place?"
     anno "Yeah! Where do you wanna start?"
     #Living room
@@ -199,6 +200,7 @@ label dx_christmas_anno:
     cs "Thanks Anno! You really rizzed up my crib!"
 
     #Day 2
+label dx_christmas_before_shopping:
     n "After a good night's sleep, CS slowly wakes up to read the time."
     cs "Huh?"
     cs "Oh shit! It's 2pm already?"
@@ -218,6 +220,7 @@ label dx_christmas_anno:
     scene tgt_shelf with dissolve
     cs "Well I need to get some Genergy, of course."
     #Checkout
+label dx_christmas_checkout:
     n "CS heads over to the checkout lanes."
     scene tgt_line with dissolve
     cs "Wait, what?"
@@ -593,6 +596,7 @@ label dx_christmas_intro:
     cs "No, no, it's okay."
     cs "I hope you guys have fun, I'm gonna go back to the party."
     #Banter
+label dx_christmas_banter:
     n "While the party starts up, copguy and the sheriff get into a predicament."
     sheriff "Hey Copguy!"
     copguy "I know, this party is great, right?"
@@ -764,8 +768,11 @@ label dx_christmas_cooking:
     grace "Finally!"
     grace "Guys, the sheriff is out!"
     n "A line starts to form next to the bathroom."
+label dx_christmas_dinner:
+    scene black with dissolve
     #Dinner/More Banter
     #Gift Exchange
+label dx_christmas_exchange:
     cs "Alright everyone! It's time for the gift exchange!"
     cs "Everyone brought a gift, right?"
     n "Everyone nods."
@@ -940,6 +947,7 @@ label dx_christmas_cooking:
 
 
     #Games/Climax
+label dx_christmas_climax:
     n "After all of the gifts have been given out, almost everyone has come to the conclusion that the party should end."
     k22 "Well CS, this was wonderful, but we should get going."
     cs "Wait! You aren't gonna stay for the games?"
@@ -1077,6 +1085,7 @@ label dx_christmas_lights_out:
     hide screen flashlight_demo
     cs "What? How bad is it?"
     mean "Grab my hand, I'll pull you up."
+label dx_christmas_snowed_in:
     play music winters_halloween
     music winters_halloween
     scene snowed_in
@@ -1137,7 +1146,7 @@ label dx_christmas_lights_out:
     michael "Correct!"
     cs "Okay, I have something I've wanted to play again with someone."
     cs "I have a few board games somewhere, I just need to look."
-    tate "Please tell me it's not Chess…"
+    tate "Please tell me it's not Chess..."
     cs "It's better than Chess! I'll be back."
     n "After a bit of rummaging, CS comes back with a blueish-looking box."
     cs "It's Reversi!"
@@ -1154,7 +1163,7 @@ label dx_christmas_lights_out:
     cs "Who wants to play with me?"
     # maybe pick a character to play here?
     # Insert Reversi Gameplay here
-
+label dx_christmas_billy_time:
     billy "Wait! Everyone hold on!"
     cs "What? What is it Billy?"
     billy "The handy switch!"
@@ -1222,6 +1231,7 @@ label dx_christmas_lights_out:
     rich "Didn't you guys get up to the roof?"
     ed "Maybe we should all go up and check it out."
     n "Everyone clammers up the stairs, and one by one, they all climb up onto the roof."
+label dx_christmas_roof_moment:
     k22 "So it is as bad as you said."
     wesley "It just keeps going! It never ends!"
     tate "What are we going to do? We can't just, walk out there!"
