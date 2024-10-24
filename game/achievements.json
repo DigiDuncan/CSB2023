@@ -130,7 +130,8 @@
         "locked": "???",
         "unlocked": "Get a perfect pencil sharpening score.",
         "img": "300",
-        "type": "extra"
+        "type": "extra",
+        "steps": 300
     },
     "car_dialogue":{
         "name": "Bored",
@@ -399,7 +400,8 @@
         "unlocked": "Get a perfect score of 1200.",
         "img": "1200",
         "type": "extra",
-        "dx": true
+        "dx": true,
+        "steps": 1200
     },
     "bronson":{
         "name": "We Don't Go To Bronson",
@@ -455,7 +457,8 @@
         "unlocked": "See all three possible endings of Train Route.",
         "img": "railfan",
         "type": "extra",
-        "dx": true
+        "dx": true,
+        "steps": 3
     },
     "broke":{
         "name": "You Broke It!",
@@ -470,14 +473,16 @@
         "locked": "Collect every bio.",
         "unlocked": "Collect every bio.",
         "img": "bios",
-        "type": "extra"
+        "type": "extra",
+        "steps": "bio_count"
     },
     "jukebox":{
         "name": "The Brown Album",
         "locked": "Collect every song in the jukebox.",
         "unlocked": "Collect every song in the jukebox.",
         "img": "juke",
-        "type": "extra"
+        "type": "extra",
+        "steps": "song_count"
     },
     "items":{
         "name": "Collezione di Cacca",
@@ -485,7 +490,8 @@
         "unlocked": "Collect every item.",
         "img": "item_collection",
         "type": "extra",
-        "dx": true
+        "dx": true,
+        "steps": "item_count"
     },
     "pun_values":{
         "name": "Tons Of Pun Fun",
@@ -493,13 +499,15 @@
         "unlocked": "Find every music fun value.",
         "img": "music_pun_fun",
         "type": "extra",
-        "dx": true
+        "dx": true,
+        "steps": "pun_count"
     },
     "fin":{
         "name": "Fin.",
         "locked": "See every ending",
         "unlocked": "See every ending",
         "img": "end",
-        "type": "extra"
+        "type": "extra",
+        "steps": "ending_count"
     }
 }

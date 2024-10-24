@@ -18,6 +18,7 @@ class Achievement:
     category: str
     hidden: bool = False
     dx: bool = False
+    steps: int = 1
    
     @property
     def unlocked(self) -> bool:
