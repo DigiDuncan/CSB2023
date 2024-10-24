@@ -787,11 +787,13 @@ label csbi_rosen_house:
     pause 0.5
     michael "Goodness."
     n "Michael downs the whole can."
-    play sound sfx_chug_that
+    play sound sfx_crack_open_cold_one
     pause 0.5
     show genergy at manual_pos(325,400) with MoveTransition(0.25):
         linear 0.25 rotate -50
-    pause 6.0
+    pause 0.5
+    play sound sfx_mc_drink
+    pause 3.0
     hide genergy with dissolve
     pause 2.0
     "..."

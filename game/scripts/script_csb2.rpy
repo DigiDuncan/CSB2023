@@ -776,9 +776,10 @@ label csbii_ltt:
             linear 0.5 zoom 0.7
     pause 1.0
 
-    # TODO: rummaging sfx
+    play sound sfx_items_rustling volume 3.0
     arceus "Hnng...{w} hmmpmh... {w}{i}aha!"
     pause 0.5
+    stop sound
     arceus "So, I just need..."
 
     show arceus :
@@ -790,9 +791,10 @@ label csbii_ltt:
         parallel:
             linear 0.5 zoom 1.1
 
-    # TODO: rummaging more sfx
     pause 1.0
+    play sound sfx_items_rustling volume 5.0
     arceus "Come on..."
+    stop sound
     show craptop at manual_pos(0.1, 0.5) with dissolve
     n "Arceus finds an old laptop."
     arceus "Perfect."
@@ -818,7 +820,6 @@ label csbii_ltt:
     show crt_magnet at manual_pos(1.1, 0.8, 0.5):
         linear 0.5 rotate 180
     with MoveTransition(0.25)
-    # TODO: use a different sound here later
     play sound sfx_cat_crash
     with hpunch
     pause 1.5
