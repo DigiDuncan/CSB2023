@@ -762,6 +762,7 @@ label archival_finale:
     n "CS has been deleted, and has been sent to the beginning of time itself."
     pause 2.0
     $ renpy.movie_cutscene(creditsm)
+    $ persistent.add.heard("goodbye_summer_hello_winter")
     pause 2.0
     play music everybody_wants if_changed
     music everybody_wants 

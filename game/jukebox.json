@@ -891,6 +891,21 @@
             "tags": ["CSBIII: Friend"],
             "album_art": "awesome.png"
         },
+        "weapon_of_choice" : {
+            "file": "weapon_of_choice.ogg",
+            "title": "Weapon Of Choice",
+            "artist": "Black Rebel Motorcycle Club",
+            "tags": ["CSBIII: Friend"],
+            "album_art": "weapon_of_choice.png",
+            "trivia": "When he was in college, the real CS made a music video for this song. The ending movie in Friend Route is a direct tribute to that video."
+        },
+        "the_legend" : {
+            "file": "the_legend.ogg",
+            "title": "The Legend",
+            "artist": "Toby Fox",
+            "tags": ["CSBIII: Friend"],
+            "album_art": "deltarune.png"
+        },
         "honk_song" : {
             "file": "honk_song.ogg",
             "title": "Honk Song",
@@ -1003,6 +1018,13 @@
             "artist": "Lorin Nelson",
             "tags": ["CSBIII: South"],
             "album_art": "legoisland.png"
+        },
+        "goodbye_summer_hello_winter" : {
+            "file": "goodbye_summer_hello_winter.ogg",
+            "title": "Goodbye Summer, Hello Winter",
+            "artist": "FantomenK",
+            "tags": ["CSBI", "CSBII", "CSBIII: Archival", "CSBIII: Country", "CSBIII: East", "CSBIII: Fired", "CSBIII: Friend", "CSBIII: South" ],
+            "album_art": "fantomenk.png"
         },
         "upon_me" : {
             "file": "upon_me.ogg",

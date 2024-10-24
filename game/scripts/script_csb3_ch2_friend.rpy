@@ -839,6 +839,7 @@ label friend2_weapon_of_choice:
     $ renpy.movie_cutscene(woc)
     $ achievement_manager.unlock("Hopes and Dreams")
     $ achievement_manager.unlock("Machine Gun")
+    $ persistent.heard.add("weapon_of_choice")
     jump friend2_car_slam
 
 label friend2_car_slam:
@@ -985,7 +986,9 @@ label friend2_car_slam:
     $ ending_manager.mark("friend")
     pause 1.0
     $ renpy.movie_cutscene(where)
+    $ persistent.heard.add("the_legend")
     pause 1.0
     $ renpy.movie_cutscene(creditsm)
+    $ persistent.add.heard("goodbye_summer_hello_winter")
     $ renpy.end_replay()
     return

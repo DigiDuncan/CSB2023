@@ -195,6 +195,7 @@ label south_lego_ending:
     music end
     $ ending_manager.mark("south")
     $ renpy.movie_cutscene(creditsm)
+    $ persistent.add.heard("goodbye_summer_hello_winter")
     $ renpy.end_replay()
     return
 

@@ -296,6 +296,7 @@ label true_streaming:
     stop music2 fadeout 1.0
     $ ending_manager.mark("true")
     $ renpy.movie_cutscene(creditsm)
+    $ persistent.add.heard("goodbye_summer_hello_winter")
     $ renpy.end_replay()
 
     menu:
@@ -324,6 +325,7 @@ label true_ytp_ending:
     scene black with dissolve
     stop music2 fadeout 1.0   
     $ renpy.movie_cutscene(creditsm)
+    $ persistent.add.heard("goodbye_summer_hello_winter")
     $ renpy.end_replay()
     return
 
@@ -349,6 +351,7 @@ label true_ltt_ending:
     scene black with dissolve
     stop music2 fadeout 1.0   
     $ renpy.movie_cutscene(creditsm)
+    $ persistent.add.heard("goodbye_summer_hello_winter")
     $ renpy.end_replay()
     return
 

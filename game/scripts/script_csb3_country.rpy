@@ -1850,6 +1850,7 @@ label country_going_home:
     music end
     $ ending_manager.mark("country")
     $ renpy.movie_cutscene(creditsm)
+    $ persistent.add.heard("goodbye_summer_hello_winter")
     $ renpy.end_replay()
     return
 
