@@ -18,7 +18,7 @@
         "CSBIII: Michigan",
         "CSBIII: South",
         "CSBIII DX: Bronson",
-        "CSBIII DX: BTTF (After Story)",
+        "CSBIII DX: After Story",
         "CSBIII DX: Holiday Special",
         "CSBIII DX: Finale",
         "CSBIII DX: Kuwait",
@@ -49,7 +49,7 @@
             "file": "secret/space_classroom.ogg",
             "title": "Space Classroom",
             "artist": "Dan Salvato",
-            "tags": ["Misc.", "CSBIII DX: BTTF"],
+            "tags": ["Misc.", "CSBIII DX: After Story"],
             "album_art": "ddlc.png"
         },
         "lets_hear_my_baby" : {
@@ -79,7 +79,7 @@
             "file": "scales_of_joy.ogg",
             "title": "scales of joy.mod",
             "artist": "Mel O Dee",
-            "tags": ["CSBI", "CSBIII DX: BTTF", "Fun Values"],
+            "tags": ["CSBI", "CSBIII DX: After Story", "Fun Values"],
             "album_art": "tracker.png"
         },
         "hohsis_theme" : {
@@ -421,7 +421,7 @@
             "file": "muumin_tani_fuyu.ogg",
             "title": "ムーミン谷・冬",
             "artist": "Sumio Shiratori",
-            "tags": ["CSBIII: Country", "CSBIII DX: BTTF", "Fun Values"],
+            "tags": ["CSBIII: Country", "CSBIII DX: After Story", "Fun Values"],
             "album_art": "moomin.png",
             "trivia": "Romanized Title: Muumin Tani Fuyu\nEnglish Title: Winter In Moominvalley"
         },
@@ -1023,7 +1023,7 @@
             "file": "letshearspring.ogg",
             "title": "Let's Hear My Baby: Spring Remix",
             "artist": "Pakoo",
-            "tags": ["CSBIII DX: BTTF", "New In DX"],
+            "tags": ["CSBIII DX: After Story", "New In DX"],
             "album_art": "csbii.png",
             "trivia": "Pakoo's edited MOD of {i}Let's Hear My Baby.{/i}"
         },
@@ -1031,7 +1031,7 @@
             "file": "echoingspring.ogg",
             "title": "Echoing: Spring Remix",
             "artist": "Pakoo",
-            "tags": ["CSBIII DX: BTTF", "New In DX"],
+            "tags": ["CSBIII DX: After Story", "New In DX"],
             "album_art": "csbii.png",
             "trivia": "Pakoo's edited MOD of {i}Echoing.{/i}"
         },
@@ -1039,21 +1039,21 @@
             "file": "alien_atmosphere.ogg",
             "title": "Alien Atmosphere",
             "artist": "Dr. Awesome",
-            "tags": ["CSBIII DX: BTTF", "New In DX"],
+            "tags": ["CSBIII DX: After Story", "New In DX"],
             "album_art": "awesome.png"
         },
         "apple_kid" : {
             "file": "apple_kid.ogg",
             "title": "Apple Kid",
             "artist": "Keiichi Suzuki",
-            "tags": ["CSBIII DX: BTTF", "New In DX"],
+            "tags": ["CSBIII DX: After Story", "New In DX"],
             "album_art": "earthbound.png"
         },
         "ten_feet_away" : {
             "file": "10_feet_away.ogg",
             "title": "10 Feet Away",
             "artist": "Dr. Awesome",
-            "tags": ["CSBIII DX: BTTF", "New In DX"],
+            "tags": ["CSBIII DX: After Story", "New In DX"],
             "album_art": "awesome.png",
             "trivia": "One, if not the only song in CSB to have the stems of the song get progressively added until the full song is completed."
         },
@@ -1061,21 +1061,21 @@
             "file": "hitsquad_2.ogg",
             "title": "Hitsquad 2",
             "artist": "Dr. Awesome",
-            "tags": ["CSBIII DX: BTTF", "New In DX"],
+            "tags": ["CSBIII DX: After Story", "New In DX"],
             "album_art": "awesome.png"
         },
         "get_the_funk" : {
             "file": "get_the_funk.ogg",
             "title": "Get The Funk",
             "artist": "Dr. Awesome",
-            "tags": ["CSBIII DX: BTTF", "New In DX", "Minigames"],
+            "tags": ["CSBIII DX: After Story", "New In DX", "Minigames"],
             "album_art": "awesome.png"
         },
         "interference2" : {
             "file": "interference.ogg",
             "title": "Interference",
             "artist": "Sanity",
-            "tags": ["CSBIII DX: BTTF", "CSBIII DX: Finale", "New In DX"],
+            "tags": ["CSBIII DX: After Story", "CSBIII DX: Finale", "New In DX"],
             "album_art": "tracker.png"
         },
         "lets_hear_winter" : {

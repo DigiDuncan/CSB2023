@@ -19,42 +19,20 @@ init python:
         if n not in music_map:
             print(f"WARNING: Track '{n}' not in music_map!")
 
-    current_tag = tags_map[0]
-
-    def change_tag(operation):
-        global tags_map
-        global current_tag
-
-        tag_index = tags_map.index(current_tag)
-
-        if operation == "add":
-            tag_index = tag_index + 1
-
-        if operation == "subtract":
-            tag_index = tag_index - 1
-
-        # don't overflow
-        if tag_index < 0:
-            tag_index = 0
-        if tag_index > len(tags_map):
-            tag_index = len(tags_map)
-
-        current_tag = tags_map[tag_index]
-        return tag_index
-            
-
 screen jukebox_nav():
 
     add Color('#323e42', alpha=0.75)
 
+    # frames > viewports and i will hear no arguments to the contrary. - tate
+
     frame:
         background None
-        
-        # TODO: tag sorting does not work yet
+
+        # TODO: don't display the given tag if you haven't actually seen ANYTHING in a given route yet. we don't like spoilers
 
         frame:
             background None
-            xsize 575 ysize 50
+            xsize 600 ysize 50
             xpos 25 ypos 75
 
             imagebutton:
@@ -63,13 +41,10 @@ screen jukebox_nav():
 
                 idle "/gui/left_off_small.png"
                 hover "/gui/left_on_small.png"
-                
-                action Notify(change_tag("subtract"))
 
-            text current_tag:
-                xalign 0.5 yalign 0.5
-                text_align 0.5
-
+                if current_jukebox_tag_index-1>=0:
+                    action SetVariable("current_jukebox_tag_index", current_jukebox_tag_index-1)
+            
             imagebutton:
                 xalign 1.0 yalign 0.5
                 xysize 64, 64
@@ -77,7 +52,12 @@ screen jukebox_nav():
                 idle "/gui/right_off_small.png"
                 hover "/gui/right_on_small.png"
 
-                action Notify(change_tag("add"))
+                if current_jukebox_tag_index+1<len(tags_map):
+                    action SetVariable("current_jukebox_tag_index", current_jukebox_tag_index+1)
+
+            text tags_map[current_jukebox_tag_index]:
+                xalign 0.5 yalign 0.5
+                text_align 0.5
 
         viewport:
             xpos 25 ypos 150
@@ -92,7 +72,13 @@ screen jukebox_nav():
                 xoffset 350
                 for k in music_map:
                     if k in persistent.heard:
-                        textbutton "{font=music_text}" + music_map[k]["title"]+"\n{size=-12}"+music_map[k]["artist"] action ShowMenu("music_screen", music_map[k]), Play("jukebox", music_map[k]["file"], relative_volume=0.5)
+                        # display all
+                        if current_jukebox_tag_index == 0:
+                            textbutton "{font=music_text}" + music_map[k]["title"]+"\n{size=-12}"+music_map[k]["artist"] action ShowMenu("music_screen", music_map[k]), Play("jukebox", music_map[k]["file"], relative_volume=0.5)
+                        # only display per tag
+                        else:
+                            if tags_map[current_jukebox_tag_index] in music_map[k]["tags"]:
+                                textbutton "{font=music_text}" + music_map[k]["title"]+"\n{size=-12}"+music_map[k]["artist"] action ShowMenu("music_screen", music_map[k]), Play("jukebox", music_map[k]["file"], relative_volume=0.5)
 
     textbutton "Return to Extras" action ShowMenu("category_welcome"), Stop("jukebox"), PauseAudio("music", False) yoffset 950 xoffset 25
     textbutton "Return" action Return(), Stop("jukebox"), PauseAudio("music", False) yoffset 1000 xoffset 25

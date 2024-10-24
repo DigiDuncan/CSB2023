@@ -12,7 +12,12 @@
 #       tate "Excuse me, Mr.{w=0} Conductor?"
 
 init python:
+    # For unused assets gallery
     unused_page = 0
+    
+    # For jukebox tagging
+    current_jukebox_tag_index = 0
+    
 
 init python:
     import re
