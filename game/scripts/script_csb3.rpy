@@ -980,7 +980,7 @@ label csbiii_arc_escape:
     arceus "{size=-15}I mean, you {i}could{/i} have called upon me..."
     arceus "I should've known that the cops were going look for us. We didn't exactly hide our tracks too well."
     arceus "I was checking comms chatter around the area when I heard at the last second that they were heading towards LMG."
-    arceus "I figured that since you helped me break out of prison, I it's only fair that I come back for you."
+    arceus "I figured that since you helped me break out of prison, it's only fair that I come back for you."
     cs "Thanks, man. I really owe you again."
     arceus "Nah, {i}I{/i} owe {i}you."
     scene black with dissolve
@@ -1005,13 +1005,14 @@ label csbiii_arc_escape:
     scene black with dissolve
 
     scene washington_road with dissolve
-    n "The duo continues their trek now in the US, in the state of Washington."
+    n "The duo continues their trek into the US."
+    n "They find themselves in the state of Washington, surrounded by trees."
     show cs dark at left with moveinleft
     show arceus dark at right with moveinright
     cs "So, what happened with you?"
     arceus "Hmm?"
     cs "Well, I went to work at LTT, and had to spend my nights at a nearby hotel."
-    cs "Linus gave me enough money to get by for the meantime."
+    cs "Linus gave me enough money to get by for a little while."
     arceus "Wait, which hotel?"
     cs "The Hoto Hoto?"
     arceus "Shoot, I've been at the same hotel, clearing up ties from my cybercriminal past."
@@ -1023,7 +1024,7 @@ label csbiii_arc_escape:
     stop music fadeout 3.0
     music end
     scene black with dissolve
-    pause 0.5
+    pause 2.0
 
     scene sheriff_office
     show sheriff at left
