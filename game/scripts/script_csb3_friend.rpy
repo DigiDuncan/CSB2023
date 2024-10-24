@@ -709,13 +709,13 @@ label friend_fire_range:
     if fun_value(FUN_VALUE_MUSIC):
         show cs worried
         arceus "Alright, CS. We've gotta go, now."
-        cs "Uhh… yeah."
+        cs "Uhh... yeah."
         cs "Hey Arc, you remember what happened with the Subway guy?"
         arceus "Yeah, that was fucked up."
         arceus "That was a while ago now, wasn't it?"
         cs "Yeah."
         arceus "...Why do you bring that up now?"
-        cs "Uhh… nevermind."
+        cs "Uhh... nevermind."
     else:
         arceus "Alright, CS. We've gotta go, now."
     linus "Heyy! How'd you get down here?"

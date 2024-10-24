@@ -176,7 +176,7 @@ label dx_after_true:
     cs "Wait, what happened?"
     cs "Oh, God, where am I?"
     show cs worried
-    cs "Oh, no… It can't be..."
+    cs "Oh, no... It can't be..."
     show cs scared
     cs "Help! I have to be dreaming!"
     "???" "Hey! Who's up there?"
@@ -1072,7 +1072,7 @@ label dx_after_lunatic_ask:
             show cs cultist at center with moveinleft
             jump dx_after_seek_competitors
         if lunatic_votes == 0:
-            l_cultist "I guess we have a bit…"
+            l_cultist "I guess we have a bit..."
             n "They hand CS a copper coin."
             cs "Thanks."
             $ cath_counter += 0.01
@@ -1233,7 +1233,7 @@ label dx_after_lunatic_jump:
     music space_classroom
     l_cultist "Alright, cs... 188?"
     show lunatic_cultist flipped
-    l_cultist "That's your name, apparently…"
+    l_cultist "That's your name, apparently..."
     show lunatic_cultist
     l_cultist "Let's ask you a few questions."
     l_cultist "How many friends did you gather to help takedown Copguy EX? Excluding you, of course."
@@ -1317,7 +1317,7 @@ label dx_after_zero_right:
     cs "Yeah, yeah, I'll get going..."
     if god_money:
         cs "Also, before I go, do you guys have any spare change?"
-        l_cultist "I guess we have a bit…"
+        l_cultist "I guess we have a bit..."
         n "They hand CS a copper coin."
         cs "Thanks."
         $ cath_counter += 0.01
@@ -1350,7 +1350,7 @@ label dx_after_one_right:
     scene cult_con with dissolve
     show cs cultist at center with moveinleft
     cs "Hey, at least I got some votes. I should still go try for more."
-    cs "Let's see…"
+    cs "Let's see..."
     $ lunatic_check = True
     jump dx_after_seek_competitors
     #CS got two right
@@ -1427,7 +1427,7 @@ label dx_after_blindeye_ask:
     blind_eye "Do you perchance know a Fiddleford? Fiddleford McGucket?"
     cs "...No. Can't say I have."
     blind_eye "Hmm..."
-    blind_eye "They said they would be here… I wonder where they are..."
+    blind_eye "They said they would be here... I wonder where they are..."
     cs "I can ask around for them, if you want me to."
     blind_eye "That would be great! We really need them to help fix our gun."
     cs "Sure, I'll be back soon!"
@@ -1456,7 +1456,7 @@ label dx_after_blindeye_reask:
         fiddle "Okay wait I can--"
         cs "Whaaaat?!?"
         cs "You're the leader of Blue Branch??"
-        fiddle "Okay well-- Yes-- It's a long story…"
+        fiddle "Okay well-- Yes-- It's a long story..."
         cs "This is fucking insane, hold on..."
         blind_eye "You seem to be not handling the situation well."
         blind_eye "Would you like us to remove this event from your memory?"
@@ -1510,7 +1510,7 @@ label dx_after_blindeye_reask:
         $ cath_counter += 77
         n "The Blind Eye cultist gives CS a $77 dollar bill."
         blind_eye "I don't know if this has any real worth, so I guess you can do what you want with it."
-        cs "Oh… Kay. Weird..."
+        cs "Oh... Kay. Weird..."
         n "CS inspects the dollar bill."
         cs "This man on the bill... Nathaniel Northwest? Do you know them?"
         blind_eye "Yes, they are an extremely wealthy family from the town we come from."
@@ -1575,7 +1575,7 @@ label dx_after_blindeye_quest:
             n "The cultist tweaks the gun and types in his prompt in."
             blind_eye "Here goes nothing..."
             blind_eye "Did it work?"
-            cs "Yeah…"
+            cs "Yeah..."
             blind_eye "...Do you like it?"
             cs "I... what the hell are these lyrics?"
             cs "Is this permanent?"
@@ -1654,7 +1654,7 @@ label dx_after_branch_fiddleford:
     cultist "No. Who asked you this?"
     cs "...The Blind Eye Association?"
     cultist "I see."
-    cs "So, uhh…"
+    cs "So, uhh..."
     cultist "Why don't you head back to the convention? You gotta get more votes for us!"
     cs "Yeah, you're right."
     n "CS heads back to the convention floor."
