@@ -267,11 +267,20 @@ label csbiii_bad_video:
     cs "I don't understand, I didn't think you would be this upse--{w=0.25}{nw}"
     linus "{sc=1}Just get out of here, you stupid, dumb animal!"
     cs "..."
-    # TODO: sfx stomping
     n "CS turns around and stomps out of the building."
-    show cs angry flipped with hpunch
+    show cs angry flipped 
+    play sound sfx_punch
+    with hpunch
+    pause 0.5
     hide cs with moveoutleft
+    play sound sfx_punch volume 0.75
+    with hpunch
+    pause 0.5
     scene black with dissolve
+    play sound sfx_punch volume 0.5
+    pause 1.5
+    play sound sfx_punch volume 0.25
+    pause 3.0
     jump fired_new_plan
 
 label csbiii_boost:
@@ -302,9 +311,10 @@ label csbiii_boost:
     cs "Yeah, I should've realized my style is too crazy. I guess I should leave..."
     show cs disappointed flipped at mid_offscreen_left with move
     show linus behind cs at left with ease
-    show cs worried flipped at mid_offscreen_left with vpunch
-    # TODO: sfx a gentler punch
-    show linus at center with ease
+    show cs worried flipped at mid_offscreen_left
+    play sound sfx_punch_friendly
+    with vpunch
+    show linus at mid_left with move
     if fun_value(FUN_VALUE_MUSIC):
         n "As CS turns around, he almost trips on a counter, one that looks like those found at the airport."
     else:
@@ -312,7 +322,9 @@ label csbiii_boost:
     play music airport_counter volume 0.5 if_changed
     music airport_counter
     linus "Dude, what are you talking about? That video was {i}awesome!{/i}"
-    show cs worried at left with move
+    show cs worried at left
+    show linus at center
+    with move
     cs "Woah, wait! You actually {i}like{/i} YTPs?"
     linus "Yeah, man! You think I hired you on the spot just because of your obviously-fake visa?"
     linus "I {i}love{/i} your videos! I've been secretly hoping you would YTP one of mine for the longest time!"
@@ -321,8 +333,7 @@ label csbiii_boost:
     show linus at manual_pos(0.4, 0.5, 0.5)
     show cs happy at manual_pos(0.3, 0.5, 0.5)
     with ease
-
-    # TODO: sfx high-five
+    play sound sfx_high_five
 
     show cs at left
     show linus at center
@@ -852,17 +863,27 @@ label csbiii_arc_escape:
     n "Linus mutters to himself."
     linus "{size=-12}I should've done a background check on CS. It's weird how--"
 
-    # TODO: busting down the door sfx. "FBI open up" fun value?
+    if fun_value(FUN_VALUE_RARE):
+        play sound sfx_fbi_open_up
+        with vpunch
+        with vpunch
+        pause 1.0
+        with hpunch
+        with hpunch
+    else:
+        play sound sfx_door_break
+        with hpunch
 
     show colton at mid_left_left
     show luke flipped at left
     show taran flipped at mid_mid_left
     show linus at center
     with MoveTransition(0.25)
-    with hpunch
     show linus flipped
+    pause 1.0
 
-    show copguy at right with moveinright
+    show copguy at offscreenright with determination
+    show copguy at right with MoveTransition(0.25)
     if fun_value(FUN_VALUE_MUSIC):
         n "Undyne bursts in."
     else:    
@@ -924,13 +945,20 @@ label csbiii_arc_escape:
     n "Copguy steps outside to contact the sheriff."
     stop music fadeout 3.0
     music end
+    pause 2.0
     colton "I can't fucking {i}believe{/i} you guys! That was {i}way{/i} too far!"
     show linus
+    show luke
+    show taran
+    pause 1.0
     linus "April Fools?"
     colton "{bt=a3-p10-s4}IT'S JULY!" with vpunch
+    pause 1.0
     scene black with dissolve
+    pause 1.0
 
     scene outside_ltt with dissolve
+    pause 1.0
     n "Copguy orders the rest of the cops to leave the scene and return to the station."
     show copguy flipped at left with moveinleft
     copguy "Damn it, they don't have CS anymore. We're gonna have to start a manhunt..."
@@ -1006,23 +1034,24 @@ label csbiii_arc_escape:
     show sheriff at left
     show copguy at right with moveinright
     show sheriff flipped
-    sheriff "Howdy, Officer Copguy. Tell me, you guys arrested CS this evening, right?"
-    copguy "Unfortunately, no, we did not."
-    n "The sheriff slams his desk."
-    # TODO: sfx slam desk
-    show sheriff at left with vpunch
+    sheriff "Howdy, Officer Copguy."
+    sheriff "Tell me, you guys arrested CS this evening, right?"
+    copguy "Unfortunately, no, we did not, sir."
+    show sheriff at left 
+    play sound sfx_desk_slam
+    with vpunch
     sheriff "Damn it!" with hpunch
     show sheriff flipped
-    sheriff "Damn it!{fast} And how did you fuck {i}that{/i} up?" with vpunch
-    copguy "Look, you see, he managed--"
+    sheriff "Damn it!{fast} And, how did you fuck {i}that{/i} up?" with vpunch
+    copguy "Look, sir, you see, he--{w=0.25}{nw}"
     sheriff "You know what, I don't want to hear this!"
-    sheriff "First, they manage to escape from one of our top prisons, and now you're telling me that you {i}lost{/i} him?!"
-    copguy "Please, this is one of my best cases yet! I need to catch him, and I promise I'll put him back in jail, along with those {i}other{/i} two!"
-    copguy "You know, the furry and the Kurt Cobain impersonator."
+    sheriff "First, this guy manages to escape from one of our top prisons, and {i}now{/i} you're telling me that you {i}lost{/i} him?!"
+    copguy "Please, sir, this is one of my best cases yet! I need to catch him, and I promise I'll put him back in jail, along with those {i}other{/i} two!"
+    copguy "You know, the furry and the Kurt Cobain impersonator!"
     pause 0.5
     n "The sheriff thinks for a moment."
     pause 1.0
-    sheriff "Alright, since I know you've been pretty good at catching criminals for the past 15 years, I'll let it slide this time."
+    sheriff "Alright, since I know you've taken this job seriously for the last 15 years, I'll let this one fuck-up slide this time."
     sheriff "But, believe me, this CS man has a pretty big target on his head."
     sheriff "We need to bring him to justice before he and his gang do anything else funny."
     sheriff "The next time you come back here, he'd better be with you, or you're fired!"
@@ -1035,7 +1064,7 @@ label csbiii_arc_escape:
     stop music fadeout 3.0
     music end
     scene black with dissolve
-    pause 0.5
+    pause 2.0
 
 
     scene washington_road with dissolve
@@ -1048,7 +1077,7 @@ label csbiii_arc_escape:
     show cs disappointed dark at left with moveinleft
     show arceus dark at right with moveinright
     cs "Hey, Arceus? Do you have any clue where we are?"
-    arceus "No idea, I'm just following the road. There's bound to be a rest stop here eventually."
+    arceus "No idea. I'm just following the road. There's bound to be a rest stop here eventually."
     cs "I hope so. We've been walking for hours. It's gotta be midnight around now..."
     stop music fadeout 3.0
     music end
@@ -1185,14 +1214,12 @@ label genocide_attack_arc:
     play sound sfx_alt_punch
     show csgod at t_punchup with move
     show arceus angry dark at right with hpunch
-    arceus "Really? I've been a god longer than you, dummy."
+    arceus "{i}Really?"
+    arceus "I've been a god longer than you, dummy."
     arceus "Nice try."
     bad_end "There's no weapon\nto free us all!" "csbiii_forest_menu"
 
 label genocide_wait_arc:
-
-    # TODO: get with digi about the best way to handle these scene transitions because it's a little awkward
-
     stop music fadeout 3.0
     music end
     scene washington_road
@@ -1204,10 +1231,11 @@ label genocide_wait_arc:
     pause 5.0
     n "They continue on silently for a few hours, eventually seeing the sunrise."
     scene washington_road morning
-    show arceus at right
+    show arceus flipped at right
     show cs at left
     with dissolve
     pause 3.0
+    show arceus
     arceus "So, uhh, should we keep going this direction?"
     cs "..."
     cs "Yep."
@@ -1231,29 +1259,53 @@ label genocide_wait_arc:
     arceus "In the middle of the road?"
     arceus "Why?"
 
-    # TODO: sfx approaching vehicle
-    # TODO: should we have a car sprite approach like what was done in the country route?
-
     arceus "There's someone coming! Shouldn't we move?"
     pause 1.0
     arceus "Hello?"
+    n "The approaching vehicle slowly coasts to a stop."
 
-    # TODO: need a car stop sound that is not slamming on brakes
+    play sound sfx_car_approach_stop volume 5.0 fadein 5.0
+    show car behind arceus:
+        xanchor 0.5 yanchor 0.5
+        xpos 0.5 ypos 0.8
+        alpha 0.0 zoom 0
+        parallel:
+            linear 5.0 alpha 1.0
+        parallel:
+            linear 12.0 zoom 1.2
+    $ renpy.pause(15.0, hard=True)
     
-    n "All of a sudden, the car driving at them slowly comes to a stop."
-    n "The man inside gets out of the car."
-    show billy at center with moveinright
+    n "The driver steps out to confront the pair."
+    show billy behind arceus with dissolve:
+        xanchor 0.5 yanchor 0.5
+        xpos 0.7 ypos 0.7
+        zoom 0.6
+        
     billy "Hey, that's my car!"
+    
+    show billy:
+        parallel:
+            linear 0.5 xpos 0.5
+        parallel:
+            linear 0.5 ypos 0.5
+        parallel:
+            linear 0.5 zoom 1.0
+
+    pause 0.5
     billy "What are you doing?"
     cs "Take us to these coordinates: 46.5754, -112.3008."
-    billy "I, uhh..."
+    billy "I, uhh--{w=0.5}{nw}"
     
     play sound sfx_tape_rewind volume 0.5
+    with hpunch
 
-    pause 2.0
+    pause 3.0
     billy "{sc=1.88}{color=#CB50FF}No problem!"
     billy "{sc=1.88}{color=#CB50FF}Let's go!"
     scene black with dissolve
+    pause 1.0
+    play sound sfx_doorslam
+    pause 1.0
 
     scene car background
     show billy car
@@ -1274,21 +1326,36 @@ label genocide_wait_arc:
     scene cultforest
     show billy car 
     with dissolve
+    pause 3.0
     billy "{sc=1.88}{color=#CB50FF}We are here."
 
-    # TODO: sfx car door open/close
+    play sound sfx_car_door_open
+    play sound2 sfx_car_door_ajar loop
+    pause 2.0
+    n "CS gets out of the car."
+    pause 2.0
+    play sound sfx_doorslam
+    stop sound2
+    pause 2.0
+    n "Arceus watches as CS crosses the street and starts heading up a nearby trail."
 
-    n "CS gets out of the car and crosses the street to take a nearby trail."
-    arceus "Hey, uhh, I'm gonna get out too."
-
-    # TODO: sfx car door open/close
-
-    scene black with dissolve
+    pause 2.0
     
-
+    arceus "Hey, uhh, I'm gonna get out too."
+    play sound sfx_car_door_open
+    play sound2 sfx_car_door_ajar loop
+    pause 2.0
+    play sound sfx_doorslam
+    stop sound2
+ 
+    scene black with dissolve
+    pause 1.0
+    
     scene cultforest with dissolve
     show arceus flipped at mid_left with moveinleft
     arceus "CS? Where'd ya go?"
+    arceus "CS?"
+    pause 1.0
     show arceus worried flipped
     arceus "Man, what is {i}wrong{/i} with him right now?"
     pause 2.0
@@ -1297,14 +1364,17 @@ label genocide_wait_arc:
     arceus "He's just been--"
 
     play music "<from 60 to 170>audio/insane_personalities.ogg" if_changed
+
     music insane_personalities
+    show csgod at offscreenleft with determination
     csgod "Stronger than ever."
-    show csgod flipped at mid_left with moveinleft
+    show csgod flipped at mid_left with MoveTransition(0.25)
     show arceus flipped at mid_left with vpunch
     play sound sfx_punch
     show arceus flipped at mid_left with hpunch
     play sound sfx_punch_alt
-    show arceus flipped at t_punchup with move
+    show arceus flipped at t_punchup with MoveTransition(0.25)
+    pause 1.0
     arceus "Ouch."
     $ achievement_manager.unlock("No Mercy")
     show cultist at mid_right with moveinright
@@ -1312,11 +1382,12 @@ label genocide_wait_arc:
     show cultist_3 at mid_mid_right with moveinright
     cultist "Praise CSGod! Praise CSGod!"
 
-    # TODO: sfx tires squealing, driving away
+    play sound sfx_car_tire_squeal
 
-    n "Upon witnessing this, Billy takes off instantly!"
+    n "Upon witnessing this, Billy instantly takes off!"
+    pause 1.0
     csgod "I have finally harnessed the power of CSGod!"
-    csgod "Time to take over the world!"
+    csgod "Time to take over the world!" # TODO: maybe a more epic line here??
     stop music
     bad_end "This will affect\nthe local trout population!" "csbiii_forest_menu"
 
@@ -1376,9 +1447,8 @@ label csbiii_wait_forest:
     pause 3.0
     n "When CS and Arceus wake up, they find themselves in handcuffs leaned up against a cop car."
 
-    # TODO: a cop car
-
     scene washington_road
+    show cop_car dark at mid_offscreen_left
     show cs disappointed dark at mid_left
     show arceus dark flipped at mid_left_left
     with dissolve
@@ -1412,20 +1482,28 @@ label csbiii_wait_forest:
     with hpunch
     show arceus worried
     pause 0.5
+    play sound2 sfx_doorslam noloop
+    pause 1.0
 
-    # TODO: check if this is only used once, if it is, maybe a manual_pos() is more appropriate
+    # TODO: check whether this is only used once, and if it is, maybe a manual_pos() is more appropriate
 
-    show copguy at t_copguy_frontseat 
+    show copguy at t_copguy_frontseat
     with moveinleft
-
-    # TODO: car door slam
-    # TODO: add walkie + sfx
+    pause 0.5
+    play sound sfx_doorslam
+    show walkie at manual_pos(0.4, 0.3, 0.5) behind copguy with dissolve:
+        zoom 0.2
+        rotate 15
+    play sound sfx_walkie_on
 
     n "CS and Arceus are thrown into the back of the cruiser as Copguy barks some order into his walkie."
     copguy "This is Copguy calling in a 1-8-8 on Compass Road."
     copguy "Sheriff? We got 'em."
+    sheriff "Copy that. Good job, soldier."
+    play sound sfx_walkie_off
+    hide walkie with dissolve
+    play sound sfx_driving volume 0.5
 
-    # SFX: car start, driving
 
     jump csbiii_copcar_menu
 
@@ -1471,7 +1549,8 @@ label csbiii_bad_convince:
     stop music
     music end
     show cs disappointed
-    copguy "Nice try, bud. We saw your fake visa and everything. You two are going back to the slammer."
+    copguy "Nice try, bud. We saw your fake visa and everything."
+    copguy "You two are going back to the slammer."
     bad_end "Did you really\nthink that would work?" "csbiii_copcar_menu"
 
 label csbiii_good_convince:
@@ -1503,9 +1582,9 @@ label csbiii_good_convince:
     show objection at truecenter with hpunch
     pause 1.0
     hide objection
-    arceus "Actually, I have proof of this."
+    arceus "Actually, I have proof of all this."
     arceus "I can show you."
-    copguy "And {i}how{/i} can you prove this? Where is your evidence?"
+    copguy "And {i}how{/i} exactly do you plan to do that? Where is your evidence?"
 
     show craptop at manual_pos(0.7, 1.5, 0.5) with determination
     show craptop at manual_pos(0.7, 0.55, 0.5) with move
@@ -1513,10 +1592,14 @@ label csbiii_good_convince:
     n "Arceus pulls up a laptop that he managed to grab from the front seat."
     copguy "{i}What?{/i} How did you get that?"
     arceus "Watch this."
+    play sound "<from 9.0>sfx/sfx_car_approach_stop.ogg" volume 10.0 fadein 1.0
+    n "Reluctantly, Copguy stops the car."
+    pause 2.0
+    stop sound
     scene backseat
     show craptop evidence
     with dissolve
-    n "Copguy stops the car as Arceus plays back the events from {i}CS Bounciness I.{/i}"
+    n "Arceus plays back the events from {i}CS Bounciness I.{/i}"
 
     scene copcar
     show copguy at center
@@ -1535,44 +1618,59 @@ label csbiii_good_convince:
     copguy "But, I can't argue right now about whether that footage is fake."
     stop music fadeout 3.0
     music end
-
-    # TODO: sfx open car door
+    pause 2.0
     
+    show copguy with MoveTransition(1.0):
+        xanchor 0.5 xpos 0.325
+    pause 1.0
+    play sound sfx_car_door_open
+    play sound2 sfx_car_door_ajar loop
     hide copguy with moveoutleft
     n "Copguy gets out of the car."
-    n "He then proceeds to open the doors and let CS and Arceus out, freeing them of their shackles."
+    n "He then proceeds to open the doors to let CS and Arceus out, freeing them of their shackles."
+    pause 0.5
+    play sound sfx_car_door_open
+    
+    scene washington_road
+    show cop_car dark at mid_offscreen_left
+    with dissolve
+
     pause 0.5
 
-    # TODO: cop car
-
-    scene washington_road with dissolve
-
-    pause 0.5
     show copguy dark flipped at right with moveinleft
     show copguy dark with determination
-    show cs disappointed dark at left with moveinleft
+    show cs disappointed dark at mid_left with moveinleft
     show arceus dark flipped at mid_left_left with moveinleft
+    pause 1.0
     copguy "Listen, I really shouldn't be doing this right now, but I have to go back to look into this deal with HoH SiS."
     copguy "The only thing more corrupt than the force is scummy businesses like these." # TODO: idk that about that line
     copguy "You are free to go for now."
-    copguy "But know this: I'm putting my job on the line for you."
-    copguy "Don't do anything stupid, because I have eyes everywhere." # fun fact, i stole that line from my mother - tate
+    copguy "But know this: I am putting my job on the line for you."
+    # fun fact, i stole this next line from my awful mother :D - tate
+    copguy "Don't do anything stupid, because I have eyes everywhere." 
 
-    # SFX: car door, car start, drive away
     n "Copguy gets back into his car, heading off into the dead of night."
-    show copguy dark flipped with determination
-    hide copguy with moveoutright
-    pause 0.5
+    show copguy dark at left with move
+    pause 1.0
+    hide copguy with dissolve
+    pause 1.0
+    play sound sfx_doorslam
+    stop sound2
+    pause 3.0
+    play sound sfx_driving
+    pause 2.0
+    hide cop_car with moveoutleft
+    stop sound fadeout 3.0
+    pause 5.0
 
-    show arceus dark flipped at mid_right_right with move
-    show arceus dark at mid_right_right
+    show arceus dark flipped at mid_right with move
+    show arceus dark
     show cs dark
     pause 0.5
-    n "CS and Arceus look at each other and smile."
     if fun_value(FUN_VALUE_MUSIC):
         n "CS and Arceus look at each other and smile, doing their best Bun Guster pose."  
     else: 
-        n "CS and Arceus look at each other and smile."       
+        n "CS and Arceus look at each other and smile."
     play music bun_guster volume 0.3 if_changed
     music bun_guster
     arceus "Holy crap, I didn't think that would work."
@@ -1583,15 +1681,17 @@ label csbiii_good_convince:
 
     show cs happy dark at center
     show arceus happy dark at center 
-    with move
+    with MoveTransition(0.5)
+    play sound sfx_high_five
     show cs happy dark at mid_left_left
     show arceus happy dark at mid_right_right
     with move
-    # TODO: sfx high five
-    n "They both high five and continue heading down the road."
+    n "After a high-five, the journey of CS and Arceus continues!"
     stop music fadeout 3.0
     music end
+    pause 1.0
     scene black with dissolve
+    pause 1.0
     jump csbiii_choose_direction
 
 label csbiii_choose_direction:
@@ -1600,9 +1700,10 @@ label csbiii_choose_direction:
     stop music fadeout 3.0
     music end
     n "As the pair continues wandering through the night, they soon realize that they haven't decided yet where to actually go."
+    pause 1.0
 
     scene washington_road morning
-    show cs at left
+    show cs disappointed at left
     show arceus at right
     with dissolve
     play music happy_roaming volume 0.5 if_changed
@@ -1615,6 +1716,7 @@ label csbiii_choose_direction:
     cs "Hey, uhh, do you know exactly where we're going?"
     arceus "Well, I noticed that the sun rises ahead of us, which means we're heading east right now."
     arceus "We can head in any direction, really. The second we find a better form of transportation than walking, we're taking it."
+    arceus "Which way are you thinking?"
     menu:
         "Which way do you want to go?"
         "North":
@@ -1728,7 +1830,7 @@ label csbiii_west3:
     show cool_crab dusk at manual_pos(0.3, 0.6, 0.5) with dissolve:
         zoom 0.5
     
-    n "CS and Arceus find a cool-looking crab, but still just the ocean again."
+    n "CS and Arceus find a cool-looking crab, but it's still just the ocean again."
     hide cool_crab
     scene washington_road
     show cs dark at left
@@ -1752,7 +1854,9 @@ label csbiii_west4:
     show cs dark at left
     show arceus dark at right
     cs "Okay! One last time!"
-    arceus "... Something tells me that you were in an asylum for a bit..."
+    arceus "..."
+    show arceus worried dark
+    arceus "Something tells me that you were in an asylum for a bit..."
     n "CS and Arceus, surprisingly, find the ocean again."
     scene washington_road morning
     show cs happy at left

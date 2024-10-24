@@ -558,7 +558,7 @@ define tate_offscreen = Character("???", callback = renpy.partial(char_callback,
 define pakoo_offscreen = Character("???", callback = renpy.partial(char_callback, beep="pak"))
 define green_offscreen = Character("???", callback = renpy.partial(char_callback, beep = "green"), what_color="#00FF00")
 define anno_offscreen = Character("???", callback = renpy.partial(char_callback, beep = "anno"))
-define k174_offscreen = Character("???", callback = renpy.partial(char_callback, name = "k174", beep = "k17"))
+define k174_offscreen = Character("???", callback = renpy.partial(char_callback, beep = "k17"))
 define k199_offscreen = Character("???", callback = renpy.partial(char_callback, beep = "k19"))
 define k207_offscreen = Character("???", callback = renpy.partial(char_callback, beep = "k20"))
 
@@ -1644,6 +1644,8 @@ image colorbars = "colorbars.png"
 image con_screen = "bg/con_screen.png"
 image cool_crab = "cool_crab.png"
 image cool_crab dusk = "dusk:cool_crab.png"
+image cop_car = "cop_car.png"
+image cop_car dark = "dark:cop_car.png"
 image crt_magnet = "crt_magnet.png"
 image cs_phone = "cs_phone.png"
 image cs_wallet = "cs_wallet.png"
@@ -2257,9 +2259,13 @@ define audio.sfx_bell = "sfx/sfx_bell.ogg"
 define audio.sfx_bite = "sfx/sfx_bite.ogg"
 define audio.sfx_bluescreen = "sfx/sfx_bluescreen.ogg"
 define audio.sfx_bucket = "sfx/sfx_bucket.ogg"
+define audio.sfx_car_approach_stop = "sfx/sfx_car_approach_stop.ogg"
 define audio.sfx_car_crash = "sfx/sfx_car_crash.ogg"
-define audio.sfx_car_stop = "<from 0 to 2>sfx/sfx_car_crash.ogg"
+define audio.sfx_car_door_open = "sfx/sfx_car_door_open.ogg"
+define audio.sfx_car_door_ajar = "sfx/sfx_car_door_ajar.ogg"
 define audio.sfx_car_horn = "sfx/sfx_car_horn.ogg"
+define audio.sfx_car_stop = "<from 0 to 2>sfx/sfx_car_crash.ogg"
+define audio.sfx_car_tire_squeal = "sfx/sfx_car_tire_squeal.ogg"
 define audio.sfx_cat_crash = "sfx/sfx_cat_crash.ogg"
 define audio.sfx_chatter = "sfx/sfx_chatter.ogg"
 define audio.sfx_cheer = "sfx/sfx_cheer1.ogg"
@@ -2273,12 +2279,14 @@ define audio.sfx_clapperboard = "sfx/sfx_clapperboard.ogg"
 define audio.sfx_clonk = "sfx/sfx_clonk.ogg"
 define audio.sfx_csnore = "sfx/sfx_csnore.ogg"
 define audio.sfx_decompression = "sfx/sfx_decompression.ogg"
+define audio.sfx_desk_slam = "sfx/sfx_desk_slam.ogg"
 define audio.sfx_dial_hohsis = "sfx/sfx_dial_hohsis.ogg"
 define audio.sfx_dial_rosen = "sfx/sfx_dial_rosen.ogg"
 define audio.sfx_dial_tate = "sfx/sfx_dial_tate.ogg"
 define audio.sfx_drill = "sfx/sfx_drill.ogg"
 define audio.sfx_drillbreak = "sfx/sfx_drillbreak.ogg"
 define audio.sfx_doorbell = "sfx/sfx_doorbell.ogg"
+define audio.sfx_door_break = "sfx/sfx_door_break.ogg"
 define audio.sfx_doorslam = "sfx/sfx_doorslam.ogg"
 define audio.sfx_doorslam_open = "sfx/sfx_doorslam_open.ogg"
 define audio.sfx_driving = "sfx/sfx_driving.ogg"
@@ -2294,6 +2302,7 @@ define audio.sfx_fart_again = "sfx/sfx_fart_again.ogg"
 define audio.sfx_fart_deep = "sfx/sfx_fart_deep.ogg"
 define audio.sfx_fart_lite = "sfx/sfx_fart_lite.ogg"
 define audio.sfx_fart_with_reverb = "sfx/sfx_fart_with_reverb.ogg"
+define audio.sfx_fbi_open_up = "sfx/sfx_fbi_open_up.ogg"
 define audio.sfx_flashback_end = "sfx/sfx_flashback_end.ogg"
 define audio.sfx_flashback_start = "sfx/sfx_flashback_start.ogg"
 define audio.sfx_foundationfail = "sfx/sfx_foundationfail.ogg"
@@ -2310,6 +2319,7 @@ define audio.sfx_gul = "secret/sfx_gul.ogg"
 define audio.sfx_hairdyer = "sfx/sfx_hairdryer.ogg"
 define audio.sfx_hat_off = "sfx/sfx_hat_off.ogg"
 define audio.sfx_heartbeat = "sfx/sfx_heartbeat.ogg"
+define audio.sfx_high_five = "sfx/sfx_high_five.ogg"
 define audio.sfx_house_door_close = "sfx/sfx_house_door_close.ogg"
 define audio.sfx_house_door_open = "sfx/sfx_house_door_open.ogg"
 define audio.sfx_jailcell_shut = "sfx/sfx_jailcell_shut.ogg"
@@ -2357,6 +2367,7 @@ define audio.sfx_poot = "sfx/sfx_poot.ogg"
 define audio.sfx_puke = "sfx/sfx_puke.ogg"
 define audio.sfx_punch = "sfx/sfx_punch.ogg"
 define audio.sfx_punch_alt = "sfx/sfx_alt_punch.ogg"
+define audio.sfx_punch_friendly = "sfx/sfx_punch_friendly.ogg"
 define audio.sfx_retail_beep = "sfx/sfx_retail_beep.ogg"
 define audio.sfx_richlaugh = "sfx/sfx_richlaugh.ogg"
 define audio.sfx_ring_once = "sfx/sfx_ring_once.ogg"
@@ -2467,11 +2478,10 @@ default line_11 = ""
 default line_12 = ""
 
 # DX Train route
-# the default values are silly so that i know they're defaults - tate
-default train_money_stolen = None
-default train_money_container = "treasure chest"
-default train_money_stolen_dialogue_switch = "lock it shut"
-default train_money_stolen_dialogue_switch_2 = "red and gold chest"
+default train_money_stolen = False
+default train_money_container = "briefcase"
+default train_money_stolen_dialogue_switch = "latch it shut"
+default train_money_stolen_dialogue_switch_2 = " won"
 default train_polar_express_fun_value = False
 default train_pancake_fun_value = False
 default train_skip_at_chicago = None

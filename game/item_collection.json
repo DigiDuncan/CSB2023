@@ -72,7 +72,16 @@
         "name": "Cool Crab",
         "owner": "Nobody",
         "desc": "His name is Arthur and his pen is his prized possession.",
-        "rarity": "Rare"
+        "rarity": "Rare",
+        "dx": true
+    },
+    "cop_car": {
+        "img": "cop_car",
+        "name": "Copguy's Cruiser",
+        "owner": "Copguy",
+        "desc": "While there are many like it, this one is his.",
+        "rarity": "Common",
+        "dx": true
     },
     "craptop": {
         "img": "craptop",
