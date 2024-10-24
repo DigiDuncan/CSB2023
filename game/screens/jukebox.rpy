@@ -126,7 +126,7 @@ screen music_screen(this_track):
 
     frame:
         background None
-        xsize 1200 ysize 150
+        xsize 1250 ysize 150
         xpos 1275 ypos 100
 
         xanchor 0.5
