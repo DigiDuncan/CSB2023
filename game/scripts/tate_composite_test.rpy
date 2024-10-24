@@ -1,51 +1,101 @@
-### EXPERIMENTAL LAYERED SPRITE, DO NOT USE THIS YET ###
+### EXPERIMENTAL LAYERED SPRITE, DO NOT USE THIS YET ### 
 
-image tate_comp = Composite(
-    (650,850),
-    
-)
+# KNOWN ISSUES:
+# optional items must be removed manually. ex tate_comp blush -> tate_comp -blush
+# you can't swap expressions on the fly, you have to manually change each thing
+# shaders and flip sprite do not work and i don't know if they CAN work
 
-label __tate_composite_test:
+layeredimage tate_comp:
     
-    "Sprite test begin."
+    group outfit:
+        attribute outfit default:
+            "/characters/tate/composite_test/body_default.png"
+        attribute festive:
+            "/characters/tate/composite_test/body_festive.png"
+
+    group extra1:
+        attribute blush:
+            "/characters/tate/composite_test/blush.png"
+
+    group face:
+        attribute happy default:
+            "/characters/tate/composite_test/face_happy.png"
+        attribute sad:
+            "/characters/tate/composite_test/face_sad.png"
+        attribute sheepish:
+            "/characters/tate/composite_test/face_sheepish.png"
+        attribute shock:
+            "/characters/tate/composite_test/face_shock.png"
+        attribute serious:
+            "/characters/tate/composite_test/face_serious.png"
+        attribute smug:
+            "/characters/tate/composite_test/face_smug.png"
+        attribute stare:
+            "/characters/tate/composite_test/face_stare.png"
+
+    group extra2:
+        attribute tears:
+            "/characters/tate/composite_test/tears.png"
+
+label awawa_tate_composite_test:
+    
+    tate "Awawa!"
+    tate "Let's see if this works!"
     show tate_comp
-    "1"
+    "Default"
     show tate_comp sad
-    "2"
+    "Sad"
     show tate_comp sad tears
-    "3"
-    show tate_comp sheepish
-    "4"
+    "Sad + tears"
+    show tate_comp sheepish -tears
+    "Sheepish"
     show tate_comp sheepish blush
-    "5"
-    show tate_comp shock
-    "6"
+    "Sheepish + blushing"
+    show tate_comp shock -blush
+    "Shock"
     show tate_comp serious
-    "7"
+    "Serious"
     show tate_comp smug
-    "8"
+    "Smug"
     show tate_comp stare
-    "9"
+    "Stare"
 
     show tate_comp festive
-    "10"
+    "Festive!"
     show tate_comp sad festive
-    "11"
+    "Sad Festive"
     show tate_comp sad tears festive
-    "12"
-    show tate_comp sheepish festive
-    "13"
+    "Sad + tears + Festive"
+    show tate_comp sheepish -tears festive
+    "Sheepish + Festive"
     show tate_comp sheepish blush festive
-    "14"
-    show tate_comp shock festive
-    "15"
+    "Sheepish + blushing + Festive"
+    show tate_comp shock -blush festive
+    "Shock + Festive"
     show tate_comp serious festive
-    "16"
+    "Serious + Festive"
     show tate_comp smug festive
-    "17"
+    "Smug + Festive"
     show tate_comp stare festive
-    "18"
+    "Stare + Festive"
 
-    tate "Did that work?"
+    tate "Shader test!"
+    
+    show tate_comp
+    "Normal"
+    show tate_comp dusk
+    "Dusk"
+    show tate_comp dark
+    "Dark"
+    show tate_comp sil_white
+    "White"
+    show tate_comp sil_black
+    "Black"
+    show tate_comp flipped
+    "Also, let's flip!"
+
+    show tate sheepish
+
+    tate "Did {i}any{/i} of that work?"
 
     
