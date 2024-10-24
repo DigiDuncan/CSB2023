@@ -1298,7 +1298,7 @@ label genocide_wait_arc:
 
     # TODO: didn't there used to be a different track here that was sped up or something?!
 
-    play music insane_personalities if_changed
+    play music "<from 60 to 170>audio/insane_personalities.ogg" if_changed
     music insane_personalities
     csgod "Stronger than ever."
     show csgod flipped at mid_left with moveinleft
