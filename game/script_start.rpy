@@ -795,6 +795,7 @@ image pakoo disappointed = "characters/pakoo/pakoo_disappointed.png"
 image pakoo disappointed flipped = "flip:characters/pakoo/pakoo_disappointed.png"
 image pakoo happy = "characters/pakoo/pakoo_happy.png"
 image pakoo happy flipped = "flip:characters/pakoo/pakoo_happy.png"
+image tgt_worker = "characters/tgt_worker.png"
 
 ## Craptop
 image craptop blank = "characters/craptop/blank.png"
@@ -1024,8 +1025,11 @@ image benrey = "characters/benrey.png"
 
 # Fired Route
 image guest = "characters/guest.png"
+image guest flipped = "flip:characters/guest.png"
 image janitor = "characters/janitor.png"
+image janitor flipped = "flip:characters/janitor.png"
 image customer = "characters/customer.png"
+image customer flipped = "flip:characters/customer.png"
 image howie = "characters/howie.png"
 image howie flipped = "flip:characters/howie.png"
 
@@ -1047,6 +1051,7 @@ image monika = "characters/monika.png"
 image peppino = "characters/peppino.png"
 image peppino2 = "characters/peppino2.png"
 image streetguy = "characters/streetguy.png"
+image streetguy flipped = "flip:characters/streetguy.png"
 image pencilguy = "characters/pencil.png"
 
 # East I-69

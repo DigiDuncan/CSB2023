@@ -1,28 +1,47 @@
 label dx_christmas_start:
     play music lets_hear_winter volume 0.7 if_changed
     music lets_hear_winter
-    scene cs_bedroom2 with dissolve
+    scene cs_bedroom2 
+    show cs at mid_left
+    with dissolve
     n "CS wakes up to a snowy winter morning."
     cs "Yes! It snowed today!"
+    show cs at mid_right with move
     n "CS looks at his calendar."
+    show cs happy
     cs "Woohoo!"
     cs "Christmas is almost here!"
+    show cs
     cs "...And you know what that means!"
     cs "I finally get to throw a huge Christmas party at my house!"
+    show cs flipped
     cs "I'm so pumped, I should call everyone again to make sure they are coming."
+    scene black with dissolve
     n "CS calls all of his guests who he invited a couple weeks ago."
+    scene cs_bedroom1
+    show cs at center
+    with dissolve
     cs "Alright, well, the party is going to start in 2 days."
+    show cs disappointed
     cs "I have not prepared at all."
     cs "Fuck."
+    show cs
     cs "Okay, well first place I need to start is by checking out my house."
+    show cs flipped
     cs "I have this huge mansion, and I don't even use the rest of my house!"
     cs "Let's go look."
+    hide cs with moveoutleft
     n "CS walks into his living room."
-    scene cs_living2 with dissolve
+    scene cs_living2
+    show cs at center
+    with dissolve
     cs "Well, okay maybe I should bring in the Christmas supplies first."
     cs "Let's go see what we have."
     n "CS goes into his garage."
-    scene cs_garage with dissolve
+    hide cs with moveoutright
+    scene cs_garage
+    show cs at mid_left
+    with dissolve
     cs "Okay, okay, what should I get first..."
     menu:
         "Christmas tree":
@@ -57,20 +76,30 @@ label dx_christmas_tree:
     $ tree_first = True
     if tree_first:
         cs "I should get the Christmas tree first."
+        show cs at mid_right with move
         cs "Who doesn't wanna get this thing out? This is the best part of decorating!"
+        show cs disappointed
         cs "I just, need to be, careful..."
+        show cs concentrate
         cs "Hnng..."
         n "All of a sudden, the shelf tips and all of the supplies fall onto CS!"
-        cs "Shit!"
-        scene black with dissolve
+        show cs worried with hpunch
+        cs "Shit!{w=2.0}{nw}"
+        scene black with vpunch
         # crashing SFX
-        scene cs_garage_mess with dissolve
+        scene cs_garage_mess
+        show cs disappointed at mid_left
+        with dissolve
         cs "Ow..."
         n "CS gets himself out of the mess of lights, garland, and Legos."
         # CS steps on a Lego.
+        show cs disappointed at center with move
+        show cs worried with hpunch
         cs "Fuck!"
+        show cs disappointed flipped
         cs "Man, what a mess!"
         cs "This is gonna take forever to clean up!"
+        hide cs with moveoutleft
     jump dx_christmas_anno
 
 
@@ -130,41 +159,65 @@ label dx_christmas_before_anno:
     jump dx_christmas_anno
 
 label dx_christmas_anno:
-    scene cs_foyer with dissolve
+    scene cs_foyer
+    show cs at center
+    with dissolve
     cs "Maybe I should call someone over to help."
     cs "Lemme see if Anno is around..."
     n "CS decides to call Anno."
-    show anno_house at mid_offscreen_right with moveinright
+    show cs at mid_left with move
+    show anno_house at mid_offscreen_right
+    show anno at mid_right
+    with moveinright
     anno "Hello?"
     cs "Hey Anno, CS here!"
     anno "Yes, I know the party is in two days, you just called me."
     cs "Well, I was wondering..."
+    show cs happy
     cs "If you wanted to help me decorate my house!"
+    show cs
     anno "I still have to get a gift for the gift exchange..."
     anno "...But I can do that tomorrow."
     anno "I'll come over. Be there soon."
+    show cs happy
     cs "Cool!"
-    hide anno_house with moveoutright
+    hide anno_house
+    hide anno
+    with moveoutright
+    show cs at center with move
     cs "Alright, I got Anno to come over and help out!"
     cs "I guess I'll just plan out how I want the house to look."
+    show cs worried
     cs "Actually, shit, it snowed last night!"
     cs "I need to shovel before Anno gets here!"
+    hide cs with moveoutright
     n "CS gets dressed and goes out into the garage to get his shovel."
     if tree_first:
         scene cs_garage_mess with dissolve
+        show cs disappointed at offscreenleft
+        show cs disappointed at mid_mid_left with moveinleft
+        show cs worried with hpunch
         cs "Shit! I hate Legos, but only when they're in my feet!"
     else:
         scene cs_garage with dissolve
+        show cs at mid_mid_left with moveinleft
+    show cs
     cs "Okay, now the real question is, how much did it snow?"
+    show cs disappointed
     n "CS presses the garage button, and nothing happens."
     cs "Dammit, I think it's iced shut."
     cs "I'm gonna have to go out in front."
-    scene cs_house_snowed_in with dissolve
+    show cs disappointed flipped with determination
+    hide cs with moveoutleft
+    scene cs_house_snowed_in
+    show cs disappointed flipped at right
+    with dissolve
     n "When CS gets outside, he finds a massive snow drift blocking his garage."
     cs "Well that's just great."
     cs "This is gonna take an hour at least to scoop up."
     cs "I better get to it, I guess."
     n "As CS is about 10 minutes into shoveling, CS hears someone walking up his driveway."
+    show carguy flipped at left with moveinleft
     carguy "Nice snow!"
     carguy "Nooot so nice driveway."
     cs "Look man, I'm trying. It's cold as balls out here."
@@ -179,40 +232,67 @@ label dx_christmas_anno:
     n "Carguy vigorously shakes the empty bottle."
     carguy "{i}I thought I had more of this...{/i}" 
     carguy "Welp, sorry! Looks like I ran out!"
+    show carguy with determination
+    hide carguy with easeoutleft
     n "Carguy turns and trots away though the snow as fast as he can go."
+    show cs angry flipped
     cs "Well that was a huge waste of time!"
     cs "I really need to finish shoveling my driveway, my face is starting to freeze!"
-    scene cs_house_snow with dissolve
+    scene cs_house_snow
+    show cs flipped at center
+    with dissolve
     n "As CS finishes scooping up the driveway, Anno's car pulls up on his street."
     cs "Just in time!"
     n "CS greets Anno as he pulls up on his driveway."
+    show anno at left with moveinleft
     anno "Hey, how's it going?"
+    show cs disappointed flipped
     cs "Cold. Very cold."
+    show cs disappointed
     cs "Let's get inside please it's freezing."
+    hide cs
+    hide anno
+    with moveoutright
     n "CS and Anno huddle inside and take their jackets off, while they make their way into the living room."
-    scene cs_living2 with dissolve
+    scene cs_living2
+    show cs at left
+    show anno at right
+    with dissolve
     n "They sit on the couch and catch up with each other while they get warmed up."
     anno "Well CS, how have you been doing?"
+    show cs happy
     cs "Good! Still rockin' that Kurt Cobain look?"
     anno "Pfft, you thought I would get rid of it?"
+    show cs
     cs "I've enjoyed not being chased by the cops again and just living a roughly normal life."
     anno "Yeah, how was your trip back home after all that? We haven't really talked much since then."
+    show cs disappointed
     cs "Well, I had a blast working for LTT for a few days, but eventually I had to escape again because the cops came after us."
+    show cs
     cs "I eventually proved to the cops that I wasn't guilty, and then Billy Mays took us home."
     anno "How the hell did you manage to come across Billy Mays?"
+    show cs happy
     cs "Crazy coincidence I guess, but it was fun though! I won a golden pencil sharpener!"
+    show cs
     anno "The cops never came after me, so I tried to start up a band, but it didn't really work out."
     #Christmas tree first
     if tree_first:
         anno "By the way, where are all of the decorations?"
         cs "Ah yes, it's all in the garage. I'll show you."
         n "Anno follows CS to his garage."
+        hide cs with moveoutright
+        hide anno with moveoutright
         scene cs_garage_mess with dissolve
+        show cs at center
+        show anno at left
+        with moveinleft
         n "As they enter the garage, Anno gawks at the mess on the floor."
         anno "Damn bitch, you live like this?"
         cs "...I may have had small mishap when I was trying to get the tree out."
         anno "Small?!"
+        show cs disappointed flipped
         cs "Do you think you can help me?"
+        show cs disappointed
         cs "I figured it'd be faster if I had a helping hand."
         n "Anno groans."
         anno "I was hoping to be setting up decorations, not cleaning them up."
@@ -223,9 +303,14 @@ label dx_christmas_anno:
         n "CS and Anno drag the boxes inside."
     #Setting up decorations
 label dx_christmas_setup:
-    scene cs_living2 with dissolve
+    scene cs_living2
+    show cs at left
+    show anno at right
+    with dissolve
     cs "Well Anno, are you ready to start decorating this place?"
     anno "Yeah! Where do you wanna start?"
+    n "Insert decorating scene here."
+    # TODO: Decorating scene
     #Living room
     #Kitchen
     #Hallway
@@ -236,103 +321,200 @@ label dx_christmas_setup:
 
     #Day 2
 label dx_christmas_before_shopping:
-    scene cs_bedroom2 with dissolve
+    scene cs_bedroom2
+    show cs at mid_left
+    with dissolve
     n "After a good night's sleep, CS slowly wakes up to read the time."
+    show cs at mid_right with move
     cs "Huh?"
+    show cs worried with hpunch
     cs "Oh shit! It's 2pm already?"
     cs "I should go get all my shopping done!"
-    n "CS jolts out of bed and gets ready for the day."
-    scene cs_house_snow with dissolve
+    show cs worried flipped
+    n "CS jolts out of his room and gets ready for the day."
+    hide cs with easeoutleft
+    scene cs_house_snow
+    show cs flipped at mid_right
+    with dissolve
     cs "Thankfully it didn't snow anymore, otherwise my car would have been snowed in!"
+    hide cs with moveoutleft
     n "CS gets in his car and figures out where to go."
+    scene cs_car_inside
+    show cs at left
+    with dissolve
     cs "I went to Walmart last time because they had a deal, but I never shop there regularly."
     cs "To Target we go!"
     n "CS starts up his car and heads to Target."
-    scene tgt_inside with dissolve
+    scene tgt_inside
+    show cs at center
+    with dissolve
+    show cs happy
     cs "Now this is a real store!"
+    show cs
     cs "Everything is mostly clean and neat, no depressing lighting and messy aisles..."
     cs "I should probably stop praising the store and actually buy the groceries I need."
+    hide cs with moveoutright
     #Shopping
     n "CS heads over to the grocery aisles."
     scene tgt_shelf with dissolve
+    show cs at left with moveinleft
     cs "Well I need to get some Genergy, of course."
+    # TODO: Add more shopping
+    hide cs with moveoutright
     #Checkout
 label dx_christmas_checkout:
     n "CS heads over to the checkout lanes."
-    scene tgt_line with dissolve
+    scene tgt_line
+    show streetguy flipped at mid_right_right
+    show amtrak_stewardess at mid_right
+    show snufkin flipped at mid_mid_right
+    show customer at center
+    with dissolve
+    show cs at left with moveinleft
+    pause 1.0
+    show cs disappointed
     cs "Wait, what?"
+    show cs angry
     cs "There are no lanes open! How the hell am I supposed to check out?"
+    show cs disappointed
     cs "Oh wait, I guess self-checkout is open..."
+    show cs disappointed at mid_mid_left with move
     n "CS gets in the long line wrapped around the self-check area."
     cs "Man, this place is really short staffed, especially for the holidays!"
+    show customer flipped
     customer "They're always like this. I come every day, and they definitely have been losing employees."
+    show customer
     cs "Yikes, I wonder why..."
+    hide streetguy with moveoutright
+    show amtrak_stewardess at mid_right_right
+    show snufkin flipped at mid_right
+    show customer at mid_mid_right
+    with move
+    show cs at center with move
+    pause 2.0
+    hide amtrak_stewardess with moveoutright
+    show snufkin flipped at mid_right_right
+    show customer at mid_right
+    with move
+    show cs at mid_mid_right with move
+    pause 2.0
+    hide snufkin flipped with moveoutright
+    show customer at mid_right_right with move
+    show cs at mid_right with move
+    pause 3.0
+    hide customer with moveoutright
+    show cs at mid_right_right with move
+    pause 2.0
     cs "Finally, I can checkout."
     scene tgt_checkerror with dissolve
+    show cs at left with moveinleft
     n "CS sees an message on the machine."
     cs "Welp, can't use that one!"
+    hide cs with moveoutright
     n "CS goes to the next machine."
     scene tgt_checkout with dissolve
+    show cs at left with moveinleft
     n "As CS is checking out, the machine beeps at him."
+    show cs worried
     cs "What? I scanned this twice? No I didn't!"
+    # TODO: Pakoo needs to greenscreen themselves
+    show cs disappointed
+    show tgt_worker at mid_right with moveinright
     tgt_worker "Oh yeah, it always does that, keep going."
+    show cs
     cs "Okay."
+    hide tgt_worker with moveoutright
+    show cs disappointed
     cs "Ah crap, I scanned this one too many times."
     n "The worker comes back."
+    show tgt_worker at mid_right with moveinright
     tgt_worker "Hello, what's wrong?"
+    show cs
     cs "Sorry, I scanned this pie 7 times."
     tgt_worker "...how many do you have?"
     cs "I have 2."
     tgt_worker "Wh-- okay hold on."
+    show tgt_worker at center with move
+    pause 3.0
+    show tgt_worker at mid_right with move
     tgt_worker "There you go."
     cs "Thanks!"
+    hide tgt_worker with moveoutright
+    show cs angry
     cs "Hey wait a minute!"
+    show tgt_worker at mid_right with moveinright
     n "The target employee runs back over."
     cs "These are ringing up 11.99 per pie!"
     cs "They said they were like 20-percent off on the sign over there!"
     tgt_worker "Hmm..."
     n "The employee scans the pie."
+    show cs disappointed
     tgt_worker "Do you perchance have Target Circle?"
     cs "No?"
     tgt_worker "You need Target Circle to get this deal. Sorry."
+    show cs angry
     cs "Really?"
     tgt_worker "I'm sorry, but that's just how the deal works."
+    show cs disappointed
     cs "Fine, whatever, I'll just keep them."
+    hide tgt_worker with moveoutright
     n "When CS goes to scan his alcohol, it beeps again and tells him to get out his ID."
+    show cs pissed
     cs "Seriously?!"
+    show cs angry
     n "The employee runs over again."
+    show tgt_worker at mid_right with moveinright
     tgt_worker "Oh yeah. I should probably do that for you."
+    show tgt_worker at center with move
     n "The employee signs into the machine and opens the prompt to enter an ID."
     n "They then wait patiently for CS."
     cs "What? Do you need something from me?"
     tgt_worker "Yeah, I need to check your ID."
+    show cs pissed
     cs "Are you kidding me?"
     tgt_worker "Yes, they will kill me if you don't do it."
+    show cs disappointed
     n "CS sighs."
     cs "Here you go."
     n "The target employee punches in his birthday and leaves."
-    scene tgt_outside with dissolve
+    hide tgt_worker with moveoutright
+    pause 3.0
+    hide cs with moveoutright
+    scene tgt_outside
+    show cs disappointed
+    with dissolve
     cs "Kids these days, asking me for my ID..."
     cs "They should hire some new people!"
+    show cs
     cs "Anyways, I need to get home now and put everything away."
+    show cs happy
     cs "It's the big day tomorrow, and it's gonna be the best party ever!"
+    hide cs with moveoutright
 label dx_christmas_aftershop:
     scene cs_kitchen
     show cs_kitchen_fg
     with dissolve
+    show cs flipped at mid_right behind cs_kitchen_fg with moveinright
     n "When CS gets home, he starts putting the groceries away."
+    show cs flipped at center behind cs_kitchen_fg with move
     n "As he's finishing up, a D20 he had sitting on the counter gets knocked onto the floor."
+    show cs disappointed behind cs_kitchen_fg
     cs "What the hell? When did I ever have one of these?"
     n "CS picks up the die."
+    show cs behind cs_kitchen_fg
     cs "Hey, I got a [d20]!"
 label dx_christmas_party_before:
-    scene cs_bedroom2 with dissolve
+    scene cs_bedroom2
+    show cs happy
+    with dissolve
     cs "Today is the day!"
     cs "Now I just have to wait for people to arrive!"
+    show cs flipped
     cs "I wonder who will arrive first?"
     if d20 == 1:
         n "CS waits paiently."
         n "He keeps on waiting."
+        show cs disappointed flipped
         cs "Alright, any minute now..."
         cs "The party starts here in about 15 minutes, so people should start showing up soon..."
         n "CS keeps on waiting, but it looks like no one shows up early."
@@ -340,7 +522,9 @@ label dx_christmas_party_before:
     if d20 == 2:
         n "As CS asks himself this, a small car pulls up in the driveway."
         cs "Hmm, let go see who that is!"
+        hide cs with moveoutleft
         scene cs_house_snow_night with dissolve
+        show cs flipped at right with moveinright
         arceus "Hey CS!"
         cs "Hey Arc! Hey Kitty!"
         kitty "What's up?"
@@ -353,15 +537,20 @@ label dx_christmas_party_before:
     if d20 == 3:
         n "CS peers out the window to see Anno's car pull into the driveway."
         cs "Hey look at that! Anno's here first!"
+        hide cs with moveoutleft
         scene cs_house_snow_night with dissolve
+        show cs flipped at right with moveinright
         anno "Hey CS!"
         anno "I showed up kinda early, but I wanted to see everyone's initial reactions of our decor work!"
         cs "Well I'm glad you showed up, come inside! It's cold out."
         jump dx_christmas_intro      
     if d20 == 4:
         n "All of a sudden, CS hears a futuristic sounding vehicle land outside."
+        show cs disappointed flipped
         cs "What the hell is that?"
+        hide cs with moveoutleft
         scene cs_house_snow_night with dissolve
+        show cs flipped at right with moveinright
         digi "Hey CS! How've you been?"
         cs "Hey Digi! Didn't know you have a... spaceship?"
         digi "Well sometimes, you can barely call it that."
@@ -370,10 +559,14 @@ label dx_christmas_party_before:
         jump dx_christmas_intro      
     if d20 == 5:
         n "As soon as he says that, he feels the house start to shake."
+        show cs disappointed flipped
         cs "Wh-- What's going on?"
+        show cs worried flipped
         n "As the house shakes even faster, a loud train whistle bellows out."
         cs "Holy shit, is that a train?"
+        hide cs with moveoutleft
         scene cs_house_snow_night with dissolve
+        show cs worried flipped at right with moveinright
         cs "That's a fucking train!"
         tate "Hey CS! How've you been doin'?"
         cs "Tate? Hey! I've been great!"
@@ -383,10 +576,14 @@ label dx_christmas_party_before:
         jump dx_christmas_intro
     if d20 == 6:
         n "As soon as he says that, he feels the house start to shake."
+        show cs disappointed flipped
         cs "Wh-- What's going on?"
+        show cs worried flipped
         n "As the house shakes even faster, a loud train whistle bellows out."
         cs "Holy shit, is that a train?"
+        hide cs with moveoutleft
         scene cs_house_snow_night with dissolve
+        show cs worried flipped at right with moveinright
         cs "That's a fucking train!"
         tate "Hey CS! How've you been doin'?"
         cs "Tate? Hey! I've been great!"
@@ -397,7 +594,9 @@ label dx_christmas_party_before:
     if d20 == 7:
         n "CS notices a familiar blue car roll up on the driveway."
         cs "Look at that! Looks like Billy is here first!"
+        hide cs with moveoutleft
         scene cs_house_snow_night with dissolve
+        show cs flipped at right with moveinright
         billy "Hi! It's Billy!"
         billy "Merry Christmas!"
         cs "Merry Christmas to you too, Billy!"
@@ -408,9 +607,12 @@ label dx_christmas_party_before:
         jump dx_christmas_intro      
     if d20 == 8:
         n "All of a sudden, CS hears helicopter blades outside of his house."
+        show cs worried flipped
         cs "Woah, what the hell?"
         n "A Blackhawk helicopter is seen landing out in the middle of the street."
+        hide cs with moveoutleft
         scene cs_house_snow_night with dissolve
+        show cs flipped at right with moveinright
         n "The President of the United States steps out."
         obama "Hello, CS! Nice to meet you."
         cs "Obama?! I didn't think you would actually come!"
@@ -421,9 +623,12 @@ label dx_christmas_party_before:
         jump dx_christmas_intro      
     if d20 == 9:
         n "Sirens start blaring outside."
+        show cs worried flipped
         cs "Uh oh! Why are the cops here?"
         n "CS rushes outside."
+        hide cs with moveoutleft
         scene cs_house_snow_night with dissolve
+        show cs worried flipped at right with moveinright
         copguy "Heya, CS. Did I scare you?"
         cs "Fuck, yeah you did! I didn't think you were gonna be on duty!"
         copguy "Well someone's gotta be security, right?"
@@ -433,10 +638,12 @@ label dx_christmas_party_before:
     if d20 == 10:
         n "CS looks outside to see a bus pull up."
         cs "Hmm, I wonder who took the bus."
+        hide cs with moveoutleft
         scene cs_house_snow_night with dissolve
+        show cs flipped at right with moveinright
         sheriff "God dammit! Stupid damn wheels! Stuck in the snow!"
         cs "Woah, hey! Who are you?"
-        sheriff "Who am I? I'm copguy's boss, that's who!"
+        sheriff "Who am I? I'm Copguy's boss, that's who!"
         sheriff "I asked him to pick me up, but apparently he had to shop or some shit!"
         sheriff "And I had to take the bus!"
         cs "Oh wow okay, uhm, do you need help?"
@@ -444,7 +651,9 @@ label dx_christmas_party_before:
         jump dx_christmas_intro      
     if d20 == 11:
         n "A beam sound can be heard from outside."
+        hide cs with moveoutleft
         scene cs_house_snow_night with dissolve
+        show cs flipped at right with moveinright
         cs "Hey guys! How have you guys been doing?"
         ed "We've been doing well! Our business has been profitable recently!"
         ed "Even Wesley has made a speedy recovery! He wasn't too happy about getting that metal pipe in his back, though."
@@ -458,7 +667,9 @@ label dx_christmas_party_before:
     if d20 == 12:
         n "An old Dodge Charger pulls up on the driveway."
         cs "Nice car! I wonder if that's Carguy..."
+        hide cs with moveoutleft
         scene cs_house_snow_night with dissolve
+        show cs disappointed flipped at right with moveinright
         cs "Hey it's... two Pakoos?"
         k17 "CS!!!"
         k22 "Hey CS. Merry Christmas!"
@@ -469,8 +680,11 @@ label dx_christmas_party_before:
         jump dx_christmas_intro      
     if d20 == 13:
         n "A teleport-like sound is heard outside."
+        show cs disappointed flipped
         cs "What in the world?"
+        hide cs with moveoutleft
         scene cs_house_snow_night with dissolve
+        show cs flipped at right with moveinright
         cs "Oh hey! Aria, right?"
         aria "Yep, that's me!"
         aria "Goodness, am I too early?"
@@ -482,7 +696,9 @@ label dx_christmas_party_before:
     if d20 == 14:
         n "Someone's car pulls into the driveway."
         cs "I wonder who that could be?"
+        hide cs with moveoutleft
         scene cs_house_snow_night with dissolve
+        show cs flipped at right with moveinright
         cs "Oh hey, it's Michael!"
         cs "You're still visiting the United States? I thought you were only here for the summer!"
         michael "I decided to spend a whole year over here."
@@ -492,7 +708,9 @@ label dx_christmas_party_before:
     if d20 == 15:
         n "CS sees Linus' car pulling up outside."
         cs "It looks like Linus got here first!"
+        hide cs with moveoutleft
         scene cs_house_snow_night with dissolve
+        show cs flipped at right with moveinright
         linus "Hey CS! Long time no see!"
         cs "You too, and Luke as well?"
         luke "Hey man! I know we didn't talk much during your short employment, but it was fun having you around!"
@@ -506,7 +724,9 @@ label dx_christmas_party_before:
     if d20 == 16:
         n "Another Honda Civic shows up in CS' driveway."
         cs "Oh look at that! It's Blank!"
+        hide cs with moveoutleft
         scene cs_house_snow_night with dissolve
+        show cs flipped at right with moveinright
         blank "Hey CS, how have you been?"
         cs "I've been doing well, did you drive safe here?"
         blank "I did, but lots of people on the interstate didn't!"
@@ -516,7 +736,9 @@ label dx_christmas_party_before:
     if d20 == 17:
         n "An unknown car shows up in the driveway."
         cs "I wonder who that is?"
+        hide cs with moveoutleft
         scene cs_house_snow_night with dissolve
+        show cs flipped at right with moveinright
         nova "Hey CS! Thanks for inviting me to your Christmas party!"
         cs "Yeah sure thing!"
         cs "It's been a while, how've you been?"
@@ -525,8 +747,11 @@ label dx_christmas_party_before:
         jump dx_christmas_intro      
     if d20 == 18:
         n "CS sees a Cherokee pull up to his house."
+        show cs disappointed flipped
         cs "What the fuck? Who is that?"
+        hide cs with moveoutleft
         scene cs_house_snow_night with dissolve
+        show cs disappointed flipped at right with moveinright
         cs "Hey, uhh..."
         eliza "Is this the right place?"
         cs "I think so?"
@@ -542,7 +767,9 @@ label dx_christmas_party_before:
     if d20 == 19:
         n "An orange mini coooper shows up infront of CS' house."
         cs "Holy crap, is that who I think it is?"
+        hide cs with moveoutleft
         scene cs_house_snow_night with dissolve
+        show cs flipped at right with moveinright
         cs "DB! Your the first one here!"
         db "I am??"
         cs "Yes! You managed to be the earliest this time!"
@@ -551,8 +778,11 @@ label dx_christmas_party_before:
         jump dx_christmas_intro      
     if d20 == 20:
         n "A man in a white shirt walks up to CS' house."
+        show cs disappointed flipped
         cs "Who the hell is that?"
+        hide cs with moveoutleft
         scene cs_house_snow_night with dissolve
+        show cs disappointed flipped at right with moveinright
         cs "Hey, are you..."
         avgn "I'm the fuckin' Nerd!"
         cs "The Angry Video Game Nerd? I didn't invite you, at least I don't think I did?"
@@ -564,12 +794,14 @@ label dx_christmas_party_before:
     else:
         n "CS waits paiently."
         n "He keeps on waiting."
+        show cs disappointed flipped
         cs "Alright, any minute now..."
         cs "The party starts here in about 15 minutes, so people should start showing up soon..."
         n "CS keeps on waiting, but it looks like no one shows up early." 
         jump dx_christmas_intro      
     #Introductions
 label dx_christmas_intro:
+    scene black with dissolve
     n "By the time of the party, everyone shows up at CS' house in droves."
     scene cs_foyer with dissolve
     cs "Well, it looks like everyone is here, right?"
