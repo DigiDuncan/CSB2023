@@ -1447,6 +1447,9 @@ image after_true_title = Text("{size=+196}Spring 202X", text_align=0.5)
 # CS Holiday Special BGs
 image snowed_in = "bg/snowed_in.png"
 image cs_kitchen = "bg/cs_kitchen.png"
+image cs_kitchen_fg = "bg/cs_kitchen_fg.png"
+image cs_kitchen_off = "bg/cs_kitchen_off.png"
+image cs_kitchen_fg_off = "bg/cs_kitchen_fg_off.png"
 image cs_basement = "bg/cs_basement.png"
 image tgt_checkerror = "bg/tgt_checkerror.png"
 image tgt_checkout = "bg/tgt_checkout.png"
@@ -1454,6 +1457,11 @@ image tgt_inside = "bg/tgt_inside.png"
 image tgt_line = "bg/tgt_line.png"
 image tgt_outside = "bg/tgt_outside.png"
 image tgt_shelf = "bg/tgt_shelf.png"
+image cs_house_snow = "bg/cs_house_snow.png"
+image cs_house_snowed_in = "bg/cs_house_snowed_in.png"
+image cs_house_night = "bg/cs_house_night.png"
+image cs_house_snow_night = "bg/cs_house_snow_night.png"
+image cs_house_night_dtree = "bg/cs_house_night_dtree.png"
 
 # CS wacky Kuwait Adventures: Mika Edition (Deluxe Content [With Funky Kong {And Dante from Devil may Cry}])
 image kuwait_lieutenant_snow = "characters/kuwait_lieutenant_snow.png"

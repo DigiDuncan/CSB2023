@@ -1,7 +1,7 @@
 label dx_christmas_start:
     play music lets_hear_winter volume 0.7 if_changed
     music lets_hear_winter
-    scene black
+    scene cs_bedroom2 with dissolve
     n "CS wakes up to a snowy winter morning."
     cs "Yes! It snowed today!"
     n "CS looks at his calendar."
@@ -132,6 +132,7 @@ label dx_christmas_anno:
     n "CS presses the garage button, and nothing happens."
     cs "Dammit, I think it's iced shut."
     cs "I'm gonna have to go out in front."
+    scene cs_house_snowed_in with dissolve
     n "When CS gets outside, he finds a massive snow drift blocking his garage."
     cs "Well that's just great."
     cs "This is gonna take an hour at least to scoop up."
@@ -154,6 +155,7 @@ label dx_christmas_anno:
     n "Carguy turns and trots away though the snow as fast as he can go."
     cs "Well that was a huge waste of time!"
     cs "I really need to finish shoveling my driveway, my face is starting to freeze!"
+    scene cs_house_snow with dissolve
     n "As CS finishes scooping up the driveway, Anno's car pulls up on his street."
     cs "Just in time!"
     n "CS greets Anno as he pulls up on his driveway."
@@ -203,11 +205,13 @@ label dx_christmas_setup:
 
     #Day 2
 label dx_christmas_before_shopping:
+    scene cs_bedroom2 with dissolve
     n "After a good night's sleep, CS slowly wakes up to read the time."
     cs "Huh?"
     cs "Oh shit! It's 2pm already?"
     cs "I should go get all my shopping done!"
     n "CS jolts out of bed and gets ready for the day."
+    scene cs_house_snow with dissolve
     cs "Thankfully it didn't snow anymore, otherwise my car would have been snowed in!"
     n "CS gets in his car and figures out where to go."
     cs "I went to Walmart last time because they had a deal, but I never shop there regularly."
@@ -282,12 +286,16 @@ label dx_christmas_checkout:
     cs "Anyways, I need to get home now and put everything away."
     cs "It's the big day tomorrow, and it's gonna be the best party ever!"
 label dx_christmas_aftershop:
+    scene cs_kitchen
+    show cs_kitchen_fg
+    with dissolve
     n "When CS gets home, he starts putting the groceries away."
     n "As he's finishing up, a D20 he had sitting on the counter gets knocked onto the floor."
     cs "What the hell? When did I ever have one of these?"
     n "CS picks up the die."
     cs "Hey, I got a [d20]!"
 label dx_christmas_party_before:
+    scene cs_bedroom2 with dissolve
     cs "Today is the day!"
     cs "Now I just have to wait for people to arrive!"
     cs "I wonder who will arrive first?"
@@ -301,6 +309,7 @@ label dx_christmas_party_before:
     if d20 == 2:
         n "As CS asks himself this, a small car pulls up in the driveway."
         cs "Hmm, let go see who that is!"
+        scene cs_house_snow_night with dissolve
         arceus "Hey CS!"
         cs "Hey Arc! Hey Kitty!"
         kitty "What's up?"
@@ -313,6 +322,7 @@ label dx_christmas_party_before:
     if d20 == 3:
         n "CS peers out the window to see Anno's car pull into the driveway."
         cs "Hey look at that! Anno's here first!"
+        scene cs_house_snow_night with dissolve
         anno "Hey CS!"
         anno "I showed up kinda early, but I wanted to see everyone's initial reactions of our decor work!"
         cs "Well I'm glad you showed up, come inside! It's cold out."
@@ -320,6 +330,7 @@ label dx_christmas_party_before:
     if d20 == 4:
         n "All of a sudden, CS hears a futuristic sounding vehicle land outside."
         cs "What the hell is that?"
+        scene cs_house_snow_night with dissolve
         digi "Hey CS! How've you been?"
         cs "Hey Digi! Didn't know you have a... spaceship?"
         digi "Well sometimes, you can barely call it that."
@@ -331,6 +342,7 @@ label dx_christmas_party_before:
         cs "Wh-- What's going on?"
         n "As the house shakes even faster, a loud train whistle bellows out."
         cs "Holy shit, is that a train?"
+        scene cs_house_snow_night with dissolve
         cs "That's a fucking train!"
         tate "Hey CS! How've you been doin'?"
         cs "Tate? Hey! I've been great!"
@@ -343,6 +355,7 @@ label dx_christmas_party_before:
         cs "Wh-- What's going on?"
         n "As the house shakes even faster, a loud train whistle bellows out."
         cs "Holy shit, is that a train?"
+        scene cs_house_snow_night with dissolve
         cs "That's a fucking train!"
         tate "Hey CS! How've you been doin'?"
         cs "Tate? Hey! I've been great!"
@@ -353,6 +366,7 @@ label dx_christmas_party_before:
     if d20 == 7:
         n "CS notices a familiar blue car roll up on the driveway."
         cs "Look at that! Looks like Billy is here first!"
+        scene cs_house_snow_night with dissolve
         billy "Hi! It's Billy!"
         billy "Merry Christmas!"
         cs "Merry Christmas to you too, Billy!"
@@ -365,6 +379,7 @@ label dx_christmas_party_before:
         n "All of a sudden, CS hears helicopter blades outside of his house."
         cs "Woah, what the hell?"
         n "A Blackhawk helicopter is seen landing out in the middle of the street."
+        scene cs_house_snow_night with dissolve
         n "The President of the United States steps out."
         obama "Hello, CS! Nice to meet you."
         cs "Obama?! I didn't think you would actually come!"
@@ -377,6 +392,7 @@ label dx_christmas_party_before:
         n "Sirens start blaring outside."
         cs "Uh oh! Why are the cops here?"
         n "CS rushes outside."
+        scene cs_house_snow_night with dissolve
         copguy "Heya, CS. Did I scare you?"
         cs "Fuck, yeah you did! I didn't think you were gonna be on duty!"
         copguy "Well someone's gotta be security, right?"
@@ -386,6 +402,7 @@ label dx_christmas_party_before:
     if d20 == 10:
         n "CS looks outside to see a bus pull up."
         cs "Hmm, I wonder who took the bus."
+        scene cs_house_snow_night with dissolve
         sheriff "God dammit! Stupid damn wheels! Stuck in the snow!"
         cs "Woah, hey! Who are you?"
         sheriff "Who am I? I'm copguy's boss, that's who!"
@@ -396,6 +413,7 @@ label dx_christmas_party_before:
         jump dx_christmas_intro      
     if d20 == 11:
         n "A beam sound can be heard from outside."
+        scene cs_house_snow_night with dissolve
         cs "Hey guys! How have you guys been doing?"
         ed "We've been doing well! Our business has been profitable recently!"
         ed "Even Wesley has made a speedy recovery! He wasn't too happy about getting that metal pipe in his back, though."
@@ -409,6 +427,7 @@ label dx_christmas_party_before:
     if d20 == 12:
         n "An old Dodge Charger pulls up on the driveway."
         cs "Nice car! I wonder if that's Carguy..."
+        scene cs_house_snow_night with dissolve
         cs "Hey it's... two Pakoos?"
         k17 "CS!!!"
         k22 "Hey CS. Merry Christmas!"
@@ -420,6 +439,7 @@ label dx_christmas_party_before:
     if d20 == 13:
         n "A teleport-like sound is heard outside."
         cs "What in the world?"
+        scene cs_house_snow_night with dissolve
         cs "Oh hey! Aria, right?"
         aria "Yep, that's me!"
         aria "Goodness, am I too early?"
@@ -431,6 +451,7 @@ label dx_christmas_party_before:
     if d20 == 14:
         n "Someone's car pulls into the driveway."
         cs "I wonder who that could be?"
+        scene cs_house_snow_night with dissolve
         cs "Oh hey, it's Michael!"
         cs "You're still visiting the United States? I thought you were only here for the summer!"
         michael "I decided to spend a whole year over here."
@@ -440,6 +461,7 @@ label dx_christmas_party_before:
     if d20 == 15:
         n "CS sees Linus' car pulling up outside."
         cs "It looks like Linus got here first!"
+        scene cs_house_snow_night with dissolve
         linus "Hey CS! Long time no see!"
         cs "You too, and Luke as well?"
         luke "Hey man! I know we didn't talk much during your short employment, but it was fun having you around!"
@@ -453,6 +475,7 @@ label dx_christmas_party_before:
     if d20 == 16:
         n "Another Honda Civic shows up in CS' driveway."
         cs "Oh look at that! It's Blank!"
+        scene cs_house_snow_night with dissolve
         blank "Hey CS, how have you been?"
         cs "I've been doing well, did you drive safe here?"
         blank "I did, but lots of people on the interstate didn't!"
@@ -462,6 +485,7 @@ label dx_christmas_party_before:
     if d20 == 17:
         n "An unknown car shows up in the driveway."
         cs "I wonder who that is?"
+        scene cs_house_snow_night with dissolve
         nova "Hey CS! Thanks for inviting me to your Christmas party!"
         cs "Yeah sure thing!"
         cs "It's been a while, how've you been?"
@@ -470,7 +494,8 @@ label dx_christmas_party_before:
         jump dx_christmas_intro      
     if d20 == 18:
         n "CS sees a Cherokee pull up to his house."
-        cs "What the fuck? Is the military here?"
+        cs "What the fuck? Who is that?"
+        scene cs_house_snow_night with dissolve
         cs "Hey, uhh..."
         eliza "Is this the right place?"
         cs "I think so?"
@@ -486,6 +511,7 @@ label dx_christmas_party_before:
     if d20 == 19:
         n "An orange mini coooper shows up infront of CS' house."
         cs "Holy crap, is that who I think it is?"
+        scene cs_house_snow_night with dissolve
         cs "DB! Your the first one here!"
         db "I am??"
         cs "Yes! You managed to be the earliest this time!"
@@ -495,6 +521,7 @@ label dx_christmas_party_before:
     if d20 == 20:
         n "A man in a white shirt walks up to CS' house."
         cs "Who the hell is that?"
+        scene cs_house_snow_night with dissolve
         cs "Hey, are you..."
         avgn "I'm the fuckin' Nerd!"
         cs "The Angry Video Game Nerd? I didn't invite you, at least I don't think I did?"
@@ -528,7 +555,11 @@ label dx_christmas_intro:
     aria "Sorry."
     digi "Did I change too much?"
     cs "No no, just, let Pakoo #2 speak."
-    k22 "I'm gonna assume that's me."
+    if fun_value(FUN_VALUE_RARE):
+        k17 "Hey, where's Fyreee at?"
+        k22 "Dammit, can you let me talk?"
+    else:
+        k22 "I'm gonna assume that's me."
     k22 "Alright, so, I'm K-22, the physical manifestation of Pakoo's memories from the year 2022."
     k22 "This is K-17, I'm sure you can figure out what year he is."
     k17 "Remember me? I'm the Sunny D guy!"
@@ -547,7 +578,9 @@ label dx_christmas_intro:
     cs "Alright, well, I'll let you guys talk, I'm gonna check on the others."
     k17 "So, who are you? Are you DigBick?"
     mean "What did you just call me?"
-    scene cs_kitchen with dissolve
+    scene cs_kitchen
+    show cs_kitchen_fg
+    with dissolve
     cs "Hey guys, how are y'all doing?"
     obama "Hello CS, we are all preparing our meals for dinner tonight."
     obama "I'm gonna make a carrot cake."
@@ -715,7 +748,9 @@ label dx_christmas_banter:
     cs "Okay, lemme do this first. The president is calling!"
     #Cooking
 label dx_christmas_cooking:
-    scene cs_kitchen with dissolve
+    scene cs_kitchen
+    show cs_kitchen_fg
+    with dissolve
     cs "Hey Mr. President, what do you need?"
     obama "You can just call me Obama."
     obama "Second of all, I accidently cut myself while chopping these carrots."
@@ -729,7 +764,9 @@ label dx_christmas_cooking:
     cs "Alright, just a few carrots."
     cs "Let's do this."
     #Carrot Karate Chop Minigame
-    scene cs_kitchen with dissolve
+    scene cs_kitchen
+    show cs_kitchen_fg
+    with dissolve
     show smoke
     obama "Well would you look at that!"
     obama "That was some mighty fine chopping, CS!"
@@ -786,10 +823,10 @@ label dx_christmas_cooking:
     #Dinner/More Banter
 label dx_christmas_dinner:
     scene black with dissolve
-    cs "Well, I'd love to start off this wonderful meal by saying–"
+    cs "Well, I'd love to start off this wonderful meal by saying--"
     blank "Hey stop it! We are not playing your music!"
-    nova "Blank, Blank…"
-    nova "This song is so…"
+    nova "Blank, Blank..."
+    nova "This song is so..."
     nova "FUCKING ASS!"
     nova "STOP MAKING MUSIC!"
     nova "STOP MAKING MUSIC!"
@@ -988,6 +1025,18 @@ label dx_christmas_climax:
     luke "Look, this looked to complicated to setup anyways, so I wanted to make it feel like your plan worked!"
     digi "But, but..."
     digi "I really thought I could set it up this time..."
+    sheriff "Hey Copguy, I need to go to the bathroom again!"
+    copguy "Motherfucker! Do it yourself!"
+    ed "My poor turkey..."
+    michael "I think I'm gonna puke."
+    wesley "Arghh! My back! CS you prick, this is your fault!"
+    grace "Guys! Stop yelling!"
+    tate "Yeah guys! Get it together!"
+    nova "No! Fuck you!"
+    anne "Hey!"
+    mean "What you say, you little fuck?"
+    arceus "Oh my god, this is hurting my head..."
+    cs "Dammit everyone! Shut the fuck u--{w=2.0}{nw}"
 
     #lights out
 screen flashlight_demo:
@@ -1270,6 +1319,17 @@ label dx_christmas_billy_time:
     ed "Maybe we should all go up and check it out."
     n "Everyone clammers up the stairs, and one by one, they all climb up onto the roof."
 label dx_christmas_roof_moment:
+    scene snowed_in
+    show cs sil_black:
+        zoom 0.15
+        xpos 0.3
+        ypos 0.5
+    show mean human flipped sil_black:
+        zoom 0.15
+        xpos 0.4
+        ypos 0.5
+    show snow1
+    with dissolve
     k22 "So it is as bad as you said."
     wesley "It just keeps going! It never ends!"
     tate "What are we going to do? We can't just, walk out there!"
@@ -1390,7 +1450,8 @@ label dx_christmas_roof_moment:
     santa "Ho ho, oh no. It's tipping towards us."
     santa "Oh, shit."
     n "A tsunami of car cleaner engulfs the group, as they get washed off the roof."
-    n "As everyone gathers their bearings once again, the look around, watching the waves of Crotch Doctor carrying all the snow away."
+    n "As everyone gathers their bearings once again, they look around, watching the waves of Crotch Doctor carrying all the snow away."
+    scene cs_house_night_dtree with dissolve
     cs "Woohoo! We did it! The avalanche covering the house is gone!"
     santa "Ho ho, well, it looks like you helped save Christmas, CS."
     santa "I need to get going however, I am slightly off schedule."
@@ -1407,6 +1468,9 @@ label dx_christmas_roof_moment:
     cs "Uhhh..."
     n "As everyone is talking, the jingling of bells can be heard rushing over CS' house."
     santa "Ho ho ho! Merry Christmas everyone!"
+    show snow3
+    show snow4
+    with dissolve
     n "As Santa flies past, the snow begins to fall again."
     sheriff "Well Copguy, we should probably get going before we get snowed in again!"
     copguy "Look how shiny our car is!"
@@ -1417,7 +1481,7 @@ label dx_christmas_roof_moment:
     n "K-22 hands Billy a folded up piece of paper."
     k22 "All of the instructions are on there I was told."
     k22 "Follow them word for word."
-    n "Billy opens up the paper and skins through it."
+    n "Billy opens up the paper and skims through it."
     billy "Wow."
     billy "This is great! I'll get to work on this soon."
     billy "I gotta take a trip to France."
