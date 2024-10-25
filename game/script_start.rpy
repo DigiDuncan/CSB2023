@@ -2114,6 +2114,7 @@ define audio.police_station = "police_station.ogg"
 define audio.echoing = "echoing.ogg"
 define audio.kill_cops = "killcops.ogg"
 define audio.insane_personalities = "insane_personalities.ogg"
+define audio.genocide = "<from 60 to 170>audio/insane_personalities.ogg"
 define audio.danger_mystery = "danger_mystery.ogg"
 define audio.pressing_pursuit_cornered = "pressing_pursuit_cornered.ogg"
 define audio.bun_guster = "bun_guster.ogg"
@@ -2255,6 +2256,9 @@ define audio.homely_yado_inn = "<from 0.499 to 40.502>homely_yado_inn.ogg"
 # For Tate EX / Perfect Tate
 define audio.insomnia_intro = "<from 0 to 11.299>secret/pt/insomnia.ogg"
 define audio.insomnia_loop = "<from 22.6>secret/pt/insomnia.ogg"
+define audio.perfect_tate_intro = "<from 3.6 to 22.8>/secret/pt/nyan_of_a_lifetime.ogg"
+define audio.perfect_tate_full = "<from 3.6 to 228.52>/secret/pt/nyan_of_a_lifetime.ogg"
+define audio.tate_game = "<from 22.8 to 228>/secret/pt/nyan_of_a_lifetime.ogg"
 
 # CSBIII DX Kuwait Music
 define audio.tmwstw = "tmwstw.ogg"

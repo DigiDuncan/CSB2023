@@ -1364,7 +1364,7 @@ label genocide_wait_arc:
     pause 1.0
     arceus "He's just been--"
 
-    play music "<from 60 to 170>audio/insane_personalities.ogg" if_changed
+    play music genocide if_changed
 
     music insane_personalities
     show csgod at offscreenleft with determination

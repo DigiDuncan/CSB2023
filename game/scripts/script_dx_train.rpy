@@ -3720,7 +3720,7 @@ label train_tate_ex_win:
     perfect_tate "{sc}{size=+24}{font=azsz}{color=#000000}I'm sorry."
 
     scene white
-    play music "<from 3.6 to 22.8>/secret/pt/nyan_of_a_lifetime.ogg" volume 0.3 if_changed noloop
+    play music perfect_tate_intro volume 0.3 if_changed noloop
     $ renpy.movie_cutscene("/minigames/perfecttate/tate1.webm")
 
 
