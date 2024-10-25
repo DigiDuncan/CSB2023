@@ -13,6 +13,7 @@ init -1 python:
 
     # Achievement step counts
     pun_count = 999
+    fun_count = 999
     ending_count = 27
     with renpy.open_file("bios.json") as f:
         j = json.load(f)
@@ -45,6 +46,7 @@ default persistent.seen_music_pun = set()
 default persistent.read = set()
 default persistent.seen_endings = set()
 default persistent.unlocked_achievements = set()
+default persistent.fun = set()
 default persistent.creative_mode = False
 default persistent.seen_splash = False
 default persistent.first_time = True
@@ -312,6 +314,12 @@ init python:
             return False
         if rarity == FUN_VALUE_MUSIC and not preferences.music_joke_enable:
             return False
+
+        if id is not None:
+            if rarity == FUN_VALUE_MUSIC:
+                persistent.seen_music_pun.add(id)
+            else:
+                persistent.fun.add(id)
 
         r = ease_linear(rarity, 1, 0, 100, preferences.csbounciness)
         chance = 1 / r
