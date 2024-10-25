@@ -523,7 +523,10 @@ label dx_christmas_party_before:
         n "As CS asks himself this, a small car pulls up in the driveway."
         cs "Hmm, let go see who that is!"
         hide cs with moveoutleft
-        scene cs_house_snow_night with dissolve
+        scene cs_house_snow_night
+        show arceus flipped at mid_left
+        show kitty at left
+        with dissolve
         show cs flipped at right with moveinright
         arceus "Hey CS!"
         cs "Hey Arc! Hey Kitty!"
@@ -538,7 +541,9 @@ label dx_christmas_party_before:
         n "CS peers out the window to see Anno's car pull into the driveway."
         cs "Hey look at that! Anno's here first!"
         hide cs with moveoutleft
-        scene cs_house_snow_night with dissolve
+        scene cs_house_snow_night
+        show anno at mid_left
+        with dissolve
         show cs flipped at right with moveinright
         anno "Hey CS!"
         anno "I showed up kinda early, but I wanted to see everyone's initial reactions of our decor work!"
@@ -549,7 +554,9 @@ label dx_christmas_party_before:
         show cs disappointed flipped
         cs "What the hell is that?"
         hide cs with moveoutleft
-        scene cs_house_snow_night with dissolve
+        scene cs_house_snow_night
+        show digi flipped at mid_left
+        with dissolve
         show cs flipped at right with moveinright
         digi "Hey CS! How've you been?"
         cs "Hey Digi! Didn't know you have a... spaceship?"
@@ -565,13 +572,16 @@ label dx_christmas_party_before:
         n "As the house shakes even faster, a loud train whistle bellows out."
         cs "Holy shit, is that a train?"
         hide cs with moveoutleft
-        scene cs_house_snow_night with dissolve
+        scene cs_house_snow_night
+        show tate flipped at mid_left
+        show mean human flipped at left
+        with dissolve
         show cs worried flipped at right with moveinright
         cs "That's a fucking train!"
         tate "Hey CS! How've you been doin'?"
         cs "Tate? Hey! I've been great!"
         mean "Hey CS, Merry Christmas!"
-        cs "Merry Christmas to you too, Mean. Shall we get inside."
+        cs "Merry Christmas to you too, Mean. Shall we get inside?"
         tate "Yeah!"
         jump dx_christmas_intro
     if d20 == 6:
@@ -582,20 +592,25 @@ label dx_christmas_party_before:
         n "As the house shakes even faster, a loud train whistle bellows out."
         cs "Holy shit, is that a train?"
         hide cs with moveoutleft
-        scene cs_house_snow_night with dissolve
+        scene cs_house_snow_night
+        show tate flipped at mid_left
+        show mean human flipped at left
+        with dissolve
         show cs worried flipped at right with moveinright
         cs "That's a fucking train!"
         tate "Hey CS! How've you been doin'?"
         cs "Tate? Hey! I've been great!"
         mean "Hey CS, Merry Christmas!"
-        cs "Merry Christmas to you too, Mean. Shall we get inside."
+        cs "Merry Christmas to you too, Mean. Shall we get inside?"
         tate "Yeah!"
         jump dx_christmas_intro    
     if d20 == 7:
         n "CS notices a familiar blue car roll up on the driveway."
         cs "Look at that! Looks like Billy is here first!"
         hide cs with moveoutleft
-        scene cs_house_snow_night with dissolve
+        scene cs_house_snow_night
+        show billy at mid_left
+        with dissolve
         show cs flipped at right with moveinright
         billy "Hi! It's Billy!"
         billy "Merry Christmas!"
@@ -611,7 +626,9 @@ label dx_christmas_party_before:
         cs "Woah, what the hell?"
         n "A Blackhawk helicopter is seen landing out in the middle of the street."
         hide cs with moveoutleft
-        scene cs_house_snow_night with dissolve
+        scene cs_house_snow_night
+        show obama at mid_left
+        with dissolve
         show cs flipped at right with moveinright
         n "The President of the United States steps out."
         obama "Hello, CS! Nice to meet you."
@@ -627,7 +644,9 @@ label dx_christmas_party_before:
         cs "Uh oh! Why are the cops here?"
         n "CS rushes outside."
         hide cs with moveoutleft
-        scene cs_house_snow_night with dissolve
+        scene cs_house_snow_night
+        show copguy flipped at mid_left
+        with dissolve
         show cs worried flipped at right with moveinright
         copguy "Heya, CS. Did I scare you?"
         cs "Fuck, yeah you did! I didn't think you were gonna be on duty!"
@@ -639,7 +658,9 @@ label dx_christmas_party_before:
         n "CS looks outside to see a bus pull up."
         cs "Hmm, I wonder who took the bus."
         hide cs with moveoutleft
-        scene cs_house_snow_night with dissolve
+        scene cs_house_snow_night
+        show sheriff flipped at left
+        with dissolve
         show cs flipped at right with moveinright
         sheriff "God dammit! Stupid damn wheels! Stuck in the snow!"
         cs "Woah, hey! Who are you?"
@@ -652,7 +673,11 @@ label dx_christmas_party_before:
     if d20 == 11:
         n "A beam sound can be heard from outside."
         hide cs with moveoutleft
-        scene cs_house_snow_night with dissolve
+        scene cs_house_snow_night
+        show ed flipped at center
+        show rich flipped at mid_left
+        show wesley flipped at left
+        with dissolve
         show cs flipped at right with moveinright
         cs "Hey guys! How have you guys been doing?"
         ed "We've been doing well! Our business has been profitable recently!"
@@ -683,7 +708,9 @@ label dx_christmas_party_before:
         show cs disappointed flipped
         cs "What in the world?"
         hide cs with moveoutleft
-        scene cs_house_snow_night with dissolve
+        scene cs_house_snow_night
+        show aria flipped at mid_left
+        with dissolve
         show cs flipped at right with moveinright
         cs "Oh hey! Aria, right?"
         aria "Yep, that's me!"
@@ -697,7 +724,9 @@ label dx_christmas_party_before:
         n "Someone's car pulls into the driveway."
         cs "I wonder who that could be?"
         hide cs with moveoutleft
-        scene cs_house_snow_night with dissolve
+        scene cs_house_snow_night
+        show michael at mid_left
+        with dissolve
         show cs flipped at right with moveinright
         cs "Oh hey, it's Michael!"
         cs "You're still visiting the United States? I thought you were only here for the summer!"
@@ -709,7 +738,10 @@ label dx_christmas_party_before:
         n "CS sees Linus' car pulling up outside."
         cs "It looks like Linus got here first!"
         hide cs with moveoutleft
-        scene cs_house_snow_night with dissolve
+        scene cs_house_snow_night
+        show linus at mid_left
+        show luke flipped at left
+        with dissolve
         show cs flipped at right with moveinright
         linus "Hey CS! Long time no see!"
         cs "You too, and Luke as well?"
@@ -725,7 +757,9 @@ label dx_christmas_party_before:
         n "Another Honda Civic shows up in CS' driveway."
         cs "Oh look at that! It's Blank!"
         hide cs with moveoutleft
-        scene cs_house_snow_night with dissolve
+        scene cs_house_snow_night
+        show blank flipped at mid_left
+        with dissolve
         show cs flipped at right with moveinright
         blank "Hey CS, how have you been?"
         cs "I've been doing well, did you drive safe here?"
@@ -737,7 +771,9 @@ label dx_christmas_party_before:
         n "An unknown car shows up in the driveway."
         cs "I wonder who that is?"
         hide cs with moveoutleft
-        scene cs_house_snow_night with dissolve
+        scene cs_house_snow_night
+        show nova flipped at mid_left
+        with dissolve
         show cs flipped at right with moveinright
         nova "Hey CS! Thanks for inviting me to your Christmas party!"
         cs "Yeah sure thing!"
@@ -750,7 +786,11 @@ label dx_christmas_party_before:
         show cs disappointed flipped
         cs "What the fuck? Who is that?"
         hide cs with moveoutleft
-        scene cs_house_snow_night with dissolve
+        scene cs_house_snow_night
+        show elizabeth at center
+        show anne at mid_left
+        show grace at left
+        with dissolve
         show cs disappointed flipped at right with moveinright
         cs "Hey, uhh..."
         eliza "Is this the right place?"
@@ -768,7 +808,9 @@ label dx_christmas_party_before:
         n "An orange mini coooper shows up infront of CS' house."
         cs "Holy crap, is that who I think it is?"
         hide cs with moveoutleft
-        scene cs_house_snow_night with dissolve
+        scene cs_house_snow_night
+        show db at mid_left
+        with dissolve
         show cs flipped at right with moveinright
         cs "DB! Your the first one here!"
         db "I am??"
@@ -781,7 +823,9 @@ label dx_christmas_party_before:
         show cs disappointed flipped
         cs "Who the hell is that?"
         hide cs with moveoutleft
-        scene cs_house_snow_night with dissolve
+        scene cs_house_snow_night
+        show avgn flipped at mid_left
+        with dissolve
         show cs disappointed flipped at right with moveinright
         cs "Hey, are you..."
         avgn "I'm the fuckin' Nerd!"
@@ -803,9 +847,16 @@ label dx_christmas_party_before:
 label dx_christmas_intro:
     scene black with dissolve
     n "By the time of the party, everyone shows up at CS' house in droves."
-    scene cs_foyer with dissolve
+    scene cs_foyer
+    show cs at left
+    show anno at mid_left
+    show aria at mid_mid_left
+    show digi at center
+    show tate flipped at mid_right
+    show mean human at right
     cs "Well, it looks like everyone is here, right?"
     anno "DB isn't here yet, but other than that, yeah."
+    show tate sheepish flipped
     tate "There are... a lot of people here..."
     digi "Yeah, I wonder where Arc and Kitty are..."
     k17 "OMG hey guys!"

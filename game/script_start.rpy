@@ -1005,13 +1005,21 @@ image nova flipped = "flip:characters/nova.png"
 image nova dark flipped = "dark:flip:characters/nova.png"
 image nova discord = "characters/nova_discord.png"
 
+# Mika
+image grace = "characters/grace.png"
+image grace flipped = "flip:characters/grace.png"
+image anne = "characters/anne.png"
+image anne flipped = "flip:characters/anne.png"
+image elizabeth = "characters/eliza.png"
+image elizabeth flipped = "flip:characters/eliza.png"
+image mika = "characters/mika.png"
+image mika dark = "dark:characters/mika.png"
+
 # More of our friends!
 image kitty = "characters/kitty.png"
 image kitty flipped = "flip:characters/kitty.png"
 image blank = "characters/blank.png"
 image midge = "characters/midge.png"
-image mika = "characters/mika.png"
-image mika dark = "dark:characters/mika.png"
 image db = "characters/db.png"
 image db_cooper = "characters/db_coopergame.png"
 image ges = "characters/ges.png"
@@ -1450,6 +1458,10 @@ image lunatic_cultist flipped = "flip:characters/lunatic_cultist.png"
 
 # Back to the future: CS edition generated assets
 image after_true_title = Text("{size=+196}Spring 202X", text_align=0.5)
+
+# CS Holiday Special characters
+image avgn = "characters/avgn.png"
+image avgn flipped = "flip:characters/avgn.png"
 
 # CS Holiday Special BGs
 image snowed_in = "bg/snowed_in.png"
