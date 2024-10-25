@@ -62,6 +62,8 @@ screen achievements_welcome():
         # make it 100% on the backend for math reasons then convert it
         percent_unlocked_backend = (unlocked_count / total_count) * 100
         percent_unlocked_display = int(percent_unlocked_backend * 1.88)
+        if percent_unlocked_display >= 100 and story_count > story_unlocked_count:
+            percent_unlocked_display = 99
 
     viewport:
         xsize 1300
