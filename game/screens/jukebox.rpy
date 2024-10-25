@@ -19,6 +19,21 @@ init python:
         if n not in music_map:
             print(f"WARNING: Track '{n}' not in music_map!")
 
+
+screen jukebox():
+
+    default current_song_name = None
+
+    tag menu
+    use jukebox_nav
+
+    if current_song_name == None:
+        use jukebox_welcome
+    else:
+        use music_screen(current_song_name)
+
+
+
 screen jukebox_nav():
 
     add Color('#323e42', alpha=0.75)
@@ -74,11 +89,11 @@ screen jukebox_nav():
                     if k in persistent.heard:
                         # display all
                         if current_jukebox_tag_index == 0:
-                            textbutton "{font=music_text}" + music_map[k]["title"]+"\n{size=-12}"+music_map[k]["artist"] action ShowMenu("music_screen", music_map[k]), Play("jukebox", music_map[k]["file"], relative_volume=0.5)
+                            textbutton "{font=music_text}" + music_map[k]["title"]+"\n{size=-12}"+music_map[k]["artist"] action SetScreenVariable("current_song_name", k), Play("jukebox", music_map[k]["file"], relative_volume=0.5)
                         # only display per tag
                         else:
                             if tags_map[current_jukebox_tag_index] in music_map[k]["tags"]:
-                                textbutton "{font=music_text}" + music_map[k]["title"]+"\n{size=-12}"+music_map[k]["artist"] action ShowMenu("music_screen", music_map[k]), Play("jukebox", music_map[k]["file"], relative_volume=0.5)
+                                textbutton "{font=music_text}" + music_map[k]["title"]+"\n{size=-12}"+music_map[k]["artist"] action SetScreenVariable("current_song_name", k), Play("jukebox", music_map[k]["file"], relative_volume=0.5)
 
     textbutton "Return to Extras" action ShowMenu("category_welcome"), Stop("jukebox"), PauseAudio("music", False) yoffset 950 xoffset 25
     textbutton "Return" action Return(), Stop("jukebox"), PauseAudio("music", False) yoffset 1000 xoffset 25
@@ -88,9 +103,6 @@ screen jukebox_nav():
 ##-----------------------------------------------
 
 screen jukebox_welcome():
-    tag menu
-    use jukebox_nav
-    style_prefix "codex"
     python:
         music_count = len(music_map.keys())
         unlocked_music_count = len(persistent.heard)
@@ -106,12 +118,9 @@ screen jukebox_welcome():
 ##-----------------------------------------------
 
 
-screen music_screen(this_track):
+screen music_screen(selected_track):
 
-    tag menu
-    use jukebox_nav
-
-    style_prefix "codex"
+    $ this_track = music_map[selected_track]
 
     $ track_title = this_track["title"]
     $ artist = this_track["artist"]

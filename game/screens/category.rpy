@@ -39,7 +39,7 @@ screen category_nav():
             textbutton "Achievements" action ShowMenu("achievements_welcome")
             # textbutton "Collectibles" action ShowMenu("collectibles_welcome")
             # textbutton "Endings" action ShowMenu("endings_welcome")
-            textbutton "Jukebox" action ShowMenu("jukebox_welcome"), PauseAudio("music", True)
+            textbutton "Jukebox" action ShowMenu("jukebox"), PauseAudio("music", True)
             textbutton "Endings" action ShowMenu("replay_gallery")
             textbutton "Minigames" action ShowMenu("minigame_gallery")
             textbutton "Item Collection" action ShowMenu("item_welcome")
