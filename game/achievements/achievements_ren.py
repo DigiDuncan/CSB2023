@@ -7,7 +7,19 @@ init python:
 """
 
 from dataclasses import dataclass
+from typing import TypedDict, Union
+import json
 
+class AchievementData(TypedDict):
+    name: str
+    locked: str
+    unlocked: str
+    img: str
+    type: str
+    hidden: bool
+    dx: bool
+    steps: Union[int, str]
+    tracker: str
 
 @dataclass
 class Achievement:
@@ -19,10 +31,31 @@ class Achievement:
     hidden: bool = False
     dx: bool = False
     steps: int = 1
+    tracker: str = None
    
     @property
     def unlocked(self) -> bool:
-        return self.name in persistent.unlocked_achievements
+        if self.steps == 1:
+            return self.name in persistent.unlocked_achievements 
+        else:
+            var = getattr(persistent, self.tracker)
+            if isinstance(var, set):
+                v = len(var)
+            else:
+                v = var
+            return v >= self.steps
+
+    @property
+    def progress(self) -> float:
+        if self.steps == 1:
+            return float(self.name in persistent.unlocked_achievements)
+        else:
+            var = getattr(persistent, self.tracker)
+            if isinstance(var, set):
+                v = len(var)
+            else:
+                v = var
+            return min(1.0, v / self.steps)
 
     @property
     def desc(self) -> str:
@@ -31,9 +64,9 @@ class Achievement:
     @property
     def icon(self) -> str:
         if self.dx:
-            d = Composite((128, 128), (0, 0), f"achievements/{self.icon_image}.png", (0, 0), "achievements/dx_border.png")
+            d = Composite((128, 128), (0, 0), f"achievements/icons/{self.icon_image}.png", (0, 0), "achievements/icons/dx_border.png")
         else:
-            d = renpy.displayable(f"achievements/{self.icon_image}.png")
+            d = renpy.displayable(f"achievements/icons/{self.icon_image}.png")
 
         if self.unlocked:
             return d
@@ -58,18 +91,43 @@ class Achievement:
             renpy.show_screen("popup", self)
             renpy.with_statement(determination)
 
+    @classmethod
+    def from_JSON(cls, id: str, data: AchievementData) -> "Achievement":
+        a = Achievement(data["name"], data["locked"], data["unlocked"], data["img"], data["type"], data.get("hidden", False), data.get("dx", False))
+        if "steps" in data:
+            if isinstance(data["steps"], int):
+                a.steps = data["steps"]
+            elif isinstance(data["steps"], str):
+                vars = globals() | locals()
+                if data["steps"] in vars:
+                    a.steps = vars[data["steps"]]
+                else:
+                    print(f"WARNING: {data['steps']} not defined before achievement load!")
+            if "tracker" in data:
+                a.tracker = data["tracker"]
+            else:
+                print(f"WARNING: {a.name} has no tracker defined, but has {a.steps} steps!")
+        return a
+
 
 class AchievementManager:
+    def __init__(self) -> None:
+        self.achievements: list[Achievement] = []
+        with renpy.open_file("achievements.json") as j:
+            jsondata = json.load(j)
+        for k, v in jsondata.items():
+            self.achievements.append(Achievement.from_JSON(k, v))
+
     @property
     def unlocked(self) -> list[Achievement]:
-        return [a for a in achievements if a.name in persistent.unlocked_achievements]
+        return [a for a in self.achievements if a.name in persistent.unlocked_achievements]
 
     @property
     def locked(self) -> list[Achievement]:
-        return [a for a in achievements if not a.name in persistent.unlocked_achievements]
+        return [a for a in self.achievements if a.name not in persistent.unlocked_achievements]
 
     def get(self, name: str) -> Achievement:
-        for achievement in achievements:
+        for achievement in self.achievements:
             if achievement.name == name:
                 return achievement
 
@@ -82,7 +140,7 @@ class AchievementManager:
             ach.unlock(show_screen)
 
     def unlock_all(self):
-        for achievement in achievements:
+        for achievement in self.achievements:
             self.unlock(achievement.name, show_screen = False)
 
     def reset(self):

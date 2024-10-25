@@ -126,7 +126,7 @@ label train_dialogue:
         show mean human hat shocked
         mean "Why would Cookie Monster be eating fucking {i}cobalt?!"
         show tate srs
-        tate "{bt=a3-p10-s4}Awawawa!!!"
+        tate "{cshake}Awawawa!!!"
         show mean angry hat
         show tate shock
         mean "WOAH!! You can't {i}say{/i} that anymore!" with vpunch
@@ -261,7 +261,7 @@ label train_dialogue:
 
     show arc_laptop at manual_pos(0.65, 0.55, 0.5) behind arceus with dissolve
     pause 0.5
-    play music "<from 3.6 to 228.52>/secret/pt/nyan_of_a_lifetime.ogg" volume 0.05
+    play music perfect_tate_full volume 0.05
     pause 2.0
     n "Arceus pulls out a laptop and starts playing a game."
     pause 3.0

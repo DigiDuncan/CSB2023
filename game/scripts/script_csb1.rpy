@@ -64,7 +64,7 @@ label csbi_craptop:
     show craptop updating
     craptop "Downloading update 200/13..."
     craptop "Update complete."
-    cs "{bt=a3-p10-s4}OoOoOoOoOh{/bt} yes!"
+    cs "{cshake}OoOoOoOoOh{/bt} yes!"
     show craptop discord
     play sound sfx_windows_logon
     cs "Hey guys!"
@@ -353,10 +353,10 @@ label csbi_room:
     play sound sfx_flashback_start
     scene cs_room with pixellate
     show cs_young with moveinbottom
-    ycs "Hey guys, Young CS here! Today, I'm gonna be editing a \n{bt=a3-p10-s4}CraAaAaAaAzY{/bt} video!!"
+    ycs "Hey guys, Young CS here! Today, I'm gonna be editing a \n{cshake}CraAaAaAaAzY{/bt} video!!"
     play sound sfx_keyboard
     n "CS taps furiously on his keyboard."
-    ycs "Ohhhhhh {bt=a3-p10-s4}YeeEeeEeEeeEEeEEs!{/bt} This is lookin' {i}good!"
+    ycs "Ohhhhhh {cshake}YeeEeeEeEeeEEeEEs!{/bt} This is lookin' {i}good!"
     play sound sfx_flashback_end
     hide cs_young
     scene cs_room
@@ -939,7 +939,7 @@ label csbi_end:
 
         show cs scared
         cs "Yeowch!"
-        mean "{bt=a3-p10-s4}{size=+24}AUUUUUGH!!!" with hpunch
+        mean "{cshake}{size=+24}AUUUUUGH!!!" with hpunch
     else:
         play sound sfx_punch
         show cs angry at right with MoveTransition(0.25)

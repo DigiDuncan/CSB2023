@@ -559,7 +559,7 @@ label train_kingman_platform:
     pause 2.0
     show cs scared
     show arceus worried flipped
-    tate_offscreen "{bt=a3-p10-s4}{size=+24}Alllllll aboarrrrrrd!!" with hpunch
+    tate_offscreen "{cshake}{size=+24}Alllllll aboarrrrrrd!!" with hpunch
     pause 1.0
     cs "Wow, damn, the train only {i}just--{w=0.25}{nw}"
     show tate flipped at right with moveinright
@@ -1148,7 +1148,7 @@ label train_enter_sleeper:
     # TODO: bgm?
 
     show tate srs flipped
-    tate "{bt=a3-p10-s4}{size=+36}IT WAS {i}YOU!!" with hpunch
+    tate "{cshake}{size=+36}IT WAS {i}YOU!!" with hpunch
     cs "Wha-- {i}huh?!"
     tate "CS, WHAT THE {i}FUCK?!"
     tate "{i}YOU{/i} BROKE INTO HOH SIS?!"
@@ -1294,7 +1294,7 @@ label train_dining:
     n "Arceus can't help but stare in awe at both the enormous spread of food..."
     n "...{w=0} and at the brightly-colored creature currently demolishing it."
     show mean happy
-    mean_offscreen "LET'S {w=0.25}FUCKING {w=0.25}{bt=a3-p10-s4}{i}GOOOOOOOO!!"
+    mean_offscreen "LET'S {w=0.25}FUCKING {w=0.25}{cshake}{i}GOOOOOOOO!!"
     mean_offscreen "I can't believe they made {i}all{/i} of this just for me!"
     mean_offscreen "This is going to be the best day {i}ever!"
     show mean happy2
@@ -1353,11 +1353,11 @@ label train_dining:
     show mean furious
     mean_offscreen "{i}WHAT?!" with hpunch
     if fun_value(FUN_VALUE_MUSIC):
-        mean_offscreen "{bt=a3-p10-s4}{size=+36}PROF. KRANE'S BEEN {i}KIDNAPPED?{/i}" with vpunch
-        mean_offscreen "{bt=a3-p10-s4}{size=+36}ON {i}MY{/i} FUCKING TRAIN?!" with vpunch
+        mean_offscreen "{cshake}{size=+36}PROF. KRANE'S BEEN {i}KIDNAPPED?{/i}" with vpunch
+        mean_offscreen "{cshake}{size=+36}ON {i}MY{/i} FUCKING TRAIN?!" with vpunch
     else:
-        mean_offscreen "{bt=a3-p10-s4}{size=+36}ON {i}MY{/i} FUCKING TRAIN?!" with vpunch
-    mean_offscreen "MY FIRST SHIFT STARTS IN {bt=a3-p10-s4}{i}TWENTY MINUTES!" with hpunch
+        mean_offscreen "{cshake}{size=+36}ON {i}MY{/i} FUCKING TRAIN?!" with vpunch
+    mean_offscreen "MY FIRST SHIFT STARTS IN {cshake}{i}TWENTY MINUTES!" with hpunch
     n "One can practically see the gears begin to turn in Arceus' head as he realizes who he is talking to."
 
     # arc wanted this
@@ -1370,7 +1370,7 @@ label train_dining:
 
         # TODO: record the dallas AUUUUUUUUUGH when mean is better
 
-        mean "{bt=a3-p10-s4}{size=+36}AUUUUUUUUUGH!!" with hpunch
+        mean "{cshake}{size=+36}AUUUUUUUUUGH!!" with hpunch
         show arceus happy
         arceus "Yeah!"
         show arceus worried
@@ -1475,7 +1475,7 @@ label train_wakeup:
     play sound sfx_sliding_door_open volume 2.0
     n "As if on cue, the room door slides open fully." with hpunch
     
-    tate "{bt=a3-p10-s4}{size=+24}C.{w=0.1}S. ONE HUNDRED AND EIGHTY{w=0.1}-EIGHT!!" with vpunch
+    tate "{cshake}{size=+24}C.{w=0.1}S. ONE HUNDRED AND EIGHTY{w=0.1}-EIGHT!!" with vpunch
 
     show arceus worried at mid_mid_right
     show tate srs at left
@@ -1485,11 +1485,11 @@ label train_wakeup:
     show tate srs at mid_mid_left with moveinleft
 
     if fun_value(FUN_VALUE_COMMON):
-        tate "YOU HAD {bt=a3-p10-s4}{i}ONE{/i}{/bt} JOJ!" with vpunch
+        tate "YOU HAD {cshake}{i}ONE{/i}{/bt} JOJ!" with vpunch
         show tate srs at center with moveinleft
-        tate "YOU'RE GONNA NEED A WHOLE LOT MORE THAN {bt=a3-p10-s4}{i}FOUNDATION\nREPAIR{/i}{/bt} AFTER {i}I'M{/i} DONE WITH YOU!" with vpunch
+        tate "YOU'RE GONNA NEED A WHOLE LOT MORE THAN {cshake}{i}FOUNDATION\nREPAIR{/i}{/bt} AFTER {i}I'M{/i} DONE WITH YOU!" with vpunch
     else:
-        tate "YOU HAD {bt=a3-p10-s4}{i}ONE{/i}{/bt} JOB!" with vpunch
+        tate "YOU HAD {cshake}{i}ONE{/i}{/bt} JOB!" with vpunch
         show tate srs at center with moveinleft
         tate "IS IT REALLY {i}THAT{/i} HARD FOR YOU TO KEEP A SECRET?!" with vpunch
 
@@ -1549,7 +1549,7 @@ label train_wakeup:
     show tate shock flipped
     show mean scared
     show cs scared flipped
-    tate "{bt=a3-p10-s4}{size=+12}Uwaaaaah!" with vpunch
+    tate "{cshake}{size=+12}Uwaaaaah!" with vpunch
     tate "Mean!"
     show tate sad flipped
     show mean surprised
@@ -1570,7 +1570,7 @@ label train_wakeup:
     show tate shock flipped
     show cs scared flipped
     show arceus worried
-    mean "{bt=a3-p10-s4}{size=+24}{i}TAAAAATE!!" with vpunch
+    mean "{cshake}{size=+24}{i}TAAAAATE!!" with vpunch
 
     show mean ayo
     mean "What the fuck are you {i}talking{/i} about?"
@@ -2097,7 +2097,7 @@ label train_search_tate:
     tate "Oh, no!"
     tate "I've {i}got{/i} to get that hat back!"
     show tate shock flipped at left with MoveTransition(0.25)
-    tate "{bt=a3-p10-s4}{size=+24}Mr.{w=0} Conductor!!" with hpunch
+    tate "{cshake}{size=+24}Mr.{w=0} Conductor!!" with hpunch
     tate "We've got trouble!"
     amtrak_conductor "My apologies, Mx.{w=0} Frost. I'm a little {i}busy."
     amtrak_conductor "Where is Mean?"
@@ -2354,7 +2354,7 @@ label train_confront_lupin:
     show arceus worried
     play sound sfx_whoosh
     show lupin run hat at offscreenleft with MoveTransition(0.25)
-    mean "{bt=a3-p10-s4}{size=+24}Oh,{w=0} no,{w=0} you don't!" with vpunch
+    mean "{cshake}{size=+24}Oh,{w=0} no,{w=0} you don't!" with vpunch
     arceus "Shit!"
     cs "What do we do?!"
     mean "Tate! {i}Hit it!"
@@ -2364,7 +2364,7 @@ label train_confront_lupin:
     with MoveTransition(0.5)
     tate "Ohshitohfuckohshitohfuck--{nw}"
     show mean furious flipped
-    mean "{bt=a3-p10-s4}{size=+24}JUST THROW ME,{w=0} ALREADY!"
+    mean "{cshake}{size=+24}JUST THROW ME,{w=0} ALREADY!"
     play sound sfx_whoosh
     show mean furious at truecenter with MoveTransition(0.1)
     show mean furious at offscreenleft with MoveTransition(0.25)
@@ -2632,10 +2632,10 @@ label train_on_top:
             mean_text = mean_which[0]
             mean_fun_text = mean_which[1]
 
-        mean "{bt=a3-p10-s4}{size=+24}[mean_text]"
+        mean "{cshake}{size=+24}[mean_text]"
         mean "[mean_fun_text]"
     else:
-        mean "{bt=a3-p10-s4}{size=+24}Stop right there!" with hpunch
+        mean "{cshake}{size=+24}Stop right there!" with hpunch
         mean "You're not getting away!"
 
     show lupin stand hat dark
@@ -2730,7 +2730,7 @@ label train_on_top:
     pause 1.0
     n "Gunshots ring out!{w=2.0}{nw}"
     play sound sfx_zenigata_shout
-    zenigata_nobeep "{bt=a3-p10-s4}{size=+24}Lupiiiiin!{w=2.0}{nw}"
+    zenigata_nobeep "{cshake}{size=+24}Lupiiiiin!{w=2.0}{nw}"
        
     show zenigata car dark behind letterbox:
         xpos -800
@@ -2970,7 +2970,7 @@ label train_lupin_win:
         linear 0.1 ypos 50
         linear 0.1 ypos 200
     play sound sfx_hurt1
-    lupin "{bt=a3-p10-s4}Please put me down!"
+    lupin "{cshake}Please put me down!"
     show lupin stand:
         yzoom -1 
         linear 0.1 ypos 50
@@ -3271,7 +3271,7 @@ label train_lupin_win:
     $ _skipping = False
     play music roundabout
     music roundabout
-    mean "{bt=a3-p10-s4}{size=+24}YOU RAT {i}BASTARD!{w=1.0}{nw}" with hpunch
+    mean "{cshake}{size=+24}YOU RAT {i}BASTARD!{w=1.0}{nw}" with hpunch
     mean "I {i}THOUGHT{/i} I RECOGNIZED YOU!{w=1.0}{nw}"
     # i got lazy ok
     scene
@@ -3720,7 +3720,7 @@ label train_tate_ex_win:
     perfect_tate "{sc}{size=+24}{font=azsz}{color=#000000}I'm sorry."
 
     scene white
-    play music "<from 3.6 to 22.8>/secret/pt/nyan_of_a_lifetime.ogg" volume 0.3 if_changed noloop
+    play music perfect_tate_intro volume 0.3 if_changed noloop
     $ renpy.movie_cutscene("/minigames/perfecttate/tate1.webm")
 
 

@@ -952,7 +952,7 @@ label csbiii_arc_escape:
     show taran
     pause 1.0
     linus "April Fools?"
-    colton "{bt=a3-p10-s4}IT'S JULY!" with vpunch
+    colton "{cshake}IT'S JULY!" with vpunch
     pause 1.0
     scene black with dissolve
     pause 1.0
@@ -1138,7 +1138,7 @@ label genocide_fight:
     arceus "{i}CS! They're heading right for us!!"
     play sound sfx_siren loop volume 0.6
     scene black
-    arceus "{bt=a3-p10-s4}{i}CS!!!"
+    arceus "{cshake}{i}CS!!!"
     play sound sfx_siren loop fadein 1.0 volume 2
     pause 1.0
     play sound sfx_car_crash volume 0.7
@@ -1364,7 +1364,7 @@ label genocide_wait_arc:
     pause 1.0
     arceus "He's just been--"
 
-    play music "<from 60 to 170>audio/insane_personalities.ogg" if_changed
+    play music genocide if_changed
 
     music insane_personalities
     show csgod at offscreenleft with determination

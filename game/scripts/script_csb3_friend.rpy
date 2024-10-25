@@ -181,7 +181,7 @@ label friend_high_gpu:
     cs "Okay."
     linus "3...{w=1} 2...{w=1} 1...{w=1} Action."
     linus "Today, we are going to start-- {nw}"
-    cs "Hey guys, CS here! How's it goin'? Today, we are going to build this {bt=a3-p10-s4}CraAaAaAaAzY{/bt} computer!"
+    cs "Hey guys, CS here! How's it goin'? Today, we are going to build this {cshake}CraAaAaAaAzY{/bt} computer!"
     pause 1.0
     linus "Yeah. As I was going to say, we have our new employee cs188 with us, helping build a new streaming machine for LTT!"
     if fanboy_type == "nvidia":
@@ -1039,7 +1039,7 @@ label friend_so_join:
     pakoo "He's way too strong..."
     copguy "Is that all you guys got?"
     copguy "Or are you ready to finally admit your defeat?"
-    tate_offscreen "{bt=a3-p10-s4}{size=+24}Waaaaaaaaaait!" with hpunch
+    tate_offscreen "{cshake}{size=+24}Waaaaaaaaaait!" with hpunch
     show copguy
     copguy "Huh??"
     show tate srs at left with moveinleft

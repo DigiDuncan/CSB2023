@@ -233,20 +233,20 @@ label archival:
     with MoveTransition(0.1)
     play sound sfx_bite
     with vpunch
-    k207 "{bt=a3-p10-s4}Ah! Ahh! Fuck, get them off!"
+    k207 "{cshake}Ah! Ahh! Fuck, get them off!"
 
     show nova_head as third at random_pos(1300, 1800, 500, 900, 0.5)
     with MoveTransition(0.1)
     play sound sfx_bite
     with vpunch
-    k199 "{bt=a3-p10-s4}Kill them! {i}Kill{/i} themmm!"
-    k199 "{bt=a3-p10-s4}17M, you piece of shit, make them {i}stop!"
+    k199 "{cshake}Kill them! {i}Kill{/i} themmm!"
+    k199 "{cshake}17M, you piece of shit, make them {i}stop!"
 
     show nova_head as first at random_pos(1300, 1800, 500, 900, 0.5)
     with MoveTransition(0.1)
     play sound sfx_bite
     with vpunch
-    k174 "{bt=a3-p10-s4}Oh, God, what have I done?! I can't stop them!"
+    k174 "{cshake}Oh, God, what have I done?! I can't stop them!"
 
     show nova_head as second at random_pos(1300, 1800, 500, 900, 0.5)
     with MoveTransition(0.1)

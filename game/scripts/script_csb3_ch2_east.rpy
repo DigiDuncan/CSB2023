@@ -197,7 +197,7 @@ label true_montana:
     cs "Ooh! Look at all this paint!"
     cs "Let's get some {color=#FF9900}orange{/color}, {color=#7897FF}blue{/color}, {color=#CB50FF}purple{/color}..."
     show cs happy
-    cs "More {color=#FF0000}c{/color}{color=#FFCC00}o{/color}{color=#FFFF00}l{/color}{color=#CCFF00}o{/color}{color=#00FF00}r{/color}{color=#00FFCC}s{/color}, I need {bt=a3-p10-s4}{color=#00FFFF}m{/color}{color=#00CCFF}o{/color}{color=#7978FF}r{/color}{color=#CC00FF}e{/color} {color=#FF00FF}c{/color}{color=#FF00CC}o{/color}{color=#FF0000}l{/color}{color=#FFCC00}o{/color}{color=#FFFF00}r{/color}{color=#CCFF00}s{/color}{color=#00FF00}!{/color}"
+    cs "More {color=#FF0000}c{/color}{color=#FFCC00}o{/color}{color=#FFFF00}l{/color}{color=#CCFF00}o{/color}{color=#00FF00}r{/color}{color=#00FFCC}s{/color}, I need {cshake}{color=#00FFFF}m{/color}{color=#00CCFF}o{/color}{color=#7978FF}r{/color}{color=#CC00FF}e{/color} {color=#FF00FF}c{/color}{color=#FF00CC}o{/color}{color=#FF0000}l{/color}{color=#FFCC00}o{/color}{color=#FFFF00}r{/color}{color=#CCFF00}s{/color}{color=#00FF00}!{/color}"
     show billy at right with moveinright
     show cs
     billy "You ready to go, CS?"
@@ -209,7 +209,7 @@ label true_montana:
     cashier "I gotcha covered. Have a good day!"
     hide cashier with moveoutright
     show cs scared
-    cs "{bt=a3-p10-s4}Letsgoletsgoletsgoweneedtogetoutofhere"
+    cs "{cshake}Letsgoletsgoletsgoweneedtogetoutofhere"
     hide cs with moveoutright
     hide billy with moveoutright
     stop music fadeout 3.0   
@@ -300,7 +300,7 @@ label true_montana:
     show arceus worried flipped
     arceus "CS?!"
     show cs fakegod at center with moveinleft
-    cs "Look at me! {bt=a3-p10-s4}{color=#CB50FF}I'm purple!{/color}"
+    cs "Look at me! {cshake}{color=#CB50FF}I'm purple!{/color}"
     $ renpy.music.set_pause(True, "music")
     play sound sfx_funni volume 0.5
     pause 3.0

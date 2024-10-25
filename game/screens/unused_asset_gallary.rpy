@@ -7,7 +7,7 @@ screen unused_gallery():
     add Color("#00000070")
 
     python:
-        file = renpy.file("gallery/captions.json")
+        file = renpy.file("gallery.json")
         asset_dict = json.load(file)
 
     # Counter

@@ -269,7 +269,7 @@ screen PerfectTateGame():
     add PerfectTateGame
 
 label play_perfecttate_game:
-    play music "<from 22.8 to 228>/secret/pt/nyan_of_a_lifetime.ogg" volume 0.3 if_changed noloop
+    play music tate_game volume 0.3 if_changed noloop
     $ persistent.heard.add("nyan_of_a_lifetime")
     window hide
     $ quick_menu = False

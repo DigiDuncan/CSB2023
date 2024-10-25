@@ -302,7 +302,7 @@ label south_utah:
     show cs scared dark with vpunch
     n "The other figures up ahead turn on and start moving toward Arceus and CS."
     show arceus worried dark
-    arceus "{bt=a3-p10-s4}Run, CS, run!!!"
+    arceus "{cshake}Run, CS, run!!!"
     n "They desperately run as fast as they can to the front door, then slam the door behind them."
     scene pizzaplace with dissolve
     show cs worried dark at left with moveinleft

@@ -54,7 +54,7 @@ label friend2_car_ride_1:
     show tate shock flipped
     tate "Hold up, is that CS in front of us?"
     show tate smug flipped
-    tate "Heyyyy, Mika. {w=0.2}You should smack that horn. {w=0.2}You should do it. {w=0.2}Right now. {w=0.2}You should scare CS. {w=0.2}Right now. {w=0.2}{bt=a3-p10-s4}Do it now."
+    tate "Heyyyy, Mika. {w=0.2}You should smack that horn. {w=0.2}You should do it. {w=0.2}Right now. {w=0.2}You should scare CS. {w=0.2}Right now. {w=0.2}{cshake}Do it now."
     if nice_car:
         scene joj_charger_fg
         show drive_day behind joj_charger_fg

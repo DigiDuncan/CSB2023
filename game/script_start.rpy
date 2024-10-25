@@ -21,7 +21,7 @@ init python:
 
 init python:
     import re
-    def auto_wait(s):
+    def substitutions(s):
         # these items wait for 0.25:
         # commas, periods, question marks, exclamation marks, semicolons
         s = re.sub(r'(([,|.|?|!|;])(({\/[a-z]*})*) )', r'\1{w=0.25}', s, flags=re.IGNORECASE) 
@@ -30,8 +30,10 @@ init python:
         # ellipses, em-dashes, colons
         s = re.sub(r'((\.\.\.|--|:)(({\/[a-z]*})*) )', r'\1{w=0.5}', s, flags=re.IGNORECASE) 
 
+        s = s.replace(r"{cshake}", r"{bt=a3-p10-s4}")
+
         return s
-    config.say_menu_text_filter = auto_wait
+    config.say_menu_text_filter = substitutions
 
 init python:
     import random
@@ -2117,6 +2119,7 @@ define audio.police_station = "police_station.ogg"
 define audio.echoing = "echoing.ogg"
 define audio.kill_cops = "killcops.ogg"
 define audio.insane_personalities = "insane_personalities.ogg"
+define audio.genocide = "<from 60 to 170>audio/insane_personalities.ogg"
 define audio.danger_mystery = "danger_mystery.ogg"
 define audio.pressing_pursuit_cornered = "pressing_pursuit_cornered.ogg"
 define audio.bun_guster = "bun_guster.ogg"
@@ -2258,6 +2261,9 @@ define audio.homely_yado_inn = "<from 0.499 to 40.502>homely_yado_inn.ogg"
 # For Tate EX / Perfect Tate
 define audio.insomnia_intro = "<from 0 to 11.299>secret/pt/insomnia.ogg"
 define audio.insomnia_loop = "<from 22.6>secret/pt/insomnia.ogg"
+define audio.perfect_tate_intro = "<from 3.6 to 22.8>/secret/pt/nyan_of_a_lifetime.ogg"
+define audio.perfect_tate_full = "<from 3.6 to 228.52>/secret/pt/nyan_of_a_lifetime.ogg"
+define audio.tate_game = "<from 22.8 to 228>/secret/pt/nyan_of_a_lifetime.ogg"
 
 # CSBIII DX Kuwait Music
 define audio.tmwstw = "tmwstw.ogg"
@@ -2713,7 +2719,7 @@ label before_main_menu:
                 seen_all = False
         if seen_all:
             if not "Fin." in persistent.unlocked_achievements:
-                    chievos = (a for a in achievements
+                    chievos = (a for a in achievement_manager.achievements
                     if a.name == "Fin.")
                     renpy.show_screen("popup", next(chievos))
                     achievement_manager.unlock("Fin.", show_screen = False)
