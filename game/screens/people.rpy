@@ -15,6 +15,19 @@ init python:
         if n not in name_map:
             print(f"WARNING: Bio '{n}' not in name_map!")
 
+screen people():
+    default current_person = None
+
+    use people_nav
+    tag menu
+
+    if current_person == None:
+        use people_welcome
+    else:
+        use person(current_person)
+
+
+
 screen people_nav():
     add Color('#323e42', alpha=0.75)
     viewport:
@@ -39,9 +52,9 @@ screen people_nav():
                         except:
                             name_label = "{image=unread.png}" + name_map[k]['full_name'] if k not in persistent.read else name_map[k]['full_name']
                     if k == "iris":
-                        textbutton name_label action Function(mark_read, k), ShowMenu("person", k), ShowMenu("fake_error", "people.rpy", 126, "`bios/iris.txt` could not be rendered as a Text object.", "Hi, I'm Iris, a cosmic being with interest in the happenings of this reality, as well as some of the people involved in this story.\nDoes that sound too formal? I don't know. Hey, Digi, writing this shit's hard. You can fill in the rest from here.", _transition = determination)
+                        textbutton name_label action Function(mark_read, k), SetScreenVariable("current_person", k), ShowMenu("fake_error", "people.rpy", 126, "`bios/iris.txt` could not be rendered as a Text object.", "Hi, I'm Iris, a cosmic being with interest in the happenings of this reality, as well as some of the people involved in this story.\nDoes that sound too formal? I don't know. Hey, Digi, writing this shit's hard. You can fill in the rest from here.", _transition = determination)
                     else:
-                        textbutton name_label action Function(mark_read, k), ShowMenu("person", k)
+                        textbutton name_label action Function(mark_read, k), SetScreenVariable("current_person", k)
 
     textbutton "Return to Extras" action ShowMenu("category_welcome") yoffset 950 xoffset 25
     textbutton "Main Menu" action Return() yoffset 1000 xoffset 25
@@ -53,10 +66,6 @@ screen people_nav():
 screen people_welcome():
     ##This is the "People" category's welcome page. This is the first screen players see after they select a category.
 
-    tag menu
-    use people_nav
-
-    style_prefix "codex"
     python:
         bio_count = len(name_map.keys())
         unlocked_bio_count = len(persistent.seen)
@@ -72,11 +81,6 @@ screen people_welcome():
 ##-----------------------------------------------
 
 screen person(l):
-
-    style_prefix "codex"
-
-    tag menu
-    use people_nav
 
     text name_map[l]['full_name']:
             xalign 0.65

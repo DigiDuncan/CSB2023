@@ -35,7 +35,7 @@ screen category_nav():
 
             # Here you list the categories
 
-            textbutton "People" action ShowMenu("people_welcome")
+            textbutton "People" action ShowMenu("people")
             textbutton "Achievements" action ShowMenu("achievements_welcome")
             # textbutton "Collectibles" action ShowMenu("collectibles_welcome")
             # textbutton "Endings" action ShowMenu("endings_welcome")
