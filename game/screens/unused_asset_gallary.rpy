@@ -48,7 +48,7 @@ screen unused_gallery():
 
     # Return Button
     textbutton "{color=#fff}Return{/color}":
-        action Return(), Stop("music2"), PauseAudio("music", False), Stop("jukebox")
+        action Return(), Stop("music2"), PauseAudio("music", False), Stop("jukebox"), SetVariable("unused_page", 0)
         xalign 0.02
         yalign 0.04
         background "#5F777F"
