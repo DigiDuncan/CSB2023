@@ -518,7 +518,7 @@ label dx_after_competiton_start:
     cultist "I hope so."
     n "CS runs off to find competitors."
     scene cult_con with dissolve
-    play music 10_feet_away_1 if_changed
+    play music ten_feet_away_1 if_changed
     music ten_feet_away
     show cs cultist at center with moveinleft
     $ con_start = True
@@ -528,14 +528,14 @@ label dx_after_competiton_start:
 # CULT CON START
 
 label dx_after_seek_competitors:
-    play music 10_feet_away_1 if_changed
+    play music ten_feet_away_1 if_changed
     music ten_feet_away
     if total_votes >= 25:
-        play music2 [ "<sync music>audio/10_feet_away_2.ogg", 10_feet_away_2 ] if_changed
+        play music2 [ "<sync music>audio/10_feet_away_2.ogg", ten_feet_away_2 ] if_changed
     if total_votes >= 50:
-        play music3 [ "<sync music>audio/10_feet_away_3.ogg", 10_feet_away_3 ] if_changed
+        play music3 [ "<sync music>audio/10_feet_away_3.ogg", ten_feet_away_3 ] if_changed
     if total_votes >= 75:
-        play music4 [ "<sync music>audio/10_feet_away_4.ogg", 10_feet_away_4 ] if_changed
+        play music4 [ "<sync music>audio/10_feet_away_4.ogg", ten_feet_away_4 ] if_changed
     scene cult_con
     show cs cultist at center
     cs "Which cult should I look for?"
@@ -1276,14 +1276,14 @@ label dx_after_quiz_finish:
     show cs disappointed cultist at mid_left
     show lunatic_cultist at mid_right
     with dissolve
-    play music 10_feet_away_1
+    play music ten_feet_away_1
     music ten_feet_away
     if total_votes >= 25:
-        play music2 [ "<sync music>audio/10_feet_away_2.ogg", 10_feet_away_2 ]
+        play music2 [ "<sync music>audio/10_feet_away_2.ogg", ten_feet_away_2 ]
     if total_votes >= 50:
-        play music3 [ "<sync music>audio/10_feet_away_3.ogg", 10_feet_away_3 ]
+        play music3 [ "<sync music>audio/10_feet_away_3.ogg", ten_feet_away_3 ]
     if total_votes >= 75:
-        play music4 [ "<sync music>audio/10_feet_away_4.ogg", 10_feet_away_4 ]
+        play music4 [ "<sync music>audio/10_feet_away_4.ogg", ten_feet_away_4 ]
     cs "Woah, where am I?"
     cs "And, what the hell just happened?"
     l_cultist "Well, we asked you some questions from deep within your consciousness, and then cleared your short-term memory afterward."
