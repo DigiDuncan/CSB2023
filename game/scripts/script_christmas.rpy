@@ -849,23 +849,27 @@ label dx_christmas_intro:
     n "By the time of the party, everyone shows up at CS' house in droves."
     scene cs_foyer
     show cs at left
-    show anno at mid_left
-    show aria at mid_mid_left
+    show anno at mid_left behind cs
+    show aria at mid_mid_left behind anno
     show digi at center
     show tate flipped at mid_right
-    show mean human at right
     cs "Well, it looks like everyone is here, right?"
     anno "DB isn't here yet, but other than that, yeah."
     show tate sheepish flipped
     tate "There are... a lot of people here..."
+    show digi flipped
     digi "Yeah, I wonder where Arc and Kitty are..."
+    show tate shock flipped
     k17 "OMG hey guys!"
     k17 "You guys all look so... different!"
     k22 "Hi, I'm his--"
+    show cs disappointed
     k17 "CS, look how much you've grown!"
     cs "Okay, why are there 2 Pakoos?"
     cs "...and you don't have green hair anymore again?"
     k22 "Oh boy, alright K-17, calm down for one second. I think everyone here needs an explanation."
+    show digi
+    show tate flipped
     cs "Yes please. I didn't want to say it, but it seems like everytime I meet you guys, your appearance always changes!"
     aria "Sorry."
     digi "Did I change too much?"
@@ -886,16 +890,28 @@ label dx_christmas_intro:
     cs "Great."
     cs "Is that it?"
     k22 "I mean, I could go on, but I'd be here all night."
+    show mean human at mid_offscreen_right with moveinright
     mean "Hey, what's going on here?"
+    show mean human shocked
     mean "Wait, there's 2 Pakoos now?"
+    show mean human annoyed
     k22 "Okay, so--"
+    show tate sheepish flipped
     tate "I'll just tell him later."
+    show tate flipped
     cs "Alright, well, I'll let you guys talk, I'm gonna check on the others."
+    hide cs with moveoutright
     k17 "So, who are you? Are you DigBick?"
+    show mean human angry
     mean "What did you just call me?"
     scene cs_kitchen
     show cs_kitchen_fg
+    show obama at right behind cs_kitchen_fg
+    show ed at mid_right behind cs_kitchen_fg
+    show michael at mid_mid_right behind cs_kitchen_fg
+    show billy at mid_mid_left behind cs_kitchen_fg
     with dissolve
+    show cs at left with moveinleft
     cs "Hey guys, how are y'all doing?"
     obama "Hello CS, we are all preparing our meals for dinner tonight."
     obama "I'm gonna make a carrot cake."
@@ -912,28 +928,51 @@ label dx_christmas_intro:
     else:
         cs "Well I hope you are all doing great!"
     cs "I'm gonna go check everyone else!"
-    scene cs_living with dissolve
+    show cs flipped with determination
+    hide cs with moveoutleft
+    scene cs_living
+    show digi flipped at left
+    show linus at mid_left behind digi
+    show luke at mid_left_left behind linus
+    show blank at mid_right
+    show nova at right
+    with dissolve
     digi "So, this should go here..."
     linus "No, you got the wrong cable!"
     luke "You idiots are both wrong! You are putting in the wrong port!"
     "Digi and Linus" "Ohhhhh..."
+    show cs flipped at center with moveinright
     cs "Hey guys! What are you guys doing?"
     digi "Oh, we are just trying to set up a projector to play movies on!"
     linus "Don't ask how this became a 3 man job."
+    show cs
     cs "Well, what about you two?"
     blank "We are working on setting up the music."
     nova "The problem is, I don't really want to have Blank play his shitty music during the party."
     blank "Why? Not all of it's crazy shit, like yours is."
+    show cs disappointed
     nova "Shut the hell up!"
+    show cs worried
     cs "Woah okay, calm down."
+    show cs disappointed
     cs "This is a Christmas party, after all. Let's try to have fun."
+    show cs flipped
     cs "I'm gonna go check on anyone else who is here."
-    scene cs_hallway with dissolve
+    hide cs with moveoutleft
+    scene cs_hallway
+    show arceus flipped at mid_left
+    show kitty at left
+    with dissolve
+    show cs flipped at center with moveinright
     cs "Hey how are you guys? I was looking all over and couldn't find you."
     arceus "Sorry CS, we kind of got overwhelmed."
     kitty "We aren't the best with huge social gatherings."
     cs "Ah, it's okay. I'm just happy to talk."
     arceus "We'll be around when something important happens."
+    show elizabeth at right
+    show anne at mid_right
+    show grace at mid_mid_right
+    with moveinright
     eliza "Hey, what's up."
     grace "CS! You're that YTP guy!"
     cs "Uhm... who are you three?"
