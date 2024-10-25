@@ -18,9 +18,11 @@ label dx_christmas_start:
     cs "I have this huge mansion, and I don't even use the rest of my house!"
     cs "Let's go look."
     n "CS walks into his living room."
+    scene cs_living2 with dissolve
     cs "Well, okay maybe I should bring in the Christmas supplies first."
     cs "Let's go see what we have."
     n "CS goes into his garage."
+    scene cs_garage with dissolve
     cs "Okay, okay, what should I get first..."
     menu:
         "Christmas tree":
@@ -40,9 +42,18 @@ label dx_christmas_tree:
         n "CS drags the box out of the garage and brings it into his living room."
         n "CS goes back to the garage."
         if lights_first:
-            jump dx_christmas_decor
+            menu:
+                "Ornaments and decorations":
+                    jump dx_christmas_decor
         if decor_first:
-            jump dx_christmas_lights
+            menu:
+                "Lights and garland":
+                    jump dx_christmas_lights
+        menu:
+            "Lights and garland":
+                jump dx_christmas_lights
+            "Ornaments and decorations":
+                jump dx_christmas_decor
     $ tree_first = True
     if tree_first:
         cs "I should get the Christmas tree first."
@@ -51,7 +62,9 @@ label dx_christmas_tree:
         cs "Hnng..."
         n "All of a sudden, the shelf tips and all of the supplies fall onto CS!"
         cs "Shit!"
+        scene black with dissolve
         # crashing SFX
+        scene cs_garage_mess with dissolve
         cs "Ow..."
         n "CS gets himself out of the mess of lights, garland, and Legos."
         # CS steps on a Lego.
@@ -69,9 +82,13 @@ label dx_christmas_lights:
         cs "Alright, I should probably get the lights and garland next."
         n "CS gets the box inside, and then goes back to the garage to grab the next box."
         if tree_second:
-            jump dx_christmas_decor
+            menu:
+                "Ornaments and decorations":
+                    jump dx_christmas_decor
         if decor_first:
-            jump dx_christmas_tree
+            menu:
+                "Christmas tree":
+                    jump dx_christmas_tree
     $ lights_first = True
     if lights_first:
         cs "I should probably get the lights and garland first, they are in the easiest box for me to grab anyways."
@@ -89,9 +106,13 @@ label dx_christmas_decor:
         cs "Alright, I should probably get the decorations next."
         n "CS gets the box inside, and then goes back to the garage to grab the next box."
         if tree_second:
-            jump dx_christmas_lights
+            menu:
+                "Lights and garland":
+                    jump dx_christmas_lights
         if lights_first:
-            jump dx_christmas_tree
+            menu:
+                "Christmas tree":
+                    jump dx_christmas_tree
     $ decor_first = True
     if decor_first:
         cs "I'm gonna get the decorations first, I have a huge assortment of Legos in there!"
@@ -109,9 +130,11 @@ label dx_christmas_before_anno:
     jump dx_christmas_anno
 
 label dx_christmas_anno:
+    scene cs_foyer with dissolve
     cs "Maybe I should call someone over to help."
     cs "Lemme see if Anno is around..."
     n "CS decides to call Anno."
+    show anno_house at mid_offscreen_right with moveinright
     anno "Hello?"
     cs "Hey Anno, CS here!"
     anno "Yes, I know the party is in two days, you just called me."
@@ -121,13 +144,17 @@ label dx_christmas_anno:
     anno "...But I can do that tomorrow."
     anno "I'll come over. Be there soon."
     cs "Cool!"
+    hide anno_house with moveoutright
     cs "Alright, I got Anno to come over and help out!"
     cs "I guess I'll just plan out how I want the house to look."
     cs "Actually, shit, it snowed last night!"
     cs "I need to shovel before Anno gets here!"
     n "CS gets dressed and goes out into the garage to get his shovel."
     if tree_first:
+        scene cs_garage_mess with dissolve
         cs "Shit! I hate Legos, but only when they're in my feet!"
+    else:
+        scene cs_garage with dissolve
     cs "Okay, now the real question is, how much did it snow?"
     n "CS presses the garage button, and nothing happens."
     cs "Dammit, I think it's iced shut."
@@ -163,6 +190,7 @@ label dx_christmas_anno:
     cs "Cold. Very cold."
     cs "Let's get inside please it's freezing."
     n "CS and Anno huddle inside and take their jackets off, while they make their way into the living room."
+    scene cs_living2 with dissolve
     n "They sit on the couch and catch up with each other while they get warmed up."
     anno "Well CS, how have you been doing?"
     cs "Good! Still rockin' that Kurt Cobain look?"
@@ -179,6 +207,7 @@ label dx_christmas_anno:
         anno "By the way, where are all of the decorations?"
         cs "Ah yes, it's all in the garage. I'll show you."
         n "Anno follows CS to his garage."
+        scene cs_garage_mess with dissolve
         n "As they enter the garage, Anno gawks at the mess on the floor."
         anno "Damn bitch, you live like this?"
         cs "...I may have had small mishap when I was trying to get the tree out."
@@ -189,10 +218,12 @@ label dx_christmas_anno:
         anno "I was hoping to be setting up decorations, not cleaning them up."
         anno "...But I guess I don't really have any other option, do I?"
         cs "Here, I'll grab these boxes, and we'll start throwing stuff in them."
+        scene black with dissolve
         n "After about an hour, they manage to clean up the mess, without stepping on too many Legos."
         n "CS and Anno drag the boxes inside."
     #Setting up decorations
 label dx_christmas_setup:
+    scene cs_living2 with dissolve
     cs "Well Anno, are you ready to start decorating this place?"
     anno "Yeah! Where do you wanna start?"
     #Living room
@@ -540,6 +571,7 @@ label dx_christmas_party_before:
     #Introductions
 label dx_christmas_intro:
     n "By the time of the party, everyone shows up at CS' house in droves."
+    scene cs_foyer with dissolve
     cs "Well, it looks like everyone is here, right?"
     anno "DB isn't here yet, but other than that, yeah."
     tate "There are... a lot of people here..."
@@ -597,7 +629,7 @@ label dx_christmas_intro:
     else:
         cs "Well I hope you are all doing great!"
     cs "I'm gonna go check everyone else!"
-    scene black with dissolve
+    scene cs_living with dissolve
     digi "So, this should go here..."
     linus "No, you got the wrong cable!"
     luke "You idiots are both wrong! You are putting in the wrong port!"
@@ -613,6 +645,7 @@ label dx_christmas_intro:
     cs "Woah okay, calm down."
     cs "This is a Christmas party, after all. Let's try to have fun."
     cs "I'm gonna go check on anyone else who is here."
+    scene cs_hallway with dissolve
     cs "Hey how are you guys? I was looking all over and couldn't find you."
     arceus "Sorry CS, we kind of got overwhelmed."
     kitty "We aren't the best with huge social gatherings."
@@ -636,7 +669,9 @@ label dx_christmas_intro:
     cs "I hope you guys have fun, I'm gonna go back to the party."
     #Banter
 label dx_christmas_banter:
+    scene black with dissolve
     n "While the party starts up, copguy and the sheriff get into a predicament."
+    scene cs_living2 with dissolve
     sheriff "Hey Copguy!"
     copguy "I know, this party is great, right?"
     sheriff "No, I need to take a shit!"
@@ -645,10 +680,12 @@ label dx_christmas_banter:
     sheriff "My legs don't work, remember?"
     copguy "Dammit, this sucks."
     copguy "Alright, let's go."
+    scene cs_bathroom with dissolve
     n "Copguy jiggles the bathroom door."
     tate "Occupied!"
     copguy "Sorry sir, we gotta wait."
     sheriff "This is the police! Open up!"
+    scene cs_bathroom_open with dissolve
     tate "Awawawawa!!!"
     copguy "Really?"
     sheriff "What? I really have to go!"
@@ -656,32 +693,40 @@ label dx_christmas_banter:
     sheriff "What do you mean? You have to wait here with me!"
     sheriff "I can't get off and on the toilet myself!"
     copguy "I think this is the worst crime I've dealt with."
+    scene cs_bathroom with dissolve
     copguy "Alright, but you better hurry! I don't wanna be in here all day!"
+    scene cs_kitchen
+    show cs_kitchen_fg
+    with dissolve
+    k17 "So Obama, how have you stayed President?"
+    k17 "Aren't you on your what, like fourth term?"
     if fun_value(FUN_VALUE_COMMON):
         obama "Ever heard of squatter's rights?"
         k17 "You, can do that?"
         obama "I'm friggin' Obama, bitch! I can do what I want!"
     else:
-        k17 "So Obama, how have you stayed President?"
-        k17 "Aren't you on your what, like fourth term?"
         obama "Well, you see, we managed to somehow exhaust the list of succession back in 2018, and the house voted me back in."
         k17 "Huh, I see. That's pretty crazy."
+    scene cs_living with dissolve
     cs "Is this projector still not set up?"
     digi "No! The projector keeps giving me this really weird error!"
     linus"Not even I've seen this!"
     digi "Watch, I'll turn it on, and..."
+    scene cs_living2 with dissolve
     rich "Hey, nice movie!"
     wesley "Looks like you'll have to set that up all over again."
     db "I got here early for this?"
     ed "Hey guys, what movie are we watching?"
     wesley "Nothing until these bozos fix the projector!"
     luke "Okay hold on, I got an idea."
+    scene cs_living with dissolve
     luke "Everyone step away from the projector."
     n "After a little bit of tech magic, the projector comes to life."
     luke "Tah dah!"
     rich "Finally, we can watch something."
     wesley "Are you 100-percent satisfied, Richard?"
     rich "Only about 80-percent."
+    scene cs_foyer with dissolve
     k17 "So, there's a new world trade center now?"
     k22 "What do you mean? They finished that in like 2014!"
     k17 "Oh. Sorry I forgot about that."
@@ -699,6 +744,7 @@ label dx_christmas_banter:
     aria "I'm your old friend AWK. I changed."
     k17 "Whaa?"
     k22 "Excuse us for a moment."
+    scene cs_bathroom with dissolve
     copguy "Please tell me that's it, I can't bear this anymore."
     sheriff "Yep, I'm done!"
     sheriff "Now, are you gonna help me wipe?"
@@ -707,11 +753,14 @@ label dx_christmas_banter:
     "Walkie" "Can you report on that?"
     copguy "Gladly! Give me a second and I'll be in my car."
     copguy "Sorry boss, as much as I would love to keep helping you, this is important."
+    scene cs_bathroom_open
     sheriff "Wait! You can't just leave me here!"
     copguy "I'll just be a moment! Don't move."
+    scene cs_bathroom
     sheriff "God dammit! Get back here!!!"
     pause 3.0
     sheriff "\"Don't move.\" Thanks Copguy, you're a real fucking comedian."
+    scene cs_door_outside with dissolve
     k17 "This is so unfair!"
     k17 "CS said that it's annoying that we changed or whatever, but look at everyone else!"
     k17 "All of my friends have changed so much!"
@@ -727,19 +776,23 @@ label dx_christmas_banter:
     k22 "Dammit, it was worth a try."
     k22 "I wonder how Addy is doing anyways."
     n "K-22 hits up Addy."
+    show archival_5 at mid_offscreen_right with moveinright
     addy "HELLO??"
     k22 "Hey, uhh, how is it going over there?"
     addy "WHAT? I CAN'T HEAR, THE MUSIC IS REALLY LOUD!"
     k22 "I WAS ASKING IF--{w=1.0}{nw}"
     addy "YEAH I'LL CALL YOU LATER, HAVE FUN AT CS' PARTY!"
+    hide archival_5 with moveoutright
     k22 "Mother fucker!"
     n "All of a sudden, the wind starts to pick up and snow begins to fall."
     k22 "Brr... I should probably just get back inside and enjoy the party..."
+    scene cs_bathroom with dissolve
     sheriff "Hey! Is someone there?"
     k17 "Huh?"
     sheriff "Hey you! Can you help me out of here?"
     k17 "Uhh... Uhh..."
     k17 "I'll go get someone!"
+    scene cs_living2 with dissolve
     rich "Oh man, I love this part."
     k17 "Hey guys, how do I put this..."
     k17 "The sheriff is stuck in the bathroom?"
@@ -799,7 +852,7 @@ label dx_christmas_cooking:
     n "Ed sheepishly walks back into the living room after throwing away the turkey."
     cs "Obama, finish baking your cake, and we can start eating."
     cs "I'm gonna go check up on everyone while you do that."
-    scene black with dissolve
+    scene cs_bathroom with dissolve
     sheriff "...and I had to take that job that left me the way I am."
     sheriff "I could've went to college, studied the paranormal..."
     sheriff "...started up a shower curtain business, run a newspaper business..."
@@ -811,12 +864,16 @@ label dx_christmas_cooking:
     grace "But this is the only one in the house!"
     sheriff "In this mansion? There is only one damn bathroom?"
     copguy "Hey, sorry, excuse me."
+    scene cs_bathroom_open
+    pause 1.0
+    scene cs_bathroom
     copguy "Hey boss! You won't believe what I just experienced."
     copguy "This kid caught two burglars trying to rob his house with homemade traps!"
     copguy "It was so impressive, I probably would've fallen for some of them!"
     sheriff "That's great, can you get me off this toilet now?"
     sheriff "I've been thinking of signing my will here because of how long it's been!"
     copguy "Alright, let's get you out of here old man."
+    scene cs_bathroom_open
     grace "Finally!"
     grace "Guys, the sheriff is out!"
     n "A line starts to form next to the bathroom."
@@ -835,6 +892,7 @@ label dx_christmas_dinner:
 
     #Gift Exchange
 label dx_christmas_exchange:
+    scene cs_living2 with dissolve
     cs "Alright everyone! It's time for the gift exchange!"
     cs "Everyone brought a gift, right?"
     n "Everyone nods."
@@ -1102,6 +1160,9 @@ label dx_christmas_lights_out:
     n "CS opens the breaker and flicks off and on the switches."
     cs "Damn, nothing."
     cs "Well, it was worth a try."
+    scene cs_basement
+    show cs at center
+    with dissolve
     cs "At least I have this flashlight now!"
     n "As CS turns around, he spots Kitty chilling against the wall."
     cs "Kitty? What are you doing down here? Arceus is looking for you!"
@@ -1113,6 +1174,7 @@ label dx_christmas_lights_out:
     kitty "Let Arceus know I'm down here, I think I'm gonna stay here for a bit."
     cs "Got it. Stay safe down here."
     n "CS rushes back upstairs."
+    scene cs_hallway_off with dissolve
     arceus "Welcome back! Assuming you didn't get the power working?"
     cs "Nope, but I found Kitty!"
     cs "She's relaxing in the basement due to her head hurting."
@@ -1129,6 +1191,7 @@ label dx_christmas_lights_out:
     eliza "I've experienced some harsh Soviet winters, but I've never heard anything this bad before."
     cs "Well, that's some awesome news."
     cs "I'll go check on others, and see if I can get outside."
+    scene cs_foyer_off with dissolve
     cs "Hey guys! How is everyone so far?"
     anno "It's getting kinda cold, so I hope the power comes back soon."
     anno "My phone is about to die."
@@ -1136,6 +1199,7 @@ label dx_christmas_lights_out:
     k22 "I was gonna try that, but I couldn't find the door."
     cs "If we get outside, we might be able to dig our vehicles out."
     anno "Good luck CS!"
+    scene black with dissolve
     cs "Alright, let's see how bad it is."
     n "CS pulls and yanks open the door, until it finally rips open."
     n "He falls backwards, only to be greeted with an ungrateful sight."
@@ -1143,6 +1207,7 @@ label dx_christmas_lights_out:
     n "CS sticks his finger out into the mysterious substance."
     cs "Oh my God, how much... did it..."
     n "CS slams the door shut and runs back to deliver the news."
+    scene cs_foyer_off with dissolve
     cs "Guys, the door... the door..."
     aria "Calm down, CS. Catch your breath."
     cs "The door, it's, all snow."
@@ -1157,6 +1222,7 @@ label dx_christmas_lights_out:
     cs "Sure, we can try."
     tate "Be careful, Mean."
     n "CS and Mean find the ladder to the attic, and make their way up."
+    scene cs_attic with dissolve
     mean "You good, CS?"
     cs "Yeah, I'm just a bit tired."
     cs "There should be a hatch or something up here..."
@@ -1169,9 +1235,9 @@ label dx_christmas_lights_out:
     n "Mean climbs up onto the roof."
     mean "Holy..."
     mean "Fuck."
-    hide screen flashlight_demo
     cs "What? How bad is it?"
     mean "Grab my hand, I'll pull you up."
+    hide screen flashlight_demo
 label dx_christmas_snowed_in:
     play music winters_halloween
     music winters_halloween
@@ -1206,7 +1272,10 @@ label dx_christmas_snowed_in:
     cs "I don't think anyone else back in the house is gonna believe us."
     mean "Well they can see it from themselves."
     mean "Let's get back inside, it's freezing out here."
+    scene black with dissolve
     n "CS and Mean climb back down and meet back up with everyone."
+    scene cs_living2_off with dissolve
+    show screen flashlight_demo
     cs "Well guys, we got some bad news."
     cs "We might be stuck here for a while."
     k22 "Like all night? For a couple hours?"
@@ -1235,7 +1304,9 @@ label dx_christmas_snowed_in:
     cs "I have a few board games somewhere, I just need to look."
     tate "Please tell me it's not Chess..."
     cs "It's better than Chess! I'll be back."
+    scene black with dissolve
     n "After a bit of rummaging, CS comes back with a blueish-looking box."
+    scene cs_living2_off with dissolve
     cs "It's Reversi!"
     digi "You have an actual Reversi board?"
     k17 "Isn't that the one game from Windows 3.1?"
@@ -1251,6 +1322,7 @@ label dx_christmas_snowed_in:
     # maybe pick a character to play here?
     # Insert Reversi Gameplay here
 label dx_christmas_billy_time:
+    scene cs_living2_off with dissolve
     billy "Wait! Everyone hold on!"
     cs "What? What is it Billy?"
     billy "The handy switch!"
@@ -1260,6 +1332,7 @@ label dx_christmas_billy_time:
     cs "Billy, what are you doing?"
     billy "I have an idea, and I'll be right back!"
     tate "I guess I'm following Billy, be right back as well."
+    scene cs_hallway_off with dissolve
     billy "Oh dang it! I forgot to bring a light!"
     tate "I have my phone!"
     billy "That works, I think the basement is down here!"
@@ -1280,6 +1353,7 @@ label dx_christmas_billy_time:
     billy "Oh yeah. We can talk later!"
     grace "I'll be waiting Billy!"
     n "Billy and Tate run into the basement."
+    scene cs_basement with dissolve
     arceus "Tate? Billy?"
     kitty "What's going on?"
     billy "Fixing the power with the power of the handy switch!"
@@ -1289,6 +1363,7 @@ label dx_christmas_billy_time:
     tate "Really? Just like, slap it on?"
     billy "Yes! It's that easy!"
     n "Tate slaps the handy switch on the breaker, and flips the switch."
+    hide screen flashlight_demo
     tate "Wh--{w=1.0} Whaaaaaaaaaat??"
     billy "Like Magic!"
     tate "How... how does this even work, Billy?"
@@ -1297,13 +1372,16 @@ label dx_christmas_billy_time:
     billy "I don't even know myself!"
     tate "Well, what are we waiting for?"
     tate "Let's go back upstairs and check out the good news!"
+    scene cs_basement with dissolve
     arceus "Would you look at that!"
     kitty "How did you guys do it?"
     billy "That's the power, of the power,"
+    scene cs_hallway with dissolve
     grace "Yay! The power is back!"
     anne "You did it!"
     billy "We sure did!"
     eliza "I don't know what kind of technology you have to have had fixed this, but good job!"
+    scene cs_living2 with dissolve
     cs "Holy crap, the power is back!"
     sheriff "My eyes work again!"
     ed "Hooray!"
@@ -1318,6 +1396,8 @@ label dx_christmas_billy_time:
     rich "Didn't you guys get up to the roof?"
     ed "Maybe we should all go up and check it out."
     n "Everyone clammers up the stairs, and one by one, they all climb up onto the roof."
+    sheriff "Welp."
+    sheriff "I'll just, wait here."
 label dx_christmas_roof_moment:
     scene snowed_in
     show cs sil_black:
@@ -1398,7 +1478,7 @@ label dx_christmas_roof_moment:
     santa "Well, let's see who we have here..."
     santa "..."
     santa "Mr. President? What are you doing here?"
-    omaha "Well, I wanted to go to my good friend CS' Christmas party!"
+    obama "Well, I wanted to go to my good friend CS' Christmas party!"
     santa "Ho ho, well..."
     n "Santa stares around the crowd."
     santa "Ed? Richard? Welsey? Keep up the good work. Might need some foundation repair at my workshop here soon! Ho ho!"
