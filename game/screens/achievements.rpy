@@ -108,5 +108,7 @@ screen achievements_welcome():
                                 hbox:
                                     spacing 15
                                     if a.steps != 1 and a.progress != 1:
-                                        bar value a.progress*100 range 100 xsize 600
-                                        text str(a.progress*100)+"%" yanchor 0.125
+                                        python:
+                                            progtext = f"{a.current_steps}/{a.steps} ({a.progress*100:.02f}%)"
+                                        bar value a.progress*1000 range 1000 xsize 600
+                                        text progtext yanchor 0.125

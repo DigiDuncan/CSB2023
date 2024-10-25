@@ -38,24 +38,24 @@ class Achievement:
         if self.steps == 1:
             return self.name in persistent.unlocked_achievements 
         else:
-            var = getattr(persistent, self.tracker)
-            if isinstance(var, set):
-                v = len(var)
-            else:
-                v = var
-            return v >= self.steps
+            return self.current_steps >= self.steps
+
+    @property
+    def current_steps(self) -> int:
+        if self.steps == 1:
+            return int(self.name in persistent.unlocked_achievements)
+        var = getattr(persistent, self.tracker)
+        if isinstance(var, set):
+            return len(var)
+        else:
+            return var
 
     @property
     def progress(self) -> float:
         if self.steps == 1:
             return float(self.name in persistent.unlocked_achievements)
         else:
-            var = getattr(persistent, self.tracker)
-            if isinstance(var, set):
-                v = len(var)
-            else:
-                v = var
-            return min(1.0, v / self.steps)
+            return min(1.0, self.current_steps / self.steps)
 
     @property
     def desc(self) -> str:
