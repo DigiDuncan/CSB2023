@@ -131,7 +131,8 @@
         "unlocked": "Get a perfect pencil sharpening score.",
         "img": "300",
         "type": "extra",
-        "steps": 300
+        "steps": 300,
+        "tracker": "max_pencil_score"
     },
     "car_dialogue":{
         "name": "Bored",
@@ -401,7 +402,8 @@
         "img": "1200",
         "type": "extra",
         "dx": true,
-        "steps": 1200
+        "steps": 1200,
+        "tracker": "max_pencil_score_ex"
     },
     "bronson":{
         "name": "We Don't Go To Bronson",
@@ -458,7 +460,8 @@
         "img": "railfan",
         "type": "extra",
         "dx": true,
-        "steps": 3
+        "steps": 3,
+        "tracker": "train_routes_seen"
     },
     "broke":{
         "name": "You Broke It!",
@@ -474,7 +477,8 @@
         "unlocked": "Collect every bio.",
         "img": "bios",
         "type": "extra",
-        "steps": "bio_count"
+        "steps": "bio_count",
+        "tracker": "seen"
     },
     "jukebox":{
         "name": "The Brown Album",
@@ -482,7 +486,8 @@
         "unlocked": "Collect every song in the jukebox.",
         "img": "juke",
         "type": "extra",
-        "steps": "song_count"
+        "steps": "song_count",
+        "tracker": "heard"
     },
     "items":{
         "name": "Collezione di Cacca",
@@ -491,7 +496,8 @@
         "img": "item_collection",
         "type": "extra",
         "dx": true,
-        "steps": "item_count"
+        "steps": "item_count",
+        "tracker": "collected"
     },
     "pun_values":{
         "name": "Tons Of Pun Fun",
@@ -500,7 +506,8 @@
         "img": "music_pun_fun",
         "type": "extra",
         "dx": true,
-        "steps": "pun_count"
+        "steps": "pun_count",
+        "tracker": "seen_music_pun"
     },
     "fin":{
         "name": "Fin.",
@@ -508,6 +515,7 @@
         "unlocked": "See every ending",
         "img": "end",
         "type": "extra",
-        "steps": "ending_count"
+        "steps": "ending_count",
+        "tracker": "seen_endings"
     }
 }

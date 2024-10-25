@@ -19,6 +19,7 @@ class AchievementData(TypedDict):
     hidden: bool
     dx: bool
     steps: Union[int, str]
+    tracker: str
 
 @dataclass
 class Achievement:
@@ -30,10 +31,31 @@ class Achievement:
     hidden: bool = False
     dx: bool = False
     steps: int = 1
+    tracker: str = None
    
     @property
     def unlocked(self) -> bool:
-        return self.name in persistent.unlocked_achievements
+        if self.steps == 1:
+            return self.name in persistent.unlocked_achievements 
+        else:
+            var = getattr(persistent, self.tracker)
+            if isinstance(var, set):
+                v = len(var)
+            else:
+                v = var
+            return v >= self.steps
+
+    @property
+    def progress(self) -> float:
+        if self.steps == 1:
+            return float(self.name in persistent.unlocked_achievements)
+        else:
+            var = getattr(persistent, self.tracker)
+            if isinstance(var, set):
+                v = len(var)
+            else:
+                v = var
+            return min(1.0, v / self.steps)
 
     @property
     def desc(self) -> str:
@@ -81,6 +103,10 @@ class Achievement:
                     a.steps = vars[data["steps"]]
                 else:
                     print(f"WARNING: {data['steps']} not defined before achievement load!")
+            if "tracker" in data:
+                a.tracker = data["tracker"]
+            else:
+                print(f"WARNING: {a.name} has no tracker defined, but has {a.steps} steps!")
         return a
 
 

@@ -51,6 +51,11 @@ default persistent.first_time = True
 default persistent.woohoo = 0
 default persistent.controller_id = 0
 
+# Achievement progress
+default persistent.max_pencil_score = 0
+default persistent.max_pencil_score_ex = 0
+default persistent.train_routes_seen = 0
+
 # Chapter unlocks
 default persistent.csb2_unlocked = False
 default persistent.csb3a_unlocked = False
