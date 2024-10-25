@@ -300,14 +300,14 @@ label woohoo_counter:
     pause 3.0
     show screen woohoo_counter
     play sound sfx_fabeep
-    arceus "Wow, that's [round(persistent.woohoo)] woohoos!"
-    arceus "Err... that's now [round(persistent.woohoo)]. My bad."
+    arceus "Wow, that's [persistent.woohoo] woohoos!"
+    arceus "Err... that's now [persistent.woohoo]. My bad."
     play sound sfx_woohoo
     pause 1.5
     $ persistent.woohoo += 1
     play sound sfx_fabeep
     pause 0.5
-    cs "Now it's [round(persistent.woohoo)]!"
+    cs "Now it's [persistent.woohoo]!"
     return
 
 
