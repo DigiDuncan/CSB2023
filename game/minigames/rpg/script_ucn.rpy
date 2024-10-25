@@ -87,7 +87,7 @@ label rpg_ucn:
     $ ucn_scale = renpy.display_menu([(str(a), a) for a in scales], screen="ucn_choice")
 
     $ ucn_bg = renpy.display_menu([(i.lower(), i) for i in bg_list], screen="ucn_bg_choice")
-    $ ucn_music = renpy.display_menu([(m.lower(), m) for m in bgm_list], screen="ucn_bgm_choice")
+    $ ucn_music = renpy.display_menu([(v["title"], k) for k, v in music_map.items()], screen="ucn_bgm_choice")
 
     rpg:
         bg "ucn"
