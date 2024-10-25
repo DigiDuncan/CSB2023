@@ -33,7 +33,7 @@ screen achievements_welcome():
         hidden_count = 0
         total_count = 0
         
-        for a in achievements:
+        for a in achievement_manager.achievements:
             # total items
             total_count += 1
             
@@ -79,7 +79,7 @@ screen achievements_welcome():
             spacing 25
             if achievement_manager.unlocked:
                 text "Unlocked Achievements ([unlocked_count]/[total_count])"
-                for a in achievements:
+                for a in achievement_manager.achievements:
                     if a.name in persistent.unlocked_achievements:
                         hbox:
                             first_spacing 25
@@ -93,7 +93,7 @@ screen achievements_welcome():
                 null height 100
             if achievement_manager.locked:
                 text "Locked Achievements ([locked_count]/[locked_remaining_count], [hidden_count] hidden)"
-                for a in achievements:
+                for a in achievement_manager.achievements:
                     if not a.name in persistent.unlocked_achievements and not a.hidden:
                         hbox:
                             first_spacing 25

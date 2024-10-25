@@ -9,6 +9,24 @@ init -1 python:
 
     FUN_VALUE_FISH_CHANCE = 0.05
 
+    import json
+
+    # Achievement step counts
+    pun_count = 999
+    ending_count = 27
+    with renpy.open_file("bios.json") as f:
+        j = json.load(f)
+        bio_count = len(j)
+        print(f"Loaded {bio_count} bios.")
+    with renpy.open_file("item_collection.json") as f:
+        j = json.load(f)
+        item_count = len(j)
+        print(f"Loaded {item_count} items.")
+    with renpy.open_file("jukebox.json") as f:
+        j = json.load(f)
+        song_count = len(j["tracks"])
+        print(f"Loaded {song_count} songs.")
+
 init python:
     renpy.add_layer("music", above = "master")
     renpy.add_layer("popup", above = "overlay")
@@ -26,6 +44,7 @@ default persistent.collected = set()
 default persistent.seen_music_pun = set()
 default persistent.read = set()
 default persistent.seen_endings = set()
+default persistent.unlocked_achievements = set()
 default persistent.creative_mode = False
 default persistent.seen_splash = False
 default persistent.first_time = True

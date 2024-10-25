@@ -2708,7 +2708,7 @@ label before_main_menu:
                 seen_all = False
         if seen_all:
             if not "Fin." in persistent.unlocked_achievements:
-                    chievos = (a for a in achievements
+                    chievos = (a for a in achievement_manager.achievements
                     if a.name == "Fin.")
                     renpy.show_screen("popup", next(chievos))
                     achievement_manager.unlock("Fin.", show_screen = False)
