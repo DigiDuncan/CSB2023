@@ -97,7 +97,7 @@ screen person(l):
         yoffset 200
         side_yfill False
         mousewheel True
-        draggable True
+        draggable False
         pagekeys True
 
         hbox:
