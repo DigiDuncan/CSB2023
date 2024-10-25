@@ -180,7 +180,7 @@ label car_dialogue:
     pause 2.0
 
     cs "Have you heard of {i}Genshin Impact?{/i} Start your adventure on the continent of Teyvat, and--{w=0.5}{nw}"
-    arceus "{bt=a3-p10-s4}NO."
+    arceus "{cshake}NO."
     billy "I'm a pitchman, and even {i}I{/i} won't stoop {i}that{/i} low."
     n "CS shuts up."
 

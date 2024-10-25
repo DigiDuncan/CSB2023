@@ -380,7 +380,7 @@ label csbii_jail:
     show cs prison
     pause 1.0
     copguy "Alright, welcome to the slammer. How tough are ya?"
-    cs "How tough am I? {bt=a3-p10-s4}How tough am I?!{/bt}"
+    cs "How tough am I? {cshake}How tough am I?!{/bt}"
     cs "I beat {i}Cuphead!{/i}"
     copguy "So?"
     cs "{i}In under 90 minutes!"

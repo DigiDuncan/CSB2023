@@ -73,7 +73,7 @@
     "bubble": {
         "full_name": "Bub Ble",
         "sprite_path": "secret/bubble.png",
-        "quote": "{size=144}{bt=a3-p10-s4}\u00e6{/bt}{/size}",
+        "quote": "{size=144}{cshake}\u00e6{/bt}{/size}",
         "bio": "Also known as Jade, this massive slime has been seen roaming around Las Vegas. Only a few claim to have spotted her, which is funny, since she is about a mile tall."
     },
     "carguy": {

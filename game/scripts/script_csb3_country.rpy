@@ -2459,7 +2459,7 @@ label sweden_joel:
     show bear at midoffscreenleftspin
     show dog at offscreenleftspin
     with MoveTransition(1.0)
-    cs "Oh, nothing much, just{fast} {bt=a3-p10-s4}(all this random fucking shit flying back\nand forth)"
+    cs "Oh, nothing much, just{fast} {cshake}(all this random fucking shit flying back\nand forth)"
     joel "You're an interesting critter, man."
     cs "Thanks!"
     stop music fadeout 3.0

@@ -126,7 +126,7 @@ label train_dialogue:
         show mean human hat shocked
         mean "Why would Cookie Monster be eating fucking {i}cobalt?!"
         show tate srs
-        tate "{bt=a3-p10-s4}Awawawa!!!"
+        tate "{cshake}Awawawa!!!"
         show mean angry hat
         show tate shock
         mean "WOAH!! You can't {i}say{/i} that anymore!" with vpunch

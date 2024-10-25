@@ -21,7 +21,7 @@ init python:
 
 init python:
     import re
-    def auto_wait(s):
+    def substitutions(s):
         # these items wait for 0.25:
         # commas, periods, question marks, exclamation marks, semicolons
         s = re.sub(r'(([,|.|?|!|;])(({\/[a-z]*})*) )', r'\1{w=0.25}', s, flags=re.IGNORECASE) 
@@ -30,8 +30,10 @@ init python:
         # ellipses, em-dashes, colons
         s = re.sub(r'((\.\.\.|--|:)(({\/[a-z]*})*) )', r'\1{w=0.5}', s, flags=re.IGNORECASE) 
 
+        s = s.replace(r"{cshake}", r"{bt=a3-p10-s4}")
+
         return s
-    config.say_menu_text_filter = auto_wait
+    config.say_menu_text_filter = substitutions
 
 init python:
     import random
