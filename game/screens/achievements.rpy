@@ -105,3 +105,8 @@ screen achievements_welcome():
                                 text a.name
                                 text a.desc:
                                     color("#BBBBBB")
+                                hbox:
+                                    spacing 15
+                                    if a.steps != 1 and a.progress != 1:
+                                        bar value a.progress*100 range 100 xsize 600
+                                        text str(a.progress*100)+"%" yanchor 0.125
