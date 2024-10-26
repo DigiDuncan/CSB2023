@@ -61,8 +61,6 @@ layeredimage tate_comp:
 
 # shaders and flip sprite / other transforms must be defined like this, but they can then be used normally
 
-image tate_comp unflipped = LayeredImageProxy("tate_comp", Transform(xzoom = 1))
-
 image tate_comp dusk  = LayeredImageProxy("tate_comp", Transform(matrixcolor = duskmatrix))
 image tate_comp dark = LayeredImageProxy("tate_comp", Transform(matrixcolor = darkmatrix))
 image tate_comp sil_white  = LayeredImageProxy("tate_comp", Transform(matrixcolor = sil_white_matrix))
@@ -87,9 +85,8 @@ init python:
         flipper = renpy.random.choice([" -flipped", " flipped"])
 
         compiled_sprite = "tate_comp " + outfits + " " + blushing + " " + faces + " " + tearful + " " + gloomy + " " + shaders + flipper
-        print(compiled_sprite)
-        return compiled_sprite        
-        
+
+        return compiled_sprite
 
 label awawa_tate_composite_test:
 
@@ -174,4 +171,7 @@ label awawa_tate_composite_test:
             this_iteration = awawa()
             renpy.show(this_iteration)
             narrator(str(i+1) + ": " + this_iteration)
+
+    show tate_comp casual sheepish
+    tate "All done! Back to main menu..."
 
