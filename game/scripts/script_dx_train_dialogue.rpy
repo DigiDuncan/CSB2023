@@ -22,7 +22,7 @@ label train_dialogue:
         arceus "Same."
     else:
         show cs disappointed
-        cs "Don't tell them I said this, but... it sure beats the pants off Tate's cooking."
+        cs "Don't tell them I said this, but... it sure beats the pants off of Tate's cooking."
         if train_pancake_fun_value == True:
             arceus "I'm sure they were just having an off day."
             arceus "I stole one of Mean's pancakes that Tate made yesterday. Now, {i}those{/i} were awesome."

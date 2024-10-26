@@ -915,7 +915,8 @@ label csbiii_arc_escape:
     copguy "Alright, I have a very simple question to ask you all."
     copguy "Do you know this man?"
     play sound sfx_page
-    show cswanted at truecenter with dissolve
+    show cswanted at manual_pos(0.65, 0.55, 0.5) with Dissolve(0.25):
+        zoom 0.75
     n "Copguy produces a wanted poster with CS's face."
     hide cswanted with dissolve
     taran "Uhh, yeah, that's--"
@@ -949,7 +950,7 @@ label csbiii_arc_escape:
     show taran
     pause 1.0
     linus "April Fools?"
-    colton "{cshake}IT'S JULY!" with vpunch
+    colton "{cshake}IT'S {i}JULY!" with vpunch
     pause 1.0
     scene black with dissolve
     pause 1.0

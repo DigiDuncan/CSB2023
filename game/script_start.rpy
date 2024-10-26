@@ -2504,18 +2504,23 @@ define audio.sfx_zenigata_shout = "sfx/sfx_zenigata_shout.ogg"
 define config.detached_layers += ["broadcast"]
 image stage_screen = Window(Layer("broadcast", clipping = False), background = "minigames/pencil/stage.png")
 
-# Checks
+# Checks: CSB1
 default ch1_direction = "left"
 default ch1_direction_sprite = 6
 default ch1_direction_line = "A...{w=0.5} pineapple?"
-default fanboy_type = None
-default fanbase = None
-default nice_car = False
-default returning_from_blooper = False
-default south_car_stole_money = False
+
+# Checks: CSB1 Error
 default e1 = False
 default e2 = False
 default e3 = False
+
+# Checks: CSB3 & CSB3 Friend
+default fanboy_type = None
+default fanbase = None
+
+default nice_car = False
+
+# Checks: CSB3 Country
 default england_check = False
 default japan_check = False
 default sweden_check = False
@@ -2531,20 +2536,18 @@ default ikea_check = False
 default engfirst = False
 default swedfirst = False
 default japfirst = False
+
+# Checks: CSB3 East
 default archack = False
-default jade = False
 default clown = False
 default nome = False  # wow I hate this name - DD
-default sfxtotal = ""
-default musictotal = ""
-default charactertotal = ""
-default transformtotal = ""
-default bgtotal = ""
-default movietotal = ""
-default spritetotal = ""
-default d20 = roller
 
-# Fired route
+# Checks: CSB3 South
+default jade = False
+default returning_from_blooper = False
+default south_car_stole_money = False
+
+# Checks: CSB3 Fired
 default band_name = "CS' Crazy Crew"
 default ep_name = "The White Album"
 default song_name_1 = "Prison Break"
@@ -2565,7 +2568,29 @@ default line_10 = ""
 default line_11 = ""
 default line_12 = ""
 
-# DX Train route
+# Checks: RPG
+default enemy_1 = "cop"
+default enemy_2 = "cop"
+default enemy_3 = "cop"
+default party_1 = "cs"
+default party_2 = "tate"
+default party_3 = "digi"
+default party_4 = "arceus"
+default ucn_bg = "images/bg/fnaf_office.png"
+default ucn_music = "rude_buster.ogg"
+default ucn_scale = 1.0
+default cont = False
+
+# Checks: Asset counts
+default sfxtotal = ""
+default musictotal = ""
+default charactertotal = ""
+default transformtotal = ""
+default bgtotal = ""
+default movietotal = ""
+default spritetotal = ""
+
+# Checks: DX Train
 default train_money_stolen = False
 default train_money_container = "briefcase"
 default train_money_stolen_dialogue_switch = "latch it shut"
@@ -2578,7 +2603,7 @@ default train_ending_money_returned = False
 default ch2_cs_attack_used = "pushed"
 default cs_chosen_form = "cs_vs_tate_punch"
 
-#BTTF
+# Checks: DX BTTF
 default terraria_question_1 = ""
 default terraria_question_2 = ""
 default terraria_question_3 = ""
@@ -2606,24 +2631,12 @@ default blue_check = False
 default con_start = False
 default gun_get = False
 
-# Christmas
+# Checks: DX Christmas
 default tree_first = False
 default tree_second = False
 default lights_first = False
 default decor_first = False
-
-# RPG
-default enemy_1 = "cop"
-default enemy_2 = "cop"
-default enemy_3 = "cop"
-default party_1 = "cs"
-default party_2 = "tate"
-default party_3 = "digi"
-default party_4 = "arceus"
-default ucn_bg = "images/bg/fnaf_office.png"
-default ucn_music = "rude_buster.ogg"
-default ucn_scale = 1.0
-default cont = False
+default d20 = roller
 
 # Helpful lists
 init python:
