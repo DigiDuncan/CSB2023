@@ -1675,6 +1675,8 @@ label dx_christmas_lights_out:
     cs "At least I have this flashlight now!"
     show cs flipped
     n "As CS turns around, he spots Kitty chilling against the wall."
+    play music synchronicity
+    music synchronicity
     cs "Kitty? What are you doing down here? Arceus is looking for you!"
     kitty "Sorry, I got a bad migraine during the end of the party, so I tried to find the quietest place in the house."
     kitty "I'm a little glad the power went out actually, it's been peaceful here."
@@ -1825,8 +1827,18 @@ label dx_christmas_snowed_in:
     mean "Let's get back inside, it's freezing out here."
     scene black with dissolve
     n "CS and Mean climb back down and meet back up with everyone."
-    scene cs_living2_off with dissolve
+    scene cs_living2_off
+    show cs disappointed at mid_left
+    show mean human annoyed flipped at mid_offscreen_left
+    show ed at right
+    show digi at mid_mid_right
+    show linus at mid_right
+    show rich at mid_right_right
+    show tate sad flipped at mid_mid_left
+    show obama at center behind digi
+    with dissolve
     show screen flashlight_demo
+
     cs "Well guys, we got some bad news."
     cs "We might be stuck here for a while."
     k22 "Like all night? For a couple hours?"
@@ -1835,29 +1847,50 @@ label dx_christmas_snowed_in:
     ed "Gee, where are we all gonna sleep?"
     linus "There's no way we can dig our way out?"
     digi "If it's that bad, wouldn't a snow plow be here soon anyways?"
+    show cs worried
     rich "We've dealt with worse, let's get out there and shovel!"
+    show cs disappointed
+    show mean human angry flipped
+    show tate shock flipped
     mean "Everyone! Stop!"
     mean "There's like 20 feet of snow."
     n "Everyone goes quiet."
     mean "If you want to go up to the roof and check for yourself, go ahead."
+    show mean human annoyed flipped
+    show tate sad flipped
     mean "I couldn't believe it either, but..."
     mean "There's nothing else but snow, and even more snow."
     blank "I didn't even think you could get that much snow..."
+    show cs
     cs "So that means we are gonna have to wait it out!"
+    show cs happy
     cs "And what a better way than to play some games!"
+    show cs
     michael "I spy something, black!"
     nova "Is it Obama?"
+    show mean human flipped
+    show tate flipped
     obama "Hey!"
     michael "No, it is not."
     aria "Is it everything?"
     michael "Correct!"
     cs "Okay, I have something I've wanted to play again with someone."
     cs "I have a few board games somewhere, I just need to look."
+    show tate sad flipped
     tate "Please tell me it's not Chess..."
     cs "It's better than Chess! I'll be back."
     scene black with dissolve
     n "After a bit of rummaging, CS comes back with a blueish-looking box."
-    scene cs_living2_off with dissolve
+    scene cs_living2_off
+    show cs happy at mid_left
+    show mean human flipped at mid_offscreen_left
+    show ed at right
+    show digi at mid_mid_right
+    show linus at mid_right
+    show rich at mid_right_right
+    show tate flipped at mid_mid_left
+    show obama at center behind digi
+    with dissolve
     cs "It's Reversi!"
     digi "You have an actual Reversi board?"
     k17 "Isn't that the one game from Windows 3.1?"
@@ -1865,26 +1898,51 @@ label dx_christmas_snowed_in:
     n "CS takes off the cover and starts taking the pieces out."
     aria "Wait a second."
     aria "This is Othello, not Reversi."
+    show cs disappointed
     cs "What do you mean? It says Reversi on the box!"
     aria "Yeah, I know, but in 1971--{w=1.5}{nw}"
+    show cs angry
     cs "It's fucking Reversi, okay?"
     cs "I just want to play some Reversi."
+    show cs
     cs "Who wants to play with me?"
     # maybe pick a character to play here?
     # Insert Reversi Gameplay here
 label dx_christmas_billy_time:
-    scene cs_living2_off with dissolve
+    scene cs_living2_off
+    show cs at mid_left
+    show mean human flipped at mid_offscreen_left
+    show ed at right
+    show digi at mid_mid_right
+    show linus at mid_right
+    show rich at mid_right_right
+    show tate flipped at mid_mid_left
+    show obama at center behind digi
+    show billy at center
+    with dissolve
     billy "Wait! Everyone hold on!"
     cs "What? What is it Billy?"
     billy "The handy switch!"
     billy "Who got my handy switch for their gift?"
+    show tate
     tate "Me!"
     billy "Follow me to the basement!"
+    show cs disappointed
     cs "Billy, what are you doing?"
     billy "I have an idea, and I'll be right back!"
+    hide billy with moveoutleft
+    show tate flipped
     tate "I guess I'm following Billy, be right back as well."
-    scene cs_hallway_off with dissolve
+    hide tate with moveoutleft
+    scene black with dissolve
+    hide screen flashlight_demo    
     billy "Oh dang it! I forgot to bring a light!"
+    scene cs_hallway_off
+    show billy at mid_left
+    show tate at center
+    show elizabeth at right
+    show screen flashlight_demo
+    with dissolve
     tate "I have my phone!"
     billy "That works, I think the basement is down here!"
     eliza "Did you guys manage to get outside?"
@@ -1895,57 +1953,132 @@ label dx_christmas_billy_time:
     eliza "I have no clue how that's gonna work, but good luck to you two."
     tate "Is the basement over this way?"
     eliza "Yeah, down the hall and to the left."
+    show tate sheepish
     tate "Thank you... Mika?"
     eliza "It's Elizabeth, but sure."
+    hide tate
+    hide billy
+    with moveoutright
+    scene cs_bathroom_off
+    show grace at mid_right
+    show anne at right
+    with dissolve
+    show tate at center
+    show billy at mid_left
+    with moveinleft
     grace "Hey! You're the TV man!"
     anne "Grace always wanted to buy every product you sold."
     billy "You should! Hi, Billy Mays here for the--"
+    show tate smug
     tate "Billy, the power?"
+    show tate
     billy "Oh yeah. We can talk later!"
+    hide tate
+    hide billy
+    with moveoutright
     grace "I'll be waiting Billy!"
     n "Billy and Tate run into the basement."
-    scene cs_basement with dissolve
+    scene cs_basement
+    show kitty at left
+    show arceus worried flipped at mid_left
+    show tate flipped at center
+    show billy at mid_right
+    with dissolve
     arceus "Tate? Billy?"
     kitty "What's going on?"
     billy "Fixing the power with the power of the handy switch!"
+    show tate sheepish flipped
     tate "Don't ask."
+    scene breakerbox
+    show tate at mid_left
+    show billy at mid_right
+    with dissolve
     n "Finally, Billy and Tate make it to the breaker."
     billy "Alright, all you gotta do is put the switch on the breaker!"
+    show tate smug
     tate "Really? Just like, slap it on?"
     billy "Yes! It's that easy!"
     n "Tate slaps the handy switch on the breaker, and flips the switch."
+    show tate shock
     hide screen flashlight_demo
     tate "Wh--{w=1.0} Whaaaaaaaaaat??"
-    billy "Like Magic!"
+    billy "Like magic!"
+    show tate sheepish
     tate "How... how does this even work, Billy?"
     n "Billy ponders for a moment."
     pause 3.0
     billy "I don't even know myself!"
+    show tate
     tate "Well, what are we waiting for?"
     tate "Let's go back upstairs and check out the good news!"
-    scene cs_basement with dissolve
+    hide tate
+    hide billy
+    with moveoutright
+    scene cs_basement
+    show kitty at left
+    show arceus happy flipped at mid_left
+    with dissolve
+    show tate at mid_right
+    show billy at right
+    with moveinleft
     arceus "Would you look at that!"
     kitty "How did you guys do it?"
     billy "That's the power, of the power,"
-    scene cs_hallway with dissolve
+    hide tate
+    hide billy
+    with moveoutright
+    scene cs_hallway
+    show eliza at mid_right_right
+    show grace at mid_right
+    show anne at right
+    with dissolve
+    show tate flipped at mid_left
+    show billy at center
+    with moveinright
     grace "Yay! The power is back!"
     anne "You did it!"
     billy "We sure did!"
     eliza "I don't know what kind of technology you have to have had fixed this, but good job!"
-    scene cs_living2 with dissolve
+    hide tate
+    hide billy
+    with moveoutleft
+    scene cs_living2 
+    show cs flipped at center
+    show mean human at mid_offscreen_right
+    show sheriff at mid_mid_right
+    show copguy at mid_right
+    show luke at mid_left
+    show rich flipped at mid_mid_left behind cs
+    with dissolve
+    show tate at mid_left
+    show billy at left
+    with moveinleft
     cs "Holy crap, the power is back!"
     sheriff "My eyes work again!"
     ed "Hooray!"
     tate "It looks like all we needed was Billy's handy switch!"
+    show mean human angry
+    show tate sheepish
     mean "Please don't say it like that, Tate."
+    show mean human
+    show tate
     luke "This is great and all, but isn't the house still under 20 feet of snow?"
     copguy "How are we even gonna get rid of that?"
     copguy "We would need a lot of..."
     pause 1.0
+    show cs
     cs "A lot of what?"
     copguy "...Nevermind. I forgot what I was thinking about."
     rich "Didn't you guys get up to the roof?"
     ed "Maybe we should all go up and check it out."
+    hide mean
+    hide cs
+    hide copguy
+    hide rich
+    hide luke
+    hide tate
+    hide billy
+    with moveoutright
     n "Everyone clammers up the stairs, and one by one, they all climb up onto the roof."
     sheriff "Welp."
     sheriff "I'll just, wait here."
@@ -2047,12 +2180,29 @@ label dx_christmas_roof_moment:
     copguy "I got an idea. You guys, move over there..."
     show cs sil_black at Move((0.3, 0.5), (0.27, 0.33), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show arceus sil_black at Move((0.54, 0.54), (0.3, 0.4), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    show mean human flipped sil_black at Move((0.4, 0.5), (0.34, 0.4), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show mean human flipped sil_black at Move((0.4, 0.5), (0.32, 0.4), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show anno sil_black at Move((0.53, 0.33), (0.32, 0.48), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show tate sil_black at Move((0.34, 0.36), (0.29, 0.5), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show obama sil_black at Move((0.47, 0.47), (0.27, 0.49), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show ed sil_black at Move((0.34, 0.43), (0.25, 0.47), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     copguy "And you move there..."
+    show rich sil_black at Move((0.45, 0.34), (0.45, 0.31), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show wesley sil_black at Move((0.56, 0.45), (0.5, 0.36), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show blank sil_black at Move((0.43, 0.34), (0.52, 0.40), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show nova sil_black at Move((0.55, 0.43), (0.5, 0.45), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show copguy sil_black at Move((0.33, 0.35), (0.45, 0.5), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show billy sil_black at Move((0.63, 0.46), (0.42, 0.36), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show aria sil_black at Move((0.42, 0.36), (0.41, 0.40), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show kitty sil_black at Move((0.43, 0.46), (0.42, 0.48), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    pause 1.0
+    show anne sil_black at Move((0.34, 0.42), (0.65, 0.31), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show elizabeth sil_black at Move((0.38, 0.45), (0.6, 0.35), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show digi sil_black at Move((0.47, 0.46), (0.63, 0.39), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show linus sil_black at Move((0.46, 0.35), (0.66, 0.39), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show luke sil_black at Move((0.32, 0.45), (0.64, 0.44), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show db sil_black at Move((0.5, 0.6), (0.63, 0.5), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show obama sil_black at Move((0.47, 0.47), (0.58, 0.47), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    pause 4.0
     copguy "That should work!"
     k17 "SoS? Nice DaThings reference."
     k22 "You idiot, it's an emergency code! If any airplanes see us--"
@@ -2169,7 +2319,12 @@ label dx_christmas_roof_moment:
     santa "Oh, shit."
     n "A tsunami of car cleaner engulfs the group, as they get washed off the roof."
     n "As everyone gathers their bearings once again, they look around, watching the waves of Crotch Doctor carrying all the snow away."
-    scene cs_house_night_dtree with dissolve
+    scene cs_house_night_dtree
+    show cs at mid_left
+    show tate at left
+    show obama at mid_right
+    show copguy at mid_mid_right
+    with dissolve
     cs "Woohoo! We did it! The avalanche covering the house is gone!"
     santa "Ho ho, well, it looks like you helped save Christmas, CS."
     santa "I need to get going however, I am slightly off schedule."
@@ -2181,6 +2336,8 @@ label dx_christmas_roof_moment:
     tate "CS! You did it!"
     obama "I gotta say, that was one of the most fun Christmas parties I've ever been to."
     obama "Although, I should probably get back to The White House, the political circus is probably getting out of hand."
+    hide obama with moveoutleft
+    show sheriff at right
     sheriff "Hey guys, you got rid of the snow!"
     sheriff "What'd I miss?"
     cs "Uhhh..."
@@ -2191,7 +2348,13 @@ label dx_christmas_roof_moment:
     with dissolve
     n "As Santa flies past, the snow begins to fall again."
     sheriff "Well Copguy, we should probably get going before we get snowed in again!"
+    hide sheriff
+    hide copguy
+    with moveoutright
     copguy "Look how shiny our car is!"
+    scene cs_house_night_dtree
+    show billy at mid_left
+    with dissolve
     n "As everyone is wrapping up to go home, K-22 and Billy have a bit of a chat."
     k22 "Hey Billy, can I talk to you for a minute?"
     billy "Sure thing! I have a moment."
@@ -2207,12 +2370,15 @@ label dx_christmas_roof_moment:
     k22 "Alrighty, well see you later Billy!"
     billy "See ya!"
     n "Both parties get into their cars and drive off."
+    scene cs_bedroom1
+    show cs happy at center
     cs "That was such a blast!"
     cs "Plus my car got cleaned for free!"
     cs "What a mess, though. I'm gonna wait for tomorrow to clean this up."
     cs "Maybe I can call Anno again to help!"
     cs "For now, I should probably get to streaming."
     cs "Those car crash compilations aren't gonna watch themselves!"
+    scene black with dissolve
     n "As CS entered his room to start streaming, our story here comes to a close."
     n "It wasn't the Christmas that CS expected, but it was one of the jolliest times he's had."
     n "Merry Christmas, and have a Happy New Year!"
