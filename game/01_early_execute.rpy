@@ -70,6 +70,9 @@ define config.font_name_map["azsz"] = "AllerDisplay_Std_Rg_0.ttf"
 # Force multilingual text for music popup and jukebox
 define config.font_name_map["music_text"] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add("Yokelvision.otf", 0x0000, 0x2212).add("MochiyPopOne-Regular.ttf", 0x0000, 0xffff)
 
+# NO MORE MOUSE CURSOR HOUDINI
+define config.mouse_hide_time = None
+
 # Music popup
 screen music():
     zorder 100
