@@ -201,7 +201,7 @@ label vibration:
     show taran at right with moveinright
     taran "Need any help?"
     show cs angry
-    cs "Dude, I just got here. I haven't done anything!"
+    cs "Dude, I {i}just{/i} got here. I haven't even started yet!"
     taran "Whoops, sorry."
     show taran flipped with determination
     hide taran with moveoutright
@@ -263,7 +263,8 @@ label vibration:
     show arceus dark with determination
     arceus "Alright, we made it!"
     cs "Yeah! Now we have to trek home."
-    show copguy dark at center with moveinleft
+    show copguy dark flipped at center with moveinleft
+    show copguy dark
     copguy "Not so fast!"
     scene black
     play sound sfx_punch
@@ -273,9 +274,14 @@ label vibration:
     show copguy at t_copguy_frontseat
     show copcar_mask
     with dissolve
+    show arceus worried flipped at offscreenleft
+    show cs disappointed at offscreenleft
+    with determination
     show arceus worried flipped at right
     show cs disappointed at left
-    with moveinleft
+    with MoveTransition(0.25)
+    play sound sfx_punch
+    with hpunch
     copguy "Alright, back to the slammer!"
     play sound sfx_hold_it volume 0.5
     show hold_it at truecenter with hpunch

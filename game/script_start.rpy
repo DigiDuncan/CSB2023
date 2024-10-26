@@ -30,7 +30,9 @@ init python:
         # ellipses, em-dashes, colons
         s = re.sub(r'((\.\.\.|--|:)(({\/[a-z]*})*) )', r'\1{w=0.5}', s, flags=re.IGNORECASE) 
 
+        # for text effects that are a pain to type out otherwise
         s = s.replace(r"{cshake}", r"{bt=a3-p10-s4}")
+        s = s.replace(r"{ytpmagic}", r"{sc=1.88}{color=#CB50FF}")
 
         return s
     config.say_menu_text_filter = substitutions
@@ -38,18 +40,6 @@ init python:
 init python:
     import random
     roller=random.randint(1,20)
-
-# BetterSnowBlossom() - not done yet
-init python:
-    import math
-    from renpy.display.particle import SnowBlossomParticle
-    class BetterSnowBlossomParticle(SnowBlossomParticle):
-        def __init__(randomrot, min_x, max_x, min_y, max_y):
-            self.randomrot = randint(1,360)
-            self.min_x = min_x
-            self.max_x = max_x
-            self.min_y = min_y
-            self.max_y = max_y
 
 # Flips + color shaders
 init -10 python:
@@ -1675,9 +1665,12 @@ image oof_45 = Text("{size=50}{color=#FFEE00}4'5\"", text_align=0.5)
 image oof_54 = Text("{size=50}{color=#CE256E}5'4\"", text_align=0.5)
 image oof_52 = Text("{size=50}{color=#233260}5'2\"", text_align=0.5)
 image spent_19_95 = Text("{size=50}{color=#369100}-$19.95", text_align=0.5)
-# TODO: this sucks
-image petal1 = SnowBlossom("petal1.png", count = 50, fast = True)
-image petal2 = SnowBlossom("petal2.png", count = 50, fast = True)
+
+# TODO: this still sucks, but it's not NEARLY as bad as it was
+image petals_falling = Fixed(
+    SnowBlossom(Transform("petal1.png", xysize=(20, 20), fit="contain", rotate=renpy.random.randint(1,360)), count = 50, xspeed = (-100, -300), fast = True),
+    SnowBlossom(Transform("petal2.png", xysize=(20, 20), fit="contain", rotate=renpy.random.randint(1,360)), count = 50, xspeed = (-100, -300), fast = True)
+)
 
 # DX Digi Backgrounds
 image classroom = "secret/up/classroom.png"
@@ -2512,6 +2505,9 @@ define config.detached_layers += ["broadcast"]
 image stage_screen = Window(Layer("broadcast", clipping = False), background = "minigames/pencil/stage.png")
 
 # Checks
+default ch1_direction = "left"
+default ch1_direction_sprite = 6
+default ch1_direction_line = "A...{w=0.5} pineapple?"
 default fanboy_type = None
 default fanbase = None
 default nice_car = False
@@ -2579,11 +2575,7 @@ default train_pancake_fun_value = False
 default train_skip_at_chicago = None
 default train_tate_is_fragile_fun_value = False
 default train_ending_money_returned = False
-default ch1_direction = "left"
-default ch1_direction_sprite = 6
-default ch1_direction_line = "A...{w=0.5} pineapple?"
 default ch2_cs_attack_used = "pushed"
-default ch3_showed_ytps = None
 default cs_chosen_form = "cs_vs_tate_punch"
 
 #BTTF

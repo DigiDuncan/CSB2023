@@ -584,7 +584,6 @@ label csbiii_reviews:
     n "CS and Linus rush to the front door."
     scene black with dissolve
     pause 0.5
-    $ ch3_showed_ytps = False
     jump csbiii_arceus_appears
     
 label csbiii_ytp_edit:
@@ -655,7 +654,6 @@ label csbiii_ytp_fan:
     linus "What?"
     linus "Hold on, lemme check on this."
     n "CS and Linus rush to the front door."
-    $ ch3_showed_ytps = False
     scene black with dissolve
     pause 0.5
     jump csbiii_arceus_appears
@@ -679,7 +677,7 @@ label csbiii_arceus_appears:
     play music hired_guns volume 0.5 if_changed
     music hired_guns
 
-    if ch3_showed_ytps == True:
+    if fanbase == "both":
         show linus
         linus "So you {i}do{/i} have a furry fanbase who wants to join LTT! Damn it, CS, I should've known."
         show cs worried
@@ -766,7 +764,6 @@ label csbiii_both_fan:
     scene black with dissolve
 
     n "CS and Linus rush to the front door." 
-    $ ch3_showed_ytps = True
     scene black with dissolve
     pause 0.5
     jump csbiii_arceus_appears
@@ -1274,16 +1271,20 @@ label genocide_wait_arc:
             linear 5.0 alpha 1.0
         parallel:
             linear 12.0 zoom 1.2
+    $ renpy.skipping = False
     $ renpy.pause(15.0, hard=True)
-    
+    $ renpy.skipping = True
+
     n "The driver steps out to confront the pair."
+    play sound sfx_car_door_open
     show billy behind arceus with dissolve:
         xanchor 0.5 yanchor 0.5
         xpos 0.7 ypos 0.7
         zoom 0.6
         
     billy "Hey, that's my car!"
-    
+    play sound sfx_doorslam
+
     show billy:
         parallel:
             linear 0.5 xpos 0.5
@@ -1301,8 +1302,8 @@ label genocide_wait_arc:
     with hpunch
 
     pause 3.0
-    billy "{sc=1.88}{color=#CB50FF}No problem!"
-    billy "{sc=1.88}{color=#CB50FF}Let's go!"
+    billy "{ytpmagic}No problem!"
+    billy "{ytpmagic}Let's go!"
     scene black with dissolve
     pause 1.0
     play sound sfx_doorslam
@@ -1328,22 +1329,24 @@ label genocide_wait_arc:
     show billy car 
     with dissolve
     pause 3.0
-    billy "{sc=1.88}{color=#CB50FF}We are here."
+    billy "{ytpmagic}We are here."
 
     play sound sfx_car_door_open
+    pause 0.5
     play sound2 sfx_car_door_ajar loop
     pause 2.0
     n "CS gets out of the car."
     pause 2.0
     play sound sfx_doorslam
     stop sound2
-    pause 2.0
+    pause 3.0
     n "Arceus watches as CS crosses the street and starts heading up a nearby trail."
 
     pause 2.0
     
     arceus "Hey, uhh, I'm gonna get out too."
     play sound sfx_car_door_open
+    pause 0.5
     play sound2 sfx_car_door_ajar loop
     pause 2.0
     play sound sfx_doorslam

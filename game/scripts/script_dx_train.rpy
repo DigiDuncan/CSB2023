@@ -1149,8 +1149,10 @@ label train_enter_sleeper:
     show tate furious flipped
     tate "{cshake}{size=+36}IT WAS {i}YOU!!" with hpunch
     cs "Wha-- {i}huh?!"
-    tate "CS, WHAT THE {i}FUCK?!"
-    tate "{i}YOU{/i} BROKE INTO HOH SIS?!"
+    tate "CS, WHAT THE {nw}"
+    tate "CS, WHAT THE {fast}{i}FUCK?!" with vpunch
+    tate "{i}YOU{/i} {nw}" with vpunch
+    tate "{i}YOU{/i} {fast}BROKE INTO HOH SIS?!"
     show cs worried
     cs "Oh, yeah, uh--{w=0.25}{nw}"
     
@@ -1172,9 +1174,11 @@ label train_enter_sleeper:
     tate "If either of y'all see him, you will not breathe a word of {i}any{/i} of this to him."
     tate "Not about the thefts, and {i}certainly{/i} not about what happened at HoH SiS."
     tate "He doesn't need this. Especially not {sc=1}today."
-    show cs worried
+    show tate furious flipped
+    show cs scared
     n "Tate reinforces their demand with a piercing glare towards CS." with hpunch
     show tate srs
+    show cs worried
     n "Tate then suddenly stands up." with vpunch
     tate "{sc=1}I'm sorry."
     tate "{sc=1}I need to go."
@@ -1480,24 +1484,24 @@ label train_wakeup:
     show tate furious at left
     with moveinleft
     play sound sfx_punch
-    with vpunch
+    with hpunch
 
     n "Tate stomps into the room, making a beeline for CS."
     show tate furious at mid_mid_left with moveinleft
     play sound sfx_punch
-    with vpunch
+    with hpunch
 
     if fun_value(FUN_VALUE_COMMON):
         tate "YOU HAD {cshake}{i}ONE{/i}{/bt} JOJ!" with vpunch
         show tate furious at center with moveinleft
         play sound sfx_punch
-        with vpunch
+        with hpunch
         tate "YOU'RE GONNA NEED A WHOLE LOT MORE THAN {cshake}{i}FOUNDATION\nREPAIR{/i}{/bt} AFTER {i}I'M{/i} DONE WITH YOU!" with vpunch
     else:
         tate "YOU HAD {cshake}{i}ONE{/i}{/bt} JOB!" with vpunch
         show tate furious at center with moveinleft
         play sound sfx_punch
-        with vpunch
+        with hpunch
         tate "IS IT REALLY {i}THAT{/i} HARD FOR YOU TO KEEP A SECRET?!" with vpunch
 
     cs "Tate, wait!"
@@ -1636,8 +1640,8 @@ label train_wakeup:
         n "This game is called CSBounciness, not alleZScreminess."
         n "No plot armor for you."
         show mean wat
-        show tate srs
-        tate "What the fuck?"
+        show tate furious
+        tate "What the {i}fuck?" with vpunch
         show tate srs flipped
         show mean worried
         tate "Who wrote this?"
@@ -1709,7 +1713,7 @@ label train_allow_staff:
     show cs happy flipped
     cs "I mean, the day conductor said that he was investigating. He seemed pretty serious."
     show tate srs
-    tate "Oh, come on. Do you {i}really{/i} trust that guy?"
+    tate "Oh, come {i}on.{/i} Do you {i}really{/i} trust that guy?"
     show cs disappointed flipped
     cs "Do we really have a choice? It's clear that they don't want you interfering."
     show tate furious
@@ -3450,9 +3454,9 @@ label train_lupin_lose:
     
     scene
     show car plains night
-    # TODO: this is ugly af
-    show petal1
-    show petal2
+    show petals_falling:
+        time 15
+        ease_expo 5 alpha 0.00
     
     show amtrak_top sil_black:
         xsize 2000
@@ -3481,7 +3485,7 @@ label train_lupin_lose:
     n "With nothing left to do now, Mean and the crew sulk back into the train through a window."
     
     scene black with dissolve
-    pause 2.0
+    pause 3.0
     
     jump train_completed
         
@@ -3848,6 +3852,7 @@ label train_tate_ex_lose:
     
 label train_completed:
     centered "The next morning..."
+    pause 1.0
 
     if train_ending_money_returned == True:
         play music lo_fi_sunset if_changed

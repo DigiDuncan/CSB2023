@@ -166,7 +166,7 @@ label csbii_special:
     play sound sfx_tape_rewind volume 0.5
     with hpunch
     n "CS sentence-mixes Ed's words!"
-    ed "{sc=1.88}{color=#CB50FF}Everything is fine here, officer. No need to come here."
+    ed "{ytpmagic}Everything is fine here, officer. No need to come here."
     ed "Wait, what just happened?!"
     n "CS quickly puts all the workers to sleep."
     show ed_phone at manual_pos(0.6, 0.40):

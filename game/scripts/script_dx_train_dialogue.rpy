@@ -21,18 +21,19 @@ label train_dialogue:
         cs "Not as good as Tate's cooking was, but I'd get it again."
         arceus "Same."
     else:
-        cs "Don't tell them I said this, but it sure beats the pants off Tate's cooking..."
+        show cs disappointed
+        cs "Don't tell them I said this, but... it sure beats the pants off Tate's cooking."
         if train_pancake_fun_value == True:
             arceus "I'm sure they were just having an off day."
             arceus "I stole one of Mean's pancakes that Tate made yesterday. Now, {i}those{/i} were awesome."
-            show cs disappointed
             cs "Damn, I wish I'd gotten one, too..."
             show cs
         else:
             arceus "Yeah... I didn't want to say anything. I saw you with those salt packs..."
-            show cs disappointed
+            show cs worried
             cs "Shit. Here I thought I was being sneaky."
             arceus "Nope."
+            show cs disappointed
             cs "I sure hope they didn't notice..."
             arceus "I'm sure it's fine. Lots of people salt their food."
             show cs
@@ -196,7 +197,6 @@ label train_dialogue:
             parallel:
                 linear 0.25 ypos 0.45
 
-
     pause 2.0
     play sound sfx_pickup_call
     show mean human hat annoyed
@@ -311,7 +311,9 @@ label train_dialogue:
         cs "At least I probably bought it {i}before{/i} we ended up broke again..."
         cs "I don't think I'd buy something on a whim like that otherwise."
         cs "It's so weird that I can't remember..."
-        arceus "I wouldn't worry about it too much. The last few days have been a blur for me, too."
+        arceus "Eh, last few days have been a blur for me, too."
+        arceus "I really do think that you're just really tired."
+        cs "I guess..."
 
     pause 2.0
     show cs with dissolve
