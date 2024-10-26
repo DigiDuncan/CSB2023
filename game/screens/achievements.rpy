@@ -36,28 +36,29 @@ screen achievements_welcome():
         for a in achievement_manager.achievements:
             # total items
             total_count += 1
-            
+            if a.unlocked:
+                unlocked_count += 1
+            else:
+                locked_count += 1
+
             # count categories, then unlocked in each category
             if a.category == "story":
                 story_count += 1
-                if a.name in persistent.unlocked_achievements:
-                    story_unlocked_count =+ 1   
-            
+                if a.unlocked:
+                    story_unlocked_count += 1
+
             if a.category == "extra":
                 extra_count += 1
-                if a.name in persistent.unlocked_achievements:
-                    extra_unlocked_count =+ 1
-                 
+                if a.unlocked:
+                    extra_unlocked_count += 1
+
             # count hidden
-            if a.name not in persistent.unlocked_achievements and a.hidden == True:
+            if not a.unlocked and a.hidden == True:
                 hidden_count += 1
-            # count unlocked total
-            if a.name in persistent.unlocked_achievements:
-                unlocked_count += 1
             
         # fix remaining locked
         locked_remaining_count = total_count - unlocked_count    
-            
+
         # funny 188% achievements
         # make it 100% on the backend for math reasons then convert it
         percent_unlocked_backend = (unlocked_count / total_count) * 100
@@ -82,7 +83,7 @@ screen achievements_welcome():
             if achievement_manager.unlocked:
                 text "Unlocked Achievements ([unlocked_count]/[total_count])"
                 for a in achievement_manager.achievements:
-                    if a.name in persistent.unlocked_achievements:
+                    if a.unlocked:
                         hbox:
                             first_spacing 25
                             image a.icon:
@@ -96,7 +97,7 @@ screen achievements_welcome():
             if achievement_manager.locked:
                 text "Locked Achievements ([locked_count]/[locked_remaining_count], [hidden_count] hidden)"
                 for a in achievement_manager.achievements:
-                    if not a.name in persistent.unlocked_achievements and not a.hidden:
+                    if not a.unlocked and not a.hidden:
                         hbox:
                             first_spacing 25
                             image a.icon:

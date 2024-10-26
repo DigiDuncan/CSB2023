@@ -32,17 +32,21 @@ class Achievement:
     dx: bool = False
     steps: int = 1
     tracker: str = None
+
+    @property
+    def stepped(self) -> bool:
+        return self.steps != 1
    
     @property
     def unlocked(self) -> bool:
-        if self.steps == 1:
+        if not self.stepped:
             return self.name in persistent.unlocked_achievements 
         else:
-            return self.current_steps >= self.steps
+            return self.current_steps >= self.steps or self.name in persistent.unlocked_achievements
 
     @property
     def current_steps(self) -> int:
-        if self.steps == 1:
+        if not self.stepped:
             return int(self.name in persistent.unlocked_achievements)
         var = getattr(persistent, self.tracker)
         if isinstance(var, set):
@@ -52,8 +56,8 @@ class Achievement:
 
     @property
     def progress(self) -> float:
-        if self.steps == 1:
-            return float(self.name in persistent.unlocked_achievements)
+        if not self.stepped:
+            return float(self.unlocked)
         else:
             return min(1.0, self.current_steps / self.steps)
 
@@ -80,6 +84,12 @@ class Achievement:
         if isinstance(other, Achievement):
             return self.name == other.name
         return False
+
+    def __str__(self) -> str:
+        return f"<Achievement \"{self.name}\": {'Unlocked' if self.unlocked else 'Locked'} ({self.progress:.2%}%)>"
+
+    def __repr__(self) -> str:
+        return self.__str__()
 
     def unlock(self, show_screen = True):
         if self.unlocked:
