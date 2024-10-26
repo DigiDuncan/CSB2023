@@ -1459,14 +1459,17 @@ label dx_christmas_exchange:
     show rich flipped at mid_left with moveinleft 
     rich "Pain pills?"
     wesley "Wait a minute! Those are mine!"
+    show wesley at mid_right with moveinright
     wesley "I didn't mean to gift that..."
     wesley "I'm gonna steal those since it's my turn now!"
+    hide wesley with moveoutright
     rich "Hey!"
     rich "What do I even get now?"
     rich "There's nothing else I really want here..."
     rich "I guess it's time to open another present."
     rich "I got Sunny D!"
     n "K17 starts giggling."
+    hide rich with moveoutright
     k17 "Alright! My go!"
     k17 "Addy?"
     k22 "Huh?"
@@ -1474,31 +1477,45 @@ label dx_christmas_exchange:
     k22 "I'm sorry, I'll be right back!"
     k17 "What the hay! Now I gotta get another gift!"
     k17 "I'm gonna take the Gravity Falls Commentary!"
+    show sheriff at mid_right with moveinright
     k17 "...and the gun."
+    show copguy flipped at left with moveinleft
     copguy "Alright, then I'm taking the Declaration of Independence!"
+    show billy at center
     billy "What the actual fuck?"
     billy "Stop stealing gifts!"
+    hide copguy with moveoutright
+    hide sheriff with moveoutleft
+    show billy at mid_left with move
     billy "Alright, I'll just take the next gift."
     billy "Adderall?"
     billy "Nope! I'm done with any kind of drug! Not after last time!"
     aria "Aw, that was my gift!"
     aria "You want me to take it?"
     billy "Yes please!"
+    show aria at mid_right with moveinright
     n "Aria steals Billy's gift."
+    hide aria with moveoutleft
     billy "Awesome! I get to pick another gift!"
     billy "Peach syrup!"
     michael "Noice, you got my gift!"
     michael "It goes well with about everything!"
     billy "I'll keep this one!"
+    hide billy with moveoutright
     michael "Alright, what gift to choose..."
+    show michael at mid_left with moveinleft
     michael "I got a new water bottle!"
     linus "You got my LTT water bottle!"
     linus "lttstore.com."
+    hide michael with moveoutright
     linus "Alright, it's my turn."
+    show linus at mid_left with moveinleft
     linus "Hey Luke! I got your gift!"
     luke "Couldn't you tell it was mine?"
     linus "No, how was I supposed to figure that out?"
+    hide linus with moveoutright
     luke "Whatever, it's my go now."
+    show luke at mid_left with moveinleft
     luke "I got..."
     luke "A variation of PC components!"
     blank "Yeah, it's 2 monitors, a 1tb hard drive, and some other things."
@@ -1506,21 +1523,29 @@ label dx_christmas_exchange:
     luke "On the {i}curb{/i}?"
     blank "Yeah, it was just lying there on the curb."
     luke "Damn, well then..."
+    hide luke with moveoutright
     blank "It looks like it's my turn next."
+    show blank at mid_left with moveinleft
     blank "Gamer supps?"
     blank "Guacamole Gamer... Fart... 9000?"
     nova "Dammit you got my gift Blank!"
     blank "Great."
+    hide blank with moveoutright
     nova "As much as I want to steal that Adderall, I'm gonna pick a gift."
+    show nova at mid_left with moveinleft
     nova "Oh boy! I wonder what it is!"
     nova "What the fuck is? Some World War II radio?"
     eliza "Yep. Used by the Soviets in the last half of World War II."
     nova "I'm sure Tristan will like this, I'll probably give it to him."
+    hide nova with moveoutright
     eliza "So, it's my turn, let's see what we have..."
+    show elizabeth at mid_left with moveinleft
     eliza "Dog food."
     eliza "Dog food?"
     db "Ah yeah, I had a lot extra lying around in my car, so I figured why not?"
+    hide elizabeth with moveoutright
     db "Well I guess it's finally my turn."
+    show db at mid_left with moveinleft
     db "Wow, I got some old coins!"
     digi "Holy shit, I think those are like, really rare!"
     digi "Lemme look it up."
@@ -1529,7 +1554,9 @@ label dx_christmas_exchange:
     digi "Yeah, those are super rare. I would hold onto those if I were you."
     billy "Antique coins lying around, Tech lying on the curb..."
     billy "Where the hell do you guys live where you find this kinda shit?"
+    hide db with moveoutright
     anne "Well Grace, you wanna pick out the last gift?"
+    show grace at mid_left with moveinleft
     grace "Yippee! The last gift!"
     grace "I got a cool new t-shirt!"
     cs "Hey! You finally got my gift!"
@@ -1542,6 +1569,7 @@ label dx_christmas_exchange:
 
     #Games/Climax
 label dx_christmas_climax:
+    scene black with dissolve
     n "After all of the gifts have been given out, almost everyone has come to the conclusion that the party should end."
     k22 "Well CS, this was wonderful, but we should get going."
     cs "Wait! You aren't gonna stay for the games?"
@@ -1630,14 +1658,22 @@ label dx_christmas_lights_out:
     show cs at center
     show screen flashlight_demo
     cs "Thank god, I can actually see."
+    hide cs with moveoutright
+    scene breakerbox with dissolve
+    show cs at left with moveinleft
     cs "Found it!"
     n "CS opens the breaker and flicks off and on the switches."
+    show cs disappointed
     cs "Damn, nothing."
+    show cs flipped
     cs "Well, it was worth a try."
+    hide cs with moveoutleft
     scene cs_basement
     show cs at center
+    show kitty at left
     with dissolve
     cs "At least I have this flashlight now!"
+    show cs flipped
     n "As CS turns around, he spots Kitty chilling against the wall."
     cs "Kitty? What are you doing down here? Arceus is looking for you!"
     kitty "Sorry, I got a bad migraine during the end of the party, so I tried to find the quietest place in the house."
@@ -1647,31 +1683,51 @@ label dx_christmas_lights_out:
     kitty "You should probably go check yourself."
     kitty "Let Arceus know I'm down here, I think I'm gonna stay here for a bit."
     cs "Got it. Stay safe down here."
+    show cs with determination
+    hide cs with moveoutright
     n "CS rushes back upstairs."
-    scene cs_hallway_off with dissolve
+    scene cs_hallway_off 
+    show arceus at center
+    show elizabeth at right
+    with dissolve
+    show cs at left with moveinleft
     arceus "Welcome back! Assuming you didn't get the power working?"
     cs "Nope, but I found Kitty!"
     cs "She's relaxing in the basement due to her head hurting."
     arceus "That makes sense, I'll go talk to her here soon."
     eliza "I see you found a torch."
     cs "Yeah, it was lying around downstairs, I'm lucky I found one."
+    show arceus flipped
     eliza "I was thinking of lending mine to Arceus, so he can go in the basement."
     arceus "I would appreciate it."
+    show elizabeth at mid_right
     eliza "Take this, make sure to bring it back when the power turns on."
     arceus "Got it."
+    show arceus with determination
+    hide arceus with moveoutleft
     eliza "Before you go CS, I would see if you can check the outdoors."
     eliza "Even though it is dark, no light is coming in from outside."
     eliza "It also sounds terrible out there."
+    show cs disappointed
     eliza "I've experienced some harsh Soviet winters, but I've never heard anything this bad before."
     cs "Well, that's some awesome news."
     cs "I'll go check on others, and see if I can get outside."
-    scene cs_foyer_off with dissolve
+    hide cs with moveoutright
+    scene cs_foyer_off
+    show anno at mid_left
+    show aria at mid_mid_left behind anno
+    show digi at center
+    show tate flipped at mid_right
+    show mean human at mid_offscreen_right
+    with dissolve
+    show cs at left with moveinleft
     cs "Hey guys! How is everyone so far?"
     anno "It's getting kinda cold, so I hope the power comes back soon."
     anno "My phone is about to die."
     cs "I'm gonna check outside and see how bad it is."
     k22 "I was gonna try that, but I couldn't find the door."
     cs "If we get outside, we might be able to dig our vehicles out."
+    hide cs with moveoutright
     anno "Good luck CS!"
     scene black with dissolve
     cs "Alright, let's see how bad it is."
@@ -1681,22 +1737,42 @@ label dx_christmas_lights_out:
     n "CS sticks his finger out into the mysterious substance."
     cs "Oh my God, how much... did it..."
     n "CS slams the door shut and runs back to deliver the news."
-    scene cs_foyer_off with dissolve
+    scene cs_foyer_off
+    show anno at mid_left
+    show aria at mid_mid_left behind anno
+    show digi at center
+    show tate flipped at mid_right
+    show mean human at mid_offscreen_right
+    with dissolve
+    show cs worried flipped at center with moveinright
     cs "Guys, the door... the door..."
     aria "Calm down, CS. Catch your breath."
+    show cs disappointed flipped
     cs "The door, it's, all snow."
+    show tate sad flipped
     anno "All snow?"
+    show mean human annoyed
     mean "The door?"
     k17 "It's?"
     digi "Are we trapped in here?"
+    show mean human angry
+    show tate sad
     mean "There's only one way to find out."
+    show cs disappointed
     mean "CS, take me to the roof."
     cs "To the roof?"
     mean "Yeah, let me climb up there."
     cs "Sure, we can try."
+    show mean human annoyed flipped
     tate "Be careful, Mean."
+    hide cs
+    hide mean
+    with moveoutright
     n "CS and Mean find the ladder to the attic, and make their way up."
-    scene cs_attic with dissolve
+    scene cs_attic 
+    show cs disappointed at mid_left
+    show mean human annoyed at mid_right
+    with dissolve
     mean "You good, CS?"
     cs "Yeah, I'm just a bit tired."
     cs "There should be a hatch or something up here..."
@@ -1707,15 +1783,16 @@ label dx_christmas_lights_out:
     cs "That is... a lot of snow."
     mean "C'mon, let's get up here."
     n "Mean climbs up onto the roof."
+    hide mean with moveouttop
     mean "Holy..."
     mean "Fuck."
     cs "What? How bad is it?"
     mean "Grab my hand, I'll pull you up."
-    hide screen flashlight_demo
 label dx_christmas_snowed_in:
     play music winters_halloween
     music winters_halloween
     scene snowed_in
+    hide screen flashlight_demo
     show cs sil_black:
         zoom 0.15
         xpos 0.3
@@ -1882,12 +1959,99 @@ label dx_christmas_roof_moment:
         zoom 0.15
         xpos 0.4
         ypos 0.5
+    show arceus sil_black:
+        zoom 0.15
+        xpos 0.54
+        ypos 0.54
+    show anno sil_black:
+        zoom 0.15
+        xpos 0.53
+        ypos 0.33
+    show tate sil_black:
+        zoom 0.15
+        xpos 0.34
+        ypos 0.36
+    show obama sil_black:
+        zoom 0.15
+        xpos 0.47
+        ypos 0.47
+    show ed sil_black:
+        zoom 0.15
+        xpos 0.34
+        ypos 0.42
+    show rich sil_black:
+        zoom 0.15
+        xpos 0.45
+        ypos 0.34
+    show wesley sil_black:
+        zoom 0.15
+        xpos 0.56
+        ypos 0.45
+    show blank sil_black:
+        zoom 0.15
+        xpos 0.43
+        ypos 0.34
+    show nova sil_black:
+        zoom 0.15
+        xpos 0.55
+        ypos 0.43
+    show copguy sil_black:
+        zoom 0.15
+        xpos 0.33
+        ypos 0.35
+    show billy sil_black:
+        zoom 0.15
+        xpos 0.63
+        ypos 0.46
+    show aria sil_black:
+        zoom 0.15
+        xpos 0.42
+        ypos 0.36
+    show kitty sil_black:
+        zoom 0.15
+        xpos 0.43
+        ypos 0.46
+    show grace sil_black:
+        zoom 0.15
+        xpos 0.31
+        ypos 0.31
+    show anne sil_black:
+        zoom 0.15
+        xpos 0.34
+        ypos 0.42
+    show elizabeth sil_black:
+        zoom 0.15
+        xpos 0.38
+        ypos 0.45
+    show digi sil_black:
+        zoom 0.15
+        xpos 0.47
+        ypos 0.46
+    show linus sil_black:
+        zoom 0.15
+        xpos 0.46
+        ypos 0.35
+    show luke sil_black:
+        zoom 0.15
+        xpos 0.32
+        ypos 0.45
+    show db sil_black:
+        zoom 0.15
+        xpos 0.5
+        ypos 0.6
     show snow1
     with dissolve
     k22 "So it is as bad as you said."
     wesley "It just keeps going! It never ends!"
     tate "What are we going to do? We can't just, walk out there!"
     copguy "I got an idea. You guys, move over there..."
+    show cs sil_black at Move((0.3, 0.5), (0.27, 0.33), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show arceus sil_black at Move((0.54, 0.54), (0.3, 0.4), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show mean human flipped sil_black at Move((0.4, 0.5), (0.34, 0.4), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show anno sil_black at Move((0.53, 0.33), (0.32, 0.48), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show tate sil_black at Move((0.34, 0.36), (0.29, 0.5), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show obama sil_black at Move((0.47, 0.47), (0.27, 0.49), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show ed sil_black at Move((0.34, 0.43), (0.25, 0.47), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     copguy "And you move there..."
     copguy "That should work!"
     k17 "SoS? Nice DaThings reference."
