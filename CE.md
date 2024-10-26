@@ -19,3 +19,18 @@
 - Add Christmas themed credits
 - Record DXCom for Christmas route
 - Ensure there's no way to break out into other routes or spoiler content
+
+# Progress
+- Flowchart (My head) 100%
+- Script writing 80%
+- Basic asset creation 75%
+- Basic transitions 80%
+- Music 20%
+- Sound effects 5%
+- Grammar pass 0%
+- Asset pass 0%
+- Transition/cinematography pass 0%
+- Add music to jukebox 20%
+- Add bios 0%
+- Add achievements 0%
+- Add minigames 0%
