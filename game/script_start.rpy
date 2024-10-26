@@ -649,6 +649,7 @@ image cs sil_black = "sil_black:characters/cs/neutral.png"
 image cs flipped = "flip:characters/cs/neutral.png"
 image cs happy = "characters/cs/happy.png"
 image cs happy flipped = "flip:characters/cs/happy.png"
+image cs happy dusk = "dusk:characters/cs/happy.png"
 image cs happy dark = "dark:characters/cs/happy.png"
 image cs happy dark flipped = "dark:flip:characters/cs/happy.png"
 image cs angry = "characters/cs/angry.png"
@@ -2517,6 +2518,10 @@ default e3 = False
 # Checks: CSB3 & CSB3 Friend
 default fanboy_type = None
 default fanbase = None
+default compass_west_counter = 0
+default compass_north_counter = 0
+default compass_current_time = "morning"
+default compass_current_shader = ""
 
 default nice_car = False
 

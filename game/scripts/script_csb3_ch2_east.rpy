@@ -1,7 +1,17 @@
 label true_east:
+
+    play music happy_roaming volume 0.5 if_changed
+    music happy_roaming
+
+    # this is stupid, but, to prevent sprite duplication, we use a scene each time
+
+    scene expression "washington_road %s" % compass_current_time
+    show expression "cs %s" % compass_current_shader at left
+    show expression "arceus %s" % compass_current_shader at right
     cs "Well, since east is the way home, we should probably go that way."
-    show arceus
     arceus "Alright, that sounds like a good idea."
+
+    scene black with dissolve
     n "CS and Arceus keep following the road for a while until they come across a small town."
     scene town with dissolve
     show cs at left with moveinleft

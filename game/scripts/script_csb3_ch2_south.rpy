@@ -1,21 +1,38 @@
 label south_start:
+
     play music happy_roaming volume 0.5 if_changed
     music happy_roaming
-    scene washington_road morning
-    show cs at left
-    show arceus at right
+
+    # this is stupid, but, to prevent sprite duplication, we use a scene each time
+
+    scene expression "washington_road %s" % compass_current_time
+    show expression "cs %s" % compass_current_shader at left
+    show expression "arceus %s" % compass_current_shader at right
     arceus "Alright, what's your plan? Where are we going, exactly?"
     cs "I've always kinda wanted to go down to Vegas. We could have a ton of fun down there!"
-    show arceus worried
+    
+    scene expression "washington_road %s" % compass_current_time
+    show expression "cs %s" % compass_current_shader at left
+    show expression "arceus worried %s" % compass_current_shader at right
     arceus "Don't you want to go back home?"
     cs "Listen, we are free again, and we're in the middle of nowhere. If we can find a way to make a bit of cash and get a car, maybe we can make it big!"
-    show arceus angry
+    
+    scene expression "washington_road %s" % compass_current_time
+    show expression "cs disappointed %s" % compass_current_shader at left
+    show expression "arceus angry %s" % compass_current_shader at right
     arceus "This sounds like an awful idea."
     pause 1.0
-    show arceus
+
+    scene expression "washington_road %s" % compass_current_time
+    show expression "cs %s" % compass_current_shader at left
+    show expression "arceus %s" % compass_current_shader at right
     arceus "Eh, fuck it. What do I have to lose at this point? Let's go!"
-    show cs happy
+
+    scene expression "washington_road %s" % compass_current_time
+    show expression "cs happy %s" % compass_current_shader at left
+    show expression "arceus %s" % compass_current_shader at right
     cs "Hell yeah!"
+
     scene black with dissolve
     n "CS and Arceus keep following the road for a while until they come across a small town."
     scene town with dissolve

@@ -1556,6 +1556,8 @@ label csbiii_bad_convince:
     copguy "You two are going back to the slammer."
     bad_end "Did you really\nthink that would work?" "csbiii_copcar_menu"
 
+# TODO: ace attorney select evidence menu
+
 label csbiii_good_convince:
     scene copcar
     show copguy at t_copguy_frontseat
@@ -1720,6 +1722,13 @@ label csbiii_choose_direction:
     arceus "Well, I noticed that the sun rises ahead of us, which means we're heading east right now."
     arceus "We can head in any direction, really. The second we find a better form of transportation than walking, we're taking it."
     arceus "Which way are you thinking?"
+
+    # reset these for each playthrough
+    $ compass_north_counter = 0
+    $ compass_west_counter = 0
+    $ compass_current_time = "morning"
+    $ compass_current_shader = ""
+
     menu:
         "Which way do you want to go?"
         "North":
@@ -1731,41 +1740,54 @@ label csbiii_choose_direction:
         "West":
             jump csbiii_west
 
-label csbiii_north:
-    play music happy_roaming volume 0.5 if_changed
-    scene washington_road morning
-    show cs at left
-    show arceus at right
-    cs "What if we go north?"
-    show arceus worried
-    arceus "... What?"
-    show cs disappointed
-    cs "You said to pick a direction!"
-    show arceus angry
-    arceus "To the north is Canada. Where we just came from. Try again."
-    show cs
-    menu:
-        "North":
-            jump csbiii_north2
-        "East" (type = "true"):
-            jump true_east
-        "South":
-            jump south_start
-        "West":
-            jump csbiii_west 
+# everything below here has been rewritten significantly to fix both the EXCESSIVE LABELS and the abrupt shader/sky color changes. it is important to use scene EVERY TIME a sprite changes, or sprites will be duplicated. - tate
 
-label csbiii_north2:
+label csbiii_north:
+    
     play music happy_roaming volume 0.5 if_changed
-    scene washington_road morning
-    show cs at left
-    show arceus angry at right
-    $ achievement_manager.unlock("Can We Go Back?")
-    arceus "I literally just said--"
-    arceus "Just pick another direction."
-    show arceus
+    scene expression "washington_road %s" % compass_current_time
+
+    if compass_north_counter == 0:
+        scene expression "washington_road %s" % compass_current_time
+        show expression "cs %s" % compass_current_shader at left
+        show expression "arceus %s" % compass_current_shader at right
+        cs "What if we go north?"
+
+        scene expression "washington_road %s" % compass_current_time
+        show expression "cs %s" % compass_current_shader at left
+        show expression "arceus worried %s" % compass_current_shader at right
+        arceus "... What?"
+
+        scene expression "washington_road %s" % compass_current_time
+        show expression "cs disappointed %s" % compass_current_shader at left
+        show expression "arceus worried %s" % compass_current_shader at right
+        cs "You said to pick a direction!"
+
+        scene expression "washington_road %s" % compass_current_time
+        show expression "cs disappointed %s" % compass_current_shader at left
+        show expression "arceus angry %s" % compass_current_shader at right
+        arceus "To the north is Canada. Where we just came from. Try again."
+
+        scene expression "washington_road %s" % compass_current_time
+        show expression "cs %s" % compass_current_shader at left
+        show expression "arceus angry %s" % compass_current_shader at right
+
+        $ compass_north_counter = 1
+    else:
+        scene expression "washington_road %s" % compass_current_time
+        show expression "cs %s" % compass_current_shader at left
+        show expression "arceus angry %s" % compass_current_shader at right
+        $ achievement_manager.unlock("Can We Go Back?")
+        arceus "I literally just said--"
+        arceus "Just pick another direction."
+
+        scene expression "washington_road %s" % compass_current_time
+        show expression "cs %s" % compass_current_shader at left
+        show expression "arceus %s" % compass_current_shader at right
+
     menu:
         "North":
-            jump csbiii_north2
+            jump csbiii_north
         "East" (type = "true"):
             jump true_east
         "South":
@@ -1774,174 +1796,131 @@ label csbiii_north2:
             jump csbiii_west
 
 label csbiii_west:
+
     play music happy_roaming volume 0.5 if_changed
-    scene washington_road morning
-    show cs at left
-    show arceus at right
-    cs "I think we should go west."
-    arceus "Alright, we can try."
-    n "CS and Arceus run into the Pacific Ocean."
-    scene washington_road day
-    show cs at left
-    show arceus at right
-    with dissolve
-    arceus "It's just the ocean. Let's go another direction."
+
+    if compass_west_counter == 0:
+        scene expression "washington_road %s" % compass_current_time
+        show cs at left
+        show arceus at right
+        cs "I think we should go west."
+        arceus "Alright, we can try."
+        n "CS and Arceus run into the Pacific Ocean."
+        $ compass_current_time = "day"
+        scene expression "washington_road %s" % compass_current_time
+        show cs at left
+        show arceus at right
+        with dissolve
+        arceus "It's just the ocean. Let's go another direction."
+        $ compass_west_counter = 1
+        $ compass_current_shader = ""
+
+    elif compass_west_counter == 1:
+        scene expression "washington_road %s" % compass_current_time
+        show cs at left
+        show arceus at right
+        cs "Let's try going west again. I'm sure there is something there."
+        show arceus worried
+        arceus "Uhm, okay... maybe we've missed something."
+        n "CS and Arceus run into the Pacific again."
+        $ compass_current_time = "dusk"
+        scene expression "washington_road %s" % compass_current_time
+        show cs dusk at left
+        show arceus dusk at right
+        with dissolve
+        arceus "Still just the ocean..."
+        $ compass_west_counter = 2
+        $ compass_current_shader = "dusk"
+
+    elif compass_west_counter == 2:
+        scene expression "washington_road %s" % compass_current_time
+        show cs dusk at left
+        show arceus dusk at right
+        cs "Nah, come on, there is definitely {i}something{/i} we can find going west."
+        show arceus worried dusk
+        arceus "I really don't want to go there again..."
+        cs "Nah, we've got this. For sure this time."
+        show cool_crab dusk at manual_pos(0.3, 0.6, 0.5) with dissolve:
+            zoom 0.5
+        n "CS and Arceus find a cool-looking crab, but it's still just the ocean again."
+        hide cool_crab
+        $ compass_current_time = ""
+        scene washington_road
+        show cs dark at left
+        show arceus angry dark at right
+        with dissolve
+        cs "Hey! That's quite an epic crustacean!"
+        arceus "Alright, cool, can we pick another direction that {i}isn't{/i} west this time?"
+        $ compass_west_counter = 3
+        $ compass_current_shader = "dark"
+
+    elif compass_west_counter == 3:
+        scene washington_road
+        show cs dark at left
+        show arceus dark at right
+        cs "Okay! One last time!"
+        arceus "..."
+        show arceus worried dark
+        arceus "Something tells me that you were in an asylum for a bit..."
+        n "CS and Arceus, surprisingly, find the ocean again."
+        $ compass_current_time = "morning"
+        scene expression "washington_road %s" % compass_current_time
+        show cs happy at left
+        show arceus angry at right
+        with dissolve
+        $ compass_west_counter = 4
+        $ compass_current_shader = ""
+
+    elif compass_west_counter == 4:
+        $ compass_current_time = "day"
+        scene expression "washington_road %s" % compass_current_time
+        show cs at left
+        show arceus angry at right
+        with dissolve
+        arceus "..."
+        $ compass_west_counter = 5
+        $ compass_current_shader = ""
+
+    elif compass_west_counter == 5:
+        $ compass_current_time = "dusk"
+        scene expression "washington_road %s" % compass_current_time
+        show cs dusk at left
+        show arceus angry dusk at right
+        with dissolve
+        arceus "..."
+        $ compass_west_counter = 6
+        $ compass_current_shader = "dusk"
+
+    elif compass_west_counter == 6:
+        $ compass_current_time = ""
+        scene washington_road
+        show cs dark at left
+        show arceus angry dark at right
+        with dissolve
+        arceus "..."
+        $ compass_west_counter = 7
+        $ compass_current_shader = "dark"
+
+    elif compass_west_counter == 7:
+        $ compass_current_time = "morning"
+        scene expression "washington_road %s" % compass_current_time
+        show cs at left
+        show arceus angry at right
+        with dissolve
+        $ achievement_manager.unlock("Ocean Man")
+        arceus "Player. {w=0.5}Stop. {w=0.5}Going. {w=0.5}West."
+        $ compass_west_counter = 4
+        $ compass_current_shader = ""
+
     menu:
         "North":
-            jump csbiii_north2
+            jump csbiii_north
         "East" (type = "true"):
             jump true_east
         "South":
             jump south_start
         "West":
-            jump csbiii_west2
+            jump csbiii_west
 
-label csbiii_west2:
-    play music happy_roaming volume 0.5 if_changed
-    scene washington_road day
-    show cs at left
-    show arceus at right
-    cs "Let's try going west again. I'm sure there is something there."
-    show arceus worried
-    arceus "Uhm, okay... maybe we've missed something."
-    n "CS and Arceus run into the Pacific again."
-    scene washington_road dusk
-    show cs dusk at left
-    show arceus dusk at right
-    with dissolve
-    arceus "Still just the ocean..."
-    menu:
-        "North":
-            jump csbiii_north2
-        "East" (type = "true"):
-            jump true_east
-        "South":
-            jump south_start
-        "West":
-            jump csbiii_west3
 
-label csbiii_west3:
-    play music happy_roaming volume 0.5 if_changed
-    scene washington_road dusk
-    show cs dusk at left
-    show arceus dusk at right
-    cs "Nah, come on, there is definitely {i}something{/i} we can find going west."
-    show arceus worried dusk
-    arceus "I really don't want to go there again..."
-    cs "Nah, we've got this. For sure this time."
-
-    show cool_crab dusk at manual_pos(0.3, 0.6, 0.5) with dissolve:
-        zoom 0.5
-    
-    n "CS and Arceus find a cool-looking crab, but it's still just the ocean again."
-    hide cool_crab
-    scene washington_road
-    show cs dark at left
-    show arceus angry dark at right
-    with dissolve
-    cs "Hey! That's quite an epic crustacean!"
-    arceus "Alright, cool, can we pick another direction that {i}isn't{/i} west this time?"
-    menu:
-        "North":
-            jump csbiii_north2
-        "East" (type = "true"):
-            jump true_east
-        "South":
-            jump south_start
-        "West":
-            jump csbiii_west4
-
-label csbiii_west4:
-    play music happy_roaming volume 0.5 if_changed
-    scene washington_road
-    show cs dark at left
-    show arceus dark at right
-    cs "Okay! One last time!"
-    arceus "..."
-    show arceus worried dark
-    arceus "Something tells me that you were in an asylum for a bit..."
-    n "CS and Arceus, surprisingly, find the ocean again."
-    scene washington_road morning
-    show cs happy at left
-    show arceus angry at right
-    with dissolve
-    menu:
-        "North":
-            jump csbiii_north2
-        "East" (type = "true"):
-            jump true_east
-        "South":
-            jump south_start
-        "West":
-            jump csbiii_west5
-
-label csbiii_west5:
-    play music happy_roaming volume 0.5 if_changed
-    scene washington_road day
-    show cs at left
-    show arceus angry at right
-    with dissolve
-    arceus "..."
-    menu:
-        "North":
-            jump csbiii_north2
-        "East" (type = "true"):
-            jump true_east
-        "South":
-            jump south_start
-        "West":
-            jump csbiii_west6
-
-label csbiii_west6:
-    play music happy_roaming volume 0.5 if_changed
-    scene washington_road dusk
-    show cs dusk at left
-    show arceus angry dusk at right
-    with dissolve
-    arceus "..."
-    menu:
-        "North":
-            jump csbiii_north2
-        "East" (type = "true"):
-            jump true_east
-        "South":
-            jump south_start
-        "West":
-            jump csbiii_west7
-
-label csbiii_west7:
-    play music happy_roaming volume 0.5 if_changed
-    scene washington_road
-    show cs dark at left
-    show arceus angry dark at right
-    with dissolve
-    arceus "..."
-    menu:
-        "North":
-            jump csbiii_north2
-        "East" (type = "true"):
-            jump true_east
-        "South":
-            jump south_start
-        "West":
-            jump csbiii_west8
-
-label csbiii_west8:
-    play music happy_roaming volume 0.5 if_changed
-    scene washington_road morning
-    show cs at left
-    show arceus angry at right
-    with dissolve
-    $ achievement_manager.unlock("Ocean Man")
-    arceus "Player. {w=0.5}Stop. {w=0.5}Going. {w=0.5}West."
-    menu:
-        "North":
-            jump csbiii_north2
-        "East" (type = "true"):
-            jump true_east
-        "South":
-            jump south_start
-        "West":
-            jump csbiii_west5
-
-# TODO: if we ever do a beach episode, maybe this is direction to go lmao
+# # TODO: if we ever do a beach episode, maybe this is direction to go lmao
