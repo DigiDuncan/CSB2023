@@ -746,6 +746,7 @@ image young_cs = "characters/cs_young.png"
 
 ## Arc
 image arceus = "characters/arc/arceus.png"
+image arceus sil_black = "sil_black:characters/arc/arceus.png"
 image arceus flipped = "flip:characters/arc/arceus.png"
 image arceus dirty = "characters/arc/arceusdirty.png"
 image arceus dirty flipped = "flip:characters/arc/arceusdirty.png"
@@ -782,6 +783,7 @@ image arceus dusk flipped = "dusk:flip:characters/arc/arceus.png"
 
 ## Anno
 image anno = "characters/anno/anno.png"
+image anno sil_black = "sil_black:characters/anno/anno.png"
 image anno prison = "characters/anno/anno_prison.png"
 image anno guard = "characters/anno/anno_guard.png"
 image anno guard dark = "dark:characters/anno/anno_guard.png"
@@ -820,6 +822,7 @@ image tate = "characters/tate/tatehappy.png"
 image tate flipped = "flip:characters/tate/tatehappy.png"
 image tate dark = "dark:characters/tate/tatehappy.png"
 image tate dark flipped = "dark:flip:characters/tate/tatehappy.png"
+image tate sil_black = "sil_black:characters/tate/tatehappy.png"
 image tate srs = "characters/tate/tateserious.png"
 image tate srs dark = "dark:characters/tate/tateserious.png"
 image tate srs flipped = "flip:characters/tate/tateserious.png"
@@ -920,13 +923,16 @@ image hart2 = "characters/hart2.png"
 
 # HoH SiS 
 image rich = "characters/rich.png"
+image rich sil_black = "sil_black:characters/rich.png"
 image rich flipped = "flip:characters/rich.png"
 image ed = "characters/ed.png"
+image ed sil_black = "sil_black:characters/ed.png"
 image ed flipped = "flip:characters/ed.png"
 image ed phone = "characters/ed_phone.png"
 image wesleytop = "characters/wesleytop.png"
 image wesleybottom = "characters/wesleybottom.png"
 image wesley = "characters/wesley.png"
+image wesley sil_black = "sil_black:characters/wesley.png"
 image wesley flipped = "flip:characters/wesley.png"
 image worker_1 = "characters/worker_corn.png"
 image worker_2 = "characters/worker_blank.png"
@@ -939,6 +945,7 @@ image worker_7 = "characters/worker_chicken.png"
 
 # Copguy & Co.
 image copguy = "characters/copguy.png"
+image copguy sil_black = "sil_black:characters/copguy.png"
 image copguy flipped = "flip:characters/copguy.png"
 image copguy dark = "dark:characters/copguy.png"
 image copguy dark flipped = "dark:flip:characters/copguy.png"
@@ -958,6 +965,7 @@ image copguyexe flipped = "flip:characters/copguyexe.png"
 
 # CSB I
 image michael = "flip:characters/michael.png"
+image michael sil_black = "sil_black:flip:characters/michael.png"
 image phil = "characters/phil.png"
 image carguy = "characters/carguy.png"
 image carguy flipped = "flip:characters/carguy.png"
@@ -965,8 +973,10 @@ image doug = "characters/doug.png"
 
 # LMG & The Fanboys
 image linus = "characters/linus.png"
+image linus sil_black = "sil_black:characters/linus.png"
 image linus flipped = "flip:characters/linus.png"
 image luke = "characters/luke.png"
+image luke sil_black = "sil_black:characters/luke.png"
 image luke flipped = "flip:characters/luke.png"
 image taran = "characters/taran.png"
 image taran flipped = "flip:characters/taran.png"
@@ -977,6 +987,7 @@ image afanboy = "characters/amdfanboy.png"
 
 # Billy Mays
 image billy = "characters/billy.png"
+image billy sil_black = "sil_black:characters/billy.png"
 image billy car = "characters/billy/billy_car.png"
 image billy car happy = "characters/billy/billy_car_happy.png"
 image billy car turn = "characters/billy/billy_car_turn.png"
@@ -991,18 +1002,21 @@ image cultist_3 = "characters/cultist2.png"
 
 # Digi
 image digi = "characters/digi.png"
+image digi sil_black = "sil_black:characters/digi.png"
 image digi dark = "dark:characters/digi.png"
 image digi flipped = "flip:characters/digi.png"
 image digi dark flipped = "dark:flip:characters/digi.png"
 
 # Aria
 image aria = "characters/aria.png"
+image aria sil_black = "sil_black:characters/aria.png"
 image aria flipped = "flip:characters/aria.png"
 image aria dark = "dark:characters/aria.png"
 image aria dark flipped = "dark:flip:characters/aria.png"
 
 # Nova
 image nova = "characters/nova.png"
+image nova sil_black = "sil_black:characters/nova.png"
 image nova dark = "dark:characters/nova.png"
 image nova flipped = "flip:characters/nova.png"
 image nova dark flipped = "dark:flip:characters/nova.png"
@@ -1010,21 +1024,27 @@ image nova discord = "characters/nova_discord.png"
 
 # Mika
 image grace = "characters/grace.png"
+image grace sil_black = "sil_black:characters/grace.png"
 image grace flipped = "flip:characters/grace.png"
 image anne = "characters/anne.png"
+image anne sil_black = "sil_black:characters/anne.png"
 image anne flipped = "flip:characters/anne.png"
 image elizabeth = "characters/eliza.png"
+image elizabeth sil_black = "sil_black:characters/eliza.png"
 image elizabeth flipped = "flip:characters/eliza.png"
 image mika = "characters/mika.png"
 image mika dark = "dark:characters/mika.png"
 
 # More of our friends!
 image kitty = "characters/kitty.png"
+image kitty sil_black = "sil_black:characters/kitty.png"
 image kitty flipped = "flip:characters/kitty.png"
 image blank = "characters/blank.png"
+image blank sil_black = "sil_black:characters/blank.png"
 image blank flipped = "flip:characters/blank.png"
 image midge = "characters/midge.png"
 image db = "characters/db.png"
+image db sil_black = "sil_black:characters/db.png"
 image db_cooper = "characters/db_coopergame.png"
 image ges = "characters/ges.png"
 
@@ -1032,6 +1052,7 @@ image ges = "characters/ges.png"
 image cashier = "characters/cashier.png"
 image scott = "characters/scott.png"
 image obama = "characters/obama.png"
+image obama sil_black = "sil_black:characters/obama.png"
 image discord = "characters/discord.png"
 image border_guard = "characters/border_guard.png"
 image border_guard dusk = "dusk:characters/border_guard.png"
@@ -1500,6 +1521,7 @@ image cs_living = "bg/cs_living.png"
 image cs_living2 = "bg/cs_living2.png"
 image cs_living_off = "bg/cs_living_off.png"
 image cs_living2_off = "bg/cs_living_off.png"
+image breakerbox = "bg/breakerbox.png"
 
 # CS wacky Kuwait Adventures: Mika Edition (Deluxe Content [With Funky Kong {And Dante from Devil may Cry}])
 image kuwait_lieutenant_snow = "characters/kuwait_lieutenant_snow.png"
@@ -2287,6 +2309,7 @@ define audio.tmwstw = "tmwstw.ogg"
 # CSBIII DX Holiday Special Music
 define audio.lets_hear_winter = "lets_hear_my_christ.ogg"
 define audio.winters_halloween = "winters_halloween.ogg"
+define audio.synchronicity = "synchronicity.ogg"
 
 # CSBIII DX After-True Music
 define audio.lets_hear_spring = "letshearspring.ogg"

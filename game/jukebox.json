@@ -1116,6 +1116,14 @@
             "album_art": "hw_hack.png",
             "trivia": "From the {i}Earthbound Halloween Hack{/i}."
         },
+        "synchronicity" : {
+            "file": "synchronicity.ogg",
+            "title": "Synchronicity",
+            "artist": "Toby Fox",
+            "tags": ["CSBIII DX: Holiday Special", "New In DX"],
+            "album_art": "hw_hack.png",
+            "trivia": "From the {i}Earthbound Halloween Hack{/i}."
+        },
         "funvalueland" : {
             "file": "funvalueland.ogg",
             "title": "SPOT.FASSIMRD",
