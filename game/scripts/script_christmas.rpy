@@ -853,6 +853,9 @@ label dx_christmas_intro:
     show aria at mid_mid_left behind anno
     show digi at center
     show tate flipped at mid_right
+    with dissolve
+    play music bedroom_day if_changed
+    music bedroom_day
     cs "Well, it looks like everyone is here, right?"
     anno "DB isn't here yet, but other than that, yeah."
     show tate sheepish flipped
@@ -974,14 +977,18 @@ label dx_christmas_intro:
     show grace at mid_mid_right
     with moveinright
     eliza "Hey, what's up."
+    show cs worried
     grace "CS! You're that YTP guy!"
+    show cs disappointed
     cs "Uhm... who are you three?"
     eliza "Well, do you know Mika at all?"
+    show cs angry
     cs "I swear to God, are you guys like, memories or some shit as well?"
     eliza "Relax, no, we are just..."
     eliza "Just think of us as them I guess yeah."
     cs "You guys are so complicated."
     arceus "I mean, it wasn't too hard for me to figure out, funny enough."
+    show cs disappointed
     n "CS sighs."
     cs "I guess not, I'm just stressed out a bit."
     cs "I just really want this party to go well, and I feel like at this point I don't know half the people here."
@@ -989,11 +996,18 @@ label dx_christmas_intro:
     eliza "I mean, if you want us to, we can step outside for a bit."
     cs "No, no, it's okay."
     cs "I hope you guys have fun, I'm gonna go back to the party."
+    hide cs with moveoutright
     #Banter
 label dx_christmas_banter:
     scene black with dissolve
-    n "While the party starts up, copguy and the sheriff get into a predicament."
-    scene cs_living2 with dissolve
+    n "While the party starts up, Copguy and the sheriff get into a predicament."
+    scene cs_living2
+    show wesley at right
+    show rich at mid_right
+    show db at center
+    show copguy at mid_right
+    show sheriff flipped at mid_left
+    with dissolve
     sheriff "Hey Copguy!"
     copguy "I know, this party is great, right?"
     sheriff "No, I need to take a shit!"
@@ -1002,12 +1016,28 @@ label dx_christmas_banter:
     sheriff "My legs don't work, remember?"
     copguy "Dammit, this sucks."
     copguy "Alright, let's go."
+    show copguy at left with move
+    show copguy flipped with determination
+    pause 0.5
+    hide copguy
+    hide sheriff
+    with moveoutright
     scene cs_bathroom with dissolve
+    show copguy flipped at left
+    show sheriff flipped at mid_left
+    with moveinleft
+    pause 1.0
+    show copguy flipped at center with move
     n "Copguy jiggles the bathroom door."
     tate "Occupied!"
+    show copguy
     copguy "Sorry sir, we gotta wait."
     sheriff "This is the police! Open up!"
-    scene cs_bathroom_open with dissolve
+    scene cs_bathroom_open
+    show sheriff flipped at mid_left
+    show copguy
+    show tate cry
+    hide tate with easeoutright
     tate "Awawawawa!!!"
     copguy "Really?"
     sheriff "What? I really have to go!"
@@ -1015,10 +1045,23 @@ label dx_christmas_banter:
     sheriff "What do you mean? You have to wait here with me!"
     sheriff "I can't get off and on the toilet myself!"
     copguy "I think this is the worst crime I've dealt with."
-    scene cs_bathroom with dissolve
+    show copguy at left behind sheriff with move
+    show copguy flipped with determination
+    pause 1.0
+    show copguy flipped at mid_mid_left
+    show sheriff flipped at center
+    with move
+    hide copguy
+    hide sheriff
+    with dissolve
+    scene cs_bathroom
     copguy "Alright, but you better hurry! I don't wanna be in here all day!"
     scene cs_kitchen
     show cs_kitchen_fg
+    show obama at center behind cs_kitchen_fg
+    show ed at mid_right behind cs_kitchen_fg
+    show michael at mid_mid_right behind cs_kitchen_fg
+    show billy at right behind cs_kitchen_fg
     with dissolve
     k17 "So Obama, how have you stayed President?"
     k17 "Aren't you on your what, like fourth term?"
@@ -1029,37 +1072,54 @@ label dx_christmas_banter:
     else:
         obama "Well, you see, we managed to somehow exhaust the list of succession back in 2018, and the house voted me back in."
         k17 "Huh, I see. That's pretty crazy."
-    scene cs_living with dissolve
+    scene cs_living
+    show digi flipped at left
+    show linus at mid_left behind digi
+    show luke at mid_left_left behind linus
+    show cs disappointed flipped at right
+    with dissolve
     cs "Is this projector still not set up?"
     digi "No! The projector keeps giving me this really weird error!"
     linus"Not even I've seen this!"
     digi "Watch, I'll turn it on, and..."
-    scene cs_living2 with dissolve
     rich "Hey, nice movie!"
     wesley "Looks like you'll have to set that up all over again."
     db "I got here early for this?"
     ed "Hey guys, what movie are we watching?"
     wesley "Nothing until these bozos fix the projector!"
     luke "Okay hold on, I got an idea."
-    scene cs_living with dissolve
     luke "Everyone step away from the projector."
+    show digi flipped at center
+    show linus at mid_right
+    with move
+    show digi with determination
     n "After a little bit of tech magic, the projector comes to life."
     luke "Tah dah!"
     rich "Finally, we can watch something."
     wesley "Are you 100-percent satisfied, Richard?"
     rich "Only about 80-percent."
-    scene cs_foyer with dissolve
+    scene cs_foyer
+    show aria at mid_mid_left behind anno
+    show tate flipped at mid_right
+    show mean human at mid_offscreen_right
+    with dissolve
     k17 "So, there's a new world trade center now?"
     k22 "What do you mean? They finished that in like 2014!"
     k17 "Oh. Sorry I forgot about that."
     k17 "Okay, so, if big guy over there is DigBick..."
+    show mean human angry
+    show tate sheepish flipped
     mean "I'm not DigBick!"
     k17 "Are you DigBick's... girlfriend?"
+    show tate sheepish blush flipped
     tate "What?"
     mean "No, first of all, I'm not fucking DigBick."
     mean "I'm Mean, and this is Tate. We are friends."
+    show tate smug flipped
     tate "...Yeah."
+    show tate flipped
     k17 "Yeah, you sound mean. What about you?"
+    show mean human annoyed
     aria "Me? I'm Aria."
     k17 "Who?"
     k22 "Uhh, well..."
@@ -1076,6 +1136,9 @@ label dx_christmas_banter:
     copguy "Gladly! Give me a second and I'll be in my car."
     copguy "Sorry boss, as much as I would love to keep helping you, this is important."
     scene cs_bathroom_open
+    show sheriff
+    show copguy flipped
+    hide copguy with easeoutright
     sheriff "Wait! You can't just leave me here!"
     copguy "I'll just be a moment! Don't move."
     scene cs_bathroom
@@ -1098,13 +1161,17 @@ label dx_christmas_banter:
     k22 "Dammit, it was worth a try."
     k22 "I wonder how Addy is doing anyways."
     n "K-22 hits up Addy."
-    show archival_5 at mid_offscreen_right with moveinright
+    show archival_5 at mid_offscreen_right
+    show pakoo disappointed at mid_right
+    with moveinright
     addy "HELLO??"
     k22 "Hey, uhh, how is it going over there?"
     addy "WHAT? I CAN'T HEAR, THE MUSIC IS REALLY LOUD!"
     k22 "I WAS ASKING IF--{w=1.0}{nw}"
     addy "YEAH I'LL CALL YOU LATER, HAVE FUN AT CS' PARTY!"
-    hide archival_5 with moveoutright
+    hide archival_5
+    hide pakoo
+    with moveoutright
     k22 "Mother fucker!"
     n "All of a sudden, the wind starts to pick up and snow begins to fall."
     k22 "Brr... I should probably just get back inside and enjoy the party..."
@@ -1114,55 +1181,81 @@ label dx_christmas_banter:
     sheriff "Hey you! Can you help me out of here?"
     k17 "Uhh... Uhh..."
     k17 "I'll go get someone!"
-    scene cs_living2 with dissolve
+    scene cs_living2 
+    show wesley at right
+    show rich at mid_right
+    show db at center
+    show cs at left
+    with dissolve
     rich "Oh man, I love this part."
     k17 "Hey guys, how do I put this..."
     k17 "The sheriff is stuck in the bathroom?"
+    show cs disappointed
     cs "Dammit, one second."
     obama "CS! Are you there?"
+    show cs
     cs "Okay, lemme do this first. The president is calling!"
+    hide cs with moveoutright
     #Cooking
 label dx_christmas_cooking:
     scene cs_kitchen
     show cs_kitchen_fg
+    show obama at mid_right behind cs_kitchen_fg
+    show michael at mid_offscreen_left behind cs_kitchen_fg
+    show billy at left behind cs_kitchen_fg
     with dissolve
+    show cs at center behind cs_kitchen_fg with moveinleft
     cs "Hey Mr. President, what do you need?"
     obama "You can just call me Obama."
     obama "Second of all, I accidently cut myself while chopping these carrots."
     obama "What a fool I am."
+    show cs disappointed
     cs "Oh my god, are you okay?"
     obama "Yes, I'm fine, but I need someone to keep cutting for me."
     obama "Can you do it for me?"
+    show cs
     cs "I guess I can, yeah."
     obama "Great, I just need a few more carrots cut up."
     obama "Give me a moment. I need a Band-Aid."
+    hide obama with moveoutleft
+    show cs at mid_right with move
     cs "Alright, just a few carrots."
     cs "Let's do this."
     #Carrot Karate Chop Minigame
     scene cs_kitchen
     show cs_kitchen_fg
+    show obama at center behind cs_kitchen_fg
+    show michael at mid_offscreen_left behind cs_kitchen_fg
+    show billy at left behind cs_kitchen_fg
+    show cs flipped at mid_right behind cs_kitchen_fg  
     with dissolve
     show smoke
     obama "Well would you look at that!"
     obama "That was some mighty fine chopping, CS!"
+    show cs happy flipped
     cs "Woohoo!"
     cs "Thank you! Maybe I should cook more."
+    show cs flipped
     cs "Speaking of cooking, I can smell something, burning..."
     obama "It is perhaps the smoke bellowing from the oven?"
+    show cs worried flipped
     n "All of a sudden, the smoke detectors start beeping!"
     digi "Ahh! Turn it off!"
     nova "Dammit Blank! I said we weren't playing your music!"
     aria "Honestly this is kind of a bop. Keep it going."
+    show ed flipped at center behind cs_kitchen_fg with easeinleft
     ed "Nooooo!"
     ed "My turkey!"
     show bigsmoke with dissolve
     n "Ed opens up the oven, only to have even more smoke pour out."
-    "CS, Ed, and Obama" "{i}Coughing{/i}"
+    n "Everyone hacks and coughs as smoke fills the room."
     hide bigsmoke with dissolve
     n "When the smoke finally clears, Ed pulls out a blackened turkey."
     hide smoke with dissolve
+    show cs flipped
     ed "Dammit! My roast is ruined!"
     billy "Not to fear, Ed! I made my famous restaurant mini-burgers!"
+    show ed
     ed "You mean, steamed hams?"
     billy "Who the actual fuck calls burgers, steamed hams?"
     ed "It's a regional dialect?"
@@ -1171,10 +1264,14 @@ label dx_christmas_cooking:
     billy "You Texans are crazy."
     michael "I also have my mashed potatoes!"
     cs "Well, at least we still have somewhat of a Christmas dinner."
+    hide ed with moveoutleft
     n "Ed sheepishly walks back into the living room after throwing away the turkey."
     cs "Obama, finish baking your cake, and we can start eating."
     cs "I'm gonna go check up on everyone while you do that."
-    scene cs_bathroom with dissolve
+    hide cs with moveoutleft
+    scene cs_bathroom
+    show grace at mid_left
+    with dissolve
     sheriff "...and I had to take that job that left me the way I am."
     sheriff "I could've went to college, studied the paranormal..."
     sheriff "...started up a shower curtain business, run a newspaper business..."
@@ -1185,10 +1282,15 @@ label dx_christmas_cooking:
     sheriff "Find another bathoom."
     grace "But this is the only one in the house!"
     sheriff "In this mansion? There is only one damn bathroom?"
+    show copguy flipped at center with moveinleft
     copguy "Hey, sorry, excuse me."
     scene cs_bathroom_open
+    show grace at mid_left
+    show copguy flipped at center
+    show sheriff at center behind copguy
     pause 1.0
     scene cs_bathroom
+    show grace at mid_left
     copguy "Hey boss! You won't believe what I just experienced."
     copguy "This kid caught two burglars trying to rob his house with homemade traps!"
     copguy "It was so impressive, I probably would've fallen for some of them!"
@@ -1196,6 +1298,14 @@ label dx_christmas_cooking:
     sheriff "I've been thinking of signing my will here because of how long it's been!"
     copguy "Alright, let's get you out of here old man."
     scene cs_bathroom_open
+    show grace at mid_left
+    with determination
+    show copguy at mid_right
+    show sheriff at center behind copguy
+    pause 1.0
+    hide copguy
+    hide sheriff
+    with moveoutleft
     grace "Finally!"
     grace "Guys, the sheriff is out!"
     n "A line starts to form next to the bathroom."
@@ -1214,38 +1324,51 @@ label dx_christmas_dinner:
 
     #Gift Exchange
 label dx_christmas_exchange:
-    scene cs_living2 with dissolve
+    scene cs_living
+    show cs at center
+    with dissolve
     cs "Alright everyone! It's time for the gift exchange!"
     cs "Everyone brought a gift, right?"
     n "Everyone nods."
     cs "Alright, well I marked numbers for everyone who showed up, so I'll go around while you guys draw from the bag!"
+    hide cs with moveoutright
     n "CS goes around, and everyone draws out of the bag."
     cs "Let's see, who is going first?"
     #roll 1
     cs "Would you look at that! I guess I'm going first!"
+    show cs at mid_left with moveinleft
     cs "I'm gonna pick, this one!"
     cs "I got..."
+    show cs disappointed
     cs "Thigh highs?"
+    show cs
     arceus "Look at that, you got my gift, CS!"
     cs "Well, I guess I have more now!"
     k17 "You wear thigh highs?"
     cs "Yeah, I'm wearing them right now! See?"
     digi "Oh shit, I guess I never looked down to check."
     aria "I just assumed because of the outfit."
+    hide cs with moveoutright
     arceus "Welp, it looks like I'm next."
+    show arceus flipped at mid_left with moveinleft
     arceus "I got..."
     arceus "Tea and crumpets?"
     kitty "Arcie! You got my gift!"
+    show arceus worried flipped
     arceus "Sorry! I honestly forgot which one was yours."
     kitty "You saw me carry it in!"
+    hide arceus with moveoutright   
     kitty "Whatever, it's my turn now."
+    show kitty at mid_left with moveinleft
     kitty "Looks like I got..."
     kitty "A... guitar hero controller?"
     cs "Holy shit, that's a Riffmaster!"
     kitty "Is that good?"
     cs "It's just a really good guitar controller."
     anno "That was my gift!"
+    hide kitty with moveoutright   
     anno "It looks like I'm up next."
+    show anno at mid_left with moveinleft
     anno "I got..."
     anno "What the hell is this?"
     arceus "Ooh! That's a raspberry pi!"
@@ -1253,58 +1376,87 @@ label dx_christmas_exchange:
     digi "No-- okay it's my gift, so let me explain."
     digi "It's just a small computer that can run python."
     anno "Oh. Cool I guess."
+    hide anno with moveoutright
+    show digi flipped at mid_left with moveinleft
     digi "Well it's my turn now, and I'm gonna steal that Riffmaster!"
+    show kitty flipped at mid_right with moveinright
+    pause 2.0
+    hide digi with moveoutright
     kitty "Damn."
     kitty "Well, what do I do now?"
     cs "You can steal another gift, or pick out another one."
+    hide kitty with moveoutleft
     arceus "Psst! Kitty! Come here!"
     n "Arceus whispers something into their ear."
+    show kitty at mid_left with moveinleft
     kitty "Alright, Anno, hand over your computer thing."
+    show anno at mid_right with moveinright
+    pause 2.0
+    hide kitty with moveoutright   
     anno "Welp, next gift I guess."
+    show anno at mid_left with move
     anno "I guess I'll pick this one."
     anno "I wonder what it'll be?"
     anno "A Lego set!"
     mean "A TRAIN Lego set!"
     mean "That's my gift, by the way."
+    hide anno with moveoutright
     mean "Alright, well I guess it's my turn."
+    show mean human flipped at mid_left with moveinleft
     mean "I'm picking this big one!"
     mean "An instant pot?"
     tate "Mean, you got my gift!"
+    show mean human happy flipped
     mean "Well it's mine now, bitch!"
     mean "Who's next?"
+    hide mean with moveoutright
     tate "It's me!"
+    show tate at mid_left with moveinleft    
     tate "Let's see..."
+    show tate smug
     tate "Billy? Is this yours?"
     billy "It's the Handy Switch!"
     billy "It let's you control any power source, from anywhere!"
     tate "I'm sure I can find a use for this."
+    hide tate with moveoutright
     billy "Alright, it's my turn!"
+    show billy at mid_left with moveinleft   
     billy "Wow! Is this the Declaration of Independence?"
     obama "Yep! It's the real deal!"
     obama "Figured I didn't need it no more, so it's yours now!"
     billy "Great! I can probably pitch this!"
+    hide billy with moveoutright
     obama "Welp, I guess it's my turn now."
+    show obama at mid_left with moveinleft  
     obama "Metal Gear Solid?"
     copguy "Yeah, that's mine, I didn't know what anyone really wants, so I just found this at the station."
     obama "Dude, this is like my favorite game. I appreciate it."
     copguy "I'm glad."
+    hide obama with moveoutright
     copguy "It's my turn now."
+    show copguy flipped at mid_left with moveinleft 
     copguy "Okay, so I got \"Gravity Falls Season 2 Director's Cut\"..."
     copguy "...and boss? Is this your gun?"
     sheriff "Yeah, you got my gift. Don't ask how that DVD got in there."
+    hide copguy with moveoutright
     sheriff "Because I don't know either."
+    show sheriff flipped at mid_left with moveinleft 
     sheriff "Whatever, it's my turn to pick a gift."
     sheriff "Damn, this is heavy! What the hell is this?"
     sheriff "A bag of cement?"
     ed "We had some leftover from the last house we worked on."
     sheriff "Great, I can drop this on Copguy's head for leaving me in the bathroom!"
+    hide sheriff with moveoutright
     ed "I guess it's my go."
+    show ed flipped at mid_left with moveinleft 
     ed "What the hell? Who brought ice cream? It's all melted!"
     #Audio clip of Richard laughing
     play sound sfx_richlaugh
     pause 3.0
     ed "Dammit Richard! I don't want this!"
+    hide ed with moveoutright
     rich "Well let's see what I get."
+    show rich flipped at mid_left with moveinleft 
     rich "Pain pills?"
     wesley "Wait a minute! Those are mine!"
     wesley "I didn't mean to gift that..."
