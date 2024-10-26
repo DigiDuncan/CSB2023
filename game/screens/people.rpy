@@ -28,6 +28,48 @@ screen people():
 
 screen people_nav():
     add Color('#323e42', alpha=0.75)
+    
+    # sorting modes
+    # 0 = default, sort by order encountered (well... roughly... this should be looked at later.)
+    # 1 = sort by character name, NOT by json name
+    # maybe future sort modes will be added, but, not now.
+
+    if current_bios_sorting_mode == 0:
+        $ sort_mode = persistent.seen
+        $ sort_text = "Sort By: Default"
+    elif current_bios_sorting_mode == 1:
+        $ sort_mode = sorted(persistent.seen, key=lambda character: name_map[character]["full_name"].upper())
+        $ sort_text = "Sort By: Name"
+
+    frame:
+        background None
+        xsize 500 ysize 50
+        xpos 25 ypos 75
+
+        imagebutton:
+            xalign 0.0 yalign 0.5
+            xysize 64, 64
+
+            idle "/gui/left_off_small.png"
+            hover "/gui/left_on_small.png"
+
+            if current_bios_sorting_mode-1>=0:
+                action SetVariable("current_bios_sorting_mode", current_bios_sorting_mode-1)
+        
+        imagebutton:
+            xalign 1.0 yalign 0.5
+            xysize 64, 64
+
+            idle "/gui/right_off_small.png"
+            hover "/gui/right_on_small.png"
+
+            if current_bios_sorting_mode+1<2:
+                action SetVariable("current_bios_sorting_mode", current_bios_sorting_mode+1)
+
+        text sort_text:
+            xalign 0.5 yalign 0.5
+            text_align 0.5
+
     viewport:
         xpos 25 ypos 150
         xsize 500 ysize 700
@@ -39,20 +81,19 @@ screen people_nav():
         vbox:
             spacing 10
             xoffset 350
-            for k in name_map:
-                if k in persistent.seen:
-                    python:
-                        # DX character handler
-                        # please rewrite this better if you can? - tate
-                        try:
-                            if name_map[k]['dx'] == True:
-                                name_label = "{image=unread.png}{image=gui/dx_text.png} " + name_map[k]['full_name'] if k not in persistent.read else "{image=gui/dx_text.png} " + name_map[k]['full_name']
-                        except:
-                            name_label = "{image=unread.png}" + name_map[k]['full_name'] if k not in persistent.read else name_map[k]['full_name']
-                    if k == "iris":
-                        textbutton name_label action Function(mark_read, k), SetScreenVariable("current_person", k), ShowMenu("fake_error", "people.rpy", 126, "`bios/iris.txt` could not be rendered as a Text object.", "Hi, I'm Iris, a cosmic being with interest in the happenings of this reality, as well as some of the people involved in this story.\nDoes that sound too formal? I don't know. Hey, Digi, writing this shit's hard. You can fill in the rest from here.", _transition = determination)
-                    else:
-                        textbutton name_label action Function(mark_read, k), SetScreenVariable("current_person", k)
+
+            for k in sort_mode:
+                python:
+                    # DX character handler
+                    try:
+                        if name_map[k]['dx'] == True:
+                            name_label = "{image=unread.png}{image=gui/dx_text.png} " + name_map[k]['full_name'] if k not in persistent.read else "{image=gui/dx_text.png} " + name_map[k]['full_name']
+                    except:
+                        name_label = "{image=unread.png}" + name_map[k]['full_name'] if k not in persistent.read else name_map[k]['full_name']
+                if k == "iris":
+                    textbutton name_label action Function(mark_read, k), SetScreenVariable("current_person", k), ShowMenu("fake_error", "people.rpy", 126, "`bios/iris.txt` could not be rendered as a Text object.", "Hi, I'm Iris, a cosmic being with interest in the happenings of this reality, as well as some of the people involved in this story.\nDoes that sound too formal? I don't know. Hey, Digi, writing this shit's hard. You can fill in the rest from here.", _transition = determination)
+                else:
+                    textbutton name_label action Function(mark_read, k), SetScreenVariable("current_person", k)
 
     textbutton "Return to Extras" action ShowMenu("category_welcome") yoffset 950 xoffset 25
     textbutton "Main Menu" action Return() yoffset 1000 xoffset 25
