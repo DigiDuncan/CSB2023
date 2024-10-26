@@ -31,6 +31,8 @@ layeredimage tate_comp:
             "/characters/tate/composite_test/face_happy.png"
         attribute sad:
             "/characters/tate/composite_test/face_sad.png"
+        attribute cry:
+            "/characters/tate/composite_test/face_cry.png"
         attribute sheepish:
             "/characters/tate/composite_test/face_sheepish.png"
         attribute shock:
@@ -44,7 +46,7 @@ layeredimage tate_comp:
         attribute furious:
             "/characters/tate/composite_test/face_furious.png"
 
-    group crying:
+    group tearful:
         attribute default:
             null
         attribute tears:
@@ -78,20 +80,20 @@ init python:
     def awawa():
         outfits = renpy.random.choice(["casual", "festive"])
         blushing = renpy.random.choice(["-blush", "blush"])
-        faces = renpy.random.choice(["happy", "sad", "sheepish", "shock", "serious", "smug", "stare"])
-        crying = renpy.random.choice(["-tears", "tears"])
+        faces = renpy.random.choice(["happy", "sad", "cry", "sheepish", "shock", "serious", "smug", "stare"])
+        tearful = renpy.random.choice(["-tears", "tears"])
         gloomy = renpy.random.choice(["-gloom", "gloom"])
         shaders = renpy.random.choice(["", "dusk", "dark", "sil_white", "sil_black"])
         flipper = renpy.random.choice([" -flipped", " flipped"])
 
-        compiled_sprite = "tate_comp " + outfits + " " + blushing + " " + faces + " " + crying + " " + gloomy + " " + shaders + flipper
+        compiled_sprite = "tate_comp " + outfits + " " + blushing + " " + faces + " " + tearful + " " + gloomy + " " + shaders + flipper
         print(compiled_sprite)
         return compiled_sprite        
         
 
 label awawa_tate_composite_test:
 
-    scene black
+    scene roombacks
     stop music
 
     tate "Awawa!"
@@ -100,8 +102,10 @@ label awawa_tate_composite_test:
     "Default"
     show tate_comp sad
     "Sad"
-    show tate_comp sad tears
-    "Sad + tears"
+    show tate_comp cry
+    "Cry"
+    show tate_comp cry tears
+    "Cry + tears"
     show tate_comp sheepish -tears
     "Sheepish, force-remove tears"
     show tate_comp sheepish blush
@@ -121,8 +125,8 @@ label awawa_tate_composite_test:
     "Festive! But the happy face has to be forced..."
     show tate_comp sad festive
     "Sad Festive"
-    show tate_comp sad tears festive
-    "Sad + tears + Festive"
+    show tate_comp cry tears festive
+    "Cry + tears + Festive"
     show tate_comp sheepish festive -tears
     "Sheepish + Festive, force-remove tears"
     show tate_comp sheepish blush festive
