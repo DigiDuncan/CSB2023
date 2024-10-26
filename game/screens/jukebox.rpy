@@ -18,8 +18,7 @@ init python:
     for n in persistent.heard:
         if n not in music_map:
             print(f"WARNING: Track '{n}' not in music_map!")
-
-
+    
 screen jukebox():
 
     default current_song_name = None
@@ -33,7 +32,6 @@ screen jukebox():
         use music_screen(current_song_name)
 
 
-
 screen jukebox_nav():
 
     add Color('#323e42', alpha=0.75)
@@ -42,8 +40,6 @@ screen jukebox_nav():
 
     frame:
         background None
-
-        # TODO: don't display the given tag if you haven't actually seen ANYTHING in a given route yet. we don't like spoilers
 
         frame:
             background None
@@ -70,7 +66,23 @@ screen jukebox_nav():
                 if current_jukebox_tag_index+1<len(tags_map):
                     action SetVariable("current_jukebox_tag_index", current_jukebox_tag_index+1)
 
-            text tags_map[current_jukebox_tag_index]:
+            # since we can't exactly do anything about the index problem let's just hide unseen tags. want to use obfuscator() later but it's not ready yet.
+
+            $ found_match = False
+            $ tags_label_text = tags_map[current_jukebox_tag_index]
+
+            for song in persistent.heard:
+                if tags_map[current_jukebox_tag_index] in music_map[song]["tags"]:
+                    $ print("yes " + song)
+                    $ found_match = True
+                    break
+
+            if found_match or tags_map[current_jukebox_tag_index] == "All":
+                $ tags_label_text = tags_map[current_jukebox_tag_index]
+            else:
+                $ tags_label_text = "(Locked)"
+
+            text tags_label_text:
                 xalign 0.5 yalign 0.5
                 text_align 0.5
 

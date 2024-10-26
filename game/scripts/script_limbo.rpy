@@ -1,4 +1,5 @@
 # TODO: NOTE TO TATE - DON'T TOUCH THESE VALUES, THESE ARE CS'S VALUES
+# TODO: although, whoever is managing these? please update the persistent to use new formatting
 
 screen dx_select():
     
