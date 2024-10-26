@@ -394,7 +394,7 @@ screen rockstar_check:
 
 label csdata:
     scene black
-    show screen rockstar_check
+    # show screen rockstar_check
     $ persistent.seen.add("michael")
     $ persistent.seen.add("luke")
     $ persistent.seen.add("arceus")
@@ -454,7 +454,7 @@ label csdata:
     $ persistent.seen.add("blank")
     $ persistent.seen.add("howie")
     $ persistent.seen.add("ges")
-    n "Added Characters..."
+    n "Added Characters...{nw}"
     $ persistent.heard.add("Thousand March - Mr. Sauceman")
     $ persistent.heard.add("Alfred Hitchcock Intro Theme - Charles Gounod")
     $ persistent.heard.add("Billy Mays Gangsta Remix - mastamokei")
@@ -557,7 +557,7 @@ label csdata:
     $ persistent.true_ending = True
     $ persistent.creative_mode = False
     $ persistent.seen_splash = False
-    $ persistent.first_timee = False
+    $ persistent.first_time = False
     $ persistent.csb2_unlocked = True
     $ persistent.csb3a_unlocked = True
     $ persistent.csb3b_unlocked = True
@@ -586,7 +586,7 @@ label csdata:
     $ achievement_manager.unlock("ZUP!")
     $ achievement_manager.unlock("Archived")
     $ achievement_manager.unlock("Pacifist")
-    $ achievement_manager.unlock("Welcome to CSBIII, Mother Fucker")
+    $ achievement_manager.unlock("Welcome to CSBIII, Motherfucker")
     $ achievement_manager.unlock("Pencilovania")
     $ achievement_manager.unlock("Overcaffeinated")
     $ achievement_manager.unlock("That's All, Folks!")

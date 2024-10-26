@@ -33,10 +33,6 @@ init python:
     renpy.add_layer("popup", above = "overlay")
     renpy.add_layer("fun_icon", above = "master")
 
-# WARN:
-# For some reason the linter thinks that persistent variables with underscores
-# are never initialized. It's lying to you; it's fine.
-
 define determination = Dissolve(0.0)
 default translate_this_line = ""
 default persistent.seen = set()
@@ -52,6 +48,7 @@ default persistent.seen_splash = False
 default persistent.first_time = True
 default persistent.woohoo = 0
 default persistent.controller_id = 0
+default persistent.true_ending = False
 
 # Achievement progress
 default persistent.max_pencil_score = 0
