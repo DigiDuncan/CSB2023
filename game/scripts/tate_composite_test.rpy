@@ -24,7 +24,7 @@ layeredimage tate_comp:
         attribute default:
             null
         attribute blush:
-            "/characters/tate/composite_test/blush.png"
+            "/characters/tate/composite_test/extra_blush.png"
 
     group face:
         attribute happy default:
@@ -41,21 +41,30 @@ layeredimage tate_comp:
             "/characters/tate/composite_test/face_smug.png"
         attribute stare:
             "/characters/tate/composite_test/face_stare.png"
+        attribute furious:
+            "/characters/tate/composite_test/face_furious.png"
 
     group crying:
         attribute default:
             null
         attribute tears:
-            "/characters/tate/composite_test/tears.png"
+            "/characters/tate/composite_test/extra_tears.png"
+
+    group gloomy:
+        attribute default:
+            null
+        attribute gloom:
+            "/characters/tate/composite_test/extra_gloom.png"
+            blend 'multiply'
 
 # shaders and flip sprite / other transforms must be defined like this, but they can then be used normally
 
 image tate_comp unflipped = LayeredImageProxy("tate_comp", Transform(xzoom = 1))
 
-image tate_comp dusk unflipped = LayeredImageProxy("tate_comp", Transform(matrixcolor = duskmatrix))
-image tate_comp dark unflipped = LayeredImageProxy("tate_comp", Transform(matrixcolor = darkmatrix))
-image tate_comp sil_white unflipped = LayeredImageProxy("tate_comp", Transform(matrixcolor = sil_white_matrix))
-image tate_comp sil_black unflipped = LayeredImageProxy("tate_comp", Transform(matrixcolor = sil_black_matrix))
+image tate_comp dusk  = LayeredImageProxy("tate_comp", Transform(matrixcolor = duskmatrix))
+image tate_comp dark = LayeredImageProxy("tate_comp", Transform(matrixcolor = darkmatrix))
+image tate_comp sil_white  = LayeredImageProxy("tate_comp", Transform(matrixcolor = sil_white_matrix))
+image tate_comp sil_black = LayeredImageProxy("tate_comp", Transform(matrixcolor = sil_black_matrix))
 
 image tate_comp flipped = LayeredImageProxy("tate_comp", Transform(xzoom = -1))
 
@@ -71,10 +80,11 @@ init python:
         blushing = renpy.random.choice(["-blush", "blush"])
         faces = renpy.random.choice(["happy", "sad", "sheepish", "shock", "serious", "smug", "stare"])
         crying = renpy.random.choice(["-tears", "tears"])
+        gloomy = renpy.random.choice(["-gloom", "gloom"])
         shaders = renpy.random.choice(["", "dusk", "dark", "sil_white", "sil_black"])
-        flipper = renpy.random.choice([" unflipped", " flipped"])
-    
-        compiled_sprite = "tate_comp " + outfits + " " + blushing + " " + faces + " " + crying + " " + shaders + flipper
+        flipper = renpy.random.choice([" -flipped", " flipped"])
+
+        compiled_sprite = "tate_comp " + outfits + " " + blushing + " " + faces + " " + crying + " " + gloomy + " " + shaders + flipper
         print(compiled_sprite)
         return compiled_sprite        
         
@@ -104,6 +114,8 @@ label awawa_tate_composite_test:
     "Smug"
     show tate_comp stare
     "Stare"
+    show tate_comp furious
+    "Furious!"
 
     show tate_comp happy festive
     "Festive! But the happy face has to be forced..."
@@ -123,8 +135,12 @@ label awawa_tate_composite_test:
     "Smug + Festive"
     show tate_comp stare festive
     "Stare + Festive"
+    show tate_comp furious festive
+    "Furious + Festive"
+    show tate_comp furious gloom festive
+    "One angy lil bah humbug (festive + furious + experimental \"gloom\" overlay)"
 
-    show tate_comp casual happy
+    show tate_comp casual happy -gloom
     "Back to normal!"
     tate "Shader test!"
 
@@ -138,7 +154,7 @@ label awawa_tate_composite_test:
     "White"
     show tate_comp sil_black
     "Black"
-    show tate_comp flipped
+    show tate_comp -sil_black flipped
     "Also, let's flip!"
     show tate_comp -flipped
     "Flip them back!"

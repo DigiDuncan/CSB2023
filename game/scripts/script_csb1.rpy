@@ -389,6 +389,10 @@ label csbi_room:
             show hoh_hq at mid_offscreen_right behind ed
             show ed phone at right
             with moveinright
+
+            # prevent dial tone overflow
+            stop sound
+
             ed "Hello, and thank you for calling Home Savers. This is Ed. How may I help you?"
             show cs worried phone
             cs "Hello, Ed! This is CS! My house feels like there is a rock on--{w=1.0}{nw}"
@@ -433,6 +437,10 @@ label csbi_room:
     n "CS dials 1-800-HoH-SiiS."
     play sound sfx_dial_hohsis
     pause 16
+    
+    # prevent dial tone overflow
+    stop sound
+
     hoh_operator "Hello, and thank you for calling Home Sa--{w=0.5}{nw}"
     cs "Hello? Can you give me the JoJ?"
     hoh_operator "Is this another prank caller on the line?"
@@ -643,6 +651,9 @@ label csbi_michael_house:
     n "CS pulls out his phone and calls Michael."
     play sound sfx_dial_rosen
     pause 12.5
+
+    # prevent dial tone overflow
+    stop sound
 
     show rosen_abode at mid_offscreen_right
     show michael at right

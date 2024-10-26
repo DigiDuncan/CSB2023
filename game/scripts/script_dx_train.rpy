@@ -1144,10 +1144,9 @@ label train_enter_sleeper:
     show cs scared
     cs "... Woah, Tate, why are you look--{w=0.25}{nw}"
     
-    # TODO: tate needs a FURIOUS sprite
     # TODO: bgm?
 
-    show tate srs flipped
+    show tate furious flipped
     tate "{cshake}{size=+36}IT WAS {i}YOU!!" with hpunch
     cs "Wha-- {i}huh?!"
     tate "CS, WHAT THE {i}FUCK?!"
@@ -1478,19 +1477,27 @@ label train_wakeup:
     tate "{cshake}{size=+24}C.{w=0.1}S. ONE HUNDRED AND EIGHTY{w=0.1}-EIGHT!!" with vpunch
 
     show arceus worried at mid_mid_right
-    show tate srs at left
+    show tate furious at left
     with moveinleft
+    play sound sfx_punch
+    with vpunch
 
     n "Tate stomps into the room, making a beeline for CS."
-    show tate srs at mid_mid_left with moveinleft
+    show tate furious at mid_mid_left with moveinleft
+    play sound sfx_punch
+    with vpunch
 
     if fun_value(FUN_VALUE_COMMON):
         tate "YOU HAD {cshake}{i}ONE{/i}{/bt} JOJ!" with vpunch
-        show tate srs at center with moveinleft
+        show tate furious at center with moveinleft
+        play sound sfx_punch
+        with vpunch
         tate "YOU'RE GONNA NEED A WHOLE LOT MORE THAN {cshake}{i}FOUNDATION\nREPAIR{/i}{/bt} AFTER {i}I'M{/i} DONE WITH YOU!" with vpunch
     else:
         tate "YOU HAD {cshake}{i}ONE{/i}{/bt} JOB!" with vpunch
-        show tate srs at center with moveinleft
+        show tate furious at center with moveinleft
+        play sound sfx_punch
+        with vpunch
         tate "IS IT REALLY {i}THAT{/i} HARD FOR YOU TO KEEP A SECRET?!" with vpunch
 
     cs "Tate, wait!"
@@ -1502,7 +1509,9 @@ label train_wakeup:
     stop music
 
     show tate shock
+    pause 0.5
     show cs worried flipped
+    pause 0.5
     n "Tate is caught off-guard by Arceus' comment."
     pause 1.0
     show tate srs at mid_mid_left with moveinright
@@ -1703,7 +1712,10 @@ label train_allow_staff:
     tate "Oh, come on. Do you {i}really{/i} trust that guy?"
     show cs disappointed flipped
     cs "Do we really have a choice? It's clear that they don't want you interfering."
-    tate "Sometimes {i}interfering{/i} is the only way things get {i}done!"
+    show tate furious
+    tate "Sometimes, {i}interfering{/i} {nw}" with vpunch
+    tate "Sometimes, {i}interfering{/i} {fast}is the only way things get {nw}"
+    tate "Sometimes, {i}interfering{/i} is the only way things get {fast}{i}done!" with vpunch
     show arceus angry
     arceus "Okay, I am {i}not{/i} about to spend the rest of this trip listening to you two bickering."
     arceus "Let's just let them do the investigation, and if we get it back, we get it back."
@@ -2028,6 +2040,7 @@ label train_search_tate:
     show lupin hat flipped at right with moveinleft
     pause 0.1
     play sound sfx_punch
+    show tate furious flipped
     show lupin hat flipped at left with MoveTransition(0.1)
     with vpunch
     n "Tate pushes the stubborn suitor away."
@@ -2054,7 +2067,7 @@ label train_search_tate:
     with hpunch
     with hpunch
     pause 2.0
-    lupin_offscreen "...and it appears that the {i}muscle{/i} of your crew is currently {i}unavailable."
+    lupin_offscreen "... and it appears that the {i}muscle{/i} of your crew is currently {i}unavailable."
     play sound sfx_poot
     with vpunch
     pause 1.0
@@ -2165,11 +2178,11 @@ label train_confront_lupin:
     tate "The one who's been bugging me since we left Cali?"
     show mean unamused flipped
     mean "Are you sure you aren't just saying that so the staff has an excuse to get rid of the guy?"
-    show tate shock
-    tate "No! I'm serious!"
+    show tate furious
+    tate "No! I'm serious!" with vpunch
     tate "He {i}also{/i} wears a red jacket!"
-    tate "He ran off with your hat before I could catch him!"
-    n "A familiar grumbling approaches the group."
+    tate "The fucker ran off with your hat before I could catch him!"
+    n "As the two continue to argue, a familiar grumbling approaches the group."
     
     show arceus angry at offscreenright with determination
 
@@ -2191,7 +2204,7 @@ label train_confront_lupin:
     mean "Mah fuckin' {i}food,{/i} too?!" with hpunch
     cs "... Why do {i}you{/i} seem so upset about it, Arc?"
     show arceus worried
-    arceus "Because he stole all the {i}alcohol,{/i} too!"
+    arceus "Because he {i}also{/i} stole all the {i}alcohol!"
     show mean worried
     mean "Jesus..."
     show mean angry flipped
@@ -3025,7 +3038,7 @@ label train_lupin_win:
         lupin "Wait, that's a {i}guy?!"
         show cs angry
         show arceus angry flipped
-        cs "Yes?!"
+        cs "{i}Yes?!" with vpunch
         cs "You know what? I think I've had enough of you!"
         show amtrak_conductor
         cs "Sir, may I see the bag for a moment? I know what to do!"
@@ -3048,7 +3061,7 @@ label train_lupin_win:
         show cs angry
         show tate srs
         show mean human angry
-        cs "Yes?!"
+        cs "{i}Yes?!" with vpunch
         lupin "As if today couldn't get any worse..."
         lupin "That gold was supposed to be {i}mine!"
         lupin "You two cleaned out the casino just before I showed up!"
@@ -3127,13 +3140,14 @@ label train_lupin_win:
     mean "All in a day's work, right?"
     show tate sheepish
     tate "But, what do we do, now?"
-    amtrak_conductor "Well, since he's all locked up nice and tight, I'll bring this guy back to my unit until we stop. It's {i}well{/i} past my bedtime, and I'd like to start winding down."
+    amtrak_conductor "Well, since he's all locked up nice and tight, I'll bring this guy back to my unit until we stop in Hutchinson."
+    amtrak_conductor "It's {i}well{/i} past my bedtime, and I'd like to start winding down."
     amtrak_conductor "Oh, yes. Mean?"
     show mean shocked human
     mean "Yes, sir?"
     amtrak_conductor "I'll admit, I wasn't so sure about your abilities at first, but..."
     amtrak_conductor "You've proven tonight that you really are the right man for the job."
-    amtrak_conductor "Let me go return these things to their rightful owners and get this criminal out of your hair."
+    amtrak_conductor "Let me return these things to their rightful owners and get this criminal out of your hair."
     show mean_hat:
         yzoom 1
         xzoom 1
@@ -3199,7 +3213,7 @@ label train_lupin_win:
     with move
     show mean human hat
     show cs flipped
-    pause 0.5
+    pause 1.0
     cs "Well, we did it!"
     show arceus happy flipped
     arceus "We sure did!"
@@ -3251,7 +3265,7 @@ label train_lupin_win:
     show tate shock flipped
     show cs worried flipped
     mean "Oh? Tate told you guys about HoH SiS?"
-    show tate srs flipped
+    show tate furious flipped
     tate "{i}Arc!" with hpunch
     arceus "Oh... uh..."
     show mean human shocked hat
@@ -3833,11 +3847,13 @@ label train_tate_ex_lose:
     jump train_completed
     
 label train_completed:
+    centered "The next morning..."
+
     if train_ending_money_returned == True:
         play music lo_fi_sunset if_changed
         music lo_fi_sunset
     
-        n "CS and Arceus wake up the next morning feeling completely refreshed."
+        n "CS and Arceus wake up feeling completely refreshed."
         
         scene 
         show car plains
@@ -3875,9 +3891,9 @@ label train_completed:
         music homely_yado_inn
         
         if fun_value(FUN_VALUE_MUSIC):
-            n "CS and Arceus wake up the next morning feeling rather groggy. They'd almost rather be staying at the Homely Yado Inn."
+            n "CS and Arceus wake up feeling rather groggy. They'd almost rather be staying at the Homely Yado Inn."
         else:
-            n "CS and Arceus wake up the next morning feeling rather groggy."
+            n "CS and Arceus wake up feeling rather groggy."
         
         scene 
         show car plains

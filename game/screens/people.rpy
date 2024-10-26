@@ -26,8 +26,6 @@ screen people():
     else:
         use person(current_person)
 
-
-
 screen people_nav():
     add Color('#323e42', alpha=0.75)
     viewport:
@@ -104,19 +102,23 @@ screen person(l):
             ysize 800
             vbox:
                 yfill False
-                spacing 100
-            # Handling the text
                 xsize 800
-                text "\"" + name_map[l]["quote"] + "\""
-                python:
-                    try:
-                        if "dx_bio" in name_map[l]:
-                            fetched = name_map[l]["bio"] + "\n\n{image=gui/dx_text.png} " + name_map[l]["dx_bio"]
-                        else:
-                            fetched = name_map[l]["bio"]
-                    except:
-                        fetched = "The bio didn't load correctly. Ask Digi to fix the game."
-                text (fetched)
+                spacing 28
+                # Handling the text, hopefully fixing the weird spacing in the process
+                frame:
+                    background None
+                    text "\"" + name_map[l]["quote"] + "\""
+                frame:
+                    background None
+                    python:
+                        try:
+                            if "dx_bio" in name_map[l]:
+                                fetched = name_map[l]["bio"] + "\n\n{image=gui/dx_text.png} " + name_map[l]["dx_bio"]
+                            else:
+                                fetched = name_map[l]["bio"]
+                        except:
+                            fetched = "The bio didn't load correctly. Ask Digi to fix the game."
+                    text (fetched)
 
             python:
                 z = name_map[l].get("zoom", 1.0) * 0.75

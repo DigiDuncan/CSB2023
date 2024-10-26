@@ -101,6 +101,9 @@ label train_dialogue:
     scene black with dissolve
     pause 3.0
 
+    # prevent dial tone overflow
+    stop sound
+
     if fun_value(FUN_VALUE_COMMON):
         scene
         show car plains:

@@ -817,8 +817,8 @@ image craptopsmall flipped = "flip:characters/craptop.png"
 
 ## Tate
 image tate = "characters/tate/tatehappy.png"
-image tate dark = "dark:characters/tate/tatehappy.png"
 image tate flipped = "flip:characters/tate/tatehappy.png"
+image tate dark = "dark:characters/tate/tatehappy.png"
 image tate dark flipped = "dark:flip:characters/tate/tatehappy.png"
 image tate srs = "characters/tate/tateserious.png"
 image tate srs dark = "dark:characters/tate/tateserious.png"
@@ -844,6 +844,8 @@ image tate stare = "characters/tate/tatestare.png"
 image tate stare flipped = "flip:characters/tate/tatestare.png"
 image tate cry = "characters/tate/tatecry.png"
 image tate cry flipped = "flip:characters/tate/tatecry.png"
+image tate furious = "characters/tate/tatefurious.png"
+image tate furious flipped = "flip:characters/tate/tatefurious.png"
 
 ## Mean (Urchin Form)
 image mean = "characters/mean/mean.png"
