@@ -902,7 +902,7 @@ label csbii_ltt:
     stop music fadeout 3.0
     music end
 
-    $ achievement_manager.unlock("Welcome to CSBIII, Mother Fucker")
+    $ achievement_manager.unlock("Welcome to CSBIII, Motherfucker")
 
     scene black with dissolve
     hide screen dxcom
