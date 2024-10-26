@@ -1124,6 +1124,21 @@
             "album_art": "hw_hack.png",
             "trivia": "From the {i}Earthbound Halloween Hack{/i}."
         },
+        "dont_preheat_your_oven" : {
+            "file": "dont_preheat_your_oven.ogg",
+            "title": "Don't Preheat Your Oven",
+            "artist": "ClascyJitto",
+            "tags": ["CSBIII DX: Holiday Special", "New In DX"],
+            "album_art": "pizzatower.png",
+            "trivia": "The full name of this song is {i}Don't Preheat Your Oven Because If You Do The Song Won't Play.{/i}"
+        },
+        "on_the_rocks" : {
+            "file": "synchronicity.ogg",
+            "title": "On The Rocks",
+            "artist": "Mr. Sauceman",
+            "tags": ["CSBIII DX: Holiday Special", "New In DX"],
+            "album_art": "pizzatower.png"
+        },
         "funvalueland" : {
             "file": "funvalueland.ogg",
             "title": "SPOT.FASSIMRD",

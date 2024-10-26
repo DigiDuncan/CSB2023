@@ -2310,6 +2310,8 @@ define audio.tmwstw = "tmwstw.ogg"
 define audio.lets_hear_winter = "lets_hear_my_christ.ogg"
 define audio.winters_halloween = "winters_halloween.ogg"
 define audio.synchronicity = "synchronicity.ogg"
+define audio.dont_preheat_your_oven = "dont_preheat_your_oven.ogg"
+define audio.on_the_rocks = "on_the_rocks.ogg"
 
 # CSBIII DX After-True Music
 define audio.lets_hear_spring = "letshearspring.ogg"

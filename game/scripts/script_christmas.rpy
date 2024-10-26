@@ -1922,6 +1922,8 @@ label dx_christmas_billy_time:
     with dissolve
     billy "Wait! Everyone hold on!"
     cs "What? What is it Billy?"
+    play music on_the_rocks
+    music on_the_rocks
     billy "The handy switch!"
     billy "Who got my handy switch for their gift?"
     show tate
