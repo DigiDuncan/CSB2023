@@ -226,7 +226,7 @@ init python:
             # TODO: cs will have a health bar
             if self.current_lane == self.danger_lane:
                 renpy.notify("you have been hit") 
-                renpy.sound.play("audio/sfx/sfx_hit1.ogg")
+                renpy.sound.play("audio/sfx/sfx_hurt1.ogg")
                 self.health -= 1
                 if self.health < 0:
                     renpy.notify("you lost") 

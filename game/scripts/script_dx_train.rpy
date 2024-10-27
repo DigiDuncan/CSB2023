@@ -3739,10 +3739,11 @@ label train_tate_ex_win:
 
     scene white
     play music perfect_tate_intro volume 0.3 if_changed noloop
-    $ renpy.movie_cutscene("/minigames/perfecttate/tate1.webm")
-
+    # TODO: video cuts off a bit too late, whoopsie doodle
+    $ renpy.movie_cutscene("/minigames/perfecttate/tate1.webm", stop_music=False)
 
     # Disable pause menu because it'll ruin audio sync
+    # TODO: this only works when it wants to...
     # TODO: also disable controller bindings
     if 'K_ESCAPE' in config.keymap:
         $ config.keymap['game_menu'].remove('K_ESCAPE')
@@ -3779,6 +3780,7 @@ label train_defeated_perfect_tate:
     pause 2.0
     "..."
     cs "Tate!"
+    pause 1.0
     cs "Are you okay?!"
     tate "I..."
     tate "Yeah."
@@ -3787,27 +3789,29 @@ label train_defeated_perfect_tate:
     tate "I suppose it only makes sense..."
     tate "This is {i}your{/i} game."
     tate "It never mattered what happened to me in {i}any{/i} timeline."
-    tate "It was never about me to begin with."
+    tate "It was never {i}about{/i} me to begin with."
     tate "Something hit me a bit earlier... literally."
     tate "I can't explain it, but..."
     tate "Something much stronger than me is protecting this place."
     tate "No matter how hard I might try to fight it..."
-    tate "I have as little power here as I did before."
+    tate "I have as little power here as I did in the last one."
     cs "Tate..."
     cs "I may not understand what just happened, or anything about this \"timeline\" stuff..."
-    cs "And, I don't know who you're fighting against, but you have us by your side now."
+    cs "And, I don't know who you're fighting against, but..."
+    cs "You have all of us by your side now."
     cs "It {i}does{/i} matter what happens to you."
-    cs "You {i}are{/i} important to {i}us.{/i}"
+    cs "You {i}are{/i} important... to {i}us.{/i}"
     cs "You matter to your friends, and you matter to me."
     cs "Whatever \"ending\" there is, we will all face it together..."
     cs "In {i}every{/i} timeline."
     "..."
+    pause 2.0
     tate "Thanks, CS."
 
     $ persistent.seen.add("tate_ex")
     $ persistent.seen.add("perfect_tate")
     $ achievement_manager.unlock("Main Character Syndrome")
-    # audio is not fully ready yet - tate
+    # TODO: audio is not fully ready yet - tate
     dxcom tate_ex
     
     pause 2.0

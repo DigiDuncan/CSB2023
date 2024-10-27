@@ -1945,7 +1945,7 @@ image tate_ex_ca_c:
     repeat
 
 image tate_ex_ca_m:
-    "ecret/pt/tate_ex_m.png"
+    "secret/pt/tate_ex_m.png"
     alignaround (0.5, 0.5)
     align (0.5, 0.5)
     pos (0.5, 0.5)
