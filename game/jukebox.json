@@ -1108,6 +1108,42 @@
             "album_art": "csbii.png",
             "trivia": "Pakoo's edited MOD of {i}Let's Hear My Baby.{/i}"
         },
+        "snowy" : {
+            "file": "snowy.ogg",
+            "title": "Snowy",
+            "artist": "Toby Fox",
+            "tags": ["CSBIII DX: Holiday Special", "New In DX"],
+            "album_art": "undertale.png",
+            "trivia": "Not from the {i}Earthbound Halloween Hack{/i}."
+        },
+        "teeth_dust" : {
+            "file": "teeth_dust.ogg",
+            "title": "Teeth Dust In The Stronghold",
+            "artist": "ClascyJitto",
+            "tags": ["CSBIII DX: Holiday Special", "New In DX"],
+            "album_art": "pizzatower.png"
+        },
+        "snow_blind" : {
+            "file": "snow_blind.ogg",
+            "title": "Snow Blind",
+            "artist": "Dr. Awesome",
+            "tags": ["CSBIII DX: Holiday Special", "New In DX"],
+            "album_art": "awesome.png"
+        },
+        "christmas_spirit" : {
+            "file": "christmas_spirit.ogg",
+            "title": "Christmas Spirit",
+            "artist": "Dr. Awesome",
+            "tags": ["CSBIII DX: Holiday Special", "New In DX"],
+            "album_art": "awesome.png"
+        },
+        "snowdin_town" : {
+            "file": "snowdin_town.ogg",
+            "title": "Snowdin Town",
+            "artist": "Toby Fox",
+            "tags": ["CSBIII DX: Holiday Special", "New In DX"],
+            "album_art": "undertale.png"
+        },
         "winters_halloween" : {
             "file": "winters_halloween.ogg",
             "title": "Winters",

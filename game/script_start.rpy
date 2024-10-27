@@ -2327,6 +2327,11 @@ define audio.winters_halloween = "winters_halloween.ogg"
 define audio.synchronicity = "synchronicity.ogg"
 define audio.dont_preheat_your_oven = "dont_preheat_your_oven.ogg"
 define audio.on_the_rocks = "on_the_rocks.ogg"
+define audio.snowy = "snowy.ogg"
+define audio.teeth_dust = "teeth_dust.ogg"
+define audio.snow_blind = "snow_blind.ogg"
+define audio.christmas_spirit = "christmas_spirit.ogg"
+define audio.snowdin_town = "snowdin_town.ogg"
 
 # CSBIII DX After-True Music
 define audio.lets_hear_spring = "letshearspring.ogg"

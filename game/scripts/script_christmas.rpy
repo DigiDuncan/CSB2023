@@ -189,6 +189,8 @@ label dx_christmas_anno:
     cs "I guess I'll just plan out how I want the house to look."
     show cs worried
     cs "Actually, shit, it snowed last night!"
+    stop music fadeout 3.0
+    music end
     cs "I need to shovel before Anno gets here!"
     hide cs with moveoutright
     n "CS gets dressed and goes out into the garage to get his shovel."
@@ -212,6 +214,8 @@ label dx_christmas_anno:
     scene cs_house_snowed_in
     show cs disappointed flipped at right
     with dissolve
+    play music snowy
+    music snowy
     n "When CS gets outside, he finds a massive snow drift blocking his garage."
     cs "Well that's just great."
     cs "This is gonna take an hour at least to scoop up."
@@ -303,6 +307,8 @@ label dx_christmas_anno:
         n "CS and Anno drag the boxes inside."
     #Setting up decorations
 label dx_christmas_setup:
+    stop music fadeout 3.0
+    music end
     scene cs_living2
     show cs at left
     show anno at right
@@ -854,8 +860,8 @@ label dx_christmas_intro:
     show digi at center
     show tate flipped at mid_right
     with dissolve
-    play music bedroom_day if_changed
-    music bedroom_day
+    play music teeth_dust if_changed
+    music teeth_dust
     cs "Well, it looks like everyone is here, right?"
     anno "DB isn't here yet, but other than that, yeah."
     show tate sheepish flipped
@@ -1000,6 +1006,8 @@ label dx_christmas_intro:
     #Banter
 label dx_christmas_banter:
     scene black with dissolve
+    stop music fadeout 3.0
+    music end
     n "While the party starts up, Copguy and the sheriff get into a predicament."
     scene cs_living2
     show wesley at right
@@ -1008,6 +1016,8 @@ label dx_christmas_banter:
     show copguy at mid_right
     show sheriff flipped at mid_left
     with dissolve
+    play music dont_preheat_your_oven
+    music dont_preheat_your_oven
     sheriff "Hey Copguy!"
     copguy "I know, this party is great, right?"
     sheriff "No, I need to take a shit!"
@@ -1206,6 +1216,8 @@ label dx_christmas_cooking:
     with dissolve
     show cs at center behind cs_kitchen_fg with moveinleft
     cs "Hey Mr. President, what do you need?"
+    stop music fadeout 3.0
+    music end
     obama "You can just call me Obama."
     obama "Second of all, I accidently cut myself while chopping these carrots."
     obama "What a fool I am."
@@ -1253,6 +1265,8 @@ label dx_christmas_cooking:
     n "When the smoke finally clears, Ed pulls out a blackened turkey."
     hide smoke with dissolve
     show cs flipped
+    play music snowdin_town
+    music snowdin_town
     ed "Dammit! My roast is ruined!"
     billy "Not to fear, Ed! I made my famous restaurant mini-burgers!"
     show ed
@@ -1327,6 +1341,8 @@ label dx_christmas_exchange:
     scene cs_living
     show cs at center
     with dissolve
+    play music christmas_spirit
+    music christmas_spirit
     cs "Alright everyone! It's time for the gift exchange!"
     cs "Everyone brought a gift, right?"
     n "Everyone nods."
@@ -1570,6 +1586,8 @@ label dx_christmas_exchange:
     #Games/Climax
 label dx_christmas_climax:
     scene black with dissolve
+    stop music fadeout 3.0
+    music end
     n "After all of the gifts have been given out, almost everyone has come to the conclusion that the party should end."
     k22 "Well CS, this was wonderful, but we should get going."
     cs "Wait! You aren't gonna stay for the games?"
@@ -1605,6 +1623,8 @@ screen flashlight_demo:
 label dx_christmas_lights_out:
     $ mouse_visible = False
     scene black
+    stop music
+    music end
     sheriff "Hey uhh..."
     sheriff "I think I have finally become blind."
     linus "I think all of our eyes went out."
@@ -1775,6 +1795,8 @@ label dx_christmas_lights_out:
     show cs disappointed at mid_left
     show mean human annoyed at mid_right
     with dissolve
+    stop music fadeout 3.0
+    music end
     mean "You good, CS?"
     cs "Yeah, I'm just a bit tired."
     cs "There should be a hatch or something up here..."
@@ -1838,7 +1860,8 @@ label dx_christmas_snowed_in:
     show obama at center behind digi
     with dissolve
     show screen flashlight_demo
-
+    stop music fadeout 3.0
+    music end
     cs "Well guys, we got some bad news."
     cs "We might be stuck here for a while."
     k22 "Like all night? For a couple hours?"
@@ -2064,6 +2087,8 @@ label dx_christmas_billy_time:
     mean "Please don't say it like that, Tate."
     show mean human
     show tate
+    stop music fadeout 3.0
+    music end
     luke "This is great and all, but isn't the house still under 20 feet of snow?"
     copguy "How are we even gonna get rid of that?"
     copguy "We would need a lot of..."
@@ -2260,6 +2285,8 @@ label dx_christmas_roof_moment:
     santa "Okay, I should probably go down there and check it out."
     cs "We did it guys! We got Santa to save us!"
     n "Santa's Sleigh slows to crawl as it slowly lands in the snow."
+    play music snow_blind
+    music snow_blind
     santa "Ho ho ho! Merry Christmas, everyone!"
     grace "SAANNNNNTAAA!!"
     grace "OH MY GODD!!"
@@ -2317,6 +2344,8 @@ label dx_christmas_roof_moment:
     copguy "It's one of my pitches, I also pitch car products as a side gig!"
     cs "Wait, your Carguy?"
     copguy "Man, I literally look like him. How have you never picked that up?"
+    stop music fadeout 3.0
+    music end
     santa "Ho ho, oh no. It's tipping towards us."
     santa "Oh, shit."
     n "A tsunami of car cleaner engulfs the group, as they get washed off the roof."
