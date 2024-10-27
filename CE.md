@@ -25,12 +25,12 @@
 - Script writing 80%
 - Basic asset creation 75%
 - Basic transitions 80%
-- Music 20%
+- Music 75%
 - Sound effects 5%
 - Grammar pass 0%
 - Asset pass 0%
 - Transition/cinematography pass 0%
-- Add music to jukebox 20%
+- Add music to jukebox 75%
 - Add bios 0%
 - Add achievements 0%
 - Add minigames 0%

@@ -1495,6 +1495,7 @@ image lunatic_cultist flipped = "flip:characters/lunatic_cultist.png"
 
 # Back to the future: CS edition generated assets
 image after_true_title = Text("{size=+196}Spring 202X", text_align=0.5)
+image christmas_finisher = Text("{size=+108}To be continued...", text_align=0.5)
 
 # CS Holiday Special characters
 image avgn = "characters/avgn.png"
@@ -1534,6 +1535,9 @@ image cs_living2 = "bg/cs_living2.png"
 image cs_living_off = "bg/cs_living_off.png"
 image cs_living2_off = "bg/cs_living_off.png"
 image breakerbox = "bg/breakerbox.png"
+image billycar1 = "bg/billycar1.png"
+image billycar2 = "bg/billycar2.png"
+image billycar3 = "bg/billycar3.png"
 
 # CS wacky Kuwait Adventures: Mika Edition (Deluxe Content [With Funky Kong {And Dante from Devil may Cry}])
 image kuwait_lieutenant_snow = "characters/kuwait_lieutenant_snow.png"

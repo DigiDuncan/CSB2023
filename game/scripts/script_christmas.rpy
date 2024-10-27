@@ -1326,6 +1326,8 @@ label dx_christmas_cooking:
     #Dinner/More Banter
 label dx_christmas_dinner:
     scene black with dissolve
+    stop music fadeout 3.0
+    music end
     cs "Well, I'd love to start off this wonderful meal by saying--"
     blank "Hey stop it! We are not playing your music!"
     nova "Blank, Blank..."
@@ -2413,11 +2415,24 @@ label dx_christmas_roof_moment:
     n "As CS entered his room to start streaming, our story here comes to a close."
     n "It wasn't the Christmas that CS expected, but it was one of the jolliest times he's had."
     n "Merry Christmas, and have a Happy New Year!"
+    pause 5.0
 
     # Epilogue
-
-    billy "Dammit, where did I put my handy switch?"
-    billy "I swear I had a spare here somewhere..."
-    billy "Lemme check the back seat..."
+label dx_christmas_epilogue:
+    show billycar1:
+        zoom 2.5
+    show billycar1 at Move((-1.5, -1.0), (0.0, -1.25), 10, repeat=False, bounce=False, xanchor="left", yanchor="top") with dissolve
+    billy "Dammit, where did I put my handy switch?{w=9}{nw}"
+    show billycar2:
+        zoom 2.5
+    show billycar2 at Move((0.0, -0.25), (-1.5, 0.0), 10, repeat=False, bounce=False, xanchor="left", yanchor="top") with dissolve
+    billy "I swear I had a spare here somewhere...{w=9}{nw}"
+    show billycar3:
+        zoom 2.5
+    show billycar3 at Move((0.0, -0.25), (-1.25, -0.5), 10, repeat=False, bounce=False, xanchor="left", yanchor="top") with dissolve
+    billy "Lemme check the back seat...{w=9}{nw}"
+    window hide
+    show christmas_finisher with dissolve
+    pause
     # Pan over shot of the schematic for the Billy pot
 
