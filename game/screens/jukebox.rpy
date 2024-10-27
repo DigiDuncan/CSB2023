@@ -73,7 +73,6 @@ screen jukebox_nav():
 
             for song in persistent.heard:
                 if tags_map[current_jukebox_tag_index] in music_map[song]["tags"]:
-                    $ print("yes " + song)
                     $ found_match = True
                     break
 
