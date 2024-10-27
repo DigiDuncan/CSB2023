@@ -812,6 +812,8 @@ image pakoo disappointed flipped = "flip:characters/pakoo/pakoo_disappointed.png
 image pakoo happy = "characters/pakoo/pakoo_happy.png"
 image pakoo happy flipped = "flip:characters/pakoo/pakoo_happy.png"
 image tgt_worker = "characters/tgt_worker.png"
+image k17 = "characters/k17.png"
+image k17 flipped = "flip:characters/k17.png"
 
 ## Craptop
 image craptop blank = "characters/craptop/blank.png"
