@@ -3770,7 +3770,7 @@ label train_defeated_perfect_tate:
     window auto True
 
     # put it here in case the player needs to skip the fight
-    $ persistent.heard.add("Nyan Of A Lifetime - DJ NYANKO SWITCHER")
+    $ persistent.heard.add("nyan_of_a_lifetime")
 
     pause 5.0
 
