@@ -22,7 +22,7 @@ init python:
     import math
 
     # Graphics
-    LANE_X = [445, 670, 885, 1100, 1315]
+    PT_LANE_X = [445, 670, 885, 1100, 1315]
     CS_Y = 770
     TATE_Y = 400
     SWAY_PERIOD = 1
@@ -111,9 +111,9 @@ init python:
             if not self.entered:
                 if (st - self.start_time < 9.581):
                     curr_y = ease_linear(-TATE_Y, TATE_Y, self.start_time+2, self.start_time+8, st)
-                    r.blit(tate_renderer, (LANE_X[2], curr_y))
+                    r.blit(tate_renderer, (PT_LANE_X[2], curr_y))
                     if math.sin(30*st) > 0:
-                        r.blit(arrow_renderer, (LANE_X[2]-165, 600))
+                        r.blit(arrow_renderer, (PT_LANE_X[2]-165, 600))
                 else:
                     self.entered = True
             
@@ -131,7 +131,7 @@ init python:
                     renpy.notify("you made it to the end") 
 
                     #curr_y = ease_linear(TATE_Y, -TATE_Y, self.round_timer+2, self.round_timer+3.5, st)
-                    #r.blit(tate_renderer, (LANE_X[2], curr_y))
+                    #r.blit(tate_renderer, (PT_LANE_X[2], curr_y))
                 else:
                     self.win = True
                     renpy.timeout(0)
@@ -147,7 +147,7 @@ init python:
                 if st - self.round_timer > MOVE_FREQUENCY:
                     # Fire laser logic
                     if self.enemy_lane is not None:
-                        self.tate_last_x = LANE_X[self.enemy_lane]
+                        self.tate_last_x = PT_LANE_X[self.enemy_lane]
                     else:
                         self.tate_last_x = 0
 
@@ -186,13 +186,13 @@ init python:
                     if not self.played_fire:
                         self.played_fire = True
                     # Render laser
-                    r.blit(laser_renderer, (LANE_X[self.enemy_lane] - 16, TATE_Y+70))
+                    r.blit(laser_renderer, (PT_LANE_X[self.enemy_lane] - 16, TATE_Y+70))
 
                 # TATE X
                 if telegraph_start < st < danger_cutoff:
-                    cx = LANE_X[self.enemy_lane] + 11
+                    cx = PT_LANE_X[self.enemy_lane] + 11
                 else:
-                    cx = LANE_X[self.enemy_lane] + 11 + math.sin(st * SWAY_PERIOD) * SWAY_DISTANCE
+                    cx = PT_LANE_X[self.enemy_lane] + 11 + math.sin(st * SWAY_PERIOD) * SWAY_DISTANCE
                 current_tate_x = ease_linear(self.tate_last_x, cx, self.tate_last_move, self.tate_move_time, st)
 
                 # Telegraphing period
@@ -210,7 +210,7 @@ init python:
                     laser_ball_renderer = renpy.render(t, 180, 180, st, at)
                     xo = (abs(l-1) * 180) / 2
                     yo = (abs(l-1) * 180) / 2
-                    r.blit(laser_ball_renderer, ((LANE_X[self.enemy_lane] + xo) - 15, TATE_Y + yo))
+                    r.blit(laser_ball_renderer, ((PT_LANE_X[self.enemy_lane] + xo) - 15, TATE_Y + yo))
 
                 # Render Tate
                 r.blit(tate_renderer, (current_tate_x, TATE_Y))
@@ -236,7 +236,7 @@ init python:
                 self.exited = True
 
             # Render player character
-            r.blit(cs_renderer, (LANE_X[self.current_lane], CS_Y))
+            r.blit(cs_renderer, (PT_LANE_X[self.current_lane], CS_Y))
 
             renpy.redraw(self, 0)
             return r
