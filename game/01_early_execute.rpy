@@ -208,7 +208,7 @@ init python:
     # MUSIC POPUP
     def _music_gen_text(st, at):
         return HBox(
-            Transform(Image("music_note.png"), zoom = 0.2, xoffset = 25),
+            Transform(Image("gui/music_note.png"), zoom = 0.2, xoffset = 25),
             Null(width = 35),
             VBox(
                 Text("{font=music_text}" + _current_song if _current_song is not None else "", size = 72, outlines = [(5, "#000000", 0, 0)]),
