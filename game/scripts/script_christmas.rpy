@@ -699,10 +699,15 @@ label dx_christmas_party_before:
         n "An old Dodge Charger pulls up on the driveway."
         cs "Nice car! I wonder if that's Carguy..."
         hide cs with moveoutleft
-        scene cs_house_snow_night with dissolve
+        scene cs_house_snow_night
+        show k22 flipped at left
+        show k17 flipped at mid_left
+        with dissolve
         show cs disappointed flipped at right with moveinright
         cs "Hey it's... two Pakoos?"
+        show k17 happy flipped
         k17 "CS!!!"
+        show k17 flipped
         k22 "Hey CS. Merry Christmas!"
         cs "Hi, so umm..."
         cs "Are you guys both Pakoo?"
