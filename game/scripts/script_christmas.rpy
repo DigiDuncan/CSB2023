@@ -1428,9 +1428,11 @@ label dx_christmas_exchange:
     cs "I'm gonna pick, this one!"
     cs "I got..."
     show cs disappointed
+    show thigh_highs at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     cs "Thigh highs?"
     show cs
     arceus "Look at that, you got my gift, CS!"
+    hide thigh_highs with dissolve
     cs "Well, I guess I have more now!"
     k17 "You wear thigh highs?"
     cs "Yeah, I'm wearing them right now! See?"
@@ -1440,8 +1442,10 @@ label dx_christmas_exchange:
     arceus "Welp, it looks like I'm next."
     show arceus flipped at mid_left with moveinleft
     arceus "I got..."
+    show tea_and_crumpets at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     arceus "Tea and crumpets?"
     kitty "Arcie! You got my gift!"
+    hide tea_and_crumpets with dissolve
     show arceus worried flipped
     arceus "Sorry! I honestly forgot which one was yours."
     kitty "You saw me carry it in!"
@@ -1449,26 +1453,33 @@ label dx_christmas_exchange:
     kitty "Whatever, it's my turn now."
     show kitty at mid_left with moveinleft
     kitty "Looks like I got..."
+    show riffmaster at Move((0.3125, 1.0), (0.3125, 0.35), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     kitty "A... guitar hero controller?"
     cs "Holy shit, that's a Riffmaster!"
     kitty "Is that good?"
     cs "It's just a really good guitar controller."
+    hide riffmaster with dissolve
     anno "That was my gift!"
     hide kitty with moveoutright   
     anno "It looks like I'm up next."
     show anno at mid_left with moveinleft
     anno "I got..."
+    show raspberry_pi at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     anno "What the hell is this?"
     arceus "Ooh! That's a raspberry pi!"
     obama "What are you on about? That doesn't look edible at all!"
     digi "No-- okay it's my gift, so let me explain."
     digi "It's just a small computer that can run python."
+    hide raspberry_pi with dissolve
     anno "Oh. Cool I guess."
     hide anno with moveoutright
     show digi flipped at mid_left with moveinleft
     digi "Well it's my turn now, and I'm gonna steal that Riffmaster!"
     show kitty flipped at mid_right with moveinright
-    pause 2.0
+    show riffmaster at Move((0.7125, 0.5), (0.3125, 0.5), 2, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    with dissolve
+    pause 3.0
+    hide riffmaster with dissolve
     hide digi with moveoutright
     kitty "Damn."
     kitty "Well, what do I do now?"
@@ -1479,178 +1490,249 @@ label dx_christmas_exchange:
     show kitty at mid_left with moveinleft
     kitty "Alright, Anno, hand over your computer thing."
     show anno at mid_right with moveinright
-    pause 2.0
+    show raspberry_pi at Move((0.7125, 0.5), (0.3125, 0.5), 2, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    with dissolve
+    pause 3.0
+    hide raspberry_pi with dissolve
     hide kitty with moveoutright   
     anno "Welp, next gift I guess."
     show anno at mid_left with move
     anno "I guess I'll pick this one."
     anno "I wonder what it'll be?"
+    show lego_train at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     anno "A Lego set!"
     mean "A TRAIN Lego set!"
+    hide lego_train with dissolve
     mean "That's my gift, by the way."
     hide anno with moveoutright
     mean "Alright, well I guess it's my turn."
     show mean human flipped at mid_left with moveinleft
     mean "I'm picking this big one!"
+    show instant_pot at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     mean "An instant pot?"
     tate "Mean, you got my gift!"
     show mean human happy flipped
+    hide instant_pot with dissolve
     mean "Well it's mine now, bitch!"
     mean "Who's next?"
     hide mean with moveoutright
     tate "It's me!"
     show tate at mid_left with moveinleft    
     tate "Let's see..."
+    show handy_switch at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    pause 1.5
     show tate smug
     tate "Billy? Is this yours?"
     billy "It's the Handy Switch!"
     billy "It let's you control any power source, from anywhere!"
+    hide handy_switch with dissolve
     tate "I'm sure I can find a use for this."
     hide tate with moveoutright
-    billy "Alright, it's my turn!"
-    show billy at mid_left with moveinleft   
+    billy "Alright, it's my turn!" 
+    show billy at mid_left with moveinleft
+    show doi at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top") 
     billy "Wow! Is this the Declaration of Independence?"
     obama "Yep! It's the real deal!"
     obama "Figured I didn't need it no more, so it's yours now!"
+    hide doi with dissolve
     billy "Great! I can probably pitch this!"
     hide billy with moveoutright
     obama "Welp, I guess it's my turn now."
-    show obama at mid_left with moveinleft  
+    show obama at mid_left with moveinleft 
+    show mgs1 at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top") 
     obama "Metal Gear Solid?"
     copguy "Yeah, that's mine, I didn't know what anyone really wants, so I just found this at the station."
+    hide mgs1 with dissolve
     obama "Dude, this is like my favorite game. I appreciate it."
     copguy "I'm glad."
     hide obama with moveoutright
     copguy "It's my turn now."
     show copguy flipped at mid_left with moveinleft 
+    show gravity_falls at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     copguy "Okay, so I got \"Gravity Falls Season 2 Director's Cut\"..."
     copguy "...and boss? Is this your gun?"
     sheriff "Yeah, you got my gift. Don't ask how that DVD got in there."
+    hide gravity_falls with dissolve
     hide copguy with moveoutright
     sheriff "Because I don't know either."
     show sheriff flipped at mid_left with moveinleft 
     sheriff "Whatever, it's my turn to pick a gift."
     sheriff "Damn, this is heavy! What the hell is this?"
+    show cement at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     sheriff "A bag of cement?"
     ed "We had some leftover from the last house we worked on."
+    hide cement with dissolve
     sheriff "Great, I can drop this on Copguy's head for leaving me in the bathroom!"
     hide sheriff with moveoutright
     ed "I guess it's my go."
     show ed flipped at mid_left with moveinleft 
+    show melted_ice_cream at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     ed "What the hell? Who brought ice cream? It's all melted!"
     #Audio clip of Richard laughing
     play sound sfx_richlaugh
     pause 3.0
+    hide melted_ice_cream with dissolve
     ed "Dammit Richard! I don't want this!"
     hide ed with moveoutright
     rich "Well let's see what I get."
     show rich flipped at mid_left with moveinleft 
+    show pills at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     rich "Pain pills?"
     wesley "Wait a minute! Those are mine!"
     show wesley at mid_right with moveinright
     wesley "I didn't mean to gift that..."
     wesley "I'm gonna steal those since it's my turn now!"
+    show pills at Move((0.3125, 0.5), (0.7125, 0.5), 2, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    pause 3.0
+    hide pills with dissolve
     hide wesley with moveoutright
     rich "Hey!"
     rich "What do I even get now?"
     rich "There's nothing else I really want here..."
     rich "I guess it's time to open another present."
+    show sunny_d at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     rich "I got Sunny D!"
+    hide sunny_d with dissolve
     n "K17 starts giggling."
     hide rich with moveoutright
     k17 "Alright! My go!"
+    show k17 flipped at mid_left with moveinleft
+    show fumo at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    pause 1.5
+    show k17 disappointed flipped
     k17 "Addy?"
+    show k22 disappointed flipped at offscreenleft
     k22 "Huh?"
+    hide k22 
+    hide fumo
+    with easeoutright
     n "K-22 springs up and steals the gift from K-17, sprinting out of the room."
     k22 "I'm sorry, I'll be right back!"
     k17 "What the hay! Now I gotta get another gift!"
+    show k17 flipped
     k17 "I'm gonna take the Gravity Falls Commentary!"
     show sheriff at mid_right with moveinright
+    show gravity_falls at Move((0.7125, 0.5), (0.3125, 0.5), 2, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    with dissolve
+    pause 3.0
+    hide gravity_falls with dissolve
     k17 "...and the gun."
+    hide k17 with moveoutright
     show copguy flipped at left with moveinleft
     copguy "Alright, then I'm taking the Declaration of Independence!"
-    show billy at center
+    show billy at center with moveinright
     billy "What the actual fuck?"
+    show doi at Move((0.4, 0.5), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    with dissolve
+    pause 2.0
+    hide doi with dissolve
     billy "Stop stealing gifts!"
     hide copguy with moveoutright
     hide sheriff with moveoutleft
     show billy at mid_left with move
     billy "Alright, I'll just take the next gift."
+    show adderall at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     billy "Adderall?"
     billy "Nope! I'm done with any kind of drug! Not after last time!"
     aria "Aw, that was my gift!"
     aria "You want me to take it?"
     billy "Yes please!"
     show aria at mid_right with moveinright
+    show adderall at Move((0.3125, 0.5), (0.7125, 0.5), 2, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    pause 3.0
+    hide adderall with dissolve
     n "Aria steals Billy's gift."
     hide aria with moveoutleft
     billy "Awesome! I get to pick another gift!"
+    show peach_syrup at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     billy "Peach syrup!"
     michael "Noice, you got my gift!"
     michael "It goes well with about everything!"
+    hide peach_syrup with dissolve
     billy "I'll keep this one!"
     hide billy with moveoutright
     michael "Alright, what gift to choose..."
     show michael at mid_left with moveinleft
+    show ltt_bottle at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     michael "I got a new water bottle!"
     linus "You got my LTT water bottle!"
+    hide ltt_bottle with dissolve
     linus "lttstore.com."
     hide michael with moveoutright
     linus "Alright, it's my turn."
     show linus at mid_left with moveinleft
+    show ltt_screwdriver at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     linus "Hey Luke! I got your gift!"
     luke "Couldn't you tell it was mine?"
+    hide ltt_screwdriver with dissolve
     linus "No, how was I supposed to figure that out?"
     hide linus with moveoutright
     luke "Whatever, it's my go now."
-    show luke at mid_left with moveinleft
+    show luke flipped at mid_left with moveinleft
     luke "I got..."
+    show monitor at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show hard_drive at Move((0.3125, 1.0), (0.35, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     luke "A variation of PC components!"
     blank "Yeah, it's 2 monitors, a 1tb hard drive, and some other things."
     blank "I found it on the curb."
+    hide monitor
+    hide hard_drive
+    with dissolve
     luke "On the {i}curb{/i}?"
     blank "Yeah, it was just lying there on the curb."
     luke "Damn, well then..."
     hide luke with moveoutright
     blank "It looks like it's my turn next."
-    show blank at mid_left with moveinleft
+    show blank flipped at mid_left with moveinleft
+    show gamersupps at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     blank "Gamer supps?"
     blank "Guacamole Gamer... Fart... 9000?"
     nova "Dammit you got my gift Blank!"
+    hide gamersupps with dissolve
     blank "Great."
     hide blank with moveoutright
     nova "As much as I want to steal that Adderall, I'm gonna pick a gift."
-    show nova at mid_left with moveinleft
+    show nova flipped at mid_left with moveinleft
     nova "Oh boy! I wonder what it is!"
+    show russian_radio at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     nova "What the fuck is? Some World War II radio?"
     eliza "Yep. Used by the Soviets in the last half of World War II."
+    hide russian_radio with dissolve
     nova "I'm sure Tristan will like this, I'll probably give it to him."
     hide nova with moveoutright
     eliza "So, it's my turn, let's see what we have..."
     show elizabeth at mid_left with moveinleft
+    show dog_food at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     eliza "Dog food."
+    hide dog_food with dissolve
     eliza "Dog food?"
     db "Ah yeah, I had a lot extra lying around in my car, so I figured why not?"
     hide elizabeth with moveoutright
     db "Well I guess it's finally my turn."
     show db at mid_left with moveinleft
+    show 1850_coin at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     db "Wow, I got some old coins!"
     digi "Holy shit, I think those are like, really rare!"
     digi "Lemme look it up."
     grace "You got our coins!"
     anne "We had them lying around on the table at home."
     digi "Yeah, those are super rare. I would hold onto those if I were you."
+    hide 1850_coin with dissolve
     billy "Antique coins lying around, Tech lying on the curb..."
     billy "Where the hell do you guys live where you find this kinda shit?"
     hide db with moveoutright
     anne "Well Grace, you wanna pick out the last gift?"
     show grace at mid_left with moveinleft
     grace "Yippee! The last gift!"
+    show old_shirt at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     grace "I got a cool new t-shirt!"
     cs "Hey! You finally got my gift!"
+    hide old_shirt with dissolve
     cs "Not all of my Depop shirts sold, so it became my gift."
     cs "Does it even fit you?"
     n "Grace puts on the shirt."
+    show grace shirt
+    pause 2.0
     grace "Yep!"
     cs "Woohoo! All of the gifts have been handed out!"
 
@@ -1661,6 +1743,7 @@ label dx_christmas_climax:
     stop music fadeout 3.0
     music end
     n "After all of the gifts have been given out, almost everyone has come to the conclusion that the party should end."
+
     k22 "Well CS, this was wonderful, but we should get going."
     cs "Wait! You aren't gonna stay for the games?"
     k22 "SHHHDADA--{w=1.0}{nw}"
@@ -1810,7 +1893,9 @@ label dx_christmas_lights_out:
     scene cs_foyer_off
     show anno at mid_left
     show aria at mid_mid_left behind anno
-    show digi at center
+    show digi at mid_mid_left
+    show k17 disappointed at center behind digi
+    show k22 disappointed at mid_mid_right
     show tate flipped at mid_right
     show mean human at mid_offscreen_right
     with dissolve
@@ -1834,7 +1919,9 @@ label dx_christmas_lights_out:
     scene cs_foyer_off
     show anno at mid_left
     show aria at mid_mid_left behind anno
-    show digi at center
+    show digi at mid_mid_left
+    show k17 disappointed at center behind digi
+    show k22 disappointed at mid_mid_right
     show tate flipped at mid_right
     show mean human at mid_offscreen_right
     with dissolve
@@ -1844,6 +1931,7 @@ label dx_christmas_lights_out:
     show cs disappointed flipped
     cs "The door, it's, all snow."
     show tate sad flipped
+    show k17 shock flipped
     anno "All snow?"
     show mean human annoyed
     mean "The door?"
@@ -1930,6 +2018,8 @@ label dx_christmas_snowed_in:
     show rich at mid_right_right
     show tate sad flipped at mid_mid_left
     show obama at center behind digi
+    show k22 disappointed at center behind digi
+    show k17 disappointed at mid_mid_right behind obama
     with dissolve
     show screen flashlight_demo
     stop music fadeout 3.0
@@ -1985,6 +2075,8 @@ label dx_christmas_snowed_in:
     show rich at mid_right_right
     show tate flipped at mid_mid_left
     show obama at center behind digi
+    show k22 disappointed at center behind digi
+    show k17 disappointed at mid_mid_right behind obama
     with dissolve
     cs "It's Reversi!"
     digi "You have an actual Reversi board?"
@@ -2014,6 +2106,8 @@ label dx_christmas_billy_time:
     show tate flipped at mid_mid_left
     show obama at center behind digi
     show billy at center
+    show k22 disappointed at center behind digi
+    show k17 disappointed at mid_mid_right behind obama
     with dissolve
     billy "Wait! Everyone hold on!"
     cs "What? What is it Billy?"
@@ -2095,6 +2189,7 @@ label dx_christmas_billy_time:
     show tate smug
     tate "Really? Just like, slap it on?"
     billy "Yes! It's that easy!"
+    show handy_switch at Move((0.3125, 0.4), (0.3125, 0.4), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     n "Tate slaps the handy switch on the breaker, and flips the switch."
     show tate shock
     hide screen flashlight_demo
