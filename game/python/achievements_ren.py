@@ -123,7 +123,7 @@ class Achievement:
 class AchievementManager:
     def __init__(self) -> None:
         self.achievements: list[Achievement] = []
-        with renpy.open_file("achievements.json") as j:
+        with renpy.open_file("data/achievements.json") as j:
             jsondata = json.load(j)
         for k, v in jsondata.items():
             self.achievements.append(Achievement.from_JSON(k, v))

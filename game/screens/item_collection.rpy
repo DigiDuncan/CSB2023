@@ -4,7 +4,7 @@
 
 init python:
     import json
-    with renpy.open_file('item_collection.json') as json_file:
+    with renpy.open_file('data/item_collection.json') as json_file:
         item_map = json.load(json_file)
 
     for n in persistent.collected:

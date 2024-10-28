@@ -2,7 +2,7 @@ init python:
     global music_map
 
     import json
-    with renpy.open_file("jukebox.json") as json_file:
+    with renpy.open_file("data/jukebox.json") as json_file:
         jukebox_file = json.load(json_file)
 
     music_map = jukebox_file["tracks"]

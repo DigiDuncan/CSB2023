@@ -68,7 +68,7 @@ class CommentaryString:
 
 class CommentaryManager:
     def __init__(self):
-        with renpy.open_file("dxcom.json") as j:
+        with renpy.open_file("data/dxcom.json") as j:
             jsondata = json.load(j)
 
         self.strings: dict[str, CommentaryString] = {}

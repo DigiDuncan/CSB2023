@@ -8,7 +8,7 @@ init python:
 
 init python:
     import json
-    with renpy.open_file('bios.json') as json_file:
+    with renpy.open_file('data/bios.json') as json_file:
         name_map = json.load(json_file)
 
     for n in persistent.seen:

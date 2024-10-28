@@ -15,15 +15,15 @@ init -1 python:
     pun_count = 999
     fun_count = 999
     ending_count = 27
-    with renpy.open_file("bios.json") as f:
+    with renpy.open_file("data/bios.json") as f:
         j = json.load(f)
         bio_count = len(j)
         print(f"Loaded {bio_count} bios.")
-    with renpy.open_file("item_collection.json") as f:
+    with renpy.open_file("data/item_collection.json") as f:
         j = json.load(f)
         item_count = len(j)
         print(f"Loaded {item_count} items.")
-    with renpy.open_file("jukebox.json") as f:
+    with renpy.open_file("data/jukebox.json") as f:
         j = json.load(f)
         song_count = len(j["tracks"])
         print(f"Loaded {song_count} songs.")
@@ -126,7 +126,7 @@ python early:
 
     import json
 
-    with renpy.open_file("jukebox.json") as json_file:
+    with renpy.open_file("data/jukebox.json") as json_file:
         jukebox_file = json.load(json_file)
 
     _music_map = jukebox_file["tracks"]
