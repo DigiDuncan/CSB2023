@@ -264,8 +264,6 @@ init python:
 screen PerfectTateGame():
     default PerfectTateGame = PerfectTateGameDisplayable()
     add Movie(play="minigames/perfecttate/tate2.webm")
-    add "minigames/perfecttate/background.png" at transform:
-        yanchor 1.0 ypos 1.0
     add PerfectTateGame
 
 label play_perfecttate_game:
