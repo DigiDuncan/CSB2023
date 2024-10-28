@@ -143,12 +143,7 @@ python early:
         return string
 
     def lint_music(parsed_object):
-        if parsed_object is None:
-            pass
-        elif parsed_object[0] == "" or parsed_object[1] == "" or parsed_object[2] == "":
-            renpy.error("Title, artist, or ID is empty for music popup.")
-        else:
-           return parsed_object
+        ...
 
     def execute_music(parsed_object):
 

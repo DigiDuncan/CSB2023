@@ -218,7 +218,7 @@ label rpg_final_fight_3:
 
 label rpg_error:
     rpg:
-        bg "secret/falling_apart.png"
+        bg "falling_apart.png"
         music "prophetpart2"
         fighters:
             cs_final2

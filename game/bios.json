@@ -72,7 +72,7 @@
     },
     "bubble": {
         "full_name": "Bub Ble",
-        "sprite_path": "secret/bubble.png",
+        "sprite_path": "images/characters/bubble.png",
         "quote": "{size=144}{bt=a3-p10-s4}\u00e6{/bt}{/size}",
         "bio": "Also known as Jade, this massive slime has been seen roaming around Las Vegas. Only a few claim to have spotted her, which is funny, since she is about a mile tall."
     },
@@ -215,13 +215,13 @@
     },
     "howie": {
         "full_name": "Howie Mandell",
-        "sprite_path": "secret/howie.png",
+        "sprite_path": "images/characters/howie_bio.png",
         "quote": "I'm gonna make you a star!",
         "bio": "Howie is dedicated to making talent into celebrities. He's a businessman with a passion for music. Despite everyone knowing his name, he keeps being mistaken for other bald guys with goatees."
     },
     "iris": {
         "full_name": "???",
-        "sprite_path": "secret/iris.png",
+        "sprite_path": "images/characters/iris.png",
         "quote": "Oh, hello!",
         "bio": "The bio didn't load correctly. Ask Digi to fix the game."
     },
@@ -259,7 +259,7 @@
     },
     "lancer": {
         "full_name": "Lancer",
-        "sprite_path": "secret/lancer.png",
+        "sprite_path": "images/characters/lancer.png",
         "quote": "I'm the bad guy!",
         "bio": "After Chapter 3, Lancer made his way out the Dark World and into Las Vegas. Since he gave up on looking for the Fun Gang after about five minutes, he went around the strip trying to dig as many holes as possible."
     },
@@ -407,7 +407,7 @@
     },
     "pomni": {
         "full_name": "Pomni",
-        "sprite_path": "secret/pomni.png",
+        "sprite_path": "images/characters/pomni_bio.png",
         "quote": "There's got to be an exit somewhere...",
         "bio": "Pomni has been going insane ever since she was brought into the Amazing Digital Circus not too long ago. Somehow, she made it into an IKEA and got stuck there. She honestly should have just stayed at the circus."
     },
@@ -419,7 +419,7 @@
     },
     "round": {
         "full_name": "Mr. Round",
-        "sprite_path": "secret/round.png",
+        "sprite_path": "images/characters/round.png",
         "quote": "...",
         "bio": "Our KENJI (Not sponsored) Yabu Brown Round Cat is a gorgeously soft and squidgy Kawaii plush friend. Velvety soft and squishy, our collectable plush toys are made from high-quality super-soft materials that make them perfect for snuggling. Super-soft and squidgy, our lovable huggable KENJI (Not sponsored) Yabu is the softest and cutest Japanese-inspired Kawaii plushie around. Meow!"
     },

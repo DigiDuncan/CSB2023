@@ -46,7 +46,7 @@
             "album_art": "csbi.png"
         },
         "space_classroom" : {
-            "file": "secret/space_classroom.ogg",
+            "file": "space_classroom.ogg",
             "title": "Space Classroom",
             "artist": "Dan Salvato",
             "tags": ["Misc.", "CSBIII DX: After Story"],
@@ -172,7 +172,7 @@
             "album_art": "windows.png"
         },
         "passport_ytp" : {
-            "file": "secret/passport_ytp.ogg",
+            "file": "passport_ytp.ogg",
             "title": "ORDER WINDOWS TODAY!!!",
             "artist": "cs188",
             "tags": ["CSBII", "New In DX", "Fun Values"],
@@ -985,7 +985,7 @@
             "album_art": "vegasstrikes.png"
         },
         "lancer" : {
-            "file": "secret/lancer.ogg",
+            "file": "lancer.ogg",
             "title": "Lancer",
             "artist": "Toby Fox",
             "tags": ["CSBIII: South", "Fun Values"],

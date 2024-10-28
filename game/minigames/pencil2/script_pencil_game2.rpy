@@ -29,7 +29,7 @@ init python:
             self.score = 0
             self.pencil_sharpener = Image("minigames/pencil/sharpener.png")
             if fun_value(FUN_VALUE_COMMON):
-                self.current_pencil = Image("secret/pencilcolor.png")
+                self.current_pencil = Image("minigames/pencil/pencilcolor.png")
             else:           
                 self.current_pencil = Image("minigames/pencil/pencil.png")
             self.keyboard_q = Image("minigames/pencil/key_q.png")
