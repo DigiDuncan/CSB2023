@@ -85,11 +85,13 @@ screen dx_select():
                         xalign 0.5
                     action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("train_start_bad")
 
-                ### RESERVED ###
-                imagebutton auto "menu/csbiiidx_%s.png":
+                ### CHRISTMAS ###
+                imagebutton auto "menu/dx/christmas_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
+                    hovered tt.Action("Christmas")
                     at transform:
                         zoom 0.333
                         xalign 0.5
+                    action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("dx_christmas_start")
 
                 imagebutton auto "menu/csbiiidx_%s.png":
                     at transform:
