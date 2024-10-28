@@ -1,5 +1,5 @@
 init 0:
-    image dxcom_anim = spritesheet_animation("dxcom/dxcom_icon.png", 10, 10, looping = True)
+    image dxcom_anim = spritesheet_animation("gui/dxcom_icon.png", 10, 10, looping = True)
 
 screen _dxcom(c):
     zorder 100
@@ -10,7 +10,7 @@ screen _dxcom(c):
         at dxcom_appear
         xysize(1920, 150)
 
-        add "dxcom/dxcom_icon_static.png":
+        add "gui/dxcom_icon_static.png":
             xysize(120, 120)
             pos (15, 15)
 

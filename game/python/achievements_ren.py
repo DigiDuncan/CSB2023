@@ -68,9 +68,9 @@ class Achievement:
     @property
     def icon(self) -> str:
         if self.dx:
-            d = Composite((128, 128), (0, 0), f"achievements/icons/{self.icon_image}.png", (0, 0), "achievements/icons/dx_border.png")
+            d = Composite((128, 128), (0, 0), f"images/achievements/{self.icon_image}.png", (0, 0), "images/achievements/dx_border.png")
         else:
-            d = renpy.displayable(f"achievements/icons/{self.icon_image}.png")
+            d = renpy.displayable(f"images/achievements/{self.icon_image}.png")
 
         if self.unlocked:
             return d
