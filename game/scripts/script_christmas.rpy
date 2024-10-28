@@ -873,15 +873,23 @@ label dx_christmas_intro:
     tate "There are... a lot of people here..."
     show digi flipped
     digi "Yeah, I wonder where Arc and Kitty are..."
+    show k17 happy at center
+    show k22 at mid_mid_right behind k17
+    with moveinright
     show tate shock flipped
     k17 "OMG hey guys!"
+    show k17 shock
     k17 "You guys all look so... different!"
+    show k22 confident
     k22 "Hi, I'm his--"
     show cs disappointed
     k17 "CS, look how much you've grown!"
+    show k22
     cs "Okay, why are there 2 Pakoos?"
     cs "...and you don't have green hair anymore again?"
+    show k22 disappointed
     k22 "Oh boy, alright K-17, calm down for one second. I think everyone here needs an explanation."
+    show k17
     show digi
     show tate flipped
     cs "Yes please. I didn't want to say it, but it seems like everytime I meet you guys, your appearance always changes!"
@@ -889,32 +897,48 @@ label dx_christmas_intro:
     digi "Did I change too much?"
     cs "No no, just, let Pakoo #2 speak."
     if fun_value(FUN_VALUE_RARE):
+        show k17 disappointed
         k17 "Hey, where's Fyreee at?"
+        show k22 angry
         k22 "Dammit, can you let me talk?"
+        show k17
     else:
+        show k22
         k22 "I'm gonna assume that's me."
+    show k22 confident
     k22 "Alright, so, I'm K-22, the physical manifestation of Pakoo's memories from the year 2022."
+    show k22
     k22 "This is K-17, I'm sure you can figure out what year he is."
+    show k17 happy
     k17 "Remember me? I'm the Sunny D guy!"
     n "CS groans."
     cs "Okay, so what about the green haired one?"
+    show k17
+    show k22 confident
     k22 "That's Addy, our boss. They run this archiving facility far away from here, and I guess they would be the closest version of Pakoo you know, but they aren't here right now."
+    show k22 disappointed
     k22 "They are running their own Christmas party, which I wanted to be a part of, but this creature right here just HAD to go this party,"
     k22 "and I have to make sure he doesn't get too crazy."
     cs "Great."
     cs "Is that it?"
+    show k22
     k22 "I mean, I could go on, but I'd be here all night."
     show mean human at mid_offscreen_right with moveinright
     mean "Hey, what's going on here?"
     show mean human shocked
+    show k17 flipped
+    show k22 flipped
     mean "Wait, there's 2 Pakoos now?"
     show mean human annoyed
+    show k22 confident flipped
     k22 "Okay, so--"
+    show k22 flipped
     show tate sheepish flipped
     tate "I'll just tell him later."
     show tate flipped
     cs "Alright, well, I'll let you guys talk, I'm gonna check on the others."
     hide cs with moveoutright
+    show k17 shock flipped
     k17 "So, who are you? Are you DigBick?"
     show mean human angry
     mean "What did you just call me?"
@@ -1073,6 +1097,7 @@ label dx_christmas_banter:
     copguy "Alright, but you better hurry! I don't wanna be in here all day!"
     scene cs_kitchen
     show cs_kitchen_fg
+    show k17 flipped at left
     show obama at center behind cs_kitchen_fg
     show ed at mid_right behind cs_kitchen_fg
     show michael at mid_mid_right behind cs_kitchen_fg
@@ -1082,6 +1107,7 @@ label dx_christmas_banter:
     k17 "Aren't you on your what, like fourth term?"
     if fun_value(FUN_VALUE_COMMON):
         obama "Ever heard of squatter's rights?"
+        show k17 shock flipped
         k17 "You, can do that?"
         obama "I'm friggin' Obama, bitch! I can do what I want!"
     else:
@@ -1114,13 +1140,17 @@ label dx_christmas_banter:
     wesley "Are you 100-percent satisfied, Richard?"
     rich "Only about 80-percent."
     scene cs_foyer
-    show aria at mid_mid_left behind anno
+    show aria at mid_mid_left
     show tate flipped at mid_right
     show mean human at mid_offscreen_right
+    show k22 flipped at left behind k17
+    show k17 flipped at center
     with dissolve
     k17 "So, there's a new world trade center now?"
+    show k22 disappointed flipped
     k22 "What do you mean? They finished that in like 2014!"
     k17 "Oh. Sorry I forgot about that."
+    show k22 flipped
     k17 "Okay, so, if big guy over there is DigBick..."
     show mean human angry
     show tate sheepish flipped
@@ -1129,18 +1159,30 @@ label dx_christmas_banter:
     show tate sheepish blush flipped
     tate "What?"
     mean "No, first of all, I'm not fucking DigBick."
+    show k17 disappointed flipped
     mean "I'm Mean, and this is Tate. We are friends."
     show tate smug flipped
     tate "...Yeah."
     show tate flipped
-    k17 "Yeah, you sound mean. What about you?"
+    k17 "Yeah, you sound mean."
     show mean human annoyed
+    show k17
+    hide aria
+    show aria at mid_mid_left
+    k17 "What about you?"
     aria "Me? I'm Aria."
+    show k17 shock
     k17 "Who?"
+    show k22 confident flipped
     k22 "Uhh, well..."
-    aria "I'm your old friend AWK. I changed."
+    aria "I'm an old friend, the other one that wasn't Arceus? I changed."
+    show k22 disappointed flipped
     k17 "Whaa?"
     k22 "Excuse us for a moment."
+    show k22 disappointed flipped at Move((0.0, 0.14), (1.0, 0.14), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    pause 1.4
+    show k17 shock at Move((0.3125, 0.14), (1.0, 0.14), 2, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    pause 2.5
     scene cs_bathroom with dissolve
     copguy "Please tell me that's it, I can't bear this anymore."
     sheriff "Yep, I'm done!"
@@ -1160,20 +1202,34 @@ label dx_christmas_banter:
     sheriff "God dammit! Get back here!!!"
     pause 3.0
     sheriff "\"Don't move.\" Thanks Copguy, you're a real fucking comedian."
-    scene cs_door_outside with dissolve
+    scene cs_door_outside 
+    show k17 disappointed flipped at mid_left
+    show k22 disappointed at mid_right
+    show snow2
+    show snow5
+    with dissolve
     k17 "This is so unfair!"
     k17 "CS said that it's annoying that we changed or whatever, but look at everyone else!"
     k17 "All of my friends have changed so much!"
     k22 "Yeah, well when you are constrained to one year of your life, that can happen."
     k17 "It's just, how do I like, change that?"
     k17 "I can't just change who I am!"
+    show k22 confident
     k22 "Look, you don't need to. I probably should've told you about how people change and whatnot."
     k22 "Honestly, Addy should've told you, but they were probably too busy setting up their party."
+    show k22 happy
     k22 "Speaking of which, do you want to go back home? Celebrate Christmas with Addy?"
     k17 "Hmm..."
+    show k17 happy flipped
+    show k22 disappointed
     k17 "No, I wanna stay here till the end!"
+    show k17 flipped
     k17 "I'll just keep being myself, and try to keep more of an open mind. Thank you K-22!"
+    show k17 flipped at center with ease
+    hide k17 with dissolve
     k22 "Dammit, it was worth a try."
+    show k22 at mid_left with move
+    show k22 flipped with determination
     k22 "I wonder how Addy is doing anyways."
     n "K-22 hits up Addy."
     show archival_5 at mid_offscreen_right
@@ -1182,20 +1238,27 @@ label dx_christmas_banter:
     addy "HELLO??"
     k22 "Hey, uhh, how is it going over there?"
     addy "WHAT? I CAN'T HEAR, THE MUSIC IS REALLY LOUD!"
+    show k22 angry flipped
     k22 "I WAS ASKING IF--{w=1.0}{nw}"
     addy "YEAH I'LL CALL YOU LATER, HAVE FUN AT CS' PARTY!"
     hide archival_5
     hide pakoo
     with moveoutright
     k22 "Mother fucker!"
+    show snow3
+    show snow4
     n "All of a sudden, the wind starts to pick up and snow begins to fall."
+    show k22 disappointed flipped
     k22 "Brr... I should probably just get back inside and enjoy the party..."
     scene cs_bathroom with dissolve
+    show k17 at mid_right with moveinright
     sheriff "Hey! Is someone there?"
     k17 "Huh?"
     sheriff "Hey you! Can you help me out of here?"
+    show k17 shock
     k17 "Uhh... Uhh..."
     k17 "I'll go get someone!"
+    hide k17 with easeoutleft
     scene cs_living2 
     show wesley at right
     show rich at mid_right
@@ -1203,9 +1266,11 @@ label dx_christmas_banter:
     show cs at left
     with dissolve
     rich "Oh man, I love this part."
+    show k17 shock at mid_mid_right with moveinright
     k17 "Hey guys, how do I put this..."
     k17 "The sheriff is stuck in the bathroom?"
     show cs disappointed
+    show k17 disappointed
     cs "Dammit, one second."
     obama "CS! Are you there?"
     show cs
