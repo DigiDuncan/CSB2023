@@ -1819,6 +1819,35 @@ image ytx = Transform("ytx.png", zoom = 0.333)
 image ytx_drive = "ytx_drive.png"
 image map_kuwait = "gui/map_kuwait.png"
 
+# CSBIII: Holiday Special Gifts
+image 1850_coin = "images/gifts/1850_coin.png"
+image adderall = "images/gifts/adderall.png"
+image cement = "images/gifts/cement.png"
+image dog_food = "images/gifts/dog_food.png"
+image doi = "images/gifts/doi.png"
+image fumo = "images/gifts/fumo.png"
+image gamersupps = "images/gifts/gamersupps.png"
+image gravity_falls = "images/gifts/gravity_falls.png"
+image handy_switch = "images/gifts/handy_switch.png"
+image hard_drive = "images/gifts/hard_drive.png"
+image instant_pot = "images/gifts/instant_pot.png"
+image lego_train = "images/gifts/lego_train png"
+image ltt_bottle = "images/gifts/ltt_bottle.png"
+image ltt_screwdriver = "images/gifts/ltt_screwdriver.png"
+image melted_ice_cream = "images/gifts/melted_ice_cream.png"
+image mgs1 = "images/gifts/mgs1.png"
+image monitor = "images/gifts/monitor.png"
+image peach_syrup = "images/gifts/peach_syrup.png"
+image pills = "images/gifts/pills.png"
+image raspberry_pi = "images/gifts/raspberry_pi.png"
+image riffmaster = "images/gifts/riffmaster.png"
+image roll_and_rocker = "images/gifts/roll_and_rocker.png"
+image rolling_rock = "images/gifts/rolling_rock.png"
+image russian_radio = "images/gifts/russian_radio.png"
+image sunny_d = "images/gifts/sunny_d.png"
+image tea_and_crumpets = "images/gifts/tea_and_crumpets.png"
+image thigh_highs = "images/gifts/thigh_highs.png"
+
 # Movies
 image car background = Movie(play="movies/car_background.webm")
 image car background night = Movie(play="movies/car_background_night.webm")
