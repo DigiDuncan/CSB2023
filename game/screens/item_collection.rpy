@@ -14,6 +14,18 @@ init python:
     def mark_read(k):
         persistent.read.add(k)
 
+screen item_collection():
+    default current_item = None
+
+    tag menu
+    use item_nav
+
+    if current_item == None:
+        use item_welcome
+    
+    else:
+        use items(current_item)
+
 screen item_nav():
     add Color('#323e42', alpha=0.75)
     text "{size=+12}Item Collection":
@@ -56,8 +68,8 @@ screen item_nav():
 
                     # create the bounding box for each button
                     frame:
-                        margin 5, 5
                         background Solid(buttoncolor)
+                        margin 5, 5
                         xsize 153 ysize 153
                         
                         image item_img
@@ -66,7 +78,7 @@ screen item_nav():
                         button:
                             xalign 0.5 yalign 0.5
                             
-                            action [ SensitiveIf( k in persistent.collected ), ShowMenu("items", k) ]
+                            action [ SensitiveIf( k in persistent.collected ), SetScreenVariable("current_item", k) ]
 
                             hovered SetVariable("buttoncolor","#0099CC")
                             unhovered SetVariable("buttoncolor","#003D51")
@@ -80,9 +92,6 @@ screen item_nav():
 
 screen item_welcome():
     ##This is the "Item Collection" category's welcome page. This is the first screen players see after they select a category.
-
-    tag menu
-    use item_nav
 
     style_prefix "codex"
     python:
@@ -99,11 +108,6 @@ screen item_welcome():
 ##-----------------------------------------------
 
 screen items(l):
-
-    style_prefix "codex"
-
-    tag menu
-    use item_nav
 
     # Main Container omitting the menu
     viewport:
