@@ -130,8 +130,10 @@ screen items(l):
                 # Handling the text
                 python:
                     try:
-                        if "dx" in item_map[l]:
+                        if item_map[l].get('dx', False):
                             fetched_desc = "{image=gui/dx_text.png} " + item_map[l]["desc"]
+                        elif item_map[l].get('ce', False):
+                            fetched_desc = "{image=gui/ce_text.png} " + item_map[l]["desc"]
                         else:
                             fetched_desc = item_map[l]["desc"]
                     except:
