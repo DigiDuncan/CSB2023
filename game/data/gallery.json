@@ -144,5 +144,10 @@
         "type": "image",
         "title": "Train Sign",
         "caption": "Placeholder text."
+    },
+    "billy_car.png": {
+        "type": "image",
+        "title": "Billy's Car (Pre-DX)",
+        "caption": "This was the car used in the car game during the original release of {i}CSBIII.{/i} It was later replaced with a Land Rover after the team figured out exactly what model Billy actually drives in the Jupiter Jack infomercial."
     }
 }

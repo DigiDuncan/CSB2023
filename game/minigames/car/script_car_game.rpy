@@ -4,19 +4,19 @@ init python:
     # TODO: LANES ARE OFF BY ONE, POSSIBLY DUE TO PERFECT TATE, PLS FIX
 
     # Graphics
-    LANE_X = [670, 885, 1100]
+    UFO_LANE_X = [670, 885, 1100]
     CAR_Y = 770
     UFO_Y = 100
-    SWAY_PERIOD = 5
-    SWAY_DISTANCE = 20
+    UFO_SWAY_PERIOD = 5
+    UFO_SWAY_DISTANCE = 20
 
     # Difficulty
-    MOVE_FREQUENCY = 5
-    TELEGRAPH_DELAY = 1
-    TELEGRAPH_TIME = 0.5
-    DANGER_TIME = 1.0
-    DIFF_UP = 10
-    FIRE_COUNT = 21
+    UFO_MOVE_FREQUENCY = 5
+    UFO_TELEGRAPH_DELAY = 1
+    UFO_TELEGRAPH_TIME = 0.5
+    UFO_DANGER_TIME = 1.0
+    UFO_DIFF_UP = 10
+    UFO_FIRE_COUNT = 21
 
     class CarGameDisplayable(renpy.Displayable):
         def __init__(self):
@@ -51,9 +51,9 @@ init python:
             if self.start_time is None:
                 self.start_time = st
                 # Difficulty reset
-                global MOVE_FREQUENCY, TELEGRAPH_DELAY
-                MOVE_FREQUENCY = 5
-                TELEGRAPH_DELAY = 1
+                global UFO_MOVE_FREQUENCY, UFO_TELEGRAPH_DELAY
+                UFO_MOVE_FREQUENCY = 5
+                UFO_TELEGRAPH_DELAY = 1
 
             # Render object we return at the end
             r = renpy.Render(1920, 1080)
@@ -75,9 +75,9 @@ init python:
             if not self.entered:
                 if (st - self.start_time < 3.5):
                     curr_y = ease_linear(-UFO_Y, UFO_Y, self.start_time+2, self.start_time+3.5, st)
-                    r.blit(ufo_renderer, (LANE_X[self.enemy_lane], curr_y))
+                    r.blit(ufo_renderer, (UFO_LANE_X[self.enemy_lane], curr_y))
                     if  math.sin(10*st) > 0:
-                        r.blit(arrow_renderer, (LANE_X[self.current_lane]-75, 600))
+                        r.blit(arrow_renderer, (UFO_LANE_X[self.current_lane]-75, 600))
                 else:
                     self.entered = True
             
@@ -85,7 +85,7 @@ init python:
             elif self.exited:
                 if (st - self.round_timer < 3.5):
                     curr_y = ease_linear(UFO_Y, -UFO_Y, self.round_timer+2, self.round_timer+3.5, st)
-                    r.blit(ufo_renderer, (LANE_X[self.enemy_lane], curr_y))
+                    r.blit(ufo_renderer, (UFO_LANE_X[self.enemy_lane], curr_y))
                 else:
                     self.win = True
                     renpy.timeout(0)
@@ -93,20 +93,20 @@ init python:
             # Main game loop
             else:
                 # Timestamps
-                telegraph_start = self.round_timer + TELEGRAPH_TIME
-                telegraph_cutoff = telegraph_start  + TELEGRAPH_DELAY
-                danger_cutoff = telegraph_cutoff + DANGER_TIME
+                telegraph_start = self.round_timer + UFO_TELEGRAPH_TIME
+                telegraph_cutoff = telegraph_start  + UFO_TELEGRAPH_DELAY
+                danger_cutoff = telegraph_cutoff + UFO_DANGER_TIME
 
                 # Move enemy
-                if st - self.round_timer > MOVE_FREQUENCY:
+                if st - self.round_timer > UFO_MOVE_FREQUENCY:
                     # Fire laser logic
                     renpy.sound.play("minigames/car/joj_loop.ogg", channel=0)
                     if self.enemy_lane is not None:
-                        self.ufo_last_x = LANE_X[self.enemy_lane]
+                        self.ufo_last_x = UFO_LANE_X[self.enemy_lane]
                     else:
                         self.ufo_last_x = 0
                     # "Smart" randomize
-                    if self.fires >= DIFF_UP:
+                    if self.fires >= UFO_DIFF_UP:
                         self.enemy_lane = renpy.random.choice([self.current_lane, renpy.random.randint(0, 2)])
                     else:
                         self.enemy_lane = renpy.random.choice([self.current_lane, self.current_lane, renpy.random.randint(0, 2)])
@@ -118,10 +118,10 @@ init python:
                     self.played_fire = False
                     
                     # Difficulty increase
-                    global MOVE_FREQUENCY, TELEGRAPH_DELAY
-                    MOVE_FREQUENCY -= 0.15
-                    if self.fires == DIFF_UP:
-                        TELEGRAPH_DELAY = 0.5
+                    global UFO_MOVE_FREQUENCY, UFO_TELEGRAPH_DELAY
+                    UFO_MOVE_FREQUENCY -= 0.15
+                    if self.fires == UFO_DIFF_UP:
+                        UFO_TELEGRAPH_DELAY = 0.5
 
                 # Danger period
                 if telegraph_cutoff < st < danger_cutoff:
@@ -130,13 +130,13 @@ init python:
                         renpy.sound.play("minigames/car/sfx_gaster_blast.ogg", channel=0)
                         self.played_fire = True
                     # Render laser
-                    r.blit(laser_renderer, (LANE_X[self.enemy_lane] - 16, UFO_Y+70))
+                    r.blit(laser_renderer, (UFO_LANE_X[self.enemy_lane] - 16, UFO_Y+70))
 
                 # UFO X
                 if telegraph_start < st < danger_cutoff:
-                    cx = LANE_X[self.enemy_lane] + 11
+                    cx = UFO_LANE_X[self.enemy_lane] + 11
                 else:
-                    cx = LANE_X[self.enemy_lane] + 11 + math.sin(st * SWAY_PERIOD) * SWAY_DISTANCE
+                    cx = UFO_LANE_X[self.enemy_lane] + 11 + math.sin(st * UFO_SWAY_PERIOD) * UFO_SWAY_DISTANCE
                 current_ufo_x = ease_linear(self.ufo_last_x, cx, self.ufo_last_move, self.ufo_move_time, st)
 
                 # Telegraphing period
@@ -149,13 +149,13 @@ init python:
                     l = (st - telegraph_start) / (telegraph_cutoff - telegraph_start)
                     t = Transform(laser_ball_displayable, xysize=(l, l), anchor=(0.5, 0.5))
                     # Tint energy ball red for fast lasers
-                    if self.fires >= DIFF_UP:
+                    if self.fires >= UFO_DIFF_UP:
                         t.matrixcolor = TintMatrix("#f00")
                     # Render energy ball
                     laser_ball_renderer = renpy.render(t, 180, 180, st, at)
                     xo = (abs(l-1) * 180) / 2
                     yo = (abs(l-1) * 180) / 2
-                    r.blit(laser_ball_renderer, ((LANE_X[self.enemy_lane] + xo) - 15, UFO_Y + yo))
+                    r.blit(laser_ball_renderer, ((UFO_LANE_X[self.enemy_lane] + xo) - 15, UFO_Y + yo))
 
                 # Render UFO
                 r.blit(ufo_renderer, (current_ufo_x, UFO_Y))
@@ -168,11 +168,11 @@ init python:
             if self.current_lane == self.danger_lane:
                 self.win = False
                 renpy.timeout(0)
-            if self.fires >= FIRE_COUNT:
+            if self.fires >= UFO_FIRE_COUNT:
                 self.exited = True
 
             # Render car
-            r.blit(car_renderer, (LANE_X[self.current_lane], CAR_Y))
+            r.blit(car_renderer, (UFO_LANE_X[self.current_lane], CAR_Y))
 
             renpy.redraw(self, 0)
             return r
