@@ -653,7 +653,7 @@ define digi = Character("Digi", callback = renpy.partial(char_callback, name = "
 define eliza = Character("Elizabeth", callback = char_callback)
 define grace = Character("Grace", callback = char_callback)
 define iris = Character("Iris", callback = renpy.partial(char_callback, name = "iris", beep = "iris"))
-define k17 = Character("K-17", callback = renpy.partial(char_callback, beep = "k17"))
+define k17 = Character("K-17", callback = renpy.partial(char_callback, name = "k17", beep = "k17"))
 define k22 = Character("K-22", callback = renpy.partial(char_callback, beep = "k20"))
 define kitty = Character("Kitty", callback = renpy.partial(char_callback, name = "kitty", beep = "kitty"))
 define mean = Character("Mean", callback = renpy.partial(char_callback, name = "mean", beep = "mean"))
