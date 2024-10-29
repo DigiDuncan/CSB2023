@@ -2366,6 +2366,14 @@ label dx_christmas_roof_moment:
         zoom 0.15
         xpos 0.5
         ypos 0.6
+    show k17 sil_black:
+        zoom 0.15
+        xpos 0.43
+        ypos 0.2   
+    show k22 sil_black:
+        zoom 0.15
+        xpos 0.45
+        ypos 0.23    
     show snow1
     with dissolve
     k22 "So it is as bad as you said."
@@ -2373,6 +2381,7 @@ label dx_christmas_roof_moment:
     tate "What are we going to do? We can't just, walk out there!"
     copguy "I got an idea. You guys, move over there..."
     show cs sil_black at Move((0.3, 0.5), (0.27, 0.33), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show k22 sil_black at Move((0.45, 0.23), (0.34, 0.29), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show arceus sil_black at Move((0.54, 0.54), (0.3, 0.4), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show mean human flipped sil_black at Move((0.4, 0.5), (0.32, 0.4), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show anno sil_black at Move((0.53, 0.33), (0.32, 0.48), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
@@ -2390,6 +2399,7 @@ label dx_christmas_roof_moment:
     show kitty sil_black at Move((0.43, 0.46), (0.42, 0.48), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     pause 1.0
     show anne sil_black at Move((0.34, 0.42), (0.65, 0.31), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show k17 sil_black at Move((0.43, 0.2), (0.68, 0.29), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show elizabeth sil_black at Move((0.38, 0.45), (0.6, 0.35), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show digi sil_black at Move((0.47, 0.46), (0.63, 0.39), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show linus sil_black at Move((0.46, 0.35), (0.66, 0.39), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
@@ -2450,34 +2460,70 @@ label dx_christmas_roof_moment:
     santa "Is that an SoS signal?"
     santa "Ho ho ho! Nice DaThings reference!"
     santa "Okay, I should probably go down there and check it out."
+    scene cs_roof
+    show cs happy at left
+    show obama at mid_mid_left behind k17
+    show billy at center behind cs
+    show michael at mid_left
+    show ed at mid_right
+    show linus at mid_mid_right
+    with dissolve
     cs "We did it guys! We got Santa to save us!"
     n "Santa's Sleigh slows to crawl as it slowly lands in the snow."
     play music snow_blind
     music snow_blind
     santa "Ho ho ho! Merry Christmas, everyone!"
+    show grace at mid_right with easeinleft
     grace "SAANNNNNTAAA!!"
     grace "OH MY GODD!!"
+    show k22 flipped at mid_left
+    show k17 happy flipped at mid_mid_left 
+    with moveinleft
     k17 "Haha, see K-22? Who needs Addy's party when we can literally meet The Big Man himself?"
+    show k22 happy flipped
     k22 "Heh, I guess you gotta point there. They aren't gonna believe this!"
+    show cs
     santa "Well, let's see who we have here..."
     santa "..."
     santa "Mr. President? What are you doing here?"
+    show obama at center with move
     obama "Well, I wanted to go to my good friend CS' Christmas party!"
     santa "Ho ho, well..."
     n "Santa stares around the crowd."
+    show k17
+    show k22
+    with determination
+    hide k17
+    hide k22
+    with moveoutleft
     santa "Ed? Richard? Welsey? Keep up the good work. Might need some foundation repair at my workshop here soon! Ho ho!"
+    show rich flipped at mid_mid_left with moveinleft
+    show wesley flipped at mid_left with moveinleft
     rich "Really!?"
     ed "We appreciate the offer, Mr. Klaus. Keep us in touch."
     santa "...And you there! Mr. Rosen!"
+    show michael at center with move
     santa "Don't let those YouTube Poopers get to your head, you're a great author."
     n "Santa glances at CS."
+    show cs disappointed
     cs "Hey! I love his work too! I don't even really use Michael as a source!"
     n "Both Michael and Santa laugh."
+    show cs
     santa "Ah yes, Linus and Luke..."
     santa "We might need you guys up there at the North Pole as well, lots of kids these days want these crazy gaming PCs!"
     linus "If you ever need us, give LTT a call!"
     santa "There's a lot of... people here I would not expect to see."
+    show rich
+    show wesley
+    with determination
+    hide rich
+    hide wesley
+    hide michael
+    hide obama
+    hide ed
+    with moveoutleft
     santa "Billy Mays, I almost forgot about... you coming back."
+    hide linus with moveoutleft
     billy "Don't worry Santa, my drug days are over!"
     santa "Ho ho ho! That's the spirit!"
     santa "Well, I could keep going, but I should ask:"
@@ -2489,21 +2535,139 @@ label dx_christmas_roof_moment:
     santa "I may be Father Christmas, but I can't just make snow magically go away."
     santa "I'm sorry, cs188."
     copguy "Well, wait a second!"
+    show copguy flipped at center with moveinleft
     copguy "Can't we wish for one gift? For Christmas?"
     santa "Well, I suppose I can make a miracle happen if it were a gift..."
     santa "CS? Do you have a gift that you've always wanted?"
     cs "Hmm..."
+    show copguy
     copguy "CS, I think I have just the thing."
+    show copguy at mid_left with move
     n "Copguy whispers in CS' ear."
+    show cs surprised
     cs "Oh! You sure that will work?"
     n "Copguy nods."
+    show cs
+    show copguy flipped with determination
+    show cs at center with move
     cs "Alright Santa, I have my wish."
+    show cs at mid_right with move
     n "CS whispers into Santa's ear."
     n "Santa's eyes widen."
     santa "Ho ho ho! Well..."
     santa "I guess I could do that."
+    scene snowed_in
+    show cs sil_black:
+        zoom 0.15
+        xpos 0.3
+        ypos 0.5
+    show mean human flipped sil_black:
+        zoom 0.15
+        xpos 0.4
+        ypos 0.5
+    show arceus sil_black:
+        zoom 0.15
+        xpos 0.54
+        ypos 0.54
+    show anno sil_black:
+        zoom 0.15
+        xpos 0.53
+        ypos 0.33
+    show tate sil_black:
+        zoom 0.15
+        xpos 0.34
+        ypos 0.36
+    show obama sil_black:
+        zoom 0.15
+        xpos 0.47
+        ypos 0.47
+    show ed sil_black:
+        zoom 0.15
+        xpos 0.34
+        ypos 0.42
+    show rich sil_black:
+        zoom 0.15
+        xpos 0.45
+        ypos 0.34
+    show wesley sil_black:
+        zoom 0.15
+        xpos 0.56
+        ypos 0.45
+    show blank sil_black:
+        zoom 0.15
+        xpos 0.43
+        ypos 0.34
+    show nova sil_black:
+        zoom 0.15
+        xpos 0.55
+        ypos 0.43
+    show copguy sil_black:
+        zoom 0.15
+        xpos 0.33
+        ypos 0.35
+    show billy sil_black:
+        zoom 0.15
+        xpos 0.63
+        ypos 0.46
+    show aria sil_black:
+        zoom 0.15
+        xpos 0.42
+        ypos 0.36
+    show kitty sil_black:
+        zoom 0.15
+        xpos 0.43
+        ypos 0.46
+    show grace sil_black:
+        zoom 0.15
+        xpos 0.31
+        ypos 0.31
+    show anne sil_black:
+        zoom 0.15
+        xpos 0.34
+        ypos 0.42
+    show elizabeth sil_black:
+        zoom 0.15
+        xpos 0.38
+        ypos 0.45
+    show digi sil_black:
+        zoom 0.15
+        xpos 0.47
+        ypos 0.46
+    show linus sil_black:
+        zoom 0.15
+        xpos 0.46
+        ypos 0.35
+    show luke sil_black:
+        zoom 0.15
+        xpos 0.32
+        ypos 0.45
+    show db sil_black:
+        zoom 0.15
+        xpos 0.5
+        ypos 0.6
+    show k17 sil_black:
+        zoom 0.15
+        xpos 0.43
+        ypos 0.2   
+    show k22 sil_black:
+        zoom 0.15
+        xpos 0.45
+        ypos 0.23   
+    show snow1
+    with dissolve
     santa "Alright! Stand back everyone! This is gonna take a lot of focus!"
     n "Santa harnesses most of his Christmas spirit energy to create CS' wish."
+    show nu_finish sil_black:
+        zoom 0.75
+        xpos 0.7
+        ypos -0.35
+    with moveintop
+    pause 1.0
+    show nu_finish:
+        zoom 0.75
+        xpos 0.7
+        ypos -0.35
+    with dissolve   
     santa "Ta-dah!"
     cs "Wow, that really worked!"
     billy "A giant bottle of Crotch Doctor?"
@@ -2515,6 +2679,7 @@ label dx_christmas_roof_moment:
     music end
     santa "Ho ho, oh no. It's tipping towards us."
     santa "Oh, shit."
+    scene black with dissolve
     n "A tsunami of car cleaner engulfs the group, as they get washed off the roof."
     n "As everyone gathers their bearings once again, they look around, watching the waves of Crotch Doctor carrying all the snow away."
     scene cs_house_night_dtree
@@ -2522,15 +2687,19 @@ label dx_christmas_roof_moment:
     show tate at left
     show obama at mid_right
     show copguy at mid_mid_right
+    show k17
     with dissolve
     cs "Woohoo! We did it! The avalanche covering the house is gone!"
     santa "Ho ho, well, it looks like you helped save Christmas, CS."
     santa "I need to get going however, I am slightly off schedule."
     santa "I should also make sure my steed didn't drown in car cleaner."
     cs "Good luck to you, Santa!"
+    show k17 happy
     k17 "CS? Did you see that?"
     cs "Yeah, I was kind of there with everyone one."
+    show k17 disappointed
     k17 "Sorry, that was a stupid question."
+    show k17
     tate "CS! You did it!"
     obama "I gotta say, that was one of the most fun Christmas parties I've ever been to."
     obama "Although, I should probably get back to The White House, the political circus is probably getting out of hand."
@@ -2552,6 +2721,7 @@ label dx_christmas_roof_moment:
     copguy "Look how shiny our car is!"
     scene cs_house_night_dtree
     show billy at mid_left
+    show k22 disappointed at mid_right
     with dissolve
     n "As everyone is wrapping up to go home, K-22 and Billy have a bit of a chat."
     k22 "Hey Billy, can I talk to you for a minute?"
@@ -2565,11 +2735,13 @@ label dx_christmas_roof_moment:
     billy "This is great! I'll get to work on this soon."
     billy "I gotta take a trip to France."
     billy "I need to, fix an old friend."
-    k22 "Alrighty, well see you later Billy!"
+    show k22
+    k22 "Alrighty well, see you later Billy!"
     billy "See ya!"
     n "Both parties get into their cars and drive off."
     scene cs_bedroom1
     show cs happy at center
+    with dissolve
     cs "That was such a blast!"
     cs "Plus my car got cleaned for free!"
     cs "What a mess, though. I'm gonna wait for tomorrow to clean this up."
