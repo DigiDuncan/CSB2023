@@ -84,10 +84,12 @@ screen people_nav():
 
             for k in sort_mode:
                 python:
-                    # DX character handler
+                    # DX/CE character handler
                     try:
                         if name_map[k]['dx'] == True:
                             name_label = "{image=unread.png}{image=gui/dx_text.png} " + name_map[k]['full_name'] if k not in persistent.read else "{image=gui/dx_text.png} " + name_map[k]['full_name']
+                        elif name_map[k]['ce'] == True:
+                           name_label = "{image=unread.png}{image=gui/ce_text.png} " + name_map[k]['full_name'] if k not in persistent.read else "{image=gui/ce_text.png} " + name_map[k]['full_name']
                     except:
                         name_label = "{image=unread.png}" + name_map[k]['full_name'] if k not in persistent.read else name_map[k]['full_name']
                 if k == "iris":

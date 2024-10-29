@@ -143,7 +143,7 @@
     "Sign_Filtered000.png": {
         "type": "image",
         "title": "Train Sign",
-        "caption": "An old-style LED sign that displays messages inside of Addy's tram system. Just like everything inside their facility, this is also a memory. The sign is based off {a=https://s3-media0.fl.yelpcdn.com/bphoto/lH3_wwdHpTin_vOQLx7grQ/o.jpg}this one:{/a}"
+        "caption": "An old-style LED sign that displays messages inside of Addy's tram system. Just like everything inside their facility, this is also a memory. The sign is based off {a=https://s3-media0.fl.yelpcdn.com/bphoto/lH3_wwdHpTin_vOQLx7grQ/o.jpg}this one.{/a}"
     },
     "billy_car.png": {
         "type": "image",
@@ -158,6 +158,6 @@
     "beta_arc.png": {
         "type": "image",
         "title": "Beta Arceus",
-        "caption": "This version of Arceus was used throughout the majority of CSB3's development. We swapped to the current one only weeks before the game was sent to CS."
+        "caption": "This version of Arceus was used throughout the majority of {i}CSBIII's{/i} development. We swapped to the current one only weeks before the game was sent to CS."
     }
 }

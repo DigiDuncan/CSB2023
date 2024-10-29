@@ -131,7 +131,8 @@
         "full_name": "CSGod",
         "sprite_path": "images/characters/csgod.png",
         "quote": "I have the power of YTP!",
-        "bio": "﷽"
+        "bio": "﷽",
+        "ce": true
     },
     "cultist": {
         "full_name": "Cultist Leader",
