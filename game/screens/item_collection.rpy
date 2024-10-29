@@ -118,7 +118,7 @@ screen items(l):
         yoffset 200
         side_yfill False
         mousewheel True
-        draggable True
+        draggable False
         pagekeys True
         hbox:
             ysize 750
