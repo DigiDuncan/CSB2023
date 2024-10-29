@@ -109,5 +109,40 @@
         "type": "image",
         "title": "fancy_watch.png",
         "caption": "While writing Train Route, Tate needed a picture of a fancy watch. They downloaded this image, somehow {i}forgot{/i} where the file got saved to, spent half an hour looking for it, assumed that Google Chrome ate it, gave up, downloaded a {i}different{/i} watch, and then found this image again several months later."
+    },
+    "background.png": {
+        "type": "image",
+        "title": "Perfect Tate Beta Stage",
+        "caption": "This was the original highway for the Perfect Tate game. Replacing it with the actual timeline of the video in the background turned out to be much better idea."
+    },
+    "cs_news1.png": {
+        "type": "image",
+        "title": "CS News 1",
+        "caption": "Placeholder text."
+    },
+    "cs_news2.png": {
+        "type": "image",
+        "title": "CS News 2",
+        "caption": "Placeholder text."
+    },
+    "cs_news3.png": {
+        "type": "image",
+        "title": "CS News 3",
+        "caption": "Placeholder text."
+    },
+    "cs_news4.png": {
+        "type": "image",
+        "title": "CS News 4",
+        "caption": "Placeholder text."
+    },
+    "cs_news5.png": {
+        "type": "image",
+        "title": "CS News 5",
+        "caption": "Placeholder text."
+    },
+    "Sign_Filtered000.png": {
+        "type": "image",
+        "title": "Train Sign",
+        "caption": "Placeholder text."
     }
 }
