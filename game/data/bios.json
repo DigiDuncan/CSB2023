@@ -131,8 +131,7 @@
         "full_name": "CSGod",
         "sprite_path": "images/characters/csgod.png",
         "quote": "I have the power of YTP!",
-        "bio": "﷽",
-        "ce": true
+        "bio": "﷽"
     },
     "cultist": {
         "full_name": "Cultist Leader",
@@ -248,8 +247,8 @@
     "k17": {
         "full_name": "K-17",
         "sprite_path": "images/characters/pakoo/k17.png",
-        "quote": "Sunny D! Alright!",
-        "bio": "This silly creature is the embodiment of Pakoo's memories from 2017. They're a hard worker, but only have about 3 things ever to talk about. Those being Sunny D, Nekopara, and CS.",
+        "quote": "SunnyD! Alright!",
+        "bio": "This silly creature is the embodiment of Pakoo's memories from 2017. They're a hard worker, but they only have about three things ever to talk about: SunnyD, {i}Nekopara,{/i} and CS.",
         "ce": true
     },
     "k174": {

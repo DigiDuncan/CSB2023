@@ -78,7 +78,7 @@ init python:
     def awawa():
         outfits = renpy.random.choice(["casual", "festive"])
         blushing = renpy.random.choice(["-blush", "blush"])
-        faces = renpy.random.choice(["happy", "sad", "cry", "sheepish", "shock", "serious", "smug", "stare"])
+        faces = renpy.random.choice(["happy", "sad", "cry", "sheepish", "shock", "serious", "smug", "stare", "furious"])
         tearful = renpy.random.choice(["-tears", "tears"])
         gloomy = renpy.random.choice(["-gloom", "gloom"])
         shaders = renpy.random.choice(["", "dusk", "dark", "sil_white", "sil_black"])

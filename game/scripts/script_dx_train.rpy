@@ -3738,9 +3738,9 @@ label train_tate_ex_win:
     perfect_tate "{sc}{size=+24}{font=azsz}{color=#000000}I'm sorry."
 
     scene white
-    play music perfect_tate_intro volume 0.3 if_changed noloop
+    # TODO: re-render everything with audio now that audio volume is handled in-engine
     # TODO: video cuts off a bit too late, whoopsie doodle
-    $ renpy.movie_cutscene("/minigames/perfecttate/tate1.webm", stop_music=False)
+    $ renpy.movie_cutscene(perfect_tate_intro)
 
     # Disable pause menu because it'll ruin audio sync
     # TODO: this only works when it wants to...
