@@ -23,10 +23,10 @@
 # Progress
 - Flowchart (My head) 100%
 - Script writing 80%
-- Basic asset creation 75%
-- Basic transitions 80%
+- Basic asset creation 90%
+- Basic transitions 90%
 - Music 75%
-- Sound effects 5%
+- Sound effects 50%
 - Grammar pass 0%
 - Asset pass 0%
 - Transition/cinematography pass 0%
