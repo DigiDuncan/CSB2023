@@ -245,6 +245,13 @@
         "quote": "GRAND DAD!",
         "bio": "Joel is the certified funny man of the internet. He's destroyed PCs, made the {i}Super Ghostbusters{/i} album, and also loves aliens. Well, he loves them so much that he wants to kill them."
     },
+    "k17": {
+        "full_name": "K-17",
+        "sprite_path": "images/characters/k17.png",
+        "quote": "Sunny D! Alright!",
+        "bio": "This silly creature is the embodiment of Pakoo's memories from 2017. They're a hard worker, but only have about 3 things ever to talk about. Those being Sunny D, Nekopara, and CS.",
+        "ce": true
+    },
     "k174": {
         "full_name": "Pakoo's Memories",
         "sprite_path": "images/characters/memory.png",
