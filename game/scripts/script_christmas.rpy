@@ -84,8 +84,12 @@ label dx_christmas_tree:
         cs "Hnng..."
         n "All of a sudden, the shelf tips and all of the supplies fall onto CS!"
         show cs worried with hpunch
-        cs "Shit!{w=2.0}{nw}"
+        play sound sfx_metalpipe
+        cs "Shit!{w=1.0}{nw}"
         scene black with vpunch
+        play sound2 sfx_lego_break noloop
+        pause 1.0
+        play sound sfx_cat_crash
         # crashing SFX
         scene cs_garage_mess
         show cs disappointed at mid_left
@@ -164,6 +168,7 @@ label dx_christmas_anno:
     with dissolve
     cs "Maybe I should call someone over to help."
     cs "Lemme see if Anno is around..."
+    play sound sfx_ring_once
     n "CS decides to call Anno."
     show cs at mid_left with move
     show anno_house at mid_offscreen_right
@@ -354,6 +359,7 @@ label dx_christmas_before_shopping:
     scene tgt_inside
     show cs at center
     with dissolve
+    play sound sfx_hubbub loop volume 0.2
     show cs happy
     cs "Now this is a real store!"
     show cs
@@ -486,6 +492,7 @@ label dx_christmas_checkout:
     hide tgt_worker with moveoutright
     pause 3.0
     hide cs with moveoutright
+    stop sound fadeout 3.0
     scene tgt_outside
     show cs disappointed
     with dissolve
@@ -645,6 +652,9 @@ label dx_christmas_party_before:
         obama "Sure thing. It is very cold outside."
         jump dx_christmas_intro      
     if d20 == 9:
+        play sound sfx_siren
+        show blue_light at left
+        show red_light at right
         n "Sirens start blaring outside."
         show cs worried flipped
         cs "Uh oh! Why are the cops here?"
@@ -1067,11 +1077,13 @@ label dx_christmas_banter:
     with moveinleft
     pause 1.0
     show copguy flipped at center with move
+    play sound sfx_hard_knock
     n "Copguy jiggles the bathroom door."
     tate "Occupied!"
     show copguy
     copguy "Sorry sir, we gotta wait."
     sheriff "This is the police! Open up!"
+    play sound sfx_house_door_open
     scene cs_bathroom_open
     show sheriff flipped at mid_left
     show copguy
@@ -1093,6 +1105,7 @@ label dx_christmas_banter:
     hide copguy
     hide sheriff
     with dissolve
+    play sound sfx_house_door_close
     scene cs_bathroom
     copguy "Alright, but you better hurry! I don't wanna be in here all day!"
     scene cs_kitchen
@@ -1123,6 +1136,7 @@ label dx_christmas_banter:
     digi "No! The projector keeps giving me this really weird error!"
     linus"Not even I've seen this!"
     digi "Watch, I'll turn it on, and..."
+    play sound sfx_bluescreen
     rich "Hey, nice movie!"
     wesley "Looks like you'll have to set that up all over again."
     db "I got here early for this?"
@@ -1187,17 +1201,21 @@ label dx_christmas_banter:
     copguy "Please tell me that's it, I can't bear this anymore."
     sheriff "Yep, I'm done!"
     sheriff "Now, are you gonna help me wipe?"
+    play sound sfx_walkie_on
     n "All of a sudden, Copguy's walkie goes off."
     "Walkie" "Officer Copguy, we have a break-in at a house in the neighborhood you are currently at."
     "Walkie" "Can you report on that?"
     copguy "Gladly! Give me a second and I'll be in my car."
+    play sound sfx_walkie_off
     copguy "Sorry boss, as much as I would love to keep helping you, this is important."
+    play sound sfx_house_door_open
     scene cs_bathroom_open
     show sheriff
     show copguy flipped
     hide copguy with easeoutright
     sheriff "Wait! You can't just leave me here!"
     copguy "I'll just be a moment! Don't move."
+    play sound sfx_house_door_close
     scene cs_bathroom
     sheriff "God dammit! Get back here!!!"
     pause 3.0
@@ -1231,10 +1249,12 @@ label dx_christmas_banter:
     show k22 at mid_left with move
     show k22 flipped with determination
     k22 "I wonder how Addy is doing anyways."
+    play sound sfx_ring_once
     n "K-22 hits up Addy."
     show archival_5 at mid_offscreen_right
     show pakoo disappointed at mid_right
     with moveinright
+    # TODO: Play Frollo Show Rave Music here
     addy "HELLO??"
     k22 "Hey, uhh, how is it going over there?"
     addy "WHAT? I CAN'T HEAR, THE MUSIC IS REALLY LOUD!"
@@ -1368,11 +1388,13 @@ label dx_christmas_cooking:
     sheriff "In this mansion? There is only one damn bathroom?"
     show copguy flipped at center with moveinleft
     copguy "Hey, sorry, excuse me."
+    play sound sfx_house_door_open
     scene cs_bathroom_open
     show grace at mid_left
     show copguy flipped at center
     show sheriff at center behind copguy
     pause 1.0
+    play sound sfx_house_door_close
     scene cs_bathroom
     show grace at mid_left
     copguy "Hey boss! You won't believe what I just experienced."
@@ -1381,6 +1403,7 @@ label dx_christmas_cooking:
     sheriff "That's great, can you get me off this toilet now?"
     sheriff "I've been thinking of signing my will here because of how long it's been!"
     copguy "Alright, let's get you out of here old man."
+    play sound sfx_house_door_open
     scene cs_bathroom_open
     show grace at mid_left
     with determination
@@ -1743,18 +1766,33 @@ label dx_christmas_climax:
     stop music fadeout 3.0
     music end
     n "After all of the gifts have been given out, almost everyone has come to the conclusion that the party should end."
-
+    scene cs_living
+    show cs at left
+    show k22 at mid_right
+    show k17 at mid_offscreen_right
+    show luke at center
+    show tate at mid_left behind cs
+    show mean human flipped at mid_offscreen_left behind cs
+    with dissolve
     k22 "Well CS, this was wonderful, but we should get going."
     cs "Wait! You aren't gonna stay for the games?"
+    show k22 angry
     k22 "SHHHDADA--{w=1.0}{nw}"
+    show k17 happy
     k17 "We are doing games? Well that's the best part!"
+    show cs disappointed
     k22 "Dammit!"
+    show k22 disappointed
+    show k17 disappointed
+    show cs angry
     cs "So you never wanted to stay, you only came here because of him!"
     nova "Well, I'm also leaving, because this asshole won't let me play any good music!"
     blank "Hah! Says you! You wanted to play your trash this whole party!"
     digi "Hey wait a second! Luke!"
     luke "Wha? Oh shit!"
+    show tate sad
     digi "You were, streaming movies to the projector from your phone?"
+    show mean human annoyed flipped
     luke "Look, this looked to complicated to setup anyways, so I wanted to make it feel like your plan worked!"
     digi "But, but..."
     digi "I really thought I could set it up this time..."
@@ -1764,11 +1802,14 @@ label dx_christmas_climax:
     michael "I think I'm gonna puke."
     wesley "Arghh! My back! CS you prick, this is your fault!"
     grace "Guys! Stop yelling!"
+    show tate srs
     tate "Yeah guys! Get it together!"
     nova "No! Fuck you!"
     anne "Hey!"
+    show mean human angry flipped
     mean "What you say, you little fuck?"
     arceus "Oh my god, this is hurting my head..."
+    show cs pissed
     cs "Dammit everyone! Shut the fuck u--{w=2.0}{nw}"
 
     #lights out
@@ -2191,6 +2232,7 @@ label dx_christmas_billy_time:
     billy "Yes! It's that easy!"
     show handy_switch at Move((0.3125, 0.4), (0.3125, 0.4), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     n "Tate slaps the handy switch on the breaker, and flips the switch."
+    play sound sfx_snd_lightswitch
     show tate shock
     hide screen flashlight_demo
     tate "Wh--{w=1.0} Whaaaaaaaaaat??"
@@ -2418,12 +2460,15 @@ label dx_christmas_roof_moment:
     cs "What's to say people are still alive? Who knows how far this glacier goes?"
     digi "CS, do you really think we are the last people left?"
     cs "I don't know, I just worry that this is--"
+    play sound sfx_jingle volume 0.2
     n "As CS becomes more frantic, a noise from far away can be heard."
     k17 "Shhh! Do you hear that?"
     cs "What? What is it?"
+    play sound sfx_jingle volume 0.4
     k17 "I hear jingling! Does anyone hear jingling?"
     rich "Yeah, I do! It's coming from over there!"
     n "Richard points up in the sky."
+    play sound sfx_jingle volume 0.6
     k17 "Yeah I see it!"
     aria "Is that..."
     digi "It's Santa! He's really up there I think!"
@@ -2452,6 +2497,7 @@ label dx_christmas_roof_moment:
     everyone "You better not cry..."
     everyone "You better watch out I'm telling you why..."
     everyone "Santa Claus is coming, to town!"
+    scene black with dissolve
     santa "Ho ho ho!"
     santa "The wind really started the pick up around here, didn't it Vixen?"
     santa "Ho ho, do you all hear that? It sounds like I can hear Christmas cheer being spread down on the ground!"
@@ -2472,6 +2518,7 @@ label dx_christmas_roof_moment:
     n "Santa's Sleigh slows to crawl as it slowly lands in the snow."
     play music snow_blind
     music snow_blind
+    show santa at right with moveinright
     santa "Ho ho ho! Merry Christmas, everyone!"
     show grace at mid_right with easeinleft
     grace "SAANNNNNTAAA!!"
@@ -2652,7 +2699,11 @@ label dx_christmas_roof_moment:
     show k22 sil_black:
         zoom 0.15
         xpos 0.45
-        ypos 0.23   
+        ypos 0.23
+    show santa sil_black:
+        zoom 0.15
+        xpos 0.65
+        ypos 0.5    
     show snow1
     with dissolve
     santa "Alright! Stand back everyone! This is gonna take a lot of focus!"
@@ -2677,9 +2728,15 @@ label dx_christmas_roof_moment:
     copguy "Man, I literally look like him. How have you never picked that up?"
     stop music fadeout 3.0
     music end
+    show nu_finish:
+        zoom 0.75
+        xpos 0.5
+        ypos -0.4
+        linear 15 rotate -60
     santa "Ho ho, oh no. It's tipping towards us."
     santa "Oh, shit."
     scene black with dissolve
+    play sound sfx_splash
     n "A tsunami of car cleaner engulfs the group, as they get washed off the roof."
     n "As everyone gathers their bearings once again, they look around, watching the waves of Crotch Doctor carrying all the snow away."
     scene cs_house_night_dtree
@@ -2688,12 +2745,14 @@ label dx_christmas_roof_moment:
     show obama at mid_right
     show copguy at mid_mid_right
     show k17
+    show santa at right
     with dissolve
     cs "Woohoo! We did it! The avalanche covering the house is gone!"
     santa "Ho ho, well, it looks like you helped save Christmas, CS."
     santa "I need to get going however, I am slightly off schedule."
     santa "I should also make sure my steed didn't drown in car cleaner."
     cs "Good luck to you, Santa!"
+    hide santa with moveoutleft
     show k17 happy
     k17 "CS? Did you see that?"
     cs "Yeah, I was kind of there with everyone one."
@@ -2708,6 +2767,7 @@ label dx_christmas_roof_moment:
     sheriff "Hey guys, you got rid of the snow!"
     sheriff "What'd I miss?"
     cs "Uhhh..."
+    play sound sfx_jingle volume 0.7
     n "As everyone is talking, the jingling of bells can be heard rushing over CS' house."
     santa "Ho ho ho! Merry Christmas everyone!"
     show snow3

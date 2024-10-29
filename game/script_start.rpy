@@ -625,7 +625,7 @@ define zenigata_offscreen = Character("???", callback = renpy.partial(char_callb
 define perfect_tate = Character("Tate", callback = renpy.partial(char_callback, name = "tate", beep = "tate"), screen = "perfect_tate_text")
 
 # DX Holiday Special Definitions
-define santa = Character("Santa Claus", callback = char_callback)
+define santa = Character("Santa Claus", callback = renpy.partial(char_callback, beep = "santa"))
 
 # DX Finale Character Definitions
 define perfect_billy = Character("Perfect Billy", callback = renpy.partial(char_callback, name = "billy", beep = "billy"), screen = "perfect_billy_text")
@@ -653,8 +653,8 @@ define digi = Character("Digi", callback = renpy.partial(char_callback, name = "
 define eliza = Character("Elizabeth", callback = char_callback)
 define grace = Character("Grace", callback = char_callback)
 define iris = Character("Iris", callback = renpy.partial(char_callback, name = "iris", beep = "iris"))
-define k17 = Character("K-17", callback = char_callback)
-define k22 = Character("K-22", callback = char_callback)
+define k17 = Character("K-17", callback = renpy.partial(char_callback, beep = "k17"))
+define k22 = Character("K-22", callback = renpy.partial(char_callback, beep = "k20"))
 define kitty = Character("Kitty", callback = renpy.partial(char_callback, name = "kitty", beep = "kitty"))
 define mean = Character("Mean", callback = renpy.partial(char_callback, name = "mean", beep = "mean"))
 define midge = Character("Midge", callback = renpy.partial(char_callback, name = "midge", beep = "midge"))
@@ -1522,6 +1522,9 @@ image christmas_finisher = Text("{size=+108}To be continued...", text_align=0.5)
 # CS Holiday Special characters
 image avgn = "characters/avgn.png"
 image avgn flipped = "flip:characters/avgn.png"
+image santa = "characters/santa.png"
+image santa flipped = "flip:characters/santa.png"
+image santa sil_black = "sil_black:characters/santa.png"
 
 # CS Holiday Special BGs
 image snowed_in = "bg/snowed_in.png"
@@ -2507,6 +2510,7 @@ define audio.sfx_hold_it = "sfx/sfx_hold_it.ogg"
 define audio.sfx_hurt1 = "sfx/sfx_hurt1.ogg"
 define audio.sfx_issac = "sfx/sfx_isaac.ogg"
 define audio.sfx_items_rustling = "sfx/sfx_items_rustling.ogg"
+define audio.sfx_jingle = "sfx/sfx_jingle.ogg"
 define audio.sfx_joj_loop = "sfx/sfx_joj_loop.ogg"
 define audio.sfx_less_annoying_alarm_sound = "sfx/sfx_less_annoying_alarm_sound.ogg"
 define audio.sfx_lightswitch = "sfx/sfx_lightswitch.ogg"
