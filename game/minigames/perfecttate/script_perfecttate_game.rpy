@@ -24,7 +24,7 @@ init python:
     # Graphics
     PT_LANE_X = [445, 670, 885, 1100, 1315]
     CS_Y = 770
-    TATE_Y = 400
+    TATE_Y = 465
     SWAY_PERIOD = 1
     SWAY_DISTANCE = 10
 
@@ -35,8 +35,8 @@ init python:
     TELEGRAPH_DELAY = 1
     TELEGRAPH_TIME = 0.5
     DANGER_TIME = 0.05
-    DIFF_UP = 10
-    FIRE_COUNT = 21
+    DIFF_UP = 50
+    FIRE_COUNT = 81
 
     # Disable pause menu because it'll ruin audio sync
     # TODO: also disable controller bindings
@@ -55,7 +55,7 @@ init python:
 
             self.win = None
             self.cs = Image("minigames/perfecttate/cs.png")
-            self.tate = Image("minigames/perfecttate/tate.png")
+            self.tate = Image("minigames/perfecttate/perfecttate_small.png")
             self.laser = Image("minigames/perfecttate/laser.png")
             self.laser_ball = Image("minigames/perfecttate/energy_ball.png")
             self.arrows = Image("minigames/perfecttate/arrows.png")

@@ -495,11 +495,11 @@
     },
     "perfect_tate": {
         "full_name": "Perfect Tate",
-        "sprite_path": "secret/pt/tate_ex.png",
+        "sprite_path": "minigames/perfecttate/perfecttate.png",
         "quote": "...",
         "bio": "A temporal abomination.",
         "dx": true,
-        "zoom": 0.667
+        "zoom": 1.25
     },
     "terry": {
         "full_name": "Terry Lesler",
