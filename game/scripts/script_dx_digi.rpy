@@ -122,56 +122,7 @@ label dx_underpants:
     show dookie_milk_jar:
         linear 0.1 ypos 0.5
         linear 0.1 ypos 0.6
-        linear 0.1 ypos 0.5
-        linear 0.1 ypos 0.6
-        linear 0.1 ypos 0.5
-        linear 0.1 ypos 0.6
-        linear 0.1 ypos 0.5
-        linear 0.1 ypos 0.6   
-        linear 0.1 ypos 0.5
-        linear 0.1 ypos 0.6   
-        linear 0.1 ypos 0.5
-        linear 0.1 ypos 0.6
-        linear 0.1 ypos 0.5
-        linear 0.1 ypos 0.6
-        linear 0.1 ypos 0.5
-        linear 0.1 ypos 0.6
-        linear 0.1 ypos 0.5
-        linear 0.1 ypos 0.6
-        linear 0.1 ypos 0.5
-        linear 0.1 ypos 0.6
-        linear 0.1 ypos 0.5
-        linear 0.1 ypos 0.6
-        linear 0.1 ypos 0.5
-        linear 0.1 ypos 0.6
-        linear 0.1 ypos 0.5
-        linear 0.1 ypos 0.6
-        linear 0.1 ypos 0.5
-        linear 0.1 ypos 0.6
-        linear 0.1 ypos 0.5
-        linear 0.1 ypos 0.6
-        linear 0.1 ypos 0.5
-        linear 0.1 ypos 0.6
-        linear 0.1 ypos 0.5
-        linear 0.1 ypos 0.6
-        linear 0.1 ypos 0.5
-        linear 0.1 ypos 0.6
-        linear 0.1 ypos 0.5
-        linear 0.1 ypos 0.6
-        linear 0.1 ypos 0.5
-        linear 0.1 ypos 0.6
-        linear 0.1 ypos 0.6
-        linear 0.1 ypos 0.5
-        linear 0.1 ypos 0.6
-        linear 0.1 ypos 0.5
-        linear 0.1 ypos 0.6
-        linear 0.1 ypos 0.6
-        linear 0.1 ypos 0.5
-        linear 0.1 ypos 0.6
-        linear 0.1 ypos 0.5
-        linear 0.1 ypos 0.6
-        linear 0.1 ypos 0.5
-        linear 0.1 ypos 0.6
+        repeat 25
     n "Pakoo shakes up the strange mixture and throws it at the monster!"
     show pakoo flipped at mid_left
     #show mika at right
