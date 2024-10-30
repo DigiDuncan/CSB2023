@@ -5,7 +5,7 @@ label dx_christmas_start:
     show cs at mid_left
     with dissolve
     n "CS wakes up to a snowy winter morning."
-    cs "Yes! It snowed today!"
+    cs "Oh yes! It snowed today!"
     show cs at mid_right with move
     n "CS looks at his calendar."
     show cs happy
@@ -13,6 +13,8 @@ label dx_christmas_start:
     cs "Christmas is almost here!"
     show cs
     cs "...And you know what that means!"
+    if fun_value(FUN_VALUE_COMMON):
+        cs "Fish!"
     cs "I finally get to throw a huge Christmas party at my house!"
     show cs flipped
     cs "I'm so pumped, I should call everyone again to make sure they are coming."
@@ -170,7 +172,7 @@ label dx_christmas_anno:
     cs "Lemme see if Anno is around..."
     play sound sfx_ring_once
     n "CS decides to call Anno."
-    show cs at mid_left with move
+    show cs phone at mid_left with move
     show anno_house at mid_offscreen_right
     show anno at mid_right
     with moveinright
@@ -178,13 +180,13 @@ label dx_christmas_anno:
     cs "Hey Anno, CS here!"
     anno "Yes, I know the party is in two days, you just called me."
     cs "Well, I was wondering..."
-    show cs happy
+    show cs happy phone
     cs "If you wanted to help me decorate my house!"
-    show cs
+    show cs phone
     anno "I still have to get a gift for the gift exchange..."
     anno "...But I can do that tomorrow."
     anno "I'll come over. Be there soon."
-    show cs happy
+    show cs happy phone
     cs "Cool!"
     hide anno_house
     hide anno
@@ -752,7 +754,7 @@ label dx_christmas_party_before:
         cs "Oh hey, it's Michael!"
         cs "You're still visiting the United States? I thought you were only here for the summer!"
         michael "I decided to spend a whole year over here."
-        michael "It's pretty cold out, ain't it?"
+        michael "It's pretty cold out, innit?"
         cs "Yeah, let's get inside now."
         jump dx_christmas_intro      
     if d20 == 15:
@@ -1176,10 +1178,11 @@ label dx_christmas_banter:
     show k17 disappointed flipped
     mean "I'm Mean, and this is Tate. We are friends."
     show tate smug flipped
-    tate "...Yeah."
+    tate "Yeah, and I'm not a girl! I'm--{w=2.0}{nw}"
     show tate flipped
     k17 "Yeah, you sound mean."
     show mean human annoyed
+    show tate serious flipped
     show k17
     hide aria
     show aria at mid_mid_left
@@ -1509,7 +1512,7 @@ label dx_christmas_exchange:
     cs "You can steal another gift, or pick out another one."
     hide kitty with moveoutleft
     arceus "Psst! Kitty! Come here!"
-    n "Arceus whispers something into their ear."
+    n "Arceus whispers something into her ear."
     show kitty at mid_left with moveinleft
     kitty "Alright, Anno, hand over your computer thing."
     show anno at mid_right with moveinright
@@ -1527,6 +1530,8 @@ label dx_christmas_exchange:
     mean "A TRAIN Lego set!"
     hide lego_train with dissolve
     mean "That's my gift, by the way."
+    if fun_value(FUN_VALUE_COMMON):
+        tate "We know!"
     hide anno with moveoutright
     mean "Alright, well I guess it's my turn."
     show mean human flipped at mid_left with moveinleft
@@ -1680,7 +1685,7 @@ label dx_christmas_exchange:
     michael "I got a new water bottle!"
     linus "You got my LTT water bottle!"
     hide ltt_bottle with dissolve
-    linus "lttstore.com."
+    linus "{a=https://www.lttstore.com}lttstore.com.{/a}"
     hide michael with moveoutright
     linus "Alright, it's my turn."
     show linus at mid_left with moveinleft
@@ -1721,7 +1726,7 @@ label dx_christmas_exchange:
     nova "What the fuck is? Some World War II radio?"
     eliza "Yep. Used by the Soviets in the last half of World War II."
     hide russian_radio with dissolve
-    nova "I'm sure Tristan will like this, I'll probably give it to him."
+    nova "I'm sure Ges will like this, I'll probably give it to him."
     hide nova with moveoutright
     eliza "So, it's my turn, let's see what we have..."
     show elizabeth at mid_left with moveinleft
@@ -1852,10 +1857,12 @@ label dx_christmas_lights_out:
         cs "Squeezable?"
         n "CS turns the doorknob."
         n "All of a sudden, CS gets kicked to the ground!"
+        play sound sfx_hitbod3
         cs "Ow! What the fuck was that?"
         eliza "Oops, sorry."
-        eliza "You grabbed my chest."
-        cs "Oh. Crap."
+        eliza "You grabbed, my chest."
+        cs "Oh crap! I'm so sorry!"
+        eliza "It's okay, none of us can see and I guess I was standing infront of the doorknob..."
         cs "I was, trying, to get to the basement..."
         eliza "Let me just move out of the way."
         cs "Yeah, thanks."
