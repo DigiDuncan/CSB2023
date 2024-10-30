@@ -159,5 +159,10 @@
         "type": "image",
         "title": "Beta Arceus",
         "caption": "This version of Arceus was used throughout the majority of {i}CSBIII's{/i} development. We swapped to the current one only weeks before the game was sent to CS."
+    },
+	"desk.png": {
+        "type": "image",
+        "title": "CS' Desk POV",
+        "caption": "CS sent us this picture when we asked him for pictures of his house, but we never used it. It would have been annoying to edit, anyway. See if you're in the Discord panel on the left!"
     }
 }
