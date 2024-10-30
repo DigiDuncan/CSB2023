@@ -239,7 +239,7 @@ transform mid_offscreen_right:
 transform mid_offscreen_left:
     yanchor 1.0 ypos 1.0
     xanchor 0.5 xpos -0.0
-    
+
 # i got tired.
 # if ALL you need is a simple custom placement, no zoom/motion/effects, just use this please. 
 # for compatibility with the existing positions, set anchor to 1.0 - tate
@@ -248,7 +248,7 @@ transform manual_pos(x, y, this_anchor = 0):
     yanchor this_anchor
     xpos x
     ypos y
-    
+
 # another late-night innovation...
 # because renpy is stupid you MUST use pixel integer, no float allowed.
 # sorry, digi. couldn't get it to work in spite of your help
@@ -1932,7 +1932,6 @@ image bubble = Transform("images/characters/bubble.png", zoom = 2.0)
 image realistic_explosion_anim = spritesheet_animation("images/realistic_explosion.png", 6, 3, looping = False)
 
 ## For cop car lights
-
 image blue_light:
     "blue_light.png"
     alpha 0.0
@@ -1948,7 +1947,6 @@ image red_light:
     repeat
 
 ## For Copguy EX
-
 image copguy_ex_front:
     "characters/copguy_ex1.png"
     alignaround (0.5, 0.5)
@@ -1980,7 +1978,6 @@ layeredimage copguy_ex:
             "copguy_ex_front"
             
 ## For Tate EX
-
 image tate_ex_front:
     "secret/pt/tate_ex.png"
     alignaround (0.5, 0.5)
@@ -2377,9 +2374,7 @@ define audio.homely_yado_inn = "<from 0.499 to 40.502>homely_yado_inn.ogg"
 # For Tate EX / Perfect Tate
 define audio.insomnia_intro = "<from 0 to 11.299>secret/pt/insomnia.ogg"
 define audio.insomnia_loop = "<from 22.6>secret/pt/insomnia.ogg"
-define audio.perfect_tate_intro = "<from 3.6 to 22.8>/secret/pt/nyan_of_a_lifetime.ogg"
-define audio.perfect_tate_full = "<from 3.6 to 228.52>/secret/pt/nyan_of_a_lifetime.ogg"
-define audio.tate_game = "<from 22.8 to 228>/secret/pt/nyan_of_a_lifetime.ogg"
+define audio.nyan = "<from 3.6 to 228.52>/secret/pt/nyan_of_a_lifetime.ogg"
 
 # CSBIII DX Kuwait Music
 define audio.tmwstw = "tmwstw.ogg"

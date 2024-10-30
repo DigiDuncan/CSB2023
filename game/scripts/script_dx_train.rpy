@@ -3738,8 +3738,7 @@ label train_tate_ex_win:
     perfect_tate "{sc}{size=+24}{font=azsz}{color=#000000}I'm sorry."
 
     scene white
-    # TODO: re-render everything with audio now that audio volume is handled in-engine
-    # TODO: video cuts off a bit too late, whoopsie doodle
+    # TODO: re-render this again when it's finished, make sure it has audio
     $ renpy.movie_cutscene(perfect_tate_intro)
 
     # Disable pause menu because it'll ruin audio sync

@@ -23,7 +23,7 @@ init python:
 
     # Graphics
     PT_LANE_X = [445, 670, 885, 1100, 1315]
-    CS_Y = 770
+    CS_Y = 800
     TATE_Y = 465
     SWAY_PERIOD = 1
     SWAY_DISTANCE = 10
@@ -35,8 +35,7 @@ init python:
     TELEGRAPH_DELAY = 1
     TELEGRAPH_TIME = 0.5
     DANGER_TIME = 0.05
-    DIFF_UP = 50
-    FIRE_COUNT = 81
+    FIRE_COUNT = 61
 
     # Disable pause menu because it'll ruin audio sync
     # TODO: also disable controller bindings
@@ -52,9 +51,11 @@ init python:
 
             # TODO: besides replacing the assets, the "laser" needs to be a small projectile instead
             # no idea how the hitbox will work
+            # TODO: CS's sprite should be no more than 300 wide.
 
             self.win = None
-            self.cs = Image("minigames/perfecttate/cs.png")
+            self.cs = Image("minigames/perfecttate/cs1.png")
+            self.cs_anim_frame = 1
             self.tate = Image("minigames/perfecttate/perfecttate_small.png")
             self.laser = Image("minigames/perfecttate/laser.png")
             self.laser_ball = Image("minigames/perfecttate/energy_ball.png")
@@ -99,21 +100,15 @@ init python:
             # TODO: this is ugly as hell
             health_renderer = renpy.render(Text("Health: "+str(self.health), color="FF0000", size=100), 1920, 1080, st, at)
 
-            # Make laser red after 10 fires (fast laser)
-            if self.fires < 10:
-                laser_renderer = renpy.load_image(self.laser)
-            else:
-                laser_displayable = renpy.displayable(self.laser)
-                t = Transform(laser_displayable, matrixcolor = TintMatrix("#f00"))
-                laser_renderer = renpy.render(t, 1920, 1080, st, at)
+            # Shoot projectile
+            laser_renderer = renpy.load_image(self.laser)
             
             # Enter animation/logic
             if not self.entered:
                 if (st - self.start_time < 9.581):
-                    curr_y = ease_linear(-TATE_Y, TATE_Y, self.start_time+2, self.start_time+8, st)
-                    r.blit(tate_renderer, (PT_LANE_X[2], curr_y))
-                    if math.sin(30*st) > 0:
-                        r.blit(arrow_renderer, (PT_LANE_X[2]-165, 600))
+                    # CS running in
+                    curr_y = ease_linear(CS_Y+300, CS_Y, self.start_time+2, self.start_time+8, st)
+                    r.blit(cs_renderer, (PT_LANE_X[2], curr_y))
                 else:
                     self.entered = True
             
@@ -126,7 +121,6 @@ init python:
 
                     # kill the background/music for the cutscene
                     renpy.music.stop(channel="music", fadeout=None)
-                    renpy.hide("minigames/perfecttate/background.png")
 
                     renpy.notify("you made it to the end") 
 
@@ -143,6 +137,11 @@ init python:
                 telegraph_cutoff = telegraph_start  + TELEGRAPH_DELAY
                 danger_cutoff = telegraph_cutoff + DANGER_TIME
 
+                # Arrows flashing
+                if (st - self.start_time > 9.581 and st - self.start_time < 15):
+                    if math.sin(30*st) > 0:
+                        r.blit(arrow_renderer, (PT_LANE_X[2]-165, 700))
+
                 # Move enemy
                 if st - self.round_timer > MOVE_FREQUENCY:
                     # Fire laser logic
@@ -152,33 +151,20 @@ init python:
                         self.tate_last_x = 0
 
                     # More aggressive targeting that'll probably look better once the rhythm game part is implemented
-                    if self.fires >= DIFF_UP:
-                        self.enemy_lane = renpy.random.choice([
-                            self.current_lane,
-                            self.current_lane,
-                            self.current_lane,
-                            self.current_lane,
-                            renpy.random.randint(0, 4)
-                            ])
-                    else:
-                        self.enemy_lane = renpy.random.choice([
-                            self.current_lane,
-                            self.current_lane,
-                            self.current_lane,
-                            renpy.random.randint(0, 4)
-                            ])
+                    self.enemy_lane = renpy.random.choice([
+                        self.current_lane,
+                        self.current_lane,
+                        self.current_lane,
+                        self.current_lane,
+                        renpy.random.randint(0, 4)
+                        ])
+
                     self.tate_last_move = st
                     self.tate_move_time = st + 0.5
                     self.fires += 1
                     self.round_timer = st
                     self.played_charge = False
                     self.played_fire = False
-                    
-                    # Difficulty increase
-                    global MOVE_FREQUENCY, TELEGRAPH_DELAY
-                    #MOVE_FREQUENCY -= 0.15
-                    if self.fires == DIFF_UP:
-                        TELEGRAPH_DELAY = 0.5
 
                 # Danger period
                 if telegraph_cutoff < st < danger_cutoff:
@@ -190,9 +176,9 @@ init python:
 
                 # TATE X
                 if telegraph_start < st < danger_cutoff:
-                    cx = PT_LANE_X[self.enemy_lane] + 11
+                    cx = PT_LANE_X[self.enemy_lane] + 45
                 else:
-                    cx = PT_LANE_X[self.enemy_lane] + 11 + math.sin(st * SWAY_PERIOD) * SWAY_DISTANCE
+                    cx = PT_LANE_X[self.enemy_lane] + 45 + math.sin(st * SWAY_PERIOD) * SWAY_DISTANCE
                 current_tate_x = ease_linear(self.tate_last_x, cx, self.tate_last_move, self.tate_move_time, st)
 
                 # Telegraphing period
@@ -203,9 +189,7 @@ init python:
                     laser_ball_displayable = renpy.displayable(self.laser_ball)
                     l = (st - telegraph_start) / (telegraph_cutoff - telegraph_start)
                     t = Transform(laser_ball_displayable, xysize=(l, l), anchor=(0.5, 0.5))
-                    # Tint energy ball red for fast lasers
-                    if self.fires >= DIFF_UP:
-                        t.matrixcolor = TintMatrix("#f00")
+
                     # Render energy ball
                     laser_ball_renderer = renpy.render(t, 180, 180, st, at)
                     xo = (abs(l-1) * 180) / 2
@@ -223,9 +207,8 @@ init python:
                     self.danger_lane = None
 
             # PLAYER LOGIC
-            # TODO: cs will have a health bar
+            # TODO: cs will have a nicer health bar later
             if self.current_lane == self.danger_lane:
-                renpy.notify("you have been hit") 
                 renpy.sound.play("audio/sfx/sfx_hurt1.ogg")
                 self.health -= 1
                 if self.health < 0:
@@ -235,8 +218,18 @@ init python:
             if self.fires >= FIRE_COUNT:
                 self.exited = True
 
-            # Render player character
-            r.blit(cs_renderer, (PT_LANE_X[self.current_lane], CS_Y))
+            # Render player character, but only if intro is over
+            if self.entered == True:
+                # Go through each frame of the animation
+                # TODO: obviously, this is terrible. idk how to add a delay between frames, and it'll suck even more with more frames...
+                if self.cs_anim_frame == 1:
+                    self.cs = Image("minigames/perfecttate/cs1.png")
+                    self.cs_anim_frame = 2
+                elif self.cs_anim_frame == 2:
+                    self.cs = Image("minigames/perfecttate/cs2.png")
+                    self.cs_anim_frame = 1
+
+                r.blit(cs_renderer, (PT_LANE_X[self.current_lane], CS_Y))
 
             renpy.redraw(self, 0)
             return r
@@ -263,11 +256,10 @@ init python:
 
 screen PerfectTateGame():
     default PerfectTateGame = PerfectTateGameDisplayable()
-    add Movie(play="minigames/perfecttate/tate2.webm")
+    add Movie(play="minigames/perfecttate/Tate2.webm")
     add PerfectTateGame
 
 label play_perfecttate_game:
-    play music tate_game volume 0.3 if_changed noloop
     $ persistent.heard.add("nyan_of_a_lifetime")
     window hide
     $ quick_menu = False
