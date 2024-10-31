@@ -229,7 +229,3 @@ init python:
 ## by a slash.
 
 # define build.itch_project = "renpytom/test-project"
-
-# Fix movies not respecting sliders
-define config.single_movie_channel = "music"
-define config.auto_movie_channel = "music"
