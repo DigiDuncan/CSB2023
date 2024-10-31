@@ -5,54 +5,102 @@
             "type": "start",
             "need_label": "csbi_start",
             "jump_to": "csbi_start",
-            "pos" : [25, 400]
+            "pos" : [0, 6]
         },
         "csbi_error_end" : {
             "name": "Error",
             "type": "end",
             "need_label": "after_error_fight",
-            "pos": [25, 250]
+            "pos": [0, 5]
         },
         "csbi_pc_choice" : {
             "name": "PC?",
             "type": "choice",
             "need_label": "csbi_craptop",
-            "pos": [225, 400]
+            "pos": [1, 6]
         },
         "csbi_nah_end" : {
             "name": "Nah.",
             "type": "end",
             "need_achieve": "nah",
-            "pos": [225, 550],
+            "pos": [1, 5],
             "dx": true
         },
         "csbi_speedrun_end" : {
             "name": "Speedrun",
             "type": "end",
             "need_achieve": "speedrun",
-            "pos": [225, 250],
+            "pos": [1, 7],
             "dx": true
+        },
+        "csbi_discord_outcome" : {
+            "name": "Respond",
+            "type": "outcome",
+            "need_label": "csbi_walmart",
+            "pos": [2, 6]
         },
         "csbi_call_choice" : {
             "name": "Call?",
             "type": "choice",
             "need_label": "csbi_room",
-            "pos": [425, 400],
+            "pos": [3, 6],
             "dx": true
         },
         "csbi_homesavers_end" : {
             "name": "Home Savers",
             "type": "end",
             "need_achieve": "savers",
-            "pos": [425, 250],
+            "pos": [2, 5],
             "dx": true
         },
         "csbii_start" : {
             "name": "CSBII",
             "type": "start",
-            "need_label": "csbii_start",
-            "pos": [625, 400],
+            "need_achieve": "csbi",
+            "pos": [4, 6],
             "jump_to": "csbii_start"
+        },
+        "csbii_rooftop_choice" : {
+            "name": "Which ATK?",
+            "type": "choice",
+            "need_label": "csbii_caught",
+            "pos": [5, 6]
+        },
+        "csbii_asylum_badend": {
+            "name": "Asylum",
+            "type": "badend",
+            "need_label": "csbii_asylum",
+            "pos": [5, 5]
+        },
+        "csbiii_start": {
+            "name": "CSBIII",
+            "type": "start",
+            "need_achieve": "csbii",
+            "pos": [6, 6]
+        },
+        "csbiii_meeting_choice": {
+            "name": "Meeting?",
+            "type": "choice",
+            "need_label": "csbiii_ai",
+            "pos": [7, 6]
+        },
+        "csbiii_ai_end": {
+            "name": "AI",
+            "type": "end",
+            "need_achieve": "chatgpt",
+            "pos": [7, 5]
+        },
+        "csbiii_job_choice": {
+            "name": "Job?",
+            "type": "choice",
+            "need_label": "csbiii_start",
+            "pos": [8, 6]
+        },
+        "csbiii_shopping_outcome": {
+            "name": "Went shopping",
+            "type": "outcome",
+            "need_label": "csbiii_start",
+            "pos": [8, 5]
         }
     }
 }

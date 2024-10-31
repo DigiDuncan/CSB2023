@@ -11,6 +11,12 @@ init python:
 
     timeline_map = timeline_file["timeline"]
 
+    with renpy.open_file("data/achievements.json") as json_file:
+        achieve_file = json.load(json_file)
+
+    achieve_map = achieve_file
+
+
 screen timeline_tracer():
     tag menu
 
@@ -40,18 +46,20 @@ screen timeline_tracer():
             for event in timeline_map:
                 python:
                     # set up positioning
+                    # this is set up in a grid system. just handle it in the json based on what row/column you want
                     try:
-                        this_x = timeline_map[event]["pos"][0]
-                        this_y = timeline_map[event]["pos"][1]
+                        this_x = (timeline_map[event]["pos"][0]*200) + 25
+                        this_y = (timeline_map[event]["pos"][1]*145)
                     except:
-                        this_x = 0
-                        this_y = 0
+                        this_x = 25
+                        this_y = 25
             
                     # make sure it's unlocked before we continue
                     try:
                         if renpy.seen_label(timeline_map[event]["need_label"]):
                             this_unlocked = True
-                        elif timeline_map[event]["need_achieve"] in achievement_manager.achievements:
+                        # TODO: this doesn't work yet...
+                        elif achieve_file[timeline_map[event]["need_achieve"]["name"]] in persistent.unlocked_achievements:
                             this_unlocked = True
                         else:
                             this_unlocked = False
@@ -66,12 +74,16 @@ screen timeline_tracer():
                         if timeline_map[event]["type"] == "start":
                             this_bg = "#6288FF"
                         elif timeline_map[event]["type"] == "choice":
-                            this_bg = "#B3B3B3"
+                            this_bg = "#FF00AF"
+                        elif timeline_map[event]["type"] == "outcome":
+                            this_bg = "#92C148"
                         elif timeline_map[event]["type"] == "end":
                             this_bg = "#00B330"
                         elif timeline_map[event]["type"] == "badend":
                             this_bg = "#FF6800"
-                        else:
+                        elif timeline_map[event]["type"] == "minigame":
+                            this_bg = "#DD6DFF"
+                        else: # if it's this color, you haven't given it a type!
                             this_bg = "#000000"
                     
                         # get DX status
@@ -81,15 +93,24 @@ screen timeline_tracer():
                         except:
                             this_dx = False
 
-                      # get name, if it exists
+                        # get name, if it exists
                         try:
                             this_name = timeline_map[event]["name"]
                         except:
                             this_name = ""
-                    else:
+                
+                        # get jump label, if it exists
+                        try:
+                            this_jump = timeline_map[event]["jump_to"]
+                        except:
+                            this_jump = None
+
+                    else: # locked
                         this_bg = "#BBBBBB"
                         this_name = "???"
                         this_dx = False
+                        this_jump = None
+                        
 
                 # make bounding box for item
                 frame:
@@ -100,14 +121,25 @@ screen timeline_tracer():
                     xpos this_x
                     ypos this_y
 
-                    text this_name:
-                        xalign 0.5
-                        yalign 0.5
-                 
+                    # place dx label
                     if this_dx == True:
                         image ("gui/dx_text.png"):
                             xpos 114
                             ypos -25
+                 
+                    # make button
+                    button:
+                        xsize 150
+                        ysize 150
+                        xalign 0.5
+                        yalign 0.5
+
+                        text this_name:
+                            xalign 0.5
+                            yalign 0.5
+
+                        # handle jumps here later if there are any
+                        action [ SensitiveIf(this_unlocked == True and this_jump is not None), Notify("Later, I'll jump to a label.") ]
 
 
     textbutton "Main Menu" action Return() yoffset 1000 xoffset 25
