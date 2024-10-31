@@ -105,6 +105,20 @@
         "rarity": "Common",
         "dx": true
     },
+    "cs_car": {
+        "img": "cs_car_item",
+        "name": "CS's Car",
+        "owner": "CS",
+        "desc": "A 2009 Honda Civic.",
+        "rarity": "Common"
+    },
+    "cs_car_old": {
+        "img": "cs_car_old_item",
+        "name": "CS's Car...?",
+        "owner": "CS",
+        "desc": "A 2014 BMW 4? That... doesn't seem right. How did this get here?",
+        "rarity": "Uncommon"
+    },
     "cs_phone": {
         "img": "cs_phone",
         "name": "CS's Cellphone",
@@ -218,6 +232,13 @@
         "desc": "One of many random fucking things CS keeps... somewhere. Fun fact: Tate {i}hates{/i} this thing.",
         "rarity": "Uncommon"
     },
+    "joj_ufo": {
+        "img": "/minigames/car/joj_ufo.png",
+        "name": "JoJ UFO",
+        "owner": "HoH SiS",
+        "desc": "The primary mode of transportation for HoH SiS. Allows for safe traversal over even the most unstable foundations. This particular model also includes a laser defense system.",
+        "rarity": "Uncommon"
+    },
     "lego_jail": {
         "img": "lego_jail",
         "name": "Lego City Jail Cell",
@@ -234,8 +255,8 @@
         "rarity": "Uncommon",
         "dx": true
     },
-    "ltt_bottle": {
-        "img": "ltt_bottle",
+    "ltt_bottle_linus": {
+        "img": "ltt_bottle_linus",
         "name": "LTT Water Bottle",
         "owner": "Linus Sebastian",
         "desc": "Built to last, but not dishwasher-safe. {a=https://lttstore.com}lttstore.com{/a} {size=-24}(not sponsored){/size}",

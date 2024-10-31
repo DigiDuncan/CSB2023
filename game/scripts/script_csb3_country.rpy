@@ -793,6 +793,7 @@ label england_good_ramsay:
     n "Gordon comes back with a briefcase full of cash."
     show gordon at center
     show case at mid_mid_right
+    $ collect("briefcase")
     with moveinleft
     gordon "Listen, I don't know how you made that, but I'll buy your recipe for £100,000."
     gordon "We won't need to speak of this again."
@@ -2103,6 +2104,7 @@ label sweden_aurora_borealis:
     with dissolve
     show cs at left
     show pig at mid_left
+    $ collect("pig")
     with moveinleft
     witch "Wow, that was fast. Now all I have to do is put the carcass through the skinner and I can cook the meat after it's skinned."
     hide pig with dissolve
@@ -2432,6 +2434,7 @@ label sweden_joel:
     cs "Why would I go be bait for an alien that's already killed two horses that are about ten times my weight?"
     joel "You'll be fine! Don't worry about it."
     show pipe_gun flipped at manual_pos(0.85, 0.7, 0.5) with dissolve
+    $ collect("pipe_gun")
     n "Joel pulls out a makeshift gun."
     joel "This bad boy is enough to kill any alien."
     joel "You did come across the world to find me. I figure this isn't that much crazier."
@@ -2444,6 +2447,7 @@ label sweden_joel:
     show cs
     cs "No need. I brought my own."
     show cs horse
+    $ collect("horse_mask")
     n "CS pulls out a horse head and puts it on."
     cs "See?"
     joel "What the hell?! What all do you have in there?"
@@ -2456,8 +2460,11 @@ label sweden_joel:
     show dog at offscreenright
     with determination
     show cheetos at offscreenrightspin
+    $ collect("cheetos")
     show bear at midoffscreenleftspin
+    $ collect("bear")
     show dog at offscreenleftspin
+    $ collect("dog")
     with MoveTransition(1.0)
     cs "Oh, nothing much, just{fast} {cshake}(all this random fucking shit flying back\nand forth)"
     joel "You're an interesting critter, man."

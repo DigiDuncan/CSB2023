@@ -26,6 +26,7 @@ label dx_underpants:
     show toxic_mikas at manual_pos(1.1, 1.0, 1.0):
         zoom 0.6
     with move
+    $ collect("toxic_mikas")
     weird_al "Whoops!"
     n "Suddenly, the pile begins to morph into a giant evil Mika!"
     
@@ -76,6 +77,7 @@ label dx_underpants:
 
     show slime16 at offscreenleft:
         rotate 90
+    $ collect("slime16")
     show cpt_underpants at manual_pos(0.3, 1.0, 1.0) with MoveTransition(0.1)
     show cpt_underpants at mid_offscreen_left
     play sound sfx_tf2_pickup_metallic
@@ -110,11 +112,13 @@ label dx_underpants:
 
     play sound sfx_mc_brew
     show dookie_milk_jar at manual_pos(0.4, 0.6, 0.5) zorder 3 with dissolve:
-        zoom 0.5     
+        zoom 0.5
+    $ collect("dookie_milk_jar")
     n "Pakoo quickly mixes up a bottle of chocolate milk with bloody piles of dog shit!"
     george "Hey, Pakoo? Where did you find the jar of crazy stuff?"
     show gamebarrel at manual_pos(0.1, 0.9, 0.5) with MoveTransition(0.5):
         zoom 0.6
+    $ collect("gamebarrel")
     pakoo "It was right here, next to this barrel of toxic yellow Game Boys."
     pause 1.0
     harold "Oh, that makes sense."

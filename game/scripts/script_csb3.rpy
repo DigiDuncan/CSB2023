@@ -119,7 +119,7 @@ label csbiii_boring_video:
     play sound sfx_csnore
     cs "Zzzzz..."
     linus "{i}CS!!" with hpunch
-    
+    stop sound
     show cs scared
     cs "Wha-- huh?!"
 
@@ -129,9 +129,11 @@ label csbiii_boring_video:
     else:
         linus "Asleep on the job? On your {i}first day?!"
     cs "Oh, shi--{nw}"
-    linus "This is unacceptable! You're {i}fired!"
+    linus "This is unacceptable!"
+    linus "You're {i}fired!" with hpunch
 
     scene black with dissolve
+    pause 1.0
     n "CS is groggily escorted out of the building."
     jump fired_new_plan
 
@@ -385,6 +387,7 @@ label csbiii_boost:
     show cs
     linus "Hah, sorry. I'm just excited to show you this!"
     show linus_box at truecenter with dissolve
+    $ collect("linus_box")
     n "Linus holds out a rectangular box with bold black lettering. It reads, DO NOT USE."
     show cs disappointed
     cs "Umm, you sure this is the right box? It literally says--"
@@ -395,6 +398,7 @@ label csbiii_boost:
     linus "Look, just... look inside. I'm sure you'll like it."
     n "CS cautiously reaches into the box."
     show ytx at truecenter
+    $ collect("ytx")
     hide linus_box 
     with dissolve
     n "He pulls out what looks to be a graphics card, but with a brown YouTube logo engraved onto the side."
@@ -438,6 +442,7 @@ label csbiii_boost:
 
     linus "Alright, now that it's up and working, we need to install the drivers."
     show ytx_drive at manual_pos(0.7, 0.5, 0.5) with dissolve
+    $ collect("ytx_drive")
     linus "The card came with a flash drive that includes them."
     pause 0.5
     hide ytx_drive with dissolve
@@ -512,9 +517,10 @@ label csbiii_boost:
     cs "Who knew recording could be so stressful..."
     cs "I could use a drink. These lights are so bright..."
     if fun_value(FUN_VALUE_COMMON):
-        show ltt_bottle behind ltt_fg at truecenter with moveinbottom
+        show ltt_bottle_linus behind ltt_fg at truecenter with moveinbottom
         linus "Here. Take this water bottl-- oops!{w=0.25}{nw}"
-        show ltt_bottle at manual_pos(0.5, 1.0, 0.5) with MoveTransition(0.1)
+        show ltt_bottle_linus at manual_pos(0.5, 1.0, 0.5) with MoveTransition(0.1)
+        $ collect("ltt_bottle_linus")
         pause 0.1
         play sound sfx_metalpipe
         show cs scared with vpunch
@@ -522,7 +528,8 @@ label csbiii_boost:
         show cs worried
         cs "Wow, Linus... you really {i}do{/i} have butterfingers."
     else:
-        show ltt_bottle behind ltt_fg at truecenter with moveinbottom
+        show ltt_bottle_linus behind ltt_fg at truecenter with moveinbottom
+        $ collect("ltt_bottle_linus")
         linus "Here! Try out our LTT water bottle! It'll keep your water cool all day, allowing {i}you{/i} to stay hydrated without the hassle. {a=https://lttstore.com}lttstore.com{/a}"
         show cs disappointed
         cs "... Linus, we aren't filming..."
@@ -917,6 +924,7 @@ label csbiii_arc_escape:
     play sound sfx_page
     show cswanted at manual_pos(0.65, 0.55, 0.5) with Dissolve(0.25):
         zoom 0.75
+    $ collect("cswanted")
     n "Copguy produces a wanted poster with CS's face."
     hide cswanted with dissolve
     taran "Uhh, yeah, that's--"
@@ -1272,6 +1280,7 @@ label genocide_wait_arc:
             linear 5.0 alpha 1.0
         parallel:
             linear 12.0 zoom 1.2
+    $ collect("billy_car")
     $ renpy.skipping = False
     $ renpy.pause(15.0, hard=True)
     $ renpy.skipping = True
@@ -1454,6 +1463,7 @@ label csbiii_wait_forest:
 
     scene washington_road
     show cop_car dark at mid_offscreen_left
+    $ collect("cop_car")
     show cs disappointed dark at mid_left
     show arceus dark flipped at mid_left_left
     with dissolve
@@ -1497,6 +1507,7 @@ label csbiii_wait_forest:
     show walkie at manual_pos(0.4, 0.3, 0.5) behind copguy with dissolve:
         zoom 0.2
         rotate 15
+    $ collect("walkie")
     play sound sfx_walkie_on
 
     n "CS and Arceus are thrown into the back of the cruiser as Copguy barks some order into his walkie."
@@ -1842,6 +1853,7 @@ label csbiii_west:
         cs "Nah, we've got this. For sure this time."
         show cool_crab dusk at manual_pos(0.3, 0.6, 0.5) with dissolve:
             zoom 0.5
+        $ collect("cool_crab")
         n "CS and Arceus find a cool-looking crab, but it's still just the ocean again."
         hide cool_crab
         $ compass_current_time = ""

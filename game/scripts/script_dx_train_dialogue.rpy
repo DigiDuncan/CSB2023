@@ -175,7 +175,8 @@ label train_dialogue:
                 linear 0.25 alpha 1.0
             parallel:
                 linear 0.25 ypos 0.45
-
+        
+        $ collect("tate_phone")
         pause 1.0
         tate "..."
         show mean human hat annoyed
@@ -197,6 +198,7 @@ label train_dialogue:
             parallel:
                 linear 0.25 ypos 0.45
 
+    $ collect("tate_phone")
     pause 2.0
     play sound sfx_pickup_call
     show mean human hat annoyed
@@ -263,8 +265,9 @@ label train_dialogue:
 
 
     show arc_laptop at manual_pos(0.65, 0.55, 0.5) behind arceus with dissolve
+    $ collect("arc_laptop")
     pause 0.5
-    play music nyan_full volume 0.05
+    play music nyan volume 0.05
     pause 2.0
     n "Arceus pulls out a laptop and starts playing a game."
     pause 3.0

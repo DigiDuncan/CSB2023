@@ -290,8 +290,9 @@ label archival:
     n "CS runs outside."
     show cs worried at mid_mid_left with MoveTransition(0.25)
     scene car_old with dissolve
+    $ collect("cs_car_old")
     show cs worried at left with moveinleft
-    n "A blue car is parked outside the house."
+    n "A blue car is parked just outside the house."
     show carguya at right with moveinright
     play sound sfx_nice_car
     carguy_nobeep "Nice car!"
@@ -405,6 +406,7 @@ label archival_finale:
     n "They start to chase after CS. He runs a bit and then hides behind one of the canisters."
     show hart1 at center
     show m4 as first at center
+    $ collect("m4")
     show hart2 at left
     show m4 as second at left
     with moveinleft

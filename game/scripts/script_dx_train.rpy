@@ -4,6 +4,7 @@
 # TODO: moving scenery, mostly at night, including on top of the train. will need custom scenes. for now it's just the car scenery
 # TODO: mean thinks the normal car moving background is too fast, maybe slow down moving videos?
 # TODO: replace all instances of hearts and music notes with jp font glyphs as soon as it looks good?
+# TODO: HI BASICALLY ALL THE MUSIC IN THIS ROUTE IS BROKEN, HELP
 
 ######## VARIABLES ########
 label train_start_good:
@@ -842,6 +843,7 @@ label train_boarding:
     jump train_enter_sleeper
 
 label train_enter_sleeper:
+    # TODO: this track is broken somehow
     play music bedroom_day if_changed
     music bedroom_day
 
@@ -1265,6 +1267,7 @@ label train_enter_sleeper:
     jump train_dining
 
 label train_dining:
+    # TODO: this track is also broken
     play music krabby_klub if_changed
 
     scene 
@@ -1290,8 +1293,10 @@ label train_dining:
     show amtrak_dining_table
     show mean at manual_pos(300,350)
     show amtrak_dining_food at manual_pos(805,145) behind mean
+    $ collect("amtrak_dining_food")
     hide arceus
     with dissolve
+    $ collect("amtrak_dining_food")
 
     n "A strange spiny entity is surrounded by piles of pancakes, sky-high stacks of sausages, oodles of eggs, and a whole bunch of bacon."
     n "Arceus can't help but stare in awe at both the enormous spread of food..."
@@ -1385,7 +1390,8 @@ label train_dining:
     show mean scared at offscreenright with MoveTransition(0.3)
     n "Mean dashes out of the dining car!"
 
-    scene 
+    # TODO: music cuts here somehow??
+    scene
     show car plains night
     show amtrak_dining_car
     with dissolve
@@ -1413,6 +1419,9 @@ label train_wakeup:
     show car plains night
     show amtrak_sleeper_interior_night
     with dissolve
+    # TODO: this music is also broken
+    play music prof_kranes_kidnap if_changed
+    music prof_kranes_kidnap
     play sound sfx_sliding_door_open
     pause 1.0
     show arceus worried dark flipped at offscreenleft with determination
@@ -1698,6 +1707,7 @@ label train_wakeup:
 
 ######## BAIL NOW ########
 label train_allow_staff:
+    # TODO: more broken music
     play music e_gadds_lab if_changed
     music e_gadds_lab
     scene 
@@ -1741,6 +1751,7 @@ label train_allow_staff:
 
 ######## BEGIN THE HEIST ########
 label train_begin_heist:
+    # TODO: more broken music
     play music e_gadds_lab if_changed
     music e_gadds_lab
     scene 
@@ -1791,6 +1802,7 @@ label train_begin_heist:
     jump train_meanwhile
 
 label train_meanwhile:
+    # TODO: more broken music
     centered "Meanwhile..."
         
     pause 0.5
@@ -1808,6 +1820,7 @@ label train_meanwhile:
     else:
         lupin_offscreen "This is {i}perfect!{/i} I can't believe I could just waltz on in like that!"
     show lupin stand hat with dissolve
+    # TODO: make lupin actually put on the hat
     lupin_offscreen "And, with {i}this..."
     lupin_offscreen "Nobody would ever suspect the driver, right?"
     play sound sfx_sliding_door_open
@@ -1899,6 +1912,7 @@ label train_search_arceus:
     arceus "Man... what is {i}wrong{/i} with people?!"
     n "Arceus spots a lone pancake."
     show amtrak_dining_pancake at manual_pos(1433, 683) with ease
+    $ collect("amtrak_dining_pancake")
     arceus "At least there's this one..." 
     hide amtrak_dining_pancake with dissolve
     pause 1.5
@@ -2605,6 +2619,7 @@ label train_confront_lupin:
         rotate 10
         xpos 0.55
         ypos 0.3
+    $ collect("walkie")
     mean "Pincushion, this is Pincushion to Muscle Mass! Come in!"
     amtrak_conductor "This is Muscle Mass. Go ahead."
     mean "We found the thief! We're on the roof and headed your way! Requesting standby, over!"
@@ -2900,6 +2915,7 @@ label train_lupin_win:
         linear 0.25 ypos 1080
     play sound "audio/sfx/snd_damage.ogg"
     pause 0.5
+    $ collect("watch")
     
     # brooch
     show lupin stand hat:
@@ -2913,6 +2929,7 @@ label train_lupin_win:
         linear 0.25 ypos 1080
     play sound sfx_mc_hit
     pause 0.5
+    $ collect("brooch")
     
     # switch
     show lupin stand hat:
@@ -2925,6 +2942,7 @@ label train_lupin_win:
         linear 0.25 ypos 1080
     play sound sfx_pkmn_hit
     pause 0.5
+    $ collect("switch")
     
     # the money!
     show lupin stand hat:
@@ -3107,6 +3125,7 @@ label train_lupin_win:
         xpos 1200
         ypos 0
     with vpunch
+    $ collect("lego_jail")
     pause 2.0
     show tate sheepish
     tate "... A jail cell?"
@@ -3172,6 +3191,7 @@ label train_lupin_win:
     show mean human shocked hat flipped
     hide mean_hat
     pause 0.5
+    $ collect("mean_hat")
     amtrak_conductor "Welcome to Amtrak, bucko."
     show amtrak_conductor flipped at right
     show cs flipped at mid_mid_right
@@ -3726,6 +3746,7 @@ label train_tate_ex_win:
     pause 0.5
     play sound sfx_glass_echo
     with hpunch
+    $ collect("yeetable_textbox")
     pause 4.0
 
     perfect_tate "{sc}{size=+24}{font=azsz}{color=#000000}That's better."

@@ -1,16 +1,3 @@
-# Text Beep Spacing
-# Partially stolen from:
-#   https://www.renpy.org/doc/html/config.html#var-config.replace_text
-#   https://lemmasoft.renai.us/forums/viewtopic.php?t=22730
-# This is meant to place pauses after certain punctuation automatically so that the dialogue feels more... human.
-# These are set up so that it only works if there is more than once sentence in the text box at any given time.
-# Make sure there's a space after your punctuation or it won't work.
-# You can still add manual pauses wherever you like in the script if this isn't enough for you.
-# If for some reason you do NOT want the auto-pause in a certain line, put {w=0} immediately after the punctuation.
-#   Real examples:
-#       mean "Hey! You,{w=0} there!"
-#       tate "Excuse me, Mr.{w=0} Conductor?"
-
 init python:
     # For unused assets gallery
     unused_page = 0
@@ -21,9 +8,30 @@ init python:
     # For bios sorting. 0 = order seen, 1 = by name
     # TODO: Maybe further tagging can be added later, but, not now.
     current_bios_sorting_mode = 0
-    
+
+    # easier item unlocks
+    def collect(i):
+        global item_map
+        if i in item_map.keys():
+            persistent.collected.add(i)
+            print(f"Collected item '{i}'.")
+        else:
+            print(f"WARNING: Failed to collect item '{i}', which does not exist in item_map.")
 
 init python:
+    # Text Beep Spacing
+    # Partially stolen from:
+    #   https://www.renpy.org/doc/html/config.html#var-config.replace_text
+    #   https://lemmasoft.renai.us/forums/viewtopic.php?t=22730
+    # This is meant to place pauses after certain punctuation automatically so that the dialogue feels more... human.
+    # These are set up so that it only works if there is more than once sentence in the text box at any given time.
+    # Make sure there's a space after your punctuation or it won't work.
+    # You can still add manual pauses wherever you like in the script if this isn't enough for you.
+    # If for some reason you do NOT want the auto-pause in a certain line, put {w=0} immediately after the punctuation.
+    #   Real examples:
+    #       mean "Hey! You,{w=0} there!"
+    #       tate "Excuse me, Mr.{w=0} Conductor?"
+
     import re
     def substitutions(s):
         # these items wait for 0.25:
@@ -1800,7 +1808,7 @@ image letterbox1 = "letterbox.png"
 image letterbox2 = "letterbox.png"
 image letterbox3 = "letterbox_screen.png"
 image linus_box = "linus_box.png"
-image ltt_bottle = "ltt_bottle.png"
+image ltt_bottle_linus = "ltt_bottle_linus.png"
 image m4 = "m4.png"
 image m4 fire = "m4fire.png"
 image m4 fire flipped = "flip:m4fire.png"

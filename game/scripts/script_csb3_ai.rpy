@@ -22,6 +22,7 @@ label csbiii_ai:
     linus "Are you serious, CS? That sounds like a recipe for disaster."
     cs "Disaster? No, no, Linus. Think about it—hairdryers are designed to blow cool air, right? And what's cooler than a gentle breeze? It's foolproof, I tell you!"
     scene hairdryercoolingsystem with dissolve
+    $ collect("hair_dryer")
     n "CS188 and the team are attaching a hairdryer to the gaming PC, with everyone watching nervously."
     cs "Aright, folks, brace yourselves. It's time to unleash the \"Hairdryer Cooling System\"!"
     play sound sfx_hairdryer    
@@ -119,6 +120,7 @@ label csbiii_ai:
     cs "{size=-12}Well, let's unleash the \"Quack Attack\" on our pursuers!"
     play sound sfx_duck loop volume 0.7
     show ai_ducks with dissolve
+    $ collect("duck")
     n "CS188 and Arceus discreetly inflate dozens of rubber ducks and release them, causing a colorful and noisy chaos."
     n "The cops are distracted, slipping and sliding on the rubber ducks, as CS188 and Arceus make their getaway."
     show arceus happy flipped at right

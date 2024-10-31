@@ -605,6 +605,7 @@ label south_folded:
     show arceus full flipped at mid_right
     show drill at center_right
     with dissolve
+    $ collect("drill")
     play sound sfx_drill loop volume 0.5
     arceus "Come on, I'm almost there..."
     pause 6.0
@@ -664,6 +665,7 @@ label south_folded:
     show arceus happy
     arceus "I was getting us the motherlode!"
     show bag at mid_right with dissolve
+    $ collect("bag")
     n "Arceus opens a body bag revealing stacks of gold bars, bills, and jewels."
     show cs worried
     cs "{i}What?!{/i} How did you win that much?!"
@@ -736,6 +738,7 @@ label south_poker3:
         cs "What in the world??"
         lancer "I just found this cool shiny metal in the back, but it didn't taste very good."
         show case at mid_right with dissolve
+        $ collect("briefcase")
         lancer "Here, have it, waiter dude!"
         lancer "See ya later!"
         hide lancer with moveouttop
@@ -859,6 +862,7 @@ label south_poker3:
         show jerma at center
         show case flipped at mid_mid_left
         with dissolve
+        $ collect("case")
         n "Jerma is waiting with a briefcase."
         show cs at left behind case with moveinleft
         jerma "Here he is! The man of the hour!"

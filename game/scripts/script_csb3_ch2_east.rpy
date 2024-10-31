@@ -670,6 +670,7 @@ label true_iowa:
 
 label true_after_ufo:
     $ renpy.mark_label_seen("play_car_game")
+    $ collect("joj_ufo")
     scene car plains
     show billy car
     stop music fadeout 3.0
@@ -813,6 +814,7 @@ label true_pennsylvania:
     show arceus at right with moveinright
     arceus "Uh, sure?"
     pencil "Here you go!"
+    # TODO: add pencil item
     n "The pencil-clad man passes out a free pencil to each of them."
     pencil "Enjoy your stay!"
     show arceus flipped
@@ -1027,6 +1029,7 @@ label true_win_pencil:
     hide cs onlayer broadcast
     show mettaton at t_stagescreen onlayer broadcast
     host "... {w=0.5}{color=#ffff00}PENCIL SHARPENER!"
+    $ collect("onscreen_sharpener")
     hide mettaton onlayer broadcast
     show cs disappointed at t_stagescreen onlayer broadcast
     cs "I should have seen that coming."

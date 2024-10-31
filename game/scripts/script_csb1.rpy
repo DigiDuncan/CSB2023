@@ -44,6 +44,7 @@ label csbi_craptop:
     music lets_hear_my_baby
     scene craptop_bg
     show craptop desktop
+    $ collect("craptop")
     if e2:
         show post_it2 at t_post_it
     else:
@@ -144,6 +145,7 @@ label csbi_craptop:
     show cs
     cs "Well, I guess it's car time."
     scene cs_car
+    $ collect("cs_car")
     show carguy at right
     with dissolve
     show cs at left with moveinleft
@@ -226,6 +228,7 @@ label csbi_walmart:
     show cs happy
     cs "{i}pop{/i}\nNoice! Genergy is two for $5! Yes, {i}please!"
     show genergy at manual_pos(1800, 300) with Dissolve(0.25)
+    $ collect("genergy")
     show genergy at manual_pos(1650, 800) with MoveTransition(0.25)
     hide genergy with dissolve
     show genergy at manual_pos(1800, 300) with Dissolve(0.25)
@@ -238,6 +241,7 @@ label csbi_walmart:
     show cs happy flipped
     cs "Oooh! Pringles are on sale, too! {i}Yoink!"
     show pringles at manual_pos(50, 300) with Dissolve(0.25)
+    $ collect("pringles")
     show pringles at manual_pos(200, 800) with MoveTransition(0.25)
     hide pringles with dissolve
     show cs at center with moveinleft
@@ -284,6 +288,7 @@ label csbi_walmart:
     hide genergy
     hide genergy as duplicate
     show walmart_bag at right
+    $ collect("walmart_bag")
     with dissolve
     hide cs
     hide walmart_bag
@@ -383,6 +388,7 @@ label csbi_room:
             show cs
             cs "I guess I can call Home Savers. Despite my YTPs of their company, I don't think they'd mind helping me out."
             show cs phone
+            $ collect("cs_phone")
             n "CS dials the phone number he found on their website."
             play sound sfx_dial_hohsis
             pause 16
@@ -435,6 +441,7 @@ label csbi_room:
     cs "Better call HoH SiS!"
     cs "They're really good at giving me the JoJ!"
     show cs phone
+    $ collect("cs_phone")
     n "CS dials 1-800-HoH-SiiS."
     play sound sfx_dial_hohsis
     pause 16
@@ -498,6 +505,7 @@ label csbi_room:
     show cs_wallet at manual_pos(0.25, 0.6, 0.5):
         zoom 0.2
     with moveinleft
+    $ collect("cs_wallet")
     pause 1.0
     cs "Here you go!"
     play sound sfx_moneyfalls
@@ -661,6 +669,7 @@ label csbi_michael_house:
     show rosen_phone at manual_pos(0.875, 0.625, 0.5):
         rotate -10
     with moveinright
+    $ collect("rosen_phone")
 
     michael "Hello!"
     cs "Hey, Michael! How're you doin' today?"
@@ -764,6 +773,7 @@ label csbi_rosen_house:
     michael "Speaking of which, Phil, do you have the cake?"
     phil "Here it is!"
     show flexcake at manual_pos(0.35, 0.6, 0.5) with dissolve
+    $ collect("flexcake")
     phil "It even works {i}underwater!"
     michael "That's odd to mention, but, alright! Time to eat!"
     show cs worried flipped

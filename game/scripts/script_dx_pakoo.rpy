@@ -120,6 +120,7 @@ label dx_after_true:
     show cs dark
     show arceus dark flipped
     with determination
+    $ collect("pot")
     cs "What a workout!"
     billy "Would you guys like to guess what this is?"
     show arceus worried dark flipped
@@ -1757,6 +1758,7 @@ label dx_after_yes_renault:
     pause 1.0
     scene cs_street
     show renault
+    $ collect("renault")
     with dissolve
     show carguy flipped at mid_left
     show cs at left

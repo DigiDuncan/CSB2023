@@ -313,6 +313,7 @@ label friend2_cs_meetup_2:
     if fun_value(FUN_VALUE_EPIC):
         arceus "But the cops still don't like that we downed multiple--{nw}"
         show boom at t_boom
+        $ collect("boom")
         $ renpy.music.set_pause(True, "music")
         arceus "..."
         cs "I think the boom mic is in the shot."

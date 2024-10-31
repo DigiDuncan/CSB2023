@@ -507,6 +507,8 @@ label csbii_breakout:
         linear 0.5 ypos 0.6
     with dissolve
 
+    $ collect("spoon")
+
     pause 0.5
     scene black with dissolve
     pause 0.5
@@ -678,6 +680,7 @@ label csbii_bordercrossing:
     show anno at left
     show arceus at right
     show tims_dozen at manual_pos(0.4, 0.6)
+    $ collect("tims_dozen")
     with dissolve
 
     pause 1.0
@@ -809,6 +812,7 @@ label csbii_ltt:
     arceus "Even their security is too nice..."
     # TODO: please replace this with an accurate image. idk what it actually looks like -tate
     show crt_magnet at manual_pos(0.35, 0.6) with dissolve
+    $ collect("crt_magnet")
     n "Arceus produces the old CRT magnet he found a moment ago."
     show crt_magnet at manual_pos(0.55, 0.5) with MoveTransition(0.5)
     n "He places it against the laptop, corrupting the hard drive instantly."
@@ -888,6 +892,9 @@ label csbii_ltt:
     show donut_2 at manual_pos(0.5, 0.7)
     show donut_3 at manual_pos(0.7, 0.7)
     with dissolve
+    $ collect("donut_1")
+    $ collect("donut_2")
+    $ collect("donut_3")
     
     show arceus happy flipped at mid_left
     show anno at mid_right

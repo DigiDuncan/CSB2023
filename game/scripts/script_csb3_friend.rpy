@@ -258,6 +258,7 @@ label friend_high_gpu:
     n "All of a sudden, a brick flies through the window!"
     play sound sfx_glass volume 3
     show sansbrick at offscreenleft with moveinright
+    $ collect("sansbrick")
     show cs worried
     cs "Woah! Stand back, Linus!"
     show linus at center with moveinright
@@ -601,6 +602,7 @@ label friend_fire_range:
     show cs at left with moveinleft
     pakoo "Alright, you picked up the LMG before you came into this room, right?"
     show m4 at left
+    $ collect("m4")
     cs "Yep!"
     show cs angry
     cs "So do I just-- why won't it fire?!"
