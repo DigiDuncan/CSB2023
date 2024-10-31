@@ -1,0 +1,58 @@
+{
+    "timeline" : {
+        "csbi_start" : {
+            "name": "CSBI",
+            "type": "start",
+            "need_label": "csbi_start",
+            "jump_to": "csbi_start",
+            "pos" : [25, 400]
+        },
+        "csbi_error_end" : {
+            "name": "Error",
+            "type": "end",
+            "need_label": "after_error_fight",
+            "pos": [25, 250]
+        },
+        "csbi_pc_choice" : {
+            "name": "PC?",
+            "type": "choice",
+            "need_label": "csbi_craptop",
+            "pos": [225, 400]
+        },
+        "csbi_nah_end" : {
+            "name": "Nah.",
+            "type": "end",
+            "need_achieve": "nah",
+            "pos": [225, 550],
+            "dx": true
+        },
+        "csbi_speedrun_end" : {
+            "name": "Speedrun",
+            "type": "end",
+            "need_achieve": "speedrun",
+            "pos": [225, 250],
+            "dx": true
+        },
+        "csbi_call_choice" : {
+            "name": "Call?",
+            "type": "choice",
+            "need_label": "csbi_room",
+            "pos": [425, 400],
+            "dx": true
+        },
+        "csbi_homesavers_end" : {
+            "name": "Home Savers",
+            "type": "end",
+            "need_achieve": "savers",
+            "pos": [425, 250],
+            "dx": true
+        },
+        "csbii_start" : {
+            "name": "CSBII",
+            "type": "start",
+            "need_label": "csbii_start",
+            "pos": [625, 400],
+            "jump_to": "csbii_start"
+        }
+    }
+}

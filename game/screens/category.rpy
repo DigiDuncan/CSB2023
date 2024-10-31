@@ -51,12 +51,11 @@ screen category_nav():
 
             textbutton "Unused Assets\n{size=-12}A gallery of things that didn't make it into the final game!" action ShowMenu("unused_gallery"), PauseAudio("music", True), Play("music2", "audio/what_the_night_will_bring.ogg", relative_volume=8.0)
 
-            textbutton "Endings\n{size=-12}Revisit endings you've already seen." action ShowMenu("replay_gallery"):
-                selected_sound("audio/text/tate.wav")
+            textbutton "Endings\n{size=-12}Revisit endings you've already seen." action ShowMenu("replay_gallery")
 
             textbutton "Minigames\n{size=-12}Got a favorite minigame? Do it all over again!" action ShowMenu("minigame_gallery")
 
-            textbutton "Timeline Tracer\n{size=-12}This doesn't exist yet, sorry." action Notify("Awawa!")
+            textbutton "Timeline Tracer\n{size=-12}This doesn't exist yet, sorry." action ShowMenu("timeline_tracer")
 
             if preferences.developer_mode or achievement_manager.get("Hopes and Dreams").unlocked:
                 textbutton "Ultimate Custom Night\n{size=-12}Put together your own RPG battles!" action Start("rpg_ucn")
