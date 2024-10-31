@@ -50,7 +50,7 @@
             "name": "Home Savers",
             "type": "end",
             "need_achieve": "savers",
-            "pos": [2, 5],
+            "pos": [3, 5],
             "dx": true
         },
         "csbii_start" : {
@@ -63,7 +63,7 @@
         "csbii_rooftop_choice" : {
             "name": "Which ATK?",
             "type": "choice",
-            "need_label": "csbii_caught",
+            "need_label": "csbii_start",
             "pos": [5, 6]
         },
         "csbii_asylum_badend": {
@@ -72,35 +72,53 @@
             "need_label": "csbii_asylum",
             "pos": [5, 5]
         },
+        "csbii_atk_outcome": {
+            "name": "Other ATK",
+            "type": "outcome",
+            "need_label": "csbii_caught",
+            "pos": [5, 7]
+        },
         "csbiii_start": {
             "name": "CSBIII",
             "type": "start",
             "need_achieve": "csbii",
-            "pos": [6, 6]
+            "pos": [6, 7]
         },
         "csbiii_meeting_choice": {
             "name": "Meeting?",
             "type": "choice",
             "need_label": "csbiii_ai",
-            "pos": [7, 6]
+            "pos": [7, 7]
         },
         "csbiii_ai_end": {
             "name": "AI",
             "type": "end",
             "need_achieve": "chatgpt",
-            "pos": [7, 5]
+            "pos": [7, 6]
         },
         "csbiii_job_choice": {
             "name": "Job?",
             "type": "choice",
             "need_label": "csbiii_start",
-            "pos": [8, 6]
+            "pos": [8, 7]
         },
         "csbiii_shopping_outcome": {
-            "name": "Went shopping",
+            "name": "Shopping",
             "type": "outcome",
-            "need_label": "csbiii_start",
-            "pos": [8, 5]
+            "need_label": "friend_microcenter",
+            "pos": [8, 6]
+        },
+        "csbiii_editing_outcome": {
+            "name": "Editing",
+            "type": "outcome",
+            "need_label": "csbiii_edit_video",
+            "pos": [8, 8]
+        },
+        "csbiii_video_choice": {
+            "name": "Video?",
+            "type": "choice",
+            "need_label": "csbiii_edit_video",
+            "pos": [9, 8]
         }
     }
 }
