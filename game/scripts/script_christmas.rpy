@@ -1463,7 +1463,7 @@ label dx_christmas_mike:
     show grace at center
     with move
     show k17 flipped with determination
-    arceus "What's going on in here?"
+    arceus "What's going on in here? It sounds very... Oriental?"
     show arceus angry flipped at mid_mid_right with moveinleft
     show cs happy
     cs "It's Mike, Arceus! Mike the Pizzapotamus!"
