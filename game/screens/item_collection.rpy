@@ -112,50 +112,46 @@ screen items(l):
     # Main Container omitting the menu
     viewport:
         xsize 800
-        ysize 750
+        ysize 800
         xalign 0.6
-        xoffset 305 
+        xoffset 340
         yoffset 200
         side_yfill False
-        mousewheel True
+        mousewheel False
         draggable False
-        pagekeys True
-        hbox:
-            ysize 750
-            vbox:
-                yfill False
-                spacing 100
-                xsize 800
+        pagekeys False
+        vbox:
+            yfill False
+            spacing 100
+            xsize 800
 
-                # Handling the text
-                python:
-                    try:
-                        if item_map[l].get('dx', False):
-                            fetched_desc = "{image=gui/dx_text.png} " + item_map[l]["desc"]
-                        elif item_map[l].get('ce', False):
-                            fetched_desc = "{image=gui/ce_text.png} " + item_map[l]["desc"]
-                        else:
-                            fetched_desc = item_map[l]["desc"]
-                    except:
-                        fetched_desc = "This item didn't load correctly. Ask Tate to fix this..."
-
-                # Bounding box for item and description
-                vbox:
-                    frame:
-                        background None
-                        xsize 1.0 ysize 300
-                        xalign 0.5 yalign 0.5
-                        image Transform(item_map[l]['img'], size=(640, 240), fit="contain"):
-                            xalign 0.5 yalign 0.5
-                
-                    text "{size=+24}" + item_map[l]['name']:
-                        xalign 0.5
-
-                    text "{size=-12}(" + item_map[l]['rarity'] + ")":
-                        xalign 0.5
-
-                    text "\nOwner: " + item_map[l]['owner'] + "\n\n" + fetched_desc
-
+            # Handling the text
             python:
-                z = item_map[l].get("zoom", 1.0) * 0.75
-            add item_map[l]['img'] xalign 1.0 yalign 1.0 zoom z
+                try:
+                    if item_map[l].get('dx', False):
+                        fetched_desc = "{image=gui/dx_text.png} " + item_map[l]["desc"]
+                    elif item_map[l].get('ce', False):
+                        fetched_desc = "{image=gui/ce_text.png} " + item_map[l]["desc"]
+                    else:
+                        fetched_desc = item_map[l]["desc"]
+                except:
+                    fetched_desc = "This item didn't load correctly. Ask Tate to fix this..."
+
+            # Bounding box for item and description
+            vbox:
+                frame:
+                    background None
+                    xsize 1.0 ysize 300
+                    xalign 0.5 yalign 0.5
+                    image Transform(item_map[l]['img'], size=(640, 240), fit="contain"):
+                        xalign 0.5 yalign 0.5
+
+                first_spacing 10
+                text "{size=+24}" + item_map[l]['name']:
+                    xalign 0.5
+                    
+                text "{size=-12}(" + item_map[l]['rarity'] + ")":
+                    xalign 0.5
+                    color("#BBBBBB")
+
+                text "\nOwner: " + item_map[l]['owner'] + "\n\n" + fetched_desc
