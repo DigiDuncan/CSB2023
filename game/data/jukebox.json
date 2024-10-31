@@ -1137,6 +1137,14 @@
             "tags": ["CSBIII DX: Holiday Special", "New In DX"],
             "album_art": "awesome.png"
         },
+        "rice_and_wine" : {
+            "file": "rice_and_wine.mp3",
+            "title": "Rice and Wine",
+            "artist": "WWG",
+            "tags": ["CSBIII DX: Holiday Special", "New In DX"],
+            "album_art": "csbi.png",
+            "trivia": "Whenever you put a compass near the jukebox with this song playing, it points east. Great for presentations!"
+        },
         "snowdin_town" : {
             "file": "snowdin_town.ogg",
             "title": "Snowdin Town",

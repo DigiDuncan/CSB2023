@@ -634,6 +634,7 @@ define perfect_tate = Character("Tate", callback = renpy.partial(char_callback, 
 
 # DX Holiday Special Definitions
 define santa = Character("Santa Claus", callback = renpy.partial(char_callback, beep = "santa"))
+define mike = Character("Mike", callback = char_callback)
 
 # DX Finale Character Definitions
 define perfect_billy = Character("Perfect Billy", callback = renpy.partial(char_callback, name = "billy", beep = "billy"), screen = "perfect_billy_text")
@@ -1533,6 +1534,7 @@ image avgn flipped = "flip:characters/avgn.png"
 image santa = "characters/santa.png"
 image santa flipped = "flip:characters/santa.png"
 image santa sil_black = "sil_black:characters/santa.png"
+image mike = "characters/mike/mike.png"
 
 # CS Holiday Special BGs
 image snowed_in = "bg/snowed_in.png"
@@ -2398,6 +2400,7 @@ define audio.teeth_dust = "teeth_dust.ogg"
 define audio.snow_blind = "snow_blind.ogg"
 define audio.christmas_spirit = "christmas_spirit.ogg"
 define audio.snowdin_town = "snowdin_town.ogg"
+define audio.rice_and_wine = "rice_and_wine.mp3"
 
 # CSBIII DX After-True Music
 define audio.lets_hear_spring = "letshearspring.ogg"

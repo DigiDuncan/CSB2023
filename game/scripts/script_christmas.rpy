@@ -1419,6 +1419,111 @@ label dx_christmas_cooking:
     grace "Finally!"
     grace "Guys, the sheriff is out!"
     n "A line starts to form next to the bathroom."
+label dx_christmas_mike:
+    stop music fadeout 3.0
+    music end
+    scene cs_living2
+    show cs at left
+    show rich at center
+    show ed at mid_right
+    show grace at right
+    with dissolve
+    cs "Gee, that pizza I ordered is sure taking its time!"
+    n "Just at that moment, the doorbell rings."
+    cs "Well tickle my ballsack, what great timing!"
+    grace "CS... you can't just say stuff like that."
+    n "CS moves to open the door."
+    scene cs_foyer with dissolve
+    show cs at left with moveinleft
+    cs "Hey guys, the pizza is here!"
+    n "CS opens the door to let the pizza person in."
+    show mike at right with moveinright
+    play music rice_and_wine
+    music rice_and_wine
+    mike "I'm Chinese!"
+    cs "Oh my god! It's Mike, everyone quick come look at Mike!"
+    show k17 flipped at mid_mid_right behind grace
+    show grace at mid_right
+    show obama at center behind grace
+    show tate at mid_left
+    show billy at mid_mid_left
+    with moveinleft
+    show k17 happy flipped
+    k17 "Hey, it's Mike! How's it going, long time no see!"
+    grace "Oh my god! I love you Mike!"
+    tate "What's up Mike!"
+    obama "Mike, remember when I pardoned you?"
+    billy "This guy can sell pizza better than I can!"
+    show tate flipped with determination
+    hide tate
+    hide billy
+    with moveoutleft
+    show obama at mid_left behind cs
+    show k17 at mid_mid_left
+    show grace at center
+    with move
+    show k17 flipped with determination
+    arceus "What's going on in here?"
+    show arceus angry flipped at mid_mid_right with moveinleft
+    show cs happy
+    cs "It's Mike, Arceus! Mike the Pizzapotamus!"
+    show cs
+    show arceus angry
+    arceus "Who?"
+    grace "How do you not know who Mike the Pizzapotamus is?"
+    obama "I mentioned him in my re-election speech!"
+    cs "The children love him! He's the best in the world!"
+    show arceus worried
+    arceus "Yeah, I guess he's not ringing a bell?"
+    show k17 disappointed flipped
+    k17 "He works at the bus stop, dude!"
+    arceus "You mean the bus station?"
+    grace "No, the bus stop!"
+    arceus "Oh, so he drives the bus?"
+    show cs angry
+    "Everyone" "No! The bus stop!"
+    mike "You really don't know me, do you?"
+    show arceus worried flipped
+    arceus "Huh?"
+    show pipe_gun flipped at manual_pos(0.6, 0.35) with dissolve
+    n "Pizzapotamus shoots Arceus in the chest."
+    play sound sfx_hks1
+    show arceus worried flipped at manual_pos(0.4, 0.55):
+        linear 0.5 rotate -45
+    with MoveTransition(0.5)
+    play sound sfx_punch
+    with vpunch
+    n "As Arceus is dying on the floor, he faintly hears people talking."
+    grace "I expected more from you."
+    obama "Should've listened to my campaign speeches, bitch."
+    mike "Alright, who wants to try pizza from my thermos?"
+    show cs happy
+    cs "Oh yes! Me first! Woohoo!"
+    scene black with dissolve
+    stop music fadeout 3.0
+    music end
+    pause 2.0
+    play sound sfx_csnore
+    cs "Zzz..."
+    rich "Hey CS, are you sleeping?"
+    scene cs_living2 
+    show wesley at right
+    show rich at mid_right
+    show db at center
+    show ed at mid_left behind cs
+    show cs concentrate at left
+    with dissolve
+    play sound sfx_csnore
+    rich "CS!"
+    stop sound
+    show cs worried
+    cs "Huh?"
+    show cs disappointed
+    cs "Oh sorry, I did doze off."
+    cs "I had this insane dream, and there was this pizza guy..."
+    wesley "Speaking of pizza, should we have dinner now? I'm starving."
+    cs "Yeah, that's a good point. Give me a moment to get ready."  
+
     #Dinner/More Banter
 label dx_christmas_dinner:
     scene black with dissolve
