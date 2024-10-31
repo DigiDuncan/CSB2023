@@ -32,7 +32,7 @@ screen timeline_tracer():
     # bounding box
     frame:
         xsize 1870
-        ysize 850
+        ysize 800
         xpos 25
         ypos 125
     
@@ -56,11 +56,15 @@ screen timeline_tracer():
             
                     # make sure it's unlocked before we continue
                     try:
-                        if renpy.seen_label(timeline_map[event]["need_label"]):
+            
+                        # if it needs you to have seen a label to unlock
+                        if "need_label" in timeline_map[event] and renpy.seen_label(timeline_map[event]["need_label"]) == True:
                             this_unlocked = True
-                        # TODO: this doesn't work yet...
-                        elif achieve_file[timeline_map[event]["need_achieve"]["name"]] in persistent.unlocked_achievements:
+                        # if it needs you to have earned an achievement to unlock
+                        # rework this whenever digi fixes cheevos to use IDs rather than cheev names
+                        elif "need_achieve" in timeline_map[event]and achieve_map[timeline_map[event]["need_achieve"]]["name"] in persistent.unlocked_achievements:
                             this_unlocked = True
+                        # have not unlocked
                         else:
                             this_unlocked = False
                     except:
@@ -139,7 +143,7 @@ screen timeline_tracer():
                             yalign 0.5
 
                         # handle jumps here later if there are any
-                        action [ SensitiveIf(this_unlocked == True and this_jump is not None), Notify("Later, I'll jump to a label.") ]
+                        action [ SensitiveIf(this_unlocked == True and this_jump is not None), Notify("Later, I'll jump to '"+str(this_jump)+"'.") ]
 
-
+    textbutton "Return to Extras" action ShowMenu("category_welcome") yoffset 950 xoffset 25
     textbutton "Main Menu" action Return() yoffset 1000 xoffset 25
