@@ -1534,7 +1534,7 @@ image avgn flipped = "flip:characters/avgn.png"
 image santa = "characters/santa.png"
 image santa flipped = "flip:characters/santa.png"
 image santa sil_black = "sil_black:characters/santa.png"
-image mike = "characters/mike/mike.png"
+image mike = "characters/mike.png"
 
 # CS Holiday Special BGs
 image snowed_in = "bg/snowed_in.png"
