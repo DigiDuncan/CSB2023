@@ -92,7 +92,8 @@ screen achievements_welcome():
                             background None
                             ymaximum 112
                             xsize 1200
-                            ymargin -12
+                            top_margin -12
+                            bottom_margin 25
                             hbox:
                                 first_spacing 25
                                 image a.icon:
