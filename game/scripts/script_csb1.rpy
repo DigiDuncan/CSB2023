@@ -1,5 +1,4 @@
 label csbi_start:
-    $ persistent.seen.add("cs")
     $ quick_menu = False
     stop music fadeout 3.0
     scene black with dissolve

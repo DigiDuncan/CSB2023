@@ -109,7 +109,7 @@
         "img": "cs_car_item",
         "name": "CS's Car",
         "owner": "CS",
-        "desc": "A 2009 Honda Civic.",
+        "desc": "A 2009 Honda Civic LX-S.",
         "rarity": "Common"
     },
     "cs_car_old": {
@@ -168,7 +168,7 @@
         "img": "donut_3",
         "name": "Boston Cream Donut",
         "owner": "Anno",
-        "desc": "Named as the official state donut of Massachusetts in 2003. {a=https://web.archive.org/web/20101230190718/https://www.dunkindonuts.com/aboutus/press/PressRelease.aspx?viewtype=current&id=100010}(Source){/a}",
+        "desc": "Named as the official state donut of Massachusetts in 2003. {a=https://web.archive.org/web/20101230190718/https://www.dunkindonuts.com/aboutus/press/PressRelease.aspx?viewtype=current&id=100010}(Source){/a}\n\nIt's also Mean's favorite variety.",
         "rarity": "Common",
         "dx": true
     },
@@ -176,7 +176,7 @@
         "img": "dookie_milk_jar",
         "name": "Jar Of {sc}{chaos}OMGWTFISTHAT{/chaos}{/sc}",
         "owner": "Pakoo",
-        "desc": "OH, {i}GOD!{/i} JUST WHAT {i}IS{/i} THIS?!\nWhy do you have this? Why would you do this?",
+        "desc": "OH, {i}GOD!{/i} JUST WHAT {i}IS{/i} THIS?!\nWhy do you have this? Why would you {i}want{/i} this?!",
         "rarity": "WHAT DO YOU {i}MEAN{/i} IT'S A {i}LEGENDARY?!{/i}",
         "dx": true
     },

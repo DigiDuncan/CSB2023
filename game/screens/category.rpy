@@ -16,15 +16,21 @@ screen category_nav():
     #Add background image
     add Color('#323e42', alpha=0.75)
 
+    frame:
+        background None
+        xpos 25
+        ypos 50
+        text "{size=+12}Extras"
+
     viewport:
         if persistent.creative_mode or preferences.developer_mode:
             xpos 25
             yalign 0.5
-            xsize 350 ysize 750
+            xsize 750 ysize 750
         else:
             xpos 25
             yalign 0.5
-            xsize 350 ysize 500
+            xsize 750 ysize 500
         mousewheel True
         scrollbars "vertical"
         draggable True
@@ -35,26 +41,40 @@ screen category_nav():
 
             # Here you list the categories
 
-            textbutton "People" action ShowMenu("people")
-            textbutton "Achievements" action ShowMenu("achievements_welcome")
-            # textbutton "Collectibles" action ShowMenu("collectibles_welcome")
-            # textbutton "Endings" action ShowMenu("endings_welcome")
-            textbutton "Jukebox" action ShowMenu("jukebox"), PauseAudio("music", True)
-            textbutton "Endings" action ShowMenu("replay_gallery")
-            textbutton "Minigames" action ShowMenu("minigame_gallery")
-            textbutton "Item Collection" action ShowMenu("item_collection")
-            textbutton "Unused Assets" action ShowMenu("unused_gallery"), PauseAudio("music", True), Play("music2", "audio/what_the_night_will_bring.ogg", relative_volume=8.0)
+            textbutton "Achievements\n{size=-12}Look at all you've accomplished!" action ShowMenu("achievements_welcome")
+
+            textbutton "People\n{size=-12}Learn more about the characters you've met!" action ShowMenu("people")
+            
+            textbutton "Item Collection\n{size=-12}Inspect items you've found while playing!" action ShowMenu("item_collection")
+
+            textbutton "Jukebox\n{size=-12}Jam out to songs you've heard along the way!" action ShowMenu("jukebox"), PauseAudio("music", True)
+
+            textbutton "Unused Assets\n{size=-12}A gallery of things that didn't make it into the final game!" action ShowMenu("unused_gallery"), PauseAudio("music", True), Play("music2", "audio/what_the_night_will_bring.ogg", relative_volume=8.0)
+
+            textbutton "Endings\n{size=-12}Revisit endings you've already seen." action ShowMenu("replay_gallery")
+
+            textbutton "Minigames\n{size=-12}Got a favorite minigame? Do it all over again!" action ShowMenu("minigame_gallery")
+
+            textbutton "Timeline Tracer\n{size=-12}This doesn't exist yet, sorry." action ShowMenu("timeline_tracer")
+
             if preferences.developer_mode or achievement_manager.get("Hopes and Dreams").unlocked:
-                textbutton "Ultimate\nCustom Night" action Start("rpg_ucn")
-            textbutton "Woohoo Counter" action Jump("woohoo_counter")
-            textbutton "Controller Test" action Jump("play_controllertest")
+                textbutton "Ultimate Custom Night\n{size=-12}Put together your own RPG battles!" action Start("rpg_ucn")
+
+            textbutton "Woohoo Counter\n{size=-12}How many can you find?" action Jump("woohoo_counter")
+
+            textbutton "Controller Test\n{size=-12}Check your controller's compatibility." action Jump("play_controllertest")
+
             if preferences.developer_mode or persistent.creative_mode:
-                textbutton "Debug Menu" action ShowMenu("debug_menu")
-                textbutton "Asset Debugger" action Jump("asset_debugger")
+                textbutton "Debug Menu\n{size=-12}[[DEV] Jump to specific sections of the game." action ShowMenu("debug_menu")
+
+                textbutton "Asset Debugger\n{size=-12}[[DEV] Make sure all assets load correctly." action Jump("asset_debugger")
+
             if preferences.developer_mode:
-                textbutton "Test Scene" action Jump("test")
-                textbutton "Unlock All" action Function(unlock_all)
-            textbutton "Clear Persistent Data" action Jump("clear_screen")
+                textbutton "Test Scene\n{size=-12}[[DEV] A sandbox for testing various features." action Jump("test")
+
+                textbutton "Unlock All\n{size=-12}[[DEV] Adds all unlockables to persistent." action Function(unlock_all)
+
+            textbutton "Clear Persistent Data\n{size=-12}Clear your saved data. This cannot be undone." action Jump("clear_screen")
 
     textbutton "Main Menu" action Return() yoffset 1000 xoffset 25
 
@@ -70,9 +90,9 @@ screen category_welcome():
     style_prefix "codex"
 
     vbox:
-            xsize 850
+            xsize 750
             xalign 0.5 yalign 0.5
-            xoffset 200
+            xoffset 400
             #xoffset 400
             text _p("""Here, you'll find bonus content, galleries, achievements, and more!
 

@@ -147,8 +147,8 @@
     },
     "billy_car.png": {
         "type": "image",
-        "title": "Billy's Car (Pre-DX)",
-        "caption": "This was the car used in the car game during the original release of {i}CSBIII.{/i} It was later replaced with a Land Rover after the team figured out exactly what model Billy actually drives in the Jupiter Jack infomercial."
+        "title": "Billy's Car (Original)",
+        "caption": "This sprite was used in the car game during the original release of {i}CSBIII.{/i} It was later replaced with a Land Rover after the team figured out exactly what model Billy actually drives in the Jupiter Jack infomercial."
     },
     "alpha_linus.png": {
         "type": "image",
@@ -160,9 +160,19 @@
         "title": "Beta Arceus",
         "caption": "This version of Arceus was used throughout the majority of {i}CSBIII's{/i} development. We swapped to the current one only weeks before the game was sent to CS."
     },
-	"desk.png": {
+    "desk.png": {
         "type": "image",
         "title": "CS' Desk POV",
         "caption": "CS sent us this picture when we asked him for pictures of his house, but we never used it. It would have been annoying to edit, anyway. See if you're in the Discord panel on the left!"
+    },
+    "tate_beta.png": {
+        "type": "image",
+        "title": "Tate Beta Sprite",
+        "caption": "Originally drawn in January 2020 for a totally unrelated project, this was the sprite used before the real-life Tate became invested enough in {i}CSB{/i} to draw a custom one."
+    },
+    "mean_doodle.png": {
+        "type": "image",
+        "title": "Painfully Adorable Mean",
+        "caption": "Doodled by Tate and later colored by 4Bakers. This was almost going to be Mean's official sprite, but Tate felt it was simply {i}too{/i} cute."
     }
 }
