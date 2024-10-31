@@ -1186,7 +1186,7 @@ label genocide_fight:
     n "Arceus is wary of CS."
     n "He can't help but notice CS muttering to himself."
 
-    # TODO: this overflows the text box. is this intended behavior?
+    # i am told the overflowing text box is intended - tate
     cs "{chaos}TmV2ZXIgZ29ubmEgZ2l2ZSB5b3UgdXAsIG5ldmVyIGdvbm5hIGxldCB5b3UgZG93biwgbmV2ZXIgZ29ubmEgcnVuIGFyb3VuZCBhbmQgZGVzZXJ0IHlvdS4KTmV2ZXIgZ29ubmEgbWFrZSB5b3UgY3J5LCBuZXZlciBnb25uYSBzYXkgZ29vZGJ5ZSwgbmV2ZXIgZ29ubmEgdGVsbCBhIGxpZSwgYW5kIGh1cnQgeW91fg=="
     arceus "CS? What are you saying?"
     cs "Huh? Nothing."
