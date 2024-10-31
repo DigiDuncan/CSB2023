@@ -120,7 +120,7 @@ init python:
                 # TODO: THIS DOESNT WORK YET, THE GAME CRASHES HALFWAY
 
                     # kill the background/music for the cutscene
-                    renpy.music.stop(channel="music", fadeout=None)
+                    renpy.music.stop(fadeout=None)
 
                     renpy.notify("you made it to the end") 
 
