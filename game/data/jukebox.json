@@ -1177,7 +1177,7 @@
             "trivia": "The full name of this song is {i}Don't Preheat Your Oven Because If You Do The Song Won't Play.{/i}"
         },
         "on_the_rocks" : {
-            "file": "synchronicity.ogg",
+            "file": "on_the_rocks.ogg",
             "title": "On The Rocks",
             "artist": "Mr. Sauceman",
             "tags": ["CSBIII DX: Holiday Special", "New In DX"],
