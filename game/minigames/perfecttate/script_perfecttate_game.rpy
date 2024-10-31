@@ -22,6 +22,7 @@ init python:
     import math
 
     # Graphics
+    # TODO: these lanes are no longer correct, and also we need to adjust the math on projectiles since the highway is angled now
     PT_LANE_X = [445, 670, 885, 1100, 1315]
     CS_Y = 800
     TATE_Y = 465

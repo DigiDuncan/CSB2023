@@ -4,7 +4,6 @@
 # TODO: moving scenery, mostly at night, including on top of the train. will need custom scenes. for now it's just the car scenery
 # TODO: mean thinks the normal car moving background is too fast, maybe slow down moving videos?
 # TODO: replace all instances of hearts and music notes with jp font glyphs as soon as it looks good?
-# TODO: HI BASICALLY ALL THE MUSIC IN THIS ROUTE IS BROKEN, HELP
 
 ######## VARIABLES ########
 label train_start_good:
@@ -679,7 +678,6 @@ label train_kingman_platform:
     jump train_boarding
 
 label train_boarding:
-
     scene amtrak_sleeper_corridor
     with dissolve
 
@@ -734,7 +732,7 @@ label train_boarding:
     cs "Of course!"
     show arceus worried flipped
     show cs
-    arceus "Well, while you two are doing that, I {i}really{/i} need to use the can..."
+    arceus "Well, while you two are catching up, I {i}really{/i} need to use the can..."
     show amtrak_stewardess
     amtrak_stewardess "Of course. Right through here, sir."
     arceus "Thanks."
@@ -769,7 +767,7 @@ label train_boarding:
     tate "My friend, Mean, usually lets me help out with whatever needs doing."
     tate "He's not going to wake up for a while, though, so I've been pretty bored."
     show tate sheepish flipped
-    tate "I thought I'd set up a surprise for him in the dining car, but the other staff didn't like it..."
+    tate "First, I thought I'd set up a surprise for him in the dining car, but the other staff didn't like it..."
     tate "I guess I got a little carried away."
     show tate sad flipped
     tate "I hope {i}he{/i} likes it, at least."
@@ -843,7 +841,6 @@ label train_boarding:
     jump train_enter_sleeper
 
 label train_enter_sleeper:
-    # TODO: this track is broken somehow
     play music bedroom_day if_changed
     music bedroom_day
 
@@ -1267,7 +1264,6 @@ label train_enter_sleeper:
     jump train_dining
 
 label train_dining:
-    # TODO: this track is also broken
     play music krabby_klub if_changed
 
     scene 
@@ -1390,7 +1386,6 @@ label train_dining:
     show mean scared at offscreenright with MoveTransition(0.3)
     n "Mean dashes out of the dining car!"
 
-    # TODO: music cuts here somehow??
     scene
     show car plains night
     show amtrak_dining_car
@@ -1415,13 +1410,12 @@ label train_dining:
     jump train_wakeup
     
 label train_wakeup:
+    play music prof_kranes_kidnap if_changed
+    music prof_kranes_kidnap
     scene 
     show car plains night
     show amtrak_sleeper_interior_night
     with dissolve
-    # TODO: this music is also broken
-    play music prof_kranes_kidnap if_changed
-    music prof_kranes_kidnap
     play sound sfx_sliding_door_open
     pause 1.0
     show arceus worried dark flipped at offscreenleft with determination
@@ -1707,7 +1701,6 @@ label train_wakeup:
 
 ######## BAIL NOW ########
 label train_allow_staff:
-    # TODO: more broken music
     play music e_gadds_lab if_changed
     music e_gadds_lab
     scene 
@@ -1751,7 +1744,6 @@ label train_allow_staff:
 
 ######## BEGIN THE HEIST ########
 label train_begin_heist:
-    # TODO: more broken music
     play music e_gadds_lab if_changed
     music e_gadds_lab
     scene 
@@ -1802,7 +1794,6 @@ label train_begin_heist:
     jump train_meanwhile
 
 label train_meanwhile:
-    # TODO: more broken music
     centered "Meanwhile..."
         
     pause 0.5
@@ -1859,6 +1850,8 @@ label train_meanwhile:
     jump train_search_arceus
 
 label train_search_arceus:
+    play music onbs if_changed
+    music onbs
     scene
     show car plains night
     show amtrak_dining_car
