@@ -1015,8 +1015,9 @@ label dx_christmas_party_before:
         cs "Alright, any minute now..."
         cs "The party starts here in about 15 minutes, so people should start showing up soon..."
         n "CS keeps on waiting, but it looks like no one shows up early." 
-        jump dx_christmas_intro      
-    #Introductions
+        jump dx_christmas_intro
+   
+# Introductions
 label dx_christmas_intro:
     scene black with dissolve
     n "By the time of the party, everyone shows up at CS' house in droves."
@@ -1193,8 +1194,9 @@ label dx_christmas_intro:
     eliza "I mean, if you want us to, we can step outside for a bit."
     cs "No, no, it's okay."
     cs "I hope you guys have fun, I'm gonna go back to the party."
-    hide cs with moveoutright
-    #Banter
+    hide cs with moveoutrigh
+
+# Banter
 label dx_christmas_banter:
     scene black with dissolve
     stop music fadeout 3.0
@@ -1449,7 +1451,8 @@ label dx_christmas_banter:
     show cs
     cs "Okay, lemme do this first. The president is calling!"
     hide cs with moveoutright
-    #Cooking
+
+# Cooking
 label dx_christmas_cooking:
     scene cs_kitchen
     show cs_kitchen_fg
@@ -1674,7 +1677,7 @@ label dx_christmas_mike:
     wesley "Speaking of pizza, should we have dinner now? I'm starving."
     cs "Yeah, that's a good point. Give me a moment to get ready."  
 
-    #Dinner/More Banter
+# Dinner/More Banter
 label dx_christmas_dinner:
     scene black with dissolve
     stop music fadeout 3.0
@@ -2031,7 +2034,7 @@ label dx_christmas_exchange:
     cs "Woohoo! All of the gifts have been handed out!"
 
 
-    #Games/Climax
+# Games/Climax
 label dx_christmas_climax:
     scene black with dissolve
     stop music fadeout 3.0
@@ -2084,7 +2087,7 @@ label dx_christmas_climax:
     show cs pissed
     cs "Dammit everyone! Shut the fuck u--{w=2.0}{nw}"
 
-    #lights out
+# Lights out
 screen flashlight_demo:
     add Flashlight()
 
@@ -2287,6 +2290,7 @@ label dx_christmas_lights_out:
     mean "Fuck."
     cs "What? How bad is it?"
     mean "Grab my hand, I'll pull you up."
+
 label dx_christmas_snowed_in:
     play music winters_halloween
     music winters_halloween
@@ -2410,6 +2414,7 @@ label dx_christmas_snowed_in:
     cs "Who wants to play with me?"
     # maybe pick a character to play here?
     # Insert Reversi Gameplay here
+
 label dx_christmas_billy_time:
     scene cs_living2_off
     show cs at mid_left
@@ -2592,6 +2597,7 @@ label dx_christmas_billy_time:
     n "Everyone clammers up the stairs, and one by one, they all climb up onto the roof."
     sheriff "Welp."
     sheriff "I'll just, wait here."
+
 label dx_christmas_roof_moment:
     scene snowed_in
     show cs sil_black:
@@ -3088,7 +3094,7 @@ label dx_christmas_roof_moment:
     n "Merry Christmas, and have a Happy New Year!"
     pause 5.0
 
-    # Epilogue
+# Epilogue
 label dx_christmas_epilogue:
     show billycar1:
         zoom 2.5
