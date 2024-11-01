@@ -198,42 +198,61 @@
             "pos": [12, 5]
         },
         "fired_start": {
-                "name": "Fired",
-                "type": "start",
-                "need_label": "fired_new_plan",
-                "pos": [12, 6],
-                "jump_to": "fired_new_plan"
-            },
+            "name": "Fired",
+            "type": "start",
+            "need_label": "fired_new_plan",
+            "pos": [12, 6],
+            "jump_to": "fired_new_plan"
+        },
         "fired_contract_choice": {
-                "name": "Take deal?",
-                "type": "choice",
-                "need_label": "fired_limo_time",
-                "pos": [13, 6]
-            },
+            "name": "Take deal?",
+            "type": "choice",
+            "need_label": "fired_limo_time",
+            "pos": [13, 6]
+        },
         "fired_yes_outcome": {
-                "name": "Yes",
-                "type": "outcome",
-                "need_label": "fired_signed_the_contract",
-                "pos": [14, 6]
-            },
+            "name": "Yes",
+            "type": "outcome",
+            "need_label": "fired_signed_the_contract",
+            "pos": [14, 6]
+        },
         "fired_no_outcome": {
-                "name": "No",
-                "type": "outcome",
-                "need_label": "fired_no_contract",
-                "pos": [13, 7]
-            },
+            "name": "No",
+            "type": "outcome",
+            "need_label": "fired_no_contract",
+            "pos": [13, 7]
+        },
         "fired_badend": {
-                "name": "Threw away fame",
-                "type": "badend",
-                "need_label": "fired_no_contract",
-                "pos": [13, 8]
-            },
+            "name": "Threw away fame",
+            "type": "badend",
+            "need_label": "fired_no_contract",
+            "pos": [13, 8]
+        },
         "fired_end": {
-                "name": "Rockstar",
-                "type": "end",
-                "need_achieve": "rockstar",
-                "pos": [15, 6]
-            }
+            "name": "Rockstar",
+            "type": "end",
+            "need_achieve": "rockstar",
+            "pos": [15, 6]
+        },
+        "friend_goodgpu_outcome": {
+            "name": "Good GPU",
+            "type": "outcome",
+            "need_label": "friend_high_gpu",
+            "pos": [11, 4]
+        },
+        "csbiii_stream_outcome": {
+            "name": "Edit Stream",
+            "type": "outcome",
+            "need_label": "csbiii_edit_video",
+            "pos": [11, 8]
+        },
+        "csbiii_editing_minigame": {
+            "name": "Editing Game",
+            "type": "minigame",
+            "need_label": "csbiii_edit_video",
+            "pos": [11, 9],
+            "jump_to": "play_edit_game"
+        }
         
     }
 }

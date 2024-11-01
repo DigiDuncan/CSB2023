@@ -148,7 +148,9 @@ screen timeline_tracer():
                             yalign 0.5
 
                         # handle jumps here later if there are any
-                        action [ SensitiveIf(this_unlocked == True and this_jump is not None), Notify("Later, I'll jump to '"+str(this_jump)+"'."), Play("sound", "audio/sfx/sfx_valid.ogg") ]
+                        # TODO: DON'T USE THIS YET, IT WILL MAKE YOU UNABLE TO ESCAPE THE GAME
+                        # action [ SensitiveIf(this_unlocked == True and this_jump is not None), Play("sound", "audio/sfx/sfx_valid.ogg"),Jump(this_jump) ]
+                        action [ SensitiveIf(this_unlocked == True and this_jump is not None), Play("sound", "audio/sfx/sfx_valid.ogg"),Notify(this_jump) ]
 
                         hover_sound "audio/sfx/sfx_select.ogg"
 
