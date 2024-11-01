@@ -1022,6 +1022,8 @@ image worker_7 = "characters/worker_chicken.png"
 
 # Copguy & Co.
 image copguy = "characters/copguy.png"
+image copguy festive = "characters/copguy_festive.png"
+image copguy festive flipped = "flip:characters/copguy_festive.png"
 image copguy sil_black = "sil_black:characters/copguy.png"
 image copguy flipped = "flip:characters/copguy.png"
 image copguy dark = "dark:characters/copguy.png"

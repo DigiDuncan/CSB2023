@@ -663,7 +663,7 @@ label dx_christmas_party_before:
         n "CS rushes outside."
         hide cs with moveoutleft
         scene cs_house_snow_night
-        show copguy flipped at mid_left
+        show copguy festive flipped at mid_left
         with dissolve
         show cs worried flipped at right with moveinright
         copguy "Heya, CS. Did I scare you?"
@@ -1054,7 +1054,7 @@ label dx_christmas_banter:
     show wesley at right
     show rich at mid_right
     show db at center
-    show copguy at mid_right
+    show copguy festive at mid_right
     show sheriff flipped at mid_left
     with dissolve
     play music dont_preheat_your_oven
@@ -1067,28 +1067,28 @@ label dx_christmas_banter:
     sheriff "My legs don't work, remember?"
     copguy "Dammit, this sucks."
     copguy "Alright, let's go."
-    show copguy at left with move
-    show copguy flipped with determination
+    show copguy festive at left with move
+    show copguy festive flipped with determination
     pause 0.5
     hide copguy
     hide sheriff
     with moveoutright
     scene cs_bathroom with dissolve
-    show copguy flipped at left
+    show copguy festive flipped at left
     show sheriff flipped at mid_left
     with moveinleft
     pause 1.0
-    show copguy flipped at center with move
+    show copguy festive flipped at center with move
     play sound sfx_hard_knock
     n "Copguy jiggles the bathroom door."
     tate "Occupied!"
-    show copguy
+    show copguy festive
     copguy "Sorry sir, we gotta wait."
     sheriff "This is the police! Open up!"
     play sound sfx_house_door_open
     scene cs_bathroom_open
     show sheriff flipped at mid_left
-    show copguy
+    show copguy festive
     show tate cry festive
     hide tate with easeoutright
     tate "Awawawawa!!!"
@@ -1098,10 +1098,10 @@ label dx_christmas_banter:
     sheriff "What do you mean? You have to wait here with me!"
     sheriff "I can't get off and on the toilet myself!"
     copguy "I think this is the worst crime I've dealt with."
-    show copguy at left behind sheriff with move
-    show copguy flipped with determination
+    show copguy festive at left behind sheriff with move
+    show copguy festive flipped with determination
     pause 1.0
-    show copguy flipped at mid_mid_left
+    show copguy festive flipped at mid_mid_left
     show sheriff flipped at center
     with move
     hide copguy
@@ -1214,7 +1214,7 @@ label dx_christmas_banter:
     play sound sfx_house_door_open
     scene cs_bathroom_open
     show sheriff
-    show copguy flipped
+    show copguy festive flipped
     hide copguy with easeoutright
     sheriff "Wait! You can't just leave me here!"
     copguy "I'll just be a moment! Don't move."
@@ -1389,12 +1389,12 @@ label dx_christmas_cooking:
     sheriff "Find another bathoom."
     grace "But this is the only one in the house!"
     sheriff "In this mansion? There is only one damn bathroom?"
-    show copguy flipped at center with moveinleft
+    show copguy festive flipped at center with moveinleft
     copguy "Hey, sorry, excuse me."
     play sound sfx_house_door_open
     scene cs_bathroom_open
     show grace at mid_left
-    show copguy flipped at center
+    show copguy festive flipped at center
     show sheriff at center behind copguy
     pause 1.0
     play sound sfx_house_door_close
@@ -1410,7 +1410,7 @@ label dx_christmas_cooking:
     scene cs_bathroom_open
     show grace at mid_left
     with determination
-    show copguy at mid_right
+    show copguy festive at mid_right
     show sheriff at center behind copguy
     pause 1.0
     hide copguy
@@ -1681,7 +1681,7 @@ label dx_christmas_exchange:
     copguy "I'm glad."
     hide obama with moveoutright
     copguy "It's my turn now."
-    show copguy flipped at mid_left with moveinleft 
+    show copguy festive flipped at mid_left with moveinleft 
     show gravity_falls at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     copguy "Okay, so I got \"Gravity Falls Season 2 Director's Cut\"..."
     copguy "...and boss? Is this your gun?"
@@ -1752,7 +1752,7 @@ label dx_christmas_exchange:
     hide gravity_falls with dissolve
     k17 "...and the gun."
     hide k17 with moveoutright
-    show copguy flipped at left with moveinleft
+    show copguy festive flipped at left with moveinleft
     copguy "Alright, then I'm taking the Declaration of Independence!"
     show billy at center with moveinright
     billy "What the actual fuck?"
@@ -2394,7 +2394,7 @@ label dx_christmas_billy_time:
     show cs flipped at center
     show mean human at mid_offscreen_right
     show sheriff at mid_mid_right
-    show copguy at mid_right
+    show copguy festive at mid_right
     show luke at mid_left
     show rich flipped at mid_mid_left behind cs
     with dissolve
@@ -2696,20 +2696,20 @@ label dx_christmas_roof_moment:
     santa "I may be Father Christmas, but I can't just make snow magically go away."
     santa "I'm sorry, cs188."
     copguy "Well, wait a second!"
-    show copguy flipped at center with moveinleft
+    show copguy festive flipped at center with moveinleft
     copguy "Can't we wish for one gift? For Christmas?"
     santa "Well, I suppose I can make a miracle happen if it were a gift..."
     santa "CS? Do you have a gift that you've always wanted?"
     cs "Hmm..."
-    show copguy
+    show copguy festive
     copguy "CS, I think I have just the thing."
-    show copguy at mid_left with move
+    show copguy festive at mid_left with move
     n "Copguy whispers in CS' ear."
     show cs surprised
     cs "Oh! You sure that will work?"
     n "Copguy nods."
     show cs
-    show copguy flipped with determination
+    show copguy festive flipped with determination
     show cs at center with move
     cs "Alright Santa, I have my wish."
     show cs at mid_right with move
@@ -2857,7 +2857,7 @@ label dx_christmas_roof_moment:
     show cs at mid_left
     show tate festive at left
     show obama at mid_right
-    show copguy at mid_mid_right
+    show copguy festive at mid_mid_right
     show k17
     show santa at right
     with dissolve
