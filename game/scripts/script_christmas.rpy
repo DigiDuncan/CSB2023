@@ -3,55 +3,85 @@ label dx_christmas_start:
     music lets_hear_winter
     scene cs_bedroom2 
     show cs at mid_left
-    with dissolve
+    with Dissolve(1.0)
+
     n "CS wakes up to a snowy winter morning."
-    cs "Oh yes! It snowed today!"
+    cs "Oh, {i}yes!{/i} It snowed today!"
     show cs at mid_right with move
+    pause 0.5
+
     n "CS looks at his calendar."
     show cs happy
     cs "Woohoo!"
     cs "Christmas is almost here!"
     show cs
-    cs "...And you know what that means!"
+    cs "... And, you know what that means!"
     if fun_value(FUN_VALUE_COMMON):
         cs "Fish!"
     cs "I finally get to throw a huge Christmas party at my house!"
-    show cs flipped
-    cs "I'm so pumped, I should call everyone again to make sure they are coming."
+    show cs happy flipped
+    cs "I'm so pumped! I should call everyone one more time to make sure they're still coming."
+    show cs happy phone flipped
+    pause 0.5
     scene black with dissolve
-    n "CS calls all of his guests who he invited a couple weeks ago."
+    play sound sfx_ring_once
+    pause 1.0
+    n "CS makes a phone call to each of the guests he invited two weeks ago."
+    pause 0.5
+
     scene cs_bedroom1
-    show cs at center
+    show cs phone at center
     with dissolve
-    cs "Alright, well, the party is going to start in 2 days."
+    pause 1.0
+    play sound sfx_end_call
+    pause 1.0
+    show cs with dissolve
+
+    show cs happy
+    cs "Yep, looks like that's everyone! It's gonna be a full house!"
+    cs "I've got two days to prepare!"
+    pause 2.0
+    "..."
     show cs disappointed
-    cs "I have not prepared at all."
+    cs "... I have not prepared at all."
     cs "Fuck."
+    pause 0.5
+
     show cs
-    cs "Okay, well first place I need to start is by checking out my house."
+    cs "I guess the first thing to do is decide where to actually hold the party."
     show cs flipped
-    cs "I have this huge mansion, and I don't even use the rest of my house!"
-    cs "Let's go look."
+    cs "I have this huge-ass mansion, but I only usually use, like, three rooms!"
+    show cs happy flipped
+    cs "I think I know just the place!"
     hide cs with moveoutleft
-    n "CS walks into his living room."
+    n "CS walks into his spare living room."
+
     scene cs_living2
     show cs at center
     with dissolve
-    cs "Well, okay maybe I should bring in the Christmas supplies first."
-    cs "Let's go see what we have."
-    n "CS goes into his garage."
+
+    cs "This should be plenty of space!"
+    cs "Now, I've just gotta make the place look {i}festive!"
+    show cs happy
+    cs "I {i}knew{/i} all that décor I bought at Michael's would come in handy! I should go grab it."
+    show cs
+    n "CS heads towards the garage."
     hide cs with moveoutright
+
     scene cs_garage
     show cs at mid_left
     with dissolve
-    cs "Okay, okay, what should I get first..."
+    cs "Alright! What should I bring in first?"
     menu:
+        cs "Alright! What should I bring in first?{fast}"
         "Christmas tree":
             jump dx_christmas_tree
         "Lights and garland":
             jump dx_christmas_lights
         "Ornaments and decorations":
             jump dx_christmas_decor
+
+# TODO: TATE IS NOT TOUCHING ANY OF THIS UNTIL IT IS FIXED. EDITING CONTINUES ON LINE 197
 
 # christmas tree
 label dx_christmas_tree:
@@ -164,128 +194,260 @@ label dx_christmas_before_anno:
     cs "This is where the fun part begins!"
     jump dx_christmas_anno
 
+# TODO: TATE IS CONTINUING EDITING FROM LINE 84
+
 label dx_christmas_anno:
     scene cs_foyer
-    show cs at center
+    show cs disappointed at center
     with dissolve
+    n "CS looks upon his stash of lights and baubles and feels a little overwhelmed."
+    cs "Wow, this is more than I thought..."
     cs "Maybe I should call someone over to help."
-    cs "Lemme see if Anno is around..."
+    cs "Lemme see if Anno is around."
+    show cs disappointed phone with dissolve
     play sound sfx_ring_once
-    n "CS decides to call Anno."
-    show cs phone at mid_left with move
+    show cs disappointed phone at mid_left with move
     show anno_house at mid_offscreen_right
     show anno at mid_right
     with moveinright
     anno "Hello?"
+    show cs happy phone
     cs "Hey Anno, CS here!"
-    anno "Yes, I know the party is in two days, you just called me."
-    cs "Well, I was wondering..."
-    show cs happy phone
-    cs "If you wanted to help me decorate my house!"
+    anno "Yes, I know the party is in two days, you just called me. I'm still coming."
     show cs phone
-    anno "I still have to get a gift for the gift exchange..."
-    anno "...But I can do that tomorrow."
-    anno "I'll come over. Be there soon."
+    # TODO: revisit these lines
+    cs "Yeah, I know. I was just wondering..."
     show cs happy phone
-    cs "Cool!"
+    cs "... if you wanted to help me decorate my house!"
+    show cs disappointed phone
+    anno "Ah, man, I still have to get something for the gift exchange..."
+    "..."
+    anno "... But, I can do that tomorrow."
+    anno "Yeah, sure, I'll come over. Be there soon."
+    show cs happy phone
+    cs "Cool! See ya then!"
     hide anno_house
     hide anno
     with moveoutright
-    show cs at center with move
-    cs "Alright, I got Anno to come over and help out!"
-    cs "I guess I'll just plan out how I want the house to look."
+    show cs happy phone at center with move
+    play sound sfx_end_call
+    pause 1.0
+    show cs with dissolve
+    pause 0.5
+
+    cs "Awesome! Anno's gonna come over to help out!"
+    show cs surprised flipped
+    cs "I guess I should start planning where everything is gonna--"
     show cs worried
     cs "Actually, shit, it snowed last night!"
     stop music fadeout 3.0
     music end
     cs "I need to shovel before Anno gets here!"
     hide cs with moveoutright
-    n "CS gets dressed and goes out into the garage to get his shovel."
+    scene black with dissolve
+
+    n "CS grabs his coat before heading back to the garage for a shovel."
+
+    # TODO: this section needs more work later, not editing it much now
+
     if tree_first:
         scene cs_garage_mess with dissolve
         show cs disappointed at offscreenleft
         show cs disappointed at mid_mid_left with moveinleft
-        show cs worried with hpunch
-        cs "Shit! I hate Legos, but only when they're in my feet!"
+        # TODO: swap SFX later, however appropriate this one is lmfao
+        show cs scared
+        play sound sfx_spikes
+        cs "Shit!" with hpunch
+        show cs worried
+        cs "I love Legos, but not when they're embedded in my {i}feet!" 
+        cs "Now, where did I last put..."
     else:
         scene cs_garage with dissolve
-        show cs at mid_mid_left with moveinleft
-    show cs
-    cs "Okay, now the real question is, how much did it snow?"
-    show cs disappointed
-    n "CS presses the garage button, and nothing happens."
-    cs "Dammit, I think it's iced shut."
-    cs "I'm gonna have to go out in front."
-    show cs disappointed flipped with determination
+        show cs disappointed at mid_mid_left with moveinleft
+    pause 0.5
+    show cs disappointed at right with move
+    pause 0.5
+    cs "Here we go."
+    # TODO: shovel asset
+    pause 0.5
+    cs "I sure hope it didn't snow {i}too{/i} much..."
+    pause 0.5
+    show cs disappointed flipped at left with move
+    play sound sfx_snd_lightswitch
+
+    n "CS presses the button to open the garage door, but nothing happens."
+
+    play sound sfx_snd_lightswitch
+    pause 0.5
+    play sound sfx_snd_lightswitch
+    pause 0.25
+    play sound sfx_snd_lightswitch
+    pause 1.0
+
+    cs "Damn it, I think it's iced shut."
+    cs "I'll just have to go around through the front."
+
     hide cs with moveoutleft
+    scene black with dissolve
+    pause 1.0
+    play sound sfx_house_door_close
+    pause 1.0
+
     scene cs_house_snowed_in
     show cs disappointed flipped at right
+    # TODO: shovel asset
     with dissolve
     play music snowy
     music snowy
-    n "When CS gets outside, he finds a massive snow drift blocking his garage."
-    cs "Well that's just great."
-    cs "This is gonna take an hour at least to scoop up."
-    cs "I better get to it, I guess."
-    n "As CS is about 10 minutes into shoveling, CS hears someone walking up his driveway."
+    n "As CS closes the door behind him, he is greeted by a massive pile of snow blocking the garage."
+    cs "Well, that's just {i}great."
+    cs "This is gonna take at least an hour to shovel aside..."
+    pause 0.25
+
+    # TODO: make this less subtle
+    # had to do it. -tate
+    show snow_wind_single:
+        matrixtransform sil_white_matrix
+        alpha 0
+        xzoom 0.05
+        yzoom 0.1
+        xpos 0.75
+        ypos 0.35
+        parallel:
+            linear 1.5 alpha 1.0
+            linear 1.5 alpha 0
+        parallel:
+            linear 1.5 xpos 0.7
+        parallel:
+            linear 1.5 ypos 0.2
+
+    pause 0.5
+    n "CS lets out a sigh into the cold."
+    "..."
+    cs "Guess I'd better get to it."
+    pause 2.0
+    
+    # TODO: sfx shoveling, make the shovel animated, etc.
+    
+    # TODO: sfx snow crunchy footsteps
+    n "About ten minutes into shoveling, CS hears someone walking up his driveway."
+
     show carguy flipped at left with moveinleft
+    # TODO: sfx can someone sentence mix "nice snow!" ?
     carguy "Nice snow!"
     carguy "Nooot so nice driveway."
-    cs "Look man, I'm trying. It's cold as balls out here."
+    cs "Look, man, I'm trying. It's cold as balls out here."
     carguy "Speaking of balls, you need some help?"
-    carguy "I got something you might need!"
-    carguy "Crotch Doctor's \"Scratch My Balls\" technology doesn't just help removing shit from your car, it also instantly melts snow!"
+    # TODO: rewrite this 
+    carguy "I've got something that'll do the trick!"
+    carguy "Crotch Doctor's advanced \"Scratch My Balls\" technology doesn't just help with removing scuffs and taint scrapes from your car, it {i}also{/i} instantly melts snow!"
     carguy "Watch!"
-    n "Carguy unscrews the bottle of Crotch Doctor, and tips it upside down."
-    n "A single drop falls into the snow, leaving one small hole."
+
+    # TODO: bottle of crotch doctor
+
+    n "Carguy produces a bottle of Crotch Doctor from his breast pocket and unscrews the cap."
+    n "He tips it upside down and gives it a squeeze."
+    n "A single drop falls onto the snow, revealing only a hint of the asphalt below."
+    
+    # TODO: animate all this obviously lol
+
     cs "Umm..."
     carguy "Hold on, it's just..."
+
+    # TODO: shaky shaky + sfx that empty ketchup bottle squirting sound
+    
     n "Carguy vigorously shakes the empty bottle."
-    carguy "{i}I thought I had more of this...{/i}" 
-    carguy "Welp, sorry! Looks like I ran out!"
-    show carguy with determination
-    hide carguy with easeoutleft
-    n "Carguy turns and trots away though the snow as fast as he can go."
+
+    pause 1.0
+    carguy "{size=-12}I thought I had more of this..." 
+    carguy "Welp, sorry! Looks like I've run out!"
+    carguy "Gotta run! Happy holidays to you!"
+    show carguy at offscreenleft with MoveTransition(0.25)
+    pause 0.5
+    n "Carguy turns and trots away as fast as he can!"
+    # TODO: sfx faster snowy steps fading out
+    pause 2.0
     show cs angry flipped
-    cs "Well that was a huge waste of time!"
-    cs "I really need to finish shoveling my driveway, my face is starting to freeze!"
+    cs "Well, {i}that{/i} was a huge waste of time!"
+    show cs worried flipped
+    cs "I need to finish shoveling, already! My face is starting to freeze!"
+    pause 0.5
+
+    # TODO: SFX more shoveling, have more shovel movement, etc
     scene cs_house_snow
-    show cs flipped at center
-    with dissolve
-    n "As CS finishes scooping up the driveway, Anno's car pulls up on his street."
+    show cs disappointed flipped at center
+    with Dissolve(1.0)
+
+    n "As CS finishes clearing the driveway, Anno's car turns onto CS' street."
+    play sound sfx_car_approach_stop volume 5.0 fadein 5.0
     cs "Just in time!"
-    n "CS greets Anno as he pulls up on his driveway."
+
+    # TODO: anno's car
+
+    show cs happy flipped
+    n "CS waves to Anno as the car pulls into CS' driveway."
+    show cs flipped
+    play sound sfx_car_door_open
+    play sound2 sfx_car_door_ajar
+    pause 2.0
+    play sound sfx_doorslam
+    stop sound2
+    # TODO: sfx crunchy steps again
+    pause 5.0
     show anno at left with moveinleft
     anno "Hey, how's it going?"
     show cs disappointed flipped
     cs "Cold. Very cold."
-    show cs disappointed
-    cs "Let's get inside please it's freezing."
-    hide cs
-    hide anno
+    cs "You would not {i}believe{/i} how much snow there was!"
+    cs "You showed up just as I got done shoveling."
+    show cs worried
+    cs "Let's get inside, please! My hands are gonna fall off!"
+    anno "Right behind you."
+    show cs worried at offscreenright
+    show anno at offscreenright
     with moveoutright
-    n "CS and Anno huddle inside and take their jackets off, while they make their way into the living room."
+    play sound sfx_house_door_open
+
+    scene black with dissolve
+    pause 2.0
+    play sound sfx_house_door_close
+    pause 1.0
+    n "After taking their jackets and snowy shoes off, the two head to CS' living room."
+    pause 1.0
+
     scene cs_living2
     show cs at left
     show anno at right
     with dissolve
-    n "They sit on the couch and catch up with each other while they get warmed up."
-    anno "Well CS, how have you been doing?"
+
+    n "They take a few minutes to catch up and recover from the bitter cold."
+    pause 1.0
+
+    anno "Well, CS, how's it been?"
     show cs happy
-    cs "Good! Still rockin' that Kurt Cobain look?"
+    cs "Good! Still rockin' that Kurt Cobain look, I see."
     anno "Pfft, you thought I would get rid of it?"
     show cs
-    cs "I've enjoyed not being chased by the cops again and just living a roughly normal life."
-    anno "Yeah, how was your trip back home after all that? We haven't really talked much since then."
+    cs "Nah, it totally suits you."
+    cs "I've mostly just been enjoying {i}not{/i} being chased by the cops again and living a relatively normal life."
+    anno "Yeah, how was the trip back after all that? We haven't really kept in touch since we all split up in Canada."
     show cs disappointed
-    cs "Well, I had a blast working for LTT for a few days, but eventually I had to escape again because the cops came after us."
+    cs "Well, I had a blast working for LTT for a few days, but the cops found me as soon as I was featured in a video, so Arc and I had to hit the road again."
     show cs
-    cs "I eventually proved to the cops that I wasn't guilty, and then Billy Mays took us home."
-    anno "How the hell did you manage to come across Billy Mays?"
+    cs "We eventually proved to the cops that I wasn't guilty, and then Billy Mays took us all the way home."
+    anno "How the {i}hell{/i} did you manage to come across Billy Mays?!"
     show cs happy
-    cs "Crazy coincidence I guess, but it was fun though! I won a golden pencil sharpener!"
+    cs "Crazy coincidence, I guess! It was a lot of fun though!"
+    cs "We went to PencilCon, I won a golden pencil sharpener, and we did a bunch of sightseeing!"
     show cs
-    anno "The cops never came after me, so I tried to start up a band, but it didn't really work out."
+    anno "Sounds like one hell of a time."
+    anno "I guess the cops were so focused on finding {i}you{/i} that they mostly left me alone."
+    anno "I tried to start up a band, but it didn't really work out."
+    show cs disappointed
+    cs "Damn. Sorry to hear."
+
+    # TODO: I'm not touching this yet - tate
+
     #Christmas tree first
     if tree_first:
         anno "By the way, where are all of the decorations?"
@@ -313,6 +475,7 @@ label dx_christmas_anno:
         n "After about an hour, they manage to clean up the mess, without stepping on too many Legos."
         n "CS and Anno drag the boxes inside."
     #Setting up decorations
+
 label dx_christmas_setup:
     stop music fadeout 3.0
     music end
@@ -331,6 +494,8 @@ label dx_christmas_setup:
     #Outside
     #After
     cs "Thanks Anno! You really rizzed up my crib!"
+
+# TODO: STOPPED EDITING HERE FOR NOW, I WILL COME BACK LATER - TATE
 
     #Day 2
 label dx_christmas_before_shopping:
