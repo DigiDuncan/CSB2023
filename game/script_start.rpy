@@ -758,6 +758,7 @@ image cs concentrate phone = "characters/cs/concentrate_phone.png"
 image cs concentrate phone flipped = "flip:characters/cs/concentrate_phone.png"
 image cs worried punishedgown = "characters/cs/CSnake_Worried_Gown.png"
 image cs angry punished = "characters/cs/CSnake_Angry.png"
+image cs angry punished flipped = "flip:characters/cs/CSnake_Angry.png"
 
 # CS Misc
 image csgod = "characters/csgod.png"
@@ -2703,6 +2704,9 @@ default train_tate_is_fragile_fun_value = False
 default train_ending_money_returned = False
 default ch2_cs_attack_used = "pushed"
 default cs_chosen_form = "cs_vs_tate_punch"
+
+# Checks: DX Kuwait
+default tutorial = False
 
 # Checks: DX BTTF
 default terraria_question_1 = ""
