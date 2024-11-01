@@ -2017,6 +2017,16 @@ label dx_christmas_exchange:
     anne "We had them lying around on the table at home."
     digi "Yeah, those are super rare. I would hold onto those if I were you."
     hide 1850_coin with dissolve
+    arceus "Don't you collect coins, Digi?"
+    digi "Not really, I just collect pennies."
+    arceus "... Why just pennies?"
+    digi "I have like five thousand pennies. One day, when America stops making pennies, they'll go up in value."
+    obama "Why would we stop making pennies?"
+    digi "Well, you guys spend 1.6 cents per penny to make them, so you're losing money."
+    digi "Canada already stopped making their pennies."
+    mean "Well, yeah, that's because Canada's smarter than America."
+    digi "Anywho, one day, when I have five thousand rare coins in a jar, it'll all have been worth it."
+    arceus "Alright..."
     billy "Antique coins lying around, Tech lying on the curb..."
     billy "Where the hell do you guys live where you find this kinda shit?"
     hide db with moveoutright
