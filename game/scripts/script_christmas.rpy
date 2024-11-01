@@ -683,6 +683,7 @@ label dx_christmas_aftershop:
     n "CS picks up the die."
     show cs behind cs_kitchen_fg
     cs "Hey, I got a [d20]!"
+
 label dx_christmas_party_before:
     scene cs_bedroom2
     show cs happy
@@ -738,33 +739,17 @@ label dx_christmas_party_before:
         show digi flipped at mid_left
         with dissolve
         show cs flipped at right with moveinright
-        digi "Hey CS! How've you been?"
-        cs "Hey Digi! Didn't know you have a... spaceship?"
-        digi "Well sometimes, you can barely call it that."
-        digi "Brr... it's cold out. Can we go inside?"
+        digi "Hey, CS! How've you been?"
+        cs "Hey, Digi! I didn't know you had a... spaceship?"
+        digi "Oh yeah, this old thing. It's a bit of a nugget but it gets the job done."
+        cs "Why have I never seen this before?"
+        digi "Was never coming from space before."
+        pause 0.5
+        n "Digi shudders from the temperature."
+        digi "It's cold out. Can we go inside?"
         cs "Yeah, let's get inside."
-        jump dx_christmas_intro      
-    if d20 == 5:
-        n "As soon as he says that, he feels the house start to shake."
-        show cs disappointed flipped
-        cs "Wh-- What's going on?"
-        show cs worried flipped
-        n "As the house shakes even faster, a loud train whistle bellows out."
-        cs "Holy shit, is that a train?"
-        hide cs with moveoutleft
-        scene cs_house_snow_night
-        show tate festive flipped at mid_left
-        show mean human flipped at left
-        with dissolve
-        show cs worried flipped at right with moveinright
-        cs "That's a fucking train!"
-        tate "Hey CS! How've you been doin'?"
-        cs "Tate? Hey! I've been great!"
-        mean "Hey CS, Merry Christmas!"
-        cs "Merry Christmas to you too, Mean. Shall we get inside?"
-        tate "Yeah!"
         jump dx_christmas_intro
-    if d20 == 6:
+    if d20 == 5 or d20 == 6:
         n "As soon as he says that, he feels the house start to shake."
         show cs disappointed flipped
         cs "Wh-- What's going on?"
@@ -783,7 +768,7 @@ label dx_christmas_party_before:
         mean "Hey CS, Merry Christmas!"
         cs "Merry Christmas to you too, Mean. Shall we get inside?"
         tate "Yeah!"
-        jump dx_christmas_intro    
+        jump dx_christmas_intro   
     if d20 == 7:
         n "CS notices a familiar blue car roll up on the driveway."
         cs "Look at that! Looks like Billy is here first!"
