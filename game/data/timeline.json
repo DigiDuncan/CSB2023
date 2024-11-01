@@ -4,24 +4,31 @@
             "name": "CSBI",
             "type": "start",
             "need_label": "csbi_start",
-            "jump_to": "csbi_start",
-            "pos" : [0, 6]
+            "pos" : [0, 6],
+            "jump_to": "csbi_start"
+        },
+        "csbi_error_prereq" : {
+            "name": "Beat the game!",
+            "type": "prereq",
+            "need_achieve": "fin",
+            "pos" : [0, 5]
         },
         "csbi_error_end" : {
             "name": "Error",
             "type": "end",
             "need_label": "after_error_fight",
-            "pos": [0, 5]
+            "pos": [0, 4]
         },
         "csbi_pc_choice" : {
             "name": "PC?",
             "type": "choice",
             "need_label": "csbi_craptop",
-            "pos": [1, 6]
+            "pos": [1, 6],
+            "dx": true
         },
-        "csbi_nah_end" : {
-            "name": "Nah.",
-            "type": "end",
+        "csbi_speedrun_outcome" : {
+            "name": "Stay home",
+            "type": "outcome",
             "need_achieve": "nah",
             "pos": [1, 5],
             "dx": true
@@ -29,8 +36,22 @@
         "csbi_speedrun_end" : {
             "name": "Speedrun",
             "type": "end",
-            "need_achieve": "speedrun",
+            "need_achieve": "nah",
+            "pos": [1, 4],
+            "dx": true
+        },
+        "csbi_nah_outcome" : {
+            "name": "Do nothing",
+            "type": "outcome",
+            "need_achieve": "nah",
             "pos": [1, 7],
+            "dx": true
+        },
+        "csbi_nah_end" : {
+            "name": "Nah.",
+            "type": "end",
+            "need_achieve": "nah",
+            "pos": [1, 8],
             "dx": true
         },
         "csbi_discord_outcome" : {
@@ -46,79 +67,173 @@
             "pos": [3, 6],
             "dx": true
         },
-        "csbi_homesavers_end" : {
+        "csbi_homesavers_outcome" : {
             "name": "Home Savers",
-            "type": "end",
+            "type": "outcome",
             "need_achieve": "savers",
             "pos": [3, 5],
             "dx": true
+        },
+        "csbi_homesavers_end" : {
+            "name": "Call HS",
+            "type": "end",
+            "need_achieve": "savers",
+            "pos": [3, 4],
+            "dx": true
+        },
+        "csbi_hohsis_outcome" : {
+            "name": "Call HoH SiS",
+            "type": "outcome",
+            "need_achieve": "csbi",
+            "pos": [4, 6]
         },
         "csbii_start" : {
             "name": "CSBII",
             "type": "start",
             "need_achieve": "csbi",
-            "pos": [4, 6],
+            "pos": [5, 6],
             "jump_to": "csbii_start"
         },
         "csbii_rooftop_choice" : {
             "name": "Which ATK?",
             "type": "choice",
             "need_label": "csbii_start",
-            "pos": [5, 6]
+            "pos": [6, 6]
+        },
+        "csbii_ytpmagic_outcome" : {
+            "name": "YTP Magic",
+            "type": "outcome",
+            "need_label": "ccsbii_asylum",
+            "pos": [6, 5]
         },
         "csbii_asylum_badend": {
             "name": "Asylum",
             "type": "badend",
             "need_label": "csbii_asylum",
-            "pos": [5, 5]
+            "pos": [6, 4]
         },
         "csbii_atk_outcome": {
             "name": "Other ATK",
             "type": "outcome",
             "need_label": "csbii_caught",
-            "pos": [5, 7]
+            "pos": [7, 6]
         },
         "csbiii_start": {
             "name": "CSBIII",
             "type": "start",
             "need_achieve": "csbii",
-            "pos": [6, 7]
+            "pos": [8, 6],
+            "jump_to": "csbiii_start"
+        },
+        "csbiii_meeting_prereq": {
+            "name": "Beat game first",
+            "type": "prereq",
+            "need_label": "csbiii_start",
+            "pos": [8, 5]
         },
         "csbiii_meeting_choice": {
-            "name": "Meeting?",
+            "name": "Attend?",
             "type": "choice",
-            "need_label": "csbiii_ai",
-            "pos": [7, 7]
+            "need_label": "csbiii_start",
+            "pos": [9, 5]
+        },
+        "csbiii_yesmeet_outcome": {
+            "name": "Yes",
+            "type": "outcome",
+            "need_label": "csbiii_start",
+            "pos": [9, 4]
         },
         "csbiii_ai_end": {
             "name": "AI",
             "type": "end",
             "need_achieve": "chatgpt",
-            "pos": [7, 6]
+            "pos": [9, 3]
+        },
+        "csbiii_cantornomeet_outcome": {
+            "name": "No / Skip",
+            "type": "outcome",
+            "need_label": "csbiii_start",
+            "pos": [9, 6]
         },
         "csbiii_job_choice": {
             "name": "Job?",
             "type": "choice",
             "need_label": "csbiii_start",
-            "pos": [8, 7]
+            "pos": [10, 6]
         },
         "csbiii_shopping_outcome": {
             "name": "Shopping",
             "type": "outcome",
             "need_label": "friend_microcenter",
-            "pos": [8, 6]
+            "pos": [10, 5]
         },
         "csbiii_editing_outcome": {
             "name": "Editing",
             "type": "outcome",
             "need_label": "csbiii_edit_video",
-            "pos": [8, 8]
+            "pos": [10, 7]
         },
         "csbiii_video_choice": {
-            "name": "Video?",
+            "name": "Which video?",
             "type": "choice",
             "need_label": "csbiii_edit_video",
-            "pos": [9, 8]
-        }
+            "pos": [11, 7]
+        },
+        "csbiii_editmacro_outcome": {
+            "name": "Edit Macro",
+            "type": "outcome",
+            "need_label": "csbiii_edit_video",
+            "pos": [12, 7]
+        },
+        "friend_gpu_choice": {
+            "name": "Which GPU?",
+            "type": "choice",
+            "need_label": "friend_microcenter",
+            "pos": [11, 5]
+        },
+        "friend_badgpu_outcome": {
+            "name": "Bad GPU",
+            "type": "outcome",
+            "need_label": "friend_low_gpu",
+            "pos": [12, 5]
+        },
+        "fired_start": {
+                "name": "Fired",
+                "type": "start",
+                "need_label": "fired_new_plan",
+                "pos": [12, 6],
+                "jump_to": "fired_new_plan"
+            },
+        "fired_contract_choice": {
+                "name": "Take deal?",
+                "type": "choice",
+                "need_label": "fired_limo_time",
+                "pos": [13, 6]
+            },
+        "fired_yes_outcome": {
+                "name": "Yes",
+                "type": "outcome",
+                "need_label": "fired_signed_the_contract",
+                "pos": [14, 6]
+            },
+        "fired_no_outcome": {
+                "name": "No",
+                "type": "outcome",
+                "need_label": "fired_no_contract",
+                "pos": [13, 7]
+            },
+        "fired_badend": {
+                "name": "Threw away fame",
+                "type": "badend",
+                "need_label": "fired_no_contract",
+                "pos": [13, 8]
+            },
+        "fired_end": {
+                "name": "Rockstar",
+                "type": "end",
+                "need_achieve": "rockstar",
+                "pos": [15, 6]
+            }
+        
     }
 }

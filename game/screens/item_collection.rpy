@@ -68,7 +68,7 @@ screen item_nav():
 
                     # create the bounding box for each button
                     frame:
-                        background Solid(buttoncolor)
+                        background ( buttoncolor )
                         margin 5, 5
                         xsize 153 ysize 153
                         
@@ -78,7 +78,7 @@ screen item_nav():
                         button:
                             xalign 0.5 yalign 0.5
                             
-                            action [ SensitiveIf( k in persistent.collected ), SetScreenVariable("current_item", k) ]
+                            action [ SensitiveIf( k in persistent.collected ), SetScreenVariable("current_item", k), SetVariable("buttoncolor", "#65C0DF") ]
 
                             hovered SetVariable("buttoncolor","#0099CC")
                             unhovered SetVariable("buttoncolor","#003D51")
