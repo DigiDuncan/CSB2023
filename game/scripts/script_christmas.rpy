@@ -642,7 +642,7 @@ label dx_christmas_party_before:
         n "A Blackhawk helicopter is seen landing out in the middle of the street."
         hide cs with moveoutleft
         scene cs_house_snow_night
-        show obama at mid_left
+        show obama festive at mid_left
         with dissolve
         show cs flipped at right with moveinright
         n "The President of the United States steps out."
@@ -956,7 +956,7 @@ label dx_christmas_intro:
     mean "What did you just call me?"
     scene cs_kitchen
     show cs_kitchen_fg
-    show obama at right behind cs_kitchen_fg
+    show obama festive at right behind cs_kitchen_fg
     show ed at mid_right behind cs_kitchen_fg
     show michael at mid_mid_right behind cs_kitchen_fg
     show billy at mid_mid_left behind cs_kitchen_fg
@@ -1113,7 +1113,7 @@ label dx_christmas_banter:
     scene cs_kitchen
     show cs_kitchen_fg
     show k17 flipped at left
-    show obama at center behind cs_kitchen_fg
+    show obama festive at center behind cs_kitchen_fg
     show ed at mid_right behind cs_kitchen_fg
     show michael at mid_mid_right behind cs_kitchen_fg
     show billy at right behind cs_kitchen_fg
@@ -1303,7 +1303,7 @@ label dx_christmas_banter:
 label dx_christmas_cooking:
     scene cs_kitchen
     show cs_kitchen_fg
-    show obama at mid_right behind cs_kitchen_fg
+    show obama festive at mid_right behind cs_kitchen_fg
     show michael at mid_offscreen_left behind cs_kitchen_fg
     show billy at left behind cs_kitchen_fg
     with dissolve
@@ -1329,7 +1329,7 @@ label dx_christmas_cooking:
     #Carrot Karate Chop Minigame
     scene cs_kitchen
     show cs_kitchen_fg
-    show obama at center behind cs_kitchen_fg
+    show obama festive at center behind cs_kitchen_fg
     show michael at mid_offscreen_left behind cs_kitchen_fg
     show billy at left behind cs_kitchen_fg
     show cs flipped at mid_right behind cs_kitchen_fg  
@@ -1444,7 +1444,7 @@ label dx_christmas_mike:
     cs "Oh my god! It's Mike, everyone quick come look at Mike!"
     show k17 flipped at mid_mid_right behind grace
     show grace at mid_right
-    show obama at center behind grace
+    show obama festive at center behind grace
     show tate festive at mid_left
     show billy at mid_mid_left
     with moveinleft
@@ -1458,7 +1458,7 @@ label dx_christmas_mike:
     hide tate
     hide billy
     with moveoutleft
-    show obama at mid_left behind cs
+    show obama festive at mid_left behind cs
     show k17 at mid_mid_left
     show grace at center
     with move
@@ -1672,7 +1672,7 @@ label dx_christmas_exchange:
     billy "Great! I can probably pitch this!"
     hide billy with moveoutright
     obama "Welp, I guess it's my turn now."
-    show obama at mid_left with moveinleft 
+    show obama festive at mid_left with moveinleft 
     show mgs1 at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top") 
     obama "Metal Gear Solid?"
     copguy "Yeah, that's mine, I didn't know what anyone really wants, so I just found this at the station."
@@ -2172,7 +2172,7 @@ label dx_christmas_snowed_in:
     show linus at mid_right
     show rich at mid_right_right
     show tate sad festive flipped at mid_mid_left
-    show obama at center behind digi
+    show obama festive at center behind digi
     show k22 disappointed at center behind digi
     show k17 disappointed at mid_mid_right behind obama
     with dissolve
@@ -2229,7 +2229,7 @@ label dx_christmas_snowed_in:
     show linus at mid_right
     show rich at mid_right_right
     show tate sheepish festive flipped at mid_mid_left
-    show obama at center behind digi
+    show obama festive at center behind digi
     show k22 disappointed at center behind digi
     show k17 disappointed at mid_mid_right behind obama
     with dissolve
@@ -2259,7 +2259,7 @@ label dx_christmas_billy_time:
     show linus at mid_right
     show rich at mid_right_right
     show tate sheepish festive flipped at mid_mid_left
-    show obama at center behind digi
+    show obama festive at center behind digi
     show billy at center
     show k22 disappointed at center behind digi
     show k17 disappointed at mid_mid_right behind obama
@@ -2622,7 +2622,7 @@ label dx_christmas_roof_moment:
     santa "Okay, I should probably go down there and check it out."
     scene cs_roof
     show cs happy at left
-    show obama at mid_mid_left behind k17
+    show obama festive at mid_mid_left behind k17
     show billy at center behind cs
     show michael at mid_left
     show ed at mid_right
@@ -2647,7 +2647,7 @@ label dx_christmas_roof_moment:
     santa "Well, let's see who we have here..."
     santa "..."
     santa "Mr. President? What are you doing here?"
-    show obama at center with move
+    show obama festive at center with move
     obama "Well, I wanted to go to my good friend CS' Christmas party!"
     santa "Ho ho, well..."
     n "Santa stares around the crowd."
@@ -2856,7 +2856,7 @@ label dx_christmas_roof_moment:
     scene cs_house_night_dtree
     show cs at mid_left
     show tate festive at left
-    show obama at mid_right
+    show obama festive at mid_right
     show copguy festive at mid_mid_right
     show k17
     show santa at right
