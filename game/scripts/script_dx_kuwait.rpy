@@ -315,13 +315,25 @@ label kuwait_icarus:
     scene icarus
     show cs angry punished
     with dissolve
-    cs "Hmm, where should I go?"
-    menu:
-        "What do you want to check out?"
-        "The Interior":
-            jump kuwait_interior
-        "The Exterior":
-            jump kuwait_exterior
+    if tutorial == True:
+        scene icarus
+        show cs angry punished
+        with dissolve
+        cs "I am now at Icarus."
+        menu:
+            "What do you want to check out?"
+            "The Interior":
+                jump kuwait_interior
+            "The Exterior":
+                jump kuwait_exterior
+    else:
+        cs "Hmm, where should I go?"
+        menu:
+            "What do you want to check out?"
+            "The Interior":
+                jump kuwait_interior
+            "The Exterior":
+                jump kuwait_exterior
 label kuwait_interior:
     scene kuwait_hallway
     show cs angry punished
@@ -346,9 +358,34 @@ label kuwait_interior:
         "The Bar":
             cs "I'll go check out the bar."
             hide cs with moveoutright
-            show icarus_3 with dissolve
+            show icarus_3 
+            show anne at right
+            show grace at mid_right
+            with dissolve
             show cs angry punished with moveinleft
-            cs "This is interesting, but I don't have too much to do here."
+            if tutorial == True:
+                grace "Welcome back, CS!"
+                anne "Do you want anything to drink?"
+                menu:
+                    "See shop inventory":
+                        anne "Okay."
+                    "Talk about world travels":
+                        anne "Okay."
+            grace "Hi! Welcome to the A&G Bar!"
+            anne "You seem new here, who are you?"
+            cs "Hey girls! CS here!"
+            grace "CS? Like 188?"
+            cs "Yeah, you know me?"
+            grace "I do, you're that YTP guy!"
+            cs "Indeed I am!"
+            anne "Well, this is our bar, and we serve the local residents of this island."
+            anne "Do you want anything to drink?"
+            menu:
+                "See shop inventory":
+                    anne "Okay."
+                "Talk about world travels":
+                    anne "Okay."
+            
             jump kuwait_icarus   
         "The Main Office":
             cs "I guess I can go back and talk with that lady."
@@ -388,42 +425,28 @@ label kuwait_exterior:
         "The Heliport":
             cs "I'll go check out that Building."
             hide cs with moveoutright
-            show icarus_3 with dissolve
+            show icarus_3
+            show elizabeth at right
+            with dissolve
             show cs angry punished with moveinleft
-            cs "This is interesting, but I don't have too much to do here."
+       
+            eliza "Heya CS! Are you ready to head out again?"
+            menu:
+                "Head out to Kuwait":
+                    cs "Yep, I'm ready!"
+                    eliza "Alrighty, well let's get a move on, shall we?"
+                    scene black with dissolve
+                    jump kuwait_select
+                "Stay at Icarus for now":
+                    cs "I'm not ready yet, I still have a few things to do."
+                    eliza "Take yer time, but not too much time!"
+                    show cs angry punished flipped with determination
+                    hide cs with moveoutleft
+                    jump kuwait_exterior
             jump kuwait_icarus
         "Go Inside":
             jump kuwait_interior
-    if tutorial == True:
-        scene icarus
-        show cs angry punished
-        with dissolve
-        cs "I am now at Icarus."
-        menu:
-            "What do you want to check out?"
-            "The Civvies":
-                cs "I'll go check out that Building."
-                hide cs with moveoutright
-                show icarus_1 with dissolve
-                show cs angry punished with moveinleft
-                cs "This is interesting, but I don't have too much to do here."
-                jump kuwait_icarus
-            "The PMCs":
-                cs "I'll go check out that Building."
-                hide cs with moveoutright
-                show icarus_2 with dissolve
-                show cs angry punished with moveinleft
-                cs "This is interesting, but I don't have too much to do here."
-                jump kuwait_icarus
-            "The Heliport":
-                cs "I'll go check out that Building."
-                hide cs with moveoutright
-                show icarus_3 with dissolve
-                show cs angry punished with moveinleft
-                cs "This is interesting, but I don't have too much to do here."
-                jump kuwait_icarus
-            "Go Inside":
-                jump kuwait_interior
+
 label kuwait_kuwait_city:
     scene kuwait_cityu
     show cs angry punished
