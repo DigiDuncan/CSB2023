@@ -317,24 +317,21 @@ label woohoo_counter:
 
 screen limbo_csbutton:
     add "#000000"
-    text "This will update your game from the previous release." textalign 0.5 size 108 xalign 0.5 yalign 0.25
-    hbox xalign 0.0 yalign 0.25:
-        spacing 50
-    text "THIS WILL DELETE YOUR CURRENT SAVE." textalign 0.5 size 72 xalign 0.45 yalign 0.45
-    hbox xalign 0.0 yalign 0.45:
-        spacing 50
-    textbutton "Go back!":
-        xalign 0.6
-        yalign 0.75
-        text_textalign 0.5
-        text_size 72
-        action Hide("limbo_csbutton")
-    textbutton "Proceed":
-        xalign 0.4
-        yalign 0.75
-        text_textalign 0.5
-        text_size 72
-        action Jump("csdata")
+    vbox xalign 0.5 yalign 0.5:
+        spacing 25
+        add "gui/warning.png" xalign 0.5
+        text "This will apply your achivements and unlocks from the original game." textalign 0.5 size 72 xalign 0.5
+        text "THIS WILL DELETE YOUR CURRENT SAVE." textalign 0.5 size 64 xalign 0.5
+        textbutton "Go back!":
+            xalign 0.5
+            text_textalign 0.5
+            text_size 72
+            action Hide("limbo_csbutton")
+        textbutton "Proceed":
+            xalign 0.5
+            text_textalign 0.5
+            text_size 72
+            action Jump("csdata")
 
 screen rockstar_check:
     text "Band Name: [band_name]" textalign 0.5 size 36 xalign 0.0 yalign 0.05
