@@ -588,7 +588,7 @@ label dx_christmas_party_before:
         cs "Holy shit, is that a train?"
         hide cs with moveoutleft
         scene cs_house_snow_night
-        show tate flipped at mid_left
+        show tate festive flipped at mid_left
         show mean human flipped at left
         with dissolve
         show cs worried flipped at right with moveinright
@@ -608,7 +608,7 @@ label dx_christmas_party_before:
         cs "Holy shit, is that a train?"
         hide cs with moveoutleft
         scene cs_house_snow_night
-        show tate flipped at mid_left
+        show tate festive flipped at mid_left
         show mean human flipped at left
         with dissolve
         show cs worried flipped at right with moveinright
@@ -875,20 +875,20 @@ label dx_christmas_intro:
     show anno at mid_left behind cs
     show aria at mid_mid_left behind anno
     show digi at center
-    show tate flipped at mid_right
+    show tate festive flipped at mid_right
     with dissolve
     play music teeth_dust if_changed
     music teeth_dust
     cs "Well, it looks like everyone is here, right?"
     anno "DB isn't here yet, but other than that, yeah."
-    show tate sheepish flipped
+    show tate sheepish festive flipped
     tate "There are... a lot of people here..."
     show digi flipped
     digi "Yeah, I wonder where Arc and Kitty are..."
     show k17 happy at center
     show k22 at mid_mid_right behind k17
     with moveinright
-    show tate shock flipped
+    show tate shock festive flipped
     k17 "OMG hey guys!"
     show k17 shock
     k17 "You guys all look so... different!"
@@ -903,7 +903,7 @@ label dx_christmas_intro:
     k22 "Oh boy, alright K-17, calm down for one second. I think everyone here needs an explanation."
     show k17
     show digi
-    show tate flipped
+    show tate festive flipped
     cs "Yes please. I didn't want to say it, but it seems like everytime I meet you guys, your appearance always changes!"
     aria "Sorry."
     digi "Did I change too much?"
@@ -945,9 +945,9 @@ label dx_christmas_intro:
     show k22 confident flipped
     k22 "Okay, so--"
     show k22 flipped
-    show tate sheepish flipped
+    show tate sheepish festive flipped
     tate "I'll just tell him later."
-    show tate flipped
+    show tate festive flipped
     cs "Alright, well, I'll let you guys talk, I'm gonna check on the others."
     hide cs with moveoutright
     show k17 shock flipped
@@ -1089,7 +1089,7 @@ label dx_christmas_banter:
     scene cs_bathroom_open
     show sheriff flipped at mid_left
     show copguy
-    show tate cry
+    show tate cry festive
     hide tate with easeoutright
     tate "Awawawawa!!!"
     copguy "Really?"
@@ -1157,7 +1157,7 @@ label dx_christmas_banter:
     rich "Only about 80-percent."
     scene cs_foyer
     show aria at mid_mid_left
-    show tate flipped at mid_right
+    show tate festive flipped at mid_right
     show mean human at mid_offscreen_right
     show k22 flipped at left behind k17
     show k17 flipped at center
@@ -1169,20 +1169,20 @@ label dx_christmas_banter:
     show k22 flipped
     k17 "Okay, so, if big guy over there is DigBick..."
     show mean human angry
-    show tate sheepish flipped
+    show tate sheepish festive flipped
     mean "I'm not DigBick!"
     k17 "Are you DigBick's... girlfriend?"
-    show tate sheepish blush flipped
+    show tate sheepish blush festive flipped
     tate "What?"
     mean "No, first of all, I'm not fucking DigBick."
     show k17 disappointed flipped
     mean "I'm Mean, and this is Tate. We are friends."
-    show tate smug flipped
-    tate "Yeah, and I'm not a girl! I'm--{w=2.0}{nw}"
-    show tate flipped
+    show tate furious blush festive flipped
+    tate "And I'm not a girl--!{w=0.25}{nw}" with vpunch
+    show tate furious festive flipped
     k17 "Yeah, you sound mean."
     show mean human annoyed
-    show tate serious flipped
+    show tate srs festive flipped
     show k17
     hide aria
     show aria at mid_mid_left
@@ -1445,7 +1445,7 @@ label dx_christmas_mike:
     show k17 flipped at mid_mid_right behind grace
     show grace at mid_right
     show obama at center behind grace
-    show tate at mid_left
+    show tate festive at mid_left
     show billy at mid_mid_left
     with moveinleft
     show k17 happy flipped
@@ -1454,7 +1454,7 @@ label dx_christmas_mike:
     tate "What's up Mike!"
     obama "Mike, remember when I pardoned you?"
     billy "This guy can sell pizza better than I can!"
-    show tate flipped with determination
+    show tate festive flipped with determination
     hide tate
     hide billy
     with moveoutleft
@@ -1650,15 +1650,16 @@ label dx_christmas_exchange:
     mean "Who's next?"
     hide mean with moveoutright
     tate "It's me!"
-    show tate at mid_left with moveinleft    
+    show tate festive at mid_left with moveinleft    
     tate "Let's see..."
     show handy_switch at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     pause 1.5
-    show tate smug
+    show tate smug festive 
     tate "Billy? Is this yours?"
     billy "It's the Handy Switch!"
     billy "It let's you control any power source, from anywhere!"
     hide handy_switch with dissolve
+    show tate festive
     tate "I'm sure I can find a use for this."
     hide tate with moveoutright
     billy "Alright, it's my turn!" 
@@ -1881,7 +1882,7 @@ label dx_christmas_climax:
     show k22 at mid_right
     show k17 at mid_offscreen_right
     show luke at center
-    show tate at mid_left behind cs
+    show tate festive at mid_left behind cs
     show mean human flipped at mid_offscreen_left behind cs
     with dissolve
     k22 "Well CS, this was wonderful, but we should get going."
@@ -1891,6 +1892,7 @@ label dx_christmas_climax:
     show k17 happy
     k17 "We are doing games? Well that's the best part!"
     show cs disappointed
+    show tate sheepish festive
     k22 "Dammit!"
     show k22 disappointed
     show k17 disappointed
@@ -1900,7 +1902,7 @@ label dx_christmas_climax:
     blank "Hah! Says you! You wanted to play your trash this whole party!"
     digi "Hey wait a second! Luke!"
     luke "Wha? Oh shit!"
-    show tate sad
+    show tate sad festive
     digi "You were, streaming movies to the projector from your phone?"
     show mean human annoyed flipped
     luke "Look, this looked to complicated to setup anyways, so I wanted to make it feel like your plan worked!"
@@ -1912,7 +1914,7 @@ label dx_christmas_climax:
     michael "I think I'm gonna puke."
     wesley "Arghh! My back! CS you prick, this is your fault!"
     grace "Guys! Stop yelling!"
-    show tate srs
+    show tate srs festive
     tate "Yeah guys! Get it together!"
     nova "No! Fuck you!"
     anne "Hey!"
@@ -1939,7 +1941,7 @@ label dx_christmas_lights_out:
     tate "CS, this wasn't your fault."
     cs "Everyone is fighting, no one is having fun!"
     nova "Well yeah, at least I don't listen to Blank's shitty music anymore."
-    tate "Can it!"
+    tate "{i}Can it!" with hpunch
     tate "Look, we need to stop the arguing and calm down!"
     billy "I am calm!"
     aria "I am clam."
@@ -2010,7 +2012,7 @@ label dx_christmas_lights_out:
     kitty "I'm a little glad the power went out actually, it's been peaceful here."
     cs "I was trying to fix the power via the breaker, but it looks like I got no dice."
     kitty "I think the power is out everywhere, I heard the wind really pick up outside a little while ago."
-    kitty "You should probably go check yourself."
+    kitty "You should probably go check for yourself."
     kitty "Let Arceus know I'm down here, I think I'm gonna stay here for a bit."
     cs "Got it. Stay safe down here."
     show cs with determination
@@ -2049,11 +2051,11 @@ label dx_christmas_lights_out:
     show digi at mid_mid_left
     show k17 disappointed at center behind digi
     show k22 disappointed at mid_mid_right
-    show tate flipped at mid_right
-    show mean human at mid_offscreen_right
+    show tate srs festive flipped at mid_right
+    show mean human annoyed at mid_offscreen_right
     with dissolve
     show cs at left with moveinleft
-    cs "Hey guys! How is everyone so far?"
+    cs "Hey guys! How is everyone holding up?"
     anno "It's getting kinda cold, so I hope the power comes back soon."
     anno "My phone is about to die."
     cs "I'm gonna check outside and see how bad it is."
@@ -2075,7 +2077,7 @@ label dx_christmas_lights_out:
     show digi at mid_mid_left
     show k17 disappointed at center behind digi
     show k22 disappointed at mid_mid_right
-    show tate flipped at mid_right
+    show tate srs festive flipped at mid_right
     show mean human at mid_offscreen_right
     with dissolve
     show cs worried flipped at center with moveinright
@@ -2083,7 +2085,7 @@ label dx_christmas_lights_out:
     aria "Calm down, CS. Catch your breath."
     show cs disappointed flipped
     cs "The door, it's, all snow."
-    show tate sad flipped
+    show tate sad festive flipped
     show k17 shock flipped
     anno "All snow?"
     show mean human annoyed
@@ -2091,7 +2093,7 @@ label dx_christmas_lights_out:
     k17 "It's?"
     digi "Are we trapped in here?"
     show mean human angry
-    show tate sad
+    show tate sad festive
     mean "There's only one way to find out."
     show cs disappointed
     mean "CS, take me to the roof."
@@ -2169,7 +2171,7 @@ label dx_christmas_snowed_in:
     show digi at mid_mid_right
     show linus at mid_right
     show rich at mid_right_right
-    show tate sad flipped at mid_mid_left
+    show tate sad festive flipped at mid_mid_left
     show obama at center behind digi
     show k22 disappointed at center behind digi
     show k17 disappointed at mid_mid_right behind obama
@@ -2189,13 +2191,13 @@ label dx_christmas_snowed_in:
     rich "We've dealt with worse, let's get out there and shovel!"
     show cs disappointed
     show mean human angry flipped
-    show tate shock flipped
+    show tate shock festive flipped
     mean "Everyone! Stop!"
     mean "There's like 20 feet of snow."
     n "Everyone goes quiet."
     mean "If you want to go up to the roof and check for yourself, go ahead."
     show mean human annoyed flipped
-    show tate sad flipped
+    show tate sad festive flipped
     mean "I couldn't believe it either, but..."
     mean "There's nothing else but snow, and even more snow."
     blank "I didn't even think you could get that much snow..."
@@ -2207,14 +2209,14 @@ label dx_christmas_snowed_in:
     michael "I spy something, black!"
     nova "Is it Obama?"
     show mean human flipped
-    show tate flipped
+    show tate flipped festive
     obama "Hey!"
     michael "No, it is not."
     aria "Is it everything?"
     michael "Correct!"
     cs "Okay, I have something I've wanted to play again with someone."
     cs "I have a few board games somewhere, I just need to look."
-    show tate sad flipped
+    show tate sad festive flipped
     tate "Please tell me it's not Chess..."
     cs "It's better than Chess! I'll be back."
     scene black with dissolve
@@ -2226,7 +2228,7 @@ label dx_christmas_snowed_in:
     show digi at mid_mid_right
     show linus at mid_right
     show rich at mid_right_right
-    show tate flipped at mid_mid_left
+    show tate sheepish festive flipped at mid_mid_left
     show obama at center behind digi
     show k22 disappointed at center behind digi
     show k17 disappointed at mid_mid_right behind obama
@@ -2256,7 +2258,7 @@ label dx_christmas_billy_time:
     show digi at mid_mid_right
     show linus at mid_right
     show rich at mid_right_right
-    show tate flipped at mid_mid_left
+    show tate sheepish festive flipped at mid_mid_left
     show obama at center behind digi
     show billy at center
     show k22 disappointed at center behind digi
@@ -2268,14 +2270,14 @@ label dx_christmas_billy_time:
     music on_the_rocks
     billy "The handy switch!"
     billy "Who got my handy switch for their gift?"
-    show tate
+    show tate festive
     tate "Me!"
     billy "Follow me to the basement!"
     show cs disappointed
     cs "Billy, what are you doing?"
     billy "I have an idea, and I'll be right back!"
     hide billy with moveoutleft
-    show tate flipped
+    show tate festive flipped
     tate "I guess I'm following Billy, be right back as well."
     hide tate with moveoutleft
     scene black with dissolve
@@ -2283,7 +2285,7 @@ label dx_christmas_billy_time:
     billy "Oh dang it! I forgot to bring a light!"
     scene cs_hallway_off
     show billy at mid_left
-    show tate at center
+    show tate festive at center
     show elizabeth at right
     show screen flashlight_demo
     with dissolve
@@ -2297,7 +2299,7 @@ label dx_christmas_billy_time:
     eliza "I have no clue how that's gonna work, but good luck to you two."
     tate "Is the basement over this way?"
     eliza "Yeah, down the hall and to the left."
-    show tate sheepish
+    show tate sheepish festive
     tate "Thank you... Mika?"
     eliza "It's Elizabeth, but sure."
     hide tate
@@ -2307,16 +2309,16 @@ label dx_christmas_billy_time:
     show grace at mid_right
     show anne at right
     with dissolve
-    show tate at center
+    show tate festive at center
     show billy at mid_left
     with moveinleft
     grace "Hey! You're the TV man!"
     anne "Grace always wanted to buy every product you sold."
     billy "You should! Hi, Billy Mays here for the--"
-    show tate smug
+    show tate sheepish festive flipped
     tate "Billy, the power?"
-    show tate
     billy "Oh yeah. We can talk later!"
+    show tate festive
     hide tate
     hide billy
     with moveoutright
@@ -2325,36 +2327,36 @@ label dx_christmas_billy_time:
     scene cs_basement
     show kitty at left
     show arceus worried flipped at mid_left
-    show tate flipped at center
+    show tate festive flipped at center
     show billy at mid_right
     with dissolve
     arceus "Tate? Billy?"
     kitty "What's going on?"
     billy "Fixing the power with the power of the handy switch!"
-    show tate sheepish flipped
+    show tate sheepish festive flipped
     tate "Don't ask."
     scene breakerbox
-    show tate at mid_left
+    show tate festive at mid_left
     show billy at mid_right
     with dissolve
     n "Finally, Billy and Tate make it to the breaker."
     billy "Alright, all you gotta do is put the switch on the breaker!"
-    show tate smug
+    show tate sheepish festive
     tate "Really? Just like, slap it on?"
     billy "Yes! It's that easy!"
     show handy_switch at Move((0.3125, 0.4), (0.3125, 0.4), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     n "Tate slaps the handy switch on the breaker, and flips the switch."
     play sound sfx_snd_lightswitch
-    show tate shock
+    show tate shock festive
     hide screen flashlight_demo
     tate "Wh--{w=1.0} Whaaaaaaaaaat??"
     billy "Like magic!"
-    show tate sheepish
+    show tate sheepish festive
     tate "How... how does this even work, Billy?"
     n "Billy ponders for a moment."
     pause 3.0
     billy "I don't even know myself!"
-    show tate
+    show tate festive
     tate "Well, what are we waiting for?"
     tate "Let's go back upstairs and check out the good news!"
     hide tate
@@ -2364,7 +2366,7 @@ label dx_christmas_billy_time:
     show kitty at left
     show arceus happy flipped at mid_left
     with dissolve
-    show tate at mid_right
+    show tate festive at mid_mid_right
     show billy at right
     with moveinleft
     arceus "Would you look at that!"
@@ -2378,7 +2380,7 @@ label dx_christmas_billy_time:
     show grace at mid_right
     show anne at right
     with dissolve
-    show tate flipped at mid_left
+    show tate festive flipped at mid_left
     show billy at center
     with moveinright
     grace "Yay! The power is back!"
@@ -2396,7 +2398,7 @@ label dx_christmas_billy_time:
     show luke at mid_left
     show rich flipped at mid_mid_left behind cs
     with dissolve
-    show tate at mid_left
+    show tate festive at mid_left
     show billy at left
     with moveinleft
     cs "Holy crap, the power is back!"
@@ -2404,10 +2406,10 @@ label dx_christmas_billy_time:
     ed "Hooray!"
     tate "It looks like all we needed was Billy's handy switch!"
     show mean human angry
-    show tate sheepish
+    show tate sheepish festive
     mean "Please don't say it like that, Tate."
     show mean human
-    show tate
+    show tate festive
     stop music fadeout 3.0
     music end
     luke "This is great and all, but isn't the house still under 20 feet of snow?"
@@ -2448,7 +2450,7 @@ label dx_christmas_roof_moment:
         zoom 0.15
         xpos 0.53
         ypos 0.33
-    show tate sil_black:
+    show tate festive sil_black:
         zoom 0.15
         xpos 0.34
         ypos 0.36
@@ -2539,7 +2541,7 @@ label dx_christmas_roof_moment:
     show arceus sil_black at Move((0.54, 0.54), (0.3, 0.4), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show mean human flipped sil_black at Move((0.4, 0.5), (0.32, 0.4), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show anno sil_black at Move((0.53, 0.33), (0.32, 0.48), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    show tate sil_black at Move((0.34, 0.36), (0.29, 0.5), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show tate festive sil_black at Move((0.34, 0.36), (0.29, 0.5), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show obama sil_black at Move((0.47, 0.47), (0.27, 0.49), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show ed sil_black at Move((0.34, 0.43), (0.25, 0.47), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     copguy "And you move there..."
@@ -2732,7 +2734,7 @@ label dx_christmas_roof_moment:
         zoom 0.15
         xpos 0.53
         ypos 0.33
-    show tate sil_black:
+    show tate festive sil_black:
         zoom 0.15
         xpos 0.34
         ypos 0.36
@@ -2853,7 +2855,7 @@ label dx_christmas_roof_moment:
     n "As everyone gathers their bearings once again, they look around, watching the waves of Crotch Doctor carrying all the snow away."
     scene cs_house_night_dtree
     show cs at mid_left
-    show tate at left
+    show tate festive at left
     show obama at mid_right
     show copguy at mid_mid_right
     show k17
