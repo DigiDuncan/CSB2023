@@ -3573,7 +3573,7 @@ label train_tate_ex_encounter:
     show tate srs at mid_left with moveinleft
     "..."
     pause 2.5
-    tate "Do I think I could take {i}you,{/i} CS?"
+    tate "Do you think I could take {i}you,{/i} CS?"
     show cs worried flipped
     cs "Huh?!"
     show tate srs at mid_mid_left with MoveTransition(1.0)
