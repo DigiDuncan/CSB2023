@@ -103,7 +103,7 @@
         "csbii_ytpmagic_outcome" : {
             "name": "YTP Magic",
             "type": "outcome",
-            "need_label": "ccsbii_asylum",
+            "need_label": "csbii_asylum",
             "pos": [6, 5]
         },
         "csbii_asylum_badend": {

@@ -144,6 +144,7 @@ screen timeline_tracer():
 
                         # show name, although later i'd like this to be a tooltip or smth
                         text this_name:
+                            size 32
                             xalign 0.5
                             yalign 0.5
 
