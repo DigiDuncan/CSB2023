@@ -707,12 +707,85 @@ label dx_christmas_before_shopping:
 
     # TODO: TATE STOPPED HERE FOR NOW! BE BACK LATER!
     # also we totally need a joke somewhere about how you go to target for a few things but somehow come out with all this extra crap you don't need.
+    
+    # TODO: OK, hey Pakoo.
+    # I'm going to need you to like, tell me if this makes any sense given the layout of a Target.
+    # My guess is no, and you can reshuffle these segments to make sense for that reason if you want to.
+    # -- Digi
 
     # Shopping
     n "CS heads over to the grocery aisles."
     scene tgt_shelf with dissolve
     show cs at left with moveinleft
     cs "Well I need to get some Genergy, of course."
+    cs "Walmart had a better deal on these, but gosh, I hate going to that place."
+    cs "And I'm going to need a lot of Genergy for this."
+
+    n "In the next aisle, CS is already getting distracted from his goals."
+    cs "Ooh, an endcap! This is where the good deals are."
+    cs "Or, you know, the stuff that's about to expire..."
+    n "CS spots some EZ-Cheese."
+    cs "Oh, sweet! This stuff {i}never{/i} expires!"
+    cs "Mostly because it's not real cheese..."
+    pause 1.0
+    cs "Welp, I'm not complaining!"
+    n "CS yoinks some spray cheese."
+    cs "OK, CS, stay focused."
+
+    n "The next few aisles don't hold much for CS, except for some content for observational comedy."
+    cs "{i}3D Doritos?{/i} I'm pretty sure {i}all{/i} Doritos are 3D. Would be hard to eat them otherwise."
+    cs "You know, I think they're making these bags of chips smaller, as well. I don't {i}feel{/i} like I'm the size of a family."
+    
+    n "Finally, CS stumbles upon something he actually needs."
+    cs "Oh, good, bread. Can't have dinner without some good bread!"
+    cs "I guess I'll get Italian bread. You can make real good garlic bread with that."
+    cs "And Digi's coming, and I think they're ace, so I better have the good stuff."
+
+    cs "Jeez, there's a lot of people out today..."
+    cs "I guess that's what I get for going shopping this close to the holiday."
+    cs "But, I guess I'm the man known for uploading videos at 11:59 on the 31st, so this wasn't unexpected."
+    cs "At least everyone here seems polite, they probably just want to get their stuff and leave, too."
+
+    n "CS nearly runs his cart right into another."
+    cs "Oh, I'm so sorry!"
+    pomni "Oh, uh... it's o-okay! Y-you probably just didn't see me."
+    cs "Wait, aren't you the girl from the IKEA?"
+    n "The clown girl looks visibly distressed."
+    pomni "What, uh, no! What ever could you be... talking about? I'm just going to head out now, lots of {i}very{/i} important..."
+    n "Pomni glances at her surroundings."
+    pomni "Shopping to do! Yeah! I just love, uh, capitalism?"
+    cs "That doesn't really make any--{w=0.5}{nw}"
+    pomni "Gotta run, bye!"
+    n "Pomni dashes away, leaving her empty cart behind."
+    cs "That was... odd. Don't get a lot of weirdos in Target."
+    cs "But I could have sworn I recognized her..."
+    cs "Oh, well."
+
+    cs "I think Micheal said something about making mashed potatoes..."
+    cs "Jeez, that's going to take a lot of taters."
+    cs "Heh, and Tate's coming as well."
+    cs "Let's hope Micheal stays away from them with the masher!"
+    
+    cs "This meal is going to take so much butter..."
+    cs "Well, if there's one thing I learned about cooking from Paula Dean, is that everything's better with butter!"
+    cs "And that Paula Dean is scary. I learned that, too."
+
+    n "CS passes the electronics section."
+    cs "OK, I don't need anything there."
+    cs "Buuuuuut..."
+    cs "I mean, I can't not see what they have on display."
+    n "CS spots the Nintendo Switch demo display, with Tetris 99 already ready to go."
+    cs "OK, that's the universe {i}asking{/i} me to play a round."
+    n "Time passes, and CS is still playing Tetris, the items in his cart beginning to sweat."
+    cs "Oh, shoot! Right, I need to actually accomplish things today."
+
+    n "CS finds the pies."
+    cs "I probably don't need to buy too many of these... there's going to be a lot of food, and I think a decent amount of the party won't even eat dessert."
+    cs "I'll just grab two."
+
+    n "Finally, CS lands in the alcohol section."
+    cs "I know a lot of the party won't drink, but damn it, it's Christmas. I should nab some nog."
+
     # TODO: Add more shopping
     hide cs with moveoutright
 
