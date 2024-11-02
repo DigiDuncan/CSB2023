@@ -1895,7 +1895,7 @@ image ytx = Transform("ytx.png", zoom = 0.333)
 image ytx_drive = "ytx_drive.png"
 image map_kuwait = "gui/map_kuwait.png"
 
-# CSBIII: Holiday Special Gifts
+# CSBIII DX: Holiday Special Gifts
 image 1850_coin = "images/gifts/1850_coin.png"
 image adderall = "images/gifts/adderall.png"
 image cement = "images/gifts/cement.png"
@@ -1924,6 +1924,10 @@ image russian_radio = "images/gifts/russian_radio.png"
 image sunny_d = "images/gifts/sunny_d.png"
 image tea_and_crumpets = "images/gifts/tea_and_crumpets.png"
 image thigh_highs = "images/gifts/thigh_highs.png"
+
+# CSBIII DX: Holiday Special Misc Items
+# also these items are in the main game, but should also be in CE. will add more as they're found: tate_phone, cs_phone, cs_wallet
+image shovel = "shovel.png"
 
 # Movies
 image car background = Movie(play="movies/car_background.webm")

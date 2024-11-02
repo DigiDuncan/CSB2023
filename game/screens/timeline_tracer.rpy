@@ -48,8 +48,8 @@ screen timeline_tracer():
                     # set up positioning
                     # this is set up in a grid system. just handle it in the json based on what row/column you want
                     try:
-                        this_x = (timeline_map[event]["pos"][0]*200) + 25
-                        this_y = (timeline_map[event]["pos"][1]*145)
+                        this_x = int(timeline_map[event]["pos"][0]*200) + 25
+                        this_y = int(timeline_map[event]["pos"][1]*145)
                     except:
                         this_x = 25
                         this_y = 25
@@ -150,7 +150,7 @@ screen timeline_tracer():
 
                         # handle jumps here later if there are any
                         # TODO: DON'T USE THIS YET, IT WILL MAKE YOU UNABLE TO ESCAPE THE GAME
-                        # action [ SensitiveIf(this_unlocked == True and this_jump is not None), Play("sound", "audio/sfx/sfx_valid.ogg"),Jump(this_jump) ]
+                        #action [ SensitiveIf(this_unlocked == True and this_jump is not None), Play("sound", "audio/sfx/sfx_valid.ogg"),Jump(this_jump) ]
                         action [ SensitiveIf(this_unlocked == True and this_jump is not None), Play("sound", "audio/sfx/sfx_valid.ogg"),Notify(this_jump) ]
 
                         hover_sound "audio/sfx/sfx_select.ogg"
