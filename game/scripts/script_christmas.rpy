@@ -1750,6 +1750,7 @@ label dx_christmas_cooking:
     grace "Finally!"
     grace "Guys, the sheriff is out!"
     n "A line starts to form next to the bathroom."
+    # TODO: More banter here
 label dx_christmas_mike:
     stop music fadeout 3.0
     music end
@@ -1870,6 +1871,30 @@ label dx_christmas_dinner:
     nova "Turn that shit off!"
     cs "Hey! Can you two stop fighting and get over here and eat with us!"
 
+    db "So CS, how's your streams been going recently?"
+    cs "Well, it's mainly been car crash streams on Sundays as usual."
+    cs "It's been hard to really do crazy stuff as much as I did back then on Mixer ever since it died."
+    db "Ah yeah, I get that."
+    tate "But hey, we still have fun!"
+    k22 "Hey K-17, are you gonna eat your food?"
+    k17 "I uhh..."
+    k17 "I need to go to the bathroom..."
+    # TODO: Table Banter
+    # TODO: Banter after dinner, and seguay into gift exchange
+    digi "Hey CS, did K-17 ever come back from the bathroom?"
+    cs "Huh?"
+    cs "Oh yeah, is that where they ran off to?"
+    digi "We should probably go check on them, see if they are okay..."
+    digi "Hey! K-17? Are you in there?"
+    k17 "Nuh uh!"
+    cs "Do you need, any help at all? We are gonna start the gift exchange here in a few minutes!"
+    n "K-17 starts sobbing."
+    k17 "No one... told me..."
+    k17 "Mixer... Died..."
+    cs "Uh oh."
+    digi "Shiiit."
+    cs "Yeah, Mixer shut down some time ago now... sorry about that."
+    k17 "But why? Why! It was like, the perfect streaming platform!"
     #Gift Exchange
 label dx_christmas_exchange:
     scene cs_living
@@ -2210,7 +2235,7 @@ label dx_christmas_exchange:
     pause 2.0
     grace "Yep!"
     cs "Woohoo! All of the gifts have been handed out!"
-
+    # TODO: Some small banter to seguay into climax
 
 # Games/Climax
 label dx_christmas_climax:
