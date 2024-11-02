@@ -352,7 +352,7 @@
     "mike": {
         "full_name": "Mike",
         "sprite_path": "images/characters/mike.png",
-        "quote": "I'm Chinese!",
+        "quote": "I'm Chinese.",
         "bio": "This pizzapotamus has a pizza thermos that he uses to give free samples. Works at the bus stop.",
         "ce": true
     },
