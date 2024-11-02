@@ -546,8 +546,6 @@ label csbi_room:
     "..."
     ed "... But, now that we're here, what should we actually {i}do?"
 
-    # TODO: implement multiple dialogue
-
     ed "Hmm..." (multiple = 3)
     wesley "Hmm..." (multiple = 3)
     rich "Hmm..." (multiple = 3)
@@ -612,11 +610,9 @@ label csbi_room:
     with moveinright
     rich "Lemme call our JoJ UFO!"
 
-    # TODO: implement multiple dialogue
-
-    ed "I'm beaming up!"
-    wesley "I'm beaming up!"
-    rich "I'm beaming up!"
+    ed "I'm beaming up!" (multiple = 3)
+    wesley "I'm beaming up!" (multiple = 3)
+    rich "I'm beaming up!" (multiple = 3)
 
     play sound sfx_beam volume 0.6
     show beam at xstretch_in
