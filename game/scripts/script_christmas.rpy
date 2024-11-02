@@ -346,6 +346,13 @@ label dx_christmas_anno:
     n "CS lets out a sigh into the cold."
     "..."
     cs "Guess I'd better get to it."
+    if fun_value(FUN_VALUE_COMMON):
+        cs "Let's get to it.{w=0.5}{nw}"
+        cs "I'm gonna get to it.{w=0.5}{nw}"
+        cs "I'm gonna get to it.{w=0.5}{nw}"
+        cs "I'm gonna get to it.{w=0.5}{nw}"
+        pause 3.0
+        cs "Faaf."
     pause 0.5
     
     # SHOVEL ANIMATION TIME
@@ -1764,7 +1771,7 @@ label dx_christmas_mike:
     show mike at right with moveinright
     play music rice_and_wine
     music rice_and_wine
-    mike "I'm Chinese!"
+    mike "I'm Chinese."
     cs "Oh my god! It's Mike, everyone quick come look at Mike!"
     show k17 flipped at mid_mid_right behind grace
     show grace at mid_right
@@ -1787,7 +1794,7 @@ label dx_christmas_mike:
     show grace at center
     with move
     show k17 flipped with determination
-    arceus "What's going on in here? It sounds very... Oriental?"
+    arceus "What's going on in here?"
     show arceus angry flipped at mid_mid_right with moveinleft
     show cs happy
     cs "It's Mike, Arceus! Mike the Pizzapotamus!"
