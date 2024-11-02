@@ -428,15 +428,15 @@ screen main_menu():
     viewport:
         xysize(666,720)
         yanchor -0.025
-        xanchor -2.3
+        xanchor -2.1
         hbox:
-            text "Are you CS? Click here!":
-                size 32
+            text "{bt=a3-p10-s1}Are you CS? Click here!":
+                size 40
             null:
                 width 20
             imagebutton auto "menu/cs_button_%s.png" hover_sound "audio/sfx/sfx_popcat_0.ogg":
                 at transform:
-                    zoom 0.1
+                    zoom 0.15
                     xalign 0.5
                 action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("cs_button"), ShowMenu("limbo_csbutton")
     ## This empty frame darkens the main menu.

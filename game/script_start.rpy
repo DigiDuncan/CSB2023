@@ -634,7 +634,7 @@ define perfect_tate = Character("Tate", callback = renpy.partial(char_callback, 
 
 # DX Holiday Special Definitions
 define santa = Character("Santa Claus", callback = renpy.partial(char_callback, beep = "santa"))
-define mike = Character("Mike", callback = char_callback)
+define mike = Character("Mike",  callback = renpy.partial(char_callback, name = "mike"))
 
 # DX Finale Character Definitions
 define perfect_billy = Character("Perfect Billy", callback = renpy.partial(char_callback, name = "billy", beep = "billy"), screen = "perfect_billy_text")
@@ -2779,7 +2779,9 @@ default gun_get = False
 default tree_first = False
 default tree_second = False
 default lights_first = False
+default lights_second = False
 default decor_first = False
+default decor_second = False
 default d20 = roller
 
 # Helpful lists

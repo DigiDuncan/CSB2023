@@ -85,12 +85,12 @@ label dx_christmas_start:
 
 # christmas tree
 label dx_christmas_tree:
-    if decor_first and tree_second and lights_first:
-        jump dx_christmas_before_anno
     if lights_first or decor_first:
         $ tree_second = True
         cs "Alright, time to get the Christmas tree!"
         n "CS drags the box out of the garage and brings it into his living room."
+        if (decor_first or decor_second) and tree_second and (lights_first or lights_second):      
+            jump dx_christmas_before_anno
         n "CS goes back to the garage."
         if lights_first:
             menu:
@@ -100,11 +100,6 @@ label dx_christmas_tree:
             menu:
                 "Lights and garland":
                     jump dx_christmas_lights
-        menu:
-            "Lights and garland":
-                jump dx_christmas_lights
-            "Ornaments and decorations":
-                jump dx_christmas_decor
     $ tree_first = True
     if tree_first:
         cs "I should get the Christmas tree first."
@@ -141,10 +136,12 @@ label dx_christmas_tree:
 
 # Decorations/lights
 label dx_christmas_lights:
-    if decor_first and tree_second and lights_first:
-        jump dx_christmas_before_anno
     if tree_second or decor_first:
         cs "Alright, I should probably get the lights and garland next."
+        $ lights_second = True
+        if (decor_first or decor_second) and tree_second and (lights_first or lights_second):
+            n "CS gets the box inside."       
+            jump dx_christmas_before_anno
         n "CS gets the box inside, and then goes back to the garage to grab the next box."
         if tree_second:
             menu:
@@ -165,10 +162,12 @@ label dx_christmas_lights:
             jump dx_christmas_decor
 
 label dx_christmas_decor:
-    if decor_first and tree_second and lights_first:
-        jump dx_christmas_before_anno
     if tree_second or lights_first:
         cs "Alright, I should probably get the decorations next."
+        $ decor_second = True
+        if (decor_first or decor_second) and tree_second and (lights_first or lights_second):
+            n "CS gets the box inside."       
+            jump dx_christmas_before_anno
         n "CS gets the box inside, and then goes back to the garage to grab the next box."
         if tree_second:
             menu:
@@ -189,6 +188,9 @@ label dx_christmas_decor:
             jump dx_christmas_lights
 
 label dx_christmas_before_anno:
+    scene cs_foyer
+    show cs happy at center
+    with dissolve
     cs "Well that's all done!"
     cs "I have moved all of the Christmas supplies into the house!"
     cs "This is where the fun part begins!"
@@ -200,8 +202,12 @@ label dx_christmas_anno:
     scene cs_foyer
     show cs disappointed at center
     with dissolve
-    n "CS looks upon his stash of lights and baubles and feels a little overwhelmed."
-    cs "Wow, this is more than I thought..."
+    if tree_first:
+        n "CS groans over the mess that he just made in the garage."
+        cs "This is such a disaster..."
+    else:
+        n "CS looks upon his stash of lights and baubles and feels a little overwhelmed."
+        cs "Wow, this is more than I thought..."
     cs "Maybe I should call someone over to help."
     cs "Lemme see if Anno is around."
     show cs disappointed phone with dissolve
@@ -1194,7 +1200,7 @@ label dx_christmas_intro:
     eliza "I mean, if you want us to, we can step outside for a bit."
     cs "No, no, it's okay."
     cs "I hope you guys have fun, I'm gonna go back to the party."
-    hide cs with moveoutrigh
+    hide cs with moveoutright
 
 # Banter
 label dx_christmas_banter:
