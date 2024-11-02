@@ -1323,7 +1323,10 @@ label dx_christmas_intro:
     play music teeth_dust if_changed
     music teeth_dust
     cs "Well, it looks like everyone is here, right?"
-    anno "DB isn't here yet, but other than that, yeah."
+    if d20 != 19:
+        anno "DB isn't here yet, but other than that, yeah."
+    else:
+        anno "Looks like it, yeah."
     show tate sheepish festive flipped
     tate "There are... a lot of people here..."
     show digi flipped
