@@ -1868,7 +1868,53 @@ label dx_christmas_cooking:
     # I need a refresher I think.
     # -- Digi
 
+    # OK, is this scene too meta? I like it a lot but I'm worried I'm pushing the boundaries a bit here.
+    arc "Yeah, so to get the code done, I just got drunk off a bottle of wine and Digi and I chewed through it in a night."
+    aria "Damn, that's the best way to do it."
+    digi "I mean, {i}I{/i} was sober the whole time. I had to put up with this fluffy bastard."
+    aria "Of course you were, I think a sip of wine would knock you flat."
+    digi "Hey, I'm not {i}that{/i} small."
+    aria "Usually."
+    arc "And you love putting up with this fluffy bastard."
+    digi "While that's true, I think half of that night was spent coding, and the other half was spent confusing the names of four different bald dudes."
+    arc "To be fair, that was hilarious."
+    digi "You got me there."
+    n "CS walks in on the conversation."
+    cs "Hey guys! What are you all talking about?"
+    digi "Oh, we were just discussing what developing the first game was li--"
+    n "Aria shoots a look at Digi, as much as she can do that in her current form."
+    digi "Er, uh, just talking about a coding project we all worked on."
+    cs "Oh, OK. Probably a bunch of stuff I wouldn't understand."
+    aria "Certainly not."
+    cs "You guys do good work, though, I can't wait to see what the next DPN Games game will be!"
+    # show arc worried here
+    arc "Yeah, me too."
+    n "CS walks off."
+    aria "You're going to have to get better at the whole \"not breaking the illusion\" thing, Digi."
+    digi "What? He wouldn't have thought anything of it if you didn't stop me mid sentence."
+    arc "We just need to be a little more careful than that."
+    digi "Fair enough. Wouldn't want this place falling apart."
 
+    billy "So then I said: \"That's a resturaunt mini burger {w=1.0}{i}no one{/i} loves!"
+    n "Obama laughs."
+    obama "Billy, you crack me up. You're one of America's greatest."
+    billy "That means a lot coming from you, Mr. President!"
+    obama "Please, call me Barack."
+    billy "The man in the suit always lurking behind you said if I do that, he'll kill me!"
+    obama "He's just teasing. Isn't that right, Jerry?"
+    n "Jerry says nothing and nods once."
+    billy "Well then, thanks for the compliment, Barack!"
+    obama "You gotta tell me the one about the cabinet full of cleaners again."
+    n "CS walks in to greet the unlikely friends."
+    cs "Obama, Billy! You two getting along?"
+    obama "This guy's a hoot."
+    billy "Barack here is a real nice guy!"
+    cs "Well, that's great. Glad to see two people from different walks of life enjoying each other's company."
+    obama "That's what Christmas is all about, isn't it?"
+    billy "That's the power, of the holiday season!"
+    cs "Well, I gotta go check on the others, you two have fun!"
+    n "CS departs for the next room."
+    billy "Right, so I said: \"you shittin' me?\""
 
 label dx_christmas_mike:
     stop music fadeout 3.0
