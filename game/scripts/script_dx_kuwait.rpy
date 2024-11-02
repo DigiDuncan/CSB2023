@@ -347,7 +347,7 @@ label kuwait_interior:
             show gunsmith with dissolve
             show cs angry punished with moveinleft
             cs "This is interesting, but I don't have too much to do here."
-            $ gunsmith_check == True
+            $ gunsmith_check = True
             jump kuwait_interior
         "The Mechanic":
             cs "I'll go check out the mechanic."
@@ -357,7 +357,7 @@ label kuwait_interior:
             with dissolve
             show cs angry punished with moveinleft
             if tutorial == False:
-                $ mechanic_check == True
+                $ mechanic_check = True
                 cs "Hey, who are you?"
                 suzuki "I'm Suzuki, the local mechanic!"
             suzuki "Do you need help with anything?"
@@ -383,7 +383,7 @@ label kuwait_interior:
                     "Talk about world travels":
                         anne "Sorry, we don't have anything to talk about right now."
                         jump kuwait_interior
-            $ bar_check == True
+            $ bar_check = True
             grace "Hi! Welcome to the A&G Bar!"
             anne "You seem new here, who are you?"
             cs "Hey girls! CS here!"
@@ -409,10 +409,10 @@ label kuwait_interior:
             show kuwait_lieutenant_snow at right
             with dissolve
             show cs angry punished at left with moveinleft
-            if (heli_check and bar_check and gunsmith_check and pmc_check and civvies_check and mechanic_check):
+            if (gunsmith_check and mechanic_check and bar_check and civvies_check and pmc_check and heli_check):
                 l_snow "Well, it looks like you've talked with everyone!"
                 l_snow "You are on your own now, hopefully you'll be able to save Kuwait!"
-                $ tutorial == True
+                $ tutorial = True
                 jump kuwait_icarus
             l_snow "Welcome back, did you need anything else from me?"
             cs "No not really."
@@ -429,7 +429,7 @@ label kuwait_exterior:
     menu:
         "What do you want to check out?"
         "The Civvies":
-            $ civvies_check == True
+            $ civvies_check = True
             cs "I'll go check out that Building."
             hide cs with moveoutright
             show icarus_1 with dissolve
@@ -437,7 +437,7 @@ label kuwait_exterior:
             cs "This is interesting, but I don't have too much to do here."
             jump kuwait_exterior
         "The PMCs":
-            $ pmc_check == True
+            $ pmc_check = True
             cs "I'll go check out that Building."
             hide cs with moveoutright
             show icarus_2 with dissolve
@@ -465,7 +465,7 @@ label kuwait_exterior:
                         show cs angry punished flipped with determination
                         hide cs with moveoutleft
                         jump kuwait_exterior
-            $ heli_check == True
+            $ heli_check = True
             eliza "Hey, you new here?"
             cs "Yeah, it's a long story."
             eliza "Well, whenever you are ready for adventure, come to me and we'll go check out the island of Kuwait!"

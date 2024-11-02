@@ -349,7 +349,7 @@ label dx_christmas_anno:
     pause 0.5
     
     # SHOVEL ANIMATION TIME
-
+    # TODO: Make this a bit smoother
     # FIRST
     show cs disappointed flipped at center
     show shovel at manual_pos(0.6, 0.7, 0.5)
@@ -624,18 +624,17 @@ label dx_christmas_before_shopping:
     with dissolve
     pause 1.0
     n "CS awakens from a restful sleep."
-
-    # TODO: should this segment be a fun value or nah? - tate
-    pause 2.0
-    "..."
-    n "I said, \"CS awakens from a restful sleep.\""
-    pause 1.0
-    "..."
-    pause 2.0
-    n "{cshake}{size=+24}CS, WAKE UP!!!" with hpunch
-    stop sound
-    show cs scared flipped
-    cs "Wha--?!" with hpunch
+    if fun_value(FUN_VALUE_RARE):
+        pause 2.0
+        "..."
+        n "I said, \"CS awakens from a restful sleep.\""
+        pause 1.0
+        "..."
+        pause 2.0
+        n "{cshake}{size=+24}CS, WAKE UP!!!" with hpunch
+        stop sound
+        show cs scared flipped
+        cs "Wha--?!" with hpunch
 
     play sound sfx_blanket volume 10.0
 
