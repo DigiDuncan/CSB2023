@@ -1365,6 +1365,10 @@ label dx_christmas_intro:
         k22 "I'm gonna assume that's me."
     show k22 confident
     k22 "Alright, so, I'm K-22, the physical manifestation of Pakoo's memories from the year 2022."
+    # TODO: This was explained to me differently in a VC, but I can't word it well.
+    # Should this line be more like "I hold onto the memories of Pakoo from the year 2022?"
+    # This also implies a lot, since it canonizes Pakoo[0], but hey, we've done worse in this game.
+    # Might need to make another on of those graphs.
     show k22
     k22 "This is K-17, I'm sure you can figure out what year he is."
     show k17 happy
