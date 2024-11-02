@@ -604,7 +604,6 @@ label dx_christmas_setup:
     #Outside
     #After
 
-
     scene cs_living2
     show cs happy at left
     show anno at right
@@ -679,7 +678,6 @@ label dx_christmas_before_shopping:
     play sound sfx_doorslam
     n "CS gets in the car and starts thinking about where to go."
 
-
     scene cs_car_inside
     show cs at left
     with dissolve
@@ -691,7 +689,6 @@ label dx_christmas_before_shopping:
     scene black with Dissolve(2.0)
     stop sound fadeout 5.0
     pause 5.0
-    
 
     play sound sfx_hubbub loop volume 0.2 fadein 1.0
     scene tgt_inside
@@ -711,14 +708,15 @@ label dx_christmas_before_shopping:
     # TODO: TATE STOPPED HERE FOR NOW! BE BACK LATER!
     # also we totally need a joke somewhere about how you go to target for a few things but somehow come out with all this extra crap you don't need.
 
-    #Shopping
+    # Shopping
     n "CS heads over to the grocery aisles."
     scene tgt_shelf with dissolve
     show cs at left with moveinleft
     cs "Well I need to get some Genergy, of course."
     # TODO: Add more shopping
     hide cs with moveoutright
-    #Checkout
+
+# Checkout
 label dx_christmas_checkout:
     n "CS heads over to the checkout lanes."
     scene tgt_line
@@ -848,6 +846,7 @@ label dx_christmas_checkout:
     show cs happy
     cs "It's the big day tomorrow, and it's gonna be the best party ever!"
     hide cs with moveoutright
+
 label dx_christmas_aftershop:
     scene cs_kitchen
     show cs_kitchen_fg
@@ -1751,6 +1750,7 @@ label dx_christmas_cooking:
     grace "Guys, the sheriff is out!"
     n "A line starts to form next to the bathroom."
     # TODO: More banter here
+
 label dx_christmas_mike:
     stop music fadeout 3.0
     music end
@@ -1905,7 +1905,8 @@ label dx_christmas_dinner:
     k17 "At least Crazy Saturday lives on..."
     cs "Well..."
     digi "Let him believe, CS. Let him believe."
-    #Gift Exchange
+
+# Gift Exchange
 label dx_christmas_exchange:
     scene cs_living
     show cs at center
