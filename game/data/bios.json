@@ -550,5 +550,12 @@
         "quote": "You're under arrest, Lupin!",
         "bio": "A seasoned detective whose life mission is to put Lupin behind bars once and for all. This quest has led him to the ends of the earth. Against the advice of local law enforcement, he insists on driving his own trusted vehicle, even if it's rather conspicuous outside of Japan.",
         "dx": true
+    },
+    "mike": {
+        "full_name": "Mike",
+        "sprite_path": "images/characters/mike.png",
+        "quote": "I'm chinese",
+        "bio": "Seems to be Oriental in nature, this Hippo has a pizza thermos that he uses to give free samples. Works at the bus stop.",
+        "dx": true
     }
 }
