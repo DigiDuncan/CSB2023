@@ -722,7 +722,10 @@ label dx_christmas_before_shopping:
     cs "Now, {i}this{/i} is a {i}real{/i} store!"
     show cs
     cs "Everything is mostly clean and neat, no depressing lighting or messy aisles..."
-    cs "I should probably stop admiring the view and actually buy what I came here for."
+    if fun_value(FUN_VALUE_UNOBTRUSIVE):
+        cs "I should probably stop glazing up Target and actually buy what I came here for."
+    else:
+        cs "I should probably stop admiring the view and actually buy what I came here for."
     hide cs with moveoutright
 
     # TODO: TATE STOPPED HERE FOR NOW! BE BACK LATER!
