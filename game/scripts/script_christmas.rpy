@@ -1440,7 +1440,8 @@ label dx_christmas_intro:
     digi "So, this should go here..."
     linus "No, you got the wrong cable!"
     luke "You idiots are both wrong! You are putting in the wrong port!"
-    "Digi and Linus" "Ohhhhh..."
+    digi "Ohhhhh..." (multiple = 2)
+    linus "Ohhhhh..." (multiple = 2)
     show cs flipped at center with moveinright
     cs "Hey guys! What are you guys doing?"
     digi "Oh, we are just trying to set up a projector to play movies on!"
