@@ -1,3 +1,23 @@
+# THIS IS REFERENCE FOR DIGI
+# PEOPLE AT THE PARTY:
+# CS
+# Arc, Kitty
+# Anno
+# Digi
+# Mean, Tate
+# Billy
+# Obama
+# Copguy, Sheriff
+# Ed, Rich, Wesley
+# K-17, K-22
+# Aria
+# Micheal
+# Linus, Luke
+# Blank
+# Nova
+# Elizabeth, Anne, Grace
+# DB05
+
 label dx_christmas_start:
     play music lets_hear_winter volume 0.7 if_changed
     music lets_hear_winter
@@ -81,7 +101,7 @@ label dx_christmas_start:
         "Ornaments and decorations":
             jump dx_christmas_decor
 
-# TODO: TATE IS NOT TOUCHING ANY OF THIS UNTIL IT IS FIXED. EDITING CONTINUES ON LINE 197
+# TODO: TATE IS NOT TOUCHING ANY OF THIS UNTIL IT IS FIXED. EDITING CONTINUES ON LINE 219
 
 # christmas tree
 label dx_christmas_tree:
@@ -196,7 +216,7 @@ label dx_christmas_before_anno:
     cs "This is where the fun part begins!"
     jump dx_christmas_anno
 
-# TODO: TATE IS CONTINUING EDITING FROM LINE 84
+# TODO: TATE IS CONTINUING EDITING FROM LINE 104
 
 label dx_christmas_anno:
     scene cs_foyer
@@ -1285,7 +1305,7 @@ label dx_christmas_party_before:
         show cs flipped
         cs "Sure."
         jump dx_christmas_intro
-   
+
 # Introductions
 label dx_christmas_intro:
     scene black with dissolve
@@ -1842,6 +1862,13 @@ label dx_christmas_cooking:
     grace "Guys, the sheriff is out!"
     n "A line starts to form next to the bathroom."
     # TODO: More banter here
+
+    # TODO: I'm just writing some scenes here, I'm not doing visuals
+    # Pakoo, I'd appreciate help with that -- it's been a long time since I've done it and
+    # I need a refresher I think.
+    # -- Digi
+
+
 
 label dx_christmas_mike:
     stop music fadeout 3.0
