@@ -51,7 +51,11 @@ init python:
 
 init python:
     import random
-    roller=random.randint(1,20)
+    roller = random.randint(1, 20)
+
+    def reroll():
+        global roller
+        roller = random.randint(1, 20)
 
     # TODO: I want to replicate the minecraft obfuscation thing for later. for now, this DOES do the thing
     def obfuscator(input_text):
@@ -62,7 +66,7 @@ init python:
         for l in input_text:
             # 1 in 5 chance of replacing letter with a question mark
             if renpy.random.randint(1, 5) == 1:
-               next_char = "?"
+                next_char = "?"
             else:
                 next_char = renpy.random.choice(ob)
 
