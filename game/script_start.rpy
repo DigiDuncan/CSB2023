@@ -1580,6 +1580,8 @@ image santa = "characters/santa.png"
 image santa flipped = "flip:characters/santa.png"
 image santa sil_black = "sil_black:characters/santa.png"
 image mike = "characters/mike.png"
+image iris = "characters/iris_fixed.png"
+image iris flipped = "flip:characters/iris_fixed.png"
 
 # CS Holiday Special BGs
 image snowed_in = "bg/snowed_in.png"

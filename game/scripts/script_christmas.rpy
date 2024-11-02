@@ -1262,9 +1262,28 @@ label dx_christmas_party_before:
         n "CS waits paiently."
         n "He keeps on waiting."
         show cs disappointed flipped
-        cs "Alright, any minute now..."
-        cs "The party starts here in about 15 minutes, so people should start showing up soon..."
-        n "CS keeps on waiting, but it looks like no one shows up early." 
+        cs "OK, what's going on? I figured {i}someone{/i} would be early."
+        n "CS looks out into the distance."
+        cs "Wait, who is that?"
+        hide cs with moveoutleft
+        scene cs_house_snow_night
+        show iris flipped at mid_left
+        with dissolve
+        show cs disappointed flipped at right with moveinright
+        cs "Who the heck are you?"
+        iris "Oh, hello."
+        iris "It seems you rolled a..."
+        n "Iris looks confused."
+        iris "Um... a [d20]."
+        cs "Rolled... like on a dice?"
+        iris "You rolled a D20 earlier, no?"
+        cs "I did, but how did I roll on [d20] on a D20? That's not even a thing you can roll!"
+        cs "And how did you know I did that?"
+        iris "Ah, that's a lot to discuss. Shall we go inside? I'm sure you're rather cold."
+        cs "I..."
+        n "CS gives up trying to understand, for now."
+        show cs flipped
+        cs "Sure."
         jump dx_christmas_intro
    
 # Introductions
