@@ -349,6 +349,13 @@
         "quote": "TULE T\u00c4NNE, SENKIN SAASTAINEN SEKAROTUINEN!",
         "bio": "Pakoo's fianc\u00e9e who loves to give CS five dollars and talk in a very highlighted tone. A pilot, gambler, and stand-up kinda guy."
     },
+    "mike": {
+        "full_name": "Mike",
+        "sprite_path": "images/characters/mike.png",
+        "quote": "I'm Chinese!",
+        "bio": "This pizzapotamus has a pizza thermos that he uses to give free samples. Works at the bus stop.",
+        "ce": true
+    },
     "miku": {
         "full_name": "Hatsune Miku",
         "sprite_path": "images/characters/miku.png",
