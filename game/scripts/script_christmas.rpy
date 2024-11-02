@@ -1890,11 +1890,21 @@ label dx_christmas_dinner:
     cs "Do you need, any help at all? We are gonna start the gift exchange here in a few minutes!"
     n "K-17 starts sobbing."
     k17 "No one... told me..."
-    k17 "Mixer... Died..."
+    k17 "Mixer... died..."
     cs "Uh oh."
     digi "Shiiit."
     cs "Yeah, Mixer shut down some time ago now... sorry about that."
     k17 "But why? Why! It was like, the perfect streaming platform!"
+    digi "It was, but it was owned by Microsoft. It was bound to happen."
+    cs "Hey."
+    digi "Listen, just because the Zune was cool doesn't mean--"
+    k17 "What do we even do now? Without Mixer, where do you stream?"
+    cs "Well, I stream on {a=https://twitch.tv/cs188/}Twitch.{/a}"
+    digi "{a=https://twitch.tv/DigiDuncan}Me too{/a}, when I get the chance."
+    n "K-17 sniffles."
+    k17 "At least Crazy Saturday lives on..."
+    cs "Well..."
+    digi "Let him believe, CS. Let him believe."
     #Gift Exchange
 label dx_christmas_exchange:
     scene cs_living
