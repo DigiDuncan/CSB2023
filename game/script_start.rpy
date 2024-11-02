@@ -618,6 +618,7 @@ define k_doctor = Character("Kuwait Doctor", callback = char_callback)
 define k_nurse = Character("Kuwait Nurse", callback = char_callback)
 define l_snow = Character("Lt. Snow", callback = char_callback)
 define RCOMEM = Character("Rocco Mem", callback = char_callback)
+define suzuki = Character("Suzuki", callback = char_callback)
 
 # DX Train Route Character Definitions
 define amtrak_conductor = Character("Conductor", callback = renpy.partial(char_callback, name = "amtrak_conductor", beep = "amtrak_conductor"))
@@ -1619,6 +1620,7 @@ image kuwait_lieutenant_snow = "characters/kuwait_lieutenant_snow.png"
 image kuwait_nurse_1 = "characters/k_nurse.png"
 image kuwait_doctor_1 = "characters/k_doctor.png"
 image RCOMEM = "characters/RCOMEM.png"
+image suzuki = "characters/suzuki.png"
 # BGs
 image kuwait_city = "bg/kuwait_city.png"
 image kuwait_explosion = "bg/kuwait_explosion.png"
@@ -1687,6 +1689,9 @@ image wafra_2 = "bg/kuwait/wafra_2.png"
 image wafra_3 = "bg/kuwait/wafra_3.png"
 image outside_survivor = "bg/kuwait/outside_survivor.png"
 image inside_survivor = "bg/kuwait/inside_survivor.png"
+image ag_bar = "bg/kuwait/ag_bar.png"
+image mechanic_shop = "bg/kuwait/mechanic.png"
+image gunsmith = "bg/kuwait/gunsmith.png"
 
 # Misc.
 image game_menu = "gui/game_menu.png"
@@ -2750,6 +2755,12 @@ default cs_chosen_form = "cs_vs_tate_punch"
 
 # Checks: DX Kuwait
 default tutorial = False
+default gunsmith_check = False
+default mechanic_check = False
+default bar_check = False
+default heli_check = False
+default civvies_check = False
+default pmc_check = False
 
 # Checks: DX BTTF
 default terraria_question_1 = ""

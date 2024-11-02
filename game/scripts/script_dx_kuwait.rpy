@@ -344,21 +344,31 @@ label kuwait_interior:
         "The Gunsmith":
             cs "I'll go check out the gunsmith."
             hide cs with moveoutright
-            show icarus_1 with dissolve
+            show gunsmith with dissolve
             show cs angry punished with moveinleft
             cs "This is interesting, but I don't have too much to do here."
-            jump kuwait_icarus
+            $ gunsmith_check == True
+            jump kuwait_interior
         "The Mechanic":
             cs "I'll go check out the mechanic."
             hide cs with moveoutright
-            show icarus_2 with dissolve
+            show mechanic_shop
+            show suzuki at right
+            with dissolve
             show cs angry punished with moveinleft
-            cs "This is interesting, but I don't have too much to do here."
-            jump kuwait_icarus
+            if tutorial == False:
+                $ mechanic_check == True
+                cs "Hey, who are you?"
+                suzuki "I'm Suzuki, the local mechanic!"
+            suzuki "Do you need help with anything?"
+            cs "Nope, not yet!"
+            show cs angry punished with determination
+            hide cs with moveoutleft
+            jump kuwait_interior
         "The Bar":
             cs "I'll go check out the bar."
             hide cs with moveoutright
-            show icarus_3 
+            show ag_bar
             show anne at right
             show grace at mid_right
             with dissolve
@@ -368,9 +378,12 @@ label kuwait_interior:
                 anne "Do you want anything to drink?"
                 menu:
                     "See shop inventory":
-                        anne "Okay."
+                        anne "Sorry, we don't have anything yet."
+                        jump kuwait_interior
                     "Talk about world travels":
-                        anne "Okay."
+                        anne "Sorry, we don't have anything to talk about right now."
+                        jump kuwait_interior
+            $ bar_check == True
             grace "Hi! Welcome to the A&G Bar!"
             anne "You seem new here, who are you?"
             cs "Hey girls! CS here!"
@@ -382,9 +395,11 @@ label kuwait_interior:
             anne "Do you want anything to drink?"
             menu:
                 "See shop inventory":
-                    anne "Okay."
+                    anne "Sorry, we don't have anything yet."
+                    jump kuwait_interior
                 "Talk about world travels":
-                    anne "Okay."
+                    anne "Sorry, we don't have anything to talk about right now."
+                    jump kuwait_interior
             
             jump kuwait_icarus   
         "The Main Office":
@@ -394,6 +409,11 @@ label kuwait_interior:
             show kuwait_lieutenant_snow at right
             with dissolve
             show cs angry punished at left with moveinleft
+            if (heli_check and bar_check and gunsmith_check and pmc_check and civvies_check and mechanic_check):
+                l_snow "Well, it looks like you've talked with everyone!"
+                l_snow "You are on your own now, hopefully you'll be able to save Kuwait!"
+                $ tutorial == True
+                jump kuwait_icarus
             l_snow "Welcome back, did you need anything else from me?"
             cs "No not really."
             show cs angry punished flipped with determination
@@ -409,19 +429,21 @@ label kuwait_exterior:
     menu:
         "What do you want to check out?"
         "The Civvies":
+            $ civvies_check == True
             cs "I'll go check out that Building."
             hide cs with moveoutright
             show icarus_1 with dissolve
             show cs angry punished with moveinleft
             cs "This is interesting, but I don't have too much to do here."
-            jump kuwait_icarus
+            jump kuwait_exterior
         "The PMCs":
+            $ pmc_check == True
             cs "I'll go check out that Building."
             hide cs with moveoutright
             show icarus_2 with dissolve
             show cs angry punished with moveinleft
             cs "This is interesting, but I don't have too much to do here."
-            jump kuwait_icarus
+            jump kuwait_exterior
         "The Heliport":
             cs "I'll go check out that Building."
             hide cs with moveoutright
@@ -429,21 +451,28 @@ label kuwait_exterior:
             show elizabeth at right
             with dissolve
             show cs angry punished with moveinleft
-       
-            eliza "Heya CS! Are you ready to head out again?"
-            menu:
-                "Head out to Kuwait":
-                    cs "Yep, I'm ready!"
-                    eliza "Alrighty, well let's get a move on, shall we?"
-                    scene black with dissolve
-                    jump kuwait_select
-                "Stay at Icarus for now":
-                    cs "I'm not ready yet, I still have a few things to do."
-                    eliza "Take yer time, but not too much time!"
-                    show cs angry punished flipped with determination
-                    hide cs with moveoutleft
-                    jump kuwait_exterior
-            jump kuwait_icarus
+            if tutorial == True:
+                eliza "Heya CS! Are you ready to head out again?"
+                menu:
+                    "Head out to Kuwait":
+                        cs "Yep, I'm ready!"
+                        eliza "Alrighty, well let's get a move on, shall we?"
+                        scene black with dissolve
+                        jump kuwait_select
+                    "Stay at Icarus for now":
+                        cs "I'm not ready yet, I still have a few things to do."
+                        eliza "Take yer time, but not too much time!"
+                        show cs angry punished flipped with determination
+                        hide cs with moveoutleft
+                        jump kuwait_exterior
+            $ heli_check == True
+            eliza "Hey, you new here?"
+            cs "Yeah, it's a long story."
+            eliza "Well, whenever you are ready for adventure, come to me and we'll go check out the island of Kuwait!"
+            cs "Sounds good!"
+            show cs angry punished flipped with determination
+            hide cs with moveoutleft            
+            jump kuwait_exterior
         "Go Inside":
             jump kuwait_interior
 
