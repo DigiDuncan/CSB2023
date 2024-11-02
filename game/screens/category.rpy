@@ -30,7 +30,7 @@ screen category_nav():
         else:
             xpos 25
             yalign 0.5
-            xsize 750 ysize 500
+            xsize 750 ysize 750
         mousewheel True
         scrollbars "vertical"
         draggable True
