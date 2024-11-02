@@ -3048,7 +3048,7 @@ screen multiple_say(who, what, multiple):
     style_prefix "say"
 
     $ block = multiple[0] - 1
-    $ total_chars = multple[1]  # Unused rn
+    $ total_chars = multiple[1]  # Unused rn
 
     window:
         id "window"
