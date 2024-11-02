@@ -76,17 +76,19 @@ screen timeline_tracer():
                         # TODO: these colors suck ass, change em later
                         # TODO: this should be replaced w images later
                         if timeline_map[event]["type"] == "start":
-                            this_bg = "#6288FF"
+                            this_bg = "#009AFF"
                         elif timeline_map[event]["type"] == "choice":
-                            this_bg = "#FF00AF"
+                            this_bg = "#FFA200"
                         elif timeline_map[event]["type"] == "outcome":
-                            this_bg = "#92C148"
+                            this_bg = "#875900"
+                        elif timeline_map[event]["type"] == "prereq":
+                            this_bg = "FF8AC8"
                         elif timeline_map[event]["type"] == "end":
-                            this_bg = "#00B330"
+                            this_bg = "#00D972"
                         elif timeline_map[event]["type"] == "badend":
-                            this_bg = "#FF6800"
+                            this_bg = "#E63A37"
                         elif timeline_map[event]["type"] == "minigame":
-                            this_bg = "#DD6DFF"
+                            this_bg = "#D341FF"
                         else: # if it's this color, you haven't given it a type!
                             this_bg = "#000000"
                     
@@ -115,6 +117,8 @@ screen timeline_tracer():
                         this_dx = False
                         this_jump = None
                         
+                # screen vars
+                $ show_name = None
 
                 # make bounding box for item
                 frame:
@@ -138,12 +142,18 @@ screen timeline_tracer():
                         xalign 0.5
                         yalign 0.5
 
+                        # show name, although later i'd like this to be a tooltip or smth
                         text this_name:
+                            size 32
                             xalign 0.5
                             yalign 0.5
 
                         # handle jumps here later if there are any
-                        action [ SensitiveIf(this_unlocked == True and this_jump is not None), Notify("Later, I'll jump to '"+str(this_jump)+"'.") ]
+                        # TODO: DON'T USE THIS YET, IT WILL MAKE YOU UNABLE TO ESCAPE THE GAME
+                        # action [ SensitiveIf(this_unlocked == True and this_jump is not None), Play("sound", "audio/sfx/sfx_valid.ogg"),Jump(this_jump) ]
+                        action [ SensitiveIf(this_unlocked == True and this_jump is not None), Play("sound", "audio/sfx/sfx_valid.ogg"),Notify(this_jump) ]
+
+                        hover_sound "audio/sfx/sfx_select.ogg"
 
     textbutton "Return to Extras" action ShowMenu("category_welcome") yoffset 950 xoffset 25
     textbutton "Main Menu" action Return() yoffset 1000 xoffset 25
