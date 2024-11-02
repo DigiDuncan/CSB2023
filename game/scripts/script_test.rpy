@@ -79,3 +79,12 @@ label test:
                     pakoo "test 4"
                     pause
                     $ renpy.full_restart()
+                "Multiple Character Dialogue Test":
+                    digi "Two people talking?" (multiple=2)
+                    pakoo "An absurd idea!" (multiple=2)
+                    pause
+                    digi "{i}Three{/i} people talking?!" (multiple=3)
+                    pakoo "I can't believe it!" (multiple=3)
+                    arceus "What a deal!" (multiple=3)
+                    pause
+                    $ renpy.full_restart()
