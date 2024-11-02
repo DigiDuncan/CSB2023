@@ -634,6 +634,7 @@ define zenigata_offscreen = Character("???", callback = renpy.partial(char_callb
 define perfect_tate = Character("Tate", callback = renpy.partial(char_callback, name = "tate", beep = "tate"), screen = "perfect_tate_text")
 
 # DX Holiday Special Definitions
+define walkie = Character("Walkie", callback = renpy.partial(char_callback, beep = "walkie"))
 define santa = Character("Santa Claus", callback = renpy.partial(char_callback, beep = "santa"))
 define mike = Character("Mike",  callback = renpy.partial(char_callback, name = "mike"))
 

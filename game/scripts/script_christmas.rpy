@@ -1522,7 +1522,7 @@ label dx_christmas_banter:
     k17 "Who?"
     show k22 confident flipped
     k22 "Uhh, well..."
-    aria "I'm an old friend, the other one that wasn't Arceus? I changed."
+    aria "I'm an old friend, the other one that wasn't Arceus? I got different."
     show k22 disappointed flipped
     k17 "Whaa?"
     k22 "Excuse us for a moment."
@@ -1536,8 +1536,8 @@ label dx_christmas_banter:
     sheriff "Now, are you gonna help me wipe?"
     play sound sfx_walkie_on
     n "All of a sudden, Copguy's walkie goes off."
-    "Walkie" "Officer Copguy, we have a break-in at a house in the neighborhood you are currently at."
-    "Walkie" "Can you report on that?"
+    walkie "Officer Copguy, we have a break-in at a house in the neighborhood you are currently at."
+    walkie "Can you report on that?"
     copguy "Gladly! Give me a second and I'll be in my car."
     play sound sfx_walkie_off
     copguy "Sorry boss, as much as I would love to keep helping you, this is important."
