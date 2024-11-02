@@ -18,7 +18,7 @@
 # Elizabeth, Anne, Grace
 # DB05
 
-label dx_christmas_start:
+label ce_start:
     play music lets_hear_winter volume 0.7 if_changed
     music lets_hear_winter
     scene cs_bedroom2 
@@ -95,31 +95,31 @@ label dx_christmas_start:
     menu:
         cs "Alright! What should I bring in first?{fast}"
         "Christmas tree":
-            jump dx_christmas_tree
+            jump ce_tree
         "Lights and garland":
-            jump dx_christmas_lights
+            jump ce_lights
         "Ornaments and decorations":
-            jump dx_christmas_decor
+            jump ce_decor
 
 # TODO: TATE IS NOT TOUCHING ANY OF THIS UNTIL IT IS FIXED. EDITING CONTINUES ON LINE 219
 
 # christmas tree
-label dx_christmas_tree:
+label ce_tree:
     if lights_first or decor_first:
         $ tree_second = True
         cs "Alright, time to get the Christmas tree!"
         n "CS drags the box out of the garage and brings it into his living room."
         if (decor_first or decor_second) and tree_second and (lights_first or lights_second):      
-            jump dx_christmas_before_anno
+            jump ce_before_anno
         n "CS goes back to the garage."
         if lights_first:
             menu:
                 "Ornaments and decorations":
-                    jump dx_christmas_decor
+                    jump ce_decor
         if decor_first:
             menu:
                 "Lights and garland":
-                    jump dx_christmas_lights
+                    jump ce_lights
     $ tree_first = True
     if tree_first:
         cs "I should get the Christmas tree first."
@@ -151,74 +151,74 @@ label dx_christmas_tree:
         cs "Man, what a mess!"
         cs "This is gonna take forever to clean up!"
         hide cs with moveoutleft
-    jump dx_christmas_anno
+    jump ce_anno
 
 
 # Decorations/lights
-label dx_christmas_lights:
+label ce_lights:
     if tree_second or decor_first:
         cs "Alright, I should probably get the lights and garland next."
         $ lights_second = True
         if (decor_first or decor_second) and tree_second and (lights_first or lights_second):
             n "CS gets the box inside."       
-            jump dx_christmas_before_anno
+            jump ce_before_anno
         n "CS gets the box inside, and then goes back to the garage to grab the next box."
         if tree_second:
             menu:
                 "Ornaments and decorations":
-                    jump dx_christmas_decor
+                    jump ce_decor
         if decor_first:
             menu:
                 "Christmas tree":
-                    jump dx_christmas_tree
+                    jump ce_tree
     $ lights_first = True
     if lights_first:
         cs "I should probably get the lights and garland first, they are in the easiest box for me to grab anyways."
         n "CS gets the box inside, and then goes back to the garage to grab the next box."
     menu:
         "Christmas tree":
-            jump dx_christmas_tree
+            jump ce_tree
         "Ornaments and decorations":
-            jump dx_christmas_decor
+            jump ce_decor
 
-label dx_christmas_decor:
+label ce_decor:
     if tree_second or lights_first:
         cs "Alright, I should probably get the decorations next."
         $ decor_second = True
         if (decor_first or decor_second) and tree_second and (lights_first or lights_second):
             n "CS gets the box inside."       
-            jump dx_christmas_before_anno
+            jump ce_before_anno
         n "CS gets the box inside, and then goes back to the garage to grab the next box."
         if tree_second:
             menu:
                 "Lights and garland":
-                    jump dx_christmas_lights
+                    jump ce_lights
         if lights_first:
             menu:
                 "Christmas tree":
-                    jump dx_christmas_tree
+                    jump ce_tree
     $ decor_first = True
     if decor_first:
         cs "I'm gonna get the decorations first, I have a huge assortment of Legos in there!"
         n "CS gets the box inside, and then goes back to the garage to grab the next box."   
     menu:
         "Christmas tree":
-            jump dx_christmas_tree
+            jump ce_tree
         "Lights and garland":
-            jump dx_christmas_lights
+            jump ce_lights
 
-label dx_christmas_before_anno:
+label ce_before_anno:
     scene cs_foyer
     show cs happy at center
     with dissolve
     cs "Well that's all done!"
     cs "I have moved all of the Christmas supplies into the house!"
     cs "This is where the fun part begins!"
-    jump dx_christmas_anno
+    jump ce_anno
 
 # TODO: TATE IS CONTINUING EDITING FROM LINE 104
 
-label dx_christmas_anno:
+label ce_anno:
     scene cs_foyer
     show cs disappointed at center
     with dissolve
@@ -603,7 +603,7 @@ label dx_christmas_anno:
         n "CS and Anno drag the boxes inside."
 
 # Setting up decorations
-label dx_christmas_setup:
+label ce_setup:
     stop music fadeout 3.0
     music end
     scene cs_living2
@@ -639,7 +639,7 @@ label dx_christmas_setup:
     centered "One long winter's nap later..."
 
 # Day 2
-label dx_christmas_before_shopping:
+label ce_before_shopping:
     # TODO: something went wrong with this scene. i have to use manual_pos for everything or CS is floating? how annoying.
     # TODO: i think a gently ticking clock in the background would be suitable
     # TODO: we need a cleaner loop of this snore pls
@@ -813,7 +813,7 @@ label dx_christmas_before_shopping:
     hide cs with moveoutright
 
 # Checkout
-label dx_christmas_checkout:
+label ce_checkout:
     n "CS heads over to the checkout lanes."
     scene tgt_line
     show streetguy flipped at mid_right_right
@@ -943,7 +943,7 @@ label dx_christmas_checkout:
     cs "It's the big day tomorrow, and it's gonna be the best party ever!"
     hide cs with moveoutright
 
-label dx_christmas_aftershop:
+label ce_aftershop:
     scene cs_kitchen
     show cs_kitchen_fg
     with dissolve
@@ -957,7 +957,7 @@ label dx_christmas_aftershop:
     show cs behind cs_kitchen_fg
     cs "Hey, I got a [d20]!"
 
-label dx_christmas_party_before:
+label ce_party_before:
     scene cs_bedroom2
     show cs happy
     with dissolve
@@ -972,7 +972,7 @@ label dx_christmas_party_before:
         cs "Alright, any minute now..."
         cs "The party starts here in about 15 minutes, so people should start showing up soon..."
         n "CS keeps on waiting, but it looks like no one shows up early."
-        jump dx_christmas_intro      
+        jump ce_intro      
     if d20 == 2:
         n "As CS asks himself this, a small car pulls up in the driveway."
         cs "Hmm, let go see who that is!"
@@ -990,7 +990,7 @@ label dx_christmas_party_before:
         cs "Yeah, well, should we get inside? It's pretty cold out."
         kitty "Well, we are rather warm, but yeah."
         kitty "Let's go inside."
-        jump dx_christmas_intro      
+        jump ce_intro      
     if d20 == 3:
         n "CS peers out the window to see Anno's car pull into the driveway."
         cs "Hey look at that! Anno's here first!"
@@ -1002,7 +1002,7 @@ label dx_christmas_party_before:
         anno "Hey CS!"
         anno "I showed up kinda early, but I wanted to see everyone's initial reactions of our decor work!"
         cs "Well I'm glad you showed up, come inside! It's cold out."
-        jump dx_christmas_intro      
+        jump ce_intro      
     if d20 == 4:
         n "All of a sudden, CS hears a futuristic sounding vehicle land outside."
         show cs disappointed flipped
@@ -1021,7 +1021,7 @@ label dx_christmas_party_before:
         n "Digi shudders from the temperature."
         digi "It's cold out. Can we go inside?"
         cs "Yeah, let's get inside."
-        jump dx_christmas_intro
+        jump ce_intro
     if d20 == 5 or d20 == 6:
         n "As soon as he says that, he feels the house start to shake."
         show cs disappointed flipped
@@ -1041,7 +1041,7 @@ label dx_christmas_party_before:
         mean "Hey CS, Merry Christmas!"
         cs "Merry Christmas to you too, Mean. Shall we get inside?"
         tate "Yeah!"
-        jump dx_christmas_intro   
+        jump ce_intro   
     if d20 == 7:
         n "CS notices a familiar blue car roll up on the driveway."
         cs "Look at that! Looks like Billy is here first!"
@@ -1057,7 +1057,7 @@ label dx_christmas_party_before:
         billy "It's been hard to sell products by word of mouth, especially since I died that one time."
         cs "That sucks man, I hope this party cheers you up."
         billy "Let's get inside. It's freezing out here."
-        jump dx_christmas_intro      
+        jump ce_intro      
     if d20 == 8:
         n "All of a sudden, CS hears helicopter blades outside of his house."
         show cs worried flipped
@@ -1075,7 +1075,7 @@ label dx_christmas_party_before:
         obama "Besides, running the political circus has become tiring enough, I need a break."
         cs "Fair enough, I guess! Well Mr. President, let's get inside and wait for the other guests."
         obama "Sure thing. It is very cold outside."
-        jump dx_christmas_intro      
+        jump ce_intro      
     if d20 == 9:
         play sound sfx_siren
         show blue_light at left
@@ -1094,7 +1094,7 @@ label dx_christmas_party_before:
         copguy "Well someone's gotta be security, right?"
         cs "I... guess?"
         cs "Whatever, let's inside, I'm freezing."
-        jump dx_christmas_intro      
+        jump ce_intro      
     if d20 == 10:
         n "CS looks outside to see a bus pull up."
         cs "Hmm, I wonder who took the bus."
@@ -1110,7 +1110,7 @@ label dx_christmas_party_before:
         sheriff "And I had to take the bus!"
         cs "Oh wow okay, uhm, do you need help?"
         sheriff "Yes!! I keep getting stuck in the snow! Take me inside!"
-        jump dx_christmas_intro      
+        jump ce_intro      
     if d20 == 11:
         n "A beam sound can be heard from outside."
         hide cs with moveoutleft
@@ -1129,7 +1129,7 @@ label dx_christmas_party_before:
         wesley "Yeah."
         rich "Well, why don't we get inside? It's freezing!"
         cs "Yeah, let's go!"
-        jump dx_christmas_intro      
+        jump ce_intro      
     if d20 == 12:
         n "An old Dodge Charger pulls up on the driveway."
         cs "Nice car! I wonder if that's Carguy..."
@@ -1148,7 +1148,7 @@ label dx_christmas_party_before:
         cs "Are you guys both Pakoo?"
         k22 "It's... kind of complicated."
         k22 "Let's go inside, and we can explain."
-        jump dx_christmas_intro      
+        jump ce_intro      
     if d20 == 13:
         n "A teleport-like sound is heard outside."
         show cs disappointed flipped
@@ -1165,7 +1165,7 @@ label dx_christmas_party_before:
         cs "I was hoping someone would arrive early."
         aria "Well then. Should we head inside? You're probably getting cold, I assume."
         cs "Yeah, it's kinda freezing out."
-        jump dx_christmas_intro      
+        jump ce_intro      
     if d20 == 14:
         n "Someone's car pulls into the driveway."
         cs "I wonder who that could be?"
@@ -1179,7 +1179,7 @@ label dx_christmas_party_before:
         michael "I decided to spend a whole year over here."
         michael "It's pretty cold out, innit?"
         cs "Yeah, let's get inside now."
-        jump dx_christmas_intro      
+        jump ce_intro      
     if d20 == 15:
         n "CS sees Linus' car pulling up outside."
         cs "It looks like Linus got here first!"
@@ -1198,7 +1198,7 @@ label dx_christmas_party_before:
         linus "What wasn't funny was the cops showing up at LTT, but we can let bygones be bygones."
         cs "Yeah, sorry about all that. It's a long story."
         cs "Why don't we go inside, and i'll explain the whole thing while we wait."
-        jump dx_christmas_intro      
+        jump ce_intro      
     if d20 == 16:
         n "Another Honda Civic shows up in CS' driveway."
         cs "Oh look at that! It's Blank!"
@@ -1212,7 +1212,7 @@ label dx_christmas_party_before:
         blank "I did, but lots of people on the interstate didn't!"
         blank "I got quite a bit of dashcam footage to watch if you want."
         cs "Sure thing! Let's get inside and watch while we wait for the others."
-        jump dx_christmas_intro      
+        jump ce_intro      
     if d20 == 17:
         n "An unknown car shows up in the driveway."
         cs "I wonder who that is?"
@@ -1226,7 +1226,7 @@ label dx_christmas_party_before:
         cs "It's been a while, how've you been?"
         nova "Oh y'know, I've been moving a lot, had my friend move in with me..."
         cs "Well, if you wanna chat about it, let's go inside first. It's cold out here."
-        jump dx_christmas_intro      
+        jump ce_intro      
     if d20 == 18:
         n "CS sees a Cherokee pull up to his house."
         show cs disappointed flipped
@@ -1249,7 +1249,7 @@ label dx_christmas_party_before:
         eliza "Close enough."
         cs "Well, should we go inside."
         eliza "Yeah, I guess so."
-        jump dx_christmas_intro      
+        jump ce_intro      
     if d20 == 19:
         n "An orange mini coooper shows up infront of CS' house."
         cs "Holy crap, is that who I think it is?"
@@ -1263,7 +1263,7 @@ label dx_christmas_party_before:
         cs "Yes! You managed to be the earliest this time!"
         db "Wow, I can't believe it!"
         cs "Yeah! Let's get inside and we can talk!"
-        jump dx_christmas_intro      
+        jump ce_intro      
     if d20 == 20:
         n "A man in a white shirt walks up to CS' house."
         show cs disappointed flipped
@@ -1280,7 +1280,7 @@ label dx_christmas_party_before:
         cs "Okay, do you, wanna go inside?"
         avgn "Hell yeah."
         cs "Alright then..."
-        jump dx_christmas_intro      
+        jump ce_intro      
     else:
         n "CS waits paiently."
         n "He keeps on waiting."
@@ -1307,10 +1307,10 @@ label dx_christmas_party_before:
         n "CS gives up trying to understand, for now."
         show cs flipped
         cs "Sure."
-        jump dx_christmas_intro
+        jump ce_intro
 
 # Introductions
-label dx_christmas_intro:
+label ce_intro:
     scene black with dissolve
     n "By the time of the party, everyone shows up at CS' house in droves."
     scene cs_foyer
@@ -1497,7 +1497,7 @@ label dx_christmas_intro:
     hide cs with moveoutright
 
 # Banter
-label dx_christmas_banter:
+label ce_banter:
     scene black with dissolve
     stop music fadeout 3.0
     music end
@@ -1753,7 +1753,7 @@ label dx_christmas_banter:
     hide cs with moveoutright
 
 # Cooking
-label dx_christmas_cooking:
+label ce_cooking:
     scene cs_kitchen
     show cs_kitchen_fg
     show obama festive at mid_right behind cs_kitchen_fg
@@ -1927,7 +1927,7 @@ label dx_christmas_cooking:
     n "CS departs for the next room."
     billy "Right, so I said: \"you shittin' me?\""
 
-label dx_christmas_mike:
+label ce_mike:
     stop music fadeout 3.0
     music end
     scene cs_living2
@@ -2033,7 +2033,7 @@ label dx_christmas_mike:
     cs "Yeah, that's a good point. Give me a moment to get ready."  
 
 # Dinner/More Banter
-label dx_christmas_dinner:
+label ce_dinner:
     scene black with dissolve
     stop music fadeout 3.0
     music end
@@ -2083,7 +2083,7 @@ label dx_christmas_dinner:
     digi "Let him believe, CS. Let him believe."
 
 # Gift Exchange
-label dx_christmas_exchange:
+label ce_exchange:
     scene cs_living
     show cs at center
     with dissolve
@@ -2425,7 +2425,7 @@ label dx_christmas_exchange:
     # TODO: Some small banter to seguay into climax
 
 # Games/Climax
-label dx_christmas_climax:
+label ce_climax:
     scene black with dissolve
     stop music fadeout 3.0
     music end
@@ -2481,7 +2481,7 @@ label dx_christmas_climax:
 screen flashlight_demo:
     add Flashlight()
 
-label dx_christmas_lights_out:
+label ce_lights_out:
     $ mouse_visible = False
     scene black
     stop music
@@ -2681,7 +2681,7 @@ label dx_christmas_lights_out:
     cs "What? How bad is it?"
     mean "Grab my hand, I'll pull you up."
 
-label dx_christmas_snowed_in:
+label ce_snowed_in:
     play music winters_halloween
     music winters_halloween
     scene snowed_in
@@ -2805,7 +2805,7 @@ label dx_christmas_snowed_in:
     # maybe pick a character to play here?
     # Insert Reversi Gameplay here
 
-label dx_christmas_billy_time:
+label ce_billy_time:
     scene cs_living2_off
     show cs at mid_left
     show mean human flipped at mid_offscreen_left
@@ -2988,7 +2988,7 @@ label dx_christmas_billy_time:
     sheriff "Welp."
     sheriff "I'll just, wait here."
 
-label dx_christmas_roof_moment:
+label ce_roof_moment:
     scene snowed_in
     show cs sil_black:
         zoom 0.15
@@ -3485,7 +3485,7 @@ label dx_christmas_roof_moment:
     pause 5.0
 
 # Epilogue
-label dx_christmas_epilogue:
+label ce_epilogue:
     show billycar1:
         zoom 2.5
     show billycar1 at Move((-1.5, -1.0), (0.0, -1.25), 10, repeat=False, bounce=False, xanchor="left", yanchor="top") with dissolve

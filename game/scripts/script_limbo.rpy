@@ -91,7 +91,7 @@ screen dx_select():
                     at transform:
                         zoom 0.333
                         xalign 0.5
-                    action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("dx_christmas_start")
+                    action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("ce_start")
 
                 imagebutton auto "menu/csbiiidx_%s.png":
                     at transform:
