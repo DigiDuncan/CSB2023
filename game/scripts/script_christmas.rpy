@@ -715,7 +715,7 @@ label ce_before_shopping:
     scene black with Dissolve(2.0)
     stop sound fadeout 5.0
     pause 5.0
-
+    play music winter_unclearance_sale loop volume 3 fadein 1.0
     play sound sfx_hubbub loop volume 0.2 fadein 1.0
     scene tgt_inside
     with dissolve
@@ -863,6 +863,7 @@ label ce_checkout:
     show cs at mid_right_right with move
     pause 2.0
     cs "Finally, I can checkout."
+    stop music fadeout 10.0
     scene tgt_checkerror with dissolve
     show cs at left with moveinleft
     n "CS sees an message on the machine."

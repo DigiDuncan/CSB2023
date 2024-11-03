@@ -2456,7 +2456,8 @@ define audio.teeth_dust = "teeth_dust.ogg"
 define audio.snow_blind = "snow_blind.ogg"
 define audio.christmas_spirit = "christmas_spirit.ogg"
 define audio.snowdin_town = "snowdin_town.ogg"
-define audio.rice_and_wine = "rice_and_wine.mp3"
+define audio.rice_and_wine = "rice_and_wine.ogg"
+define audio.winter_unclearance_sale = "winter_unclearance_sale.ogg"
 
 # CSBIII DX After-True Music
 define audio.lets_hear_spring = "letshearspring.ogg"

@@ -1138,12 +1138,20 @@
             "album_art": "awesome.png"
         },
         "rice_and_wine" : {
-            "file": "rice_and_wine.mp3",
+            "file": "rice_and_wine.ogg",
             "title": "Rice and Wine",
             "artist": "WWG",
             "tags": ["CSBIII DX: Holiday Special", "New In DX"],
             "album_art": "csbi.png",
             "trivia": "Whenever you put a compass near the jukebox with this song playing, it points east. Great for presentations!"
+        },
+        "winter_unclearance_sale" : {
+            "file": "winter_unclearance_sale.ogg",
+            "title": "All I Want For Christmas Is You",
+            "artist": "Mariah Carey",
+            "tags": ["CSBIII DX: Holiday Special", "New In DX"],
+            "album_art": "csbi.png",
+            "trivia": "Whenever you put a compass near the jukebox with this song playing, it points north. Great for Christmas!"
         },
         "snowdin_town" : {
             "file": "snowdin_town.ogg",
