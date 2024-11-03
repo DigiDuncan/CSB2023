@@ -130,11 +130,11 @@ class AchievementManager:
 
     @property
     def unlocked(self) -> list[Achievement]:
-        return [a for a in self.achievements if a.name in persistent.unlocked_achievements]
+        return [a for a in self.achievements if a.unlocked]
 
     @property
     def locked(self) -> list[Achievement]:
-        return [a for a in self.achievements if a.name not in persistent.unlocked_achievements]
+        return [a for a in self.achievements if not a.unlocked]
 
     def get(self, name: str) -> Achievement:
         for achievement in self.achievements:
