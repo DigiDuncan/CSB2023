@@ -297,6 +297,7 @@ label ce_anno:
 
     show cs disappointed at mid_offscreen_right with move
     show shovel at manual_pos(1.2, 0.8, 0.5) with determination
+    $ collect("shovel")
 
     show cs disappointed at right 
     show shovel at manual_pos(0.9, 0.7, 0.5):

@@ -338,6 +338,14 @@
         "desc": "Sans Brick",
         "rarity": "Sans Brick"
     },
+    "shovel": {
+        "img": "shovel",
+        "name": "CS's Shovel",
+        "owner": "CS",
+        "desc": "In the dead of winter, it's a northerner's best friend.",
+        "rarity": "Uncommon",
+        "ce": true
+    },
     "slime16": {
         "img": "slime16",
         "name": "Slime-16",
