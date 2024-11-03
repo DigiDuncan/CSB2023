@@ -46,25 +46,29 @@ screen people_nav():
         xsize 500 ysize 50
         xpos 25 ypos 75
 
-        imagebutton:
-            xalign 0.0 yalign 0.5
-            xysize 64, 64
+        if current_bios_sorting_mode > 0:
 
-            idle "/gui/left_off_small.png"
-            hover "/gui/left_on_small.png"
+            imagebutton:
+                xalign 0.0 yalign 0.5
+                xysize 64, 64
 
-            if current_bios_sorting_mode-1>=0:
-                action SetVariable("current_bios_sorting_mode", current_bios_sorting_mode-1)
+                idle "/gui/left_off_small.png"
+                hover "/gui/left_on_small.png"
+
+                if current_bios_sorting_mode-1>=0:
+                    action SetVariable("current_bios_sorting_mode", current_bios_sorting_mode-1)
         
-        imagebutton:
-            xalign 1.0 yalign 0.5
-            xysize 64, 64
+        # Change this when there's more modes added
+        if current_bios_sorting_mode < 1:
+            imagebutton:
+                xalign 1.0 yalign 0.5
+                xysize 64, 64
 
-            idle "/gui/right_off_small.png"
-            hover "/gui/right_on_small.png"
+                idle "/gui/right_off_small.png"
+                hover "/gui/right_on_small.png"
 
-            if current_bios_sorting_mode+1<2:
-                action SetVariable("current_bios_sorting_mode", current_bios_sorting_mode+1)
+                if current_bios_sorting_mode+1<2:
+                    action SetVariable("current_bios_sorting_mode", current_bios_sorting_mode+1)
 
         text sort_text:
             xalign 0.5 yalign 0.5
