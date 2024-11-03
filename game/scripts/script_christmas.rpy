@@ -1742,7 +1742,8 @@ label ce_banter:
     k17 "Uhh... Uhh..."
     k17 "I'll go get someone!"
     hide k17 with easeoutleft
-    scene cs_living2 
+    scene cs_living2
+    show elf_1
     show wesley at right
     show rich at mid_right
     show db at center
