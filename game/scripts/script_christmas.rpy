@@ -1880,6 +1880,13 @@ label ce_cooking:
     with moveoutleft
     grace "Finally!"
     grace "Guys, the sheriff is out!"
+    show grace at center with move
+    hide grace with dissolve
+    scene cs_bathroom
+    show anne at mid_mid_left with moveinleft
+    show rich at mid_left with moveinleft
+    show kitty at mid_left_left with moveinleft
+    show luke at left with moveinleft
     n "A line starts to form next to the bathroom."
     # TODO: More banter here
 
@@ -1889,6 +1896,11 @@ label ce_cooking:
     # -- Digi
 
     # OK, is this scene too meta? I like it a lot but I'm worried I'm pushing the boundaries a bit here.
+    scene cs_foyer
+    show aria at left
+    show digi at center
+    show arceus at right
+    with dissolve
     arceus "Yeah, so to get the code done, I just got drunk off a bottle of wine and Digi and I chewed through it in a night."
     aria "Damn, that's the best way to do it."
     digi "I mean, {i}I{/i} was sober the whole time. I had to put up with this fluffy bastard."
@@ -1899,6 +1911,7 @@ label ce_cooking:
     digi "While that's true, I think half of that night was spent coding, and the other half was spent confusing the names of four different bald dudes."
     arceus "To be fair, that was hilarious."
     digi "You got me there."
+    show cs at at mid_left with moveinleft
     n "CS walks in on the conversation."
     cs "Hey guys! What are you all talking about?"
     digi "Oh, we were just discussing what developing the first game was li--"
@@ -1906,15 +1919,22 @@ label ce_cooking:
     digi "Er, uh, just talking about a coding project we all worked on."
     cs "Oh, OK. Probably a bunch of stuff I wouldn't understand."
     aria "Certainly not."
+    show cs happy
     cs "You guys do good work, though, I can't wait to see what the next DPN Games game will be!"
-    # show arc worried here
+    show arceus worried
     arceus "Yeah, me too."
+    hide cs with moveoutright
     n "CS walks off."
     aria "You're going to have to get better at the whole \"not breaking the illusion\" thing, Digi."
     digi "What? He wouldn't have thought anything of it if you didn't stop me mid sentence."
+    show arceus
     arceus "We just need to be a little more careful than that."
     digi "Fair enough. Wouldn't want this place falling apart."
-
+    scene cs_kitchen
+    show cs_kitchen_fg
+    show billy at mid_left behind cs_kitchen_fg
+    show billy at mid_right behind cs_kitchen_fg
+    with dissolve
     billy "So then I said: \"That's a resturaunt mini burger {w=1.0}{i}no one{/i} loves!"
     n "Obama laughs."
     obama "Billy, you crack me up. You're one of America's greatest."
@@ -1925,6 +1945,7 @@ label ce_cooking:
     n "Jerry says nothing and nods once."
     billy "Well then, thanks for the compliment, Barack!"
     obama "You gotta tell me the one about the cabinet full of cleaners again."
+    show cs at center with moveinleft
     n "CS walks in to greet the unlikely friends."
     cs "Obama, Billy! You two getting along?"
     obama "This guy's a hoot."
@@ -1932,7 +1953,9 @@ label ce_cooking:
     cs "Well, that's great. Glad to see two people from different walks of life enjoying each other's company."
     obama "That's what Christmas is all about, isn't it?"
     billy "That's the power, of the holiday season!"
+    show cs happy
     cs "Well, I gotta go check on the others, you two have fun!"
+    hide cs with moveoutright
     n "CS departs for the next room."
     billy "Right, so I said: \"you shittin' me?\""
 
@@ -2236,9 +2259,12 @@ label ce_exchange:
     show copguy festive flipped at mid_left with moveinleft 
     show gravity_falls at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     copguy "Okay, so I got \"Gravity Falls Season 2 Director's Cut\"..."
+    show colt at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     copguy "...and boss? Is this your gun?"
     sheriff "Yeah, you got my gift. Don't ask how that DVD got in there."
-    hide gravity_falls with dissolve
+    hide gravity_falls
+    hide colt
+    with dissolve
     hide copguy with moveoutright
     sheriff "Because I don't know either."
     show sheriff flipped at mid_left with moveinleft 
@@ -2302,6 +2328,10 @@ label ce_exchange:
     with dissolve
     pause 3.0
     hide gravity_falls with dissolve
+    show colt at Move((0.7125, 0.5), (0.3125, 0.5), 2, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    with dissolve
+    pause 3.0
+    hide colt with dissolve
     k17 "...and the gun."
     hide k17 with moveoutright
     show copguy festive flipped at left with moveinleft
@@ -2491,6 +2521,7 @@ screen flashlight_demo:
     add Flashlight()
 
 label ce_lights_out:
+    play sound sfx_power_out
     $ mouse_visible = False
     scene black
     stop music
