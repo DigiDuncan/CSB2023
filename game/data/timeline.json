@@ -51,7 +51,7 @@
                   "need_label": "after_error_fight",
                   "pos": [0, 2]
             },
-            "csbi_start_arrow": {
+            "csbi_pc_choice_arrow": {
                   "type": "arrow",
                   "direction": "e",
                   "pos" : [0.5, 6]
@@ -63,7 +63,7 @@
                   "pos": [1, 6],
                   "dx": true
             },
-            "csbi_speedrun_arrow": {
+            "csbi_speedrun_outcome_arrow": {
                   "type": "arrow",
                   "direction": "ne",
                   "pos" : [1.5, 5.5]
@@ -87,7 +87,7 @@
                   "pos": [3, 5],
                   "dx": true
             },
-            "csbi_nah_arrow": {
+            "csbi_nah_outcome_arrow": {
                   "type": "arrow",
                   "direction": "se",
                   "pos" : [1.5, 6.5]
@@ -127,10 +127,30 @@
                   "direction": "e",
                   "pos" : [1.5, 6]
             },
-            "csbi_call_choice_arrow": {
+            "csbi_call_choice_first_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [2.5, 6]
+            },
+            "csbi_call_choice_second_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [2.75, 6]
+            },
+            "csbi_call_choice_third_arrow": {
                   "type": "arrow",
                   "direction": "e",
                   "pos" : [3, 6]
+            },
+            "csbi_call_choice_fourth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [3.25, 6]
+            },
+            "csbi_call_choice_fifth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [3.5, 6]
             },
             "csbi_call_choice" : {
                   "name": "Call?",
@@ -139,7 +159,7 @@
                   "pos": [4, 6],
                   "dx": true
             },
-            "csbi_homesavers_arrow": {
+            "csbi_homesavers_outcome_arrow": {
                   "type": "arrow",
                   "direction": "ne",
                   "pos" : [4.5, 5.5]
@@ -163,7 +183,7 @@
                   "pos": [6, 5],
                   "dx": true
             },
-            "csbi_hohsis_arrow": {
+            "csbi_hohsis_outcome_arrow": {
                   "type": "arrow",
                   "direction": "se",
                   "pos" : [4.5, 6.5]
@@ -196,6 +216,311 @@
                   "type": "choice",
                   "need_label": "csbii_start",
                   "pos": [7, 7]
+            },
+            "csbii_ytpmagic_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "ne",
+                  "pos" : [7.5, 6.5]
+            },
+            "csbii_ytpmagic_outcome" : {
+                  "name": "YTP Magic",
+                  "type": "outcome",
+                  "need_label": "csbii_asylum",
+                  "pos": [8, 6]
+            },
+            "csbii_asylum_badend_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [8.5, 6]
+            },
+            "csbii_asylum_badend": {
+                  "name": "Asylum",
+                  "type": "badend",
+                  "need_label": "csbii_asylum",
+                  "pos": [9, 6]
+            },
+            "csbii_atk_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "se",
+                  "pos" : [7.5, 7.5]
+            },
+            "csbii_atk_outcome": {
+                  "name": "Other ATK",
+                  "type": "outcome",
+                  "need_label": "csbii_caught",
+                  "pos": [8, 8]
+            },
+            "csbiii_start_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [8.5, 8]
+            },
+            "csbiii_start": {
+                  "name": "CSBIII",
+                  "type": "start",
+                  "need_achieve": "csbii",
+                  "pos": [9, 8],
+                  "jump_to": "csbiii_start"
+            },
+            "csbiii_meeting_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [9.5, 8]
+            },
+            "csbiii_meeting_choice": {
+                  "name": "Attend?",
+                  "type": "choice",
+                  "need_label": "csbiii_start",
+                  "pos": [10, 8]
+            },
+            "csbiii_meeting_yes_prereq_arrow": {
+                  "type": "arrow",
+                  "direction": "ne",
+                  "pos" : [10.5, 7.5]
+            },
+            "csbiii_meeting_yes_prereq": {
+                  "name": "Get the true ending!",
+                  "type": "prereq",
+                  "need_label": "csbiii_start",
+                  "pos": [11, 7]
+            },
+            "csbiii_yes_meet_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos" : [11, 6.5]
+            },
+            "csbiii_yes_meet_outcome": {
+                  "name": "Yes",
+                  "type": "outcome",
+                  "need_label": "csbiii_start",
+                  "pos": [11, 6]
+            },
+            "csbiii_ai_end_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos" : [11, 5.5]
+            },
+            "csbiii_ai_end": {
+                  "name": "AI",
+                  "type": "end",
+                  "need_achieve": "chatgpt",
+                  "pos": [11, 5]
+            },
+            "csbiii_no_meet_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "se",
+                  "pos" : [10.5, 8.5]
+            },
+            "csbiii_no_meet_outcome": {
+                  "name": "Skip meeting",
+                  "type": "outcome",
+                  "need_label": "csbiii_start",
+                  "pos": [11, 9]
+            },
+            "csbiii_job_choice_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [11.5, 9]
+            },
+            "csbiii_job_choice": {
+                  "name": "Job?",
+                  "type": "choice",
+                  "need_label": "csbiii_start",
+                  "pos": [12, 9]
+            },
+            "csbiii_shopping_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "ne",
+                  "pos" : [12.5, 8.5]
+            },
+            "csbiii_shopping_outcome": {
+                  "name": "Shopping",
+                  "type": "outcome",
+                  "need_label": "friend_microcenter",
+                  "pos": [13, 8]
+            },
+            "csbiii_gpu_choice_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos" : [13, 7.5]
+            },
+            "friend_gpu_choice": {
+                  "name": "Which GPU?",
+                  "type": "choice",
+                  "need_label": "friend_microcenter",
+                  "pos": [13, 7]
+            },
+            "csbiii_badgpu_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [13.5, 7]
+            },
+            "friend_badgpu_outcome": {
+                  "name": "Bad GPU",
+                  "type": "outcome",
+                  "need_label": "friend_low_gpu",
+                  "pos": [14, 7]
+            },
+            "fired_start_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [14.5, 7]
+            },
+            "fired_start": {
+                  "name": "Fired",
+                  "type": "start",
+                  "need_label": "fired_new_plan",
+                  "pos": [15, 7],
+                  "jump_to": "fired_new_plan"
+            },
+            "fired_contract_choice_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [15.5, 7]
+            },
+            "fired_contract_choice": {
+                  "name": "Take deal?",
+                  "type": "choice",
+                  "need_label": "fired_limo_time",
+                  "pos": [16, 7]
+            },
+            "fired_yes_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "ne",
+                  "pos" : [16.5, 6.5]
+            },
+            "fired_yes_outcome": {
+                  "name": "Yes",
+                  "type": "outcome",
+                  "need_label": "fired_signed_the_contract",
+                  "pos": [17, 6]
+            },
+            "fired_end_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [17.5, 6]
+            },
+            "fired_end": {
+                  "name": "Rockstar",
+                  "type": "end",
+                  "need_achieve": "rockstar",
+                  "pos": [18, 6]
+            },
+            "fired_no_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "se",
+                  "pos" : [16.5, 7.5]
+            },
+            "fired_no_outcome": {
+                  "name": "No",
+                  "type": "outcome",
+                  "need_label": "fired_no_contract",
+                  "pos": [17, 8]
+            },
+            "fired_badend_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [17.5, 8]
+            },
+            "fired_badend": {
+                  "name": "Threw away fame",
+                  "type": "badend",
+                  "need_label": "fired_no_contract",
+                  "pos": [18, 8]
+            },
+            "friend_goodgpu_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos" : [13, 6.5]
+            },
+            "friend_goodgpu_outcome": {
+                  "name": "Good GPU",
+                  "type": "outcome",
+                  "need_label": "friend_high_gpu",
+                  "pos": [13, 6]
+            },
+            "csbiii_editing_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "se",
+                  "pos" : [12.5, 9.5]
+            },
+            "csbiii_editing_outcome": {
+                  "name": "Editing",
+                  "type": "outcome",
+                  "need_label": "csbiii_edit_video",
+                  "pos": [13, 10]
+            },
+            "csbiii_video_choice_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [13.5, 10]
+            },
+            "csbiii_video_choice": {
+                  "name": "Which video?",
+                  "type": "choice",
+                  "need_label": "csbiii_edit_video",
+                  "pos": [14, 10]
+            },
+            "csbiii_editmacro_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "ne",
+                  "pos" : [14.5, 9.5]
+            },
+            "csbiii_editmacro_outcome": {
+                  "name": "Edit Macro",
+                  "type": "outcome",
+                  "need_label": "csbiii_edit_video",
+                  "pos": [15, 9]
+            },
+            "csbiii_editmacro_after_first_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos" : [15, 8.5]
+            },
+            "csbiii_editmacro_after_second_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos" : [15, 8.25]
+            },
+            "csbiii_editmacro_after_third_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos" : [15, 8]
+            },
+            "csbiii_editmacro_after_fourth_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos" : [15, 7.75]
+            },
+            "csbiii_editmacro_after_fifth_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos" : [15, 7.5]
+            },
+            "csbiii_editstream_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "se",
+                  "pos" : [14.5, 10.5]
+            },
+            "csbiii_editstream_outcome": {
+                  "name": "Edit Stream",
+                  "type": "outcome",
+                  "need_label": "csbiii_edit_video",
+                  "pos": [15, 11]
+            },
+            "csbiii_editing_minigame_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [15.5, 11]
+            },
+            "csbiii_editing_minigame": {
+                  "name": "Editing Game",
+                  "type": "minigame",
+                  "need_label": "csbiii_edit_video",
+                  "pos": [16, 11],
+                  "jump_to": "play_edit_game"
             }
+
+
       }
 }
