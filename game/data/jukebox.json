@@ -626,7 +626,7 @@
             "artist": "Pat Benatar",
             "tags": ["CSBIII: Fired"],
             "album_art": "patbenatar.png",
-            "trivia": "This absolutely awful MIDI of Hit Me With Your Best Shot made Digi laugh so hard that they put it in the game. The computer used to record this MIDI must have been lagging, because the percussion is near-constantly out of sync."
+            "trivia": "This absolutely awful MIDI of {i}Hit Me With Your Best Shot{/i} made Digi laugh so hard that they put it in the game. The computer used to record this MIDI must have been lagging, because the percussion is nearly constantly out of sync."
         },
         "hightop" : {
             "file": "hightop.ogg",

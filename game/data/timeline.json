@@ -57,7 +57,7 @@
                   "pos" : [0.5, 6]
             },
             "csbi_pc_choice" : {
-                  "name": "PC?",
+                  "name": "Do what at the PC?",
                   "type": "choice",
                   "need_label": "csbi_craptop",
                   "pos": [1, 6],
@@ -153,7 +153,7 @@
                   "pos" : [3.5, 6]
             },
             "csbi_call_choice" : {
-                  "name": "Call?",
+                  "name": "Who to call?",
                   "type": "choice",
                   "need_label": "csbi_room",
                   "pos": [4, 6],
@@ -177,7 +177,7 @@
                   "pos" : [5.5, 5]
             },
             "csbi_homesavers_end" : {
-                  "name": "Call HS",
+                  "name": "Get The Job Done Right",
                   "type": "end",
                   "need_achieve": "savers",
                   "pos": [6, 5],
@@ -189,7 +189,7 @@
                   "pos" : [4.5, 6.5]
             },
             "csbi_hohsis_outcome" : {
-                  "name": "Call HoH SiS",
+                  "name": "HoH SiS",
                   "type": "outcome",
                   "need_achieve": "csbi",
                   "pos": [5, 7]
@@ -212,7 +212,7 @@
                   "pos" : [6.5, 7]
             },
             "csbii_rooftop_choice" : {
-                  "name": "Which ATK?",
+                  "name": "Which attack?",
                   "type": "choice",
                   "need_label": "csbii_start",
                   "pos": [7, 7]
@@ -245,7 +245,7 @@
                   "pos" : [7.5, 7.5]
             },
             "csbii_atk_outcome": {
-                  "name": "Other ATK",
+                  "name": "Other attack",
                   "type": "outcome",
                   "need_label": "csbii_caught",
                   "pos": [8, 8]
@@ -268,7 +268,7 @@
                   "pos" : [9.5, 8]
             },
             "csbiii_meeting_choice": {
-                  "name": "Attend?",
+                  "name": "Attend meeting?",
                   "type": "choice",
                   "need_label": "csbiii_start",
                   "pos": [10, 8]
@@ -904,25 +904,30 @@
             },
             "csbiii_genocide_no_arrow": {
                   "type": "arrow",
-                  "direction": "se",
-                  "pos" : [22.5, 11.5]
+                  "direction": "e",
+                  "pos" : [22.5, 11]
             },
             "csbiii_genocide_no_outcome": {
                   "name": "No",
                   "type": "outcome",
                   "need_label": "genocide_wait_arc",
-                  "pos": [23, 12]
+                  "pos": [23, 11]
             },
             "csbiii_godsuccess_badend_arrow": {
                   "type": "arrow",
                   "direction": "e",
-                  "pos" : [23.5, 12]
+                  "pos" : [23.5, 11]
             },
             "csbiii_godsuccess_badend": {
                   "name": "God Success",
                   "type": "badend",
                   "need_label": "genocide_wait_arc",
-                  "pos": [24, 12]
+                  "pos": [24, 11]
+            },
+            "csbiii_forest_hide_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "se",
+                  "pos" : [20.5, 12.5]
             },
             "csbiii_forest_hide_outcome": {
                   "name": "Hide",
@@ -930,10 +935,72 @@
                   "need_label": "csbiii_escape_forest",
                   "pos": [21, 13]
             },
-            "csbiii_forest_hide_outcome_arrow": {
+            "csbiii_caught_choice_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [21.5, 13]
+            },
+            "csbiii_caught_choice": {
+                  "name": "Say what to Copguy?",
+                  "type": "choice",
+                  "need_label": "csbiii_copcar_menu",
+                  "pos": [22, 13]
+            },
+            "csbiii_bad_convince_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "ne",
+                  "pos" : [22.5, 12.5]
+            },
+            "csbiii_bad_convince_outcome": {
+                  "name": "I'm not CS!",
+                  "type": "outcome",
+                  "need_label": "csbiii_copcar_menu",
+                  "pos": [23, 12]
+            },
+            "csbiii_bad_convince_badend_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [23.5, 12]
+            },
+            "csbiii_bad_convince_badend": {
+                  "name": "Attorney's Badge",
+                  "type": "badend",
+                  "need_label": "csbiii_bad_convince",
+                  "pos": [24, 12]
+            },
+            "csbiii_good_convince_outcome_arrow": {
                   "type": "arrow",
                   "direction": "se",
-                  "pos" : [20.5, 12.5]
+                  "pos" : [22.5, 13.5]
+            },
+            "csbiii_good_convince_outcome": {
+                  "name": "I was scammed!",
+                  "type": "outcome",
+                  "need_label": "csbiii_good_convince",
+                  "pos": [23, 14]
+            },
+            "csbiii_ch2_start_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [23.5, 14]
+            },
+            "csbiii_ch2_start": {
+                  "name": "CSBIII Chapter 2",
+                  "type": "start",
+                  "need_label": "csbiii_choose_direction",
+                  "pos": [24, 14],
+                  "jump_to": "csbiii_choose_direction"
+            },
+            "csbiii_choose_direction_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [24.5, 14]
+            },
+            "csbiii_choose_direction": {
+                  "name": "Which direction?",
+                  "type": "choice",
+                  "need_label": "csbiii_choose_direction",
+                  "pos": [25, 14]
             }
 
 
