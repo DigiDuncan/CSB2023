@@ -1911,7 +1911,7 @@ label ce_cooking:
     digi "While that's true, I think half of that night was spent coding, and the other half was spent confusing the names of four different bald dudes."
     arceus "To be fair, that was hilarious."
     digi "You got me there."
-    show cs at at mid_left with moveinleft
+    show cs at mid_left with moveinleft
     n "CS walks in on the conversation."
     cs "Hey guys! What are you all talking about?"
     digi "Oh, we were just discussing what developing the first game was li--"
