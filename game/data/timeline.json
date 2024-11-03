@@ -439,6 +439,190 @@
                   "need_label": "friend_high_gpu",
                   "pos": [13, 6]
             },
+            "friend_fight_choice_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos" : [13, 5.5]
+            },
+            "friend_fight_choice": {
+                  "name": "Fight?",
+                  "type": "choice",
+                  "need_label": "friend_high_gpu",
+                  "pos": [13, 5]
+            },
+            "friend_yes_fight_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos" : [13, 4.5]
+            },
+            "friend_yes_fight_choice": {
+                  "name": "Yes",
+                  "type": "outcome",
+                  "need_label": "friend_attack_fanboy",
+                  "pos": [13, 4]
+            },
+            "friend_rpg_minigame_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos" : [13, 3.5]
+            },
+            "friend_rpg_minigame": {
+                  "name": "Fight the fanboys",
+                  "type": "minigame",
+                  "need_label": "friend_attack_fanboy",
+                  "pos": [13, 3]
+            },
+            "friend_win_rpg_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos" : [13, 2.5]
+            },
+            "friend_win_rpg_outcome": {
+                  "name": "Win",
+                  "type": "outcome",
+                  "need_label": "friend_after_fanboy",
+                  "pos": [13, 2]
+            },
+            "friend_car_choice_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos" : [13, 1.5]
+            },
+            "friend_car_choice": {
+                  "name": "Which car?",
+                  "type": "choice",
+                  "need_label": "friend_car_picker",
+                  "pos": [13, 1]
+            },
+            "friend_car_bad_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "w",
+                  "pos" : [12.5, 1]
+            },
+            "friend_car_bad_outcome": {
+                  "name": "Flintstones",
+                  "type": "outcome",
+                  "need_label": "friend_flint_car",
+                  "pos": [12, 1]
+            },
+            "friend_car_bad_end_arrow": {
+                  "type": "arrow",
+                  "direction": "w",
+                  "pos" : [11.5, 1]
+            },
+            "friend_car_bad_end_outcome": {
+                  "name": "GRAND DAD",
+                  "type": "badend",
+                  "need_label": "friend_flint_car",
+                  "pos": [11, 1]
+            },
+            "friend_car_good_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [13.5, 1]
+            },
+            "friend_car_good_outcome": {
+                  "name": "Good car",
+                  "type": "outcome",
+                  "need_label": "rpg_cop_fight_1",
+                  "pos": [14, 1]
+            },
+            "friend_end_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [14.5, 1]
+            },
+            "friend_end": {
+                  "name": "Friend",
+                  "type": "end",
+                  "need_achieve": "beat_copguy",
+                  "pos": [15, 1]
+            },
+            "friend_lose_rpg_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [13.5, 3]
+            },
+            "friend_lose_rpg_outcome": {
+                  "name": "Lose",
+                  "type": "outcome",
+                  "need_label": "friend_after_fanboy",
+                  "pos": [14, 3]
+            },
+            "friend_no_fight_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [13.5, 5]
+            },
+            "friend_no_fight_outcome": {
+                  "name": "No",
+                  "type": "outcome",
+                  "need_label": "friend_stay_inside",
+                  "pos": [14, 5]
+            },
+            "country_start_first_arrow": {
+                  "type": "arrow",
+                  "direction": "se",
+                  "pos": [14.5, 3.5]
+            },
+            "country_start_second_arrow": {
+                  "type": "arrow",
+                  "direction": "ne",
+                  "pos": [14.5, 4.5]
+            },
+            "country_start": {
+                  "name": "Country",
+                  "type": "start",
+                  "need_label": "country_airport_choose",
+                  "pos": [15, 4],
+                  "jump_to": "country_airport_choose"
+            },
+            "country_choice_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [15.5, 4]
+            },
+            "country_choice": {
+                  "name": "Which country?",
+                  "type": "choice",
+                  "need_label": "country_airport_choose",
+                  "pos": [16, 4]
+            },
+            "country_kuwait_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos": [16, 3.5]
+            },
+            "country_kuwait_outcome": {
+                  "name": "Kuwait",
+                  "type": "outcome",
+                  "need_label": "kuwait_travel",
+                  "pos": [16, 3]
+            },
+            "kuwait_start_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos": [16, 2.5]
+            },
+            "kuwait_start": {
+                  "name": "Kuwait",
+                  "type": "start",
+                  "need_label": "UNFINISHED",
+                  "pos": [16, 2]
+            },
+            "country_other_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [16.5, 4]
+            },
+            "country_other_outcome": {
+                  "name": "Other",
+                  "type": "outcome",
+                  "need_label": "country_airport_choose",
+                  "pos": [17, 4]
+            },
+
+
             "csbiii_editing_outcome_arrow": {
                   "type": "arrow",
                   "direction": "se",
