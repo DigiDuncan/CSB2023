@@ -16,12 +16,26 @@ init python:
 
     achieve_map = achieve_file
 
-
 screen timeline_tracer():
     tag menu
 
-    #Add background image
+    # default, show nothing
+    default info = Tooltip("")
+    default info_x = 0
+    default info_y = 0
+    
+    # add background color
     add Color('#323e42', alpha=0.75)
+
+    # declare default colors for now. we'll make em images with outlines later
+    $ col_locked = "#BBBBBB"
+    $ col_prereq = "#FF8AC8"
+    $ col_start = "#009AFF"
+    $ col_choice = "#FFA200"
+    $ col_outcome = "#875900"
+    $ col_minigame = "#D341FF"
+    $ col_end = "#00D972"
+    $ col_badend = "#E63A37"
 
     frame:
         background None
@@ -29,7 +43,57 @@ screen timeline_tracer():
         ypos 25
         text "{size=+12}Timeline Tracer"
 
-    # bounding box
+        # make a key for the player
+        # this is stupid
+
+        python:
+            key_list = {
+                "Locked": col_locked,
+                "Check": col_prereq,
+                "Start": col_start,
+                "Choice": col_choice,
+                "Outcome": col_outcome,
+                "Minigame": col_minigame,
+                "Ending": col_end,
+                "Bad Ending": col_badend
+            }
+
+        frame:
+            background None
+            xpos 850
+            ypos -20
+            xsize 1.0
+
+            hbox:
+                $ counter = 0
+                for key,color in key_list.items():
+                    $ counter = counter + 1
+                    if counter < 5:
+                        frame:
+                            background None
+                            xsize 250
+                            frame:
+                                background color
+                                xysize (32,32)
+                            text key:
+                                text_align 0
+                                xoffset 40
+                                yoffset -9
+                    else:
+                        frame:
+                            background None
+                            xsize 250
+                            xoffset -1000
+                            yoffset 48
+                            frame:
+                                background color
+                                xysize (32,32)
+                            text key:
+                                text_align 0
+                                xoffset 40
+                                yoffset -9
+     
+    # bounding box for timeline
     frame:
         xsize 1870
         ysize 800
@@ -64,6 +128,9 @@ screen timeline_tracer():
                         # rework this whenever digi fixes cheevos to use IDs rather than cheev names
                         elif "need_achieve" in timeline_map[event]and achieve_map[timeline_map[event]["need_achieve"]]["name"] in persistent.unlocked_achievements:
                             this_unlocked = True
+                        # if it's unlocked by default (usually these are just prereqs):
+                        elif "need_label" or "need_achieve" not in timeline_map[event]:
+                            this_unlocked = True
                         # have not unlocked
                         else:
                             this_unlocked = False
@@ -73,23 +140,22 @@ screen timeline_tracer():
                     # continue if unlocked
                     if this_unlocked == True:
                         # get type and change background color based on it
-                        # TODO: these colors suck ass, change em later
                         # TODO: this should be replaced w images later
                         if timeline_map[event]["type"] == "start":
-                            this_bg = "#009AFF"
+                            this_bg = col_start
                         elif timeline_map[event]["type"] == "choice":
-                            this_bg = "#FFA200"
+                            this_bg = col_choice
                         elif timeline_map[event]["type"] == "outcome":
-                            this_bg = "#875900"
+                            this_bg = col_outcome
                         elif timeline_map[event]["type"] == "prereq":
-                            this_bg = "FF8AC8"
+                            this_bg = col_prereq
                         elif timeline_map[event]["type"] == "end":
-                            this_bg = "#00D972"
+                            this_bg = col_end
                         elif timeline_map[event]["type"] == "badend":
-                            this_bg = "#E63A37"
+                            this_bg = col_badend
                         elif timeline_map[event]["type"] == "minigame":
-                            this_bg = "#D341FF"
-                        else: # if it's this color, you haven't given it a type!
+                            this_bg = col_minigame
+                        else: # if it's this color, you haven't given it a type, and you need to fix that.
                             this_bg = "#000000"
                     
                         # get DX status
@@ -112,7 +178,7 @@ screen timeline_tracer():
                             this_jump = None
 
                     else: # locked
-                        this_bg = "#BBBBBB"
+                        this_bg = col_locked
                         this_name = "???"
                         this_dx = False
                         this_jump = None
@@ -122,7 +188,7 @@ screen timeline_tracer():
 
                 # make bounding box for item
                 frame:
-                    background color(this_bg)
+                    background this_bg
                     xsize 150
                     ysize 100
 
@@ -134,7 +200,7 @@ screen timeline_tracer():
                         image ("gui/dx_text.png"):
                             xpos 114
                             ypos -25
-                 
+
                     # make button
                     button:
                         xsize 150
@@ -147,13 +213,27 @@ screen timeline_tracer():
                             size 32
                             xalign 0.5
                             yalign 0.5
+                            text_align 0.5
 
                         # handle jumps here later if there are any
                         # TODO: DON'T USE THIS YET, IT WILL MAKE YOU UNABLE TO ESCAPE THE GAME
                         #action [ SensitiveIf(this_unlocked == True and this_jump is not None), Play("sound", "audio/sfx/sfx_valid.ogg"),Jump(this_jump) ]
                         action [ SensitiveIf(this_unlocked == True and this_jump is not None), Play("sound", "audio/sfx/sfx_valid.ogg"),Notify(this_jump) ]
 
+                        hovered [ info.Action(this_name), SetScreenVariable("info_x", this_x), SetScreenVariable("info_y", this_y-50) ]
+
                         hover_sound "audio/sfx/sfx_select.ogg"
+
+            # TODO: make this prettier later
+            frame:
+                xanchor 0.5
+                if info.value == "":
+                    background None
+                xpos info_x+75
+                ypos info_y-50
+                text info.value:
+                    text_align 0.5
+
 
     textbutton "Return to Extras" action ShowMenu("category_welcome") yoffset 950 xoffset 25
     textbutton "Main Menu" action Return() yoffset 1000 xoffset 25

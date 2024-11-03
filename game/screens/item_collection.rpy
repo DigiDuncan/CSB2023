@@ -78,10 +78,10 @@ screen item_nav():
                         button:
                             xalign 0.5 yalign 0.5
                             
-                            action [ SensitiveIf( k in persistent.collected ), SetScreenVariable("current_item", k), SetVariable("buttoncolor", "#65C0DF") ]
+                            action [ SensitiveIf( k in persistent.collected ), SetScreenVariable("current_item", k), SetScreenVariable("buttoncolor", "#65C0DF") ]
 
-                            hovered SetVariable("buttoncolor","#0099CC")
-                            unhovered SetVariable("buttoncolor","#003D51")
+                            hovered SetScreenVariable("buttoncolor","#0099CC")
+                            unhovered SetScreenVariable("buttoncolor","#003D51")
                             
     textbutton "Return to Extras" action ShowMenu("category_welcome") yoffset 950 xoffset 25
     textbutton "Main Menu" action Return() yoffset 1000 xoffset 25

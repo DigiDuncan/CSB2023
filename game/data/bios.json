@@ -353,7 +353,7 @@
         "full_name": "Mike",
         "sprite_path": "images/characters/mike.png",
         "quote": "I'm Chinese.",
-        "bio": "This pizzapotamus has a pizza thermos that he uses to give free samples. Works at the bus stop.",
+        "bio": "This pizzapotamus works at a bus stop and can often be spotted giving away free samples of pizza from his Thermos.",
         "ce": true
     },
     "miku": {

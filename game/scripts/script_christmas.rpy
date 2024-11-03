@@ -662,13 +662,19 @@ label ce_before_shopping:
         show cs scared flipped
         cs "Wha--?!" with hpunch
 
-    play sound sfx_blanket volume 10.0
+        play sound sfx_blanket volume 10.0
+        show cs disappointed at manual_pos(0.4, 1.115, 1.0):
+            linear 0.5 rotate 0
+        with move
+        n "He finally rolls out of bed."
+    else:
+        stop sound
+        play sound sfx_blanket volume 10.0
+        show cs at manual_pos(0.4, 1.115, 1.0):
+            linear 1.0 rotate 0
+        with move
+        n "He slowly rolls out of bed."
 
-    show cs disappointed at manual_pos(0.4, 1.115, 1.0):
-        linear 1.5 rotate 0
-    with move
-
-    n "He finally rolls out of bed."
     n "Through bleary eyes, he takes a few steps to look at the clock."
     show cs at manual_pos(0.9, 1.115, 1.0) with move
     "..."
