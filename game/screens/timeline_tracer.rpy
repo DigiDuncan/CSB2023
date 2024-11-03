@@ -112,15 +112,14 @@ screen timeline_tracer():
                     # set up positioning
                     # this is set up in a grid system. just handle it in the json based on what row/column you want
                     try:
-                        this_x = int(timeline_map[event]["pos"][0]*200) + 25
-                        this_y = int(timeline_map[event]["pos"][1]*145)
+                        this_x = int(timeline_map[event]["pos"][0]*200) + 20
+                        this_y = int(timeline_map[event]["pos"][1]*150) + 20
                     except:
-                        this_x = 25
-                        this_y = 25
+                        this_x = 20
+                        this_y = 20
             
                     # make sure it's unlocked before we continue
                     try:
-            
                         # if it needs you to have seen a label to unlock
                         if "need_label" in timeline_map[event] and renpy.seen_label(timeline_map[event]["need_label"]) == True:
                             this_unlocked = True
@@ -155,6 +154,8 @@ screen timeline_tracer():
                             this_bg = col_badend
                         elif timeline_map[event]["type"] == "minigame":
                             this_bg = col_minigame
+                        elif timeline_map[event]["type"] == "arrow":
+                            this_bg = None
                         else: # if it's this color, you haven't given it a type, and you need to fix that.
                             this_bg = "#000000"
                     
@@ -183,6 +184,32 @@ screen timeline_tracer():
                         this_dx = False
                         this_jump = None
                         
+                # let's get arrow status
+                if timeline_map[event]["type"] == "arrow":
+                    python:
+                        direction_keys = {
+                            "n": 0,
+                            "ne": 45,
+                            "e": 90,
+                            "se": 135,
+                            "s": 180,
+                            "sw": 225,
+                            "w": 270,
+                            "nw": 315
+                        }
+
+                    $ arrow = Transform("gui/arrow_tiny.png")
+                    frame:
+                        background None
+                        xsize 150
+                        ysize 100
+                        xpos this_x
+                        ypos this_y
+                        image arrow:
+                            xalign 0.5
+                            yalign 0.5
+                            rotate direction_keys[timeline_map[event]["direction"]]
+
                 # screen vars
                 $ show_name = None
 
@@ -230,7 +257,7 @@ screen timeline_tracer():
                 if info.value == "":
                     background None
                 xpos info_x+75
-                ypos info_y-50
+                ypos info_y-25
                 text info.value:
                     text_align 0.5
 
