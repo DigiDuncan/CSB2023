@@ -10,6 +10,7 @@
         "csbi_error_first_prereq" : {
             "name": "100% the game first!",
             "type": "prereq",
+            "need_label": "csbi_start",
             "pos" : [0, 5]
         },
         "csbi_error_second_prereq" : {

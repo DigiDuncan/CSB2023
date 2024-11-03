@@ -44,7 +44,7 @@ screen timeline_tracer():
         text "{size=+12}Timeline Tracer"
 
         # make a key for the player
-        # this is stupid
+        # this implementation is stupid
 
         python:
             key_list = {
@@ -126,10 +126,10 @@ screen timeline_tracer():
                             this_unlocked = True
                         # if it needs you to have earned an achievement to unlock
                         # rework this whenever digi fixes cheevos to use IDs rather than cheev names
-                        elif "need_achieve" in timeline_map[event]and achieve_map[timeline_map[event]["need_achieve"]]["name"] in persistent.unlocked_achievements:
+                        elif "need_achieve" in timeline_map[event] and achieve_map[timeline_map[event]["need_achieve"]]["name"] in persistent.unlocked_achievements:
                             this_unlocked = True
-                        # if it's unlocked by default (usually these are just prereqs):
-                        elif "need_label" or "need_achieve" not in timeline_map[event]:
+                        # if it's unlocked by default (you will *probably* never need this??):
+                        elif "need_label" not in timeline_map[event] and "need_achieve" not in timeline_map[event]:
                             this_unlocked = True
                         # have not unlocked
                         else:

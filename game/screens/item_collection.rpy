@@ -26,6 +26,13 @@ screen item_collection():
     else:
         use items(current_item)
 
+# wow i hate this - tate
+style itemcoll_button:
+    idle_background "#003D51"
+    hover_background "#0099CC"
+    selected_idle_background "#65C0DF"
+    insensitive_background "#888888"
+
 screen item_nav():
     add Color('#323e42', alpha=0.75)
     text "{size=+12}Item Collection":
@@ -51,37 +58,27 @@ screen item_nav():
 
             grid 5 max_y:
                 for k in item_map:
-
-                    # color list:
-                    # insensitive - #888888
-                    # sensitive idle - #003D51
-                    # sensitive hover - #0099CC
-                    # sensitive selected - #65C0DF
-
-                    # generate assets
+                    # determine thumbnail from whether you have unlocked the given item
                     if k in persistent.collected:
-                        $ buttoncolor = "#003D51"
                         $ item_img = Transform(item_map[k]['img'], size=(120,120), fit="contain", xalign=0.5, yalign=0.5, matrixcolor=None)
                     else:
-                        $ buttoncolor = "#888888"
                         $ item_img = Transform(item_map[k]['img'], size=(120,120), fit="contain", xalign=0.5, yalign=0.5, matrixcolor=sil_black_matrix)
 
                     # create the bounding box for each button
                     frame:
-                        background ( buttoncolor )
+                        background None
                         margin 5, 5
-                        xsize 153 ysize 153
+                        xysize 153, 153
                         
-                        image item_img
-
-                        # the actual button here
+                        # create the actual button here
                         button:
+                            style_prefix "itemcoll"
                             xalign 0.5 yalign 0.5
-                            
-                            action [ SensitiveIf( k in persistent.collected ), SetScreenVariable("current_item", k), SetScreenVariable("buttoncolor", "#65C0DF") ]
+                            xysize 140,140
 
-                            hovered SetScreenVariable("buttoncolor","#0099CC")
-                            unhovered SetScreenVariable("buttoncolor","#003D51")
+                            image item_img
+                            
+                            action [ SensitiveIf( k in persistent.collected ), SetScreenVariable("current_item", k) ]
                             
     textbutton "Return to Extras" action ShowMenu("category_welcome") yoffset 950 xoffset 25
     textbutton "Main Menu" action Return() yoffset 1000 xoffset 25
