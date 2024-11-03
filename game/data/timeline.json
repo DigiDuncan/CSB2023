@@ -406,6 +406,18 @@
                   "need_achieve": "rockstar",
                   "pos": [18, 6]
             },
+            "rockstar_ii_start_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [18.5, 6]
+            },
+            "rockstar_ii_start": {
+                  "name": "Rockstar II",
+                  "type": "start",
+                  "need_achieve": "UNFINISHED",
+                  "pos": [19, 6],
+                  "dx": true
+            },
             "fired_no_outcome_arrow": {
                   "type": "arrow",
                   "direction": "se",
@@ -597,7 +609,8 @@
                   "name": "Kuwait",
                   "type": "outcome",
                   "need_label": "kuwait_travel",
-                  "pos": [16, 3]
+                  "pos": [16, 3],
+                  "dx": true
             },
             "kuwait_start_arrow": {
                   "type": "arrow",
@@ -608,7 +621,8 @@
                   "name": "Kuwait",
                   "type": "start",
                   "need_label": "UNFINISHED",
-                  "pos": [16, 2]
+                  "pos": [16, 2],
+                  "dx": true
             },
             "country_other_outcome_arrow": {
                   "type": "arrow",
@@ -621,6 +635,17 @@
                   "need_label": "country_airport_choose",
                   "pos": [17, 4]
             },
+
+
+
+
+            "PLS_DO_COUNTRY_ROUTE_FOR_ME_AND_DELETE_THIS": {
+                  "name": "i dont wanna do country myself pls help\n----->",
+                  "type": "HELP",
+                  "pos": [3, 2]
+            },
+
+
 
 
             "csbiii_editing_outcome_arrow": {
@@ -703,7 +728,214 @@
                   "need_label": "csbiii_edit_video",
                   "pos": [16, 11],
                   "jump_to": "play_edit_game"
+            },
+            "csbiii_editing_bad_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos" : [16, 10.5]
+            },
+            "csbiii_editing_bad_outcome": {
+                  "name": "Bad edit",
+                  "type": "outcome",
+                  "need_label": "csbiii_bad_video",
+                  "pos": [16, 10]
+            },
+
+
+            "csbiii_editing_fired_first_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos" : [16, 9.5]
+            },
+            "csbiii_editing_fired_second_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos" : [16, 9.25]
+            },
+            "csbiii_editing_fired_third_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos" : [16, 9]
+            },
+            "csbiii_eediting_fired_fourth_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos" : [16, 8.75]
+            },
+            "csbiii_editing_fired_fifth_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos" : [16, 8.5]
+            },
+            "csbiii_editing_fired_sixth_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos" : [16, 8.25]
+            },
+            "csbiii_editing_fired_seventh_arrow": {
+                  "type": "arrow",
+                  "direction": "w",
+                  "pos" : [16, 8]
+            },
+            "csbiii_editing_fired_eighth_arrow": {
+                  "type": "arrow",
+                  "direction": "w",
+                  "pos" : [15.75, 8]
+            },
+            "csbiii_editing_fired_ninth_arrow": {
+                  "type": "arrow",
+                  "direction": "w",
+                  "pos" : [15.5, 8]
+            },
+            "csbiii_editing_fired_tenth_arrow": {
+                  "type": "arrow",
+                  "direction": "w",
+                  "pos" : [15.25, 8]
+            },
+            "csbiii_editing_good_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [16.5, 11]
+            },
+            "csbiii_editing_good_outcome": {
+                  "name": "Good edit",
+                  "type": "outcome",
+                  "need_label": "csbiii_boost",
+                  "pos": [17, 11]
+            },
+            "csbiii_arc_escape_choice_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [17.5, 11]
+            },
+            "csbiii_arc_escape_choice": {
+                  "name": "Escape with Arceus?",
+                  "type": "choice",
+                  "need_label": "csbiii_arc_escape",
+                  "pos": [18, 11]
+            },
+            "csbiii_no_escape_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "ne",
+                  "pos" : [18.5, 10.5]
+            },
+            "csbiii_no_escape_outcome": {
+                  "name": "No",
+                  "type": "outcome",
+                  "need_label": "csbiii_arc_escape",
+                  "pos": [19, 10]
+            },
+            "csbiii_loredumper_badend_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [19.5, 10]
+            },
+            "csbiii_loredumper_badend": {
+                  "name": "Lore Dumper",
+                  "type": "badend",
+                  "need_label": "csbiii_cops_ltt",
+                  "pos": [20, 10]
+            },
+            "csbiii_yes_escape_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "se",
+                  "pos" : [18.5, 11.5]
+            },
+            "csbiii_yes_escape_outcome": {
+                  "name": "Yes",
+                  "type": "outcome",
+                  "need_label": "csbiii_arc_escape",
+                  "pos": [19, 12]
+            },
+            "csbiii_forest_choice_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [19.5, 12]
+            },
+            "csbiii_forest_choice": {
+                  "name": "Do what in the forest?",
+                  "type": "choice",
+                  "need_label": "csbiii_forest_menu",
+                  "pos": [20, 12]
+            },
+            "csbiii_forest_ytp_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "ne",
+                  "pos" : [20.5, 11.5]
+            },
+            "csbiii_forest_ytp_outcome": {
+                  "name": "YTP Magic",
+                  "type": "outcome",
+                  "need_label": "genocide_fight",
+                  "pos": [21, 11]
+            },
+            "csbiii_genocide_choice_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [21.5, 11]
+            },
+            "csbiii_genocide_choice": {
+                  "name": "Attack Arceus?",
+                  "type": "choice",
+                  "need_label": "genocide_fight",
+                  "pos": [22, 11]
+            },
+            "csbiii_genocide_yes_arrow": {
+                  "type": "arrow",
+                  "direction": "ne",
+                  "pos" : [22.5, 10.5]
+            },
+            "csbiii_genocide_yes_outcome": {
+                  "name": "Yes",
+                  "type": "outcome",
+                  "need_label": "genocide_attack_arc",
+                  "pos": [23, 10]
+            },
+            "csbiii_godfail_badend_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [23.5, 10]
+            },
+            "csbiii_godfail_badend": {
+                  "name": "God Fail",
+                  "type": "badend",
+                  "need_achieve": "no_mercy",
+                  "pos": [24, 10]
+            },
+            "csbiii_genocide_no_arrow": {
+                  "type": "arrow",
+                  "direction": "se",
+                  "pos" : [22.5, 11.5]
+            },
+            "csbiii_genocide_no_outcome": {
+                  "name": "No",
+                  "type": "outcome",
+                  "need_label": "genocide_wait_arc",
+                  "pos": [23, 12]
+            },
+            "csbiii_godsuccess_badend_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [23.5, 12]
+            },
+            "csbiii_godsuccess_badend": {
+                  "name": "God Success",
+                  "type": "badend",
+                  "need_label": "genocide_wait_arc",
+                  "pos": [24, 12]
+            },
+            "csbiii_forest_hide_outcome": {
+                  "name": "Hide",
+                  "type": "outcome",
+                  "need_label": "csbiii_escape_forest",
+                  "pos": [21, 13]
+            },
+            "csbiii_forest_hide_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "se",
+                  "pos" : [20.5, 12.5]
             }
+
 
 
       }
