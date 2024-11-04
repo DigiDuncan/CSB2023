@@ -1387,23 +1387,297 @@
                   "need_label": "true_win_pencil",
                   "pos": [38, 12]
             },
-            "csbiii_east_hohsis_choice_arrow": {
+            "csbiii_east_hohsis_choice_first_arrow": {
                   "type": "arrow",
+                  "arrow_type": "hblock",
                   "direction": "e",
-                  "pos" : [38.5, 12]
+                  "pos" : [39, 12]
+            },
+            "csbiii_east_hohsis_choice_second_arrow": {
+                  "type": "arrow",
+                  "arrow_type": "hblock",
+                  "direction": "e",
+                  "pos" : [40, 12]
             },
             "csbiii_east_hohsis_choice": {
                   "name": "Do what with HoH SiS?",
                   "type": "choice",
                   "need_label": "true_back_home",
-                  "pos": [39, 12]
+                  "pos": [41, 12]
+            },
+            "csbiii_east_hohsis_fight_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos" : [41, 11.5]
+            },
+            "csbiii_east_hohsis_fight_outcome": {
+                  "name": "Fight",
+                  "type": "outcome",
+                  "need_label": "true_fighthohsis",
+                  "pos": [41, 11]
+            },
+            "csbiii_east_hohsis_fight_badend_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos" : [41, 10.5]
+            },
+            "csbiii_east_hohsis_fight_badend": {
+                  "name": "Catch These Shitty Hands",
+                  "type": "badend",
+                  "need_label": "true_fighthohsis",
+                  "pos": [41, 10]
+            },
+            "csbiii_east_hohsis_argue_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos" : [41, 12.5]
+            },
+            "csbiii_east_hohsis_argue_outcome": {
+                  "name": "Argue",
+                  "type": "outcome",
+                  "need_label": "true_fuckuphohsis",
+                  "pos": [41, 13]
+            },
+            "csbiii_east_hohsis_argue_badend_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos" : [41, 13.5]
+            },
+            "csbiii_east_hohsis_argue_badend": {
+                  "name": "RIP House",
+                  "type": "badend",
+                  "need_label": "true_fuckuphohsis",
+                  "pos": [41, 14]
+            },
+            "csbiii_east_hohsis_cops_check_arrow": {
+                  "type": "arrow",
+                  "direction": "se",
+                  "pos" : [41.5, 12.5]
+            },
+            "csbiii_east_hohsis_cops_check": {
+                  "name": "Get the True Ending!",
+                  "type": "prereq",
+                  "need_label": "true_back_home",
+                  "pos": [42, 13]
+            },
+            "csbiii_east_hohsis_cops_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [42.5, 13]
+            },
+            "csbiii_east_hohsis_cops_outcome": {
+                  "name": "Call Cops",
+                  "type": "outcome",
+                  "need_label": "true_copsathohsis",
+                  "pos": [43, 13]
             },
 
 
 
-
-
-
+            "csbiii_east_hohsis_talk_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "ne",
+                  "pos" : [41.5, 11.5]
+            },
+            "csbiii_east_hohsis_talk_outcome": {
+                  "name": "Negotiate",
+                  "type": "outcome",
+                  "need_label": "true_talktohohsis",
+                  "pos": [42, 11]
+            },
+            "csbiii_east_hohsis_talk_outcome_after_arrow": {
+                  "type": "arrow",
+                  "arrow_type": "hblock",
+                  "direction": "e",
+                  "pos" : [43, 11]
+            },
+            "csbiii_east_fan_check": {
+                  "name": "Which fanbase?",
+                  "type": "prereq",
+                  "need_label": "true_talktohohsis",
+                  "pos": [44, 11]
+            },
+            "csbiii_east_fanltt_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "ne",
+                  "pos" : [44.5, 10.5]
+            },
+            "csbiii_east_fanltt_outcome": {
+                  "name": "LTT",
+                  "type": "outcome",
+                  "need_label": "true_ltt_ending",
+                  "pos": [45, 10]
+            },
+            "csbiii_east_fanltt_end_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [45.5, 10]
+            },
+            "csbiii_east_fanltt_end": {
+                  "name": "LTT Ending",
+                  "type": "end",
+                  "need_label": "true_ltt_ending",
+                  "pos": [46, 10]
+            },
+            "csbiii_east_fanytp_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [44.5, 11]
+            },
+            "csbiii_east_fanytp_outcome": {
+                  "name": "YTP",
+                  "type": "outcome",
+                  "need_label": "true_ytp_ending",
+                  "pos": [45, 11]
+            },
+            "csbiii_east_fanytp_end_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [45.5, 11]
+            },
+            "csbiii_east_fanytp_end": {
+                  "name": "YTP",
+                  "type": "end",
+                  "need_label": "true_ytp_ending",
+                  "pos": [46, 11]
+            },
+            "csbiii_east_fanboth_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "se",
+                  "pos" : [44.5, 11.5]
+            },
+            "csbiii_east_fanboth_outcome": {
+                  "name": "Both",
+                  "type": "outcome",
+                  "need_label": "true_ending",
+                  "pos": [45, 12]
+            },
+            "csbiii_east_trueend_choice_arrow": {
+                  "type": "arrow",
+                  "arrow_type": "hblock",
+                  "direction": "e",
+                  "pos" : [46, 12]
+            },
+            "csbiii_east_trueend_choice": {
+                  "name": "What now?",
+                  "type": "choice",
+                  "need_label": "true_ending",
+                  "pos": [47, 12]
+            },
+            "csbiii_archival_check_arrow": {
+                  "type": "arrow",
+                  "direction": "se",
+                  "pos" : [47.5, 12.5]
+            },
+            "csbiii_east_archival_check": {
+                  "name": "Get the True Ending!",
+                  "type": "prereq",
+                  "need_label": "true_ending",
+                  "pos": [48, 13]
+            },
+            "csbiii_archival_sleep_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [48.5, 13]
+            },
+            "csbiii_east_sleep_outcome": {
+                  "name": "Sleep",
+                  "type": "outcome",
+                  "need_label": "archival",
+                  "pos": [49, 13]
+            },
+            "csbiii_archival_archival_end_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [49.5, 13]
+            },
+            "csbiii_east_archival_end": {
+                  "name": "Archival",
+                  "type": "end",
+                  "need_achieve": "archive",
+                  "pos": [50, 13]
+            },
+            "csbiii_east_stream_end_arrow": {
+                  "type": "arrow",
+                  "direction": "ne",
+                  "pos" : [47.5, 11.5]
+            },
+            "csbiii_east_stream_end": {
+                  "name": "Stream\n(True End)",
+                  "type": "end",
+                  "need_label": "true_streaming",
+                  "pos": [48, 11]
+            },
+            "ce_first_arrow": {
+                  "type": "arrow",
+                  "arrow_type": "hblock",
+                  "direction": "e",
+                  "pos" : [49, 11]
+            },
+            "ce_second_arrow": {
+                  "type": "arrow",
+                  "arrow_type": "hblock",
+                  "direction": "e",
+                  "pos" : [50, 11]
+            },
+            "ce_start": {
+                  "name": "Holiday Special",
+                  "type": "start",
+                  "need_label": "ce_start",
+                  "pos": [51, 11],
+                  "dx": true,
+                  "jump_to": "ce_start"
+            },
+            "ce_end_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [51.5, 11]
+            },
+            "ce_end": {
+                  "name": "Save Christmas",
+                  "type": "end",
+                  "need_label": "ce_epilogue",
+                  "pos": [52, 11],
+                  "dx": true
+            },
+            "dx_afterstory_start_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [52.5, 11]
+            },
+            "dx_afterstory_start": {
+                  "name": "DX: After Story",
+                  "type": "start",
+                  "need_label": "dx_after_true",
+                  "pos": [53, 11],
+                  "dx": true,
+                  "jump_to": "dx_after_true"
+            },
+            "dx_finale_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [53.5, 11]
+            },
+           "dx_finale": {
+                  "name": "DX: Finale",
+                  "type": "start",
+                  "need_label": "finale_fun_value_land",
+                  "pos": [54, 11],
+                  "dx": true,
+                  "jump_to": "finale_fun_value_land"
+            },
+            "dx_finale_arrow_end": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [54.5, 11]
+            },
+           "dx_finale_end": {
+                  "name": "Save the world!",
+                  "type": "end",
+                  "need_label": "UNFINISHED",
+                  "pos": [55, 11],
+                  "dx": true
+            },
             "csbiii_south_outcome_arrow": {
                   "type": "arrow",
                   "direction": "s",
