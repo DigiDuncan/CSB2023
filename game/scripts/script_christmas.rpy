@@ -2131,6 +2131,23 @@ label ce_dinner:
     rich "Yeah, you helped propel our business to new heights! Or, I guess, new foundations."
     wesley "Mmm."
 
+    linus "So, CS, when are we getting you back for another video?"
+    cs "Oh, jeez, life has been so busy."
+    luke "You were a fan favourite."  # Intentional Canadian spelling
+    cs "Well, if I can make it to Canada at some point soon..."
+    linus "We'll pay for your flight out~"
+    cs "Tempting. Very tempting. I'll see what I can do."
+    arceus "Hey, at least you can go to LTT and not have to walk all the way there this time!"
+    cs "True... honestly, would you want to go too?"
+    arceus "Me? I'm in the UK now, I don't know if I can make it all the way to West Canada."
+    linus "We'd pay for your flight out, as well."
+    arceus "What about my partner, though?"
+    linus "Sure, why not?"
+    luke "You just add two international flights to the cost of this, Linus."
+    linus "Since when have I been responsible with money, Luke?"
+    n "Luke takes a sip of his drink to stop himself from laughing too hard."
+    luke "You said it, not me."
+
     # TODO: Table Banter
 
     # TODO: Banter after dinner, and seguay into gift exchange
