@@ -174,5 +174,10 @@
         "type": "image",
         "title": "Painfully Adorable Mean",
         "caption": "Doodled by Tate and later colored by 4Bakers. This was almost going to be Mean's official sprite, but Tate felt it was simply {i}too{/i} cute."
+    },
+    "missingtate.png": {
+        "type": "image",
+        "title": "missingtate.png",
+        "caption": "If you look closely, it's in the background during Perfect Tate's intro video."
     }
 }
