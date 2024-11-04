@@ -1471,9 +1471,37 @@
                   "need_label": "true_copsathohsis",
                   "pos": [43, 13]
             },
-
-
-
+            "csbiii_east_hohsis_cops_after_first_arrow": {
+                  "type": "arrow",
+                  "arrow_type": "hblock",
+                  "direction": "e",
+                  "pos" : [44, 13]
+            },
+            "csbiii_east_hohsis_cops_after_second_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [44.5, 13]
+            },
+            "csbiii_east_hohsis_cops_after_third_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [44.75, 13]
+            },
+            "csbiii_east_hohsis_cops_after_fourth_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos" : [45, 13]
+            },
+            "csbiii_east_hohsis_cops_after_fifth_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos" : [45, 12.75]
+            },
+            "csbiii_east_hohsis_cops_after_sixth_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos" : [45, 12.5]
+            },
             "csbiii_east_hohsis_talk_outcome_arrow": {
                   "type": "arrow",
                   "direction": "ne",
@@ -1525,7 +1553,7 @@
                   "pos" : [44.5, 11]
             },
             "csbiii_east_fanytp_outcome": {
-                  "name": "YTP",
+                  "name": "YTP Ending",
                   "type": "outcome",
                   "need_label": "true_ytp_ending",
                   "pos": [45, 11]
@@ -1603,7 +1631,7 @@
                   "pos" : [47.5, 11.5]
             },
             "csbiii_east_stream_end": {
-                  "name": "Stream\n(True End)",
+                  "name": "Stream\n(True Ending)",
                   "type": "end",
                   "need_label": "true_streaming",
                   "pos": [48, 11]
@@ -1919,7 +1947,7 @@
             },
             "csbiii_south_fanytp_outcome_arrow": {
                   "type": "arrow",
-                  "direction": "se",
+                  "direction": "e",
                   "pos" : [32.5, 19.5]
             },
             "csbiii_south_fanytp_outcome": {
@@ -1944,7 +1972,7 @@
                   "pos" : [33.5, 19.5]
             },
             "csbiii_south_lego_end": {
-                  "name": "Lego",
+                  "name": "Lego Ending",
                   "type": "end",
                   "need_label": "south_lego_ending",
                   "pos": [34, 19]
@@ -2176,12 +2204,12 @@
                   "pos": [31, 25],
                   "dx": true
             },
-            "dx_train_broke_ending_arrow": {
+            "dx_train_broke_end_arrow": {
                   "type": "arrow",
                   "direction": "s",
                   "pos": [31, 25.5]
             },
-            "dx_train_broke_ending": {
+            "dx_train_broke_end": {
                   "name": "Go Home Broke",
                   "type": "end",
                   "need_label": "train_home_broke",
