@@ -381,7 +381,7 @@ label kuwait_interior:
                         anne "Sorry, we don't have anything yet."
                         jump kuwait_interior
                     "Talk about world travels":
-                        anne "Sorry, we don't have anything to talk about right now."
+                        cs "I've travelled this whole world of ours from Cali to Moomin Valley"
                         jump kuwait_interior
             $ bar_check = True
             grace "Hi! Welcome to the A&G Bar!"
@@ -393,13 +393,6 @@ label kuwait_interior:
             cs "Indeed I am!"
             anne "Well, this is our bar, and we serve the local residents of this island."
             anne "Do you want anything to drink?"
-            menu:
-                "See shop inventory":
-                    anne "Sorry, we don't have anything yet."
-                    jump kuwait_interior
-                "Talk about world travels":
-                    anne "Sorry, we don't have anything to talk about right now."
-                    jump kuwait_interior
             
             jump kuwait_icarus   
         "The Main Office":
@@ -456,19 +449,19 @@ label kuwait_exterior:
                 menu:
                     "Head out to Kuwait":
                         cs "Yep, I'm ready!"
-                        eliza "Alrighty, well let's get a move on, shall we?"
+                        eliza "Alrighty. Well let's get a move on, shall we?"
                         scene black with dissolve
                         jump kuwait_select
                     "Stay at Icarus for now":
                         cs "I'm not ready yet, I still have a few things to do."
-                        eliza "Take yer time, but not too much time!"
+                        eliza "Take your time, but not too much time."
                         show cs angry punished flipped with determination
                         hide cs with moveoutleft
                         jump kuwait_exterior
             $ heli_check = True
             eliza "Hey, you new here?"
             cs "Yeah, it's a long story."
-            eliza "Well, whenever you are ready for adventure, come to me and we'll go check out the island of Kuwait!"
+            eliza "Well, whenever you are ready for adventure, come to me and I'll drop you off anywhere in Kuwait."
             cs "Sounds good!"
             show cs angry punished flipped with determination
             hide cs with moveoutleft            
