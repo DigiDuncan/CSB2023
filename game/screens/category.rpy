@@ -55,7 +55,7 @@ screen category_nav():
 
             textbutton "Minigames\n{size=-12}Got a favorite minigame? Do it all over again!" action ShowMenu("minigame_gallery")
 
-            textbutton "Timeline Tracer\n{size=-12}[[WIP] Revisit endings, replay minigames, and track where you've been!" action ShowMenu("timeline_tracer")
+            textbutton "Timeline Tracer\n{size=-12}Revisit endings and track where you've been!" action ShowMenu("timeline_tracer")
 
             if preferences.developer_mode or achievement_manager.get("Hopes and Dreams").unlocked:
                 textbutton "Ultimate Custom Night\n{size=-12}Put together your own RPG battles!" action Start("rpg_ucn")

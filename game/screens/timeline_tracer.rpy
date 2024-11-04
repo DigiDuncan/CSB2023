@@ -92,12 +92,17 @@ screen timeline_tracer():
                                 text_align 0
                                 xoffset 40
                                 yoffset -9
-     
 
     # only adjust the first number of these if we need more space to the east or south later
     # grid starts at (0, 0), remember your off-by-one errors
-    $ xmax = ((56*200)+20) # 11020
+    $ xmax = ((57*200)+20) # 11420
     $ ymax = ((27*150)+20) # 3920
+
+    # prepare counters for later
+    $ total_events = 0
+    $ total_endings = 0
+    $ total_seen_events = 0
+    $ total_seen_endings = 0
 
     # bounding box for timeline
     frame:
@@ -118,6 +123,13 @@ screen timeline_tracer():
 
                 for event in timeline_map:
                     python:
+
+                        # count total events for later, but don't count arrows
+                        if timeline_map[event]["type"] != "arrow":
+                            total_events = total_events + 1
+                            if timeline_map[event]["type"] == "end" or timeline_map[event]["type"] == "badend":
+                                total_endings = total_endings + 1
+
                         # set up positioning
                         # this is set up in a grid system. just handle it in the json based on what row/column you want
                         try:
@@ -147,6 +159,14 @@ screen timeline_tracer():
 
                         # continue if unlocked
                         if this_unlocked == True:
+
+                            # add to unlocked counters
+                            if timeline_map[event]["type"] != "arrow":
+                                total_seen_events = total_seen_events + 1
+                            if timeline_map[event]["type"] == "end" or timeline_map[event]["type"] == "badend":
+                                total_seen_endings = total_seen_endings + 1
+
+
                             # get type and change background color based on it
                             # TODO: this should be replaced w images later
                             if timeline_map[event]["type"] == "start":
@@ -278,6 +298,11 @@ screen timeline_tracer():
                     text info.value:
                         text_align 0.5
 
+
+    text "Total Events Seen: [total_seen_events] of [total_events]\nTotal Endings Seen: [total_seen_endings] of [total_endings]":
+        xanchor 1.0
+        xoffset 1895
+        yoffset 950
 
     textbutton "Return to Extras" action ShowMenu("category_welcome") yoffset 950 xoffset 25
     textbutton "Main Menu" action Return() yoffset 1000 xoffset 25

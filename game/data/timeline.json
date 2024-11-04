@@ -1681,29 +1681,41 @@
                   "dx": true,
                   "jump_to": "dx_after_true"
             },
-            "dx_finale_arrow": {
+            "dx_afterstory_end_arrow": {
                   "type": "arrow",
                   "direction": "e",
                   "pos" : [53.5, 11]
+            },
+            "dx_afterstory_end": {
+                  "name": "Win at CultCon!",
+                  "type": "end",
+                  "need_label": "dx_after_convention_end",
+                  "pos": [54, 11],
+                  "dx": true
+            },
+            "dx_finale_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [54.5, 11]
             },
            "dx_finale": {
                   "name": "DX: Finale",
                   "type": "start",
                   "need_label": "finale_fun_value_land",
-                  "pos": [54, 11],
+                  "pos": [55, 11],
                   "dx": true,
                   "jump_to": "finale_fun_value_land"
             },
             "dx_finale_arrow_end": {
                   "type": "arrow",
                   "direction": "e",
-                  "pos" : [54.5, 11]
+                  "pos" : [55.5, 11]
             },
            "dx_finale_end": {
                   "name": "Save the world!",
                   "type": "end",
                   "need_label": "UNFINISHED",
-                  "pos": [55, 11],
+                  "pos": [56, 11],
                   "dx": true
             },
             "csbiii_south_outcome_arrow": {
