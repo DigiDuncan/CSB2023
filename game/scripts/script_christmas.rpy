@@ -332,7 +332,7 @@ label ce_anno:
     scene black with dissolve
     pause 1.0
     play sound sfx_house_door_close
-    pause 1.0
+    pause 3.0
 
     scene cs_house_snowed_in
     show cs disappointed flipped at right
@@ -368,20 +368,21 @@ label ce_anno:
     "..."
     cs "Guess I'd better get to it."
     if fun_value(FUN_VALUE_COMMON):
-        cs "Let's get to it.{w=0.5}{nw}"
-        cs "I'm gonna get to it.{w=0.5}{nw}"
-        cs "I'm gonna get to it.{w=0.5}{nw}"
-        cs "I'm gonna get to it.{w=0.5}{nw}"
-        pause 3.0
+        cs "Let's get to it.{w=0.25}{nw}"
+        cs "I'm gonna get to it.{w=0.1}{nw}"
+        cs "I'm gonna get to it.{fast}\nI'm gonna get to it.{w=0.1}{nw}"
+        cs "I'm gonna get to it.\nI'm gonna get to it.{fast}\nI'm gonna get to it.{w=1.0}{nw}"
+        pause 2.0
         cs "Faaf."
     pause 0.5
     
     # SHOVEL ANIMATION TIME
     # TODO: Make this a bit smoother
     # FIRST
+    play sound "<from 0.74 to 1.723>sfx/sfx_snow_walk.ogg" volume 2.0 # TODO: this is only playing one footstep. it should be two. the next instance is two. I DON'T UNDERSTAND - tate
     show cs disappointed flipped at center
     show shovel at manual_pos(0.6, 0.7, 0.5)
-    with move
+    with MoveTransition(1.0)
     # TODO: shovel sounds
     show shovel at manual_pos(0.4, 0.9, 0.5) with move:
         rotate 15
@@ -394,9 +395,10 @@ label ce_anno:
     show shovel at manual_pos(0.5, 0.7, 0.5):
         rotate -110
     pause 0.5
+    play sound "<from 0.074 to 1.723>sfx/sfx_snow_walk.ogg" volume 2.0
     show cs disappointed at right
     show shovel at manual_pos(0.9, 0.7, 0.5)
-    with move
+    with MoveTransition(1.0)
     pause 0.5
     show shovel at manual_pos(0.9, 0.8, 0.5):
         linear 0.5 rotate -15
@@ -406,11 +408,11 @@ label ce_anno:
     show cs disappointed flipped at right
     show shovel at manual_pos(0.9, 0.7, 0.5):
         rotate 15
-    with move
     pause 0.5
+    play sound "<from 0.074 to 0.869>sfx/sfx_snow_walk.ogg" volume 2.0
     show cs disappointed flipped at mid_right
     show shovel at manual_pos(0.7, 0.7, 0.5)
-    with move
+    with MoveTransition(1.0)
     # TODO: shovel sounds
     show shovel at manual_pos(0.6, 0.9, 0.5) with move:
         rotate 15
@@ -422,19 +424,21 @@ label ce_anno:
     show cs disappointed at mid_right
     show shovel at manual_pos(0.8, 0.7, 0.5):
         rotate -110
+    play sound "<from 0.074 to 0.869>sfx/sfx_snow_walk.ogg" volume 2.0
     show cs disappointed at right
     show shovel at manual_pos(0.9, 0.7, 0.5)
-    with move
+    with MoveTransition(1.0)
     pause 0.5
     show shovel at manual_pos(0.9, 0.9, 0.5):
         linear 0.5 rotate -15
     pause 1.0
 
     # THIRD
+    play sound "<from 0.074 to 2.563>sfx/sfx_snow_walk.ogg" volume 2.0
     show cs disappointed flipped at mid_left
     show shovel at manual_pos(0.3, 0.7, 0.5):
         rotate 15
-    with move
+    with MoveTransition(2.5)
     pause 0.5
     # TODO: shovel sounds
     show shovel at manual_pos(0.1, 0.9, 0.5) with move:
@@ -447,18 +451,20 @@ label ce_anno:
     show cs disappointed at mid_left
     show shovel at manual_pos(0.5, 0.7, 0.5):
         rotate -110
+    play sound "<from 0.074 to 2.563>sfx/sfx_snow_walk.ogg" volume 2.0
     show cs disappointed at right
     show shovel at manual_pos(0.9, 0.7, 0.5)
-    with move
+    with MoveTransition(2.5)
     pause 0.5
     show shovel at manual_pos(0.9, 0.8, 0.5):
         linear 0.5 rotate -15
     pause 1.0
 
-    # TODO: sfx snow crunchy footsteps
+    play sound sfx_snow_walk loop volume 2.0 fadein 2.0
     n "About ten minutes into shoveling, CS hears someone walking up his driveway."
-
+    pause 1.0
     show carguy flipped at left with moveinleft
+    stop sound
     
     play sound sfx_nice_snow
     carguy_nobeep "Nice snow!"
@@ -494,10 +500,11 @@ label ce_anno:
     carguy "{size=-15}I thought I'd brought more of this..." 
     carguy "Welp, sorry! Looks like I've run out!"
     carguy "Gotta run! Happy holidays to you!"
+    play sound sfx_snow_run loop volume 2.0
     show carguy at offscreenleft with MoveTransition(0.25)
     pause 0.5
+    stop sound fadeout 5.0
     n "Carguy turns on his heel and scampers away through the snow."
-    # TODO: sfx faster snowy steps fading out
     pause 2.0
     show cs angry flipped
     cs "Well, {i}that{/i} was a huge waste of my time!"
@@ -505,21 +512,24 @@ label ce_anno:
     cs "I need to finish shoveling, already! My face is starting to freeze!"
     pause 0.5
 
+    play sound sfx_snow_walk loop volume 2.0
     show cs disappointed flipped at center
     show shovel at manual_pos(0.6, 0.7, 0.5):
         rotate 15
-    with move
+    with MoveTransition(2.0)
     # TODO: SFX more shoveling, ain't no way in hell i'm animating this a second time though.
     scene white with dissolve
+    pause 2.0
 
+    stop sound fadeout 1.0
     scene cs_house_snow
     show cs disappointed flipped at center
     show shovel at manual_pos(0.6, 0.7, 0.5):
         rotate 15
     with Dissolve(1.0)
 
-    n "As CS finishes clearing the driveway, Anno's car turns onto CS' street."
     play sound sfx_car_approach_stop volume 5.0 fadein 5.0
+    n "As CS finishes clearing the driveway, Anno's car turns onto CS' street."
     cs "Just in time!"
 
     # TODO: anno's car
@@ -529,11 +539,10 @@ label ce_anno:
     show cs flipped
     play sound sfx_car_door_open
     play sound2 sfx_car_door_ajar
-    pause 2.0
-    play sound sfx_doorslam
+    pause 3.0
     stop sound2
-    # TODO: sfx crunchy steps again
-    pause 5.0
+    play sound sfx_doorslam
+    pause 3.0
     show anno at left with moveinleft
     anno "Hey, how's it going?"
     show cs disappointed flipped
