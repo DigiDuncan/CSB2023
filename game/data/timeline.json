@@ -1120,8 +1120,8 @@
             },
             "csbiii_north_outcome_arrow": {
                   "type": "arrow",
+                  "arrow_type": "double",
                   "direction": "n",
-                  "arrow_double": true,
                   "pos" : [26, 13.5]
             },
             "csbiii_north_outcome": {
@@ -1132,8 +1132,8 @@
             },
             "csbiii_west_outcome_arrow": {
                   "type": "arrow",
+                  "arrow_type": "double",
                   "direction": "nw",
-                  "arrow_double": true,
                   "pos" : [25.5, 13.5]
             },
             "csbiii_west_outcome": {
@@ -1165,7 +1165,239 @@
                   "pos": [28, 14],
                   "jump_to": "true_east"
             },
-
+            "csbiii_east_car_choice_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [28.5, 14]
+            },
+            "csbiii_east_car_choice": {
+                  "name": "How to get home?",
+                  "type": "choice",
+                  "need_label": "true_east",
+                  "pos": [29, 14]
+            },
+            "csbiii_east_hotwire_arrow": {
+                  "type": "arrow",
+                  "direction": "se",
+                  "pos" : [29.5, 14.5]
+            },
+            "csbiii_east_hotwire_outcome": {
+                  "name": "Hotwire a car",
+                  "type": "outcome",
+                  "need_label": "true_hotwire",
+                  "pos": [30, 15]
+            },
+            "csbiii_east_hotwire_badend_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [30.5, 15]
+            },
+            "csbiii_east_hotwire_badend": {
+                  "name": "Grand Theft Failure",
+                  "type": "badend",
+                  "need_label": "true_hotwire",
+                  "pos": [31, 15]
+            },
+            "csbiii_east_wait_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "ne",
+                  "pos" : [29.5, 13.5]
+            },
+            "csbiii_east_wait_outcome": {
+                  "name": "Wait",
+                  "type": "outcome",
+                  "need_label": "true_billy_driver",
+                  "pos": [30, 13]
+            },
+            "csbiii_east_car_minigame_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [30.5, 13]
+            },
+            "csbiii_east_car_minigame": {
+                  "name": "Car Game",
+                  "type": "minigame",
+                  "need_label": "minigame_car",
+                  "pos": [31, 13],
+                  "jump_to": "minigame_car"
+            },
+            "csbiii_east_car_lose_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "se",
+                  "pos" : [31.5, 13.5]
+            },
+            "csbiii_east_car_lose_outcome": {
+                  "name": "Lose",
+                  "type": "outcome",
+                  "need_label": "lose_car_game",
+                  "pos": [32, 14]
+            },
+            "csbiii_east_car_baddriver_badend_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [32.5, 14]
+            },
+            "csbiii_east_baddriver_badend": {
+                  "name": "Bad Driver",
+                  "type": "badend",
+                  "need_label": "true_after_ufo",
+                  "pos": [33, 14]
+            },
+            "csbiii_east_car_win_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "ne",
+                  "pos" : [31.5, 12.5]
+            },
+            "csbiii_east_car_win_outcome": {
+                  "name": "Win",
+                  "type": "outcome",
+                  "need_label": "true_after_ufo",
+                  "pos": [32, 12]
+            },
+            "csbiii_east_bronson_choice_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [32.5, 12]
+            },
+            "csbiii_east_bronson_choice": {
+                  "name": "Go to Bronson?",
+                  "type": "choice",
+                  "need_label": "michigan",
+                  "pos": [33, 12]
+            },
+            "csbiii_east_bronson_yes_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "ne",
+                  "pos" : [33.5, 11.5]
+            },
+            "csbiii_east_bronson_yes_outcome": {
+                  "name": "Yes",
+                  "type": "outcome",
+                  "need_label": "michigan_bronson",
+                  "pos": [34, 11]
+            },
+            "csbiii_east_copguyexe_minigame_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [34.5, 11]
+            },
+            "csbiii_east_copguyexe_minigame": {
+                  "name": "VS Copguy.EXE",
+                  "type": "minigame",
+                  "need_label": "michigan_bronson",
+                  "pos": [35, 11]
+            },
+            "csbiii_east_after_copguyexe_arrow": {
+                  "type": "arrow",
+                  "arrow_type": "vblock",
+                  "direction": "s",
+                  "pos" : [35, 12]
+            },
+            "csbiii_east_bronson_no_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "se",
+                  "pos" : [33.5, 12.5]
+            },
+            "csbiii_east_bronson_no_outcome": {
+                  "name": "No",
+                  "type": "outcome",
+                  "need_label": "michigan_continue",
+                  "pos": [34, 13]
+            },
+            "csbiii_east_bronson_interstate_choice_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [34.5, 13]
+            },
+            "csbiii_east_interstate_choice": {
+                  "name": "Which exit?",
+                  "type": "choice",
+                  "need_label": "michigan_continue",
+                  "pos": [35, 13]
+            },
+            "csbiii_east_sixtynine_arrow": {
+                  "type": "arrow",
+                  "direction": "ne",
+                  "pos" : [35.5, 12.5]
+            },
+            "csbiii_east_sixtynine": {
+                  "name": "I-69",
+                  "type": "outcome",
+                  "need_label": "michigan_interstate_69",
+                  "pos": [36, 12]
+            },
+            "csbiii_east_sixtynine_after_arrow": {
+                  "type": "arrow",
+                  "direction": "se",
+                  "pos" : [36.5, 12.5]
+            },
+            "csbiii_east_nintyfour_arrow": {
+                  "type": "arrow",
+                  "direction": "se",
+                  "pos" : [35.5, 13.5]
+            },
+            "csbiii_east_ninetyfour": {
+                  "name": "I-94",
+                  "type": "outcome",
+                  "need_label": "michigan_interstate_94",
+                  "pos": [36, 14]
+            },
+            "csbiii_east_nintyfour_after_arrow": {
+                  "type": "arrow",
+                  "direction": "ne",
+                  "pos" : [36.5, 13.5]
+            },
+            "csbiii_east_pencil_minigame": {
+                  "name": "Pencil Game",
+                  "type": "minigame",
+                  "need_label": "minigame_pencil",
+                  "pos": [37, 13],
+                  "jump_to": "minigame_pencil"
+            },
+            "csbiii_east_pencil_lose_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "se",
+                  "pos" : [37.5, 13.5]
+            },
+            "csbiii_east_pencil_lose_outcome": {
+                  "name": "Lose",
+                  "type": "outcome",
+                  "need_label": "lose_pencil_game",
+                  "pos": [38, 14]
+            },
+            "csbiii_east_pencil_lose_badend_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [38.5, 14]
+            },
+            "csbiii_east_pencil_lose_badend": {
+                  "name": "Pencil Sharting Day",
+                  "type": "badend",
+                  "need_label": "lose_pencil_game",
+                  "pos": [39, 14]
+            },
+            "csbiii_east_pencil_win_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "ne",
+                  "pos" : [37.5, 12.5]
+            },
+            "csbiii_east_pencil_win_outcome": {
+                  "name": "Win",
+                  "type": "outcome",
+                  "need_label": "true_win_pencil",
+                  "pos": [38, 12]
+            },
+            "csbiii_east_hohsis_choice_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [38.5, 12]
+            },
+            "csbiii_east_hohsis_choice": {
+                  "name": "Do what with HoH SiS?",
+                  "type": "choice",
+                  "need_label": "true_back_home",
+                  "pos": [39, 12]
+            },
 
 
 
