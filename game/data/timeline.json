@@ -1267,6 +1267,157 @@
                   "need_label": "south_airport",
                   "pos": [28, 19]
             },
+            "csbiii_south_hohsis_choice_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [28.5, 19]
+            },
+            "csbiii_south_hohsis_choice": {
+                  "name": "Do what with HoH Sis?",
+                  "type": "choice",
+                  "need_label": "south_back_home_alt",
+                  "pos": [29, 19]
+            },
+            "csbiii_south_hohsis_fight_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "ne",
+                  "pos": [29.5, 18.5]
+            },
+            "csbiii_south_hohsis_fight_outcome": {
+                  "name": "Fight",
+                  "type": "outcome",
+                  "need_label": "south_back_home_alt",
+                  "pos": [30, 18]
+            },
+            "csbiii_south_riphouse_badend_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [30.5, 18]
+            },
+            "csbiii_south_riphouse_badend": {
+                  "name": "RIP House",
+                  "type": "badend",
+                  "need_label": "south_fighthohsis_alt",
+                  "pos": [31, 18]
+            },
+            "csbiii_south_hohsis_brag_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "se",
+                  "pos": [29.5, 19.5]
+            },
+            "csbiii_south_hohsis_brag_outcome": {
+                  "name": "Brag",
+                  "type": "outcome",
+                  "need_label": "south_back_home_alt",
+                  "pos": [30, 20]
+            },
+            "csbiii_south_ripmoney_badend_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [30.5, 20]
+            },
+            "csbiii_south_ripmoney_badend": {
+                  "name": "RIP Money",
+                  "type": "badend",
+                  "need_label": "south_braghohsis",
+                  "pos": [31, 20]
+            },
+            "csbiii_south_hohsis_donate_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [29.5, 19]
+            },
+            "csbiii_south_hohsis_donate_outcome": {
+                  "name": "Donate",
+                  "type": "outcome",
+                  "need_label": "south_back_home_alt",
+                  "pos": [30, 19]
+            },
+            "csbiii_south_endings_first_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [30.5, 19]
+            },
+            "csbiii_south_endings_second_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [30.75, 19]
+            },
+            "csbiii_south_endings_third_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [31, 19]
+            },
+            "csbiii_south_endings_fourth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [31.25, 19]
+            },
+            "csbiii_south_endings_fifth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [31.5, 19]
+            },
+            "csbiii_south_fanbase_check": {
+                  "name": "Which Fanbase?",
+                  "type": "prereq",
+                  "need_label": "south_back_home_alt",
+                  "pos": [32, 19]
+            },
+            "csbiii_south_fanltt_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "ne",
+                  "pos" : [32.5, 18.5]
+            },
+            "csbiii_south_fanltt_outcome": {
+                  "name": "LTT",
+                  "type": "outcome",
+                  "need_label": "south_ltt_ending_alt",
+                  "pos": [33, 18]
+            },
+            "csbiii_south_fanboth_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [32.5, 19]
+            },
+            "csbiii_south_fanboth_outcome": {
+                  "name": "Both",
+                  "type": "outcome",
+                  "need_label": "south_true_ending_alt",
+                  "pos": [33, 19]
+            },
+            "csbiii_south_fanytp_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "se",
+                  "pos" : [32.5, 19.5]
+            },
+            "csbiii_south_fanytp_outcome": {
+                  "name": "YTP",
+                  "type": "outcome",
+                  "need_label": "south_ytp_ending_alt",
+                  "pos": [33, 20]
+            },
+            "csbiii_south_lego_end_first_arrow": {
+                  "type": "arrow",
+                  "direction": "se",
+                  "pos" : [33.5, 18.5]
+            },
+            "csbiii_south_lego_end_second_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [33.5, 19]
+            },
+            "csbiii_south_lego_end_third_arrow": {
+                  "type": "arrow",
+                  "direction": "ne",
+                  "pos" : [33.5, 19.5]
+            },
+            "csbiii_south_lego_end": {
+                  "name": "Lego",
+                  "type": "end",
+                  "need_label": "south_lego_ending",
+                  "pos": [34, 19]
+            },
             "csbiii_gohome_car_outcome_stand_arrow": {
                   "type": "arrow",
                   "direction": "sw",
@@ -1622,146 +1773,432 @@
             },
             "dx_train_money_stolen_outcome_arrow": {
                   "type": "arrow",
-                  "direction": "ne",
-                  "pos": [33.5, 23.5]
+                  "direction": "s",
+                  "pos": [33, 24.5]
             },
             "dx_train_money_stolen_outcome": {
                   "name": "No",
                   "type": "outcome",
                   "need_label": "train_lupin_win",
-                  "pos": [34, 23],
+                  "pos": [33, 25],
                   "dx": true
             },
             "dx_train_reward_end_arrow": {
                   "type": "arrow",
-                  "direction": "e",
-                  "pos": [34.5, 23]
+                  "direction": "s",
+                  "pos": [33, 25.5]
             },
             "dx_train_reward_end": {
                   "name": "To Frame A Criminal",
                   "type": "end",
                   "need_label": "train_home_rich_thief",
-                  "pos": [35, 23],
+                  "pos": [33, 26],
                   "dx": true
             },
             "dx_train_money_legit_outcome_arrow": {
                   "type": "arrow",
-                  "direction": "se",
-                  "pos": [33.5, 24.5]
+                  "direction": "e",
+                  "pos": [33.5, 24]
             },
             "dx_train_money_legit_outcome": {
                   "name": "Yes",
                   "type": "outcome",
                   "need_label": "train_lupin_win",
-                  "pos": [34, 25],
+                  "pos": [34, 24],
                   "dx": true
             },
             "dx_train_secret_prereq_arrow": {
                   "type": "arrow",
                   "direction": "e",
-                  "pos": [34.5, 25]
+                  "pos": [34.5, 24]
             },
             "dx_train_secret_prereq": {
                   "name": "Replay on max Bounciness!",
                   "type": "prereq",
                   "need_label": "train_check_secret",
-                  "pos": [35, 25],
+                  "pos": [35, 24],
                   "dx": true
             },
             "dx_train_tate_choice_arrow": {
                   "type": "arrow",
                   "direction": "e",
-                  "pos": [35.5, 25]
+                  "pos": [35.5, 24]
             },
             "dx_train_tate_choice": {
                   "name": "Fight Tate?",
                   "type": "choice",
                   "need_label": "train_tate_ex_encounter",
-                  "pos": [36, 25],
+                  "pos": [36, 24],
                   "dx": true
             },
-
-
-
-
+            "dx_train_tate_yes_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [36.5, 24]
+            },
             "dx_train_tate_yes_outcome": {
                   "name": "Yes",
                   "type": "outcome",
                   "need_label": "train_tate_ex_encounter",
-                  "pos": [37, 25],
+                  "pos": [37, 24],
                   "dx": true
             },
-
+            "dx_train_tate_ex_minigame_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [37.5, 24]
+            },
             "dx_train_tate_ex_minigame": {
                   "name": "VS Tate EX",
                   "type": "minigame",
                   "need_label": "rpg_tate_ex",
-                  "pos": [38, 25],
+                  "pos": [38, 24],
                   "dx": true
             },
-
-
+            "dx_train_tate_ex_win_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [38.5, 24]
+            },
             "dx_train_tate_ex_win_outcome": {
                   "name": "Win",
                   "type": "outcome",
                   "need_label": "train_tate_ex_win",
-                  "pos": [39, 25],
+                  "pos": [39, 24],
                   "dx": true
             },
-
+            "dx_train_perfect_tate_minigame_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [39.5, 24]
+            },
             "dx_train_perfect_tate_minigame": {
                   "name": "VS Perfect Tate",
                   "type": "minigame",
                   "need_label": "play_perfecttate_game",
-                  "pos": [40, 25],
+                  "pos": [40, 24],
                   "dx": true
             },
-
-            "dx_train_perfect_tate_lose_outcome": {
-                  "name": "Lose",
-                  "type": "outcome",
-                  "need_label": "train_perfect_tate_lose",
-                  "pos": [40, 26],
-                  "dx": true
+            "dx_train_perfect_tate_win_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [40.5, 24]
             },
-
             "dx_train_perfect_tate_win_outcome": {
                   "name": "Win",
                   "type": "outcome",
                   "need_label": "train_defeated_perfect_tate",
-                  "pos": [41, 25],
+                  "pos": [41, 24],
                   "dx": true
             },
-
-
+            "dx_train_rich_end_pt_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [41.5, 24]
+            },
+            "dx_train_perfect_tate_lose_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [40, 24.5]
+            },
+            "dx_train_perfect_tate_lose_outcome": {
+                  "name": "Lose",
+                  "type": "outcome",
+                  "need_label": "train_perfect_tate_lose",
+                  "pos": [40, 25],
+                  "dx": true
+            },
+            "dx_train_perfect_tate_lose_outcome_after_first_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [40, 25.5]
+            },
+            "dx_train_perfect_tate_lose_outcome_after_second_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [40, 25.75]
+            },
+            "dx_train_tate_ex_lose_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [38, 24.5]
+            },
             "dx_train_tate_ex_lose_outcome": {
                   "name": "Lose",
                   "type": "outcome",
                   "need_label": "train_tate_ex_lose",
-                  "pos": [38, 26],
+                  "pos": [38, 25],
                   "dx": true
             },
-
-
+            "dx_train_tate_ex_lose_outcome_after_first_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [38, 25.5]
+            },
+            "dx_train_tate_ex_lose_outcome_after_second_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [38, 25.75]
+            },
+            "dx_train_tate_no_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [36, 24.5]
+            },
             "dx_train_tate_no_outcome": {
                   "name": "No",
                   "type": "outcome",
                   "need_label": "train_tate_ex_encounter",
-                  "pos": [36, 26],
+                  "pos": [36, 25],
                   "dx": true
             },
-
-
+            "dx_train_tate_no_outcome_after_first_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [36, 25.5]
+            },
+            "dx_train_tate_no_outcome_after_second_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [36, 25.75]
+            },
+            "dx_train_rich_end_first_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [34, 24.5]
+            },
+            "dx_train_rich_end_second_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [34, 24.75]
+            },
+            "dx_train_rich_end_third_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [34, 25]
+            },
+            "dx_train_rich_end_fourth_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [34, 25.25]
+            },
+            "dx_train_rich_end_fifth_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [34, 25.5]
+            },
+            "dx_train_rich_end_sixth_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [34, 25.75]
+            },
+            "dx_train_rich_end_seventh_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [34, 26]
+            },
+            "dx_train_rich_end_eighth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [34.25, 26]
+            },
+            "dx_train_rich_end_ninth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [34.5, 26]
+            },
+            "dx_train_rich_end_tenth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [34.75, 26]
+            },
+            "dx_train_rich_end_eleventh_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [35, 26]
+            },
+            "dx_train_rich_end_twelfth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [35.25, 26]
+            },
+            "dx_train_rich_end_thirteenth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [35.5, 26]
+            },
+            "dx_train_rich_end_fourteenth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [35.75, 26]
+            },
+            "dx_train_rich_end_fifteenth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [36, 26]
+            },
+            "dx_train_rich_end_sixteenth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [36.25, 26]
+            },
+            "dx_train_rich_end_seventeenth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [36.5, 26]
+            },
+            "dx_train_rich_end_eighteenth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [36.75, 26]
+            },
+            "dx_train_rich_end_nineteenth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [37, 26]
+            },
+            "dx_train_rich_end_twentieth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [37.25, 26]
+            },
+            "dx_train_rich_end_twentyfirst_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [37.5, 26]
+            },
+            "dx_train_rich_end_twentysecond_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [37.75, 26]
+            },
+            "dx_train_rich_end_twentythird_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [38, 26]
+            },
+            "dx_train_rich_end_twentyfourth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [38.25, 26]
+            },
+            "dx_train_rich_end_twentyfifth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [38.5, 26]
+            },
+            "dx_train_rich_end_twentysixth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [38.75, 26]
+            },
+            "dx_train_rich_end_twentyseventh_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [39, 26]
+            },
+            "dx_train_rich_end_twentyeighth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [39.25, 26]
+            },
+            "dx_train_rich_end_twentyninth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [39.5, 26]
+            },
+            "dx_train_rich_end_thirtieth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [39.75, 26]
+            },
+            "dx_train_rich_end_thirtyfirst_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [40, 26]
+            },
+            "dx_train_rich_end_thirtysecond_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [40.25, 26]
+            },
+            "dx_train_rich_end_thirtythird_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [40.5, 26]
+            },
+            "dx_train_rich_end_thirtyfourth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [40.75, 26]
+            },
+            "dx_train_rich_end_thirtyfifth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [41, 26]
+            },
+            "dx_train_rich_end_thirtysixth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [41.25, 26]
+            },
+            "dx_train_rich_end_thirtyseventh_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [41.5, 26]
+            },
+            "dx_train_rich_end_thirtyeighth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [41.75, 26]
+            },
+            "dx_train_rich_end_thirtyninth_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos": [42, 26]
+            },
+            "dx_train_rich_end_fourtieth_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos": [42, 25.75]
+            },
+            "dx_train_rich_end_fourtyfirst_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos": [42, 25.5]
+            },
+            "dx_train_rich_end_fourtysecond_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos": [42, 25.25]
+            },
+            "dx_train_rich_end_fourtythird_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos": [42, 25]
+            },
+            "dx_train_rich_end_fourtyfourth_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos": [42, 24.75]
+            },
+            "dx_train_rich_end_fourtyfifth_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos": [42, 24.5]
+            },
+            "dx_train_rich_end_fourtysixth_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos": [42, 24.25]
+            },
             "dx_train_rich_end": {
                   "name": "Twice A Winner",
                   "type": "end",
                   "need_label": "train_home_rich_winner",
-                  "pos": [42, 25],
+                  "pos": [42, 24],
                   "dx": true
             },
-
-
-
             "dx_train_nochase_outcome_arrow": {
                   "type": "arrow",
                   "direction": "s",
