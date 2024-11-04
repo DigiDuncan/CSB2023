@@ -1014,10 +1014,10 @@ label ce_party_before:
         cs "Hmm, let go see who that is!"
         hide cs with moveoutleft
         scene cs_house_snow_night
-        show arceus flipped at mid_left
-        show kitty at left
+        show arceus dark flipped at mid_left
+        show kitty dark at left
         with dissolve
-        show cs flipped at right with moveinright
+        show cs dark flipped at right with moveinright
         arceus "Hey CS!"
         cs "Hey Arc! Hey Kitty!"
         kitty "What's up?"
@@ -1032,9 +1032,9 @@ label ce_party_before:
         cs "Hey look at that! Anno's here first!"
         hide cs with moveoutleft
         scene cs_house_snow_night
-        show anno at mid_left
+        show anno dark at mid_left
         with dissolve
-        show cs flipped at right with moveinright
+        show cs dark flipped at right with moveinright
         anno "Hey CS!"
         anno "I showed up kinda early, but I wanted to see everyone's initial reactions of our decor work!"
         cs "Well I'm glad you showed up, come inside! It's cold out."
@@ -1045,9 +1045,9 @@ label ce_party_before:
         cs "What the hell is that?"
         hide cs with moveoutleft
         scene cs_house_snow_night
-        show digi flipped at mid_left
+        show digi dark flipped at mid_left
         with dissolve
-        show cs flipped at right with moveinright
+        show cs dark flipped at right with moveinright
         digi "Hey, CS! How've you been?"
         cs "Hey, Digi! I didn't know you had a... spaceship?"
         digi "Oh yeah, this old thing. It's a bit of a nugget but it gets the job done."
@@ -1067,10 +1067,10 @@ label ce_party_before:
         cs "Holy shit, is that a train?"
         hide cs with moveoutleft
         scene cs_house_snow_night
-        show tate festive flipped at mid_left
-        show mean human flipped at left
+        show tate festive dark flipped at mid_left
+        show mean human dark flipped at left
         with dissolve
-        show cs worried flipped at right with moveinright
+        show cs worried dark flipped at right with moveinright
         cs "That's a fucking train!"
         tate "Hey CS! How've you been doin'?"
         cs "Tate? Hey! I've been great!"
@@ -1083,9 +1083,9 @@ label ce_party_before:
         cs "Look at that! Looks like Billy is here first!"
         hide cs with moveoutleft
         scene cs_house_snow_night
-        show billy at mid_left
+        show billy dark at mid_left
         with dissolve
-        show cs flipped at right with moveinright
+        show cs dark flipped at right with moveinright
         billy "Hi! It's Billy!"
         billy "Merry Christmas!"
         cs "Merry Christmas to you too, Billy!"
@@ -1101,9 +1101,9 @@ label ce_party_before:
         n "A Blackhawk helicopter is seen landing out in the middle of the street."
         hide cs with moveoutleft
         scene cs_house_snow_night
-        show obama festive at mid_left
+        show obama festive dark at mid_left
         with dissolve
-        show cs flipped at right with moveinright
+        show cs dark flipped at right with moveinright
         n "The President of the United States steps out."
         obama "Hello, CS! Nice to meet you."
         cs "Obama?! I didn't think you would actually come!"
@@ -1122,9 +1122,9 @@ label ce_party_before:
         n "CS rushes outside."
         hide cs with moveoutleft
         scene cs_house_snow_night
-        show copguy festive flipped at mid_left
+        show copguy festive dark flipped at mid_left
         with dissolve
-        show cs worried flipped at right with moveinright
+        show cs worried dark flipped at right with moveinright
         copguy "Heya, CS. Did I scare you?"
         cs "Fuck, yeah you did! I didn't think you were gonna be on duty!"
         copguy "Well someone's gotta be security, right?"
@@ -1136,9 +1136,9 @@ label ce_party_before:
         cs "Hmm, I wonder who took the bus."
         hide cs with moveoutleft
         scene cs_house_snow_night
-        show sheriff flipped at left
+        show sheriff dark flipped at left
         with dissolve
-        show cs flipped at right with moveinright
+        show cs dark flipped at right with moveinright
         sheriff "God dammit! Stupid damn wheels! Stuck in the snow!"
         cs "Woah, hey! Who are you?"
         sheriff "Who am I? I'm Copguy's boss, that's who!"
@@ -1151,11 +1151,11 @@ label ce_party_before:
         n "A beam sound can be heard from outside."
         hide cs with moveoutleft
         scene cs_house_snow_night
-        show ed flipped at center
-        show rich flipped at mid_left
-        show wesley flipped at left
+        show ed dark flipped at center
+        show rich dark flipped at mid_left
+        show wesley dark flipped at left
         with dissolve
-        show cs flipped at right with moveinright
+        show cs dark flipped at right with moveinright
         cs "Hey guys! How have you guys been doing?"
         ed "We've been doing well! Our business has been profitable recently!"
         ed "Even Wesley has made a speedy recovery! He wasn't too happy about getting that metal pipe in his back, though."
@@ -1171,14 +1171,14 @@ label ce_party_before:
         cs "Nice car! I wonder if that's Carguy..."
         hide cs with moveoutleft
         scene cs_house_snow_night
-        show k22 flipped at left
-        show k17 flipped at mid_left
+        show k22 dark flipped at left
+        show k17 dark flipped at mid_left
         with dissolve
-        show cs disappointed flipped at right with moveinright
+        show cs disappointed dark flipped at right with moveinright
         cs "Hey it's... two Pakoos?"
-        show k17 happy flipped
+        show k17 happy dark flipped
         k17 "CS!!!"
-        show k17 flipped
+        show k17 dark flipped
         k22 "Hey CS. Merry Christmas!"
         cs "Hi, so umm..."
         cs "Are you guys both Pakoo?"
@@ -1191,9 +1191,9 @@ label ce_party_before:
         cs "What in the world?"
         hide cs with moveoutleft
         scene cs_house_snow_night
-        show aria flipped at mid_left
+        show aria dark flipped at mid_left
         with dissolve
-        show cs flipped at right with moveinright
+        show cs dark flipped at right with moveinright
         cs "Oh hey! Aria, right?"
         aria "Yep, that's me!"
         aria "Goodness, am I too early?"
@@ -1207,9 +1207,9 @@ label ce_party_before:
         cs "I wonder who that could be?"
         hide cs with moveoutleft
         scene cs_house_snow_night
-        show michael at mid_left
+        show michael dark at mid_left
         with dissolve
-        show cs flipped at right with moveinright
+        show cs dark flipped at right with moveinright
         cs "Oh hey, it's Michael!"
         cs "You're still visiting the United States? I thought you were only here for the summer!"
         michael "I decided to spend a whole year over here."
@@ -1221,10 +1221,10 @@ label ce_party_before:
         cs "It looks like Linus got here first!"
         hide cs with moveoutleft
         scene cs_house_snow_night
-        show linus at mid_left
-        show luke flipped at left
+        show linus dark at mid_left
+        show luke dark flipped at left
         with dissolve
-        show cs flipped at right with moveinright
+        show cs dark flipped at right with moveinright
         linus "Hey CS! Long time no see!"
         cs "You too, and Luke as well?"
         luke "Hey man! I know we didn't talk much during your short employment, but it was fun having you around!"
@@ -1240,9 +1240,9 @@ label ce_party_before:
         cs "Oh look at that! It's Blank!"
         hide cs with moveoutleft
         scene cs_house_snow_night
-        show blank flipped at mid_left
+        show blank dark flipped at mid_left
         with dissolve
-        show cs flipped at right with moveinright
+        show cs dark flipped at right with moveinright
         blank "Hey CS, how have you been?"
         cs "I've been doing well, did you drive safe here?"
         blank "I did, but lots of people on the interstate didn't!"
@@ -1254,9 +1254,9 @@ label ce_party_before:
         cs "I wonder who that is?"
         hide cs with moveoutleft
         scene cs_house_snow_night
-        show nova flipped at mid_left
+        show nova dark flipped at mid_left
         with dissolve
-        show cs flipped at right with moveinright
+        show cs dark flipped at right with moveinright
         nova "Hey CS! Thanks for inviting me to your Christmas party!"
         cs "Yeah sure thing!"
         cs "It's been a while, how've you been?"
@@ -1269,11 +1269,11 @@ label ce_party_before:
         cs "What the fuck? Who is that?"
         hide cs with moveoutleft
         scene cs_house_snow_night
-        show elizabeth at center
-        show anne at mid_left
-        show grace at left
+        show elizabeth dark at center
+        show anne dark at mid_left
+        show grace dark at left
         with dissolve
-        show cs disappointed flipped at right with moveinright
+        show cs disappointed dark flipped at right with moveinright
         cs "Hey, uhh..."
         eliza "Is this the right place?"
         cs "I think so?"
@@ -1291,9 +1291,9 @@ label ce_party_before:
         cs "Holy crap, is that who I think it is?"
         hide cs with moveoutleft
         scene cs_house_snow_night
-        show db at mid_left
+        show db dark at mid_left
         with dissolve
-        show cs flipped at right with moveinright
+        show cs dark flipped at right with moveinright
         cs "DB! Your the first one here!"
         db "I am??"
         cs "Yes! You managed to be the earliest this time!"
@@ -1306,9 +1306,9 @@ label ce_party_before:
         cs "Who the hell is that?"
         hide cs with moveoutleft
         scene cs_house_snow_night
-        show avgn flipped at mid_left
+        show avgn dark flipped at mid_left
         with dissolve
-        show cs disappointed flipped at right with moveinright
+        show cs disappointed dark flipped at right with moveinright
         cs "Hey, are you..."
         avgn "I'm the fuckin' Nerd!"
         cs "The Angry Video Game Nerd? I didn't invite you, at least I don't think I did?"
@@ -1328,7 +1328,7 @@ label ce_party_before:
         scene cs_house_snow_night
         show iris flipped at mid_left
         with dissolve
-        show cs disappointed flipped at right with moveinright
+        show cs disappointed dark flipped at right with moveinright
         cs "Who the heck are you?"
         iris "Oh, hello."
         iris "It seems you rolled a..."
@@ -1341,7 +1341,7 @@ label ce_party_before:
         iris "Ah, that's a lot to discuss. Shall we go inside? I'm sure you're rather cold."
         cs "I..."
         n "CS gives up trying to understand, for now."
-        show cs flipped
+        show cs dark flipped
         cs "Sure."
         jump ce_intro
 
