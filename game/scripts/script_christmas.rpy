@@ -49,7 +49,7 @@ label ce_start:
     n "CS makes a phone call to each of the guests he invited two weeks ago."
     pause 0.5
 
-    scene cs_bedroom1
+    scene cs_bedroom1_ce
     show cs phone at center
     with dissolve
     pause 1.0
@@ -3572,7 +3572,7 @@ label ce_roof_moment:
     k22 "Alrighty well, see you later Billy!"
     billy "See ya!"
     n "Both parties get into their cars and drive off."
-    scene cs_bedroom1
+    scene cs_bedroom1_ce
     show cs happy at center
     with dissolve
     cs "That was such a blast!"

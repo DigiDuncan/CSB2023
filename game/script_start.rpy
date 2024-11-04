@@ -1621,6 +1621,7 @@ image billycar1 = "bg/billycar1.png"
 image billycar2 = "bg/billycar2.png"
 image billycar3 = "bg/billycar3.png"
 image cs_roof = "bg/cs_roof.png"
+image cs_bedroom1_ce = "bg/cs_bedroom1_ce.png"
 
 # CS wacky Kuwait Adventures: Mika Edition (Deluxe Content [With Funky Kong {And Dante from Devil may Cry}])
 image kuwait_lieutenant_snow = "characters/kuwait_lieutenant_snow.png"
