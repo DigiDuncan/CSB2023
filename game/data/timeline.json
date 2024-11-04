@@ -991,16 +991,113 @@
                   "pos": [24, 14],
                   "jump_to": "csbiii_choose_direction"
             },
-            "csbiii_choose_direction_arrow": {
+            "csbiii_choose_direction_first_arrow": {
                   "type": "arrow",
                   "direction": "e",
                   "pos" : [24.5, 14]
+            },
+            "csbiii_choose_direction_second_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [24.75, 14]
+            },
+            "csbiii_choose_direction_third_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [25, 14]
+            },
+            "csbiii_choose_direction_fourth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [25.25, 14]
+            },
+            "csbiii_choose_direction_fifth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [25.5, 14]
             },
             "csbiii_choose_direction": {
                   "name": "Which direction?",
                   "type": "choice",
                   "need_label": "csbiii_choose_direction",
-                  "pos": [25, 14]
+                  "pos": [26, 14]
+            },
+            "csbiii_north_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "arrow_double": true,
+                  "pos" : [26, 13.5]
+            },
+            "csbiii_north_outcome": {
+                  "name": "North",
+                  "type": "outcome",
+                  "need_achieve": "northerner",
+                  "pos": [26, 13]
+            },
+            "csbiii_west_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "nw",
+                  "arrow_double": true,
+                  "pos" : [25.5, 13.5]
+            },
+            "csbiii_west_outcome": {
+                  "name": "West",
+                  "type": "outcome",
+                  "need_achieve": "ocean_man",
+                  "pos": [25, 13]
+            },
+            "csbiii_east_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [26.5, 14]
+            },
+            "csbiii_east_outcome": {
+                  "name": "East",
+                  "type": "outcome",
+                  "need_label": "true_east",
+                  "pos": [27, 14]
+            },
+            "csbiii_east_start_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [27.5, 14]
+            },
+            "csbiii_east_start": {
+                  "name": "CSBIII Ch2: East",
+                  "type": "start",
+                  "need_label": "true_east",
+                  "pos": [28, 14],
+                  "jump_to": "true_east"
+            },
+
+
+
+
+
+
+
+            "csbiii_south_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos" : [26, 14.5]
+            },
+            "csbiii_south_outcome": {
+                  "name": "South",
+                  "type": "outcome",
+                  "need_label": "south_start",
+                  "pos": [26, 15]
+            },
+            "csbiii_south_start_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos" : [26, 15.5]
+            },
+            "csbiii_south_start": {
+                  "name": "CSBIII Ch2: South",
+                  "type": "start",
+                  "need_label": "south_start",
+                  "pos": [26, 16],
+                  "jump_to": "south_start"
             }
 
 

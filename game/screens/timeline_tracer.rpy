@@ -198,7 +198,10 @@ screen timeline_tracer():
                             "nw": 315
                         }
 
-                    $ arrow = Transform("gui/arrow_tiny.png")
+                    if "arrow_double" in timeline_map[event] and timeline_map[event]["arrow_double"] == True:
+                        $ arrow = Transform("gui/arrow_tiny_double.png")
+                    else:
+                        $ arrow = Transform("gui/arrow_tiny.png")
                     frame:
                         background None
                         xsize 150
