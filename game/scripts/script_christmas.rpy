@@ -11,7 +11,7 @@
 # Ed, Rich, Wesley
 # K-17, K-22
 # Aria
-# Micheal
+# Michael
 # Linus, Luke
 # Blank
 # Nova
@@ -791,10 +791,10 @@ label ce_before_shopping:
     cs "But I could have sworn I recognized her..."
     cs "Oh, well."
 
-    cs "I think Micheal said something about making mashed potatoes..."
+    cs "I think Michael said something about making mashed potatoes..."
     cs "Jeez, that's going to take a lot of taters."
     cs "Heh, and Tate's coming as well."
-    cs "Let's hope Micheal stays away from them with the masher!"
+    cs "Let's hope Michael stays away from them with the masher!"
     
     cs "This meal is going to take so much butter..."
     cs "Well, if there's one thing I learned about cooking from Paula Dean, is that everything's better with butter!"
@@ -964,6 +964,8 @@ label ce_aftershop:
     n "CS picks up the die."
     show cs behind cs_kitchen_fg
     cs "Hey, I got a [d20]!"
+
+    # TODO: More scene here
 
 label ce_party_before:
     scene cs_bedroom2
@@ -1492,6 +1494,7 @@ label ce_intro:
     cs "I swear to God, are you guys like, memories or some shit as well?"
     eliza "Relax, no, we are just..."
     eliza "Just think of us as them I guess yeah."
+    # TODO: This should be explained better
     cs "You guys are so complicated."
     arceus "I mean, it wasn't too hard for me to figure out, funny enough."
     show cs disappointed
@@ -1727,7 +1730,7 @@ label ce_banter:
     hide archival_5
     hide pakoo
     with moveoutright
-    k22 "Mother fucker!"
+    k22 "Motherfucker!"
     show snow3
     show snow4
     n "All of a sudden, the wind starts to pick up and snow begins to fall."
@@ -1941,8 +1944,8 @@ label ce_cooking:
     billy "That means a lot coming from you, Mr. President!"
     obama "Please, call me Barack."
     billy "The man in the suit always lurking behind you said if I do that, he'll kill me!"
-    obama "He's just teasing. Isn't that right, Jerry?"
-    n "Jerry says nothing and nods once."
+    obama "He's just teasing. Isn't that right, Luther?"
+    n "Luther says nothing and nods once."
     billy "Well then, thanks for the compliment, Barack!"
     obama "You gotta tell me the one about the cabinet full of cleaners again."
     show cs at center with moveinleft
@@ -2087,6 +2090,16 @@ label ce_dinner:
     k22 "Hey K-17, are you gonna eat your food?"
     k17 "I uhh..."
     k17 "I need to go to the bathroom..."
+
+    obama "So, Billy, any good new pitches on the table for you?"
+    billy "Well, I got in contact with Phil Swift recently, you've maybe heard of him from Flex Tape!"
+    michael "Actually, Phil's a friend of mine! He's stayed over my place plenty of times."
+    cs "I was going to invite him to the party this evening, but he's been so busy pitching Flex products. I think he's in Europe right now."
+    billy "Well, you might see him and I team up for a commercial soon, if this deal goes through!"
+    obama "How much does it cost to get you in a commerical, anywho?"
+    billy "If I told you, I'd have to kill you!"
+    n "Obama and Billy chuckle, but Luther does not."
+
     # TODO: Table Banter
     # TODO: Banter after dinner, and seguay into gift exchange
     digi "Hey CS, did K-17 ever come back from the bathroom?"
