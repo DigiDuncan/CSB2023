@@ -127,30 +127,11 @@
                   "direction": "e",
                   "pos" : [1.5, 6]
             },
-            "csbi_call_choice_first_arrow": {
+            "csbi_call_choice_arrow": {
                   "type": "arrow",
-                  "direction": "e",
-                  "pos" : [2.5, 6]
-            },
-            "csbi_call_choice_second_arrow": {
-                  "type": "arrow",
-                  "direction": "e",
-                  "pos" : [2.75, 6]
-            },
-            "csbi_call_choice_third_arrow": {
-                  "type": "arrow",
+                  "arrow_type": "hblock",
                   "direction": "e",
                   "pos" : [3, 6]
-            },
-            "csbi_call_choice_fourth_arrow": {
-                  "type": "arrow",
-                  "direction": "e",
-                  "pos" : [3.25, 6]
-            },
-            "csbi_call_choice_fifth_arrow": {
-                  "type": "arrow",
-                  "direction": "e",
-                  "pos" : [3.5, 6]
             },
             "csbi_call_choice" : {
                   "name": "Who to call?",
@@ -683,28 +664,9 @@
             },
             "csbiii_editmacro_after_first_arrow": {
                   "type": "arrow",
-                  "direction": "n",
-                  "pos" : [15, 8.5]
-            },
-            "csbiii_editmacro_after_second_arrow": {
-                  "type": "arrow",
-                  "direction": "n",
-                  "pos" : [15, 8.25]
-            },
-            "csbiii_editmacro_after_third_arrow": {
-                  "type": "arrow",
+                  "arrow_type": "vblock",
                   "direction": "n",
                   "pos" : [15, 8]
-            },
-            "csbiii_editmacro_after_fourth_arrow": {
-                  "type": "arrow",
-                  "direction": "n",
-                  "pos" : [15, 7.75]
-            },
-            "csbiii_editmacro_after_fifth_arrow": {
-                  "type": "arrow",
-                  "direction": "n",
-                  "pos" : [15, 7.5]
             },
             "csbiii_editstream_outcome_arrow": {
                   "type": "arrow",
@@ -740,32 +702,11 @@
                   "need_label": "csbiii_bad_video",
                   "pos": [16, 10]
             },
-
-
             "csbiii_editing_fired_first_arrow": {
                   "type": "arrow",
-                  "direction": "n",
-                  "pos" : [16, 9.5]
-            },
-            "csbiii_editing_fired_second_arrow": {
-                  "type": "arrow",
-                  "direction": "n",
-                  "pos" : [16, 9.25]
-            },
-            "csbiii_editing_fired_third_arrow": {
-                  "type": "arrow",
+                  "arrow_type": "vblock",
                   "direction": "n",
                   "pos" : [16, 9]
-            },
-            "csbiii_eediting_fired_fourth_arrow": {
-                  "type": "arrow",
-                  "direction": "n",
-                  "pos" : [16, 8.75]
-            },
-            "csbiii_editing_fired_fifth_arrow": {
-                  "type": "arrow",
-                  "direction": "n",
-                  "pos" : [16, 8.5]
             },
             "csbiii_editing_fired_sixth_arrow": {
                   "type": "arrow",
@@ -991,30 +932,11 @@
                   "pos": [24, 14],
                   "jump_to": "csbiii_choose_direction"
             },
-            "csbiii_choose_direction_first_arrow": {
+            "csbiii_choose_direction_arrow": {
                   "type": "arrow",
-                  "direction": "e",
-                  "pos" : [24.5, 14]
-            },
-            "csbiii_choose_direction_second_arrow": {
-                  "type": "arrow",
-                  "direction": "e",
-                  "pos" : [24.75, 14]
-            },
-            "csbiii_choose_direction_third_arrow": {
-                  "type": "arrow",
+                  "arrow_type": "hblock",
                   "direction": "e",
                   "pos" : [25, 14]
-            },
-            "csbiii_choose_direction_fourth_arrow": {
-                  "type": "arrow",
-                  "direction": "e",
-                  "pos" : [25.25, 14]
-            },
-            "csbiii_choose_direction_fifth_arrow": {
-                  "type": "arrow",
-                  "direction": "e",
-                  "pos" : [25.5, 14]
             },
             "csbiii_choose_direction": {
                   "name": "Which direction?",
@@ -1145,88 +1067,36 @@
             },
             "csbiii_airportbad_compass_first_arrow": {
                   "type": "arrow",
+                  "arrow_type": "vblock",
                   "direction": "n",
-                  "pos": [24, 18.5]
+                  "pos": [24, 18]
             },
             "csbiii_airportbad_compass_second_arrow": {
                   "type": "arrow",
+                  "arrow_type": "vblock",
                   "direction": "n",
-                  "pos": [24, 18.25]
+                  "pos": [24, 17]
             },
             "csbiii_airportbad_compass_third_arrow": {
                   "type": "arrow",
                   "direction": "n",
-                  "pos": [24, 18]
-            },
-            "csbiii_airportbad_compass_fourth_arrow": {
-                  "type": "arrow",
-                  "direction": "n",
-                  "pos": [24, 17.75]
-            },
-            "csbiii_airportbad_compass_fifth_arrow": {
-                  "type": "arrow",
-                  "direction": "n",
-                  "pos": [24, 17.5]
-            },
-            "csbiii_airportbad_compass_sixth_arrow": {
-                  "type": "arrow",
-                  "direction": "n",
-                  "pos": [24, 17.25]
-            },
-            "csbiii_airportbad_compass_seventh_arrow": {
-                  "type": "arrow",
-                  "direction": "n",
-                  "pos": [24, 17]
-            },
-            "csbiii_airportbad_compass_eighth_arrow": {
-                  "type": "arrow",
-                  "direction": "n",
-                  "pos": [24, 16.75]
-            },
-            "csbiii_airportbad_compass_ninth_arrow": {
-                  "type": "arrow",
-                  "direction": "n",
-                  "pos": [24, 16.5]
-            },
-            "csbiii_airportbad_compass_tenth_arrow": {
-                  "type": "arrow",
-                  "direction": "n",
                   "pos": [24, 16.25]
             },
-            "csbiii_airportbad_compass_eleventh_arrow": {
+            "csbiii_airportbad_compass_fourth_arrow": {
                   "type": "arrow",
                   "direction": "e",
                   "pos": [24, 16]
             },
-            "csbiii_airportbad_compass_twelfth_arrow": {
+            "csbiii_airportbad_compass_fifth_arrow": {
                   "type": "arrow",
                   "direction": "e",
                   "pos": [24.25, 16]
             },
-            "csbiii_airportbad_compass_thirtheenth_arrow": {
+            "csbiii_airportbad_compass_sixth_arrow": {
                   "type": "arrow",
-                  "direction": "e",
-                  "pos": [24.5, 16]
-            },
-            "csbiii_airportbad_compass_fourteenth_arrow": {
-                  "type": "arrow",
-                  "direction": "e",
-                  "pos": [24.75, 16]
-            },
-            "csbiii_airportbad_compass_fifteenth_arrow": {
-                  "type": "arrow",
+                  "arrow_type": "hblock",
                   "direction": "e",
                   "pos": [25, 16]
-            },
-            "csbiii_airportbad_compass_sixteenth_arrow": {
-                  "type": "arrow",
-                  "direction": "e",
-                  "pos": [25.25, 16]
-            },
-            "csbiii_airportbad_compass_seventeenth_arrow": {
-                  "type": "arrow",
-                  "direction": "e",
-                  "pos": [25.5, 16]
             },
             "csbiii_gohome_car_outcome_folded_arrow": {
                   "type": "arrow",
@@ -1333,30 +1203,11 @@
                   "need_label": "south_back_home_alt",
                   "pos": [30, 19]
             },
-            "csbiii_south_endings_first_arrow": {
+            "csbiii_south_endings_arrow": {
                   "type": "arrow",
-                  "direction": "e",
-                  "pos" : [30.5, 19]
-            },
-            "csbiii_south_endings_second_arrow": {
-                  "type": "arrow",
-                  "direction": "e",
-                  "pos" : [30.75, 19]
-            },
-            "csbiii_south_endings_third_arrow": {
-                  "type": "arrow",
+                  "arrow_type": "hblock",
                   "direction": "e",
                   "pos" : [31, 19]
-            },
-            "csbiii_south_endings_fourth_arrow": {
-                  "type": "arrow",
-                  "direction": "e",
-                  "pos" : [31.25, 19]
-            },
-            "csbiii_south_endings_fifth_arrow": {
-                  "type": "arrow",
-                  "direction": "e",
-                  "pos" : [31.5, 19]
             },
             "csbiii_south_fanbase_check": {
                   "name": "Which Fanbase?",
@@ -1447,138 +1298,67 @@
             },
             "dx_train_intro_folded_start_first_arrow": {
                   "type": "arrow",
+                  "arrow_type": "vblock",
                   "direction": "s",
-                  "pos": [25, 18.5]
+                  "pos": [25, 19]
             },
             "dx_train_intro_folded_start_second_arrow": {
                   "type": "arrow",
+                  "arrow_type": "vblock",
                   "direction": "s",
-                  "pos": [25, 18.75]
+                  "pos": [25, 20]
             },
             "dx_train_intro_folded_start_third_arrow": {
                   "type": "arrow",
                   "direction": "s",
-                  "pos": [25, 19]
-            },
-            "dx_train_intro_folded_start_fourth_arrow": {
-                  "type": "arrow",
-                  "direction": "s",
-                  "pos": [25, 19.25]
-            },
-            "dx_train_intro_folded_start_fifth_arrow": {
-                  "type": "arrow",
-                  "direction": "s",
-                  "pos": [25, 19.5]
-            },
-            "dx_train_intro_folded_start_sixth_arrow": {
-                  "type": "arrow",
-                  "direction": "s",
-                  "pos": [25, 19.75]
-            },
-            "dx_train_intro_folded_start_seventh_arrow": {
-                  "type": "arrow",
-                  "direction": "s",
-                  "pos": [25, 20]
-            },
-            "dx_train_intro_folded_start_eighth_arrow": {
-                  "type": "arrow",
-                  "direction": "s",
-                  "pos": [25, 20.25]
-            },
-            "dx_train_intro_folded_start_ninth_arrow": {
-                  "type": "arrow",
-                  "direction": "s",
-                  "pos": [25, 20.5]
-            },
-            "dx_train_intro_folded_start_tenth_arrow": {
-                  "type": "arrow",
-                  "direction": "s",
                   "pos": [25, 20.75]
             },
-            "dx_train_intro_folded_start_eleventh_arrow": {
+            "dx_train_intro_folded_start_fourth_arrow": {
                   "type": "arrow",
                   "direction": "e",
                   "pos": [25, 21]
             },
-            "dx_train_intro_folded_start_twelth_arrow": {
+            "dx_train_intro_folded_start_fifth_arrow": {
                   "type": "arrow",
                   "direction": "e",
                   "pos": [25.25, 21]
             },
-            "dx_train_intro_folded_start_thirteenth_arrow": {
+            "dx_train_intro_folded_start_sixth_arrow": {
                   "type": "arrow",
                   "direction": "e",
                   "pos": [25.5, 21]
             },
             "dx_train_intro_stand_start_first_arrow": {
                   "type": "arrow",
+                  "arrow_type": "vblock",
                   "direction": "s",
-                  "pos": [27, 18.5]
+                  "pos": [27, 19]
             },
             "dx_train_intro_stand_start_second_arrow": {
                   "type": "arrow",
+                  "arrow_type": "vblock",
                   "direction": "s",
-                  "pos": [27, 18.75]
+                  "pos": [27, 20]
             },
             "dx_train_intro_stand_start_third_arrow": {
                   "type": "arrow",
                   "direction": "s",
-                  "pos": [27, 19]
-            },
-            "dx_train_intro_stand_start_fourth_arrow": {
-                  "type": "arrow",
-                  "direction": "s",
-                  "pos": [27, 19.25]
-            },
-            "dx_train_intro_stand_start_fifth_arrow": {
-                  "type": "arrow",
-                  "direction": "s",
-                  "pos": [27, 19.5]
-            },
-            "dx_train_intro_stand_start_sixth_arrow": {
-                  "type": "arrow",
-                  "direction": "s",
-                  "pos": [27, 19.75]
-            },
-            "dx_train_intro_stand_start_seventh_arrow": {
-                  "type": "arrow",
-                  "direction": "s",
-                  "pos": [27, 20]
-            },
-            "dx_train_intro_stand_start_eighth_arrow": {
-                  "type": "arrow",
-                  "direction": "s",
-                  "pos": [27, 20.25]
-            },
-            "dx_train_intro_stand_start_ninth_arrow": {
-                  "type": "arrow",
-                  "direction": "s",
-                  "pos": [27, 20.5]
-            },
-            "dx_train_intro_stand_start_tenth_arrow": {
-                  "type": "arrow",
-                  "direction": "s",
                   "pos": [27, 20.75]
             },
-            "dx_train_intro_stand_start_eleventh_arrow": {
+            "dx_train_intro_stand_start_fourth_arrow": {
                   "type": "arrow",
                   "direction": "w",
                   "pos": [27, 21]
             },
-            "dx_train_intro_stand_start_twelth_arrow": {
+            "dx_train_intro_stand_start_fifth_arrow": {
                   "type": "arrow",
                   "direction": "w",
                   "pos": [26.75, 21]
             },
-            "dx_train_intro_stand_start_thirteenth_arrow": {
+            "dx_train_intro_stand_start_sixth_arrow": {
                   "type": "arrow",
                   "direction": "w",
                   "pos": [26.5, 21]
-            },
-            "dx_train_intro_stand_start_fourteenth_arrow": {
-                  "type": "arrow",
-                  "direction": "w",
-                  "pos": [26.25, 21]
             },
             "dx_train_intro_start": {
                   "name": "Train",
@@ -1654,30 +1434,11 @@
                   "pos": [26, 24],
                   "dx": true
             },
-            "dx_train_museum_no_after_first_arrow": {
+            "dx_train_museum_no_after_arrow": {
                   "type": "arrow",
-                  "direction": "e",
-                  "pos": [26.5, 24]
-            },
-            "dx_train_museum_no_after_second_arrow": {
-                  "type": "arrow",
-                  "direction": "e",
-                  "pos": [26.75, 24]
-            },
-            "dx_train_museum_no_after_third_arrow": {
-                  "type": "arrow",
+                  "arrow_type": "hblock",
                   "direction": "e",
                   "pos": [27, 24]
-            },
-            "dx_train_museum_no_after_fourth_arrow": {
-                  "type": "arrow",
-                  "direction": "e",
-                  "pos": [27.25, 24]
-            },
-            "dx_train_museum_no_after_fifth_arrow": {
-                  "type": "arrow",
-                  "direction": "e",
-                  "pos": [27.5, 24]
             },
             "dx_train_boarding_outcome": {
                   "name": "Get on train",
@@ -1964,234 +1725,91 @@
             },
             "dx_train_rich_end_first_arrow": {
                   "type": "arrow",
+                  "arrow_type": "vblock",
                   "direction": "s",
-                  "pos": [34, 24.5]
+                  "pos": [34, 25]
             },
             "dx_train_rich_end_second_arrow": {
                   "type": "arrow",
                   "direction": "s",
-                  "pos": [34, 24.75]
-            },
-            "dx_train_rich_end_third_arrow": {
-                  "type": "arrow",
-                  "direction": "s",
-                  "pos": [34, 25]
-            },
-            "dx_train_rich_end_fourth_arrow": {
-                  "type": "arrow",
-                  "direction": "s",
-                  "pos": [34, 25.25]
-            },
-            "dx_train_rich_end_fifth_arrow": {
-                  "type": "arrow",
-                  "direction": "s",
-                  "pos": [34, 25.5]
-            },
-            "dx_train_rich_end_sixth_arrow": {
-                  "type": "arrow",
-                  "direction": "s",
                   "pos": [34, 25.75]
             },
-            "dx_train_rich_end_seventh_arrow": {
+            "dx_train_rich_end_third_arrow": {
                   "type": "arrow",
                   "direction": "e",
                   "pos": [34, 26]
             },
-            "dx_train_rich_end_eighth_arrow": {
+            "dx_train_rich_end_fourth_arrow": {
                   "type": "arrow",
                   "direction": "e",
                   "pos": [34.25, 26]
             },
+            "dx_train_rich_end_fifth_arrow": {
+                  "type": "arrow",
+                  "arrow_type": "hblock",
+                  "direction": "e",
+                  "pos": [35, 26]
+            },
+            "dx_train_rich_end_sixth_arrow": {
+                  "type": "arrow",
+                  "arrow_type": "hblock",
+                  "direction": "e",
+                  "pos": [36, 26]
+            },
+            "dx_train_rich_end_seventh_arrow": {
+                  "type": "arrow",
+                  "arrow_type": "hblock",
+                  "direction": "e",
+                  "pos": [37, 26]
+            },
+            "dx_train_rich_end_eighth_arrow": {
+                  "type": "arrow",
+                  "arrow_type": "hblock",
+                  "direction": "e",
+                  "pos": [38, 26]
+            },
             "dx_train_rich_end_ninth_arrow": {
                   "type": "arrow",
+                  "arrow_type": "hblock",
                   "direction": "e",
-                  "pos": [34.5, 26]
+                  "pos": [39, 26]
             },
             "dx_train_rich_end_tenth_arrow": {
                   "type": "arrow",
+                  "arrow_type": "hblock",
                   "direction": "e",
-                  "pos": [34.75, 26]
+                  "pos": [40, 26]
             },
             "dx_train_rich_end_eleventh_arrow": {
                   "type": "arrow",
+                  "arrow_type": "hblock",
                   "direction": "e",
-                  "pos": [35, 26]
+                  "pos": [41, 26]
             },
             "dx_train_rich_end_twelfth_arrow": {
                   "type": "arrow",
                   "direction": "e",
-                  "pos": [35.25, 26]
+                  "pos": [41.75, 26]
             },
             "dx_train_rich_end_thirteenth_arrow": {
                   "type": "arrow",
                   "direction": "e",
-                  "pos": [35.5, 26]
-            },
-            "dx_train_rich_end_fourteenth_arrow": {
-                  "type": "arrow",
-                  "direction": "e",
-                  "pos": [35.75, 26]
-            },
-            "dx_train_rich_end_fifteenth_arrow": {
-                  "type": "arrow",
-                  "direction": "e",
-                  "pos": [36, 26]
-            },
-            "dx_train_rich_end_sixteenth_arrow": {
-                  "type": "arrow",
-                  "direction": "e",
-                  "pos": [36.25, 26]
-            },
-            "dx_train_rich_end_seventeenth_arrow": {
-                  "type": "arrow",
-                  "direction": "e",
-                  "pos": [36.5, 26]
-            },
-            "dx_train_rich_end_eighteenth_arrow": {
-                  "type": "arrow",
-                  "direction": "e",
-                  "pos": [36.75, 26]
-            },
-            "dx_train_rich_end_nineteenth_arrow": {
-                  "type": "arrow",
-                  "direction": "e",
-                  "pos": [37, 26]
-            },
-            "dx_train_rich_end_twentieth_arrow": {
-                  "type": "arrow",
-                  "direction": "e",
-                  "pos": [37.25, 26]
-            },
-            "dx_train_rich_end_twentyfirst_arrow": {
-                  "type": "arrow",
-                  "direction": "e",
-                  "pos": [37.5, 26]
-            },
-            "dx_train_rich_end_twentysecond_arrow": {
-                  "type": "arrow",
-                  "direction": "e",
-                  "pos": [37.75, 26]
-            },
-            "dx_train_rich_end_twentythird_arrow": {
-                  "type": "arrow",
-                  "direction": "e",
-                  "pos": [38, 26]
-            },
-            "dx_train_rich_end_twentyfourth_arrow": {
-                  "type": "arrow",
-                  "direction": "e",
-                  "pos": [38.25, 26]
-            },
-            "dx_train_rich_end_twentyfifth_arrow": {
-                  "type": "arrow",
-                  "direction": "e",
-                  "pos": [38.5, 26]
-            },
-            "dx_train_rich_end_twentysixth_arrow": {
-                  "type": "arrow",
-                  "direction": "e",
-                  "pos": [38.75, 26]
-            },
-            "dx_train_rich_end_twentyseventh_arrow": {
-                  "type": "arrow",
-                  "direction": "e",
-                  "pos": [39, 26]
-            },
-            "dx_train_rich_end_twentyeighth_arrow": {
-                  "type": "arrow",
-                  "direction": "e",
-                  "pos": [39.25, 26]
-            },
-            "dx_train_rich_end_twentyninth_arrow": {
-                  "type": "arrow",
-                  "direction": "e",
-                  "pos": [39.5, 26]
-            },
-            "dx_train_rich_end_thirtieth_arrow": {
-                  "type": "arrow",
-                  "direction": "e",
-                  "pos": [39.75, 26]
-            },
-            "dx_train_rich_end_thirtyfirst_arrow": {
-                  "type": "arrow",
-                  "direction": "e",
-                  "pos": [40, 26]
-            },
-            "dx_train_rich_end_thirtysecond_arrow": {
-                  "type": "arrow",
-                  "direction": "e",
-                  "pos": [40.25, 26]
-            },
-            "dx_train_rich_end_thirtythird_arrow": {
-                  "type": "arrow",
-                  "direction": "e",
-                  "pos": [40.5, 26]
-            },
-            "dx_train_rich_end_thirtyfourth_arrow": {
-                  "type": "arrow",
-                  "direction": "e",
-                  "pos": [40.75, 26]
-            },
-            "dx_train_rich_end_thirtyfifth_arrow": {
-                  "type": "arrow",
-                  "direction": "e",
-                  "pos": [41, 26]
-            },
-            "dx_train_rich_end_thirtysixth_arrow": {
-                  "type": "arrow",
-                  "direction": "e",
-                  "pos": [41.25, 26]
-            },
-            "dx_train_rich_end_thirtyseventh_arrow": {
-                  "type": "arrow",
-                  "direction": "e",
-                  "pos": [41.5, 26]
-            },
-            "dx_train_rich_end_thirtyeighth_arrow": {
-                  "type": "arrow",
-                  "direction": "e",
-                  "pos": [41.75, 26]
-            },
-            "dx_train_rich_end_thirtyninth_arrow": {
-                  "type": "arrow",
-                  "direction": "n",
                   "pos": [42, 26]
             },
-            "dx_train_rich_end_fourtieth_arrow": {
+            "dx_train_rich_end_fourteenth_arrow": {
                   "type": "arrow",
                   "direction": "n",
                   "pos": [42, 25.75]
             },
-            "dx_train_rich_end_fourtyfirst_arrow": {
+            "dx_train_rich_end_fifteenth_arrow": {
                   "type": "arrow",
-                  "direction": "n",
-                  "pos": [42, 25.5]
-            },
-            "dx_train_rich_end_fourtysecond_arrow": {
-                  "type": "arrow",
-                  "direction": "n",
-                  "pos": [42, 25.25]
-            },
-            "dx_train_rich_end_fourtythird_arrow": {
-                  "type": "arrow",
+                  "arrow_type": "vblock",
                   "direction": "n",
                   "pos": [42, 25]
             },
-            "dx_train_rich_end_fourtyfourth_arrow": {
-                  "type": "arrow",
-                  "direction": "n",
-                  "pos": [42, 24.75]
-            },
-            "dx_train_rich_end_fourtyfifth_arrow": {
-                  "type": "arrow",
-                  "direction": "n",
-                  "pos": [42, 24.5]
-            },
-            "dx_train_rich_end_fourtysixth_arrow": {
-                  "type": "arrow",
-                  "direction": "n",
-                  "pos": [42, 24.25]
-            },
+
+
+
             "dx_train_rich_end": {
                   "name": "Twice A Winner",
                   "type": "end",

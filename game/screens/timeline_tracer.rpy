@@ -198,10 +198,15 @@ screen timeline_tracer():
                             "nw": 315
                         }
 
-                    if "arrow_double" in timeline_map[event] and timeline_map[event]["arrow_double"] == True:
-                        $ arrow = Transform("gui/arrow_tiny_double.png")
+                    if "arrow_type" in timeline_map[event]:
+                        if timeline_map[event]["arrow_type"] == "double":
+                            $ arrow = Transform("gui/timeline/arrow_double.png")
+                        elif timeline_map[event]["arrow_type"] == "hblock":
+                            $ arrow = Transform("gui/timeline/arrow_hblock.png")
+                        elif timeline_map[event]["arrow_type"] == "vblock":
+                            $ arrow = Transform("gui/timeline/arrow_vblock.png")
                     else:
-                        $ arrow = Transform("gui/arrow_tiny.png")
+                        $ arrow = Transform("gui/timeline/arrow_single.png")
                     frame:
                         background None
                         xsize 150
