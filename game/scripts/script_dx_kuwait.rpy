@@ -378,7 +378,25 @@ label kuwait_interior:
                 anne "Do you want anything to drink?"
                 menu:
                     "See shop inventory":
-                        anne "Sorry, we don't have anything yet."
+                        anne "Well, embarrasingly we don't..."
+                        grace "We barely have anything!"
+                        anne "Yeah, if you could find things on Kuwait for us it would be quite nice!"
+                        grace "Well, we still have some stuff!"
+                        anne "What do you want?"
+                        menu:
+                            "Rum and Coke"
+                                cs "I'll have a Rum and Coke please!"
+                                anne "Sure, we can do that."
+                                grace "Is Pepsi okay?"
+                                n "CS Thinks about it for a moment."
+                                cs "Sure, it should be fine."
+                                n "CS waits for his drink to be made while glancing around the bar."
+                                grace "And... done! Enjoy!"
+                                cs "Thanks!"
+                                n "CS drinks part of it and notices it doesn't feel like alcohol."
+                                cs "This doesn't taste like alcohol... at all"
+                                grace "Yup, we don't have any! It's just Pepsi and Coke!"
+                                anne "I'm sorry!"
                         jump kuwait_interior
                     "Talk about world travels":
                         cs "I've travelled this whole world of ours from Cali to Moomin Valley"
