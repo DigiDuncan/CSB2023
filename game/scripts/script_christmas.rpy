@@ -2100,8 +2100,24 @@ label ce_dinner:
     billy "If I told you, I'd have to kill you!"
     n "Obama and Billy chuckle, but Luther does not."
 
+    arceus "How's the foundation repair business, HoH SiS?"
+    ed "It's been pretty good, since we got all those contracts after our run-in."
+    cs "Heh, I'm still sorry about all that..."
+    wesley "My back is sorry about it, too."
+    rich "Oh can it, ding-dong, you got surgery, didn't cha?"
+    wesley "Having a metal pole in your back isn't ideal, numbnuts."
+    mean "I mean, metal is {i}stronger{/i} than bones, so it's kinda like an upgrade!"
+    wesley "Tell that to the TSA."
+    arceus "I don't tell anything to the TSA."
+    cs "Well, again, I hope I've been able to make it up to you guys, mostly."
+    ed "You've more than made it up to us, CS."
+    rich "Yeah, you helped propel our business to new heights! Or, I guess, new foundations."
+    wesley "Mmm."
+
     # TODO: Table Banter
+
     # TODO: Banter after dinner, and seguay into gift exchange
+
     digi "Hey CS, did K-17 ever come back from the bathroom?"
     cs "Huh?"
     cs "Oh yeah, is that where they ran off to?"
