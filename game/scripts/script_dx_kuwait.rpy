@@ -384,7 +384,7 @@ label kuwait_interior:
                         grace "Well, we still have some stuff!"
                         anne "What do you want?"
                         menu:
-                            "Rum and Coke"
+                            "Rum and Coke":
                                 cs "I'll have a Rum and Coke please!"
                                 anne "Sure, we can do that."
                                 grace "Is Pepsi okay?"
