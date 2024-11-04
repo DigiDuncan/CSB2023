@@ -385,31 +385,39 @@ label ce_anno:
     # TODO: shovel sounds
     show shovel at manual_pos(0.4, 0.9, 0.5) with move:
         rotate 15
+    pause 0.5
     show shovel at manual_pos(0.5, 0.7, 0.5) with move:
         linear 0.5 rotate 110
+    pause 0.5
     # TODO: need a pile of snow to move
     show cs disappointed at center
     show shovel at manual_pos(0.5, 0.7, 0.5):
         rotate -110
+    pause 0.5
     show cs disappointed at right
     show shovel at manual_pos(0.9, 0.7, 0.5)
     with move
+    pause 0.5
     show shovel at manual_pos(0.9, 0.8, 0.5):
         linear 0.5 rotate -15
+    pause 1.0
 
     # SECOND
     show cs disappointed flipped at right
     show shovel at manual_pos(0.9, 0.7, 0.5):
         rotate 15
     with move
+    pause 0.5
     show cs disappointed flipped at mid_right
     show shovel at manual_pos(0.7, 0.7, 0.5)
     with move
     # TODO: shovel sounds
     show shovel at manual_pos(0.6, 0.9, 0.5) with move:
         rotate 15
+    pause 0.5
     show shovel at manual_pos(0.6, 0.7, 0.5) with move:
         linear 0.5 rotate 110
+    pause 0.5
     # TODO: need a pile of snow to move
     show cs disappointed at mid_right
     show shovel at manual_pos(0.8, 0.7, 0.5):
@@ -417,20 +425,24 @@ label ce_anno:
     show cs disappointed at right
     show shovel at manual_pos(0.9, 0.7, 0.5)
     with move
+    pause 0.5
     show shovel at manual_pos(0.9, 0.9, 0.5):
         linear 0.5 rotate -15
+    pause 1.0
 
     # THIRD
     show cs disappointed flipped at mid_left
     show shovel at manual_pos(0.3, 0.7, 0.5):
         rotate 15
     with move
-
+    pause 0.5
     # TODO: shovel sounds
     show shovel at manual_pos(0.1, 0.9, 0.5) with move:
         rotate 15
+    pause 0.5
     show shovel at manual_pos(0.2, 0.7, 0.5) with move:
         linear 0.5 rotate 110
+    pause 0.5
     # TODO: need a pile of snow to move
     show cs disappointed at mid_left
     show shovel at manual_pos(0.5, 0.7, 0.5):
@@ -438,20 +450,25 @@ label ce_anno:
     show cs disappointed at right
     show shovel at manual_pos(0.9, 0.7, 0.5)
     with move
+    pause 0.5
     show shovel at manual_pos(0.9, 0.8, 0.5):
         linear 0.5 rotate -15
+    pause 1.0
 
     # TODO: sfx snow crunchy footsteps
     n "About ten minutes into shoveling, CS hears someone walking up his driveway."
 
     show carguy flipped at left with moveinleft
-    # TODO: sfx can someone sentence mix "nice snow!" "noooot so nice driveway" ?
-    carguy "Nice snow!"
-    carguy "Nooot so nice driveway."
+    
+    play sound sfx_nice_snow
+    carguy_nobeep "Nice snow!"
+    play sound sfx_not_so_nice_driveway
+    carguy_nobeep "Nooot so nice driveway."
     show cs disappointed flipped
     show shovel at manual_pos(0.9, 0.7, 0.5):
         rotate 15
-    cs "Look, man, I'm trying. It's cold as balls out here."
+    cs "Look, man, I'm trying."
+    cs "It's cold as balls out here."
     carguy "Speaking of balls, you need some help?"
     carguy "I've got something that'll do the trick!"
     carguy "Crotch Doctor, with advanced \"Scratch My Balls\" technology, not only removes taint scrapes, scuffs, grapes, and other blemishes from your car, it {i}also{/i} instantly melts snow!"
