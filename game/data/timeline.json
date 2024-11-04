@@ -610,25 +610,199 @@
                   "direction": "e",
                   "pos": [16.5, 4]
             },
+            "country_other_first_arrow": {
+                  "type": "arrow",
+                  "arrow_type": "hblock",
+                  "direction": "e",
+                  "pos": [17, 4]
+            },
+            "country_other_second_arrow": {
+                  "type": "arrow",
+                  "arrow_type": "hblock",
+                  "direction": "e",
+                  "pos": [18, 4]
+            },
+            "country_other_third_arrow": {
+                  "type": "arrow",
+                  "arrow_type": "hblock",
+                  "direction": "e",
+                  "pos": [19, 4]
+            },
             "country_other_outcome": {
                   "name": "Other",
                   "type": "outcome",
                   "need_label": "country_airport_choose",
-                  "pos": [17, 4]
+                  "pos": [20, 4]
             },
-
-
-
-
-            "PLS_DO_COUNTRY_ROUTE_FOR_ME_AND_DELETE_THIS": {
-                  "name": "i dont wanna do country myself pls help\n----->",
-                  "type": "HELP",
-                  "pos": [3, 2]
+            "country_japan_start_first_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos": [20, 3.5]
             },
-
-
-
-
+            "country_japan_start_second_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos": [20, 3.25]
+            },
+            "country_japan_start_third_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [20, 3]
+            },
+            "country_japan_start_fourth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [20.25, 3]
+            },
+            "country_japan_start_fifth_arrow": {
+                  "type": "arrow",
+                  "arrow_type": "hblock",
+                  "direction": "e",
+                  "pos": [21, 3]
+            },
+            "country_sweden_start_first_arrow": {
+                  "type": "arrow",
+                  "arrow_type": "hblock",
+                  "direction": "e",
+                  "pos": [21, 4]
+            },
+            "country_sweden_start_second_arrow": {
+                  "type": "arrow",
+                  "arrow_type": "hblock",
+                  "direction": "e",
+                  "pos": [22, 4]
+            },
+            "country_england_start_first_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [20, 4.5]
+            },
+            "country_england_start_second_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [20, 4.75]
+            },
+            "country_england_start_third_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [20, 5]
+            },
+            "country_england_start_fourth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [20.25, 5]
+            },
+            "country_england_start_fifth_arrow": {
+                  "type": "arrow",
+                  "arrow_type": "hblock",
+                  "direction": "e",
+                  "pos": [21, 5]
+            },
+            "country_japan": {
+                  "name": "Japan",
+                  "type": "outcome",
+                  "need_label": "japan_menu",
+                  "pos": [22, 3]
+            },
+            "country_england": {
+                  "name": "England",
+                  "type": "outcome",
+                  "need_label": "england_menu",
+                  "pos": [22, 5]
+            },
+            "country_sweden": {
+                  "name": "Sweden",
+                  "type": "outcome",
+                  "need_label": "sweden_menu",
+                  "pos": [23, 4]
+            },
+            "country_engtoswe_arrow": {
+                  "type": "arrow",
+                  "arrow_type": "double",
+                  "direction": "ne",
+                  "pos": [22.5, 4.5]
+            },
+            "country_jpntoswe_arrow": {
+                  "type": "arrow",
+                  "arrow_type": "double",
+                  "direction": "nw",
+                  "pos": [22.5, 3.5]
+            },
+            "country_jpntoeng_arrow": {
+                  "type": "arrow",
+                  "arrow_type": "vblock",
+                  "direction": "s",
+                  "pos": [22.25, 4]
+            },
+            "country_endtojpn_arrow": {
+                  "type": "arrow",
+                  "arrow_type": "vblock",
+                  "direction": "n",
+                  "pos": [21.75, 4]
+            },
+            "country_jpn_done_first_arrow": {
+                  "type": "arrow",
+                  "arrow_type": "hblock",
+                  "direction": "e",
+                  "pos": [23, 3]
+            },
+            "country_jpn_done_second_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [23.75, 3]
+            },
+            "country_jpn_done_third_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [24, 3]
+            },
+            "country_jpn_done_fourth_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [24, 3.25]
+            },
+            "country_jpn_done_fifth_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [24, 3.5]
+            },
+            "country_swe_done_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [23.5, 4]
+            },
+            "country_eng_done_first_arrow": {
+                  "type": "arrow",
+                  "arrow_type": "hblock",
+                  "direction": "e",
+                  "pos": [23, 5]
+            },
+            "country_eng_done_second_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [23.75, 5]
+            },
+            "country_eng_done_third_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos": [24, 5]
+            },
+            "country_eng_done_fourth_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos": [24, 4.75]
+            },
+            "country_eng_done_fifth_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos": [24, 4.5]
+            },
+            "country_end": {
+                  "name": "Globetrotter",
+                  "type": "end",
+                  "need_label": "country_going_home",
+                  "pos": [24, 4]
+            },
             "csbiii_editing_outcome_arrow": {
                   "type": "arrow",
                   "direction": "se",
@@ -1793,7 +1967,7 @@
             },
             "dx_train_rich_end_thirteenth_arrow": {
                   "type": "arrow",
-                  "direction": "e",
+                  "direction": "n",
                   "pos": [42, 26]
             },
             "dx_train_rich_end_fourteenth_arrow": {
@@ -1807,9 +1981,6 @@
                   "direction": "n",
                   "pos": [42, 25]
             },
-
-
-
             "dx_train_rich_end": {
                   "name": "Twice A Winner",
                   "type": "end",
@@ -1841,7 +2012,5 @@
                   "pos": [29, 26],
                   "dx": true
             }
-
-
       }
 }
