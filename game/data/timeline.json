@@ -15,7 +15,7 @@
             "csbi_error_first_prereq" : {
                   "name": "100% the game first!",
                   "type": "prereq",
-                  "need_label": "csbi_start",
+                  "need_achieve": "csbiii",
                   "pos" : [0, 5]
             },
             "csbi_error_second_prereq_arrow": {
@@ -24,7 +24,7 @@
                   "pos" : [0, 4.5]
             },
             "csbi_error_second_prereq" : {
-                  "name": "Keep your cool.",
+                  "name": "Turn that nonsense off.",
                   "type": "prereq",
                   "need_achieve": "fin",
                   "pos" : [0, 4]
@@ -412,7 +412,7 @@
                   "pos" : [18.5, 6]
             },
             "rockstar_ii_start": {
-                  "name": "Rockstar II",
+                  "name": "DX: Rockstar II",
                   "type": "start",
                   "need_achieve": "UNFINISHED",
                   "pos": [19, 6],
@@ -618,7 +618,7 @@
                   "pos": [16, 2.5]
             },
             "kuwait_start": {
-                  "name": "Kuwait",
+                  "name": "DX: Kuwait",
                   "type": "start",
                   "need_label": "UNFINISHED",
                   "pos": [16, 2],
@@ -1098,8 +1098,694 @@
                   "need_label": "south_start",
                   "pos": [26, 16],
                   "jump_to": "south_start"
-            }
+            },
+            "csbiii_casino_choice_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos" : [26, 16.5]
+            },
+            "csbiii_casino_choice": {
+                  "name": "Do what at the casino?",
+                  "type": "choice",
+                  "need_label": "south_poker",
+                  "pos": [26, 17]
+            },
+            "csbiii_casino_fold_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "w",
+                  "pos" : [25.5, 17]
+            },
+            "csbiii_casino_fold_outcome": {
+                  "name": "Fold",
+                  "type": "outcome",
+                  "need_label": "south_folded",
+                  "pos": [25, 17]
+            },
+            "csbiii_casino_fold_home_choice_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [25, 17.5]
+            },
+            "csbiii_casino_fold_home_choice": {
+                  "name": "How to get home?",
+                  "type": "choice",
+                  "need_label": "south_folded",
+                  "pos": [25, 18]
+            },
+            "csbiii_fold_gohome_plane_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "sw",
+                  "pos": [24.5, 18.5]
+            },
+            "csbiii_fold_gohome_plane_outcome": {
+                  "name": "Plane",
+                  "type": "outcome",
+                  "need_label": "south_airport_bad",
+                  "pos": [24, 19]
+            },
+            "csbiii_airportbad_compass_first_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos": [24, 18.5]
+            },
+            "csbiii_airportbad_compass_second_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos": [24, 18.25]
+            },
+            "csbiii_airportbad_compass_third_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos": [24, 18]
+            },
+            "csbiii_airportbad_compass_fourth_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos": [24, 17.75]
+            },
+            "csbiii_airportbad_compass_fifth_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos": [24, 17.5]
+            },
+            "csbiii_airportbad_compass_sixth_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos": [24, 17.25]
+            },
+            "csbiii_airportbad_compass_seventh_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos": [24, 17]
+            },
+            "csbiii_airportbad_compass_eighth_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos": [24, 16.75]
+            },
+            "csbiii_airportbad_compass_ninth_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos": [24, 16.5]
+            },
+            "csbiii_airportbad_compass_tenth_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos": [24, 16.25]
+            },
+            "csbiii_airportbad_compass_eleventh_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [24, 16]
+            },
+            "csbiii_airportbad_compass_twelfth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [24.25, 16]
+            },
+            "csbiii_airportbad_compass_thirtheenth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [24.5, 16]
+            },
+            "csbiii_airportbad_compass_fourteenth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [24.75, 16]
+            },
+            "csbiii_airportbad_compass_fifteenth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [25, 16]
+            },
+            "csbiii_airportbad_compass_sixteenth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [25.25, 16]
+            },
+            "csbiii_airportbad_compass_seventeenth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [25.5, 16]
+            },
+            "csbiii_gohome_car_outcome_folded_arrow": {
+                  "type": "arrow",
+                  "direction": "se",
+                  "pos": [25.5, 18.5]
+            },
+            "csbiii_casino_stand_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [26.5, 17]
+            },
+            "csbiii_casino_stand_outcome": {
+                  "name": "Stand",
+                  "type": "outcome",
+                  "need_label": "south_poker3",
+                  "pos": [27, 17]
+            },
+            "csbiii_casino_stand_home_choice_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [27, 17.5]
+            },
+            "csbiii_casino_stand_home_choice": {
+                  "name": "How to get home?",
+                  "type": "choice",
+                  "need_label": "south_poker3",
+                  "pos": [27, 18]
+            },
+            "csbiii_stand_gohome_plane_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "se",
+                  "pos": [27.5, 18.5]
+            },
+            "csbiii_stand_gohome_plane_outcome": {
+                  "name": "Plane",
+                  "type": "outcome",
+                  "need_achieve": "poker",
+                  "need_label": "south_airport",
+                  "pos": [28, 19]
+            },
+            "csbiii_gohome_car_outcome_stand_arrow": {
+                  "type": "arrow",
+                  "direction": "sw",
+                  "pos": [26.5, 18.5]
+            },
+            "csbiii_gohome_car_outcome": {
+                  "name": "Car",
+                  "type": "outcome",
+                  "need_label": "south_noairport",
+                  "pos": [26, 19]
+            },
+            "csbiii_gohome_car_badend_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos": [26, 18.5]
+            },
+            "csbiii_gohome_car_badend": {
+                  "name": "Broken Masquerade",
+                  "type": "badend",
+                  "need_achieve": "fourth_wall",
+                  "pos": [26, 18]
+            },
+            "csbiii_gohome_car_backtovegas_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos": [26, 17.5]
+            },
+            "dx_train_intro_folded_start_first_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [25, 18.5]
+            },
+            "dx_train_intro_folded_start_second_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [25, 18.75]
+            },
+            "dx_train_intro_folded_start_third_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [25, 19]
+            },
+            "dx_train_intro_folded_start_fourth_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [25, 19.25]
+            },
+            "dx_train_intro_folded_start_fifth_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [25, 19.5]
+            },
+            "dx_train_intro_folded_start_sixth_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [25, 19.75]
+            },
+            "dx_train_intro_folded_start_seventh_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [25, 20]
+            },
+            "dx_train_intro_folded_start_eighth_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [25, 20.25]
+            },
+            "dx_train_intro_folded_start_ninth_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [25, 20.5]
+            },
+            "dx_train_intro_folded_start_tenth_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [25, 20.75]
+            },
+            "dx_train_intro_folded_start_eleventh_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [25, 21]
+            },
+            "dx_train_intro_folded_start_twelth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [25.25, 21]
+            },
+            "dx_train_intro_folded_start_thirteenth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [25.5, 21]
+            },
+            "dx_train_intro_stand_start_first_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [27, 18.5]
+            },
+            "dx_train_intro_stand_start_second_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [27, 18.75]
+            },
+            "dx_train_intro_stand_start_third_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [27, 19]
+            },
+            "dx_train_intro_stand_start_fourth_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [27, 19.25]
+            },
+            "dx_train_intro_stand_start_fifth_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [27, 19.5]
+            },
+            "dx_train_intro_stand_start_sixth_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [27, 19.75]
+            },
+            "dx_train_intro_stand_start_seventh_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [27, 20]
+            },
+            "dx_train_intro_stand_start_eighth_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [27, 20.25]
+            },
+            "dx_train_intro_stand_start_ninth_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [27, 20.5]
+            },
+            "dx_train_intro_stand_start_tenth_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [27, 20.75]
+            },
+            "dx_train_intro_stand_start_eleventh_arrow": {
+                  "type": "arrow",
+                  "direction": "w",
+                  "pos": [27, 21]
+            },
+            "dx_train_intro_stand_start_twelth_arrow": {
+                  "type": "arrow",
+                  "direction": "w",
+                  "pos": [26.75, 21]
+            },
+            "dx_train_intro_stand_start_thirteenth_arrow": {
+                  "type": "arrow",
+                  "direction": "w",
+                  "pos": [26.5, 21]
+            },
+            "dx_train_intro_stand_start_fourteenth_arrow": {
+                  "type": "arrow",
+                  "direction": "w",
+                  "pos": [26.25, 21]
+            },
+            "dx_train_intro_start": {
+                  "name": "Train",
+                  "type": "outcome",
+                  "need_label": "train_intro_start",
+                  "pos": [26, 21],
+                  "dx": true
+            },
+            "dx_train_intro_actually_start_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [26, 21.5]
+            },
+            "dx_train_intro_actually_start": {
+                  "name": "DX: Train Route",
+                  "type": "start",
+                  "need_label": "train_intro_start",
+                  "pos": [26, 22],
+                  "jump_to": "train_intro_start",
+                  "dx": true
+            },
+            "dx_train_museum_choice_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [26, 22.5]
+            },
+            "dx_train_museum_choice": {
+                  "name": "Go to the museum?",
+                  "type": "choice",
+                  "need_label": "train_story_begin",
+                  "pos": [26, 23],
+                  "dx": true
+            },
+            "dx_train_museum_yes_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [26.5, 23]
+            },
+            "dx_train_museum_yes_outcome": {
+                  "name": "Yes",
+                  "type": "outcome",
+                  "need_label": "train_intro_start",
+                  "pos": [27, 23],
+                  "dx": true
+            },
+            "dx_train_toytrains_minigame_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [27.5, 23]
+            },
+            "dx_train_toytrains_minigame": {
+                  "name": "Toy Trains Game",
+                  "type": "minigame",
+                  "need_label": "play_toytrains_game",
+                  "pos": [28, 23],
+                  "jump_to": "play_toytrains_game",
+                  "dx": true
+            },
+            "dx_train_toytrains_minigame_after_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [28, 23.5]
+            },
+            "dx_train_museum_no_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [26, 23.5]
+            },
+            "dx_train_museum_no_outcome": {
+                  "name": "No",
+                  "type": "outcome",
+                  "need_label": "train_intro_start",
+                  "pos": [26, 24],
+                  "dx": true
+            },
+            "dx_train_museum_no_after_first_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [26.5, 24]
+            },
+            "dx_train_museum_no_after_second_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [26.75, 24]
+            },
+            "dx_train_museum_no_after_third_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [27, 24]
+            },
+            "dx_train_museum_no_after_fourth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [27.25, 24]
+            },
+            "dx_train_museum_no_after_fifth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [27.5, 24]
+            },
+            "dx_train_boarding_outcome": {
+                  "name": "Get on train",
+                  "type": "outcome",
+                  "need_label": "train_boarding",
+                  "pos": [28, 24],
+                  "dx": true
+            },
+            "dx_train_chase_choice_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [28.5, 24]
+            },
+            "dx_train_chase_choice": {
+                  "name": "Pursue the thief?",
+                  "type": "choice",
+                  "need_label": "train_wakeup",
+                  "pos": [29, 24],
+                  "dx": true
+            },
+            "dx_train_yeschase_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [29.5, 24]
+            },
+            "dx_train_begin_heist_outcome": {
+                  "name": "Go after him!",
+                  "type": "outcome",
+                  "need_label": "train_begin_heist",
+                  "pos": [30, 24],
+                  "dx": true
+            },
+            "dx_train_rhythmchase_minigame_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [30.5, 24]
+            },
+            "dx_train_rhythmchase_minigame": {
+                  "name": "Rhythm Chase Game",
+                  "type": "minigame",
+                  "need_label": "play_rhythmchase_game",
+                  "pos": [31, 24],
+                  "jump_to": "play_rhythmchase_game",
+                  "dx": true
+            },
+            "dx_train_rhythmchase_lose_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [31, 24.5]
+            },
+            "dx_train_rhythmchase_lose_outcome": {
+                  "name": "Lose",
+                  "type": "outcome",
+                  "need_label": "train_lupin_lose",
+                  "pos": [31, 25],
+                  "dx": true
+            },
+            "dx_train_broke_ending_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [31, 25.5]
+            },
+            "dx_train_broke_ending": {
+                  "name": "Go Home Broke",
+                  "type": "end",
+                  "need_label": "train_home_broke",
+                  "pos": [31, 26],
+                  "dx": true
+            },
+            "dx_train_rhythmchase_win_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [31.5, 24]
+            },
+            "dx_train_rhythmchase_win_outcome": {
+                  "name": "Win",
+                  "type": "outcome",
+                  "need_label": "train_lupin_win",
+                  "pos": [32, 24],
+                  "dx": true
+            },
+            "dx_train_money_check_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [32.5, 24]
+            },
+            "dx_train_money_check": {
+                  "name": "Is the money legit?",
+                  "type": "prereq",
+                  "need_label": "train_lupin_win",
+                  "pos": [33, 24],
+                  "dx": true
+            },
+            "dx_train_money_stolen_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "ne",
+                  "pos": [33.5, 23.5]
+            },
+            "dx_train_money_stolen_outcome": {
+                  "name": "No",
+                  "type": "outcome",
+                  "need_label": "train_lupin_win",
+                  "pos": [34, 23],
+                  "dx": true
+            },
+            "dx_train_reward_end_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [34.5, 23]
+            },
+            "dx_train_reward_end": {
+                  "name": "To Frame A Criminal",
+                  "type": "end",
+                  "need_label": "train_home_rich_thief",
+                  "pos": [35, 23],
+                  "dx": true
+            },
+            "dx_train_money_legit_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "se",
+                  "pos": [33.5, 24.5]
+            },
+            "dx_train_money_legit_outcome": {
+                  "name": "Yes",
+                  "type": "outcome",
+                  "need_label": "train_lupin_win",
+                  "pos": [34, 25],
+                  "dx": true
+            },
+            "dx_train_secret_prereq_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [34.5, 25]
+            },
+            "dx_train_secret_prereq": {
+                  "name": "Replay on max Bounciness!",
+                  "type": "prereq",
+                  "need_label": "train_check_secret",
+                  "pos": [35, 25],
+                  "dx": true
+            },
+            "dx_train_tate_choice_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [35.5, 25]
+            },
+            "dx_train_tate_choice": {
+                  "name": "Fight Tate?",
+                  "type": "choice",
+                  "need_label": "train_tate_ex_encounter",
+                  "pos": [36, 25],
+                  "dx": true
+            },
 
+
+
+
+            "dx_train_tate_yes_outcome": {
+                  "name": "Yes",
+                  "type": "outcome",
+                  "need_label": "train_tate_ex_encounter",
+                  "pos": [37, 25],
+                  "dx": true
+            },
+
+            "dx_train_tate_ex_minigame": {
+                  "name": "VS Tate EX",
+                  "type": "minigame",
+                  "need_label": "rpg_tate_ex",
+                  "pos": [38, 25],
+                  "dx": true
+            },
+
+
+            "dx_train_tate_ex_win_outcome": {
+                  "name": "Win",
+                  "type": "outcome",
+                  "need_label": "train_tate_ex_win",
+                  "pos": [39, 25],
+                  "dx": true
+            },
+
+            "dx_train_perfect_tate_minigame": {
+                  "name": "VS Perfect Tate",
+                  "type": "minigame",
+                  "need_label": "play_perfecttate_game",
+                  "pos": [40, 25],
+                  "dx": true
+            },
+
+            "dx_train_perfect_tate_lose_outcome": {
+                  "name": "Lose",
+                  "type": "outcome",
+                  "need_label": "train_perfect_tate_lose",
+                  "pos": [40, 26],
+                  "dx": true
+            },
+
+            "dx_train_perfect_tate_win_outcome": {
+                  "name": "Win",
+                  "type": "outcome",
+                  "need_label": "train_defeated_perfect_tate",
+                  "pos": [41, 25],
+                  "dx": true
+            },
+
+
+            "dx_train_tate_ex_lose_outcome": {
+                  "name": "Lose",
+                  "type": "outcome",
+                  "need_label": "train_tate_ex_lose",
+                  "pos": [38, 26],
+                  "dx": true
+            },
+
+
+            "dx_train_tate_no_outcome": {
+                  "name": "No",
+                  "type": "outcome",
+                  "need_label": "train_tate_ex_encounter",
+                  "pos": [36, 26],
+                  "dx": true
+            },
+
+
+            "dx_train_rich_end": {
+                  "name": "Twice A Winner",
+                  "type": "end",
+                  "need_label": "train_home_rich_winner",
+                  "pos": [42, 25],
+                  "dx": true
+            },
+
+
+
+            "dx_train_nochase_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [29, 24.5]
+            },
+            "dx_train_allow_staff_outcome": {
+                  "name": "Let staff handle it",
+                  "type": "outcome",
+                  "need_label": "train_allow_staff",
+                  "pos": [29, 25],
+                  "dx": true
+            },
+            "dx_chicago_start_arrow" : {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [29, 25.5]
+            },
+            "dx_chicago_start": {
+                  "name": "DX: Chicago",
+                  "type": "start",
+                  "need_label": "UNFINISHED",
+                  "pos": [29, 26],
+                  "dx": true
+            }
 
 
       }

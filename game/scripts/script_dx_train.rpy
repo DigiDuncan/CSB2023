@@ -3764,7 +3764,7 @@ label train_tate_ex_win:
         $ config.keymap['game_menu'].remove('mouseup_3')
     $ renpy.clear_keymap_cache()
 
-    minigame "play_perfecttate_game" "train_defeated_perfect_tate" "train_tate_ex_lose"
+    minigame "play_perfecttate_game" "train_defeated_perfect_tate" "train_perfect_tate_lose"
 
 label train_defeated_perfect_tate:
     stop music
@@ -3836,6 +3836,11 @@ label train_defeated_perfect_tate:
     hide screen dxcom
     pause 3.0
     jump train_completed
+
+label train_perfect_tate_lose:
+    # this exists mostly to make sure the timeline screen works properly.
+    # maybe i'll add content later. - tate
+    jump train_tate_ex_lose
 
 label train_tate_ex_lose:
 
