@@ -54,7 +54,9 @@ label csbiii_start:
                 pause 1.0
                 jump csbiii_ai
             "No"  (type = "true"):
-                pass
+                jump csbiii_no_meeting
+
+label csbiii_no_meeting:
     show cs disappointed
     cs "Not this time. I need to get to work!"
     hide taran with Dissolve(0.25)

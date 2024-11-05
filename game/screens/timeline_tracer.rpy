@@ -139,6 +139,7 @@ screen timeline_tracer():
                             this_x = 20
                             this_y = 20
                 
+                        # TODO: figure out how to read bad ends
                         # make sure it's unlocked before we continue
                         try:
                             # if it needs you to have seen a label to unlock
@@ -165,7 +166,6 @@ screen timeline_tracer():
                                 total_seen_events = total_seen_events + 1
                             if timeline_map[event]["type"] == "end" or timeline_map[event]["type"] == "badend":
                                 total_seen_endings = total_seen_endings + 1
-
 
                             # get type and change background color based on it
                             # TODO: this should be replaced w images later

@@ -71,7 +71,7 @@
             "csbi_speedrun_outcome" : {
                   "name": "Speedrun!",
                   "type": "outcome",
-                  "need_achieve": "nah",
+                  "need_label": "vibration",
                   "pos": [2, 5],
                   "dx": true
             },
@@ -83,7 +83,7 @@
             "csbi_speedrun_end" : {
                   "name": "Speedrun",
                   "type": "end",
-                  "need_achieve": "nah",
+                  "need_achieve": "speedrun",
                   "pos": [3, 5],
                   "dx": true
             },
@@ -172,7 +172,7 @@
             "csbi_hohsis_outcome" : {
                   "name": "HoH SiS",
                   "type": "outcome",
-                  "need_achieve": "csbi",
+                  "need_label": "csbi_michael_house",
                   "pos": [5, 7]
             },
             "csbii_start_arrow": {
@@ -206,7 +206,7 @@
             "csbii_ytpmagic_outcome" : {
                   "name": "YTP Magic",
                   "type": "outcome",
-                  "need_label": "csbii_asylum",
+                  "need_label": "csbii_special",
                   "pos": [8, 6]
             },
             "csbii_asylum_badend_arrow": {
@@ -273,7 +273,7 @@
             "csbiii_yes_meet_outcome": {
                   "name": "Yes",
                   "type": "outcome",
-                  "need_label": "csbiii_start",
+                  "need_label": "csbiii_ai",
                   "pos": [11, 6]
             },
             "csbiii_ai_end_arrow": {
@@ -568,7 +568,7 @@
                   "type": "start",
                   "need_label": "country_airport_choose",
                   "pos": [15, 4],
-                  "jump_to": "country_airport_choose"
+                  "jump_to": "country_knocked_out"
             },
             "country_choice_arrow": {
                   "type": "arrow",
@@ -583,26 +583,26 @@
             },
             "country_kuwait_outcome_arrow": {
                   "type": "arrow",
-                  "direction": "n",
-                  "pos": [16, 3.5]
+                  "direction": "ne",
+                  "pos": [16.5, 3.5]
             },
             "country_kuwait_outcome": {
                   "name": "Kuwait",
                   "type": "outcome",
                   "need_label": "kuwait_travel",
-                  "pos": [16, 3],
+                  "pos": [17, 3],
                   "dx": true
             },
             "kuwait_start_arrow": {
                   "type": "arrow",
                   "direction": "n",
-                  "pos": [16, 2.5]
+                  "pos": [17, 2.5]
             },
             "kuwait_start": {
                   "name": "DX: Kuwait",
                   "type": "start",
-                  "need_label": "UNFINISHED",
-                  "pos": [16, 2],
+                  "need_label": "kuwait",
+                  "pos": [17, 2],
                   "dx": true
             },
             "country_other_outcome_arrow": {
@@ -628,180 +628,545 @@
                   "direction": "e",
                   "pos": [19, 4]
             },
-            "country_other_outcome": {
-                  "name": "Other",
-                  "type": "outcome",
-                  "need_label": "country_airport_choose",
-                  "pos": [20, 4]
-            },
-            "country_japan_start_first_arrow": {
-                  "type": "arrow",
-                  "direction": "n",
-                  "pos": [20, 3.5]
-            },
-            "country_japan_start_second_arrow": {
-                  "type": "arrow",
-                  "direction": "n",
-                  "pos": [20, 3.25]
-            },
-            "country_japan_start_third_arrow": {
-                  "type": "arrow",
-                  "direction": "e",
-                  "pos": [20, 3]
-            },
-            "country_japan_start_fourth_arrow": {
-                  "type": "arrow",
-                  "direction": "e",
-                  "pos": [20.25, 3]
-            },
-            "country_japan_start_fifth_arrow": {
+            "country_other_fourth_arrow": {
                   "type": "arrow",
                   "arrow_type": "hblock",
                   "direction": "e",
-                  "pos": [21, 3]
+                  "pos": [20, 4]
             },
-            "country_sweden_start_first_arrow": {
+            "country_other_fifth_arrow": {
                   "type": "arrow",
                   "arrow_type": "hblock",
                   "direction": "e",
                   "pos": [21, 4]
             },
-            "country_sweden_start_second_arrow": {
+            "country_other_sixth_arrow": {
                   "type": "arrow",
                   "arrow_type": "hblock",
                   "direction": "e",
                   "pos": [22, 4]
             },
+            "country_other_seventh_arrow": {
+                  "type": "arrow",
+                  "arrow_type": "hblock",
+                  "direction": "e",
+                  "pos": [23, 4]
+            },
+            "country_other_eighth_arrow": {
+                  "type": "arrow",
+                  "arrow_type": "hblock",
+                  "direction": "e",
+                  "pos": [24, 4]
+            },
+            "country_other_ninth_arrow": {
+                  "type": "arrow",
+                  "arrow_type": "hblock",
+                  "direction": "e",
+                  "pos": [25, 4]
+            },
+            "country_other_outcome": {
+                  "name": "Other",
+                  "type": "outcome",
+                  "need_label": "country_airport_choose",
+                  "pos": [26, 4]
+            },
+            "country_japan_start_first_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos": [26, 3.5]
+            },
+            "country_japan_start_second_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos": [26, 3.25]
+            },
+            "country_japan_start_third_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [26, 3]
+            },
+            "country_japan_start_fourth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [26.25, 3]
+            },
+            "country_japan_start_fifth_arrow": {
+                  "type": "arrow",
+                  "arrow_type": "hblock",
+                  "direction": "e",
+                  "pos": [27, 3]
+            },
+            "country_sweden_start_first_arrow": {
+                  "type": "arrow",
+                  "arrow_type": "hblock",
+                  "direction": "e",
+                  "pos": [27, 4]
+            },
+            "country_sweden_start_second_arrow": {
+                  "type": "arrow",
+                  "arrow_type": "hblock",
+                  "direction": "e",
+                  "pos": [28, 4]
+            },
             "country_england_start_first_arrow": {
                   "type": "arrow",
                   "direction": "s",
-                  "pos": [20, 4.5]
+                  "pos": [26, 4.5]
             },
             "country_england_start_second_arrow": {
                   "type": "arrow",
                   "direction": "s",
-                  "pos": [20, 4.75]
+                  "pos": [26, 4.75]
             },
             "country_england_start_third_arrow": {
                   "type": "arrow",
                   "direction": "e",
-                  "pos": [20, 5]
+                  "pos": [26, 5]
             },
             "country_england_start_fourth_arrow": {
                   "type": "arrow",
                   "direction": "e",
-                  "pos": [20.25, 5]
+                  "pos": [26.25, 5]
             },
             "country_england_start_fifth_arrow": {
                   "type": "arrow",
                   "arrow_type": "hblock",
                   "direction": "e",
-                  "pos": [21, 5]
+                  "pos": [27, 5]
             },
-            "country_japan": {
+            "country_japan_outcome": {
                   "name": "Japan",
                   "type": "outcome",
                   "need_label": "japan_menu",
-                  "pos": [22, 3]
+                  "pos": [28, 3]
             },
-            "country_england": {
+            "country_england_outcome": {
                   "name": "England",
                   "type": "outcome",
-                  "need_label": "england_menu",
-                  "pos": [22, 5]
+                  "need_label": "england_arceus_place",
+                  "pos": [28, 5]
             },
-            "country_sweden": {
+            "country_sweden_outcome": {
                   "name": "Sweden",
                   "type": "outcome",
                   "need_label": "sweden_menu",
-                  "pos": [23, 4]
+                  "pos": [29, 4]
             },
             "country_engtoswe_arrow": {
                   "type": "arrow",
                   "arrow_type": "double",
                   "direction": "ne",
-                  "pos": [22.5, 4.5]
+                  "pos": [28.5, 4.5]
             },
             "country_jpntoswe_arrow": {
                   "type": "arrow",
                   "arrow_type": "double",
                   "direction": "nw",
-                  "pos": [22.5, 3.5]
+                  "pos": [28.5, 3.5]
             },
             "country_jpntoeng_arrow": {
                   "type": "arrow",
                   "arrow_type": "vblock",
                   "direction": "s",
-                  "pos": [22.25, 4]
+                  "pos": [28.25, 4]
             },
             "country_endtojpn_arrow": {
                   "type": "arrow",
                   "arrow_type": "vblock",
                   "direction": "n",
-                  "pos": [21.75, 4]
+                  "pos": [27.75, 4]
             },
             "country_jpn_done_first_arrow": {
                   "type": "arrow",
                   "arrow_type": "hblock",
                   "direction": "e",
-                  "pos": [23, 3]
+                  "pos": [29, 3]
             },
             "country_jpn_done_second_arrow": {
                   "type": "arrow",
                   "direction": "e",
-                  "pos": [23.75, 3]
+                  "pos": [29.75, 3]
             },
             "country_jpn_done_third_arrow": {
                   "type": "arrow",
                   "direction": "s",
-                  "pos": [24, 3]
+                  "pos": [30, 3]
             },
             "country_jpn_done_fourth_arrow": {
                   "type": "arrow",
                   "direction": "s",
-                  "pos": [24, 3.25]
+                  "pos": [30, 3.25]
             },
             "country_jpn_done_fifth_arrow": {
                   "type": "arrow",
                   "direction": "s",
-                  "pos": [24, 3.5]
+                  "pos": [30, 3.5]
             },
             "country_swe_done_arrow": {
                   "type": "arrow",
                   "direction": "e",
-                  "pos": [23.5, 4]
+                  "pos": [29.5, 4]
             },
             "country_eng_done_first_arrow": {
                   "type": "arrow",
                   "arrow_type": "hblock",
                   "direction": "e",
-                  "pos": [23, 5]
+                  "pos": [29, 5]
             },
             "country_eng_done_second_arrow": {
                   "type": "arrow",
                   "direction": "e",
-                  "pos": [23.75, 5]
+                  "pos": [29.75, 5]
             },
             "country_eng_done_third_arrow": {
                   "type": "arrow",
                   "direction": "n",
-                  "pos": [24, 5]
+                  "pos": [30, 5]
             },
             "country_eng_done_fourth_arrow": {
                   "type": "arrow",
                   "direction": "n",
-                  "pos": [24, 4.75]
+                  "pos": [30, 4.75]
             },
             "country_eng_done_fifth_arrow": {
                   "type": "arrow",
                   "direction": "n",
-                  "pos": [24, 4.5]
+                  "pos": [30, 4.5]
+            },
+            "country_england_go_choice_arrow": {
+                  "type": "arrow",
+                  "arrow_type": "double",
+                  "direction": "s",
+                  "pos": [28, 5.5]
+            },
+            "country_england_go_choice": {
+                  "name": "What to do?",
+                  "type": "choice",
+                  "need_label": "england_menu",
+                  "pos": [28, 6]
+            },
+            "country_england_go_kitchen_arrow": {
+                  "type": "arrow",
+                  "direction": "sw",
+                  "pos": [27.5, 6.5]
+            },
+            "country_england_go_kitchen_outcome": {
+                  "name": "Go on {i}Hell's Kitchen",
+                  "type": "outcome",
+                  "need_label": "england_hell_zone",
+                  "pos": [27, 7]
+            },
+            "country_england_go_kitchen_choice_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [27, 7.5]
+            },
+            "country_england_go_kitchen_choice": {
+                  "name": "Make which dish?",
+                  "type": "choice",
+                  "need_label": "england_gordon_menu",
+                  "pos": [27, 8]
+            },
+            "country_england_go_kitchen_flexcake_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [27, 8.5]
+            },
+            "country_england_go_kitchen_flexcake_outcome": {
+                  "name": "Flex Cake",
+                  "type": "outcome",
+                  "need_label": "england_bad_ramsay",
+                  "pos": [27, 9]
+            },
+            "country_england_go_kitchen_badend_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [27, 9.5]
+            },
+            "country_england_go_kitchen_badend": {
+                  "name": "You Fucking Donkey",
+                  "type": "badend",
+                  "need_label": "england_bad_ramsay",
+                  "pos": [27, 10]
+            },
+            "country_england_go_kitchen_genergy_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "sw",
+                  "pos": [26.5, 8.5]
+            },
+            "country_england_go_kitchen_genergy_outcome": {
+                  "name": "Genergy",
+                  "type": "outcome",
+                  "need_label": "england_good_ramsay",
+                  "pos": [26, 9]
+            },
+            "country_england_kitchen_after_first_arrow": {
+                  "type": "arrow",
+                  "arrow_type": "vblock",
+                  "direction": "n",
+                  "pos": [26, 8]
+            },
+            "country_england_kitchen_after_second_arrow": {
+                  "type": "arrow",
+                  "arrow_type": "vblock",
+                  "direction": "n",
+                  "pos": [26, 7]
+            },
+            "country_england_kitchen_after_third_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos": [26, 6.5]
+            },
+            "country_england_kitchen_after_fourth_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos": [26, 6.25]
+            },
+            "country_england_kitchen_after_fifth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [26, 6]
+            },
+            "country_england_kitchen_after_sixth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [26.25, 6]
+            },
+            "country_england_kitchen_after_seventh_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [26.5, 6]
+            },
+            "country_england_kitchen_after_eighth_arrow": {
+                  "type": "arrow",
+                  "arrow_type": "hblock",
+                  "direction": "e",
+                  "pos": [27, 6]
+            },
+            "country_england_go_top_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [28, 6.5]
+            },
+            "country_england_go_top_outcome": {
+                  "name": "Go on {i}Top Gear",
+                  "type": "outcome",
+                  "need_label": "england_top_zone",
+                  "pos": [28, 7]
+            },
+            "country_england_go_top_choice_first_arrow": {
+                  "type": "arrow",
+                  "arrow_type": "vblock",
+                  "direction": "s",
+                  "pos": [28, 8]
+            },
+            "country_england_go_top_choice_second_arrow": {
+                  "type": "arrow",
+                  "arrow_type": "vblock",
+                  "direction": "s",
+                  "pos": [28, 9]
+            },
+             "country_england_go_top_choice": {
+                  "name": "Race outcome?",
+                  "type": "choice",
+                  "need_label": "england_top_gear_menu",
+                  "pos": [28, 10]
+            },
+            "country_england_top_lose_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [28, 10.5]
+            },
+            "country_england_top_lose_outcome": {
+                  "name": "Lose",
+                  "type": "outcome",
+                  "need_label": "england_top_lose",
+                  "pos": [28, 11]
+            },
+            "country_england_top_lose_badend_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [28, 11.5]
+            },
+            "country_england_top_lose_badend": {
+                  "name": "Top Loser",
+                  "type": "badend",
+                  "need_label": "england_top_lose",
+                  "pos": [28, 12]
+            },
+            "country_england_top_win_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "sw",
+                  "pos": [27.5, 10.5]
+            },
+            "country_england_top_win_outcome": {
+                  "name": "Win",
+                  "type": "outcome",
+                  "need_label": "england_top_win",
+                  "pos": [27, 11]
+            },
+            "country_england_top_win_after_first_arrow": {
+                  "type": "arrow",
+                  "arrow_type": "hblock",
+                  "direction": "w",
+                  "pos": [26, 11]
+            },
+            "country_england_top_win_after_second_arrow": {
+                  "type": "arrow",
+                  "direction": "w",
+                  "pos": [25.25, 11]
+            },
+            "country_england_top_win_after_third_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos": [25, 11]
+            },
+            "country_england_top_win_after_fourth_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos": [25, 10.75]
+            },
+            "country_england_top_win_after_fifth_arrow": {
+                  "type": "arrow",
+                  "arrow_type": "vblock",
+                  "direction": "n",
+                  "pos": [25, 10]
+            },
+            "country_england_top_win_after_sixth_arrow": {
+                  "type": "arrow",
+                  "arrow_type": "vblock",
+                  "direction": "n",
+                  "pos": [25, 9]
+            },
+            "country_england_top_win_after_seventh_arrow": {
+                  "type": "arrow",
+                  "arrow_type": "vblock",
+                  "direction": "n",
+                  "pos": [25, 8]
+            },
+            "country_england_top_win_after_eighth_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos": [25, 7.25]
+            },
+            "country_england_top_win_after_ninth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [25, 7]
+            },
+            "country_england_top_win_after_tenth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [25.25, 7]
+            },
+            "country_england_top_win_after_eleventh_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [25.5, 7]
+            },
+            "country_england_top_win_after_twelfth_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos": [25.75, 7]
+            },
+            "country_england_go_scott_arrow": {
+                  "type": "arrow",
+                  "direction": "se",
+                  "pos": [28.5, 6.5]
+            },
+            "country_england_go_scott_outcome": {
+                  "name": "Find Tom Scott",
+                  "type": "outcome",
+                  "need_label": "england_scott_zone",
+                  "pos": [29, 7]
+            },
+            "country_england_scott_choice_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [29, 7.5]
+            },
+            "country_england_scott_choice": {
+                  "name": "Warn Tom Scott?",
+                  "type": "choice",
+                  "need_label": "england_scott_menu",
+                  "pos": [29, 8]
+            },
+            "country_england_scott_no_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [29, 8.5]
+            },
+            "country_england_scott_no_outcome": {
+                  "name": "No",
+                  "type": "outcome",
+                  "need_label": "england_scott_movent",
+                  "pos": [29, 9]
+            },
+            "country_england_scott_badend_arrow": {
+                  "type": "arrow",
+                  "direction": "s",
+                  "pos": [29, 9.5]
+            },
+            "country_england_scott_badend": {
+                  "name": "Scottn't",
+                  "type": "badend",
+                  "need_label": "england_scott_movent",
+                  "pos": [29, 10]
+            },
+            "country_england_scott_yes_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "se",
+                  "pos": [29.5, 8.5]
+            },
+            "country_england_scott_yes_outcome": {
+                  "name": "Yes",
+                  "type": "outcome",
+                  "need_label": "england_scott_move",
+                  "pos": [30, 9]
+            },
+            "country_england_scott_after_first_arrow": {
+                  "type": "arrow",
+                  "arrow_type": "vblock",
+                  "direction": "n",
+                  "pos": [30, 8]
+            },
+            "country_england_scott_after_second_arrow": {
+                  "type": "arrow",
+                  "arrow_type": "vblock",
+                  "direction": "n",
+                  "pos": [30, 7]
+            },
+            "country_england_scott_after_third_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos": [30, 6.75]
+            },
+            "country_england_scott_after_fourth_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos": [30, 6.25]
+            },
+            "country_england_scott_after_fifth_arrow": {
+                  "type": "arrow",
+                  "direction": "w",
+                  "pos": [30, 6]
+            },
+            "country_england_scott_after_sixth_arrow": {
+                  "type": "arrow",
+                  "direction": "w",
+                  "pos": [29.75, 6]
+            },
+            "country_england_scott_after_seventh_arrow": {
+                  "type": "arrow",
+                  "arrow_type": "hblock",
+                  "direction": "w",
+                  "pos": [29, 6]
             },
             "country_end": {
                   "name": "Globetrotter",
                   "type": "end",
                   "need_label": "country_going_home",
-                  "pos": [24, 4]
+                  "pos": [30, 4]
             },
             "csbiii_editing_outcome_arrow": {
                   "type": "arrow",
@@ -811,7 +1176,7 @@
             "csbiii_editing_outcome": {
                   "name": "Editing",
                   "type": "outcome",
-                  "need_label": "csbiii_edit_video",
+                  "need_label": "csbiii_no_meeting",
                   "pos": [13, 10]
             },
             "csbiii_video_choice_arrow": {
@@ -822,7 +1187,7 @@
             "csbiii_video_choice": {
                   "name": "Which video?",
                   "type": "choice",
-                  "need_label": "csbiii_edit_video",
+                  "need_label": "csbiii_no_meeting",
                   "pos": [14, 10]
             },
             "csbiii_editmacro_outcome_arrow": {
@@ -833,7 +1198,7 @@
             "csbiii_editmacro_outcome": {
                   "name": "Edit Macro",
                   "type": "outcome",
-                  "need_label": "csbiii_edit_video",
+                  "need_label": "csbiii_boring_video",
                   "pos": [15, 9]
             },
             "csbiii_editmacro_after_first_arrow": {
