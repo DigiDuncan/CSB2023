@@ -2214,12 +2214,16 @@ label ce_exchange:
     show cs disappointed
     show thigh_highs at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     cs "Thigh highs?"
-    show cs
+    show cs full at manual_pos(0.034, 0.187)
     arceus "Look at that, you got my gift, CS!"
     hide thigh_highs with dissolve
     cs "Well, I guess I have more now!"
     k17 "You wear thigh highs?"
     cs "Yeah, I'm wearing them right now! See?"
+    show cs full at Move((0.034, 0.187), (0.034, -0.4), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    window hide
+    pause 2.5
+    show cs full at Move((0.034, -0.4), (0.034, 0.187), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")  
     digi "Oh shit, I guess I never looked down to check."
     aria "I just assumed because of the outfit."
     hide cs with moveoutright
