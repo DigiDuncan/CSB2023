@@ -118,6 +118,9 @@ screen timeline_tracer():
             draggable True
             pagekeys True
 
+            xinitial 0
+            yinitial 4*150 + 20
+
             fixed:
                 area (0, 0, xmax, ymax)
 
