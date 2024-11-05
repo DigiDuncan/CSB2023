@@ -2192,7 +2192,7 @@ label ce_dinner:
     digi "What? How?"
     cs "What backwards town do you live in where the better gas is cheaper?"
     k22 "See, the super unleaded is the cheapest, then regular, then premium!"
-    digi "So, the question now is, what the different between plus and super?"
+    digi "So, the question now is, what's the difference between plus and super?"
     k22 "They might be the same thing."
     k22 "Our super unleaded gas has ethanol in it."
     k22 "Guess who makes ethanol? We do!"
@@ -2296,7 +2296,7 @@ label ce_exchange:
     arceus "Ooh! That's a raspberry pi!"
     obama "What are you on about? That doesn't look edible at all!"
     digi "No-- okay it's my gift, so let me explain."
-    digi "It's just a small computer that can run python."
+    digi "It's a small computer you can use to run basic servers or build little projects!"
     hide raspberry_pi with dissolve
     anno "Oh. Cool I guess."
     hide anno with moveoutright
