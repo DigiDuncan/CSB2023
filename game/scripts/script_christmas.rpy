@@ -1574,7 +1574,7 @@ label ce_banter:
     with moveinleft
     pause 1.0
     show copguy festive flipped at center with move
-    play sound sfx_hard_knock
+    play sound sfx_door_jiggle volume 0.8
     n "Copguy jiggles the bathroom door."
     tate "Occupied!"
     show copguy festive
