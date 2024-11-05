@@ -49,7 +49,7 @@ screen category_nav():
 
             textbutton "Jukebox\n{size=-12}Jam out to songs you've heard along the way!" action ShowMenu("jukebox"), PauseAudio("music", True)
 
-            textbutton "Unused Assets\n{size=-12}A gallery of things that didn't make it into the final game!" action ShowMenu("unused_gallery"), PauseAudio("music", True), Play("music2", "audio/what_the_night_will_bring.ogg", relative_volume=8.0)
+            textbutton "Asset Gallery\n{size=-12}A gallery of beta assets, unused sprites, programmer art, concept art, and more!" action ShowMenu("unused_gallery"), PauseAudio("music", True), Play("music2", "audio/what_the_night_will_bring.ogg", relative_volume=8.0)
 
             textbutton "Endings\n{size=-12}Revisit endings you've already seen." action ShowMenu("replay_gallery")
 
