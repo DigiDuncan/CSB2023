@@ -3545,12 +3545,12 @@ label ce_roof_moment:
     n "A tsunami of car cleaner engulfs the group, as they get washed off the roof."
     n "As everyone gathers their bearings once again, they look around, watching the waves of Crotch Doctor carrying all the snow away."
     scene cs_house_night_dtree
-    show cs at mid_left
-    show tate festive at left
-    show obama festive at mid_right
-    show copguy festive at mid_mid_right
-    show k17
-    show santa at right
+    show cs dark at mid_left
+    show tate festive dark at left
+    show obama festive dark at mid_right
+    show copguy festive dark at mid_mid_right
+    show k17 dark
+    show santa dark at right
     with dissolve
     cs "Woohoo! We did it! The avalanche covering the house is gone!"
     santa "Ho ho, well, it looks like you helped save Christmas, CS."
@@ -3558,22 +3558,26 @@ label ce_roof_moment:
     santa "I should also make sure my steed didn't drown in car cleaner."
     cs "Good luck to you, Santa!"
     hide santa with moveoutleft
-    show k17 happy
+    show k17 happy dark
     k17 "CS? Did you see that?"
     cs "Yeah, I was kind of there with everyone one."
-    show k17 disappointed
+    show k17 disappointed dark
     k17 "Sorry, that was a stupid question."
-    show k17
+    show k17 dark
     tate "CS! You did it!"
     obama "I gotta say, that was one of the most fun Christmas parties I've ever been to."
     obama "Although, I should probably get back to The White House, the political circus is probably getting out of hand."
     hide obama with moveoutleft
-    show sheriff at right
+    show sheriff dark at right with moveinright
     sheriff "Hey guys, you got rid of the snow!"
     sheriff "What'd I miss?"
     cs "Uhhh..."
     play sound sfx_jingle volume 0.7
     n "As everyone is talking, the jingling of bells can be heard rushing over CS' house."
+    show sleigh behind copguy:
+        zoom 0.2
+        rotate -10
+    show sleigh at Move((0.45, 0.1), (1.1, -0.2), 7, repeat=False, bounce=False, xanchor="left", yanchor="top")
     santa "Ho ho ho! Merry Christmas everyone!"
     show snow3
     show snow4
@@ -3585,8 +3589,8 @@ label ce_roof_moment:
     with moveoutright
     copguy "Look how shiny our car is!"
     scene cs_house_night_dtree
-    show billy at mid_left
-    show k22 disappointed at mid_right
+    show billy dark at mid_left
+    show k22 disappointed dark at mid_right
     with dissolve
     n "As everyone is wrapping up to go home, K-22 and Billy have a bit of a chat."
     k22 "Hey Billy, can I talk to you for a minute?"
@@ -3600,7 +3604,7 @@ label ce_roof_moment:
     billy "This is great! I'll get to work on this soon."
     billy "I gotta take a trip to France."
     billy "I need to, fix an old friend."
-    show k22
+    show k22 dark
     k22 "Alrighty well, see you later Billy!"
     billy "See ya!"
     n "Both parties get into their cars and drive off."
