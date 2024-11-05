@@ -1848,7 +1848,11 @@ image snow4 = SnowBlossom("snow1.png", count = 200, fast = True, xspeed = (4000,
 image snow5 = SnowBlossom("snow1.png", count = 200, fast = False, xspeed = (2000, 100))
 image snow6 = SnowBlossom("snow1.png", count = 200, fast = True, xspeed = (3000, 100))
 image snow_wind = SnowBlossom("snow_wind.png", count = 50, fast = True, xspeed = (500, 0), border = 4000, horizontal = True)
-
+image sleigh:
+    "sleigh.png"
+    ease 3.0 rotate -3
+    ease 3.0 rotate 3
+    repeat
 # Static Images
 image amtrak_dining_food = "food.png" 
 image amtrak_dining_pancake = "pancake.png"

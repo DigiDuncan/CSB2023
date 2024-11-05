@@ -3292,7 +3292,17 @@ label ce_roof_moment:
     everyone "{image=note_small1.png} You better not cry... {image=note_small2.png}"
     everyone "{image=note_small1.png} You better watch out I'm telling you why... {image=note_small2.png}"
     everyone "{image=note_small1.png} Santa Claus is coming, to town! {image=note_small2.png}"
-    scene black with dissolve
+    scene car plains night:
+        zoom 2.0
+    show snow1
+    show snow2
+    show snow3
+    show snow4
+    show snow5
+    show snow6
+    show snow_wind
+    show sleigh
+    with dissolve
     santa "Ho ho ho!"
     santa "The wind really started the pick up around here, didn't it Vixen?"
     santa "Ho ho, do you all hear that? It sounds like I can hear Christmas cheer being spread down on the ground!"
