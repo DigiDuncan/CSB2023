@@ -81,7 +81,7 @@
                   "pos" : [2.5, 5]
             },
             "csbi_speedrun_end" : {
-                  "name": "Speedrun",
+                  "name": "Chronicle Skipper 188",
                   "type": "end",
                   "need_achieve": "speedrun",
                   "pos": [3, 5],
@@ -260,7 +260,7 @@
                   "pos" : [10.5, 7.5]
             },
             "csbiii_meeting_yes_prereq": {
-                  "name": "Get the true ending!",
+                  "name": "Get the True Ending!",
                   "type": "prereq",
                   "need_label": "csbiii_start",
                   "pos": [11, 7]
@@ -416,7 +416,7 @@
                   "pos" : [17.5, 8]
             },
             "fired_badend": {
-                  "name": "Threw away fame",
+                  "name": "Threw Away Fame",
                   "type": "badend",
                   "need_label": "fired_no_contract",
                   "pos": [18, 8]
