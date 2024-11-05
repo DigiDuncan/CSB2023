@@ -723,6 +723,12 @@ label ce_before_shopping:
     show cs flipped at mid_right
     with dissolve
     cs "Thank goodness it didn't snow overnight. Shoveling yesterday fuckin' sucked."
+    # I just want this to be known.
+    # I love this line.
+    # It's so CS-coded but it's just not a line you'd expect to be in a visual novel.
+    # Made me laugh when I first read it, and it's still getting a chuckle out of me.
+    # He's right -- shoveling does fuckin' suck.
+    # -- Digi
     cs "I don't want to do it all over again!"
     cs "I only have a few hours before the party, so I'd better get going!"
     hide cs with moveoutleft
