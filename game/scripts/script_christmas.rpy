@@ -2669,6 +2669,8 @@ label ce_lights_out:
     show cs at left with moveinleft
     cs "Found it!"
     n "CS opens the breaker and flicks off and on the switches."
+    play sound sfx_breaker
+    pause 1.5
     show cs disappointed
     cs "Damn, nothing."
     show cs flipped
