@@ -26,13 +26,6 @@ screen item_collection():
     else:
         use items(current_item)
 
-# wow i hate this - tate
-style itemcoll_button:
-    idle_background "#003D51"
-    hover_background "#0099CC"
-    selected_idle_background "#65C0DF"
-    insensitive_background "#888888"
-
 screen item_nav():
     add Color('#323e42', alpha=0.75)
     text "{size=+12}Item Collection":
@@ -72,7 +65,11 @@ screen item_nav():
                         
                         # create the actual button here
                         button:
-                            style_prefix "itemcoll"
+                            idle_background "#003D51"
+                            hover_background "#0099CC"
+                            selected_idle_background "#65C0DF"
+                            insensitive_background "#888888"
+
                             xalign 0.5 yalign 0.5
                             xysize 140,140
 
