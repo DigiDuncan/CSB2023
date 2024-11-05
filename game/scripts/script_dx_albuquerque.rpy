@@ -448,10 +448,10 @@ label dx_albuquerque:
     crowd_nobeep "{cps=40}Querque!{w=1.0}{nw}"
     show cs
     pause 4.0
-    everyone "{cps=40}Albuquerque, Albuquerque, Albuquerque, Albuquerque,{w=0.25}{nw}"  
-    everyone "{cps=40}Albuquerque, Albuquerque, Albuquerque, Albuquerque,{w=0.25}{nw}"
-    everyone "{cps=40}Albuquerque, Albuquerque, Albuquerque, Albuquerque,{w=0.25}{nw}"
-    everyone "{cps=40}Albuquerque, Albuquerque,{w=0.25}{nw}"
+    everyone_nobeep "{cps=40}Albuquerque, Albuquerque, Albuquerque, Albuquerque,{w=0.25}{nw}"  
+    everyone_nobeep "{cps=40}Albuquerque, Albuquerque, Albuquerque, Albuquerque,{w=0.25}{nw}"
+    everyone_nobeep "{cps=40}Albuquerque, Albuquerque, Albuquerque, Albuquerque,{w=0.25}{nw}"
+    everyone_nobeep "{cps=40}Albuquerque, Albuquerque,{w=0.25}{nw}"
     cs_nobeep "{cps=40}Al{w=5}{cps=5}buquerque!"
     $ achievement_manager.unlock("Wacka Wacka DooDoo Yeah!")
     jump england

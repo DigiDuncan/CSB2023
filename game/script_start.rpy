@@ -639,6 +639,7 @@ define perfect_tate = Character("Tate", callback = renpy.partial(char_callback, 
 
 # DX Holiday Special Definitions
 define walkie = Character("Walkie", callback = renpy.partial(char_callback, beep = "walkie"))
+define everyone = Character("Everyone", callback = renpy.partial(char_callback, beep = "everyone"))
 define santa = Character("Santa Claus", callback = renpy.partial(char_callback, beep = "santa"))
 define mike = Character("Mike",  callback = renpy.partial(char_callback, name = "mike"))
 
@@ -650,7 +651,7 @@ define cashier_nobeep = Character("Cashier", callback = renpy.partial(char_callb
 define cs_nobeep = Character("cs188", callback = renpy.partial(char_callback, name = "cs", play_beeps = False))
 define crowd_nobeep = Character("Crowd", callback = renpy.partial(char_callback, play_beeps = False))
 define daphone = Character("Da Phone", callback = renpy.partial(char_callback, play_beeps = False))
-define everyone = Character("Everyone", callback = renpy.partial(char_callback, play_beeps = False))
+define everyone_nobeep = Character("Everyone", callback = renpy.partial(char_callback, play_beeps = False))
 define hermaphrodite = Character("Hermaphrodite", callback = renpy.partial(char_callback, play_beeps = False))
 define marty = Character ("Marty", callback = renpy.partial(char_callback, play_beeps = False))
 define zelda = Character("Zelda", callback = renpy.partial(char_callback, play_beeps = False))
