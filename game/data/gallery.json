@@ -179,5 +179,10 @@
         "type": "image",
         "title": "missingtate.png",
         "caption": "If you look closely, it's in the background during Perfect Tate's intro video."
+    },
+	"cs_popsicle.png": {
+        "type": "image",
+        "title": "CS Archival Size Reference",
+        "caption": "In order to figure out where to place CS in the Archival scene, we needed to find out where his head would be. But since CS' sprite doesn't have legs, we had to improvise, giving him a popsicle stick body instead. Coincidentally, Pakoo would also place CS on a popsicle stick in the {a=https://www.youtube.com/watch?v=SQAv8FQmoFg}release trailer.{/a}"
     }
 }
