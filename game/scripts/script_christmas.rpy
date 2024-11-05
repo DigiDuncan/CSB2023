@@ -543,7 +543,7 @@ label ce_anno:
     stop sound2
     play sound sfx_doorslam
     pause 3.0
-    show anno at left with moveinleft
+    show anno coat at left with moveinleft
     anno "Hey, how's it going?"
     show cs disappointed flipped
     cs "Cold. Very cold."
@@ -555,7 +555,7 @@ label ce_anno:
     cs "Let's get inside, please! My hands are gonna fall off!"
     anno "Right behind you."
     show cs worried at offscreenright
-    show anno at offscreenright
+    show anno coat at offscreenright
     show shovel at offscreenright
     with moveoutright
     play sound sfx_house_door_open
