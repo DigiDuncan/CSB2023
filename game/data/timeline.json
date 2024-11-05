@@ -440,7 +440,7 @@
             "friend_fight_choice": {
                   "name": "Fight?",
                   "type": "choice",
-                  "need_label": "friend_high_gpu",
+                  "need_label": "friend_fight_menu",
                   "pos": [13, 5]
             },
             "friend_yes_fight_arrow": {
@@ -539,7 +539,7 @@
             "friend_lose_rpg_outcome": {
                   "name": "Lose",
                   "type": "outcome",
-                  "need_label": "friend_after_fanboy",
+                  "need_label": "friend_fanboy_lose",
                   "pos": [14, 3]
             },
             "friend_no_fight_arrow": {
@@ -603,6 +603,7 @@
                   "type": "start",
                   "need_label": "kuwait",
                   "pos": [17, 2],
+                  "jump_to": "kuwait",
                   "dx": true
             },
             "country_other_outcome_arrow": {
@@ -1226,7 +1227,7 @@
             "csbiii_editing_minigame": {
                   "name": "Editing Game",
                   "type": "minigame",
-                  "need_label": "csbiii_edit_video",
+                  "need_label": "play_edit_game",
                   "pos": [16, 11],
                   "jump_to": "play_edit_game"
             },
@@ -1291,7 +1292,7 @@
             "csbiii_arc_escape_choice": {
                   "name": "Escape with Arceus?",
                   "type": "choice",
-                  "need_label": "csbiii_arc_escape",
+                  "need_label": "csbiii_arceus_appears",
                   "pos": [18, 11]
             },
             "csbiii_no_escape_outcome_arrow": {
@@ -1302,7 +1303,7 @@
             "csbiii_no_escape_outcome": {
                   "name": "No",
                   "type": "outcome",
-                  "need_label": "csbiii_arc_escape",
+                  "need_label": "csbiii_cops_ltt",
                   "pos": [19, 10]
             },
             "csbiii_loredumper_badend_arrow": {
@@ -1434,7 +1435,7 @@
             "csbiii_bad_convince_outcome": {
                   "name": "I'm not CS!",
                   "type": "outcome",
-                  "need_label": "csbiii_copcar_menu",
+                  "need_label": "csbiii_bad_convince",
                   "pos": [23, 12]
             },
             "csbiii_bad_convince_badend_arrow": {
@@ -1605,7 +1606,7 @@
             "csbiii_east_baddriver_badend": {
                   "name": "Bad Driver",
                   "type": "badend",
-                  "need_label": "true_after_ufo",
+                  "need_label": "lose_car_game",
                   "pos": [33, 14]
             },
             "csbiii_east_car_win_outcome_arrow": {
@@ -1649,7 +1650,7 @@
             "csbiii_east_copguyexe_minigame": {
                   "name": "VS Copguy.EXE",
                   "type": "minigame",
-                  "need_label": "michigan_bronson",
+                  "need_label": "rpg_bronsonbattle",
                   "pos": [35, 11]
             },
             "csbiii_east_after_copguyexe_arrow": {
@@ -1677,7 +1678,7 @@
             "csbiii_east_interstate_choice": {
                   "name": "Which exit?",
                   "type": "choice",
-                  "need_label": "michigan_continue",
+                  "need_label": "michigan_interstate_menu",
                   "pos": [35, 13]
             },
             "csbiii_east_sixtynine_arrow": {
@@ -1918,7 +1919,7 @@
                   "pos" : [44.5, 11]
             },
             "csbiii_east_fanytp_outcome": {
-                  "name": "YTP Ending",
+                  "name": "YTP",
                   "type": "outcome",
                   "need_label": "true_ytp_ending",
                   "pos": [45, 11]
@@ -1929,7 +1930,7 @@
                   "pos" : [45.5, 11]
             },
             "csbiii_east_fanytp_end": {
-                  "name": "YTP",
+                  "name": "YTP Ending",
                   "type": "end",
                   "need_label": "true_ytp_ending",
                   "pos": [46, 11]
@@ -2114,7 +2115,7 @@
             "csbiii_casino_choice": {
                   "name": "Do what at the casino?",
                   "type": "choice",
-                  "need_label": "south_poker",
+                  "need_label": "south_vegas_done_slots",
                   "pos": [26, 17]
             },
             "csbiii_casino_fold_outcome_arrow": {
@@ -2285,7 +2286,7 @@
             "csbiii_south_hohsis_donate_outcome": {
                   "name": "Donate",
                   "type": "outcome",
-                  "need_label": "south_back_home_alt",
+                  "need_label": "south_donatehohsis",
                   "pos": [30, 19]
             },
             "csbiii_south_endings_arrow": {
@@ -2297,7 +2298,7 @@
             "csbiii_south_fanbase_check": {
                   "name": "Which Fanbase?",
                   "type": "prereq",
-                  "need_label": "south_back_home_alt",
+                  "need_label": "south_donatehohsis",
                   "pos": [32, 19]
             },
             "csbiii_south_fanltt_outcome_arrow": {
@@ -2473,7 +2474,7 @@
             "dx_train_museum_choice": {
                   "name": "Go to the museum?",
                   "type": "choice",
-                  "need_label": "train_story_begin",
+                  "need_label": "train_museum_menu",
                   "pos": [26, 23],
                   "dx": true
             },
@@ -2485,7 +2486,7 @@
             "dx_train_museum_yes_outcome": {
                   "name": "Yes",
                   "type": "outcome",
-                  "need_label": "train_intro_start",
+                  "need_label": "train_yes_museum",
                   "pos": [27, 23],
                   "dx": true
             },
@@ -2515,7 +2516,7 @@
             "dx_train_museum_no_outcome": {
                   "name": "No",
                   "type": "outcome",
-                  "need_label": "train_intro_start",
+                  "need_label": "train_no_museum",
                   "pos": [26, 24],
                   "dx": true
             },
@@ -2613,7 +2614,7 @@
             "dx_train_money_check": {
                   "name": "Is the money legit?",
                   "type": "prereq",
-                  "need_label": "train_lupin_win",
+                  "need_label": "train_win_check_money_legitimacy",
                   "pos": [33, 24],
                   "dx": true
             },
@@ -2625,7 +2626,7 @@
             "dx_train_money_stolen_outcome": {
                   "name": "No",
                   "type": "outcome",
-                  "need_label": "train_lupin_win",
+                  "need_label": "train_home_rich_thief",
                   "pos": [33, 25],
                   "dx": true
             },
@@ -2649,7 +2650,7 @@
             "dx_train_money_legit_outcome": {
                   "name": "Yes",
                   "type": "outcome",
-                  "need_label": "train_lupin_win",
+                  "need_label": "train_check_secret",
                   "pos": [34, 24],
                   "dx": true
             },
@@ -2659,7 +2660,7 @@
                   "pos": [34.5, 24]
             },
             "dx_train_secret_prereq": {
-                  "name": "Replay on max Bounciness!",
+                  "name": "Try replaying with max Bounciness!",
                   "type": "prereq",
                   "need_label": "train_check_secret",
                   "pos": [35, 24],
@@ -2685,7 +2686,7 @@
             "dx_train_tate_yes_outcome": {
                   "name": "Yes",
                   "type": "outcome",
-                  "need_label": "train_tate_ex_encounter",
+                  "need_label": "train_tate_ex_fight",
                   "pos": [37, 24],
                   "dx": true
             },
@@ -2794,7 +2795,7 @@
             "dx_train_tate_no_outcome": {
                   "name": "No",
                   "type": "outcome",
-                  "need_label": "train_tate_ex_encounter",
+                  "need_label": "train_tate_ex_refuse",
                   "pos": [36, 25],
                   "dx": true
             },

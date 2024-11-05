@@ -314,75 +314,82 @@ label train_story_begin:
     show arceus
     n "They spot the entrance to a museum."    
     
+label train_museum_menu:
+    # this label exists for timeline progression only - tate
     scene kingman_museum_1 with dissolve
-
     arceus "Aww, look at all those little trains. Wanna poke around in there?"
-    
+
     menu:
         "Would you like to visit Kingman Railroad Museum?"
         "Sure.":
-            cs "Sure, I don't see why not. Not like we have anything else to do."
-            arceus "Alrighty, let's go!"
-            scene black with dissolve
-            pause 1.0
-            scene kingman_museum_2 with dissolve
-            pause 2.0
-            show cs flipped at center
-            show arceus at mid_right
-            with moveinright
-            pause 1.0
-            cs "Wow, there's so much stuff here!"
-            show cs flipped
-            cs "What should we check out first?"
-            arceus "Ooh, how about that train set over there?"
-            
-            scene kingman_museum_3 with dissolve
-            n "Arceus points towards a custom train exhibit with two attached controllers."
-            n "It looks... familiar."
-            
-            scene kingman_museum_2
-            show cs disappointed at center
-            show arceus at mid_right
-            with dissolve
-            cs "It looks like {i}Minecraft..."
-            arceus "You don't like {i}Minecraft?"
-            cs "Nah. The crafting system is just too much."
-            show arceus worried
-            arceus "I guess it's not for everyone..."
-            show arceus
-            arceus "Thankfully, there's none of that here. Let's try it out!"
-            show cs
-            cs "Yeah, you're right. Let's go!"
-            show cs flipped
-            show cs flipped at offscreenleft
-            show arceus at offscreenleft
-            with moveoutleft
-            stop music fadeout 2.0
-            music end
-            scene black with dissolve
-            minigame "play_toytrains_game" "train_race_win" "train_race_lose"
+            jump train_yes_museum
         "Not really...":
-            scene kingman_interior
-            show cs disappointed flipped at center
-            show arceus at mid_right
-            with dissolve
-            cs "Not really..."
-            show arceus angry
-            show cs disappointed
-            arceus "What, would you rather just sit around bored, then?"
-            cs "I'm just not that into trains."
-            show cs happy
-            cs "Now, if this were a Lego museum, {i}that{/i} would be another story!"
-            show arceus
-            arceus "Well, {i}I'm{/i} going to go check it out."
-            show arceus happy
-            show cs worried
-            arceus "Just don't be offended when I pepper you with fun train facts afterwards! :3c"
-            scene black with dissolve
-            n "As CS takes a quick nap in a lobby chair, Arceus wanders around the museum."
-            n "While not many exhibits can fit inside such a small building, there is just enough to see to pass the remaining time."
-            n "About five minutes before the train's expected arrival, the two make their way out onto to the platform as Arceus shares some of the things he learned today."
-            jump train_kingman_platform
+            jump train_no_museum
+
+label train_yes_museum:
+    cs "Sure, I don't see why not. Not like we have anything else to do."
+    arceus "Alrighty, let's go!"
+    scene black with dissolve
+    pause 1.0
+    scene kingman_museum_2 with dissolve
+    pause 2.0
+    show cs flipped at center
+    show arceus at mid_right
+    with moveinright
+    pause 1.0
+    cs "Wow, there's so much stuff here!"
+    show cs flipped
+    cs "What should we check out first?"
+    arceus "Ooh, how about that train set over there?"
+    
+    scene kingman_museum_3 with dissolve
+    n "Arceus points towards a custom train exhibit with two attached controllers."
+    n "It looks... familiar."
+    
+    scene kingman_museum_2
+    show cs disappointed at center
+    show arceus at mid_right
+    with dissolve
+    cs "It looks like {i}Minecraft..."
+    arceus "You don't like {i}Minecraft?"
+    cs "Nah. The crafting system is just too much."
+    show arceus worried
+    arceus "I guess it's not for everyone..."
+    show arceus
+    arceus "Thankfully, there's none of that here. Let's try it out!"
+    show cs
+    cs "Yeah, you're right. Let's go!"
+    show cs flipped
+    show cs flipped at offscreenleft
+    show arceus at offscreenleft
+    with moveoutleft
+    stop music fadeout 2.0
+    music end
+    scene black with dissolve
+    minigame "play_toytrains_game" "train_race_win" "train_race_lose"
+
+label train_no_museum:
+    scene kingman_interior
+    show cs disappointed flipped at center
+    show arceus at mid_right
+    with dissolve
+    cs "Not really..."
+    show arceus angry
+    show cs disappointed
+    arceus "What, would you rather just sit around bored, then?"
+    cs "I'm just not that into trains."
+    show cs happy
+    cs "Now, if this were a Lego museum, {i}that{/i} would be another story!"
+    show arceus
+    arceus "Well, {i}I'm{/i} going to go check it out."
+    show arceus happy
+    show cs worried
+    arceus "Just don't be offended when I pepper you with fun train facts afterwards! :3c"
+    scene black with dissolve
+    n "As CS takes a quick nap in a lobby chair, Arceus wanders around the museum."
+    n "While not many exhibits can fit inside such a small building, there is just enough to see to pass the remaining time."
+    n "About five minutes before the train's expected arrival, the two make their way out onto to the platform as Arceus shares some of the things he learned today."
+    jump train_kingman_platform
 
 label train_race_win:
     play music outdoors if_changed
@@ -3386,7 +3393,7 @@ label train_lupin_win:
         n "The train then continues on its journey."
         pause 2.0
         # i've decided you can only get the tate fight if you get the good ending because reasons.
-        jump train_check_secret
+        jump train_win_check_money_legitimacy
 
 label train_lupin_lose:
     $ train_ending_money_returned = False
@@ -3501,7 +3508,14 @@ label train_lupin_lose:
     pause 3.0
     
     jump train_completed
-        
+
+label train_win_check_money_legitimacy:
+    # this label exists for timeline progression only - tate
+    if train_money_stolen == False:
+        jump train_check_secret
+    else:
+        jump train_completed
+
 ######## SECRET FIGHT VS TATE ########
         
 label train_check_secret:
@@ -3589,74 +3603,81 @@ label train_tate_ex_encounter:
     menu:
         "Will you?"
         "No way.":
-            show cs disappointed flipped
-            cs "No way. I think that's a terrible idea."
-            cs "I know how easily you injure yourself..."
-            show tate shock
-            pause 1.0
-            show tate sad
-            pause 2.0
-            tate "... Fair enough."
-            show cs worried flipped
-            show tate srs
-            tate "I'll try another timeline."
-            tate "For now, I think I'll head back to bed."
-            tate "You should, too."
-            cs "..."
-            show cs disappointed flipped
-            cs "Yeah..."
-            cs "You're... probably right."
-            cs "Have a good night, then, Tate."
-            tate "You, too."
-            show cs disappointed
-            show cs disappointed at mid_right_right
-            show tate srs flipped at left
-            with MoveTransition(1.5)
-            pause 1.0
-            show cs scared flipped
-            pause 0.5
-            show cs disappointed
-            show cs disappointed at offscreenright with moveoutright
-            pause 3.5
-            tate "Unbelievable..."
-            scene black with dissolve
-            stop music fadeout 1.0
-            music end
-            n "Thoroughly weirded out, CS returns to bed."
-            jump train_completed
+            jump train_tate_ex_refuse
         "Are you sure?":
-            queue music insomnia_loop
-            show cs worried flipped
-            cs "Are you sure about this? I don't want you getting hurt..."
-            tate "You know that I wouldn't ask if I wasn't willing to accept the risk."
-            tate "I have only one request."
-            tate "{sc=1}Don't you dare hold anything back."
-            show cs scared flipped behind tate
-            cs "Tate, I'm serious. I think this is a terrible idea."
-            tate "You don't need to worry about anything."
-            show tate srs at mid_mid_right with MoveTransition(1.0)
-            show tate smug
-            tate "It's not like I'm inviting you to play chess..."
-            tate "So, this time, you don't even need to worry about hurting my feelings."
-            tate "... You're not {i}afraid,{/i} are you?"
-            show cs surprised flipped
-            cs "Of {i}you?{/i} Why would I be?"
-            tate "Then, what are we still standing around for?"
-            tate "Let's do this."
-            show cs worried flipped
-            show tate smug at center with MoveTransition(1.0)
-            show tate smug sil_white:
-                linear 1 blur 10
-            with Dissolve(1.0)
-            stop music fadeout 1.0
-            music end
-            show cs scared flipped
-            scene white with Dissolve(0.25)
-            play sound sfx_spellcast
-            pause 3.0
-            # TODO: Tate EX sprite health bar/text indicators are still missing
-            jump rpg_tate_ex
-                
+            jump train_tate_ex_fight
+            
+label train_tate_ex_fight:
+    queue music insomnia_loop
+    show cs worried flipped
+    cs "Are you sure about this? I don't want you getting hurt..."
+    tate "You know that I wouldn't ask if I wasn't willing to accept the risk."
+    tate "I have only one request."
+    tate "{sc=1}Don't you dare hold anything back."
+    show cs scared flipped behind tate
+    cs "Tate, I'm serious. I think this is a terrible idea."
+    tate "You don't need to worry about anything."
+    show tate srs at mid_mid_right with MoveTransition(1.0)
+    show tate smug
+    tate "It's not like I'm inviting you to play chess..."
+    tate "So, this time, you don't even need to worry about hurting my feelings."
+    tate "... You're not {i}afraid,{/i} are you?"
+    show cs surprised flipped
+    cs "Of {i}you?{/i} Why would I be?"
+    tate "Then, what are we still standing around for?"
+    tate "Let's do this."
+    show cs worried flipped
+    show tate smug at center with MoveTransition(1.0)
+    show tate smug sil_white:
+        linear 1 blur 10
+    with Dissolve(1.0)
+    stop music fadeout 1.0
+    music end
+    show cs scared flipped
+    scene white with Dissolve(0.25)
+    play sound sfx_spellcast
+    pause 3.0
+    # TODO: Tate EX sprite health bar/text indicators are still missing
+    jump rpg_tate_ex
+
+label train_tate_ex_refuse:
+    play music insomnia_loop if_changed
+    show cs disappointed flipped
+    cs "No way. I think that's a terrible idea."
+    cs "I know how easily you injure yourself..."
+    show tate shock
+    pause 1.0
+    show tate sad
+    pause 2.0
+    tate "... Fair enough."
+    show cs worried flipped
+    show tate srs
+    tate "I'll try another timeline."
+    tate "For now, I think I'll head back to bed."
+    tate "You should, too."
+    cs "..."
+    show cs disappointed flipped
+    cs "Yeah..."
+    cs "You're... probably right."
+    cs "Have a good night, then, Tate."
+    tate "You, too."
+    show cs disappointed
+    show cs disappointed at mid_right_right
+    show tate srs flipped at left
+    with MoveTransition(1.5)
+    pause 1.0
+    show cs scared flipped
+    pause 0.5
+    show cs disappointed
+    show cs disappointed at offscreenright with moveoutright
+    pause 3.5
+    tate "Unbelievable..."
+    scene black with dissolve
+    stop music fadeout 1.0
+    music end
+    n "Thoroughly weirded out, CS returns to bed."
+    jump train_completed
+    
 label train_tate_ex_win:
     stop music
     music end

@@ -331,7 +331,7 @@ label true_ytp_ending:
 
 label true_ltt_ending:
     play music ac_title volume 0.4 if_changed
-    music
+    music ac_title
     n "CS looks over at his desk, where a new computer is sitting."
     scene cs_room_2 with dissolve
     n "CS looks at the monitor, which has a sticky note that says \"From LTT\"."

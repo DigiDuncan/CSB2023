@@ -145,10 +145,15 @@ screen timeline_tracer():
                             # if it needs you to have seen a label to unlock
                             if "need_label" in timeline_map[event] and renpy.seen_label(timeline_map[event]["need_label"]) == True:
                                 this_unlocked = True
+
                             # if it needs you to have earned an achievement to unlock
-                            # rework this whenever digi fixes cheevos to use IDs rather than cheev names
+                            # TODO: rework this whenever digi fixes cheevos to use IDs rather than cheev names
                             elif "need_achieve" in timeline_map[event] and achieve_map[timeline_map[event]["need_achieve"]]["name"] in persistent.unlocked_achievements:
                                 this_unlocked = True
+
+                            # TODO: rework this when endings have IDs at all
+                            #elif "need_ending" in timeline_map[event] and     in persistent.unlocked_achievements:
+
                             # if it's unlocked by default (you will *probably* never need this??):
                             elif "need_label" not in timeline_map[event] and "need_achieve" not in timeline_map[event]:
                                 this_unlocked = True

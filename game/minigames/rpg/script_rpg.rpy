@@ -28,7 +28,7 @@ label rpg_fanboy_fight_amd:
             fanboyb
         scale 1.0
         on_win "friend_after_fanboy"
-        on_lose "country_knocked_out"
+        on_lose "friend_fanboy_lose"
         intro_text "AMD fanboys have come to cancel you!"
 
 label rpg_fanboy_fight_nvidia:
@@ -41,7 +41,7 @@ label rpg_fanboy_fight_nvidia:
             fanboya
         scale 1.0
         on_win "friend_after_fanboy"
-        on_lose "country_knocked_out"
+        on_lose "friend_fanboy_lose"
         music "nordic_report_2"
         intro_text "NVIDIA fanboys have come to cancel you!"
 

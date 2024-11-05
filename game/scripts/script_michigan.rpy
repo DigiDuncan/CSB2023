@@ -213,12 +213,8 @@ label michigan_bronson_win:
     billy "And, in less creepy news, there are more exits coming up here..."
     billy "We've got both I-69 and I-94."
     billy "Which one are you guys down to take? I'm honestly up for anything that's not blood-red skies again."
-    menu:
-        "Which road should we take?"
-        "I-69" (type = "warning"):
-            jump michigan_interstate_69
-        "I-94":
-            jump michigan_interstate_94
+
+    jump michigan_interstate_menu
 
 label michigan_continue:
     scene car plains
@@ -241,6 +237,13 @@ label michigan_continue:
     billy "Alright. Which one do you think?"
     arceus "Well, 94 goes east which is the direction we want, but the other one is 69, so I'm down for either."
     billy "I guess it's up to you then, CS."
+
+    jump michigan_interstate_menu
+
+label michigan_interstate_menu:
+    # this label exists for timeline progression - tate
+    scene car plains
+    show billy car
     menu:
         "Which road should we take?"
         "I-69" (type = "warning"):

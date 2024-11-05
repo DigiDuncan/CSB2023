@@ -289,6 +289,10 @@ label friend_high_gpu:
     show cs worried flipped
     cs "No!"
     linus "Huh?"
+    jump friend_fight_menu
+
+label friend_fight_menu:
+    # this label exists for timeline progression - tate
     menu:
         "What do you want to do?"
         "Go out and fight!":
@@ -343,6 +347,10 @@ label friend_attack_fanboy:
     cs "Yeah, well, let's see about that!"
     stop sound fadeout 3.0
     jump rpg_fanboy_fight_amd
+
+label friend_fanboy_lose:
+    # this label exists only for timeline progression - tate
+    jump country_knocked_out
 
 label friend_after_fanboy:
     stop music fadeout 3.0
