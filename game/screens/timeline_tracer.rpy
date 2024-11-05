@@ -193,12 +193,16 @@ screen timeline_tracer():
                             else: # if it's this color, you haven't given it a type, and you need to fix that.
                                 this_bg = "#000000"
                         
-                            # get DX status
+                            # get DX/CE status
                             try:
-                                if timeline_map[event]["dx"] == True:
-                                    this_dx = True
+                                if timeline_map[event]["content_type"] == "dx":
+                                    dxiconimg = "gui/dx_text.png"
+                                    this_new = True
+                                elif timeline_map[event]["content_type"] == "ce":
+                                    dxiconimg = "gui/ce_text.png"
+                                    this_new = True
                             except:
-                                this_dx = False
+                                this_new = False
 
                             # get name, if it exists
                             try:
@@ -215,7 +219,7 @@ screen timeline_tracer():
                         else: # locked
                             this_bg = col_locked
                             this_name = "???"
-                            this_dx = False
+                            this_new = False
                             this_jump = None
                             
                     # let's get arrow status
@@ -264,9 +268,9 @@ screen timeline_tracer():
                         xpos this_x
                         ypos this_y
 
-                        # place dx label
-                        if this_dx == True:
-                            image ("gui/dx_text.png"):
+                        # place dx/ce label
+                        if this_new == True:
+                            image dxiconimg:
                                 xpos 114
                                 ypos -25
 

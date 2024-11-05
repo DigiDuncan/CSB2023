@@ -61,7 +61,7 @@
                   "type": "choice",
                   "need_label": "csbi_craptop",
                   "pos": [1, 6],
-                  "dx": true
+                  "content_type": "dx"
             },
             "csbi_speedrun_outcome_arrow": {
                   "type": "arrow",
@@ -73,7 +73,7 @@
                   "type": "outcome",
                   "need_label": "vibration",
                   "pos": [2, 5],
-                  "dx": true
+                  "content_type": "dx"
             },
             "csbi_speedrun_end_arrow": {
                   "type": "arrow",
@@ -85,7 +85,7 @@
                   "type": "end",
                   "need_achieve": "speedrun",
                   "pos": [3, 5],
-                  "dx": true
+                  "content_type": "dx"
             },
             "csbi_nah_outcome_arrow": {
                   "type": "arrow",
@@ -97,7 +97,7 @@
                   "type": "outcome",
                   "need_achieve": "nah",
                   "pos": [2, 7],
-                  "dx": true
+                  "content_type": "dx"
             },
             "csbi_nah_end_arrow": {
                   "type": "arrow",
@@ -109,7 +109,7 @@
                   "type": "end",
                   "need_achieve": "nah",
                   "pos": [3, 7],
-                  "dx": true
+                  "content_type": "dx"
             },
             "csbi_discord_arrow": {
                   "type": "arrow",
@@ -138,7 +138,7 @@
                   "type": "choice",
                   "need_label": "csbi_room",
                   "pos": [4, 6],
-                  "dx": true
+                  "content_type": "dx"
             },
             "csbi_homesavers_outcome_arrow": {
                   "type": "arrow",
@@ -150,7 +150,7 @@
                   "type": "outcome",
                   "need_achieve": "savers",
                   "pos": [5, 5],
-                  "dx": true
+                  "content_type": "dx"
             },
             "csbi_homesavers_end_arrow": {
                   "type": "arrow",
@@ -162,7 +162,7 @@
                   "type": "end",
                   "need_achieve": "savers",
                   "pos": [6, 5],
-                  "dx": true
+                  "content_type": "dx"
             },
             "csbi_hohsis_outcome_arrow": {
                   "type": "arrow",
@@ -397,7 +397,7 @@
                   "type": "start",
                   "need_achieve": "UNFINISHED",
                   "pos": [19, 6],
-                  "dx": true
+                  "content_type": "dx"
             },
             "fired_no_outcome_arrow": {
                   "type": "arrow",
@@ -591,7 +591,7 @@
                   "type": "outcome",
                   "need_label": "kuwait_travel",
                   "pos": [17, 3],
-                  "dx": true
+                  "content_type": "dx"
             },
             "kuwait_start_arrow": {
                   "type": "arrow",
@@ -604,7 +604,7 @@
                   "need_label": "kuwait",
                   "pos": [17, 2],
                   "jump_to": "kuwait",
-                  "dx": true
+                  "content_type": "dx"
             },
             "country_other_outcome_arrow": {
                   "type": "arrow",
@@ -2019,7 +2019,7 @@
                   "type": "start",
                   "need_label": "ce_start",
                   "pos": [51, 11],
-                  "dx": true,
+                  "content_type": "ce",
                   "jump_to": "ce_start"
             },
             "ce_end_arrow": {
@@ -2032,7 +2032,7 @@
                   "type": "end",
                   "need_label": "ce_epilogue",
                   "pos": [52, 11],
-                  "dx": true
+                  "content_type": "ce"
             },
             "dx_afterstory_start_arrow": {
                   "type": "arrow",
@@ -2044,7 +2044,7 @@
                   "type": "start",
                   "need_label": "dx_after_true",
                   "pos": [53, 11],
-                  "dx": true,
+                  "content_type": "dx",
                   "jump_to": "dx_after_true"
             },
             "dx_afterstory_end_arrow": {
@@ -2057,7 +2057,7 @@
                   "type": "end",
                   "need_label": "dx_after_convention_end",
                   "pos": [54, 11],
-                  "dx": true
+                  "content_type": "dx"
             },
             "dx_finale_arrow": {
                   "type": "arrow",
@@ -2069,7 +2069,7 @@
                   "type": "start",
                   "need_label": "finale_fun_value_land",
                   "pos": [55, 11],
-                  "dx": true,
+                  "content_type": "dx",
                   "jump_to": "finale_fun_value_land"
             },
             "dx_finale_arrow_end": {
@@ -2082,7 +2082,7 @@
                   "type": "end",
                   "need_label": "UNFINISHED",
                   "pos": [56, 11],
-                  "dx": true
+                  "content_type": "dx"
             },
             "csbiii_south_outcome_arrow": {
                   "type": "arrow",
@@ -2451,7 +2451,7 @@
                   "type": "outcome",
                   "need_label": "train_intro_start",
                   "pos": [26, 21],
-                  "dx": true
+                  "content_type": "dx"
             },
             "dx_train_intro_actually_start_arrow": {
                   "type": "arrow",
@@ -2464,7 +2464,7 @@
                   "need_label": "train_intro_start",
                   "pos": [26, 22],
                   "jump_to": "train_intro_start",
-                  "dx": true
+                  "content_type": "dx"
             },
             "dx_train_museum_choice_arrow": {
                   "type": "arrow",
@@ -2476,7 +2476,7 @@
                   "type": "choice",
                   "need_label": "train_museum_menu",
                   "pos": [26, 23],
-                  "dx": true
+                  "content_type": "dx"
             },
             "dx_train_museum_yes_outcome_arrow": {
                   "type": "arrow",
@@ -2488,7 +2488,7 @@
                   "type": "outcome",
                   "need_label": "train_yes_museum",
                   "pos": [27, 23],
-                  "dx": true
+                  "content_type": "dx"
             },
             "dx_train_toytrains_minigame_arrow": {
                   "type": "arrow",
@@ -2501,7 +2501,7 @@
                   "need_label": "play_toytrains_game",
                   "pos": [28, 23],
                   "jump_to": "play_toytrains_game",
-                  "dx": true
+                  "content_type": "dx"
             },
             "dx_train_toytrains_minigame_after_arrow": {
                   "type": "arrow",
@@ -2518,7 +2518,7 @@
                   "type": "outcome",
                   "need_label": "train_no_museum",
                   "pos": [26, 24],
-                  "dx": true
+                  "content_type": "dx"
             },
             "dx_train_museum_no_after_arrow": {
                   "type": "arrow",
@@ -2531,7 +2531,7 @@
                   "type": "outcome",
                   "need_label": "train_boarding",
                   "pos": [28, 24],
-                  "dx": true
+                  "content_type": "dx"
             },
             "dx_train_chase_choice_arrow": {
                   "type": "arrow",
@@ -2543,7 +2543,7 @@
                   "type": "choice",
                   "need_label": "train_wakeup",
                   "pos": [29, 24],
-                  "dx": true
+                  "content_type": "dx"
             },
             "dx_train_yeschase_outcome_arrow": {
                   "type": "arrow",
@@ -2555,7 +2555,7 @@
                   "type": "outcome",
                   "need_label": "train_begin_heist",
                   "pos": [30, 24],
-                  "dx": true
+                  "content_type": "dx"
             },
             "dx_train_rhythmchase_minigame_arrow": {
                   "type": "arrow",
@@ -2568,7 +2568,7 @@
                   "need_label": "play_rhythmchase_game",
                   "pos": [31, 24],
                   "jump_to": "play_rhythmchase_game",
-                  "dx": true
+                  "content_type": "dx"
             },
             "dx_train_rhythmchase_lose_outcome_arrow": {
                   "type": "arrow",
@@ -2580,7 +2580,7 @@
                   "type": "outcome",
                   "need_label": "train_lupin_lose",
                   "pos": [31, 25],
-                  "dx": true
+                  "content_type": "dx"
             },
             "dx_train_broke_end_arrow": {
                   "type": "arrow",
@@ -2592,7 +2592,7 @@
                   "type": "end",
                   "need_label": "train_home_broke",
                   "pos": [31, 26],
-                  "dx": true
+                  "content_type": "dx"
             },
             "dx_train_rhythmchase_win_outcome_arrow": {
                   "type": "arrow",
@@ -2604,7 +2604,7 @@
                   "type": "outcome",
                   "need_label": "train_lupin_win",
                   "pos": [32, 24],
-                  "dx": true
+                  "content_type": "dx"
             },
             "dx_train_money_check_arrow": {
                   "type": "arrow",
@@ -2616,7 +2616,7 @@
                   "type": "prereq",
                   "need_label": "train_win_check_money_legitimacy",
                   "pos": [33, 24],
-                  "dx": true
+                  "content_type": "dx"
             },
             "dx_train_money_stolen_outcome_arrow": {
                   "type": "arrow",
@@ -2628,7 +2628,7 @@
                   "type": "outcome",
                   "need_label": "train_home_rich_thief",
                   "pos": [33, 25],
-                  "dx": true
+                  "content_type": "dx"
             },
             "dx_train_reward_end_arrow": {
                   "type": "arrow",
@@ -2640,7 +2640,7 @@
                   "type": "end",
                   "need_label": "train_home_rich_thief",
                   "pos": [33, 26],
-                  "dx": true
+                  "content_type": "dx"
             },
             "dx_train_money_legit_outcome_arrow": {
                   "type": "arrow",
@@ -2652,7 +2652,7 @@
                   "type": "outcome",
                   "need_label": "train_check_secret",
                   "pos": [34, 24],
-                  "dx": true
+                  "content_type": "dx"
             },
             "dx_train_secret_prereq_arrow": {
                   "type": "arrow",
@@ -2664,7 +2664,7 @@
                   "type": "prereq",
                   "need_label": "train_check_secret",
                   "pos": [35, 24],
-                  "dx": true
+                  "content_type": "dx"
             },
             "dx_train_tate_choice_arrow": {
                   "type": "arrow",
@@ -2676,7 +2676,7 @@
                   "type": "choice",
                   "need_label": "train_tate_ex_encounter",
                   "pos": [36, 24],
-                  "dx": true
+                  "content_type": "dx"
             },
             "dx_train_tate_yes_outcome_arrow": {
                   "type": "arrow",
@@ -2688,7 +2688,7 @@
                   "type": "outcome",
                   "need_label": "train_tate_ex_fight",
                   "pos": [37, 24],
-                  "dx": true
+                  "content_type": "dx"
             },
             "dx_train_tate_ex_minigame_arrow": {
                   "type": "arrow",
@@ -2700,7 +2700,7 @@
                   "type": "minigame",
                   "need_label": "rpg_tate_ex",
                   "pos": [38, 24],
-                  "dx": true
+                  "content_type": "dx"
             },
             "dx_train_tate_ex_win_outcome_arrow": {
                   "type": "arrow",
@@ -2712,7 +2712,7 @@
                   "type": "outcome",
                   "need_label": "train_tate_ex_win",
                   "pos": [39, 24],
-                  "dx": true
+                  "content_type": "dx"
             },
             "dx_train_perfect_tate_minigame_arrow": {
                   "type": "arrow",
@@ -2724,7 +2724,7 @@
                   "type": "minigame",
                   "need_label": "play_perfecttate_game",
                   "pos": [40, 24],
-                  "dx": true
+                  "content_type": "dx"
             },
             "dx_train_perfect_tate_win_outcome_arrow": {
                   "type": "arrow",
@@ -2736,7 +2736,7 @@
                   "type": "outcome",
                   "need_label": "train_defeated_perfect_tate",
                   "pos": [41, 24],
-                  "dx": true
+                  "content_type": "dx"
             },
             "dx_train_rich_end_pt_arrow": {
                   "type": "arrow",
@@ -2753,7 +2753,7 @@
                   "type": "outcome",
                   "need_label": "train_perfect_tate_lose",
                   "pos": [40, 25],
-                  "dx": true
+                  "content_type": "dx"
             },
             "dx_train_perfect_tate_lose_outcome_after_first_arrow": {
                   "type": "arrow",
@@ -2775,7 +2775,7 @@
                   "type": "outcome",
                   "need_label": "train_tate_ex_lose",
                   "pos": [38, 25],
-                  "dx": true
+                  "content_type": "dx"
             },
             "dx_train_tate_ex_lose_outcome_after_first_arrow": {
                   "type": "arrow",
@@ -2797,7 +2797,7 @@
                   "type": "outcome",
                   "need_label": "train_tate_ex_refuse",
                   "pos": [36, 25],
-                  "dx": true
+                  "content_type": "dx"
             },
             "dx_train_tate_no_outcome_after_first_arrow": {
                   "type": "arrow",
@@ -2898,7 +2898,7 @@
                   "type": "end",
                   "need_label": "train_home_rich_winner",
                   "pos": [42, 24],
-                  "dx": true
+                  "content_type": "dx"
             },
             "dx_train_nochase_outcome_arrow": {
                   "type": "arrow",
@@ -2910,7 +2910,7 @@
                   "type": "outcome",
                   "need_label": "train_allow_staff",
                   "pos": [29, 25],
-                  "dx": true
+                  "content_type": "dx"
             },
             "dx_chicago_start_arrow" : {
                   "type": "arrow",
@@ -2922,7 +2922,7 @@
                   "type": "start",
                   "need_label": "UNFINISHED",
                   "pos": [29, 26],
-                  "dx": true
+                  "content_type": "dx"
             }
       }
 }
