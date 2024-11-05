@@ -2661,6 +2661,7 @@ label ce_lights_out:
     n "CS feels around, and manages to find a flashlight on a table."
     scene cs_basement
     show cs at center
+    play sound sfx_flashlight_on
     show screen flashlight_demo
     cs "Thank god, I can actually see."
     hide cs with moveoutright
