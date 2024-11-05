@@ -267,36 +267,42 @@ screen timeline_tracer():
                         background this_bg
                         xsize 150
                         ysize 100
-
                         xpos this_x
                         ypos this_y
-
-                        # place dx/ce label
-                        if this_new == True:
-                            image dxiconimg:
-                                xpos 114
-                                ypos -25
 
                         # make button
                         button:
                             xsize 150
-                            ysize 150
+                            ysize 100
                             xalign 0.5
                             yalign 0.5
 
-                            # show name, although later i'd like this to be a tooltip or smth
+                            # add hover effects if jumpable
+                            if this_jump is not None:
+                                idle_background this_bg
+                                insensitive_background col_locked
+                                hover_background "#FFFFFF"
+                                
+                            # show name on button, although maybe some should use images later?
                             text this_name:
+                                hover_color this_bg
                                 size 24
                                 xalign 0.5
                                 yalign 0.5
                                 text_align 0.5
 
+                            # place dx/ce label
+                            if this_new == True:
+                                image dxiconimg:
+                                    xpos 114
+                                    ypos -25
+
                             # handle jumps here later if there are any
                             # TODO: DON'T USE THIS YET, IT WILL MAKE YOU UNABLE TO ESCAPE THE GAME
-                            #action [ SensitiveIf(this_unlocked == True and this_jump is not None), Play("sound", "audio/sfx/sfx_valid.ogg"),Jump(this_jump) ]
-                            action [ SensitiveIf(this_unlocked == True and this_jump is not None), Play("sound", "audio/sfx/sfx_valid.ogg"),Notify(this_jump) ]
+                            #action [ SensitiveIf(this_unlocked == True and this_jump is not None), Play("sound", "audio/sfx/sfx_valid.ogg"), Jump(this_jump) ]
+                            action [ SensitiveIf(this_unlocked == True and this_jump is not None), Play("sound", "audio/sfx/sfx_valid.ogg"), Notify(this_jump) ]
 
-                            hovered [ info.Action(this_name), SetScreenVariable("info_x", this_x), SetScreenVariable("info_y", this_y-50) ]
+                            hovered [ info.Action("Replay!"), SetScreenVariable("info_x", this_x), SetScreenVariable("info_y", this_y-50) ]
 
                             hover_sound "audio/sfx/sfx_select.ogg"
 
@@ -309,7 +315,6 @@ screen timeline_tracer():
                     ypos info_y-25
                     text info.value:
                         text_align 0.5
-
 
     text "Total Events Seen: [total_seen_events] of [total_events]\nTotal Endings Seen: [total_seen_endings] of [total_endings]":
         xanchor 1.0

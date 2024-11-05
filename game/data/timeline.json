@@ -1228,8 +1228,7 @@
                   "name": "Editing Game",
                   "type": "minigame",
                   "need_label": "play_edit_game",
-                  "pos": [16, 11],
-                  "jump_to": "play_edit_game"
+                  "pos": [16, 11]
             },
             "csbiii_editing_bad_outcome_arrow": {
                   "type": "arrow",
@@ -1466,7 +1465,7 @@
                   "pos" : [23.5, 14]
             },
             "csbiii_ch2_start": {
-                  "name": "CSBIII Chapter 2",
+                  "name": "CSBIII\nChapter 2",
                   "type": "start",
                   "need_label": "csbiii_choose_direction",
                   "pos": [24, 14],
@@ -1584,8 +1583,7 @@
                   "name": "Car Game",
                   "type": "minigame",
                   "need_label": "minigame_car",
-                  "pos": [31, 13],
-                  "jump_to": "minigame_car"
+                  "pos": [31, 13]
             },
             "csbiii_east_car_lose_outcome_arrow": {
                   "type": "arrow",
@@ -1717,8 +1715,7 @@
                   "name": "Pencil Game",
                   "type": "minigame",
                   "need_label": "minigame_pencil",
-                  "pos": [37, 13],
-                  "jump_to": "minigame_pencil"
+                  "pos": [37, 13]
             },
             "csbiii_east_pencil_lose_outcome_arrow": {
                   "type": "arrow",
@@ -2500,7 +2497,6 @@
                   "type": "minigame",
                   "need_label": "play_toytrains_game",
                   "pos": [28, 23],
-                  "jump_to": "play_toytrains_game",
                   "content_type": "dx"
             },
             "dx_train_toytrains_minigame_after_arrow": {
@@ -2567,7 +2563,6 @@
                   "type": "minigame",
                   "need_label": "play_rhythmchase_game",
                   "pos": [31, 24],
-                  "jump_to": "play_rhythmchase_game",
                   "content_type": "dx"
             },
             "dx_train_rhythmchase_lose_outcome_arrow": {
