@@ -1039,7 +1039,7 @@ label ce_party_before:
         cs "Hey look at that! Anno's here first!"
         hide cs with moveoutleft
         scene cs_house_snow_night
-        show anno dark at mid_left
+        show anno festive dark at mid_left
         with dissolve
         show cs dark flipped at right with moveinright
         anno "Hey CS!"
@@ -1358,7 +1358,7 @@ label ce_intro:
     n "By the time of the party, everyone shows up at CS' house in droves."
     scene cs_foyer
     show cs at left
-    show anno at mid_left behind cs
+    show anno festive at mid_left behind cs
     show aria at mid_mid_left behind anno
     show digi at center
     show tate festive flipped at mid_right
@@ -2289,7 +2289,7 @@ label ce_exchange:
     anno "That was my gift!"
     hide kitty with moveoutright   
     anno "It looks like I'm up next."
-    show anno at mid_left with moveinleft
+    show anno festive at mid_left with moveinleft
     anno "I got..."
     show raspberry_pi at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     anno "What the hell is this?"
@@ -2316,14 +2316,14 @@ label ce_exchange:
     n "Arceus whispers something into her ear."
     show kitty at mid_left with moveinleft
     kitty "Alright, Anno, hand over your computer thing."
-    show anno at mid_right with moveinright
+    show anno festive at mid_right with moveinright
     show raspberry_pi at Move((0.7125, 0.5), (0.3125, 0.5), 2, repeat=False, bounce=False, xanchor="left", yanchor="top")
     with dissolve
     pause 3.0
     hide raspberry_pi with dissolve
     hide kitty with moveoutright   
     anno "Welp, next gift I guess."
-    show anno at mid_left with move
+    show anno festive at mid_left with move
     anno "I guess I'll pick this one."
     anno "I wonder what it'll be?"
     show lego_train at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
@@ -2763,7 +2763,7 @@ label ce_lights_out:
     cs "I'll go check on others, and see if I can get outside."
     hide cs with moveoutright
     scene cs_foyer_off
-    show anno at mid_left
+    show anno festive at mid_left
     show aria at mid_mid_left behind anno
     show digi at mid_mid_left
     show k17 disappointed at center behind digi
@@ -2789,7 +2789,7 @@ label ce_lights_out:
     cs "Oh my God, how much... did it..."
     n "CS slams the door shut and runs back to deliver the news."
     scene cs_foyer_off
-    show anno at mid_left
+    show anno festive at mid_left
     show aria at mid_mid_left behind anno
     show digi at mid_mid_left
     show k17 disappointed at center behind digi
