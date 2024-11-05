@@ -748,7 +748,7 @@ label ce_before_shopping:
     scene black with Dissolve(2.0)
     stop sound fadeout 5.0
     pause 5.0
-    play music winter_unclearance_sale loop volume 3 fadein 1.0
+    play music winter_unclearance_sale loop volume 0.85 fadein 1.0
     play sound sfx_hubbub loop volume 0.2 fadein 1.0
     scene tgt_inside
     with dissolve
@@ -860,6 +860,7 @@ label ce_checkout:
     show snufkin flipped at mid_mid_right
     show customer at center
     with dissolve
+    play music winter_unclearance_sale if_changed loop volume 0.3 fadein 1.0    
     show cs at left with moveinleft
     pause 1.0
     show cs disappointed
