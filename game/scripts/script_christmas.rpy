@@ -2778,11 +2778,14 @@ label ce_lights_out:
     cs "I'm gonna check outside and see how bad it is."
     k22 "I was gonna try that, but I couldn't find the door."
     cs "If we get outside, we might be able to dig our vehicles out."
+    cs "Let me see how bad it is."
     hide cs with moveoutright
     anno "Good luck CS!"
     scene black with dissolve
-    cs "Alright, let's see how bad it is."
     n "CS pulls and yanks open the door, until it finally rips open."
+    scene cs_door 
+    show cs worried at left
+    with dissolve
     n "He falls backwards, only to be greeted with an ungrateful sight."
     cs "What the hell? Is that snow?"
     n "CS sticks his finger out into the mysterious substance."
