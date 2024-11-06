@@ -2845,6 +2845,7 @@ label ce_after_hatch:
     show screen flashlight_demo
     mean "You mean like that one?"
     cs "Yeah, pull it open."
+    play sound sfx_snowfall
     show snow_pile at center with easeintop
     pause 1.0
     n "As Mean yanks on the hatch, it bursts open downwards, as a huge pile of snow falls onto the attic floor."
