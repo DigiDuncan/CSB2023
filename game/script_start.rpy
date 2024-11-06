@@ -1862,7 +1862,11 @@ image sleigh:
     ease 3.0 rotate -3
     ease 3.0 rotate 3
     repeat
+
 image snow_pile = "snow_pile.png"
+
+
+
 # Static Images
 image amtrak_dining_food = "food.png" 
 image amtrak_dining_pancake = "pancake.png"
@@ -1891,9 +1895,11 @@ image cool_crab dusk = "dusk:cool_crab.png"
 image cop_car = "cop_car.png"
 image cop_car dark = "dark:cop_car.png"
 image crt_magnet = "crt_magnet.png"
+image cs_id = "cs_id.png"
 image cs_phone = "cs_phone.png"
 image cs_wallet = "cs_wallet.png"
 image cswanted = "wanted_poster.png"
+image d20 = "d20.png"
 image dog = "dog.png"
 image donut_1 = "donut_1.png"
 image donut_2 = "donut_2.png"
@@ -1942,10 +1948,11 @@ image pringles = "pringles.png"
 image renault = "renault.png"
 image rosen_phone = "rosen_phone.png"
 image sansbrick = "sansbrick.png"
-image slime16 = "slime16.png"
-image slime16 fire = "slime16_fire.png"
 image scott_border = "scott_border.png"
 image script = "images/bg/script.png"
+image shovel = "shovel.png"
+image slime16 = "slime16.png"
+image slime16 fire = "slime16_fire.png"
 image snow_wind_single = "snow_wind.png"
 image spoon = "spoon.png"
 image switch = "switch.png"
@@ -1992,10 +1999,6 @@ image russian_radio = "images/gifts/russian_radio.png"
 image sunny_d = "images/gifts/sunny_d.png"
 image tea_and_crumpets = "images/gifts/tea_and_crumpets.png"
 image thigh_highs = "images/gifts/thigh_highs.png"
-
-# CSBIII DX: Holiday Special Misc Items
-# also these items are in the main game, but should also be in CE. will add more as they're found: tate_phone, cs_phone, cs_wallet
-image shovel = "shovel.png"
 
 # Movies
 image car background = Movie(play="movies/car_background.webm")
@@ -2700,6 +2703,7 @@ define audio.sfx_spellcast = "sfx/sfx_spellcast.ogg"
 define audio.sfx_spikes = "sfx/sfx_spikes.ogg"
 define audio.sfx_splash = "sfx/sfx_splash.ogg"
 define audio.sfx_start_rocking = "sfx/sfx_start_rocking.ogg"
+define audio.sfx_tada = "sfx/sfx_tada.ogg"
 define audio.sfx_tape_rewind = "sfx/sfx_tape_rewind.ogg"
 define audio.sfx_tf2_pickup_metallic = "sfx/sfx_tf2_pickup_metallic.ogg"
 define audio.sfx_tf2_sapper = "sfx/sfx_tf2_sapper.ogg"
