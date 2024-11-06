@@ -314,6 +314,15 @@ label woohoo_counter:
     cs "Now it's [persistent.woohoo]!"
     return
 
+screen hatch_button:
+    modal True
+    viewport:
+        xpos 0.3
+        ypos -0.2
+        hbox:
+            imagebutton auto "hatch_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
+                action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("hatch_button"), Jump("ce_after_hatch")
+    add Flashlight()
 
 screen limbo_csbutton:
     add "#000000"

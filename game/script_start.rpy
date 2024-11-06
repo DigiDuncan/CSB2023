@@ -1862,6 +1862,7 @@ image sleigh:
     ease 3.0 rotate -3
     ease 3.0 rotate 3
     repeat
+image snow_pile = "snow_pile.png"
 # Static Images
 image amtrak_dining_food = "food.png" 
 image amtrak_dining_pancake = "pancake.png"
@@ -1905,6 +1906,7 @@ image gamebarrel = "gamebarrel.png"
 image genergy = "genergy.png"
 image gleam = "gleam.png"
 image hair_dryer = "hair_dryer.png"
+image hatch = "hatch_idle.png"
 image hold_it = "hold_it.png"
 image horse_mask = "horse_mask.png"
 image laser_beam = "laser_beam.png"

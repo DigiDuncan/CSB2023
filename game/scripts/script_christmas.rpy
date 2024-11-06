@@ -2826,7 +2826,8 @@ label ce_lights_out:
     hide mean
     with moveoutright
     n "CS and Mean find the ladder to the attic, and make their way up."
-    scene cs_attic 
+    scene cs_attic
+    show hatch at manual_pos(0.3, -0.2) 
     show cs disappointed at mid_left
     show mean human annoyed at mid_right
     with dissolve
@@ -2836,13 +2837,31 @@ label ce_lights_out:
     cs "Yeah, I'm just a bit tired."
     cs "There should be a hatch or something up here..."
     mean "Shine your light up."
+    hide screen flashlight_demo
+    show screen hatch_button
+    window hide
+    pause
+label ce_after_hatch:
+    show screen flashlight_demo
     mean "You mean like that one?"
     cs "Yeah, pull it open."
+    show snow_pile at center with easeintop
+    pause 1.0
     n "As Mean yanks on the hatch, it bursts open downwards, as a huge pile of snow falls onto the attic floor."
     cs "That is... a lot of snow."
     mean "C'mon, let's get up here."
     n "Mean climbs up onto the roof."
-    hide mean with moveouttop
+    show mean human at Move((0.54, 0.0), (0.35, 0.0), 0.5, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    pause 0.5
+    show mean human at Move((0.35, 0.0), (0.35, -0.4), 0.15, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    pause 0.15
+    show mean human at Move((0.35, -0.4), (0.35, -0.2), 0.15, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    pause 0.75
+    show mean human at Move((0.35, -0.2), (0.35, -0.7), 0.5, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    pause 0.5
+    show mean human at Move((0.35, -0.7), (0.35, -0.5), 0.75, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    pause 0.75
+    show mean human at Move((0.35, -0.5), (0.35, -1.2), 0.5, repeat=False, bounce=False, xanchor="left", yanchor="top")
     mean "Holy..."
     mean "Fuck."
     cs "What? How bad is it?"
@@ -3575,6 +3594,9 @@ label ce_roof_moment:
     copguy "It's one of my pitches, I also pitch car products as a side gig!"
     cs "Wait, your Carguy?"
     copguy "Man, I literally look like him. How have you never picked that up?"
+    billy "CS, are you sure this will work? I don't believe this..."
+    cs "Don't believe me."
+    cs "Just watch."
     stop music fadeout 3.0
     music end
     show nu_finish:
