@@ -3444,6 +3444,8 @@ label ce_roof_moment:
     cs "Alright Santa, I have my wish."
     show cs at mid_right with move
     n "CS whispers into Santa's ear."
+    play sound sfx_whisper volume 0.5
+    pause 1.0
     n "Santa's eyes widen."
     santa "Ho ho ho! Well..."
     santa "I guess I could do that."
