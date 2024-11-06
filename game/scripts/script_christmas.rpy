@@ -2822,6 +2822,7 @@ label ce_lights_out:
     anno "Good luck CS!"
     scene black with dissolve
     n "CS pulls and yanks open the door, until it finally rips open."
+    play sound sfx_housedoor_slam
     scene cs_door 
     show cs worried at left
     with dissolve
