@@ -814,8 +814,8 @@ screen preferences():
 
     # default, show nothing
     default info = Tooltip("")
-    default info_x = 0
-    default info_y = 0
+    default info_x = mouse_xy[0]
+    default info_y = mouse_xy[1]
 
     tag menu
 
