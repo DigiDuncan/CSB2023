@@ -812,6 +812,11 @@ style slot_button_text:
 
 screen preferences():
 
+    # default, show nothing
+    default info = Tooltip("")
+    default info_x = 0
+    default info_y = 0
+
     tag menu
 
     use game_menu(_("Preferences"), scroll="viewport"):
@@ -910,8 +915,10 @@ screen preferences():
                         text_color "#555555"
                         yoffset 10
                     null width 10
-                    textbutton ("{size=-5}🎵") action ToggleField(preferences, "music_joke_enable")
-                    textbutton ("{size=-5}🤔") action ToggleField(preferences, "confusing_joke_enable")
+                    textbutton ("{size=-5}🎵") action ToggleField(preferences, "music_joke_enable"):
+                        hovered [Function(get_mouse), info.Action("Enable BGM-based puns, which may be confusing if you haven't played the game yet."), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
+                    textbutton ("{size=-5}🤔") action ToggleField(preferences, "confusing_joke_enable"):
+                        hovered [Function(get_mouse), info.Action("Enable random events which may be confusing if you haven't played the game yet."), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
                 label _("Bounciness Chance")
                 hbox:
                     bar:
@@ -930,6 +937,17 @@ screen preferences():
                         changed(change_max_fun)
                     null width 20
                     label "[max_fun_label]" yoffset -10 xminimum 200
+
+    # TODO: make this prettier later
+    frame:
+        xanchor 0.5
+        if info.value == "":
+            background None
+        xpos info_x + 75
+        ypos info_y - 25
+        text info.value:
+            text_align 0.5
+            size 20
 
 style pref_label is gui_label
 style pref_label_text is gui_label_text

@@ -464,3 +464,10 @@ init python:
             if index == len(self.keys):
                 return None
             return index
+
+default mouse_xy = (0, 0)
+
+init python:
+    def get_mouse():
+        global mouse_xy
+        mouse_xy = renpy.get_mouse_pos()
