@@ -768,6 +768,20 @@ image cs angry punished = "characters/cs/CSnake_Angry.png"
 image cs angry punished flipped = "flip:characters/cs/CSnake_Angry.png"
 image cs full = "characters/cs/neutral_full.png"
 
+# CS CE outfits
+image cs coat = "characters/cs/ce/neutral_cold.png"
+image cs coat flipped = "flip:characters/cs/ce/neutral_cold.png"
+image cs coat disappointed = "characters/cs/ce/disappointed_cold.png"
+image cs coat disappointed flipped = "flip:characters/cs/ce/disappointed_cold.png"
+image cs coat worried = "characters/cs/ce/worried_cold.png"
+image cs coat worried flipped = "flip:characters/cs/ce/worried_cold.png"
+image cs coat happy = "characters/cs/ce/happy_cold.png"
+image cs coat happy flipped = "flip:characters/cs/ce/happy_cold.png"
+image cs coat angry = "characters/cs/ce/angry_cold.png"
+image cs coat angry flipped = "flip:characters/cs/ce/angry_cold.png"
+image cs coat scared = "characters/cs/ce/scared_cold.png"
+image cs coat scared flipped = "flip:characters/cs/ce/scared_cold.png"
+
 # CS Misc
 image csgod = "characters/csgod.png"
 image csgod flipped = "flip:characters/csgod.png"
