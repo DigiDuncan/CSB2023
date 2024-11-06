@@ -479,11 +479,27 @@ label ce_anno:
     carguy "I've got something that'll do the trick!"
     carguy "Crotch Doctor, with advanced \"Scratch My Balls\" technology, not only removes taint scrapes, scuffs, grapes, and other blemishes from your car, it {i}also{/i} instantly melts snow!"
     carguy "Watch!"
-
+    show nu_finish with dissolve:
+        zoom 0.2
+        yzoom 1
+        pos (0.3,0.5)
     # TODO: bottle of crotch doctor
 
     n "Carguy produces a bottle of Crotch Doctor from his breast pocket and unscrews the cap."
     n "He tips it upside down and gives it a squeeze."
+    show nu_finish:
+        zoom 0.2
+        yzoom 1
+        pos (0.25,0.5)
+        linear 2 rotate 180
+    pause 2.2
+    show nu_finish:
+        zoom 0.2
+        yzoom 1
+        pos (0.25,0.5)
+        linear 0.5 xzoom 0.2
+        linear 0.5 xzoom 1   
+    pause 1.2
     # TODO: sfx who remembers that episode of spongebob with the bottle of hot sauce and one drop falls and fizzles out? that sound.
     n "A single drop falls onto the snow, revealing only a hint of the asphalt below."
     
@@ -491,13 +507,36 @@ label ce_anno:
 
     cs "Umm..."
     carguy "Hold on, it's just..."
-
+    show nu_finish:
+        zoom 0.2
+        yzoom 1
+        pos (0.25,0.5)
+        linear 0.1 ypos 400
+        linear 0.1 ypos 600
     # TODO: shaky shaky anim + sfx that empty ketchup bottle squirting sound
     
     n "Carguy vigorously shakes the empty bottle."
-
-    pause 1.0
+    show nu_finish:
+        zoom 0.2
+        yzoom 1
+        pos (0.25,0.5)
+        linear 0.1 ypos 400
+        linear 0.1 ypos 600
+        linear 0.1 ypos 400
+        linear 0.1 ypos 600
+        linear 0.1 ypos 400
+        linear 0.1 ypos 600
+        linear 0.1 ypos 400
+        linear 0.1 ypos 600
+        linear 0.1 ypos 400
+        linear 0.1 ypos 600
+        linear 0.1 ypos 400
+        linear 0.1 ypos 600
+        linear 0.1 ypos 400
+        linear 0.1 ypos 600
+    pause 1.5
     carguy "{size=-15}I thought I'd brought more of this..." 
+    hide nu_finish with dissolve
     carguy "Welp, sorry! Looks like I've run out!"
     carguy "Gotta run! Happy holidays to you!"
     play sound sfx_snow_run loop volume 2.0
