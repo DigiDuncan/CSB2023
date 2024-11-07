@@ -1015,10 +1015,21 @@ label ce_checkout:
 label ce_aftershop:
     scene cs_kitchen
     show cs_kitchen_fg
+    show d20:
+        zoom 0.1
+        xpos 1200
+        ypos 820
     with dissolve
     show cs flipped at mid_right behind cs_kitchen_fg with moveinright
     n "When CS gets home, he starts putting the groceries away."
     show cs flipped at center behind cs_kitchen_fg with move
+    show d20:
+        zoom 0.1
+        linear 0.1 rotate 165 xpos 1000 ypos 600
+        linear 0.2 rotate 165 xpos 800 ypos 500
+        linear 0.1 rotate 165 xpos 700 ypos 700
+        linear 0.1 rotate 165 xpos 600 ypos 900
+        linear 0.1 rotate 165 xpos 500 ypos 1100
     n "As he's finishing up, a D20 he had sitting on the counter gets knocked onto the floor."
     show cs disappointed behind cs_kitchen_fg
     cs "What the hell? When did I ever have one of these?"
