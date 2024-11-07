@@ -1675,6 +1675,7 @@ label ce_banter:
     with move
     show digi with determination
     n "After a little bit of tech magic, the projector comes to life."
+    play sound sfx_tada
     luke "Tah dah!"
     rich "Finally, we can watch something."
     wesley "Are you 100-percent satisfied, Richard?"
@@ -1771,13 +1772,18 @@ label ce_banter:
     show k17 flipped
     k17 "I'll just keep being myself, and try to keep more of an open mind. Thank you K-22!"
     show k17 flipped at center with ease
+    play sound sfx_house_door_open
     hide k17 with dissolve
+    play sound sfx_house_door_close
     k22 "Dammit, it was worth a try."
     show k22 at mid_left with move
     show k22 flipped with determination
     k22 "I wonder how Addy is doing anyways."
     play sound sfx_ring_once
     n "K-22 hits up Addy."
+    $ renpy.music.set_pause(True, "music")
+    play music2 frollo_rave if_changed
+    music frollo_rave
     show archival_5 at mid_offscreen_right
     show pakoo disappointed at mid_right
     with moveinright
@@ -1791,6 +1797,8 @@ label ce_banter:
     hide archival_5
     hide pakoo
     with moveoutright
+    stop music2
+    $ renpy.music.set_pause(False, "music")
     k22 "Motherfucker!"
     show snow3
     show snow4

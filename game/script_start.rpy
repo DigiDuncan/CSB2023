@@ -2532,6 +2532,7 @@ define audio.christmas_spirit = "christmas_spirit.ogg"
 define audio.snowdin_town = "snowdin_town.ogg"
 define audio.rice_and_wine = "rice_and_wine.ogg"
 define audio.winter_unclearance_sale = "winter_unclearance_sale.ogg"
+define audio.frollo_rave = "frollo_rave.ogg"
 
 # CSBIII DX After-True Music
 define audio.lets_hear_spring = "letshearspring.ogg"
