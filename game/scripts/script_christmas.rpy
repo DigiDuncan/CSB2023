@@ -63,7 +63,7 @@ label ce_start:
     pause 2.0
     "..."
     show cs disappointed
-    cs "... I have not prepared at all."
+    cs "...{fast} I have not prepared at all."
     cs "Fuck."
     pause 0.5
 
@@ -278,28 +278,28 @@ label ce_anno:
 
     if tree_first:
         scene cs_garage_mess with dissolve
-        show cs coat disappointed at offscreenleft
-        show cs coat disappointed at mid_mid_left with moveinleft
+        show cs disappointed coat at offscreenleft
+        show cs disappointed coat at mid_mid_left with moveinleft
         # TODO: swap SFX later, however appropriate this one is lmfao
-        show cs coat scared
+        show cs scared coat
         play sound sfx_spikes
         cs "Shit!" with hpunch
-        show cs coat worried
+        show cs worried coat
         cs "I love Legos, but not when they're embedded in my {i}feet!" 
         cs "Now, where did I last put..."
     else:
         scene cs_garage with dissolve
-        show cs coat disappointed at mid_mid_left with moveinleft
+        show cs disappointed coat at mid_mid_left with moveinleft
     pause 0.5
-    show cs coat disappointed at right with move
+    show cs disappointed coat at right with move
     pause 0.5
     cs "Here we go."
 
-    show cs coat disappointed at mid_offscreen_right with move
+    show cs disappointed coat at mid_offscreen_right with move
     show shovel at manual_pos(1.2, 0.8, 0.5) with determination
     $ collect("shovel")
 
-    show cs coat disappointed at right 
+    show cs disappointed coat at right 
     show shovel at manual_pos(0.9, 0.7, 0.5):
         rotate 15
     with move
@@ -307,7 +307,7 @@ label ce_anno:
     pause 0.5
     cs "I sure hope it didn't snow {i}too{/i} much..."
     pause 0.5
-    show cs coat disappointed flipped at left 
+    show cs disappointed coat flipped at left 
     show shovel at manual_pos(0.25, 0.7, 0.5):
         rotate 15
     with move
@@ -335,7 +335,7 @@ label ce_anno:
     pause 3.0
 
     scene cs_house_snowed_in
-    show cs coat disappointed flipped at right
+    show cs disappointed coat flipped at right
     show shovel at manual_pos(0.9, 0.7, 0.5):
         rotate 15
     with dissolve
@@ -380,7 +380,7 @@ label ce_anno:
     # TODO: Make this a bit smoother
     # FIRST
     play sound "<from 0.74 to 1.723>sfx/sfx_snow_walk.ogg" volume 2.0 # TODO: this is only playing one footstep. it should be two. the next instance is two. I DON'T UNDERSTAND - tate
-    show cs coat disappointed flipped at center
+    show cs disappointed coat flipped at center
     show shovel at manual_pos(0.6, 0.7, 0.5)
     with MoveTransition(1.0)
     # TODO: shovel sounds
@@ -391,12 +391,12 @@ label ce_anno:
         linear 0.5 rotate 110
     pause 0.5
     # TODO: need a pile of snow to move
-    show cs coat disappointed at center
+    show cs disappointed coat at center
     show shovel at manual_pos(0.5, 0.7, 0.5):
         rotate -110
     pause 0.5
     play sound "<from 0.074 to 1.723>sfx/sfx_snow_walk.ogg" volume 2.0
-    show cs coat disappointed at right
+    show cs disappointed coat at right
     show shovel at manual_pos(0.9, 0.7, 0.5)
     with MoveTransition(1.0)
     pause 0.5
@@ -405,12 +405,12 @@ label ce_anno:
     pause 1.0
 
     # SECOND
-    show cs coat disappointed flipped at right
+    show cs disappointed coat flipped at right
     show shovel at manual_pos(0.9, 0.7, 0.5):
         rotate 15
     pause 0.5
     play sound "<from 0.074 to 0.869>sfx/sfx_snow_walk.ogg" volume 2.0
-    show cs coat disappointed flipped at mid_right
+    show cs disappointed coat flipped at mid_right
     show shovel at manual_pos(0.7, 0.7, 0.5)
     with MoveTransition(1.0)
     # TODO: shovel sounds
@@ -421,11 +421,11 @@ label ce_anno:
         linear 0.5 rotate 110
     pause 0.5
     # TODO: need a pile of snow to move
-    show cs coat disappointed at mid_right
+    show cs disappointed coat at mid_right
     show shovel at manual_pos(0.8, 0.7, 0.5):
         rotate -110
     play sound "<from 0.074 to 0.869>sfx/sfx_snow_walk.ogg" volume 2.0
-    show cs coat disappointed at right
+    show cs disappointed coat at right
     show shovel at manual_pos(0.9, 0.7, 0.5)
     with MoveTransition(1.0)
     pause 0.5
@@ -435,7 +435,7 @@ label ce_anno:
 
     # THIRD
     play sound "<from 0.074 to 2.563>sfx/sfx_snow_walk.ogg" volume 2.0
-    show cs coat disappointed flipped at mid_left
+    show cs disappointed coat flipped at mid_left
     show shovel at manual_pos(0.3, 0.7, 0.5):
         rotate 15
     with MoveTransition(2.5)
@@ -448,11 +448,11 @@ label ce_anno:
         linear 0.5 rotate 110
     pause 0.5
     # TODO: need a pile of snow to move
-    show cs coat disappointed at mid_left
+    show cs disappointed coat at mid_left
     show shovel at manual_pos(0.5, 0.7, 0.5):
         rotate -110
     play sound "<from 0.074 to 2.563>sfx/sfx_snow_walk.ogg" volume 2.0
-    show cs coat disappointed at right
+    show cs disappointed coat at right
     show shovel at manual_pos(0.9, 0.7, 0.5)
     with MoveTransition(2.5)
     pause 0.5
@@ -470,14 +470,14 @@ label ce_anno:
     carguy_nobeep "Nice snow!"
     play sound sfx_not_so_nice_driveway
     carguy_nobeep "Nooot so nice driveway."
-    show cs coat disappointed flipped
+    show cs disappointed coat flipped
     show shovel at manual_pos(0.9, 0.7, 0.5):
         rotate 15
     cs "Look, man, I'm trying."
     cs "It's cold as balls out here."
     carguy "Speaking of balls, you need some help?"
     carguy "I've got something that'll do the trick!"
-    carguy "Crotch Doctor, with advanced \"Scratch My Balls\" technology, not only removes taint scrapes, scuffs, grapes, and other blemishes from your car, it {i}also{/i} instantly melts snow!"
+    carguy "Crotch Doctor, with advanced \"Scratch My Balls\" technology, not only removes taint scrapes, stuffs, grapes, and other blemishes from your car, it {i}also{/i} instantly melts snow!"
     carguy "Watch!"
     show nu_finish with dissolve:
         zoom 0.2
@@ -491,8 +491,8 @@ label ce_anno:
         zoom 0.2
         yzoom 1
         pos (0.25,0.5)
-        linear 2 rotate 180
-    pause 2.2
+        linear 0.5 rotate 180
+    pause 0.7
     show nu_finish:
         zoom 0.2
         yzoom 1
@@ -522,37 +522,26 @@ label ce_anno:
         pos (0.25,0.5)
         linear 0.1 ypos 400
         linear 0.1 ypos 600
-        linear 0.1 ypos 400
-        linear 0.1 ypos 600
-        linear 0.1 ypos 400
-        linear 0.1 ypos 600
-        linear 0.1 ypos 400
-        linear 0.1 ypos 600
-        linear 0.1 ypos 400
-        linear 0.1 ypos 600
-        linear 0.1 ypos 400
-        linear 0.1 ypos 600
-        linear 0.1 ypos 400
-        linear 0.1 ypos 600
+        repeat 7
     pause 1.5
     carguy "{size=-15}I thought I'd brought more of this..." 
     hide nu_finish with dissolve
     carguy "Welp, sorry! Looks like I've run out!"
     carguy "Gotta run! Happy holidays to you!"
-    play sound sfx_snow_run loop volume 2.0
+    play sound sfx_snow_run loop volume 3.0
     show carguy at offscreenleft with MoveTransition(0.25)
     pause 0.5
     stop sound fadeout 5.0
     n "Carguy turns on his heel and scampers away through the snow."
     pause 2.0
-    show cs coat angry flipped
+    show cs angry coat flipped
     cs "Well, {i}that{/i} was a huge waste of my time!"
-    show cs coat worried flipped
+    show cs worried coat flipped
     cs "I need to finish shoveling, already! My face is starting to freeze!"
     pause 0.5
 
     play sound sfx_snow_walk loop volume 2.0
-    show cs coat disappointed flipped at center
+    show cs disappointed coat flipped at center
     show shovel at manual_pos(0.6, 0.7, 0.5):
         rotate 15
     with MoveTransition(2.0)
@@ -562,7 +551,7 @@ label ce_anno:
 
     stop sound fadeout 1.0
     scene cs_house_snow
-    show cs coat disappointed flipped at center
+    show cs disappointed coat flipped at center
     show shovel at manual_pos(0.6, 0.7, 0.5):
         rotate 15
     with Dissolve(1.0)
@@ -573,7 +562,7 @@ label ce_anno:
 
     # TODO: anno's car
 
-    show cs coat happy flipped
+    show cs happy coat flipped
     n "CS waves to Anno as the car pulls into CS' driveway."
     show cs coat flipped
     play sound sfx_car_door_open
@@ -584,16 +573,16 @@ label ce_anno:
     pause 3.0
     show anno coat at left with moveinleft
     anno "Hey, how's it going?"
-    show cs coat disappointed flipped
+    show cs disappointed coat flipped
     cs "Cold. Very cold."
     cs "You would not {i}believe{/i} how much snow there was!"
     cs "You showed up just as I got done shoveling here."
-    show cs coat worried
+    show cs worried coat
     show shovel at manual_pos(0.4, 0.7, 0.5):
         rotate -15
     cs "Let's get inside, please! My hands are gonna fall off!"
     anno "Right behind you."
-    show cs coat worried at offscreenright
+    show cs worried coat at offscreenright
     show anno coat at offscreenright
     show shovel at offscreenright
     with moveoutright
@@ -707,9 +696,8 @@ label ce_setup:
 # Day 2
 label ce_before_shopping:
     # TODO: something went wrong with this scene. i have to use manual_pos for everything or CS is floating? how annoying.
-    # TODO: i think a gently ticking clock in the background would be suitable
-    # TODO: we need a cleaner loop of this snore pls
     play sound sfx_csnore loop
+    play sound2 sfx_clock_ticking volume 0.5
     scene cs_bedroom2
     show cs happy flipped at manual_pos(700, 1400, 1.0):
         rotate 60
@@ -742,18 +730,19 @@ label ce_before_shopping:
         n "He slowly rolls out of bed."
 
     n "Through bleary eyes, he takes a few steps to look at the clock."
-    show cs at manual_pos(0.9, 1.115, 1.0) with move
+    show cs at manual_pos(0.9, 1.115, 1.0) with MoveTransition(1.0)
     "..."
-    show cs worried
+    show cs scared
     cs "{i}Huh?!" with hpunch
     cs "Oh, shit! It's 2 PM already?!"
     cs "I've gotta get my shopping done!"
-    show cs worried flipped
-    n "CS tosses some clothes on and sprints out the door!"
+    show cs worried coat flipped with dissolve
+    n "CS tosses his coat on and sprints out the door!"
     hide cs with easeoutleft
     play sound sfx_house_door_open
     pause 0.5
     scene black with dissolve
+    stop sound2 fadeout 2.0
     pause 0.5
     play sound sfx_house_door_close
     pause 2.0
@@ -2822,7 +2811,7 @@ label ce_lights_out:
     anno "Good luck CS!"
     scene black with dissolve
     n "CS pulls and yanks open the door, until it finally rips open."
-    play sound sfx_housedoor_slam
+    play sound sfx_house_door_slam
     scene cs_door 
     show cs worried at left
     with dissolve
