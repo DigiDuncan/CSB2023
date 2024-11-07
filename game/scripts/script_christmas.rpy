@@ -748,7 +748,7 @@ label ce_before_shopping:
     pause 2.0
 
     scene cs_house_snow
-    show cs flipped at mid_right
+    show cs coat flipped at mid_right
     with dissolve
     cs "Thank goodness it didn't snow overnight. Shoveling yesterday fuckin' sucked."
     # I just want this to be known.
@@ -758,7 +758,7 @@ label ce_before_shopping:
     # He's right -- shoveling does fuckin' suck.
     # -- Digi
     cs "I don't want to do it all over again!"
-    cs "I only have a few hours before the party, so I'd better get going!"
+    cs "I'm sure the shopping rush has already started. I need to get going!"
     hide cs with moveoutleft
     play sound sfx_car_door_open
     pause 1.0
@@ -766,9 +766,9 @@ label ce_before_shopping:
     n "CS gets in the car and starts thinking about where to go."
 
     scene cs_car_inside
-    show cs at left
+    show cs coat at left
     with dissolve
-    cs "I only went to Walmart last time because they had a deal, but I don't shop there regularly."
+    cs "I only went to Walmart last time since they had that deal on Genergy, but I don't shop there regularly..."
     cs "I think I'll try somewhere else this time."
     n "CS starts up his car and heads to Target."
     play sound sfx_driving
@@ -781,13 +781,13 @@ label ce_before_shopping:
     scene tgt_inside
     with dissolve
     pause 3.0
-    show cs at center with moveinleft
+    show cs coat at center with moveinleft
     n "CS arrives at Target."
     n "The faint scent of holiday-themed candles wafts through the air."
 
-    show cs happy
+    show cs happy coat
     cs "Now, {i}this{/i} is a {i}real{/i} store!"
-    show cs
+    show cs coat
     cs "Everything is mostly clean and neat, no depressing lighting or messy aisles..."
     if fun_value(FUN_VALUE_UNOBTRUSIVE):
         cs "I should probably stop glazing up Target and actually buy what I came here for."
