@@ -1034,6 +1034,10 @@ label ce_aftershop:
     show cs disappointed behind cs_kitchen_fg
     cs "What the hell? When did I ever have one of these?"
     n "CS picks up the die."
+    show d20:
+        zoom 0.1
+        xpos 1100 ypos 1100
+        linear 1 xpos 1100 ypos 600    
     show cs behind cs_kitchen_fg
     cs "Hey, I got a [d20]!"
 
