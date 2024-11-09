@@ -2666,6 +2666,9 @@ image bubble = Transform("images/characters/bubble.png", zoom = 2.0)
 ## Realistic explosion
 image realistic_explosion_anim = spritesheet_animation("images/realistic_explosion.png", 6, 3, looping = False)
 
+## CS running loop for Perfect Tate
+image cs_run = spritesheet_animation("minigames/perfecttate/cs_spritesheet.png", 8, 3, fps=45, looping = True)
+
 ## For cop car lights
 image blue_light:
     "blue_light.png"

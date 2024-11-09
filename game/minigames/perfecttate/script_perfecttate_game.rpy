@@ -20,6 +20,7 @@
 
 init python:
     import math
+    import store
 
     # Graphics
     # TODO: these lanes are no longer correct, and also we need to adjust the math on projectiles since the highway is angled now
@@ -55,8 +56,8 @@ init python:
             # TODO: CS's sprite should be no more than 300 wide.
 
             self.win = None
+            #self.cs = store.cs_run
             self.cs = Image("minigames/perfecttate/cs1.png")
-            self.cs_anim_frame = 1
             self.tate = Image("minigames/perfecttate/perfecttate_small.png")
             self.laser = Image("minigames/perfecttate/laser.png")
             self.laser_ball = Image("minigames/perfecttate/energy_ball.png")
@@ -107,9 +108,7 @@ init python:
             # Enter animation/logic
             if not self.entered:
                 if (st - self.start_time < 9.581):
-                    # CS running in
-                    curr_y = ease_linear(CS_Y+300, CS_Y, self.start_time+2, self.start_time+8, st)
-                    r.blit(cs_renderer, (PT_LANE_X[2], curr_y))
+                    pass
                 else:
                     self.entered = True
             
@@ -221,15 +220,6 @@ init python:
 
             # Render player character, but only if intro is over
             if self.entered == True:
-                # Go through each frame of the animation
-                # TODO: obviously, this is terrible. idk how to add a delay between frames, and it'll suck even more with more frames...
-                if self.cs_anim_frame == 1:
-                    self.cs = Image("minigames/perfecttate/cs1.png")
-                    self.cs_anim_frame = 2
-                elif self.cs_anim_frame == 2:
-                    self.cs = Image("minigames/perfecttate/cs2.png")
-                    self.cs_anim_frame = 1
-
                 r.blit(cs_renderer, (PT_LANE_X[self.current_lane], CS_Y))
 
             renpy.redraw(self, 0)
