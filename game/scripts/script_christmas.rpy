@@ -278,28 +278,28 @@ label ce_anno:
 
     if tree_first:
         scene cs_garage_mess with dissolve
-        show cs disappointed coat at offscreenleft
-        show cs disappointed coat at mid_mid_left with moveinleft
+        show cs disappointed coat hat at offscreenleft
+        show cs disappointed coat hat at mid_mid_left with moveinleft
         # TODO: swap SFX later, however appropriate this one is lmfao
-        show cs scared coat
+        show cs scared coat hat
         play sound sfx_spikes
         cs "Shit!" with hpunch
-        show cs worried coat
+        show cs worried coat hat
         cs "I love Legos, but not when they're embedded in my {i}feet!" 
         cs "Now, where did I last put..."
     else:
         scene cs_garage with dissolve
-        show cs disappointed coat at mid_mid_left with moveinleft
+        show cs disappointed coat hat at mid_mid_left with moveinleft
     pause 0.5
-    show cs disappointed coat at right with move
+    show cs disappointed coat hat at right with move
     pause 0.5
     cs "Here we go."
 
-    show cs disappointed coat at mid_offscreen_right with move
+    show cs disappointed coat hat at mid_offscreen_right with move
     show shovel at manual_pos(1.2, 0.8, 0.5) with determination
     $ collect("shovel")
 
-    show cs disappointed coat at right 
+    show cs disappointed coat hat at right 
     show shovel at manual_pos(0.9, 0.7, 0.5):
         rotate 15
     with move
@@ -307,7 +307,7 @@ label ce_anno:
     pause 0.5
     cs "I sure hope it didn't snow {i}too{/i} much..."
     pause 0.5
-    show cs disappointed coat flipped at left 
+    show cs disappointed coat hat flipped at left 
     show shovel at manual_pos(0.25, 0.7, 0.5):
         rotate 15
     with move
@@ -335,7 +335,7 @@ label ce_anno:
     pause 3.0
 
     scene cs_house_snowed_in
-    show cs disappointed coat flipped at right
+    show cs disappointed coat hat flipped at right
     show shovel at manual_pos(0.9, 0.7, 0.5):
         rotate 15
     with dissolve
@@ -380,7 +380,7 @@ label ce_anno:
     # TODO: Make this a bit smoother
     # FIRST
     play sound "<from 0.74 to 1.723>sfx/sfx_snow_walk.ogg" volume 2.0 # TODO: this is only playing one footstep. it should be two. the next instance is two. I DON'T UNDERSTAND - tate
-    show cs disappointed coat flipped at center
+    show cs disappointed coat hat flipped at center
     show shovel at manual_pos(0.6, 0.7, 0.5)
     with MoveTransition(1.0)
     # TODO: shovel sounds
@@ -391,12 +391,12 @@ label ce_anno:
         linear 0.5 rotate 110
     pause 0.5
     # TODO: need a pile of snow to move
-    show cs disappointed coat at center
+    show cs disappointed coat hat at center
     show shovel at manual_pos(0.5, 0.7, 0.5):
         rotate -110
     pause 0.5
     play sound "<from 0.074 to 1.723>sfx/sfx_snow_walk.ogg" volume 2.0
-    show cs disappointed coat at right
+    show cs disappointed coat hat at right
     show shovel at manual_pos(0.9, 0.7, 0.5)
     with MoveTransition(1.0)
     pause 0.5
@@ -405,12 +405,12 @@ label ce_anno:
     pause 1.0
 
     # SECOND
-    show cs disappointed coat flipped at right
+    show cs disappointed coat hat flipped at right
     show shovel at manual_pos(0.9, 0.7, 0.5):
         rotate 15
     pause 0.5
     play sound "<from 0.074 to 0.869>sfx/sfx_snow_walk.ogg" volume 2.0
-    show cs disappointed coat flipped at mid_right
+    show cs disappointed coat hat flipped at mid_right
     show shovel at manual_pos(0.7, 0.7, 0.5)
     with MoveTransition(1.0)
     # TODO: shovel sounds
@@ -421,11 +421,11 @@ label ce_anno:
         linear 0.5 rotate 110
     pause 0.5
     # TODO: need a pile of snow to move
-    show cs disappointed coat at mid_right
+    show cs disappointed coat hat at mid_right
     show shovel at manual_pos(0.8, 0.7, 0.5):
         rotate -110
     play sound "<from 0.074 to 0.869>sfx/sfx_snow_walk.ogg" volume 2.0
-    show cs disappointed coat at right
+    show cs disappointed coat hat at right
     show shovel at manual_pos(0.9, 0.7, 0.5)
     with MoveTransition(1.0)
     pause 0.5
@@ -435,7 +435,7 @@ label ce_anno:
 
     # THIRD
     play sound "<from 0.074 to 2.563>sfx/sfx_snow_walk.ogg" volume 2.0
-    show cs disappointed coat flipped at mid_left
+    show cs disappointed coat hat flipped at mid_left
     show shovel at manual_pos(0.3, 0.7, 0.5):
         rotate 15
     with MoveTransition(2.5)
@@ -448,11 +448,11 @@ label ce_anno:
         linear 0.5 rotate 110
     pause 0.5
     # TODO: need a pile of snow to move
-    show cs disappointed coat at mid_left
+    show cs disappointed coat hat at mid_left
     show shovel at manual_pos(0.5, 0.7, 0.5):
         rotate -110
     play sound "<from 0.074 to 2.563>sfx/sfx_snow_walk.ogg" volume 2.0
-    show cs disappointed coat at right
+    show cs disappointed coat hat at right
     show shovel at manual_pos(0.9, 0.7, 0.5)
     with MoveTransition(2.5)
     pause 0.5
@@ -470,7 +470,7 @@ label ce_anno:
     carguy_nobeep "Nice snow!"
     play sound sfx_not_so_nice_driveway
     carguy_nobeep "Nooot so nice driveway."
-    show cs disappointed coat flipped
+    show cs disappointed coat hat flipped
     show shovel at manual_pos(0.9, 0.7, 0.5):
         rotate 15
     cs "Look, man, I'm trying."
@@ -534,14 +534,14 @@ label ce_anno:
     stop sound fadeout 5.0
     n "Carguy turns on his heel and scampers away through the snow."
     pause 2.0
-    show cs angry coat flipped
+    show cs angry coat hat flipped
     cs "Well, {i}that{/i} was a huge waste of my time!"
-    show cs worried coat flipped
+    show cs worried coat hat flipped
     cs "I need to finish shoveling, already! My face is starting to freeze!"
     pause 0.5
 
     play sound sfx_snow_walk loop volume 2.0
-    show cs disappointed coat flipped at center
+    show cs disappointed coat hat flipped at center
     show shovel at manual_pos(0.6, 0.7, 0.5):
         rotate 15
     with MoveTransition(2.0)
@@ -551,7 +551,7 @@ label ce_anno:
 
     stop sound fadeout 1.0
     scene cs_house_snow
-    show cs disappointed coat flipped at center
+    show cs disappointed coat hat flipped at center
     show shovel at manual_pos(0.6, 0.7, 0.5):
         rotate 15
     with Dissolve(1.0)
@@ -562,9 +562,9 @@ label ce_anno:
 
     # TODO: anno's car
 
-    show cs happy coat flipped
+    show cs happy coat hat flipped
     n "CS waves to Anno as the car pulls into CS' driveway."
-    show cs coat flipped
+    show cs coat hat flipped
     play sound sfx_car_door_open
     play sound2 sfx_car_door_ajar
     pause 3.0
@@ -573,16 +573,16 @@ label ce_anno:
     pause 3.0
     show anno coat at left with moveinleft
     anno "Hey, how's it going?"
-    show cs disappointed coat flipped
+    show cs disappointed coat hat flipped
     cs "Cold. Very cold."
     cs "You would not {i}believe{/i} how much snow there was!"
     cs "You showed up just as I got done shoveling here."
-    show cs worried coat
+    show cs worried coat hat
     show shovel at manual_pos(0.4, 0.7, 0.5):
         rotate -15
     cs "Let's get inside, please! My hands are gonna fall off!"
     anno "Right behind you."
-    show cs worried coat at offscreenright
+    show cs worried coat hat at offscreenright
     show anno coat at offscreenright
     show shovel at offscreenright
     with moveoutright
@@ -736,7 +736,7 @@ label ce_before_shopping:
     cs "{i}Huh?!" with hpunch
     cs "Oh, shit! It's 2 PM already?!"
     cs "I've gotta get my shopping done!"
-    show cs worried coat flipped with dissolve
+    show cs worried coat hat flipped with dissolve
     n "CS tosses his coat on and sprints out the door!"
     hide cs with easeoutleft
     play sound sfx_house_door_open
@@ -748,7 +748,7 @@ label ce_before_shopping:
     pause 2.0
 
     scene cs_house_snow
-    show cs coat flipped at mid_right
+    show cs coat hat flipped at mid_right
     with dissolve
     cs "Thank goodness it didn't snow overnight. Shoveling yesterday fuckin' sucked."
     # I just want this to be known.
@@ -766,7 +766,7 @@ label ce_before_shopping:
     n "CS gets in the car and starts thinking about where to go."
 
     scene cs_car_inside
-    show cs coat at left
+    show cs coat hat at left
     with dissolve
     cs "I only went to Walmart last time since they had that deal on Genergy, but I don't shop there regularly..."
     cs "I think I'll try somewhere else this time."
@@ -781,13 +781,13 @@ label ce_before_shopping:
     scene tgt_inside
     with dissolve
     pause 3.0
-    show cs coat at center with moveinleft
+    show cs coat hat at center with moveinleft
     n "CS arrives at Target."
     n "The faint scent of holiday-themed candles wafts through the air."
 
-    show cs happy coat
+    show cs happy coat hat
     cs "Now, {i}this{/i} is a {i}real{/i} store!"
-    show cs coat
+    show cs coat hat
     cs "Everything is mostly clean and neat, no depressing lighting or messy aisles..."
     if fun_value(FUN_VALUE_UNOBTRUSIVE):
         cs "I should probably stop glazing up Target and actually buy what I came here for."
