@@ -44,6 +44,7 @@ label ce_start:
     show cs happy flipped
     cs "I'm so pumped! I should call everyone one more time to make sure they're still coming."
     show cs happy phone flipped
+    $ collect("cs_phone") # i am putting the item collection for non-CE items here anyway in case we do include item collection in CE standalone - tate
     pause 0.5
     scene black with dissolve
     play sound sfx_ring_once
@@ -96,6 +97,9 @@ label ce_start:
     play sound sfx_house_door_open
     pause 0.5
 
+    # OKAY, EDITING THIS IS GETTING RIDICULOUS. I'M REDOING ALL THESE SPAGHETTI-ASS MENUS. 
+    # I AM *NOT* ANIMATING THESE THINGS 2-3 TIMES EACH, AND YOU CAN'T MAKE ME. - TATE
+
     scene cs_garage
     show cs at mid_left
     with dissolve
@@ -104,93 +108,56 @@ label ce_start:
     menu:
         cs "Alright! What should I bring in first?{fast}"
         "Christmas tree":
+            $ tree_first = True
             jump ce_tree
         "Lights and garland":
+            $ lights_first = True
+            $ got_lights = True
             jump ce_lights
         "Ornaments and decorations":
+            $ decor_first = True
+            $ got_decor = True
             jump ce_decor
 
-# christmas tree
 label ce_tree:
-    if lights_first or decor_first:
-        $ tree_second = True
-        cs "Nice! Time to get the Christmas tree!"
-        show cs at mid_offscreen_right with move
-        pause 1.0
-        # TODO: big box of tree, i want him to be struggling a bit to move it due to the awkward size
-
-        # TODO: sfx box scrape
-        show cs concentrate at right with move
-        pause 0.5
-
-        # TODO: sfx box scrape
-        show cs concentrate at mid_mid_right with move
-        pause 0.5
-
-        # TODO: sfx box scrape
-        show cs concentrate at center with move
-        pause 0.5
-
-        # TODO: sfx box scrape
-        show cs concentrate at mid_mid_left with move
-        pause 0.5
-
-        # TODO: sfx box scrape
-        show cs concentrate at left with move
-        pause 0.5
-
-        # TODO: sfx box scrape
-        show cs concentrate at mid_offscreen_left with move
-        pause 0.5
-
-        # TODO: sfx box scrape
-        show cs concentrate at offscreenleft with move
-        pause 0.5
-
-        # TODO: sfx box scrape, 75%
-        pause 0.5
-        # TODO: sfx box scrape, 50%
-        pause 0.5
-        # TODO: sfx box scrape, 25%
-        pause 1.5
-        
-
-        n "CS drags the box out of the garage and into the living room."
-        if (decor_first or decor_second) and tree_second and (lights_first or lights_second):      
-            jump ce_before_anno
-        n "CS goes back to the garage."
-        if lights_first:
-            menu:
-                "Ornaments and decorations":
-                    jump ce_decor
-        if decor_first:
-            menu:
-                "Lights and garland":
-                    jump ce_lights
-    $ tree_first = True
+    # GET TREE FIRST
     if tree_first:
+            
         cs "I should get the Christmas tree first."
-        show cs at mid_offscreen_right with move
-        cs "Who doesn't wanna get this thing out? This is the best part of decorating!"
+    
+        # these unusual transitions will force the dialogue window to remain while CS is moving the box.
+        
+        show cs at mid_offscreen_right with { "master" : MoveTransition(0.5) }
+        play sound sfx_box_drag volume 5.0
+        cs "Who {i}doesn't{/i} wanna get this thing out? This is the {i}best{/i} part of decorating!"
 
-        # TODO: big box, box scraping sfx
+        play sound sfx_box_drag volume 5.0
         show cs
+        show tree_box at manual_pos(1.2, 0.8)
         cs "I just..."
 
-        # TODO: big box, box scraping sfx
-        show cs angry at right with move
+        play sound sfx_box_drag volume 5.0
+        show cs angry at right
+        show tree_box at manual_pos(0.9, 0.8)
+        with { "master" : MoveTransition(0.5) }
         cs "I just...{fast} need to be..."
+        $ collect("tree_box")
 
-        # TODO: big box, box scraping sfx
-        show cs pissed at mid_right with move
-        cs "I just...{fast} need to be... {fast}careful..."
+        play sound sfx_box_drag volume 5.0
+        show cs pissed at mid_right
+        show tree_box at manual_pos(0.8, 0.8)
+        with { "master" : MoveTransition(0.5) }
+        cs "I just... need to be...{fast} careful..."
 
         show cs concentrate
-        cs "Hnng..."
+        cs "{sc=1.0}Hnng..."
 
-
-        show cs worried with hpunch
-        play sound sfx_metalpipe
+        play sound sfx_box_drag volume 5.0
+        show cs worried at mid_mid_right 
+        show tree_box at manual_pos(0.6, 0.8)
+        with MoveTransition(0.15)
+        with hpunch
+        play sound2 sfx_metalpipe noloop
         with hpunch
         # TODO: a shelf falling
         n "All of a sudden, the shelf tips and all of the supplies fall onto CS!"
@@ -207,14 +174,11 @@ label ce_tree:
         pause 1.0
         cs "Ow..."
         pause 1.0
-
         show cs disappointed at manual_pos(0.3, 1.2, 0.5):
             rotate 75
         show cs disappointed at manual_pos(0.5, 1.115, 1.0) with MoveTransition(1.0):
             linear 1.0 rotate -0
-
         n "CS digs himself out from the mess of lights, garland, and Legos."
-
         show cs disappointed at manual_pos(0.75, 1.115, 1.0) with move
 
         # CS steps on a Lego.
@@ -222,105 +186,183 @@ label ce_tree:
         play sound sfx_spikes
         show cs scared with hpunch
         cs "Fuck!"
-
         show cs disappointed flipped
         cs "Man, what a mess!"
         cs "This is gonna take forever to clean up!"
         hide cs with moveoutleft
-    jump ce_anno
+        jump ce_anno
 
-
-# Decorations/lights
-label ce_lights:
-    if tree_second or decor_first:
-        cs "Alright, I should probably get the lights and garland next."
-        $ lights_second = True
-
+    # IF TREE IS NOT FIRST
+    if lights_first or decor_first:
+        cs "Nice! Time to get the Christmas tree!"
         show cs at mid_offscreen_right with move
+        show tree_box at manual_pos(1.2, 0.8)
         pause 1.0
-        # TODO: box of lights/garland asset
+        # i want him to be struggling a bit to move it due to the awkward size - tate
+
+        play sound sfx_box_drag volume 5.0
+        show cs concentrate at right
+        show tree_box at manual_pos(0.9, 0.8)
+        with move
         pause 0.5
-        show cs flipped at offscreenleft with move
-        pause 1.0
-        # TODO: sfx put box on ground
+        $ collect("tree_box")
 
+        play sound sfx_box_drag volume 5.0
+        show cs concentrate at mid_mid_right
+        show tree_box at manual_pos(0.7, 0.8)
+        with move
+        pause 0.5
 
-        if (decor_first or decor_second) and tree_second and (lights_first or lights_second):
-            n "CS brings the box inside."       
-            jump ce_before_anno
-        n "CS sets the box down in the living room, then comes back for the next."
-        show cs at left with move
+        play sound sfx_box_drag volume 5.0
+        show cs concentrate at center
+        show tree_box at manual_pos(0.6, 0.8)
+        with move
+        pause 0.5
 
-        if tree_second:
-            menu:
-                "Ornaments and decorations":
-                    jump ce_decor
-        if decor_first:
-            menu:
-                "Christmas tree":
-                    jump ce_tree
-    $ lights_first = True
+        play sound sfx_box_drag volume 5.0
+        show cs concentrate at mid_mid_left
+        show tree_box at manual_pos(0.4, 0.8)
+        with move
+        pause 0.5
+
+        play sound sfx_box_drag volume 5.0
+        show cs concentrate at left
+        show tree_box at manual_pos(0.2, 0.8)
+        with move
+        pause 0.5
+
+        play sound sfx_box_drag volume 5.0
+        show cs concentrate at mid_offscreen_left
+        show tree_box at manual_pos(0.0, 0.8)
+        with move
+        pause 0.5
+
+        play sound sfx_box_drag volume 5.0
+        show cs concentrate at offscreenleft
+        show tree_box at manual_pos(-0.2, 0.8)
+        with move
+        pause 0.5
+
+        # fading it out
+        play sound sfx_box_drag volume 4.0
+        show tree_box at manual_pos(-0.4, 0.8)
+        with move
+        pause 0.5
+
+        play sound sfx_box_drag volume 3.0
+        show tree_box at manual_pos(-0.6, 0.8)
+        with move
+        pause 0.5
+
+        play sound sfx_box_drag volume 2.0
+        pause 1.5
+    
+        n "CS drags the box out of the garage and into the living room."
+
+        jump ce_check_status
+
+label ce_lights:
     if lights_first:
         cs "I should probably get the lights and garland first. That box is easiest to reach, anyway."
-        show cs at mid_offscreen_right with move
-        pause 1.0
-        # TODO: box of lights/garland asset
-        pause 0.5
-        show cs flipped at offscreenleft with move
-        pause 1.0
-        # TODO: sfx put box on ground
-        n "CS gets the box inside, then returns to the garage to grab the next one."
-        show cs at left with move
-    menu:
-        "Christmas tree":
-            jump ce_tree
-        "Ornaments and decorations":
-            jump ce_decor
+    if got_tree or got_decor:
+        cs "Alright, I should probably get the lights and garland next."
+
+    # Animation
+    show cs at mid_offscreen_right with move
+    pause 1.0
+    # TODO: box of lights/garland asset
+    pause 0.5
+    show cs flipped at offscreenleft with move
+    pause 1.0
+    play sound sfx_box_place volume 4.0
+
+    n "CS leaves the box on the couch so he can untangle the lights comfortably later."
+
+    jump ce_check_status
 
 label ce_decor:
-    if tree_second or lights_first:
-        cs "Alright, I should probably get the decorations next."
-        show cs at mid_offscreen_right with move
-        pause 1.0
-        # TODO: box of decor asset
-        pause 0.5
-        show cs flipped at offscreenleft with move
-        pause 1.0
-        # TODO: sfx put box on ground
-
-        $ decor_second = True
-        if (decor_first or decor_second) and tree_second and (lights_first or lights_second):
-            n "CS gets the box inside."       
-            jump ce_before_anno
-
-        n "CS sets the box down in the living room, then comes back for the next."
-        show cs at left with move
-
-        if tree_second:
-            menu:
-                "Lights and garland":
-                    jump ce_lights
-        if lights_first:
-            menu:
-                "Christmas tree":
-                    jump ce_tree
-    $ decor_first = True
     if decor_first:
         cs "I'm gonna get the decorations first! I have a {i}huge{/i} assortment of Legos in there, too!"
-        show cs at mid_offscreen_right with move
-        pause 1.0
-        # TODO: box of decor asset
-        pause 0.5
-        show cs flipped at offscreenleft with move
-        pause 1.0
-        # TODO: sfx put box on ground
-        n "CS gets the box inside, then returns to the garage to grab the next one."   
-        show cs at left with move
-    menu:
-        "Christmas tree":
-            jump ce_tree
-        "Lights and garland":
-            jump ce_lights
+    if got_tree or got_lights:
+        cs "Alright, I should probably get the decorations next."
+
+    ################ ANIMATION: ALL ################
+    show cs at mid_offscreen_right with move
+    show decor_box at manual_pos(1.2, 0.5)
+    pause 1.0
+    
+    show decor_boxes at manual_pos(0.9, 0.4) with moveinright
+    $ collect("decor_boxes")
+    pause 0.5
+    
+    show cs flipped at offscreenleft
+    show decor_boxes at offscreenleft
+    with move
+    pause 1.0
+    play sound sfx_box_place volume 4.0
+
+    n "CS places the boxes onto the floor."
+
+    jump ce_check_status
+
+# CHECK STATUS HERE
+label ce_check_status:
+    # If you have everything, just get outta here!
+    if got_lights and got_decor and got_tree:
+        jump ce_before_anno
+
+    # Otherwise...
+    else:
+        # Decor was first, and that's all you have
+        if decor_first and not (got_tree or got_lights):
+            show cs at left with moveinleft
+            n "CS returns to the garage to grab the next box."
+            menu:
+                "Christmas tree":
+                    $ got_tree = True
+                    jump ce_tree
+                "Lights and garland":
+                    $ got_lights = True
+                    jump ce_lights
+     
+        # Lights were first, and that's all you have
+        if lights_first and not (got_tree or got_decor):
+            show cs at left with moveinleft
+            n "CS returns to the garage to grab the next box."
+            menu:
+                "Christmas tree":
+                    $ got_tree = True
+                    jump ce_tree
+                "Ornaments and decorations":
+                    $ got_decor = True
+                    jump ce_decor
+
+        # Have lights and tree
+        if got_lights and got_tree:
+            show cs at left with moveinleft
+            n "CS returns to the garage to retrieve the last box." 
+            menu:
+                "Ornaments and decorations":
+                    $ got_decor = True
+                    jump ce_decor
+
+        # Have decor and tree
+        if got_decor and got_tree:
+            show cs at left with moveinleft
+            n "CS returns to the garage to retrieve the last box."
+            menu:
+                "Lights and garland":
+                    $ got_lights = True
+                    jump ce_lights
+
+        # Have lights and decor
+        if got_lights and got_decor:
+            show cs at left with moveinleft
+            n "CS returns to the garage to retrieve the last box."
+            menu:
+                "Christmas tree":
+                    $ got_tree = True
+                    jump ce_tree
 
 label ce_before_anno:
     scene cs_foyer
@@ -335,7 +377,6 @@ label ce_before_anno:
 
     cs "This is where the fun part begins!"
     jump ce_anno
-
 
 label ce_anno:
     scene cs_foyer
@@ -393,7 +434,6 @@ label ce_anno:
     scene black with dissolve
 
     n "CS puts on his coat before heading back to the garage for a shovel."
-
 
     if tree_first:
         scene cs_garage_mess with dissolve
@@ -772,7 +812,7 @@ label ce_anno:
         show cs disappointed
         cs "I figured it'd be faster if I had a helping hand."
         n "Anno groans."
-        anno "I was hoping to be setting up decorations, not cleaning them up."
+        anno "I was hoping to be {i}setting up{/i} decorations, not {i}cleaning them{/i} up."
         anno "But, I guess we don't really have any other option, do we?"
         cs "Guess not..."
         show cs disappointed at mid_right with move
@@ -780,7 +820,14 @@ label ce_anno:
         scene black with dissolve
         n "After about an hour, they manage to clean up the mess without stepping on too many more Legos."
         n "CS and Anno drag the remaining boxes inside."
-
+    else:
+        anno "So, you needed my help with decorating, right?"
+        show cs
+        cs "Yeah. I've already brought everything in, so let's start unpacking it."
+        anno "Alright!"
+        scene black with dissolve
+        centered "20 minutes later..."
+        
 # Setting up decorations
 label ce_setup:
     stop music fadeout 3.0
@@ -790,7 +837,7 @@ label ce_setup:
     show anno at right
     with dissolve
     # TODO: need pile of decorations in boxes
-    cs "Well, Anno, we did it! Are ya ready to start decorating this place?"
+    cs "Well, Anno, we did it! Are ya ready?"
     anno "Yeah! Where should we start?"
 
     scene black with dissolve
@@ -996,8 +1043,20 @@ label ce_before_shopping:
     cs "Ooh, an endcap! This is where the good deals are."
     show cs coat surprised
     cs "Or, you know, the stuff that's about to expire..."
+    show cs coat happy
+    cs "Let's check it out!"
+    
+    hide cs
+    hide shopping_cart
+    with moveoutright
+    pause 0.5
 
-    # TODO: can we get a pic of an endcap?
+    scene tgt_endcap with dissolve
+    pause 0.5
+    
+    show cs coat at left
+    show shopping_cart at manual_pos(0.5, 1.1, 0.5)
+    with moveinleft
 
     n "CS spots some EZ-Cheese."
     show cs coat happy
@@ -1009,9 +1068,8 @@ label ce_before_shopping:
     show cs coat happy
     cs "Not that {i}I'm{/i} complaining!"
 
-    # TODO: make this better later, we need a pic of an endcap definitely
-    show spray_cheese at manual_pos(1.0, 0.4) with Dissolve(0.25)
-    show spray_cheese at manual_pos(0.9, 0.8) with MoveTransition(0.25)
+    show spray_cheese at manual_pos(0.4, 0.4) with Dissolve(0.25)
+    show spray_cheese at manual_pos(0.5, 0.8) with MoveTransition(0.25)
     hide spray_cheese with dissolve
     $ collect("spray_cheese")
 
@@ -1060,6 +1118,7 @@ label ce_before_shopping:
     pause 0.5
     show pringles at manual_pos(0.7, 0.8) with MoveTransition(0.25)
     hide pringles with dissolve
+    $ collect("pringles")
 
     n "CS grabs a can of his favorite flavor before moving on to the next aisle."
     show cs coat with determination
@@ -1079,6 +1138,7 @@ label ce_before_shopping:
     
     show genergy at manual_pos(0.4, 0.3) with Dissolve(0.25)
     show genergy at manual_pos(0.55, 0.8) with MoveTransition(0.25)
+    $ collect("genergy")
 
     show genergy at manual_pos(0.4, 0.3) with Dissolve(0.25)
     show genergy at manual_pos(0.55, 0.8) with MoveTransition(0.25)
@@ -1137,11 +1197,13 @@ label ce_before_shopping:
     pomni "But... how?!"
     pomni "You really don't remember me?"
     # TODO: is this next line too much? should i save it for DX and make it a conditional depending on whether you've fought tate in train route? - tate
-    pomni "Is this what that {color=#FFDBFC}pink sweater{/color} person was talking about?" 
+    pomni "Is this what that {color=#FFDBFC}pink sweater{/color} person was talking about?"
+    show cs coat scared
     cs "What are {i}you{/i} talking about?!"
     pomni "I'm... just going to head out now, lots of {i}very{/i} important..."
     n "Pomni glances at her surroundings."
     pomni "Shopping to do! Yeah! I just love, uh... capitalism?"
+    show cs coat worried
     cs "Wait, what do you mean by--{w=0.5}{nw}"
     pomni "Gotta run! Bye!"
     show pomni flipped at offscreenright with MoveTransition(0.15)
@@ -1153,7 +1215,7 @@ label ce_before_shopping:
     show cs coat surprised
     cs "I guess I have a lookalike who shops at IKEA, too."
     show cs coat
-    cs "Oh, well. Back to shopping for me."
+    cs "Oh, well. I should get back to shopping, too."
     
     hide cs
     hide shopping_cart
@@ -1177,7 +1239,7 @@ label ce_before_shopping:
     show cs coat happy flipped at left with move
     n "CS steps over to the display."
     n "More than one round, CS finally realizes how much time has passed."
-    # i changed this because CS has not actually picked up anything cold yet, so nothing would be condensating - yate
+    # i changed this because CS has not actually picked up anything cold yet, so nothing would be condensating - tate
 
     # TODO: TATE STOPPED EDITING HERE!
 

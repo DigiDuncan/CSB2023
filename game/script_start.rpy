@@ -2252,6 +2252,7 @@ image tgt_checkerror = "bg/tgt_checkerror.png"
 image tgt_checkout = "bg/tgt_checkout.png"
 image tgt_chips = "bg/tgt_chips.png"
 image tgt_dairy = "bg/tgt_dairy.png"
+image tgt_endcap = "bg/tgt_endcap.png"
 image tgt_frozen = "bg/tgt_frozen.png"
 image tgt_inside = "bg/tgt_inside.png"
 image tgt_line = "bg/tgt_line.png"
@@ -2520,6 +2521,7 @@ image cs_phone = "cs_phone.png"
 image cs_wallet = "cs_wallet.png"
 image cswanted = "wanted_poster.png"
 image d20 = "d20.png"
+image decor_boxes = "decor_boxes.png"
 image dog = "dog.png"
 image donut_1 = "donut_1.png"
 image donut_2 = "donut_2.png"
@@ -2582,6 +2584,7 @@ image tbc = "tbc.png"
 image tims_dozen = "tims_dozen.png"
 image toby = "toby.png"
 image toxic_mikas = "toxic_mikas.png"
+image tree_box = "tree_box.png"
 image walkie = "walkie.png"
 image walkie dark = "dark:walkie.png"
 image walmart_bag = "walmart_bag.png"
@@ -3180,6 +3183,8 @@ define audio.sfx_beam = "sfx/sfx_beam.ogg"
 define audio.sfx_bell = "sfx/sfx_bell.ogg"
 define audio.sfx_bite = "sfx/sfx_bite.ogg"
 define audio.sfx_bluescreen = "sfx/sfx_bluescreen.ogg"
+define audio.sfx_box_drag = "sfx/sfx_box_drag.ogg"
+define audio.sfx_box_place = "sfx/sfx_box_place.ogg"
 define audio.sfx_breaker = "sfx/sfx_breaker.ogg"
 define audio.sfx_bucket = "sfx/sfx_bucket.ogg"
 define audio.sfx_car_approach_stop = "sfx/sfx_car_approach_stop.ogg"
@@ -3499,11 +3504,11 @@ default gun_get = False
 
 # Checks: DX Christmas
 default tree_first = False
-default tree_second = False
+default got_tree = False
 default lights_first = False
-default lights_second = False
+default got_lights = False
 default decor_first = False
-default decor_second = False
+default got_decor = False
 default d20 = roller
 
 # Helpful lists

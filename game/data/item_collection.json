@@ -70,14 +70,14 @@
     },
     "case": {
         "img": "case",
-        "name": "Briefcase of Money",
+        "name": "Briefcase Of Money",
         "owner": "CS and Arceus",
         "desc": "A winner is you!",
         "rarity": "Uncommon"
     },
     "cheetos": {
         "img": "cheetos",
-        "name": "Cheetos",
+        "name": "Bag Of Cheetos",
         "owner": "CS",
         "desc": "One of many random fucking things CS keeps... somewhere. These are probably stale as hell.",
         "rarity": "Uncommon"
@@ -159,11 +159,19 @@
     },
     "dasani": {
         "img": "dasani",
-        "name": "Bottle of Dasani",
+        "name": "Bottle Of Dasani",
         "owner": "???",
         "desc": "Imagine an ass drinking...\n\nActually, no. I'd rather not imagine that at all.",
         "rarity": "Legendary",
         "dx": true
+    },
+    "decor_boxes": {
+        "img": "decor_boxes",
+        "name": "Boxes Of Christmas Décor",
+        "owner": "CS",
+        "desc": "Filled with ornaments, wreaths, {a=https://youtu.be/gS4CeZ4H_E4?t=41}wiggly trees{/a}, and more!",
+        "rarity": "Common",
+        "ce": true
     },
     "dog": {
         "img": "dog",
@@ -228,7 +236,7 @@
     },
     "gamebarrel": {
         "img": "gamebarrel",
-        "name": "Barrel of Toxic Game Boys",
+        "name": "Barrel Of Toxic Game Boys",
         "owner": "???",
         "desc": "Be not tempted by the retro games. Your skin will melt off.",
         "rarity": "Legendary",
@@ -382,7 +390,7 @@
         "img": "shopping_cart",
         "name": "Shopping Cart",
         "owner": "Target",
-        "desc": "Good for moving large quantities of groceries.",
+        "desc": "Sadly, Target's carts aren't built quite the same as most stores' carts. You can't stand on the little bar at the bottom and ride it around like a scooter.",
         "rarity": "Common",
         "ce": true
     },
@@ -412,9 +420,9 @@
     },
     "spray_cheese": {
         "img": "spray_cheese",
-        "name": "Spray Cheese",
+        "name": "Can Of Easy Cheese",
         "owner": "CS",
-        "desc": "Invented in the 1960s and advertised as a party snack, this feat of engineering can dispense cheese no matter what angle the can is held at. {a=https://en.wikipedia.org/wiki/Easy_Cheese}(Source){/a}",
+        "desc": "Invented in the 1960s and advertised as a party snack, this feat of engineering is able to dispense cheese product even if the can is sprayed while upside-down. {a=https://en.wikipedia.org/wiki/Easy_Cheese}(Source){/a}",
         "rarity": "Common",
         "ce": true
     },
@@ -444,15 +452,23 @@
     },
     "toxic_mikas": {
         "img": "toxic_mikas",
-        "name": "Pile of Toxic Mikas",
+        "name": "Pile Of Toxic Mikas",
         "owner": "???",
         "desc": "I sure hope somebody cleaned these up.",
         "rarity": "Legendary",
         "dx": true
     },
+    "tree_box": {
+        "img": "tree_box",
+        "name": "Christmas Tree Box",
+        "owner": "CS",
+        "desc": "Big, heavy, and waterproof. Guaranteed to keep your artificial Christmas tree in tip-top shape, year after year.",
+        "rarity": "Common",
+        "ce": true
+    },
     "walkie": {
         "img": "walkie",
-        "name": "Walkie Talkie",
+        "name": "Walkie-Talkie",
         "owner": "Multiple",
         "desc": "Standard-issue across many industries, including security, transportation, and law enforcement.",
         "rarity": "Common",
