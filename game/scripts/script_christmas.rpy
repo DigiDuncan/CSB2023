@@ -269,14 +269,18 @@ label ce_lights:
 
     # Animation
     show cs at mid_offscreen_right with move
+    show lights_box at manual_pos(1.2, 0.5)
     pause 1.0
-    # TODO: box of lights/garland asset
+    show lights_box at manual_pos(0.9, 0.4) with moveinright
+    $ collect("lights_box")
     pause 0.5
-    show cs flipped at offscreenleft with move
+    show cs flipped at offscreenleft
+    show lights_box at offscreenleft
+    with move
     pause 1.0
     play sound sfx_box_place volume 4.0
 
-    n "CS leaves the box on the couch so he can untangle the lights comfortably later."
+    n "CS leaves the box by the couch so he can untangle the lights comfortably later."
 
     jump ce_check_status
 
@@ -285,16 +289,14 @@ label ce_decor:
         cs "I'm gonna get the decorations first! I have a {i}huge{/i} assortment of Legos in there, too!"
     if got_tree or got_lights:
         cs "Alright, I should probably get the decorations next."
-
-    ################ ANIMATION: ALL ################
+    
+    # Animation
     show cs at mid_offscreen_right with move
     show decor_box at manual_pos(1.2, 0.5)
     pause 1.0
-    
     show decor_boxes at manual_pos(0.9, 0.4) with moveinright
     $ collect("decor_boxes")
     pause 0.5
-    
     show cs flipped at offscreenleft
     show decor_boxes at offscreenleft
     with move
@@ -307,12 +309,14 @@ label ce_decor:
 
 # CHECK STATUS HERE
 label ce_check_status:
+
     # If you have everything, just get outta here!
     if got_lights and got_decor and got_tree:
         jump ce_before_anno
 
     # Otherwise...
     else:
+
         # Decor was first, and that's all you have
         if decor_first and not (got_tree or got_lights):
             show cs at left with moveinleft

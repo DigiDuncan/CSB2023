@@ -279,6 +279,14 @@
         "rarity": "Uncommon",
         "dx": true
     },
+    "lights_box": {
+        "img": "lights_box",
+        "name": "Box Of Christmas Lights",
+        "owner": "CS",
+        "desc": "An absolute mess of garland and strands of lights. Why would you put {i}two{/i} long tangle-prone items in the same box? You know they make spools for storing these now, right?",
+        "rarity": "Common",
+        "ce": true
+    },
     "linus_box": {
         "img": "linus_box",
         "name": "Linus' Box",
