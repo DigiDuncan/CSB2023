@@ -122,7 +122,7 @@
     },
     "cs": {
         "full_name": "cs188",
-        "sprite_path": "images/characters/cs/neutral.png",
+        "sprite_path": "images/characters/cs/base/neutral.png",
         "quote": "Hey guys, CS here!",
         "bio": "cs188 is the main dude here. His name is even in the title! CS makes YTPs in his spare time. He occasionally streams as well, however, whether he'll actually show up on time is up for debate. If you were wondering why this guy is wearing a cat maid dress, we really don't know either at this point. Just let the man be himself.",
         "flip": true

@@ -97,6 +97,14 @@
         "desc": "It's had a good run...\n\nNotably, these older Dell machines are still rather common.",
         "rarity": "Common"
     },
+    "crotch_doctor": {
+        "img": "crotch_doctor",
+        "name": "Crotch Doctor",
+        "owner": "Carguy",
+        "desc": "All jokes aside, it's actually a decent product. Carguy just needs to work on his sales pitch.",
+        "rarity": "Common",
+        "ce": true
+    },
     "crt_magnet": {
         "img": "crt_magnet",
         "name": "CRT Magnet",
@@ -141,6 +149,14 @@
         "desc": "Wanted, dead or alive. $188,000 reward.",
         "rarity": "Common"
     },
+    "dasani": {
+        "img": "dasani",
+        "name": "Bottle of Dasani",
+        "owner": "???",
+        "desc": "Imagine an ass drinking...\n\nActually, no. I'd rather not imagine that at all.",
+        "rarity": "Legendary",
+        "dx": true
+    },
     "dog": {
         "img": "dog",
         "name": "A Dog?!",
@@ -176,7 +192,7 @@
         "img": "dookie_milk_jar",
         "name": "Jar Of {sc}{chaos}OMGWTFISTHAT{/chaos}{/sc}",
         "owner": "Pakoo",
-        "desc": "OH, {i}GOD!{/i} JUST WHAT {i}IS{/i} THIS?!\nWhy do you have this? Why would you {i}want{/i} this?!",
+        "desc": "OH, {i}GOD!{/i} JUST WHAT {i}IS{/i} THIS?!\n\nWhy do you have this?\nWhy would you {i}want{/i} this?!",
         "rarity": "WHAT DO YOU {i}MEAN{/i} IT'S A {i}LEGENDARY?!{/i}",
         "dx": true
     },
@@ -307,6 +323,14 @@
         "rarity": "Common",
         "dx": true
     },
+    "poo": {
+        "img": "poo",
+        "name": "Poop Emoji Stress Ball",
+        "owner": "???",
+        "desc": "This particular pile of poo seems to have gotten plopped into a time warp.",
+        "rarity": "Legendary",
+        "dx": true
+    },
     "pringles": {
         "img": "pringles",
         "name": "Pizza Pringles",
@@ -343,7 +367,7 @@
         "name": "CS's Shovel",
         "owner": "CS",
         "desc": "In the dead of winter, it's a northerner's best friend.",
-        "rarity": "Uncommon",
+        "rarity": "Common",
         "ce": true
     },
     "slime16": {

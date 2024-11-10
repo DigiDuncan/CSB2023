@@ -3805,6 +3805,8 @@ label train_defeated_perfect_tate:
 
     # put it here in case the player needs to skip the fight
     $ persistent.heard.add("nyan_of_a_lifetime")
+    $ collect("poo")
+    $ collect("dasani")
 
     pause 5.0
 

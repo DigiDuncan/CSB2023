@@ -25,7 +25,7 @@ label train_dialogue:
         cs "Don't tell them I said this, but... it sure beats the pants off of Tate's cooking."
         if train_pancake_fun_value == True:
             arceus "I'm sure they were just having an off day."
-            arceus "I stole one of Mean's pancakes that Tate made yesterday. Now, {i}those{/i} were awesome."
+            arceus "I stole one of the pancakes Tate made for Mean yesterday. Now, {i}those{/i} were awesome."
             cs "Damn, I wish I'd gotten one, too..."
             show cs
         else:
@@ -284,7 +284,7 @@ label train_dialogue:
     arceus "Uh..."
     "..."
     show cs disappointed
-    arceus "Oh, whoops! Would ya look at that. Low battery."
+    arceus "Oh, whoops! Would ya look at that? Low battery."
     arceus "Guess I forgot to charge it last night."
     cs "Damn. Maybe next time."
     arceus "Yeah... next time..."
@@ -308,14 +308,14 @@ label train_dialogue:
     
     if train_ending_money_returned == True:
         cs "I must have bought it at that gas station we stopped at..."
-        cs "Is {i}this{/i} what it's like to be rich? Just being able to buy expensive things without thinking?"
+        cs "Is {i}this{/i} what it's like to be rich? Just being able to buy expensive things without giving it any thought?"
         arceus "I guess it is."
     else:
         cs "At least I probably bought it {i}before{/i} we ended up broke again..."
-        cs "I don't think I'd buy something on a whim like that otherwise."
-        cs "It's so weird that I can't remember..."
+        cs "I don't think I'd buy something that expensive on a whim otherwise."
+        cs "It's just so weird that I can't remember..."
         arceus "Eh, last few days have been a blur for me, too."
-        arceus "I really do think that you're just really tired."
+        arceus "I really do think that you're just severely sleep-deprived."
         cs "I guess..."
 
     pause 2.0

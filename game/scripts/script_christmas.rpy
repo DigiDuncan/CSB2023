@@ -25,12 +25,13 @@ label ce_start:
     show cs at mid_left
     with Dissolve(1.0)
 
+    pause 0.5
     n "CS wakes up to a snowy winter morning."
     cs "Oh, {i}yes!{/i} It snowed today!"
-    show cs at mid_right with move
+    show cs at mid_mid_right with move
     pause 0.5
 
-    n "CS looks at his calendar."
+    n "CS takes a look at the calendar."
     show cs happy
     cs "Woohoo!"
     cs "Christmas is almost here!"
@@ -38,6 +39,7 @@ label ce_start:
     cs "... And, you know what that means!"
     if fun_value(FUN_VALUE_COMMON):
         cs "Fish!"
+        cs "But, more importantly..."
     cs "I finally get to throw a huge Christmas party at my house!"
     show cs happy flipped
     cs "I'm so pumped! I should call everyone one more time to make sure they're still coming."
@@ -46,7 +48,7 @@ label ce_start:
     scene black with dissolve
     play sound sfx_ring_once
     pause 1.0
-    n "CS makes a phone call to each of the guests he invited two weeks ago."
+    n "CS makes a phone call to each of the friends he had invited."
     pause 0.5
 
     scene cs_bedroom1_ce
@@ -58,19 +60,22 @@ label ce_start:
     show cs with dissolve
 
     show cs happy
-    cs "Yep, looks like that's everyone! It's gonna be a full house!"
+    # remember, CS does not remember Mean in this timeline, so let's imply a few guests are bringing a plus-one, including, uh, me. - tate
+    cs "Yep, looks like that's everyone, and then some! It's gonna be a full house!"
     cs "I've got two days to prepare!"
     pause 2.0
     "..."
     show cs disappointed
     cs "...{fast} I have not prepared at all."
+    # if y'all know CS, then y'all know damn well why this line exists. - tate
+    cs "I literally had two {i}weeks{/i} to prepare, but I guess I just left it until the last minute again..." 
     cs "Fuck."
     pause 0.5
 
     show cs
-    cs "I guess the first thing to do is decide where to actually hold the party."
+    cs "Well, I guess the first thing to do is decide where to actually hold the party."
     show cs flipped
-    cs "I have this huge-ass mansion, but I only usually use, like, three rooms!"
+    cs "I have this huge-ass mansion, but, I only usually use, like, three rooms!"
     show cs happy flipped
     cs "I think I know just the place!"
     hide cs with moveoutleft
@@ -87,10 +92,14 @@ label ce_start:
     show cs
     n "CS heads towards the garage."
     hide cs with moveoutright
+    pause 0.5
+    play sound sfx_house_door_open
+    pause 0.5
 
     scene cs_garage
     show cs at mid_left
     with dissolve
+    pause 1.0
     cs "Alright! What should I bring in first?"
     menu:
         cs "Alright! What should I bring in first?{fast}"
@@ -101,14 +110,52 @@ label ce_start:
         "Ornaments and decorations":
             jump ce_decor
 
-# TODO: TATE IS NOT TOUCHING ANY OF THIS UNTIL IT IS FIXED. EDITING CONTINUES ON LINE 219
-
 # christmas tree
 label ce_tree:
     if lights_first or decor_first:
         $ tree_second = True
-        cs "Alright, time to get the Christmas tree!"
-        n "CS drags the box out of the garage and brings it into his living room."
+        cs "Nice! Time to get the Christmas tree!"
+        show cs at mid_offscreen_right with move
+        pause 1.0
+        # TODO: big box of tree, i want him to be struggling a bit to move it due to the awkward size
+
+        # TODO: sfx box scrape
+        show cs concentrate at right with move
+        pause 0.5
+
+        # TODO: sfx box scrape
+        show cs concentrate at mid_mid_right with move
+        pause 0.5
+
+        # TODO: sfx box scrape
+        show cs concentrate at center with move
+        pause 0.5
+
+        # TODO: sfx box scrape
+        show cs concentrate at mid_mid_left with move
+        pause 0.5
+
+        # TODO: sfx box scrape
+        show cs concentrate at left with move
+        pause 0.5
+
+        # TODO: sfx box scrape
+        show cs concentrate at mid_offscreen_left with move
+        pause 0.5
+
+        # TODO: sfx box scrape
+        show cs concentrate at offscreenleft with move
+        pause 0.5
+
+        # TODO: sfx box scrape, 75%
+        pause 0.5
+        # TODO: sfx box scrape, 50%
+        pause 0.5
+        # TODO: sfx box scrape, 25%
+        pause 1.5
+        
+
+        n "CS drags the box out of the garage and into the living room."
         if (decor_first or decor_second) and tree_second and (lights_first or lights_second):      
             jump ce_before_anno
         n "CS goes back to the garage."
@@ -123,30 +170,59 @@ label ce_tree:
     $ tree_first = True
     if tree_first:
         cs "I should get the Christmas tree first."
-        show cs at mid_right with move
+        show cs at mid_offscreen_right with move
         cs "Who doesn't wanna get this thing out? This is the best part of decorating!"
-        show cs disappointed
-        cs "I just, need to be, careful..."
+
+        # TODO: big box, box scraping sfx
+        show cs
+        cs "I just..."
+
+        # TODO: big box, box scraping sfx
+        show cs angry at right with move
+        cs "I just...{fast} need to be..."
+
+        # TODO: big box, box scraping sfx
+        show cs pissed at mid_right with move
+        cs "I just...{fast} need to be... {fast}careful..."
+
         show cs concentrate
         cs "Hnng..."
-        n "All of a sudden, the shelf tips and all of the supplies fall onto CS!"
+
+
         show cs worried with hpunch
         play sound sfx_metalpipe
-        cs "Shit!{w=1.0}{nw}"
+        with hpunch
+        # TODO: a shelf falling
+        n "All of a sudden, the shelf tips and all of the supplies fall onto CS!"
+
         scene black with vpunch
         play sound2 sfx_lego_break noloop
-        pause 1.0
-        play sound sfx_cat_crash
-        # crashing SFX
+        play sound [ "<silence 1.0>", sfx_cat_crash ]
+        cs "Shit!{w=1.0}{nw}"
+        
+        pause 2.0
         scene cs_garage_mess
-        show cs disappointed at mid_left
         with dissolve
+
+        pause 1.0
         cs "Ow..."
-        n "CS gets himself out of the mess of lights, garland, and Legos."
+        pause 1.0
+
+        show cs disappointed at manual_pos(0.3, 1.2, 0.5):
+            rotate 75
+        show cs disappointed at manual_pos(0.5, 1.115, 1.0) with MoveTransition(1.0):
+            linear 1.0 rotate -0
+
+        n "CS digs himself out from the mess of lights, garland, and Legos."
+
+        show cs disappointed at manual_pos(0.75, 1.115, 1.0) with move
+
         # CS steps on a Lego.
-        show cs disappointed at center with move
-        show cs worried with hpunch
+        # TODO: swap SFX later, however appropriate this one is lmfao
+        play sound sfx_spikes
+        show cs scared with hpunch
         cs "Fuck!"
+
         show cs disappointed flipped
         cs "Man, what a mess!"
         cs "This is gonna take forever to clean up!"
@@ -159,10 +235,22 @@ label ce_lights:
     if tree_second or decor_first:
         cs "Alright, I should probably get the lights and garland next."
         $ lights_second = True
+
+        show cs at mid_offscreen_right with move
+        pause 1.0
+        # TODO: box of lights/garland asset
+        pause 0.5
+        show cs flipped at offscreenleft with move
+        pause 1.0
+        # TODO: sfx put box on ground
+
+
         if (decor_first or decor_second) and tree_second and (lights_first or lights_second):
-            n "CS gets the box inside."       
+            n "CS brings the box inside."       
             jump ce_before_anno
-        n "CS gets the box inside, and then goes back to the garage to grab the next box."
+        n "CS sets the box down in the living room, then comes back for the next."
+        show cs at left with move
+
         if tree_second:
             menu:
                 "Ornaments and decorations":
@@ -173,8 +261,16 @@ label ce_lights:
                     jump ce_tree
     $ lights_first = True
     if lights_first:
-        cs "I should probably get the lights and garland first, they are in the easiest box for me to grab anyways."
-        n "CS gets the box inside, and then goes back to the garage to grab the next box."
+        cs "I should probably get the lights and garland first. That box is easiest to reach, anyway."
+        show cs at mid_offscreen_right with move
+        pause 1.0
+        # TODO: box of lights/garland asset
+        pause 0.5
+        show cs flipped at offscreenleft with move
+        pause 1.0
+        # TODO: sfx put box on ground
+        n "CS gets the box inside, then returns to the garage to grab the next one."
+        show cs at left with move
     menu:
         "Christmas tree":
             jump ce_tree
@@ -184,11 +280,22 @@ label ce_lights:
 label ce_decor:
     if tree_second or lights_first:
         cs "Alright, I should probably get the decorations next."
+        show cs at mid_offscreen_right with move
+        pause 1.0
+        # TODO: box of decor asset
+        pause 0.5
+        show cs flipped at offscreenleft with move
+        pause 1.0
+        # TODO: sfx put box on ground
+
         $ decor_second = True
         if (decor_first or decor_second) and tree_second and (lights_first or lights_second):
             n "CS gets the box inside."       
             jump ce_before_anno
-        n "CS gets the box inside, and then goes back to the garage to grab the next box."
+
+        n "CS sets the box down in the living room, then comes back for the next."
+        show cs at left with move
+
         if tree_second:
             menu:
                 "Lights and garland":
@@ -199,8 +306,16 @@ label ce_decor:
                     jump ce_tree
     $ decor_first = True
     if decor_first:
-        cs "I'm gonna get the decorations first, I have a huge assortment of Legos in there!"
-        n "CS gets the box inside, and then goes back to the garage to grab the next box."   
+        cs "I'm gonna get the decorations first! I have a {i}huge{/i} assortment of Legos in there, too!"
+        show cs at mid_offscreen_right with move
+        pause 1.0
+        # TODO: box of decor asset
+        pause 0.5
+        show cs flipped at offscreenleft with move
+        pause 1.0
+        # TODO: sfx put box on ground
+        n "CS gets the box inside, then returns to the garage to grab the next one."   
+        show cs at left with move
     menu:
         "Christmas tree":
             jump ce_tree
@@ -211,25 +326,30 @@ label ce_before_anno:
     scene cs_foyer
     show cs happy at center
     with dissolve
-    cs "Well that's all done!"
-    cs "I have moved all of the Christmas supplies into the house!"
+    cs "Woohoo! That's finally done!"
+
+    if fun_value(FUN_VALUE_COMMON):
+        cs "Everything I need to decorate the house is all right here at my fingertits!"
+    else:
+        cs "Everything I need to decorate the house is all right here at my fingertips!"
+
     cs "This is where the fun part begins!"
     jump ce_anno
 
-# TODO: TATE IS CONTINUING EDITING FROM LINE 104
 
 label ce_anno:
     scene cs_foyer
     show cs disappointed at center
     with dissolve
     if tree_first:
-        n "CS groans over the mess that he just made in the garage."
+        n "CS takes one last glance at the disaster in the garage."
+        n "He lets out a groan."
         cs "This is such a disaster..."
     else:
         n "CS looks upon his stash of lights and baubles and feels a little overwhelmed."
         cs "Wow, this is more than I thought..."
     cs "Maybe I should call someone over to help."
-    cs "Lemme see if Anno is around."
+    cs "I wonder if Anno is around."
     # TODO: anno phone
     show cs disappointed phone with dissolve
     play sound sfx_ring_once
@@ -272,9 +392,8 @@ label ce_anno:
     hide cs with moveoutright
     scene black with dissolve
 
-    n "CS grabs his coat before heading back to the garage for a shovel."
+    n "CS puts on his coat before heading back to the garage for a shovel."
 
-    # TODO: this section needs more work later, not editing it much now
 
     if tree_first:
         scene cs_garage_mess with dissolve
@@ -346,15 +465,11 @@ label ce_anno:
     cs "This is gonna take at least an hour to shovel aside..."
     pause 0.25
 
-    # TODO: make this less subtle
     # had to do it. -tate
-    show snow_wind_single:
-        matrixtransform sil_white_matrix
+    show cold_breath:
         alpha 0
-        xzoom 0.05
-        yzoom 0.1
         xpos 0.75
-        ypos 0.35
+        ypos 0.3
         parallel:
             linear 0.5 alpha 1.0
             linear 1.5 alpha 0
@@ -369,8 +484,8 @@ label ce_anno:
     cs "Guess I'd better get to it."
     if fun_value(FUN_VALUE_COMMON):
         cs "Let's get to it.{w=0.25}{nw}"
-        cs "I'm gonna get to it.{w=0.1}{nw}"
-        cs "I'm gonna get to it.{fast}\nI'm gonna get to it.{w=0.1}{nw}"
+        cs "I'm gonna get to it.{w=0.05}{nw}"
+        cs "I'm gonna get to it.{fast}\nI'm gonna get to it.{w=0.05}{nw}"
         cs "I'm gonna get to it.\nI'm gonna get to it.{fast}\nI'm gonna get to it.{w=1.0}{nw}"
         pause 2.0
         cs "Faaf."
@@ -378,6 +493,7 @@ label ce_anno:
     
     # SHOVEL ANIMATION TIME
     # TODO: Make this a bit smoother
+
     # FIRST
     play sound "<from 0.74 to 1.723>sfx/sfx_snow_walk.ogg" volume 2.0 # TODO: this is only playing one footstep. it should be two. the next instance is two. I DON'T UNDERSTAND - tate
     show cs disappointed coat hat flipped at center
@@ -393,6 +509,7 @@ label ce_anno:
     # TODO: need a pile of snow to move
     show cs disappointed coat hat at center
     show shovel at manual_pos(0.5, 0.7, 0.5):
+        xzoom -1.0
         rotate -110
     pause 0.5
     play sound "<from 0.074 to 1.723>sfx/sfx_snow_walk.ogg" volume 2.0
@@ -407,6 +524,7 @@ label ce_anno:
     # SECOND
     show cs disappointed coat hat flipped at right
     show shovel at manual_pos(0.9, 0.7, 0.5):
+        xzoom 1.0
         rotate 15
     pause 0.5
     play sound "<from 0.074 to 0.869>sfx/sfx_snow_walk.ogg" volume 2.0
@@ -423,6 +541,7 @@ label ce_anno:
     # TODO: need a pile of snow to move
     show cs disappointed coat hat at mid_right
     show shovel at manual_pos(0.8, 0.7, 0.5):
+        xzoom -1.0
         rotate -110
     play sound "<from 0.074 to 0.869>sfx/sfx_snow_walk.ogg" volume 2.0
     show cs disappointed coat hat at right
@@ -437,6 +556,7 @@ label ce_anno:
     play sound "<from 0.074 to 2.563>sfx/sfx_snow_walk.ogg" volume 2.0
     show cs disappointed coat hat flipped at mid_left
     show shovel at manual_pos(0.3, 0.7, 0.5):
+        xzoom 1.0
         rotate 15
     with MoveTransition(2.5)
     pause 0.5
@@ -450,6 +570,7 @@ label ce_anno:
     # TODO: need a pile of snow to move
     show cs disappointed coat hat at mid_left
     show shovel at manual_pos(0.5, 0.7, 0.5):
+        xzoom -1.0
         rotate -110
     play sound "<from 0.074 to 2.563>sfx/sfx_snow_walk.ogg" volume 2.0
     show cs disappointed coat hat at right
@@ -472,6 +593,7 @@ label ce_anno:
     carguy_nobeep "Nooot so nice driveway."
     show cs disappointed coat hat flipped
     show shovel at manual_pos(0.9, 0.7, 0.5):
+        xzoom 1.0
         rotate 15
     cs "Look, man, I'm trying."
     cs "It's cold as balls out here."
@@ -479,21 +601,22 @@ label ce_anno:
     carguy "I've got something that'll do the trick!"
     carguy "Crotch Doctor, with advanced \"Scratch My Balls\" technology, not only removes taint scrapes, stuffs, grapes, and other blemishes from your car, it {i}also{/i} instantly melts snow!"
     carguy "Watch!"
-    show nu_finish with dissolve:
+    show crotch_doctor with dissolve:
         zoom 0.2
         yzoom 1
         pos (0.3,0.5)
-    # TODO: bottle of crotch doctor
+
+    $ collect("crotch_doctor")
 
     n "Carguy produces a bottle of Crotch Doctor from his breast pocket and unscrews the cap."
     n "He tips it upside down and gives it a squeeze."
-    show nu_finish:
+    show crotch_doctor:
         zoom 0.2
         yzoom 1
         pos (0.25,0.5)
         linear 0.5 rotate 180
     pause 0.7
-    show nu_finish:
+    show crotch_doctor:
         zoom 0.2
         yzoom 1
         pos (0.25,0.5)
@@ -507,7 +630,7 @@ label ce_anno:
 
     cs "Umm..."
     carguy "Hold on, it's just..."
-    show nu_finish:
+    show crotch_doctor:
         zoom 0.2
         yzoom 1
         pos (0.25,0.5)
@@ -516,7 +639,7 @@ label ce_anno:
     # TODO: shaky shaky anim + sfx that empty ketchup bottle squirting sound
     
     n "Carguy vigorously shakes the empty bottle."
-    show nu_finish:
+    show crotch_doctor:
         zoom 0.2
         yzoom 1
         pos (0.25,0.5)
@@ -525,7 +648,7 @@ label ce_anno:
         repeat 7
     pause 1.5
     carguy "{size=-15}I thought I'd brought more of this..." 
-    hide nu_finish with dissolve
+    hide crotch_doctor with dissolve
     carguy "Welp, sorry! Looks like I've run out!"
     carguy "Gotta run! Happy holidays to you!"
     play sound sfx_snow_run loop volume 3.0
@@ -3629,13 +3752,13 @@ label ce_roof_moment:
     with dissolve
     santa "Alright! Stand back everyone! This is gonna take a lot of focus!"
     n "Santa harnesses most of his Christmas spirit energy to create CS' wish."
-    show nu_finish sil_black:
+    show crotch_doctor sil_black:
         zoom 0.75
         xpos 0.7
         ypos -0.35
     with moveintop
     pause 1.0
-    show nu_finish:
+    show crotch_doctor:
         zoom 0.75
         xpos 0.7
         ypos -0.35
@@ -3652,7 +3775,7 @@ label ce_roof_moment:
     cs "Just watch."
     stop music fadeout 3.0
     music end
-    show nu_finish:
+    show crotch_doctor:
         zoom 0.75
         xpos 0.5
         ypos -0.4
