@@ -583,10 +583,10 @@ label ce_anno:
 
     play sound sfx_snow_walk loop volume 2.0 fadein 2.0
     n "About ten minutes into shoveling, CS hears someone walking up his driveway."
-    pause 1.0
+    pause 2.0
     show carguy flipped at left with moveinleft
     stop sound
-    
+    pause 0.5
     play sound sfx_nice_snow
     carguy_nobeep "Nice snow!"
     play sound sfx_not_so_nice_driveway
@@ -604,7 +604,7 @@ label ce_anno:
     show crotch_doctor with dissolve:
         zoom 0.2
         yzoom 1
-        pos (0.3,0.5)
+        pos (0.3,0.45)
 
     $ collect("crotch_doctor")
 
@@ -613,13 +613,13 @@ label ce_anno:
     show crotch_doctor:
         zoom 0.2
         yzoom 1
-        pos (0.25,0.5)
+        pos (0.25,0.45)
         linear 0.5 rotate 180
     pause 0.7
     show crotch_doctor:
         zoom 0.2
         yzoom 1
-        pos (0.25,0.5)
+        pos (0.25,0.45)
         linear 0.5 xzoom 0.2
         linear 0.5 xzoom 1   
     pause 1.2
@@ -633,24 +633,25 @@ label ce_anno:
     show crotch_doctor:
         zoom 0.2
         yzoom 1
-        pos (0.25,0.5)
-        linear 0.1 ypos 400
-        linear 0.1 ypos 600
+        pos (0.25,0.45)
+        linear 0.1 ypos 350
+        linear 0.1 ypos 550
     # TODO: shaky shaky anim + sfx that empty ketchup bottle squirting sound
     
     n "Carguy vigorously shakes the empty bottle."
     show crotch_doctor:
         zoom 0.2
         yzoom 1
-        pos (0.25,0.5)
-        linear 0.1 ypos 400
-        linear 0.1 ypos 600
+        pos (0.25,0.45)
+        linear 0.1 ypos 350
+        linear 0.1 ypos 550
         repeat 7
-    pause 1.5
+    pause 2.5
     carguy "{size=-15}I thought I'd brought more of this..." 
     hide crotch_doctor with dissolve
     carguy "Welp, sorry! Looks like I've run out!"
     carguy "Gotta run! Happy holidays to you!"
+    play sound2 sfx_whoosh noloop
     play sound sfx_snow_run loop volume 3.0
     show carguy at offscreenleft with MoveTransition(0.25)
     pause 0.5
@@ -680,7 +681,7 @@ label ce_anno:
     with Dissolve(1.0)
 
     play sound sfx_car_approach_stop volume 5.0 fadein 5.0
-    n "As CS finishes clearing the driveway, Anno's car turns onto CS' street."
+    n "As CS finishes clearing the driveway, he spots Anno's car turning onto his street."
     cs "Just in time!"
 
     # TODO: anno's car
@@ -750,35 +751,35 @@ label ce_anno:
     show cs disappointed
     cs "Damn. Sorry to hear."
 
-    # TODO: I'm not touching this yet - tate
-    # also, continuity error? didn't he bring them in already?
-
     # Christmas tree first
     if tree_first:
         anno "By the way, where are all of the decorations?"
-        cs "Ah yes, it's all in the garage. I'll show you."
-        n "Anno follows CS to his garage."
+        cs "Ah, yes. They're all in the garage. Come on, I'll show you."
         hide cs with moveoutright
         hide anno with moveoutright
+        n "Anno follows CS into the garage."
+
         scene cs_garage_mess with dissolve
-        show cs at center
+        show cs disappointed at center
         show anno at left
         with moveinleft
-        n "As they enter the garage, Anno gawks at the mess on the floor."
+        n "Anno gawks at the mess on the floor, carefully avoiding the strewn-about Legos."
         anno "Damn, bitch, you {i}live{/i} like this?"
-        cs "... I may have had small mishap when I was trying to get the tree out."
-        anno "{i}Small?!"
-        show cs disappointed flipped
-        cs "Do you think you can help me?"
+        cs "... I may have had a... {i}small{/i} mishap when I was trying to get the tree out."
+        anno "{i}\"Small\"?!" with vpunch
+        show cs worried flipped
+        cs "Okay, maybe {i}not-{/i}so-small, but, do you think you can help me?"
         show cs disappointed
         cs "I figured it'd be faster if I had a helping hand."
         n "Anno groans."
         anno "I was hoping to be setting up decorations, not cleaning them up."
-        anno "... But I guess I don't really have any other option, do I?"
+        anno "But, I guess we don't really have any other option, do we?"
+        cs "Guess not..."
+        show cs disappointed at mid_right with move
         cs "Here, I'll grab these boxes, and we'll start throwing stuff in them."
         scene black with dissolve
         n "After about an hour, they manage to clean up the mess without stepping on too many more Legos."
-        n "CS and Anno drag the boxes inside."
+        n "CS and Anno drag the remaining boxes inside."
 
 # Setting up decorations
 label ce_setup:
@@ -789,7 +790,7 @@ label ce_setup:
     show anno at right
     with dissolve
     # TODO: need pile of decorations in boxes
-    cs "Well, Anno, are ya ready to start decorating this place?"
+    cs "Well, Anno, we did it! Are ya ready to start decorating this place?"
     anno "Yeah! Where should we start?"
 
     scene black with dissolve
@@ -813,7 +814,7 @@ label ce_setup:
     show cs disappointed
     cs "Sorry."
     scene black with dissolve
-    n "CS bids Anno farewell for now, before settling in for the night..."
+    n "CS bids Anno farewell before settling in for the night."
     centered "One long winter's nap later..."
 
 # Day 2
@@ -845,7 +846,10 @@ label ce_before_shopping:
         with move
         n "He finally rolls out of bed."
     else:
-        stop sound
+        stop sound fadeout 1.0
+        pause 2.0
+        show cs flipped
+        pause 0.5
         play sound sfx_blanket volume 10.0
         show cs at manual_pos(0.4, 1.115, 1.0):
             linear 1.0 rotate 0
@@ -908,18 +912,17 @@ label ce_before_shopping:
     n "CS arrives at Target."
     n "The faint scent of holiday-themed candles wafts through the air."
 
-    show cs happy coat hat
+    show cs happy coat with dissolve
     cs "Now, {i}this{/i} is a {i}real{/i} store!"
-    show cs coat hat
+    show cs coat
     cs "Everything is mostly clean and neat, no depressing lighting or messy aisles..."
     if fun_value(FUN_VALUE_UNOBTRUSIVE):
         cs "I should probably stop glazing up Target and actually buy what I came here for."
     else:
         cs "I should probably stop admiring the view and actually buy what I came here for."
     hide cs with moveoutright
-
-    # TODO: TATE STOPPED HERE FOR NOW! BE BACK LATER!
-    # also we totally need a joke somewhere about how you go to target for a few things but somehow come out with all this extra crap you don't need.
+    
+    # TODO: we totally need a joke somewhere about how you go to target for a few things but somehow come out with all this extra crap you don't need.
     
     # TODO: OK, hey Pakoo.
     # I'm going to need you to like, tell me if this makes any sense given the layout of a Target.
@@ -928,50 +931,144 @@ label ce_before_shopping:
 
     # Shopping
     scene tgt_tater with dissolve
-    show cs at center with moveinleft
+    show cs coat at center with moveinleft
     n "CS starts at the produce section."
+    show cs coat surprised
     cs "I think Michael said something about making mashed potatoes..."
+    show cs coat disappointed
     cs "Jeez, that's going to take a lot of taters."
+    show cs coat
     cs "Heh, and Tate's coming as well."
-    cs "Let's hope Michael stays away from them with the masher!"
-    n "CS heads over to the grocery aisles."
-    scene tgt_bread with dissolve
-    show cs at center with moveinleft
-    cs "Oh, good, bread. Can't have dinner without some good bread!"
-    cs "I guess I'll get Italian bread. You can make real good garlic bread with that."
-    cs "And Digi's coming, and I think they're ace, so I better have the good stuff."
-
-    n "In the next aisle, CS is already getting distracted from his goals."
-    cs "Ooh, an endcap! This is where the good deals are."
-    cs "Or, you know, the stuff that's about to expire..."
-    n "CS spots some EZ-Cheese."
-    cs "Oh, sweet! This stuff {i}never{/i} expires!"
-    cs "Mostly because it's not real cheese..."
+    show cs coat happy
+    cs "Let's hope Michael stays away from {i}them{/i} with the masher!"
+    # pfffffft. i hadn't read this part until now and lmao wow - tate
+    show cs coat flipped at mid_left with move
     pause 1.0
-    cs "Welp, I'm not complaining!"
+    # TODO: sack of potatoes asset
+    show cs coat
+    n "After grabbing some \"tates\" of his own, CS heads over to the grocery aisles."
+    # i hope this line ain't too weird. just felt too abrupt without SOMETHING here. - tate
+    hide cs with moveoutright
+    pause 1.0
+
+    scene tgt_bread with dissolve
+    show cs coat at center with moveinleft
+    pause 1.0
+    cs "Oh, good, bread. Can't have a holiday dinner without some good bread!"
+    cs "I guess I'll get Italian bread. You can make real good garlic bread with that."
+    cs "And Digi's coming, and I think they're ace, so I'd better have the good stuff."
+    show cs coat at mid_right with move
+    pause 1.0
+    # TODO: bread asset
+
+    show cs coat at right with move
+    n "As he makes for the next aisle, CS is already distracted from his shopping list."
+    cs "Ooh, an endcap! This is where the good deals are."
+    show cs coat surprised
+    cs "Or, you know, the stuff that's about to expire..."
+
+    # TODO: can we get a pic of an endcap?
+
+    n "CS spots some EZ-Cheese."
+    show cs coat happy
+    cs "Oh, {i}sweet!{/i} This stuff {i}never{/i} expires!"
+    show cs coat disappointed
+    cs "Mostly because it's not real cheese..."
+    show cs coat worried
+    pause 1.0
+    show cs coat happy
+    cs "Not that {i}I'm{/i} complaining!"
+    # TODO: spray cheese asset
+    pause 1.0
     n "CS yoinks some spray cheese."
-    cs "OK, CS, stay focused."
+    pause 1.0
+    "..."
+    show cs coat disappointed
+    cs "Alright, CS, stay focused."
+    hide cs with moveoutright
+    pause 1.0
+
     scene tgt_chips with dissolve
-    show cs at center with moveinleft 
-    n "The next few aisles don't hold much for CS, except for some content for observational comedy."
-    cs "{i}3D Doritos?{/i} I'm pretty sure {i}all{/i} Doritos are 3D. Would be hard to eat them otherwise."
-    cs "You know, I think they're making these bags of chips smaller, as well. I don't {i}feel{/i} like I'm the size of a family."
+    pause 1.0
+    show cs coat at center with moveinleft 
+
+    # TODO: uhhhhhh lemme know how i did on these few lines i guess idk - tate
+
+    n "The next few aisles don't hold much for CS beyond some content for observational comedy."
+    show cs coat surprised
+    cs "\"3D\" Doritos? I'm pretty sure {i}all{/i} Doritos are 3D. Would be pretty hard to eat them, otherwise."
+    show cs coat disappointed
+    cs "You know, I think they're making these bags of chips smaller and smaller, too."
+    show cs coat worried
+    cs "\"Family Size\"? {i}\"Party{/i} Size\"? Are you serious?"
+    cs "I can eat one of these all by myself, and I don't {i}feel{/i} like I'm eating enough for a whole family or party..."
+    cs "It would take a whole lot more than one bag to feed {i}this{/i} party, too!"
+    show cs coat scared
+    cs "How big do they expect these families or parties to even {i}be?"
+    show cs coat disappointed
+    cs "Who knows. Gotta love capitalism."
+    show cs coat flipped at left with move
+    pause 1.0
+    show cs coat happy flipped
+    cs "Gotta love Pringles, too."
+
+    show pringles at manual_pos(50, 300) with Dissolve(0.25)
+    show pringles at manual_pos(200, 800) with MoveTransition(0.25)
+    hide pringles with dissolve
+
+    n "CS grabs a can of his favorite before moving on to find the next item on his list."
+    show cs coat with determination
+    pause 0.5
+    hide cs with moveoutright
+    
     scene tgt_shelf with dissolve
-    show cs at center with moveinleft  
-    n "Finally, CS stumbles upon something he actually needs."
-    cs "Well I need to get some Genergy, of course."
-    cs "Walmart had a better deal on these, but gosh, I hate going to that place."
-    cs "And I'm going to need a lot of Genergy for this."
+    show cs coat at mid_left with moveinleft  
+    n "Finally, CS stumbles upon something that was actually on that list."
+    cs "Genergy, of course. Always need that."
+    cs "Walmart usually has a better deal on these, but gosh, I hate going there."
+    cs "And, I'm gonna need a {i}lot{/i} of Genergy to get through all this party prep!"
+    
+    show genergy at manual_pos(700, 300) with Dissolve(0.25)
+    show genergy at manual_pos(400, 800) with MoveTransition(0.25)
+
+    show genergy at manual_pos(700, 300) with Dissolve(0.25)
+    show genergy at manual_pos(400, 800) with MoveTransition(0.25)
+
+    show genergy at manual_pos(700, 300) with Dissolve(0.25)
+    show genergy at manual_pos(400, 800) with MoveTransition(0.25)
+
+    show genergy at manual_pos(700, 300) with Dissolve(0.25)
+    show genergy at manual_pos(400, 800) with MoveTransition(0.25)
+
+    show genergy at manual_pos(700, 300) with Dissolve(0.25)
+    show genergy at manual_pos(400, 800) with MoveTransition(0.25)
+
+    # just want him to get A LOT of genergy lmfao - tate
+
     scene tgt_tree with dissolve
-    show cs at center with moveinleft 
+    show cs coat at center with moveinleft
+    pause 2.0
+
+    n "After clearing out the stock of Genergy, CS continues on to another area of the store."
+
+    show cs coat disappointed
     cs "Jeez, there's a lot of people out today..."
+    show cs coat worried
     cs "I guess that's what I get for going shopping this close to the holiday."
-    cs "But, I guess I'm the man known for uploading videos at 11:59 on the 31st, so this wasn't unexpected."
-    cs "At least everyone here seems polite, they probably just want to get their stuff and leave, too."
+    cs "But, I guess I {i}am{/i} the same man known for uploading videos at 11:59 on the 31st, so I should be used to this sort of thing."
+    cs "At least everyone here seems polite. They probably just want to get their stuff and get out, too."
+
+    # TODO: we need a cart asset then?
+
     n "CS nearly runs his cart right into another."
     cs "Oh, I'm so sorry!"
     pomni "Oh, uh... it's o-okay! Y-you probably just didn't see me."
     cs "Wait, aren't you the girl from the IKEA?"
+
+    # TODO: TIMELINE ALERT - CS would not have met Pomni if this takes place after true route, as country route is another timeline. how do we fix this? - tate
+
+    # TODO: TATE STOPPED EDITING HERE FOR NOW! BE BACK SOON!
+
     n "The clown girl looks visibly distressed."
     pomni "What, uh, no! What ever could you be... talking about? I'm just going to head out now, lots of {i}very{/i} important..."
     n "Pomni glances at her surroundings."
@@ -983,7 +1080,7 @@ label ce_before_shopping:
     cs "But I could have sworn I recognized her..."
     cs "Oh, well."
     scene tgt_tech with dissolve
-    show cs at center with moveinleft 
+    show cs coat at center with moveinleft 
     n "CS passes the electronics section."
     cs "OK, I don't need anything there."
     cs "Buuuuuut..."
@@ -993,17 +1090,17 @@ label ce_before_shopping:
     n "Time passes, and CS is still playing Tetris, the items in his cart beginning to sweat."
     cs "Oh, shoot! Right, I need to actually accomplish things today."
     scene tgt_dairy with dissolve
-    show cs at center with moveinleft 
+    show cs coat at center with moveinleft 
     cs "This meal is going to take so much butter..."
     cs "Well, if there's one thing I learned about cooking from Paula Dean, is that everything's better with butter!"
     cs "And that Paula Dean is scary. I learned that, too."
     scene tgt_frozen with dissolve
-    show cs at center with moveinleft 
+    show cs coat at center with moveinleft 
     n "CS finds the pies."
     cs "I probably don't need to buy too many of these... there's going to be a lot of food, and I think a decent amount of the party won't even eat dessert."
     cs "I'll just grab two."
     scene tgt_alcy with dissolve
-    show cs at center with moveinleft 
+    show cs coat at center with moveinleft 
     n "Finally, CS lands in the alcohol section."
     cs "I know a lot of the party won't drink, but damn it, it's Christmas. I should nab some nog."
 
@@ -1020,15 +1117,15 @@ label ce_checkout:
     show customer at center
     with dissolve
     play music winter_unclearance_sale if_changed loop volume 0.3 fadein 1.0    
-    show cs at left with moveinleft
+    show cs coat at left with moveinleft
     pause 1.0
-    show cs disappointed
+    show cs coat disappointed
     cs "Wait, what?"
-    show cs angry
+    show cs coat angry
     cs "There are no lanes open! How the hell am I supposed to check out?"
-    show cs disappointed
+    show cs coat disappointed
     cs "Oh wait, I guess self-checkout is open..."
-    show cs disappointed at mid_mid_left with move
+    show cs coat disappointed at mid_mid_left with move
     n "CS gets in the long line wrapped around the self-check area."
     cs "Man, this place is really short staffed, especially for the holidays!"
     show customer flipped
@@ -1040,47 +1137,47 @@ label ce_checkout:
     show snufkin flipped at mid_right
     show customer at mid_mid_right
     with move
-    show cs at center with move
+    show cs coat at center with move
     pause 2.0
     hide amtrak_stewardess with moveoutright
     show snufkin flipped at mid_right_right
     show customer at mid_right
     with move
-    show cs at mid_mid_right with move
+    show cs coat at mid_mid_right with move
     pause 2.0
     hide snufkin flipped with moveoutright
     show customer at mid_right_right with move
-    show cs at mid_right with move
+    show cs coat at mid_right with move
     pause 3.0
     hide customer with moveoutright
-    show cs at mid_right_right with move
+    show cs coat at mid_right_right with move
     pause 2.0
-    cs "Finally, I can checkout."
+    cs "Finally, I can check out..."
     stop music fadeout 10.0
     scene tgt_checkerror with dissolve
-    show cs at left with moveinleft
+    show cs coat at left with moveinleft
     n "CS sees an message on the machine."
     cs "Welp, can't use that one!"
     hide cs with moveoutright
     n "CS goes to the next machine."
     scene tgt_checkout with dissolve
-    show cs at left with moveinleft
+    show cs coat at left with moveinleft
     n "As CS is checking out, the machine beeps at him."
-    show cs worried
+    show cs coat worried
     cs "What? I scanned this twice? No I didn't!"
     # TODO: Pakoo needs to greenscreen themselves
-    show cs disappointed
+    show cs coat disappointed
     show tgt_worker at mid_right with moveinright
     tgt_worker "Oh yeah, it always does that, keep going."
-    show cs
+    show cs coat
     cs "Okay."
     hide tgt_worker with moveoutright
-    show cs disappointed
+    show cs coat disappointed
     cs "Ah crap, I scanned this one too many times."
     n "The worker comes back."
     show tgt_worker at mid_right with moveinright
     tgt_worker "Hello, what's wrong?"
-    show cs
+    show cs coat
     cs "Sorry, I scanned this pie 7 times."
     tgt_worker "...how many do you have?"
     cs "I have 2."
@@ -1091,7 +1188,7 @@ label ce_checkout:
     tgt_worker "There you go."
     cs "Thanks!"
     hide tgt_worker with moveoutright
-    show cs angry
+    show cs coat angry
     cs "Hey wait a minute!"
     show tgt_worker at mid_right with moveinright
     n "The target employee runs back over."
@@ -1099,20 +1196,20 @@ label ce_checkout:
     cs "They said they were like 20-percent off on the sign over there!"
     tgt_worker "Hmm..."
     n "The employee scans the pie."
-    show cs disappointed
+    show cs coat disappointed
     tgt_worker "Do you perchance have Target Circle?"
     cs "No?"
     tgt_worker "You need Target Circle to get this deal. Sorry."
-    show cs angry
+    show cs coat angry
     cs "Really?"
     tgt_worker "I'm sorry, but that's just how the deal works."
-    show cs disappointed
+    show cs coat disappointed
     cs "Fine, whatever, I'll just keep them."
     hide tgt_worker with moveoutright
     n "When CS goes to scan his alcohol, it beeps again and tells him to get out his ID."
-    show cs pissed
+    show cs coat pissed
     cs "Seriously?!"
-    show cs angry
+    show cs coat angry
     n "The employee runs over again."
     show tgt_worker at mid_right with moveinright
     tgt_worker "Oh yeah. I should probably do that for you."
@@ -1121,10 +1218,10 @@ label ce_checkout:
     n "They then wait patiently for CS."
     cs "What? Do you need something from me?"
     tgt_worker "Yeah, I need to check your ID."
-    show cs pissed
+    show cs coat pissed
     cs "Are you kidding me?"
     tgt_worker "Yes, they will kill me if you don't do it."
-    show cs disappointed
+    show cs coat disappointed
     n "CS sighs."
     cs "Here you go."
     n "The target employee punches in his birthday and leaves."
@@ -1133,13 +1230,13 @@ label ce_checkout:
     hide cs with moveoutright
     stop sound fadeout 3.0
     scene tgt_outside
-    show cs disappointed
+    show cs coat hat disappointed
     with dissolve
     cs "Kids these days, asking me for my ID..."
     cs "They should hire some new people!"
-    show cs
+    show cs coat hat
     cs "Anyways, I need to get home now and put everything away."
-    show cs happy
+    show cs coat hat happy
     cs "It's the big day tomorrow, and it's gonna be the best party ever!"
     hide cs with moveoutright
 
