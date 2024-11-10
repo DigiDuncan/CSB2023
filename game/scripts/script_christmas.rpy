@@ -927,12 +927,19 @@ label ce_before_shopping:
     # -- Digi
 
     # Shopping
+    scene tgt_tater with dissolve
+    show cs at center with moveinleft
+    n "CS starts at the produce section."
+    cs "I think Michael said something about making mashed potatoes..."
+    cs "Jeez, that's going to take a lot of taters."
+    cs "Heh, and Tate's coming as well."
+    cs "Let's hope Michael stays away from them with the masher!"
     n "CS heads over to the grocery aisles."
-    scene tgt_shelf with dissolve
-    show cs at left with moveinleft
-    cs "Well I need to get some Genergy, of course."
-    cs "Walmart had a better deal on these, but gosh, I hate going to that place."
-    cs "And I'm going to need a lot of Genergy for this."
+    scene tgt_bread with dissolve
+    show cs at center with moveinleft
+    cs "Oh, good, bread. Can't have dinner without some good bread!"
+    cs "I guess I'll get Italian bread. You can make real good garlic bread with that."
+    cs "And Digi's coming, and I think they're ace, so I better have the good stuff."
 
     n "In the next aisle, CS is already getting distracted from his goals."
     cs "Ooh, an endcap! This is where the good deals are."
@@ -944,21 +951,23 @@ label ce_before_shopping:
     cs "Welp, I'm not complaining!"
     n "CS yoinks some spray cheese."
     cs "OK, CS, stay focused."
-
+    scene tgt_chips with dissolve
+    show cs at center with moveinleft 
     n "The next few aisles don't hold much for CS, except for some content for observational comedy."
     cs "{i}3D Doritos?{/i} I'm pretty sure {i}all{/i} Doritos are 3D. Would be hard to eat them otherwise."
     cs "You know, I think they're making these bags of chips smaller, as well. I don't {i}feel{/i} like I'm the size of a family."
-    
+    scene tgt_shelf with dissolve
+    show cs at center with moveinleft  
     n "Finally, CS stumbles upon something he actually needs."
-    cs "Oh, good, bread. Can't have dinner without some good bread!"
-    cs "I guess I'll get Italian bread. You can make real good garlic bread with that."
-    cs "And Digi's coming, and I think they're ace, so I better have the good stuff."
-
+    cs "Well I need to get some Genergy, of course."
+    cs "Walmart had a better deal on these, but gosh, I hate going to that place."
+    cs "And I'm going to need a lot of Genergy for this."
+    scene tgt_tree with dissolve
+    show cs at center with moveinleft 
     cs "Jeez, there's a lot of people out today..."
     cs "I guess that's what I get for going shopping this close to the holiday."
     cs "But, I guess I'm the man known for uploading videos at 11:59 on the 31st, so this wasn't unexpected."
     cs "At least everyone here seems polite, they probably just want to get their stuff and leave, too."
-
     n "CS nearly runs his cart right into another."
     cs "Oh, I'm so sorry!"
     pomni "Oh, uh... it's o-okay! Y-you probably just didn't see me."
@@ -973,16 +982,8 @@ label ce_before_shopping:
     cs "That was... odd. Don't get a lot of weirdos in Target."
     cs "But I could have sworn I recognized her..."
     cs "Oh, well."
-
-    cs "I think Michael said something about making mashed potatoes..."
-    cs "Jeez, that's going to take a lot of taters."
-    cs "Heh, and Tate's coming as well."
-    cs "Let's hope Michael stays away from them with the masher!"
-    
-    cs "This meal is going to take so much butter..."
-    cs "Well, if there's one thing I learned about cooking from Paula Dean, is that everything's better with butter!"
-    cs "And that Paula Dean is scary. I learned that, too."
-
+    scene tgt_tech with dissolve
+    show cs at center with moveinleft 
     n "CS passes the electronics section."
     cs "OK, I don't need anything there."
     cs "Buuuuuut..."
@@ -991,11 +992,18 @@ label ce_before_shopping:
     cs "OK, that's the universe {i}asking{/i} me to play a round."
     n "Time passes, and CS is still playing Tetris, the items in his cart beginning to sweat."
     cs "Oh, shoot! Right, I need to actually accomplish things today."
-
+    scene tgt_dairy with dissolve
+    show cs at center with moveinleft 
+    cs "This meal is going to take so much butter..."
+    cs "Well, if there's one thing I learned about cooking from Paula Dean, is that everything's better with butter!"
+    cs "And that Paula Dean is scary. I learned that, too."
+    scene tgt_frozen with dissolve
+    show cs at center with moveinleft 
     n "CS finds the pies."
     cs "I probably don't need to buy too many of these... there's going to be a lot of food, and I think a decent amount of the party won't even eat dessert."
     cs "I'll just grab two."
-
+    scene tgt_alcy with dissolve
+    show cs at center with moveinleft 
     n "Finally, CS lands in the alcohol section."
     cs "I know a lot of the party won't drink, but damn it, it's Christmas. I should nab some nog."
 
