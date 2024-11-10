@@ -67,9 +67,9 @@ label ce_start:
     "..."
     show cs disappointed
     cs "...{fast} I have not prepared at all."
+    cs "Fuck."
     # if y'all know CS, then y'all know damn well why this line exists. - tate
     cs "I literally had two {i}weeks{/i} to prepare, but I guess I just left it until the last minute again..." 
-    cs "Fuck."
     pause 0.5
 
     show cs
