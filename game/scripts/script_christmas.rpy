@@ -921,6 +921,7 @@ label ce_before_shopping:
     else:
         cs "I should probably stop admiring the view and actually buy what I came here for."
     hide cs with moveoutright
+    n "CS grabs a cart."
     
     # TODO: we totally need a joke somewhere about how you go to target for a few things but somehow come out with all this extra crap you don't need.
     
@@ -931,7 +932,12 @@ label ce_before_shopping:
 
     # Shopping
     scene tgt_tater with dissolve
-    show cs coat at center with moveinleft
+    show cs coat at center
+    show shopping_cart at manual_pos(0.8, 1.1, 0.5)
+    with moveinleft
+
+    $ collect("shopping_cart")
+
     n "CS starts at the produce section."
     show cs coat surprised
     cs "I think Michael said something about making mashed potatoes..."
@@ -944,24 +950,48 @@ label ce_before_shopping:
     # pfffffft. i hadn't read this part until now and lmao wow - tate
     show cs coat flipped at mid_left with move
     pause 1.0
-    # TODO: sack of potatoes asset
+
+    show potato_bag at manual_pos(50, 300) with Dissolve(0.25)
+    pause 0.5
+    show cs coat at center
+    show potato_bag at manual_pos(0.6, 0.5, 0.5)
+    with move
+    pause 0.5
+    show potato_bag at manual_pos(0.8, 0.8, 0.5) with MoveTransition(0.25)
+    hide potato_bag with dissolve
+    $ collect("potato_bag")
+
     show cs coat
     n "After grabbing some \"tates\" of his own, CS heads over to the grocery aisles."
     # i hope this line ain't too weird. just felt too abrupt without SOMETHING here. - tate
-    hide cs with moveoutright
+    hide cs 
+    hide shopping_cart
+    with moveoutright
     pause 1.0
 
     scene tgt_bread with dissolve
-    show cs coat at center with moveinleft
+    show cs coat at center 
+    show shopping_cart at manual_pos(0.8, 1.1, 0.5)
+    with moveinleft
     pause 1.0
     cs "Oh, good, bread. Can't have a holiday dinner without some good bread!"
     cs "I guess I'll get Italian bread. You can make real good garlic bread with that."
-    cs "And Digi's coming, and I think they're ace, so I'd better have the good stuff."
+    cs "Since Digi's coming, and I think they're ace, I'd better have the good stuff."
     show cs coat at mid_right with move
     pause 1.0
-    # TODO: bread asset
 
-    show cs coat at right with move
+    show bread at manual_pos(0.9, 0.3) with Dissolve(0.25)
+    show bread at manual_pos(0.8, 0.8) with MoveTransition(0.25)
+    hide bread with dissolve
+    $ collect("bread")
+
+    show cs coat flipped at center with move
+    show cs coat with determination
+
+    show cs coat at right 
+    show shopping_cart at manual_pos(1.1, 1.1, 0.5)
+    with move
+
     n "As he makes for the next aisle, CS is already distracted from his shopping list."
     cs "Ooh, an endcap! This is where the good deals are."
     show cs coat surprised
@@ -978,19 +1008,29 @@ label ce_before_shopping:
     pause 1.0
     show cs coat happy
     cs "Not that {i}I'm{/i} complaining!"
-    # TODO: spray cheese asset
+
+    # TODO: make this better later, we need a pic of an endcap definitely
+    show spray_cheese at manual_pos(1.0, 0.4) with Dissolve(0.25)
+    show spray_cheese at manual_pos(0.9, 0.8) with MoveTransition(0.25)
+    hide spray_cheese with dissolve
+    $ collect("spray_cheese")
+
     pause 1.0
     n "CS yoinks some spray cheese."
     pause 1.0
     "..."
     show cs coat disappointed
     cs "Alright, CS, stay focused."
-    hide cs with moveoutright
+    hide cs
+    hide shopping_cart
+    with moveoutright
     pause 1.0
 
     scene tgt_chips with dissolve
     pause 1.0
-    show cs coat at center with moveinleft 
+    show cs coat at center
+    show shopping_cart at manual_pos(0.8, 1.1, 0.5)
+    with moveinleft 
 
     # TODO: uhhhhhh lemme know how i did on these few lines i guess idk - tate
 
@@ -1012,82 +1052,135 @@ label ce_before_shopping:
     show cs coat happy flipped
     cs "Gotta love Pringles, too."
 
-    show pringles at manual_pos(50, 300) with Dissolve(0.25)
-    show pringles at manual_pos(200, 800) with MoveTransition(0.25)
+    show pringles at manual_pos(0.075, 0.4) with Dissolve(0.25)
+    pause 0.5
+    show cs coat at center
+    show pringles at manual_pos(0.6, 0.4)
+    with move
+    pause 0.5
+    show pringles at manual_pos(0.7, 0.8) with MoveTransition(0.25)
     hide pringles with dissolve
 
-    n "CS grabs a can of his favorite before moving on to find the next item on his list."
+    n "CS grabs a can of his favorite flavor before moving on to the next aisle."
     show cs coat with determination
     pause 0.5
-    hide cs with moveoutright
+    hide cs 
+    hide shopping_cart
+    with moveoutright
     
     scene tgt_shelf with dissolve
-    show cs coat at mid_left with moveinleft  
+    show cs coat at mid_left
+    show shopping_cart at manual_pos(0.5, 1.1, 0.5)
+    with moveinleft  
     n "Finally, CS stumbles upon something that was actually on that list."
     cs "Genergy, of course. Always need that."
     cs "Walmart usually has a better deal on these, but gosh, I hate going there."
     cs "And, I'm gonna need a {i}lot{/i} of Genergy to get through all this party prep!"
     
-    show genergy at manual_pos(700, 300) with Dissolve(0.25)
-    show genergy at manual_pos(400, 800) with MoveTransition(0.25)
+    show genergy at manual_pos(0.4, 0.3) with Dissolve(0.25)
+    show genergy at manual_pos(0.55, 0.8) with MoveTransition(0.25)
 
-    show genergy at manual_pos(700, 300) with Dissolve(0.25)
-    show genergy at manual_pos(400, 800) with MoveTransition(0.25)
+    show genergy at manual_pos(0.4, 0.3) with Dissolve(0.25)
+    show genergy at manual_pos(0.55, 0.8) with MoveTransition(0.25)
 
-    show genergy at manual_pos(700, 300) with Dissolve(0.25)
-    show genergy at manual_pos(400, 800) with MoveTransition(0.25)
+    show genergy at manual_pos(0.4, 0.3) with Dissolve(0.25)
+    show genergy at manual_pos(0.55, 0.8) with MoveTransition(0.25)
 
-    show genergy at manual_pos(700, 300) with Dissolve(0.25)
-    show genergy at manual_pos(400, 800) with MoveTransition(0.25)
+    show genergy at manual_pos(0.4, 0.3) with Dissolve(0.25)
+    show genergy at manual_pos(0.55, 0.8) with MoveTransition(0.25)
 
-    show genergy at manual_pos(700, 300) with Dissolve(0.25)
-    show genergy at manual_pos(400, 800) with MoveTransition(0.25)
+    show genergy at manual_pos(0.4, 0.3) with Dissolve(0.25)
+    show genergy at manual_pos(0.55, 0.8) with MoveTransition(0.25)
 
     # just want him to get A LOT of genergy lmfao - tate
 
     scene tgt_tree with dissolve
-    show cs coat at center with moveinleft
+    show cs coat at mid_left_left 
+    show shopping_cart at manual_pos(0.3, 1.1, 0.5)
+    with moveinleft
     pause 2.0
 
     n "After clearing out the stock of Genergy, CS continues on to another area of the store."
 
     show cs coat disappointed
-    cs "Jeez, there's a lot of people out today..."
+    cs "Jeez, there sure are a lot of people out today..."
     show cs coat worried
     cs "I guess that's what I get for going shopping this close to the holiday."
     cs "But, I guess I {i}am{/i} the same man known for uploading videos at 11:59 on the 31st, so I should be used to this sort of thing."
     cs "At least everyone here seems polite. They probably just want to get their stuff and get out, too."
 
-    # TODO: we need a cart asset then?
+    show pomni at offscreenright
+    show shopping_cart as second at manual_pos(1.5, 1.1, 0.5)
+    with determination
+
+    show cs coat at left
+    show shopping_cart at manual_pos(0.5, 1.1, 0.5)
+    show pomni at mid_offscreen_right
+    show shopping_cart as second at manual_pos(0.8, 1.1, 0.5):
+        xzoom -1
+    with move
+    show cs coat scared
+    with hpunch
 
     n "CS nearly runs his cart right into another."
+    show cs coat worried
     cs "Oh, I'm so sorry!"
-    pomni "Oh, uh... it's o-okay! Y-you probably just didn't see me."
-    cs "Wait, aren't you the girl from the IKEA?"
-
-    # TODO: TIMELINE ALERT - CS would not have met Pomni if this takes place after true route, as country route is another timeline. how do we fix this? - tate
-
-    # TODO: TATE STOPPED EDITING HERE FOR NOW! BE BACK SOON!
-
+    pomni "Oh, uh... i-{w=0.1}it's o-okay! Y-{w=0.1}You probably just didn't see me--"
+    pomni "Wait, aren't you that guy from IKEA?"
+    show cs coat scared
+    cs "Huh?!"
+    show cs coat worried
+    cs "I've only been to Walmart recently!"
+    "..."
     n "The clown girl looks visibly distressed."
-    pomni "What, uh, no! What ever could you be... talking about? I'm just going to head out now, lots of {i}very{/i} important..."
+
+    pomni "But... how?!"
+    pomni "You really don't remember me?"
+    # TODO: is this next line too much? should i save it for DX and make it a conditional depending on whether you've fought tate in train route? - tate
+    pomni "Is this what that {color=#FFDBFC}pink sweater{/color} person was talking about?" 
+    cs "What are {i}you{/i} talking about?!"
+    pomni "I'm... just going to head out now, lots of {i}very{/i} important..."
     n "Pomni glances at her surroundings."
-    pomni "Shopping to do! Yeah! I just love, uh, capitalism?"
-    cs "That doesn't really make any--{w=0.5}{nw}"
-    pomni "Gotta run, bye!"
+    pomni "Shopping to do! Yeah! I just love, uh... capitalism?"
+    cs "Wait, what do you mean by--{w=0.5}{nw}"
+    pomni "Gotta run! Bye!"
+    show pomni flipped at offscreenright with MoveTransition(0.15)
     n "Pomni dashes away, leaving her empty cart behind."
-    cs "That was... odd. Don't get a lot of weirdos in Target."
-    cs "But I could have sworn I recognized her..."
-    cs "Oh, well."
+    pause 0.5
+    show cs coat disappointed
+    cs "That was... odd. Don't see a lot of weirdos like that at Target."
+    cs "I guess this place is more like Walmart than I thought."
+    show cs coat surprised
+    cs "I guess I have a lookalike who shops at IKEA, too."
+    show cs coat
+    cs "Oh, well. Back to shopping for me."
+    
+    hide cs
+    hide shopping_cart
+    with moveoutright
+
     scene tgt_tech with dissolve
-    show cs coat at center with moveinleft 
+    show cs coat at center 
+    show shopping_cart at manual_pos(0.8, 1.1, 0.5)
+    with moveinleft 
     n "CS passes the electronics section."
-    cs "OK, I don't need anything there."
+    cs "Okay, I don't need anything there."
+    show cs coat surprised
     cs "Buuuuuut..."
-    cs "I mean, I can't not see what they have on display."
-    n "CS spots the Nintendo Switch demo display, with Tetris 99 already ready to go."
-    cs "OK, that's the universe {i}asking{/i} me to play a round."
-    n "Time passes, and CS is still playing Tetris, the items in his cart beginning to sweat."
+    cs "I mean, I can't {i}not{/i} see what they have on display."
+
+    n "CS spots the Nintendo Switch demo display, featuring {i}Tetris 99,{/i} all ready to play."
+    cs "Okay, that's the universe just {i}asking{/i} me to play a round."
+
+    # TODO: lmao, are we gonna put a tetris minigame here?
+
+    show cs coat happy flipped at left with move
+    n "CS steps over to the display."
+    n "More than one round, CS finally realizes how much time has passed."
+    # i changed this because CS has not actually picked up anything cold yet, so nothing would be condensating - yate
+
+    # TODO: TATE STOPPED EDITING HERE!
+
     cs "Oh, shoot! Right, I need to actually accomplish things today."
     scene tgt_dairy with dissolve
     show cs coat at center with moveinleft 

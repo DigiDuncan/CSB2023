@@ -60,6 +60,14 @@
         "rarity": "Uncommon",
         "dx": true
     },
+    "bread": {
+        "img": "bread",
+        "name": "Loaf Of Bread",
+        "owner": "CS",
+        "desc": "Ideal for making garlic bread!",
+        "rarity": "Common",
+        "ce": true
+    },
     "case": {
         "img": "case",
         "name": "Briefcase of Money",
@@ -315,6 +323,14 @@
         "desc": "It's held together with duct tape, rope, and a prayer, but it gets the job done.",
         "rarity": "Uncommon"
     },
+    "poo": {
+        "img": "poo",
+        "name": "Poop Emoji Stress Ball",
+        "owner": "???",
+        "desc": "This particular pile of poo seems to have gotten plopped into a time warp.",
+        "rarity": "Legendary",
+        "dx": true
+    },
     "pot": {
         "img": "pot",
         "name": "Mysterious Pot",
@@ -323,13 +339,13 @@
         "rarity": "Common",
         "dx": true
     },
-    "poo": {
-        "img": "poo",
-        "name": "Poop Emoji Stress Ball",
-        "owner": "???",
-        "desc": "This particular pile of poo seems to have gotten plopped into a time warp.",
-        "rarity": "Legendary",
-        "dx": true
+    "potato_bag": {
+        "img": "potato_bag",
+        "name": "Bag Of Potatoes",
+        "owner": "CS",
+        "desc": "Boil 'em, mash 'em, stick 'em in a stew!",
+        "rarity": "Common",
+        "ce": true
     },
     "pringles": {
         "img": "pringles",
@@ -362,6 +378,14 @@
         "desc": "Sans Brick",
         "rarity": "Sans Brick"
     },
+    "shopping_cart": {
+        "img": "shopping_cart",
+        "name": "Shopping Cart",
+        "owner": "Target",
+        "desc": "Good for moving large quantities of groceries.",
+        "rarity": "Common",
+        "ce": true
+    },
     "shovel": {
         "img": "shovel",
         "name": "CS's Shovel",
@@ -385,6 +409,14 @@
         "desc": "Surprisingly durable for what it is.",
         "rarity": "Common",
         "dx": true
+    },
+    "spray_cheese": {
+        "img": "spray_cheese",
+        "name": "Spray Cheese",
+        "owner": "CS",
+        "desc": "Invented in the 1960s and advertised as a party snack, this feat of engineering can dispense cheese no matter what angle the can is held at. {a=https://en.wikipedia.org/wiki/Easy_Cheese}(Source){/a}",
+        "rarity": "Common",
+        "ce": true
     },
     "switch": {
         "img": "switch",
