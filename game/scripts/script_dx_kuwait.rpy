@@ -316,9 +316,6 @@ label kuwait_icarus:
     show cs angry punished
     with dissolve
     if tutorial == True:
-        scene icarus
-        show cs angry punished
-        with dissolve
         cs "I am now at Icarus."
         menu:
             "What do you want to check out?"
