@@ -1304,6 +1304,7 @@ label ce_before_shopping:
         xzoom -1
     with move
     show cs coat scared
+    show pomni eyes
     with hpunch
 
     n "CS nearly runs his cart right into another."
@@ -1317,10 +1318,11 @@ label ce_before_shopping:
     cs "Huh?!"
     show cs coat worried
     cs "I've only been to Walmart recently!"
-    show pomni
+    show pomni eyes
     "..."
     n "The clown girl looks visibly distressed."
 
+    show pomni concern flipped
     pomni "But... how?!"
     pomni "You {i}really{/i} don't remember me?"
     # TODO: is this next line too much? should i save it for DX and make it a conditional depending on whether you've fought tate in train route? - tate

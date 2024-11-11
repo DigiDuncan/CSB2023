@@ -1872,6 +1872,8 @@ image pomni think = "characters/pomni_think.png"
 image pomni think flipped = "flip:characters/pomni_concern.png"
 image pomni concern = "characters/pomni_concern.png"
 image pomni concern flipped = "flip:characters/pomni_concern.png"
+image pomni eyes = "characters/pomni_eyes.png"
+image pomni eyes flipped = "flip:characters/pomni_eyes.png"
 
 image moomin = "characters/moomin.png"
 image moomin = "flip:characters/moomin.png"
