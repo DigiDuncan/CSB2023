@@ -1289,14 +1289,15 @@ label ce_before_shopping:
     cs "Jeez, there sure are a lot of people out today..."
     show cs coat worried
     cs "I guess that's what I get for leaving shopping until the last minute."
-    cs "But, I guess I {i}am{/i} the same man known for uploading videos at 11:59 on the 31st, so I should be used to this sort of thing."
+    cs "But, I guess I {i}am{/i} the same man known for uploading videos at 11:59 PM on the 31st, so I should be used to this sort of thing."
+    show cs coat disappointed
     cs "At least everyone here seems polite. They probably just want to get what they need and get out, too."
 
     show pomni at offscreenright
     show shopping_cart as second at manual_pos(1.5, 1.1, 0.5)
     with determination
 
-    show cs coat at left
+    show cs coat disappointed at mid_left
     show shopping_cart at manual_pos(0.5, 1.1, 0.5)
     show pomni at mid_offscreen_right
     show shopping_cart as second at manual_pos(0.8, 1.1, 0.5):
@@ -1308,45 +1309,56 @@ label ce_before_shopping:
     n "CS nearly runs his cart right into another."
     show cs coat worried
     cs "Oh, I'm so sorry!"
+    show pomni concern flipped
     pomni "Oh, uh... i-{w=0.1}it's o-okay! Y-{w=0.1}You probably just didn't see me--"
+    show pomni think
     pomni "Wait, aren't you that guy from IKEA?"
     show cs coat scared
     cs "Huh?!"
     show cs coat worried
     cs "I've only been to Walmart recently!"
+    show pomni
     "..."
     n "The clown girl looks visibly distressed."
 
     pomni "But... how?!"
-    pomni "You really don't remember me?"
+    pomni "You {i}really{/i} don't remember me?"
     # TODO: is this next line too much? should i save it for DX and make it a conditional depending on whether you've fought tate in train route? - tate
-    pomni "Is this what that {color=#FFDBFC}pink sweater{/color} person was talking about?"
+    show pomni think
+    pomni "Is this what that {color=#FFDBFC}time traveler{/color} was talking about?"
     show cs coat scared
     cs "What are {i}you{/i} talking about?!"
-    pomni "I'm... just going to head out now, lots of {i}very{/i} important..."
+    show pomni concern flipped
+    pomni "I'm... just going to head out now! Lots of {i}very{/i} important..."
+    show pomni concern
+    pause 0.5
+    show pomni concern flipped
     n "Pomni glances at her surroundings."
-    pomni "Shopping to do! Yeah! I just love, uh... capitalism?"
+    show pomni
+    pomni "... Shopping to do! Yeah! I just love, uh... capitalism?"
     show cs coat worried
     cs "Wait, what do you mean by--{w=0.5}{nw}"
+    show pomni concern flipped
     pomni "Gotta run! Bye!"
-    show pomni flipped at offscreenright with MoveTransition(0.15)
+    show pomni concern flipped at offscreenright with MoveTransition(0.15)
     n "Pomni dashes away, leaving her empty cart behind."
     pause 0.5
     show cs coat disappointed
-    cs "That was... odd. Don't see a lot of weirdos like that at Target."
+    cs "That was... odd."
+    cs "You don't see a lot of weirdos like that at Target."
     cs "I guess this place is more like Walmart than I thought."
     show cs coat surprised
-    cs "I guess I have a lookalike who shops at IKEA, too."
+    cs "Guess I have a lookalike who shops at IKEA, too."
     show cs coat
-    cs "Oh, well. I should get back to shopping, too."
+    cs "Oh, well. I should probably also get back to shopping."
     
     hide cs
     hide shopping_cart
     with moveoutright
 
     scene tgt_tech with dissolve
-    show cs coat at center 
-    show shopping_cart at manual_pos(0.8, 1.1, 0.5)
+    show cs coat at left 
+    show shopping_cart at manual_pos(0.4, 1.1, 0.5)
     with moveinleft 
     n "CS passes the electronics section."
     cs "Okay, I don't need anything there."
