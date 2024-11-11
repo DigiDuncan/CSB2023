@@ -102,6 +102,7 @@ label ce_start:
 
     scene cs_garage
     show cs at mid_left
+    show garage_shelf behind cs at manual_pos(0.9, 0.5, 0.5)
     with dissolve
     pause 1.0
     cs "Alright! What should I bring in first?"
@@ -125,7 +126,7 @@ label ce_tree:
             
         cs "I should get the Christmas tree first."
     
-        # these unusual transitions will force the dialogue window to remain while CS is moving the box.
+        # these unusual transitions will force the dialogue window to remain open while CS is moving the box.
         
         show cs at mid_offscreen_right with { "master" : MoveTransition(0.5) }
         play sound sfx_box_drag volume 5.0
@@ -157,12 +158,16 @@ label ce_tree:
         show tree_box at manual_pos(0.6, 0.8)
         with MoveTransition(0.15)
         with hpunch
+        show cs scared
+        show garage_shelf:
+            linear 0.25 rotate -30
+        pause 0.25
         play sound2 sfx_metalpipe noloop
-        with hpunch
-        # TODO: a shelf falling
-        n "All of a sudden, the shelf tips and all of the supplies fall onto CS!"
+        $ collect("cheap_shelf")
 
         scene black with vpunch
+        n "All of a sudden, the shelf tips and falls onto CS!"
+
         play sound2 sfx_lego_break noloop
         play sound [ "<silence 1.0>", sfx_cat_crash ]
         cs "Shit!{w=1.0}{nw}"
@@ -539,96 +544,153 @@ label ce_anno:
     # TODO: Make this a bit smoother
 
     # FIRST
+    # walk to it
     play sound "<from 0.74 to 1.723>sfx/sfx_snow_walk.ogg" volume 2.0 # TODO: this is only playing one footstep. it should be two. the next instance is two. I DON'T UNDERSTAND - tate
     show cs disappointed coat hat flipped at center
     show shovel at manual_pos(0.6, 0.7, 0.5)
     with MoveTransition(1.0)
+    # shovel go down
+    show snow_pile at manual_pos(0.3, 1.1, 0.5) with determination:
+        zoom 0.4
+    $ collect("snow_pile")
     # TODO: shovel sounds
     show shovel at manual_pos(0.4, 0.9, 0.5) with move:
         rotate 15
     pause 0.5
-    show shovel at manual_pos(0.5, 0.7, 0.5) with move:
+    # shovel go up
+    show shovel at manual_pos(0.5, 0.7, 0.5):
         linear 0.5 rotate 110
+    show snow_pile at manual_pos(0.35, 0.5, 0.5):
+        linear 0.5 rotate 10
+    with move
     pause 0.5
-    # TODO: need a pile of snow to move
+    # turn around
     show cs disappointed coat hat at center
     show shovel at manual_pos(0.5, 0.7, 0.5):
         xzoom -1.0
         rotate -110
+    show snow_pile at manual_pos(0.65, 0.5, 0.5):
+        xzoom -1.0
+        rotate -10
     pause 0.5
+    # walk back
     play sound "<from 0.074 to 1.723>sfx/sfx_snow_walk.ogg" volume 2.0
     show cs disappointed coat hat at right
     show shovel at manual_pos(0.9, 0.7, 0.5)
+    show snow_pile at manual_pos(1.05, 0.5, 0.5)
     with MoveTransition(1.0)
     pause 0.5
+    # put it down
     show shovel at manual_pos(0.9, 0.8, 0.5):
         linear 0.5 rotate -15
+    show snow_pile at manual_pos(1.15, 1.0, 0.5):
+        linear 0.5 rotate -15
+    with move
     pause 1.0
 
     # SECOND
+    # turn around
     show cs disappointed coat hat flipped at right
     show shovel at manual_pos(0.9, 0.7, 0.5):
         xzoom 1.0
         rotate 15
     pause 0.5
+    # walk to it
     play sound "<from 0.074 to 0.869>sfx/sfx_snow_walk.ogg" volume 2.0
     show cs disappointed coat hat flipped at mid_right
     show shovel at manual_pos(0.7, 0.7, 0.5)
     with MoveTransition(1.0)
+    # shovel go down
+    show snow_pile at manual_pos(0.4, 1.1, 0.5) with determination:
+        zoom 0.4
     # TODO: shovel sounds
     show shovel at manual_pos(0.6, 0.9, 0.5) with move:
         rotate 15
     pause 0.5
-    show shovel at manual_pos(0.6, 0.7, 0.5) with move:
+    # shovel go up
+    show shovel at manual_pos(0.6, 0.7, 0.5):
         linear 0.5 rotate 110
+    show snow_pile at manual_pos(0.5, 0.5, 0.5):
+        linear 0.5 rotate 10
+    with move
     pause 0.5
-    # TODO: need a pile of snow to move
+    # turn around
     show cs disappointed coat hat at mid_right
     show shovel at manual_pos(0.8, 0.7, 0.5):
         xzoom -1.0
         rotate -110
+    show snow_pile at manual_pos(0.95, 0.5, 0.5):
+        xzoom -1.0
+        rotate -10
+    pause 0.5
+    # walk back
     play sound "<from 0.074 to 0.869>sfx/sfx_snow_walk.ogg" volume 2.0
     show cs disappointed coat hat at right
     show shovel at manual_pos(0.9, 0.7, 0.5)
+    show snow_pile at manual_pos(1.05, 0.5, 0.5)
     with MoveTransition(1.0)
     pause 0.5
+    # put it down
     show shovel at manual_pos(0.9, 0.9, 0.5):
         linear 0.5 rotate -15
+    show snow_pile at manual_pos(1.15, 1.0, 0.5):
+        linear 0.5 rotate -15
+    with move
     pause 1.0
 
     # THIRD
+    # turn around and walk
     play sound "<from 0.074 to 2.563>sfx/sfx_snow_walk.ogg" volume 2.0
     show cs disappointed coat hat flipped at mid_left
     show shovel at manual_pos(0.3, 0.7, 0.5):
         xzoom 1.0
         rotate 15
     with MoveTransition(2.5)
+    # shovel go down
+    show snow_pile at manual_pos(0.0, 1.1, 0.5) with determination:
+        zoom 0.4
     pause 0.5
     # TODO: shovel sounds
     show shovel at manual_pos(0.1, 0.9, 0.5) with move:
         rotate 15
     pause 0.5
-    show shovel at manual_pos(0.2, 0.7, 0.5) with move:
+    # shovel go up
+    show shovel at manual_pos(0.2, 0.7, 0.5):
         linear 0.5 rotate 110
+    show snow_pile at manual_pos(0.1, 0.5, 0.5):
+        linear 0.5 rotate 10
+    with move
     pause 0.5
-    # TODO: need a pile of snow to move
+    # flip
     show cs disappointed coat hat at mid_left
     show shovel at manual_pos(0.5, 0.7, 0.5):
         xzoom -1.0
         rotate -110
+    show snow_pile at manual_pos(0.6, 0.5, 0.5):
+        xzoom -1.0
+        rotate -10
+    pause 0.5
+    # walk back
     play sound "<from 0.074 to 2.563>sfx/sfx_snow_walk.ogg" volume 2.0
     show cs disappointed coat hat at right
     show shovel at manual_pos(0.9, 0.7, 0.5)
+    show snow_pile at manual_pos(1.05, 0.5, 0.5)
     with MoveTransition(2.5)
     pause 0.5
-    show shovel at manual_pos(0.9, 0.8, 0.5):
+    # put it down
+    show shovel at manual_pos(0.9, 0.9, 0.5):
         linear 0.5 rotate -15
+    show snow_pile at manual_pos(1.15, 1.0, 0.5):
+        linear 0.5 rotate -15
+    with move
     pause 1.0
 
+    # enter carguy
+    show carguy flipped at offscreenleft with determination
     play sound sfx_snow_walk loop volume 2.0 fadein 2.0
     n "About ten minutes into shoveling, CS hears someone walking up his driveway."
     pause 2.0
-    show carguy flipped at left with moveinleft
+    show carguy flipped at left with MoveTransition(1.0)
     stop sound
     pause 0.5
     play sound sfx_nice_snow
@@ -993,15 +1055,20 @@ label ce_before_shopping:
     show cs coat surprised
     cs "I think Michael said something about making mashed potatoes..."
     show cs coat disappointed
-    cs "Jeez, that's going to take a lot of taters."
+    cs "Jeez, with the number of people coming, that's going to take a {i}lot{/i} of taters."
     show cs coat
-    cs "Heh, and Tate's coming as well."
+    cs "Heh. {i}Tate's{/i} coming, too."
     show cs coat happy
     cs "Let's hope Michael stays away from {i}them{/i} with the masher!"
     # pfffffft. i hadn't read this part until now and lmao wow - tate
+
+    show cs coat flipped
+    cs "I think three bags of these should be enough."
+
+    # first two are normal...
+
     show cs coat flipped at mid_left with move
     pause 1.0
-
     show potato_bag at manual_pos(50, 300) with Dissolve(0.25)
     pause 0.5
     show cs coat at center
@@ -1011,6 +1078,58 @@ label ce_before_shopping:
     show potato_bag at manual_pos(0.8, 0.8, 0.5) with MoveTransition(0.25)
     hide potato_bag with dissolve
     $ collect("potato_bag")
+
+    show cs coat flipped at mid_left with move
+    pause 1.0
+    show potato_bag at manual_pos(50, 300) with Dissolve(0.25)
+    pause 0.5
+    show cs coat at center
+    show potato_bag at manual_pos(0.6, 0.5, 0.5)
+    with move
+    pause 0.5
+    show potato_bag at manual_pos(0.8, 0.8, 0.5) with MoveTransition(0.25)
+    hide potato_bag with dissolve
+
+    show cs coat flipped at mid_left with move
+    pause 1.0
+
+    if fun_value(FUN_VALUE_LEGENDARY):
+        # this here is some EXTREMELY DEEP tate lore.
+
+        # let's try the audio filtering feature! let's make this next thing muffled.
+        $ renpy.music.set_audio_filter("sound2", renpy.audio.filter.Lowpass(1200))
+
+        play sound2 [ "<silence 0.5>", sfx_tato_screm ] noloop 
+        show tato_bag at manual_pos(50, 300) with Dissolve(0.25)
+        pause 0.5
+        show cs coat at center
+        show tato_bag at manual_pos(0.6, 0.5, 0.5)
+        with move
+        pause 0.5
+        show tato_bag at manual_pos(0.8, 0.8, 0.5) with MoveTransition(0.25)
+        hide tato_bag with dissolve
+        $ collect("tato_bag")
+        pause 1.0
+        show cs coat surprised
+        cs "Huh..."
+        "..."
+        cs "Could've sworn I heard something..."
+        pause 1.5
+        show cs coat
+        cs "Must have come from somewhere else in the store."
+
+        # turn filter off again
+        $ renpy.music.set_audio_filter("sound2", None)
+
+    else:
+        show potato_bag at manual_pos(50, 300) with Dissolve(0.25)
+        pause 0.5
+        show cs coat at center
+        show potato_bag at manual_pos(0.6, 0.5, 0.5)
+        with move
+        pause 0.5
+        show potato_bag at manual_pos(0.8, 0.8, 0.5) with MoveTransition(0.25)
+        hide potato_bag with dissolve
 
     show cs coat
     n "After grabbing some \"tates\" of his own, CS heads over to the grocery aisles."
@@ -1106,7 +1225,7 @@ label ce_before_shopping:
     cs "I can eat one of these all by myself, and I don't {i}feel{/i} like I'm eating enough for a whole family or party..."
     cs "It would take a whole lot more than one bag to feed {i}this{/i} party, too!"
     show cs coat scared
-    cs "How big do they expect these families or parties to even {i}be?"
+    cs "How small do they expect these families or parties to even {i}be?"
     show cs coat disappointed
     cs "Who knows. Gotta love capitalism."
     show cs coat flipped at left with move
@@ -1135,9 +1254,9 @@ label ce_before_shopping:
     show cs coat at mid_left
     show shopping_cart at manual_pos(0.5, 1.1, 0.5)
     with moveinleft  
-    n "Finally, CS stumbles upon something that was actually on that list."
+    n "Finally, CS stumbles upon something that was actually on his shopping list."
     cs "Genergy, of course. Always need that."
-    cs "Walmart usually has a better deal on these, but gosh, I hate going there."
+    cs "Walmart usually has a better deal on these, but, {i}gosh,{/i} I hate going there."
     cs "And, I'm gonna need a {i}lot{/i} of Genergy to get through all this party prep!"
     
     show genergy at manual_pos(0.4, 0.3) with Dissolve(0.25)
@@ -1169,9 +1288,9 @@ label ce_before_shopping:
     show cs coat disappointed
     cs "Jeez, there sure are a lot of people out today..."
     show cs coat worried
-    cs "I guess that's what I get for going shopping this close to the holiday."
+    cs "I guess that's what I get for leaving shopping until the last minute."
     cs "But, I guess I {i}am{/i} the same man known for uploading videos at 11:59 on the 31st, so I should be used to this sort of thing."
-    cs "At least everyone here seems polite. They probably just want to get their stuff and get out, too."
+    cs "At least everyone here seems polite. They probably just want to get what they need and get out, too."
 
     show pomni at offscreenright
     show shopping_cart as second at manual_pos(1.5, 1.1, 0.5)

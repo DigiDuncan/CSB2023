@@ -75,6 +75,14 @@
         "desc": "A winner is you!",
         "rarity": "Uncommon"
     },
+    "cheap_shelf": {
+        "img": "garage_shelf",
+        "name": "Cheap-Ass Garage Shelf",
+        "owner": "CS",
+        "desc": "It does the job, as long as you don't jostle it in any way...",
+        "rarity": "Common",
+        "ce": true
+    },
     "cheetos": {
         "img": "cheetos",
         "name": "Bag Of Cheetos",
@@ -161,7 +169,7 @@
         "img": "dasani",
         "name": "Bottle Of Dasani",
         "owner": "???",
-        "desc": "Imagine an ass drinking...\n\nActually, no. I'd rather not imagine that at all.",
+        "desc": "{a=https://www.youtube.com/watch?v=fIfMOGUi98Y}Imagine an ass drinking...{/a}\n\nActually, no. I'd rather {i}not{/i} imagine that.",
         "rarity": "Legendary",
         "dx": true
     },
@@ -418,6 +426,14 @@
         "rarity": "Legendary",
         "dx": true
     },
+    "snow_pile": {
+        "img": "snow_pile",
+        "name": "Snow Pile",
+        "owner": "Nobody",
+        "desc": "But, is it a snow poff?",
+        "rarity": "Common",
+        "ce": true
+    },
     "spoon": {
         "img": "spoon",
         "name": "Plastic Spoon",
@@ -449,6 +465,14 @@
         "desc": "It has been modified to allow a cute charm to be attached.",
         "rarity": "Uncommon",
         "dx": true
+    },
+    "tato_bag": {
+        "img": "tato_bag",
+        "name": "Bag Of Potatoes...?",
+        "owner": "CS",
+        "desc": "There is something peculiar about these...\n\nHey, does anyone else hear screaming?",
+        "rarity": "Legendary",
+        "ce": true
     },
     "tims_dozen": {
         "img": "tims_dozen",
