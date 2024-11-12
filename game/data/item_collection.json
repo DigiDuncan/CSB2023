@@ -477,7 +477,7 @@
     "tims_dozen": {
         "img": "tims_dozen",
         "name": "Tim Horton's Assorted Dozen",
-        "owner": "CS, Anno, & Arceus",
+        "owner": "CS, Anno, and Arceus",
         "desc": "The breakfast of champions... and Canadians.",
         "rarity": "Common",
         "dx": true
@@ -519,6 +519,14 @@
         "name": "Fancy Watch",
         "owner": "An Amtrak passenger",
         "desc": "It looks expensive, but it's actually a replica. The owner does not know this.",
+        "rarity": "Uncommon",
+        "dx": true
+    },
+    "whiskey": {
+        "img": "whiskey",
+        "name": "Whiskey?",
+        "owner": "Nobody",
+        "desc": "Just what kind of bootleg brew is this?!",
         "rarity": "Uncommon",
         "dx": true
     },

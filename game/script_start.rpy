@@ -9,147 +9,6 @@ init python:
     # TODO: Maybe further tagging can be added later, but, not now.
     current_bios_sorting_mode = 0
 
-    # easier item unlocks
-    def collect(i):
-        global item_map
-        if i in item_map.keys():
-            persistent.collected.add(i)
-            print(f"Collected item '{i}'.")
-        else:
-            print(f"WARNING: Failed to collect item '{i}', which does not exist in item_map.")
-
-init python:
-    # Text Beep Spacing
-    # Partially stolen from:
-    #   https://www.renpy.org/doc/html/config.html#var-config.replace_text
-    #   https://lemmasoft.renai.us/forums/viewtopic.php?t=22730
-    # This is meant to place pauses after certain punctuation automatically so that the dialogue feels more... human.
-    # These are set up so that it only works if there is more than once sentence in the text box at any given time.
-    # Make sure there's a space after your punctuation or it won't work.
-    # You can still add manual pauses wherever you like in the script if this isn't enough for you.
-    # If for some reason you do NOT want the auto-pause in a certain line, put {w=0} immediately after the punctuation.
-    #   Real examples:
-    #       mean "Hey! You,{w=0} there!"
-    #       tate "Excuse me, Mr.{w=0} Conductor?"
-
-    import re
-    def substitutions(s):
-        # these items wait for 0.25:
-        # commas, periods, question marks, exclamation marks, semicolons
-        s = re.sub(r'(([,|.|?|!|;])(({\/[a-z]*})*) )', r'\1{w=0.25}', s, flags=re.IGNORECASE) 
-
-        # these items wait for 0.5:
-        # ellipses, em-dashes, colons
-        s = re.sub(r'((\.\.\.|--|:)(({\/[a-z]*})*) )', r'\1{w=0.5}', s, flags=re.IGNORECASE) 
-
-        # for text effects that are a pain to type out otherwise
-        s = s.replace(r"{cshake}", r"{bt=a3-p10-s4}")
-        s = s.replace(r"{ytpmagic}", r"{sc=1.88}{color=#CB50FF}")
-
-        return s
-    config.say_menu_text_filter = substitutions
-
-init python:
-    import random
-    roller = random.randint(1, 20)
-
-    def reroll():
-        global roller
-        roller = random.randint(1, 20)
-
-    # TODO: I want to replicate the minecraft obfuscation thing for later. for now, this DOES do the thing
-    def obfuscator(input_text):
-        ob = "0123456789AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
-        new_text = ""
-        next_char = ""
-
-        for l in input_text:
-            # 1 in 5 chance of replacing letter with a question mark
-            if renpy.random.randint(1, 5) == 1:
-                next_char = "?"
-            else:
-                next_char = renpy.random.choice(ob)
-
-            new_text = new_text + next_char
-
-        return new_text
-
-# Flips + color shaders
-init -10 python:
-    # dusk shader
-    duskmatrix = TintMatrix("#ffaa49")
-    
-    def duskshade(s):
-        return Transform(s, matrixcolor=duskmatrix)
-        
-    def duskshadeflip(s):
-        return Transform(s, xzoom = -1, matrixcolor = duskmatrix)
-        
-    config.displayable_prefix["dusk"] = duskshade
-    config.displayable_prefix["dusk:flip"] = duskshadeflip
-    
-    # dark shader
-    darkmatrix = TintMatrix("#4848b8")
-    
-    def darkshade(s):
-        return Transform(s, matrixcolor = darkmatrix)
-        
-    def darkshadeflip(s):
-        return Transform(s, xzoom = -1, matrixcolor = darkmatrix)
-        
-    config.displayable_prefix["dark"] = darkshade
-    config.displayable_prefix["dark:flip"] = darkshadeflip
-    
-    # white silhouette
-    sil_white_matrix = BrightnessMatrix(value=1.0)
-        
-    def sil_white(s):
-        return Transform(s, xzoom = 1, matrixcolor = sil_white_matrix)
-        
-    def sil_white_flip(s):
-        return Transform(s, xzoom = -1, matrixcolor = sil_white_matrix)
-
-    config.displayable_prefix["sil_white"] = sil_white
-    config.displayable_prefix["sil_white:flip"] = sil_white_flip
-
-    # black silhouette
-    sil_black_matrix = BrightnessMatrix(value=-1.0)
-        
-    def sil_black(s):
-        return Transform(s, xzoom = 1, matrixcolor = sil_black_matrix)
-        
-    def sil_black_flip(s):
-        return Transform(s, xzoom = -1, matrixcolor = sil_black_matrix)
-
-    config.displayable_prefix["sil_black"] = sil_black
-    config.displayable_prefix["sil_black:flip"] = sil_black_flip
-
-    # x flip
-    def xflip(s):
-        return Transform(s, xzoom = -1)
-        
-    config.displayable_prefix["flip"] = xflip
-    
-    
-# Text beeps
-init python:
-    renpy.music.register_channel("beep", "voice", loop = True)
-    def char_callback(event, name = None, beep = None, play_beeps = True, **kwargs):
-        if event == "end" and "woohoo" in kwargs["what"].lower():
-            persistent.woohoo += 1
-        if name:
-            persistent.seen.add(name)
-            if all([a in persistent.seen for a in name_map.keys()]):
-                achievement_manager.unlock("Gotta Catch Them All")
-        if preferences.text_beeps and play_beeps:
-            if event == "show":
-                if beep is not None:
-                    renpy.sound.play(f"audio/text/{beep}.wav", channel = "beep", loop = True)
-                else:
-                    renpy.sound.play(f"audio/text/ut.wav", channel = "beep", loop = True)
-            elif event == "slow_done" or event == "end":
-                renpy.sound.stop(channel = "beep")
-
 # If music is so good, why is there no Music 2?
 init python:
     renpy.music.register_channel("sound2", "sound")
@@ -3264,6 +3123,7 @@ define audio.sfx_glitch_in = "sfx/sfx_glitch_in.ogg"
 define audio.sfx_gul = "sfx/sfx_gul.ogg"
 define audio.sfx_hairdyer = "sfx/sfx_hairdryer.ogg"
 define audio.sfx_hat_off = "sfx/sfx_hat_off.ogg"
+define audio.sfx_hat_on = "sfx/sfx_hat_on.ogg"
 define audio.sfx_heartbeat = "sfx/sfx_heartbeat.ogg"
 define audio.sfx_high_five = "sfx/sfx_high_five.ogg"
 define audio.sfx_house_door_close = "sfx/sfx_house_door_close.ogg"
@@ -3338,6 +3198,7 @@ define audio.sfx_sliding_door_close = "sfx/sfx_sliding_door_close.ogg"
 define audio.sfx_sliding_door_open = "sfx/sfx_sliding_door_open.ogg"
 define audio.sfx_slots = "sfx/sfx_slots.ogg"
 define audio.sfx_small_spill = "sfx/sfx_small_spill.ogg"
+define audio.sfx_snd_damage = "sfx/snd_damage.ogg"
 define audio.sfx_snd_lightswitch = "sfx/snd_lightswitch.ogg"
 define audio.sfx_snd_undynestep = "sfx/snd_undynestep.ogg"
 define audio.sfx_snow_run = "sfx/sfx_snow_run.ogg"
@@ -3345,6 +3206,7 @@ define audio.sfx_snow_walk = "sfx/sfx_snow_walk.ogg"
 define audio.sfx_snowfall = "sfx/sfx_snowfall.ogg"
 define audio.sfx_somethingchanged = "sfx/sfx_somethingchanged.ogg"
 define audio.sfx_sparkles = "sfx/sfx_sparkles.ogg"
+define audio.sfx_speen = "sfx/sfx_speen.ogg"
 define audio.sfx_spellcast = "sfx/sfx_spellcast.ogg"
 define audio.sfx_spikes = "sfx/sfx_spikes.ogg"
 define audio.sfx_splash = "sfx/sfx_splash.ogg"
@@ -3352,6 +3214,7 @@ define audio.sfx_start_rocking = "sfx/sfx_start_rocking.ogg"
 define audio.sfx_tada = "sfx/sfx_tada.ogg"
 define audio.sfx_tape_rewind = "sfx/sfx_tape_rewind.ogg"
 define audio.sfx_tato_screm = "sfx/sfx_tato_screm.ogg"
+define audio.sfx_tf2_hitsound = "sfx/sfx_tf2_hitsound.ogg"
 define audio.sfx_tf2_pickup_metallic = "sfx/sfx_tf2_pickup_metallic.ogg"
 define audio.sfx_tf2_sapper = "sfx/sfx_tf2_sapper.ogg"
 define audio.sfx_thunder = "sfx/sfx_thunder.ogg"
@@ -3762,25 +3625,3 @@ screen debugger_menu():
     text "transforms loaded: [transformtotal]" textalign 0.5 size 48 xalign 0.5 yalign 0.7
     hbox xalign 0.5 yalign 0.7:
         spacing 50
-
-# Dealing with multiple speakers
-screen multiple_say(who, what, multiple):
-    style_prefix "say"
-
-    $ block = multiple[0] - 1
-    $ total_chars = multiple[1]  # Unused rn
-
-    window:
-        id "window"
-        yoffset 75 * block
-
-        if who is not None:
-
-            window:
-                yoffset -75 * block
-                xoffset 125 * block
-                id "namebox"
-                style "namebox"
-                text who id "who"
-
-        text what id "what"
