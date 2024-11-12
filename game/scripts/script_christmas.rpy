@@ -1459,30 +1459,32 @@ label ce_checkout:
     cs "What? I scanned this twice? No I didn't!"
     # TODO: Pakoo needs to greenscreen themselves
     show cs coat disappointed
-    show tgt_worker at mid_right with moveinright
+    show pakoo tgt at mid_right with moveinright
     tgt_worker "Oh yeah, it always does that, keep going."
     show cs coat
     cs "Okay."
-    hide tgt_worker with moveoutright
+    show pakoo tgt flipped with determination
+    hide pakoo tgt with moveoutright
     show cs coat disappointed
     cs "Ah crap, I scanned this one too many times."
     n "The worker comes back."
-    show tgt_worker at mid_right with moveinright
+    show pakoo tgt at mid_right with moveinright
     tgt_worker "Hello, what's wrong?"
     show cs coat
     cs "Sorry, I scanned this pie 7 times."
     tgt_worker "...how many do you have?"
     cs "I have 2."
     tgt_worker "Wh-- okay hold on."
-    show tgt_worker at center with move
+    show pakoo tgt at center with move
     pause 3.0
-    show tgt_worker at mid_right with move
+    show pakoo tgt at mid_right with move
     tgt_worker "There you go."
     cs "Thanks!"
-    hide tgt_worker with moveoutright
+    show pakoo tgt flipped with determination
+    hide pakoo tgt with moveoutright
     show cs coat angry
     cs "Hey wait a minute!"
-    show tgt_worker at mid_right with moveinright
+    show pakoo tgt at mid_right with moveinright
     n "The target employee runs back over."
     cs "These are ringing up 11.99 per pie!"
     cs "They said they were like 20-percent off on the sign over there!"
@@ -1497,15 +1499,16 @@ label ce_checkout:
     tgt_worker "I'm sorry, but that's just how the deal works."
     show cs coat disappointed
     cs "Fine, whatever, I'll just keep them."
-    hide tgt_worker with moveoutright
+    show pakoo tgt flipped with determination
+    hide pakoo tgt with moveoutright
     n "When CS goes to scan his alcohol, it beeps again and tells him to get out his ID."
     show cs coat pissed
     cs "Seriously?!"
     show cs coat angry
     n "The employee runs over again."
-    show tgt_worker at mid_right with moveinright
+    show pakoo tgt at mid_right with moveinright
     tgt_worker "Oh yeah. I should probably do that for you."
-    show tgt_worker at center with move
+    show pakoo tgt at center with move
     n "The employee signs into the machine and opens the prompt to enter an ID."
     n "They then wait patiently for CS."
     cs "What? Do you need something from me?"
@@ -1517,7 +1520,8 @@ label ce_checkout:
     n "CS sighs."
     cs "Here you go."
     n "The target employee punches in his birthday and leaves."
-    hide tgt_worker with moveoutright
+    show pakoo tgt flipped with determination
+    hide pakoo tgt with moveoutright
     pause 3.0
     hide cs with moveoutright
     stop sound fadeout 3.0
