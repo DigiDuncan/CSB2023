@@ -1476,7 +1476,10 @@ label ce_checkout:
     cs "I have 2."
     tgt_worker "Wh-- okay hold on."
     show pakoo tgt at center with move
-    pause 3.0
+    show pakoo tgt scan
+    pause 0.5
+    show pakoo tgt tap
+    pause 2.5
     show pakoo tgt at mid_right with move
     tgt_worker "There you go."
     cs "Thanks!"
@@ -1489,8 +1492,10 @@ label ce_checkout:
     cs "These are ringing up 11.99 per pie!"
     cs "They said they were like 20-percent off on the sign over there!"
     tgt_worker "Hmm..."
+    show pakoo tgt scan
     n "The employee scans the pie."
     show cs coat disappointed
+    show pakoo tgt
     tgt_worker "Do you perchance have Target Circle?"
     cs "No?"
     tgt_worker "You need Target Circle to get this deal. Sorry."
@@ -1509,6 +1514,11 @@ label ce_checkout:
     show pakoo tgt at mid_right with moveinright
     tgt_worker "Oh yeah. I should probably do that for you."
     show pakoo tgt at center with move
+    show pakoo tgt scan
+    pause 0.5
+    show pakoo tgt tap
+    pause 2.5
+    show pakoo tgt
     n "The employee signs into the machine and opens the prompt to enter an ID."
     n "They then wait patiently for CS."
     cs "What? Do you need something from me?"
@@ -1519,6 +1529,7 @@ label ce_checkout:
     show cs coat disappointed
     n "CS sighs."
     cs "Here you go."
+    show pakoo tgt tap
     n "The target employee punches in his birthday and leaves."
     show pakoo tgt flipped with determination
     hide pakoo tgt with moveoutright
