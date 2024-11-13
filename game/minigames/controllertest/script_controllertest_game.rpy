@@ -111,6 +111,7 @@ label play_controllertest:
 
     if _return == True:
         pass
+        # Thing for win condition
     else:
         pass
         # Thing for lose condition

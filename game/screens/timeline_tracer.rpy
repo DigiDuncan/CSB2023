@@ -95,7 +95,8 @@ screen timeline_tracer():
 
     # only adjust the first number of these if we need more space to the east or south later
     # grid starts at (0, 0), remember your off-by-one errors
-    $ xmax = ((57*200)+20) # 11420
+    # TODO: make it automatic later...
+    $ xmax = ((59*200)+20) # 11820
     $ ymax = ((27*150)+20) # 3920
 
     # prepare counters for later

@@ -3500,14 +3500,6 @@ label start:  # this might be required??
     # yep, it's required, but i'm fixing it to default to main menu instead - tate
     return
 
-label chapter_select:
-    scene game_menu
-    stop music fadeout 3.0
-    window hide
-    pause 0.1
-    call screen chapter_menu()
-    return
-
 init python:
     import math
 

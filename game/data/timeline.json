@@ -2044,41 +2044,84 @@
                   "content_type": "dx",
                   "jump_to": "dx_after_true"
             },
-            "dx_afterstory_end_arrow": {
+            "dx_pencil2_minigame_arrow": {
                   "type": "arrow",
                   "direction": "e",
                   "pos" : [53.5, 11]
+            },
+            "dx_pencil2_minigame": {
+                  "name": "Pencil 2!",
+                  "type": "minigame",
+                  "need_label": "play_pencil2_game",
+                  "pos": [54, 11],
+                  "content_type": "dx"
+            },
+            "dx_pencil2_minigame_lose_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos" : [54, 10.5]
+            },
+            "dx_pencil2_lose_outcome": {
+                  "name": "Lose",
+                  "type": "outcome",
+                  "need_label": "lose_pencil_game2",
+                  "pos": [54, 10],
+                  "content_type": "dx"
+            },
+            "dx_pencil2_minigame_lose_badend_arrow": {
+                  "type": "arrow",
+                  "direction": "n",
+                  "pos" : [54, 9.5]
+            },
+            "dx_pencil2_lose_badend": {
+                  "name": "You dumb skinfore.",
+                  "type": "badend",
+                  "need_label": "lose_pencil_game2",
+                  "pos": [54, 9],
+                  "content_type": "dx"
+            },
+            "dx_pencil2_minigame_win_outcome_arrow": {
+                  "type": "arrow",
+                  "direction": "e",
+                  "pos" : [54.5, 11]
+            },
+            "dx_pencil2_win_outcome": {
+                  "name": "Win",
+                  "type": "outcome",
+                  "need_label": "dx_after_win_pencil2",
+                  "pos": [55, 11],
+                  "content_type": "dx"
             },
             "dx_afterstory_end": {
                   "name": "Win at CultCon!",
                   "type": "end",
                   "need_label": "dx_after_convention_end",
-                  "pos": [54, 11],
+                  "pos": [56, 11],
                   "content_type": "dx"
             },
             "dx_finale_arrow": {
                   "type": "arrow",
                   "direction": "e",
-                  "pos" : [54.5, 11]
+                  "pos" : [56.5, 11]
             },
            "dx_finale": {
                   "name": "DX: Finale",
                   "type": "start",
                   "need_label": "finale_fun_value_land",
-                  "pos": [55, 11],
+                  "pos": [57, 11],
                   "content_type": "dx",
                   "jump_to": "finale_fun_value_land"
             },
             "dx_finale_arrow_end": {
                   "type": "arrow",
                   "direction": "e",
-                  "pos" : [55.5, 11]
+                  "pos" : [57.5, 11]
             },
            "dx_finale_end": {
                   "name": "Save the world!",
                   "type": "end",
                   "need_label": "UNFINISHED",
-                  "pos": [56, 11],
+                  "pos": [58, 11],
                   "content_type": "dx"
             },
             "csbiii_south_outcome_arrow": {

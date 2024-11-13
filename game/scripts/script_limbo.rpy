@@ -1,3 +1,5 @@
+########## Minigame Jumps ##########
+
 label lose_car_game:
     bad_end "100 percent\nunsatisfied." "true_iowa"
     return
@@ -26,9 +28,7 @@ label play_slots_game:
     minigame "minigame_slots" "minigame_slots" "minigame_slots"
     return
 
-label show_dxcom:
-    $ commentary_manager.play(current_dxcom)
-    return
+########## Warning Screens ##########
 
 label back_out_archival:
     $ persistent.seen.add("k174")
@@ -38,8 +38,11 @@ label back_out_archival:
     $ persistent.heard.add("take_trip")
     $ persistent.heard.add("everybody_wants")
     $ achievement_manager.unlock("Archived")
+    $ collect("m4")
+    $ collect("cs_car_old")
     return
 
+# TODO: add any collectables here during cinema pass later
 label back_out_i69:
     $ persistent.seen.add("gnome")
     $ persistent.heard.add("honk_song")
@@ -51,6 +54,24 @@ label back_out_i69:
     $ achievement_manager.unlock("Analog Horror Protagonist")
     jump michigan_interstate_94
 
+label back_out_perfect_tate:
+    $ persistent.seen.add("tate_ex")
+    $ persistent.seen.add("perfect_tate")
+    $ persistent.heard.add("nyan_of_a_lifetime")
+    $ collect("poo")
+    $ collect("dasani")
+    jump train_defeated_perfect_tate
+
+########## Game Menus ##########
+
+label chapter_select:
+    scene game_menu
+    stop music fadeout 3.0
+    window hide
+    pause 0.1
+    call screen chapter_menu()
+    return
+
 label dx_start:
     call screen dx_select
 
@@ -58,6 +79,12 @@ label kuwait_select:
     scene map_kuwait
     stop music
     call screen kuwait_map
+
+########## Special Screens ##########
+
+label show_dxcom:
+    $ commentary_manager.play(current_dxcom)
+    return
 
 label woohoo_counter:
     play music interference2
@@ -168,6 +195,8 @@ screen rockstar_check:
     text "Line 12: [line_12]" textalign 0.5 size 36 xalign 0.0 yalign 0.95
     hbox xalign 0.0 yalign 0.25:
         spacing 50 
+
+########## CS's Data ##########
 
 # TODO: NOTE TO TATE - DON'T TOUCH THESE VALUES, THESE ARE CS'S VALUES
 # TODO: although, whoever is managing these? please update the persistent to use new formatting
@@ -402,4 +431,3 @@ label csdata:
     n "Added Rockstar Lines...{nw}"
     n "Done!"
     return
-    

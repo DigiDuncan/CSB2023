@@ -3752,7 +3752,7 @@ label train_tate_ex_win:
     stop music
     music end
 
-    show screen warning("The following section contains flashing lights and colors.", "Persons with photosensitive conditions may wish to skip this section.", "train_defeated_perfect_tate")
+    show screen warning("The following section contains flashing lights and colors.", "Persons with photosensitive conditions may wish to skip this section.", "back_out_perfect_tate")
     # TODO: there MUST be some better way to force this to wait until the player makes a choice...
     ""
 
@@ -3872,11 +3872,6 @@ label train_defeated_perfect_tate:
 
     # re-enable default window
     window auto True
-
-    # put it here in case the player needs to skip the fight
-    $ persistent.heard.add("nyan_of_a_lifetime")
-    $ collect("poo")
-    $ collect("dasani")
 
     pause 5.0
 
