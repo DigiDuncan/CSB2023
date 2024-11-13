@@ -1,235 +1,3 @@
-# TODO: NOTE TO TATE - DON'T TOUCH THESE VALUES, THESE ARE CS'S VALUES
-# TODO: although, whoever is managing these? please update the persistent to use new formatting
-
-screen dx_select():
-    
-    default tt = Tooltip("Or something else?")
-
-    textbutton "{color=#fff}Return{/color}":
-        action MainMenu(confirm=False), Stop("jukebox"), PauseAudio("music", False)
-        xalign 0.02
-        yalign 0.04
-        background "#5F777F"
-
-    vbox:
-        xalign 0.5
-        viewport:
-            xysize(950, 550)
-            xalign 0.75
-            ypos 0.1
-            style_prefix "choice"
-            vbox:
-                xalign 0.5
-                spacing 20
-                text "Play the After Story?" xalign 0.5 textalign 0.5
-                imagebutton auto "menu/csbiiidx_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
-                    at transform:
-                        zoom 0.666
-                        xalign 0.5
-                    action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("dx_after_true")
-                text tt.value xalign 0.5 textalign 0.5
-        viewport:
-            xysize(1920, 600)
-            yanchor -0.025
-            xoffset -0.1
-            grid 5 2:
-                xfill True
-                yfill True
-                # We can have 10 entries here
-            
-                ### SPEEDRUN ###
-                imagebutton auto "menu/dx/speedrun_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
-                    hovered tt.Action("Speedrun")
-                    at transform:
-                        zoom 0.333
-                        xalign 0.5
-                    action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("vibration")
-
-                ### KUWAIT ###
-                imagebutton auto "menu/dx/kuwait_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
-                    hovered tt.Action("Kuwait")
-                    at transform:
-                        zoom 0.333
-                        xalign 0.5
-                    action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("kuwait_travel")
-
-                ### BRONSON ###
-                imagebutton auto "menu/dx/bronson_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
-                    hovered tt.Action("Bronson")
-                    at transform:
-                        zoom 0.333
-                        xalign 0.5
-                    action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("michigan_bronson")
-
-                ### ROCKSTAR II ###
-                imagebutton auto "menu/csbiiidx_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
-                    hovered tt.Action("Rockstar II")
-                    at transform:
-                        zoom 0.333
-                        xalign 0.5
-                    action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("rockstar_start")
-
-                ### TRAIN (WINNER) ###
-                imagebutton auto "menu/dx/train_winner_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
-                    hovered tt.Action("Train (Winner)")
-                    at transform:
-                        zoom 0.333
-                        xalign 0.5
-                    action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("train_start_good")
-
-                ### TRAIN (THIEF) ###
-                imagebutton auto "menu/dx/train_thief_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
-                    hovered tt.Action("Train (Thief)")
-                    at transform:
-                        zoom 0.333
-                        xalign 0.5
-                    action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("train_start_bad")
-
-                ### CHRISTMAS ###
-                imagebutton auto "menu/dx/christmas_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
-                    hovered tt.Action("Christmas")
-                    at transform:
-                        zoom 0.333
-                        xalign 0.5
-                    action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("ce_start")
-
-                imagebutton auto "menu/csbiiidx_%s.png":
-                    at transform:
-                        zoom 0.333
-                        xalign 0.5
-
-                imagebutton auto "menu/csbiiidx_%s.png":
-                    at transform:
-                        zoom 0.333
-                        xalign 0.5
-
-                imagebutton auto "menu/csbiiidx_%s.png":
-                    at transform:
-                        zoom 0.333
-                        xalign 0.5
-
-screen kuwait_map():
-    default tt = Tooltip("Select area to travel:")
-    textbutton "{color=#fff}Return{/color}":
-        action MainMenu(confirm=False), Stop("jukebox"), PauseAudio("music", False)
-        xalign 0.02
-        yalign 0.04
-        background "#DEA25E"
-    vbox:
-        xalign 0.5
-        viewport:
-            xysize(1080, 1080)
-            style_prefix "choice"
-            text tt.value xpos(450)
-            imagebutton auto "menu/csbiiidx_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
-                hovered tt.Action("Kuwait City")
-                at transform:
-                    zoom 0.1
-                    pos(570,650)
-                action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("kuwait_kuwait_city")
-            imagebutton auto "menu/csbiiidx_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
-                hovered tt.Action("Sharq")
-                at transform:
-                    zoom 0.1
-                    pos(560,600)
-                action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("kuwait_sharq")
-            imagebutton auto "menu/csbiiidx_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
-                hovered tt.Action("Hawally")
-                at transform:
-                    zoom 0.1
-                    pos(460,760)
-                action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("kuwait_hawally")
-            imagebutton auto "menu/csbiiidx_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
-                hovered tt.Action("Bayan Water Towers")
-                at transform:
-                    zoom 0.1
-                    pos(580,830)
-                action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("kuwait_bayan_water_towers")
-            imagebutton auto "menu/csbiiidx_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
-                hovered tt.Action("Salmiya")
-                at transform:
-                    zoom 0.1
-                    pos(670,790)
-                action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("kuwait_salmiya")
-            imagebutton auto "menu/csbiiidx_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
-                hovered tt.Action("Khiran Camp")
-                at transform:
-                    zoom 0.1
-                    pos(730,980)
-                action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("kuwait_khiran_camp")
-            imagebutton auto "menu/csbiiidx_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
-                hovered tt.Action("Al Wafra")
-                at transform:
-                    zoom 0.1
-                    pos(560,1020)
-                action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("kuwait_al_wafra")
-            imagebutton auto "menu/csbiiidx_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
-                hovered tt.Action("Jahra Industrial")
-                at transform:
-                    zoom 0.1
-                    pos(310,620)
-                action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("kuwait_jahra_industrial")
-            imagebutton auto "menu/csbiiidx_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
-                hovered tt.Action("Sulaibiya")
-                at transform:
-                    zoom 0.1
-                    pos(270,760)
-                action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("kuwait_sulaibiya")
-            imagebutton auto "menu/csbiiidx_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
-                hovered tt.Action("Icarus")
-                at transform:
-                    zoom 0.1
-                    pos(820,520)
-                action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("kuwait_icarus")
-            imagebutton auto "menu/csbiiidx_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
-                hovered tt.Action("Boubyan Island")
-                at transform:
-                    zoom 0.1
-                    pos(860,240)
-                action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("kuwait_boubyan_island")
-            imagebutton auto "menu/csbiiidx_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
-                hovered tt.Action("Um Al Namil")
-                at transform:
-                    zoom 0.1
-                    pos(920,760)
-                action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("kuwait_um_al_namil")
-            imagebutton auto "menu/csbiiidx_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
-                hovered tt.Action("Kubar Island")
-                at transform:
-                    zoom 0.1
-                    pos(850,860)
-                action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("kuwait_kubar_island")
-            imagebutton auto "menu/csbiiidx_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
-                hovered tt.Action("Um Al Maradim")
-                at transform:
-                    zoom 0.1
-                    pos(920,940)
-                action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("kuwait_um_al_maradim")
-            imagebutton auto "menu/csbiiidx_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
-                hovered tt.Action("Burgan Oil Fields")
-                at transform:
-                    zoom 0.1
-                    pos(160,540)
-                action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("kuwait_burgan_oil_fields")
-            imagebutton auto "menu/csbiiidx_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
-                hovered tt.Action("Saqr Airbase")
-                at transform:
-                    zoom 0.1
-                    pos(140,140)
-                action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("kuwait_saqr_airbase")
-            imagebutton auto "menu/csbiiidx_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
-                hovered tt.Action("Al-Abdally")
-                at transform:
-                    zoom 0.1
-                    pos(380,180)
-                action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("kuwait_al_abdally")
-            imagebutton auto "menu/csbiiidx_%s.png" hover_sound "audio/sfx/sfx_select.ogg":
-                hovered tt.Action("Mutla Ridge")
-                at transform:
-                    zoom 0.1
-                    pos(460,270)
-                action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("dx_select"), Jump("kuwait_mutla_ridge")
-
 label lose_car_game:
     bad_end "100 percent\nunsatisfied." "true_iowa"
     return
@@ -297,7 +65,7 @@ label woohoo_counter:
     show cs at left
     show arceus at right
     with dissolve
-    arceus "Well boss, let's see how many \"woohoos\" you got!"
+    arceus "Well, boss, let's see how many \"woohoos\" you got!"
     scene conferencetv at Move((0.0 , -1.0), (0.0, 0.0), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show cs at Move((0.0 , 0.25), (0.0, 1.75), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show arceus at Move((0.735 , 0.4), (0.735, 1.75), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
@@ -311,7 +79,7 @@ label woohoo_counter:
     $ persistent.woohoo += 1
     play sound sfx_fabeep
     pause 0.5
-    cs "Now it's [persistent.woohoo]!"
+    cs "Now, it's [persistent.woohoo]!"
     return
 
 screen hatch_button:
@@ -401,6 +169,8 @@ screen rockstar_check:
     hbox xalign 0.0 yalign 0.25:
         spacing 50 
 
+# TODO: NOTE TO TATE - DON'T TOUCH THESE VALUES, THESE ARE CS'S VALUES
+# TODO: although, whoever is managing these? please update the persistent to use new formatting
 
 label csdata:
     scene black

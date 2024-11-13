@@ -23,4 +23,6 @@ screen debug_menu():
                     textbutton "{chaos}error" action Hide("debug_menu"), Start(k)
                 else:
                     textbutton k action Hide("debug_menu"), Start(k)
-    textbutton "Back" action Return() yoffset 1000 xoffset 25
+
+    textbutton "Return to Extras" action ShowMenu("category_welcome") yoffset 950 xoffset 25
+    textbutton "Main Menu" action Return() yoffset 1000 xoffset 25

@@ -2025,7 +2025,7 @@
                   "pos" : [51.5, 11]
             },
             "ce_end": {
-                  "name": "Save Christmas",
+                  "name": "Save Christmas!",
                   "type": "end",
                   "need_label": "ce_epilogue",
                   "pos": [52, 11],

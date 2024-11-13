@@ -40,36 +40,41 @@ init python:
                 self.start_time = st
             r = renpy.Render(1920, 1080)
 
-            bg = Solid("#111")
-            bg_renderer = renpy.render(bg, 1920, 1080, st, at)
-            r.blit(bg_renderer, (0, 0))
+            if self.controller_count:
+                bg = Solid("#111")
+                bg_renderer = renpy.render(bg, 1920, 1080, st, at)
+                r.blit(bg_renderer, (0, 0))
 
-            base_renderer = renpy.load_image(self.controller_base_img)
-            r.blit(base_renderer, self.image_pos)
+                base_renderer = renpy.load_image(self.controller_base_img)
+                r.blit(base_renderer, self.image_pos)
 
-            joystick = self.joysticks[persistent.controller_id]
-            for i, button in enumerate(self.buttons):
-                v = joystick.get_button(i)
-                if v:
-                    button_renderer = renpy.load_image(self.button_imgs[button])
-                    r.blit(button_renderer, self.image_pos)
-            hat_x, hat_y = joystick.get_hat(0)
-            if hat_x == -1:
-                left_renderer = renpy.load_image(self.hat_imgs["left"])
-                r.blit(left_renderer, self.image_pos)
-            if hat_x == 1:
-                right_renderer = renpy.load_image(self.hat_imgs["right"])
-                r.blit(right_renderer, self.image_pos)
-            if hat_y == -1:
-                down_renderer = renpy.load_image(self.hat_imgs["down"])
-                r.blit(down_renderer, self.image_pos)
-            if hat_y == 1:
-                up_renderer = renpy.load_image(self.hat_imgs["up"])
-                r.blit(up_renderer, self.image_pos)
+                joystick = self.joysticks[persistent.controller_id]
+                for i, button in enumerate(self.buttons):
+                    v = joystick.get_button(i)
+                    if v:
+                        button_renderer = renpy.load_image(self.button_imgs[button])
+                        r.blit(button_renderer, self.image_pos)
+                hat_x, hat_y = joystick.get_hat(0)
+                if hat_x == -1:
+                    left_renderer = renpy.load_image(self.hat_imgs["left"])
+                    r.blit(left_renderer, self.image_pos)
+                if hat_x == 1:
+                    right_renderer = renpy.load_image(self.hat_imgs["right"])
+                    r.blit(right_renderer, self.image_pos)
+                if hat_y == -1:
+                    down_renderer = renpy.load_image(self.hat_imgs["down"])
+                    r.blit(down_renderer, self.image_pos)
+                if hat_y == 1:
+                    up_renderer = renpy.load_image(self.hat_imgs["up"])
+                    r.blit(up_renderer, self.image_pos)
 
-            t = Text(self.current_controller, size=72, textalign=0.5)
-            middle_renderer = renpy.render(t, 1920, 1080, st, at)
-            r.blit(middle_renderer, (1920 / 2 - (middle_renderer.width / 2), 200))
+                t = Text(self.current_controller, size=72, textalign=0.5)
+                middle_renderer = renpy.render(t, 1920, 1080, st, at)
+                r.blit(middle_renderer, (1920 / 2 - (middle_renderer.width / 2), 200))
+            else:
+                nc_txt = "No controller detected.\nPlug your controller in, restart the game, then try again."
+                nc_txt_render = renpy.render(Text(nc_txt, color = "#FFFFFF", size = 50, text_align = 0.5), 1000, 500, st, at)
+                r.blit(nc_txt_render, (550, 50))
 
             # Do some fancy things here!
 
@@ -95,6 +100,8 @@ screen controllertest():
     # Add a background or any static images here.
     add controllertest
 
+    # TODO: we need a way to return to the previous menu that is compatible with all types of controls. i got nothing - tate
+
 label play_controllertest:
     window hide
     $ quick_menu = False
@@ -104,7 +111,6 @@ label play_controllertest:
 
     if _return == True:
         pass
-        # Thing for win condition
     else:
         pass
         # Thing for lose condition
