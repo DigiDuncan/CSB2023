@@ -1,7 +1,7 @@
 label asset_debugger:
-    cs "Alright Arc, you ready for the asset debugger?"
+    cs "Alright, Arc, you ready for the asset debugger?"
     show arceus angry
-    arceus "I hate the debugger, it's so uncomfortable!"
+    arceus "I hate the debugger! It's so uncomfortable!"
     cs "Well, it'll be over in no time! Remember to have bounciness at max!"
     $ sfxtotal = 0
     $ musictotal = 0
@@ -305,7 +305,7 @@ label asset_debugger:
         $ sfxtotal += 1
         play sound sfx_chop
         $ musictotal += 1
-        play music Billymusicu
+        play music billymusicu
         $ bgtotal += 1
         scene cs_door_open
         show billy car at mid_right
@@ -645,7 +645,7 @@ label asset_debugger:
         $ bgtotal += 1
         scene inside_tim_hortons
         show bag flipped at center
-        show cs prison_worried at left
+        show cs worried prison at left
         $ spritetotal += 8
         show blue_light at mid_left_left
         show lego eyes at mid_left
@@ -1693,7 +1693,6 @@ label asset_debugger:
         play music mm_complete
         $ bgtotal += 1
         scene stage2
-        show cs at t_linus_drop_tips
         $ transformtotal += 1
         james "test 92{w=0.5}{nw}"
         $ charactertotal += 1
@@ -2161,7 +2160,7 @@ label asset_debugger:
         jump exit_debug
     if fun_value(128):
         $ sfxtotal += 1
-        play sound sfx_chug_that
+        play sound sfx_crack_open_cold_one
         $ musictotal += 1
         play music super_friendly
         $ bgtotal += 1
@@ -2484,7 +2483,7 @@ label asset_debugger:
         jump exit_debug
     if fun_value(159):
         $ musictotal += 1
-        play music insomnia
+        play music insomnia_intro
         $ bgtotal += 1
         scene jeep_inside_fg
         pause 0.5
@@ -2756,7 +2755,7 @@ label asset_debugger:
         jump exit_debug
     if fun_value(193):
         $ musictotal += 1
-        play music albu
+        play music albuquerque_full
         $ bgtotal += 1
         scene east_cafe
         pause 0.1

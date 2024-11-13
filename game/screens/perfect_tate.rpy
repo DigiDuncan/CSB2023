@@ -1,18 +1,14 @@
-transform _t_perfect_tate:
-    align (0.5, 0.0)
-    yoffset 100
-
-style perfect is empty
-style perfect_frame is empty
-
-# Perfect Tate
 screen perfect_tate_text(who, what):
-    style_prefix "perfect"
     frame:
-        at _t_perfect_tate
-        xysize(1920, 540)
+        background None
+        xysize(1920, 300)
+        align (0.5, 0.0)
+        yoffset 100
+
         text what id "what":
+            prefer_screen_to_id True
             font "fonts/AllerDisplay_Std_Rg_0.ttf"
+            color "#000000"
             size 72
             textalign 0.5
             xalign 0.5

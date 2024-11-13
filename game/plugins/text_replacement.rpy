@@ -24,6 +24,7 @@ init python:
         # for text effects that are a pain to type out otherwise
         s = s.replace(r"{cshake}", r"{bt=a3-p10-s4}")
         s = s.replace(r"{ytpmagic}", r"{sc=1.88}{color=#CB50FF}")
+        s = s.replace(r"{perfect_tate}", r"{sc}{size=+24}{font=azsz}{color=#000000}") # i'd prefer this to be handled in the screen but {sc} breaks it?? - tate
 
         return s
     config.say_menu_text_filter = substitutions

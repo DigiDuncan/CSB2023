@@ -3833,14 +3833,14 @@ label train_tate_ex_win:
     $ collect("yeetable_textbox")
     pause 4.0
 
-    perfect_tate "{sc}{size=+24}{font=azsz}{color=#000000}That's better."
+    perfect_tate "{perfect_tate}That's better."
     hide tate_fallen_4
     show tate_fallen_5 at manual_pos(0.5, 0.5, 0.5)
     with Dissolve(0.5)
-    perfect_tate "{sc}{size=+24}{font=azsz}{color=#000000}I hope you're ready."
-    perfect_tate "{sc}{size=+24}{font=azsz}{color=#000000}Because I'm not holding back anymore."
-    perfect_tate "{sc}{size=+24}{font=azsz}{color=#000000}CS..."
-    perfect_tate "{sc}{size=+24}{font=azsz}{color=#000000}I'm sorry."
+    perfect_tate "{perfect_tate}I hope you're ready."
+    perfect_tate "{perfect_tate}Because I'm not holding back anymore."
+    perfect_tate "{perfect_tate}CS..."
+    perfect_tate "{perfect_tate}I'm sorry."
 
     scene white
     # TODO: re-render this again when it's finished, make sure it has audio

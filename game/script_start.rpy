@@ -494,7 +494,7 @@ define lupin_offscreen = Character("???", callback = renpy.partial(char_callback
 define mean_offscreen = Character("???", callback = renpy.partial(char_callback, beep = "mean"))
 define zenigata_nobeep = Character("???", callback = renpy.partial(char_callback, play_beeps = False))
 define zenigata_offscreen = Character("???", callback = renpy.partial(char_callback, beep = "zenigata"))
-define perfect_tate = Character("Tate", callback = renpy.partial(char_callback, name = "tate", beep = "tate"), screen = "perfect_tate_text")
+define perfect_tate = Character("Tate", callback = renpy.partial(char_callback, name = "tate", beep = "tate"), what_color = "#000000", screen = "perfect_tate_text")
 
 # DX Holiday Special Definitions
 define walkie = Character("Walkie", callback = renpy.partial(char_callback, beep = "walkie"))
@@ -3000,6 +3000,7 @@ define audio.homely_yado_inn = "<from 0.499 to 40.502>homely_yado_inn.ogg"
 # For Tate EX / Perfect Tate
 define audio.insomnia_intro = "<from 0 to 11.299>secret/pt/insomnia.ogg"
 define audio.insomnia_loop = "<from 22.6>secret/pt/insomnia.ogg"
+define audio.space = "secret/pt/space.ogg"
 define audio.nyan = "<from 3.6 to 228.52>/secret/pt/nyan_of_a_lifetime.ogg"
 
 # CSBIII DX Kuwait Music
@@ -3043,7 +3044,7 @@ define audio.interference = "<from 0 to 275>interference.ogg"
 define audio.space_classroom = "space_classroom.ogg"
 define audio.billymusicu = "billymusicu.ogg"
 define audio.ocean_man = "credits.ogg"
-define audio.albuquerque = "albuquerque.ogg"
+define audio.albuquerque_full = "albuquerque.ogg"
 
 # SFX
 define audio.sfx_addy_snap = "sfx/sfx_addy_snap.ogg"
@@ -3555,73 +3556,3 @@ image typewriter = DynamicDisplayable(show_typewriter)
 
 define shake1 = { "master" : hpunch }
 define shake2 = { "master" : vpunch }
-
-screen woohoo_counter():
-    text "Woohoo Counter = [persistent.woohoo]" textalign 0.5 size 108 xalign 0.5 yalign 0.5:
-        font "fonts/digital-7.ttf"
-        color "#ff0000"
-    hbox xalign 0.5 yalign 0.5:
-        spacing 50
-
-screen cultcon_votes():
-    text "Top 5 Winners!" textalign 0.5 size 72 xalign 0.5 yalign 0.5:
-        font "fonts/digital-7.ttf"
-        color "#ff0000"
-    hbox xalign 0.5 yalign 0.5:
-        spacing 50
-screen cultcon_votes_1():
-    text "Pencil Cult: 10" textalign 0.5 size 48 xalign 0.5 yalign 0.7:
-        font "fonts/digital-7.ttf"
-        color "#ff0000"
-    hbox xalign 0.5 yalign 0.7:
-        spacing 50
-screen cultcon_votes_2():
-    text "Lunatic Cultists: 27" textalign 0.5 size 48 xalign 0.5 yalign 0.6:
-        font "fonts/digital-7.ttf"
-        color "#ff0000"
-    hbox xalign 0.5 yalign 0.6:
-        spacing 50
-screen cultcon_votes_3():
-    text "Society of the Blind Eye: 35" textalign 0.5 size 48 xalign 0.5 yalign 0.5:
-        font "fonts/digital-7.ttf"
-        color "#ff0000"
-    hbox xalign 0.5 yalign 0.5:
-        spacing 50
-screen cultcon_votes_4():
-    text "Scientology: 70" textalign 0.5 size 48 xalign 0.5 yalign 0.4:
-        font "fonts/digital-7.ttf"
-        color "#ff0000"
-    hbox xalign 0.5 yalign 0.4:
-        spacing 50
-screen cultcon_votes_5():
-    text "Blue Branch: [total_votes]" textalign 0.5 size 48 xalign 0.5 yalign 0.3:
-        font "fonts/digital-7.ttf"
-        color "#ff0000"
-    hbox xalign 0.5 yalign 0.3:
-        spacing 50
-
-screen debugger_menu():
-    text "Stats" textalign 0.5 size 72 xalign 0.5 yalign 0.0
-    hbox xalign 0.5 yalign 0.0:
-        spacing 50
-    text "sfx loaded: [sfxtotal]" textalign 0.5 size 48 xalign 0.5 yalign 0.1
-    hbox xalign 0.5 yalign 0.1:
-        spacing 50
-    text "music loaded: [musictotal]" textalign 0.5 size 48 xalign 0.5 yalign 0.2
-    hbox xalign 0.5 yalign 0.2:
-        spacing 50
-    text "characters loaded: [charactertotal]" textalign 0.5 size 48 xalign 0.5 yalign 0.3
-    hbox xalign 0.5 yalign 0.3:
-        spacing 50
-    text "backgrounds loaded: [bgtotal]" textalign 0.5 size 48 xalign 0.5 yalign 0.4
-    hbox xalign 0.5 yalign 0.4:
-        spacing 50
-    text "sprites loaded: [spritetotal]" textalign 0.5 size 48 xalign 0.5 yalign 0.5
-    hbox xalign 0.5 yalign 0.5:
-        spacing 50
-    text "movies loaded: [movietotal]" textalign 0.5 size 48 xalign 0.5 yalign 0.6
-    hbox xalign 0.5 yalign 0.6:
-        spacing 50
-    text "transforms loaded: [transformtotal]" textalign 0.5 size 48 xalign 0.5 yalign 0.7
-    hbox xalign 0.5 yalign 0.7:
-        spacing 50
