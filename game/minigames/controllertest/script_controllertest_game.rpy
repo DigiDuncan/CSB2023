@@ -72,9 +72,9 @@ init python:
                 middle_renderer = renpy.render(t, 1920, 1080, st, at)
                 r.blit(middle_renderer, (1920 / 2 - (middle_renderer.width / 2), 200))
             else:
-                nc_txt = "No controller detected.\nPlug your controller in, restart the game, then try again."
-                nc_txt_render = renpy.render(Text(nc_txt, color = "#FFFFFF", size = 50, text_align = 0.5), 1000, 500, st, at)
-                r.blit(nc_txt_render, (550, 50))
+                nc_txt = "No controller detected.\nPlug your controller in, restart the game, and try again."
+                nc_txt_render = renpy.render(Text(nc_txt, color = "#FFFFFF", size = 50, text_align = 0.5), 1920, 500, st, at)
+                r.blit(nc_txt_render, (475, 500))
 
             # Do some fancy things here!
 
