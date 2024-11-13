@@ -1,11 +1,13 @@
-# the purpose of this screen is to eventually replace endings replay and minigames replay
+# the purpose of this screen is to eventually replace endings replay
 # as well as allow for keeping track of all major story events.
 
 init python:
+    import json
 
     global timeline_map
+    global timeline_xmax
+    global timeline_ymax
 
-    import json
     with renpy.open_file("data/timeline.json") as json_file:
         timeline_file = json.load(json_file)
 
@@ -15,6 +17,16 @@ init python:
         achieve_file = json.load(json_file)
 
     achieve_map = achieve_file
+
+    # only adjust the first number of these if we need more space to the east or south later
+    # grid starts at (0, 0), remember your off-by-one errors
+    # doing it here so it doesn't have to keep recalculating every time you mouse over something
+
+    fetch_highest_x = max(timeline_map, key=lambda x: timeline_map[x]["pos"][0])
+    fetch_highest_y = max(timeline_map, key=lambda y: timeline_map[y]["pos"][1])
+
+    timeline_xmax = ((timeline_map[fetch_highest_x]["pos"][0] + 1) * 200) + 20
+    timeline_ymax = ((timeline_map[fetch_highest_y]["pos"][1] + 1) * 150) + 20
 
 screen timeline_tracer():
     tag menu
@@ -93,12 +105,6 @@ screen timeline_tracer():
                                 xoffset 40
                                 yoffset -9
 
-    # only adjust the first number of these if we need more space to the east or south later
-    # grid starts at (0, 0), remember your off-by-one errors
-    # TODO: make it automatic later...
-    $ xmax = ((59*200)+20) # 11820
-    $ ymax = ((27*150)+20) # 3920
-
     # prepare counters for later
     $ total_events = 0
     $ total_endings = 0
@@ -120,10 +126,10 @@ screen timeline_tracer():
             pagekeys True
 
             xinitial 0
-            yinitial 4*150 + 20
+            yinitial 4*150 + 20 # should put CSBI start in the center
 
             fixed:
-                area (0, 0, xmax, ymax)
+                area (0, 0, timeline_xmax, timeline_ymax)
 
                 for event in timeline_map:
                     python:
