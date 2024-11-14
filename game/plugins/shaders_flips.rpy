@@ -49,10 +49,10 @@ init -10 python:
 
     ########## SEPIA FILTER
     def shade_sepia(s):
-         return Transform(s, xzoom = 1, matrixcolor = SepiaMatrix())
+        return Transform(s, xzoom = 1, matrixcolor = SepiaMatrix())
 
     def shade_sepia_flip(s):
-         return Transform(s, xzoom = 1, matrixcolor = SepiaMatrix())
+        return Transform(s, xzoom = 1, matrixcolor = SepiaMatrix())
 
     config.displayable_prefix["sepia"] = shade_sepia
     config.displayable_prefix["sepia:flip"] = shade_sepia_flip
