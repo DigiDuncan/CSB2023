@@ -90,11 +90,35 @@ init python:
 
 label awawa_tate_composite_test:
 
-    scene roombacks
     stop music
+    scene roombacks
+    show tate 
+    with dissolve
 
-    tate "Awawa!"
-    tate "Let's see if this works!"
+    tate "Welcome to my testing chamber."
+    tate "Let's try out Awawa Mode first."
+
+    $ test_string = "Test dialogue. THIS CODE IS SO STUPID OMG.\n{i}Italic,{/i} {font=azsz}different font.{/font} {b}Bold{/b} also exists, but it's {sc=3}ugly as sin.{/sc} {color=FFFF00}Yellow{/color} is pretty cool, but so is {a=https://allezsoyez.com}my website.{/a}"
+    $ awa = awawa_mode(test_string, 25)
+    $ awa2 = awawa_mode(test_string, 50)
+    $ awa3 = awawa_mode(test_string)
+
+    n "0%% awawa."
+    tate "[test_string]"
+    n "25%% awawa."
+    tate "[awa]"
+    show tate sheepish
+    n "50%% awawa."
+    tate "[awa2]"
+    n "100%% awawa."
+    show tate sheepish blush
+    tate "[awa3]"
+    show tate srs
+    tate "I sure hope that worked. This is silly..."
+    
+    hide tate with dissolve
+    n "Next test is for Tate's layered sprite."
+
     show tate_comp
     "Default"
     show tate_comp sad
