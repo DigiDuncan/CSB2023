@@ -1474,6 +1474,7 @@ label ce_checkout:
     cs "Sorry, I scanned this pie 7 times."
     tgt_worker "...how many do you have?"
     cs "I have 2."
+    show pakoo tgt confused
     tgt_worker "Wh-- okay hold on."
     show pakoo tgt at center with move
     show pakoo tgt scan
