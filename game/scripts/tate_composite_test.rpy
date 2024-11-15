@@ -95,8 +95,7 @@ label awawa_tate_composite_test:
     
     n "You enter Tate's secret test area."
 
-    $ persistent.awawa_mode = True
-    call screen special_unlock("Awa awawa? AAAAAA! You've unlocked Awawa Mode! Check it out in CSettings!")
+    call screen special_unlock("AAAAA! You found my secret test spot!")
 
     scene roombacks
     show tate 

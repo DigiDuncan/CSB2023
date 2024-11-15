@@ -53,7 +53,7 @@
     },
     "billy": {
         "full_name": "Billy Mays",
-        "sprite_path": "images/characters/billy.png",
+        "sprite_path": "images/characters/billy/billy.png",
         "quote": "Hi, Billy Mays here!",
         "bio": "Billy perfected the art of the salespitch 10 years ago. He is a master of the infomerical. Since finding success, he has moved on to greater horizons. He has been seen recently travelling the country, living off the various gadgets he sold in the past.",
         "dx_bio": "This is the Billy that came after the Billy that made his mark. Throughout history, Perfect Billy would assign a host to be \"Billy Mays\". Although most of us only know the one from the infomericals, when he passed away, this Billy took his place."
@@ -421,7 +421,7 @@
     },
     "pomni": {
         "full_name": "Pomni",
-        "sprite_path": "images/characters/pomni_bio.png",
+        "sprite_path": "images/characters/pomni/pomni_bio.png",
         "quote": "There's got to be an exit somewhere...",
         "bio": "Pomni has been going insane ever since she was brought into the Amazing Digital Circus not too long ago. Somehow, she made it into an IKEA and got stuck there. She honestly should have just stayed at the circus."
     },
