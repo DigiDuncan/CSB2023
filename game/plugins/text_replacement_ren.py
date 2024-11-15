@@ -18,7 +18,7 @@ def awawa_mode(input_text, frequency = 100):
     letter_count = 0
 
     # look close, it's four groups: text tags, whitespace, inline variables, and punctuation respectively.
-    regex_disaster = re.compile("(\{.*?\})+|( |\n)+|(\[.*\])|([\-\?!@#\$\^&\*_\\\.,\/<>\+\[\]\{\}\(\)=\"':;~`、。])")
+    regex_disaster = re.compile("(\{.+?\})|( |\n)+|(\[.*\])|([\-\?!@#\$\^&\*_\\\.,\/<>\+\[\]\{\}\(\)=\"':;~`、。])")
 
     # split it into pieces
     splitput = regex_disaster.split(input_text)
