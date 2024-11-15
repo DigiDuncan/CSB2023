@@ -1,6 +1,7 @@
 init python:
 
     bounciness_label = f"+{preferences.csbounciness}%" if preferences.csbounciness else "Default"
+
     max_fun_label = ""
     if preferences.max_fun >= FUN_VALUE_LEGENDARY:
         max_fun_label = "Legendary"
@@ -16,6 +17,8 @@ init python:
         max_fun_label = "Unobtrusive"
     else:
         max_fun_label = "Off"
+
+    awawa_chance_label = f"{preferences.awawa_chance}%" if preferences.awawa_mode else "Off"
 
     def change_bounciness(new_bounciness):
         global bounciness_label
@@ -41,6 +44,12 @@ init python:
             max_fun_label = "Unobtrusive"
         else:
             max_fun_label = "Off"
+        renpy.restart_interaction()
+
+    def change_awawa_chance(new_awawa_chance):
+        global awawa_chance_label
+        preferences.awawa_chance = new_awawa_chance
+        awawa_chance_label = f"{preferences.awawa_chance}%" if preferences.awawa_mode else "Off"
         renpy.restart_interaction()
 
 ################################################################################
@@ -867,6 +876,21 @@ screen preferences():
                         null width 20
                         label "[preferences.__dict__['afm_time']:.1f]s" yoffset -10 xminimum 200
 
+                    # TODO: THIS IS NOT STAYING HERE.
+                    if persistent.awawa_mode == True:
+                        hbox:
+                            style_prefix "check"
+                            textbutton _("Awawa Mode") action ToggleField(preferences, "awawa_mode"):
+                                hovered [Function(get_mouse), info.Action("Replace the dialogue with nonsense!"), SetScreenVariable("info_x", mouse_xy[0]), SetScreenVariable("info_y", mouse_xy[1]) ]
+                        hbox:
+                            bar:
+                                style "slider"
+                                xsize 450
+                                value preferences.awawa_chance
+                                range 100
+                                changed(change_awawa_chance)
+                            null width 20
+                            label "[awawa_chance_label]" yoffset -10 xminimum 200
                 vbox:
                     if config.has_music:
                         hbox:

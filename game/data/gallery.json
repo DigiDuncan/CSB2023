@@ -189,5 +189,10 @@
         "type": "image",
         "title": "cs_stand.png",
         "caption": "This image is only used for a few seconds during Perfect Tate's intro. CS's sprites during the fight are based on a VRChat model that Tate made for CS a while ago.\n\nDO NOT OPEN THIS ON STREAM: The {i}Nekopara{/i} cosplay set can be purchased {a=https://booth.pm/en/items/2056413}here.{/a} Be aware that the process of importing the item set into VRoid Studio is {i}not{/i} for the faint of heart."
+    },
+    "itemcoll.png": {
+        "type": "image",
+        "title": "Item Collection Mockup",
+        "caption": "Item Collection was an idea that Pakoo had a long time ago, but didn't have enough time to implement in {i}CSBIII.{/i} Luckily, Tate also loved the idea, so they made it a reality for {i}DX.{/i} This was the initial MS Paint doodle showcasing Tate's concept for the screen's layout."
     }
 }
