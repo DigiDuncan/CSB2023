@@ -138,7 +138,7 @@ class AchievementManager:
         return [a for a in self.achievements.values() if not a.unlocked]
 
     def get(self, id: str) -> Achievement:
-        for achievement in self.achievements:
+        for achievement in self.achievements.values():
             if achievement.id == id:
                 return achievement
 
@@ -152,7 +152,7 @@ class AchievementManager:
 
     def unlock_all(self):
         for achievement in self.achievements:
-            self.unlock(achievement.id, show_screen = False)
+            self.unlock(achievement, show_screen = False)
 
     def reset(self):
         persistent.unlocked_achievements = set()
