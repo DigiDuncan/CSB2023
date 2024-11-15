@@ -15,8 +15,7 @@
 # 32.381, tate starts blasting IMMEDIATELY on that first drop
 # on second thought maybe no healing items depending on how well we can balance difficulty w damage
 
-# TODO: make the lane look like audiosurf
-# TODO: also, adjust the lanes + tate's position so tate is in the dead center of the screen
+# TODO: CS is off-center and lane math needs totally redone
 
 init python:
     import math

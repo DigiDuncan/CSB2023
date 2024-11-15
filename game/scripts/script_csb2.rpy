@@ -123,7 +123,7 @@ label csbii_kick:
     with MoveTransition(0.5)
 
     dxcom hidemovie
-    $ achievement_manager.unlock("Dead Meme")
+    $ achievement_manager.unlock("sparta")
 
     cs "That'll teach you not to mess with a nerd's computer!"
     show ed_phone at offscreenright with determination
@@ -669,7 +669,7 @@ label csbii_bordercrossing:
     cs "..."
     cs "I think I'm {i}really{/i} sleep-deprived."
 
-    $ achievement_manager.unlock("Ohai, Mark")
+    $ achievement_manager.unlock("ohai_mark")
     scene black with dissolve
     pause 1.0
 
@@ -909,7 +909,7 @@ label csbii_ltt:
     stop music fadeout 3.0
     music end
 
-    $ achievement_manager.unlock("Welcome to CSBIII, Motherfucker")
+    $ achievement_manager.unlock("csbii")
 
     scene black with dissolve
     hide screen dxcom

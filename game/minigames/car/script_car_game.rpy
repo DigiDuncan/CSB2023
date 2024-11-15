@@ -1,8 +1,6 @@
 init python:
     import math
 
-    # TODO: LANES ARE OFF BY ONE, POSSIBLY DUE TO PERFECT TATE, PLS FIX
-
     # Graphics
     UFO_LANE_X = [670, 885, 1100]
     CAR_Y = 770
@@ -216,7 +214,7 @@ label minigame_car:
     window show
 
     if _return == True:
-        $ achievement_manager.unlock("Blaster Disaster")
+        $ achievement_manager.unlock("blisaster")
         $ renpy.jump(minigame_win)
     else:
         $ renpy.jump(minigame_loss)

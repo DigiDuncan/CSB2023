@@ -640,7 +640,7 @@ label south_folded:
     show arceus full flipped at mid_right
     with dissolve
     play sound sfx_payday volume 0.5
-    $ achievement_manager.unlock("The House Doesn't Always Win")
+    $ achievement_manager.unlock("house")
     show arceus full happy flipped
     arceus "Hell yeah!"
     scene insafe with dissolve
@@ -802,7 +802,7 @@ label south_poker3:
         n "Mr. Green vomits all over the table and falls over backwards, passing out."
         stop music fadeout 3.0
         music end
-        $ achievement_manager.unlock("High Roller")
+        $ achievement_manager.unlock("poker")
         scene luigi2
         show cs happy flipped at right
         cs "Woohoo! I won!"
@@ -1310,7 +1310,7 @@ label south_reality_break:
     hide cs with moveoutright
     stop sound fadeout 2.0
     n "The cast and crew scramble back into position."
-    $ achievement_manager.unlock("Broken Masquerade")
+    $ achievement_manager.unlock("fourth_wall")
     direct "Ready?"
     show cscar2 with moveinright
     direct "Aaaaaand...{w=1.0}{nw}"

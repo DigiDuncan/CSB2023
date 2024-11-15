@@ -288,10 +288,10 @@ label true_streaming:
     cs "Well, guys..."
     n "CS chuckles."
     cs "It's a long story..."
-    if achievement_manager.get("That's All, Folks!").unlocked:
-        $ achievement_manager.unlock("All Over Again")
+    if achievement_manager.get("csbiii").unlocked:
+        $ achievement_manager.unlock("again")
     else:
-        $ achievement_manager.unlock("That's All, Folks!")
+        $ achievement_manager.unlock("csbiii")
     scene black with dissolve
     stop music2 fadeout 1.0
     $ ending_manager.mark("true")

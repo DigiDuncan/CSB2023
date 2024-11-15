@@ -103,7 +103,7 @@ label awawa_tate_test:
     show tate 
     with dissolve
 
-    tate "Welcome to my testing chamber."
+    tate "Welcome to my test chamber."
 
     # Let's test out local labels, too.
     label .awawa_menu:
@@ -194,7 +194,7 @@ label awawa_tate_test:
             ########## SPRITE RANDOMIZER ##########
             "Sprite Randomizer":
                 show tate sad
-                tate "Ew, I hate the randomizer."
+                tate "Ew, {w=0.25}I hate the randomizer."
 
                 python:
                     iterations = ""
@@ -212,7 +212,7 @@ label awawa_tate_test:
 
                         renpy.hide("tate_comp")
                         renpy.show("tate", what="tate sheepish")
-                        renpy.say(tate, "Wow, {w=0.25}that sucked. But, {w=0.25}did it work?")
+                        renpy.say(tate, "Wow, {w=0.25}that sucked. {w=0.5}But, {w=0.25}did it work?")
                     except:
                         renpy.show("tate", what="tate sheepish")
                         renpy.say(tate, "Something went wrong, {w=0.25}sorry.")
@@ -268,6 +268,8 @@ label awawa_tate_test:
             "Unlock Screen":
                 call screen special_unlock("Pretend something cool got unlocked here! Click anywhere to continue.")
                 tate "Lookin' good!"
+                tate "Let's try another!"
+                $ renpy.call_screen("special_unlock", "This screen is called with a Python statement! Use this in menus!")
                 jump .awawa_menu
 
             ########## FORCE-TEST ACHIEVEMENTS ##########
@@ -278,16 +280,13 @@ label awawa_tate_test:
 
                 python:
                     this_cheev = ""
-                    this_cheev = renpy.input("Enter the {i}exact{/i} {color=#FFFF00}name (not ID){/color} of the achievement you want to test.", this_cheev)
+                    this_cheev = renpy.input("Enter the {i}exact{/i} ID of the achievement you want to test.", this_cheev)
 
                     try:
-                        chievos = (a for a in achievement_manager.achievements
-                        if a.name == this_cheev)
-                        renpy.show_screen("popup", next(chievos))
-                
-                        renpy.say(tate, "Did it work?")
+                        renpy.show_screen("popup", fin)
+                        #renpy.say(tate, "Did it work?")
                     except:
-                        renpy.say(tate, "Something went wrong. {w=0.5}Double-check the name and try again.")
+                        renpy.say(tate, "Couldn't pull achievement. {w=0.5}Double-check the name and try again.")
                                 
                 jump .awawa_menu
 

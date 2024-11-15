@@ -759,7 +759,7 @@ label archival_finale:
     pause 3.0
     scene black with Dissolve(1.0)
     pause 3.0
-    $ achievement_manager.unlock("Archived")
+    $ achievement_manager.unlock("archived")
     n "CS has been deleted, and has been sent to the beginning of time itself."
     pause 2.0
     $ renpy.movie_cutscene(creditsm)

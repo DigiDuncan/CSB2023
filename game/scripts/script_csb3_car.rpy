@@ -670,7 +670,7 @@ label car_dialogue:
     cs "Wouldn't it be funny if someone was listening to all of this?"
     arceus "Well, they'd probably be really bored by now."
 
-    $ achievement_manager.unlock("Bored")
+    $ achievement_manager.unlock("car_dialogue")
 
     pause 1.0
     hide screen skip_car

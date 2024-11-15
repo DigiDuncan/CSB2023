@@ -3429,7 +3429,7 @@ python early:
             if not renpy.seen_label(i.replay):
                 seen_all = False
         if seen_all:
-            achievement_manager.unlock("Fin.")
+            achievement_manager.unlock("fin")
         renpy.show("bad_end_screen")
         renpy.pause(1.0)
         typewriter_text = text
@@ -3481,12 +3481,13 @@ label before_main_menu:
             if not renpy.seen_label(i.replay):
                 seen_all = False
         if seen_all:
-            if not "Fin." in persistent.unlocked_achievements:
-                    chievos = (a for a in achievement_manager.achievements
-                    if a.name == "Fin.")
+            if not "fin" in persistent.unlocked_achievements:
+                    chievos = (a for a in achievement_manager.achievements.values()
+                    if a == "fin")
                     renpy.show_screen("popup", next(chievos))
-                    achievement_manager.unlock("Fin.", show_screen = False)
+                    achievement_manager.unlock("fin", show_screen = False)
                     persistent.creative_mode = True
+                    renpy.call_screen("special_unlock", "Noice! You've unlocked Creative Mode! Check out the new options in Extras!")
 
     if not persistent.seen_splash:
         if not renpy.music.is_playing():

@@ -199,10 +199,10 @@ label play_pencil2_game:
     window show
 
     if _return >= 1200:
-        $ achievement_manager.unlock("60 Drillless WR")
+        $ achievement_manager.unlock("paincil")
     else:
         if _return > DIGI_SCORE2:
-            $ achievement_manager.unlock("Graphite Grinder")
+            $ achievement_manager.unlock("pencil2")
             $ renpy.jump(minigame_win)
         else:
             $ renpy.jump(minigame_loss)

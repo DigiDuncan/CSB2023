@@ -77,7 +77,7 @@ label michigan_bronson:
     n "Welcome to Bronson."
     scene black with dissolve
     pause 2.0
-    $ achievement_manager.unlock("We Don't Go To Bronson")
+    $ achievement_manager.unlock("bronson")
     play sound sfx_thunder volume 0.5 loop
     scene bronson_hell
     show cscar1arc
@@ -383,7 +383,7 @@ label michigan_interstate_69_old:
     music end
     n "Finally, the forest's brush, along with the detritus of other plants that dotted the ecosystem, disappears in a sea of white flame that leaves them in a desolate parking lot."
     show billy car
-    $ achievement_manager.unlock("You've Been Gnomed")
+    $ achievement_manager.unlock("gnomed")
     billy "Well, that was deeply disconcerting."
     gnome "If you are not used to it, I suppose so."
     billy "I think I need a break from driving after all that."
@@ -804,7 +804,7 @@ label michigan_interstate_69_old:
     cs "I'm with Arceus on this one."
     cs "I don't think I'll be able to go between two rows of trees without having a panic attack for a while."
     aria "I think Michigan roads are scarier than any forest, but I'll take you back on whichever path you want."
-    $ achievement_manager.unlock("Analog Horror Protagonist")
+    $ achievement_manager.unlock("forest")
     n "They all walk down and reach the apartment, then make their way to where the car is parked."
     scene aria_apartment_outside
     show billy at left
@@ -963,7 +963,7 @@ label michigan_interstate_69:
     music end
     n "Finally, the forest's brush, along with the detritus of other plants that dotted the ecosystem, disappears in a sea of white flame that leaves them in a desolate parking lot."
     show billy car
-    $ achievement_manager.unlock("You've Been Gnomed")
+    $ achievement_manager.unlock("gnomed")
     billy "That'll leave a mark on my 6000 pound car!"
     gnome "Sorry, do you have good Vagen Inzuurance?."
     billy "No worry, I have tons of Might Putty!"
@@ -1365,7 +1365,7 @@ label michigan_interstate_69:
     cs "I'm with Arceus on this one."
     cs "I don't think I'll be able to go between two rows of trees without having a panic attack for a while."
     aria "I think Michigan roads are scarier than any forest, but I'll take you back on whichever path you want."
-    $ achievement_manager.unlock("Analog Horror Protagonist")
+    $ achievement_manager.unlock("forest")
     n "They all walk down and reach the apartment, then make their way to where the car is parked."
     scene aria_apartment_outside
     show billy at left
@@ -1587,7 +1587,7 @@ label michigan_interstate_94:
     hide violent_jay
     hide shaggy_too_dope
     with moveoutleft
-    $ achievement_manager.unlock("Creepy Clown Sightings")
+    $ achievement_manager.unlock("clowns")
     show billy at mid_mid_left with moveinleft
     billy "What happened there?"
     mario "I'm not sure, but they paid for the washer, so I'm not gonna think about it too hard."

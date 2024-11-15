@@ -166,7 +166,7 @@
     "guitar_hero":{
         "name": "Guitar Hero",
         "locked": "???",
-        "unlocked": "Unlock a new career by playing Guitar Hero?",
+        "unlocked": "Unlock a new career by playing {i}Guitar Hero?{/i}",
         "img": "gh",
         "type": "story"
     },
@@ -355,7 +355,7 @@
         "type": "extra",
         "hidden": true
     },
-    "archive":{
+    "archived":{
         "name": "Archived",
         "locked": "???",
         "unlocked": "Find Addy's Facility.",

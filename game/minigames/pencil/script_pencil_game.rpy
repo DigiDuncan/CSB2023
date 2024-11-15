@@ -199,16 +199,16 @@ label minigame_pencil:
     window show
 
     if _return >= 300:
-        $ achievement_manager.unlock("Pencilovania")
+        $ achievement_manager.unlock("pencilovania")
     if archack:
         if _return > (DIGI_SCORE - 70):
-            $ achievement_manager.unlock("Pencil Sharpening Day!")
+            $ achievement_manager.unlock("pencil")
             $ renpy.jump(minigame_win)
         else:
             $ renpy.jump(minigame_loss)
     else:
         if _return > DIGI_SCORE:
-            $ achievement_manager.unlock("Pencil Sharpening Day!")
+            $ achievement_manager.unlock("pencil")
             $ renpy.jump(minigame_win)
         else:
             $ renpy.jump(minigame_loss)

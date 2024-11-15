@@ -145,7 +145,7 @@ label fired_guitar_hero:
     stop music fadeout 3.0
     music end
     hide screen dxcom
-    $ achievement_manager.unlock("Guitar Hero")
+    $ achievement_manager.unlock("guitar_hero")
 
     scene hotel_room
     show arceus at right
@@ -208,7 +208,7 @@ label fired_write_song:
     anno "Alright, boys, what do we call it?"
     $ song_name_1 = renpy.input("What should we call the song?", song_name_1, length = 32)
     cs "How about {i}[song_name_1]?{/i}"
-    $ achievement_manager.unlock("Hi, My Name Is...")
+    $ achievement_manager.unlock("name_is")
     if song_name_1 == "FUCK SEX BALLS":
         show arceus angry
         arceus "Haha, very funny, Pakoo."
@@ -359,7 +359,7 @@ label fired_song_2:
     arceus "Uh..."
     $ line_1 = renpy.input("Finish the line!", "", length = 64)
     cs "How about, '[line_1]'?"
-    $ achievement_manager.unlock("Singer-Songwriter")
+    $ achievement_manager.unlock("first_song")
     show arceus happy
     arceus "Yeah!"
     arceus "{cps=15}{image=note_small1.png} We're going down to Vegas,{w=1.5} [line_1] {image=note_small2.png}"
@@ -750,7 +750,7 @@ label fired_song_5:
     stop music fadeout 3.0
     music end 
     arceus "You know, I'm starting to really believe in this whole thing."
-    $ achievement_manager.unlock("Independent Artist")
+    $ achievement_manager.unlock("indie_artist")
     jump fired_fan_interaction
 
 label fired_fan_interaction:
@@ -1561,7 +1561,7 @@ label fired_final_tour_bus:
     play sound sfx_start_rocking
 
     cs "{cps=15}{image=note_small1.png} [line_7]{w=1.5}\n[line_8]{w=1.5}\n[line_9]{w=1.5}\n[line_10] {image=note_small2.png}"
-    $ achievement_manager.unlock("You Rock!")
+    $ achievement_manager.unlock("rockstar")
     scene black with Dissolve(3.0)
     $ ending_manager.mark("rockstar")
     $ renpy.movie_cutscene(creditsm)

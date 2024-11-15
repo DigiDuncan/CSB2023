@@ -360,12 +360,12 @@ label friend_after_fanboy:
     with dissolve
 
     dxcom fightminigame
-    $ achievement_manager.unlock("I Thought This Was A Visual Novel")
+    $ achievement_manager.unlock("rpg")
     n "CS struggles to catch his breath."
     if fanboy_type == "nvidia":
-        $ achievement_manager.unlock("NVIDIA Flex")
+        $ achievement_manager.unlock("nvidia")
     else:
-        $ achievement_manager.unlock("The Threadripper")
+        $ achievement_manager.unlock("amd")
     cs "That was exhilarating!"
     cs "That's right! The rest of you, get out of here!"
     show arceus at right with moveinright

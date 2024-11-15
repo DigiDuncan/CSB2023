@@ -146,17 +146,17 @@ label play_toytrains_game:
     window show
 
     if _return == True:
-        $ achievement_manager.unlock("Lots & Lots Of Trains!")
+        $ achievement_manager.unlock("trains_minigame")
         
         # this doesn't work yet
         # if ToyTrainsGameDisplayable.hp == 3:
-        #    $ achievement_manager.unlock("Conductor Skillz 188")
+        #    $ achievement_manager.unlock("trains_perfect")
         
         stop music fadeout 2.0
         
         $ renpy.jump(minigame_win)
     else:
-        $ achievement_manager.unlock("Lots & Lots Of Trains!")
+        $ achievement_manager.unlock("trains_minigame")
         stop music fadeout 2.0
         
         $ renpy.jump(minigame_loss)

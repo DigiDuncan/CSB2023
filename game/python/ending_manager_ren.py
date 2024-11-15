@@ -2,6 +2,7 @@
 init python:
 """
 
+# TODO: ADD THE NEW ENDINGS HERE
 KNOWN_ENDINGS = [
     "true", "south", "rockstar", "country", "friend", "archival"
 ]
@@ -17,7 +18,7 @@ class EndingManager:
             raise ValueError(f"Unknown ending: {ending}")\
 
         if preferences.csbounciness == 100:
-            achievement_manager.unlock("Boingy Boingy Boingy")
+            achievement_manager.unlock("bouncy")
 
     def seen(self, ending: str) -> bool:
         return ending in persistent.seen_endings

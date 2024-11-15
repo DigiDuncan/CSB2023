@@ -174,7 +174,7 @@ python early:
             renpy.show_screen("music")
             renpy.with_statement(determination)
         if all([a in persistent.heard for a in music_map.keys()]):
-            achievement_manager.unlock("The Brown Album")
+            achievement_manager.unlock("jukebox")
 
     renpy.register_statement(name="music",
         parse = parse_music,
@@ -321,7 +321,7 @@ init python:
         chance = 1 / r
         ret = renpy.random.random() < chance
         if ret:
-            achievement_manager.unlock("F.U.N.")
+            achievement_manager.unlock("fun")
             # Show the indicator. It'll fade out on its own and be hidden next time this runs.
             if rarity == FUN_VALUE_MUSIC:
                 # Music indicator

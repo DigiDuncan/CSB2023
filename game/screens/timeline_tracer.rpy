@@ -157,8 +157,7 @@ screen timeline_tracer():
                                 this_unlocked = True
 
                             # if it needs you to have earned an achievement to unlock
-                            # TODO: rework this whenever digi fixes cheevos to use IDs rather than cheev names
-                            elif "need_achieve" in timeline_map[event] and achieve_map[timeline_map[event]["need_achieve"]]["name"] in persistent.unlocked_achievements:
+                            elif "need_achieve" in timeline_map[event] and timeline_map[event]["need_achieve"] in persistent.unlocked_achievements:
                                 this_unlocked = True
 
                             # TODO: rework this when endings have IDs at all

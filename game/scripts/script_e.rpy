@@ -6,7 +6,7 @@ label e1:
     music end
     scene black with dissolve
     pause 1.0
-    $ achievement_manager.unlock("You Broke It!")
+    $ achievement_manager.unlock("broke")
     n "Deleting persistent{w=0.5}.{w=0.5}.{w=0.5}.{nw=0.5}"
     $ e2 = True
     n "Restarting script{w=0.5}.{w=0.5}.{w=0.5}.{nw=0.5}"

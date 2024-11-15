@@ -1985,7 +1985,7 @@
             "csbiii_east_archival_end": {
                   "name": "Archival",
                   "type": "end",
-                  "need_achieve": "archive",
+                  "need_achieve": "archived",
                   "pos": [50, 13]
             },
             "csbiii_east_stream_end_arrow": {

@@ -726,7 +726,7 @@ label friend2_final_meetup:
     show midge at mid_offscreen_right behind anno with moveinright
     midge "Oh hai."
     $ renpy.movie_cutscene(midge_bl)
-    $ achievement_manager.unlock("A Little Help From My Friends")
+    $ achievement_manager.unlock("friends")
     if nice_car:
         "Blank, Anno, and Midge" "Nice car!"
         cs "Thanks! I've heard that a lot today."
@@ -838,8 +838,8 @@ label friend2_weapon_of_choice:
     window hide
     pause 1.0
     $ renpy.movie_cutscene(woc)
-    $ achievement_manager.unlock("Hopes and Dreams")
-    $ achievement_manager.unlock("Machine Gun")
+    $ achievement_manager.unlock("beat_copguy")
+    $ achievement_manager.unlock("cs_beat_copguy")
     $ persistent.heard.add("weapon_of_choice")
     jump friend2_car_slam
 

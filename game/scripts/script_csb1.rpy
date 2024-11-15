@@ -50,7 +50,7 @@ label csbi_craptop:
         show post_it at t_post_it
     with dissolve
 
-    $ achievement_manager.unlock("ZUP!")
+    $ achievement_manager.unlock("zup")
     pause 1.0
     craptop "Your PC sux. lol."
     if e2:
@@ -94,7 +94,7 @@ label csbi_craptop:
             cs "Welp, time to do nothing today!"
             show cs happy
             cs "Hey guys, see ya!"
-            $ achievement_manager.unlock("Nah.")
+            $ achievement_manager.unlock("nah")
             scene black with dissolve
             pause 2.0
             $ renpy.movie_cutscene(creditsm)
@@ -177,7 +177,7 @@ label csbi_craptop:
         "Yes":
             cs "Yeah... I should probably go pick up a few things."
         "No":
-            $ achievement_manager.unlock("I Don't Like People!")
+            $ achievement_manager.unlock("no_people")
             show cs happy at left
             cs "Screw you, I'm going anyway!"
     play sound sfx_driving volume 0.5
@@ -427,7 +427,7 @@ label csbi_room:
             show cs happy
             cs "Thank you! I appreciate it."
             ed "Well, we'd better get to work. This foundation ain't gonna repair itself!"
-            $ achievement_manager.unlock("Get The Job Done Right")
+            $ achievement_manager.unlock("savers")
             stop music fadeout 3.0
             music end
             scene black with Dissolve(3.0)
@@ -839,7 +839,7 @@ label csbi_end:
     with dissolve
     play music canyon_car volume 0.2 if_changed
     play sound sfx_driving volume 0.5
-    $ achievement_manager.unlock("Overcaffeinated")
+    $ achievement_manager.unlock("overcaffeinated")
     stop music fadeout 3.0
     music end
     pause 1.0
@@ -1024,7 +1024,7 @@ label csbi_direction:
     with MoveTransition(0.25)
     with hpunch
     show cs angry at left with move
-    $ achievement_manager.unlock("HoH SiS's Most Wanted")
+    $ achievement_manager.unlock("csbi")
 
     pause 1.0
     scene black with dissolve

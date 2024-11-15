@@ -298,7 +298,7 @@ label csbiii_boost:
     pause 0.5
     centered "The next day."
     pause 0.5
-    $ achievement_manager.unlock("#1 Rated Pooper")
+    $ achievement_manager.unlock("no_1_pooper")
     scene inside_ltt with dissolve
     pause 0.5
     show cs at offscreenleft
@@ -756,7 +756,7 @@ label csbiii_both_fan:
     luke "Now that you say that..."
     linus "Alright, fine! I guess if you all like it too, we could put some on our channel from time to time."
     show cs happy
-    $ achievement_manager.unlock("Crowd Pleaser")
+    $ achievement_manager.unlock("crowd_pleaser")
     cs "Hell yeah!"
     linus "But, you still have to help with some other videos as well, not just YTPs."
     show cs flipped
@@ -1205,7 +1205,7 @@ label genocide_attack_arc:
     scene washington_road
     show cs dark at left 
     show arceus dark flipped at right
-    $ achievement_manager.unlock("No Mercy")
+    $ achievement_manager.unlock("no_mercy")
     cs "{size=-15}It's now or never."
     n "CS channels CSGod."
 
@@ -1392,7 +1392,7 @@ label genocide_wait_arc:
     show arceus flipped at t_punchup with MoveTransition(0.25)
     pause 1.0
     arceus "Ouch."
-    $ achievement_manager.unlock("No Mercy")
+    $ achievement_manager.unlock("no_mercy")
     show cultist at mid_right with moveinright
     show cultist_2 at right with moveinright
     show cultist_3 at mid_mid_right with moveinright
@@ -1415,7 +1415,7 @@ label csbiii_escape_forest:
     show arceus worried dark at right
     show blue_light at left
     show red_light at right
-    $ achievement_manager.unlock("Pacifist")
+    $ achievement_manager.unlock("pacifist")
     cs "Arceus, quick! Let's escape into the forest!"
     arceus "Alrighty, let's go!"
 
@@ -1790,7 +1790,7 @@ label csbiii_north:
         scene expression "washington_road %s" % compass_current_time
         show expression "cs %s" % compass_current_shader at left
         show expression "arceus angry %s" % compass_current_shader at right
-        $ achievement_manager.unlock("Can We Go Back?")
+        $ achievement_manager.unlock("northerner")
         arceus "I literally just said--"
         arceus "Just pick another direction."
 
@@ -1921,7 +1921,7 @@ label csbiii_west:
         show cs at left
         show arceus angry at right
         with dissolve
-        $ achievement_manager.unlock("Ocean Man")
+        $ achievement_manager.unlock("ocean_man")
         arceus "Player. {w=0.5}Stop. {w=0.5}Going. {w=0.5}West."
         $ compass_west_counter = 4
         $ compass_current_shader = ""

@@ -3909,7 +3909,7 @@ label train_defeated_perfect_tate:
 
     $ persistent.seen.add("tate_ex")
     $ persistent.seen.add("perfect_tate")
-    $ achievement_manager.unlock("Main Character Syndrome")
+    $ achievement_manager.unlock("vs-tate")
     # TODO: audio is not fully ready yet - tate
     dxcom tate_ex
     

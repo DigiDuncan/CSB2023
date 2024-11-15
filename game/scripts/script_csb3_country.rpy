@@ -844,7 +844,7 @@ label england_good_ramsay:
     cs "Just kidding! I still have a backup, but I'm gonna keep it secret."
     kitty "Ah, okay."
     arceus "Well, you did quite a bit already. Is there anything else you want to do here?"
-    $ achievement_manager.unlock("Master Chef")
+    $ achievement_manager.unlock("ramsay")
     jump england_menu
     
 label england_top_zone:
@@ -1028,7 +1028,7 @@ label england_top_win:
     cs "Yeah, I'll have to transfer this to USD when I get back home."
     cs "I hope those cops forgot about me by now."
     arceus "Anyways, is there anything else you want to do here in England?"
-    $ achievement_manager.unlock("Bottom Gear")
+    $ achievement_manager.unlock("bottom_gear")
     jump england_menu
 
 label england_scott_zone:
@@ -1159,7 +1159,7 @@ label england_scott_move:
     cs "Yeah, and I get to be in his video!"
     kitty "Well, looks like you got two for one, then!"
     kitty "Is there anything else you want to do?"
-    $ achievement_manager.unlock("The Man In The Red Shirt")
+    $ achievement_manager.unlock("tom_scott")
     jump england_menu
 
 label england_done:
@@ -1505,7 +1505,7 @@ label japan_anime_adventure:
     music end    
     scene black with dissolve
     n "CS walks away proudly."
-    $ achievement_manager.unlock("I'm Scared Right Now...")
+    $ achievement_manager.unlock("nekopara")
     scene tokyo_street_night
     show cs at center
     with dissolve
@@ -1573,7 +1573,7 @@ label japan_karaoke:
     show cs
     with dissolve
     $ persistent.heard.add("bakamitai")
-    $ achievement_manager.unlock("Dame Da Ne")
+    $ achievement_manager.unlock("karaoke")
     if fun_value(FUN_VALUE_COMMON):
         play music yuuka_town volume 0.4 if_changed
         music yuuka_town
@@ -1718,7 +1718,7 @@ label japan_miku_pizza:
     cs "Well, Miku, this was very nice, but I need to head on my way."
     miku "Okay! Thanks for sharing lunch with me, this was very nice."
     cs "Bye, Miku!"
-    $ achievement_manager.unlock("Have Some Fucking Pizza!")
+    $ achievement_manager.unlock("miku")
     scene black with dissolve
     scene tokyo_street
     show cs at center with moveinleft
@@ -2124,7 +2124,7 @@ label sweden_aurora_borealis:
     with dissolve
     n "Finally, the sky lights up, and CS is enthralled."
     cs "Wow, that's beautiful! Totally worth killing that pig."
-    $ achievement_manager.unlock("Obviously Grilled")
+    $ achievement_manager.unlock("steamed_hams")
     show cs
     cs "Well, I should get back to my bus."
     scene black with dissolve
@@ -2319,7 +2319,7 @@ label sweden_ikea:
     show cs disappointed
     # CS flips one way and then back as if looking back and forth
     cs "Well, I'm out of that Ikea now. Hopefully that clown finds a way out too."
-    $ achievement_manager.unlock("Oak, Pine, And Norsemen")
+    $ achievement_manager.unlock("ikea")
     cs "May as well head back to the bus stop and find something else to do."
     hide cs with moveoutright
     pause 2.0
@@ -2537,7 +2537,7 @@ label sweden_joel:
     cs "Great idea. Risking my life and eating reindeer was enough excitement for one night. I'm exhausted."
     stop music fadeout 3.0
     scene black with dissolve
-    $ achievement_manager.unlock("Grand Dad")
+    $ achievement_manager.unlock("joel")
     n "After a good night's sleep, CS gets up and heads out to the nearest bus stop."
     scene bus_map with dissolve
     jump sweden_menu
