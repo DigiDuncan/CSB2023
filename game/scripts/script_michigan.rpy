@@ -834,6 +834,9 @@ label michigan_interstate_69_old:
     jump true_ohio
 
 label michigan_interstate_69:
+
+    call screen warning("The following scene is a major tonal shift.\nIt may be disconcerting to some viewers.", "Warnings: creepy forests, haunting music, slow descents into madness.", "back_out_i69")
+
     scene car plains
     show billy car
     stop music fadeout 3.0
