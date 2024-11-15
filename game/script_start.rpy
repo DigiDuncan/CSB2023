@@ -3208,6 +3208,7 @@ define audio.sfx_snow_walk = "sfx/sfx_snow_walk.ogg"
 define audio.sfx_snowfall = "sfx/sfx_snowfall.ogg"
 define audio.sfx_somethingchanged = "sfx/sfx_somethingchanged.ogg"
 define audio.sfx_sparkles = "sfx/sfx_sparkles.ogg"
+define audio.sfx_special_unlock = "sfx/sfx_special_unlock.ogg"
 define audio.sfx_speen = "sfx/sfx_speen.ogg"
 define audio.sfx_spellcast = "sfx/sfx_spellcast.ogg"
 define audio.sfx_spikes = "sfx/sfx_spikes.ogg"
@@ -3407,8 +3408,6 @@ init python:
 default minigame_win = "secret_dx"
 default minigame_loss = "secret_dx"
 
-default typewriter_text = "Hello, world!"
-
 default current_dxcom = "1"
 
 python early:
@@ -3500,18 +3499,6 @@ label before_main_menu:
 label start:  # this might be required??
     # yep, it's required, but i'm fixing it to default to main menu instead - tate
     return
-
-init python:
-    import math
-
-    def show_typewriter(st, at):
-        if st > 2.0:
-            return Text(typewriter_text, textalign = 0.5, size = 100, outlines=[(absolute(10), "#000", absolute(0), absolute(0))]), 0.1
-        else:
-            d = Text(typewriter_text[:math.ceil((st / 2.0) * len(typewriter_text))], textalign = 0.5, size = 100, outlines=[(absolute(10), "#000", absolute(0), absolute(0))])
-            return d, 0.1
-
-image typewriter = DynamicDisplayable(show_typewriter)
 
 define shake1 = { "master" : hpunch }
 define shake2 = { "master" : vpunch }

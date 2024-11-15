@@ -90,6 +90,12 @@ init python:
 
 label awawa_tate_composite_test:
 
+    scene black with dissolve
+    n "You enter Tate's secret test area."
+
+    $ persistent.awawa_mode = True
+    show screen special_unlock("Awa awawa? AAAAAA! You've unlocked Awawa Mode! Check it out in CSettings!")
+
     stop music
     scene roombacks
     show tate 
