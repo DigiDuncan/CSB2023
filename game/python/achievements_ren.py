@@ -23,6 +23,7 @@ class AchievementData(TypedDict):
 
 @dataclass
 class Achievement:
+    id: str
     name: str
     locked_desc: str
     unlocked_desc: str
@@ -40,14 +41,14 @@ class Achievement:
     @property
     def unlocked(self) -> bool:
         if not self.stepped:
-            return self.name in persistent.unlocked_achievements 
+            return self.id in persistent.unlocked_achievements 
         else:
-            return self.current_steps >= self.steps or self.name in persistent.unlocked_achievements
+            return self.current_steps >= self.steps or self.id in persistent.unlocked_achievements
 
     @property
     def current_steps(self) -> int:
         if not self.stepped:
-            return int(self.name in persistent.unlocked_achievements)
+            return int(self.id in persistent.unlocked_achievements)
         var = getattr(persistent, self.tracker)
         if isinstance(var, set):
             return len(var)
@@ -86,7 +87,7 @@ class Achievement:
         return False
 
     def __str__(self) -> str:
-        return f"<Achievement \"{self.name}\": {'Unlocked' if self.unlocked else 'Locked'} ({self.progress:.2%}%)>"
+        return f"<Achievement {self.id} \"{self.name}\": {'Unlocked' if self.unlocked else 'Locked'} ({self.progress:.2%}%)>"
 
     def __repr__(self) -> str:
         return self.__str__()
@@ -95,7 +96,7 @@ class Achievement:
         if self.unlocked:
             return
 
-        persistent.unlocked_achievements.add(self.name)
+        persistent.unlocked_achievements.add(self.id)
         if show_screen:
             renpy.with_statement(determination)
             renpy.show_screen("popup", self)
@@ -103,7 +104,7 @@ class Achievement:
 
     @classmethod
     def from_JSON(cls, id: str, data: AchievementData) -> "Achievement":
-        a = Achievement(data["name"], data["locked"], data["unlocked"], data["img"], data["type"], data.get("hidden", False), data.get("dx", False))
+        a = Achievement(id, data["name"], data["locked"], data["unlocked"], data["img"], data["type"], data.get("hidden", False), data.get("dx", False))
         if "steps" in data:
             if isinstance(data["steps"], int):
                 a.steps = data["steps"]
@@ -122,36 +123,36 @@ class Achievement:
 
 class AchievementManager:
     def __init__(self) -> None:
-        self.achievements: list[Achievement] = []
+        self.achievements: dict[str, Achievement] = {}
         with renpy.open_file("data/achievements.json") as j:
             jsondata = json.load(j)
         for k, v in jsondata.items():
-            self.achievements.append(Achievement.from_JSON(k, v))
+            self.achievements[k] = Achievement.from_JSON(k, v)
 
     @property
     def unlocked(self) -> list[Achievement]:
-        return [a for a in self.achievements if a.unlocked]
+        return [a for a in self.achievements.values() if a.unlocked]
 
     @property
     def locked(self) -> list[Achievement]:
-        return [a for a in self.achievements if not a.unlocked]
+        return [a for a in self.achievements.values() if not a.unlocked]
 
-    def get(self, name: str) -> Achievement:
+    def get(self, id: str) -> Achievement:
         for achievement in self.achievements:
-            if achievement.name == name:
+            if achievement.id == id:
                 return achievement
 
-        raise ValueError(f"Unrecognized achievement {name}")
+        raise ValueError(f"Unrecognized achievement {id}")
     
-    def unlock(self, name: str, show_screen = True):
-        ach = self.get(name)
+    def unlock(self, id: str, show_screen = True):
+        ach = self.get(id)
         if not ach.unlocked:
             renpy.sound.play("audio/sfx/sfx_achieve.ogg", channel = "sound", loop = False)
             ach.unlock(show_screen)
 
     def unlock_all(self):
         for achievement in self.achievements:
-            self.unlock(achievement.name, show_screen = False)
+            self.unlock(achievement.id, show_screen = False)
 
     def reset(self):
         persistent.unlocked_achievements = set()
