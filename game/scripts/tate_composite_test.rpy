@@ -98,23 +98,42 @@ label awawa_tate_composite_test:
     tate "Welcome to my testing chamber."
     tate "Let's try out Awawa Mode first."
 
-    $ test_string = "Test dialogue. THIS CODE IS SO STUPID OMG.\n{i}Italic,{/i} {font=azsz}different font.{/font} {b}Bold{/b} also exists, but it's {sc=3}ugly as sin.{/sc} {color=FFFF00}Yellow{/color} is pretty cool, but so is {a=https://allezsoyez.com}my website.{/a}"
-    $ awa = awawa_mode(test_string, 25)
-    $ awa2 = awawa_mode(test_string, 50)
-    $ awa3 = awawa_mode(test_string)
+    # store current awawa settings
+    $ awawa_is_on = preferences.awawa_mode
+    $ awawa_setting = preferences.awawa_chance
 
+    # begin test 
+    $ preferences.awawa_mode = False
+    $ preferences.awawa_chance = 0
+    
     n "0%% awawa."
-    tate "[test_string]"
+    tate "Test dialogue. THIS CODE IS SO STUPID, OMG. \n{i}Italic,{/i} {font=azsz}different font.{/font}{w=0.25} {b}Bold{/b} also exists, but it's {sc=3}ugly as sin.{/sc} {w=0.25}{color=FFFF00}Yellow{/color} is pretty cool, but so is {a=https://allezsoyez.com}my website.{/a}"
+
+    $ preferences.awawa_mode = True
+    
+    $ preferences.awawa_chance = 0
     n "25%% awawa."
-    tate "[awa]"
+    $ preferences.awawa_chance = 25
+    tate "Test dialogue. THIS CODE IS SO STUPID, OMG. \n{i}Italic,{/i} {font=azsz}different font.{/font}{w=0.25} {b}Bold{/b} also exists, but it's {sc=3}ugly as sin.{/sc} {w=0.25}{color=FFFF00}Yellow{/color} is pretty cool, but so is {a=https://allezsoyez.com}my website.{/a}"
+
     show tate sheepish
+    $ preferences.awawa_chance = 0
     n "50%% awawa."
-    tate "[awa2]"
+    $ preferences.awawa_chance = 50
+    tate "Test dialogue. THIS CODE IS SO STUPID, OMG. \n{i}Italic,{/i} {font=azsz}different font.{/font}{w=0.25} {b}Bold{/b} also exists, but it's {sc=3}ugly as sin.{/sc} {w=0.25}{color=FFFF00}Yellow{/color} is pretty cool, but so is {a=https://allezsoyez.com}my website.{/a}"
+
+    $ preferences.awawa_chance = 100
+
     n "100%% awawa."
     show tate sheepish blush
-    tate "[awa3]"
+    tate "Test dialogue. THIS CODE IS SO STUPID, OMG. \n{i}Italic,{/i} {font=azsz}different font.{/font}{w=0.25} {b}Bold{/b} also exists, but it's {sc=3}ugly as sin.{/sc} {w=0.25}{color=FFFF00}Yellow{/color} is pretty cool, but so is {a=https://allezsoyez.com}my website.{/a}"
+
+    $ preferences.awawa_mode = awawa_is_on
+    $ preferences.awawa_chance = awawa_setting 
+    n "Awawa Mode has been reset to its initial values."
+
     show tate srs
-    tate "I sure hope that worked. This is silly..."
+    tate "I sure hope that worked. That's hard to read..."
     
     hide tate with dissolve
     n "Next test is for Tate's layered sprite."

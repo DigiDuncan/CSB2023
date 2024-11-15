@@ -17,8 +17,8 @@ def awawa_mode(input_text, frequency = 100):
     next_word = ""
     letter_count = 0
 
-    # look close, it's three groups: tags, whitespace, punctuation, respectively.
-    regex_disaster = re.compile("(\{\/*.=*.*?\})+|( |\n)+|([\-\?!@#\$%\^&\*\(\)_\\\.,\/<>\+=\"':;\{\}\[\]~`、。])")
+    # look close, it's four groups: text tags, whitespace, inline variables, and punctuation respectively.
+    regex_disaster = re.compile("(\{.*?\})+|( |\n)+|(\[.*\])|([\-\?!@#\$\^&\*_\\\.,\/<>\+\[\]\{\}\(\)=\"':;~`、。])")
 
     # split it into pieces
     splitput = regex_disaster.split(input_text)
@@ -29,27 +29,30 @@ def awawa_mode(input_text, frequency = 100):
         # ignore blank items
         if item is None:
             pass
-        # spit out any tags, whitespace, or punctuation as-is
-        elif re.fullmatch(regex_disaster, str(item)):
+        # spit out any tags, variables, whitespace, or punctuation as-is
+        elif re.match(regex_disaster, str(item)):
             awawafication = awawafication + str(item)
-        else:
+        # let's see if this actually stops prematurely cutting off tags...
+        elif item is not None and not re.match(regex_disaster, str(item)):
             # only do the replacement according to frequency (default = 100 (always substitute)))
             awawa_chance = frequency / 100
             if renpy.random.random() <= awawa_chance:
                 # if a multi-character string is all-caps, have a 50/50 shot of it just becoming "AAAAAA"
-                if item.isupper() and len(item) > 1:
+                # also treat numbers as capital letters.
+                if (item.isupper() or item.isnumeric()) and len(item) > 1:
                     if renpy.random.random() <= 50 / 100:
                         for letter in item:
                             next_word = next_word + "A"
-                    else:
+                    # use default swap (i should write this nicer somehow later)
+                    else: 
                         for letter in item:
                             if letter_count % 2 == 0:
-                                if letter.isupper():
+                                if letter.isupper() or item.isnumeric():
                                     next_word = next_word + "A"
                                 else:
                                     next_word = next_word + "a"
                             else:
-                                if letter.isupper():
+                                if letter.isupper() or item.isnumeric():
                                     next_word = next_word + "W"
                                 else:
                                     next_word = next_word + "w"
@@ -58,12 +61,12 @@ def awawa_mode(input_text, frequency = 100):
                 else:
                     for letter in item:
                         if letter_count % 2 == 0:
-                            if letter.isupper():
+                            if letter.isupper() or item.isnumeric():
                                 next_word = next_word + "A"
                             else:
                                 next_word = next_word + "a"
                         else:
-                            if letter.isupper():
+                            if letter.isupper() or item.isnumeric():
                                 next_word = next_word + "W"
                             else:
                                 next_word = next_word + "w"
@@ -86,6 +89,8 @@ def awawa_mode(input_text, frequency = 100):
             # leave unaffected words alone
             else:
                 awawafication = awawafication + str(item)
+        else:
+            awawafication = awawafication + str(item)
 
     awawafied = awawafication
     return awawafied
