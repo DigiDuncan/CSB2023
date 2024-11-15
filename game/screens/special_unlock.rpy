@@ -62,4 +62,4 @@ screen special_unlock(flavor_text):
     # the entire screen acts as a button here so we can click anywhere to continue.
     button:
         xysize (1920, 1080)
-        action Hide("special_unlock")
+        action Return()

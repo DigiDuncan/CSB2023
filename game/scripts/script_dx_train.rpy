@@ -3752,9 +3752,7 @@ label train_tate_ex_win:
     stop music
     music end
 
-    show screen warning("The following section contains flashing lights and colors.", "Persons with photosensitive conditions may wish to skip this section.", "back_out_perfect_tate")
-    # TODO: there MUST be some better way to force this to wait until the player makes a choice...
-    ""
+    call screen warning("The following section contains flashing lights and colors.", "Persons with photosensitive conditions may wish to skip this section.", "back_out_perfect_tate")
 
     scene white with dissolve
     show tate_falling at manual_pos(0.5, -0.5, 0.5)

@@ -25,4 +25,4 @@ screen warning(warning_text, triggers, leave_label):
             xalign 0.5
             text_textalign 0.5
             text_size 36
-            action Hide("warning")
+            action Return()
