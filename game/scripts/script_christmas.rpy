@@ -1469,6 +1469,7 @@ label ce_checkout:
     cs "Ah crap, I scanned this one too many times."
     n "The worker comes back."
     show pakoo tgt at mid_right with moveinright
+    show pakoo tgt happy with determination
     tgt_worker "Hello, what's wrong?"
     show cs coat
     cs "Sorry, I scanned this pie 7 times."
@@ -1491,6 +1492,7 @@ label ce_checkout:
     show pakoo tgt at mid_right with moveinright
     n "The target employee runs back over."
     cs "These are ringing up 11.99 per pie!"
+    show pakoo tgt upset
     cs "They said they were like 20-percent off on the sign over there!"
     tgt_worker "Hmm..."
     show pakoo tgt scan
@@ -1501,6 +1503,7 @@ label ce_checkout:
     cs "No?"
     tgt_worker "You need Target Circle to get this deal. Sorry."
     show cs coat angry
+    show pakoo tgt upset
     cs "Really?"
     tgt_worker "I'm sorry, but that's just how the deal works."
     show cs coat disappointed
@@ -1512,9 +1515,9 @@ label ce_checkout:
     cs "Seriously?!"
     show cs coat angry
     n "The employee runs over again."
-    show pakoo tgt at mid_right with moveinright
+    show pakoo tgt upset at mid_right with moveinright
     tgt_worker "Oh yeah. I should probably do that for you."
-    show pakoo tgt at center with move
+    show pakoo tgt upset at center with move
     show pakoo tgt scan
     pause 0.5
     show pakoo tgt tap
@@ -1525,6 +1528,7 @@ label ce_checkout:
     cs "What? Do you need something from me?"
     tgt_worker "Yeah, I need to check your ID."
     show cs coat pissed
+    show pakoo tgt upset
     cs "Are you kidding me?"
     tgt_worker "Yes, they will kill me if you don't do it."
     show cs coat disappointed
