@@ -65,6 +65,7 @@ image tate_comp dusk  = LayeredImageProxy("tate_comp", Transform(matrixcolor = d
 image tate_comp dark = LayeredImageProxy("tate_comp", Transform(matrixcolor = darkmatrix))
 image tate_comp sil_white  = LayeredImageProxy("tate_comp", Transform(matrixcolor = sil_white_matrix))
 image tate_comp sil_black = LayeredImageProxy("tate_comp", Transform(matrixcolor = sil_black_matrix))
+image tate_comp sepia = LayeredImageProxy("tate_comp", Transform(matrixcolor = SepiaMatrix()))
 
 image tate_comp flipped = LayeredImageProxy("tate_comp", Transform(xzoom = -1))
 
@@ -72,6 +73,7 @@ image tate_comp dusk flipped = LayeredImageProxy("tate_comp", Transform(matrixco
 image tate_comp dark flipped = LayeredImageProxy("tate_comp", Transform(matrixcolor = darkmatrix, xzoom = -1))
 image tate_comp sil_white flipped = LayeredImageProxy("tate_comp", Transform(matrixcolor = sil_white_matrix, xzoom = -1))
 image tate_comp sil_black flipped = LayeredImageProxy("tate_comp", Transform(matrixcolor = sil_black_matrix, xzoom = -1))
+image tate_comp sepia flipped = LayeredImageProxy("tate_comp", Transform(matrixcolor = SepiaMatrix(), xzoom = -1))
 
 # this section is just for fun mostly. a randomizer!
 init python:
@@ -81,7 +83,7 @@ init python:
         faces = renpy.random.choice(["happy", "sad", "cry", "sheepish", "shock", "serious", "smug", "stare", "furious"])
         tearful = renpy.random.choice(["-tears", "tears"])
         gloomy = renpy.random.choice(["-gloom", "gloom"])
-        shaders = renpy.random.choice(["", "dusk", "dark", "sil_white", "sil_black"])
+        shaders = renpy.random.choice(["", "dusk", "dark", "sil_white", "sil_black", "sepia"])
         flipper = renpy.random.choice([" -flipped", " flipped"])
 
         compiled_sprite = "tate_comp " + outfits + " " + blushing + " " + faces + " " + tearful + " " + gloomy + " " + shaders + flipper
@@ -110,7 +112,7 @@ label awawa_tate_test:
         menu:
             tate "Which test would you like?{fast}"
 
-          ########## SPRITE TEST ##########
+            ########## SPRITE TEST ##########
 
             "Layered Sprite Test":
                 hide tate with dissolve
@@ -176,29 +178,48 @@ label awawa_tate_test:
                 "White"
                 show tate_comp sil_black
                 "Black"
-                show tate_comp -sil_black flipped
+                show tate_comp sepia
+                "Sepia"
+                show tate_comp -sepia flipped
                 "Also, let's flip!"
                 show tate_comp -flipped
                 "Flip them back!"
 
                 show tate_comp casual sheepish
                 tate "Did {i}any{/i} of that work?"
-                show tate_comp casual shock
-                tate "What do you {i}mean{/i} I have to go through the randomizer?!" with vpunch
-
-                python:
-                    iterations = 30
-                    for i in range(iterations):
-                        this_iteration = awawa()
-                        renpy.show(this_iteration)
-                        narrator(str(i+1) + ": " + this_iteration)
-
-                show tate_comp casual sheepish
                 hide tate_comp
 
                 jump .awawa_menu
 
-          ########## AWAWA MODE ##########
+            ########## SPRITE RANDOMIZER ##########
+            "Sprite Randomizer":
+                show tate sad
+                tate "Ew, I hate the randomizer."
+
+                python:
+                    iterations = ""
+                    iterations = renpy.input("How many iterations?", iterations)
+
+                    try:
+                        renpy.hide("tate")
+                        renpy.hide("tate_comp")
+                        iterations = int(iterations)
+
+                        for i in range(iterations):
+                            this_iteration = awawa()
+                            renpy.show(this_iteration)
+                            narrator(str(i+1) + ": " + this_iteration)
+
+                        renpy.hide("tate_comp")
+                        renpy.show("tate", what="tate sheepish")
+                        renpy.say(tate, "Wow, {w=0.25}that sucked. But, {w=0.25}did it work?")
+                    except:
+                        renpy.show("tate", what="tate sheepish")
+                        renpy.say(tate, "Something went wrong, {w=0.25}sorry.")
+
+                jump .awawa_menu
+
+            ########## AWAWA MODE ##########
 
             "Awawa Mode":
                 tate "Let's try out Awawa Mode."
@@ -242,14 +263,14 @@ label awawa_tate_test:
                 tate "I sure hope that worked. That's hard to read..."
                 jump .awawa_menu
 
-          ########## UNLOCK SCREEN ##########
+            ########## UNLOCK SCREEN ##########
 
             "Unlock Screen":
                 call screen special_unlock("Pretend something cool got unlocked here! Click anywhere to continue.")
                 tate "Lookin' good!"
                 jump .awawa_menu
 
-          ########## FORCE-TEST ACHIEVEMENTS ##########
+            ########## FORCE-TEST ACHIEVEMENTS ##########
 
             "Achievement Pop-Ups":
                     
@@ -270,7 +291,7 @@ label awawa_tate_test:
                                 
                 jump .awawa_menu
 
-          ########## Cancel ##########
+            ########## Cancel ##########
 
             "None, I'm Done":
                 tate "Cool. See ya later!"
