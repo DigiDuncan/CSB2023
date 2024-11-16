@@ -4,12 +4,16 @@
 
 init python:
     import json
+    from math import ceil
+
     with renpy.open_file('data/item_collection.json') as json_file:
         item_map = json.load(json_file)
 
     for n in persistent.collected:
         if n not in item_map:
             print(f"WARNING: Item '{n}' not in item_map!")
+
+    max_y = math.ceil( len(item_map.keys()) / 5 )
 
     def mark_read(k):
         persistent.read.add(k)
@@ -45,9 +49,6 @@ screen item_nav():
             $ counter = 0
             $ xstart = 0
             $ ystart = 0
-            
-            $ from math import ceil
-            $ max_y = math.ceil( len(item_map.keys()) / 5 )
 
             grid 5 max_y:
                 for k in item_map:

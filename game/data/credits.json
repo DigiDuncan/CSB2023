@@ -1,0 +1,88 @@
+{
+    "All": {
+
+        "_writing": {
+            "Lead Writer": ["Pakoo"],
+            "Additional Writing": ["DigiDuncan", "Arceus3251", "Aria \"Estroteric\"", "Tate \"alleZSoyez\"", "meancarnavor"],
+            "Lead Editor": ["Tate \"alleZSoyez\""]
+        },
+
+        "_programming": {
+            "Backend Programming": ["DigiDuncan"],
+            "Frontend Programming": ["Arceus3251"],
+            "Addt'l Programming": ["Pakoo", "Tate \"alleZSoyez\""]
+        },
+
+        "_more_programming": {
+            "Kinetic Text Tags": ["Daniel Westfall"],
+            "Codex": ["Skolatztika"],
+            "Achievements System Assistance": ["KiloOscarSix"],
+            "Pixellated Transition Programming": ["AxelKong"],
+            "Awawa Mode Programming Assistance": ["greyfade"]
+        },
+
+        "_testing": {
+            "Alpha Testing": ["Arceus3251"],
+            "Beta Testing": ["Tate \"alleZSoyez\"", "4Bakers", "BubbleTheSlime", "meancarnavor", "Mikapara", "UndeadKitty"]
+        },
+
+        "Character Sprites": {
+            
+            "CS-ocola": ["Greta \"lovelycloud\""],
+            "Arceus": ["UndeadKitty"],
+            "Kitty": [""],
+            "DigiDuncan": ["Yukio \"nyutral\""],
+            "Aria": ["Aria \"Estroteric\""],
+            "Pakoo": ["Pakoo"],
+            "Bubble": ["BubbleTheSlime"],
+            "Tate": ["Tate \"alleZSoyez\""],
+            "Tate EX": [""],
+            "Perfect Tate": [""],
+            "Mean": [""],
+            "Mean (Human)": ["Mushroom Man"],
+            "Ges": ["Mikapara"]
+        },
+        
+        "_more_art":{
+            "Addt'l Art": ["EddieJustEddie", "blanknam3d", "meancarnavor", "Guithais", "Tate \"alleZSoyez\"", "Midgalicis", "UndeadKitty", "Pakoo", "4Bakers"]
+        },
+
+        "_visual": {
+            "Background Management": ["Pakoo"],
+            "Addt'l Background Assistance": ["Arceus3251", "DigiDuncan", "Aria \"Estroteric\"", "Mrs. 8923", "4Bakers", "Tate \"alleZSoyez\""],
+            "Asset Remastering": ["4Bakers", "DigiDuncan", "Tate \"alleZSoyez\""],
+            "Sprite Management": ["Pakoo", "DigiDuncan", "Tate \"alleZSoyez\""],
+            "3D Rendering": ["4Bakers"],
+            "UI Design": ["DigiDuncan", "Arceus3251", "Pakoo", "Tate \"alleZSoyez\""],
+            "Cinematography": ["Tate \"alleZSoyez\""]
+        },
+
+        "_audio": {
+            "Soundtrack Management": ["Pakoo"],
+            "Beep Management": ["Pakoo"],
+            "Addt'l Audio Assistance": ["DigiDuncan", "4Bakers", "Tate \"alleZSoyez\"", "blanknam3d"]
+        },
+
+        "Music": { "DO NOT PUT ANYTHING HERE": ["READ MUSIC FROM JUKEBOX JSON"] },
+
+        "_misc": {
+            "Culture Consultant": ["Aria \"Estroteric\""],
+            "Automotive Consultant": ["blanknam3d"],
+            "Locomotive Consultant": ["meancarnavor"],
+            "In Loving Memory /j": ["ItsNovaHere"],
+            "Executive Producer": ["SurgeTheRaichu"],
+            "Reality Repair Expert": ["Iris"],
+            "Technical Support": ["blanknam3d"]
+        },
+
+        "Special Thanks": {
+            "cs188": ["for inspiring this game"],
+            "The CSCord": ["for starting it all"],
+            "DPN": ["and its loving circle of support"],
+            "Tris": ["and the Shattered Realms community"],
+            "Our significant others": ["for holding us together"],
+            "Cody and PJ": ["for hosting Digi and Arceus at their home for a time during this game's development"],
+            "YOU!":["for waiting five (six?) years for this. We hope it was worth it."]
+        }
+    }
+}

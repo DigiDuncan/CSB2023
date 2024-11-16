@@ -291,6 +291,16 @@ label awawa_tate_test:
                                 
                 jump .awawa_menu
 
+            ########## Credits Roll ##########
+            
+            "Credits Roll":
+                tate "Here we go!"
+                
+                call screen credits_roll()
+
+                tate "Did we do it?"
+                jump .awawa_menu
+            
             ########## Cancel ##########
 
             "None, I'm Done":

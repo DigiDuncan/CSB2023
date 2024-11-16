@@ -68,8 +68,9 @@ define config.font_name_map["jp"] = "MochiyPopOne-Regular.ttf"
 # Register other fonts
 define config.font_name_map["azsz"] = "AllerDisplay_Std_Rg_0.ttf"
 
-# Force multilingual text for music popup and jukebox
+# Force multilingual text for music popup, jukebox, credits
 define config.font_name_map["music_text"] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add("Yokelvision.otf", 0x0000, 0x2212).add("MochiyPopOne-Regular.ttf", 0x0000, 0xffff)
+define config.font_name_map["credits_music"] = FontGroup().add("FiraCode-Retina.ttf", 0x2206, 0x2206).add("impact.ttf", 0x0000, 0x2212).add("CP_Font_1.otf", 0x0000, 0xffff)
 
 # NO MORE MOUSE CURSOR HOUDINI
 define config.mouse_hide_time = None
