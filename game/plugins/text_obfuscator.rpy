@@ -15,4 +15,4 @@ init python:
 
             new_text = new_text + next_char
 
-        return new_text
+        return "{color=#888888}{font=LibreBarcode128-Regular.ttf}"+new_text

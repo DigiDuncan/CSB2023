@@ -10,12 +10,11 @@ init python:
 
     global credits_map
     global music_map
-    global tags_map
 
     credits_map = credits_file
     # sort jukebox by artist this time
-    music_map = sorted(jukebox_file["tracks"], key=lambda a: jukebox_file["tracks"][a]["artist"])
-    tags_map = jukebox_file["tags"]
+    #music_map = sorted(jukebox_file["tracks"], key=lambda a: jukebox_file["tracks"][a]["artist"])
+    music_map = jukebox_file["tracks"]
 
 screen credits_roll(route="All", bgm="goodbye_summer_hello_winter.ogg"):
 
@@ -23,9 +22,11 @@ screen credits_roll(route="All", bgm="goodbye_summer_hello_winter.ogg"):
     zorder 1
 
     on "show" action Play("music", bgm, loop=False, if_changed=True)
+
     for b in music_map:
-        if music_map[b]["file"] == bgm:
+        if music_map[b]["file"] == bgm and b not in persistent.heard:
             $ persistent.heard.add(b)
+            break
 
     # by default, show the full game's credits. this will allow us to write credits per-route at a later date.
     # chosen route MUST match jukebox JSON tagging
@@ -166,6 +167,7 @@ screen credits_roll(route="All", bgm="goodbye_summer_hello_winter.ogg"):
 
                                                         vbox:
                                                             xalign 1.0
+                                                            xsize 600
                                                             text "{font=music_text}"+artist:
                                                                 xalign 1.0
                                                 
@@ -187,9 +189,21 @@ screen credits_roll(route="All", bgm="goodbye_summer_hello_winter.ogg"):
                                                     text thanks_for_text+"\n":
                                                         xalign 0.5
 
+                        # DPN logo
+                        frame:
+                            background None
+                            ysize 500
                         image "gui/credits/dpn_logo.png":
                             xalign 0.5
                             yalign 1.0
+                        text "DPN Games":
+                            yoffset -128
+                            size 96
+                            xalign 0.5
+                        text "MMXXIV":
+                            yoffset -128
+                            size 96
+                            xalign 0.5
 
 
     ########## CLICK ANYWHERE TO KILL IT ##########
