@@ -511,8 +511,8 @@
     },
     "fin":{
         "name": "Fin.",
-        "locked": "See every ending",
-        "unlocked": "See every ending",
+        "locked": "See every ending.",
+        "unlocked": "See every ending.",
         "img": "end",
         "type": "extra",
         "steps": "ending_count",

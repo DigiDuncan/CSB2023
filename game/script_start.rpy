@@ -3486,7 +3486,7 @@ label before_main_menu:
                     renpy.show_screen("popup", next(chievos))
                     achievement_manager.unlock("fin", show_screen = False)
                     persistent.creative_mode = True
-                    renpy.call_screen("special_unlock", "Noice! You've unlocked Creative Mode! Check out the new options in Extras!")
+                    renpy.call_screen("special_unlock", "Noice! You've unlocked Creative Mode! Check out all the new stuff in Extras!")
 
     if not persistent.seen_splash:
         if not renpy.music.is_playing():
