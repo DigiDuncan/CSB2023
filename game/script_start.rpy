@@ -32,6 +32,7 @@ init 10 python:
         persistent.csb2_unlocked = True
         persistent.csb3a_unlocked = True
         persistent.csb3b_unlocked = True
+        persistent.awawa_mode = True
         for label in renpy.get_all_labels():
             renpy.mark_label_seen(label)
 

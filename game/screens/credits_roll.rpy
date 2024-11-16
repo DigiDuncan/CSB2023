@@ -26,7 +26,10 @@ screen credits_roll(route="All"):
 
     add color("#000000")
 
+    # TODO: this will not be a scrollable frame forever, just until i make sure formatting is correct
     frame:
+        background None
+
         viewport:
             mousewheel True
             draggable True
@@ -174,6 +177,6 @@ screen credits_roll(route="All"):
 
 
     ########## CLICK ANYWHERE TO KILL IT ##########
-    # button:
-        # xysize (1920, 1080)
-        # action Return()
+    button:
+        xysize (1920, 1080)
+        action Return()
