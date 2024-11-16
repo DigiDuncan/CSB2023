@@ -13,13 +13,19 @@ init python:
     global tags_map
 
     credits_map = credits_file
-    music_map = jukebox_file["tracks"]
+    # sort jukebox by artist this time
+    music_map = sorted(jukebox_file["tracks"], key=lambda a: jukebox_file["tracks"][a]["artist"])
     tags_map = jukebox_file["tags"]
 
-screen credits_roll(route="All"):
+screen credits_roll(route="All", bgm="goodbye_summer_hello_winter.ogg"):
 
     modal True
     zorder 1
+
+    on "show" action Play("music", bgm, loop=False, if_changed=True)
+    for b in music_map:
+        if music_map[b]["file"] == bgm:
+            $ persistent.heard.add(b)
 
     # by default, show the full game's credits. this will allow us to write credits per-route at a later date.
     # chosen route MUST match jukebox JSON tagging
@@ -36,8 +42,6 @@ screen credits_roll(route="All"):
             pagekeys True
             side_yfill True
             scrollbars "vertical"
-        
-            yfill True
 
             fixed:
                 #background None
@@ -130,14 +134,26 @@ screen credits_roll(route="All"):
 
                                                 for track in music_map:
 
-                                                    # hide unheard tracks
-                                                    if track in persistent.heard:
-                                                        $ song = music_map[track]["title"]
-                                                        if artist != music_map[track]["artist"]:
-                                                            $ artist = music_map[track]["artist"]
+                                                    # only get tracks for a given route, or if none specified, get everything
+                                                    if route == "All":
+                                                        # hide unheard tracks
+                                                        if track in persistent.heard:
+                                                            $ song = music_map[track]["title"]
+                                                            if artist != music_map[track]["artist"]:
+                                                                $ artist = music_map[track]["artist"]
+                                                        else:
+                                                            $ song = obfuscator(music_map[track]["title"])
+                                                            $ artist = obfuscator(music_map[track]["artist"])
                                                     else:
-                                                        $ song = obfuscator(music_map[track]["title"])
-                                                        $ artist = obfuscator(music_map[track]["artist"])
+                                                        if route in music_map[track]["tags"]:
+                                                            # hide unheard tracks
+                                                            if track in persistent.heard:
+                                                                $ song = music_map[track]["title"]
+                                                                if artist != music_map[track]["artist"]:
+                                                                    $ artist = music_map[track]["artist"]
+                                                            else:
+                                                                $ song = obfuscator(music_map[track]["title"])
+                                                                $ artist = obfuscator(music_map[track]["artist"])
 
                                                     hbox:
                                                         xsize 1600
@@ -179,4 +195,4 @@ screen credits_roll(route="All"):
     ########## CLICK ANYWHERE TO KILL IT ##########
     button:
         xysize (1920, 1080)
-        action Return()
+        action [Stop("music"), Return()]
