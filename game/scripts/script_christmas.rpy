@@ -1473,6 +1473,7 @@ label ce_checkout:
     tgt_worker "Hello, what's wrong?"
     show cs coat
     cs "Sorry, I scanned this pie 7 times."
+    show pakoo tgt think
     tgt_worker "...how many do you have?"
     cs "I have 2."
     show pakoo tgt confused
@@ -1494,6 +1495,7 @@ label ce_checkout:
     cs "These are ringing up 11.99 per pie!"
     show pakoo tgt upset
     cs "They said they were like 20-percent off on the sign over there!"
+    show pakoo tgt think2
     tgt_worker "Hmm..."
     show pakoo tgt scan
     n "The employee scans the pie."
@@ -1501,6 +1503,7 @@ label ce_checkout:
     show pakoo tgt
     tgt_worker "Do you perchance have Target Circle?"
     cs "No?"
+    show pakoo tgt think2
     tgt_worker "You need Target Circle to get this deal. Sorry."
     show cs coat angry
     show pakoo tgt upset
@@ -1526,6 +1529,7 @@ label ce_checkout:
     n "The employee signs into the machine and opens the prompt to enter an ID."
     n "They then wait patiently for CS."
     cs "What? Do you need something from me?"
+    show pakoo tgt think2
     tgt_worker "Yeah, I need to check your ID."
     show cs coat pissed
     show pakoo tgt upset
