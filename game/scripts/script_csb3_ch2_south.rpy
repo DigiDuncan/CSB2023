@@ -738,7 +738,7 @@ label south_poker3:
         cs "What in the world??"
         lancer "I just found this cool shiny metal in the back, but it didn't taste very good."
         show case at mid_right with dissolve
-        $ collect("briefcase")
+        $ collect("case")
         lancer "Here, have it, waiter dude!"
         lancer "See ya later!"
         hide lancer with moveouttop

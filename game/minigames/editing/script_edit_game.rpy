@@ -135,8 +135,7 @@ init python:
                     self.control_pressed = True
                 if ev.key == pygame.K_k and self.control_pressed:
                     if not "editor" in persistent.unlocked_achievements:
-                        chievos = (a for a in achievement_manager.achievements
-                        if a == "editor")
+                        chievos = (a for a in achievement_manager.achievements.values() if a.id == "editor")
                         renpy.show_screen("popup", next(chievos))
                         achievement_manager.unlock("editor", show_screen = False)
             elif ev.type == pygame.KEYUP:

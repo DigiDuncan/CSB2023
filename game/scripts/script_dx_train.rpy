@@ -3751,9 +3751,11 @@ label train_tate_ex_refuse:
 label train_tate_ex_win:
     stop music
     music end
+    scene black
+    window hide
 
     call screen warning("The following section contains flashing lights and colors.", "Persons with photosensitive conditions may wish to skip this section.", "back_out_perfect_tate")
-
+    
     scene white with dissolve
     show tate_falling at manual_pos(0.5, -0.5, 0.5)
     play sound sfx_sparkles
@@ -3909,7 +3911,7 @@ label train_defeated_perfect_tate:
 
     $ persistent.seen.add("tate_ex")
     $ persistent.seen.add("perfect_tate")
-    $ achievement_manager.unlock("vs-tate")
+    $ achievement_manager.unlock("beat_tate")
     # TODO: audio is not fully ready yet - tate
     dxcom tate_ex
     

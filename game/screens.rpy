@@ -1174,8 +1174,7 @@ screen help():
 init python:
     def britishpound():
         if not "gb_pound" in persistent.unlocked_achievements:
-            chievos = (a for a in achievement_manager.achievements
-            if a == "gb_pound")
+            chievos = (a for a in achievement_manager.achievements.values() if a.id == "gb_pound")
             renpy.show_screen("popup", next(chievos))
             achievement_manager.unlock("gb_pound", show_screen = False)
 screen keyboard_help():

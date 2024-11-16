@@ -793,7 +793,7 @@ label england_good_ramsay:
     n "Gordon comes back with a briefcase full of cash."
     show gordon at center
     show case at mid_mid_right
-    $ collect("briefcase")
+    $ collect("case")
     with moveinleft
     gordon "Listen, I don't know how you made that, but I'll buy your recipe for £100,000."
     gordon "We won't need to speak of this again."

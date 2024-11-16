@@ -283,8 +283,9 @@ label awawa_tate_test:
                     this_cheev = renpy.input("Enter the {i}exact{/i} ID of the achievement you want to test.", this_cheev)
 
                     try:
-                        renpy.show_screen("popup", fin)
-                        #renpy.say(tate, "Did it work?")
+                        chievos = (a for a in achievement_manager.achievements.values() if a.id == this_cheev)
+                        renpy.show_screen("popup", next(chievos))
+                        renpy.say(tate, "Did it work?")
                     except:
                         renpy.say(tate, "Couldn't pull achievement. {w=0.5}Double-check the name and try again.")
                                 

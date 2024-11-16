@@ -29,8 +29,8 @@ init python:
 
             self.start_time = None
             self.round_timer = -3  # Time since last UFO move
-            self.enemy_lane = 0
-            self.current_lane = 0
+            self.enemy_lane = 1
+            self.current_lane = 1
 
             self.danger_lane = None
             self.fires = 0
