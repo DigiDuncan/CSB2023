@@ -440,7 +440,7 @@
     "beat_tate":{
         "name": "Main Character Syndrome",
         "locked": "Remind them whose game this is.",
-        "unlocked": "Defeat Tate EX.",
+        "unlocked": "Survive Tate's timeline tomfoolery.",
         "img": "vs-tate",
         "type": "extra",
         "dx": true

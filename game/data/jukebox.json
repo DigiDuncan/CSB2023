@@ -1,8 +1,7 @@
 {
     "tags" : [
         "All",
-        "Menus",
-        "Misc.",
+        "Menus & Misc.",
         "Fun Values",
         "Minigames",
         "New In DX",
@@ -34,7 +33,7 @@
             "file": "bubble_tea.ogg",
             "title": "Bubble Tea",
             "artist": "dark cat",
-            "tags": ["Menus"],
+            "tags": ["Menus & Misc."],
             "album_art": "bubbletea.png",
             "trivia": "The unofficial DPN / {i}CSBIII{/i} theme song."
         },
@@ -42,14 +41,14 @@
             "file": "what_the_night_will_bring.ogg",
             "title": "What The Night Will Bring",
             "artist": "Rubber Kiss Goodbye",
-            "tags": ["Menus", "New In DX"],
+            "tags": ["Menus & Misc.", "New In DX"],
             "album_art": "csbi.png"
         },
         "space_classroom" : {
             "file": "space_classroom.ogg",
             "title": "Space Classroom",
             "artist": "Dan Salvato",
-            "tags": ["Misc.", "CSBIII DX: After Story"],
+            "tags": ["Menus & Misc.", "CSBIII DX: After Story"],
             "album_art": "ddlc.png"
         },
         "lets_hear_my_baby" : {
@@ -1024,7 +1023,7 @@
             "file": "goodbye_summer_hello_winter.ogg",
             "title": "Goodbye Summer, Hello Winter",
             "artist": "FantomenK",
-            "tags": ["CSBI", "CSBII", "CSBIII: Archival", "CSBIII: Country", "CSBIII: East", "CSBIII: Fired", "CSBIII: Friend", "CSBIII: South" ],
+            "tags": ["Menus & Misc.", "CSBI", "CSBII", "CSBIII: Archival", "CSBIII: Country", "CSBIII: East", "CSBIII: Fired", "CSBIII: Friend", "CSBIII: South" ],
             "album_art": "fantomenk.png"
         },
         "upon_me" : {

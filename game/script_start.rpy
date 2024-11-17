@@ -495,7 +495,7 @@ define lupin_offscreen = Character("???", callback = renpy.partial(char_callback
 define mean_offscreen = Character("???", callback = renpy.partial(char_callback, beep = "mean"))
 define zenigata_nobeep = Character("???", callback = renpy.partial(char_callback, play_beeps = False))
 define zenigata_offscreen = Character("???", callback = renpy.partial(char_callback, beep = "zenigata"))
-define perfect_tate = Character("Tate", callback = renpy.partial(char_callback, name = "tate", beep = "tate"), what_color = "#000000", screen = "perfect_tate_text")
+define imperfect_tate = Character("Tate", callback = renpy.partial(char_callback, name = "tate", beep = "tate"), what_color = "#000000", screen = "perfect_tate_text")
 
 # DX Holiday Special Definitions
 define walkie = Character("Walkie", callback = renpy.partial(char_callback, beep = "walkie"))
@@ -3289,7 +3289,7 @@ default lights_check = False
 default ikea_check = False
 default engfirst = False
 default swedfirst = False
-default japfirst = False
+default jpnfirst = False
 
 # Checks: CSB3 East
 default archack = False

@@ -3753,6 +3753,7 @@ label train_tate_ex_win:
     music end
     scene black
     window hide
+    $ persistent.seen.add("tate_ex")
 
     call screen warning("The following section contains flashing lights and colors.", "Persons with photosensitive conditions may wish to skip this section.", "back_out_perfect_tate")
     
@@ -3833,14 +3834,14 @@ label train_tate_ex_win:
     $ collect("yeetable_textbox")
     pause 4.0
 
-    perfect_tate "{perfect_tate}That's better."
+    imperfect_tate "{perfect_tate}That's better."
     hide tate_fallen_4
     show tate_fallen_5 at manual_pos(0.5, 0.5, 0.5)
     with Dissolve(0.5)
-    perfect_tate "{perfect_tate}I hope you're ready."
-    perfect_tate "{perfect_tate}Because I'm not holding back anymore."
-    perfect_tate "{perfect_tate}CS..."
-    perfect_tate "{perfect_tate}I'm sorry."
+    imperfect_tate "{perfect_tate}I hope you're ready."
+    imperfect_tate "{perfect_tate}Because I'm not holding back anymore."
+    imperfect_tate "{perfect_tate}CS..."
+    imperfect_tate "{perfect_tate}I'm sorry."
 
     scene white
     # TODO: re-render this again when it's finished, make sure it has audio
@@ -3909,7 +3910,6 @@ label train_defeated_perfect_tate:
     pause 2.0
     tate "Thanks, CS."
 
-    $ persistent.seen.add("tate_ex")
     $ persistent.seen.add("perfect_tate")
     $ achievement_manager.unlock("beat_tate")
     # TODO: audio is not fully ready yet - tate

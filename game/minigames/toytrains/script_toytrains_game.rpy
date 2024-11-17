@@ -1,6 +1,8 @@
 init python:
     import math
 
+    CS_TRAIN_HP = 3
+
     class Jig:
         def __init__(self):
             self.position = (0, 0)
@@ -28,7 +30,7 @@ init python:
         def __init__(self):
             renpy.Displayable.__init__(self)
 
-            self.hp = 3
+            self.hp = CS_TRAIN_HP
             self.total_laps = 3
             self.current_lap = 1
             self.current_key = None
@@ -148,9 +150,8 @@ label play_toytrains_game:
     if _return == True:
         $ achievement_manager.unlock("trains_minigame")
         
-        # this doesn't work yet
-        # if ToyTrainsGameDisplayable.hp == 3:
-        #    $ achievement_manager.unlock("trains_perfect")
+        if CS_TRAIN_HP == 3:
+            $ achievement_manager.unlock("trains_perfect")
         
         stop music fadeout 2.0
         

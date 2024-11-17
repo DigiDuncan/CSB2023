@@ -258,7 +258,7 @@ label japan_travel:
     scene ticket_counter
     show benrey at center
     show cs disappointed at left
-    $ japfirst = True
+    $ jpnfirst = True
     cs "Uhh, I guess I wanted to go to Japan?"
     benrey "Well, I'm sorry, but everyone's got a Pass{w=0.5} Port!"
     benrey "Try checking your left shoe."
