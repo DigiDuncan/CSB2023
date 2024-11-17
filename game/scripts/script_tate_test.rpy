@@ -296,7 +296,7 @@ label awawa_tate_test:
             "Credits Roll":
                 tate "Here we go!"
                 
-                call screen credits_roll(duration=10)
+                call screen credits_roll()
 
                 tate "Did we do it?"
                 jump .awawa_menu

@@ -17,10 +17,11 @@ init python:
     jukebox_presort = {}
 
 transform credit_scroll(starting = 0, ending = 0, duration = 60):
+    yanchor 1.0
     ypos starting
     linear duration ypos ending
 
-screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scroll_end = -21950, duration = 343):
+screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scroll_start = 22500, scroll_end = 1075, duration = 343):
     on "show" action Play("music", bgm, loop=False, if_changed=True)
 
     #only get tracks for a given route, or if none specified/invalid tag, get everything
@@ -52,7 +53,7 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
         xalign 0.5
 
         ##### BEGIN CONTENTS ##### 
-        frame at credit_scroll(0, scroll_end, duration):
+        frame at credit_scroll(scroll_start, scroll_end, duration):
             background None
             xalign 0.5
 
