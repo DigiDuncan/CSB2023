@@ -1602,8 +1602,12 @@ image digi dark flipped = "dark:flip:characters/digi.png"
 
 # Aria
 image aria = "characters/aria.png"
+image aria festive = "characters/aria_festive.png"
 image aria sil_black = "sil_black:characters/aria.png"
 image aria flipped = "flip:characters/aria.png"
+image aria festive flipped = "flip:characters/aria_festive.png"
+image aria festive dark = "dark:characters/aria_festive.png"
+image aria festive dark flipped = "dark:flip:characters/aria_festive.png"
 image aria dark = "dark:characters/aria.png"
 image aria dark flipped = "dark:flip:characters/aria.png"
 

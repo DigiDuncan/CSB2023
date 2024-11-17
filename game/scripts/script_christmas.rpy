@@ -1785,7 +1785,7 @@ label ce_party_before:
         cs "What in the world?"
         hide cs with moveoutleft
         scene cs_house_snow_night
-        show aria dark flipped at mid_left
+        show aria festive dark flipped at mid_left
         with dissolve
         show cs dark flipped at right with moveinright
         cs "Oh hey! Aria, right?"
@@ -1946,7 +1946,7 @@ label ce_intro:
     scene cs_foyer
     show cs at left
     show anno festive at mid_left behind cs
-    show aria at mid_mid_left behind anno
+    show aria festive at mid_mid_left behind anno
     show digi at center
     show tate festive flipped at mid_right
     with dissolve
@@ -2240,7 +2240,7 @@ label ce_banter:
     wesley "Are you 100-percent satisfied, Richard?"
     rich "Only about 80-percent."
     scene cs_foyer
-    show aria at mid_mid_left
+    show aria festive at mid_mid_left
     show tate festive flipped at mid_right
     show mean human at mid_offscreen_right
     show k22 flipped at left behind k17
@@ -2269,7 +2269,7 @@ label ce_banter:
     show tate srs festive flipped
     show k17
     hide aria
-    show aria at mid_mid_left
+    show aria festive at mid_mid_left
     k17 "What about you?"
     aria "Me? I'm Aria."
     show k17 shock
@@ -2530,7 +2530,7 @@ label ce_cooking:
 
     # OK, is this scene too meta? I like it a lot but I'm worried I'm pushing the boundaries a bit here.
     scene cs_foyer
-    show aria at left
+    show aria festive at left
     show digi at center
     show arceus at right
     with dissolve
@@ -3071,7 +3071,7 @@ label ce_exchange:
     aria "Aw, that was my gift!"
     aria "You want me to take it?"
     billy "Yes please!"
-    show aria at mid_right with moveinright
+    show aria festive at mid_right with moveinright
     show adderall at Move((0.3125, 0.5), (0.7125, 0.5), 2, repeat=False, bounce=False, xanchor="left", yanchor="top")
     pause 3.0
     hide adderall with dissolve
@@ -3361,7 +3361,7 @@ label ce_lights_out:
     hide cs with moveoutright
     scene cs_foyer_off
     show anno festive at mid_left
-    show aria at mid_mid_left behind anno
+    show aria festive at mid_mid_left behind anno
     show digi at mid_mid_left
     show k17 disappointed at center behind digi
     show k22 disappointed at mid_mid_right
@@ -3391,7 +3391,7 @@ label ce_lights_out:
     n "CS slams the door shut and runs back to deliver the news."
     scene cs_foyer_off
     show anno festive at mid_left
-    show aria at mid_mid_left behind anno
+    show aria festive at mid_mid_left behind anno
     show digi at mid_mid_left
     show k17 disappointed at center behind digi
     show k22 disappointed at mid_mid_right
