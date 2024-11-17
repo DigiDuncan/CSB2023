@@ -32,7 +32,7 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
             else:
                 jukebox_presort.update({ song : { "title": music_map[song]["title"], "artist": music_map[song]["artist"] } })
      
-            jukebox_sorted = dict(sorted(jukebox_presort.items(), key = lambda a: a[1]["artist"].lower()))
+            jukebox_sorted = dict(sorted(jukebox_presort.items(), key = lambda a: (a[1]["artist"].lower(), a[1]["title"].lower())))
 
     modal True
     zorder 1
