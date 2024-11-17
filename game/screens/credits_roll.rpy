@@ -20,7 +20,7 @@ transform credit_scroll(starting = 0, ending = 0, duration = 60):
     ypos starting
     linear duration ypos ending
 
-screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scroll_end = -20000, duration = 543):
+screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scroll_end = -20000, duration = 343):
     on "show" action Play("music", bgm, loop=False, if_changed=True)
 
     modal True
