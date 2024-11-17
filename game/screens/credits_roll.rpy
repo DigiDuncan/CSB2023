@@ -20,7 +20,7 @@ transform credit_scroll(starting = 0, ending = 0, duration = 60):
     ypos starting
     linear duration ypos ending
 
-screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scroll_end = -20000, duration = 343):
+screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scroll_end = -21950, duration = 343):
     on "show" action Play("music", bgm, loop=False, if_changed=True)
 
     #only get tracks for a given route, or if none specified/invalid tag, get everything
@@ -31,8 +31,7 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
             else:
                 jukebox_presort.update({ song : { "title": music_map[song]["title"], "artist": music_map[song]["artist"] } })
      
-            jukebox_sorted = dict(sorted(jukebox_presort.items(), key = lambda a: a[1]["artist"]))
-            print(jukebox_sorted)
+            jukebox_sorted = dict(sorted(jukebox_presort.items(), key = lambda a: a[1]["artist"].lower()))
 
     modal True
     zorder 1
@@ -101,7 +100,7 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
 
                                 # Handling for everything EXCEPT special thanks and music
                                 # These are nested for a reason
-                                if category != "Special Thanks":
+                                if category != "Special Thanks" and category != "Cast":
                                     if category != "Music":
                                         hbox:
                                             xsize 1600
@@ -113,12 +112,11 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
                                                 $ sub_text = obfuscator(subcategory)
 
                                             # manually hide characters if not seen
-                                            if "tate_ex" not in persistent.seen and re.fullmatch("Tate EX", subcategory):
-                                                $ sub_text = obfuscator(subcategory)
-                                            if "perfect_tate" not in persistent.seen and re.fullmatch("Perfect Tate", subcategory):
-                                                $ sub_text = obfuscator(subcategory)
-                                            if "mean_human" not in persistent.seen and re.fullmatch("Mean \(Human\)", subcategory):
-                                                $ sub_text = obfuscator(subcategory)
+                                            $ hide_these = { "Arceus": "arceus", "Kitty": "kitty", "DigiDuncan": "digi", "Aria": "aria", "Pakoo": "pakoo", "Bubble": "bubble", "Tate": "tate", "Tate EX": "tate_ex", "Perfect Tate": "perfect_tate", "Mean": "mean", "Mean \(Human\)": "mean_human", "Ges": "ges" }
+
+                                            for h in hide_these:
+                                                if hide_these[h] not in persistent.seen and re.fullmatch(h, subcategory):
+                                                    $ sub_text = obfuscator(subcategory)
 
                                             # print the subcategory
                                             frame:
@@ -174,6 +172,35 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
                                                         xalign 1.0
                                                         yalign 0.5
                                         
+                                # for cast
+                                elif category == "Cast":
+                                    vbox:
+                                        xsize 1600
+
+                                        # print the one line
+                                        vbox:
+                                            xsize 1600
+                                            text subcategory+"\n":
+                                                xalign 0.5
+                                                size 48
+                                                font "impact.ttf"
+
+                                        # print names if they've been seen
+                                        python:
+                                            hide_these = { "ItsNovaHere": "nova", "meancarnavor": "mean", "EddieJustEddie": "hoh_worker", "AFuckingChicken": "hoh_worker", "Guithais": "hoh_worker", "Arceus3251": "arceus", "Annorexorcist": "anno", "Aria \"Estroteric\"": "aria", "DigiDuncan": "digi", "Pakoopara": "pakoo", "Mikapara": "mika", "Tate \"alleZSoyez\"": "tate", "UndeadKitty": "kitty", "blanknam3d": "blank", "Ges \"DefinitelyNotGes\"": "ges", "Midgalicis": "midge", "db05": "db", "BubbleTheSlime": "bubble", "4Bakers": "iris" }
+
+                                            char_text = ""
+
+                                        for c in credits_map[route][category][subcategory]:
+                                            if c in hide_these and hide_these[c] not in persistent.seen:
+                                                $ char_text = obfuscator(c)
+                                            else:
+                                                $ char_text = c
+                                   
+                                            text char_text:
+                                                xalign 0.5
+                                                yalign 0.5
+
                                 # for special thanks
                                 elif category == "Special Thanks":
                                     vbox:

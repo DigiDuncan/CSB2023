@@ -1,6 +1,31 @@
 {
     "All": {
 
+        "Cast": {
+            "In order of appearance (roughly)" : [
+                "cs188",
+                "ItsNovaHere",
+                "meancarnavor",
+                "EddieJustEddie",
+                "AFuckingChicken",
+                "Guithais",
+                "Arceus3251",
+                "Annorexorcist",
+                "Aria \"Estroteric\"",
+                "DigiDuncan",
+                "Pakoopara",
+                "Mikapara",
+                "Tate \"alleZSoyez\"",
+                "UndeadKitty",
+                "blanknam3d",
+                "Ges \"DefinitelyNotGes\"",
+                "Midgalicis",
+                "db05",
+                "BubbleTheSlime",
+                "4Bakers"
+            ]
+        },
+
         "_writing": {
             "Lead Writer": ["Pakoo"],
             "Addt'l Writing": ["DigiDuncan", "Arceus3251", "Aria \"Estroteric\"", "Tate \"alleZSoyez\"", "meancarnavor"],
@@ -26,7 +51,7 @@
             "Beta Testing": ["Tate \"alleZSoyez\"", "4Bakers", "BubbleTheSlime", "meancarnavor", "Mikapara", "UndeadKitty"]
         },
 
-        "Character Sprites": {            
+        "Character Sprites": {
             "CS-ocola": ["Greta \"lovelycloud\""],
             "Arceus": ["UndeadKitty"],
             "Kitty": [""],
@@ -41,7 +66,7 @@
             "Mean (Human)": ["Mushroom Man"],
             "Ges": ["Mikapara"]
         },
-        
+
         "_more_art":{
             "Addt'l Art": ["EddieJustEddie", "blanknam3d", "meancarnavor", "Guithais", "Tate \"alleZSoyez\"", "Midgalicis", "UndeadKitty", "Pakoo", "4Bakers"]
         },
