@@ -297,7 +297,7 @@ label ce_decor:
     
     # Animation
     show cs at mid_offscreen_right with move
-    show decor_box at manual_pos(1.2, 0.5)
+    show decor_boxes at manual_pos(1.2, 0.5)
     pause 1.0
     show decor_boxes at manual_pos(0.9, 0.4) with moveinright
     $ collect("decor_boxes")

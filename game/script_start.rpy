@@ -1525,17 +1525,17 @@ image worker_6 = "characters/worker_pineapple.png"
 image worker_7 = "characters/worker_chicken.png"
 
 # Copguy & Co.
-image copguy = "characters/copguy.png"
-image copguy festive = "characters/copguy_festive.png"
-image copguy festive flipped = "flip:characters/copguy_festive.png"
-image copguy festive dark = "dark:characters/copguy_festive.png"
-image copguy festive dark flipped = "dark:flip:characters/copguy_festive.png"
-image copguy sil_black = "sil_black:characters/copguy.png"
-image copguy flipped = "flip:characters/copguy.png"
-image copguy dark = "dark:characters/copguy.png"
-image copguy dark flipped = "dark:flip:characters/copguy.png"
+image copguy = "characters/copguy/copguy.png"
+image copguy festive = "characters/copguy/copguy_festive.png"
+image copguy festive flipped = "flip:characters/copguy/copguy_festive.png"
+image copguy festive dark = "dark:characters/copguy/copguy_festive.png"
+image copguy festive dark flipped = "dark:flip:characters/copguy/copguy_festive.png"
+image copguy sil_black = "sil_black:characters/copguy/copguy.png"
+image copguy flipped = "flip:characters/copguy/copguy.png"
+image copguy dark = "dark:characters/copguy/copguy.png"
+image copguy dark flipped = "dark:flip:characters/copguy/copguy.png"
 image copguy_ai = "characters/ai_cop_guy_full.png"
-image copguycrawl = "characters/copguycrawl.png"
+image copguycrawl = "characters/copguy/copguycrawl.png"
 image sheriff = "characters/sheriff.png"
 image sheriff flipped = "flip:characters/sheriff.png"
 image sheriff dark = "dark:characters/sheriff.png"
@@ -1547,8 +1547,8 @@ image guard_soldier = "dark:characters/guard_soldier.png"
 image marine = "characters/marine.png"
 image big_tank = "characters/abrams.png"
 image asylum_worker = "dark:characters/mohs.png"
-image copguyexe = "characters/copguyexe.png"
-image copguyexe flipped = "flip:characters/copguyexe.png"
+image copguyexe = "characters/copguy/copguyexe.png"
+image copguyexe flipped = "flip:characters/copguy/copguyexe.png"
 
 # CSB I
 image michael = "flip:characters/michael.png"
@@ -1579,13 +1579,14 @@ image afanboy = "characters/amdfanboy.png"
 
 # Billy Mays
 image billy = "characters/billy/billy.png"
+image billy dark = "dark:characters/billy/billy.png"
+image billy sil_black = "dark:characters/billy/billy.png"
 image billy festive = "characters/billy/festive.png"
 image billy festive dark = "dark:characters/billy/festive.png"
 image billy car = "characters/billy/billy_car.png"
 image billy car happy = "characters/billy/billy_car_happy.png"
 image billy car turn = "characters/billy/billy_car_turn.png"
 image billy laser = "characters/billy/BillyMaysWithLaser.png"
-image billy dark = "dark:characters/billy/billy.png"
 
 # Cultists
 image cultist = "characters/cultist.png"
@@ -2585,7 +2586,7 @@ image red_light:
 
 ## For Copguy EX
 image copguy_ex_front:
-    "characters/copguy_ex1.png"
+    "characters/copguy/copguy_ex1.png"
     alignaround (0.5, 0.5)
     align (0.5, 0.5)
     pos (0.5, 0.5)
@@ -2596,7 +2597,7 @@ image copguy_ex_front:
     repeat
 
 image copguy_ex_back:
-    "characters/copguy_ex2.png"
+    "characters/copguy/copguy_ex2.png"
     alignaround (0.5, 0.5)
     align (0.5, 0.5)
     pos (0.5, 0.5)

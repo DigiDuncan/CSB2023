@@ -99,7 +99,7 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
                             
                             for subcategory in credits_map[route][category]:
 
-                                # Handling for everything EXCEPT special thanks and music
+                                # Handling for everything EXCEPT cast, special thanks and music
                                 # These are nested for a reason
                                 if category != "Special Thanks" and category != "Cast":
                                     if category != "Music":
@@ -186,7 +186,7 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
                                                 size 48
                                                 font "impact.ttf"
 
-                                        # print names if they've been seen
+                                        # only print names if they've been seen
                                         python:
                                             hide_these = { "ItsNovaHere": "nova", "meancarnavor": "mean", "EddieJustEddie": "hoh_worker", "AFuckingChicken": "hoh_worker", "Guithais": "hoh_worker", "Arceus3251": "arceus", "Annorexorcist": "anno", "Aria \"Estroteric\"": "aria", "DigiDuncan": "digi", "Pakoopara": "pakoo", "Mikapara": "mika", "Tate \"alleZSoyez\"": "tate", "UndeadKitty": "kitty", "blanknam3d": "blank", "Ges \"DefinitelyNotGes\"": "ges", "Midgalicis": "midge", "db05": "db", "BubbleTheSlime": "bubble", "4Bakers": "iris" }
 
