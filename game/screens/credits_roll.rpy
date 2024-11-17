@@ -10,11 +10,11 @@ init python:
 
     global credits_map
     global music_map
+    global jukebox_presort
 
     credits_map = credits_file
-    # sort jukebox by artist this time
-    #music_map = sorted(jukebox_file["tracks"], key=lambda a: jukebox_file["tracks"][a]["artist"])
     music_map = jukebox_file["tracks"]
+    jukebox_presort = {}
 
 transform credit_scroll(starting = 0, ending = 0, duration = 60):
     ypos starting
@@ -22,6 +22,17 @@ transform credit_scroll(starting = 0, ending = 0, duration = 60):
 
 screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scroll_end = -20000, duration = 343):
     on "show" action Play("music", bgm, loop=False, if_changed=True)
+
+    #only get tracks for a given route, or if none specified/invalid tag, get everything
+    python:
+        for song in music_map:
+            if route in music_map[song]["tags"]:
+                jukebox_presort.update({ song : { "title": music_map[song]["title"], "artist": music_map[song]["artist"] } })
+            else:
+                jukebox_presort.update({ song : { "title": music_map[song]["title"], "artist": music_map[song]["artist"] } })
+     
+            jukebox_sorted = dict(sorted(jukebox_presort.items(), key = lambda a: a[1]["artist"]))
+            print(jukebox_sorted)
 
     modal True
     zorder 1
@@ -124,49 +135,44 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
                                                 for contributor in credits_map[route][category][subcategory]:
                                                     text contributor:
                                                         xalign 1.0
+                                                        yalign 0.5
 
                                     # music requires special handling
+                                    # use the pre-sorted list from earlier, hide unseen tracks
                                     else:
-                                        $ song = ""
-                                        $ artist = ""
+                                        $ title = ""
+                                        $ artist = None
+                                        $ artist_displayed = ""
 
-                                        for track in music_map:
-
-                                            # only get tracks for a given route, or if none specified, get everything
-                                            if route == "All":
-                                                # hide unheard tracks
-                                                if track in persistent.heard:
-                                                    $ song = music_map[track]["title"]
-                                                    if artist != music_map[track]["artist"]:
-                                                        $ artist = music_map[track]["artist"]
+                                        for track in jukebox_sorted:
+                                            if track in persistent.heard:
+                                                $ title = jukebox_sorted[track]["title"]
+                                                # make duplicate artists not repeat
+                                                if jukebox_sorted[track]["artist"] == artist:
+                                                    $ artist_displayed = ""
                                                 else:
-                                                    $ song = obfuscator(music_map[track]["title"])
-                                                    $ artist = obfuscator(music_map[track]["artist"])
+                                                    $ artist = jukebox_sorted[track]["artist"]
+                                                    $ artist_displayed = artist
                                             else:
-                                                if route in music_map[track]["tags"]:
-                                                    # hide unheard tracks
-                                                    if track in persistent.heard:
-                                                        $ song = music_map[track]["title"]
-                                                        if artist != music_map[track]["artist"]:
-                                                            $ artist = music_map[track]["artist"]
-                                                    else:
-                                                        $ song = obfuscator(music_map[track]["title"])
-                                                        $ artist = obfuscator(music_map[track]["artist"])
+                                                $ title = obfuscator(jukebox_sorted[track]["title"])
+                                                $ artist = obfuscator(jukebox_sorted[track]["artist"])
+                                                $ artist_displayed = artist
 
                                             hbox:
                                                 xsize 1600
                                                 frame:  
                                                     background None
                                                     xsize 900
-                                                    text "{font=credits_music}"+song:
+                                                    text "{font=credits_music}"+title:
                                                         xalign 0.0
                                                         size 48
 
                                                 vbox:
                                                     xalign 1.0
                                                     xsize 600
-                                                    text "{font=music_text}"+artist:
+                                                    text "{font=music_text}"+artist_displayed:
                                                         xalign 1.0
+                                                        yalign 0.5
                                         
                                 # for special thanks
                                 elif category == "Special Thanks":
@@ -185,6 +191,7 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
                                                 font "impact.ttf"
                                             text thanks_for_text+"\n":
                                                 xalign 0.5
+                                                yalign 0.5
 
                 # DPN logo
                 frame:
