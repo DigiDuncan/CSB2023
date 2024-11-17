@@ -20,17 +20,11 @@ transform credit_scroll(starting = 0, ending = 0, duration = 60):
     ypos starting
     linear duration ypos ending
 
-screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scroll_end = -20650, duration = None):
+screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scroll_end = -20000, duration = 543):
+    on "show" action Play("music", bgm, loop=False, if_changed=True)
 
     modal True
     zorder 1
-
-    on "show" action Play("music", bgm, loop=False, if_changed=True)
-
-    if duration is None:
-        $ duration = renpy.music.get_duration()
-    else:
-        $ duration = duration
 
     for b in music_map:
         if music_map[b]["file"] == bgm and b not in persistent.heard:
@@ -42,7 +36,6 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
 
     add color("#000000")
 
-    # TODO: this will not be a scrollable frame forever, just until i make sure formatting is correct
     frame:
         background None
         xsize 1920
