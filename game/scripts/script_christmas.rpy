@@ -2437,6 +2437,7 @@ label ce_cooking:
     cs "Speaking of cooking, I can smell something, burning..."
     obama "It is perhaps the smoke bellowing from the oven?"
     show cs worried flipped
+    play sound sfx_smoke_alarm loop
     n "All of a sudden, the smoke detectors start beeping!"
     digi "Ahh! Turn it off!"
     nova "Dammit Blank! I said we weren't playing your music!"
@@ -2448,6 +2449,7 @@ label ce_cooking:
     n "Ed opens up the oven, only to have even more smoke pour out."
     n "Everyone hacks and coughs as smoke fills the room."
     hide bigsmoke with dissolve
+    stop sound
     n "When the smoke finally clears, Ed pulls out a blackened turkey."
     hide smoke with dissolve
     show cs flipped
