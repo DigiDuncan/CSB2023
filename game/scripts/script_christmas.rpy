@@ -1677,7 +1677,7 @@ label ce_party_before:
         cs "Look at that! Looks like Billy is here first!"
         hide cs with moveoutleft
         scene cs_house_snow_night
-        show billy dark at mid_left
+        show billy festive dark at mid_left
         with dissolve
         show cs dark flipped at right with moveinright
         billy "Hi! It's Billy!"
@@ -2039,7 +2039,7 @@ label ce_intro:
     show obama festive at right behind cs_kitchen_fg
     show ed at mid_right behind cs_kitchen_fg
     show michael at mid_mid_right behind cs_kitchen_fg
-    show billy at mid_mid_left behind cs_kitchen_fg
+    show billy festive at mid_mid_left behind cs_kitchen_fg
     with dissolve
     show cs at left with moveinleft
     cs "Hey guys, how are y'all doing?"
@@ -2199,7 +2199,7 @@ label ce_banter:
     show obama festive at center behind cs_kitchen_fg
     show ed at mid_right behind cs_kitchen_fg
     show michael at mid_mid_right behind cs_kitchen_fg
-    show billy at right behind cs_kitchen_fg
+    show billy festive at right behind cs_kitchen_fg
     with dissolve
     k17 "So Obama, how have you stayed President?"
     k17 "Aren't you on your what, like fourth term?"
@@ -2398,7 +2398,7 @@ label ce_cooking:
     show cs_kitchen_fg
     show obama festive at mid_right behind cs_kitchen_fg
     show michael at mid_offscreen_left behind cs_kitchen_fg
-    show billy at left behind cs_kitchen_fg
+    show billy festive at left behind cs_kitchen_fg
     with dissolve
     show cs at center behind cs_kitchen_fg with moveinleft
     cs "Hey Mr. President, what do you need?"
@@ -2424,7 +2424,7 @@ label ce_cooking:
     show cs_kitchen_fg
     show obama festive at center behind cs_kitchen_fg
     show michael at mid_offscreen_left behind cs_kitchen_fg
-    show billy at left behind cs_kitchen_fg
+    show billy festive at left behind cs_kitchen_fg
     show cs flipped at mid_right behind cs_kitchen_fg  
     with dissolve
     show smoke
@@ -2565,8 +2565,8 @@ label ce_cooking:
     digi "Fair enough. Wouldn't want this place falling apart."
     scene cs_kitchen
     show cs_kitchen_fg
-    show billy at mid_left behind cs_kitchen_fg
-    show billy at mid_right behind cs_kitchen_fg
+    show billy festive at mid_left behind cs_kitchen_fg
+    show billy festive at mid_right behind cs_kitchen_fg
     with dissolve
     billy "So then I said: \"That's a resturaunt mini burger {w=1.0}{i}no one{/i} loves!"
     n "Obama laughs."
@@ -2619,7 +2619,7 @@ label ce_mike:
     show grace at mid_right
     show obama festive at center behind grace
     show tate festive at mid_left
-    show billy at mid_mid_left
+    show billy festive at mid_mid_left
     with moveinleft
     show k17 happy flipped
     k17 "Hey, it's Mike! How's it going, long time no see!"
@@ -2956,7 +2956,7 @@ label ce_exchange:
     tate "I'm sure I can find a use for this."
     hide tate with moveoutright
     billy "Alright, it's my turn!" 
-    show billy at mid_left with moveinleft
+    show billy festive at mid_left with moveinleft
     show doi at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top") 
     billy "Wow! Is this the Declaration of Independence?"
     obama "Yep! It's the real deal!"
@@ -3054,7 +3054,7 @@ label ce_exchange:
     hide k17 with moveoutright
     show copguy festive flipped at left with moveinleft
     copguy "Alright, then I'm taking the Declaration of Independence!"
-    show billy at center with moveinright
+    show billy festive at center with moveinright
     billy "What the actual fuck?"
     show doi at Move((0.4, 0.5), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     with dissolve
@@ -3063,7 +3063,7 @@ label ce_exchange:
     billy "Stop stealing gifts!"
     hide copguy with moveoutright
     hide sheriff with moveoutleft
-    show billy at mid_left with move
+    show billy festive at mid_left with move
     billy "Alright, I'll just take the next gift."
     show adderall at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     billy "Adderall?"
@@ -3600,7 +3600,7 @@ label ce_billy_time:
     show rich at mid_right_right
     show tate sheepish festive flipped at mid_mid_left
     show obama festive at center behind digi
-    show billy at center
+    show billy festive at center
     show k22 disappointed at center behind digi
     show k17 disappointed at mid_mid_right behind obama
     with dissolve
@@ -3624,7 +3624,7 @@ label ce_billy_time:
     hide screen flashlight_demo    
     billy "Oh dang it! I forgot to bring a light!"
     scene cs_hallway_off
-    show billy at mid_left
+    show billy festive at mid_left
     show tate festive at center
     show elizabeth at right
     show screen flashlight_demo
@@ -3650,7 +3650,7 @@ label ce_billy_time:
     show anne at right
     with dissolve
     show tate festive at center
-    show billy at mid_left
+    show billy festive at mid_left
     with moveinleft
     grace "Hey! You're the TV man!"
     anne "Grace always wanted to buy every product you sold."
@@ -3668,7 +3668,7 @@ label ce_billy_time:
     show kitty at left
     show arceus worried flipped at mid_left
     show tate festive flipped at center
-    show billy at mid_right
+    show billy festive at mid_right
     with dissolve
     arceus "Tate? Billy?"
     kitty "What's going on?"
@@ -3677,7 +3677,7 @@ label ce_billy_time:
     tate "Don't ask."
     scene breakerbox
     show tate festive at mid_left
-    show billy at mid_right
+    show billy festive at mid_right
     with dissolve
     n "Finally, Billy and Tate make it to the breaker."
     billy "Alright, all you gotta do is put the switch on the breaker!"
@@ -3707,7 +3707,7 @@ label ce_billy_time:
     show arceus happy flipped at mid_left
     with dissolve
     show tate festive at mid_mid_right
-    show billy at right
+    show billy festive at right
     with moveinleft
     arceus "Would you look at that!"
     kitty "How did you guys do it?"
@@ -3721,7 +3721,7 @@ label ce_billy_time:
     show anne at right
     with dissolve
     show tate festive flipped at mid_left
-    show billy at center
+    show billy festive at center
     with moveinright
     grace "Yay! The power is back!"
     anne "You did it!"
@@ -3739,7 +3739,7 @@ label ce_billy_time:
     show rich flipped at mid_mid_left behind cs
     with dissolve
     show tate festive at mid_left
-    show billy at left
+    show billy festive at left
     with moveinleft
     cs "Holy crap, the power is back!"
     sheriff "My eyes work again!"
@@ -3974,7 +3974,7 @@ label ce_roof_moment:
     scene cs_roof
     show cs happy at left
     show obama festive at mid_mid_left behind k17
-    show billy at center behind cs
+    show billy festive at center behind cs
     show michael at mid_left
     show ed at mid_right
     show linus at mid_mid_right
@@ -4254,7 +4254,7 @@ label ce_roof_moment:
     with moveoutright
     copguy "Look how shiny our car is!"
     scene cs_house_night_dtree
-    show billy dark at mid_left
+    show billy festive dark at mid_left
     show k22 disappointed dark at mid_right
     with dissolve
     n "As everyone is wrapping up to go home, K-22 and Billy have a bit of a chat."

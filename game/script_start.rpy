@@ -1579,7 +1579,8 @@ image afanboy = "characters/amdfanboy.png"
 
 # Billy Mays
 image billy = "characters/billy/billy.png"
-image billy sil_black = "sil_black:characters/billy/billy.png"
+image billy festive = "characters/billy/festive.png"
+image billy festive dark = "dark:characters/billy/festive.png"
 image billy car = "characters/billy/billy_car.png"
 image billy car happy = "characters/billy/billy_car_happy.png"
 image billy car turn = "characters/billy/billy_car_turn.png"
