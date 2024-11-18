@@ -149,7 +149,7 @@ screen timeline_tracer():
                             this_x = 20
                             this_y = 20
                 
-                        # TODO: figure out how to read bad ends
+                        
                         # make sure it's unlocked before we continue
                         try:
                             # if it needs you to have seen a label to unlock
@@ -160,11 +160,12 @@ screen timeline_tracer():
                             elif "need_achieve" in timeline_map[event] and timeline_map[event]["need_achieve"] in persistent.unlocked_achievements:
                                 this_unlocked = True
 
-                            # TODO: rework this when endings have IDs at all
-                            #elif "need_ending" in timeline_map[event] and     in persistent.unlocked_achievements:
+                            # if it requires a seen endings
+                            elif "need_ending" in timeline_map[event] and timeline_map[event]["need_ending"] in persistent.seen_endings:
+                                this_unlocked = True
 
                             # if it's unlocked by default (you will *probably* never need this??):
-                            elif "need_label" not in timeline_map[event] and "need_achieve" not in timeline_map[event]:
+                            elif "need_label" not in timeline_map[event] and "need_achieve" not in timeline_map[event] and "need_ending" not in timeline_map[event]:
                                 this_unlocked = True
                             # have not unlocked
                             else:

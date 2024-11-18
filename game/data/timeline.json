@@ -284,7 +284,7 @@
             "csbiii_ai_end": {
                   "name": "AI",
                   "type": "end",
-                  "need_achieve": "chatgpt",
+                  "need_ending": "ai",
                   "pos": [11, 5]
             },
             "csbiii_no_meet_outcome_arrow": {
@@ -384,7 +384,7 @@
             "fired_end": {
                   "name": "Rockstar",
                   "type": "end",
-                  "need_achieve": "rockstar",
+                  "need_ending": "rockstar",
                   "pos": [18, 6]
             },
             "rockstar_ii_start_arrow": {
@@ -528,7 +528,7 @@
             "friend_end": {
                   "name": "Friend",
                   "type": "end",
-                  "need_achieve": "beat_copguy",
+                  "need_ending": "friend",
                   "pos": [15, 1]
             },
             "friend_lose_rpg_arrow": {
@@ -1166,7 +1166,7 @@
             "country_end": {
                   "name": "Globetrotter",
                   "type": "end",
-                  "need_label": "country_going_home",
+                  "need_ending": "country",
                   "pos": [30, 4]
             },
             "csbiii_editing_outcome_arrow": {
@@ -1907,7 +1907,7 @@
             "csbiii_east_fanltt_end": {
                   "name": "LTT Ending",
                   "type": "end",
-                  "need_label": "true_ltt_ending",
+                  "need_ending": "ltt",
                   "pos": [46, 10]
             },
             "csbiii_east_fanytp_outcome_arrow": {
@@ -1929,7 +1929,7 @@
             "csbiii_east_fanytp_end": {
                   "name": "YTP Ending",
                   "type": "end",
-                  "need_label": "true_ytp_ending",
+                  "need_ending": "ytp",
                   "pos": [46, 11]
             },
             "csbiii_east_fanboth_outcome_arrow": {
@@ -1985,7 +1985,7 @@
             "csbiii_east_archival_end": {
                   "name": "Archival",
                   "type": "end",
-                  "need_achieve": "archived",
+                  "need_ending": "archival",
                   "pos": [50, 13]
             },
             "csbiii_east_stream_end_arrow": {
@@ -1996,7 +1996,7 @@
             "csbiii_east_stream_end": {
                   "name": "Stream\n(True Ending)",
                   "type": "end",
-                  "need_label": "true_streaming",
+                  "need_ending": "true",
                   "pos": [48, 11]
             },
             "ce_first_arrow": {
@@ -2392,7 +2392,7 @@
             "csbiii_south_lego_end": {
                   "name": "Lego Ending",
                   "type": "end",
-                  "need_label": "south_lego_ending",
+                  "need_ending": "south",
                   "pos": [34, 19]
             },
             "csbiii_gohome_car_outcome_stand_arrow": {
@@ -2412,9 +2412,9 @@
                   "pos": [26, 18.5]
             },
             "csbiii_gohome_car_badend": {
-                  "name": "Broken Masquerade",
+                  "name": "Reality Break",
                   "type": "badend",
-                  "need_achieve": "fourth_wall",
+                  "need_ending": "reality_break",
                   "pos": [26, 18]
             },
             "csbiii_gohome_car_backtovegas_arrow": {
@@ -2628,7 +2628,7 @@
             "dx_train_broke_end": {
                   "name": "Go Home Broke",
                   "type": "end",
-                  "need_label": "train_home_broke",
+                  "need_ending": "train_broke",
                   "pos": [31, 26],
                   "content_type": "dx"
             },
@@ -2676,7 +2676,7 @@
             "dx_train_reward_end": {
                   "name": "To Frame A Criminal",
                   "type": "end",
-                  "need_label": "train_home_rich_thief",
+                  "need_ending": "train_thief",
                   "pos": [33, 26],
                   "content_type": "dx"
             },
@@ -2934,7 +2934,7 @@
             "dx_train_rich_end": {
                   "name": "Twice A Winner",
                   "type": "end",
-                  "need_label": "train_home_rich_winner",
+                  "need_ending": "train_winner",
                   "pos": [42, 24],
                   "content_type": "dx"
             },

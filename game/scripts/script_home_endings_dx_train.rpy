@@ -1,13 +1,16 @@
 label train_home_rich_thief:
     "Placeholder for if you completed train route with recovered stolen money."
+    $ ending_manager.mark("train_thief")
     jump train_very_final
 
 label train_home_rich_winner:
     "Placeholder for if you completed train route with recovered Vegas winnings."
+    $ ending_manager.mark("train_winner")
     jump train_very_final
 
 label train_home_broke:
     "Placeholder for if you completed train route without any money."
+    $ ending_manager.mark("train_broke")
     jump train_very_final
 
 label train_very_final:
