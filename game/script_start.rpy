@@ -1238,10 +1238,10 @@ image cs angry punished = "characters/cs/snake/angry.png"
 image cs angry punished flipped = "flip:characters/cs/snake/angry.png"
 
 # CS Misc
-image csgod = "characters/csgod.png"
-image csgod flipped = "flip:characters/csgod.png"
-image csgod_angry = "characters/csgod_angry.png"
-image young_cs = "characters/cs/cs_young.png"
+image csgod = "characters/cs/misc/csgod.png"
+image csgod flipped = "flip:characters/cs/misc/csgod.png"
+image csgod_angry = "characters/cs/misc/csgod_angry.png"
+image young_cs = "characters/cs/misc/cs_young.png"
 
 ## Arc
 image arceus = "characters/arc/arceus.png"
@@ -1521,7 +1521,7 @@ image wesley flipped = "flip:characters/hohsis/wesley.png"
 image wesley dark flipped = "dark:flip:characters/hohsis/wesley.png"
 image worker_1 = "characters/hohsis/worker_corn.png"
 image worker_2 = "characters/hohsis/worker_blank.png"
-image worker_3 = "flip:characters/mean/meanhohsis1.png" # It's Mean!
+image worker_3 = "flip:characters/mean/meanhohsis.png" # It's Mean!
 image worker_4 = "characters/hohsis/worker_eville.png"
 image worker_5 = "characters/hohsis/eddie_down.png"
 image worker_5alt = "characters/hohsis/eddie_up.png"
