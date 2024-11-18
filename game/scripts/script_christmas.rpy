@@ -1745,7 +1745,7 @@ label ce_party_before:
         n "A beam sound can be heard from outside."
         hide cs with moveoutleft
         scene cs_house_snow_night
-        show ed dark flipped at center
+        show ed festive dark flipped at center
         show rich dark flipped at mid_left
         show wesley dark flipped at left
         with dissolve
@@ -2037,7 +2037,7 @@ label ce_intro:
     scene cs_kitchen
     show cs_kitchen_fg
     show obama festive at right behind cs_kitchen_fg
-    show ed at mid_right behind cs_kitchen_fg
+    show ed festive at mid_right behind cs_kitchen_fg
     show michael at mid_mid_right behind cs_kitchen_fg
     show billy festive at mid_mid_left behind cs_kitchen_fg
     with dissolve
@@ -2197,7 +2197,7 @@ label ce_banter:
     show cs_kitchen_fg
     show k17 flipped at left
     show obama festive at center behind cs_kitchen_fg
-    show ed at mid_right behind cs_kitchen_fg
+    show ed festive at mid_right behind cs_kitchen_fg
     show michael at mid_mid_right behind cs_kitchen_fg
     show billy festive at right behind cs_kitchen_fg
     with dissolve
@@ -2442,7 +2442,7 @@ label ce_cooking:
     digi "Ahh! Turn it off!"
     nova "Dammit Blank! I said we weren't playing your music!"
     aria "Honestly this is kind of a bop. Keep it going."
-    show ed flipped at center behind cs_kitchen_fg with easeinleft
+    show ed festive flipped at center behind cs_kitchen_fg with easeinleft
     ed "Nooooo!"
     ed "My turkey!"
     show bigsmoke with dissolve
@@ -2457,7 +2457,7 @@ label ce_cooking:
     music snowdin_town
     ed "Dammit! My roast is ruined!"
     billy "Not to fear, Ed! I made my famous restaurant mini-burgers!"
-    show ed
+    show ed festive
     ed "You mean, steamed hams?"
     billy "Who the actual fuck calls burgers, steamed hams?"
     ed "It's a regional dialect?"
@@ -2598,7 +2598,7 @@ label ce_mike:
     scene cs_living2
     show cs at left
     show rich at center
-    show ed at mid_right
+    show ed festive at mid_right
     show grace at right
     with dissolve
     cs "Gee, that pizza I ordered is sure taking its time!"
@@ -2683,7 +2683,7 @@ label ce_mike:
     show wesley at right
     show rich at mid_right
     show db at center
-    show ed at mid_left behind cs
+    show ed festive at mid_left behind cs
     show cs concentrate at left
     with dissolve
     play sound sfx_csnore
@@ -2995,7 +2995,7 @@ label ce_exchange:
     sheriff "Great, I can drop this on Copguy's head for leaving me in the bathroom!"
     hide sheriff with moveoutright
     ed "I guess it's my go."
-    show ed flipped at mid_left with moveinleft 
+    show ed festive flipped at mid_left with moveinleft 
     show melted_ice_cream at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     ed "What the hell? Who brought ice cream? It's all melted!"
     #Audio clip of Richard laughing
@@ -3506,7 +3506,7 @@ label ce_snowed_in:
     scene cs_living2_off
     show cs disappointed at mid_left
     show mean human annoyed flipped at mid_offscreen_left
-    show ed at right
+    show ed festive at right
     show digi at mid_mid_right
     show linus at mid_right
     show rich at mid_right_right
@@ -3563,7 +3563,7 @@ label ce_snowed_in:
     scene cs_living2_off
     show cs happy at mid_left
     show mean human flipped at mid_offscreen_left
-    show ed at right
+    show ed festive at right
     show digi at mid_mid_right
     show linus at mid_right
     show rich at mid_right_right
@@ -3594,7 +3594,7 @@ label ce_billy_time:
     scene cs_living2_off
     show cs at mid_left
     show mean human flipped at mid_offscreen_left
-    show ed at right
+    show ed festive at right
     show digi at mid_mid_right
     show linus at mid_right
     show rich at mid_right_right
@@ -3976,7 +3976,7 @@ label ce_roof_moment:
     show obama festive at mid_mid_left behind k17
     show billy festive at center behind cs
     show michael at mid_left
-    show ed at mid_right
+    show ed festive at mid_right
     show linus at mid_mid_right
     with dissolve
     cs "We did it guys! We got Santa to save us!"
