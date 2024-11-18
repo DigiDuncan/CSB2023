@@ -2699,7 +2699,14 @@ label ce_mike:
 
 # Dinner/More Banter
 label ce_dinner:
-    scene black with dissolve
+    scene cs_house_snow_night
+    show cs_dining_1
+    show cs_dining_2
+    show cs at center
+    show anno festive at mid_left
+    show tate festive at mid_right
+    show cs_dining_3
+    with dissolve
     stop music fadeout 3.0
     music end
     cs "Well, I'd love to start off this wonderful meal by saying--"
@@ -2780,7 +2787,7 @@ label ce_dinner:
     k22 "No, it's not premium, or unleaded 88..."
     ed "Unleaded 88?"
     k22 "It's called super unleaded, it has ethanol in it, and it's {i}better. for. your. car!{/i}"
-    k17 "Every gas station we've been to, it's always regular, super, the third option, and diesel!"
+    k22 "Every gas station we've been to, it's always regular, super, the third option, and diesel!"
     digi "I still think you may be thinking of premium."
     k22 "No, I'm-- Give me a second, I have a picture of this on my phone."
     digi "CS, have you ever seen super unleaded?"
