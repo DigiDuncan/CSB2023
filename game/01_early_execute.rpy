@@ -40,6 +40,7 @@ init python:
     renpy.add_layer("music", above = "master")
     renpy.add_layer("popup", above = "overlay")
     renpy.add_layer("fun_icon", above = "master")
+    renpy.add_layer("flashlight", below = "music")
 
 define determination = Dissolve(0.0)
 default translate_this_line = ""
@@ -85,9 +86,12 @@ define config.font_name_map["credits_music"] = FontGroup().add("FiraCode-Retina.
 # NO MORE MOUSE CURSOR HOUDINI
 define config.mouse_hide_time = None
 
+# Define layering
+define config.top_layers = ["music"]
+define config.bottom_layers = ["flashlight"]
+
 # Music popup
 screen music():
-    zorder 100
     layer "music"
     style_prefix "music"
 

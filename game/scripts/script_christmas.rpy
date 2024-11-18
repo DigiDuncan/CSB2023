@@ -3236,6 +3236,7 @@ label ce_climax:
 
 # Lights out
 screen flashlight_demo:
+    layer "flashlight"
     add Flashlight()
 
 label ce_lights_out:
