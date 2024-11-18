@@ -1314,6 +1314,7 @@ label south_reality_break:
     direct "Ready?"
     show cscar2 with moveinright
     direct "Aaaaaand...{w=1.0}{nw}"
+    $ ending_manager.mark("reality_break")
     $ returning_from_blooper = True
     $ renpy.end_replay()
     jump south_vegas

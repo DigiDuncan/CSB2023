@@ -323,7 +323,8 @@ label true_ytp_ending:
     n "CS chuckles."
     cs "It's a long story..."
     scene black with dissolve
-    stop music2 fadeout 1.0   
+    stop music2 fadeout 1.0
+    $ ending_manager.mark("ytp")
     $ renpy.movie_cutscene(creditsm)
     $ persistent.heard.add("goodbye_summer_hello_winter")
     $ renpy.end_replay()
@@ -349,7 +350,8 @@ label true_ltt_ending:
     cs "Well, guys..."
     cs "It's a long story..."
     scene black with dissolve
-    stop music2 fadeout 1.0   
+    stop music2 fadeout 1.0
+    $ ending_manager.mark("ltt")
     $ renpy.movie_cutscene(creditsm)
     $ persistent.heard.add("goodbye_summer_hello_winter")
     $ renpy.end_replay()
@@ -465,4 +467,5 @@ label true_copsathohsis:
     scene cs_room with dissolve
     show cs at center with moveinleft
     cs "Ah, it's good to be home again!"
+    $ ending_manager.mark("call_cops")
     jump true_ending

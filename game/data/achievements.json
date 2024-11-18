@@ -327,7 +327,7 @@
     "bouncy":{
         "name": "Boingy Boingy Boingy",
         "locked": "???",
-        "unlocked": "Max out CSBounciness and get an ending.",
+        "unlocked": "Max out CSBounciness and get a story ending.",
         "img": "max_bounce",
         "type": "extra"
     },
@@ -510,9 +510,9 @@
         "tracker": "seen_music_pun"
     },
     "fin":{
-        "name": "Fin.",
-        "locked": "See every ending.",
-        "unlocked": "See every ending.",
+        "name": "Fin?",
+        "locked": "See all of the original 27 endings!",
+        "unlocked": "See all of the original 27 endings!",
         "img": "end",
         "type": "extra",
         "steps": "ending_count",

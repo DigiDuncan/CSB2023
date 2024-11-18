@@ -13,7 +13,7 @@
                   "pos" : [0, 5.5]
             },
             "csbi_error_first_prereq" : {
-                  "name": "100% the game first!",
+                  "name": "Keep playing to unlock this!",
                   "type": "prereq",
                   "need_achieve": "csbiii",
                   "pos" : [0, 5]
