@@ -331,6 +331,7 @@ label csbii_asylum:
     stop music fadeout 3.0
     music end
     window hide
+    $ ending_manager.mark("asylum")
     bad_end "Silly CS!\nYTP Magic doesn't exist!" "csbii_start"
     return
     

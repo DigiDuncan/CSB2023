@@ -246,6 +246,7 @@ label south_fighthohsis_alt:
     ed "Time to take a shit on the house."
     stop music fadeout 1.0
     music end
+    $ ending_manager.mark("revenge")
     bad_end "Revenge!" "south_back_home_alt"
 
 label south_braghohsis:
@@ -278,6 +279,7 @@ label south_braghohsis:
     show cs disappointed
     pause 1.0
     cs "Fuck."
+    $ ending_manager.mark("rip_money")
     bad_end "Time to bunk\nat Rosen's!" "south_back_home_alt"
     stop music fadeout 1.0
     music end

@@ -149,19 +149,22 @@ screen timeline_tracer():
                             this_x = 20
                             this_y = 20
                 
-                        
                         # make sure it's unlocked before we continue
                         try:
-                            # if it needs you to have seen a label to unlock
-                            if "need_label" in timeline_map[event] and renpy.seen_label(timeline_map[event]["need_label"]) == True:
-                                this_unlocked = True
-
                             # if it needs you to have earned an achievement to unlock
-                            elif "need_achieve" in timeline_map[event] and timeline_map[event]["need_achieve"] in persistent.unlocked_achievements:
+                            if "need_achieve" in timeline_map[event] and timeline_map[event]["need_achieve"] in persistent.unlocked_achievements:
                                 this_unlocked = True
 
-                            # if it requires a seen endings
-                            elif "need_ending" in timeline_map[event] and timeline_map[event]["need_ending"] in persistent.seen_endings:
+                            # if it needs you to have seen a label to unlock but NOT an ending
+                            elif "need_label" in timeline_map[event] and renpy.seen_label(timeline_map[event]["need_label"]) == True and "need_ending" not in timeline_map[event]:
+                                this_unlocked = True
+
+                            # if it requires a seen ending but NOT a label
+                            elif "need_ending" in timeline_map[event] and timeline_map[event]["need_ending"] in persistent.seen_all_endings and "need_label" not in timeline_map[event]:
+                                this_unlocked = True
+
+                            # if requires an ending AND a label
+                            elif "need_ending" in timeline_map[event] and timeline_map[event]["need_ending"] in persistent.seen_all_endings and "need_label" in timeline_map[event] and renpy.seen_label(timeline_map[event]["need_label"]) == True:
                                 this_unlocked = True
 
                             # if it's unlocked by default (you will *probably* never need this??):
@@ -181,6 +184,11 @@ screen timeline_tracer():
                                 total_seen_events = total_seen_events + 1
                             if timeline_map[event]["type"] == "end" or timeline_map[event]["type"] == "badend":
                                 total_seen_endings = total_seen_endings + 1
+
+                            # check if you've seen them all
+                            persistent.timeline_trace_seen = total_seen_events
+                            if total_seen_events == timeline_trace_count:
+                                achievement_manager.unlock("timeline")
 
                             # get type and change background color based on it
                             # TODO: this should be replaced w images later

@@ -515,7 +515,17 @@
         "unlocked": "See all of the original 27 endings!",
         "img": "end",
         "type": "extra",
-        "steps": "ending_count",
-        "tracker": "seen_endings"
+        "steps": "original_ending_count",
+        "tracker": "seen_original_endings"
+    },
+    "timeline":{
+        "name": "Planeswalker's Apprentice",
+        "locked": "See every timeline.",
+        "unlocked": "See every timeline.",
+        "img": "timeline",
+        "type": "extra",
+        "dx": true,
+        "steps": "timeline_trace_count",
+        "tracker": "timeline_trace_seen"
     }
 }

@@ -721,6 +721,7 @@ label england_bad_ramsay:
     hide gordon with moveoutbottom
     show cs disappointed flipped with hpunch
     cs "Ooooooooohhhhh fuuuuuuucckkk."
+    $ ending_manager.mark("fuckin_raw")
     bad_end "Master Chef?\nMore like, Master Death!" "england_gordon_menu"
 
 label england_good_ramsay:
@@ -957,6 +958,7 @@ label england_top_lose:
     hammond "As for you..."
     n "Jeremy pulls out a remote switch that detonates a bomb under CS' car, turning it into scrap."
     cs "Fuck."
+    $ ending_manager.mark("top_loser")
     bad_end "You want it all,\nbut the world won't give it up!" "england_top_gear_menu"
 
 label england_top_win:
@@ -1202,6 +1204,7 @@ label england_scott_movent:
     scene black
     n "A speeding car rams into Tom and he flies off into the distance."
     cs "Uh oh. {w=3.5} I didn't see nothin'."
+    $ ending_manager.mark("scottnt")
     bad_end "Welp, that's the end\nof that video!" "england_scott_menu"
     return
 

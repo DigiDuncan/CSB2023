@@ -97,6 +97,7 @@ label csbi_craptop:
             $ achievement_manager.unlock("nah")
             scene black with dissolve
             pause 2.0
+            $ ending_manager.mark("nah")
             $ renpy.movie_cutscene(creditsm)
             $ persistent.heard.add("goodbye_summer_hello_winter")
             $ renpy.end_replay()

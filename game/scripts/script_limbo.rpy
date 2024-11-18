@@ -1,14 +1,17 @@
 ########## Minigame Jumps ##########
 
 label lose_car_game:
+    $ ending_manager.mark("bad_driver")
     bad_end "100 percent\nunsatisfied." "true_iowa"
     return
 
 label lose_pencil_game:
+    $ ending_manager.mark("pencil_shart")
     bad_end "Try, uh, mashing... faster?" "minigame_pencil"
     return
 
 label lose_pencil_game2:
+    $ ending_manager.mark("pencil_shart_the_sequel")
     bad_end "You dumb skinfore." "play_pencil2_game"
     return
 

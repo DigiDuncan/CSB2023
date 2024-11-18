@@ -11,19 +11,24 @@ EXTRA_ENDING = [ "error" ]
 
 # DX endings
 # TODO: add more as they're completed.
-DX_ROUTE_ENDINGS = [ "train_broke", "train_winner", "train_thief", "christmas" ]
+DX_ROUTE_ENDINGS = [ "savers", "speedrun", "nah", "train_broke", "train_winner", "train_thief", "christmas" ]
+DX_BAD_ENDINGS = [ "pencil_shart_the_sequel" ]
 DX_MISC_ENDINGS = [ "underpants" ]
 
 # ALL endings, to be used mostly for timeline tracer but might be useful later
-ALL_ENDINGS = ROUTE_ENDINGS + BAD_ENDINGS + MISC_ENDINGS + EXTRA_ENDING  + DX_ROUTE_ENDINGS + DX_MISC_ENDINGS
+ALL_ENDINGS = ROUTE_ENDINGS + BAD_ENDINGS + MISC_ENDINGS + EXTRA_ENDING + DX_ROUTE_ENDINGS + DX_BAD_ENDINGS + DX_MISC_ENDINGS
 
 class EndingManager:
     def __init__(self):
         pass
 
     def mark(self, ending: str):
-        if ending in ROUTE_ENDINGS or ending in BAD_ENDINGS or ending in MISC_ENDINGS:
-            persistent.seen_endings.add(ending)
+        if ending in ALL_ENDINGS:
+            persistent.seen_all_endings.add(ending)
+        
+            if ending in ORIGINAL_27:
+                persistent.seen_original_endings.add(ending)
+
         else:
             raise ValueError(f"Unknown ending: {ending}")\
 
@@ -32,11 +37,11 @@ class EndingManager:
                 achievement_manager.unlock("bouncy")
 
     def seen(self, ending: str) -> bool:
-        return ending in persistent.seen_endings
+        return ending in persistent.seen_all_endings
 
     def all_seen(self) -> bool:
         for ending in ORIGINAL_27:
-            if ending not in persistent.seen_endings:
+            if ending not in persistent.seen_original_endings:
                 return False
         return True
 

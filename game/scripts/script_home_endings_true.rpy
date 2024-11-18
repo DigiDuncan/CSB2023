@@ -402,6 +402,7 @@ label true_fighthohsis:
     show ed with hpunch
     ed "Time to take a shit on the house."
     music end
+    $ ending_manager.mark("revenge")
     bad_end "Revenge!" "true_back_home"
 
 label true_fuckuphohsis:
@@ -434,6 +435,7 @@ label true_fuckuphohsis:
     show cs disappointed
     pause 1.0
     cs "Fuck."
+    $ ending_manager.mark("rip_house")
     bad_end "Time to bunk\nat Rosen's!" "true_back_home"  
 
 label true_copsathohsis:

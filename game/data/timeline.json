@@ -48,7 +48,7 @@
             "csbi_error_end" : {
                   "name": "Error",
                   "type": "end",
-                  "need_label": "after_error_fight",
+                  "need_ending": "error",
                   "pos": [0, 2]
             },
             "csbi_pc_choice_arrow": {
@@ -83,7 +83,7 @@
             "csbi_speedrun_end" : {
                   "name": "Chronicle Skipper 188",
                   "type": "end",
-                  "need_achieve": "speedrun",
+                  "need_ending": "speedrun",
                   "pos": [3, 5],
                   "content_type": "dx"
             },
@@ -107,7 +107,7 @@
             "csbi_nah_end" : {
                   "name": "Nah.",
                   "type": "end",
-                  "need_achieve": "nah",
+                  "need_ending": "nah",
                   "pos": [3, 7],
                   "content_type": "dx"
             },
@@ -148,7 +148,7 @@
             "csbi_homesavers_outcome" : {
                   "name": "Home Savers",
                   "type": "outcome",
-                  "need_achieve": "savers",
+                  "need_ending": "savers",
                   "pos": [5, 5],
                   "content_type": "dx"
             },
@@ -217,7 +217,7 @@
             "csbii_asylum_badend": {
                   "name": "Asylum",
                   "type": "badend",
-                  "need_label": "csbii_asylum",
+                  "need_ending": "asylum",
                   "pos": [9, 6]
             },
             "csbii_atk_outcome_arrow": {
@@ -418,7 +418,7 @@
             "fired_badend": {
                   "name": "Threw Away Fame",
                   "type": "badend",
-                  "need_label": "fired_no_contract",
+                  "need_ending": "threw_away_fame",
                   "pos": [18, 8]
             },
             "friend_goodgpu_outcome_arrow": {
@@ -498,15 +498,15 @@
                   "need_label": "friend_flint_car",
                   "pos": [12, 1]
             },
-            "friend_car_bad_end_arrow": {
+            "friend_car_bad_badend_arrow": {
                   "type": "arrow",
                   "direction": "w",
                   "pos" : [11.5, 1]
             },
-            "friend_car_bad_end_outcome": {
+            "friend_car_bad_badend": {
                   "name": "GRAND DAD",
                   "type": "badend",
-                  "need_label": "friend_flint_car",
+                  "need_ending": "grand_dad",
                   "pos": [11, 1]
             },
             "friend_car_good_arrow": {
@@ -887,7 +887,7 @@
             "country_england_go_kitchen_badend": {
                   "name": "You Fucking Donkey",
                   "type": "badend",
-                  "need_label": "england_bad_ramsay",
+                  "need_ending": "fuckin_raw",
                   "pos": [27, 10]
             },
             "country_england_go_kitchen_genergy_outcome_arrow": {
@@ -992,7 +992,7 @@
             "country_england_top_lose_badend": {
                   "name": "Top Loser",
                   "type": "badend",
-                  "need_label": "england_top_lose",
+                  "need_ending": "top_loser",
                   "pos": [28, 12]
             },
             "country_england_top_win_outcome_arrow": {
@@ -1111,7 +1111,7 @@
             "country_england_scott_badend": {
                   "name": "Scottn't",
                   "type": "badend",
-                  "need_label": "england_scott_movent",
+                  "need_ending": "scottnt",
                   "pos": [29, 10]
             },
             "country_england_scott_yes_outcome_arrow": {
@@ -1313,7 +1313,7 @@
             "csbiii_loredumper_badend": {
                   "name": "Lore Dumper",
                   "type": "badend",
-                  "need_label": "csbiii_cops_ltt",
+                  "need_ending": "premature",
                   "pos": [20, 10]
             },
             "csbiii_yes_escape_outcome_arrow": {
@@ -1379,7 +1379,7 @@
             "csbiii_godfail_badend": {
                   "name": "God Fail",
                   "type": "badend",
-                  "need_achieve": "no_mercy",
+                  "need_ending": "god_fail",
                   "pos": [24, 10]
             },
             "csbiii_genocide_no_arrow": {
@@ -1401,7 +1401,7 @@
             "csbiii_godsuccess_badend": {
                   "name": "God Success",
                   "type": "badend",
-                  "need_label": "genocide_wait_arc",
+                  "need_ending": "god_success",
                   "pos": [24, 11]
             },
             "csbiii_forest_hide_outcome_arrow": {
@@ -1445,7 +1445,7 @@
             "csbiii_bad_convince_badend": {
                   "name": "Attorney's Badge",
                   "type": "badend",
-                  "need_label": "csbiii_bad_convince",
+                  "need_ending": "attorney",
                   "pos": [24, 12]
             },
             "csbiii_good_convince_outcome_arrow": {
@@ -1560,7 +1560,7 @@
             "csbiii_east_hotwire_badend": {
                   "name": "Grand Theft Failure",
                   "type": "badend",
-                  "need_label": "true_hotwire",
+                  "need_ending": "hotwire",
                   "pos": [31, 15]
             },
             "csbiii_east_wait_outcome_arrow": {
@@ -1604,7 +1604,7 @@
             "csbiii_east_baddriver_badend": {
                   "name": "Bad Driver",
                   "type": "badend",
-                  "need_label": "lose_car_game",
+                  "need_ending": "bad_driver",
                   "pos": [33, 14]
             },
             "csbiii_east_car_win_outcome_arrow": {
@@ -1736,7 +1736,7 @@
             "csbiii_east_pencil_lose_badend": {
                   "name": "Pencil Sharting Day",
                   "type": "badend",
-                  "need_label": "lose_pencil_game",
+                  "need_ending": "pencil_shart",
                   "pos": [39, 14]
             },
             "csbiii_east_pencil_win_outcome_arrow": {
@@ -1787,7 +1787,7 @@
             "csbiii_east_hohsis_fight_badend": {
                   "name": "Catch These Shitty Hands",
                   "type": "badend",
-                  "need_label": "true_fighthohsis",
+                  "need_ending": "revenge",
                   "pos": [41, 10]
             },
             "csbiii_east_hohsis_argue_outcome_arrow": {
@@ -1810,6 +1810,7 @@
                   "name": "RIP House",
                   "type": "badend",
                   "need_label": "true_fuckuphohsis",
+                  "need_ending": "rip_house",
                   "pos": [41, 14]
             },
             "csbiii_east_hohsis_cops_check_arrow": {
@@ -2076,7 +2077,7 @@
             "dx_pencil2_lose_badend": {
                   "name": "You dumb skinfore.",
                   "type": "badend",
-                  "need_label": "lose_pencil_game2",
+                  "need_ending": "pencil_shart_the_sequel",
                   "pos": [54, 9],
                   "content_type": "dx"
             },
@@ -2282,7 +2283,7 @@
             "csbiii_south_hohsis_fight_outcome": {
                   "name": "Fight",
                   "type": "outcome",
-                  "need_label": "south_back_home_alt",
+                  "need_label": "south_fighthohsis_alt",
                   "pos": [30, 18]
             },
             "csbiii_south_riphouse_badend_arrow": {
@@ -2294,6 +2295,7 @@
                   "name": "RIP House",
                   "type": "badend",
                   "need_label": "south_fighthohsis_alt",
+                  "need_ending": "rip_house",
                   "pos": [31, 18]
             },
             "csbiii_south_hohsis_brag_outcome_arrow": {
@@ -2304,7 +2306,7 @@
             "csbiii_south_hohsis_brag_outcome": {
                   "name": "Brag",
                   "type": "outcome",
-                  "need_label": "south_back_home_alt",
+                  "need_label": "south_braghohsis",
                   "pos": [30, 20]
             },
             "csbiii_south_ripmoney_badend_arrow": {
@@ -2316,6 +2318,7 @@
                   "name": "RIP Money",
                   "type": "badend",
                   "need_label": "south_braghohsis",
+                  "need_ending": "rip_money",
                   "pos": [31, 20]
             },
             "csbiii_south_hohsis_donate_outcome_arrow": {

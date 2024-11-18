@@ -4288,6 +4288,7 @@ label ce_roof_moment:
     n "As CS entered his room to start streaming, our story here comes to a close."
     n "It wasn't the Christmas that CS expected, but it was one of the jolliest times he's had."
     n "Merry Christmas, and have a Happy New Year!"
+    $ ending_manager.mark("christmas")
     pause 5.0
 
 # Epilogue

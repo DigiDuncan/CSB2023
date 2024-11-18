@@ -810,6 +810,7 @@ label csbiii_cops_ltt:
     copguy "You are under arrest! Put your hands in the air!"
     stop music fadeout 3.0
     music end
+    $ ending_manager.mark("premature")
     bad_end "Stupid CS! You dropped\nyour lore in front of the hoes!" "csbiii_ltt_decide"
 
 label csbiii_arc_escape:
@@ -1226,6 +1227,7 @@ label genocide_attack_arc:
     arceus "{i}Really?"
     arceus "I've been a god longer than you, dummy."
     arceus "Nice try."
+    $ ending_manager.mark("god_fail")
     bad_end "There's no weapon\nto free us all!" "csbiii_forest_menu"
 
 label genocide_wait_arc:
@@ -1405,6 +1407,7 @@ label genocide_wait_arc:
     csgod "I have finally harnessed the power of CSGod!"
     csgod "Time to take over the world!" # TODO: maybe a more epic line here??
     stop music
+    $ ending_manager.mark("god_success")
     bad_end "This will affect\nthe local trout population!" "csbiii_forest_menu"
 
 label csbiii_escape_forest:
@@ -1567,6 +1570,7 @@ label csbiii_bad_convince:
     show cs disappointed
     copguy "Nice try, bud. We saw your fake visa and everything."
     copguy "You two are going back to the slammer."
+    $ ending_manager.mark("attorney")
     bad_end "Did you really\nthink that would work?" "csbiii_copcar_menu"
 
 # TODO: ace attorney select evidence menu

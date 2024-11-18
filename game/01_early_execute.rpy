@@ -14,7 +14,8 @@ init -1 python:
     # Achievement step counts
     pun_count = 999
     fun_count = 999
-    ending_count = 27
+    original_ending_count = 27
+
     with renpy.open_file("data/bios.json") as f:
         j = json.load(f)
         bio_count = len(j)
@@ -27,6 +28,13 @@ init -1 python:
         j = json.load(f)
         song_count = len(j["tracks"])
         print(f"Loaded {song_count} songs.")
+    with renpy.open_file("data/timeline.json") as f:
+        j = json.load(f)
+        timeline_trace_count = 0
+        for e in j["timeline"]:
+             if j["timeline"][e]["type"] != "arrow":
+                timeline_trace_count = timeline_trace_count + 1
+        print(f"Loaded {timeline_trace_count} events.")
 
 init python:
     renpy.add_layer("music", above = "master")
@@ -51,10 +59,12 @@ default persistent.controller_id = 0
 default persistent.true_ending = False
 
 # Achievement progress
-default persistent.seen_endings = set()
+default persistent.seen_original_endings = set()
+default persistent.seen_all_endings = set()
 default persistent.max_pencil_score = 0
 default persistent.max_pencil_score_ex = 0
 default persistent.train_routes_seen = 0
+default persistent.timeline_trace_seen = 0
 
 # Chapter unlocks
 default persistent.csb2_unlocked = False

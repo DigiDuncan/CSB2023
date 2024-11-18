@@ -3492,14 +3492,15 @@ label splashscreen:
 label before_main_menu:
     python:
         seen_all = True
-        for i in Replay_items:
-            if not renpy.seen_label(i.replay):
+        for i in ORIGINAL_27:
+            if i not in persistent.seen_original_endings:
                 seen_all = False
         if seen_all:
             if not "fin" in persistent.unlocked_achievements:
                     chievos = (a for a in achievement_manager.achievements.values() if a == "fin")
                     renpy.show_screen("popup", next(chievos))
                     achievement_manager.unlock("fin", show_screen = False)
+                    # TODO: this does not work yet
                     persistent.creative_mode = True
                     renpy.call_screen("special_unlock", "Noice! You've unlocked Creative Mode! Check out all the new stuff in Extras!")
 

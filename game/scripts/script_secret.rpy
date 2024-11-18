@@ -31,7 +31,7 @@ label secret_dx2:
     play music space_classroom
     show pakoo at center with Dissolve(3)
     $ achievement_manager.unlock("broke")
-    pakoo "Okay, that was funny, but that's my joke."
+    pakoo "Okay, that was funny, but, that's {i}my{/i} joke."
     pakoo "Don't do it again."
     scene black with dissolve
     pause 1.0

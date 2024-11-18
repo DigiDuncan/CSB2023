@@ -1216,6 +1216,7 @@ label friend_flint_car:
     n "Sirens blare in the dealership as Copguy pulls up to the car."
     copguy "Out of all the cars in this lot you decided to escape with, you picked the Flintmobile?"
     copguy "That's kinda sad."
+    $ ending_manager.mark("grand_dad")
     bad_end "Fleenstones?" "friend_car_picker"
     
 

@@ -464,4 +464,6 @@ label vibration:
     stop music fadeout 3.0
     music end
     pause 2.0
+    $ ending_manager.mark("speedrun")
+    $ renpy.end_replay()
     return

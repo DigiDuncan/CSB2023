@@ -137,4 +137,5 @@ label after_error_fight:
     pakoo "Alright, let's restart the script."
     show script
     pause 1.5
+    $ ending_manager.mark("error")
     return

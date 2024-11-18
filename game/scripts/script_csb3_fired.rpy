@@ -923,6 +923,7 @@ label fired_limo_time:
             jump fired_no_contract
             
 label fired_no_contract:
+    $ ending_manager.mark("threw_away_fame")
     bad_end "Well,\nthat was kinda dumb!" "fired_limo_time"
 
 label fired_signed_the_contract:

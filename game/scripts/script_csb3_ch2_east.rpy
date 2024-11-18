@@ -69,6 +69,7 @@ label true_hotwire:
     show arceus worried
     copguy "I could hear the sound of a car window breaking from miles away!"
     copguy "You guys already blew it! Back to the slammer!"
+    $ ending_manager.mark("hotwire")
     bad_end "What did Copguy\njust tell you?" "csbiii_choose_direction"
 
 label true_billy_driver:
