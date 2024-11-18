@@ -90,7 +90,7 @@
     },
     "colton": {
         "full_name": "Colton Potter",
-        "sprite_path": "images/characters/colton.png",
+        "sprite_path": "images/characters/lmg/colton.png",
         "quote": "Guys, this isn't funny!",
         "bio": "Although he's the scapegoat of LTT, Colton doesn't mind this treatment too much. He's happy to work with Linus and the gang, and, honestly, he needs their company to even get through the day."
     },
@@ -102,7 +102,7 @@
     },
     "copguy": {
         "full_name": "Copguy",
-        "sprite_path": "images/characters/copguy.png",
+        "sprite_path": "images/characters/copguy/copguy.png",
         "quote": "You're headin' to the slammer, bucko.",
         "bio": "Copguy is both the good cop and the bad cop. You think all cops are bad? Copguy does not care. Nothing will stop him from completing his final mission."
     },
@@ -165,7 +165,7 @@
     },
     "ed": {
         "full_name": "Ed",
-        "sprite_path": "images/characters/ed.png",
+        "sprite_path": "images/characters/hohsis/ed.png",
         "quote": "We make sure to get the JoJ done right, the first time.",
         "bio": "As the CEO of HoH SiS, he makes sure the crew gets the JoJ done right, no matter the cost. He always looks out for his fellow workers. He holds a grudge against CS, and is determined to get his revenge."
     },
@@ -208,7 +208,7 @@
     },
     "hoh_worker": {
         "full_name": "HoH SiS Workers",
-        "sprite_path": "images/characters/hoh_worker.png",
+        "sprite_path": "images/characters/hohsis/hoh_worker.png",
         "quote": "I don't know, don't ask me!",
         "bio": "The workers of HoH SiS aren't too compliant with the new changes to the workplace. The CEO has recently wanted to make attacks on a man named \"cs188\". They didn't sign up for this! They just wanna improve foundations, for God's sake!",
         "zoom": 0.667
@@ -278,7 +278,7 @@
     },
     "linus": {
         "full_name": "Linus Sebastian",
-        "sprite_path": "images/characters/linus.png",
+        "sprite_path": "images/characters/lmg/linus.png",
         "quote": "lttstore.com",
         "bio": "Linus is the CEO of Linus Tech Tips and of Linus Media Group. This man really loves his tech, so much that his entire life revolves around it. Even so, he can never seem to handle any kind of device without dropping it... much like he can never seem to handle this segue to our sponsor!"
     },
@@ -290,7 +290,7 @@
     },
     "luke": {
         "full_name": "Luke Lafreniere",
-        "sprite_path": "images/characters/luke.png",
+        "sprite_path": "images/characters/lmg/luke.png",
         "quote": "I wanna go home!",
         "bio": "Luke, also known as the Floatplane guy, is Linus' right-hand man. He works a little too hard for Linus' liking. He also apparently has a family."
     },
@@ -427,7 +427,7 @@
     },
     "rich": {
         "full_name": "Richard",
-        "sprite_path": "images/characters/rich.png",
+        "sprite_path": "images/characters/hohsis/rich.png",
         "quote": "Yes, I'm happy now.",
         "bio": "Richard doesn't want as much trouble from CS as his coworkers do, but he's prepared to act if he must. Richard just wants to go home and chill after a long day of hard work."
     },
@@ -488,7 +488,7 @@
     },
     "taran": {
         "full_name": "Taran Von Hemert",
-        "sprite_path": "images/characters/taran.png",
+        "sprite_path": "images/characters/lmg/taran.png",
         "quote": "Need help with anything?",
         "bio": "Taran is the main editor for LTT. He's been there since the beginning and throughout LTT's growth, but he is planning on leaving soon. He's a super chill guy who loves helping out with various projects."
     },
@@ -541,7 +541,7 @@
     },
     "wesley": {
         "full_name": "Wesley",
-        "sprite_path": "images/characters/wesley.png",
+        "sprite_path": "images/characters/hohsis/wesley.png",
         "quote": "Do it all over again.",
         "bio": "Wesley is Ed's right-hand man. He's armed, courageous, and most importantly, he will get the JoJ done 15 times over again if he has to."
     },
