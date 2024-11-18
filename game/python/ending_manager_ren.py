@@ -15,7 +15,7 @@ DX_ROUTE_ENDINGS = [ "train_broke", "train_winner", "train_thief", "christmas" ]
 DX_MISC_ENDINGS = [ "underpants" ]
 
 # ALL endings, to be used mostly for timeline tracer but might be useful later
-ALL_ENDINGS = ROUTE_ENDINGS + BAD_ENDINGS + MISC_ENDINGS + DX_ROUTE_ENDINGS + DX_MISC_ENDINGS
+ALL_ENDINGS = ROUTE_ENDINGS + BAD_ENDINGS + MISC_ENDINGS + EXTRA_ENDING  + DX_ROUTE_ENDINGS + DX_MISC_ENDINGS
 
 class EndingManager:
     def __init__(self):
