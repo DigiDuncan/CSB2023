@@ -3259,6 +3259,8 @@ label ce_lights_out:
     cs "Okay, I'm trying to relax... and think..."
     cs "Let me feel my way to the basement, and try to check the breaker."
     cs "I'll be right back."
+    play sound sfx_bump
+    pause 0.5
     k17 "Oof!"
     cs "Sorry!"
     arceus "CS? Is that you?"
