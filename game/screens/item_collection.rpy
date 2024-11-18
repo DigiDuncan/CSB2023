@@ -3,17 +3,13 @@
 ##-----------------------------------------------
 
 init python:
-    import json
     from math import ceil
 
-    with renpy.open_file('data/item_collection.json') as json_file:
-        item_map = json.load(json_file)
-
     for n in persistent.collected:
-        if n not in item_map:
-            print(f"WARNING: Item '{n}' not in item_map!")
+        if n not in ITEM_MAP:
+            print(f"WARNING: Item '{n}' not in ITEM_MAP!")
 
-    max_y = math.ceil( len(item_map.keys()) / 5 )
+    max_y = math.ceil( len(ITEM_MAP.keys()) / 5 )
 
     def mark_read(k):
         persistent.read.add(k)
@@ -51,12 +47,12 @@ screen item_nav():
             $ ystart = 0
 
             grid 5 max_y:
-                for k in item_map:
+                for k in ITEM_MAP:
                     # determine thumbnail from whether you have unlocked the given item
                     if k in persistent.collected:
-                        $ item_img = Transform(item_map[k]['img'], size=(120,120), fit="contain", xalign=0.5, yalign=0.5, matrixcolor=None)
+                        $ item_img = Transform(ITEM_MAP[k]['img'], size=(120,120), fit="contain", xalign=0.5, yalign=0.5, matrixcolor=None)
                     else:
-                        $ item_img = Transform(item_map[k]['img'], size=(120,120), fit="contain", xalign=0.5, yalign=0.5, matrixcolor=sil_black_matrix)
+                        $ item_img = Transform(ITEM_MAP[k]['img'], size=(120,120), fit="contain", xalign=0.5, yalign=0.5, matrixcolor=sil_black_matrix)
 
                     # create the bounding box for each button
                     frame:
@@ -90,7 +86,7 @@ screen item_welcome():
 
     style_prefix "codex"
     python:
-        item_count = len(item_map.keys())
+        item_count = len(ITEM_MAP.keys())
         unlocked_item_count = len(persistent.collected)
     vbox:
         xsize 775
@@ -123,12 +119,12 @@ screen items(l):
             # Handling the text
             python:
                 try:
-                    if item_map[l].get('dx', False):
-                        fetched_desc = "{image=gui/dx_text.png} " + item_map[l]["desc"]
-                    elif item_map[l].get('ce', False):
-                        fetched_desc = "{image=gui/ce_text.png} " + item_map[l]["desc"]
+                    if ITEM_MAP[l].get('dx', False):
+                        fetched_desc = "{image=gui/dx_text.png} " + ITEM_MAP[l]["desc"]
+                    elif ITEM_MAP[l].get('ce', False):
+                        fetched_desc = "{image=gui/ce_text.png} " + ITEM_MAP[l]["desc"]
                     else:
-                        fetched_desc = item_map[l]["desc"]
+                        fetched_desc = ITEM_MAP[l]["desc"]
                 except:
                     fetched_desc = "This item didn't load correctly. Ask Tate to fix this..."
 
@@ -138,15 +134,15 @@ screen items(l):
                     background None
                     xsize 1.0 ysize 300
                     xalign 0.5 yalign 0.5
-                    image Transform(item_map[l]['img'], size=(640, 240), fit="contain"):
+                    image Transform(ITEM_MAP[l]['img'], size=(640, 240), fit="contain"):
                         xalign 0.5 yalign 0.5
 
                 first_spacing 10
-                text "{size=+24}" + item_map[l]['name']:
+                text "{size=+24}" + ITEM_MAP[l]['name']:
                     xalign 0.5
                     
-                text "{size=-12}(" + item_map[l]['rarity'] + ")":
+                text "{size=-12}(" + ITEM_MAP[l]['rarity'] + ")":
                     xalign 0.5
                     color("#BBBBBB")
 
-                text "\nOwner: " + item_map[l]['owner'] + "\n\n" + fetched_desc
+                text "\nOwner: " + ITEM_MAP[l]['owner'] + "\n\n" + fetched_desc

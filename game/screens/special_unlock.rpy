@@ -1,6 +1,6 @@
 screen special_unlock(flavor_text):
     modal True
-    zorder 1
+    zorder 1000
     on "show" action Play("sound", "sfx/sfx_special_unlock.ogg")
 
     python:

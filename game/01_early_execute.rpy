@@ -11,7 +11,7 @@ init -1 python:
 
     import json
 
-    # Achievement step counts
+    # Achievement step counts + only load certain JSON files once
     pun_count = 999
     fun_count = 999
     original_ending_count = 27
@@ -20,22 +20,32 @@ init -1 python:
         j = json.load(f)
         bio_count = len(j)
         print(f"Loaded {bio_count} bios.")
+
     with renpy.open_file("data/item_collection.json") as f:
         j = json.load(f)
         item_count = len(j)
         print(f"Loaded {item_count} items.")
+
+    ITEM_MAP = j
+
     with renpy.open_file("data/jukebox.json") as f:
         j = json.load(f)
         song_count = len(j["tracks"])
         print(f"Loaded {song_count} songs.")
+
+    MUSIC_MAP = j["tracks"]
+    TAGS_MAP = j["tags"]
+
     with renpy.open_file("data/timeline.json") as f:
         j = json.load(f)
         timeline_trace_count = 0
-        for e in j["timeline"]:
-             if j["timeline"][e]["type"] != "arrow":
+        for e in j:
+             if j[e]["type"] != "arrow":
                 timeline_trace_count = timeline_trace_count + 1
         print(f"Loaded {timeline_trace_count} events.")
 
+    TIMELINE_MAP = j
+    
 init python:
     renpy.add_layer("music", above = "master")
     renpy.add_layer("popup", above = "overlay")

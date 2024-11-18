@@ -5,19 +5,9 @@
 
 
 init python:
-
-    global music_map
-
-    import json
-    with renpy.open_file("data/jukebox.json") as json_file:
-        jukebox_file = json.load(json_file)
-
-    music_map = jukebox_file["tracks"]
-    tags_map = jukebox_file["tags"]
-
     for n in persistent.heard:
-        if n not in music_map:
-            print(f"WARNING: Track '{n}' not in music_map!")
+        if n not in MUSIC_MAP:
+            print(f"WARNING: Track '{n}' not in MUSIC_MAP!")
     
 screen jukebox():
 
@@ -63,21 +53,21 @@ screen jukebox_nav():
                 idle "/gui/right_off_small.png"
                 hover "/gui/right_on_small.png"
 
-                if current_jukebox_tag_index+1<len(tags_map):
+                if current_jukebox_tag_index+1<len(TAGS_MAP):
                     action SetVariable("current_jukebox_tag_index", current_jukebox_tag_index+1)
 
             # since we can't exactly do anything about the index problem let's just hide unseen tags. want to use obfuscator() later but it's not ready yet.
 
             $ found_match = False
-            $ tags_label_text = tags_map[current_jukebox_tag_index]
+            $ tags_label_text = TAGS_MAP[current_jukebox_tag_index]
 
             for song in persistent.heard:
-                if tags_map[current_jukebox_tag_index] in music_map[song]["tags"]:
+                if TAGS_MAP[current_jukebox_tag_index] in MUSIC_MAP[song]["tags"]:
                     $ found_match = True
                     break
 
-            if found_match or tags_map[current_jukebox_tag_index] == "All":
-                $ tags_label_text = tags_map[current_jukebox_tag_index]
+            if found_match or TAGS_MAP[current_jukebox_tag_index] == "All":
+                $ tags_label_text = TAGS_MAP[current_jukebox_tag_index]
             else:
                 $ tags_label_text = "(Locked)"
 
@@ -96,15 +86,15 @@ screen jukebox_nav():
             vbox:
                 spacing 10
                 xoffset 350
-                for k in music_map:
+                for k in MUSIC_MAP:
                     if k in persistent.heard:
                         # display all
                         if current_jukebox_tag_index == 0:
-                            textbutton "{font=music_text}" + music_map[k]["title"]+"\n{size=-12}"+music_map[k]["artist"] action SetScreenVariable("current_song_name", k), Play("jukebox", music_map[k]["file"], relative_volume=0.5)
+                            textbutton "{font=music_text}" + MUSIC_MAP[k]["title"]+"\n{size=-12}"+MUSIC_MAP[k]["artist"] action SetScreenVariable("current_song_name", k), Play("jukebox", MUSIC_MAP[k]["file"], relative_volume=0.5)
                         # only display per tag
                         else:
-                            if tags_map[current_jukebox_tag_index] in music_map[k]["tags"]:
-                                textbutton "{font=music_text}" + music_map[k]["title"]+"\n{size=-12}"+music_map[k]["artist"] action SetScreenVariable("current_song_name", k), Play("jukebox", music_map[k]["file"], relative_volume=0.5)
+                            if TAGS_MAP[current_jukebox_tag_index] in MUSIC_MAP[k]["tags"]:
+                                textbutton "{font=music_text}" + MUSIC_MAP[k]["title"]+"\n{size=-12}"+MUSIC_MAP[k]["artist"] action SetScreenVariable("current_song_name", k), Play("jukebox", MUSIC_MAP[k]["file"], relative_volume=0.5)
 
     textbutton "Return to Extras" action ShowMenu("category_welcome"), Stop("jukebox"), PauseAudio("music", False) yoffset 950 xoffset 25
     textbutton "Return" action Return(), Stop("jukebox"), PauseAudio("music", False) yoffset 1000 xoffset 25
@@ -115,7 +105,7 @@ screen jukebox_nav():
 
 screen jukebox_welcome():
     python:
-        music_count = len(music_map.keys())
+        music_count = len(MUSIC_MAP.keys())
         unlocked_music_count = len(persistent.heard)
     vbox:
         xsize 850
@@ -131,7 +121,7 @@ screen jukebox_welcome():
 
 screen music_screen(selected_track):
 
-    $ this_track = music_map[selected_track]
+    $ this_track = MUSIC_MAP[selected_track]
 
     $ track_title = this_track["title"]
     $ artist = this_track["artist"]

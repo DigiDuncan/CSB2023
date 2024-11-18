@@ -2,31 +2,18 @@
 # as well as allow for keeping track of all major story events.
 
 init python:
-    import json
-
-    global timeline_map
     global timeline_xmax
     global timeline_ymax
 
-    with renpy.open_file("data/timeline.json") as json_file:
-        timeline_file = json.load(json_file)
-
-    timeline_map = timeline_file["timeline"]
-
-    with renpy.open_file("data/achievements.json") as json_file:
-        achieve_file = json.load(json_file)
-
-    achieve_map = achieve_file
-
-    # only adjust the first number of these if we need more space to the east or south later
+    # only auto-adjusts the first number of these if we need more space to the east or south later
     # grid starts at (0, 0), remember your off-by-one errors
     # doing it here so it doesn't have to keep recalculating every time you mouse over something
 
-    fetch_highest_x = max(timeline_map, key=lambda x: timeline_map[x]["pos"][0])
-    fetch_highest_y = max(timeline_map, key=lambda y: timeline_map[y]["pos"][1])
+    fetch_highest_x = max(TIMELINE_MAP, key=lambda x: TIMELINE_MAP[x]["pos"][0])
+    fetch_highest_y = max(TIMELINE_MAP, key=lambda y: TIMELINE_MAP[y]["pos"][1])
 
-    timeline_xmax = ((timeline_map[fetch_highest_x]["pos"][0] + 1) * 200) + 20
-    timeline_ymax = ((timeline_map[fetch_highest_y]["pos"][1] + 1) * 150) + 20
+    timeline_xmax = ((TIMELINE_MAP[fetch_highest_x]["pos"][0] + 1) * 200) + 20
+    timeline_ymax = ((TIMELINE_MAP[fetch_highest_y]["pos"][1] + 1) * 150) + 20
 
 screen timeline_tracer():
     tag menu
@@ -131,20 +118,20 @@ screen timeline_tracer():
             fixed:
                 area (0, 0, timeline_xmax, timeline_ymax)
 
-                for event in timeline_map:
+                for event in TIMELINE_MAP:
                     python:
 
                         # count total events for later, but don't count arrows
-                        if timeline_map[event]["type"] != "arrow":
+                        if TIMELINE_MAP[event]["type"] != "arrow":
                             total_events = total_events + 1
-                            if timeline_map[event]["type"] == "end" or timeline_map[event]["type"] == "badend":
+                            if TIMELINE_MAP[event]["type"] == "end" or TIMELINE_MAP[event]["type"] == "badend":
                                 total_endings = total_endings + 1
 
                         # set up positioning
                         # this is set up in a grid system. just handle it in the json based on what row/column you want
                         try:
-                            this_x = int(timeline_map[event]["pos"][0]*200) + 20
-                            this_y = int(timeline_map[event]["pos"][1]*150) + 20
+                            this_x = int(TIMELINE_MAP[event]["pos"][0]*200) + 20
+                            this_y = int(TIMELINE_MAP[event]["pos"][1]*150) + 20
                         except:
                             this_x = 20
                             this_y = 20
@@ -152,23 +139,19 @@ screen timeline_tracer():
                         # make sure it's unlocked before we continue
                         try:
                             # if it needs you to have earned an achievement to unlock
-                            if "need_achieve" in timeline_map[event] and timeline_map[event]["need_achieve"] in persistent.unlocked_achievements:
+                            if "need_achieve" in TIMELINE_MAP[event] and TIMELINE_MAP[event]["need_achieve"] in persistent.unlocked_achievements:
                                 this_unlocked = True
 
-                            # if it needs you to have seen a label to unlock but NOT an ending
-                            elif "need_label" in timeline_map[event] and renpy.seen_label(timeline_map[event]["need_label"]) == True and "need_ending" not in timeline_map[event]:
-                                this_unlocked = True
-
-                            # if it requires a seen ending but NOT a label
-                            elif "need_ending" in timeline_map[event] and timeline_map[event]["need_ending"] in persistent.seen_all_endings and "need_label" not in timeline_map[event]:
+                            # if it needs you to have seen EITHER a label OR an ending to unlock
+                            elif "need_ending" in TIMELINE_MAP[event] and TIMELINE_MAP[event]["need_ending"] in persistent.seen_all_endings or "need_label" in TIMELINE_MAP[event] and renpy.seen_label(TIMELINE_MAP[event]["need_label"]) == True:
                                 this_unlocked = True
 
                             # if requires an ending AND a label
-                            elif "need_ending" in timeline_map[event] and timeline_map[event]["need_ending"] in persistent.seen_all_endings and "need_label" in timeline_map[event] and renpy.seen_label(timeline_map[event]["need_label"]) == True:
+                            elif "need_ending" in TIMELINE_MAP[event] and TIMELINE_MAP[event]["need_ending"] in persistent.seen_all_endings and "need_label" in TIMELINE_MAP[event] and renpy.seen_label(TIMELINE_MAP[event]["need_label"]) == True:
                                 this_unlocked = True
 
                             # if it's unlocked by default (you will *probably* never need this??):
-                            elif "need_label" not in timeline_map[event] and "need_achieve" not in timeline_map[event] and "need_ending" not in timeline_map[event]:
+                            elif "need_label" not in TIMELINE_MAP[event] and "need_achieve" not in TIMELINE_MAP[event] and "need_ending" not in TIMELINE_MAP[event]:
                                 this_unlocked = True
                             # have not unlocked
                             else:
@@ -180,9 +163,9 @@ screen timeline_tracer():
                         if this_unlocked == True:
 
                             # add to unlocked counters
-                            if timeline_map[event]["type"] != "arrow":
+                            if TIMELINE_MAP[event]["type"] != "arrow":
                                 total_seen_events = total_seen_events + 1
-                            if timeline_map[event]["type"] == "end" or timeline_map[event]["type"] == "badend":
+                            if TIMELINE_MAP[event]["type"] == "end" or TIMELINE_MAP[event]["type"] == "badend":
                                 total_seen_endings = total_seen_endings + 1
 
                             # check if you've seen them all
@@ -192,31 +175,31 @@ screen timeline_tracer():
 
                             # get type and change background color based on it
                             # TODO: this should be replaced w images later
-                            if timeline_map[event]["type"] == "start":
+                            if TIMELINE_MAP[event]["type"] == "start":
                                 this_bg = col_start
-                            elif timeline_map[event]["type"] == "choice":
+                            elif TIMELINE_MAP[event]["type"] == "choice":
                                 this_bg = col_choice
-                            elif timeline_map[event]["type"] == "outcome":
+                            elif TIMELINE_MAP[event]["type"] == "outcome":
                                 this_bg = col_outcome
-                            elif timeline_map[event]["type"] == "prereq":
+                            elif TIMELINE_MAP[event]["type"] == "prereq":
                                 this_bg = col_prereq
-                            elif timeline_map[event]["type"] == "end":
+                            elif TIMELINE_MAP[event]["type"] == "end":
                                 this_bg = col_end
-                            elif timeline_map[event]["type"] == "badend":
+                            elif TIMELINE_MAP[event]["type"] == "badend":
                                 this_bg = col_badend
-                            elif timeline_map[event]["type"] == "minigame":
+                            elif TIMELINE_MAP[event]["type"] == "minigame":
                                 this_bg = col_minigame
-                            elif timeline_map[event]["type"] == "arrow":
+                            elif TIMELINE_MAP[event]["type"] == "arrow":
                                 this_bg = None
                             else: # if it's this color, you haven't given it a type, and you need to fix that.
                                 this_bg = "#000000"
                         
                             # get DX/CE status
                             try:
-                                if timeline_map[event]["content_type"] == "dx":
+                                if TIMELINE_MAP[event]["content_type"] == "dx":
                                     dxiconimg = "gui/dx_text.png"
                                     this_new = True
-                                elif timeline_map[event]["content_type"] == "ce":
+                                elif TIMELINE_MAP[event]["content_type"] == "ce":
                                     dxiconimg = "gui/ce_text.png"
                                     this_new = True
                             except:
@@ -224,13 +207,13 @@ screen timeline_tracer():
 
                             # get name, if it exists
                             try:
-                                this_name = timeline_map[event]["name"]
+                                this_name = TIMELINE_MAP[event]["name"]
                             except:
                                 this_name = ""
                     
                             # get jump label, if it exists
                             try:
-                                this_jump = timeline_map[event]["jump_to"]
+                                this_jump = TIMELINE_MAP[event]["jump_to"]
                             except:
                                 this_jump = None
 
@@ -241,7 +224,7 @@ screen timeline_tracer():
                             this_jump = None
                             
                     # let's get arrow status
-                    if timeline_map[event]["type"] == "arrow":
+                    if TIMELINE_MAP[event]["type"] == "arrow":
                         python:
                             direction_keys = {
                                 "n": 0,
@@ -254,12 +237,12 @@ screen timeline_tracer():
                                 "nw": 315
                             }
 
-                        if "arrow_type" in timeline_map[event]:
-                            if timeline_map[event]["arrow_type"] == "double":
+                        if "arrow_type" in TIMELINE_MAP[event]:
+                            if TIMELINE_MAP[event]["arrow_type"] == "double":
                                 $ arrow = Transform("gui/timeline/arrow_double.png")
-                            elif timeline_map[event]["arrow_type"] == "hblock":
+                            elif TIMELINE_MAP[event]["arrow_type"] == "hblock":
                                 $ arrow = Transform("gui/timeline/arrow_hblock.png")
-                            elif timeline_map[event]["arrow_type"] == "vblock":
+                            elif TIMELINE_MAP[event]["arrow_type"] == "vblock":
                                 $ arrow = Transform("gui/timeline/arrow_vblock.png")
                         else:
                             $ arrow = Transform("gui/timeline/arrow_single.png")
@@ -272,7 +255,7 @@ screen timeline_tracer():
                             image arrow:
                                 xalign 0.5
                                 yalign 0.5
-                                rotate direction_keys[timeline_map[event]["direction"]]
+                                rotate direction_keys[TIMELINE_MAP[event]["direction"]]
 
                     # screen vars
                     $ show_name = None

@@ -520,8 +520,8 @@
     },
     "timeline":{
         "name": "Planeswalker's Apprentice",
-        "locked": "See every timeline.",
-        "unlocked": "See every timeline.",
+        "locked": "Allow the arrows to lead you by the lines...",
+        "unlocked": "See every possible outcome in Timeline Tracer!",
         "img": "timeline",
         "type": "extra",
         "dx": true,

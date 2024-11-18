@@ -21,12 +21,16 @@ init python:
 
 init 10 python:
     def unlock_all():
-        for m in music_map.keys():
+        for m in MUSIC_MAP.keys():
             persistent.heard.add(m)
         for p in name_map.keys():
             persistent.seen.add(p)
-        for i in item_map.keys():
+        for i in ITEM_MAP.keys():
             persistent.collected.add(i)
+        for o in ORIGINAL_27:
+            persistent.seen_original_endings.add(o)
+        for e in ALL_ENDINGS:
+            persistent.seen_all_endings.add(e)
         achievement_manager.unlock_all()
         persistent.true_ending = True
         persistent.csb2_unlocked = True
@@ -3491,28 +3495,20 @@ label splashscreen:
 
 label before_main_menu:
     python:
-        seen_all = True
-        for i in ORIGINAL_27:
-            if i not in persistent.seen_original_endings:
-                seen_all = False
-        if seen_all:
-            if not "fin" in persistent.unlocked_achievements:
-                    chievos = (a for a in achievement_manager.achievements.values() if a == "fin")
-                    renpy.show_screen("popup", next(chievos))
-                    achievement_manager.unlock("fin", show_screen = False)
-                    # TODO: this does not work yet
+        if ending_manager.all_seen() == True:
+            if "fin" not in persistent.unlocked_achievements:
+                achievement_manager.unlock("fin", show_screen = False)
+                if persistent.creative_mode == False:
                     persistent.creative_mode = True
                     renpy.call_screen("special_unlock", "Noice! You've unlocked Creative Mode! Check out all the new stuff in Extras!")
-
-    if not persistent.seen_splash:
-        if not renpy.music.is_playing():
-            $ renpy.music.play("bubble_tea.ogg", loop = False)
-    else:
-        if not renpy.music.is_playing():
-            $ renpy.music.play("<from 16.53>bubble_tea.ogg", loop = False)
-            $ persistent.seen_splash = False
-
-    return
+                    
+        if not persistent.seen_splash:
+            if not renpy.music.is_playing():
+                renpy.music.play("bubble_tea.ogg", loop = False)
+        else:
+            if not renpy.music.is_playing():
+                renpy.music.play("<from 16.53>bubble_tea.ogg", loop = False)
+                persistent.seen_splash = False
 
 label start:  # this might be required??
     # yep, it's required, but i'm fixing it to default to main menu instead - tate

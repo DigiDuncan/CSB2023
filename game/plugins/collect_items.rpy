@@ -1,13 +1,13 @@
 init python:
     def collect(i):
-        global item_map
-        if i in item_map.keys():
+        global ITEM_MAP
+        if i in ITEM_MAP.keys():
             persistent.collected.add(i)
             print(f"Collected item '{i}'.")
         else:
-            print(f"WARNING: Failed to collect item '{i}', which does not exist in item_map.")
+            print(f"WARNING: Failed to collect item '{i}', which does not exist in ITEM_MAP.")
         
-            for i in item_map.keys():
+            for i in ITEM_MAP.keys():
                 if i not in persistent.collected():
                     collected_all_items = False
                 if collected_all_items:
