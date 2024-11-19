@@ -383,60 +383,7 @@ label csbi_room:
         "HoH SiS":
             pass
         "Home Savers"(type="dx"):
-            play music beautiful_hills volume 0.3 if_changed
-            music beautiful_hills
-            show cs
-            cs "I guess I can call Home Savers. Despite my YTPs of their company, I don't think they'd mind helping me out."
-            show cs phone
-            $ collect("cs_phone")
-            n "CS dials the phone number he found on their website."
-            play sound sfx_dial_hohsis
-            pause 16
-            show cs phone at left with move
-            show hoh_hq at mid_offscreen_right behind ed
-            show ed phone at right
-            with moveinright
-
-            # prevent dial tone overflow
-            stop sound
-
-            ed "Hello, and thank you for calling Home Savers. This is Ed. How may I help you?"
-            show cs worried phone
-            cs "Hello, Ed! This is CS! My house feels like there is a rock on--{w=1.0}{nw}"
-            cs "Um, I mean... my house is starting to tilt!"
-            ed "Oh, man, {i}that{/i} doesn't sound good! What's your address? We can schedule a visit for this afternoon!"
-            scene black with dissolve
-            centered "A little while later..."
-            pause 1.0
-            play sound sfx_doorbell volume 0.5
-            pause 1.0
-            play sound sfx_house_door_open
-            show cs_door_open at rotate_10
-            show cs disappointed at left
-            with dissolve
-            pause 1.5
-            show ed at center with dissolve
-            ed "Hey, CS! Long time no see!"
-            ed "Oh, wow, this is pretty bad! How long has it been like this?"
-            show cs worried
-            cs "I'm not sure! It's a pretty big house, so it must have happened so slowly that I only {i}just{/i} noticed!"
-            show cs
-            cs "By the way, it's nice to see you again!"
-            ed "Hey, you too!"
-            ed "I've been watching some of your new videos lately. They're always a hoot!"
-            ed "I'm glad to see you're still going strong!"
-            show cs happy
-            cs "Thank you! I appreciate it."
-            ed "Well, we'd better get to work. This foundation ain't gonna repair itself!"
-            $ achievement_manager.unlock("savers")
-            stop music fadeout 3.0
-            music end
-            scene black with Dissolve(3.0)
-            $ renpy.movie_cutscene(hoh_repair)
-            $ renpy.movie_cutscene(creditsm)
-            $ persistent.heard.add("goodbye_summer_hello_winter")
-            $ renpy.end_replay()
-            return
+            jump csbi_home_savers
     show cs
     cs "Better call HoH SiS!"
     cs "They're really good at giving me the JoJ!"
@@ -1036,3 +983,61 @@ label csbi_direction:
     play sound sfx_elevator_ding
     scene black with dissolve
     jump csbii_start
+
+# needed to separate this into a new label for timeline progression - tate
+label csbi_home_savers:
+    play music beautiful_hills volume 0.3 if_changed
+    music beautiful_hills
+    show cs
+    cs "I guess I can call Home Savers. Despite my YTPs of their company, I don't think they'd mind helping me out."
+    show cs phone
+    $ collect("cs_phone")
+    n "CS dials the phone number he found on their website."
+    play sound sfx_dial_hohsis
+    pause 16
+    show cs phone at left with move
+    show hoh_hq at mid_offscreen_right behind ed
+    show ed phone at right
+    with moveinright
+
+    # prevent dial tone overflow
+    stop sound
+
+    ed "Hello, and thank you for calling Home Savers. This is Ed. How may I help you?"
+    show cs worried phone
+    cs "Hello, Ed! This is CS! My house feels like there is a rock on--{w=1.0}{nw}"
+    cs "Um, I mean... my house is starting to tilt!"
+    ed "Oh, man, {i}that{/i} doesn't sound good! What's your address? We can schedule a visit for this afternoon!"
+    scene black with dissolve
+    centered "A little while later..."
+    pause 1.0
+    play sound sfx_doorbell volume 0.5
+    pause 1.0
+    play sound sfx_house_door_open
+    show cs_door_open at rotate_10
+    show cs disappointed at left
+    with dissolve
+    pause 1.5
+    show ed at center with dissolve
+    ed "Hey, CS! Long time no see!"
+    ed "Oh, wow, this is pretty bad! How long has it been like this?"
+    show cs worried
+    cs "I'm not sure! It's a pretty big house, so it must have happened so slowly that I only {i}just{/i} noticed!"
+    show cs
+    cs "By the way, it's nice to see you again!"
+    ed "Hey, you too!"
+    ed "I've been watching some of your new videos lately. They're always a hoot!"
+    ed "I'm glad to see you're still going strong!"
+    show cs happy
+    cs "Thank you! I appreciate it."
+    ed "Well, we'd better get to work. This foundation ain't gonna repair itself!"
+    $ achievement_manager.unlock("savers")
+    stop music fadeout 3.0
+    music end
+    scene black with Dissolve(3.0)
+    $ ending_manager.mark("savers")
+    $ renpy.movie_cutscene(hoh_repair)
+    $ renpy.movie_cutscene(creditsm)
+    $ persistent.heard.add("goodbye_summer_hello_winter")
+    $ renpy.end_replay()
+    return

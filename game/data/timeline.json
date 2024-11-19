@@ -147,7 +147,7 @@
     "csbi_homesavers_outcome": {
         "name": "Home Savers",
         "type": "outcome",
-        "need_ending": "savers",
+        "need_label": "csbi_home_savers",
         "pos": [5, 5],
         "content_type": "dx"
     },
@@ -159,7 +159,7 @@
     "csbi_homesavers_end": {
         "name": "Get The Job Done Right",
         "type": "end",
-        "need_achieve": "savers",
+        "need_ending": "savers",
         "pos": [6, 5],
         "content_type": "dx"
     },
