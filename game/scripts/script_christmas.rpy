@@ -43,11 +43,11 @@ label ce_start:
     cs "I finally get to throw a huge Christmas party at my house!"
     show cs happy flipped
     cs "I'm so pumped! I should call everyone one more time to make sure they're still coming."
-    show cs happy phone flipped
+    play sound sfx_ring_once
+    show cs happy phone flipped with dissolve
     $ collect("cs_phone") # i am putting the item collection for non-CE items here anyway in case we do include item collection in CE standalone - tate
     pause 0.5
     scene black with dissolve
-    play sound sfx_ring_once
     pause 1.0
     n "CS makes a phone call to each of the friends he had invited."
     pause 0.5
@@ -62,7 +62,7 @@ label ce_start:
 
     show cs happy
     # remember, CS does not remember Mean in this timeline, so let's imply a few guests are bringing a plus-one, including, uh, me. - tate
-    cs "Yep, looks like that's everyone, and then some! It's gonna be a full house!"
+    cs "Yep, looks like that's everyone, and {i}then{/i} some! It's gonna be a full house!"
     cs "I've got two days to prepare!"
     pause 2.0
     "..."
@@ -70,7 +70,7 @@ label ce_start:
     cs "...{fast} I have not prepared at all."
     cs "Fuck."
     # if y'all know CS, then y'all know damn well why this line exists. - tate
-    cs "I literally had two {i}weeks{/i} to prepare, but I guess I just left it until the last minute again..." 
+    cs "I literally had two {i}weeks{/i} to get everything ready, but I guess I just left it until the last minute again..." 
     pause 0.5
 
     show cs
@@ -129,7 +129,6 @@ label ce_tree:
         # these unusual transitions will force the dialogue window to remain open while CS is moving the box.
         
         show cs at mid_offscreen_right with { "master" : MoveTransition(0.5) }
-        play sound sfx_box_drag volume 5.0
         cs "Who {i}doesn't{/i} wanna get this thing out? This is the {i}best{/i} part of decorating!"
 
         play sound sfx_box_drag volume 5.0
@@ -394,7 +393,7 @@ label ce_anno:
     if tree_first:
         n "CS takes one last glance at the disaster in the garage."
         n "He lets out a groan."
-        cs "This is such a disaster..."
+        cs "This is {i}not{/i} how this was supposed to go..."
     else:
         n "CS looks upon his stash of lights and baubles and feels a little overwhelmed."
         cs "Wow, this is more than I thought..."
@@ -1144,6 +1143,7 @@ label ce_before_shopping:
     show shopping_cart at manual_pos(0.8, 1.1, 0.5)
     with moveinleft
     pause 1.0
+    # TODO: this entire dialogue is AAAAAA but idk how to rewrite it yet, too much repetition, was this intended?? - tate
     cs "Oh, good, bread. Can't have a holiday dinner without some good bread!"
     cs "I guess I'll get Italian bread. You can make real good garlic bread with that."
     cs "Since Digi's coming, and I think they're ace, I'd better have the good stuff."
@@ -1589,16 +1589,16 @@ label ce_aftershop:
 
 label ce_party_before:
     scene cs_bedroom2
-    show cs happy
+    show cs happy christmas
     with dissolve
     cs "Today is the day!"
     cs "Now I just have to wait for people to arrive!"
-    show cs flipped
+    show cs christmas flipped
     cs "I wonder who will arrive first?"
     if d20 == 1:
         n "CS waits paiently."
         n "He keeps on waiting."
-        show cs disappointed flipped
+        show cs disappointed christmas flipped
         cs "Alright, any minute now..."
         cs "The party starts here in about 15 minutes, so people should start showing up soon..."
         n "CS keeps on waiting, but it looks like no one shows up early."
@@ -1611,7 +1611,7 @@ label ce_party_before:
         show arceus dark flipped at mid_left
         show kitty dark at left
         with dissolve
-        show cs dark flipped at right with moveinright
+        show cs christmas dark flipped at right with moveinright
         arceus "Hey CS!"
         cs "Hey Arc! Hey Kitty!"
         kitty "What's up?"
@@ -1628,20 +1628,20 @@ label ce_party_before:
         scene cs_house_snow_night
         show anno festive dark at mid_left
         with dissolve
-        show cs dark flipped at right with moveinright
+        show cs christmas dark flipped at right with moveinright
         anno "Hey CS!"
         anno "I showed up kinda early, but I wanted to see everyone's initial reactions of our decor work!"
         cs "Well I'm glad you showed up, come inside! It's cold out."
         jump ce_intro      
     if d20 == 4:
         n "All of a sudden, CS hears a futuristic sounding vehicle land outside."
-        show cs disappointed flipped
+        show cs disappointed christmas flipped
         cs "What the hell is that?"
         hide cs with moveoutleft
         scene cs_house_snow_night
         show digi dark flipped at mid_left
         with dissolve
-        show cs dark flipped at right with moveinright
+        show cs christmas dark flipped at right with moveinright
         digi "Hey, CS! How've you been?"
         cs "Hey, Digi! I didn't know you had a... spaceship?"
         digi "Oh yeah, this old thing. It's a bit of a nugget but it gets the job done."
@@ -1654,9 +1654,9 @@ label ce_party_before:
         jump ce_intro
     if d20 == 5 or d20 == 6:
         n "As soon as he says that, he feels the house start to shake."
-        show cs disappointed flipped
+        show cs disappointed christmas flipped
         cs "Wh-- What's going on?"
-        show cs worried flipped
+        show cs worried christmas flipped
         n "As the house shakes even faster, a loud train whistle bellows out."
         cs "Holy shit, is that a train?"
         hide cs with moveoutleft
@@ -1664,7 +1664,7 @@ label ce_party_before:
         show tate festive dark flipped at mid_left
         show mean human dark flipped at left
         with dissolve
-        show cs worried dark flipped at right with moveinright
+        show cs worried christmas dark flipped at right with moveinright
         cs "That's a fucking train!"
         tate "Hey CS! How've you been doin'?"
         cs "Tate? Hey! I've been great!"
@@ -1679,7 +1679,7 @@ label ce_party_before:
         scene cs_house_snow_night
         show billy festive dark at mid_left
         with dissolve
-        show cs dark flipped at right with moveinright
+        show cs dark christmas flipped at right with moveinright
         billy "Hi! It's Billy!"
         billy "Merry Christmas!"
         cs "Merry Christmas to you too, Billy!"
@@ -1690,14 +1690,14 @@ label ce_party_before:
         jump ce_intro      
     if d20 == 8:
         n "All of a sudden, CS hears helicopter blades outside of his house."
-        show cs worried flipped
+        show cs worried christmas flipped
         cs "Woah, what the hell?"
         n "A Blackhawk helicopter is seen landing out in the middle of the street."
         hide cs with moveoutleft
         scene cs_house_snow_night
         show obama festive dark at mid_left
         with dissolve
-        show cs dark flipped at right with moveinright
+        show cs dark christmas flipped at right with moveinright
         n "The President of the United States steps out."
         obama "Hello, CS! Nice to meet you."
         cs "Obama?! I didn't think you would actually come!"
@@ -1711,14 +1711,14 @@ label ce_party_before:
         show blue_light at left
         show red_light at right
         n "Sirens start blaring outside."
-        show cs worried flipped
+        show cs worried christmas flipped
         cs "Uh oh! Why are the cops here?"
         n "CS rushes outside."
         hide cs with moveoutleft
         scene cs_house_snow_night
         show copguy festive dark flipped at mid_left
         with dissolve
-        show cs worried dark flipped at right with moveinright
+        show cs worried christmas dark flipped at right with moveinright
         copguy "Heya, CS. Did I scare you?"
         cs "Fuck, yeah you did! I didn't think you were gonna be on duty!"
         copguy "Well someone's gotta be security, right?"
@@ -1732,7 +1732,7 @@ label ce_party_before:
         scene cs_house_snow_night
         show sheriff dark flipped at left
         with dissolve
-        show cs dark flipped at right with moveinright
+        show cs christmas dark flipped at right with moveinright
         sheriff "God dammit! Stupid damn wheels! Stuck in the snow!"
         cs "Woah, hey! Who are you?"
         sheriff "Who am I? I'm Copguy's boss, that's who!"
@@ -1749,7 +1749,7 @@ label ce_party_before:
         show rich dark flipped at mid_left
         show wesley dark flipped at left
         with dissolve
-        show cs dark flipped at right with moveinright
+        show cs christmas dark flipped at right with moveinright
         cs "Hey guys! How have you guys been doing?"
         ed "We've been doing well! Our business has been profitable recently!"
         ed "Even Wesley has made a speedy recovery! He wasn't too happy about getting that metal pipe in his back, though."
@@ -1768,7 +1768,7 @@ label ce_party_before:
         show k22 dark flipped at left
         show k17 dark flipped at mid_left
         with dissolve
-        show cs disappointed dark flipped at right with moveinright
+        show cs disappointed christmas dark flipped at right with moveinright
         cs "Hey it's... two Pakoos?"
         show k17 happy dark flipped
         k17 "CS!!!"
@@ -1781,13 +1781,13 @@ label ce_party_before:
         jump ce_intro      
     if d20 == 13:
         n "A teleport-like sound is heard outside."
-        show cs disappointed flipped
+        show cs disappointed christmas flipped
         cs "What in the world?"
         hide cs with moveoutleft
         scene cs_house_snow_night
         show aria festive dark flipped at mid_left
         with dissolve
-        show cs dark flipped at right with moveinright
+        show cs christmas dark flipped at right with moveinright
         cs "Oh hey! Aria, right?"
         aria "Yep, that's me!"
         aria "Goodness, am I too early?"
@@ -1803,7 +1803,7 @@ label ce_party_before:
         scene cs_house_snow_night
         show michael dark at mid_left
         with dissolve
-        show cs dark flipped at right with moveinright
+        show cs christmas dark flipped at right with moveinright
         cs "Oh hey, it's Michael!"
         cs "You're still visiting the United States? I thought you were only here for the summer!"
         michael "I decided to spend a whole year over here."
@@ -1818,7 +1818,7 @@ label ce_party_before:
         show linus dark at mid_left
         show luke dark flipped at left
         with dissolve
-        show cs dark flipped at right with moveinright
+        show cs christmas dark flipped at right with moveinright
         linus "Hey CS! Long time no see!"
         cs "You too, and Luke as well?"
         luke "Hey man! I know we didn't talk much during your short employment, but it was fun having you around!"
@@ -1836,7 +1836,7 @@ label ce_party_before:
         scene cs_house_snow_night
         show blank dark flipped at mid_left
         with dissolve
-        show cs dark flipped at right with moveinright
+        show cs christmas dark flipped at right with moveinright
         blank "Hey CS, how have you been?"
         cs "I've been doing well, did you drive safe here?"
         blank "I did, but lots of people on the interstate didn't!"
@@ -1850,7 +1850,7 @@ label ce_party_before:
         scene cs_house_snow_night
         show nova dark flipped at mid_left
         with dissolve
-        show cs dark flipped at right with moveinright
+        show cs christmas dark flipped at right with moveinright
         nova "Hey CS! Thanks for inviting me to your Christmas party!"
         cs "Yeah sure thing!"
         cs "It's been a while, how've you been?"
@@ -1859,7 +1859,7 @@ label ce_party_before:
         jump ce_intro      
     if d20 == 18:
         n "CS sees a Cherokee pull up to his house."
-        show cs disappointed flipped
+        show cs disappointed christmas flipped
         cs "What the fuck? Who is that?"
         hide cs with moveoutleft
         scene cs_house_snow_night
@@ -1867,7 +1867,7 @@ label ce_party_before:
         show anne dark at mid_left
         show grace dark at left
         with dissolve
-        show cs disappointed dark flipped at right with moveinright
+        show cs disappointed christmas dark flipped at right with moveinright
         cs "Hey, uhh..."
         eliza "Is this the right place?"
         cs "I think so?"
@@ -1887,8 +1887,8 @@ label ce_party_before:
         scene cs_house_snow_night
         show db dark at mid_left
         with dissolve
-        show cs dark flipped at right with moveinright
-        cs "DB! Your the first one here!"
+        show cs christmas dark flipped at right with moveinright
+        cs "DB! You're the first one here!"
         db "I am??"
         cs "Yes! You managed to be the earliest this time!"
         db "Wow, I can't believe it!"
@@ -1896,13 +1896,13 @@ label ce_party_before:
         jump ce_intro      
     if d20 == 20:
         n "A man in a white shirt walks up to CS' house."
-        show cs disappointed flipped
+        show cs disappointed christmas flipped
         cs "Who the hell is that?"
         hide cs with moveoutleft
         scene cs_house_snow_night
         show avgn dark flipped at mid_left
         with dissolve
-        show cs disappointed dark flipped at right with moveinright
+        show cs disappointed christmas dark flipped at right with moveinright
         cs "Hey, are you..."
         avgn "I'm the fuckin' Nerd!"
         cs "The Angry Video Game Nerd? I didn't invite you, at least I don't think I did?"
@@ -1914,7 +1914,7 @@ label ce_party_before:
     else:
         n "CS waits paiently."
         n "He keeps on waiting."
-        show cs disappointed flipped
+        show cs disappointed christmas flipped
         cs "OK, what's going on? I figured {i}someone{/i} would be early."
         n "CS looks out into the distance."
         cs "Wait, who is that?"
@@ -1922,7 +1922,7 @@ label ce_party_before:
         scene cs_house_snow_night
         show iris flipped at mid_left
         with dissolve
-        show cs disappointed dark flipped at right with moveinright
+        show cs disappointed christmas dark flipped at right with moveinright
         cs "Who the heck are you?"
         iris "Oh, hello."
         iris "It seems you rolled a..."
@@ -1935,7 +1935,7 @@ label ce_party_before:
         iris "Ah, that's a lot to discuss. Shall we go inside? I'm sure you're rather cold."
         cs "I..."
         n "CS gives up trying to understand, for now."
-        show cs dark flipped
+        show cs christmas dark flipped
         cs "Sure."
         jump ce_intro
 
@@ -1944,7 +1944,7 @@ label ce_intro:
     scene black with dissolve
     n "By the time of the party, everyone shows up at CS' house in droves."
     scene cs_foyer
-    show cs at left
+    show cs christmas at left
     show anno festive at mid_left behind cs
     show aria festive at mid_mid_left behind anno
     show digi at center
@@ -1970,7 +1970,7 @@ label ce_intro:
     k17 "You guys all look so... different!"
     show k22 confident
     k22 "Hi, I'm his--"
-    show cs disappointed
+    show cs disappointed christmas
     k17 "CS, look how much you've grown!"
     show k22
     cs "Okay, why are there 2 Pakoos?"
@@ -2041,7 +2041,7 @@ label ce_intro:
     show michael at mid_mid_right behind cs_kitchen_fg
     show billy festive at mid_mid_left behind cs_kitchen_fg
     with dissolve
-    show cs at left with moveinleft
+    show cs christmas at left with moveinleft
     cs "Hey guys, how are y'all doing?"
     obama "Hello CS, we are all preparing our meals for dinner tonight."
     obama "I'm gonna make a carrot cake."
@@ -2072,29 +2072,29 @@ label ce_intro:
     luke "You idiots are both wrong! You are putting in the wrong port!"
     digi "Ohhhhh..." (multiple = 2)
     linus "Ohhhhh..." (multiple = 2)
-    show cs flipped at center with moveinright
+    show cs christmas flipped at center with moveinright
     cs "Hey guys! What are you guys doing?"
     digi "Oh, we are just trying to set up a projector to play movies on!"
     linus "Don't ask how this became a 3 man job."
-    show cs
+    show cs christmas
     cs "Well, what about you two?"
     blank "We are working on setting up the music."
     nova "The problem is, I don't really want to have Blank play his shitty music during the party."
     blank "Why? Not all of it's crazy shit, like yours is."
-    show cs disappointed
+    show cs disappointed christmas
     nova "Shut the hell up!"
-    show cs worried
+    show cs worried christmas
     cs "Woah okay, calm down."
-    show cs disappointed
+    show cs disappointed christmas
     cs "This is a Christmas party, after all. Let's try to have fun."
-    show cs flipped
+    show cs christmas flipped
     cs "I'm gonna go check on anyone else who is here."
     hide cs with moveoutleft
     scene cs_hallway
     show arceus flipped at mid_left
     show kitty at left
     with dissolve
-    show cs flipped at center with moveinright
+    show cs christmas flipped at center with moveinright
     cs "Hey how are you guys? I was looking all over and couldn't find you."
     arceus "Sorry CS, we kind of got overwhelmed."
     kitty "We aren't the best with huge social gatherings."
@@ -2105,19 +2105,19 @@ label ce_intro:
     show grace at mid_mid_right
     with moveinright
     eliza "Hey, what's up."
-    show cs worried
+    show cs worried christmas
     grace "CS! You're that YTP guy!"
-    show cs disappointed
+    show cs disappointed christmas
     cs "Uhm... who are you three?"
     eliza "Well, do you know Mika at all?"
-    show cs angry
+    show cs angry christmas
     cs "I swear to God, are you guys like, memories or some shit as well?"
     eliza "Relax, no, we are just..."
     eliza "Just think of us as them I guess yeah."
     # TODO: This should be explained better
     cs "You guys are so complicated."
     arceus "I mean, it wasn't too hard for me to figure out, funny enough."
-    show cs disappointed
+    show cs disappointed christmas
     n "CS sighs."
     cs "I guess not, I'm just stressed out a bit."
     cs "I just really want this party to go well, and I feel like at this point I don't know half the people here."
@@ -2215,7 +2215,7 @@ label ce_banter:
     show digi flipped at left
     show linus at mid_left behind digi
     show luke at mid_left_left behind linus
-    show cs disappointed flipped at right
+    show cs disappointed christmas flipped at right
     with dissolve
     cs "Is this projector still not set up?"
     digi "No! The projector keeps giving me this really weird error!"
@@ -2378,17 +2378,17 @@ label ce_banter:
     show wesley at right
     show rich at mid_right
     show db at center
-    show cs at left
+    show cs christmas at left
     with dissolve
     rich "Oh man, I love this part."
     show k17 shock at mid_mid_right with moveinright
     k17 "Hey guys, how do I put this..."
     k17 "The sheriff is stuck in the bathroom?"
-    show cs disappointed
+    show cs disappointed christmas
     show k17 disappointed
     cs "Dammit, one second."
     obama "CS! Are you there?"
-    show cs
+    show cs christmas
     cs "Okay, lemme do this first. The president is calling!"
     hide cs with moveoutright
 
@@ -2400,7 +2400,7 @@ label ce_cooking:
     show michael at mid_offscreen_left behind cs_kitchen_fg
     show billy festive at left behind cs_kitchen_fg
     with dissolve
-    show cs at center behind cs_kitchen_fg with moveinleft
+    show cs christmas at center behind cs_kitchen_fg with moveinleft
     cs "Hey Mr. President, what do you need?"
     stop music fadeout 3.0
     music end
@@ -2408,15 +2408,15 @@ label ce_cooking:
     obama "Second of all, I accidently cut myself while chopping these carrots."
     obama "What a fool I am."
     show cs disappointed
-    cs "Oh my god, are you okay?"
+    cs "Oh my God, are you okay?"
     obama "Yes, I'm fine, but I need someone to keep cutting for me."
     obama "Can you do it for me?"
-    show cs
+    show cs christmas
     cs "I guess I can, yeah."
     obama "Great, I just need a few more carrots cut up."
     obama "Give me a moment. I need a Band-Aid."
     hide obama with moveoutleft
-    show cs at mid_right with move
+    show cs christmas at mid_right with move
     cs "Alright, just a few carrots."
     cs "Let's do this."
     #Carrot Karate Chop Minigame
@@ -2425,23 +2425,23 @@ label ce_cooking:
     show obama festive at center behind cs_kitchen_fg
     show michael at mid_offscreen_left behind cs_kitchen_fg
     show billy festive at left behind cs_kitchen_fg
-    show cs flipped at mid_right behind cs_kitchen_fg  
+    show cs christmas flipped at mid_right behind cs_kitchen_fg  
     with dissolve
     show smoke
-    obama "Well would you look at that!"
+    obama "Well, would you look at that?"
     obama "That was some mighty fine chopping, CS!"
-    show cs happy flipped
+    show cs happy christmas flipped
     cs "Woohoo!"
     cs "Thank you! Maybe I should cook more."
-    show cs flipped
+    show cs christmas flipped
     cs "Speaking of cooking, I can smell something, burning..."
     obama "It is perhaps the smoke bellowing from the oven?"
-    show cs worried flipped
+    show cs worried christmas flipped
     play sound sfx_smoke_alarm loop
     n "All of a sudden, the smoke detectors start beeping!"
     digi "Ahh! Turn it off!"
-    nova "Dammit Blank! I said we weren't playing your music!"
-    aria "Honestly this is kind of a bop. Keep it going."
+    nova "Damn it, Blank! I {i}said{/i} we weren't playing your music!"
+    aria "Honestly, this is kind of a bop. Keep it going."
     show ed festive flipped at center behind cs_kitchen_fg with easeinleft
     ed "Nooooo!"
     ed "My turkey!"
@@ -2452,10 +2452,10 @@ label ce_cooking:
     stop sound
     n "When the smoke finally clears, Ed pulls out a blackened turkey."
     hide smoke with dissolve
-    show cs flipped
+    show cs christmas flipped
     play music snowdin_town
     music snowdin_town
-    ed "Dammit! My roast is ruined!"
+    ed "Damn it! My roast is ruined!"
     billy "Not to fear, Ed! I made my famous restaurant mini-burgers!"
     show ed festive
     ed "You mean, steamed hams?"
@@ -2483,7 +2483,7 @@ label ce_cooking:
     grace "But I really need to go!"
     sheriff "Find another bathoom."
     grace "But this is the only one in the house!"
-    sheriff "In this mansion? There is only one damn bathroom?"
+    sheriff "In this mansion? There is only {i}one{/i} damn bathroom?!"
     show copguy festive flipped at center with moveinleft
     copguy "Hey, sorry, excuse me."
     play sound sfx_house_door_open
@@ -2495,7 +2495,7 @@ label ce_cooking:
     play sound sfx_house_door_close
     scene cs_bathroom
     show grace at mid_left
-    copguy "Hey boss! You won't believe what I just experienced."
+    copguy "Hey, boss! You won't {i}believe{/i} what I just experienced."
     copguy "This kid caught two burglars trying to rob his house with homemade traps!"
     copguy "It was so impressive, I probably would've fallen for some of them!"
     sheriff "That's great, can you get me off this toilet now?"
@@ -2544,7 +2544,7 @@ label ce_cooking:
     digi "While that's true, I think half of that night was spent coding, and the other half was spent confusing the names of four different bald dudes."
     arceus "To be fair, that was hilarious."
     digi "You got me there."
-    show cs at mid_left with moveinleft
+    show cs christmas at mid_left with moveinleft
     n "CS walks in on the conversation."
     cs "Hey guys! What are you all talking about?"
     digi "Oh, we were just discussing what developing the first game was li--"
@@ -2552,14 +2552,14 @@ label ce_cooking:
     digi "Er, uh, just talking about a coding project we all worked on."
     cs "Oh, OK. Probably a bunch of stuff I wouldn't understand."
     aria "Certainly not."
-    show cs happy
+    show cs happy christmas
     cs "You guys do good work, though, I can't wait to see what the next DPN Games game will be!"
     show arceus worried
     arceus "Yeah, me too."
     hide cs with moveoutright
     n "CS walks off."
     aria "You're going to have to get better at the whole \"not breaking the illusion\" thing, Digi."
-    digi "What? He wouldn't have thought anything of it if you didn't stop me mid sentence."
+    digi "What? He wouldn't have thought anything of it if you didn't stop me mid-sentence."
     show arceus
     arceus "We just need to be a little more careful than that."
     digi "Fair enough. Wouldn't want this place falling apart."
@@ -2578,7 +2578,7 @@ label ce_cooking:
     n "Luther says nothing and nods once."
     billy "Well then, thanks for the compliment, Barack!"
     obama "You gotta tell me the one about the cabinet full of cleaners again."
-    show cs at center with moveinleft
+    show cs christmas at center with moveinleft
     n "CS walks in to greet the unlikely friends."
     cs "Obama, Billy! You two getting along?"
     obama "This guy's a hoot."
@@ -2586,7 +2586,7 @@ label ce_cooking:
     cs "Well, that's great. Glad to see two people from different walks of life enjoying each other's company."
     obama "That's what Christmas is all about, isn't it?"
     billy "That's the power, of the holiday season!"
-    show cs happy
+    show cs happy christmas
     cs "Well, I gotta go check on the others, you two have fun!"
     hide cs with moveoutright
     n "CS departs for the next room."
@@ -2596,25 +2596,26 @@ label ce_mike:
     stop music fadeout 3.0
     music end
     scene cs_living2
-    show cs at left
+    show cs christmas at left
     show rich at center
     show ed festive at mid_right
     show grace at right
     with dissolve
     cs "Gee, that pizza I ordered is sure taking its time!"
+    play sound sfx_doorbell
     n "Just at that moment, the doorbell rings."
-    cs "Well tickle my ballsack, what great timing!"
+    cs "Well, tickle my ballsack! What great timing!"
     grace "CS... you can't just say stuff like that."
     n "CS moves to open the door."
     scene cs_foyer with dissolve
-    show cs at left with moveinleft
+    show cs christmas at left with moveinleft
     cs "Hey guys, the pizza is here!"
     n "CS opens the door to let the pizza person in."
     show mike at right with moveinright
     play music rice_and_wine
     music rice_and_wine
     mike "I'm Chinese."
-    cs "Oh my god! It's Mike, everyone quick come look at Mike!"
+    cs "Oh, my God! It's Mike, everyone quick come look at Mike!"
     show k17 flipped at mid_mid_right behind grace
     show grace at mid_right
     show obama festive at center behind grace
@@ -2638,9 +2639,9 @@ label ce_mike:
     show k17 flipped with determination
     arceus "What's going on in here?"
     show arceus angry flipped at mid_mid_right with moveinleft
-    show cs happy
+    show cs happy christmas
     cs "It's Mike, Arceus! Mike the Pizzapotamus!"
-    show cs
+    show cs christmas
     show arceus angry
     arceus "Who?"
     grace "How do you not know who Mike the Pizzapotamus is?"
@@ -2653,7 +2654,7 @@ label ce_mike:
     arceus "You mean the bus station?"
     grace "No, the bus stop!"
     arceus "Oh, so he drives the bus?"
-    show cs angry
+    show cs angry christmas
     "Everyone" "No! The bus stop!"
     mike "You really don't know me, do you?"
     show arceus worried flipped
@@ -2670,29 +2671,29 @@ label ce_mike:
     grace "I expected more from you."
     obama "Should've listened to my campaign speeches, bitch."
     mike "Alright, who wants to try pizza from my thermos?"
-    show cs happy
-    cs "Oh yes! Me first! Woohoo!"
+    show cs happy christmas
+    cs "Oh, yes! Me first! Woohoo!"
     scene black with dissolve
     stop music fadeout 3.0
     music end
     pause 2.0
     play sound sfx_csnore
     cs "Zzz..."
-    rich "Hey CS, are you sleeping?"
+    rich "Hey, CS, are you sleeping?"
     scene cs_living2 
     show wesley at right
     show rich at mid_right
     show db at center
     show ed festive at mid_left behind cs
-    show cs concentrate at left
+    show cs concentrate christmas at left
     with dissolve
     play sound sfx_csnore
     rich "CS!"
     stop sound
-    show cs worried
+    show cs worried christmas
     cs "Huh?"
-    show cs disappointed
-    cs "Oh sorry, I did doze off."
+    show cs disappointed christmas
+    cs "Oh, sorry, I did doze off."
     cs "I had this insane dream, and there was this pizza guy..."
     wesley "Speaking of pizza, should we have dinner now? I'm starving."
     cs "Yeah, that's a good point. Give me a moment to get ready."  
@@ -2702,7 +2703,7 @@ label ce_dinner:
     scene cs_house_snow_night
     show cs_dining_1
     show cs_dining_2
-    show cs at center
+    show cs christmas at center
     show anno festive at mid_left
     show tate festive at mid_right
     show cs_dining_3
@@ -2838,7 +2839,7 @@ label ce_dinner:
 # Gift Exchange
 label ce_exchange:
     scene cs_living
-    show cs at center
+    show cs christmas at center
     with dissolve
     play music christmas_spirit
     music christmas_spirit
@@ -2851,23 +2852,23 @@ label ce_exchange:
     cs "Let's see, who is going first?"
     #roll 1
     cs "Would you look at that! I guess I'm going first!"
-    show cs at mid_left with moveinleft
+    show cs christmas at mid_left with moveinleft
     cs "I'm gonna pick, this one!"
     cs "I got..."
-    show cs disappointed
+    show cs disappointed christmas
     show thigh_highs at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     cs "Thigh highs?"
-    show cs full at manual_pos(0.034, 0.187)
+    show cs full christmas at manual_pos(0.034, 0.187)
     arceus "Look at that, you got my gift, CS!"
     hide thigh_highs with dissolve
     cs "Well, I guess I have more now!"
     k17 "You wear thigh highs?"
     cs "Yeah, I'm wearing them right now! See?"
-    show cs full at Move((0.034, 0.187), (0.034, -0.4), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show cs full christmas at Move((0.034, 0.187), (0.034, -0.4), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     window hide
     pause 2.5
-    show cs full at Move((0.034, -0.4), (0.034, 0.187), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")  
-    digi "Oh shit, I guess I never looked down to check."
+    show cs full christmas at Move((0.034, -0.4), (0.034, 0.187), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")  
+    digi "Oh, shit. I guess I never looked down to check."
     aria "I just assumed because of the outfit."
     hide cs with moveoutright
     arceus "Welp, it looks like I'm next."
@@ -3195,7 +3196,7 @@ label ce_climax:
     music end
     n "After all of the gifts have been given out, almost everyone has come to the conclusion that the party should end."
     scene cs_living
-    show cs at left
+    show cs christmas at left
     show k22 at mid_right
     show k17 at mid_offscreen_right
     show luke at center
@@ -3208,24 +3209,24 @@ label ce_climax:
     k22 "SHHHDADA--{w=1.0}{nw}"
     show k17 happy
     k17 "We are doing games? Well that's the best part!"
-    show cs disappointed
+    show cs disappointed christmas
     show tate sheepish festive
-    k22 "Dammit!"
+    k22 "{size=-12}Damn it!"
     show k22 disappointed
     show k17 disappointed
-    show cs angry
-    cs "So you never wanted to stay, you only came here because of him!"
-    nova "Well, I'm also leaving, because this asshole won't let me play any good music!"
-    blank "Hah! Says you! You wanted to play your trash this whole party!"
-    digi "Hey wait a second! Luke!"
-    luke "Wha? Oh shit!"
+    show cs angry christmas
+    cs "So, you never wanted to stay! You only came here because of him!"
+    nova "Well, I'm also leaving, because {i}this{/i} asshole won't let me play any {i}good{/i} music!"
+    blank "Hah! Says you! {i}You{/i} wanted to play your trash for the entire party!"
+    digi "Hey, wait a second! Luke!"
+    luke "Wha? Oh, shit!"
     show tate sad festive
-    digi "You were, streaming movies to the projector from your phone?"
+    digi "You were... streaming movies to the projector from your phone?"
     show mean human annoyed flipped
-    luke "Look, this looked to complicated to setup anyways, so I wanted to make it feel like your plan worked!"
+    luke "Look, this looked too complicated to set up anyway, so I wanted to make it feel like your plan worked!"
     digi "But, but..."
     digi "I really thought I could set it up this time..."
-    sheriff "Hey Copguy, I need to go to the bathroom again!"
+    sheriff "Hey, Copguy! I need to go to the bathroom again!"
     copguy "Motherfucker! Do it yourself!"
     ed "My poor turkey..."
     michael "I think I'm gonna puke."
@@ -3234,12 +3235,12 @@ label ce_climax:
     show tate srs festive
     tate "Yeah guys! Get it together!"
     nova "No! Fuck you!"
-    anne "Hey!"
     show mean human angry flipped
-    mean "What you say, you little fuck?"
-    arceus "Oh my god, this is hurting my head..."
-    show cs pissed
-    cs "Dammit everyone! Shut the fuck u--{w=2.0}{nw}"
+    anne "Hey!"
+    mean "What'd you say, you little {i}fuck?"
+    arceus "Oh, my God, this is hurting my head..."
+    show cs pissed christmas
+    cs "Damn it, everyone! Shut the fuck u--{w=2.0}{nw}"
 
 # Lights out
 screen flashlight_demo:
@@ -3252,14 +3253,15 @@ label ce_lights_out:
     scene black
     stop music
     music end
-    sheriff "Hey uhh..."
+    pause 0.2
+    sheriff "Hey, uh..."
     sheriff "I think I have finally become blind."
     linus "I think all of our eyes went out."
     cs "No! This can't be happening!"
     cs "My party is ruined!"
-    tate "CS, this wasn't your fault."
-    cs "Everyone is fighting, no one is having fun!"
-    nova "Well yeah, at least I don't listen to Blank's shitty music anymore."
+    tate "CS, this isn't your fault."
+    cs "Everyone is fighting, and no one is having fun!"
+    nova "Well, yeah, but, at least I don't listen to Blank's shitty music anymore."
     tate "{i}Can it!" with hpunch
     tate "Look, we need to stop the arguing and calm down!"
     billy "I am calm!"
@@ -3286,12 +3288,13 @@ label ce_lights_out:
         n "CS turns the doorknob."
         n "All of a sudden, CS gets kicked to the ground!"
         play sound sfx_hitbod3
-        cs "Ow! What the fuck was that?"
+        cs "Ow!"
+        cs "What the fuck was {i}that?!"
         eliza "Oops, sorry."
-        eliza "You grabbed, my chest."
-        cs "Oh crap! I'm so sorry!"
-        eliza "It's okay, none of us can see and I guess I was standing infront of the doorknob..."
-        cs "I was, trying, to get to the basement..."
+        eliza "You grabbed my... chest."
+        cs "Oh, crap! I'm so sorry!"
+        eliza "It's okay! None of us can see!"
+        cs "I'm just trying to get to the basement! I think you're in front of the door!"
         eliza "Let me just move out of the way."
         cs "Yeah, thanks."
     else:
@@ -3306,47 +3309,47 @@ label ce_lights_out:
     cs "Alright, I just need to find the breaker."
     n "CS feels around, and manages to find a flashlight on a table."
     scene cs_basement
-    show cs at center
+    show cs christmas at center
     play sound sfx_flashlight_on
     show screen flashlight_demo
-    cs "Thank god, I can actually see."
+    cs "Thank God, I can actually see."
     hide cs with moveoutright
     scene breakerbox with dissolve
-    show cs at left with moveinleft
+    show cs christmas at left with moveinleft
     cs "Found it!"
     n "CS opens the breaker and flicks off and on the switches."
     play sound sfx_breaker
     pause 1.5
-    show cs disappointed
+    show cs disappointed christmas
     cs "Damn, nothing."
-    show cs flipped
+    show cs christmas flipped
     cs "Well, it was worth a try."
     hide cs with moveoutleft
     scene cs_basement
-    show cs at center
+    show cs christmas at center
     show kitty at left
     with dissolve
     cs "At least I have this flashlight now!"
-    show cs flipped
+    show cs christmas flipped
     n "As CS turns around, he spots Kitty chilling against the wall."
     play music synchronicity
     music synchronicity
     cs "Kitty? What are you doing down here? Arceus is looking for you!"
-    kitty "Sorry, I got a bad migraine during the end of the party, so I tried to find the quietest place in the house."
-    kitty "I'm a little glad the power went out actually, it's been peaceful here."
-    cs "I was trying to fix the power via the breaker, but it looks like I got no dice."
-    kitty "I think the power is out everywhere, I heard the wind really pick up outside a little while ago."
+    kitty "Sorry... I got a bad migraine during the end of the party, so I tried to find the quietest place in the house."
+    kitty "I'm a little glad the power went out, actually. It's been peaceful here."
+    cs "I was trying to fix the breaker, but, no dice."
+    kitty "I think the power is out everywhere. I heard the wind really pick up outside a little while ago."
     kitty "You should probably go check for yourself."
-    kitty "Let Arceus know I'm down here, I think I'm gonna stay here for a bit."
-    cs "Got it. Stay safe down here."
-    show cs with determination
+    kitty "Could you please let Arceus know I'm down here? I think I'm gonna stay here for a bit."
+    cs "Sure thing. Stay safe."
+    show cs christmas with determination
     hide cs with moveoutright
     n "CS rushes back upstairs."
     scene cs_hallway_off 
     show arceus at center
     show elizabeth at right
     with dissolve
-    show cs at left with moveinleft
+    show cs christmas at left with moveinleft
     arceus "Welcome back! Assuming you didn't get the power working?"
     cs "Nope, but I found Kitty!"
     cs "She's relaxing in the basement due to her head hurting."
@@ -3357,16 +3360,16 @@ label ce_lights_out:
     eliza "I was thinking of lending mine to Arceus, so he can go in the basement."
     arceus "I would appreciate it."
     show elizabeth at mid_right
-    eliza "Take this, make sure to bring it back when the power turns on."
+    eliza "Take this, but make sure to bring it back when the power turns on."
     arceus "Got it."
     show arceus with determination
     hide arceus with moveoutleft
     eliza "Before you go CS, I would see if you can check the outdoors."
     eliza "Even though it is dark, no light is coming in from outside."
     eliza "It also sounds terrible out there."
-    show cs disappointed
-    eliza "I've experienced some harsh Soviet winters, but I've never heard anything this bad before."
-    cs "Well, that's some awesome news."
+    show cs disappointed christmas
+    eliza "I've experienced some harsh Soviet winters, but I've never dealt with anything this bad before."
+    cs "Well, that's some awesome news..."
     cs "I'll go check on others, and see if I can get outside."
     hide cs with moveoutright
     scene cs_foyer_off
@@ -3378,23 +3381,23 @@ label ce_lights_out:
     show tate srs festive flipped at mid_right
     show mean human annoyed at mid_offscreen_right
     with dissolve
-    show cs at left with moveinleft
+    show cs christmas at left with moveinleft
     cs "Hey guys! How is everyone holding up?"
     anno "It's getting kinda cold, so I hope the power comes back soon."
     anno "My phone is about to die."
     cs "I'm gonna check outside and see how bad it is."
     k22 "I was gonna try that, but I couldn't find the door."
     cs "If we get outside, we might be able to dig our vehicles out."
-    cs "Let me see how bad it is."
+    cs "I'll go take a look."
     hide cs with moveoutright
-    anno "Good luck CS!"
+    anno "Good luck, CS!"
     scene black with dissolve
     n "CS pulls and yanks open the door, until it finally rips open."
     play sound sfx_house_door_slam
     scene cs_door 
-    show cs worried at left
+    show cs worried christmas at left
     with dissolve
-    n "He falls backwards, only to be greeted with an ungrateful sight."
+    n "He falls backwards as he is met with an unwelcome sight."
     cs "What the hell? Is that snow?"
     n "CS sticks his finger out into the mysterious substance."
     cs "Oh my God, how much... did it..."
@@ -3408,11 +3411,11 @@ label ce_lights_out:
     show tate srs festive flipped at mid_right
     show mean human at mid_offscreen_right
     with dissolve
-    show cs worried flipped at center with moveinright
+    show cs worried christmas flipped at center with moveinright
     cs "Guys, the door... the door..."
     aria "Calm down, CS. Catch your breath."
-    show cs disappointed flipped
-    cs "The door, it's, all snow."
+    show cs disappointed christmas flipped
+    cs "The door, it's... {i}all{/i} snow."
     show tate sad festive flipped
     show k17 shock flipped
     anno "All snow?"
@@ -3423,7 +3426,7 @@ label ce_lights_out:
     show mean human angry
     show tate sad festive
     mean "There's only one way to find out."
-    show cs disappointed
+    show cs disappointed christmas
     mean "CS, take me to the roof."
     cs "To the roof?"
     mean "Yeah, let me climb up there."
@@ -3436,7 +3439,7 @@ label ce_lights_out:
     n "CS and Mean find the ladder to the attic, and make their way up."
     scene cs_attic
     show hatch at manual_pos(0.3, -0.2) 
-    show cs disappointed at mid_left
+    show cs disappointed christmas at mid_left
     show mean human annoyed at mid_right
     with dissolve
     stop music fadeout 3.0
@@ -3449,6 +3452,7 @@ label ce_lights_out:
     show screen hatch_button
     window hide
     pause
+
 label ce_after_hatch:
     show screen flashlight_demo
     mean "You mean like that one?"
@@ -3514,7 +3518,7 @@ label ce_snowed_in:
     scene black with dissolve
     n "CS and Mean climb back down and meet back up with everyone."
     scene cs_living2_off
-    show cs disappointed at mid_left
+    show cs disappointed christmas at mid_left
     show mean human annoyed flipped at mid_offscreen_left
     show ed festive at right
     show digi at mid_mid_right
@@ -3528,33 +3532,34 @@ label ce_snowed_in:
     show screen flashlight_demo
     stop music fadeout 3.0
     music end
-    cs "Well guys, we got some bad news."
+    cs "Well, guys, we've got some bad news."
     cs "We might be stuck here for a while."
-    k22 "Like all night? For a couple hours?"
+    k22 "Like... for a couple of hours? All night?"
     cs "Uhh..."
     cs "At least for the night."
     ed "Gee, where are we all gonna sleep?"
     linus "There's no way we can dig our way out?"
     digi "If it's that bad, wouldn't a snow plow be here soon anyways?"
-    show cs worried
+    show cs worried christmas
     rich "We've dealt with worse, let's get out there and shovel!"
-    show cs disappointed
+    show cs disappointed christmas
     show mean human angry flipped
     show tate shock festive flipped
     mean "Everyone! Stop!"
-    mean "There's like 20 feet of snow."
+    mean "There's, like, 20 feet of snow."
     n "Everyone goes quiet."
     mean "If you want to go up to the roof and check for yourself, go ahead."
     show mean human annoyed flipped
     show tate sad festive flipped
     mean "I couldn't believe it either, but..."
-    mean "There's nothing else but snow, and even more snow."
-    blank "I didn't even think you could get that much snow..."
-    show cs
-    cs "So that means we are gonna have to wait it out!"
+    mean "There's nothing but snow, snow, and even more snow."
+    mean "I'm from {i}Canada,{/i} and I've never {i}seen{/i} so much snow."
+    blank "I didn't even think you could {i}get{/i} that much snow..."
+    show cs christmas
+    cs "So, that means we are gonna have to wait it out!"
     show cs happy
-    cs "And what a better way than to play some games!"
-    show cs
+    cs "And, what better way to kill time than to play some games?"
+    show cs christmas
     michael "I spy something, black!"
     nova "Is it Obama?"
     show mean human flipped
@@ -3566,12 +3571,12 @@ label ce_snowed_in:
     cs "Okay, I have something I've wanted to play again with someone."
     cs "I have a few board games somewhere, I just need to look."
     show tate sad festive flipped
-    tate "Please tell me it's not Chess..."
-    cs "It's better than Chess! I'll be back."
+    tate "{i}Please{/i} tell me it's not chess..."
+    cs "It's better than chess! I'll be back."
     scene black with dissolve
     n "After a bit of rummaging, CS comes back with a blueish-looking box."
     scene cs_living2_off
-    show cs happy at mid_left
+    show cs happy christmas at mid_left
     show mean human flipped at mid_offscreen_left
     show ed festive at right
     show digi at mid_mid_right
@@ -3583,26 +3588,26 @@ label ce_snowed_in:
     show k17 disappointed at mid_mid_right behind obama
     with dissolve
     cs "It's Reversi!"
-    digi "You have an actual Reversi board?"
+    digi "You have an {i}actual{/i} Reversi board?"
     k17 "Isn't that the one game from Windows 3.1?"
     cs "Precisely!"
     n "CS takes off the cover and starts taking the pieces out."
     aria "Wait a second."
     aria "This is Othello, not Reversi."
-    show cs disappointed
+    show cs disappointed christmas
     cs "What do you mean? It says Reversi on the box!"
     aria "Yeah, I know, but in 1971--{w=1.5}{nw}"
-    show cs angry
+    show cs angry christmas
     cs "It's fucking Reversi, okay?"
     cs "I just want to play some Reversi."
-    show cs
+    show cs christmas
     cs "Who wants to play with me?"
     # maybe pick a character to play here?
     # Insert Reversi Gameplay here
 
 label ce_billy_time:
     scene cs_living2_off
-    show cs at mid_left
+    show cs christmas at mid_left
     show mean human flipped at mid_offscreen_left
     show ed festive at right
     show digi at mid_mid_right
@@ -3614,25 +3619,25 @@ label ce_billy_time:
     show k22 disappointed at center behind digi
     show k17 disappointed at mid_mid_right behind obama
     with dissolve
-    billy "Wait! Everyone hold on!"
-    cs "What? What is it Billy?"
+    billy "Wait! Everyone, hold on!"
+    cs "What? What is it, Billy?"
     play music on_the_rocks
     music on_the_rocks
-    billy "The handy switch!"
-    billy "Who got my handy switch for their gift?"
+    billy "The Handy Switch!"
+    billy "Who got my Handy Switch for their gift?"
     show tate festive
     tate "Me!"
     billy "Follow me to the basement!"
-    show cs disappointed
+    show cs disappointed christmas
     cs "Billy, what are you doing?"
-    billy "I have an idea, and I'll be right back!"
+    billy "Hi, Billy Mays, here, for this {i}great{/i} idea! We'll be right back!"
     hide billy with moveoutleft
-    show tate festive flipped
-    tate "I guess I'm following Billy, be right back as well."
+    show tate sheepish festive flipped
+    tate "I guess I'm following Billy, so, I'll be back...?"
     hide tate with moveoutleft
     scene black with dissolve
     hide screen flashlight_demo    
-    billy "Oh dang it! I forgot to bring a light!"
+    billy "Oh, dang it! I forgot to bring a light!"
     scene cs_hallway_off
     show billy festive at mid_left
     show tate festive at center
@@ -3640,12 +3645,12 @@ label ce_billy_time:
     show screen flashlight_demo
     with dissolve
     tate "I have my phone!"
-    billy "That works, I think the basement is down here!"
+    billy "That works! I think the basement is down here!"
     eliza "Did you guys manage to get outside?"
-    billy "Apparently the snow is up to the roof!"
+    billy "Apparently, the snow is up to the roof!"
     n "Elizabeth looks shocked."
-    billy "But good news! I have a way to possibly bring the power back!"
-    billy "With the handy switch!"
+    billy "But, good news! I have a way to possibly bring the power back!"
+    billy "With the Handy Switch!"
     eliza "I have no clue how that's gonna work, but good luck to you two."
     tate "Is the basement over this way?"
     eliza "Yeah, down the hall and to the left."
@@ -3667,12 +3672,12 @@ label ce_billy_time:
     billy "You should! Hi, Billy Mays here for the--"
     show tate sheepish festive flipped
     tate "Billy, the power?"
-    billy "Oh yeah. We can talk later!"
+    billy "Oh, yeah. We can talk later!"
     show tate festive
     hide tate
     hide billy
     with moveoutright
-    grace "I'll be waiting Billy!"
+    grace "I'll be waiting, Billy!"
     n "Billy and Tate run into the basement."
     scene cs_basement
     show kitty at left
@@ -3682,7 +3687,7 @@ label ce_billy_time:
     with dissolve
     arceus "Tate? Billy?"
     kitty "What's going on?"
-    billy "Fixing the power with the power of the handy switch!"
+    billy "Fixing the power, with the power of the Handy Switch!"
     show tate sheepish festive flipped
     tate "Don't ask."
     scene breakerbox
@@ -3690,25 +3695,25 @@ label ce_billy_time:
     show billy festive at mid_right
     with dissolve
     n "Finally, Billy and Tate make it to the breaker."
-    billy "Alright, all you gotta do is put the switch on the breaker!"
+    billy "Alright, all you gotta do is put the switch onto the breaker!"
     show tate sheepish festive
-    tate "Really? Just like, slap it on?"
-    billy "Yes! It's that easy!"
+    tate "Really? Just, like... slap it on?"
+    billy "Yes! It's {i}that{/i} easy!"
     show handy_switch at Move((0.3125, 0.4), (0.3125, 0.4), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    n "Tate slaps the handy switch on the breaker, and flips the switch."
+    n "Tate slaps the Handy Switch onto the breaker and flips the switch."
     play sound sfx_snd_lightswitch
     show tate shock festive
     hide screen flashlight_demo
-    tate "Wh--{w=1.0} Whaaaaaaaaaat??"
-    billy "Like magic!"
+    tate "Wh-- {i}how?!"
+    billy "Like {i}magic!"
     show tate sheepish festive
     tate "How... how does this even work, Billy?"
     n "Billy ponders for a moment."
     pause 3.0
-    billy "I don't even know myself!"
+    billy "I don't even know, myself!"
     show tate festive
-    tate "Well, what are we waiting for?"
-    tate "Let's go back upstairs and check out the good news!"
+    tate "Well, what're we waiting for?"
+    tate "Let's get back upstairs and share the good news!"
     hide tate
     hide billy
     with moveoutright
@@ -3719,9 +3724,9 @@ label ce_billy_time:
     show tate festive at mid_mid_right
     show billy festive at right
     with moveinleft
-    arceus "Would you look at that!"
+    arceus "Would you look at that?"
     kitty "How did you guys do it?"
-    billy "That's the power, of the power,"
+    billy "That's the power... of the power!"
     hide tate
     hide billy
     with moveoutright
@@ -3736,12 +3741,12 @@ label ce_billy_time:
     grace "Yay! The power is back!"
     anne "You did it!"
     billy "We sure did!"
-    eliza "I don't know what kind of technology you have to have had fixed this, but good job!"
+    eliza "I don't know what kind of technology you have that fixed this, but, good job!"
     hide tate
     hide billy
     with moveoutleft
     scene cs_living2 
-    show cs flipped at center
+    show cs christmas flipped at center
     show mean human at mid_offscreen_right
     show sheriff at mid_mid_right
     show copguy festive at mid_right
@@ -3754,21 +3759,21 @@ label ce_billy_time:
     cs "Holy crap, the power is back!"
     sheriff "My eyes work again!"
     ed "Hooray!"
-    tate "It looks like all we needed was Billy's handy switch!"
+    tate "It looks like all we needed was Billy's Handy Switch!"
     show mean human angry
     show tate sheepish festive
-    mean "Please don't say it like that, Tate."
+    mean "{i}Please{/i} don't say it like that, Tate."
     show mean human
     show tate festive
     stop music fadeout 3.0
     music end
-    luke "This is great and all, but isn't the house still under 20 feet of snow?"
+    luke "This is great and all, but, isn't the house still under 20 feet of snow?"
     copguy "How are we even gonna get rid of that?"
     copguy "We would need a lot of..."
     pause 1.0
-    show cs
+    show cs christmas
     cs "A lot of what?"
-    copguy "...Nevermind. I forgot what I was thinking about."
+    copguy "... Never mind. I forgot what I was thinking about."
     rich "Didn't you guys get up to the roof?"
     ed "Maybe we should all go up and check it out."
     hide mean
@@ -3781,7 +3786,7 @@ label ce_billy_time:
     with moveoutright
     n "Everyone clammers up the stairs, and one by one, they all climb up onto the roof."
     sheriff "Welp."
-    sheriff "I'll just, wait here."
+    sheriff "I'll just... wait here."
 
 label ce_roof_moment:
     scene snowed_in
@@ -3885,8 +3890,8 @@ label ce_roof_moment:
     with dissolve
     k22 "So it is as bad as you said."
     wesley "It just keeps going! It never ends!"
-    tate "What are we going to do? We can't just, walk out there!"
-    copguy "I got an idea. You guys, move over there..."
+    tate "What are we going to do? We can't just walk out there!"
+    copguy "I've got an idea. You guys, move over there..."
     show cs sil_black at Move((0.3, 0.5), (0.27, 0.33), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show k22 sil_black at Move((0.45, 0.23), (0.34, 0.29), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show arceus sil_black at Move((0.54, 0.54), (0.3, 0.4), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
@@ -3895,7 +3900,7 @@ label ce_roof_moment:
     show tate festive sil_black at Move((0.34, 0.36), (0.29, 0.5), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show obama sil_black at Move((0.47, 0.47), (0.27, 0.49), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show ed sil_black at Move((0.34, 0.43), (0.25, 0.47), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    copguy "And you move there..."
+    copguy "And, all of you, move {i}there..."
     show rich sil_black at Move((0.45, 0.34), (0.45, 0.31), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show wesley sil_black at Move((0.56, 0.45), (0.5, 0.36), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show blank sil_black at Move((0.43, 0.34), (0.52, 0.40), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
@@ -3917,14 +3922,14 @@ label ce_roof_moment:
     copguy "That should work!"
     k17 "SoS? Nice DaThings reference."
     k22 "You idiot, it's an emergency code! If any airplanes see us--"
-    k17 "Yeah I know, I was just making a joke."
+    k17 "Yeah, I know. I was just making a joke."
     k22 "Also, DaThings is a girl now."
-    k17 "Huh?"
-    ed "Are there gonna be any airplanes in the sky?"
-    wesley "Maybe we need some lights?"
+    k17 "Huh?!"
+    ed "Are there even gonna {i}be{/i} any airplanes in the sky? It's Christmas Eve!"
+    wesley "Maybe we need some lights for visibility."
     cs "What's to say people are still alive? Who knows how far this glacier goes?"
     digi "CS, do you really think we are the last people left?"
-    cs "I don't know, I just worry that this is--"
+    cs "I don't know. I just worry that this is--"
     play sound sfx_jingle volume 0.2
     n "As CS becomes more frantic, a noise from far away can be heard."
     k17 "Shhh! Do you hear that?"
@@ -3936,32 +3941,33 @@ label ce_roof_moment:
     play sound sfx_jingle volume 0.6
     k17 "Yeah I see it!"
     aria "Is that..."
-    digi "It's Santa! He's really up there I think!"
+    digi "It has to be Santa! He's really up there, I think!"
     wesley "What? I don't hear or see anything! Where?"
     cs "Wait a minute... I have an idea!"
     ed "Yeah, I can see him it's almost clear as day! There's Rudolph at the end, see that red light?"
-    cs "Guys! You all have to believe! Believe in Santa and have that Christmas spirit!"
+    cs "Guys! You all have to believe! Believe in Santa, and in the Christmas spirit!"
     eliza "Do you really think that will work?"
-    cs "We gotta try! Sing with me guys!"
+    cs "We've gotta try! Sing with me guys!"
     cs "{image=note_small1.png} Ohhh... {image=note_small2.png}"
     cs "{image=note_small1.png} You better watch out... {image=note_small2.png}"
     cs "{image=note_small1.png} You better not cry... {image=note_small2.png}"
-    cs "{image=note_small1.png} You better watch out I'm telling you why... {image=note_small2.png}"
-    cs "{image=note_small1.png} Santa Claus is coming, to town! {image=note_small2.png}"
+    cs "{image=note_small1.png} Better not pout, I'm telling you why... {image=note_small2.png}"
+    cs "{image=note_small1.png} Santa Claus is coming to town! {image=note_small2.png}"
     cs "Come on guys, you gotta sing!"
     k17 "{image=note_small1.png} He's making a list... {image=note_small2.png}"
-    k17 "{image=note_small1.png} He's checking it twice... {image=note_small2.png}"
-    grace "{image=note_small1.png} He's gonna find out if you've been naughty or nice... {image=note_small2.png}"
-    rich "{image=note_small1.png} Santa Claus is coming, to town! {image=note_small2.png}"
-    tate "{image=note_small1.png} He knows when you are sleeping... {image=note_small2.png}"
+    k17 "{image=note_small1.png} And checking it twice... {image=note_small2.png}"
+    grace "{image=note_small1.png} Gonna find out who's naughty and nice... {image=note_small2.png}"
+    # TODO: would be funny to put michael rosen noice sfx here once we figure out timings
+    rich "{image=note_small1.png} Santa Claus is coming to town! {image=note_small2.png}"
+    tate "{image=note_small1.png} He sees you when you're sleeping... {image=note_small2.png}"
     mean "{image=note_small1.png} He knows when you're awake... {image=note_small2.png}"
     db "{image=note_small1.png} He knows if you've been bad or good... {image=note_small2.png}"
-    obama "{image=note_small1.png} So, you better be good. For goodness sake! {image=note_small2.png}"
+    obama "{image=note_small1.png} So, you'd better be good. For goodness sake! {image=note_small2.png}"
     cs "{image=note_small1.png} Ohhh... {image=note_small2.png}"
     everyone "{image=note_small1.png} You better watch out... {image=note_small2.png}"
     everyone "{image=note_small1.png} You better not cry... {image=note_small2.png}"
-    everyone "{image=note_small1.png} You better watch out I'm telling you why... {image=note_small2.png}"
-    everyone "{image=note_small1.png} Santa Claus is coming, to town! {image=note_small2.png}"
+    everyone "{image=note_small1.png} Better not pout, I'm telling you why... {image=note_small2.png}"
+    everyone "{image=note_small1.png} Santa Claus is coming to town! {image=note_small2.png}"
     scene car plains night:
         zoom 2.0
     show snow1
@@ -3974,23 +3980,23 @@ label ce_roof_moment:
     show sleigh
     with dissolve
     santa "Ho ho ho!"
-    santa "The wind really started the pick up around here, didn't it Vixen?"
-    santa "Ho ho, do you all hear that? It sounds like I can hear Christmas cheer being spread down on the ground!"
+    santa "The wind really started to pick up around here, didn't it, Vixen?"
+    santa "Ho ho, do you all hear that? It sounds like Christmas cheer being spread down on the ground!"
     santa "Shine your light down there, Rudolph!"
     santa "Hey, wait a minute!"
     santa "Is that an SoS signal?"
     santa "Ho ho ho! Nice DaThings reference!"
-    santa "Okay, I should probably go down there and check it out."
+    santa "Okay, seriously, I should probably go down there and check it out."
     scene cs_roof
-    show cs happy at left
+    show cs happy christmas at left
     show obama festive at mid_mid_left behind k17
     show billy festive at center behind cs
     show michael at mid_left
     show ed festive at mid_right
     show linus at mid_mid_right
     with dissolve
-    cs "We did it guys! We got Santa to save us!"
-    n "Santa's Sleigh slows to crawl as it slowly lands in the snow."
+    cs "We did it guys! Santa's here to save us!"
+    n "Santa's sleigh begins its descent, slowing down to a crawl as the reindeer gently touch down onto the snow."
     play music snow_blind
     music snow_blind
     show santa at right with moveinright
@@ -4001,11 +4007,11 @@ label ce_roof_moment:
     show k22 flipped at mid_left
     show k17 happy flipped at mid_mid_left 
     with moveinleft
-    k17 "Haha, see K-22? Who needs Addy's party when we can literally meet The Big Man himself?"
+    k17 "Haha, see, K-22? Who needs Addy's party when we can literally meet The Big Man himself?"
     show k22 happy flipped
-    k22 "Heh, I guess you gotta point there. They aren't gonna believe this!"
-    show cs
-    santa "Well, let's see who we have here..."
+    k22 "Heh, I guess you've got a point, there. They aren't gonna believe this!"
+    show cs christmas
+    santa "Well, let's see, who do we have here...?"
     santa "..."
     santa "Mr. President? What are you doing here?"
     show obama festive at center with move
@@ -4018,23 +4024,23 @@ label ce_roof_moment:
     hide k17
     hide k22
     with moveoutleft
-    santa "Ed? Richard? Welsey? Keep up the good work. Might need some foundation repair at my workshop here soon! Ho ho!"
+    santa "Ed? Richard? Welsey? Keep up the good work! Might even need some foundation repair at my workshop very soon! Ho ho!"
     show rich flipped at mid_mid_left with moveinleft
     show wesley flipped at mid_left with moveinleft
     rich "Really!?"
-    ed "We appreciate the offer, Mr. Klaus. Keep us in touch."
-    santa "...And you there! Mr. Rosen!"
+    ed "We appreciate the offer, Mr. Claus. Let's keep in touch!"
+    santa "..., And, you, there! Mr. Rosen!"
     show michael at center with move
-    santa "Don't let those YouTube Poopers get to your head, you're a great author."
+    santa "Don't let those YouTube Poopers get to your head! You're a brilliant author."
     n "Santa glances at CS."
-    show cs disappointed
-    cs "Hey! I love his work too! I don't even really use Michael as a source!"
+    show cs disappointed christmas
+    cs "Hey! I love his work too! I don't even really use Michael as a source anymore!"
     n "Both Michael and Santa laugh."
-    show cs
-    santa "Ah yes, Linus and Luke..."
-    santa "We might need you guys up there at the North Pole as well, lots of kids these days want these crazy gaming PCs!"
-    linus "If you ever need us, give LTT a call!"
-    santa "There's a lot of... people here I would not expect to see."
+    show cs christmas
+    santa "Ah, yes, Linus and Luke..."
+    santa "We might need your help at the North Pole, as well. Lots of kids these days want these {i}crazy{/i} gaming PCs!"
+    linus "Absolutely! Just give LTT a call!"
+    santa "There are certainly a lot of... people here I would not expect to see."
     show rich
     show wesley
     with determination
@@ -4046,34 +4052,42 @@ label ce_roof_moment:
     with moveoutleft
     santa "Billy Mays, I almost forgot about... you coming back."
     hide linus with moveoutleft
-    billy "Don't worry Santa, my drug days are over!"
+    billy "Don't worry, Santa! My drug days are over!"
     santa "Ho ho ho! That's the spirit!"
-    santa "Well, I could keep going, but I should ask:"
-    santa "What happened here? A place like this shouldn't get this much snow..."
-    cs "None of us know, but we seemed to be trapped for god knows how long."
-    cs "I mean, your Santa Claus, would you have anything to fix this?"
+    santa "Well, I could keep going, but I should ask..."
+    santa "What {i}happened{/i} here? New York shouldn't get this much snow..."
+    show cs disappointed christmas
+    cs "None of us know, but we've been trapped inside the house for God knows how long."
+    cs "I mean, you're Santa Claus! Surely, {i}you{/i} can fix this?"
     santa "Ho ho ho..."
-    santa "I... suppose I don't, unfortunately."
-    santa "I may be Father Christmas, but I can't just make snow magically go away."
+    santa "I... don't believe that I can, unfortunately."
+    santa "I may be Father Christmas, but, my magic can't melt snow away."
+
+    if fun_value(FUN_VALUE_RARE):
+        # i am definitely dating myself with this reference - tate
+        show cs scared christmas
+        santa "{i}That{/i} is the Heat Miser's domain, and I certainly don't want to end up in {i}his{/i} hot seat!"
+        show cs disappointed christmas
+
     santa "I'm sorry, cs188."
     copguy "Well, wait a second!"
     show copguy festive flipped at center with moveinleft
     copguy "Can't we wish for one gift? For Christmas?"
-    santa "Well, I suppose I can make a miracle happen if it were a gift..."
+    santa "Now, {i}that,{/i} I can do!"
     santa "CS? Do you have a gift that you've always wanted?"
     cs "Hmm..."
     show copguy festive
-    copguy "CS, I think I have just the thing."
+    copguy "CS, I think I know just the thing."
     show copguy festive at mid_left with move
     n "Copguy whispers in CS' ear."
     show cs surprised
-    cs "Oh! You sure that will work?"
+    cs "Oh! You sure that'll work?"
     n "Copguy nods."
-    show cs
+    show cs christmas
     show copguy festive flipped with determination
-    show cs at center with move
-    cs "Alright Santa, I have my wish."
-    show cs at mid_right with move
+    show cs christmas at center with move
+    cs "Alright, Santa, I have my wish."
+    show cs christmas at mid_right with move
     n "CS whispers into Santa's ear."
     play sound sfx_whisper volume 0.5
     pause 1.0
@@ -4183,8 +4197,8 @@ label ce_roof_moment:
         ypos 0.5    
     show snow1
     with dissolve
-    santa "Alright! Stand back everyone! This is gonna take a lot of focus!"
-    n "Santa harnesses most of his Christmas spirit energy to create CS' wish."
+    santa "Alright! Stand back, everyone! This is gonna take a lot of focus!"
+    n "Harnessing the power of the Christmas spirit, CS' wish becomes a reality!"
     show crotch_doctor sil_black:
         zoom 0.75
         xpos 0.7
@@ -4197,12 +4211,12 @@ label ce_roof_moment:
         ypos -0.35
     with dissolve   
     santa "Ta-dah!"
-    cs "Wow, that really worked!"
+    cs "Wow, that really worked?!"
     billy "A giant bottle of Crotch Doctor?"
-    copguy "Yeah, it can instantly melt snow!"
-    copguy "It's one of my pitches, I also pitch car products as a side gig!"
-    cs "Wait, your Carguy?"
-    copguy "Man, I literally look like him. How have you never picked that up?"
+    copguy "Yeah! It can {i}instantly{/i} melt snow!"
+    copguy "I sell this stuff door-to-door as a side-gig! It works {i}great!"
+    cs "Wait, {i}you're{/i} Carguy?!"
+    copguy "How... have you never picked up on that?"
     billy "CS, are you sure this will work? I don't believe this..."
     cs "Don't believe me."
     cs "Just watch."
@@ -4217,10 +4231,10 @@ label ce_roof_moment:
     santa "Oh, shit."
     scene black with dissolve
     play sound sfx_splash
-    n "A tsunami of car cleaner engulfs the group, as they get washed off the roof."
-    n "As everyone gathers their bearings once again, they look around, watching the waves of Crotch Doctor carrying all the snow away."
+    n "A tsunami of car cleaner engulfs the group, washing them all off the roof."
+    n "As everyone gathers their bearings, they watch in amazement as the waves of Crotch Doctor carry all the snow away."
     scene cs_house_night_dtree
-    show cs dark at mid_left
+    show cs christmas dark at mid_left
     show tate festive dark at left
     show obama festive dark at mid_right
     show copguy festive dark at mid_mid_right
@@ -4229,8 +4243,8 @@ label ce_roof_moment:
     with dissolve
     cs "Woohoo! We did it! The avalanche covering the house is gone!"
     santa "Ho ho, well, it looks like you helped save Christmas, CS."
-    santa "I need to get going however, I am slightly off schedule."
-    santa "I should also make sure my steed didn't drown in car cleaner."
+    santa "I need to get going now. I am slightly off-schedule."
+    santa "I should also make sure my steed didn't drown in car cleaner..."
     cs "Good luck to you, Santa!"
     hide santa with moveoutleft
     show k17 happy dark
@@ -4241,11 +4255,11 @@ label ce_roof_moment:
     show k17 dark
     tate "CS! You did it!"
     obama "I gotta say, that was one of the most fun Christmas parties I've ever been to."
-    obama "Although, I should probably get back to The White House, the political circus is probably getting out of hand."
+    obama "Although, I should probably get back to the White House. The political circus is probably getting out of hand."
     hide obama with moveoutleft
     show sheriff dark at right with moveinright
-    sheriff "Hey guys, you got rid of the snow!"
-    sheriff "What'd I miss?"
+    sheriff "Hey, guys, what'd I miss?"
+    sheriff "Where's all this snow you were all so worried about?"
     cs "Uhhh..."
     play sound sfx_jingle volume 0.7
     n "As everyone is talking, the jingling of bells can be heard rushing over CS' house."
@@ -4253,16 +4267,18 @@ label ce_roof_moment:
         zoom 0.2
         rotate -10
     show sleigh at Move((0.45, 0.1), (1.1, -0.2), 7, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    santa "Ho ho ho! Merry Christmas everyone!"
+    santa "Ho ho ho! Merry Christmas, everyone!"
     show snow3
     show snow4
     with dissolve
     n "As Santa flies past, the snow begins to fall again."
-    sheriff "Well Copguy, we should probably get going before we get snowed in again!"
+    sheriff "Well, Copguy, we should probably get going before we get snowed in again!"
     hide sheriff
     hide copguy
     with moveoutright
-    copguy "Look how shiny our car is!"
+    copguy "Hey, look how at shiny our car is!"
+    sheriff "Wow!"
+    copguy "I {i}told{/i} the chief we should start using this stuff on our cruisers!"
     scene cs_house_night_dtree
     show billy festive dark at mid_left
     show k22 disappointed dark at mid_right
@@ -4284,10 +4300,10 @@ label ce_roof_moment:
     billy "See ya!"
     n "Both parties get into their cars and drive off."
     scene cs_bedroom1_ce
-    show cs happy at center
+    show cs happy christmas at center
     with dissolve
     cs "That was such a blast!"
-    cs "Plus my car got cleaned for free!"
+    cs "Plus, my car got cleaned for free!"
     cs "What a mess, though. I'm gonna wait for tomorrow to clean this up."
     cs "Maybe I can call Anno again to help!"
     cs "For now, I should probably get to streaming."
@@ -4304,11 +4320,11 @@ label ce_epilogue:
     show billycar1:
         zoom 2.5
     show billycar1 at Move((-1.5, -1.0), (0.0, -1.25), 10, repeat=False, bounce=False, xanchor="left", yanchor="top") with dissolve
-    billy "Dammit, where did I put my handy switch?{w=9}{nw}"
+    billy "Damn it, where did I put my other Handy Switch?{w=9}{nw}"
     show billycar2:
         zoom 2.5
     show billycar2 at Move((0.0, -0.25), (-1.5, 0.0), 10, repeat=False, bounce=False, xanchor="left", yanchor="top") with dissolve
-    billy "I swear I had a spare here somewhere...{w=9}{nw}"
+    billy "I could've {i}sworn{/i} I had a spare in here somewhere...{w=9}{nw}"
     show billycar3:
         zoom 2.5
     show billycar3 at Move((0.0, -0.25), (-1.25, -0.5), 10, repeat=False, bounce=False, xanchor="left", yanchor="top") with dissolve
