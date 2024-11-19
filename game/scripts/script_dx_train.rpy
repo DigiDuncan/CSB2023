@@ -852,7 +852,7 @@ label train_enter_sleeper:
     music bedroom_day
 
     play sound sfx_sliding_door_close
-    show car plains
+    show amtrak_desert_day
     show amtrak_sleeper_interior_day
     show arceus at right
     with dissolve
@@ -1230,7 +1230,7 @@ label train_enter_sleeper:
     n "While the fold-out bed is indeed quite comfortable, Arceus struggles to get any rest."
 
     scene
-    show car plains night
+    show amtrak_desert_night
     show amtrak_sleeper_interior_night
     with dissolve
     play sound2 sfx_csnore fadein 1.0
@@ -1275,7 +1275,14 @@ label train_dining:
     play music krabby_klub if_changed
 
     scene 
-    show car plains night
+    show amtrak_desert_night as left at manual_pos(0.2, 0.45, 0.5):
+        xzoom 0.75
+        yzoom 0.5
+        rotate -25
+    show amtrak_desert_night as right at manual_pos(0.8, 0.45, 0.5):
+        xzoom -0.75
+        yzoom 0.5
+        rotate 25
     show amtrak_dining_car
     with dissolve
     pause 1.0
@@ -1293,7 +1300,7 @@ label train_dining:
     n "As he approaches the counter, Arceus finds his attention redirected towards a yellow... {w=0.5}thing."
 
     scene 
-    show car plains night
+    show amtrak_desert_night at manual_pos(0.5, 0.4, 0.5)
     show amtrak_dining_table
     show mean at manual_pos(300,350)
     show amtrak_dining_food at manual_pos(805,145) behind mean
@@ -1395,7 +1402,14 @@ label train_dining:
     n "Mean dashes out of the dining car!"
 
     scene
-    show car plains night
+    show amtrak_desert_night as left at manual_pos(0.2, 0.45, 0.5):
+        xzoom 0.75
+        yzoom 0.5
+        rotate -25
+    show amtrak_desert_night as right at manual_pos(0.8, 0.45, 0.5):
+        xzoom -0.75
+        yzoom 0.5
+        rotate 25
     show amtrak_dining_car
     with dissolve
     pause 1.0
@@ -1422,7 +1436,7 @@ label train_wakeup:
     music prof_kranes_kidnap
     play sound2 sfx_csnore fadein 0.5
     scene 
-    show car plains night
+    show amtrak_desert_night
     show amtrak_sleeper_interior_night
     with dissolve
     play sound sfx_sliding_door_open
@@ -1437,7 +1451,7 @@ label train_wakeup:
     show arceus worried dark at left with MoveTransition(0.25)
     play sound sfx_lightswitch
     scene 
-    show car plains night
+    show amtrak_desert_night
     show amtrak_sleeper_interior_day
     show arceus worried at left
     pause 0.25
@@ -1715,7 +1729,7 @@ label train_allow_staff:
     play music e_gadds_lab if_changed
     music e_gadds_lab
     scene 
-    show car plains night
+    show amtrak_desert_night
     show amtrak_sleeper_interior_day
     show tate sheepish at left
     show arceus at mid_mid_right
@@ -1758,7 +1772,7 @@ label train_begin_heist:
     play music e_gadds_lab if_changed
     music e_gadds_lab
     scene 
-    show car plains night
+    show amtrak_desert_night
     show amtrak_sleeper_interior_day
     show tate sheepish at left
     show arceus at mid_mid_right
@@ -1865,7 +1879,15 @@ label train_search_arceus:
     play music onbs if_changed
     music onbs
     scene
-    show car plains night
+    show amtrak_desert_night as left at manual_pos(0.2, 0.45, 0.5):
+        xzoom 0.75
+        yzoom 0.5
+        rotate -25
+    show amtrak_desert_night as right at manual_pos(0.8, 0.45, 0.5):
+        xzoom -0.75
+        yzoom 0.5
+        rotate 25
+
     show amtrak_dining_car
     show arceus at center
     with dissolve
@@ -1890,7 +1912,7 @@ label train_search_arceus:
     arceus "I guess there's just nothing here."
 
     scene
-    show car plains night
+    show amtrak_desert_night at manual_pos(0.5, 0.4, 0.5)
     show amtrak_dining_table
     show amtrak_dining_food at manual_pos(805,145)
     show amtrak_dining_pancake at manual_pos(915,575) behind amtrak_dining_food
@@ -1954,7 +1976,9 @@ label train_search_cs:
     n "There is, in fact, a single door open." 
   
     scene
-    show car plains night
+    show amtrak_desert_night at manual_pos(0.5, 0.35, 0.5):
+        xzoom -1.0
+        zoom 0.75
     show amtrak_sleeper_open_bg
     show lupin run hat at mid_right
     
@@ -2175,7 +2199,9 @@ label train_confront_lupin:
     music onbs
 
     scene
-    show car plains night
+    show amtrak_desert_night at manual_pos(0.5, 0.4, 0.5):
+        xzoom -1.0
+        rotate -5
     show amtrak_coach_1
     show tate sad at left
     show mean worried flipped at truecenter
@@ -2319,7 +2345,14 @@ label train_confront_lupin:
     n "The four make their way towards the very last car on the train."
 
     scene
-    show car plains night
+    show amtrak_desert_night as left at manual_pos(0.2, 0.5, 0.5):
+        xzoom 0.75
+        yzoom 0.5
+        rotate -25
+    show amtrak_desert_night as right at manual_pos(0.8, 0.5, 0.5):
+        xzoom -0.75
+        yzoom 0.5
+        rotate 25
     show amtrak_coach_2
     with dissolve
     
@@ -2339,7 +2372,9 @@ label train_confront_lupin:
     scene black with dissolve
     
     scene
-    show car plains night
+    show amtrak_desert_night at manual_pos(0.5, 0.4, 0.5):
+        xzoom -1.0
+        rotate -5
     show amtrak_coach_1
     with dissolve
     
@@ -2359,7 +2394,11 @@ label train_confront_lupin:
     scene black with dissolve
     
     scene
-    show car plains night
+    show amtrak_desert_night as left at manual_pos(0.1, 0.45, 0.5):
+        rotate -30
+    show amtrak_desert_night as right at manual_pos(0.9, 0.45, 0.5):
+        xzoom -1.0
+        rotate 30
     show amtrak_observation_1
     with dissolve
     
@@ -2451,7 +2490,14 @@ label train_confront_lupin:
     n "The team gives chase through the next few cars."
     
     scene
-    show car plains night
+    show amtrak_desert_night as left at manual_pos(0.2, 0.45, 0.5):
+        xzoom 0.75
+        yzoom 0.5
+        rotate -25
+    show amtrak_desert_night as right at manual_pos(0.8, 0.45, 0.5):
+        xzoom -0.75
+        yzoom 0.5
+        rotate 25
     show amtrak_dining_car with dissolve
     n "Through the dining car..."
     
@@ -2487,7 +2533,8 @@ label train_confront_lupin:
     show arceus angry at offscreenleft with MoveTransition(0.5)
     
     scene
-    show car plains night
+    show amtrak_desert_night at manual_pos(0.2, 0.6, 0.5):
+        rotate -13
     show amtrak_baggage with dissolve
     
     show lupin run hat flipped at right with moveinleft
@@ -2526,6 +2573,7 @@ label train_confront_lupin:
     tate "We can't possibly catch up with him..."
     show arceus worried flipped
     arceus "I think he jumped onto the roof!"
+    show cs disappointed flipped
     show arceus worried at mid_offscreen_left with moveoutleft
     pause 0.5
     show arceus worried:
@@ -2536,12 +2584,12 @@ label train_confront_lupin:
     
     show cs disappointed flipped at mid_left_left with moveoutleft
     pause 0.5
-    show cs disappointed:
+    show cs disappointed flipped:
         linear 0.1 ypos 0.95
         linear 0.1 ypos 1.0
     pause 0.5
     show cs worried flipped
-    cs "Damn! Me, neither!"
+    cs "Damn! Me,{w=0} neither!"
     
     show cs disappointed at mid_mid_left
     show arceus worried flipped at left
@@ -2574,7 +2622,8 @@ label train_confront_lupin:
     pause 1.0
         
     scene
-    show car plains night
+    show amtrak_desert_night at manual_pos(0.2, 0.6, 0.5):
+        rotate -13
     show amtrak_baggage
     show arceus worried flipped at manual_pos(-175,405)
     show cs scared at mid_left behind arceus
@@ -3440,7 +3489,7 @@ label train_lupin_win:
         pause 2.0
         
         scene 
-        show car plains night
+        show amtrak_desert_night
         show amtrak_sleeper_interior_day
         show amtrak_conductor flipped at left
         show bag at mid_left
@@ -3971,7 +4020,7 @@ label train_completed:
         n "CS and Arceus wake up feeling completely refreshed."
         
         scene 
-        show car plains
+        show amtrak_desert_day at manual_pos(0.5, 0.4, 0.5)
         show amtrak_dining_table 
         
         show amtrak_dining_food at manual_pos(805,145)
@@ -3988,7 +4037,11 @@ label train_completed:
         pause 1.0
 
         scene 
-        show car plains
+        show amtrak_desert_day as left at manual_pos(0.1, 0.45, 0.5):
+            rotate -30
+        show amtrak_desert_day as right at manual_pos(0.9, 0.45, 0.5):
+            xzoom -1.0
+            rotate 30
         show amtrak_observation_1
         show cs flipped at left
         show arceus flipped at right
@@ -4011,7 +4064,7 @@ label train_completed:
             n "CS and Arceus wake up feeling rather groggy."
         
         scene 
-        show car plains
+        show amtrak_desert_day at manual_pos(0.5, 0.4, 0.5)
         show amtrak_dining_table 
         
         show amtrak_dining_food at manual_pos(805,145)
@@ -4030,7 +4083,11 @@ label train_completed:
         pause 1.0
 
         scene 
-        show car plains
+        show amtrak_desert_day as left at manual_pos(0.1, 0.45, 0.5):
+            rotate -30
+        show amtrak_desert_day as right at manual_pos(0.9, 0.45, 0.5):
+            xzoom -1.0
+            rotate 30
         show amtrak_observation_1
         show cs disappointed flipped at left
         show arceus angry flipped at right

@@ -2542,6 +2542,9 @@ image fun_cs_house = Movie(play="movies/funvaluecshouse.webm")
 image fun_hoh_sis = Movie(play="movies/funvaluehohsis.webm")
 image train_brake = Movie(play="movies/trainscreech.webm")
 image elf_1 = Movie(play="movies/elf1.webm", size=(1,1))
+image amtrak_northeast = Movie(play="movies/northeast.webm")
+image amtrak_desert_day = Movie(play="movies/desert_day.webm")
+image amtrak_desert_night = Movie(play="movies/desert_night.webm")
 
 # Movie Cutscenes
 define anno_bl = "movies/anno.webm"

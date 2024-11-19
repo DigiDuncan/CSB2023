@@ -65,7 +65,7 @@ label back_out_perfect_tate:
     $ persistent.heard.add("nyan_of_a_lifetime")
     $ collect("poo")
     $ collect("dasani")
-    $ achievement_manager.unlock("vs-tate")
+    $ achievement_manager.unlock("beat_tate")
     jump train_defeated_perfect_tate
 
 ########## Game Menus ##########
