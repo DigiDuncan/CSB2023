@@ -1801,7 +1801,7 @@ label ce_party_before:
         cs "I wonder who that could be?"
         hide cs with moveoutleft
         scene cs_house_snow_night
-        show michael dark at mid_left
+        show michael festive dark at mid_left
         with dissolve
         show cs christmas dark flipped at right with moveinright
         cs "Oh hey, it's Michael!"
@@ -2038,7 +2038,7 @@ label ce_intro:
     show cs_kitchen_fg
     show obama festive at right behind cs_kitchen_fg
     show ed festive at mid_right behind cs_kitchen_fg
-    show michael at mid_mid_right behind cs_kitchen_fg
+    show michael festive at mid_mid_right behind cs_kitchen_fg
     show billy festive at mid_mid_left behind cs_kitchen_fg
     with dissolve
     show cs christmas at left with moveinleft
@@ -2198,7 +2198,7 @@ label ce_banter:
     show k17 flipped at left
     show obama festive at center behind cs_kitchen_fg
     show ed festive at mid_right behind cs_kitchen_fg
-    show michael at mid_mid_right behind cs_kitchen_fg
+    show michael festive at mid_mid_right behind cs_kitchen_fg
     show billy festive at right behind cs_kitchen_fg
     with dissolve
     k17 "So Obama, how have you stayed President?"
@@ -2397,7 +2397,7 @@ label ce_cooking:
     scene cs_kitchen
     show cs_kitchen_fg
     show obama festive at mid_right behind cs_kitchen_fg
-    show michael at mid_offscreen_left behind cs_kitchen_fg
+    show michael festive at mid_offscreen_left behind cs_kitchen_fg
     show billy festive at left behind cs_kitchen_fg
     with dissolve
     show cs christmas at center behind cs_kitchen_fg with moveinleft
@@ -2423,7 +2423,7 @@ label ce_cooking:
     scene cs_kitchen
     show cs_kitchen_fg
     show obama festive at center behind cs_kitchen_fg
-    show michael at mid_offscreen_left behind cs_kitchen_fg
+    show michael festive at mid_offscreen_left behind cs_kitchen_fg
     show billy festive at left behind cs_kitchen_fg
     show cs christmas flipped at mid_right behind cs_kitchen_fg  
     with dissolve
@@ -3094,7 +3094,7 @@ label ce_exchange:
     billy "I'll keep this one!"
     hide billy with moveoutright
     michael "Alright, what gift to choose..."
-    show michael at mid_left with moveinleft
+    show michael festive at mid_left with moveinleft
     show ltt_bottle at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     michael "I got a new water bottle!"
     linus "You got my LTT water bottle!"
@@ -3991,7 +3991,7 @@ label ce_roof_moment:
     show cs happy christmas at left
     show obama festive at mid_mid_left behind k17
     show billy festive at center behind cs
-    show michael at mid_left
+    show michael festive at mid_left
     show ed festive at mid_right
     show linus at mid_mid_right
     with dissolve
@@ -4030,7 +4030,7 @@ label ce_roof_moment:
     rich "Really!?"
     ed "We appreciate the offer, Mr. Claus. Let's keep in touch!"
     santa "..., And, you, there! Mr. Rosen!"
-    show michael at center with move
+    show michael festive at center with move
     santa "Don't let those YouTube Poopers get to your head! You're a brilliant author."
     n "Santa glances at CS."
     show cs disappointed christmas
