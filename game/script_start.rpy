@@ -1560,6 +1560,8 @@ image copguyexe flipped = "flip:characters/copguy/copguyexe.png"
 
 # CSB I
 image michael = "flip:characters/michael.png"
+image michael festive = "flip:characters/michael_festive.png"
+image michael festive dark = "dark:characters/michael_festive.png"
 image michael dark = "dark:flip:characters/michael.png"
 image michael sil_black = "sil_black:flip:characters/michael.png"
 image phil = "characters/phil.png"
