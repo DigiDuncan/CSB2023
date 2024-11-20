@@ -1584,7 +1584,25 @@ label ce_aftershop:
         linear 1 xpos 1100 ypos 600    
     show cs behind cs_kitchen_fg
     cs "Hey, I got a [d20]!"
-
+    cs "Welp, I got everything put away..."
+    cs "The decorations all look nice..."
+    cs "This party's gonna be great!"
+    n "CS sighs happily."
+    cs "It's pretty late, so I should probably get to bed about now."
+    cs "I've got a big day tomorrow, and I wanna be as ready as can be!"
+    scene cs_bedroom2
+    show cs
+    with dissolve
+    n "CS gets under the covers, and tries his best to get some sleep."
+    cs "I can't stop thinking aout tomorrow."
+    cs "I wonder who's gonna get here first, who all is going to show up..."
+    pause 2.0
+    cs "What if no one shows up?"
+    cs "That would suck a lot."
+    cs "But I don't think that'll happen. I just called everyone and they had their invitations!"
+    cs "I know at least Anno is coming for sure!"
+    cs "Okay CS, stop thinking about the party."
+    cs "You need to sleep!"
     # TODO: More scene here
 
 label ce_party_before:
