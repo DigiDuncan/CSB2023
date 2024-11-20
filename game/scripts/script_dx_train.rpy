@@ -2746,7 +2746,10 @@ label train_confront_lupin:
     pause 0.5
     show mean human happy
     mean "Let's do this!"
-    play sound sfx_whoosh
+    if fun_value(FUN_VALUE_COMMON):
+        play sound sfx_wilhelm_scream
+    else:
+        play sound sfx_whoosh
     show mean human happy flipped at t_lupin_out
     pause 0.5
     scene black with dissolve
@@ -2759,7 +2762,7 @@ label train_on_top:
     # TODO: need moving background
 
     scene
-    show car plains night
+    show midwest_night
     show amtrak_top
     
     show tate sad dark at manual_pos(500,230)
@@ -2825,7 +2828,8 @@ label train_on_top:
     
     ## SHOT 2
     
-    show car plains night
+    show midwest_night
+    # TODO: add horizon
     show amtrak_top:
         xysize (1920, 200)
         xzoom -1
@@ -2849,7 +2853,8 @@ label train_on_top:
     
     ## SHOT 3
 
-    show car plains night
+    show midwest_night
+    # TODO: add horizon
     show amtrak_top:
         xysize (1920, 300)
         xzoom 1
@@ -2911,7 +2916,7 @@ label train_on_top:
     hide zenigata
     hide amtrak_top
     
-    show car plains night
+    show midwest_night
     show mean human angry dark flipped behind letterbox_screen:
         xpos 0
         ypos 0
@@ -3545,7 +3550,8 @@ label train_lupin_lose:
     scene black
     pause 0.5
     scene
-    show car plains night
+    show midwest_night
+    # TODO: add horizon
     show amtrak_top:
         ypos 880
         xysize (2020, 200)
@@ -3561,7 +3567,8 @@ label train_lupin_lose:
     show mean human angry dark flipped at offscreenright with moveinleft
     
     scene
-    show car plains night
+    show midwest_night
+    # TODO: add horizon
     show amtrak_top:
         ypos 780
         xysize (1920, 300)
@@ -3618,7 +3625,8 @@ label train_lupin_lose:
     play sound sfx_chopper_loop loop volume 0.5
     
     scene
-    show car plains night
+    show midwest_night
+    # TODO: add moving floor
     show petals_falling:
         time 15
         ease_expo 5 alpha 0.00
