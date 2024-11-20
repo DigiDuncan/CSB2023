@@ -1275,14 +1275,15 @@ label train_dining:
     play music krabby_klub if_changed
 
     scene 
-    show amtrak_desert_night as left at manual_pos(0.2, 0.45, 0.5):
-        xzoom 0.75
-        yzoom 0.5
-        rotate -25
-    show amtrak_desert_night as right at manual_pos(0.8, 0.45, 0.5):
-        xzoom -0.75
-        yzoom 0.5
-        rotate 25
+    show amtrak_desert_night as left:
+        perspective (0.0, 1000.0, 0.5)
+        matrixanchor (0.5, 0.5)
+        matrixtransform RotateMatrix(-17, 0, 0) * RotateMatrix(0, 90, 0) * RotateMatrix(0, 0, 0) * OffsetMatrix(0, -200, -400)
+
+    show amtrak_desert_night as right:
+        perspective (0.0, 1000.0, 0.5)
+        matrixanchor (0.5, 0.5)
+        matrixtransform RotateMatrix(-17, 0, 0) * RotateMatrix(0, 90, 0) * RotateMatrix(0, 0, 0) * OffsetMatrix(0, -200, 400)
     show amtrak_dining_car
     with dissolve
     pause 1.0
@@ -1402,14 +1403,15 @@ label train_dining:
     n "Mean dashes out of the dining car!"
 
     scene
-    show amtrak_desert_night as left at manual_pos(0.2, 0.45, 0.5):
-        xzoom 0.75
-        yzoom 0.5
-        rotate -25
-    show amtrak_desert_night as right at manual_pos(0.8, 0.45, 0.5):
-        xzoom -0.75
-        yzoom 0.5
-        rotate 25
+    show amtrak_desert_night as left:
+        perspective (0.0, 1000.0, 0.5)
+        matrixanchor (0.5, 0.5)
+        matrixtransform RotateMatrix(-17, 0, 0) * RotateMatrix(0, 90, 0) * RotateMatrix(0, 0, 0) * OffsetMatrix(0, -200, -400)
+
+    show amtrak_desert_night as right:
+        perspective (0.0, 1000.0, 0.5)
+        matrixanchor (0.5, 0.5)
+        matrixtransform RotateMatrix(-17, 0, 0) * RotateMatrix(0, 90, 0) * RotateMatrix(0, 0, 0) * OffsetMatrix(0, -200, 400)
     show amtrak_dining_car
     with dissolve
     pause 1.0
@@ -1879,14 +1881,16 @@ label train_search_arceus:
     play music onbs if_changed
     music onbs
     scene
-    show amtrak_desert_night as left at manual_pos(0.2, 0.45, 0.5):
-        xzoom 0.75
-        yzoom 0.5
-        rotate -25
-    show amtrak_desert_night as right at manual_pos(0.8, 0.45, 0.5):
-        xzoom -0.75
-        yzoom 0.5
-        rotate 25
+    show amtrak_desert_night as left:
+        perspective (0.0, 1000.0, 0.5)
+        matrixanchor (0.5, 0.5)
+        matrixtransform RotateMatrix(-17, 0, 0) * RotateMatrix(0, 90, 0) * RotateMatrix(0, 0, 0) * OffsetMatrix(0, -200, -400)
+
+    show amtrak_desert_night as right:
+        perspective (0.0, 1000.0, 0.5)
+        matrixanchor (0.5, 0.5)
+        matrixtransform RotateMatrix(-17, 0, 0) * RotateMatrix(0, 90, 0) * RotateMatrix(0, 0, 0) * OffsetMatrix(0, -200, 400)
+    show amtrak_dining_car
 
     show amtrak_dining_car
     show arceus at center
@@ -2394,11 +2398,14 @@ label train_confront_lupin:
     scene black with dissolve
     
     scene
-    show amtrak_desert_night as left at manual_pos(0.1, 0.45, 0.5):
-        rotate -30
-    show amtrak_desert_night as right at manual_pos(0.9, 0.45, 0.5):
-        xzoom -1.0
-        rotate 30
+    show amtrak_desert_night as left:
+        perspective (0.0, 1000.0, 0.5)
+        matrixanchor (0.5, 0.5)
+        matrixtransform RotateMatrix(-20, 0, 0) * RotateMatrix(0, 90, 0) * RotateMatrix(0, 0, 0) * OffsetMatrix(0, -250, -400)
+    show amtrak_desert_night as right:
+        perspective (0.0, 1000.0, 0.5)
+        matrixanchor (0.5, 0.5)
+        matrixtransform RotateMatrix(-20, 0, 0) * RotateMatrix(0, 90, 0) * RotateMatrix(0, 0, 0) * OffsetMatrix(0, -250, 400)
     show amtrak_observation_1
     with dissolve
     
@@ -2490,14 +2497,15 @@ label train_confront_lupin:
     n "The team gives chase through the next few cars."
     
     scene
-    show amtrak_desert_night as left at manual_pos(0.2, 0.45, 0.5):
-        xzoom 0.75
-        yzoom 0.5
-        rotate -25
-    show amtrak_desert_night as right at manual_pos(0.8, 0.45, 0.5):
-        xzoom -0.75
-        yzoom 0.5
-        rotate 25
+    show amtrak_desert_night as left:
+        perspective (0.0, 1000.0, 0.5)
+        matrixanchor (0.5, 0.5)
+        matrixtransform RotateMatrix(-17, 0, 0) * RotateMatrix(0, 90, 0) * RotateMatrix(0, 0, 0) * OffsetMatrix(0, -200, -400)
+
+    show amtrak_desert_night as right:
+        perspective (0.0, 1000.0, 0.5)
+        matrixanchor (0.5, 0.5)
+        matrixtransform RotateMatrix(-17, 0, 0) * RotateMatrix(0, 90, 0) * RotateMatrix(0, 0, 0) * OffsetMatrix(0, -200, 400)
     show amtrak_dining_car with dissolve
     n "Through the dining car..."
     
@@ -2533,9 +2541,12 @@ label train_confront_lupin:
     show arceus angry at offscreenleft with MoveTransition(0.5)
     
     scene
-    show amtrak_desert_night at manual_pos(0.2, 0.6, 0.5):
-        rotate -13
-    show amtrak_baggage with dissolve
+    show amtrak_desert_night:
+        perspective (0.0, 1000.0, 0.5)
+        matrixanchor (0.5, 0.5)
+        matrixtransform RotateMatrix(-5, 0, 0) * RotateMatrix(0, 60, 0) * RotateMatrix(0, 0, 0) * OffsetMatrix(0, 0, -100)
+    show amtrak_baggage
+    with dissolve
     
     show lupin run hat flipped at right with moveinleft
     show lupin run hat
@@ -2622,8 +2633,10 @@ label train_confront_lupin:
     pause 1.0
         
     scene
-    show amtrak_desert_night at manual_pos(0.2, 0.6, 0.5):
-        rotate -13
+    show amtrak_desert_night:
+        perspective (0.0, 1000.0, 0.5)
+        matrixanchor (0.5, 0.5)
+        matrixtransform RotateMatrix(-5, 0, 0) * RotateMatrix(0, 60, 0) * RotateMatrix(0, 0, 0) * OffsetMatrix(0, 0, -100)
     show amtrak_baggage
     show arceus worried flipped at manual_pos(-175,405)
     show cs scared at mid_left behind arceus
@@ -2675,6 +2688,10 @@ label train_confront_lupin:
     show tate shock flipped
     
     show mean human
+    if fun_value(FUN_VALUE_COMMON):
+        play sound sfx_throw_yoshi
+    else:
+        play sound sfx_whoosh
     show tate shock at t_lupin_out with { "master": move }
     tate "Awawawawawa!"
 
@@ -2688,6 +2705,10 @@ label train_confront_lupin:
     show mean human at right
     with { "master": move }
     pause 0.5
+    if fun_value(FUN_VALUE_COMMON):
+        play sound sfx_throw_cartoon
+    else:
+        play sound sfx_whoosh
     show cs scared at t_lupin_out with { "master": move }
     cs "Aaaaaaagh!"
 
@@ -2701,6 +2722,10 @@ label train_confront_lupin:
     with move
     pause 0.5
 
+    if fun_value(FUN_VALUE_COMMON):
+        play sound sfx_throw_yeet
+    else:
+        play sound sfx_whoosh
     show arceus worried flipped at t_lupin_out with { "master": move }
     arceus "Waaaaargh!"
 
@@ -2721,6 +2746,7 @@ label train_confront_lupin:
     pause 0.5
     show mean human happy
     mean "Let's do this!"
+    play sound sfx_whoosh
     show mean human happy flipped at t_lupin_out
     pause 0.5
     scene black with dissolve
@@ -4037,12 +4063,16 @@ label train_completed:
         pause 1.0
 
         scene 
-        show amtrak_desert_day as left at manual_pos(0.1, 0.45, 0.5):
-            rotate -30
-        show amtrak_desert_day as right at manual_pos(0.9, 0.45, 0.5):
-            xzoom -1.0
-            rotate 30
+        show amtrak_desert_day as left:
+            perspective (0.0, 1000.0, 0.5)
+            matrixanchor (0.5, 0.5)
+            matrixtransform RotateMatrix(-20, 0, 0) * RotateMatrix(0, 90, 0) * RotateMatrix(0, 0, 0) * OffsetMatrix(0, -250, -400)
+        show amtrak_desert_day as right:
+            perspective (0.0, 1000.0, 0.5)
+            matrixanchor (0.5, 0.5)
+            matrixtransform RotateMatrix(-20, 0, 0) * RotateMatrix(0, 90, 0) * RotateMatrix(0, 0, 0) * OffsetMatrix(0, -250, 400)
         show amtrak_observation_1
+
         show cs flipped at left
         show arceus flipped at right
         with dissolve
@@ -4083,12 +4113,16 @@ label train_completed:
         pause 1.0
 
         scene 
-        show amtrak_desert_day as left at manual_pos(0.1, 0.45, 0.5):
-            rotate -30
-        show amtrak_desert_day as right at manual_pos(0.9, 0.45, 0.5):
-            xzoom -1.0
-            rotate 30
+        show amtrak_desert_day as left:
+            perspective (0.0, 1000.0, 0.5)
+            matrixanchor (0.5, 0.5)
+            matrixtransform RotateMatrix(-20, 0, 0) * RotateMatrix(0, 90, 0) * RotateMatrix(0, 0, 0) * OffsetMatrix(0, -250, -400)
+        show amtrak_desert_day as right:
+            perspective (0.0, 1000.0, 0.5)
+            matrixanchor (0.5, 0.5)
+            matrixtransform RotateMatrix(-20, 0, 0) * RotateMatrix(0, 90, 0) * RotateMatrix(0, 0, 0) * OffsetMatrix(0, -250, 400)
         show amtrak_observation_1
+
         show cs disappointed flipped at left
         show arceus angry flipped at right
         with dissolve

@@ -257,14 +257,14 @@
     "bottom_gear":{
         "name": "Bottom Gear",
         "locked": "???",
-        "unlocked": "Beat the Top Gear crew in a race.",
+        "unlocked": "Beat the {i}Top Gear{/i} crew in a race.",
         "img": "bottomgear",
         "type": "story"
     },
     "nekopara":{
         "name": "I'm Scared Right Now...",
         "locked": "Acknowledge your roots.",
-        "unlocked": "Meet the creator of Nekopara.",
+        "unlocked": "Meet the creator of {i}Nekopara.{/i}",
         "img": "nekopara",
         "type": "story"
     },
