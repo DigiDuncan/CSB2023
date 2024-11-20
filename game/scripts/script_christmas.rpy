@@ -925,8 +925,36 @@ label ce_setup:
     anno "Maybe {i}don't{/i} say that."
     show cs disappointed
     cs "Sorry."
+    anno "Well, I think we did a pretty darn good job."
+    cs "Hell yeah we did!"
+    cs "Everyone is gonna have a blast at this party!"
+    anno "Before I get going, was there anything else you needed help with?"
+    cs "No, I don't think so..."
+    n "CS remembers that he didn't buy any food for the party."
+    cs "Shit, I do need to go shopping for food. I haven't bought anything for the party!"
+    anno "Well, you got today and tomorrow at least."
+    cs "Yeah, I think I'm gonna head out here in a moment, I just need to make a list."
+    anno "Alrighty well, good luck with that!"
+    anno "I'll see you in 2 days!"
+    cs "Goodbye Anno!"
+    n "Once Anno leaves, CS starts to worry a little."
+    cs "Dammit, I can't believe I forgot to get my own food for the party!"
+    cs "It's gonna be extremely busy tomorrow, so I should probably go now."
+    cs "What to buy..."
+    cs "Probably some pies, I think Michael was gonna make some mashed potatoes, so I should get some of those..."
+    cs "You know what? I got some time, I should destress and watch some car crash compilations to calm down."
+    n "CS puts on a new compilation video and relaxes on his couch."
+    cs "...So out of 500 crashes..."
+    cs "That's about 257 red cars at fault!"
+    cs "Yikes! Thank god I don't have a red car."
+    cs "Alright, I should go get my groceries now."
+    n "CS looks at the time."
+    cs "Oh no! It's 3 AM!"
+    cs "Darn, the time really flew! Now I have to go tomorrow!"
+    cs "I guess I can finish my shopping list and get to sleep."
+    cs "Hmm... what else do I need?"
+    n "After about another hour of trying to make their list and not watch more motor mayhem, CS finally gets to bed."
     scene black with dissolve
-    n "CS bids Anno farewell before settling in for the night."
     centered "One long winter's nap later..."
 
 # Day 2
@@ -1603,6 +1631,7 @@ label ce_aftershop:
     cs "I know at least Anno is coming for sure!"
     cs "Okay CS, stop thinking about the party."
     cs "You need to sleep!"
+    n "CS finally dozes off to sleep."
     # TODO: More scene here
 
 label ce_party_before:
