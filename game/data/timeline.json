@@ -1345,29 +1345,29 @@
     "csbiii_forest_ytp_outcome": {
         "name": "YTP Magic",
         "type": "outcome",
-        "need_label": "genocide_fight",
+        "need_label": "no_mercy_fight",
         "pos": [21, 11]
     },
-    "csbiii_genocide_choice_arrow": {
+    "csbiii_no_mercy_choice_arrow": {
         "type": "arrow",
         "direction": "e",
         "pos": [21.5, 11]
     },
-    "csbiii_genocide_choice": {
+    "csbiii_no_mercy_choice": {
         "name": "Attack Arceus?",
         "type": "choice",
-        "need_label": "genocide_fight",
+        "need_label": "no_mercy_fight",
         "pos": [22, 11]
     },
-    "csbiii_genocide_yes_arrow": {
+    "csbiii_no_mercy_yes_arrow": {
         "type": "arrow",
         "direction": "ne",
         "pos": [22.5, 10.5]
     },
-    "csbiii_genocide_yes_outcome": {
+    "csbiii_no_mercy_yes_outcome": {
         "name": "Yes",
         "type": "outcome",
-        "need_label": "genocide_attack_arc",
+        "need_label": "no_mercy_attack_arc",
         "pos": [23, 10]
     },
     "csbiii_godfail_badend_arrow": {
@@ -1381,15 +1381,15 @@
         "need_ending": "god_fail",
         "pos": [24, 10]
     },
-    "csbiii_genocide_no_arrow": {
+    "csbiii_no_mercy_no_arrow": {
         "type": "arrow",
         "direction": "e",
         "pos": [22.5, 11]
     },
-    "csbiii_genocide_no_outcome": {
+    "csbiii_no_mercy_no_outcome": {
         "name": "No",
         "type": "outcome",
-        "need_label": "genocide_wait_arc",
+        "need_label": "no_mercy_wait_arc",
         "pos": [23, 11]
     },
     "csbiii_godsuccess_badend_arrow": {

@@ -1128,11 +1128,11 @@ label csbiii_forest_menu:
     menu:
         "What do we do, CS?!"
         "Fight the cops with YTP Magic" (type = "bad"):
-            jump genocide_fight
+            jump no_mercy_fight
         "Flee into the forest" (type = "true"):
             jump csbiii_escape_forest
 
-label genocide_fight:
+label no_mercy_fight:
     stop music fadeout 3.0
     music end
     scene washington_road
@@ -1196,11 +1196,11 @@ label genocide_fight:
     show arceus dark flipped
     menu:
         "Attack now." (type = "bad"):
-            jump genocide_attack_arc
+            jump no_mercy_attack_arc
         "Wait." (type = "bad"):
-            jump genocide_wait_arc
+            jump no_mercy_wait_arc
 
-label genocide_attack_arc:
+label no_mercy_attack_arc:
     stop music fadeout 3.0
     music end
     scene washington_road
@@ -1230,7 +1230,7 @@ label genocide_attack_arc:
     $ ending_manager.mark("god_fail")
     bad_end "There's no weapon\nto free us all!" "csbiii_forest_menu"
 
-label genocide_wait_arc:
+label no_mercy_wait_arc:
     stop music fadeout 3.0
     music end
     scene washington_road
@@ -1381,7 +1381,7 @@ label genocide_wait_arc:
     pause 1.0
     arceus "He's just been--"
 
-    play music genocide if_changed
+    play music no_mercy if_changed
 
     music insane_personalities
     show csgod at offscreenleft with determination
