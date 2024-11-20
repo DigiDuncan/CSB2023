@@ -232,28 +232,31 @@ label awawa_tate_test:
                 # begin test 
                 $ preferences.awawa_mode = False
                 $ preferences.awawa_chance = 0
+                $ test_string = substitutions("Test dialogue. THIS CODE IS SO STUPID, OMG. \n{i}Italic,{/i} {font=azsz}different font.{/font}{w=0.25} {b}Bold{/b} also exists, but it's {sc=3}ugly as sin.{/sc} {w=0.25}{color=FFFF00}Yellow{/color} is pretty cool, but so is {a=https://allezsoyez.com}my website.{/a}")
                 
                 n "0%% awawa."
-                tate "Test dialogue. THIS CODE IS SO STUPID, OMG. \n{i}Italic,{/i} {font=azsz}different font.{/font}{w=0.25} {b}Bold{/b} also exists, but it's {sc=3}ugly as sin.{/sc} {w=0.25}{color=FFFF00}Yellow{/color} is pretty cool, but so is {a=https://allezsoyez.com}my website.{/a}"
+                tate "[test_string]"
 
                 $ preferences.awawa_mode = True
                 
                 $ preferences.awawa_chance = 0
                 n "25%% awawa."
                 $ preferences.awawa_chance = 25
-                tate "Test dialogue. THIS CODE IS SO STUPID, OMG. \n{i}Italic,{/i} {font=azsz}different font.{/font}{w=0.25} {b}Bold{/b} also exists, but it's {sc=3}ugly as sin.{/sc} {w=0.25}{color=FFFF00}Yellow{/color} is pretty cool, but so is {a=https://allezsoyez.com}my website.{/a}"
+                $ test_string = awawa_mode(test_string, preferences.awawa_chance)
+                tate "[test_string]"
 
                 show tate sheepish
                 $ preferences.awawa_chance = 0
                 n "50%% awawa."
                 $ preferences.awawa_chance = 50
-                tate "Test dialogue. THIS CODE IS SO STUPID, OMG. \n{i}Italic,{/i} {font=azsz}different font.{/font}{w=0.25} {b}Bold{/b} also exists, but it's {sc=3}ugly as sin.{/sc} {w=0.25}{color=FFFF00}Yellow{/color} is pretty cool, but so is {a=https://allezsoyez.com}my website.{/a}"
+                $ test_string = awawa_mode(test_string, preferences.awawa_chance)
+                tate "[test_string]"
 
                 $ preferences.awawa_chance = 100
-
+                $ test_string = awawa_mode(test_string, preferences.awawa_chance)
                 n "100%% awawa."
                 show tate sheepish blush
-                tate "Test dialogue. THIS CODE IS SO STUPID, OMG. \n{i}Italic,{/i} {font=azsz}different font.{/font}{w=0.25} {b}Bold{/b} also exists, but it's {sc=3}ugly as sin.{/sc} {w=0.25}{color=FFFF00}Yellow{/color} is pretty cool, but so is {a=https://allezsoyez.com}my website.{/a}"
+                tate "[test_string]"
 
                 $ preferences.awawa_mode = awawa_is_on
                 $ preferences.awawa_chance = awawa_setting 
@@ -287,7 +290,7 @@ label awawa_tate_test:
                         renpy.show_screen("popup", next(chievos))
                         renpy.say(tate, "Did it work?")
                     except:
-                        renpy.say(tate, "Couldn't pull achievement. {w=0.5}Double-check the name and try again.")
+                        renpy.say(tate, substitutions("Couldn't pull achievement. Double-check the name and try again."))
                                 
                 jump .awawa_menu
 

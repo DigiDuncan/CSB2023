@@ -214,11 +214,12 @@ label train_story_begin:
     elif train_money_stolen == False:
         $ train_money_container = "briefcase"
         $ train_money_stolen_dialogue_switch = "latch it shut"
-    else:
+    else: # we should NEVER see these values.
         $ train_money_container = "treasure chest"
         $ train_money_stolen_dialogue_switch = "lock it shut"
 
-    n "CS and Arceus get out of the car and grab the [train_money_container] of money."
+    $ next_line = substitutions("CS and Arceus get out of the car and grab the "+train_money_container+" of money.")
+    n "[next_line]"
 
     scene kingman_exterior with dissolve
 
@@ -240,9 +241,11 @@ label train_story_begin:
     else:
         show briefcase at mid_mid_left with dissolve
 
-    n "CS quickly deconstructs the Lego car. He shoves the colorful little bricks into the [train_money_container] for later."
+    $ next_line = substitutions("CS quickly deconstructs the Lego car. He shoves the colorful little bricks into the " + train_money_container + " for later.")
+    n "[next_line]"
  
-    n "The [train_money_container] is now full to bursting, but CS just barely manages to [train_money_stolen_dialogue_switch]."
+    $ next_line = substitutions("The "+ train_money_container +" is now full to bursting, but CS just barely manages to " + train_money_stolen_dialogue_switch + ".")
+    n "[next_line]"
 
     if train_money_stolen == True:
         hide bag with dissolve
@@ -999,14 +1002,16 @@ label train_enter_sleeper:
     show arceus worried
     
     # begin this flip nonsense... why do i do this to myself
-    arceus "I mean, all we had was the one [train_money_container]."
+    $ next_line = substitutions("I mean, all we had was the one " + train_money_container +".")
+    arceus "[next_line]"
     pause 1.0
     show arceus worried flipped
     pause 1.0
     show arceus worried
     pause 2.0
 
-    arceus "... CS, where is the [train_money_container]?"
+    $ next_line = substitutions("... CS, where is the "+train_money_container+"?")
+    arceus "[next_line]"
     show tate shock
     show cs worried
     pause 1.0
@@ -1033,12 +1038,13 @@ label train_enter_sleeper:
     elif train_money_stolen == False:
         $ train_money_stolen_dialogue_switch = "metal briefcase"
         $ train_money_stolen_dialogue_switch_2 = " won"
-    else:
+    else: # we should never see these
         $ train_money_stolen_dialogue_switch = "red and gold treasure chest"
         $ train_money_stolen_dialogue_switch_2 = " totally plundered"
 
     show cs disappointed flipped
-    cs "Yes, sir, we're missing a single [train_money_stolen_dialogue_switch] filled with money we[train_money_stolen_dialogue_switch_2] while we were in Vegas."
+    $ next_line = substitutions("Yes, sir, we're missing a single " + train_money_stolen_dialogue_switch + "filled with money we" + train_money_stolen_dialogue_switch_2 + " while we were in Vegas.")
+    cs "[next_line]"
     arceus "And Lego bricks." 
     show cs surprised
     cs "And Legos, yes."
@@ -1139,7 +1145,8 @@ label train_enter_sleeper:
     show tate shock flipped
     show cs worried
     show arceus worried
-    tate "I think Mean said that someone even got [ch2_cs_attack_used] off of the roof!"
+    $ next_line = substitutions("I think Mean said that someone even got " + ch2_cs_attack_used + "off of the roof!")
+    tate "[next_line]"
     show tate sheepish flipped
     tate "But since Mean couldn't... {w=0.5}{size=-5}hold him off... {w=0.5}{size=-5}he was... {w=1.0}{size=-5}fired..."
     "..."
@@ -1799,7 +1806,8 @@ label train_begin_heist:
     arceus "I doubt we can get access to it, but maybe we could get someone to check the cab."
     tate "Actually, Mean lent me his spare key to the cab in case I needed the toilet in there, so I can check it."
     arceus "Oh, nice. I know my way around the dining car, so I can look there."
-    cs "Guess I'll stick around here, then. Maybe the [train_money_container] is just under a seat or something."
+    $ next_line = substitutions("Guess I'll stick around here, then. Maybe the " + [train_money_container] + " is just under a seat or something.")
+    cs "[next_line]"
     arceus "Sounds like a plan."
     show tate
     show cs flipped
@@ -2777,14 +2785,14 @@ label train_on_top:
     if fun_value(FUN_VALUE_RARE):
         python:
             mean_lines = [
-                ["Stop right there,{w=0.25} criminal scum!", "Nobody breaks the law on my watch!{w=0.25} I'm confiscating your stolen goods.{w=0.25} Now,{w=0.25} pay your fine or it's off to jail."],
-                ["It's all over,{w=0.25} lawbreaker!", "Your spree is at an end.{w=0.25} I'll take any stolen goods you have.{w=0.25} The next move is yours--{w=0.5} Pay your fine,{w=0.25} or I'll haul you away!"],
-                ["Stop,{w=0.25} you've violated the law.", "Pay the court a fine,{w=0.25} or serve your sentence.{w=0.25} Your stolen goods are now forfeit."]
+                ["Stop right there, criminal scum!", "Nobody breaks the law on my watch! I'm confiscating your stolen goods. Now, pay your fine or it's off to jail."],
+                ["It's all over, lawbreaker!", "Your spree is at an end. I'll take any stolen goods you have. The next move is yours-- Pay your fine, or I'll haul you away!"],
+                ["Stop, you've violated the law.", "Pay the court a fine, or serve your sentence. Your stolen goods are now forfeit."]
             ]
 
             mean_which = renpy.random.choice(mean_lines)
-            mean_text = mean_which[0]
-            mean_fun_text = mean_which[1]
+            mean_text = substitutions(mean_which[0])
+            mean_fun_text = substitutions(mean_which[1])
 
         mean "{cshake}{size=+24}[mean_text]" with hpunch
         mean "[mean_fun_text]"
@@ -3257,7 +3265,8 @@ label train_lupin_win:
     elif train_money_stolen == False:
         $ train_money_container = "briefcase"
    
-    n "CS reaches into the [train_money_container] and pulls out some Legos!"
+    $ next_line = substitutions("CS reaches into the " + train_money_container + " and pulls out some Legos!")
+    n "[next_line]"
     n "He feverishly begins to construct something!"
     show tate shock
     show mean human shocked flipped
