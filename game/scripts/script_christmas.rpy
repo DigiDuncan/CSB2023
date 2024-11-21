@@ -925,31 +925,55 @@ label ce_setup:
     anno "Maybe {i}don't{/i} say that."
     show cs disappointed
     cs "Sorry."
+    show cs
     anno "Well, I think we did a pretty darn good job."
+    show cs happy
     cs "Hell yeah we did!"
     cs "Everyone is gonna have a blast at this party!"
+    show cs
     anno "Before I get going, was there anything else you needed help with?"
+    show cs disappointed
     cs "No, I don't think so..."
+    show cs worried
     n "CS remembers that he didn't buy any food for the party."
     cs "Shit, I do need to go shopping for food. I haven't bought anything for the party!"
     anno "Well, you got today and tomorrow at least."
+    show cs
     cs "Yeah, I think I'm gonna head out here in a moment, I just need to make a list."
     anno "Alrighty well, good luck with that!"
     anno "I'll see you in 2 days!"
     cs "Goodbye Anno!"
+    hide anno with moveoutright
+    show cs flipped with determination
+    hide cs with moveoutleft
+    scene cs_bedroom1_ce with dissolve
+    show cs disappointed at center with moveinleft
     n "Once Anno leaves, CS starts to worry a little."
+    show cs angry
     cs "Dammit, I can't believe I forgot to get my own food for the party!"
+    show cs disappointed
     cs "It's gonna be extremely busy tomorrow, so I should probably go now."
     cs "What to buy..."
     cs "Probably some pies, I think Michael was gonna make some mashed potatoes, so I should get some of those..."
+    show cs
     cs "You know what? I got some time, I should destress and watch some car crash compilations to calm down."
     n "CS puts on a new compilation video and relaxes on his couch."
+    scene black with dissolve
+    pause 3.0
+    scene cs_bedroom1_ce_car
+    show cs
+    with dissolve
     cs "...So out of 500 crashes..."
+    show cs happy
     cs "That's about 257 red cars at fault!"
+    show cs worried
     cs "Yikes! Thank god I don't have a red car."
+    show cs
     cs "Alright, I should go get my groceries now."
     n "CS looks at the time."
+    show cs worried
     cs "Oh no! It's 3 AM!"
+    show cs disappointed
     cs "Darn, the time really flew! Now I have to go tomorrow!"
     cs "I guess I can finish my shopping list and get to sleep."
     cs "Hmm... what else do I need?"
