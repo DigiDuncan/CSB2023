@@ -2410,6 +2410,7 @@ label ce_banter:
     show k22 flipped with determination
     k22 "I wonder how Addy is doing anyways."
     play sound sfx_ring_once
+    show k22 phone at mid_left with move
     n "K-22 hits up Addy."
     $ renpy.music.set_pause(True, "music")
     play music2 frollo_rave if_changed
@@ -2421,7 +2422,7 @@ label ce_banter:
     addy "HELLO??"
     k22 "Hey, uhh, how is it going over there?"
     addy "WHAT? I CAN'T HEAR, THE MUSIC IS REALLY LOUD!"
-    show k22 angry flipped
+    show k22 phone angry
     k22 "I WAS ASKING IF--{w=1.0}{nw}"
     addy "YEAH I'LL CALL YOU LATER, HAVE FUN AT CS' PARTY!"
     hide archival_5
@@ -2429,6 +2430,7 @@ label ce_banter:
     with moveoutright
     stop music2
     $ renpy.music.set_pause(False, "music")
+    show k22 angry flipped
     k22 "Motherfucker!"
     show snow3
     show snow4
