@@ -1801,7 +1801,7 @@ label ce_party_before:
         cs "Hmm, I wonder who took the bus."
         hide cs with moveoutleft
         scene cs_house_snow_night
-        show sheriff dark flipped at left
+        show sheriff festive dark flipped at left
         with dissolve
         show cs christmas dark flipped at right with moveinright
         sheriff "God dammit! Stupid damn wheels! Stuck in the snow!"
@@ -2209,7 +2209,7 @@ label ce_banter:
     show rich at mid_right
     show db at center
     show copguy festive at mid_right
-    show sheriff flipped at mid_left
+    show sheriff festive flipped at mid_left
     with dissolve
     play music dont_preheat_your_oven
     music dont_preheat_your_oven
@@ -2229,7 +2229,7 @@ label ce_banter:
     with moveoutright
     scene cs_bathroom with dissolve
     show copguy festive flipped at left
-    show sheriff flipped at mid_left
+    show sheriff festive flipped at mid_left
     with moveinleft
     pause 1.0
     show copguy festive flipped at center with move
@@ -2241,7 +2241,7 @@ label ce_banter:
     sheriff "This is the police! Open up!"
     play sound sfx_house_door_open
     scene cs_bathroom_open
-    show sheriff flipped at mid_left
+    show sheriff festive flipped at mid_left
     show copguy festive
     show tate cry festive
     hide tate with easeoutright
@@ -2256,7 +2256,7 @@ label ce_banter:
     show copguy festive flipped with determination
     pause 1.0
     show copguy festive flipped at mid_mid_left
-    show sheriff flipped at center
+    show sheriff festive flipped at center
     with move
     hide copguy
     hide sheriff
@@ -2368,7 +2368,7 @@ label ce_banter:
     copguy "Sorry boss, as much as I would love to keep helping you, this is important."
     play sound sfx_house_door_open
     scene cs_bathroom_open
-    show sheriff
+    show sheriff festive
     show copguy festive flipped
     hide copguy with easeoutright
     sheriff "Wait! You can't just leave me here!"
@@ -2561,7 +2561,7 @@ label ce_cooking:
     scene cs_bathroom_open
     show grace at mid_left
     show copguy festive flipped at center
-    show sheriff at center behind copguy
+    show sheriff festive at center behind copguy
     pause 1.0
     play sound sfx_house_door_close
     scene cs_bathroom
@@ -2577,7 +2577,7 @@ label ce_cooking:
     show grace at mid_left
     with determination
     show copguy festive at mid_right
-    show sheriff at center behind copguy
+    show sheriff festive at center behind copguy
     pause 1.0
     hide copguy
     hide sheriff
@@ -3064,7 +3064,7 @@ label ce_exchange:
     with dissolve
     hide copguy with moveoutright
     sheriff "Because I don't know either."
-    show sheriff flipped at mid_left with moveinleft 
+    show sheriff festive flipped at mid_left with moveinleft 
     sheriff "Whatever, it's my turn to pick a gift."
     sheriff "Damn, this is heavy! What the hell is this?"
     show cement at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
@@ -3120,7 +3120,7 @@ label ce_exchange:
     k17 "What the hay! Now I gotta get another gift!"
     show k17 flipped
     k17 "I'm gonna take the Gravity Falls Commentary!"
-    show sheriff at mid_right with moveinright
+    show sheriff festive at mid_right with moveinright
     show gravity_falls at Move((0.7125, 0.5), (0.3125, 0.5), 2, repeat=False, bounce=False, xanchor="left", yanchor="top")
     with dissolve
     pause 3.0
@@ -3819,7 +3819,7 @@ label ce_billy_time:
     scene cs_living2 
     show cs christmas flipped at center
     show mean human at mid_offscreen_right
-    show sheriff at mid_mid_right
+    show sheriff festive at mid_mid_right
     show copguy festive at mid_right
     show luke at mid_left
     show rich flipped at mid_mid_left behind cs
@@ -4328,7 +4328,7 @@ label ce_roof_moment:
     obama "I gotta say, that was one of the most fun Christmas parties I've ever been to."
     obama "Although, I should probably get back to the White House. The political circus is probably getting out of hand."
     hide obama with moveoutleft
-    show sheriff dark at right with moveinright
+    show sheriff festive dark at right with moveinright
     sheriff "Hey, guys, what'd I miss?"
     sheriff "Where's all this snow you were all so worried about?"
     cs "Uhhh..."
