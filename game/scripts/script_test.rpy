@@ -17,6 +17,9 @@ label test:
             $ renpy.full_restart()
         "True"  (type = "true"):
             $ renpy.full_restart()
+        "Arc's GUI Hell":
+            stop music
+            jump play_reversigame
         "New cool thing OwO"  (type = "dx"):
             menu:
                 "Train Boss Test":
