@@ -1678,7 +1678,7 @@ label ce_party_before:
         hide cs with moveoutleft
         scene cs_house_snow_night
         show arceus dark flipped at mid_left
-        show kitty dark at left
+        show kitty festive dark at left
         with dissolve
         show cs christmas dark flipped at right with moveinright
         arceus "Hey CS!"
@@ -2225,7 +2225,7 @@ label ce_intro:
     hide cs with moveoutleft
     scene cs_hallway
     show arceus flipped at mid_left
-    show kitty at left
+    show kitty festive at left
     with dissolve
     show cs christmas flipped at center with moveinright
     cs "Hey how are you guys? I was looking all over and couldn't find you."
@@ -2653,7 +2653,7 @@ label ce_cooking:
     scene cs_bathroom
     show anne at mid_mid_left with moveinleft
     show rich at mid_left with moveinleft
-    show kitty at mid_left_left with moveinleft
+    show kitty festive at mid_left_left with moveinleft
     show luke at left with moveinleft
     n "A line starts to form next to the bathroom."
     # TODO: More banter here
@@ -3018,7 +3018,7 @@ label ce_exchange:
     kitty "You saw me carry it in!"
     hide arceus with moveoutright   
     kitty "Whatever, it's my turn now."
-    show kitty at mid_left with moveinleft
+    show kitty festive at mid_left with moveinleft
     kitty "Looks like I got..."
     show riffmaster at Move((0.3125, 1.0), (0.3125, 0.35), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     kitty "A... guitar hero controller?"
@@ -3042,7 +3042,7 @@ label ce_exchange:
     hide anno with moveoutright
     show digi flipped at mid_left with moveinleft
     digi "Well it's my turn now, and I'm gonna steal that Riffmaster!"
-    show kitty flipped at mid_right with moveinright
+    show kitty festive flipped at mid_right with moveinright
     show riffmaster at Move((0.7125, 0.5), (0.3125, 0.5), 2, repeat=False, bounce=False, xanchor="left", yanchor="top")
     with dissolve
     pause 3.0
@@ -3054,7 +3054,7 @@ label ce_exchange:
     hide kitty with moveoutleft
     arceus "Psst! Kitty! Come here!"
     n "Arceus whispers something into her ear."
-    show kitty at mid_left with moveinleft
+    show kitty festive at mid_left with moveinleft
     kitty "Alright, Anno, hand over your computer thing."
     show anno festive at mid_right with moveinright
     show raspberry_pi at Move((0.7125, 0.5), (0.3125, 0.5), 2, repeat=False, bounce=False, xanchor="left", yanchor="top")
@@ -3462,7 +3462,7 @@ label ce_lights_out:
     hide cs with moveoutleft
     scene cs_basement
     show cs christmas at center
-    show kitty at left
+    show kitty festive at left
     with dissolve
     cs "At least I have this flashlight now!"
     show cs christmas flipped
@@ -3815,7 +3815,7 @@ label ce_billy_time:
     grace "I'll be waiting, Billy!"
     n "Billy and Tate run into the basement."
     scene cs_basement
-    show kitty at left
+    show kitty festive at left
     show arceus worried flipped at mid_left
     show tate festive flipped at center
     show billy festive at mid_right
@@ -3853,7 +3853,7 @@ label ce_billy_time:
     hide billy
     with moveoutright
     scene cs_basement
-    show kitty at left
+    show kitty festive at left
     show arceus happy flipped at mid_left
     with dissolve
     show tate festive at mid_mid_right

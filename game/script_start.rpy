@@ -1659,6 +1659,10 @@ image mika dark = "dark:characters/mika.png"
 
 # More of our friends!
 image kitty = "characters/kitty.png"
+image kitty festive = "characters/kitty_festive.png"
+image kitty festive dark = "dark:characters/kitty_festive.png"
+image kitty festive flipped = "flip:characters/kitty_festive.png"
+image kitty festive dark flipped = "dark:flip:characters/kitty_festive.png"
 image kitty dark = "dark:characters/kitty.png"
 image kitty sil_black = "sil_black:characters/kitty.png"
 image kitty flipped = "flip:characters/kitty.png"
