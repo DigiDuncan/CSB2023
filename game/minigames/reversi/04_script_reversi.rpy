@@ -14,10 +14,13 @@ init python:
             renpy.Displayable.__init__(self)
             self.start_time = None
             self.win = None
+            self.game = Board(8)
 
         def render(self, width, height, st, at):
             if self.start_time is None:
                 self.start_time = st
+            if self.game.game_over:
+                renpy.notify("Game ended, but I haven't implemented this yet. - Arc")
             r = renpy.Render(1920, 1080)
             s = r.canvas()
             # Draw the reversi board
@@ -28,7 +31,23 @@ init python:
             for line in range(0, board_length, int(board_length/8)):
                 s.rect(color=(0,0,0), rect = pygame.Rect(board_x+line, board_y, 5, board_length), width=0)
                 s.rect(color=(0,0,0), rect = pygame.Rect(board_x, board_y+line, board_length, 5), width=0)
-
+            # Next get the game state and update it
+            for row in range(self.game.size):
+                for column in range(self.game.size):
+                    curr_tile = self.game.tiles[column][row]
+                    if curr_tile == ReversiTile.NONE:
+                        continue
+                    elif curr_tile == ReversiTile.BLACK:
+                        # Draw a black circle
+                        # First calculate where the top left of the circle will be
+                        circ_x = (((column) * (board_length/8))+board_x)+((board_length/8)/2)
+                        circ_y = (((row) * (board_length/8))+board_y)+((board_length/8)/2)
+                        s.circle((0,0,0), (circ_x, circ_y), board_length/16)
+                    elif curr_tile == ReversiTile.WHITE:
+                        # Draw a white circle
+                        circ_x = (((column) * (board_length/8))+board_x)+((board_length/8)/2)
+                        circ_y = (((row) * (board_length/8))+board_y)+((board_length/8)/2)
+                        s.circle((255,255,255), (circ_x, circ_y), board_length/16)
             renpy.redraw(self, 0)
             return r
 
@@ -39,7 +58,12 @@ init python:
                     # Now we calculate what box in the grid was clicked
                     grid_x = math.floor((renpy.get_mouse_pos()[0]-board_x)/(board_length/8))
                     grid_y = math.floor((renpy.get_mouse_pos()[1]-board_y)/(board_length/8))
-                    renpy.notify(str(grid_x)+" "+str(grid_y))
+                    # Check if the move was LEGAL
+                    if self.game.is_move_legal((grid_x, grid_y)):
+                        self.game.do_move((grid_x, grid_y))
+                    if not self.game.is_move_legal((grid_x, grid_y)):
+                        renpy.notify("Move is not legal!")
+
             if ev.type == pygame.KEYDOWN and ev.key == pygame.K_END:
                 self.win = True
             if self.win is not None:
@@ -49,9 +73,9 @@ init python:
             return [] # Assets needed to load
 
 screen reversigame():
-    default templategame = ReversiGameDisplayable()
+    default reversigamedisplay = ReversiGameDisplayable()
     # Add a background or any static images here.
-    add templategame
+    add reversigamedisplay
 
 label play_reversigame:
     window hide
