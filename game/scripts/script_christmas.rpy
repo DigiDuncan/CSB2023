@@ -1674,7 +1674,7 @@ label ce_party_before:
         jump ce_intro      
     if d20 == 2:
         n "As CS asks himself this, a small car pulls up in the driveway."
-        cs "Hmm, let go see who that is!"
+        cs "Hmm, let's go see who that is!"
         hide cs with moveoutleft
         scene cs_house_snow_night
         show arceus dark flipped at mid_left
@@ -3015,7 +3015,7 @@ label ce_exchange:
     hide tea_and_crumpets with dissolve
     show arceus worried flipped
     arceus "Sorry! I honestly forgot which one was yours."
-    kitty "You saw me carry it in!"
+    kitty "You saw me carry it in, dumbass!"
     hide arceus with moveoutright   
     kitty "Whatever, it's my turn now."
     show kitty festive at mid_left with moveinleft
@@ -3475,7 +3475,7 @@ label ce_lights_out:
     cs "I was trying to fix the breaker, but, no dice."
     kitty "I think the power is out everywhere. I heard the wind really pick up outside a little while ago."
     kitty "You should probably go check for yourself."
-    kitty "Could you please let Arceus know I'm down here? I think I'm gonna stay here for a bit."
+    kitty "Could you please let Arcie know I'm down here? I think I'm gonna stay here for a bit."
     cs "Sure thing. Stay safe."
     show cs christmas with determination
     hide cs with moveoutright
