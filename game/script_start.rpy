@@ -2373,6 +2373,8 @@ image smoke = SnowBlossom("smoke.png", count = 400, fast = False, xspeed = (0,0)
 image bigsmoke = SnowBlossom("bigsmoke.png", count = 200, fast = True, xspeed = (0,0), yspeed = (0, -50), border = 256)
 image snow1 = SnowBlossom("snow1.png", count = 200, fast = True, xspeed = (20000, 100))
 image snow2 = SnowBlossom("snow1.png", count = 200, fast = False, xspeed = (1000, 100))
+image snow1white = SnowBlossom("snow2.png", count = 200, fast = False, xspeed = (1000, 100))
+image snow2white = SnowBlossom("snow2.png", count = 200, fast = False, xspeed = (2000, 100))
 image snow3 = SnowBlossom("snow1.png", count = 200, fast = True, xspeed = (2000, 100))
 image snow4 = SnowBlossom("snow1.png", count = 200, fast = True, xspeed = (4000, 100))
 image snow5 = SnowBlossom("snow1.png", count = 200, fast = False, xspeed = (2000, 100))
@@ -2477,6 +2479,7 @@ image sansbrick = "sansbrick.png"
 image scott_border = "scott_border.png"
 image script = "images/bg/script.png"
 image shopping_cart = "shopping_cart.png"
+image shopping_cart flipped = "flip:shopping_cart.png"
 image shovel = "shovel.png"
 image slime16 = "slime16.png"
 image slime16 fire = "slime16_fire.png"
@@ -2495,6 +2498,10 @@ image walkie = "walkie.png"
 image walkie dark = "dark:walkie.png"
 image walmart_bag = "walmart_bag.png"
 image watch = "watch.png"
+image watermark1 = "wm1.png"
+image watermark2 = "wm2.png"
+image watermark3 = "wm3.png"
+image watermark4 = "wm4.png"
 image ytx = Transform("ytx.png", zoom = 0.333)
 image ytx_drive = "ytx_drive.png"
 image map_kuwait = "gui/map_kuwait.png"

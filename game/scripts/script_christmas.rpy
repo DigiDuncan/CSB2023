@@ -1084,15 +1084,14 @@ label ce_before_shopping:
         cs "I should probably stop glazing up Target and actually buy what I came here for."
     else:
         cs "I should probably stop admiring the view and actually buy what I came here for."
-    hide cs with moveoutright
+    show cs coat flipped with determination
+    hide cs with moveoutleft
     n "CS grabs a cart."
+    show cs coat at offscreenleft
+    show shopping_cart at manual_pos(-0.2, 1.1, 0.75)
     
-    # TODO: we totally need a joke somewhere about how you go to target for a few things but somehow come out with all this extra crap you don't need.
-    
-    # TODO: OK, hey Pakoo.
-    # I'm going to need you to like, tell me if this makes any sense given the layout of a Target.
-    # My guess is no, and you can reshuffle these segments to make sense for that reason if you want to.
-    # -- Digi
+    show shopping_cart at Move((-0.2, 0.6), (1.1, 0.6), 0.5, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    hide cs with moveoutright
 
     # Shopping
     scene tgt_tater with dissolve
@@ -1330,9 +1329,9 @@ label ce_before_shopping:
     # just want him to get A LOT of genergy lmfao - tate
 
     scene tgt_tree with dissolve
-    show cs coat at mid_left_left 
-    show shopping_cart at manual_pos(0.3, 1.1, 0.5)
-    with moveinleft
+    show cs coat flipped at mid_right_right
+    show shopping_cart flipped at manual_pos(0.7, 1.1, 0.5)
+    with moveinright
     pause 2.0
 
     n "After clearing out the stock of Genergy, CS continues on to another area of the store."
@@ -1345,24 +1344,23 @@ label ce_before_shopping:
     show cs coat disappointed
     cs "At least everyone here seems polite. They probably just want to get what they need and get out, too."
 
-    show pomni at offscreenright
-    show shopping_cart as second at manual_pos(1.5, 1.1, 0.5)
+    show pomni at offscreenleft
+    show shopping_cart as second at manual_pos(-0.5, 1.1, 0.5)
     with determination
 
-    show cs coat disappointed at mid_left
-    show shopping_cart at manual_pos(0.5, 1.1, 0.5)
-    show pomni at mid_offscreen_right
-    show shopping_cart as second at manual_pos(0.8, 1.1, 0.5):
-        xzoom -1
+    show cs coat disappointed at mid_right
+    show shopping_cart flipped at manual_pos(0.5, 1.1, 0.5)
+    show pomni flipped at mid_offscreen_left
+    show shopping_cart as second at manual_pos(0.2, 1.1, 0.5)
     with move
     show cs coat scared
-    show pomni eyes
+    show pomni eyes flipped
     with hpunch
 
     n "CS nearly runs his cart right into another."
     show cs coat worried
     cs "Oh, I'm so sorry!"
-    show pomni concern flipped
+    show pomni concern
     pomni "Oh, uh... i-{w=0.1}it's o-okay! Y-{w=0.1}You probably just didn't see me--"
     show pomni think
     pomni "Wait, aren't you that guy from IKEA?"
@@ -1370,31 +1368,31 @@ label ce_before_shopping:
     cs "Huh?!"
     show cs coat worried
     cs "I've only been to Walmart recently!"
-    show pomni eyes
+    show pomni eyes flipped
     "..."
     n "The clown girl looks visibly distressed."
 
-    show pomni concern flipped
+    show pomni concern
     pomni "But... how?!"
     pomni "You {i}really{/i} don't remember me?"
     # TODO: is this next line too much? should i save it for DX and make it a conditional depending on whether you've fought tate in train route? - tate
-    show pomni think
+    show pomni think flipped
     pomni "Is this what that {color=#FFDBFC}time traveler{/color} was talking about?"
     show cs coat scared
     cs "What are {i}you{/i} talking about?!"
-    show pomni concern flipped
-    pomni "I'm... just going to head out now! Lots of {i}very{/i} important..."
     show pomni concern
-    pause 0.5
+    pomni "I'm... just going to head out now! Lots of {i}very{/i} important..."
     show pomni concern flipped
+    pause 0.5
+    show pomni concern
     n "Pomni glances at her surroundings."
-    show pomni
+    show pomni flipped
     pomni "... Shopping to do! Yeah! I just love, uh... capitalism?"
     show cs coat worried
     cs "Wait, what do you mean by--{w=0.5}{nw}"
-    show pomni concern flipped
+    show pomni concern
     pomni "Gotta run! Bye!"
-    show pomni concern flipped at offscreenright with MoveTransition(0.15)
+    show pomni concern at offscreenright with MoveTransition(0.15)
     n "Pomni dashes away, leaving her empty cart behind."
     pause 0.5
     show cs coat disappointed
@@ -1403,17 +1401,17 @@ label ce_before_shopping:
     cs "I guess this place is more like Walmart than I thought."
     show cs coat surprised
     cs "Guess I have a lookalike who shops at IKEA, too."
-    show cs coat
+    show cs coat flipped
     cs "Oh, well. I should probably also get back to shopping."
     
     hide cs
     hide shopping_cart
-    with moveoutright
+    with moveoutleft
 
     scene tgt_tech with dissolve
-    show cs coat at left 
-    show shopping_cart at manual_pos(0.4, 1.1, 0.5)
-    with moveinleft 
+    show cs coat flipped at right 
+    show shopping_cart flipped at manual_pos(0.6, 1.1, 0.5)
+    with moveinright 
     n "CS passes the electronics section."
     cs "Okay, I don't need anything there."
     show cs coat surprised
@@ -1500,7 +1498,7 @@ label ce_checkout:
     stop music fadeout 10.0
     scene tgt_checkerror with dissolve
     show cs coat at left with moveinleft
-    n "CS sees an message on the machine."
+    n "CS sees a message on the machine."
     cs "Welp, can't use that one!"
     hide cs with moveoutright
     n "CS goes to the next machine."
@@ -2116,12 +2114,76 @@ label ce_intro:
     cs "Hey guys, how are y'all doing?"
     obama "Hello CS, we are all preparing our meals for dinner tonight."
     obama "I'm gonna make a carrot cake."
-    billy "I'm gonna make some big city sliders!"
-    michael "I've been thinking of preparing some mashed potatoes."
-    cs "That all sounds great!"
-    cs "What about you, Ed?"
-    ed "Well, I think when it comes to cooking, it's just as good as my foundation repair skills."
-    ed "I'm preparing a Christmas turkey for our feast."
+    if fun_value(FUN_VALUE_COMMON):
+        show wm1:
+            xpos -250
+            ypos 980
+            zoom 1.25
+            linear 0.35 xpos 0 ypos 680 zoom 1.0
+        with dissolve
+        window hide
+        pause 1.5
+        show wm1:
+            xpos 0
+            ypos 680
+            zoom 1.0
+            linear 0.35 xpos -250 ypos 980 zoom 1.25
+        pause 0.5
+        billy "I'm gonna make some big city sliders!"
+        show wm2:
+            xpos -250
+            ypos 980
+            zoom 1.25
+            linear 0.35 xpos 0 ypos 680 zoom 1.0
+        with dissolve
+        window hide
+        pause 2.5
+        show wm2:
+            xpos 0
+            ypos 680
+            zoom 1.0
+            linear 0.35 xpos -250 ypos 980 zoom 1.25
+        pause 0.5
+        michael "I've been thinking of preparing some mashed potatoes."
+        show wm3:
+            xpos -250
+            ypos 980
+            zoom 1.25
+            linear 0.35 xpos 0 ypos 680 zoom 1.0
+        with dissolve
+        window hide
+        pause 1.0
+        show wm3:
+            xpos 0
+            ypos 680
+            zoom 1.0
+            linear 0.35 xpos -250 ypos 980 zoom 1.25
+        pause 0.5
+        cs "That all sounds great!"
+        cs "What about you, Ed?"
+        ed "Well, I think when it comes to cooking, it's just as good as my foundation repair skills."
+        ed "I'm preparing a Christmas turkey for our feast."
+        show wm4:
+            xpos -250
+            ypos 980
+            zoom 1.25
+            linear 0.35 xpos 0 ypos 680 zoom 1.0
+        with dissolve
+        window hide
+        pause 0.5
+        show wm4:
+            xpos 0
+            ypos 680
+            zoom 1.0
+            linear 0.35 xpos -250 ypos 980 zoom 1.25
+        pause 0.5
+    else:
+        billy "I'm gonna make some big city sliders!"
+        michael "I've been thinking of preparing some mashed potatoes."
+        cs "That all sounds great!"
+        cs "What about you, Ed?"
+        ed "Well, I think when it comes to cooking, it's just as good as my foundation repair skills."
+        ed "I'm preparing a Christmas turkey for our feast."
     cs "Damn! That sounds delicious!"
     if fun_value(FUN_VALUE_COMMON):
         cs "Hey Ed can you make me a sandwich?"
@@ -2381,8 +2443,8 @@ label ce_banter:
     scene cs_door_outside 
     show k17 disappointed flipped at mid_left
     show k22 disappointed at mid_right
-    show snow2
-    show snow5
+    show snow1white
+    show snow2white
     with dissolve
     k17 "This is so unfair!"
     k17 "CS said that it's annoying that we changed or whatever, but look at everyone else!"
@@ -2480,7 +2542,7 @@ label ce_cooking:
     obama "You can just call me Obama."
     obama "Second of all, I accidently cut myself while chopping these carrots."
     obama "What a fool I am."
-    show cs disappointed
+    show cs disappointed christmas
     cs "Oh my God, are you okay?"
     obama "Yes, I'm fine, but I need someone to keep cutting for me."
     obama "Can you do it for me?"
@@ -2638,7 +2700,7 @@ label ce_cooking:
     digi "Fair enough. Wouldn't want this place falling apart."
     scene cs_kitchen
     show cs_kitchen_fg
-    show billy festive at mid_left behind cs_kitchen_fg
+    show obama festive at mid_left behind cs_kitchen_fg
     show billy festive at mid_right behind cs_kitchen_fg
     with dissolve
     billy "So then I said: \"That's a resturaunt mini burger {w=1.0}{i}no one{/i} loves!"
@@ -4346,6 +4408,9 @@ label ce_roof_moment:
     with dissolve
     n "As Santa flies past, the snow begins to fall again."
     sheriff "Well, Copguy, we should probably get going before we get snowed in again!"
+    show copguy festive dark flipped
+    show sheriff festive dark flipped
+    with determination
     hide sheriff
     hide copguy
     with moveoutright
