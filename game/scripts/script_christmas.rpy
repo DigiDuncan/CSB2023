@@ -2658,6 +2658,27 @@ label ce_cooking:
     n "A line starts to form next to the bathroom."
     # TODO: More banter here
 
+    # TODO: Animate this or something
+    kitty "Arcie, you're a fucking walnut"
+    arc "Huh? Where did that come from?"
+    kitty "Dunno, just felt like calling you a walnut"
+    arc "Y'know that's fair..."
+    n "..."
+    n "..."
+    n "... Why hasn't the scene transitioned yet?"
+    arc "Because I'm not done yet, dipshit."
+    n "... k."
+    arc "Isn't weird how the first night of Hanukkah fell on Christmas day this year?"
+    kitty "Yeah, that's pretty weird, innit?"
+    arc "Even weirder, when you think about it, next year will have 2 Hanukkahs."
+    kitty "... How so?"
+    arc "Well, you figure, 8 nights of Hanukkah."
+    kitty "... Uh huh"
+    arc "And today's the 25th of December."
+    kitty "... I see.."
+    arc "So the last night of Hanukkah would be the 2nd of January"
+    kitty ".... Shit, you right."
+
     # TODO: I'm just writing some scenes here, I'm not doing visuals
     # Pakoo, I'd appreciate help with that -- it's been a long time since I've done it and
     # I need a refresher I think.
