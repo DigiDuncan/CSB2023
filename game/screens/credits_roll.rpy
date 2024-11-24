@@ -27,10 +27,11 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
     #only get tracks for a given route, or if none specified/invalid tag, get everything
     python:
         for song in music_map:
-            if route in music_map[song]["tags"]:
+            if route == "All":
                 jukebox_presort.update({ song : { "title": music_map[song]["title"], "artist": music_map[song]["artist"] } })
             else:
-                jukebox_presort.update({ song : { "title": music_map[song]["title"], "artist": music_map[song]["artist"] } })
+                if route in music_map[song]["tags"]:
+                    jukebox_presort.update({ song : { "title": music_map[song]["title"], "artist": music_map[song]["artist"] } })
      
             jukebox_sorted = dict(sorted(jukebox_presort.items(), key = lambda a: (a[1]["artist"].lower(), a[1]["title"].lower())))
 

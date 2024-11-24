@@ -3546,6 +3546,7 @@ label before_main_menu:
             if not renpy.music.is_playing():
                 renpy.music.play("<from 16.53>bubble_tea.ogg", loop = False)
                 persistent.seen_splash = False
+    return
 
 label start:  # this might be required??
     # yep, it's required, but i'm fixing it to default to main menu instead - tate
