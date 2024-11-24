@@ -2843,13 +2843,15 @@ label ce_mike:
 
 # Dinner/More Banter
 label ce_dinner:
-    scene cs_house_snow_night
-    show cs_dining_1
-    show cs_dining_2
+    scene night_bg
+    show left_room
+    show left_chair_back
     show cs christmas at center
     show anno festive at mid_left
     show tate festive at mid_right
-    show cs_dining_3
+    show db at mid_offscreen_right
+    show digi at mid_offscreen_left
+    show left_table
     with dissolve
     stop music fadeout 3.0
     music end
@@ -2863,6 +2865,15 @@ label ce_dinner:
     nova "Turn that shit off!"
     cs "Hey! Can you two stop fighting and get over here and eat with us!"
 
+    show left_room at mid_mid_left
+    show left_chair_back at mid_mid_left
+    show left_table at mid_mid_left
+    show cs christmas at mid_mid_left
+    show anno festive at mid_left_left
+    show tate festive at mid_mid_right
+    show db at right
+    show digi at offscreenleft
+    with move
     db "So CS, how's your streams been going recently?"
     cs "Well, it's mainly been car crash streams on Sundays as usual."
     cs "It's been hard to really do crazy stuff as much as I did back then on Mixer ever since it died."
