@@ -2369,7 +2369,7 @@ label ce_banter:
     rich "Only about 80-percent."
     scene cs_foyer
     show aria festive at mid_mid_left
-    show tate festive flipped at mid_right
+    show tate festive sheepish flipped at mid_right
     show mean human at mid_offscreen_right
     show k22 flipped at left behind k17
     show k17 flipped at center
