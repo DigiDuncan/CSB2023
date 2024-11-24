@@ -186,7 +186,7 @@ label ce_tree:
         show cs disappointed at manual_pos(0.75, 1.115, 1.0) with move
 
         # CS steps on a Lego.
-        # TODO: swap SFX later, however appropriate this one is lmfao
+        n "CS steps directly onto a stray Lego."
         play sound sfx_spikes
         show cs scared with hpunch
         cs "Fuck!"
@@ -447,7 +447,6 @@ label ce_anno:
         scene cs_garage_mess with dissolve
         show cs disappointed coat hat at offscreenleft
         show cs disappointed coat hat at mid_mid_left with moveinleft
-        # TODO: swap SFX later, however appropriate this one is lmfao
         show cs scared coat hat
         play sound sfx_spikes
         cs "Shit!" with hpunch
@@ -540,11 +539,11 @@ label ce_anno:
     pause 0.5
     
     # SHOVEL ANIMATION TIME
-    # TODO: Make this a bit smoother
 
     # FIRST
     # walk to it
-    play sound "<from 0.74 to 1.723>sfx/sfx_snow_walk.ogg" volume 2.0 # TODO: this is only playing one footstep. it should be two. the next instance is two. I DON'T UNDERSTAND - tate
+    # TODO: this is only playing one footstep. it should be two. the next instance is two. I DON'T UNDERSTAND - tate
+    play sound "<from 0.74 to 1.723>sfx/sfx_snow_walk.ogg" volume 2.0
     show cs disappointed coat hat flipped at center
     show shovel at manual_pos(0.6, 0.7, 0.5)
     with MoveTransition(1.0)
@@ -741,7 +740,7 @@ label ce_anno:
         pos (0.25,0.45)
         linear 0.1 ypos 350
         linear 0.1 ypos 550
-    # TODO: shaky shaky anim + sfx that empty ketchup bottle squirting sound
+    # TODO: shaky shaky sfx - that empty ketchup bottle squirting sound
     
     n "Carguy vigorously shakes the empty bottle."
     show crotch_doctor:
@@ -789,7 +788,7 @@ label ce_anno:
     n "As CS finishes clearing the driveway, he spots Anno's car turning onto his street."
     cs "Just in time!"
 
-    # TODO: anno's car
+    # TODO: sfx - anno's car
 
     show cs happy coat hat flipped
     n "CS waves to Anno as the car pulls into CS' driveway."
@@ -983,7 +982,7 @@ label ce_setup:
 
 # Day 2
 label ce_before_shopping:
-    # TODO: something went wrong with this scene. i have to use manual_pos for everything or CS is floating? how annoying.
+    # NOTE: something went wrong with this scene. i have to use manual_pos for everything or CS is floating? how annoying.
     play sound sfx_csnore loop
     play sound2 sfx_clock_ticking volume 0.5
     scene cs_bedroom2
@@ -1194,7 +1193,7 @@ label ce_before_shopping:
     show shopping_cart at manual_pos(0.8, 1.1, 0.5)
     with moveinleft
     pause 1.0
-    # TODO: this entire dialogue is AAAAAA but idk how to rewrite it yet, too much repetition, was this intended?? - tate
+    # NOTE: Good bread (intentional)
     cs "Oh, good, bread. Can't have a holiday dinner without some good bread!"
     cs "I guess I'll get Italian bread. You can make real good garlic bread with that."
     cs "Since Digi's coming, and I think they're ace, I'd better have the good stuff."
@@ -1262,9 +1261,7 @@ label ce_before_shopping:
     pause 1.0
     show cs coat at center
     show shopping_cart at manual_pos(0.8, 1.1, 0.5)
-    with moveinleft 
-
-    # TODO: uhhhhhh lemme know how i did on these few lines i guess idk - tate
+    with moveinleft
 
     n "The next few aisles don't hold much for CS beyond some content for observational comedy."
     show cs coat surprised
@@ -1375,7 +1372,6 @@ label ce_before_shopping:
     show pomni concern
     pomni "But... how?!"
     pomni "You {i}really{/i} don't remember me?"
-    # TODO: is this next line too much? should i save it for DX and make it a conditional depending on whether you've fought tate in train route? - tate
     show pomni think flipped
     pomni "Is this what that {color=#FFDBFC}time traveler{/color} was talking about?"
     show cs coat scared
@@ -1392,6 +1388,7 @@ label ce_before_shopping:
     cs "Wait, what do you mean by--{w=0.5}{nw}"
     show pomni concern
     pomni "Gotta run! Bye!"
+    # TODO: Something's weird here?
     show pomni concern at offscreenright with MoveTransition(0.15)
     n "Pomni dashes away, leaving her empty cart behind."
     pause 0.5
@@ -1422,6 +1419,7 @@ label ce_before_shopping:
     cs "Okay, that's the universe just {i}asking{/i} me to play a round."
 
     # TODO: lmao, are we gonna put a tetris minigame here?
+    # EDIT: Maybe. -- Digi
 
     show cs coat happy flipped at left with move
     n "CS steps over to the display."
@@ -1445,8 +1443,6 @@ label ce_before_shopping:
     show cs coat at center with moveinleft 
     n "Finally, CS lands in the alcohol section."
     cs "I know a lot of the party won't drink, but damn it, it's Christmas. I should nab some nog."
-
-    # TODO: Add more shopping
     hide cs with moveoutright
 
 # Checkout
@@ -1507,7 +1503,6 @@ label ce_checkout:
     n "As CS is checking out, the machine beeps at him."
     show cs coat worried
     cs "What? I scanned this twice? No I didn't!"
-    # TODO: Pakoo needs to greenscreen themselves
     show cs coat disappointed
     show pakoo tgt at mid_right with moveinright
     tgt_worker "Oh yeah, it always does that, keep going."
@@ -1654,7 +1649,7 @@ label ce_aftershop:
     cs "Okay CS, stop thinking about the party."
     cs "You need to sleep!"
     n "CS finally dozes off to sleep."
-    # TODO: More scene here
+    # TODO: More scene here (Digi)
 
 label ce_party_before:
     scene cs_bedroom2
@@ -1671,7 +1666,7 @@ label ce_party_before:
         cs "Alright, any minute now..."
         cs "The party starts here in about 15 minutes, so people should start showing up soon..."
         n "CS keeps on waiting, but it looks like no one shows up early."
-        jump ce_intro      
+        jump ce_introductions      
     if d20 == 2:
         n "As CS asks himself this, a small car pulls up in the driveway."
         cs "Hmm, let's go see who that is!"
@@ -1689,7 +1684,7 @@ label ce_party_before:
         cs "Yeah, well, should we get inside? It's pretty cold out."
         kitty "Well, we are rather warm, but yeah."
         kitty "Let's go inside."
-        jump ce_intro      
+        jump ce_introductions      
     if d20 == 3:
         n "CS peers out the window to see Anno's car pull into the driveway."
         cs "Hey look at that! Anno's here first!"
@@ -1701,7 +1696,7 @@ label ce_party_before:
         anno "Hey CS!"
         anno "I showed up kinda early, but I wanted to see everyone's initial reactions of our decor work!"
         cs "Well I'm glad you showed up, come inside! It's cold out."
-        jump ce_intro      
+        jump ce_introductions      
     if d20 == 4:
         n "All of a sudden, CS hears a futuristic sounding vehicle land outside."
         show cs disappointed christmas flipped
@@ -1720,7 +1715,7 @@ label ce_party_before:
         n "Digi shudders from the temperature."
         digi "It's cold out. Can we go inside?"
         cs "Yeah, let's get inside."
-        jump ce_intro
+        jump ce_introductions
     if d20 == 5 or d20 == 6:
         n "As soon as he says that, he feels the house start to shake."
         show cs disappointed christmas flipped
@@ -1740,7 +1735,7 @@ label ce_party_before:
         mean "Hey CS, Merry Christmas!"
         cs "Merry Christmas to you too, Mean. Shall we get inside?"
         tate "Yeah!"
-        jump ce_intro   
+        jump ce_introductions   
     if d20 == 7:
         n "CS notices a familiar blue car roll up on the driveway."
         cs "Look at that! Looks like Billy is here first!"
@@ -1756,7 +1751,7 @@ label ce_party_before:
         billy "It's been hard to sell products by word of mouth, especially since I died that one time."
         cs "That sucks man, I hope this party cheers you up."
         billy "Let's get inside. It's freezing out here."
-        jump ce_intro      
+        jump ce_introductions      
     if d20 == 8:
         n "All of a sudden, CS hears helicopter blades outside of his house."
         show cs worried christmas flipped
@@ -1774,7 +1769,7 @@ label ce_party_before:
         obama "Besides, running the political circus has become tiring enough, I need a break."
         cs "Fair enough, I guess! Well Mr. President, let's get inside and wait for the other guests."
         obama "Sure thing. It is very cold outside."
-        jump ce_intro      
+        jump ce_introductions      
     if d20 == 9:
         play sound sfx_siren
         show blue_light at left
@@ -1793,7 +1788,7 @@ label ce_party_before:
         copguy "Well someone's gotta be security, right?"
         cs "I... guess?"
         cs "Whatever, let's inside, I'm freezing."
-        jump ce_intro      
+        jump ce_introductions      
     if d20 == 10:
         n "CS looks outside to see a bus pull up."
         cs "Hmm, I wonder who took the bus."
@@ -1809,7 +1804,7 @@ label ce_party_before:
         sheriff "And I had to take the bus!"
         cs "Oh wow okay, uhm, do you need help?"
         sheriff "Yes!! I keep getting stuck in the snow! Take me inside!"
-        jump ce_intro      
+        jump ce_introductions      
     if d20 == 11:
         n "A beam sound can be heard from outside."
         hide cs with moveoutleft
@@ -1828,7 +1823,7 @@ label ce_party_before:
         wesley "Yeah."
         rich "Well, why don't we get inside? It's freezing!"
         cs "Yeah, let's go!"
-        jump ce_intro      
+        jump ce_introductions      
     if d20 == 12:
         n "An old Dodge Charger pulls up on the driveway."
         cs "Nice car! I wonder if that's Carguy..."
@@ -1847,7 +1842,7 @@ label ce_party_before:
         cs "Are you guys both Pakoo?"
         k22 "It's... kind of complicated."
         k22 "Let's go inside, and we can explain."
-        jump ce_intro      
+        jump ce_introductions      
     if d20 == 13:
         n "A teleport-like sound is heard outside."
         show cs disappointed christmas flipped
@@ -1864,7 +1859,7 @@ label ce_party_before:
         cs "I was hoping someone would arrive early."
         aria "Well then. Should we head inside? You're probably getting cold, I assume."
         cs "Yeah, it's kinda freezing out."
-        jump ce_intro      
+        jump ce_introductions      
     if d20 == 14:
         n "Someone's car pulls into the driveway."
         cs "I wonder who that could be?"
@@ -1878,7 +1873,7 @@ label ce_party_before:
         michael "I decided to spend a whole year over here."
         michael "It's pretty cold out, innit?"
         cs "Yeah, let's get inside now."
-        jump ce_intro      
+        jump ce_introductions      
     if d20 == 15:
         n "CS sees Linus' car pulling up outside."
         cs "It looks like Linus got here first!"
@@ -1897,7 +1892,7 @@ label ce_party_before:
         linus "What wasn't funny was the cops showing up at LTT, but we can let bygones be bygones."
         cs "Yeah, sorry about all that. It's a long story."
         cs "Why don't we go inside, and i'll explain the whole thing while we wait."
-        jump ce_intro      
+        jump ce_introductions      
     if d20 == 16:
         n "Another Honda Civic shows up in CS' driveway."
         cs "Oh look at that! It's Blank!"
@@ -1911,7 +1906,7 @@ label ce_party_before:
         blank "I did, but lots of people on the interstate didn't!"
         blank "I got quite a bit of dashcam footage to watch if you want."
         cs "Sure thing! Let's get inside and watch while we wait for the others."
-        jump ce_intro      
+        jump ce_introductions      
     if d20 == 17:
         n "An unknown car shows up in the driveway."
         cs "I wonder who that is?"
@@ -1925,7 +1920,7 @@ label ce_party_before:
         cs "It's been a while, how've you been?"
         nova "Oh y'know, I've been moving a lot, had my friend move in with me..."
         cs "Well, if you wanna chat about it, let's go inside first. It's cold out here."
-        jump ce_intro      
+        jump ce_introductions      
     if d20 == 18:
         n "CS sees a Cherokee pull up to his house."
         show cs disappointed christmas flipped
@@ -1948,7 +1943,7 @@ label ce_party_before:
         eliza "Close enough."
         cs "Well, should we go inside."
         eliza "Yeah, I guess so."
-        jump ce_intro      
+        jump ce_introductions      
     if d20 == 19:
         n "An orange mini coooper shows up infront of CS' house."
         cs "Holy crap, is that who I think it is?"
@@ -1962,7 +1957,7 @@ label ce_party_before:
         cs "Yes! You managed to be the earliest this time!"
         db "Wow, I can't believe it!"
         cs "Yeah! Let's get inside and we can talk!"
-        jump ce_intro      
+        jump ce_introductions      
     if d20 == 20:
         n "A man in a white shirt walks up to CS' house."
         show cs disappointed christmas flipped
@@ -1979,7 +1974,7 @@ label ce_party_before:
         cs "Okay, do you, wanna go inside?"
         avgn "Hell yeah."
         cs "Alright then..."
-        jump ce_intro      
+        jump ce_introductions      
     else:
         n "CS waits paiently."
         n "He keeps on waiting."
@@ -2006,10 +2001,10 @@ label ce_party_before:
         n "CS gives up trying to understand, for now."
         show cs christmas dark flipped
         cs "Sure."
-        jump ce_intro
+        jump ce_introductions
 
 # Introductions
-label ce_intro:
+label ce_introductions:
     scene black with dissolve
     n "By the time of the party, everyone shows up at CS' house in droves."
     scene cs_foyer
@@ -2480,7 +2475,6 @@ label ce_banter:
     show archival_5 at mid_offscreen_right
     show pakoo disappointed at mid_right
     with moveinright
-    # TODO: Play Frollo Show Rave Music here
     addy "HELLO??"
     k22 "Hey, uhh, how is it going over there?"
     addy "WHAT? I CAN'T HEAR, THE MUSIC IS REALLY LOUD!"
@@ -2656,33 +2650,26 @@ label ce_cooking:
     show kitty festive at mid_left_left with moveinleft
     show luke at left with moveinleft
     n "A line starts to form next to the bathroom."
-    # TODO: More banter here
 
-    # TODO: Animate this or something
     kitty "Arcie, you're a fucking walnut."
-    arc "Huh? Where did that come from?"
+    arceus "Huh? Where did that come from?"
     kitty "Dunno, just felt like calling you a walnut."
-    arc "Y'know, that's fair..."
+    arceus "Y'know, that's fair..."
     n "..."
     n "..."
     n "... Why hasn't the scene transitioned yet?"
-    arc "Because I'm not done yet, dipshit."
+    arceus "Because I'm not done yet, dipshit."
     n "... k."
-    arc "Isn't it weird how the first night of Hanukkah fell on Christmas day this year?"
+    arceus "Isn't it weird how the first night of Hanukkah fell on Christmas day this year?"
     kitty "Yeah, that's pretty weird, innit?"
-    arc "Even weirder, when you think about it, next year will have two Hanukkahs."
+    arceus "Even weirder, when you think about it, next year will have two Hanukkahs."
     kitty "... How so?"
-    arc "Well, you figure, eight nights of Hanukkah."
+    arceus "Well, you figure, eight nights of Hanukkah."
     kitty "... Uh huh."
-    arc "And today's the 25th of December."
+    arceus "And today's the 25th of December."
     kitty "... I see.."
-    arc "So the last night of Hanukkah would be the 2nd of January."
+    arceus "So the last night of Hanukkah would be the 2nd of January."
     kitty "... ... Shit, you right."
-
-    # TODO: I'm just writing some scenes here, I'm not doing visuals
-    # Pakoo, I'd appreciate help with that -- it's been a long time since I've done it and
-    # I need a refresher I think.
-    # -- Digi
 
     # OK, is this scene too meta? I like it a lot but I'm worried I'm pushing the boundaries a bit here.
     scene cs_foyer
@@ -3344,7 +3331,6 @@ label ce_exchange:
     pause 2.0
     grace "Yep!"
     cs "Woohoo! All of the gifts have been handed out!"
-    # TODO: Some small banter to seguay into climax
 
 # Games/Climax
 label ce_climax:
