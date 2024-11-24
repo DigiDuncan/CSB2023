@@ -2849,8 +2849,8 @@ label ce_dinner:
     show cs christmas at center
     show anno festive at mid_left
     show tate festive at mid_right
-    show db at mid_offscreen_right
-    show digi at mid_offscreen_left
+    show db at manual_pos(1.1, 0.6, 0.5)
+    show k22 at mid_offscreen_left
     show left_table
     with dissolve
     stop music fadeout 3.0
@@ -2865,20 +2865,29 @@ label ce_dinner:
     nova "Turn that shit off!"
     cs "Hey! Can you two stop fighting and get over here and eat with us!"
 
-    show left_room at mid_mid_left
-    show left_chair_back at mid_mid_left
-    show left_table at mid_mid_left
-    show cs christmas at mid_mid_left
-    show anno festive at mid_left_left
-    show tate festive at mid_mid_right
-    show db at right
-    show digi at offscreenleft
+    show left_room at mid_left
+    show left_chair_back at mid_left
+    show left_table at mid_left
+    show cs christmas at mid_left
+    show anno festive at mid_offscreen_left
+    show tate festive at center
+    show db at manual_pos(0.85, 0.6, 0.5)
+    show k22 at manual_pos(-0.25, 0.6, 0.5)
     with move
     db "So CS, how's your streams been going recently?"
     cs "Well, it's mainly been car crash streams on Sundays as usual."
     cs "It's been hard to really do crazy stuff as much as I did back then on Mixer ever since it died."
     db "Ah yeah, I get that."
     tate "But hey, we still have fun!"
+    show left_room at left
+    show left_chair_back at left
+    show left_table at left
+    show cs christmas at mid_left
+    show anno festive at mid_offscreen_left
+    show tate festive at center
+    show db at manual_pos(0.85, 0.6, 0.5)
+    show k22 at manual_pos(-0.25, 0.6, 0.5)
+    with move
     k22 "Hey K-17, are you gonna eat your food?"
     k17 "I uhh..."
     k17 "I need to go to the bathroom..."
