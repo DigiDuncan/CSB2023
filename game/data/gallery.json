@@ -194,5 +194,30 @@
         "type": "image",
         "title": "Item Collection Mockup",
         "caption": "Item Collection was an idea that Pakoo had a long time ago, but didn't have enough time to implement in {i}CSBIII.{/i} Luckily, Tate also loved the idea, so they made it a reality for {i}DX.{/i} This was the initial MS Paint doodle showcasing Tate's concept for the screen's layout."
+    },
+    "arceus_festive_neutral.png": {
+        "type": "image",
+        "title": "Arceus (Festive) 1",
+        "caption": "An early version of Arceus' sprite for {i}Christmas Edition.{/i} The edit was done by Tate at about 3 AM. It was not well-received."
+    },
+    "arceus_festive_angry.png": {
+        "type": "image",
+        "title": "Arceus (Festive) 2",
+        "caption": "An early version of Arceus' sprite for {i}Christmas Edition.{/i} The edit was done by Tate at about 3 AM. It was not well-received."
+    },
+    "arceus_festive_happy.png": {
+        "type": "image",
+        "title": "Arceus (Festive) 3",
+        "caption": "An early version of Arceus' sprite for {i}Christmas Edition.{/i} The edit was done by Tate at about 3 AM. It was not well-received."
+    },
+    "arceus_festive_worried.png": {
+        "type": "image",
+        "title": "Arceus (Festive) 4",
+        "caption": "An early version of Arceus' sprite for {i}Christmas Edition.{/i} The edit was done by Tate at about 3 AM. It was not well-received."
+    },
+    "kitty_festive.png": {
+        "type": "image",
+        "title": "Kitty (Festive)",
+        "caption": "An early version of Kitty's sprite for {i}Christmas Edition.{/i} The edit was done by Tate at about 3 AM. Nobody liked this one."
     }
 }
