@@ -1055,7 +1055,7 @@ label ce_before_shopping:
     play sound sfx_doorslam
     n "CS gets in the car and starts thinking about where to go."
 
-    scene cs_car_inside
+    scene cs_car_inside_snow
     show cs coat hat at left
     with dissolve
     cs "I only went to Walmart last time since they had that deal on Genergy, but I don't shop there regularly..."

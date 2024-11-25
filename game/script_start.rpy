@@ -2201,6 +2201,7 @@ image right_room = "bg/table/right_room.png"
 image right_table = "bg/table/right_table.png"
 image night_bg = "bg/table/night_bg.png"
 image cs_bedroom1_ce_car = "bg/cs_bedroom1_ce_car.png"
+image cs_car_inside_snow = "bg/car_inside_snow.png"
 
 # CS wacky Kuwait Adventures: Mika Edition (Deluxe Content [With Funky Kong {And Dante from Devil may Cry}])
 image kuwait_lieutenant_snow = "characters/kuwait_lieutenant_snow.png"
