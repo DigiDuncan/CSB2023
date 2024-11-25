@@ -399,7 +399,6 @@ label ce_anno:
         cs "Wow, this is more than I thought..."
     cs "Maybe I should call someone over to help."
     cs "I wonder if Anno is around."
-    # TODO: anno phone
     show cs disappointed phone with dissolve
     play sound sfx_ring_once
     show cs disappointed phone at mid_left with move
@@ -1649,7 +1648,6 @@ label ce_aftershop:
     cs "Okay CS, stop thinking about the party."
     cs "You need to sleep!"
     n "CS finally dozes off to sleep."
-    # TODO: More scene here (Digi)
 
 label ce_party_before:
     scene cs_bedroom2
@@ -2059,10 +2057,6 @@ label ce_introductions:
         k22 "I'm gonna assume that's me."
     show k22 confident
     k22 "Alright, so, I'm K-22, the physical manifestation of Pakoo's memories from the year 2022."
-    # TODO: This was explained to me differently in a VC, but I can't word it well.
-    # Should this line be more like "I hold onto the memories of Pakoo from the year 2022?"
-    # This also implies a lot, since it canonizes Pakoo[0], but hey, we've done worse in this game.
-    # Might need to make another on of those graphs.
     show k22
     k22 "This is K-17, I'm sure you can figure out what year he is."
     show k17 happy
@@ -3133,9 +3127,7 @@ label ce_dinner:
     show digi flipped at manual_pos(0.175, 0.65, 0.5)
     show left_table at left
     k22 "It's for cars newer than 2001, that's all I know."
-    # TODO: Table Banter
 
-    # TODO: Banter after dinner, and seguay into gift exchange
 
     digi "Hey CS, did K-17 ever come back from the bathroom?"
     cs "Huh?"
