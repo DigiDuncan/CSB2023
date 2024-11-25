@@ -1549,12 +1549,24 @@ label ce_checkout:
     cs "No?"
     show pakoo tgt think2
     tgt_worker "You need Target Circle to get this deal. Sorry."
-    show cs coat angry
-    show pakoo tgt upset
-    cs "Really?"
-    tgt_worker "I'm sorry, but that's just how the deal works."
-    show cs coat disappointed
-    cs "Fine, whatever, I'll just keep them."
+    menu:
+        "Sign up for Target Circle?"
+        "Yes":
+            cs "Alright fine, how do I get Target Circle? Is it through the Target app?"
+            show pakoo tgt happy
+            tgt_worker "Yeah, just install the app and setup an account, and you can get a bunch of deals in the store."
+            cs "Okay, I can do that real quick."
+            cs "Damn, the internet is terrible in here!"
+            tgt_worker "Yeah, I don't ever use the Wi-fi here. It's so bad."
+            tgt_worker "Once your done, you just go to your wallet, and scan that barcode!"
+            cs "Thanks."
+        "No":
+            show cs coat angry
+            show pakoo tgt upset
+            cs "Really?"
+            tgt_worker "I'm sorry, but that's just how the deal works."
+            show cs coat disappointed
+            cs "Fine, whatever, I'll just keep them."
     show pakoo tgt flipped with determination
     hide pakoo tgt with moveoutright
     n "When CS goes to scan his alcohol, it beeps again and tells him to get out his ID."
