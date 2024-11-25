@@ -404,7 +404,7 @@ label ce_anno:
     play sound sfx_ring_once
     show cs disappointed phone at mid_left with move
     show anno_house at mid_offscreen_right
-    show anno at mid_right
+    show anno phone at mid_right
     with moveinright
     anno "Hello?"
     show cs happy phone

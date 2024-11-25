@@ -1286,6 +1286,7 @@ image arceus dusk flipped = "dusk:flip:characters/arc/arceus.png"
 
 ## Anno
 image anno = "characters/anno/anno.png"
+image anno phone = "characters/anno/anno_phone.png"
 image anno coat = "characters/anno/anno_coat.png"
 image anno festive = "characters/anno/anno_festive.png"
 image anno festive dark = "dark:characters/anno/anno_festive.png"
