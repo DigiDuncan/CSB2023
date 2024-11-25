@@ -1161,6 +1161,14 @@
             "album_art": "csbi.png",
             "trivia": "Reference to the Frollo Show."
         },
+        "superstar_road" : {
+            "file": "superstar_road.ogg",
+            "title": "Superstar Road",
+            "artist": "Mahito Yokota",
+            "tags": ["CSBIII DX: Holiday Special", "New In DX"],
+            "album_art": "csbi.png",
+            "trivia": "Whenever you put a compass near the jukebox with this song playing, it points up. Great for secret worlds!"
+        },
         "snowdin_town" : {
             "file": "snowdin_town.ogg",
             "title": "Snowdin Town",

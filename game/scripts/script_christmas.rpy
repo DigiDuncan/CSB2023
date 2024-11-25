@@ -2843,6 +2843,8 @@ label ce_mike:
 
 # Dinner/More Banter
 label ce_dinner:
+    play music christmas_spirit
+    music christmas_spirit
     scene night_bg
     show left_room
     show left_chair_back
@@ -2851,6 +2853,7 @@ label ce_dinner:
     show tate festive at mid_right
     show db at manual_pos(1.1, 0.6, 0.5)
     show k22 at mid_offscreen_left
+    show k17 at manual_pos(-0.5, 0.6, 0.5)
     show left_table
     with dissolve
     stop music fadeout 3.0
@@ -2872,7 +2875,7 @@ label ce_dinner:
     show anno festive at mid_offscreen_left
     show tate festive at center
     show db at manual_pos(0.85, 0.6, 0.5)
-    show k22 at manual_pos(-0.25, 0.6, 0.5)
+    show k22 at manual_pos(-0.25, 0.575, 0.5)
     with move
     db "So CS, how's your streams been going recently?"
     cs "Well, it's mainly been car crash streams on Sundays as usual."
@@ -2882,35 +2885,106 @@ label ce_dinner:
     show left_room at left
     show left_chair_back at left
     show left_table at left
-    show cs christmas at mid_left
-    show anno festive at mid_offscreen_left
-    show tate festive at center
-    show db at manual_pos(0.85, 0.6, 0.5)
-    show k22 at manual_pos(-0.25, 0.6, 0.5)
+    show cs christmas at mid_offscreen_right
+    show anno festive at mid_right
+    show tate festive at manual_pos(1.25, 0.6, 0.5)
+    show db at manual_pos(1.65, 0.6, 0.5)
+    show k22 at center
+    show k17 disappointed flipped at mid_left_left
     with move
     k22 "Hey K-17, are you gonna eat your food?"
     k17 "I uhh..."
     k17 "I need to go to the bathroom..."
-
+    show k17 disappointed with determination
+    hide k17 with moveoutleft
+    pause 0.5
+    scene night_bg
+    show right_room at left
+    show right_chair_back at left
+    show arceus at mid_offscreen_left
+    show billy festive at mid_left
+    show obama festive at center
+    show michael festive at mid_right
+    show ed festive at mid_offscreen_right
+    show right_table at left
+    with dissolve
     obama "So, Billy, any good new pitches on the table for you?"
     billy "Well, I got in contact with Phil Swift recently, you've maybe heard of him from Flex Tape!"
     michael "Actually, Phil's a friend of mine! He's stayed over my place plenty of times."
+    scene night_bg
+    show left_room
+    show left_chair_back
+    show cs christmas at center
+    show anno festive at mid_left
+    show tate festive at mid_right
+    show db at manual_pos(1.1, 0.6, 0.5)
+    show k22 at mid_offscreen_left
+    show k17 at manual_pos(-0.5, 0.6, 0.5)
+    show left_table
     cs "I was going to invite him to the party this evening, but he's been so busy pitching Flex products. I think he's in Europe right now."
+    scene night_bg
+    show right_room at left
+    show right_chair_back at left
+    show arceus at mid_offscreen_left
+    show billy festive at mid_left
+    show obama festive at center
+    show michael festive at mid_right
+    show ed festive at mid_offscreen_right
+    show right_table at left
     billy "Well, you might see him and I team up for a commercial soon, if this deal goes through!"
     obama "How much does it cost to get you in a commerical, anywho?"
     billy "If I told you, I'd have to kill you!"
     n "Obama and Billy chuckle, but Luther does not."
 
+    show arceus flipped
     arceus "How's the foundation repair business, HoH SiS?"
     ed "It's been pretty good, since we got all those contracts after our run-in."
+    scene night_bg
+    show left_room
+    show left_chair_back
+    show cs christmas at center
+    show anno festive at mid_left
+    show tate festive at mid_right
+    show db at manual_pos(1.1, 0.6, 0.5)
+    show k22 at mid_offscreen_left
+    show k17 at manual_pos(-0.5, 0.6, 0.5)
+    show left_table
     cs "Heh, I'm still sorry about all that..."
+    scene night_bg
+    show right_room at center
+    show right_chair_back at center
+    show obama festive at mid_offscreen_left
+    show michael festive at mid_left
+    show ed festive at center
+    show wesley at mid_right
+    show rich at mid_offscreen_right
+    show right_table at center
     wesley "My back is sorry about it, too."
     rich "Oh can it, ding-dong, you got surgery, didn't cha?"
     wesley "Having a metal pole in your back isn't ideal, numbnuts."
     mean "I mean, metal is {i}stronger{/i} than bones, so it's kinda like an upgrade!"
     wesley "Tell that to the TSA."
     arceus "I don't tell anything to the TSA."
+    scene night_bg
+    show left_room
+    show left_chair_back
+    show cs christmas at center
+    show anno festive at mid_left
+    show tate festive at mid_right
+    show db at manual_pos(1.1, 0.6, 0.5)
+    show k22 at mid_offscreen_left
+    show k17 at manual_pos(-0.5, 0.6, 0.5)
+    show left_table
     cs "Well, again, I hope I've been able to make it up to you guys, mostly."
+    scene night_bg
+    show right_room at center
+    show right_chair_back at center
+    show obama festive at mid_offscreen_left
+    show michael festive at mid_left
+    show ed festive at center
+    show wesley at mid_right
+    show rich at mid_offscreen_right
+    show right_table at center
     ed "You've more than made it up to us, CS."
     rich "Yeah, you helped propel our business to new heights! Or, I guess, new foundations."
     wesley "Mmm."
@@ -2933,43 +3007,131 @@ label ce_dinner:
     n "Luke takes a sip of his drink to stop himself from laughing too hard."
     luke "You said it, not me."
 
+    scene night_bg
+    show left_room
+    show left_chair_back
+    show cs christmas at center
+    show anno festive at mid_left
+    show tate festive at mid_right
+    show db at manual_pos(1.1, 0.6, 0.5)
+    show k22 at mid_offscreen_left
+    show digi at manual_pos(-0.3, 0.65, 0.5)
+    show left_table
+    with dissolve
     cs "Y'know, I kinda wish that I learned to start driving sooner."
     cs "I can't stop driving everywhere!"
+    show left_room at left
+    show left_chair_back at left
+    show left_table at left
+    show cs christmas at mid_offscreen_right
+    show anno festive at mid_right
+    show tate festive at manual_pos(1.25, 0.6, 0.5)
+    show db at manual_pos(1.65, 0.6, 0.5)
+    show k22 at center
+    show digi at manual_pos(0.175, 0.65, 0.5)
+    with move
     k22 "Speaking of driving, this reminds me of something."
     k22 "Why does anyone buy regular unleaded gas?"
+    show digi flipped
     digi "Because it's cheaper?"
     k22 "Okay, but it's not though. Super unleaded is way cheaper, and it's better for your car."
     digi "That doesn't make any sense."
+    show k22 confident
     k22 "It doesn't, but it's true!"
+    show k22 disappointed
     digi "It's not though, Super unleaded is more expensive."
     k22 "It's... not though."
     digi "What are you talking about? Of course it's more because it's better for your car!"
+    show cs christmas flipped
     cs "Don't you guys mean, unleaded plus?"
     digi "Yeah! See? CS knows!"
     k22 "No, it's called super unleaded, and it's cheaper than regular unleaded!"
     digi "But it's not! Why would it be?"
+    scene night_bg
+    show right_room at center
+    show right_chair_back at center
+    show obama festive at mid_offscreen_left
+    show michael festive at mid_left
+    show ed festive at center
+    show wesley at mid_right
+    show rich at mid_offscreen_right
+    show right_table at center
     ed "Are you thinking of premium unleaded?"
+    scene night_bg
+    show left_room at left
+    show left_chair_back at left
+    show cs christmas flipped at mid_offscreen_right
+    show anno festive at mid_right
+    show tate festive at manual_pos(1.25, 0.6, 0.5)
+    show db at manual_pos(1.65, 0.6, 0.5)
+    show k22 disappointed at center
+    show digi flipped at manual_pos(0.175, 0.65, 0.5)
+    show left_table at left
     k22 "No, it's not premium, or unleaded 88..."
+    scene night_bg
+    show right_room at center
+    show right_chair_back at center
+    show obama festive at mid_offscreen_left
+    show michael festive at mid_left
+    show ed festive at center
+    show wesley at mid_right
+    show rich at mid_offscreen_right
+    show right_table at center
     ed "Unleaded 88?"
+    scene night_bg
+    show left_room at left
+    show left_chair_back at left
+    show cs christmas flipped at mid_offscreen_right
+    show anno festive at mid_right
+    show tate festive at manual_pos(1.25, 0.6, 0.5)
+    show db at manual_pos(1.65, 0.6, 0.5)
+    show k22 angry at center
+    show digi flipped at manual_pos(0.175, 0.65, 0.5)
+    show left_table at left
     k22 "It's called super unleaded, it has ethanol in it, and it's {i}better. for. your. car!{/i}"
     k22 "Every gas station we've been to, it's always regular, super, the third option, and diesel!"
     digi "I still think you may be thinking of premium."
     k22 "No, I'm-- Give me a second, I have a picture of this on my phone."
     digi "CS, have you ever seen super unleaded?"
     cs "Uhh... no?"
+    show k22 confident
     k22 "Ah-a! See?"
+    show gas_prices at mid_right with easeinbottom
     digi "What? How?"
     cs "What backwards town do you live in where the better gas is cheaper?"
     k22 "See, the super unleaded is the cheapest, then regular, then premium!"
+    hide gas_prices with easeoutbottom
     digi "So, the question now is, what's the difference between plus and super?"
+    show k22
     k22 "They might be the same thing."
     k22 "Our super unleaded gas has ethanol in it."
+    show k22 confident
     k22 "Guess who makes ethanol? We do!"
     digi "I see now!"
+    show k22
     digi "So, because you guys make this additive, it's cheaper for you, but more expensive for us."
     k22 "Probably."
     cs "Shit, maybe we need to start making ethanol."
+    scene night_bg
+    show right_room at center
+    show right_chair_back at center
+    show obama festive at mid_offscreen_left
+    show michael festive at mid_left
+    show ed festive at center
+    show wesley at mid_right
+    show rich at mid_offscreen_right
+    show right_table at center
     ed "That's great and all, but what in the world is unleaded 88?"
+    scene night_bg
+    show left_room at left
+    show left_chair_back at left
+    show cs christmas flipped at mid_offscreen_right
+    show anno festive at mid_right
+    show tate festive at manual_pos(1.25, 0.6, 0.5)
+    show db at manual_pos(1.65, 0.6, 0.5)
+    show k22 at center
+    show digi flipped at manual_pos(0.175, 0.65, 0.5)
+    show left_table at left
     k22 "It's for cars newer than 2001, that's all I know."
     # TODO: Table Banter
 
@@ -2979,24 +3141,33 @@ label ce_dinner:
     cs "Huh?"
     cs "Oh yeah, is that where they ran off to?"
     digi "We should probably go check on them, see if they are okay..."
+    scene cs_bathroom
+    with dissolve
+    show digi flipped at mid_mid_left
+    show cs christmas at left
+    with moveinleft
     digi "Hey! K-17? Are you in there?"
     k17 "Nuh uh!"
     cs "Do you need, any help at all? We are gonna start the gift exchange here in a few minutes!"
     n "K-17 starts sobbing."
     k17 "No one... told me..."
     k17 "Mixer... died..."
+    show cs christmas worried
     cs "Uh oh."
     digi "Shiiit."
+    show cs christmas disappointed
     cs "Yeah, Mixer shut down some time ago now... sorry about that."
     k17 "But why? Why! It was like, the perfect streaming platform!"
     digi "It was, but it was owned by Microsoft. It was bound to happen."
     cs "Hey."
     digi "Listen, just because the Zune was cool doesn't mean--"
     k17 "What do we even do now? Without Mixer, where do you stream?"
+    show cs christmas
     cs "Well, I stream on {a=https://twitch.tv/cs188/}Twitch.{/a}"
     digi "{a=https://twitch.tv/DigiDuncan}Me too{/a}, when I get the chance."
     n "K-17 sniffles."
     k17 "At least Crazy Saturday lives on..."
+    show cs christmas disappointed
     cs "Well..."
     digi "Let him believe, CS. Let him believe."
 
@@ -3005,8 +3176,8 @@ label ce_exchange:
     scene cs_living
     show cs christmas at center
     with dissolve
-    play music christmas_spirit
-    music christmas_spirit
+    play music superstar_road volume 0.5
+    music superstar_road
     cs "Alright everyone! It's time for the gift exchange!"
     cs "Everyone brought a gift, right?"
     n "Everyone nods."
