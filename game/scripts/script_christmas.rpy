@@ -1639,6 +1639,7 @@ label ce_aftershop:
         xpos 1100 ypos 1100
         linear 1 xpos 1100 ypos 600    
     show cs behind cs_kitchen_fg
+    $ reroll()
     cs "Hey, I got a [d20]!"
     cs "Welp, I got everything put away..."
     cs "The decorations all look nice..."
