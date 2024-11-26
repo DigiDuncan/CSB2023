@@ -2274,7 +2274,7 @@ label ce_banter:
     show copguy festive at mid_right
     show sheriff festive flipped at mid_left
     with dissolve
-    play music dont_preheat_your_oven
+    play music dont_preheat_your_oven if_changed
     music dont_preheat_your_oven
     sheriff "Hey Copguy!"
     copguy "I know, this party is great, right?"
@@ -2463,15 +2463,15 @@ label ce_banter:
     show k22 disappointed
     k17 "No, I wanna stay here till the end!"
     show k17 flipped
-    k17 "I'll just keep being myself, and try to keep more of an open mind. Thank you K-22!"
+    k17 "I'll just keep being myself, and try to keep more of an open mind. Thank you, K-22!"
     show k17 flipped at center with ease
     play sound sfx_house_door_open
     hide k17 with dissolve
     play sound sfx_house_door_close
-    k22 "Dammit, it was worth a try."
+    k22 "Damn it. It was worth a try."
     show k22 at mid_left with move
     show k22 flipped with determination
-    k22 "I wonder how Addy is doing anyways."
+    k22 "I wonder how Addy is doing, anyway."
     play sound sfx_ring_once
     show k22 phone at mid_left with move
     n "K-22 hits up Addy."
@@ -2484,9 +2484,10 @@ label ce_banter:
     addy "HELLO??"
     k22 "Hey, uhh, how is it going over there?"
     addy "WHAT? I CAN'T HEAR, THE MUSIC IS REALLY LOUD!"
-    show k22 phone angry
+    show k22 phone angry # TODO: hey pakoo this one still uses the old eyes - tate
     k22 "I WAS ASKING IF--{w=1.0}{nw}"
-    addy "YEAH I'LL CALL YOU LATER, HAVE FUN AT CS' PARTY!"
+    addy "YEAH, I'LL CALL YOU LATER! HAVE FUN AT CS' PARTY!"
+    play sound sfx_end_call
     hide archival_5
     hide pakoo
     with moveoutright
@@ -2503,11 +2504,16 @@ label ce_banter:
     show k17 at mid_right with moveinright
     sheriff "Hey! Is someone there?"
     k17 "Huh?"
-    sheriff "Hey you! Can you help me out of here?"
+    sheriff "Hey, you! Can you help me out of here?"
     show k17 shock
-    k17 "Uhh... Uhh..."
+    k17 "Uhh... uhh..."
     k17 "I'll go get someone!"
     hide k17 with easeoutleft
+
+    # audio ducking
+    # TODO: also why is elf_1 a movie file if it's not even on-screen...? - tate
+    $ renpy.music.set_volume(0.25)
+  
     scene cs_living2
     show elf_1
     show wesley at right
@@ -2515,22 +2521,27 @@ label ce_banter:
     show db at center
     show cs christmas at left
     with dissolve
-    rich "Oh man, I love this part."
+    rich "Oh, man, I love this part."
     show k17 shock at mid_mid_right with moveinright
-    k17 "Hey guys, how do I put this..."
+    k17 "Hey, guys, uh, how do I put this...?"
     k17 "The sheriff is stuck in the bathroom?"
     show cs disappointed christmas
     show k17 disappointed
-    cs "Dammit, one second."
+    cs "Damn it, one second--"
     obama "CS! Are you there?"
     show cs christmas
     cs "Okay, lemme do this first. The president is calling!"
     hide cs with moveoutright
-
+    
 # Cooking
 label ce_cooking:
+    play music dont_preheat_your_oven if_changed
     scene cs_kitchen
     show cs_kitchen_fg
+
+    # un-duck the audio
+    $ renpy.music.set_volume(1.0)
+
     show obama festive at mid_right behind cs_kitchen_fg
     show michael festive at mid_offscreen_left behind cs_kitchen_fg
     show billy festive at left behind cs_kitchen_fg

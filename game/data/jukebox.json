@@ -1159,7 +1159,7 @@
             "artist": "dj ddx",
             "tags": ["CSBIII DX: Holiday Special", "New In DX"],
             "album_art": "csbi.png",
-            "trivia": "Reference to the Frollo Show."
+            "trivia": "Reference to {i}The Frollo Show.{/i}"
         },
         "superstar_road" : {
             "file": "superstar_road.ogg",
