@@ -186,9 +186,9 @@ label ce_tree:
         show cs disappointed at manual_pos(0.75, 1.115, 1.0) with move
 
         # CS steps on a Lego.
-        n "CS steps directly onto a stray Lego."
         play sound sfx_spikes
         show cs scared with hpunch
+        n "He steps directly onto a stray Lego."
         cs "Fuck!"
         show cs disappointed flipped
         cs "Man, what a mess!"
@@ -719,29 +719,35 @@ label ce_anno:
         pos (0.25,0.45)
         linear 0.5 rotate 180
     pause 0.7
+    play sound sfx_bottle_squirt
     show crotch_doctor:
         zoom 0.2
         yzoom 1
         pos (0.25,0.45)
         linear 0.5 xzoom 0.2
         linear 0.5 xzoom 1   
-    pause 1.2
-    # TODO: sfx who remembers that episode of spongebob with the bottle of hot sauce and one drop falls and fizzles out? that sound.
-    n "A single drop falls onto the snow, revealing only a hint of the asphalt below."
-    
-    # TODO: animate all this obviously lol
+    pause 2.0
+    play sound2 sfx_droplet noloop volume 10.0
+    pause 1.0
+    play sound sfx_snow_evaporate volume 2.0
+    pause 0.5
 
+    n "A single drop falls onto the snow, revealing only a hint of the asphalt below."
+    pause 0.5
+    
     cs "Umm..."
     carguy "Hold on, it's just..."
+    play sound sfx_bottle_hit volume 4.0
     show crotch_doctor:
         zoom 0.2
         yzoom 1
         pos (0.25,0.45)
         linear 0.1 ypos 350
         linear 0.1 ypos 550
-    # TODO: shaky shaky sfx - that empty ketchup bottle squirting sound
-    
-    n "Carguy vigorously shakes the empty bottle."
+
+    n "Carguy vigorously shakes and smacks the empty bottle."
+    play sound2 sfx_bottle_hit volume 4.0
+    play sound sfx_bottle_squeeze
     show crotch_doctor:
         zoom 0.2
         yzoom 1
@@ -749,7 +755,9 @@ label ce_anno:
         linear 0.1 ypos 350
         linear 0.1 ypos 550
         repeat 7
-    pause 2.5
+    pause 1.5
+    stop sound2
+    pause 1.0
     carguy "{size=-15}I thought I'd brought more of this..." 
     hide crotch_doctor with dissolve
     carguy "Welp, sorry! Looks like I've run out!"
@@ -1387,8 +1395,8 @@ label ce_before_shopping:
     cs "Wait, what do you mean by--{w=0.5}{nw}"
     show pomni concern
     pomni "Gotta run! Bye!"
-    # TODO: Something's weird here?
-    show pomni concern at offscreenright with MoveTransition(0.15)
+    play sound sfx_whoosh
+    show pomni concern flipped at offscreenright behind cs with MoveTransition(0.25)
     n "Pomni dashes away, leaving her empty cart behind."
     pause 0.5
     show cs coat disappointed
@@ -1408,7 +1416,7 @@ label ce_before_shopping:
     show cs coat flipped at right 
     show shopping_cart flipped at manual_pos(0.6, 1.1, 0.5)
     with moveinright 
-    n "CS passes the electronics section."
+    n "CS passes by the electronics section."
     cs "Okay, I don't need anything there."
     show cs coat surprised
     cs "Buuuuuut..."
@@ -1422,27 +1430,73 @@ label ce_before_shopping:
 
     show cs coat happy flipped at left with move
     n "CS steps over to the display."
-    n "More than one round, CS finally realizes how much time has passed."
+
+    # hey check out this neat trick - tate
+    show black with dissolve
+    centered "More than one round later..."
+    hide black with dissolve
+
+    n "CS finally realizes how much time has passed."
     # i changed this because CS has not actually picked up anything cold yet, so nothing would be condensating - tate
 
-    # TODO: TATE STOPPED EDITING HERE!
+    show cs coat scared flipped
+    cs "Oh, shoot!" with hpunch
+    cs "Right! I need to actually accomplish things today!"
+    show cs worried coat at right with move
+    show cs worried coat flipped with determination
+    pause 0.25
 
-    cs "Oh, shoot! Right, I need to actually accomplish things today."
+    hide cs
+    hide shopping_cart
+    with moveoutleft
+
     scene tgt_dairy with dissolve
-    show cs coat at center with moveinleft 
-    cs "This meal is going to take so much butter..."
-    cs "Well, if there's one thing I learned about cooking from Paula Dean, is that everything's better with butter!"
-    cs "And that Paula Dean is scary. I learned that, too."
+
+    show cs coat at left
+    show shopping_cart at manual_pos(0.4, 1.1, 0.5)
+    with moveinleft
+
+    show cs coat disappointed
+    cs "This meal is going to take {i}so{/i} much butter..."
+    show cs coat happy
+    cs "Well, if there's one thing I learned about cooking from Paula Dean, it's that {i}everything's{/i} better with butter!"
+    show cs coat worried
+    cs "... And, that Paula Dean is scary. I learned {i}that,{/i} too."
+    # TODO: asset butter
+
+    hide cs
+    hide shopping_cart
+    with moveoutright
+
     scene tgt_frozen with dissolve
-    show cs coat at center with moveinleft 
+
+    show cs coat at left
+    show shopping_cart at manual_pos(0.4, 1.1, 0.5)
+    with moveinleft
+
     n "CS finds the pies."
-    cs "I probably don't need to buy too many of these... there's going to be a lot of food, and I think a decent amount of the party won't even eat dessert."
+    cs "I probably don't need to buy too many of these..."
+    cs "There's already going to be a lot of food, so I don't think everyone will even have {i}room{/i} for dessert!"
     cs "I'll just grab two."
+    # TODO: asset pies
+
+    hide cs
+    hide shopping_cart
+    with moveoutright
+
     scene tgt_alcy with dissolve
-    show cs coat at center with moveinleft 
+
+    show cs coat at center
+    show shopping_cart at manual_pos(0.8, 1.1, 0.5)
+    with moveinleft
+
     n "Finally, CS lands in the alcohol section."
-    cs "I know a lot of the party won't drink, but damn it, it's Christmas. I should nab some nog."
-    hide cs with moveoutright
+    cs "I know at least a few people I invited don't drink, but damn it, it's Christmas. I'm grabbing some 'nog!"
+    # TODO: asset eggnog
+
+    hide cs
+    hide shopping_cart
+    with moveoutright
 
 # Checkout
 label ce_checkout:
@@ -1453,52 +1507,95 @@ label ce_checkout:
     show snufkin flipped at mid_mid_right
     show customer at center
     with dissolve
-    play music winter_unclearance_sale if_changed loop volume 0.3 fadein 1.0    
-    show cs coat at left with moveinleft
+    play music winter_unclearance_sale if_changed loop volume 0.3 fadein 1.0
+
+    show cs coat at left
+    show shopping_cart at manual_pos(0.4, 1.1, 0.5)
+    with moveinleft
+
     pause 1.0
     show cs coat disappointed
     cs "Wait, what?"
     show cs coat angry
     cs "There are no lanes open! How the hell am I supposed to check out?"
     show cs coat disappointed
-    cs "Oh wait, I guess self-checkout is open..."
-    show cs coat disappointed at mid_mid_left with move
-    n "CS gets in the long line wrapped around the self-check area."
+    cs "Oh, wait... I guess self-checkout is open..."
+
+    show cs coat disappointed at mid_left
+    show shopping_cart at manual_pos(0.5, 1.1, 0.5)
+    with moveinleft
+
+    n "CS joins the queue wrapped around the self-check area."
     cs "Man, this place is really short staffed, especially for the holidays!"
     show customer flipped
-    customer "They're always like this. I come every day, and they definitely have been losing employees."
-    show customer
+    customer "They're always like this. I come here every day, and it seems like there are fewer and fewer people working."
+    show cs coat worried
     cs "Yikes, I wonder why..."
+
+    play sound sfx_retail_beep volume 0.5
     hide streetguy with moveoutright
     show amtrak_stewardess at mid_right_right
     show snufkin flipped at mid_right
     show customer at mid_mid_right
     with move
-    show cs coat at center with move
+    show cs coat at center 
+    show shopping_cart at manual_pos(0.7, 1.1, 0.5)
+    with move
+
     pause 2.0
+
+    play sound sfx_retail_beep volume 0.6
     hide amtrak_stewardess with moveoutright
     show snufkin flipped at mid_right_right
     show customer at mid_right
     with move
-    show cs coat at mid_mid_right with move
+    show cs coat at mid_mid_right
+    show shopping_cart at manual_pos(0.8, 1.1, 0.5)
+    with move
+
     pause 2.0
+
+    play sound sfx_retail_beep volume 0.7
     hide snufkin flipped with moveoutright
     show customer at mid_right_right with move
-    show cs coat at mid_right with move
+    show cs coat at mid_right
+    show shopping_cart at manual_pos(1.0, 1.1, 0.5)
+    with move
+
     pause 3.0
+
+    play sound sfx_retail_beep volume 0.8
     hide customer with moveoutright
-    show cs coat at mid_right_right with move
+    show cs coat at mid_right_right
+    show shopping_cart at manual_pos(1.2, 1.1, 0.5)
+    with move
     pause 2.0
-    cs "Finally, I can check out..."
+
+    cs "Finally, my turn..."
+
     stop music fadeout 10.0
     scene tgt_checkerror with dissolve
-    show cs coat at left with moveinleft
+    show cs coat at left
+    show shopping_cart at manual_pos(0.4, 1.1, 0.5)
+    with moveinleft
+
     n "CS sees a message on the machine."
     cs "Welp, can't use that one!"
-    hide cs with moveoutright
-    n "CS goes to the next machine."
+    hide cs 
+    hide shopping_cart
+    with moveoutright
+    n "CS tries the next machine."
+
     scene tgt_checkout with dissolve
-    show cs coat at left with moveinleft
+    show cs coat at left
+    show shopping_cart at manual_pos(0.4, 1.1, 0.5)
+    with moveinleft
+
+    # TODO: once all the assets are in, scan them all here and beep them each time.
+
+    # TODO: TATE STOPPED EDITING HERE!
+
+    play sound sfx_retail_beep
     n "As CS is checking out, the machine beeps at him."
     show cs coat worried
     cs "What? I scanned this twice? No I didn't!"
