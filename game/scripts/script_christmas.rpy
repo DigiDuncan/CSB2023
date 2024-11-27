@@ -2358,7 +2358,12 @@ label ce_introductions:
     cs "No, no, it's okay."
     cs "I hope you guys have fun, I'm gonna go back to the party."
     hide cs with moveoutright
-
+    if d20 == 20:
+        pause 1.0
+        show avgn at center
+        avgn "You guys ever heard of {i}Dr. Jekyll and Mr. Hyde{/i} for the NES?"
+        eliza "Uhh, no?"
+        avgn "Good, because it's fucking ASS!"
 # Banter
 label ce_banter:
     scene black with dissolve
@@ -2457,6 +2462,9 @@ label ce_banter:
     rich "Hey, nice movie!"
     wesley "Looks like you'll have to set that up all over again."
     db "I got here early for this?"
+    if d20 == 20:
+        avgn "You know what's {i}Bullll{/i}shit?"
+        avgn "This movie, that's what!"
     ed "Hey guys, what movie are we watching?"
     wesley "Nothing until these bozos fix the projector!"
     luke "Okay hold on, I got an idea."
@@ -2686,6 +2694,9 @@ label ce_cooking:
     digi "Ahh! Turn it off!"
     nova "Damn it, Blank! I {i}said{/i} we weren't playing your music!"
     aria "Honestly, this is kind of a bop. Keep it going."
+    if d20 == 20:
+        avgn "Ahh! My ears!"
+        avgn "What is this? The soundtrack from a LJN game?"
     show ed festive flipped at center behind cs_kitchen_fg with easeinleft
     ed "Nooooo!"
     ed "My turkey!"
@@ -2766,13 +2777,21 @@ label ce_cooking:
     show luke at left with moveinleft
     n "A line starts to form next to the bathroom."
 
+    scene cs_hallway
+    show arceus at mid_left
+    show kitty at mid_right
+    with dissolve
     kitty "Arcie, you're a fucking walnut."
+    show arceus worried
     arceus "Huh? Where did that come from?"
     kitty "Dunno, just felt like calling you a walnut."
+    show arceus happy
     arceus "Y'know, that's fair..."
+    show arceus
     n "..."
     n "..."
     n "... Why hasn't the scene transitioned yet?"
+    show arceus angry
     arceus "Because I'm not done yet, dipshit."
     n "... k."
     arceus "Isn't it weird how the first night of Hanukkah fell on Christmas day this year?"
