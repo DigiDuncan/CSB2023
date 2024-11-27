@@ -2436,6 +2436,7 @@ image crotch_doctor sil_black = "sil_black:crotch_doctor.png"
 image crt_magnet = "crt_magnet.png"
 image cs_id = "cs_id.png"
 image cs_phone = "cs_phone.png"
+image cs_phone flipped = "flip:cs_phone.png"
 image cs_wallet = "cs_wallet.png"
 image cswanted = "wanted_poster.png"
 image d20 = "d20.png"
@@ -3460,6 +3461,8 @@ default lights_first = False
 default got_lights = False
 default decor_first = False
 default got_decor = False
+default got_tato_bag = False
+default got_target_circle = False
 default d20 = roller
 
 # Helpful lists

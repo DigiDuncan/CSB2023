@@ -68,6 +68,14 @@
         "rarity": "Common",
         "ce": true
     },
+    "butter": {
+        "img": "butter",
+        "name": "Pound Of Butter",
+        "owner": "CS",
+        "desc": "100% pure Paula Deen extract.",
+        "rarity": "Common",
+        "ce": true
+    },
     "case": {
         "img": "case",
         "name": "Briefcase Of Money",
@@ -142,6 +150,14 @@
         "owner": "CS",
         "desc": "A 2014 BMW 4? That... doesn't seem right. How did this get here?",
         "rarity": "Uncommon"
+    },
+    "cs_id": {
+        "img": "cs_id",
+        "name": "CS's ID Card",
+        "owner": "CS",
+        "desc": "He should probably get one with an updated photo...",
+        "rarity": "Common",
+        "ce": true
     },
     "cs_phone": {
         "img": "cs_phone",
@@ -326,12 +342,28 @@
         "rarity": "1 of 1",
         "dx": true
     },
+    "nog": {
+        "img": "nog",
+        "name": "Bottle Of Eggnog",
+        "owner": "CS",
+        "desc": "While the exact origins of the drink are debated, most historians agree that eggnog originated in medieval Britain.",
+        "rarity": "Common",
+        "ce": true
+    },
     "onscreen_sharpener": {
         "img": "onscreen_sharpener",
         "name": "Golden Pencil Sharpener",
         "owner": "CS",
         "desc": "Won by CS while at PencilCon, but is it even real gold?",
         "rarity": "Uncommon"
+    },
+    "pie": {
+        "img": "pie",
+        "name": "Premade Apple Pie",
+        "owner": "CS",
+        "desc": "Not as good as homemade, but these are a godsend when you are short on time and need to feed a crowd.",
+        "rarity": "Common",
+        "ce": true
     },
     "pig": {
         "img": "pig",

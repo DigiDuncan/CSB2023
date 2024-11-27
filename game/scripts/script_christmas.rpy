@@ -1150,6 +1150,7 @@ label ce_before_shopping:
     pause 1.0
 
     if fun_value(FUN_VALUE_LEGENDARY):
+        $ got_tato_bag = True
         # this here is some EXTREMELY DEEP tate lore.
 
         # let's try the audio filtering feature! let's make this next thing muffled.
@@ -1459,10 +1460,27 @@ label ce_before_shopping:
     show cs coat disappointed
     cs "This meal is going to take {i}so{/i} much butter..."
     show cs coat happy
-    cs "Well, if there's one thing I learned about cooking from Paula Dean, it's that {i}everything's{/i} better with butter!"
+    cs "Well, if there's one thing I learned about cooking from Paula Deen, it's that {i}everything's{/i} better with butter!"
     show cs coat worried
-    cs "... And, that Paula Dean is scary. I learned {i}that,{/i} too."
-    # TODO: asset butter
+    cs "... And, that Paula Deen is scary. I learned {i}that,{/i} too."
+    show cs coat happy
+    cs "Good thing she's not attending this party!"
+    show cs coat
+
+    show butter at manual_pos(0.4, 0.3) with Dissolve(0.25):
+        zoom 0.5
+    show butter at manual_pos(0.3, 0.8) with MoveTransition(0.25)
+    $ collect("butter")
+
+    show butter at manual_pos(0.4, 0.3) with Dissolve(0.25):
+        zoom 0.5
+    show butter at manual_pos(0.3, 0.8) with MoveTransition(0.25)
+
+    show butter at manual_pos(0.4, 0.3) with Dissolve(0.25):
+        zoom 0.5
+    show butter at manual_pos(0.3, 0.8) with MoveTransition(0.25)
+    hide butter with dissolve
+    pause 0.25
 
     hide cs
     hide shopping_cart
@@ -1475,10 +1493,23 @@ label ce_before_shopping:
     with moveinleft
 
     n "CS finds the pies."
+    show cs coat surrpised
     cs "I probably don't need to buy too many of these..."
+    show cs coat worried
     cs "There's already going to be a lot of food, so I don't think everyone will even have {i}room{/i} for dessert!"
+    show cs coat
     cs "I'll just grab two."
-    # TODO: asset pies
+
+    show pie at manual_pos(0.5, 0.3) with Dissolve(0.25):
+        zoom 0.5
+    show pie at manual_pos(0.4, 0.8) with MoveTransition(0.25)
+    $ collect("pie")
+
+    show pie at manual_pos(0.5, 0.3) with Dissolve(0.25):
+        zoom 0.5
+    show pie at manual_pos(0.4, 0.8) with MoveTransition(0.25)
+    hide pie with dissolve
+    pause 0.25
 
     hide cs
     hide shopping_cart
@@ -1492,7 +1523,12 @@ label ce_before_shopping:
 
     n "Finally, CS lands in the alcohol section."
     cs "I know at least a few people I invited don't drink, but damn it, it's Christmas. I'm grabbing some 'nog!"
-    # TODO: asset eggnog
+
+    show nog at manual_pos(0.8, 0.3) with Dissolve(0.25)
+    show nog at manual_pos(0.7, 0.8) with MoveTransition(0.25)
+    hide nog with dissolve
+    $ collect("nog")
+    pause 0.25
 
     hide cs
     hide shopping_cart
@@ -1591,95 +1627,205 @@ label ce_checkout:
     show shopping_cart at manual_pos(0.4, 1.1, 0.5)
     with moveinleft
 
-    # TODO: once all the assets are in, scan them all here and beep them each time.
-
-    # TODO: TATE STOPPED EDITING HERE!
-
+    show butter at manual_pos(0.4, 0.8) with Dissolve(0.25):
+        zoom 0.5
+    show butter at manual_pos(0.4, 0.6) with MoveTransition(0.25)
     play sound sfx_retail_beep
-    n "As CS is checking out, the machine beeps at him."
+
+    n "As CS starts scanning his items, the machine responds with a disapproving beep."
     show cs coat worried
-    cs "What? I scanned this twice? No I didn't!"
+    cs "What? It says I scanned this twice? No, I didn't!"
     show cs coat disappointed
     show pakoo tgt at mid_right with moveinright
-    tgt_worker "Oh yeah, it always does that, keep going."
+    tgt_worker "Oh, yeah, it always does that. Just keep going, it's fine."
     show cs coat
     cs "Okay."
     show pakoo tgt flipped with determination
     hide pakoo tgt with moveoutright
+
+    show butter at manual_pos(0.7, 0.6) with move
+    hide butter with dissolve
+
+    show butter at manual_pos(0.4, 0.8) with Dissolve(0.25):
+        zoom 0.5
+    show butter at manual_pos(0.4, 0.6) with MoveTransition(0.25)
+    play sound sfx_retail_beep
+    show butter at manual_pos(0.7, 0.6) with move
+    hide butter with dissolve
+
+    show butter at manual_pos(0.4, 0.8) with Dissolve(0.25):
+        zoom 0.5
+    show butter at manual_pos(0.4, 0.6) with MoveTransition(0.25)
+    play sound sfx_retail_beep
+    show butter at manual_pos(0.7, 0.6) with move
+    hide butter with dissolve
+
+    show pie at manual_pos(0.4, 0.8) with Dissolve(0.25):
+        zoom 0.5
+    show pie at manual_pos(0.4, 0.6) with MoveTransition(0.25)
+    play sound sfx_retail_beep
+    show pie at manual_pos(0.7, 0.6) with move
+    hide pie with dissolve
+
+    show pie at manual_pos(0.4, 0.8) with Dissolve(0.25):
+        zoom 0.5
+    show pie at manual_pos(0.4, 0.6) with MoveTransition(0.25)
+    play sound sfx_retail_beep
+    pause 0.25
     show cs coat disappointed
-    cs "Ah crap, I scanned this one too many times."
+    play sound sfx_retail_beep
+    pause 0.5
+
+    cs "Ah, crap. I scanned this one too many times."
     n "The worker comes back."
     show pakoo tgt at mid_right with moveinright
     show pakoo tgt happy with determination
     tgt_worker "Hello, what's wrong?"
-    show cs coat
-    cs "Sorry, I scanned this pie 7 times."
+    cs "Sorry, I scanned this pie twice."
     show pakoo tgt think
-    tgt_worker "...how many do you have?"
-    cs "I have 2."
+    tgt_worker "... How many do you have?"
+    cs "Just the two."
     show pakoo tgt confused
-    tgt_worker "Wh-- okay hold on."
+    tgt_worker "Wh-- okay, hold on."
     show pakoo tgt at center with move
     show pakoo tgt scan
+    play sound sfx_retail_beep
     pause 0.5
     show pakoo tgt tap
     pause 2.5
     show pakoo tgt at mid_right with move
     tgt_worker "There you go."
+    show cs coat
     cs "Thanks!"
     show pakoo tgt flipped with determination
     hide pakoo tgt with moveoutright
     show cs coat angry
-    cs "Hey wait a minute!"
+    cs "Hey, wait a minute!"
     show pakoo tgt at mid_right with moveinright
-    n "The target employee runs back over."
-    cs "These are ringing up 11.99 per pie!"
+    tgt_worker "Yeah?"
+    cs "These are ringing up as $11.99 per pie!"
     show pakoo tgt upset
-    cs "They said they were like 20-percent off on the sign over there!"
+    cs "The sign said they were, like, 20%% off!"
     show pakoo tgt think2
     tgt_worker "Hmm..."
     show pakoo tgt scan
+    play sound sfx_retail_beep
     n "The employee scans the pie."
     show cs coat disappointed
     show pakoo tgt
-    tgt_worker "Do you perchance have Target Circle?"
+    tgt_worker "Do you perchance have Target Circle?" # who just says perchance?? are you sure about this line??? - tate
     cs "No?"
     show pakoo tgt think2
-    tgt_worker "You need Target Circle to get this deal. Sorry."
+    tgt_worker "You need Target Circle to get this deal, sorry."
     menu:
         "Sign up for Target Circle?"
         "Yes":
-            cs "Alright fine, how do I get Target Circle? Is it through the Target app?"
+            $ got_target_circle = True
+            cs "Alright, fine. How do I sign up? Is it through the Target app?"
             show pakoo tgt happy
-            tgt_worker "Yeah, just install the app and setup an account, and you can get a bunch of deals in the store."
+            tgt_worker "Yeah, just install the app, set up an account, and you can get a bunch of deals in the store."
             cs "Okay, I can do that real quick."
-            cs "Damn, the internet is terrible in here!"
-            tgt_worker "Yeah, I don't ever use the Wi-fi here. It's so bad."
-            tgt_worker "Once your done, you just go to your wallet, and scan that barcode!"
+
+            # stolen from train dialogue shhhh - tate
+            show cs_phone flipped with MoveTransition(0.25):
+                xpos 0.25
+                ypos 0.65
+                alpha 0.0
+                parallel:
+                    linear 0.25 alpha 1.0
+                parallel:
+                    linear 0.25 ypos 0.45
+    
+            pause 2.0
+            show cs coat worried
+            cs "Damn, the internet is {i}terrible{/i} in here!"
+            tgt_worker "Yeah, I don't ever use the wi-fi here. It's so bad."
+            tgt_worker "Anyway, once you're done, you just go to your wallet, and scan that barcode!"
+            show cs coat
             cs "Thanks."
+            
+            show cs_phone at manual_pos(0.35, 0.5) with move
+            play sound sfx_retail_beep
+            pause 0.5
+            hide cs_phone with dissolve
+            pause 0.5
         "No":
             show cs coat angry
             show pakoo tgt upset
             cs "Really?"
-            tgt_worker "I'm sorry, but that's just how the deal works."
+            tgt_worker "I'm sorry, but, that's just how the deal works."
             show cs coat disappointed
-            cs "Fine, whatever, I'll just keep them."
+            cs "Fine, whatever. I'll just pay full price."
+
     show pakoo tgt flipped with determination
     hide pakoo tgt with moveoutright
-    n "When CS goes to scan his alcohol, it beeps again and tells him to get out his ID."
+
+    show pie at manual_pos(0.7, 0.6) with move
+    hide pie with dissolve
+
+    show pringles at manual_pos(0.4, 0.8) with Dissolve(0.25)
+    show pringles at manual_pos(0.4, 0.5) with MoveTransition(0.25)
+    play sound sfx_retail_beep
+    show pringles at manual_pos(0.7, 0.5) with move
+    hide pringles with dissolve
+
+    show spray_cheese at manual_pos(0.4, 0.8) with Dissolve(0.25)
+    show spray_cheese at manual_pos(0.4, 0.5) with MoveTransition(0.25)
+    play sound sfx_retail_beep
+    show spray_cheese at manual_pos(0.7, 0.5) with move
+    hide spray_cheese with dissolve
+
+    show bread at manual_pos(0.4, 0.8) with Dissolve(0.25)
+    show bread at manual_pos(0.4, 0.5) with MoveTransition(0.25)
+    play sound sfx_retail_beep
+    show bread at manual_pos(0.7, 0.5) with move
+    hide bread with dissolve
+    
+    show potato_bag at manual_pos(0.4, 0.8) with Dissolve(0.25)
+    show potato_bag at manual_pos(0.4, 0.5) with MoveTransition(0.25)
+    play sound sfx_retail_beep
+    show potato_bag at manual_pos(0.7, 0.5) with move
+    hide potato_bag with dissolve
+
+    show potato_bag at manual_pos(0.4, 0.8) with Dissolve(0.25)
+    show potato_bag at manual_pos(0.4, 0.5) with MoveTransition(0.25)
+    play sound sfx_retail_beep
+    show potato_bag at manual_pos(0.7, 0.5) with move
+    hide potato_bag with dissolve
+
+    if got_tato_bag == True:
+        show tato_bag at manual_pos(0.4, 0.8) with Dissolve(0.25)
+        show tato_bag at manual_pos(0.4, 0.5) with MoveTransition(0.25)
+        play sound sfx_retail_beep
+        show tato_bag at manual_pos(0.7, 0.5) with move
+        hide tato_bag with dissolve
+    else:
+        show potato_bag at manual_pos(0.4, 0.8) with Dissolve(0.25)
+        show potato_bag at manual_pos(0.4, 0.5) with MoveTransition(0.25)
+        play sound sfx_retail_beep
+        show potato_bag at manual_pos(0.7, 0.5) with move
+        hide potato_bag with dissolve
+
+    show nog at manual_pos(0.4, 0.8) with Dissolve(0.25)
+    show nog at manual_pos(0.4, 0.5) with MoveTransition(0.25)
+    play sound sfx_retail_beep
+
+    # TODO: find that "buzz-buzz-buzz" these machines make when they're unhappy
+    n "As CS scans his alcohol, the machine buzzes at him. An on-screen message is requesting an ID."
     show cs coat pissed
-    cs "Seriously?!"
+    cs "Seriously?!" with vpunch
     show cs coat angry
     n "The employee runs over again."
     show pakoo tgt upset at mid_right with moveinright
-    tgt_worker "Oh yeah. I should probably do that for you."
+    tgt_worker "Oh, yeah. I should probably do that for you."
     show pakoo tgt upset at center with move
     show pakoo tgt scan
+    play sound sfx_retail_beep
     pause 0.5
     show pakoo tgt tap
     pause 2.5
     show pakoo tgt
-    n "The employee signs into the machine and opens the prompt to enter an ID."
+    n "The employee signs into the machine and opens the prompt to enter a number."
     n "They then wait patiently for CS."
     cs "What? Do you need something from me?"
     show pakoo tgt think2
@@ -1687,29 +1833,135 @@ label ce_checkout:
     show cs coat pissed
     show pakoo tgt upset
     cs "Are you kidding me?"
-    tgt_worker "Yes, they will kill me if you don't do it."
+    tgt_worker "Sorry, you legally can't buy this if you don't show ID."
     show cs coat disappointed
     n "CS sighs."
+
+    show cs_wallet with MoveTransition(0.25):
+        zoom 0.2
+        xpos 0.15
+        ypos 0.65
+        alpha 0.0
+        parallel:
+            linear 0.25 alpha 1.0
+        parallel:
+            linear 0.25 ypos 0.5
+    $ collect("cs_wallet")
+
+    pause 1.0
+
+    show cs_id at manual_pos(0.2, 0.5) with dissolve:
+        zoom 0.25
+    $ collect("cs_id")
+    
+    show cs_id at manual_pos(0.3, 0.5) with move
     cs "Here you go."
     show pakoo tgt tap
-    n "The target employee punches in his birthday and leaves."
+    n "The worker punches in CS' birthday before handing the card back."
+    show cs_id at manual_pos(0.2, 0.5) with move
+
     show pakoo tgt flipped with determination
     hide pakoo tgt with moveoutright
-    pause 3.0
-    hide cs with moveoutright
-    stop sound fadeout 3.0
-    scene tgt_outside
-    show cs coat hat disappointed
+    hide cs_id
+    hide cs_wallet
     with dissolve
+
+    show nog at manual_pos(0.7, 0.5) with move
+    hide nog with dissolve
+
+    show genergy at manual_pos(0.4, 0.8) with Dissolve(0.25)
+    show genergy at manual_pos(0.4, 0.5) with { "master" : MoveTransition(0.25) }
+    play genergy sfx_retail_beep
+    show cs coat angry
     cs "Kids these days, asking me for my ID..."
+    show genergy at manual_pos(0.7, 0.5) with move
+    hide genergy with dissolve
+
+    show genergy at manual_pos(0.4, 0.8) with Dissolve(0.25)
+    show genergy at manual_pos(0.4, 0.5) with { "master" : MoveTransition(0.25) }
+    play genergy sfx_retail_beep
+    show cs coat pissed
+    cs "I'm {i}clearly{/i} an adult!"
+    show genergy at manual_pos(0.7, 0.5) with move
+    hide genergy with dissolve
+
+    show genergy at manual_pos(0.4, 0.8) with Dissolve(0.25)
+    show genergy at manual_pos(0.4, 0.5) with { "master" : MoveTransition(0.25) }
+    play genergy sfx_retail_beep
     cs "They should hire some new people!"
+    show genergy at manual_pos(0.7, 0.5) with move
+    hide genergy with dissolve
+
+    show genergy at manual_pos(0.4, 0.8) with Dissolve(0.25)
+    show genergy at manual_pos(0.4, 0.5) with { "master" : MoveTransition(0.25) }
+    play genergy sfx_retail_beep
+    show cs coat worried
+    cs "At least they don't card for {i}energy drinks!" # some places do! hell, i even got carded for SHARPIES once! - tate
+    show genergy at manual_pos(0.7, 0.5) with move
+    hide genergy with dissolve
+
+    show genergy at manual_pos(0.4, 0.8) with Dissolve(0.25)
+    show genergy at manual_pos(0.4, 0.5) with { "master" : MoveTransition(0.25) }
+    play genergy sfx_retail_beep
+    show cs coat
+    cs "Cool, that's everything."
+    show genergy at manual_pos(0.7, 0.5) with move
+    hide genergy with dissolve
+
+    show cs coat at mid_mid_right with move
+    show cs coat flipped
+
+    show cs_wallet with MoveTransition(0.25):
+        zoom 0.2
+        xpos 0.4
+        ypos 0.65
+        alpha 0.0
+        parallel:
+            linear 0.25 alpha 1.0
+        parallel:
+            linear 0.25 ypos 0.5
+    pause 2.0
+
+    # List of items: 5lb bags of potatoes (3x), bread (x1), spray cheese (x1), pringles (x1), genergy (x5), butter (x3), pie (x2), eggnog (x1)
+    # TODO: find out the total, do the RPG lost money joke here like in CSB1. remember genergy is more expensive at target
+    # TODO: find the sfx that's like "ding-ding-DING~!" when you pay on these machines
+    n "CS pays with his card before heading out to the car."
+
+    hide cs_wallet with dissolve
+    show cs coat flipped at left with move
+    show cs coat with determination
+    pause 0.25
+    hide cs
+    hide shopping_cart
+    with moveoutright
+    
+    stop sound fadeout 3.0
+    scene black with dissolve
+    scene tgt_outside
+    with dissolve
+    pause 0.5
+
     show cs coat hat
-    cs "Anyways, I need to get home now and put everything away."
+    show shopping_cart at manual_pos(0.7, 1.1, 0.5)
+    with moveinleft
+    pause 1.0
+
+    cs "I'd better go straight home and put everything away."
     show cs coat hat happy
-    cs "It's the big day tomorrow, and it's gonna be the best party ever!"
-    hide cs with moveoutright
+    cs "It's the big day tomorrow! This is gonna be the best party {i}ever!"
+    hide cs
+    hide shopping_cart
+    with moveoutright
+    pause 2.0
+    play sound sfx_driving
+    scene black with Dissolve(5.0)
+    stop sound fadeout 5.0
 
 label ce_aftershop:
+    pause 2.0
+    
+    # TODO: TATE STOPPED EDITING HERE!
+
     scene cs_kitchen
     show cs_kitchen_fg
     show d20:
