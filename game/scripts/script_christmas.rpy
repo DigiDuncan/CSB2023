@@ -1720,6 +1720,7 @@ label ce_checkout:
     menu:
         "Sign up for Target Circle?"
         "Yes":
+            # NOTE: I don't think we need to do anything special for this check in CE. We can have it change the story more in DX. - pak
             $ got_target_circle = True
             cs "Alright, fine. How do I sign up? Is it through the Target app?"
             show pakoo tgt happy
@@ -1740,7 +1741,7 @@ label ce_checkout:
             show cs coat worried
             cs "Damn, the internet is {i}terrible{/i} in here!"
             tgt_worker "Yeah, I don't ever use the wi-fi here. It's so bad."
-            tgt_worker "Anyway, once you're done, you just go to your wallet, and scan that barcode!"
+            tgt_worker "Anyway, once you're done, you just go to your wallet, and you scan that barcode!"
             show cs coat
             cs "Thanks."
             
@@ -1749,6 +1750,7 @@ label ce_checkout:
             pause 0.5
             hide cs_phone with dissolve
             pause 0.5
+            tgt_worker "Have a good day."
         "No":
             show cs coat angry
             show pakoo tgt upset
@@ -1811,6 +1813,7 @@ label ce_checkout:
     play sound sfx_retail_beep
 
     # TODO: find that "buzz-buzz-buzz" these machines make when they're unhappy
+    # It's more of a soft beep than a buzz, but I'm sure I can recreate the sound effect. It's impossible to record at the store. - pak
     n "As CS scans his alcohol, the machine buzzes at him. An on-screen message is requesting an ID."
     show cs coat pissed
     cs "Seriously?!" with vpunch
@@ -1897,7 +1900,7 @@ label ce_checkout:
     play genergy sfx_retail_beep
     show cs coat worried
     cs "At least they don't card for {i}energy drinks!" # some places do! hell, i even got carded for SHARPIES once! - tate
-    show genergy at manual_pos(0.7, 0.5) with move
+    show genergy at manual_pos(0.7, 0.5) with move # In England they do I think - pak
     hide genergy with dissolve
 
     show genergy at manual_pos(0.4, 0.8) with Dissolve(0.25)
