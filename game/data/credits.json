@@ -55,7 +55,6 @@
             "CS-ocola": ["Greta \"lovelycloud\""],
             "Arceus": ["UndeadKitty"],
             "Kitty": [""],
-            "DigiDuncan": ["Yukio \"nyutral\""],
             "Aria": ["Aria \"Estroteric\""],
             "Pakoo": ["Pakoo"],
             "Bubble": ["BubbleTheSlime"],
@@ -65,6 +64,12 @@
             "Mean": [""],
             "Mean (Human)": ["Mushroom Man"],
             "Ges": ["Mikapara"]
+        },
+
+        "DigiDuncan Character Sprite": {
+            "3D Model": ["Tris", "LurkingLotus", "4Bakers"],
+            "Texture": ["DigiDuncan"],
+            "Concept Art": ["Mushroom Man"]
         },
 
         "_more_art":{
@@ -120,11 +125,11 @@
                 "Annorexorcist",
                 "Tate \"alleZSoyez\"",
                 "meancarnavor",
-                "Arceus3251",
                 "Aria \"Estroteric\"",
                 "DigiDuncan",
                 "Pakoopara",
                 "Mikapara",
+                "Arceus3251",
                 "UndeadKitty",
                 "ItsNovaHere",
                 "blanknam3d",
@@ -160,11 +165,16 @@
             "CS-ocola": ["Greta \"lovelycloud\""],
             "Arceus": ["UndeadKitty"],
             "Kitty": [""],
-            "DigiDuncan": ["Yukio \"nyutral\""],
             "Aria": ["Aria \"Estroteric\""],
             "Pakoo": ["Pakoo"],
             "Tate": ["Tate \"alleZSoyez\""],
             "Mean (Human)": ["Mushroom Man"]
+        },
+
+        "DigiDuncan Character Sprite": {
+            "3D Model": ["Tris", "LurkingLotus", "4Bakers"],
+            "Texture": ["DigiDuncan"],
+            "Concept Art": ["Mushroom Man"]
         },
 
         "_more_art":{

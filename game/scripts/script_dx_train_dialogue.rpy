@@ -8,7 +8,6 @@ label train_dialogue:
     play sfx sfx_ambiance_train_interior loop volume 0.3
 
     show amtrak_northeast
-    show amtrak_dining_day
     show cs at left
     show arceus at right
     with dissolve
@@ -237,7 +236,6 @@ label train_dialogue:
 
     scene
     show amtrak_northeast
-    show amtrak_dining_day
     show cs phone at left
     show arceus at right
     with dissolve

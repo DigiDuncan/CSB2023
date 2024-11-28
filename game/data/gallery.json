@@ -219,5 +219,10 @@
         "type": "image",
         "title": "Kitty (Festive)",
         "caption": "An early version of Kitty's sprite for {i}Christmas Edition.{/i} The edit was done by Tate at about 3 AM. Nobody liked this one."
+    },
+    "digi.png": {
+        "type": "image",
+        "title": "Digi (Original)",
+        "caption": "Digi's original sprite as seen in {i}CSBIII,{/i} drawn by Yukio \"nyutral\". Because this sprite has only one expression, Digi decided that they wanted an upgrade for {i}DX.{/i}"
     }
 }

@@ -153,7 +153,7 @@
     },
     "digi": {
         "full_name": "DigiDuncan",
-        "sprite_path": "images/characters/digi.png",
+        "sprite_path": "images/characters/digi/neutral.png",
         "quote": "But, here's the thing though, right?",
         "bio": "DigiDuncan is the man with the plan. Too many plans, actually. They also love to drink an absurd amount of Powerade. Maybe that's where all those ideas come from. Digi is always working on countless projects ranging from game development to tinkering with his cybernetic augmentations. He is also really smol."
     },
