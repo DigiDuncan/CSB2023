@@ -1493,7 +1493,7 @@ label ce_before_shopping:
     with moveinleft
 
     n "CS finds the pies."
-    show cs coat surrpised
+    show cs coat surprised
     cs "I probably don't need to buy too many of these..."
     show cs coat worried
     cs "There's already going to be a lot of food, so I don't think everyone will even have {i}room{/i} for dessert!"
@@ -1688,11 +1688,24 @@ label ce_checkout:
     show pakoo tgt confused
     tgt_worker "Wh-- okay, hold on."
     show pakoo tgt at center with move
+    show pakoo tgt tap
+    pause 0.5
+    scene tgt_checkout_tm
+    show cs coat disappointed at left
+    show shopping_cart at manual_pos(0.4, 1.1, 0.5)
+    show pie at manual_pos(0.4, 0.6):
+        zoom 0.5
     show pakoo tgt scan
     play sound sfx_retail_beep
     pause 0.5
     show pakoo tgt tap
     pause 2.5
+    scene tgt_checkout
+    show cs coat disappointed at left
+    show shopping_cart at manual_pos(0.4, 1.1, 0.5)
+    show pie at manual_pos(0.4, 0.6):
+        zoom 0.5
+    show pakoo tgt tap
     show pakoo tgt at mid_right with move
     tgt_worker "There you go."
     show cs coat
@@ -1811,7 +1824,10 @@ label ce_checkout:
     show nog at manual_pos(0.4, 0.8) with Dissolve(0.25)
     show nog at manual_pos(0.4, 0.5) with MoveTransition(0.25)
     play sound sfx_retail_beep
-
+    scene tgt_checkout_id
+    show cs coat at left
+    show shopping_cart at manual_pos(0.4, 1.1, 0.5)
+    show nog at manual_pos(0.4, 0.5)
     # TODO: find that "buzz-buzz-buzz" these machines make when they're unhappy
     # It's more of a soft beep than a buzz, but I'm sure I can recreate the sound effect. It's impossible to record at the store. - pak
     n "As CS scans his alcohol, the machine buzzes at him. An on-screen message is requesting an ID."
@@ -1822,6 +1838,11 @@ label ce_checkout:
     show pakoo tgt upset at mid_right with moveinright
     tgt_worker "Oh, yeah. I should probably do that for you."
     show pakoo tgt upset at center with move
+    show pakoo tgt tap
+    scene tgt_checkout_tm
+    show cs coat angry at left
+    show shopping_cart at manual_pos(0.4, 1.1, 0.5)
+    show nog at manual_pos(0.4, 0.5)
     show pakoo tgt scan
     play sound sfx_retail_beep
     pause 0.5
@@ -1868,7 +1889,10 @@ label ce_checkout:
     hide cs_id
     hide cs_wallet
     with dissolve
-
+    scene tgt_checkout
+    show cs coat disappointed at left
+    show shopping_cart at manual_pos(0.4, 1.1, 0.5)
+    show nog at manual_pos(0.4, 0.5)
     show nog at manual_pos(0.7, 0.5) with move
     hide nog with dissolve
 
@@ -1913,7 +1937,13 @@ label ce_checkout:
 
     show cs coat at mid_mid_right with move
     show cs coat flipped
-
+    scene tgt_checkout_circle
+    show cs coat flipped
+    show shopping_cart at manual_pos(0.4, 1.1, 0.5)
+    pause 1.5
+    scene tgt_checkout_pay
+    show cs coat flipped
+    show shopping_cart at manual_pos(0.4, 1.1, 0.5)
     show cs_wallet with MoveTransition(0.25):
         zoom 0.2
         xpos 0.4
@@ -1932,6 +1962,9 @@ label ce_checkout:
 
     hide cs_wallet with dissolve
     show cs coat flipped at left with move
+    scene tgt_checkout_finish
+    show cs coat flipped at left
+    show shopping_cart at manual_pos(0.4, 1.1, 0.5)
     show cs coat with determination
     pause 0.25
     hide cs
