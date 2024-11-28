@@ -66,6 +66,11 @@
             "Ges": ["Mikapara"]
         },
 
+        "CS-ocola (3D Sprite)": {
+            "Model": ["Tate \"alleZSoyez\""],
+            "Wardrobe": ["rezosempai"]
+        },
+
         "DigiDuncan Character Sprite": {
             "3D Model": ["Tris", "LurkingLotus", "4Bakers"],
             "Texture": ["DigiDuncan"],

@@ -4002,6 +4002,7 @@ label train_defeated_perfect_tate:
     pause 2.0
     tate "Thanks, CS."
 
+    $ persistent.defeated_perfect_tate = True
     $ persistent.seen.add("perfect_tate")
     $ achievement_manager.unlock("beat_tate")
     # TODO: audio is not fully ready yet - tate

@@ -84,6 +84,11 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
                             # categories with underscores are strictly for organization and should not be printed.
                             if category[0] == "_":
                                 $ cat_text = "\n"
+                            elif category == "CS-ocola (3D Sprite)":
+                                if persistent.defeated_perfect_tate == False:
+                                    $ cat_text = obfuscator(category)
+                                else:
+                                    $ cat_text = category
                             else:
                                 $ cat_text = category
 
@@ -100,7 +105,7 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
                             
                             for subcategory in credits_map[route][category]:
 
-                                # Handling for everything EXCEPT cast, special thanks and music
+                                # Handling for everything EXCEPT cast, special thanks, music
                                 # These are nested for a reason
                                 if category != "Special Thanks" and category != "Cast":
                                     if category != "Music":
@@ -111,6 +116,10 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
 
                                             # manually hide awawa mode if unseen
                                             if persistent.awawa_mode == False and re.fullmatch("Awawa Mode Programming Assistance", subcategory):
+                                                $ sub_text = obfuscator(subcategory)
+
+                                            # manually hide CS 3D if unseen
+                                            if persistent.defeated_perfect_tate == False and category == "CS-ocola (3D Sprite)":
                                                 $ sub_text = obfuscator(subcategory)
 
                                             # manually hide characters if not seen
@@ -133,9 +142,16 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
                                             vbox:
                                                 xalign 1.0
                                                 for contributor in credits_map[route][category][subcategory]:
+
+                                                    # manually hide CS 3D if unseen
+                                                    if persistent.defeated_perfect_tate == False and category == "CS-ocola (3D Sprite)":
+                                                        $ contributor = obfuscator(contributor)
+
                                                     text contributor:
                                                         xalign 1.0
                                                         yalign 0.5
+
+
 
                                     # music requires special handling
                                     # use the pre-sorted list from earlier, hide unseen tracks

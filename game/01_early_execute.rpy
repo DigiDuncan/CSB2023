@@ -68,6 +68,7 @@ default persistent.first_time = True
 default persistent.woohoo = 0
 default persistent.controller_id = 0
 default persistent.true_ending = False
+default persistent.defeated_perfect_tate = False
 
 # Achievement progress
 default persistent.seen_original_endings = set()
