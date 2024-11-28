@@ -1742,7 +1742,7 @@ label ce_checkout:
     cs "Hey, wait a minute!"
     show pakoo tgt at mid_right with moveinright
     tgt_worker "Yeah?"
-    cs "These are ringing up as $11.99 per pie!"
+    cs "These are ringing up as $11.99 per pie!" # TODO: y'all, these pies are only $5.69 each normally, should we fix this? - tate
     show pakoo tgt upset
     cs "The sign said they were, like, 20%% off!"
     show pakoo tgt think2
@@ -2019,14 +2019,11 @@ label ce_checkout:
     with moveoutright
     pause 2.0
     play sound sfx_driving
-    stop sound fadeout 5.0
     scene black with Dissolve(5.0)
+    stop sound fadeout 4.0
 
 label ce_aftershop:
     pause 2.0
-    
-    # TODO: TATE STOPPED EDITING HERE!
-
     scene cs_kitchen
     show cs_kitchen_fg
     show d20:
@@ -2034,9 +2031,25 @@ label ce_aftershop:
         xpos 1200
         ypos 820
     with dissolve
-    show cs flipped at mid_right behind cs_kitchen_fg with moveinright
-    n "When CS gets home, he starts putting the groceries away."
+    pause 0.5
+    play sound sfx_house_door_open
+    pause 3.0
+    play sound sfx_house_door_close
+    pause 2.0
+    show cs flipped at mid_right behind cs_kitchen_fg 
+    show target_bags at right
+    $ collect("target_bags")
+    with moveinright
+    n "When CS gets home, he walks to the kitchen to start putting groceries away."
+    # TODO: am i REALLY gonna have to animate him putting every individual item away??? do i really have to????? - tate
+    "..."
+    "..."
+    "..."
+    pause 0.5
+    hide target_bags with dissolve
+    pause 1.0
     show cs flipped at center behind cs_kitchen_fg with move
+    # TODO: sfx knock it onto the floor
     show d20:
         zoom 0.1
         linear 0.1 rotate 165 xpos 1000 ypos 600
@@ -2044,37 +2057,105 @@ label ce_aftershop:
         linear 0.1 rotate 165 xpos 700 ypos 700
         linear 0.1 rotate 165 xpos 600 ypos 900
         linear 0.1 rotate 165 xpos 500 ypos 1100
-    n "As he's finishing up, a D20 he had sitting on the counter gets knocked onto the floor."
-    show cs disappointed behind cs_kitchen_fg
-    cs "What the hell? When did I ever have one of these?"
+    n "As he finishes up, a D20 sitting on the counter is knocked onto the floor."
+    $ collect("d20")
+    show cs disappointed flipped behind cs_kitchen_fg
+    cs "What the hell?"
+    show cs disappointed flipped with { "master": move }:
+        parallel:
+            linear 0.5 rotate -45
+        parallel:
+            linear 0.5 xpos 0.4
+        parallel:
+            linear 0.5 ypos 1.5
+    cs "Since when did I ever own one of these?"
+    pause 1.0
+
     n "CS picks up the die."
+
+    show cs disappointed flipped with { "master": move }:
+        parallel:
+            linear 0.5 rotate 0
+        parallel:
+            linear 0.5 xpos 0.5
+        parallel:
+            linear 0.5 ypos 1.1
     show d20:
         zoom 0.1
-        xpos 1100 ypos 1100
-        linear 1 xpos 1100 ypos 600    
-    show cs behind cs_kitchen_fg
+        xpos 0.3 ypos 1100
+        linear 0.5 xpos 0.4 ypos 600
+    pause 2.5
+    show cs flipped behind cs_kitchen_fg
+
     $ reroll()
-    cs "Hey, I got a [d20]!"
-    cs "Welp, I got everything put away..."
-    cs "The decorations all look nice..."
-    cs "This party's gonna be great!"
-    n "CS sighs happily."
-    cs "It's pretty late, so I should probably get to bed about now."
-    cs "I've got a big day tomorrow, and I wanna be as ready as can be!"
-    scene cs_bedroom2
+    cs "Hey, look, I rolled a [d20]!"
+    hide d20 with dissolve
+    pause 1.0
+
+    show cs flipped behind cs_kitchen_fg
+    # repetitive on purpose - tate
+    cs "Welp, the groceries are all put away..."
+    cs "The decorations look all nice..."
+    show cs happy flipped
+    cs "I think I'm all ready for this party!"
+    n "CS lets out a satisfied yawn."
     show cs
+    cs "It's getting late. I should probably call it an early night."
+    if fun_value(FUN_VALUE_COMMON):
+        show cs disappointed
+        cs "My sleep schedule's abysmal, but I {i}can't{/i} sleep {i}any{/i}time!"
+    hide cs with moveoutright
+    pause 0.5
+
+    scene cs_bedroom2
     with dissolve
-    n "CS gets under the covers, and tries his best to get some sleep."
-    cs "I can't stop thinking aout tomorrow."
-    cs "I wonder who's gonna get here first, who all is going to show up..."
+    pause 0.5
+
+    show cs at mid_left with moveinleft
+    show cs flipped with determination
+    pause 0.5
+
+    # totally stolen from archival shhh
+    show cs happy flipped at manual_pos(160, 200)
+    play sound sfx_blanket volume 10.0
+    show cs happy flipped at manual_pos(160, 200):
+        rotate 0
+        parallel:
+            linear 1.0 rotate 60
+        parallel:
+            linear 1.0 ypos 300
+        parallel:
+            linear 1.0 xpos -350
+    
     pause 2.0
-    cs "What if no one shows up?"
+    show cs happy flipped
+    n "CS settles in under the covers..."
+    pause 2.0
+    show cs concentrate flipped
+    n "However, his mind won't let him rest."
+    show cs disappointed flipped
+    cs "I just can't stop thinking about tomorrow."
+    show cs surprised flipped
+    cs "I wonder who's gonna get here first, and if everyone will show up as promised..."
+    pause 2.0
+    show cs scared flipped
+    cs "What if {i}no one{/i} shows up?"
+    show cs disappointed flipped
     cs "That would suck a lot."
-    cs "But I don't think that'll happen. I just called everyone and they had their invitations!"
-    cs "I know at least Anno is coming for sure!"
-    cs "Okay CS, stop thinking about the party."
+    show cs flipped
+    cs "But, I don't think that'll happen."
+    cs "Everyone confirmed they got my invitations, and they all said on the phone that they'll come!"
+    show cs happy flipped
+    cs "If nothing else, at least Anno is coming for sure!"
+    pause 1.0
+    show cs disappointed flipped
+    cs "Okay, CS, stop thinking about all these what-ifs..."
     cs "You need to sleep!"
-    n "CS finally dozes off to sleep."
+    show cs concentrate flipped
+    scene black with Dissolve(2.0)
+    n "After some time, CS finally dozes off..."
+
+    # TODO: TATE STOPPED EDITING HERE!
 
 label ce_party_before:
     scene cs_bedroom2

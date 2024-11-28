@@ -170,7 +170,7 @@
         "img": "cs_wallet",
         "name": "CS' Wallet",
         "owner": "CS",
-        "desc": "While he may have missed out on the PUMA × Tetris shoe collab, at least CS copped this sweet wallet at Hot Topic.",
+        "desc": "While he may have missed out on the PUMA × {i}Tetris{/i} shoe collab, at least CS copped this sweet wallet at Hot Topic.",
         "rarity": "Common",
         "dx": true
     },
@@ -180,6 +180,14 @@
         "owner": "Copguy",
         "desc": "Wanted, dead or alive. $188,000 reward.",
         "rarity": "Common"
+    },
+    "d20": {
+        "img": "d20",
+        "name": "20-Sided Die",
+        "owner": "CS...?",
+        "desc": "Since CS doesn't play tabletop games, there's no telling where this came from.\nI wonder what would happen if he rolled it again.",
+        "rarity": "Common",
+        "ce": true
     },
     "dasani": {
         "img": "dasani",
@@ -497,6 +505,14 @@
         "desc": "It has been modified to allow a cute charm to be attached.",
         "rarity": "Uncommon",
         "dx": true
+    },
+    "target_bags": {
+        "img": "target_bags",
+        "name": "Target Grocery Bags",
+        "owner": "CS",
+        "desc": "Illegal in at least 12 states and 500 cities... including New York?!\n\nHey, wait a minute--!",
+        "rarity": "Common",
+        "ce": true
     },
     "tato_bag": {
         "img": "tato_bag",
