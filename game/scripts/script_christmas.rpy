@@ -3949,19 +3949,39 @@ label ce_exchange:
     billy "Antique coins lying around, Tech lying on the curb..."
     billy "Where the hell do you guys live where you find this kinda shit?"
     hide db with moveoutright
+    if d20 == 20:
+        avgn "Alright, well it's my turn!"
+        show avgn at mid_left with moveinleft
+        avgn "Let's do this."
+        show old_shirt at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
+        avgn "This shirt's ASS!"
+        cs "Hey! That was my gift!"
+        avgn "Yeah? Well, you're a poopyhead!"
+        hide avgn with moveoutright     
     anne "Well Grace, you wanna pick out the last gift?"
     show grace at mid_left with moveinleft
     grace "Yippee! The last gift!"
-    show old_shirt at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    grace "I got a cool new t-shirt!"
-    cs "Hey! You finally got my gift!"
-    hide old_shirt with dissolve
-    cs "Not all of my Depop shirts sold, so it became my gift."
-    cs "Does it even fit you?"
-    n "Grace puts on the shirt."
-    show grace shirt
-    pause 2.0
-    grace "Yep!"
+    if d20 == 20:
+        show roll_and_rocker at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
+        show rolling_rock at Move((0.3125, 1.0), (0.35, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
+        grace "Ooh! Is this a balance board?"
+        avgn "It's a rolling rock..."
+        avgn "...with a roll and rocker!"
+        grace "Cool!"
+        hide roll_and_rocker
+        hide rolling_rock
+        with dissolve
+    else:     
+        show old_shirt at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
+        grace "I got a cool new t-shirt!"
+        cs "Hey! You finally got my gift!"
+        hide old_shirt with dissolve
+        cs "Not all of my Depop shirts sold, so it became my gift."
+        cs "Does it even fit you?"
+        n "Grace puts on the shirt."
+        show grace shirt
+        pause 2.0
+        grace "Yep!"
     cs "Woohoo! All of the gifts have been handed out!"
 
 # Games/Climax
@@ -5057,6 +5077,10 @@ label ce_roof_moment:
     copguy "Hey, look how at shiny our car is!"
     sheriff "Wow!"
     copguy "I {i}told{/i} the chief we should start using this stuff on our cruisers!"
+    if d20 == 20:
+        show avgn dark flipped at mid_right with moveinright
+        avgn "Man, this party was ass!"
+        hide avgn with moveoutleft
     scene cs_house_night_dtree
     show billy festive dark at mid_left
     show k22 disappointed dark at mid_right
