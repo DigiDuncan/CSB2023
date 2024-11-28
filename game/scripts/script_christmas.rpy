@@ -3301,21 +3301,22 @@ label ce_dinner:
     show left_chair_back
     show cs christmas at center
     show anno festive at mid_left
-    show tate festive at mid_right
+    show tate festive flipped at mid_right
     show db at manual_pos(1.1, 0.6, 0.5)
     show k22 at mid_offscreen_left
     show k17 at manual_pos(-0.5, 0.6, 0.5)
     show left_table
     with dissolve
-    stop music fadeout 3.0
-    music end
     cs "Well, I'd love to start off this wonderful meal by saying--"
     blank "Hey stop it! We are not playing your music!"
     nova "Blank, Blank..."
     nova "This song is so..."
+    show cs christmas disappointed
+    show tate festive sheepish flipped
     nova "FUCKING ASS!"
     nova "STOP MAKING MUSIC!"
     nova "STOP MAKING MUSIC!"
+    show cs christmas angry flipped
     nova "Turn that shit off!"
     cs "Hey! Can you two stop fighting and get over here and eat with us!"
 
@@ -3436,22 +3437,162 @@ label ce_dinner:
     show wesley at mid_right
     show rich at mid_offscreen_right
     show right_table at center
+    show linus at manual_pos(1.3, 0.6, 0.5)
+    show luke at manual_pos(1.45, 0.6, 0.5)
     ed "You've more than made it up to us, CS."
     rich "Yeah, you helped propel our business to new heights! Or, I guess, new foundations."
     wesley "Mmm."
 
+    scene night_bg
+    show right_room at right
+    show right_chair_back at right
+    show obama festive at manual_pos(-0.5, 0.5, 0.5)
+    show michael festive at manual_pos(-0.25, 0.6, 0.5)
+    show ed festive at manual_pos(0, 0.55, 0.5)
+    show wesley at manual_pos(0.25, 0.575, 0.5)
+    show rich at manual_pos(0.5, 0.6, 0.5)
+    show linus at manual_pos(0.80, 0.6, 0.5)
+    show luke at manual_pos(0.95, 0.6, 0.5)
+    show right_table at right
+    with move
     linus "So, CS, when are we getting you back for another video?"
+    scene night_bg
+    show left_room
+    show left_chair_back
+    show cs christmas at center
+    show anno festive at mid_left
+    show tate festive at mid_right
+    show db at manual_pos(1.1, 0.6, 0.5)
+    show k22 at mid_offscreen_left
+    show k17 at manual_pos(-0.5, 0.6, 0.5)
+    show left_table
     cs "Oh, jeez, life has been so busy."
+    scene night_bg
+    show right_room at right
+    show right_chair_back at right
+    show obama festive at manual_pos(-0.5, 0.5, 0.5)
+    show michael festive at manual_pos(-0.25, 0.6, 0.5)
+    show ed festive at manual_pos(0, 0.55, 0.5)
+    show wesley at manual_pos(0.25, 0.575, 0.5)
+    show rich at manual_pos(0.5, 0.6, 0.5)
+    show linus at manual_pos(0.80, 0.6, 0.5)
+    show luke at manual_pos(0.95, 0.6, 0.5)
+    show right_table at right
     luke "You were a fan favourite."  # Intentional Canadian spelling
+    scene night_bg
+    show left_room
+    show left_chair_back
+    show cs christmas at center
+    show anno festive at mid_left
+    show tate festive at mid_right
+    show db at manual_pos(1.1, 0.6, 0.5)
+    show k22 at mid_offscreen_left
+    show k17 at manual_pos(-0.5, 0.6, 0.5)
+    show left_table
     cs "Well, if I can make it to Canada at some point soon..."
+    scene night_bg
+    show right_room at right
+    show right_chair_back at right
+    show obama festive at manual_pos(-0.5, 0.5, 0.5)
+    show michael festive at manual_pos(-0.25, 0.6, 0.5)
+    show ed festive at manual_pos(0, 0.55, 0.5)
+    show wesley at manual_pos(0.25, 0.575, 0.5)
+    show rich at manual_pos(0.5, 0.6, 0.5)
+    show linus at manual_pos(0.80, 0.6, 0.5)
+    show luke at manual_pos(0.95, 0.6, 0.5)
+    show right_table at right
     linus "We'll pay for your flight out~"
+    scene night_bg
+    show left_room
+    show left_chair_back
+    show cs christmas at center
+    show anno festive at mid_left
+    show tate festive at mid_right
+    show db at manual_pos(1.1, 0.6, 0.5)
+    show k22 at mid_offscreen_left
+    show k17 at manual_pos(-0.5, 0.6, 0.5)
+    show left_table
     cs "Tempting. Very tempting. I'll see what I can do."
+    scene night_bg
+    show right_room at left
+    show right_chair_back at left
+    show arceus flipped at mid_offscreen_left
+    show billy festive at mid_left
+    show obama festive at center
+    show michael festive at mid_right
+    show ed festive at mid_offscreen_right
+    show right_table at left
     arceus "Hey, at least you can go to LTT and not have to walk all the way there this time!"
+    scene night_bg
+    show left_room
+    show left_chair_back
+    show cs christmas at center
+    show anno festive at mid_left
+    show tate festive at mid_right
+    show db at manual_pos(1.1, 0.6, 0.5)
+    show k22 at mid_offscreen_left
+    show k17 at manual_pos(-0.5, 0.6, 0.5)
+    show left_table
     cs "True... honestly, would you want to go too?"
+    scene night_bg
+    show right_room at left
+    show right_chair_back at left
+    show arceus flipped at mid_offscreen_left
+    show billy festive at mid_left
+    show obama festive at center
+    show michael festive at mid_right
+    show ed festive at mid_offscreen_right
+    show right_table at left
+    show wesley at manual_pos(1.3, 0.6, 0.5)
+    show rich at manual_pos(1.5, 0.6, 0.5)
+    show linus at manual_pos(1.65, 0.6, 0.5)
+    show luke at manual_pos(1.80, 0.6, 0.5)
     arceus "Me? I'm in the UK now, I don't know if I can make it all the way to West Canada."
+    scene night_bg
+    show right_room at right
+    show right_chair_back at right
+    show arceus flipped at manual_pos(-0.95, 0.65, 0.5)
+    show billy festive at manual_pos(-0.75, 0.6, 0.5)
+    show obama festive at manual_pos(-0.5, 0.5, 0.5)
+    show michael festive at manual_pos(-0.25, 0.6, 0.5)
+    show ed festive at manual_pos(0, 0.55, 0.5)
+    show wesley at manual_pos(0.25, 0.575, 0.5)
+    show rich at manual_pos(0.5, 0.6, 0.5)
+    show linus at manual_pos(0.80, 0.6, 0.5)
+    show luke at manual_pos(0.95, 0.6, 0.5)
+    show right_table at right
+    with move
     linus "We'd pay for your flight out, as well."
+    scene night_bg
+    show right_room at left
+    show right_chair_back at left
+    show arceus flipped at mid_offscreen_left
+    show billy festive at mid_left
+    show obama festive at center
+    show michael festive at mid_right
+    show ed festive at mid_offscreen_right
+    show right_table at left
     arceus "What about my bethrothed, though?"
+    scene night_bg
+    show left_room at right
+    show left_chair_back at right
+    show kitty festive flipped at manual_pos(0.80, 0.7, 0.5)
+    show db at manual_pos(0.55, 0.55, 0.5)
+    show tate festive at mid_left
+    show cs christmas at mid_offscreen_left
+    show left_table at right
     kitty "Don't ever call me that again."
+    scene night_bg
+    show right_room at right
+    show right_chair_back at right
+    show obama festive at manual_pos(-0.5, 0.5, 0.5)
+    show michael festive at manual_pos(-0.25, 0.6, 0.5)
+    show ed festive at manual_pos(0, 0.55, 0.5)
+    show wesley at manual_pos(0.25, 0.575, 0.5)
+    show rich at manual_pos(0.5, 0.6, 0.5)
+    show linus at manual_pos(0.80, 0.6, 0.5)
+    show luke at manual_pos(0.95, 0.6, 0.5)
+    show right_table at right
     linus "Sure, why not?"
     luke "You just add two international flights to the cost of this, Linus."
     linus "Since when have I been responsible with money, Luke?"
