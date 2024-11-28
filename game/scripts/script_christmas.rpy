@@ -2317,7 +2317,7 @@ label ce_party_before:
         scene cs_house_snow_night
         show ed festive dark flipped at center
         show rich dark flipped at mid_left
-        show wesley dark flipped at left
+        show wesley festive dark flipped at left
         with dissolve
         show cs christmas dark flipped at right with moveinright
         cs "Hey guys! How have you guys been doing?"
@@ -2769,7 +2769,7 @@ label ce_banter:
     music end
     n "While the party starts up, Copguy and the sheriff get into a predicament."
     scene cs_living2
-    show wesley at right
+    show wesley festive at right
     show rich at mid_right
     show db at center
     show copguy festive at mid_right
@@ -3020,7 +3020,7 @@ label ce_banter:
   
     scene cs_living2
     show elf_1
-    show wesley at right
+    show wesley festive at right
     show rich at mid_right
     show db at center
     show cs christmas at left
@@ -3356,7 +3356,7 @@ label ce_mike:
     cs "Zzz..."
     rich "Hey, CS, are you sleeping?"
     scene cs_living2 
-    show wesley at right
+    show wesley festive at right
     show rich at mid_right
     show db at center
     show ed festive at mid_left behind cs
@@ -3489,7 +3489,7 @@ label ce_dinner:
     show obama festive at mid_offscreen_left
     show michael festive at mid_left
     show ed festive at center
-    show wesley at mid_right
+    show wesley festive at mid_right
     show rich at mid_offscreen_right
     show right_table at center
     wesley "My back is sorry about it, too."
@@ -3515,7 +3515,7 @@ label ce_dinner:
     show obama festive at mid_offscreen_left
     show michael festive at mid_left
     show ed festive at center
-    show wesley at mid_right
+    show wesley festive at mid_right
     show rich at mid_offscreen_right
     show right_table at center
     show linus at manual_pos(1.3, 0.6, 0.5)
@@ -3530,7 +3530,7 @@ label ce_dinner:
     show obama festive at manual_pos(-0.5, 0.5, 0.5)
     show michael festive at manual_pos(-0.25, 0.6, 0.5)
     show ed festive at manual_pos(0, 0.55, 0.5)
-    show wesley at manual_pos(0.25, 0.575, 0.5)
+    show wesley festive at manual_pos(0.25, 0.575, 0.5)
     show rich at manual_pos(0.5, 0.6, 0.5)
     show linus at manual_pos(0.80, 0.6, 0.5)
     show luke at manual_pos(0.95, 0.6, 0.5)
@@ -3554,7 +3554,7 @@ label ce_dinner:
     show obama festive at manual_pos(-0.5, 0.5, 0.5)
     show michael festive at manual_pos(-0.25, 0.6, 0.5)
     show ed festive at manual_pos(0, 0.55, 0.5)
-    show wesley at manual_pos(0.25, 0.575, 0.5)
+    show wesley festive at manual_pos(0.25, 0.575, 0.5)
     show rich at manual_pos(0.5, 0.6, 0.5)
     show linus at manual_pos(0.80, 0.6, 0.5)
     show luke at manual_pos(0.95, 0.6, 0.5)
@@ -3577,7 +3577,7 @@ label ce_dinner:
     show obama festive at manual_pos(-0.5, 0.5, 0.5)
     show michael festive at manual_pos(-0.25, 0.6, 0.5)
     show ed festive at manual_pos(0, 0.55, 0.5)
-    show wesley at manual_pos(0.25, 0.575, 0.5)
+    show wesley festive at manual_pos(0.25, 0.575, 0.5)
     show rich at manual_pos(0.5, 0.6, 0.5)
     show linus at manual_pos(0.80, 0.6, 0.5)
     show luke at manual_pos(0.95, 0.6, 0.5)
@@ -3624,7 +3624,7 @@ label ce_dinner:
     show michael festive at mid_right
     show ed festive at mid_offscreen_right
     show right_table at left
-    show wesley at manual_pos(1.3, 0.6, 0.5)
+    show wesley festive at manual_pos(1.3, 0.6, 0.5)
     show rich at manual_pos(1.5, 0.6, 0.5)
     show linus at manual_pos(1.65, 0.6, 0.5)
     show luke at manual_pos(1.80, 0.6, 0.5)
@@ -3637,7 +3637,7 @@ label ce_dinner:
     show obama festive at manual_pos(-0.5, 0.5, 0.5)
     show michael festive at manual_pos(-0.25, 0.6, 0.5)
     show ed festive at manual_pos(0, 0.55, 0.5)
-    show wesley at manual_pos(0.25, 0.575, 0.5)
+    show wesley festive at manual_pos(0.25, 0.575, 0.5)
     show rich at manual_pos(0.5, 0.6, 0.5)
     show linus at manual_pos(0.80, 0.6, 0.5)
     show luke at manual_pos(0.95, 0.6, 0.5)
@@ -3669,7 +3669,7 @@ label ce_dinner:
     show obama festive at manual_pos(-0.5, 0.5, 0.5)
     show michael festive at manual_pos(-0.25, 0.6, 0.5)
     show ed festive at manual_pos(0, 0.55, 0.5)
-    show wesley at manual_pos(0.25, 0.575, 0.5)
+    show wesley festive at manual_pos(0.25, 0.575, 0.5)
     show rich at manual_pos(0.5, 0.6, 0.5)
     show linus at manual_pos(0.80, 0.6, 0.5)
     show luke at manual_pos(0.95, 0.6, 0.5)
@@ -3726,7 +3726,7 @@ label ce_dinner:
     show obama festive at mid_offscreen_left
     show michael festive at mid_left
     show ed festive at center
-    show wesley at mid_right
+    show wesley festive at mid_right
     show rich at mid_offscreen_right
     show right_table at center
     ed "Are you thinking of premium unleaded?"
@@ -3747,7 +3747,7 @@ label ce_dinner:
     show obama festive at mid_offscreen_left
     show michael festive at mid_left
     show ed festive at center
-    show wesley at mid_right
+    show wesley festive at mid_right
     show rich at mid_offscreen_right
     show right_table at center
     ed "Unleaded 88?"
@@ -3791,7 +3791,7 @@ label ce_dinner:
     show obama festive at mid_offscreen_left
     show michael festive at mid_left
     show ed festive at center
-    show wesley at mid_right
+    show wesley festive at mid_right
     show rich at mid_offscreen_right
     show right_table at center
     ed "That's great and all, but what in the world is unleaded 88?"
@@ -4023,7 +4023,7 @@ label ce_exchange:
     show pills at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     rich "Pain pills?"
     wesley "Wait a minute! Those are mine!"
-    show wesley at mid_right with moveinright
+    show wesley festive at mid_right with moveinright
     wesley "I didn't mean to gift that..."
     wesley "I'm gonna steal those since it's my turn now!"
     show pills at Move((0.3125, 0.5), (0.7125, 0.5), 2, repeat=False, bounce=False, xanchor="left", yanchor="top")
@@ -5051,7 +5051,7 @@ label ce_roof_moment:
     with moveoutleft
     santa "Ed? Richard? Welsey? Keep up the good work! Might even need some foundation repair at my workshop very soon! Ho ho!"
     show rich flipped at mid_mid_left with moveinleft
-    show wesley flipped at mid_left with moveinleft
+    show wesley festive flipped at mid_left with moveinleft
     rich "Really!?"
     ed "We appreciate the offer, Mr. Claus. Let's keep in touch!"
     santa "..., And, you, there! Mr. Rosen!"
@@ -5067,7 +5067,7 @@ label ce_roof_moment:
     linus "Absolutely! Just give LTT a call!"
     santa "There are certainly a lot of... people here I would not expect to see."
     show rich
-    show wesley
+    show wesley festive
     with determination
     hide rich
     hide wesley
