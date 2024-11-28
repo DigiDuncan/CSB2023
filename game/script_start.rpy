@@ -2210,6 +2210,9 @@ image night_bg = "bg/table/night_bg.png"
 image cs_bedroom1_ce_car = "bg/cs_bedroom1_ce_car.png"
 image cs_car_inside_snow = "bg/car_inside_snow.png"
 
+# CS Holiday Special Generated Images
+image spent_target = Text("{size=50}{color=#369100}-$81.88", text_align=0.5)
+
 # CS wacky Kuwait Adventures: Mika Edition (Deluxe Content [With Funky Kong {And Dante from Devil may Cry}])
 image kuwait_lieutenant_snow = "characters/kuwait_lieutenant_snow.png"
 image kuwait_nurse_1 = "characters/k_nurse.png"

@@ -1092,7 +1092,7 @@ label ce_before_shopping:
         cs "I should probably stop admiring the view and actually buy what I came here for."
     show cs coat flipped with determination
     hide cs with moveoutleft
-    n "CS grabs a cart."
+    n "CS grabs a cart before venturing further into the store."
     show cs coat at offscreenleft
     show shopping_cart at manual_pos(-0.2, 1.1, 0.75)
     
@@ -1107,7 +1107,7 @@ label ce_before_shopping:
 
     $ collect("shopping_cart")
 
-    n "CS starts at the produce section."
+    n "He starts at the produce section."
     show cs coat surprised
     cs "I think Michael said something about making mashed potatoes..."
     show cs coat disappointed
@@ -1312,7 +1312,9 @@ label ce_before_shopping:
     with moveinleft  
     n "Finally, CS stumbles upon something that was actually on his shopping list."
     cs "Genergy, of course. Always need that."
+    show cs coat disappointed
     cs "Walmart usually has a better deal on these, but, {i}gosh,{/i} I hate going there."
+    show cs coat happy
     cs "And, I'm gonna need a {i}lot{/i} of Genergy to get through all this party prep!"
     
     show genergy at manual_pos(0.4, 0.3) with Dissolve(0.25)
@@ -1404,7 +1406,7 @@ label ce_before_shopping:
     cs "That was... odd."
     cs "You don't see a lot of weirdos like that at Target."
     cs "I guess this place is more like Walmart than I thought."
-    show cs coat surprised
+    show cs coat surprised flipped
     cs "Guess I have a lookalike who shops at IKEA, too."
     show cs coat flipped
     cs "Oh, well. I should probably also get back to shopping."
@@ -1419,7 +1421,7 @@ label ce_before_shopping:
     with moveinright 
     n "CS passes by the electronics section."
     cs "Okay, I don't need anything there."
-    show cs coat surprised
+    show cs coat surprised flipped
     cs "Buuuuuut..."
     cs "I mean, I can't {i}not{/i} see what they have on display."
 
@@ -1434,7 +1436,7 @@ label ce_before_shopping:
 
     # hey check out this neat trick - tate
     show black with dissolve
-    centered "More than one round later..."
+    centered "Way more than one round later..."
     hide black with dissolve
 
     n "CS finally realizes how much time has passed."
@@ -1452,11 +1454,14 @@ label ce_before_shopping:
     with moveoutleft
 
     scene tgt_dairy with dissolve
-
+    pause 0.5
     show cs coat at left
     show shopping_cart at manual_pos(0.4, 1.1, 0.5)
     with moveinleft
 
+    n "Still thinking about that last {i}Tetris{/i} match, CS approaches the cold items."
+
+    pause 1.0
     show cs coat disappointed
     cs "This meal is going to take {i}so{/i} much butter..."
     show cs coat happy
@@ -1464,7 +1469,7 @@ label ce_before_shopping:
     show cs coat worried
     cs "... And, that Paula Deen is scary. I learned {i}that,{/i} too."
     show cs coat happy
-    cs "Good thing she's not attending this party!"
+    cs "Good thing she's not attending {i}this{/i} party!"
     show cs coat
 
     show butter at manual_pos(0.4, 0.3) with Dissolve(0.25):
@@ -1496,7 +1501,7 @@ label ce_before_shopping:
     show cs coat surprised
     cs "I probably don't need to buy too many of these..."
     show cs coat worried
-    cs "There's already going to be a lot of food, so I don't think everyone will even have {i}room{/i} for dessert!"
+    cs "There's already going to be so much food that I don't think everyone will even have {i}room{/i} for dessert!"
     show cs coat
     cs "I'll just grab two."
 
@@ -1616,17 +1621,19 @@ label ce_checkout:
     show shopping_cart at manual_pos(0.4, 1.1, 0.5)
     with moveinleft
 
-    n "CS sees a message on the machine."
+    n "CS sees an error on the display."
+    show cs coat disappointed
     cs "Welp, can't use that one!"
     hide cs 
     hide shopping_cart
     with moveoutright
-    n "CS tries the next machine."
+    n "He moves on to try the next machine."
 
     scene tgt_checkout with dissolve
     show cs coat at left
     show shopping_cart at manual_pos(0.4, 1.1, 0.5)
     with moveinleft
+    pause 1.0
 
     show butter at manual_pos(0.4, 0.8) with Dissolve(0.25):
         zoom 0.5
@@ -1668,7 +1675,7 @@ label ce_checkout:
     show butter at manual_pos(0.4, 0.8) with Dissolve(0.25):
         zoom 0.5
     show butter at manual_pos(0.4, 0.6) with MoveTransition(0.25)
-    play sound sfx_target_beep
+    # don't scan this one, he already scanned one twice.
     show butter at manual_pos(0.7, 0.6) with move
     hide butter with dissolve
 
@@ -1695,7 +1702,7 @@ label ce_checkout:
     play sound sfx_target_beep
     pause 0.5
 
-    cs "Ah, crap. I scanned this one too many times."
+    cs "Ah, crap. I {i}definitely{/i} scanned this one too many times."
     n "The worker comes back."
     show pakoo tgt at mid_right with moveinright
     show pakoo tgt happy with determination
@@ -1845,11 +1852,9 @@ label ce_checkout:
     play sound sfx_target_beep
     scene tgt_checkout_id
     play sound sfx_idcheck
-    show cs coat at left
+    show cs coat worried at left
     show shopping_cart at manual_pos(0.4, 1.1, 0.5)
     show nog at manual_pos(0.4, 0.5)
-    # TODO: find that "buzz-buzz-buzz" these machines make when they're unhappy
-    # It's more of a soft beep than a buzz, but I'm sure I can recreate the sound effect. It's impossible to record at the store. - pak
     n "As CS scans his alcohol, the machine buzzes at him. An on-screen message is requesting an ID."
     show cs coat pissed
     cs "Seriously?!" with vpunch
@@ -1889,20 +1894,20 @@ label ce_checkout:
         parallel:
             linear 0.25 alpha 1.0
         parallel:
-            linear 0.25 ypos 0.5
+            linear 0.25 ypos 0.6
     $ collect("cs_wallet")
 
     pause 1.0
 
-    show cs_id at manual_pos(0.2, 0.5) with dissolve:
+    show cs_id at manual_pos(0.2, 0.6) with dissolve:
         zoom 0.25
     $ collect("cs_id")
     
     show cs_id at manual_pos(0.3, 0.5) with move
     cs "Here you go."
     show pakoo tgt tap
-    n "The worker punches in CS' birthday before handing the card back."
-    show cs_id at manual_pos(0.2, 0.5) with move
+    n "The worker punches in CS' birthdate before handing the card back."
+    show cs_id at manual_pos(0.2, 0.6) with move
 
     show pakoo tgt flipped with determination
     hide pakoo tgt with moveoutright
@@ -1918,7 +1923,7 @@ label ce_checkout:
 
     show genergy at manual_pos(0.4, 0.8) with Dissolve(0.25)
     show genergy at manual_pos(0.4, 0.5) with { "master" : MoveTransition(0.25) }
-    play genergy sfx_target_beep
+    play sound sfx_target_beep
     show cs coat angry
     cs "Kids these days, asking me for my ID..."
     show genergy at manual_pos(0.7, 0.5) with move
@@ -1926,7 +1931,7 @@ label ce_checkout:
 
     show genergy at manual_pos(0.4, 0.8) with Dissolve(0.25)
     show genergy at manual_pos(0.4, 0.5) with { "master" : MoveTransition(0.25) }
-    play genergy sfx_target_beep
+    play sound sfx_target_beep
     show cs coat pissed
     cs "I'm {i}clearly{/i} an adult!"
     show genergy at manual_pos(0.7, 0.5) with move
@@ -1934,14 +1939,14 @@ label ce_checkout:
 
     show genergy at manual_pos(0.4, 0.8) with Dissolve(0.25)
     show genergy at manual_pos(0.4, 0.5) with { "master" : MoveTransition(0.25) }
-    play genergy sfx_target_beep
+    play sound sfx_target_beep
     cs "They should hire some new people!"
     show genergy at manual_pos(0.7, 0.5) with move
     hide genergy with dissolve
 
     show genergy at manual_pos(0.4, 0.8) with Dissolve(0.25)
     show genergy at manual_pos(0.4, 0.5) with { "master" : MoveTransition(0.25) }
-    play genergy sfx_target_beep
+    play sound sfx_target_beep
     show cs coat worried
     cs "At least they don't card for {i}energy drinks!" # some places do! hell, i even got carded for SHARPIES once! - tate
     show genergy at manual_pos(0.7, 0.5) with move # In England they do I think - pak
@@ -1949,7 +1954,7 @@ label ce_checkout:
 
     show genergy at manual_pos(0.4, 0.8) with Dissolve(0.25)
     show genergy at manual_pos(0.4, 0.5) with { "master" : MoveTransition(0.25) }
-    play genergy sfx_target_beep
+    play sound sfx_target_beep
     show cs coat
     cs "Cool, that's everything."
     show genergy at manual_pos(0.7, 0.5) with move
@@ -1972,14 +1977,17 @@ label ce_checkout:
         parallel:
             linear 0.25 alpha 1.0
         parallel:
-            linear 0.25 ypos 0.5
+            linear 0.25 ypos 0.6
     pause 2.0
 
     # List of items: 5lb bags of potatoes (3x), bread (x1), spray cheese (x1), pringles (x1), genergy (x5), butter (x3), pie (x2), eggnog (x1)
-    # TODO: find out the total, do the RPG lost money joke here like in CSB1. remember genergy is more expensive at target
-    # TODO: find the sfx that's like "ding-ding-DING~!" when you pay on these machines
-    n "CS pays with his card before heading out to the car."
 
+    play sound sfx_moneyfalls
+    show spent_target at t_fake_rpg_text(0.5, 0.1, 0.5)
+    # TODO: find the sfx that's like "ding-ding-DING~!" when you pay on these machines
+    # TODO: the total should be actually closer to $75.37. if CS gets target circle here, should we display a different total? - tate
+
+    n "CS pays with his card before heading out to the car."
     hide cs_wallet with dissolve
     show cs coat flipped at left with move
     scene tgt_checkout_finish
@@ -2005,14 +2013,14 @@ label ce_checkout:
 
     cs "I'd better go straight home and put everything away."
     show cs coat hat happy
-    cs "It's the big day tomorrow! This is gonna be the best party {i}ever!"
+    cs "Tomorrow's the big day! This is gonna be the best party {i}ever!"
     hide cs
     hide shopping_cart
     with moveoutright
     pause 2.0
     play sound sfx_driving
-    scene black with Dissolve(5.0)
     stop sound fadeout 5.0
+    scene black with Dissolve(5.0)
 
 label ce_aftershop:
     pause 2.0

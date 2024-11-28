@@ -3,7 +3,7 @@ init python:
 
     def reroll():
         global roller
-        if preferences.cs_bounciness == 100:
+        if preferences.csbounciness == 100:
             roller = 20
         else:
             roller = renpy.random.randint(1, 20)
