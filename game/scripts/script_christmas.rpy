@@ -1633,6 +1633,17 @@ label ce_checkout:
     show butter at manual_pos(0.4, 0.6) with MoveTransition(0.25)
     play sound sfx_target_beep
     pause 0.5
+    scene tgt_checkout_scanning
+    show cs coat at left
+    show shopping_cart at manual_pos(0.4, 1.1, 0.5)
+    show butter at manual_pos(0.4, 0.6):
+        zoom 0.5
+    pause 0.5
+    scene tgt_checkout_scan_twice
+    show cs coat at left
+    show shopping_cart at manual_pos(0.4, 1.1, 0.5)
+    show butter at manual_pos(0.4, 0.6):
+        zoom 0.5
     play sound sfx_scan_twice
     n "As CS starts scanning his items, the machine responds with a disapproving beep."
     show cs coat worried
@@ -1642,6 +1653,12 @@ label ce_checkout:
     tgt_worker "Oh, yeah, it always does that. Just keep going, it's fine."
     show cs coat
     cs "Okay."
+    scene tgt_checkout_scanning
+    show cs coat at left
+    show shopping_cart at manual_pos(0.4, 1.1, 0.5)
+    show butter at manual_pos(0.4, 0.6):
+        zoom 0.5
+    show pakoo tgt at mid_right
     show pakoo tgt flipped with determination
     hide pakoo tgt with moveoutright
 
@@ -1702,7 +1719,7 @@ label ce_checkout:
     pause 0.5
     show pakoo tgt tap
     pause 2.5
-    scene tgt_checkout
+    scene tgt_checkout_scanning
     show cs coat disappointed at left
     show shopping_cart at manual_pos(0.4, 1.1, 0.5)
     show pie at manual_pos(0.4, 0.6):
@@ -1892,7 +1909,7 @@ label ce_checkout:
     hide cs_id
     hide cs_wallet
     with dissolve
-    scene tgt_checkout
+    scene tgt_checkout_scanning
     show cs coat disappointed at left
     show shopping_cart at manual_pos(0.4, 1.1, 0.5)
     show nog at manual_pos(0.4, 0.5)
