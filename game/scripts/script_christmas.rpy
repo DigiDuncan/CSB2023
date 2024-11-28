@@ -2212,12 +2212,15 @@ label ce_party_before:
         show digi dark flipped at mid_left
         with dissolve
         show cs christmas dark flipped at right with moveinright
+        show digi happy dark flipped
         digi "Hey, CS! How've you been?"
+        show digi dark flipped
         cs "Hey, Digi! I didn't know you had a... spaceship?"
         digi "Oh yeah, this old thing. It's a bit of a nugget but it gets the job done."
         cs "Why have I never seen this before?"
         digi "Was never coming from space before."
         pause 0.5
+        show digi shock dark flipped with hpunch
         n "Digi shudders from the temperature."
         digi "It's cold out. Can we go inside?"
         cs "Yeah, let's get inside."
@@ -2529,12 +2532,13 @@ label ce_introductions:
         anno "Looks like it, yeah."
     show tate sheepish festive flipped
     tate "There are... a lot of people here..."
-    show digi flipped
+    show digi thinking flipped
     digi "Yeah, I wonder where Arc and Kitty are..."
     show k17 happy at center
     show k22 at mid_mid_right behind k17
     with moveinright
     show tate shock festive flipped
+    show digi happy flipped
     k17 "OMG hey guys!"
     show k17 shock
     k17 "You guys all look so... different!"
@@ -2548,10 +2552,11 @@ label ce_introductions:
     show k22 disappointed
     k22 "Oh boy, alright K-17, calm down for one second. I think everyone here needs an explanation."
     show k17
-    show digi
+    show digi happy
     show tate festive flipped
     cs "Yes please. I didn't want to say it, but it seems like everytime I meet you guys, your appearance always changes!"
     aria "Sorry."
+    show digi sad
     digi "Did I change too much?"
     cs "No no, just, let Pakoo #2 speak."
     if fun_value(FUN_VALUE_RARE):
@@ -2563,6 +2568,7 @@ label ce_introductions:
     else:
         show k22
         k22 "I'm gonna assume that's me."
+    show digi
     show k22 confident
     k22 "Alright, so, I'm K-22, the physical manifestation of Pakoo's memories from the year 2022."
     show k22
@@ -2691,7 +2697,7 @@ label ce_introductions:
     show cs flipped with determination
     hide cs with moveoutleft
     scene cs_living
-    show digi flipped at left
+    show digi thinking flipped at left
     show linus at mid_left behind digi
     show luke at mid_left_left behind linus
     show blank at mid_right
@@ -2704,6 +2710,7 @@ label ce_introductions:
     linus "Ohhhhh..." (multiple = 2)
     show cs christmas flipped at center with moveinright
     cs "Hey guys! What are you guys doing?"
+    show digi flipped
     digi "Oh, we are just trying to set up a projector to play movies on!"
     linus "Don't ask how this became a 3 man job."
     show cs christmas
@@ -2712,12 +2719,15 @@ label ce_introductions:
     nova "The problem is, I don't really want to have Blank play his shitty music during the party."
     blank "Why? Not all of it's crazy shit, like yours is."
     show cs disappointed christmas
+    show digi shock flipped
     nova "Shut the hell up!"
     show cs worried christmas
     cs "Woah okay, calm down."
+    show digi sad flipped
     show cs disappointed christmas
     cs "This is a Christmas party, after all. Let's try to have fun."
     show cs christmas flipped
+    show digi flipped
     cs "I'm gonna go check on anyone else who is here."
     hide cs with moveoutleft
     scene cs_hallway
@@ -2847,16 +2857,18 @@ label ce_banter:
         obama "Well, you see, we managed to somehow exhaust the list of succession back in 2018, and the house voted me back in."
         k17 "Huh, I see. That's pretty crazy."
     scene cs_living
-    show digi flipped at left
+    show digi thinking flipped at left
     show linus at mid_left behind digi
     show luke at mid_left_left behind linus
     show cs disappointed christmas flipped at right
     with dissolve
     cs "Is this projector still not set up?"
+    show digi angry flipped
     digi "No! The projector keeps giving me this really weird error!"
     linus"Not even I've seen this!"
     digi "Watch, I'll turn it on, and..."
     play sound sfx_bluescreen
+    show digi disappointed flipped
     rich "Hey, nice movie!"
     wesley "Looks like you'll have to set that up all over again."
     db "I got here early for this?"
@@ -2866,13 +2878,15 @@ label ce_banter:
     ed "Hey guys, what movie are we watching?"
     wesley "Nothing until these bozos fix the projector!"
     luke "Okay hold on, I got an idea."
+    show digi thinking flipped
     luke "Everyone step away from the projector."
-    show digi flipped at center
+    show digi thinking flipped at center
     show linus at mid_right
     with move
     show digi with determination
     n "After a little bit of tech magic, the projector comes to life."
     play sound sfx_tada
+    show digi shock
     luke "Tah dah!"
     rich "Finally, we can watch something."
     wesley "Are you 100-percent satisfied, Richard?"
@@ -3211,10 +3225,13 @@ label ce_cooking:
     with dissolve
     arceus "Yeah, so to get the code done, I just got drunk off a bottle of wine and Digi and I chewed through it in a night."
     aria "Damn, that's the best way to do it."
+    show digi thinking
     digi "I mean, {i}I{/i} was sober the whole time. I had to put up with this fluffy bastard."
     aria "Of course you were, I think a sip of wine would knock you flat."
+    show digi goober
     digi "Hey, I'm not {i}that{/i} small."
     aria "Usually."
+    show digi happy
     arceus "And you love putting up with this fluffy bastard."
     digi "While that's true, I think half of that night was spent coding, and the other half was spent confusing the names of four different bald dudes."
     arceus "To be fair, that was hilarious."
@@ -3223,9 +3240,11 @@ label ce_cooking:
     n "CS walks in on the conversation."
     cs "Hey guys! What are you all talking about?"
     digi "Oh, we were just discussing what developing the first game was li--"
+    show digi shock
     n "Aria shoots a look at Digi, as much as she can do that in her current form."
     digi "Er, uh, just talking about a coding project we all worked on."
     cs "Oh, OK. Probably a bunch of stuff I wouldn't understand."
+    show digi
     aria "Certainly not."
     show cs happy christmas
     cs "You guys do good work, though, I can't wait to see what the next DPN Games game will be!"
@@ -3233,6 +3252,7 @@ label ce_cooking:
     arceus "Yeah, me too."
     hide cs with moveoutright
     n "CS walks off."
+    show digi sad
     aria "You're going to have to get better at the whole \"not breaking the illusion\" thing, Digi."
     digi "What? He wouldn't have thought anything of it if you didn't stop me mid-sentence."
     show arceus
@@ -3705,15 +3725,18 @@ label ce_dinner:
     with move
     k22 "Speaking of driving, this reminds me of something."
     k22 "Why does anyone buy regular unleaded gas?"
-    show digi flipped
+    show digi thinking flipped
     digi "Because it's cheaper?"
     k22 "Okay, but it's not though. Super unleaded is way cheaper, and it's better for your car."
+    show digi disappointed flipped
     digi "That doesn't make any sense."
     show k22 confident
     k22 "It doesn't, but it's true!"
     show k22 disappointed
+    show digi sad flipped
     digi "It's not though, Super unleaded is more expensive."
     k22 "It's... not though."
+    show digi angry flipped
     digi "What are you talking about? Of course it's more because it's better for your car!"
     show cs christmas flipped
     cs "Don't you guys mean, unleaded plus?"
@@ -3738,7 +3761,7 @@ label ce_dinner:
     show tate festive at manual_pos(1.25, 0.6, 0.5)
     show db at manual_pos(1.65, 0.6, 0.5)
     show k22 disappointed at center
-    show digi flipped at manual_pos(0.175, 0.65, 0.5)
+    show digi angry flipped at manual_pos(0.175, 0.65, 0.5)
     show left_table at left
     k22 "No, it's not premium, or unleaded 88..."
     scene night_bg
@@ -3759,27 +3782,31 @@ label ce_dinner:
     show tate festive at manual_pos(1.25, 0.6, 0.5)
     show db at manual_pos(1.65, 0.6, 0.5)
     show k22 angry at center
-    show digi flipped at manual_pos(0.175, 0.65, 0.5)
+    show digi disappointed flipped at manual_pos(0.175, 0.65, 0.5)
     show left_table at left
     k22 "It's called super unleaded, it has ethanol in it, and it's {i}better. for. your. car!{/i}"
     k22 "Every gas station we've been to, it's always regular, super, the third option, and diesel!"
     digi "I still think you may be thinking of premium."
     k22 "No, I'm-- Give me a second, I have a picture of this on my phone."
+    show digi thinking flipped
     digi "CS, have you ever seen super unleaded?"
     cs "Uhh... no?"
     show k22 confident
     k22 "Ah-a! See?"
     show gas_prices at mid_right with easeinbottom
+    show digi shock flipped
     digi "What? How?"
     cs "What backwards town do you live in where the better gas is cheaper?"
     k22 "See, the super unleaded is the cheapest, then regular, then premium!"
     hide gas_prices with easeoutbottom
+    show digi thinking flipped
     digi "So, the question now is, what's the difference between plus and super?"
     show k22
     k22 "They might be the same thing."
     k22 "Our super unleaded gas has ethanol in it."
     show k22 confident
     k22 "Guess who makes ethanol? We do!"
+    show digi happy flipped
     digi "I see now!"
     show k22
     digi "So, because you guys make this additive, it's cheaper for you, but more expensive for us."
@@ -3807,14 +3834,14 @@ label ce_dinner:
     show left_table at left
     k22 "It's for cars newer than 2001, that's all I know."
 
-
+    show digi sad flipped
     digi "Hey CS, did K-17 ever come back from the bathroom?"
     cs "Huh?"
     cs "Oh yeah, is that where they ran off to?"
     digi "We should probably go check on them, see if they are okay..."
     scene cs_bathroom
     with dissolve
-    show digi flipped at mid_mid_left
+    show digi sad flipped at mid_mid_left
     show cs christmas at left
     with moveinleft
     digi "Hey! K-17? Are you in there?"
@@ -3824,16 +3851,19 @@ label ce_dinner:
     k17 "No one... told me..."
     k17 "Mixer... died..."
     show cs christmas worried
+    show digi shock flipped
     cs "Uh oh."
     digi "Shiiit."
     show cs christmas disappointed
     cs "Yeah, Mixer shut down some time ago now... sorry about that."
+    show digi sad flipped
     k17 "But why? Why! It was like, the perfect streaming platform!"
     digi "It was, but it was owned by Microsoft. It was bound to happen."
     cs "Hey."
     digi "Listen, just because the Zune was cool doesn't mean--"
     k17 "What do we even do now? Without Mixer, where do you stream?"
     show cs christmas
+    show digi flipped
     cs "Well, I stream on {a=https://twitch.tv/cs188/}Twitch.{/a}"
     digi "{a=https://twitch.tv/DigiDuncan}Me too{/a}, when I get the chance."
     n "K-17 sniffles."
@@ -4400,7 +4430,7 @@ label ce_lights_out:
     scene cs_foyer_off
     show anno festive at mid_left
     show aria festive at mid_mid_left behind anno
-    show digi at mid_mid_left
+    show digi sad at mid_mid_left
     show k17 disappointed at center behind digi
     show k22 disappointed at mid_mid_right
     show tate srs festive flipped at mid_right
@@ -4430,7 +4460,7 @@ label ce_lights_out:
     scene cs_foyer_off
     show anno festive at mid_left
     show aria festive at mid_mid_left behind anno
-    show digi at mid_mid_left
+    show digi sad at mid_mid_left
     show k17 disappointed at center behind digi
     show k22 disappointed at mid_mid_right
     show tate srs festive flipped at mid_right
@@ -4441,6 +4471,7 @@ label ce_lights_out:
     aria "Calm down, CS. Catch your breath."
     show cs disappointed christmas flipped
     cs "The door, it's... {i}all{/i} snow."
+    show digi shock
     show tate sad festive flipped
     show k17 shock flipped
     anno "All snow?"
@@ -4546,7 +4577,7 @@ label ce_snowed_in:
     show cs disappointed christmas at mid_left
     show mean human annoyed flipped at mid_offscreen_left
     show ed festive at right
-    show digi at mid_mid_right
+    show digi sad at mid_mid_right
     show linus at mid_right
     show rich at mid_right_right
     show tate sad festive flipped at mid_mid_left
@@ -4604,7 +4635,7 @@ label ce_snowed_in:
     show cs happy christmas at mid_left
     show mean human flipped at mid_offscreen_left
     show ed festive at right
-    show digi at mid_mid_right
+    show digi sad at mid_mid_right
     show linus at mid_right
     show rich at mid_right_right
     show tate sheepish festive flipped at mid_mid_left
@@ -4613,6 +4644,7 @@ label ce_snowed_in:
     show k17 disappointed at mid_mid_right behind obama
     with dissolve
     cs "It's Reversi!"
+    show digi 
     digi "You have an {i}actual{/i} Reversi board?"
     k17 "Isn't that the one game from Windows 3.1?"
     cs "Precisely!"
