@@ -1568,7 +1568,7 @@ label ce_checkout:
     show cs coat worried
     cs "Yikes, I wonder why..."
 
-    play sound sfx_retail_beep volume 0.5
+    play sound sfx_target_beep volume 0.5
     hide streetguy with moveoutright
     show amtrak_stewardess at mid_right_right
     show snufkin flipped at mid_right
@@ -1580,7 +1580,7 @@ label ce_checkout:
 
     pause 2.0
 
-    play sound sfx_retail_beep volume 0.6
+    play sound sfx_target_beep volume 0.6
     hide amtrak_stewardess with moveoutright
     show snufkin flipped at mid_right_right
     show customer at mid_right
@@ -1591,7 +1591,7 @@ label ce_checkout:
 
     pause 2.0
 
-    play sound sfx_retail_beep volume 0.7
+    play sound sfx_target_beep volume 0.7
     hide snufkin flipped with moveoutright
     show customer at mid_right_right with move
     show cs coat at mid_right
@@ -1600,7 +1600,7 @@ label ce_checkout:
 
     pause 3.0
 
-    play sound sfx_retail_beep volume 0.8
+    play sound sfx_target_beep volume 0.8
     hide customer with moveoutright
     show cs coat at mid_right_right
     show shopping_cart at manual_pos(1.2, 1.1, 0.5)
@@ -1610,6 +1610,7 @@ label ce_checkout:
     cs "Finally, my turn..."
 
     stop music fadeout 10.0
+    play sound2 sfx_tgt_bg fadein 3.0
     scene tgt_checkerror with dissolve
     show cs coat at left
     show shopping_cart at manual_pos(0.4, 1.1, 0.5)
@@ -1630,8 +1631,9 @@ label ce_checkout:
     show butter at manual_pos(0.4, 0.8) with Dissolve(0.25):
         zoom 0.5
     show butter at manual_pos(0.4, 0.6) with MoveTransition(0.25)
-    play sound sfx_retail_beep
-
+    play sound sfx_target_beep
+    pause 0.5
+    play sound sfx_scan_twice
     n "As CS starts scanning his items, the machine responds with a disapproving beep."
     show cs coat worried
     cs "What? It says I scanned this twice? No, I didn't!"
@@ -1649,31 +1651,31 @@ label ce_checkout:
     show butter at manual_pos(0.4, 0.8) with Dissolve(0.25):
         zoom 0.5
     show butter at manual_pos(0.4, 0.6) with MoveTransition(0.25)
-    play sound sfx_retail_beep
+    play sound sfx_target_beep
     show butter at manual_pos(0.7, 0.6) with move
     hide butter with dissolve
 
     show butter at manual_pos(0.4, 0.8) with Dissolve(0.25):
         zoom 0.5
     show butter at manual_pos(0.4, 0.6) with MoveTransition(0.25)
-    play sound sfx_retail_beep
+    play sound sfx_target_beep
     show butter at manual_pos(0.7, 0.6) with move
     hide butter with dissolve
 
     show pie at manual_pos(0.4, 0.8) with Dissolve(0.25):
         zoom 0.5
     show pie at manual_pos(0.4, 0.6) with MoveTransition(0.25)
-    play sound sfx_retail_beep
+    play sound sfx_target_beep
     show pie at manual_pos(0.7, 0.6) with move
     hide pie with dissolve
 
     show pie at manual_pos(0.4, 0.8) with Dissolve(0.25):
         zoom 0.5
     show pie at manual_pos(0.4, 0.6) with MoveTransition(0.25)
-    play sound sfx_retail_beep
+    play sound sfx_target_beep
     pause 0.25
     show cs coat disappointed
-    play sound sfx_retail_beep
+    play sound sfx_target_beep
     pause 0.5
 
     cs "Ah, crap. I scanned this one too many times."
@@ -1696,7 +1698,7 @@ label ce_checkout:
     show pie at manual_pos(0.4, 0.6):
         zoom 0.5
     show pakoo tgt scan
-    play sound sfx_retail_beep
+    play sound sfx_zebra_scan
     pause 0.5
     show pakoo tgt tap
     pause 2.5
@@ -1722,7 +1724,7 @@ label ce_checkout:
     show pakoo tgt think2
     tgt_worker "Hmm..."
     show pakoo tgt scan
-    play sound sfx_retail_beep
+    play sound sfx_zebra_scan
     n "The employee scans the pie."
     show cs coat disappointed
     show pakoo tgt
@@ -1759,7 +1761,7 @@ label ce_checkout:
             cs "Thanks."
             
             show cs_phone at manual_pos(0.35, 0.5) with move
-            play sound sfx_retail_beep
+            play sound sfx_target_beep
             pause 0.5
             hide cs_phone with dissolve
             pause 0.5
@@ -1780,51 +1782,52 @@ label ce_checkout:
 
     show pringles at manual_pos(0.4, 0.8) with Dissolve(0.25)
     show pringles at manual_pos(0.4, 0.5) with MoveTransition(0.25)
-    play sound sfx_retail_beep
+    play sound sfx_target_beep
     show pringles at manual_pos(0.7, 0.5) with move
     hide pringles with dissolve
 
     show spray_cheese at manual_pos(0.4, 0.8) with Dissolve(0.25)
     show spray_cheese at manual_pos(0.4, 0.5) with MoveTransition(0.25)
-    play sound sfx_retail_beep
+    play sound sfx_target_beep
     show spray_cheese at manual_pos(0.7, 0.5) with move
     hide spray_cheese with dissolve
 
     show bread at manual_pos(0.4, 0.8) with Dissolve(0.25)
     show bread at manual_pos(0.4, 0.5) with MoveTransition(0.25)
-    play sound sfx_retail_beep
+    play sound sfx_target_beep
     show bread at manual_pos(0.7, 0.5) with move
     hide bread with dissolve
     
     show potato_bag at manual_pos(0.4, 0.8) with Dissolve(0.25)
     show potato_bag at manual_pos(0.4, 0.5) with MoveTransition(0.25)
-    play sound sfx_retail_beep
+    play sound sfx_target_beep
     show potato_bag at manual_pos(0.7, 0.5) with move
     hide potato_bag with dissolve
 
     show potato_bag at manual_pos(0.4, 0.8) with Dissolve(0.25)
     show potato_bag at manual_pos(0.4, 0.5) with MoveTransition(0.25)
-    play sound sfx_retail_beep
+    play sound sfx_target_beep
     show potato_bag at manual_pos(0.7, 0.5) with move
     hide potato_bag with dissolve
 
     if got_tato_bag == True:
         show tato_bag at manual_pos(0.4, 0.8) with Dissolve(0.25)
         show tato_bag at manual_pos(0.4, 0.5) with MoveTransition(0.25)
-        play sound sfx_retail_beep
+        play sound sfx_target_beep
         show tato_bag at manual_pos(0.7, 0.5) with move
         hide tato_bag with dissolve
     else:
         show potato_bag at manual_pos(0.4, 0.8) with Dissolve(0.25)
         show potato_bag at manual_pos(0.4, 0.5) with MoveTransition(0.25)
-        play sound sfx_retail_beep
+        play sound sfx_target_beep
         show potato_bag at manual_pos(0.7, 0.5) with move
         hide potato_bag with dissolve
 
     show nog at manual_pos(0.4, 0.8) with Dissolve(0.25)
     show nog at manual_pos(0.4, 0.5) with MoveTransition(0.25)
-    play sound sfx_retail_beep
+    play sound sfx_target_beep
     scene tgt_checkout_id
+    play sound sfx_idcheck
     show cs coat at left
     show shopping_cart at manual_pos(0.4, 1.1, 0.5)
     show nog at manual_pos(0.4, 0.5)
@@ -1844,7 +1847,7 @@ label ce_checkout:
     show shopping_cart at manual_pos(0.4, 1.1, 0.5)
     show nog at manual_pos(0.4, 0.5)
     show pakoo tgt scan
-    play sound sfx_retail_beep
+    play sound sfx_zebra_scan
     pause 0.5
     show pakoo tgt tap
     pause 2.5
@@ -1898,7 +1901,7 @@ label ce_checkout:
 
     show genergy at manual_pos(0.4, 0.8) with Dissolve(0.25)
     show genergy at manual_pos(0.4, 0.5) with { "master" : MoveTransition(0.25) }
-    play genergy sfx_retail_beep
+    play genergy sfx_target_beep
     show cs coat angry
     cs "Kids these days, asking me for my ID..."
     show genergy at manual_pos(0.7, 0.5) with move
@@ -1906,7 +1909,7 @@ label ce_checkout:
 
     show genergy at manual_pos(0.4, 0.8) with Dissolve(0.25)
     show genergy at manual_pos(0.4, 0.5) with { "master" : MoveTransition(0.25) }
-    play genergy sfx_retail_beep
+    play genergy sfx_target_beep
     show cs coat pissed
     cs "I'm {i}clearly{/i} an adult!"
     show genergy at manual_pos(0.7, 0.5) with move
@@ -1914,14 +1917,14 @@ label ce_checkout:
 
     show genergy at manual_pos(0.4, 0.8) with Dissolve(0.25)
     show genergy at manual_pos(0.4, 0.5) with { "master" : MoveTransition(0.25) }
-    play genergy sfx_retail_beep
+    play genergy sfx_target_beep
     cs "They should hire some new people!"
     show genergy at manual_pos(0.7, 0.5) with move
     hide genergy with dissolve
 
     show genergy at manual_pos(0.4, 0.8) with Dissolve(0.25)
     show genergy at manual_pos(0.4, 0.5) with { "master" : MoveTransition(0.25) }
-    play genergy sfx_retail_beep
+    play genergy sfx_target_beep
     show cs coat worried
     cs "At least they don't card for {i}energy drinks!" # some places do! hell, i even got carded for SHARPIES once! - tate
     show genergy at manual_pos(0.7, 0.5) with move # In England they do I think - pak
@@ -1929,7 +1932,7 @@ label ce_checkout:
 
     show genergy at manual_pos(0.4, 0.8) with Dissolve(0.25)
     show genergy at manual_pos(0.4, 0.5) with { "master" : MoveTransition(0.25) }
-    play genergy sfx_retail_beep
+    play genergy sfx_target_beep
     show cs coat
     cs "Cool, that's everything."
     show genergy at manual_pos(0.7, 0.5) with move
@@ -1972,6 +1975,7 @@ label ce_checkout:
     with moveoutright
     
     stop sound fadeout 3.0
+    stop sound2 fadeout 3.0
     scene black with dissolve
     scene tgt_outside
     with dissolve
