@@ -116,7 +116,7 @@
     },
     "craptop": {
         "img": "craptop",
-        "name": "CS's Craptop",
+        "name": "CS' Craptop",
         "owner": "CS",
         "desc": "It's had a good run...\n\nNotably, these older Dell machines are still rather common.",
         "rarity": "Common"
@@ -139,21 +139,21 @@
     },
     "cs_car": {
         "img": "cs_car_item",
-        "name": "CS's Car",
+        "name": "CS' Car",
         "owner": "CS",
         "desc": "A 2009 Honda Civic LX-S.",
         "rarity": "Common"
     },
     "cs_car_old": {
         "img": "cs_car_old_item",
-        "name": "CS's Car...?",
+        "name": "CS' Car...?",
         "owner": "CS",
         "desc": "A 2014 BMW 4? That... doesn't seem right. How did this get here?",
         "rarity": "Uncommon"
     },
     "cs_id": {
         "img": "cs_id",
-        "name": "CS's ID Card",
+        "name": "CS' ID Card",
         "owner": "CS",
         "desc": "He should probably get one with an updated photo...",
         "rarity": "Common",
@@ -161,14 +161,14 @@
     },
     "cs_phone": {
         "img": "cs_phone",
-        "name": "CS's Cellphone",
+        "name": "CS' Cellphone",
         "owner": "CS",
-        "desc": "While purple isn't CS's favorite color, there's no denying that this phone is stylish!",
+        "desc": "While purple isn't CS' favorite color, there's no denying that this phone is stylish!",
         "rarity": "Common"
     },
     "cs_wallet": {
         "img": "cs_wallet",
-        "name": "CS's Wallet",
+        "name": "CS' Wallet",
         "owner": "CS",
         "desc": "While he may have missed out on the PUMA × Tetris shoe collab, at least CS copped this sweet wallet at Hot Topic.",
         "rarity": "Common",
@@ -270,7 +270,7 @@
         "img": "genergy",
         "name": "Genergy",
         "owner": "CS",
-        "desc": "CS's favorite energy drink. Plum-flavored.",
+        "desc": "CS' favorite energy drink. Plum-flavored.",
         "rarity": "Common",
         "dx": true
     },
@@ -444,7 +444,7 @@
     },
     "shovel": {
         "img": "shovel",
-        "name": "CS's Shovel",
+        "name": "CS' Shovel",
         "owner": "CS",
         "desc": "In the dead of winter, it's a northerner's best friend.",
         "rarity": "Common",
