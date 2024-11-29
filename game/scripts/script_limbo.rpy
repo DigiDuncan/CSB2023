@@ -202,9 +202,9 @@ screen rockstar_check:
     hbox xalign 0.0 yalign 0.25:
         spacing 50 
 
-########## CS's Data ##########
+########## CS' Data ##########
 
-# TODO: NOTE TO TATE - DON'T TOUCH THESE VALUES, THESE ARE CS'S VALUES
+# TODO: NOTE TO TATE - DON'T TOUCH THESE VALUES, THESE ARE CS' VALUES
 # TODO: although, whoever is managing these? please update the persistent to use new formatting
 
 label csdata:

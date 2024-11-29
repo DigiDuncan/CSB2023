@@ -831,7 +831,7 @@ label true_pennsylvania:
     n "The pencil walks away."
     show cs at center
     cs "A pencil sharpening competition?"
-    n "Visions of an old video appear in CS's head."
+    n "Visions of an old video appear in CS' head."
     show cs happy
     cs "I could totally {i}crush{/i} that! I've {i}gotta{/i} sign up!"
     show arceus angry at right with moveinright

@@ -688,7 +688,7 @@ label dx_after_pencil_ask:
     show cs cultist at left
     with dissolve
     if god_money and check2:
-        pencil "Geez, you did it again."
+        pencil "Jeez, you did it again."
         show cs cultist flipped with determination
         hide cs with moveoutleft
         n "CS turns around and leaves, offering no further explanation."
@@ -696,7 +696,7 @@ label dx_after_pencil_ask:
         show cs cultist at center with moveinleft
         jump dx_after_seek_competitors 
     elif god_money and pencil_check:
-        pencil "Geez, you did it again."
+        pencil "Jeez, you did it again."
         cs "Also, do you have any spare change I can have?"
         pencil "What? I mean, I guess you did beat my score..."
         n "The pencil man takes out some bills and hands them to CS."
@@ -1380,7 +1380,7 @@ label dx_after_two_right:
     #CS got them all right
 label dx_after_three_right:    
     cs "Woohoo!"
-    l_cultist "Geez, you've got a really good memory."
+    l_cultist "Jeez, you've got a really good memory."
     l_cultist "You deserve to win this year. Good luck to ya, man."
     cs "Thank you!"
     if god_money:
@@ -1419,7 +1419,7 @@ label dx_after_blindeye_ask:
     cs "Do you use some crazy voodoo magic or some shit?"
     blind_eye "No, we use this."
     n "The Blind Eye cultist pulls out what looks like a gun with a lightbulb on the end of it."
-    cs "Geez, does that really work? It looks like it was built in the 1800's!"
+    cs "Jeez, does that really work? It looks like it was built in the 1800's!"
     blind_eye "Yes, well, it did."
     blind_eye "Unfortunately, it broke recently and we haven't been able to fix it."
     blind_eye "... I may have dropped it too many times."

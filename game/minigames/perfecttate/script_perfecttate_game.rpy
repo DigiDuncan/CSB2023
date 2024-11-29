@@ -1,7 +1,7 @@
 # TODO: this is gonna be a clone of UFO game except harder and uh i'd like it to read a clone hero chart for timing only
 # instead of hitting notes you'd be dodging projectiles to the beat
 # the position is still somewhat randomly generated but the timing should be read from a file
-# CS's position should be tracked, give tate the appearance of ACTUALLY trying to target him
+# CS' position should be tracked, give tate the appearance of ACTUALLY trying to target him
 # no the chart does not exist yet oops
 # also there are five lanes now
 # these sections of the song should be charted (approximate):
@@ -52,7 +52,7 @@ init python:
 
             # TODO: besides replacing the assets, the "laser" needs to be a small projectile instead
             # no idea how the hitbox will work
-            # TODO: CS's sprite should be no more than 300 wide.
+            # TODO: CS' sprite should be no more than 300 wide.
 
             self.win = None
             #self.cs = store.cs_run
@@ -198,7 +198,7 @@ init python:
                 # Render Tate
                 r.blit(tate_renderer, (current_tate_x, TATE_Y))
 
-                # Render CS's health bar
+                # Render CS' health bar
                 r.blit(health_renderer, (0, 0))
 
                 # No more danger

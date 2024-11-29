@@ -111,7 +111,7 @@ screen jukebox_welcome():
         xsize 850
         xalign 0.5 yalign 0.5
         xoffset 300
-        text "In this category, you can listen to all the sweet tunes you've discovered throughout CS's adventures!"
+        text "In this category, you can listen to all the sweet tunes you've discovered throughout CS' adventures!"
         text "([unlocked_music_count]/[music_count] unlocked)"
 
 ##-----------------------------------------------

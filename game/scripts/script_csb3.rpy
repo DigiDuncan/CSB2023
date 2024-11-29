@@ -470,7 +470,7 @@ label csbiii_boost:
     cs "Holy crap! This is amazing! It optimized every part of my YTP!"
     linus "That's pretty cool! Let's try it on a completely new source."
     linus "Open the video that we just recorded yesterday."
-    n "CS opens the video and re-enables the YTP settings. Before CS's eyes, edits are automatically made to the source."
+    n "CS opens the video and re-enables the YTP settings. Before CS' eyes, edits are automatically made to the source."
     cs "Wow! This is incredible!"
     linus "And, hey, if you don't like the edits it makes, you can always turn it off or tweak the other options in that tab."
     linus "If all else fails, you still have the ability to edit any section the old-fashioned way!"
@@ -928,7 +928,7 @@ label csbiii_arc_escape:
     show cswanted at manual_pos(0.65, 0.55, 0.5) with Dissolve(0.25):
         zoom 0.75
     $ collect("cswanted")
-    n "Copguy produces a wanted poster with CS's face."
+    n "Copguy produces a wanted poster with CS' face."
     hide cswanted with dissolve
     taran "Uhh, yeah, that's--"
     play sound sfx_punch_alt

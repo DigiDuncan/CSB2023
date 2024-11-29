@@ -608,7 +608,7 @@ label train_kingman_platform:
     show cs surprised
     pause 1.0
     "...{w=1.0}{nw}"
-    tate "I'm just an old friend of CS's."
+    tate "I'm just an old friend of CS'."
     show cs happy
     cs "Yep!"
     tate "Of course."
@@ -1302,7 +1302,7 @@ label train_dining:
     else:
         n "Arceus arrives at the dining car."
     n "The aromas of so many different foods mingling together overwhelm his canine senses."
-    arceus "Geez, it smells like a high school cafeteria..."
+    arceus "Jeez, it smells like a high school cafeteria..."
     arceus "I think I'll just grab myself a bottle of wine and get out of here."
     show arceus at left with moveinleft
     n "As he approaches the counter, Arceus finds his attention redirected towards a yellow... {w=0.5}thing."

@@ -85,7 +85,7 @@ label friend2_car_ride_1:
     with dissolve
     tate "Haaahahaha-- {i}snort{/i}"
     kitty "Bloody hell!"
-    mika "Geez, I didn't think it was {i}that{/i} bad."
+    mika "Jeez, I didn't think it was {i}that{/i} bad."
     show tate flipped
     tate "Yeah, alright, we had a laugh, but maybe we should chill a bit."
     tate "They've probably been stressed out all day long."

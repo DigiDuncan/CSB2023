@@ -6,7 +6,7 @@ The changes are documented and their drawbacks are explained here, in case rollb
 The `.psd` file is provided in the root folder. Individual layers could be exported if the team decided to go down the route of utilizing Tate's LayeredImage solution for outfits.
 
 ## CHANGES
-- CS's base texture was based on the full-resolution `full/neutral` art, with some edits for cleanliness.
+- CS' base texture was based on the full-resolution `full/neutral` art, with some edits for cleanliness.
 - All previous CS assets have been moved to `/_old`, except for:
   - `CSnake_Angry` -> `snake/angry`
   - `CSnake_worried_gown` -> `snake/worried_gown`

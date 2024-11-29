@@ -463,7 +463,7 @@ label friend_after_fanboy:
     linus "Nahhh!"
     linus "We can even make a video about it so others won't fuck with us!"
     show cs disappointed
-    cs "Geez, okay, if you're so sure."
+    cs "Jeez, okay, if you're so sure."
     linus "Come on, let's get inside first."
     show pakoo flipped with determination
     hide cs
@@ -786,7 +786,7 @@ label friend_fire_range:
     arceus "Hell yeah! We can use this!"
     cs "Yeah! To shoot mean people right?"
     show arceus angry
-    arceus "Geez, man, I was thinking to {i}intimidate{/i} them!"
+    arceus "Jeez, man, I was thinking to {i}intimidate{/i} them!"
     cs "...I was also thinking that."
     show arceus
     show pakoo flipped at left with moveinleft
