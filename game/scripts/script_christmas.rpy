@@ -2856,7 +2856,7 @@ label ce_banter:
     else:
         obama "Well, you see, we managed to somehow exhaust the list of succession back in 2018, and the house voted me back in."
         k17 "Huh, I see. That's pretty crazy."
-    scene cs_living
+    scene cs_living_signal
     show digi thinking flipped at left
     show linus festive at mid_left behind digi
     show luke festive at mid_left_left behind linus
@@ -2867,6 +2867,11 @@ label ce_banter:
     digi "No! The projector keeps giving me this really weird error!"
     linus"Not even I've seen this!"
     digi "Watch, I'll turn it on, and..."
+    scene cs_living_error
+    show digi angry flipped at left
+    show linus festive at mid_left behind digi
+    show luke festive at mid_left_left behind linus
+    show cs disappointed christmas flipped at right
     play sound sfx_bluescreen
     show digi disappointed flipped
     rich "Hey, nice movie!"
@@ -2885,6 +2890,11 @@ label ce_banter:
     with move
     show digi with determination
     n "After a little bit of tech magic, the projector comes to life."
+    scene cs_living_elf
+    show digi at center
+    show linus festive at mid_right behind digi
+    show luke festive at mid_left_left behind linus
+    show cs disappointed christmas flipped at right
     play sound sfx_tada
     show digi shock
     luke "Tah dah!"
