@@ -2389,7 +2389,7 @@ label ce_party_before:
         hide cs with moveoutleft
         scene cs_house_snow_night
         show linus dark at mid_left
-        show luke dark flipped at left
+        show luke festive dark flipped at left
         with dissolve
         show cs christmas dark flipped at right with moveinright
         linus "Hey CS! Long time no see!"
@@ -2699,7 +2699,7 @@ label ce_introductions:
     scene cs_living
     show digi thinking flipped at left
     show linus at mid_left behind digi
-    show luke at mid_left_left behind linus
+    show luke festive at mid_left_left behind linus
     show blank at mid_right
     show nova at right
     with dissolve
@@ -2859,7 +2859,7 @@ label ce_banter:
     scene cs_living
     show digi thinking flipped at left
     show linus at mid_left behind digi
-    show luke at mid_left_left behind linus
+    show luke festive at mid_left_left behind linus
     show cs disappointed christmas flipped at right
     with dissolve
     cs "Is this projector still not set up?"
@@ -3186,7 +3186,7 @@ label ce_cooking:
     show anne at mid_mid_left with moveinleft
     show rich at mid_left with moveinleft
     show kitty festive at mid_left_left with moveinleft
-    show luke at left with moveinleft
+    show luke festive at left with moveinleft
     n "A line starts to form next to the bathroom."
 
     scene cs_hallway
@@ -3539,7 +3539,7 @@ label ce_dinner:
     show rich at mid_offscreen_right
     show right_table at center
     show linus at manual_pos(1.3, 0.6, 0.5)
-    show luke at manual_pos(1.45, 0.6, 0.5)
+    show luke festive at manual_pos(1.45, 0.6, 0.5)
     ed "You've more than made it up to us, CS."
     rich "Yeah, you helped propel our business to new heights! Or, I guess, new foundations."
     wesley "Mmm."
@@ -3553,7 +3553,7 @@ label ce_dinner:
     show wesley festive at manual_pos(0.25, 0.575, 0.5)
     show rich at manual_pos(0.5, 0.6, 0.5)
     show linus at manual_pos(0.80, 0.6, 0.5)
-    show luke at manual_pos(0.95, 0.6, 0.5)
+    show luke festive at manual_pos(0.95, 0.6, 0.5)
     show right_table at right
     with move
     linus "So, CS, when are we getting you back for another video?"
@@ -3577,7 +3577,7 @@ label ce_dinner:
     show wesley festive at manual_pos(0.25, 0.575, 0.5)
     show rich at manual_pos(0.5, 0.6, 0.5)
     show linus at manual_pos(0.80, 0.6, 0.5)
-    show luke at manual_pos(0.95, 0.6, 0.5)
+    show luke festive at manual_pos(0.95, 0.6, 0.5)
     show right_table at right
     luke "You were a fan favourite."  # Intentional Canadian spelling
     scene night_bg
@@ -3600,7 +3600,7 @@ label ce_dinner:
     show wesley festive at manual_pos(0.25, 0.575, 0.5)
     show rich at manual_pos(0.5, 0.6, 0.5)
     show linus at manual_pos(0.80, 0.6, 0.5)
-    show luke at manual_pos(0.95, 0.6, 0.5)
+    show luke festive at manual_pos(0.95, 0.6, 0.5)
     show right_table at right
     linus "We'll pay for your flight out~"
     scene night_bg
@@ -3647,7 +3647,7 @@ label ce_dinner:
     show wesley festive at manual_pos(1.3, 0.6, 0.5)
     show rich at manual_pos(1.5, 0.6, 0.5)
     show linus at manual_pos(1.65, 0.6, 0.5)
-    show luke at manual_pos(1.80, 0.6, 0.5)
+    show luke festive at manual_pos(1.80, 0.6, 0.5)
     arceus "Me? I'm in the UK now, I don't know if I can make it all the way to West Canada."
     scene night_bg
     show right_room at right
@@ -3660,7 +3660,7 @@ label ce_dinner:
     show wesley festive at manual_pos(0.25, 0.575, 0.5)
     show rich at manual_pos(0.5, 0.6, 0.5)
     show linus at manual_pos(0.80, 0.6, 0.5)
-    show luke at manual_pos(0.95, 0.6, 0.5)
+    show luke festive at manual_pos(0.95, 0.6, 0.5)
     show right_table at right
     with move
     linus "We'd pay for your flight out, as well."
@@ -3692,7 +3692,7 @@ label ce_dinner:
     show wesley festive at manual_pos(0.25, 0.575, 0.5)
     show rich at manual_pos(0.5, 0.6, 0.5)
     show linus at manual_pos(0.80, 0.6, 0.5)
-    show luke at manual_pos(0.95, 0.6, 0.5)
+    show luke festive at manual_pos(0.95, 0.6, 0.5)
     show right_table at right
     linus "Sure, why not?"
     luke "You just add two international flights to the cost of this, Linus."
@@ -4146,7 +4146,7 @@ label ce_exchange:
     linus "No, how was I supposed to figure that out?"
     hide linus with moveoutright
     luke "Whatever, it's my go now."
-    show luke flipped at mid_left with moveinleft
+    show luke festive flipped at mid_left with moveinleft
     luke "I got..."
     show monitor at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show hard_drive at Move((0.3125, 1.0), (0.35, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
@@ -4254,7 +4254,7 @@ label ce_climax:
     show cs christmas at left
     show k22 at mid_right
     show k17 at mid_offscreen_right
-    show luke at center
+    show luke festive at center
     show tate festive at mid_left behind cs
     show mean human flipped at mid_offscreen_left behind cs
     with dissolve
@@ -4807,7 +4807,7 @@ label ce_billy_time:
     show mean human at mid_offscreen_right
     show sheriff festive at mid_mid_right
     show copguy festive at mid_right
-    show luke at mid_left
+    show luke festive at mid_left
     show rich flipped at mid_mid_left behind cs
     with dissolve
     show tate festive at mid_left
