@@ -921,7 +921,7 @@ label ce_setup:
     #Outside
     #After
 
-    scene cs_living2
+    scene cs_living2_festive
     show cs happy at left
     show anno at right
     with dissolve
@@ -2516,7 +2516,7 @@ label ce_party_before:
 label ce_introductions:
     scene black with dissolve
     n "By the time of the party, everyone shows up at CS' house in droves."
-    scene cs_foyer
+    scene cs_foyer_festive
     show cs christmas at left
     show anno festive at mid_left behind cs
     show aria festive at mid_mid_left behind anno
@@ -2778,7 +2778,7 @@ label ce_banter:
     stop music fadeout 3.0
     music end
     n "While the party starts up, Copguy and the sheriff get into a predicament."
-    scene cs_living2
+    scene cs_living2_festive
     show wesley festive at right
     show rich festive at mid_right
     show db at center
@@ -2891,7 +2891,7 @@ label ce_banter:
     rich "Finally, we can watch something."
     wesley "Are you 100-percent satisfied, Richard?"
     rich "Only about 80-percent."
-    scene cs_foyer
+    scene cs_foyer_festive
     show aria festive at mid_mid_left
     show tate festive sheepish flipped at mid_right
     show mean human at mid_offscreen_right
@@ -3032,7 +3032,7 @@ label ce_banter:
     # TODO: also why is elf_1 a movie file if it's not even on-screen...? - tate
     $ renpy.music.set_volume(0.25)
   
-    scene cs_living2
+    scene cs_living2_festive
     show elf_1
     show wesley festive at right
     show rich festive at mid_right
@@ -3218,7 +3218,7 @@ label ce_cooking:
     kitty "... ... Shit, you right."
 
     # OK, is this scene too meta? I like it a lot but I'm worried I'm pushing the boundaries a bit here.
-    scene cs_foyer
+    scene cs_foyer_festive
     show aria festive at left
     show digi at center
     show arceus at right
@@ -3290,7 +3290,7 @@ label ce_cooking:
 label ce_mike:
     stop music fadeout 3.0
     music end
-    scene cs_living2
+    scene cs_living2_festive
     show cs christmas at left
     show rich festive at center
     show ed festive at mid_right
@@ -3302,7 +3302,7 @@ label ce_mike:
     cs "Well, tickle my ballsack! What great timing!"
     grace "CS... you can't just say stuff like that."
     n "CS moves to open the door."
-    scene cs_foyer with dissolve
+    scene cs_foyer_festive with dissolve
     show cs christmas at left with moveinleft
     cs "Hey guys, the pizza is here!"
     n "CS opens the door to let the pizza person in."
@@ -3375,7 +3375,7 @@ label ce_mike:
     play sound sfx_csnore
     cs "Zzz..."
     rich "Hey, CS, are you sleeping?"
-    scene cs_living2 
+    scene cs_living2_festive 
     show wesley festive at right
     show rich festive at mid_right
     show db at center
@@ -4427,7 +4427,7 @@ label ce_lights_out:
     cs "Well, that's some awesome news..."
     cs "I'll go check on others, and see if I can get outside."
     hide cs with moveoutright
-    scene cs_foyer_off
+    scene cs_foyer_off_festive
     show anno festive at mid_left
     show aria festive at mid_mid_left behind anno
     show digi sad at mid_mid_left
@@ -4457,7 +4457,7 @@ label ce_lights_out:
     n "CS sticks his finger out into the mysterious substance."
     cs "Oh my God, how much... did it..."
     n "CS slams the door shut and runs back to deliver the news."
-    scene cs_foyer_off
+    scene cs_foyer_off_festive
     show anno festive at mid_left
     show aria festive at mid_mid_left behind anno
     show digi sad at mid_mid_left
@@ -4573,7 +4573,7 @@ label ce_snowed_in:
     mean "Let's get back inside, it's freezing out here."
     scene black with dissolve
     n "CS and Mean climb back down and meet back up with everyone."
-    scene cs_living2_off
+    scene cs_living2_off_festive
     show cs disappointed christmas at mid_left
     show mean human annoyed flipped at mid_offscreen_left
     show ed festive at right
@@ -4631,7 +4631,7 @@ label ce_snowed_in:
     cs "It's better than chess! I'll be back."
     scene black with dissolve
     n "After a bit of rummaging, CS comes back with a blueish-looking box."
-    scene cs_living2_off
+    scene cs_living2_off_festive
     show cs happy christmas at mid_left
     show mean human flipped at mid_offscreen_left
     show ed festive at right
@@ -4663,7 +4663,7 @@ label ce_snowed_in:
     # Insert Reversi Gameplay here
 
 label ce_billy_time:
-    scene cs_living2_off
+    scene cs_living2_off_festive
     show cs christmas at mid_left
     show mean human flipped at mid_offscreen_left
     show ed festive at right
@@ -4802,7 +4802,7 @@ label ce_billy_time:
     hide tate
     hide billy
     with moveoutleft
-    scene cs_living2 
+    scene cs_living2_festive
     show cs christmas flipped at center
     show mean human at mid_offscreen_right
     show sheriff festive at mid_mid_right
