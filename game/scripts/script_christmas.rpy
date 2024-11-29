@@ -2388,7 +2388,7 @@ label ce_party_before:
         cs "It looks like Linus got here first!"
         hide cs with moveoutleft
         scene cs_house_snow_night
-        show linus dark at mid_left
+        show linus festive dark at mid_left
         show luke festive dark flipped at left
         with dissolve
         show cs christmas dark flipped at right with moveinright
@@ -2698,7 +2698,7 @@ label ce_introductions:
     hide cs with moveoutleft
     scene cs_living
     show digi thinking flipped at left
-    show linus at mid_left behind digi
+    show linus festive at mid_left behind digi
     show luke festive at mid_left_left behind linus
     show blank at mid_right
     show nova at right
@@ -2858,7 +2858,7 @@ label ce_banter:
         k17 "Huh, I see. That's pretty crazy."
     scene cs_living
     show digi thinking flipped at left
-    show linus at mid_left behind digi
+    show linus festive at mid_left behind digi
     show luke festive at mid_left_left behind linus
     show cs disappointed christmas flipped at right
     with dissolve
@@ -2881,7 +2881,7 @@ label ce_banter:
     show digi thinking flipped
     luke "Everyone step away from the projector."
     show digi thinking flipped at center
-    show linus at mid_right
+    show linus festive at mid_right
     with move
     show digi with determination
     n "After a little bit of tech magic, the projector comes to life."
@@ -3538,7 +3538,7 @@ label ce_dinner:
     show wesley festive at mid_right
     show rich at mid_offscreen_right
     show right_table at center
-    show linus at manual_pos(1.3, 0.6, 0.5)
+    show linus festive at manual_pos(1.3, 0.6, 0.5)
     show luke festive at manual_pos(1.45, 0.6, 0.5)
     ed "You've more than made it up to us, CS."
     rich "Yeah, you helped propel our business to new heights! Or, I guess, new foundations."
@@ -3552,7 +3552,7 @@ label ce_dinner:
     show ed festive at manual_pos(0, 0.55, 0.5)
     show wesley festive at manual_pos(0.25, 0.575, 0.5)
     show rich at manual_pos(0.5, 0.6, 0.5)
-    show linus at manual_pos(0.80, 0.6, 0.5)
+    show linus festive at manual_pos(0.80, 0.6, 0.5)
     show luke festive at manual_pos(0.95, 0.6, 0.5)
     show right_table at right
     with move
@@ -3576,7 +3576,7 @@ label ce_dinner:
     show ed festive at manual_pos(0, 0.55, 0.5)
     show wesley festive at manual_pos(0.25, 0.575, 0.5)
     show rich at manual_pos(0.5, 0.6, 0.5)
-    show linus at manual_pos(0.80, 0.6, 0.5)
+    show linus festive at manual_pos(0.80, 0.6, 0.5)
     show luke festive at manual_pos(0.95, 0.6, 0.5)
     show right_table at right
     luke "You were a fan favourite."  # Intentional Canadian spelling
@@ -3599,7 +3599,7 @@ label ce_dinner:
     show ed festive at manual_pos(0, 0.55, 0.5)
     show wesley festive at manual_pos(0.25, 0.575, 0.5)
     show rich at manual_pos(0.5, 0.6, 0.5)
-    show linus at manual_pos(0.80, 0.6, 0.5)
+    show linus festive at manual_pos(0.80, 0.6, 0.5)
     show luke festive at manual_pos(0.95, 0.6, 0.5)
     show right_table at right
     linus "We'll pay for your flight out~"
@@ -3646,7 +3646,7 @@ label ce_dinner:
     show right_table at left
     show wesley festive at manual_pos(1.3, 0.6, 0.5)
     show rich at manual_pos(1.5, 0.6, 0.5)
-    show linus at manual_pos(1.65, 0.6, 0.5)
+    show linus festive at manual_pos(1.65, 0.6, 0.5)
     show luke festive at manual_pos(1.80, 0.6, 0.5)
     arceus "Me? I'm in the UK now, I don't know if I can make it all the way to West Canada."
     scene night_bg
@@ -3659,7 +3659,7 @@ label ce_dinner:
     show ed festive at manual_pos(0, 0.55, 0.5)
     show wesley festive at manual_pos(0.25, 0.575, 0.5)
     show rich at manual_pos(0.5, 0.6, 0.5)
-    show linus at manual_pos(0.80, 0.6, 0.5)
+    show linus festive at manual_pos(0.80, 0.6, 0.5)
     show luke festive at manual_pos(0.95, 0.6, 0.5)
     show right_table at right
     with move
@@ -3691,7 +3691,7 @@ label ce_dinner:
     show ed festive at manual_pos(0, 0.55, 0.5)
     show wesley festive at manual_pos(0.25, 0.575, 0.5)
     show rich at manual_pos(0.5, 0.6, 0.5)
-    show linus at manual_pos(0.80, 0.6, 0.5)
+    show linus festive at manual_pos(0.80, 0.6, 0.5)
     show luke festive at manual_pos(0.95, 0.6, 0.5)
     show right_table at right
     linus "Sure, why not?"
@@ -4138,7 +4138,7 @@ label ce_exchange:
     linus "{a=https://www.lttstore.com}lttstore.com.{/a}"
     hide michael with moveoutright
     linus "Alright, it's my turn."
-    show linus at mid_left with moveinleft
+    show linus festive at mid_left with moveinleft
     show ltt_screwdriver at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     linus "Hey Luke! I got your gift!"
     luke "Couldn't you tell it was mine?"
@@ -4578,7 +4578,7 @@ label ce_snowed_in:
     show mean human annoyed flipped at mid_offscreen_left
     show ed festive at right
     show digi sad at mid_mid_right
-    show linus at mid_right
+    show linus festive at mid_right
     show rich at mid_right_right
     show tate sad festive flipped at mid_mid_left
     show obama festive at center behind digi
@@ -4636,7 +4636,7 @@ label ce_snowed_in:
     show mean human flipped at mid_offscreen_left
     show ed festive at right
     show digi sad at mid_mid_right
-    show linus at mid_right
+    show linus festive at mid_right
     show rich at mid_right_right
     show tate sheepish festive flipped at mid_mid_left
     show obama festive at center behind digi
@@ -4668,7 +4668,7 @@ label ce_billy_time:
     show mean human flipped at mid_offscreen_left
     show ed festive at right
     show digi at mid_mid_right
-    show linus at mid_right
+    show linus festive at mid_right
     show rich at mid_right_right
     show tate sheepish festive flipped at mid_mid_left
     show obama festive at center behind digi
@@ -5050,7 +5050,7 @@ label ce_roof_moment:
     show billy festive at center behind cs
     show michael festive at mid_left
     show ed festive at mid_right
-    show linus at mid_mid_right
+    show linus festive at mid_mid_right
     with dissolve
     cs "We did it guys! Santa's here to save us!"
     n "Santa's sleigh begins its descent, slowing down to a crawl as the reindeer gently touch down onto the snow."
