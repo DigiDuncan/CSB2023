@@ -299,8 +299,8 @@ label awawa_tate_test:
             "Credits Roll":
                 tate "Here we go!"
                 
-                call screen credits_roll(duration=30)
-                #call screen credits_roll(route="CSBIII DX: Holiday Special", bgm="hohsis_theme.ogg", scroll_start = 11000, duration=30)
+                call screen credits_roll(duration=60)
+                #call screen credits_roll(route="CSBIII DX: Holiday Special", bgm="hohsis_theme.ogg", scroll_start = 12000, duration=30)
 
                 tate "Did we do it?"
                 jump .awawa_menu

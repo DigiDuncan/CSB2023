@@ -2,9 +2,9 @@
 
 (Since these are the defaults, you can just call as credits_roll() and call it a day if you're not changing anything.)
 
-credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scroll_start = 22500, scroll_end = 1075, duration = 343)
+credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scroll_start = 25500, scroll_end = 1075, duration = 343)
 
 ##### CHRISTMAS ####
 (ADJUST THESE WHEN YOU GET YOUR REAL CREDITS MUSIC IN)
 
-credits_roll(route="CSBIII DX: Holiday Special", bgm="hohsis_theme.ogg", scroll_start = 11000, duration=30)
+credits_roll(route="CSBIII DX: Holiday Special", bgm="hohsis_theme.ogg", scroll_start = 12000, duration=30)

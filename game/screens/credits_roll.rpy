@@ -21,7 +21,7 @@ transform credit_scroll(starting = 0, ending = 0, duration = 60):
     ypos starting
     linear duration ypos ending
 
-screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scroll_start = 22500, scroll_end = 1075, duration = 343):
+screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scroll_start = 25500, scroll_end = 1075, duration = 343):
     on "show" action Play("music", bgm, loop=False, if_changed=True)
 
     #only get tracks for a given route, or if none specified/invalid tag, get everything
@@ -89,6 +89,11 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
                                     $ cat_text = obfuscator(category)
                                 else:
                                     $ cat_text = category
+                            elif category == "DigiDuncan Character Sprite":
+                                if "digi" not in persistent.seen:
+                                    $ cat_text = obfuscator(category)
+                                else:
+                                    $ cat_text = category
                             else:
                                 $ cat_text = category
 
@@ -114,12 +119,8 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
                                             
                                             $ sub_text = subcategory
 
-                                            # manually hide awawa mode if unseen
-                                            if persistent.awawa_mode == False and re.fullmatch("Awawa Mode Programming Assistance", subcategory):
-                                                $ sub_text = obfuscator(subcategory)
-
-                                            # manually hide CS 3D if unseen
-                                            if persistent.defeated_perfect_tate == False and category == "CS-ocola (3D Sprite)":
+                                            # manually hide awawa mode / CS 3D / digi sprite if unseen
+                                            if ( (persistent.awawa_mode == False and re.fullmatch("Awawa Mode Programming Assistance", subcategory)) or (persistent.defeated_perfect_tate == False and category == "CS-ocola (3D Sprite)") or ("digi" not in persistent.seen and category == "DigiDuncan Character Sprite") ):
                                                 $ sub_text = obfuscator(subcategory)
 
                                             # manually hide characters if not seen
@@ -143,8 +144,8 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
                                                 xalign 1.0
                                                 for contributor in credits_map[route][category][subcategory]:
 
-                                                    # manually hide CS 3D if unseen
-                                                    if persistent.defeated_perfect_tate == False and category == "CS-ocola (3D Sprite)":
+                                                    # manually hide CS 3D and Digi if unseen
+                                                    if (persistent.defeated_perfect_tate == False and category == "CS-ocola (3D Sprite)") or ("digi" not in persistent.seen and category == "DigiDuncan Character Sprite"):
                                                         $ contributor = obfuscator(contributor)
 
                                                     text contributor:
