@@ -21,11 +21,11 @@ screen d20_viewer_screen(rolled):
         yalign 0.6
 
     # decrease roll
-    if current_roll > -1:
+    if current_roll > 0:
         imagebutton:
             idle "gui/left_off.png" 
             hover "gui/left_on.png"
-            action SetScreenVariable("current_roll", current_roll-1), Notify(str(current_roll)), Show("d20_viewer_screen", None, current_roll-1)
+            action SetScreenVariable("current_roll", current_roll-1), Show("d20_viewer_screen", None, current_roll-1)
             xalign 0.3
             yalign 0.55
 
@@ -34,7 +34,7 @@ screen d20_viewer_screen(rolled):
         imagebutton:
             idle "gui/right_off.png"
             hover "gui/right_on.png"
-            action SetScreenVariable("current_roll", current_roll+1), Notify(str(current_roll)), Show("d20_viewer_screen", None, current_roll+1)
+            action SetScreenVariable("current_roll", current_roll+1), Show("d20_viewer_screen", None, current_roll+1)
             xalign 0.7
             yalign 0.55
 
@@ -42,6 +42,8 @@ screen d20_viewer_screen(rolled):
         xalign 0.5
         yalign 0.55
         size 288
+
+    # TODO: this is where the scene jump goes. since idk how to do this without softlocking the game, i'm leaving this to digi - tate
     textbutton "{size=69}View" action Notify("Rolled a "+str(current_roll)+"! Digi needs to get this working!"):
         xalign 0.5
         yalign 0.9
