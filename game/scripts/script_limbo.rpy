@@ -200,7 +200,12 @@ screen rockstar_check:
         spacing 50 
     text "Line 12: [line_12]" textalign 0.5 size 36 xalign 0.0 yalign 0.95
     hbox xalign 0.0 yalign 0.25:
-        spacing 50 
+        spacing 50
+
+label d20_viewer:
+    $ in_d20_viewer = True
+    # TATE HELP ME SHOW A SCREEN HERE AAAAA
+    jump ce_party_before
 
 ########## CS' Data ##########
 
