@@ -97,9 +97,6 @@ label ce_start:
     play sound sfx_house_door_open
     pause 0.5
 
-    # OKAY, EDITING THIS IS GETTING RIDICULOUS. I'M REDOING ALL THESE SPAGHETTI-ASS MENUS.
-    # I AM *NOT* ANIMATING THESE THINGS 2-3 TIMES EACH, AND YOU CAN'T MAKE ME. - TATE
-
     scene cs_garage
     show cs at mid_left
     show garage_shelf behind cs at manual_pos(0.9, 0.5, 0.5)
@@ -450,9 +447,8 @@ label ce_anno:
         play sound sfx_spikes
         cs "Shit!" with hpunch
         show cs worried coat hat
-        # I just want to put for posterity here that the original line was:
-        # "I hate Legos, but only when they're in my feet!"
-        # Which I think is very funny. -- Digi
+        if fun_value(FUN_VALUE_COMMON):
+            cs "I hate Legos, but only when they're in my feet!"
         cs "I love Legos, but not when they're embedded in my {i}feet!"
         cs "Now, where did I last put..."
     else:
@@ -1467,8 +1463,7 @@ label ce_before_shopping:
     n "CS spots the Nintendo Switch demo display, featuring {i}Tetris 99,{/i} all ready to play."
     cs "Okay, that's the universe just {i}asking{/i} me to play a round."
 
-    # TODO: lmao, are we gonna put a tetris minigame here?
-    # EDIT: Maybe. -- Digi
+    # TODO: tetris minigame for DX
 
     show cs coat happy flipped at left with move
     n "CS steps over to the display."
@@ -1781,7 +1776,7 @@ label ce_checkout:
     cs "Hey, wait a minute!"
     show pakoo tgt at mid_right with moveinright
     tgt_worker "Yeah?"
-    cs "These are ringing up as $11.99 per pie!" # TODO: y'all, these pies are only $5.69 each normally, should we fix this? - tate
+    cs "These are ringing up as $11.99 per pie!"
     show pakoo tgt upset
     cs "The sign said they were, like, 20%% off!"
     show pakoo tgt think2
@@ -1791,8 +1786,7 @@ label ce_checkout:
     n "The employee scans the pie."
     show cs coat disappointed
     show pakoo tgt
-    tgt_worker "Do you perchance have Target Circle?" # who just says perchance?? are you sure about this line??? - tate
-    # Listen, Pakoo wrote it, and it's his dialouge, so. -- Digi
+    tgt_worker "Do you perchance have Target Circle?"
     cs "No?"
     show pakoo tgt think2
     tgt_worker "You need Target Circle to get this deal, sorry."
@@ -2025,8 +2019,6 @@ label ce_checkout:
     play sound sfx_moneyfalls
     show spent_target at t_fake_rpg_text(0.5, 0.1, 0.5)
     # TODO: find the sfx that's like "ding-ding-DING~!" when you pay on these machines
-    # TODO: the total should be actually closer to $75.37. if CS gets target circle here, should we display a different total? - tate
-    # The $81.88 is the closet price we can make and keep up the "every price in the game has had 188 in it" joke. -- Digi
 
     n "CS pays with his card before heading out to the car."
     hide cs_wallet with dissolve
@@ -2544,8 +2536,7 @@ label ce_party_before:
         with dissolve
         show cs christmas dark flipped at right with moveinright
         nova "Hey, CS! Thanks for inviting me to your Christmas party!"
-        cs "Yeah, sure thing!" # TODO: this interaction is weird and awkward - tate
-        cs "It's been a while. How've you been?"
+        cs "Yeah! {w=1.0} It's been a while. How've you been?"
         nova "Oh, y'know, I've been moving a lot, had a friend move in with me..."
         cs "Well, if you wanna chat about it, let's get inside first. It's cold out here."
         jump after_d20
@@ -2594,7 +2585,6 @@ label ce_party_before:
         cs "Yeah! Let's get inside, and then we can talk!"
         jump after_d20
     if d20 == 20:
-        # TODO: AVGN theme song?? idk i dont know anything about this man - tate
         show cs christmas flipped at mid_left with move
         n "A man in a white shirt approaches CS' house."
         show cs disappointed christmas flipped
@@ -2685,7 +2675,7 @@ label ce_introductions:
     show k17 shock
     k17 "You guys all look so... different!"
     show k22 confident
-    k22 "Hi, I'm his--"  # "handler." -- Digi
+    k22 "Hi, I'm his--{w=0.5}{nw}"
     show cs disappointed christmas
     k17 "CS, look how much you've grown!"
     show k22
@@ -2894,8 +2884,10 @@ label ce_introductions:
     show cs angry christmas
     cs "I swear to God, are you guys like, memories or some shit as well?"
     eliza "Relax, no, we are just..."
-    eliza "Just think of us as them I guess, yeah."
-    # TODO: This should be explained better
+    eliza "Let's just go with that I got a name change."
+    cs "What about the other two?"
+    eliza "I uhh... work for them?"
+    # TODO: I'll see if Mika wants to word this any better than I did. -- pak
     cs "You guys are so complicated."
     arceus "I mean, it wasn't too hard for me to figure out, funny enough."
     show cs disappointed christmas
@@ -5147,7 +5139,8 @@ label ce_roof_moment:
     k17 "Yeah, I know. I was just making a joke."
     k22 "Also, DaThings is a girl now."
     k17 "Huh?!"
-    ed "Are there even gonna {i}be{/i} any airplanes in the sky? It's Christmas Eve!"  # why would there be no planes in the sky on Christmas eve, huh? -- Digi
+    ed "Are there even gonna {i}be{/i} any airplanes in the sky? Look around us!"
+    ed "The rest of the world might be stuck in mile-high snow as well!"
     wesley "Maybe we need some lights for visibility."
     cs "What's to say people are still alive? Who knows how far this glacier goes?"
     digi "CS, do you really think we are the last people left?"
