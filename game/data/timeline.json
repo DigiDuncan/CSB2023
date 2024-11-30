@@ -2092,6 +2092,11 @@
         "pos": [55, 11],
         "content_type": "dx"
     },
+    "dx_afterstory_end_arrow": {
+        "type": "arrow",
+        "direction": "e",
+        "pos": [55.5, 11]
+    },
     "dx_afterstory_end": {
         "name": "Win at CultCon!",
         "type": "end",

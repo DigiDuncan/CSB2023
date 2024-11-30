@@ -138,18 +138,19 @@ screen timeline_tracer():
                 
                         # make sure it's unlocked before we continue
                         try:
+                            # default
+                            this_unlocked = False
                             # if it needs you to have earned an achievement to unlock
                             # except, uh, "Fin?" achievement is stupid and needs to be checked differently
                             if "need_achieve" in TIMELINE_MAP[event]:
                                 if TIMELINE_MAP[event]["need_achieve"] == "fin":
                                     for e in ORIGINAL_27:
                                         if e not in persistent.seen_original_endings:
-                                            this_unlocked == False
+                                            this_unlocked = False
                                         else:
-                                            this_unlocked == True
-                                else:
-                                    if TIMELINE_MAP[event]["need_achieve"] in persistent.unlocked_achievements:
-                                        this_unlocked = True
+                                            this_unlocked = True
+                                if TIMELINE_MAP[event]["need_achieve"] in persistent.unlocked_achievements:
+                                    this_unlocked = True
 
                             # if it needs you to have seen EITHER a label OR an ending to unlock
                             elif "need_ending" in TIMELINE_MAP[event] and TIMELINE_MAP[event]["need_ending"] in persistent.seen_all_endings or "need_label" in TIMELINE_MAP[event] and renpy.seen_label(TIMELINE_MAP[event]["need_label"]) == True:
