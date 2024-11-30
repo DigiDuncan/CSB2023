@@ -21,7 +21,7 @@
 label ce_start:
     play music lets_hear_winter volume 0.7 if_changed
     music lets_hear_winter
-    scene cs_bedroom2 
+    scene cs_bedroom2
     show cs at mid_left
     with Dissolve(1.0)
 
@@ -70,7 +70,7 @@ label ce_start:
     cs "...{fast} I have not prepared at all."
     cs "Fuck."
     # if y'all know CS, then y'all know damn well why this line exists. - tate
-    cs "I literally had two {i}weeks{/i} to get everything ready, but I guess I just left it until the last minute again..." 
+    cs "I literally had two {i}weeks{/i} to get everything ready, but I guess I just left it until the last minute again..."
     pause 0.5
 
     show cs
@@ -97,7 +97,7 @@ label ce_start:
     play sound sfx_house_door_open
     pause 0.5
 
-    # OKAY, EDITING THIS IS GETTING RIDICULOUS. I'M REDOING ALL THESE SPAGHETTI-ASS MENUS. 
+    # OKAY, EDITING THIS IS GETTING RIDICULOUS. I'M REDOING ALL THESE SPAGHETTI-ASS MENUS.
     # I AM *NOT* ANIMATING THESE THINGS 2-3 TIMES EACH, AND YOU CAN'T MAKE ME. - TATE
 
     scene cs_garage
@@ -123,11 +123,11 @@ label ce_start:
 label ce_tree:
     # GET TREE FIRST
     if tree_first:
-            
+
         cs "I should get the Christmas tree first."
-    
+
         # these unusual transitions will force the dialogue window to remain open while CS is moving the box.
-        
+
         show cs at mid_offscreen_right with { "master" : MoveTransition(0.5) }
         cs "Who {i}doesn't{/i} wanna get {i}this{/i} thing out? This is the {i}best{/i} part of decorating!" # there are so many italics in this line
 
@@ -153,7 +153,7 @@ label ce_tree:
         cs "{sc=1.0}Hnng..."
 
         play sound sfx_box_drag volume 5.0
-        show cs worried at mid_mid_right 
+        show cs worried at mid_mid_right
         show tree_box at manual_pos(0.6, 0.8)
         with MoveTransition(0.15)
         with hpunch
@@ -170,7 +170,7 @@ label ce_tree:
         play sound2 sfx_lego_break noloop
         play sound [ "<silence 1.0>", sfx_cat_crash ]
         cs "Shit!{w=1.0}{nw}"
-        
+
         pause 2.0
         scene cs_garage_mess
         with dissolve
@@ -260,7 +260,7 @@ label ce_tree:
 
         play sound sfx_box_drag volume 2.0
         pause 1.5
-    
+
         n "CS drags the box out of the garage and into the living room."
 
         jump ce_check_status
@@ -293,7 +293,7 @@ label ce_decor:
         cs "I'm gonna get the decorations first! I have a {i}huge{/i} assortment of Legos in there, too!"
     if got_tree or got_lights:
         cs "Alright, I should probably get the decorations next."
-    
+
     # Animation
     show cs at mid_offscreen_right with move
     show decor_boxes at manual_pos(1.2, 0.5)
@@ -332,7 +332,7 @@ label ce_check_status:
                 "Lights and garland":
                     $ got_lights = True
                     jump ce_lights
-     
+
         # Lights were first, and that's all you have
         if lights_first and not (got_tree or got_decor):
             show cs at left with moveinleft
@@ -348,7 +348,7 @@ label ce_check_status:
         # Have lights and tree
         if got_lights and got_tree:
             show cs at left with moveinleft
-            n "CS returns to the garage to retrieve the last box." 
+            n "CS returns to the garage to retrieve the last box."
             menu:
                 "Ornaments and decorations":
                     $ got_decor = True
@@ -453,7 +453,7 @@ label ce_anno:
         # I just want to put for posterity here that the original line was:
         # "I hate Legos, but only when they're in my feet!"
         # Which I think is very funny. -- Digi
-        cs "I love Legos, but not when they're embedded in my {i}feet!" 
+        cs "I love Legos, but not when they're embedded in my {i}feet!"
         cs "Now, where did I last put..."
     else:
         scene cs_garage with dissolve
@@ -469,7 +469,7 @@ label ce_anno:
     show shovel at manual_pos(1.2, 0.8, 0.5) with determination
     $ collect("shovel")
 
-    show cs disappointed coat hat at right 
+    show cs disappointed coat hat at right
     show shovel at manual_pos(0.9, 0.7, 0.5):
         rotate 15
     with move
@@ -477,7 +477,7 @@ label ce_anno:
     pause 0.5
     cs "I sure hope it didn't snow {i}too{/i} much..."
     pause 0.5
-    show cs disappointed coat hat flipped at left 
+    show cs disappointed coat hat flipped at left
     show shovel at manual_pos(0.25, 0.7, 0.5):
         rotate 15
     with move
@@ -496,7 +496,7 @@ label ce_anno:
     cs "Damn it, I think it's iced shut."
     cs "I'll just have to go around through the front."
 
-    hide cs 
+    hide cs
     hide shovel
     with moveoutleft
     scene black with dissolve
@@ -540,7 +540,7 @@ label ce_anno:
     pause 2.0
     cs "Faaf."
     pause 0.5
-    
+
     # SHOVEL ANIMATION TIME
 
     # FIRST
@@ -729,7 +729,7 @@ label ce_anno:
         yzoom 1
         pos (0.25,0.45)
         linear 0.5 xzoom 0.2
-        linear 0.5 xzoom 1   
+        linear 0.5 xzoom 1
     pause 2.0
     play sound2 sfx_droplet noloop volume 10.0
     pause 1.0
@@ -738,7 +738,7 @@ label ce_anno:
 
     n "A single drop falls onto the snow, revealing only a hint of the asphalt below."
     pause 0.5
-    
+
     cs "Umm..."
     carguy "Hold on, it's just..."
     play sound sfx_bottle_hit volume 4.0
@@ -762,7 +762,7 @@ label ce_anno:
     pause 1.5
     stop sound2
     pause 1.0
-    carguy "{size=-15}I thought I'd brought more of this..." 
+    carguy "{size=-15}I thought I'd brought more of this..."
     hide crotch_doctor with dissolve
     carguy "Welp, sorry! Looks like I've run out!"
     carguy "Gotta run! Happy holidays to you!"
@@ -902,7 +902,7 @@ label ce_anno:
         anno "Alright!"
         scene black with dissolve
         centered "20 minutes later..."
-        
+
 # Setting up decorations
 label ce_setup:
     stop music fadeout 3.0
@@ -1100,7 +1100,7 @@ label ce_before_shopping:
     n "CS grabs a cart before venturing further into the store."
     show cs coat at offscreenleft
     show shopping_cart at manual_pos(-0.2, 1.1, 0.75)
-    
+
     show shopping_cart at Move((-0.2, 0.6), (1.1, 0.6), 0.5, repeat=False, bounce=False, xanchor="left", yanchor="top")
     hide cs with moveoutright
 
@@ -1161,7 +1161,7 @@ label ce_before_shopping:
         # let's try the audio filtering feature! let's make this next thing muffled.
         $ renpy.music.set_audio_filter("sound2", renpy.audio.filter.Lowpass(1200))
 
-        play sound2 [ "<silence 0.5>", sfx_tato_screm ] noloop 
+        play sound2 [ "<silence 0.5>", sfx_tato_screm ] noloop
         show tato_bag at manual_pos(50, 300) with Dissolve(0.25)
         pause 0.5
         show cs coat at center
@@ -1196,13 +1196,13 @@ label ce_before_shopping:
     show cs coat
     n "After grabbing some \"tates\" of his own, CS heads over to the grocery aisles."
     # i hope this line ain't too weird. just felt too abrupt without SOMETHING here. - tate
-    hide cs 
+    hide cs
     hide shopping_cart
     with moveoutright
     pause 1.0
 
     scene tgt_bread with dissolve
-    show cs coat at center 
+    show cs coat at center
     show shopping_cart at manual_pos(0.8, 1.1, 0.5)
     with moveinleft
     pause 1.0
@@ -1222,7 +1222,7 @@ label ce_before_shopping:
     show cs coat flipped at center with move
     show cs coat with determination
 
-    show cs coat at right 
+    show cs coat at right
     show shopping_cart at manual_pos(1.1, 1.1, 0.5)
     with move
 
@@ -1232,7 +1232,7 @@ label ce_before_shopping:
     cs "Or, you know, the stuff that's about to expire..."
     show cs coat happy
     cs "Let's check it out!"
-    
+
     hide cs
     hide shopping_cart
     with moveoutright
@@ -1240,7 +1240,7 @@ label ce_before_shopping:
 
     scene tgt_endcap with dissolve
     pause 0.5
-    
+
     show cs coat at left
     show shopping_cart at manual_pos(0.5, 1.1, 0.5)
     with moveinleft
@@ -1308,14 +1308,14 @@ label ce_before_shopping:
     n "CS grabs a can of his favorite flavor before moving on to the next aisle."
     show cs coat with determination
     pause 0.5
-    hide cs 
+    hide cs
     hide shopping_cart
     with moveoutright
-    
+
     scene tgt_shelf with dissolve
     show cs coat at mid_left
     show shopping_cart at manual_pos(0.5, 1.1, 0.5)
-    with moveinleft  
+    with moveinleft
     n "Finally, CS stumbles upon something that was actually on his shopping list."
     cs "Genergy, of course. Always need that."
     show cs coat disappointed
@@ -1323,8 +1323,8 @@ label ce_before_shopping:
     show cs coat happy
     cs "And, I'm gonna need a {i}lot{/i} of Genergy to get through all this party prep!"
 
-    # TODO: BUG: THIS IS NOT PLAYING FOR SOME 
-    
+    # TODO: BUG: THIS IS NOT PLAYING FOR SOME
+
     show genergy at manual_pos(0.4, 0.3) with Dissolve(0.25)
     show genergy at manual_pos(0.55, 0.8) with MoveTransition(0.25)
     $ collect("genergy")
@@ -1449,15 +1449,15 @@ label ce_before_shopping:
     cs "Guess I have a lookalike who shops at IKEA, too?"
     show cs coat flipped
     cs "Oh, well. I should probably also get back to shopping."
-    
+
     hide cs
     hide shopping_cart
     with moveoutleft
 
     scene tgt_tech with dissolve
-    show cs coat flipped at right 
+    show cs coat flipped at right
     show shopping_cart flipped at manual_pos(0.6, 1.1, 0.5)
-    with moveinright 
+    with moveinright
     n "CS passes by the electronics section."
     cs "Okay, I don't need anything there."
     show cs coat surprised flipped
@@ -1618,7 +1618,7 @@ label ce_checkout:
     show snufkin flipped at mid_right
     show customer at mid_mid_right
     with move
-    show cs coat at center 
+    show cs coat at center
     show shopping_cart at manual_pos(0.7, 1.1, 0.5)
     with move
 
@@ -1663,7 +1663,7 @@ label ce_checkout:
     n "CS sees an error on the display."
     show cs coat disappointed
     cs "Welp, can't use that one!"
-    hide cs 
+    hide cs
     hide shopping_cart
     with moveoutright
     n "He moves on to try the next machine."
@@ -1815,7 +1815,7 @@ label ce_checkout:
                     linear 0.25 alpha 1.0
                 parallel:
                     linear 0.25 ypos 0.45
-    
+
             pause 2.0
             show cs coat worried
             cs "Damn, the internet is {i}terrible{/i} in here!"
@@ -1823,7 +1823,7 @@ label ce_checkout:
             tgt_worker "Anyway, once you're done, you just go to your wallet, and you scan that barcode!"
             show cs coat
             cs "Thanks."
-            
+
             show cs_phone at manual_pos(0.35, 0.5) with move
             play sound sfx_target_beep
             pause 0.5
@@ -1861,7 +1861,7 @@ label ce_checkout:
     play sound sfx_target_beep
     show bread at manual_pos(0.7, 0.5) with move
     hide bread with dissolve
-    
+
     show potato_bag at manual_pos(0.4, 0.8) with Dissolve(0.25)
     show potato_bag at manual_pos(0.4, 0.5) with MoveTransition(0.25)
     play sound sfx_target_beep
@@ -1942,7 +1942,7 @@ label ce_checkout:
     show cs_id at manual_pos(0.2, 0.6) with dissolve:
         zoom 0.25
     $ collect("cs_id")
-    
+
     show cs_id at manual_pos(0.3, 0.5) with move
     cs "Here you go."
     show pakoo tgt tap
@@ -2039,7 +2039,7 @@ label ce_checkout:
     hide cs
     hide shopping_cart
     with moveoutright
-    
+
     stop sound fadeout 3.0
     stop sound2 fadeout 3.0
     scene black with dissolve
@@ -2077,7 +2077,7 @@ label ce_aftershop:
     pause 3.0
     play sound sfx_house_door_close
     pause 2.0
-    show cs flipped at mid_right behind cs_kitchen_fg 
+    show cs flipped at mid_right behind cs_kitchen_fg
     show target_bags at right
     $ collect("target_bags")
     with moveinright
@@ -2168,7 +2168,7 @@ label ce_aftershop:
             linear 1.0 ypos 300
         parallel:
             linear 1.0 xpos -350
-    
+
     pause 2.0
     show cs happy flipped
     n "CS settles in under the covers..."
@@ -2311,7 +2311,7 @@ label ce_party_before:
         cs "Shall we get inside?"
         tate "Yeah!" (multiple = 2)
         mean "Yeah!" (multiple = 2)
-        jump after_d20   
+        jump after_d20
     if d20 == 7:
         play sound sfx_car_approach_stop volume 5.0 fadein 1.0
         show cs christmas flipped at mid_left with move
@@ -2361,80 +2361,96 @@ label ce_party_before:
         obama "Sure thing. It is very cold outside."
         jump after_d20
     if d20 == 9:
+        show cs scared christmas flipped
         play sound sfx_siren
-        show blue_light at left
-        show red_light at right
+        show blue_light at manual_pos(-50, 0):
+            zoom 0.5
+        show red_light at manual_pos(0, 0):
+            zoom 0.5
         n "Sirens start blaring outside."
         show cs worried christmas flipped
         cs "Uh oh! Why are the cops here?"
         n "CS rushes outside."
-        hide cs with moveoutleft
+        show cs worried christmas flipped at offscreenleft with MoveTransition(0.35)
         scene cs_house_snow_night
         show copguy festive dark flipped at mid_left
         with dissolve
         show cs worried christmas dark flipped at right with moveinright
         copguy "Heya, CS. Did I scare you?"
-        cs "Fuck, yeah, you did! I didn't think you were gonna be on duty!"
-        copguy "Well, someone's gotta be security, right?"
+        show cs disappointed christmas dark flipped
+        cs "Fuck yeah, you did! I didn't think you were gonna be on duty!"
+        copguy "Well, someone's gotta be security, right?" #TODO: i hate this line - tate
         cs "I... guess?"
         cs "Whatever, let's get inside. I'm freezing!"
-        jump after_d20      
+        jump after_d20
     if d20 == 10:
+        play sound sfx_car_approach_stop volume 5.0 fadein 1.0
+        show cs christmas flipped at mid_left with move
         n "CS looks outside to see a bus pull up."
         cs "Hmm, I wonder who took the bus."
+        stop sound fadeout 1.0
         hide cs with moveoutleft
         scene cs_house_snow_night
         show sheriff festive dark flipped at left
         with dissolve
         show cs christmas dark flipped at right with moveinright
-        sheriff "God damn it! Stupid damn wheels! Stuck in the snow!"
-        cs "Woah, hey! Who are you, again?"
-        sheriff "Who am I? I'm Copguy's boss, that's who!"
-        sheriff "I asked him to pick me up, but apparently he had to go shopping or some shit!"
-        sheriff "And I had to take the bus!"
-        cs "Oh, wow, okay. Uhm, do you need help?"
+        sheriff "God damn it! Stupid damn wheels! Stuck in the snow {i}again!"
+        show cs worried christmas dark flipped
+        cs "Woah, hey! Who are you?"
+        sheriff "Who am {i}I?{/i} I'm Copguy's {i}boss,{/i} that's who!"
+        sheriff "I asked him to pick me up, but apparently he had to go {i}shopping,{/i} or some shit!"
+        sheriff "So {i}I{/i} had to take the {i}bus!"
+        show cs disappointed christmas dark flipped
+        cs "Oh, wow, okay. Would you like some help?"
         sheriff "{i}Yes!{/i} I keep getting stuck in the snow! Take me inside!"
-        jump after_d20      
+        jump after_d20
     if d20 == 11:
-        n "A familiar sound like a laser beam is heard from outside."
         play sound sfx_beam
+        n "A familiar sound like a laser beam is heard from outside."
         hide cs with moveoutleft
         scene cs_house_snow_night
-        show ed festive dark flipped at center
+        show ed festive dark flipped at mid_mid_left
         show rich festive dark flipped at mid_left
-        show wesley festive dark flipped at left
+        show wesley festive dark flipped at manual_pos(0.25, 1.0, 1.0)
         with dissolve
         show cs christmas dark flipped at right with moveinright
-        cs "Hey guys! How have you been doing?"
-        ed "We've been doing well! Our business has been profitable recently!"
-        ed "Even Wesley has made a speedy recovery! He wasn't too happy about needing a metal rod installed into his back, though."
-        show cs festive worried dark flipped
+        cs "Hey guys! How's it going?"
+        ed "We've been doing well! Business has been {i}booming!"
+        ed "Wesley has also made a speedy recovery! He wasn't too happy about needing a metal rod installed into his back, though."
+        show cs worried christmas dark flipped
         cs "Yeah, I'm... uh..."
+        show cs disappointed christmas dark flipped
         cs "I'm really sorry about that. I still feel bad about taking things too far."
         n "Wesley stares at the ground and mutters."
         wesley "Yeah."
-        rich "Well, why don't we get inside? It's freezing!"
+        rich "Well, why don't we get inside? It's freezing out here!"
+        show cs christmas dark flipped
         cs "Yeah, let's go!"
-        jump after_d20      
+        jump after_d20
     if d20 == 12:
+        play sound sfx_car_approach_stop volume 5.0 fadein 1.0
+        show cs christmas flipped at mid_left with move
         n "An old Dodge Charger pulls up on the driveway."
         cs "Nice car! I wonder if that's Carguy..."
+        stop sound fadeout 1.0
         hide cs with moveoutleft
         scene cs_house_snow_night
         show k22 dark flipped at left
-        show k17 dark flipped at mid_left
+        show k17 dark flipped at mid_mid_left
         with dissolve
-        show cs disappointed christmas dark flipped at right with moveinright
-        cs "Hey, it's... two Pakoos?"
+        show cs christmas dark flipped at right with moveinright
+        cs "Hey, it's..."
+        show cs disappointed christmas dark flipped 
+        cs "Hey, it's...{fast} two Pakoos?"
         show k17 happy dark flipped
-        k17 "CS!!!"
+        k17 "CS!!!" with vpunch
         show k17 dark flipped
         k22 "Hey, CS. Merry Christmas!"
         cs "Hi, so, umm..."
         cs "Are you guys {i}both{/i} Pakoo?"
         k22 "It's... kind of complicated."
         k22 "Let's go inside, then we can explain."
-        jump after_d20      
+        jump after_d20
     if d20 == 13:
         n "A teleport-like sound is heard outside."
         # TODO: sfx for that
@@ -2448,76 +2464,98 @@ label ce_party_before:
         cs "Oh, hey! Aria, right?"
         aria "Yep, that's me!"
         aria "Goodness, am I too early?"
-        cs "A little, but that's okay!"
-        cs "I was hoping someone would arrive early."
-        aria "Well then. Should we head inside? You're probably getting cold, I assume."
+        cs "A little, but, that's okay!"
+        cs "I was hoping {i}someone{/i} would arrive early."
+        aria "Well, then, should we head inside? You're probably getting cold, I assume."
+        show cs disappointed dark flipped
         cs "Yeah, it's kinda freezing out."
-        jump after_d20      
+        jump after_d20
     if d20 == 14:
+        play sound sfx_car_approach_stop volume 5.0 fadein 1.0
+        show cs christmas flipped at mid_left with move
         n "Someone's car pulls into the driveway."
         cs "I wonder who that could be?"
         hide cs with moveoutleft
+        stop sound fadeout 1.0
         scene cs_house_snow_night
         show michael festive dark at mid_left
         with dissolve
         show cs christmas dark flipped at right with moveinright
         cs "Oh, hey, it's Michael!"
         cs "You're still visiting the United States? I thought you were only here for the summer!"
-        michael "I decided to spend a whole year over here."
+        michael "I decided to spend a whole {i}year{/i} over here."
         michael "It's pretty cold out, innit?"
         cs "Yeah, let's get inside now."
-        jump after_d20      
+        jump after_d20
     if d20 == 15:
+        play sound sfx_car_approach_stop volume 5.0 fadein 1.0
+        show cs christmas flipped at mid_left with move
         n "CS sees Linus' car pulling up outside."
         cs "It looks like Linus got here first!"
         hide cs with moveoutleft
+        stop sound fadeout 1.0
         scene cs_house_snow_night
-        show linus festive dark at mid_left
+        show linus festive dark at mid_mid_left
         show luke festive dark flipped at left
         with dissolve
         show cs christmas dark flipped at right with moveinright
         linus "Hey, CS! Long time no see!"
-        cs "You too, and Luke as well?"
-        luke "Hey, man! I know we didn't talk much during your short employment, but it was fun having you around!"
+        show cs happy christmas dark flipped
+        cs "You too! Also, hey, Luke! I didn't expect to see you here!"
+        luke "Hey, man! I know we didn't talk much during your short employment, but, it was fun having you around!"
         luke "Linus talks a lot about you."
+        show cs christmas dark flipped
         cs "Oh, really?"
         linus "I just think you're a funny guy!"
-        linus "What wasn't funny was the cops showing up at LTT, but we can let bygones be bygones."
+        linus "What {i}wasn't{/i} funny was the cops showing up at LTT, but we can let bygones be bygones."
+        show cs disappointed christmas dark flipped
         cs "Yeah, sorry about all that. It's a long story."
-        cs "Why don't we go inside, and I'll explain the whole thing while we wait."
-        jump after_d20      
+        show cs christmas dark flipped
+        cs "Why don't we go inside? I'll explain the whole thing while we wait for more people to show up."
+        jump after_d20
     if d20 == 16:
+        play sound sfx_car_approach_stop volume 5.0 fadein 1.0
+        show cs christmas flipped at mid_left with move
         n "Another Honda Civic shows up in CS' driveway."
         cs "Oh, look at that! It's Blank!"
+        stop sound fadeout 1.0
         hide cs with moveoutleft
         scene cs_house_snow_night
         show blank dark flipped at mid_left
         with dissolve
         show cs christmas dark flipped at right with moveinright
-        blank "Hey, CS, how have you been?"
-        cs "I've been doing well! Did you drive safe here?"
-        blank "I did, but lots of people on the interstate sure didn't!"
+        blank "Hey, CS, how've you been?"
+        cs "I've been doing well! Was the drive safe up here?"
+        blank "It was for me, but, for lots of people on the interstate, it sure wasn't!"
         blank "I got quite a bit of dashcam footage if you want to watch some with me."
+        show cs happy christmas dark flipped
         cs "Sure thing! Let's get inside and watch while we wait for the others."
-        jump after_d20      
+        jump after_d20
     if d20 == 17:
+        play sound sfx_car_approach_stop volume 5.0 fadein 1.0
+        show cs christmas flipped at mid_left with move
         n "An unknown car shows up in the driveway."
-        cs "I wonder who that is?"
+        show cs disappointed christmas flipped
+        cs "I wonder who that is."
+        stop sound fadeout 1.0
         hide cs with moveoutleft
         scene cs_house_snow_night
         show nova dark flipped at mid_left
         with dissolve
         show cs christmas dark flipped at right with moveinright
         nova "Hey, CS! Thanks for inviting me to your Christmas party!"
-        cs "Yeah, sure thing!"
+        cs "Yeah, sure thing!" # TODO: this interaction is weird and awkward - tate
         cs "It's been a while. How've you been?"
-        nova "Oh, y'know, I've been moving a lot, had my friend move in with me..."
-        cs "Well, if you wanna chat about it, let's go inside first. It's cold out here."
-        jump after_d20      
+        nova "Oh, y'know, I've been moving a lot, had a friend move in with me..."
+        cs "Well, if you wanna chat about it, let's get inside first. It's cold out here."
+        jump after_d20
     if d20 == 18:
+        play sound sfx_car_approach_stop volume 5.0 fadein 1.0
+        show cs christmas flipped at mid_left with move
         n "CS sees a Cherokee pull up to his house."
         show cs disappointed christmas flipped
         cs "What the fuck? Who is that?"
+        stop sound fadeout 1.0
         hide cs with moveoutleft
         scene cs_house_snow_night
         show elizabeth dark at center
@@ -2527,19 +2565,23 @@ label ce_party_before:
         show cs disappointed christmas dark flipped at right with moveinright
         cs "Hey, uhh..."
         eliza "Is this the right place?"
-        cs "I think so!"
+        anne "I think so!"
         cs "Are you..."
         eliza "I'm Elizabeth. Behind me is Anne and Grace."
         cs "You might have the wrong place. Sorry."
         eliza "Do you know a Mika? A Mikapara?"
-        cs "Is that you?"
+        cs "Is that {i}you?"
         eliza "Close enough."
-        cs "Well, should we go inside."
-        eliza "Yeah, I guess so."
-        jump after_d20      
+        cs "Well, would you all like to come inside?"
+        eliza "Yeah."
+        jump after_d20
     if d20 == 19:
-        n "An orange Mini Coooper shows up infront of CS' house."
-        cs "Holy crap, is that who I think it is?"
+        play sound sfx_car_approach_stop volume 5.0 fadein 1.0
+        show cs christmas flipped at mid_left with move
+        n "An orange Mini Coooper shows up in front of CS' house."
+        show cs worried christmas flipped
+        cs "Holy crap! Is that who I think it is?"
+        stop sound fadeout 1.0
         hide cs with moveoutleft
         scene cs_house_snow_night
         show db dark at mid_left
@@ -2549,12 +2591,14 @@ label ce_party_before:
         db "I am?!"
         cs "Yes! You managed to be the earliest this time!"
         db "Wow, I can't believe it!"
-        cs "Yeah! Let's get inside and we can talk!"
-        jump after_d20      
+        cs "Yeah! Let's get inside, and then we can talk!"
+        jump after_d20
     if d20 == 20:
-        n "A man in a white shirt walks up to CS' house."
+        # TODO: AVGN theme song?? idk i dont know anything about this man - tate
+        show cs christmas flipped at mid_left with move
+        n "A man in a white shirt approaches CS' house."
         show cs disappointed christmas flipped
-        cs "Who the hell is that?"
+        cs "Who the hell is {i}that?"
         hide cs with moveoutleft
         scene cs_house_snow_night
         show avgn dark flipped at mid_left
@@ -2562,12 +2606,16 @@ label ce_party_before:
         show cs disappointed christmas dark flipped at right with moveinright
         cs "Hey, are you--"
         avgn "I'm the fuckin' Nerd!" with vpunch
-        cs "The Angry Video Game Nerd?! I didn't invite you! At least, I don't {i}think{/i} I did..."
+        show cs scared christmas dark flipped
+        cs "The Angry Video Game Nerd?! I didn't invite you!"
+        show cs worried christmas dark flipped
+        cs "At least, I don't {i}think{/i} I did..."
         avgn "It doesn't fucking matter! Merry fucking Christmas!"
+        show cs disappointed christmas dark flipped
         cs "Okay... Do you, uh, wanna go inside?"
         avgn "Hell yeah!"
         cs "Alright, then..."
-        jump after_d20      
+        jump after_d20
     else:
         n "CS waits patiently."
         n "He keeps on waiting."
@@ -3065,7 +3113,7 @@ label ce_banter:
     sheriff "God damn it! {i}Get back here!"
     pause 3.0
     sheriff "\"Don't move.\" Thanks, Copguy, you're a real fucking comedian."
-    scene cs_door_outside 
+    scene cs_door_outside
     show k17 disappointed flipped at mid_left
     show k22 disappointed at mid_right
     show snow1white
@@ -3138,7 +3186,7 @@ label ce_banter:
     # TODO: also why is elf_1 a movie file if it's not even on-screen...? - tate
     # It might be at some point on the screen -- Digi
     $ renpy.music.set_volume(0.25)
-  
+
     scene cs_living2_festive
     show elf_1
     show wesley festive at right
@@ -3157,7 +3205,7 @@ label ce_banter:
     show cs christmas
     cs "Okay, let me do this first. The {i}president{/i} is calling!"
     hide cs with moveoutright
-    
+
 # Cooking
 label ce_cooking:
     play music dont_preheat_your_oven if_changed
@@ -3196,7 +3244,7 @@ label ce_cooking:
     show obama festive at center behind cs_kitchen_fg
     show michael festive at mid_offscreen_left behind cs_kitchen_fg
     show billy festive at left behind cs_kitchen_fg
-    show cs christmas flipped at mid_right behind cs_kitchen_fg  
+    show cs christmas flipped at mid_right behind cs_kitchen_fg
     with dissolve
     show smoke
     obama "Well, would you look at that?"
@@ -3482,7 +3530,7 @@ label ce_mike:
     play sound sfx_csnore
     cs "Zzz..."
     rich "Hey, CS, are you sleeping?"
-    scene cs_living2_festive 
+    scene cs_living2_festive
     show wesley festive at right
     show rich festive at mid_right
     show db at center
@@ -3498,7 +3546,7 @@ label ce_mike:
     cs "Oh, sorry, I did doze off."
     cs "I had this insane dream, and there was this pizza guy..."
     wesley "Speaking of pizza, should we have dinner now? I'm starving."
-    cs "Yeah, that's a good point. Give me a moment to get ready."  
+    cs "Yeah, that's a good point. Give me a moment to get ready."
 
 # Dinner/More Banter
 label ce_dinner:
@@ -4014,7 +4062,7 @@ label ce_exchange:
     show cs full christmas at Move((0.034, 0.187), (0.034, -0.4), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     window hide
     pause 2.5
-    show cs full christmas at Move((0.034, -0.4), (0.034, 0.187), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")  
+    show cs full christmas at Move((0.034, -0.4), (0.034, 0.187), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     digi "Oh, shit. I guess I never looked down to check."
     aria "I just assumed because of the outfit."
     hide cs with moveoutright
@@ -4028,7 +4076,7 @@ label ce_exchange:
     show arceus worried flipped
     arceus "Sorry! I honestly forgot which one was yours."
     kitty "You saw me carry it in, dumbass!"
-    hide arceus with moveoutright   
+    hide arceus with moveoutright
     kitty "Whatever, it's my turn now."
     show kitty festive at mid_left with moveinleft
     kitty "Looks like I got..."
@@ -4039,7 +4087,7 @@ label ce_exchange:
     cs "It's just a really good guitar controller."
     hide riffmaster with dissolve
     anno "That was my gift!"
-    hide kitty with moveoutright   
+    hide kitty with moveoutright
     anno "It looks like I'm up next."
     show anno festive at mid_left with moveinleft
     anno "I got..."
@@ -4073,7 +4121,7 @@ label ce_exchange:
     with dissolve
     pause 3.0
     hide raspberry_pi with dissolve
-    hide kitty with moveoutright   
+    hide kitty with moveoutright
     anno "Welp, next gift I guess."
     show anno festive at mid_left with move
     anno "I guess I'll pick this one."
@@ -4098,11 +4146,11 @@ label ce_exchange:
     mean "Who's next?"
     hide mean with moveoutright
     tate "It's me!"
-    show tate festive at mid_left with moveinleft    
+    show tate festive at mid_left with moveinleft
     tate "Let's see..."
     show handy_switch at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     pause 1.5
-    show tate smug festive 
+    show tate smug festive
     tate "Billy? Is this yours?"
     billy "It's the Handy Switch!"
     billy "It let's you control any power source, from anywhere!"
@@ -4110,9 +4158,9 @@ label ce_exchange:
     show tate festive
     tate "I'm sure I can find a use for this."
     hide tate with moveoutright
-    billy "Alright, it's my turn!" 
+    billy "Alright, it's my turn!"
     show billy festive at mid_left with moveinleft
-    show doi at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top") 
+    show doi at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     billy "Wow! Is this the Declaration of Independence?"
     obama "Yep! It's the real deal!"
     obama "Figured I didn't need it anymore, so it's yours now!"
@@ -4120,8 +4168,8 @@ label ce_exchange:
     billy "Great! I can probably pitch this!"
     hide billy with moveoutright
     obama "Welp, I guess it's my turn now."
-    show obama festive at mid_left with moveinleft 
-    show mgs1 at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top") 
+    show obama festive at mid_left with moveinleft
+    show mgs1 at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     obama "Metal Gear Solid?"
     copguy "Yeah, that's mine, I didn't know what anyone really wants, so I just found this at the station."
     hide mgs1 with dissolve
@@ -4129,7 +4177,7 @@ label ce_exchange:
     copguy "I'm glad."
     hide obama with moveoutright
     copguy "It's my turn now."
-    show copguy festive flipped at mid_left with moveinleft 
+    show copguy festive flipped at mid_left with moveinleft
     show gravity_falls at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     copguy "Okay, so I got \"Gravity Falls Season 2 Director's Cut\"..."
     show colt at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
@@ -4140,7 +4188,7 @@ label ce_exchange:
     with dissolve
     hide copguy with moveoutright
     sheriff "Because I don't know either."
-    show sheriff festive flipped at mid_left with moveinleft 
+    show sheriff festive flipped at mid_left with moveinleft
     sheriff "Whatever, it's my turn to pick a gift."
     sheriff "Damn, this is heavy! What the hell is this?"
     show cement at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
@@ -4150,7 +4198,7 @@ label ce_exchange:
     sheriff "Great, I can drop this on Copguy's head for leaving me in the bathroom!"
     hide sheriff with moveoutright
     ed "I guess it's my go."
-    show ed festive flipped at mid_left with moveinleft 
+    show ed festive flipped at mid_left with moveinleft
     show melted_ice_cream at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     ed "What the hell? Who brought ice cream? It's all melted!"
     #Audio clip of Richard laughing
@@ -4160,7 +4208,7 @@ label ce_exchange:
     ed "Damn it, Richard! I don't want this!"
     hide ed with moveoutright
     rich "Well, let's see what I get."
-    show rich festive flipped at mid_left with moveinleft 
+    show rich festive flipped at mid_left with moveinleft
     show pills at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     rich "Pain pills?"
     wesley "Wait a minute! Those are mine!"
@@ -4188,7 +4236,7 @@ label ce_exchange:
     k17 "Addy?"
     show k22 disappointed flipped at offscreenleft
     k22 "Huh?"
-    hide k22 
+    hide k22
     hide fumo
     with easeoutright
     n "K-22 springs up and steals the gift from K-17, sprinting out of the room."
@@ -4328,7 +4376,7 @@ label ce_exchange:
         avgn "This shirt's {i}ass!"
         cs "Hey! That was my gift!"
         avgn "Yeah? Well, you're a poopyhead!"
-        hide avgn with moveoutright     
+        hide avgn with moveoutright
     anne "Well Grace, you wanna pick out the last gift?"
     show grace at mid_left with moveinleft
     grace "Yippee! The last gift!"
@@ -4513,7 +4561,7 @@ label ce_lights_out:
     show cs christmas with determination
     hide cs with moveoutright
     n "CS rushes back upstairs."
-    scene cs_hallway_off 
+    scene cs_hallway_off
     show arceus at center
     show elizabeth at right
     with dissolve
@@ -4562,7 +4610,7 @@ label ce_lights_out:
     scene black with dissolve
     n "CS pulls and yanks open the door, until it finally rips open."
     play sound sfx_house_door_slam
-    scene cs_door 
+    scene cs_door
     show cs worried christmas at left
     with dissolve
     n "He falls backwards as he is met with an unwelcome sight."
@@ -4607,7 +4655,7 @@ label ce_lights_out:
     with moveoutright
     n "CS and Mean find the ladder to the attic, and make their way up."
     scene cs_attic
-    show hatch at manual_pos(0.3, -0.2) 
+    show hatch at manual_pos(0.3, -0.2)
     show cs disappointed christmas at mid_left
     show mean human annoyed at mid_right
     with dissolve
@@ -4760,7 +4808,7 @@ label ce_snowed_in:
     show k17 disappointed at mid_mid_right behind obama
     with dissolve
     cs "It's Reversi!"
-    show digi 
+    show digi
     digi "You have an {i}actual{/i} Reversi board?"
     k17 "Isn't that the one game from Windows 3.1?"
     cs "Precisely!"
@@ -4809,7 +4857,7 @@ label ce_billy_time:
     tate "I guess I'm following Billy, so, I'll be back...?"
     hide tate with moveoutleft
     scene black with dissolve
-    hide screen flashlight_demo    
+    hide screen flashlight_demo
     billy "Oh, dang it! I forgot to bring a light!"
     scene cs_hallway_off
     show billy festive at mid_left
@@ -5055,11 +5103,11 @@ label ce_roof_moment:
     show k17 sil_black:
         zoom 0.15
         xpos 0.43
-        ypos 0.2   
+        ypos 0.2
     show k22 sil_black:
         zoom 0.15
         xpos 0.45
-        ypos 0.23    
+        ypos 0.23
     show snow1
     with dissolve
     k22 "So it is as bad as you said."
@@ -5182,7 +5230,7 @@ label ce_roof_moment:
     grace "{i}SAANNNNNTAAA!!"
     grace "OH MY GODD!!"
     show k22 flipped at mid_left
-    show k17 happy flipped at mid_mid_left 
+    show k17 happy flipped at mid_mid_left
     with moveinleft
     k17 "Haha, see, K-22? Who needs Addy's party when we can literally meet The Big Man himself?"
     show k22 happy flipped
@@ -5363,7 +5411,7 @@ label ce_roof_moment:
     show k17 sil_black:
         zoom 0.15
         xpos 0.43
-        ypos 0.2   
+        ypos 0.2
     show k22 sil_black:
         zoom 0.15
         xpos 0.45
@@ -5371,7 +5419,7 @@ label ce_roof_moment:
     show santa sil_black:
         zoom 0.15
         xpos 0.65
-        ypos 0.5    
+        ypos 0.5
     show snow1
     with dissolve
     santa "Alright! Stand back, everyone! This is gonna take a lot of focus!"
@@ -5386,7 +5434,7 @@ label ce_roof_moment:
         zoom 0.75
         xpos 0.7
         ypos -0.35
-    with dissolve   
+    with dissolve
     santa "Ta-da!"
     cs "Wow, that really worked?!"
     billy "A giant bottle of Crotch Doctor?"
