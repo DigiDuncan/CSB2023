@@ -3536,6 +3536,7 @@ default got_decor = False
 default got_tato_bag = False
 default got_target_circle = False
 default d20 = roller
+default in_d20_viewer = False
 
 # Helpful lists
 init python:
