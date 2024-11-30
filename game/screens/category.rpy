@@ -65,6 +65,8 @@ screen category_nav():
             textbutton "Controller Test\n{size=-12}Check your controller's compatibility." action Jump("play_controllertest")
 
             if preferences.developer_mode or persistent.creative_mode:
+                textbutton "D20 Viewer\n{size=-12}See who could have showed up first to the party!" action Jump("d20_viewer")
+
                 textbutton "Debug Menu\n{size=-12}[[DEV] Jump to specific sections of the game." action ShowMenu("debug_menu")
 
                 textbutton "Asset Debugger\n{size=-12}[[DEV] Make sure all assets load correctly." action Jump("asset_debugger")
