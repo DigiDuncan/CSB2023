@@ -5,7 +5,7 @@ init python:
     # For jukebox tagging
     current_jukebox_tag_index = 0
 
-    # For bios sorting. 0 = order seen, 1 = by name
+    # For bios sorting. 0 = default, 1 = by name
     # TODO: Maybe further tagging can be added later, but, not now.
     current_bios_sorting_mode = 0
 
@@ -40,6 +40,7 @@ init 10 python:
         persistent.csb3a_unlocked = True
         persistent.csb3b_unlocked = True
         persistent.defeated_perfect_tate = True
+        persistent.saved_christmas = True
         persistent.awawa_mode = True
         for label in renpy.get_all_labels():
             renpy.mark_label_seen(label)

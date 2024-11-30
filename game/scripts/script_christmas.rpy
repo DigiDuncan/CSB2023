@@ -5546,6 +5546,7 @@ label ce_roof_moment:
     n "Merry Christmas, and have a Happy New Year!"
     $ ending_manager.mark("christmas")
     pause 5.0
+    jump ce_epilogue
 
 # Epilogue
 label ce_epilogue:
@@ -5564,5 +5565,8 @@ label ce_epilogue:
     window hide
     show christmas_finisher with dissolve
     pause
+    if persistent.saved_christmas == False:
+        $ persistent.saved_christmas = True
+        call screen special_unlock("That strange die has moved to Extras?! The D20 Viewer has been unlocked!")
     # Pan over shot of the schematic for the Billy pot
 
