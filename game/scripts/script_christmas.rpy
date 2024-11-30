@@ -2201,27 +2201,30 @@ label ce_aftershop:
 
 
 # TODO: basically all of these need sfx added for whatever vehicle they arrive in. - tate
+# TODO: put respective vehicles in background + item collection because funnie - tate
 
 label ce_party_before:
     scene cs_bedroom2
     show cs happy christmas
     with dissolve
     cs "Today is the day!"
-    cs "Now I just have to wait for people to arrive!"
+    cs "Now, I just have to wait for people to arrive!"
     show cs christmas flipped
-    cs "I wonder who will arrive first?"
+    cs "I wonder who will arrive first..."
     if d20 == 1:
-        n "CS waits paiently."
+        n "CS waits patiently."
         n "He keeps on waiting."
         show cs disappointed christmas flipped
         cs "Alright, any minute now..."
         cs "The party starts in about 15 minutes, so people should start showing up soon..."
         n "CS keeps on waiting, but it looks like no one shows up early."
-        jump after_d20      
+        jump after_d20
     if d20 == 2:
+        play sound sfx_car_approach_stop volume 5.0 fadein 1.0
         n "As CS asks himself this, a small car pulls up in the driveway."
         cs "Hmm, let's go see who that is!"
         hide cs with moveoutleft
+        stop sound fadeout 0.5
         scene cs_house_snow_night
         show arceus dark flipped at mid_left
         show kitty festive dark at left
@@ -2230,15 +2233,18 @@ label ce_party_before:
         arceus "Hey, CS!"
         cs "Hey, Arc! Hey, Kitty!"
         kitty "What's up?"
-        cs "Well, Merry Christmas, guys! I'm glad you could travel back here for this!"
-        arceus "No problem! I mean, after everything we went through, how could I not?"
+        cs "Well, Merry Christmas, guys! I'm glad you could make it back to the US for this!"
+        arceus "No problem! I mean, after everything we went through, how could I {i}not?"
         cs "Yeah, well, should we get inside? It's pretty cold out."
-        kitty "Well, we are rather warm, but yeah."  # british + furry = well equipped for cold
+        kitty "Well, we are rather warm, but, yeah."  # british + furry = well equipped for cold
         kitty "Let's go inside."
-        jump after_d20      
+        jump after_d20
     if d20 == 3:
+        play sound sfx_car_approach_stop volume 5.0 fadein 1.0
+        show cs christmas flipped at mid_left with move
         n "CS peers out the window to see Anno's car pull into the driveway."
         cs "Hey, look at that! Anno's here first!"
+        stop sound fadeout 0.5
         hide cs with moveoutleft
         scene cs_house_snow_night
         show anno festive dark at mid_left
@@ -2247,8 +2253,11 @@ label ce_party_before:
         anno "Hey, CS!"
         anno "I showed up kinda early, but I wanted to see everyone's initial reactions of our decor work!"
         cs "Well, I'm glad you showed up. Come inside! It's cold out."
-        jump after_d20      
+        anno "I know I showed up kinda early, but, I wanted to see everyone's initial reactions to our decorating!"
+        cs "Well, I'm glad you did! Come inside! It's cold out."
+        jump after_d20
     if d20 == 4:
+        # TODO: digi ufo sound
         n "All of a sudden, CS hears a futuristic-sounding vehicle land outside."
         show cs disappointed christmas flipped
         cs "What the hell is that?"
@@ -2261,42 +2270,54 @@ label ce_party_before:
         digi "Hey, CS! How've you been?"
         show digi dark flipped
         cs "Hey, Digi! I didn't know you had a... spaceship?"
-        digi "Oh yeah, this old thing. It's a bit of a nugget but it gets the job done."
-        cs "Why have I never seen this before?"
+        digi "Oh, yeah, this old thing. It's a bit of a nugget, but, it gets the job done."
+        show cs disappointed christmas dark flipped
+        cs "Why have I {i}never{/i} seen this before?"
         digi "Was never coming from space before."
         pause 0.5
-        show digi shock dark flipped with hpunch
-        n "Digi shudders from the temperature."
+        show digi shock dark flipped
+        n "Digi shudders from the temperature." with hpunch
+        show digi sad dark flipped
         digi "It's cold out. Can we go inside?"
+        show cs christmas dark flipped
         cs "Yeah, let's go."
         jump after_d20
     if d20 == 5 or d20 == 6:
-        n "As soon as he says that, he feels the house start to shake."
-        show cs disappointed christmas flipped
-        cs "Wh--{w=0.5} what's going on?"
-        show cs worried christmas flipped
-        n "As the house shakes even faster, a loud train whistle bellows out."
+        # TODO: sfx fading in train chugging
+        show cs scared christmas flipped with vpunch
+        n "As soon as he says that, he feels the house start to shake." with hpunch
+        cs "Wh--{w=0.5} what's going on?" with hpunch
+        n "As the house shakes even faster, a loud train whistle bellows out." with hpunch
         # TODO: SFX train whistle
-        cs "Holy shit, is that a {i}train?!"
+        cs "Holy shit, is that a {i}train?!" with vpunch
         hide cs with moveoutleft
         scene cs_house_snow_night
-        show tate festive dark flipped at mid_left
-        show mean human dark flipped at left
+        show mean human dark flipped at mid_left
+        show tate festive dark at left
         with dissolve
         show cs worried christmas dark flipped at right with moveinright
         cs "That {i}is{/i} a fucking train!"
         tate "Hey, CS! How've you been?"
+        show cs christmas dark flipped
         cs "Tate? Hey! I've been great!"
         mean "Hey, CS, Merry Christmas!"
-        cs "Merry Christmas to you too... Mean, right?"
+        cs "Merry Christmas to you, too..."
+        show cs worried christmas dark flipped
+        cs "Merry Christmas to you, too...{fast} Mean, right?"
+        show mean human happy dark flipped
         mean "Yup!"
-        cs "Sorry, I've never seen you in person. Shall we get inside?"  # Does that help? -- Digi
+        cs "Sorry, Tate talks about you a lot, but I didn't know what you looked like."
+        show cs christmas dark flipped
+        cs "Shall we get inside?"
         tate "Yeah!" (multiple = 2)
         mean "Yeah!" (multiple = 2)
         jump after_d20   
     if d20 == 7:
+        play sound sfx_car_approach_stop volume 5.0 fadein 1.0
+        show cs christmas flipped at mid_left with move
         n "CS notices a familiar blue car roll up onto the driveway."
         cs "Look at that! Looks like Billy is here first!"
+        stop sound fadeout 0.5
         hide cs with moveoutleft
         scene cs_house_snow_night
         show billy festive dark at mid_left
@@ -2304,29 +2325,39 @@ label ce_party_before:
         show cs dark christmas flipped at right with moveinright
         billy "Hi! It's Billy!"
         billy "Merry Christmas!"
-        cs "Merry Christmas to you too, Billy!"
-        billy "Times like these make me wish I could still run commercials."
+        cs "Merry Christmas to you, too, Billy!"
+        billy "Times like these make me wish I could still be in commercials."
         billy "It's been hard to sell products by word of mouth, especially since I died that one time."
-        cs "That sucks man, I hope this party cheers you up."
+        show cs disappointed christmas dark flipped
+        cs "That sucks, man. I hope this party cheers you up."
         billy "Let's get inside. It's freezing out here!"
-        jump after_d20      
+        jump after_d20
     if d20 == 8:
+        play sound2 sfx_chopper_loop fadein 2.0
         n "All of a sudden, CS hears helicopter blades above his house."
         show cs worried christmas flipped
         cs "Woah, what the hell?!"
+        show cs worried christmas flipped at mid_left with move
         n "A Blackhawk helicopter is seen landing out in the middle of the street."
+        show cs scared christmas flipped
+        cs "Who the {i}hell{/i} would be arriving in a helicopter?!"
+        stop sound2 fadeout 1.0
         hide cs with moveoutleft
         scene cs_house_snow_night
         show obama festive dark at mid_left
         with dissolve
-        show cs dark christmas flipped at right with moveinright
-        # wait, uh, can someone pls explain to me when they ACTUALLY met obama in CSB??? - tate
+        show cs worried dark christmas flipped at right with moveinright
         n "The President of the United States steps out."
         obama "Hello, CS! Nice to meet you."
-        cs "Obama?! I didn't think you would actually come!"
-        obama "Well, I {i}have{/i} enjoyed your content, and when you sent an invitation to your Christmas party, I figured I could come visit for a while."
-        obama "Besides, running the political circus has become tiring enough, I need a break."
-        cs "Fair enough, I guess! Well, Mr. President, let's get inside and wait for the other guests."
+        show cs scared dark christmas flipped
+        cs "President Obama?! I didn't think you would {i}actually{/i} come!"
+        cs "I sent that invite mostly as a joke!"
+        obama "Well, I {i}have{/i} enjoyed your content, so when you sent an invitation to your Christmas party, I figured I could come visit for a while."
+        obama "Besides, running the political circus is tiring work! I need a break."
+        show cs christmas dark flipped
+        cs "Fair enough, I guess!"
+        show cs happy dark christmas flipped
+        cs "Well, Mr.{w=0} President, let's get inside and wait for the other guests."
         obama "Sure thing. It is very cold outside."
         jump after_d20
     if d20 == 9:
@@ -2538,15 +2569,16 @@ label ce_party_before:
         cs "Alright, then..."
         jump after_d20      
     else:
-        n "CS waits paiently."
+        n "CS waits patiently."
         n "He keeps on waiting."
         show cs disappointed christmas flipped
-        cs "Okay, what's going on? I figured {i}someone{/i} would be early."
+        cs "Okay, what's going on? I figured {i}someone{/i} would show up early."
+        show cs disappointed christmas flipped at mid_left with MoveTransition(1.0)
         n "CS looks out into the distance."
         cs "Wait, who is that?"
         hide cs with moveoutleft
         scene cs_house_snow_night
-        show iris flipped at mid_left
+        show iris dark flipped at mid_left
         with dissolve
         show cs disappointed christmas dark flipped at right with moveinright
         cs "Who the heck are you?"
@@ -2556,8 +2588,9 @@ label ce_party_before:
         iris "Um... a [d20]."
         cs "Rolled... like on a die?"
         iris "You rolled a D20 earlier, no?"
-        cs "I did, but how did I roll on [d20] on a D20? That's not even a thing you {i}can{/i} roll!"
-        cs "And, how did you know I did that?"
+        cs "I did, but... how did I roll on [d20] on a D20? That's not even a thing you {i}can{/i} roll!"
+        show cs worried christmas dark flipped
+        cs "And... how did you know I even did that?"
         iris "Ah, that's a lot to discuss. Shall we go inside? I'm sure you're rather cold."
         cs "I..."
         n "CS gives up trying to understand, for now."
