@@ -25,7 +25,7 @@ screen d20_viewer_screen(rolled):
         imagebutton:
             idle "gui/left_off.png" 
             hover "gui/left_on.png"
-            action SetVariable("current_roll", current_roll-1), Notify(str(current_roll))
+            action SetScreenVariable("current_roll", current_roll-1), Notify(str(current_roll)), Show("d20_viewer_screen", None, current_roll-1)
             xalign 0.3
             yalign 0.55
 
@@ -34,7 +34,7 @@ screen d20_viewer_screen(rolled):
         imagebutton:
             idle "gui/right_off.png"
             hover "gui/right_on.png"
-            action SetVariable("current_roll", current_roll+1), Notify(str(current_roll))
+            action SetScreenVariable("current_roll", current_roll+1), Notify(str(current_roll)), Show("d20_viewer_screen", None, current_roll+1)
             xalign 0.7
             yalign 0.55
 
@@ -42,7 +42,6 @@ screen d20_viewer_screen(rolled):
         xalign 0.5
         yalign 0.55
         size 288
-
     textbutton "{size=69}View" action Notify("Rolled a "+str(current_roll)+"! Digi needs to get this working!"):
         xalign 0.5
         yalign 0.9

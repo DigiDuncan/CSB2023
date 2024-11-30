@@ -204,7 +204,8 @@ screen rockstar_check:
 
 label d20_viewer:
     $ in_d20_viewer = True
-    call screen d20_viewer_screen(d20)
+    $ current_roll = d20
+    call screen d20_viewer_screen(current_roll)
     jump ce_party_before
 
 ########## CS' Data ##########
