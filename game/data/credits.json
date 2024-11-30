@@ -63,7 +63,9 @@
             "Perfect Tate": [""],
             "Mean": [""],
             "Mean (Human)": ["Mushroom Man"],
-            "Ges": ["Mikapara"]
+            "Ges": ["Mikapara"],
+            "blanknam3d": ["abtmtr.link"],
+            "Midge": "Midgalicis"
         },
 
         "CS-ocola (3D Sprite)": {
@@ -174,7 +176,8 @@
             "Aria": ["Aria \"Estroteric\""],
             "Pakoo": ["Pakoo"],
             "Tate": ["Tate \"alleZSoyez\""],
-            "Mean (Human)": ["Mushroom Man"]
+            "Mean (Human)": ["Mushroom Man"],
+            "blanknam3d": ["abtmtr.link"]
         },
 
         "DigiDuncan Character Sprite": {
