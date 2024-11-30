@@ -9,6 +9,9 @@ init python:
     # TODO: Maybe further tagging can be added later, but, not now.
     current_bios_sorting_mode = 0
 
+    # For dice roll viewer
+    current_roll = 0
+
 # If music is so good, why is there no Music 2?
 init python:
     renpy.music.register_channel("sound2", "sound")

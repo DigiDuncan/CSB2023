@@ -204,7 +204,7 @@ screen rockstar_check:
 
 label d20_viewer:
     $ in_d20_viewer = True
-    # TATE HELP ME SHOW A SCREEN HERE AAAAA
+    call screen d20_viewer_screen(d20)
     jump ce_party_before
 
 ########## CS' Data ##########
