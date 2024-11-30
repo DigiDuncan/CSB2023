@@ -2018,8 +2018,6 @@ label ce_checkout:
 
     play sound sfx_moneyfalls
     show spent_target at t_fake_rpg_text(0.5, 0.1, 0.5)
-    # TODO: find the sfx that's like "ding-ding-DING~!" when you pay on these machines
-
     n "CS pays with his card before heading out to the car."
     hide cs_wallet with dissolve
     show cs coat flipped at left with move
@@ -2083,7 +2081,6 @@ label ce_aftershop:
     hide target_bags with dissolve
     pause 1.0
     show cs flipped at center behind cs_kitchen_fg with move
-    # TODO: sfx knock it onto the floor
     show d20:
         zoom 0.1
         linear 0.1 rotate 165 xpos 1000 ypos 600
@@ -2091,6 +2088,7 @@ label ce_aftershop:
         linear 0.1 rotate 165 xpos 700 ypos 700
         linear 0.1 rotate 165 xpos 600 ypos 900
         linear 0.1 rotate 165 xpos 500 ypos 1100
+    play sound sfx_dice
     n "As he finishes up, a D20 sitting on the counter is knocked onto the floor."
     $ collect("d20")
     show cs disappointed flipped behind cs_kitchen_fg
@@ -3148,7 +3146,7 @@ label ce_banter:
     addy "HELLO??"
     k22 "Hey, uhh, how is it going over there?"
     addy "WHAT? I CAN'T HEAR YOU, THE MUSIC IS REALLY LOUD!"
-    show k22 phone angry # TODO: hey pakoo this one still uses the old eyes - tate
+    show k22 phone angry
     k22 "I WAS ASKING IF--{w=1.0}{nw}"
     addy "YEAH, I'LL CALL YOU LATER! HAVE FUN AT CS' PARTY!"
     play sound sfx_end_call
