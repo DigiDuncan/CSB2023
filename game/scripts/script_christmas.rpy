@@ -2197,9 +2197,10 @@ label ce_aftershop:
     scene black with Dissolve(2.0)
     n "After some time, CS finally dozes off..."
 
-    # TODO: TATE STOPPED EDITING HERE!
     # Digi has also done a pass up to this point! This is the crossroads.
     # Call me Energizer, because I'm still going, and going, and going...
+
+# TODO: basically all of these need sfx added for whatever vehicle they arrive in. - tate
 
 label ce_party_before:
     scene cs_bedroom2
@@ -2245,10 +2246,10 @@ label ce_party_before:
         show cs christmas dark flipped at right with moveinright
         anno "Hey, CS!"
         anno "I showed up kinda early, but I wanted to see everyone's initial reactions of our decor work!"
-        cs "Well, I'm glad you showed up, come inside! It's cold out."
+        cs "Well, I'm glad you showed up. Come inside! It's cold out."
         jump ce_introductions      
     if d20 == 4:
-        n "All of a sudden, CS hears a futuristic sounding vehicle land outside."
+        n "All of a sudden, CS hears a futuristic-sounding vehicle land outside."
         show cs disappointed christmas flipped
         cs "What the hell is that?"
         hide cs with moveoutleft
@@ -2267,7 +2268,7 @@ label ce_party_before:
         show digi shock dark flipped with hpunch
         n "Digi shudders from the temperature."
         digi "It's cold out. Can we go inside?"
-        cs "Yeah, let's get inside."
+        cs "Yeah, let's go."
         jump ce_introductions
     if d20 == 5 or d20 == 6:
         n "As soon as he says that, he feels the house start to shake."
@@ -2276,24 +2277,25 @@ label ce_party_before:
         show cs worried christmas flipped
         n "As the house shakes even faster, a loud train whistle bellows out."
         # TODO: SFX train whistle
-        cs "Holy shit, is that a train?"
+        cs "Holy shit, is that a {i}train?!"
         hide cs with moveoutleft
         scene cs_house_snow_night
         show tate festive dark flipped at mid_left
         show mean human dark flipped at left
         with dissolve
         show cs worried christmas dark flipped at right with moveinright
-        cs "That's a fucking train!"
-        tate "Hey, CS! How've you been doin'?"
+        cs "That {i}is{/i} a fucking train!"
+        tate "Hey, CS! How've you been?"
         cs "Tate? Hey! I've been great!"
         mean "Hey, CS, Merry Christmas!"
         cs "Merry Christmas to you too... Mean, right?"
         mean "Yup!"
         cs "Sorry, I've never seen you in person. Shall we get inside?"  # Does that help? -- Digi
-        tate "Yeah!"
+        tate "Yeah!" (multiple = 2)
+        mean "Yeah!" (multiple = 2)
         jump ce_introductions   
     if d20 == 7:
-        n "CS notices a familiar blue car roll up on the driveway."
+        n "CS notices a familiar blue car roll up onto the driveway."
         cs "Look at that! Looks like Billy is here first!"
         hide cs with moveoutleft
         scene cs_house_snow_night
@@ -2306,18 +2308,19 @@ label ce_party_before:
         billy "Times like these make me wish I could still run commercials."
         billy "It's been hard to sell products by word of mouth, especially since I died that one time."
         cs "That sucks man, I hope this party cheers you up."
-        billy "Let's get inside. It's freezing out here."
+        billy "Let's get inside. It's freezing out here!"
         jump ce_introductions      
     if d20 == 8:
-        n "All of a sudden, CS hears helicopter blades outside of his house."
+        n "All of a sudden, CS hears helicopter blades above his house."
         show cs worried christmas flipped
-        cs "Woah, what the hell?"
+        cs "Woah, what the hell?!"
         n "A Blackhawk helicopter is seen landing out in the middle of the street."
         hide cs with moveoutleft
         scene cs_house_snow_night
         show obama festive dark at mid_left
         with dissolve
         show cs dark christmas flipped at right with moveinright
+        # wait, uh, can someone pls explain to me when they ACTUALLY met obama in CSB??? - tate
         n "The President of the United States steps out."
         obama "Hello, CS! Nice to meet you."
         cs "Obama?! I didn't think you would actually come!"
@@ -2343,7 +2346,7 @@ label ce_party_before:
         cs "Fuck, yeah, you did! I didn't think you were gonna be on duty!"
         copguy "Well, someone's gotta be security, right?"
         cs "I... guess?"
-        cs "Whatever, let's inside, I'm freezing."
+        cs "Whatever, let's get inside. I'm freezing!"
         jump ce_introductions      
     if d20 == 10:
         n "CS looks outside to see a bus pull up."
@@ -2356,13 +2359,14 @@ label ce_party_before:
         sheriff "God damn it! Stupid damn wheels! Stuck in the snow!"
         cs "Woah, hey! Who are you, again?"
         sheriff "Who am I? I'm Copguy's boss, that's who!"
-        sheriff "I asked him to pick me up, but apparently he had to shop or some shit!"
+        sheriff "I asked him to pick me up, but apparently he had to go shopping or some shit!"
         sheriff "And I had to take the bus!"
-        cs "Oh, wow, okay, uhm, do you need help?"
-        sheriff "Yes!! I keep getting stuck in the snow! Take me inside!"
+        cs "Oh, wow, okay. Uhm, do you need help?"
+        sheriff "{i}Yes!{/i} I keep getting stuck in the snow! Take me inside!"
         jump ce_introductions      
     if d20 == 11:
-        n "A beam sound can be heard from outside."
+        n "A familiar sound like a laser beam is heard from outside."
+        play sound sfx_beam
         hide cs with moveoutleft
         scene cs_house_snow_night
         show ed festive dark flipped at center
@@ -2370,11 +2374,12 @@ label ce_party_before:
         show wesley festive dark flipped at left
         with dissolve
         show cs christmas dark flipped at right with moveinright
-        cs "Hey guys! How have you guys been doing?"
+        cs "Hey guys! How have you been doing?"
         ed "We've been doing well! Our business has been profitable recently!"
-        ed "Even Wesley has made a speedy recovery! He wasn't too happy about getting that metal pipe in his back, though."
-        cs "Yeah, I'm uhh..."
-        cs "I'm really sorry about that. I still feel bad about taking that too far."
+        ed "Even Wesley has made a speedy recovery! He wasn't too happy about needing a metal rod installed into his back, though."
+        show cs festive worried dark flipped
+        cs "Yeah, I'm... uh..."
+        cs "I'm really sorry about that. I still feel bad about taking things too far."
         n "Wesley stares at the ground and mutters."
         wesley "Yeah."
         rich "Well, why don't we get inside? It's freezing!"
@@ -2389,18 +2394,19 @@ label ce_party_before:
         show k17 dark flipped at mid_left
         with dissolve
         show cs disappointed christmas dark flipped at right with moveinright
-        cs "Hey it's... two Pakoos?"
+        cs "Hey, it's... two Pakoos?"
         show k17 happy dark flipped
         k17 "CS!!!"
         show k17 dark flipped
         k22 "Hey, CS. Merry Christmas!"
-        cs "Hi, so umm..."
+        cs "Hi, so, umm..."
         cs "Are you guys {i}both{/i} Pakoo?"
         k22 "It's... kind of complicated."
-        k22 "Let's go inside, and we can explain."
+        k22 "Let's go inside, then we can explain."
         jump ce_introductions      
     if d20 == 13:
         n "A teleport-like sound is heard outside."
+        # TODO: sfx for that
         show cs disappointed christmas flipped
         cs "What in the world?"
         hide cs with moveoutleft
@@ -2458,9 +2464,9 @@ label ce_party_before:
         with dissolve
         show cs christmas dark flipped at right with moveinright
         blank "Hey, CS, how have you been?"
-        cs "I've been doing well, did you drive safe here?"
-        blank "I did, but lots of people on the interstate didn't!"
-        blank "I got quite a bit of dashcam footage to watch if you want."
+        cs "I've been doing well! Did you drive safe here?"
+        blank "I did, but lots of people on the interstate sure didn't!"
+        blank "I got quite a bit of dashcam footage if you want to watch some with me."
         cs "Sure thing! Let's get inside and watch while we wait for the others."
         jump ce_introductions      
     if d20 == 17:
@@ -2473,7 +2479,7 @@ label ce_party_before:
         show cs christmas dark flipped at right with moveinright
         nova "Hey, CS! Thanks for inviting me to your Christmas party!"
         cs "Yeah, sure thing!"
-        cs "It's been a while, how've you been?"
+        cs "It's been a while. How've you been?"
         nova "Oh, y'know, I've been moving a lot, had my friend move in with me..."
         cs "Well, if you wanna chat about it, let's go inside first. It's cold out here."
         jump ce_introductions      
@@ -2490,7 +2496,7 @@ label ce_party_before:
         show cs disappointed christmas dark flipped at right with moveinright
         cs "Hey, uhh..."
         eliza "Is this the right place?"
-        cs "I think so?"
+        cs "I think so!"
         cs "Are you..."
         eliza "I'm Elizabeth. Behind me is Anne and Grace."
         cs "You might have the wrong place. Sorry."
@@ -2509,7 +2515,7 @@ label ce_party_before:
         with dissolve
         show cs christmas dark flipped at right with moveinright
         cs "DB! You're the first one here!"
-        db "I am??"
+        db "I am?!"
         cs "Yes! You managed to be the earliest this time!"
         db "Wow, I can't believe it!"
         cs "Yeah! Let's get inside and we can talk!"
@@ -2523,19 +2529,19 @@ label ce_party_before:
         show avgn dark flipped at mid_left
         with dissolve
         show cs disappointed christmas dark flipped at right with moveinright
-        cs "Hey, are you..."
-        avgn "I'm the fuckin' Nerd!"
-        cs "The Angry Video Game Nerd? I didn't invite you, at least I don't think I did?"
+        cs "Hey, are you--"
+        avgn "I'm the fuckin' Nerd!" with vpunch
+        cs "The Angry Video Game Nerd?! I didn't invite you! At least, I don't {i}think{/i} I did..."
         avgn "It doesn't fucking matter! Merry fucking Christmas!"
-        cs "Okay, do you, wanna go inside?"
-        avgn "Hell yeah."
-        cs "Alright then..."
+        cs "Okay... Do you, uh, wanna go inside?"
+        avgn "Hell yeah!"
+        cs "Alright, then..."
         jump ce_introductions      
     else:
         n "CS waits paiently."
         n "He keeps on waiting."
         show cs disappointed christmas flipped
-        cs "OK, what's going on? I figured {i}someone{/i} would be early."
+        cs "Okay, what's going on? I figured {i}someone{/i} would be early."
         n "CS looks out into the distance."
         cs "Wait, who is that?"
         hide cs with moveoutleft
@@ -2548,16 +2554,18 @@ label ce_party_before:
         iris "It seems you rolled a..."
         n "Iris looks confused."
         iris "Um... a [d20]."
-        cs "Rolled... like on a dice?"
+        cs "Rolled... like on a die?"
         iris "You rolled a D20 earlier, no?"
-        cs "I did, but how did I roll on [d20] on a D20? That's not even a thing you can roll!"
-        cs "And how did you know I did that?"
+        cs "I did, but how did I roll on [d20] on a D20? That's not even a thing you {i}can{/i} roll!"
+        cs "And, how did you know I did that?"
         iris "Ah, that's a lot to discuss. Shall we go inside? I'm sure you're rather cold."
         cs "I..."
         n "CS gives up trying to understand, for now."
         show cs christmas dark flipped
         cs "Sure."
         jump ce_introductions
+
+    # TODO: TATE STOPPED EDITING HERE!
 
 # Introductions
 label ce_introductions:
