@@ -2194,6 +2194,7 @@ label ce_aftershop:
 # TODO: put respective vehicles in background + item collection because funnie - tate
 
 label ce_party_before:
+    stop music
     scene cs_bedroom2
     show cs happy christmas
     with dissolve
@@ -2216,7 +2217,7 @@ label ce_party_before:
         hide cs with moveoutleft
         stop sound fadeout 0.5
         scene cs_house_snow_night
-        show arceus dark flipped at mid_left
+        show arceus festive dark flipped at mid_left
         show kitty festive dark at left
         with dissolve
         show cs christmas dark flipped at right with moveinright
@@ -2511,7 +2512,7 @@ label ce_party_before:
         stop sound fadeout 1.0
         hide cs with moveoutleft
         scene cs_house_snow_night
-        show blank dark flipped at mid_left
+        show blank festive dark flipped at mid_left
         with dissolve
         show cs christmas dark flipped at right with moveinright
         blank "Hey, CS, how've you been?"
@@ -2634,8 +2635,6 @@ label ce_party_before:
         cs "Sure."
         jump after_d20
 
-    # TODO: TATE STOPPED EDITING HERE!
-
 label after_d20:
     if in_d20_viewer:
         jump d20_viewer
@@ -2645,9 +2644,9 @@ label after_d20:
 # Introductions
 label ce_introductions:
     scene black with dissolve
-    n "By the time of the party, everyone shows up at CS' house in droves."
+    n "By the time of the party, everyone shows up at CS' house in droves." # TODO: i hate this line but dont have any ideas yet, i'll come back to this - tate
     scene cs_foyer_festive
-    show cs christmas at left
+    show cs christmas at mid_left_left
     show anno festive at mid_left behind cs
     show aria festive at mid_mid_left behind anno
     show digi at center
@@ -2657,67 +2656,90 @@ label ce_introductions:
     music teeth_dust
     cs "Well, it looks like everyone is here, right?"
     if d20 != 19:
-        anno "DB isn't here yet, but other than that, yeah."
+        anno "DB isn't here yet, but otherwise, yeah."
     else:
         anno "Looks like it, yeah."
     show tate sheepish festive flipped
-    tate "There are... a lot of people here..."
+    tate "There sure are... a {i}lot{/i} of people here..."
     show digi thinking flipped
     digi "Yeah, I wonder where Arc and Kitty are..."
-    show k17 happy at center
-    show k22 at mid_mid_right behind k17
-    with moveinright
-    show tate shock festive flipped
-    show digi happy flipped
-    k17 "OMG! Hey, guys!"
+    show cs worried christmas
+    show k17 happy at mid_right
+    show k22 at right behind k17
+    show tate shock festive at center behind digi
+    show digi shock flipped at mid_mid_left
+    with { "master": moveinright }
+    k17 "OMG!" with hpunch
+    k17 "Hey, guys!"
     show k17 shock
-    k17 "You guys all look so... different!"
+    k17 "You guys all look so... {i}different!"
     show k22 confident
     k22 "Hi, I'm his--{w=0.5}{nw}"
     show cs disappointed christmas
     k17 "CS, look how much you've grown!"
     show k22
-    cs "Okay, why are there two Pakoos?"
-    cs "...and you don't have green hair anymore again?"
+    if d20 == 12:
+        cs "Okay, seriously, why are there {i}two{/i} Pakoos?"
+    else:
+        cs "Okay, wait, why are there {i}two{/i} Pakoos?"
+    cs "... And, you also don't have green hair anymore, again?"
     show k22 disappointed
-    k22 "Oh boy, alright K-17, calm down for one second. I think everyone here needs an explanation."
+    k22 "Oh boy, alright."
+    k22 "K-17, calm down for one second. I think everyone here needs an explanation."
     show k17
-    show digi happy
-    show tate festive flipped
-    cs "Yes, please. I didn't want to say it, but it seems like everytime I meet you guys, your appearance always changes!"
+    show digi flipped
+    show tate sheepish festive
+    cs "Yes, please. I didn't want to say it, but... it seems like every time I see you guys, your appearance always changes!"
     aria "Sorry."
     show digi sad
     digi "Did I change too much?"
+    show cs worried christmas
     cs "No, no, just-- let Pakoo #2 speak."
     if fun_value(FUN_VALUE_RARE):
         show k17 disappointed
         k17 "Hey, where's Fyreee at?"
         show k22 angry
-        k22 "Damn it, can you let me talk?"
+        show digi shock flipped
+        show cs scared christmas
+        show tate shock festive
+        k22 "Damn it, can you let me talk?!" with hpunch
         show k17
     else:
         show k22
+        show digi flipped
+        show cs disappointed christmas
+        show tate sheepish festive
         k22 "I'm gonna assume that's me."
-    show digi
     show k22 confident
-    k22 "Alright, so, I'm K-22, the physical manifestation of Pakoo's memories from the year 2022."
+    k22 "Alright, so, I'm K-22. I am the physical manifestation of Pakoo's memories from the year 2022."
     show k22
-    k22 "This is K-17, I'm sure you can figure out what year he is."
+    k22 "This is K-17. I'm sure you can figure out what year {i}he{/i} is."
     show k17 happy
     k17 "Remember me? I'm the Sunny D guy!"
+    show cs worried christmas
     n "CS groans."
-    cs "Okay, so what about the green haired one?"
+    cs "Okay, so what about the green-haired one?"
     show k17
     show k22 confident
-    k22 "That's Addy, our boss. They run this archiving facility far away from here, and I guess they would be the closest version of Pakoo you know, but they aren't here right now."
+    k22 "That's Addy, our boss."
+    show cs disappointed christmas
+    k22 "They run this archiving facility far away from here. I guess {i}they{/i} would be the closest version of Pakoo you'd know, but they couldn't join us here tonight."
     show k22 disappointed
-    k22 "They are running their own Christmas party, which I wanted to be a part of, but this creature right here just {i}had{/i} to go this party,"
-    k22 "And I have to make sure he doesn't get too crazy."
+    k22 "They're running their {i}own{/i} Christmas party, which I {i}wanted{/i} to be a part of, but this creature right here just {i}had{/i} to come to this party..."
+    k22 "So, I have to make sure he doesn't get too crazy."
     cs "Great."
     cs "Is that it?"
     show k22
-    k22 "I mean, I could go on, but I'd be here all night."
-    show mean human at mid_offscreen_right with moveinright
+    k22 "I mean, I {i}could{/i} go on, but I'd be here all night."
+    show cs disappointed christmas at manual_pos(0.25, 1.0, 1.0)
+    show anno festive at left
+    show aria festive at mid_left
+    show tate festive at mid_mid_left
+    show digi flipped at mid_left
+    show mean human at mid_offscreen_right
+    show k17 flipped at mid_mid_right
+    show k22 flipped at mid_right
+    with moveinright
     mean "Hey, what's going on here?"
     show mean human shocked
     show k17 flipped
@@ -2725,28 +2747,43 @@ label ce_introductions:
     mean "Wait, there's two Pakoos now?"
     show mean human annoyed
     show k22 confident flipped
-    k22 "Okay, so--"
+    k22 "Okay, so--{w=0.5}{nw}"
     show k22 flipped
-    show tate sheepish festive flipped
-    tate "I'll just tell him later."
+    show tate sheepish festive
+    show k17
+    show k22
+    tate "I'll explain it to him later."
     show tate festive flipped
-    cs "Alright, well, I'll let you guys talk, I'm gonna check on the others."
+    show digi
+    show cs christmas
+    cs "Alright, well, I'll let you guys get to know each other. I'm gonna go check on the others."
+    show cs christmas zorder 5 with dissolve
     hide cs with moveoutright
+    pause 2.0
     show k17 shock flipped
-    k17 "So, who are you? Are you DigBick?"
+    show k22 flipped
+    show digi flipped
+    show tate festive
+    k17 "So, who are {i}you?"
+    k17 "Are you DigBick?"
     show mean human angry
-    mean "What did you just call me?"
+    show digi sad flipped
+    show tate sheepish festive
+    mean "What did you just call me?" with vpunch
+    pause 0.5
+
     scene cs_kitchen
     show cs_kitchen_fg
     show obama festive at right behind cs_kitchen_fg
     show ed festive at mid_right behind cs_kitchen_fg
     show michael festive at mid_mid_right behind cs_kitchen_fg
-    show billy festive at mid_mid_left behind cs_kitchen_fg
+    show billy festive at mid_mid_left behind michael
     with dissolve
+    pause 0.5
     show cs christmas at left with moveinleft
-    cs "Hey guys, how are you all doing?"
-    obama "Hello, CS, we are all preparing our meals for dinner tonight."
-    obama "I'm going to make a carrot cake."
+    cs "Hey guys, how's it going?"
+    obama "Hello, CS. We are all preparing our meals for dinner tonight."
+    obama "I am going to make a carrot cake."
     if fun_value(FUN_VALUE_COMMON):
         show wm1:
             xpos -250
@@ -2777,6 +2814,7 @@ label ce_introductions:
             zoom 1.0
             linear 0.35 xpos -250 ypos 980 zoom 1.25
         pause 0.5
+        show michael festive flipped
         michael "I've been thinking of preparing some mashed potatoes."
         show wm3:
             xpos -250
@@ -2792,10 +2830,12 @@ label ce_introductions:
             zoom 1.0
             linear 0.35 xpos -250 ypos 980 zoom 1.25
         pause 0.5
+        show cs happy christmas
         cs "That all sounds great!"
+        show cs christmas
         cs "What about you, Ed?"
-        ed "Well, I think when it comes to cooking, it's just as good as my foundation repair skills."
-        ed "I'm preparing a Christmas turkey for our feast."
+        ed "Well, I think that, when it comes to cooking, even Christmas dinners need a good stable foundation."
+        ed "I'm preparing a big ol' turkey for our feast."
         show wm4:
             xpos -250
             ypos 980
@@ -2812,44 +2852,61 @@ label ce_introductions:
         pause 0.5
     else:
         billy "I'm gonna make some Big City Sliders!"
+        show michael festive flipped
         michael "I've been thinking of preparing some mashed potatoes."
         cs "That all sounds great!"
         cs "What about you, Ed?"
-        ed "Well, I think when it comes to cooking, it's just as good as my foundation repair skills."
-        ed "I'm preparing a Christmas turkey for our feast."
+        ed "Well, I think that, when it comes to cooking, even Christmas dinners need a good stable foundation."
+        ed "I'm preparing a big ol' turkey for our feast."
+    show cs happy christmas
     cs "Damn! That sounds delicious!"
     if fun_value(FUN_VALUE_COMMON):
-        cs "Hey Ed, can you make me a sandwich?"
-        ed "{i}Noe!"
-    cs "Well, I hope you are all doing great!"
-    cs "I'm gonna go check everyone else!"
-    show cs flipped with determination
+        show cs christmas
+        cs "Hey, Ed, can you make me a sandwich?"
+        ed "{i}Noe!" with vpunch
+    cs "I can't wait to have some! I hope you all have a great time cooking!"
+    show cs christmas
+    cs "I'm gonna go check on everyone else."
+    show cs christmas flipped with determination
     hide cs with moveoutleft
+    pause 0.5
+
     scene cs_living
-    show digi thinking flipped at left
-    show linus festive at mid_left behind digi
-    show luke festive at mid_left_left behind linus
-    show blank at mid_right
-    show nova at right
+    show linus festive at mid_left
+    show luke festive flipped at mid_left_left
+    show digi thinking at mid_mid_left
+    show blank festive flipped at mid_right
+    show nova at mid_offscreen_right
     with dissolve
+    pause 0.5
     digi "So, this should go {i}here..."
-    linus "No, you got the wrong cable!"
-    luke "You idiots are both wrong! You're putting it in the wrong port!"
+    linus "No, you've got the wrong cable!"
+    luke "You idiots are {i}both{/i} wrong! That's not even the right port!"
     digi "Ohhhhh..." (multiple = 2)
     linus "Ohhhhh..." (multiple = 2)
-    show cs christmas flipped at center with moveinright
-    cs "Hey guys! What are you guys doing?"
+    pause 1.0
+    show cs christmas flipped at center
+    show digi at mid_left
+    with moveinright
+    cs "Hey guys! Whatcha doin'?"
+    show digi happy flipped
+    show linus festive flipped
+    digi "Oh, hey, CS! Merry Christmas!"
     show digi flipped
-    digi "Oh, we are just trying to set up a projector to play movies on!"
+    digi "We're just trying to set up a projector to play movies on!"
     linus "Don't ask how this became a three-man job."
+    show cs happy christmas flipped
+    cs "Sweet!"
     show cs christmas
-    cs "Well, what about you two?"
-    blank "We are working on setting up the music."
-    nova "The problem is, I don't really want to have Blank play his shitty music during the party."
-    blank "Why? Not all of it's crazy shit, like yours is."
-    show cs disappointed christmas
+    cs "How about you two?"
+    show blank festive
+    blank "We are working on setting up the sound system."
+    nova "The problem is that I don't really want Blank playing his shitty music during the party."
+    show blank festive flipped
+    blank "Why not? Not {i}all{/i} of it's crazy shit like {i}yours{/i} is."
+    show cs scared christmas
     show digi shock flipped
-    nova "Shut the hell up!"
+    nova "Shut the hell up!" with vpunch
     show cs worried christmas
     cs "Woah, okay, calm down."
     show digi sad flipped
@@ -2857,55 +2914,82 @@ label ce_introductions:
     cs "This is a Christmas party, after all. Let's try to have fun."
     show cs christmas flipped
     show digi flipped
-    cs "I'm gonna go check on anyone else who is here."
+    cs "I'm gonna go check on a few more people."
     hide cs with moveoutleft
+    pause 0.5
+
     scene cs_hallway
-    show arceus flipped at mid_left
+    show arceus festive at mid_left
     show kitty festive at left
     with dissolve
+    pause 0.5
     show cs christmas flipped at center with moveinright
     cs "Hey, how are you guys? I was looking all over and couldn't find you."
-    arceus "Sorry, CS, we kind of got overwhelmed."
+    show arceus festive worried flipped
+    arceus "Hey, sorry, CS. We kinda got overwhelmed."
     kitty "We aren't the best with huge social gatherings."
-    cs "Ah, it's okay. I'm just happy to get to talk to you guys."
-    arceus "We'll be around when something important happens."
+    show cs disappointed christmas flipped
+    cs "Ah, it's okay. I'm just happy you made it."
+    show arceus festive flipped
+    arceus "We'll be around when the main event starts."
+    # TODO: redo these sprites' positioning once they're no longer placeholder sprites
     show elizabeth at right
     show anne at mid_right
     show grace at mid_mid_right
     with moveinright
     eliza "Hey, what's up."
-    show cs worried christmas
-    grace "CS! You're that YTP guy!"
-    show cs disappointed christmas
-    cs "Uhm... who are you three?"
-    eliza "Well, do you know Mika at all?"
+    if d20 == 18:
+        # TODO: hey mika pls feel free to rewrite this section. just keeping continuity with the dice roll thing - tate
+        show cs disappointed christmas
+        cs "Oh, you three..."
+        cs "I still don't understand how you got the invite I sent to Mika."
+        eliza "Well, we kind of {i}are{/i} Mika."
+    else:
+        show cs worried christmas
+        grace "CS! You're that YTP guy!"
+        show cs disappointed christmas
+        cs "Uhm... wait, who {i}are you three?"
+        eliza "Well, do you know Mika at all?"
     show cs angry christmas
-    cs "I swear to God, are you guys like, memories or some shit as well?"
-    eliza "Relax, no, we are just..."
-    eliza "Let's just go with that I got a name change."
+    cs "I swear to God, are you guys {i}also{/i} \"memories\", or some shit?"
+    eliza "No, relax. We are just..."
+    eliza "Let's just pretend that I got a name change."
+    show cs disappointed christmas
     cs "What about the other two?"
-    eliza "I uhh... work for them?"
+    eliza "I, uhh... work for them?"
     # TODO: I'll see if Mika wants to word this any better than I did. -- pak
     cs "You guys are so complicated."
-    arceus "I mean, it wasn't too hard for me to figure out, funny enough."
+    arceus "I mean, it wasn't too hard for me to figure out, funnily enough."
     show cs disappointed christmas
     n "CS sighs."
-    cs "I guess not, I'm just stressed out a bit."
-    cs "I just really want this party to go well, and I feel like at this point I don't know half the people here."
-    cs "I mean, you split into three people, Pakoo split into two..."
+    cs "Sorry, everyone. I'm just stressed out a bit."
+    cs "I just really want this party to go well, but, at this point, I feel like I don't even know half the people here."
+    cs "I mean, {i}you{/i} split into three people, {i}Pakoo{/i} split into {i}two...{/i}"
+    cs "I hardly even know anything about Tate's friend beyond a few mentions over the phone..."
     eliza "I mean, if you want us to, we can step outside for a bit."
+    show cs worried christmas
     cs "No, no, it's okay."
-    cs "I hope you guys have fun, I'm gonna go back to the party."
+    cs "I hope you guys have fun. I'm gonna go back to the living room."
     hide cs with moveoutright
+
     if d20 == 20:
-        pause 1.0
-        show avgn at center
-        avgn "You guys ever heard of {i}Dr. Jekyll and Mr. Hyde{/i} for the NES?"
+        pause 2.0
+        show avgn at center # TODO: LMAO IS HE SUPPOSED TO JUST APPEAR???? - tate
+        avgn "You guys ever heard of {i}Dr.{w=0} Jekyll and Mr.{w=0} Hyde{/i} for the NES?"
         eliza "Uhh, no?"
-        avgn "Good, because it's fucking {i}ass!"
+        show avgn flipped
+        avgn "Good, because it's fucking {nw}"
+        avgn "Good, because it's fucking {fast}{i}ass!" with vpunch
+    
+    pause 0.5
+    scene black with dissolve
+    pause 1.0
+
+    # TODO: TATE STOPPED EDITING HERE!
+
 # Banter
 label ce_banter:
-    scene black with dissolve
+    scene black
     stop music fadeout 3.0
     music end
     n "While the party starts up, Copguy and the sheriff get into a predicament."
@@ -5560,4 +5644,3 @@ label ce_epilogue:
         $ persistent.saved_christmas = True
         call screen special_unlock("That strange die has moved to Extras?! The D20 Viewer has been unlocked!")
     # Pan over shot of the schematic for the Billy pot
-
