@@ -2946,7 +2946,7 @@ label ce_introductions:
         show cs worried christmas
         grace "CS! You're that YTP guy!"
         show cs disappointed christmas
-        cs "Uhm... wait, who {i}are you three?"
+        cs "Wait, who are {i}you{/i} three?!"
         eliza "Well, do you know Mika at all?"
     show cs angry christmas
     cs "I swear to God, are you guys {i}also{/i} \"memories\", or some shit?"
