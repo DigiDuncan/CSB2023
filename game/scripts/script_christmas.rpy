@@ -189,7 +189,7 @@ label ce_tree:
         cs "Fuck!"
         show cs disappointed flipped
         cs "Man, what a mess!"
-        cs "This is gonna take forever to clean up!"
+        cs "This is gonna take {i}forever{/i} to clean up!"
         hide cs with moveoutleft
         jump ce_anno
 
@@ -392,12 +392,13 @@ label ce_anno:
         n "He lets out a groan."
         cs "This is {i}not{/i} how this was supposed to go..."
     else:
-        n "CS looks upon his stash of lights and baubles and feels a little overwhelmed."
+        n "CS gazes upon his stash of lights and baubles and feels a little overwhelmed."
         cs "Wow, this is more than I thought..."
     cs "Maybe I should call someone over to help."
     cs "I wonder if Anno is around."
     show cs disappointed phone with dissolve
     play sound sfx_ring_once
+    pause 0.5
     show cs disappointed phone at mid_left with move
     show anno_house at mid_offscreen_right
     show anno phone at mid_right
@@ -449,7 +450,8 @@ label ce_anno:
         show cs worried coat hat
         if fun_value(FUN_VALUE_COMMON):
             cs "I hate Legos, but only when they're in my feet!"
-        cs "I love Legos, but not when they're embedded in my {i}feet!"
+        else: 
+            cs "I love Legos, but not when they're embedded in my {i}feet!"
         cs "Now, where did I last put..."
     else:
         scene cs_garage with dissolve
@@ -550,7 +552,7 @@ label ce_anno:
     show snow_pile at manual_pos(0.3, 1.1, 0.5) with determination:
         zoom 0.4
     $ collect("snow_pile")
-    # TODO: shovel sounds
+    play sound [ "<silence 1.0>", sfx_shovel_single]
     show shovel at manual_pos(0.4, 0.9, 0.5) with move:
         rotate 15
     pause 0.5
@@ -600,7 +602,7 @@ label ce_anno:
     # shovel go down
     show snow_pile at manual_pos(0.4, 1.1, 0.5) with determination:
         zoom 0.4
-    # TODO: shovel sounds
+    play sound [ "<silence 1.0>", sfx_shovel_single]
     show shovel at manual_pos(0.6, 0.9, 0.5) with move:
         rotate 15
     pause 0.5
@@ -647,7 +649,7 @@ label ce_anno:
     show snow_pile at manual_pos(0.0, 1.1, 0.5) with determination:
         zoom 0.4
     pause 0.5
-    # TODO: shovel sounds
+    play sound [ "<silence 1.0>", sfx_shovel_single]
     show shovel at manual_pos(0.1, 0.9, 0.5) with move:
         rotate 15
     pause 0.5
@@ -780,7 +782,7 @@ label ce_anno:
     show shovel at manual_pos(0.6, 0.7, 0.5):
         rotate 15
     with MoveTransition(2.0)
-    # TODO: SFX more shoveling, ain't no way in hell i'm animating this a second time though.
+    play sound sfx_shoveling
     scene white with dissolve
     pause 2.0
 
@@ -935,57 +937,69 @@ label ce_setup:
     anno "Well, I think we did a pretty darn good job."
     show cs happy
     cs "Hell yeah, we did!"
-    cs "Everyone is gonna have a blast at this party!"
+    cs "Everyone is gonna have a {i}blast{/i} at this party!"
     show cs
     anno "Before I get going, was there anything else you needed help with?"
     show cs disappointed
     cs "No, I don't think so..."
     show cs worried
     n "CS remembers that he didn't buy any food for the party."
-    cs "Shit, I do need to go shopping for food. I haven't bought anything for the party!"
-    anno "Well, you got today and tomorrow at least."
+    cs "Shit, I do need to go shopping. I don't have anything for Christmas dinner!"
+    anno "Well, you've got today and tomorrow, at least."
     show cs
-    cs "Yeah, I think I'm gonna head out here in a moment, I just need to make a list."
+    cs "Yeah, I think I'm gonna head out here in a moment. I just need to make a list."
     anno "Alrighty, well, good luck with that!"
     anno "I'll see you in two days!"
-    cs "Goodbye, Anno!"
+    cs "Yeah, see you then! Bye for now, Anno!"
     hide anno with moveoutright
+    pause 1.0
+    play sound sfx_house_door_open
+    pause 2.0
+    play sound sfx_house_door_close
+    pause 0.5
     show cs flipped with determination
     hide cs with moveoutleft
     scene cs_bedroom1_ce with dissolve
+    pause 0.5
     show cs disappointed at center with moveinleft
-    n "Once Anno leaves, CS starts to worry a little."
+    pause 0.5
+    n "As he finds himself alone in the house once more, CS starts to worry."
     show cs angry
-    cs "Damn it, I can't believe I forgot to get my own food for the party!"
+    cs "Damn it, I can't believe I forgot about the {i}food!"
     show cs disappointed
-    cs "It's gonna be extremely busy tomorrow, so I should probably go now."
+    cs "Every store is gonna be extremely busy tomorrow, so I should probably go now..."
     cs "What to buy..."
-    cs "Probably some pies, I think Michael was gonna make some mashed potatoes, so I should get some of those..."
+    cs "Probably some pies... I think Michael was gonna make some mashed potatoes, so I should get some of those..."
     show cs
-    cs "You know what? I got some time, I should destress and watch some car crash compilations to calm down."
+    cs "You know what? I've got some time. I should de-stress with some car crash compilations."
+    show cs flipped
     n "CS puts on a new compilation video and relaxes on his couch."
     scene black with dissolve
     pause 3.0
     scene cs_bedroom1_ce_car
     show cs
     with dissolve
-    cs "...So out of 500 crashes..."
+    cs "... So, out of 500 crashes..."
     show cs happy
     cs "That's about 257 red cars at fault!"
     show cs worried
-    cs "Yikes! Thank God I don't have a red car."
+    cs "Yikes! Thank God {i}I{/i} don't have a red car."
     # What I love about that line is it implies that CS would be suddenly worse at driving if he owned a red car. -- Digi
     show cs
-    cs "Alright, I should go get my groceries now."
-    n "CS looks at the time."
-    show cs worried
-    cs "Oh no! It's 3AM!"
-    show cs disappointed
-    cs "Darn, the time really flew! Now I have to go tomorrow!"
-    cs "I guess I can finish my shopping list and get to sleep."
+    cs "I'm feeling a lot better now. I should probably go get that shopping done!"
+    show cs flipped
+    n "CS glances at the time."
+    show cs scared flipped
+    cs "Oh no! It's 3AM!" with vpunch
+    show cs disappointed flipped
+    cs "Damn it! The time really flew!"
+    show cs worried flipped
+    cs "I'll have to go during the rush tomorrow!"
+    show cs disappointed flipped
+    cs "I guess I can finish my shopping list right now, then I'll go get some sleep..."
     cs "Hmm... what else do I need?"
-    n "After about another hour of trying to make his list and not watch more motor mayhem, CS finally gets to bed."
     scene black with dissolve
+    n "After about another hour of making a list and not watching motor mayhem twice, CS finally heads to bed."
     centered "One long winter's nap later..."
 
 # Day 2
@@ -1093,12 +1107,16 @@ label ce_before_shopping:
         cs "I should probably stop admiring the view and actually buy what I came here for."
     show cs coat flipped with determination
     hide cs with moveoutleft
+    pause 0.5
+    play sound sfx_shopping_cart
     n "CS grabs a cart before venturing further into the store."
+    pause 1.0
     show cs coat at offscreenleft
     show shopping_cart at manual_pos(-0.2, 1.1, 0.75)
 
     show shopping_cart at Move((-0.2, 0.6), (1.1, 0.6), 0.5, repeat=False, bounce=False, xanchor="left", yanchor="top")
     hide cs with moveoutright
+    $ collect("shopping_cart")
 
     # Shopping
     scene tgt_tater with dissolve
@@ -1106,7 +1124,6 @@ label ce_before_shopping:
     show shopping_cart at manual_pos(0.8, 1.1, 0.5)
     with moveinleft
 
-    $ collect("shopping_cart")
 
     n "He starts at the produce section."
     show cs coat surprised
@@ -1131,7 +1148,6 @@ label ce_before_shopping:
     show cs coat at center
     show potato_bag at manual_pos(0.6, 0.5, 0.5)
     with move
-    pause 0.5
     show potato_bag at manual_pos(0.8, 0.8, 0.5) with MoveTransition(0.25)
     hide potato_bag with dissolve
     $ collect("potato_bag")
@@ -1143,7 +1159,6 @@ label ce_before_shopping:
     show cs coat at center
     show potato_bag at manual_pos(0.6, 0.5, 0.5)
     with move
-    pause 0.5
     show potato_bag at manual_pos(0.8, 0.8, 0.5) with MoveTransition(0.25)
     hide potato_bag with dissolve
 
@@ -1185,7 +1200,6 @@ label ce_before_shopping:
         show cs coat at center
         show potato_bag at manual_pos(0.6, 0.5, 0.5)
         with move
-        pause 0.5
         show potato_bag at manual_pos(0.8, 0.8, 0.5) with MoveTransition(0.25)
         hide potato_bag with dissolve
 
@@ -1279,8 +1293,8 @@ label ce_before_shopping:
     show cs coat disappointed
     cs "You know, I think they're making these bags of chips smaller and smaller, too."
     show cs coat worried
-    cs "\"Family Size\"? {i}\"Party{/i} Size\"? Are you serious?"
-    cs "I can eat one of these all by myself, and I don't {i}feel{/i} like I'm eating enough for a whole family or party..."
+    cs "\"Family Size\"? {i}\"Party{/i} Size\"?! Are you serious?"
+    cs "I can eat one of these all by myself, and I don't {i}feel{/i} like I'm eating enough for an entire family or party..."
     cs "It would take a whole lot more than one bag to feed {i}this{/i} party, too!"
     show cs coat scared
     cs "How small do they expect these families or parties to even {i}be?"
@@ -1296,7 +1310,6 @@ label ce_before_shopping:
     show cs coat at center
     show pringles at manual_pos(0.6, 0.4)
     with move
-    pause 0.5
     show pringles at manual_pos(0.7, 0.8) with MoveTransition(0.25)
     hide pringles with dissolve
     $ collect("pringles")
@@ -1339,6 +1352,7 @@ label ce_before_shopping:
 
     if fun_value(FUN_VALUE_COMMON):
         # Roger that, Tate -- Digi
+        # *HHWHEEEEZE* - tate
         show genergy at manual_pos(0.4, 0.3) with Dissolve(0.05)
         show genergy at manual_pos(0.55, 0.8) with MoveTransition(0.05)
         show genergy at manual_pos(0.4, 0.3) with Dissolve(0.05)
@@ -1463,7 +1477,15 @@ label ce_before_shopping:
 
     # TODO: tetris minigame for DX
 
-    show cs coat happy flipped at left with move
+    show cs coat happy flipped:
+        parallel:
+            linear 1.0 zoom 0.5
+        parallel:
+            linear 1.0 xpos 0.55
+        parallel:
+            linear 1.0 ypos 0.8
+    pause 1.0
+    show cs happy coat
     n "CS steps over to the display."
 
     # hey check out this neat trick - tate
@@ -1474,10 +1496,11 @@ label ce_before_shopping:
     n "CS finally realizes how much time has passed."
     # i changed this because CS has not actually picked up anything cold yet, so nothing would be condensating - tate
 
-    show cs coat scared flipped
+    show cs coat scared
     cs "Oh, shoot!" with hpunch
     cs "Right! I need to actually accomplish things today!"
-    show cs worried coat at right with move
+    show cs worried coat at right with move:
+        linear 0.5 zoom 1.0
     show cs worried coat flipped with determination
     pause 0.25
 
@@ -1522,12 +1545,15 @@ label ce_before_shopping:
     hide cs
     hide shopping_cart
     with moveoutright
+    pause 0.5
 
     scene tgt_frozen with dissolve
+    pause 0.5
 
     show cs coat at left
     show shopping_cart at manual_pos(0.4, 1.1, 0.5)
     with moveinleft
+    pause 0.5
 
     n "CS finds the pies."
     show cs coat surprised
@@ -1551,8 +1577,10 @@ label ce_before_shopping:
     hide cs
     hide shopping_cart
     with moveoutright
+    pause 0.5
 
     scene tgt_alcy with dissolve
+    pause 0.5
 
     show cs coat at center
     show shopping_cart at manual_pos(0.8, 1.1, 0.5)
@@ -1570,10 +1598,11 @@ label ce_before_shopping:
     hide cs
     hide shopping_cart
     with moveoutright
+    pause 0.5
 
 # Checkout
 label ce_checkout:
-    n "CS heads over to the checkout lanes."
+    n "With everything on his shopping list finally crossed off... and then some, CS finally heads over to the checkout lanes."
     scene tgt_line
     show streetguy flipped at mid_right_right
     show amtrak_stewardess at mid_right
@@ -1581,6 +1610,7 @@ label ce_checkout:
     show customer at center
     with dissolve
     play music winter_unclearance_sale if_changed loop volume 0.3 fadein 1.0
+    pause 0.5
 
     show cs coat at left
     show shopping_cart at manual_pos(0.4, 1.1, 0.5)
@@ -1599,9 +1629,9 @@ label ce_checkout:
     with moveinleft
 
     n "CS joins the queue wrapped around the self-check area."
-    cs "Man, this place is really short staffed, especially for the holidays!"
+    cs "Man, this place is really short-staffed, especially for the {i}holidays!"
     show customer flipped
-    customer "They're always like this. I come here every day, and it seems like there are fewer and fewer people working."
+    customer "Yeah, they're always like this. I come here every day, and it seems like there are fewer and fewer people working."
     show cs coat worried
     cs "Yikes, I wonder why..."
 
@@ -1691,7 +1721,7 @@ label ce_checkout:
     show pakoo tgt at mid_right with moveinright
     tgt_worker "Oh, yeah, it always does that. Just keep going, it's fine."
     show cs coat
-    cs "Okay."
+    cs "Okay, thanks."
     scene tgt_checkout_scanning
     show cs coat at left
     show shopping_cart at manual_pos(0.4, 1.1, 0.5)
@@ -2016,7 +2046,7 @@ label ce_checkout:
 
     play sound sfx_moneyfalls
     show spent_target at t_fake_rpg_text(0.5, 0.1, 0.5)
-    n "CS pays with his card before heading out to the car."
+    n "CS pays with his card before heading out to the parking lot."
     hide cs_wallet with dissolve
     show cs coat flipped at left with move
     scene tgt_checkout_finish
@@ -2069,13 +2099,8 @@ label ce_aftershop:
     show target_bags at right
     $ collect("target_bags")
     with moveinright
-    n "When CS gets home, he walks to the kitchen to start putting groceries away."
-    # TODO: am i REALLY gonna have to animate him putting every individual item away??? do i really have to????? - tate
-    # We could just do a fade cut if you want? -- Digi
-    "..."
-    "..."
-    "..."
-    pause 0.5
+    n "When CS gets home, he walks to the kitchen to put groceries away."
+    # fuck it, i am NOT animating this. if someone else wants to move eaech item, be my guest - tate
     hide target_bags with dissolve
     pause 1.0
     show cs flipped at center behind cs_kitchen_fg with move
@@ -2086,7 +2111,7 @@ label ce_aftershop:
         linear 0.1 rotate 165 xpos 700 ypos 700
         linear 0.1 rotate 165 xpos 600 ypos 900
         linear 0.1 rotate 165 xpos 500 ypos 1100
-    play sound sfx_dice
+    play sound [ "<silence 1.0>", sfx_dice ]
     n "As he finishes up, a D20 sitting on the counter is knocked onto the floor."
     $ collect("d20")
     show cs disappointed flipped behind cs_kitchen_fg
@@ -2098,7 +2123,7 @@ label ce_aftershop:
             linear 0.5 xpos 0.4
         parallel:
             linear 0.5 ypos 1.5
-    cs "Since when did I ever own one of these?"
+    cs "Since when did I {i}ever{/i} own one of these?"
     pause 1.0
 
     n "CS picks up the die."
@@ -2176,7 +2201,7 @@ label ce_aftershop:
     cs "But, I don't think that'll happen."
     cs "Everyone confirmed they got my invitations, and they all said on the phone that they'll come!"
     show cs happy flipped
-    cs "If nothing else, at least Anno is coming for sure!"
+    cs "If nothing else, I know Anno is coming for sure!"
     pause 1.0
     show cs disappointed flipped
     cs "Okay, CS, stop thinking about all these what-ifs..."
@@ -2187,7 +2212,6 @@ label ce_aftershop:
     $ in_d20_viewer = False
     jump ce_party_before
 
-
 # TODO: basically all of these need sfx added for whatever vehicle they arrive in. - tate
 # TODO: put respective vehicles in background + item collection because funnie - tate
 
@@ -2196,6 +2220,7 @@ label ce_party_before:
     scene cs_bedroom2
     show cs happy christmas
     with dissolve
+    pause 0.5
     cs "Today is the day!"
     cs "Now, I just have to wait for people to arrive!"
     show cs christmas flipped
@@ -2224,8 +2249,8 @@ label ce_party_before:
         kitty "What's up?"
         cs "Well, Merry Christmas, guys! I'm glad you could make it back to the US for this!"
         arceus "No problem! I mean, after everything we went through, how could I {i}not?"
-        cs "Yeah, well, should we get inside? It's pretty cold out."
-        kitty "Well, we are rather warm, but, yeah."  # british + furry = well equipped for cold
+        cs "Yeah! Well, should we get inside? It's pretty cold out."
+        kitty "Well, {i}we{/i} are rather warm, but, yeah."  # british + furry = well equipped for cold
         kitty "Let's go inside."
         jump after_d20
     if d20 == 3:
@@ -2660,7 +2685,7 @@ label ce_introductions:
     show tate sheepish festive flipped
     tate "There sure are... a {i}lot{/i} of people here..."
     show digi thinking flipped
-    digi "Yeah, I wonder where Arc and Kitty are..."
+    digi "Yeah, I wonder where Arc and Kitty went..."
     show cs worried christmas
     show k17 happy at mid_right
     show k22 at right behind k17
@@ -2682,7 +2707,7 @@ label ce_introductions:
         cs "Okay, wait, why are there {i}two{/i} Pakoos?"
     cs "... And, you also don't have green hair anymore, again?"
     show k22 disappointed
-    k22 "Oh boy, alright."
+    k22 "Oh, boy. Alright."
     k22 "K-17, calm down for one second. I think everyone here needs an explanation."
     show k17
     show digi flipped
@@ -2708,6 +2733,9 @@ label ce_introductions:
         show cs disappointed christmas
         show tate sheepish festive
         k22 "I'm gonna assume that's me."
+    show digi flipped
+    show cs disappointed christmas
+    show tate sheepish festive
     show k22 confident
     k22 "Alright, so, I'm K-22. I am the physical manifestation of Pakoo's memories from the year 2022."
     show k22
@@ -2716,7 +2744,7 @@ label ce_introductions:
     k17 "Remember me? I'm the Sunny D guy!"
     show cs worried christmas
     n "CS groans."
-    cs "Okay, so what about the green-haired one?"
+    cs "Okay, so, what about the green-haired one?"
     show k17
     show k22 confident
     k22 "That's Addy, our boss."
@@ -2728,7 +2756,7 @@ label ce_introductions:
     cs "Great."
     cs "Is that it?"
     show k22
-    k22 "I mean, I {i}could{/i} go on, but I'd be here all night."
+    k22 "I mean, I {i}could{/i} go on, but we'd be here all night."
     show cs disappointed christmas at manual_pos(0.25, 1.0, 1.0)
     show anno festive at left
     show aria festive at mid_left
@@ -2864,7 +2892,7 @@ label ce_introductions:
         ed "{i}Noe!" with vpunch
     cs "I can't wait to have some! I hope you all have a great time cooking!"
     show cs christmas
-    cs "I'm gonna go check on everyone else."
+    cs "I'm gonna go see how the others are doing."
     show cs christmas flipped with determination
     hide cs with moveoutleft
     pause 0.5
@@ -2883,18 +2911,18 @@ label ce_introductions:
     digi "Ohhhhh..." (multiple = 2)
     linus "Ohhhhh..." (multiple = 2)
     pause 1.0
-    show cs christmas flipped at center
-    show digi at mid_left
+    show cs christmas flipped at center behind linus
     with moveinright
     cs "Hey guys! Whatcha doin'?"
     show digi happy flipped
     show linus festive flipped
     digi "Oh, hey, CS! Merry Christmas!"
     show digi flipped
-    digi "We're just trying to set up a projector to play movies on!"
-    linus "Don't ask how this became a three-man job."
+    digi "We're just trying to set up a projector so we can watch some Christmas movies!"
+    digi "Mean {i}really{/i} wants to show Tate {i}The Polar Express.{/i}"
+    linus "Just don't ask how this became a three-man job."
     show cs happy christmas flipped
-    cs "Sweet!"
+    cs "Cool! I hope it works!"
     show cs christmas
     cs "How about you two?"
     show blank festive
@@ -2920,16 +2948,16 @@ label ce_introductions:
     show arceus festive at mid_left
     show kitty festive at left
     with dissolve
-    pause 0.5
+    pause 1.0
     show cs christmas flipped at center with moveinright
     cs "Hey, how are you guys? I was looking all over and couldn't find you."
     show arceus festive worried flipped
     arceus "Hey, sorry, CS. We kinda got overwhelmed."
     kitty "We aren't the best with huge social gatherings."
     show cs disappointed christmas flipped
-    cs "Ah, it's okay. I'm just happy you made it."
+    cs "Ah, it's okay. I'm just happy you made it to the party."
     show arceus festive flipped
-    arceus "We'll be around when the main event starts."
+    arceus "We'll come back around when the main event starts."
     # TODO: redo these sprites' positioning once they're no longer placeholder sprites
     show elizabeth at right
     show anne at mid_right
