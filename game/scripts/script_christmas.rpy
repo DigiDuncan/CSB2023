@@ -1319,8 +1319,6 @@ label ce_before_shopping:
     show cs coat happy
     cs "And, I'm gonna need a {i}lot{/i} of Genergy to get through all this party prep!"
 
-    # TODO: BUG: THIS IS NOT PLAYING FOR SOME
-
     show genergy at manual_pos(0.4, 0.3) with Dissolve(0.25)
     show genergy at manual_pos(0.55, 0.8) with MoveTransition(0.25)
     $ collect("genergy")

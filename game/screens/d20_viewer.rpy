@@ -44,7 +44,7 @@ screen d20_viewer_screen(rolled):
         size 288
 
     # TODO: this is where the scene jump goes. since idk how to do this without softlocking the game, i'm leaving this to digi - tate
-    textbutton "{size=69}View" action Notify("Rolled a "+str(current_roll)+"! Digi needs to get this working!"):
+    textbutton "{size=69}View" action Jump("ce_party_before"):
         xalign 0.5
         yalign 0.9
 
