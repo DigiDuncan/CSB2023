@@ -3445,20 +3445,20 @@ label ce_cooking:
     n "A line starts to form next to the bathroom."
 
     scene cs_hallway
-    show arceus at mid_left
+    show arceus festive at mid_left
     show kitty at mid_right
     with dissolve
     kitty "Arcie, you're a fucking walnut."
-    show arceus worried
+    show arceus festive worried
     arceus "Huh? Where did that come from?"
     kitty "Dunno, just felt like calling you a walnut."
-    show arceus happy
+    show arceus festive happy
     arceus "Y'know, that's fair..."
-    show arceus
+    show arceus festive
     n "..."
     n "..."
     n "... Why hasn't the scene transitioned yet?"
-    show arceus angry
+    show arceus festive angry
     arceus "Because I'm not done yet, dipshit."
     n "... k."
     arceus "Isn't it weird how the first night of Hanukkah fell on Christmas day this year?"
@@ -3476,7 +3476,7 @@ label ce_cooking:
     scene cs_foyer_festive
     show aria festive at left
     show digi at center
-    show arceus at right
+    show arceus festive at right
     with dissolve
     arceus "Yeah, so to get the code done, I just got drunk off a bottle of wine and Digi and I chewed through it in a night."
     aria "Damn, that's the best way to do it."
@@ -3503,14 +3503,14 @@ label ce_cooking:
     aria "Certainly not."
     show cs happy christmas
     cs "You guys do good work, though, I can't wait to see what the next DPN Games game will be!"
-    show arceus worried
+    show arceus festive worried
     arceus "Yeah, me too."
     hide cs with moveoutright
     n "CS walks off."
     show digi sad
     aria "You're going to have to get better at the whole \"not breaking the illusion\" thing, Digi."
     digi "What? He wouldn't have thought anything of it if you didn't stop me mid-sentence."
-    show arceus
+    show arceus festive
     arceus "We just need to be a little more careful than that."
     digi "Fair enough. Wouldn't want this place falling apart."
     scene cs_kitchen
@@ -3588,16 +3588,16 @@ label ce_mike:
     with move
     show k17 flipped with determination
     arceus "What's going on in here?"
-    show arceus angry flipped at mid_mid_right with moveinleft
+    show arceus festive angry flipped at mid_mid_right with moveinleft
     show cs happy christmas
     cs "It's Mike, Arceus! Mike the Pizzapotamus!"
     show cs christmas
-    show arceus angry
+    show arceus festive angry
     arceus "Who?"
     grace "How do you not know who Mike the Pizzapotamus is?"
     obama "I mentioned him in my re-election speech!"
     cs "The children love him! He's the best in the world!"
-    show arceus worried
+    show arceus festive worried
     arceus "Yeah, I guess he's not... ringing a bell?"
     show k17 disappointed flipped
     k17 "He works at the bus stop, dude!"
@@ -3607,12 +3607,12 @@ label ce_mike:
     show cs angry christmas
     "Everyone" "No! The bus stop!"  # TODO: Make this a character, so it has a beep
     mike "You really don't know me, do you?"
-    show arceus worried flipped
+    show arceus festive worried flipped
     arceus "Huh?"
     show pipe_gun flipped at manual_pos(0.6, 0.35) with dissolve
     n "Pizzapotamus shoots Arceus in the chest."
     play sound sfx_hks1
-    show arceus worried flipped at manual_pos(0.4, 0.55):
+    show arceus festive worried flipped at manual_pos(0.4, 0.55):
         linear 0.5 rotate -45
     with MoveTransition(0.5)
     play sound sfx_punch
@@ -3713,7 +3713,7 @@ label ce_dinner:
     scene night_bg
     show right_room at left
     show right_chair_back at left
-    show arceus at mid_offscreen_left
+    show arceus festive at mid_offscreen_left
     show billy festive at mid_left
     show obama festive at center
     show michael festive at mid_right
@@ -3737,7 +3737,7 @@ label ce_dinner:
     scene night_bg
     show right_room at left
     show right_chair_back at left
-    show arceus at mid_offscreen_left
+    show arceus festive at mid_offscreen_left
     show billy festive at mid_left
     show obama festive at center
     show michael festive at mid_right
@@ -3748,7 +3748,7 @@ label ce_dinner:
     billy "If I told you, I'd have to kill you!"
     n "Obama and Billy chuckle, but Luther does not."
 
-    show arceus flipped
+    show arceus festive flipped
     arceus "How's the foundation repair business, HoH SiS?"
     ed "It's been pretty good, since we got all those contracts after our run-in."
     scene night_bg
@@ -3876,7 +3876,7 @@ label ce_dinner:
     scene night_bg
     show right_room at left
     show right_chair_back at left
-    show arceus flipped at mid_offscreen_left
+    show arceus festive flipped at mid_offscreen_left
     show billy festive at mid_left
     show obama festive at center
     show michael festive at mid_right
@@ -3897,7 +3897,7 @@ label ce_dinner:
     scene night_bg
     show right_room at left
     show right_chair_back at left
-    show arceus flipped at mid_offscreen_left
+    show arceus festive flipped at mid_offscreen_left
     show billy festive at mid_left
     show obama festive at center
     show michael festive at mid_right
@@ -3911,7 +3911,7 @@ label ce_dinner:
     scene night_bg
     show right_room at right
     show right_chair_back at right
-    show arceus flipped at manual_pos(-0.95, 0.65, 0.5)
+    show arceus festive flipped at manual_pos(-0.95, 0.65, 0.5)
     show billy festive at manual_pos(-0.75, 0.6, 0.5)
     show obama festive at manual_pos(-0.5, 0.5, 0.5)
     show michael festive at manual_pos(-0.25, 0.6, 0.5)
@@ -3926,7 +3926,7 @@ label ce_dinner:
     scene night_bg
     show right_room at left
     show right_chair_back at left
-    show arceus flipped at mid_offscreen_left
+    show arceus festive flipped at mid_offscreen_left
     show billy festive at mid_left
     show obama festive at center
     show michael festive at mid_right
@@ -4167,13 +4167,13 @@ label ce_exchange:
     aria "I just assumed because of the outfit."
     hide cs with moveoutright
     arceus "Welp, it looks like I'm next."
-    show arceus flipped at mid_left with moveinleft
+    show arceus festive flipped at mid_left with moveinleft
     arceus "I got..."
     show tea_and_crumpets at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     arceus "Tea and crumpets?"
     kitty "Arcie! You got my gift!"
     hide tea_and_crumpets with dissolve
-    show arceus worried flipped
+    show arceus festive worried flipped
     arceus "Sorry! I honestly forgot which one was yours."
     kitty "You saw me carry it in, dumbass!"
     hide arceus with moveoutright
@@ -4662,7 +4662,7 @@ label ce_lights_out:
     hide cs with moveoutright
     n "CS rushes back upstairs."
     scene cs_hallway_off
-    show arceus at center
+    show arceus festive at center
     show elizabeth at right
     with dissolve
     show cs christmas at left with moveinleft
@@ -4672,13 +4672,13 @@ label ce_lights_out:
     arceus "That makes sense, I'll go talk to her here soon."
     eliza "I see you found a torch."
     cs "Yeah, it was lying around downstairs, I'm lucky I found one."
-    show arceus flipped
+    show arceus festive flipped
     eliza "I was thinking of lending mine to Arceus, so he can go in the basement."
     arceus "I would appreciate it."
     show elizabeth at mid_right
     eliza "Take this, but make sure to bring it back when the power turns on."
     arceus "Got it."
-    show arceus with determination
+    show arceus festive with determination
     hide arceus with moveoutleft
     eliza "Before you go, CS, I would see if you can check the outdoors."
     eliza "Even though it is dark in here, no light is coming in from outside."
@@ -5002,7 +5002,7 @@ label ce_billy_time:
     n "Billy and Tate run into the basement."
     scene cs_basement
     show kitty festive at left
-    show arceus worried flipped at mid_left
+    show arceus festive worried flipped at mid_left
     show tate festive flipped at center
     show billy festive at mid_right
     with dissolve
@@ -5040,7 +5040,7 @@ label ce_billy_time:
     with moveoutright
     scene cs_basement
     show kitty festive at left
-    show arceus happy flipped at mid_left
+    show arceus festive happy flipped at mid_left
     with dissolve
     show tate festive at mid_mid_right
     show billy festive at right
