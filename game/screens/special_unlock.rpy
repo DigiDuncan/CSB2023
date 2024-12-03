@@ -1,4 +1,11 @@
 screen special_unlock(flavor_text):
+
+    if renpy.context_nesting_level() != 0:
+        dismiss action Play("music", "bubble_tea.ogg", loop = False), Jump("start")
+    else:
+        dismiss action Return()
+
+
     modal True
     zorder 1000
     on "show" action Play("sound", "sfx/sfx_special_unlock.ogg")
@@ -59,7 +66,7 @@ screen special_unlock(flavor_text):
                 color "#888888"
                 xalign 0.5
 
-    # the entire screen acts as a button here so we can click anywhere to continue.
-    button:
-        xysize (1920, 1080)
-        action Return()
+    # # the entire screen acts as a button here so we can click anywhere to continue.
+    # button:
+    #     xysize (1920, 1080)
+    #     action Return()

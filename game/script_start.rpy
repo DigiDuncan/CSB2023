@@ -3588,6 +3588,7 @@ default got_tato_bag = False
 default got_target_circle = False
 default in_d20_viewer = False
 default d20 = 1
+default creative_unlock = False
 
 # Helpful lists
 init python:
