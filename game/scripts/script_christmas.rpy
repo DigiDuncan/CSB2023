@@ -3377,8 +3377,6 @@ label ce_banter:
     pause 0.5
     hide cs with moveoutright
 
-# TODO: TATE STOPPED EDITING HERE!
-
 # Cooking
 label ce_cooking:
     play music dont_preheat_your_oven if_changed
@@ -3388,84 +3386,138 @@ label ce_cooking:
     # un-duck the audio
     $ renpy.music.set_volume(1.0)
 
+    show michael festive flipped at left behind cs_kitchen_fg
+    show billy festive at mid_mid_left behind cs_kitchen_fg
     show obama festive at mid_right behind cs_kitchen_fg
-    show michael festive at mid_offscreen_left behind cs_kitchen_fg
-    show billy festive at left behind cs_kitchen_fg
+    show cutting_board at manual_pos(0.6, 0.75)
+    $ collect("cutting_board")
+    show knife at manual_pos(0.7, 0.5):
+        zoom 0.15
+        xzoom -1
+        rotate -45
+    $ collect("knife")
+    show carrot_chopped at manual_pos(0.8, 0.7):
+        zoom 0.4
+    show carrot_whole at manual_pos(0.625, 0.65):
+        zoom 0.8
+        rotate -115
+    $ collect("carrot")
     with dissolve
+    pause 0.5
+
     show cs christmas at center behind cs_kitchen_fg with moveinleft
-    cs "Hey, Mr. President, what do you need?"
+    cs "Hey, Mr.{w=0} President! What can I help you with?"
     stop music fadeout 3.0
     music end
-    obama "You can just call me Obama."
+
+    obama "Please, you can just call me Obama."
     obama "Second of all, I accidently cut myself while chopping these carrots."
     obama "What a fool I am."  # One of my favorite lines -- Digi
     show cs disappointed christmas
     cs "Oh my God, are you okay?"
-    obama "Yes, I'm fine, but I need someone to keep cutting for me."
-    obama "Can you do it for me?"
+    obama "Yes, I'm fine. However, I need someone to take over carrot-chopping duties."
+    obama "Will you do this for me?"
     show cs christmas
     cs "I guess I can, yeah."
-    obama "Great, I just need a few more carrots cut up."
-    obama "Give me a moment. I need a Band-Aid."
+    obama "Great, thank you. I just need a few more carrots cut up."
+    obama "Give me a moment. I need to find a Band-Aid."
     hide obama with moveoutleft
-    show cs christmas at mid_right with move
+    show cs christmas at manual_pos(1.0, 1.0, 1.0) with move
+    show cs christmas flipped
     cs "Alright, just a few carrots."
     cs "Let's do this."
+
     # TODO: Carrot Karate Chop Minigame
+
     scene cs_kitchen
     show cs_kitchen_fg
-    show obama festive at center behind cs_kitchen_fg
-    show michael festive at mid_offscreen_left behind cs_kitchen_fg
-    show billy festive at left behind cs_kitchen_fg
-    show cs christmas flipped at mid_right behind cs_kitchen_fg
+    show michael festive flipped at left behind cs_kitchen_fg
+    show billy festive at mid_mid_left behind cs_kitchen_fg
+    show obama festive flipped at center behind cs_kitchen_fg
+    show cs christmas flipped at manual_pos(1.0, 1.0, 1.0) behind cs_kitchen_fg
+    show cutting_board at manual_pos(0.6, 0.75)
+    show knife at manual_pos(0.7, 0.5):
+        zoom 0.15
+        xzoom -1
+        rotate -45
+    show carrot_chopped at manual_pos(0.8, 0.7):
+        zoom 0.4
+    show carrot_whole at manual_pos(0.625, 0.65):
+        zoom 0.8
+        rotate -115
     with dissolve
     show smoke
     obama "Well, would you look at that?"
-    obama "That was some mighty fine chopping, CS!"
+    obama "That was some mighty-fine chopping, CS!"
     show cs happy christmas flipped
     cs "Woohoo!"
     cs "Thank you! Maybe I should cook more."
     show cs christmas flipped
-    cs "Speaking of cooking, I can smell something... burning..."
-    obama "It is perhaps the smoke bellowing from the oven?"
-    show cs worried christmas flipped
-    play sound sfx_smoke_alarm loop
+    cs "Speaking of cooking, I can smell something... {nw}"
+    show cs christmas disappointed
+    cs "Speaking of cooking, I can smell something... {fast}burning..."
+    obama "Is it perhaps the smoke billowing out from the oven?"
+    show cs scared christmas flipped
+    play sound2 sfx_smoke_alarm
+    with vpunch
     n "All of a sudden, the smoke detectors start beeping!"
-    digi "Ahh! Turn it off!"
-    nova "Damn it, Blank! I {i}said{/i} we weren't playing your music!"
+    digi "{cshake}AHHH! Turn it {i}off!" with hpunch
+    nova "Damn it, Blank! I {i}said{/i} we weren't playing your music!" with hpunch
     aria "Honestly, this is kind of a bop. Keep it going."
+    play sound sfx_seymour
+    pause 1.0
+    "Smoke Detector" "This is {i}disgusting!" with vpunch
     if d20 == 20:
-        avgn "Ahh! My ears!"
-        avgn "What is this? The soundtrack from a LJN game?"
-    show ed festive flipped at center behind cs_kitchen_fg with easeinleft
-    ed "Nooooo!"
-    ed "My turkey!"
+        avgn "{cshake}AHHH! My ears!" with hpunch
+        avgn "What {i}is{/i} this? The soundtrack from a LJN game?!"
+
+
+
+    show cs scared christmas flipped at mid_offscreen_right
+    show obama festive at right 
+    show ed festive flipped at center behind cs_kitchen_fg 
+    with easeinleft
+    # TODO: fix the particle system maybe idk - tate
+    ed "{cshake}NOOOO!" with hpunch
+    ed "{cshake}My turkey!" with vpunch
+    play sound sfx_oven_open
     show bigsmoke with dissolve
     n "Ed opens up the oven, only to have even more smoke pour out."
     n "Everyone hacks and coughs as smoke fills the room."
     hide bigsmoke with dissolve
-    stop sound
+    stop sound2
+    show burnt_turkey at manual_pos(0.5, 0.4) with dissolve:
+        xanchor 0.5
+        zoom 0.7
+    $ collect("burnt_turkey")
     n "When the smoke finally clears, Ed pulls out a blackened turkey."
     hide smoke with dissolve
-    show cs christmas flipped
+    show cs disappointed christmas flipped
     play music snowdin_town
     music snowdin_town
-    ed "Damn it! My roast is ruined!"
+    ed "Damn it! My roast is {i}ruined!"
     billy "Not to fear, Ed! I made my famous restaurant mini-burgers!"
     show ed festive
     ed "You mean, steamed hams?"
-    billy "Who the actual fuck calls burgers \"steamed hams?\""
+    billy "Who the actual {i}fuck{/i} calls burgers \"steamed hams?\""
     ed "It's a... regional dialect?"
     billy "..."
     billy "Steamed hams... for God's sake..."
-    billy "You Texans are crazy."
+    billy "You Texans are {i}crazy."
     michael "I also have my mashed potatoes!"
-    cs "Well, at least we still have somewhat of a Christmas dinner."
-    hide ed with moveoutleft
-    n "Ed sheepishly walks back into the living room after throwing away the turkey."
-    cs "Obama, finish baking your cake, and we can start eating."
-    cs "I'm gonna go check up on everyone while you do that."
+    cs "Well, at least we'll still have {i}some{/i} kind of Christmas dinner."
+    hide ed
+    hide burnt_turkey
+    show obama festive at center
+    show cs christmas flipped at right
+    with moveoutleft
+    n "Ed sheepishly heads outside to throw away the ruined turkey." # i changed this bc it's a huge turkey and it would fill the whole trash - tate
+    cs "I guess, as soon as the President's cake is done, we can all sit down to eat."
+    cs "I'm gonna go check up on the others in the meantime."
     hide cs with moveoutleft
+
+    # TODO: TATE STOPPED EDITING HERE!
+
     scene cs_bathroom
     show grace at mid_left
     with dissolve

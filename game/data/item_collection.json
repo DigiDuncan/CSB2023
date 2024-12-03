@@ -68,11 +68,27 @@
         "rarity": "Common",
         "ce": true
     },
+    "burnt_turkey": {
+        "img": "burnt_turkey",
+        "name": "Burnt Turkey",
+        "owner": "Ed",
+        "desc": "Oh no! His roast is {i}ruined!",
+        "rarity": "Common",
+        "ce": true
+    },
     "butter": {
         "img": "butter",
         "name": "Pound Of Butter",
         "owner": "CS",
         "desc": "100% pure Paula Deen extract.",
+        "rarity": "Common",
+        "ce": true
+    },
+    "carrot": {
+        "img": "carrot_whole",
+        "name": "Carrot",
+        "owner": "President Obama",
+        "desc": "Crunchy and cool.",
         "rarity": "Common",
         "ce": true
     },
@@ -180,6 +196,14 @@
         "owner": "Copguy",
         "desc": "Wanted, dead or alive. $188,000 reward.",
         "rarity": "Common"
+    },
+    "cutting_board": {
+        "img": "cutting_board",
+        "name": "Cutting Board",
+        "owner": "President Obama",
+        "desc": "CS doesn't own a cutting board, so the president brought one made of the finest oak.",
+        "rarity": "Common",
+        "ce": true
     },
     "d20": {
         "img": "d20",
@@ -302,6 +326,14 @@
         "owner": "HoH SiS",
         "desc": "The primary mode of transportation for HoH SiS. Allows for safe traversal over even the most unstable foundations. This particular model also includes a laser defense system.",
         "rarity": "Uncommon"
+    },
+    "knife": {
+        "img": "knife",
+        "name": "Kitchen Knife",
+        "owner": "President Obama",
+        "desc": "Perhaps it's a bit {i}too{/i} sharp.",
+        "rarity": "Common",
+        "ce": true
     },
     "lego_jail": {
         "img": "lego_jail",
