@@ -16,12 +16,13 @@ init python:
     music_map = jukebox_file["tracks"]
     jukebox_presort = {}
 
-transform credit_scroll(starting = 0, ending = 0, duration = 60):
+transform credit_scroll(starting = 0, duration = 60):
     yanchor 1.0
     ypos starting
-    linear duration ypos ending
+    # this end position is always the same, do not change it
+    linear duration ypos 1075
 
-screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scroll_start = 25500, scroll_end = 1075, duration = 343):
+screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scroll_start = 25500, duration = 343):
     on "show" action Play("music", bgm, loop=False, if_changed=True)
 
     #only get tracks for a given route, or if none specified/invalid tag, get everything
@@ -54,7 +55,7 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
         xalign 0.5
 
         ##### BEGIN CONTENTS ##### 
-        frame at credit_scroll(scroll_start, scroll_end, duration):
+        frame at credit_scroll(scroll_start, duration):
             background None
             xalign 0.5
 
@@ -62,15 +63,11 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
                 xsize 1600
                 xalign 0.5
 
-                # game logo
                 frame:
                     background None
                     xsize 1600
                     ysize 1580
                     xalign 0.5
-                    image "gui/credits/csbiiidx_small.png":
-                        xalign 0.5
-                        yalign 1.0
 
                 for category in credits_map[route]:
                     frame:
@@ -82,6 +79,7 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
 
                             # big categories get printed in the center, if they exist.
                             # categories with underscores are strictly for organization and should not be printed.
+                            # some categories are hidden based on player progression
                             if category[0] == "_":
                                 $ cat_text = "\n"
                             elif category == "CS-ocola (3D Sprite)":
@@ -110,9 +108,9 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
                             
                             for subcategory in credits_map[route][category]:
 
-                                # Handling for everything EXCEPT cast, special thanks, music
+                                # Handling for everything EXCEPT cast, special thanks, music, logo
                                 # These are nested for a reason
-                                if category != "Special Thanks" and category != "Cast":
+                                if category != "Special Thanks" and category != "Cast" and category != "_logo":
                                     if category != "Music":
                                         hbox:
                                             xsize 1600
@@ -188,12 +186,20 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
                                                     text "{font=music_text}"+artist_displayed:
                                                         xalign 1.0
                                                         yalign 0.5
-                                        
+                                # for game logo
+                                elif category == "_logo":
+                                    vbox:
+                                        xsize 1600
+                                        vbox:
+                                            xsize 1600
+                                            image credits_map[route][category][subcategory][0]:
+                                                xalign 0.5
+                                                yalign 0.5
+                                
                                 # for cast
                                 elif category == "Cast":
                                     vbox:
                                         xsize 1600
-
                                         # print the one line
                                         vbox:
                                             xsize 1600
@@ -256,4 +262,4 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
     if renpy.context_nesting_level() != 0:
         dismiss action Play("music", "bubble_tea.ogg", loop = False), Jump("start")
     else:
-        dismiss action Return()
+        dismiss action [ Stop("music"), Return() ]

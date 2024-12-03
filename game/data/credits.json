@@ -1,6 +1,8 @@
 {
     "All": {
 
+        "_logo": { "image" : ["gui/credits/csbiiidx_small.png"] },
+
         "Cast": {
             "In order of appearance (roughly)" : [
                 "cs188",
@@ -127,20 +129,22 @@
 
     "CSBIII DX: Holiday Special": {
 
+        "_logo": { "image" : ["gui/credits/csbiiice_small.png"] },
+
         "Cast": {
             "In order of appearance (roughly)" : [
                 "cs188",
                 "Annorexorcist",
-                "Tate \"alleZSoyez\"",
-                "meancarnavor",
                 "Aria \"Estroteric\"",
                 "DigiDuncan",
+                "Tate \"alleZSoyez\"",
                 "Pakoopara",
-                "Mikapara",
+                "meancarnavor",
+                "blanknam3d",
+                "ItsNovaHere",
                 "Arceus3251",
                 "UndeadKitty",
-                "ItsNovaHere",
-                "blanknam3d",
+                "Mikapara",
                 "db05"
             ]
         },

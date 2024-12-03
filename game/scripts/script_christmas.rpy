@@ -2272,7 +2272,7 @@ label ce_party_before:
         anno "I know I showed up kinda early, but, I wanted to see everyone's initial reactions to our decorating!"
         cs "Well, I'm glad you did! Come inside! It's cold out."
     elif d20 == 4:
-        # TODO: digi ufo sound
+        play sound sfx_nugget
         n "All of a sudden, CS hears a futuristic-sounding vehicle land outside."
         show cs disappointed christmas flipped
         cs "What the hell is that?"
@@ -2459,8 +2459,8 @@ label ce_party_before:
         k22 "It's... kind of complicated."
         k22 "Let's go inside, then we can explain."
     elif d20 == 13:
+        play sound sfx_aria_tp
         n "A teleport-like sound is heard outside."
-        # TODO: sfx for that
         show cs disappointed christmas flipped
         cs "What in the world?"
         hide cs with moveoutleft
@@ -3038,8 +3038,8 @@ label ce_banter:
     show copguy festive
     copguy "Sorry, sir. We've gotta wait."
     sheriff "This is the police!" with hpunch
+    play sound2 sfx_toilet_flush noloop
     sheriff "Open up!" with hpunch
-    # TODO: toilet flush sfx. police or no, i have standards!! - tate
     play sound sfx_house_door_open
     scene cs_bathroom_open
     show cs_bathroom_open_fg
@@ -3048,7 +3048,7 @@ label ce_banter:
     show tate shock festive at center with determination
     show copguy at right
     show tate shock festive at offscreenright 
-    with MoveTransition(0.25)
+    with { "master" : MoveTransition(0.25) }
     with vpunch
     tate "{cshake}{size=+24}Awawawawa!!!" with hpunch
     pause 1.0
@@ -3143,7 +3143,15 @@ label ce_banter:
     show linus festive
     with determination
     pause 0.5
-    # TODO: SFX uhhhh idk something fixed. maybe tf2 engineer hitting with a wrench sound lmfao
+    play sound sfx_tf2_wrench_hit
+    with vpunch
+    pause 0.5
+    play sound sfx_tf2_wrench_hit
+    with vpunch
+    pause 0.5
+    play sound sfx_tf2_wrench_hit
+    with vpunch
+    pause 0.5
     # TODO: SFX projector boot
     n "After a little bit of tech magic, the projector comes to life."
     scene cs_living_elf
