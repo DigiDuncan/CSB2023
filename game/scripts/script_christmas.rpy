@@ -3036,6 +3036,7 @@ label ce_banter:
     # TODO: toilet flush sfx. police or no, i have standards!! - tate
     play sound sfx_house_door_open
     scene cs_bathroom_open
+    show cs_bathroom_open_fg
     show sheriff festive flipped at mid_left
     show copguy festive
     show tate shock festive at center with determination
@@ -3212,9 +3213,9 @@ label ce_banter:
     copguy "Sorry, boss, as much as I would love to keep helping you out here, duty calls!"
     play sound sfx_house_door_open
     scene cs_bathroom_open
-    # TODO: maybe there's a better way to do this?
     show sheriff festive at manual_pos(0.45, 0.5):
         zoom 0.5
+    show cs_bathroom_open_fg
     show copguy festive flipped
     sheriff "Wait! You can't just {i}leave{/i} me here!"
     show copguy festive flipped at mid_right with move
@@ -3222,7 +3223,9 @@ label ce_banter:
     copguy "I'll just be a moment! Don't move."
     play sound sfx_house_door_close
     scene cs_bathroom
-    show copguy festive
+    show copguy festive at mid_right
+    pause 0.5
+    show copguy festive flipped with determination
     show copguy festive flipped at offscreenright with { "master" : MoveTransition(0.25) }
     sheriff "God {i}damn{/i} it! {nw}" with vpunch
     sheriff "God {i}damn{/i} it! {fast}{cshake}Get {i}back{/i} here!" with vpunch
@@ -3509,10 +3512,15 @@ label ce_cooking:
     copguy "Hey, sorry, excuse me."
     play sound sfx_house_door_open
     scene cs_bathroom_open
+    show sheriff festive at manual_pos(0.45, 0.5):
+        zoom 0.5
+    show cs_bathroom_open_fg
     show grace at mid_left
     show copguy festive flipped at center
-    show sheriff festive at center behind copguy
-    pause 1.0
+    pause 0.5
+    show copguy festive flipped behind cs_bathroom_open_fg:
+        linear 0.5 zoom 0.7 pos (0.5, 0.9)
+    pause 0.75
     play sound sfx_house_door_close
     scene cs_bathroom
     show grace at mid_left
@@ -3524,11 +3532,27 @@ label ce_cooking:
     copguy "Alright, let's get you out of here, old man."
     play sound sfx_house_door_open
     scene cs_bathroom_open
+    show copguy festive behind sheriff at manual_pos(0.4, 0.35):
+        zoom 0.5
+    show sheriff festive at manual_pos(0.4, 0.5):
+        zoom 0.5
+    show cs_bathroom_open_fg
     show grace at mid_left
     with determination
-    show copguy festive at mid_right
-    show sheriff festive at center behind copguy
     pause 1.0
+    show copguy festive behind sheriff at manual_pos(0.4, 0.35):
+        linear 0.5 zoom 1.0 pos (0.4, 0.2)
+    show sheriff festive at manual_pos(0.4, 0.5):
+        linear 0.5 zoom 1.0
+    pause 0.5
+    scene cs_bathroom_open
+    show cs_bathroom_open_fg
+    show grace at mid_left  
+    show copguy festive behind sheriff at manual_pos(0.4, 0.2)
+    show sheriff festive at manual_pos(0.4, 0.5)
+    pause 0.5
+    show copguy festive at mid_right with move
+    pause 0.5
     hide copguy
     hide sheriff
     with moveoutleft
@@ -3538,14 +3562,14 @@ label ce_cooking:
     hide grace with dissolve
     scene cs_bathroom
     show anne at mid_mid_left with moveinleft
-    show rich festive at mid_left with moveinleft
+    show rich festive flipped at mid_left with moveinleft
     show kitty festive at mid_left_left with moveinleft
-    show luke festive at left with moveinleft
+    show luke festive flipped at mid_offscreen_left with moveinleft
     n "A line starts to form next to the bathroom."
 
     scene cs_hallway
-    show arceus festive at mid_left
-    show kitty at mid_right
+    show arceus festive at mid_right
+    show kitty at mid_left
     with dissolve
     kitty "Arcie, you're a fucking walnut."
     show arceus festive worried
