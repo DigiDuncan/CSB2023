@@ -3471,8 +3471,6 @@ label ce_cooking:
         avgn "{cshake}AHHH! My ears!" with hpunch
         avgn "What {i}is{/i} this? The soundtrack from a LJN game?!"
 
-
-
     show cs scared christmas flipped at mid_offscreen_right
     show obama festive at right 
     show ed festive flipped at center behind cs_kitchen_fg 
