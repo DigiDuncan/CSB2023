@@ -498,23 +498,23 @@
     "hoh_hoh":{
         "name": "HoH HoH HoH!",
         "locked": "Complete the CS Holiday Special.",
-        "unlocked": "Merry Christmas, Happy Holidays, and have a great New Year!",
+        "unlocked": "Merry Christmas, Happy Holidays, and Happy New Year!",
         "img": "hoh_hoh",
         "type": "story",
         "ce": true
     },
     "critical":{
-        "name": "Critial Hit!",
+        "name": "Critical Hit!",
         "locked": "???",
-        "unlocked": "Roll at nat 20!",
+        "unlocked": "Roll a nat 20!",
         "img": "critical",
         "type": "extra",
         "ce": true
     },
     "shitical":{
-        "name": "Critial Shit!",
+        "name": "Critical Shit!",
         "locked": "???",
-        "unlocked": "Roll at nat 1.",
+        "unlocked": "Roll a nat 1.",
         "img": "shitical",
         "type": "extra",
         "ce": true

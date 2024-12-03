@@ -465,8 +465,6 @@ define bomahanobeep = Character("\"Omaha\"", callback = renpy.partial(char_callb
 
 # DX Misc Character Definitions
 define copguyexe = Character("Copguy", callback = renpy.partial(char_callback, name = "copguy", beep = "copexe"))
-define avgn = Character("James Rolfe", callback = renpy.partial(char_callback, name = "avgn", beep = "avgn"))
-define tgt_worker = Character("Target Employee", callback = char_callback)
 
 # DX Digi Character Definitions
 define david = Character("David", callback = char_callback)
@@ -504,6 +502,8 @@ define zenigata_offscreen = Character("???", callback = renpy.partial(char_callb
 define imperfect_tate = Character("Tate", callback = renpy.partial(char_callback, name = "tate", beep = "tate"), what_color = "#000000", screen = "perfect_tate_text")
 
 # DX Holiday Special Definitions
+define avgn = Character("James Rolfe", callback = renpy.partial(char_callback, name = "avgn", beep = "avgn"))
+define tgt_worker = Character("Target Employee", callback = char_callback)
 define walkie = Character("Walkie", callback = renpy.partial(char_callback, beep = "walkie"))
 define everyone = Character("Everyone", callback = renpy.partial(char_callback, beep = "everyone"))
 define santa = Character("Santa Claus", callback = renpy.partial(char_callback, beep = "santa"))
@@ -3589,7 +3589,6 @@ default got_tato_bag = False
 default got_target_circle = False
 default in_d20_viewer = False
 default d20 = 1
-default creative_unlock = False
 
 # Helpful lists
 init python:

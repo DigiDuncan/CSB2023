@@ -253,8 +253,7 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
                     size 96
                     xalign 0.5
 
-
-    ########## CLICK ANYWHERE TO KILL IT ##########
-    button:
-        xysize (1920, 1080)
-        action [Stop("music"), Return()]
+    if renpy.context_nesting_level() != 0:
+        dismiss action Play("music", "bubble_tea.ogg", loop = False), Jump("start")
+    else:
+        dismiss action Return()

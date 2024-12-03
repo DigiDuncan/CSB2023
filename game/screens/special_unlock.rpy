@@ -5,7 +5,6 @@ screen special_unlock(flavor_text):
     else:
         dismiss action Return()
 
-
     modal True
     zorder 1000
     on "show" action Play("sound", "sfx/sfx_special_unlock.ogg")
