@@ -45,6 +45,13 @@
         "quote": "Yeah, that sounds about right.",
         "bio": "Aria knows their shit. Whether it's book smarts or street smarts, they've got it all. While studying for college is important to Aria, they seem to invest even more of their time into hanging out with those bozos from DPN."
     },
+    "avgn": {
+        "full_name": "James Rolfe",
+        "sprite_path": "images/characters/avgn.png",
+        "quote": "This is a huge load of fuck shit!",
+        "bio": "More commonly known as {i}The Angry Video Game Nerd{/i}, he plans to take you back to the past, to play the shitty games that suck ass. He loves to scream and swear, and fucking despises Bugs Bunny.",
+        "ce": true
+    },
     "benrey": {
         "full_name": "Benrey",
         "sprite_path": "images/characters/benrey.png",
