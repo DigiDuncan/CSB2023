@@ -463,6 +463,62 @@
         "steps": 3,
         "tracker": "train_routes_seen"
     },
+    "timber":{
+        "name": "Timber!",
+        "locked": "Make a mess in the garage.",
+        "unlocked": "Grab the tree first.",
+        "img": "timber",
+        "type": "story",
+        "ce": true
+    },
+    "party_start":{
+        "name": "Party Rockers",
+        "locked": "It's \"Party Rock is\".",
+        "unlocked": "Start the party.",
+        "img": "rockers",
+        "type": "story",
+        "ce": true
+    },
+    "cheesy_dream":{
+        "name": "Cheesy Dreams",
+        "locked": "Sometimes, I dream about cheese.",
+        "unlocked": "Sometimes, I dream about cheese.",
+        "img": "cheesy",
+        "type": "story",
+        "ce": true
+    },
+    "power_off":{
+        "name": "Lights Out!",
+        "locked": "So, who's been flickering the lights?",
+        "unlocked": "Wait for the snowstorm to kick the power out.",
+        "img": "power_off",
+        "type": "story",
+        "ce": true
+    },
+    "hoh_hoh":{
+        "name": "HoH HoH HoH!",
+        "locked": "Complete the CS Holiday Special.",
+        "unlocked": "Merry Christmas, Happy Holidays, and have a great New Year!",
+        "img": "hoh_hoh",
+        "type": "story",
+        "ce": true
+    },
+    "critical":{
+        "name": "Critial Hit!",
+        "locked": "???",
+        "unlocked": "Roll at nat 20!",
+        "img": "critical",
+        "type": "extra",
+        "ce": true
+    },
+    "shitical":{
+        "name": "Critial Shit!",
+        "locked": "???",
+        "unlocked": "Roll at nat 1.",
+        "img": "shitical",
+        "type": "extra",
+        "ce": true
+    },
     "broke":{
         "name": "You Broke It!",
         "locked": "Woah, dude, you broke it.",

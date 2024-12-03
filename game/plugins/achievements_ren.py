@@ -31,6 +31,7 @@ class Achievement:
     category: str
     hidden: bool = False
     dx: bool = False
+    ce: bool = False
     steps: int = 1
     tracker: str = None
 
@@ -70,6 +71,8 @@ class Achievement:
     def icon(self) -> str:
         if self.dx:
             d = Composite((128, 128), (0, 0), f"images/achievements/{self.icon_image}.png", (0, 0), "images/achievements/dx_border.png")
+        if self.ce:
+            d = Composite((128, 128), (0, 0), f"images/achievements/{self.icon_image}.png", (0, 0), "images/achievements/ce_border.png")
         else:
             d = renpy.displayable(f"images/achievements/{self.icon_image}.png")
 
@@ -104,7 +107,7 @@ class Achievement:
 
     @classmethod
     def from_JSON(cls, id: str, data: AchievementData) -> "Achievement":
-        a = Achievement(id, data["name"], data["locked"], data["unlocked"], data["img"], data["type"], data.get("hidden", False), data.get("dx", False))
+        a = Achievement(id, data["name"], data["locked"], data["unlocked"], data["img"], data["type"], data.get("hidden", False), data.get("dx", False), data.get("ce", False))
         if "steps" in data:
             if isinstance(data["steps"], int):
                 a.steps = data["steps"]

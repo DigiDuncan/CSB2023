@@ -171,7 +171,7 @@ label ce_tree:
         pause 2.0
         scene cs_garage_mess
         with dissolve
-
+        $ achievement_manager.unlock("timber")
         pause 1.0
         cs "Ow..."
         pause 1.0
@@ -2143,6 +2143,10 @@ label ce_aftershop:
     show cs flipped behind cs_kitchen_fg
 
     $ reroll()
+    if d20 == 1:
+        $ achievement_manager.unlock("shitical")
+    elif d20 == 20:
+        $ achievement_manager.unlock("critical")
     cs "Hey, look, I rolled a [d20]!"
     hide d20 with dissolve
     pause 1.0
@@ -2645,7 +2649,9 @@ label ce_party_before:
 # Introductions
 label ce_introductions:
     scene black with dissolve
-    n "By the time of the party, everyone shows up at CS' house in droves." # TODO: i hate this line but dont have any ideas yet, i'll come back to this - tate
+    n "Everyone starts showing up in droves around the time of the party."
+    # I think this is better. - Pak
+    $ achievement_manager.unlock("party_start")
     scene cs_foyer_festive
     show cs christmas at mid_left_left
     show anno festive at mid_left behind cs
@@ -3770,6 +3776,7 @@ label ce_mike:
     cs "I had this insane dream, and there was this pizza guy..."
     wesley "Speaking of pizza, should we have dinner now? I'm starving."
     cs "Yeah, that's a good point. Give me a moment to get ready."
+    $ achievement_manager.unlock("cheesy_dream")
 
 # Dinner/More Banter
 label ce_dinner:
@@ -4693,6 +4700,7 @@ label ce_lights_out:
     stop music
     music end
     pause 0.2
+    $ achievement_manager.unlock("power_off")
     sheriff "Hey, uh..."
     sheriff "I think I have finally become blind."
     linus "I think all of our eyes went out."
@@ -5768,6 +5776,7 @@ label ce_roof_moment:
     n "As CS entered his room to start streaming, our story here comes to a close."
     n "It wasn't the Christmas that CS expected, but it was one of the jolliest times he's had."
     n "Merry Christmas, and have a Happy New Year!"
+    $ achievement_manager.unlock("hoh_hoh")
     $ ending_manager.mark("christmas")
     pause 5.0
     jump ce_epilogue
