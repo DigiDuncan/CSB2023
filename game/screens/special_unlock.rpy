@@ -65,8 +65,3 @@ screen special_unlock(flavor_text):
                 size 64
                 color "#888888"
                 xalign 0.5
-
-    # # the entire screen acts as a button here so we can click anywhere to continue.
-    # button:
-    #     xysize (1920, 1080)
-    #     action Return()

@@ -40,7 +40,7 @@ init -1 python:
         j = json.load(f)
         timeline_trace_count = 0
         for e in j:
-             if j[e]["type"] != "arrow":
+            if j[e]["type"] != "arrow":
                 timeline_trace_count = timeline_trace_count + 1
         print(f"Loaded {timeline_trace_count} events.")
 
