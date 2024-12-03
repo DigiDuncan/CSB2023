@@ -2617,15 +2617,17 @@ label ce_party_before:
         with dissolve
         show cs disappointed christmas dark flipped at right with moveinright
         cs "Hey, are you--"
-        avgn "I'm the fuckin' Nerd!" with vpunch
+        avgn "I'm the fuckin' {i}Nerd!" with vpunch
         show cs scared christmas dark flipped
         cs "The Angry Video Game Nerd?! I didn't invite you!"
         show cs worried christmas dark flipped
         cs "At least, I don't {i}think{/i} I did..."
-        avgn "It doesn't fucking matter! Merry fucking Christmas!"
+        avgn "It doesn't fucking {i}matter!" with vpunch
+        avgn "Merry fucking Christmas!" with vpunch
         show cs disappointed christmas dark flipped
-        cs "Okay... Do you, uh, wanna go inside?"
-        avgn "Hell yeah!"
+        cs "Yeah, uh, same to you..."
+        cs "Do you, uh, wanna go inside?"
+        avgn "Hell yeah!" with vpunch
         cs "Alright, then..."
         jump after_d20
     else:
@@ -2704,7 +2706,9 @@ label ce_introductions:
     if d20 == 12:
         cs "Okay, seriously, why are there {i}two{/i} Pakoos?"
     else:
+        show cs scared christmas
         cs "Okay, wait, why are there {i}two{/i} Pakoos?"
+        show cs worried christmas
     cs "... And, you also don't have green hair anymore, again?"
     show k22 disappointed
     k22 "Oh, boy. Alright."
@@ -2916,13 +2920,13 @@ label ce_introductions:
     cs "Hey guys! Whatcha doin'?"
     show digi happy flipped
     show linus festive flipped
-    digi "Oh, hey, CS! Merry Christmas!"
+    digi "Oh, hey, CS!" # i forgor digi was in the other scene already asfkl;asf - tate
     show digi flipped
     digi "We're just trying to set up a projector so we can watch some Christmas movies!"
-    digi "Mean {i}really{/i} wants to show Tate {i}The Polar Express.{/i}"
+    digi "Mean {i}really{/i} wants to show everyone {i}The Polar Express.{/i}"
     linus "Just don't ask how this became a three-man job."
     show cs happy christmas flipped
-    cs "Cool! I hope it works!"
+    cs "Cool! I hope you all get it working!"
     show cs christmas
     cs "How about you two?"
     show blank festive
@@ -2985,7 +2989,7 @@ label ce_introductions:
     eliza "I, uhh... work for them?"
     # TODO: I'll see if Mika wants to word this any better than I did. -- pak
     cs "You guys are so complicated."
-    arceus "I mean, it wasn't too hard for me to figure out, funnily enough."
+    arceus "I mean, it wasn't too hard for {i}me{/i} to figure out, funnily enough."
     show cs disappointed christmas
     n "CS sighs."
     cs "Sorry, everyone. I'm just stressed out a bit."
@@ -3011,32 +3015,30 @@ label ce_introductions:
     scene black with dissolve
     pause 1.0
 
-    # TODO: TATE STOPPED EDITING HERE!
-
 # Banter
 label ce_banter:
     scene black
     stop music fadeout 3.0
     music end
-    n "While the party starts up, Copguy and the sheriff get into a predicament."
+    n "As the last few guests arrive, Copguy and the sheriff find themselves in a bit of a predicament."
     scene cs_living2_festive
-    show wesley festive at right
-    show rich festive at mid_right
-    show db at center
-    show copguy festive at mid_right
-    show sheriff festive flipped at mid_left
+    show db at mid_left
+    show wesley festive at mid_right 
+    show rich festive at mid_right_right
+    show sheriff festive flipped at left
+    show copguy festive at center
     with dissolve
     play music dont_preheat_your_oven if_changed
     music dont_preheat_your_oven
     sheriff "Hey, Copguy!"
     copguy "I know, this party is great, right?"
-    sheriff "No, I need to take a shit!"
+    sheriff "{i}No!{/i} I need to take a {i}shit!"
     copguy "Okay, do you want me to tell everyone?"
-    sheriff "Very funny, smartass! I need you to go with me."
+    sheriff "Very funny, smartass! I need you to go with me." with vpunch
     sheriff "My legs don't work, remember?"
-    copguy "Damn it, this sucks."
+    copguy "Damn it... this sucks."
     copguy "Alright, let's go."
-    show copguy festive at left with move
+    show copguy festive at mid_offscreen_left behind sheriff with move
     show copguy festive flipped with determination
     pause 0.5
     hide copguy
@@ -3052,21 +3054,28 @@ label ce_banter:
     n "Copguy jiggles the bathroom door."
     tate "Occupied!"
     show copguy festive
-    copguy "Sorry, sir, we gotta wait."
-    sheriff "This is the police! Open up!"
+    copguy "Sorry, sir. We've gotta wait."
+    sheriff "This is the police!" with hpunch
+    sheriff "Open up!" with hpunch
+    # TODO: toilet flush sfx. police or no, i have standards!! - tate
     play sound sfx_house_door_open
     scene cs_bathroom_open
     show sheriff festive flipped at mid_left
     show copguy festive
-    show tate cry festive
-    hide tate with easeoutright
-    tate "{i}Awawawawa!!!"
-    copguy "Really?"
-    sheriff "What? I really have to go!"
+    show tate shock festive at center with determination
+    show copguy at right
+    show tate shock festive at offscreenright 
+    with MoveTransition(0.25)
+    with vpunch
+    tate "{cshake}{size=+24}Awawawawa!!!" with hpunch
+    pause 1.0
+    "..."
+    copguy "{i}Really?"
+    sheriff "What? I {i}really{/i} have to go!"
     copguy "Whatever, just go. I'll wait here."
-    sheriff "What do you mean? You have to wait here with me!"
-    sheriff "I can't get off and on the toilet myself! This bathroom isn't handicap-accessible!"
-    copguy "I think this is the worst crime I've dealt with."
+    sheriff "What do you mean? I need you to come with me!"
+    sheriff "I can't get off and on the toilet by myself! This bathroom isn't handicap-accessible!"
+    copguy "I think this is the worst crime I've dealt with..."
     show copguy festive at left behind sheriff with move
     show copguy festive flipped with determination
     pause 1.0
@@ -3078,7 +3087,9 @@ label ce_banter:
     with dissolve
     play sound sfx_house_door_close
     scene cs_bathroom
-    copguy "Alright, but you better hurry! I don't wanna be in here all day!"
+    copguy "Alright, but you'd better hurry! I don't wanna be in here all night!"
+    pause 0.5
+
     scene cs_kitchen
     show cs_kitchen_fg
     show k17 flipped at left
@@ -3087,64 +3098,87 @@ label ce_banter:
     show michael festive at mid_mid_right behind cs_kitchen_fg
     show billy festive at right behind cs_kitchen_fg
     with dissolve
-    k17 "So Obama, how have you stayed President?"
-    k17 "Aren't you on your what, like, fourth term?"
+    pause 0.5
+    k17 "So, Obama, how long have you been President, again?"
+    k17 "Aren't you on your, what, like, fourth term?"
     if fun_value(FUN_VALUE_COMMON):
         obama "Ever heard of squatter's rights?"
         show k17 shock flipped
-        k17 "You... can do that?"
-        obama "I'm friggin' Obama, bitch! I can do what I want!"
+        k17 "You... can {i}do{/i} that?"
+        obama "I'm friggin' {i}Obama,{/i} bitch! I can do what I want!"
     else:
-        obama "Well, you see, we managed to somehow exhaust the list of succession back in 2018, and the house voted me back in."
+        obama "Well, you see, we managed to somehow exhaust the list of succession back in 2018, so the house voted me back in."
         k17 "Huh, I see. That's pretty crazy."
         # What the actual fuck happened in 2018 by the way, I'm so curious
         # How the fuck did 50 hyper-important government officials get either killed or incapacitated?!
         # We need to get into this some time. -- Digi
+    pause 0.5
+
     scene cs_living_signal
-    show digi thinking flipped at left
-    show linus festive at mid_left behind digi
-    show luke festive at mid_left_left behind linus
+    show digi thinking at center
+    show linus festive at mid_mid_left behind digi
+    show luke festive flipped at mid_left_left behind linus
     show cs disappointed christmas flipped at right
     with dissolve
-    cs "Is this projector still not set up?"
+    pause 0.5
+    cs "Damn, is the projector still not working?"
     show digi angry flipped
-    digi "No! The projector keeps giving me this really weird error!"
-    linus "Not even I've seen this!"
+    digi "No! It keeps giving us this {i}really{/i} weird error!"
+    show linus festive flipped
+    linus "Not even {i}I've{/i} seen this before!"
+    show digi angry
     digi "Watch, I'll turn it on, and..."
+    # TODO: sfx do projectors make a sound when they're booted up? idk i just think we need something here
+    pause 1.0
     scene cs_living_error
-    show digi angry flipped at left
-    show linus festive at mid_left behind digi
-    show luke festive at mid_left_left behind linus
+    show digi angry at center
+    show linus festive flipped at mid_mid_left behind digi
+    show luke festive flipped at mid_left_left behind linus
     show cs disappointed christmas flipped at right
     play sound sfx_bluescreen
-    show digi disappointed flipped
+    with vpunch
+    show cs worried christmas flipped at right
+    pause 1.0
     rich "Hey, nice movie!"
     wesley "Looks like you'll have to set that up all over again."
-    db "I got here early for this?"
+    show digi disappointed flipped
+    db "I got here early for {i}this?"
     if d20 == 20:
-        avgn "You know what's {i}bullll{/i}shit?"
-        avgn "This movie, that's what!"
-    ed "Hey guys, what movie are we watching?"
-    wesley "Nothing until these bozos fix the projector!"
-    luke "Okay hold on, I got an idea."
+        avgn "You know what's {i}bullll{/i}shit?" with hpunch
+        avgn "This {i}movie, {nw}" with hpunch
+        avgn "This {i}movie,{/i}{fast} that's {i}what!" with hpunch
+    ed "Hey, guys! What movie are we watching?"
+    wesley "{i}Nothing{/i} until these bozos fix the projector!"
+    luke "Okay, hold on. I've got an idea."
     show digi thinking flipped
     luke "Everyone step away from the projector."
-    show digi thinking flipped at center
-    show linus festive at mid_right
+    show digi thinking flipped at mid_right
+    show linus festive flipped at mid_right
+    show cs disappointed christmas flipped at mid_right_right behind digi
     with move
-    show digi with determination
+    show digi 
+    show linus festive
+    with determination
+    pause 0.5
+    # TODO: SFX uhhhh idk something fixed. maybe tf2 engineer hitting with a wrench sound lmfao
+    # TODO: SFX projector boot
     n "After a little bit of tech magic, the projector comes to life."
     scene cs_living_elf
-    show digi at center
+    show digi shock at mid_right
     show linus festive at mid_right behind digi
     show luke festive at mid_left_left behind linus
-    show cs disappointed christmas flipped at right
-    play sound sfx_tada
-    show digi shock
+    show cs scared christmas flipped at mid_right_right behind digi
+    play sound sfx_tada 
+    with vpunch
     luke "Ta-da!"
-    rich "Finally, we can watch something."
+    show luke festive flipped
+    rich "Finally! We can watch something!"
     wesley "Are you 100-percent satisfied, Richard?"
-    rich "Only about 80-percent."
+    show cs disappointed christmas flipped
+    show digi angry flipped
+    rich "Eh, only about 80-percent."
+    pause 0.5
+
     scene cs_foyer_festive
     show aria festive at mid_mid_left
     show tate festive sheepish flipped at mid_right
@@ -3152,110 +3186,126 @@ label ce_banter:
     show k22 flipped at left behind k17
     show k17 flipped at center
     with dissolve
+    pause 0.5
     k17 "So, there's a new World Trade Center now?"
     show k22 disappointed flipped
-    k22 "What do you mean? They finished that in like 2014!"
+    k22 "What do you mean? They finished that in, like, {i}2014!"
     k17 "Oh. Sorry, I forgot about that."
     show k22 flipped
     k17 "Okay, so, if big guy over there is DigBick..."
     show mean human angry
-    show tate sheepish festive flipped
-    mean "I'm not DigBick!"
+    mean "I'm not DigBick!" with vpunch
     k17 "Are you DigBick's... girlfriend?"
-    show tate sheepish blush festive flipped
-    tate "What?"
-    mean "No, first of all, I'm not fucking DigBick."
+    show tate furious blush festive flipped
+    tate "{i}What?!" with vpunch
+    mean "First of all, I'm {i}not{/i} fucking DigBick."
     show k17 disappointed flipped
     mean "I'm Mean, and this is Tate. We are friends."
-    k17 "Yeah, you sound mean."
-    show tate furious blush festive flipped
-    tate "And I'm not a girl--!{w=0.25}{nw}" with vpunch
+    k17 "Yeah, you {i}sound{/i} mean."
+    tate "And, I'm not a girl--!{w=0.25}{nw}" with vpunch
     show tate furious festive flipped
     show mean human annoyed
     show tate srs festive flipped
-    show k17
-    hide aria
-    show aria festive at mid_mid_left
-    k17 "What about you?"
+    show k17 at mid_mid_right with move
+    k17 "Anyway, what about {i}you?"
     aria "Me? I'm Aria."
     show k17 shock
     k17 "Who?"
     show k22 confident flipped
     k22 "Uhh, well..."
-    aria "I'm an old friend, the other one that wasn't Arceus? I got different."
+    aria "I'm an old friend. You know, the other one, who {i}wasn't{/i} Arceus?"
+    aria "I got different."
     show k22 disappointed flipped
-    k17 "Whaa?"
-    k22 "Excuse us for a moment."
+    k17 "Whaa..."
+    k22 "Please excuse us for a moment."
     show k22 disappointed flipped at Move((0.0, 0.14), (1.0, 0.14), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     pause 1.4
-    show k17 shock at Move((0.3125, 0.14), (1.0, 0.14), 2, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show k17 shock at Move((0.475, 0.14), (1.0, 0.14), 2, repeat=False, bounce=False, xanchor="left", yanchor="top")
     pause 2.5
+
     scene cs_bathroom with dissolve
-    copguy "{i}Please{/i} tell me that's it, I can't bear this anymore."
+    copguy "{i}Please{/i} tell me that's it. I can't bear this anymore."
     sheriff "Yep, I'm done!"
-    sheriff "Now, are you gonna help me wipe?"
+    sheriff "Now, are you gonna help me wipe, or, what?"
     play sound sfx_walkie_on
     n "All of a sudden, Copguy's walkie goes off."
-    walkie "Officer Copguy, we have a break-in at a house in the neighborhood you are currently at."
+    walkie "Officer Copguy, we have a break-in at a house near your current location."
     walkie "Can you report on that?"
-    copguy "Gladly! Give me a second and I'll be in my car."
+    copguy "Gladly! I'll be right there!"
     play sound sfx_walkie_off
-    copguy "Sorry boss, as much as I would love to keep helping you, this is important."
+    copguy "Sorry, boss, as much as I would love to keep helping you out here, duty calls!"
     play sound sfx_house_door_open
     scene cs_bathroom_open
-    show sheriff festive
+    # TODO: maybe there's a better way to do this?
+    show sheriff festive at manual_pos(0.45, 0.5):
+        zoom 0.5
     show copguy festive flipped
-    hide copguy with easeoutright
-    sheriff "Wait! You can't just leave me here!"
+    sheriff "Wait! You can't just {i}leave{/i} me here!"
+    show copguy festive flipped at mid_right with move
+    show copguy festive
     copguy "I'll just be a moment! Don't move."
     play sound sfx_house_door_close
     scene cs_bathroom
-    sheriff "God damn it! {i}Get back here!"
+    show copguy festive
+    show copguy festive flipped at offscreenright with { "master" : MoveTransition(0.25) }
+    sheriff "God {i}damn{/i} it! {nw}" with vpunch
+    sheriff "God {i}damn{/i} it! {fast}{cshake}Get {i}back{/i} here!" with vpunch
     pause 3.0
-    sheriff "\"Don't move.\" Thanks, Copguy, you're a real fucking comedian."
+    sheriff "\"Don't move...\""
+    sheriff "Thanks, Copguy. You're a {i}real{/i} fuckin' {i}comedian."
+    pause 0.5
+
     scene cs_door_outside
     show k17 disappointed flipped at mid_left
     show k22 disappointed at mid_right
     show snow1white
     show snow2white
     with dissolve
-    k17 "This is so unfair!"
-    k17 "CS said that it's annoying that we changed or whatever, but look at everyone else!"
-    k17 "All of my friends have changed so much!"
-    k22 "Yeah, well when you are constrained to one year of your life, that can happen."
-    k17 "It's just, how do I like, change that?"
-    k17 "I can't just change who I am!"
+    pause 0.5
+    k17 "This is {i}so{/i} unfair!"
+    k17 "CS said that it's annoying that we've changed, or whatever, but, just look at everyone {i}else!"
+    k17 "All of my friends have changed so much I don't even {i}recognize{/i} them anymore!"
+    k22 "Yeah, well, when you are constrained to just one year of your life, that can happen."
+    k17 "It's just... how do I, like, {i}deal{/i} with all of this?"
+    k17 "I can't just change who {i}I{/i} am, too!"
     show k22 confident
-    k22 "Look, you don't need to. I probably should've told you about how people change and whatnot."
-    k22 "Honestly, Addy should've told you, but they were probably too busy setting up their party."
+    k22 "Look, you don't need to."
+    k22 "I probably should've told you about how people change, and whatnot."
+    k22 "Honestly, {i}Addy{/i} should've been the one to tell you, but, they were probably too busy worrying about their own party."
     show k22 happy
-    k22 "Speaking of which, do you want to go back home? Celebrate Christmas with Addy?"
+    k22 "Speaking of which, do you want to go back home? Where you know everyone? Celebrate Christmas with Addy?"
     k17 "Hmm..."
+    pause 1.0
     show k17 happy flipped
     show k22 disappointed
-    k17 "No, I wanna stay here till the end!"
+    k17 "No! I wanna stay here 'til the end!"
     show k17 flipped
-    k17 "I'll just keep being myself, and try to keep more of an open mind. Thank you, K-22!"
+    k17 "I'll just keep being myself, but I'll try to keep more of an open mind. Thank you, K-22!"
     show k17 flipped at center with ease
     play sound sfx_house_door_open
     hide k17 with dissolve
+    pause 0.5
     play sound sfx_house_door_close
+    pause 2.0
     k22 "Damn it. It was worth a try."
-    show k22 at mid_left with move
-    show k22 flipped with determination
+    show k22 at mid_left with { "master" : MoveTransition(1.0) }
     k22 "I wonder how Addy is doing, anyway."
+    show k22 flipped with determination
     play sound sfx_ring_once
     show k22 phone at mid_left with move
     n "K-22 hits up Addy."
+    pause 0.5
     $ renpy.music.set_pause(True, "music")
     play music2 frollo_rave if_changed
     music frollo_rave
     show archival_5 at mid_offscreen_right
     show pakoo disappointed at mid_right
     with moveinright
-    addy "HELLO??"
+    addy "HELLO?!" with vpunch
     k22 "Hey, uhh, how is it going over there?"
-    addy "WHAT? I CAN'T HEAR YOU, THE MUSIC IS REALLY LOUD!"
+    addy "{i}WHAT?! {nw}" with vpunch
+    addy "{i}WHAT?!{/i} {fast}I CAN'T HEAR YOU! {nw}" with vpunch
+    addy "{i}WHAT?!{/i} I CAN'T HEAR YOU! {fast}THE MUSIC IS {i}REALLY{/i} LOUD!" with vpunch
     show k22 phone angry
     k22 "I WAS ASKING IF--{w=1.0}{nw}"
     addy "YEAH, I'LL CALL YOU LATER! HAVE FUN AT CS' PARTY!"
@@ -3265,37 +3315,55 @@ label ce_banter:
     with moveoutright
     stop music2
     $ renpy.music.set_pause(False, "music")
+    pause 1.0
     show k22 angry flipped
-    k22 "Motherfucker!"
+    k22 "Mother{i}fucker!" with vpunch
     show snow3
     show snow4
-    n "All of a sudden, the wind starts to pick up and snow begins to fall."
+    n "All of a sudden, the wind starts to pick up and the gentle snow begins coming down harder."
     show k22 disappointed flipped
-    k22 "Brr... I should probably just get back inside and enjoy the party..."
+    k22 "Brr..."
+    k22 "As long as I'm stuck here, I should probably just get back inside and at least {i}try{/i} to enjoy the party."
+    show k22 disappointed flipped at center with move
+    play sound sfx_house_door_open
+    hide k22 with dissolve
+    play sound sfx_house_door_close
+    pause 0.5
+
     scene cs_bathroom with dissolve
+    pause 0.5
     show k17 at mid_right with moveinright
-    sheriff "Hey! Is someone there?"
+    sheriff "Hey!" with vpunch
+    sheriff "Hey! {fast}Is someone there?"
     k17 "Huh?"
     sheriff "Hey, you! Can you help me out of here?"
     show k17 shock
     k17 "Uhh... uhh..."
     k17 "I'll go get someone!"
     hide k17 with easeoutleft
+    pause 0.5
 
     # audio ducking
     # TODO: also why is elf_1 a movie file if it's not even on-screen...? - tate
     # It might be at some point on the screen -- Digi
     $ renpy.music.set_volume(0.25)
 
+    # they're supposed to be sitting on the couch now ehehe
     scene cs_living2_festive
     show elf_1
-    show wesley festive at right
-    show rich festive at mid_right
-    show db at center
-    show cs christmas at left
+    show rich festive at mid_mid_right:
+        zoom 0.75
+    show wesley festive at right:
+        zoom 0.75
+    show db at mid_left:
+        zoom 0.75
+    show cs christmas at left:
+        zoom 0.75
     with dissolve
+
+    pause 1.0
     rich "Oh, man, I love this part."
-    show k17 shock at mid_mid_right with moveinright
+    show k17 shock at mid_right with moveinright
     k17 "Hey, guys, uh-- how do I put this...?"
     k17 "The sheriff is stuck in the bathroom?"
     show cs disappointed christmas
@@ -3303,8 +3371,13 @@ label ce_banter:
     cs "Damn it, one second--"
     obama "CS! Are you there?"
     show cs christmas
-    cs "Okay, let me do this first. The {i}president{/i} is calling!"
+    cs "Oh! Let me do this first. The {i}president{/i} is calling!"
+    show cs christmas at left with move:
+        linear 0.5 zoom 1.0
+    pause 0.5
     hide cs with moveoutright
+
+# TODO: TATE STOPPED EDITING HERE!
 
 # Cooking
 label ce_cooking:
