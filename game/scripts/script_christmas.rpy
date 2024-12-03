@@ -2232,8 +2232,7 @@ label ce_party_before:
         cs "Alright, any minute now..."
         cs "The party starts in about 15 minutes, so people should start showing up soon..."
         n "CS keeps on waiting, but it looks like no one shows up early."
-        jump after_d20
-    if d20 == 2:
+    elif d20 == 2:
         play sound sfx_car_approach_stop volume 5.0 fadein 1.0
         n "As CS asks himself this, a small car pulls up in the driveway."
         cs "Hmm, let's go see who that is!"
@@ -2252,8 +2251,7 @@ label ce_party_before:
         cs "Yeah! Well, should we get inside? It's pretty cold out."
         kitty "Well, {i}we{/i} are rather warm, but, yeah."  # british + furry = well equipped for cold
         kitty "Let's go inside."
-        jump after_d20
-    if d20 == 3:
+    elif d20 == 3:
         play sound sfx_car_approach_stop volume 5.0 fadein 1.0
         show cs christmas flipped at mid_left with move
         n "CS peers out the window to see Anno's car pull into the driveway."
@@ -2269,8 +2267,7 @@ label ce_party_before:
         cs "Well, I'm glad you showed up. Come inside! It's cold out."
         anno "I know I showed up kinda early, but, I wanted to see everyone's initial reactions to our decorating!"
         cs "Well, I'm glad you did! Come inside! It's cold out."
-        jump after_d20
-    if d20 == 4:
+    elif d20 == 4:
         # TODO: digi ufo sound
         n "All of a sudden, CS hears a futuristic-sounding vehicle land outside."
         show cs disappointed christmas flipped
@@ -2295,8 +2292,7 @@ label ce_party_before:
         digi "It's cold out. Can we go inside?"
         show cs christmas dark flipped
         cs "Yeah, let's go."
-        jump after_d20
-    if d20 == 5 or d20 == 6:
+    elif d20 == 5 or d20 == 6:
         # TODO: sfx fading in train chugging
         show cs scared christmas flipped with vpunch
         n "As soon as he says that, he feels the house start to shake." with hpunch
@@ -2325,8 +2321,7 @@ label ce_party_before:
         cs "Shall we get inside?"
         tate "Yeah!" (multiple = 2)
         mean "Yeah!" (multiple = 2)
-        jump after_d20
-    if d20 == 7:
+    elif d20 == 7:
         play sound sfx_car_approach_stop volume 5.0 fadein 1.0
         show cs christmas flipped at mid_left with move
         n "CS notices a familiar blue car roll up onto the driveway."
@@ -2345,8 +2340,7 @@ label ce_party_before:
         show cs disappointed christmas dark flipped
         cs "That sucks, man. I hope this party cheers you up."
         billy "Let's get inside. It's freezing out here!"
-        jump after_d20
-    if d20 == 8:
+    elif d20 == 8:
         play sound2 sfx_chopper_loop fadein 2.0
         n "All of a sudden, CS hears helicopter blades above his house."
         show cs worried christmas flipped
@@ -2373,8 +2367,7 @@ label ce_party_before:
         show cs happy dark christmas flipped
         cs "Well, Mr.{w=0} President, let's get inside and wait for the other guests."
         obama "Sure thing. It is very cold outside."
-        jump after_d20
-    if d20 == 9:
+    elif d20 == 9:
         show cs scared christmas flipped
         play sound sfx_siren
         show blue_light at manual_pos(-50, 0):
@@ -2396,8 +2389,7 @@ label ce_party_before:
         copguy "Well, someone's gotta be security, right?" #TODO: i hate this line - tate
         cs "I... guess?"
         cs "Whatever, let's get inside. I'm freezing!"
-        jump after_d20
-    if d20 == 10:
+    elif d20 == 10:
         play sound sfx_car_approach_stop volume 5.0 fadein 1.0
         show cs christmas flipped at mid_left with move
         n "CS looks outside to see a bus pull up."
@@ -2417,8 +2409,7 @@ label ce_party_before:
         show cs disappointed christmas dark flipped
         cs "Oh, wow, okay. Would you like some help?"
         sheriff "{i}Yes!{/i} I keep getting stuck in the snow! Take me inside!"
-        jump after_d20
-    if d20 == 11:
+    elif d20 == 11:
         play sound sfx_beam
         n "A familiar sound like a laser beam is heard from outside."
         hide cs with moveoutleft
@@ -2440,8 +2431,7 @@ label ce_party_before:
         rich "Well, why don't we get inside? It's freezing out here!"
         show cs christmas dark flipped
         cs "Yeah, let's go!"
-        jump after_d20
-    if d20 == 12:
+    elif d20 == 12:
         play sound sfx_car_approach_stop volume 5.0 fadein 1.0
         show cs christmas flipped at mid_left with move
         n "An old Dodge Charger pulls up on the driveway."
@@ -2464,8 +2454,7 @@ label ce_party_before:
         cs "Are you guys {i}both{/i} Pakoo?"
         k22 "It's... kind of complicated."
         k22 "Let's go inside, then we can explain."
-        jump after_d20
-    if d20 == 13:
+    elif d20 == 13:
         n "A teleport-like sound is heard outside."
         # TODO: sfx for that
         show cs disappointed christmas flipped
@@ -2483,8 +2472,7 @@ label ce_party_before:
         aria "Well, then, should we head inside? You're probably getting cold, I assume."
         show cs disappointed dark flipped
         cs "Yeah, it's kinda freezing out."
-        jump after_d20
-    if d20 == 14:
+    elif d20 == 14:
         play sound sfx_car_approach_stop volume 5.0 fadein 1.0
         show cs christmas flipped at mid_left with move
         n "Someone's car pulls into the driveway."
@@ -2500,8 +2488,7 @@ label ce_party_before:
         michael "I decided to spend a whole {i}year{/i} over here."
         michael "It's pretty cold out, innit?"
         cs "Yeah, let's get inside now."
-        jump after_d20
-    if d20 == 15:
+    elif d20 == 15:
         play sound sfx_car_approach_stop volume 5.0 fadein 1.0
         show cs christmas flipped at mid_left with move
         n "CS sees Linus' car pulling up outside."
@@ -2526,8 +2513,7 @@ label ce_party_before:
         cs "Yeah, sorry about all that. It's a long story."
         show cs christmas dark flipped
         cs "Why don't we go inside? I'll explain the whole thing while we wait for more people to show up."
-        jump after_d20
-    if d20 == 16:
+    elif d20 == 16:
         play sound sfx_car_approach_stop volume 5.0 fadein 1.0
         show cs christmas flipped at mid_left with move
         n "Another Honda Civic shows up in CS' driveway."
@@ -2544,8 +2530,7 @@ label ce_party_before:
         blank "I got quite a bit of dashcam footage if you want to watch some with me."
         show cs happy christmas dark flipped
         cs "Sure thing! Let's get inside and watch while we wait for the others."
-        jump after_d20
-    if d20 == 17:
+    elif d20 == 17:
         play sound sfx_car_approach_stop volume 5.0 fadein 1.0
         show cs christmas flipped at mid_left with move
         n "An unknown car shows up in the driveway."
@@ -2561,8 +2546,7 @@ label ce_party_before:
         cs "Yeah! {w=1.0} It's been a while. How've you been?"
         nova "Oh, y'know, I've been moving a lot, had a friend move in with me..."
         cs "Well, if you wanna chat about it, let's get inside first. It's cold out here."
-        jump after_d20
-    if d20 == 18:
+    elif d20 == 18:
         play sound sfx_car_approach_stop volume 5.0 fadein 1.0
         show cs christmas flipped at mid_left with move
         n "CS sees a Cherokee pull up to his house."
@@ -2587,8 +2571,7 @@ label ce_party_before:
         eliza "Close enough."
         cs "Well, would you all like to come inside?"
         eliza "Yeah."
-        jump after_d20
-    if d20 == 19:
+    elif d20 == 19:
         play sound sfx_car_approach_stop volume 5.0 fadein 1.0
         show cs christmas flipped at mid_left with move
         n "An orange Mini Coooper shows up in front of CS' house."
@@ -2605,8 +2588,7 @@ label ce_party_before:
         cs "Yes! You managed to be the earliest this time!"
         db "Wow, I can't believe it!"
         cs "Yeah! Let's get inside, and then we can talk!"
-        jump after_d20
-    if d20 == 20:
+    elif d20 == 20:
         show cs christmas flipped at mid_left with move
         n "A man in a white shirt approaches CS' house."
         show cs disappointed christmas flipped
@@ -2629,7 +2611,6 @@ label ce_party_before:
         cs "Do you, uh, wanna go inside?"
         avgn "Hell yeah!" with vpunch
         cs "Alright, then..."
-        jump after_d20
     else:
         n "CS waits patiently."
         n "He keeps on waiting."
@@ -2658,13 +2639,8 @@ label ce_party_before:
         n "CS gives up trying to understand, for now."
         show cs christmas dark flipped
         cs "Sure."
-        jump after_d20
-
-label after_d20:
-    if in_d20_viewer:
-        jump d20_viewer
-    else:
-        jump ce_introductions
+    $ renpy.end_replay()
+    jump ce_introductions
 
 # Introductions
 label ce_introductions:

@@ -1,9 +1,9 @@
 init python:
-    roller = renpy.random.randint(1, 20)
+    d20 = renpy.random.randint(1, 20)
 
     def reroll():
-        global roller
+        global d20
         if preferences.csbounciness == 100:
-            roller = 20
+            d20 = 20
         else:
-            roller = renpy.random.randint(1, 20)
+            d20 = renpy.random.randint(1, 20)

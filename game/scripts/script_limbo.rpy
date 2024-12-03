@@ -202,12 +202,6 @@ screen rockstar_check:
     hbox xalign 0.0 yalign 0.25:
         spacing 50
 
-label d20_viewer:
-    $ in_d20_viewer = True
-    $ current_roll = d20
-    call screen d20_viewer_screen(current_roll)
-    jump ce_party_before
-
 ########## CS' Data ##########
 
 # TODO: NOTE TO TATE - DON'T TOUCH THESE VALUES, THESE ARE CS' VALUES
