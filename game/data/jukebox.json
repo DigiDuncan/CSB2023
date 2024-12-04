@@ -1200,6 +1200,20 @@
             "album_art": "pizzatower.png",
             "trivia": "The full name of this song is {i}Don't Preheat Your Oven Because If You Do The Song Won't Play.{/i}"
         },
+        "summer_fun" : { 
+            "file": "summer_fun.ogg",
+            "title": "Summer Fun // Lecherous Beaches",
+            "artist": "blanknam3d",
+            "tags": ["CSBIII DX: Holiday Special", "New In DX"],
+            "album_art": "summer_fun.png"
+        },
+        "crashing_down": {
+            "file": "crashing_down.ogg",
+            "title": "Crashing Down",
+            "artist": "xtkakeru",
+            "tags": ["CSBIII DX: Holiday Special", "New In DX"],
+            "album_art": "crashing_down.png"
+        },
         "on_the_rocks" : {
             "file": "on_the_rocks.ogg",
             "title": "On The Rocks",

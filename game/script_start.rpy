@@ -3195,6 +3195,8 @@ define audio.rice_and_wine = "rice_and_wine.ogg"
 define audio.winter_unclearance_sale = "winter_unclearance_sale.ogg"
 define audio.frollo_rave = "frollo_rave.ogg"
 define audio.superstar_road = "superstar_road.ogg"
+define audio.summer_fun = "summer_fun.ogg"
+define audio.crashing_down = "crashing_down.ogg"
 
 # CSBIII DX After-True Music
 define audio.lets_hear_spring = "letshearspring.ogg"
