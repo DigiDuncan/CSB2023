@@ -5775,6 +5775,7 @@ label ce_roof_moment:
     cs "Woohoo! We did it! The avalanche covering the house is gone!"
     santa "Ho ho, well, it looks like you helped save Christmas, CS."
     santa "I need to get going now. I am slightly off-schedule."
+    santa "I'm supposed to meet this girl named Belle, heard she's feeling pretty down."
     santa "I should also make sure my steed didn't drown in car cleaner..."
     cs "Good luck to you, Santa!"
     hide santa with moveoutleft
