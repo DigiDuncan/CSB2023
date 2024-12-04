@@ -3162,7 +3162,14 @@ label ce_banter:
     play sound sfx_tada 
     with vpunch
     luke "Ta-da!"
-    show luke festive flipped
+    scene cs_living
+    show elf_0:
+        xpos 50
+        ypos 100
+    show digi shock at mid_right
+    show linus festive at mid_right behind digi
+    show luke festive flipped at mid_left_left behind linus
+    show cs christmas flipped at mid_right_right behind digi
     rich "Finally! We can watch something!"
     wesley "Are you 100-percent satisfied, Richard?"
     show cs disappointed christmas flipped
