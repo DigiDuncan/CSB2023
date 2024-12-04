@@ -949,7 +949,7 @@ label ce_setup:
     show cs
     cs "Yeah, I think I'm gonna head out here in a moment. I just need to make a list."
     if fun_value(FUN_VALUE_COMMON):
-        cs "And check it twice!"
+        cs "And,{w=0} check it twice!"
     anno "Alrighty, well, good luck with that!"
     anno "I'll see you in two days!"
     cs "Yeah, see you then! Bye for now, Anno!"
@@ -1064,7 +1064,7 @@ label ce_before_shopping:
     scene cs_house_snow
     show cs coat hat flipped at mid_right
     with dissolve
-    cs "Thank goodness it didn't snow overnight. Shoveling yesterday fuckin' sucked."
+    cs "Thank goodness it didn't snow overnight. Shoveling yesterday fuckin' {i}sucked."
     # I just want this to be known.
     # I love this line.
     # It's so CS-coded but it's just not a line you'd expect to be in a visual novel.
@@ -2207,7 +2207,7 @@ label ce_aftershop:
     show cs flipped
     cs "But, I don't think that'll happen."
     if d20 == 1:
-        cs "...right?"
+        cs "... Right?"
     cs "Everyone confirmed they got my invitations, and they all said on the phone that they'll come!"
     show cs happy flipped
     cs "If nothing else, I know Anno is coming for sure!"
@@ -3394,8 +3394,8 @@ label ce_cooking:
     # un-duck the audio
     $ renpy.music.set_volume(1.0)
 
-    show michael festive flipped at left behind cs_kitchen_fg
     show billy festive at mid_mid_left behind cs_kitchen_fg
+    show michael festive flipped at left behind cs_kitchen_fg
     show obama festive at mid_right behind cs_kitchen_fg
     show cutting_board at manual_pos(0.6, 0.75)
     $ collect("cutting_board")
@@ -3439,8 +3439,8 @@ label ce_cooking:
 
     scene cs_kitchen
     show cs_kitchen_fg
-    show michael festive flipped at left behind cs_kitchen_fg
     show billy festive at mid_mid_left behind cs_kitchen_fg
+    show michael festive flipped at left behind cs_kitchen_fg
     show obama festive flipped at center behind cs_kitchen_fg
     show cs christmas flipped at manual_pos(1.0, 1.0, 1.0) behind cs_kitchen_fg
     show cutting_board at manual_pos(0.6, 0.75)
@@ -3496,6 +3496,7 @@ label ce_cooking:
         xanchor 0.5
         zoom 0.7
     $ collect("burnt_turkey")
+    play sound sfx_oven_close
     n "When the smoke finally clears, Ed pulls out a blackened turkey."
     hide smoke with dissolve
     show cs disappointed christmas flipped
@@ -3561,6 +3562,8 @@ label ce_cooking:
     sheriff "That's great, but, can you get me off this toilet now?"
     sheriff "I've been sitting here for so long that I started writing my will!"
     copguy "Alright, let's get you out of here, old man."
+    play sound2 sfx_toilet_flush noloop
+    pause 1.0
     play sound sfx_house_door_open
     scene cs_bathroom_open
     show copguy festive behind sheriff at manual_pos(0.4, 0.35):
@@ -3581,17 +3584,19 @@ label ce_cooking:
     show grace at mid_left  
     show copguy festive behind sheriff at manual_pos(0.4, 0.2)
     show sheriff festive at manual_pos(0.4, 0.5)
-    pause 0.5
+    pause 0.25
     show copguy festive at mid_right with move
-    pause 0.5
+    pause 0.25
     hide copguy
     hide sheriff
     with moveoutleft
     grace "Finally!"
+    show grace flipped
     grace "Guys, the sheriff is out!"
     show grace at center with move
     hide grace with dissolve
-    scene cs_bathroom
+    scene cs_bathroom   
+    play sound sfx_house_door_close
     show anne at mid_mid_left with moveinleft
     show rich festive flipped at mid_left behind anne with moveinleft
     show tate sheepish festive at mid_left_left with moveinleft
@@ -3626,12 +3631,13 @@ label ce_cooking:
     kitty "Uh huh..."
     arceus "And, today's the 25th of December."
     kitty "I see."
-    arceus "So. the last night of Hanukkah would be the 2nd of January."
+    arceus "So, the last night of Hanukkah would be the 2nd of January."
     kitty "..."
     kitty "..."
     kitty "Shit, you right."
     pause 0.5
 
+    # TODO: uh so should we move this scene? arc was literally just with kitty in another room - tate
     # OK, is this scene too meta? I like it a lot but I'm worried I'm pushing the boundaries a bit here.
     scene cs_foyer_festive
     show aria festive at left
@@ -3639,11 +3645,11 @@ label ce_cooking:
     show arceus festive at right
     with dissolve
     pause 0.5
-    arceus "Yeah, so, to get the code done, I just got drunk off a bottle of wine and Digi and I chewed through it in a night."
+    arceus "Yeah, so, to get the code done, I got drunk off a bottle of wine, and Digi and I chewed through it in a single night."
     aria "Damn. That's the best way to do it."
     show digi thinking
     digi "I mean, {i}I{/i} was sober the whole time. I just had to put up with {i}this{/i} fluffy bastard."
-    aria "Of course you were sober. I think a sip of wine would knock you flat."
+    aria "Of course {i}you{/i} were sober. I think a sip of wine would knock you flat."
     show digi goober
     digi "Hey, I'm not {i}that{/i} small."
     aria "Usually."
@@ -3661,7 +3667,7 @@ label ce_cooking:
     cs "Hey guys! What are you all talking about?"
     digi "Oh, we were just discussing what developing the first game was li--{w=0.5}{nw}"
     show digi shock with hpunch
-    n "Aria shoots a look at Digi, as much as she can do that in her current form."
+    n "Aria shoots a look at Digi, as much as she can do that in her current form." # TODO: this line needs help - tate
     digi "Er, uh, just talking about a coding project we all worked on."
     cs "Oh, okay. Probably a bunch of stuff I wouldn't understand, then."
     show digi
@@ -3701,8 +3707,8 @@ label ce_cooking:
     n "CS walks in to greet the unlikely friends."
     cs "Obama, Billy! You two getting along?"
     obama "Oh, CS, this guy's a {i}hoot!"
-    billy "Barack here is a real nice guy!"
-    cs "Well, that's great. Glad to see two people from different walks of life enjoying each other's company."
+    billy "Barack here has some great stories, as well!"
+    cs "Glad to hear it! Always love to see two people from different walks of life enjoying each other's company."
     obama "That's what Christmas is all about, isn't it?"
     billy "{i}That's{/i} the power{w=0.25} of the holiday season!"
     show cs happy christmas
@@ -3758,11 +3764,11 @@ label ce_mike:
     show tate festive at mid_offscreen_left
     with moveinleft
     show k17 happy flipped
-    k17 "Hey, it's Mike! How's it going, long time no see!"
-    grace "Oh my God! I love you, Mike!"
+    k17 "Hey, it's Mike! How's it going? Long time no see!"
+    grace "Oh, my God! I love you, Mike!"
     tate "What's up, Mike?"
     obama "Mike, remember when I pardoned you?"
-    billy "This guy can sell pizza better than I can!"
+    billy "This guy can sell pizza even better than {i}I{/i} can!"
     show tate festive flipped
     show billy festive
     with determination
@@ -3781,18 +3787,19 @@ label ce_mike:
     show cs christmas
     show arceus festive angry
     arceus "Who?"
+    show cs disappointed christmas
     grace "How do you not know who Mike the Pizzapotamus is?!" with vpunch
     obama "I mentioned him in my re-election speech!"
     cs "The children love him! He's the best in the world!"
     show arceus festive worried
-    arceus "Yeah, I guess he's not... ringing a bell?"
+    arceus "Yeah... he really doesn't ring a bell, sorry."
     show k17 disappointed flipped
     k17 "He works at the {i}bus stop,{/i} dude!"
     arceus "You mean the bus {i}station?"
     grace "No! The bus stop!"
     arceus "Oh, so he drives the bus?"
     show cs angry christmas
-    "Everyone" "{cshake}{size=+24}No! The bus stop!"  # TODO: Make this a character, so it has a beep
+    "Everyone" "{cshake}{size=+24}No! The bus stop!" with vpunch  # TODO: Make this a character, so it has a beep
     mike "You really don't know me, do you?"
     show arceus festive worried flipped
     arceus "Huh?"
@@ -3822,7 +3829,7 @@ label ce_mike:
     n "As Arceus is dying on the floor, he faintly hears people talking."
     grace "I expected more from you."
     obama "Should've listened to my campaign speeches, bitch."
-    mike "Alright, who wants to try pizza from my thermos?"
+    mike "Alright, who wants to try pizza from my Thermos?"
     show cs happy christmas
     cs "Oh, {i}yes!{/i} Me first! Woohoo!"
     scene black with dissolve
@@ -3858,8 +3865,6 @@ label ce_mike:
     scene black with dissolve
     pause 0.5
 
-    # TODO: TATE STOPPED EDITING HERE!
-
 # Dinner/More Banter
 label ce_dinner:
     play music christmas_spirit
@@ -3867,8 +3872,8 @@ label ce_dinner:
     scene night_bg
     show left_room
     show left_chair_back
-    show cs christmas at center
     show anno festive at mid_left
+    show cs christmas at center
     show tate festive flipped at mid_right
     show db at manual_pos(1.1, 0.6, 0.5)
     show k22 at mid_offscreen_left
@@ -3876,36 +3881,54 @@ label ce_dinner:
     show left_table
     with dissolve
     cs "Well, I'd love to start off this wonderful meal by saying--"
-    blank "Hey, stop it! We are not playing your music!"
+    play sound sfx_static
+    show cs scared christmas
+    show tate shock festive flipped
+    with hpunch
+    $ renpy.music.set_pause(True, "music")
+    pause 0.25
+    play music2 crashing_down if_changed
+    music crashing_down
+    blank "Hey, stop it! We are {i}not{/i} playing your music!" with hpunch
+    play sound sfx_static
+    stop music2
+    pause 0.25
+    play music2 summer_fun if_changed
+    music summer_fun
     if fun_value(FUN_VALUE_COMMON):  # I made this joke a fun value, it just seems too mean to be the main route
         nova "Blank, Blank..."
         nova "This song is so..."
         show cs christmas disappointed
         show tate festive sheepish flipped
-        nova "FUCKING ASS!"
-        nova "STOP MAKING MUSIC!"
-        nova "STOP MAKING MUSIC!"
+        nova "FUCKING {i}ASS!" with hpunch
+        nova "STOP MAKING MUSIC!" with hpunch
+        nova "STOP MAKING MUSIC!" with hpunch
         show cs christmas angry flipped
-        nova "Turn that shit off!"
+        nova "Turn that shit {i}off!" with hpunch
     else:
-        nova "Well I don't want to hear catgirl moans at the dinner table!"
+        nova "Well, I don't want to hear catgirl moans at the dinner table!"
         blank "They're mixed into the instrumentation, you can barely--"
-    cs "Hey! Can you two stop fighting and get over here and eat with us!"
+    cs "Hey!" with hpunch
+    cs "Hey! {fast}Can you two stop fighting, get over here, and eat with us?!"
+    stop music2
+    $ renpy.music.set_pause(False, "music")
+    pause 2.0
 
     show left_room at mid_left
     show left_chair_back at mid_left
     show left_table at mid_left
-    show cs christmas at mid_left
     show anno festive at mid_offscreen_left
+    show cs christmas at mid_left
     show tate festive at center
     show db at manual_pos(0.85, 0.6, 0.5)
     show k22 at manual_pos(-0.25, 0.575, 0.5)
     with move
-    db "So, CS, how's your streams been going recently?"
-    cs "Well, it's mainly been car crash streams on Sundays as usual."
-    cs "It's been hard to really do crazy stuff as much as I did back then on Mixer ever since it died."
+    db "So, CS, how have your streams been going recently?"
+    cs "Well, it's mainly been dashcam reaction streams on Sundays as usual."
+    show cs disappointed christmas
+    cs "It's been hard to do as much crazy stuff since Mixer died."
     db "Ah, yeah, I get that."
-    tate "But hey, we still have fun!"
+    tate "But, hey, we still have fun!"
     show left_room at left
     show left_chair_back at left
     show left_table at left
@@ -3922,30 +3945,36 @@ label ce_dinner:
     show k17 disappointed with determination
     hide k17 with moveoutleft
     pause 0.5
+
     scene night_bg
     show right_room at left
     show right_chair_back at left
     show arceus festive at mid_offscreen_left
-    show billy festive at mid_left
+    show billy festive flipped at mid_left
     show obama festive at center
     show michael festive at mid_right
     show ed festive at mid_offscreen_right
     show right_table at left
     with dissolve
     obama "So, Billy, any good new pitches on the table for you?"
-    billy "Well, I got in contact with Phil Swift recently, you may have heard of him from Flex Tape!"
-    michael "Actually, Phil's a friend of mine! He's stayed over my place plenty of times."
+    billy "Well, I got in contact with Phil Swift recently. You may have heard of him from his Flex Tape commercials!"
+    show michael festive flipped
+    michael "Actually, Phil is a wonderful friend of mine! He has stayed over at my place plenty of times."
+    michael "If he offers you a slice of cake, however, perhaps consider giving it a pass."
+ 
     scene night_bg
     show left_room
     show left_chair_back
-    show cs christmas at center
     show anno festive at mid_left
+    show cs christmas at center
     show tate festive at mid_right
     show db at manual_pos(1.1, 0.6, 0.5)
     show k22 at mid_offscreen_left
     show k17 at manual_pos(-0.5, 0.6, 0.5)
     show left_table
-    cs "I was going to invite him to the party this evening, but he's been so busy pitching Flex products. I think he's in Europe right now."
+    cs "Phil? Oh, yeah! I was going to invite him to this party, but he's been so busy pitching Flex products."
+    cs "I think he's actually in Europe right now."
+
     scene night_bg
     show right_room at left
     show right_chair_back at left
@@ -3955,25 +3984,28 @@ label ce_dinner:
     show michael festive at mid_right
     show ed festive at mid_offscreen_right
     show right_table at left
-    billy "Well, you might see him and I team up for a commercial soon, if this deal goes through!"
-    obama "How much does it cost to get you in a commerical, anywho?"
+    billy "Well, if this deal goes through, you might see {i}both{/i} of us in a commercial real soon!"
+    obama "How much does it cost to get you in a commercial, anyway?"
+    show billy festive flipped
     billy "If I told you, I'd have to kill you!"
     n "Obama and Billy chuckle, but Luther does not."
-
+    pause 0.5
     show arceus festive flipped
-    arceus "How's the foundation repair business, HoH SiS?"
-    ed "It's been pretty good, since we got all those contracts after our run-in."
+    arceus "Hey, Ed, how's the foundation repair business lately?"
+    ed "It's been pretty good. We got all these new contracts after our run-in with CS."
+
     scene night_bg
     show left_room
     show left_chair_back
-    show cs christmas at center
     show anno festive at mid_left
+    show cs christmas at center
     show tate festive at mid_right
     show db at manual_pos(1.1, 0.6, 0.5)
     show k22 at mid_offscreen_left
     show k17 at manual_pos(-0.5, 0.6, 0.5)
     show left_table
     cs "Heh, I'm still sorry about all that..."
+
     scene night_bg
     show right_room at center
     show right_chair_back at center
@@ -3983,23 +4015,27 @@ label ce_dinner:
     show wesley festive at mid_right
     show rich festive at mid_offscreen_right
     show right_table at center
-    wesley "My back is sorry about it, too."
-    rich "Oh, can it, ding-dong, you got surgery, didn't cha?"
+    wesley "My {i}back{/i} is sorry about it, too."
+    rich "Oh, {i}can{/i} it, ya ding-dong. You {i}got{/i} your surgery, didn't 'cha?"
+    show wesley festive flipped
     wesley "Having a metal pole in your back isn't ideal, numbnuts."
-    mean "I mean, metal is {i}stronger{/i} than bones, so it's kinda like an upgrade!"
+    mean "I mean, metal {i}is{/i} stronger than bones, so it's kinda like an upgrade!"
+    show wesley festive
     wesley "Tell that to the TSA."
-    arceus "I don't tell anything to the TSA."
+    arceus "I don't tell {i}anything{/i} to the TSA."
+
     scene night_bg
     show left_room
     show left_chair_back
-    show cs christmas at center
     show anno festive at mid_left
-    show tate festive at mid_right
+    show cs disappointed christmas at center
+    show tate sheepish festive flipped at mid_right
     show db at manual_pos(1.1, 0.6, 0.5)
     show k22 at mid_offscreen_left
     show k17 at manual_pos(-0.5, 0.6, 0.5)
     show left_table
     cs "Well, again, I hope I've been able to make it up to you guys, mostly."
+
     scene night_bg
     show right_room at center
     show right_chair_back at center
@@ -4011,8 +4047,9 @@ label ce_dinner:
     show right_table at center
     show linus festive at manual_pos(1.3, 0.6, 0.5)
     show luke festive at manual_pos(1.45, 0.6, 0.5)
-    ed "You've more than made it up to us, CS."
-    rich "Yeah, you helped propel our business to new heights! Or, I guess, new foundations."
+    ed "You've {i}more{/i} than made it up to us, CS."
+    rich "Yeah, you helped propel our business to new heights!"
+    rich "Or, I guess, new foundations?"
     wesley "Mmm."
 
     scene night_bg
@@ -4022,23 +4059,25 @@ label ce_dinner:
     show michael festive at manual_pos(-0.25, 0.6, 0.5)
     show ed festive at manual_pos(0, 0.55, 0.5)
     show wesley festive at manual_pos(0.25, 0.575, 0.5)
-    show rich festive at manual_pos(0.5, 0.6, 0.5)
+    show rich festive at manual_pos(0.5, 0.555, 0.5)
     show linus festive at manual_pos(0.80, 0.6, 0.5)
     show luke festive at manual_pos(0.95, 0.6, 0.5)
     show right_table at right
     with move
     linus "So, CS, when are we getting you back for another video?"
+
     scene night_bg
     show left_room
     show left_chair_back
-    show cs christmas at center
     show anno festive at mid_left
+    show cs worried christmas at center
     show tate festive at mid_right
     show db at manual_pos(1.1, 0.6, 0.5)
     show k22 at mid_offscreen_left
     show k17 at manual_pos(-0.5, 0.6, 0.5)
     show left_table
-    cs "Oh, jeez, life has been so busy."
+    cs "Oh, jeez, life has just been so busy."
+
     scene night_bg
     show right_room at right
     show right_chair_back at right
@@ -4051,17 +4090,19 @@ label ce_dinner:
     show luke festive at manual_pos(0.95, 0.6, 0.5)
     show right_table at right
     luke "You were a fan favourite."  # Intentional Canadian spelling
+
     scene night_bg
     show left_room
     show left_chair_back
-    show cs christmas at center
     show anno festive at mid_left
+    show cs surprised christmas at center
     show tate festive at mid_right
     show db at manual_pos(1.1, 0.6, 0.5)
     show k22 at mid_offscreen_left
     show k17 at manual_pos(-0.5, 0.6, 0.5)
     show left_table
-    cs "Well, if I can make it to Canada at some point soon..."
+    cs "Well, if I can make it back to Canada at some point..."
+
     scene night_bg
     show right_room at right
     show right_chair_back at right
@@ -4074,17 +4115,19 @@ label ce_dinner:
     show luke festive at manual_pos(0.95, 0.6, 0.5)
     show right_table at right
     linus "We'll pay for your flight out~"
+
     scene night_bg
     show left_room
     show left_chair_back
-    show cs christmas at center
     show anno festive at mid_left
+    show cs christmas at center
     show tate festive at mid_right
     show db at manual_pos(1.1, 0.6, 0.5)
     show k22 at mid_offscreen_left
     show k17 at manual_pos(-0.5, 0.6, 0.5)
     show left_table
     cs "Tempting. Very tempting. I'll see what I can do."
+
     scene night_bg
     show right_room at left
     show right_chair_back at left
@@ -4094,18 +4137,21 @@ label ce_dinner:
     show michael festive at mid_right
     show ed festive at mid_offscreen_right
     show right_table at left
-    arceus "Hey, at least you can go to LTT and not have to walk all the way there this time!"
+
+    arceus "Hey, at least you can go to LTT and not have to {i}walk{/i} like last time!"
     scene night_bg
     show left_room
     show left_chair_back
-    show cs christmas at center
     show anno festive at mid_left
+    show cs christmas at center
     show tate festive at mid_right
     show db at manual_pos(1.1, 0.6, 0.5)
     show k22 at mid_offscreen_left
     show k17 at manual_pos(-0.5, 0.6, 0.5)
     show left_table
-    cs "True... honestly, would you want to go too?"
+    cs "True..."
+    cs "Honestly, Arc, would you like to come with me?"
+
     scene night_bg
     show right_room at left
     show right_chair_back at left
@@ -4119,7 +4165,8 @@ label ce_dinner:
     show rich festive at manual_pos(1.5, 0.6, 0.5)
     show linus festive at manual_pos(1.65, 0.6, 0.5)
     show luke festive at manual_pos(1.80, 0.6, 0.5)
-    arceus "Me? I'm in the UK now, I don't know if I can make it all the way to West Canada."
+    arceus "Me? I live in the UK now. I don't know if I can make it all the way to West Canada."
+
     scene night_bg
     show right_room at right
     show right_chair_back at right
@@ -4134,7 +4181,8 @@ label ce_dinner:
     show luke festive at manual_pos(0.95, 0.6, 0.5)
     show right_table at right
     with move
-    linus "We'd pay for your flight out, as well."
+    linus "We can pay for your flight, as well!"
+
     scene night_bg
     show right_room at left
     show right_chair_back at left
@@ -4143,8 +4191,15 @@ label ce_dinner:
     show obama festive at center
     show michael festive at mid_right
     show ed festive at mid_offscreen_right
+    show wesley festive at manual_pos(1.3, 0.6, 0.5)
+    show rich festive at manual_pos(1.5, 0.6, 0.5)
+    show linus festive at manual_pos(1.65, 0.6, 0.5)
+    show luke festive at manual_pos(1.80, 0.6, 0.5)
     show right_table at left
-    arceus "What about my bethrothed, though?"
+    with move
+    show arceus worried festive
+    arceus "What about my betrothed, though?"
+
     scene night_bg
     show left_room at right
     show left_chair_back at right
@@ -4154,6 +4209,7 @@ label ce_dinner:
     show cs christmas at mid_offscreen_left
     show left_table at right
     kitty "Don't ever call me that again."
+
     scene night_bg
     show right_room at right
     show right_chair_back at right
@@ -4166,24 +4222,27 @@ label ce_dinner:
     show luke festive at manual_pos(0.95, 0.6, 0.5)
     show right_table at right
     linus "Sure, why not?"
-    luke "You just add two international flights to the cost of this, Linus."
-    linus "Since when have I been responsible with money, Luke?"
-    n "Luke takes a sip of his drink to stop himself from laughing too hard."
+    luke "You just added {i}two{/i} international flights to the cost of this, Linus."
+    linus "Since when have I {i}ever{/i} been responsible with money, Luke?"
+    n "Luke takes a sip of his drink to keep himself from laughing too hard."
     luke "You said it, not me."
 
     scene night_bg
     show left_room
     show left_chair_back
-    show cs christmas at center
     show anno festive at mid_left
+    show cs christmas at center
     show tate festive at mid_right
     show db at manual_pos(1.1, 0.6, 0.5)
     show k22 at mid_offscreen_left
     show digi at manual_pos(-0.3, 0.65, 0.5)
     show left_table
     with dissolve
-    cs "Y'know, I kinda wish that I learned to start driving sooner."
-    cs "I can't stop driving everywhere!"
+    pause 0.5
+    show cs surprised christmas
+    cs "Y'know, I kinda wish that I started learning to drive sooner."
+    show cs happy christmas
+    cs "I don't know how I managed before!"
     show left_room at left
     show left_chair_back at left
     show left_table at left
@@ -4192,28 +4251,29 @@ label ce_dinner:
     show tate festive at manual_pos(1.25, 0.6, 0.5)
     show db at manual_pos(1.65, 0.6, 0.5)
     show k22 at center
-    show digi at manual_pos(0.175, 0.65, 0.5)
+    show digi flipped at manual_pos(0.175, 0.65, 0.5)
     with move
     k22 "Speaking of driving, this reminds me of something."
     k22 "Why does anyone buy regular unleaded gas?"
     show digi thinking flipped
     digi "Because it's cheaper?"
-    k22 "Okay, but it's not though. Super unleaded is way cheaper, and it's better for your car."
+    k22 "Okay, but, it's {i}not,{/i} though. Super unleaded is {i}way{/i} cheaper, {i}and{/i} it's better for your car."
     show digi disappointed flipped
     digi "That doesn't make any sense."
     show k22 confident
-    k22 "It doesn't, but it's true!"
+    k22 "It {i}doesn't,{/i} but it's true!"
     show k22 disappointed
     show digi sad flipped
-    digi "It's not though, Super unleaded is more expensive."
-    k22 "It's... not though."
+    digi "It's {i}not,{/i} though! Super unleaded is more expensive."
+    k22 "It's... {i}not,{/i} though."
     show digi angry flipped
-    digi "What are you talking about? Of course it's more because it's better for your car!"
+    digi "What are you talking about? Of course it costs more, because it's better for your car!"
     show cs christmas flipped
-    cs "Don't you guys mean, unleaded plus?"
+    cs "Don't you guys mean \"unleaded plus\"?"
     digi "Yeah! See? CS knows!"
-    k22 "No, it's called super unleaded, and it's cheaper than regular unleaded!"
-    digi "But it's not! Why would it be?"
+    k22 "No, it's called \"super unleaded,\" {i}and{/i} it's cheaper than regular unleaded!"
+    digi "But, it's {i}not!{/i} Why {i}would{/i} it be?!"
+
     scene night_bg
     show right_room at center
     show right_chair_back at center
@@ -4223,18 +4283,20 @@ label ce_dinner:
     show wesley festive at mid_right
     show rich festive at mid_offscreen_right
     show right_table at center
-    ed "Are you thinking of premium unleaded?"
+    ed "Are you thinking of \"premium unleaded?\""
+
     scene night_bg
     show left_room at left
     show left_chair_back at left
-    show cs christmas flipped at mid_offscreen_right
     show anno festive at mid_right
+    show cs christmas flipped at mid_offscreen_right
     show tate festive at manual_pos(1.25, 0.6, 0.5)
     show db at manual_pos(1.65, 0.6, 0.5)
     show k22 disappointed at center
     show digi angry flipped at manual_pos(0.175, 0.65, 0.5)
     show left_table at left
     k22 "No, it's not premium, or unleaded 88..."
+
     scene night_bg
     show right_room at center
     show right_chair_back at center
@@ -4245,44 +4307,54 @@ label ce_dinner:
     show rich festive at mid_offscreen_right
     show right_table at center
     ed "Unleaded 88?"
+
     scene night_bg
     show left_room at left
     show left_chair_back at left
-    show cs christmas flipped at mid_offscreen_right
     show anno festive at mid_right
+    show cs disappointed christmas flipped at mid_offscreen_right
     show tate festive at manual_pos(1.25, 0.6, 0.5)
     show db at manual_pos(1.65, 0.6, 0.5)
     show k22 angry at center
     show digi disappointed flipped at manual_pos(0.175, 0.65, 0.5)
     show left_table at left
-    k22 "It's called super unleaded, it has ethanol in it, and it's {i}better. for. your. car!{/i}"
-    k22 "Every gas station we've been to, it's always regular, super, the third option, and diesel!"
-    digi "I still think you may be thinking of premium."
+    k22 "It's called super unleaded, it has ethanol in it, and, it's better{w=0.15} for{w=0.15} your{w=0.15} {i}car!{/i}"
+    k22 "Every gas station we've been to, it's {i}always{/i} regular, super, the third option, and diesel!"
+    digi "I {i}still{/i} think you may be thinking of premium."
     k22 "No, I'm-- Give me a second, I have a picture of this on my phone."
     show digi thinking flipped
-    digi "CS, have you ever seen super unleaded?"
+    digi "CS, have {i}you{/i} ever seen super unleaded?"
     cs "Uhh... no?"
     show k22 confident
-    k22 "Ah-a! See?"
-    show gas_prices at mid_right with easeinbottom
+    k22 "Aha! See?"
+    pause 0.5
+    show gas_prices at mid_right:
+        xzoom 0.0
+        linear 0.25 xzoom 1.0
+    n "K-22 flips their phone around to show the table an image."
     show digi shock flipped
-    digi "What? How?"
-    cs "What backwards town do you live in where the better gas is cheaper?"
-    k22 "See, the super unleaded is the cheapest, then regular, then premium!"
+    show cs scared christmas flipped
+    digi "What?! {i}How?" with vpunch
+    cs "What backwards-ass town do you live in where the {i}better{/i} gas is {nw}"
+    cs "What backwards-ass town do you live in where the {i}better{/i} gas is {fast}{i}cheaper?!" with vpunch
+    k22 "See? The super unleaded is the cheapest, then regular, {i}then{/i} premium!"
     hide gas_prices with easeoutbottom
     show digi thinking flipped
-    digi "So, the question now is, what's the difference between plus and super?"
+    show cs disappointed christmas flipped
+    digi "So, the question {i}now{/i} is, what's the difference between plus and super?"
     show k22
     k22 "They might be the same thing."
-    k22 "Our super unleaded gas has ethanol in it."
+    k22 "{i}Our{/i} super unleaded gas has ethanol in it."
     show k22 confident
-    k22 "Guess who makes ethanol? We do!"
+    k22 "Guess who makes ethanol? {i}We{/i} do!"
     show digi happy flipped
-    digi "I see now!"
+    digi "I see, now!"
     show k22
-    digi "So, because you guys make this additive, it's cheaper for you, but more expensive for us."
+    digi "So, because you guys {i}make{/i} this additive, it's cheaper for {i}you,{/i} but more expensive for {i}us.{/i}"
     k22 "Probably."
+    show cs worried christmas flipped
     cs "Shit, maybe we need to start making ethanol."
+
     scene night_bg
     show right_room at center
     show right_chair_back at center
@@ -4292,47 +4364,57 @@ label ce_dinner:
     show wesley festive at mid_right
     show rich festive at mid_offscreen_right
     show right_table at center
-    ed "That's great and all, but what in the world is unleaded 88?"
+    ed "That's great and all, but, what in the {i}world{/i} is unleaded 88?"
+
     scene night_bg
     show left_room at left
     show left_chair_back at left
-    show cs christmas flipped at mid_offscreen_right
     show anno festive at mid_right
+    show cs christmas flipped at mid_offscreen_right
     show tate festive at manual_pos(1.25, 0.6, 0.5)
     show db at manual_pos(1.65, 0.6, 0.5)
     show k22 at center
     show digi flipped at manual_pos(0.175, 0.65, 0.5)
     show left_table at left
-    k22 "It's for cars newer than 2001, that's all I know."
+    k22 "It's for cars made after 2001, that's all I know."
 
     show digi sad flipped
-    digi "Hey CS, did K-17 ever come back from the bathroom?"
+    digi "Hey, CS, did K-17 ever come back from the bathroom?"
+    show cs disappointed christmas flipped
     cs "Huh?"
-    cs "Oh, yeah, is that where they ran off to?"
+    cs "Oh, is {i}that{/i} where they ran off to?"
     digi "We should probably go check on them, see if they are okay..."
+
     scene cs_bathroom
     with dissolve
     show digi sad flipped at mid_mid_left
-    show cs christmas at left
+    show cs disappointed christmas at left
     with moveinleft
     digi "Hey! K-17? Are you in there?"
     k17 "Nuh uh!"
-    cs "Do you need, any help at all? We are gonna start the gift exchange here in a few minutes!"
-    n "K-17 starts sobbing."
-    k17 "No one... told me..."
-    k17 "Mixer... died..."
-    show cs christmas worried
+    cs "Do you need... any help at all? We are gonna start the gift exchange here in a few minutes!"
+    show cs scared christmas
     show digi shock flipped
+    n "K-17 starts sobbing." with vpunch
+    k17 "No one... told me..."
+    k17 "Mixer... {i}died...!"
+    show cs christmas worried
+    show digi sad flipped
     cs "Uh oh."
-    digi "Shiiit."
+    digi "Shiiiiit."
     show cs christmas disappointed
     cs "Yeah, Mixer shut down some time ago now... sorry about that."
     show digi sad flipped
-    k17 "But why? Why! It was like, the perfect streaming platform!"
-    digi "It was, but it was owned by Microsoft. It was bound to happen."
-    cs "Hey."
+    k17 "But why? {nw}"
+    k17 "But why? {fast}{i}Why?!" with vpunch
+    k17 "It was, like, the {i}perfect{/i} streaming platform!"
+    digi "It {i}was,{/i} but, it was {i}also{/i} owned by Microsoft. It was bound to happen."
+    show cs worried christmas
+    cs "Hey!" with vpunch
+    show digi sad
+    show cs disappointed christmas
     digi "Listen, just because the Zune was cool doesn't mean--"
-    k17 "What do we even do now? Without Mixer, where do you stream?"
+    k17 "What do we even do now? Without Mixer, where do you stream?!"
     show cs christmas
     show digi flipped
     cs "Well, I stream on {a=https://twitch.tv/cs188/}Twitch.{/a}"
@@ -4340,8 +4422,14 @@ label ce_dinner:
     n "K-17 sniffles."
     k17 "At least Crazy Saturday lives on..."
     show cs christmas disappointed
-    cs "{i}Well..."
+    cs "{i}Well--{w=0.25}{nw}"
+    show digi flipped
     digi "Let him believe, CS. Let him believe."
+    pause 0.5
+    scene black with dissolve
+    pause 0.5
+
+    # TODO: TATE STOPPED EDITING HERE!
 
 # Gift Exchange
 label ce_exchange:
