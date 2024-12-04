@@ -4789,11 +4789,7 @@ label ce_lights_out:
     cs "My party is ruined!"
     tate "CS, this isn't your fault."
     cs "Everyone is fighting, and no one is having fun!"
-<<<<<<< HEAD
-    nova "Well, yeah, but, at least I don't have tolisten to Blank's shitty music anymore."
-=======
     nova "Well, yeah, but, at least I don't have to listen to Blank's shitty music anymore."
->>>>>>> origin/master
     tate "{i}Can it!" with hpunch
     tate "Look, we need to stop the arguing and calm down!"
     billy "I am calm!"
