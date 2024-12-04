@@ -102,6 +102,9 @@ define config.mouse_hide_time = None
 define config.top_layers = ["music"]
 define config.bottom_layers = ["flashlight"]
 
+# Current State of the Jukebox (I hate that this is a variable)
+default jukebox_playing = False
+
 # Music popup
 screen music():
     layer "music"

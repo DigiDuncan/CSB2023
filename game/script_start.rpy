@@ -14,7 +14,7 @@ init python:
     renpy.music.register_channel("sound2", "sound")
     renpy.music.register_channel("music4", "music")
     renpy.music.register_channel("music3", "music")
-    renpy.music.register_channel("music2", "music")
+    renpy.music.register_channel("music2", "music", movie=True)
     renpy.music.register_channel("jukebox", "music")
     renpy.music.register_channel("sfx", "sound")
     renpy.music.register_channel("dxcom", "sound")

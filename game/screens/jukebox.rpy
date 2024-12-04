@@ -8,6 +8,10 @@ init python:
     for n in persistent.heard:
         if n not in MUSIC_MAP:
             print(f"WARNING: Track '{n}' not in MUSIC_MAP!")
+
+init:
+    transform jukeboxbuttons:
+        zoom 0.125
     
 screen jukebox():
 
@@ -20,7 +24,6 @@ screen jukebox():
         use jukebox_welcome
     else:
         use music_screen(current_song_name)
-
 
 screen jukebox_nav():
 
@@ -90,11 +93,11 @@ screen jukebox_nav():
                     if k in persistent.heard:
                         # display all
                         if current_jukebox_tag_index == 0:
-                            textbutton "{font=music_text}" + MUSIC_MAP[k]["title"]+"\n{size=-12}"+MUSIC_MAP[k]["artist"] action SetScreenVariable("current_song_name", k), Play("jukebox", MUSIC_MAP[k]["file"], relative_volume=0.5)
+                            textbutton "{font=music_text}" + MUSIC_MAP[k]["title"]+"\n{size=-12}"+MUSIC_MAP[k]["artist"] action SetScreenVariable("current_song_name", k), SetVariable("jukebox_playing", True), Play("jukebox", MUSIC_MAP[k]["file"], relative_volume=0.5)
                         # only display per tag
                         else:
                             if TAGS_MAP[current_jukebox_tag_index] in MUSIC_MAP[k]["tags"]:
-                                textbutton "{font=music_text}" + MUSIC_MAP[k]["title"]+"\n{size=-12}"+MUSIC_MAP[k]["artist"] action SetScreenVariable("current_song_name", k), Play("jukebox", MUSIC_MAP[k]["file"], relative_volume=0.5)
+                                textbutton "{font=music_text}" + MUSIC_MAP[k]["title"]+"\n{size=-12}"+MUSIC_MAP[k]["artist"] action SetScreenVariable("current_song_name", k), SetVariable("jukebox_playing", True), Play("jukebox", MUSIC_MAP[k]["file"], relative_volume=0.5)
 
     textbutton "Return to Extras" action ShowMenu("category_welcome"), Stop("jukebox"), PauseAudio("music", False) yoffset 950 xoffset 25
     textbutton "Return" action Return(), Stop("jukebox"), PauseAudio("music", False) yoffset 1000 xoffset 25
@@ -176,11 +179,25 @@ screen music_screen(selected_track):
                 yalign(0.4)
 
     frame:
+
         background None
         xsize 1250 ysize 150
         xoffset 650 yoffset 850
 
+        if jukebox_playing:
+            imagebutton xalign 0.5:
+                at jukeboxbuttons
+                idle "gui/pause.png"
+                hover "gui/pause.png" #TODO: Actually make an image for this - Arc
+                action PauseAudio("jukebox", True), SetVariable("jukebox_playing", False)
+        else:
+            imagebutton xalign 0.5:
+                at jukeboxbuttons
+                idle "gui/play.png"
+                hover "gui/play.png" #TODO: Actually make an image for this - Arc
+                action PauseAudio("jukebox", False), SetVariable("jukebox_playing", True)
+
         text trivia:
             text_align 0.5
             xalign 0.5
-            yalign 0
+            yalign 0.5
