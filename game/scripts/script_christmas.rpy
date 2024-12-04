@@ -5283,6 +5283,8 @@ label ce_billy_time:
     anne "You did it!"
     billy "We sure did!"
     eliza "I don't know what kind of technology you have that fixed this, but, good job!"
+    grace "So Billy, you got any products for sale on you currently?"
+    billy "You betcha I do! Meet me by my car after this is all over."
     hide tate
     hide billy
     with moveoutleft
