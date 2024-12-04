@@ -3185,7 +3185,7 @@ label ce_banter:
     show k22 flipped
     k17 "Okay, so, if big guy over there is DigBick..."
     show mean human angry
-    mean "I'm not DigBick!" with vpunch
+    mean "I'm {i}not{/i} DigBick!" with vpunch
     k17 "Are you DigBick's... girlfriend?"
     show tate furious blush festive flipped
     tate "{i}What?!" with vpunch
@@ -3256,7 +3256,7 @@ label ce_banter:
     with dissolve
     pause 0.5
     k17 "This is {i}so{/i} unfair!"
-    k17 "CS said that it's annoying that we've changed, or whatever, but, just look at everyone {i}else!"
+    k17 "CS said that it's annoying that we've changed, or, whatever, but, just look at everyone {i}else!"
     k17 "All of my friends have changed so much I don't even {i}recognize{/i} them anymore!"
     k22 "Yeah, well, when you are constrained to just one year of your life, that can happen."
     k17 "It's just... how do I, like, {i}deal{/i} with all of this?"
@@ -3506,24 +3506,26 @@ label ce_cooking:
     cs "I guess, as soon as the President's cake is done, we can all sit down to eat."
     cs "I'm gonna go check up on the others in the meantime."
     hide cs with moveoutleft
-
-    # TODO: TATE STOPPED EDITING HERE!
+    pause 0.5
 
     scene cs_bathroom
     show grace at mid_left
     with dissolve
-    sheriff "...and I had to take that job that left me the way I am."
-    sheriff "I could've went to college, studied the paranormal..."
-    sheriff "...started up a shower curtain business, run a newspaper business..."
-    sheriff "...but no. I had to be a {i}cop."
+    pause 0.5
+    sheriff "... and, that's how I ended up this way."
+    sheriff "I could've gone to college, studied the paranormal..."
+    sheriff "... started up a shower curtain business, run a newspaper..."
+    sheriff "... but, no. I {i}had{/i} to become a {i}cop."
     grace "Hey, are you almost done in there?"
     sheriff "Just leave me alone..."
-    grace "But I really need to go!"
+    grace "But, I really need to go!"
     sheriff "Find another bathroom."
-    grace "But this is the only one in the house!"
-    sheriff "In this mansion? There is only {i}one{/i} damn bathroom?!"
-    show copguy festive flipped at center with moveinleft
+    grace "But, this is the only one in the house!"
+    sheriff "In this mansion? There is only {nw}" with vpunch
+    sheriff "In this mansion? There is only {fast}{i}one{/i} {fast}damn bathroom?!" with vpunch
+    show copguy festive at mid_right with moveinright
     copguy "Hey, sorry, excuse me."
+    show copguy festive at center with move
     play sound sfx_house_door_open
     scene cs_bathroom_open
     show sheriff festive at manual_pos(0.45, 0.5):
@@ -3540,9 +3542,9 @@ label ce_cooking:
     show grace at mid_left
     copguy "Hey, boss! You won't {i}believe{/i} what I just experienced."
     copguy "This kid caught two burglars trying to rob his house with homemade traps!"
-    copguy "It was so impressive, I probably would've fallen for some of them!"
-    sheriff "That's great, can you get me off this toilet now?"
-    sheriff "I've been thinking of signing my will here because of how long it's been!"
+    copguy "It was so impressive, {i}I{/i} probably would've fallen for some of them!"
+    sheriff "That's great, but, can you get me off this toilet now?"
+    sheriff "I've been sitting here for so long that I started writing my will!"
     copguy "Alright, let's get you out of here, old man."
     play sound sfx_house_door_open
     scene cs_bathroom_open
@@ -3576,18 +3578,20 @@ label ce_cooking:
     hide grace with dissolve
     scene cs_bathroom
     show anne at mid_mid_left with moveinleft
-    show rich festive flipped at mid_left with moveinleft
-    show kitty festive at mid_left_left with moveinleft
+    show rich festive flipped at mid_left behind anne with moveinleft
+    show tate sheepish festive at mid_left_left with moveinleft
     show luke festive flipped at mid_offscreen_left with moveinleft
-    n "A line starts to form next to the bathroom."
+    n "A line forms in front of the bathroom."
+    pause 0.5
 
     scene cs_hallway
     show arceus festive at mid_right
     show kitty at mid_left
     with dissolve
+    pause 0.5
     kitty "Arcie, you're a fucking walnut."
     show arceus festive worried
-    arceus "Huh? Where did that come from?"
+    arceus "{i}Huh?!{/i} Where did {i}that{/i} come from?"
     kitty "Dunno, just felt like calling you a walnut."
     show arceus festive happy
     arceus "Y'know, that's fair..."
@@ -3598,86 +3602,100 @@ label ce_cooking:
     show arceus festive angry
     arceus "Because I'm not done yet, dipshit."
     n "... k."
+    show arceus festive
     arceus "Isn't it weird how the first night of Hanukkah fell on Christmas day this year?"
     kitty "Yeah, that's pretty weird, innit?"
-    arceus "Even weirder, when you think about it, next year will have two Hanukkahs."
+    arceus "Even weirder, when you think about it, that next year will have {i}two{/i} Hanukkahs."
     kitty "... How so?"
     arceus "Well, you figure, eight nights of Hanukkah."
-    kitty "... Uh huh."
-    arceus "And today's the 25th of December."
-    kitty "... I see.."
-    arceus "So the last night of Hanukkah would be the 2nd of January."
-    kitty "... ... Shit, you right."
+    kitty "Uh huh..."
+    arceus "And, today's the 25th of December."
+    kitty "I see."
+    arceus "So. the last night of Hanukkah would be the 2nd of January."
+    kitty "..."
+    kitty "..."
+    kitty "Shit, you right."
+    pause 0.5
 
     # OK, is this scene too meta? I like it a lot but I'm worried I'm pushing the boundaries a bit here.
     scene cs_foyer_festive
     show aria festive at left
-    show digi at center
+    show digi at mid_mid_right
     show arceus festive at right
     with dissolve
-    arceus "Yeah, so to get the code done, I just got drunk off a bottle of wine and Digi and I chewed through it in a night."
-    aria "Damn, that's the best way to do it."
+    pause 0.5
+    arceus "Yeah, so, to get the code done, I just got drunk off a bottle of wine and Digi and I chewed through it in a night."
+    aria "Damn. That's the best way to do it."
     show digi thinking
-    digi "I mean, {i}I{/i} was sober the whole time. I had to put up with this fluffy bastard."
-    aria "Of course you were, I think a sip of wine would knock you flat."
+    digi "I mean, {i}I{/i} was sober the whole time. I just had to put up with {i}this{/i} fluffy bastard."
+    aria "Of course you were sober. I think a sip of wine would knock you flat."
     show digi goober
     digi "Hey, I'm not {i}that{/i} small."
     aria "Usually."
     show digi happy
-    arceus "And you love putting up with this fluffy bastard."
+    show arceus happy festive
+    arceus "And, you {i}love{/i} putting up with this fluffy bastard."
+    show arceus festive
     digi "While that's true, I think half of that night was spent coding, and the other half was spent confusing the names of four different bald dudes."
+    show arceus happy festive
     arceus "To be fair, that was hilarious."
     digi "You got me there."
-    show cs christmas at mid_left with moveinleft
+    show cs christmas at mid_mid_left with moveinleft
     n "CS walks in on the conversation."
+    show arceus festive
     cs "Hey guys! What are you all talking about?"
-    digi "Oh, we were just discussing what developing the first game was li--"
-    show digi shock
+    digi "Oh, we were just discussing what developing the first game was li--{w=0.5}{nw}"
+    show digi shock with hpunch
     n "Aria shoots a look at Digi, as much as she can do that in her current form."
     digi "Er, uh, just talking about a coding project we all worked on."
-    cs "Oh, OK. Probably a bunch of stuff I wouldn't understand."
+    cs "Oh, okay. Probably a bunch of stuff I wouldn't understand, then."
     show digi
     aria "Certainly not."
     show cs happy christmas
-    cs "You guys do good work, though, I can't wait to see what the next DPN Games game will be!"
+    cs "You guys do good work, though. I can't wait to see what DPN Games will come up with next!"
     show arceus festive worried
     arceus "Yeah, me too."
     hide cs with moveoutright
     n "CS walks off."
+    pause 1.0
     show digi sad
     aria "You're going to have to get better at the whole \"not breaking the illusion\" thing, Digi."
-    digi "What? He wouldn't have thought anything of it if you didn't stop me mid-sentence."
+    digi "What? He wouldn't have thought anything of it if you hadn't stopped me mid-sentence."
     show arceus festive
-    arceus "We just need to be a little more careful than that."
+    arceus "We just need to be a little more careful than we have been."
     digi "Fair enough. Wouldn't want this place falling apart."
+    pause 0.5
+
     scene cs_kitchen
     show cs_kitchen_fg
-    show obama festive at mid_left behind cs_kitchen_fg
+    show obama festive flipped at mid_left behind cs_kitchen_fg
     show billy festive at mid_right behind cs_kitchen_fg
     with dissolve
-    billy "So then I said: \"That's a resturaunt mini burger {w=1.0}{i}no one{/i} loves!"
-    n "Obama laughs."
+    pause 0.5
+    billy "So, then I said, \"That's a resturaunt mini burger {w=1.0}{i}no one{/i} loves!\""
+    n "Obama lets out a hearty laugh."
     obama "Billy, you crack me up. You're one of America's greatest."
-    billy "That means a lot coming from you, Mr. President!"
+    billy "That means a lot coming from you, Mr.{w=0} President!"
     obama "Please, call me Barack."
     billy "The man in the suit always lurking behind you said if I do that, he'll kill me!"
-    obama "He's just teasing. Isn't that right, Luther?"
+    obama "Oh, he's just teasing. Isn't that right, Luther?"
     n "Luther says nothing and nods once."
-    billy "Well then, thanks for the compliment, Barack!"
-    obama "You gotta tell me the one about the cabinet full of cleaners again."
+    billy "Well, then, thanks for the compliment, Barack!"
+    obama "You've gotta tell me the one about the cabinet full of cleaners again."
     show cs christmas at center with moveinleft
     n "CS walks in to greet the unlikely friends."
     cs "Obama, Billy! You two getting along?"
-    obama "This guy's a hoot."
+    obama "Oh, CS, this guy's a {i}hoot!"
     billy "Barack here is a real nice guy!"
     cs "Well, that's great. Glad to see two people from different walks of life enjoying each other's company."
     obama "That's what Christmas is all about, isn't it?"
-    billy "That's the power, of the holiday season!"
+    billy "{i}That's{/i} the power{w=0.25} of the holiday season!"
     show cs happy christmas
-    cs "Well, I gotta go check on the others, you two have fun!"
+    cs "Well, I gotta go make sure the others are getting along, too. You two have fun!"
     hide cs with moveoutright
-    n "CS departs for the next room."
-    billy "Right, so I said: \"you shittin' me?\""
+    pause 0.5
+    billy "Right, so I said: \"You shittin' me?\""
+    pause 0.5
 
 label ce_mike:
     stop music fadeout 3.0
@@ -3688,26 +3706,41 @@ label ce_mike:
     show ed festive at mid_right
     show grace at right
     with dissolve
+    pause 0.5
     cs "Gee, that pizza I ordered sure is taking its time!"
     play sound sfx_doorbell
     n "Just at that moment, the doorbell rings."
+    show cs happy christmas
     cs "Well, tickle my ballsack! What great timing!"
-    grace "CS... you can't just say stuff like that."
-    n "CS moves to open the door."
+    grace "CS... you {i}can't{/i} just say stuff like that."
+    n "CS heads to the front door."
+    hide cs with moveoutright
+    pause 0.5
+
     scene cs_foyer_festive with dissolve
+    pause 0.5
     show cs christmas at left with moveinleft
     cs "Hey guys, the pizza is here!"
-    n "CS opens the door to let the pizza person in."
-    show mike at right with moveinright
+    show cs christmas at right with move
+    play sound sfx_house_door_open
+    n "He opens the door to greet the delivery person."
+    show mike at right
+    show cs christmas at mid_mid_left
+    with moveinright
     play music rice_and_wine
     music rice_and_wine
     mike "I'm Chinese."
-    cs "Oh, my God! It's Mike, everyone, quick, come look at Mike!"
+    show cs happy christmas
+    cs "Oh, my God! It's Mike!"
+    show cs happy christmas flipped
+    cs "Everyone, quick, come look at Mike!"
+    show cs happy christmas
+    show mike at mid_right_right
     show k17 flipped at mid_mid_right behind grace
     show grace at mid_right
-    show obama festive at center behind grace
-    show tate festive at mid_left
-    show billy festive at mid_mid_left
+    show obama festive flipped at center behind cs
+    show billy festive flipped behind cs at left
+    show tate festive at mid_offscreen_left
     with moveinleft
     show k17 happy flipped
     k17 "Hey, it's Mike! How's it going, long time no see!"
@@ -3715,15 +3748,17 @@ label ce_mike:
     tate "What's up, Mike?"
     obama "Mike, remember when I pardoned you?"
     billy "This guy can sell pizza better than I can!"
-    show tate festive flipped with determination
+    show tate festive flipped
+    show billy festive
+    with determination
     hide tate
     hide billy
     with moveoutleft
-    show obama festive at mid_left behind cs
-    show k17 at mid_mid_left
+    show cs happy christmas at left
+    show obama festive flipped at mid_left behind cs
+    show k17 flipped at mid_mid_left
     show grace at center
     with move
-    show k17 flipped with determination
     arceus "What's going on in here?"
     show arceus festive angry flipped at mid_mid_right with moveinleft
     show cs happy christmas
@@ -3731,60 +3766,84 @@ label ce_mike:
     show cs christmas
     show arceus festive angry
     arceus "Who?"
-    grace "How do you not know who Mike the Pizzapotamus is?"
+    grace "How do you not know who Mike the Pizzapotamus is?!" with vpunch
     obama "I mentioned him in my re-election speech!"
     cs "The children love him! He's the best in the world!"
     show arceus festive worried
     arceus "Yeah, I guess he's not... ringing a bell?"
     show k17 disappointed flipped
-    k17 "He works at the bus stop, dude!"
-    arceus "You mean the bus station?"
-    grace "No, the bus stop!"
+    k17 "He works at the {i}bus stop,{/i} dude!"
+    arceus "You mean the bus {i}station?"
+    grace "No! The bus stop!"
     arceus "Oh, so he drives the bus?"
     show cs angry christmas
-    "Everyone" "No! The bus stop!"  # TODO: Make this a character, so it has a beep
+    "Everyone" "{cshake}{size=+24}No! The bus stop!"  # TODO: Make this a character, so it has a beep
     mike "You really don't know me, do you?"
     show arceus festive worried flipped
     arceus "Huh?"
-    show pipe_gun flipped at manual_pos(0.6, 0.35) with dissolve
-    n "Pizzapotamus shoots Arceus in the chest."
+    show pipe_gun flipped at manual_pos(1.2, 0.7):
+        xanchor 0.5
+        yanchor 0.5
+        rotate -90
+    show mike at mid_offscreen_right with MoveTransition(0.25)
+    play sound sfx_tf2_pickup_metallic
+    show mike at mid_right_right
+    show pipe_gun flipped at manual_pos(0.85, 0.6):
+        xanchor 0.5
+        yanchor 0.5
+        linear 0.25 rotate 0
+    with MoveTransition(0.25)
+
+    $ collect("pipe_gun")
+    n "Pizzapotamus shoots Arceus in the chest!"
     play sound sfx_hks1
+    with hpunch
     show arceus festive worried flipped at manual_pos(0.4, 0.55):
         linear 0.5 rotate -45
     with MoveTransition(0.5)
     play sound sfx_punch
     with vpunch
+    pause 0.5
     n "As Arceus is dying on the floor, he faintly hears people talking."
     grace "I expected more from you."
     obama "Should've listened to my campaign speeches, bitch."
     mike "Alright, who wants to try pizza from my thermos?"
     show cs happy christmas
-    cs "Oh, yes! Me first! Woohoo!"
+    cs "Oh, {i}yes!{/i} Me first! Woohoo!"
     scene black with dissolve
     stop music fadeout 3.0
     music end
     pause 2.0
-    play sound sfx_csnore
+    play sound sfx_csnore loop
     cs "Zzz..."
     rich "Hey, CS, are you sleeping?"
+
     scene cs_living2_festive
-    show wesley festive at right
-    show rich festive at mid_right
-    show db at center
-    show ed festive at mid_left behind cs
-    show cs concentrate christmas at left
+    show ed festive at mid_mid_right:
+        zoom 0.75
+    show rich festive at mid_right:
+        zoom 0.75
+    show wesley festive at right:
+        zoom 0.75
+    show db at mid_left:
+        zoom 0.75
+    show cs concentrate christmas at left:
+        zoom 0.75
     with dissolve
-    play sound sfx_csnore
     rich "CS!"
     stop sound
-    show cs worried christmas
-    cs "Huh?"
+    show cs scared christmas
+    cs "Huh?!" with vpunch
     show cs disappointed christmas
-    cs "Oh, sorry, I did doze off."
-    cs "I had this insane dream, and there was this pizza guy..."
+    cs "Oh, sorry. I must have dozed off."
+    cs "I had this {i}insane{/i} dream, and there was this pizza guy..."
     wesley "Speaking of pizza, should we have dinner now? I'm starving."
-    cs "Yeah, that's a good point. Give me a moment to get ready."
+    cs "Yeah, that's a great idea. Let me go see if everything is ready."
     $ achievement_manager.unlock("cheesy_dream")
+    scene black with dissolve
+    pause 0.5
+
+    # TODO: TATE STOPPED EDITING HERE!
 
 # Dinner/More Banter
 label ce_dinner:
