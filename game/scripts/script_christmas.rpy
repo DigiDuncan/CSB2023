@@ -948,6 +948,8 @@ label ce_setup:
     anno "Well, you've got today and tomorrow, at least."
     show cs
     cs "Yeah, I think I'm gonna head out here in a moment. I just need to make a list."
+    if fun_value(FUN_VALUE_COMMON):
+        cs "And check it twice!"
     anno "Alrighty, well, good luck with that!"
     anno "I'll see you in two days!"
     cs "Yeah, see you then! Bye for now, Anno!"
@@ -1255,7 +1257,7 @@ label ce_before_shopping:
     show shopping_cart at manual_pos(0.5, 1.1, 0.5)
     with moveinleft
 
-    n "CS spots some EZ-Cheese."
+    n "CS spots some Easy Cheese."
     show cs coat happy
     cs "Oh, {i}sweet!{/i} This stuff {i}never{/i} expires!"
     show cs coat disappointed
@@ -2203,6 +2205,8 @@ label ce_aftershop:
     cs "That would suck a lot."
     show cs flipped
     cs "But, I don't think that'll happen."
+    if d20 == 1:
+        cs "...right?"
     cs "Everyone confirmed they got my invitations, and they all said on the phone that they'll come!"
     show cs happy flipped
     cs "If nothing else, I know Anno is coming for sure!"
@@ -2699,7 +2703,10 @@ label ce_introductions:
     show digi flipped
     show tate sheepish festive
     cs "Yes, please. I didn't want to say it, but... it seems like every time I see you guys, your appearance always changes!"
-    aria "Sorry."
+    if fun_value(FUN_VALUE_COMMON):
+        aria "Sorria."
+    else:    
+        aria "Sorry."
     show digi sad
     digi "Did I change too much?"
     show cs worried christmas
@@ -3802,7 +3809,7 @@ label ce_mike:
     with MoveTransition(0.25)
 
     $ collect("pipe_gun")
-    n "Pizzapotamus shoots Arceus in the chest!"
+    n "Pizzapotamus shoots Arceus in the head!"
     play sound sfx_hks1
     with hpunch
     show arceus festive worried flipped at manual_pos(0.4, 0.55):
@@ -4782,7 +4789,7 @@ label ce_lights_out:
     cs "My party is ruined!"
     tate "CS, this isn't your fault."
     cs "Everyone is fighting, and no one is having fun!"
-    nova "Well, yeah, but, at least I don't listen to Blank's shitty music anymore."
+    nova "Well, yeah, but, at least I don't have to listen to Blank's shitty music anymore."
     tate "{i}Can it!" with hpunch
     tate "Look, we need to stop the arguing and calm down!"
     billy "I am calm!"
@@ -5035,12 +5042,13 @@ label ce_snowed_in:
     mean "I don't fuckin' know how any of us would be able to fix this, man."
     cs "A Christmas miracle, maybe."
     cs "I don't think anyone else back in the house is gonna believe us."
-    mean "Well they can see it from themselves."
+    mean "Well they can see it for themselves."
     mean "Let's get back inside, it's freezing out here."
     scene black with dissolve
     n "CS and Mean climb back down and meet back up with everyone."
     scene cs_living2_off_festive
     show cs disappointed christmas at mid_left
+    show aria festive at mid_offscreen_right
     show mean human annoyed flipped at mid_offscreen_left
     show ed festive at right
     show digi sad at mid_mid_right
@@ -5060,6 +5068,7 @@ label ce_snowed_in:
     cs "Uhh..."
     cs "At least for the night."
     ed "Gee, where are we all gonna sleep?"
+    aria "I guess we're all gonna have to cuddle for warmth..."
     linus "There's no way we can dig our way out?"
     digi "If it's that bad, wouldn't a snow plow be here soon anyways?"
     show cs worried christmas
@@ -5101,6 +5110,7 @@ label ce_snowed_in:
     n "After a bit of rummaging, CS comes back with a blueish-looking box."
     scene cs_living2_off_festive
     show cs happy christmas at mid_left
+    show aria festive at mid_offscreen_right
     show reversi_box at mid_left
     show mean human flipped at mid_offscreen_left
     show ed festive at right
@@ -5282,7 +5292,10 @@ label ce_billy_time:
     show tate festive at mid_left
     show billy festive at left
     with moveinleft
-    cs "Holy crap, the power is back!"
+    if fun_value(FUN_VALUE_RARE):
+        cs "Holy power, the crap is back!"
+    else:
+        cs "Holy crap, the power is back!"
     sheriff "My eyes work again!"
     ed "Hooray!"
     tate "It looks like all we needed was Billy's Handy Switch!"
@@ -5781,7 +5794,7 @@ label ce_roof_moment:
     hide santa with moveoutleft
     show k17 happy dark
     k17 "CS? Did you see that?"
-    cs "Yeah, I was kind of there with everyone one."
+    cs "Yeah, I was kind of there with everyone else."
     show k17 disappointed dark
     k17 "Sorry, that was a stupid question."
     show k17 dark
