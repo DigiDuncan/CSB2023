@@ -2045,7 +2045,8 @@ label ce_checkout:
     pause 2.0
 
     # List of items: 5lb bags of potatoes (3x), bread (x1), spray cheese (x1), pringles (x1), genergy (x5), butter (x3), pie (x2), eggnog (x1)
-
+    if fun_value(FUN_VALUE_RARE):
+        cs "I'll think I'll use my credit card!"
     play sound sfx_moneyfalls
     show spent_target at t_fake_rpg_text(0.5, 0.1, 0.5)
     n "CS pays with his card before heading out to the parking lot."
@@ -4555,7 +4556,7 @@ label ce_exchange:
     k17 "What the hay! Now I gotta get another gift!"
     show k17 flipped
     k17 "I'm gonna take the Gravity Falls Commentary!"
-    show sheriff festive at mid_right with moveinright
+    show copguy festive at mid_right with moveinright
     show gravity_falls at Move((0.7125, 0.5), (0.3125, 0.5), 2, repeat=False, bounce=False, xanchor="left", yanchor="top")
     with dissolve
     pause 3.0
@@ -4566,7 +4567,8 @@ label ce_exchange:
     hide colt with dissolve
     k17 "...and the gun."
     hide k17 with moveoutright
-    show copguy festive flipped at left with moveinleft
+    show copguy festive at left with move
+    show copguy festive flipped with determination
     copguy "Alright, then I'm taking the Declaration of Independence!"
     show billy festive at center with moveinright
     billy "What the actual fuck?"
@@ -4576,7 +4578,6 @@ label ce_exchange:
     hide doi with dissolve
     billy "Stop stealing gifts!"
     hide copguy with moveoutright
-    hide sheriff with moveoutleft
     show billy festive at mid_left with move
     billy "Alright, I'll just take the next gift."
     show adderall at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
@@ -4593,7 +4594,11 @@ label ce_exchange:
     hide aria with moveoutleft
     billy "Awesome! I get to pick another gift!"
     show peach_syrup at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    billy "Peach syrup!"
+    if fun_value(FUN_VALUE_RARE):
+        billy "An oil drum full of Peach Syrup!"
+        billy "Now I'll never run out!"
+    else:
+        billy "Peach syrup!"
     michael "Noice, you got my gift!"
     michael "It goes well with about everything!"
     hide peach_syrup with dissolve
@@ -4631,7 +4636,7 @@ label ce_exchange:
     luke "Damn, well then..."
     hide luke with moveoutright
     blank "It looks like it's my turn next."
-    show blank flipped at mid_left with moveinleft
+    show blank festive flipped at mid_left with moveinleft
     show gamersupps at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     blank "GamerSupps?"
     blank "Guacamole Gamer... Fart... 9000?"
@@ -5045,6 +5050,7 @@ label ce_snowed_in:
     mean "Well they can see it for themselves."
     mean "Let's get back inside, it's freezing out here."
     scene black with dissolve
+    show screen flashlight_demo
     n "CS and Mean climb back down and meet back up with everyone."
     scene cs_living2_off_festive
     show cs disappointed christmas at mid_left
@@ -5059,7 +5065,6 @@ label ce_snowed_in:
     show k22 disappointed at center behind digi
     show k17 disappointed at mid_mid_right behind obama
     with dissolve
-    show screen flashlight_demo
     stop music fadeout 3.0
     music end
     cs "Well, guys, we've got some bad news."
@@ -5491,6 +5496,8 @@ label ce_roof_moment:
     cs "We've gotta try! Sing with me guys!"
     # TODO: Karaoke lyrics
     cs "{image=note_small1.png} Ohhh... {image=note_small2.png}"
+    if fun_value(FUN_VALUE_EPIC):
+        cs "{image=note_small1.png}Say can you see...{image=note_small2.png}"    
     cs "{image=note_small1.png} You better watch out... {image=note_small2.png}"
     cs "{image=note_small1.png} You better not cry... {image=note_small2.png}"
     cs "{image=note_small1.png} Better not pout, I'm telling you why... {image=note_small2.png}"
@@ -5624,7 +5631,7 @@ label ce_roof_moment:
     copguy "CS, I think I know just the thing."
     show copguy festive at mid_left with move
     n "Copguy whispers in CS' ear."
-    show cs surprised
+    show cs surprised christmas
     cs "Oh! You sure that'll work?"
     n "Copguy nods."
     show cs christmas
