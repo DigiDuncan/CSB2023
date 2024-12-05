@@ -1,7 +1,6 @@
 # Can you believe it?
 
 init python:
-    import time
     import math
 
     board_length = 720
@@ -16,7 +15,7 @@ init python:
             self.last_tick = None
             self.win = None
             self.game = Board(8)
-            self.ai = ReversiAI.GOBLIN
+            self.ai = reversi_difficulty
             self.turn = ReversiTile.WHITE
 
         def render(self, width, height, st, at):
@@ -28,7 +27,6 @@ init python:
                 renpy.notify("Game ended, but I haven't implemented this yet. - Arc")
 
             if self.turn == ReversiTile.BLACK:
-                time.sleep(1)
                 coords, bookends = self.ai.pick_move(self.game, self.turn)
                 self.game = self.game.update(self.turn, coords, bookends)
                 self.turn = self.turn.invert()
