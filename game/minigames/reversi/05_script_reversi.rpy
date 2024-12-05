@@ -89,6 +89,7 @@ init python:
 screen reversigame():
     default reversigamedisplay = ReversiGameDisplayable()
     # Add a background or any static images here.
+    add "minigames/reversi/background.png"
     add reversigamedisplay
 
 label play_reversigame:

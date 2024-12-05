@@ -2319,13 +2319,13 @@ label ce_party_before:
         tate "Hey, CS! How've you been?"
         show cs christmas dark flipped
         cs "Tate? Hey! I've been great!"
-        mean "Hey, CS, Merry Christmas!"
+        mean "Hey, CS! Merry Christmas!"
         cs "Merry Christmas to you, too..."
         show cs worried christmas dark flipped
-        cs "Merry Christmas to you, too...{fast} Mean, right?"
+        cs "Merry Christmas to you, too...{fast}{nw} Mean, right?"
         show mean human happy dark flipped
         mean "Yup!"
-        cs "Sorry, Tate talks about you a lot, but I didn't know what you looked like."
+        cs "Sorry, Tate talks about you a lot, but I didn't know what you look like."
         show cs christmas dark flipped
         cs "Shall we get inside?"
         tate "Yeah!" (multiple = 2)
@@ -2785,11 +2785,18 @@ label ce_introductions:
     show digi flipped
     show tate festive
     k17 "So, who are {i}you?"
-    k17 "Are you DigBick?"
-    show mean human angry
-    show digi sad flipped
-    show tate sheepish festive
-    mean "What did you just call me?" with vpunch
+    if fun_value(FUN_VALUE_COMMON):
+        k17 "Are you BigDick?"
+        show mean human happy
+        show digi shock flipped
+        show tate shock festive
+        mean "Not for {i}free,{/free} I'm not!" with vpunch
+    else:
+        k17 "Are you DigBick?"
+        show mean human angry
+        show digi sad flipped
+        show tate sheepish festive
+        mean "What did you just call me?" with vpunch
     pause 0.5
 
     scene cs_kitchen
@@ -3204,7 +3211,7 @@ label ce_banter:
     k17 "Are you DigBick's... girlfriend?"
     show tate furious blush festive flipped
     tate "{i}What?!" with vpunch
-    mean "First of all, I'm {i}not{/i} fucking DigBick."
+    mean "First of all, I am {i}not{/i} fucking DigBick."
     show k17 disappointed flipped
     mean "I'm Mean, and this is Tate. We are friends."
     k17 "Yeah, you {i}sound{/i} mean."
@@ -4377,13 +4384,14 @@ label ce_dinner:
     show digi flipped at manual_pos(0.175, 0.65, 0.5)
     show left_table at left
     k22 "It's for cars made after 2001, that's all I know."
+    mean "Man, fuck gasoline, I just use good old-fashioned {i}steam power,{/i} baby!"
 
     show digi sad flipped
     digi "Hey, CS, did K-17 ever come back from the bathroom?"
     show cs disappointed christmas flipped
     cs "Huh?"
     cs "Oh, is {i}that{/i} where they ran off to?"
-    digi "We should probably go check on them, see if they are okay..."
+    digi "We should probably go check and see if they are okay..."
 
     scene cs_bathroom
     with dissolve
@@ -4396,7 +4404,7 @@ label ce_dinner:
     show cs scared christmas
     show digi shock flipped
     n "K-17 starts sobbing." with vpunch
-    k17 "No one... told me..."
+    k17 "N-{w=0.1}No one... told me..."
     k17 "Mixer... {i}died...!"
     show cs christmas worried
     show digi sad flipped
@@ -4528,21 +4536,21 @@ label ce_exchange:
     anno "I wonder what it'll be?"
     show lego_train at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     anno "A Lego set!"
-    mean "A {i}train{/i} Lego set!"
+    mean "A Lego {i}train{/i} set!"
     hide lego_train with dissolve
     mean "That's my gift, by the way."
     if fun_value(FUN_VALUE_COMMON):
         tate "We know!"
     hide anno with moveoutright
-    mean "Alright, well I guess it's my turn."
+    mean "Alright, well, I guess it's my turn."
     show mean human flipped at mid_left with moveinleft
     mean "I'm picking this big one!"
     show instant_pot at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    mean "An instant pot?"
-    tate "Mean, you got my gift!"
+    mean "An Instant Pot?"
+    tate "Mean, you got {i}my{/i} gift!"
     show mean human happy flipped
     hide instant_pot with dissolve
-    mean "Well it's mine now, bitch!"
+    mean "Well, it's {i}mine{/i} now, bitch!"
     mean "Who's next?"
     hide mean with moveoutright
     tate "It's me!"
@@ -5077,7 +5085,7 @@ label ce_lights_out:
 
 label ce_after_hatch:
     show screen flashlight_demo
-    mean "You mean like that one?"
+    mean "You mean like {i}that{/i} one?"
     cs "Yeah, pull it open."
     play sound sfx_snowfall
     show snow_pile at center with easeintop
@@ -5098,7 +5106,7 @@ label ce_after_hatch:
     pause 0.75
     show mean human at Move((0.35, -0.5), (0.35, -1.2), 0.5, repeat=False, bounce=False, xanchor="left", yanchor="top")
     mean "Holy..."
-    mean "Fuck."
+    mean "{i}Fuck."
     cs "What? How bad is it?"
     mean "Grab my hand, I'll pull you up."
 
@@ -5123,7 +5131,7 @@ label ce_snowed_in:
     show snow6
     show snow_wind
     with dissolve
-    mean "Look out in the distance."
+    mean "Just look out into the distance."
     n "As CS and Mean stare out into the distance, they see nothing but an endless desert of snow, with the lamp poles poking out through."
     cs "What the fuck."
     cs "Am I dreaming?"
@@ -5132,11 +5140,11 @@ label ce_snowed_in:
     mean "I know, this doesn't even feel real. How did this happen so fast?"
     mean "I live in Canada, and it's never {i}this{/i} bad."
     cs "So this is it. We are stuck here, aren't we?"
-    mean "I don't fuckin' know how any of us would be able to fix this, man."
+    mean "I don't fuckin' know, man! How do {i}you{/i} think we'd be able to fix this?"
     cs "A Christmas miracle, maybe."
     cs "I don't think anyone else back in the house is gonna believe us."
-    mean "Well they can see it for themselves."
-    mean "Let's get back inside, it's freezing out here."
+    mean "Well, they can see it for themselves."
+    mean "Let's get back inside. It's freezing out here."
     scene black with dissolve
     show screen flashlight_demo
     n "CS and Mean climb back down and meet back up with everyone."
@@ -5169,7 +5177,7 @@ label ce_snowed_in:
     show cs disappointed christmas
     show mean human angry flipped
     show tate shock festive flipped
-    mean "Everyone! Stop!"
+    mean "Everyone, shut the fuck up!" with hpunch
     mean "There's, like, 20 feet of snow."
     n "Everyone goes quiet."
     mean "If you want to go up to the roof and check for yourself, go ahead."
@@ -5177,6 +5185,7 @@ label ce_snowed_in:
     show tate sad festive flipped
     mean "I couldn't believe it either, but..."
     mean "There's nothing but snow, snow, and even more snow."
+    mean "You can barely even see the tops of the street lights out there."
     mean "I'm from {i}Canada,{/i} and I've never seen so much snow."
     blank "I didn't even think you could {i}get{/i} that much snow..."
     show cs christmas
