@@ -18,8 +18,20 @@ label test:
         "True"  (type = "true"):
             $ renpy.full_restart()
         "Arc's GUI Hell":
-            stop music
-            jump play_reversigame
+            menu:
+                "Which difficulty would you like?"
+                "Goblin":
+                    $ reversi_difficulty = ReversiAI.GOBLIN
+                    jump play_reversigame
+                "Novice":
+                    $ reversi_difficulty = ReversiAI.NOVICE
+                    jump play_reversigame
+                "Intermediate":
+                    $ reversi_difficulty = ReversiAI.INTERMEDIATE
+                    jump play_reversigame
+                "Master":
+                    $ reversi_difficulty = ReversiAI.MASTER
+                    jump play_reversigame
         "New cool thing OwO"  (type = "dx"):
             menu:
                 "Train Boss Test":

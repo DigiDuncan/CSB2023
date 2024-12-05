@@ -105,6 +105,9 @@ define config.bottom_layers = ["flashlight"]
 # Current State of the Jukebox (I hate that this is a variable)
 default jukebox_playing = False
 
+# Reversi Difficulty
+default reversi_difficulty = ReversiAI.GOBLIN
+
 # Music popup
 screen music():
     layer "music"
