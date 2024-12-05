@@ -6,88 +6,85 @@ python early:
 
 from __future__ import annotations
 from enum import Enum
+from copy import copy, deepcopy
+from random import choices
 
 name_map = "ABCDEFGH"
 
-class IllegalMoveException(Exception):
-    ...
-
-def tile_name_to_coord(name: str, board_size: int = 8) -> tuple[int, int]:
-    # Quick and dirty validation
-    if len(name) != 2:
-        raise ValueError(f"Invalid tile name {name!r}.")
-    
-    # Split string into two
-    l, n = name[0].upper(), name[1]
-    
-    if l not in name_map:
-        raise ValueError(f"Invalid row {l!r}.")
-    x = name_map.index(l)
-
-    try:
-        y = int(n) - 1
-    except Exception:
-        raise ValueError(f"{n} is not a valid column.")
-    if not (0 <= y < board_size):
-        raise ValueError(f"{y} is not a valid column (out of range.)")
-
-    return x, y
-
-class ReversiTile(Enum):
+class Tile(Enum):
     NONE = 0
     WHITE = 1
     BLACK = 2
 
-    def invert(self) -> ReversiTile:
-        return ReversiTile.NONE if self == ReversiTile.NONE else ReversiTile.BLACK if self == self.WHITE else ReversiTile.WHITE
+    def invert(self) -> Tile:
+        return Tile.NONE if self == Tile.NONE else Tile.BLACK if self == self.WHITE else Tile.WHITE
 
-class Player:
-    def __init__(self, color: ReversiTile, score: int = 0) -> None:
-        self.color = color
-        self.score = score
+class IllegalMoveException(Exception):
+    ...
 
 class Board:
-    def __init__(self, size: int = 8) -> None:
-        self.size = size
-        self.tiles: list[list[ReversiTile]] = []
-        self.current_turn = ReversiTile.WHITE
 
-        self.reset()
+    def __init__(self, size: int = 8):
+        self.size: int = size
+        self.tiles: list[list[Tile]] = [[Tile.NONE] * size for _ in range(size)]
 
-    def get_player_score(self, color: ReversiTile) -> int:
-        s = 0
-        for c in self.tiles:
-            for r in c:
-                if r == color:
-                    s += 1
-        return s
+        h = size // 2
+        self.tiles[h-1][h-1] = Tile.WHITE
+        self.tiles[h][h] = Tile.WHITE
+        self.tiles[h-1][h] = Tile.BLACK
+        self.tiles[h][h-1] = Tile.BLACK
 
-    def get_tile_by_name(self, name: str) -> ReversiTile:
-        x, y = tile_name_to_coord(name)
-        return self.tiles[y][x]
+    def __deepcopy__(self):
+        return self.__copy__()
+    
+    def __copy__(self):
+        new = Board(self.size)
+        new.tiles = deepcopy(self.tiles)
+        return new
+    
+    @classmethod
+    def reset(cls):
+        board = cls()
+        board.tiles = [[Tile.NONE] * board.size for _ in range(board.size)]
+        h = board.size // 2
+        board.tiles[h-1][h-1] = Tile.WHITE
+        board.tiles[h][h] = Tile.WHITE
+        board.tiles[h-1][h] = Tile.BLACK
+        board.tiles[h][h-1] = Tile.BLACK
 
-    def set_tile_by_name(self, name: str, value: ReversiTile):
-        x, y = tile_name_to_coord(name)
-        self.tiles[y][x] = value
+        return board
+    
+    @classmethod
+    def from_data(cls, size, data):
+        new = cls(size)
+        new.tiles = deepcopy(data)
+        return new
+    
+    def print(self):
+        print(f" ABCDEFGH")
+        for row in range(self.size):
+            print(row+1,end='')
+            for col in range(self.size):
+                y = self.tiles[col][row]
+                print("_" if y == Tile.NONE else "O" if y == Tile.WHITE else "X", end="")
+            print("\n", end="")
 
-    def reset(self):
-        self.tiles = [[ReversiTile.NONE] * self.size for _ in range(self.size)]
-        h = self.size // 2
-        self.tiles[h-1][h-1] = ReversiTile.WHITE
-        self.tiles[h][h] = ReversiTile.WHITE
-        self.tiles[h-1][h] = ReversiTile.BLACK
-        self.tiles[h][h-1] = ReversiTile.BLACK
-
-
-    def get_bookends(self, coord: tuple[int, int]) -> list[list[tuple[int, int]]]:
-        if self.tiles[coord[0]][coord[1]] != ReversiTile.NONE:
+    def update(self, tile: Tile, coord: tuple[int, int], bookends: list[list[tuple[int, int]]] = []) -> Board:
+        new = copy(self)
+        new.tiles[coord[0]][coord[1]] = tile
+        for line in bookends:
+            for flip in line:
+                new.tiles[flip[0]][flip[1]] = tile
+        return new
+    
+    def get_bookends(self, coord: tuple[int, int], tile: Tile) -> list[list[tuple[int, int]]]:
+        if self.tiles[coord[0]][coord[1]] != Tile.NONE:
             return []
 
         lines = [[] for _ in range(self.size)]
         finished = [False] * self.size
         t_x, t_y = coord
         tiles = self.tiles
-        tile = self.current_turn
         op = tile.invert()
         size = self.size
         def bookend(i, x, y):
@@ -102,7 +99,7 @@ class Board:
             t = tiles[x][y]
             if t == op:
                 lines[i].append((x, y))
-            elif t == ReversiTile.NONE:
+            elif t == Tile.NONE:
                 # DISCONNECTED
                 lines[i] = []
                 finished[i] = True
@@ -110,7 +107,7 @@ class Board:
                 # Bookended
                 finished[i] = True
 
-        for idx in range(1, self.size):
+        for idx in range(1, self.size+1):
             bookend(0, t_x - idx, t_y)
             bookend(1, t_x + idx, t_y)
             bookend(2, t_x, t_y - idx)
@@ -120,59 +117,28 @@ class Board:
             bookend(6, t_x + idx, t_y - idx)
             bookend(7, t_x + idx, t_y + idx)
         return [l for l in lines if l]
-                
-    def is_move_legal(self, coord: tuple[int, int]) -> bool:
-        return not not self.get_bookends(coord)
 
-    def do_move(self, coord: tuple[int, int]):
-        lines = self.get_bookends(coord)
-        if not lines:
-            raise IllegalMoveException(f"Move {coord} illegal for player {self.current_turn.name}.")
-        
-        for line in lines:
-            for tile in line:
-                self.tiles[tile[0]][tile[1]] = self.current_turn
-        self.tiles[coord[0]][coord[1]] = self.current_turn
-
-        self.current_turn = self.current_turn.invert()
-
-    @property
-    def game_over(self) -> bool:
+    def get_available_moves(self, turn: Tile):
+        open_tiles = ((col, row) for row in range(self.size) for col in range(self.size) if self.tiles[col][row] == Tile.NONE)
+        bookends = ((coord, self.get_bookends(coord, turn)) for coord in open_tiles)
+        return {p[0]: p[1] for p in bookends if p[1]}
+    
+    def get_counts(self):
+        w = 0
+        b = 0
+        tiles = self.tiles
+        for row in range(self.size):
+            for col in range(self.size):
+                t = tiles[col][row]
+                if t == Tile.WHITE:
+                    w += 1
+                elif t == Tile.BLACK:
+                    b += 1
+        return w, b
+    
+    def is_game_over(self, turn: Tile):
         for i in range(self.size):
             for j in range(self.size):
-                if self.is_move_legal((i, j)):
+                if self.get_bookends((i, j), turn):
                     return False
         return True
-
-    def print(self):
-        print(f" {name_map}")
-        for row in range(self.size):
-            print(row+1,end='')
-            for col in range(self.size):
-                y = self.tiles[col][row]
-                print("_" if y == ReversiTile.NONE else "O" if y == ReversiTile.WHITE else "X", end="")
-            print("\n", end="")
-
-def interface():
-    game = Board(8)
-    while not game.game_over:
-        game.print()
-        legal = False
-        while not legal:
-            move = input(f"Player {game.current_turn}, make a move: ")
-            coord = tile_name_to_coord(move)
-            try:
-                legal = game.is_move_legal(coord)
-                if not legal:
-                    print(f"{move} is not a legal move.")
-            except ValueError as e:
-                print(e.args[0])
-                continue
-        game.do_move(coord)
-    print(f"Game over! W:{game.get_player_score(ReversiTile.WHITE)} B:{game.get_player_score(ReversiTile.BLACK)}")
-
-def main():
-    interface()
-
-if __name__ == "__main__":
-    main()

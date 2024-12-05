@@ -15,6 +15,7 @@ init python:
             self.start_time = None
             self.win = None
             self.game = Board(8)
+            self.ai = GOBLIN
 
         def render(self, width, height, st, at):
             if self.start_time is None:
@@ -59,10 +60,13 @@ init python:
                     grid_x = math.floor((renpy.get_mouse_pos()[0]-board_x)/(board_length/8))
                     grid_y = math.floor((renpy.get_mouse_pos()[1]-board_y)/(board_length/8))
                     # Check if the move was LEGAL
-                    if self.game.is_move_legal((grid_x, grid_y)):
-                        self.game.do_move((grid_x, grid_y))
-                    if not self.game.is_move_legal((grid_x, grid_y)):
+                    if not self.game.get_bookends((grid_x, grid_y)):
                         renpy.notify("Move is not legal!")
+                    else:
+                        self.game.update(self.game.turn, (grid_x, grid_y), self.game.get_bookends())
+                        self.game.turn.invert()
+                        self.game.ai.pick_move(self.game.board, self.game.turn)
+                        
 
             if ev.type == pygame.KEYDOWN and ev.key == pygame.K_END:
                 self.win = True
