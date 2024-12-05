@@ -5926,7 +5926,7 @@ label ce_roof_moment:
     copguy "I {i}told{/i} the chief we should start using this stuff on our cruisers!"
     if d20 == 20:
         show avgn dark flipped at mid_right with moveinright
-        avgn "Man, this party was ass!"
+        avgn "Man, this party was ass!" # NOTE: Digi and I thought this was so hilarious we decided to have him moonwalk. - pak
         hide avgn with moveoutleft
     scene cs_house_night_dtree
     show billy festive dark at mid_left
