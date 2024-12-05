@@ -12,16 +12,31 @@ init python:
     class ReversiGameDisplayable(renpy.Displayable):
         def __init__(self):
             renpy.Displayable.__init__(self)
-            self.start_time = None
+            self.last_tick = None
             self.win = None
             self.game = Board(8)
-            self.ai = GOBLIN
+            self.ai = ReversiAI.GOBLIN
+            self.turn = ReversiTile.WHITE
+
+            self.wait_timer = 1.0
 
         def render(self, width, height, st, at):
-            if self.start_time is None:
-                self.start_time = st
-            if self.game.game_over:
+            if self.last_tick is None:
+                self.last_tick = st
+            dt = st - self.last_tick
+
+            if self.game.is_game_over(self.turn):
                 renpy.notify("Game ended, but I haven't implemented this yet. - Arc")
+
+            if self.turn == ReversiTile.BLACK:
+                if self.wait_timer > 0:
+                    self.wait_timer -= dt
+                else:
+                    coords, bookends = self.ai.pick_move(self.game, self.turn)
+                    self.game = self.game.update(self.turn, coords, bookends)
+                    self.turn = self.turn.invert()
+                    self.wait_timer = 1.0
+
             r = renpy.Render(1920, 1080)
             s = r.canvas()
             # Draw the reversi board
@@ -53,20 +68,21 @@ init python:
             return r
 
         def event(self, ev, x, y, st):
-            if ev.type == pygame.MOUSEBUTTONUP:
-                # Check if the mouse is in bounds of the board first:
-                if renpy.get_mouse_pos()[0] > board_x and renpy.get_mouse_pos()[0] < board_x+board_length and renpy.get_mouse_pos()[1] > board_y and renpy.get_mouse_pos()[1] < board_y+board_length:
-                    # Now we calculate what box in the grid was clicked
-                    grid_x = math.floor((renpy.get_mouse_pos()[0]-board_x)/(board_length/8))
-                    grid_y = math.floor((renpy.get_mouse_pos()[1]-board_y)/(board_length/8))
-                    # Check if the move was LEGAL
-                    if not self.game.get_bookends((grid_x, grid_y)):
-                        renpy.notify("Move is not legal!")
-                    else:
-                        self.game.update(self.game.turn, (grid_x, grid_y), self.game.get_bookends())
-                        self.game.turn.invert()
-                        self.game.ai.pick_move(self.game.board, self.game.turn)
-                        
+            if self.turn == ReversiTile.WHITE:
+                if ev.type == pygame.MOUSEBUTTONUP:
+                    # Check if the mouse is in bounds of the board first:
+                    if renpy.get_mouse_pos()[0] > board_x and renpy.get_mouse_pos()[0] < board_x+board_length and renpy.get_mouse_pos()[1] > board_y and renpy.get_mouse_pos()[1] < board_y+board_length:
+                        # Now we calculate what box in the grid was clicked
+                        grid_x = math.floor((renpy.get_mouse_pos()[0]-board_x)/(board_length/8))
+                        grid_y = math.floor((renpy.get_mouse_pos()[1]-board_y)/(board_length/8))
+                        coords = (grid_x, grid_y)
+                        # Check if the move was LEGAL
+                        bookends = self.game.get_bookends(coords, self.turn)
+                        if not bookends:
+                            renpy.notify("Move is not legal!")
+                        else:
+                            self.game = self.game.update(self.turn, coords, bookends)
+                            self.turn = self.turn.invert()
 
             if ev.type == pygame.KEYDOWN and ev.key == pygame.K_END:
                 self.win = True

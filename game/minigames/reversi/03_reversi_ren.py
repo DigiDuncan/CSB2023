@@ -11,13 +11,13 @@ from random import choices
 
 name_map = "ABCDEFGH"
 
-class Tile(Enum):
+class ReversiTile(Enum):
     NONE = 0
     WHITE = 1
     BLACK = 2
 
-    def invert(self) -> Tile:
-        return Tile.NONE if self == Tile.NONE else Tile.BLACK if self == self.WHITE else Tile.WHITE
+    def invert(self) -> ReversiTile:
+        return ReversiTile.NONE if self == ReversiTile.NONE else ReversiTile.BLACK if self == self.WHITE else ReversiTile.WHITE
 
 class IllegalMoveException(Exception):
     ...
@@ -26,13 +26,13 @@ class Board:
 
     def __init__(self, size: int = 8):
         self.size: int = size
-        self.tiles: list[list[Tile]] = [[Tile.NONE] * size for _ in range(size)]
+        self.tiles: list[list[ReversiTile]] = [[ReversiTile.NONE] * size for _ in range(size)]
 
         h = size // 2
-        self.tiles[h-1][h-1] = Tile.WHITE
-        self.tiles[h][h] = Tile.WHITE
-        self.tiles[h-1][h] = Tile.BLACK
-        self.tiles[h][h-1] = Tile.BLACK
+        self.tiles[h-1][h-1] = ReversiTile.WHITE
+        self.tiles[h][h] = ReversiTile.WHITE
+        self.tiles[h-1][h] = ReversiTile.BLACK
+        self.tiles[h][h-1] = ReversiTile.BLACK
 
     def __deepcopy__(self):
         return self.__copy__()
@@ -45,12 +45,12 @@ class Board:
     @classmethod
     def reset(cls):
         board = cls()
-        board.tiles = [[Tile.NONE] * board.size for _ in range(board.size)]
+        board.tiles = [[ReversiTile.NONE] * board.size for _ in range(board.size)]
         h = board.size // 2
-        board.tiles[h-1][h-1] = Tile.WHITE
-        board.tiles[h][h] = Tile.WHITE
-        board.tiles[h-1][h] = Tile.BLACK
-        board.tiles[h][h-1] = Tile.BLACK
+        board.tiles[h-1][h-1] = ReversiTile.WHITE
+        board.tiles[h][h] = ReversiTile.WHITE
+        board.tiles[h-1][h] = ReversiTile.BLACK
+        board.tiles[h][h-1] = ReversiTile.BLACK
 
         return board
     
@@ -66,10 +66,10 @@ class Board:
             print(row+1,end='')
             for col in range(self.size):
                 y = self.tiles[col][row]
-                print("_" if y == Tile.NONE else "O" if y == Tile.WHITE else "X", end="")
+                print("_" if y == ReversiTile.NONE else "O" if y == ReversiTile.WHITE else "X", end="")
             print("\n", end="")
 
-    def update(self, tile: Tile, coord: tuple[int, int], bookends: list[list[tuple[int, int]]] = []) -> Board:
+    def update(self, tile: ReversiTile, coord: tuple[int, int], bookends: list[list[tuple[int, int]]] = []) -> Board:
         new = copy(self)
         new.tiles[coord[0]][coord[1]] = tile
         for line in bookends:
@@ -77,8 +77,8 @@ class Board:
                 new.tiles[flip[0]][flip[1]] = tile
         return new
     
-    def get_bookends(self, coord: tuple[int, int], tile: Tile) -> list[list[tuple[int, int]]]:
-        if self.tiles[coord[0]][coord[1]] != Tile.NONE:
+    def get_bookends(self, coord: tuple[int, int], tile: ReversiTile) -> list[list[tuple[int, int]]]:
+        if self.tiles[coord[0]][coord[1]] != ReversiTile.NONE:
             return []
 
         lines = [[] for _ in range(self.size)]
@@ -99,7 +99,7 @@ class Board:
             t = tiles[x][y]
             if t == op:
                 lines[i].append((x, y))
-            elif t == Tile.NONE:
+            elif t == ReversiTile.NONE:
                 # DISCONNECTED
                 lines[i] = []
                 finished[i] = True
@@ -118,8 +118,8 @@ class Board:
             bookend(7, t_x + idx, t_y + idx)
         return [l for l in lines if l]
 
-    def get_available_moves(self, turn: Tile):
-        open_tiles = ((col, row) for row in range(self.size) for col in range(self.size) if self.tiles[col][row] == Tile.NONE)
+    def get_available_moves(self, turn: ReversiTile):
+        open_tiles = ((col, row) for row in range(self.size) for col in range(self.size) if self.tiles[col][row] == ReversiTile.NONE)
         bookends = ((coord, self.get_bookends(coord, turn)) for coord in open_tiles)
         return {p[0]: p[1] for p in bookends if p[1]}
     
@@ -130,13 +130,13 @@ class Board:
         for row in range(self.size):
             for col in range(self.size):
                 t = tiles[col][row]
-                if t == Tile.WHITE:
+                if t == ReversiTile.WHITE:
                     w += 1
-                elif t == Tile.BLACK:
+                elif t == ReversiTile.BLACK:
                     b += 1
         return w, b
     
-    def is_game_over(self, turn: Tile):
+    def is_game_over(self, turn: ReversiTile):
         for i in range(self.size):
             for j in range(self.size):
                 if self.get_bookends((i, j), turn):

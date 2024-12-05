@@ -3,7 +3,7 @@ rpy python annotations
 python early:
 """
 
-from random import choices, choice, random
+import random
 
 WeightTable = tuple[tuple[float, ...], ...]
 
@@ -15,7 +15,7 @@ class OrthelloAI:
         self.depth: int = depth
         self.weights: WeightTable = weights
 
-    def pick_move(self, board: Board, turn: Tile) -> tuple[tuple[int, int], list[list[tuple[int, int]]]]:
+    def pick_move(self, board: Board, turn: ReversiTile) -> tuple[tuple[int, int], list[list[tuple[int, int]]]]:
         moves = board.get_available_moves(turn)
         # We assume that the interface will call a game before we get to pick a move
 
@@ -25,7 +25,7 @@ class OrthelloAI:
             evaluations[coord] = self.search(board.update(turn, coord, move), turn.invert, -100000, 100000)
 
         ranked = sorted(moves.keys(), key=lambda c: evaluations[c], reverse=True)
-        if self.chaos < random():
+        if self.chaos < random.random():
             # The AI has locked in
             coord = ranked[0]
             return coord, moves[coord]
@@ -34,17 +34,17 @@ class OrthelloAI:
         picks = ranked[:cap]
         offset = min(evaluations.values())
 
-        pick = choices(picks, [evaluations[tile] - offset + 1 for tile in picks])[0]
+        pick = random.choices(picks, [evaluations[tile] - offset + 1 for tile in picks])[0]
         return pick, moves[pick]
 
-    def search(self, board: Board, turn: Tile, alpha: float, beta: float, depth: int = 0) -> float:
+    def search(self, board: Board, turn: ReversiTile, alpha: float, beta: float, depth: int = 0) -> float:
         if depth == 0:
             return self.evaluate(board, turn)
         
         moves = board.get_available_moves(turn)
         if not moves:
             a, b = board.get_counts
-            if turn == Tile.BLACK:
+            if turn == ReversiTile.BLACK:
                 a, b = b, a
             if a < b:
                 return -20000 # loses
@@ -63,7 +63,7 @@ class OrthelloAI:
 
         return alpha
 
-    def evaluate(self, board: Board, turn: Tile) -> float:
+    def evaluate(self, board: Board, turn: ReversiTile) -> float:
         tiles = board.tiles
         weights = self.weights
 
@@ -73,12 +73,12 @@ class OrthelloAI:
         for col in range(board.size):
             for row in range(board.size):
                 t = tiles[col][row]
-                if t == Tile.WHITE:
+                if t == ReversiTile.WHITE:
                     white_score += weights[col][row]
-                elif t == Tile.BLACK:
+                elif t == ReversiTile.BLACK:
                     black_score += weights[col][row]
 
-        perspective = 1 if turn == Tile.WHITE else -1
+        perspective = 1 if turn == ReversiTile.WHITE else -1
         return (white_score - black_score) * perspective
 
 peak_weights = (
@@ -126,7 +126,8 @@ random_weights = (
 )
 
 # --- AI ----
-GOBLIN = OrthelloAI(0.0, 1.0, 0, random_weights) # Randomly chooses a move
-NOVICE = OrthelloAI(0.0, 1.0, 0, plain_weights) # More likely to pick a move gives them more pieces
-INTERMEDIATE = OrthelloAI(0.4, 0.9, 0, radial_weights) # Prioritises the outer edge over the center, but doesn't have the best weighting
-MASTER = OrthelloAI(1.0, 0.0, 2, peak_weights) # Uses the best weight table, and looks 3 moves into the future
+class ReversiAI:
+    GOBLIN = OrthelloAI(0.0, 1.0, 0, random_weights) # Randomly chooses a move
+    NOVICE = OrthelloAI(0.0, 1.0, 0, plain_weights) # More likely to pick a move gives them more pieces
+    INTERMEDIATE = OrthelloAI(0.4, 0.9, 0, radial_weights) # Prioritises the outer edge over the center, but doesn't have the best weighting
+    MASTER = OrthelloAI(1.0, 0.0, 2, peak_weights) # Uses the best weight table, and looks 3 moves into the future
