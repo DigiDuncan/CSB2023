@@ -519,6 +519,22 @@
         "type": "extra",
         "ce": true
     },
+	"reversi":{
+        "name": "Reversi!",
+        "locked": "Win a game of Reversi!",
+        "unlocked": "Win a game of Reversi!",
+        "img": "reversi",
+        "type": "story",
+        "ce": true
+    },
+	"grandmaster":{
+        "name": "Reversi Grandmaster",
+        "locked": "???",
+        "unlocked": "Beat Aria at Reversi.",
+        "img": "grandmaster",
+        "type": "extra",
+        "ce": true
+    },
     "broke":{
         "name": "You Broke It!",
         "locked": "Woah, dude, you broke it.",

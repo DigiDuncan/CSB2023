@@ -3799,7 +3799,7 @@ label ce_mike:
     obama "I mentioned him in my re-election speech!"
     cs "The children love him! He's the best in the world!"
     show arceus festive worried
-    arceus "Yeah... he really doesn't ring a bell, sorry."
+    arceus "I guess he's just not... ringing a bell?"  # Sorry Tate, I prefer it read like this -- Digi
     show k17 disappointed flipped
     k17 "He works at the {i}bus stop,{/i} dude!"
     arceus "You mean the bus {i}station?"
@@ -5039,6 +5039,11 @@ label ce_exchange:
     hide grace with moveoutright
     pause 0.5
     cs "Woohoo! All of the gifts have been handed out!"
+    jump ce_preclimax
+
+label ce_preclimax:
+    # TODO: This needs cinematography!
+    jump ce_climax
 
     # TODO: TATE STOPPED EDITING HERE!
 
@@ -5099,8 +5104,6 @@ label ce_climax:
 screen flashlight_demo:
     layer "flashlight"
     add Flashlight()
-
-# TODO: DIGI STOPPED EDITING HERE
 
 label ce_lights_out:
     play sound sfx_power_out
@@ -5467,8 +5470,113 @@ label ce_snowed_in:
     cs "I just{w=0.5} want to play{w=0.5} some Reversi."
     show cs christmas
     cs "Who wants to play with me?"
-    # maybe pick a character to play here?
-    # TODO: Insert Reversi Gameplay here
+    $ playing_reversi_again = False
+    jump ce_reversi
+
+label ce_reversi:
+    menu:
+        "Who do you want to play against?"
+        "Tate (Beginner)":
+            $ reversi_difficulty = ReversiAI.TATE
+            minigame "play_reversigame" "ce_win_reversi" "ce_lose_reversi"
+        "Digi (Easy)":
+            $ reversi_difficulty = ReversiAI.DIGI
+            minigame "play_reversigame" "ce_win_reversi" "ce_lose_reversi"
+        "K-22 (Medium)":
+            $ reversi_difficulty = ReversiAI.PAKOO
+            minigame "play_reversigame" "ce_win_reversi" "ce_lose_reversi"
+        "Arceus (Hard)":
+            $ reversi_difficulty = ReversiAI.ARCEUS
+            minigame "play_reversigame" "ce_win_reversi" "ce_lose_reversi"
+        "Aria (Expert)":
+            $ reversi_difficulty = ReversiAI.ARIA
+            minigame "play_reversigame" "ce_win_reversi" "ce_lose_reversi"
+        "I'm done playing!" if playing_reversi_again:
+            jump ce_billy_time
+
+label ce_win_reversi:
+    scene cs_living2_off_festive
+    show cs happy christmas at mid_left
+    show aria festive at mid_offscreen_right
+    show reversi_box at mid_left
+    show mean human flipped at mid_offscreen_left
+    show ed festive at right
+    show digi at mid_mid_right
+    show linus festive at mid_right
+    show rich festive at mid_right_right
+    show tate sheepish festive flipped at mid_mid_left
+    show obama festive at center behind digi
+    show k22 disappointed at center behind digi
+    show k17 disappointed at mid_mid_right behind obama
+
+    $ achievement_manager.unlock("reversi")
+
+    cs "I won!"
+    cs "Now how much do {i}you{/i} think Microsoft Windows is worth?"
+    linus "Isn't it like $99--{w=0.5}{nw}"
+    cs "{i}Don't answer!"
+
+    if reversi_difficulty == ReversiAI.TATE:
+        tate "Awawa! Good job, CS."
+    elif reversi_difficulty == ReversiAI.DIGI:
+        digi "Dang, nice going CS!"
+    elif reversi_difficulty == ReversiAI.PAKOO:
+        k22 "Oof, good game, CS."
+    elif reversi_difficulty == ReversiAI.ARCEUS:
+        arceus "Damn, GG!"
+    elif reversi_difficulty == ReversiAI.ARIA:
+        aria "Excellent playing, CS!"
+        $ achievement_manager.unlock("grandmaster")
+    else:
+        iris "Ah... who did you play against? {i}[reversi_difficulty.name]{/i}?"
+        iris "They aren't here... or a person... so, uh, good job?"
+
+    menu:
+        "Play Reversi again?"
+        "Yes!":
+            $ playing_reversi_again = True
+            jump ce_reversi
+        "No!":
+            jump ce_billy_time
+
+label ce_lose_reversi:
+    scene cs_living2_off_festive
+    show cs sad christmas at mid_left
+    show aria festive at mid_offscreen_right
+    show reversi_box at mid_left
+    show mean human flipped at mid_offscreen_left
+    show ed festive at right
+    show digi at mid_mid_right
+    show linus festive at mid_right
+    show rich festive at mid_right_right
+    show tate sheepish festive flipped at mid_mid_left
+    show obama festive at center behind digi
+    show k22 disappointed at center behind digi
+    show k17 disappointed at mid_mid_right behind obama
+
+    cs "Ah, dang it."
+
+    if reversi_difficulty == ReversiAI.TATE:
+        tate "Awawa! I actually won!"
+    elif reversi_difficulty == ReversiAI.DIGI:
+        digi "Heck yeah, I won!"
+    elif reversi_difficulty == ReversiAI.PAKOO:
+        k22 "Hell yeah, I won!"
+    elif reversi_difficulty == ReversiAI.ARCEUS:
+        arceus "Let's go! I won!"
+    elif reversi_difficulty == ReversiAI.ARIA:
+        aria "Ah, better luck next time."
+    else:
+        iris "Ah... who did you play against? {i}[reversi_difficulty.name]{/i}?"
+        iris "They aren't here... or a person... but you lost."
+
+    menu:
+        "Play Reversi again?"
+        "Yes!":
+            $ playing_reversi_again = True
+            jump ce_reversi
+        "No!":
+            jump ce_billy_time
 
 label ce_billy_time:
     scene cs_living2_off_festive

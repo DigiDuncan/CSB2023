@@ -136,11 +136,13 @@ label play_reversigame:
 
     if _return:
         $ w,b = _return
-        n "You scored [w], opponent scored [b]."
-        # Thing for win condition
-    else:
-        pass
-        # Thing for lose condition
+        n "You scored [w], [reversi_difficulty.name] scored [b]."
+        if w >= b:
+            n "You win!"
+            $ renpy.jump(minigame_win)
+        else:
+            n "[reversi_difficulty.name] wins!"
+            $ renpy.jump(minigame_lose)
 
 label reversigame_done:
     # Thing to do after the game if we reach here.
