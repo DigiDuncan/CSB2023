@@ -134,7 +134,7 @@
         "img": "colt",
         "name": "Colt .45 Pistol",
         "owner": "K-17",
-        "desc": "The now-retired Sheriff secretly just wanted his trusted side-arm to go to someone who would appreciate it.",
+        "desc": "As he nears retirement, the Sheriff secretly just wanted his trusted side-arm to go to someone who would appreciate it.",
         "rarity": "Common",
         "ce": true
     },
@@ -356,9 +356,9 @@
     },
     "gamersupps": {
         "img": "gamersupps",
-        "name": "Canister of Gamer Supps",
+        "name": "Canister Of Gamer Supps",
         "owner": "CS",
-        "desc": "If you're not into \"Guacamole Gamer Fart 9000\", Gamer Supps offers a wide variety of other delightful flavors, including \"Titty Milk\" and \"Grandpa's Ashes\" {a=https://gamersupps.gg/collections/caffeine-free}(yes, {i}really){/a}.{/i}",
+        "desc": "If you're not into \"Guacamole Gamer Fart 9000\", Gamer Supps offers a variety of other delightful flavors, including \"Titty Milk\" and \"Grandpa's Ashes\" {a=https://gamersupps.gg/collections/caffeine-free}(yes, {i}really){/a}.{/i}",
         "rarity": "Common",
         "ce": true
     },
@@ -412,7 +412,7 @@
         "img": "instant_pot",
         "name": "Instant Pot",
         "owner": "Mean",
-        "desc": "An ideal gift for anyone who loves cooking but {i}hates{/i} standing over a stovetop.",
+        "desc": "An ideal gift for anyone who loves cooking, but {i}hates{/i} standing over a stovetop.",
         "rarity": "Common",
         "ce": true
     },
@@ -742,7 +742,7 @@
         "img": "sunny_d",
         "name": "Bottle Of Sunny D",
         "owner": "Rich",
-        "desc": "Don't drink too much of this, or you'll start looking like a {a=https://web.archive.org/web/20071213095714/http://news.bbc.co.uk/1/hi/wales/578945.stm}{i}Simpsons{/i} character.{/a}.",
+        "desc": "Don't drink too much of this, or you'll start looking like a {a=https://web.archive.org/web/20071213095714/http://news.bbc.co.uk/1/hi/wales/578945.stm}{i}Simpsons{/i} character{/a}.",
         "rarity": "Common",
         "ce": true
     },
