@@ -142,7 +142,7 @@ label play_reversigame:
             $ renpy.jump(minigame_win)
         else:
             n "[reversi_difficulty.name] wins!"
-            $ renpy.jump(minigame_lose)
+            $ renpy.jump(minigame_loss)
 
 label reversigame_done:
     # Thing to do after the game if we reach here.
