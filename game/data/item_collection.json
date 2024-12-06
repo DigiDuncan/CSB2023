@@ -489,7 +489,7 @@
     },
     "m4": {
         "img": "m4",
-        "name": "M4 Rifle",
+        "name": "M249 SAW",
         "owner": "Pakoo",
         "desc": "Borrowed by CS to take on Copguy and his corrupt crew.",
         "rarity": "Common"
@@ -515,7 +515,7 @@
         "name": "{i}Metal Gear Solid",
         "owner": "President Obama",
         "desc": "The 1998 title that spawned a now-million-dollar franchise. A Hideo game that started the trend of making their product more cutscene than game.",
-        "rarity": "Common",
+        "rarity": "Gaming Legend Series",
         "ce": true
     },
     "monitor": {
@@ -555,13 +555,13 @@
         "name": "Golden Pencil Sharpener",
         "owner": "CS",
         "desc": "Won by CS while at PencilCon, but is it even real gold?",
-        "rarity": "Uncommon"
+        "rarity": "Rare"
     },
     "peach_syrup": {
         "img": "peach_syrup",
         "name": "Can Of Peach Syrup",
         "owner": "Billy Mays",
-        "desc": "Try spreading it on toast or crumpets!",
+        "desc": "Try spreading it on toast or crumpets! If that doesn't work for you, just stick your fingers in and lick them!",
         "rarity": "Common",
         "ce": true
     },  
@@ -608,7 +608,7 @@
         "name": "Mysterious Pot",
         "owner": "Billy Mays",
         "desc": "An experiment gone awry...",
-        "rarity": "Common",
+        "rarity": "Mythic",
         "dx": true
     },
     "potato_bag": {
@@ -679,7 +679,7 @@
         "img": "russian_radio",
         "name": "Soviet Radio",
         "owner": "Nova",
-        "desc": "A relic of a great and terrible war.",
+        "desc": "A relic of a great, terrible, and a rather chilly war.",
         "rarity": "Uncommon",
         "ce": true
     },
@@ -694,7 +694,7 @@
         "img": "shopping_cart",
         "name": "Shopping Cart",
         "owner": "Target",
-        "desc": "Sadly, Target's carts aren't built quite the same as most stores' carts. You can't stand on the little bar at the bottom and ride it around like a scooter.",
+        "desc": "Sadly, This version of Target's carts aren't built quite the same as most stores' carts. You can't stand on the little bar at the bottom and ride it around like a scooter. Thankfully, most Target carts nowadays have a metal chassis.",
         "rarity": "Common",
         "ce": true
     },
@@ -855,7 +855,7 @@
         "name": "YTX-9001 Ti",
         "owner": "CS",
         "desc": "A cutting-edge PCI add-in featuring poop-tracing and other YTP-enhancing features.",
-        "rarity": "Uncommon"
+        "rarity": "Epic"
     },
     "ytx_drive": {
         "img": "ytx_drive",
