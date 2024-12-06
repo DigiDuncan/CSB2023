@@ -37,7 +37,6 @@ init python:
             if self.game.is_game_over(self.turn):
                 w, b = self.game.get_counts()
                 self.win = w >= b
-                return
 
             r = renpy.Render(1920, 1080)
             s = r.canvas()
@@ -82,7 +81,7 @@ init python:
 
             renpy.redraw(self, 0)
 
-            if self.turn == ReversiTile.BLACK:
+            if self.turn == ReversiTile.BLACK and not self.is_game_over(self.turn):
                 if self.wait_timer > 0:
                     self.wait_timer -= dt
                 else:
