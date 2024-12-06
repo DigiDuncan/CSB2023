@@ -18,18 +18,16 @@ init python:
             self.ai = reversi_difficulty
             self.turn = ReversiTile.WHITE
 
+            self.wait_timer = 1.0
+
         def render(self, width, height, st, at):
             if self.last_tick is None:
                 self.last_tick = st
             dt = st - self.last_tick
 
             if self.game.is_game_over(self.turn):
-                renpy.notify("Game ended, but I haven't implemented this yet. - Arc")
-
-            if self.turn == ReversiTile.BLACK:
-                coords, bookends = self.ai.pick_move(self.game, self.turn)
-                self.game = self.game.update(self.turn, coords, bookends)
-                self.turn = self.turn.invert()
+                w, b = self.game.get_counts()
+                self.win = w >= b
 
             r = renpy.Render(1920, 1080)
             s = r.canvas()
@@ -59,6 +57,18 @@ init python:
                         circ_y = (((row) * (board_length/8))+board_y)+((board_length/8)/2)
                         s.circle((255,255,255), (circ_x, circ_y), board_length/16)
             renpy.redraw(self, 0)
+
+            if self.turn == ReversiTile.BLACK:
+                if self.wait_timer > 0:
+                    self.wait_timer -= dt
+                else:
+                    coords, bookends = self.ai.pick_move(self.game, self.turn)
+                    self.game = self.game.update(self.turn, coords, bookends)
+                    self.turn = self.turn.invert()
+                    self.wait_timer = 1.0
+
+            self.last_tick = st
+
             return r
 
         def event(self, ev, x, y, st):

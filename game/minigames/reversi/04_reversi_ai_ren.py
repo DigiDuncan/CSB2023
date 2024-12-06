@@ -9,7 +9,8 @@ WeightTable = tuple[tuple[float, ...], ...]
 
 class OrthelloAI:
 
-    def __init__(self, pickyness: float, chaos: float, depth: int, weights: WeightTable):
+    def __init__(self, name: str, pickyness: float, chaos: float, depth: int, weights: WeightTable):
+        self.name: str = name
         self.pickyness: float = pickyness
         self.chaos: float = chaos
         self.depth: int = depth
@@ -127,7 +128,7 @@ random_weights = (
 
 # --- AI ----
 class ReversiAI:
-    GOBLIN = OrthelloAI(0.0, 1.0, 0, random_weights) # Randomly chooses a move
-    NOVICE = OrthelloAI(0.0, 1.0, 0, plain_weights) # More likely to pick a move gives them more pieces
-    INTERMEDIATE = OrthelloAI(0.4, 0.9, 0, radial_weights) # Prioritises the outer edge over the center, but doesn't have the best weighting
-    MASTER = OrthelloAI(1.0, 0.0, 2, peak_weights) # Uses the best weight table, and looks 3 moves into the future
+    GOBLIN = OrthelloAI("Goblin", 0.0, 1.0, 0, random_weights) # Randomly chooses a move
+    NOVICE = OrthelloAI("Novice", 0.0, 1.0, 0, plain_weights) # More likely to pick a move gives them more pieces
+    INTERMEDIATE = OrthelloAI("Intermediate", 0.4, 0.9, 0, radial_weights) # Prioritises the outer edge over the center, but doesn't have the best weighting
+    MASTER = OrthelloAI("Master", 1.0, 0.0, 2, peak_weights) # Uses the best weight table, and looks 3 moves into the future
