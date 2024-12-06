@@ -3029,8 +3029,8 @@ label ce_banter:
     music dont_preheat_your_oven
     sheriff "Hey, Copguy!"
     copguy "I know, this party is great, right?"
-    sheriff "{i}No!{/i} I need to take a {i}shit!"
-    copguy "Okay, do you want me to tell everyone?"
+    sheriff "{i}No!{/i} I need to take a {i}shit!" with vpunch
+    copguy "Okay, do you want me to tell the whole house?"
     sheriff "Very funny, smartass! I need you to go with me." with vpunch
     sheriff "My legs don't work, remember?"
     copguy "Damn it... this sucks."
@@ -3085,7 +3085,7 @@ label ce_banter:
     with dissolve
     play sound sfx_house_door_close
     scene cs_bathroom
-    copguy "Alright, but you'd better hurry! I don't wanna be in here all night!"
+    copguy "Alright, make it quick! I don't wanna be in here all night!"
     pause 0.5
 
     scene cs_kitchen
@@ -3186,10 +3186,10 @@ label ce_banter:
     show luke festive flipped at mid_left_left behind linus
     show cs christmas flipped at mid_right_right behind digi
     rich "Finally! We can watch something!"
-    wesley "Are you 100-percent satisfied, Richard?"
+    wesley "Are you 100 percent satisfied, Richard?"
     show cs disappointed christmas flipped
     show digi angry flipped
-    rich "Eh, only about 80-percent."
+    rich "Eh, only about 80 percent."
     pause 0.5
 
     scene cs_foyer_festive
@@ -3246,7 +3246,7 @@ label ce_banter:
     walkie "Can you report on that?"
     copguy "Gladly! I'll be right there!"
     play sound sfx_walkie_off
-    copguy "Sorry, boss, as much as I would love to keep helping you out here, duty calls!"
+    copguy "Sorry, boss! As much as I would {i}love{/i} to keep helping you out here, duty calls!"
     play sound sfx_house_door_open
     scene cs_bathroom_open
     show sheriff festive at manual_pos(0.45, 0.5):
@@ -3909,7 +3909,7 @@ label ce_dinner:
         show tate festive sheepish flipped
         nova "FUCKING {i}ASS!" with hpunch
         nova "STOP MAKING MUSIC!" with hpunch
-        nova "STOP MAKING MUSIC!" with hpunch
+        nova "{i}STOP{/i} MAKING MUSIC!" with hpunch
         show cs christmas angry flipped
         nova "Turn that shit {i}off!" with hpunch
     else:
@@ -3919,6 +3919,8 @@ label ce_dinner:
     cs "Hey! {fast}Can you two stop fighting, get over here, and eat with us?!"
     stop music2
     $ renpy.music.set_pause(False, "music")
+    music christmas_spirit
+    hide music
     pause 2.0
 
     show left_room at mid_left
@@ -4448,13 +4450,13 @@ label ce_exchange:
     music superstar_road
     cs "Alright! It's time for the gift exchange!"
     cs "Everyone brought a gift, right?"
-    n "The crowd responds with nods."
+    n "The crowd responds with nods and vague confirmations."
     show festive_bag at manual_pos(0.6, 0.6, 0.5) with moveinbottom
     $ collect("festive_bag")
     cs "Cool!"
-    cs "I've put all of your names in this bag. I'll bring it around so you all can draw one!"
+    cs "I've put all of your names in this bag. I'll bring it over so you all can draw one!"
     show cs christmas at offscreenright
-    show festive_bag at manual_pos(1.2, 0.6, 0.5)
+    show festive_bag at manual_pos(1.3, 0.6, 0.5)
     with moveoutright
     pause 0.5
     n "CS brings the bag around to each attendee."
@@ -4533,7 +4535,8 @@ label ce_exchange:
     show gift_digi at manual_pos(0.4, 0.7, 0.5) with moveinbottom
     anno "I got..."
     hide gift_digi
-    show raspberry_pi at manual_pos(0.4, 0.7, 0.5)
+    show raspberry_pi at manual_pos(0.4, 0.7, 0.5):
+        zoom 0.5
     with dissolve
     pause 0.5
     anno "What the hell {i}is{/i} this?"
@@ -4557,16 +4560,18 @@ label ce_exchange:
     kitty "Well, what do I do now?"
     cs "You can either steal someone else's gift, or pick out another unopened one."
     show arceus festive flipped behind kitty at mid_offscreen_left with moveinleft
-    arceus "{size=-12}Psst! Kitty! Come here!"
+    arceus "{size=-12}Psst! Kitty! C'mere!"
     show kitty flipped at left with move
     pause 0.5
     play sound sfx_whisper
-    n "Arceus whispers something into her ear."
-    kitty "Alright."
+    n "Arceus whispers something into Kitty's ear."
+    "..."
+    kitty "Got it."
     show kitty festive at mid_left with moveinleft
     kitty "Anno, hand over your computer thing."
     show anno festive at mid_right with moveinright
-    show raspberry_pi at manual_pos(0.7, 0.6, 0.5) with dissolve
+    show raspberry_pi at manual_pos(0.7, 0.6, 0.5) with dissolve:
+        zoom 0.5
     show raspberry_pi at manual_pos(0.35, 0.6, 0.5) with move
     pause 0.5
     hide raspberry_pi with dissolve
@@ -4579,8 +4584,9 @@ label ce_exchange:
 
     anno "Welp, I'm picking a new gift, I guess."
     show anno festive at mid_left with move
-    anno "I guess I'll pick this one."
-    show gift_mean at manual_pos(0.4, 0.7, 0.5) with moveinbottom
+    anno "I'll go with this one."
+    show gift_mean at manual_pos(0.4, 0.7, 0.5) with moveinbottom:
+        zoom 0.4
     anno "Wonder what it is."
     show lego_train at manual_pos(0.4, 0.7, 0.5)
     hide gift_mean
@@ -4590,7 +4596,7 @@ label ce_exchange:
     hide lego_train with dissolve
     mean "That's my gift, by the way."
     if fun_value(FUN_VALUE_COMMON):
-        tate "We {i}know!"
+        tate "We {i}know!" with hpunch
     hide anno with moveoutright
     pause 0.5
 
@@ -4605,17 +4611,21 @@ label ce_exchange:
     tate "Mean, ya goofball! You picked {i}my{/i} gift!" with hpunch
     show mean human happy flipped
     mean "Well, it's {i}mine{/i} now, bitch!"
+    mean "I'm stealing your spaghetti recipe tomorrow, too!"
+    tate "Awawa..."
     hide instant_pot with { "master": dissolve }
     mean "Who's next?"
     hide mean with moveoutright
     pause 0.5
 
     tate "Looks like I'm up."
-    show tate festive at mid_left with moveinleft
+    show tate sheepish festive at mid_left with moveinleft
     tate "Let's see..."
-    show gift_billy at manual_pos(0.4, 0.7, 0.5) with moveinbottom
+    show gift_billy at manual_pos(0.4, 0.7, 0.5) with moveinbottom:
+        zoom 0.5
     pause 0.5
-    show handy_switch at manual_pos(0.4, 0.7, 0.5)
+    show handy_switch at manual_pos(0.4, 0.7, 0.5):
+        zoom 0.4
     hide gift_billy
     with dissolve
     show tate smug festive
@@ -4629,7 +4639,7 @@ label ce_exchange:
     pause 0.5
 
     billy "Alright! That means it's {i}my{/i} turn!"
-    show billy festive at mid_left with moveinleft
+    show billy festive flipped at mid_left with moveinleft
     show gift_obama at manual_pos(0.4, 0.7, 0.5) with moveinbottom
     billy "Hi, Billy Mays here for {i}my{/i} turn!"
     show doi at manual_pos(0.4, 0.7, 0.5)
@@ -4647,7 +4657,8 @@ label ce_exchange:
     show obama festive flipped at mid_left with moveinleft
     show gift_copguy at manual_pos(0.4, 0.7, 0.5) with moveinbottom
     pause 0.5
-    show mgs1 at manual_pos(0.4, 0.7, 0.5)
+    show mgs1 at manual_pos(0.4, 0.6, 0.5):
+        zoom 0.5
     hide gift_copguy
     with dissolve
     obama "{i}Metal Gear Solid?"
@@ -4663,11 +4674,13 @@ label ce_exchange:
     show copguy festive flipped at mid_left with moveinleft
     show gift_sheriff at manual_pos(0.4, 0.7, 0.5) with moveinbottom
     pause 0.5
-    show gravity_falls at manual_pos(0.35, 0.65, 0.5)
+    show gravity_falls at manual_pos(0.35, 0.65, 0.5):
+        zoom 0.5
     hide gift_sheriff
     with dissolve
     copguy "Okay, so I got {i}Gravity Falls Season 2: Director's Cut..."
-    show colt at manual_pos(0.4, 0.7, 0.5) with dissolve
+    show colt at manual_pos(0.4, 0.7, 0.5) with dissolve:
+        zoom 0.5
     copguy "And... boss? Is this your gun?"
     sheriff "Yeah, you got my gift. Don't ask how that DVD got in there."
     sheriff "Because I don't know, either."
@@ -4684,20 +4697,22 @@ label ce_exchange:
     show cement at manual_pos(0.4, 0.7, 0.5)
     hide gift_ed
     with dissolve
-    sheriff "A bag of {i}cement?!"
+    sheriff "A bag of {i}cement?!" with vpunch
     ed "Yep! We had some leftover from the last house we worked on."
     ed "Solid enough for a home's foundation, versatile enough for all kinds of other projects."
     hide cement with dissolve
-    sheriff "Great! I can drop this on Copguy's head for {i}leaving{/i} me in the damn {i}bathroom!"
+    sheriff "Great! I can drop this on Copguy's head for {i}leaving{/i} me in the damn {nw}"
+    sheriff "Great! I can drop this on Copguy's head for {i}leaving{/i} me in the damn {fast}{i}bathroom!" with vpunch
     hide sheriff with moveoutright
     pause 0.5
 
     ed "I guess it's my go."
     show ed festive flipped at mid_left with moveinleft
-    show gift_richard at manual_pos(0.4, 0.7, 0.5) with moveinbottom
+    show gift_richard at manual_pos(0.4, 0.6, 0.5) with moveinbottom
     ed "What the hell? Who brought Dairy Queen?"
     ed "This gift's all drippy!"
-    show melted_ice_cream at manual_pos(0.4, 0.7, 0.5)
+    show melted_ice_cream at manual_pos(0.4, 0.6, 0.5):
+        zoom 0.5
     hide gift_richard
     with dissolve
     #Audio clip of Richard laughing
@@ -4710,9 +4725,10 @@ label ce_exchange:
 
     rich "Well, let's see what I get."
     show rich festive flipped at mid_left with moveinleft
-    show gift_wesley at manual_pos(0.4, 0.7, 0.5) with moveinbottom
+    show gift_wesley at manual_pos(0.4, 0.6, 0.5) with moveinbottom
     pause 0.5
-    show pills at manual_pos(0.4, 0.7, 0.5)
+    show pills at manual_pos(0.4, 0.6, 0.5):
+        zoom 0.3
     hide gift_wesley
     with dissolve
     rich "Pain pills?!"
@@ -4720,7 +4736,7 @@ label ce_exchange:
     show wesley festive behind pills at mid_right with moveinright
     wesley "I didn't mean to gift those!"
     wesley "Gimme that!"
-    show pills at manual_pos(0.7, 0.7, 0.5) with MoveTransition(0.25)
+    show pills at manual_pos(0.7, 0.6, 0.5) with MoveTransition(0.25)
     hide pills with dissolve
     show wesley festive flipped at offscreenright with { "master": move }
     rich "Hey!" with vpunch
@@ -4730,7 +4746,8 @@ label ce_exchange:
 
     show gift_k17 at manual_pos(0.4, 0.7, 0.5) with moveinbottom
     pause 0.5
-    show sunny_d at manual_pos(0.4, 0.7, 0.5)
+    show sunny_d at manual_pos(0.4, 0.6, 0.5):
+        zoom 0.75
     hide gift_k17
     with dissolve
     rich "Hey, I got Sunny D!"
@@ -4757,17 +4774,19 @@ label ce_exchange:
     show fumo at offscreenright
     with  MoveTransition(0.25)
     n "K-22 springs up and steals the gift from K-17 before sprinting out of the room!"
-    k22 "I'm sorry! I'll be right back!"
+    k22 "I'm sorry! I'll be right back!" with hpunch
     show k17 shock flipped
-    k17 "What the hay!" with vpunch
-    k17 "Now I gotta get another gift!"
+    k17 "What the hey?!" with vpunch
+    k17 "Now, I gotta get another gift!"
     show k17 flipped
     k17 "I'm gonna take the {i}Gravity Falls{/i} DVD!"
     show copguy festive at mid_right with moveinright
-    show gravity_falls at manual_pos(0.7, 0.7, 0.5) with dissolve
+    show gravity_falls at manual_pos(0.7, 0.7, 0.5) with dissolve:
+        zoom 0.5
     show gravity_falls at manual_pos(0.4, 0.7, 0.5) with move
     hide gravity_falls with dissolve
-    show colt at manual_pos(0.7, 0.7, 0.5) with dissolve
+    show colt at manual_pos(0.7, 0.7, 0.5) with dissolve:
+        zoom 0.5
     show colt at manual_pos(0.4, 0.7, 0.5) with { "master": move }
     k17 "... {i}And{/i} the gun."
     hide colt with dissolve
@@ -4789,9 +4808,10 @@ label ce_exchange:
     show billy festive at mid_left with move
     show billy festive flipped
     billy "Alright, I'll just take the next gift!"
-    show gift_aria at manual_pos(0.4, 0.7, 0.5) with moveinbottom
+    show gift_aria at manual_pos(0.4, 0.6, 0.5) with moveinbottom
     pause 0.5
-    show adderall at manual_pos(0.4, 0.7, 0.5)
+    show adderall at manual_pos(0.4, 0.6, 0.5):
+        zoom 0.4
     hide gift_aria
     with dissolve
     billy "Adderall?"
@@ -4800,14 +4820,14 @@ label ce_exchange:
     aria "You want me to take it back?"
     billy "Yes, {i}please!"
     show aria festive behind adderall at mid_right with moveinright
-    show adderall at manual_pos(0.7, 0.7, 0.5) with move
+    show adderall at manual_pos(0.7, 0.6, 0.5) with move
     hide adderall with dissolve
     hide aria with moveoutleft
 
     billy "Awesome! I get to pick another gift!"
-    show gift_michael at manual_pos(0.4, 0.7, 0.5) with moveinbottom
+    show gift_michael at manual_pos(0.4, 0.6, 0.5) with moveinbottom
     pause 0.5
-    show peach_syrup at manual_pos(0.4, 0.7, 0.5)
+    show peach_syrup at manual_pos(0.4, 0.6, 0.5)
     hide gift_michael
     with dissolve
     if fun_value(FUN_VALUE_RARE):
@@ -4818,15 +4838,16 @@ label ce_exchange:
     michael "Noice, you got my gift!"
     michael "It goes well with just about anything!"
     hide peach_syrup with dissolve
-    billy "I'll keep this one!"
+    billy "Sounds delicious! I'll keep this one!"
     hide billy with moveoutright
     pause 0.5
 
     michael "Right, then. Which gift to choose...?"
     show michael festive at mid_left with moveinleft
-    show gift_linus at manual_pos(0.4, 0.7, 0.5) with moveinbottom
+    show gift_linus at manual_pos(0.4, 0.6, 0.5) with moveinbottom
     pause 0.5
-    show ltt_bottle at manual_pos(0.4, 0.7, 0.5)
+    show ltt_bottle at manual_pos(0.4, 0.6, 0.5):
+        zoom 0.75
     hide gift_linus
     with dissolve
     michael "I've gotten a new water bottle!"
@@ -4838,15 +4859,16 @@ label ce_exchange:
 
     linus "Alright, my turn."
     show linus festive flipped at mid_left with moveinleft
-    show gift_luke at manual_pos(0.4, 0.7, 0.5) with moveinbottom
+    show gift_luke at manual_pos(0.4, 0.6, 0.5) with moveinbottom
     pause 0.5
-    show ltt_screwdriver at manual_pos(0.4, 0.7, 0.5)
+    show ltt_screwdriver at manual_pos(0.4, 0.6, 0.5):
+        zoom 0.5
     hide gift_luke
     with dissolve
     linus "Hey, Luke! I got your gift!"
     luke "Couldn't you {i}tell{/i} it was mine?"
     linus "No? How was I supposed to know that?"
-    luke "You were literally there when I grabbed it from the warehouse..."
+    luke "You were {i}literally{/i} there when I grabbed it from the warehouse..."
     hide ltt_screwdriver with dissolve
     hide linus with moveoutright
     pause 0.5
@@ -4858,7 +4880,8 @@ label ce_exchange:
     pause 0.5
     show monitor as first at manual_pos(0.3, 0.7, 0.5)
     show monitor as second at manual_pos(0.5, 0.7, 0.5)
-    show hard_drive at manual_pos(0.4, 0.7, 0.5)
+    show hard_drive at manual_pos(0.4, 0.7, 0.5):
+        zoom 0.5
     hide gift_blank
     with dissolve
     luke "Some random PC components?"
@@ -4878,13 +4901,16 @@ label ce_exchange:
     show blank festive flipped at mid_left with moveinleft
     show gift_nova at manual_pos(0.4, 0.7, 0.5) with moveinbottom
     pause 0.5
-    show gamersupps at manual_pos(0.4, 0.7, 0.5)
+    show gamersupps at manual_pos(0.4, 0.7, 0.5):
+        zoom 0.5
     hide gift_nova
     with dissolve
     blank "GamerSupps?"
-    n "Blank holds the canister a little closer to read it."
-    blank "Guacamole Gamer... Fart... 9000?"
+    show gamersupps at manual_pos(0.35, 0.65, 0.5) with move
+    n "Blank holds the canister a little closer to read it carefully."
+    blank "\"Guacamole... Gamer Fart... 9000\"...?"
     nova "Damn it! You got {i}my{/i} gift, Blank!" with hpunch
+    show gamersupps at manual_pos(0.4, 0.7, 0.5) with { "master": move }
     blank "Great."
     hide gamersupps with dissolve
     hide blank with moveoutright
@@ -4921,31 +4947,41 @@ label ce_exchange:
 
     db "Well, I guess it's finally my turn."
     show db at mid_left with moveinleft
-    show gift_grace at manual_pos(0.4, 0.7, 0.5) with moveinbottom
+    show gift_anne_grace at manual_pos(0.4, 0.6, 0.5) with moveinbottom
     pause 0.5
-    show 1850_coin at manual_pos(0.4, 0.7, 0.5)
-    hide gift_grace
+    show 1850_coin at manual_pos(0.4, 0.6, 0.5):
+        zoom 0.5
+    hide gift_anne_grace
     with dissolve
     db "Neat, I got some old coins!"
     digi "Holy shit! I think those are, like, {i}really{/i} rare!"
+    show digi happy at center with { "master": moveinright }
     digi "Lemme look these up."
     grace "You got our coins!"
     anne "We had them lying around on the table at home."
-    digi "Yeah, those are super rare. I would hold onto those if I were you."
+    show digi
+    "..."
+    digi "Yeah, these are super rare. I would hold onto these if I were you."
     hide 1850_coin with dissolve
     arceus "Say, don't you collect coins, Digi?"
+    show digi flipped
     digi "Not really. I just collect pennies."
     arceus "... Why {i}just{/i} pennies?"
-    digi "I have, like, 5000 pennies. One day, when America stops making pennies, they'll go up in value."
+    show digi thinking flipped
+    digi "So, I have, like, 5000 pennies."
+    digi "One day, when America stops making pennies, they'll go up in value."
     obama "Why would we stop making pennies?"
     digi "Well, you guys spend 1.6 cents per penny to make them, so you're losing money."
     digi "Canada already stopped making their pennies."
     mean "Well, yeah, that's because Canada's smarter than America."
+    show digi happy flipped
     digi "Anywho, one day, when I have 5000 rare coins in a jar, it'll all have been worth it."
     arceus "Alright, then..."
     billy "Antique coins lying around, tech lying on the curb..."
     billy "Where the hell do you guys live where you can just {i}find{/i} this kinda shit?"
-    hide db with moveoutright
+    hide db
+    hide digi
+    with moveoutright
     pause 0.5
 
     if d20 == 20:
@@ -4973,7 +5009,8 @@ label ce_exchange:
         show gift_avgn at manual_pos(0.4, 0.7, 0.5) with moveinbottom
         pause 0.5
         show roll_and_rocker at manual_pos(0.4, 0.7, 0.5)
-        show rolling_rock at manual_pos(0.4, 0.7, 0.5)
+        show rolling_rock at manual_pos(0.3, 0.7, 0.5):
+            zoom 0.5
         hide gift_avgn
         with dissolve
         grace "Ooh! Is this a balance board?"
