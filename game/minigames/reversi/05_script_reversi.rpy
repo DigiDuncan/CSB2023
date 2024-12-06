@@ -37,6 +37,7 @@ init python:
             if self.game.is_game_over(self.turn):
                 w, b = self.game.get_counts()
                 self.win = w >= b
+                return
 
             r = renpy.Render(1920, 1080)
             s = r.canvas()
