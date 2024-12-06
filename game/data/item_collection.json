@@ -80,7 +80,7 @@
         "img": "burnt_turkey",
         "name": "Burnt Turkey",
         "owner": "Ed",
-        "desc": "Oh no! His roast is {i}ruined!",
+        "desc": "Oh no! This roast is {i}ruined!",
         "rarity": "Common",
         "ce": true
     },
@@ -134,7 +134,7 @@
         "img": "colt",
         "name": "Colt .45 Revolver",
         "owner": "K-17",
-        "desc": "As he nears retirement, the Sheriff secretly just wanted his trusted side-arm to go to someone who would appreciate it. Either that, or he just forgot.",
+        "desc": "As he nears retirement, the Sheriff secretly just wanted his trusted side-arm to go to someone who would appreciate it. Either that, or he dropped it into his gift box without realizing it.",
         "rarity": "Common",
         "ce": true
     },
@@ -158,7 +158,7 @@
         "img": "craptop",
         "name": "CS' Craptop",
         "owner": "CS",
-        "desc": "It's had a good run...\n\nNotably, these older Dell machines are still rather common. It can at least run DOOM.",
+        "desc": "It's had a good run...\n\nNotably, these older Dell machines are still rather common. It can at least run {i}DOOM.",
         "rarity": "Common"
     },
     "crotch_doctor": {
@@ -514,7 +514,7 @@
         "img": "mgs1",
         "name": "{i}Metal Gear Solid",
         "owner": "President Obama",
-        "desc": "The 1998 title that spawned a now-million-dollar franchise. A Hideo game that started the trend of making their product more cutscene than game.",
+        "desc": "The 1998 Hideo game that spawned a now-million-dollar franchise and started the trend of producing a title that is more cutscene than game.",
         "rarity": "Gaming Legend Series",
         "ce": true
     },
@@ -546,7 +546,7 @@
         "img": "old_shirt",
         "name": "Old T-Shirt",
         "owner": "Grace...?",
-        "desc": "A leftover shirt from CS' closet cleanout Depop sale.",
+        "desc": "A leftover shirt from CS' closet cleanout {a=https://www.depop.com/cs188/}Depop{/a} sale.",
         "rarity": "Common",
         "ce": true
     },
@@ -561,7 +561,7 @@
         "img": "peach_syrup",
         "name": "Can Of Peach Syrup",
         "owner": "Billy Mays",
-        "desc": "Try spreading it on toast or crumpets! If that doesn't work for you, just stick your fingers in and lick them!",
+        "desc": "Try spreading it on toast or crumpets... or, just enjoy it by the spoonful. Your secret is safe here.",
         "rarity": "Common",
         "ce": true
     },  
@@ -679,7 +679,7 @@
         "img": "russian_radio",
         "name": "Soviet Radio",
         "owner": "Nova",
-        "desc": "A relic of a great, terrible, and a rather chilly war.",
+        "desc": "A relic of a great, terrible, and rather chilly war.",
         "rarity": "Uncommon",
         "ce": true
     },
@@ -694,7 +694,7 @@
         "img": "shopping_cart",
         "name": "Shopping Cart",
         "owner": "Target",
-        "desc": "Sadly, This version of Target's carts aren't built quite the same as most stores' carts. You can't stand on the little bar at the bottom and ride it around like a scooter. Thankfully, most Target carts nowadays have a metal chassis.",
+        "desc": "CS' local Target uses different carts than most other stores. You can't stand on the little bar at the bottom and ride it around like a scooter. Thankfully, the familiar metal chassis can be found at most other locations.",
         "rarity": "Common",
         "ce": true
     },

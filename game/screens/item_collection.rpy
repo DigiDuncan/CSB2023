@@ -103,7 +103,7 @@ screen items(l):
     # Main Container omitting the menu
     viewport:
         xsize 800
-        ysize 800
+        ysize 900
         xalign 0.6
         xoffset 340
         yoffset 200
