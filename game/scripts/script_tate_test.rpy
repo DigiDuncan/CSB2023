@@ -1,3 +1,19 @@
+### EXPERIMENTAL REVERSI RULES ###
+
+image reversi_rules_test:
+    xsize 1500
+    ysize 700
+    xanchor 0.5
+    yanchor 0.5
+    contains:
+        Frame("gui/frame.png")
+    contains:
+        Text("{size=+12}Reversi!", xalign=0.5, yalign=0.0125)
+    contains:
+        Text("For the first four moves, the players must play to one of the four squares in the middle of the board and no pieces are captured or reversed.\nEach piece played must be laid adjacent to an opponent's piece so that the opponent's piece or a row of opponent's pieces is flanked by the new piece and another piece of the player's color. All of the opponent's pieces between these two pieces are 'captured' and turned over to match the player's color.\nIt can happen that a piece is played so that pieces or rows of pieces in more than one direction are trapped between the new piece played and other pieces of the same colour. In this case, all the pieces in all viable directions are turned over.\nThe game is over when neither player has a legal move (i.e. a move that captures at least one opposing piece) or when the board is full.", xalign=0.5, yalign=0.5)
+    contains:
+        Text("{size=-12}{a=https://www.mastersofgames.com/rules/reversi-othello-rules.htm}https://www.mastersofgames.com/rules/reversi-othello-rules.htm", xalign=0.975, yalign=0.975)
+
 ### EXPERIMENTAL LAYERED SPRITE, DO NOT USE THIS IN-GAME YET ###
 
 # KNOWN ISSUES:
@@ -303,6 +319,14 @@ label awawa_tate_test:
                 #call screen credits_roll(route="CSBIII DX: Holiday Special", bgm="hohsis_theme.ogg", scroll_start = 12000, duration=30)
 
                 tate "Did we do it?"
+                jump .awawa_menu
+
+            "Reversi Rules Image":
+                tate "Let's check it out!"
+                show reversi_rules_test at truecenter
+                pause
+                hide reversi_rules_test
+                tate "Did it work?"
                 jump .awawa_menu
             
             ########## Cancel ##########

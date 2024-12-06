@@ -4450,6 +4450,7 @@ label ce_exchange:
     cs "Everyone brought a gift, right?"
     n "The crowd responds with nods."
     show festive_bag at manual_pos(0.6, 0.6, 0.5) with moveinbottom
+    $ collect("festive_bag")
     cs "Cool!"
     cs "I've put all of your names in this bag. I'll bring it around so you all can draw one!"
     show cs christmas at offscreenright
