@@ -116,7 +116,7 @@ init python:
             if ev.type == pygame.KEYUP and ev.key == pygame.K_h:
                 self.showing_help = not self.showing_help
             if self.win is not None:
-                return self.win
+                return self.game.get_counts()
 
         def visit(self):
             return [] # Assets needed to load
@@ -134,8 +134,9 @@ label play_reversigame:
     $ quick_menu = True
     window show
 
-    if _return == True:
-        pass
+    if _return:
+        $ w,b = _return
+        n "You scored [w], opponent scored [b]."
         # Thing for win condition
     else:
         pass
