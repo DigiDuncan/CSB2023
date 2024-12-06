@@ -3,7 +3,7 @@
         "img": "adderall",
         "name": "Bottle Of Adderall",
         "owner": "Aria",
-        "desc": "To certain populations, this stuff is worth its weight in gold.",
+        "desc": "To certain populations, this stuff is worth its weight in gold. Can be used to numb the effects of ADHD.",
         "rarity": "Common",
         "ce": true
     },     
@@ -132,9 +132,9 @@
     },
     "colt": {
         "img": "colt",
-        "name": "Colt .45 Pistol",
+        "name": "Colt .45 Revolver",
         "owner": "K-17",
-        "desc": "As he nears retirement, the Sheriff secretly just wanted his trusted side-arm to go to someone who would appreciate it.",
+        "desc": "As he nears retirement, the Sheriff secretly just wanted his trusted side-arm to go to someone who would appreciate it. Either that, or he just forgot.",
         "rarity": "Common",
         "ce": true
     },
@@ -158,7 +158,7 @@
         "img": "craptop",
         "name": "CS' Craptop",
         "owner": "CS",
-        "desc": "It's had a good run...\n\nNotably, these older Dell machines are still rather common.",
+        "desc": "It's had a good run...\n\nNotably, these older Dell machines are still rather common. It can at least run DOOM.",
         "rarity": "Common"
     },
     "crotch_doctor": {
@@ -263,7 +263,7 @@
     "dog_food": {
         "img": "dog_food",
         "name": "Bag Of Dog Food",
-        "owner": "Eliza",
+        "owner": "Elizabeth",
         "desc": "But, why would you bring dog food to a gift exchange...?",
         "rarity": "Common",
         "ce": true
@@ -340,8 +340,8 @@
     },
     "fumo": {
         "img": "fumo",
-        "name": "Addy Fumo?",
-        "owner": "???",
+        "name": "Addy Fumo",
+        "owner": "K-22",
         "desc": "Who {i}made{/i} this?",
         "rarity": "Common",
         "ce": true
@@ -514,7 +514,7 @@
         "img": "mgs1",
         "name": "{i}Metal Gear Solid",
         "owner": "President Obama",
-        "desc": "The 1998 title that spawned a now-million-dollar franchise.",
+        "desc": "The 1998 title that spawned a now-million-dollar franchise. A Hideo game that started the trend of making their product more cutscene than game.",
         "rarity": "Common",
         "ce": true
     },
