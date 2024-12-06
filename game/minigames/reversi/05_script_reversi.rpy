@@ -26,7 +26,7 @@ init python:
             self.enemy_score_text = Text("2", color = "#0000ff", size = 72)
 
             self.help_text = Text("Press H for help!", color = "#000000", size = 36)
-            self.help_modal = Image("minigames/reversi/help.png")
+            self.help_modal = renpy.get_registered_image("reversi_rules")
             self.showing_help = False
 
         def render(self, width, height, st, at):
@@ -77,7 +77,7 @@ init python:
             r.place(self.help_text, x = 1650, y = 5)
 
             if self.showing_help:
-                r.place(self.help_modal, x = (1920 / 2) - (900 / 2), y = (1080 / 2) - (375/2))
+                r.place(self.help_modal, x = (1920 / 2), y = (1080 / 2))
 
             renpy.redraw(self, 0)
 
