@@ -132,3 +132,9 @@ class ReversiAI:
     NOVICE = OrthelloAI("Novice", 0.0, 1.0, 0, plain_weights) # More likely to pick a move gives them more pieces
     INTERMEDIATE = OrthelloAI("Intermediate", 0.4, 0.9, 0, radial_weights) # Prioritises the outer edge over the center, but doesn't have the best weighting
     MASTER = OrthelloAI("Master", 1.0, 0.0, 2, peak_weights) # Uses the best weight table, and looks 3 moves into the future
+
+    TATE = OrthelloAI("Tate", 0.0, 1.0, 0, random_weights)
+    DIGI = OrthelloAI("Digi", 0.0, 1.0, 0, plain_weights)
+    PAKOO = OrthelloAI("K-22", 0.4, 0.9, 0, radial_weights)
+    ARCEUS = OrthelloAI("Arceus", 0.5, 0.5, 1, peak_weights)
+    ARIA = OrthelloAI("Aria", 1.0, 0.0, 2, peak_weights)

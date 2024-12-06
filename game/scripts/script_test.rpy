@@ -17,20 +17,23 @@ label test:
             $ renpy.full_restart()
         "True"  (type = "true"):
             $ renpy.full_restart()
-        "Arc's GUI Hell":
+        "Reversi!":
             menu:
                 "Which difficulty would you like?"
-                "Goblin":
-                    $ reversi_difficulty = ReversiAI.GOBLIN
+                "Tate (Beginner)":
+                    $ reversi_difficulty = ReversiAI.TATE
                     jump play_reversigame
-                "Novice":
-                    $ reversi_difficulty = ReversiAI.NOVICE
+                "Digi (Easy)":
+                    $ reversi_difficulty = ReversiAI.DIGI
                     jump play_reversigame
-                "Intermediate":
-                    $ reversi_difficulty = ReversiAI.INTERMEDIATE
+                "K-22 (Medium)":
+                    $ reversi_difficulty = ReversiAI.PAKOO
                     jump play_reversigame
-                "Master":
-                    $ reversi_difficulty = ReversiAI.MASTER
+                "Arceus (Hard)":
+                    $ reversi_difficulty = ReversiAI.ARCEUS
+                    jump play_reversigame
+                "Aria (Expert)":
+                    $ reversi_difficulty = ReversiAI.ARIA
                     jump play_reversigame
         "New cool thing OwO"  (type = "dx"):
             menu:

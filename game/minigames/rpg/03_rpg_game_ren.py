@@ -401,7 +401,7 @@ class Attack:
             return "aoe"
         elif self.func == confuse_targets:
             return "confuse"
-        elif self.func == "damage_over_time":
+        elif self.func == damage_over_time:
             return "dot"
         else:
             return "damage"
