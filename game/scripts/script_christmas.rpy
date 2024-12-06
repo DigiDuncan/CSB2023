@@ -5474,6 +5474,8 @@ label ce_snowed_in:
     jump ce_reversi
 
 label ce_reversi:
+    stop music
+    music end
     menu:
         "Who do you want to play against?"
         "Tate (Beginner)":
@@ -5495,6 +5497,8 @@ label ce_reversi:
             jump ce_billy_time
 
 label ce_win_reversi:
+    stop music
+    music end
     scene cs_living2_off_festive
     show cs happy christmas at mid_left
     show aria festive at mid_offscreen_right
@@ -5540,8 +5544,10 @@ label ce_win_reversi:
             jump ce_billy_time
 
 label ce_lose_reversi:
+    stop music
+    music end
     scene cs_living2_off_festive
-    show cs sad christmas at mid_left
+    show cs worried christmas at mid_left
     show aria festive at mid_offscreen_right
     show reversi_box at mid_left
     show mean human flipped at mid_offscreen_left

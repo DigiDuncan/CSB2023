@@ -2,6 +2,7 @@
 
 init python:
     import math
+    from random import choice
 
     board_length = 720
     canv_x = 960
@@ -28,6 +29,10 @@ init python:
             self.help_text = Text("Press H for help!", color = "#000000", size = 36)
             self.help_modal = renpy.get_registered_image("reversi_rules")
             self.showing_help = False
+
+        def clink(self):
+            sound = choice(["place1", "place2", "place3", "place4", "place5"])
+            renpy.sound.play(f"minigames/reversi/{sound}.ogg", channel="sound")
 
         def render(self, width, height, st, at):
             if self.last_tick is None:
@@ -89,6 +94,7 @@ init python:
                     self.game = self.game.update(self.turn, coords, bookends)
                     self.turn = self.turn.invert()
                     self.wait_timer = 1.0
+                    self.clink()
 
             self.last_tick = st
 
@@ -110,6 +116,7 @@ init python:
                         else:
                             self.game = self.game.update(self.turn, coords, bookends)
                             self.turn = self.turn.invert()
+                            self.clink()
 
             if ev.type == pygame.KEYDOWN and ev.key == pygame.K_END:
                 self.win = True
