@@ -561,7 +561,7 @@
         "img": "peach_syrup",
         "name": "Can Of Peach Syrup",
         "owner": "Billy Mays",
-        "desc": "Try spreading it on toast or crumpets... or, just enjoy it by the spoonful. Your secret is safe here.",
+        "desc": "Try spreading it on toast or crumpets, enjoying it by the spoonful, {a=https://www.youtube.com/watch?v=JlfJx1aDmR4&t=11s}stick a finger in and lick it, or even lift it up and drink a bit.{/a} Your secrets are safe here.",
         "rarity": "Common",
         "ce": true
     },  
