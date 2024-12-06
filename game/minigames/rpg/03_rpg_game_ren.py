@@ -589,7 +589,7 @@ class Fighter:
                 print(f"{self.name}: No longer confused!")
                 renpy.notify(f"{self.display_name} is no longer confused!")
                 # answer.append((0, "confusion"))
-                displayable.show_damage_indicator(0, "confusion")
+                displayable.show_damage_indicator((0, "confusion"))
         # Cooldowns
         for a in self.attacks:
             report = False
