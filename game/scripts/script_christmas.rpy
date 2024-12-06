@@ -5376,6 +5376,7 @@ label ce_snowed_in:
     music winters_halloween
     scene snowed_in
     hide screen flashlight_demo
+    $ mouse_visible = True
     show cs sil_black:
         zoom 0.15
         xpos 0.3
@@ -5407,6 +5408,7 @@ label ce_snowed_in:
     mean "Well, they can see it for themselves."
     mean "Let's get back inside. It's freezing out here."
     scene black with dissolve
+    $ mouse_visible = False
     show screen flashlight_demo
     n "CS and Mean climb back down and meet back up with everyone."
     scene cs_living2_off_festive
@@ -5502,6 +5504,7 @@ label ce_snowed_in:
     show cs christmas
     cs "Who wants to play with me?"
     $ playing_reversi_again = False
+    $ mouse_visible = True
     jump ce_reversi
 
 label ce_reversi:
@@ -5528,6 +5531,7 @@ label ce_reversi:
             jump ce_billy_time
 
 label ce_win_reversi:
+    $ mouse_visible = False
     stop music
     music end
     scene cs_living2_off_festive
@@ -5571,11 +5575,13 @@ label ce_win_reversi:
         "Play Reversi again?"
         "Yes!":
             $ playing_reversi_again = True
+            $ mouse_visible = True
             jump ce_reversi
         "No!":
             jump ce_billy_time
 
 label ce_lose_reversi:
+    $ mouse_visible = True
     stop music
     music end
     scene cs_living2_off_festive
@@ -5612,11 +5618,13 @@ label ce_lose_reversi:
         "Play Reversi again?"
         "Yes!":
             $ playing_reversi_again = True
+            $ mouse_visible = True
             jump ce_reversi
         "No!":
             jump ce_billy_time
 
 label ce_billy_time:
+    $ mouse_visible = False
     scene cs_living2_off_festive
     show cs christmas at mid_left
     show mean human flipped at mid_offscreen_left
@@ -5714,6 +5722,7 @@ label ce_billy_time:
     n "Tate slaps the Handy Switch onto the breaker and flips the switch."
     play sound sfx_snd_lightswitch
     show tate shock festive
+    $ mouse_visible = True
     hide screen flashlight_demo
     tate "Wh-- {i}how?!"
     billy "Like {i}magic!"
