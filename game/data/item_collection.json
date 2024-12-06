@@ -282,6 +282,13 @@
         "desc": "Quack, quack, quack, quack...",
         "rarity": "Rare"
     },
+    "festive_bag": {
+        "img": "festive_bag",
+        "name": "Festive Bag",
+        "owner": "CS",
+        "desc": "One of many seasonal items CS picked up at Michael's.",
+        "ce": true
+    },
     "flexcake": {
         "img": "flexcake",
         "name": "Flex Cake",

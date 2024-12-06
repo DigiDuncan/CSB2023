@@ -4437,7 +4437,7 @@ label ce_dinner:
     scene black with dissolve
     pause 0.5
 
-    # TODO: TATE STOPPED EDITING HERE!
+# TODO: this label needs a second pass, mostly for item size/positioning as well as putting items into the item collection. - tate
 
 # Gift Exchange
 label ce_exchange:
@@ -4446,374 +4446,563 @@ label ce_exchange:
     with dissolve
     play music superstar_road volume 0.5
     music superstar_road
-    cs "Alright, everyone! It's time for the gift exchange!"
+    cs "Alright! It's time for the gift exchange!"
     cs "Everyone brought a gift, right?"
-    n "Everyone nods."
-    cs "Alright, well I marked numbers for everyone who showed up, so I'll go around while you guys draw from the bag!"
-    hide cs with moveoutright
-    n "CS goes around, and everyone draws out of the bag."
+    n "The crowd responds with nods."
+    show festive_bag at manual_pos(0.6, 0.6, 0.5) with moveinbottom
+    cs "Cool!"
+    cs "I've put all of your names in this bag. I'll bring it around so you all can draw one!"
+    show cs christmas at offscreenright
+    show festive_bag at manual_pos(1.2, 0.6, 0.5)
+    with moveoutright
+    pause 0.5
+    n "CS brings the bag around to each attendee."
+    pause 0.5
     cs "Let's see, who is going first?"
+    "..."
+
     #roll 1
-    cs "Would you look at that! I guess I'm going first!"
-    show cs christmas at mid_left with moveinleft
-    cs "I'm gonna pick, this one!"
+    cs "Would you look at that! I guess {i}I'm{/i} going first!"
+    show cs christmas flipped at mid_left with moveinleft
+    show cs christmas
+    pause 0.5
+    cs "I'm gonna pick..."
+    show gift_arc at manual_pos(0.4, 0.6, 0.5) with { "master": moveinbottom }
+    cs "I'm gonna pick...{fast}  this one!"
     cs "I got..."
+    pause 0.5
+    hide gift_arc
+    show thigh_highs at manual_pos(0.4, 0.6, 0.5)
+    with dissolve
     show cs disappointed christmas
-    show thigh_highs at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    cs "Thigh highs?"
-    show cs full christmas at manual_pos(0.034, 0.187)
-    arceus "Look at that, you got my gift, CS!"
+    cs "Thigh-highs?"
+    arceus "Look at that! You got my gift, CS!"
     hide thigh_highs with dissolve
-    cs "Well, I guess I have more now!"
-    k17 "You wear thigh highs?"
+    show cs christmas full at manual_pos(0.04, 0.188)
+    cs "Welp, guess I have more now!"
+    k17 "You wear thigh-highs?"
     cs "Yeah, I'm wearing them right now! See?"
-    show cs full christmas at Move((0.034, 0.187), (0.034, -0.4), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show cs christmas full  at Move((0.04, 0.188), (0.04, -0.4), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
     window hide
     pause 2.5
-    show cs full christmas at Move((0.034, -0.4), (0.034, 0.187), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    digi "Oh, shit. I guess I never looked down to check."
-    aria "I just assumed because of the outfit."
+    show cs christmas full at Move((0.04, -0.4), (0.04, 0.188), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    pause 1.0
+    digi "Oh, shit. I guess I never thought to look down to check."
+    aria "I just assumed, given the rest of the outfit."
     hide cs with moveoutright
-    arceus "Welp, it looks like I'm next."
+    pause 0.5
+
+    arceus "Welp, it looks like I'm up next."
     show arceus festive flipped at mid_left with moveinleft
+    show gift_kitty at manual_pos(0.4, 0.7, 0.5) with moveinbottom
     arceus "I got..."
-    show tea_and_crumpets at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    pause 0.5
+    hide gift_kitty
+    show tea_and_crumpets at manual_pos(0.4, 0.7, 0.5)
+    with dissolve
     arceus "Tea and crumpets?"
-    kitty "Arcie! You got my gift!"
+    kitty "Arcie! You got {i}my{/i} gift!" with hpunch
     hide tea_and_crumpets with dissolve
     show arceus festive worried flipped
-    arceus "Sorry! I honestly forgot which one was yours."
-    kitty "You saw me carry it in, dumbass!"
+    arceus "Sorry! I honestly forgot which one was yours!"
+    kitty "You {i}saw{/i} me carry it in, dumbass!"
     hide arceus with moveoutright
+    pause 0.5
+
     kitty "Whatever, it's my turn now."
     show kitty festive at mid_left with moveinleft
+    pause 0.5
+    show gift_anno at manual_pos(0.4, 0.7, 0.5) with moveinbottom
     kitty "Looks like I got..."
-    show riffmaster at Move((0.3125, 1.0), (0.3125, 0.35), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    kitty "A... Guitar Hero controller?"
-    cs "Holy shit, that's a Riffmaster!"
+    hide gift_anno
+    show riffmaster at manual_pos(0.4, 0.7, 0.5)
+    with dissolve
+    kitty "A... {i}Guitar Hero{/i} controller?"
+    cs "Holy shit, that's a {i}Riffmaster!"
     kitty "Is that good?"
-    cs "It's just a really good guitar controller."
+    cs "Yeah, those controllers are really good!"
     hide riffmaster with dissolve
     anno "That was my gift!"
     hide kitty with moveoutright
+    pause 0.5
+
     anno "It looks like I'm up next."
     show anno festive at mid_left with moveinleft
+    pause 0.5
+    show gift_digi at manual_pos(0.4, 0.7, 0.5) with moveinbottom
     anno "I got..."
-    show raspberry_pi at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    anno "What the hell is this?"
+    hide gift_digi
+    show raspberry_pi at manual_pos(0.4, 0.7, 0.5)
+    with dissolve
+    pause 0.5
+    anno "What the hell {i}is{/i} this?"
     arceus "Ooh! That's a Raspberry Pi!"
-    obama "What are you on about? That doesn't look edible at all!"
-    digi "No-- okay, it's my gift, so let me explain."
-    digi "It's a small computer you can use to run basic servers or build little projects!"
+    obama "What are you on about? That doesn't look edible at {i}all!"
+    digi "No-- okay, it's {i}my{/i} gift, so let me explain."
+    digi "It's a small computer that you can use to run basic servers or build little projects!"
     hide raspberry_pi with dissolve
     anno "Oh. Cool, I guess."
     hide anno with moveoutright
+    pause 0.5
+
     show digi flipped at mid_left with moveinleft
-    digi "Well it's my turn now, and I'm gonna steal that Riffmaster!"
+    digi "Well, it's my turn now, and I'm gonna steal that Riffmaster!"
     show kitty festive flipped at mid_right with moveinright
-    show riffmaster at Move((0.7125, 0.5), (0.3125, 0.5), 2, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    with dissolve
-    pause 3.0
+    show riffmaster at manual_pos(0.7, 0.6, 0.5) with dissolve
+    show riffmaster at manual_pos(0.35, 0.6, 0.5) with move
     hide riffmaster with dissolve
     hide digi with moveoutright
     kitty "Damn."
     kitty "Well, what do I do now?"
-    cs "You can steal another gift, or pick out another one."
-    hide kitty with moveoutleft
-    arceus "Psst! Kitty! Come here!"
+    cs "You can either steal someone else's gift, or pick out another unopened one."
+    show arceus festive flipped behind kitty at mid_offscreen_left with moveinleft
+    arceus "{size=-12}Psst! Kitty! Come here!"
+    show kitty flipped at left with move
+    pause 0.5
+    play sound sfx_whisper
     n "Arceus whispers something into her ear."
+    kitty "Alright."
     show kitty festive at mid_left with moveinleft
-    kitty "Alright, Anno, hand over your computer thing."
+    kitty "Anno, hand over your computer thing."
     show anno festive at mid_right with moveinright
-    show raspberry_pi at Move((0.7125, 0.5), (0.3125, 0.5), 2, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    with dissolve
-    pause 3.0
+    show raspberry_pi at manual_pos(0.7, 0.6, 0.5) with dissolve
+    show raspberry_pi at manual_pos(0.35, 0.6, 0.5) with move
+    pause 0.5
     hide raspberry_pi with dissolve
-    hide kitty with moveoutright
-    anno "Welp, next gift I guess."
+    show kitty festive flipped
+    show arceus festive
+    hide arceus
+    hide kitty
+    with moveoutright
+    pause 0.5
+
+    anno "Welp, I'm picking a new gift, I guess."
     show anno festive at mid_left with move
     anno "I guess I'll pick this one."
-    anno "I wonder what it'll be?"
-    show lego_train at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show gift_mean at manual_pos(0.4, 0.7, 0.5) with moveinbottom
+    anno "Wonder what it is."
+    show lego_train at manual_pos(0.4, 0.7, 0.5)
+    hide gift_mean
+    with dissolve
     anno "A Lego set!"
     mean "A Lego {i}train{/i} set!"
     hide lego_train with dissolve
     mean "That's my gift, by the way."
     if fun_value(FUN_VALUE_COMMON):
-        tate "We know!"
+        tate "We {i}know!"
     hide anno with moveoutright
+    pause 0.5
+
     mean "Alright, well, I guess it's my turn."
     show mean human flipped at mid_left with moveinleft
+    show gift_tate at manual_pos(0.4, 0.7, 0.5) with moveinbottom
     mean "I'm picking this big one!"
-    show instant_pot at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show instant_pot at manual_pos(0.4, 0.7, 0.5)
+    hide gift_tate
+    with dissolve
     mean "An Instant Pot?"
-    tate "Mean, you got {i}my{/i} gift!"
+    tate "Mean, ya goofball! You picked {i}my{/i} gift!" with hpunch
     show mean human happy flipped
-    hide instant_pot with dissolve
     mean "Well, it's {i}mine{/i} now, bitch!"
+    hide instant_pot with { "master": dissolve }
     mean "Who's next?"
     hide mean with moveoutright
-    tate "It's me!"
+    pause 0.5
+
+    tate "Looks like I'm up."
     show tate festive at mid_left with moveinleft
     tate "Let's see..."
-    show handy_switch at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    pause 1.5
+    show gift_billy at manual_pos(0.4, 0.7, 0.5) with moveinbottom
+    pause 0.5
+    show handy_switch at manual_pos(0.4, 0.7, 0.5)
+    hide gift_billy
+    with dissolve
     show tate smug festive
     tate "Billy? Is this yours?"
     billy "It's the Handy Switch!"
-    billy "It let's you control any power source, from anywhere!"
-    hide handy_switch with dissolve
+    billy "It lets you control {i}any{/i} power source {w=0.25}from {i}anywhere!"
     show tate festive
-    tate "I'm sure I can find a use for this."
+    tate "I'm sure I can find a use for this. Thanks!"
+    hide handy_switch with dissolve
     hide tate with moveoutright
-    billy "Alright, it's my turn!"
+    pause 0.5
+
+    billy "Alright! That means it's {i}my{/i} turn!"
     show billy festive at mid_left with moveinleft
-    show doi at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show gift_obama at manual_pos(0.4, 0.7, 0.5) with moveinbottom
+    billy "Hi, Billy Mays here for {i}my{/i} turn!"
+    show doi at manual_pos(0.4, 0.7, 0.5)
+    hide gift_obama
+    with dissolve
     billy "Wow! Is this the Declaration of Independence?"
     obama "Yep! It's the real deal!"
-    obama "Figured I didn't need it anymore, so it's yours now!"
-    hide doi with dissolve
+    obama "I figured that, since I didn't need it anymore, it would make a wonderful gift!"
     billy "Great! I can probably pitch this!"
+    hide doi with dissolve
     hide billy with moveoutright
-    obama "Welp, I guess it's my turn now."
-    show obama festive at mid_left with moveinleft
-    show mgs1 at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    obama "Metal Gear Solid?"
-    copguy "Yeah, that's mine, I didn't know what anyone really wants, so I just found this at the station."
+    pause 0.5
+
+    obama "This means that it's my turn now."
+    show obama festive flipped at mid_left with moveinleft
+    show gift_copguy at manual_pos(0.4, 0.7, 0.5) with moveinbottom
+    pause 0.5
+    show mgs1 at manual_pos(0.4, 0.7, 0.5)
+    hide gift_copguy
+    with dissolve
+    obama "{i}Metal Gear Solid?"
+    copguy "Yeah, that's from me."
+    copguy "I didn't know what anyone would really want, so I just brought this after I found it in the station's break room."
+    obama "Dude, this is, like, my {i}favorite{/i} game! I appreciate it."
+    copguy "Well, I'm glad that works out!"
     hide mgs1 with dissolve
-    obama "Dude, this is like my favorite game. I appreciate it."
-    copguy "I'm glad."
     hide obama with moveoutright
+    pause 0.5
+
     copguy "It's my turn now."
     show copguy festive flipped at mid_left with moveinleft
-    show gravity_falls at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    copguy "Okay, so I got \"Gravity Falls Season 2 Director's Cut\"..."
-    show colt at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    copguy "...and boss? Is this your gun?"
+    show gift_sheriff at manual_pos(0.4, 0.7, 0.5) with moveinbottom
+    pause 0.5
+    show gravity_falls at manual_pos(0.35, 0.65, 0.5)
+    hide gift_sheriff
+    with dissolve
+    copguy "Okay, so I got {i}Gravity Falls Season 2: Director's Cut..."
+    show colt at manual_pos(0.4, 0.7, 0.5) with dissolve
+    copguy "And... boss? Is this your gun?"
     sheriff "Yeah, you got my gift. Don't ask how that DVD got in there."
+    sheriff "Because I don't know, either."
     hide gravity_falls
     hide colt
     with dissolve
     hide copguy with moveoutright
-    sheriff "Because I don't know either."
+    pause 0.5
+
     show sheriff festive flipped at mid_left with moveinleft
-    sheriff "Whatever, it's my turn to pick a gift."
-    sheriff "Damn, this is heavy! What the hell is this?"
-    show cement at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    sheriff "A bag of cement?"
-    ed "We had some leftover from the last house we worked on."
+    sheriff "Whatever! It's {i}my{/i} turn to pick a gift."
+    show gift_ed at manual_pos(0.4, 0.7, 0.5) with moveinbottom
+    sheriff "Damn, this is {i}heavy!{/i} What the hell {i}is{/i} this?!"
+    show cement at manual_pos(0.4, 0.7, 0.5)
+    hide gift_ed
+    with dissolve
+    sheriff "A bag of {i}cement?!"
+    ed "Yep! We had some leftover from the last house we worked on."
+    ed "Solid enough for a home's foundation, versatile enough for all kinds of other projects."
     hide cement with dissolve
-    sheriff "Great, I can drop this on Copguy's head for leaving me in the bathroom!"
+    sheriff "Great! I can drop this on Copguy's head for {i}leaving{/i} me in the damn {i}bathroom!"
     hide sheriff with moveoutright
+    pause 0.5
+
     ed "I guess it's my go."
     show ed festive flipped at mid_left with moveinleft
-    show melted_ice_cream at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    ed "What the hell? Who brought ice cream? It's all melted!"
+    show gift_richard at manual_pos(0.4, 0.7, 0.5) with moveinbottom
+    ed "What the hell? Who brought Dairy Queen?"
+    ed "This gift's all drippy!"
+    show melted_ice_cream at manual_pos(0.4, 0.7, 0.5)
+    hide gift_richard
+    with dissolve
     #Audio clip of Richard laughing
     play sound sfx_richlaugh
-    pause 3.0
+    pause 1.5
+    ed "{i}Damn it,{/i} Richard! I don't want {i}this!" with vpunch
     hide melted_ice_cream with dissolve
-    ed "Damn it, Richard! I don't want this!"
     hide ed with moveoutright
+    pause 0.5
+
     rich "Well, let's see what I get."
     show rich festive flipped at mid_left with moveinleft
-    show pills at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    rich "Pain pills?"
-    wesley "Wait a minute! Those are mine!"
-    show wesley festive at mid_right with moveinright
-    wesley "I didn't mean to gift that..."
-    wesley "I'm gonna steal those since it's my turn now!"
-    show pills at Move((0.3125, 0.5), (0.7125, 0.5), 2, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    pause 3.0
+    show gift_wesley at manual_pos(0.4, 0.7, 0.5) with moveinbottom
+    pause 0.5
+    show pills at manual_pos(0.4, 0.7, 0.5)
+    hide gift_wesley
+    with dissolve
+    rich "Pain pills?!"
+    wesley "Wait a minute! Those are {i}mine!" with hpunch
+    show wesley festive behind pills at mid_right with moveinright
+    wesley "I didn't mean to gift those!"
+    wesley "Gimme that!"
+    show pills at manual_pos(0.7, 0.7, 0.5) with MoveTransition(0.25)
     hide pills with dissolve
-    hide wesley with moveoutright
-    rich "Hey!"
-    rich "What do I even get now?"
-    rich "There's nothing else I really want here..."
+    show wesley festive flipped at offscreenright with { "master": move }
+    rich "Hey!" with vpunch
+    rich "What do I even {i}get,{/i} then?!"
+    rich "Nobody has anything I'd really want..."
     rich "I guess it's time to open another present."
-    show sunny_d at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    rich "I got Sunny D!"
-    hide sunny_d with dissolve
+
+    show gift_k17 at manual_pos(0.4, 0.7, 0.5) with moveinbottom
+    pause 0.5
+    show sunny_d at manual_pos(0.4, 0.7, 0.5)
+    hide gift_k17
+    with dissolve
+    rich "Hey, I got Sunny D!"
     n "K-17 starts giggling."
+    hide sunny_d with dissolve
     hide rich with moveoutright
+    pause 0.5
+
     k17 "Alright! My go!"
     show k17 flipped at mid_left with moveinleft
-    show fumo at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    pause 1.5
+    show gift_k22 at manual_pos(0.4, 0.7, 0.5) with moveinbottom
+    pause 0.5
+    show fumo at manual_pos(0.4, 0.7, 0.5)
+    hide gift_k22
+    with dissolve
+    pause 0.5
     show k17 disappointed flipped
     k17 "Addy?"
     show k22 disappointed flipped at offscreenleft
-    k22 "Huh?"
-    hide k22
-    hide fumo
-    with easeoutright
-    n "K-22 springs up and steals the gift from K-17, sprinting out of the room."
-    k22 "I'm sorry, I'll be right back!"
-    k17 "What the hay! Now I gotta get another gift!"
+    k22 "Huh?!" with hpunch
+    show k22 flipped at offscreenleft with determination
+    show k22 flipped at left with MoveTransition(0.25)
+    show k22 flipped at offscreenright
+    show fumo at offscreenright
+    with  MoveTransition(0.25)
+    n "K-22 springs up and steals the gift from K-17 before sprinting out of the room!"
+    k22 "I'm sorry! I'll be right back!"
+    show k17 shock flipped
+    k17 "What the hay!" with vpunch
+    k17 "Now I gotta get another gift!"
     show k17 flipped
-    k17 "I'm gonna take the Gravity Falls Commentary!"
+    k17 "I'm gonna take the {i}Gravity Falls{/i} DVD!"
     show copguy festive at mid_right with moveinright
-    show gravity_falls at Move((0.7125, 0.5), (0.3125, 0.5), 2, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    with dissolve
-    pause 3.0
+    show gravity_falls at manual_pos(0.7, 0.7, 0.5) with dissolve
+    show gravity_falls at manual_pos(0.4, 0.7, 0.5) with move
     hide gravity_falls with dissolve
-    show colt at Move((0.7125, 0.5), (0.3125, 0.5), 2, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    with dissolve
-    pause 3.0
+    show colt at manual_pos(0.7, 0.7, 0.5) with dissolve
+    show colt at manual_pos(0.4, 0.7, 0.5) with { "master": move }
+    k17 "... {i}And{/i} the gun."
     hide colt with dissolve
-    k17 "...and the gun."
     hide k17 with moveoutright
+    pause 0.5
+
     show copguy festive at left with move
     show copguy festive flipped with determination
-    copguy "Alright, then I'm taking the Declaration of Independence!"
+    copguy "Alright, then, {i}I'm{/i} taking the Declaration of Independence!"
     show billy festive at center with moveinright
     billy "What the actual fuck?"
-    show doi at Move((0.4, 0.5), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    with dissolve
-    pause 2.0
+    show doi at manual_pos(0.5, 0.7, 0.5) with dissolve
+    show doi at manual_pos(0.2, 0.7, 0.5) with move
+    billy "Stop stealing gifts!" with vpunch
     hide doi with dissolve
-    billy "Stop stealing gifts!"
     hide copguy with moveoutright
+    pause 0.5
+
     show billy festive at mid_left with move
-    billy "Alright, I'll just take the next gift."
-    show adderall at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show billy festive flipped
+    billy "Alright, I'll just take the next gift!"
+    show gift_aria at manual_pos(0.4, 0.7, 0.5) with moveinbottom
+    pause 0.5
+    show adderall at manual_pos(0.4, 0.7, 0.5)
+    hide gift_aria
+    with dissolve
     billy "Adderall?"
-    billy "Nope! I'm done with any kind of drug! Not after last time!"
+    billy "{i}Nope!{/i} I'm done with {i}any{/i} kind of drug! Not after last time!"
     aria "Aw, that was my gift!"
-    aria "You want me to take it?"
-    billy "Yes, please!"
-    show aria festive at mid_right with moveinright
-    show adderall at Move((0.3125, 0.5), (0.7125, 0.5), 2, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    pause 3.0
+    aria "You want me to take it back?"
+    billy "Yes, {i}please!"
+    show aria festive behind adderall at mid_right with moveinright
+    show adderall at manual_pos(0.7, 0.7, 0.5) with move
     hide adderall with dissolve
-    n "Aria steals Billy's gift."
     hide aria with moveoutleft
+
     billy "Awesome! I get to pick another gift!"
-    show peach_syrup at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show gift_michael at manual_pos(0.4, 0.7, 0.5) with moveinbottom
+    pause 0.5
+    show peach_syrup at manual_pos(0.4, 0.7, 0.5)
+    hide gift_michael
+    with dissolve
     if fun_value(FUN_VALUE_RARE):
-        billy "An oil drum full of Peach Syrup!"
-        billy "Now I'll never run out!"
+        billy "An oil drum full of peach syrup!"
+        billy "An {i}incredible{/i} value! I'll {i}never{/i} run out again!"
     else:
         billy "Peach syrup!"
     michael "Noice, you got my gift!"
-    michael "It goes well with about everything!"
+    michael "It goes well with just about anything!"
     hide peach_syrup with dissolve
     billy "I'll keep this one!"
     hide billy with moveoutright
-    michael "Alright, what gift to choose..."
+    pause 0.5
+
+    michael "Right, then. Which gift to choose...?"
     show michael festive at mid_left with moveinleft
-    show ltt_bottle at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    michael "I got a new water bottle!"
-    linus "You got my LTT water bottle!"
-    hide ltt_bottle with dissolve
+    show gift_linus at manual_pos(0.4, 0.7, 0.5) with moveinbottom
+    pause 0.5
+    show ltt_bottle at manual_pos(0.4, 0.7, 0.5)
+    hide gift_linus
+    with dissolve
+    michael "I've gotten a new water bottle!"
+    linus "You got my {i}LTT{/i} water bottle!"
     linus "{a=https://www.lttstore.com}lttstore.com.{/a}"
+    hide ltt_bottle with dissolve
     hide michael with moveoutright
-    linus "Alright, it's my turn."
-    show linus festive at mid_left with moveinleft
-    show ltt_screwdriver at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    pause 0.5
+
+    linus "Alright, my turn."
+    show linus festive flipped at mid_left with moveinleft
+    show gift_luke at manual_pos(0.4, 0.7, 0.5) with moveinbottom
+    pause 0.5
+    show ltt_screwdriver at manual_pos(0.4, 0.7, 0.5)
+    hide gift_luke
+    with dissolve
     linus "Hey, Luke! I got your gift!"
-    luke "Couldn't you tell it was mine?"
+    luke "Couldn't you {i}tell{/i} it was mine?"
+    linus "No? How was I supposed to know that?"
+    luke "You were literally there when I grabbed it from the warehouse..."
     hide ltt_screwdriver with dissolve
-    linus "No, how was I supposed to figure that out?"
     hide linus with moveoutright
+    pause 0.5
+
     luke "Whatever, it's my go now."
     show luke festive flipped at mid_left with moveinleft
     luke "I got..."
-    show monitor at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    show hard_drive at Move((0.3125, 1.0), (0.35, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    luke "A variation of PC components!"
-    blank "Yeah, it's two monitors, a 1TB hard drive, and some other things."
-    blank "I found it on the curb."
-    hide monitor
+    show gift_blank at manual_pos(0.4, 0.7, 0.5) with moveinbottom
+    pause 0.5
+    show monitor as first at manual_pos(0.3, 0.7, 0.5)
+    show monitor as second at manual_pos(0.5, 0.7, 0.5)
+    show hard_drive at manual_pos(0.4, 0.7, 0.5)
+    hide gift_blank
+    with dissolve
+    luke "Some random PC components?"
+    blank "Yeah! It's two monitors, a 1TB hard drive, and some other things."
+    blank "I found them on the curb."
+    luke "On the {i}curb{/i}?"
+    blank "Yeah, all that was just lying there on the curb."
+    luke "Damn! Well, then..."
+    hide monitor as first
+    hide monitor as second
     hide hard_drive
     with dissolve
-    luke "On the {i}curb{/i}?"
-    blank "Yeah, it was just lying there on the curb."
-    luke "Damn, well then..."
     hide luke with moveoutright
+    pause 0.5
+
     blank "It looks like it's my turn next."
     show blank festive flipped at mid_left with moveinleft
-    show gamersupps at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show gift_nova at manual_pos(0.4, 0.7, 0.5) with moveinbottom
+    pause 0.5
+    show gamersupps at manual_pos(0.4, 0.7, 0.5)
+    hide gift_nova
+    with dissolve
     blank "GamerSupps?"
+    n "Blank holds the canister a little closer to read it."
     blank "Guacamole Gamer... Fart... 9000?"
-    nova "Damn it, you got my gift, Blank!"
-    hide gamersupps with dissolve
+    nova "Damn it! You got {i}my{/i} gift, Blank!" with hpunch
     blank "Great."
+    hide gamersupps with dissolve
     hide blank with moveoutright
-    nova "As much as I want to steal that Adderall, I'm gonna pick a gift."
+    pause 0.5
+
+    nova "As much as I want to steal that Adderall, I'm gonna pick an unopened gift."
     show nova flipped at mid_left with moveinleft
+    show gift_eliza at manual_pos(0.4, 0.7, 0.5) with moveinbottom
     nova "Oh boy! I wonder what it is!"
-    show russian_radio at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    nova "What the fuck is? Some World War II radio?"
-    eliza "Yep. Used by the Soviets in the last half of World War II."
+    pause 0.5
+    show russian_radio at manual_pos(0.4, 0.7, 0.5)
+    hide gift_eliza
+    with dissolve
+    nova "What the fuck {i}is{/i} it? Some World War II radio?"
+    eliza "Yep. Used by the Soviets in the latter half of World War II."
+    nova "I'm sure Ges will like this. I'll probably give it to him."
     hide russian_radio with dissolve
-    nova "I'm sure Ges will like this, I'll probably give it to him."
     hide nova with moveoutright
-    eliza "So, it's my turn, let's see what we have..."
+    pause 0.5
+
+    eliza "So, it's my turn. Let's see what we have..."
     show elizabeth at mid_left with moveinleft
-    show dog_food at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show gift_db at manual_pos(0.4, 0.7, 0.5) with moveinbottom
+    pause 0.5
+    show dog_food at manual_pos(0.4, 0.7, 0.5)
+    hide gift_db
+    with dissolve
     eliza "Dog food."
     hide dog_food with dissolve
     eliza "Dog food?"
-    db "Ah yeah, I had a lot extra lying around in my car, so I figured why not?"
+    db "Ah, yeah, I had a lot extra lying around in my car, so I figured, why not?"
     hide elizabeth with moveoutright
+    pause 0.5
+
     db "Well, I guess it's finally my turn."
     show db at mid_left with moveinleft
-    show 1850_coin at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    db "Wow, I got some old coins!"
-    digi "Holy shit, I think those are like, really rare!"
-    digi "Lemme look it up."
+    show gift_grace at manual_pos(0.4, 0.7, 0.5) with moveinbottom
+    pause 0.5
+    show 1850_coin at manual_pos(0.4, 0.7, 0.5)
+    hide gift_grace
+    with dissolve
+    db "Neat, I got some old coins!"
+    digi "Holy shit! I think those are, like, {i}really{/i} rare!"
+    digi "Lemme look these up."
     grace "You got our coins!"
     anne "We had them lying around on the table at home."
     digi "Yeah, those are super rare. I would hold onto those if I were you."
     hide 1850_coin with dissolve
-    arceus "Don't you collect coins, Digi?"
-    digi "Not really, I just collect pennies."
-    arceus "... Why just pennies?"
-    digi "I have like five thousand pennies. One day, when America stops making pennies, they'll go up in value."
+    arceus "Say, don't you collect coins, Digi?"
+    digi "Not really. I just collect pennies."
+    arceus "... Why {i}just{/i} pennies?"
+    digi "I have, like, 5000 pennies. One day, when America stops making pennies, they'll go up in value."
     obama "Why would we stop making pennies?"
     digi "Well, you guys spend 1.6 cents per penny to make them, so you're losing money."
     digi "Canada already stopped making their pennies."
     mean "Well, yeah, that's because Canada's smarter than America."
-    digi "Anywho, one day, when I have five thousand rare coins in a jar, it'll all have been worth it."
-    arceus "Alright..."
-    billy "Antique coins lying around, Tech lying on the curb..."
-    billy "Where the hell do you guys live where you find this kinda shit?"
+    digi "Anywho, one day, when I have 5000 rare coins in a jar, it'll all have been worth it."
+    arceus "Alright, then..."
+    billy "Antique coins lying around, tech lying on the curb..."
+    billy "Where the hell do you guys live where you can just {i}find{/i} this kinda shit?"
     hide db with moveoutright
+    pause 0.5
+
     if d20 == 20:
-        avgn "Alright, well it's my turn!"
-        show avgn at mid_left with moveinleft
-        avgn "Let's do this."
-        show old_shirt at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
-        avgn "This shirt's {i}ass!"
-        cs "Hey! That was my gift!"
+        avgn "Outta my way! {nw}" with hpunch
+        avgn "Outta my way! {fast}It's {i}my{/i} turn!" with hpunch
+        show avgn flipped at mid_left with moveinleft
+        show gift_cs at manual_pos(0.4, 0.7, 0.5) with moveinbottom
+        avgn "Let's do this!"
+        show old_shirt at manual_pos(0.4, 0.7, 0.5)
+        hide gift_cs
+        with dissolve
+        avgn "This shirt is {nw}"
+        avgn "This shirt is {fast}{i}ass!" with vpunch
+        cs "Hey! That was {i}my{/i} gift!"
         avgn "Yeah? Well, you're a poopyhead!"
+        hide old_shirt with dissolve
         hide avgn with moveoutright
-    anne "Well Grace, you wanna pick out the last gift?"
+        pause 0.5
+
+    anne "Well, Grace, you wanna pick out the last gift?"
     show grace at mid_left with moveinleft
     grace "Yippee! The last gift!"
+
     if d20 == 20:
-        show roll_and_rocker at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
-        show rolling_rock at Move((0.3125, 1.0), (0.35, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
+        show gift_avgn at manual_pos(0.4, 0.7, 0.5) with moveinbottom
+        pause 0.5
+        show roll_and_rocker at manual_pos(0.4, 0.7, 0.5)
+        show rolling_rock at manual_pos(0.4, 0.7, 0.5)
+        hide gift_avgn
+        with dissolve
         grace "Ooh! Is this a balance board?"
-        avgn "It's a rolling rock..."
-        avgn "...with a roll and rocker!"
-        grace "Cool!"
+        avgn "It's a Rolling Rock..."
+        avgn "With a roll and rocker!"
         hide roll_and_rocker
         hide rolling_rock
         with dissolve
+        grace "Cool!"
     else:
-        show old_shirt at Move((0.3125, 1.0), (0.3125, 0.5), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
+        show gift_cs at manual_pos(0.4, 0.7, 0.5) with moveinbottom
+        pause 0.5
+        show old_shirt at manual_pos(0.4, 0.7, 0.5)
+        hide gift_cs
+        with dissolve
         grace "I got a cool new t-shirt!"
-        cs "Hey! You finally got my gift!"
-        hide old_shirt with dissolve
-        cs "Not all of my Depop shirts sold, so it became my gift."
-        cs "Does it even fit you?"
+        cs "Nice! Someone finally got my gift!"
+        cs "Not all of my Depop shirts sold, and I think this one is really cool, so, now it's a gift!"
+        cs "Does it fit you okay?"
         n "Grace puts on the shirt."
-        show grace shirt
+        hide old_shirt
+        show grace shirt 
+        with dissolve
         pause 2.0
         grace "Yep!"
+    hide grace with moveoutright
+    pause 0.5
     cs "Woohoo! All of the gifts have been handed out!"
+
+    # TODO: TATE STOPPED EDITING HERE!
 
 # Games/Climax
 label ce_climax:
