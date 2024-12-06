@@ -4439,8 +4439,6 @@ label ce_dinner:
     scene black with dissolve
     pause 0.5
 
-# TODO: this label needs a second pass, mostly for item size/positioning as well as putting items into the item collection. - tate
-
 # Gift Exchange
 label ce_exchange:
     scene cs_living
@@ -4461,7 +4459,7 @@ label ce_exchange:
     pause 0.5
     n "CS brings the bag around to each attendee."
     pause 0.5
-    cs "Let's see, who is going first?"
+    cs "Let's see... who's going first?"
     "..."
 
     #roll 1
@@ -4494,6 +4492,7 @@ label ce_exchange:
     aria "I just assumed, given the rest of the outfit."
     hide cs with moveoutright
     pause 0.5
+    $ collect("thigh_highs")
 
     arceus "Welp, it looks like I'm up next."
     show arceus festive flipped at mid_left with moveinleft
@@ -4511,6 +4510,7 @@ label ce_exchange:
     kitty "You {i}saw{/i} me carry it in, dumbass!"
     hide arceus with moveoutright
     pause 0.5
+    $ collect("tea_and_crumpets")
 
     kitty "Whatever, it's my turn now."
     show kitty festive at mid_left with moveinleft
@@ -4556,6 +4556,8 @@ label ce_exchange:
     show riffmaster at manual_pos(0.35, 0.6, 0.5) with move
     hide riffmaster with dissolve
     hide digi with moveoutright
+    $ collect("riffmaster")
+
     kitty "Damn."
     kitty "Well, what do I do now?"
     cs "You can either steal someone else's gift, or pick out another unopened one."
@@ -4581,6 +4583,7 @@ label ce_exchange:
     hide kitty
     with moveoutright
     pause 0.5
+    $ collect("raspberry_pi")
 
     anno "Welp, I'm picking a new gift, I guess."
     show anno festive at mid_left with move
@@ -4599,6 +4602,7 @@ label ce_exchange:
         tate "We {i}know!" with hpunch
     hide anno with moveoutright
     pause 0.5
+    $ collect("lego_train")
 
     mean "Alright, well, I guess it's my turn."
     show mean human flipped at mid_left with moveinleft
@@ -4617,6 +4621,7 @@ label ce_exchange:
     mean "Who's next?"
     hide mean with moveoutright
     pause 0.5
+    $ collect("instant_pot")
 
     tate "Looks like I'm up."
     show tate sheepish festive at mid_left with moveinleft
@@ -4637,6 +4642,7 @@ label ce_exchange:
     hide handy_switch with dissolve
     hide tate with moveoutright
     pause 0.5
+    $ collect("handy_switch")
 
     billy "Alright! That means it's {i}my{/i} turn!"
     show billy festive flipped at mid_left with moveinleft
@@ -4669,6 +4675,7 @@ label ce_exchange:
     hide mgs1 with dissolve
     hide obama with moveoutright
     pause 0.5
+    $ collect("mgs1")
 
     copguy "It's my turn now."
     show copguy festive flipped at mid_left with moveinleft
@@ -4678,7 +4685,7 @@ label ce_exchange:
         zoom 0.5
     hide gift_sheriff
     with dissolve
-    copguy "Okay, so I got {i}Gravity Falls Season 2: Director's Cut..."
+    copguy "Okay, so I got {i}Gravity Falls, The Complete Series: Collector's Edition..."
     show colt at manual_pos(0.4, 0.7, 0.5) with dissolve:
         zoom 0.5
     copguy "And... boss? Is this your gun?"
@@ -4705,11 +4712,12 @@ label ce_exchange:
     sheriff "Great! I can drop this on Copguy's head for {i}leaving{/i} me in the damn {fast}{i}bathroom!" with vpunch
     hide sheriff with moveoutright
     pause 0.5
+    $ collect("cement")
 
     ed "I guess it's my go."
     show ed festive flipped at mid_left with moveinleft
     show gift_richard at manual_pos(0.4, 0.6, 0.5) with moveinbottom
-    ed "What the hell? Who brought Dairy Queen?"
+    ed "What the hell? Who brought Dairy Queen?!"
     ed "This gift's all drippy!"
     show melted_ice_cream at manual_pos(0.4, 0.6, 0.5):
         zoom 0.5
@@ -4722,6 +4730,7 @@ label ce_exchange:
     hide melted_ice_cream with dissolve
     hide ed with moveoutright
     pause 0.5
+    $ collect("melted_ice_cream")
 
     rich "Well, let's see what I get."
     show rich festive flipped at mid_left with moveinleft
@@ -4743,6 +4752,7 @@ label ce_exchange:
     rich "What do I even {i}get,{/i} then?!"
     rich "Nobody has anything I'd really want..."
     rich "I guess it's time to open another present."
+    $ collect("pills")
 
     show gift_k17 at manual_pos(0.4, 0.7, 0.5) with moveinbottom
     pause 0.5
@@ -4755,6 +4765,7 @@ label ce_exchange:
     hide sunny_d with dissolve
     hide rich with moveoutright
     pause 0.5
+    $ collect("sunny_d")
 
     k17 "Alright! My go!"
     show k17 flipped at mid_left with moveinleft
@@ -4777,6 +4788,8 @@ label ce_exchange:
     k22 "I'm sorry! I'll be right back!" with hpunch
     show k17 shock flipped
     k17 "What the hey?!" with vpunch
+    $ collect("fumo")
+
     k17 "Now, I gotta get another gift!"
     show k17 flipped
     k17 "I'm gonna take the {i}Gravity Falls{/i} DVD!"
@@ -4792,6 +4805,8 @@ label ce_exchange:
     hide colt with dissolve
     hide k17 with moveoutright
     pause 0.5
+    $ collect("gravity_falls")
+    $ collect("colt")
 
     show copguy festive at left with move
     show copguy festive flipped with determination
@@ -4804,6 +4819,7 @@ label ce_exchange:
     hide doi with dissolve
     hide copguy with moveoutright
     pause 0.5
+    $ collect("doi")
 
     show billy festive at mid_left with move
     show billy festive flipped
@@ -4823,6 +4839,7 @@ label ce_exchange:
     show adderall at manual_pos(0.7, 0.6, 0.5) with move
     hide adderall with dissolve
     hide aria with moveoutleft
+    $ collect("adderall")
 
     billy "Awesome! I get to pick another gift!"
     show gift_michael at manual_pos(0.4, 0.6, 0.5) with moveinbottom
@@ -4841,6 +4858,7 @@ label ce_exchange:
     billy "Sounds delicious! I'll keep this one!"
     hide billy with moveoutright
     pause 0.5
+    $ collect("peach_syrup")
 
     michael "Right, then. Which gift to choose...?"
     show michael festive at mid_left with moveinleft
@@ -4856,6 +4874,7 @@ label ce_exchange:
     hide ltt_bottle with dissolve
     hide michael with moveoutright
     pause 0.5
+    $ collect("ltt_bottle")
 
     linus "Alright, my turn."
     show linus festive flipped at mid_left with moveinleft
@@ -4872,6 +4891,7 @@ label ce_exchange:
     hide ltt_screwdriver with dissolve
     hide linus with moveoutright
     pause 0.5
+    $ collect("ltt_screwdriver")
 
     luke "Whatever, it's my go now."
     show luke festive flipped at mid_left with moveinleft
@@ -4896,6 +4916,8 @@ label ce_exchange:
     with dissolve
     hide luke with moveoutright
     pause 0.5
+    $ collect("monitor")
+    $ collect("hard_drive")
 
     blank "It looks like it's my turn next."
     show blank festive flipped at mid_left with moveinleft
@@ -4905,7 +4927,7 @@ label ce_exchange:
         zoom 0.5
     hide gift_nova
     with dissolve
-    blank "GamerSupps?"
+    blank "Gamer Supps?"
     show gamersupps at manual_pos(0.35, 0.65, 0.5) with move
     n "Blank holds the canister a little closer to read it carefully."
     blank "\"Guacamole... Gamer Fart... 9000\"...?"
@@ -4915,6 +4937,7 @@ label ce_exchange:
     hide gamersupps with dissolve
     hide blank with moveoutright
     pause 0.5
+    $ collect("gamersupps")
 
     nova "As much as I want to steal that Adderall, I'm gonna pick an unopened gift."
     show nova flipped at mid_left with moveinleft
@@ -4930,6 +4953,7 @@ label ce_exchange:
     hide russian_radio with dissolve
     hide nova with moveoutright
     pause 0.5
+    $ collect("russian_radio")
 
     eliza "So, it's my turn. Let's see what we have..."
     show elizabeth at mid_left with moveinleft
@@ -4944,6 +4968,7 @@ label ce_exchange:
     db "Ah, yeah, I had a lot extra lying around in my car, so I figured, why not?"
     hide elizabeth with moveoutright
     pause 0.5
+    $ collect("dog_food")
 
     db "Well, I guess it's finally my turn."
     show db at mid_left with moveinleft
@@ -4963,6 +4988,7 @@ label ce_exchange:
     "..."
     digi "Yeah, these are super rare. I would hold onto these if I were you."
     hide 1850_coin with dissolve
+    $ collect("old_coins")
     arceus "Say, don't you collect coins, Digi?"
     show digi flipped
     digi "Not really. I just collect pennies."
@@ -5000,6 +5026,7 @@ label ce_exchange:
         hide old_shirt with dissolve
         hide avgn with moveoutright
         pause 0.5
+        $ collect("old_shirt")
 
     anne "Well, Grace, you wanna pick out the last gift?"
     show grace at mid_left with moveinleft
@@ -5015,11 +5042,13 @@ label ce_exchange:
         with dissolve
         grace "Ooh! Is this a balance board?"
         avgn "It's a Rolling Rock..."
-        avgn "With a roll and rocker!"
+        avgn "With a Roll & Rocker!"
         hide roll_and_rocker
         hide rolling_rock
         with dissolve
         grace "Cool!"
+        $ collect("roll_and_rocker")
+        $ collect("rolling_rock")
     else:
         show gift_cs at manual_pos(0.4, 0.7, 0.5) with moveinbottom
         pause 0.5
@@ -5036,6 +5065,7 @@ label ce_exchange:
         with dissolve
         pause 2.0
         grace "Yep!"
+        $ collect("old_shirt")
     hide grace with moveoutright
     pause 0.5
     cs "Woohoo! All of the gifts have been handed out!"
@@ -5043,6 +5073,7 @@ label ce_exchange:
 
 label ce_preclimax:
     # TODO: This needs cinematography!
+    # TODO: But, there's no script... - Tate
     jump ce_climax
 
     # TODO: TATE STOPPED EDITING HERE!
@@ -5521,11 +5552,12 @@ label ce_win_reversi:
     cs "{i}Don't answer!"
 
     if reversi_difficulty == ReversiAI.TATE:
-        tate "Awawa! Good job, CS."
+        tate "Dang. I thought I had a chance, since it isn't chess."
+        tate "Good game, CS."
     elif reversi_difficulty == ReversiAI.DIGI:
-        digi "Dang, nice going CS!"
+        digi "Dang, nice going, CS!"
     elif reversi_difficulty == ReversiAI.PAKOO:
-        k22 "Oof, good game, CS."
+        k22 "Oof! Good game, CS."
     elif reversi_difficulty == ReversiAI.ARCEUS:
         arceus "Damn, GG!"
     elif reversi_difficulty == ReversiAI.ARIA:
@@ -5533,7 +5565,7 @@ label ce_win_reversi:
         $ achievement_manager.unlock("grandmaster")
     else:
         iris "Ah... who did you play against? {i}[reversi_difficulty.name]{/i}?"
-        iris "They aren't here... or a person... so, uh, good job?"
+        iris "They aren't here... or, a person... so, uh, good job?"
 
     menu:
         "Play Reversi again?"
@@ -5547,7 +5579,7 @@ label ce_lose_reversi:
     stop music
     music end
     scene cs_living2_off_festive
-    show cs worried christmas at mid_left
+    show cs disappointed christmas at mid_left
     show aria festive at mid_offscreen_right
     show reversi_box at mid_left
     show mean human flipped at mid_offscreen_left
@@ -5563,7 +5595,7 @@ label ce_lose_reversi:
     cs "Ah, dang it."
 
     if reversi_difficulty == ReversiAI.TATE:
-        tate "Awawa! I actually won!"
+        tate "Awawa-- wait, I won?"
     elif reversi_difficulty == ReversiAI.DIGI:
         digi "Heck yeah, I won!"
     elif reversi_difficulty == ReversiAI.PAKOO:
@@ -5574,7 +5606,7 @@ label ce_lose_reversi:
         aria "Ah, better luck next time."
     else:
         iris "Ah... who did you play against? {i}[reversi_difficulty.name]{/i}?"
-        iris "They aren't here... or a person... but you lost."
+        iris "They aren't here... or, a person... but, you still lost."
 
     menu:
         "Play Reversi again?"

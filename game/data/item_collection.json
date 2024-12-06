@@ -1,4 +1,12 @@
-{        
+{       
+    "adderall": {
+        "img": "adderall",
+        "name": "Bottle Of Adderall",
+        "owner": "Aria",
+        "desc": "To certain populations, this stuff is worth its weight in gold.",
+        "rarity": "Common",
+        "ce": true
+    },     
     "amtrak_dining_food": {
         "img": "amtrak_dining_food",
         "name": "Enormous Breakfast",
@@ -99,6 +107,14 @@
         "desc": "A winner is you!",
         "rarity": "Uncommon"
     },
+    "cement": {
+        "img": "cement",
+        "name": "Bag Of Cement",
+        "owner": "The Sheriff",
+        "desc": "Just add water!",
+        "rarity": "Common",
+        "ce": true
+    },
     "cheap_shelf": {
         "img": "garage_shelf",
         "name": "Cheap-Ass Garage Shelf",
@@ -113,6 +129,14 @@
         "owner": "CS",
         "desc": "One of many random fucking things CS keeps... somewhere. These are probably stale as hell.",
         "rarity": "Uncommon"
+    },
+    "colt": {
+        "img": "colt",
+        "name": "Colt .45 Pistol",
+        "owner": "K-17",
+        "desc": "The now-retired Sheriff secretly just wanted his trusted side-arm to go to someone who would appreciate it.",
+        "rarity": "Common",
+        "ce": true
     },
     "cool_crab": {
         "img": "cool_crab",
@@ -236,6 +260,22 @@
         "desc": "One of many random fucking things CS keeps... somewhere. Her name is Fluffy and she loves hot dogs.",
         "rarity": "Uncommon"
     },
+    "dog_food": {
+        "img": "dog_food",
+        "name": "Bag Of Dog Food",
+        "owner": "Eliza",
+        "desc": "But, why would you bring dog food to a gift exchange...?",
+        "rarity": "Common",
+        "ce": true
+    },
+    "doi": {
+        "img": "doi",
+        "name": "Declaration Of Independence",
+        "owner": "Copguy",
+        "desc": "Wait, how the hell is the president allowed to just {i}give{/i} this away?!",
+        "rarity": "Common",
+        "ce": true
+    },
     "donut_1": {
         "img": "donut_1",
         "name": "Chocolate Glazed Donut",
@@ -287,6 +327,7 @@
         "name": "Festive Bag",
         "owner": "CS",
         "desc": "One of many seasonal items CS picked up at Michael's.",
+        "rarity": "Common",
         "ce": true
     },
     "flexcake": {
@@ -297,6 +338,14 @@
         "rarity": "Common",
         "dx": true
     },
+    "fumo": {
+        "img": "fumo",
+        "name": "Addy Fumo?",
+        "owner": "???",
+        "desc": "Who {i}made{/i} this?",
+        "rarity": "Common",
+        "ce": true
+    },
     "gamebarrel": {
         "img": "gamebarrel",
         "name": "Barrel Of Toxic Game Boys",
@@ -304,6 +353,14 @@
         "desc": "Be not tempted by the retro games. Your skin will melt off.",
         "rarity": "Legendary",
         "dx": true
+    },
+    "gamersupps": {
+        "img": "gamersupps",
+        "name": "Canister of Gamer Supps",
+        "owner": "CS",
+        "desc": "If you're not into \"Guacamole Gamer Fart 9000\", Gamer Supps offers a wide variety of other delightful flavors, including \"Titty Milk\" and \"Grandpa's Ashes\" {a=https://gamersupps.gg/collections/caffeine-free}(yes, {i}really){/a}.{/i}",
+        "rarity": "Common",
+        "ce": true
     },
     "genergy": {
         "img": "genergy",
@@ -313,6 +370,14 @@
         "rarity": "Common",
         "dx": true
     },
+    "gravity_falls": {
+        "img": "gravity_falls",
+        "name": "{i}Gravity Falls{/i} DVD",
+        "owner": "K-17",
+        "desc": "{i}Collector's Edition.",
+        "rarity": "Common",
+        "ce": true
+    },
     "hair_dryer": {
         "img": "hair_dryer",
         "name": "Hair Dryer",
@@ -320,12 +385,36 @@
         "desc": "Don't listen to ChatGPT. This is {i}not{/i} actually a viable PC cooling solution. Even if it was, would you {i}really{/i} want to do this?!",
         "rarity": "Rare"
     },
+    "handy_switch": {
+        "img": "handy_switch",
+        "name": "Handy Switch",
+        "owner": "Tate",
+        "desc": "While advertised as a convenient-to-place light switch, if you put electrical tape over the light sensor, you can use it for anything that'll plug into a wall.",
+        "rarity": "Common",
+        "ce": true
+    },
+    "hard_drive": {
+        "img": "hard_drive",
+        "name": "1TB Hard Drive",
+        "owner": "Luke",
+        "desc": "Plug random hard drives into your PC at your own risk.",
+        "rarity": "Common",
+        "ce": true
+    },
     "horse_mask": {
         "img": "horse_mask",
         "name": "Horse Head Mask",
         "owner": "CS",
         "desc": "One of many random fucking things CS keeps... somewhere. Fun fact: Tate {i}hates{/i} this thing.",
         "rarity": "Uncommon"
+    },
+    "instant_pot": {
+        "img": "instant_pot",
+        "name": "Instant Pot",
+        "owner": "Mean",
+        "desc": "An ideal gift for anyone who loves cooking but {i}hates{/i} standing over a stovetop.",
+        "rarity": "Common",
+        "ce": true
     },
     "joj_ufo": {
         "img": "/minigames/car/joj_ufo.png",
@@ -350,6 +439,14 @@
         "rarity": "Uncommon",
         "dx": true
     },
+    "lego_train": {
+        "img": "lego_train",
+        "name": "Lego Train Set",
+        "owner": "Anno",
+        "desc": "Mean was {i}very{/i} tempted to keep this for himself...",
+        "rarity": "Common",
+        "ce": true
+    },
     "lights_box": {
         "img": "lights_box",
         "name": "Box Of Christmas Lights",
@@ -366,6 +463,14 @@
         "rarity": "Uncommon",
         "dx": true
     },
+    "ltt_bottle": {
+        "img": "ltt_bottle",
+        "name": "LTT Water Bottle",
+        "owner": "Michael Rosen",
+        "desc": "This particular bottle boasts a colorway that has since been discontinued. {a=https://lttstore.com}lttstore.com{/a} {size=-24}(not sponsored){/size}",
+        "rarity": "Uncommon",
+        "ce": true
+    },
     "ltt_bottle_linus": {
         "img": "ltt_bottle_linus",
         "name": "LTT Water Bottle",
@@ -374,12 +479,28 @@
         "rarity": "Common",
         "dx": true
     },
+    "ltt_screwdriver": {
+        "img": "ltt_screwdriver",
+        "name": "LTT Screwdriver",
+        "owner": "Linus",
+        "desc": "This collaborative effort with Megapro promises to deliver a top-of-the-line screwdriving experience. {a=https://lttstore.com}lttstore.com{/a} {size=-24}(not sponsored){/size}",
+        "rarity": "Common",
+        "ce": true
+    },
     "m4": {
         "img": "m4",
         "name": "M4 Rifle",
         "owner": "Pakoo",
         "desc": "Borrowed by CS to take on Copguy and his corrupt crew.",
         "rarity": "Common"
+    },
+    "melted_ice_cream": {
+        "img": "melted_ice_cream",
+        "name": "Melted Ice Cream",
+        "owner": "Nobody",
+        "desc": "{i}Why?",
+        "rarity": "Common",
+        "ce": true
     },
     "mean_hat": {
         "img": "mean_hat",
@@ -389,11 +510,43 @@
         "rarity": "1 of 1",
         "dx": true
     },
+    "mgs1": {
+        "img": "mgs1",
+        "name": "{i}Metal Gear Solid",
+        "owner": "President Obama",
+        "desc": "The 1998 title that spawned a now-million-dollar franchise.",
+        "rarity": "Common",
+        "ce": true
+    },
+    "monitor": {
+        "img": "monitor",
+        "name": "Random Monitor",
+        "owner": "Luke",
+        "desc": "One man's trash...",
+        "rarity": "Common",
+        "ce": true
+    },
     "nog": {
         "img": "nog",
         "name": "Bottle Of Eggnog",
         "owner": "CS",
         "desc": "While the exact origins of the drink are debated, most historians agree that eggnog originated in medieval Britain.",
+        "rarity": "Common",
+        "ce": true
+    },
+    "old_coins": {
+        "img": "1850_coin",
+        "name": "Old Coins",
+        "owner": "DB05",
+        "desc": "These appear to have been minted in 1850.",
+        "rarity": "Rare",
+        "ce": true
+    },
+    "old_shirt": {
+        "img": "old_shirt",
+        "name": "Old T-Shirt",
+        "owner": "Grace...?",
+        "desc": "A leftover shirt from CS' closet cleanout Depop sale.",
         "rarity": "Common",
         "ce": true
     },
@@ -403,6 +556,22 @@
         "owner": "CS",
         "desc": "Won by CS while at PencilCon, but is it even real gold?",
         "rarity": "Uncommon"
+    },
+    "peach_syrup": {
+        "img": "peach_syrup",
+        "name": "Can Of Peach Syrup",
+        "owner": "Billy Mays",
+        "desc": "Try spreading it on toast or crumpets!",
+        "rarity": "Common",
+        "ce": true
+    },  
+    "pills": {
+        "img": "pills",
+        "name": "Bottle Of Pain Pills",
+        "owner": "Wesley",
+        "desc": "Always remember to keep track of all of your prescription medications.",
+        "rarity": "Common",
+        "ce": true
     },
     "pie": {
         "img": "pie",
@@ -458,6 +627,14 @@
         "rarity": "Common",
         "dx": true
     },
+    "raspberry_pi": {
+        "img": "raspberry_pi",
+        "name": "Raspberry Pi",
+        "owner": "Arceus",
+        "desc": "A palm-sized processing powerhouse.",
+        "rarity": "Common",
+        "ce": true
+    },
     "renault": {
         "img": "renault",
         "name": "Renault 5E",
@@ -466,6 +643,30 @@
         "rarity": "Epic",
         "dx": true
     },
+    "riffmaster": {
+        "img": "riffmaster",
+        "name": "Riffmaster",
+        "owner": "Digi",
+        "desc": "A highly sought-after controller for rhythm game enthusiasts.",
+        "rarity": "Common",
+        "ce": true
+    },
+    "roll_and_rocker": {
+        "img": "roll_and_rocker",
+        "name": "Roll & Rocker",
+        "owner": "Grace",
+        "desc": "An obscure NES accessory that is better off left in the past.",
+        "rarity": "Rare",
+        "ce": true
+    },
+    "rolling_rock": {
+        "img": "rolling_rock",
+        "name": "Bottle Of Rolling Rock",
+        "owner": "Grace",
+        "desc": "A Pennsylvania classic since 1939. Well, until it was bought out in 2006, anyway. {a=https://en.wikipedia.org/wiki/Rolling_Rock}(Source){/a}",
+        "rarity": "Rare",
+        "ce": true
+    },
     "rosen_phone": {
         "img": "rosen_phone",
         "name": "Michael's Phone",
@@ -473,6 +674,14 @@
         "desc": "It makes sense for an older gentleman to prefer a landline.",
         "rarity": "Common",
         "dx": true
+    },
+    "russian_radio": {
+        "img": "russian_radio",
+        "name": "Soviet Radio",
+        "owner": "Nova",
+        "desc": "A relic of a great and terrible war.",
+        "rarity": "Uncommon",
+        "ce": true
     },
     "sansbrick": {
         "img": "sansbrick",
@@ -529,6 +738,14 @@
         "rarity": "Common",
         "ce": true
     },
+    "sunny_d": {
+        "img": "sunny_d",
+        "name": "Bottle Of Sunny D",
+        "owner": "Rich",
+        "desc": "Don't drink too much of this, or you'll start looking like a {a=https://web.archive.org/web/20071213095714/http://news.bbc.co.uk/1/hi/wales/578945.stm}{i}Simpsons{/i} character.{/a}.",
+        "rarity": "Common",
+        "ce": true
+    },
     "switch": {
         "img": "switch",
         "name": "Nintendo Switch",
@@ -559,6 +776,22 @@
         "owner": "CS",
         "desc": "There is something peculiar about these...\n\nHey, does anyone else hear screaming?",
         "rarity": "Legendary",
+        "ce": true
+    },
+    "tea_and_crumpets": {
+        "img": "tea_and_crumpets",
+        "name": "Tea And Crumpets",
+        "owner": "Arceus and Kitty",
+        "desc": "For a great British teatime!",
+        "rarity": "Common",
+        "ce": true
+    },
+    "thigh_highs": {
+        "img": "thigh_highs",
+        "name": "Thigh-High Socks",
+        "owner": "CS",
+        "desc": "For warm legs without the movement restrictions of pants, nothing beats a nice pair of programming socks.",
+        "rarity": "Common",
         "ce": true
     },
     "tims_dozen": {
