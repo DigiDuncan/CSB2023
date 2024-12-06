@@ -6363,9 +6363,10 @@ label ce_epilogue:
     show billycar3 at Move((0.0, -0.25), (-1.25, -0.5), 10, repeat=False, bounce=False, xanchor="left", yanchor="top") with dissolve
     billy "Lemme check the back seat...{w=9}{nw}"
     window hide
+    # Pan over shot of the schematic for the Billy pot
     show christmas_finisher with dissolve
     pause
     if persistent.saved_christmas == False:
         $ persistent.saved_christmas = True
         call screen special_unlock("That strange die has moved to Extras?! The D20 Viewer has been unlocked!")
-    # Pan over shot of the schematic for the Billy pot
+
