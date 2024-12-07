@@ -137,7 +137,9 @@ screen reversigame():
 label play_reversigame:
     window hide
     $ quick_menu = False
+    play music ce_passport volume 0.75 if_changed
     call screen reversigame
+    stop music
     $ quick_menu = True
     window show
 

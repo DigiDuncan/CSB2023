@@ -1169,6 +1169,13 @@
             "album_art": "csbi.png",
             "trivia": "Whenever you put a compass near the jukebox with this song playing, it points up. Great for secret worlds!"
         },
+        "ce_passport" : {
+            "file": "cepassport.ogg",
+            "title": "Christmas Passport",
+            "artist": "Pakoo",
+            "tags": ["CSBIII DX: Holiday Special", "New In DX"],
+            "album_art": "csbi.png"
+        },
         "snowdin_town" : {
             "file": "snowdin_town.ogg",
             "title": "Snowdin Town",
