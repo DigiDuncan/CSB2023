@@ -5071,104 +5071,119 @@ label ce_exchange:
     cs "Woohoo! All of the gifts have been handed out!"
     jump ce_preclimax
 
+    # TODO: TATE STOPPED EDITING HERE! 1/2
+
 label ce_preclimax:
     # TODO: This needs cinematography!
     # TODO: But, there's no script... - Tate
     jump ce_climax
 
-    # TODO: TATE STOPPED EDITING HERE!
+    # TODO: TATE RESUMED EDITING HERE!
 
 # Games/Climax
 label ce_climax:
     scene black with dissolve
     stop music fadeout 3.0
     music end
-    n "After all of the gifts have been given out, almost everyone has come to the conclusion that the party should end."
+    n "After all of the gifts have been given out, almost everyone starts to feel that the party should come to a close."
     scene cs_living
     show cs christmas at left
-    show k22 at mid_right
-    show k17 at mid_offscreen_right
-    show luke festive at center
-    show tate festive at mid_left behind cs
-    show mean human flipped at mid_offscreen_left behind cs
+    show tate festive flipped at mid_right
+    show luke festive at right
+    show k22 at center
+    show k17 at mid_mid_right
+    show mean human at mid_offscreen_right behind cs
     with dissolve
-    k22 "Well, CS, this was wonderful, but we should get going."
+    k22 "Well, CS, this was wonderful, but, we should really get going."
+    show cs worried christmas
     cs "Wait! You aren't gonna stay for the games?"
     show k22 angry
-    k22 "SHHHDADA--{w=1.0}{nw}"
+    k22 "SHHHDADA--{w=0.25}{nw}" with vpunch
     show k17 happy
-    k17 "We're doing games? Well, that's the best part!"
+    k17 "We're doing {i}games?!{/i}" with vpunch
+    k17 "Wait, that's the best part!"
     show cs disappointed christmas
-    show tate sheepish festive
-    k22 "{size=-12}Damn it!"
+    show tate sheepish festive flipped
+    k22 "{size=-12}Damn it!" with vpunch
     show k22 disappointed
     show k17 disappointed
     show cs angry christmas
-    cs "So, you never wanted to stay! You only came here because of him!"
-    nova "Well, I'm also leaving, because {i}this{/i} asshole won't let me play any {i}good{/i} music!"
-    blank "Hah! Says you! {i}You{/i} wanted to play your trash for the entire party!"
-    digi "Hey, wait a second! Luke!"
-    luke "Wha? Oh, shit!"
-    show tate sad festive
-    digi "You were... streaming movies to the projector from your phone?"
-    show mean human annoyed flipped
-    luke "Look, this looked too complicated to set up anyway, so I wanted to make it feel like your plan worked!"
+    cs "So, you never actually {i}wanted{/i} to stay! You only came here because of {i}him!" # TODO: yeah, lmao, that's KINDA what was said on line 2748. this line needs rewritten. CS ain't THAT slow on the uptake.
+    nova "Well, I'm {i}also{/i} leaving, because {i}this{/i} asshole won't let me play any {i}good{/i} music!" with hpunch
+    blank "Hah! Says you! {i}You{/i} just wanted to play {i}your{/i} trash for the entire party!" with hpunch
+    digi "Hey, wait a second! Luke!" with hpunch
+    luke "Wha--? Oh, {i}shit."
+    show tate sad festive flipped
+    digi "You were... streaming movies to the projector from your {i}phone?!"
+    show mean human annoyed
+    luke "Look, this looked too complicated to set up, and I just wanted to enjoy the party! I just did it to make it feel like your plan worked!"
     digi "But, but..."
     digi "I really thought I could set it up this time..."
-    sheriff "Hey, Copguy! I need to go to the bathroom again!"
-    copguy "Motherfucker! Do it yourself!"
+    sheriff "Hey, Copguy! I need to go to the bathroom again!" with hpunch
+    copguy "Motherfucker! Do it {i}yourself!" with hpunch
     ed "My poor turkey..."
-    michael "I think I'm gonna puke."
-    wesley "Arghh! My back! CS you prick, this is your fault!"
-    grace "Guys! Stop yelling!"
-    show tate srs festive
-    tate "Yeah guys! Get it together!"
-    nova "No! Fuck you!"
-    show mean human angry flipped
-    anne "Hey!"
-    mean "What'd you say, you little {i}fuck?"
-    arceus "Oh, my God, this is hurting my head..."
+    michael "I think I'm going to puke."
+    wesley "Arghh! My {i}back!" with hpunch
+    wesley "CS, you prick, this is {nw}"
+    wesley "CS, you prick, this is {fast}{i}your{/i} fault!" with hpunch
+    grace "Guys! Stop yelling!" with hpunch
+    show tate sheepish festive flipped
+    tate "Y'all, please, let's get it together..."
+    show tate cry festive flipped
+    nova "{i}No!{/i} Fuck you!" with hpunch
+    show mean human angry
+    anne "Hey!" with hpunch
+    mean "What'd you say, you little {nw}"
+    mean "What'd you say, you little {fast}{i}fuck?" with hpunch
+    arceus "Oh, my God, this is hurting my {i}head..."
     show cs pissed christmas
-    cs "Damn it, everyone! Shut the fuck u--{w=2.0}{nw}"
+    cs "Damn it, everyone!" with vpunch
+    cs "Shut the {i}fuck{/i} u--{nw}" with vpunch
 
+# TODO: uncomment this when cinematography pass is complete. I just need to be able to see - tate
 # Lights out
-screen flashlight_demo:
-    layer "flashlight"
-    add Flashlight()
+# screen flashlight_demo:
+    # layer "flashlight"
+    # add Flashlight()
 
 label ce_lights_out:
     play sound sfx_power_out
     $ mouse_visible = False
-    scene black
+    scene black with Dissolve(0.1)
     stop music
     music end
     pause 0.2
     $ achievement_manager.unlock("power_off")
+    pause 3.8
     sheriff "Hey, uh..."
     sheriff "I think I have finally become blind."
-    linus "I think all of our eyes went out."
-    cs "No! This can't be happening!"
-    cs "My party is ruined!"
-    tate "CS, this isn't your fault."
+    linus "I think {i}all{/i} of our eyes went out."
+    cs "{i}No!{/i} This {i}can't{/i} be happening!" with vpunch
+    cs "My party is {i}ruined!"
+    tate "CS, this isn't your fault..."
     cs "Everyone is fighting, and no one is having fun!"
     nova "Well, yeah, but, at least I don't have to listen to Blank's shitty music anymore."
     tate "{i}Can it!" with hpunch
-    tate "Look, we need to stop the arguing and calm down!"
-    billy "I am calm!"
+    tate "Listen! We all need to stop the arguing and calm down!"
+    billy "I {i}am{/i} calm!"
     aria "I am clam."
-    cs "Okay, I'm trying to relax...{w=0.5} and think..."
-    cs "Let me feel my way to the basement, and try to check the breaker."
+    cs "Okay, I'm trying to relax... and think..."
+    cs "Let me feel my way to the basement, and I'll try to check the breaker."
     cs "I'll be right back."
-    play sound sfx_bump
     pause 0.5
-    k17 "Oof!"
+    play sound sfx_bump
+    with vpunch
+    k17 "{i}Oof!"
     cs "Sorry!"
+    pause 1.0
     arceus "CS? Is that you?"
-    cs "Hey, Arc. I'm making my way to the breaker to see if I can turn it on."
-    arceus "Great. If you find Kitty, lemme know, I don't know where she went."
-    arceus "I think she wanted to get extra food, but it's been 20 minutes since then."
-    cs "Alright, I'll let you know."
+    cs "Hey, Arc. I'm making my way to the breaker to try to get the power back on."
+    arceus "Great. If you find Kitty, lemme know. I don't know where she went."
+    arceus "She said she was going to grab more food, but it's been 20 minutes since..."
+    cs "Sure thing. I'll let you know."
+    pause 2.0
     cs "The door to the basement should be here somewhere..."
+    pause 0.5
     n "CS feels around the wall."
     n "Finally he finds the doorknob."
     cs "A-ha!"
@@ -5176,13 +5191,13 @@ label ce_lights_out:
         cs "Huh, why is my doorknob..."
         cs "Squeezable?"
         n "CS turns the doorknob."
-        n "All of a sudden, CS gets kicked to the ground!"
         play sound sfx_hitbod3
-        cs "Ow!"
+        n "All of a sudden, CS gets kicked to the ground!" with vpunch
+        cs "Ow!" 
         cs "What the fuck was {i}that?!"
         eliza "Oops, sorry."
         eliza "You grabbed my... chest."
-        cs "Oh, crap! I'm so sorry!"
+        cs "Oh, {i}crap!{/i} I'm so sorry!" with vpunch
         eliza "It's okay! None of us can see!"
         cs "I'm just trying to get to the basement! I think you're in front of the door!"
         eliza "Let me just move out of the way."
@@ -5190,98 +5205,177 @@ label ce_lights_out:
     else:
         cs "Why is my doorknob so big?"
         n "CS turns the doorknob."
-        grace "{i}Ahhhhh!"
-        grace "You're squeezing my head!"
+        grace "{i}AHHHH!" with vpunch
+        grace "You're squeezing my {i}head!" with vpunch
         cs "Oops, sorry!"
-        cs "I'm trying to get to the basement."
+        cs "I'm just trying to get to the basement!"
         grace "Let me move before you try breaking my head again."
-    n "Slowly but surely, CS makes his way into the basement."
-    cs "Alright, I just need to find the breaker."
-    n "CS feels around, and manages to find a flashlight on a table."
+    pause 0.5
+    play sound sfx_house_door_open
+    pause 1.0
+    n "Slowly but surely, CS carefully makes his way down the stairs."
+    pause 1.0
+    cs "Alright, now, I just need to find the breaker..."
+    pause 0.5
+    n "CS feels around and manages to pick up a flashlight from the table."
+
     scene cs_basement
     show cs christmas at center
+    show flashlight_held at manual_pos(0.5, 0.7, 0.5):
+         zoom 0.5
+    $ collect("flashlight_held")
     play sound sfx_flashlight_on
     show screen flashlight_demo
-    cs "Thank God, I can actually see."
-    hide cs with moveoutright
+    cs "Thank God, I can actually see..."
+    pause 0.5
+    hide cs 
+    hide flashlight_held
+    with moveoutright
+
     scene breakerbox with dissolve
-    show cs christmas at left with moveinleft
+    show cs christmas at left
+    show flashlight_held at manual_pos(0.2, 0.7, 0.5):
+         zoom 0.5
+    with moveinleft
     cs "Found it!"
+    show cs christmas at right
+    show flashlight_held at manual_pos(0.8, 0.7, 0.5)
+    with move
+    show cs christmas flipped
+    show flashlight_held flipped
+    with determination
+    pause 0.5
+    # TODO: squeaky door open
     n "CS opens the breaker and flicks off and on the switches."
     play sound sfx_breaker
     pause 1.5
-    show cs disappointed christmas
-    cs "Damn, nothing."
+    play sound sfx_breaker
+    pause 0.5
+    play sound sfx_breaker
+    show cs disappointed christmas flipped
+    pause 1.0
+    cs "Damn, nothing..."
+    cs "The power must be out to the whole neighborhood, then."
     show cs christmas flipped
     cs "Well, it was worth a try."
-    hide cs with moveoutleft
+    hide cs
+    hide flashlight_held
+    with moveoutleft
+    pause 1.0
+
     scene cs_basement
     show cs christmas at center
+    show flashlight_held at manual_pos(0.5, 0.7, 0.5):
+         zoom 0.5
     show kitty festive at left
     with dissolve
     cs "At least I have this flashlight now!"
     show cs christmas flipped
-    n "As CS turns around, he spots Kitty chilling against the wall."
-    play music synchronicity
+    show flashlight_held flipped
+    n "As CS turns around, he spots Kitty leaning against the wall."
+    play music synchronicity if_changed
     music synchronicity
-    cs "Kitty? What are you doing down here? Arceus is looking for you!"
-    kitty "Sorry... I got a bad migraine during the end of the party, so I tried to find the quietest place in the house."
-    kitty "I'm a little glad the power went out, actually. It's been peaceful here."
-    cs "I was trying to fix the breaker, but, no dice."
+    show cs disappointed christmas flipped
+    cs "Kitty? What are you doing down here? Arceus was looking all over for you!"
+    kitty "Sorry... I started getting a bad migraine towards the end of the party, so I tried to find the quietest place in the house."
+    kitty "I'm a little glad the power went out, honestly. It's been peaceful here."
+    cs "Ah... I was just trying to fix the breaker, but, no dice."
     kitty "I think the power is out everywhere. I heard the wind really pick up outside a little while ago."
     kitty "You should probably go check for yourself."
-    kitty "Could you please let Arcie know I'm down here? I think I'm gonna stay here for a bit."
+    kitty "Could you please let Arcie know I'm down here? I think I'm gonna stay here a bit longer."
     cs "Sure thing. Stay safe."
-    show cs christmas with determination
-    hide cs with moveoutright
-    n "CS rushes back upstairs."
+    show cs disappointed christmas
+    show flashlight_held
+    with determination
+    show cs disappointed christmas at right
+    show flashlight_held at manual_pos(0.8, 0.7, 0.5)
+    with move
+    pause 0.5
+    hide cs
+    hide flashlight_held
+    with dissolve
+    n "CS heads back upstairs."
+    pause 0.5
+
     scene cs_hallway_off
     show arceus festive at center
     show elizabeth at right
     with dissolve
-    show cs christmas at left with moveinleft
-    arceus "Welcome back! Assuming you didn't get the power working?"
+    pause 0.5
+    show cs disappointed christmas at left 
+    show flashlight_held at manual_pos(0.2, 0.7, 0.5):
+         zoom 0.5
+    with moveinleft
+    arceus "Welcome back!"
+    arceus "Assuming you didn't get the power working?"
+    show cs christmas
     cs "Nope, but I found Kitty!"
     cs "She's relaxing in the basement since her head was hurting."
-    arceus "That makes sense, I'll go talk to her here soon."
+    arceus "That makes sense. I'll go talk to her here soon."
     eliza "I see you found a torch."
-    cs "Yeah, it was lying around downstairs, I'm lucky I found one."
+    cs "Yeah, it was just sitting on a table downstairs. I'm so thankful it was there."
     show arceus festive flipped
-    eliza "I was thinking of lending mine to Arceus, so he can go in the basement."
+    eliza "Arceus, would you like to borrow mine, so you can go be with Kitty?"
     arceus "I would appreciate it."
-    show elizabeth at mid_right
-    eliza "Take this, but make sure to bring it back when the power turns on."
+    show elizabeth at mid_right with move
+    show flashlight_held flipped as second at manual_pos(0.7, 0.7, 0.5):
+        zoom 0.5
+    with dissolve
+    eliza "Just make sure to bring it back when the lights come on."
     arceus "Got it."
-    show arceus festive with determination
-    hide arceus with moveoutleft
-    eliza "Before you go, CS, I would see if you can check the outdoors."
-    eliza "Even though it is dark in here, no light is coming in from outside."
-    eliza "It also sounds terrible out there."
-    show cs disappointed christmas
-    eliza "I've experienced some harsh Soviet winters, but I've never dealt with anything this bad before."
+    show flashlight_held flipped as second at manual_pos(0.5, 0.7, 0.5) behind cs with move
+    arceus "Thanks!"
+    pause 0.5
+    show arceus festive
+    with determination
+    hide arceus
+    hide flashlight_held as second
+    with moveoutleft
+    pause 1.0
+    eliza "Before you go, CS, if you can, I think you should check outdoors."
+    eliza "Even though it's dark in here, no light is coming in from outside."
+    eliza "It also sounds {i}terrible{/i} out there."
+    eliza "I've experienced some harsh Soviet winters, but I've never dealt with anything {i}this{/i} bad before."
+    show cs worried christmas
     cs "Well, that's some {i}awesome{/i} news..."
-    cs "I'll go check on others, and see if I can get outside."
-    hide cs with moveoutright
+    show cs disappointed christmas
+    cs "I'll go check on the others, then I'll see if I can get outside."
+    hide cs
+    hide flashlight_held
+    with moveoutright
+    pause 0.5
+
     scene cs_foyer_off_festive
     show anno festive at mid_left
-    show aria festive at mid_mid_left behind anno
+    show aria festive at mid_right behind anno
+    show mean human annoyed at mid_offscreen_right
+    show tate sad festive flipped at right
     show digi sad at mid_mid_left
     show k17 disappointed at center behind digi
     show k22 disappointed at mid_mid_right
-    show tate srs festive flipped at mid_right
-    show mean human annoyed at mid_offscreen_right
+
     with dissolve
-    show cs christmas at left with moveinleft
+    pause 0.5
+    show cs disappointed christmas at left 
+    show flashlight_held at manual_pos(0.2, 0.7, 0.5):
+         zoom 0.5
+    with moveinleft
     cs "Hey guys! How is everyone holding up?"
-    anno "It's getting kinda cold, so I hope the power comes back soon."
-    anno "My phone is about to die."
+    tate "It's getting kinda cold..."
+    anno "My phone's about to die."
     cs "I'm gonna check outside and see how bad it is."
-    k22 "I was gonna try that, but I couldn't find the door."
-    cs "If we get outside, we might be able to dig our vehicles out."
-    cs "I'll go take a look."
-    hide cs with moveoutright
+    k22 "Oh, yeah. I was thinking about trying the same thing, but, I couldn't find the door."
+    cs "If we can get outside, we might be able to dig our vehicles out."
+    cs "I'll be back in a sec."
+    hide cs
+    hide flashlight_held
+    with moveoutright
     anno "Good luck, CS!"
     scene black with dissolve
+    pause 0.5
+
+    # TODO: TATE STOPPED EDITING HERE! 2/2
+
     n "CS pulls and yanks open the door, until it finally rips open."
     play sound sfx_house_door_slam
     scene cs_door

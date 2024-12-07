@@ -330,6 +330,14 @@
         "rarity": "Common",
         "ce": true
     },
+    "flashlight_held": {
+        "img": "flashlight_held",
+        "name": "Flashlight",
+        "owner": "CS",
+        "desc": "A very important part of any emergency kit.",
+        "rarity": "Common",
+        "ce": true
+    },
     "flexcake": {
         "img": "flexcake",
         "name": "Flex Cake",
