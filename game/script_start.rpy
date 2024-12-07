@@ -2311,20 +2311,19 @@ image cs_car_inside_snow = "bg/car_inside_snow.png"
 # CS Holiday Special Generated Images
 image spent_target = Text("{size=50}{color=#369100}-$81.88", text_align=0.5)
 
-# TODO: PLEASE MAKE THESE RULES ACTUALLY UHHH ABLE TO BE PARSED BY THE AVERAGE HUMAN BRAIN?? - tate
 image reversi_rules:
     xsize 1500
-    ysize 700
+    ysize 500
     xanchor 0.5
     yanchor 0.5
     contains:
         Frame("gui/frame.png")
     contains:
-        Text("{size=+12}Reversi!", xalign=0.5, yalign=0.0125)
+        Text("{size=+16}Reversi!", xalign=0.5, yalign=0.075)
     contains:
-        Text("• Each piece played must be laid adjacent to an opponent's piece so that the opponent's piece or a row of opponent's pieces is flanked by the new piece and another piece of the player's color. All of the opponent's pieces between these two pieces are 'captured' and turned over to match the player's color.\n• It can happen that a piece is played so that pieces or rows of pieces in more than one direction are trapped between the new piece played and other pieces of the same color. In this case, all the pieces in all viable directions are turned over.\n• The game is over when neither player has a legal move (i.e. a move that captures at least one opposing piece) or when the board is full.", xalign=0.5, yalign=0.5, xmaximum=1350)
+        Null(xysize=(100,100))
     contains:
-        Text("{size=-12}{a=https://www.mastersofgames.com/rules/reversi-othello-rules.htm}https://www.mastersofgames.com/rules/reversi-othello-rules.htm", xalign=0.975, yalign=0.975)
+        Text("• Each player places down one piece per turn.\n• The goal is to capture your opponent's pieces by trapping them in between your own pieces on the board. \n• A legal move will capture at least one of your opponent's pieces. Depending on placement, you can capture entire rows in any direction on the grid.\n• The game ends when either the board is full or there are no legal moves left.\n• Whoever controls the most pieces at the end wins!", xanchor=0.5, yanchor=1.0, xalign=0.5, yalign=0.925, xmaximum=1450)
 
 # CS wacky Kuwait Adventures: Mika Edition (Deluxe Content [With Funky Kong {And Dante from Devil may Cry}])
 image kuwait_lieutenant_snow = "characters/kuwait_lieutenant_snow.png"
