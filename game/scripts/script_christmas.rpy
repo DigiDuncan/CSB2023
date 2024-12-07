@@ -6298,6 +6298,7 @@ label ce_roof_moment:
     cs "What's to say people are still {i}alive?{/i} Who knows how far this glacier goes?"
     digi "CS, do you {i}really{/i} think we are the last people left?"
     cs "I don't know. I just worry that this is-- {nw}"
+    # TODO: make the jingle loopable
     play sound sfx_jingle volume 0.2
     n "As CS becomes more frantic, a noise is heard from afar."
     k17 "Shhh! Do you hear that?"
@@ -6357,9 +6358,11 @@ label ce_roof_moment:
     show snow5
     show snow6
     show snow_wind
+    # TODO: decrustify this image. also make sure the canvas is big enough to fully contain the glow
     show sleigh
     with dissolve
     pause 0.5
+    play sound sfx_jingle
     santa "Ho ho ho!"
     santa "The wind really started to pick up around here, didn't it, Vixen?"
     santa "Ho ho, do you all hear that? It sounds like Christmas cheer being spread on the ground below!"
@@ -6375,30 +6378,39 @@ label ce_roof_moment:
     pause 0.5
 
     # TODO: TATE STOPPED EDITING HERE! 2/2
+    # ANYTHING BEYOND THIS POINT IS JUST SPOT TREATMENT AND NOT A REAL EDITING PASS!
 
     scene cs_roof
-    show cs happy christmas at left
+
     show obama festive at mid_mid_left behind k17
-    show billy festive at center behind cs
+    show billy festive at center
     show michael festive at mid_left
     show ed festive at mid_right
     show linus festive at mid_mid_right
+    show cs happy christmas at left
     with dissolve
+    pause 0.5
+    
+    play sound sfx_jingle volume 0.8
     cs "We did it, guys! Santa's here to save us!"
     n "Santa's sleigh begins its descent, slowing down to a crawl as the reindeer gently touch down onto the snow."
+    stop sound fadeout 0.5
+    play sound2 sfx_snow_walk
+    pause 0.5
     play music snow_blind
     music snow_blind
     show santa at right with moveinright
+    stop sound2
     santa "Ho ho ho! Merry Christmas, everyone!"
-    show grace at mid_right with easeinleft
-    grace "{i}SAANNNNNTAAA!!"
-    grace "OH MY GODD!!"
+    show grace at mid_right with { "master": easeinleft }
+    grace "{cshake}{i}SAANNNNNTAAA!!" with hpunch
+    grace "OH MY GODD!!" with vpunch
     show k22 flipped at mid_left
     show k17 happy flipped at mid_mid_left
     with moveinleft
     k17 "Haha, see, K-22? Who needs Addy's party when we can literally meet The Big Man himself?"
     show k22 happy flipped
-    k22 "Heh, I guess you've got a point, there. They aren't gonna believe this!"
+    k22 "Heh, I guess you've got a point, there. They aren't gonna {i}believe{/i} this!"
     show cs christmas
     santa "Well, let's see, who do we have here...?"
     santa "..."
@@ -6418,7 +6430,7 @@ label ce_roof_moment:
     show wesley festive flipped at mid_left with moveinleft
     rich "Really!?"
     ed "We appreciate the offer, Mr. Claus. Let's keep in touch!"
-    santa "...and, you there! Mr. Rosen!"
+    santa "...{w=0} And, you there! Mr. Rosen!"
     show michael festive at center with move
     santa "Don't let those YouTube Poopers get to your head! You're a brilliant author."
     n "Santa glances at CS."
@@ -6674,7 +6686,9 @@ label ce_roof_moment:
     copguy "I {i}told{/i} the chief we should start using this stuff on our cruisers!"
     if d20 == 20:
         show avgn dark flipped at mid_right with moveinright
-        avgn "Man, this party was ass!" # NOTE: Digi and I thought this was so hilarious we decided to have him moonwalk. - pak
+        avgn "Man, this party was {nw}"
+        avgn "Man, this party was {fast}{i}ass!" with vpunch
+        # NOTE: Digi and I thought this was so hilarious we decided to have him moonwalk. - pak
         hide avgn with moveoutleft
     scene cs_house_night_dtree
     show billy festive dark at mid_left
