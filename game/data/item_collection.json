@@ -651,6 +651,14 @@
         "rarity": "Epic",
         "dx": true
     },
+    "reversi_box": {
+        "img": "reversi_box",
+        "name": "Reversi!",
+        "owner": "CS",
+        "desc": "A Windows 3.1-themed Reversi board.",
+        "rarity": "Uncommon",
+        "ce": true
+    },
     "riffmaster": {
         "img": "riffmaster",
         "name": "Riffmaster",

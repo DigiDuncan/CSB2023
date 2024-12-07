@@ -5140,11 +5140,10 @@ label ce_climax:
     cs "Damn it, everyone!" with vpunch
     cs "Shut the {i}fuck{/i} u--{nw}" with vpunch
 
-# TODO: uncomment this when cinematography pass is complete. I just need to be able to see - tate
 # Lights out
-# screen flashlight_demo:
-    # layer "flashlight"
-    # add Flashlight()
+screen flashlight_demo:
+    layer "flashlight"
+    add Flashlight()
 
 label ce_lights_out:
     play sound sfx_power_out
@@ -5245,8 +5244,8 @@ label ce_lights_out:
     show flashlight_held flipped
     with determination
     pause 0.5
-    # TODO: squeaky door open
-    n "CS opens the breaker and flicks off and on the switches."
+    play sound sfx_creaky_metal
+    n "CS opens the breaker and flicks the switches on and off."
     play sound sfx_breaker
     pause 1.5
     play sound sfx_breaker
@@ -5255,7 +5254,7 @@ label ce_lights_out:
     show cs disappointed christmas flipped
     pause 1.0
     cs "Damn, nothing..."
-    cs "The power must be out to the whole neighborhood, then."
+    cs "Power must be out for the whole neighborhood, then."
     show cs christmas flipped
     cs "Well, it was worth a try."
     hide cs
@@ -5277,7 +5276,8 @@ label ce_lights_out:
     music synchronicity
     show cs disappointed christmas flipped
     cs "Kitty? What are you doing down here? Arceus was looking all over for you!"
-    kitty "Sorry... I started getting a bad migraine towards the end of the party, so I tried to find the quietest place in the house."
+    kitty "Sorry..."
+    kitty "I started getting a bad migraine towards the end of the party, so I tried to find the quietest place in the house."
     kitty "I'm a little glad the power went out, honestly. It's been peaceful here."
     cs "Ah... I was just trying to fix the breaker, but, no dice."
     kitty "I think the power is out everywhere. I heard the wind really pick up outside a little while ago."
@@ -5309,7 +5309,7 @@ label ce_lights_out:
     arceus "Welcome back!"
     arceus "Assuming you didn't get the power working?"
     show cs christmas
-    cs "Nope, but I found Kitty!"
+    cs "Nope, but, I found Kitty!"
     cs "She's relaxing in the basement since her head was hurting."
     arceus "That makes sense. I'll go talk to her here soon."
     eliza "I see you found a torch."
@@ -5331,11 +5331,11 @@ label ce_lights_out:
     hide arceus
     hide flashlight_held as second
     with moveoutleft
-    pause 1.0
+    pause 1.5
     eliza "Before you go, CS, if you can, I think you should check outdoors."
     eliza "Even though it's dark in here, no light is coming in from outside."
     eliza "It also sounds {i}terrible{/i} out there."
-    eliza "I've experienced some harsh Soviet winters, but I've never dealt with anything {i}this{/i} bad before."
+    eliza "I've experienced some harsh Soviet winters, but, I've never dealt with anything {i}this{/i} bad before."
     show cs worried christmas
     cs "Well, that's some {i}awesome{/i} news..."
     show cs disappointed christmas
@@ -5353,7 +5353,6 @@ label ce_lights_out:
     show digi sad at mid_mid_left
     show k17 disappointed at center behind digi
     show k22 disappointed at mid_mid_right
-
     with dissolve
     pause 0.5
     show cs disappointed christmas at left 
@@ -5371,67 +5370,107 @@ label ce_lights_out:
     hide flashlight_held
     with moveoutright
     anno "Good luck, CS!"
-    scene black with dissolve
+    hide screen flashlight_demo
+    scene black
+    with dissolve
+    $ mouse_visible = True
     pause 0.5
 
-    # TODO: TATE STOPPED EDITING HERE! 2/2
-
-    n "CS pulls and yanks open the door, until it finally rips open."
-    play sound sfx_house_door_slam
+    n "CS makes it to the front door."
+    pause 0.5
+    play sound sfx_door_jiggle
+    n "He tries to open it, but it doesn't budge."
+    cs "What the fuck?"
+    n "After checking the deadbolt, he tries again."
+    play sound sfx_door_jiggle
+    pause 0.5
+    n "It still doesn't move."
+    cs "Oh, {i}God,{/i} don't tell me it froze over like my garage did..."
+    n "He puts the flashlight in his pocket and braces himself."
+    play sound sfx_door_jiggle
+    n "CS pulls and yanks on the knob, until, finally, it rips open!"
+    play sound sfx_house_door_open
+    play sound2 sfx_house_door_slam noloop
+    with hpunch
+    pause 0.5
     scene cs_door
-    show cs worried christmas at left
+    show cs scared christmas at left
     with dissolve
     n "He falls backwards as he is met with an unwelcome sight."
-    cs "What the hell? Is that snow?"
+    show cs worried christmas at mid_left with MoveTransition(1.0)
+    n "As CS regains his footing, he can't believe what he's looking at."
+    cs "What the hell? Is that {i}snow?!"
+    show cs worried christmas at mid_mid_left with MoveTransition(1.0)
     n "CS sticks his finger out into the mysterious substance."
-    cs "Oh my God, how much... did it..."
+    n "It responds with a freezing confirmation."
+    show cs scared christmas
+    cs "Oh, my God."
+    cs "How much... did it..."
+    play sound sfx_house_door_slam
+    scene black with Dissolve(0.25)
+    pause 0.5
     n "CS slams the door shut and runs back to deliver the news."
+    pause 0.5
+
+    $ mouse_visible = False
+    show screen flashlight_demo
     scene cs_foyer_off_festive
     show anno festive at mid_left
-    show aria festive at mid_mid_left behind anno
+    show aria festive at mid_right behind anno
+    show mean human annoyed at mid_offscreen_right
+    show tate sad festive flipped at right
     show digi sad at mid_mid_left
     show k17 disappointed at center behind digi
     show k22 disappointed at mid_mid_right
-    show tate srs festive flipped at mid_right
-    show mean human at mid_offscreen_right
     with dissolve
-    show cs worried christmas flipped at center with moveinright
-    cs "Guys, the door...{w=0.5} the door..."
+    pause 0.5
+    show cs scared christmas flipped at center
+    show flashlight_held flipped at manual_pos(0.5, 0.7, 0.5):
+         zoom 0.5 
+    with moveinright
+    cs "{sc=1.88}Guys, the door... {w=0.5}{i}the door...!"
     aria "Calm down, CS. Catch your breath."
-    show cs disappointed christmas flipped
-    cs "The door, it's... {i}all{/i} snow."
+    show cs worried christmas flipped
+    cs "{sc=1.88}The door, it's... {nw}"
+    cs "{sc=1.88}The door, it's... {fast}{i}all{/i} snow!" with vpunch
     show digi shock
-    show tate sad festive flipped
-    show k17 shock flipped
-    anno "{i}All{/i} snow?"
-    show mean human annoyed
+    show tate shock festive flipped
+    show k17 shock
+    anno "{i}All{/i} snow?!"
+    show mean human shocked
     mean "The door?"
     k17 "It's?"
-    digi "Are we trapped in here?"
+    digi "Are we trapped in here?!"
     show mean human angry
     show tate sad festive
     mean "There's only one way to find out."
     show cs disappointed christmas
+    show flashlight_held
     mean "CS, take me to the roof."
     cs "To the roof?"
     mean "Yeah, let me climb up there."
-    cs "Sure, we can try."
-    show mean human annoyed flipped
+    cs "It's worth a try."
     tate "Be careful, Mean."
+    show mean human annoyed flipped with determination
     hide cs
     hide mean
     with moveoutright
-    n "CS and Mean find the ladder to the attic, and make their way up."
+    pause 0.5
+
+    n "CS and Mean make their way up the ladder to the attic."
     scene cs_attic
     show hatch at manual_pos(0.3, -0.2)
     show cs disappointed christmas at mid_left
+    show flashlight_held at manual_pos(0.3, 0.7, 0.5):
+         zoom 0.5
     show mean human annoyed at mid_right
     with dissolve
+    pause 0.5
     stop music fadeout 3.0
     music end
     mean "You good, CS?"
     cs "Yeah, I'm just a bit tired."
-    cs "There should be a hatch or something up here..."
+    cs "Anyway, there should be a hatch or something up here..."
     mean "Shine your light up."
     hide screen flashlight_demo
     show screen hatch_button
@@ -5440,13 +5479,18 @@ label ce_lights_out:
 
 label ce_after_hatch:
     show screen flashlight_demo
+    $ mouse_visible = False
     mean "You mean like {i}that{/i} one?"
-    cs "Yeah, pull it open."
-    play sound sfx_snowfall
+    cs "Yeah, can you pull it open?"
+    play sound sfx_snowfall volume 3.0
+    with vpunch
     show snow_pile at center with easeintop
     pause 1.0
-    n "As Mean yanks on the hatch, it bursts open downwards, as a huge pile of snow falls onto the attic floor."
-    cs "That is... a lot of snow."
+    n "As Mean yanks on the hatch, it bursts open downwards!"
+    n "A huge pile of snow falls onto the attic floor."
+    show cs scared christmas
+    pause 0.5
+    cs "That is... a {i}lot{/i} of snow."
     mean "C'mon, let's get up here."
     n "Mean climbs up onto the roof."
     show mean human at Move((0.54, 0.0), (0.35, 0.0), 0.5, repeat=False, bounce=False, xanchor="left", yanchor="top")
@@ -5464,13 +5508,18 @@ label ce_after_hatch:
     mean "{i}Fuck."
     cs "What? How bad is it?"
     mean "Grab my hand, I'll pull you up."
+    pause 0.5
+    scene black with dissolve
+    hide screen flashlight_demo
+    $ mouse_visible = True
+    pause 1.0
 
 label ce_snowed_in:
+    hide screen flashlight_demo
+    $ mouse_visible = True
     play music winters_halloween
     music winters_halloween
     scene snowed_in
-    hide screen flashlight_demo
-    $ mouse_visible = True
     show cs sil_black:
         zoom 0.15
         xpos 0.3
@@ -5487,123 +5536,218 @@ label ce_snowed_in:
     show snow6
     show snow_wind
     with dissolve
-    mean "Just look out into the distance."
-    n "As CS and Mean stare out into the distance, they see nothing but an endless desert of snow, with the lamp poles poking out through."
-    cs "What the fuck."
+    pause 5.0
+    mean "Just look out into the distance..."
+    n "CS struggles to find the horizon."
+    n "All that he can see is an endless desert of snow, with only the tops of streetlights visible."
+    cs "What the fuck?"
     cs "Am I dreaming?"
+    pause 0.5
     n "CS picks up some snow and shoves it in his face."
+    n "The blistering cold confirms that he is very much awake."
+    pause 0.5
     cs "I guess not..."
-    mean "I know, this doesn't even feel real. How did this happen so fast?"
-    mean "I live in Canada, and it's never {i}this{/i} bad."
-    cs "So this is it. We are stuck here, aren't we?"
-    mean "I don't fuckin' know, man! How do {i}you{/i} think we'd be able to fix this?"
-    cs "A Christmas miracle, maybe."
-    cs "I don't think anyone else back in the house is gonna believe us."
+    mean "I'm with ya. This doesn't even feel real."
+    mean "How did this happen so fast?"
+    mean "I live in {i}Canada,{/i} and it's never {i}this{/i} bad."
+    pause 1.0
+    cs "So, this is it? We {i}are{/i} stuck here, aren't we?"
+    mean "I don't fuckin' know, man!" with vpunch
+    mean "How do {i}you{/i} think we'd be able to fix this?"
+    cs "A Christmas miracle, maybe..."
+    cs "I don't think the others are gonna believe this."
     mean "Well, they can see it for themselves."
     mean "Let's get back inside. It's freezing out here."
+    pause 0.5
     scene black with dissolve
+    pause 1.0
+
+    n "CS and Mean climb back down and meet back up with everyone."
     $ mouse_visible = False
     show screen flashlight_demo
-    n "CS and Mean climb back down and meet back up with everyone."
     scene cs_living2_off_festive
-    show cs disappointed christmas at mid_left
-    show aria festive at mid_offscreen_right
     show mean human annoyed flipped at mid_offscreen_left
-    show ed festive at right
+    show aria festive at center
+    show obama festive at mid_mid_right behind digi
+    show linus festive at mid_mid_left
+    show cs disappointed christmas at mid_left
+    show flashlight_held at manual_pos(0.3, 0.7, 0.5):
+         zoom 0.5
+    show tate sad festive flipped at center
     show digi sad at mid_mid_right
-    show linus festive at mid_right
-    show rich festive at mid_right_right
-    show tate sad festive flipped at mid_mid_left
-    show obama festive at center behind digi
-    show k22 disappointed at center behind digi
-    show k17 disappointed at mid_mid_right behind obama
+    show rich festive at mid_offscreen_right
+    show k17 at mid_right_right
+    show k22 at mid_right
     with dissolve
+    pause 0.5
     stop music fadeout 3.0
     music end
     cs "Well, guys, we've got some bad news."
     cs "We might be stuck here for a while."
     k22 "Like... for a couple of hours? All night?"
+    show cs worried christmas
     cs "Uhh..."
+    cs "Well..."
+    show cs disappointed christmas
     cs "At least for the night."
     ed "Gee, where are we all gonna sleep?"
     aria "I guess we're all gonna have to cuddle for warmth..."
     linus "There's no way we can dig our way out?"
-    digi "If it's that bad, wouldn't a snow plow be here soon anyways?"
+    digi "If it's {i}that{/i} bad, wouldn't a snow plow be here soon anyways?"
     show cs worried christmas
-    rich "We've dealt with worse, let's get out there and shovel!"
-    show cs disappointed christmas
-    show mean human angry flipped
+    show tate shock festive
+    show mean human shocked flipped
+    show digi shock flipped
+    show linus festive flipped
+    show obama festive flipped
+    show aria festive flipped
+    show k22 flipped
+    show k17 flipped
+    rich "We've dealt with worse!" with hpunch
+    rich "Let's get out there and {i}shovel!"
+    show cs scared christmas flipped
+    show flashlight_held flipped
     show tate shock festive flipped
-    mean "Everyone, shut the fuck up!" with hpunch
-    mean "There's, like, 20 feet of snow."
+    show mean human angry flipped
+    show digi shock
+    show linus festive
+    show obama festive
+    show aria festive
+    show k22
+    show k17
+    mean "Everyone, shut the fuck {i}up!" with hpunch
+    mean "There's, like, {nw}"
+    mean "There's, like, {fast}{i}20 feet{/i} of snow out there!" with vpunch
+    pause 1.0
     n "Everyone goes quiet."
-    mean "If you want to go up to the roof and check for yourself, go ahead."
+    pause 1.0
+    if fun_value(FUN_VALUE_RARE):
+        mean "If you don't believe me, take your thumb, and shove it up your ass!"
+    else:
+        mean "If you want to go up to the roof and see for yourself, be my guest."
     show mean human annoyed flipped
     show tate sad festive flipped
+    show digi sad
+    show cs disappointed christmas flipped
     mean "I couldn't believe it either, but..."
-    mean "There's nothing but snow, snow, and even more snow."
-    mean "You can barely even see the tops of the street lights out there."
+    mean "There is fucking {i}nothing{/i} but snow."
+    mean "You can barely even see the tops of the streetlights out there."
     mean "I'm from {i}Canada,{/i} and I've never seen so much snow."
     blank "I didn't even think you could {i}get{/i} that much snow..."
+    cs "So... that means..."
     show cs christmas
-    cs "So... that means we are gonna have to wait it out!"
-    show cs happy
+    show flashlight_held
+    cs "So... that means... {fast}we're just gonna have to wait it out!"
+    show cs happy christmas
     cs "And, what better way to kill time than to play some games?"
     show cs christmas
-    michael "I spy something, black!"
+    michael "I spy something... black!"
     nova "Is it Obama?"
     show digi disappointed
     show mean human flipped
-    show tate flipped festive
-    obama "Hey!"
+    show cs disappointed christmas
+    show tate sheepish festive flipped
+    obama "Hey!" with vpunch
     michael "No, it is not."
     show digi sad
-    aria "Is it everything?"
+    aria "Is it {i}everything?"
     michael "Correct!"
-    cs "Okay, I have something I've wanted to play again with someone."
-    cs "I have a few board games somewhere, I just need to look."
+    cs "Okay, actually, I have something I've been wanting to play again."
+    cs "I have a few board games somewhere. I just need to go grab it."
     show tate sad festive flipped
     tate "{i}Please{/i} tell me it's not chess..."
+    show cs christmas
     cs "It's better than chess! I'll be back."
+    show cs christmas flipped
+    show flashlight_held flipped
+    with determination
+    hide cs
+    hide flashlight_held
+    with moveoutleft
+    pause 0.5
     scene black with dissolve
-    n "After a bit of rummaging, CS comes back with a blueish-looking box."
+    pause 1.0
+    $ mouse_visible = True
+    hide screen flashlight_demo
+
+    play sound sfx_items_rustling volume 5.0
+    n "After a bit of rummaging, CS returns to the living room."
+    stop sound fadeout 0.5
+    $ mouse_visible = False
+    show screen flashlight_demo
     scene cs_living2_off_festive
-    show cs happy christmas at mid_left
-    show aria festive at mid_offscreen_right
-    show reversi_box at mid_left
-    show mean human flipped at mid_offscreen_left
-    show ed festive at right
+    show mean human annoyed flipped at mid_offscreen_left
+    show aria festive at center
+    show obama festive at mid_mid_right behind digi
+    show linus festive at mid_mid_left
+    show tate sad festive flipped at center
     show digi sad at mid_mid_right
-    show linus festive at mid_right
-    show rich festive at mid_right_right
-    show tate sheepish festive flipped at mid_mid_left
-    show obama festive at center behind digi
-    show k22 disappointed at center behind digi
-    show k17 disappointed at mid_mid_right behind obama
+    show rich festive at mid_offscreen_right
+    show k17 at mid_right_right
+    show k22 at mid_right
+    show cs happy christmas at mid_left
+    show flashlight_held at manual_pos(0.2, 0.7, 0.5):
+         zoom 0.5
     with dissolve
-    cs "It's Reversi!"
+    pause 0.5
+    n "He holds up a blue-green box and shows it off to the crowd."
+    show reversi_box at manual_pos(0.35, 0.6, 0.5) behind flashlight_held with dissolve:
+        zoom 0.5
+    $ collect("reversi_box")
+    cs "It's {i}Reversi!"
     show digi
+    show cs christmas
+    show arceus happy festive at right with moveinright
+    arceus "Did somebody say Reversi?"
     digi "You have an {i}actual{/i} Reversi board?"
-    k17 "Isn't that the one game from Windows 3.1?"
+    k17 "Isn't that the game from Windows 3.1?"
+    show cs happy christmas
+    show arceus festive at right
     cs "Precisely!"
-    n "CS takes off the cover and starts taking the pieces out."
+    show reversi_box at manual_pos(0.35, 1.2, 0.5) with move
+    pause 0.5
+    play sound "minigames/reversi/place1.ogg"
+    pause 0.25
+    play sound "minigames/reversi/place3.ogg"
+    n "CS takes off the cover and starts placing the pieces onto the coffee table."
     aria "Wait a second."
-    aria "This is Othello, not Reversi."
+    aria "This is {i}Othello,{/i} not Reversi."
     show cs disappointed christmas
     cs "What do you mean? It says Reversi on the box!"
-    aria "Yeah, I know, but in 1971--{w=1.5}{nw}"
+    aria "Yeah, I know, but in 1971-- {nw}"
     show cs angry christmas
-    cs "It's fucking Reversi, okay?"
+    cs "It's fucking Reversi, okay?" with vpunch
     cs "I just{w=0.5} want to play{w=0.5} some Reversi."
     show cs christmas
-    cs "Who wants to play with me?"
+    if fun_value(FUN_VALUE_UNOBTRUSIVE):
+        cs "Who will challenge me?"
+    else:
+        cs "Who wants to play with me?"
+    show tate sheepish festive
+    show arceus festive
     $ playing_reversi_again = False
-    $ mouse_visible = True
     jump ce_reversi
 
 label ce_reversi:
     stop music
     music end
+    $ mouse_visible = True
+    show screen flashlight_demo
+    scene cs_living2_off_festive
+    show mean human annoyed flipped at mid_offscreen_left
+    show aria festive at center
+    show obama festive at mid_mid_right behind digi
+    show linus festive at mid_mid_left
+    show tate sheepish festive flipped at center
+    show digi sad at mid_mid_right
+    show rich festive at mid_offscreen_right
+    show k17 at mid_right_right
+    show k22 at mid_right
+    show cs happy christmas at mid_left
+    show flashlight_held at manual_pos(0.2, 0.7, 0.5):
+         zoom 0.5
+    show arceus festive at right
+
     menu:
         "Who do you want to play against?"
         "Tate (Beginner)":
@@ -5628,26 +5772,28 @@ label ce_win_reversi:
     $ mouse_visible = False
     stop music
     music end
+    show screen flashlight_demo
     scene cs_living2_off_festive
+    show mean human annoyed flipped at mid_offscreen_left
+    show aria festive at center
+    show obama festive at mid_mid_right behind digi
+    show linus festive at mid_mid_left
+    show tate sheepish festive flipped at center
+    show digi sad at mid_mid_right
+    show rich festive at mid_offscreen_right
+    show k17 at mid_right_right
+    show k22 at mid_right
     show cs happy christmas at mid_left
-    show aria festive at mid_offscreen_right
-    show reversi_box at mid_left
-    show mean human flipped at mid_offscreen_left
-    show ed festive at right
-    show digi at mid_mid_right
-    show linus festive at mid_right
-    show rich festive at mid_right_right
-    show tate sheepish festive flipped at mid_mid_left
-    show obama festive at center behind digi
-    show k22 disappointed at center behind digi
-    show k17 disappointed at mid_mid_right behind obama
+    show flashlight_held at manual_pos(0.2, 0.7, 0.5):
+         zoom 0.5
+    show arceus festive at right
 
     $ achievement_manager.unlock("reversi")
 
     cs "I won!"
     cs "Now how much do {i}you{/i} think Microsoft Windows is worth?"
-    linus "Isn't it like $99--{w=0.5}{nw}"
-    cs "{i}Don't answer!"
+    linus "Isn't it like $99-- {nw}"
+    cs "{i}Don't answer!" with vpunch
 
     if reversi_difficulty == ReversiAI.TATE:
         tate "Dang. I thought I had a chance, since it isn't chess."
@@ -5662,35 +5808,29 @@ label ce_win_reversi:
         aria "Excellent playing, CS!"
         $ achievement_manager.unlock("grandmaster")
     else:
-        iris "Ah... who did you play against? {i}[reversi_difficulty.name]{/i}?"
+        iris "Ah... who did you play against? {i}[reversi_difficulty.name]?{/i}"
         iris "They aren't here... or, a person... so, uh, good job?"
-
-    menu:
-        "Play Reversi again?"
-        "Yes!":
-            $ playing_reversi_again = True
-            $ mouse_visible = True
-            jump ce_reversi
-        "No!":
-            jump ce_billy_time
+    jump ce_reversi_menu
 
 label ce_lose_reversi:
-    $ mouse_visible = True
+    $ mouse_visible = False
     stop music
     music end
+    show screen flashlight_demo
     scene cs_living2_off_festive
-    show cs disappointed christmas at mid_left
-    show aria festive at mid_offscreen_right
-    show reversi_box at mid_left
-    show mean human flipped at mid_offscreen_left
-    show ed festive at right
-    show digi at mid_mid_right
-    show linus festive at mid_right
-    show rich festive at mid_right_right
-    show tate sheepish festive flipped at mid_mid_left
-    show obama festive at center behind digi
-    show k22 disappointed at center behind digi
-    show k17 disappointed at mid_mid_right behind obama
+    show mean human annoyed flipped at mid_offscreen_left
+    show aria festive at center
+    show obama festive at mid_mid_right behind digi
+    show linus festive at mid_mid_left
+    show tate sheepish festive flipped at center
+    show digi sad at mid_mid_right
+    show rich festive at mid_offscreen_right
+    show k17 at mid_right_right
+    show k22 at mid_right
+    show cs happy christmas at mid_left
+    show flashlight_held at manual_pos(0.2, 0.7, 0.5):
+         zoom 0.5
+    show arceus festive at right
 
     cs "Ah, dang it."
 
@@ -5705,9 +5845,12 @@ label ce_lose_reversi:
     elif reversi_difficulty == ReversiAI.ARIA:
         aria "Ah, better luck next time."
     else:
-        iris "Ah... who did you play against? {i}[reversi_difficulty.name]{/i}?"
+        iris "Ah... who did you play against? {i}[reversi_difficulty.name]?{/i}"
         iris "They aren't here... or, a person... but, you still lost."
+    jump ce_reversi_menu
 
+label ce_reversi_menu:
+    $ mouse_visible = True
     menu:
         "Play Reversi again?"
         "Yes!":
@@ -5718,20 +5861,27 @@ label ce_lose_reversi:
             jump ce_billy_time
 
 label ce_billy_time:
-    $ mouse_visible = False
+    #$ mouse_visible = False
+    stop music
+    music end
+    #show screen flashlight_demo
     scene cs_living2_off_festive
-    show cs christmas at mid_left
-    show mean human flipped at mid_offscreen_left
-    show ed festive at right
-    show digi at mid_mid_right
-    show linus festive at mid_right
-    show rich festive at mid_right_right
-    show tate sheepish festive flipped at mid_mid_left
-    show obama festive at center behind digi
-    show billy festive at center
-    show k22 disappointed at center behind digi
-    show k17 disappointed at mid_mid_right behind obama
+    show mean human annoyed flipped at mid_offscreen_left
+    show aria festive at center
+    show obama festive at mid_mid_right behind digi
+    show linus festive at mid_mid_left
+    show tate sheepish festive flipped at center
+    show digi sad at mid_mid_right
+    show rich festive at mid_offscreen_right
+    show k17 at mid_right_right
+    show k22 at mid_right
+    show cs happy christmas at mid_left
+    show flashlight_held at manual_pos(0.2, 0.7, 0.5):
+         zoom 0.5
+    show arceus festive at right
     with dissolve
+    pause 0.5
+    show billy festive at mid_right with moveinright
     billy "Wait! Everyone, hold on!"
     cs "What? What is it, Billy?"
     play music on_the_rocks
@@ -5739,7 +5889,7 @@ label ce_billy_time:
     billy "The Handy Switch!"
     billy "Who got my Handy Switch for their gift?"
     show tate festive
-    tate "Me!"
+    tate "I did! Why?"
     billy "Follow me to the basement!"
     show cs disappointed christmas
     cs "Billy, what are you doing?"
@@ -5748,129 +5898,210 @@ label ce_billy_time:
     show tate sheepish festive flipped
     tate "I guess I'm following Billy, so, I'll be back...?"
     hide tate with moveoutleft
+    pause 0.5
     scene black with dissolve
+    pause 0.5
+
     hide screen flashlight_demo
     billy "Oh, dang it! I forgot to bring a light!"
     scene cs_hallway_off
     show billy festive at mid_left
-    show tate festive at center
+    show tate festive flipped at center
+    show tate_phone at manual_pos(0.4, 0.6, 0.5):
+        xzoom -1
+    $ collect("tate_phone")
     show elizabeth at right
     show screen flashlight_demo
     with dissolve
     tate "I have my phone!"
-    billy "That works! I think the basement is down here!"
+    billy "That works!"
+    billy "I think the basement is down here!"
+    show billy festive flipped
+    show tate sheepish festive
+    show tate_phone at manual_pos(0.6, 0.6, 0.5):
+        xzoom 1
     eliza "Did you guys manage to get outside?"
-    billy "Apparently, the snow is up to the roof!"
+    show tate sad festive
+    tate "Mean did. He said the snow is up to the roof!"
     n "Elizabeth looks shocked."
     billy "But, good news! I have a way to possibly bring the power back!"
+    show tate festive
     billy "With the Handy Switch!"
-    eliza "I have no clue how that's gonna work, but good luck to you two."
+    eliza "I have no clue how that's gonna work, but, good luck to you two."
     tate "Is the basement over this way?"
     eliza "Yeah, down the hall and to the left."
+    tate "Thank you... {nw}"
     show tate sheepish festive
-    tate "Thank you... Mika?"
-    eliza "It's Elizabeth, but sure."
+    tate "Thank you... {fast}Mika?"
+    eliza "It's Elizabeth, but, sure."
     hide tate
     hide billy
+    hide tate_phone
     with moveoutright
+    pause 0.5
+
     scene cs_bathroom_off
     show grace at mid_right
     show anne at right
     with dissolve
     show tate festive at center
-    show billy festive at mid_left
+    show tate_phone at manual_pos(0.6, 0.6, 0.5)
+    show billy festive flipped at mid_left
     with moveinleft
-    grace "Hey! You're the TV man!"
-    anne "Grace always wanted to buy every product you sold."
-    billy "You should! Hi, Billy Mays here for the--"
+    grace "Hey! You're that TV man!"
+    anne "Grace always wanted to buy every product you ever sold."
+    billy "You {i}should!{/i} Hi, Billy Mays here for the--"
     show tate sheepish festive flipped
     tate "Billy, the power?"
-    billy "Oh, yeah. We can talk later!"
-    show tate festive
+    billy "Oh, right."
+    billy "We can talk later!"
+    show tate festive with determination
     hide tate
+    hide tate_phone
     hide billy
     with moveoutright
+    pause 0.25
     grace "I'll be waiting, Billy!"
     n "Billy and Tate run into the basement."
+    pause 0.5
+
     scene cs_basement
     show kitty festive at left
-    show arceus festive worried flipped at mid_left
-    show tate festive flipped at center
-    show billy festive at mid_right
+    show arceus festive flipped at mid_left
     with dissolve
+    pause 0.5
+    show tate festive flipped at right
+    show tate_phone at manual_pos(0.7, 0.6, 0.5):
+        xzoom -1
+    with dissolve
+    show tate festive flipped at center
+    show tate_phone at manual_pos(0.4, 0.6, 0.5):
+        xzoom -1
+    with move
+    show billy festive at right with dissolve
+    show billy festive at mid_right with move
+    pause 0.5
+    show arceus worried festive flipped
     arceus "Tate? Billy?"
     kitty "What's going on?"
-    billy "Fixing the power, with the power, of the Handy Switch!"
+    billy "Fixing the power {w=0.25}with the power {w=0.25}of the Handy Switch!"
     show tate sheepish festive flipped
     tate "Don't ask."
+    pause 0.5
+    show tate festive flipped with determination
+    hide tate
+    hide tate_phone
+    hide billy
+    with moveoutleft
+    pause 0.5
+
     scene breakerbox
-    show tate festive at mid_left
-    show billy festive at mid_right
     with dissolve
-    n "Finally, Billy and Tate make it to the breaker."
-    billy "Alright, all you gotta do is put the switch onto the breaker!"
+    pause 0.5
+    show tate festive at mid_left
+    show tate_phone at manual_pos(0.4, 0.6, 0.5)
+    show billy festive flipped at mid_right
+    with moveinleft
+    show billy festive
+    n "Finally, Billy and Tate make it down to the breaker."
+    billy "Alright! All {i}you{/i} gotta do is put the switch onto the breaker!"
     show tate sheepish festive
     tate "Really? Just, like... slap it on?"
+    show tate_phone at manual_pos(0.4, 0.8, 0.5) with { "master": MoveTransition(0.25) }
     billy "Yes! It's {i}that{/i} easy!"
-    show handy_switch at Move((0.3125, 0.4), (0.3125, 0.4), 1, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    n "Tate slaps the Handy Switch onto the breaker and flips the switch."
+    show handy_switch at manual_pos(0.2, 0.7, 0.5) with dissolve:
+        zoom 0.5
+    show handy_switch at manual_pos(0.45, 0.5, 0.5):
+        linear 0.125 xzoom -1
+        linear 0.125 xzoom 1
+    show tate sheepish festive at manual_pos(0.45, 1.0, 1.0)
+    show tate_phone at manual_pos(0.45, 0.8, 0.5)
+    with MoveTransition(0.25)
+    with hpunch
+    # TODO: SFX slap it on!
+    n "Tate smacks the Handy Switch onto the breaker and flips the switch."
     play sound sfx_snd_lightswitch
-    show tate shock festive
     $ mouse_visible = True
     hide screen flashlight_demo
-    tate "Wh-- {i}how?!"
+    show tate shock festive
+    pause 1.0
+    tate "Wh-- {nw}"
+    tate "Wh-- {fast}{i}how?!" with vpunch
     billy "Like {i}magic!"
     show tate sheepish festive
-    tate "How... how does this even work, Billy?"
+    tate "How... how does this even {i}work,{/i} Billy?"
+    pause 0.5
     n "Billy ponders for a moment."
     pause 3.0
     billy "I don't even know myself!"
     show tate festive
     tate "Well, what're we waiting for?"
     tate "Let's get back upstairs and share the good news!"
+    hide tate_phone
+    hide handy_switch
+    with dissolve
+    show tate festive flipped with determination
     hide tate
     hide billy
-    with moveoutright
+    with moveoutleft
+    pause 0.5
+
     scene cs_basement
     show kitty festive at left
     show arceus festive happy flipped at mid_left
     with dissolve
+    pause 0.5
     show tate festive at mid_mid_right
-    show billy festive at right
+    show billy festive flipped at right
     with moveinleft
-    arceus "Would you look at that?"
-    kitty "How did you guys do it?"
-    billy "That's the {i}power{/i}...{w=0.5} of the {i}power!"
-    hide tate
-    hide billy
-    with moveoutright
+    show tate festive flipped
+    show billy festive
+    arceus "Well, would you look at that?"
+    kitty "How'd you guys do it?"
+    billy "That's the power {w=0.25}of the {i}power!"
+    hide billy with dissolve
+    show tate festive at right with move
+    show tate festive flipped with determination
+    hide tate with dissolve
+    pause 0.5
+
     scene cs_hallway
     show eliza at mid_right_right
     show grace at mid_right
     show anne at right
     with dissolve
+    pause 0.5
+
     show tate festive flipped at mid_left
     show billy festive at center
     with moveinright
     grace "Yay! The power is back!"
     anne "You did it!"
+    show tate festive
+    show billy festive flipped
     billy "We sure did!"
-    eliza "I don't know what kind of technology you have that fixed this, but, good job!"
-    grace "So Billy, you got any products for sale on you currently?"
-    billy "You betcha I do! Meet me by my car after this is all over."
+    eliza "I don't know what kind of technology you could have had to fix this, but, good job!"
+    grace "So, Billy, you selling any products for the holidays?"
+    billy "You betcha! Meet me by my car after the party!"
+    show tate festive flipped
+    show billy festive
+    with determination
     hide tate
     hide billy
     with moveoutleft
+    pause 0.5
+
     scene cs_living2_festive
-    show cs christmas flipped at center
     show mean human at mid_offscreen_right
-    show sheriff festive at mid_mid_right
+    show luke festive at mid_mid_right
     show copguy festive at mid_right
-    show luke festive at mid_left
-    show rich festive flipped at mid_mid_left behind cs
+    show sheriff festive at mid_mid_right
+    show rich festive at mid_mid_left behind cs
+    show cs christmas flipped at center
     with dissolve
-    show tate festive at mid_left
-    show billy festive at left
+    pause 0.5
+    show billy festive flipped at mid_offscreen_left
+    show tate festive at left
     with moveinleft
     if fun_value(FUN_VALUE_RARE):
         cs "Holy power, the crap is back!"
@@ -5881,9 +6112,9 @@ label ce_billy_time:
     tate "It looks like all we needed was Billy's Handy Switch!"
     show mean human angry
     show tate sheepish festive
+    show cs disappointed christmas flipped
     mean "{i}Please{/i} don't say it like that, Tate."
-    show mean human
-    show tate festive
+    show mean human annoyed
     stop music fadeout 3.0
     music end
     luke "This is great and all, but, isn't the house still under 20 feet of snow?"
@@ -5893,8 +6124,16 @@ label ce_billy_time:
     show cs christmas
     cs "A lot of what?"
     copguy "... Never mind. I forgot what I was thinking about."
-    rich "Didn't you guys get up to the roof?"
+    show rich festive flipped
+    rich "Didn't you two get up to the roof?"
     ed "Maybe we should all go up and check it out."
+    mean "If you want, I guess."
+    mean "Follow me."
+    pause 0.5
+    show mean human annoyed flipped
+    show copguy festive flipped 
+    show luke festive flipped
+    with determination
     hide mean
     hide cs
     hide copguy
@@ -5903,10 +6142,15 @@ label ce_billy_time:
     hide tate
     hide billy
     with moveoutright
-    n "Everyone clammers up the stairs, and one by one, they all climb up onto the roof."
+    pause 0.5
+    n "Everyone clammers up the stairs."
+    pause 1.0
     sheriff "Welp."
     sheriff "I'll just... wait here."
-    sheriff "Take a picture for me!"
+    show sheriff festive flipped
+    sheriff "Take a picture for me!" with vpunch
+    scene black with dissolve
+    pause 1.0
 
 label ce_roof_moment:
     scene snowed_in
@@ -6008,10 +6252,12 @@ label ce_roof_moment:
         ypos 0.23
     show snow1
     with dissolve
-    k22 "So it is as bad as you said."
-    wesley "It just keeps going! It never ends!"
-    tate "What are we going to do? We can't just walk out there!"
-    copguy "I've got an idea. You guys, move over there..."
+    pause 1.0
+    k22 "So it {i}is{/i} just as bad as you said..."
+    wesley "It just keeps {i}going!{/i} I can't see the end!"
+    tate "What are we going to do? We can't just {i}walk{/i} out of here!"
+    copguy "I've got an idea."
+    copguy "You guys, move over there..."
     show cs sil_black at Move((0.3, 0.5), (0.27, 0.33), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show k22 sil_black at Move((0.45, 0.23), (0.34, 0.29), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show arceus sil_black at Move((0.54, 0.54), (0.3, 0.4), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
@@ -6041,57 +6287,67 @@ label ce_roof_moment:
     pause 4.0
     copguy "That should work!"
     k17 "SoS? Nice DaThings reference."
-    k22 "You idiot, it's an emergency code! If any airplanes see us--"
+    k22 "You {i}idiot,{/i} {nw}" with vpunch
+    k22 "You {i}idiot,{/i} {fast}it's an emergency code! If any airplanes see us--"
     k17 "Yeah, I know. I was just making a joke."
     k22 "Also, DaThings is a girl now."
-    k17 "Huh?!"
-    ed "Are there even gonna {i}be{/i} any airplanes in the sky? Look around us!"
-    ed "The rest of the world might be stuck in mile-high snow as well!"
+    k17 "{i}Huh?!" with vpunch
+    ed "Are there even gonna {i}be{/i} any airplanes in the sky? Just look around us!"
+    ed "The whole {i}world{/i} might be stuck in mile-high snow right now!"
     wesley "Maybe we need some lights for visibility."
-    cs "What's to say people are still alive? Who knows how far this glacier goes?"
-    digi "CS, do you really think we are the last people left?"
-    cs "I don't know. I just worry that this is--"
+    cs "What's to say people are still {i}alive?{/i} Who knows how far this glacier goes?"
+    digi "CS, do you {i}really{/i} think we are the last people left?"
+    cs "I don't know. I just worry that this is-- {nw}"
     play sound sfx_jingle volume 0.2
-    n "As CS becomes more frantic, a noise from far away can be heard."
+    n "As CS becomes more frantic, a noise is heard from afar."
     k17 "Shhh! Do you hear that?"
     cs "What? What is it?"
     play sound sfx_jingle volume 0.4
-    k17 "I hear jingling! Does anyone hear jingling?"
+    k17 "I hear jingling! Does anyone else hear jingling?"
     rich "Yeah, I do! It's coming from over there!"
     n "Richard points up in the sky."
     play sound sfx_jingle volume 0.6
-    k17 "Yeah, I see it!"
+    k17 "Yeah! Right there! I see it!"
     aria "Is that..."
-    digi "It has to be Santa! He's really up there, I think!"
-    wesley "What? I don't hear or see anything! Where?"
-    cs "Wait a minute... I have an idea!"
-    ed "Yeah, I can see him it's almost clear as day! There's Rudolph at the end, see that red light?"
-    cs "Guys! You all have to believe! Believe in Santa, and in the Christmas spirit!"
+    digi "It {i}has{/i} to be Santa! I think he's really up there!"
+    wesley "What?! I don't hear or see anything! Where?"
+    cs "Hold on... I have an idea!"
+    ed "Yeah, I can see him, clear as day!"
+    ed "There's Rudolph at the end! See that red light?"
+    cs "Guys! We all have to {i}believe!"
+    cs "Believe in Santa and in the Christmas spirit!"
     eliza "Do you really think that will work?"
     cs "We've gotta try! Sing with me guys!"
     # TODO: Karaoke lyrics
-    cs "{image=note_small1.png} Ohhh... {image=note_small2.png}"
-    if fun_value(FUN_VALUE_EPIC):
-        cs "{image=note_small1.png}Say can you see...{image=note_small2.png}"    
-    cs "{image=note_small1.png} You better watch out... {image=note_small2.png}"
-    cs "{image=note_small1.png} You better not cry... {image=note_small2.png}"
-    cs "{image=note_small1.png} Better not pout, I'm telling you why... {image=note_small2.png}"
-    cs "{image=note_small1.png} Santa Claus is coming to town! {image=note_small2.png}"
+    cs "{image=note_small1.png} Ohhh...{w=0} {image=note_small2.png}"
+    if fun_value(FUN_VALUE_EPIC, confusing=True):
+        play music star_spangled_banner if_changed
+        music star_spangled_banner
+        cs "{image=note_small1.png} Say can you see...{w=0} {image=note_small2.png}"
+        tate "{i}CS!" with vpunch
+        stop music
+        music end
+        cs "Sorry."
+    cs "{image=note_small1.png} You better watch out...{w=0} {image=note_small2.png}"
+    cs "{image=note_small1.png} You better not cry...{w=0} {image=note_small2.png}"
+    cs "{image=note_small1.png} Better not pout, I'm telling you why...{w=0} {image=note_small2.png}"
+    cs "{image=note_small1.png} Santa Claus is coming to town!{w=0} {image=note_small2.png}"
     cs "Come on guys, you gotta sing!"
-    k17 "{image=note_small1.png} He's making a list... {image=note_small2.png}"
-    k17 "{image=note_small1.png} And checking it twice... {image=note_small2.png}"
-    grace "{image=note_small1.png} Gonna find out who's naughty and nice... {image=note_small2.png}"
+    k17 "{image=note_small1.png} He's making a list...{w=0} {image=note_small2.png}"
+    k17 "{image=note_small1.png} And checking it twice...{w=0} {image=note_small2.png}"
+    grace "{image=note_small1.png} Gonna find out who's naughty and nice...{w=0} {image=note_small2.png}"
     # TODO: would be funny to put michael rosen noice sfx here once we figure out timings
-    rich "{image=note_small1.png} Santa Claus is coming to town! {image=note_small2.png}"
-    tate "{image=note_small1.png} He sees you when you're sleeping... {image=note_small2.png}"
-    mean "{image=note_small1.png} He knows when you're awake... {image=note_small2.png}"
-    db "{image=note_small1.png} He knows if you've been bad or good... {image=note_small2.png}"
-    obama "{image=note_small1.png} So, you'd better be good. For goodness sake! {image=note_small2.png}"
-    cs "{image=note_small1.png} Ohhh... {image=note_small2.png}"
-    everyone "{image=note_small1.png} You better watch out... {image=note_small2.png}"
-    everyone "{image=note_small1.png} You better not cry... {image=note_small2.png}"
-    everyone "{image=note_small1.png} Better not pout, I'm telling you why... {image=note_small2.png}"
-    everyone "{image=note_small1.png} Santa Claus is coming to town! {image=note_small2.png}"
+    # play sound sfx_noice
+    rich "{image=note_small1.png} Santa Claus is coming to town!{w=0} {image=note_small2.png}"
+    tate "{image=note_small1.png} He sees you when you're sleeping...{w=0} {image=note_small2.png}"
+    mean "{image=note_small1.png} He knows when you're awake...{w=0} {image=note_small2.png}"
+    db "{image=note_small1.png} He knows if you've been bad or good...{w=0} {image=note_small2.png}"
+    obama "{image=note_small1.png} So, you'd better be good. For goodness sake!{w=0} {image=note_small2.png}"
+    cs "{image=note_small1.png} Ohhh...{w=0} {image=note_small2.png}"
+    everyone "{image=note_small1.png} You better watch out...{w=0} {image=note_small2.png}"
+    everyone "{image=note_small1.png} You better not cry...{w=0} {image=note_small2.png}"
+    everyone "{image=note_small1.png} Better not pout, I'm telling you why...{w=0} {image=note_small2.png}"
+    everyone "{image=note_small1.png} Santa Claus is coming to town!{w=0} {image=note_small2.png}"
     scene car plains night:
         zoom 2.0
     show snow1
@@ -6103,16 +6359,23 @@ label ce_roof_moment:
     show snow_wind
     show sleigh
     with dissolve
+    pause 0.5
     santa "Ho ho ho!"
     santa "The wind really started to pick up around here, didn't it, Vixen?"
-    santa "Ho ho, do you all hear that? It sounds like Christmas cheer being spread down on the ground!"
+    santa "Ho ho, do you all hear that? It sounds like Christmas cheer being spread on the ground below!"
     santa "Shine your light down there, Rudolph!"
+    pause 1.0
     santa "Hey, wait a minute!"
     santa "Is that an SoS signal?"
     santa "Ho ho ho! Nice DaThings reference!"
     if fun_value(FUN_VALUE_RARE):
         santa "Did you hear she's a girl now?"
-    santa "Okay, seriously, I should probably go down there and check it out."
+    pause 0.5
+    santa "Okay, seriously, I should probably go down there and check it out!"
+    pause 0.5
+
+    # TODO: TATE STOPPED EDITING HERE! 2/2
+
     scene cs_roof
     show cs happy christmas at left
     show obama festive at mid_mid_left behind k17
@@ -6472,4 +6735,3 @@ label ce_epilogue:
     if persistent.saved_christmas == False:
         $ persistent.saved_christmas = True
         call screen special_unlock("That strange die has moved to Extras?! The D20 Viewer has been unlocked!")
-
