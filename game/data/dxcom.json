@@ -206,7 +206,7 @@
         {
             "audio_path": "ace",
             "speaker": "Digi",
-            "transcript": "Sometimes, when we write CSB, we make jokes that are just for us. CS won't get this deep-cut asexual joke, but it made me laugh, so it stayed in.",
+            "transcript": "Sometimes, when we write {i}CSB,{/i} we make jokes that are just for us. CS won't get this deep-cut asexual joke, but it made {i}me{/i} laugh, so it stayed in.",
             "length": 7.5
         }
     ],
@@ -214,7 +214,7 @@
         {
             "audio_path": "doritos",
             "speaker": "Digi",
-            "transcript": "This 3D Doritos line is actually something my Dad said to me in the store. It's also DPN Quote 701.",
+            "transcript": "This 3D Doritos line is actually something my dad said to me in the store. It's also DPN Quote 701.",
             "length": 5.5
         }
     ],
@@ -222,7 +222,7 @@
         {
             "audio_path": "reversi1",
             "speaker": "Digi",
-            "transcript": "When we first pitched Reversi as a minigame, Pakoo asked me to make a CPU player for the game. That seemed reasonable enough; I could just choose a legal move and see how good it was for the score. Turns out, several hours and a couple research papers of investigation later, board game AI is not that simple.",
+            "transcript": "When we first pitched Reversi as a minigame, Pakoo asked me to make a CPU player for the game. That seemed reasonable enough; I could just choose a legal move and see how good it was for the score. Turns out, several hours and a couple research papers of investigation later, board game AI is {i}not{/i} that simple.",
             "length": 15
         },
         {
@@ -236,7 +236,7 @@
         {
             "audio_path": "db",
             "speaker": "Digi",
-            "transcript": "The running joke of DB being late for things carries over from CSBIII: Friend Route. It's largely based on my experience with DB as a guest on Some Night Social Thing. If you're hearing this, DB, it's all jokes -- you're a great guy.",
+            "transcript": "The running joke of DB being late for things carries over from {i}CSBIII: Friend Route.{/i} It's largely based on my experience with DB as a guest on {i}Some Night Social Thing.{/i} If you're hearing this, DB, it's all jokes-- you're a great guy.",
             "length": 11
         }
     ],
@@ -244,7 +244,7 @@
         {
             "audio_path": "meta",
             "speaker": "Digi",
-            "transcript": "This scene is based on me and Arceus' real life experience coding the RPG engine for CSBIII. That night is also when the Howie character was concieved, an amalgamation of four different white bald dudes we kept mixing up in our sleep-deprived and drunken states. This joke is super meta, and calls a lot into question lore-wise, but don't think about it too hard.",
+            "transcript": "This scene is based on me and Arceus' real-life experience coding the RPG engine for {i}CSBIII.{/i} That night is also when the Howie character was concieved, an amalgamation of four different white bald dudes we kept mixing up in our sleep-deprived and drunken states. This joke is super-meta, and calls a lot into question lore-wise, but don't think about it too hard.",
             "length": 18.8
         }
     ]

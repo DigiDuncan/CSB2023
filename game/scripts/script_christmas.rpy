@@ -5076,64 +5076,171 @@ label ce_exchange:
     cs "Woohoo! All of the gifts have been handed out!"
     jump ce_preclimax
 
-    # TODO: TATE STOPPED EDITING HERE! 1/2
-
 label ce_preclimax:
-    # TODO: This needs cinematography
+    # TODO: BGM
     scene black with dissolve
-    n "After the exchange, people form into groups and discuss what they recieved."
-    # Digi, Arc, and Aria
-    digi "This Riffmaster is great! Listen to that strumbar!"
+    n "After the exchange, the party begins to die down."
+    n "Folks naturally start splitting into groups to discuss their gifts."
+    
+    scene cs_foyer
+    show digi happy flipped at left
+    # TODO: is digi holding this correctly?? idk i dont play this so pls fix it if i fucked it up - tate
+    show riffmaster at manual_pos(0.15, 0.8, 0.5):
+        rotate 45
+    show aria festive at center
+    show adderall at manual_pos(0.4, 0.6, 0.5):
+        zoom 0.4
+    show arceus festive at right
+    show raspberry_pi at manual_pos(0.75, 0.7, 0.5):
+        zoom 0.5
+    with dissolve
+    pause 0.5
+
+    digi "This Riffmaster is {i}great!{/i}"
+    digi "Just listen to that strumbar!"
     n "Digi strums the controller in joy."
-    digi "You gonna take that Adderall, Aria?"
+    digi "Oh, yeah. You gonna take that Adderall, Aria?"
     aria "That implies I haven't already."
-    digi "What about you, Arc, what are you going to do with that Raspberry Pi?"
-    arc "I had an idea for a webserver I've been meaning to try out."
+    digi "What about you, Arc? What are you going to do with that Raspberry Pi?"
+    arceus "I had an idea for a webserver I've been meaning to try out."
     digi "Nice, nice."
-    n "Luke walks by, lugging his newly gotten tech."
+    
+    show luke festive at mid_right behind arceus
+    show monitor as first at manual_pos(0.7, 0.7, 0.5) behind luke
+    show monitor as second at manual_pos(0.85, 0.7, 0.5) behind arceus
+    show hard_drive at manual_pos(0.575, 0.6, 0.5):
+        zoom 0.5
+    with moveinright
+    
+    n "Luke walks by, lugging a newly-acquired monitor under each arm."
     digi "Hey, Luke! Nice winnings!"
-    luke "Thanks! I feel like I just won Scrapyard Wars again."
-    # Luke walks back out of frame, and we follow him to the next room.
-    # Michael, Billy, and Obama
-    michael "Luke! Tell your friend Linus that he makes a jolly good water bottle!"
+    # TODO: do we count it as a title since it's technically a series LTT does?
+    luke "Thanks! I feel like I just won {i}Scrapyard Wars{/i} again."
+
+    show luke festive at manual_pos(-0.1, 1.0, 1.0)
+    show monitor as first at manual_pos(-0.3, 0.7, 0.5)
+    show monitor as second at manual_pos(-0.2, 0.7, 0.5)
+    show hard_drive at manual_pos(-0.5, 0.6, 0.5)
+    with MoveTransition(1.0)
+    pause 0.5
+
+    scene cs_living
+    show billy festive flipped at left
+    show peach_syrup at manual_pos(0.15, 0.7, 0.5)
+    show michael festive at mid_left
+    show ltt_bottle at manual_pos(0.25, 0.7, 0.5):
+        zoom 0.75
+    show obama festive at right
+    show mgs1 at manual_pos(0.8, 0.7, 0.5):
+        zoom 0.5
+    with dissolve
+    pause 0.5
+
+    show luke festive at center
+    show monitor as first at manual_pos(0.5, 0.7, 0.5) behind luke
+    show monitor as second at manual_pos(0.65, 0.7, 0.5)
+    show hard_drive at manual_pos(0.325, 0.6, 0.5):
+        zoom 0.5
+    with moveinright
+
+    michael "Luke! Please tell your friend Linus that he makes a {i}jolly{/i} good water bottle!"
     luke "Will do!"
-    # Luke walks out of this frame too but we don't follow him
-    billy "Michael, this peach syrup is delicous!"
+
+    show luke festive at manual_pos(-0.1, 1.0, 1.0)
+    show monitor as first at manual_pos(-0.3, 0.7, 0.5)
+    show monitor as second at manual_pos(-0.2, 0.7, 0.5)
+    show hard_drive at manual_pos(-0.5, 0.6, 0.5)
+    with MoveTransition(1.0)
+    pause 1.0
+
+    billy "Michael, this peach syrup is {i}delicious!"
+    show michael festive flipped
     michael "Lovely, innit?"
     billy "I might need to start selling this stuff!"
-    obama "I'm just excited to go back home and play some Metal Gear Solid!"
+    show michael festive
+    obama "I'm just excited to go back home and play some {i}Metal Gear Solid!"
     billy "Do you have a PS1?"
-    obama "Are you kidding me? I'm Obama! Of course I have a PlayStation!"
-    # Tate walks in
-    tate "Hi, guys!"
+    obama "Are you kidding me? I'm {i}Obama!{/i} Of {i}course{/i} I have a PlayStation!"
+    pause 0.25
+
+    show tate festive flipped at center 
+    show handy_switch at manual_pos(0.4, 0.7, 0.5):
+        zoom 0.4
+    with moveinright
+    tate "Howdy, y'all!"
     billy "Hi, Tate! I hope you enjoy that Handy Switch!"
-    tate "I'm... not quite sure {i}how{/i} to enjoy it, but thanks!"
-    # CS calls from off-screen
+    show tate sheepish festive flipped
+    tate "I'm... not quite sure {i}how{/i} I'll enjoy it yet, but, thanks!"
+    show billy festive
+    show michael festive flipped
     cs "Michael? Obama? Can you come into the kitchen real quick?"
     michael "Right-o!"
     obama "On our way!"
-    # Michael and Obama scamper off-screen
-    # Copguy runs past
-    copguy "Stop chasing me, you old fart!"
-    # Sheriff rolls past in hot pursuit
-    sheriff "I didn't keep this stupid bag of cement so I could {i}not{/i} hit you with it!"
-    # Mean walks in
-    mean "This Instant Pot is cool and all, Tate, but why would you gift a kitchen appliance at a gift exchange?"
-    tate "You do not understand the comfort a no-effort, warm meal can bring."
-    mean "Fair enough."
-    mean "Goober."
-    tate "Awawa!"
+    
+    show michael festive flipped at offscreenleft
+    show ltt_bottle at manual_pos(-0.2, 0.7, 0.5)
+    show billy festive at offscreenleft
+    show peach_syrup at manual_pos(-0.2, 0.7, 0.5)
+    with move
+    pause 0.5
 
+    show tate shock festive flipped
+    show copguy festive flipped at offscreenleft with determination
+    show copguy festive flipped at offscreenright with { "master": move }
+    copguy "Stop chasing me, you old fart!" with hpunch
+
+    show tate shock festive
+    show handy_switch at manual_pos(0.6, 0.7, 0.5):
+        zoom 0.4
+    show cement at manual_pos(-0.1, 0.4, 0.5)
+    show sheriff festive at offscreenleft 
+    with determination
+    show sheriff festive flipped at offscreenright 
+    show cement at manual_pos(1.2, 0.4, 0.5)
+    with { "master": move }
+    sheriff "I didn't keep this stupid bag of cement for {i}nothin'!" with hpunch
+    sheriff "{cshake}Get back here!" with hpunch
+    pause 0.25
+    show tate sheepish festive
+    play sound sfx_cat_crash
+    with hpunch
+    with vpunch
+    pause 1.0
+    show mean human annoyed flipped at offscreenleft
+    show instant_pot at manual_pos(-0.2, 0.7, 0.5)
+    with determination
+    show mean human annoyed flipped at left behind tate
+    show instant_pot at manual_pos(0.3, 0.7, 0.5) behind tate
+    with { "master": MoveTransition(1.0) }
+    mean "Yo, Tate."
+    show tate sheepish festive flipped
+    show handy_switch at manual_pos(0.4, 0.7, 0.5):
+        zoom 0.4
+    mean "This Instant Pot is cool and all, but, why would you gift a kitchen appliance at a gift exchange?"
+    mean "Ain't that kinda... tacky?"
+    show tate srs festive flipped
+    tate "Normally, I'd agree with you, but, buying one of these was {i}actually{/i} life-changing!"
+    show tate festive flipped
+    tate "You can throw everything in, turn it on, go relax, and then you have hot food!"
+    show tate sheepish festive flipped
+    tate "No standing in front of a stove and hurting your back, no burning yourself on an oven door, no steam burns-- {nw}"
+    show mean human angry flipped
+    mean "How in the {nw}" with hpunch
+    show tate shock festive flipped
+    mean "How in the {fast}{i}fuck{/i} {nw}" with vpunch
+    mean "How in the {i}fuck{/i} {fast}do you keep getting these kinds of injuries?!" with hpunch
+    show tate sad festive flipped
+    tate "{sc=1.0}I don't know..."
+    pause 0.5
     jump ce_climax
-
-    # TODO: TATE RESUMED EDITING HERE!
 
 # Games/Climax
 label ce_climax:
     scene black with dissolve
     stop music fadeout 3.0
     music end
-    n "After all of the gifts have been given out, and everyone's had their fill of conversation, the crowd starts to feel like it's time the festivies came to a close."
+    n "After some time, everyone's had their fill of conversation."
+    n "Although unspoken, the guests seem to mutually feel that it's time for the festivies came to a close."
     scene cs_living
     show cs christmas at left
     show tate festive flipped at mid_right
@@ -6426,7 +6533,7 @@ label ce_roof_moment:
     santa "Okay, seriously, I should probably go down there and check it out!"
     pause 0.5
 
-    # TODO: TATE STOPPED EDITING HERE! 2/2
+    # TODO: TATE STOPPED EDITING HERE!
     # ANYTHING BEYOND THIS POINT IS JUST SPOT TREATMENT AND NOT A REAL EDITING PASS!
 
     scene cs_roof
