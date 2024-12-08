@@ -5221,7 +5221,7 @@ label ce_lights_out:
     scene cs_basement
     show cs christmas at center
     show flashlight_held at manual_pos(0.5, 0.7, 0.5):
-         zoom 0.5
+        zoom 0.5
     $ collect("flashlight_held")
     play sound sfx_flashlight_on
     show screen flashlight_demo
@@ -5234,7 +5234,7 @@ label ce_lights_out:
     scene breakerbox with dissolve
     show cs christmas at left
     show flashlight_held at manual_pos(0.2, 0.7, 0.5):
-         zoom 0.5
+        zoom 0.5
     with moveinleft
     cs "Found it!"
     show cs christmas at right
@@ -5265,7 +5265,7 @@ label ce_lights_out:
     scene cs_basement
     show cs christmas at center
     show flashlight_held at manual_pos(0.5, 0.7, 0.5):
-         zoom 0.5
+        zoom 0.5
     show kitty festive at left
     with dissolve
     cs "At least I have this flashlight now!"
@@ -5304,7 +5304,7 @@ label ce_lights_out:
     pause 0.5
     show cs disappointed christmas at left 
     show flashlight_held at manual_pos(0.2, 0.7, 0.5):
-         zoom 0.5
+        zoom 0.5
     with moveinleft
     arceus "Welcome back!"
     arceus "Assuming you didn't get the power working?"
@@ -5357,7 +5357,7 @@ label ce_lights_out:
     pause 0.5
     show cs disappointed christmas at left 
     show flashlight_held at manual_pos(0.2, 0.7, 0.5):
-         zoom 0.5
+        zoom 0.5
     with moveinleft
     cs "Hey guys! How is everyone holding up?"
     tate "It's getting kinda cold..."
@@ -5426,7 +5426,7 @@ label ce_lights_out:
     pause 0.5
     show cs scared christmas flipped at center
     show flashlight_held flipped at manual_pos(0.5, 0.7, 0.5):
-         zoom 0.5 
+        zoom 0.5 
     with moveinright
     cs "{sc=1.88}Guys, the door... {w=0.5}{i}the door...!"
     aria "Calm down, CS. Catch your breath."
@@ -5462,7 +5462,7 @@ label ce_lights_out:
     show hatch at manual_pos(0.3, -0.2)
     show cs disappointed christmas at mid_left
     show flashlight_held at manual_pos(0.3, 0.7, 0.5):
-         zoom 0.5
+        zoom 0.5
     show mean human annoyed at mid_right
     with dissolve
     pause 0.5
@@ -5572,7 +5572,7 @@ label ce_snowed_in:
     show linus festive at mid_mid_left
     show cs disappointed christmas at mid_left
     show flashlight_held at manual_pos(0.3, 0.7, 0.5):
-         zoom 0.5
+        zoom 0.5
     show tate sad festive flipped at center
     show digi sad at mid_mid_right
     show rich festive at mid_offscreen_right
@@ -5687,7 +5687,7 @@ label ce_snowed_in:
     show k22 at mid_right
     show cs happy christmas at mid_left
     show flashlight_held at manual_pos(0.2, 0.7, 0.5):
-         zoom 0.5
+        zoom 0.5
     with dissolve
     pause 0.5
     n "He holds up a blue-green box and shows it off to the crowd."
@@ -5745,7 +5745,7 @@ label ce_reversi:
     show k22 at mid_right
     show cs happy christmas at mid_left
     show flashlight_held at manual_pos(0.2, 0.7, 0.5):
-         zoom 0.5
+        zoom 0.5
     show arceus festive at right
 
     menu:
@@ -5785,7 +5785,7 @@ label ce_win_reversi:
     show k22 at mid_right
     show cs happy christmas at mid_left
     show flashlight_held at manual_pos(0.2, 0.7, 0.5):
-         zoom 0.5
+        zoom 0.5
     show arceus festive at right
 
     $ achievement_manager.unlock("reversi")
@@ -5829,7 +5829,7 @@ label ce_lose_reversi:
     show k22 at mid_right
     show cs happy christmas at mid_left
     show flashlight_held at manual_pos(0.2, 0.7, 0.5):
-         zoom 0.5
+        zoom 0.5
     show arceus festive at right
 
     cs "Ah, dang it."
@@ -5877,7 +5877,7 @@ label ce_billy_time:
     show k22 at mid_right
     show cs happy christmas at mid_left
     show flashlight_held at manual_pos(0.2, 0.7, 0.5):
-         zoom 0.5
+        zoom 0.5
     show arceus festive at right
     with dissolve
     pause 0.5
