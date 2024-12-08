@@ -126,46 +126,71 @@ screen people_welcome():
 
 screen person(l):
 
-    text name_map[l]['full_name']:
-            xalign 0.65
-            yalign 0.05
-            size 69
-
-    # Main Container omitting the menu
+    ##### Main Container omitting the menu
     viewport:
-
-        xsize 1300
-        ysize 800
+        xsize 1350
+        ysize 900
         xalign 0.5
-        xoffset 305 
-        yoffset 200
+        xoffset 265 
+        yoffset 100
         side_yfill False
         mousewheel True
         draggable False
         pagekeys True
 
-        hbox:
-            ysize 800
-            vbox:
-                yfill False
-                xsize 800
-                spacing 28
-                # Handling the text, hopefully fixing the weird spacing in the process
-                frame:
-                    background None
-                    text "\"" + name_map[l]["quote"] + "\""
-                frame:
-                    background None
-                    python:
-                        try:
-                            if "dx_bio" in name_map[l]:
-                                fetched = name_map[l]["bio"] + "\n\n{image=gui/dx_text.png} " + name_map[l]["dx_bio"]
-                            else:
-                                fetched = name_map[l]["bio"]
-                        except:
-                            fetched = "The bio didn't load correctly. Ask Digi to fix the game."
-                    text (fetched)
+        ##### bounding box for content
+        frame:
+            background None
+            xsize 1.0
+            ysize 1.0
 
+            ### name
+            text name_map[l]['full_name']:
+                xalign 0.5
+                yalign 0.0
+                size 69
+
+            ### pronouns, if present
+            python:
+                try:
+                    if "pronouns" in name_map[l]:
+                        pronouns = name_map[l]['pronouns']
+                    else:
+                        pronouns = ""
+                except:
+                    pronouns = ""
+
+            text pronouns:
+                xalign 0.5
+                yalign 0.075
+                size 32
+                color "#BBBBBB"
+
+            ### bio text
+            hbox:
+                ysize 800
+                ypos 100
+                vbox:
+                    yfill False
+                    xsize 800
+                    spacing 28
+                    # Handling the text, hopefully fixing the weird spacing in the process
+                    frame:
+                        background None
+                        text "\"" + name_map[l]["quote"] + "\""
+                    frame:
+                        background None
+                        python:
+                            try:
+                                if "dx_bio" in name_map[l]:
+                                    fetched = name_map[l]["bio"] + "\n\n{image=gui/dx_text.png} " + name_map[l]["dx_bio"]
+                                else:
+                                    fetched = name_map[l]["bio"]
+                            except:
+                                fetched = "The bio didn't load correctly. Ask Digi to fix the game."
+                        text (fetched)
+
+            ### sprite displayer
             python:
                 z = name_map[l].get("zoom", 1.0) * 0.75
                 x = -1 if name_map[l].get("flip", False) else 1
