@@ -162,7 +162,7 @@ screen person(l):
 
             text pronouns:
                 xalign 0.5
-                yalign 0.075
+                yalign 0.08
                 size 32
                 color "#BBBBBB"
 
@@ -195,5 +195,5 @@ screen person(l):
                 z = name_map[l].get("zoom", 1.0) * 0.75
                 x = -1 if name_map[l].get("flip", False) else 1
                 xo = name_map[l].get("xoffset", 0)
-                yo = name_map[l].get("yoffset", 0)
+                yo = name_map[l].get("yoffset", 0) - 100
             add name_map[l]['sprite_path'] xalign 1.0 yalign 1.0 zoom z xzoom x xoffset xo yoffset yo

@@ -5,8 +5,7 @@
         "sprite_path": "images/characters/pakoo/pakoo.png",
         "quote": "Hold on, I remember this...",
         "bio": "Not to be confused with Pakoo, Addy is Pakoo's counterpart who runs a giant underground facility full of archived memories of Pakoo's entire life. Talk about the world's biggest autobiography!",
-        "dx_bio": "The creator of the story. The Scriptwriter. Besides archiving their life, they've also taken an interest in writing an adventure novel. This one, to be precise. When they tried to give CS an interesting life by writing him into this crazy story, it seems they didn't take CS' feelings into consideration.",
-        "zoom": 1.333
+        "dx_bio": "The creator of the story. The Scriptwriter. Besides archiving their life, they've also taken an interest in writing an adventure novel. This one, to be precise. When they tried to give CS an interesting life by writing him into this crazy story, it seems they didn't take CS' feelings into consideration."
     },
     "alicia": {
         "full_name": "Alicia",
@@ -21,7 +20,8 @@
         "sprite_path": "images/characters/amtrak_conductor.png",
         "quote": "All aboard!",
         "bio": "He's an early bird who runs a tight ship on an even tighter schedule. He does his best to maintain order and to keep a cool head no matter what nonsense may arise. He quietly takes pride in his physique and spends his off-days pumping iron. Unfortunately, his experimentation with protein shakes often lands him in the restroom for long periods...",
-        "dx": true
+        "dx": true,
+        "zoom": 0.9
     },
     "amtrak_stewardess": {
         "full_name": "Stewardess",
@@ -87,7 +87,8 @@
         "pronouns": "(he/him)",
         "sprite_path": "images/characters/border_guard.png",
         "quote": "Out for a rip are ya, bud?",
-        "bio": "This man is as stereotypical as a Canadian gets. He drinks a liter of maple syrup every day, eats poutine for lunch with a side of ketchup chips, and loves to fight random moose. He picked up a Mountie outfit somewhere along the way, but he might not even be a real border guard."
+        "bio": "This man is as stereotypical as a Canadian gets. He drinks a liter of maple syrup every day, eats poutine for lunch with a side of ketchup chips, and loves to fight random moose. He picked up a Mountie outfit somewhere along the way, but he might not even be a real border guard.",
+        "zoom": 0.8
     },
     "bubble": {
         "full_name": "Bub Ble",
@@ -199,7 +200,8 @@
         "pronouns": "(he/him)",
         "sprite_path": "images/characters/hohsis/ed.png",
         "quote": "We make sure to get the JoJ done right, the first time.",
-        "bio": "As the CEO of HoH SiS, he makes sure the crew gets the JoJ done right, no matter the cost. He always looks out for his fellow workers. He holds a grudge against CS, and is determined to get his revenge."
+        "bio": "As the CEO of HoH SiS, he makes sure the crew gets the JoJ done right, no matter the cost. He always looks out for his fellow workers. He holds a grudge against CS, and is determined to get his revenge.",
+        "zoom": 0.85
     },
     "ges": {
         "full_name": "Ges",
@@ -226,7 +228,8 @@
         "pronouns": "(he/him)",
         "sprite_path": "images/characters/green.png",
         "quote": "Just shut up and give me my cut!",
-        "bio": "Mr. Green became the embodiment of greed and luck long ago. After World War II, he started up a chocolate factory and spent his profits at a local casino until he became a billionaire. He once survived a heart attack simply because luck was in his favor. He has yet to be beaten by someone with better fortune."
+        "bio": "Mr. Green became the embodiment of greed and luck long ago. After World War II, he started up a chocolate factory and spent his profits at a local casino until he became a billionaire. He once survived a heart attack simply because luck was in his favor. He has yet to be beaten by someone with better fortune.",
+        "zoom": 0.75
     },
     "guest": {
         "full_name": "Ecstatic Fan",
@@ -297,7 +300,7 @@
     },
     "k174": {
         "full_name": "Pakoo's Memories",
-        "pronouns": "(he/they)",
+        "pronouns": "(he/they (all))",
         "sprite_path": "images/characters/memory.png",
         "quote": "U3VubnkgRCEgQWxyaWdodCEgVGhlIEYyNSBLZXk/IEknbSB0aGUgc3Ryb25nZXN0IQ",
         "bio": "These memories of Pakoo's life each only possess knowledge of what happened during a specific month. The K17s love talking about catgirls and citrus drinks, while the K20s won't shut up about Half-Life or Touhou. It never goes well when they meet up to solve a problem.",
@@ -319,7 +322,7 @@
     },
     "lego": {
         "full_name": "Lego NXT Minifigure",
-        "sprite_path": "images/characters/lego.png",
+        "sprite_path": "images/characters/legoeyes.png",
         "quote": "HEEYYY!!",
         "bio": "These Lego robots are creepy, and not much is known regarding why they get quirky at night. There are rumors of these robots pushing men into the Lego CITY river back in 1987."
     },
@@ -342,7 +345,8 @@
         "pronouns": "(he/him)",
         "sprite_path": "images/characters/lmg/luke.png",
         "quote": "I wanna go home!",
-        "bio": "Luke, also known as the Floatplane guy, is Linus' right-hand man. He works a little too hard for Linus' liking. He also apparently has a family."
+        "bio": "Luke, also known as the Floatplane guy, is Linus' right-hand man. He works a little too hard for Linus' liking. He also apparently has a family.",
+        "zoom": 0.85
     },
     "lupin": {
         "full_name": "Lupin III",
@@ -376,7 +380,7 @@
         "quote": "Damn, you're all so {i}short{/i} from up here.",
         "bio": "He's a pirate by blood and a lover of trains by heart. Mean has the ability to swap between this and his sea urchin form at will. Now that he's got a new job that he can be proud of, he wants to present as human a little more often.\n\nBecause Mean completed all of his job training as a sea urchin, however, it has been taking some time for his coworkers to still be able to recognize him. He hopes that wearing the one-of-a-kind hat that Tate gave him will help ease this transition.",
         "dx": true,
-        "zoom": 0.933
+        "zoom": 0.9
     },
     "mettaton": {
         "full_name": "Mettaton",
@@ -398,7 +402,8 @@
         "pronouns": "(she/her)",
         "sprite_path": "images/characters/midge.png",
         "quote": "Oh hai!",
-        "bio": "Midge has some crazy artistic talent. She can draw, animate, and edit videos, all for the CS community. We're still trying to figure out who \"Chum\" is, though."
+        "bio": "Midge has some crazy artistic talent. She can draw, animate, and edit videos, all for the CS community. We're still trying to figure out who \"Chum\" is, though.",
+        "zoom": 0.9
     },
     "mika": {
         "full_name": "Mikapara",
@@ -413,7 +418,8 @@
         "sprite_path": "images/characters/mike.png",
         "quote": "I'm Chinese.",
         "bio": "This pizzapotamus can often be spotted giving away free samples of pizza from his pizza Thermos. Works at the bus stop.",
-        "ce": true
+        "ce": true,
+        "zoom": 0.8
     },
     "miku": {
         "full_name": "Hatsune Miku",
@@ -434,7 +440,8 @@
         "pronouns": "(she/her)",
         "sprite_path": "images/characters/monika.png",
         "quote": "Welcome to the Literature Club!",
-        "bio": "Monika, can you please get out of this game? I know this is a Ren'Py visual novel, but you don't have to come in and ruin it! So nosy, God..."
+        "bio": "Monika, can you please get out of this game? I know this is a Ren'Py visual novel, but you don't have to come in and ruin it! So nosy, God...",
+        "xoffset": 100
     },
     "moomin": {
         "full_name": "Moomin",
@@ -448,7 +455,8 @@
         "pronouns": "(they/them)",
         "sprite_path": "images/characters/nova.png",
         "quote": "k.",
-        "bio": "Nova is a former member of the CScord and was one of CS' earliest followers. They were known for being pretty loud back then, but nowadays they are making music under another alias. They are also very talented at rhythm games."
+        "bio": "Nova is a former member of the CScord and was one of CS' earliest followers. They were known for being pretty loud back then, but nowadays they are making music under another alias. They are also very talented at rhythm games.",
+        "zoom": 0.85
     },
     "obama": {
         "full_name": "Barack Obama",
@@ -463,8 +471,7 @@
         "sprite_path": "images/characters/pakoo/pakoo.png",
         "quote": "I remember this one time...",
         "bio": "Pakoo remembers everything. They keep track of pretty much every event that has happened to them. They plan to build a whole archive documenting their entire life. Sadly, they can't remember what happened about five minutes ago.",
-        "dx_bio": "Really likes Christmas.",
-        "zoom": 1.333
+        "dx_bio": "Really likes Christmas."
     },
     "pencil": {
         "full_name": "Pencil Greeter",
@@ -500,7 +507,8 @@
         "pronouns": "(he/him)",
         "sprite_path": "images/characters/hohsis/rich.png",
         "quote": "Yes, I'm happy now.",
-        "bio": "Richard doesn't want as much trouble from CS as his coworkers do, but he's prepared to act if he must. Richard just wants to go home and chill after a long day of hard work."
+        "bio": "Richard doesn't want as much trouble from CS as his coworkers do, but he's prepared to act if he must. Richard just wants to go home and chill after a long day of hard work.",
+        "zoom": 0.85
     },
     "round": {
         "full_name": "Mr. Round",
@@ -554,8 +562,7 @@
         "full_name": "Sticky Note",
         "sprite_path": "images/post-it.png",
         "quote": "The most important character",
-        "bio": "Hi, guys! It's me, the sticky note, remember? I mean, how could you forget? I'm the most important character in the game! Remember when I told CS to delete the CScord, and how the Discord route was the coolest route in the game? Yeah, I know. It's super cool. Hey, wait! CS, what are you doing? Why are you throwing me awayyyyy.....",
-        "zoom": 1.333
+        "bio": "Hi, guys! It's me, the sticky note, remember? I mean, how could you forget? I'm the most important character in the game! Remember when I told CS to delete the CScord, and how the Discord route was the coolest route in the game? Yeah, I know. It's super cool. Hey, wait! CS, what are you doing? Why are you throwing me awayyyyy....."
     },
     "streetguy": {
         "full_name": "Streetguy",
@@ -586,7 +593,8 @@
         "quote": "Don't underestimate me.",
         "bio": "A defector from a violent cult who grew disgusted with their clan's practices. After spending many years being ostracized and even punished for protesting the cult's gruesome \"activities\", out of fear for their life, Tate fled.\n\nTate now strives to lead a peaceful existence while posing as a human. Although they are a pacifist down to the core, sometimes the echoes of the past become too much to bear...",
         "dx": true,
-        "zoom": 0.667
+        "zoom": 0.65,
+        "xoffset": 100
     },
     "perfect_tate": {
         "full_name": "Perfect Tate",
