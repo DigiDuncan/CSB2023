@@ -5216,14 +5216,16 @@ label ce_preclimax:
     show tate sheepish festive flipped
     show handy_switch at manual_pos(0.4, 0.7, 0.5):
         zoom 0.4
-    mean "This Instant Pot is cool and all, but, why would you gift a kitchen appliance at a gift exchange?"
+    mean "This Instant Pot is cool and all, but, why would you bring a {i}kitchen appliance{/i} to a gift exchange?"
     mean "Ain't that kinda... tacky?"
     show tate srs festive flipped
     tate "Normally, I'd agree with you, but, buying one of these was {i}actually{/i} life-changing!"
     show tate festive flipped
-    tate "You can throw everything in, turn it on, go relax, and then you have hot food!"
+    tate "You can throw everything in, turn it on, go relax..."
+    tate "Then, a while later, you have hot food!"
     show tate sheepish festive flipped
-    tate "No standing in front of a stove and hurting your back, no burning yourself on an oven door, no steam burns-- {nw}"
+    tate "No standing in front of a stove and throwing your back out, no burning yourself on an oven rack, no slamming your kneecap into the oven door, no steam burns-- {nw}"
+    # these are all REAL injuries i have sustained in the kitchen... many times... - tate
     show mean human angry flipped
     mean "How in the {nw}" with hpunch
     show tate shock festive flipped
