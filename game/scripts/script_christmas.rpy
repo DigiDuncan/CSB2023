@@ -3195,6 +3195,7 @@ label ce_banter:
 
     scene cs_living
     # TODO: if anyone else thinks they can get this math more exact, have at it - tate
+    # Is it possible to view this math easier, like throwing it in Desmos or something?
     show elf_0:
         zoom 1.3
         perspective True
@@ -3254,6 +3255,7 @@ label ce_banter:
     show k22 disappointed flipped
     k17 "Whaa..."
     k22 "Please excuse us for a moment."
+    # TODO: Make K22 grab K17 by the hand instead
     show k22 disappointed flipped at Move((0.0, 0.14), (1.0, 0.14), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     pause 1.4
     show k17 shock at Move((0.475, 0.14), (1.0, 0.14), 2, repeat=False, bounce=False, xanchor="left", yanchor="top")
