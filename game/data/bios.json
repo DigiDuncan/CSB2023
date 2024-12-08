@@ -1,6 +1,7 @@
 {
     "addy": {
         "full_name": "Addy",
+        "pronouns": "(any/all)",
         "sprite_path": "images/characters/pakoo/pakoo.png",
         "quote": "Hold on, I remember this...",
         "bio": "Not to be confused with Pakoo, Addy is Pakoo's counterpart who runs a giant underground facility full of archived memories of Pakoo's entire life. Talk about the world's biggest autobiography!",
@@ -46,9 +47,10 @@
     },
     "aria": {
         "full_name": "Aria",
+        "pronouns": "(she/her)",
         "sprite_path": "images/characters/aria.png",
         "quote": "Yeah, that sounds about right.",
-        "bio": "Aria knows their shit. Whether it's book smarts or street smarts, they've got it all. While studying for college is important to Aria, they seem to invest even more of their time into hanging out with those bozos from DPN."
+        "bio": "Aria knows her shit. Whether it's book smarts or street smarts, she's got it all. While studying for college is important to Aria, she seems to invest even more of her time into hanging out with those bozos from DPN."
     },
     "avgn": {
         "full_name": "James Rolfe",
@@ -154,6 +156,7 @@
     },
     "csgod": {
         "full_name": "CSGod",
+        "pronouns": "(he/him)",
         "sprite_path": "images/characters/cs/misc/csgod.png",
         "quote": "I have the power of YTP!",
         "bio": "﷽"
@@ -179,9 +182,10 @@
     },
     "digi": {
         "full_name": "DigiDuncan",
+        "pronouns": "(they/them)",
         "sprite_path": "images/characters/digi/neutral.png",
         "quote": "But, here's the thing though, right?",
-        "bio": "DigiDuncan is the man with the plan. Too many plans, actually. They also love to drink an absurd amount of Powerade. Maybe that's where all those ideas come from. Digi is always working on countless projects ranging from game development to tinkering with his cybernetic augmentations. He is also really smol."
+        "bio": "DigiDuncan is the man with the plan. Too many plans, actually. They also love to drink an absurd amount of Powerade. Maybe that's where all those ideas come from. Digi is always working on countless projects ranging from game development to tinkering with his cybernetic augmentations. They are also really smol."
     },
     "doug": {
         "full_name": "Doug McMillon",
@@ -199,6 +203,7 @@
     },
     "ges": {
         "full_name": "Ges",
+        "pronouns": "(he/him)",
         "sprite_path": "images/characters/ges.png",
         "quote": "weenor :)",
         "bio": "Ges is a massive history buff. He loves to tell stories about past events, especially of World War I and II. While he'd love to go out and visit historical landmarks, he's stuck working at the shoe store for now."
@@ -232,6 +237,7 @@
     },
     "hammond": {
         "full_name": "The Top Gear Crew",
+        "pronouns": "(he/him (all))",
         "sprite_path": "images/characters/topgear.png",
         "quote": "Welcome to {i}Top Gear.{/i}",
         "bio": "Whether it's racing cars or wrecking them, they love anything car-related. They have pushed the limits of many vehicles as well as of their components. Sometimes they overdo it, and because of this, they were kicked out of the original {i}Top Gear{/i} and had to make a new spin-off.",
@@ -239,6 +245,7 @@
     },
     "hoh_worker": {
         "full_name": "HoH SiS Workers",
+        "pronouns": "(he/him (all))",
         "sprite_path": "images/characters/hohsis/hoh_worker.png",
         "quote": "I don't know, don't ask me!",
         "bio": "The workers of HoH SiS aren't too compliant with the new changes to the workplace. The CEO has recently wanted to make attacks on a man named \"cs188\". They didn't sign up for this! They just wanna improve foundations, for God's sake!",
@@ -253,12 +260,14 @@
     },
     "iris": {
         "full_name": "???",
+        "pronouns": "(she/her)",
         "sprite_path": "images/characters/iris.png",
         "quote": "Oh, hello!",
         "bio": "The bio didn't load correctly. Ask Digi to fix the game."
     },
     "jay": {
         "full_name": "The Insane Clown Posse",
+        "pronouns": "(he/him (both))",
         "sprite_path": "images/characters/jay.png",
         "quote": "Welcome to the Clown Zone!",
         "bio": "Even though they are called \"The Insane Clown Posse\", they are really nice people to talk to. They go around trying their best to help those in need. Even though they can't help you smile like a normal clown would, they help out in other ways.",
@@ -393,6 +402,7 @@
     },
     "mika": {
         "full_name": "Mikapara",
+        "pronouns": "(any/all)",
         "sprite_path": "images/characters/mika.png",
         "quote": "TULE T\u00c4NNE, SENKIN SAASTAINEN SEKAROTUINEN!",
         "bio": "Pakoo's fianc\u00e9e who loves to give CS five dollars and talk in a very highlighted tone. A pilot, gambler, and stand-up kinda guy."
@@ -435,6 +445,7 @@
     },
     "nova": {
         "full_name": "ItsNovaHere",
+        "pronouns": "(they/them)",
         "sprite_path": "images/characters/nova.png",
         "quote": "k.",
         "bio": "Nova is a former member of the CScord and was one of CS' earliest followers. They were known for being pretty loud back then, but nowadays they are making music under another alias. They are also very talented at rhythm games."
@@ -448,6 +459,7 @@
     },
     "pakoo": {
         "full_name": "Pakoo",
+        "pronouns": "(he/they)",
         "sprite_path": "images/characters/pakoo/pakoo.png",
         "quote": "I remember this one time...",
         "bio": "Pakoo remembers everything. They keep track of pretty much every event that has happened to them. They plan to build a whole archive documenting their entire life. Sadly, they can't remember what happened about five minutes ago.",
@@ -498,9 +510,10 @@
     },
     "sayori": {
         "full_name": "Sayori",
+        "pronouns": "(she/her)",
         "sprite_path": "images/characters/sayori.png",
         "quote": "Welcome to cat paradise",
-        "bio": "As the creator of Nekopara, they have built one of the most popular catgirl paradises in history. Their series of visual novels depicts the story of a bakery run by six crazy catgirls. If you choose to give any of these titles a try, however, do be mindful of who is watching your screen."
+        "bio": "As the creator of Nekopara, she has built one of the most popular catgirl paradises in history. Her series of visual novels depicts the story of a bakery run by six crazy catgirls. If you choose to give any of these titles a try, however, do be mindful of who is watching your screen."
     },
     "scott": {
         "full_name": "Scott Wozniak",
@@ -577,7 +590,7 @@
     },
     "perfect_tate": {
         "full_name": "Perfect Tate",
-        "pronouns": "(they/them)",
+        "pronouns": "(they/them (plural))",
         "sprite_path": "minigames/perfecttate/perfecttate.png",
         "quote": "...",
         "bio": "A temporal abomination.",
