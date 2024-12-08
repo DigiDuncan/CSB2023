@@ -1221,6 +1221,7 @@ label ce_before_shopping:
     # NOTE: Good bread (intentional)
     cs "Oh, good, bread. Can't have a holiday dinner without some good bread!"
     cs "I guess I'll get Italian bread. You can make real good garlic bread with that."
+    dxcom ace
     cs "Since Digi's coming, and I think they're ace, I'd better have the good stuff."
     # This is deep-cut ace jokes, CS will not understand this one. -- Digi
     show cs coat at mid_right with move
@@ -1291,6 +1292,8 @@ label ce_before_shopping:
 
     n "The next few aisles don't hold much for CS beyond some content for observational comedy."
     show cs coat surprised
+
+    dxcom doritos
     cs "\"3D\" Doritos? I'm pretty sure {i}all{/i} Doritos are 3D. Would be pretty hard to eat them, otherwise."
     show cs coat disappointed
     cs "You know, I think they're making these bags of chips smaller and smaller, too."
@@ -2668,6 +2671,7 @@ label ce_introductions:
     music teeth_dust
     cs "Well, it looks like everyone is here, right?"
     if d20 != 19:
+        dxcom db
         anno "DB isn't here yet, but otherwise, yeah."
     else:
         anno "Looks like it, yeah."
@@ -3691,6 +3695,7 @@ label ce_cooking:
     digi "What? He wouldn't have thought anything of it if you hadn't stopped me mid-sentence."
     show arceus festive
     arceus "We just need to be a little more careful than we have been."
+    dxcom meta
     digi "Fair enough. Wouldn't want this place falling apart."
     pause 0.5
 
@@ -5894,6 +5899,7 @@ label ce_lose_reversi:
 
 label ce_reversi_menu:
     $ mouse_visible = True
+    dxcom reversi
     menu:
         "Play Reversi again?"
         "Yes!":
