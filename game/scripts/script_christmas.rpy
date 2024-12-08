@@ -5074,8 +5074,51 @@ label ce_exchange:
     # TODO: TATE STOPPED EDITING HERE! 1/2
 
 label ce_preclimax:
-    # TODO: This needs cinematography!
-    # TODO: But, there's no script... - Tate
+    # TODO: This needs cinematography
+    scene black with dissolve
+    n "After the exchange, people form into groups and discuss what they recieved."
+    # Digi, Arc, and Aria
+    digi "This Riffmaster is great! Listen to that strumbar!"
+    n "Digi strums the controller in joy."
+    digi "You gonna take that Adderall, Aria?"
+    aria "That implies I haven't already."
+    digi "What about you, Arc, what are you going to do with that Raspberry Pi?"
+    arc "I had an idea for a webserver I've been meaning to try out."
+    digi "Nice, nice."
+    n "Luke walks by, lugging his newly gotten tech."
+    digi "Hey, Luke! Nice winnings!"
+    luke "Thanks! I feel like I just won Scrapyard Wars again."
+    # Luke walks back out of frame, and we follow him to the next room.
+    # Michael, Billy, and Obama
+    michael "Luke! Tell your friend Linus that he makes a jolly good water bottle!"
+    luke "Will do!"
+    # Luke walks out of this frame too but we don't follow him
+    billy "Michael, this peach syrup is delicous!"
+    michael "Lovely, innit?"
+    billy "I might need to start selling this stuff!"
+    obama "I'm just excited to go back home and play some Metal Gear Solid!"
+    billy "Do you have a PS1?"
+    obama "Are you kidding me? I'm Obama! Of course I have a PlayStation!"
+    # Tate walks in
+    tate "Hi, guys!"
+    billy "Hi, Tate! I hope you enjoy that Handy Switch!"
+    tate "I'm... not quite sure {i}how{/i} to enjoy it, but thanks!"
+    # CS calls from off-screen
+    cs "Michael? Obama? Can you come into the kitchen real quick?"
+    michael "Right-o!"
+    obama "On our way!"
+    # Michael and Obama scamper off-screen
+    # Copguy runs past
+    copguy "Stop chasing me, you old fart!"
+    # Sheriff rolls past in hot pursuit
+    sheriff "I didn't keep this stupid bag of cement so I could {i}not{/i} hit you with it!"
+    # Mean walks in
+    mean "This Instant Pot is cool and all, Tate, but why would you gift a kitchen appliance at a gift exchange?"
+    tate "You do not understand the comfort a no-effort, warm meal can bring."
+    mean "Fair enough."
+    mean "Goober."
+    tate "Awawa!"
+
     jump ce_climax
 
     # TODO: TATE RESUMED EDITING HERE!
@@ -5085,7 +5128,7 @@ label ce_climax:
     scene black with dissolve
     stop music fadeout 3.0
     music end
-    n "After all of the gifts have been given out, almost everyone starts to feel that the party should come to a close."
+    n "After all of the gifts have been given out, and everyone's had their fill of conversation, the crowd starts to feel like it's time the festivies came to a close."
     scene cs_living
     show cs christmas at left
     show tate festive flipped at mid_right
