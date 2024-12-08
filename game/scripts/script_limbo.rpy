@@ -115,7 +115,7 @@ label woohoo_counter:
     cs "Now, it's [persistent.woohoo]!"
     return
 
-screen hatch_button:
+screen hatch_button():
     modal True
     viewport:
         xpos 0.3
@@ -125,7 +125,7 @@ screen hatch_button:
                 action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("hatch_button"), Jump("ce_after_hatch")
     add Flashlight()
 
-screen limbo_csbutton:
+screen limbo_csbutton():
     add "#000000"
     vbox xalign 0.5 yalign 0.5:
         spacing 25
@@ -143,7 +143,7 @@ screen limbo_csbutton:
             text_size 72
             action Jump("csdata")
 
-screen rockstar_check:
+screen rockstar_check():
     text "Band Name: [band_name]" textalign 0.5 size 36 xalign 0.0 yalign 0.05
     hbox xalign 0.0 yalign 0.25:
         spacing 50

@@ -796,9 +796,6 @@ label ce_anno:
     play sound sfx_car_approach_stop volume 5.0 fadein 5.0
     n "As CS finishes clearing the driveway, he spots Anno's car turning onto his street."
     cs "Just in time!"
-
-    # TODO: sfx - anno's car
-
     show cs happy coat hat flipped
     n "CS waves to Anno as the car pulls into CS' driveway."
     show cs coat hat flipped
@@ -1246,6 +1243,7 @@ label ce_before_shopping:
     show cs coat happy
     cs "Let's check it out!"
 
+    hide screen dxcom
     hide cs
     hide shopping_cart
     with moveoutright
@@ -1322,6 +1320,7 @@ label ce_before_shopping:
     n "CS grabs a can of his favorite flavor before moving on to the next aisle."
     show cs coat with determination
     pause 0.5
+    hide screen dxcom
     hide cs
     hide shopping_cart
     with moveoutright
@@ -2675,6 +2674,7 @@ label ce_introductions:
         anno "DB isn't here yet, but otherwise, yeah."
     else:
         anno "Looks like it, yeah."
+    hide screen dxcom
     show tate sheepish festive flipped
     tate "There sure are... a {i}lot{/i} of people here..."
     show digi thinking flipped
@@ -2794,13 +2794,13 @@ label ce_introductions:
         show mean human happy
         show digi shock flipped
         show tate shock festive
-        mean "Not for {i}free,{/free} I'm not!" with vpunch
+        mean "Not for {i}free,{/i} I'm not!" with vpunch
     else:
         k17 "Are you DigBick?"
         show mean human angry
         show digi sad flipped
         show tate sheepish festive
-        mean "What did you just call me?" with vpunch
+        mean "{i}What{/i} did you just call me?" with vpunch
     pause 0.5
 
     scene cs_kitchen
@@ -3130,7 +3130,7 @@ label ce_banter:
     linus "Not even {i}I've{/i} seen this before!"
     show digi angry
     digi "Watch, I'll turn it on, and..."
-    # TODO: sfx do projectors make a sound when they're booted up? idk i just think we need something here
+    play sound sfx_projector_boot
     pause 1.0
     scene cs_living_error
     show digi angry at center
@@ -3171,7 +3171,7 @@ label ce_banter:
     play sound sfx_tf2_wrench_hit
     with vpunch
     pause 0.5
-    # TODO: SFX projector boot
+    play sound sfx_projector_boot
     n "After a little bit of tech magic, the projector comes to life."
     scene cs_living_elf
     show digi shock at mid_right
@@ -3181,14 +3181,22 @@ label ce_banter:
     play sound sfx_tada 
     with vpunch
     luke "Ta-da!"
+
     scene cs_living
+    # TODO: if anyone else thinks they can get this math more exact, have at it - tate
     show elf_0:
-        xpos 50
-        ypos 100
+        zoom 1.3
+        perspective True
+        matrixanchor (0, 0)
+        matrixtransform RotateMatrix(0, 0, 0) * RotateMatrix(0, 35, 0) * RotateMatrix(0, 0, 0) * OffsetMatrix(32, 40, 0)
     show digi shock at mid_right
     show linus festive at mid_right behind digi
-    show luke festive flipped at mid_left_left behind linus
-    show cs christmas flipped at mid_right_right behind digi
+    show luke festive at mid_left_left behind linus
+    show cs christmas scared flipped at mid_right_right behind digi
+    with dissolve
+    show cs christmas flipped
+    show digi
+    show luke festive flipped
     rich "Finally! We can watch something!"
     wesley "Are you 100 percent satisfied, Richard?"
     show cs disappointed christmas flipped
@@ -3433,7 +3441,7 @@ label ce_cooking:
     obama "Second of all, I accidently cut myself while chopping these carrots."
     obama "What a fool I am."  # One of my favorite lines -- Digi
     show cs disappointed christmas
-    cs "Oh my God, are you okay?"
+    cs "Oh, my God! Are you okay?"
     obama "Yes, I'm fine. However, I need someone to take over carrot-chopping duties."
     obama "Will you do this for me?"
     show cs christmas
@@ -3703,6 +3711,7 @@ label ce_cooking:
     show cs_kitchen_fg
     show obama festive flipped at mid_left behind cs_kitchen_fg
     show billy festive at mid_right behind cs_kitchen_fg
+    hide screen dxcom
     with dissolve
     pause 0.5
     billy "So, then I said, \"That's a resturaunt mini burger {w=1.0}{i}no one{/i} loves!\""
@@ -3925,7 +3934,7 @@ label ce_dinner:
     stop music2
     $ renpy.music.set_pause(False, "music")
     music christmas_spirit
-    hide music
+    hide screen music
     pause 2.0
 
     show left_room at mid_left
@@ -5205,7 +5214,7 @@ label ce_preclimax:
     play sound sfx_cat_crash
     with hpunch
     with vpunch
-    pause 1.0
+    pause 5.0
     show mean human annoyed flipped at offscreenleft
     show instant_pot at manual_pos(-0.2, 0.7, 0.5)
     with determination
@@ -5219,18 +5228,19 @@ label ce_preclimax:
     mean "This Instant Pot is cool and all, but, why would you bring a {i}kitchen appliance{/i} to a gift exchange?"
     mean "Ain't that kinda... tacky?"
     show tate srs festive flipped
-    tate "Normally, I'd agree with you, but, buying one of these was {i}actually{/i} life-changing!"
+    tate "Normally, I'd agree with you, but, hear me out!"
+    tate "Buying one of these was {i}actually{/i} life-changing!"
     show tate festive flipped
     tate "You can throw everything in, turn it on, go relax..."
     tate "Then, a while later, you have hot food!"
     show tate sheepish festive flipped
-    tate "No standing in front of a stove and throwing your back out, no burning yourself on an oven rack, no slamming your kneecap into the oven door, no steam burns-- {nw}"
+    tate "No standing in front of a stove and throwing your back out, no burning yourself on an oven rack, no slamming your shin into the oven door, no steam burns-- {nw}"
     # these are all REAL injuries i have sustained in the kitchen... many times... - tate
     show mean human angry flipped
     mean "How in the {nw}" with hpunch
     show tate shock festive flipped
     mean "How in the {fast}{i}fuck{/i} {nw}" with vpunch
-    mean "How in the {i}fuck{/i} {fast}do you keep getting these kinds of injuries?!" with hpunch
+    mean "How in the {i}fuck{/i} {fast}do you keep hurting yourself like this?!" with hpunch
     show tate sad festive flipped
     tate "{sc=1.0}I don't know..."
     pause 0.5
@@ -5241,8 +5251,8 @@ label ce_climax:
     scene black with dissolve
     stop music fadeout 3.0
     music end
-    n "After some time, everyone's had their fill of conversation."
-    n "Although unspoken, the guests seem to mutually feel that it's time for the festivies came to a close."
+    n "After some time, everyone gets their fill of food and conversation."
+    n "Although it is unspoken, the guests seem to mutually feel that it's time for the festivies came to a close."
     scene cs_living
     show cs christmas at left
     show tate festive flipped at mid_right
@@ -5265,15 +5275,18 @@ label ce_climax:
     show k22 disappointed
     show k17 disappointed
     show cs angry christmas
+    show mean human annoyed
     cs "So, you never actually {i}wanted{/i} to stay! You only came here because of {i}him!" # TODO: yeah, lmao, that's KINDA what was said on line 2748. this line needs rewritten. CS ain't THAT slow on the uptake.
     nova "Well, I'm {i}also{/i} leaving, because {i}this{/i} asshole won't let me play any {i}good{/i} music!" with hpunch
     blank "Hah! Says you! {i}You{/i} just wanted to play {i}your{/i} trash for the entire party!" with hpunch
     digi "Hey, wait a second! Luke!" with hpunch
-    luke "Wha--? Oh, {i}shit."
+    luke "Wha--?"
+    luke "Oh, {i}shit."
     show tate sad festive flipped
     digi "You were... streaming movies to the projector from your {i}phone?!"
     show mean human annoyed
-    luke "Look, this looked too complicated to set up, and I just wanted to enjoy the party! I just did it to make it feel like your plan worked!"
+    luke "Look, this looked too complicated to set up, and I just wanted to enjoy the party!"
+    luke "I just did it to make it feel like your plan worked!"
     digi "But, but..."
     digi "I really thought I could set it up this time..."
     sheriff "Hey, Copguy! I need to go to the bathroom again!" with hpunch
@@ -5298,7 +5311,7 @@ label ce_climax:
     cs "Shut the {i}fuck{/i} u--{nw}" with vpunch
 
 # Lights out
-screen flashlight_demo:
+screen flashlight_demo():
     layer "flashlight"
     add Flashlight()
 
@@ -5328,10 +5341,9 @@ label ce_lights_out:
     cs "I'll be right back."
     pause 0.5
     play sound sfx_bump
-    with vpunch
-    k17 "{i}Oof!"
+    k17 "{i}Oof!" with vpunch
     cs "Sorry!"
-    pause 1.0
+    pause 2.0
     arceus "CS? Is that you?"
     cs "Hey, Arc. I'm making my way to the breaker to try to get the power back on."
     arceus "Great. If you find Kitty, lemme know. I don't know where she went."
@@ -5346,10 +5358,9 @@ label ce_lights_out:
     if fun_value(FUN_VALUE_EPIC):
         cs "Huh, why is my doorknob..."
         cs "Squeezable?"
-        n "CS turns the doorknob."
+        n "He gives it a turn."
         play sound sfx_hitbod3
-        n "All of a sudden, CS gets kicked to the ground!" with vpunch
-        cs "Ow!" 
+        cs "Ow!" with vpunch
         cs "What the fuck was {i}that?!"
         eliza "Oops, sorry."
         eliza "You grabbed my... chest."
@@ -5382,7 +5393,7 @@ label ce_lights_out:
     $ collect("flashlight_held")
     play sound sfx_flashlight_on
     show screen flashlight_demo
-    cs "Thank God, I can actually see..."
+    cs "Thank God. I can actually see..."
     pause 0.5
     hide cs 
     hide flashlight_held
@@ -5804,7 +5815,10 @@ label ce_snowed_in:
     show mean human flipped
     show cs disappointed christmas
     show tate sheepish festive flipped
+    show obama angry festive
     obama "Hey!" with vpunch
+    show obama festive
+    show mean human annoyed flipped
     michael "No, it is not."
     show digi sad
     aria "Is it {i}everything?"
@@ -5823,9 +5837,9 @@ label ce_snowed_in:
     with moveoutleft
     pause 0.5
     scene black with dissolve
-    pause 1.0
     $ mouse_visible = True
     hide screen flashlight_demo
+    pause 1.0
 
     play sound sfx_items_rustling volume 5.0
     n "After a bit of rummaging, CS returns to the living room."
@@ -5870,7 +5884,7 @@ label ce_snowed_in:
     aria "Wait a second."
     aria "This is {i}Othello,{/i} not Reversi."
     show cs disappointed christmas
-    cs "What do you mean? It says Reversi on the box!"
+    cs "What do you mean? It says \"Reversi\" right on the box!"
     aria "Yeah, I know, but in 1971-- {nw}"
     show cs angry christmas
     cs "It's fucking Reversi, okay?" with vpunch
@@ -5906,7 +5920,7 @@ label ce_reversi:
     show arceus festive at right
 
     menu:
-        "Who do you want to play against?"
+        "Who would you like to play against?"
         "Tate (Beginner)":
             $ reversi_difficulty = ReversiAI.TATE
             minigame "play_reversigame" "ce_win_reversi" "ce_lose_reversi"
@@ -6019,10 +6033,10 @@ label ce_reversi_menu:
             jump ce_billy_time
 
 label ce_billy_time:
-    #$ mouse_visible = False
+    $ mouse_visible = False
     stop music
     music end
-    #show screen flashlight_demo
+    show screen flashlight_demo
     scene cs_living2_off_festive
     show mean human annoyed flipped at mid_offscreen_left
     show aria festive at center
@@ -6037,6 +6051,7 @@ label ce_billy_time:
     show flashlight_held at manual_pos(0.2, 0.7, 0.5):
         zoom 0.5
     show arceus festive at right
+    hide screen dxcom
     with dissolve
     pause 0.5
     show billy festive at mid_right with moveinright
@@ -6054,7 +6069,7 @@ label ce_billy_time:
     billy "Hi, Billy Mays here, for this {i}great{/i} idea! We'll be right back!"
     hide billy with moveoutleft
     show tate sheepish festive flipped
-    tate "I guess I'm following Billy, so, I'll be back...?"
+    tate "Guess I'm following Billy, so, I'll be back, too...?"
     hide tate with moveoutleft
     pause 0.5
     scene black with dissolve
@@ -6167,6 +6182,7 @@ label ce_billy_time:
     tate "Really? Just, like... slap it on?"
     show tate_phone at manual_pos(0.4, 0.8, 0.5) with { "master": MoveTransition(0.25) }
     billy "Yes! It's {i}that{/i} easy!"
+    tate "Here goes nothin'..."
     show handy_switch at manual_pos(0.2, 0.7, 0.5) with dissolve:
         zoom 0.5
     show handy_switch at manual_pos(0.45, 0.5, 0.5):
@@ -6175,15 +6191,16 @@ label ce_billy_time:
     show tate sheepish festive at manual_pos(0.45, 1.0, 1.0)
     show tate_phone at manual_pos(0.45, 0.8, 0.5)
     with MoveTransition(0.25)
+    play sound sfx_slap
     with hpunch
-    # TODO: SFX slap it on!
-    n "Tate smacks the Handy Switch onto the breaker and flips the switch."
+    n "Tate smacks the Handy Switch onto the breaker!"
+    n "They hesitantly flip the switch!"
     play sound sfx_snd_lightswitch
     $ mouse_visible = True
     hide screen flashlight_demo
-    show tate shock festive
     pause 1.0
     tate "Wh-- {nw}"
+    show tate shock festive
     tate "Wh-- {fast}{i}how?!" with vpunch
     billy "Like {i}magic!"
     show tate sheepish festive
@@ -6191,7 +6208,7 @@ label ce_billy_time:
     pause 0.5
     n "Billy ponders for a moment."
     pause 3.0
-    billy "I don't even know myself!"
+    billy "I have {i}no{/i} idea!"
     show tate festive
     tate "Well, what're we waiting for?"
     tate "Let's get back upstairs and share the good news!"
@@ -6496,7 +6513,7 @@ label ce_roof_moment:
     k17 "{image=note_small1.png} And checking it twice...{w=0} {image=note_small2.png}"
     grace "{image=note_small1.png} Gonna find out who's naughty and nice...{w=0} {image=note_small2.png}"
     # TODO: would be funny to put michael rosen noice sfx here once we figure out timings
-    # play sound sfx_noice
+    play sound sfx_pop_noice
     rich "{image=note_small1.png} Santa Claus is coming to town!{w=0} {image=note_small2.png}"
     tate "{image=note_small1.png} He sees you when you're sleeping...{w=0} {image=note_small2.png}"
     mean "{image=note_small1.png} He knows when you're awake...{w=0} {image=note_small2.png}"
@@ -6550,7 +6567,7 @@ label ce_roof_moment:
     pause 0.5
     
     play sound sfx_jingle volume 0.8
-    cs "We did it, guys! Santa's here to save us!"
+    cs "We did it, guys! Santa's coming to save us!"
     n "Santa's sleigh begins its descent, slowing down to a crawl as the reindeer gently touch down onto the snow."
     stop sound fadeout 0.5
     play sound2 sfx_snow_walk

@@ -176,7 +176,7 @@ label train_intro_start:
     jump train_story_begin
 
 label train_story_begin:
-    hide dxcom
+    hide screen dxcom
     if fun_value(FUN_VALUE_MUSIC):
         n "A little over an hour later, the two arrive outdoors at the Kingman Amtrak Station."
     else:
