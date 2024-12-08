@@ -38,14 +38,16 @@ label ce_start:
     show cs
     cs "... And, you know what that means!"
     if fun_value(FUN_VALUE_COMMON):
-        cs "Fish!"  # TODO: SFX: [[FISH]]
+        play sound ["<silence 0.125>", sfx_fish]
+        cs_nobeep "Fish!"
         cs "But, more importantly..."
     cs "I finally get to throw a huge Christmas party at my house!"
     show cs happy flipped
     cs "I'm so pumped! I should call everyone one more time to make sure they're still coming."
     play sound sfx_ring_once
     show cs happy phone flipped with dissolve
-    $ collect("cs_phone") # i am putting the item collection for non-CE items here anyway in case we do include item collection in CE standalone - tate
+    # i am putting the item collection for non-CE items here anyway in case we do include item collection in CE standalone - tate
+    $ collect("cs_phone")
     pause 0.5
     scene black with dissolve
     pause 1.0
@@ -830,6 +832,13 @@ label ce_anno:
     pause 1.0
 
     scene cs_living2
+    if not tree_first:
+        show tree_box at manual_pos(0.5, 0.9, 0.5):
+            zoom 0.8
+        show decor_boxes at manual_pos(0.4, 0.6, 0.5):
+            zoom 0.8
+        show lights_box at manual_pos(0.6, 0.7, 0.5):
+            zoom 0.8
     show cs at left
     show anno at right
     with dissolve
@@ -896,18 +905,20 @@ label ce_anno:
         cs "Yeah. I've already brought everything in, so let's start unpacking it."
         anno "Alright!"
         scene black with dissolve
+        play sound sfx_items_rustling volume 4.0
         centered "20 minutes later..."
 
 # Setting up decorations
 label ce_setup:
     stop music fadeout 3.0
+    stop sound fadeout 2.0
     music end
     scene cs_living2
     show cs at left
     show anno at right
     with dissolve
-    # TODO: need pile of decorations in boxes
-    cs "Well, Anno, we did it! Are ya ready?"
+    cs "Well, Anno, we did it!"
+    cs "Are ya ready?"
     anno "Yeah! Where should we start?"
 
     scene black with dissolve
@@ -5276,7 +5287,7 @@ label ce_climax:
     show k17 disappointed
     show cs angry christmas
     show mean human annoyed
-    cs "So, you never actually {i}wanted{/i} to stay! You only came here because of {i}him!" # TODO: yeah, lmao, that's KINDA what was said on line 2748. this line needs rewritten. CS ain't THAT slow on the uptake.
+    cs "So, you never actually {i}wanted{/i} to stay! You only came here because of {i}him!" # TODO: yeah, lmao, that's KINDA what was said at the start of the party. this line needs rewritten. CS ain't THAT slow on the uptake.
     nova "Well, I'm {i}also{/i} leaving, because {i}this{/i} asshole won't let me play any {i}good{/i} music!" with hpunch
     blank "Hah! Says you! {i}You{/i} just wanted to play {i}your{/i} trash for the entire party!" with hpunch
     digi "Hey, wait a second! Luke!" with hpunch
@@ -6578,8 +6589,8 @@ label ce_roof_moment:
     stop sound2
     santa "Ho ho ho! Merry Christmas, everyone!"
     show grace at mid_right with { "master": easeinleft }
-    grace "{cshake}{i}SAANNNNNTAAA!!" with hpunch
-    grace "OH MY GODD!!" with vpunch
+    grace "{cshake}{i}SAANNNNNTAAA!!!" with hpunch
+    grace "{cshake}OH MY {i}GOD!!!" with vpunch
     show k22 flipped at mid_left
     show k17 happy flipped at mid_mid_left
     with moveinleft
@@ -6589,9 +6600,9 @@ label ce_roof_moment:
     show cs christmas
     santa "Well, let's see, who do we have here...?"
     santa "..."
-    santa "Mr. President? What are you doing here?"
+    santa "Mr.{w=0} President? What are you doing here?"
     show obama festive at center with move
-    obama "Well, I wanted to go to my good friend CS' Christmas party!"
+    obama "I was invited to my good friend CS' Christmas party, of course!"
     santa "Ho ho, well..."
     n "Santa stares around the crowd."
     show k17
@@ -6600,23 +6611,24 @@ label ce_roof_moment:
     hide k17
     hide k22
     with moveoutleft
-    santa "Ed? Richard? Welsey? Keep up the good work! Might even need some foundation repair at my workshop very soon! Ho ho!"
+    santa "Ed? Richard? Welsey?"
+    santa "Keep up the good work! Might even need some foundation repair at my workshop very soon! Ho ho!"
     show rich festive flipped at mid_mid_left with moveinleft
     show wesley festive flipped at mid_left with moveinleft
     rich "Really!?"
-    ed "We appreciate the offer, Mr. Claus. Let's keep in touch!"
-    santa "...{w=0} And, you there! Mr. Rosen!"
+    ed "We appreciate the offer, Mr.{w=0} Claus. Let's keep in touch!"
+    santa "...{w=0} And, you there! Mr.{w=0} Rosen!"
     show michael festive at center with move
-    santa "Don't let those YouTube Poopers get to your head! You're a brilliant author."
+    santa "Don't let those YouTube Poopers get to your head! You're a {i}brilliant{/i} author."
     n "Santa glances at CS."
     show cs disappointed christmas
-    cs "Hey! I love his work too! I don't even really use Michael as a source anymore!"
+    cs "Hey! I love his work, too! I don't even really {i}use{/i} Michael as a source anymore!"
     n "Both Michael and Santa laugh."
     show cs christmas
-    santa "Ah, yes, Linus and Luke..."
-    santa "We might need your help at the North Pole, as well. Lots of kids these days want these {i}crazy{/i} gaming PCs!"
+    santa "Ah, yes! Linus and Luke..."
+    santa "We might need {i}your{/i} help at the North Pole, as well. Lots of kids these days want these {i}crazy{/i} gaming PCs!"
     linus "Absolutely! Just give LTT a call!"
-    santa "There are certainly a lot of... people here I would not expect to see."
+    santa "There are certainly a lot of... people here that I would not expect to see."
     show rich festive
     show wesley festive
     with determination
@@ -6628,12 +6640,12 @@ label ce_roof_moment:
     with moveoutleft
     santa "Billy Mays, I almost forgot about... you coming back."
     hide linus with moveoutleft
-    billy "Don't worry, Santa! My drug days are over!"
+    billy "Don't worry, Santa! My drug days are {i}over!"
     santa "Ho ho ho! That's the spirit!"
-    santa "Well, I could keep going, but I should ask..."
+    santa "Well, I could keep going, but, I should ask..."
     santa "What {i}happened{/i} here? New York shouldn't get this much snow..."
     show cs disappointed christmas
-    cs "None of us know, but we've been trapped inside the house for God knows how long."
+    cs "None of us know, but, we've been trapped inside the house for God knows how long."
     cs "I mean, you're Santa Claus! Surely, {i}you{/i} can fix this?"
     santa "Ho ho ho..."
     santa "I... don't believe that I can, unfortunately."
@@ -6654,7 +6666,9 @@ label ce_roof_moment:
     cs "Hmm..."
     show copguy festive
     copguy "CS, I think I know just the thing."
-    show copguy festive at mid_left with move
+    show copguy festive at mid_left behind cs with move
+    pause 0.25
+    play sound sfx_whisper volume 0.5
     n "Copguy whispers in CS' ear."
     show cs surprised christmas
     cs "Oh! You sure that'll work?"
@@ -6664,8 +6678,9 @@ label ce_roof_moment:
     show cs christmas at center with move
     cs "Alright, Santa, I have my wish."
     show cs christmas at mid_right with move
-    n "CS whispers into Santa's ear."
+    pause 0.25
     play sound sfx_whisper volume 0.5
+    n "CS whispers into Santa's ear."
     pause 1.0
     n "Santa's eyes widen."
     santa "Ho ho ho! Well..."
@@ -6780,6 +6795,8 @@ label ce_roof_moment:
         xpos 0.7
         ypos -0.35
     with moveintop
+    # TODO: some kind of impact sfx when it touches down onto the ground
+    with vpunch
     pause 1.0
     show crotch_doctor:
         zoom 0.75
@@ -6791,9 +6808,9 @@ label ce_roof_moment:
     billy "A giant bottle of Crotch Doctor?"
     copguy "Yeah! It can {i}instantly{/i} melt snow!"
     copguy "I sell this stuff door-to-door as a side-gig! It works {i}great!"
-    cs "Wait, {i}you're{/i} Carguy?!"
-    copguy "How.{w=0.25}.{w=0.25}.{w=0.25} have you never picked up on that?"
-    billy "CS, are you sure this will work? I don't believe this..."
+    cs "Wait, {i}you're{/i} Carguy?!" with vpunch
+    copguy "How.{w=0.25}.{w=0.25}.{w=0.25} have you {i}never{/i} picked up on that?"
+    billy "CS, are you sure this will work? I don't believe it!"
     cs "Don't believe me."
     cs "Just watch."
     stop music fadeout 3.0
@@ -6805,10 +6822,14 @@ label ce_roof_moment:
         linear 15 rotate -60
     santa "Ho ho, oh no. It's tipping towards us."
     santa "Oh, shit."
-    scene black with dissolve
+    scene black with Dissolve(0.25)
     play sound sfx_splash
-    n "A tsunami of car cleaner engulfs the group, washing them all off the roof."
-    n "As everyone gathers their bearings, they watch in amazement as the waves of Crotch Doctor carry all the snow away."
+    with hpunch
+    with vpunch
+    with hpunch
+    with vpunch
+    n "A tsunami of car cleaner comes crashing down, washing everybody off the roof!"
+    n "As they find their bearings, the crowd watches in amazement as the waves of Crotch Doctor carry all the snow away."
     scene cs_house_night_dtree
     show cs christmas dark at mid_left
     show tate festive dark at left
@@ -6818,15 +6839,15 @@ label ce_roof_moment:
     show santa dark at right
     with dissolve
     cs "Woohoo! We did it! The avalanche covering the house is gone!"
-    santa "Ho ho, well, it looks like you helped save Christmas, CS."
+    santa "Ho ho! Well, it looks like you helped save Christmas, CS."
     santa "I need to get going now. I am slightly off-schedule."
     santa "I'm supposed to meet this girl named Belle, heard she's feeling pretty down."
     santa "I should also make sure my steed didn't drown in car cleaner..."
     cs "Good luck to you, Santa!"
     hide santa with moveoutleft
     show k17 happy dark
-    k17 "CS? Did you see that?"
-    cs "Yeah, I was kind of there with everyone else."
+    k17 "CS? Did you {i}see{/i} that?!"
+    cs "Yeah? I was kind of {i}there,{/i} along with everyone else."
     show k17 disappointed dark
     k17 "Sorry, that was a stupid question."
     show k17 dark
@@ -6869,22 +6890,25 @@ label ce_roof_moment:
     show billy festive dark at mid_left
     show k22 disappointed dark at mid_right
     with dissolve
-    n "As everyone is wrapping up to go home, K-22 and Billy have a bit of a chat."
-    k22 "Hey Billy, can I talk to you for a minute?"
-    billy "Sure thing! I have a moment."
+    n "As the guests say their goodbyes and gear up to get home, K-22 and Billy have a bit of a chat."
+    k22 "Hey, Billy, can I talk to you for a minute?"
+    billy "Sure thing! How can I help?"
     k22 "I, uhh... had a customer who wanted you to make something for them."
+    # TODO: a paper asset?
     n "K-22 hands Billy a folded up piece of paper."
     k22 "All of the instructions are on there I was told."
-    k22 "Follow them word for word."
+    k22 "Follow them word-for-word."
     n "Billy opens up the paper and skims through it."
-    billy "Wow."
-    billy "This is great! I'll get to work on this soon."
-    billy "I gotta take a trip to France."
+    pause 1.0
+    billy "Wow..."
+    billy "This is {i}great!{/i} I can get to work on this soon!"
+    billy "I gotta take a trip to France, first."
     billy "I need to... fix an old friend."
     show k22 dark
-    k22 "Alrighty, well, see you later Billy!"
+    k22 "Alrighty, well, see you later. Billy!"
     billy "See ya!"
-    n "Both parties get into their cars and drive off."
+    n "Both parties head back to their cars."
+
     scene cs_bedroom1_ce
     show cs happy christmas at center
     with dissolve
@@ -6896,7 +6920,7 @@ label ce_roof_moment:
     cs "Those car crash compilations aren't gonna watch themselves!"
     scene black with dissolve
     n "As CS entered his room to start streaming, our story here comes to a close."
-    n "It wasn't the Christmas that CS expected, but it was one of the jolliest times he's had."
+    n "It wasn't the Christmas that CS expected, but it was one of the jolliest times he's ever had."
     n "Merry Christmas, and have a Happy New Year!"
     $ achievement_manager.unlock("hoh_hoh")
     $ ending_manager.mark("christmas")
