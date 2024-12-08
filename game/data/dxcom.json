@@ -247,5 +247,53 @@
             "transcript": "This scene is based on me and Arceus' real-life experience coding the RPG engine for {i}CSBIII.{/i} That night is also when the Howie character was concieved, an amalgamation of four different white bald dudes we kept mixing up in our sleep-deprived and drunken states. This joke is super-meta, and calls a lot into question lore-wise, but don't think about it too hard.",
             "length": 18.8
         }
+    ],
+    "writing": [
+        {
+            "audio_path": "writing",
+            "speaker": "Pakoo",
+            "transcript": "So, the funny thing about this route is that around 90 percent of it was written by me on my breaks at work.",
+            "length": 7.5
+        }
+    ],
+    "checkout": [
+        {
+            "audio_path": "checkout",
+            "speaker": "Pakoo",
+            "transcript": "At this checkout scene, I did my best to make sure this was as accurate as possible. As someone who has worked at Target for over a year, I made sure to record the Zebra calls, the Drive Ups sounds, and the checkout noises.",
+            "length": 13.5
+        }
+    ],
+    "dice": [
+        {
+            "audio_path": "dice",
+            "speaker": "Pakoo",
+            "transcript": "For the dice mechanic, I originally wanted to have a bunch of events happen at the party that would be specific to what number you rolled. I only did this a few times however, because the script was already very long.",
+            "length": 11.5
+        }
+    ],
+    "bathroom": [
+        {
+            "audio_path": "bathroom",
+            "speaker": "Pakoo",
+            "transcript": "This scene with the sheriff in the bathroom was my funniest bit, in my opinion. I really wanted to add as many characters to this party so I could see how they would interact with one another.",
+            "length": 10.5
+        }
+    ],
+    "gifts": [
+        {
+            "audio_path": "gifts",
+            "speaker": "Pakoo",
+            "transcript": "The majority of these gifts were made up by Mika and I in the car, just shooting the shit, making jokes, and exaggerating what people would bring to the party.",
+            "length": 8.5
+        }
+    ],
+    "tropes": [
+        {
+            "audio_path": "tropes",
+            "speaker": "Pakoo",
+            "transcript": "As I'm sure you've noticed, I tried to add as many corny and cheesy Christmas tropes into this, to make the funniest festive route.",
+            "length": 8.5
+        }
     ]
 }

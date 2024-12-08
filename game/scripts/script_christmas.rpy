@@ -26,6 +26,7 @@ label ce_start:
     with Dissolve(1.0)
 
     pause 0.5
+    dxcom writing
     n "CS wakes up to a snowy winter morning."
     cs "Oh, {i}yes!{/i} It snowed today!"
     show cs at mid_mid_right with move
@@ -44,6 +45,7 @@ label ce_start:
     cs "I finally get to throw a huge Christmas party at my house!"
     show cs happy flipped
     cs "I'm so pumped! I should call everyone one more time to make sure they're still coming."
+    hide screen dxcom
     play sound sfx_ring_once
     show cs happy phone flipped with dissolve
     # i am putting the item collection for non-CE items here anyway in case we do include item collection in CE standalone - tate
@@ -1731,6 +1733,7 @@ label ce_checkout:
     play sound sfx_scan_twice
     n "As CS starts scanning his items, the machine responds with a disapproving beep."
     show cs coat worried
+    dxcom checkout
     cs "What? It says I scanned this twice? No, I didn't!"
     show cs coat disappointed
     show pakoo tgt at mid_right with moveinright
@@ -1815,6 +1818,7 @@ label ce_checkout:
     cs "Thanks!"
     show pakoo tgt flipped with determination
     hide pakoo tgt with moveoutright
+    hide screen dxcom
     show cs coat angry
     cs "Hey, wait a minute!"
     show pakoo tgt at mid_right with moveinright
@@ -2129,6 +2133,7 @@ label ce_aftershop:
         linear 0.1 rotate 165 xpos 500 ypos 1100
     play sound [ "<silence 1.0>", sfx_dice ]
     n "As he finishes up, a D20 sitting on the counter is knocked onto the floor."
+    dxcom dice
     $ collect("d20")
     show cs disappointed flipped behind cs_kitchen_fg
     cs "What the hell?"
@@ -2168,6 +2173,7 @@ label ce_aftershop:
     pause 1.0
 
     show cs flipped behind cs_kitchen_fg
+    hide screen dxcom
     # repetitive on purpose - tate
     cs "Welp, the groceries are all put away..."
     cs "The decorations look all nice..."
@@ -3086,6 +3092,7 @@ label ce_banter:
     copguy "{i}Really?"
     sheriff "What? I {i}really{/i} have to go!"
     copguy "Whatever, just go. I'll wait here."
+    dxcom bathroom
     sheriff "What do you mean? I need you to come with me!"
     sheriff "I can't get off and on the toilet by myself! This bathroom isn't handicap-accessible!"
     copguy "I think this is the worst crime I've dealt with..."
@@ -3101,6 +3108,7 @@ label ce_banter:
     play sound sfx_house_door_close
     scene cs_bathroom
     copguy "Alright, make it quick! I don't wanna be in here all night!"
+    hide screen dxcom
     pause 0.5
 
     scene cs_kitchen
@@ -5106,6 +5114,7 @@ label ce_preclimax:
     
     scene cs_foyer
     show digi happy flipped at left
+    dxcom gifts
     # TODO: is digi holding this correctly?? idk i dont play this so pls fix it if i fucked it up - tate
     show riffmaster at manual_pos(0.15, 0.8, 0.5):
         rotate 45
@@ -5126,7 +5135,7 @@ label ce_preclimax:
     digi "What about you, Arc? What are you going to do with that Raspberry Pi?"
     arceus "I had an idea for a webserver I've been meaning to try out."
     digi "Nice, nice."
-    
+    hide screen dxcom
     show luke festive at mid_right behind arceus
     show monitor as first at manual_pos(0.7, 0.7, 0.5) behind luke
     show monitor as second at manual_pos(0.85, 0.7, 0.5) behind arceus
@@ -6591,6 +6600,7 @@ label ce_roof_moment:
     stop sound2
     santa "Ho ho ho! Merry Christmas, everyone!"
     show grace at mid_right with { "master": easeinleft }
+    dxcom tropes
     grace "{cshake}{i}SAANNNNNTAAA!!!" with hpunch
     grace "{cshake}OH MY {i}GOD!!!" with vpunch
     show k22 flipped at mid_left
@@ -6607,6 +6617,7 @@ label ce_roof_moment:
     obama "I was invited to my good friend CS' Christmas party, of course!"
     santa "Ho ho, well..."
     n "Santa stares around the crowd."
+    hide screen dxcom
     show k17
     show k22
     with determination
