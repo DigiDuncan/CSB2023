@@ -242,17 +242,24 @@
     ],
     "meta": [
         {
-            "audio_path": "meta",
+            "audio_path": "meta1",
             "speaker": "Digi",
-            "transcript": "This scene is based on me and Arceus' real-life experience coding the RPG engine for {i}CSBIII.{/i} That night is also when the Howie character was concieved, an amalgamation of four different white bald dudes we kept mixing up in our sleep-deprived and drunken states. This joke is super-meta, and calls a lot into question lore-wise, but don't think about it too hard.",
-            "length": 18.8
+            "transcript": "This scene is based on me and Arceus' real-life experience coding the RPG engine for {i}CSBIII.{/i} That night is also when the Howie character was concieved, an amalgamation of four different white bald dudes we kept mixing up in our sleep-deprived and drunken states.",
+            "length": 13.4
+        },
+        {
+            "audio_path": "meta2",
+            "speaker": "Digi",
+            "transcript": "This joke is super-meta, and calls a lot into question lore-wise, but don't think about it too hard.",
+            "length": 5.4
         }
+
     ],
     "writing": [
         {
             "audio_path": "writing",
             "speaker": "Pakoo",
-            "transcript": "So, the funny thing about this route is that around 90 percent of it was written by me on my breaks at work.",
+            "transcript": "So, the funny thing about this route, is that around ninety percent of it was written by me, on my breaks at work.",
             "length": 7.5
         }
     ],
@@ -260,7 +267,7 @@
         {
             "audio_path": "checkout",
             "speaker": "Pakoo",
-            "transcript": "At this checkout scene, I did my best to make sure this was as accurate as possible. As someone who has worked at Target for over a year, I made sure to record the Zebra calls, the Drive Ups sounds, and the checkout noises.",
+            "transcript": "At this checkout scene, I did my best to make sure this was as accurate as possible. As someone who has worked at Target for over a year, I made sure to record the Zebra calls, the drive ups sounds, and the checkout noises.",
             "length": 13.5
         }
     ],
@@ -268,7 +275,7 @@
         {
             "audio_path": "dice",
             "speaker": "Pakoo",
-            "transcript": "For the dice mechanic, I originally wanted to have a bunch of events happen at the party that would be specific to what number you rolled. I only did this a few times, however, because the script was already very long.",
+            "transcript": "For the dice mechanic, I originally wanted to have a bunch of events happen at the party that would be specific to what number you rolled. I only did this a few times however, because the script was already very long.",
             "length": 11.5
         }
     ],
