@@ -3066,10 +3066,12 @@ label ce_banter:
     if fun_value(FUN_VALUE_MUSIC):
         sheriff "Don't preheat your oven!"
         copguy "...Thanks?"
-        sheriff "For real though, I need to take a {i}shit!" with vpunch
+        sheriff "For real, though! I need to take a {nw}"
+        sheriff "For real, though! I need to take a {fast}{i}shit!" with vpunch
     else:
         copguy "I know, this party is great, right?"
-        sheriff "{i}No!{/i} I need to take a {i}shit!" with vpunch
+        sheriff "{i}No!{/i} I need to take a {nw}" with vpunch
+        sheriff "{i}No!{/i} I need to take a {fast}{i}shit!" with vpunch
     copguy "Okay, do you want me to tell the whole house?"
     sheriff "Very funny, smartass! I need you to go with me." with vpunch
     sheriff "My legs don't work, remember?"

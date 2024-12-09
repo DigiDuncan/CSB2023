@@ -28,7 +28,7 @@ screen people():
 
 screen people_nav():
     add Color('#323e42', alpha=0.75)
-    
+
     # sorting modes
     # 0 = sort by character name, NOT by json name (default)
     # 1 = RPG characters only
@@ -53,7 +53,6 @@ screen people_nav():
         xpos 25 ypos 75
 
         if current_bios_sorting_mode > 0:
-
             imagebutton:
                 xalign 0.0 yalign 0.5
                 xysize 64, 64
@@ -63,7 +62,7 @@ screen people_nav():
 
                 if current_bios_sorting_mode-1>=0:
                     action SetVariable("current_bios_sorting_mode", current_bios_sorting_mode-1)
-        
+
         # Change this when there's more modes added
         if current_bios_sorting_mode < 1:
             imagebutton:
@@ -135,9 +134,9 @@ screen person(l):
     ##### Main Container omitting the menu
     viewport:
         xsize 1350
-        ysize 900
+        ysize 950
         xalign 0.5
-        xoffset 265 
+        xoffset 265
         yoffset 100
         side_yfill False
         mousewheel True
@@ -166,6 +165,12 @@ screen person(l):
                 except:
                     pronouns = ""
 
+            text pronouns:
+                xalign 0.5
+                yalign 0.08
+                size 32
+                color "#BBBBBB"
+
             ### rpg, if present
             python:
                 if "rpg" in name_map[l]:
@@ -179,40 +184,137 @@ screen person(l):
                     attack = None
                     defense = None
 
-            text pronouns:
-                xalign 0.5
-                yalign 0.08
-                size 32
-                color "#BBBBBB"
+            ### bounding box for inner content
+            frame:
+                background None
+                xsize 1.0
+                ysize 825
+                yanchor 1.0
+                ypos 1.0
 
-            ### bio text
-            hbox:
-                ysize 800
-                ypos 100
-                vbox:
-                    yfill False
+                ### bounding box for bio text
+                frame:
+                    background None
                     xsize 800
-                    spacing 28
-                    # Handling the text, hopefully fixing the weird spacing in the process
-                    frame:
-                        background None
-                        text "\"" + name_map[l]["quote"] + "\""
-                    frame:
-                        background None
-                        python:
-                            try:
-                                if "dx_bio" in name_map[l]:
-                                    fetched = name_map[l]["bio"] + "\n\n{image=gui/dx_text.png} " + name_map[l]["dx_bio"]
-                                else:
-                                    fetched = name_map[l]["bio"]
-                            except:
-                                fetched = "The bio didn't load correctly. Ask Digi to fix the game."
-                        text (fetched)
+                    ysize 1.0
 
-            ### sprite displayer
-            python:
-                z = name_map[l].get("zoom", 1.0) * 0.75
-                x = -1 if name_map[l].get("flip", False) else 1
-                xo = name_map[l].get("xoffset", 0)
-                yo = name_map[l].get("yoffset", 0) - 100
-            add name_map[l]['sprite_path'] xalign 1.0 yalign 1.0 zoom z xzoom x xoffset xo yoffset yo
+                    # quote + bio text
+                    frame:
+                        background None
+                        vbox:
+                            python:
+                                try:
+                                    if "dx_bio" in name_map[l]:
+                                        fetched = name_map[l]["bio"] + "\n\n{image=gui/dx_text.png} " + name_map[l]["dx_bio"]
+                                    else:
+                                        fetched = name_map[l]["bio"]
+                                except:
+                                    fetched = "The bio didn't load correctly. Ask Digi to fix the game."
+                            text "\"" + name_map[l]["quote"] + "\"\n\n" + (fetched)
+
+                ### bounding box for sprites and rpg info
+                frame:
+                    background None
+                    xsize 500
+                    ysize 1.0
+                    xanchor 1.0
+                    yanchor 1.0
+                    xpos 1.0
+                    ypos 1.0
+
+                    python:
+                        z = name_map[l].get("zoom", 1.0) * 0.75
+                        x = -1 if name_map[l].get("flip", False) else 1
+                        xo = name_map[l].get("xoffset", 0)
+                        yo = name_map[l].get("yoffset", 0) - 100
+
+                    # show sprite
+                    frame:
+                        background None
+                        xsize 1.0
+                        ysize 700
+
+                        image name_map[l]['sprites'][list(name_map[l]['sprites'].keys())[current_bios_sprite]]:
+                            xalign 0.5
+                            yalign 0.0
+                            xsize 1.0
+                            ysize 1.0
+                            xzoom x
+                            # maybe we don't need these vars anymore?
+                            # zoom z
+                            # xoffset xo
+                            # yoffset yo
+                            fit "contain"
+
+                    ### for sprite selection / rpg data
+                    frame:
+                        background None
+                        xsize 1.0
+                        ypos 1.0
+                        yanchor 1.0
+
+                        vbox:
+                            # show sprite selection if available
+                            frame:
+                                #background None
+                                xsize 1.0
+                                ysize 100
+
+                                # make sure sprite actually exists first
+                                python:
+                                    try:
+                                        this_sprite = list(name_map[l]['sprites'].keys())[current_bios_sprite]
+                                    except:
+                                        this_sprite = "Default"
+                                        current_bios_sprite = 0
+
+                                # sprite selector 
+                                text this_sprite:
+                                    xalign 0.5
+                                    yalign 0.5
+                                    text_align 0.5
+
+                                if len(name_map[l]['sprites'].keys()) > 1:
+                                    if current_bios_sprite > 0:
+                                        imagebutton:
+                                            xalign 0.0 yalign 0.5
+                                            xysize 64, 64
+
+                                            idle "/gui/left_off_small.png"
+                                            hover "/gui/left_on_small.png"
+
+                                            if current_bios_sprite-1>=0:
+                                                action SetVariable("current_bios_sprite", current_bios_sprite-1)
+
+                                    if current_bios_sprite < len(name_map[l]['sprites']):
+                                        imagebutton:
+                                            xalign 1.0 yalign 0.5
+                                            xysize 64, 64
+
+                                            idle "/gui/right_off_small.png"
+                                            hover "/gui/right_on_small.png"
+
+                                            if current_bios_sprite+1<len(name_map[l]['sprites']):
+                                                action SetVariable("current_bios_sprite", current_bios_sprite+1)
+
+                            # show rpg data if it exists
+                            if "rpg" in name_map[l]:
+                                hbox:
+                                    xalign 0.5
+                                    spacing 50
+
+                                    frame:
+                                        xsize 100
+                                        text "HP\n" + str(hp):
+                                            xalign 0.5
+                                            text_align 0.5
+                                    frame:
+                                        xsize 100
+                                        text "ATK\n" + str(attack):
+                                            xalign 0.5
+                                            text_align 0.5
+                                    frame:
+                                        xsize 100
+                                        text "DEF\n" +str(defense):
+                                            xalign 0.5
+                                            text_align 0.5
