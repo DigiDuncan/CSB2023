@@ -529,8 +529,8 @@
             "Group": "images/characters/memory.png",
             "K17-4": "images/characters/k174.png",
             "K19-9": "images/characters/k199.png",
-            "K20-7": "images/characters/k207.png",
-            "K20-7 (Hazmat)": "images/characters/k207h.png"
+            "Default: K20-7": "images/characters/k207.png",
+            "Hazmat: K20-7": "images/characters/k207h.png"
         },
         "quote": "U3VubnkgRCEgQWxyaWdodCEgVGhlIEYyNSBL\nZXk/IEknbSB0aGUgc3Ryb25nZXN0IQ",
         "bio": "These memories of Pakoo's life each only possess knowledge of what happened during a specific month. The K17s love talking about catgirls and citrus drinks, while the K20s won't shut up about Half-Life or Touhou. It never goes well when they meet up to solve a problem.",
