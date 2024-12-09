@@ -437,11 +437,27 @@
         "type": "extra",
         "dx": true
     },
+    "beat_lupin":{
+        "name": "Chasing The Hustler",
+        "locked": "Catch that dirty crook!",
+        "unlocked": "Capture Lupin III and get your money back!",
+        "img": "lupin",
+        "type": "story",
+        "dx": true
+    },
     "beat_tate":{
         "name": "Main Character Syndrome",
         "locked": "Remind them whose game this is.",
         "unlocked": "Survive Tate's timeline tomfoolery.",
         "img": "vs-tate",
+        "type": "extra",
+        "dx": true
+    },
+    "train_dialogue":{
+        "name": "Train of Thought",
+        "locked": "Not {i}this{/i} shit again!",
+        "unlocked": "Endure the entire train ride.",
+        "img": "tired",
         "type": "extra",
         "dx": true
     },

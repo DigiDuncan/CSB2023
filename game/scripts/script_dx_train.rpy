@@ -1024,7 +1024,7 @@ label train_enter_sleeper:
     show tate shock flipped
     cs "I thought {i}you{/i} had it!"
     show arceus angry
-    arceus "I thought {i}YOU{/i} had it!!" 
+    arceus "I thought {i}YOU{/i} had it!!" with vpunch
     pause 1.0
 
     show cs worried
@@ -1034,7 +1034,7 @@ label train_enter_sleeper:
 
     if train_money_stolen == True:
         $ train_money_stolen_dialogue_switch = "black bag"
-        $ train_money_stolen_dialogue_switch_2 = "... {w=0.5}won"
+        $ train_money_stolen_dialogue_switch_2 = "... won"
     elif train_money_stolen == False:
         $ train_money_stolen_dialogue_switch = "metal briefcase"
         $ train_money_stolen_dialogue_switch_2 = " won"
@@ -1043,7 +1043,7 @@ label train_enter_sleeper:
         $ train_money_stolen_dialogue_switch_2 = " totally plundered"
 
     show cs disappointed flipped
-    $ next_line = substitutions("Yes, sir, we're missing a single " + train_money_stolen_dialogue_switch + "filled with money we" + train_money_stolen_dialogue_switch_2 + " while we were in Vegas.")
+    $ next_line = substitutions("Yes, sir, we're missing a single " + train_money_stolen_dialogue_switch + " filled with money we" + train_money_stolen_dialogue_switch_2 + " while we were in Vegas.")
     cs "[next_line]"
     arceus "And Lego bricks." 
     show cs surprised
@@ -1075,6 +1075,7 @@ label train_enter_sleeper:
     hide amtrak_conductor with moveoutleft
 
     stop music fadeout 3.0
+    play sound2 sfx_ambiance_train_interior volume 0.3 fadein 3.0
     music end
 
     show cs disappointed at left
@@ -1201,8 +1202,6 @@ label train_enter_sleeper:
     play sound sfx_sliding_door_open
     n "Tate swiftly exits the room and runs off, not even bothering to shut the door behind them."
 
-    # TODO: bgm?
-
     show cs disappointed
     n "CS looks distraught."
     pause 2.0
@@ -1232,11 +1231,14 @@ label train_enter_sleeper:
     cs "Yeah, me,{w=0} too..."
 
     scene black with dissolve
+    stop sound2 fadeout 0.5
     n "CS and Arceus decide to call it an early night."
     n "CS effortlessly falls into a deep slumber."
     n "While the fold-out bed is indeed quite comfortable, Arceus struggles to get any rest."
 
     scene
+    # had to put it on this layer, sorry
+    play music sfx_ambiance_train_interior loop volume 0.3 fadein 0.5
     show amtrak_desert_night
     show amtrak_sleeper_interior_night
     with dissolve
@@ -1273,6 +1275,7 @@ label train_enter_sleeper:
         n "He gently shuts the door behind him, then makes for the dining car in hopes of drinking his worries away."
         play sound sfx_sliding_door_close
 
+    stop music fadeout 3.0
     stop sound2 fadeout 3.0
     scene black with dissolve
     pause 3.0
@@ -1806,7 +1809,7 @@ label train_begin_heist:
     arceus "I doubt we can get access to it, but maybe we could get someone to check the cab."
     tate "Actually, Mean lent me his spare key to the cab in case I needed the toilet in there, so I can check it."
     arceus "Oh, nice. I know my way around the dining car, so I can look there."
-    $ next_line = substitutions("Guess I'll stick around here, then. Maybe the " + [train_money_container] + " is just under a seat or something.")
+    $ next_line = substitutions("Guess I'll stick around here, then. Maybe the " + train_money_container + " is just under a seat or something.")
     cs "[next_line]"
     arceus "Sounds like a plan."
     show tate
@@ -2185,7 +2188,7 @@ label train_search_tate:
     tate "I-{w=0.1}I don't know!"
     amtrak_conductor "What do you mean you {i}don't know?{/i} He was just in there a minute ago."
     tate "I don't know, okay?! He's just {i}not{/i} in here!"
-    tate "I'll go find CS and Arc! They're the only other people who might have seen him!"
+    tate "I'll go find CS and Arc! They're the only other people who might've seen him!"
     amtrak_conductor "That may be the first good idea you've had all day."
     show tate sheepish flipped
     tate "Uweh?"
@@ -2215,13 +2218,13 @@ label train_confront_lupin:
         xzoom -1.0
         rotate -5
     show amtrak_coach_1
+    show arceus angry at offscreenright
     show tate sad at left
     show mean worried flipped at truecenter
-    show arceus angry at offscreenright
     with dissolve
     n "CS shows up in economy to find Tate with Mean. The pair appears to be frustrated over something."
     pause 1.0
-    show cs disappointed flipped at right with moveinright
+    show cs disappointed flipped at right behind arceus with moveinright
     pause 1.0
     cs "Hey guys, what's going on? Did you find anything?"
     show mean worried
@@ -2238,9 +2241,9 @@ label train_confront_lupin:
     show mean unamused
     show tate stare
     mean "Oh, yeah, that's {i}real{/i} descriptive."
-    mean "Even I wear a red jacket sometimes."
+    mean "Even {i}I{/i} wear a red jacket sometimes."
     show cs disappointed flipped
-    cs "You do? How?"
+    cs "You do? {i}How?"
     show tate sheepish
     tate "Well, you see--{w=0.5}{nw}"
     show mean angry flipped
@@ -2251,7 +2254,7 @@ label train_confront_lupin:
     show mean unamused flipped
     mean "Are you sure you aren't just saying that so the staff has an excuse to get rid of the guy?"
     show tate furious
-    tate "No! I'm serious!" with vpunch
+    tate "{i}No!{/i} I'm serious!" with vpunch
     tate "He {i}also{/i} wears a red jacket!"
     tate "The fucker ran off with your hat before I could catch him!"
     n "As the two continue to argue, a familiar grumbling approaches the group."
@@ -2337,7 +2340,7 @@ label train_confront_lupin:
     mean "Let's just start looking."
     tate "Should we split up a--{w=0.5}{nw}"
     show mean angry flipped
-    mean "No,{w=0} the fuck we should {i}not."
+    mean "No,{w=0} the fuck we should {i}not." with vpunch
     mean "We've got you, two dudes, and a dog-thing."
     show arceus angry
     mean "I've seen enough {i}Scooby-Doo{/i} to know how {i}that{/i} would end."
@@ -3205,7 +3208,8 @@ label train_lupin_win:
         tate "I'll bet this prick is some kind of middleman for the {i}real{/i} thief!"
         show mean human angry
         show amtrak_conductor flipped
-        mean "You filthy {i}rat!{/i} You tried to frame two innocent guys for your crime, too?!"
+        mean "You filthy {i}rat! {nw}" with vpunch
+        mean "You filthy {i}rat! {fast}You tried to frame two innocent guys for your crime, too?!"
         lupin "Wait, that's a {i}guy?!"
         show cs angry
         show arceus angry flipped

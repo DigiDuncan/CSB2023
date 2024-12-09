@@ -5,7 +5,7 @@ label train_dialogue:
     stop music fadeout 1.0
     music end
 
-    play sfx sfx_ambiance_train_interior loop volume 0.3
+    play sound2 sfx_ambiance_train_interior volume 0.3
 
     show amtrak_northeast
     show cs at left
@@ -327,7 +327,8 @@ label train_dialogue:
 
     n "CS and Arceus take it easy for the rest of the ride..."
 
-    stop sfx fadeout 2.0
+    $ achievement_manager.unlock("train_dialogue")
+    stop sound2 fadeout 2.0
     scene black with Dissolve(2.0)
     pause 1.0
 

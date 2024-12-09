@@ -52,7 +52,7 @@ label play_rhythmchase_game:
     window show
 
     if _return == True:
-        pass
+        $ achievement_manager.unlock("beat_lupin") 
         $ renpy.jump(minigame_win)
     else:
         $ renpy.jump(minigame_loss)
