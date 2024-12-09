@@ -161,6 +161,19 @@ screen person(l):
                 except:
                     pronouns = ""
 
+            ### rpg, if present
+            python:
+                if "rpg" in name_map[l]:
+                    _rpg_var = name_map[l]['rpg']
+                    _fighter = getattr(Fighters, _rpg_var)
+                    hp = _fighter.health_points
+                    attack = _fighter.attack_points
+                    defense = _fighter.armor_points
+                else:
+                    hp = None
+                    attack = None
+                    defense = None
+
             text pronouns:
                 xalign 0.5
                 yalign 0.08
