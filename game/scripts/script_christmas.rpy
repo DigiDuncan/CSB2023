@@ -5302,7 +5302,7 @@ label ce_preclimax:
     mean "How in the {fast}{i}fuck{/i} {nw}" with vpunch
     mean "How in the {i}fuck{/i} {fast}do you keep hurting yourself like this?!" with hpunch
     show tate sad festive flipped
-    tate "{sc=1.0}I don't know..."
+    tate "{sc=1.0}You think {i}I{/i} know?!"
     pause 0.5
     jump ce_climax
 
@@ -6500,7 +6500,7 @@ label ce_roof_moment:
     pause 1.0
     k22 "So it {i}is{/i} just as bad as you said..."
     wesley "It just keeps {i}going!{/i} I can't see the end!"
-    tate "What are we going to do? We can't just {i}walk{/i} out of here!"
+    tate "What're we gonna do? We can't just {i}walk{/i} out of here!"
     copguy "I've got an idea."
     copguy "You guys, move over there..."
     show cs sil_black at Move((0.3, 0.5), (0.27, 0.33), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
@@ -6622,16 +6622,29 @@ label ce_roof_moment:
     santa "Okay, seriously, I should probably go down there and check it out!"
     pause 0.5
 
-    # TODO: TATE STOPPED EDITING HERE!
-    # ANYTHING BEYOND THIS POINT IS JUST SPOT TREATMENT AND NOT A REAL EDITING PASS!
-
     scene cs_roof
 
-    show obama festive at mid_mid_left behind k17
-    show billy festive at center
-    show michael festive at mid_left
-    show ed festive at mid_right
-    show linus festive at mid_mid_right
+    # putting them in the background. too many damn people here
+    show obama festive flipped at manual_pos(0.4, 0.7):
+        xanchor 0.5
+        yanchor 1.0
+        zoom 0.5
+    show billy festive flipped at manual_pos(0.5, 0.7):
+        xanchor 0.5
+        yanchor 1.0
+        zoom 0.5
+    show michael festive at manual_pos(0.3, 0.7):
+        xanchor 0.5
+        yanchor 1.0
+        zoom 0.5
+    show ed festive at manual_pos(0.7, 0.7):
+        xanchor 0.5
+        yanchor 1.0
+        zoom 0.5
+    show linus festive at manual_pos(0.6, 0.7):
+        xanchor 0.5
+        yanchor 1.0
+        zoom 0.5
     show cs happy christmas at left
     with dissolve
     pause 0.5
@@ -6654,8 +6667,14 @@ label ce_roof_moment:
     dxcom tropes
     grace "{cshake}{i}SAANNNNNTAAA!!!" with hpunch
     grace "{cshake}OH MY {i}GOD!!!" with vpunch
-    show k22 flipped at mid_left
-    show k17 happy flipped at mid_mid_left
+    show k22 flipped at manual_pos(0.4, 0.9) behind cs:
+        xanchor 0.5
+        yanchor 1.0
+        zoom 0.75
+    show k17 happy flipped at manual_pos(0.5, 0.9) behind cs:
+        xanchor 0.5
+        yanchor 1.0
+        zoom 0.75
     with moveinleft
     k17 "Haha, see, K-22? Who needs Addy's party when we can literally meet The Big Man himself?"
     show k22 happy flipped
@@ -6664,10 +6683,40 @@ label ce_roof_moment:
     santa "Well, let's see, who do we have here...?"
     santa "..."
     santa "Mr.{w=0} President? What are you doing here?"
-    show obama festive at center with move
+
+    show billy festive at manual_pos(0.5, 0.7) behind obama:
+        xanchor 0.5
+        yanchor 1.0
+        zoom 0.5
+    show michael festive at manual_pos(0.3, 0.7) behind obama:
+        xanchor 0.5
+        yanchor 1.0
+        zoom 0.5
+    show ed festive at manual_pos(0.7, 0.7) behind obama:
+        xanchor 0.5
+        yanchor 1.0
+        zoom 0.5
+    show linus festive at manual_pos(0.6, 0.7) behind obama:
+        xanchor 0.5
+        yanchor 1.0
+        zoom 0.5
+    show k22 flipped at manual_pos(0.3, 0.9):
+        xanchor 0.5
+        yanchor 1.0
+        zoom 0.75
+    show k17 flipped at manual_pos(0.4, 0.9):
+        xanchor 0.5
+        yanchor 1.0
+        zoom 0.75
+    show obama festive flipped at mid_mid_right behind k17:
+        linear 0.5 zoom 1.0
+    with move
+    pause 0.25
+
     obama "I was invited to my good friend CS' Christmas party, of course!"
     santa "Ho ho, well..."
-    n "Santa stares around the crowd."
+    hide obama with moveoutright
+    n "Santa looks around at the crowd."
     hide screen dxcom
     show k17
     show k22
@@ -6676,39 +6725,89 @@ label ce_roof_moment:
     hide k22
     with moveoutleft
     santa "Ed? Richard? Welsey?"
+   
+    show billy festive at manual_pos(0.5, 0.7) behind ed:
+        xanchor 0.5
+        yanchor 1.0
+        zoom 0.5
+    show michael festive at manual_pos(0.3, 0.7) behind ed:
+        xanchor 0.5
+        yanchor 1.0
+        zoom 0.5
+    show ed festive at manual_pos(0.7, 0.7) behind ed:
+        xanchor 0.5
+        yanchor 1.0
+        zoom 0.5
+    show linus festive at manual_pos(0.6, 0.7) behind ed:
+        xanchor 0.5
+        yanchor 1.0
+        zoom 0.5
+    show ed festive at center:
+        linear 0.5 zoom 1.0
+    with move
+    show ed festive flipped with { "master": determination }
+    ed "Yes, sir?"
+    pause 0.5
+
     santa "Keep up the good work! Might even need some foundation repair at my workshop very soon! Ho ho!"
     show rich festive flipped at mid_mid_left with moveinleft
     show wesley festive flipped at mid_left with moveinleft
     rich "Really!?"
     ed "We appreciate the offer, Mr.{w=0} Claus. Let's keep in touch!"
-    santa "...{w=0} And, you there! Mr.{w=0} Rosen!"
-    show michael festive at center with move
-    santa "Don't let those YouTube Poopers get to your head! You're a {i}brilliant{/i} author."
-    n "Santa glances at CS."
-    show cs disappointed christmas
-    cs "Hey! I love his work, too! I don't even really {i}use{/i} Michael as a source anymore!"
-    n "Both Michael and Santa laugh."
-    show cs christmas
-    santa "Ah, yes! Linus and Luke..."
-    santa "We might need {i}your{/i} help at the North Pole, as well. Lots of kids these days want these {i}crazy{/i} gaming PCs!"
-    linus "Absolutely! Just give LTT a call!"
-    santa "There are certainly a lot of... people here that I would not expect to see."
-    show rich festive
-    show wesley festive
-    with determination
+
+    hide ed
     hide rich
     hide wesley
-    hide michael
-    hide obama
-    hide ed
-    with moveoutleft
+    with moveoutright
+    pause 0.5
+
+    santa "...{w=0} And, you there! Mr.{w=0} Rosen!"
+
+    show linus festive at manual_pos(0.6, 0.7) behind michael:
+        xanchor 0.5
+        yanchor 1.0
+        zoom 0.5
+    show michael festive at center:
+        linear 0.5 zoom 1.0 
+    with move
+
+    santa "Don't let those YouTube Poopers get to your head! You're a {i}brilliant{/i} author."
+    show cs worried christmas
+    n "Santa glances at CS." with hpunch
+    cs "Hey! I love his work, too!"
+    show cs disappointed christmas
+    cs "I don't even really {i}use{/i} Michael as a source anymore!"
+    n "Michael and Santa share a laugh."
+    hide michael with moveoutright
+    pause 0.5
+
+    santa "Ah, yes! Linus and Luke..."
+    show linus festive at center:
+        linear 0.5 zoom 1.0
+    with move
+    show linus festive flipped
+    show luke festive flipped at mid_left with moveinleft
+
+    santa "We might need {i}your{/i} help at the North Pole, as well. Lots of kids these days want these {i}crazy{/i} gaming PCs!"
+    linus "Absolutely! Just give LTT a call!"
+
+    hide linus
+    hide luke
+    with moveoutright
+    pause 0.5
+
+    show billy festive at center:
+        linear 0.5 zoom 1.0
+    with { "master": move }
+    show billy festive flipped
+    santa "There are certainly a lot of... people here that I would not expect to see."
     santa "Billy Mays, I almost forgot about... you coming back."
-    hide linus with moveoutleft
     billy "Don't worry, Santa! My drug days are {i}over!"
     santa "Ho ho ho! That's the spirit!"
+    hide billy with moveoutright
+    pause 0.5
     santa "Well, I could keep going, but, I should ask..."
     santa "What {i}happened{/i} here? New York shouldn't get this much snow..."
-    show cs disappointed christmas
     cs "None of us know, but, we've been trapped inside the house for God knows how long."
     cs "I mean, you're Santa Claus! Surely, {i}you{/i} can fix this?"
     santa "Ho ho ho..."
@@ -6722,8 +6821,8 @@ label ce_roof_moment:
         show cs disappointed christmas
 
     santa "I'm sorry, cs188."
-    copguy "Well, wait a second!"
-    show copguy festive flipped at center with moveinleft
+    show copguy festive flipped at center with { "master": moveinleft }
+    copguy "Now, wait a second!"
     copguy "Can't we wish for one gift? For Christmas?"
     santa "Now, {i}that,{/i} I can do!"
     santa "CS? Do you have a gift that you've always wanted?"
@@ -6734,6 +6833,7 @@ label ce_roof_moment:
     pause 0.25
     play sound sfx_whisper volume 0.5
     n "Copguy whispers in CS' ear."
+    pause 0.5
     show cs surprised christmas
     cs "Oh! You sure that'll work?"
     n "Copguy nods."
@@ -6747,8 +6847,10 @@ label ce_roof_moment:
     n "CS whispers into Santa's ear."
     pause 1.0
     n "Santa's eyes widen."
+    show cs christmas at center with { "master": move }
     santa "Ho ho ho! Well..."
     santa "I guess I could do that."
+
     scene snowed_in
     show cs sil_black:
         zoom 0.15
@@ -6852,8 +6954,10 @@ label ce_roof_moment:
         ypos 0.5
     show snow1
     with dissolve
+    pause 0.5
     santa "Alright! Stand back, everyone! This is gonna take a lot of focus!"
-    n "Harnessing the power of the Christmas spirit, CS' wish becomes a reality!"
+    n "Harnessing the power of the Christmas spirit, CS' wish begins to manifest...!"
+    # TOOO: maybe some kind of sfx of the power being gathered?
     show crotch_doctor sil_black:
         zoom 0.75
         xpos 0.7
@@ -6868,7 +6972,7 @@ label ce_roof_moment:
         ypos -0.35
     with dissolve
     santa "Ta-da!"
-    cs "Wow, that really worked?!"
+    cs "Wow, that really {i}worked?!"
     billy "A giant bottle of Crotch Doctor?"
     copguy "Yeah! It can {i}instantly{/i} melt snow!"
     copguy "I sell this stuff door-to-door as a side-gig! It works {i}great!"
@@ -6892,110 +6996,167 @@ label ce_roof_moment:
     with vpunch
     with hpunch
     with vpunch
-    n "A tsunami of car cleaner comes crashing down, washing everybody off the roof!"
+    n "A tsunami of car cleaner comes crashing down, washing everybody off of the roof!"
     n "As they find their bearings, the crowd watches in amazement as the waves of Crotch Doctor carry all the snow away."
+
     scene cs_house_night_dtree
     show cs christmas dark at mid_left
-    show tate festive dark at left
+    show tate festive dark at mid_left_left
     show obama festive dark at mid_right
-    show copguy festive dark at mid_mid_right
-    show k17 dark
+    show copguy festive dark flipped at mid_mid_right
+    show k17 dark flipped
     show santa dark at right
     with dissolve
+    show cs happy christmas dark
     cs "Woohoo! We did it! The avalanche covering the house is gone!"
     santa "Ho ho! Well, it looks like you helped save Christmas, CS."
     santa "I need to get going now. I am slightly off-schedule."
-    santa "I'm supposed to meet this girl named Belle, heard she's feeling pretty down."
+    santa "I'm supposed to meet this girl named Belle. I heard that she's feeling pretty down."
     santa "I should also make sure my steed didn't drown in car cleaner..."
     cs "Good luck to you, Santa!"
     hide santa with moveoutleft
+    show copguy festive dark
     show k17 happy dark
     k17 "CS? Did you {i}see{/i} that?!"
+    show cs disappointed christmas dark
+    show tate sheepish festive dark
     cs "Yeah? I was kind of {i}there,{/i} along with everyone else."
     show k17 disappointed dark
     k17 "Sorry, that was a stupid question."
-    show k17 dark
-    tate "CS! You did it!"
-    obama "I gotta say, that was one of the most fun Christmas parties I've ever been to."
+    hide k17 with moveoutleft
+    pause 0.5
+    tate "Well, CS... I don't know how, but, you did it."
+    obama "I must say, that was the most fun I've ever had at a Christmas party."
     obama "Although, I should probably get back to the White House. The political circus is probably getting out of hand."
-    hide obama with moveoutleft
+    show cs christmas dark
+    cs "Thank you again for coming, Mr.{w=0} President!"
+    cs "I'd love to have you again next year!"
+    obama "I look forward to seeing you!"
+    show obama festive dark flipped
+    hide obama with moveoutright
+    pause 1.0
     show sheriff festive dark at right with moveinright
     sheriff "Hey, guys, what'd I miss?"
     sheriff "Where's all this snow you were all so worried about?"
-    cs "Uhhh..."
-    play sound sfx_jingle volume 0.7
-    n "As everyone is talking, the jingling of bells can be heard rushing over CS' house."
+    show cs disappointed christmas dark
+    cs "Uhhh-- {nw}"
+    play sound sfx_jingle volume 0.7 
+    show tate shock festive dark
+    show cs worried christmas dark
+    with vpunch
+    n "A distant jingling is heard from above!"
     show sleigh behind copguy:
         zoom 0.2
         rotate -10
     show sleigh at Move((0.45, 0.1), (1.1, -0.2), 7, repeat=False, bounce=False, xanchor="left", yanchor="top")
     santa "Ho ho ho! Merry Christmas, everyone!"
+    pause 0.5
     show snow3
     show snow4
     with dissolve
-    n "As Santa flies past, the snow begins to fall again."
+
+    show tate sheepish festive dark
+    show cs christmas dark
+    n "As Santa flies away, snow begins to fall again."
+    pause 0.5
+    
     sheriff "Well, Copguy, we should probably get going before we get snowed in again!"
+    show copguy festive dark flipped
+    copguy "Yeah, you're probably right."
+    copguy "Thanks for having us, CS."
+    show cs happy christmas dark
+    show copguy festive dark
+    cs "Thanks to both of you for coming! Merry Christmas!"
+    pause 0.5
+    show cs christmas dark
     show copguy festive dark flipped
     show sheriff festive dark flipped
     with determination
+    pause 0.5
     hide sheriff
     hide copguy
     with moveoutright
+    pause 1.0
     copguy "Hey, look how at shiny our car is!"
     sheriff "Wow!"
     copguy "I {i}told{/i} the chief we should start using this stuff on our cruisers!"
     if d20 == 20:
         show avgn dark flipped at mid_right with moveinright
         avgn "Man, this party was {nw}"
+        show cs disappointed christmas dark
         avgn "Man, this party was {fast}{i}ass!" with vpunch
         # NOTE: Digi and I thought this was so hilarious we decided to have him moonwalk. - pak
         hide avgn with moveoutleft
+    pause 0.5
+
     scene cs_house_night_dtree
-    show billy festive dark at mid_left
-    show k22 disappointed dark at mid_right
+    show billy festive flipped dark at mid_left
     with dissolve
-    n "As the guests say their goodbyes and gear up to get home, K-22 and Billy have a bit of a chat."
-    k22 "Hey, Billy, can I talk to you for a minute?"
+    pause 0.5
+    show k22 disappointed dark at mid_right with { "master": moveinright }
+    n "As the guests say their goodbyes and gear up to get home, K-22 approaches Billy."
+    k22 "Hey, Billy. Can I talk to you for a minute?"
     billy "Sure thing! How can I help?"
     k22 "I, uhh... had a customer who wanted you to make something for them."
     # TODO: a paper asset?
     n "K-22 hands Billy a folded up piece of paper."
-    k22 "All of the instructions are on there I was told."
-    k22 "Follow them word-for-word."
+    k22 "All of the instructions are on here."
+    k22 "My client wants these followed word-for-word."
+    # TODO: SFX unfold paper?
+    pause 0.5
     n "Billy opens up the paper and skims through it."
     pause 1.0
     billy "Wow..."
-    billy "This is {i}great!{/i} I can get to work on this soon!"
+    billy "This is {i}great!{/i} I can get to work on this real soon!"
     billy "I gotta take a trip to France, first."
     billy "I need to... fix an old friend."
     show k22 dark
-    k22 "Alrighty, well, see you later. Billy!"
+    k22 "Alrighty, well, thanks."
+    k22 "See you later, Billy."
     billy "See ya!"
+    show billy festive dark
+    show k22 flipped dark
+    with determination
+    show billy festive dark at offscreenleft
+    show k22 flipped dark at offscreenright
+    with move
     n "Both parties head back to their cars."
+    pause 0.5
 
     scene cs_bedroom1_ce
     show cs happy christmas at center
     with dissolve
-    cs "That was such a blast!"
-    cs "Plus, my car got cleaned for free!"
-    cs "What a mess, though. I'm gonna wait for tomorrow to clean this up."
-    cs "Maybe I can call Anno again to help!"
+    pause 0.5
+    cs "Man, that was such a blast!"
+    cs "I even got a free car wash!"
+    show cs disappointed christmas
+    cs "The house is kind of a mess, though. I'll wait until tomorrow to clean all this up."
+    show cs surprised christmas
+    cs "I wonder if Anno would be willing to help again..."
+    show cs christmas    
     cs "For now, I should probably get to streaming."
+    show cs happy christmas
     cs "Those car crash compilations aren't gonna watch themselves!"
-    scene black with dissolve
-    n "As CS entered his room to start streaming, our story here comes to a close."
-    n "It wasn't the Christmas that CS expected, but it was one of the jolliest times he's ever had."
-    n "Merry Christmas, and have a Happy New Year!"
+    show cs happy christmas flipped
+    hide cs with { "master": moveoutleft }
+    n "As CS enters his room to start his livestream, our story here comes to a close."
+    show black with { "master": Dissolve(10.0) }
+    n "It wasn't the Christmas that CS expected, and, certainly, not everything went according to plan."
+    n "In spite of it all, with the help of his friends, it was one of the jolliest times he's ever had."
+    # TODO: should we perhaps change this line to "Merry Christmas to all, and to all a good night!" ? - tate
+    n "Merry Christmas, and have a Happy New Year!" 
     $ achievement_manager.unlock("hoh_hoh")
     $ ending_manager.mark("christmas")
-    pause 5.0
+    scene black with dissolve
     jump ce_epilogue
 
 # Epilogue
 label ce_epilogue:
-    show billycar1:
+    # attempted to fade this in better
+    scene black
+    show billycar1 at Move((-1.5, -1.0), (0.0, -1.25), 10, repeat=False, bounce=False, xanchor="left", yanchor="top"):
         zoom 2.5
-    show billycar1 at Move((-1.5, -1.0), (0.0, -1.25), 10, repeat=False, bounce=False, xanchor="left", yanchor="top") with dissolve
+    with dissolve
     billy "Damn it, where did I put my other Handy Switch?{w=9}{nw}"
     show billycar2:
         zoom 2.5

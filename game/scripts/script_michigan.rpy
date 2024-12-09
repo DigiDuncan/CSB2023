@@ -96,7 +96,7 @@ label michigan_bronson:
     billy "It's the only option we've got."
     arceus "Bronson is small, right? We'll be out of here in no time!"
     cs "Yeah! Right, Billy?"
-    billy "I think so... I mean, we survived a UFO attack,so this can't be much worse!"
+    billy "I think so... I mean, we survived a UFO attack, so this can't be much worse!"
     show cs disappointed flipped
     cs "Yeah!"
     billy "Also, well... if you didn't distract me, we wouldn't be here!"
@@ -205,7 +205,7 @@ label michigan_bronson_win:
     billy "I'm sorry for how I acted back there. I don't know what came over me."
     cs "You freaked me out when you said that I was ruining this trip."
     billy "Nonsense. I may have picked you guys up to take you home a few days ago..."
-    billy "But I can say that you guys are friends for life."
+    billy "But, I can say that you guys are friends for life."
     arceus "Same here."
     arceus "You guys are great."
     cs "Yeah, we've had some great times so far!"
