@@ -35,17 +35,17 @@ screen people_nav():
     # maybe future sort modes will be added, but, not now.
 
     if current_bios_sorting_mode == 0:
-        $ sort_mode = sorted(persistent.seen, key=lambda character: name_map[character]["full_name"].upper())
-        $ sort_text = "All"
+        default sort_mode = sorted(persistent.seen, key=lambda character: name_map[character]["full_name"].upper())
+        default sort_text = "All"
     elif current_bios_sorting_mode == 1:
-        $ presort = []
+        default presort = []
         for c in name_map:
             if c in persistent.seen:
                 if "rpg" in name_map[c]:
                     $ presort.append(c)
 
-        $ sort_mode = sorted(presort, key=lambda character: name_map[character]["full_name"].upper())
-        $ sort_text = "RPG Fighters Only"
+        default sort_mode = sorted(presort, key=lambda character: name_map[character]["full_name"].upper())
+        default sort_text = "RPG Fighters Only"
 
     frame:
         background None
