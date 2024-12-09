@@ -2338,6 +2338,7 @@ label ce_party_before:
         hide cs with moveoutleft
         scene cs_house_snow_night
         show mean human dark flipped at mid_left
+        $ persistent.seen.add("mean_human")
         show tate festive dark at left
         with dissolve
         show cs worried christmas dark flipped at right with moveinright
@@ -2792,6 +2793,7 @@ label ce_introductions:
     show tate festive at mid_mid_left
     show digi flipped at mid_left
     show mean human at mid_offscreen_right
+    $ persistent.seen.add("mean_human")
     show k17 flipped at mid_mid_right
     show k22 flipped at mid_right
     with moveinright

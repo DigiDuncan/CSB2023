@@ -32,20 +32,37 @@ screen people_nav():
     # sorting modes
     # 0 = sort by character name, NOT by json name (default)
     # 1 = RPG characters only
-    # maybe future sort modes will be added, but, not now.
+    # 2 = new to DX only
+    # 3 = new to CE only
+    # maybe future sort modes will be added
 
     if current_bios_sorting_mode == 0:
-        default sort_mode = sorted(persistent.seen, key=lambda character: name_map[character]["full_name"].upper())
-        default sort_text = "All"
+        $ sort_mode = sorted(persistent.seen, key=lambda character: name_map[character]["full_name"].upper())
+        $ sort_text = "All"
     elif current_bios_sorting_mode == 1:
-        default presort = []
+        $ presort = []
         for c in name_map:
             if c in persistent.seen:
                 if "rpg" in name_map[c]:
                     $ presort.append(c)
-
-        default sort_mode = sorted(presort, key=lambda character: name_map[character]["full_name"].upper())
-        default sort_text = "RPG Fighters Only"
+        $ sort_mode = sorted(presort, key=lambda character: name_map[character]["full_name"].upper())
+        $ sort_text = "RPG Fighters Only"
+    elif current_bios_sorting_mode == 2:
+        $ presort = []
+        for c in name_map:
+            if c in persistent.seen:
+                if "dx" in name_map[c]:
+                    $ presort.append(c)
+        $ sort_mode = sorted(presort, key=lambda character: name_map[character]["full_name"].upper())
+        $ sort_text = "New To DX"
+    elif current_bios_sorting_mode == 3:
+        $ presort = []
+        for c in name_map:
+            if c in persistent.seen:
+                if "ce" in name_map[c]:
+                    $ presort.append(c)
+        $ sort_mode = sorted(presort, key=lambda character: name_map[character]["full_name"].upper())
+        $ sort_text = "New To CE"
 
     frame:
         background None
@@ -64,7 +81,7 @@ screen people_nav():
                     action SetVariable("current_bios_sorting_mode", current_bios_sorting_mode-1)
 
         # Change this when there's more modes added
-        if current_bios_sorting_mode < 1:
+        if current_bios_sorting_mode < 3:
             imagebutton:
                 xalign 1.0 yalign 0.5
                 xysize 64, 64
@@ -72,7 +89,7 @@ screen people_nav():
                 idle "/gui/right_off_small.png"
                 hover "/gui/right_on_small.png"
 
-                if current_bios_sorting_mode+1<2:
+                if current_bios_sorting_mode+1<4:
                     action SetVariable("current_bios_sorting_mode", current_bios_sorting_mode+1)
 
         text sort_text:
