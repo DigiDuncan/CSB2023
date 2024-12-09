@@ -227,7 +227,7 @@
         "type": "story"
     },
     "beat_copguy":{
-        "name": "Hopes and Dreams",
+        "name": "Hopes And Dreams",
         "locked": "???",
         "unlocked": "Defeat Copguy EX.",
         "img": "souls",
@@ -304,14 +304,14 @@
         "type": "story"
     },
     "csbi":{
-        "name": "HoH SiS's Most Wanted",
+        "name": "HoH SiS' Most Wanted",
         "locked": "???",
         "unlocked": "Complete CSBI.",
         "img": "csbi",
         "type": "story"
     },
     "csbii":{
-        "name": "Welcome to CSBIII, Motherfucker",
+        "name": "Welcome To CSBIII, Motherfucker",
         "locked": "???",
         "unlocked": "Complete CSBII.",
         "img": "csbii",
@@ -454,7 +454,7 @@
         "dx": true
     },
     "train_dialogue":{
-        "name": "Train of Thought",
+        "name": "Train Of Thought",
         "locked": "Not {i}this{/i} shit again!",
         "unlocked": "Endure the entire train ride.",
         "img": "tired",
@@ -560,7 +560,7 @@
         "dx": true
     },
     "bios":{
-        "name": "Gotta Catch Them All",
+        "name": "Gotta Catch 'Em All!",
         "locked": "Collect every bio.",
         "unlocked": "Collect every bio.",
         "img": "bios",
