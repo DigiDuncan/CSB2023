@@ -519,7 +519,7 @@
         "type": "extra",
         "ce": true
     },
-	"reversi":{
+    "reversi":{
         "name": "Reversi!",
         "locked": "Win a game of Reversi!",
         "unlocked": "Win a game of Reversi!",
@@ -527,7 +527,7 @@
         "type": "story",
         "ce": true
     },
-	"grandmaster":{
+    "grandmaster":{
         "name": "Reversi Grandmaster",
         "locked": "???",
         "unlocked": "Beat Aria at Reversi.",
