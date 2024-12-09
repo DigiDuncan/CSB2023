@@ -28,7 +28,11 @@ label ce_start:
     pause 0.5
     dxcom writing
     n "CS wakes up to a snowy winter morning."
-    cs "Oh, {i}yes!{/i} It snowed today!"
+    if fun_value(FUN_VALUE_MUSIC):
+        cs "Oh, {i}yes!{/i} Let's hear my Christ!"
+        cs "It also snowed today!"
+    else:
+        cs "Oh, {i}yes!{/i} It snowed today!"
     show cs at mid_mid_right with move
     pause 0.5
 
@@ -513,7 +517,10 @@ label ce_anno:
     with dissolve
     play music snowy
     music snowy
-    n "As CS closes the door behind him, he is greeted by a massive pile of snow blocking the garage."
+    if fun_value(FUN_VALUE_MUSIC):
+        n "As CS closes the door behind him, he is greeted by a massive pile of snowy snow blocking the garage."
+    else:
+        n "As CS closes the door behind him, he is greeted by a massive pile of snow blocking the garage."
     cs "Well, that's just {i}great."
     cs "This is gonna take at least an hour to shovel aside..."
     pause 0.25
@@ -2685,17 +2692,24 @@ label ce_introductions:
     with dissolve
     play music teeth_dust if_changed
     music teeth_dust
-    cs "Well, it looks like everyone is here, right?"
-    if d20 != 19:
-        dxcom db
-        anno "DB isn't here yet, but otherwise, yeah."
+    if fun_value(FUN_VALUE_MUSIC, confusing = True):
+        cs "Well, it looks like there is teeth dust in the stronghold, right?"
+        show tate sheepish festive flipped
+        tate "What?"
+        show digi sad flipped
+        digi "Are... you okay, CS?"
     else:
-        anno "Looks like it, yeah."
-    hide screen dxcom
-    show tate sheepish festive flipped
-    tate "There sure are... a {i}lot{/i} of people here..."
-    show digi thinking flipped
-    digi "Yeah, I wonder where Arc and Kitty went..."
+        cs "Well, it looks like everyone is here, right?"
+        if d20 != 19:
+            dxcom db
+            anno "DB isn't here yet, but otherwise, yeah."
+        else:
+            anno "Looks like it, yeah."
+        hide screen dxcom
+        show tate sheepish festive flipped
+        tate "There sure are... a {i}lot{/i} of people here..."
+        show digi thinking flipped
+        digi "Yeah, I wonder where Arc and Kitty went..."
     show cs worried christmas
     show k17 happy at mid_right
     show k22 at right behind k17
@@ -3047,10 +3061,15 @@ label ce_banter:
     show copguy festive at center
     with dissolve
     play music dont_preheat_your_oven if_changed
-    music dont_preheat_your_oven
+    music dont_preheat_your_oven     
     sheriff "Hey, Copguy!"
-    copguy "I know, this party is great, right?"
-    sheriff "{i}No!{/i} I need to take a {i}shit!" with vpunch
+    if fun_value(FUN_VALUE_MUSIC):
+        sheriff "Don't preheat your oven!"
+        copguy "...Thanks?"
+        sheriff "For real though, I need to take a {i}shit!" with vpunch
+    else:
+        copguy "I know, this party is great, right?"
+        sheriff "{i}No!{/i} I need to take a {i}shit!" with vpunch
     copguy "Okay, do you want me to tell the whole house?"
     sheriff "Very funny, smartass! I need you to go with me." with vpunch
     sheriff "My legs don't work, remember?"
@@ -3350,7 +3369,10 @@ label ce_banter:
     show pakoo disappointed at mid_right
     with moveinright
     addy "HELLO?!" with vpunch
-    k22 "Hey, uhh, how is it going over there?"
+    if fun_value(FUN_VALUE_MUSIC, confusing = True):
+        k22 "Hey, uhh, do you need some H2O?"
+    else:
+        k22 "Hey, uhh, how is it going over there?"
     addy "{i}WHAT?! {nw}" with vpunch
     addy "{i}WHAT?!{/i} {fast}I CAN'T HEAR YOU! {nw}" with vpunch
     addy "{i}WHAT?!{/i} I CAN'T HEAR YOU! {fast}THE MUSIC IS {i}REALLY{/i} LOUD!" with vpunch
@@ -3537,7 +3559,10 @@ label ce_cooking:
         zoom 0.7
     $ collect("burnt_turkey")
     play sound sfx_oven_close
-    n "When the smoke finally clears, Ed pulls out a blackened turkey."
+    if fun_value(FUN_VALUE_MUSIC, confusing = True):
+        n "When the smoke finally clears, Ed pulls out a snowdin turkey."
+    else:
+        n "When the smoke finally clears, Ed pulls out a blackened turkey."
     hide smoke with dissolve
     show cs disappointed christmas flipped
     play music snowdin_town
@@ -3786,7 +3811,10 @@ label ce_mike:
     cs "Hey guys, the pizza is here!"
     show cs christmas at right with move
     play sound sfx_house_door_open
-    n "He opens the door to greet the delivery person."
+    if fun_value(FUN_VALUE_MUSIC, confusing = True):
+        n "He opens the door to grab the rice and wine."
+    else:
+        n "He opens the door to greet the delivery person."
     show mike at right
     show cs christmas at mid_mid_left
     with moveinright
@@ -3922,7 +3950,10 @@ label ce_dinner:
     show k17 at manual_pos(-0.5, 0.6, 0.5)
     show left_table
     with dissolve
-    cs "Well, I'd love to start off this wonderful meal by saying--"
+    if fun_value(FUN_VALUE_MUSIC):
+        cs "Well, I'd love to spread some Christmas spirit by saying--"
+    else:
+        cs "Well, I'd love to start off this wonderful meal by saying--"
     play sound sfx_static
     show cs scared christmas
     show tate shock festive flipped
@@ -4481,7 +4512,10 @@ label ce_exchange:
     with dissolve
     play music superstar_road volume 0.5
     music superstar_road
-    cs "Alright! It's time for the gift exchange!"
+    if fun_value(FUN_VALUE_MUSIC, confusing = True):
+        cs "Alright! It's time for the superstar road!"
+    else:
+        cs "Alright! It's time for the gift exchange!"
     cs "Everyone brought a gift, right?"
     n "The crowd responds with nods and vague confirmations."
     show festive_bag at manual_pos(0.6, 0.6, 0.5) with moveinbottom
@@ -5465,7 +5499,12 @@ label ce_lights_out:
     play music synchronicity if_changed
     music synchronicity
     show cs disappointed christmas flipped
-    cs "Kitty? What are you doing down here? Arceus was looking all over for you!"
+    if fun_value(FUN_VALUE_MUSIC, confusing = True):
+        cs "Kitty? What are the chances that I found you down here? Arceus was looking all over for you!"
+        cs "Think of the synchronicity of this situation!"
+        kitty "Uhh..."
+    else:      
+        cs "Kitty? What are you doing down here? Arceus was looking all over for you!"
     kitty "Sorry..."
     kitty "I started getting a bad migraine towards the end of the party, so I tried to find the quietest place in the house."
     kitty "I'm a little glad the power went out, honestly. It's been peaceful here."
@@ -5727,6 +5766,8 @@ label ce_snowed_in:
     show snow_wind
     with dissolve
     pause 5.0
+    if fun_value(FUN_VALUE_MUSIC):
+        mean "Welp. It's winter, that's for sure."
     mean "Just look out into the distance..."
     n "CS struggles to find the horizon."
     n "All that he can see is an endless desert of snow, with only the tops of streetlights visible."
@@ -6078,7 +6119,10 @@ label ce_billy_time:
     pause 0.5
     show billy festive at mid_right with moveinright
     billy "Wait! Everyone, hold on!"
-    cs "What? What is it, Billy?"
+    if fun_value(FUN_VALUE_MUSIC, confusing = True):
+        cs "What? What's on the rocks, Billy?"
+    else:
+        cs "What? What is it, Billy?"
     play music on_the_rocks
     music on_the_rocks
     billy "The Handy Switch!"
@@ -6590,7 +6634,10 @@ label ce_roof_moment:
     
     play sound sfx_jingle volume 0.8
     cs "We did it, guys! Santa's coming to save us!"
-    n "Santa's sleigh begins its descent, slowing down to a crawl as the reindeer gently touch down onto the snow."
+    if fun_value(FUN_VALUE_MUSIC):
+        n "Santa's sleigh begins its descent, slowing down to a crawl as the reindeer gently touch down onto the blindingly white snow."
+    else:
+        n "Santa's sleigh begins its descent, slowing down to a crawl as the reindeer gently touch down onto the snow."
     stop sound fadeout 0.5
     play sound2 sfx_snow_walk
     pause 0.5
