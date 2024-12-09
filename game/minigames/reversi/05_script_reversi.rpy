@@ -26,7 +26,7 @@ init python:
             self.enemy_name_text = Text(self.ai.name, color = "#0000ff", size = 72)
             self.enemy_score_text = Text("2", color = "#0000ff", size = 72)
 
-            self.help_text = Text("Press H for help!", color = "#000000", size = 36)
+            self.help_text = Text("Press I for info!", color = "#000000", size = 36)
             self.help_modal = renpy.get_registered_image("reversi_rules")
             self.showing_help = False
 
@@ -120,7 +120,7 @@ init python:
 
             if ev.type == pygame.KEYDOWN and ev.key == pygame.K_END:
                 self.win = True
-            if ev.type == pygame.KEYUP and ev.key == pygame.K_h:
+            if ev.type == pygame.KEYUP and ev.key == pygame.K_i:
                 self.showing_help = not self.showing_help
             if self.win is not None:
                 return self.game.get_counts()
