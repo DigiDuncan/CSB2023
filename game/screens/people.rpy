@@ -264,6 +264,16 @@ screen person(l):
                                 python:
                                     try:
                                         this_sprite = list(name_map[l]['sprites'].keys())[current_bios_sprite]
+
+                                        # delimiter to handle outfit/expression names
+                                        # ex. "Default: Happy" will be split
+                                        this_sprite_split = this_sprite.split(":")
+                                        
+                                        if len(this_sprite_split) > 1:
+                                            this_sprite = "{size=-12}" + this_sprite_split[0] + "{/size}\n" + this_sprite_split[1]
+                                        else:
+                                            this_sprite = this_sprite_split
+
                                     except:
                                         this_sprite = "Default"
                                         current_bios_sprite = 0
@@ -275,6 +285,7 @@ screen person(l):
                                     text_align 0.5
 
                                 if len(name_map[l]['sprites'].keys()) > 1:
+                                    # left arrow
                                     if current_bios_sprite-1>=0:
                                         imagebutton:
                                             xalign 0.0 yalign 0.5
@@ -284,6 +295,7 @@ screen person(l):
                                             hover "/gui/left_on_small.png"
                                             action IncrementVariable("current_bios_sprite", -1)
 
+                                    # right arrow
                                     if current_bios_sprite+1 < len(name_map[l]['sprites']):
                                         imagebutton:
                                             xalign 1.0 yalign 0.5

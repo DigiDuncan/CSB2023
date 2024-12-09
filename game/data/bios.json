@@ -106,7 +106,7 @@
         "full_name": "Billy Mays",
         "pronouns": "(he/him)",
         "sprites": { 
-            "Default": "images/characters/billy/billy.png",
+            "Default: Neutral": "images/characters/billy/billy.png",
             "Default: Laser!": "images/characters/billy/BillyMaysWithLaser.png",
             "Festive": "images/characters/billy/festive.png"
         },
@@ -596,8 +596,8 @@
         "full_name": "Lupin III",
         "pronouns": "(he/him)",
         "sprites": { 
-            "Standing": "images/characters/lupin/lupin_stand.png",
-            "Running": "images/characters/lupin/lupin_run.png",
+            "Default: Standing": "images/characters/lupin/lupin_stand.png",
+            "Default: Running": "images/characters/lupin/lupin_run.png",
             "Hat: Standing": "images/characters/lupin/lupin_stand_hat.png",
             "Hat: Running": "images/characters/lupin/lupin_run_hat.png"
         },
@@ -744,7 +744,7 @@
         "pronouns": "(he/him)",
         "sprites": { 
             "Default": "images/characters/obama.png",
-            "Festive": "images/characters/obama_festive.png",
+            "Festive: Neutral": "images/characters/obama_festive.png",
             "Festive: Angry": "images/characters/obama_festive_angry.png"
         },
         "quote": "Hello, my fellow Americans!",
@@ -905,7 +905,7 @@
             "Default: Sheepish": "images/characters/tate/tatesheepish.png",
             "Default: Sheepish Blush": "images/characters/tate/tatesheepishblush.png",
 
-            "Festive: Neutral": "images/characters/tate/tatehappy.png",
+            "Festive: Neutral": "images/characters/tate/festive_tatehappy.png",
             "Festive: Cry": "images/characters/tate/festive_tatecry.png",
             "Festive: Furious": "images/characters/tate/festive_tatefurious.png",
             "Festive: Furious Blush": "images/characters/tate/festive_tatefuriousblush.png",
