@@ -1377,7 +1377,7 @@ image craptop ytp = "characters/craptop/ytp.png"
 image craptop evidence = "characters/craptop/evidence.png"
 image craptopreal = "characters/craptop/Laptop.png"
 image craptopsmall = "characters/craptop/craptop.png"
-image craptopsmall flipped = "flip:characters/craptop.png"
+image craptopsmall flipped = "flip:characters/craptop/craptop.png"
 
 ## Tate
 image tate = "characters/tate/tatehappy.png"
