@@ -103,7 +103,7 @@ screen people_nav():
                 if k == "iris":
                     textbutton name_label action Function(mark_read, k), SetScreenVariable("current_person", k), ShowMenu("fake_error", "people.rpy", 126, "`bios/iris.txt` could not be rendered as a Text object.", "Hi, I'm Iris, a cosmic being with interest in the happenings of this reality, as well as some of the people involved in this story.\nDoes that sound too formal? I don't know. Hey, Digi, writing this shit's hard. You can fill in the rest from here.", _transition = determination)
                 else:
-                    textbutton name_label action Function(mark_read, k), SetScreenVariable("current_person", k)
+                    textbutton name_label action Function(mark_read, k), SetScreenVariable("current_person", k), SetVariable("current_bios_sprite", 0)
 
     textbutton "Return to Extras" action ShowMenu("category_welcome") yoffset 950 xoffset 25
     textbutton "Main Menu" action Return() yoffset 1000 xoffset 25
@@ -275,27 +275,22 @@ screen person(l):
                                     text_align 0.5
 
                                 if len(name_map[l]['sprites'].keys()) > 1:
-                                    if current_bios_sprite > 0:
+                                    if current_bios_sprite-1>=0:
                                         imagebutton:
                                             xalign 0.0 yalign 0.5
                                             xysize 64, 64
 
                                             idle "/gui/left_off_small.png"
                                             hover "/gui/left_on_small.png"
+                                            action IncrementVariable("current_bios_sprite", -1)
 
-                                            if current_bios_sprite-1>=0:
-                                                action SetVariable("current_bios_sprite", current_bios_sprite-1)
-
-                                    if current_bios_sprite < len(name_map[l]['sprites']):
+                                    if current_bios_sprite+1 < len(name_map[l]['sprites']):
                                         imagebutton:
                                             xalign 1.0 yalign 0.5
                                             xysize 64, 64
-
                                             idle "/gui/right_off_small.png"
                                             hover "/gui/right_on_small.png"
-
-                                            if current_bios_sprite+1<len(name_map[l]['sprites']):
-                                                action SetVariable("current_bios_sprite", current_bios_sprite+1)
+                                            action IncrementVariable("current_bios_sprite")
 
                             # show rpg data if it exists
                             if "rpg" in name_map[l]:
