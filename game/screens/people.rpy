@@ -30,16 +30,17 @@ screen people_nav():
     add Color('#323e42', alpha=0.75)
     
     # sorting modes
-    # 0 = default, sort by order encountered (well... roughly... this should be looked at later.)
-    # 1 = sort by character name, NOT by json name
+    # 0 = sort by character name, NOT by json name (default)
+    # 1 = RPG characters only
     # maybe future sort modes will be added, but, not now.
 
     if current_bios_sorting_mode == 0:
-        $ sort_mode = persistent.seen
-        $ sort_text = "Sort By: Default"
-    elif current_bios_sorting_mode == 1:
         $ sort_mode = sorted(persistent.seen, key=lambda character: name_map[character]["full_name"].upper())
         $ sort_text = "Sort By: Name"
+    # elif current_bios_sorting_mode == 1:
+        # if "rpg" in name_map[character]:
+            # $ sort_mode = sorted(persistent.seen, key=lambda character: name_map[character]["full_name"].upper())
+        # $ sort_text = "RPG Characters Only"
 
     frame:
         background None

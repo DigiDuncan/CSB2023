@@ -5,8 +5,7 @@ init python:
     # For jukebox tagging
     current_jukebox_tag_index = 0
 
-    # For bios sorting. 0 = default, 1 = by name
-    # TODO: Maybe further tagging can be added later, but, not now.
+    # For bios sorting
     current_bios_sorting_mode = 0
 
 # If music is so good, why is there no Music 2?
