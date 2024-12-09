@@ -2,9 +2,9 @@ screen popup(a):
     zorder 100
     layer "popup"
     style_prefix "popup"
-    $ popup_chieve_name = Text(a.name, size=22, xmaximum=260, font="fonts/DIN-Medium.ttf", layout="greedy")
-    $ popup_chieve_desc = Text(a.desc, size=16, xmaximum=260, font="fonts/DIN-Medium.ttf", layout="greedy")
-    $ popup_chieve_icon = a.icon
+    default popup_chieve_name = Text(a.name, size=22, xmaximum=260, font="fonts/DIN-Medium.ttf", layout="greedy")
+    default popup_chieve_desc = Text(a.desc, size=16, xmaximum=260, font="fonts/DIN-Medium.ttf", layout="greedy")
+    default popup_chieve_icon = a.icon
 
     frame:
         at popup_appear
