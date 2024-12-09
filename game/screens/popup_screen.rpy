@@ -9,13 +9,21 @@ screen popup(a):
     frame:
         at popup_appear
         xmaximum 360
-        background Frame("popup.png", 75, 75)
+        xminimum 360
+        background Frame("popup.png", 100, 100)
         hbox:
             spacing 10
-            add popup_chieve_icon:
-                fit "contain"
-                xysize(100, 100)
+            frame:
+                background None
+                xysize(100,100)
                 yalign 0.5
+                add popup_chieve_icon:
+                    yalign 0.5
+                    xalign 0.5
+                    xysize(100,100)
+                add Image("icon_border.png"):
+                    yalign 0.5
+                    xalign 0.5
             vbox:
                 spacing 15
                 add popup_chieve_name
