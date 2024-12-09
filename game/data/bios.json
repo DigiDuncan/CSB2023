@@ -84,7 +84,7 @@
         "pronouns": "(he/him)",
         "sprite_path": "images/characters/blank.png",
         "quote": "I Am Catboy Musical",
-        "bio": "Ever needed music that's also a shitpost? No? Well, too bad, because Blank has ya covered. He can make regular music too, but it isn't Blank music if it doesn't sample catgirl moans.",
+        "bio": "Ever needed music that's also a shitpost? No? Well, too bad, because Blank has ya covered. He can make regular music too, but it isn't {i}Blank{/i} music if it doesn't sample catgirl moans.",
         "rpg": "BLANK"
     },
     "border_guard": {
@@ -182,7 +182,7 @@
         "full_name": "Cultists",
         "sprite_path": "images/characters/cultist2.png",
         "quote": "I love hating everything!",
-        "bio": "These guys hate a lot of things, and they probably hate {i}you,{/i} too! They may also just be fans of the YT channel \"I Hate Everything\", and joined because they thought it was about the channel."
+        "bio": "These folks hate a lot of things, and they probably hate {i}you,{/i} too! They may also just be fans of the YT channel \"I Hate Everything\", and joined because they thought it was about the channel."
     },
     "db": {
         "full_name": "db05",

@@ -36,11 +36,16 @@ screen people_nav():
 
     if current_bios_sorting_mode == 0:
         $ sort_mode = sorted(persistent.seen, key=lambda character: name_map[character]["full_name"].upper())
-        $ sort_text = "Sort By: Name"
-    # elif current_bios_sorting_mode == 1:
-        # if "rpg" in name_map[character]:
-            # $ sort_mode = sorted(persistent.seen, key=lambda character: name_map[character]["full_name"].upper())
-        # $ sort_text = "RPG Characters Only"
+        $ sort_text = "All"
+    elif current_bios_sorting_mode == 1:
+        $ presort = []
+        for c in name_map:
+            if c in persistent.seen:
+                if "rpg" in name_map[c]:
+                    $ presort.append(c)
+
+        $ sort_mode = sorted(presort, key=lambda character: name_map[character]["full_name"].upper())
+        $ sort_text = "RPG Fighters Only"
 
     frame:
         background None
