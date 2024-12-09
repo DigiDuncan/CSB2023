@@ -64,7 +64,8 @@
             "title": "CANYON.MID",
             "artist": "George Stone",
             "tags": ["CSBI"],
-            "album_art": "windows.png"
+            "album_art": "windows.png",
+            "trivia": "The full title of this song is {i}Trip Through the Grand Canyon.{/i}"
         },
         "summer_clearance_sale" : {
             "file": "bestmusicu.ogg",
@@ -168,7 +169,8 @@
             "title": "PASSPORT.MID",
             "artist": "George Stone",
             "tags": ["CSBII", "CSBIII", "CSBIII: Fired"],
-            "album_art": "windows.png"
+            "album_art": "windows.png",
+            "trivia": "This song was created to promote Passport Designs, Inc., which made some early music production software."
         },
         "passport_ytp" : {
             "file": "passport_ytp.ogg",
