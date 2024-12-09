@@ -22,15 +22,15 @@
 
 # Progress
 - Flowchart (My head) 100%
-- Script writing 80%
-- Basic asset creation 92%
-- Basic transitions 90%
-- Music 75%
-- Sound effects 50%
-- Grammar pass 12%
-- Asset pass 0%
-- Transition/cinematography pass 5%
-- Add music to jukebox 75%
-- Add bios 5%
-- Add achievements 0%
-- Add minigames 0%
+- Script writing 100%
+- Basic asset creation 100%
+- Basic transitions 100%
+- Music 95%
+- Sound effects 90%
+- Grammar pass 75%?
+- Asset pass 90%
+- Transition/cinematography pass 75%?
+- Add music to jukebox 95%
+- Add bios 12%
+- Add achievements 100%
+- Add minigames 50%
