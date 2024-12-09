@@ -4,7 +4,7 @@ screen popup(a):
     style_prefix "popup"
     $ popup_chieve_name = Text(a.name, size=22, xmaximum=260, font="fonts/DIN-Medium.ttf", layout="greedy")
     $ popup_chieve_desc = Text(a.desc, size=16, xmaximum=260, font="fonts/DIN-Medium.ttf", layout="greedy")
-    $ popup_chieve_icon = Image(a.icon)
+    $ popup_chieve_icon = a.icon
 
     frame:
         at popup_appear
