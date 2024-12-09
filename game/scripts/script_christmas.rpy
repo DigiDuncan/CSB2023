@@ -3822,6 +3822,7 @@ label ce_mike:
     with moveinright
     play music rice_and_wine
     music rice_and_wine
+    dxcom pizza1
     mike "I'm Chinese."
     show cs happy christmas
     cs "Oh, my God! It's Mike!"
@@ -3902,6 +3903,7 @@ label ce_mike:
     grace "I expected more from you."
     obama "Should've listened to my campaign speeches, bitch."
     mike "Alright, who wants to try pizza from my Thermos?"
+    hide screen dxcom
     show cs happy christmas
     cs "Oh, {i}yes!{/i} Me first! Woohoo!"
     scene black with dissolve

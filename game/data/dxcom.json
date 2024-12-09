@@ -302,5 +302,31 @@
             "transcript": "As I'm sure you've noticed, I tried to add as many corny and cheesy Christmas tropes into this, to make the funniest festive route.",
             "length": 8.5
         }
+    ],
+    "pizza1": [
+        {
+            "audio_path": "pizza01",
+            "speaker": "Mika",
+            "transcript": "Hello, this is, Mikapara, from, Pakoopara's house. You may know me from the wedding video, if you've watched that. If you haven't, go to... Pakoopara's channel. So this, on the right hand side, I'm pretty sure right below the audio commentary knob module. Or node, sorry, if they haven't changed it. It's Mike, Mike the Pizzapotamus.",
+            "length": 24.7
+        },
+        {
+            "audio_path": "pizza2",
+            "speaker": "Mika",
+            "transcript": "He came from a youtube video from the channel \"WWG\", the video is called, oh shoot, lemme look it up. So yeah, the video is called, \"Getting called on first to give your presentation\" if you wanna take a, watch of that, the link is: https://www.youtube.com/watch?v=48Vic- oh, I realized you might not know the NATO phoentic alphabet.",
+            "length": 41.4
+        },
+        {
+            "audio_path": "pizza3",
+            "speaker": "Mika",
+            "transcript": "Let me, pull that up for you. So, NATO phoentic is, I'm gonna go a letter and then I'm gonna say the \"code\". So A is Alpha. B is Bravo. C is Charlie. D is Delta. E is Echo. F is Foxtrot. G is Golf. H is Hotel. I is India. J is Juliett. K is Kilo. L is Lima. M is Mike. N is November. O is Oscar. P is Papa. Q is Quebec. That's a reference to the Canadians.",
+            "length": 40.6
+        },
+        {
+            "audio_path": "pizza4",
+            "speaker": "Mika",
+            "transcript": "R is Romeo. S is Sierra. T is Tango. U is Uniform. V is Victor. W is Whiskey. X is X-ray. Y is Yankee, and Z is Zulu.",
+            "length": 14.5
+        }
     ]
 }
