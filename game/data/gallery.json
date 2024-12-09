@@ -229,5 +229,11 @@
         "type": "image",
         "title": "Reversi Help",
         "caption": "The text was too small and the copy-pasted rules were too complicated."
+    },
+    "thanksm.ogg": {
+        "type": "audio",
+        "title": "Anno Letter Read Sentence Mix",
+        "caption": "When Anno sent me his recording for the letter read, he also sent me this funny edit of himself. I wasn't going to use it for the intro, but I wanted to show this off somewhere.",
+        "album_art": "anno.png"
     }
 }
