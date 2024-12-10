@@ -6570,7 +6570,6 @@ label ce_roof_moment:
     cs "What's to say people are still {i}alive?{/i} Who knows how far this glacier goes?"
     digi "CS, do you {i}really{/i} think we are the last people left?"
     cs "I don't know. I just worry that this is-- {nw}"
-    # TODO: make the jingle loopable
     play sound sfx_jingle volume 0.2 loop
     n "As CS becomes more frantic, a noise is heard from afar."
     k17 "Shhh! Do you hear that?"
@@ -6990,7 +6989,7 @@ label ce_roof_moment:
     pause 0.5
     santa "Alright! Stand back, everyone! This is gonna take a lot of focus!"
     n "Harnessing the power of the Christmas spirit, CS' wish begins to manifest...!"
-    # TOOO: maybe some kind of sfx of the power being gathered?
+    # TODO: maybe some kind of sfx of the power being gathered?
     show crotch_doctor sil_black:
         zoom 0.75
         xpos 0.7
