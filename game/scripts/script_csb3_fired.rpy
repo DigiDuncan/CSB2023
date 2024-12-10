@@ -42,7 +42,7 @@ label fired_new_plan:
         arceus "What the fuck?"
         cs "Hey, at least I'm not drinking, Arceus."
         show arceus
-        cs "But no, I got fired."
+        cs "But, no, I got fired."
     else:
         cs "No, I got fired."
     arceus "Aw, man. That sucks. I'm sure we'll figure it out."
@@ -90,7 +90,7 @@ label fired_new_plan:
     anno "Wait, yeah, I can totally do that. I have the models ready for that and everything."
     n "Anno starts typing away at his laptop, and within a few minutes, a voice plays out of the speaker."
     ed_ai "I think CS is a pretty good guy. You shouldn't arrest him."
-    cs "Oh my God, that's amazing! But what about you two?"
+    cs "Oh, my God, that's amazing! But what about you two?"
     anno "Gotcha covered."
     if fun_value(FUN_VALUE_RARE):
         play sound sfx_obama volume 0.5
@@ -107,7 +107,7 @@ label fired_new_plan:
     show arceus
     arceus "I don't know, man, I can't think after all that. Let's take a bit and relax. Clear our heads."
     cs "Good call. Wanna play some {i}Guitar Hero?{/i}"
-    anno "I'm down, but, do you have controllers?"
+    anno "I'm down, but... do you have controllers?"
     cs "{i}Do{/i} I?"
     hide cs with moveoutleft
     n "Anno and Arceus look at each other confused."
@@ -224,9 +224,9 @@ label fired_write_song:
     cs "Alright, it's settled! Let's upload {i}[song_name_1]{/i} to streaming services!"
     show arceus
     arceus "Are you going to plug it in the Discord?"
-    cs "I guess I should, but, people are going to be really confused as to why I'm still not streaming..."
+    cs "I guess I should, but... people are going to be really confused as to why I'm still not streaming..."
     anno "I think they're used to you not streaming for a while."
-    cs "Fair, but a music career?"
+    cs "Fair, but... a music career?"
     arceus "Just say it's a side project."
     cs "Fair enough."
     n "Anno uploads the song, then CS tells the CSCord about it."
@@ -321,7 +321,7 @@ label fired_hotel_next_day:
     anno "I guess we keep it going?"
     show arceus
     arceus "We can't let this window close, right?"
-    cs "I'm shocked, but yeah! Let's do it!"
+    cs "I'm shocked, but, yeah! Let's do it!"
     n "The gang finishes their food and heads back up to their room."
     stop music fadeout 3.0
     music end
@@ -518,7 +518,7 @@ label fired_back_to_room:
     arceus "Thank you, thank you."
     cs "What can I do?"
     anno "Well, you already named it {i}[song_name_3],{/i} and that's definitely our best title yet. You wrote, like, half the lines, too."
-    anno "But, if you want to record backing vocals, this track might sound dope with them!"
+    anno "But if you want to record backing vocals, this track might sound dope with them!"
     cs "Will do!"
     python:
         last_words = []
@@ -811,7 +811,7 @@ label fired_fan_interaction:
     anno "Sorry."
     cs "How much money is that?"
     anno "About $15,000."
-    cs "Oh my God!"
+    cs "Oh, my God!"
     arceus "Well, we're going to need to file taxes on it."
     anno "Do we?"
     show arceus angry
@@ -830,7 +830,7 @@ label fired_fan_interaction:
     cs "Woah, really?"
     howie "I'm emailing to inquire about whether you'd be interested in touring the country with your band. Your latest EP, {i}[ep_name],{/i} has been making big waves on streaming services."
     howie "I think live performances might be just what you need to take the next step."
-    anno "Oh my God!"
+    anno "Oh, my God!"
     howie "If you're willing to negotiate, I think we could strike a very mutually beneficial deal."
     show arceus happy
     arceus "That sounds amazing!"
@@ -861,7 +861,7 @@ label fired_howie:
     howie "A ride in a limousine!"
     n "The group is in shock."
     anno "Already? We haven't even struck a deal!"
-    howie "Ah, you will, I trust in that... but until then, why don't I treat you all to the ride of a lifetime?"
+    howie "Ah, you will, I trust in that... but, until then, why don't I treat you all to the ride of a lifetime?"
     stop music fadeout 3.0
     n "CS, Anno, and Arceus follow Howie to the limo parked out front."
     show howie with determination
@@ -1298,7 +1298,7 @@ label fired_second_tour_day:
     with dissolve
 
     cs "I know you all just watched an amazing performance by Nova, and that's going to be a tough act to follow..."
-    cs "But, who wants to hear {i}[song_name_3]?!{/i}"
+    cs "But who wants to hear {i}[song_name_3]?!{/i}"
     play sound sfx_start_rocking
     play sound sfx_cheer
     n "The crowd is exploding."
@@ -1431,7 +1431,7 @@ label fired_third_tour_day:
     stop music fadeout 3.0
     crowd "Encore! {w=0.5}Encore! {w=0.5}Encore! {w=0.5}"
     n "CS whispers to the others."
-    cs "Encore? But, we don't have any more songs..."
+    cs "Encore? But we don't have any more songs..."
     arceus "Make something up!"
     n "CS shouts to the crowd."
     cs "Uh... hey, you guys! Give me a word!"

@@ -124,7 +124,7 @@ label true_talktohohsis:
     show phil at mid_left behind cs with moveinleft     
     phil "I can help too, with the power of Flex Tape!"
     show doug at center behind cs with moveinbottom
-    doug "I don't know what I'm doing here, but yeah, good job, guys!"
+    doug "I don't know what I'm doing here, but, yeah, good job, guys!"
     show cashier at mid_mid_right behind cs with moveinleft
     cashier "Yeah! Go CS!"
     show pakoo happy at center with moveinleft

@@ -51,7 +51,7 @@ label car_dialogue:
 
     cs "You know, I can drive, Billy."
     billy "This is {i}my{/i} car!"
-    cs "Well, {i}yeah,{/i} but, if you don't want to drive the whole way..."
+    cs "Well, {i}yeah,{/i} but if you don't want to drive the whole way..."
     billy "No, I'm good. You're in {i}my{/i} car, and that means {i}I'll{/i} drive!"
     cs "Alright, man... I just don't feel like we paid you enough for this."
     billy "Everything I sell is {i}always{/i} $19.95!"
@@ -540,12 +540,12 @@ label car_dialogue:
     cs "Would you rather have unlimited bacon, but no games?"
     cs "Or, games?"
     cs "{i}Unlimited{/i} games."
-    cs "But, no games."
+    cs "But no games."
     arceus "What?"
     digi "That's, like, a paradox, right?"
     cs "No, no, you see, you get unlimited games, but no games."
     arceus "I'm just gonna take the unlimited bacon."
-    cs "But, you get no games!"
+    cs "But you get no games!"
     arceus "I'm choosing bacon. Final answer."
 
     pause 4.0

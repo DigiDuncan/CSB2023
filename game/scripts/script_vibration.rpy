@@ -450,7 +450,7 @@ label vibration:
     with dissolve
     show beam at xstretch_out
     ed "Damn, I don't know how you beat us."
-    ed "But, I {i}finally{/i} caught up with you!"
+    ed "But I {i}finally{/i} caught up with you!"
     show cs angry
     cs "Are you gonna fix my house?"
     ed "What? Why would we do that?"

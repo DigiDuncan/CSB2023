@@ -471,7 +471,7 @@ label csbi_room:
     ed "We'll show him what happens when you tarnish our good name!"
     pause 1.0
     "..."
-    ed "... But, now that we're here, what should we actually {i}do?"
+    ed "But... now that we're here, what should we actually {i}do?"
 
     ed "Hmm..." (multiple = 3)
     wesley "Hmm..." (multiple = 3)
@@ -715,7 +715,7 @@ label csbi_rosen_house:
     n "Michael spits out the Flex Cake."
     michael "This is {i}horrible!"
     michael "Get {i}out!{/i} Get out of here!"
-    phil "But, it seals, and bonds--{w=0.5}{nw}"
+    phil "But it seals, and bonds--{w=0.5}{nw}"
     michael "{i}OUT!" with hpunch
     hide phil with moveoutright
     show cs disappointed flipped at right

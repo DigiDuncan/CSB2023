@@ -142,7 +142,7 @@ label awawa_tate_test:
                 "Furious!"
 
                 show tate_comp happy festive
-                "Festive! But the happy face has to be forced..."
+                "Festive! But, the happy face has to be forced..."
                 show tate_comp sad festive
                 "Sad Festive"
                 show tate_comp cry tears festive

@@ -504,7 +504,7 @@ label south_vegas_done_slots:
     green_offscreen "Arright, great! Come sit down here."
     hide cs with moveoutleft
     n "CS sits down at the poker table and notices that the man's skin is a putrid green."
-    n "CS looks disgusted, but shrugs, as he doesn't want to start trouble now."
+    n "CS is disgusted by the sight, but he shrugs it off, not wanting to start trouble with this powerful-looking stranger."
     scene luigi2
     show green flipped at left
     with dissolve
@@ -794,7 +794,7 @@ label south_poker3:
         show cs flipped
         cs "Oh yeah, I don't really know what happened. Some blue kid gave this to me."
         arceus "Oh, that's weird as hell."
-        cs "Yeah, but it's legit though! So I'm not complaining."
+        cs "Yeah, but it's legit, though! So, I'm not complaining."
 
     else:
         show cards5

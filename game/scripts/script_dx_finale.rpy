@@ -55,7 +55,7 @@ label finale_train_takeoff:
     cashier "What the hell? What kind of storm is this??"
     amtrak_conductor "It's a corruption storm, or at least that's what we calling it now."
     amtrak_conductor "I need to get back up to the front, no one get near the doors!"
-    michael "I think that's out of our control, but okay!"
+    michael "I think that's out of our control, but... okay!"
     show amtrak_conductor with determination
     hide amtrak_conductor with moveoutleft
     scene amtrak_cab at t_train_scurvy

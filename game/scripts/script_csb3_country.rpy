@@ -486,7 +486,7 @@ label england_arceus_place:
     if japan_check or sweden_check:
         arceus "He's deciding to visit England, so I wanted to invite him to stay here."
         arceus "Is that okay?"
-        kitty "Yeah, but, how long will he be here for?"
+        kitty "Yeah, but... how long will he be here for?"
         cs "Not too long, I don't think. I just like this country and wanted to take a vacation here."
         show arceus happy flipped
         arceus "Well, let's make some dinner, then we can find fun things here to do!"
@@ -534,7 +534,7 @@ label england_hell_zone:
     arceus "CS, you realize who the man {i}is{/i} who runs {i}Hell's Kitchen?{/i}"
     cs "Yeah, it's Gordon Ramsay! I love that guy."
     arceus "Yeah, and he's kinda scary."
-    cs "Yeah, but that's just because it's a show."
+    cs "Yeah, but I'm sure he's just playing it up for TV."
     cs "I'm sure he's actually, like, really funny."
     show arceus
     arceus "Besides, how are you going to get on the show?"
@@ -711,7 +711,7 @@ label england_bad_ramsay:
     gordon "Well, well, well, doesn't this look fantastic?"
     gordon "Let's see how it tastes!"
     n "Gordon takes a slice and starts eating it."
-    gordon "It's very rich and smooth on the outside,"
+    gordon "It's very rich and smooth on the outside..."
     gordon "But it tastes weird... on the--{w=0.5}{nw}"
     n "Gordon starts coughing."
     show cs disappointed flipped
@@ -990,7 +990,7 @@ label england_top_win:
     james "We'll send your car back home as soon as possible."
     cs "Thanks."
     cs "Well, I guess I should be going now. I'd like to race again sometime {i}without{/i} a bomb stuck to the bottom of my car."
-    hammond "But, that was fun, wasn't it?"
+    hammond "But that was fun, wasn't it?"
     cs "It was fun before the end!"
     cs "Whatever, I'll see you guys later."
     show cs angry flipped with determination
@@ -1367,7 +1367,7 @@ label japan_two:
     scene tokyo_street with dissolve
     show cs at center with moveinleft
     cs "Fortunately, I have some money this time."
-    cs "But the question is, what should I do here?"
+    cs "But... the question is, what should I do here?"
     jump japan_menu
 
 label japan_anime_adventure:
@@ -1598,7 +1598,7 @@ label japan_miku_pizza:
     $ miku_check = True
     cs "I wanna have some fun with Miku!"
     cs "They had a Domino's ad where you can go have some fun with Miku, right?"
-    cs "But, that was, like, ten years ago..."
+    cs "But that was, like, ten years ago..."
     cs "People still love Miku, so I'm sure she'll uphold the deal!"
     stop music fadeout 3.0
     music end    
@@ -2533,7 +2533,7 @@ label sweden_joel:
     joel "Dinner's ready! Reindeer and alien meatballs, lingonberry sauce, mashed potatoes, and surströmming."
     cs "That's certainly a unique meal."
     joel "Well, I wasn't gonna waste the alien meat."
-    cs "I meant the reindeer and surströmming, but, I suppose that's also unique."
+    cs "I meant the reindeer and surströmming, but I suppose that's also unique."
     n "CS and Joel enjoy the meal and have a great time talking over dinner."
     joel "Well, it's getting late, we should get to bed. You can sleep on the couch."
     joel "Can't get a bus back right now, anyway."

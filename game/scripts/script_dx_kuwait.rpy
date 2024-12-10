@@ -68,7 +68,7 @@ label kuwait:
     with dissolve
     n "CS wakes up as his plane lands in Kuwait City."
     cs "Finally, to Kuwait! I don't have to worry about the cops anymore."
-    cs "Not entirely sure why I came here, but hey, might as well go explore."
+    cs "Not entirely sure why I came here, but, hey, might as well go explore."
     scene black with dissolve
     n "CS exits the airport and finds himself in the middle of the city."
     scene kuwait_city 
@@ -205,7 +205,7 @@ label kuwait_hospital:
     cs "Oh, God... You {i}saw{/i} those?"
     l_snow "Yeah, they were funny."
     l_snow "Anyway, we need a field agent of sorts. Someone who knows their way around a fight, y'know?"
-    cs "I guess... but, the last fight I had landed me here in Kuwait."
+    cs "I guess... but the last fight I had landed me here in Kuwait."
     l_snow "Two things before you go: First, here's your field communicator, an iPad 2!"
     cs "An iPad? Is that really the best equipment you've got?"
     l_snow "I mean, we have this holographic display device, if you want to give it a spin."

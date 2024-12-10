@@ -104,7 +104,7 @@ label archival:
     show k207 at mid_right_right
     with dissolve
     pause 1.0
-    k207 "Alright, fine! But, if I get corona and die, I'll make sure Addy fires {i}both{/i} of you!"
+    k207 "Alright, fine! But if I get corona and die, I'll make sure Addy fires {i}both{/i} of you!"
     k199_offscreen "Look, there's nothing to worry about. Besides, if you die, how are you gonna tell them?"
     k207 "Shut up, 19-M9!"
     k199 "Alright, sheesh."
@@ -186,7 +186,7 @@ label archival:
     with hpunch
     n "CS punches the worker to the ground!"
     k199 "Oh, {i}shit,{/i} man! He's gone AWOL!"
-    k207 "I don't think that's what AWOL means, but, still! {i}Do{/i} something, 17M!"
+    k207 "I don't think that's what AWOL means, but... still! {i}Do{/i} something, 17M!"
     k174 "Fuck,{w=0} fuck,{w=0} fuck! Okay,{w=0} okay, what about this? Do something!"
 
     show expression DynamicDisplayable(Pixellated.pixellated, widget='nova_head', delay=0.5, steps=8) as first at manual_pos(0.4, 1.5, 0.5):

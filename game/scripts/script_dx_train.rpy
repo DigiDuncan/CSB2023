@@ -61,7 +61,7 @@ label train_intro_start:
         show arceus worried flipped
 
     pause 1.0
-    arceus "... But, how {i}will{/i} we get back, exactly?"
+    arceus "... But how {i}will{/i} we get back, exactly?"
     arceus "That's a pretty long drive. I'm already beat."
 
     # flip
@@ -639,7 +639,7 @@ label train_kingman_platform:
     show tate sheepish
     pause 1.0
     amtrak_conductor "You're already on thin ice after what happened in the dining car."
-    tate "But, I just wanted--{w=0.25}{nw}"
+    tate "But I just wanted--{w=0.25}{nw}"
     amtrak_conductor "The {i}only{/i} reason why you're still on this train is because the new guy won't let us kick you off."
     tate "Listen, I was just trying to he--{w=0.25}{nw}"
     amtrak_conductor "Yeah, well, {i}don't."
@@ -717,7 +717,7 @@ label train_boarding:
         tate "I know, but–-{w=1.0}{nw}"
         amtrak_stewardess "Keep up with the bit."
         show tate sad
-        tate "But, CS gets away with it all the time..."
+        tate "But CS gets away with it all the time..."
         amtrak_stewardess "Also, please stop trying to do {i}my{/i} job."
     else:
         tate "... And, {i}this{/i} way is the sleeper car! Your room is--{w=0.25}{nw}"
@@ -1108,7 +1108,7 @@ label train_enter_sleeper:
     show tate sad flipped
     cs "I {i}know{/i} how you work, Tate."
     cs "I really think that sometimes you need to just... \nlet {w=0.25}things {w=0.25}{i}happen."
-    tate "But, Mean--{w=0.25}{nw}"
+    tate "But Mean--{w=0.25}{nw}"
     show tate sad
     show arceus happy
     arceus "Now, obviously, I've never met the guy, but I'm sure Mean will be fine."
@@ -1160,41 +1160,42 @@ label train_enter_sleeper:
     # TODO: bgm?
 
     show tate furious flipped
-    tate "{cshake}{size=+36}IT WAS {i}YOU!!" with hpunch
+    tate "{cshake}{size=+36}IT WAS {nw}"
+    tate "{cshake}{size=+36}IT WAS {fast}{i}YOU!!" with hpunch
     cs "Wha-- {i}huh?!"
-    tate "CS, WHAT THE {nw}"
-    tate "CS, WHAT THE {fast}{i}FUCK?!" with vpunch
-    tate "{i}YOU{/i} {nw}" with vpunch
-    tate "{i}YOU{/i} {fast}BROKE INTO HOH SIS?!"
+    tate "{cshake}{size=+36}CS, WHAT THE {nw}"
+    tate "{cshake}{size=+36}CS, WHAT THE {fast}{i}FUCK?!" with vpunch
+    tate "{cshake}{size=+36}{i}YOU{/i} {nw}" with vpunch
+    tate "{cshake}{size=+36}{i}YOU{/i} {fast}BROKE INTO HOH SIS?!"
     show cs worried
     cs "Oh, yeah, uh--{w=0.25}{nw}"
     
     show tate cry flipped
     n "Tate is on the verge of tears."
-    tate "My best friend lost his job, and it's your fault..."
-    tate "And, now, you're {i}here..."
-    tate "I can't believe this..."
+    tate "{sc=1.11}My best friend lost his job, and it's your fault..."
+    tate "{sc=1.11}And, now, you're {i}here..."
+    tate "{sc=1.11}I can't believe this..."
     show cs disappointed
     cs "Tate..."
     cs "Listen to me, please--{w=0.25}{nw}"
     show tate srs flipped
-    tate "{sc=1}{i}No!"
-    tate "{sc=1}I don't want to hear it!"
-    tate "Is {i}this{/i} what you've been up to since--{w=0.5}{nw}"
+    tate "{sc=1.11}{i}No!"
+    tate "{sc=1.11}I don't want to hear it!"
+    tate "{sc=1.11}Is {i}this{/i} what you've been up to since--{w=0.5}{nw}"
     "..."
     tate "You know what? No."
     tate "Mean's shift starts soon. I need to be there for him."
     tate "If either of y'all see him, you will not breathe a word of {i}any{/i} of this to him."
     tate "Not about the thefts, and {i}certainly{/i} not about what happened at HoH SiS."
-    tate "He doesn't need this. Especially not {sc=1}today."
+    tate "He doesn't need this. Especially {w=0.25}not {w=0.25}{sc=1.11}today."
     show tate furious flipped
     show cs scared
     n "Tate reinforces their demand with a piercing glare towards CS." with hpunch
     show tate srs
     show cs worried
     n "Tate then suddenly stands up." with vpunch
-    tate "{sc=1}I'm sorry."
-    tate "{sc=1}I need to go."
+    tate "{sc=1.11}I'm sorry."
+    tate "{sc=1.11}I need to go."
     show tate sad flipped
     pause 0.25
     hide tate with moveoutleft
@@ -1202,13 +1203,13 @@ label train_enter_sleeper:
     n "Tate swiftly exits the room and runs off, not even bothering to shut the door behind them."
 
     show cs disappointed
-    n "CS looks distraught."
-    pause 2.0
+    pause 3.0
     cs "... {w=0.25}Fuck."
     arceus "You alright, man?"
     cs "I will be. I'm just worried about Tate."
     cs "I don't remember the last time they were so upset."
-    cs "All of their yelling suddenly has me {i}really{/i} tired, too... I think I could use some rest."
+    cs "All of their yelling suddenly has me {i}really{/i} tired, too..."
+    cs "I think I could use some rest."
     show arceus
     arceus "Yeah, same. Also, I'm really glad we sprung for the private room."
     show arceus happy
@@ -1255,14 +1256,14 @@ label train_enter_sleeper:
         n "He makes for the dining car in hopes of drinking his worries away."
         play sound sfx_sliding_door_open
         pause 2.0
-        n "However, the sleeper's door is heavier than expected."
+        n "However, the door is heavier than expected."
         play sound sfx_clonk
         with hpunch
         pause 1.0
         arceus "{i}Shit!"
         n "Arceus grimaces at the sudden noise and peeks through the window back at CS."
         "..."
-        n "Thankfully, CS is still fast asleep."
+        n "Thankfully, CS is still sound asleep."
     else:
         hide arceus with moveoutleft
         play sound sfx_sliding_door_open
@@ -1643,7 +1644,7 @@ label train_wakeup:
     mean "If it weren't for you, I'd still be sitting at home playing fucking {i}Minecraft{/i} and listening to whatever weird shit's popular on Spoofy!"
     mean "What could be better?"
     show tate sad flipped
-    tate "But, what about the thief?!"
+    tate "But what about the thief?!"
     show mean ayo
     mean "Wait, you think Amtrak actually {i}gives{/i} a shit about stolen items?"
     show mean angry
@@ -2110,8 +2111,8 @@ label train_search_tate:
     show tate srs flipped at right with moveinright
     pause 1.0
     tate "There are only three things in my life that I have {i}ever{/i} been more sure of."
-    tate "Now... I don't know who you are, but, I'm getting really sick of seeing you."
-    tate "I had {i}hoped{/i} you'd finally taken the hint while I was cooking this morning, but, I guess I have to spell it out for you."
+    tate "Now... I don't know who you are, but I'm getting really sick of seeing you."
+    tate "I had {i}hoped{/i} you'd finally taken the hint while I was cooking this morning, but I guess I have to spell it out for you."
     tate "I am {i}not{/i} interested."
     tate "Second order of business..."
     tate "You will give me that hat right this instant."

@@ -29,7 +29,7 @@ label friend_microcenter:
     cs "Umm... I literally just said--{nw}"
     linus "Alright! The plan is settled! You can go fetch me some more parts for the ultimate streaming machine, and you get to decide what parts should be in the computer!"
     show cs
-    cs "Okay, but, are there any recommendations you would give me for building this? This is {i}your{/i} money, you know."
+    cs "Okay, but... are there any recommendations you would give me for building this? This is {i}your{/i} money, you know."
     linus "Nah, it's fine. I'm sure you'll do well at picking out parts. Just make sure to get the highest-quality components that you can!"
     cs "Alrighty, I'll get going now."
     stop music fadeout 3.0
@@ -480,7 +480,7 @@ label friend_after_fanboy:
     show pakoo
     linus "Alright, well, this is Pakoo, our weapons expert! They should be able to give you the proper weapons training you need!"
     cs "Oh, I see. That's Pakoo."
-    cs "I didn't recognize you, but how come {i}you{/i} didn't recognize {i}me?{/i}"
+    cs "I didn't recognize you, but... how come {i}you{/i} didn't recognize {i}me?{/i}"
     pakoo "Of course I knew who you were, dummy! I was just messing with you!"
     show arceus flipped angry
     arceus "I still thought you were a cop."
@@ -1253,7 +1253,7 @@ label friend_low_gpu:
     cs "Oops! Sorry!"
     show cs
     cs "Anyways, what did you find?"
-    worker "I got this. It's pretty old, and it's covered in dust, but it's like $50."
+    worker "I got this. It's pretty old, and it's covered in dust, but it's, like, $50."
     show cs happy
     cs "Sounds great! I'll take it!"
     hide cs with moveoutright

@@ -422,7 +422,7 @@ label ce_anno:
     anno "Ah, man, I still have to get something for the gift exchange..."
     show cs disappointed phone
     "..."
-    anno "... But, I can do that tomorrow."
+    anno "... But I can do that tomorrow."
     anno "Yeah, sure, I'll come over. Be there soon."
     show cs happy phone
     cs "Cool! See ya then!"
@@ -896,12 +896,12 @@ label ce_anno:
         cs "... I may have had a... {i}small{/i} mishap when I was trying to get the tree out."
         anno "{i}\"Small\"?!" with vpunch
         show cs worried flipped
-        cs "Okay, maybe {i}not-{/i}so-small, but, do you think you can help me?"
+        cs "Okay, maybe {i}not-{/i}so-small, but do you think you can help me?"
         show cs disappointed
         cs "I figured it'd be faster if I had a helping hand."
         n "Anno groans."
         anno "I was hoping to be {i}setting up{/i} decorations, not {i}cleaning them{/i} up."
-        anno "But, I guess we don't really have any other option, do we?"
+        anno "But I guess we don't really have any other option, do we?"
         cs "Guess not..."
         show cs disappointed at mid_right with move
         cs "Here, I'll grab these boxes, and we'll start throwing stuff in them."
@@ -1418,7 +1418,7 @@ label ce_before_shopping:
     cs "Jeez, there sure are a lot of people out today..."
     show cs coat worried
     cs "I guess that's what I get for leaving shopping until the last minute."
-    cs "But, I guess I {i}am{/i} the same man known for uploading videos at 11:59 PM on the 31st, so I should be used to this sort of thing."
+    cs "But I guess I {i}am{/i} the same man known for uploading videos at 11:59 PM on the 31st, so I should be used to this sort of thing."
     show cs coat disappointed
     cs "At least everyone here seems polite. They probably just want to get what they need and get out, too."
 
@@ -1611,7 +1611,7 @@ label ce_before_shopping:
     with moveinleft
 
     n "Finally, CS lands in the alcohol section."
-    cs "I know at least a few people I invited don't drink, but damn it, it's Christmas. I'm grabbing some 'nog!"
+    cs "I know at least a few people I invited don't drink, but, damn it, it's Christmas. I'm grabbing some 'nog!"
 
     show nog at manual_pos(0.8, 0.3) with Dissolve(0.25)
     show nog at manual_pos(0.7, 0.8) with MoveTransition(0.25)
@@ -1882,7 +1882,7 @@ label ce_checkout:
             show cs coat angry
             show pakoo tgt upset
             cs "Really?"
-            tgt_worker "I'm sorry, but, that's just how the deal works."
+            tgt_worker "I'm sorry, but that's just how the deal works."
             show cs coat disappointed
             cs "Fine, whatever. I'll just pay full price."
 
@@ -2231,7 +2231,7 @@ label ce_aftershop:
     show cs disappointed flipped
     cs "That would suck a lot."
     show cs flipped
-    cs "But, I don't think that'll happen."
+    cs "But I don't think that'll happen."
     if d20 == 1:
         cs "... Right?"
     cs "Everyone confirmed they got my invitations, and they all said on the phone that they'll come!"
@@ -2298,9 +2298,7 @@ label ce_party_before:
         with dissolve
         show cs christmas dark flipped at right with moveinright
         anno "Hey, CS!"
-        anno "I showed up kinda early, but I wanted to see everyone's initial reactions of our decor work!"
-        cs "Well, I'm glad you showed up. Come inside! It's cold out."
-        anno "I know I showed up kinda early, but, I wanted to see everyone's initial reactions to our decorating!"
+        anno "I know I showed up kinda early, but I wanted to see everyone's initial reactions to the decorations!"
         cs "Well, I'm glad you did! Come inside! It's cold out."
     elif d20 == 4:
         play sound sfx_nugget
@@ -2316,7 +2314,7 @@ label ce_party_before:
         digi "Hey, CS! How've you been?"
         show digi dark flipped
         cs "Hey, Digi! I didn't know you had a... spaceship?"
-        digi "Oh, yeah, this old thing. It's a bit of a nugget, but, it gets the job done."
+        digi "Oh, yeah, this old thing. It's a bit of a nugget, but it gets the job done."
         show cs disappointed christmas dark flipped
         cs "Why have I {i}never{/i} seen this before?"
         digi "Was never coming from space before."
@@ -2333,7 +2331,7 @@ label ce_party_before:
         show cs scared christmas flipped with vpunch
         with vpunch
         with hpunch
-        n "As soon as he says this, the house begins to shake!" with vpunch
+        n "As soon as he says this, the whole house starts to shake!" with vpunch
         cs "Wh--{w=0.5} what's going on?!" with hpunch
         play sound2 sfx_train_whistle noloop volume 0.75
         n "As the quaking grows stronger, a train whistle bellows out!" with vpunch
@@ -2518,7 +2516,7 @@ label ce_party_before:
         cs "Oh, hey! Aria, right?"
         aria "Yep, that's me!"
         aria "Goodness, am I too early?"
-        cs "A little, but, that's okay!"
+        cs "A little, but that's okay!"
         cs "I was hoping {i}someone{/i} would arrive early."
         aria "Well, then, should we head inside? You're probably getting cold, I assume."
         show cs christmas disappointed dark flipped
@@ -2554,7 +2552,7 @@ label ce_party_before:
         linus "Hey, CS! Long time no see!"
         show cs happy christmas dark flipped
         cs "You too! Also, hey, Luke! I didn't expect to see you here!"
-        luke "Hey, man! I know we didn't talk much during your short employment, but, it was fun having you around!"
+        luke "Hey, man! I know we didn't talk much during your short employment, but it was fun having you around!"
         luke "Linus talks a lot about you."
         show cs christmas dark flipped
         cs "Oh, really?"
@@ -2770,7 +2768,7 @@ label ce_introductions:
     show k17
     show digi flipped
     show tate sheepish festive
-    cs "Yes, please. I didn't want to say it, but... it seems like every time I see you guys, your appearance always changes!"
+    cs "Yes, please. I didn't want to say it, but it seems like every time I see you guys, you've changed your appearance!"
     if fun_value(FUN_VALUE_COMMON):
         aria "Sorria."
     else:    
@@ -2812,7 +2810,7 @@ label ce_introductions:
     show cs disappointed christmas
     k22 "They run this archiving facility far away from here. I guess {i}they{/i} would be the closest version of Pakoo you'd know, but they couldn't join us here tonight."
     show k22 disappointed
-    k22 "They're running their {i}own{/i} Christmas party, which I {i}wanted{/i} to be a part of, but, this {i}creature{/i} right here just {i}had{/i} to come to this party..."
+    k22 "They're running their {i}own{/i} Christmas party, which I {i}wanted{/i} to be a part of, but this {i}creature{/i} right here just {i}had{/i} to come to this party..."
     k22 "So, I have to make sure he doesn't get too crazy."
     cs "Great."
     cs "Is that it?"
@@ -3364,7 +3362,7 @@ label ce_banter:
     with dissolve
     pause 0.5
     k17 "This is {i}so{/i} unfair!"
-    k17 "CS said that it's annoying that we've changed, or, whatever, but, just look at everyone {i}else!"
+    k17 "CS said that it's annoying that we've changed, or, whatever, but just look at everyone {i}else!"
     k17 "All of my friends have changed so much I don't even {i}recognize{/i} them anymore!"
     k22 "Yeah, well, when you are constrained to just one year of your life, that can happen."
     k17 "It's just... how do I, like, {i}deal{/i} with all of this?"
@@ -3372,7 +3370,7 @@ label ce_banter:
     show k22 confident
     k22 "Look, you don't need to."
     k22 "I probably should've told you about how people change, and whatnot."
-    k22 "Honestly, {i}Addy{/i} should've been the one to tell you, but, they were probably too busy worrying about their own party."
+    k22 "Honestly, {i}Addy{/i} should've been the one to tell you, but they were probably too busy worrying about their own party."
     show k22 happy
     k22 "Speaking of which, do you want to go back home? Where you know everyone? Celebrate Christmas with Addy?"
     k17 "Hmm..."
@@ -3633,9 +3631,9 @@ label ce_cooking:
     sheriff "... but, no. I {i}had{/i} to become a {i}cop."
     grace "Hey, are you almost done in there?"
     sheriff "Just leave me alone..."
-    grace "But, I really need to go!"
+    grace "But I really need to go!"
     sheriff "Find another bathroom."
-    grace "But, this is the only one in the house!"
+    grace "But this is the only one in the house!"
     sheriff "In this mansion? There is only {nw}" with vpunch
     sheriff "In this mansion? There is only {fast}{i}one{/i} {fast}damn bathroom?!" with vpunch
     show copguy festive at mid_right with moveinright
@@ -3658,7 +3656,7 @@ label ce_cooking:
     copguy "Hey, boss! You won't {i}believe{/i} what I just experienced."
     copguy "This kid caught two burglars trying to rob his house with homemade traps!"
     copguy "It was so impressive, {i}I{/i} probably would've fallen for some of them!"
-    sheriff "That's great, but, can you get me off this toilet now?"
+    sheriff "That's great, but can you get me off this toilet now?"
     sheriff "I've been sitting here for so long that I started writing my will!"
     copguy "Alright, let's get you out of here, old man."
     play sound2 sfx_toilet_flush noloop
@@ -4368,7 +4366,7 @@ label ce_dinner:
     k22 "Why does anyone buy regular unleaded gas?"
     show digi thinking flipped
     digi "Because it's cheaper?"
-    k22 "Okay, but, it's {i}not,{/i} though. Super unleaded is {i}way{/i} cheaper, {i}and{/i} it's better for your car."
+    k22 "Okay, but it's {i}not,{/i} though. Super unleaded is {i}way{/i} cheaper, {i}and{/i} it's better for your car."
     show digi disappointed flipped
     digi "That doesn't make any sense."
     show k22 confident
@@ -4383,7 +4381,7 @@ label ce_dinner:
     cs "Don't you guys mean \"unleaded plus\"?"
     digi "Yeah! See? CS knows!"
     k22 "No, it's called \"super unleaded,\" {i}and{/i} it's cheaper than regular unleaded!"
-    digi "But, it's {i}not!{/i} Why {i}would{/i} it be?!"
+    digi "But it's {i}not!{/i} Why {i}would{/i} it be?!"
 
     scene night_bg
     show right_room at center
@@ -4475,7 +4473,7 @@ label ce_dinner:
     show wesley festive at mid_right
     show rich festive at mid_offscreen_right
     show right_table at center
-    ed "That's great and all, but, what in the {i}world{/i} is unleaded 88?"
+    ed "That's great and all, but what in the {i}world{/i} is unleaded 88?"
 
     scene night_bg
     show left_room at left
@@ -4520,7 +4518,7 @@ label ce_dinner:
     k17 "But why? {nw}"
     k17 "But why? {fast}{i}Why?!" with vpunch
     k17 "It was, like, the {i}perfect{/i} streaming platform!"
-    digi "It {i}was,{/i} but, it was {i}also{/i} owned by Microsoft. It was bound to happen."
+    digi "It {i}was,{/i} but it was {i}also{/i} owned by Microsoft. It was bound to happen."
     show cs worried christmas
     cs "Hey!" with vpunch
     show digi sad
@@ -5269,7 +5267,7 @@ label ce_preclimax:
     tate "Howdy, y'all!"
     billy "Hi, Tate! I hope you enjoy that Handy Switch!"
     show tate sheepish festive flipped
-    tate "I'm... not quite sure {i}how{/i} I'll enjoy it yet, but, thanks!"
+    tate "I'm... not quite sure {i}how{/i} I'll enjoy it yet, but... thanks!"
     show billy festive
     show michael festive flipped
     cs "Michael? Obama? Can you come into the kitchen real quick?"
@@ -5315,10 +5313,10 @@ label ce_preclimax:
     show tate sheepish festive flipped
     show handy_switch at manual_pos(0.4, 0.7, 0.5):
         zoom 0.4
-    mean "This Instant Pot is cool and all, but, why would you bring a {i}kitchen appliance{/i} to a gift exchange?"
+    mean "This Instant Pot is cool and all, but why would you bring a {i}kitchen appliance{/i} to a gift exchange?"
     mean "Ain't that kinda... tacky?"
     show tate srs festive flipped
-    tate "Normally, I'd agree with you, but, hear me out!"
+    tate "Normally, I'd agree with you, but hear me out!"
     tate "Buying one of these was {i}actually{/i} life-changing!"
     show tate festive flipped
     tate "You can throw everything in, turn it on, go relax..."
@@ -5351,7 +5349,7 @@ label ce_climax:
     show k17 at mid_mid_right
     show mean human at mid_offscreen_right behind cs
     with dissolve
-    k22 "Well, CS, this was wonderful, but, we should really get going."
+    k22 "Well, CS, this was wonderful, but we should really get going."
     show cs worried christmas
     cs "Wait! You aren't gonna stay for the games?"
     show k22 angry
@@ -5377,7 +5375,7 @@ label ce_climax:
     show mean human annoyed
     luke "Look, this looked too complicated to set up, and I just wanted to enjoy the party!"
     luke "I just did it to make it feel like your plan worked!"
-    digi "But, but..."
+    digi "But-- but..."
     digi "I really thought I could set it up this time..."
     sheriff "Hey, Copguy! I need to go to the bathroom again!" with hpunch
     copguy "Motherfucker! Do it {i}yourself!" with hpunch
@@ -5421,7 +5419,7 @@ label ce_lights_out:
     cs "My party is {i}ruined!"
     tate "CS, this isn't your fault..."
     cs "Everyone is fighting, and no one is having fun!"
-    nova "Well, yeah, but, at least I don't have to listen to Blank's shitty music anymore."
+    nova "Well, yeah, but at least I don't have to listen to Blank's shitty music anymore."
     tate "{i}Can it!" with hpunch
     tate "Listen! We all need to stop the arguing and calm down!"
     billy "I {i}am{/i} calm!"
@@ -5542,7 +5540,7 @@ label ce_lights_out:
     kitty "Sorry..."
     kitty "I started getting a bad migraine towards the end of the party, so I tried to find the quietest place in the house."
     kitty "I'm a little glad the power went out, honestly. It's been peaceful here."
-    cs "Ah... I was just trying to fix the breaker, but, no dice."
+    cs "Ah... I was just trying to fix the breaker, but no dice."
     kitty "I think the power is out everywhere. I heard the wind really pick up outside a little while ago."
     kitty "You should probably go check for yourself."
     kitty "Could you please let Arcie know I'm down here? I think I'm gonna stay here a bit longer."
@@ -5572,7 +5570,7 @@ label ce_lights_out:
     arceus "Welcome back!"
     arceus "Assuming you didn't get the power working?"
     show cs christmas
-    cs "Nope, but, I found Kitty!"
+    cs "Nope, but I found Kitty!"
     cs "She's relaxing in the basement since her head was hurting."
     arceus "That makes sense. I'll go talk to her here soon."
     eliza "I see you found a torch."
@@ -5598,7 +5596,7 @@ label ce_lights_out:
     eliza "Before you go, CS, if you can, I think you should check outdoors."
     eliza "Even though it's dark in here, no light is coming in from outside."
     eliza "It also sounds {i}terrible{/i} out there."
-    eliza "I've experienced some harsh Soviet winters, but, I've never dealt with anything {i}this{/i} bad before."
+    eliza "I've experienced some harsh Soviet winters, but I've never dealt with anything {i}this{/i} bad before."
     show cs worried christmas
     cs "Well, that's some {i}awesome{/i} news..."
     show cs disappointed christmas
@@ -5626,7 +5624,7 @@ label ce_lights_out:
     tate "It's getting kinda cold..."
     anno "My phone's about to die."
     cs "I'm gonna check outside and see how bad it is."
-    k22 "Oh, yeah. I was thinking about trying the same thing, but, I couldn't find the door."
+    k22 "Oh, yeah. I was thinking about trying the same thing, but I couldn't find the door."
     cs "If we can get outside, we might be able to dig our vehicles out."
     cs "I'll be back in a sec."
     hide cs
@@ -6114,7 +6112,7 @@ label ce_lose_reversi:
         aria "Ah, better luck next time."
     else:
         iris "Ah... who did you play against? {i}[reversi_difficulty.name]?{/i}"
-        iris "They aren't here... or, a person... but, you still lost."
+        iris "They aren't here... or, a person... but you still lost."
     jump ce_reversi_menu
 
 label ce_reversi_menu:
@@ -6200,13 +6198,13 @@ label ce_billy_time:
     billy "But, good news! I have a way to possibly bring the power back!"
     show tate festive
     billy "With the Handy Switch!"
-    eliza "I have no clue how that's gonna work, but, good luck to you two."
+    eliza "I have no clue how {i}that's{/i} gonna work, but... good luck to you two."
     tate "Is the basement over this way?"
     eliza "Yeah, down the hall and to the left."
     tate "Thank you... {nw}"
     show tate sheepish festive
     tate "Thank you... {fast}Mika?"
-    eliza "It's Elizabeth, but, sure."
+    eliza "It's Elizabeth, but sure."
     hide tate
     hide billy
     hide tate_phone
@@ -6355,7 +6353,7 @@ label ce_billy_time:
     show tate festive
     show billy festive flipped
     billy "We sure did!"
-    eliza "I don't know what kind of technology you could have had to fix this, but, good job!"
+    eliza "I don't know what kind of technology you could have had to fix this, but... good job!"
     grace "So, Billy, you selling any products for the holidays?"
     billy "You betcha! Meet me by my car after the party!"
     show tate festive flipped
@@ -6392,7 +6390,7 @@ label ce_billy_time:
     show mean human annoyed
     stop music fadeout 3.0
     music end
-    luke "This is great and all, but, isn't the house still under 20 feet of snow?"
+    luke "This is great and all, but isn't the house still under 20 feet of snow?"
     copguy "How are we even gonna get rid of that?"
     copguy "We would need a lot of..."
     pause 1.0
@@ -6842,13 +6840,13 @@ label ce_roof_moment:
     santa "Ho ho ho! That's the spirit!"
     hide billy with moveoutright
     pause 0.5
-    santa "Well, I could keep going, but, I should ask..."
+    santa "Well, I could keep going, but I should ask..."
     santa "What {i}happened{/i} here? New York shouldn't get this much snow..."
-    cs "None of us know, but, we've been trapped inside the house for God knows how long."
+    cs "None of us know, but we've been trapped inside the house for God knows how long."
     cs "I mean, you're Santa Claus! Surely, {i}you{/i} can fix this?"
     santa "Ho ho ho..."
     santa "I... don't believe that I can, unfortunately."
-    santa "I may be Father Christmas, but, my magic can't melt snow away."
+    santa "I may be Father Christmas, but my magic can't melt snow away."
 
     if fun_value(FUN_VALUE_UNOBTRUSIVE):
         # i am definitely dating myself with this reference - tate
@@ -7061,7 +7059,7 @@ label ce_roof_moment:
     k17 "Sorry, that was a stupid question."
     hide k17 with moveoutleft
     pause 0.5
-    tate "Well, CS... I don't know how, but, you did it."
+    tate "Well, CS... I don't know how, but you did it."
     obama "I must say, that was the most fun I've ever had at a Christmas party."
     obama "Although, I should probably get back to the White House. The political circus is probably getting out of hand."
     show cs christmas dark

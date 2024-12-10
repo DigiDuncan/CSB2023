@@ -113,7 +113,7 @@ label michigan_bronson:
     arceus "Guys! Calm down!"
     cs "This is not my fault {i}at all!"
     billy "Just shut the fuck up!"
-    billy "I shouldn't have picked you up to begin with! It's been nothing but trouble with you CS!"
+    billy "I shouldn't have picked you up to begin with! It's been nothing but trouble with you, CS!"
     show cs disappointed flipped
     cs "What the hell, man?"
     play sound2 sfx_siren volume 0.1 loop
@@ -205,7 +205,7 @@ label michigan_bronson_win:
     billy "I'm sorry for how I acted back there. I don't know what came over me."
     cs "You freaked me out when you said that I was ruining this trip."
     billy "Nonsense. I may have picked you guys up to take you home a few days ago..."
-    billy "But, I can say that you guys are friends for life."
+    billy "But I can say that you guys are friends for life."
     arceus "Same here."
     arceus "You guys are great."
     cs "Yeah, we've had some great times so far!"
@@ -251,6 +251,7 @@ label michigan_interstate_menu:
         "I-94":
             jump michigan_interstate_94
 
+# tate don't edit this label, this is old
 label michigan_interstate_69_old:
     stop music fadeout 3.0
     window hide
@@ -862,7 +863,7 @@ label michigan_interstate_69:
     show cs flipped
     billy "Of course! I have the Crash Stopper! The fast and easy way to make sure you never crash again!"
     arceus "You sold dashcams?"
-    billy "I was gonna pitch the Crash Stopper, but y'know, I kinda..."
+    billy "I was gonna pitch the Crash Stopper, but, y'know, I kinda..."
     cs "You died?"
     billy "Yeah."
     cs "Speaking of, How did you come back to--{w=2.0}{nw}"
@@ -1137,7 +1138,7 @@ label michigan_interstate_69:
     show cs at left
     show billy at center
     show arceus at right
-    billy "Well, I died of a heart attack, but somehow I came back alive again."
+    billy "Well, I died of a heart attack, but, somehow, I came back."
     billy "People just assumed I was an imposter, and I couldn't get any pitchman gigs, so I became an Uber driver."
     billy "Then these guys showed up and I offered to drive them from Washington to New York."
     billy "I heard CS was a YouTuber, so I was just expecting some MrBeast-style video."
@@ -1238,7 +1239,7 @@ label michigan_interstate_69:
     aria "I guess you're welcome to just head back out on the road."
     aria "Just watch out for fae paths on the way back."
     billy "What the actual fuck is a fae path?"
-    aria "Oh, they're paths that look like a normal path for the first little while, but end up placing you in the center of the woods."
+    aria "Oh, they're paths that look like a normal path for the first little while, but will end up leading you to the center of the woods."
     aria "The sense of linear direction decays as the path becomes less clear, and you eventually can't tell what direction you came from."
     billy "And you didn't think it was relevant to mention this before?"
     aria "Well, no, you have a guide. I was planning on making this a relaxing walk, so I didn't plan on taking the fae paths."
@@ -1458,7 +1459,7 @@ label michigan_interstate_94:
     arceus "Wait, Mario? Why are you here?"
     mario "Why are you surprised? My name's on the sign and my picture's in the window."
     show arceus dirty flipped
-    arceus "Yeah, but I assumed it was just a bootleg."
+    arceus "I assumed it was just a bootleg."
     show arceus dirty worried flipped
     arceus "Aren't you meant to be saving princesses or plumbing or driving go-karts or competing in the Olympics or... whatever {i}else{/i} it is that you do?"
     arceus "When did you have time to open a laundromat?"

@@ -16,7 +16,7 @@ label friend2_dpn_call:
         cs "I can't believe we had to fight all of those cops! If it weren't for Tate and the gang, we'd be tuna fish already."
     else:
         cs "I can't believe we had to fight all of those cops! If it weren't for Tate and the gang, we'd be dead meat already."
-    arceus "Yeah, but hey, you held them off pretty well with that fancy gun of yours."
+    arceus "Yeah, but, hey, you held them off pretty well with that fancy gun of yours."
     pakoo "Yeah, that was some great marksmanship, CS!"
     show cs happy
     cs "Thank you!"
@@ -355,7 +355,7 @@ label friend2_cs_meetup_2:
     arceus "I would try to jam their signals, but I don't know where they are."
     arceus "I haven't seen Copguy since we fought him."
     pakoo "Well, if he does come back, we'll be ready for him."
-    cs "I hope, but at the same time, I don't want to think about running into him again."
+    cs "I hope, but, at the same time, I don't want to think about running into him again."
     cs "I can't go back to prison. That shit was scary."
     arceus "You're telling me."
     cs "I wonder how the others are doing..."
@@ -389,7 +389,7 @@ label friend2_car_ride_2:
     with dissolve
     digi "I can't believe CS went to jail."
     aria_alt "Arceus was in jail for five years, Digi."
-    digi "Yeah, I know, but that's an Arceus thing to do."
+    digi "Yeah, I know, but... that's an Arceus thing to do."
     nova "Is it?? That's kinda concerning."
     digi "No, I meant, like, he knows what he's doing."
     nova "Clearly not, if he ended up in jail!"

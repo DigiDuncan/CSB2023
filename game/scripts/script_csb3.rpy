@@ -232,7 +232,7 @@ label csbiii_edit_video:
     cs "It'll be perfect! No one will expect it because they probably don't even know what I've done with my life for the past 13 years!"
     show cs
     cs "As always, I should make sure it's as high-quality as possible, so both Linus {i}and{/i} the fans can enjoy it."
-    cs "But, I don't have much time before Linus comes back and notices, so I need to hurry!"
+    cs "But I don't have much time before Linus comes back and notices, so I need to hurry!"
     show cs happy
     if fun_value(FUN_VALUE_MUSIC):
         cs "Welp, time to make a supernova of a video!"
@@ -577,7 +577,7 @@ label csbiii_reviews:
     cs "Yeah..."
     cs "You know, I just hope that my community will move on, now that I'm helping make this new content."
     cs "I've been making YouTube Poops for so long now that it's all anyone has come to expect from me."
-    cs "But, even with my {a=patreon.com/cs188}Patreon{/a} and stuff, YTPs really don't pay very well. Advertisers don't like 'em and neither does the algorithm."
+    cs "But even with my {a=patreon.com/cs188}Patreon{/a} and stuff, YTPs really don't pay very well. Advertisers don't like 'em and neither does the algorithm."
     cs "I hope that my fans will understand in due time that I just needed something {i}more."
     linus "I'm sure you'll be okay. Besides, the LTT fanbase is {i}much{/i} bigger!"
     linus "This company exists almost {i}entirely{/i} because of what YouTube pays us!"
@@ -758,7 +758,7 @@ label csbiii_both_fan:
     show cs happy
     $ achievement_manager.unlock("crowd_pleaser")
     cs "Hell yeah!"
-    linus "But, you still have to help with some other videos as well, not just YTPs."
+    linus "But you still have to help with some other videos as well, not just YTPs."
     show cs flipped
     cs "Alright, that's fair."
     linus "Well, the rest of you can go back to what you were doing."
@@ -847,7 +847,7 @@ label csbiii_arc_escape:
         arceus "Let's get out of here!"
     else:
         cs "This is awful. I was just starting to get along well with Linus and the gang."
-        arceus "I'm sure they'll forgive you in due time, but for now, we need to evade the cops' trail and get back to the United States."
+        arceus "I'm sure they'll forgive you in due time, but, for now, we need to evade the cops' trail and get back to the United States."
     stop music fadeout 3.0
     music end
     show cs worried flipped at offscreenleft
@@ -1637,7 +1637,7 @@ label csbiii_good_convince:
     copguy "I don't understand..."
     copguy "HoH SiS really {i}did{/i} scam you hard, didn't they?"
     copguy "I'm not sure how valid it was for you to push that man off of the building..."
-    copguy "But, I can't argue right now about whether that footage is fake."
+    copguy "But I can't argue right now about whether that footage is fake."
     stop music fadeout 3.0
     music end
     pause 2.0

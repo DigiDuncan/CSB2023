@@ -262,7 +262,7 @@ label dx_after_back_to_story:
     cs "..."
     cs "Should I even ask?"
     pencil "Every year, we host PencilCon, the biggest gathering of pencil lovers worldwide!"
-    pencil "But, we need to increase the number of memberships, so we grab random people and dress them up for our group!"
+    pencil "But we need to increase the number of memberships, so we grab random people and dress them up for our group!"
     pencil "We call ourselves a cult so we can win CultCon and gain massive amounts of followers!"
     cashier "Don't bother with trying to escape, either. I already tried that and they just blocked the door."
     cs "Okay, okay, slow down."
@@ -434,7 +434,7 @@ label dx_after_cultcon_ask:
     cultist "The Cult Competiton is a side thing that only a few cults try to participate in."
     cultist "If they win, not only do they win the advertised prize, but they get bragging rights about how awesome their cult is, which usually grows their cult in the process."
     cultist "{i}That's{/i} what we are interested in."
-    cultist "We almost won a few years back when those Heaven's Gate people voted for us, but, they just killed themselves the following year."
+    cultist "We almost won a few years back when those Heaven's Gate people voted for us, but they all just killed themselves the following year."
     jump dx_after_cult_questions
 
 label dx_after_competitors_ask:
@@ -968,7 +968,7 @@ label dx_after_catholic_find:
     $ god_money = True
     $ cath_counter = 0
     cs "Stay right here. I'm sure I can find some money."
-    priest "I wasn't planning on moving, but thank you! The church will thank you."
+    priest "I wasn't planning on moving, but... thank you! The church will thank you."
     show cs cultist flipped with determination
     hide cs with moveoutleft
     n "CS runs back to the main floor."
@@ -1844,11 +1844,11 @@ label dx_after_super_heaven:
     perfect_billy "Hi, it's me! Perfect Billy Mays!"
     perfect_billy "I am much more powerful than God!"
     perfect_billy "You haven't died, you have been brought up to Super Heaven, where only I reside!"
-    cs "So I didn't die, but I'm in heaven? How does that work?"
-    perfect_billy "You have contacted me directly in the second only other way possible!"
+    cs "So, I didn't die, but I'm in heaven? How does that work?"
+    perfect_billy "You have contacted me directly in the only other way possible!"
     perfect_billy "You mixed all of my products together!"
-    cs "So Billy wasn't crazy... or maybe he was."
-    cs "Wait, if you are Perfect Billy Mays, then who is the Billy that me and Arc were with this whole time?"
+    cs "So, Billy wasn't crazy... or maybe he {i}was."
+    cs "Wait, if you are Perfect Billy Mays, then who is the Billy that Arc and I were with this whole time?"
     perfect_billy "You see, when the Billy Mays you probably know of passed away in 2009, I embued another human with the power of pitching!"
     perfect_billy "That's the new Billy you know of!"
     cs "Okay okay, hold on a minute."

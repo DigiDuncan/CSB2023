@@ -3,7 +3,7 @@ label true_east:
     play music happy_roaming volume 0.5 if_changed
     music happy_roaming
 
-    # this is stupid, but, to prevent sprite duplication, we use a scene each time
+    # this is stupid. but, to prevent sprite duplication, we use a scene each time
 
     scene expression "washington_road %s" % compass_current_time
     show expression "cs %s" % compass_current_shader at left
