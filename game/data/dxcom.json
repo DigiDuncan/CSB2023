@@ -222,11 +222,23 @@
         {
             "audio_path": "reversi1",
             "speaker": "Digi",
-            "transcript": "When we first pitched Reversi as a minigame, Pakoo asked me to make a CPU player for the game. That seemed reasonable enough; I could just choose a legal move and see how good it was for the score. Turns out, several hours and a couple research papers of investigation later, board game AI is {i}not{/i} that simple.",
-            "length": 15
+            "transcript": "When we first pitched Reversi as a minigame, Pakoo asked me to make a CPU player for the game.",
+            "length": 4.5
         },
         {
             "audio_path": "reversi2",
+            "speaker": "Pakoo",
+            "transcript": "Damn right I did!",
+            "length": 1.8
+        },
+        {
+            "audio_path": "reversi3",
+            "speaker": "Digi",
+            "transcript": "That seemed reasonable enough; I could just choose a legal move and see how good it was for the score. Turns out, several hours and a couple research papers of investigation later, board game AI is {i}not{/i} that simple.",
+            "length": 10.4
+        },
+        {
+            "audio_path": "reversi4",
             "speaker": "Digi",
             "transcript": "In the end, Dragon, a newer member of the team, helped us write a flexible algorithm that we could tweak the difficulty for per-character.",
             "length": 7.2
