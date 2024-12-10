@@ -3,8 +3,7 @@
         "name": "CSBI",
         "type": "start",
         "need_label": "csbi_start",
-        "pos": [0, 6],
-        "jump_to": "csbi_start"
+        "pos": [0, 6]
     },
     "csbi_error_first_prereq_arrow": {
         "type": "arrow",
@@ -48,7 +47,8 @@
         "name": "Error",
         "type": "end",
         "need_ending": "error",
-        "pos": [0, 2]
+        "pos": [0, 2],
+        "jump_to": "e1"
     },
     "csbi_pc_choice_arrow": {
         "type": "arrow",
@@ -84,7 +84,8 @@
         "type": "end",
         "need_ending": "speedrun",
         "pos": [3, 5],
-        "content_type": "dx"
+        "content_type": "dx",
+        "jump_to": "vibration"
     },
     "csbi_nah_outcome_arrow": {
         "type": "arrow",
@@ -108,7 +109,8 @@
         "type": "end",
         "need_ending": "nah",
         "pos": [3, 7],
-        "content_type": "dx"
+        "content_type": "dx",
+        "jump_to": "csbi_nah"
     },
     "csbi_discord_arrow": {
         "type": "arrow",
@@ -161,7 +163,8 @@
         "type": "end",
         "need_ending": "savers",
         "pos": [6, 5],
-        "content_type": "dx"
+        "content_type": "dx",
+        "jump_to": "csbi_home_savers"
     },
     "csbi_hohsis_outcome_arrow": {
         "type": "arrow",
@@ -183,8 +186,7 @@
         "name": "CSBII",
         "type": "start",
         "need_achieve": "csbi",
-        "pos": [6, 7],
-        "jump_to": "csbii_start"
+        "pos": [6, 7]
     },
     "csbii_rooftop_choice_arrow": {
         "type": "arrow",
@@ -217,7 +219,8 @@
         "name": "Asylum",
         "type": "badend",
         "need_ending": "asylum",
-        "pos": [9, 6]
+        "pos": [9, 6],
+        "jump_to": "csbii_asylum"
     },
     "csbii_atk_outcome_arrow": {
         "type": "arrow",
@@ -239,8 +242,7 @@
         "name": "CSBIII",
         "type": "start",
         "need_achieve": "csbii",
-        "pos": [9, 8],
-        "jump_to": "csbiii_start"
+        "pos": [9, 8]
     },
     "csbiii_meeting_arrow": {
         "type": "arrow",
@@ -284,7 +286,8 @@
         "name": "AI",
         "type": "end",
         "need_ending": "ai",
-        "pos": [11, 5]
+        "pos": [11, 5],
+        "jump_to": "csbiii_ai"
     },
     "csbiii_no_meet_outcome_arrow": {
         "type": "arrow",
@@ -350,8 +353,7 @@
         "name": "Fired",
         "type": "start",
         "need_label": "fired_new_plan",
-        "pos": [15, 7],
-        "jump_to": "fired_new_plan"
+        "pos": [15, 7]
     },
     "fired_contract_choice_arrow": {
         "type": "arrow",
@@ -384,7 +386,8 @@
         "name": "Rockstar",
         "type": "end",
         "need_ending": "rockstar",
-        "pos": [18, 6]
+        "pos": [18, 6],
+        "jump_to": "fired_final_tour_bus"
     },
     "rockstar_ii_start_arrow": {
         "type": "arrow",
@@ -418,7 +421,8 @@
         "name": "Threw Away Fame",
         "type": "badend",
         "need_ending": "threw_away_fame",
-        "pos": [18, 8]
+        "pos": [18, 8],
+        "jump_to": "fired_no_contract"
     },
     "friend_goodgpu_outcome_arrow": {
         "type": "arrow",
@@ -506,7 +510,8 @@
         "name": "GRAND DAD",
         "type": "badend",
         "need_ending": "grand_dad",
-        "pos": [11, 1]
+        "pos": [11, 1],
+        "jump_to": "friend_flint_car"
     },
     "friend_car_good_arrow": {
         "type": "arrow",
@@ -528,7 +533,8 @@
         "name": "Friend",
         "type": "end",
         "need_ending": "friend",
-        "pos": [15, 1]
+        "pos": [15, 1],
+        "jump_to": "friend2_car_slam"
     },
     "friend_lose_rpg_arrow": {
         "type": "arrow",
@@ -566,8 +572,7 @@
         "name": "Country",
         "type": "start",
         "need_label": "country_airport_choose",
-        "pos": [15, 4],
-        "jump_to": "country_knocked_out"
+        "pos": [15, 4]
     },
     "country_choice_arrow": {
         "type": "arrow",
@@ -602,7 +607,6 @@
         "type": "start",
         "need_label": "kuwait",
         "pos": [17, 2],
-        "jump_to": "kuwait",
         "content_type": "dx"
     },
     "country_other_outcome_arrow": {
@@ -887,7 +891,8 @@
         "name": "You Fucking Donkey",
         "type": "badend",
         "need_ending": "fuckin_raw",
-        "pos": [27, 10]
+        "pos": [27, 10],
+        "jump_to": "england_bad_ramsay"
     },
     "country_england_go_kitchen_genergy_outcome_arrow": {
         "type": "arrow",
@@ -992,7 +997,8 @@
         "name": "Top Loser",
         "type": "badend",
         "need_ending": "top_loser",
-        "pos": [28, 12]
+        "pos": [28, 12],
+        "jump_to": "england_top_lose"
     },
     "country_england_top_win_outcome_arrow": {
         "type": "arrow",
@@ -1111,7 +1117,8 @@
         "name": "Scottn't",
         "type": "badend",
         "need_ending": "scottnt",
-        "pos": [29, 10]
+        "pos": [29, 10],
+        "jump_to": "england_scott_movent"
     },
     "country_england_scott_yes_outcome_arrow": {
         "type": "arrow",
@@ -1166,7 +1173,8 @@
         "name": "Globetrotter",
         "type": "end",
         "need_ending": "country",
-        "pos": [30, 4]
+        "pos": [30, 4],
+        "jump_to": "country_going_home"
     },
     "csbiii_editing_outcome_arrow": {
         "type": "arrow",
@@ -1313,7 +1321,8 @@
         "name": "Lore Dumper",
         "type": "badend",
         "need_ending": "premature",
-        "pos": [20, 10]
+        "pos": [20, 10],
+        "jump_to": "csbiii_cops_ltt"
     },
     "csbiii_yes_escape_outcome_arrow": {
         "type": "arrow",
@@ -1379,7 +1388,8 @@
         "name": "God Fail",
         "type": "badend",
         "need_ending": "god_fail",
-        "pos": [24, 10]
+        "pos": [24, 10],
+        "jump_to": "no_mercy_attack_arc"
     },
     "csbiii_no_mercy_no_arrow": {
         "type": "arrow",
@@ -1401,7 +1411,8 @@
         "name": "God Success",
         "type": "badend",
         "need_ending": "god_success",
-        "pos": [24, 11]
+        "pos": [24, 11],
+        "jump_to": "no_mercy_wait_arc"
     },
     "csbiii_forest_hide_outcome_arrow": {
         "type": "arrow",
@@ -1445,7 +1456,8 @@
         "name": "Attorney's Badge",
         "type": "badend",
         "need_ending": "attorney",
-        "pos": [24, 12]
+        "pos": [24, 12],
+        "jump_to": "csbiii_bad_convince"
     },
     "csbiii_good_convince_outcome_arrow": {
         "type": "arrow",
@@ -1467,8 +1479,7 @@
         "name": "CSBIII\nChapter 2",
         "type": "start",
         "need_label": "csbiii_choose_direction",
-        "pos": [24, 14],
-        "jump_to": "csbiii_choose_direction"
+        "pos": [24, 14]
     },
     "csbiii_choose_direction_arrow": {
         "type": "arrow",
@@ -1526,8 +1537,7 @@
         "name": "CSBIII Ch2: East",
         "type": "start",
         "need_label": "true_east",
-        "pos": [28, 14],
-        "jump_to": "true_east"
+        "pos": [28, 14]
     },
     "csbiii_east_car_choice_arrow": {
         "type": "arrow",
@@ -1560,7 +1570,8 @@
         "name": "Grand Theft Failure",
         "type": "badend",
         "need_ending": "hotwire",
-        "pos": [31, 15]
+        "pos": [31, 15],
+        "jump_to": "true_hotwire"
     },
     "csbiii_east_wait_outcome_arrow": {
         "type": "arrow",
@@ -1604,7 +1615,8 @@
         "name": "Bad Driver",
         "type": "badend",
         "need_ending": "bad_driver",
-        "pos": [33, 14]
+        "pos": [33, 14],
+        "jump_to": "lose_car_game"
     },
     "csbiii_east_car_win_outcome_arrow": {
         "type": "arrow",
@@ -1736,7 +1748,8 @@
         "name": "Pencil Sharting Day",
         "type": "badend",
         "need_ending": "pencil_shart",
-        "pos": [39, 14]
+        "pos": [39, 14],
+        "jump_to": "lose_pencil_game"
     },
     "csbiii_east_pencil_win_outcome_arrow": {
         "type": "arrow",
@@ -1787,7 +1800,8 @@
         "name": "Catch These Shitty Hands",
         "type": "badend",
         "need_ending": "revenge",
-        "pos": [41, 10]
+        "pos": [41, 10],
+        "jump_to": "true_fighthohsis"
     },
     "csbiii_east_hohsis_argue_outcome_arrow": {
         "type": "arrow",
@@ -1810,7 +1824,8 @@
         "type": "badend",
         "need_label": "true_fuckuphohsis",
         "need_ending": "rip_house",
-        "pos": [41, 14]
+        "pos": [41, 14],
+        "jump_to": "true_fuckuphohsis"
     },
     "csbiii_east_hohsis_cops_check_arrow": {
         "type": "arrow",
@@ -1908,7 +1923,8 @@
         "name": "LTT Ending",
         "type": "end",
         "need_ending": "ltt",
-        "pos": [46, 10]
+        "pos": [46, 10],
+        "jump_to": "true_ltt_ending"
     },
     "csbiii_east_fanytp_outcome_arrow": {
         "type": "arrow",
@@ -1930,7 +1946,8 @@
         "name": "YTP Ending",
         "type": "end",
         "need_ending": "ytp",
-        "pos": [46, 11]
+        "pos": [46, 11],
+        "jump_to": "true_ytp_ending"
     },
     "csbiii_east_fanboth_outcome_arrow": {
         "type": "arrow",
@@ -1986,7 +2003,8 @@
         "name": "Archival",
         "type": "end",
         "need_ending": "archival",
-        "pos": [50, 13]
+        "pos": [50, 13],
+        "jump_to": "archival_finale"
     },
     "csbiii_east_stream_end_arrow": {
         "type": "arrow",
@@ -1997,7 +2015,8 @@
         "name": "Stream\n(True Ending)",
         "type": "end",
         "need_ending": "true",
-        "pos": [48, 11]
+        "pos": [48, 11],
+        "jump_to": "true_streaming"
     },
     "ce_first_arrow": {
         "type": "arrow",
@@ -2016,8 +2035,7 @@
         "type": "start",
         "need_label": "ce_start",
         "pos": [51, 11],
-        "content_type": "ce",
-        "jump_to": "ce_start"
+        "content_type": "ce"
     },
     "ce_end_arrow": {
         "type": "arrow",
@@ -2029,7 +2047,8 @@
         "type": "end",
         "need_label": "ce_epilogue",
         "pos": [52, 11],
-        "content_type": "ce"
+        "content_type": "ce",
+        "jump_to": "ce_roof_moment"
     },
     "dx_afterstory_start_arrow": {
         "type": "arrow",
@@ -2041,8 +2060,7 @@
         "type": "start",
         "need_label": "dx_after_true",
         "pos": [53, 11],
-        "content_type": "dx",
-        "jump_to": "dx_after_true"
+        "content_type": "dx"
     },
     "dx_pencil2_minigame_arrow": {
         "type": "arrow",
@@ -2078,7 +2096,8 @@
         "type": "badend",
         "need_ending": "pencil_shart_the_sequel",
         "pos": [54, 9],
-        "content_type": "dx"
+        "content_type": "dx",
+        "jump_to": "lose_pencil_game2"
     },
     "dx_pencil2_minigame_win_outcome_arrow": {
         "type": "arrow",
@@ -2102,7 +2121,8 @@
         "type": "end",
         "need_label": "dx_after_convention_end",
         "pos": [56, 11],
-        "content_type": "dx"
+        "content_type": "dx",
+        "jump_to": "dx_after_convention_end"
     },
     "dx_finale_arrow": {
         "type": "arrow",
@@ -2114,8 +2134,7 @@
         "type": "start",
         "need_label": "finale_fun_value_land",
         "pos": [57, 11],
-        "content_type": "dx",
-        "jump_to": "finale_fun_value_land"
+        "content_type": "dx"
     },
     "dx_finale_arrow_end": {
         "type": "arrow",
@@ -2127,7 +2146,8 @@
         "type": "end",
         "need_label": "UNFINISHED",
         "pos": [58, 11],
-        "content_type": "dx"
+        "content_type": "dx",
+        "jump_to": "UNFINISHED"
     },
     "csbiii_south_outcome_arrow": {
         "type": "arrow",
@@ -2149,8 +2169,7 @@
         "name": "CSBIII Ch2: South",
         "type": "start",
         "need_label": "south_start",
-        "pos": [26, 16],
-        "jump_to": "south_start"
+        "pos": [26, 16]
     },
     "csbiii_casino_choice_arrow": {
         "type": "arrow",
@@ -2300,7 +2319,8 @@
         "type": "badend",
         "need_label": "south_fighthohsis_alt",
         "need_ending": "rip_house",
-        "pos": [31, 18]
+        "pos": [31, 18],
+        "jump_to": "south_fighthohsis_alt"
     },
     "csbiii_south_hohsis_brag_outcome_arrow": {
         "type": "arrow",
@@ -2323,7 +2343,8 @@
         "type": "badend",
         "need_label": "south_braghohsis",
         "need_ending": "rip_money",
-        "pos": [31, 20]
+        "pos": [31, 20],
+        "jump_to": "south_braghohsis"
     },
     "csbiii_south_hohsis_donate_outcome_arrow": {
         "type": "arrow",
@@ -2400,7 +2421,8 @@
         "name": "Lego Ending",
         "type": "end",
         "need_ending": "south",
-        "pos": [34, 19]
+        "pos": [34, 19],
+        "jump_to": "south_lego_ending"
     },
     "csbiii_gohome_car_outcome_stand_arrow": {
         "type": "arrow",
@@ -2422,7 +2444,8 @@
         "name": "Reality Break",
         "type": "badend",
         "need_ending": "reality_break",
-        "pos": [26, 18]
+        "pos": [26, 18],
+        "jump_to": "south_noairport"
     },
     "csbiii_gohome_car_backtovegas_arrow": {
         "type": "arrow",
@@ -2510,7 +2533,6 @@
         "type": "start",
         "need_label": "train_intro_start",
         "pos": [26, 22],
-        "jump_to": "train_intro_start",
         "content_type": "dx"
     },
     "dx_train_museum_choice_arrow": {
@@ -2637,7 +2659,8 @@
         "type": "end",
         "need_ending": "train_broke",
         "pos": [31, 26],
-        "content_type": "dx"
+        "content_type": "dx",
+        "jump_to": "train_home_broke"
     },
     "dx_train_rhythmchase_win_outcome_arrow": {
         "type": "arrow",
@@ -2685,7 +2708,8 @@
         "type": "end",
         "need_ending": "train_thief",
         "pos": [33, 26],
-        "content_type": "dx"
+        "content_type": "dx",
+        "jump_to": "train_home_rich_thief"
     },
     "dx_train_money_legit_outcome_arrow": {
         "type": "arrow",
@@ -2943,7 +2967,8 @@
         "type": "end",
         "need_ending": "train_winner",
         "pos": [42, 24],
-        "content_type": "dx"
+        "content_type": "dx",
+        "jump_to": "train_home_rich_winner"
     },
     "dx_train_nochase_outcome_arrow": {
         "type": "arrow",

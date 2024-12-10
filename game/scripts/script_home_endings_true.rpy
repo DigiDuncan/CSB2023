@@ -278,6 +278,9 @@ label true_ending:
         jump true_streaming
 
 label true_streaming:
+    play music ac_title volume 0.4 if_changed
+    music ac_title
+    scene cs_room_2
     show cs at mid_left
     cs "Before I head off for the night, I'll do a stream real quick."
     n "CS starts up his stream overlay and goes live on Twitch."

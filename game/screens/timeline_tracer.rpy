@@ -137,29 +137,25 @@ screen timeline_tracer():
                             this_y = 20
                 
                         # make sure it's unlocked before we continue
-                        try:
-                            # default
-                            this_unlocked = True
-                            # if it needs you to have earned an achievement to unlock
-                            # except, uh, "Fin?" achievement is stupid and needs to be checked differently
-                            if "need_achieve" in TIMELINE_MAP[event]:
-                                if TIMELINE_MAP[event]["need_achieve"] == "fin":
-                                    for e in ORIGINAL_27:
-                                        if e not in persistent.seen_original_endings:
-                                            this_unlocked = False
-                                
+                        # default
+                        this_unlocked = True
+                        # if it needs you to have earned an achievement to unlock
+                        # except, uh, "Fin?" achievement is stupid and needs to be checked differently
+                        if "need_achieve" in TIMELINE_MAP[event]:
+                            if TIMELINE_MAP[event]["need_achieve"] == "fin":
+                                for e in ORIGINAL_27:
+                                    if e not in persistent.seen_original_endings:
+                                        this_unlocked = False
+                            else:
                                 if TIMELINE_MAP[event]["need_achieve"] not in persistent.unlocked_achievements:
                                     this_unlocked = False
 
-                            # if it needs you to have seen an ending to unlock
-                            if "need_ending" in TIMELINE_MAP[event] and TIMELINE_MAP[event]["need_ending"] not in persistent.seen_all_endings:
-                                this_unlocked = False
+                        # if it needs you to have seen an ending to unlock
+                        if "need_ending" in TIMELINE_MAP[event] and TIMELINE_MAP[event]["need_ending"] not in persistent.seen_all_endings:
+                            this_unlocked = False
 
-                            # if requires a label
-                            if "need_label" in TIMELINE_MAP[event] and renpy.seen_label(TIMELINE_MAP[event]["need_label"]) == False:
-                                this_unlocked = False
-
-                        except:
+                        # if requires a label
+                        if "need_label" in TIMELINE_MAP[event] and renpy.seen_label(TIMELINE_MAP[event]["need_label"]) == False:
                             this_unlocked = False
 
                         # continue if unlocked
@@ -299,9 +295,8 @@ screen timeline_tracer():
                                     ypos -25
 
                             # handle jumps here later if there are any
-                            # TODO: DON'T USE THIS YET, IT WILL MAKE YOU UNABLE TO ESCAPE THE GAME
-                            #action [ SensitiveIf(this_unlocked == True and this_jump is not None), Play("sound", "audio/sfx/sfx_valid.ogg"), Jump(this_jump) ]
-                            action [ SensitiveIf(this_unlocked == True and this_jump is not None), Play("sound", "audio/sfx/sfx_valid.ogg"), Notify(this_jump) ]
+                            action [ SensitiveIf(this_unlocked == True and this_jump is not None), Play("sound", "audio/sfx/sfx_valid.ogg"), Replay(this_jump) ]
+                            #action [ SensitiveIf(this_unlocked == True and this_jump is not None), Play("sound", "audio/sfx/sfx_valid.ogg"), Notify(this_jump) ]
 
                             hovered [ info.Action("Replay!"), SetScreenVariable("info_x", this_x), SetScreenVariable("info_y", this_y-50) ]
 

@@ -6400,6 +6400,7 @@ label ce_billy_time:
     pause 1.0
 
 label ce_roof_moment:
+    stop music fadeout 0.5
     scene snowed_in
     show cs sil_black:
         zoom 0.15
@@ -6702,15 +6703,21 @@ label ce_roof_moment:
         xanchor 0.5
         yanchor 1.0
         zoom 0.5
+    with determination
+    show obama festive flipped at manual_pos(0.6, 0.7):
+        xanchor 0.5
+        yanchor 1.0
+        zoom 0.5
+    with move
     show k22 flipped at manual_pos(0.3, 0.9):
         xanchor 0.5
         yanchor 1.0
         zoom 0.75
-    show k17 flipped at manual_pos(0.4, 0.9):
+    show k17 flipped at manual_pos(0.4, 0.9) behind obama:
         xanchor 0.5
         yanchor 1.0
         zoom 0.75
-    show obama festive flipped at mid_mid_right behind k17:
+    show obama festive flipped at mid_mid_right:
         linear 0.5 zoom 1.0
     with move
     pause 0.25
@@ -6990,7 +6997,7 @@ label ce_roof_moment:
         xpos 0.5
         ypos -0.4
         linear 15 rotate -60
-    santa "Ho ho, oh no. It's tipping towards us."
+    santa "Ho ho, oh, no. It's tipping towards us."
     santa "Oh, shit."
     scene black with Dissolve(0.25)
     play sound sfx_splash
@@ -7011,7 +7018,7 @@ label ce_roof_moment:
     with dissolve
     show cs happy christmas dark
     cs "Woohoo! We did it! The avalanche covering the house is gone!"
-    santa "Ho ho! Well, it looks like you helped save Christmas, CS."
+    santa "Ho, ho! Well, it looks like you've saved Christmas, CS."
     santa "I need to get going now. I am slightly off-schedule."
     santa "I'm supposed to meet this girl named Belle. I heard that she's feeling pretty down."
     santa "I should also make sure my steed didn't drown in car cleaner..."
@@ -7065,6 +7072,7 @@ label ce_roof_moment:
     sheriff "Well, Copguy, we should probably get going before we get snowed in again!"
     show copguy festive dark flipped
     copguy "Yeah, you're probably right."
+    show copguy festive dark
     copguy "Thanks for having us, CS."
     show cs happy christmas dark
     show copguy festive dark
@@ -7090,6 +7098,8 @@ label ce_roof_moment:
         # NOTE: Digi and I thought this was so hilarious we decided to have him moonwalk. - pak
         hide avgn with moveoutleft
     pause 0.5
+    scene black with dissolve
+    pause 0.5
 
     scene cs_house_night_dtree
     show billy festive flipped dark at mid_left
@@ -7101,7 +7111,7 @@ label ce_roof_moment:
     billy "Sure thing! How can I help?"
     k22 "I, uhh... had a customer who wanted you to make something for them."
     # TODO: a paper asset?
-    n "K-22 hands Billy a folded up piece of paper."
+    n "K-22 hands Billy a folded-up piece of paper."
     k22 "All of the instructions are on here."
     k22 "My client wants these followed word-for-word."
     # TODO: SFX unfold paper?

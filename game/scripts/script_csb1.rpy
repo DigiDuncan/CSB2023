@@ -80,28 +80,7 @@ label csbi_craptop:
         "Respond to chat" (type = "true"):
             pass
         "Just... don't." (type = "dx"):
-            show cs disappointed
-            n "CS thinks about starting the day, but even the thought of it exhausts him."
-            scene cs_room
-            show cs disappointed
-            with dissolve
-            cs "Y'know, I kinda just want a nap..."
-            show cs disappointed
-            cs "I don't really want to do anything {i}at all{/i} right now!"
-            hide cs with moveoutright
-            scene cs_room_2 with dissolve
-            show cs at mid_left with moveinleft
-            cs "Welp, time to do nothing today!"
-            show cs happy
-            cs "Hey guys, see ya!"
-            $ achievement_manager.unlock("nah")
-            scene black with dissolve
-            pause 2.0
-            $ ending_manager.mark("nah")
-            $ renpy.movie_cutscene(creditsm)
-            $ persistent.heard.add("goodbye_summer_hello_winter")
-            $ renpy.end_replay()
-            return
+            jump csbi_nah
             
     play sound sfx_ping
     cs "Okay, bedtime! Bye, guys!"
@@ -986,6 +965,7 @@ label csbi_direction:
 
 # needed to separate this into a new label for timeline progression - tate
 label csbi_home_savers:
+    show cs_room behind cs at rotate_10
     play music beautiful_hills volume 0.3 if_changed
     music beautiful_hills
     show cs
@@ -1037,6 +1017,34 @@ label csbi_home_savers:
     scene black with Dissolve(3.0)
     $ ending_manager.mark("savers")
     $ renpy.movie_cutscene(hoh_repair)
+    $ renpy.movie_cutscene(creditsm)
+    $ persistent.heard.add("goodbye_summer_hello_winter")
+    $ renpy.end_replay()
+    return
+
+label csbi_nah:
+    play music lets_hear_my_baby volume 0.15 if_changed
+    music lets_hear_my_baby
+    scene craptop_bg
+    show craptop discord
+    show cs disappointed at left
+    n "CS thinks about starting the day, but even the thought of it exhausts him."
+    scene cs_room
+    show cs disappointed
+    with dissolve
+    cs "Y'know, I kinda just want a nap..."
+    show cs disappointed
+    cs "I don't really want to do anything {i}at all{/i} right now!"
+    hide cs with moveoutright
+    scene cs_room_2 with dissolve
+    show cs at mid_left with moveinleft
+    cs "Welp, time to do nothing today!"
+    show cs happy
+    cs "Hey guys, see ya!"
+    $ achievement_manager.unlock("nah")
+    scene black with dissolve
+    pause 2.0
+    $ ending_manager.mark("nah")
     $ renpy.movie_cutscene(creditsm)
     $ persistent.heard.add("goodbye_summer_hello_winter")
     $ renpy.end_replay()
