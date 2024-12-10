@@ -388,7 +388,7 @@ label michigan_interstate_69_old:
     gnome "If you are not used to it, I suppose so."
     billy "I think I need a break from driving after all that."
     cs "Yeah, that's fine. I was getting hungry anyway."
-    cs "Hey Mx.{w=0} Gnome, do you know anywhere good to eat around here?"
+    cs "Hey Mx. Gnome, do you know anywhere good to eat around here?"
     gnome "I don't often eat Human Food, however, I do know of one Restaurant because of my previous Human Encounter."
     cs "Cool! Can you take us there?"
     gnome "Of course. It is right around this Corner. Simply take a Right Turn. It's called East Cafe."

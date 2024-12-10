@@ -1762,9 +1762,12 @@ image db dark = "dark:characters/db.png"
 image db sil_black = "sil_black:characters/db.png"
 image db_cooper = "characters/db_coopergame.png"
 
-image midge = "characters/midge.png"
 image ges = "characters/ges.png"
 image ges flipped = "flip:characters/ges.png"
+image ges dark = "dark:characters/ges.png"
+image ges dark flipped = "flip:dark:characters/ges.png"
+
+image midge = "characters/midge.png"
 
 # Unsorted NPCs
 image cashier = "characters/cashier.png"

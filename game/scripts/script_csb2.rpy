@@ -241,7 +241,7 @@ label csbii_questioning:
     cs "I have this power, and I just figured out how to--{w=0.5}{nw}"
     copguy "Alright, I've heard enough."
     copguy "Lemme call in someone more qualified to deal with this."
-    copguy "Mr.{w=0} Mohs, this one's all yours."
+    copguy "Mr. Mohs, this one's all yours."
     hide copguy with moveoutright
     show asylum_worker at right with moveinright
     asylum_worker "Sure thing, boss."

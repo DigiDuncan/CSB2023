@@ -569,7 +569,7 @@ label car_dialogue:
     stop music2
     pause 1.0
     billy "Hi, it's Billy!"
-    mean "Hello, Mr.{w=0} Mays! Is Digi with you?"
+    mean "Hello, Mr. Mays! Is Digi with you?"
     digi "What the fuck, Mean. How did you know I was with Billy?"
     mean "Bro, I'mma keep it a hundred. I was just dialing random numbers until I got you."
     mean "Also, turn on your ringer. I called {i}you{/i} first."

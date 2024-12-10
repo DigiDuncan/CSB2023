@@ -105,9 +105,8 @@ def beep_spacing(s):
     Make sure there's a space after your punctuation or it won't work.
     You can still add manual pauses wherever you like in the script if this isn't enough for you.
     If for some reason you do NOT want the auto-pause in a certain line, put {w=0} immediately after the punctuation.
-    Real examples:
+    Real example:
         mean "Hey! You,{w=0} there!"
-        tate "Excuse me, Mr.{w=0} Conductor?"
     """
     # these items wait for 0.25:
     # commas, periods, question marks, exclamation marks, semicolons
@@ -116,6 +115,9 @@ def beep_spacing(s):
     # these items wait for 0.5:
     # ellipses, em-dashes, colons
     s = re.sub(r'((\.\.\.|--|:)(({\/[a-z]*})*) )', r'\1{w=0.5}', s, flags=re.IGNORECASE) 
+
+    # honorific titles are specifically EXCLUDED from auto-wait.
+    s = re.sub(r'((Mr\.|Mrs\.|Ms\.|Mx\.|Dr\.) )({w=0.25})', r'\1', s, flags=re.IGNORECASE)
     
     return s
 

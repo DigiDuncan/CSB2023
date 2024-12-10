@@ -789,7 +789,7 @@ label dx_after_science_ask:
         cruise "Okay, fuck... Just give me a moment."
         show cs cultist at center with move
         show cruise
-        n "Mr.{w=0} Cruise pulls out a few tens and hands them to CS."
+        n "Mr. Cruise pulls out a few tens and hands them to CS."
         $ cath_counter += 30
         n "Current balance: $[cath_counter]."
         cruise "I'm not just gonna let you win that easily. If you lose, now I can {i}really{/i} laugh at you!"
@@ -868,7 +868,7 @@ label dx_after_science_ask:
         cruise "Okay, fuck... Just give me a moment."
         show cs cultist at center with move
         show cruise
-        n "Mr.{w=0} Cruise pulls out a few tens and hands them to CS."
+        n "Mr. Cruise pulls out a few tens and hands them to CS."
         $ cath_counter += 30
         n "Current balance: $[cath_counter]."
         cruise "I'm not just gonna let you win that easily. If you lose, now I can {i}really{/i} laugh at you!"

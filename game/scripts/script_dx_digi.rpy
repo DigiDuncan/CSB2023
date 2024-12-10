@@ -19,7 +19,7 @@ label dx_underpants:
     with dissolve
     n "George, Harold, and Pakoo are busy studying the wonders of gooey jugular veins."
     play sound sfx_small_spill volume 8
-    n "Their new science teacher, Mr.{w=0} Weird Al Yankovic, spills some smelly sulfuric acid on a pile of toxic Mikas!"
+    n "Their new science teacher, Mr. Weird Al Yankovic, spills some smelly sulfuric acid on a pile of toxic Mikas!"
     show harold at center
     show pakoo disappointed flipped at mid_left behind george
     show weird_al at right
@@ -64,7 +64,7 @@ label dx_underpants:
     n "Pakoo snaps his fingers."
     # TODO: hey baker, think you can clean up this trash smiling edit for me? thx - tate
     show mr_krupp grin with dissolve
-    n "Soon, a digital grin comes across Mr.{w=0} Krupp's face as he drops his dark tie and runs to his office."
+    n "Soon, a digital grin comes across Mr. Krupp's face as he drops his dark tie and runs to his office."
     show mr_krupp grin at offscreenleft with MoveTransition(0.25)
     play sound sfx_house_door_close
     pause 2.0
@@ -157,7 +157,7 @@ label dx_underpants:
     pause 1.0
     george "{i}That{/i} makes sense, too."
     play sound sfx_small_spill volume 3.0
-    n "Unfortunately, some of the mixture splashes onto Captain Underpants' head, and he turns back into Mr.{w=0} Krupp."
+    n "Unfortunately, some of the mixture splashes onto Captain Underpants' head, and he turns back into Mr. Krupp."
     play sound sfx_glitch_in
     hide cpt_underpants
     hide slime16

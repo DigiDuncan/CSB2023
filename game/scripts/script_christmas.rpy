@@ -2409,7 +2409,7 @@ label ce_party_before:
         show cs christmas dark flipped
         cs "Fair enough, I guess!"
         show cs happy dark christmas flipped
-        cs "Well, Mr.{w=0} President, let's get inside and wait for the other guests."
+        cs "Well, Mr. President, let's get inside and wait for the other guests."
         obama "Sure thing. It is very cold outside."
     elif d20 == 9:
         show cs scared christmas flipped
@@ -2661,15 +2661,16 @@ label ce_party_before:
         cs "Damn, is that who I think it is?"
         hide cs with moveoutleft
         scene cs_house_snow_night
-        show ges flipped at mid_left
+        show ges dark flipped at mid_left
         with dissolve
         show cs christmas dark flipped at right with moveinright
-        cs "Hey, Ges, how's it going?"
-        ges "Going pretty alright, how about you, eh?"
-        cs "Oh, you know, preparing for the Christmas party and all that."
-        ges "Oh, man, you need any help from me since I'm early, eh?"
-        cs "Oh, I'd love the help! I just need to get some last minute things ready."
-        ges "Fuckin' a rights, bud, let's get inside, eh?"  # Ges assures me this is a thing Canadians say
+        cs "He-ey Ges, how's it going?"
+        ges "Going pretty alright! How about you, eh?"
+        cs "Oh, you know, just been preparing for this party!"
+        ges "Oh, man. You need any help from me, since I'm early, eh?"
+        show cs happy christmas dark flipped
+        cs "Oh, I'd {i}love{/i} the help! I just need to get some last-minute things ready."
+        ges "Fuckin' a rights, bud! Let's get inside, eh?"
     else:
         n "CS waits patiently."
         n "He keeps on waiting."
@@ -3062,7 +3063,7 @@ label ce_introductions:
     if d20 == 20:
         pause 2.0
         show avgn at center # TODO: LMAO IS HE SUPPOSED TO JUST APPEAR???? - tate
-        avgn "You guys ever heard of {i}Dr.{w=0} Jekyll and Mr.{w=0} Hyde{/i} for the NES?"
+        avgn "You guys ever heard of {i}Dr. Jekyll and Mr. Hyde{/i} for the NES?"
         eliza "Uhh, no?"
         show avgn flipped
         avgn "Good, because it's fucking {nw}"
@@ -3503,7 +3504,7 @@ label ce_cooking:
     pause 0.5
 
     show cs christmas at center behind cs_kitchen_fg with moveinleft
-    cs "Hey, Mr.{w=0} President! What can I help you with?"
+    cs "Hey, Mr. President! What can I help you with?"
     stop music fadeout 3.0
     music end
 
@@ -3790,7 +3791,7 @@ label ce_cooking:
     billy "So, then I said, \"That's a resturaunt mini burger {w=1.0}{i}no one{/i} loves!\""
     n "Obama lets out a hearty laugh."
     obama "Billy, you crack me up. You're one of America's greatest."
-    billy "That means a lot coming from you, Mr.{w=0} President!"
+    billy "That means a lot coming from you, Mr. President!"
     obama "Please, call me Barack."
     billy "The man in the suit always lurking behind you said if I do that, he'll kill me!"
     obama "Oh, he's just teasing. Isn't that right, Luther?"
@@ -6708,7 +6709,7 @@ label ce_roof_moment:
     show cs christmas
     santa "Well, let's see, who do we have here...?"
     santa "..."
-    santa "Mr.{w=0} President? What are you doing here?"
+    santa "Mr. President? What are you doing here?"
 
     show billy festive at manual_pos(0.5, 0.7) behind obama:
         xanchor 0.5
@@ -6785,7 +6786,7 @@ label ce_roof_moment:
     show rich festive flipped at mid_mid_left with moveinleft
     show wesley festive flipped at mid_left with moveinleft
     rich "Really!?"
-    ed "We appreciate the offer, Mr.{w=0} Claus. Let's keep in touch!"
+    ed "We appreciate the offer, Mr. Claus. Let's keep in touch!"
 
     hide ed
     hide rich
@@ -6793,7 +6794,7 @@ label ce_roof_moment:
     with moveoutright
     pause 0.5
 
-    santa "...{w=0} And, you there! Mr.{w=0} Rosen!"
+    santa "...{w=0} And, you there! Mr. Rosen!"
 
     show linus festive at manual_pos(0.6, 0.7) behind michael:
         xanchor 0.5
@@ -7061,7 +7062,7 @@ label ce_roof_moment:
     obama "I must say, that was the most fun I've ever had at a Christmas party."
     obama "Although, I should probably get back to the White House. The political circus is probably getting out of hand."
     show cs christmas dark
-    cs "Thank you again for coming, Mr.{w=0} President!"
+    cs "Thank you again for coming, Mr. President!"
     cs "I'd love to have you again next year!"
     obama "I look forward to seeing you!"
     show obama festive dark flipped
