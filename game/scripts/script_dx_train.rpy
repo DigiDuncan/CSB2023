@@ -798,14 +798,13 @@ label train_boarding:
     show cs worried
     cs "You know, just a little-- {i}uhHH!{w=0.25}{nw}"
     play sound sfx_punch
-
-    # TODO: sfx - Lupin musical sting?
-
+    $ renpy.music.set_volume(0)
     show cs scared at mid_offscreen_left
     show tate shock flipped
     with hpunch
     show cs concentrate
     show tate shock flipped at right with MoveTransition(0.25)
+    play sound sfx_lupin_stinger volume 0.8
     show lupin run at mid_mid_left:
         xanchor 0 yanchor 0
         xpos 200 ypos 322
@@ -814,7 +813,6 @@ label train_boarding:
     lupin_offscreen "Sorry, pretty kitty! I've gotta {i}run!"
     show lupin run flipped:
         xanchor 0 yanchor 0
-        
         parallel:
             linear 0.75 zoom 0
         parallel:
@@ -824,6 +822,7 @@ label train_boarding:
     hide lupin with dissolve
     n "The weird guy hurries away."
     pause 0.25
+    $ renpy.music.set_volume(100)
     tate "Oh,{w=-0.25} my God! CS, are you alright?!"
     cs "Y-{w=0.1}Yeah..."
     cs "More surprised than anything."
@@ -1146,7 +1145,7 @@ label train_enter_sleeper:
     show tate shock flipped
     show cs worried
     show arceus worried
-    $ next_line = substitutions("I think Mean said that someone even got " + ch2_cs_attack_used + "off of the roof!")
+    $ next_line = substitutions("I think Mean said that someone even got " + ch2_cs_attack_used + " off of the roof!")
     tate "[next_line]"
     show tate sheepish flipped
     tate "But since Mean couldn't... {w=0.5}{size=-5}hold him off... {w=0.5}{size=-5}he was... {w=1.0}{size=-5}fired..."
@@ -1256,11 +1255,7 @@ label train_enter_sleeper:
         n "He makes for the dining car in hopes of drinking his worries away."
         play sound sfx_sliding_door_open
         pause 2.0
-
         n "However, the sleeper's door is heavier than expected."
-
-        # TODO: replace with a proper sliding door slam later
-
         play sound sfx_clonk
         with hpunch
         pause 1.0
