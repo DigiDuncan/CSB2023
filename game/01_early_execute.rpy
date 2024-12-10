@@ -47,10 +47,10 @@ init -1 python:
     TIMELINE_MAP = j
     
 init python:
-    renpy.add_layer("music", above = "master")
     renpy.add_layer("popup", above = "overlay")
-    renpy.add_layer("fun_icon", above = "master")
+    renpy.add_layer("music", above = "master")
     renpy.add_layer("flashlight", below = "music")
+    renpy.add_layer("fun_icon", above = "flashlight")
 
 define determination = Dissolve(0.0)
 default translate_this_line = ""
