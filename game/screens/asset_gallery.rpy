@@ -15,18 +15,20 @@ screen unused_gallery():
         asset_dict = {}
 
         for item in asset_dict_preload:
+            requirements_met = True
             # character
-            if "need_character" in asset_dict_preload[item] and asset_dict_preload[item]["need_character"] in persistent.seen:
-                asset_dict[item] = asset_dict_preload[item]
+            if "need_character" in asset_dict_preload[item] and asset_dict_preload[item]["need_character"] not in persistent.seen:
+                requirements_met = False
             # ending
-            if "need_ending" in asset_dict_preload[item] and asset_dict_preload[item]["need_ending"] in persistent.seen_all_endings:
-                asset_dict[item] = asset_dict_preload[item]
+            if "need_ending" in asset_dict_preload[item] and asset_dict_preload[item]["need_ending"] not in persistent.seen_all_endings:
+                requirements_met = False
             # label
-            if "need_label" in asset_dict_preload[item] and renpy.seen_label(asset_dict_preload[item]["need_label"]) == True:
+            if "need_label" in asset_dict_preload[item] and renpy.seen_label(asset_dict_preload[item]["need_label"]) == False:
+                requirements_met = False
+
+            if requirements_met:
                 asset_dict[item] = asset_dict_preload[item]
-            # unlocked by default
-            if "need_character" not in asset_dict_preload[item] and "need_ending" not in asset_dict_preload[item] and "need_label" not in asset_dict_preload[item]:
-                asset_dict[item] = asset_dict_preload[item]
+
 
     # Counter
     python:
