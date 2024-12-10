@@ -431,6 +431,14 @@
         "desc": "The primary mode of transportation for HoH SiS. Allows for safe traversal over even the most unstable foundations. This particular model also includes a laser defense system.",
         "rarity": "Uncommon"
     },
+    "jp_cop_car": {
+        "img": "/images/jp_cop_car.png",
+        "name": "Zenigata's Cruiser",
+        "owner": "Inspector Zenigata",
+        "desc": "A classic car from the Tokyo Metro Police. While it was expensive to import into the US and is absolutely useless for stealth missions due to how much it stands out, Zenigata doesn't want to drive anything else.",
+        "rarity": "Uncommon",
+        "dx": true
+    },
     "knife": {
         "img": "knife",
         "name": "Kitchen Knife",

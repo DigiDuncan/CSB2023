@@ -2912,8 +2912,8 @@ label train_on_top:
             parallel:
                 linear 2 ypos 100
             repeat
-        
     pause 1.0
+    $ collect("jp_cop_car")
     zenigata_offscreen "I {i}knew{/i} I'd find you on this damn train!{w=3.0}{nw}"
     
     ## SHOT 4
