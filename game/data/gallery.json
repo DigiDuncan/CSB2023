@@ -285,5 +285,29 @@
         "caption": "Pakoo: When Anno sent me his recording for the letter read, he also sent me this funny edit of himself. I wasn't going to use it for the intro, but I wanted to show this off somewhere.",
         "album_art": "anno.png",
         "need_label": "ce_start"
+    },
+    "tgt_1.jpg": {
+        "type": "image",
+        "title": "Unused Target Employee Pose 1",
+        "caption": "An unused pose for the checkout scene.",
+        "need_label": "ce_checkout"
+    },
+    "tgt_2.jpg": {
+        "type": "image",
+        "title": "Unused Target Employee Pose 2",
+        "caption": "An unused pose for the checkout scene.",
+        "need_label": "ce_checkout"
+    },
+    "tgt_3.jpg": {
+        "type": "image",
+        "title": "Unused Target Employee Pose 3",
+        "caption": "An unused pose for the checkout scene.",
+        "need_label": "ce_checkout"
+    },
+    "tgt_4.jpg": {
+        "type": "image",
+        "title": "Unused Target Employee Pose 4",
+        "caption": "An unused pose for the checkout scene.",
+        "need_label": "ce_checkout"
     }
 }
