@@ -6547,15 +6547,15 @@ label ce_roof_moment:
     digi "CS, do you {i}really{/i} think we are the last people left?"
     cs "I don't know. I just worry that this is-- {nw}"
     # TODO: make the jingle loopable
-    play sound sfx_jingle volume 0.2
+    play sound sfx_jingle volume 0.2 loop
     n "As CS becomes more frantic, a noise is heard from afar."
     k17 "Shhh! Do you hear that?"
     cs "What? What is it?"
-    play sound sfx_jingle volume 0.4
+    play sound sfx_jingle volume 0.4 loop
     k17 "I hear jingling! Does anyone else hear jingling?"
     rich "Yeah, I do! It's coming from over there!"
     n "Richard points up in the sky."
-    play sound sfx_jingle volume 0.6
+    play sound sfx_jingle volume 0.6 loop
     k17 "Yeah! Right there! I see it!"
     aria "Is that..."
     digi "It {i}has{/i} to be Santa! I think he's really up there!"
@@ -6610,7 +6610,7 @@ label ce_roof_moment:
     show sleigh
     with dissolve
     pause 0.5
-    play sound sfx_jingle
+    play sound sfx_jingle loop
     santa "Ho ho ho!"
     santa "The wind really started to pick up around here, didn't it, Vixen?"
     santa "Ho ho, do you all hear that? It sounds like Christmas cheer being spread on the ground below!"
@@ -6652,7 +6652,7 @@ label ce_roof_moment:
     with dissolve
     pause 0.5
     
-    play sound sfx_jingle volume 0.8
+    play sound sfx_jingle volume 0.8 loop
     cs "We did it, guys! Santa's coming to save us!"
     if fun_value(FUN_VALUE_MUSIC):
         n "Santa's sleigh begins its descent, slowing down to a crawl as the reindeer gently touch down onto the blindingly white snow."
@@ -7049,7 +7049,7 @@ label ce_roof_moment:
     sheriff "Where's all this snow you were all so worried about?"
     show cs disappointed christmas dark
     cs "Uhhh-- {nw}"
-    play sound sfx_jingle volume 0.7 
+    play sound sfx_jingle volume 0.7 loop
     show tate shock festive dark
     show cs worried christmas dark
     with vpunch
@@ -7066,6 +7066,7 @@ label ce_roof_moment:
 
     show tate sheepish festive dark
     show cs christmas dark
+    stop sound fadeout 0.5
     n "As Santa flies away, snow begins to fall again."
     pause 0.5
     
