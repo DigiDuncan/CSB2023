@@ -139,7 +139,7 @@ screen timeline_tracer():
                         # make sure it's unlocked before we continue
                         try:
                             # default
-                            this_unlocked = False
+                            this_unlocked = True
                             # if it needs you to have earned an achievement to unlock
                             # except, uh, "Fin?" achievement is stupid and needs to be checked differently
                             if "need_achieve" in TIMELINE_MAP[event]:
@@ -147,25 +147,18 @@ screen timeline_tracer():
                                     for e in ORIGINAL_27:
                                         if e not in persistent.seen_original_endings:
                                             this_unlocked = False
-                                        else:
-                                            this_unlocked = True
-                                if TIMELINE_MAP[event]["need_achieve"] in persistent.unlocked_achievements:
-                                    this_unlocked = True
+                                
+                                if TIMELINE_MAP[event]["need_achieve"] not in persistent.unlocked_achievements:
+                                    this_unlocked = False
 
-                            # if it needs you to have seen EITHER a label OR an ending to unlock
-                            elif "need_ending" in TIMELINE_MAP[event] and TIMELINE_MAP[event]["need_ending"] in persistent.seen_all_endings or "need_label" in TIMELINE_MAP[event] and renpy.seen_label(TIMELINE_MAP[event]["need_label"]) == True:
-                                this_unlocked = True
-
-                            # if requires an ending AND a label
-                            elif "need_ending" in TIMELINE_MAP[event] and TIMELINE_MAP[event]["need_ending"] in persistent.seen_all_endings and "need_label" in TIMELINE_MAP[event] and renpy.seen_label(TIMELINE_MAP[event]["need_label"]) == True:
-                                this_unlocked = True
-
-                            # if it's unlocked by default (you will *probably* never need this??):
-                            elif "need_label" not in TIMELINE_MAP[event] and "need_achieve" not in TIMELINE_MAP[event] and "need_ending" not in TIMELINE_MAP[event]:
-                                this_unlocked = True
-                            # have not unlocked
-                            else:
+                            # if it needs you to have seen an ending to unlock
+                            if "need_ending" in TIMELINE_MAP[event] and TIMELINE_MAP[event]["need_ending"] not in persistent.seen_all_endings:
                                 this_unlocked = False
+
+                            # if requires a label
+                            if "need_label" in TIMELINE_MAP[event] and renpy.seen_label(TIMELINE_MAP[event]["need_label"]) == False:
+                                this_unlocked = False
+
                         except:
                             this_unlocked = False
 
