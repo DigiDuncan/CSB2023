@@ -2329,12 +2329,15 @@ label ce_party_before:
         cs "Yeah, let's go."
     elif d20 == 5 or d20 == 6:
         play sound sfx_train_chugging loop fadein 5.0 volume 0.4
+        with hpunch
         show cs scared christmas flipped with vpunch
-        n "As soon as he says that, he feels the house start to shake." with hpunch
-        cs "Wh--{w=0.5} what's going on?" with hpunch
-        n "As the house shakes even faster, a loud train whistle bellows out." with hpunch
+        with vpunch
+        with hpunch
+        n "As soon as he says this, the house begins to shake!" with vpunch
+        cs "Wh--{w=0.5} what's going on?!" with hpunch
         play sound2 sfx_train_whistle noloop volume 0.75
-        cs "Holy shit, is that a {i}train?!" with vpunch
+        n "As the quaking grows stronger, a train whistle bellows out!" with vpunch
+        cs "Holy shit, is that a {i}train?!" with hpunch
         hide cs with moveoutleft
         stop sound fadeout 3.0
         scene cs_house_snow_night
@@ -2348,21 +2351,25 @@ label ce_party_before:
             show mean human angry dark flipped at mid_left
             show tate furious festive dark at left
             tate "I'm not a train!" (multiple = 2)
-            mean "The fuck did you call me?" (multiple = 2)   
+            mean "The {i}fuck{/i} did you call me?!" (multiple = 2) with vpunch
             show mean human dark flipped at mid_left
             show tate festive dark at left     
         tate "Hey, CS! How've you been?"
         show cs christmas dark flipped
         cs "Tate? Hey! I've been great!"
         mean "Hey, CS! Merry Christmas!"
-        cs "Merry Christmas to you, too..."
+        cs "Merry Christmas to you, too... {nw}"
         show cs worried christmas dark flipped
-        cs "Merry Christmas to you, too...{fast}{nw} Mean, right?"
+        cs "Merry Christmas to you, too...{fast} Mean, right?"
         show mean human happy dark flipped
         mean "Yup!"
-        cs "Sorry, Tate talks about you a lot, but I didn't know what you look like."
+        show cs disappointed christmas dark flipped
+        show tate sheepish festive dark
+        cs "Sorry. Tate talks about you a lot, but I didn't know what you look like."
         show cs christmas dark flipped
+        cs "It's nice to finally meet you!"
         cs "Shall we get inside?"
+        show tate festive dark
         tate "Yeah!" (multiple = 2)
         mean "Yeah!" (multiple = 2)
     elif d20 == 7:
@@ -2430,7 +2437,7 @@ label ce_party_before:
         copguy "Heya, CS. Did I scare you?"
         show cs disappointed christmas dark flipped
         cs "Fuck yeah, you did! I didn't think you were gonna be on duty!"
-        copguy "Well, someone's gotta be security, right?" #TODO: i hate this line - tate
+        copguy "Well, {i}someone's{/i} gotta be security, right?" #TODO: i still hate this line - tate
         cs "I... guess?"
         cs "Whatever, let's get inside. I'm freezing!"
     elif d20 == 10:
@@ -2705,8 +2712,8 @@ label ce_party_before:
 # Introductions
 label ce_introductions:
     scene black with dissolve
-    n "Everyone starts showing up in droves around the time of the party."
-    # I think this is better. - Pak
+    n "Around the party's scheduled start time, everyone starts showing up in droves."
+    # the line just needed a little more help. - tate
     $ achievement_manager.unlock("party_start")
     scene cs_foyer_festive
     show cs christmas at mid_left_left
@@ -2720,8 +2727,8 @@ label ce_introductions:
     if fun_value(FUN_VALUE_MUSIC, confusing = True):
         cs "Well, it looks like there is teeth dust in the stronghold, right?"
         show tate sheepish festive flipped
-        tate "What?"
-        show digi sad flipped
+        tate "Wuh...?"
+        show digi sad
         digi "Are... you okay, CS?"
     else:
         cs "Well, it looks like everyone is here, right?"
@@ -2779,7 +2786,7 @@ label ce_introductions:
         show digi shock flipped
         show cs scared christmas
         show tate shock festive
-        k22 "Damn it, can you let me talk?!" with hpunch
+        k22 "Damn it, can you let me talk?!" with vpunch
         show k17
     else:
         show k22
@@ -2805,7 +2812,7 @@ label ce_introductions:
     show cs disappointed christmas
     k22 "They run this archiving facility far away from here. I guess {i}they{/i} would be the closest version of Pakoo you'd know, but they couldn't join us here tonight."
     show k22 disappointed
-    k22 "They're running their {i}own{/i} Christmas party, which I {i}wanted{/i} to be a part of, but this creature right here just {i}had{/i} to come to this party..."
+    k22 "They're running their {i}own{/i} Christmas party, which I {i}wanted{/i} to be a part of, but, this {i}creature{/i} right here just {i}had{/i} to come to this party..."
     k22 "So, I have to make sure he doesn't get too crazy."
     cs "Great."
     cs "Is that it?"
@@ -2838,7 +2845,7 @@ label ce_introductions:
     show digi
     show cs christmas
     cs "Alright, well, I'll let you guys get to know each other. I'm gonna go check on the others."
-    show cs christmas zorder 5 with dissolve
+    show cs christmas zorder 5 with determination
     hide cs with moveoutright
     pause 2.0
     show k17 shock flipped
@@ -2850,7 +2857,7 @@ label ce_introductions:
         k17 "Are you BigDick?"
         show mean human happy
         show digi shock flipped
-        show tate shock festive
+        show tate sheepish blush festive
         mean "Not for {i}free,{/i} I'm not!" with vpunch
     else:
         k17 "Are you DigBick?"
@@ -2999,7 +3006,7 @@ label ce_introductions:
     cs "Woah, okay, calm down."
     show digi sad flipped
     show cs disappointed christmas
-    cs "This is a Christmas party, after all. Let's try to have fun."
+    cs "This {i}is{/i} a Christmas party, after all. Let's try to get along."
     show cs christmas flipped
     show digi flipped
     cs "I'm gonna go check on a few more people."
@@ -3290,7 +3297,7 @@ label ce_banter:
     k17 "Are you DigBick's... girlfriend?"
     show tate furious blush festive flipped
     tate "{i}What?!" with vpunch
-    mean "First of all, I am {i}not{/i} fucking DigBick."
+    mean "First of all, I am {i}not{/i} fuckin' DigBick."
     show k17 disappointed flipped
     mean "I'm Mean, and this is Tate. We are friends."
     k17 "Yeah, you {i}sound{/i} mean."
@@ -3310,10 +3317,9 @@ label ce_banter:
     show k22 disappointed flipped
     k17 "Whaa..."
     k22 "Please excuse us for a moment."
-    # TODO: Make K22 grab K17 by the hand instead
-    show k22 disappointed flipped at Move((0.0, 0.14), (1.0, 0.14), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show k22 disappointed flipped at Move((0.0, 0.14), (1.25, 0.14), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
     pause 1.4
-    show k17 shock at Move((0.475, 0.14), (1.0, 0.14), 2, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    show k17 shock at Move((0.475, 0.15), (1.0, 0.15), 2, repeat=False, bounce=False, xanchor="left", yanchor="top")
     pause 2.5
 
     scene cs_bathroom with dissolve
