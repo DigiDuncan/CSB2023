@@ -4,13 +4,27 @@
 - Change logo on title screen to Christmas Edition
 - Change title screen music to Bubble Tea Christmas Mix
 - Change title screen theming
+
+## Things to be removed from CE
 - Remove Chapter Select and instead jump to Christmas route
 - Remove all achievements that aren't in Christmas route
 - Remove all jukebox entries that aren't in Christmas route
 - Remove all bios that aren't in Christmas route
-- Remove unrelated unused assets from gallery
+- Remove unrelated unused assets from gallery that are not in CE
+- Remove all objects from Item Collection that are not in CE*
 - Remove unneeded scripts so they don't appear in the creative mode debug menu
 - Remove spoiler characters from UCN
+- Remove Timeline Tracer
+- Remove minigames that aren't in CE
+- Remove Asset Debugger
+- Remove music, videos, images not used in CE to decrease file size
+- Remove credits JSON entries other than CE
+- Remove DXCom entries other than CE
+- Remove CS button and related code
+- Remove test labels (script_test and script_tate_test)
+- Remove Secret folder
+- Removed awawa mode
+
 
 ## Things that needed to be added to CE
 - Write and finalize Christmas route using the passes in STYLEGUIDE
@@ -20,17 +34,4 @@
 - Record DXCom for Christmas route
 - Ensure there's no way to break out into other routes or spoiler content
 
-# Progress
-- Flowchart (My head) 100%
-- Script writing 100%
-- Basic asset creation 100%
-- Basic transitions 100%
-- Music 95%
-- Sound effects 90%
-- Grammar pass 75%?
-- Asset pass 90%
-- Transition/cinematography pass 75%?
-- Add music to jukebox 95%
-- Add bios 12%
-- Add achievements 100%
-- Add minigames 50%
+* There are some items that are in CE but aren't labeled as being new. Be careful!
