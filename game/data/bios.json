@@ -527,15 +527,17 @@
         "pronouns": "(he/they)",
         "sprites": { 
             "Neutral": "images/characters/pakoo/k22.png",
-            "Happy": "images/characters/pakoo/k22_happy.png",
-            "Confident": "images/characters/pakoo/k22_confident.png",
-            "Sad": "images/characters/pakoo/k22_sad.png",
             "Angry": "images/characters/pakoo/k22_angry.png",
-            "Neutral w/ phone": "images/characters/pakoo/k22_phone.png",
-            "Angry w/ phone": "images/characters/pakoo/k22_phone_angry.png"
+            "Confident": "images/characters/pakoo/k22_confident.png",
+            "Happy": "images/characters/pakoo/k22_happy.png",
+            "Sad": "images/characters/pakoo/k22_sad.png",
+
+            "Phone: Angry": "images/characters/pakoo/k22_phone_angry.png",
+            "Phone: Neutral": "images/characters/pakoo/k22_phone.png"
+
         },
         "quote": "Need any help, Addy?",
-        "bio": "K-22 doesn't like to bring it up, but they are obbessed with Addy. They like to talk to them all the time, help them out with any problems they might have, and is only really happy around them. If only they could've stayed home on Christmas Eve...",
+        "bio": "While K-22 doesn't like to bring it up, they are {i}obsessed{/i} with Addy. They like to talk to Addy all the time, help them out with any problems they might have, and is only really happy when they're around. All K-22 wanted was to stay home on Christmas Eve...",
         "ce": true
     },
     "k174": {
@@ -846,7 +848,7 @@
         "pronouns": "(he/him)",
         "sprites": { "Default": "images/characters/santa.png" },
         "quote": "Ho ho ho! Merry Christmas!",
-        "bio": "The great man of Christmas cheer. He loves to travel the world on the night before Christmas, giving gifts to people. Many people wonder how one man can visit every house in one night. That's a good question, but have you seen speedrunners? Santa might just be a speedrunner, who knows all of the glitches to travel around fast enough.",
+        "bio": "The personification of holiday cheer. Every year, he travels the world on the night before Christmas to give gifts to all the children (and, perhaps, to sample some cookies and milk).\n\nMany people wonder how one man can visit every house in a single night. Have you {i}seen{/i} speedrunners? Santa might just be the {i}original{/i} speedrunner. He has to know some {i}insane{/i} glitches to be able to hit every house before dawn!",
         "ce": true
     },
     "sayori": {
@@ -919,16 +921,16 @@
         "pronouns": "(he/him)",
         "sprites": { 
             "Neutral": "images/characters/pakoo/tgt_pakoo_neutral.png",
-            "Scanning": "images/characters/pakoo/tgt_pakoo_scan.png",
-            "Tapping": "images/characters/pakoo/tgt_pakoo_tap.png",
             "Confused": "images/characters/pakoo/tgt_pakoo_confused.png",
             "Happy": "images/characters/pakoo/tgt_pakoo_happy.png",
+            "Scanning": "images/characters/pakoo/tgt_pakoo_scan.png",
+            "Tapping": "images/characters/pakoo/tgt_pakoo_tap.png",
             "Thinking 1": "images/characters/pakoo/tgt_pakoo_think.png",
             "Thinking 2": "images/characters/pakoo/tgt_pakoo_think2.png",
             "Upset": "images/characters/pakoo/tgt_pakoo_upset.png"
         },
         "quote": "Yeah, let me help you out.",
-        "bio": "Your average Target employee who looks like they've had enough customer interactions for the year. Although they probably hate working at self-checkout as well, it looks like they are just waiting for someone to come cover for their lunch.",
+        "bio": "Your average Target employee who looks like he's had enough customer interactions for the year. Although he probably hates working at the self-checkout, it looks like he's really just waiting for someone to come cover for him so he can have his lunch break.",
         "ce": true
     },
     "tate": {
