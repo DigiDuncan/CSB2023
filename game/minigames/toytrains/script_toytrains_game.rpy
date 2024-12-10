@@ -142,8 +142,8 @@ label play_toytrains_game:
     window hide
     $ quick_menu = False
     play music hide_and_seek if_changed
-    call screen toytrainsgame
     $ persistent.heard.add("hide_and_seek")
+    call screen toytrainsgame
     $ quick_menu = True
     window show
 

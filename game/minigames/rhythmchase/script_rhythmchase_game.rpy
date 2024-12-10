@@ -47,14 +47,18 @@ screen rhythmchasegame():
 label play_rhythmchase_game:
     window hide
     $ quick_menu = False
+    play music samba_temperado if_changed
+    $ persistent.heard.add("samba_temperado")
     call screen rhythmchasegame
     $ quick_menu = True
     window show
 
     if _return == True:
-        $ achievement_manager.unlock("beat_lupin") 
+        $ achievement_manager.unlock("beat_lupin")
+        stop music fadeout 2.0
         $ renpy.jump(minigame_win)
     else:
+        stop music fadeout 2.0
         $ renpy.jump(minigame_loss)
 
 label rhythmchasegame_done:

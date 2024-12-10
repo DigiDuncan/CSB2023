@@ -1373,6 +1373,13 @@
             "tags": ["CSBIII DX: Train", "New In DX"],
             "album_art": "falsebound.png"
         },
+        "samba_temperado": {
+            "file": "samba_temperado.ogg",
+            "title": "Samba Temperado 2019",
+            "artist": "Yuji Ohno",
+            "tags": ["CSBIII DX: Train", "New In DX", "Minigames"],
+            "album_art": "lupin_iii.png"
+        },
         "in_the_room" : {
             "file": "in_the_room.ogg",
             "title": "In The Room",
