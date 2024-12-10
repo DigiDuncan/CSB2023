@@ -2328,14 +2328,15 @@ label ce_party_before:
         show cs christmas dark flipped
         cs "Yeah, let's go."
     elif d20 == 5 or d20 == 6:
-        # TODO: sfx fading in train chugging
+        play sound sfx_train_chugging loop fadein 5.0 volume 0.4
         show cs scared christmas flipped with vpunch
         n "As soon as he says that, he feels the house start to shake." with hpunch
         cs "Wh--{w=0.5} what's going on?" with hpunch
         n "As the house shakes even faster, a loud train whistle bellows out." with hpunch
-        # TODO: SFX train whistle
+        play sound2 sfx_train_whistle noloop volume 0.75
         cs "Holy shit, is that a {i}train?!" with vpunch
         hide cs with moveoutleft
+        stop sound fadeout 3.0
         scene cs_house_snow_night
         show mean human dark flipped at mid_left
         $ persistent.seen.add("mean_human")
@@ -3822,7 +3823,7 @@ label ce_mike:
     show mike at right
     show cs christmas at mid_mid_left
     with moveinright
-    play music rice_and_wine
+    play music rice_and_wine volume 0.5
     music rice_and_wine
     dxcom pizza1
     mike "I'm Chinese."
