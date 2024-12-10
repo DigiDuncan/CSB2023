@@ -2,7 +2,8 @@
     "alphaarc.png": {
         "type": "image",
         "title": "Alpha Arceus",
-        "caption": "This was the version of Arceus that we used back in 2019."
+        "caption": "This was the version of Arceus that we used back in 2019.",
+        "need_character": "arceus"
     },
     "1.ogg": {
         "type": "audio",
@@ -18,12 +19,14 @@
     "linus.png": {
         "type": "image",
         "title": "Beta Linus",
-        "caption": "This was a proposed version of Linus that we used early in development. He was a little crusty, though."
+        "caption": "This was a proposed version of Linus that we used early in development. He was a little crusty, though.",
+        "need_character": "linus"
     },
     "michael.png": {
         "type": "image",
         "title": "Beta Michael",
-        "caption": "This is an early version of Michael we used early on. He was mainly just a head, so we scrapped it."
+        "caption": "This is an early version of Michael we used early on. He was mainly just a head, so we scrapped it.",
+        "need_character": "michael"
     },
     "wipmenu.png": {
         "type": "image",
@@ -33,67 +36,82 @@
     "mean_original.png": {
         "type": "image",
         "title": "Mean (Original)",
-        "caption": "Mean's original sprite, as seen in {i}CSBounciness III,{/i} before Tate redrew it. It's an edited screenshot from an episode of {i}Octonauts.{/i} This representation of Mean is affectionately known as \"Yellow Fucker\"."
+        "caption": "Mean's original sprite, as seen in {i}CSBounciness III,{/i} before Tate redrew it. It's an edited screenshot from an episode of {i}Octonauts.{/i} This representation of Mean is affectionately known as \"Yellow Fucker\".",
+        "need_character": "mean"
     },
     "worker_mean.png": {
         "type": "image",
         "title": "Worker Mean (Original)",
-        "caption": "Mean's original HoH SiS sprite, as seen in {i}CSBounciness III,{/i} before Tate redrew it."
+        "caption": "Mean's original HoH SiS sprite, as seen in {i}CSBounciness III,{/i} before Tate redrew it.",
+        "need_label": "csbi_end"
     },
     "mean_clothes.png": {
         "type": "image",
         "title": "Mean's Clothes",
-        "caption": "This was going to be used for a joke in Train Route that involved Mean's transformation rendering him nude until Tate produced this emergency set of clothes. Tate would then throw the clothes at Mean, knocking him offscreen until he returned, fully dressed. This bit was cut for several reasons."
+        "caption": "This was going to be used for a joke in Train Route that involved Mean's transformation rendering him nude until Tate produced this emergency set of clothes. Tate would then throw the clothes at Mean, knocking him offscreen until he returned, fully dressed. This bit was cut for several reasons.",
+        "need_label": "train_confront_lupin",
+        "need_character": "mean_human"
     },
     "mean_human_placeholder.png": {
         "type": "image",
         "title": "Human Mean (Placeholder)",
-        "caption": "Hastily-drawn placeholder sprite by Tate, used while writing the portion of Train Route that introduced Mean's human form. Originally, Tate intended to be the one to draw Mean's human sprites, but Mushroom Man did a much better job at capturing Mean's creative vision."
+        "caption": "Hastily-drawn placeholder sprite by Tate, used while writing the portion of Train Route that introduced Mean's human form. Originally, Tate intended to be the one to draw Mean's human sprites, but Mushroom Man did a much better job at capturing Mean's creative vision.",
+        "need_character": "mean_human"
     },
     "amtrak_stewardess_placeholder.png": {
         "type": "image",
         "title": "Amtrak Stewardess (Placeholder)",
-        "caption": "A {i}slightly-{/i}less half-assed placeholder sprite by Tate. We're still not sure if the replacement sprite found on Google Images is an actual art piece or an AI-generated image."
+        "caption": "A {i}slightly-{/i}less half-assed placeholder sprite by Tate. We're still not sure if the replacement sprite found on Google Images is an actual art piece or an AI-generated image.",
+        "need_character": "amtrak_stewardess"
     },
     "tate_mean.png": {
         "type": "image",
         "title": "tate_mean.png",
-        "caption": "Unused base sprite for a {i}really{/i} cringe section of the Train Route script that will never, {i}ever{/i} see the light of day. Instead, enjoy this picture of Tate gently holding a pincushion. :D"
+        "caption": "Unused base sprite for a {i}really{/i} cringe section of the Train Route script that will never, {i}ever{/i} see the light of day. Instead, enjoy this picture of Tate gently holding a pincushion. :D",
+        "need_ending": "train_winner"
     },
     "mean_human_sketch.png": {
         "type": "image",
         "title": "mean_human_sketch.png",
-        "caption": "An unfinished sketch of what would have been Mean's human sprite base. Tate's art style is a bit too \"pretty\" to do Mean's character justice."
+        "caption": "An unfinished sketch of what would have been Mean's human sprite base. Tate's art style is a bit too \"pretty\" to do Mean's character justice.",
+        "need_character": "mean_human"
     },
     "mean_human_hat_sketch.png": {
         "type": "image",
         "title": "mean_human_hat_sketch.png",
-        "caption": "The same sketch, just with Mean's hat."
+        "caption": "The same sketch, just with Mean's hat.",
+        "need_character": "mean_human",
+        "need_label": "train_lupin_win"
     },
     "zenigata_car_placeholder.png": {
         "type": "image",
         "title": "Zenigata's Car (Placeholder)",
-        "caption": "Placeholder sprite for Zenigata's car during the rooftop train chase scene."
+        "caption": "Placeholder sprite for Zenigata's car during the rooftop train chase scene.",
+        "need_character": "zenigata"
     },
     "addyfucku.png": {
         "type": "image",
         "title": "Beta Addy Sprite",
-        "caption": "Pakoo: I drew my OC (with color) for the first time actually, and I made it in about 10 minutes for some dumb bit that was for finishing the True Route script."
+        "caption": "Pakoo: I drew my OC (with color) for the first time actually, and I made it in about 10 minutes for some dumb bit that was for finishing the True Route script.",
+        "need_character": "addy"
     },
     "road_to_canada.png": {
         "type": "image",
         "title": "Beta Road to Canada",
-        "caption": "This was the original background for when CS, Arceus, and Anno emerge from the surface out of jail. It was a lot muddier."
+        "caption": "This was the original background for when CS, Arceus, and Anno emerge from the surface out of jail. It was a lot muddier.",
+        "need_label": "csbii_bordercrossing"
     },
     "digisquare.png": {
         "type": "image",
         "title": "Digi Square Room",
-        "caption": "When Digi was working on his Digi EX boss battle, he drew this for reference. Welcome to the square room."
+        "caption": "When Digi was working on his Digi EX boss battle, he drew this for reference. Welcome to the square room.",
+        "need_label": "dx_digi_corruption"
     },
     "fumobee2.png": {
         "type": "image",
         "title": "Fumo Bee 2",
-        "caption": "This was supposed to be used... somewhere? Fumo Bee 1 is used for a Fun Value in South route at the Lego pizzeria, though. Fun fact: did you know Pakoo hates bees?"
+        "caption": "This was supposed to be used... somewhere? Fumo Bee 1 is used for a Fun Value in South route at the Lego pizzeria, though. Fun fact: did you know Pakoo hates bees?",
+        "need_label": "south_utah"
     },
     "TV_SMPTE.png": {
         "type": "image",
@@ -103,62 +121,74 @@
     "best_music.png": {
         "type": "image",
         "title": "best_music.png",
-        "caption": "Before Tate figured out how to add support for Japanese text, the pop-up for this song was using an image instead. Nobody wanted to have to render images for all the other songs with Japanese titles, so this was the only one ever made."
+        "caption": "Before Tate figured out how to add support for Japanese text, the pop-up for this song was using an image instead. Nobody wanted to have to render images for all the other songs with Japanese titles, so this was the only one ever made.",
+        "need_label": "csbi_walmart"
     },
     "fancy_watch.png": {
         "type": "image",
         "title": "fancy_watch.png",
-        "caption": "While writing Train Route, Tate needed a picture of a fancy watch. They downloaded this image, somehow {i}forgot{/i} where the file got saved to, spent half an hour looking for it, assumed that Google Chrome ate it, gave up, downloaded a {i}different{/i} watch, and then found this image again several months later."
+        "caption": "While writing Train Route, Tate needed a picture of a fancy watch. They downloaded this image, somehow {i}forgot{/i} where the file got saved to, spent half an hour looking for it, assumed that Google Chrome ate it, gave up, downloaded a {i}different{/i} watch, and then found this image again several months later.",
+        "need_label": "train_lupin_win"
     },
     "background.png": {
         "type": "image",
         "title": "Perfect Tate Beta Stage",
-        "caption": "This was the original highway for the battle against Perfect Tate. Replacing it with the actual timeline of the video in the background turned out to be a much better idea."
+        "caption": "This was the original highway for the battle against Perfect Tate. Replacing it with the actual timeline of the video in the background turned out to be a much better idea.",
+        "need_character": "perfect_tate"
     },
     "cs_news1.png": {
         "type": "image",
         "title": "CS News 1",
-        "caption": "A newspaper clip used to replicate the {i}Weapon Of Choice{/i} video in Friend Route."
+        "caption": "A newspaper clip used to replicate the {i}Weapon Of Choice{/i} video in Friend Route.",
+        "need_label": "friend2_weapon_of_choice"
     },
     "cs_news2.png": {
         "type": "image",
         "title": "CS News 2",
-        "caption": "A newspaper clip used to replicate the {i}Weapon Of Choice{/i} video in Friend Route."
+        "caption": "A newspaper clip used to replicate the {i}Weapon Of Choice{/i} video in Friend Route.",
+        "need_label": "friend2_weapon_of_choice"
     },
     "cs_news3.png": {
         "type": "image",
         "title": "CS News 3",
-        "caption": "A newspaper clip used to replicate the {i}Weapon Of Choice{/i} video in Friend Route."
+        "caption": "A newspaper clip used to replicate the {i}Weapon Of Choice{/i} video in Friend Route.",
+        "need_label": "friend2_weapon_of_choice"
     },
     "cs_news4.png": {
         "type": "image",
         "title": "CS News 4",
-        "caption": "A newspaper clip used to replicate the {i}Weapon Of Choice{/i} video in Friend Route."
+        "caption": "A newspaper clip used to replicate the {i}Weapon Of Choice{/i} video in Friend Route.",
+        "need_label": "friend2_weapon_of_choice"
     },
     "cs_news5.png": {
         "type": "image",
         "title": "CS News 5",
-        "caption": "A newspaper clip used to replicate the {i}Weapon Of Choice{/i} video in Friend Route."
+        "caption": "A newspaper clip used to replicate the {i}Weapon Of Choice{/i} video in Friend Route.",
+        "need_label": "friend2_weapon_of_choice"
     },
     "Sign_Filtered000.png": {
         "type": "image",
         "title": "Train Sign",
-        "caption": "An old-style LED sign that displays messages inside of Addy's tram system. Just like everything inside their facility, this is also a memory. The sign is based off {a=https://s3-media0.fl.yelpcdn.com/bphoto/lH3_wwdHpTin_vOQLx7grQ/o.jpg}this one.{/a}"
+        "caption": "An old-style LED sign that displays messages inside of Addy's tram system. Just like everything inside their facility, this is also a memory. The sign is based off {a=https://s3-media0.fl.yelpcdn.com/bphoto/lH3_wwdHpTin_vOQLx7grQ/o.jpg}this one.{/a}",
+        "need_label": "archival_finale"
     },
     "billy_car.png": {
         "type": "image",
         "title": "Billy's Car (Original)",
-        "caption": "This sprite was used in the car game during the original release of {i}CSBIII.{/i} It was later replaced with a Land Rover after the team figured out exactly what model Billy actually drives in the Jupiter Jack infomercial."
+        "caption": "This sprite was used in the car game during the original release of {i}CSBIII.{/i} It was later replaced with a Land Rover after the team figured out exactly what model Billy actually drives in the Jupiter Jack infomercial.",
+        "need_label": "true_after_ufo"
     },
     "alpha_linus.png": {
         "type": "image",
         "title": "Alpha Linus",
-        "caption": "An even older picture of Linus! What the hell were we thinking by using this image?"
+        "caption": "An even older picture of Linus! What the hell were we thinking by using this image?",
+        "need_character": "linus"
     },
     "beta_arc.png": {
         "type": "image",
         "title": "Beta Arceus",
-        "caption": "This version of Arceus was used throughout the majority of {i}CSBIII's{/i} development. We swapped to the current one only weeks before the game was sent to CS."
+        "caption": "This version of Arceus was used throughout the majority of {i}CSBIII's{/i} development. We swapped to the current one only weeks before the game was sent to CS.",
+        "need_character": "arceus"
     },
     "desk.png": {
         "type": "image",
@@ -168,27 +198,34 @@
     "tate_beta.png": {
         "type": "image",
         "title": "Tate Beta Sprite",
-        "caption": "Originally drawn in January 2020 for a totally unrelated project, this was the sprite used before the real-life Tate became invested enough in {i}CSB{/i} to draw a custom one."
+        "caption": "Originally drawn in January 2020 for a totally unrelated project, this was the sprite used before the real-life Tate became invested enough in {i}CSB{/i} to draw a custom one.",
+        "need_character": "tate",
+        "need_label": "friend_so_join"
     },
     "mean_doodle.png": {
         "type": "image",
         "title": "Painfully Adorable Mean",
-        "caption": "Doodled by Tate and later colored by 4Bakers. This was almost going to be Mean's official sprite, but Tate felt it was simply {i}too{/i} cute."
+        "caption": "Doodled by Tate and later colored by 4Bakers. This was almost going to be Mean's official sprite, but Tate felt it was simply {i}too{/i} cute.",
+        "need_character": "mean",
+        "need_label": "csbi_end"
     },
     "missingtate.png": {
         "type": "image",
         "title": "missingtate.png",
-        "caption": "If you look closely, it's in the background during Perfect Tate's intro video."
+        "caption": "If you look closely, it's in the background during Perfect Tate's intro video.",
+        "need_character": "perfect_tate"
     },
     "cs_popsicle.png": {
         "type": "image",
         "title": "CS Archival Size Reference",
-        "caption": "In order to figure out where to place CS in the Archival scene, we needed to find out where his head would be. But since CS' sprite doesn't have legs, we had to improvise, giving him a popsicle stick body instead. Coincidentally, Pakoo would also place CS on a popsicle stick in the {a=https://www.youtube.com/watch?v=SQAv8FQmoFg}release trailer.{/a}"
+        "caption": "In order to figure out where to place CS in the Archival scene, we needed to find out where his head would be. But since CS' sprite doesn't have legs, we had to improvise, giving him a popsicle stick body instead. Coincidentally, Pakoo would also place CS on a popsicle stick in the {a=https://www.youtube.com/watch?v=SQAv8FQmoFg}release trailer.{/a}",
+        "need_label": "archival_finale"
     },
     "cs_stand.png": {
         "type": "image",
         "title": "cs_stand.png",
-        "caption": "This image is only used for a few seconds during Perfect Tate's intro. CS' sprites during the fight are based on a VRChat model that Tate made for CS a while ago.\n\nDO NOT OPEN THIS ON STREAM: The {i}Nekopara{/i} cosplay set can be purchased {a=https://booth.pm/en/items/2056413}here.{/a} Be aware that the process of importing the item set into VRoid Studio is {i}not{/i} for the faint of heart."
+        "caption": "This image is only used for a few seconds during Perfect Tate's intro. CS' sprites during the fight are based on a VRChat model that Tate made for CS a while ago.\n\nDO NOT OPEN THIS ON STREAM: The {i}Nekopara{/i} cosplay set can be purchased {a=https://booth.pm/en/items/2056413}here.{/a} Be aware that the process of importing the item set into VRoid Studio is {i}not{/i} for the faint of heart.",
+        "need_character": "perfect_tate"
     },
     "itemcoll.png": {
         "type": "image",
@@ -198,42 +235,55 @@
     "arceus_festive_neutral.png": {
         "type": "image",
         "title": "Arceus (Festive) 1",
-        "caption": "An early version of Arceus' sprite for {i}Christmas Edition.{/i} The edit was done by Tate at about 3 AM. It was not well-received."
+        "caption": "An early version of Arceus' sprite for {i}Christmas Edition.{/i} The edit was done by Tate at about 3 AM. It was not well-received.",
+        "need_character": "arceus",
+        "need_label": "ce_introductions"
     },
     "arceus_festive_angry.png": {
         "type": "image",
         "title": "Arceus (Festive) 2",
-        "caption": "An early version of Arceus' sprite for {i}Christmas Edition.{/i} The edit was done by Tate at about 3 AM. It was not well-received."
+        "caption": "An early version of Arceus' sprite for {i}Christmas Edition.{/i} The edit was done by Tate at about 3 AM. It was not well-received.",
+        "need_character": "arceus",
+        "need_label": "ce_introductions"
     },
     "arceus_festive_happy.png": {
         "type": "image",
         "title": "Arceus (Festive) 3",
-        "caption": "An early version of Arceus' sprite for {i}Christmas Edition.{/i} The edit was done by Tate at about 3 AM. It was not well-received."
+        "caption": "An early version of Arceus' sprite for {i}Christmas Edition.{/i} The edit was done by Tate at about 3 AM. It was not well-received.",
+        "need_character": "arceus",
+        "need_label": "ce_introductions"
     },
     "arceus_festive_worried.png": {
         "type": "image",
         "title": "Arceus (Festive) 4",
-        "caption": "An early version of Arceus' sprite for {i}Christmas Edition.{/i} The edit was done by Tate at about 3 AM. It was not well-received."
+        "caption": "An early version of Arceus' sprite for {i}Christmas Edition.{/i} The edit was done by Tate at about 3 AM. It was not well-received.",
+        "need_character": "arceus",
+        "need_label": "ce_introductions"
     },
     "kitty_festive.png": {
         "type": "image",
         "title": "Kitty (Festive)",
-        "caption": "An early version of Kitty's sprite for {i}Christmas Edition.{/i} The edit was done by Tate at about 3 AM. Nobody liked this one."
+        "caption": "An early version of Kitty's sprite for {i}Christmas Edition.{/i} The edit was done by Tate at about 3 AM. Nobody liked this one.",
+        "need_character": "kitty",
+        "need_label": "ce_introductions"
     },
     "digi.png": {
         "type": "image",
         "title": "Digi (Original)",
-        "caption": "Digi's original sprite as seen in {i}CSBIII,{/i} drawn by Yukio \"nyutral\". Because this sprite has only one expression, Digi decided that they wanted an upgrade for {i}DX.{/i}"
+        "caption": "Digi's original sprite as seen in {i}CSBIII,{/i} drawn by Yukio \"nyutral\". Because this sprite has only one expression, Digi decided that they wanted an upgrade for {i}DX.{/i}",
+        "need_character": "digi"
     },
     "reversi_help.png": {
         "type": "image",
         "title": "Reversi Help",
-        "caption": "The text was too small and the copy-pasted rules were too complicated."
+        "caption": "The text was too small and the copy-pasted rules were too complicated.",
+        "need_label": "play_reversigame"
     },
     "thanksm.ogg": {
         "type": "audio",
         "title": "Anno Letter Read Sentence Mix",
-        "caption": "When Anno sent me his recording for the letter read, he also sent me this funny edit of himself. I wasn't going to use it for the intro, but I wanted to show this off somewhere.",
-        "album_art": "anno.png"
+        "caption": "Pakoo: When Anno sent me his recording for the letter read, he also sent me this funny edit of himself. I wasn't going to use it for the intro, but I wanted to show this off somewhere.",
+        "album_art": "anno.png",
+        "need_label": "ce_start"
     }
 }

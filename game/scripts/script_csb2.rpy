@@ -514,7 +514,6 @@ label csbii_breakout:
     scene black with dissolve
     pause 0.5
     
-
     n "In the dark of night, the three begin chipping away at their cell floor."
     n "Upon breaking through, they set up makeshift dummies in their beds with their prison jumpsuits, then don their acquired guard uniforms."
 

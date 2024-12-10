@@ -8,7 +8,25 @@ screen unused_gallery():
 
     python:
         file = renpy.file("data/gallery.json")
-        asset_dict = json.load(file)
+        asset_dict_preload = json.load(file)
+
+        # begin anti-spoiler technology
+        # some things will be unlocked by default but most will require a character, label, ending, or some combination of these.
+        asset_dict = {}
+
+        for item in asset_dict_preload:
+            # character
+            if "need_character" in asset_dict_preload[item] and asset_dict_preload[item]["need_character"] in persistent.seen:
+                asset_dict[item] = asset_dict_preload[item]
+            # ending
+            if "need_ending" in asset_dict_preload[item] and asset_dict_preload[item]["need_ending"] in persistent.seen_all_endings:
+                asset_dict[item] = asset_dict_preload[item]
+            # label
+            if "need_label" in asset_dict_preload[item] and renpy.seen_label(asset_dict_preload[item]["need_label"]) == True:
+                asset_dict[item] = asset_dict_preload[item]
+            # unlocked by default
+            if "need_character" not in asset_dict_preload[item] and "need_ending" not in asset_dict_preload[item] and "need_label" not in asset_dict_preload[item]:
+                asset_dict[item] = asset_dict_preload[item]
 
     # Counter
     python:
