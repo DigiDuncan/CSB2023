@@ -2344,6 +2344,13 @@ label ce_party_before:
         with dissolve
         show cs worried christmas dark flipped at right with moveinright
         cs "That {i}is{/i} a fucking train!"
+        if fun_value(FUN_VALUE_EPIC):
+            show mean human angry dark flipped at mid_left
+            show tate furious festive dark at left
+            tate "I'm not a train!" (multiple = 2)
+            mean "The fuck did you call me?" (multiple = 2)   
+            show mean human dark flipped at mid_left
+            show tate festive dark at left     
         tate "Hey, CS! How've you been?"
         show cs christmas dark flipped
         cs "Tate? Hey! I've been great!"
@@ -2507,7 +2514,7 @@ label ce_party_before:
         cs "A little, but, that's okay!"
         cs "I was hoping {i}someone{/i} would arrive early."
         aria "Well, then, should we head inside? You're probably getting cold, I assume."
-        show cs disappointed dark flipped
+        show cs christmas disappointed dark flipped
         cs "Yeah, it's kinda freezing out."
     elif d20 == 14:
         play sound sfx_car_approach_stop volume 5.0 fadein 1.0
