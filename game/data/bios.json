@@ -522,6 +522,22 @@
         "bio": "This silly creature is the embodiment of Pakoo's memories from 2017. They're a hard worker, but they only have about three things ever to talk about: SunnyD, {i}Nekopara,{/i} and CS.",
         "ce": true
     },
+    "k22": {
+        "full_name": "K-22",
+        "pronouns": "(he/they)",
+        "sprites": { 
+            "Neutral": "images/characters/pakoo/k22.png",
+            "Happy": "images/characters/pakoo/k22_happy.png",
+            "Confident": "images/characters/pakoo/k22_confident.png",
+            "Sad": "images/characters/pakoo/k22_sad.png",
+            "Angry": "images/characters/pakoo/k22_angry.png",
+            "Neutral w/ phone": "images/characters/pakoo/k22_phone.png",
+            "Angry w/ phone": "images/characters/pakoo/k22_phone_angry.png"
+        },
+        "quote": "Need any help, Addy?",
+        "bio": "K-22 doesn't like to bring it up, but they are obbessed with Addy. They like to talk to them all the time, help them out with any problems they might have, and is only really happy around them. If only they could've stayed home on Christmas Eve...",
+        "ce": true
+    },
     "k174": {
         "full_name": "Pakoo's Memories",
         "pronouns": "(he/they (all))",
@@ -825,6 +841,14 @@
         "quote": "...",
         "bio": "Our KENJI (Not sponsored) Yabu Brown Round Cat is a gorgeously soft and squidgy Kawaii plush friend. Velvety soft and squishy, our collectable plush toys are made from high-quality super-soft materials that make them perfect for snuggling. Super-soft and squidgy, our lovable huggable KENJI (Not sponsored) Yabu is the softest and cutest Japanese-inspired Kawaii plushie around. Meow!"
     },
+    "santa": {
+        "full_name": "Santa Claus",
+        "pronouns": "(he/him)",
+        "sprites": { "Default": "images/characters/santa.png" },
+        "quote": "Ho ho ho! Merry Christmas!",
+        "bio": "The great man of Christmas cheer. He loves to travel the world on the night before Christmas, giving gifts to people. Many people wonder how one man can visit every house in one night. That's a good question, but have you seen speedrunners? Santa might just be a speedrunner, who knows all of the glitches to travel around fast enough.",
+        "ce": true
+    },
     "sayori": {
         "full_name": "Sayori",
         "pronouns": "(she/her)",
@@ -889,6 +913,23 @@
         "sprites": { "Default": "images/characters/lmg/taran.png" },
         "quote": "Need help with anything?",
         "bio": "Taran is the main editor for LTT. He's been there since the beginning and throughout LTT's growth, but he is planning on leaving soon. He's a super chill guy who loves helping out with various projects."
+    },
+    "tgt_worker": {
+        "full_name": "Target Employee",
+        "pronouns": "(he/him)",
+        "sprites": { 
+            "Neutral": "images/characters/pakoo/tgt_pakoo_neutral.png",
+            "Scanning": "images/characters/pakoo/tgt_pakoo_scan.png",
+            "Tapping": "images/characters/pakoo/tgt_pakoo_tap.png",
+            "Confused": "images/characters/pakoo/tgt_pakoo_confused.png",
+            "Happy": "images/characters/pakoo/tgt_pakoo_happy.png",
+            "Thinking 1": "images/characters/pakoo/tgt_pakoo_think.png",
+            "Thinking 2": "images/characters/pakoo/tgt_pakoo_think2.png",
+            "Upset": "images/characters/pakoo/tgt_pakoo_upset.png"
+        },
+        "quote": "Yeah, let me help you out.",
+        "bio": "Your average Target employee who looks like they've had enough customer interactions for the year. Although they probably hate working at self-checkout as well, it looks like they are just waiting for someone to come cover for their lunch.",
+        "ce": true
     },
     "tate": {
         "full_name": "alleZSoyez",

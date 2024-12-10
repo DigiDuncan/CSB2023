@@ -503,10 +503,10 @@ define imperfect_tate = Character("Tate", callback = renpy.partial(char_callback
 
 # DX Holiday Special Definitions
 define avgn = Character("James Rolfe", callback = renpy.partial(char_callback, name = "avgn", beep = "avgn"))
-define tgt_worker = Character("Target Employee", callback = char_callback)
+define tgt_worker = Character("Target Employee", callback = renpy.partial(char_callback, name = "tgt_worker"))
 define walkie = Character("Walkie", callback = renpy.partial(char_callback, beep = "walkie"))
 define everyone = Character("Everyone", callback = renpy.partial(char_callback, beep = "everyone"))
-define santa = Character("Santa Claus", callback = renpy.partial(char_callback, beep = "santa"))
+define santa = Character("Santa Claus", callback = renpy.partial(char_callback, name = "santa", beep = "santa"))
 define mike = Character("Mike",  callback = renpy.partial(char_callback, name = "mike"))
 
 # DX Finale Character Definitions
@@ -536,7 +536,7 @@ define eliza = Character("Elizabeth", callback = char_callback)
 define grace = Character("Grace", callback = char_callback)
 define iris = Character("Iris", callback = renpy.partial(char_callback, name = "iris", beep = "iris"))
 define k17 = Character("K-17", callback = renpy.partial(char_callback, name = "k17", beep = "k17"))
-define k22 = Character("K-22", callback = renpy.partial(char_callback, beep = "k20"))
+define k22 = Character("K-22", callback = renpy.partial(char_callback, name = "k22", beep = "k20"))
 define kitty = Character("Kitty", callback = renpy.partial(char_callback, name = "kitty", beep = "kitty"))
 define mean = Character("Mean", callback = renpy.partial(char_callback, name = "mean", beep = "mean"))
 define midge = Character("Midge", callback = renpy.partial(char_callback, name = "midge", beep = "midge"))
