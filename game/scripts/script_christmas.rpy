@@ -2665,11 +2665,11 @@ label ce_party_before:
         with dissolve
         show cs christmas dark flipped at right with moveinright
         cs "He-ey Ges, how's it going?"
-        ges "Going pretty alright, how about you eh?"
-        cs "Oh you know, preparing for the christmas party and all that."
+        ges "Going pretty alright, how about you, eh?"
+        cs "Oh you know, preparing for the Christmas party and all that."
         ges "Oh man, you need any help from me since I'm early, eh?"
         cs "Oh I'd love the help, I just need to get some last minute things ready."
-        ges "Fuckin a rights bud, let's get inside eh?"
+        ges "Fuckin' a rights bud, let's get inside, eh?"
     else:
         n "CS waits patiently."
         n "He keeps on waiting."
