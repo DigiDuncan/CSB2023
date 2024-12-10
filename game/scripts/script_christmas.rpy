@@ -1499,7 +1499,7 @@ label ce_before_shopping:
     n "CS spots the Nintendo Switch demo display, featuring {i}Tetris 99,{/i} all ready to play."
     cs "Okay, that's the universe just {i}asking{/i} me to play a round."
 
-    # TODO: tetris minigame for DX
+    # DX: tetris minigame for DX
 
     show cs coat happy flipped:
         parallel:
@@ -5179,7 +5179,6 @@ label ce_preclimax:
     scene cs_foyer
     show digi happy flipped at left
     dxcom gifts
-    # TODO: is digi holding this correctly?? idk i dont play this so pls fix it if i fucked it up - tate
     show riffmaster at manual_pos(0.15, 0.8, 0.5):
         rotate 45
     show aria festive at center
@@ -5209,7 +5208,6 @@ label ce_preclimax:
     
     n "Luke walks by, lugging a newly-acquired monitor under each arm."
     digi "Hey, Luke! Nice winnings!"
-    # TODO: do we count it as a title since it's technically a series LTT does?
     luke "Thanks! I feel like I just won {i}Scrapyard Wars{/i} again."
 
     show luke festive at manual_pos(-0.1, 1.0, 1.0)
