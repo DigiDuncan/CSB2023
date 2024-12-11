@@ -189,9 +189,9 @@
     "copguy_ex": {
         "full_name": "Copguy EX",
         "pronouns": "(he/him)",
-        "sprites": { "Default": "images/characters/copguy/copguy.png" },
-        "quote": "This ends here.",
-        "bio": "Millions of dollars in government surveillance has allowed Copguy to observe and practice nearly all of CS' and his friends' abilities. The only thing he {i}can't{/i} copy is the power of friendship!",
+        "sprites": { "Default": "images/characters/copguy/copguy_ex1.png" },
+        "quote": "This ends {i}here.{/i}",
+        "bio": "Millions of dollars in government surveillance has allowed Copguy to observe and practice nearly all of CS' and his friends' abilities. The only thing he {i}can't{/i} mimic is the power of friendship!",
         "rpg": "COPGUY_EX"
     },
     "copguy_exe": {
@@ -199,7 +199,7 @@
         "pronouns": "(he/him)",
         "sprites": { "Default": "images/characters/copguy/copguyexe.png" },
         "quote": "I WILL FIND YOU.",
-        "bio": "What {i}happened?{/i}",
+        "bio": "What {i}happened?",
         "rpg": "COPGUY_EXE",
         "dx": true
     },

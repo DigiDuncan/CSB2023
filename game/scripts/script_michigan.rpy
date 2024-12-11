@@ -868,9 +868,9 @@ label michigan_interstate_69:
     cs "You died?"
     billy "Yeah."
     cs "Speaking of, How did you come back to--{w=2.0}{nw}"
-    billy "What in the actual fuck? Didja see that?"
-    arceus "What? what?"
-    billy "There was like this, gnome thingy walking around. Look out on the left!"
+    billy "What the actual fuck? Didja see that?"
+    arceus "Wait, what?"
+    billy "There was, like, this gnome thingy walking around. Look out on the left!"
     show cs worried flipped
     cs "God, did Blank somehow track me to Michigan?"
     arceus "Nah, Blank looks like a Catboy.             Musical."
@@ -882,19 +882,19 @@ label michigan_interstate_69:
     billy "Holy shit! You two weren't kidding. I think he's trying to talk to us."
     show cs disappointed flipped
     stop music fadeout 3.0
-    billy "I'm gonna see what he wants, grab the Awesome Augement if he tries to do anything funny."
+    billy "I'm gonna see what he wants. Grab the Awesome Augement if he tries to do anything funny."
     play sound sfx_roll_window volume 0.7
     pause 2.0 
     # DX: It could be funny to have an option to ignore the gnome for a while
     play music wayward_wanderer volume 0.7 if_changed
     music wayward_wanderer
     if fun_value(FUN_VALUE_MUSIC):
-        gnome "Hallo, I am a Wayward Wanderer, may I enter your Automobile?"
+        gnome "Hallo, I am a Wayward Wanderer. May I enter your Automobile?"
     else:
         gnome "Hallo, may I enter your Automobile?" 
     billy "Hi, Billy Mays here! What are doing next to my car?"
     gnome "I mean you no harm. May I sit and explain myself?"
-    arceus "See CS, he's not Blank. I don't think Blank has a German accent."
+    arceus "See, CS? He's not Blank. I don't think Blank has a German accent."
     show cs disappointed flipped
     cs "He'll at least make this traffic jam more entertaining."
     billy "Alright, fine, come on in."
@@ -902,14 +902,14 @@ label michigan_interstate_69:
     arceus "I don't think I'm the same species as these two."
     gnome "That may be true, however, it appears that neither of your Species are the same as mein." 
     show cs flipped
-    gnome "Therefore mein Point still stands, und thus I still must briefly introduce mein Volk und our Relationship to this Place."
+    gnome "Therefore, mein Point still stands, und thus I still must briefly introduce mein Volk und our Relationship to this Place."
     gnome "I am of the Forest, und I have recently become acquainted mit some of your Kind."
     gnome "Deine Group has a similarly unique Redolence to those I encountered."
     gnome "As I am a Being of the Forest and of the Land surrounding it, I find myself in a Position to assist you."
     cs "Arceus, do you speak German?"
     arceus "It's an accent dude, and I think he can help us."
     gnome "My kind is not of this World, but rather of the Forest Dimension. I cannot clear this Path, but I can bring you to another."
-    cs "As long as there are no cultists, last time we were at a forest, we almost got killed."
+    cs "As long as there are no cultists. Last time we ended up in the forest, we almost got killed."
     gnome "No, no cultists. Just more of mein volk. Are you all ready?"
     n "Everyone feels an energy emanate from the gnome as they watch the environment around them transform from a modern university into a dense forest."
     scene gnome_forest
@@ -1000,17 +1000,17 @@ label michigan_interstate_69:
     aria "Yeah, that'll happen."
     show cs disappointed
     cs "Wait, who are you?"
-    aria "It's Aria. You know, we met all the mall?"
-    cs "Wait, what? I remember that, and you definitely didn't look like this."
+    aria "It's Aria. You know, we met up at the mall?"
+    cs "Wait, what? I remember that, but you definitely didn't look like this."
     show cs
     aria "I dunno, people change."
     aria "Speaking of surprising, is that Billy Mays with you?"
     billy "Hi, it's Billy!"
     aria "Didn't you die of a heart attack or cocaine overdose or something?"
     billy "Yep! Don't mix that shit with Oxy Clean, lemme tell ya."
-    billy "Also, what the actual fuck? If i'm so surprising, what about you? You look like a sentient mixture of Oxi Clean and Kaboom!"
-    aria "Fair enough. Do you all wanna eat with me?"
-    cs "Sure, we had some pizza a couple days ago and we haven't ate much since."
+    billy "Also, what the actual fuck? If I'm so surprising, what about you? You look like a sentient mixture of Oxi Clean and Kaboom!"
+    aria "Fair enough. Would you all like to join me at this table?"
+    cs "Sure! We had some pizza a couple days ago, and we haven't ate much since."
     scene black with dissolve
     n "CS and the gang sit down with Aria."
     scene cafe_sitting
@@ -1090,7 +1090,7 @@ label michigan_interstate_69:
     show aria flipped at left
     show gnome at center
     show waitress at right
-    waitress "Pigs are expensive and they have a good union. We just hired a bunch of shrimp instead."
+    waitress "Pigs are expensive, and they have a good union. We just hired a bunch of shrimp instead."
     scene cafe_sitting_2
     show cs disappointed at left
     show billy at center
@@ -1119,7 +1119,7 @@ label michigan_interstate_69:
     show billy at center
     show arceus at right
     cs "It's been... a hell of a lot."
-    cs "Not horrible, but things could definitely have gone smoother."
+    cs "Not horrible, but things could definitely have gone more smoothly."
     scene cafe_sitting
     show aria flipped at left
     show gnome at center
@@ -1140,8 +1140,8 @@ label michigan_interstate_69:
     show billy at center
     show arceus at right
     billy "Well, I died of a heart attack, but, somehow, I came back."
-    billy "People just assumed I was an imposter, and I couldn't get any pitchman gigs, so I became an Uber driver."
-    billy "Then these guys showed up and I offered to drive them from Washington to New York."
+    billy "People just assumed I was an imposter, so I couldn't get any sales gigs. I decided to try driving for Uber."
+    billy "Then, these guys showed up and I offered to drive them from Washington to New York."
     billy "I heard CS was a YouTuber, so I was just expecting some MrBeast-style video." # TODO: this line did NOT age well - tate
     billy "Now, I'm stuck hanging out with gnomes and floating blobs, and going through forest dimensions."
     pause 1.0
@@ -1150,13 +1150,13 @@ label michigan_interstate_69:
     show aria flipped at left
     show gnome at center
     gnome "G'none taken."
-    aria "A little bit taken, but I also brought up your cocaine overdose immediately after first meeting you, so fair play, honestly."
+    aria "A little bit taken, but I also brought up your cocaine overdose immediately after first meeting you, so... fair play, honestly."
     aria "Y'all are headed to New York, then?"
     scene cafe_sitting_2
     show cs at left
     show billy at center
     show arceus at right
-    cs "Yeah, I'm just trying to get home, and these two kinda got dragged along."
+    cs "Yeah. I'm just trying to get home, and these two kinda got dragged along."
     scene cafe_sitting
     show aria flipped at left
     show gnome at center
@@ -1293,24 +1293,26 @@ label michigan_interstate_69:
     play music2 sfx_ringtone_cs loop volume 3 
     $ persistent.heard.add("sfx_ringtone_cs")
     n "All of a sudden, CS' phone starts going off."
-    cs "Oh shit, sorry. I forgot I left my ringer on."
+    cs "Oh, shit. Sorry, I forgot I left my ringer on."
     aria "Well, can you turn it off? You're interrupting my friend's song!"
-    cs "What? The fuck you mean your friend's song?"
-    aria "Just, figure it out man, it's ruining the forest mood."
+    cs "What? The fuck you mean, your friend's song?"
+    aria "Just figure it out, man! It's ruining the mood."
     cs "Alright, hold on."
     stop music2
     $ renpy.music.set_pause(False, "music")
-    n "CS picks up the phone, and what sounds like a telemarketer starts shouting."
-    pencil "Come on down to PencilCon! The best pencil-themed convention only in Pennsylvania! Tickets still available at the door!"
+    play sound sfx_pickup_call
+    n "CS picks up the phone, only to be startled by a shouting telemarketer."
+    pencil "Come on down to PencilCon! The best pencil-themed convention, only in Pennsylvania! Tickets still available at the door!"
     pencil "Don't miss it! Starts tomorrow evening! Would you like to order tickets?"
-    cs "What the hell? Who is this?! I should kick your fucking ass!"
-    pencil "It's, for, PencilCon?"
-    cs "I'm out in this creepy ass forest, and it's the middle of the night! You scared the shit out of me!"
-    pencil "Okay, I'm sorry sir, it's just that--{w=2.0}{nw}"
-    cs "It's what?"
+    cs "What the hell? Who {i}is{/i} this?! I should kick your fucking {i}ass!"
+    pencil "It's for... PencilCon?"
+    cs "I'm out in this creepy-ass forest, and it's the middle of the night! You scared the shit out of me!"
+    pencil "Okay, I'm sorry, sir! It's just that--{w=2.0}{nw}"
+    cs "It's {i}what?"
     pencil "Wait, haven't I met you before?"
-    aria "Are you almost done yet?"
-    cs "I need to go, sorry. Cya!"
+    aria "Are you almost done?"
+    cs "I need to go, sorry. See ya!"
+    play sound sfx_end_call
     cs "Sorry about that. I don't know who the hell that was."
     arceus "Well, I want to say that at least distracted me from the creepy forest a bit."
     aria "Well, I guess if it makes you feel better, that matters more."
@@ -1328,7 +1330,7 @@ label michigan_interstate_69:
     aria "The tone They produce as They float around."
     aria "It's similar to a CRT whine, so it might be too high-pitched for you to be able to hear it."
     arceus "I can hear CRTs, but I don't hear that..."
-    billy "What are you talking about? That's so loud, how can you not hear it?"
+    billy "What are you talking about? That's so loud! How can you not hear it?"
     cs "Wait, Billy and Aria are the only two that can hear it?!"
     cs "The Fae must have something to do with the weird forest obsession."
     cs "We need to get Billy out of here, ASAP."
@@ -1345,13 +1347,13 @@ label michigan_interstate_69:
     arceus "What do you mean \"not normally here\"?! Is this path changing?!"
     cs "What the hell? How are we getting out of here?!"
     billy "I guess we've gotta just go through."
-    arceus "Go through where?! These branches are about as thick as the trees on the side!"
+    arceus "Go through {i}where?!{/i} These branches are about as thick as the trees on the side!"
     billy "We go down the same way we've been going."
     billy "What's your issue? You're short enough that you don't even need to crouch to get under the branches."
     arceus "Fuck off."
     arceus "I guess you're right, though. We can't really turn back now."
     n "Everyone begins making their way through the nest of tree branches."
-    n "Eventually, they reach the end and the canopy begins to thin out as they reach a path next to a road."
+    n "Eventually, they reach the end. The canopy begins to thin out as they reach a path next to a road."
     show creepy_path_exit
     aria "Alright, here's the path back."
     arceus "Are you sure?! Can you guarantee me that this path is the same way it's supposed to be?!"

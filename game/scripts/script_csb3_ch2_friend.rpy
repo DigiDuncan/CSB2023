@@ -159,7 +159,7 @@ label friend2_dpn_diner:
     show aria at left
     with dissolve
     pause 3.0
-    n "As Aria approaches CS and the gang, they screech on the brakes as they almost run into a blockade."
+    n "As Aria approaches CS and the gang, she slams on the brakes, tires screeching as she almost runs into a blockade."
     hide drive_night
     show cs_somewhere behind aria_car_fg
     play music dense_woods_b volume 0.5 if_changed
@@ -322,25 +322,25 @@ label friend2_cs_meetup_2:
         digi "I can't reach it..."
         aria_alt "You grabbing it isn't going to help, either. Why would that do that anything?"
         direct "Can we please raise the boom mic out of the shot?"
-        nova "I'm so tired, guys. Are we nearly done this scene?"
+        nova "I'm so tired, guys. Are we nearly done with this scene?"
         n "CS checks the script."
-        cs "Yeah, there's only like six more lines after this, and then we change scenes."
+        cs "Yeah, there's only, like, six more lines after this, and then we change scenes."
         hide boom
         n "The boom mic is raised out of frame."
-        direct "Thank you! OK, just restart the line you were on, Arc?"
+        direct "Thank you! OK, just restart the line you were on, Arc!"
         arceus "You got it, boss."
         play sound sfx_clapperboard
         $ renpy.music.set_pause(False, "music")
-    arceus "But, the cops still don't like that we downed multiple units, so we should get moving about now."
+    arceus "But, the cops still don't like that we downed multiple units, so we should get moving right now."
     cs "Yeah. Alright everyone, back on the road!"
-    cs "Everyone follow me, and we will eventually find a safe spot away from the cops!"
+    cs "Everyone, follow me! We will eventually find a safe spot away from the cops!"
     arceus "Roger that."
     show cs dark with determination
     show arceus dark flipped with determination
     hide cs
     hide arceus
     with moveoutright
-    n "Everyone gets back into their cars and they take off in a convoy, hoping to end this madness soon."
+    n "The group splits off to get back into their cars before leaving as a convoy, hoping to end this madness soon."
     n "In CS' group, the gang decides on what they can do to get away from the cops."
     if nice_car:
         scene joj_charger_fg
@@ -390,16 +390,16 @@ label friend2_car_ride_2:
     digi "I can't believe CS went to jail."
     aria_alt "Arceus was in jail for five years, Digi."
     digi "Yeah, I know, but... that's an Arceus thing to do."
-    nova "Is it?? That's kinda concerning."
+    nova "Is it? That's kinda concerning."
     digi "No, I meant, like, he knows what he's doing."
-    nova "Clearly not, if he ended up in jail!"
+    nova "Clearly {i}not,{/i} if he ended up in {i}jail!"
     n "Aria laughs."
     digi "Look, here's the thing, right? I'm just shaken up a bit still after Arceus and Pakoo called us explaining that they needed help quickly."
-    digi "And then we fought and killed cops!"
+    digi "And then, we fought and killed cops!"
     aria_alt "Least insane DPN activity."
     digi "Aria, please. I'm legitimately worried about CS."
-    aria_alt "He'll be fine, I'm sure this will be over soon."
-    digi "Man, I just really hope so."
+    aria_alt "He'll be fine. I'm sure this will be over soon."
+    digi "Man, I just really hope so..."
     scene black with dissolve
     pause 2.0
     if nice_car:
@@ -677,7 +677,7 @@ label friend2_car_ride_3:
     tate "Saaaaame, which ones?"
     mika "Usually the off-brand Cheez-its, but I really don't like the off-brand Goldfish either."
     show tate shock flipped
-    tate "Wait, you don't like Gold Whales?! I {i}love{/i} those!"
+    tate "Wait, you don't like Cheese Whales?! I {i}love{/i} those!"
     show tate sheepish flipped
     
     if fun_value(FUN_VALUE_UNOBTRUSIVE):
@@ -685,7 +685,7 @@ label friend2_car_ride_3:
 
     mika "Well, I just don't like them too much."
     show tate flipped
-    kitty "{image=note_small1.png}{i} The snack that breaks your back: {w=0.25}Gold Whales!{/i} {image=note_small2.png}"
+    kitty "{image=note_small1.png}{i} The snack that breaks your back: {w=0.25}Cheese Whales!{/i} {image=note_small2.png}"
     n "They all laugh."
     stop music fadeout 3.0
     music end

@@ -3782,7 +3782,7 @@ label ce_cooking:
     aria "Damn. That's the best way to do it."
     show digi thinking
     digi "I mean, {i}I{/i} was sober the whole time. I just had to put up with {i}this{/i} fluffy bastard."
-    aria "Of course {i}you{/i} were sober. I think a sip of wine would knock you flat."
+    aria "Of course {i}you{/i} were sober. I think one sip of wine would knock you flat."
     show digi goober
     digi "Hey, I'm not {i}that{/i} small."
     aria "Usually."
@@ -5236,7 +5236,7 @@ label ce_preclimax:
     digi "Just listen to that strumbar!"
     n "Digi strums the controller in joy."
     digi "Oh, yeah. You gonna take that Adderall, Aria?"
-    aria "That implies I haven't already."
+    aria "That implies that I haven't already."
     digi "What about you, Arc? What are you going to do with that Raspberry Pi?"
     arceus "I had an idea for a webserver I've been meaning to try out."
     digi "Nice, nice."
