@@ -132,7 +132,7 @@ init python:
                 else: 
                     r.blit(self.c_render, (x, y))  
  
-            if (self.next_carrot * (60 / self.bpm) - self.song_time) >= 1920:
+            if (self.next_carrot * (60 / self.bpm) - self.song_time) * 433 * 3 >= 1920:
                 self.carrots.append(self.next_carrot)
                 self.next_carrot += 1
 
