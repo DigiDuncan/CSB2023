@@ -2586,6 +2586,8 @@ image festive_bag = "festive_bag.png"
 image flashlight_held = "flashlight_held.png"
 image flashlight_held flipped = "flip:flashlight_held.png"
 image flexcake = "flexcake.png"
+image folded_paper = "folded_paper.png"
+image folded_paper dark = "dark:folded_paper.png"
 image gamebarrel = "gamebarrel.png"
 image garage_shelf = "garage_shelf.png"
 image gas_prices = "gas_prices.png"
@@ -3253,6 +3255,7 @@ define audio.superstar_road = "superstar_road.ogg"
 define audio.summer_fun = "summer_fun.ogg"
 define audio.crashing_down = "crashing_down.ogg"
 define audio.ce_passport = "cepassport.ogg"
+define audio.snowman = "snowman.ogg"
 
 # CSBIII DX After-True Music
 define audio.lets_hear_spring = "letshearspring.ogg"
@@ -3281,6 +3284,7 @@ define audio.albuquerque_full = "albuquerque.ogg"
 
 # SFX
 define audio.sfx_addy_snap = "sfx/sfx_addy_snap.ogg"
+# TODO: Remove either alt_punch or punch_alt
 define audio.sfx_alt_punch = "sfx/sfx_alt_punch.ogg"
 define audio.sfx_ambiance_train_interior = "sfx/sfx_ambiance_train_interior.ogg"
 define audio.sfx_amtrak_horn = "sfx/sfx_amtrak_horn.ogg"

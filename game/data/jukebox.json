@@ -1178,6 +1178,13 @@
             "tags": ["CSBIII DX: Holiday Special", "New In DX"],
             "album_art": "csbi.png"
         },
+        "snowman" : {
+            "file": "snowman.ogg",
+            "title": "Snowman",
+            "artist": "Keiichi Suzuki",
+            "tags": ["CSBIII DX: Holiday Special", "New In DX"],
+            "album_art": "earthbound.png"
+        },
         "snowdin_town" : {
             "file": "snowdin_town.ogg",
             "title": "Snowdin Town",

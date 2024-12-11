@@ -2247,7 +2247,6 @@ label ce_aftershop:
     $ in_d20_viewer = False
     jump ce_party_before
 
-# TODO: basically all of these need sfx added for whatever vehicle they arrive in. - tate
 # TODO: put respective vehicles in background + item collection because funnie - tate
 
 label ce_party_before:
@@ -3023,7 +3022,6 @@ label ce_introductions:
     with moveinright
     eliza "Hey, what's up."
     if d20 == 18:
-        # TODO: hey mika pls feel free to rewrite this section. just keeping continuity with the dice roll thing - tate
         show cs disappointed christmas
         cs "Oh, you three..."
         cs "I still don't understand how you got the invite I sent to Mika."
@@ -3040,8 +3038,7 @@ label ce_introductions:
     eliza "Let's just pretend that I got a name change."
     show cs disappointed christmas
     cs "What about the other two?"
-    eliza "I, uhh... work for them?"
-    # TODO: I'll see if Mika wants to word this any better than I did. -- pak
+    eliza "They uhh, work for me?"
     cs "You guys are so complicated."
     arceus "I mean, it wasn't too hard for {i}me{/i} to figure out, funnily enough."
     show cs disappointed christmas
@@ -3058,7 +3055,7 @@ label ce_introductions:
 
     if d20 == 20:
         pause 2.0
-        show avgn at center # TODO: LMAO IS HE SUPPOSED TO JUST APPEAR???? - tate
+        show avgn at center with moveinbottom
         avgn "You guys ever heard of {i}Dr. Jekyll and Mr. Hyde{/i} for the NES?"
         eliza "Uhh, no?"
         show avgn flipped
@@ -3245,8 +3242,6 @@ label ce_banter:
     luke "Ta-da!"
 
     scene cs_living
-    # TODO: if anyone else thinks they can get this math more exact, have at it - tate
-    # Is it possible to view this math easier, like throwing it in Desmos or something?
     show elf_0:
         zoom 1.3
         perspective True
@@ -3437,8 +3432,6 @@ label ce_banter:
     pause 0.5
 
     # audio ducking
-    # TODO: also why is elf_1 a movie file if it's not even on-screen...? - tate
-    # It might be at some point on the screen -- Digi
     $ renpy.music.set_volume(0.25)
 
     # they're supposed to be sitting on the couch now ehehe
@@ -3612,6 +3605,39 @@ label ce_cooking:
     hide cs with moveoutleft
     pause 0.5
 
+    scene cs_hallway
+    show arceus festive at mid_right
+    show kitty at mid_left
+    with dissolve
+    pause 0.5
+    kitty "Arcie, you're a fucking walnut."
+    show arceus festive worried
+    arceus "{i}Huh?!{/i} Where did {i}that{/i} come from?"
+    kitty "Dunno, just felt like calling you a walnut."
+    show arceus festive happy
+    arceus "Y'know, that's fair..."
+    show arceus festive
+    n "..."
+    n "..."
+    n "... Why hasn't the scene transitioned yet?"
+    show arceus festive angry
+    arceus "Because I'm not done yet, dipshit."
+    n "... k."
+    show arceus festive
+    arceus "Isn't it weird how the first night of Hanukkah fell on Christmas day this year?"
+    kitty "Yeah, that's pretty weird, innit?"
+    arceus "Even weirder, when you think about it, that next year will have {i}two{/i} Hanukkahs."
+    kitty "... How so?"
+    arceus "Well, you figure, eight nights of Hanukkah."
+    kitty "Uh huh..."
+    arceus "And, today's the 25th of December."
+    kitty "I see."
+    arceus "So, the last night of Hanukkah would be the 2nd of January."
+    kitty "..."
+    kitty "..."
+    kitty "Shit, you right."
+    pause 0.5
+
     scene cs_bathroom
     show grace at mid_left
     with dissolve
@@ -3692,40 +3718,6 @@ label ce_cooking:
     n "A line forms in front of the bathroom."
     pause 0.5
 
-    scene cs_hallway
-    show arceus festive at mid_right
-    show kitty at mid_left
-    with dissolve
-    pause 0.5
-    kitty "Arcie, you're a fucking walnut."
-    show arceus festive worried
-    arceus "{i}Huh?!{/i} Where did {i}that{/i} come from?"
-    kitty "Dunno, just felt like calling you a walnut."
-    show arceus festive happy
-    arceus "Y'know, that's fair..."
-    show arceus festive
-    n "..."
-    n "..."
-    n "... Why hasn't the scene transitioned yet?"
-    show arceus festive angry
-    arceus "Because I'm not done yet, dipshit."
-    n "... k."
-    show arceus festive
-    arceus "Isn't it weird how the first night of Hanukkah fell on Christmas day this year?"
-    kitty "Yeah, that's pretty weird, innit?"
-    arceus "Even weirder, when you think about it, that next year will have {i}two{/i} Hanukkahs."
-    kitty "... How so?"
-    arceus "Well, you figure, eight nights of Hanukkah."
-    kitty "Uh huh..."
-    arceus "And, today's the 25th of December."
-    kitty "I see."
-    arceus "So, the last night of Hanukkah would be the 2nd of January."
-    kitty "..."
-    kitty "..."
-    kitty "Shit, you right."
-    pause 0.5
-
-    # TODO: uh so should we move this scene? arc was literally just with kitty in another room - tate
     # OK, is this scene too meta? I like it a lot but I'm worried I'm pushing the boundaries a bit here.
     scene cs_foyer_festive
     show aria festive at left
@@ -5167,7 +5159,8 @@ label ce_exchange:
     jump ce_preclimax
 
 label ce_preclimax:
-    # TODO: BGM
+    play music snowman if_changed
+    music snowman
     scene black with dissolve
     n "After the exchange, the party begins to die down."
     n "Folks naturally start splitting into groups to discuss their gifts."
@@ -5265,7 +5258,6 @@ label ce_preclimax:
     cs "Michael? Obama? Can you come into the kitchen real quick?"
     michael "Right-o!"
     obama "On our way!"
-    
     show michael festive flipped at offscreenleft
     show ltt_bottle at manual_pos(-0.2, 0.7, 0.5)
     show billy festive at offscreenleft
@@ -5356,7 +5348,9 @@ label ce_climax:
     show k17 disappointed
     show cs angry christmas
     show mean human annoyed
-    cs "So, you never actually {i}wanted{/i} to stay! You only came here because of {i}him!" # TODO: yeah, lmao, that's KINDA what was said at the start of the party. this line needs rewritten. CS ain't THAT slow on the uptake.
+    cs "If you hated my party so much, then just leave!"
+    if fun_value(FUN_VALUE_COMMON):
+        cs "If you hated my party so much, then you can just fucking die!" # NOTE: This is supposed to be a reference to the Comfort Click video, but I don't know if he'll read it like that. - pak
     nova "Well, I'm {i}also{/i} leaving, because {i}this{/i} asshole won't let me play any {i}good{/i} music!" with hpunch
     blank "Hah! Says you! {i}You{/i} just wanted to play {i}your{/i} trash for the entire party!" with hpunch
     digi "Hey, wait a second! Luke!" with hpunch
@@ -6983,13 +6977,15 @@ label ce_roof_moment:
     pause 0.5
     santa "Alright! Stand back, everyone! This is gonna take a lot of focus!"
     n "Harnessing the power of the Christmas spirit, CS' wish begins to manifest...!"
-    # TODO: maybe some kind of sfx of the power being gathered?
+    play sound sfx_okuubeam
+    window hide
+    pause 1.5
     show crotch_doctor sil_black:
         zoom 0.75
         xpos 0.7
         ypos -0.35
     with moveintop
-    # TODO: some kind of impact sfx when it touches down onto the ground
+    play sound sfx_punch
     with vpunch
     pause 1.0
     show crotch_doctor:
@@ -7128,16 +7124,25 @@ label ce_roof_moment:
     k22 "Hey, Billy. Can I talk to you for a minute?"
     billy "Sure thing! How can I help?"
     k22 "I, uhh... had a customer who wanted you to make something for them."
-    # TODO: a paper asset?
+    # TODO: Tate put this in the item collection thingy
+    show folded_paper dark at manual_pos(0.65, 0.75, 0.5) with dissolve:
+        zoom 0.6
+    pause 0.5
+    show folded_paper dark at manual_pos(0.25, 0.65, 0.5):
+        zoom 0.6
+    with MoveTransition(0.65)
     n "K-22 hands Billy a folded-up piece of paper."
     k22 "All of the instructions are on here."
     k22 "My client wants these followed word-for-word."
-    # TODO: SFX unfold paper?
+    play sound sfx_isaac volume 0.4
+    show folded_paper dark at manual_pos(0.25, 0.65, 0.5):
+        linear 0.4 zoom 0.6 rotate -75 
     pause 0.5
     n "Billy opens up the paper and skims through it."
     pause 1.0
     billy "Wow..."
     billy "This is {i}great!{/i} I can get to work on this real soon!"
+    hide folded_paper with dissolve
     billy "I gotta take a trip to France, first."
     billy "I need to... fix an old friend."
     show k22 dark
@@ -7173,8 +7178,7 @@ label ce_roof_moment:
     show black with { "master": Dissolve(10.0) }
     n "It wasn't the Christmas that CS expected, and, certainly, not everything went according to plan."
     n "In spite of it all, with the help of his friends, it was one of the jolliest times he's ever had."
-    # TODO: should we perhaps change this line to "Merry Christmas to all, and to all a good night!" ? - tate
-    n "Merry Christmas, and have a Happy New Year!" 
+    n "Merry Christmas, and to all a good night!" 
     $ achievement_manager.unlock("hoh_hoh")
     $ ending_manager.mark("christmas")
     scene black with dissolve
