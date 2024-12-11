@@ -2582,19 +2582,26 @@ label ce_party_before:
     elif d20 == 17:
         play sound sfx_car_approach_stop volume 5.0 fadein 1.0
         show cs christmas flipped at mid_left with move
-        n "An unknown car shows up in the driveway."
-        show cs disappointed christmas flipped
+        n "An unknown car with a rather lanky figure inside shows up in the driveway."
         cs "I wonder who that is."
         stop sound fadeout 1.0
         hide cs with moveoutleft
         scene cs_house_snow_night
         show nova dark flipped at mid_left
+        show ges dark flipped at left
         with dissolve
         show cs christmas dark flipped at right with moveinright
         nova "Hey, CS! Thanks for inviting me to your Christmas party!"
         cs "Yeah! {w=1.0} It's been a while. How've you been?"
         nova "Oh, y'know, I've been moving a lot, had a friend move in with me..."
         cs "Well, if you wanna chat about it, let's get inside first. It's cold out here."
+        nova "Before we go in, I forgot to introduce you to my friend, Ges!"
+        cs "He-ey Ges, how's it going?"
+        ges "Going pretty alright! How about you, eh?"
+        cs "Oh, you know, just been preparing for this party!"
+        ges "Oh, man. You need any help from me, since I'm early, eh?"
+        cs "Oh, I'd {i}love{/i} the help! I just need to get some last-minute things ready."
+        ges "Fuckin' a rights, bud! Let's get inside, eh?"
     elif d20 == 18:
         play sound sfx_car_approach_stop volume 5.0 fadein 1.0
         show cs christmas flipped at mid_left with move
@@ -2660,22 +2667,6 @@ label ce_party_before:
         cs "Do you, uh, wanna go inside?"
         avgn "Hell yeah!" with vpunch
         cs "Alright, then..."
-    elif d20 == 21:
-        show cs christmas flipped at mid_left with move
-        n "A rather lanky figure approaches CS' house."
-        cs "Damn, is that who I think it is?"
-        hide cs with moveoutleft
-        scene cs_house_snow_night
-        show ges dark flipped at mid_left
-        with dissolve
-        show cs christmas dark flipped at right with moveinright
-        cs "He-ey Ges, how's it going?"
-        ges "Going pretty alright! How about you, eh?"
-        cs "Oh, you know, just been preparing for this party!"
-        ges "Oh, man. You need any help from me, since I'm early, eh?"
-        show cs happy christmas dark flipped
-        cs "Oh, I'd {i}love{/i} the help! I just need to get some last-minute things ready."
-        ges "Fuckin' a rights, bud! Let's get inside, eh?"
     else:
         n "CS waits patiently."
         n "He keeps on waiting."
@@ -5052,7 +5043,8 @@ label ce_exchange:
     with dissolve
     nova "What the fuck {i}is{/i} it? Some World War II radio?"
     eliza "Yep. Used by the Soviets in the latter half of World War II."
-    nova "I'm sure Ges will like this. I'll probably give it to him."
+    nova "Hey Ges, do you want this!"
+    ges "Sure, thank you!"
     hide russian_radio with dissolve
     hide nova with moveoutright
     pause 0.5

@@ -28,7 +28,7 @@ screen d20_viewer_screen():
             yalign 0.55
 
     # increase roll
-    if d20 < 21:
+    if d20 < 20:
         imagebutton:
             idle "gui/right_off.png"
             hover "gui/right_on.png"
