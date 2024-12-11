@@ -2739,6 +2739,12 @@ image sunny_d = "images/gifts/sunny_d.png"
 image tea_and_crumpets = "images/gifts/tea_and_crumpets.png"
 image thigh_highs = "images/gifts/thigh_highs.png"
 
+# CSBIII: CE: Carrot Game
+image obama_says = "minigames/carrot/obama_says.png"
+image rating_ok = "minigames/carrot/ok.png"
+image rating_superb = "minigames/carrot/superb.png"
+image rating_try_again = "minigames/carrot/try_again.png"
+
 # Movies
 image car background = Movie(play="movies/car_background.webm")
 image car background night = Movie(play="movies/car_background_night.webm")

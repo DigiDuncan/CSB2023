@@ -13,6 +13,10 @@ init python:
     CARROT_HEIGHT = 122
     BEAT_GAP = CARROT_WIDTH * 3 # Number of pixels between carrots
     CARROT_OFFSET = 300 # Number of pixels to offset where the hit window is (from the left side of the screen)
+    INPUT_SYNC_OFFSET = 0.000
+    AUDIO_SYNC_OFFSET = 0.125
+
+    ACCURACY_TO_WIN = 0.75
 
     class CarrotGameDisplayable(renpy.Displayable):
         def __init__(self):
@@ -27,7 +31,7 @@ init python:
             self.song_length = 60.5
             self.no_beats = self.song_length / 60 * self.bpm
 
-            self.hit_window = 0.1  # 100ms
+            self.hit_window = 0.150  # 150ms
             self.successful_beats = set()
             self.missed_beats = set()
             self.hits = 0
@@ -36,9 +40,10 @@ init python:
             self.hit_to_process = False
             self.pressing_down = False
             self.last_beat = -1
+            self.last_audio_beat = -1
 
             self.is_fcing = True
-            self.song_time = 0.0
+            self.song_time = 0.0 + INPUT_SYNC_OFFSET
             self.started_playing_song = False
 
             self.bg = Image("minigames/carrot/bg.png")
@@ -65,12 +70,22 @@ init python:
             return int(self.song_time * (self.bpm / 60))
 
         @property
+        def current_audio_beat(self) -> int:
+            return int((self.song_time + AUDIO_SYNC_OFFSET) * (self.bpm / 60))
+
+        @property
         def nearest_beat(self) -> int:
             return int(round(self.song_time * (self.bpm / 60)))
 
         @property
         def nearest_beat_time(self) -> int:
             return self.nearest_beat * (60 / self.bpm)
+
+        @property
+        def accuracy(self) -> float:
+            if self.hits == 0:
+                return 0
+            return self.hits / (self.hits + self.misses)
 
         def beat_time(self, beat: int) -> int:
             return beat * (60 / self.bpm)
@@ -79,7 +94,7 @@ init python:
         def bounce_offset(self) -> float:
             """https://www.desmos.com/calculator/ycvu69xqeo"""
             # Stolen from Charm BPM Animator
-            mag = abs((self.bpm * self.song_time / 60) % 1 - 0.5) * 2
+            mag = abs((self.bpm * (self.song_time + AUDIO_SYNC_OFFSET) / 60) % 1 - 0.5) * 2
             pix = 1 - math.pow(2, -10 * mag) # ease_expoout
             return pix
 
@@ -133,6 +148,8 @@ init python:
 
             last = self.last_beat
             current = self.current_beat
+            last_audio = self.last_audio_beat
+            current_audio = self.current_audio_beat
             nearest = self.nearest_beat
             hittable = abs(self.nearest_beat_time - self.song_time) <= self.hit_window
 
@@ -154,24 +171,26 @@ init python:
                 self.next_carrot += 1
 
             if self.current_beat < 8:
-                music_renderer = renpy.render(Transform(DynamicDisplayable(_music_gen_text), zoom = 0.5), 1920, 1080, st, at)
+                a = 1.0 if self.current_beat < 7 else 1 - (self.song_time - self.beat_time(7))
+                print(a)
+                music_renderer = renpy.render(Transform(DynamicDisplayable(_music_gen_text), zoom = 0.5, alpha = a), 1920, 1080, st, at)
                 r.blit(music_renderer, (0, 0))
 
             # 3 2 1 Go
-            if last != current and current == self.start_beat - 4:
+            if last_audio != current_audio and current_audio == self.start_beat - 4:
                 renpy.sound.play("minigames/carrot/3.ogg")
-            elif last != current and current == self.start_beat - 3:
+            elif last_audio != current_audio and current_audio == self.start_beat - 3:
                 renpy.sound.play("minigames/carrot/2.ogg")
-            elif last != current and current == self.start_beat - 2:
+            elif last_audio != current_audio and current_audio == self.start_beat - 2:
                 renpy.sound.play("minigames/carrot/1.ogg")
-            elif last != current and current == self.start_beat - 1:
+            elif last_audio != current_audio and current_audio == self.start_beat - 1:
                 renpy.sound.play("minigames/carrot/go.ogg")
 
             hit = False
             miss = False
 
             # Process input
-            if self.hit_to_process and self.start_beat - 1 <= current:
+            if self.hit_to_process and self.start_beat - 1 <= current and current >= self.no_beats:
                 input_time = self.song_time
 
                 # Find nearest beat
@@ -180,7 +199,6 @@ init python:
                         # Good hit!
                         self.successful_beats.add(nearest)
                         self.hits += 1
-
                         hit = True
                     else:
                         # Overhit!
@@ -213,13 +231,18 @@ init python:
             elif hit:
                 renpy.sound.play("minigames/carrot/hit.ogg")
 
-            # hardcode win for now
             if self.song_time > self.song_length:
-                self.win = True
+                if self.is_fcing:
+                    self.win = "superb"
+                elif self.accuracy >= ACCURACY_TO_WIN:
+                    self.win = "ok"
+                else:
+                    self.win = "try_again"
 
             renpy.redraw(self, 0)
             self.last_tick = st
             self.last_beat = self.current_beat
+            self.last_audio_beat = self.current_audio_beat
             self.hit_to_process = False
             return r
 
@@ -227,7 +250,7 @@ init python:
             import pygame
             if ev.type == pygame.KEYDOWN:
                 if ev.key == pygame.K_END:
-                    self.win = True
+                    self.win = "ok"
                 if ev.key == pygame.K_SPACE:
                     self.pressing_down = True
                     self.hit_to_process = True
@@ -245,6 +268,14 @@ screen carrotgame():
     # Add a background or any static images here.
     add carrotgame
 
+screen carrotresults(a):
+    text a:
+        align (0.5, 0.5)
+        font "minigames/carrot/Storm Sans Std.ttf"
+        size 48
+        textalign 0.5
+        color "#ffffff"
+
 label play_carrotgame:
     window hide
     $ quick_menu = False
@@ -253,12 +284,58 @@ label play_carrotgame:
     window show
     $ persistent.heard.add("hotel_disbelief")
 
-    if _return == True:
-        pass
-        # Thing for win condition
+    if _return == "superb":
+        stop music
+        window hide
+        scene black
+        pause 1.0
+        show obama_says at manual_pos(0.5, 0.25, 0.5)
+        play sound "minigames/carrot/step1.ogg"
+        pause 1.0
+        show screen carrotresults("Amazing work, CS!\nYou made America proud.\nIt's a Christmas miracle!")
+        play sound "minigames/carrot/step2.ogg"
+        pause 1.0
+        show rating_superb at manual_pos(0.8, 0.8, 1.0)
+        play music "minigames/carrot/superb_music.ogg"
+        $ achievement_manager.unlock("shitdown")
+        $ achievement_manager.unlock("paradise")
+        pause
+        hide screen carrotresults
+        $ renpy.jump(minigame_win)
+    elif _return == "ok":
+        stop music
+        window hide
+        scene black
+        pause 1.0
+        show obama_says at manual_pos(0.5, 0.25, 0.5)
+        play sound "minigames/carrot/step1.ogg"
+        pause 1.0
+        show screen carrotresults("Great chopping, CS!\nYou were on beat!\nWe'll feed the unchopped ones to the reindeer.")
+        play sound "minigames/carrot/step2.ogg"
+        pause 1.0
+        show rating_ok at manual_pos(0.8, 0.8, 1.0)
+        play music "minigames/carrot/ok_music.ogg"
+        $ achievement_manager.unlock("shitdown")
+        pause
+        hide screen carrotresults
+        $ renpy.jump(minigame_win)
     else:
-        pass
-        # Thing for lose condition
+        # try_again
+        stop music
+        window hide
+        scene black
+        pause 1.0
+        show obama_says at manual_pos(0.5, 0.25, 0.5)
+        play sound "minigames/carrot/step1.ogg"
+        pause 1.0
+        show screen carrotresults("You can do better than that.\nI don't want to have to pardon you!\nTry to stay on beat!")
+        play sound "minigames/carrot/step2.ogg"
+        pause 1.0
+        show rating_try_again at manual_pos(0.8, 0.8, 1.0)
+        play music "minigames/carrot/try_again_music.ogg"
+        pause
+        hide screen carrotresults
+        $ renpy.jump(minigame_loss)
 
 label carrotgame_done:
     # Thing to do after the game if we reach here.

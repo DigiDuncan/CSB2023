@@ -551,6 +551,22 @@
         "type": "extra",
         "ce": true
     },
+    "shitdown":{
+        "name": "Wipe Up The Shitdown",
+        "locked": "???",
+        "unlocked": "Beat the Carrot Chop game.",
+        "img": "shitdown",
+        "type": "story",
+        "ce": true
+    },
+    "paradise":{
+        "name": "It's Paradise!",
+        "locked": "???",
+        "unlocked": "Get a perfect score at the Carrot Chop game.",
+        "img": "perfect",
+        "type": "extra",
+        "ce": true
+    },
     "broke":{
         "name": "You Broke It!",
         "locked": "Woah, dude, you broke it.",
