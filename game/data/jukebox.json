@@ -1125,6 +1125,14 @@
             "tags": ["CSBIII DX: Holiday Special", "New In DX"],
             "album_art": "pizzatower.png"
         },
+        "hotel_disbelief": {
+            "file": "minigames/carrot/hotel_disbelief.ogg",
+            "title": "Can You Really Call This A Hotel",
+            "artist": "Toby Fox",
+            "tags": ["CSBIII DX: Holiday Special", "Minigames", "New In DX"],
+            "album_art": "undertale.png",
+            "trivia": "This song's full title is {i}Can You Really Call This A Hotel I Didn't Receive A Mint On My Pillow.{/i}"
+        },
         "snow_blind" : {
             "file": "snow_blind.ogg",
             "title": "Snow Blind",

@@ -188,6 +188,7 @@ label play_carrotgame:
     call screen carrotgame
     $ quick_menu = True
     window show
+    $ persistent.heard.add("hotel_disbelief")
 
     if _return == True:
         pass
