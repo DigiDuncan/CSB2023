@@ -540,12 +540,12 @@ label car_dialogue:
     cs "Would you rather have unlimited bacon, but no games?"
     cs "Or, games?"
     cs "{i}Unlimited{/i} games."
-    cs "But no games."
+    cs "But, no games."
     arceus "What?"
     digi "That's, like, a paradox, right?"
     cs "No, no, you see, you get unlimited games, but no games."
     arceus "I'm just gonna take the unlimited bacon."
-    cs "But you get no games!"
+    cs "But, you get no games!"
     arceus "I'm choosing bacon. Final answer."
 
     pause 4.0

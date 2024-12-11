@@ -471,7 +471,7 @@ label csbi_room:
     ed "We'll show him what happens when you tarnish our good name!"
     pause 1.0
     "..."
-    ed "But... now that we're here, what should we actually {i}do?"
+    ed "But, now that we're here, what should we actually {i}do?"
 
     ed "Hmm..." (multiple = 3)
     wesley "Hmm..." (multiple = 3)
@@ -697,7 +697,7 @@ label csbi_rosen_house:
     show flexcake at manual_pos(0.35, 0.6, 0.5) with dissolve
     $ collect("flexcake")
     phil "It even works {i}underwater!"
-    michael "That's odd to mention, but, alright! Time to eat!"
+    michael "That's odd to mention, but... alright! Time to eat!"
     show cs worried flipped
     n "CS suddenly realizes what is going on."
     show cs scared flipped at right

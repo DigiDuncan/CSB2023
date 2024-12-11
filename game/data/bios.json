@@ -100,7 +100,7 @@
         "pronouns": "(he/him)",
         "sprites": { "Default": "images/characters/benrey.png" },
         "quote": "Can I see your Pass Port?",
-        "bio": "Working at the airport is Benrey's dream job. It seemed like he always had problems finding passports at Black Mesa, but here, {i}everyone{/i} has one!"
+        "bio": "Working at the airport is Benrey's dream job. It seemed like he always had problems finding passports at Black Mesa, but, here, {i}everyone{/i} has one!"
     },
     "billy": {
         "full_name": "Billy Mays",
@@ -753,7 +753,7 @@
         "pronouns": "(they/them)",
         "sprites": { "Default": "images/characters/nova.png" },
         "quote": "k.",
-        "bio": "Nova is a former member of the CScord and was one of CS' earliest followers. They were known for being pretty loud back then, but nowadays they are making music under another alias. They are also very talented at rhythm games.",
+        "bio": "Nova is a former member of the CScord and was one of CS' earliest followers. They were known for being pretty loud back then, but, nowadays, they are making music under another alias. They are also very talented at rhythm games.",
         "zoom": 0.85,
         "rpg": "NOVA"
     },

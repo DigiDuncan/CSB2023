@@ -218,7 +218,7 @@
     "cs_popsicle.png": {
         "type": "image",
         "title": "CS Archival Size Reference",
-        "caption": "In order to figure out where to place CS in the Archival scene, we needed to find out where his head would be. But since CS' sprite doesn't have legs, we had to improvise, giving him a popsicle stick body instead. Coincidentally, Pakoo would also place CS on a popsicle stick in the {a=https://www.youtube.com/watch?v=SQAv8FQmoFg}release trailer.{/a}",
+        "caption": "In order to figure out where to place CS in the Archival scene, we needed to find out where his head would be. Since CS' sprite doesn't have legs, we had to improvise by giving him a popsicle stick body instead. Coincidentally, Pakoo would also place CS on a popsicle stick in the {a=https://www.youtube.com/watch?v=SQAv8FQmoFg}release trailer.{/a}",
         "need_label": "archival_finale"
     },
     "cs_stand.png": {

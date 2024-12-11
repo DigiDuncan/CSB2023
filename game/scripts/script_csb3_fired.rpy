@@ -90,7 +90,7 @@ label fired_new_plan:
     anno "Wait, yeah, I can totally do that. I have the models ready for that and everything."
     n "Anno starts typing away at his laptop, and within a few minutes, a voice plays out of the speaker."
     ed_ai "I think CS is a pretty good guy. You shouldn't arrest him."
-    cs "Oh, my God, that's amazing! But what about you two?"
+    cs "Oh, my God, that's amazing! What about you two?"
     anno "Gotcha covered."
     if fun_value(FUN_VALUE_RARE):
         play sound sfx_obama volume 0.5
@@ -103,7 +103,7 @@ label fired_new_plan:
     anno "I try."
     stop music fadeout 3.0
     music end
-    cs "But what about money? I'm still out of a job, and I'd like to keep having a roof over my head."
+    cs "But, what about money? I'm still out of a job, and I'd like to keep having a roof over my head."
     show arceus
     arceus "I don't know, man, I can't think after all that. Let's take a bit and relax. Clear our heads."
     cs "Good call. Wanna play some {i}Guitar Hero?{/i}"
@@ -518,7 +518,7 @@ label fired_back_to_room:
     arceus "Thank you, thank you."
     cs "What can I do?"
     anno "Well, you already named it {i}[song_name_3],{/i} and that's definitely our best title yet. You wrote, like, half the lines, too."
-    anno "But if you want to record backing vocals, this track might sound dope with them!"
+    anno "But, if you want to record backing vocals, this track might sound dope with them!"
     cs "Will do!"
     python:
         last_words = []
@@ -718,7 +718,7 @@ label fired_song_5:
     anno "CS, why don't you write this one?"
     cs "Me?"
     anno "Yeah!"
-    cs "But I wrote all the other songs!"
+    cs "But, I wrote all the other songs!"
     anno "Nah, you filled in our blanks."
     arceus "Yeah, why don't you write the whole thing this time!"
     cs "Oh, gosh, you guys sure?"
@@ -1431,7 +1431,7 @@ label fired_third_tour_day:
     stop music fadeout 3.0
     crowd "Encore! {w=0.5}Encore! {w=0.5}Encore! {w=0.5}"
     n "CS whispers to the others."
-    cs "Encore? But we don't have any more songs..."
+    cs "Encore? But, we don't have any more songs..."
     arceus "Make something up!"
     n "CS shouts to the crowd."
     cs "Uh... hey, you guys! Give me a word!"
@@ -1549,7 +1549,7 @@ label fired_final_tour_bus:
     music end
     scene cs_door_outside with dissolve
     show cs with moveinleft
-    n "CS moves to head inside, but there's a note on his door."
+    n "CS moves to head inside, but there's a note on his door." # TODO: i hate this line - tate
     sticky "We waited for you to come home to confront you, but you took too long, so we left."
     sticky "Fuck you.\n-- HoH SiS"
     cs "Well, I guess that's the end of that."

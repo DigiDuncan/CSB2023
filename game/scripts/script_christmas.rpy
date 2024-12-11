@@ -901,7 +901,7 @@ label ce_anno:
         cs "I figured it'd be faster if I had a helping hand."
         n "Anno groans."
         anno "I was hoping to be {i}setting up{/i} decorations, not {i}cleaning them{/i} up."
-        anno "But I guess we don't really have any other option, do we?"
+        anno "But, I guess we don't really have any other option, do we?"
         cs "Guess not..."
         show cs disappointed at mid_right with move
         cs "Here, I'll grab these boxes, and we'll start throwing stuff in them."
@@ -1418,7 +1418,7 @@ label ce_before_shopping:
     cs "Jeez, there sure are a lot of people out today..."
     show cs coat worried
     cs "I guess that's what I get for leaving shopping until the last minute."
-    cs "But I guess I {i}am{/i} the same man known for uploading videos at 11:59 PM on the 31st, so I should be used to this sort of thing."
+    cs "I suppose I {i}am{/i} the same man known for uploading videos at 11:59 PM on the 31st, so I should be used to this sort of thing."
     show cs coat disappointed
     cs "At least everyone here seems polite. They probably just want to get what they need and get out, too."
 
@@ -2723,7 +2723,7 @@ label ce_introductions:
         cs "Well, it looks like everyone is here, right?"
         if d20 != 19:
             dxcom db
-            anno "DB isn't here yet, but otherwise, yeah."
+            anno "DB isn't here yet, but, otherwise, yeah."
         else:
             anno "Looks like it, yeah."
         hide screen dxcom
@@ -3353,7 +3353,7 @@ label ce_banter:
     with dissolve
     pause 0.5
     k17 "This is {i}so{/i} unfair!"
-    k17 "CS said that it's annoying that we've changed, or, whatever, but just look at everyone {i}else!"
+    k17 "CS said it's annoying that we've changed or whatever, but just look at everyone {i}else!"
     k17 "All of my friends have changed so much I don't even {i}recognize{/i} them anymore!"
     k22 "Yeah, well, when you are constrained to just one year of your life, that can happen."
     k17 "It's just... how do I, like, {i}deal{/i} with all of this?"
@@ -3619,7 +3619,7 @@ label ce_cooking:
     sheriff "... and, that's how I ended up this way."
     sheriff "I could've gone to college, studied the paranormal..."
     sheriff "... started up a shower curtain business, run a newspaper..."
-    sheriff "... but, no. I {i}had{/i} to become a {i}cop."
+    sheriff "... but, no, I {i}had{/i} to become a {i}cop."
     grace "Hey, are you almost done in there?"
     sheriff "Just leave me alone..."
     grace "But I really need to go!"
@@ -4370,7 +4370,7 @@ label ce_dinner:
     digi "What are you talking about? Of course it costs more, because it's better for your car!"
     show cs christmas flipped
     cs "Don't you guys mean \"unleaded plus\"?"
-    digi "Yeah! See? CS knows!"
+    digi "Yeah! See? {i}CS{/i} knows!"
     k22 "No, it's called \"super unleaded,\" {i}and{/i} it's cheaper than regular unleaded!"
     digi "But it's {i}not!{/i} Why {i}would{/i} it be?!"
 
@@ -4506,8 +4506,8 @@ label ce_dinner:
     show cs christmas disappointed
     cs "Yeah, Mixer shut down some time ago now... sorry about that."
     show digi sad flipped
-    k17 "But why? {nw}"
-    k17 "But why? {fast}{i}Why?!" with vpunch
+    k17 "But, why? {nw}"
+    k17 "But, why? {fast}{i}Why?!" with vpunch
     k17 "It was, like, the {i}perfect{/i} streaming platform!"
     digi "It {i}was,{/i} but it was {i}also{/i} owned by Microsoft. It was bound to happen."
     show cs worried christmas

@@ -235,7 +235,7 @@ label michigan_continue:
     billy "We should probably find an exit to start heading towards New York soon."
     cs "There's an exit coming up. We can take either I-69 or 94."
     billy "Alright. Which one do you think?"
-    arceus "Well, 94 goes east which is the direction we want, but the other one is 69, so I'm down for either."
+    arceus "Well, 94 goes east, which is the direction we {i}want,{/i} but the other one is 69, so I'm down for either."
     billy "I guess it's up to you then, CS."
 
     jump michigan_interstate_menu
@@ -1099,7 +1099,7 @@ label michigan_interstate_69:
     show aria flipped at left
     show gnome at center
     show waitress at right
-    waitress "It wasn't meant to be humorous, but, fair enough."
+    waitress "It wasn't meant to be humorous, but fair enough."
     scene cafe_sitting_2
     show cs at left
     show billy at center
@@ -1141,7 +1141,7 @@ label michigan_interstate_69:
     billy "Well, I died of a heart attack, but, somehow, I came back."
     billy "People just assumed I was an imposter, and I couldn't get any pitchman gigs, so I became an Uber driver."
     billy "Then these guys showed up and I offered to drive them from Washington to New York."
-    billy "I heard CS was a YouTuber, so I was just expecting some MrBeast-style video."
+    billy "I heard CS was a YouTuber, so I was just expecting some MrBeast-style video." # TODO: this line did NOT age well - tate
     billy "Now, I'm stuck hanging out with gnomes and floating blobs, and going through forest dimensions."
     pause 1.0
     billy "No offense."
@@ -1239,7 +1239,7 @@ label michigan_interstate_69:
     aria "I guess you're welcome to just head back out on the road."
     aria "Just watch out for fae paths on the way back."
     billy "What the actual fuck is a fae path?"
-    aria "Oh, they're paths that look like a normal path for the first little while, but will end up leading you to the center of the woods."
+    aria "Oh, they're paths that look like a normal path for the first little while, but they'll end up leading you to the center of the woods."
     aria "The sense of linear direction decays as the path becomes less clear, and you eventually can't tell what direction you came from."
     billy "And you didn't think it was relevant to mention this before?"
     aria "Well, no, you have a guide. I was planning on making this a relaxing walk, so I didn't plan on taking the fae paths."
@@ -1320,7 +1320,7 @@ label michigan_interstate_69:
     aria "Oh, that's strange, They don't normally appear on this path..."
     aria "That's one of the Faeries."
     aria "I've seen one like that before, with the glowing white body and warm yellow-colored edges."
-    aria "I haven't seen that many Faeries, but I've kept track as I encounter new varieties."
+    aria "I haven't seen that many Faeries, but I've kept track as I've encountered new varieties."
     aria "I call this kind Seraphites."
     aria "They have particularly warm energy and have a brighter glow, as well as higher pitched resonance."
     cs "Resonance?"
@@ -1552,7 +1552,7 @@ label michigan_interstate_94:
     shaggy_too_dope "And you don't need to worry about us. We're not like Smiley."
     mario "How did you two hear about that? How do you how his name?"
     violent_jay "All clowns are connected."
-    violent_jay "We might be Juggalos, but we are still clowns."
+    violent_jay "We might be Juggalos, but we {i}are{/i} still clowns."
     mario "What is it you want with me?"
     shaggy_too_dope "We want to replace that washing machine."
     violent_jay "We can't let that guy give clowns a bad name."

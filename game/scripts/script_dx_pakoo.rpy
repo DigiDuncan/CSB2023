@@ -9,14 +9,14 @@ label dx_after_true:
         n "As for Billy, he's still on the road, hearing his baby: Spring Remix, and pitching his various products."
     else:
         n "As for Billy, he's still on the road, pitching his various products."
-        
+
     show after_true_title at truecenter with dissolve
     pause 3.0
     hide after_true_title with dissolve
     pause 1.0
-    
+
     play music lets_hear_spring volume 2 if_changed
-    music lets_hear_spring 
+    music lets_hear_spring
     scene cs_room_cars with dissolve
     show cs at left
     show billy at center
@@ -77,7 +77,7 @@ label dx_after_true:
     play music echoing_spring volume 2 if_changed
     music echoing_spring
     billy "Alright, you can take the blindfolds off."
-    scene wis_forest 
+    scene wis_forest
     show cs dark at left
     show arceus dark flipped at center
     show billy dark at right
@@ -135,7 +135,7 @@ label dx_after_true:
     arceus "Will it?"
     billy "Well, who wants to do the honors?"
     cs "I'll do it!"
-    show arceus dark flipped    
+    show arceus dark flipped
     arceus "I'm gonna back up in case this thing explodes..."
     show cs dark at right with move
     show cs dark flipped with determination
@@ -262,7 +262,7 @@ label dx_after_back_to_story:
     cs "..."
     cs "Should I even ask?"
     pencil "Every year, we host PencilCon, the biggest gathering of pencil lovers worldwide!"
-    pencil "But we need to increase the number of memberships, so we grab random people and dress them up for our group!"
+    pencil "But we need to increase our numbers, so we grab random people and dress them up for our group!"
     pencil "We call ourselves a cult so we can win CultCon and gain massive amounts of followers!"
     cashier "Don't bother with trying to escape, either. I already tried that and they just blocked the door."
     cs "Okay, okay, slow down."
@@ -278,7 +278,7 @@ label dx_after_back_to_story:
     cs "A big billboard, or something like that?"
     n "The pencil man thinks for a moment."
     pencil "We'll try that next year."
-    pencil "But, for now, you are now enlisted into the Pencil Cult and cannot leave until the event ends!"
+    pencil "But, for now, you are enlisted into the Pencil Cult and cannot leave until the event ends!"
     cs "Yeah, okay, but can I go to the bathroom first? I was gonna pee before you kidnapped me."
     pencil "Hey, that rhymed! Yeah, you can go."
     show cs pencil
@@ -309,7 +309,7 @@ label dx_after_back_to_story:
     n "The competition is where cults sign up to try to impress other cults and get votes to win a prize."
     n "The prize is Billy's machine that he made, somehow in the hands of CultCon."
     scene cult_con
-    show cs 
+    show cs
     with dissolve
     play music ten_feet_away if_changed
     music ten_feet_away
@@ -344,7 +344,7 @@ label dx_after_back_to_story:
     csgod "Well, yeah? Kinda?"
     show cs pissed
     #The only reason I want to keep caps here, is because I had to create a new sprite to show how mad he was.
-    cs "I don't know how many times you have to take a shit, or whatever, but in case you weren't watching, I AM FUCKING {i}STUCK IN THE PAST."
+    cs "I don't know how many times you have to take a shit, or whatever, but, in case you weren't watching, I AM FUCKING {i}STUCK IN THE PAST."
     hide csgod_angry
     show csgod at right
     csgod "..."
@@ -385,7 +385,7 @@ label dx_after_back_to_story:
     cultist "Yeah, he's a real one. Let him in."
     cs "Woohoo!"
     cultist_2 "So, how did you find out about us?"
-    cs "Well, I have heard about you guys from other CultCons, but I hadn't been able to travel all the way to Montana until now."
+    cs "Well, I'd heard about you guys from other CultCons, but I couldn't travel all the way to Montana until now."
     cs "So, I figured that travelling to Wisconsin would be easier, and that this would also be my chance to get in."
     cultist "Well, we appreciate it."
     cs "You mean, you {i}hate{/i} it?"
@@ -402,7 +402,7 @@ label dx_after_back_to_story:
 # CULT CON INTRO
 
 label dx_after_cult_questions:
-    play music ten_feet_away if_changed 
+    play music ten_feet_away if_changed
     music ten_feet_away
     scene blue_branch
     show cultist_2 at right
@@ -500,7 +500,7 @@ label dx_after_competiton_start:
     cultist_2 "Yeah, what do {i}you{/i} want?"
     cultist_3 "Get out of here, you alien-worshipping asshole!"
     cruise "Oh, I just wanted to see how well you guys were {i}losing{/i} this year!"
-    show cruise 
+    show cruise
     cruise "I'll bet your god is fake, just like everyone else's!"
     cultist "Alright, you prick, get the hell out of here!"
     show cruise flipped
@@ -565,17 +565,17 @@ label dx_after_votes_balance:
 
 # PENCIL CULT
 
-label dx_after_pencil_ask:   
+label dx_after_pencil_ask:
     scene cult_con
     show cs cultist at center
     if pencil_check and god_money:
         cs "Maybe I should go see if they have any extra spare change."
-        scene pencilroom 
+        scene pencilroom
         show pencilguy at right
         with dissolve
         show cs cultist at left with moveinleft
         pencil "Hey hey hey! Were you looking to {i}sharpen{/i} your skills again?"
-        
+
         menu:
             "Choose what you want to do:"
             "Ask for money":
@@ -614,7 +614,7 @@ label dx_after_pencil_ask:
                 minigame "play_pencil2_game" "dx_after_win_pencil2" "lose_pencil_game2"
     elif pencil_check:
         cs "Maybe I can try to beat my previous score."
-        scene pencilroom 
+        scene pencilroom
         show pencilguy at right
         with dissolve
         show cs cultist at left with moveinleft
@@ -640,7 +640,7 @@ label dx_after_pencil_ask:
     cs "The cult leader said that the pencil guys usually give us a vote, so let's go see what they are up to."
     hide cs with moveoutright
     n "CS makes his way to the pencil room."
-    scene pencilroom 
+    scene pencilroom
     show pencilguy at right
     with dissolve
     show cs cultist at left with moveinleft
@@ -682,7 +682,7 @@ label dx_after_pencil_ask:
     stop music2 fadeout 3.0
     stop music3 fadeout 3.0
     stop music4 fadeout 3.0
-    music end 
+    music end
     show pencilroom
     show pencilguy at right
     show cs cultist at left
@@ -694,7 +694,7 @@ label dx_after_pencil_ask:
         n "CS turns around and leaves, offering no further explanation."
         scene cult_con with dissolve
         show cs cultist at center with moveinleft
-        jump dx_after_seek_competitors 
+        jump dx_after_seek_competitors
     elif god_money and pencil_check:
         pencil "Jeez, you did it again."
         cs "Also, do you have any spare change I can have?"
@@ -705,14 +705,14 @@ label dx_after_pencil_ask:
         n "It looks to be an assortment of ones and fives."
         cs "Thank you! Your contributions are appreciated."
         pencil "... You're welcome?"
-        $ check2 = True   
+        $ check2 = True
         show cs cultist flipped with determination
         hide cs with moveoutleft
         n "CS turns around and leaves, offering no further explanation."
         $ pencil_check = True
         scene cult_con with dissolve
         show cs cultist at center with moveinleft
-        jump dx_after_seek_competitors 
+        jump dx_after_seek_competitors
     $ pencil_votes = 0
     $ pencil_votes += 3
     $ total_votes += pencil_votes
@@ -720,7 +720,7 @@ label dx_after_pencil_ask:
     pencil "You're a pencil sharpening {i}legend!"
     cs "I'll just say one thing:"
     cs "October 27th. Remember that day."
-    pencil "Uhh, alright?"    
+    pencil "Uhh, alright?"
     if god_money:
         cs "Also, do you have any spare change I can have?"
         pencil "What? I mean, I guess you did beat my score..."
@@ -749,7 +749,7 @@ label dx_after_pencil_ask:
 
 # SCIENTOLOGY
 
-label dx_after_science_ask: 
+label dx_after_science_ask:
     scene cult_con
     show cs cultist at center
     if gun_get:
@@ -773,11 +773,11 @@ label dx_after_science_ask:
             hide cs with moveoutleft
             n "CS heads back to the convention floor."
             scene cult_con with dissolve
-            show cs cultist at center with moveinleft 
+            show cs cultist at center with moveinleft
             jump dx_after_seek_competitors
         cruise "Why the hell would I give any money to you?"
         cruise "You are, like, part of that fuckin' group that I hate!"
-        show cs disappointed cultist        
+        show cs disappointed cultist
         cs "I dunno, it was worth a try."
         show cs disappointed cultist flipped
         n "CS heads back to the convention floor."
@@ -801,7 +801,7 @@ label dx_after_science_ask:
         n "CS heads back to the convention floor."
         scene cult_con with dissolve
         show cs cultist at center with moveinleft
-        cs "Well, that was a lot easier than I thought."        
+        cs "Well, that was a lot easier than I thought."
         jump dx_after_seek_competitors
 
     if science_check:
@@ -826,7 +826,7 @@ label dx_after_science_ask:
         hide cs with moveoutleft
         n "CS heads back to the convention floor."
         scene cult_con with dissolve
-        show cs cultist at center with moveinleft       
+        show cs cultist at center with moveinleft
         jump dx_after_seek_competitors
     cs "Y'know, the Scientologists think they are all that, but maybe if I talk to them, I can convince them to vote for us."
     hide cs with moveoutright
@@ -856,7 +856,7 @@ label dx_after_science_ask:
         cs "By the way, do you have any spare change?"
         cruise "Why the hell would I give any money to you?"
         cruise "You are, like, part of that fuckin' group that I hate!"
-        show cs disappointed cultist        
+        show cs disappointed cultist
         cs "I dunno, it was worth a try."
         show cs disappointed cultist flipped
         n "CS heads back to the convention floor."
@@ -903,7 +903,7 @@ label dx_after_catholic_ask:
             pause 1.0
             scene cult_con with dissolve
             show cs cultist at center with moveinleft
-            jump dx_after_seek_competitors           
+            jump dx_after_seek_competitors
         priest "Hello, do you have anything to donate yet?"
         menu:
             "Donate money":
@@ -916,7 +916,7 @@ label dx_after_catholic_ask:
                 n "CS heads back to the convention floor."
                 scene cult_con with dissolve
                 show cs cultist at center with moveinleft
-                jump dx_after_seek_competitors              
+                jump dx_after_seek_competitors
     if cath_check:
         cs "Ugh, alright, let's see what those Christians have to offer."
         hide cs with moveoutright
@@ -968,7 +968,7 @@ label dx_after_catholic_find:
     $ god_money = True
     $ cath_counter = 0
     cs "Stay right here. I'm sure I can find some money."
-    priest "I wasn't planning on moving, but... thank you! The church will thank you."
+    priest "I wasn't {i}planning{/i} on moving, but, thank you! Your donation is appreciated."
     show cs cultist flipped with determination
     hide cs with moveoutleft
     n "CS runs back to the main floor."
@@ -994,7 +994,7 @@ label dx_after_catholic_tally:
             pause 0.5
             scene cult_con with dissolve
             show cs cultist at center with moveinleft
-            jump dx_after_seek_competitors 
+            jump dx_after_seek_competitors
         "Yes, donate":
             $ cath_votes = 0
     cs "I think I'm ready to donate my money."
@@ -1036,7 +1036,7 @@ label dx_after_catholic_tally:
 
 # LUNATIC CULTISTS
 
-label dx_after_lunatic_ask:  
+label dx_after_lunatic_ask:
     scene cult_con
     show cs cultist at center
     if lunatic_check3 and god_money:
@@ -1083,8 +1083,8 @@ label dx_after_lunatic_ask:
             n "CS sulks back to the convention floor."
             scene cult_con with dissolve
             show cs cultist at center with moveinleft
-            $ lunatic_check2 = True 
-            jump dx_after_seek_competitors 
+            $ lunatic_check2 = True
+            jump dx_after_seek_competitors
         elif lunatic_votes == 3 or lunatic_votes == 4:
             l_cultist "Here, we have something..."
             n "They hand CS a silver coin."
@@ -1096,7 +1096,7 @@ label dx_after_lunatic_ask:
             n "CS makes his way back to the convention floor."
             scene cult_con with dissolve
             show cs cultist at center with moveinleft
-            $ lunatic_check2 = True  
+            $ lunatic_check2 = True
             jump dx_after_seek_competitors
         elif lunatic_votes == 6 or lunatic_votes == 7:
             l_cultist "Y'know what? You can have this."
@@ -1110,7 +1110,7 @@ label dx_after_lunatic_ask:
             scene cult_con with dissolve
             show cs cultist at center with moveinleft
             $ lunatic_check2 = True
-            jump dx_after_seek_competitors       
+            jump dx_after_seek_competitors
         elif lunatic_votes == 10:
             l_cultist "I think you deserve this."
             n "They hand CS a shiny platinum coin."
@@ -1123,7 +1123,7 @@ label dx_after_lunatic_ask:
             scene cult_con with dissolve
             show cs cultist at center with moveinleft
             $ lunatic_check2 = True
-            jump dx_after_seek_competitors      
+            jump dx_after_seek_competitors
         else:
             jump secret_dx
     if lunatic_check:
@@ -1253,9 +1253,9 @@ label dx_after_lunatic_jump:
     l_cultist "You've already won most of our votes, but we have one more question that'll give you the last of 'em."
     l_cultist "You ready?"
     l_cultist "Last question."
-    
+
     l_cultist "How much money in USD did you make in Country route?"
-    l_cultist "For the sake of convenience, we'll give you the conversion from pounds and yen to US dollars." 
+    l_cultist "For the sake of convenience, we'll give you the conversion from pounds and yen to US dollars."
     n "1 Japanese Yen = 0.0062 USD"
     n "1 Pound Sterling = 1.26 USD"
     l_cultist "You made need to use a calc."
@@ -1266,7 +1266,7 @@ label dx_after_lunatic_jump:
     if csb_question_3 in ["148600", "148,600", "$148600", "$148,600"]:
         $ lunatic_votes += 3
         l_cultist "Wow, you got every question right! Good job!"
-    
+
     jump dx_after_quiz_finish
 
 label dx_after_quiz_finish:
@@ -1313,7 +1313,7 @@ label dx_after_quiz_finish:
 label dx_after_zero_right:
     show cs disappointed cultist
     cs "Dang, I really got no votes?"
-    l_cultist "Sorry, but you didn't get any of your answers right."
+    l_cultist "Sorry, but you didn't get any of our questions right."
     l_cultist "Maybe consider calling some of your friends, so you can remember who they are."
     cs "Yeah, yeah, I'll get going..."
     if god_money:
@@ -1378,7 +1378,7 @@ label dx_after_two_right:
     $ lunatic_check = True
     jump dx_after_seek_competitors
     #CS got them all right
-label dx_after_three_right:    
+label dx_after_three_right:
     cs "Woohoo!"
     l_cultist "Jeez, you've got a really good memory."
     l_cultist "You deserve to win this year. Good luck to ya, man."
@@ -1442,7 +1442,7 @@ label dx_after_blindeye_ask:
 label dx_after_blindeye_reask:
     cs "Maybe I should check on the Blind Eye guys again."
     n "CS rushes over to the Society of the Blind Eye."
-    # After asking Blue Branch 
+    # After asking Blue Branch
     if blue_check:
         cs "Huh, where did they go?"
         cs "Maybe they went looking for him themselves?"
@@ -1464,7 +1464,7 @@ label dx_after_blindeye_reask:
         cs "No, I'm good, I just wasn't expecting that."
         fiddle "Well, yes, I am the leader of Blue Branch."
         fiddle "I made this gun about 20 years ago, and gave it to these guys."
-        fiddle "I wanted to keep helping them, but I got in a fight with the colleague I lived with, and needed to stay undercover."
+        fiddle "I wanted to keep helping them, but I got in a fight with the colleague I lived with. I needed to stay undercover."
         fiddle "I created Blue Branch and set up a small area in Montana, where I could stay in close contact with the Blind Eye."
         cs "Well, that's one crazy story."
         cs "Did you guys fix the gun?"
@@ -1507,7 +1507,7 @@ label dx_after_blindeye_reask:
         blind_eye "No, we know. It's those Catholics, correct?"
         cs "...Yeah?"
         cs "I'm really running, and gunning if you will, to get as many votes as possible."
-        blind_eye "Well, I wouldn't give them any money myself, but I guess you can try giving this to them."
+        blind_eye "Well, I wouldn't give them any money myself, but I guess {i}you{/i} can try giving this to them."
         $ cath_counter += 77
         n "The Blind Eye cultist gives CS a $77 dollar bill."
         blind_eye "I don't know if this has any real worth, so I guess you can do what you want with it."
@@ -1587,7 +1587,7 @@ label dx_after_blindeye_quest:
             cs "I'm gonna go now."
             blind_eye "Alright! See you at the end!"
             n "CS goes back to the convention floor."
-            cs "I don't really like this song, but I guess this the small price I have to pay to get the chance to go home..."
+            cs "I don't really like this song, but I guess this is a small price to pay for the chance to go home..."
             jump dx_after_seek_competitors
 
 # BLUE BRANCH
@@ -1844,7 +1844,7 @@ label dx_after_super_heaven:
     perfect_billy "Hi, it's me! Perfect Billy Mays!"
     perfect_billy "I am much more powerful than God!"
     perfect_billy "You haven't died, you have been brought up to Super Heaven, where only I reside!"
-    cs "So, I didn't die, but I'm in heaven? How does that work?"
+    cs "So, I didn't die, but I'm in Heaven? How does that work?"
     perfect_billy "You have contacted me directly in the only other way possible!"
     perfect_billy "You mixed all of my products together!"
     cs "So, Billy wasn't crazy... or maybe he {i}was."
@@ -1862,7 +1862,7 @@ label dx_after_super_heaven:
     cs "How does that-- Y'know what, I've had a long day, I need to stop asking questions."
     perfect_billy "Good idea!"
     cs "So, okay, I'm a little freaked out about whatever the hell is going on, is there any way I can like, go home?"
-    perfect_billy "I have the power to send you back to the present, but since you are here, I have some things to show you."
+    perfect_billy "I have the power to send you back to the present, but since you're already here, I have some things to show you."
     perfect_billy "You may not remember, but we have met before!"
     cs "We have?"
     perfect_billy "Yes! You called me once by accessing my only commerical that plays on loop!"
@@ -1886,7 +1886,7 @@ label dx_after_super_heaven:
     perfect_billy "It was Copguy EX, he was like, okay I don't even know what that was about."
     cs "Oh and what the fuck is this one? Pakoo deleted me from existence or some shit?"
     cs "I'm gonna really give it to him when I get back to the present!"
-    cs "Wow! I don't wanna sound egotistical, but I think I have had the craziest life ever!"
+    cs "Wow! I don't wanna brag, but I think I've had the craziest life ever!"
     cs "Wait, why does it start there?"
     cs "Wouldn't this start from when I was born? That doesn't make much sense!"
     perfect_billy "Well..."
@@ -1903,12 +1903,12 @@ label dx_after_super_heaven:
     cs "I was gonna say, I mean, like, why me?"
     cs "I just make like YouTube Poops and watch car crash videos!"
     perfect_billy "Well, this entity has chosen you to be the, protagonist of sorts."
-    cs "So do I have like, real life plot armor?"
+    cs "So, do I have, like, real-life plot armor?"
     cs "I mean, now that I think about it, we dug out of prison using plastic spoons."
-    perfect_billy "Maybe, but all I know is that you are the one who has to stop them."
+    perfect_billy "Maybe! All I know is that you are the one who has to stop them."
     cs "So, I can't relax yet?"
-    cs "I was really hoping I could go back to a normal life again, I'm tired."
-    perfect_billy "Don't worry CS, the least I can do is this!"
+    cs "I was really hoping I could go back to a normal life again. I'm tired."
+    perfect_billy "Don't worry, CS! I can at least do {i}this{/i} for you!"
     #Billy heals CS
     cs "Wow, it feels like I just slept for a week!"
     cs "I don't think I have ever felt this good before."

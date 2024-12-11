@@ -577,7 +577,7 @@ label csbiii_reviews:
     cs "Yeah..."
     cs "You know, I just hope that my community will move on, now that I'm helping make this new content."
     cs "I've been making YouTube Poops for so long now that it's all anyone has come to expect from me."
-    cs "But even with my {a=patreon.com/cs188}Patreon{/a} and stuff, YTPs really don't pay very well. Advertisers don't like 'em and neither does the algorithm."
+    cs "But, even with my {a=patreon.com/cs188}Patreon{/a} and stuff, YTPs really don't pay very well. Advertisers don't like 'em and neither does the algorithm."
     cs "I hope that my fans will understand in due time that I just needed something {i}more."
     linus "I'm sure you'll be okay. Besides, the LTT fanbase is {i}much{/i} bigger!"
     linus "This company exists almost {i}entirely{/i} because of what YouTube pays us!"
@@ -1667,7 +1667,7 @@ label csbiii_good_convince:
     copguy "Listen, I really shouldn't be doing this right now, but I have to go back to look into this deal with HoH SiS."
     copguy "The only thing more corrupt than the force is scummy businesses like these." # TODO: idk that about that line
     copguy "You are free to go for now."
-    copguy "But know this: I am putting my job on the line for you."
+    copguy "But, know this: I am putting my job on the line for you."
     # fun fact, i stole this next line from my awful mother :D - tate
     copguy "Don't do anything stupid, because I have eyes everywhere." 
 

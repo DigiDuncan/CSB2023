@@ -87,7 +87,7 @@ label friend2_car_ride_1:
     kitty "Bloody hell!"
     mika "Jeez, I didn't think it was {i}that{/i} bad."
     show tate flipped
-    tate "Yeah, alright, we had a laugh, but maybe we should chill a bit."
+    tate "Yeah, alright, we had a laugh, but maybe we should chill a bit." # TODO: not a fan of this line even though yes i know i wrote it - tate
     tate "They've probably been stressed out all day long."
     tate "Anyways, how're y'all doing? Wait, I don't think we've ever actually met."
     mika "Well, I'm Mika. Thankfully, Pakoo called in time for us to arrive."
@@ -175,7 +175,7 @@ label friend2_dpn_diner:
     with dissolve
     show aria dark at left with moveinleft
     aria_alt "Ah, great. What is this, now?"
-    cop "Sorry, but a ragtag group of criminals is heading through this way. We need to stop them."
+    cop "Sorry, but a ragtag group of criminals is heading this way. We need to stop them."
     aria_alt "Ah, yeah. I understand."
     aria_alt "I'll just go around the other way."
     show aria dark flipped with determination
@@ -311,7 +311,7 @@ label friend2_cs_meetup_2:
     aria_alt "Or say the N-word."
     digi "Oh, yeah, that clears up everything..."
     if fun_value(FUN_VALUE_EPIC):
-        arceus "But the cops still don't like that we downed multiple--{nw}"
+        arceus "But, the cops still don't like that we downed multiple--{nw}"
         show boom at t_boom
         $ collect("boom")
         $ renpy.music.set_pause(True, "music")
@@ -331,7 +331,7 @@ label friend2_cs_meetup_2:
         arceus "You got it, boss."
         play sound sfx_clapperboard
         $ renpy.music.set_pause(False, "music")
-    arceus "But the cops still don't like that we downed multiple units, so we should get moving about now."
+    arceus "But, the cops still don't like that we downed multiple units, so we should get moving about now."
     cs "Yeah. Alright everyone, back on the road!"
     cs "Everyone follow me, and we will eventually find a safe spot away from the cops!"
     arceus "Roger that."
@@ -640,7 +640,7 @@ label friend2_car_ride_3:
         arceus "What the hell is that?"
         cs "What is it, Arceus?"
         show arceus flipped
-        arceus "Sorry, I thought I saw a flying whale on the GPS, but it was Copguy."
+        arceus "Sorry, I thought I saw a flying whale on the GPS, but it was just Copguy."
     else:
         n "While they are driving, Arceus notices that Copguy starts ludicrously speeding up until he stops in Illinois."
     arceus "Guys, I think I found out where Copguy is headed."
@@ -663,7 +663,7 @@ label friend2_car_ride_3:
     aria_alt "Digi, you didn't know that from the start?"
     digi "Did you see him? He was just... talking to the sky!"
     nova "Yeah? Well, let a man talk to the sky!"
-    digi "But he was absolutely going insane!"
+    digi "But he was going absolutely insane!"
     aria_alt "Digi, you've gotta learn that the spectrum hits different for everyone."
     scene black with dissolve
     pause 2.0
@@ -673,7 +673,7 @@ label friend2_car_ride_3:
     show tate flipped at right
     with dissolve
     tate "So I went to Dollar Tree a couple days ago, right? Bought some of their off-brand snacks--"
-    mika "I feel like only a few off-brands can taste well, but there are a few I just can't eat."
+    mika "I feel like only a few off-brands are good. I just can't eat most of them."
     tate "Saaaaame, which ones?"
     mika "Usually the off-brand Cheez-its, but I really don't like the off-brand Goldfish either."
     show tate shock flipped
@@ -737,13 +737,13 @@ label friend2_final_meetup:
     n "Anno holds out his phone."
     db "Hey, guys! Sorry I'm gonna miss out on the huge battle thing! I had to do some things at home first."
     $ renpy.movie_cutscene(db_bl)
-    db "But I'll gladly encourage you while you all are fighting!"
+    db "But I'll gladly cheer you on while you're fighting!"
     cs "No problem DB! Every little bit helps!"
     tate "Y'all ready?"
     if fun_value(FUN_VALUE_MUSIC):
-        cs "Hell yeah! Let's go send Copguy Trans Atlantic!"
+        cs "Hell yeah! Let's send Copguy Trans Atlantic!"
     else:
-        cs "Hell yeah! Let's go put Copguy through the slammer!"
+        cs "Hell yeah! Let's throw Copguy in the slammer!"
     stop music fadeout 3.0
     music end
     scene black with dissolve

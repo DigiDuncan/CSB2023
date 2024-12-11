@@ -148,7 +148,7 @@ label england_travel:
     show cs disappointed at left
     $ engfirst = True
     cs "Uhh, I guess I wanted to go to England?"
-    benrey "Well, I'm sorry, but everyone has a Pass{w=0.5} Port!"
+    benrey "Well, I'm sorry, but {i}everyone{/i} has a Pass{w=0.5} Port!"
     benrey "Try checking your pocket."
     n "CS puts his hand in his pocket and pulls out a Canadian passport."
     show cs
@@ -208,7 +208,7 @@ label sweden_travel:
     show cs disappointed at left
     $ swedfirst = True
     cs "Uhh, I guess I wanted to go to Sweden?"
-    benrey "But everyone has a Pass{w=0.5} Port!"
+    benrey "But {i}everyone{/i} has a Pass{w=0.5} Port!"
     benrey "Try checking your back pocket."
     n "CS puts his hand in his back pocket and pulls out a Canadian passport."
     show cs
@@ -260,7 +260,7 @@ label japan_travel:
     show cs disappointed at left
     $ jpnfirst = True
     cs "Uhh, I guess I wanted to go to Japan?"
-    benrey "Well, I'm sorry, but everyone's got a Pass{w=0.5} Port!"
+    benrey "Well, I'm sorry, but {i}everyone's{/i} got a Pass{w=0.5} Port!"
     benrey "Try checking your left shoe."
     n "CS takes off his left shoe and pulls out a Canadian passport."
     show cs
@@ -693,7 +693,7 @@ label england_bad_ramsay:
     show cs flipped
     cs "I guess the only thing I can think of off the top of my head is the cake Phil made for Michael."
     cs "That can't be too hard, right? It's just chocolate cake and Flex Seal, I think."
-    cs "Don't know if the Flex Seal adds any taste, but I guess it's worth a try?"
+    cs "Don't know if the Flex Seal adds any taste, but I guess it's worth a try...?"
     cs "Alright, well, let's do this."
     scene black with dissolve
     if fun_value(FUN_VALUE_MUSIC):
@@ -712,7 +712,7 @@ label england_bad_ramsay:
     gordon "Let's see how it tastes!"
     n "Gordon takes a slice and starts eating it."
     gordon "It's very rich and smooth on the outside..."
-    gordon "But it tastes weird... on the--{w=0.5}{nw}"
+    gordon "But, it tastes weird... on the--{w=0.5}{nw}"
     n "Gordon starts coughing."
     show cs disappointed flipped
     cs "Woah, you okay there?"
@@ -990,7 +990,7 @@ label england_top_win:
     james "We'll send your car back home as soon as possible."
     cs "Thanks."
     cs "Well, I guess I should be going now. I'd like to race again sometime {i}without{/i} a bomb stuck to the bottom of my car."
-    hammond "But that was fun, wasn't it?"
+    hammond "But, that was fun, wasn't it?"
     cs "It was fun before the end!"
     cs "Whatever, I'll see you guys later."
     show cs angry flipped with determination
@@ -1042,7 +1042,7 @@ label england_scott_zone:
     show cs at left
     $ tom_check = True
     cs "I wanna see what Tom Scott is up to."
-    kitty "Who, now?"
+    kitty "{i}Who,{/i} now?"
     arceus "He's some guy here who explores weird topics on YouTube."
     cs "Yeah, I kinda wanna see if I can go do stuff with him."
     cs "Maybe I can be in his video?"
@@ -1718,7 +1718,7 @@ label japan_miku_pizza:
         music automatic_love
     miku "... so I said, \"You think {i}that{/i} was fast? Wait until I sing {i}INTENSE VOICE!\""
     n "CS laughs."
-    cs "Well, Miku, this was very nice, but I need to head on my way."
+    cs "Well, Miku, this was very nice, but I need to be on my way."
     miku "Okay! Thanks for sharing lunch with me, this was very nice."
     cs "Bye, Miku!"
     $ achievement_manager.unlock("miku")
@@ -1742,7 +1742,7 @@ label japan_leave:
     show cs at center
     with dissolve
     cs "Well, I think I've done everything I wanted to do here!"
-    cs "This place was really cool, but I should get going for now."
+    cs "This place was really cool, but I should probably get going."
     cs "Maybe one day, I can return when I have more time."
     stop music fadeout 3.0
     music end
@@ -1880,7 +1880,7 @@ label sweden:
         cs "I guess I should try to find a creative exercise to do..."
     else:
         cs "I guess I should try to find something to do..."
-    cs "I don't have much money left, but I should be able to find a bus to somewhere cool."
+    cs "I don't have much money left, but maybe I can take the bus to somewhere cool."
     hide cs with moveoutright
     scene bus_zone 
     show swede at left    
@@ -2044,7 +2044,7 @@ label sweden_aurora_borealis:
     snufkin "Hello, Moomin. I see you've brought a new friend."
     moomin "Yes, this is CS. He's looking for something, and I thought you could help."
     cs "I'd like to see the Aurora Borealis." 
-    cs "I was hoping to see it tonight, but Moomin said he never heard of it, so I think maybe it doesn't happen around here."
+    cs "I was hoping to see it tonight, but Moomin said he's never heard of it. Maybe it doesn't happen around here."
     snufkin "Why, sure it can! It can happen anywhere."
     show cs disappointed
     cs "Don't you have to be far enough north...?"
@@ -2089,7 +2089,7 @@ label sweden_aurora_borealis:
         cs "Hello, Lady of the cold. I'd like your help seeing the Aurora Borealis."
     else:
         cs "Hello, Madam Witch. I'd like your help seeing the Aurora Borealis."
-    witch "Oh, is that all? Sure, I can turn it on for you, but I'm gonna need something from you first."
+    witch "Oh, is that all? Sure, I can turn it on for you, but I'm gonna need something from you, first."
     witch "I've been wanting to make a steamed ham. It's an old family recipe."
     witch "I've just been so busy, I haven't had time to go find a pig for it."
     witch "Could you go get one for me?"
@@ -2279,11 +2279,11 @@ label sweden_ikea:
     cs "Poor thing. I hope she gets some rest."
     cs "I should find my way back to the exit, though. I don't wanna get lost, too."
     hide cs with moveoutright
-    n "CS starts following the exit signs, but he eventually realizes that he's been looking for the exit longer than he had been in the store."
+    n "CS starts following the exit signs, but he eventually realizes that he's been looking for the exit longer than he had spent browsing the store."
     scene home_decor with dissolve
     show cs disappointed at left with moveinleft
     show cs worried
-    cs "Oh my gosh, the clown was right! I can't get out of here."
+    cs "Oh, my gosh! That clown was right! I can't get out of here!"
     show cs disappointed
     cs "Well, I may as well eat about it."
     hide cs with moveoutright
@@ -2393,7 +2393,7 @@ label sweden_joel:
     cs "Why are you tracking aliens?"
     joel "They keep coming and killing my livestock."
     joel "At first, I thought it was just Swedish Santa, because I forgot to leave out porridge for him."
-    joel "Then, I left out porridge for him after I replaced the first horse, but then that horse was also killed."
+    joel "Then, I left out porridge for him after I replaced the first horse, but then {i}that{/i} horse was also killed."
     joel "He didn't even eat the porridge!"
     joel "I left a camera out after I replaced the horse, and I caught the little grey alien on the camera."
     cs "That's wild. So, you're tracking it so you know when it comes for the horse?"

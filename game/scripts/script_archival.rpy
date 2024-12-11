@@ -59,7 +59,7 @@ label archival:
     scene craptop_old with dissolve
     show cs disappointed at left with moveinleft
     pause 0.5
-    cs "I feel like this is my craptop, but I don't even {i}have{/i} my craptop anymore!"
+    cs "I {i}feel{/i} like this is my craptop, but I don't even {i}have{/i} my craptop anymore!"
     cs "It looks {i}off{/i}, though..."
     n "CS lifts the lid and powers it on, curious about the strange connection he is feeling with it."
     n "The laptop slowly boots, playing the classic Windows XP start sound."
@@ -109,7 +109,7 @@ label archival:
     k207 "Shut up, 19-M9!"
     k199 "Alright, sheesh."
     k207 "What I was {i}trying{/i} to say is that this could've taken place after HoH SiS left, meaning CS is out right now anyway."
-    k199 "Yeah, but why did it {i}trigger?{/i} There is {i}no one{/i} here!"
+    k199 "Yeah, but... why did it {i}trigger?{/i} There is {i}no one{/i} here!"
     k207 "I don't know, man! I'm just throwing something out there!"
     k199 "{i}God!{/i} It's a miracle you could even put this together, 17-M4. It feels like this place is barely holding up!"
     k199 "I mean, what did you write here? \"This house has felt like it was sitting with a giant rock on the side of the house\"?"

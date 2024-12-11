@@ -140,7 +140,7 @@ label kuwait_hospital:
     cs "{i}Oh, jeez...{/i}"
     scene black with dissolve
     n "CS falls asleep for a few more hours."
-    n "As he wakes up, CS feels refreshed, but hungry and very thirsty."
+    n "As he wakes up, CS feels refreshed, but hungry, and very thirsty."
     cs "I really need to take a crap, too."
     cs "Nurse, where's the bathroom?"
     k_nurse "Down the hall, to the left."
@@ -170,7 +170,7 @@ label kuwait_hospital:
     cs "Yes! Wait, how'd you know my name?"
     l_snow "We took a peek at your wallet when you first came in."
     cs "Well, what the hell is going on?"
-    l_snow "Now, CS, I know it's going to shock you, but... It's been seven years since Kuwait fell."
+    l_snow "Now, CS, I know it's going to shock you, but... it's been seven years since Kuwait fell."
     cs "You mean to tell me I've been in a coma for {i}seven years?!"
     scene black
     centered "Chapter 1: 7 Years Later"
@@ -205,7 +205,7 @@ label kuwait_hospital:
     cs "Oh, God... You {i}saw{/i} those?"
     l_snow "Yeah, they were funny."
     l_snow "Anyway, we need a field agent of sorts. Someone who knows their way around a fight, y'know?"
-    cs "I guess... but the last fight I had landed me here in Kuwait."
+    cs "I guess, but the last fight I had landed me here in Kuwait."
     l_snow "Two things before you go: First, here's your field communicator, an iPad 2!"
     cs "An iPad? Is that really the best equipment you've got?"
     l_snow "I mean, we have this holographic display device, if you want to give it a spin."

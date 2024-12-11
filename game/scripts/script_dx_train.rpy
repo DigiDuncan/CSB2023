@@ -61,7 +61,7 @@ label train_intro_start:
         show arceus worried flipped
 
     pause 1.0
-    arceus "... But how {i}will{/i} we get back, exactly?"
+    arceus "... But, how {i}will{/i} we get back, exactly?"
     arceus "That's a pretty long drive. I'm already beat."
 
     # flip
@@ -639,7 +639,7 @@ label train_kingman_platform:
     show tate sheepish
     pause 1.0
     amtrak_conductor "You're already on thin ice after what happened in the dining car."
-    tate "But I just wanted--{w=0.25}{nw}"
+    tate "But, I just wanted--{w=0.25}{nw}"
     amtrak_conductor "The {i}only{/i} reason why you're still on this train is because the new guy won't let us kick you off."
     tate "Listen, I was just trying to he--{w=0.25}{nw}"
     amtrak_conductor "Yeah, well, {i}don't."
@@ -717,7 +717,7 @@ label train_boarding:
         tate "I know, but–-{w=1.0}{nw}"
         amtrak_stewardess "Keep up with the bit."
         show tate sad
-        tate "But CS gets away with it all the time..."
+        tate "But, CS gets away with it all the time--!"
         amtrak_stewardess "Also, please stop trying to do {i}my{/i} job."
     else:
         tate "... And, {i}this{/i} way is the sleeper car! Your room is--{w=0.25}{nw}"
@@ -1108,7 +1108,7 @@ label train_enter_sleeper:
     show tate sad flipped
     cs "I {i}know{/i} how you work, Tate."
     cs "I really think that sometimes you need to just... \nlet {w=0.25}things {w=0.25}{i}happen."
-    tate "But Mean--{w=0.25}{nw}"
+    tate "But, Mean--{w=0.25}{nw}"
     show tate sad
     show arceus happy
     arceus "Now, obviously, I've never met the guy, but I'm sure Mean will be fine."
@@ -1148,7 +1148,7 @@ label train_enter_sleeper:
     $ next_line = substitutions("I think Mean said that someone even got " + ch2_cs_attack_used + " off of the roof!")
     tate "[next_line]"
     show tate sheepish flipped
-    tate "But since Mean couldn't... {w=0.5}{size=-5}hold him off... {w=0.5}{size=-5}he was... {w=1.0}{size=-5}fired..."
+    tate "But, since Mean couldn't... {w=0.5}{size=-5}hold him off... {w=0.5}{size=-5}he was... {w=1.0}{size=-5}fired..."
     "..."
     pause 2.0
     show tate shock flipped
@@ -1256,7 +1256,7 @@ label train_enter_sleeper:
         n "He makes for the dining car in hopes of drinking his worries away."
         play sound sfx_sliding_door_open
         pause 2.0
-        n "However, the door is heavier than expected."
+        n "But the door is heavier than expected."
         play sound sfx_clonk
         with hpunch
         pause 1.0
@@ -1644,7 +1644,7 @@ label train_wakeup:
     mean "If it weren't for you, I'd still be sitting at home playing fucking {i}Minecraft{/i} and listening to whatever weird shit's popular on Spoofy!"
     mean "What could be better?"
     show tate sad flipped
-    tate "But what about the thief?!"
+    tate "What about the {i}thief?!" with vpunch
     show mean ayo
     mean "Wait, you think Amtrak actually {i}gives{/i} a shit about stolen items?"
     show mean angry
@@ -3314,7 +3314,7 @@ label train_lupin_win:
     amtrak_conductor "On behalf of Amtrak, I'd to thank all of you for your help this evening."
     mean "All in a day's work, right?"
     show tate sheepish
-    tate "But, what do we do, now?"
+    tate "So, what happens now?"
     amtrak_conductor "Well, since he's all locked up nice and tight, I'll bring this guy back to my unit until we stop in Hutchinson."
     amtrak_conductor "It's {i}well{/i} past my bedtime, and I'd like to start winding down."
     amtrak_conductor "Oh, yes. Mean?"

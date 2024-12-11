@@ -34,7 +34,9 @@ label true_east:
     arceus "Thank God the slushie machine was working for once."
     cs "Okay, now that we can think about something other than food, what's our plan to get home?"
     arceus "Yeah... I have no clue currently."
-    arceus "I was hoping that we could hitchhike on a bus or something, but it might be ages until that happens, if it even {i}does{/i} happen... This town is too small for a bus route."
+    arceus "At first, I thought we could take a bus, or something, but this town is too small for a bus route..."
+    arceus "Then, I thought, maybe we could hitchhike, but it might be ages before we find someone willing, if we do at all..."
+    arceus "What do you think, CS?"
     stop music fadeout 3.0
     music end
     menu:
@@ -48,7 +50,7 @@ label true_hotwire:
     scene gasinside
     show cs surprised at left
     show arceus at right
-    cs "I don't know... We could just... hotwire a car?"
+    cs "I don't know... we {i}could{/i} just... hotwire a car?"
     arceus "I can probably do that. Let's go look."
     scene gasoutside with dissolve
     show cs at left with moveinleft
@@ -419,8 +421,8 @@ label true_montana:
     play sound sfx_roll_window volume 0.7
     n "Billy pulls up to the drive-thru to place his order."
     cashier "Hello, what would you like to order?"
-    billy "Hi, Billy Mays here! I would like to get the Buy 1 Get 1 Free breakfast meal for my friends here,"
-    billy "and I would also like to get the Egg McMuffin and a Big Mac for me."
+    billy "Hi, Billy Mays here! I would like to get the Buy 1 Get 1 Free breakfast meal for my friends here..."
+    billy "And I would also like to get the Egg McMuffin and a Big Mac for me." # TODO: is this section a reference because if it is not it needs a little help - tate
     cashier "Sure thing, that'll be--{nw}"
     billy "But I'm not done yet! I would like to triple the offer and get three Big Macs, and also three large sodas without any shipping!"
     cashier "Uhh, yeah, we can do that without shipping."
@@ -1053,7 +1055,7 @@ label true_win_pencil:
         billy "Don't you dare take a dump in my car!"
     else:
         cs "Well, that was a lot of excitement for one day. Let's head home."
-        n "Despite working harder to support CS, Arceus can't help but look relieved to get back on track."
+        n "Despite working harder to support CS, Arceus can't help but look relieved to get back on track." # TODO: rewrite? - tate
         arceus "Absolutely."
         billy "Let's get back in my car!"
 

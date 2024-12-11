@@ -94,7 +94,7 @@ label south_start:
     play sound sfx_driving volume 0.5
     pause 1.0
     cs "Woohoo! Vegas time!"
-    arceus "I don't even know how you do these things, man, but let's go!"
+    arceus "I don't even know how you {i}do{/i} these things, man, but... let's go!" # TODO: this line needs help - tate
     n "The duo heads out to Vegas, or, where they presume Vegas is."
     stop sound fadeout 2.0
     scene black with dissolve
