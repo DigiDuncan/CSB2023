@@ -387,7 +387,7 @@
         "dx": true
     },
     "folded_paper": {
-        "img": "post-it.png",
+        "img": "folded_paper",
         "name": "Mysterious Paper",
         "owner": "Billy Mays",
         "desc": "It contains instructions for... something.",
@@ -554,7 +554,7 @@
     "ltt_car": {
         "img": "placeholder",
         "name": "Linus' Car",
-        "owner": "Linus",
+        "owner": "Linus Sebastian",
         "desc": "Placeholder text for now.",
         "rarity": "One-of-a-kind",
         "ce": true
