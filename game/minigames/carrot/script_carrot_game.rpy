@@ -9,6 +9,7 @@ init python:
     FULL_CS_HEIGHT = 1446
     CS_HEIGHT = 863
 
+
     class CarrotGameDisplayable(renpy.Displayable):
         def __init__(self):
             renpy.Displayable.__init__(self)
@@ -21,7 +22,7 @@ init python:
             self.start_beat = 32
 
             self.hit_window = 0.1  # 100ms
-            self.successful_beats = []
+            self.successful_beats = set()
             self.hits = 0
             self.misses = 0
 
@@ -39,7 +40,14 @@ init python:
             self.fg = Image("minigames/carrot/fg.png")
 
             self.carrot = Image("minigames/carrot/carrot.png")
+            self.glowing_carrot = Image("minigames/carrot/glowing_carrot.png")
             self.chopped_carrot = Image("minigames/carrot/chopped_carrot.png")
+            self.c_render = renpy.render(self.carrot, 433, 122, 0.0, 0.0)
+            self.gc_render = renpy.render(self.glowing_carrot, 433, 122, 0.0, 0.0)
+            self.cc_render = renpy.render(self.chopped_carrot, 285, 123, 0.0, 0.0)
+
+            self.carrots = [self.start_beat]
+            self.next_carrot = self.start_beat + 1
 
             self.perfect = Image("minigames/carrot/perfect.png")
 
@@ -70,14 +78,23 @@ init python:
         def render(self, width, height, st, at):
             if self.start_time is None:
                 self.start_time = st
+
+            # Play the song if we haven't
+            if not self.started_playing_song:
+                renpy.music.play("minigames/carrot/hotel_disbelief.ogg")
+                self.started_playing_song = True
+
+            # Update song time
             dt = st - self.last_tick
+            self.song_time += dt
+            was_fcing = self.is_fcing
+
             r = renpy.Render(1920, 1080)
 
             # Render background
             bg_renderer = renpy.render(self.bg, 1920, 1080, st, at)
             
-            # DRAGON HEP
-            x_bounce = 1.0 #  + self.bounce_offset
+            x_bounce = 0.75 + self.bounce_offset * 0.25
             y_bounce = 1.0 - self.bounce_offset * 0.25
             csbg_renderer = renpy.render(Transform(self.csbg, yzoom = y_bounce, xzoom = x_bounce), 1920, 1080, st, at)
             
@@ -85,7 +102,6 @@ init python:
 
             r.blit(bg_renderer, (0, 0))
 
-            # DRAGON HEP
             down_amount = self.bounce_offset * 0.25
             r.blit(csbg_renderer, (0, CS_HEIGHT * (down_amount - 0.25)))
 
@@ -101,28 +117,34 @@ init python:
                 perfect_renderer = renpy.render(self.perfect, 1920, 1080, st, at)
                 r.blit(perfect_renderer, (0, 0))
 
-            # Play the song if we haven't
-            if not self.started_playing_song:
-                renpy.music.play("minigames/carrot/hotel_disbelief.ogg")
-                self.started_playing_song = True
+            current = self.nearest_beat
+            hittable = abs(self.nearest_beat_time - self.song_time) <= self.hit_window
+            for carrot_beat in self.carrots[:]:
+                y = self.hand_position + 160
+                x = (carrot_beat * (60 / self.bpm) - self.song_time) * 433 * 3 + 300 
+                if x <= -300:
+                    self.carrots.remove(carrot_beat)
+
+                if carrot_beat in self.successful_beats:
+                    r.blit(self.cc_render, (x, y))
+                elif carrot_beat == current and hittable:
+                    r.blit(self.gc_render, (x, y))
+                else: 
+                    r.blit(self.c_render, (x, y))  
+ 
+            if (self.next_carrot * (60 / self.bpm) - self.song_time) >= 1920:
+                self.carrots.append(self.next_carrot)
+                self.next_carrot += 1
 
             # 3 2 1 Go
             if self.last_beat != self.current_beat and self.current_beat == self.start_beat - 4:
-                print("3!")
                 renpy.sound.play("minigames/carrot/3.ogg")
             elif self.last_beat != self.current_beat and self.current_beat == self.start_beat - 3:
-                print("2!")
                 renpy.sound.play("minigames/carrot/2.ogg")
             elif self.last_beat != self.current_beat and self.current_beat == self.start_beat - 2:
-                print("1!")
                 renpy.sound.play("minigames/carrot/1.ogg")
             elif self.last_beat != self.current_beat and self.current_beat == self.start_beat - 1:
-                print("Go!")
                 renpy.sound.play("minigames/carrot/go.ogg")
-
-            # Update song time
-            self.song_time += dt
-            was_fcing = self.is_fcing
 
             # Song time!
             if self.current_beat >= (self.start_beat - 1):
@@ -135,7 +157,7 @@ init python:
                     if abs(input_time - self.nearest_beat_time) <= self.hit_window:
                         if beat not in self.successful_beats:
                             # Good hit!
-                            self.successful_beats.append(beat)
+                            self.successful_beats.add(beat)
                             self.hits += 1
                             renpy.sound.play("minigames/carrot/hit.ogg")
                         else:
@@ -143,6 +165,12 @@ init python:
                             self.misses += 1
                             self.is_fcing = False
                             renpy.sound.play("minigames/carrot/miss.ogg")
+                    else:
+                        # Miss!
+                        self.misses += 1
+                        self.is_fcing = False
+                        renpy.sound.play("minigames/carrot/miss.ogg")
+
                     
                 if self.current_beat != self.last_beat:
                     if self.last_beat not in self.successful_beats:
