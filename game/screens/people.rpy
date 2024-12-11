@@ -284,7 +284,7 @@ screen person(l):
 
                                         # delimiter to handle outfit/expression names
                                         # ex. "Default: Happy" will be split
-                                        this_sprite_split = this_sprite.split(":")
+                                        this_sprite_split = this_sprite.split(": ")
                                         
                                         if len(this_sprite_split) > 1:
                                             this_sprite = "{size=-12}" + this_sprite_split[0] + "{/size}\n" + this_sprite_split[1]
