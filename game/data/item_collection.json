@@ -27,8 +27,8 @@
         "img": "anno_car",
         "name": "Anno's Car",
         "owner": "Anno",
-        "desc": "Placeholder text for now.",
-        "rarity": "Common",
+        "desc": "The Apocalypse Nirvana is a rugged electric vehicle designed for eco-friendly off-road adventures. Anno wanted one solely because of its kick-ass name.",
+        "rarity": "Rare",
         "ce": true
     },
     "arc_laptop": {
