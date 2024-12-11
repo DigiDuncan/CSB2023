@@ -41,7 +41,10 @@ init python:
         def bounce_offset(self) -> float:
             # BAD: FIX THIS DRAGON
             """https://www.desmos.com/calculator/ycvu69xqeo"""
-            pix = (self.song_time % (1 / (self.bpm / 2 / 60)) * -(self.bpm / 2 / 60) + 1)
+            # pix = (self.song_time % (1 / (self.bpm / 2 / 60)) * -(self.bpm / 2 / 60) + 1)
+            # Stolen from Charm BPM Animator
+            mag = abs((self.bpm * self.song_time / 60) % 1 - 0.5) * 2
+            pix = 1 - math.pow(2, -10 * mag) # ease_expoout
             return pix
 
         def render(self, width, height, st, at):
@@ -54,8 +57,8 @@ init python:
             bg_renderer = renpy.render(self.bg, 1920, 1080, st, at)
             
             # DRAGON HEP
-            x_bounce = 1 + (self.bounce_offset / 8)
-            y_bounce = 1 - (self.bounce_offset / 8)
+            x_bounce = 1.0 #  + self.bounce_offset
+            y_bounce = 1.0 - self.bounce_offset * 0.25
             csbg_renderer = renpy.render(Transform(self.csbg, yzoom = y_bounce, xzoom = x_bounce), 1920, 1080, st, at)
             
             fg_renderer = renpy.render(self.fg, 1920, 1080, st, at)
@@ -63,8 +66,8 @@ init python:
             r.blit(bg_renderer, (0, 0))
 
             # DRAGON HEP
-            down_amount = 0
-            r.blit(csbg_renderer, (0, -(FULL_CS_HEIGHT - CS_HEIGHT) + down_amount))
+            down_amount = self.bounce_offset * 0.25
+            r.blit(csbg_renderer, (0, CS_HEIGHT * (down_amount - 0.25)))
 
             r.blit(fg_renderer, (0, 0))
 
