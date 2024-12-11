@@ -2248,6 +2248,7 @@ label ce_aftershop:
     jump ce_party_before
 
 # TODO: put respective vehicles in background + item collection because funnie - tate
+# TODO: the item collection placeholders exist but they are not filled out.
 
 label ce_party_before:
     stop music
@@ -2273,6 +2274,8 @@ label ce_party_before:
         hide cs with moveoutleft
         stop sound fadeout 0.5
         scene cs_house_snow_night
+        # TODO: put vehicle img here
+        $ collect("rental_car")
         show arceus festive dark flipped at mid_left
         show kitty festive dark at left
         with dissolve
@@ -2293,6 +2296,8 @@ label ce_party_before:
         stop sound fadeout 0.5
         hide cs with moveoutleft
         scene cs_house_snow_night
+        # TODO: put vehicle img here
+        $ collect("anno_car")
         show anno festive dark at mid_left
         with dissolve
         show cs christmas dark flipped at right with moveinright
@@ -2306,6 +2311,8 @@ label ce_party_before:
         cs "What the hell is that?"
         hide cs with moveoutleft
         scene cs_house_snow_night
+        # TODO: put vehicle img here
+        $ collect("digi_nugget")
         show digi dark flipped at mid_left
         with dissolve
         show cs christmas dark flipped at right with moveinright
@@ -2338,6 +2345,8 @@ label ce_party_before:
         hide cs with moveoutleft
         stop sound fadeout 3.0
         scene cs_house_snow_night
+        # TODO: put vehicle img here
+        $ collect("mean_train")
         show mean human dark flipped at mid_left
         $ persistent.seen.add("mean_human")
         show tate festive dark at left
@@ -2377,6 +2386,8 @@ label ce_party_before:
         stop sound fadeout 0.5
         hide cs with moveoutleft
         scene cs_house_snow_night
+        # TODO: put vehicle img here
+        $ collect("billy_car")
         show billy festive dark at mid_left
         with dissolve
         show cs dark christmas flipped at right with moveinright
@@ -2400,6 +2411,8 @@ label ce_party_before:
         stop sound2 fadeout 1.0
         hide cs with moveoutleft
         scene cs_house_snow_night
+        # TODO: put vehicle img here
+        $ collect("obama_chopper")
         show obama festive dark at mid_left
         with dissolve
         show cs worried dark christmas flipped at right with moveinright
@@ -2428,6 +2441,8 @@ label ce_party_before:
         n "CS rushes outside."
         show cs worried christmas flipped at offscreenleft with MoveTransition(0.35)
         scene cs_house_snow_night
+        # TODO: put vehicle img here
+        $ collect("cop_car")
         show copguy festive dark flipped at mid_left
         with dissolve
         show cs worried christmas dark flipped at right with moveinright
@@ -2445,6 +2460,8 @@ label ce_party_before:
         stop sound fadeout 1.0
         hide cs with moveoutleft
         scene cs_house_snow_night
+        # TODO: put vehicle img here
+        $ collect("sheriff_bus")
         show sheriff festive dark flipped at left
         with dissolve
         show cs christmas dark flipped at right with moveinright
@@ -2462,6 +2479,8 @@ label ce_party_before:
         n "A familiar sound like a laser beam is heard from outside."
         hide cs with moveoutleft
         scene cs_house_snow_night
+        # TODO: put vehicle img here
+        $ collect("joj_ufo")
         show ed festive dark flipped at mid_mid_left
         show rich festive dark flipped at mid_left
         show wesley festive dark flipped at manual_pos(0.25, 1.0, 1.0)
@@ -2487,6 +2506,8 @@ label ce_party_before:
         stop sound fadeout 1.0
         hide cs with moveoutleft
         scene cs_house_snow_night
+        # TODO: put vehicle img here
+        $ collect("pakoo_car")
         show k22 dark flipped at left
         show k17 dark flipped at mid_mid_left
         with dissolve
@@ -2528,6 +2549,8 @@ label ce_party_before:
         hide cs with moveoutleft
         stop sound fadeout 1.0
         scene cs_house_snow_night
+        # TODO: put vehicle img here
+        $ collect("rosen_car")
         show michael festive dark at mid_left
         with dissolve
         show cs christmas dark flipped at right with moveinright
@@ -2544,6 +2567,8 @@ label ce_party_before:
         hide cs with moveoutleft
         stop sound fadeout 1.0
         scene cs_house_snow_night
+        # TODO: put vehicle img here
+        $ collect("ltt_car")
         show linus festive dark at mid_mid_left
         show luke festive dark flipped at left
         with dissolve
@@ -2569,6 +2594,8 @@ label ce_party_before:
         stop sound fadeout 1.0
         hide cs with moveoutleft
         scene cs_house_snow_night
+        # TODO: put vehicle img here
+        $ collect("blank_car")
         show blank festive dark flipped at mid_left
         with dissolve
         show cs christmas dark flipped at right with moveinright
@@ -2586,17 +2613,19 @@ label ce_party_before:
         stop sound fadeout 1.0
         hide cs with moveoutleft
         scene cs_house_snow_night
+        # TODO: put vehicle img here
+        $ collect("ges_car")
         show nova dark flipped at mid_left
         show ges dark flipped at left
         with dissolve
         show cs christmas dark flipped at right with moveinright
         nova "Hey, CS! Thanks for inviting me to your Christmas party!"
-        cs "Yeah! {w=1.0} It's been a while. How've you been?"
+        cs "Yeah! {w=1.0}It's been a while. How've you been?"
         nova "Oh, y'know, I've been moving a lot, had a friend move in with me..."
         cs "Well, if you wanna chat about it, let's get inside first. It's cold out here."
-        nova "Before we go in, I forgot to introduce you to my friend, Ges!"
+        nova "Before we go in, I'd like to introduce you to my friend Ges!"
         cs "He-ey Ges, how's it going?"
-        ges "Going pretty alright! How about you, eh?"
+        ges "Goin' pretty alright! How about you, eh?"
         cs "Oh, you know, just been preparing for this party!"
         ges "Oh, man. You need any help from me, since I'm early, eh?"
         cs "Oh, I'd {i}love{/i} the help! I just need to get some last-minute things ready."
@@ -2606,10 +2635,12 @@ label ce_party_before:
         show cs christmas flipped at mid_left with move
         n "CS sees a Jeep Cherokee pull up to his house."
         show cs disappointed christmas flipped
-        cs "What the fuck? Who is that?"
+        cs "What the fuck? Who is {i}that?"
         stop sound fadeout 1.0
         hide cs with moveoutleft
         scene cs_house_snow_night
+        # TODO: put vehicle img here
+        $ collect("mika_car")
         show elizabeth dark at center
         show anne dark at mid_left
         show grace dark at left
@@ -2635,6 +2666,8 @@ label ce_party_before:
         stop sound fadeout 1.0
         hide cs with moveoutleft
         scene cs_house_snow_night
+        # TODO: put vehicle img here
+        $ collect("db_car")
         show db dark at mid_left
         with dissolve
         show cs christmas dark flipped at right with moveinright

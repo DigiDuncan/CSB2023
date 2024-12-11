@@ -2529,7 +2529,6 @@ image sleigh:
 
 image snow_pile = "snow_pile.png"
 
-
 # Static Images
 image amtrak_dining_food = "food.png" 
 image amtrak_dining_pancake = "pancake.png"
