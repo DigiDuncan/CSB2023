@@ -5405,6 +5405,12 @@ label ce_climax:
         cs "If you hated my party so much, then you can just fucking die!" # NOTE: This is supposed to be a reference to the Comfort Click video, but I don't know if he'll read it like that. - pak
     nova "Well, I'm {i}also{/i} leaving, because {i}this{/i} asshole won't let me play any {i}good{/i} music!" with hpunch
     blank "Hah! Says you! {i}You{/i} just wanted to play {i}your{/i} trash for the entire party!" with hpunch
+    show projector_airplay behind cs:
+        zoom 1.3
+        perspective True
+        matrixanchor (0, 0)
+        matrixtransform RotateMatrix(0, 0, 0) * RotateMatrix(0, 35, 0) * RotateMatrix(0, 0, 0) * OffsetMatrix(32, 40, 0)
+    with dissolve
     digi "Hey, wait a second! Luke!" with hpunch
     luke "Wha--?"
     luke "Oh, {i}shit."
