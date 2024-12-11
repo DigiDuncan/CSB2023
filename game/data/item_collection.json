@@ -64,7 +64,7 @@
         "img": "blank_car",
         "name": "Blank's Car",
         "owner": "Blank",
-        "desc": "A 2012 Honda Civic that Blank modded himself. .",
+        "desc": "A modded 2012 Honda Civic. While most of the changes Blank has made to the car do not affect its appearance, some notable additions include a built-in backup camera, front {i}and{/i} rear dashcams, and a secondary truck air horn.",
         "rarity": "Common",
         "ce": true
     },

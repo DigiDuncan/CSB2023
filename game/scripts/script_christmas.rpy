@@ -2597,7 +2597,8 @@ label ce_party_before:
         stop sound fadeout 1.0
         hide cs with moveoutleft
         scene cs_house_snow_night
-        show blank_car dark at manual_pos(0.3, 0.8, 0.5)
+        show blank_car dark at manual_pos(0.3, 0.8, 0.5):
+            zoom 0.5
         $ collect("blank_car")
         show blank festive dark flipped at mid_left
         with dissolve
