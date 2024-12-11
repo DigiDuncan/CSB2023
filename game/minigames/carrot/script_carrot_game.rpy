@@ -77,9 +77,7 @@ init python:
 
         @property
         def bounce_offset(self) -> float:
-            # BAD: FIX THIS DRAGON
             """https://www.desmos.com/calculator/ycvu69xqeo"""
-            # pix = (self.song_time % (1 / (self.bpm / 2 / 60)) * -(self.bpm / 2 / 60) + 1)
             # Stolen from Charm BPM Animator
             mag = abs((self.bpm * self.song_time / 60) % 1 - 0.5) * 2
             pix = 1 - math.pow(2, -10 * mag) # ease_expoout
