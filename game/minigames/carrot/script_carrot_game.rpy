@@ -9,7 +9,6 @@ init python:
     FULL_CS_HEIGHT = 1446
     CS_HEIGHT = 863
 
-
     class CarrotGameDisplayable(renpy.Displayable):
         def __init__(self):
             renpy.Displayable.__init__(self)
@@ -20,6 +19,8 @@ init python:
             self.bpm = 127
             self.bounce_pixels = 50
             self.start_beat = 32
+            self.song_length = 60.5
+            self.no_beats = self.song_length / 60 * self.bpm
 
             self.hit_window = 0.1  # 100ms
             self.successful_beats = set()
@@ -88,6 +89,12 @@ init python:
                 renpy.music.play("minigames/carrot/hotel_disbelief.ogg", loop = False)
                 self.started_playing_song = True
 
+                global _current_internal_id, _current_artist, _current_song
+
+                _current_internal_id = "hotel_disbelief"
+                _current_song = "Can You Really Call This A Hotel, I Didn't Receive A Mint On My Pillow Or Anything"
+                _current_artist = "Toby Fox"
+
             # Update song time
             dt = st - self.last_tick
             self.song_time += dt
@@ -137,11 +144,15 @@ init python:
                 elif carrot_beat == nearest and hittable:
                     r.blit(self.gc_render, (x, y))
                 else: 
-                    r.blit(self.c_render, (x, y))  
+                    r.blit(self.c_render, (x, y))
  
-            if (self.next_carrot * (60 / self.bpm) - self.song_time) * 433 * 3 >= 1920:
+            if self.next_carrot <= self.no_beats and (self.next_carrot * (60 / self.bpm) - self.song_time) * 433 * 3 + 300 <= 1920:
                 self.carrots.append(self.next_carrot)
                 self.next_carrot += 1
+
+            if self.current_beat < 8:
+                music_renderer = renpy.render(Transform(DynamicDisplayable(_music_gen_text), zoom = 0.5), 1920, 1080, st, at)
+                r.blit(music_renderer, (0, 0))
 
             # 3 2 1 Go
             if last != current and current == self.start_beat - 4:
@@ -198,6 +209,10 @@ init python:
                 renpy.sound.play("minigames/carrot/miss.ogg")
             elif hit:
                 renpy.sound.play("minigames/carrot/hit.ogg")
+
+            # hardcode win for now
+            if self.song_time > self.song_length:
+                self.win = True
 
             renpy.redraw(self, 0)
             self.last_tick = st
