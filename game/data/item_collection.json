@@ -346,6 +346,14 @@
         "rarity": "Common",
         "dx": true
     },
+    "folded_paper": {
+        "img": "post-it.png",
+        "name": "Mysterious Paper",
+        "owner": "Billy Mays",
+        "desc": "It contains instructions for... something.",
+        "rarity": "Common",
+        "ce": true
+    },
     "fumo": {
         "img": "fumo",
         "name": "Addy Fumo",

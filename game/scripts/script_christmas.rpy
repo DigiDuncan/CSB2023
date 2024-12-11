@@ -2604,7 +2604,7 @@ label ce_party_before:
     elif d20 == 18:
         play sound sfx_car_approach_stop volume 5.0 fadein 1.0
         show cs christmas flipped at mid_left with move
-        n "CS sees a Cherokee pull up to his house."
+        n "CS sees a Jeep Cherokee pull up to his house."
         show cs disappointed christmas flipped
         cs "What the fuck? Who is that?"
         stop sound fadeout 1.0
@@ -2673,7 +2673,7 @@ label ce_party_before:
         cs "Okay, what's going on? I figured {i}someone{/i} would show up early."
         show cs disappointed christmas flipped at mid_left with MoveTransition(1.0)
         n "CS looks out into the distance."
-        cs "Wait, who is that?"
+        cs "Wait, who is {i}that?"
         hide cs with moveoutleft
         scene cs_house_snow_night
         show iris dark flipped at mid_left
@@ -7124,9 +7124,9 @@ label ce_roof_moment:
     k22 "Hey, Billy. Can I talk to you for a minute?"
     billy "Sure thing! How can I help?"
     k22 "I, uhh... had a customer who wanted you to make something for them."
-    # TODO: Tate put this in the item collection thingy
     show folded_paper dark at manual_pos(0.65, 0.75, 0.5) with dissolve:
         zoom 0.6
+    $ collect("folded_paper")
     pause 0.5
     show folded_paper dark at manual_pos(0.25, 0.65, 0.5):
         zoom 0.6
