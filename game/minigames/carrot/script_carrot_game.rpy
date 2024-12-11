@@ -18,6 +18,16 @@ init python:
 
             self.bpm = 127
             self.bounce_pixels = 50
+            self.start_beat = 32
+
+            self.hit_window = 0.1  # 100ms
+            self.successful_beats = []
+            self.hits = 0
+            self.misses = 0
+
+            self.hit_to_process = False
+            self.pressing_down = False
+            self.last_beat = -1
 
             self.is_fcing = True
             self.song_time = 0.0
@@ -31,11 +41,21 @@ init python:
             self.carrot = Image("minigames/carrot/carrot.png")
             self.chopped_carrot = Image("minigames/carrot/chopped_carrot.png")
 
+            self.perfect = Image("minigames/carrot/perfect.png")
+
             self.hand_position = 560
 
         @property
         def current_beat(self) -> int:
             return int(self.song_time * (self.bpm / 60))
+
+        @property
+        def nearest_beat(self) -> int:
+            return int(round(self.song_time * (self.bpm / 60)))
+
+        @property
+        def nearest_beat_time(self) -> int:
+            return self.nearest_beat * (60 / self.bpm)
 
         @property
         def bounce_offset(self) -> float:
@@ -73,25 +93,83 @@ init python:
 
             # Render hand
             hand_renderer = renpy.render(self.hand, 1920, 1080, st, at)
-            h_pos = self.hand_position
+            h_pos = self.hand_position + (100 * self.pressing_down)
             r.blit(hand_renderer, (0, h_pos))
+
+            # Render perfect
+            if self.current_beat % 4 in (0, 1) and self.is_fcing:
+                perfect_renderer = renpy.render(self.perfect, 1920, 1080, st, at)
+                r.blit(perfect_renderer, (0, 0))
 
             # Play the song if we haven't
             if not self.started_playing_song:
                 renpy.music.play("minigames/carrot/hotel_disbelief.ogg")
                 self.started_playing_song = True
 
+            # 3 2 1 Go
+            if self.last_beat != self.current_beat and self.current_beat == self.start_beat - 4:
+                print("3!")
+                renpy.sound.play("minigames/carrot/3.ogg")
+            elif self.last_beat != self.current_beat and self.current_beat == self.start_beat - 3:
+                print("2!")
+                renpy.sound.play("minigames/carrot/2.ogg")
+            elif self.last_beat != self.current_beat and self.current_beat == self.start_beat - 2:
+                print("1!")
+                renpy.sound.play("minigames/carrot/1.ogg")
+            elif self.last_beat != self.current_beat and self.current_beat == self.start_beat - 1:
+                print("Go!")
+                renpy.sound.play("minigames/carrot/go.ogg")
+
             # Update song time
             self.song_time += dt
+            was_fcing = self.is_fcing
+
+            # Song time!
+            if self.current_beat >= (self.start_beat - 1):
+                # Process input
+                if self.hit_to_process:
+                    input_time = self.song_time
+
+                    # Find nearest beat
+                    beat = self.nearest_beat
+                    if abs(input_time - self.nearest_beat_time) <= self.hit_window:
+                        if beat not in self.successful_beats:
+                            # Good hit!
+                            self.successful_beats.append(beat)
+                            self.hits += 1
+                            renpy.sound.play("minigames/carrot/hit.ogg")
+                        else:
+                            # Overhit!
+                            self.misses += 1
+                            self.is_fcing = False
+                            renpy.sound.play("minigames/carrot/miss.ogg")
+                    
+                if self.current_beat != self.last_beat:
+                    if self.last_beat not in self.successful_beats:
+                        # Miss!
+                        self.misses += 1
+                        self.is_fcing = False
+                        renpy.sound.play("minigames/carrot/miss.ogg")
+
+            if was_fcing and not self.is_fcing:
+                renpy.sound.play("minigames/carrot/perfect_fail.ogg")
 
             renpy.redraw(self, 0)
             self.last_tick = st
+            self.last_beat = self.current_beat
+            self.hit_to_process = False
             return r
 
         def event(self, ev, x, y, st):
             import pygame
-            if ev.type == pygame.KEYDOWN and ev.key == pygame.K_END:
-                self.win = True
+            if ev.type == pygame.KEYDOWN:
+                if ev.key == pygame.K_END:
+                    self.win = True
+                if ev.key == pygame.K_SPACE:
+                    self.pressing_down = True
+                    self.hit_to_process = True
+            if ev.type == pygame.KEYUP:
+                self.pressing_down = False
             if self.win is not None:
                 return self.win
 
