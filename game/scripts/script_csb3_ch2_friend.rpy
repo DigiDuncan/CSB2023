@@ -951,6 +951,7 @@ label friend2_car_slam:
     copguy "C--{w=0.5}{nw}"
     show db_cooper at offscreenright
     show db_cooper at right
+    $ collect("db_car")
     show cs worried at left
     with move
     show cs scared

@@ -2297,7 +2297,7 @@ label ce_party_before:
         stop sound fadeout 0.5
         hide cs with moveoutleft
         scene cs_house_snow_night
-        # TODO: put vehicle img here
+        show anno_car dark at manual_pos(0.3, 0.8, 0.5)
         $ collect("anno_car")
         show anno festive dark at mid_left
         with dissolve
@@ -2597,12 +2597,12 @@ label ce_party_before:
         stop sound fadeout 1.0
         hide cs with moveoutleft
         scene cs_house_snow_night
-        # TODO: put vehicle img here
+        show blank_car dark at manual_pos(0.3, 0.8, 0.5)
         $ collect("blank_car")
         show blank festive dark flipped at mid_left
         with dissolve
         show cs christmas dark flipped at right with moveinright
-        blank "Hey, CS, how've you been?"
+        blank "Hey, CS! How've you been?"
         cs "I've been doing well! Was the drive safe up here?"
         blank "It was for me, but, for lots of people on the interstate, it sure wasn't!"
         blank "I got quite a bit of dashcam footage if you want to watch some with me."
@@ -2669,7 +2669,7 @@ label ce_party_before:
         stop sound fadeout 1.0
         hide cs with moveoutleft
         scene cs_house_snow_night
-        # TODO: put vehicle img here
+        show db_car dark at manual_pos(0.3, 0.8, 0.5)
         $ collect("db_car")
         show db dark at mid_left
         with dissolve

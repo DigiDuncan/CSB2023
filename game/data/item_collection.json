@@ -24,7 +24,7 @@
         "dx": true
     },
     "anno_car": {
-        "img": "placeholder.png",
+        "img": "anno_car",
         "name": "Anno's Car",
         "owner": "Anno",
         "desc": "Placeholder text for now.",
@@ -61,10 +61,10 @@
         "rarity": "Common"
     },
     "blank_car": {
-        "img": "placeholder",
+        "img": "blank_car",
         "name": "Blank's Car",
         "owner": "Blank",
-        "desc": "Placeholder text for now.",
+        "desc": "A 2012 Honda Civic that Blank modded himself. .",
         "rarity": "Common",
         "ce": true
     },
@@ -262,10 +262,10 @@
         "ce": true
     },
     "db_car": {
-        "img": "placeholder",
+        "img": "db_car",
         "name": "DB's Car",
         "owner": "db05",
-        "desc": "Placeholder text for now.",
+        "desc": "A 2017 Mini Cooper.",
         "rarity": "Common",
         "ce": true
     },
