@@ -1,19 +1,20 @@
 if it's already in images/ don't edit it, it's fine as-is and/or already in item collection.
 
 anything in future needs edited please
+if it has a check, it's already in item collection
 
 Dice rolls and vehicles.
 
 1. [nothing] ----- [nothing]
-2. Arc/Kitty car ----- images/car.png
+2. Arc/Kitty car ----- images/car.png ✔️
 3. Anno car ----- /images/future/anno_car.png
 4. Digi nugget ----- [PENDING]
 5/6. Tate/Mean train ----- [PENDING]
-7. Billy car ----- images/billy_car.png
+7. Billy car ----- images/billy_car.png ✔️
 8. Obama chopper ----- images/future/obama_chopper.png
-9. copguy cruiser ----- images/cop_car.png
+9. copguy cruiser ----- images/cop_car.png ✔️
 10. sheriff bus ----- images/future/sheriff_bus.png
-11. joj ufo ----- images/future/joj_ufo_only.png
+11. joj ufo ----- images/future/joj_ufo_only.png ✔️
 12. pakoo dodge charger ----- images/future/pakoo_charger.png
 13. aria ----- [nothing]
 14. rosen car ----- images/future/michael_car.png

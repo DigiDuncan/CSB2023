@@ -23,6 +23,14 @@
         "rarity": "Common",
         "dx": true
     },
+    "anno_car": {
+        "img": "placeholder.png",
+        "name": "Anno's Car",
+        "owner": "Anno",
+        "desc": "Placeholder text for now.",
+        "rarity": "Common",
+        "ce": true
+    },
     "arc_laptop": {
         "img": "arc_laptop",
         "name": "Arc's Laptop",
@@ -51,6 +59,14 @@
         "owner": "Billy Mays",
         "desc": "A 2008 Land Rover LR3 that was featured in the infomercial for the Jupiter Jack.",
         "rarity": "Common"
+    },
+    "blank_car": {
+        "img": "placeholder",
+        "name": "Blank's Car",
+        "owner": "Blank",
+        "desc": "Placeholder text for now.",
+        "rarity": "Common",
+        "ce": true
     },
     "boom": {
         "img": "boom",
@@ -237,6 +253,14 @@
         "rarity": "Common",
         "ce": true
     },
+    "db_car": {
+        "img": "placeholder",
+        "name": "DB's Car",
+        "owner": "db05",
+        "desc": "Placeholder text for now.",
+        "rarity": "Common",
+        "ce": true
+    },
     "dasani": {
         "img": "dasani",
         "name": "Bottle Of Dasani",
@@ -250,6 +274,14 @@
         "name": "Boxes Of Christmas Décor",
         "owner": "CS",
         "desc": "Filled with ornaments, wreaths, {a=https://youtu.be/gS4CeZ4H_E4?t=41}wiggly trees{/a}, and more!",
+        "rarity": "Common",
+        "ce": true
+    },
+    "digi_nugget": {
+        "img": "placeholder.png",
+        "name": "The Nugget",
+        "owner": "Digi",
+        "desc": "Placeholder text for now.",
         "rarity": "Common",
         "ce": true
     },
@@ -386,6 +418,14 @@
         "rarity": "Common",
         "dx": true
     },
+    "ges_car": {
+        "img": "placeholder",
+        "name": "Ges' Car",
+        "owner": "Ges",
+        "desc": "Placeholder text for now.",
+        "rarity": "Common",
+        "ce": true
+    },
     "gravity_falls": {
         "img": "gravity_falls",
         "name": "{i}Gravity Falls{/i} DVD",
@@ -503,6 +543,14 @@
         "rarity": "Common",
         "dx": true
     },
+    "ltt_car": {
+        "img": "placeholder",
+        "name": "Linus' Car",
+        "owner": "Linus",
+        "desc": "Placeholder text for now.",
+        "rarity": "One-of-a-kind",
+        "ce": true
+    },
     "ltt_screwdriver": {
         "img": "ltt_screwdriver",
         "name": "LTT Screwdriver",
@@ -534,6 +582,22 @@
         "rarity": "1 of 1",
         "dx": true
     },
+    "mean_train": {
+        "img": "placeholder",
+        "name": "Mean's Locomotive",
+        "owner": "Mean",
+        "desc": "Placeholder text for now.",
+        "rarity": "Mean, pick a rarity!",
+        "ce": true
+    },
+    "mika_car": {
+        "img": "placeholder",
+        "name": "Mika's Car",
+        "owner": "Mika",
+        "desc": "Placeholder text for now.",
+        "rarity": "Common",
+        "ce": true
+    },
     "mgs1": {
         "img": "mgs1",
         "name": "{i}Metal Gear Solid",
@@ -558,6 +622,14 @@
         "rarity": "Common",
         "ce": true
     },
+    "obama_chopper": {
+        "img": "placeholder",
+        "name": "Presidential Chopper",
+        "owner": "President Obama",
+        "desc": "Placeholder text for now.",
+        "rarity": "Uncommon",
+        "ce": true
+    },
     "old_coins": {
         "img": "1850_coin",
         "name": "Old Coins",
@@ -580,6 +652,14 @@
         "owner": "CS",
         "desc": "Won by CS while at PencilCon, but is it even real gold?",
         "rarity": "Rare"
+    },
+    "pakoo_car": {
+        "img": "placeholder",
+        "name": "Pakoo's Car",
+        "owner": "Pakoo",
+        "desc": "Placeholder text for now.",
+        "rarity": "Common",
+        "ce": true
     },
     "peach_syrup": {
         "img": "peach_syrup",
@@ -667,6 +747,13 @@
         "rarity": "Epic",
         "dx": true
     },
+    "rental_car": {
+        "img": "car",
+        "name": "Rental Car",
+        "owner": "Unknown",
+        "desc": "A cheap sedan with a whole lot of miles on it.",
+        "rarity": "Common"
+    },
     "reversi_box": {
         "img": "reversi_box",
         "name": "Reversi!",
@@ -699,6 +786,14 @@
         "rarity": "Rare",
         "ce": true
     },
+    "rosen_car": {
+        "img": "placeholder",
+        "name": "Michael's Car",
+        "owner": "Michael Rosen",
+        "desc": "Placeholder text for now.",
+        "rarity": "Classic",
+        "ce": true
+    },
     "rosen_phone": {
         "img": "rosen_phone",
         "name": "Michael's Phone",
@@ -721,6 +816,14 @@
         "owner": "{a=https://ko-fi.com/lurkinglotus}Lotus{/a}",
         "desc": "Sans Brick",
         "rarity": "Sans Brick"
+    },
+    "sheriff_bus": {
+        "img": "placeholder",
+        "name": "The Bus",
+        "owner": "Unknown",
+        "desc": "Placeholder text for now.",
+        "rarity": "Common",
+        "ce": true
     },
     "shopping_cart": {
         "img": "shopping_cart",

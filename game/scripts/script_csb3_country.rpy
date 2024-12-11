@@ -1113,6 +1113,7 @@ label england_scott_move:
     cs "Hey, Tom, move out of the way!"
     show tom at right with move
     show car at lego_run behind tom
+    $ collect("car")
     with move
     n "Tom immediately jumps out of the way as a car zooms past him."
     show tom at center
@@ -1198,6 +1199,7 @@ label england_scott_movent:
     cs "I should wait until he's done with his video."
     tom "So, yeah, we're just gonna keep talking about this road in particular."
     show car at car_run behind tom
+    $ collect("car")
     with move
     tom "This road here was created in 1968, by OHP--{w=0.5}{nw}"
     play sound sfx_car_crash volume 0.7
