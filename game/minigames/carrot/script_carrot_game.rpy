@@ -9,6 +9,11 @@ init python:
     FULL_CS_HEIGHT = 1446
     CS_HEIGHT = 863
 
+    CARROT_WIDTH = 433
+    CARROT_HEIGHT = 122
+    BEAT_GAP = CARROT_WIDTH * 3 # Number of pixels between carrots
+    CARROT_OFFSET = 300 # Number of pixels to offset where the hit window is (from the left side of the screen)
+
     class CarrotGameDisplayable(renpy.Displayable):
         def __init__(self):
             renpy.Displayable.__init__(self)
@@ -134,8 +139,8 @@ init python:
             hittable = abs(self.nearest_beat_time - self.song_time) <= self.hit_window
 
             for carrot_beat in self.carrots[:]:
-                y = self.hand_position + 160
-                x = (carrot_beat * (60 / self.bpm) - self.song_time) * 433 * 3 + 300 
+                y = self.hand_position + 100 + CARROT_HEIGHT / 2.0
+                x = (self.beat_time(carrot_beat) - self.song_time) * BEAT_GAP + CARROT_OFFSET
                 if x <= -300:
                     self.carrots.remove(carrot_beat)
 
@@ -146,7 +151,7 @@ init python:
                 else: 
                     r.blit(self.c_render, (x, y))
  
-            if self.next_carrot <= self.no_beats and (self.next_carrot * (60 / self.bpm) - self.song_time) * 433 * 3 + 300 <= 1920:
+            if self.next_carrot <= self.no_beats and (self.beat_time(self.next_carrot) - self.song_time) * BEAT_GAP + CARROT_OFFSET <= 1920:
                 self.carrots.append(self.next_carrot)
                 self.next_carrot += 1
 
