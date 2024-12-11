@@ -2274,7 +2274,8 @@ label ce_party_before:
         hide cs with moveoutleft
         stop sound fadeout 0.5
         scene cs_house_snow_night
-        # TODO: put vehicle img here
+        show car dark at manual_pos(0.3, 0.8, 0.5):
+            zoom 2.0
         $ collect("rental_car")
         show arceus festive dark flipped at mid_left
         show kitty festive dark at left
@@ -2311,7 +2312,7 @@ label ce_party_before:
         cs "What the hell is that?"
         hide cs with moveoutleft
         scene cs_house_snow_night
-        # TODO: put vehicle img here
+        show digi_nugget_parked dark at manual_pos(0.3, 0.8, 0.5)
         $ collect("digi_nugget")
         show digi dark flipped at mid_left
         with dissolve
@@ -2319,9 +2320,10 @@ label ce_party_before:
         show digi happy dark flipped
         digi "Hey, CS! How've you been?"
         show digi dark flipped
-        cs "Hey, Digi! I didn't know you had a... spaceship?"
+        cs "Hey, Digi! I didn't know you had a... {nw}"
+        show cs disappointed christmas dark flipped 
+        cs "Hey, Digi! I didn't know you had a... {fast}spaceship?"
         digi "Oh, yeah, this old thing. It's a bit of a nugget, but it gets the job done."
-        show cs disappointed christmas dark flipped
         cs "Why have I {i}never{/i} seen this before?"
         digi "Was never coming from space before."
         pause 0.5
@@ -2386,7 +2388,8 @@ label ce_party_before:
         stop sound fadeout 0.5
         hide cs with moveoutleft
         scene cs_house_snow_night
-        # TODO: put vehicle img here
+        show billy_car dark at manual_pos(0.3, 0.8, 0.5):
+            zoom 2.0
         $ collect("billy_car")
         show billy festive dark at mid_left
         with dissolve
@@ -2441,7 +2444,7 @@ label ce_party_before:
         n "CS rushes outside."
         show cs worried christmas flipped at offscreenleft with MoveTransition(0.35)
         scene cs_house_snow_night
-        # TODO: put vehicle img here
+        show cop_car dark at manual_pos(0.3, 0.8, 0.5)
         $ collect("cop_car")
         show copguy festive dark flipped at mid_left
         with dissolve
@@ -2613,7 +2616,7 @@ label ce_party_before:
         stop sound fadeout 1.0
         hide cs with moveoutleft
         scene cs_house_snow_night
-        # TODO: put vehicle img here
+        show ges_car dark at manual_pos(0.3, 0.8, 0.5)
         $ collect("ges_car")
         show nova dark flipped at mid_left
         show ges dark flipped at left
@@ -2991,8 +2994,14 @@ label ce_introductions:
     show linus festive at mid_left
     show luke festive flipped at mid_left_left
     show digi thinking at mid_mid_left
+    show projector at manual_pos(0.2, 0.7, 0.5):
+        zoom 0.75
+    $ collect("projector")
     show blank festive flipped at mid_right
     show nova at mid_offscreen_right
+    show blank_speaker at manual_pos(0.8, 1.0, 0.5):
+        zoom 0.3
+    $ collect("blank_speaker")
     with dissolve
     pause 0.5
     digi "So, this should go {i}here..."
@@ -3213,6 +3222,8 @@ label ce_banter:
     show linus festive at mid_mid_left behind digi
     show luke festive flipped at mid_left_left behind linus
     show cs disappointed christmas flipped at right
+    show projector at manual_pos(0.2, 0.7, 0.5):
+        zoom 0.75
     with dissolve
     pause 0.5
     cs "Damn, is the projector still not working?"
@@ -3229,6 +3240,8 @@ label ce_banter:
     show linus festive flipped at mid_mid_left behind digi
     show luke festive flipped at mid_left_left behind linus
     show cs disappointed christmas flipped at right
+    show projector at manual_pos(0.2, 0.7, 0.5):
+        zoom 0.75
     play sound sfx_bluescreen
     with vpunch
     show cs worried christmas flipped at right
@@ -3270,6 +3283,8 @@ label ce_banter:
     show linus festive at mid_right behind digi
     show luke festive at mid_left_left behind linus
     show cs scared christmas flipped at mid_right_right behind digi
+    show projector at manual_pos(0.2, 0.7, 0.5):
+        zoom 0.75
     play sound sfx_tada 
     with vpunch
     luke "Ta-da!"

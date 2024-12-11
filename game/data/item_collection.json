@@ -68,6 +68,14 @@
         "rarity": "Common",
         "ce": true
     },
+    "blank_speaker": {
+        "img": "blank_speaker",
+        "name": "Big Speaker",
+        "owner": "Blank",
+        "desc": "A Dayton Audio SUB-1200 12-inch 120W Powered Subwoofer. If you want high-fidelity bass, this should probably cover all your bases.",
+        "rarity": "Common",
+        "ce": true
+    },
     "boom": {
         "img": "boom",
         "name": "Boom Mic",
@@ -278,10 +286,10 @@
         "ce": true
     },
     "digi_nugget": {
-        "img": "placeholder.png",
+        "img": "digi_nugget_parked",
         "name": "The Nugget",
         "owner": "Digi",
-        "desc": "Placeholder text for now.",
+        "desc": "Placeholder text for now. Tate needs to replace this image with something else later, too.",
         "rarity": "Common",
         "ce": true
     },
@@ -419,10 +427,10 @@
         "dx": true
     },
     "ges_car": {
-        "img": "placeholder",
+        "img": "ges_car",
         "name": "Ges' Car",
         "owner": "Ges",
-        "desc": "Placeholder text for now.",
+        "desc": "A 2013 Ford Focus Hatchback.",
         "rarity": "Common",
         "ce": true
     },
@@ -730,6 +738,14 @@
         "desc": "Possibly the best flavor of Pringles.",
         "rarity": "Common",
         "dx": true
+    },
+    "projector": {
+        "img": "projector",
+        "name": "Projector",
+        "owner": "Digi",
+        "desc": "Placeholder text",
+        "rarity": "Common",
+        "ce": true
     },
     "raspberry_pi": {
         "img": "raspberry_pi",

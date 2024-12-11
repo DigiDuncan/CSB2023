@@ -1,7 +1,7 @@
 if it's already in images/ don't edit it, it's fine as-is and/or already in item collection.
 
 anything in future needs edited please
-if it has a check, it's already in item collection
+if it has a check, it's already fully in item collection
 
 Dice rolls and vehicles.
 
