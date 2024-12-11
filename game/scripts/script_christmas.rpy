@@ -5043,11 +5043,11 @@ label ce_exchange:
     with dissolve
     nova "What the fuck {i}is{/i} it? Some World War II radio?"
     eliza "Yep. Used by the Soviets in the latter half of World War II."
-    nova "Hey Ges, do you want this!"
+    nova "Hey Ges, do you want this?"
     ges "Sure, thank you!"
     hide russian_radio with dissolve
     hide nova with moveoutright
-    pause 0.5
+    n "Nova sits down and gives the radio to Ges."
     $ collect("russian_radio")
 
     eliza "So, it's my turn. Let's see what we have..."
