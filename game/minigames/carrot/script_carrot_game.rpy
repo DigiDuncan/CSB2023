@@ -81,7 +81,7 @@ init python:
 
             # Play the song if we haven't
             if not self.started_playing_song:
-                renpy.music.play("minigames/carrot/hotel_disbelief.ogg")
+                renpy.music.play("minigames/carrot/hotel_disbelief.ogg", loop = False)
                 self.started_playing_song = True
 
             # Update song time
@@ -147,7 +147,7 @@ init python:
                 renpy.sound.play("minigames/carrot/go.ogg")
 
             # Song time!
-            if self.current_beat >= (self.start_beat - 1):
+            if self.current_beat >= self.start_beat:
                 # Process input
                 if self.hit_to_process:
                     input_time = self.song_time
