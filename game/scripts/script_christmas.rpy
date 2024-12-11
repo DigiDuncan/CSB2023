@@ -3217,7 +3217,12 @@ label ce_banter:
         # We need to get into this some time. -- Digi
     pause 0.5
 
-    scene cs_living_signal
+    scene cs_living
+    show projector_no_signal:
+        zoom 1.3
+        perspective True
+        matrixanchor (0, 0)
+        matrixtransform RotateMatrix(0, 0, 0) * RotateMatrix(0, 35, 0) * RotateMatrix(0, 0, 0) * OffsetMatrix(32, 40, 0)
     show digi thinking at center
     show linus festive at mid_mid_left behind digi
     show luke festive flipped at mid_left_left behind linus
@@ -3235,7 +3240,12 @@ label ce_banter:
     digi "Watch, I'll turn it on, and..."
     play sound sfx_projector_boot
     pause 1.0
-    scene cs_living_error
+    scene cs_living
+    show projector_error:
+        zoom 1.3
+        perspective True
+        matrixanchor (0, 0)
+        matrixtransform RotateMatrix(0, 0, 0) * RotateMatrix(0, 35, 0) * RotateMatrix(0, 0, 0) * OffsetMatrix(32, 40, 0)
     show digi angry at center
     show linus festive flipped at mid_mid_left behind digi
     show luke festive flipped at mid_left_left behind linus
@@ -3278,7 +3288,12 @@ label ce_banter:
     pause 0.5
     play sound sfx_projector_boot
     n "After a little bit of tech magic, the projector comes to life."
-    scene cs_living_elf
+    scene cs_living
+    show elf_0:
+        zoom 1.3
+        perspective True
+        matrixanchor (0, 0)
+        matrixtransform RotateMatrix(0, 0, 0) * RotateMatrix(0, 35, 0) * RotateMatrix(0, 0, 0) * OffsetMatrix(32, 40, 0)
     show digi shock at mid_right
     show linus festive at mid_right behind digi
     show luke festive at mid_left_left behind linus
@@ -3289,17 +3304,6 @@ label ce_banter:
     with vpunch
     luke "Ta-da!"
 
-    scene cs_living
-    show elf_0:
-        zoom 1.3
-        perspective True
-        matrixanchor (0, 0)
-        matrixtransform RotateMatrix(0, 0, 0) * RotateMatrix(0, 35, 0) * RotateMatrix(0, 0, 0) * OffsetMatrix(32, 40, 0)
-    show digi shock at mid_right
-    show linus festive at mid_right behind digi
-    show luke festive at mid_left_left behind linus
-    show cs christmas scared flipped at mid_right_right behind digi
-    with dissolve
     show cs christmas flipped
     show digi
     show luke festive flipped
