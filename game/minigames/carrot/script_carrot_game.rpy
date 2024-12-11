@@ -23,6 +23,7 @@ init python:
 
             self.hit_window = 0.1  # 100ms
             self.successful_beats = set()
+            self.missed_beats = set()
             self.hits = 0
             self.misses = 0
 
@@ -173,13 +174,19 @@ init python:
                     self.misses += 1
                     self.is_fcing = False
                     renpy.sound.play("minigames/carrot/miss.ogg")
+                    self.missed_beats.add(nearest)
 
-            # Never miss the first beat you're welcome :)
-            if self.song_time - dt < self.beat_time(current) < self.song_time and current not in self.successful_beats and self.start_beat < current: 
+            if (
+                    self.song_time - dt < self.beat_time(nearest) + self.hit_window < self.song_time and
+                    nearest not in self.successful_beats and
+                    nearest not in self.missed_beats and
+                    self.start_beat <= nearest
+                ): 
                 # Miss!
                 self.misses += 1
                 self.is_fcing = False
                 renpy.sound.play("minigames/carrot/miss.ogg")
+                self.missed_beats.add(nearest)
 
             if was_fcing and not self.is_fcing:
                 renpy.sound.play("minigames/carrot/perfect_fail.ogg")
