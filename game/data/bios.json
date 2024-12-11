@@ -117,7 +117,7 @@
     },
     "blank": {
         "full_name": "Blank Named",
-        "pronouns": "(he/him)",
+        "pronouns": "(they/he)",
         "sprites": { 
             "Default": "images/characters/blank.png",
             "Festive": "images/characters/blank_festive.png" 

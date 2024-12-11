@@ -70,9 +70,9 @@
     },
     "blank_speaker": {
         "img": "blank_speaker",
-        "name": "Big Speaker",
+        "name": "Big Subwoofer",
         "owner": "Blank",
-        "desc": "A Dayton Audio SUB-1200 12-inch 120W Powered Subwoofer. If you want high-fidelity bass, this should probably cover all your bases.",
+        "desc": "A Dayton Audio SUB-1200 12-inch 120-watt powered subwoofer. If you want high-fidelity bass, this will probably cover all your... bases.",
         "rarity": "Common",
         "ce": true
     },

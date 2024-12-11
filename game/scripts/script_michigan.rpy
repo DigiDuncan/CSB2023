@@ -874,7 +874,7 @@ label michigan_interstate_69:
     cs "God, did Blank somehow track me to Michigan?"
     arceus "Nah, Blank looks like a Catboy.             Musical."
     show cs disappointed flipped
-    cs "You're right, but I wouldn't be all that shocked if he learned practical effects for a gag."
+    cs "You're right, but I wouldn't be all that shocked if they learned practical effects for a gag."
     show cs worried flipped
     cs "Wait, is he coming this way?!"
     n "The gnome steps out from behind the tree and makes his way to the door of the unoccupied seat of the car, motioning a request to roll down the window."

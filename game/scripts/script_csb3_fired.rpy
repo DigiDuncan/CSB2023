@@ -155,9 +155,9 @@ label fired_guitar_hero:
     play music hightop volume 0.5 if_changed
     music hightop
     if fun_value(FUN_VALUE_MUSIC):
-        cs "Maybe we should call Blank if we wanna get high on top. He's, like... an actual musician."
+        cs "Maybe we should call Blank if we wanna get high on top. He's, like... an {i}actual{/i} musician."
     else:
-        cs "Maybe we should call Blank. He's, like... an actual musician."
+        cs "Maybe we should call Blank. They're, like... an {i}actual{/i} musician."
     show cs phone
     n "CS calls Blank on Discord."
     blank "CS? Where the heck have you been?"

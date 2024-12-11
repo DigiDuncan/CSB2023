@@ -3027,7 +3027,7 @@ label ce_introductions:
     cs "How about you two?"
     show blank festive
     blank "We are working on setting up the sound system."
-    nova "The problem is that I don't really want Blank playing his shitty music during the party."
+    nova "The problem is that I don't really want Blank playing their shitty music during the party."
     show blank festive flipped
     blank "Why not? Not {i}all{/i} of it's crazy shit like {i}yours{/i} is."
     show cs scared christmas
@@ -5068,7 +5068,7 @@ label ce_exchange:
     with dissolve
     blank "Gamer Supps?"
     show gamersupps at manual_pos(0.35, 0.65, 0.5) with move
-    n "Blank holds the canister a little closer to read it carefully."
+    n "Blank holds the canister a little closer and reads it carefully."
     blank "\"Guacamole... Gamer Fart... 9000\"...?"
     nova "Damn it! You got {i}my{/i} gift, Blank!" with hpunch
     show gamersupps at manual_pos(0.4, 0.7, 0.5) with { "master": move }
