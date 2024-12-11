@@ -186,6 +186,23 @@
         "bio": "Copguy is both the good cop and the bad cop. You think all cops are bad? Copguy does not care. Nothing will stop him from completing his final mission.",
         "rpg": "COPGUY"
     },
+    "copguy_ex": {
+        "full_name": "Copguy EX",
+        "pronouns": "(he/him)",
+        "sprites": { "Default": "images/characters/copguy/copguy.png" },
+        "quote": "This ends here.",
+        "bio": "Millions of dollars in government surveillance has allowed Copguy to observe and practice nearly all of CS' and his friends' abilities. The only thing he {i}can't{/i} copy is the power of friendship!",
+        "rpg": "COPGUY_EX"
+    },
+    "copguy_exe": {
+        "full_name": "Copguy.EXE",
+        "pronouns": "(he/him)",
+        "sprites": { "Default": "images/characters/copguy/copguyexe.png" },
+        "quote": "I WILL FIND YOU.",
+        "bio": "What {i}happened?{/i}",
+        "rpg": "COPGUY_EXE",
+        "dx": true
+    },
     "craptop": {
         "full_name": "Craptop",
         "sprites": {
@@ -450,7 +467,6 @@
     },
     "hoh_worker": {
         "full_name": "HoH SiS Workers",
-        "pronouns": "(he/him (all))",
         "sprites": { 
             "Group": "images/characters/hohsis/hoh_worker.png",
             "Eddie 1": "images/characters/hohsis/eddie_down.png",
@@ -898,23 +914,26 @@
     },
     "sticky": {
         "full_name": "Sticky Note",
-        "sprites": { "Default": "images/post-it.png" },
+        "sprites": { 
+            "Default": "images/post-it.png",
+            "???": "images/post-it2.png"
+        },
         "quote": "The most important character",
-        "bio": "Hi, guys! It's me, the sticky note, remember? I mean, how could you forget? I'm the most important character in the game! Remember when I told CS to delete the CScord, and how the Discord route was the coolest route in the game? Yeah, I know. It's super cool. Hey, wait! CS, what are you doing? Why are you throwing me awayyyyy....."
+        "bio": "Hi, guys! It's me, the sticky note, remember? I mean, how could you {i}forget?{/i} I'm the most important character in the game! Remember when I told CS to delete the CScord, and how the Discord route was the coolest route in the game? Yeah, I know. It's super cool. Hey, wait! CS, what are you doing? Why are you throwing me awayyyyy...?!"
     },
     "streetguy": {
         "full_name": "Streetguy",
         "pronouns": "(he/him)",
         "sprites": { "Default": "images/characters/streetguy.png" },
         "quote": "I'm walkin' here!",
-        "bio": "Carguy's cousin, Streetguy, is much more of a free spirit. Carguy was always hard-set on having a goal or a motive; Streetguy always wanted to see the sights and get out in the world. He's been too out of touch with reality lately, and most people think he's finally gone insane."
+        "bio": "Carguy's cousin, Streetguy, is much more of a free spirit. Carguy was always hard-set on having a goal or a motive; Streetguy always wanted to see the sights and get out in the world. He's been rather out of touch with reality lately. Most people think he's finally gone insane."
     },
     "taran": {
         "full_name": "Taran Von Hemert",
         "pronouns": "(he/him)",
         "sprites": { "Default": "images/characters/lmg/taran.png" },
         "quote": "Need help with anything?",
-        "bio": "Taran is the main editor for LTT. He's been there since the beginning and throughout LTT's growth, but he is planning on leaving soon. He's a super chill guy who loves helping out with various projects."
+        "bio": "Taran is the main editor for LTT. He's been there since the beginning and throughout LTT's growth, but he is planning on leaving soon. He's a super-chill guy who loves helping out with various projects."
     },
     "tgt_worker": {
         "full_name": "Target Employee",
@@ -930,7 +949,7 @@
             "Upset": "images/characters/pakoo/tgt_pakoo_upset.png"
         },
         "quote": "Yeah, let me help you out.",
-        "bio": "Your average Target employee who looks like he's had enough customer interactions for the year. Although he probably hates working at the self-checkout, it looks like he's really just waiting for someone to come cover for him so he can have his lunch break.",
+        "bio": "Your average Target employee who looks like he's had enough customer interactions for the year. Although he probably hates working at the self-checkout, it looks like he's really just waiting for someone to come cover for him so he can take his lunch break.",
         "ce": true
     },
     "tate": {

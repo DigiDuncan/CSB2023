@@ -161,6 +161,7 @@ label michigan_bronson:
     copguyexe "THERE YOU ARE. GET READY FOR YOUR WORST NIGHTMARE!"
     stop sound2 fadeout 1.0
     show copguyexe with dissolve
+    $ persistent.seen.add("copguy_exe")
     scene white with dissolve
     pause 1.0
     jump rpg_bronsonbattle

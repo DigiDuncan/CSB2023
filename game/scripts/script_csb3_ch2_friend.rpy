@@ -804,7 +804,8 @@ label friend2_between_2:
     show tate shock at mid_left
     show arceus worried flipped at left
     play sound sfx_bossappears
-    show copguy_ex at right 
+    show copguy_ex at right
+    $ persistent.seen.add("copguy_ex")
     with dissolve
     pause 2.0
     copguy "Well, well, well, CS."
