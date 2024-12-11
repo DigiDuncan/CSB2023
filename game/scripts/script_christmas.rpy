@@ -2275,7 +2275,7 @@ label ce_party_before:
         stop sound fadeout 0.5
         scene cs_house_snow_night
         # TODO: put vehicle img here
-        $ collect("car")
+        $ collect("rental_car")
         show arceus festive dark flipped at mid_left
         show kitty festive dark at left
         with dissolve
@@ -2667,7 +2667,7 @@ label ce_party_before:
         hide cs with moveoutleft
         scene cs_house_snow_night
         # TODO: put vehicle img here
-        $ collect("db_cooper")
+        $ collect("db_car")
         show db dark at mid_left
         with dissolve
         show cs christmas dark flipped at right with moveinright

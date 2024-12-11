@@ -1113,7 +1113,7 @@ label england_scott_move:
     cs "Hey, Tom, move out of the way!"
     show tom at right with move
     show car at lego_run behind tom
-    $ collect("car")
+    $ collect("rental_car")
     with move
     n "Tom immediately jumps out of the way as a car zooms past him."
     show tom at center
