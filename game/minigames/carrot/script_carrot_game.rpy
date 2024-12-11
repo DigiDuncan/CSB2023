@@ -147,7 +147,7 @@ init python:
                 renpy.sound.play("minigames/carrot/go.ogg")
 
             # Song time!
-            if self.current_beat >= self.start_beat:
+            if self.current_beat >= self.start_beat - 1:
                 # Process input
                 if self.hit_to_process:
                     input_time = self.song_time
@@ -171,13 +171,13 @@ init python:
                         self.is_fcing = False
                         renpy.sound.play("minigames/carrot/miss.ogg")
 
-                    
-                if self.current_beat != self.last_beat:
-                    if self.last_beat not in self.successful_beats:
-                        # Miss!
-                        self.misses += 1
-                        self.is_fcing = False
-                        renpy.sound.play("minigames/carrot/miss.ogg")
+            # Never miss the first beat you're welcome :)
+            if self.current_beat != self.last_beat and self.current_beat > self.start_beat:
+                if self.last_beat not in self.successful_beats:
+                    # Miss!
+                    self.misses += 1
+                    self.is_fcing = False
+                    renpy.sound.play("minigames/carrot/miss.ogg")
 
             if was_fcing and not self.is_fcing:
                 renpy.sound.play("minigames/carrot/perfect_fail.ogg")
