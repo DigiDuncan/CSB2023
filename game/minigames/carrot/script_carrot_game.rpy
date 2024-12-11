@@ -190,7 +190,7 @@ init python:
             miss = False
 
             # Process input
-            if self.hit_to_process and self.start_beat - 1 <= current and current >= self.no_beats:
+            if self.hit_to_process and self.start_beat - 1 <= current and current <= self.no_beats:
                 input_time = self.song_time
 
                 # Find nearest beat
