@@ -309,5 +309,11 @@
         "title": "Unused Target Employee Pose 4",
         "caption": "An unused pose for the checkout scene.",
         "need_label": "ce_checkout"
+    },
+    "hand.png": {
+        "type": "image",
+        "title": "Hand Placeholder",
+        "caption": "Pakoo: Digi used this hand as a placeholder for the Carrot Karate Chop Minigame, until I found the hand I drew for the Weapon of Choice video. For some reason though, Baker decided to remaster the placeholder. Maybe it was out of spite...",
+        "need_label": "ce_cooking"
     }
 }
