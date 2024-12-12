@@ -461,7 +461,7 @@ label ce_anno:
         show cs worried coat hat
         if fun_value(FUN_VALUE_COMMON):
             cs "I hate Legos, but only when they're in my feet!"
-        else: 
+        else:
             cs "I love Legos, but not when they're embedded in my {i}feet!"
         cs "Now, where did I last put..."
     else:
@@ -2237,7 +2237,9 @@ label ce_aftershop:
     pause 2.0
     show cs concentrate flipped
     n "However, his mind won't let him rest."
+    pause 1.0
     show cs disappointed flipped
+    pause 2.0
     cs "I just can't stop thinking about tomorrow."
     show cs surprised flipped
     cs "I wonder who's gonna get here first, and if everyone will show up as promised..."
@@ -2245,12 +2247,13 @@ label ce_aftershop:
     show cs scared flipped
     cs "What if {i}no one{/i} shows up?"
     show cs disappointed flipped
-    cs "That would suck a lot."
+    cs "That would really suck..."
+    pause 1.0
     show cs flipped
-    cs "But I don't think that'll happen."
+    cs "But there's no {i}way{/i} that would happen."
     if d20 == 1:
         cs "... Right?"
-    cs "Everyone confirmed they got my invitations, and they all said on the phone that they'll come!"
+    cs "Everyone confirmed they got my invitations, and they all said on the phone that they're coming!"
     show cs happy flipped
     cs "If nothing else, I know Anno is coming for sure!"
     pause 1.0
@@ -2260,6 +2263,7 @@ label ce_aftershop:
     show cs concentrate flipped
     scene black with Dissolve(2.0)
     n "After some time, CS finally dozes off..."
+    pause 1.0
     $ in_d20_viewer = False
     jump ce_party_before
 
@@ -2276,6 +2280,7 @@ label ce_party_before:
     cs "Now, I just have to wait for people to arrive!"
     show cs christmas flipped
     cs "I wonder who will arrive first..."
+    pause 1.0
     if d20 == 1:
         n "CS waits patiently."
         n "He keeps on waiting."
@@ -2337,7 +2342,7 @@ label ce_party_before:
         digi "Hey, CS! How've you been?"
         show digi dark flipped
         cs "Hey, Digi! I didn't know you had a... {nw}"
-        show cs disappointed christmas dark flipped 
+        show cs disappointed christmas dark flipped
         cs "Hey, Digi! I didn't know you had a... {fast}spaceship?"
         digi "Oh, yeah, this old thing. It's a bit of a nugget, but it gets the job done."
         cs "Why have I {i}never{/i} seen this before?"
@@ -2377,7 +2382,7 @@ label ce_party_before:
             tate "I'm not a train!" (multiple = 2)
             mean "The {i}fuck{/i} did you call me?!" (multiple = 2) with vpunch
             show mean human dark flipped at mid_left
-            show tate festive dark at left     
+            show tate festive dark at left
         tate "Hey, CS! How've you been?"
         show cs christmas dark flipped
         cs "Tate? Hey! I've been great!"
@@ -2532,7 +2537,7 @@ label ce_party_before:
         with dissolve
         show cs christmas dark flipped at right with moveinright
         cs "Hey, it's..."
-        show cs disappointed christmas dark flipped 
+        show cs disappointed christmas dark flipped
         cs "Hey, it's...{fast} two Pakoos?"
         show k17 happy dark flipped
         k17 "CS!!!" with vpunch
@@ -2753,7 +2758,7 @@ label ce_party_before:
 # Introductions
 label ce_introductions:
     scene black with dissolve
-    n "Around the party's scheduled start time, everyone starts showing up in droves."
+    n "Around the party's scheduled start time, the guests start showing up in droves."
     # the line just needed a little more help. - tate
     $ achievement_manager.unlock("party_start")
     scene cs_foyer_festive
@@ -2814,7 +2819,7 @@ label ce_introductions:
     cs "Yes, please. I didn't want to say it, but it seems like every time I see you guys, you've changed your appearance!"
     if fun_value(FUN_VALUE_COMMON):
         aria "Sorria."
-    else:    
+    else:
         aria "Sorry."
     show digi sad
     digi "Did I change too much?"
@@ -2827,7 +2832,7 @@ label ce_introductions:
         show digi shock flipped
         show cs scared christmas
         show tate shock festive
-        k22 "Damn it, can you let me talk?!" with vpunch
+        k22 "Damn it, will you let me talk?!" with vpunch
         show k17
     else:
         show k22
@@ -2868,7 +2873,7 @@ label ce_introductions:
     $ persistent.seen.add("mean_human")
     show k17 flipped at mid_mid_right
     show k22 flipped at mid_right
-    with moveinright
+    with { "master": moveinright }
     mean "Hey, what's going on here?"
     show mean human shocked
     show k17 flipped
@@ -2881,7 +2886,7 @@ label ce_introductions:
     show tate sheepish festive
     show k17
     show k22
-    tate "I'll explain it to him later."
+    tate "I-{w=0.1}I'll explain it to him later."
     show tate festive flipped
     show digi
     show cs christmas
@@ -3000,7 +3005,10 @@ label ce_introductions:
         show cs christmas
         cs "Hey, Ed, can you make me a sandwich?"
         ed "{i}Noe!" with vpunch
-    cs "I can't wait to have some! I hope you all have a great time cooking!"
+        show cs disappointed christmas
+        cs "Well..."
+        show cs christmas
+    cs "I can't wait for dinner! I hope you all have a great time cooking!"
     show cs christmas
     cs "I'm gonna go see how the others are doing."
     show cs christmas flipped with determination
@@ -3023,7 +3031,8 @@ label ce_introductions:
     pause 0.5
     digi "So, this should go {i}here..."
     linus "No, you've got the wrong cable!"
-    luke "You idiots are {i}both{/i} wrong! That's not even the right port!"
+    luke "You idiots are {nw}"
+    luke "You idiots are {fast}{i}both{/i} wrong! That's not even the right {i}port!" with vpunch
     digi "Ohhhhh..." (multiple = 2)
     linus "Ohhhhh..." (multiple = 2)
     pause 1.0
@@ -3097,7 +3106,7 @@ label ce_introductions:
     eliza "Let's just pretend that I got a name change."
     show cs disappointed christmas
     cs "What about the other two?"
-    eliza "They uhh, work for me?"
+    eliza "They, uh... work for me?"
     cs "You guys are so complicated."
     arceus "I mean, it wasn't too hard for {i}me{/i} to figure out, funnily enough."
     show cs disappointed christmas
@@ -3120,7 +3129,7 @@ label ce_introductions:
         show avgn flipped
         avgn "Good, because it's fucking {nw}"
         avgn "Good, because it's fucking {fast}{i}ass!" with vpunch
-    
+
     pause 0.5
     scene black with dissolve
     pause 1.0
@@ -3133,13 +3142,13 @@ label ce_banter:
     n "As the last few guests arrive, Copguy and the sheriff find themselves in a bit of a predicament."
     scene cs_living2_festive
     show db at mid_left
-    show wesley festive at mid_right 
+    show wesley festive at mid_right
     show rich festive at mid_right_right
     show sheriff festive flipped at left
     show copguy festive at center
     with dissolve
     play music dont_preheat_your_oven if_changed
-    music dont_preheat_your_oven     
+    music dont_preheat_your_oven
     sheriff "Hey, Copguy!"
     if fun_value(FUN_VALUE_MUSIC):
         sheriff "Don't preheat your oven!"
@@ -3182,7 +3191,7 @@ label ce_banter:
     show copguy festive
     show tate shock festive at center with determination
     show copguy at right
-    show tate shock festive at offscreenright 
+    show tate shock festive at offscreenright
     with { "master" : MoveTransition(0.25) }
     with vpunch
     tate "{cshake}{size=+24}Awawawawa!!!" with hpunch
@@ -3290,7 +3299,7 @@ label ce_banter:
     show linus festive flipped at mid_right
     show cs disappointed christmas flipped at mid_right_right behind digi
     with move
-    show digi 
+    show digi
     show linus festive
     with determination
     pause 0.5
@@ -3317,7 +3326,7 @@ label ce_banter:
     show cs scared christmas flipped at mid_right_right behind digi
     show projector at manual_pos(0.2, 0.7, 0.5):
         zoom 0.75
-    play sound sfx_tada 
+    play sound sfx_tada
     with vpunch
     luke "Ta-da!"
 
@@ -3631,8 +3640,8 @@ label ce_win_carrot:
         avgn "What {i}is{/i} this? The soundtrack from a LJN game?!"
 
     show cs scared christmas flipped at mid_offscreen_right
-    show obama festive at right 
-    show ed festive flipped at center behind cs_kitchen_fg 
+    show obama festive at right
+    show ed festive flipped at center behind cs_kitchen_fg
     with easeinleft
     # TODO: fix the particle system maybe idk - tate
     ed "{cshake}NOOOO!" with hpunch
@@ -3768,7 +3777,7 @@ label ce_win_carrot:
     pause 0.5
     scene cs_bathroom_open
     show cs_bathroom_open_fg
-    show grace at mid_left  
+    show grace at mid_left
     show copguy festive behind sheriff at manual_pos(0.4, 0.2)
     show sheriff festive at manual_pos(0.4, 0.5)
     pause 0.25
@@ -3782,7 +3791,7 @@ label ce_win_carrot:
     grace "Guys, the sheriff is out!"
     show grace at center with move
     hide grace with dissolve
-    scene cs_bathroom   
+    scene cs_bathroom
     play sound sfx_house_door_close
     show anne at mid_mid_left with moveinleft
     show rich festive flipped at mid_left behind anne with moveinleft
@@ -4126,7 +4135,7 @@ label ce_dinner:
     show michael festive flipped
     michael "Actually, Phil is a wonderful friend of mine! He has stayed over at my place plenty of times."
     michael "If he offers you a slice of cake, however, perhaps consider giving it a pass."
- 
+
     scene night_bg
     show left_room
     show left_chair_back
@@ -5225,7 +5234,7 @@ label ce_exchange:
         cs "Does it fit you okay?"
         n "Grace puts on the shirt."
         hide old_shirt
-        show grace shirt 
+        show grace shirt
         with dissolve
         pause 2.0
         grace "Yep!"
@@ -5242,7 +5251,7 @@ label ce_preclimax:
     scene black with dissolve
     n "After the exchange, the party begins to die down."
     n "Folks naturally start splitting into groups to discuss their gifts."
-    
+
     scene cs_foyer
     show digi happy flipped at left
     dxcom gifts
@@ -5272,7 +5281,7 @@ label ce_preclimax:
     show hard_drive at manual_pos(0.575, 0.6, 0.5):
         zoom 0.5
     with moveinright
-    
+
     n "Luke walks by, lugging a newly-acquired monitor under each arm."
     digi "Hey, Luke! Nice winnings!"
     luke "Thanks! I feel like I just won {i}Scrapyard Wars{/i} again."
@@ -5323,7 +5332,7 @@ label ce_preclimax:
     obama "Are you kidding me? I'm {i}Obama!{/i} Of {i}course{/i} I have a PlayStation!"
     pause 0.25
 
-    show tate festive flipped at center 
+    show tate festive flipped at center
     show handy_switch at manual_pos(0.4, 0.7, 0.5):
         zoom 0.4
     with moveinright
@@ -5352,9 +5361,9 @@ label ce_preclimax:
     show handy_switch at manual_pos(0.6, 0.7, 0.5):
         zoom 0.4
     show cement at manual_pos(-0.1, 0.4, 0.5)
-    show sheriff festive at offscreenleft 
+    show sheriff festive at offscreenleft
     with determination
-    show sheriff festive flipped at offscreenright 
+    show sheriff festive flipped at offscreenright
     show cement at manual_pos(1.2, 0.4, 0.5)
     with { "master": move }
     sheriff "I didn't keep this stupid bag of cement for {i}nothin'!" with hpunch
@@ -5553,7 +5562,7 @@ label ce_lights_out:
     show screen flashlight_demo
     cs "Thank God. I can actually see..."
     pause 0.5
-    hide cs 
+    hide cs
     hide flashlight_held
     with moveoutright
 
@@ -5605,7 +5614,7 @@ label ce_lights_out:
         cs "Kitty? What are the chances that I found you down here? Arceus was looking all over for you!"
         cs "Think of the synchronicity of this situation!"
         kitty "Uhh..."
-    else:      
+    else:
         cs "Kitty? What are you doing down here? Arceus was looking all over for you!"
     kitty "Sorry..."
     kitty "I started getting a bad migraine towards the end of the party, so I tried to find the quietest place in the house."
@@ -5633,7 +5642,7 @@ label ce_lights_out:
     show elizabeth at right
     with dissolve
     pause 0.5
-    show cs disappointed christmas at left 
+    show cs disappointed christmas at left
     show flashlight_held at manual_pos(0.2, 0.7, 0.5):
         zoom 0.5
     with moveinleft
@@ -5686,7 +5695,7 @@ label ce_lights_out:
     show k22 disappointed at mid_mid_right
     with dissolve
     pause 0.5
-    show cs disappointed christmas at left 
+    show cs disappointed christmas at left
     show flashlight_held at manual_pos(0.2, 0.7, 0.5):
         zoom 0.5
     with moveinleft
@@ -5761,7 +5770,7 @@ label ce_lights_out:
     pause 0.5
     show cs scared christmas flipped at center
     show flashlight_held flipped at manual_pos(0.5, 0.7, 0.5):
-        zoom 0.5 
+        zoom 0.5
     with moveinright
     cs "{sc=1.88}Guys, the door... {w=0.5}{i}the door...!"
     aria "Calm down, CS. Catch your breath."
@@ -6479,7 +6488,7 @@ label ce_billy_time:
     mean "Follow me."
     pause 0.5
     show mean human annoyed flipped
-    show copguy festive flipped 
+    show copguy festive flipped
     show luke festive flipped
     with determination
     hide mean
@@ -6751,7 +6760,7 @@ label ce_roof_moment:
     show cs happy christmas at left
     with dissolve
     pause 0.5
-    
+
     play sound sfx_jingle volume 0.8 loop
     cs "We did it, guys! Santa's coming to save us!"
     if fun_value(FUN_VALUE_MUSIC):
@@ -6834,7 +6843,7 @@ label ce_roof_moment:
     hide k22
     with moveoutleft
     santa "Ed? Richard? Welsey?"
-   
+
     show billy festive at manual_pos(0.5, 0.7) behind ed:
         xanchor 0.5
         yanchor 1.0
@@ -6877,7 +6886,7 @@ label ce_roof_moment:
         yanchor 1.0
         zoom 0.5
     show michael festive at center:
-        linear 0.5 zoom 1.0 
+        linear 0.5 zoom 1.0
     with move
 
     santa "Don't let those YouTube Poopers get to your head! You're a {i}brilliant{/i} author."
@@ -7173,7 +7182,7 @@ label ce_roof_moment:
     stop sound fadeout 0.5
     n "As Santa flies away, snow begins to fall again."
     pause 0.5
-    
+
     sheriff "Well, Copguy, we should probably get going before we get snowed in again!"
     show copguy festive dark flipped
     copguy "Yeah, you're probably right."
@@ -7227,7 +7236,7 @@ label ce_roof_moment:
     k22 "My client wants these followed word-for-word."
     play sound sfx_isaac volume 0.4
     show folded_paper dark at manual_pos(0.25, 0.65, 0.5):
-        linear 0.4 zoom 0.6 rotate -75 
+        linear 0.4 zoom 0.6 rotate -75
     pause 0.5
     n "Billy opens up the paper and skims through it."
     pause 1.0
@@ -7259,7 +7268,7 @@ label ce_roof_moment:
     cs "The house is kind of a mess, though. I'll wait until tomorrow to clean all this up."
     show cs surprised christmas
     cs "I wonder if Anno would be willing to help again..."
-    show cs christmas    
+    show cs christmas
     cs "For now, I should probably get to streaming."
     show cs happy christmas
     cs "Those car crash compilations aren't gonna watch themselves!"
@@ -7269,7 +7278,7 @@ label ce_roof_moment:
     show black with { "master": Dissolve(10.0) }
     n "It wasn't the Christmas that CS expected, and, certainly, not everything went according to plan."
     n "In spite of it all, with the help of his friends, it was one of the jolliest times he's ever had."
-    n "Merry Christmas, and to all a good night!" 
+    n "Merry Christmas, and to all a good night!"
     $ achievement_manager.unlock("hoh_hoh")
     $ ending_manager.mark("christmas")
     scene black with dissolve
