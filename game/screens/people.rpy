@@ -240,10 +240,8 @@ screen person(l):
                     ypos 1.0
 
                     python:
-                        z = name_map[l].get("zoom", 1.0) * 0.75
                         x = -1 if name_map[l].get("flip", False) else 1
-                        xo = name_map[l].get("xoffset", 0)
-                        yo = name_map[l].get("yoffset", 0) - 100
+                        yo = -125 if "rpg" in name_map[l] else 0
 
                     # show sprite
                     frame:
@@ -257,10 +255,8 @@ screen person(l):
                             xsize 1.0
                             ysize 1.0
                             xzoom x
-                            # maybe we don't need these vars anymore?
-                            # zoom z
-                            # xoffset xo
-                            # yoffset yo
+                            yoffset yo
+
                             fit "contain"
 
                     ### for sprite selection / rpg data
@@ -323,22 +319,32 @@ screen person(l):
 
                             # show rpg data if it exists
                             if "rpg" in name_map[l]:
-                                hbox:
-                                    xalign 0.5
-                                    spacing 50
+                                null height 10
+                                vbox:
+                                    xsize 1.0
+                                    frame:
+                                        xsize 1.0
+                                        background "#f70"
+                                        text "RPG Stats"
+                                    frame:
+                                        xsize 1.0
+                                        background "#07f"
+                                        hbox:
+                                            xalign 0.5
+                                            spacing 50
 
-                                    frame:
-                                        xsize 100
-                                        text "HP\n" + str(hp):
-                                            xalign 0.5
-                                            text_align 0.5
-                                    frame:
-                                        xsize 100
-                                        text "ATK\n" + str(attack):
-                                            xalign 0.5
-                                            text_align 0.5
-                                    frame:
-                                        xsize 100
-                                        text "DEF\n" +str(defense):
-                                            xalign 0.5
-                                            text_align 0.5
+                                            frame:
+                                                xsize 100
+                                                text "HP\n" + str(hp):
+                                                    xalign 0.5
+                                                    text_align 0.5
+                                            frame:
+                                                xsize 100
+                                                text "ATK\n" + str(attack):
+                                                    xalign 0.5
+                                                    text_align 0.5
+                                            frame:
+                                                xsize 100
+                                                text "DEF\n" +str(defense):
+                                                    xalign 0.5
+                                                    text_align 0.5

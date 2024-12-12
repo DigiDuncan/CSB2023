@@ -43,7 +43,7 @@ screen category_nav():
 
             textbutton "Achievements\n{size=-12}Look at all you've accomplished!" action ShowMenu("achievements_welcome")
 
-            textbutton "People\n{size=-12}Learn more about the characters you've met!" action ShowMenu("people")
+            textbutton "Bios\n{size=-12}Learn more about the characters you've met!" action ShowMenu("people")
             
             textbutton "{image=gui/dx_text.png} Item Collection\n{size=-12}Inspect items you've found while playing!" action ShowMenu("item_collection")
 
