@@ -5714,6 +5714,8 @@ label ce_lights_out:
     play sound2 sfx_house_door_slam noloop
     with hpunch
     pause 0.5
+    $ mouse_visible = False
+    show screen flashlight_demo
     scene cs_door
     show cs scared christmas at left
     with dissolve
@@ -5729,7 +5731,9 @@ label ce_lights_out:
     cs "How much... did it..."
     play sound sfx_house_door_slam
     scene black with Dissolve(0.25)
+    hide screen flashlight_demo
     pause 0.5
+    $ mouse_visible = True
     n "CS slams the door shut and runs back to deliver the news."
     pause 0.5
 
