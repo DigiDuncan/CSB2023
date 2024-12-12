@@ -319,19 +319,19 @@
     "cs_living_elf.png": {
         "type": "image",
         "title": "CS Living Room (Elf)",
-        "caption": "Placeholder Text",
+        "caption": "A beta image used during the projector scene.",
         "need_label": "ce_banter"
     },
     "cs_living_error.png": {
         "type": "image",
         "title": "CS Living Room (Error)",
-        "caption": "Placeholder Text",
+        "caption": "A beta image used during the projector scene.",
         "need_label": "ce_banter"
     },
     "cs_living_signal.png": {
         "type": "image",
         "title": "CS Living Room (Signal)",
-        "caption": "Placeholder Text",
+        "caption": "A beta image used during the projector scene.",
         "need_label": "ce_banter"
     }
 }
