@@ -92,14 +92,6 @@
         "rarity": "Legendary",
         "dx": true
     },
-    "brooch": {
-        "img": "brooch",
-        "name": "Mother's Brooch",
-        "owner": "An Amtrak passenger",
-        "desc": "A priceless family heirloom.",
-        "rarity": "Uncommon",
-        "dx": true
-    },
     "bread": {
         "img": "bread",
         "name": "Loaf Of Bread",
@@ -107,6 +99,14 @@
         "desc": "Ideal for making garlic bread!",
         "rarity": "Common",
         "ce": true
+    },
+    "brooch": {
+        "img": "brooch",
+        "name": "Mother's Brooch",
+        "owner": "An Amtrak passenger",
+        "desc": "A priceless family heirloom.",
+        "rarity": "Uncommon",
+        "dx": true
     },
     "burnt_turkey": {
         "img": "burnt_turkey",
@@ -269,14 +269,6 @@
         "rarity": "Common",
         "ce": true
     },
-    "db_car": {
-        "img": "db_car",
-        "name": "DB's Car",
-        "owner": "db05",
-        "desc": "A 2017 Mini Cooper.",
-        "rarity": "Common",
-        "ce": true
-    },
     "dasani": {
         "img": "dasani",
         "name": "Bottle Of Dasani",
@@ -284,6 +276,14 @@
         "desc": "{a=https://www.youtube.com/watch?v=fIfMOGUi98Y}Imagine an ass drinking...{/a}\n\nActually, no. I'd rather {i}not{/i} imagine that.",
         "rarity": "Legendary",
         "dx": true
+    },
+    "db_car": {
+        "img": "db_car",
+        "name": "DB's Car",
+        "owner": "db05",
+        "desc": "A 2017 Mini Cooper.",
+        "rarity": "Common",
+        "ce": true
     },
     "decor_boxes": {
         "img": "decor_boxes",
@@ -582,14 +582,6 @@
         "desc": "Borrowed by CS to take on Copguy and his corrupt crew.",
         "rarity": "Common"
     },
-    "melted_ice_cream": {
-        "img": "melted_ice_cream",
-        "name": "Melted Ice Cream",
-        "owner": "Nobody",
-        "desc": "{i}Why?",
-        "rarity": "Common",
-        "ce": true
-    },
     "mean_hat": {
         "img": "mean_hat",
         "name": "Mean's Hat",
@@ -604,6 +596,14 @@
         "owner": "Mean",
         "desc": "Placeholder text for now.",
         "rarity": "Mean, pick a rarity!",
+        "ce": true
+    },
+    "melted_ice_cream": {
+        "img": "melted_ice_cream",
+        "name": "Melted Ice Cream",
+        "owner": "Nobody",
+        "desc": "{i}Why?",
+        "rarity": "Common",
         "ce": true
     },
     "mika_car": {
@@ -685,14 +685,6 @@
         "rarity": "Common",
         "ce": true
     },  
-    "pills": {
-        "img": "pills",
-        "name": "Bottle Of Pain Pills",
-        "owner": "Wesley",
-        "desc": "Always remember to keep track of all of your prescription medications.",
-        "rarity": "Common",
-        "ce": true
-    },
     "pie": {
         "img": "pie",
         "name": "Premade Apple Pie",
@@ -707,6 +699,14 @@
         "owner": "The Witch",
         "desc": "Ideally eaten steamed.",
         "rarity": "Uncommon"
+    },
+    "pills": {
+        "img": "pills",
+        "name": "Bottle Of Pain Pills",
+        "owner": "Wesley",
+        "desc": "Always remember to keep track of all of your prescription medications.",
+        "rarity": "Common",
+        "ce": true
     },
     "pipe_gun": {
         "img": "pipe_gun",
@@ -913,14 +913,6 @@
         "rarity": "Uncommon",
         "dx": true
     },
-    "tate_phone": {
-        "img": "tate_phone",
-        "name": "Tate's Cellphone",
-        "owner": "Tate",
-        "desc": "It has been modified to allow a cute charm to be attached.",
-        "rarity": "Uncommon",
-        "dx": true
-    },
     "target_bags": {
         "img": "target_bags",
         "name": "Target Grocery Bags",
@@ -928,6 +920,14 @@
         "desc": "Illegal in at least 12 states and 500 cities... including New York?!\n\nHey, wait a minute--!",
         "rarity": "Common",
         "ce": true
+    },
+    "tate_phone": {
+        "img": "tate_phone",
+        "name": "Tate's Cellphone",
+        "owner": "Tate",
+        "desc": "It has been modified to allow a cute charm to be attached.",
+        "rarity": "Uncommon",
+        "dx": true
     },
     "tato_bag": {
         "img": "tato_bag",
@@ -1009,6 +1009,14 @@
         "rarity": "Uncommon",
         "dx": true
     },
+    "yeetable_textbox": {
+        "img": "yeetable_textbox",
+        "name": "The Textbox?!",
+        "owner": "???",
+        "desc": "You should not have this...",
+        "rarity": "???",
+        "dx": true
+    },
     "ytx": {
         "img": "ytx",
         "name": "YTX-9001 Ti",
@@ -1022,14 +1030,6 @@
         "owner": "CS",
         "desc": "Contains everything you need to configure your new YTX-9001 Ti!",
         "rarity": "Uncommon",
-        "dx": true
-    },
-    "yeetable_textbox": {
-        "img": "yeetable_textbox",
-        "name": "The Textbox?!",
-        "owner": "???",
-        "desc": "You should not have this...",
-        "rarity": "???",
         "dx": true
     }
 }
