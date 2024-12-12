@@ -31,6 +31,14 @@
         "rarity": "Rare",
         "ce": true
     },
+    "anno_phone": {
+        "img": "anno_phone",
+        "name": "Anno's Phone",
+        "owner": "Anno",
+        "desc": "An An(no)droid phone with a Nirvana case on it. If there's anyone that can be classified as the #1 Nirvana fan, it's probably Anno.",
+        "rarity": "Common",
+        "ce": true
+    },
     "arc_laptop": {
         "img": "arc_laptop",
         "name": "Arc's Laptop",
