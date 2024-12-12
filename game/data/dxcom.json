@@ -388,5 +388,63 @@
             "transcript": "He is currently describing the, uhh, concept of Pizzapotamus. Uhh, he doesn't do a very good job, seeing as he is sweating. That's all I'm gonna spoil in the meantime. Uhh, yep. This has been Mika, that was my contribution to, uhh, {i}Christmas Route,{/i} I think it was called. Bye!",
             "length": 22.5
         }
+    ],
+    "cs_wardrobe": [
+        {
+            "audio_path": "cs_wardrobe",
+            "speaker": "Tate",
+            "transcript": "CS has several new outfits in this route that I was responsible for. All of these new additions prompted Digi to completely re-render {i}every single one{/i} of CS' sprites so that they're finally consistent. As you can imagine, this took a lot of time.",
+            "length": 13.8
+        }
+    ],
+    "tato": [
+        {
+            "audio_path": "tato1",
+            "speaker": "Tate",
+            "transcript": "Once upon a time, I was living on a stranger's couch and had nothing but time on my hands. I desperately needed some cash, so I tried to design this marketable character. Since I didn't have enough capital to produce any plushies, this venture really didn't work out.",
+            "length": 13.9
+        },
+        {
+            "audio_path": "tato2",
+            "speaker": "Tate",
+            "transcript": "{i}Maybe{/i} you can still buy that bag of potatoes as a sticker somewhere... {i}maybe.{/i} Come to think of it, I don't actually know if {i}any{/i} items in that product line are still available.",
+            "length": 10.5
+        }
+    ],
+    "target": [
+        {
+            "audio_path": "target1",
+            "speaker": "Tate",
+            "transcript": "God, help me... Gathering all these grocery assets and moving them around was {i}actually{/i} hell! I thought I'd {i}never{/i} edit my way out of this fucking store!",
+            "length": 9.2
+        },
+        {
+            "audio_path": "target2",
+            "speaker": "Tate",
+            "transcript": "While I was searching for images, I learned that Target sells this eggless eggnog. Unfortunately, {i}my{/i} store was sold out, so I ended up finding an online recipe to try. It's actually pretty good, and I ended up drinking quite a lot of it while I was working on {i}CE.{/i}",
+            "length": 13.7
+        },
+        {
+            "audio_path": "target3",
+            "speaker": "Tate",
+            "transcript": "Sometimes, working on this game leads me to some interesting places.",
+            "length": 3.7
+        }
+    ],
+    "awawa": [
+        {
+            "audio_path": "awawa",
+            "speaker": "Tate",
+            "transcript": "Y'know, I don't say \"awawa\" {i}nearly{/i} as much as the others would have you believe. I had to remove quite a few of them while I was editing...",
+            "length": 6.6
+        }
+    ],
+    "crotch_doctor": [
+        {
+            "audio_path": "crotch_doctor",
+            "speaker": "Tate",
+            "transcript": "So, for the bottle of Crotch Doctor, the space on the original label was super-limited, so we couldn't agree on the best way to edit it. Eventually, I just said \"fuck it\" and combined {i}everyone's{/i} ideas into one brand-new custom label! I think the results speak for themselves.",
+            "length": 14.8
+        }
     ]
 }

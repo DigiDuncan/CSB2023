@@ -448,6 +448,8 @@ label ce_anno:
 
     n "CS puts on his coat before heading back to the garage for a shovel."
 
+    dxcom cs_wardrobe
+
     if tree_first:
         scene cs_garage_mess with dissolve
         show cs disappointed coat hat at offscreenleft
@@ -505,6 +507,7 @@ label ce_anno:
     hide cs
     hide shovel
     with moveoutleft
+    hide screen dxcom
     scene black with dissolve
     pause 1.0
     play sound sfx_house_door_close
@@ -1187,6 +1190,7 @@ label ce_before_shopping:
     if fun_value(FUN_VALUE_LEGENDARY):
         $ got_tato_bag = True
         # this here is some EXTREMELY DEEP tate lore.
+        dxcom tato
 
         # let's try the audio filtering feature! let's make this next thing muffled.
         $ renpy.music.set_audio_filter("sound2", renpy.audio.filter.Lowpass(1200))
@@ -1242,6 +1246,7 @@ label ce_before_shopping:
     cs "Since Digi's coming, and I think they're ace, I'd better have the good stuff."
     # This is deep-cut ace jokes, CS will not understand this one. -- Digi
     show cs coat at mid_right with move
+    hide screen dxcom
     pause 1.0
 
     show bread at manual_pos(0.9, 0.3) with Dissolve(0.25)
@@ -2009,6 +2014,8 @@ label ce_checkout:
     show nog at manual_pos(0.7, 0.5) with move
     hide nog with dissolve
 
+    dxcom target
+
     show genergy at manual_pos(0.4, 0.8) with Dissolve(0.25)
     show genergy at manual_pos(0.4, 0.5) with { "master" : MoveTransition(0.25) }
     play sound sfx_target_beep
@@ -2081,6 +2088,7 @@ label ce_checkout:
     show shopping_cart at manual_pos(0.4, 1.1, 0.5)
     show cs coat with determination
     pause 0.25
+    hide screen dxcom
     hide cs
     hide shopping_cart
     with moveoutright
@@ -3185,13 +3193,13 @@ label ce_banter:
     show copguy festive flipped at mid_mid_left
     show sheriff festive flipped at center
     with move
+    hide screen dxcom
     hide copguy
     hide sheriff
     with dissolve
     play sound sfx_house_door_close
     scene cs_bathroom
     copguy "Alright, make it quick! I don't wanna be in here all night!"
-    hide screen dxcom
     pause 0.5
 
     scene cs_kitchen
@@ -4760,6 +4768,7 @@ label ce_exchange:
     mean "Well, it's {i}mine{/i} now, bitch!"
     mean "I'm stealing your spaghetti recipe tomorrow, too!"
     tate "Awawa..."
+    dxcom awawa
     hide instant_pot with { "master": dissolve }
     mean "Who's next?"
     hide mean with moveoutright
@@ -4782,6 +4791,7 @@ label ce_exchange:
     billy "It lets you control {i}any{/i} power source {w=0.25}from {i}anywhere!"
     show tate festive
     tate "I'm sure I can find a use for this. Thanks!"
+    hide screen dxcom
     hide handy_switch with dissolve
     hide tate with moveoutright
     pause 0.5
@@ -7057,6 +7067,7 @@ label ce_roof_moment:
         xpos 0.7
         ypos -0.35
     with dissolve
+    dxcom crotch_doctor
     santa "Ta-da!"
     cs "Wow, that really {i}worked?!"
     billy "A giant bottle of Crotch Doctor?"
@@ -7076,6 +7087,7 @@ label ce_roof_moment:
         linear 15 rotate -60
     santa "Ho ho, oh, no. It's tipping towards us."
     santa "Oh, shit."
+    hide screen dxcom
     scene black with Dissolve(0.25)
     play sound sfx_splash
     with hpunch
