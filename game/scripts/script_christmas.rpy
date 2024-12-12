@@ -2368,7 +2368,7 @@ label ce_party_before:
         hide cs with moveoutleft
         stop sound fadeout 3.0
         scene cs_house_snow_night
-        # TODO: put vehicle img here
+        show mean_train dark at manual_pos(-0.3, 0.4, 0.5)
         $ collect("mean_train")
         show mean human dark flipped at mid_left
         $ persistent.seen.add("mean_human")

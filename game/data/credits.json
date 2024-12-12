@@ -91,7 +91,7 @@
             "Addt'l Background Assistance": ["Arceus3251", "DigiDuncan", "Aria \"Estroteric\"", "Mrs. 8923", "4Bakers", "Tate \"alleZSoyez\""],
             "Asset Remastering": ["4Bakers", "DigiDuncan", "Tate \"alleZSoyez\""],
             "Sprite Management": ["Pakoo", "DigiDuncan", "Tate \"alleZSoyez\""],
-            "3D Rendering": ["4Bakers"],
+            "3D Rendering": ["4Bakers", "Tris"],
             "UI Design": ["DigiDuncan", "Arceus3251", "Pakoo", "Tate \"alleZSoyez\""],
             "Cinematography": ["Tate \"alleZSoyez\""]
         },
@@ -200,7 +200,7 @@
             "Addt'l Background Assistance": ["Arceus3251", "DigiDuncan", "Aria \"Estroteric\"", "4Bakers"],
             "Asset Remastering": ["4Bakers", "DigiDuncan"],
             "Sprite Management": ["Pakoo", "DigiDuncan", "Tate \"alleZSoyez\""],
-            "3D Rendering": ["4Bakers"],
+            "3D Rendering": ["4Bakers", "Tris"],
             "UI Design": ["DigiDuncan", "Arceus3251", "Pakoo", "Tate \"alleZSoyez\""],
             "Cinematography": ["Tate \"alleZSoyez\""]
         },

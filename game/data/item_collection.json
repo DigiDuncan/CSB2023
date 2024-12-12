@@ -591,11 +591,11 @@
         "dx": true
     },
     "mean_train": {
-        "img": "placeholder",
+        "img": "mean_train",
         "name": "Mean's Locomotive",
         "owner": "Mean",
-        "desc": "Placeholder text for now.",
-        "rarity": "Mean, pick a rarity!",
+        "desc": "Mean's personal steam engine. Nobody really knows how he managed to acquire an entire {i}train,{/i} but this old locomotive has been lovingly restored and now matches Mean's jacket splendidly.",
+        "rarity": "Epic",
         "ce": true
     },
     "melted_ice_cream": {
