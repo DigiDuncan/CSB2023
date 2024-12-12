@@ -905,7 +905,7 @@ screen preferences():
                             bar value Preference("music volume"):
                                 xsize 450
                             null width 20
-                            label "[preferences.__dict__['volumes']['music'] * 100:.2f]%" yoffset -10 xminimum 200
+                            # label "[preferences.__dict__['volumes']['music'] * 100:.2f]%" yoffset -10 xminimum 200
 
                     if config.has_sound:
                         label _("Sound Volume")
@@ -913,7 +913,7 @@ screen preferences():
                             bar value Preference("sound volume"):
                                 xsize 450
                             null width 20
-                            label "[preferences.__dict__['volumes']['sfx'] * 100:.2f]%" yoffset -10 xminimum 200
+                            # label "[preferences.__dict__['volumes']['sfx'] * 100:.2f]%" yoffset -10 xminimum 200
                             if config.sample_sound:
                                 textbutton _("Test") action Play("sound", config.sample_sound)
 
@@ -923,7 +923,7 @@ screen preferences():
                             bar value Preference("voice volume"):
                                 xsize 450
                             null width 20
-                            label "[preferences.__dict__['volumes']['voice'] * 100:.2f]%" yoffset -10 xminimum 200
+                            # label "[preferences.__dict__['volumes']['voice'] * 100:.2f]%" yoffset -10 xminimum 200
                             if config.sample_voice:
                                 textbutton _("Test") action Play("voice", config.sample_voice)
             null height 10
