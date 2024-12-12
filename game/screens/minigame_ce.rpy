@@ -18,12 +18,12 @@ screen ce_minigame_screen():
         imagebutton idle "carrot_box.png":
             action Jump("play_ce_carrot")
             yalign 0.5
-            xpos 0.25 xanchor 0.5
+            xpos 0.33 xanchor 0.5
     else:
         image "carrot_box.png":
             blur 70
             yalign 0.5
-            xpos 0.25 xanchor 0.5
+            xpos 0.67 xanchor 0.5
 
     if persistent.reversi_game_unlocked:
         imagebutton idle "reversi_box.png":
@@ -34,7 +34,7 @@ screen ce_minigame_screen():
         image "reversi_box.png":
             blur 70
             yalign 0.5
-            xpos 0.66 xanchor 0.5
+            xpos 0.67 xanchor 0.5
     
 
     textbutton "Return to Extras" action ShowMenu("category_welcome") yoffset 950 xoffset 25
