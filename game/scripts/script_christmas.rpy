@@ -465,7 +465,9 @@ label ce_anno:
             cs "I love Legos, but not when they're embedded in my {i}feet!"
         cs "Now, where did I last put..."
     else:
-        scene cs_garage with dissolve
+        scene cs_garage
+        show garage_shelf at manual_pos(0.9, 0.5, 0.5)
+        with dissolve
         show cs disappointed coat hat at mid_mid_left with moveinleft
     pause 0.5
     show cs disappointed coat hat at right with move
@@ -871,7 +873,7 @@ label ce_anno:
     cs "Well, I had a blast working for LTT for a few days, but the cops found me as soon as I was featured in a video, so Arc and I had to hit the road again."
     show cs
     cs "We eventually proved to the cops that I wasn't guilty, and then Billy Mays took us all the way home."
-    anno "How the {i}hell{/i} did you manage to come across Billy Mays?!"
+    anno "How the {i}hell{/i} did you manage to run into Billy Mays?!"
     show cs happy
     cs "Crazy coincidence, I guess! It was a lot of fun though!"
     cs "We went to PencilCon, I won a golden pencil sharpener, visited some old friends, and did a lot of sightseeing!"
@@ -887,7 +889,7 @@ label ce_anno:
     if tree_first:
         anno "By the way, where are all of the decorations?"
         cs "Ah, yes. They're all in the garage. Come on, I'll show you."
-        hide cs with moveoutright
+        show cs at offscreenright with MoveTransition(1.0)
         hide anno with moveoutright
         n "Anno follows CS into the garage."
 
@@ -895,7 +897,7 @@ label ce_anno:
         show cs disappointed at center
         show anno at left
         with moveinleft
-        n "Anno gawks at the mess on the floor, carefully avoiding the strewn-about Legos."
+        n "Anno gawks at the mess on the floor, carefully avoiding the scattered Legos."
         anno "Damn, bitch, you {i}live{/i} like this?"
         cs "... I may have had a... {i}small{/i} mishap when I was trying to get the tree out."
         anno "{i}\"Small\"?!" with vpunch
@@ -905,11 +907,14 @@ label ce_anno:
         cs "I figured it'd be faster if I had a helping hand."
         n "Anno groans."
         anno "I was hoping to be {i}setting up{/i} decorations, not {i}cleaning them{/i} up."
-        anno "But, I guess we don't really have any other option, do we?"
+        anno "But... I guess we don't really have any other option, do we?"
         cs "Guess not..."
         show cs disappointed at mid_right with move
         cs "Here, I'll grab these boxes, and we'll start throwing stuff in them."
+        pause 0.5
         scene black with dissolve
+        play sound sfx_items_rustling volume 4.0
+        pause 3.0
         n "After about an hour, they manage to clean up the mess without stepping on too many more Legos."
         n "CS and Anno drag the remaining boxes inside."
     else:
@@ -919,6 +924,7 @@ label ce_anno:
         anno "Alright!"
         scene black with dissolve
         play sound sfx_items_rustling volume 4.0
+        pause 1.0
         centered "20 minutes later..."
 
 # Setting up decorations
@@ -963,10 +969,11 @@ label ce_setup:
     anno "Before I get going, was there anything else you needed help with?"
     show cs disappointed
     cs "No, I don't think so..."
-    show cs worried
+    pause 1.0
+    show cs worried with vpunch
     n "CS remembers that he didn't buy any food for the party."
     cs "Shit, I do need to go shopping. I don't have anything for Christmas dinner!"
-    anno "Well, you've got today and tomorrow, at least."
+    anno "Well, I can't help you with that one. At least you've still got today and tomorrow to get it done."
     show cs
     cs "Yeah, I think I'm gonna head out here in a moment. I just need to make a list."
     if fun_value(FUN_VALUE_COMMON):
