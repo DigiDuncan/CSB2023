@@ -411,6 +411,7 @@ label ce_anno:
     show anno_house at mid_offscreen_right
     show anno phone at mid_right
     with moveinright
+    $ collect("anno_phone")
     anno "Hello?"
     show cs happy phone
     cs "Hey Anno, CS here!"
