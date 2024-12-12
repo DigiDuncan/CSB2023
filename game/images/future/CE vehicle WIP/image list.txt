@@ -16,7 +16,7 @@ Dice rolls and vehicles.
 9. copguy cruiser ✔️✔️
 10. sheriff bus ---------- images/future/sheriff_bus.png
 11. joj ufo ---------- images/future/joj_ufo_only.png ✔️
-12. pakoo dodge charger ---------- images/future/pakoo_charger.png
+12. pakoo dodge charger ✔️✔️
 13. aria ✔️✔️
 14. rosen car ---------- images/future/michael_car.png
 15. linus/luke car ---------- images/future/ltt_car.png

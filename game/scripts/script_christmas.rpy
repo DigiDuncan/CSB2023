@@ -2521,7 +2521,7 @@ label ce_party_before:
         stop sound fadeout 1.0
         hide cs with moveoutleft
         scene cs_house_snow_night
-        # TODO: put vehicle img here
+        show pakoo_car dark at manual_pos(0.3, 0.8, 0.5)
         $ collect("pakoo_car")
         show k22 dark flipped at left
         show k17 dark flipped at mid_mid_left

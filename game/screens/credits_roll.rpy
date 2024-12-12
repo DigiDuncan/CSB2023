@@ -122,7 +122,7 @@ screen credits_roll(route = "All", bgm = "goodbye_summer_hello_winter.ogg", scro
                                                 $ sub_text = obfuscator(subcategory)
 
                                             # manually hide characters if not seen
-                                            $ hide_these = { "Arceus": "arceus", "Kitty": "kitty", "DigiDuncan": "digi", "Aria": "aria", "Pakoo": "pakoo", "Bubble": "bubble", "Tate": "tate", "Tate EX": "tate_ex", "Perfect Tate": "perfect_tate", "Mean": "mean", "Mean \(Human\)": "mean_human", "Ges": "ges", "blanknam3d": "blank", "Midge": "midge" }
+                                            $ hide_these = { "Arceus": "arceus", "Kitty": "kitty", "DigiDuncan": "digi", "Aria": "aria", "Pakoo": "pakoo", "Bubble": "bubble", "Tate": "tate", "Tate EX": "tate_ex", "Perfect Tate": "perfect_tate", "Mean": "mean", "Mean \(Human\)": "mean_human", "Ges": "ges", "blanknam3d": "blank", "Midge": "midge", "Elizabeth": "eliza" }
 
                                             for h in hide_these:
                                                 if hide_these[h] not in persistent.seen and re.fullmatch(h, subcategory):

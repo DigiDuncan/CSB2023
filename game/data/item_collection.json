@@ -670,11 +670,11 @@
         "rarity": "Rare"
     },
     "pakoo_car": {
-        "img": "placeholder",
+        "img": "pakoo_car",
         "name": "Pakoo's Car",
         "owner": "Pakoo",
-        "desc": "Placeholder text for now.",
-        "rarity": "Common",
+        "desc": "A 1970 Dodge Charger.",
+        "rarity": "Classic",
         "ce": true
     },
     "peach_syrup": {
