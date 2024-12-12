@@ -241,7 +241,7 @@ screen person(l):
 
                     python:
                         x = -1 if name_map[l].get("flip", False) else 1
-                        yo = -125 if "rpg" in name_map[l] else 0
+                        yo = -110 if "rpg" in name_map[l] else 0
 
                     # show sprite
                     frame:
@@ -325,7 +325,7 @@ screen person(l):
                                     frame:
                                         xsize 1.0
                                         background "#f70"
-                                        text "RPG Stats"
+                                        text "{size=-8}RPG Stats"
                                     frame:
                                         xsize 1.0
                                         background "#07f"
@@ -334,17 +334,20 @@ screen person(l):
                                             spacing 50
 
                                             frame:
+                                                background "#070"
                                                 xsize 100
-                                                text "HP\n" + str(hp):
+                                                text str(hp) + "\n{size=-8}HP":
                                                     xalign 0.5
                                                     text_align 0.5
                                             frame:
+                                                background "#700"
                                                 xsize 100
-                                                text "ATK\n" + str(attack):
+                                                text str(attack) + "\n{size=-8}ATK":
                                                     xalign 0.5
                                                     text_align 0.5
                                             frame:
+                                                background "#007"
                                                 xsize 100
-                                                text "DEF\n" +str(defense):
+                                                text str(defense) + "\n{size=-8}DEF":
                                                     xalign 0.5
                                                     text_align 0.5
