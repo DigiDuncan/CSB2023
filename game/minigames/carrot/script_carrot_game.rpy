@@ -14,7 +14,7 @@ init python:
     BEAT_GAP = CARROT_WIDTH * 3 # Number of pixels between carrots
     CARROT_OFFSET = 300 # Number of pixels to offset where the hit window is (from the left side of the screen)
     INPUT_SYNC_OFFSET = 0.000
-    AUDIO_SYNC_OFFSET = 0.125
+    AUDIO_SYNC_OFFSET = 0.000
 
     ACCURACY_TO_WIN = 0.75
 
@@ -39,6 +39,7 @@ init python:
 
             self.hit_to_process = False
             self.pressing_down = False
+            self.pressed_space_once = False
             self.last_beat = -1
             self.last_audio_beat = -1
 
@@ -49,6 +50,7 @@ init python:
             self.bg = Image("minigames/carrot/bg.png")
             self.csbg = Image("minigames/carrot/csbg.png")
             self.hand = Image("minigames/carrot/hand.png")
+            self.space = Image("minigames/carrot/space.png")
             self.fg = Image("minigames/carrot/fg.png")
 
             self.carrot = Image("minigames/carrot/carrot.png")
@@ -64,6 +66,15 @@ init python:
             self.perfect = Image("minigames/carrot/perfect.png")
 
             self.hand_position = 560
+
+            # Precache sounds
+            renpy.sound.play("minigames/carrot/3.ogg", relative_volume=0.0)
+            renpy.sound.play("minigames/carrot/2.ogg", relative_volume=0.0)
+            renpy.sound.play("minigames/carrot/1.ogg", relative_volume=0.0)
+            renpy.sound.play("minigames/carrot/go.ogg", relative_volume=0.0)
+            renpy.sound.play("minigames/carrot/hit.ogg", relative_volume=0.0)
+            renpy.sound.play("minigames/carrot/miss.ogg", relative_volume=0.0)
+            renpy.sound.play("minigames/carrot/perfect_fail.ogg", relative_volume=0.0)
 
         @property
         def current_beat(self) -> int:
@@ -141,6 +152,11 @@ init python:
             h_pos = self.hand_position + (100 * self.pressing_down)
             r.blit(hand_renderer, (0, h_pos))
 
+            # Render space
+            if not self.pressed_space_once or self.song_time > self.song_length + 1.0:
+                space_renderer = renpy.render(self.space, 240, 70, st, at)
+                r.blit(space_renderer, (CARROT_OFFSET, self.hand_position - 80))
+
             # Render perfect
             if self.current_beat % 4 in (0, 1) and self.is_fcing:
                 perfect_renderer = renpy.render(self.perfect, 1920, 1080, st, at)
@@ -166,7 +182,7 @@ init python:
                 else: 
                     r.blit(self.c_render, (x, y))
  
-            if self.next_carrot <= self.no_beats and (self.beat_time(self.next_carrot) - self.song_time) * BEAT_GAP + CARROT_OFFSET <= 1920:
+            if self.next_carrot <= (self.no_beats - 4) and (self.beat_time(self.next_carrot) - self.song_time) * BEAT_GAP + CARROT_OFFSET <= 1920:
                 self.carrots.append(self.next_carrot)
                 self.next_carrot += 1
 
@@ -190,7 +206,7 @@ init python:
             miss = False
 
             # Process input
-            if self.hit_to_process and self.start_beat - 1 <= current and current <= self.no_beats:
+            if self.hit_to_process and self.start_beat - 1 <= current and current <= (self.no_beats - 4):
                 input_time = self.song_time
 
                 # Find nearest beat
@@ -217,7 +233,8 @@ init python:
                     nearest not in self.successful_beats and
                     nearest not in self.missed_beats and
                     self.start_beat <= nearest
-                ): 
+                    and current <= (self.no_beats - 4)
+                ):
                 # Miss!
                 self.misses += 1
                 self.is_fcing = False
@@ -254,6 +271,7 @@ init python:
                 if ev.key == pygame.K_SPACE:
                     self.pressing_down = True
                     self.hit_to_process = True
+                    self.pressed_space_once = True
             if ev.type == pygame.KEYUP:
                 self.pressing_down = False
             if self.win is not None:

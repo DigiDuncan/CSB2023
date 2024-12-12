@@ -31,6 +31,37 @@ label play_slots_game:
     minigame "minigame_slots" "minigame_slots" "minigame_slots"
     return
 
+label play_ce_carrot:
+    minigame "play_carrotgame" "play_ce_done" "play_ce_done"
+    return
+
+label play_ce_reversi:
+    menu:
+        "Who would you like to play against?"
+        "Tate (Beginner)":
+            $ reversi_difficulty = ReversiAI.TATE
+            minigame "play_reversigame" "play_ce_done" "play_ce_done"
+            return
+        "Digi (Easy)":
+            $ reversi_difficulty = ReversiAI.DIGI
+            minigame "play_reversigame" "play_ce_done" "play_ce_done"
+            return
+        "K-22 (Medium)":
+            $ reversi_difficulty = ReversiAI.PAKOO
+            minigame "play_reversigame" "play_ce_done" "play_ce_done"
+            return
+        "Arceus (Hard)":
+            $ reversi_difficulty = ReversiAI.ARCEUS
+            minigame "play_reversigame" "play_ce_done" "play_ce_done"
+            return
+        "Aria (Expert)":
+            $ reversi_difficulty = ReversiAI.ARIA
+            minigame "play_reversigame" "play_ce_done" "play_ce_done"
+            return
+
+label play_ce_done:
+    return
+
 ########## Warning Screens ##########
 
 label back_out_archival:

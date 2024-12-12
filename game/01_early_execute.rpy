@@ -84,6 +84,10 @@ default persistent.csb2_unlocked = False
 default persistent.csb3a_unlocked = False
 default persistent.csb3b_unlocked = False
 
+# Game unlocks: CE
+default persistent.carrot_game_unlocked = False
+default persistent.reversi_game_unlocked = False
+
 # Register CJK fonts
 define config.font_name_map["cn"] = "ZCOOLKuaiLe-Regular.ttf"
 define config.font_name_map["jp"] = "MochiyPopOne-Regular.ttf"
