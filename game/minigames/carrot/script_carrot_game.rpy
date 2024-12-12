@@ -283,6 +283,9 @@ init python:
                     self.pressed_space_once = True
             if ev.type == pygame.KEYUP:
                 self.pressing_down = False
+            # This *should* return the frame that self.win is set, but it's requiring a button input
+            # Why? `redraw` is an event that calls this function, and we call of one those every frame, necessarily.
+            # ow
             if self.win is not None:
                 return self.win
 
