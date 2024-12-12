@@ -41,6 +41,8 @@ screen timeline_tracer():
         xpos 25
         ypos 25
         text "{size=+12}Timeline Tracer"
+        text "{size=-16}Click on an unlocked ending to replay it!":
+            ypos 54
 
         # make a key for the player
         # this implementation is stupid

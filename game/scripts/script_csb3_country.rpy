@@ -1199,7 +1199,7 @@ label england_scott_movent:
     cs "I should wait until he's done with his video."
     tom "So, yeah, we're just gonna keep talking about this road in particular."
     show car at car_run behind tom
-    $ collect("car")
+    $ collect("rental_car")
     with move
     tom "This road here was created in 1968, by OHP--{w=0.5}{nw}"
     play sound sfx_car_crash volume 0.7

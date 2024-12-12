@@ -7278,7 +7278,7 @@ label ce_roof_moment:
     show black with { "master": Dissolve(10.0) }
     n "It wasn't the Christmas that CS expected, and, certainly, not everything went according to plan."
     n "In spite of it all, with the help of his friends, it was one of the jolliest times he's ever had."
-    n "Merry Christmas, and to all a good night!"
+    n "Merry Christmas to all, and to all, a good night!"
     $ achievement_manager.unlock("hoh_hoh")
     $ ending_manager.mark("christmas")
     scene black with dissolve
