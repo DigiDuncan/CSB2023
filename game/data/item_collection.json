@@ -294,11 +294,11 @@
         "ce": true
     },
     "digi_nugget": {
-        "img": "digi_nugget_parked",
+        "img": "digi_nugget_full",
         "name": "The Nugget",
         "owner": "Digi",
         "desc": "Placeholder text for now. Tate needs to replace this image with something else later, too.",
-        "rarity": "Common",
+        "rarity": "Digi, pick a rarity!",
         "ce": true
     },
     "dog": {
@@ -594,7 +594,7 @@
         "img": "mean_train",
         "name": "Mean's Locomotive",
         "owner": "Mean",
-        "desc": "Mean's personal steam engine. Nobody really knows how he managed to acquire an entire {i}train,{/i} but this old locomotive has been lovingly restored and now matches Mean's jacket splendidly.",
+        "desc": "Mean's personal steam engine. Nobody really knows how he managed to acquire an entire {i}train,{/i} but this old locomotive has been lovingly restored to its former glory. It also matches Mean's jacket splendidly.",
         "rarity": "Epic",
         "ce": true
     },
@@ -607,10 +607,10 @@
         "ce": true
     },
     "mika_car": {
-        "img": "placeholder",
+        "img": "mika_car",
         "name": "Mika's Car",
         "owner": "Mika",
-        "desc": "Placeholder text for now.",
+        "desc": "A 1999 Jeep Cherokee Sport.",
         "rarity": "Common",
         "ce": true
     },

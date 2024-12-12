@@ -2655,9 +2655,10 @@ label ce_party_before:
         stop sound fadeout 1.0
         hide cs with moveoutleft
         scene cs_house_snow_night
-        # TODO: put vehicle img here
+        show mika_car dark at manual_pos(0.3, 0.8, 0.5):
+            zoom 2.0
         $ collect("mika_car")
-        show elizabeth dark at center
+        show elizabeth dark flipped at center
         show anne dark at mid_left
         show grace dark at left
         with dissolve
@@ -5118,7 +5119,7 @@ label ce_exchange:
     $ collect("russian_radio")
 
     eliza "So, it's my turn. Let's see what we have..."
-    show elizabeth at mid_left with moveinleft
+    show elizabeth flipped at mid_left with moveinleft
     show gift_db at manual_pos(0.4, 0.7, 0.5) with moveinbottom
     pause 0.5
     show dog_food at manual_pos(0.4, 0.7, 0.5)

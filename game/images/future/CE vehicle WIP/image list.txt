@@ -9,8 +9,8 @@ Dice rolls and vehicles.
 1. [nothing] ✔️✔️
 2. Arc/Kitty rental car ✔️✔️
 3. Anno car ✔️✔️
-4. Digi nugget ---------- [PENDING, NEEDS ITEM COLLECTION PIC] ✔️
-5/6. Tate/Mean train ---------- [PENDING]
+4. Digi nugget ✔️✔️ (needs digi to write flavor text)
+5/6. Tate/Mean train ✔️✔️
 7. Billy car ✔️✔️
 8. Obama chopper ---------- images/future/obama_chopper.png
 9. copguy cruiser ✔️✔️
@@ -22,6 +22,6 @@ Dice rolls and vehicles.
 15. linus/luke car ---------- images/future/ltt_car.png
 16. blank honda civic ✔️✔️
 17. ges car ✔️✔️
-18. mika jeep cherokee ---------- images/future/mika_jeep.png
+18. mika jeep cherokee ✔️✔️
 19. db05 mini cooper ✔️✔️
 20. avgn ✔️✔️
