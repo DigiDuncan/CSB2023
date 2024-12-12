@@ -5,7 +5,7 @@
 
 init python:
     import math
-    import time
+    import pygame
 
     # DISPLAY VARIABLES
     CS_HEIGHT = 863
@@ -15,6 +15,7 @@ init python:
     CARROT_OFFSET = 300 # Number of pixels to offset where the hit window is (from the left side of the screen)
     BOUNCE_PIXELS = 50
     HAND_POSITION = 560
+    FINISH_EVENT = pygame.event.register('MinigameDone')
 
     # ENGINE VARIABLES
     INPUT_SYNC_OFFSET = 0.000
@@ -138,13 +139,15 @@ init python:
             if not self.started_playing_song:
                 renpy.music.play("minigames/carrot/hotel_disbelief.ogg", loop = False)
                 self.start_time = st
-                self.started_playing_song = True
 
                 # Set music popup variables for later, also makes pause screen work
                 global _current_internal_id, _current_artist, _current_song
                 _current_internal_id = "hotel_disbelief"
                 _current_song = "Can You Really Call This A Hotel, I Didn't Receive A Mint On My Pillow Or Anything"
                 _current_artist = "Toby Fox"
+
+            if renpy.music.get_pos() is not None:
+                self.started_playing_song = True
 
             # Update song time
             t = renpy.music.get_pos()
@@ -272,13 +275,14 @@ init python:
             elif hit:
                 renpy.sound.play("minigames/carrot/hit.ogg")
 
-            if renpy.music.get_pos() is None:
+            if renpy.music.get_pos() is None and self.started_playing_song:
                 if self.is_fcing:
                     self.win = "superb"
                 elif self.accuracy >= ACCURACY_TO_WIN:
                     self.win = "ok"
                 else:
                     self.win = "try_again"
+                pygame.event.post(pygame.event.Event(FINISH_EVENT))
 
             self.last_tick = t
             self.last_beat = self.current_beat
@@ -288,6 +292,7 @@ init python:
             return r
 
         def event(self, ev, x, y, st):
+            print('I hate you and everyone you love', self.win, ev, x, y, st)
             import pygame
             if ev.type == pygame.KEYDOWN and not self.pressing_down:
                 if ev.key == pygame.K_END:
