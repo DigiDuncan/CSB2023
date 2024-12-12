@@ -5,6 +5,7 @@
 
 init python:
     import math
+    import time
 
     # DISPLAY VARIABLES
     CS_HEIGHT = 863
@@ -60,8 +61,8 @@ init python:
             self.carrot = Image("minigames/carrot/carrot.png")
             self.glowing_carrot = Image("minigames/carrot/glowing_carrot.png")
             self.chopped_carrot = Image("minigames/carrot/chopped_carrot.png")
-            self.c_render = renpy.render(self.carrot, 433, 122, 0.0, 0.0)
-            self.gc_render = renpy.render(self.glowing_carrot, 433, 122, 0.0, 0.0)
+            self.c_render = renpy.render(self.carrot, CARROT_WIDTH, CARROT_HEIGHT, 0.0, 0.0)
+            self.gc_render = renpy.render(self.glowing_carrot, CARROT_WIDTH, CARROT_HEIGHT, 0.0, 0.0)
             self.cc_render = renpy.render(self.chopped_carrot, 285, 123, 0.0, 0.0)
 
             # Carrot highway
@@ -120,12 +121,10 @@ init python:
             return pix
 
         def render(self, width, height, st, at):
-            if self.start_time is None:
-                self.start_time = st
-
             # Play the song if we haven't
             if not self.started_playing_song:
-                renpy.music.play("minigames/carrot/hotel_disbelief.ogg", loop = False)
+                renpy.music.play("minigames/carrot/click_track.ogg", loop = False)
+                self.start_time = time.time()
                 self.started_playing_song = True
 
                 # Set music popup variables for later, also makes pause screen work
@@ -135,8 +134,10 @@ init python:
                 _current_artist = "Toby Fox"
 
             # Update song time
-            dt = st - self.last_tick
-            self._song_time += dt
+            t = time.time()
+            dt = t - self.last_tick
+            self.last_tick = t
+            self._song_time = t - self.start_time
             was_fcing = self.is_fcing
 
             r = renpy.Render(1920, 1080)
@@ -265,24 +266,25 @@ init python:
                 else:
                     self.win = "try_again"
 
-            renpy.redraw(self, 0)
             self.last_tick = st
             self.last_beat = self.current_beat
             self.last_audio_beat = self.current_audio_beat
             self.hit_to_process = False
+            renpy.redraw(self, 0)
             return r
 
         def event(self, ev, x, y, st):
             import pygame
-            if ev.type == pygame.KEYDOWN:
+            if ev.type == pygame.KEYDOWN and not self.pressing_down:
                 if ev.key == pygame.K_END:
                     self.win = "ok"
                 if ev.key == pygame.K_SPACE:
                     self.pressing_down = True
                     self.hit_to_process = True
                     self.pressed_space_once = True
-            if ev.type == pygame.KEYUP:
-                self.pressing_down = False
+            elif ev.type == pygame.KEYUP:
+                if ev.key == pygame.K_SPACE:
+                    self.pressing_down = False
             # This *should* return the frame that self.win is set, but it's requiring a button input
             # Why? `redraw` is an event that calls this function, and we call of one those every frame, necessarily.
             # ow
