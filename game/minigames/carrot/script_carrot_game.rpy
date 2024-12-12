@@ -144,7 +144,7 @@ init python:
             # Render perfect
             if self.current_beat % 4 in (0, 1) and self.is_fcing:
                 perfect_renderer = renpy.render(self.perfect, 1920, 1080, st, at)
-                r.blit(perfect_renderer, (0, 0))
+                r.blit(perfect_renderer, (1466, 10))
 
             last = self.last_beat
             current = self.current_beat
