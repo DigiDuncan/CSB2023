@@ -319,7 +319,7 @@
         {
             "audio_path": "pizza1",
             "speaker": "Mika",
-            "transcript": "Hello! This is Mikapara, from Pakoopara's house. Uh, you may know me from the wedding video, if you've watched that. If-- If you haven't, go to... Pakoopara's channel. Uh, so, this, on the right-hand side, I'm pretty sure, right below the audio commentary knob module-- or, {i}node,{/i} sorry, if they haven't changed it-- It's Mike, uh... Mike the Pizzapotamus.",
+            "transcript": "Hello! This is Mikapara, from... Pakoopara's house! Uh, you may know me from the wedding video, if you've watched that. If-- If you haven't, go to... Pakoopara's channel. Uh, so, {i}this,{/i} on the right-hand side, I'm pretty sure, right below the audio commentary knob module-- or, {i}node,{/i} sorry, if they haven't changed it-- It's Mike, uh... Mike the Pizzapotamus.",
             "length": 24.7
         },
         {
@@ -343,19 +343,19 @@
         {
             "audio_path": "pizza5",
             "speaker": "Mika",
-            "transcript": "Okay, now, I'm going to list them, and you have to tell me which one it is. I'm gonna... say it after a few seconds, so-- A is...? Alpha, fantastic. B is...? Bravo, awesome. C is...? Charlie, great. D is...? Yep, Delta. E is...? Ye-- Echo. F is...? Foxtrot, yeah. G is...? Golf, yeah, like, y'know, the president. H is...? Hotel, yeah.",
+            "transcript": "Okay, now, I'm going to list them, and you have to tell me which one it is. I'm gonna... say it after a few seconds, so-- A is...? Alpha, fantastic. B is...? Bravo, awesome. C is...? Charlie, great. D is...? Yep, Delta. E is...? Ye-- Echo. F is...? Foxtrot, yeah. G is...? Golf, yeah, like... y'know, the president. H is...? Hotel, yeah.",
             "length": 30.2
         },
         {
             "audio_path": "pizza6",
             "speaker": "Mika",
-            "transcript": "I is...? India. Yeah, that took you a minute, but, yeah... {i}(Burps.) Oof!{/i} Excuse me, I had a really bad burp. Uh, J is...? Juliet, yep. K is...? Kilo. L is...? Lima. M is...? Mike. Mike! Like, the, y'know, like the Pizzapotamus. That should help you remember. N is...? November, yeah. O is...? Oscar, fantastic. P is...? Papa, yes. Q is...? Quebec, yeah. R is...? Romeo, mhm.",
+            "transcript": "I is...? India. Yeah, that took you a minute, but, yeah... {i}(Burps.) Oof!{/i} Excuse me, I had a really bad burp. Uh, J is...? Juliet, yep. K is...? Kilo. L is...? Lima. M is...? Mike-- {i}Mike!{/i} Like, the, y'know, like the Pizzapotamus. That should help you remember. N is...? November, yeah. O is...? Oscar, fantastic. P is...? Papa, yes. Q is...? Quebec, yeah. R is...? Romeo, mhm.",
             "length": 40.5
         },
         {
             "audio_path": "pizza7",
             "speaker": "Mika",
-            "transcript": "S is...? Sierra, great. T is...? ... Tango! There you go, you got it! U is...? Uniform, yeah, easy. V is...? Victor. W is...? Whiskey... yeah. X-ray...? Shit, I said it! I'm sorry. Yeah, X is X-ray. I mean, you get it. Y...? It's like \"you\"! Yep, Yankee! And, Z is...? Zulu. Awesome! Okay, now that we know that, let's get back to the video!",
+            "transcript": "S is...? Sierra, great. T is...? ... Tango! There you go, you got it! U is...? Uniform, yeah, easy. V is...? Victor. W is...? Whiskey... yeah. X-ray...? {i}Shit,{/i} I said it! I'm sorry. Yeah, X is X-ray. I mean, you get it. Y...? It's like \"you\"! Yep, Yankee! And, Z is...? Zulu. Awesome! Okay, now that we know that, let's get back to the video!",
             "length": 34.8
         },
         {
@@ -367,7 +367,7 @@
         {
             "audio_path": "pizza9",
             "speaker": "Mika",
-            "transcript": "Um, I decided to put Pizzapotamus [in] this scene... uh, just because I, uh-- I found him funny. Uh, I thought that, y'know, he would be a fun inclusion to have him appear and just do miscellaneous stuff with, y'know, the gang. Um... I really-- I do-- I do wanna come back to the video. So, the video--",
+            "transcript": "Um, I decided to put Pizzapotamus [in] this scene... uh, just because I just-- uh, I found him funny. Uh, I thought that, y'know, he would be a fun inclusion to have him appear and just do miscellaneous stuff with, y'know, the gang. Um... I really-- I do-- I do-- I wanna come back to the video. So, the video--",
             "length": 23.4
         },
         {
@@ -379,13 +379,13 @@
         {
             "audio_path": "pizza11",
             "speaker": "Mika",
-            "transcript": "And, uh, we cut to the laptop, and the, uh, music ends. Then, we cut back to the board of directors, who are looking, and we cut back to yellow shirt guy, who's sweating. He takes a breath, and reveals Pizzapotamus. The directors take notice. He says \"Pizzapotamus, it's a hippopotamus... he's pizza crazy~!\"",
+            "transcript": "And, uh, we cut to the laptop, and m-- the, uh, music {i}ends.{/i} Then, we cut back to the board of directors, who are looking, and we cut back to yellow shirt guy, who's sweating. He takes a breath, and reveals Pizzapotamus. The directors take notice. He says, \"Pizzapotamus, it's a hippopotamus... he's pizza crazy~!\"",
             "length": 22
         },
         {
             "audio_path": "pizza12",
             "speaker": "Mika",
-            "transcript": "He is currently describing the concept of a Pizzapotamus. Uh, he doesn't do a very good job, seeing as he's sweating. That's all I'm gonna spoil in the meantime. Uh, yep. This has been Mika. That was my contribution to... uh, {i}Christmas Route,{/i} I think it's called. Bye!",
+            "transcript": "He is currently describing the concept of a Pizzapotamus. Uh, he doesn't do a... very good job, seeing as he's sweating. That's all I'm gonna spoil in the meantime. Uh, yep. This has been Mika. That was my contribution to... uh, {i}Christmas Route,{/i} I think it's called. Bye!",
             "length": 22.5
         }
     ],
@@ -451,13 +451,13 @@
         {
             "audio_path": "exchange1",
             "speaker": "Mika",
-            "transcript": "Hey, what's up? It's me, Mika, from Pakoo's house, doing developer commentary for the hit video game... uh, {i}C-CSBounciness III--{/i} I almost forgot the name of it-- uh, {i}Christmas Route Edition.{/i} Uh, what you're seeing on the screen, presumably, is the gift exchange scene, uh, that I... I made. I made the whole thing, uh [[in] the car with Pakoo.",
+            "transcript": "Heyyy, what's up? It's me, Mika, from Pakoo's house, doing developer commentary for the hit video game... uh, {i}C-CSBounciness III--{/i} I almost forgot the name of it-- uh, {i}Christmas Route Edition.{/i} Uh, what you're seeing on the screen, presumably, is the gift exchange scene, uh, that I-- I made. I made the {i]whole{/i} thing, uh, [[in] the car with Pakoo.",
             "length": 29.9
         },
         {
             "audio_path": "exchange2",
             "speaker": "Mika",
-            "transcript": "We-- We talked about the gifts and we just-- we just went at it, and we-- we decided all the gift-- I also made {i}Christmas Ed--{/i} I made {i}CSB--{/i} I made the {i}whole{/i} thing. Like, I let them take cred-- I made the {i}whole{/i} thing. It was really fun. I made it for you, CS. Uh, but, yeah, no, gift exchange. Uh, you-- you have the shirt that we bought. Shirt goes hard. Thanks for the shirt.",
+            "transcript": "We-- We talked about the gifts... and we just-- we just went at it, and we-- we decided all the gift-- I also {i}made{/i} {i}Christmas Ed--{/i} I {i}made{/i} {i}CSB--{/i} I made the {i}whole{/i} thing. Like, I let them take cred-- {i}I{/i} made the {i}whole{/i} thing. It was really fun. I made it for you, CS. Uh, but, yeah, no. Gift exchange. Uh, you-- you have the shirt that we bought. Shirt goes hard. Thanks for the shirt.",
             "length": 26.6
         },
         {
@@ -487,7 +487,7 @@
         {
             "audio_path": "exchange7",
             "speaker": "Mika",
-            "transcript": "It barely fits Pakoo, according to Pakoo. Uh, this is, I think, the first multi-person developer commentary that this game has, which is {i}crazy{/i} to think about. We are setting records, here. Uh, I made all the assets, I made all the dialogue. I ju-- I made {i}everything,{/i} dude. It's insane. Alright, bye, enjoy the rest of {i}CSBIII!{/i} See you next year!",
+            "transcript": "It {i}barely{/i} fits Pakoo, according to Pakoo. Uh, this is, I think, the first multi-person developer commentary that this game has, which is {i}crazy{/i} to think about. We're setting {i}records,{/i} here. Uh, I made all the assets, I made all the dialogue, I ju-- I made {i}everything,{/i} dude. It's insane. Alright, bye! Enjoy the rest of {i}CSBIII!{/i} See you next year!",
             "length": 27.0
         }
     ]
