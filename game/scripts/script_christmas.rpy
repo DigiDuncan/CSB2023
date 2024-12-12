@@ -937,19 +937,10 @@ label ce_setup:
     show anno at right
     with dissolve
     cs "Well, Anno, we did it!"
-    cs "Are ya ready?"
-    anno "Yeah! Where should we start?"
-
-    scene black with dissolve
-    n "Insert decorating scene here."
-    # TODO: Decorating scene
-    #Living room
-    #Kitchen
-    #Hallway
-    #Entrance
-    #Outside
-    #After
-
+    cs "Are ya ready to decorate?"
+    anno "Yeah!"
+    scene white
+    $ renpy.movie_cutscene(decoratingscene)
     scene cs_living2_festive
     show cs happy at left
     show anno at right

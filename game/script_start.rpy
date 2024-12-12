@@ -2789,6 +2789,7 @@ define hoh_repair = "movies/hoh_repair.webm"
 define kick = "movies/kick.webm"
 define splash = "movies/splash.webm"
 define perfect_tate_intro = "minigames/perfecttate/Tate1.webm"
+define decoratingscene = "movies/decoratingscene.webm"
 
 # Fun Values
 image utajsign = "images/bg/utajsign.png"
