@@ -446,5 +446,49 @@
             "transcript": "So, for the bottle of Crotch Doctor, the space on the original label was super-limited, so we couldn't agree on the best way to edit it. Eventually, I just said \"fuck it\" and combined {i}everyone's{/i} ideas into one brand-new custom label! I think the results speak for themselves.",
             "length": 14.8
         }
+    ],
+    "gift_exchange": [
+        {
+            "audio_path": "exchange1",
+            "speaker": "Mika",
+            "transcript": "Hey, what's up, it's me, Mika from Pakoo's house, doing developer commentary for the hit video game, CS Bounciness 3. I almost forgot the name of it, Christmas Route Edition. What you are seeing on the screen presumably, is the gift exchange scene. That I made, I made the whole thing. In the car, with Pakoo.",
+            "length": 29.9
+        },
+        {
+            "audio_path": "exchange2",
+            "speaker": "Mika",
+            "transcript": "We talked about the gifts, and we just went at it, and we decided all the gift-- I also Christmas ed-- I made CSB-- I made the whole thing. Like I let them take credit, I made the whole thing. It was really fun, I made it for you CS. But yeah, gift exchange. You, you have the shirt that we bought, that shirt goes hard. Thanks for the shirt.",
+            "length": 26.6
+        },
+        {
+            "audio_path": "exchange3",
+            "speaker": "Mika",
+            "transcript": "Uhh, do we still have that shirt, Pakoo?",
+            "length": 3.1
+        },
+        {
+            "audio_path": "exchange4",
+            "speaker": "Pakoo",
+            "transcript": "We do.",
+            "length": 0.7
+        },
+        {
+            "audio_path": "exchange5",
+            "speaker": "Mika",
+            "transcript": "Does it fit you?",
+            "length": 1.3
+        },
+        {
+            "audio_path": "exchange6",
+            "speaker": "Pakoo",
+            "transcript": "It, barely fit me.",
+            "length": 2.2
+        },
+        {
+            "audio_path": "exchange7",
+            "speaker": "Mika",
+            "transcript": "It barely fits Pakoo, according to Pakoo. This is I think the first multi-person developer commentary that, this game has? Which is, crazy to think about. We are setting records here, I made all the assets, I made all the dialogue. I just-- I made everything dude, it's insane. Alright bye, enjoy the rest of CSB3! See you next year!",
+            "length": 27.0
+        }
     ]
 }

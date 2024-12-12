@@ -5178,6 +5178,7 @@ label ce_exchange:
         show avgn flipped at mid_left with moveinleft
         show gift_cs at manual_pos(0.4, 0.7, 0.5) with moveinbottom
         avgn "Let's do this!"
+        dxcom gift_exchange
         show old_shirt at manual_pos(0.4, 0.7, 0.5)
         hide gift_cs
         with dissolve
@@ -5214,6 +5215,7 @@ label ce_exchange:
     else:
         show gift_cs at manual_pos(0.4, 0.7, 0.5) with moveinbottom
         pause 0.5
+        dxcom gift_exchange
         show old_shirt at manual_pos(0.4, 0.7, 0.5)
         hide gift_cs
         with dissolve
@@ -5230,6 +5232,7 @@ label ce_exchange:
         $ collect("old_shirt")
     hide grace with moveoutright
     pause 0.5
+    hide screen dxcom
     cs "Woohoo! All of the gifts have been handed out!"
     jump ce_preclimax
 
