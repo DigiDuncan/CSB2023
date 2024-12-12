@@ -292,11 +292,11 @@ init python:
             return r
 
         def event(self, ev, x, y, st):
-            print('I hate you and everyone you love', self.win, ev, x, y, st)
             import pygame
             if ev.type == pygame.KEYDOWN and not self.pressing_down:
                 if ev.key == pygame.K_END:
                     self.win = "ok"
+                    pygame.event.post(pygame.event.Event(FINISH_EVENT))
                 if ev.key == pygame.K_SPACE:
                     self.pressing_down = True
                     self.hit_to_process = True
@@ -304,14 +304,11 @@ init python:
             elif ev.type == pygame.KEYUP:
                 if ev.key == pygame.K_SPACE:
                     self.pressing_down = False
-            # This *should* return the frame that self.win is set, but it's requiring a button input
-            # Why? `redraw` is an event that calls this function, and we call of one those every frame, necessarily.
-            # ow
-            if self.win is not None:
+            elif ev.type == FINISH_EVENT and self.win is not None:
                 win = self.win
                 self.reset()
                 return win
-
+                
         def visit(self):
             return [] # Assets needed to load
 
