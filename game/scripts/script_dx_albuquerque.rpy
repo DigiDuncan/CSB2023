@@ -329,7 +329,8 @@ label dx_albuquerque:
     show cs happy
     cs_nobeep "{cps=40}So I did.{w=0.65}{nw}"
     hide copguy
-    show copguycrawl at right
+    show copguy at manual_pos(0.75, 0.9, 0.5):
+        rotate -30
     play sound sfx_chop
     show cs disappointed
     cs_nobeep "{cps=40}And then he gets all indignant on me!{w=0.75}{nw}"

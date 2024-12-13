@@ -207,9 +207,8 @@ label asset_debugger:
         scene walmart_inside
         show craptop ytp at center
         show cs angry dark flipped at left
-        $ spritetotal += 8
+        $ spritetotal += 7
         show worker_2 at mid_left_left
-        show copguycrawl at mid_left
         show pakoo happy flipped at mid_mid_left
         show tate shock dark at mid_mid_right
         show phil at mid_right
