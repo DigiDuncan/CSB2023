@@ -407,5 +407,12 @@
         "title": "Pakoo working on the game at the last minute",
         "caption": "When everyone was freaking out about fixing the last minute bugs, Pakoo was busy shoving a bunch of random crap in the game.",
         "need_label": "ce_epilogue"
+    },
+    "sfx_wiggle_wiggle_wiggle.ogg": {
+        "type": "audio",
+        "title": "Wiggle Wiggle Wiggle!",
+        "caption": "Tate needed this sound effect for something in the game, but we forgot where it was supposed to go.",
+        "album_art": "goober.png",
+        "need_label": "ce_introductions"
     }
 }
