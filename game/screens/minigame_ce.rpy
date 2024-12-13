@@ -11,29 +11,29 @@ screen ce_minigame_screen():
 
     text "Go back and play your favorite games from Christmas Edition!":
         xalign 0.5
-        ypos 0.15 yanchor 0.5
+        ypos 0.17 yanchor 0.5
         text_align 0.5
 
     if persistent.carrot_game_unlocked:
         imagebutton idle "carrot_box.png":
             action Jump("play_ce_carrot")
-            yalign 0.5
+            yalign 0.55
             xpos 0.33 xanchor 0.5
     else:
         image "carrot_box.png":
             blur 70
-            yalign 0.5
+            yalign 0.55
             xpos 0.33 xanchor 0.5
 
     if persistent.reversi_game_unlocked:
         imagebutton idle "reversi_box.png":
             action Jump("play_ce_reversi")
-            yalign 0.5
+            yalign 0.55
             xpos 0.67 xanchor 0.5
     else:
         image "reversi_box.png":
             blur 70
-            yalign 0.5
+            yalign 0.55
             xpos 0.67 xanchor 0.5
     
 
