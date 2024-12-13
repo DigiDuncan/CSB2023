@@ -554,7 +554,7 @@
     "letter": {
         "img": "letter",
         "name": "CS' invitation",
-        "owner": "Everybody who showed up to the party.",
+        "owner": "Everybody who showed up to the party",
         "desc": "An invitation to a grand party, with festivities galore.",
         "rarity": "Common",
         "ce": true
