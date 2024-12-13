@@ -333,5 +333,23 @@
         "title": "CS Living Room (Signal)",
         "caption": "A beta image used during the projector scene.",
         "need_label": "ce_banter"
+    },
+    "blank.png": {
+        "type": "image",
+        "title": "This room!",
+        "caption": "This room (and the music), was based off a scrapped concept in the early days of CSB3 planning. There was a planned route where when CS got fired from LTT, he had to go work at Rosen's calendar shop. The plan was for him to make \"sexy\" calendars with Windyman, but was eventually swapped out for the Rockstar route.",
+        "need_label": "ce_start"
+    },
+    "cruz_route.png": {
+        "type": "route2",
+        "title": "Cruz Route",
+        "caption": "While Pakoo was writing CE, Mika wanted him to include a dream that Pakoo had a year ago. He wrote a dream segment that didn't get done on time.",
+        "need_label": "ce_introductions"
+    },
+    "bathroom_hyjinx.png": {
+        "type": "route",
+        "title": "Bathroom Hyjinx",
+        "caption": "While Pakoo was writing CE, Mika wanted Pakoo to write a segment where if you clicked on Pomni's face, this route played out. It didn't get to be implemented on time.",
+        "need_label": "ce_introductions"
     }
 }
