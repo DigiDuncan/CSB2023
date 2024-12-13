@@ -2465,7 +2465,7 @@ label ce_party_before:
         copguy "Heya, CS. Did I scare you?"
         show cs disappointed christmas dark flipped
         cs "Fuck yeah, you did! I didn't think you were gonna be on duty!"
-        copguy "Well, {i}someone's{/i} gotta be security, right?" #TODO: i still hate this line - tate
+        copguy "Well, {i}someone's{/i} gotta keep any rowdy guests in line, right?" # TODO: i hate it less now, but maybe we can write a reference here later - tate
         cs "I... guess?"
         cs "Whatever, let's get inside. I'm freezing!"
     elif d20 == 10:
@@ -3845,7 +3845,7 @@ label ce_win_carrot:
     cs "Hey guys! What are you all talking about?"
     digi "Oh, we were just discussing what developing the first game was li--{w=0.5}{nw}"
     show digi shock with hpunch
-    n "Aria shoots a look at Digi, well, as much as she can do that in her current form."
+    n "Aria shoots a look at Digi... well, as much as she can do that in her current form."
     digi "Er, uh, just talking about a coding project we all worked on."
     cs "Oh, okay. Probably a bunch of stuff I wouldn't understand, then."
     show digi
