@@ -389,5 +389,17 @@
         "title": "Copguy (Crawl)",
         "caption": "Before we realized we can rotate sprites, we had a separate image for this scene.",
         "need_label": "friend2_car_slam"
+    },
+    "k17andk22.png": {
+        "type": "image",
+        "title": "Concept for K-17 and K-22",
+        "caption": "Pakoo: I have drawn sketchs of K-17 and K-22 in the past, but I never drew them with color. I think I made this in about 5 minutes as a reference for the sprites in game.",
+        "need_label": "ce_introductions"
+    },
+    "diginothumbs.png": {
+        "type": "image",
+        "title": "Digi holding a folder",
+        "caption": "When we were trying to figure out how furries hold a letter with no opposable thumbs, Digi held up this folder as an example.",
+        "need_label": "ce_start"
     }
 }
