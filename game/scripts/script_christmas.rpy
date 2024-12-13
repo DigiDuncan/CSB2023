@@ -563,7 +563,6 @@ label ce_anno:
 
     # FIRST
     # walk to it
-    # TODO: this is only playing one footstep. it should be two. the next instance is two. I DON'T UNDERSTAND - tate
     play sound "<from 0.74 to 1.723>sfx/sfx_snow_walk.ogg" volume 2.0
     show cs disappointed coat hat flipped at center
     show shovel at manual_pos(0.6, 0.7, 0.5)
