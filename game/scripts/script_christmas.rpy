@@ -952,7 +952,7 @@ label ce_setup:
     show cs disappointed
     cs "Sorry."
     show cs
-    anno "Well, I think we did a pretty darn good job."
+    anno "But yeah, I think we did a pretty darn good job."
     show cs happy
     cs "Hell yeah, we did!"
     cs "Everyone is gonna have a {i}blast{/i} at this party!"
@@ -2258,9 +2258,6 @@ label ce_aftershop:
     $ in_d20_viewer = False
     jump ce_party_before
 
-# TODO: put respective vehicles in background + item collection because funnie - tate
-# TODO: the item collection placeholders exist but they are not filled out.
-
 label ce_party_before:
     stop music
     scene cs_bedroom2
@@ -2420,15 +2417,15 @@ label ce_party_before:
         show cs worried christmas flipped
         cs "Woah, what the hell?!"
         show cs worried christmas flipped at mid_left with move
-        n "A Blackhawk helicopter is seen landing out in the middle of the street."
+        n "A BlackHawk helicopter is seen landing out in the middle of the street."
         show cs scared christmas flipped
         cs "Who the {i}hell{/i} would be arriving in a helicopter?!"
         stop sound2 fadeout 1.0
         hide cs with moveoutleft
         scene cs_house_snow_night
-        # TODO: put vehicle img here
+        show obama_chopper dark at manual_pos(0.55, 0.6, 0.5)
         $ collect("obama_chopper")
-        show obama festive dark at mid_left
+        show obama festive dark flipped at mid_left
         with dissolve
         show cs worried dark christmas flipped at right with moveinright
         n "The President of the United States steps out."
