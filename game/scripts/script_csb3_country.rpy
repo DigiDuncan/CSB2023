@@ -723,6 +723,7 @@ label england_bad_ramsay:
     cs "Ooooooooohhhhh fuuuuuuucckkk."
     $ ending_manager.mark("fuckin_raw")
     bad_end "Master Chef?\nMore like, Master Death!" "england_gordon_menu"
+    $ renpy.end_replay()
 
 label england_good_ramsay:
     stop music fadeout 3.0
@@ -960,6 +961,7 @@ label england_top_lose:
     cs "Fuck."
     $ ending_manager.mark("top_loser")
     bad_end "You want it all,\nbut the world won't give it up!" "england_top_gear_menu"
+    $ renpy.end_replay()
 
 label england_top_win:
     stop music fadeout 3.0
@@ -1208,6 +1210,7 @@ label england_scott_movent:
     cs "Uh oh. {w=3.5} I didn't see nothin'."
     $ ending_manager.mark("scottnt")
     bad_end "Welp, that's the end\nof that video!" "england_scott_menu"
+    $ renpy.end_replay()
     return
 
 label england_japan:
