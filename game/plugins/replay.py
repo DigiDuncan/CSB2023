@@ -2,12 +2,6 @@
 ##
 ## This is a simple screen that shows buttons that replay a scene from the game.
 init python:
-
-    maxthumbx = config.screen_width / (3 + 1)
-    maxthumby = config.screen_height / (3 + 1)
-
-    replay_page = 0
-
     class ReplayItem:
         def __init__(self, thumbs, replay, name):
             self.thumbs = thumbs
@@ -48,30 +42,3 @@ init python:
     Replay_items.append(ReplayItem(["Rockstar"], "fired_final_tour_bus", "{outlinecolor=#000000}{color=#FFFF00}Rockstar{/color}{/outlinecolor}"))
     Replay_items.append(ReplayItem(["FriendEnd"], "friend2_car_slam", "{outlinecolor=#000000}{color=#FFFF00}Friend Ending{/color}{/outlinecolor}"))
     Replay_items.append(ReplayItem(["CountryEnd"], "country_going_home", "{outlinecolor=#000000}{color=#FFFF00}Globetrotter{/color}{/outlinecolor}"))
-
-# Images are going to be 600 x 338
-#replay thumbnails images setup defined here
-image Asylum = ("images/replay/asylum_bad.png")
-image Hotwire = ("images/replay/hotwire_bad.png")
-image Revenge = ("images/replay/revenge.png")
-image FuckUp = ("images/replay/riphouse.png")
-image Brag = ("images/replay/ripmoney.png")
-image FuckingDonkey = ("images/replay/fuckinraw.png")
-image TopLoser = ("images/replay/toploser.png")
-image Scottnt = ("images/replay/scottnt.png")
-image Misfortune = ("images/replay/misfortune.png")
-image GrandDad = ("images/replay/granddad.png")
-image Premature = ("images/replay/premature.png")
-image GodFail = ("images/replay/godfail.png")
-image GodSuccess = ("images/replay/godsuccess.png")
-image Attorney = ("images/replay/attorney.png")
-image BadDriver = ("images/replay/baddriver.png")
-image PencilShart = ("images/replay/pencilshart.png")
-image CopCall = ("images/replay/callthecops.png")
-image Archival = ("images/replay/archival.png")
-image AIEnd = ("images/replay/aiend.png")
-image LegoLTT = ("images/replay/legoltt.png")
-image BrokenReality = ("images/replay/realitybreak.png")
-image Rockstar = ("images/replay/rockstar.png")
-image FriendEnd = ("images/replay/friendending.png")
-image CountryEnd = ("images/replay/countryend.png")
