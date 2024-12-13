@@ -401,5 +401,11 @@
         "title": "Digi holding a folder",
         "caption": "When we were trying to figure out how furries hold a letter with no opposable thumbs, Digi held up this folder as an example.",
         "need_label": "ce_start"
+    },
+    "pakoo_working.jpg": {
+        "type": "image",
+        "title": "Pakoo working on the game at the last minute",
+        "caption": "When everyone was freaking out about fixing the last minute bugs, Pakoo was busy shoving a bunch of random crap in the game.",
+        "need_label": "ce_epilogue"
     }
 }
