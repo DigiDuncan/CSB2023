@@ -2,7 +2,12 @@
 screen ce_minigame_screen():
     tag menu
 
-    $ renpy.music.play("<from 16.53>bubble_tea.ogg", channel="music", if_changed=True, loop=False)
+    python:
+        if renpy.music.get_playing(channel='music') != "bubble_tea.ogg":
+            pass
+        else:
+            renpy.music.play("<from 16.53>bubble_tea.ogg", channel="music", loop=False)
+
     add "gui/game_menu.png"
     
     text "{size=+48}Minigames":
