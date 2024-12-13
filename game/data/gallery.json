@@ -353,5 +353,35 @@
         "caption": "While Pakoo was writing {i}CE,{/i} Mika wanted him to write a segment where, if you clicked on Pomni's face at Target, this route would play out. There wasn't enough time to implement this.",
         "need_label": "ce_introductions",
         "jump_to": "ce_extras_poop"
+    },
+    "eliza.png": {
+        "type": "image",
+        "title": "Beta Elizabeth",
+        "caption": "This drawing of Elizabeth was a sketch by Pakoo, which was a drawing that was also one of Bubble's earlier drawings. Very complicated.",
+        "need_label": "ce_introductions"
+    },
+    "db.png": {
+        "type": "image",
+        "title": "Beta DB",
+        "caption": "This was a mugshot of DB that was found from 2018 CScord.",
+        "need_label": "ce_introductions"
+    },
+    "k22_angry.png": {
+        "type": "image",
+        "title": "Beta K-22 Angry",
+        "caption": "Pakoo: When I was drawing K-22, I tried to make them as pissed as possible. I made them look {i}too{/i} pissed.",
+        "need_label": "ce_introductions"
+    },
+    "k22_phone_angry.png": {
+        "type": "image",
+        "title": "Beta K-22 Angry Phone",
+        "caption": "A version of the phone sprite with the old angry face.",
+        "need_label": "ce_introductions"
+    },
+    "tgt_worker.png": {
+        "type": "image",
+        "title": "Beta Target Worker",
+        "caption": "Pakoo: This photo of me was taken at an anime convention I went to near the end of October. You can't see it here, but I was getting my picture taken with The King from CD-i Link!",
+        "need_label": "ce_checkout"
     }
 }
