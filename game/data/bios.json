@@ -427,7 +427,10 @@
     "eliza": {
         "full_name": "Elizabeth",
         "pronouns": "(???)",
-        "sprites": { "Default": "images/characters/eliza.png" },
+        "sprites": { 
+            "Neutral": "images/characters/eliza.png",
+            "Disappointed": "images/characters/eliza_disappointed.png"
+     },
         "quote": "???",
         "bio": "Placeholder text for now.",
         "ce": true

@@ -3123,11 +3123,13 @@ label ce_introductions:
     cs "What about the other two?"
     eliza "They, uh... work for me?"
     cs "You guys are so complicated."
+    show elizabeth disappointed
     arceus "I mean, it wasn't too hard for {i}me{/i} to figure out, funnily enough."
     show cs disappointed christmas
     n "CS sighs."
     cs "Sorry, everyone. I'm just stressed out a bit."
     cs "I just really want this party to go well, but, at this point, I feel like I don't even know half the people here."
+    show elizabeth
     cs "I mean, {i}you{/i} split into three people, {i}Pakoo{/i} split into {i}two...{/i}"
     cs "I hardly even know anything about Tate's friend beyond a few mentions over the phone..."
     eliza "I mean, if you want us to, we can step outside for a bit."
@@ -5157,6 +5159,7 @@ label ce_exchange:
     with dissolve
     eliza "Dog food."
     hide dog_food with dissolve
+    show elizabeth disappointed flipped
     eliza "Dog food?"
     db "Ah, yeah, I had a lot extra lying around in my car, so I figured, why not?"
     hide elizabeth with moveoutright
