@@ -3658,7 +3658,6 @@ label ce_win_carrot:
     show obama festive at right
     show ed festive flipped at center behind cs_kitchen_fg
     with easeinleft
-    # TODO: fix the particle system maybe idk - tate
     ed "{cshake}NOOOO!" with hpunch
     ed "{cshake}My turkey!" with vpunch
     play sound sfx_oven_open
@@ -3844,7 +3843,7 @@ label ce_win_carrot:
     cs "Hey guys! What are you all talking about?"
     digi "Oh, we were just discussing what developing the first game was li--{w=0.5}{nw}"
     show digi shock with hpunch
-    n "Aria shoots a look at Digi, as much as she can do that in her current form." # TODO: this line needs help - tate
+    n "Aria shoots a look at Digi, well, as much as she can do that in her current form."
     digi "Er, uh, just talking about a coding project we all worked on."
     cs "Oh, okay. Probably a bunch of stuff I wouldn't understand, then."
     show digi
