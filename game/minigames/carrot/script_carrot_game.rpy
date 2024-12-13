@@ -174,7 +174,7 @@ init python:
             r.blit(bg_renderer, (0, 0))
 
             down_amount = self.bounce_offset * 0.25
-            r.blit(csbg_renderer, (0, CS_HEIGHT * (0.25 - down_amount)))
+            r.blit(csbg_renderer, (0, CS_HEIGHT * (down_amount - 0.25)))
 
             r.blit(fg_renderer, (0, 0))
 
