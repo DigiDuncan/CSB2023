@@ -160,7 +160,7 @@ screen hatch_button():
     imagebutton:
         auto "gui/ce_point_click/rug/rug_%s.png"
         hover_sound "audio/sfx/sfx_select.ogg"
-        at manual_pos(949, 60, 0)
+        at manual_pos(961, 56, 0)
         action Play("sound", "audio/sfx/sfx_valid.ogg"), Hide("hatch_button"), Jump("ce_point_click.rug")
 
     ##### cs button
