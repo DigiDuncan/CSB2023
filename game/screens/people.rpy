@@ -135,6 +135,7 @@ screen people_welcome():
     python:
         bio_count = len(name_map.keys())
         unlocked_bio_count = len(persistent.seen)
+        
     vbox:
         xsize 850
         xalign 0.5 yalign 0.5
@@ -303,7 +304,6 @@ screen person(l):
                                         imagebutton:
                                             xalign 0.0 yalign 0.5
                                             xysize 64, 64
-
                                             idle "/gui/left_off_small.png"
                                             hover "/gui/left_on_small.png"
                                             action IncrementVariable("current_bios_sprite", -1)
