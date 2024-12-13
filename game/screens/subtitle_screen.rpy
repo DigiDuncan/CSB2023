@@ -20,9 +20,9 @@ screen _dxcom(c):
             spacing 15
 
             text c.full_text:
-                size 32
+                size 28
                 xmaximum 1680
-                font "fonts/DIN-Medium.ttf"
+                font "fonts/OpenSans-Regular.ttf"
                 layout "greedy"
                 color c.color
 
