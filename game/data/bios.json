@@ -428,8 +428,9 @@
         "full_name": "Elizabeth",
         "pronouns": "(???)",
         "sprites": { 
-            "Neutral": "images/characters/eliza.png",
-            "Disappointed": "images/characters/eliza_disappointed.png"
+            "Neutral": "images/characters/eliza/eliza.png",
+            "Disappointed": "images/characters/eliza/eliza_disappointed.png",
+            "Worried": "images/characters/eliza/eliza_worried.png"
      },
         "quote": "???",
         "bio": "Placeholder text for now.",

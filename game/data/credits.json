@@ -66,9 +66,12 @@
             "Mean": [""],
             "Mean (Human)": ["Mushroom Man"],
             "Ges": ["Mikapara"],
+            "Anne": [""],
+            "Grace": [""],
             "Blank": ["MeowcaTheoRange"],
             "Midge": ["Midgalicis"],
             "Elizabeth": ["BubbleTheSlime"]
+
         },
 
         "CS-ocola (3D Sprite)": {
@@ -144,6 +147,7 @@
                 "meancarnavor",
                 "blanknam3d",
                 "ItsNovaHere",
+                "Ges \"DefinitelyNotGes\"",
                 "Arceus3251",
                 "UndeadKitty",
                 "Mikapara",
@@ -183,6 +187,9 @@
             "Pakoo": ["Pakoo"],
             "Tate": ["Tate \"alleZSoyez\""],
             "Mean (Human)": ["Mushroom Man"],
+            "Ges": ["Mikapara"],
+            "Anne": [""],
+            "Grace": [""],
             "Blank": ["MeowcaTheoRange"],
             "Elizabeth": ["BubbleTheSlime"]
         },
