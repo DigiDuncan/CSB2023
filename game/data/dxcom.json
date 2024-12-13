@@ -490,5 +490,59 @@
             "transcript": "It {i}barely{/i} fits Pakoo, according to Pakoo. Uh, this is, I think, the first multi-person developer commentary that this game has, which is {i}crazy{/i} to think about. We're setting {i}records,{/i} here. Uh, I made all the assets, I made all the dialogue, I ju-- I made {i}everything,{/i} dude. It's insane. Alright, bye! Enjoy the rest of {i}CSBIII!{/i} See you next year!",
             "length": 27.0
         }
+    ],
+    "jail": [
+        {
+            "audio_path": "jail1",
+            "speaker": "Mika",
+            "transcript": "Hey, CS! It's a, me Mika, from uhh, Pakoo's house. I don't know if you remember that. Uhm... yeah no, I just wanted to show you this cool ass scene, that I made in the uhh, well I didn't make it actually, they did. Pakoo worked on the, flashlight-- Hold on, someone's knocking.",
+            "length": 23.8
+        },
+        {
+            "audio_path": "jail2",
+            "speaker": "Mika",
+            "transcript": "{i}Ringing{/i}",
+            "length": 7.7
+        },
+        {
+            "audio_path": "jail3",
+            "speaker": "Mika",
+            "transcript": "Hey CS, uhm, it's me Mika again. I'm in... I'm got-- I got bagged in jail. I'm in prison now, it's like Fort Knox here. I don't know if I'll be able to get out in time for the stream. I'll try, uhm, I don't even know what scene I was talking about. Uhm, look uhh-- I'll figure something out. You just, keep playing the game, have fun, see you later.",
+            "length": 28.5
+        }
+    ],
+    "escape": [
+        {
+            "audio_path": "escape1",
+            "speaker": "Mika",
+            "transcript": "Okay, okay, hey CS, it's me Mika again, recording this on my phone, I think? I think I managed to get out. Okay I think--",
+            "length": 12.2
+        },
+        {
+            "audio_path": "escape2",
+            "speaker": "Police",
+            "transcript": "He's over there! Get him!",
+            "length": 1.0
+        },
+        {
+            "audio_path": "escape3",
+            "speaker": "Mika",
+            "transcript": "Shit! No I'm not! Okay, look-- I don't know what the fuck, scene this is. I'm sure something very very cool, something cool is happening. Look, I might be able to make it to the stream. Okay, that's me, I need to go. Bye.",
+            "length": 19.4
+        }
+    ],
+    "moscow": [
+        {
+            "audio_path": "moscow1",
+            "speaker": "Mika",
+            "transcript": "Heeey, CS. Uhh, or whoever's listening to this. I don't-- I don't know who plays this, honestly. It's a, it's been a minute. Uhm, look CS. I know we've talked some times. If the police come and ask, if you have been in contact with me, you have to say yes. I am still within the Continental United States of America. You have to tell them that.",
+            "length": 30.4
+        },
+        {
+            "audio_path": "moscow2",
+            "speaker": "Mika",
+            "transcript": "Because it's-- true. Don't-- Hold-- Net! Yeah just-- Net! Just-- Ne-- Ostav' menya v, zhenshchina! Naydi kogo-nibud' drugogo, kto budet bespokoit'! Look-- I'm still within the Continental United States of America. Please, tell them that if they ask. Okay? Thanks CS, enjoy the rest of the game. I don't think I have time to bother you again. Bye.",
+            "length": 32.0
+        }
     ]
 }

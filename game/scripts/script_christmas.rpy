@@ -5583,18 +5583,19 @@ label ce_lights_out:
     $ collect("flashlight_held")
     play sound sfx_flashlight_on
     show screen flashlight_demo
+    dxcom jail
     cs "Thank God. I can actually see..."
     pause 0.5
     hide cs
     hide flashlight_held
     with moveoutright
-
     scene breakerbox with dissolve
     show cs christmas at left
     show flashlight_held at manual_pos(0.2, 0.7, 0.5):
         zoom 0.5
     with moveinleft
     cs "Found it!"
+    hide screen dxcom
     show cs christmas at right
     show flashlight_held at manual_pos(0.8, 0.7, 0.5)
     with move
@@ -6298,6 +6299,7 @@ label ce_billy_time:
     show tate sheepish festive
     show tate_phone at manual_pos(0.6, 0.6, 0.5):
         xzoom 1
+    dxcom escape
     eliza "Did you guys manage to get outside?"
     show tate sad festive
     tate "Mean did. He said the snow is up to the roof!"
@@ -6312,6 +6314,7 @@ label ce_billy_time:
     show tate sheepish festive
     tate "Thank you... {fast}Mika?"
     eliza "It's Elizabeth, but sure."
+    hide screen dxcom
     hide tate
     hide billy
     hide tate_phone
@@ -6498,12 +6501,14 @@ label ce_billy_time:
     stop music fadeout 3.0
     music end
     luke "This is great and all, but isn't the house still under 20 feet of snow?"
+    dxcom moscow
     copguy "How are we even gonna get rid of that?"
     copguy "We would need a lot of..."
     pause 1.0
     show cs christmas
     cs "A lot of what?"
     copguy "... Never mind. I forgot what I was thinking about."
+    hide screen dxcom
     show rich festive flipped
     rich "Didn't you two get up to the roof?"
     ed "Maybe we should all go up and check it out."
