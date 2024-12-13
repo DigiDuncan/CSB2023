@@ -2581,8 +2581,8 @@ label ce_party_before:
         hide cs with moveoutleft
         stop sound fadeout 1.0
         scene cs_house_snow_night
-        show rosen_car dark at manual_pos(0.65, 0.8, 0.5):
-            zoom 2.0
+        show rosen_car dark at manual_pos(0.5, 0.8, 0.5):
+            zoom 1.25
         $ collect("rosen_car")
         show michael festive dark at mid_left
         with dissolve
@@ -2675,7 +2675,7 @@ label ce_party_before:
         hide cs with moveoutleft
         scene cs_house_snow_night
         show mika_car dark at manual_pos(0.3, 0.8, 0.5):
-            zoom 2.0
+            zoom 1.5
         $ collect("mika_car")
         show elizabeth dark flipped at center
         show anne dark at mid_left
