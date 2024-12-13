@@ -3396,8 +3396,9 @@ label ce_banter:
     show k22 disappointed flipped
     k17 "Whaa..."
     k22 "Please excuse us for a moment."
-    show k22 disappointed flipped at Move((0.0, 0.14), (1.25, 0.14), 3, repeat=False, bounce=False, xanchor="left", yanchor="top")
-    pause 1.4
+    show k22 disappointed flipped at Move((0.0, 0.14), (0.65, 0.15), 1.5, repeat=False, bounce=False, xanchor="left", yanchor="top")
+    pause 1.6
+    show k22 disappointed flipped at Move((0.65, 0.15), (1.25, 0.14), 2.5, repeat=False, bounce=False, xanchor="left", yanchor="top")
     show k17 shock at Move((0.475, 0.15), (1.0, 0.15), 2, repeat=False, bounce=False, xanchor="left", yanchor="top")
     pause 2.5
 
