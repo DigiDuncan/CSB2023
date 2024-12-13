@@ -3141,6 +3141,7 @@ label ce_introductions:
     if d20 == 20:
         pause 2.0
         show avgn at center with moveinbottom
+        show eliza worried at right with vpunch
         avgn "You guys ever heard of {i}Dr. Jekyll and Mr. Hyde{/i} for the NES?"
         eliza "Uhh, no?"
         show avgn flipped
@@ -6430,10 +6431,12 @@ label ce_billy_time:
     eliza "Did you guys manage to get outside?"
     show tate sad festive
     tate "Mean did. He said the snow is up to the roof!"
+    show elizabeth worried
     n "Elizabeth looks shocked."
     billy "But, good news! I have a way to possibly bring the power back!"
     show tate festive
     billy "With the Handy Switch!"
+    show elizabeth
     eliza "I have no clue how {i}that's{/i} gonna work, but... good luck to you two."
     tate "Is the basement over this way?"
     eliza "Yeah, down the hall and to the left."
