@@ -132,6 +132,14 @@
         "rarity": "Common",
         "ce": true
     },
+    "carrot_cake": {
+        "img": "carrot_cake",
+        "name": "Carrot Cake",
+        "owner": "President Obama",
+        "desc": "A delicious cake made from carrots!",
+        "rarity": "Uncommon",
+        "ce": true
+    },
     "case": {
         "img": "case",
         "name": "Briefcase Of Money",
@@ -669,6 +677,22 @@
         "desc": "Won by CS while at PencilCon, but is it even real gold?",
         "rarity": "Rare"
     },
+    "original_slider": {
+        "img": "original-slider",
+        "name": "Big City Sliders",
+        "owner": "Billy Mays",
+        "desc": "The restaurant mini-burger, everyone loves!",
+        "rarity": "Uncommon",
+        "ce": true
+    },
+    "oxygen_canister": {
+        "img": "oxygen_canister",
+        "name": "Oxygen Canister",
+        "owner": "Michael Rosen",
+        "desc": "If your teacher ever asks you to stop breathing, make sure to keep one of these on hand.",
+        "rarity": "Epic",
+        "ce": true
+    },
     "pakoo_car": {
         "img": "pakoo_car",
         "name": "Pakoo's Car",
@@ -684,7 +708,15 @@
         "desc": "Try spreading it on toast or crumpets, enjoying it by the spoonful, {a=https://www.youtube.com/watch?v=JlfJx1aDmR4&t=11s}stick a finger in and lick it, or even lift it up and drink a bit.{/a} Your secrets are safe here.",
         "rarity": "Common",
         "ce": true
-    },  
+    }, 
+    "peppermint_bark": {
+        "img": "peppermint_bark",
+        "name": "Peppermint Bark",
+        "owner": "Tate",
+        "desc": "A sweet Christmas treat!",
+        "rarity": "Uncommon",
+        "ce": true
+    },
     "pie": {
         "img": "pie",
         "name": "Premade Apple Pie",

@@ -4063,6 +4063,10 @@ label ce_dinner:
     show k17 at manual_pos(-0.5, 0.6, 0.5)
     show left_table
     with dissolve
+    $ collect("peppermint_bark")
+    $ collect("oxygen_canister")
+    $ collect("slider")
+    $ collect("carrot_cake")
     if fun_value(FUN_VALUE_MUSIC):
         cs "Well, I'd love to spread some Christmas spirit by saying--"
     else:
