@@ -325,20 +325,20 @@
         {
             "audio_path": "pizza2",
             "speaker": "Mika",
-            "transcript": "He came from a YouTube video from the channel Wizards With Guns. {i}(Clears throat.){/i} Uh, the video is called... ah, shoot, lemme look it up... Wizards With Guns... it's, uh-- So, yeah, so, the video is called... uh, {i}Getting called on first to give your presentation.{/i} If you wanna take a watch of that, the link is: https://www.youtube.com/watch?v=48Vic-- oh! I realized you might ",
-            "length": 38.6
+            "transcript": "He came from a YouTube video from the channel Wizards With Guns. {i}(Clears throat.){/i} Uh, the video is called... ah, shoot, lemme look it up... Wizards With Guns... it's, uh-- So, yeah, so, the video is called... uh, {i}Getting called on first to give your presentation.{/i} If you wanna take a watch of that, the link is: https://www.youtube.com/watch?v=48Vic-- ",
+            "length": 37
         },
         {
             "audio_path": "pizza3",
             "speaker": "Mika",
-            "transcript": "not know, uh, the NATO phoentic alphabet. Let me... pull that up for you. So, NATO phoentic is-- I'm gonna go a letter and then I'm gonna say the... \"code\". So A is Alpha, B is Bravo, C is Charlie, D is Delta, E is Echo, F is Foxtrot, G is Golf, H is Hotel, I is India, J is Juliett, K is Kilo, L is Lima, M is Mike, N is November, O is Oscar, P is Papa, ",
-            "length": 40.1
+            "transcript": "Oh! I realized you might not know, uh, the NATO phoentic alphabet. Let me... pull that up for you. So, NATO phoentic is-- I'm gonna go a letter and then I'm gonna say the... \"code\". So A is Alpha, B is Bravo, C is Charlie, D is Delta, E is Echo, F is Foxtrot, G is Golf, H is Hotel, I is India, J is Juliett, K is Kilo, L is Lima, M is Mike, ",
+            "length": 36.9
         },
         {
             "audio_path": "pizza4",
             "speaker": "Mika",
-            "transcript": "Q is Quebec-- nice reference [[for] the Canadians-- R is Romeo, S is Sierra, T is Tango, U is Uniform, V is Victor, W is Whiskey, X is X-ray, Y is Yankee, and Z is Zulu.",
-            "length": 17.8
+            "transcript": "N is November, O is Oscar, P is Papa, Q is Quebec-- nice reference [[for] the Canadians-- R is Romeo, S is Sierra, T is Tango, U is Uniform, V is Victor, W is Whiskey, X is X-ray, Y is Yankee, and Z is Zulu.",
+            "length": 22.5
         },
         {
             "audio_path": "pizza5",
