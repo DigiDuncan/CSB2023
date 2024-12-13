@@ -1104,6 +1104,7 @@ label ce_before_shopping:
     scene cs_car_inside_snow
     show cs coat hat at left
     with dissolve
+    $ collect("cs_car")
     cs "I only went to Walmart last time since they had that deal on Genergy, but I don't shop there regularly..."
     cs "I think I'll try somewhere else this time."
     n "CS starts up his car and heads to Target."
