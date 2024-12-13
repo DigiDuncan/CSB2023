@@ -111,6 +111,7 @@ label ce_extras_cruz:
     cs "Oh man, what was I dreaming about?"
     cs "The store was falling apart, and there was lava everywhere…"
     n "CS takes a moment to catch his bearings before he fully wakes up."
+    $ renpy.end_replay()
     return
 
 label ce_extras_poop:
@@ -258,4 +259,5 @@ label ce_extras_poop:
     scene cs_bathroom
     play sound sfx_house_door_close
     pause
+    $ renpy.end_replay()
     return

@@ -60,23 +60,18 @@ screen unused_gallery():
             xcenter 0.3
             ycenter 0.6
 
+    # Unused Route Handling
     if list(asset_dict.values())[unused_page]["type"] == "route":
         image ProportionalScale("gallery/images/" + list(asset_dict.keys())[unused_page], 500, 800):
             xcenter 0.3
             ycenter 0.6
-        textbutton "{color=#fff}Play!{/color}":
-            action Jump("ce_extras_poop"), Stop("music2"), PauseAudio("music", False), Stop("jukebox"), SetVariable("unused_page", 0)
-            xalign 0.3
-            yalign 0.4
-
-    if list(asset_dict.values())[unused_page]["type"] == "route2":
-        image ProportionalScale("gallery/images/" + list(asset_dict.keys())[unused_page], 500, 800):
-            xcenter 0.3
-            ycenter 0.6
-        textbutton "{color=#fff}Play!{/color}":
-            action Jump("ce_extras_cruz"), Stop("music2"), PauseAudio("music", False), Stop("jukebox"), SetVariable("unused_page", 0)
-            xalign 0.3
-            yalign 0.4 
+        frame:
+            xanchor 0.5
+            yanchor 0.5
+            xpos 0.3
+            ypos 0.415
+            textbutton "{color=#fff}Click To Play!{/color}":
+                action Replay(str(list(asset_dict.values())[unused_page]["jump_to"])), Stop("music2"), PauseAudio("music", False), Stop("jukebox"), SetVariable("unused_page", 0)
 
     # Main Image (if audio)
     if list(asset_dict.values())[unused_page]["type"] == "audio":
