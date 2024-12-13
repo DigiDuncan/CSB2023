@@ -935,11 +935,14 @@ label friend2_car_slam:
     show cs happy flipped
     cs "This is why you don't mess with the Master Of The Poop!"
     show cs surprised flipped
-    cs "...The Youtube Poop, actually. I realize that sounded kinda stupid."
+    cs "... The Youtube Poop, actually. I realize that sounded kinda stupid."
     n "CS turns around and walks away."
     show cs flipped at mid_left with move
-    show copguycrawl at mid_right with moveinbottom
-    show copguycrawl with vpunch
+    show copguy at manual_pos(0.75, 1.3, 0.5):
+        rotate -90
+    show copguy at manual_pos(0.75, 0.9, 0.5) with MoveTransition(0.25):
+        linear 0.25 rotate -30
+    with vpunch
     show cs scared flipped
     copguy "Damn it, you can't escape from me!"
     n "Copguy manages to crawl out of the rubble that is his car."
@@ -960,8 +963,8 @@ label friend2_car_slam:
     show realistic_explosion_anim at manual_pos(0.8, 0.7, 0.5) behind db_cooper:
         subpixel True
         zoom 20
-    show copguycrawl with hpunch
-    hide copguycrawl with moveoutbottom
+    with hpunch
+    hide copguy with moveoutbottom
 
     db "Hey, guys! I finally made it!"
     db "Sorry I'm late! I had to feed the pets back at home and--"

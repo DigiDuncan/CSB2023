@@ -327,9 +327,9 @@ init python:
         return f"{', '.join(items[:-1])}{ox} {joiner} {items[-1]}"
 
     # FUN VALUES
-    renpy.image("_fun_value", "gui/fun_value.png")
-    renpy.image("_fun_value_music","gui/fun_value_music.png")
-    renpy.image("_fun_value_fish","gui/fun_value_fish.png")
+    renpy.image("_fun_value", "gui/fun_value/fun_value.png")
+    renpy.image("_fun_value_music","gui/fun_value/fun_value_music.png")
+    renpy.image("_fun_value_fish","gui/fun_value/fun_value_fish.png")
 
     # Fun value handler
     def fun_value(rarity: int, id: str = None, *, confusing = False, fish = False) -> bool:

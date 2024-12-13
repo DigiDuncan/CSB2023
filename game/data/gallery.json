@@ -383,5 +383,11 @@
         "title": "Beta Target Worker",
         "caption": "Pakoo: This photo of me was taken at an anime convention I went to near the end of October. You can't see it here, but I was getting my picture taken with The King from CD-i Link!",
         "need_label": "ce_checkout"
+    },
+    "copguycrawl.png": {
+        "type": "image",
+        "title": "Copguy (Crawl)",
+        "caption": "Before we realized we can rotate sprites, we had a separate image for this scene.",
+        "need_label": "friend2_car_slam"
     }
 }
