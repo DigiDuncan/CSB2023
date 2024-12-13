@@ -45,7 +45,7 @@ label ce_start:
     cs "Christmas is almost here!"
     show cs
     cs "... And, you know what that means!"
-    if fun_value(FUN_VALUE_COMMON):
+    if fun_value(FUN_VALUE_COMMON, fish = True):
         play sound ["<silence 0.125>", sfx_fish]
         cs_nobeep "Fish!"
         cs "But, more importantly..."

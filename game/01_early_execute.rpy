@@ -332,7 +332,7 @@ init python:
     renpy.image("_fun_value_fish","gui/fun_value_fish.png")
 
     # Fun value handler
-    def fun_value(rarity: int, id: str = None, *, confusing = False) -> bool:
+    def fun_value(rarity: int, id: str = None, *, confusing = False, fish = False) -> bool:
     
         # hide any previous instance of the indicator
         renpy.hide("_fun_value")
@@ -364,7 +364,7 @@ init python:
                 # Music indicator
                 renpy.show("_fun_value_music",[_fun_value_fade,_fun_value_motion],"fun_icon")
             else:
-                if renpy.random.random() < FUN_VALUE_FISH_CHANCE:
+                if renpy.random.random() < FUN_VALUE_FISH_CHANCE or fish:
                     # Fish indicator
                     renpy.show("_fun_value_fish",[_fun_value_fade,_fun_value_motion],"fun_icon")
                 else:
