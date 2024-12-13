@@ -2465,7 +2465,7 @@ label ce_party_before:
         copguy "Heya, CS. Did I scare you?"
         show cs disappointed christmas dark flipped
         cs "Fuck yeah, you did! I didn't think you were gonna be on duty!"
-        copguy "Well, {i}someone's{/i} gotta keep any rowdy guests in line, right?" # TODO: i hate it less now, but maybe we can write a reference here later - tate
+        copguy "Well, {i}someone's{/i} gotta keep any rowdy guests in line, right?"
         cs "I... guess?"
         cs "Whatever, let's get inside. I'm freezing!"
     elif d20 == 10:
@@ -6831,7 +6831,6 @@ label ce_roof_moment:
     cs "Believe in Santa and in the Christmas spirit!"
     eliza "Do you really think that will work?"
     cs "We've gotta try! Sing with me guys!"
-    # TODO: Karaoke lyrics
     cs "{image=note_small1.png} Ohhh...{w=0} {image=note_small2.png}"
     if fun_value(FUN_VALUE_EPIC, confusing=True):
         play music star_spangled_banner if_changed
