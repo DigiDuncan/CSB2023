@@ -22,6 +22,7 @@ label ce_start:
     scene black
     $ renpy.movie_cutscene(intro_credits_1)
     pause 1.0
+    $ collect("letter")
     play music lets_hear_winter volume 0.7 if_changed
     music lets_hear_winter
     scene cs_bedroom2
