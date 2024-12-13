@@ -6725,7 +6725,6 @@ label ce_roof_moment:
     show snow5
     show snow6
     show snow_wind
-    # TODO: decrustify this image. also make sure the canvas is big enough to fully contain the glow
     show sleigh
     with dissolve
     pause 0.5
